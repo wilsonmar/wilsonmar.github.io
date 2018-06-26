@@ -78,6 +78,7 @@ Prometheus joined the CNCF (Cloud Native Computing Foundation) in 2016 as its se
 
 In late 2016, CoreOS introduced the Operator pattern and released an example using that pattern in Prometheus Operatorn. It automatically creates/configures/manages Prometheus monitoring instances in clusters atop Kubernetes.
 See https://github.com/coreos/prometheus-operator 
+and https://devops.college/prometheus-operator-how-to-monitor-an-external-service-3cb6ac8d5acb
 
 PROTIP: Prometheus has not reached "1.0" yet so use of apt-get, yum, brew, installer packages are not recommended at this time.
 
