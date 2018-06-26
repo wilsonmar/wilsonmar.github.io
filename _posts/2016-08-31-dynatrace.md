@@ -15,15 +15,35 @@ comments: true
 
 {% include _toc.html %}
 
-This describes a) bash script installed from GitHub that downloads b) Docker images c) within AWS EC2 d) a sample app e) put under stress by Gatling while being analyzed by f) Dynatrace.
+This describes a) automation script installed from GitHub that installs b) Docker images c) within AWS EC2, Azure, and Google Cloud d) a sample app e) put under stress by JMeter/Gatling while being analyzed by f) Dynatrace.
 
 STATUS: IN PROGRESS
 
 What's different with this introduction to Dynatrace is I provide a 
-step-by-step hands-on approach to dive deep into the technology and its vendor.
+step-by-logical-step hands-on approach to dive deep into the technology and its vendor.
 This is so you're not stumbling around wasting time on high-level sales pitches.
 Commentaries here are given "just-in-time" after you do each step.
 
+## Mind Map
+
+Dyntrace offers <a target="_blank" href="https://d3sj466wqlrld0.cloudfront.net/certificate/docs/dtu_dynatrace_professional_certification_mindmap_031618.pdf"> this "MindMap" PDF</a> of the subject matter tested by their Professional-level certification (there is also a <a target="_blank" href="https://d3sj466wqlrld0.cloudfront.net/certificate/docs/dtu_dynatrace_associate_certification_mindmap_031618.pdf">less complicated one</a> for the Associate level exam).
+
+<a target="_blank" href="dynatrace-mindmap-pro-1057x714](https://user-images.githubusercontent.com/300046/41882532-abec6b0c-78a6-11e8-8a90-7063f741c7e0.jpg"><img alt="dynatrace-mindmap-pro-1057x714.jpg" width="1057" src="https://user-images.githubusercontent.com/300046/41882532-abec6b0c-78a6-11e8-8a90-7063f741c7e0.jpg"></a>
+
+The major "arteries" are the types of monitoring:
+
+   * Real User Monitoring
+   * Application Monitoring
+   * Infrastructure Monitoring
+   * Network Monitoring
+   * Additional components
+   <br /><br />
+Also:
+
+   * Dynatrace Managed (server & monitoring setup)
+   * System Settings (Global, Entity, Account)
+   * Problems
+   * Integration and API
 
 ## Acronyms used here
 
