@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Text Editors"
+title: "Text Editors (vim, subl, code, atom, Eclipse, IntelliJ, etc.)"
 excerpt: "One second saved per minute = 1.666% better living"
 tags: [apple, mac, setup]
 image:
@@ -49,12 +49,12 @@ Licensed nagware:
 Free IDEs:
 
    * <a href="#Eclipse">Eclipse</a>
-   * Aptana Studio
-   * NetBeans
    * <a target="_blank" href="https://github.com/spyder-ide/spyder">Spyder</a> (for Python pyflakes and pylint code analysis)
    * Visual Studio Express from Microsoft
    * <a target="_blank" href="https://www.jetbrains.com/go/">Gogland</a>,
    an IDE for Go from Jetbrains (makers of IntelliJ, PyCharm, etc.)
+   * Aptana Studio
+   * NetBeans
 
 Licensed IDEs:
 
@@ -456,6 +456,13 @@ Advantage of using the intelliJ IDE:
    * Directly access databases such as SQL, ORACLE, PostgreSQL, Microsoft SQL Server 
    * Supports different programming languages (Java, Javascript, Clojure, etc.)
    * Editions for different operating systems:  Windows, Linux, etc. 
+
+Videos:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=MZge92bbU7E">Zen Habits of using IntelliJ IDEA</a> Nov 9, 2017 at Devoxx [50:10] by Victor Kropp (@kropp)
+   * <a target="_blank" href="https://www.youtube.com/watch?v=eq3KiAH4IBI">42 IntelliJ IDEA Tips and Tricks</a> Oct 23, 
+from IntelliJ IDEA
+
 
 ### IntelliJ Control Key Shortcuts
 
