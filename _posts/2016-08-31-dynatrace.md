@@ -161,17 +161,26 @@ QUESTION: Does Dynatrace compete with OverOps, which analyzes Java and .NET sour
    https://github.com/grabnerandi</a>
 
 
-0. Get Certified
+## Get Certified
 
    <a target="_blank" href="https://university.dynatrace.com/certificate/industry">
    https://university.dynatrace.com/certificate/industry</a><br />
    Dynatrace Certification website lists a learning path.
 
-   The "Industry Associate" level validates understanding of APM -- the why,
-   core concepts, history, and emerging trends.
-   It's free.
+   The "Industry Associate" level validates understanding of APM was retired April 1, 2018.
 
-   How to register? dtu.payments@dynatrace.com
+   The exam is done on your desktop computer, not at a testing center.
+
+1. Enter your profile info (time zone, phone, picture ID, etc.) at 
+   https://prod.examity.com/Dynatrace/Student/MyProfile.aspx
+1. Write down your answers to security questions.
+1. Do a computer check at https://prod.examity.com/systemcheck/ComputerReadinessCheck.aspx
+1. Get a promotion code if that is part of your organization's deal with Dynatrace.
+   Or get a code by paying $200 at ?
+1. Schedule exam at https://prod.examity.com/dynatrace/Student/ScheduleAnExam.aspx
+   Sechedule can be next day.
+
+   
 
    The <a target="_blank" href="https://d3sj466wqlrld0.cloudfront.net/certificate/docs/du_certificate_industry_associate_blueprint.pdf">
    DOWNLOAD: Associate Exam Blueprint.pdf</a>
@@ -430,7 +439,7 @@ https://www.youtube.com/watch?v=wExU-AQ0ydk&index=1&list=PLqt2rd0eew1bmDn54E2_M2
 
 http://bit.ly/dttutorials (https://www.youtube.com/playlist?list=PLqt2rd0eew1bmDn54E2_M2uvbhm_WxY_6)
 
-Mainly high-level "smoke and mirrors" hype speak with a few technical points:
+Mainly high-level stuff with a few technical points:
 
 * <a target="_blank" href="https://university.dynatrace.com/discover/appmon/10858">
    What is Application Monitoring</a>
