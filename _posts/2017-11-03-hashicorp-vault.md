@@ -619,6 +619,8 @@ Success! Deleted 'secret/donttel' if it existed.
 * Java
 * Node JavaScript
 
+
+
 ## References
 
 https://www.codementor.io/slavko/how-to-install-vault-hashicorp-secure-deployment-secrets-du107xlqd
@@ -631,3 +633,10 @@ https://medium.com/qubit-engineering/kubernetes-up-integrated-secrets-configurat
 Kubernetes: Up & Integrated — Secrets & Configuration
 by Tristan Colgate-McFarlane
 ![vault-qubit-895x759-56525](https://user-images.githubusercontent.com/300046/33553286-55801548-d8b5-11e7-878c-f085cc42532d.png)
+
+
+https://www.joyent.com/blog/secrets-management-in-the-autopilotpattern
+Vault provides encryption at rest for secrets, encrypted communication of those secrets to clients, and role-based access control and auditability for secrets. And it does so while allowing for high-availability configuration with a straightforward single-binary deployment. See the Vault documentation for details on their security and threat model.
+https://www.vaultproject.io/docs/internals/security.html
+
+Vault uses Shamir's Secret Sharing to control access to the "first secret" that we use as the root of all other secrets. A master key is generated automatically and broken into multiple shards. A configurable threshold of k shards is required to unseal a Vault with n shards in total.

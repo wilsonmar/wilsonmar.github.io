@@ -24,15 +24,18 @@ I'd like to see how different people work on the same set of data:
 <img width="963" alt="watson visualizations" src="https://cloud.githubusercontent.com/assets/300046/23342447/6c7e5bac-fc28-11e6-9a8d-112ef1836b57.png"></a>
 
 
-
 ## Images
 
 ### Microsoft's COCO 
 
-https://www.ted.com/talks/joseph_redmon_how_a_computer_learns_to_recognize_objects_instantly#t-286801">
-VIDEO</a>: 
+<a target="_blank" href="https://www.ted.com/talks/joseph_redmon_how_a_computer_learns_to_recognize_objects_instantly#t-286801">VIDEO</a>: 
 Joseph Redmon's <a target="_blank" href="https://pjreddie.com/darknet/yolo/">YOLO (You Only Look Once) algorithm</a> recognizes over 80 categories of objects real-time in videos. On a laptop. Based on the University of Washington's open-source Darknet system.
 
+### UCF YouTube Action Data Set
+
+<a target="_blank" href="http://crcv.ucf.edu/data/UCF_YouTube_Action.php">
+http://crcv.ucf.edu/data/UCF_YouTube_Action.php</a>
+11 action categories: basketball shooting, biking/cycling, diving, golf swinging, horse back riding, soccer juggling, swinging, tennis swinging, trampoline jumping, volleyball spiking, and walking with a dog.
 
 ### MNIST Number Images
 
@@ -94,8 +97,6 @@ https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition</a><br />
 Cats vs Dogs Redux: Kernels Edition
 Dataset for Kaggle's famous Dogs vs Cats competition
 
-State Farm
-
 <a target="_blank" href="https://archive.ics.uci.edu/ml/datasets/Iris">
 https://archive.ics.uci.edu/ml/datasets/Iris</a><br />
 Iris Data
@@ -156,10 +157,13 @@ Google Big Data
 
 Kaggle
 
-Allen Institute (ai2)
+Allen Institute (ai2) - http://allenai.org/data.html
 
-   http://allenai.org/data.html
+<a target="_blank" href="https://www.opensecrets.org/featured-datasets">
+OpenSecrets.org provides datasets</a> related to US political campaign finance.
 
+   * <a target="_blank" href="https://docs.google.com/spreadsheets/d/1yMoTeRd5BbiFBhIRN_q1uFcB4bjxDuhhvZjS6352c40/edit#gid=0">
+   Google Sheet Contributions from AT&T, Verizon and Comcast to 115th Members</a>
     
 ### News
 
@@ -214,3 +218,9 @@ Musicbase from a game
 3. Reduction (generalize synonyms)
 
 
+
+## More
+
+This is one of a series on AI, Machine Learning, Deep Learning, Robotics, and Analytics:
+
+{% include ai_links.html %}

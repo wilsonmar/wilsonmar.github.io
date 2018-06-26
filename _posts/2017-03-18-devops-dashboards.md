@@ -52,9 +52,9 @@ Hygeia provides visual and quick access to detailed process data collected from 
 
    * "Nexus artifacts" from the binary repository
 
-   * <a target="_blank" <a target="_blank" href="https://github.com/capitalone/Hygieia/blob/master/collectors/misc/chat-ops">ChatOps</a>
+   * <a target="_blank" href="https://github.com/capitalone/Hygieia/blob/master/collectors/misc/chat-ops">ChatOps</a>
 
-   * <a target="_blank" <a target="_blank" href="https://github.com/capitalone/Hygieia/blob/master/collectors/cloud/aws">AWS</a>
+   * <a target="_blank" href="https://github.com/capitalone/Hygieia/blob/master/collectors/cloud/aws">AWS</a>
 
 Additional collectors specified in <a target="_blank" href="https://github.com/capitalone/Hygieia/blob/master/docker-compose.yml">docker-compose.yml</a> include artifactory, appdynamics.  Emmett?
 
@@ -211,12 +211,11 @@ https://github.com/capitalone/Hygieia</a>
 
 0. Within the Google Cloud Console execute:
 
-   curl -fsSL https://github.com/wilsonmar/hygieia | sh
+   <tt>curl -fsSL https://github.com/wilsonmar/hygieia | sh</tt>
 
 
-0. Automation to instantiate a cluster of servers to establish Hygieia is at:
+0. Automation to instantiate a cluster of servers to establish Hygieia:
 
-   https://github.com/wilsonmar/Dockfiles/Hygieia
 
    NOTE: Hygieia was written in Java to store data in a MongoDB database.
 
@@ -224,7 +223,8 @@ https://github.com/capitalone/Hygieia</a>
 
    The Hygieia core server provides the UI to data collected.
 
-   https://stackoverflow.com/questions/21065922/how-to-open-a-specific-port-such-as-9090-in-google-compute-engine
+   <a target="_blank" href="https://stackoverflow.com/questions/21065922/how-to-open-a-specific-port-such-as-9090-in-google-compute-engine">
+   Open port 9090</a>
 
 0. Fork <a target="_blank" href="https://github.com/capitalone/Hygieia/">
 https://github.com/capitalone/Hygieia</a>

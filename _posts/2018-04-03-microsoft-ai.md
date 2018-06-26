@@ -32,9 +32,10 @@ In April 2018 Microsoft reorganized into two divisions that offers AI:
 * <a target="_blank" href="https://www.microsoft.com/en-us/research/project/machine-learning-edge/">
 The research division</a>, headed by Harry Shum, is putting AI into Bing search, Cortana voice recognition and text-to-speech, ambient computing, and robotics.
 
-   https://www.youtube.com/watch?v=_Hg9QKBhERw
+   * <a target="_blank" href="https://www.youtube.com/watch?v=_Hg9QKBhERw">
+   See Harry's presentation in 2016</a>
 
-* With the "computing fabric" led by <a target="_blank" href="https://www.linkedin.com/in/guthriescott/">Scott Guthrie</a>, makes AI services available for those building customizable machine learning with speech, language, vision, and knowledge services. Tools offered include Cognitive Services and Bot Framework, deep-learning tools like Azure Machine Learning, Visual Studio Code Tools for AI, and Cognitive Toolkit.
+* Microsft's "computing fabric" offerings, led by <a target="_blank" href="https://www.linkedin.com/in/guthriescott/">Scott Guthrie</a>, makes AI services available for those building customizable machine learning with speech, language, vision, and knowledge services. Tools offered include Cognitive Services and Bot Framework, deep-learning tools like Azure Machine Learning, Visual Studio Code Tools for AI, and Cognitive Toolkit.
 
 Microsoft's Azure IoT Edge (at <a target="_blank" href="https://github.com/Azure/ai-toolkit-iot-edge"> https://github.com/Azure/ai-toolkit-iot-edge</a>) brings AI and machine learning to the edge of networks, such as in the field and on factory floors. See the <a target="_blank" href="https://gallery.azure.ai/Solution/IoT-Edge-2">Sample app</a> and <a target="_blank" href="https://social.msdn.microsoft.com/forums/azure/en-US/home?forum=MachineLearning">read all the unanswered forum posts</a>
 
@@ -66,6 +67,7 @@ to perform SGD (stochastic-gradient descent).
 
 https://www.youtube.com/watch?v=eJOv-TfhhzQ
 
+https://services.azureml.net/
 
 ## Subject matter
 
@@ -133,6 +135,22 @@ XiaoIce, a chatbot Microsoft launched in China, "has more than 200 million users
    - Retraining API
    <br /><br />
 
+<a name="HDInsight"></a>
+
+## HDInsight
+
+<a target="_blank" href="https://gallery.azure.ai/Solution/Fraud-Detection-with-Azure-HDInsight-Spark-Clusters-2">
+Fraud Detection with Azure HDInsight Spark Clusters</a>
+
+<a target="_blank" href="https://gallery.azure.ai/Solution/Loan-Credit-Risk-with-Azure-HDInsight-Spark-Clusters">
+Loan Credit Risk with Azure HDInsight Spark Clusters</a>
+
+<a target="_blank" href="https://gallery.azure.ai/Solution/Loan-ChargeOff-Prediction-with-Azure-HDInsight-Spark-Clusters">
+Loan ChargeOff Prediction with Azure HDInsight Spark Clusters</a>
+
+## Data Science VM
+
+https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/overview#whats-included-in-the-data-science-vm
 
 ## More
 

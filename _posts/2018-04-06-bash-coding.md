@@ -21,49 +21,13 @@ This page dives into the <strong>technical ideosycracies</strong> of the <a targ
 This tutorial picks up from <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/README.md">this README to the mac-setup script tutorial</a>,
 which provides someone new to Macs specific steps to configure and run scripts to install apps on Macs. So first finish reading that about "shbangs" and grep for Bash shell versions.
 
-NOTE: This page is still actively under construction (as of April 26, 2018).
+NOTE: This page is still actively under construction (as of May 29, 2018).
 
-
-## File Names
-
-The Windows operating system makes use of the "extension" or last part of the file name to the right of a dot.
-
-Shell scripts have an extension of ".sh". But that is actually unnecessary.
-
-## Comments and Shebang
-
-In Linux, the first line of the file defines the program used to process the file and the folder path to it. Shell scripts are processed by the bash program built in to Linux operating systems. Bash stands for "Born again shell".
-
-     #!/bin/bash
-
-In Linux, the "#" is called pound or sharp character in music. It precedes all comments.
-
-In Linux, the "!" is called bang or "exclaimation point".
-
-The two characters "#!" is called a "shebang".
-
-Files that want to use a newer version of Bash look to a different folder:
-
-     #!/usr/local/bin/bash
-
-   For more on this, see https://scriptingosx.com/2017/10/on-the-shebang/
-
-## Where did that come from
-
-PROTIP: The name of the file is added as a comment in the code for debugging purposes, to know where a file came from.
-
-## Debugging
-
-To obtain debugging:
-
-     <tt>#!/bin/bash -x</tt>
-
-https://medium.freecodecamp.org/sh-silence-your-bash-scripts-by-coding-your-own-silent-flag-c7e9f8b668a4
 
 ## Traps
 
 The Bash trap command catches signals so it can execute some commands when appropriate,
-such as <a target="_blank" href="https://www.shellscript.sh/trap.html">
+such as <a target="_blank" href="https://www.shellscript.sh/trap.html>
 cleaning up temp files before the script finishes</a>, called an
 <a target="_blank" href="http://redsymbol.net/articles/bash-exit-traps/">exit trap</a>.
 
@@ -169,11 +133,7 @@ LOGFILE="$HOME/$THISPGM.$LOG_DATETIME.log"
 
 ## Logging to file
 
-When AWS launches an instance, user data scripts and cloud-init directives can be specified to run during the first boot cycle. The console sends to:
-
-   <tt>/var/log/cloud-init-output.log<tt>
-
-However, the script is designed so the historical record of each run pops up at the end of the script.
+The script is designed so the historical record of each run pops up at the end of the script.
 This is so you can easily <strong>scroll and search</strong> through the document, something that is difficult on the Console.
 
 What sends statements to a file is this:
@@ -344,21 +304,6 @@ However, a find for sonarqube yields:
 
 PROTIP: So we use that URL found in the full path to the conf file to edit.
 
-
-### GPG Keys for RVM
-
-<a target="_blank" href="https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rvm-on-ubuntu-16-04">NOTE</a>: 
-To verify the legitimacy of a RVM release being downloading, use the <tt>gpg</tt> command
-to contact a public key server (using protocol hkp://) and give it the RVM project's public key 
-which was supposedly signed with its matching private key:
-
-    <pre>gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
-    rvm get stable</pre>
-
-If the response is "gpg: keyserver receive failed: Server indicated a failure"
-see https://cbabhusal.wordpress.com/2016/09/08/rvm-installation-issue-public-key-download-issue/
-
-
 ### MySQL config files
 
 After brew installs mysql, this message appears:
@@ -379,6 +324,8 @@ The same errors are occuring for MariaDB as well.
 So let's just use Postgresql instead to avoid wasting time and headache.
 Go to another blog for advice on this terrible program.
 
+
+## No Brew, No problem
 
 ## Editors
 
@@ -468,18 +415,6 @@ Either way, the "gunzip" file needs to be unzipped and verified.
     Run pact-go to see what options are available.
     Run go get -d github.com/pact-foundation/pact-go to install the source packages
 
-
-## Return Codes
-
-This command returns the result code set by the previous command:
-
-   <tt>echo $?</tt>
-
-Zero (0) is the normal return code. So check for non-zero.
-
-1 AWS S3 commands return if one or more S3 transfers failed.
-
-2 AWS returns if it cannot parse the previous command due to missing required subcommands or arguments or unknown commands or arguments.
 
 
 ## Process start/stop/kill
@@ -1011,7 +946,7 @@ Either way, the response expected is:
 If the title is not found an error message like this appears on the console:
 
    <pre>
-  File "tests/jenkins_secret_chrome.py", line 30, in <module>
+  File "tests/jenkins_secret_chrome.py", line 30, in &LT;module>
     assert "Jenkins [Jenkins]" in driver.title  # bail out if not found.
 AssertionError
    </pre>
@@ -1091,15 +1026,7 @@ The files are downloaded into <a target="_blank" href="https://support.apple.com
 
 <a target="_blank" href="http://sourabhbajaj.com/mac-setup/iTerm/README.html">ITerm2 can make use of these font files</a>.
 
-## Kill processes
 
-<a target="_blank" href="https://medium.freecodecamp.org/find-and-kill-port-processes-on-a-mac-using-bash-c5e95b9e704e">*</a>
-
-   <pre>kill-port() { kill -kill "$(lsof -t -i :$1)"; }</pre>
-
-This function is called using:
-
-   <pre>free-port 3000</pre>
 
 <a name="SayText"></a>
 
@@ -1107,32 +1034,27 @@ This function is called using:
 
 At the bottom of the script is a MacOS command that translates text into voice through the spearker:
 
-   <pre><strong>say "script ended."  # through speaker</strong></pre>
+say "script ended."  # through speaker
 
-This is good if the script runs so long that you can do other things.
 
-But it's not good if you're sitting around other people.
 
 
 ## References
 
-The cannonical place for documentation is:
-
-   * http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html
-   * http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_02_03.html
-   for Debugging bash scripts
-   * https://www.tldp.org/LDP/abs/html/abs-guide.html
-
-https://en.wikipedia.org/wiki/Shell_script
-
-https://www.cheatography.com/davechild/cheat-sheets/linux-command-line/
-http://overapi.com/shellscript
-
 https://jasonjwilliamsny.github.io/wrangling-genomics/01-automating_a_workflow.html
+
 
 https://www.greenend.org.uk/rjk/tech/shellmistakes.html
 
 http://wiki.bash-hackers.org/commands/builtin/set
+
+http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_02_03.html
+Debugging bash scripts
+
+
+https://www.tldp.org/LDP/abs/html/abs-guide.html
+
+http://www.linuxjournal.com/article/9001  on CPU Load Averages
 
 https://www.digitalocean.com/community/tutorials/how-to-use-bash-s-job-control-to-manage-foreground-and-background-processes
 
@@ -1142,13 +1064,15 @@ Includes autocompletion, themes, aliases, custom functions, a few stolen pieces 
 
 https://github.com/denysdovhan/bash-handbook
 
-<a target="_blank" href="https://www.amazon.com/Pro-Bash-Programming-Scripting-Experts/dp/1430219971">
-Packt BOOK: Pro Bash Programming: Scripting the Linux Shell (Expert's Voice in Linux) 1st ed. Edition</a>
-by Chris F.A. Johnson
+   See https://scriptingosx.com/2017/10/on-the-shebang/
+
+## TODO's
+
+For AWS there is a <a target="_blank" href="https://www.cloudping.info/">cloudping.info</a> website which tells people which region is the quickest. Do you know if there is one like it for Azure and Google. If not we can write a Serverless program to do that.
+
 
 ## More on DevOps #
 
 This is one of a series on DevOps:
 
 {% include devops_links.html %}
-
