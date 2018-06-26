@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Data Science"
-excerpt: "Here's how to a legitimate micro-certification"
+excerpt: "Here's how to earn a legitimate micro-degree"
 tags: [perftest]
 shorturl: "https://goo.gl/4sjZh4"
 comments: true
@@ -11,7 +11,9 @@ comments: true
 
 {% include _toc.html %}
 
-## Definitions
+This page contains my notes about both the <strong>Microsoft Professional Program</strong> (MPP) for <strong>Data Science</strong> track and <strong>Artificial Intelligence</strong> track.
+
+## What's Data Science?
 
 Business Intelligence (BI) is closely tied to the design, implementation, and use of
 data warehouses, and the database-oriented technology to support them.
@@ -22,6 +24,9 @@ for others to use, and more on answering questions and communicating the results
 
 
 ## Microsoft
+
+<a target="_blank" href="https://academy.microsoft.com/en-us/professional-program/tracks/artificial-intelligence/">Microsoft Professional Program (MPP) Certification for Artificial Intelligence</a> announced April 2018 covers 10 skills over 10 courses of 8 - 16 hours each, led by Graeme Malcolm:
+
 
 <a target="_blank" href="https://academy.microsoft.com/en-us/professional-program/data-science/">
 https://academy.microsoft.com/en-us/professional-program/data-science</a><br />
@@ -36,42 +41,64 @@ You must take only 9 of 12 classes offered
 because there is an option to take either Python or R
 for some of the courses.
 
-   PROTIP: Pay to get verified on just 9 classes (for a <strong>total of $767</strong>), 
+   PROTIP: Pay to get verified on 10 classes (for a <strong>total of $990</strong>), 
    then audit the rest for free. For example, if you only want to learn Python and not R:
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr><th> US$ </th><th> Course </th><th> Instructor </th></tr>
-<tr align="top"><td> $25 </td><td> <a target="_blank" href="https://www.edx.org/course/data-science-orientation-microsoft-dat101x">
-Data Science Orientation</a> </td><td> Liberty Munson </td></tr>
+<tr><th> US$ </th><th> Course </th><th> Instructors</th><th>DS</th><th>AI</th></tr>
+<tr align="top"><td> $99 </td><td> <a target="_blank" href="https://www.edx.org/course/introduction-to-data-science">
+Introduction to Data Science</a> </td><td> Graeme Malcolm, Liberty Munson</td><td>1</td><td>-</td></tr>
+<tr align="top"><td> $99 </td><td> <a target="_blank" href="https://www.edx.org/course/introduction-to-artificial-intelligence-ai">
+Introduction to AI</a> </td><td> Graeme Malcolm</td><td>-</td><td>1</td></tr>
 <tr align="top"><td> $99 </td><td> <a target="_blank" href="https://www.edx.org/course/querying-transact-sql-microsoft-dat201x-6">
-Querying Data with Transact-SQL</a> </td><td> ? </td></tr>
+Querying Data with Transact-SQL</a> </td><td> Geoff Allix</td><td>2</td><td>-</td></tr>
 <tr align="top"><td rowspan="2"> $99 </td><td> <a target="_blank" href="https://www.edx.org/course/analyzing-visualizing-data-excel-microsoft-dat206x-5">
-1) Analyzing and Visualizing Data with Excel</a></td><td>?</td></tr>
+1) Analyzing and Visualizing Data with Excel</a></td><td>Dany Hoter, Jonathan Sanito</td><td>3</td><td>-</td></tr>
    <tr align="top"><td><a target="_blank" href="https://www.edx.org/course/analyzing-visualizing-data-power-bi-microsoft-dat207x-0">
-2) Analyzing and Visualizing Data with Power BI</a> </td><td> Dany Hoter </td></tr>
+2) Analyzing and Visualizing Data with Power BI</a> </td><td> Dany Hoter</td><td>4</td><td>-</td></tr>
+
+<tr align="top"><td> $99 </td><td> <a target="_blank" href="https://www.edx.org/course/essential-mathematics-for-artificial-intelligence">
+   Essential Mathematics for Artificial Intelligence</a></td><td>Graeme Malcolm</td><td>-</td><td>3</td></tr>
+<tr align="top"><td> $99 </td><td> <a target="_blank" href="https://www.edx.org/course/ethics-and-law-in-analytics-and-ai">
+   Ethics and Law in Data and Analytics</a></td><td>Ben Olsen, Geneva Lasprogata, Nathan Colaner</td><td>-</td><td>4</td></tr>
+
 <tr align="top"><td> $99 </td><td> <a target="_blank" href="https://www.edx.org/course/essential-statistics-data-analysis-using-microsoft-dat222x">
-Essential Statistics for Data Analysis using Excel</a></td><td> ? </td></tr>
-<tr align="top"><td rowspan="2"> $99 </td><td> <a target="_blank" href="https://www.edx.org/course/introduction-python-data-science-microsoft-dat208x-1">
-1) Introduction to Python for Data Science</a> </td><td> Filip Schouwenaars, DataCamp  </td></tr>
+Essential Statistics for Data Analysis using Excel</a></td><td>Liberty J. Munson, Matthew Minton </td><td>5</td><td>-</td></tr>
+<tr align="top"><td rowspan="2"> $99 </td><td> <a target="_blank" href="https://www.edx.org/course/introduction-to-python-for-data-science">
+1) Introduction to Python for Data Science</a> </td><td> Filip Schouwenaars, Jonathan Sanito</td><td>6</td><td>3</td></tr>
    <tr align="top"><td><a target="_blank" href="https://www.edx.org/course/introduction-r-data-science-microsoft-dat204x">
-   2) Introduction to R for Data Science</a> </td><td> ? </td></tr>
+   2) Introduction to R for Data Science</a> </td><td>Filip Schouwenaars, Jonathan Sanito</td><td>6</td><td>-</td></tr>
 <tr align="top"><td> $99 </td><td> <a target="_blank" href="https://www.edx.org/course/data-science-essentials-microsoft-dat203-1x">
-Data Science Essentials</a> </td><td> Cynthia Rudin & Steve Elston</td></tr>
+Data Science Essentials</a> </td><td>Graeme Malcolm, Cynthia Rudin, Steve Elston</td><td>7</td><td>5</td></tr>
 <tr align="top"><td> $99 </td><td> <a target="_blank" href="https://www.edx.org/course/principles-machine-learning-microsoft-dat203-2x">
-Principles of Machine Learning</a> </td><td> ? </td></tr>
+Principles of Machine Learning</a> </td><td> Graeme Malcolm, Steve Elston, Cynthia Rudin </td><td>8</td><td>6</td></tr>
 <tr align="top"><td rowspan="2"> $99 </td><td> <a target="_blank" href="https://www.edx.org/course/programming-python-data-science-microsoft-dat210x-1">
-1) Programming with Python for Data Science</a></td><td> ? </td></tr>
+   1) Programming with Python for Data Science</a></td><td> ?</td><td>9</td><td>-</td></tr>
    <tr align="top"><td><a target="_blank" href="https://www.edx.org/course/programming-r-data-science-microsoft-dat209x">
-   2) Programming with R for Data Science</a> </td><td> ? </td></tr>
+   2) Programming with R for Data Science</a> </td><td> ? </td><td>9</td><td>-</td></tr>
 <tr align="top"><td rowspan="3"> $99 </td><td> <a target="_blank" href="https://www.edx.org/course/applied-machine-learning-microsoft-dat203-3x">
-1) Applied Machine Learning</a></td><td>?</td></tr>
+   1) Applied Machine Learning</a></td><td>Graeme Malcolm, Cynthia Rudin, Steve Elston</td><td>--</td></tr>
    <tr align="top"><td><a target="_blank" href="https://www.edx.org/course/implementing-predictive-solutions-spark-microsoft-dat202-3x">
    2) Implementing Predictive Solutions with Spark in Azure HDInsight</a> 
-   (using Python, Scala, and R with Apache Spark)</td><td> ? </td></tr>
+   (using Python, Scala, and R with Apache Spark)</td><td>Graeme Malcolm</td><td>9</td><td>-</td></tr>
    <tr align="top"><td><a target="_blank" href="https://www.edx.org/course/developing-intelligent-apps-microsoft-dat211x-0">
-   3) Developing Intelligent Applications</a> </td><td> Gerry O'Brien & Amy Nicholson </td></tr>
-<tr align="top"><td> $49 </td><td> <a target="_blank" href="https://www.edx.org/course/data-science-professional-project-microsoft-dat102x-2">Data Science Professional Capstone Project</a> </td><td> ? </td></tr>
+   3) Developing Intelligent Applications</a> </td><td> Gerry O'Brien, Amy Nicholson</td><td>9</td><td>-</td></tr>
+<tr align="top"><td> $49 </td><td> <a target="_blank" href="https://www.edx.org/course/data-science-professional-project-microsoft-dat102x-2">Data Science Professional Capstone Project</a> </td><td>Graeme Malcolm</td><td>10</td><td>-</td></tr>
+
+<tr align="top"><td rowspan="1"> $99 </td><td> <a target="_blank" href="https://www.edx.org/course/deep-learning-explained">
+   Deep Learning Explained</a></td><td>Jonathan Sanito, Sayan Pathak, Roland Fernandez</td><td>-</td><td>7</td></tr>
+<tr align="top"><td rowspan="1"> $99 </td><td> <a target="_blank" href="https://www.edx.org/course/reinforcement-learning-explained">
+   Reinforcement Learning Explained</a></td><td>Jonathan Sanito, Roland Fernandez, Adith Swaminathan</td><td>-</td><td>8</td></tr>
+<tr align="top"><td rowspan="3"> $99 </td><td> <a target="_blank" href="https://www.edx.org/course/natural-language-processing-nlp">
+   1) Natural Language Processing (NLP)</a></td><td>Lei Ma, Roland Fernandez, Xiaodong He</td><td>-</td><td>9</td></tr>
+   <tr align="top"><td> <a target="_blank" href="https://www.edx.org/course/speech-recognition-systems">
+   2) Speech Recognition</a></td><td>Adrian Leven</td><td>-</td><td>9</td></tr>
+   <tr align="top"><td> <a target="_blank" href="https://www.edx.org/course/computer-vision-and-image-analysis">
+   3) Computer Vision and Image Analysis</a></td><td>Andrew Byrne, Ivan Griffin, Daire McNamara</td><td>-</td><td>9</td></tr>
+<tr align="top"><td> $49 </td><td> <a target="_blank" href="https://www.edx.org/course/microsoft-professional-capstone-artificial-intelligence">Microsoft Professional Capstone : Artificial Intelligence (DAT 264X)</a> </td><td>Graeme Malcolm</td><td>-</td><td>10</td></tr>
 </table>
+
+The predecessor of this program last year had $25 for the intro class and $49 for the "Capstone".
 
 NOTE: There is NO one-on-one tutoring with these classes, unlike 
 the $1,000 Xamarin certificate. And there is no job search assistance like Udacity provides
