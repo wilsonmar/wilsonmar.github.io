@@ -424,6 +424,10 @@ From among videos for users of IntelliJ Community Edition
 <a target="_blank" href="https://www.youtube.com/watch?v=L_jXj0XTwSg&list=PLPZy-hmwOdEXdOtXdFzyx_XCnrF_oD2Ft">
 on this Playlist</a> are these on Git:
 
+* <a target="_blank" href="https://www.youtube.com/watch?v=kH-Ng8gHoiE">
+   Git in IntelliJ | Tips & Tricks</a> Nov 14, 2017 [15:30]
+   by Tech Primers
+
 * <a target="_blank" href="https://www.youtube.com/watch?v=uUzRMOCBorg">
    Using Git in IntelliJ</a> Mar 2, 2017
    by LaunchCode
