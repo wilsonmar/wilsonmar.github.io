@@ -424,12 +424,16 @@ From among videos for users of IntelliJ Community Edition
 <a target="_blank" href="https://www.youtube.com/watch?v=L_jXj0XTwSg&list=PLPZy-hmwOdEXdOtXdFzyx_XCnrF_oD2Ft">
 on this Playlist</a> are these on Git:
 
+* <a target="_blank" href="https://www.youtube.com/watch?v=uUzRMOCBorg">
+   Using Git in IntelliJ</a> Mar 2, 2017
+   by LaunchCode
+
 * <a target="_blank" href="https://www.youtube.com/watch?v=G7kJRkUaVHQ&t=40s">
-   Working with Git</a>
-   Jun 15, 2015
+   Working with Git</a> Jun 15, 2015
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=G7kJRkUaVHQ">
    Working with Git on IntelliJ IDEA</a>
+
 
 ### Atlassian Source Tree
 
