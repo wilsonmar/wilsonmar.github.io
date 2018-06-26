@@ -457,11 +457,18 @@ Advantage of using the intelliJ IDE:
    * Supports different programming languages (Java, Javascript, Clojure, etc.)
    * Editions for different operating systems:  Windows, Linux, etc. 
 
+Videos by LaunchCode:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=S764o0mAXhg">Intro to IntelliJ</a> Mar 2, 2017
+   * <a target="_blank" href="https://www.youtube.com/watch?v=1bCgzjatcr4">Debugging in IntelliJ</a> Mar 2, 2017 [17:39]
+
 Videos:
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=MZge92bbU7E">Zen Habits of using IntelliJ IDEA</a> Nov 9, 2017 at Devoxx [50:10] by Victor Kropp (@kropp)
    * <a target="_blank" href="https://www.youtube.com/watch?v=eq3KiAH4IBI">42 IntelliJ IDEA Tips and Tricks</a> Oct 23, 
 from IntelliJ IDEA
+   <br /><br />
+
 
 
 ### IntelliJ Control Key Shortcuts
