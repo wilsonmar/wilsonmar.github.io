@@ -213,34 +213,39 @@ I created a bootstrap Bash script to install this natively as a localhost on a M
 <a target="_blank" href="https://github.com/wilsonmar/mac-setup">
 https://github.com/wilsonmar/mac-setup</a>
 
-To use the script, clone the repo and edit file <tt>secrets.sh</tt> to contain 
+To use the script, clone the repo and edit file <tt>secrets.sh</tt> such that variable 
+LOCALHOSTS contains the value "jpetstore-6". Then run the script <tt>./mac-setup-all.sh</tt>
+See the repo's README.
+
+TODO: Create a Docker image for this.
 
 
 ### MyBatis
 
 Rather than downloading a 
 <a target="_blank" href="https://github.com/mybatis/jpetstore-6/releases">release zip file</a>, 
-use a Git client, as the <a target="_blank" href="https://github.com/mybatis/jpetstore-6/blob/master/README.md">readme</a> recommends.
-
-TODO: Create a Docker image for this.
-
-The script does the following:
+use a Git client, as the <a target="_blank" href="https://github.com/mybatis/jpetstore-6/blob/master/README.md">readme</a> recommends the following, which the mac-setup-all.sh script does:
 
 0. Create a folder to hold. I prefer to have a container folder
    (jpetstore) because there are multiple repositories:
 
-   ~/gits/jpetstore/jpetstore-6
+   ~/gits/<em>your acct</em>/jpetstore-6
 
-   ~/gits/jpetstore/mybatis-spring-boot-jpetstore<br />
-   is an alternative from Kazuki Shimizu of Japan.
+   ~/gits/<em>you acct</em>/jpetstore/mybatis-spring-boot-jpetstore<br />
+   is an alternative from Kazuki Shimizu (of Japan).
+
    It is implemented using <a target="_blank" href="http://www.thymeleaf.org/"> Thymeleaf</a> 3.0 templating.
 
-0. In a Terminal, obtain the whole repository with its history:
+0. In a Terminal, fork the repository and obtain your own version of the whole repository.
+   The example here was forked by my account, wilsonmar. Yours will be different:
 
    <pre><strong>
-   git clone https://github.com/mybatis/jpetstore-6.git
+   git clone https://github.com/wilsonmar/jpetstore-6.git --depth=1
    cd jpetstore-6
+   git remote add upstream https://github.com/mybatis/jpetstore-6.git 
    </strong></pre>
+
+   "--depth=1" can be used here to limit download to just the latest commit of the master branch because we're not using previous commits or other branches.
 
 0. Have Maven download and install <a href="#Dependencies">
    dependencies</a> defined in pom.xml:
@@ -249,9 +254,31 @@ The script does the following:
    mvn clean package
    </strong></pre>
 
-   JPetStore 6 should run in any Servlet 2.5 y JSP 2.1 compliant Java server.
+   JPetStore-6 should run in any Servlet 2.5 y JSP 2.1 compliant Java server.
 
    Eclipse is not needed. You can run the sample from your favorite IDE or the command line.
+
+   ### Change port
+
+0. To change the port from the default 8080 to something else, edit file:
+
+   <pre>target/cargo/configurations/tomcat9x/conf/server.xml</strong>
+
+   "tomcat9x" will eventually be incremented.
+
+0. Scroll down to the line:
+
+   <tt>
+   &LT;Connector SSLEnabled="false" URIEncoding="ISO-8859-1" connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443" scheme="http" secure="false"/>
+   </tt>
+
+0. Change port="8080" to port="$JPETSTORE_PORT".
+0. Save the file.
+
+   https://github.com/blackburntech/jpetstore-sample
+   suggests additional steps
+
+   ### Start server
 
 0. Startup the Tomcat server and deploy web application
    using the
@@ -276,21 +303,6 @@ The script does the following:
 0. Click "Enter the store" for the 
    <a href="#LandingPage">main menu</a>.
 
-### Change port
-
-0. To change the port from the default 8080 to something else, edit file:
-
-   <pre>target/cargo/configurations/tomcat8x/conf/server.xml</strong>
-
-0. Scroll down to the line:
-
-   <tt>
-   &LT;Connector SSLEnabled="false" URIEncoding="ISO-8859-1" connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443" scheme="http" secure="false"/>
-   </tt>
-
-0. Change the number.
-
-0. Save the file and restart the server.   
 
 
 <a name="Dependencies"></a>
