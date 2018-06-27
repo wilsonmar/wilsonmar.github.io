@@ -13,8 +13,6 @@ comments: true
 ---
 <i>{{ page.excerpt }}</i>
 
-<a target="_blank" href="https://gitter.im/wilsonmar/wilsonmar.github.io?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge"><img src="https://badges.gitter.im/wilsonmar/wilsonmar.github.io.svg" alt="Gitter" /></a></p>
-
 {% include _toc.html %}
 
 This page describes the various ways to 
@@ -29,7 +27,7 @@ uses it as a sample app in their
 <a target="_blank" href="http://www.neotys.com/documents/doc/neoload/latest/en/html/#1609.htm">
 docs</a>.
 
-
+## UI assessment
 
 <a name="LandingPage"></a>
 
@@ -70,10 +68,10 @@ by Clinton Begin (of Alberta):
 ![jpetstore6 site map](https://cloud.githubusercontent.com/assets/300046/21751209/7ad5c63a-d591-11e6-88ea-c67d3dc107f6.png)
 
 
-## Performance Tests
+## Imposing transaction load
 
-Performance testing needs a set of <strong>loops</strong>
-to impose artificial load.
+To impose artificial load, define performance test scripts this a set of <strong>loops</strong>,
+each of which can be run separately to measure a different potential issue:
 
 1. <a href="#LandingPage">Landing page</a>  and
    <strong>Info (?) page</strong>
@@ -85,7 +83,8 @@ to impose artificial load.
    Rather than coding to click specific items,
    this activity is often specified by a file with the test program iterates through.
 
-3. <strong>Register</strong> to see how many the system can accommodate when the system is widely announced to the public.
+3. <strong>Register</strong> to see how many the system can accommodate when the system is widely announced to the public. How many new users can jump in at once without the system degrading? 
+That answer informs the throttling of publicity so new people come in at a pattern the system can accomodate.
 
    QUESTION: j2ee is the default user? What's the password?
 
@@ -93,7 +92,7 @@ to impose artificial load.
    reached after a click of <strong>Sign In</strong>.
 
    TODO: Variations in registration data from a file
-   to load various users.
+   to load various types of users.
 
 4. <strong>Login</strong> to see what happens when everyone arrives at the same time (such as at a call center during start of shift).
 
@@ -110,6 +109,7 @@ to impose artificial load.
    <strong>payment gateways</strong> can keep up with a lot of people buying at once.
 
    Except the JPetStore app does not connect with a payment gateway.
+   So this is a mute point.
 
 10. <strong>End-to-end</strong> with all the above to ensure that the system can handle a pattern of work during scalability testing (to emulate a mention on Reddit or Hacker News that causes a buying frenzy).
 
@@ -122,14 +122,14 @@ to impose artificial load.
 Additionally, there are <strong>error</strong> responses
 to each of the above, created by "negative" tests:
 
-1. Server unavailable (NGINX).
+1. Server unavailable (Apache Tomcat/NGINX).
 
-2. Item not available during browsing.
-
-3. Registration error (such as bad email,
+2. Registration error (such as bad email,
    user already defined, etc.).
 
-4. Login error, such as forgotten password change.
+3. Login error, such as forgotten password change.
+
+4. Item not available (out of stock) during browsing. Ideally, there is a checkbox to eliminate from display items not in inventory (for advanced users).
 
 5. Search not found.
 
@@ -140,8 +140,6 @@ etc.
 Since JPeterStore was built for developers, missing are some features in the 
 WebTours app Mercury/HP built to use as a sample app
 during demos and training for LoadRunner.
-
-
 
 
 ### Pattern of iteration
@@ -211,6 +209,12 @@ There are several variations
 
 http://support.neotys.com/misc/jpetstore-test.zip
 
+I created a bootstrap Bash script to install this natively as a localhost on a MacOS at
+<a target="_blank" href="https://github.com/wilsonmar/mac-setup">
+https://github.com/wilsonmar/mac-setup</a>
+
+To use the script, clone the repo and edit file <tt>secrets.sh</tt> to contain 
+
 
 ### MyBatis
 
@@ -218,7 +222,9 @@ Rather than downloading a
 <a target="_blank" href="https://github.com/mybatis/jpetstore-6/releases">release zip file</a>, 
 use a Git client, as the <a target="_blank" href="https://github.com/mybatis/jpetstore-6/blob/master/README.md">readme</a> recommends.
 
-TODO: Create a bootstrap script that does the following:
+TODO: Create a Docker image for this.
+
+The script does the following:
 
 0. Create a folder to hold. I prefer to have a container folder
    (jpetstore) because there are multiple repositories:
