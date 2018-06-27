@@ -187,4 +187,4 @@ https://www.wikiwand.com/en/Deep_learning
 
 This is one of a series on AI, Machine Learning, Deep Learning, Robotics, and Analytics:
 
-{% include   %}
+{% include ai_links.html  %}
