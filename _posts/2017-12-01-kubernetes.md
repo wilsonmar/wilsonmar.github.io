@@ -63,6 +63,9 @@ Kubernetes was created inside Google (using the [Golang](/Golang/) programming l
 and used for over a decade before being open-sourced in 2014 to the 
 Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>).
 
+Kubernetes is often abbreviated as "k8s", with 8 replacing the number of characters between k and s.
+Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to <a target="_blank" href="https://kubernetes.io/">https://kubernetes.io</a>, the home page for the software.
+
 Several prominent technology vendor have included Kubernetes:
 
 * Amazon's Elastic Container Service for Kubernetes (EKS)
@@ -71,13 +74,38 @@ Several prominent technology vendor have included Kubernetes:
 * Mesosphere DC/OS 
 * Rancher Labs for its container management platform
 * Pivotal PKS 
-* Red Hat OpenShift Enterprise platform as a service (PaaS) built on top of Docker and Kubernetes. 
+* Red Hat <a href="#OpenShift">OpenShift</a> Enterprise platform as a service (PaaS)
 * CoreOS Tectonic
 * Mirantis' Cloud Platform
 * IBM Cloud Kubernetes Service (IKS)
 * Containers by Mail.Ru Cloud Solutions[23], 
 * Rackspace's Kubernetes as a Service
 * Giant Swarm managed Kubernetes
+
+### Certification in Kubernetes
+
+On November 8, 2016 CNCF announced their 
+<a target="_blank" href="https://www.cncf.io/certification/expert/">3-hour task-based Certified Kubernetes Administrator (CKA)</a> and 2-hour Application Developer (CKAD) exams. Each costs $300, taken <a target="_blank" href="http://www.examslocal.com/linuxfoundation/"> at home</a> using their Chrome extension from "Innovative Exams", which uses your laptop camera and microphone watching you use a virtual Ubuntu machine. No multiple choice questions.
+
+CNCF is part of the Linux Foundation. It's a non-profit organization, thus the ".org".
+
+1. Get an account at <a target="_blank" href="https://identity.linuxfoundation.org/">
+   https://identity.linuxfoundation.org</a>
+
+   PROTIP: The word "Kubernetes" is a registered trademark of the Linux Foundation, which maintains the website
+   <a target="_blank" href="https://kubernetes.io">https://kubernetes.io</a> and
+   source code at <a target="_blank" href="https://github.com/kubernetes/kubernetes">
+   https://github.com/kubernetes/kubernetes</a>
+
+   * v1.0 was committed on July 2015 within GitHub
+   * v1.6 was led by a CoreOS developer.
+   * v1.7 was led by Google.
+   * v1.8 is led by a Microsoft employee (<a target="_blank" href="https://twitter.com/jaydumars?lang=en">Jaice Singer DuMars</a>) after Microsoft joined the CNCF July 2017.
+
+2. Use your Linux Foundation credentials to sign-in at <a target="_blank" href="https://www.examslocal.com/">examslocal.com</a> to register for the exams.
+
+Its Google heritage means Kubernetes is about scaling for a lot of traffic
+with redundancies to achieve high availability (HA).
 
 
 ## Competitors
@@ -168,6 +196,9 @@ The <strong>describe</strong> command provides more detailed information.
    ![kubernetes-openshift-502x375-107638](https://user-images.githubusercontent.com/300046/42333404-e3f5953a-8037-11e8-9691-0172a8a96388.jpg)
 
    "The primary grouping concept in Kubernetes is the namespace. Namespaces are also a way to divide cluster resources between multiple uses. That being said, there is no security between namespaces in Kubernetes; if you are a “user” in a Kubernetes cluster, you can see all the different namespaces and the resources defined in them." -- from the book: OpenShift for Developers, A Guide for Impatient Beginners by Grant Shipley and Graham Dumpleton.
+
+   ![k8s-openshift-projects-461x277-64498](https://user-images.githubusercontent.com/300046/42337120-f421563c-8042-11e8-9d2b-d19615b4da0c.jpg)
+
 
    OpenShift adds security annotations to namespaces and calls them <strong>projects</strong>. OpenShift project wraps a namespace, with access to the namespace being controlled via the project. Access is controlled through an authentication and authorization model based on users and groups. Projects in OpenShift therefore provide the walls between namespaces, ensuring that users, or applications, can only see and access what they are allowed to.
 
@@ -283,34 +314,6 @@ The Kubtest suite builds, stages, extracts, and brings up the cluster.
 After testing, it dumps logs and tears down the test rig.
 
 
-
-### Skill certifications
-
-On November 8, 2016 CNCF announced their 
-<a target="_blank" href="https://www.cncf.io/certification/expert/">3-hour task-based Certified Kubernetes Administrator (CKA)</a> and 2-hour Application Developer (CKAD) exams. Each costs $300, taken <a target="_blank" href="http://www.examslocal.com/linuxfoundation/"> at home</a> using their Chrome extension from "Innovative Exams", which uses your laptop camera and microphone watching you use a virtual Ubuntu machine. No multiple choice questions.
-
-CNCF is part of the Linux Foundation. It's a non-profit organization, thus the ".org".
-
-1. Get an account at <a target="_blank" href="https://identity.linuxfoundation.org/">
-   https://identity.linuxfoundation.org</a>
-
-   PROTIP: The word "Kubernetes" is a registered trademark of the Linux Foundation, which maintains the website
-   <a target="_blank" href="https://kubernetes.io">https://kubernetes.io</a> and
-   source code at <a target="_blank" href="https://github.com/kubernetes/kubernetes">
-   https://github.com/kubernetes/kubernetes</a>
-
-   * v1.0 was committed on July 2015 within GitHub
-   * v1.6 was led by a CoreOS developer.
-   * v1.7 was led by Google.
-   * v1.8 is led by a Microsoft employee (<a target="_blank" href="https://twitter.com/jaydumars?lang=en">Jaice Singer DuMars</a>) after Microsoft joined the CNCF July 2017.
-
-2. Use your Linux Foundation credentials to sign-in at <a target="_blank" href="https://www.examslocal.com/">examslocal.com</a> to register for the exams.
-
-Its Google heritage means Kubernetes is about scaling for a lot of traffic
-with redundancies to achieve high availability (HA).
-
-Kubernetes is often abbreviated as "k8s", with 8 replacing the number of characters between k and s.
-Thus, https://k8s.io also works.
 
 
 ## Social
