@@ -23,18 +23,17 @@ arranged in a sequence to make this complex material easier to understand quickl
 
 ## Why Kubernetes?
 
-Kubernetes leverages efforts to "containerize" <a href="#micro-services">microservice apps</a> (such as NginX, Redis, search, etc.) <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, Quay, or an organization's own binary repository setup using Nexus or Artifactory. 
+Kubernetes is called "container orchestration" software because it automates the deployment, scaling and management of containerized applications<a target="_blank" href="https://en.wikipedia.org/wiki/Kubernetes">*</a>. 
 
-Kubernetes also works with <strong>rkt</strong> (pronounced "rocket") containers.
-But this tutorial focuses on Docker.
+"Containerized" <a href="#micro-services">microservice apps</a> are <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, Quay, or an organization's own binary repository setup using Nexus or Artifactory. Kubernetes also works with <strong>rkt</strong> (pronounced "rocket") containers. But this tutorial focuses on Docker.
 
-Kubernetes automates <strong>resilience</strong> to containers by abstacting the network and storage of a virtual <strong>containers</strong> in replaceable "pods":
+Kubernetes automates <strong>resilience</strong> into containers by abstacting the network and storage of a virtual <strong>containers</strong> in replaceable "pods":
 
 ![k8s-container-sets-479x364](https://user-images.githubusercontent.com/300046/33526550-6c98a980-d800-11e7-9862-ff202492e08b.jpg)
 <!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
 
 Each pod can hold one or more Docker containers.
-Within a pod, each container has a different <srtong>port number</strong>.
+Within a pod, each container has a different <strong>port number</strong>.
 But containers share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage, and other resources.
 
 Kubernetes replicates Pods across several worker <strong>nodes</strong> (VM or physical machines).
@@ -42,7 +41,7 @@ Kubernetes replicates Pods across several worker <strong>nodes</strong> (VM or p
 <a target="_blank" title="from Yongbok Kim (who writes in Korean)" href="https://user-images.githubusercontent.com/300046/33525757-6fcd2624-d7f3-11e7-9745-79ce5f9600e9.jpg">
 <img alt="k8s-arch-ruo91-797x451-104467" src="https://user-images.githubusercontent.com/300046/33525757-6fcd2624-d7f3-11e7-9745-79ce5f9600e9.jpg"></a>
 
-This diagram is referenced throughout this tutorial, particularly in the <a href="#Details">Details section below</a>. It is by Yongbok Kim who presents <a target="_blank" href="https://translate.google.com/translate?hl=en&sl=ko&tl=en&u=http://www.yongbok.net/blog/google-kubernetes-container-cluster-manager/">
+The diagram above is referenced throughout this tutorial, particularly in the <a href="#Details">Details section below</a>. It is by Yongbok Kim who presents <a target="_blank" href="https://translate.google.com/translate?hl=en&sl=ko&tl=en&u=http://www.yongbok.net/blog/google-kubernetes-container-cluster-manager/">
 animations on his website</a>.
 
 PROTIP: Kubernetes recently added <strong>auto-scaling</strong> based on metrics API measurement of demand. Before that, Kubernetes manages the instantiating, starting, stopping, updating, and deleting of a <strong>pre-defined number of pod replicas</strong> based on declarations in <strong>*.yaml</strong> files or interactive commands.
@@ -64,6 +63,22 @@ Kubernetes was created inside Google (using the [Golang](/Golang/) programming l
 and used for over a decade before being open-sourced in 2014 to the 
 Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>).
 
+Several prominent technology vendor have included Kubernetes:
+
+* Amazon's Elastic Container Service for Kubernetes (EKS)
+* Microsoft's Azure Kubernetes Service (AKS)
+* Google Kubernetes Engine (GKE)
+* Mesosphere DC/OS 
+* Rancher Labs for its container management platform
+* Pivotal PKS 
+* Red Hat OpenShift Enterprise platform as a service (PaaS) built on top of Docker and Kubernetes. 
+* CoreOS Tectonic
+* Mirantis' Cloud Platform
+* IBM Cloud Kubernetes Service (IKS)
+* Containers by Mail.Ru Cloud Solutions[23], 
+* Rackspace's Kubernetes as a Service
+* Giant Swarm managed Kubernetes
+
 
 ## Competitors
 
@@ -75,8 +90,6 @@ Other orchestration systems for Docker containers:
 
 * Rancher
 <br /><br />
-
-OpenShift Enterprise from Red Hat is not a competitor to Kubernetes, but a platform as a service (PaaS) built on top of Docker and Kubernetes. 
 
 
 ### Kublet
@@ -98,14 +111,14 @@ and invokes the Kubernetes <strong>API server</strong>. That command is installe
 The kubectl <strong>get nodes</strong> command lists basic information about each node.
 The <strong>describe</strong> command provides more detailed information.
 
-   ### API Server
+### API Server
 
    The kubectl client communicates using REST API calls to an <strong>API Server</strong> 
    which handles authentication and authorization.
 
    <a name="Scheduler"></a>
    
-   ## Scheduler
+### Scheduler
 
    The API Server puts nodes in "pending" state when it sends requests to bring them up and down to the <strong>Scheduler</strong> to do so only when there are enough resources available.
    The scheduler can operate according to a schedule.
@@ -115,7 +128,7 @@ The <strong>describe</strong> command provides more detailed information.
    
    <a name="#etcd"></a>
 
-   ### etcd storage 
+### etcd storage 
 
    The API Server and Scheduler persists their configuration and status information in a 
    <strong>ETCD cluster</strong> 
@@ -129,7 +142,7 @@ The <strong>describe</strong> command provides more detailed information.
 
    <a name="Controllers"></a>
    
-   ### Controllers
+### Controllers
 
    The <strong>Node controller</strong> assigns a CIDR block to newly registered nodes,
    then continually monitors node health. When necessary, it taints unhealthy nodes and
@@ -140,36 +153,39 @@ The <strong>describe</strong> command provides more detailed information.
    Communications with outside callers occur through a single Virtual IP address (VIP) going through the <strong>kube-proxy</strong> which load balances traffic to <strong>deployments</strong>, which are load-balanced sets of pods within each node.
 
    Load balancing among nodes (hosts within a cloud) are handled by third-party port forwarding
-   via Ingress controllers.
+   via Ingress controllers. See <a target="_blank" href="https://kubernetes.io/docs/concepts/services-networking/ingress/">Ingress definitions</a>.
 
    An "Ingress" is a collection of rules that allow inbound connections to reach the cluster services.
 
-   In Kubernetes the Ingress Controller could be a NGINX container providing reverse proxy capabilities, and the Ingress Resource defines the connection rules.
+   In Kubernetes the <strong>Ingress Controller</strong> could be a NGINX container providing reverse proxy capabilities, and the <strong>Ingress Resource</strong> defines the connection rules.
 
-   ### OpenShift
+### OpenShift
 
-   This diagram illustrates what OpenShift adds: 
+   OpenShift's Router is instead a HAProxy container (taking the place of NGINX).
+
+   <a target="_blank" href="https://docs.openshift.com/enterprise/3.2/architecture/core_concepts/routes.html">
+   This diagram</a> illustrates what OpenShift adds: 
    ![kubernetes-openshift-502x375-107638](https://user-images.githubusercontent.com/300046/42333404-e3f5953a-8037-11e8-9691-0172a8a96388.jpg)
 
+   "The primary grouping concept in Kubernetes is the namespace. Namespaces are also a way to divide cluster resources between multiple uses. That being said, there is no security between namespaces in Kubernetes; if you are a “user” in a Kubernetes cluster, you can see all the different namespaces and the resources defined in them." -- from the book: OpenShift for Developers, A Guide for Impatient Beginners by Grant Shipley and Graham Dumpleton.
+
+   OpenShift adds security annotations to namespaces and calls them <strong>projects</strong>. OpenShift project wraps a namespace, with access to the namespace being controlled via the project. Access is controlled through an authentication and authorization model based on users and groups. Projects in OpenShift therefore provide the walls between namespaces, ensuring that users, or applications, can only see and access what they are allowed to.
 
 
-
-   ### Flannel 
+### Flannel 
 
    PROTIP: Kubernetes uses third-party services to handle load balancing and port forwarding through 
    <strong>ingress objects</strong> managed by an ingress controller.
 
    CNI (Container Network Interface) 
    
-   Flannel.
-
    Other CNI vendors include Calico, Cilium, Contiv.
 
-   ### HA Proxy cluster
+### HA Proxy cluster
 
    For network resiliency, <strong>HA Proxy cluster</strong> distributes traffic among nodes.
 
-   ### cAdvisor
+### cAdvisor
 
 To collect resource usage and performance characteristics of running containers,
 many install a pod containing <a target="_blank" href="https://github.com/google/cadvisor">Google's</a> Container Advisor (<strong>cAdvisor</strong>). It aggregates and exports telemetry to an <strong>InfluxDB</strong> database for visualization using <strong>Grafana</strong>.
