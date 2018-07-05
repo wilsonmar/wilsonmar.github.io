@@ -21,51 +21,76 @@ comments: true
 This is a hands-on "deep dive" tutorial with commentary along the way, 
 arranged in a sequence to make this complex material easier to understand quickly.
 
-We begin with a "bottom-up" description of the architecture with a gradual reveal video:
-
 ## Why Kubernetes?
 
-Kubernetes leverages efforts to "containerize" <a href="#micro-services">microservice app</a> (such as NginX, Redis, search, etc.) Dockerized into a virtual <strong>container</strong> image pulled from <strong>DockerHub</strong>.
-
-PROTIP: Use security-vetted installers in Docker Enterprise, Quay, or an organization's own binary repository setup using Nexus or Artifactory. 
+Kubernetes leverages efforts to "containerize" <a href="#micro-services">microservice apps</a> (such as NginX, Redis, search, etc.) <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, Quay, or an organization's own binary repository setup using Nexus or Artifactory. 
 
 Kubernetes also works with <strong>rkt</strong> (pronounced "rocket") containers.
 But this tutorial focuses on Docker.
 
+Kubernetes automates <strong>resilience</strong> to containers by abstacting the network and storage of a virtual <strong>containers</strong> in replaceable "pods":
+
 ![k8s-container-sets-479x364](https://user-images.githubusercontent.com/300046/33526550-6c98a980-d800-11e7-9862-ff202492e08b.jpg)
 <!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
 
-Kubernetes automates <strong>resilience</strong> to containers by abstacting the network and storage of containers in replaceable "pods". Each pod can hold one or more Docker containers.
+Each pod can hold one or more Docker containers.
 Within a pod, each container has a different <srtong>port number</strong>.
-But containers??? in the same pod share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage, and other resources.
+But containers share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage, and other resources.
+
+Kubernetes replicates Pods across several worker <strong>nodes</strong> (VM or physical machines).
 
 <a target="_blank" title="from Yongbok Kim (who writes in Korean)" href="https://user-images.githubusercontent.com/300046/33525757-6fcd2624-d7f3-11e7-9745-79ce5f9600e9.jpg">
 <img alt="k8s-arch-ruo91-797x451-104467" src="https://user-images.githubusercontent.com/300046/33525757-6fcd2624-d7f3-11e7-9745-79ce5f9600e9.jpg"></a>
 
-This diagram is referenced throughout this tutorial, particularly in the <a href="#Details">Details section below</a>.
-
-<em>It is by Yongbok Kim who presents <a target="_blank" href="https://translate.google.com/translate?hl=en&sl=ko&tl=en&u=http://www.yongbok.net/blog/google-kubernetes-container-cluster-manager/">
-animations on his website</a>.</em>
-
-Kubernetes replicates Pods across several worker <strong>nodes</strong> (VM or physical machines).
+This diagram is referenced throughout this tutorial, particularly in the <a href="#Details">Details section below</a>. It is by Yongbok Kim who presents <a target="_blank" href="https://translate.google.com/translate?hl=en&sl=ko&tl=en&u=http://www.yongbok.net/blog/google-kubernetes-container-cluster-manager/">
+animations on his website</a>.
 
 PROTIP: Kubernetes recently added <strong>auto-scaling</strong> based on metrics API measurement of demand. Before that, Kubernetes manages the instantiating, starting, stopping, updating, and deleting of a <strong>pre-defined number of pod replicas</strong> based on declarations in <strong>*.yaml</strong> files or interactive commands.
 
 The number of pods replicated is based on <strong>deployment</strong> yaml files. 
 Service yaml files specify what ports are used in deployments.
 
+
+## Open Sourced
+
+<img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
+<a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">
+This blog</a> and <a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
+notes that the Kubernetes logo has 7 sides because its initial developers were Star Trek fans:
+The predecessor to Kubernetes was called Borg.
+A key Borg character is called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>.
+
+Kubernetes was created inside Google (using the [Golang](/Golang/) programming language)
+and used for over a decade before being open-sourced in 2014 to the 
+Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>).
+
+
+## Competitors
+
+Other orchestration systems for Docker containers:
+
+* Docker Swarm
+
+* <a target="_blank" href="https://translate.googleusercontent.com/translate_c?depth=1&hl=en&rurl=translate.google.com&sl=ko&sp=nmt4&tl=en&u=https://www.yongbok.net/blog/apache-mesos-cluster-resource-management/&usg=ALkJrhjiggTWHQtSdhkl8jOvGnAx43NIQw">Mesos from Apache</a>, which runs other containers in addition to Docker. K8SM is a Mesos Framework developed for Apache Mesos to use Google's Kubernetes. <a target="_blank" href="https://translate.google.com/translate?hl=en&sl=ko&tl=en&u=http://www.yongbok.net/blog/how-to-install-kubernetes-mesos-framework-on-ubuntu/">Installation</a>.
+
+* Rancher
+<br /><br />
+
+OpenShift Enterprise from Red Hat is not a competitor to Kubernetes, but a platform as a service (PaaS) built on top of Docker and Kubernetes. 
+
+
 ### Kublet
 
-A <strong>Kublet</strong> agent program within each node constantly compares the status of pods against what is declared in yaml files, and starts or deletes pods as necessary to meet the request. 
-
-This Kublet is automatically installed when they are <strong>created</strong>.
-
+A Kublet agent program is automatically installed when a node is created.
 Each <strong>kubelet</strong> is called the "control pane" that runs nodes under its control.
+
+Kublet constantly compares the status of pods against what is declared in yaml files, and starts or deletes pods as necessary to meet the request. 
+
 Restarting Kublet itself depends on the operating system (Monit on Debian or systemctl on systemd-based systems).
 
 ### Master node
 
-Nodes are joined to the master node using the <strong>kubeadm join</strong> command.
+Nodes are joined to the master node using the <strong>kubeadm join</strong> program and command.
 
 The master node itself is crated by the <strong>kubeadm init</strong> command which establishes folders 
 and invokes the Kubernetes <strong>API server</strong>. That command is installed along with the 
@@ -116,6 +141,18 @@ The <strong>describe</strong> command provides more detailed information.
 
    Load balancing among nodes (hosts within a cloud) are handled by third-party port forwarding
    via Ingress controllers.
+
+   An "Ingress" is a collection of rules that allow inbound connections to reach the cluster services.
+
+   In Kubernetes the Ingress Controller could be a NGINX container providing reverse proxy capabilities, and the Ingress Resource defines the connection rules.
+
+   ### OpenShift
+
+   This diagram illustrates what OpenShift adds: 
+   ![kubernetes-openshift-502x375-107638](https://user-images.githubusercontent.com/300046/42333404-e3f5953a-8037-11e8-9691-0172a8a96388.jpg)
+
+
+
 
    ### Flannel 
 
@@ -220,38 +257,16 @@ Yongbok Kim (who writes in Korean)</a> <a target="_blank" href="https://cdn.yong
 <a target="_blank" title="k8s_details-ruo91-2071x2645.png" href="https://user-images.githubusercontent.com/300046/33525160-4dc5931a-d7e7-11e7-8b83-9e373fc5ac7d.png">
 <img alt="k8s_details-ruo91-350x448.jpg" src="https://user-images.githubusercontent.com/300046/33525167-7a5d3b9e-d7e7-11e7-8dd6-99694dc31782.jpg"></a>
 
-BTW What are now called "nodes" were previously called minions. Apparently Google namers forgot about the existance of NodeJs,
-which refers to nodes differently.
+BTW What are now called "nodes" were previously called minions. Apparently Google namers forgot about the existance of NodeJs, which refers to nodes differently.
 
 ### Testing
 
 End-to-end tests by those who develop Kubernetes are coded in Ginko and Gomega (because Kubernets is written in Go).
+
 The Kubtest suite builds, stages, extracts, and brings up the cluster.
 After testing, it dumps logs and tears down the test rig.
 
-### Competitors
 
-Other orchestration systems for Docker containers:
-
-* Docker Swarm
-
-* <a target="_blank" href="https://translate.googleusercontent.com/translate_c?depth=1&hl=en&rurl=translate.google.com&sl=ko&sp=nmt4&tl=en&u=https://www.yongbok.net/blog/apache-mesos-cluster-resource-management/&usg=ALkJrhjiggTWHQtSdhkl8jOvGnAx43NIQw">Mesos from Apache</a>, which runs other containers in addition to Docker. K8SM is a Mesos Framework developed for Apache Mesos to use Google's Kubernetes. <a target="_blank" href="https://translate.google.com/translate?hl=en&sl=ko&tl=en&u=http://www.yongbok.net/blog/how-to-install-kubernetes-mesos-framework-on-ubuntu/">Installation</a>.
-
-* Rancher
-
-
-## Open Sourced
-
-<img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
-<a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">
-This blog</a> and <a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
-notes that the Kubernetes logo has 7 sides because its initial developers were Star Trek fans:
-The predecessor to Kubernetes was called Borg.
-A key Borg character is called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>.
-
-Kubernetes was created inside Google (using the [Golang](/Golang/) programming language)
-and used for over a decade before being open-sourced in 2014 to the 
-Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>).
 
 ### Skill certifications
 
@@ -409,7 +424,7 @@ has 257 issues and 20 pending Pull Requests.
 
    <pre><strong>
    kubectl config current-context
-   <pre><strong>
+   </pre><strong>
 
    The response on minikube is "minikube".
 
@@ -1117,6 +1132,14 @@ spec:
    <pre><strong>
    kubectl describe ep hello-svc
    </strong></pre>
+
+
+### OpenShift routes to services
+
+Services can be referenced by external clients using a host name such as "hello-svc.mycorp.com" by using
+OpenShift Enterprise, which uses "routes" that defines the rules the HAProxy applies to incoming connections.
+
+Routes are deployed by an OpenShift Enterprise administrator as <strong>routers</strong> to nodes in an OpenShift Enterprise cluster. To clarify, the default Router in Openshift is an actual HAProxy container providing reverse proxy capabilities.
 
 
 <a name="DeploymentYml"></a>
