@@ -73,7 +73,7 @@ PROTIP: The word "Kubernetes" is a registered trademark of the Linux Foundation,
 
    * v1.0 was committed on July 2015 within GitHub
    * v1.6 was led by a CoreOS developer.
-   * v1.7 was led by Google.
+   * v1.7 was led by a Googler.
    * v1.8 is led by a Microsoft employee (<a target="_blank" href="https://twitter.com/jaydumars?lang=en">Jaice Singer DuMars</a>) after Microsoft joined the CNCF July 2017.
    <br /><br />
 Its Google heritage means Kubernetes is about scaling for a lot of traffic
@@ -85,13 +85,24 @@ with redundancies to achieve high availability (HA).
 On November 8, 2016 CNCF announced their 
 <a target="_blank" href="https://www.cncf.io/certification/expert/">3-hour task-based Certified Kubernetes Administrator (CKA)</a> and 2-hour Application Developer (CKAD) exams. 
 
-CNCF is part of the Linux Foundation. It's a non-profit organization, thus the ".org".
+1. Get an account (Linux Foundation credentials ) at <a target="_blank" href="https://identity.linuxfoundation.org/">https://identity.linuxfoundation.org</a>.
 
-1. Get an account (Linux Foundation credentials ) at <a target="_blank" href="https://identity.linuxfoundation.org/">https://identity.linuxfoundation.org</a>
+   CNCF is part of the Linux Foundation. It's a non-profit organization, thus the ".org".
 
-2. Use your Linux Foundation credentials to sign-in at <a target="_blank" href="https://www.examslocal.com/">examslocal.com</a> to register for the exam, which costs $300.
+2. Use your Linux Foundation credentials to sign-in at <a target="_blank" href="https://www.examslocal.com/">examslocal.com</a>, and select either or both of two exams from CNCF:
 
-3. Take the exam <a target="_blank" href="http://www.examslocal.com/linuxfoundation/"> at home</a> using their Chrome extension from "Innovative Exams", which uses your laptop camera and microphone watching you use a virtual Ubuntu machine. No multiple choice questions.
+   * Linux Foundation : Certified Kubernetes Administrator (CKA)  -  English
+   * Linux Foundation : Certified Kubernetes Application Developer (CKAD)  -  English
+   <br /><br />
+3. Click "Or Sign In With" tab and select "Sign in for exams powered by the Linux Foundation".
+
+4. Log in using your preferred account.
+
+5. Click "Handbook link" to download it.
+6. Select the date, then click OK.
+7. Register for it. Each costs $300 on a credit card.
+
+8. Take the 180 minute exam <a target="_blank" href="http://www.examslocal.com/linuxfoundation/"> at home</a> using the Chrome extension from "Innovative Exams", which uses your laptop camera and microphone watching you use a virtual Ubuntu machine. No multiple choice questions.
 
 
 ### Support in clouds
@@ -99,17 +110,12 @@ CNCF is part of the Linux Foundation. It's a non-profit organization, thus the "
 If you want to pay for Kubernetes support, Red Hat® OpenShift, at <a target="_blank" href="
 https://www.redhat.com/en/technologies/cloud-computing/openshift">
 https://www.redhat.com/en/technologies/cloud-computing/openshift</a>,
-is a container application platform that brings Docker and Kubernetes to the enterprise
+enables Docker and Kubernetes for the enterprise
 by adding external host names and role-based security.
-
-#### A) Clouds
-
-Being open-source has enabled Kubernetes to flourish on several clouds.
 
 One can run k8s containers in other clouds or within private data centers using OpenStack from RedHat.
 
-See <a target="_blank" href="https://codefresh.io/kubernetes-guides/kubernetes-cloud-aws-vs-gcp-vs-azure/">
-Kubernetes in the Cloud: AWS vs. GCP vs. Azure</a>
+Being open-source has enabled Kubernetes to flourish on several clouds<a target="_blank" href="https://codefresh.io/kubernetes-guides/kubernetes-cloud-aws-vs-gcp-vs-azure/">*</a>
 
 * <a href="#GKE">Google Kubernetes Engine (GKE)</a> is a container management SaaS product.
 GKE runs within the Google Compute Platform (GCP) on top of Google Compute Engine providing machines.
@@ -1435,6 +1441,9 @@ https://kubernetes.io/community/
 <a target="_blank" href="https://www.youtube.com/watch?v=i425aTrW6Gg">
 Solutions Engineering Hangout: Terraform for Instant K8s Clusters on AWS EKS</a>
 by HashiCorp
+
+<a target="_blank" href="https://www.youtube.com/watch?v=90kZRyPcRZw">
+Kubernetes Deconstructed</a> by Carson Anderson of DOMO (@carsonoid)
 
 ## More
 
