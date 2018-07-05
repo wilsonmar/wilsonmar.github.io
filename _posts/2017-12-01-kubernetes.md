@@ -33,6 +33,9 @@ Kubernetes automates <strong>resilience</strong> into containers by abstacting t
 <!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
 
 Each pod can hold one or more Docker containers.
+
+Each node has a different IP address.
+
 Within a pod, each container has a different <strong>port number</strong>.
 But containers share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage, and other resources.
 
@@ -66,21 +69,6 @@ Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/
 Kubernetes is often abbreviated as "k8s", with 8 replacing the number of characters between k and s.
 Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to <a target="_blank" href="https://kubernetes.io/">https://kubernetes.io</a>, the home page for the software.
 
-Several prominent technology vendor have included Kubernetes:
-
-* Amazon's Elastic Container Service for Kubernetes (EKS)
-* Microsoft's Azure Kubernetes Service (AKS)
-* Google Kubernetes Engine (GKE)
-* Mesosphere DC/OS 
-* Rancher Labs for its container management platform
-* Pivotal PKS 
-* Red Hat <a href="#OpenShift">OpenShift</a> Enterprise platform as a service (PaaS)
-* CoreOS Tectonic
-* Mirantis' Cloud Platform
-* IBM Cloud Kubernetes Service (IKS)
-* Containers by Mail.Ru Cloud Solutions[23], 
-* Rackspace's Kubernetes as a Service
-* Giant Swarm managed Kubernetes
 
 ### Certification in Kubernetes
 
@@ -107,6 +95,56 @@ CNCF is part of the Linux Foundation. It's a non-profit organization, thus the "
 Its Google heritage means Kubernetes is about scaling for a lot of traffic
 with redundancies to achieve high availability (HA).
 
+
+### Support in clouds
+
+Being open-source has enabled Kubernetes to flourish on several clouds.
+
+But one can run k8s containers in other clouds or within private data centers.
+
+#### A) Clouds
+
+See <a target="_blank" href="https://codefresh.io/kubernetes-guides/kubernetes-cloud-aws-vs-gcp-vs-azure/">
+Kubernetes in the Cloud: AWS vs. GCP vs. Azure</a>
+
+* <a href="#GKE">Google Kubernetes Engine (GKE)</a> is a container management SaaS product.
+GKE runs within the Google Compute Platform (GCP) on top of Google Compute Engine providing machines.
+GKE in GCP integration covers networking and VPC, monitoring, logging, and CI/CD.
+
+* If you want to pay for Kubernetes support, <a target="_blank" href="
+https://www.redhat.com/en/technologies/cloud-computing/openshift">
+https://www.redhat.com/en/technologies/cloud-computing/openshift</a>
+Red Hat® OpenShift is a container application platform that brings Docker and Kubernetes to the enterprise. 
+
+* Kops for AWS (at <a target="_blank" href="https://github.com/kubernetes/kops">https://github.com/kubernetes/kops</a>)
+enables multi-master, multi-AZ cluster setup and management of multiple instance groups.
+See <a target="_blank" title="Oct 27, 2017 by Tristan Colgate-McFarlane" href="https://medium.com/qubit-engineering/kubernetes-up-integrated-authentication-5d2c908c2810">
+"How Qubit built its production ready Kubernetes (k8s) environments"</a>
+
+* <a target="_blank" href="https://aws.amazon.com/eks/">
+Amazon Elastic Container Service for Kubernetes (Amazon EKS)</a>
+was introduced December 2017 to run three Kubernetes masters across three Availability Zones in order to ensure high availability. EKS automatically detects and replaces unhealthy masters, and provides automated version upgrades and patching for the masters. So you don't have to choose appropriate instance types.
+It of course leverages AWS Elastic Load Balancing, IAM authentication, Amazon VPC isolation, AWS PrivateLink access, and AWS CloudTrail logging. 
+
+* Microsoft's Azure Kubernetes Service (AKS)
+
+* <a target="_blank" href="https://blog.digitalocean.com/introducing-digitalocean-kubernetes/">
+   https://blog.digitalocean.com/introducing-digitalocean-kubernetes</a>
+
+* Madcore.ai
+
+Other hosted solutions include the IBM cloud container service, Stackpoint, AppCode, KUBE2GO, MadCore, Platform 9, OpenShift Dedicated, OpenShift Online, Giant Swarm, etc.
+
+* Mesosphere DC/OS 
+* <a href="#Rancher">Rancher</a> from Rancher Labs for its container management platform
+* Pivotal PKS 
+* Red Hat <a href="#OpenShift">OpenShift</a> Enterprise platform as a service (PaaS)
+* CoreOS Tectonic
+* Mirantis' Cloud Platform
+* IBM Cloud Kubernetes Service (IKS)
+* Containers by Mail.Ru Cloud Solutions[23], 
+* Rackspace's Kubernetes as a Service
+* Giant Swarm managed Kubernetes
 
 ## Competitors
 
@@ -176,8 +214,6 @@ The <strong>describe</strong> command provides more detailed information.
    then continually monitors node health. When necessary, it taints unhealthy nodes and
    gracefully evicts unhealthy pods. The default timeout is 40 seconds.
 
-   Each node has a different IP address.
-
    Communications with outside callers occur through a single Virtual IP address (VIP) going through the <strong>kube-proxy</strong> which load balances traffic to <strong>deployments</strong>, which are load-balanced sets of pods within each node.
 
    Load balancing among nodes (hosts within a cloud) are handled by third-party port forwarding
@@ -186,6 +222,8 @@ The <strong>describe</strong> command provides more detailed information.
    An "Ingress" is a collection of rules that allow inbound connections to reach the cluster services.
 
    In Kubernetes the <strong>Ingress Controller</strong> could be a NGINX container providing reverse proxy capabilities, and the <strong>Ingress Resource</strong> defines the connection rules.
+
+<a name="OpenShift"></a>
 
 ### OpenShift
 
@@ -198,7 +236,6 @@ The <strong>describe</strong> command provides more detailed information.
    "The primary grouping concept in Kubernetes is the namespace. Namespaces are also a way to divide cluster resources between multiple uses. That being said, there is no security between namespaces in Kubernetes; if you are a “user” in a Kubernetes cluster, you can see all the different namespaces and the resources defined in them." -- from the book: OpenShift for Developers, A Guide for Impatient Beginners by Grant Shipley and Graham Dumpleton.
 
    ![k8s-openshift-projects-461x277-64498](https://user-images.githubusercontent.com/300046/42337120-f421563c-8042-11e8-9d2b-d19615b4da0c.jpg)
-
 
    OpenShift adds security annotations to namespaces and calls them <strong>projects</strong>. OpenShift project wraps a namespace, with access to the namespace being controlled via the project. Access is controlled through an authentication and authorization model based on users and groups. Projects in OpenShift therefore provide the walls between namespaces, ensuring that users, or applications, can only see and access what they are allowed to.
 
@@ -342,6 +379,8 @@ After testing, it dumps logs and tears down the test rig.
 
 There are several ways to obtain a running instance of Kubernetes.
 
+<a name="Rancher"></a>
+
 <a target="_blank" href="http://docs.rancher.com/rancher/v1.5/en/quick-start-guide/">
 Rancher</a> is a deployment tool for Kubernetes that also provides networking and load balancing support.
 Rancher initially created it's own framework called Cattle to coordinate docker containers across multiple hosts, at a time when Docker was limited to running on a single host. 
@@ -349,44 +388,8 @@ Now Rancher's networking provides a consistent solution across a variety of plat
 In addition to Kubernetes, Rancher enables users to deploy a choice of Cattle, Docker Swarm, Apache Mesos upstream project for DCOS (Data Center Operating System).
 Rancher eventually become part of Docker Swarm.
 
-Within https://github.com/kubernetes/kops AWS KOPS 
+Within https://github.com/kubernetes/kops KOPS 
 
-
-### Support in clouds
-
-Being open-source has enabled Kubernetes to flourish on several clouds.
-
-But one can run k8s containers in other clouds or within private data centers.
-
-#### A) Clouds
-
-See <a target="_blank" href="https://codefresh.io/kubernetes-guides/kubernetes-cloud-aws-vs-gcp-vs-azure/">
-Kubernetes in the Cloud: AWS vs. GCP vs. Azure</a>
-
-* <a href="#GKE">Google Kubernetes Engine (GKE)</a> is a container management SaaS product running within the Google Compute Platform (GCP) on top of Google Compute Engine providing machines.
-GKE in GCP integration covers networking and VPC, monitoring, logging, and CI/CD.
-
-* If you want to pay for Kubernetes support, <a target="_blank" href="
-https://www.redhat.com/en/technologies/cloud-computing/openshift">
-https://www.redhat.com/en/technologies/cloud-computing/openshift</a>
-Red Hat® OpenShift is a container application platform that brings Docker and Kubernetes to the enterprise. 
-
-* Kops for AWS (at <a target="_blank" href="https://github.com/kubernetes/kops">https://github.com/kubernetes/kops</a>)
-enables multi-master, multi-AZ cluster setup and management of multiple instance groups.
-See <a target="_blank" title="Oct 27, 2017 by Tristan Colgate-McFarlane" href="https://medium.com/qubit-engineering/kubernetes-up-integrated-authentication-5d2c908c2810">
-"How Qubit built its production ready Kubernetes (k8s) environments"</a>
-
-* <a target="_blank" href="https://aws.amazon.com/eks/">
-Amazon Elastic Container Service for Kubernetes (Amazon EKS)</a>
-was introduced December 2017 to run three Kubernetes masters across three Availability Zones in order to ensure high availability. EKS automatically detects and replaces unhealthy masters, and provides automated version upgrades and patching for the masters. So you don't have to choose appropriate instance types.
-It of course leverages AWS Elastic Load Balancing, IAM authentication, Amazon VPC isolation, AWS PrivateLink access, and AWS CloudTrail logging. 
-
-* <a target="_blank" href="https://blog.digitalocean.com/introducing-digitalocean-kubernetes/">
-   https://blog.digitalocean.com/introducing-digitalocean-kubernetes</a>
-
-* Madcore.ai
-
-Other hosted solutions include the IBM cloud container service, Stackpoint, AppCode, KUBE2GO, MadCore, Platform 9, OpenShift Dedicated, OpenShift Online, Giant Swarm, etc.
 
 
 #### Minikube offline
