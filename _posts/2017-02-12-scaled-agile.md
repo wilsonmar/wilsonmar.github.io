@@ -37,8 +37,14 @@ Version 1.0 of SAFe was published in 2011<br />
 [SAFe V3.0](#v3) was released July 28, 2014.
 The framework's name was changed in January 2016 to<br />
 <a target="_blank" href="http://www.scaledagileframework.com/">
-"SAFe 4.0 for Lean Software and Systems Engineering"</a>:
+"SAFe 4.0 for Lean Software and Systems Engineering" on ScaledAgileFramework.com</a>:
 
+
+## v4.5
+
+The full view diagram:<br />
+<a target="_blank" title="safe4 5-1170x818.png" href="https://user-images.githubusercontent.com/300046/42325782-7b087258-8024-11e8-8ce6-01629efbc439.png">
+<img alt="safe4 5-650x455-219544.jpg" width="650" src="https://user-images.githubusercontent.com/300046/42325700-4015ff30-8024-11e8-9618-577874f97518.jpg"></a>
 
 ## v4 
 
