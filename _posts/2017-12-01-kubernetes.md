@@ -25,16 +25,14 @@ arranged in a sequence to make this complex material easier to understand quickl
 
 Kubernetes is called "container orchestration" software because it automates the deployment, scaling and management of containerized applications<a target="_blank" href="https://en.wikipedia.org/wiki/Kubernetes">*</a>. 
 
-"Containerized" <a href="#micro-services">microservice apps</a> are <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, Quay, or an organization's own binary repository setup using Nexus or Artifactory. Kubernetes also works with <strong>rkt</strong> (pronounced "rocket") containers. But this tutorial focuses on Docker.
+"Containerized" <a href="#micro-services">microservice apps</a> are <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, <a target="_blank" href="https://quay.io/">Quay.io</a>, or an organization's own binary repository setup using Nexus or Artifactory. Kubernetes also works with <strong>rkt</strong> (pronounced "rocket") containers. But this tutorial focuses on Docker.
 
-Kubernetes automates <strong>resilience</strong> into containers by abstacting the network and storage of a virtual <strong>containers</strong> in replaceable "pods":
+Each Kubernetes node has a different IP address.
 
 ![k8s-container-sets-479x364](https://user-images.githubusercontent.com/300046/33526550-6c98a980-d800-11e7-9862-ff202492e08b.jpg)
 <!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
 
-Each pod can hold one or more Docker containers.
-
-Each node has a different IP address.
+Kubernetes automates resilience into containers by abstacting the network and storage of a virtual <strong>containers</strong> in replaceable "pods". Each pod can hold one or more Docker containers.
 
 Within a pod, each container has a different <strong>port number</strong>.
 But containers share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage, and other resources.
@@ -68,19 +66,7 @@ Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/
 
 Kubernetes is often abbreviated as "k8s", with 8 replacing the number of characters between k and s.
 Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to <a target="_blank" href="https://kubernetes.io/">https://kubernetes.io</a>, the home page for the software.
-
-
-### Certification in Kubernetes
-
-On November 8, 2016 CNCF announced their 
-<a target="_blank" href="https://www.cncf.io/certification/expert/">3-hour task-based Certified Kubernetes Administrator (CKA)</a> and 2-hour Application Developer (CKAD) exams. Each costs $300, taken <a target="_blank" href="http://www.examslocal.com/linuxfoundation/"> at home</a> using their Chrome extension from "Innovative Exams", which uses your laptop camera and microphone watching you use a virtual Ubuntu machine. No multiple choice questions.
-
-CNCF is part of the Linux Foundation. It's a non-profit organization, thus the ".org".
-
-1. Get an account at <a target="_blank" href="https://identity.linuxfoundation.org/">
-   https://identity.linuxfoundation.org</a>
-
-   PROTIP: The word "Kubernetes" is a registered trademark of the Linux Foundation, which maintains the website
+PROTIP: The word "Kubernetes" is a registered trademark of the Linux Foundation, which maintains the website
    <a target="_blank" href="https://kubernetes.io">https://kubernetes.io</a> and
    source code at <a target="_blank" href="https://github.com/kubernetes/kubernetes">
    https://github.com/kubernetes/kubernetes</a>
@@ -89,20 +75,38 @@ CNCF is part of the Linux Foundation. It's a non-profit organization, thus the "
    * v1.6 was led by a CoreOS developer.
    * v1.7 was led by Google.
    * v1.8 is led by a Microsoft employee (<a target="_blank" href="https://twitter.com/jaydumars?lang=en">Jaice Singer DuMars</a>) after Microsoft joined the CNCF July 2017.
-
-2. Use your Linux Foundation credentials to sign-in at <a target="_blank" href="https://www.examslocal.com/">examslocal.com</a> to register for the exams.
-
+   <br /><br />
 Its Google heritage means Kubernetes is about scaling for a lot of traffic
 with redundancies to achieve high availability (HA).
 
 
+### Certification in Kubernetes
+
+On November 8, 2016 CNCF announced their 
+<a target="_blank" href="https://www.cncf.io/certification/expert/">3-hour task-based Certified Kubernetes Administrator (CKA)</a> and 2-hour Application Developer (CKAD) exams. 
+
+CNCF is part of the Linux Foundation. It's a non-profit organization, thus the ".org".
+
+1. Get an account (Linux Foundation credentials ) at <a target="_blank" href="https://identity.linuxfoundation.org/">https://identity.linuxfoundation.org</a>
+
+2. Use your Linux Foundation credentials to sign-in at <a target="_blank" href="https://www.examslocal.com/">examslocal.com</a> to register for the exam, which costs $300.
+
+3. Take the exam <a target="_blank" href="http://www.examslocal.com/linuxfoundation/"> at home</a> using their Chrome extension from "Innovative Exams", which uses your laptop camera and microphone watching you use a virtual Ubuntu machine. No multiple choice questions.
+
+
 ### Support in clouds
+
+If you want to pay for Kubernetes support, Red Hat® OpenShift, at <a target="_blank" href="
+https://www.redhat.com/en/technologies/cloud-computing/openshift">
+https://www.redhat.com/en/technologies/cloud-computing/openshift</a>,
+is a container application platform that brings Docker and Kubernetes to the enterprise
+by adding external host names and role-based security.
+
+#### A) Clouds
 
 Being open-source has enabled Kubernetes to flourish on several clouds.
 
-But one can run k8s containers in other clouds or within private data centers.
-
-#### A) Clouds
+One can run k8s containers in other clouds or within private data centers using OpenStack from RedHat.
 
 See <a target="_blank" href="https://codefresh.io/kubernetes-guides/kubernetes-cloud-aws-vs-gcp-vs-azure/">
 Kubernetes in the Cloud: AWS vs. GCP vs. Azure</a>
@@ -111,10 +115,11 @@ Kubernetes in the Cloud: AWS vs. GCP vs. Azure</a>
 GKE runs within the Google Compute Platform (GCP) on top of Google Compute Engine providing machines.
 GKE in GCP integration covers networking and VPC, monitoring, logging, and CI/CD.
 
-* If you want to pay for Kubernetes support, <a target="_blank" href="
-https://www.redhat.com/en/technologies/cloud-computing/openshift">
-https://www.redhat.com/en/technologies/cloud-computing/openshift</a>
-Red Hat® OpenShift is a container application platform that brings Docker and Kubernetes to the enterprise. 
+   ![k8s-gcp-738x314-14535](https://user-images.githubusercontent.com/300046/42350579-5b4fd060-806e-11e8-8bc4-f88cf32f8bc7.jpg)
+
+   A search for "Kubernetes" within the Console yields:
+
+   ![k8s-gcp-search-656x866-37655](https://user-images.githubusercontent.com/300046/42350888-a8aca044-806f-11e8-8848-813657b7660d.jpg)
 
 * Kops for AWS (at <a target="_blank" href="https://github.com/kubernetes/kops">https://github.com/kubernetes/kops</a>)
 enables multi-master, multi-AZ cluster setup and management of multiple instance groups.
