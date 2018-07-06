@@ -169,7 +169,7 @@ It of course leverages AWS Elastic Load Balancing, IAM authentication, Amazon VP
 
 * <a target="_blank" href="https://buddy.works/guides/how-optimize-kubernetes-workflow">Buddy</a>
    automates Kubernetes workflows.
-   
+
 
 ## Competitors
 
@@ -964,7 +964,7 @@ The kinds of yaml files:
    * monolith.yaml
    * secure-monolith.yaml
 
-   ### services
+   ### services samples
 
    * auth.yaml
    * frontend.yaml
