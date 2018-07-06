@@ -46,6 +46,11 @@ The full view diagram:<br />
 <a target="_blank" title="safe4 5-1170x818.png" href="https://user-images.githubusercontent.com/300046/42325782-7b087258-8024-11e8-8ce6-01629efbc439.png">
 <img alt="safe4 5-650x455-219544.jpg" width="650" src="https://user-images.githubusercontent.com/300046/42325700-4015ff30-8024-11e8-9618-577874f97518.jpg"></a>
 
+v4.5 "Essential SAFe" consists of the bottom two layers named "TEAM" and "PROGRAM".
+"Portfolio SAFe" adds the top "PORTFOLIO". 
+"Large Portfolio SAFe" replaces PORTFOLIO with "LARGE SOLUTION". 
+"Full SAFe" includes both "PORTFOLIO" and "LARGE SOLUTION".
+
 ## v4 
 
 There are 3 level and 4 level views. The 4-level view diagram:<br />
