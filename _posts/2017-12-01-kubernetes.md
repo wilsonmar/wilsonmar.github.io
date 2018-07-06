@@ -83,27 +83,34 @@ with redundancies to achieve high availability (HA).
 ### Certification in Kubernetes
 
 On November 8, 2016 CNCF announced their 
-<a target="_blank" href="https://www.cncf.io/certification/expert/">3-hour task-based Certified Kubernetes Administrator (CKA)</a> and 2-hour Application Developer (CKAD) exams. 
+<a target="_blank" href="https://www.cncf.io/certification/expert/">3-hour task-based Certified Kubernetes Administrator (CKA)</a> and 2-hour Kubernetes Application Developer (CKAD) exams. 
+
+CNCF is part of the Linux Foundation, so... 
 
 1. Get an account (Linux Foundation credentials ) at <a target="_blank" href="https://identity.linuxfoundation.org/">https://identity.linuxfoundation.org</a>.
 
-   CNCF is part of the Linux Foundation. It's a non-profit organization, thus the ".org".
+   It's a non-profit organization, thus the ".org".
 
-2. Use your Linux Foundation credentials to sign-in at <a target="_blank" href="https://www.examslocal.com/">examslocal.com</a>, and select either or both of two exams from CNCF:
+2. Login to <a target="_blank" href="https://linuxfoundation.org/">https://linuxfoundation.org</a> and join as a member for a $100 discount toward certifications.
+3. Go to <a target="_blank" href="https://training.linuxfoundation.org/linux-courses/system-administration-training/kubernetes-fundamentals">https://training.linuxfoundation.org/linux-courses/system-administration-training/kubernetes-fundamentals</a> and pay for the $300 exam or for $199 more take their class.
+
+4. Use your Linux Foundation credentials to sign-in at <a target="_blank" href="https://www.examslocal.com/">examslocal.com</a>, and select either or both of two exams from CNCF:
 
    * Linux Foundation : Certified Kubernetes Administrator (CKA)  -  English
    * Linux Foundation : Certified Kubernetes Application Developer (CKAD)  -  English
    <br /><br />
-3. Click "Or Sign In With" tab and select "Sign in for exams powered by the Linux Foundation".
+5. Click "Or Sign In With" tab and select "Sign in for exams powered by the Linux Foundation".
 
-4. Log in using your preferred account.
+6. Log in using your preferred account.
 
-5. Click "Handbook link" to download it.
-6. Select the date, then click OK.
-7. Register for it. Each costs $300 on a credit card.
+7. Click "Handbook link" to download it.
+8. Select the date, then click OK.
+9. Setup your home computer to take the exam <a target="_blank" href="http://www.examslocal.com/linuxfoundation/"> at home</a> using the Chrome extension from "Innovative Exams", which uses your laptop camera and microphone watching you use a virtual Ubuntu machine. 
+10. Take the 180 minute exam 
 
-8. Take the 180 minute exam <a target="_blank" href="http://www.examslocal.com/linuxfoundation/"> at home</a> using the Chrome extension from "Innovative Exams", which uses your laptop camera and microphone watching you use a virtual Ubuntu machine. No multiple choice questions.
+   No multiple choice questions.
 
+   PROTIP: The Linux Foundation exam focuses on "pure" commands only and excludes add-ons such as OpenStack.
 
 ### Support in clouds
 
@@ -123,7 +130,7 @@ GKE in GCP integration covers networking and VPC, monitoring, logging, and CI/CD
 
    ![k8s-gcp-738x314-14535](https://user-images.githubusercontent.com/300046/42350579-5b4fd060-806e-11e8-8bc4-f88cf32f8bc7.jpg)
 
-   A search for "Kubernetes" within the Console yields:
+   A search for "Kubernetes" within the GCP Console yields:
 
    ![k8s-gcp-search-656x866-37655](https://user-images.githubusercontent.com/300046/42350888-a8aca044-806f-11e8-8848-813657b7660d.jpg)
 
@@ -142,20 +149,27 @@ It of course leverages AWS Elastic Load Balancing, IAM authentication, Amazon VP
 * <a target="_blank" href="https://blog.digitalocean.com/introducing-digitalocean-kubernetes/">
    https://blog.digitalocean.com/introducing-digitalocean-kubernetes</a>
 
-* Madcore.ai
 
-Other hosted solutions include the IBM cloud container service, Stackpoint, AppCode, KUBE2GO, MadCore, Platform 9, OpenShift Dedicated, OpenShift Online, Giant Swarm, etc.
+* KUBE2GO, OpenShift Dedicated, OpenShift Online, 
 
-* Mesosphere DC/OS 
-* <a href="#Rancher">Rancher</a> from Rancher Labs for its container management platform
-* Pivotal PKS 
+* <a target="_blank" href="https://github.com/appscode/">AppsCode</a> provides several utiities for Kubernetes.
+* <a target="_blank" href="https://coreos.com/tectonic/">CoreOS Tectonic</a> multi-cloud is being integrated with RedHat.
+* <a target="_blank" href="https://containership.io/">Containership Kubernetes Engine</a>
+* <a target="_blank" href="">Giant Swarm managed Kubernetes</a>
+* <a target="_blank" href="https://console.bluemix.net/containers-kubernetes/catalog/cluster/">IBM Cloud Kubernetes Service (IKS) works with their IBM Cloud Container Registry. See <a target="_blank" href="https://console.bluemix.net/docs/containers/cs_tutorials_cf.html#cf_tutorial">tutorial</a>
+* <a target="_blank" href="https://www.madcore.ai">Madcore.ai</a>
+* <a target="_blank" href="https://mesosphere.com/product/">Mesosphere DC/OS</a> (Data Center Operating System) runs Apache Mesos to abstract CPU, memory, storage to provide an API to program a multi-cloud multi-tenant data center (at Twitter, Yelp, Ebay, Azure, Apple, etc.) as if it's a single pool of resources.
+* Mail.Ru Cloud Solutions Containers
+* <a target="_blank" href="https://www.mirantis.com/software/mcp/">Mirantis' Cloud Platform</a>
+* PKS (Pivotal Kubernetes Service)
+* <a target="_blank" href="https://platform9.com/">Platform 9</a> provide OpenStack with Kubernetes
 * Red Hat <a href="#OpenShift">OpenShift</a> Enterprise platform as a service (PaaS)
-* CoreOS Tectonic
-* Mirantis' Cloud Platform
-* IBM Cloud Kubernetes Service (IKS)
-* Containers by Mail.Ru Cloud Solutions[23], 
 * Rackspace's Kubernetes as a Service
-* Giant Swarm managed Kubernetes
+* Stackpoint
+
+* <a target="_blank" href="https://buddy.works/guides/how-optimize-kubernetes-workflow">Buddy</a>
+   automates Kubernetes workflows.
+   
 
 ## Competitors
 
@@ -163,9 +177,10 @@ Other orchestration systems for Docker containers:
 
 * Docker Swarm
 
+   Docker Swarm incorporated <a href="#Rancher">Rancher</a> from Rancher Labs.
+
 * <a target="_blank" href="https://translate.googleusercontent.com/translate_c?depth=1&hl=en&rurl=translate.google.com&sl=ko&sp=nmt4&tl=en&u=https://www.yongbok.net/blog/apache-mesos-cluster-resource-management/&usg=ALkJrhjiggTWHQtSdhkl8jOvGnAx43NIQw">Mesos from Apache</a>, which runs other containers in addition to Docker. K8SM is a Mesos Framework developed for Apache Mesos to use Google's Kubernetes. <a target="_blank" href="https://translate.google.com/translate?hl=en&sl=ko&tl=en&u=http://www.yongbok.net/blog/how-to-install-kubernetes-mesos-framework-on-ubuntu/">Installation</a>.
 
-* Rancher
 <br /><br />
 
 
@@ -248,17 +263,18 @@ The <strong>describe</strong> command provides more detailed information.
 
    ![k8s-openshift-projects-461x277-64498](https://user-images.githubusercontent.com/300046/42337120-f421563c-8042-11e8-9d2b-d19615b4da0c.jpg)
 
-   OpenShift adds security annotations to namespaces and calls them <strong>projects</strong>. OpenShift project wraps a namespace, with access to the namespace being controlled via the project. Access is controlled through an authentication and authorization model based on users and groups. Projects in OpenShift therefore provide the walls between namespaces, ensuring that users, or applications, can only see and access what they are allowed to.
+   <strong>Projects</strong> in OpenShift provide "walls" between namespaces, ensuring that users or applications can only see and access what they are allowed to. OpenShift projects wrap a namespace by adding security annotations which control access to that namespace. Access is controlled through an authentication and authorization model based on users and groups. 
 
 
-### Flannel 
+### Plug-in Network
 
    PROTIP: Kubernetes uses third-party services to handle load balancing and port forwarding through 
    <strong>ingress objects</strong> managed by an ingress controller.
 
-   CNI (Container Network Interface) 
-   
-   Other CNI vendors include Calico, Cilium, Contiv.
+   CNI (Container Network Interface)
+
+   Flannel.   
+   Other CNI vendors include Calico, Cilium, Contiv, Weavenet.
 
 ### HA Proxy cluster
 
@@ -268,6 +284,7 @@ The <strong>describe</strong> command provides more detailed information.
 
 To collect resource usage and performance characteristics of running containers,
 many install a pod containing <a target="_blank" href="https://github.com/google/cadvisor">Google's</a> Container Advisor (<strong>cAdvisor</strong>). It aggregates and exports telemetry to an <strong>InfluxDB</strong> database for visualization using <strong>Grafana</strong>.
+
 Google's Heapster is also be used to send metrics to Google's cloud monitoring console.
 
 <hr />
@@ -284,6 +301,11 @@ quickly create an OpenFaaS (Serverless) cluster</a> on your laptop.
    kubectl apply -f ./namespaces.yml 
    kubectl apply -f ./yaml_armhf
    </pre>
+
+
+<a target="_blank" href="https://www.ibm.com/blogs/bluemix/2018/06/deploy-scalable-web-application-kubernetes-using-helm/">
+Deploy a scalable web application to Kubernetes using Helm</a>
+
 
 ## Topics
 
@@ -394,10 +416,9 @@ There are several ways to obtain a running instance of Kubernetes.
 
 <a target="_blank" href="http://docs.rancher.com/rancher/v1.5/en/quick-start-guide/">
 Rancher</a> is a deployment tool for Kubernetes that also provides networking and load balancing support.
-Rancher initially created it's own framework called Cattle to coordinate docker containers across multiple hosts, at a time when Docker was limited to running on a single host. 
+Rancher initially created it's own framework (called Cattle) to coordinate Docker containers across multiple hosts, at a time when Docker was limited to running on a single host. 
 Now Rancher's networking provides a consistent solution across a variety of platforms, especially on bare metal or standard (non cloud) virtual servers.
-In addition to Kubernetes, Rancher enables users to deploy a choice of Cattle, Docker Swarm, Apache Mesos upstream project for DCOS (Data Center Operating System).
-Rancher eventually become part of Docker Swarm.
+In addition to Kubernetes, Rancher enables users to deploy a choice of Cattle, Docker Swarm, Apache Mesos upstream project for DCOS (Data Center Operating System). Rancher eventually become part of Docker Swarm.
 
 Within https://github.com/kubernetes/kops KOPS 
 
@@ -531,6 +552,8 @@ Client Version: version.Info{Major:"1", Minor:"10", GitVersion:"v1.10.1", GitCom
    The API Server routes several <strong>kinds</strong> of <a href="#Ayaml-files">yaml declaration files</a>: Pod, Deployment of pods, Service, Job, Configmap.
 
    API primatives ???
+
+https://plugins.jetbrains.com/plugin/10485-kubernetes
 
 
 <a name="Centos"></a>
@@ -1392,7 +1415,7 @@ shows the steps of how to create Compute Engine yourself:
    * Deploy clustesr DNS add-on
    <br /><br />
 
-http://post.oreilly.com/rd/9z1z07qqefah7igu9ftil9os3s666asu5a6lfhh1eko
+<a target="_blank" href="http://post.oreilly.com/rd/9z1z07qqefah7igu9ftil9os3s666asu5a6lfhh1eko">O'Reilly book</a>
 Kubernetes adventures on Azure, Part 1 (Linux cluster)
 Having read several books on Kubernetes, Ivan Fioravanti, writing for Hackernoon, says it's time to start adventuring in the magical world of Kubernetes for real! And he does so using Microsoft Azure. Enjoy the step-by-step account of his escapade (part 1).
 
@@ -1433,17 +1456,27 @@ https://docs.gitlab.com/ee/install/kubernetes/gitlab_omnibus.html
 
 https://www.terraform.io/docs/providers/aws/guides/eks-getting-started.html
 
+https://devops.college/the-journey-from-monolith-to-docker-to-kubernetes-part-1-f5dbd730f620
+
 
 ## Social
 
 https://kubernetes.io/community/
 
+## Videos
+
+<a target="_blank" href="https://www.youtube.com/watch?v=90kZRyPcRZw">
+Kubernetes Deconstructed</a> Dec 15, 2017 [33:14]
+by Carson Anderson of DOMO (@carsonoid)
+
 <a target="_blank" href="https://www.youtube.com/watch?v=i425aTrW6Gg">
 Solutions Engineering Hangout: Terraform for Instant K8s Clusters on AWS EKS</a>
 by HashiCorp
 
-<a target="_blank" href="https://www.youtube.com/watch?v=90kZRyPcRZw">
-Kubernetes Deconstructed</a> by Carson Anderson of DOMO (@carsonoid)
+<a target="_blank" href="https://www.youtube.com/watch?v=1xo-0gCVhTU">
+Introduction to Microservices, Docker, and Kubernetes</a>
+by James Quigley
+
 
 ## More
 
