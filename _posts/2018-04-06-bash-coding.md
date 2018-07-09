@@ -21,13 +21,47 @@ This page dives into the <strong>technical ideosycracies</strong> of the <a targ
 This tutorial picks up from <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/README.md">this README to the mac-setup script tutorial</a>,
 which provides someone new to Macs specific steps to configure and run scripts to install apps on Macs. So first finish reading that about "shbangs" and grep for Bash shell versions.
 
-NOTE: This page is still actively under construction (as of May 29, 2018).
+NOTE: This page is still actively under construction (as of July 1, 2018).
 
+
+<a name="VersionWithGap"></a>
+
+## Version with Grep
+
+1. Test what version of Bash is installed on your Mac by typing this:
+
+   <pre><strong>bash --version | grep 'bash'
+   </strong></pre>
+
+   Hold the Shift key to press the | (called pipe) key at the upper-right of the keyboard.
+
+   The <tt>grep 'bash'</tt> is needed to filter out lines that do not contain the word "bash" in the response:
+
+   <pre>GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin16)</pre>
+
+   Apple still ships version 3.x, which first released in 2007. Bash 4.0 was released in 2009.
+   So you have a more recent version of Bash if you see:
+
+   <pre>GNU bash, version 4.4.19(1)-release (x86_64-apple-darwin17.3.0)</pre>
+
+   ### Shebang
+   
+   If you have Bash v3 (that comes with MacOS), you can only use this first line used to specify Bash v3 scripts:
+
+   <pre>#!/bin/bash</pre>
+
+   The above specifies that the script be processed by the bash program in the /bin folder.
+
+   If you have Bash v4, you can use the Bash program installed in folder <tt>/usr/local/bin</tt>:
+
+   <pre>#!/usr/local/bin/bash</pre>
+
+   <a target="_blank" href="https://www.admon.org/scripts/new-features-in-bash-4-0/">this blog describes what is improved by version 4</a>.
 
 ## Traps
 
 The Bash trap command catches signals so it can execute some commands when appropriate,
-such as <a target="_blank" href="https://www.shellscript.sh/trap.html>
+such as <a target="_blank" href="https://www.shellscript.sh/trap.html">
 cleaning up temp files before the script finishes</a>, called an
 <a target="_blank" href="http://redsymbol.net/articles/bash-exit-traps/">exit trap</a>.
 
