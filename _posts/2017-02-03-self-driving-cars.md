@@ -52,24 +52,6 @@ ASUS GTX1080 GPU-A8G- Gaming GPU Card
 
 Autonomous Technology Certification Facility (ATCF)
 
-## Processes
-
-<a target="_blank" href="https://www.youtube.com/watch?v=DMNOBBQKdr4">
-This 2017 TED Talk</a> [9:10]
-by David Silver describes the various technologies necessary:
-
-![self-driving-processes-631x314-22719](https://user-images.githubusercontent.com/300046/42537767-13749670-8453-11e8-890f-38d91083b3d2.jpg)
-
-An updated diagram:
-
-![self-driving-structure-576x379-29945](https://user-images.githubusercontent.com/300046/42572084-2038664c-84d6-11e8-92be-5db2e2451529.jpg)
-
-The eventual design for version 3.0 of Baidu's design adds a "Guardian" component:
-
-![self-driving-apollo_3 0_699x365-33837](https://user-images.githubusercontent.com/300046/42573483-737bc968-84d9-11e8-93ab-4a04ab2e7055.jpg)
-
-The "Canbus" is a Controller Area Network (CAN) transfers data between devices without the assistance of a host computer. Attach a temperature sensor to the surface of the main IC chip on ESD CAN (an Altera FPGA chip) to monitor the surface temperature of the chip to make sure it is not overheating.
-
 ## Degrees
 
 BTW David Silver worked at Ford's self-driving car program and is now teaching online Udacity's hands-on Nanodegree programs on self-driving cars at the 
@@ -79,13 +61,15 @@ BTW David Silver worked at Ford's self-driving car program and is now teaching o
    * Slack for students
    <br /><br />
 
-Udacity is founded by Sabastian Thrun, the "father" of self-driving car.
-He won the DARPA Grand Challenge car race when he was at Stanford.
-He then joined Google.
-
 Students work on Udacity's car named Nanna.
 
+Udacity is founded by Sabastian Thrun, the "father" of self-driving car.
+When he was a professor at Stanford, his team won the DARPA Grand Challenge car race. He then joined Google.
+
+
 ## Companies
+
+* https://www.technologyreview.com/s/604006/autox-has-built-a-self-driving-car-that-navigates-with-a-bunch-of-50-webcams/
 
 ### Baidu's Apollo
 
@@ -106,7 +90,7 @@ Baidu is the Google of China, providing a search engine.
 ### Alphabet (Google) 
 
 Alphabet (Google) holds a seven percent stake in Uber.
-Google has Waymo.
+Google also owns Waymo.
 
 
 ## Hardware
@@ -117,6 +101,28 @@ Baidu uses the Surround Computer Vision Kit hardware and <a target="_blank" href
 
 ## Software
 
+
+### Architecture of Processes
+
+<a target="_blank" href="https://www.youtube.com/watch?v=DMNOBBQKdr4">
+This 2017 TED Talk</a> [9:10]
+by David Silver describes the various technologies necessary:
+
+![self-driving-processes-631x314-22719](https://user-images.githubusercontent.com/300046/42537767-13749670-8453-11e8-890f-38d91083b3d2.jpg)
+
+An updated diagram:
+
+![self-driving-structure-576x379-29945](https://user-images.githubusercontent.com/300046/42572084-2038664c-84d6-11e8-92be-5db2e2451529.jpg)
+
+The eventual design for version 3.0 of Baidu's design adds a "Guardian" component:
+
+![self-driving-apollo_3 0_699x365-33837](https://user-images.githubusercontent.com/300046/42573483-737bc968-84d9-11e8-93ab-4a04ab2e7055.jpg)
+
+The "Canbus" is a Controller Area Network (CAN) which transfers data between devices without the assistance of a host computer. Attach a temperature sensor to the surface of the main IC chip on ESD CAN (an Altera FPGA chip) to monitor the surface temperature of the chip to make sure it is not overheating.
+
+
+### HMI (Human-Machine Interface)
+
 An off-line demo without the expensive hardware can install and run "rosbag". 
 See: https://github.com/ApolloAuto/apollo/tree/master/docs/demo_guide
 
@@ -126,29 +132,52 @@ It uses Baidu's Python-based Apollo Dreamview visualization software running und
 
 Apollo is based on Linux Kernel 4.4.32)
 
-### HMI (Human-Machine Interface)
-
 RTOS
 
 
-## Localization
-
-Self-driving cars need to figure out more precisely where it is in the world than what GPS can provide. To "localize" itself to single-digit centimeter accuracy, it uses several technologies.
+### GPS
 
 It needs a three-dimensional model (point cloud) of the road network, including the road, buildings, tunnels, etc. with road names and the speed limit for each stretch of road, traffic lights, and other traffic control information.
-
-High defition (HD) maps use computer vision.
 
 Apollo uses the OpenDRIVE map standard used by its competitors.
 Baidu has 300 survey vehicles to map all the highways in China.
 
 [4:50] A particle filter, a sophisticated type of triangulation which calculates how far the vehicle is from various landmarks (street lights, traffic signs, manhole covers).
 
+
+### Localization
+
+Self-driving cars need to figure out more precisely where it is in the world than what GPS (Global Positioning System) can provide. A GNSS (Global Navigation Satellite System) receiver needs at least 3 of 30 satellites to calulate its location (based on time of flight).
+
+BTW, RTK (Real Time Kinematic) positioning uses ground stations to provide "ground truth" used to ensure GPS accuracy to 10 meters.
+
+GPS updates every 10 seconds, which is too slow.
+
+For a vehicle to "localize" itself to <strong>single-digit centimeter</strong> accuracy, it uses several technologies.
+
 The Inertial Measurement Unit (IMU) is like the acellerometer on your phone.
+It updates at 1000 Hz (near real time).
+The system has to reconcile two XY coordinate frames: the vehicle and the map.
+In the 3D Gyroscope, the spin axis is set to the global coordinate system while the 3 gimbals rotate.
+
+<a name="LIDAR"></a>
+
+## LiDAR
+
+LiDARs today use 32 lasers and 1 or 2 million beams per second, and that a 64-laser system emitting 6.4 million beams a second would give superior vertical resolution and quicker refreshes. This would be better able to capture small, fast objects such as animals darting into the road. 
+
+Alex Lidow, CEO and cofounder of Efficient Power Conversion, a provider of the gallium nitride chips found in many modern lidars.
+
+* https://backchannel.com/how-my-public-records-request-triggered-waymos-self-driving-car-lawsuit-1699ff35ac28#.vi4talr7i
+by https://medium.com/@meharris/
+
+
 
 <a name="Perception"></a>
 
-## Perception
+### Perception
+
+High defition (HD) maps use computer vision to recognize objects within images captured.
 
 Classification, detection, segmentation.
 Perception using CNN (Convolutional Neural Networks)
@@ -173,20 +202,6 @@ Software creates waypoints that plot the plan.
 Planning the expected route...
 
 Analyzing the actual route traveled.
-
-<a name="LIDAR"></a>
-
-## LiDAR
-
-Alex Lidow, CEO and cofounder of Efficient Power Conversion, a provider of the gallium nitride chips found in many modern lidars.
-
-LiDARs today use 32 lasers and 1 or 2 million beams per second, and that a 64-laser system emitting 6.4 million beams a second would give superior vertical resolution and quicker refreshes. This would be better able to capture small, fast objects such as bouncing balls or animals darting into the road. 
-
-https://backchannel.com/how-my-public-records-request-triggered-waymos-self-driving-car-lawsuit-1699ff35ac28#.vi4talr7i
-
-https://medium.com/@meharris/
-
-https://www.technologyreview.com/s/604006/autox-has-built-a-self-driving-car-that-navigates-with-a-bunch-of-50-webcams/
 
 
 
