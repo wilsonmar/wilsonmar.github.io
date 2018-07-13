@@ -15,7 +15,7 @@ comments: true
 
 {% include _toc.html %}
 
-## Versions
+## Hardware Versions
 
 1. Click the Apple icon at the upper left corner and select
 <strong>About this Mac</strong>.
@@ -42,6 +42,8 @@ comments: true
    <li><a href="//www.macrumors.com/roundup/mac-mini/">Mac mini</a> (2010 or newer)</li>
    </ul><br /><br />
 
+   See <a href="https://wilsonmar.github.io/apple-mac-osx-versions/">my hands-on tutorial about MacOS Versions</a>
+
    ### Performance rankings
 
 2. Compare the performance rankings among hardware models at <a target="_blank" href="http://browser.geekbench.com/mac-benchmarks/">http://browser.geekbench.com/mac-benchmarks/</a>
@@ -50,11 +52,23 @@ comments: true
 
    The Compute Benchmark is run and <a target="_blank" href="https://browser.geekbench.com/v4/compute/2532765">posted</a> separately.
 
-3. Download installers from <a target="_blank" href="https://developer.apple.com/download/">https://developer.apple.com/download</a>. Beta installers should be placed in a bootable USB drive.
+### Mac Specs.
+
+The 2018 version of 15-inch MacBook Pro:
+
+* Intel Core i7, Core i9
+* <strong>Max DDR4 RAM of 32GB (up from 16GB)</strong>
+* 2TB to <strong>4TB SSD</strong>
+* Quieter third generation keyboard
+* Touch Bar
+* Radeon Pro discrete graphics with 4GB of video memory
+* Retina Display True Tone (not a touch screen)
+* T2 system on chip processor for security features
+
 
 ### Hackintosh
 
-If you need more than 16 GB RAM, build a (unsupported) <a target="_blank" href="https://hackintosh.com/">Hackintosh desktop</a> with a water-cooled i7–8700k processor, 8GB RX580 graphics card for 27" 4K LG HDR monitor. Oh, and a pair of Yamaha HS5 studio monitors (speakers) with a Roland audio interface. Plus SSD and HDD storage.
+If you need more than 16 GB RAM, build a (unsupported) <a target="_blank" href="https://hackintosh.com/">Hackintosh desktop</a> on PC hardware. For example: a water-cooled i7–8700k processor, 8GB RX580 graphics card for a 4K LG HDR monitor. Oh, and a pair of Yamaha HS5 studio monitors (speakers) with a Roland audio interface. Plus SSD and HDD storage.
 
 
 <a id="Register"></a>
@@ -108,15 +122,13 @@ tear-down instructions such as for MacBook Pro A1398 (Retina, 15-inch,Early 2015
 
 Dropping a Macbook can crack the screen.
 
-But a protective case adds to weight.
+A protective case can absorb some abuse, but adds to weight.
 
-Unlike some PCs, MacBooks do not have a slot for <strong>physical lock</strong> 
-as many Windows PCs have.
+Unlike some PCs, MacBooks do not have a slot for <strong>physical lock</strong> as many Windows PCs have.
 
 To put a Mac at the end of a cut-proof cable, 
 consider the docking station from Landing Zone.
 Install its driver from: 
-
    <a target="_blank" href="
    https://landingzone.net/driver-lxd">
    https://landingzone.net/driver-lxd</a>

@@ -149,9 +149,9 @@ to help you prepare for the exam are expensive ($100).
    The x.x.x pattern is called <a target="_blank" rel="amphtml" href="http://ssemver.org/">
    Semantic Versioning</a>.
 
-   The "10" is associated with "Darwin", an open-source Unix operating system released by Apple Inc. in 2000. It is composed of code developed by Apple as well as code derived from NeXTSTEP, BSD, Mach, and other free software projects. --<a target="_blank" href="https://www.wikiwand.com/en/Darwin_(operating_system)">Wikipedia</a>.
+   The "10" (in 10.12.5) is associated with "Darwin", an open-source Unix operating system released by Apple Inc. in 2000. It is composed of code developed by Apple as well as code derived from NeXTSTEP, BSD, Mach, and other free software projects. --<a target="_blank" href="https://www.wikiwand.com/en/Darwin_(operating_system)">Wikipedia</a>.
 
-0. A partial response can be requestd by:
+0. A partial response can be requested by:
 
    <pre><strong>sw_vers -productVersion
    </strong></pre>
@@ -191,9 +191,9 @@ to help you prepare for the exam are expensive ($100).
 
 The App Store app nags you every day to upgrade.
 
-Do a full backup before.
+Do a full backup before upgrading.
 
-MacOSX To find out more about why a macOS Sierra installation failed:
+1. To find out more about why a macOS Sierra installation failed, view the log:
 
    <pre><strong>textedit /var/log/install.log
    </strong></pre>
@@ -216,6 +216,8 @@ Apple maintains several items for macOS use in:
 
 ## Create a bootable installer for macOS
 
+Download installers from <a target="_blank" href="https://developer.apple.com/download/">https://developer.apple.com/download</a>. Beta installers should be placed in a bootable USB drive.
+
 To manually download the complete installer:
 
 1. Go to the installer page at:<br />
@@ -233,7 +235,8 @@ https://itunes.apple.com/us/app/macos-sierra/id1127487414?mt=12</a>
 
    Notice there are spaces within the file name of the download<br />
    "Install macOS Sierra.app". This means back slash (\\) escape characters
-   are needed in typed commands referencing the file.
+   are needed to "escape" spaces in typed commands referencing the file.
+   Example:
 
    <pre>ls "/Applications/Install\ macOS\ Sierra.app/Contents/Resources/"
    </pre>
