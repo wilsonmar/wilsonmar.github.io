@@ -231,6 +231,10 @@ It takes me about one day for each second of video produced using this approach:
 0. Make a backup to a USB drive. Just in case.
 0. Get feedback and revise.
 
+## Video to Gif
+
+Small videos can be converted to gif file format using:<br />
+https://ezgif.com/video-to-gif
 
 ## More Resources
 

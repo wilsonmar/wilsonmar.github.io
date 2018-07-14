@@ -1,3 +1,4 @@
+
 ---
 layout: post
 title: "Robotic Process Automation (RPA)"
@@ -16,11 +17,57 @@ comments: true
 {% include _toc.html %}
 
 
-RPA (Robotic Process Automation) programs are like Selenium, QTP, SmartBear, and other functional test tools:
-They are programs that mimic what human users do.
+RPA (Robotic Process Automation) programs mimic what human users do to help people do their job.
 RPA is an "auto-pilot" to automate any repetitive, data intensive task. 
 It can "screen scrap" to extract data from web pages.
-It has a macro recorder to generate scripts which can be edited.
+It has a "macro recorder" to generate scripts which can be edited.
+
+RPA programs are like Selenium, QTP, SmartBear, and other functional test tools.
+
+Several vendors offer RPA tools:
+
+* UIPath is an early entrant has become popular by offering an open-source Windows-based program.
+* <a href="#LDTP">LDTP</a>
+* <a target="_blank" href="http://www.blueprism.com/">Blue Prism</a> is built from the UK on the Microsoft .NET Framework. Its Control Room provides a centralized administration console for controlling, monitoring, executing and scheduling process execution on distributed robots.
+
+* Microsoft Flow is an online service for getting cloud apps (such as Office 365 and Outlook.com) to talk to each other, much like IFTTT.com.
+
+<a name="LDTP"></a>
+
+## LDTP
+
+<a target="_blank" href="https://ldtp.freedesktop.org/wiki/">LDTP</a>
+(Linux Desktop Testing Project) is a Cross Platform GUI Test Automation tool. 
+
+It uses Accessibility libraries on each platform to poke through the application's user interface.
+Most of LDTP ideas are implemented from the SAFS (Software Automation Framework Support) at http://safsdev.sourceforge.net/Default.htm 
+
+The website for MacOS as ATOMac, http://pyatom.com/ is not operational
+and the last update was 2016.
+
+https://developer.apple.com/library/archive/navigation/
+is no longer supported. See instead:
+https://developer.apple.com/documentation
+
+Begin from https://ldtp.freedesktop.org/ldtp-tutorial.pdf
+
+
+
+<a name="Flow"></a>
+
+## Microsoft Flow
+
+https://flow.microsoft.com/en-us/
+
+<a target="_blank" href="https://www.youtube.com/channel/UCG98S4lL7nwlN8dxSF322bA">Youtube video account</a>
+
+https://docs.microsoft.com/en-us/flow/guided-learning/get-started
+Guided Learning
+
+Don't confuse RPA with the Microsoft Bot Framework.
+
+
+## UIPath
 
 1. Request their free "Community Edition":
 
@@ -33,8 +80,12 @@ It has a macro recorder to generate scripts which can be edited.
 The program offers a UI like the Visio diagramming tool 
 to design automation actions, without coding need by testing programs.
 
+BOOK <a target="_blank" href="https://www.microsoft.com/en-us/p/learning-robotic-process-automation/fgqpf3gzr0vb">
+Learning Robotic Process Automation</a>
+2018 by Alok Mani Tripathi
 
-## So much more?
+
+## Association
 
 In 2013 Frank Casale created an association to increase his consulting services:
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Serverless (on AWS Lamba and Microsoft Functions)"
+title: "Serverless architecture"
 excerpt: "Invisible ubiquitious server clouds across the land"
 tags: [node, serverless]
 image:
@@ -53,7 +53,7 @@ wrote
    "Depending on the circumstances, such systems can significantly reduce operational cost and complexity at a cost of <strong>vendor dependencies</strong> and (at the moment) immaturity of supporting services."
 
 
-#### Database idle costs money! #
+### Database idle costs money! #
 
    "You never pay for idle" Austen says 
    in an interview with by CloudAcademy <a target="_blank" href="https://www.youtube.com/watch?v=pvmx0IVfBLc">
@@ -82,7 +82,7 @@ and Machine Learning.
 * <a href="#IBM">IBM Bluemix OpenWhisk</a>
 * <a href="#IronIO">Iron.io for on-premises</a>. Ironically, Iron originated the term "serverless" in 2012.
 
-<hr />
+## Frameworks
 
 <a name="AWS"></a>
 
@@ -93,7 +93,7 @@ The AWS Serverless Application Model (SAM) at
 https://github.com/awslabs/serverless-application-model</a>
 was announced Nov 2016
 to define the SAM format
-to build <strong>Cloud Formation templates</strong> to access Amazon API Gateway APIs, AWS Lambda functions, and Amazon DynamoDB tables needed by serverless applications. 
+to build <strong>Cloud Formation templates</strong> that access Amazon API Gateway APIs, AWS Lambda functions, and Amazon DynamoDB tables needed by serverless applications. 
 
 Two AWS evangelists created <a target="_blank" href="https://github.com/aws-samples/aws-developer-workshop/blob/master/INSTRUCTIONS.md">pre-built templates</a> 
 with manual instructions, which they walked though in <a target="_blank" href="https://www.twitch.tv/events/PgC70I4pQoy14TP-RNS6Dw">30 minutes on Twitch.tv</a>:
@@ -195,38 +195,65 @@ His Simultaneous "Big Lambda" talk</a>
 
 ## Concerns
 
-The other side of freedom from server hassles is that developers also give away
-<strong>control</strong>.
+PROTIP: The other side of freedom from server hassles is that developers also give away <strong>control</strong>.
 
 Having one's data in another company's cloud requires trust in that company's
-ability to keep data secure, redundant, etc.
+ability to keep data secure, redundant, and pricing fair.
 
 PROTIP: Going with a particular vendor's API means that you need to keep up
 with changes in APIs that can occur frequently,
 even though they may not apply to your own operation.
 
-There is the danger vendor lock-in.
-But luckily, there is a way to alieviate that:
+There is the danger of vendor lock-in.
+
+But frameworks have emerged to allieviate that:
 
 
 ## Serverless Coding Frameworks
 
-Apex is from Terraform, a more feature-rich server product.
-
-ClaudiaJS
-
-Sparta for AWS Lambda, as a Golang app, is baked into deliverable binary
+* Apex, from Terraform, a more feature-rich server product.
+* ClaudiaJS
+* Sparta for AWS Lambda, as a Golang app, is baked into deliverable binary
 (unlike Node).
 
    * https://gospart.io
    * https://github.com/mweagle/Sparta
 
-Gordon is written in Python
+* Gordon is written in Python
 
-Zappa is written in Python for Flask apps
+* Zappa is written in Python for Flask apps
 
-Serverless
+* The Serverless Framework
 
+<a name="Apex"></a>
+
+### Apex
+
+http://apex.run/
+
+
+https://apex.sh/
+
+"Apex" <strong>manages</strong> AWS Lambda functions.
+
+See https://github.com/apex/apex/blob/master/docs/infra.md
+
+from Terraform, the same company 
+
+"Apex" from Terraform, the same company 
+
+a more feature-rich server product.
+
+Currently the following variables are exposed to Terraform:
+
+    aws_region the AWS region name such as "us-west-2"
+    apex_environment the environment name such as "prod" or "stage"
+    apex_function_role the Lambda role ARN
+    apex_function_arns A map of all lambda functions
+    apex_function_names A map of all the names of the lambda functions
+
+
+<a name="ServerlessFramework"></a>
 
 ### Serverless the company
 
@@ -454,7 +481,7 @@ scripts
 
 tests
 
-   #### New #
+#### New #
 
 0. Create a serverless.yml file containing the infrastructure:
 

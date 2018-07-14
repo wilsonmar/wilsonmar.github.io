@@ -14,20 +14,22 @@ comments: true
 
 {% include _toc.html %}
 
-self-driving.md
-
-Here are notes on how cars can drives themselves,
-based on various sources
+Here is a succinct summary of technical aspects on how cars can drive themselves.
 
 TAGS: #autonomousdriving #AI
+
+## Levels of autonomy
 
 Part of the facination (and fear) about Artificial Intelligence is how computers are becoming better than humans in many arenas.
 
 Because human drivers can be inexperienced, drunk, too tired or too distracted, etc. I predict that, at the current rate of progress, eventually the cost of "human error" will be higher than misjudgements by computers controlling vehicles. Then, governments, auto makers, insurance companies, and others will make it more difficult to own cars. This is because self-driving cars can travel faster than what people can safely handle (around 70 mph). 
 
 If Uber and/or <a target="_blank" href="https://twitter.com/LyftLevel5">Lyft's Level5</a> venture succeed, parking will be a thing of the past.
+And so are the jobs of human drivers.
 
-The levels of autonomy (from the Society of Automotive Engineers):
+## Levels of autonomy 
+
+(from the Society of Automotive Engineers):
 
 1. Driver Assistance - driver is fully engaged.
 2. Partial Automation - cruise control, lane keeping.
@@ -37,19 +39,21 @@ The levels of autonomy (from the Society of Automotive Engineers):
 5. Full Automation - without a geofencem in a closed venue low-speed environment such as by minibuses, valet parking, delivery robots. <a target="_blank" href="https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_3_0_quick_start.md">(Apollo 3.0)</a>
 
 
+
 ## Controls
 
 Computers needs to be able to control the vehicle's steering, throttle, and breaking systems to execute its planning.
 So vehicles need to be equipped with by-wire systems: including but not limited to brake by-wire, steering by-wire, throttle by-wire and shift by-wire.
 
-Honda's 2017 models and onward are built that way.
+Every auto manufacturer has a self-driving car program:
 
-The Lincoln MKZ is what Apollo is currently tested on.
+* Honda's 2017 models and onward are built that way.
 
-On 2018 Teslas even the glovebox lock is controlled by the computer.
+* The Lincoln MKZ is what Apollo is currently tested on.
 
-ASUS GTX1080 GPU-A8G- Gaming GPU Card
+* On Teslas even the glovebox lock is controlled by the computer.
 
+Additional organizations work with the 
 Autonomous Technology Certification Facility (ATCF)
 
 ## Degrees
@@ -63,15 +67,30 @@ BTW David Silver worked at Ford's self-driving car program and is now teaching o
 
 Students work on Udacity's car named Nanna.
 
-Udacity is founded by Sabastian Thrun, the "father" of self-driving car.
-When he was a professor at Stanford, his team won the DARPA Grand Challenge car race. He then joined Google.
-
+Udacity is founded by Sabastian Thrun (from Sweden), the "father" of self-driving car. When he was a professor at Stanford, his team won the DARPA Grand Challenge car race. He then joined Google.
 
 ## Companies
 
 * https://www.technologyreview.com/s/604006/autox-has-built-a-self-driving-car-that-navigates-with-a-bunch-of-50-webcams/
 
+### Apple
+
+Apple has not openly discussed their self-driving car program.
+
+In 2016, Apple's "Titan" program scaled back its 1,000 employee self-driving car platform.
+
+A disclosure in 2018 states that 5,000 employees at Apple know about a self-driving car program in the company.
+
+In April 2018, Apple hired Google's former AI boss to run Siri and machine learning.
+
+### Alphabet (Google) 
+
+Alphabet (Google) holds a seven percent stake in Uber.
+Google also owns Waymo.
+
 ### Baidu's Apollo
+
+Baidu is the Google of China, providing a search engine.
 
 Silver created a <a target="_blank" href="https://classroom.udacity.com/courses/ud0419/">free intro class</a> using Baidu's Apollo library at:
 
@@ -85,19 +104,19 @@ Social:
 
    * https://twitter.com/apolloplatform
  
-Baidu is the Google of China, providing a search engine.
+### X-Motors
 
-### Alphabet (Google) 
-
-Alphabet (Google) holds a seven percent stake in Uber.
-Google also owns Waymo.
-
+<hr />
 
 ## Hardware
 
 ![self-driving-hw-648x300-42002](https://user-images.githubusercontent.com/300046/42538319-e4d58fc0-8454-11e8-81c4-10037a9ed4e6.jpg)
 
-Baidu uses the Surround Computer Vision Kit hardware and <a target="_blank" href="https://www.youtube.com/watch?v=EceAB6TUYzo">Responsibility Sensitivity Safety (RSS) model</a> from <a target="_blank" href="https://www.digitaltrends.com/cars/intel-mobileye-100-self-driving-cars/">Intel's Mobileye</a>.
+Baidu uses the Surround Computer Vision Kit hardware and <a target="_blank" href="https://www.youtube.com/watch?v=EceAB6TUYzo">Responsibility Sensitivity Safety (RSS) model</a> from <a target="_blank" href="https://www.digitaltrends.com/cars/intel-mobileye-100-self-driving-cars/">
+Intel's Mobileye</a>.
+
+ASUS GTX1080 GPU-A8G- Gaming GPU Card
+
 
 ## Software
 
