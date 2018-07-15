@@ -652,9 +652,12 @@ functions:
 
 0. The other lines beginning with \# are comments that can be deleted.
 
-0. Deploy the app:
+0. Deploy the app (-verbosely):
 
    <pre><strong>sls deploy -v</strong></pre>
+
+   PROTIP: Be mindful of this message: 
+   Serverless: WARNING: Missing "tenant" and "app" properties in serverless.yml. Without these properties, you can not publish the service to the Serverless Platform.
 
    The response is a lot of lines, including something like this:
 
@@ -678,7 +681,50 @@ ServerlessDeploymentBucketName: aws-nodejs-hello-dev-serverlessdeploymentbucket-
 
 0. Open up a separate tab in your console and fetch (stream) all logs for your Function:
 
-  <pre><strong>sls logs -f hello -t</strong></pre>
+   <pre><strong>sls logs -f hello -t</strong></pre>
+
+   Sample response:
+
+   <pre>
+START RequestId: 9cb599bd-87d9-11e8-a1ac-77e94c02a7c3 Version: $LATEST
+END RequestId: 9cb599bd-87d9-11e8-a1ac-77e94c02a7c3
+REPORT RequestId: 9cb599bd-87d9-11e8-a1ac-77e94c02a7c3  Duration: 0.55 ms Billed Duration: 100 ms   Memory Size: 1024 MB  Max Memory Used: 21 MB  
+   </pre>
+
+0. List services:
+
+  <pre><strong>sls deploy list</strong></pre>
+
+   An example response:
+
+   <pre>
+Serverless: Listing deployments:
+Serverless: -------------
+Serverless: Timestamp: 1531622582547
+Serverless: Datetime: 2018-07-15T02:43:02.547Z
+Serverless: Files:
+Serverless: - aws-nodejs-hello.zip
+Serverless: - compiled-cloudformation-template.json
+   </pre>
+
+0. Invoke:
+
+  <pre><strong>sls invoke -f hello --log</strong></pre>
+
+   Response:
+
+   <pre>
+{
+    "statusCode": 200,
+    "body": "{\"message\":\"Go Serverless v1.0! Your function executed successfully!\",\"input\":{}}"
+}
+--------------------------------------------------------------------
+START RequestId: 5df3ecdc-87d9-11e8-8ed7-c3ee16fc727b Version: $LATEST
+END RequestId: 5df3ecdc-87d9-11e8-8ed7-c3ee16fc727b
+REPORT RequestId: 5df3ecdc-87d9-11e8-8ed7-c3ee16fc727b  Duration: 2.16 ms Billed Duration: 100 ms   Memory Size: 1024 MB  Max Memory Used: 20 MB  
+   </pre>  
+
+   PROTIP: Pay attention to "Max Memory Used:".
 
 0. Remove all Functions, Events and Resources of the service, so charges are no longer accrued:
 
