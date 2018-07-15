@@ -400,36 +400,6 @@ Plugins
 AwsConfigCredentials, Config, Create, Deploy, Emit, Info, Install, Invoke, Login, Logout, Logs, Metrics, Package, Plugin, PluginInstall, PluginList, PluginSearch, PluginUninstall, Print, Remove, Rollback, Run, SlStats
    </pre>
 
-   Look how far they've come since the first versions:
-
-   <pre>
- _______                             __
-|   _   .-----.----.--.--.-----.----|  .-----.-----.-----.
-|   |___|  -__|   _|  |  |  -__|   _|  |  -__|__ --|__ --|
-|____   |_____|__|  \___/|_____|__| |__|_____|_____|_____|
-|   |   |             The Serverless Application Framework
-|       |                           serverless.com, v0.5.6
-`-------'
-&nbsp;
-Commands
-* Serverless documentation: http://docs.serverless.com
-* You can run commands with "serverless" or the shortcut "sls"
-* Pass "--help" after any &LT;context> &LT;action> for contextual help
-* Add "--debug" to any command for extra useful logs
-&nbsp;
-project ........ create, init, install, remove
-function ....... create, deploy, logs, remove, rollback, run
-endpoint ....... deploy, remove
-event .......... deploy, remove
-dash ........... deploy, summary
-stage .......... create, remove
-region ......... create, remove
-resources ...... deploy, diff, remove
-plugin ......... create
-variables ...... list, set, unset
-   </pre>
-
-
 0. Verify where the executable is located:
 
    <pre><strong>
@@ -547,10 +517,10 @@ are secure values that should not be checked into version control (specified in 
 0. Create a folder to hold serverless projects.
    For example:
 
-   <tt><strong>
+   <pre><strong>
    mkdir ~/gits/sls
    cd ~/gits/sls
-   </strong></tt>
+   </strong></pre>
 
 
    <a name="ServerlessPlatform"></a>
@@ -564,7 +534,7 @@ are secure values that should not be checked into version control (specified in 
 
    This opens a browser to:
 
-   <pre>https://dashboard.serverless.com/?cli=true</pre>
+   <a target="https://dashboard.serverless.com/?cli=true">https://dashboard.serverless.com/?cli=true</a>
 
 0. Log in using your GitHub or Google credentials.
 
@@ -591,7 +561,7 @@ are secure values that should not be checked into version control (specified in 
    <pre><strong>sls create -t aws-nodejs --path aws-nodejs-hello
    </strong></pre>
 
-   <tt>-t</tt> is a contraction of command parameter <tt>--template</tt>
+   <tt>-t</tt> is a contraction of command parameter `--template`
 
    <pre>Serverless: Generating boilerplate...
  _______                             __
@@ -706,6 +676,8 @@ Serverless: Files:
 Serverless: - aws-nodejs-hello.zip
 Serverless: - compiled-cloudformation-template.json
    </pre>
+
+   ### Invoke function
 
 0. Invoke:
 
