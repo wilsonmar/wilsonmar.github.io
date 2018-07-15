@@ -726,6 +726,8 @@ REPORT RequestId: 5df3ecdc-87d9-11e8-8ed7-c3ee16fc727b  Duration: 2.16 ms Billed
 
    PROTIP: Pay attention to "Max Memory Used:".
 
+   ### Remove all functions
+
 0. Remove all Functions, Events and Resources of the service, so charges are no longer accrued:
 
   <pre><strong>sls remove</strong></pre>
@@ -733,14 +735,13 @@ REPORT RequestId: 5df3ecdc-87d9-11e8-8ed7-c3ee16fc727b  Duration: 2.16 ms Billed
    BLAH: Example response:
 
    <pre>
-Serverless: WARNING: Missing "tenant" and "app" properties in serverless.yml. Without these properties, you can not publish the service to the Serverless Platform.
 Serverless: Getting all objects in S3 bucket...
 Serverless: Removing objects in S3 bucket...
 Serverless: Removing Stack...
 Serverless: Checking Stack removal progress...
 .......
 Serverless: Stack removal finished...
-Serverless: WARNING: Missing "tenant" and "app" properties in serverless.yml
+Serverless: Successfully archived your service on the Serverless Platform
    </pre>
 
 <hr />
