@@ -182,6 +182,9 @@ Other orchestration systems for Docker containers:
 * <a target="_blank" href="https://translate.googleusercontent.com/translate_c?depth=1&hl=en&rurl=translate.google.com&sl=ko&sp=nmt4&tl=en&u=https://www.yongbok.net/blog/apache-mesos-cluster-resource-management/&usg=ALkJrhjiggTWHQtSdhkl8jOvGnAx43NIQw">Mesos from Apache</a>, which runs other containers in addition to Docker. K8SM is a Mesos Framework developed for Apache Mesos to use Google's Kubernetes. <a target="_blank" href="https://translate.google.com/translate?hl=en&sl=ko&tl=en&u=http://www.yongbok.net/blog/how-to-install-kubernetes-mesos-framework-on-ubuntu/">Installation</a>.
 
 <br /><br />
+<a target="_blank" href="">
+Container Orchestration Wars (2017)</a> at the Velocity Conf 19 Jun 2017
+by Karl Isenberg (@karlfi) of Mesosphere
 
 
 ### Kublet

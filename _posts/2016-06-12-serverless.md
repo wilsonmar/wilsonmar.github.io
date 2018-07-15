@@ -15,10 +15,9 @@ comments: true
 
 {% include _toc.html %}
 
-This is a description the ecosystem around the Serverless computing concept and the Serverless Framework.
+This describes the ecosystem around the "Serverless" computing concept to build applications as a collection of <strong>microservices</strong> that run in response to <strong>events</strong>, auto-scaled in a cloud.
 
-This is a follow-up to <a target="_blank" href="https://wilsonmar.github.io/aws-lambda-serverless/">my notes on creating a new Amazon Lambda serverless app running in the Amazon cloud</a>.
-
+This article is a pre-requisite to <a target="_blank" href="https://wilsonmar.github.io/aws-lambda-serverless/">my tutorial on creating a new Amazon Lambda serverless app running in the Amazon cloud</a>.
 
 <hr />
 
@@ -211,6 +210,7 @@ But frameworks have emerged to allieviate that:
 
 ## Serverless Coding Frameworks
 
+* Shep (bustle.com)
 * Apex, from Terraform, a more feature-rich server product.
 * ClaudiaJS
 * Sparta for AWS Lambda, as a Golang app, is baked into deliverable binary
@@ -221,7 +221,7 @@ But frameworks have emerged to allieviate that:
 
 * Gordon is written in Python
 
-* Zappa is written in Python for Flask apps
+* Zappa is written in Python for Flask apps running only on AWS Lambda
 
 * The Serverless Framework
 
@@ -230,9 +230,6 @@ But frameworks have emerged to allieviate that:
 ### Apex
 
 http://apex.run/
-
-
-https://apex.sh/
 
 "Apex" <strong>manages</strong> AWS Lambda functions.
 
@@ -268,16 +265,17 @@ around its open-source
 Serverless Framework on GitHub</a>, a combination of 
 command-line utilities and conventions.
 
-
 His initial Serverless presentation at AWS:Invent 2015
    <amp-youtube data-videoid="D_U6luQ6I90" layout="responsive" width="480" height="270"></amp-youtube>
+   <a target="_blank" href="https://news.ycombinator.com/item?id=10005415">
+   Hacker News</a> announced it in 2015 when the product was first called JAWS.
 
-Social media:
+The company's social media:
 
    * <a target="_blank" href="https://github.com/serverless/serverless">
    serverless-framework at https://github.com/serverless/serverless</a>
-   * <a target="_blank" href="http://docs.serverless.com/v0.5.0/docs">
-   Docs on serverless</a>
+   * <a target="_blank" href="http://docs.serverless.com/">
+   http://docs.serverless.com</a>
    * <a target="_blank" href="https://github.com/serverless/serverless/milestones/">
    Roadmap at https://github.com/serverless/serverless/milestones</a> 
    includes runs in Microsoft Azure and IBM.
@@ -292,19 +290,20 @@ Social media:
    YouTube channel</a>
    * <a target="_blank" href="http://github.us11.list-manage1.com/subscribe?u=b4fad36768cab222f88338995&id=5f8407dded">
    Mailchimp Mailing List</a>
+
    * <a target="_blank" href="http://www.meetup.com/serverless/">
    Meetups on meetup.com</a> and at
    <a target="_blank" href="https://www.ServerlessMeetups.com/">
    ServerlessMeetups.com</a>
-
-   * When <a target="_blank" href="https://news.ycombinator.com/item?id=10005415">
-   Hacker News</a> announced it in 2015 when the product was first called JAWS.
-
-The company hosts on August 17 in San Francisco an Emit Conference
-for "event-driven architectures".
+   * <a target="_blank" href="https://www.emitconference.com/">https://www.emitconference.com</a>
+   Emit Conference for "event-driven architectures" August in San Francisco
 
 
-#### Install Serverless framework  #
+#### Install Serverless Framework  #
+
+PROSTIP: The Serverless Framework is a command-line tool, providing scaffolding, workflow automation and best practices for developing and deploying your serverless architecture. 
+
+Below is an annotated, expanded verson of <a target="_blank" href="https://github.com/serverless/platform/blob/master/docs/getting-started.md">this</a>:
 
 0. [Install Node.js](/node-osx-install/)
    as a pre-requisite since the framework is written in Node.js.
@@ -339,6 +338,8 @@ for "event-driven architectures".
 
    Nothing returns if you're up-to-date.
 
+   The command notes whether you should <tt>npm install -g npm</tt>
+
    <a id="LookAround"></a>
 
    #### Look around #
@@ -349,34 +350,54 @@ for "event-driven architectures".
    sls
    </strong></tt>
 
-   the response:
+   The response (version 1.28.0) you'll have to extend the terminal screen to avoid line wrapping:
 
    <pre>
 Commands
-* Serverless documentation: http://docs.serverless.com
 * You can run commands with "serverless" or the shortcut "sls"
-* Pass "--help" after any <command> for contextual help
+* Pass "--verbose" to this command to get in-depth plugin info
+* Pass "--no-color" to disable CLI colors
+* Pass "--help" after any &LT;command> for contextual help
+&nbsp;
+Framework
+* Documentation: https://serverless.com/framework/docs/
 &nbsp;
 config ........................ Configure Serverless
 config credentials ............ Configures a new provider profile for the Serverless Framework
 create ........................ Create new Serverless service
-install ....................... Install a Serverless service from GitHub
-package ....................... Packages a Serverless service
-package function .............. undefined
 deploy ........................ Deploy a Serverless service
 deploy function ............... Deploy a single function from the service
 deploy list ................... List deployed version of your Serverless Service
+deploy list functions ......... List all the deployed functions and their versions
+info .......................... Display information about the service
+install ....................... Install a Serverless service from GitHub or a plugin from the Serverless registry
 invoke ........................ Invoke a deployed function
 invoke local .................. Invoke function locally
-info .......................... Display information about the service
 logs .......................... Output the logs of a deployed function
 metrics ....................... Show metrics for a specific function
+package ....................... Packages a Serverless service
+plugin ........................ Plugin management for Serverless
+plugin install ................ Install and add a plugin to your service
+plugin uninstall .............. Uninstall and remove a plugin from your service
+plugin list ................... Lists all available plugins
+plugin search ................. Search for plugins
+print ......................... Print your compiled and resolved config file
 remove ........................ Remove Serverless service and all resources
 rollback ...................... Rollback the Serverless service to a specific deployment
+rollback function ............. Rollback the function to the previous version
 slstats ....................... Enable or disable stats
 &nbsp;
+Platform (Beta)
+* The Serverless Platform is currently in experimental beta. Follow the docs below to get started.
+* Documentation: https://serverless.com/platform/docs/
+&nbsp;
+emit .......................... Emits an event to a running Event Gateway
+login ......................... Login or sign up for the Serverless Platform
+logout ........................ Logout from the Serverless Platform
+run ........................... Runs the Event Gateway and the Emulator
+&nbsp;
 Plugins
-AwsConfigCredentials, Config, Create, Deploy, Info, Install, Invoke, Logs, Metrics, Package, Remove, Rollback, SlStats
+AwsConfigCredentials, Config, Create, Deploy, Emit, Info, Install, Invoke, Login, Logout, Logs, Metrics, Package, Plugin, PluginInstall, PluginList, PluginSearch, PluginUninstall, Print, Remove, Rollback, Run, SlStats
    </pre>
 
    Look how far they've come since the first versions:
@@ -409,7 +430,7 @@ variables ...... list, set, unset
    </pre>
 
 
-0. Verify:
+0. Verify where the executable is located:
 
    <pre><strong>
    command -v serverless
@@ -419,17 +440,22 @@ variables ...... list, set, unset
 
    <pre>
    /usr/local/bin/serverless
-   /Users/mac/.npm-packages/bin/serverless
+   </pre>
+
+0. Get the location of files
+
+   <pre>
+   find / -name serverless 2>/dev/null
    </pre>
 
 0. Navigate to framework folders and files:
 
    <pre><strong>
-   cd ~/.npm-packages/lib/node_modules/serverless
+   cd /usr/local/lib/node_modules/serverless
    ls -al
    </strong></pre>
 
-   ### In the serverless folder
+   ### In the serverless framework folder
 
 0. View the README.md file using a Markdown reader:
 
@@ -443,29 +469,33 @@ variables ...... list, set, unset
    The file contains a list of projects,
    plugins, and consultants who provide services.
 
+   <a href="https://serverless.com/framework/" target="_blank">
+   https://serverless.com/framework</a>
 
-   #### Files
+   Serverless is open-sourced under the MIT license and actively maintained by a full-time, venture-backed team.
+
+   #### Files of Serverless Framework
 
 README.md, CONTRIBUTING.md, LICENSE.txt are standard GitHub files.
 
-.eslintrc.js contains rules for how lint programs identify issues with code formatting.
+<strong>.eslintrc.js</strong> contains rules for how lint programs identify issues with code formatting.
 
-.jsbeautifyrc contains settings for JavaScript code beautify program.
+<strong>.jsbeautifyrc</strong> contains settings for JavaScript code beautify program.
 
-.jscsrc
+<strong>.jscsrc</strong>
 
-.npmignore defines files and folders for NPM to ignore.
+<strong>.npmignore</strong> defines files and folders for NPM to ignore.
 
-.travis.yml is used by the Travis task runner.
+<strong>.travis.yml</strong> is used by the Travis task runner.
 
-Dockerfile defines how to load the program in Docker.
+<strong>Dockerfile</strong> defines how to load the server in Docker.
 
-docker-compose.yml
+<strong>docker-compose.yml</strong>
 
 
 #### Folders
 
-.idea contains settings for use by the IDEA IDE.
+<strong>.idea</strong> contains settings for use by the IDEA IDE.
 
 .github
 
@@ -473,24 +503,137 @@ bin
 
 coverage
 
-lib
+lib contains library files
 
-node_modules
+node_modules are populated
 
 scripts
 
 tests
 
-#### New #
 
-0. Create a serverless.yml file containing the infrastructure:
+<hr />
 
-   <pre><strong>sls create -t aws-node.js
+
+## Serverless Command-line #
+
+Lambda functions can be defined from a command-line using the Serverless framework.
+
+AWS May 2016 Webinar Series - Deep Dive on Serverless Web Applications
+   <amp-youtube data-videoid="fXZzVzptkeo" layout="responsive" width="480" height="270"></amp-youtube>
+
+http://abalone0204.github.io/2016/05/22/serverless-simple-crud/
+
+
+## Keeping Secrets #
+
+BLAH: AWS Lambda doesn't allow setting and reference to operating system <strong>environment variables</strong>.
+
+Lambda functions have a
+<strong>deploy.env</strong> file in combination with the
+<strong>`--configFile`</strong> flag to set values which will be
+prepended to your compiled Lambda function as
+<strong>process.env</strong> environment variables before it gets uploaded to S3.
+
+Secrets such as DB connection string or encryption key
+are secure values that should not be checked into version control (specified in a .gitignore file).
+
+
+
+<a name="Projects"></a>
+
+## Sample Project #
+
+0. Create a folder to hold serverless projects.
+   For example:
+
+   <tt><strong>
+   mkdir ~/gits/sls
+   cd ~/gits/sls
+   </strong></tt>
+
+
+   <a name="ServerlessPlatform"></a>
+
+   ### Serverless Platform Online #
+
+0. Open the cloud dashboard: 
+
+   <pre><strong>serverless login
    </strong></pre>
 
-0. Define API Gateway
+   This opens a browser to:
 
-   <pre>functions:
+   <pre>https://dashboard.serverless.com/?cli=true</pre>
+
+0. Log in using your GitHub or Google credentials.
+
+   * App visualization - View the services you've deployed with the Serverless Framework. inspect config, monitor deployment activity and more.
+
+   * Collaborate - Share your Serverless Framework projects with teammates.
+
+   * Hosted event gateway - Your account includes a free Event Gateway. Create event-driven APIs, workflows and integrations with any systems you'd like to integrate with serverless functions-as-a-service.
+
+0. Click on the + App button
+   An app name is suggested by concatenating your account and app plus the "slsgateway.com", such as:
+
+   myname-myapp-dev.slsgateway.com
+
+0. Edit the name and click SAVE.
+0. Return to the Terminal to see:
+
+   <pre>Serverless: You are now logged in</pre>
+
+   ### New local #
+
+0. Create a serverless.yml file using a <strong>template</strong> for a nodejs app running on the aws cloud provider:
+
+   <pre><strong>sls create -t aws-nodejs --path aws-nodejs-hello
+   </strong></pre>
+
+   <tt>-t</tt> is a contraction of command parameter <tt>--template</tt>
+
+   <pre>Serverless: Generating boilerplate...
+ _______                             __
+|   _   .-----.----.--.--.-----.----|  .-----.-----.-----.
+|   |___|  -__|   _|  |  |  -__|   _|  |  -__|__ --|__ --|
+|____   |_____|__|  \___/|_____|__| |__|_____|_____|_____|
+|   |   |             The Serverless Application Framework
+|       |                           serverless.com, v1.28.0
+ -------'
+&nbsp;
+Serverless: Successfully generated boilerplate for template: "aws-nodejs"
+Serverless: NOTE: Please update the "service" property in serverless.yml with your service name
+   </pre>
+
+0. The previous command (like Git clone) creates a folder, so
+
+   <pre><strong>cd <em>aws-nodejs-hello</em></strong></pre>
+
+   Two files are created in the folder:
+
+   * handler.js which is the coding for the Lambda function.
+   * serverless.yml defines the configuration.
+   <br /><br />
+
+0. Edit file serverless.yml to add permissions to use Amazon's SES (Simple Email Service):
+
+   <pre>
+service: aws-nodejs-hello
+app: myapp-dev
+tenant: wilsonmar
+&nbsp;
+provider:
+  name: aws
+  runtime: nodejs6.10
+  iamRoleStatements:
+  - Effect: "Allow"
+    Action:
+      - "ses:*"
+    Resource:
+      - "*"
+&nbsp;
+functions:
    hello:
       handler: handler.hello
       events:
@@ -499,57 +642,69 @@ tests
              mention: get
    </pre>
 
-<a name="Libraries"></a>
+   ### Functions
 
-## Libraries #
+   The name of the function is defined ("hello").
 
-React Serverless app running in Azure?
+   ### Handlers #
 
-<a target="_blank" href="https://github.com/99xt/serverless-dependency-install">
-   https://github.com/99xt/serverless-dependency-install</a>
-   Serverless plugin to manage dependencies
-   
-<a target="_blank" href="https://github.com/99xt/serverless-boilerplate">
-    with architectural best practices</a>
-    using NPM, Angular, Gulp.
+   PROTIP: Handlers can compress or transform objects while being uploaded to Amazon S3.
 
-<a target="_blank" href="https://github.com/99xt/serverless-dynamodb-local">
-   https://github.com/99xt/serverless-dynamodb-local</a>
+0. The other lines beginning with \# are comments that can be deleted.
 
+0. Deploy the app:
 
-### Handlers #
+   <pre><strong>sls deploy -v</strong></pre>
 
-   * Handlers compress or transform objects while being uploaded to Amazon S3.
+   The response is a lot of lines, including something like this:
 
+   <pre>
+Service Information
+service: aws-nodejs-hello
+stage: dev
+region: us-east-1
+stack: aws-nodejs-hello-dev
+api keys:
+  None
+endpoints:
+  None
+functions:
+  hello: aws-nodejs-hello-dev-hello
+&nbsp;
+*Stack Outputs*
+HelloLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-1:903265058630:function:aws-nodejs-hello-dev-hello:1
+ServerlessDeploymentBucketName: aws-nodejs-hello-dev-serverlessdeploymentbucket-wafuwil8ilvx
+   </pre>   
 
-<a name="Libraries"></a>
+0. Open up a separate tab in your console and fetch (stream) all logs for your Function:
 
-## Libraries #
+  <pre><strong>sls logs -f hello -t</strong></pre>
 
+0. Remove all Functions, Events and Resources of the service, so charges are no longer accrued:
 
+  <pre><strong>sls remove</strong></pre>
 
-<a name="Projects"></a>
+   BLAH: Example response:
 
-## Sample Projects #
+   <pre>
+Serverless: WARNING: Missing "tenant" and "app" properties in serverless.yml. Without these properties, you can not publish the service to the Serverless Platform.
+Serverless: Getting all objects in S3 bucket...
+Serverless: Removing objects in S3 bucket...
+Serverless: Removing Stack...
+Serverless: Checking Stack removal progress...
+.......
+Serverless: Stack removal finished...
+Serverless: WARNING: Missing "tenant" and "app" properties in serverless.yml
+   </pre>
 
-0. Create a folder to hold serverless projects.
-   For example:
+<hr />
 
-   <tt><strong>
-   ~/gits/sls
-   </strong></tt>
+## Implement a sample project 
 
-0. Create a blank project.
+Choose one pre-defined:
 
-    <tt><strong>
-    serverless create project
-    </strong></tt>
-
-   Alternately:
-
-   Pick a sample project to implement:
-
-   * https://zanon.io/posts/building-serverless-websites-on-aws-tutorial
+   * https://zanon.io/posts/building-serverless-websites-on-aws-tutorial 
+   using the Serverless Framework 1.1, dated JAN 31, 2016.
 
    * [serverless/serverless-graphql](https://github.com/serverless/serverless-graphql) - Official Serverless boilerplate to kick start your project
 
@@ -563,11 +718,12 @@ React Serverless app running in Azure?
 
    * [microapps/MoonMail] (https://github.com/microapps/MoonMail) - Build your own email marketing infrastructure using Lambda + SES from http://microapps.com/
 
+0. Create a folder.
 
-   For example, load a sample project from above:
+0. Load a sample project from the list above:
 
    <tt><strong>
-   serverless project install serverless-graphql
+   sls project install serverless-graphql
    </strong></tt>
 
    The response:
@@ -611,28 +767,13 @@ Serverless: Creating region "us-west-2" in stage "dev"...
 Serverless: Deploying resources to stage "dev" in region "us-west-2" via Cloudformation (~3 minutes)...
    </pre>
 
+
 <a name="Stuck"></a>
 
 > If you see these error messages, let me know because I'm stuck!!!!
 
 {% highlight text %}
-   /Users/mac/.npm-packages/lib/node_modules/serverless/node_modules/bluebird/js/release/async.js:61
-        fn = function () { throw arg; };
-                           ^
-
-ServerlessError: ServerlessError: The security token included in the request is invalid.
-  at new ServerlessError (/Users/mac/.npm-packages/lib/node_modules/serverless/lib/Error.js:17:11)
-  at ResourcesDeploy.<anonymous> (/Users/mac/.npm-packages/lib/node_modules/serverless/lib/actions/ResourcesDeploy.js:241:25)
-  at ResourcesDeploy.tryCatcher (/Users/mac/.npm-packages/lib/node_modules/serverless/node_modules/bluebird/js/release/util.js:16:23)
-  at Promise._settlePromiseFromHandler (/Users/mac/.npm-packages/lib/node_modules/serverless/node_modules/bluebird/js/release/promise.js:502:31)
-  at Promise._settlePromise (/Users/mac/.npm-packages/lib/node_modules/serverless/node_modules/bluebird/js/release/promise.js:559:18)
-  at Promise._settlePromise0 (/Users/mac/.npm-packages/lib/node_modules/serverless/node_modules/bluebird/js/release/promise.js:604:10)
-  at Promise._settlePromises (/Users/mac/.npm-packages/lib/node_modules/serverless/node_modules/bluebird/js/release/promise.js:679:18)
-  at Async._drainQueue (/Users/mac/.npm-packages/lib/node_modules/serverless/node_modules/bluebird/js/release/async.js:138:16)
-  at Async._drainQueues (/Users/mac/.npm-packages/lib/node_modules/serverless/node_modules/bluebird/js/release/async.js:148:10)
-  at Immediate.Async.drainQueues [as _onImmediate] (/Users/mac/.npm-packages/lib/node_modules/serverless/node_modules/bluebird/js/release/async.js:17:14)
-  at tryOnImmediate (timers.js:543:15)
-  at processImmediate [as _immediateCallback] (timers.js:523:5)
+...
 {% endhighlight %}
 
 
@@ -695,29 +836,6 @@ which stores project metadata in S3.
 <strong>admin.env</strong>
 
 
-## Serverless Command-line #
-
-Lambda functions can be defined from a command-line using the Serverless framework.
-
-AWS May 2016 Webinar Series - Deep Dive on Serverless Web Applications
-   <amp-youtube data-videoid="fXZzVzptkeo" layout="responsive" width="480" height="270"></amp-youtube>
-
-http://abalone0204.github.io/2016/05/22/serverless-simple-crud/
-
-
-## Keeping Secrets #
-
-BLAH: AWS Lambda doesn't allow setting and reference to operating system <strong>environment variables</strong>.
-
-Lambda functions have a
-<strong>deploy.env</strong> file in combination with the
-<strong>`--configFile`</strong> flag to set values which will be
-prepended to your compiled Lambda function as
-<strong>process.env</strong> environment variables before it gets uploaded to S3.
-
-Secrets such as DB connection string or encryption key
-are secure values that should not be checked into version control (specified in a .gitignore file).
-
 
 <a name="LocalTesting"></a>
 
@@ -752,10 +870,13 @@ Let's examine the choices to emulate AWS Lambda locally:
 
 ## Plugins #
 
-The heart of Serverless are its Plugins.
+The heart of Serverless are its Plugins, which makes it extensible.
+
 Several plugins come with the Framework.
 
-PROTIP: Plugins need to be installed for each project that uses each.
+Plugins can be written in python, node.js, java, scala or C#.
+
+Plugins need to be installed for each project that uses each.
 
 0. List plugins installed.
 
@@ -820,7 +941,8 @@ PROTIP: Plugins need to be installed for each project that uses each.
 * [arabold/serverless-autoprune-plugin](https://github.com/arabold/serverless-autoprune-plugin) - Delete old AWS Lambda versions.
 
 
- Functions of the same component can use the lib folder to share common code.
+PROTIP: Functions of the same component can use the lib folder to share common code.
+
 
 <a id="IAM"></a>
 
@@ -828,11 +950,29 @@ PROTIP: Plugins need to be installed for each project that uses each.
 
 aws-lambda-node-js-programming
 
-
 * http://stackoverflow.com/questions/37779324/how-to-troubleshoot-serverless-iam-permissions
 
+<a name="Libraries"></a>
 
-## Resources #
+## Libraries #
+
+React Serverless app running in Azure?
+
+<a target="_blank" href="https://github.com/99xt/serverless-dependency-install">
+   https://github.com/99xt/serverless-dependency-install</a>
+   Serverless plugin to manage dependencies
+   
+<a target="_blank" href="https://github.com/99xt/serverless-boilerplate">
+    with architectural best practices</a>
+    using NPM, Angular, Gulp.
+
+<a target="_blank" href="https://github.com/99xt/serverless-dynamodb-local">
+   https://github.com/99xt/serverless-dynamodb-local</a>
+
+
+## Resources
+
+### Rock Stars #
 
 <a name="PhillipMuens"></a>
 Phillip Muens (@pmmuens, github.com/pmuens) from Germany
@@ -880,6 +1020,31 @@ CNCF
 
    * <a target="_blank" href="https://github.com/cncf/wg-serverless/blob/master/whitepaper/cncf_serverless_whitepaper_v1.0.pdf">white paper PDF</a> in 
    https://github.com/cncf/wg-serverless
+   from the Kubernetes folks
+
+### Pluralsight video tutorials
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-polly-voice-enabled-serverless-website">
+Building a Voice-enabled Serverless Website with AWS Polly</a>
+10 Jul 2018, 1h 46m
+by Raluca Bolovan
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/play-by-play-build-serverless-node-web-api">
+Play by Play: Build a Serverless Node Web API</a> 9 Apr 2018, 1h 16m
+by Simona Cotin and John Papa
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-nodejs-serverless-framework-using">
+Using the Serverless Framework with Node.js on AWS</a>
+4 Oct 2017, 1h 38m
+by Fernando Medina Corey (@fmc_sea, fernandomc.com)
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/azure-serverless-applications">
+Building Serverless Applications in Azure</a> 15 Aug 2017, 4h 7m
+by Mark Heath
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/web-applications-without-server">
+Serverless Web Applications</a> 9 Dec 2015 
+by Rob Conery
 
 
 ## More on Clouds #
