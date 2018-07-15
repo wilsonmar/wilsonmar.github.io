@@ -622,6 +622,9 @@ functions:
 
 0. The other lines beginning with \# are comments that can be deleted.
 
+
+   ### Deploy function
+
 0. Deploy the app (-verbosely):
 
    <pre><strong>sls deploy -v</strong></pre>
@@ -649,18 +652,8 @@ HelloLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-1:903265058630:function:
 ServerlessDeploymentBucketName: aws-nodejs-hello-dev-serverlessdeploymentbucket-wafuwil8ilvx
    </pre>   
 
-0. Open up a separate tab in your console and fetch (stream) all logs for your Function:
-
-   <pre><strong>sls logs -f hello -t</strong></pre>
-
-   Sample response:
-
-   <pre>
-START RequestId: 9cb599bd-87d9-11e8-a1ac-77e94c02a7c3 Version: $LATEST
-END RequestId: 9cb599bd-87d9-11e8-a1ac-77e94c02a7c3
-REPORT RequestId: 9cb599bd-87d9-11e8-a1ac-77e94c02a7c3  Duration: 0.55 ms Billed Duration: 100 ms   Memory Size: 1024 MB  Max Memory Used: 21 MB  
-   </pre>
-
+   ### Functions deployed
+   
 0. List services:
 
    <pre><strong>sls deploy list</strong></pre>
@@ -675,6 +668,20 @@ Serverless: Datetime: 2018-07-15T02:43:02.547Z
 Serverless: Files:
 Serverless: - aws-nodejs-hello.zip
 Serverless: - compiled-cloudformation-template.json
+   </pre>
+
+   ### Show Function Logs
+
+0. Open up a separate tab in your console and fetch (stream) all logs for your Function:
+
+   <pre><strong>sls logs -f hello -t</strong></pre>
+
+   Sample response:
+
+   <pre>
+START RequestId: 9cb599bd-87d9-11e8-a1ac-77e94c02a7c3 Version: $LATEST
+END RequestId: 9cb599bd-87d9-11e8-a1ac-77e94c02a7c3
+REPORT RequestId: 9cb599bd-87d9-11e8-a1ac-77e94c02a7c3  Duration: 0.55 ms Billed Duration: 100 ms   Memory Size: 1024 MB  Max Memory Used: 21 MB  
    </pre>
 
    ### Invoke function
