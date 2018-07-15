@@ -561,7 +561,7 @@ are secure values that should not be checked into version control (specified in 
    <pre><strong>sls create -t aws-nodejs --path aws-nodejs-hello
    </strong></pre>
 
-   <tt>-t</tt> is a contraction of command parameter `--template`
+   <tt>-t</tt> is a contraction of command parameter `--template`f
 
    <pre>Serverless: Generating boilerplate...
  _______                             __
@@ -663,7 +663,7 @@ REPORT RequestId: 9cb599bd-87d9-11e8-a1ac-77e94c02a7c3  Duration: 0.55 ms Billed
 
 0. List services:
 
-  <pre><strong>sls deploy list</strong></pre>
+   <pre><strong>sls deploy list</strong></pre>
 
    An example response:
 
@@ -681,7 +681,7 @@ Serverless: - compiled-cloudformation-template.json
 
 0. Invoke:
 
-  <pre><strong>sls invoke -f hello --log</strong></pre>
+   <pre><strong>sls invoke -f hello --log</strong></pre>
 
    Response:
 
@@ -702,7 +702,7 @@ REPORT RequestId: 5df3ecdc-87d9-11e8-8ed7-c3ee16fc727b  Duration: 2.16 ms Billed
 
 0. Remove all Functions, Events and Resources of the service, so charges are no longer accrued:
 
-  <pre><strong>sls remove</strong></pre>
+   <pre><strong>sls remove</strong></pre>
 
    BLAH: Example response:
 
