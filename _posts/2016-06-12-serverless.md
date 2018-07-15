@@ -189,6 +189,10 @@ map of map reduce.
 <a target="_blank" href="https://tothestars.io/blog/2016/11/12/serverless-mapreduce">
 His Simultaneous "Big Lambda" talk</a>
 
+<a target="_blank" href="https://www.emitconference.com/">https://www.emitconference.com</a>
+Emit Conference for "event-driven architectures" August in San Francisco
+has people who've done it talk about it.
+
 
 <a name="Concerns"></a>
 
@@ -512,7 +516,7 @@ are secure values that should not be checked into version control (specified in 
 
 <a name="Projects"></a>
 
-## Sample Project #
+## Sample Hello Project #
 
 0. Create a folder to hold serverless projects.
    For example:
@@ -652,8 +656,21 @@ HelloLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-1:903265058630:function:
 ServerlessDeploymentBucketName: aws-nodejs-hello-dev-serverlessdeploymentbucket-wafuwil8ilvx
    </pre>   
 
+   You'll get a "congrats on your first deploy" email if it is:
+
+   <pre>
+Congrats on your very first deployment on the Serverless Framework! Here's to many more. 🎉 
+&nbsp;
+Use these resources from our community to help you build apps faster:
+Serverless examples repository for a list of ready-to-go, deployable serverless services
+Serverless plug-ins to extend base functionality
+David
+your friendly neighborhood developer
+@ Serverless
+   </pre>
+
    ### Functions deployed
-   
+
 0. List services:
 
    <pre><strong>sls deploy list</strong></pre>
