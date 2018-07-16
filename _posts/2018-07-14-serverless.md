@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Serverless architecture"
+title: "Serverless computing"
 excerpt: "Invisible ubiquitious server clouds across the land"
 tags: [node, serverless]
 image:
@@ -18,8 +18,6 @@ comments: true
 This describes the ecosystem around the "Serverless" computing concept to build applications as a collection of <strong>microservices</strong> that run in response to <strong>events</strong>, auto-scaled in a cloud.
 
 This article is a pre-requisite to <a target="_blank" href="https://wilsonmar.github.io/aws-lambda-serverless/">my tutorial on creating a new Amazon Lambda serverless app running in the Amazon cloud</a>.
-
-<hr />
 
 The sentiment about servers is reflected in the wi-fi password
 attendees of #ServelessConf type in:<br />
@@ -50,19 +48,6 @@ Mike Roberts at <a target="_blank" href="http://martinfowler.com/articles/server
    http://martinfowler.com/articles/serverless.html</a>
 wrote
    "Depending on the circumstances, such systems can significantly reduce operational cost and complexity at a cost of <strong>vendor dependencies</strong> and (at the moment) immaturity of supporting services."
-
-
-### Database idle costs money! #
-
-   "You never pay for idle" Austen says 
-   in an interview with by CloudAcademy <a target="_blank" href="https://www.youtube.com/watch?v=pvmx0IVfBLc">
-   Introduction to the Serverless Paradigm</a> [23:50]
-
-   PROTIP: But this is not true within AWS if you use DynamoDB, which Amazon touts as the default database.
-   While Lambda does not incur charges while idle,
-   DynamoDB instances do incur charges for data stored even though no data is read or written to it.
-
-   PROTIP: On AWS use SimpleDB instead of DynamoDB for true no-cost idle.
 
 
 ## FaaS Providers
@@ -193,10 +178,27 @@ His Simultaneous "Big Lambda" talk</a>
 Emit Conference for "event-driven architectures" August in San Francisco
 has people who've done it talk about it.
 
+<a target="_blank" href="https://stackshare.io/posts/evolution-of-new-york-times-tech-stack#serverless-future">
+An audio Q&A with The CTO of New York Times</a>, Nick Rockwell, who migrated the paper to
+using React and GraphQL Apollo that reads off of a Kafka pipeline on Google Cloud and Big Query.
 
 <a name="Concerns"></a>
 
 ## Concerns
+
+### Database idle costs money! #
+
+   "You never pay for idle" Austen says 
+   in an interview with by CloudAcademy <a target="_blank" href="https://www.youtube.com/watch?v=pvmx0IVfBLc">
+   Introduction to the Serverless Paradigm</a> [23:50]
+
+   PROTIP: But this is not true within AWS if you use DynamoDB, which Amazon touts as the default database.
+   While Lambda does not incur charges while idle,
+   DynamoDB instances do incur charges for data stored even though no data is read or written to it.
+
+   PROTIP: On AWS use <strong>SimpleDB instead of DynamoDB</strong> for true no-cost idle.
+
+### Control
 
 PROTIP: The other side of freedom from server hassles is that developers also give away <strong>control</strong>.
 
@@ -215,8 +217,8 @@ But frameworks have emerged to allieviate that:
 ## Serverless Coding Frameworks
 
 * Shep (bustle.com)
-* Apex, from Terraform, a more feature-rich server product.
 * ClaudiaJS
+* <a href="#Apex">Apex</a> provides a shim to support Go and languages not yet supported by Lambda,
 * Sparta for AWS Lambda, as a Golang app, is baked into deliverable binary
 (unlike Node).
 
@@ -226,7 +228,7 @@ But frameworks have emerged to allieviate that:
 * Gordon is written in Python
 
 * Zappa is written in Python for Flask apps running only on AWS Lambda
-
+* <a target="_blank" href="https://stackshare.io/cloud-functions-for-firebase">Google Cloud Functions for Firebase</a>
 * The Serverless Framework
 
 <a name="Apex"></a>
@@ -235,15 +237,9 @@ But frameworks have emerged to allieviate that:
 
 http://apex.run/
 
-"Apex" <strong>manages</strong> AWS Lambda functions.
+<a target="_blank" href="https://github.com/apex/apex">Open sourced on GitHub/apex/apex</a> 
 
 See https://github.com/apex/apex/blob/master/docs/infra.md
-
-from Terraform, the same company 
-
-"Apex" from Terraform, the same company 
-
-a more feature-rich server product.
 
 Currently the following variables are exposed to Terraform:
 
@@ -486,6 +482,103 @@ scripts
 tests
 
 
+
+<a name="Plugins"></a>
+
+#### _meta Plugins #
+
+The heart of Serverless are its Plugins, which makes it extensible.
+
+Plugins can be written in python, node.js, java, scala or C#.
+
+Plugins need to be installed for each project that uses each.
+
+0. List plugins come installed with the Framework :
+
+   <tt><strong>
+   ls _meta/
+   </strong></tt>
+
+0. Navigate your active directory to the root of your project.
+0. Plugins are downloaded from GitHub by npm, so to install a plug-in, for example:
+
+   <pre>
+   npm install --save-dev serverless-webpack-plugin webpack
+   </pre>
+
+   See [asprouse/serverless-webpack-plugin](https://github.com/asprouse/serverless-webpack-plugin) - Use Webpack to optimize your Serverless Node.js Functions.
+
+   In serverless.yml, this section:
+
+   <pre>
+   plugins:
+     - custom-serverless-plugin
+   custom:
+     custom-config-category:
+       configBucket: configBucketName
+   </pre>
+
+
+* [serverless/serverless-meta-sync](https://github.com/serverless/serverless-meta-sync) - Securely sync your the variables in your project's `_meta/variables` across your team.
+
+   <tt><strong>
+   npm install serverless-offline --save
+   </strong></tt>
+
+* [dherault/serverless-offline](https://github.com/dherault/serverless-offline) - Emulate AWS Lambda and Api Gateway locally to speed up your development cycles.
+
+* [kennu/serverless-plugin-hookscripts](https://github.com/kennu/serverless-plugin-hookscripts) - Easily create shell script hooks that are run whenever Serverless actions are executed.
+
+* [joostfarla/serverless-cors-plugin](https://github.com/joostfarla/serverless-cors-plugin) - Adds support for CORS (Cross-origin resource sharing).
+
+* [Nopik/serverless-serve](https://github.com/Nopik/serverless-serve) - Simulate API Gateway locally, so all function calls can be run via localhost.
+
+* [serverless/serverless-client-s3](https://github.com/serverless/serverless-client-s3) - Deploy and config a web client for your Serverless project to S3.
+
+* [martinlindenberg/serverless-plugin-alerting](https://github.com/martinlindenberg/serverless-plugin-alerting) -
+   This Plugin adds Cloudwatch Alarms with SNS notifications for your Lambda functions.
+
+* [serverless/serverless-optimizer-plugin](https://github.com/serverless/serverless-optimizer-plugin) -
+   Optimizes your code for performance in Lambda. Supports coffeeify, babelify and other transforms
+
+* [tmilewski/serverless-resources-validation-plugin](https://github.com/tmilewski/serverless-resources-validation-plugin) -
+   Adds support for validating your CloudFormation template.
+
+* [Nopik/serverless-lambda-prune-plugin](https://github.com/Nopik/serverless-lambda-prune-plugin) -
+   Delete old versions of AWS lambdas from your account so that you don't exceed the code storage limit.
+
+* [daffinity/serverless-base-path-plugin](https://github.com/daffinity/serverless-base-path-plugin) -
+   Sets a base path for all API Gateway endpoints in a Component.
+
+* [arabold/serverless-test-plugin](https://github.com/arabold/serverless-test-plugin) - A Simple Integration Test Framework for Serverless.
+
+* [martinlindenberg/serverless-plugin-sns](https://github.com/martinlindenberg/serverless-plugin-sns) - This plugin easily subscribes your lambda functions to SNS notifications.
+
+* [joostfarla/serverless-jshint-plugin](https://github.com/joostfarla/serverless-jshint-plugin) - Detect errors and potential problems in your Lambda functions.
+
+* [nishantjain91/serverless-eslint-plugin](https://github.com/nishantjain91/serverless-eslint-plugin) - Detect errors and potential problems in your Lambda functions using eslint.
+
+* [SC5/serverless-mocha-plugin](https://github.com/SC5/serverless-mocha-plugin) - Enable test driven development by creating test cases when creating new functions
+
+* [HyperBrain/serverless-package-plugin](https://github.com/HyperBrain/serverless-package-plugin) - Package your lambdas without deploying to AWS.
+
+* [arabold/serverless-sentry-plugin](https://github.com/arabold/serverless-sentry-plugin) - Automatically send errors and exceptions to [Sentry](https://getsentry.com).
+
+* [arabold/serverless-autoprune-plugin](https://github.com/arabold/serverless-autoprune-plugin) - Delete old AWS Lambda versions.
+
+
+PROTIP: Functions of the same component can use the lib folder to share common code.
+
+
+<a id="IAM"></a>
+
+## Get Permissions #
+
+aws-lambda-node-js-programming
+
+* http://stackoverflow.com/questions/37779324/how-to-troubleshoot-serverless-iam-permissions
+
+
 <hr />
 
 
@@ -519,13 +612,12 @@ are secure values that should not be checked into version control (specified in 
 ## Sample Hello Project #
 
 0. Create a folder to hold serverless projects.
-   For example:
+   For example, you may choose another:
 
    <pre><strong>
    mkdir ~/gits/sls
    cd ~/gits/sls
    </strong></pre>
-
 
    <a name="ServerlessPlatform"></a>
 
@@ -600,6 +692,8 @@ tenant: wilsonmar
 provider:
   name: aws
   runtime: nodejs6.10
+  environment:
+    ACCESS_KEY_VALUE: 123-access-key-value-456-abc
   iamRoleStatements:
   - Effect: "Allow"
     Action:
@@ -623,6 +717,20 @@ functions:
    ### Handlers #
 
    PROTIP: Handlers can compress or transform objects while being uploaded to Amazon S3.
+
+   ### Path
+
+   When using the AWS API Gateway, 
+
+   <pre>path: hello/{id}</pre>
+
+   ### Events #
+
+   Another http example:
+
+   <pre>method: post
+   cors: true
+   </pre>
 
 0. The other lines beginning with \# are comments that can be deleted.
 
@@ -662,8 +770,8 @@ ServerlessDeploymentBucketName: aws-nodejs-hello-dev-serverlessdeploymentbucket-
 Congrats on your very first deployment on the Serverless Framework! Here's to many more. 🎉 
 &nbsp;
 Use these resources from our community to help you build apps faster:
-Serverless examples repository for a list of ready-to-go, deployable serverless services
-Serverless plug-ins to extend base functionality
+<a target="_blank" href="https://github.com/serverless/examples"Serverless examples repository</a> for a list of ready-to-go, deployable serverless services
+<a target="_blank" href="https://github.com/serverless/plugins">Serverless plug-ins</a> to extend base functionality
 David
 your friendly neighborhood developer
 @ Serverless
@@ -728,7 +836,7 @@ REPORT RequestId: 5df3ecdc-87d9-11e8-8ed7-c3ee16fc727b  Duration: 2.16 ms Billed
 
    <pre><strong>sls remove</strong></pre>
 
-   BLAH: Example response:
+   Example response:
 
    <pre>
 Serverless: Getting all objects in S3 bucket...
@@ -743,6 +851,9 @@ Serverless: Successfully archived your service on the Serverless Platform
 <hr />
 
 ## Implement a sample project 
+
+
+Richard Moot (<a target="_blank" href="https://twitter.com/wootmoot">@wootmoot</a>), Developer Evangelist <a target="_blank" href="https://twitter.com/SquareDev">@Square</a>, wrote <a target="_blank" hrer="https://medium.com/square-corner-blog/super-simple-serverless-ecommerce-68d2792e8285?">Super Simple Serverless eCommerce</a> and <a target="_blank" href="https://medium.com/square-corner-blog/serverless-instant-checkout-links-with-square-6fa331d51928">Serverless Instant Checkout Links with Square</a>
 
 Choose one pre-defined:
 
@@ -809,16 +920,6 @@ Serverless: Select a new region for your stage:
 Serverless: Creating region "us-west-2" in stage "dev"...  
 Serverless: Deploying resources to stage "dev" in region "us-west-2" via Cloudformation (~3 minutes)...
    </pre>
-
-
-<a name="Stuck"></a>
-
-> If you see these error messages, let me know because I'm stuck!!!!
-
-{% highlight text %}
-...
-{% endhighlight %}
-
 
 
 <a name="FrameworkStructure"></a>
@@ -907,93 +1008,14 @@ Let's examine the choices to emulate AWS Lambda locally:
 
 0. Describe tests in a JSON file.
 
+<a name="ToProd"></a>
 
+## Going to production #
 
-<a name="Plugins"></a>
+By default, AWS Lambda limits the total concurrent executions across all functions within a given region to 100. This is a safety limit to protect you from costs due to potential runaway or recursive functions during initial development and testing. To increase this limit above the default, request a limit increase for concurrent executions at:
 
-## Plugins #
+   http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html#increase-concurrent-executions-limit
 
-The heart of Serverless are its Plugins, which makes it extensible.
-
-Several plugins come with the Framework.
-
-Plugins can be written in python, node.js, java, scala or C#.
-
-Plugins need to be installed for each project that uses each.
-
-0. List plugins installed.
-
-   <tt><strong>
-   ls _meta/
-   </strong></tt>
-
-0. Navigate your active directory to the root of your project.
-0. Plugins are downloaded from GitHub by npm:
-
-* [serverless/serverless-meta-sync](https://github.com/serverless/serverless-meta-sync) - Securely sync your the variables in your project's `_meta/variables` across your team.
-
-     <tt><strong>
-     npm install serverless-offline --save
-     </strong></tt>
-
-* [dherault/serverless-offline](https://github.com/dherault/serverless-offline) - Emulate AWS Lambda and Api Gateway locally to speed up your development cycles.
-
-* [kennu/serverless-plugin-hookscripts](https://github.com/kennu/serverless-plugin-hookscripts) - Easily create shell script hooks that are run whenever Serverless actions are executed.
-
-* [joostfarla/serverless-cors-plugin](https://github.com/joostfarla/serverless-cors-plugin) - Adds support for CORS (Cross-origin resource sharing).
-
-* [Nopik/serverless-serve](https://github.com/Nopik/serverless-serve) - Simulate API Gateway locally, so all function calls can be run via localhost.
-
-* [asprouse/serverless-webpack-plugin](https://github.com/asprouse/serverless-webpack-plugin) - Use Webpack to optimize your Serverless Node.js Functions.
-
-    <pre>
-    npm install serverless-webpack-plugin webpack --save-dev
-    </pre>
-
-* [serverless/serverless-client-s3](https://github.com/serverless/serverless-client-s3) - Deploy and config a web client for your Serverless project to S3.
-
-* [martinlindenberg/serverless-plugin-alerting](https://github.com/martinlindenberg/serverless-plugin-alerting) -
-   This Plugin adds Cloudwatch Alarms with SNS notifications for your Lambda functions.
-
-* [serverless/serverless-optimizer-plugin](https://github.com/serverless/serverless-optimizer-plugin) -
-   Optimizes your code for performance in Lambda. Supports coffeeify, babelify and other transforms
-
-* [tmilewski/serverless-resources-validation-plugin](https://github.com/tmilewski/serverless-resources-validation-plugin) -
-   Adds support for validating your CloudFormation template.
-
-* [Nopik/serverless-lambda-prune-plugin](https://github.com/Nopik/serverless-lambda-prune-plugin) -
-   Delete old versions of AWS lambdas from your account so that you don't exceed the code storage limit.
-
-* [daffinity/serverless-base-path-plugin](https://github.com/daffinity/serverless-base-path-plugin) -
-   Sets a base path for all API Gateway endpoints in a Component.
-
-* [arabold/serverless-test-plugin](https://github.com/arabold/serverless-test-plugin) - A Simple Integration Test Framework for Serverless.
-
-* [martinlindenberg/serverless-plugin-sns](https://github.com/martinlindenberg/serverless-plugin-sns) - This plugin easily subscribes your lambda functions to SNS notifications.
-
-* [joostfarla/serverless-jshint-plugin](https://github.com/joostfarla/serverless-jshint-plugin) - Detect errors and potential problems in your Lambda functions.
-
-* [nishantjain91/serverless-eslint-plugin](https://github.com/nishantjain91/serverless-eslint-plugin) - Detect errors and potential problems in your Lambda functions using eslint.
-
-* [SC5/serverless-mocha-plugin](https://github.com/SC5/serverless-mocha-plugin) - Enable test driven development by creating test cases when creating new functions
-
-* [HyperBrain/serverless-package-plugin](https://github.com/HyperBrain/serverless-package-plugin) - Package your lambdas without deploying to AWS.
-
-* [arabold/serverless-sentry-plugin](https://github.com/arabold/serverless-sentry-plugin) - Automatically send errors and exceptions to [Sentry](https://getsentry.com).
-
-* [arabold/serverless-autoprune-plugin](https://github.com/arabold/serverless-autoprune-plugin) - Delete old AWS Lambda versions.
-
-
-PROTIP: Functions of the same component can use the lib folder to share common code.
-
-
-<a id="IAM"></a>
-
-## Get Permissions #
-
-aws-lambda-node-js-programming
-
-* http://stackoverflow.com/questions/37779324/how-to-troubleshoot-serverless-iam-permissions
 
 <a name="Libraries"></a>
 
@@ -1064,6 +1086,7 @@ CNCF
    * <a target="_blank" href="https://github.com/cncf/wg-serverless/blob/master/whitepaper/cncf_serverless_whitepaper_v1.0.pdf">white paper PDF</a> in 
    https://github.com/cncf/wg-serverless
    from the Kubernetes folks
+
 
 ### Pluralsight video tutorials
 

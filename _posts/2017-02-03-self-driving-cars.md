@@ -27,6 +27,9 @@ Because human drivers can be inexperienced, drunk, too tired or too distracted, 
 If Uber and/or <a target="_blank" href="https://twitter.com/LyftLevel5">Lyft's Level5</a> venture succeed, parking will be a thing of the past.
 And so are the jobs of human drivers.
 
+Uber has, since 2012, been offering free rides in driverless cars aroud Pittsberg and Chandler, AZ.
+
+
 ## Levels of autonomy 
 
 (from the Society of Automotive Engineers):

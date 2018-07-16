@@ -25,9 +25,9 @@ Several operating systems can be installed on a Raspberry Pi:
 * Raspbian, a derivative of Debian Linux (described on this page, below):
 <br /><br />
 
-To install the Raspian operating system on a Raspberry Pi 3 board:
+To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 
-1. <a href="#Download">Download disk image</a> 
+1. <a href="#Download">Download Raspian disk image</a> 
 0. <a href="#CalcHash">Calculate and compare SHA hash for download integrity</a>
 0. <a href="#Adapter">Insert micro-SD card via a USB adapter</a>
 0. Format micro-SD card with Raspbian image on <a href="#WinPrep">Windows</a> or <a href="#MacPrep">MacOS</a>
@@ -53,7 +53,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board:
 
    Based on <a target="_blank" href="https://www.raspberrypi.org/documentation/installation/installing-images/mac.md">this</a>.
 
-   NOTE: Only one operating system can be loaded.
+   NOTE: Only one operating system can be loaded on the Pi.
 
 1. At <a target="_blank" href="https://www.raspberrypi.org/downloads/raspbian/">
    https://www.raspberrypi.org/downloads/raspbian</a>
@@ -86,6 +86,8 @@ To install the Raspian operating system on a Raspberry Pi 3 board:
    <br /><br />
 
 0. Click "Save File", the OK in the pop-up to begin download 
+
+   <a name="zipSizes"></a>
 
    | Date/File | Version | Download | Unzipped |
    | --------- | ------- | ----: | ---: |
@@ -120,7 +122,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board:
    On MacOS, open a Terminal and cd to the downloads folder to use a built-in command:
 
    <pre><strong>cd ~/Downloads
-   shasum <em>2017-09-07-raspbian-stretch.zip</em>
+   shasum <em>2018-03-13-raspbian-stretch.zip</em>
    </strong></pre>
 
    <a target="_blank" href="http://osxdaily.com/2012/02/05/check-sha1-checksum-in-mac-os-x/">
@@ -130,34 +132,36 @@ To install the Raspian operating system on a Raspberry Pi 3 board:
    Alternately, use the openssl utility:
 
    <pre><strong>
-   openssl sha256 2017-09-07-raspbian-stretch.zip
+   openssl sha256 2018-03-13-raspbian-stretch.zip
    </strong></pre>
 
    The output should match the SHA-256 associated with the downloaded file on the website.
    Example:
 
-   <pre>a64d742bc525b548f0435581fac5876b50a4e9ba1d1cd6433358b4ab6c7a770b</pre>
+   <pre>8636ab9fdd8f58a8ec7dde33b83747696d31711d17ef68267dbbcd6cfb968c24</pre>
 
-0. PROTIP: Save the .zip file to a DVD, then delete the file on your laptop
-   (to make room for other stuff on your hard drive):
+0. PROTIP: Save the .zip file to permanent DVD media so you don't have to download again, then delete the file on your laptop (to make room for other stuff on your hard drive):
 
    A regular single-sided, single layer DVD (R+ or R-) holds 4.7GB. 
    A dual-layer "DL" DVD disk holds 8.5GB.
+   <a href="#zipSizes">The file must be smaller</a> (which it is...for now).
 
 
    <a name="Adapter"></a>
 
    ### Micro-SD and USB Adapter
 
+1. Buy a 32 or 64 GB sd chip.
+
 0. CAUTION: Before touching delicate electrical boards,
    dissipate static electricity (from just walking around)
-   by touching a grounded metal.
+   by touching grounded metal.
 
-0. Get an adapter if you need one.
+0. Get an adapter if you need one (as for cameras).
 
    Some laptops require an adapter for USB. 
    Be sure the adapter can read the size of chip.
-   Older ones that read 4GB may not read the 32GB or 64GB.
+   Older ones for reading 4GB cannot read the 32GB or 64GB.
 
    WARNING: You need to plug the micro SD chip into a full-size SD chip adapter,
    which goes into the Mac's SD card slot.
@@ -226,13 +230,42 @@ To install the Raspian operating system on a Raspberry Pi 3 board:
 
 0. Open a Terminal shell window.
 
+   <a name="diskutil"></a>
+
 0. Identify the SD disk identifier:
 
    <tt><strong>
    diskutil list
    </strong></tt>
 
-   A sample response:
+   A sample response for Mac Sierra and before:
+
+   <pre>
+/dev/disk0 (internal):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                         500.3 GB   disk0
+   1:                        EFI EFI                     314.6 MB   disk0s1
+   2:                 Apple_APFS Container disk1         500.0 GB   disk0s2
+&nbsp;
+/dev/disk1 (synthesized):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      APFS Container Scheme -                      +500.0 GB   disk1
+                                 Physical Store disk0s2
+   1:                APFS Volume Macintosh HD            457.2 GB   disk1s1
+   2:                APFS Volume Preboot                 20.9 MB    disk1s2
+   3:                APFS Volume Recovery                517.8 MB   disk1s3
+   4:                APFS Volume VM                      10.7 GB    disk1s4
+&nbsp;
+/dev/disk2 (disk image):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:     Apple_partition_scheme                        +24.2 MB    disk2
+   1:        Apple_partition_map                         32.3 KB    disk2s1
+   2:                  Apple_HFS Flash Player            24.2 MB    disk2s2
+&nbsp;
+TODO: Add disk3
+   </pre>
+
+   Alternately, the sample response for Mac Sierra and before:
 
    <pre>
 /dev/disk0 (internal, physical):
@@ -302,7 +335,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board:
    Beginner's Guide to installing Node.js on a Raspberry Pi</a>:
    (made by Resin.io) 
 
-   In Finder, drag and drop the .dmg file onto your ~/Applications folder.
+   In Finder, drag and drop the Etcher .dmg file onto your ~/Applications folder.
 
 0. In a MacOS Terminal, navigate to the user Applications folder and invoke the program:
 
@@ -322,22 +355,22 @@ To install the Raspian operating system on a Raspberry Pi 3 board:
    </strong></tt>
 
 
-0. Construct a command to write the image downloaded onto the SD Card. 
+0. Manually construct a command to write the image downloaded onto the SD Card. 
    Replace the X in rdiskX with the disk number from before.
 
    <tt><strong>
-   sudo dd bs=1m if=2017-09-07-raspbian-stretch.img of=/dev/rdisk3
+   sudo dd bs=1m if=2018-06-27-raspbian-stretch.img of=/dev/rdisk3
    </strong></tt>
 
    <a target="_blank" href="http://www.computerhope.com/unix/dd.htm">
    The Linux dd command</a>
    copies a file and also optionally re-formats.
-   But `conv=` for is not specified here.
+
+   `conv=` specifies conversion, but is not specified in the command above.
 
    `if=` specifies the input file name.
-   The previous version is `if=2014-01-07-wheezy-raspbian.img`.
 
-   `of=` specifies the output file disk.
+   `of=` specifies the output file disk identified by the <a href="#diskutil">diskutil command above</a>.
 
    `bs=1m` specifies 1 megabyte chunks to write at a time.
 
@@ -358,18 +391,27 @@ To install the Raspian operating system on a Raspberry Pi 3 board:
 4348444672 bytes transferred in 265.020326 secs (16407967 bytes/sec)
    </pre>
 
-   You should now have a working SD card at the end.
+   You should now have a working SD card for Raspian.
 
 0. Verify what devices are mounted <a target="_blank" href="http://wiki.farmbot.org/problems-solved/installing-farmbotos/linux">:</a>
 
    <tt><strong>df -h
    </strong></tt>
 
+   A sample response:
+
+   <pre>
+Filesystem      Size   Used  Avail Capacity iused               ifree %iused  Mounted on
+/dev/disk1s1   466Gi  426Gi   29Gi    94% 3576707 9223372036851199100    0%   /
+devfs          344Ki  344Ki    0Bi   100%    1190                   0  100%   /dev
+/dev/disk1s4   466Gi   10Gi   29Gi    26%      11 9223372036854775796    0%   /private/var/vm
+map -hosts       0Bi    0Bi    0Bi   100%       0                   0  100%   /net
+map auto_home    0Bi    0Bi    0Bi   100%       0                   0  100%   /home
+   </pre>   
 
 0. In Finder, press the eject button for the disk.
 
-
-0. Skip past alternative activity below (for Windows) to <a href="#PowerUp">Power Up</a>.
+0. Skip past alternative activity below (for Windows) to <a href="#PowerUp">Power Up Pi</a>.
 
 
 <a name="WinFlash"></a>
@@ -2324,6 +2366,12 @@ http://lifehacker.com/124804/geek-to-live--how-to-assign-a-domain-name-to-your-h
 
 ## Resources
 
+https://www.digikey.com/en/ptm/d/digi-key/raspberry-pi-getting-the-pi-up-and-running-part-1-of-2
+Raspberry Pi Getting the Pi Up and Running Part 1 of 2
+byDigi-Key Electronics</pre>
+
+https://www.digikey.com/en/ptm/d/digi-key/raspberry-pi-getting-the-pi-up-and-running-part-2-of-2
+
 https://www.raspberrypi.org/help/faqs/#glossarybga
 
 https://www.packtpub.com/mapt/book/All%20Books/9781783553532/1/ch01lvl1sec12/Creating+the+sensor+project
@@ -2364,6 +2412,7 @@ by Benjamin Oakes
 
 https://www.techcoil.com/blog/setting-up-a-fast-git-server-on-raspberry-pi-zero-w-with-go-git-service-gogs-and-raspbian-stretch-lite/
 
+https://www.designnews.com/continuing-education-center/july-16-day-1-predictive-analytics-basics-applications-exploring-colaboratory-lab-project-data
 
 ## More on IoT #
 
