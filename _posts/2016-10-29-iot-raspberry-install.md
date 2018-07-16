@@ -63,7 +63,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 1. Click the red <strong>Download ZIP</strong> below
    <strong>Raspbian STRETCH WITH DESKTOP</strong>
 
-   PROTIP: The button sends you to URL <a target="_blank" href="https://downloads.raspberrypi.org/raspbian_latest">
+   PROTIP: The button sends you to downloading URL <a target="_blank" href="https://downloads.raspberrypi.org/raspbian_latest">
    https://downloads.raspberrypi.org/raspbian_latest</a>
    which can be used in <a target="_blank" href="https://github.com/debian-pi/raspbian-ua-netinst/releases/">
    unattended shell scripts to automate the clicking</a>.
@@ -89,29 +89,29 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 
    <a name="zipSizes"></a>
 
-   | Date/File | Version | Download | Unzipped |
-   | --------- | ------- | ----: | ---: |
-   | 2018-03-13-raspbian-stretch.zip | 4.9 | 1.78 GB | 4.96 GB |
-   | 2017-09-07-raspbian-stretch.zip | 4.9 | 1.76 GB | 4.92 GB |
-   | 2017-04-10-raspbian-jessie.zip | 4.4 | 1.57 GB | ? GB |
-   | 2016-09-23-Raspbian-jessie.zip | 4.3 | 1.40 GB | 4.3 GB |
+   | Date/File | Version | Download | Unzipped | Blog |
+   | --------- | ------- | ----: | ---: | ---- |
+   | 2018-06-27-raspbian-stretch.zip | 4.14 | 1.76 GB | 4.83 GB | - |
+   | 2018-03-13-raspbian-stretch.zip | 4.10 | 1.78 GB | 4.96 GB | - |
+   | 2017-09-07-raspbian-stretch.zip | 4.9 | 1.76 GB | 4.92 GB | - |
+   | 2017-04-10-raspbian-jessie.zip | 4.4 | 1.57 GB | ? GB | <a target="_blank" href="https://www.raspberrypi.org/blog/raspbian-jessie-is-here/">
+   blog</a> |
+   | 2016-09-23-Raspbian-jessie.zip | 4.3 | 1.40 GB | 4.3 GB | - |
 
    The large size of the file means it will take a while,
    depending on the speed of your network.
 
-   NOTE: Raspian provides sudo-free access to GPIO.
+   Alternately, Raspian provides sudo-free access to GPIO (file read/write ports), so the above can be done in Ubuntu terminal.
 
 0. While you're waiting, read blogs at 
    <a target="_blank" href="https://www.raspberrypi.org/blog/">
    blog at Raspberrypi.org</a>.
 
-   <a target="_blank" href="https://www.raspberrypi.org/blog/raspbian-jessie-is-here/">
-   Raspbian Jessie was first released</a>
 
 
    <a name="CalcHash"></a>
 
-   ### Calculate and compare hash
+   ### Calculate and compare hash on Mac
 
 0. Calculate a SHA hash from the downloaded file to verify SHA from the website.
 
@@ -139,6 +139,8 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    Example:
 
    <pre>8636ab9fdd8f58a8ec7dde33b83747696d31711d17ef68267dbbcd6cfb968c24</pre>
+
+   PROTIP: A 256-bit hash (divided by 4 bits each) should have 64 characters.
 
 0. PROTIP: Save the .zip file to permanent DVD media so you don't have to download again, then delete the file on your laptop (to make room for other stuff on your hard drive):
 
@@ -302,6 +304,7 @@ TODO: Add disk3
 
 0. If you are using Windows, skip to <a href="#WinFlash">WindowsFlash</a>.
 
+   <a name="Etcher-Install"></a>
 
    ### Get Etcher for MacOS
    

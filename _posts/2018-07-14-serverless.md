@@ -68,6 +68,9 @@ and Machine Learning.
 
 ## Frameworks
 
+<a href="https://www.quora.com/What-is-serverless-computing">
+An Awesome list of links</a>
+
 <a name="AWS"></a>
 
 ### AWS Lambda
@@ -1112,6 +1115,11 @@ by Mark Heath
 Serverless Web Applications</a> 9 Dec 2015 
 by Rob Conery
 
+### Hacker Noon series
+
+<a target="_blank" href="http://engineeringjobs4u.co.uk/serverless-instant-checkout-links-with-square-square-corner-blog-medium">
+Serverless Instant Checkout Links with Square – Square Corner Blog</a>
+also  on Medium
 
 ## More on Clouds #
 
