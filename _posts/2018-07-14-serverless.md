@@ -855,10 +855,24 @@ Serverless: Successfully archived your service on the Serverless Platform
 
 ## Implement a sample project 
 
-
 Richard Moot (<a target="_blank" href="https://twitter.com/wootmoot">@wootmoot</a>), Developer Evangelist <a target="_blank" href="https://twitter.com/SquareDev">@Square</a>, wrote <a target="_blank" hrer="https://medium.com/square-corner-blog/super-simple-serverless-ecommerce-68d2792e8285?">Super Simple Serverless eCommerce</a> and <a target="_blank" href="https://medium.com/square-corner-blog/serverless-instant-checkout-links-with-square-6fa331d51928">Serverless Instant Checkout Links with Square</a>
 
-Choose one pre-defined:
+Richard stores files in Gists, which will work as long as the files don't ever change.
+
+   * https://gist.githubusercontent.com/mootrichard/260629e0b8c0c5568d52ce0f8d67b548/raw/4da2bb9d2d61532e4d51511cea2f2df5f7c7b2a8/product.html
+
+   Replace "/0.jpeg" with the URI to the product image at:
+
+   &LT;img class='productImage' src="/0.jpeg" />
+        <!-- insert product image url here -->
+
+   Replace UNIQUE_ID with the ID of the app in AWS.
+
+   Replace "Square 1 Sticker" with your own product's name.
+
+<br /><br />
+
+Alternately, choose another pre-defined app from this list:
 
    * https://zanon.io/posts/building-serverless-websites-on-aws-tutorial 
    using the Serverless Framework 1.1, dated JAN 31, 2016.
