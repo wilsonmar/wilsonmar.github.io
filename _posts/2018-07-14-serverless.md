@@ -695,6 +695,8 @@ tenant: wilsonmar
 provider:
   name: aws
   runtime: nodejs6.10
+  stage: prod
+  memorySize: 256
   environment:
     ACCESS_KEY_VALUE: 123-access-key-value-456-abc
   iamRoleStatements:
@@ -855,27 +857,36 @@ Serverless: Successfully archived your service on the Serverless Platform
 
 ## Implement a sample project 
 
-Richard Moot (<a target="_blank" href="https://twitter.com/wootmoot">@wootmoot</a>), Developer Evangelist <a target="_blank" href="https://twitter.com/SquareDev">@Square</a>, wrote <a target="_blank" hrer="https://medium.com/square-corner-blog/super-simple-serverless-ecommerce-68d2792e8285?">Super Simple Serverless eCommerce</a> and <a target="_blank" href="https://medium.com/square-corner-blog/serverless-instant-checkout-links-with-square-6fa331d51928">Serverless Instant Checkout Links with Square</a>
-
+Richard Moot (<a target="_blank" href="https://twitter.com/wootmoot">@wootmoot</a>), Developer Evangelist <a target="_blank" href="https://twitter.com/SquareDev">@Square</a>, wrote <a target="_blank" hrer="https://medium.com/square-corner-blog/super-simple-serverless-ecommerce-68d2792e8285/">Super Simple Serverless eCommerce</a>. 
 Richard stores files in Gists, which will work as long as the files don't ever change.
 
-   * https://gist.githubusercontent.com/mootrichard/260629e0b8c0c5568d52ce0f8d67b548/raw/4da2bb9d2d61532e4d51511cea2f2df5f7c7b2a8/product.html
+1. In <a target="_blank" href="https://console.aws.amazon.com/console/home?region=us-east-1"> the Amazon console</a>, use your AWS admin account <a target="_blank" href="https://console.aws.amazon.com/iam/home?">within IAM</a>, create an account with permissions to read and write S3.
+2. <a target="_blank" href="https://s3.console.aws.amazon.com/s3/home?region=us-east-1#">In S3</a>, create a bucket to get a UNIQUE_ID.
+3. Create a product image and put in within your S3 bucket.
+4. Edit the <a target="_blank" href="https://gist.githubusercontent.com/mootrichard/260629e0b8c0c5568d52ce0f8d67b548/raw/4da2bb9d2d61532e4d51511cea2f2df5f7c7b2a8/product.html">sample product.html file</a>
 
-   Replace "/0.jpeg" with the URI to the product image at:
-
+   * Replace UNIQUE_ID with the ID of the app in AWS.
+   * Replace "/0.jpeg" with the URI to the product image at:
    &LT;img class='productImage' src="/0.jpeg" />
-        <!-- insert product image url here -->
+   * Replace "Square 1 Sticker" with your own product's name.
+   <br /><br />
 
-   Replace UNIQUE_ID with the ID of the app in AWS.
+   My changes are stored in GitHub.
 
-   Replace "Square 1 Sticker" with your own product's name.
+5. Edit the <a target="_blank" href="https://gist.github.com/mootrichard/46e984f38065110eb9b2e15c08dcef07#file-index-html">sample index.htm</a>
+6. Save a favicon.ico graphic file in the root.
+7. Save the main.css and normalize.css, plugin.js, main.js
+8. Save <a target="_blank" href="https://gist.github.com/mootrichard/ac0636683157b5e6a97875389d92f706#file-handler-js">sample handler.js</a>
+9. enable “Static website hosting” in Properties to have a publicly accessible site.
+10. Edit the <a target="_blank" href="https://gist.github.com/mootrichard/1c3b14f875a2eeb75e19ed913c781372#file-serverless-yml">sample serverless.yml</a>
 
-<br /><br />
+Richard also created <a target="_blank" href="https://medium.com/square-corner-blog/serverless-instant-checkout-links-with-square-6fa331d51928">Serverless Instant Checkout Links with Square</a>
+
 
 Alternately, choose another pre-defined app from this list:
 
    * https://zanon.io/posts/building-serverless-websites-on-aws-tutorial 
-   using the Serverless Framework 1.1, dated JAN 31, 2016.
+   using the Serverless Framework 1.1, dated JAN 31, 2016 by Fred Eady.
 
    * [serverless/serverless-graphql](https://github.com/serverless/serverless-graphql) - Official Serverless boilerplate to kick start your project
 
