@@ -177,7 +177,7 @@ GPS updates every 10 seconds, which is too slow.
 
 For a vehicle to "localize" itself to <strong>single-digit centimeter</strong> accuracy, it uses several technologies.
 
-The Inertial Measurement Unit (IMU) is like the acellerometer on your phone.
+The <a target="_blank" href="https://www.digikey.com/en/product-highlight/a/analog-devices/adis1647x-mini-mems-imu-2000-sec/">Inertial Measurement Unit (IMU)</a> consists of a 3-axis gyroscope and accelerometer.
 It updates at 1000 Hz (near real time).
 The system has to reconcile two XY coordinate frames: the vehicle and the map.
 In the 3D Gyroscope, the spin axis is set to the global coordinate system while the 3 gimbals rotate.
