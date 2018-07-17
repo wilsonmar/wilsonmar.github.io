@@ -119,13 +119,25 @@ Apple Certified Support Professional certifications are for specific versions:<b
 https://training.apple.com/en/osx.html">
 https://training.apple.com/en/osx.html</a>
 
+<a target="_blank" href="http://certifications.apple.com/">
+http://certifications.apple.com</a>
+
 The two-hour exams are $65 each at
 Apple Certification Records System (ACRS) at 
 https://training.apple.com/acrs
+Pearson Vue
 
 <a target="_blank" href="http://www.peachpit.com/promotions/welcome-apple-customers-books-138516"> Apple Training Series books from Peachpit Press</a>
 to help you prepare for the exam are expensive ($100).
  
+<a target="_blank" href="https://www.amazon.com/macOS-Support-Essentials-10-13-Troubleshooting/dp/0134854993/">macOS Support Essentials 10.13 Troubleshooting</a> 
+is praised by everyone.
+
+To become a certified Apple Certified Mac Technician (ACMT) 2017, first pass the <a target="_blank" href="https://support.apple.com/en-us/HT207709">Mac Service Certification Exam (MAC-17A)</a>, then the Apple Service Fundamentals Exam (SVC-17A).
+For MAC-17A, correctly answer 80% of 70 questions in 2 hours. But you can refer to Apple references and courses in <a target="_blank" href="https://atlaslms.apple.com/learning/user/#!">ATLAS</a>.
+
+<a target="_blank" href="https://training.apple.com/us/en/courses/Apple_Technician_Training/acmt_2017">Apple Certified Mac Technician 2017</a>
+is a four-day $2,800 course that enables participants to pass the Apple Service Fundamentals exam (SVC-17A) and become certified to troubleshoot and repair Mac computers. 
 
 
 <a id="MacVer"></a>

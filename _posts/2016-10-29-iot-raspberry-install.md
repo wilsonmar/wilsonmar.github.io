@@ -94,8 +94,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    | 2018-06-27-raspbian-stretch.zip | 4.14 | 1.76 GB | 4.83 GB | - |
    | 2018-03-13-raspbian-stretch.zip | 4.10 | 1.78 GB | 4.96 GB | - |
    | 2017-09-07-raspbian-stretch.zip | 4.9 | 1.76 GB | 4.92 GB | - |
-   | 2017-04-10-raspbian-jessie.zip | 4.4 | 1.57 GB | ? GB | <a target="_blank" href="https://www.raspberrypi.org/blog/raspbian-jessie-is-here/">
-   blog</a> |
+   | 2017-04-10-raspbian-jessie.zip | 4.4 | 1.57 GB | ? GB | <a target="_blank" href="https://www.raspberrypi.org/blog/raspbian-jessie-is-here/">blog</a> |
    | 2016-09-23-Raspbian-jessie.zip | 4.3 | 1.40 GB | 4.3 GB | - |
 
    The large size of the file means it will take a while,
