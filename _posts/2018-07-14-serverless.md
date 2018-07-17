@@ -880,6 +880,8 @@ Richard stores files in Gists, which will work as long as the files don't ever c
 9. enable “Static website hosting” in Properties to have a publicly accessible site.
 10. Edit the <a target="_blank" href="https://gist.github.com/mootrichard/1c3b14f875a2eeb75e19ed913c781372#file-serverless-yml">sample serverless.yml</a>
 
+11. Replace YOUR_LOCATION_ID in serverless.yml
+
 Richard also created <a target="_blank" href="https://medium.com/square-corner-blog/serverless-instant-checkout-links-with-square-6fa331d51928">Serverless Instant Checkout Links with Square</a>
 
 
