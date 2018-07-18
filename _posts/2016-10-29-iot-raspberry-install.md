@@ -42,6 +42,8 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 * <a href="#CronJob">Run cron background</a> Python code to periodically 
    <a href="#Temp">measure board's temperature</a> and free memory over time.
 
+> This too much hassle? I can sell you a chip with everything described below.
+
 <hr />
 
 <a name="Download"></a>
@@ -131,7 +133,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    Alternately, use the openssl utility:
 
    <pre><strong>
-   openssl sha256 2018-03-13-raspbian-stretch.zip
+   openssl sha256 2018-06-27-raspbian-stretch.zip
    </strong></pre>
 
    The output should match the SHA-256 associated with the downloaded file on the website.
@@ -239,7 +241,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    diskutil list
    </strong></tt>
 
-   A sample response for Mac Sierra and before:
+   A sample response on Mac High Sierra:
 
    <pre>
 /dev/disk0 (internal):
@@ -263,7 +265,10 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    1:        Apple_partition_map                         32.3 KB    disk2s1
    2:                  Apple_HFS Flash Player            24.2 MB    disk2s2
 &nbsp;
-TODO: Add disk3
+/dev/disk3 (external, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:     FDisk_partition_scheme                        *63.9 GB    disk3
+   1:               Windows_NTFS S3 nice guy             63.8 GB    disk3s1
    </pre>
 
    Alternately, the sample response for Mac Sierra and before:
@@ -300,6 +305,8 @@ TODO: Add disk3
 
    Again, instead of "disk3", you may type a different one.
 
+   The expected response is:
+   Unmount of all volumes on disk3 was successful   
 
 0. If you are using Windows, skip to <a href="#WinFlash">WindowsFlash</a>.
 
@@ -342,8 +349,7 @@ TODO: Add disk3
 0. In a MacOS Terminal, navigate to the user Applications folder and invoke the program:
 
    <tt><strong>
-   cd ~/Applications<br />
-   open Etcher.app
+   open ~/Applications/Etcher.app
    </strong></tt>
 
 0. In the pop-up, click "Select Image", select the drive containing the .img file.
