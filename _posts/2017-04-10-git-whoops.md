@@ -457,6 +457,7 @@ If you didn't mean to fork a repository, but you did anyway,
 * https://marklodato.github.io/visual-git-guide/index-en.html
 
 * https://opensource.com/article/18/6/git-reset-revert-rebase-commands
+   19 Jun 2018
 
 ## More #
 

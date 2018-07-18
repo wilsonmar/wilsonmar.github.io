@@ -23,6 +23,21 @@ which provides someone new to Macs specific steps to configure and run scripts t
 
 NOTE: This page is still actively under construction (as of July 1, 2018).
 
+<a name="Style"></a>
+
+## A Question of Style
+
+> The best professionals I know who work as a team try more to be clear rather than to be clever.
+
+What I try to avoid is:
+
+   * Using a single line when several is more clear. I think it's OK to use more lines
+   * Using complex commands when simple ones do the same
+   * Using a lesser number of comparisons if it makes the code unreadable
+   <br /><br />
+
+The more people who can understand the code and make changes without error,
+the more valuable that script is. Elegance is as elegance does.
 
 <a name="VersionWithGap"></a>
 
