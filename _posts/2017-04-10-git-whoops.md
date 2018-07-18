@@ -454,7 +454,9 @@ If you didn't mean to fork a repository, but you did anyway,
    <a target="_blank" href="https://www.youtube.com/watch?v=tvymSWfvkjw&list=PL0lo9MOBetEGRAJzoTCdco_fOKDfhqaOY">
    Git Merge 2017 Brussels</a>
 
-https://marklodato.github.io/visual-git-guide/index-en.html
+* https://marklodato.github.io/visual-git-guide/index-en.html
+
+* https://opensource.com/article/18/6/git-reset-revert-rebase-commands
 
 ## More #
 
