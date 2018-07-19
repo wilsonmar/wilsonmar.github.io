@@ -220,7 +220,7 @@ But frameworks have emerged to allieviate that:
 ## Serverless Coding Frameworks
 
 * Shep (bustle.com)
-* ClaudiaJS
+* <a href="#ClaudiaJs">ClaudiaJs</a>
 * <a href="#Apex">Apex</a> provides a shim to support Go and languages not yet supported by Lambda,
 * Sparta for AWS Lambda, as a Golang app, is baked into deliverable binary
 (unlike Node).
@@ -246,11 +246,21 @@ See https://github.com/apex/apex/blob/master/docs/infra.md
 
 Currently the following variables are exposed to Terraform:
 
-    aws_region the AWS region name such as "us-west-2"
-    apex_environment the environment name such as "prod" or "stage"
-    apex_function_role the Lambda role ARN
-    apex_function_arns A map of all lambda functions
-    apex_function_names A map of all the names of the lambda functions
+* aws_region the AWS region name such as "us-west-2"
+* apex_environment the environment name such as "prod" or "stage"
+* apex_function_role the Lambda role ARN
+* apex_function_arns A map of all lambda functions
+* apex_function_names A map of all the names of the lambda functions
+
+
+<a name="ClaudiaJa"></a>
+
+### ClaudiaJs
+
+https://www.manning.com/books/serverless-applications-with-nodejs
+Serverless Applications with Node.js  
+Using AWS Lambda and Claudia.js
+by Slobodan Stojanović and Aleksandar Simović
 
 
 <a name="ServerlessFramework"></a>
