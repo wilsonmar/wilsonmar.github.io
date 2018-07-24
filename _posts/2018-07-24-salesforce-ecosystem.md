@@ -16,6 +16,13 @@ comments: true
 {% include _toc.html %}
 
 
+## Utilities
+
+Welkin's Suite 
+
+Aside.io
+
+
 ## Rock Stars
 
 <a target="_blank" href="https://blog.feedspot.com/salesforce_developer_blogs/">
@@ -197,10 +204,13 @@ Lance Shi:
    * <a target="_blank" href="https://www.sfdcinpractice.com/">sfdcinpractice.com</a>
    since Sep 2016 provides a comprehensive, intuitive guide to Salesforce coding by real word examples. This blog is for those who knows how to create objects and fields in Salesforce. 
 
-Luke, Salesforce Technical Consultant and Tech Lead, from Rochester, NY:
+Luke Freeland, Salesforce Technical Consultant and Tech Lead, from Rochester, NY:
 
    * <a target="_blank" href="https://www.metillium.com/blog/">metillium.com/blog</a>
    since Mar 2016 
+
+   * <a target="_blank" href="https://metillium.com/2017/05/introducing-slackforce/">
+   SlackForce</a> - chat in Slack about Salesforce
 
 Mani Balan, Lead/certified Salesforce Developer in a start-up company based out of Sydney, Australia:
 
@@ -271,10 +281,14 @@ Sagar Sindhi from Rajpura, India:
    * <a target="_blank" href="https://sagarsindhiblog.wordpress.com/">sagarsindhiblog.wordpress.com</a>
    since May 2017 
 
-Sara Morgan Nettles, Member of Team Trailhead, from Louisiana, USA:
+Sara Morgan Nettles, Member of Team Trailhead, Certified Salesforce Advanced Developer and Platform Developer I and II, Developer at Synaptic AP from Louisiana, USA:
+
+   * <a target="_blank" href="http://twitter.com/SaraHasNoLimits">@SaraHasNoLimits</a>
 
    * <a target="_blank" href="https://saramorgan.net/">saramorgan.net</a>
-   * Pluralsight Author
+
+   * Pluralsight Author of Pluralsight video tutorial <a target="_blank" href="https://app.pluralsight.com/library/courses/salesforce-lightning-components-customizing-getting-started/table-of-contents">
+   Customizing Salesforce with Lightning Components: Getting Started</a> 10 May 2017
 
 Santanu Boral, Salesforce MVP and 15x certified:
 

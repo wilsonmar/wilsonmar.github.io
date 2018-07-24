@@ -1156,7 +1156,8 @@ by Rob Conery
 
 <a target="_blank" href="http://engineeringjobs4u.co.uk/serverless-instant-checkout-links-with-square-square-corner-blog-medium">
 Serverless Instant Checkout Links with Square – Square Corner Blog</a>
-also  on Medium
+
+https://hackernoon.com/a-crash-course-on-serverless-apis-with-express-and-mongodb-77774f7730fe
 
 ## More on Clouds #
 
