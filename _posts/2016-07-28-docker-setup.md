@@ -2663,9 +2663,13 @@ https://github.com/StefanScherer/packer-windows
 https://github.com/StefanScherer/dockerfiles-windows
 You can do this on Windows as well today with the Windows 10 1607 or Windows Server 2016 using Windows Containers.
 
-https://www.appdynamics.com/docker/
-monitoring
+<a target="_blank" href="https://www.appdynamics.com/docker/">
+AppDynamics Docker monitoring</a>
 
+
+<a target="_blank" href="https://semaphoreci.com/blog/2016/12/13/lightweight-docker-images-in-5-steps.html">
+Lightweight Docker Images in 5 Steps</a> · 13 Dec 2016 · Semaphore Engineering Blog
+by Igor Šarčević
 
 ## Social
 
