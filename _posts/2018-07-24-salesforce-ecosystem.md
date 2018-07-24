@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Salesforce ecosystem"
-excerpt: "Rock stars: blogs, and publications"
+excerpt: "Blogs, GitHub projects, and publications by Rock Stars"
 tags: [salesforce]
 image:
 # feature: pic orange wm_mcnaughton_sunset_runner_1900x500.jpg
@@ -25,10 +25,15 @@ Aside.io
 
 ## Rock Stars
 
-<a target="_blank" href="https://blog.feedspot.com/salesforce_developer_blogs/">
-Top 75 Salesforce Developer Blogs & Websites To Follow in 2018</a>
+Lists:
 
-<a target="_blank" href="https://theblogreaders.com/category/">theblogreaders.com/category</a>
+   * <a target="_blank" href="https://blog.feedspot.com/salesforce_developer_blogs/">
+   Top 75 Salesforce Developer Blogs & Websites To Follow in 2018</a>
+
+   * <a target="_blank" href="https://theblogreaders.com/category/">theblogreaders.com/category</a>
+
+   * <a target="_blank" href="https://mindtouch.com/resources/top-124-salesforce-influencers-of-2017-in-a-league-of-their-own">
+   Top Salesforce influencers</a>
 
 The Salesforce Developer Relations Team of developer evagelists:
 
@@ -45,12 +50,16 @@ The Salesforce Engineering Team:
   
    * [@SalesforceEng = Salesforce Engineering](https://twitter.com/SalesforceEng)
 
+Abhilasha Singh, 4X certified, Developer at Dazeworks — @Sweety_abhi — https://www.linkedin.com/in/singhabhilasha01
+
 Abhinav Gupta, Force.com MVP & Architect, owner of his company focusing on salesforce Consulting from Gurgaon, India:
 
    * <a target="_blank" href="http://www.tgerm.com/">tgerm.com</a>
    specialises in Salesforce applications development and integrating them with other cloud platforms such as Amazon, Google.
 
    * <a target="_blank" href="https://plus.google.com/+AbhinavGuptaIn/posts/">+AbhinavGuptaIn</a>
+
+Adam Olshansky, Salesforce Developer at Google — @adam17amo — https://www.linkedin.com/in/adamolshansky
 
 Ajay Dubedi, from Noida, India:
 
@@ -104,7 +113,9 @@ Biswajeet Samal, from Pune, India
 Brett Nelson, multi-talented developer from Eagan, MN:
 
    * <a target="_blank" href="http://wipdeveloper.com/">wipdeveloper.com</a>
-   since Jan 2015 
+   since Jan 2015 has a store.
+   * <a target="_blank" href="https://github.com/BrettMN/wipdeveloper-dx/blob/master/Jenkinsfile">
+   His "Sample Salesforce source code used with Salesforce DX" on GitHub from 2017</a> has a Jenkinsfile.
 
 Christophe Coenraets, Developer Evangelist for Salesforce.com:
 
@@ -208,9 +219,10 @@ Luke Freeland, Salesforce Technical Consultant and Tech Lead, from Rochester, NY
 
    * <a target="_blank" href="https://www.metillium.com/blog/">metillium.com/blog</a>
    since Mar 2016 
-
    * <a target="_blank" href="https://metillium.com/2017/05/introducing-slackforce/">
-   SlackForce</a> - chat in Slack about Salesforce
+   SlackForce</a> - chat in Slack channel slackforcehq.slack.com 
+   * <a target="_blank" href="https://metillium.com/salesforce-logger-pilot/">
+   Custom logger</a> without enabling Salesforce debug logs.
 
 Mani Balan, Lead/certified Salesforce Developer in a start-up company based out of Sydney, Australia:
 
