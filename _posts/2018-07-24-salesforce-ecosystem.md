@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Salesforce ecosystem"
-excerpt: "Rock stars and publications"
+excerpt: "Rock stars: blogs, and publications"
 tags: [salesforce]
 image:
 # feature: pic orange wm_mcnaughton_sunset_runner_1900x500.jpg
@@ -144,6 +144,11 @@ Enrico Murru, ForceLogic. Ultra geek tech lover mercenary software developer and
 
    * @Enreeco 
 
+Francis Pindar, 5X MVP from the UK:
+
+   * <a target="_blank" href="https://www.radnip.com/">radnip.com</a>
+   since Jan 2013 
+
 Guha from Virginia:
 
    * <a target="_blank" href="http://guhasdevforce.com/">guhasdevforce.com</a>
@@ -167,6 +172,10 @@ Jeff Douglas, Senior Technical Consultant at Appirio & Developer Evangelist Arch
    * <a target="_blank" href="http://blog.jeffdouglas.com/">blog.jeffdouglas.com</a> 
    specializes in cloud-based, APIs & mobile apps. [Read More](http://blog.jeffdouglas.com/about/)
 
+Joe Ferraro
+
+   * Author of <a target="_blank" href="http://github.com/joeferraro/MavensMate">http://github.com/joeferraro/MavensMate</a> plug-ins for editors Sublime Text and Adam. But as of 2017 he's stopped maintaining it. "Use Visual Studio" he says.
+
 Jitendra Zaa, a 7X Salesforce Certificate, MVP and Technical Architect, working on SF from Hartford, CT:
 
    * <a target="_blank" href="http://www.jitendrazaa.com/blog/">jitendrazaa.com/blog</a>
@@ -178,10 +187,10 @@ Keir Bowden, Chief Technical Officer at BrightGen, a Salesforce Platinum Partner
 
    * <a target="_blank" href="https://www.blogger.com/profile/07815472992351343395">At Blogger.com</a>
 
-Francis Pindar, 5X MVP from the UK:
+Kevin O'Hara, Rochester, MI
 
-   * <a target="_blank" href="https://www.radnip.com/">radnip.com</a>
-   since Jan 2013 
+   * <a target="_blank" href="https://github.com/kevinohara80/nforce">nforce repo on GitHub</a>
+   is a node.js salesforce REST API wrapper for force.com, database.com, and salesforce.com 
 
 Lance Shi:
 
