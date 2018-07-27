@@ -90,7 +90,7 @@ Amit Chaudhary, 7X certs from Michigan:
    since Nov 2014 
 
 
-<a target="_blank" href="https://www.linkedin.com/in/aoplinger/">Amy Oplinger</a>, Salesforce MVP | 5X Certified Freelance Consultant | Women in Tech and Nonprofit User Group Leader | Dreamforce Speaker from Cleveland/Akron, Ohio Area 
+<a target="_blank" href="https://www.linkedin.com/in/aoplinger/">Amy Oplinger</a>, Salesforce MVP, 5X Certified Freelance Consultant, Women in Tech and Nonprofit User Group Leader, Dreamforce Speaker from Cleveland/Akron, Ohio Area 
 
 Annappa Ph, Salesforce developer in India:
 
@@ -214,7 +214,7 @@ Guha from Virginia:
 Harshit Pandey, Principal Technical Architect at Intuitive Surgical, previously Technical Architect at Salesforce.com Developer Relations Team:
 
    * <a target="_blank" href="http://www.oyecode.com/">Oyecode.com</a>
-    - Harshit Pandey is  and build  [Trailhead](https://developer.salesforce.com/trailhead) while at Salesforce, love to expriement with ever evoloving capacities of Salesforce [Read More]
+   * Built [Trailhead](https://developer.salesforce.com/trailhead) while he was at Salesforce
 
    * <a target="_blank" href="https://about.me/harshit.pandey">https://about.me/harshit.pandey</a>
 
@@ -340,7 +340,7 @@ Nitin Indora, Gurgaon, India:
    * <a target="_blank" href="http://nitinindora.wordpress.com/">nitinindora.wordpress.com</a>
    since Aug 2015
 
-Paul Battisson from Harrogate UK, A Force.com MVP and experience Technical Architect who has worked for a number of leading ISVs and Consulting partners. I am a Cetified Salesforce Developer, Advanced Developer, Platform App Builder, Platform Developer I and Platform Developer II.
+Paul Battisson from Harrogate UK, A Force.com MVP and experience Technical Architect who has worked for a number of leading ISVs and Consulting partners. A Cetified Salesforce Developer, Advanced Developer, Platform App Builder, Platform Developer I and Platform Developer II.
 
    * <a target="_blank" href="http://paulbattisson.com/blog">paulbattisson.com/blog</a>
    since Feb 2007 
