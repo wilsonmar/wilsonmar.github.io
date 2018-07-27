@@ -258,15 +258,15 @@ This is the one I'm using.
 {% include tts1.html %}
 
 
-   {% highlight html %}
-   <amp-audio width=400 height=300 src="https://.../myaudio.mp3">
+<pre>
+   <amp-audio width="400" height="300" src="https://.../myaudio.mp3">
     <div fallback>
        <p>Your browser doesn’t support HTML5 audio</p>
     </div>
     <source type="audio/mpeg" src="foo.mp3">
     <source type="audio/ogg" src="foo.ogg">
    </amp-audio>
-   {% endhighlight %}
+</pre>
 
 More on this 
 <a target="_blank" href="https://www.ampproject.org/docs/reference/extended/amp-audio.html">here</a>.
