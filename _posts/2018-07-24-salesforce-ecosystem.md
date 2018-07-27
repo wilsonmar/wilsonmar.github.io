@@ -16,16 +16,21 @@ comments: true
 {% include _toc.html %}
 
 
-## Utilities
+## Communities
 
-Welkin's Suite 
+* <a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000HTp1">
+   Salesforcve DX</a> (Developer eXchange)
 
-Aside.io
+Eugene Oksman (@oksman (https://twitter.com/oksman)) and Akhilesh Gupta (@akhileshgupta (https://twitter.com/akhileshgupta)) lead the Mobile SDK team at Salesforce.com, searching for the best ways to help developers create mobile apps for the enterprise.
+
 
 
 ## Rock Stars
 
 Lists:
+
+   * <a target="_blank" href="https://success.salesforce.com/mvp/">https://success.salesforce.com/mvp</a>
+   are about 200+ are selected each year.
 
    * <a target="_blank" href="https://blog.feedspot.com/salesforce_developer_blogs/">
    Top 75 Salesforce Developer Blogs & Websites To Follow in 2018</a>
@@ -52,11 +57,14 @@ The Salesforce Engineering Team:
 
 Abhilasha Singh, 4X certified, Developer at Dazeworks — @Sweety_abhi — https://www.linkedin.com/in/singhabhilasha01
 
-Abhinav Gupta, Force.com MVP & Architect, owner of his company focusing on salesforce Consulting from Gurgaon, India:
+Abhinav Gupta, Force.com MVP & Architect, owner of his Concretio Apps Pvt Ltd consulting company in Gurgaon, India:
 
+   * <a target="_blank" href="https://github.com/abhinavguptas/Getting-Started-with-Force.com-Development">
+   etting Started with Force.com Development</a> from 2014 is still a good read.
    * <a target="_blank" href="http://www.tgerm.com/">tgerm.com</a>
-   specialises in Salesforce applications development and integrating them with other cloud platforms such as Amazon, Google.
-
+   specializes in Salesforce applications development and integrating them with other cloud platforms such as Amazon, Google.
+   * <a target="_blank" href="https://github.com/abhinavguptas/">https://github.com/abhinavguptas</a>
+   houses several Salesforce projects (all last updated before Auguest 2017).
    * <a target="_blank" href="https://plus.google.com/+AbhinavGuptaIn/posts/">+AbhinavGuptaIn</a>
 
 Adam Olshansky, Salesforce Developer at Google — @adam17amo — https://www.linkedin.com/in/adamolshansky
@@ -81,6 +89,9 @@ Amit Chaudhary, 7X certs from Michigan:
    * <a target="_blank" href="http://amitsalesforce.blogspot.com/">amitsalesforce.blogspot.com</a>
    since Nov 2014 
 
+
+<a target="_blank" href="https://www.linkedin.com/in/aoplinger/">Amy Oplinger</a>, Salesforce MVP | 5X Certified Freelance Consultant | Women in Tech and Nonprofit User Group Leader | Dreamforce Speaker from Cleveland/Akron, Ohio Area 
+
 Annappa Ph, Salesforce developer in India:
 
    * <a target="_blank" href="http://annappaph.blogspot.com/">annappaph.blogspot.com</a>
@@ -100,6 +111,10 @@ Ashish Agarwal in Singapore:
    * <a target="_blank" href="https://asagarwal.com/blog/">asagarwal.com/blog</a>
    since Apr 2010 
 
+<a target="_blank" href="https://www.linkedin.com/in/mikegerholdt/">Mike Gerholdt</a> & Barb Dietz, at Salesforce:
+
+   * PODCAST about presenters at the Dreamforce Conference: <a target="_blank" href="https://www.salesforce.com/blog/2017/07/blazing-trails-a-new-salesforce-podcast.html">Blazing Trails</a> since July 2017 <a target="_blank" href="https://itunes.apple.com/us/podcast/blazing-trails/id1259579050?mt=2">on iTunes</a> and <a target="_blank" href="https://soundcloud.com/blazingtrailspodcast">SoundCloud.com</a>.
+
 Ben McCarthy, 5X Salesforce Developer MVP, Salesforce Certified Technical Architect, based in London:
 
    * <a target="_blank" href="http://www.salesforceben.com/">salesforceben.com</a>
@@ -117,22 +132,40 @@ Brett Nelson, multi-talented developer from Eagan, MN:
    * <a target="_blank" href="https://github.com/BrettMN/wipdeveloper-dx/blob/master/Jenkinsfile">
    His "Sample Salesforce source code used with Salesforce DX" on GitHub from 2017</a> has a Jenkinsfile.
 
-Christophe Coenraets, Developer Evangelist for Salesforce.com:
+<a name="ChristinePereira"></a>
+Christine Pereira, founder of SoulfulSelling.com, created <a target="_blank" href="https://www.lynda.com/Christine-V-Pereira/7995629-1.html">several video courses on Lynda/LinkedIn</a>:
+
+   * <a target="_blank" href="https://www.lynda.com/Salesforce-tutorials/Salesforce-Einstein-Analytics/672239-2.html">
+   Salesforce: Einstein Analytics</a> [53:30] 6/22/2018
+   * <a target="_blank" href="https://www.lynda.com/Salesforce-tutorials/Salesforce-Tips/685017-2.html">
+   Salesforce Tips</a> [34:56] 4/11/2018
+   * <a target="_blank" href="https://www.lynda.com/Salesforce-tutorials/Learn-Salesforce-2017-Lightning/633846-2.html">
+   Learn Salesforce 2017: Lightning</a> [1:47:00] 10/31/2017
+   * <a target="_blank" href="https://www.lynda.com/Salesforce-tutorials/Social-Selling-Salesforce/604217-2.html">
+   Social Selling with Salesforce</a> [40:38] 7/31/2017
+   * <a target="_blank" href="https://www.lynda.com/Salesforce-tutorials/Salesforce-Sales-Managers/555794-2.html">Salesforce for Sales Managers</a> [46:47] 3/20/2017
+   * <a target="_blank" href="https://www.lynda.com/Salesforce-tutorials/Learn-Salesforce-Basics/513603-2.html">Learning Salesforce</a> [1:39:00] 11/25/2016
+   * <a target="_blank" href="https://www.lynda.com/Salesforce-tutorials/Salesforce-Sales-Managers/555794-2.html">Salesforce for Customer Service</a> [50:43] 7/1/2017
+
+<a name="ChristopheCoenraets"></a>
+Christophe Coenraets, Developer Evangelist at Salesforce.com:
 
    * <a target="_blank" href="https://coenraets.org/blog/">coenraets.org/blog</a>
    focuses on mobile application development, [Read More](http://coenraets.org/blog/bio/)
+   * <a target="_blank" href="https://www.youtube.com/watch?v=G931jWBnxHU">
+   Youtube: Advanced Lightning Components</a> Jul 3, 2017
 
 Daniel, Senior Salesforce Developer at ARUP Laboratories, 3X MVP, co-leader of the <a target="_blank" href="http://www.slcforce.com/">Salesforce User Group in Salt Lake City, UT</a>:
 
    * <a target="_blank" href="https://verticalcoder.com/">verticalcoder.com</a>
    since Feb 2011 
 
-David Liu, inspires self-taught Salesforce Apex developers, now at Google:
+<a target="_blank" href="https://www.linkedin.com/in/dvdkliu/">David Liu</a>, inspires self-taught Salesforce Apex developers, now at Google:
 
    * <a target="_blank" href="http://twitter.com/dvdkliu">@dvdkliu</a>
    * <a target="_blank" href="http://sfdc99.com/">sfdc99.com</a>
    since Aug 2015 
-   provides Apex tutorials for point-and-click admins
+   provides Apex tutorials for point-and-click admins.
 
    * VIDEO COURSE: <a target="_blank" href="https://www.pluralsight.com/courses/apex-absolute-beginner-guide-coding-salesforce">
    Apex Academy: Absolute Beginner's Guide to Coding in Salesforce
@@ -164,14 +197,19 @@ Enrico Murru, ForceLogic. Ultra geek tech lover mercenary software developer and
 
 Francis Pindar, 5X MVP from the UK:
 
-   * <a target="_blank" href="https://www.radnip.com/">radnip.com</a>
-   since Jan 2013 
+   * <a target="_blank" href="https://www.udemy.com/salesforce-certified-administrator-201-2017/">
+   Udemy: Salesforce Certified Administrator (aka 201) 2018</a> 92 lectures 15 hours
+   * ACloud.guru 2017
+   * <a target="_blank" href="https://www.radnip.com/">radnip.com</a> blog since Jan 2013 
+
+Gilian Bruce (<a target="_blank" href="https://twitter.com/gilliankbruce">@gilliankbruce</a>), Salesforce Admin Evangelist:
+
+   * <a target="_blank" href="https://admin.salesforce.com/salesforce-admin-podcast">
+   Salesforce Admins Podcast</a>, <a target="_blank" href="https://itunes.apple.com/us/podcast/the-salesforce-admins-podcast/id914088438?mt=2">on iTunes</a> and <a target="_blank" href="https://play.google.com/music/listen?u=0#/ps/Is37tsqndivyt7k24po3ew3imiq">Google Play</a>, are 10 min. twice weekly. Features real-life Salesforce Admins, product managers, and community leaders who transform businesses, careers, and community implementing Enterprise CRM solutions.
 
 Guha from Virginia:
 
-   * <a target="_blank" href="http://guhasdevforce.com/">guhasdevforce.com</a>
-   since May 2016 
-
+   * <a target="_blank" href="http://guhasdevforce.com/">guhasdevforce.com</a> since May 2016 
 
 Harshit Pandey, Principal Technical Architect at Intuitive Surgical, previously Technical Architect at Salesforce.com Developer Relations Team:
 
@@ -259,6 +297,33 @@ Mike Topalovich, 9x certified Salesforce architect, developer and part time CTO 
    * <a target="_blank" href="http://topalovich.com/">topalovich.com</a>
    since Aug 2007 
 
+Mike Wheeler has several (highly rated) video courses on Udemy:
+
+   * <a target="_blank" href="https://www.udemy.com/salesforce-sales-cloud-consultant/">
+   Salesforce Sales Cloud Consultant Certification Course</a>
+   103 lectures 10.5 hours
+
+   * <a target="_blank" href="https://www.udemy.com/salesforce-service-cloud-certification/">
+   Salesforce Service Cloud Consultant Certification Course</a>
+   115 lectures 10.5 hours
+
+   * <a target="_blank" href="https://www.udemy.com/salesforce-administrator/">
+   The Complete Salesforce Administrator Certification Course</a>
+   89 lectures 11 hours
+
+   * <a target="_blank" href="https://www.udemy.com/salesforce-platform-app-builder/">
+   Salesforce Platform App Builder Developer 401 Certification</a>
+   186 lectures 20 hours
+
+   * <a target="_blank" href="https://www.udemy.com/salesforce-administrator-certification-practice-tests/">
+   Salesforce Administrator Certification Practice Tests</a>
+   3 full practice tests of 60 each. 180 questions total
+
+   * <a target="_blank" href="https://www.udemy.com/salesforce-platform-app-builder-certification-practice-tests/">
+   Salesforce Platform App Builder Certification Practice Tests</a>
+   2 full practice tests of 60 questions each
+
+
 Mohith Shrivastava, 9x Salesforce certification:
 
    * <a target="_blank" href="http://cloudyworlds.blogspot.com/">CloudyWorlds.blogspot.com</a>
@@ -302,6 +367,10 @@ Sara Morgan Nettles, Member of Team Trailhead, Certified Salesforce Advanced Dev
    * Pluralsight Author of Pluralsight video tutorial <a target="_blank" href="https://app.pluralsight.com/library/courses/salesforce-lightning-components-customizing-getting-started/table-of-contents">
    Customizing Salesforce with Lightning Components: Getting Started</a> 10 May 2017
 
+   * Lynda/LinkedIn 2h 12m video course: <a target="_blank" href="https://www.linkedin.com/learning/visualforce-improving-performance">Visualforce: Improving Performance</a> August 20, 2015
+
+   * Lynda/LinkedIn 3h 4m video course: <a target="_blank" href="https://www.linkedin.com/learning/visualforce-for-developers">Visualforce for Developers</a> October 13, 2014
+
 Santanu Boral, Salesforce MVP and 15x certified:
 
    * <a target="_blank" href="https://santanuboral.blogspot.com/">santanuboral.blogspot.com</a>
@@ -312,6 +381,11 @@ Scott VonSchilling, Certified Salesforce advanced developer, from New Jersey:
    * <a target="_blank" href="https://scottvonschilling.com/">scottvonschilling.com</a>
    since Jul 2014 
 
+Shane Clevenger (Salesforce):
+
+   * <a target="_blank" href="https://play.google.com/music/listen?u=0#/ps/Ixqcgskz6ebtof4ntpl2lnxx6je">
+   PODCAST on Google Play: Success With The Force</a> has 7 episodes from Oct.-Dec. 2017.
+
 Shyam Nair, Salesforce Developer from Bengaluru, India:
 
    * <a target="_blank" href="https://itscloudyhere.blog/">itscloudyhere.blog</a>
@@ -321,6 +395,10 @@ Vinay Chaturvedi, Salesforce Evangelist from Noida, India:
 
    * <a target="_blank" href="https://vinaychaturvedi.com/blog/">vinaychaturvedi.com/blog</a>
    since May 2015 writes APIs in Salesforce and Salesforce Lightning.
+
+Wilson Mar, Montana:
+
+   * <a target="_blank" href="https://wilsonmar.github.io/salesforce/">wilsonmar.github.io/salesforce/</a>
 
 
 ## Nameless blogs
