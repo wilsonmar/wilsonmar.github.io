@@ -87,7 +87,7 @@ with manual instructions, which they walked though in <a target="_blank" href="h
 
 1. [Get an AWS IAM User](/aws-iam/) with AWSCodeStarFullAccess.
 2. Login the AWS Console to select region N. Virginia.
-3. In <strong>AWS CodeStar</strong>. Start a project. Node.js. create role.
+3. In <a target="_blank" href="https://aws.amazon.com/codestar/">AWS CodeStar</a>. Start a project. Node.js. create role.
 4. Choose a project template: 
    * Under Application Category select <strong>Web Application</strong>.
    * Under Programming Languages select <strong>Node.js</strong>.
