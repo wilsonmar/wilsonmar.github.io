@@ -108,7 +108,7 @@ More examples are at https://github.com/serverless/examples
    - SES (Simple Email Service) : Mass emailing service, like MailChimp.
 
 PROTIP: The payoff for housing the back-end in a public cloud is for machine learning and AI services to be added.
-For example: Amazon Kognito:
+For example: https://github.com/aws-samples/aws-serverless-ember
 
 ![serverless-aws-ember-648x379-36238](https://user-images.githubusercontent.com/300046/43361471-71543916-928c-11e8-8f48-aecc805bae15.jpg)
 
