@@ -65,7 +65,7 @@ and Machine Learning.
 * <a href="#Google">Google Functions</a>
 * <a href="#IBM">IBM Bluemix OpenWhisk</a>
 * <a href="#IronIO">Iron.io for on-premises</a>. Ironically, Iron originated the term "serverless" in 2012.
-* <a target="_blank" href="https://www.alibabacloud.com/product/function-compute">Alibaba Function Compute</a>
+* <a target="_blank" href="https://www.alibabacloud.com/product/function-compute/">Alibaba Function Compute</a>
 
 
 ## Frameworks
@@ -94,6 +94,23 @@ with manual instructions, which they walked though in <a target="_blank" href="h
    * Under Application Category select <strong>Web Application</strong>.
    * Under Programming Languages select <strong>Node.js</strong>.
    * Pick "Node.JS Web Application AWS Lambda (running serverless)".
+
+More examples are at https://github.com/serverless/examples
+
+   <a target="_blank" title="serverless-aws-flow-1024x656-99647.jpg" href="https://user-images.githubusercontent.com/300046/43052898-c64ded4a-8de6-11e8-9578-30b8dd619592.jpg"><img alt="serverless-aws-flow-648x416-52875.jpg" width="648" src="https://user-images.githubusercontent.com/300046/43052876-a465b17c-8de6-11e8-8303-ab83ae852eb1.jpg"></a>
+
+   - Route 53 : a highly available & scalable DNS service which also manages traffic flow based on different routeing types e.g., Latency Based Routing, Geo DNS, and Weighted Round Robin as well as DNS failover.
+   - CloudFront CDN: Content Distribution Network.
+   - S3 : a static file storage which can store petabytes of storage if you want, with 99.999999% durability.
+   - API Gateway : a REST-based service which allows you to create, publish, monitor and quickly scale & secure API services.
+   - Lambda : to hold and process server side code, with no charges for server time between client requests.
+   - MongoDB instead of DyanmoDB : a scalable database which guarantees the same consistent speed of read and write requests.
+   - SES (Simple Email Service) : Mass emailing service, like MailChimp.
+
+PROTIP: The payoff for housing the back-end in a public cloud is for machine learning and AI services to be added.
+For example: Amazon Kognito:
+
+![serverless-aws-ember-648x379-36238](https://user-images.githubusercontent.com/300046/43361471-71543916-928c-11e8-8f48-aecc805bae15.jpg)
 
 
 <a name="Azure"></a>
