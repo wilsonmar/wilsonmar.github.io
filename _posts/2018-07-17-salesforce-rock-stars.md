@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Salesforce rock stars"
-excerpt: "Individuals who have published or influenced"
+excerpt: "Individuals and teams who have published something or influenced"
 tags: [salesforce]
 image:
 # feature: sf-ohana-1900x500-178173.jpg
@@ -403,7 +403,7 @@ Phil Walton (<a target="_blank" href="https://twitter.com/SalesforcePhil">@Sales
 
    * <a target="_blank" href="http://www.cloudgalacticos.co.uk/blog/">cloudgalacticos.co.uk/blog</a> since 2007
 
-Piyush Soni,  Salesforce Admin, Developer from Jaipur, Rajasthan, India:
+Piyush Soni, Salesforce Admin, Developer from Jaipur, Rajasthan, India:
 
    * <a target="_blank" href="https://sfdcmonkey.com/">sfdcmonkey.com</a>
 
@@ -411,16 +411,13 @@ Prajakta Samant, #Salesforce #evangelist (<a target="_blank" href="https://twitt
 
 Sagar Sindhi from Rajpura, India:
 
-   * <a target="_blank" href="https://sagarsindhiblog.wordpress.com/">sagarsindhiblog.wordpress.com</a>
-   since May 2017 
+   * <a target="_blank" href="https://sagarsindhiblog.wordpress.com/">sagarsindhiblog.wordpress.com</a> since May 2017 
 
 Rubin Ortiz 
 
    * <a target="_blank" href="http://www.salesforceben.com/platform-developer-certification-guide-tips/">salesforceben.com</a>
 
-Sara Morgan Nettles, Member of Team Trailhead, Certified Salesforce Advanced Developer and Platform Developer I and II, Developer at Synaptic AP from Louisiana, USA:
-
-   * <a target="_blank" href="http://twitter.com/SaraHasNoLimits">@SaraHasNoLimits</a>
+Sara Morgan Nettles (<a target="_blank" href="http://twitter.com/SaraHasNoLimits">@SaraHasNoLimits</a>), Member of Team Trailhead, Certified Salesforce Advanced Developer and Platform Developer I and II, Developer at Synaptic AP from Louisiana, USA:
 
    * <a target="_blank" href="https://saramorgan.net/">saramorgan.net</a>
 
@@ -448,7 +445,7 @@ Scott Wells (<a target="_blank" href="https://twitter.com/scottcwells/">@scottcw
    discuss how to guide a team to successfully migrate and adopt Salesforce DX.
    * Developer of Force.com IlluminatedCloud.com IDE (<a target="_blank" href="https://twitter.com/IllumCloud">IllumCloud</a>) development tool hosted within JetBrains IntelliJ IDEA
 
-Shane Clevenger (Salesforce):
+Shane Clevenger:
 
    * <a target="_blank" href="https://play.google.com/music/listen?u=0#/ps/Ixqcgskz6ebtof4ntpl2lnxx6je"> PODCAST on Google Play: Success With The Force</a> has 7 episodes from Oct.-Dec. 2017.
 
@@ -475,11 +472,11 @@ Warren Chalklen, PhD
 
 <a target="_blank" href="https://www.linkedin.com/in/wnourse/">Will Nourse</a> (<a target="_blank" href="https://twitter.com/wnourse">@wnourse</a>), VP Operations at GoodforCloud, a <a href="#TopInfluencer">Top Influencer</a>
 
-Wilson Mar (<a target="_blank" href="https://twitter.com/wilsonmar">wilsonmar</a>), Montana:
+Wilson Mar (<a target="_blank" href="https://twitter.com/wilsonmar">@wilsonmar</a>), Montana:
 
    * <a target="_blank" href="https://wilsonmar.github.io/salesforce/">wilsonmar.github.io/salesforce/</a> since 2015
 
-Xi Xiao (<a target="_blank" href="https://twitter.com/xixiaofinland">xixiaofinland</a>), Salesforce developer in Finland:
+Xi Xiao (<a target="_blank" href="https://twitter.com/xixiaofinland">@xixiaofinland</a>), Salesforce developer in Finland:
 
    * <a target="_blank" href="http://salesforceway.com/">salesforceway.com</a> blog.
    * PODCAST: <a target="_blank" href="https://itunes.apple.com/fi/podcast/salesforceway/id1383914828">salesforceway.com</a> since Feb. 2018.
@@ -508,7 +505,7 @@ It's one thing to have opinions, but it's quite another level to share opinions 
 <a target="_blank" href="https://itunes.apple.com/us/podcast/wizardcast/id979286226?mt=2">iTunes</a>. Since 2007
 
    * Brian Kwong (<a target="_blank" href="https://twitter.com/Kwongerific">@Kwongerific</a>)
-   * Mark Ross (<a target="_blank" href="https://twitter.com/SalesforceYoda ">SalesforceYoda</a>
+   * Mark Ross (<a target="_blank" href="https://twitter.com/SalesforceYoda ">@SalesforceYoda</a>
 
 PODCAST about presenters at the Dreamforce Conference: <a target="_blank" href="https://www.salesforce.com/blog/2017/07/blazing-trails-a-new-salesforce-podcast.html">Blazing Trails</a> since July 2017 <a target="_blank" href="https://itunes.apple.com/us/podcast/blazing-trails/id1259579050?mt=2">on iTunes</a> and <a target="_blank" href="https://soundcloud.com/blazingtrailspodcast">SoundCloud.com</a>.
 
@@ -546,23 +543,23 @@ BlackBerry
 
 Listed alphabetically by first name:
 
+<a target="_blank" href="https://www.linkedin.com/in/alextoussaint">Alex Toussaint</a> (<a target="_blank" href="https://twitter.com/alextoussaint">@alextoussaint</a>), VP Product Management – Einstein Analytics
+
 <a target="_blank" href="https://www.linkedin.com/in/mikegerholdt/">Mike Gerholdt</a>, Director of Evangelism
-
-<a target="_blank" href="https://www.linkedin.com/in/alextoussaint">Alex Toussaint</a> (<a target="_blank" href="https://twitter.com/alextoussaint">alextoussaint</a>), VP Product Management – Einstein Analytics
-
-<a target="_blank" href="https://www.linkedin.com/in/wadewegner">Wade Wegner</a> (<a target="_blank" href="https://twitter.com/WadeWegner">WadeWegner</a>), VP, Product Management:
-
-   * <a target="_blank" href="http://www.wadewegner.com/2018/02/mobile-sdk-with-salesforce-dx/">
-   Build a Native Mobile App Using Salesforce DX and the Mobile SDK</a> Feb 1, 2018
-   * Ubergeek!
 
 <a target="_blank" href="https://www.linkedin.com/in/tiffanibova">Tiffani Bova</a> (<a target="_blank" href="https://twitter.com/Tiffani_Bova/">@Tiffani_Bova</a>), Global, Customer Growth and Innovation Evangelist
 
 <a target="_blank" href="https://www.linkedin.com/in/timclarke">Tim Clarke</a> (<a target="_blank" href="https://twitter.com/TimxClarke/">@TimxClarke</a>), Sr. Director, Product Marketing – Salesforce CPQ
 
-<a target="_blank" href="https://www.linkedin.com/in/tomhasselman">Tom Hasselman</a> (<a target="_blank" href="https://twitter.com/prajsszz">TomHasselman</a>), Sr. Product Marketing Manager
+<a target="_blank" href="https://www.linkedin.com/in/tomhasselman">Tom Hasselman</a> (<a target="_blank" href="https://twitter.com/prajsszz">@TomHasselman</a>), Sr. Product Marketing Manager
 
-<a target="_blank" href="https://www.linkedin.com/in/vala-afshar-3030021">Vala Afshar</a> (<a target="_blank" href="https://twitter.com/prajsszz">ValaAfshar</a>), Chief Digital Evangelist
+<a target="_blank" href="https://www.linkedin.com/in/vala-afshar-3030021">Vala Afshar</a> (<a target="_blank" href="https://twitter.com/prajsszz">@ValaAfshar</a>), Chief Digital Evangelist
+
+<a target="_blank" href="https://www.linkedin.com/in/wadewegner">Wade Wegner</a> (<a target="_blank" href="https://twitter.com/WadeWegner">@WadeWegner</a>), VP, Product Management:
+
+   * <a target="_blank" href="http://www.wadewegner.com/2018/02/mobile-sdk-with-salesforce-dx/">
+   Build a Native Mobile App Using Salesforce DX and the Mobile SDK</a> Feb 1, 2018
+   * Ubergeek!
 
 
 ## Unanmed
@@ -628,9 +625,15 @@ leading Platinum Sales force consulting partner in the UK&I. With more than 100 
 
 <a name="WorkWithMe"></a>
 
-##  Work with me
+##  Work with me. Hire me.
 
 I am automating Salesforce tutorials so you can just input your custom info and generate stuff.
 
 Also interested in generation of test code, Einstein Machine Learning AI, IoT, DX, Lightning.
 
+
+## More about Salesforce #
+
+This is one of a series about Salesforce
+
+{% include salesforce_links.html %}
