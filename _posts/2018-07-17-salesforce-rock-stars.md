@@ -4,10 +4,10 @@ title: "Salesforce rock stars"
 excerpt: "Individuals who have published or influenced"
 tags: [salesforce]
 image:
-# feature: pic orange wm_mcnaughton_sunset_runner_1900x500.jpg
-  feature: https://cloud.githubusercontent.com/assets/300046/14622121/097d7550-0585-11e6-9543-27d45c2487c2.jpg
-  credit: William McNaughton
-  creditlink:
+# feature: sf-ohana-1900x500-178173.jpg
+  feature: https://user-images.githubusercontent.com/300046/43407734-bd6303fe-93dc-11e8-87df-302ddbc274ff.jpg
+  credit: Salesforce
+  creditlink: https://trailhead.salesforce.com/trailblazers
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -24,8 +24,7 @@ This page lists individuals who have contributed significant blogs, tweets, cour
 
    <a name="MVP"></a>
 
-   * <a target="_blank" href="https://success.salesforce.com/mvp/">https://success.salesforce.com/mvp</a>
-   (About 200+ are selected each year).
+   * <a target="_blank" href="https://success.salesforce.com/mvp/">https://success.salesforce.com/mvp</a> (About 200+ are selected each year).
 
    <a name="GolderHoodie"></a>
 
@@ -44,6 +43,10 @@ This page lists individuals who have contributed significant blogs, tweets, cour
 
    * <a target="_blank" href="https://mindtouch.com/resources/top-124-salesforce-influencers-of-2017-in-a-league-of-their-own">
    Top Salesforce influencers by Mindtouch</a>
+
+   <a name="Top2018"></a>
+   * <a target="_blank" href="https://academy.whatfix.com/salesforce-blogs/">
+   Top Salesforce Blogs 2018 That Every Trailblazer Should Follow</a>
 
 TODO: Put this data into a database so an app can dynamic sort lists. For now, just press Ctrl+F to find text.
 
@@ -80,6 +83,8 @@ Amit Chaudhary, 7X certs from Michigan:
 
 <a target="_blank" href="https://www.linkedin.com/in/aoplinger/">Amy Oplinger</a> (<a target="_blank" href="https://twitter.com/SalesforceAmy">@SalesforceAmy/">@SalesforceAmy</a>), Salesforce MVP, 5X Certified, Freelance Consultant, Women in Tech and Nonprofit User Group Leader, Dreamforce Speaker from Cleveland/Akron, Ohio Area 
 
+   * <a target="_blank" href="https://salesforcesaas.wordpress.com/">salesforcesaas.wordpress.com</a>
+
 Annappa Ph, Salesforce developer in India:
 
    * <a target="_blank" href="http://annappaph.blogspot.com/">annappaph.blogspot.com</a>
@@ -99,10 +104,6 @@ Ashish Agarwal in Singapore:
    * <a target="_blank" href="https://asagarwal.com/blog/">asagarwal.com/blog</a>
    since Apr 2010 
 
-<a target="_blank" href="https://www.linkedin.com/in/mikegerholdt/">Mike Gerholdt</a> & Barb Dietz, at Salesforce:
-
-   * PODCAST about presenters at the Dreamforce Conference: <a target="_blank" href="https://www.salesforce.com/blog/2017/07/blazing-trails-a-new-salesforce-podcast.html">Blazing Trails</a> since July 2017 <a target="_blank" href="https://itunes.apple.com/us/podcast/blazing-trails/id1259579050?mt=2">on iTunes</a> and <a target="_blank" href="https://soundcloud.com/blazingtrailspodcast">SoundCloud.com</a>.
-
 Ben McCarthy, 5X Salesforce Developer MVP, Salesforce Certified Technical Architect, based in London:
 
    * <a target="_blank" href="http://www.salesforceben.com/">salesforceben.com</a>
@@ -112,6 +113,10 @@ Biswajeet Samal, from Pune, India
 
    * <a target="_blank" href="http://biswajeetsamal.com/blog/">biswajeetsamal.com/blog</a>
    since Mar 2014 
+
+Brent Downey (<a target="_blank" href="https://twitter.com/brentdowney">@brentdowney</a>):
+
+   * <a target="_blank" href="https://www.adminhero.com/">adminhero.com blog</a>
 
 Brett Nelson, multi-talented developer from Eagan, MN:
 
@@ -127,11 +132,6 @@ Brian Fear (<a target="_blank" href="http://twitter.com/sfdcfox/">@sfdcfox</a>, 
    * <a target="_blank" href="http://sfdcfox.blogspot.com/">sfdcfox.blogspot.com</a> since 2016.
    * A top <a target="_blank" href="https://salesforce.stackexchange.com/users/2984/sfdcfox">contributor on stackexchange.com</a>.
    * https://github.com/brianmfear has several useful tools.
-
-Brian Kwong 
-
-   * <a target="_blank" href="https://thewizardnews.com/wizardcast_home/">PODCAST: WizardCast</a> #WizardCast on <a target="_blank" href="https://itunes.apple.com/us/podcast/wizardcast/id979286226?mt=2">iTunes</a>. With Mark Ross (Salesforce Yoda)
-   * <a target="_blank" href="https://www.youtube.com/channel/UC0GDUNmsEUBbEzcsmEzTXNg/videos">YouTube videos</a>
 
 <a name="ChristinePereira"></a>
 Christine Pereira, founder of SoulfulSelling.com, created <a target="_blank" href="https://www.lynda.com/Christine-V-Pereira/7995629-1.html">several video courses on Lynda/LinkedIn</a>:
@@ -219,6 +219,10 @@ Enrico Murru, ForceLogic. "ultra geek tech lover, mercenary software developer, 
    since Jan 2013
    * @Enreeco 
 
+Fabrice Cathala (<a target="_blank" href="https://twitter.com/https://twitter.com/fcathala">@fcathala</a>):
+
+   * <a target="_blank" href="https://saas-components.com/">saas-components.com</a>
+
 Francis Pindar, 5X MVP from the UK:
 
    * <a target="_blank" href="https://www.udemy.com/salesforce-certified-administrator-201-2017/">Salesforce Certified Administrator (aka 201) 2018</a> 92 lectures 15 hour Udemy video
@@ -239,6 +243,11 @@ Harshit Pandey, Principal Technical Architect at Intuitive Surgical, previously 
    * Built [Trailhead](https://developer.salesforce.com/trailhead) while he was at Salesforce
 
    * <a target="_blank" href="https://about.me/harshit.pandey">https://about.me/harshit.pandey</a>
+
+
+Jean Velonis (<a target="_blank" href="https://twitter.com/SalesforcePrincess">@SalesforcePrincess</a>):
+
+   * <a target="_blank" href="http://salesforceprincess.com/">salesforceprincess.com</a>
 
 Jesse Altman, Certified Salesforce.com Developer from Whitehall, PA:
 
@@ -271,6 +280,10 @@ Jitendra Zaa, a 7X Salesforce Certificate, MVP and Technical Architect, working 
 
    * <a target="_blank" href="http://www.jitendrazaa.com/blog/">jitendrazaa.com/blog</a>
    since 2008
+
+Johan Yu (<a target="_blank" href="https://twitter.com/simplysfdc">@simplysfdc</a>):
+
+   * <a target="_blank" href="http://www.SimplySfdc.com/">SimplySfdc.com</a>
 
 Keir Bowden, Chief Technical Officer at BrightGen, a Salesforce Platinum Partner in the UK:
 
@@ -328,6 +341,10 @@ Matt McGuire:
    * <a target="_blank" href="https://mattmcguire.ca/category/salesforce/">https://mattmcguire.ca/category/salesforce</a>
    since Feb 2016 
 
+Matthew Morris (<a target="_blank" href="https://twitter.com/matmorris">@matmorris</a>):
+
+   * <a target="_blank" href="https://technologyflows.com/">TechnologyFlows.com</a>
+
 Matt Lacey, Melbourne, Australia:
 
    * <a target="_blank" href="https://www.laceysnr.com/">laceysnr.com</a>
@@ -369,6 +386,10 @@ Nitin Indora, Gurgaon, India:
    * <a target="_blank" href="http://nitinindora.wordpress.com/">nitinindora.wordpress.com</a>
    since Aug 2015
 
+Oliver Hansen (<a target="_blank" href="https://twitter.com/nesensa">@nesensa</a>):
+
+   * <a target="_blank" href="https://salesforceblogs.com/">https://salesforceblogs.com</a>
+
 Paul Battisson from Harrogate UK, A Force.com MVP and experience Technical Architect who has worked for a number of leading ISVs and Consulting partners. A Cetified Salesforce Developer, Advanced Developer, Platform App Builder, Platform Developer I and Platform Developer II.
 
    * <a target="_blank" href="http://paulbattisson.com/blog">paulbattisson.com/blog</a>
@@ -378,6 +399,10 @@ Peter Knolle, Certified Salesforce.com professional, and Force.com MVP:
 
    * <a target="_blank" href="http://peterknolle.com/">peterknolle.com</a>
   
+Phil Walton (<a target="_blank" href="https://twitter.com/SalesforcePhil">@SalesforcePhil</a>):
+
+   * <a target="_blank" href="http://www.cloudgalacticos.co.uk/blog/">cloudgalacticos.co.uk/blog</a> since 2007
+
 Piyush Soni,  Salesforce Admin, Developer from Jaipur, Rajasthan, India:
 
    * <a target="_blank" href="https://sfdcmonkey.com/">sfdcmonkey.com</a>
@@ -388,6 +413,10 @@ Sagar Sindhi from Rajpura, India:
 
    * <a target="_blank" href="https://sagarsindhiblog.wordpress.com/">sagarsindhiblog.wordpress.com</a>
    since May 2017 
+
+Rubin Ortiz 
+
+   * <a target="_blank" href="http://www.salesforceben.com/platform-developer-certification-guide-tips/">salesforceben.com</a>
 
 Sara Morgan Nettles, Member of Team Trailhead, Certified Salesforce Advanced Developer and Platform Developer I and II, Developer at Synaptic AP from Louisiana, USA:
 
@@ -458,6 +487,37 @@ Xi Xiao (<a target="_blank" href="https://twitter.com/xixiaofinland">xixiaofinla
 Zac Otero, a factory worker who used Trailhead to train himself to become a Salesforce administrator is Salesforce's first Golden Hoodie recipient.
 
 
+## Groups
+
+It's one thing to have opinions, but it's quite another level to share opinions on the same platform.
+
+<a target="_blank" href="https://salesforceweek.ly/">salesforceweek.ly</a> (<a target="_blank" href="https://twitter.com/SalesforceWeek">@SalesforceWeek</a>) is one of the most popular blogs in the Salesforce ecosystem, since Oct 2013, offering different tones of narration: [<a href="#Top2018">Top2018</a>]
+
+   * Mike Gill (<a target="_blank" href="https://twitter.com/agentgill">@agentgill</a>)
+   * Ines Garcia (<a target="_blank" href="https://twitter.com/Inescapinezka/">@Inescapinezka</a>
+   * Chris Edwards (<a target="_blank" href="https://twitter.com/chris_sfdc/">@chris_sfdc</a>)
+
+<a target="_blank" href="https://apttus.com/blog/">apttus.com</a> focuses on QTC (Quote to Cash): [<a href="#Top2018">Top2018</a>]
+
+   * Eric Dreshfield (<a target="_blank" href="https://twitter.com/ericdresh">@ericdresh</a>), <a target="_blank" href="https://ericforcefield.wordpress.com/">EricForcefield.wordpress.com</a>
+   * Gene Eun (<a target="_blank" href="https://twitter.com/geun352">@geun352</a>
+   * Elle Odysseos (<a target="_blank" href="https://twitter.com/elle_odysseos">@elle_odysseos</a>)
+   * Steve Feyer (<a target="_blank" href="https://twitter.com/stevefeyer">@stevefeyer</a>)
+
+<a target="_blank" href="https://thewizardnews.com/wizardcast_home/">PODCAST: WizardCast</a> (<a target="_blank" href="https://twitter.com/hashtag/wizardcast?src=hash">#WizardCast</a>) on <a target="_blank" href="https://www.youtube.com/channel/UC0GDUNmsEUBbEzcsmEzTXNg/videos">YouTube videos</a> and 
+<a target="_blank" href="https://itunes.apple.com/us/podcast/wizardcast/id979286226?mt=2">iTunes</a>. Since 2007
+
+   * Brian Kwong (<a target="_blank" href="https://twitter.com/Kwongerific">@Kwongerific</a>)
+   * Mark Ross (<a target="_blank" href="https://twitter.com/SalesforceYoda ">SalesforceYoda</a>
+
+PODCAST about presenters at the Dreamforce Conference: <a target="_blank" href="https://www.salesforce.com/blog/2017/07/blazing-trails-a-new-salesforce-podcast.html">Blazing Trails</a> since July 2017 <a target="_blank" href="https://itunes.apple.com/us/podcast/blazing-trails/id1259579050?mt=2">on iTunes</a> and <a target="_blank" href="https://soundcloud.com/blazingtrailspodcast">SoundCloud.com</a>.
+
+   * <a target="_blank" href="https://www.linkedin.com/in/mikegerholdt/">Mike Gerholdt</a>, Director of Evangelism
+   * Barb Dietz, at Salesforce
+
+
+
+
 ## Partner Organizations
 
 Influencers who do not have a publishing trail are listed here under their organization:
@@ -475,19 +535,20 @@ Zuora Inc.
 
 Google
 
-   * <a target="_blank" href="https://www.linkedin.com/in/adamolshansky">Adam Olshansky (/adam17amo/">adam17amo</a>), Salesforce Developer at Google
+   * <a target="_blank" href="https://www.linkedin.com/in/adamolshansky">Adam Olshansky (<a target="_blank" href="https://twitter.com/adam17amo/">@adam17amo</a>), Salesforce Developer at Google
 
 BlackBerry
 
    * <a target="_blank" href="https://www.linkedin.com/in/amjadmohmood/">Amjad Mohmood</a>, Director, Technical Operations 
 
 
-
 ## Salesforce employees
 
 Listed alphabetically by first name:
 
-https://www.linkedin.com/in/alextoussaint">Alex Toussaint</a> (<a target="_blank" href="https://twitter.com/alextoussaint">alextoussaint</a>), VP Product Management – Einstein Analytics
+<a target="_blank" href="https://www.linkedin.com/in/mikegerholdt/">Mike Gerholdt</a>, Director of Evangelism
+
+<a target="_blank" href="https://www.linkedin.com/in/alextoussaint">Alex Toussaint</a> (<a target="_blank" href="https://twitter.com/alextoussaint">alextoussaint</a>), VP Product Management – Einstein Analytics
 
 <a target="_blank" href="https://www.linkedin.com/in/wadewegner">Wade Wegner</a> (<a target="_blank" href="https://twitter.com/WadeWegner">WadeWegner</a>), VP, Product Management:
 
@@ -502,6 +563,7 @@ https://www.linkedin.com/in/alextoussaint">Alex Toussaint</a> (<a target="_blank
 <a target="_blank" href="https://www.linkedin.com/in/tomhasselman">Tom Hasselman</a> (<a target="_blank" href="https://twitter.com/prajsszz">TomHasselman</a>), Sr. Product Marketing Manager
 
 <a target="_blank" href="https://www.linkedin.com/in/vala-afshar-3030021">Vala Afshar</a> (<a target="_blank" href="https://twitter.com/prajsszz">ValaAfshar</a>), Chief Digital Evangelist
+
 
 ## Unanmed
 
@@ -533,15 +595,10 @@ New Jersey, USA
 
    * <a target="_blank" href="https://salesforceworld4u.blogspot.com/">salesforceworld4u.blogspot.com</a> since Nov 2011 
 
-Mike Gill, Ines Garcia, and Chris Edwards:
-
-   * <a target="_blank" href="https://salesforceweek.ly/">salesforceweek.ly</a>
-   since Oct 2013 
-
 From The Hague, The Netherlands:
 
    * <a target="_blank" href="https://worldofsalesforce.com/">worldofsalesforce.com</a>
-   since Apr 2016 has an App Store.
+   since Apr 2016 has an App Store
 
 From Sri Lanka:
 
@@ -573,5 +630,7 @@ leading Platinum Sales force consulting partner in the UK&I. With more than 100 
 
 ##  Work with me
 
-I am interested into automatic generation of test code, Einstein Machine Learning AI, IoT, DX, Lightning.
+I am automating Salesforce tutorials so you can just input your custom info and generate stuff.
+
+Also interested in generation of test code, Einstein Machine Learning AI, IoT, DX, Lightning.
 
