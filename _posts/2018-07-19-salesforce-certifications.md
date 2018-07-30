@@ -23,8 +23,8 @@ http://certification.salesforce.com/
 
 ## Technical track
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/43394097-b9cdcd1c-93b6-11e8-9f67-72354d651d41.png">
-<img alt="salesforcearchitectjourney-1224x792.png" width="1224" src="https://user-images.githubusercontent.com/300046/43394097-b9cdcd1c-93b6-11e8-9f67-72354d651d41.png"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/43396367-84f9318c-93be-11e8-9389-f0e30f5c1419.jpg">
+<img alt="sf-architectjourney-799x627-86747.jpg" width="799" src="https://user-images.githubusercontent.com/300046/43396367-84f9318c-93be-11e8-9389-f0e30f5c1419.jpg"></a>
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom" align="left"><th> Seq. </th><th> # </th><th> Certification </th></tr>
