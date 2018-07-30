@@ -19,18 +19,27 @@ comments: true
 
 This page contains the list of resources about certification for each role:
 
+http://certification.salesforce.com/
+
+## Technical track
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/43394097-b9cdcd1c-93b6-11e8-9f67-72354d651d41.png">
+<img alt="salesforcearchitectjourney-1224x792.png" width="1224" src="https://user-images.githubusercontent.com/300046/43394097-b9cdcd1c-93b6-11e8-9f67-72354d651d41.png"></a>
+
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom" align="left"><th> Seq. </th><th> # </th><th> Certification </th></tr>
 <tr valign="top"><td> 1. </td><td> 1 </td><td> <a href="#Salespeople">Sales professional (user)</a></td></tr>
 <tr valign="top"><td> 2. </td><td> 2 </td><td> <a href="#Administrator">Administrator</a></td></tr>
 <tr valign="top"><td> 3. </td><td> 4 </td><td> <a href="#Developer">Developer</a></td></tr>
-<tr valign="top"><td> 4. </td><td> 4 </td><td> <a href="#SolutionConsultant">Solution Consultant</a></td></tr>
-<tr valign="top"><td> 5. </td><td> 7 </td><td> <a href="#Designer">Designer</a></td></tr>
-<tr valign="top"><td> 6. </td><td> 1 </td><td> <a href="#TechnicalConsultant">Technical Consultant</a></td></tr>
-<tr valign="top"><td></td><td colspan="2"> <strong>19 total</strong> </td></tr>
+<tr valign="top"><td> 4. </td><td> 7 </td><td> <a href="#SolutionConsultant">Solution Consultant</a></td></tr>
+<tr valign="top"><td> 5. </td><td> 2 </td><td> <a href="#Specialist">Specialist (CPQ)</a></td></tr>
+<tr valign="top"><td> 6. </td><td> 7 </td><td> <a href="#Designer">Designer</a></td></tr>
+<tr valign="top"><td> 7. </td><td> 3 </td><td> <a href="#Marketing">Marketing</a></td></tr>
+<tr valign="top"><td> 8. </td><td> 1 </td><td> <a href="#TechnicalArchitect">Technical Architect</a></td></tr>
+<tr valign="top"><td></td><td colspan="2"> <strong>26 total</strong> </td></tr>
 </table>
 
-The list above is the recommended sequence of advancement through the <strong>19 certification exams</strong>.
+The list above is the recommended sequence of advancement through the various exams.
 
 PROTIP: Developers are advised to first pass the <a href="#Administrator">Administrator certification</a>.
 
@@ -76,12 +85,12 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
 
 <a name="Training"></a>
 
-## Training
+## Trailhead Training
 
 1. Obtain a Trailhead account <a target="_blank" href="https://developer.salesforce.com/trailhead">
    here</a> for FREE tutorials which reward points appearing in your profile.
 
-   PROTIP: Sign up for Trailhead with a personal social media account instead of company email so you'll sign in no matter where you work.
+   PROTIP: Sign up for Trailhead with a <strong>personal Gmail account</strong> instead of company email so you'll be able to sign in no matter where you work in the future.
 
 2. COURSE: <a target="_blank" href="https://trailhead.salesforce.com/trails/learn_salesforce_with_trailhead">
    Learn Salesforce with Trailhead</a>
@@ -154,7 +163,6 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
 
    PROTIP: Spending several days strait sitting in a class may seem like "drinking from a firehose".
 
-
 4. Follow on Twitter
 
    * #Trailhead
@@ -167,7 +175,17 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
 
 ### Salespeople (user) certification
 
-<a target="_blank" href="http://certification.salesforce.com/SG_AccreditedSalesProfessional.pdf">OFFicial PDF -  Salesforce Accredited Sales Professional</a>
+<a target="_blank" href="http://certification.salesforce.com/SG_AccreditedSalesProfessional.pdf">Official PDF -  Salesforce Accredited Sales Professional</a>
+
+<a name="Marketing"></a>
+
+### Marketing certification
+
+<a target="_blank" href="http://certification.salesforce.com/marketingcloudconsultant">Salesforce Certified Marketing Cloud Consultant</a>
+
+<a target="_blank" href="http://certification.salesforce.com/marketingcloudsocialspe">Salesforce Certified Marketing Cloud Social Specialist</a>
+
+<a target="_blank" href="http://certification.salesforce.com/marketingcloudemailspe">Salesforce Certified Marketing Cloud Email Specialist</a>
 
 
 <a name="Administrator"></a>
@@ -303,6 +321,9 @@ These are $200 each, addressing each product line (except Knowledge Cloud, Marke
    o Mobility
    o Quoting and invoicing
 
+* <a target="_blank" href="http://certification.salesforce.com/pardotconsultant">
+Salesforce Certified Pardot Consultant</a>
+
 Resources addressing the above exams:
 
 
@@ -327,13 +348,23 @@ These are $400 each addressing specific aspects of architecture:
 * <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedIdentityAndAccessManagementDesigner.pdf">OFFicial PDF -  Salesforce Certified Identity and Access Management Designer</a>
 
 
+<a name="Specialist"></a>
+
+## Specialist
+
+* <a target="_blank" href="http://certification.salesforce.com/pardotspecialist">
+Salesforce Certified Pardot Specialist</a>
+
+* <a target="_blank" href="http://certification.salesforce.com/cpqspecialist">Salesforce Certified CPQ Specialist</a>
+
+
 <a name="TechnicalArchitect"></a>
 
 ## Technical Architect
 
 The highest level of certification costs $6,000 plus travel to a Salesforce office to sit in front review board for 4 hours.
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedTechnicalArchitect.pdf">OFFicial PDF -  Salesforce Certified Technical Architect - Review Board</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedTechnicalArchitect.pdf">Official PDF -  Salesforce Certified Technical Architect - Review Board</a>
 
 <hr />
 
