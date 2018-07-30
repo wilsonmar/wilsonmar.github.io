@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Salesforce certifications (training and exam)"
-excerpt: "Get up and running on customizing the various Salesforce technologies"
+title: "Salesforce certifications (training and exams)"
+excerpt: "How to get recognized for your knowledge and persistance"
 tags: [salesforce]
-file: salesforce-certifications.md
+file: 2018-07-19-salesforce-certifications.md
 image:
 # feature: pic orange wm_mcnaughton_sunset_runner_1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622121/097d7550-0585-11e6-9543-27d45c2487c2.jpg
@@ -20,20 +20,19 @@ comments: true
 This page contains the list of resources about certification for each role:
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom"><th> Seq. </th><th> # </th><th> Certification </th></tr>
-<tr valign="top"><td> 1. <td></td> 1 </td><td> <a href="#Salespeople">Sales professional (user)</a></td></tr>
-<tr valign="top"><td> 2. <td></td> 2 </td><td> <a href="#Administrator">Administrator</a></td></tr>
-<tr valign="top"><td> 3. <td></td> 4 </td><td> <a href="#Developer">Developer</a></td></tr>
-<tr valign="top"><td> 4. <td></td> 4 </td><td> <a href="#SolutionConsultant">Solution Consultant</a></td></tr>
-<tr valign="top"><td> 5. <td></td> 7 </td><td> <a href="#Designer">Designer</a></td></tr>
-<tr valign="top"><td> 6. <td></td> 1 </td><td> <a href="#TechnicalConsultant">Technical Consultant</a></td></tr>
+<tr valign="bottom" align="left"><th> Seq. </th><th> # </th><th> Certification </th></tr>
+<tr valign="top"><td> 1. </td><td> 1 </td><td> <a href="#Salespeople">Sales professional (user)</a></td></tr>
+<tr valign="top"><td> 2. </td><td> 2 </td><td> <a href="#Administrator">Administrator</a></td></tr>
+<tr valign="top"><td> 3. </td><td> 4 </td><td> <a href="#Developer">Developer</a></td></tr>
+<tr valign="top"><td> 4. </td><td> 4 </td><td> <a href="#SolutionConsultant">Solution Consultant</a></td></tr>
+<tr valign="top"><td> 5. </td><td> 7 </td><td> <a href="#Designer">Designer</a></td></tr>
+<tr valign="top"><td> 6. </td><td> 1 </td><td> <a href="#TechnicalConsultant">Technical Consultant</a></td></tr>
+<tr valign="top"><td></td><td colspan="2"> <strong>19 total</strong> </td></tr>
 </table>
 
-The list above is the recommended sequence of advancement through the 19 certification exams.
+The list above is the recommended sequence of advancement through the <strong>19 certification exams</strong>.
 
-PROTIP: Developers are advised to first clear the Administrator certification.
-
-Salesforce as a company offers classes addressing each certification.
+PROTIP: Developers are advised to first pass the <a href="#Administrator">Administrator certification</a>.
 
 PROTIP: Beware of the age of each resource, the version each training class was created. 
 Salesforce is undergoing rapid change in branding (to Lightning and DX plus Einstein).
@@ -42,12 +41,12 @@ Salesforce is undergoing rapid change in branding (to Lightning and DX plus Eins
 
 <a name="ExamInfo"> </a>
 
-## Exam info
+## Exam Registration
 
 When ready, <a target="_blank" href="http://certification.force.com/pkb/articles/Public_KB/Scheduling-an-Exam">register for certification tests</a>. 
 
-1. <a target="_blank" href="http://certification.force.com/pkb/articles/Public_KB/Online-Proctoring-Completing-Your-Exam-Remotely">To take exam remotely on your own computer</a>
-   with Kryterion’s Sentinel Secure software downloaded.
+1. Prepare to take exams remotely on your own computer by <a target="_blank" href="http://certification.force.com/pkb/articles/Public_KB/Online-Proctoring-Completing-Your-Exam-Remotely">
+   downloading and installing Kryterion’s Sentinel Secure software</a>.
 
    Alternately, pick a <a target="_blank" href="http://www.kryteriononline.com/Locate-Test-Center">
    Kryterion test center</a> near you.
@@ -58,18 +57,33 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
 
    PROTIP: Exams fees are half-off at Dreamforce conferences. For example, pay $99 instead of $200.
    Be sure to sign up under the Dreamforce category rather than the normal item.
+   Retake fees are the same: $100.
+
+3. Link your Trailhead and Webassessor accounts. Different emails may be used in Trailhead and Webassessor accounts.
+
+4. Sign up for the <a target="_blank" href="http://certification.salesforce.com/credential-status-request">
+   Cert Status Request</a> to receive an email that provides you with a list of all credentials you hold, your required release exams, and due dates.
+
+5. After passing the first exam, ask to join the <a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000001oFk">Salesforce Certified Professionals community</a> private group.
+
+6. When it's time, prepare for and take <a target="_blank" href="http://certification.salesforce.com/releaseexams">Recertification exams</a>
+   to maintain each of your certs.
+
+   PROTIP: Effective with the Summer ‘18 release cycle, the Administrator, Platform App Builder and Platform Developer I maintenance exams join <a target="_blank" href="https://trailhead.salesforce.com/trails/maintain-your-salesforce-certifications/modules/marketing-cloud-email-specialist-certification-maintenance-spring-18">Marketing Cloud Email</a> and <a target="_blank" href="https://trailhead.salesforce.com/trails/maintain-your-salesforce-certifications/modules/marketing-cloud-social-specialist-certification-maintenance-spring-18">Social Specialist maintenance exams</a> on Trailhead. They will then be free.
+
+   Other maintenance exams will migrate to Trailhead by Feburary, 2019. See <a target="_blank" href="http://certification.force.com/pkb/articles/Public_KB/FAQ-Changes-to-Certification-Maintenance">Exam FAQ</a>.
 
 
 <a name="Training"></a>
 
 ## Training
 
-1) Obtain a Trailhead account <a target="_blank" href="https://developer.salesforce.com/trailhead">
+1. Obtain a Trailhead account <a target="_blank" href="https://developer.salesforce.com/trailhead">
    here</a> for FREE tutorials which reward points appearing in your profile.
 
    PROTIP: Sign up for Trailhead with a personal social media account instead of company email so you'll sign in no matter where you work.
 
-2) COURSE: <a target="_blank" href="https://trailhead.salesforce.com/trails/learn_salesforce_with_trailhead">
+2. COURSE: <a target="_blank" href="https://trailhead.salesforce.com/trails/learn_salesforce_with_trailhead">
    Learn Salesforce with Trailhead</a>
 
    ### How Trailhead works
@@ -101,6 +115,8 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
    * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_aap">
    Advanced Apex Specialist</a>
 
+   PROTIP: Do the two above as preparation for <a href="#Developer">Developer certification</a>.
+
    <a name="LightningSuperbadges"></a>
    
    ### Lightning superbadges
@@ -117,7 +133,7 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
 
    <a name="SpecialtySuperbadges"></a>
    
-   ### Specialty superbadges
+   ### Specialist superbadges
 
    * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_process_automation">
    Process Automation Specialist</a>
@@ -126,13 +142,20 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
    * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_integration">
    Data Integration Specialist</a>
 
+   ### Specialty superbadges
+
    * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_analytics_integration_specialist">
    Einstein Analytics Data Preparation Specialist</a>
    (Follow <a target="_blank" href="https://twitter.com/SForceAnalytics">@SForceAnalytics</a>)
+   <br /><br />
 
-3) <strong>Paid</strong> classes are offered by Salesforce's own <a target="_blank" href="http://www.salesforce.com/services-training/training_certification/training.jsp">Salesforce University</strong> (<a target="_blank" href="https://twitter.com/SalesforceU">@SalesforceU</a>). For example, $3,750 for the 5-day course.
+3. Salesforce as a company offers classes addressing each certification through its 
+    <a target="_blank" href="http://www.salesforce.com/services-training/training_certification/training.jsp"><strong>Salesforce University</strong> (<a target="_blank" href="https://twitter.com/SalesforceU">@SalesforceU</a>). For example, $3,750 for the 5-day course.
 
-4) Follow on Twitter
+   PROTIP: Spending several days strait sitting in a class may seem like "drinking from a firehose".
+
+
+4. Follow on Twitter
 
    * #Trailhead
    * Chris Duarte (@TheChrisDuarte) - the Managing Editor of #Trailhead
@@ -144,7 +167,7 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
 
 ### Salespeople (user) certification
 
-<a target="_blank" href="http://certification.salesforce.com/SG_AccreditedSalesProfessional.pdf">OFFicial PDF</a> -  Salesforce Accredited Sales Professional</a>
+<a target="_blank" href="http://certification.salesforce.com/SG_AccreditedSalesProfessional.pdf">OFFicial PDF -  Salesforce Accredited Sales Professional</a>
 
 
 <a name="Administrator"></a>
@@ -153,7 +176,7 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
 
 For $200 each, answer 65% of 60 multiple-choice/multiple-select questions in 105 minutes.
 
-<a target="_blank" href="http://certification.salesforce.com/SG_CertifiedAdministrator.pdf">OFFicial PDF</a> - Salesforce Administrator Certification</a>
+<a target="_blank" href="http://certification.salesforce.com/SG_CertifiedAdministrator.pdf">OFFicial PDF - Salesforce Administrator Certification</a>
 
    * Org. setup 2%
    * user setup 7%
@@ -167,12 +190,19 @@ For $200 each, answer 65% of 60 multiple-choice/multiple-select questions in 105
    * Desktop and mobile admin 1%
    * AppExchange 1% 
 
+Resources for preparing for the Administrator exam:
+
    * Trail: https://trailhead.salesforce.com/trails/force_com_admin_beginner
    [8 hrs 35 mins] topics are structed according to the above list.
 
-<a target="_blank" href="http://certification.salesforce.com/SG_CertifiedAdvancedAdministrator.pdf">OFFicial PDF</a> -  Advanced Administrator Certification</a>
+<a target="_blank" href="http://certification.salesforce.com/SG_CertifiedAdvancedAdministrator.pdf">OFFicial PDF -  Advanced Administrator Certification</a>
 
    * https://trailhead.salesforce.com/trail/force_com_admin_intermediate
+
+Administrator Certification Maintenance exam:
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/admin-cert-maintenance-summer18">
+   Administrator Certification Maintenance (Summer ’18)</a> [20 minutes] covers changes in Sales and Analysis, plus Service and Communities.
 
 Many resources address content for both courses:
 
@@ -200,13 +230,13 @@ Follow on Twitter:
 
 (which includes database administrators):
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperI.pdf">OFFicial PDF</a> -  Certified Salesforce Platform Developer I 
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperI.pdf">OFFicial PDF -  Certified Salesforce Platform Developer I 
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperII.pdf">OFFicial PDF</a> -  Certified Salesforce Platform Developer II
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperII.pdf">OFFicial PDF -  Certified Salesforce Platform Developer II
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedCommerceCloudDigitalDeveloper.pdf">OFFicial PDF</a> -  Salesforce Certified Commerce Cloud Digital Developer
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedCommerceCloudDigitalDeveloper.pdf">OFFicial PDF -  Salesforce Certified Commerce Cloud Digital Developer
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformAppBuilder.pdf">OFFicial PDF</a> -  Salesforce Certified Platform App Builder 
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformAppBuilder.pdf">OFFicial PDF -  Salesforce Certified Platform App Builder 
 
 Some exam resources address content for both courses:
 
@@ -223,11 +253,15 @@ Some exam resources address content for both courses:
 
 Salesforce offers classes:
 
-   * DEV401 (Building Applications with Force.com and <a href="#Visualforce">Visualforce</a>)
+   * SalesforceU's Instructor-led course: Programmatic Development Using Apex and Visualforce(DEV450)
+
+   * DEV401 (Building Applications with Force.com and <a href="#Visualforce">Visualforce</a> classic UI)
 
    * DEV501 involves Apex coding
 
 Trailhead:
+
+   <a target="_blank" href="https://trailhead.salesforce.com/en/users/00550000006yDdKAAU/trailmixes/prepare-for-your-salesforce-platform-developer-i-credential">Trailmix for Developers</a> consists of several Trailhead modules.
 
    * https://trailhead.salesforce.com/trails/force_com_dev_beginner
 
@@ -252,13 +286,13 @@ Other exam prep. offerings:
 
 These are $200 each, addressing each product line (except Knowledge Cloud, Marketing Cloud, and Service Cloud):
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedSalesCloudConsultant.pdf">OFFicial PDF</a> -  Salesforce Certified Sales Cloud Consultant</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedSalesCloudConsultant.pdf">OFFicial PDF -  Salesforce Certified Sales Cloud Consultant</a>
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedServiceCloudConsultant.pdf">OFFicial PDF</a> -  Salesforce Certified Service Cloud Consultant</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedServiceCloudConsultant.pdf">OFFicial PDF -  Salesforce Certified Service Cloud Consultant</a>
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedCommunityCloudConsultant.pdf">OFFicial PDF</a> -  Salesforce Certified Community Cloud Consultant</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedCommunityCloudConsultant.pdf">OFFicial PDF -  Salesforce Certified Community Cloud Consultant</a>
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedFieldServiceLightningConsultant.pdf">OFFicial PDF</a> -  Salesforce Certified Field Service Lightning Consultant</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedFieldServiceLightningConsultant.pdf">OFFicial PDF -  Salesforce Certified Field Service Lightning Consultant</a>
 
    o Scheduling and optimization
    o Resource management
@@ -278,19 +312,19 @@ Resources addressing the above exams:
 
 These are $400 each addressing specific aspects of architecture:
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedDataArchitectureandManagementDesigner.pdf">OFFicial PDF</a> -  Salesforce Certified Data Architecture and Management Designer</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedDataArchitectureandManagementDesigner.pdf">OFFicial PDF -  Salesforce Certified Data Architecture and Management Designer</a>
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedCommerceCloudTechnicalSolutionDesigner.pdf">OFFicial PDF</a> -  Salesforce Certified Commerce Cloud Technical Solution Designer</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedCommerceCloudTechnicalSolutionDesigner.pdf">OFFicial PDF -  Salesforce Certified Commerce Cloud Technical Solution Designer</a>
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedIntegrationArchitectureDesigner.pdf">OFFicial PDF</a> -  Salesforce Certified Integration Architecture Designer</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedIntegrationArchitectureDesigner.pdf">OFFicial PDF -  Salesforce Certified Integration Architecture Designer</a>
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedDevelopmentLifecycleandDeploymentDesigner.pdf">OFFicial PDF</a> -  Salesforce Certified Data Architecture and Management Designer</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedDevelopmentLifecycleandDeploymentDesigner.pdf">OFFicial PDF -  Salesforce Certified Data Architecture and Management Designer</a>
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedSharingAndVisibilityDesigner.pdf">OFFicial PDF</a> -  Salesforce Certified Sharing and Visibility Designer</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedSharingAndVisibilityDesigner.pdf">OFFicial PDF -  Salesforce Certified Sharing and Visibility Designer</a>
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedMobileSolutionsArchitectureDesigner.pdf">OFFicial PDF</a> -  Salesforce Certified Mobile Solutions Architecture Designer</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedMobileSolutionsArchitectureDesigner.pdf">OFFicial PDF -  Salesforce Certified Mobile Solutions Architecture Designer</a>
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedIdentityAndAccessManagementDesigner.pdf">OFFicial PDF</a> -  Salesforce Certified Identity and Access Management Designer</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedIdentityAndAccessManagementDesigner.pdf">OFFicial PDF -  Salesforce Certified Identity and Access Management Designer</a>
 
 
 <a name="TechnicalArchitect"></a>
@@ -299,7 +333,7 @@ These are $400 each addressing specific aspects of architecture:
 
 The highest level of certification costs $6,000 plus travel to a Salesforce office to sit in front review board for 4 hours.
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedTechnicalArchitect.pdf">OFFicial PDF</a> -  Salesforce Certified Technical Architect - Review Board</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedTechnicalArchitect.pdf">OFFicial PDF -  Salesforce Certified Technical Architect - Review Board</a>
 
 <hr />
 
@@ -308,9 +342,10 @@ The highest level of certification costs $6,000 plus travel to a Salesforce offi
 Here's an example of a progression:
 
    | Trail/Project | Hours | Points |
-   | ----- | :---: | -----: |
+   | ----- | ---: | -----: |
    | Admin Intro. Trail | 9 | 10,200 |
    | Admin Intermediate Trail | 5.9 | 8,200 |
+   | Take Admin 1 exam | - | - |
    | Developer Beginner Trail | 15 | 19,400 |
    | Developer Intermediate Trail | 10 | 8,100 |
    | Developer Trail - Mobile SDK | 6.8 | 3,000 |
@@ -321,13 +356,3 @@ Here's an example of a progression:
    | Total: | 50 | 45,000 |
 
 
-
-
-
-
-
-## More about Salesforce #
-
-This is one of a series about Salesforce
-
-{% include salesforce_links.html %}
