@@ -121,7 +121,7 @@ https://www.masonfrank.com/salesforce-salary-survey/</a>
 
   * <a target="_blank" href="https://www.masonfrank.com/search?query=remote&location%5B%5D=3871">Mason Frank's Salesforce jobs page</a>
 
-  * <a target="_blank" href="http://careers.force.com/jobs/">http://careers.force.com/jobs</a> lists jobs inside Salesforce. Applicants use workday.com, which is now owned by SAP (Salesforce's chief competitor).
+  * <a target="_blank" href="http://careers.force.com/jobs/">http://careers.force.com/jobs</a> lists jobs inside Salesforce. Applicants use workday.com.
 
   * <a target="_blank" href="https://www.indeed.com/jobs?q=Salesforce&l=remote">Indeed</a> aggregates jobs on several websites
 
