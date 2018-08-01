@@ -71,16 +71,15 @@ For developers, Salesforce provides an easy and fast way to create apps:
 
 ### Competitors in CRM
 
-Marc Benioff has this on his Twitter header picture:
+Marc Benioff has this (from Gartner) on his Twitter header picture:
 
    ![salesforce-market-share-1500x500](https://user-images.githubusercontent.com/300046/43361208-59796650-9286-11e8-919d-bdfd0b5937b7.jpg)
 
 * Gartner says "Salesforce leads market share with 16% in 2013 vs. SAP with 13%, and Oracle with 10%."
 
-   Salesforce and Force.com are more attractive to mid-market customers than SAP and Oracle,
-   which tends to impose industry-specific workflows on implementations.
-   So you're not as much always forced to work for large consulting firms living out of hotels.
+   Salesforce/Force.com seem to be more attractive to <strong>mid-market</strong> customers than SAP and Oracle. And smaller companies tend to more flexible about all work being done on-site.
 
+The competitors are:
 
 * SAP
 * Oracle
@@ -192,11 +191,19 @@ Salesforce Certification Group:
 
 <a target="_blank" href="https://developer.salesforce.com/forums?communityId=09aF00000004HMGIA2#!/feedtype=RECENT&dc=Trailhead&criteria=ALLQUESTIONS"> Developer forum on Trailhead</a>
 
+Salesforce.org for non-profits:
+
+   * http://www.salesforce.org/contact-us/ to join mailing list
+   * <a target="_blank" href="https://twitter.com/SalesforceOrg">@SalesforceOrg</a>
+   * https://www.instagram.com/SalesforceOrg/
+   * <a target="_blank" href="https://www.youtube.com/watch?v=iBrS2LrJ-vo&list=PLU8xqF8ZASbXWAHIF0SB1P9_3G4vvRMXI">How-to series on YouTube</a>
+
 Github repos
 
-   * https://github.com/forcedotcom/salesforcedx-vscode/wiki/Tips-and-Tricks
-
-   * https://github.com/forcedotcom/salesforcedx-vscode/wiki/Troubleshooting
+   * https://github.com/forcedotcom
+   * https://github.com/salesforce-ux
+   * https://github.com/financialforcedev
+   * https://github.com/SalesforceFoundation http://www.salesforce.org/nonprofit/nonprofit-success-pack/  tools to help manage programs, donations, volunteers, and supporters all in one place. 
 
 ### Communities
 
@@ -630,6 +637,9 @@ provide syntax highlighting and code completion.
    QUESTION: Is there a script that can do the above?
 
    Source for this extention is on GitHub at https://github.com/forcedotcom/salesforcedx-vscode
+
+   * https://github.com/forcedotcom/salesforcedx-vscode/wiki/Tips-and-Tricks
+   * https://github.com/forcedotcom/salesforcedx-vscode/wiki/Troubleshooting
 
    ### Salesforce CLI Integration for Visual Studio Code
 

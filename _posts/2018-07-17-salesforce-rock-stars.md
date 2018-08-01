@@ -290,14 +290,11 @@ Keir Bowden (<a target="_blank" href="https://twitter.com/bob_buzzard">@bob_buzz
    * <a target="_blank" href="http://bobbuzzard.blogspot.com/">bobbuzzard.blogspot.com</a>
    * <a target="_blank" href="https://www.blogger.com/profile/07815472992351343395">At Blogger.com</a>
 
-Keith Block, Salesforce
-
-   * [@KeithBlock on Twitter](https://twitter.com/KeithBlock)
-
 Kevin O'Hara, Rochester, MI
 
    * <a target="_blank" href="https://github.com/kevinohara80/nforce">nforce repo on GitHub</a>
-   is a node.js salesforce REST API wrapper for force.com, database.com, and salesforce.com 
+   is a node.js salesforce REST API wrapper for force.com, database.com, and salesforce.com.
+   It set the standard for using Salesforce APIs.
 
 Lance Shi:
 
@@ -545,6 +542,8 @@ BlackBerry
 Listed alphabetically by first name:
 
 <a target="_blank" href="https://www.linkedin.com/in/alextoussaint">Alex Toussaint</a> (<a target="_blank" href="https://twitter.com/alextoussaint">@alextoussaint</a>), VP Product Management – Einstein Analytics
+
+Keith Block ([@KeithBlock on Twitter](https://twitter.com/KeithBlock))
 
 <a target="_blank" href="https://www.linkedin.com/in/mikegerholdt/">Mike Gerholdt</a>, Director of Evangelism
 

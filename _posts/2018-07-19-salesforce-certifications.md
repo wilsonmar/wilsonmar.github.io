@@ -5,10 +5,10 @@ excerpt: "How to get recognized for your knowledge and persistance"
 tags: [salesforce]
 file: 2018-07-19-salesforce-certifications.md
 image:
-# feature: pic orange wm_mcnaughton_sunset_runner_1900x500.jpg
-  feature: https://cloud.githubusercontent.com/assets/300046/14622121/097d7550-0585-11e6-9543-27d45c2487c2.jpg
-  credit: William McNaughton
-  creditlink:
+# feature: sf-get-started-1900x500-166833.jpg
+  feature: https://user-images.githubusercontent.com/300046/43513032-f7cb0bd2-9539-11e8-88db-f3bff1cbfe17.jpg
+  credit: Salesforce
+  creditlink: 
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
