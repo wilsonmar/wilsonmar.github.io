@@ -27,6 +27,8 @@ Here are steps and information for those new to Salesforce to get "plugged in" q
 * <a target="_blank" href="https://help.salesforce.com/apex/HTViewHelpDoc?id=glossary.htm">
    Salesforce's Glossary</a> of terms.
 
+   "SFDC" is an acronym for "Salesforce dot com".
+
 * <a target="_blank" href="https://quizlet.com/_52b1qw/">My quizlet on Salesforce Terms</a>
 
    Please let me know if you see any terms missing.
@@ -82,11 +84,16 @@ The competitors are:
 
 ## Locations
 
-Salesforce is building the tallest building in San Francisco.
+Salesforce buildt the tallest building in San Francisco.
 
 ![sf-tallest-648x558-65050](https://user-images.githubusercontent.com/300046/43551978-2ffdeb20-95a6-11e8-92c3-c919dee9811b.jpg)
 
 It's a few feet taller than the Eiffel Tower in Paris.
+
+It's built on top of former landfill in an earthquake-prone area.
+But it's certified LEED Platinum -- the highest rating in the US.
+
+It's part of a whole downtown re-development that includes the Salesforce Transit Center under a 5 acre park.
 
 
 <a name="LaborDemand"></a>
@@ -105,6 +112,8 @@ The company has seen a consistent growth rate of 35% year-over-year, which is un
 
 Salesforce, as a company, pioneered the 1:1:1 model, donating one percent of its time, equity, and product to non-profit organizations via the <a target="_blank" href="http://www.salesforcefoundation.org/">salesforcefoundation.org</a>
 
+<a target="_blank" href="https://www.glassdoor.com/Job/jobs.htm?suggestCount=0&suggestChosen=true&clickSource=searchBtn&typedKeyword=sales&sc.keyword=Salesforce&locT=&locId=&jobType=">Salesforce jobs at Glassdoor</a>
+
 
 ## Jobs
 
@@ -118,14 +127,11 @@ providing detailed breakdowns of salaries by job role, location, and so much mor
 https://www.masonfrank.com/salesforce-salary-survey/">
 https://www.masonfrank.com/salesforce-salary-survey/</a>
 
-
-  * <a target="_blank" href="https://www.masonfrank.com/search?query=remote&location%5B%5D=3871">Mason Frank's Salesforce jobs page</a>
+  * <a target="_blank" href="https://www.masonfrank.com/search?query=remote&location%5B%5D=3871">Recruiting agency Mason Frank's Salesforce jobs page</a>
 
   * <a target="_blank" href="http://careers.force.com/jobs/">http://careers.force.com/jobs</a> lists jobs inside Salesforce. Applicants use workday.com.
 
   * <a target="_blank" href="https://www.indeed.com/jobs?q=Salesforce&l=remote">Indeed</a> aggregates jobs on several websites
-
-  * <a target="_blank" href="https://www.glassdoor.com/Job/jobs.htm?suggestCount=0&suggestChosen=true&clickSource=searchBtn&typedKeyword=sales&sc.keyword=Salesforce&locT=&locId=&jobType=">Salesforce jobs at Glassdoor</a>
 
   * <a target="_blank" href="https://www.glassdoor.com/Reviews/Salesforce-Reviews-E11159.htm">
   Salesforce company reviews at Glassdoor</a>
@@ -134,7 +140,7 @@ https://www.masonfrank.com/salesforce-salary-survey/</a>
 
   * <a target="_blank" href="https://stackoverflow.com/jobs?sort=i&q=salesforce">Stackoverflow Jobs</a>
 
-  * Consulting Partners
+  * Consulting Partners and ISVs (Independent Software Vendors)
 
 
 
@@ -158,7 +164,7 @@ https://www.masonfrank.com/salesforce-salary-survey/</a>
 ### Chatter
 
    * <a target="_blank" href="https://trailhead.salesforce.com/modules/chatter">
-   Trailhead sModule: Chatter Administration for Salesforce Classic</a>
+   Trailhead Module: Chatter Administration for Salesforce Classic</a>
 
 ### Salesforce employee teams
 
