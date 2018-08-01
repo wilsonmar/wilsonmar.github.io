@@ -16,7 +16,7 @@ comments: true
 
 {% include _toc.html %}
 
-Here are steps and information for those new to Salesforce to get started quickly yet fully.
+Here are steps and information for those new to Salesforce to get started working on the system.
 This also aims to provide succinct lists for experienced Salesforce readers.
 
 "PROTIP:" in this document marks the unique contribution of this website, 
@@ -26,291 +26,6 @@ https://trailhead.salesforce.com/modules/starting_force_com
 Salesforce Platform Basics
 Get introduced to the platform, navigate use cases, and build custom functionality.
 
-<a name="Glossary"></a>
-
-## Glossary of Terms and Acronyms
-
-* <a target="_blank" href="https://help.salesforce.com/apex/HTViewHelpDoc?id=glossary.htm">
-   Salesforce's Glossary</a> of terms.
-
-* <a target="_blank" href="https://quizlet.com/_52b1qw/">My quizlet on Salesforce Terms</a>
-
-   Please let me know if you see any terms missing.
-
-* <a target="_blank" href="https://quizlet.com/216046018/salesforce-admin-flash-cards/">Quizlet on Saleforce Admin quiz</a> 
-
-
-<a name="WhySalesforce"></a>
-
-## Why Salesforce? #
-
-For end-users, get away from:
-
-   * Reliance on spreadsheets and Access databases
-   * Collaboration via email
-   * Documents shared on local file directories
-   * Time-intensive, manual steps
-
-For developers, Salesforce provides an easy and fast way to create apps:
-
-   * Free development environments called "orgs" (organizations). (no 7 day trials)
-   * Integrations
-   * Free, full-featured copy of the Salesforce1 mobile Platform introduced 2013
-   * Develop apps with clicks or code
-   * Fine-grained access control
-   * highly scalable
-   * API-first to integrate anything with everything
-   * Use popular UI frameworks like Bootstrap, JQuery (in VisualForce classic)
-   * <a href="#Lightning">Lightning</a> HTML UI components for user-developed apps.
-
-   * Salesforce was designed with a <strong>metadata-driven</strong> architecture. Everything, including the code, configuration, and apps, is specified as metadata.
-
-### Competitors in CRM
-
-Marc Benioff has this (from Gartner) on his Twitter header picture:
-
-   ![salesforce-market-share-1500x500](https://user-images.githubusercontent.com/300046/43361208-59796650-9286-11e8-919d-bdfd0b5937b7.jpg)
-
-* Gartner says "Salesforce leads market share with 16% in 2013 vs. SAP with 13%, and Oracle with 10%."
-
-   Salesforce/Force.com seem to be more attractive to <strong>mid-market</strong> customers than SAP and Oracle. And smaller companies tend to more flexible about all work being done on-site.
-
-The competitors are:
-
-* SAP
-* Oracle
-* Microsoft Dynamics 365
-
-* SOHO
-* Hubspot
-* SugarCRM
-* Highrise
-
-
-<a name="LaborDemand"></a>
-
-## Labor Demand
-
-Salesforce has not been profitable, but its market value (stock price x shares) is growing.
-The company has seen a consistent growth rate of 35% year-over-year, which is unrivaled in the stock market:
-![crm_stock_to_20150718](https://cloud.githubusercontent.com/assets/300046/8766609/e7cf7120-2dfc-11e5-981a-433ceba95b37.png)
-
-   * Microsoft's $50 billion offer was once rejected.
-   * The prediction was for a buyout/merger with Oracle, where Salesforce CEO Benoiff had worked.
-   <br /><br />
-
-Salesforce, as a company, pioneered the 1:1:1 model, donating one percent of its time, equity, and product to non-profit organizations via the <a target="_blank" href="http://www.salesforcefoundation.org/">salesforcefoundation.org</a>
-
-https://medium.com/trailhead/huge-demand-for-salesforce-talent-3bb30c597b39
-
-Mason Frank International, a recruiter, publishes a report each year about the Salesforce ecosystem,
-providing detailed breakdowns of salaries by job role, location, and so much more.
-<a target="_blank" href="
-https://www.masonfrank.com/salesforce-salary-survey/">
-https://www.masonfrank.com/salesforce-salary-survey/</a>
-
-## Jobs
-
-DISCUSSIONS: <a target="_blank" href="https://developer.salesforce.com/forums/#!/feedtype=RECENT&dc=Jobs_Board&criteria=ALLQUESTIONS">Jobs Board</a>
-
-  * <a target="_blank" href="https://www.masonfrank.com/search?query=remote&location%5B%5D=3871">Mason Frank's Salesforce jobs page</a>
-
-  * <a target="_blank" href="http://careers.force.com/jobs/">http://careers.force.com/jobs</a> lists jobs inside Salesforce. Applicants use workday.com, which is now owned by SAP (Salesforce's chief competitor).
-
-  * <a target="_blank" href="https://www.indeed.com/jobs?q=Salesforce&l=remote">Indeed</a> aggregates jobs on several websites
-
-  * <a target="_blank" href="https://www.glassdoor.com/Job/jobs.htm?suggestCount=0&suggestChosen=true&clickSource=searchBtn&typedKeyword=sales&sc.keyword=Salesforce&locT=&locId=&jobType=">Salesforce jobs at Glassdoor</a>
-
-  * <a target="_blank" href="https://www.glassdoor.com/Reviews/Salesforce-Reviews-E11159.htm">
-  Salesforce company reviews at Glassdoor</a>
-
-  * <a target="_blank" href="https://www.linkedin.com/company/salesforce/jobs/">LinkedIn jobs</a>
-
-  * <a target="_blank" href="https://stackoverflow.com/jobs?sort=i&q=salesforce">Stackoverflow Jobs</a>
-
-  * Consulting Partners
-
-
-
-<a name="Social"></a>
-
-## Stay Informed on Social Media
-
-### Skills in LinkedIn profile
-
-1. Click the  Me icon at the top of your LinkedIn homepage.
-2. Click "View profile".
-3. Scroll to the "Skills & Endorsements" section and click "Add a new skill".
-4. In the pop-up window, if it says "You’ve reached the limit of 50 skills", X back and remove some skills.
-5. Type the name of a skill and select it from the dropdown list that appears or click "Add" immediately.
-
-   You can also add skills from the Suggested skills based off your profile options that are provided.
-
-
-<a name="Chatter"></a>
-
-### Chatter
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/chatter">
-   Trailhead sModule: Chatter Administration for Salesforce Classic</a>
-
-### Salesforce employee teams
-
-Salesforce Developer Relations Team of evangelists:
-
-   * [@SalesforceDevs on Twitter](https://twitter.com/SalesforceDevs)
-
-   * <a target="_blank" href="https://developer.salesforce.com/blogs/">
-   https://developer.salesforce.com/blogs</a> (Salesforce Developer Releations Blog)
-
-   * <a target="_blank" href="https://www.pscp.tv/SalesforceDevs/1RDGldYDWOzGL">Broadcasts on pscp.tv</a> (Periscope) viewed on the Periscope Live Video Streaming app on <a target="_blank" href="https://itunes.apple.com/us/app/id972909677?mt=8">iOS</a> and <a target="_blank" href="https://play.google.com/store/apps/details?id=tv.periscope.android">Android</a>. Sign-up, and follow @SalesforceDevs.
-
-   * <a target="_blank" href="https://www.youtube.com/channel/UCKORm8sxh3cheBpqs0akkhg">
-   Salesforce Developers YouTube channel</a>   
-
-Salesforce Engineering team:
-
-   * [@SalesforceEng on Twitter](https://twitter.com/SalesforceEng)
-
-   * <a target="_blank" href="https://developer.salesforce.com/blogs/engineering/">
-   https://developer.salesforce.com/blogs/engineering</a> provides updates about core engineering and product releated 
-
-Salesforce Product Documentation team:
-
-   * <a target="_blank" href="https://twitter.com/salesforcedocs">@salesforcedocs</a>
-
-Salesforce Customer Success team (in the Success Cloud) who helps paying teams up and running:
-
-   * <a target="_blank" href="https://twitter.com/asksalesforce‏">@asksalesforce‏</a>
-
-   * Salesforce Success Community https://success.salesforce.com/
-
-   * <a target="_blank" href="https://developer.salesforce.com/mvp">
-   Salesforce MVPs</a>
-
-Salesforce Trailhead team:
-
-   * https://medium.com/trailhead
-
-Salesforce Certification Group:
-
-   * https://www.linkedin.com/groups/151420/profile 
-
-   * https://www.linkedin.com/showcase/salesforce-admins/ SalesForce Admins on LinkedIn.
-
-<a target="_blank" href="https://developer.salesforce.com/forums?communityId=09aF00000004HMGIA2#!/feedtype=RECENT&dc=Trailhead&criteria=ALLQUESTIONS"> Developer forum on Trailhead</a>
-
-Salesforce.org for non-profits:
-
-   * http://www.salesforce.org/contact-us/ to join mailing list
-   * <a target="_blank" href="https://twitter.com/SalesforceOrg">@SalesforceOrg</a>
-   * https://www.instagram.com/SalesforceOrg/
-   * <a target="_blank" href="https://www.youtube.com/watch?v=iBrS2LrJ-vo&list=PLU8xqF8ZASbXWAHIF0SB1P9_3G4vvRMXI">How-to series on YouTube</a>
-
-Github repos
-
-   * https://github.com/forcedotcom
-   * https://github.com/salesforce-ux
-   * https://github.com/financialforcedev
-   * https://github.com/SalesforceFoundation http://www.salesforce.org/nonprofit/nonprofit-success-pack/  tools to help manage programs, donations, volunteers, and supporters all in one place. 
-
-### Communities
-
-* <a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000HTp1">
-   Salesforce DX</a> (Developer eXchange)
-
-* <a target="_blank" href="https://salesforce.stackexchange.com/">https://salesforce.stackexchange.com</a>
-
-* Follow <a target="_blank" href="https://www.linkedin.com/showcase/salesforce-developers/">Salesforce Developers on Linkedin</a>
-
-
-## Events (Meet people)
-
-<a target="_blank" href="https://developer.salesforce.com/calendar">https://developer.salesforce.com/calendar</a>
-is where you find and register for events.
-
-TrailheadDX (Developer eXperience)
-
-   * #TDX18 
-
-World Tour
-
-  * There is a mobile app (by Debra Nacimento) for the Salesforce World Tour.
-
-<a name="Lightning"></a>
-Lightning Now Tour to a city near you in 2018
-
-   * <a target="_blank" href="bit.ly/lightning-now-sales-admin">Lightning Now Tour for Sales Admins</a>
-
-   * <a target="_blank" href="bit.ly/lightning-now-developer">Lightning Now Tour for Developers</a>
-   includes a <a target="_blank" href="https://developerforce.github.io/LightningNowWorkshop/">Workshop Lab</a> from https://developerforce.github.io/LightningNowWorkshop/Exercise_d1.html
-
-Local Meetups 
-
-   * <a target="_blank" href="http://salesforce.meetup.com/">salesforce.meetup.com</a>
-   lists meetups secheduled at meetups.com (at $200 per year).
-
-   * https://success.salesforce.com/userGroups  
-
-   * https://developer.salesforce.com/dugs
-
-   * bit.ly/TwitchSF by the San Francisco user group
-
-<a target="_blank" href="http://www.salesforce.org/nonprofit/nonprofit-success-pack/">NPSP (Non-Profit Success Pack) website</a> and <a target="_blank" href="http://www.npspday.org/">conferences around the country</a>:
-
-   * https://seattlenpsf.wordpress.com/ is the Seattle Non-profit (ask to be invited to view)
-
-
-### Dreamforce
-
-<a target="_blank" href="http://www.salesforce.com/dreamforce/">Dreamforce</a> is Salesforce's annual conference, usually <strong>4 days in September</strong>.
-   It drew 170,000 to San Francisco in 2017.
-
-   * Recorded vidoes sessions are on the <a target="_blank" href="https://www.youtube.com/user/salesforce">Salesforce YouTube channel</a>.
-
-   * Use #DF17, #DF18, etc. on Twitter, Instagram, and other social media.
-
-Agenda Builder
-
-<a target="_blank" href="https://trailhead.salesforce.com/modules/get_ready_for_dreamforce_onsite">Trailhead Module: Dreamforce & Next Steps</a> [40 mins] Make the most of your time at Dreamforce and keep learning after the event.
-
-The Dreamforce Campus in downtown San Francisco has over 85 rooms in nine different locations.
-
-Free shuttles and pedi-cabs take you to and from major locations. It’s only 20 minutes from one end of the campus to the other. There is a bike valet in Jessie Square.
-
-Welcome Reception
-
-The <strong>Customer Success Expo</strong> is the world’s largest cloud ecosystem under one roof
-within the Moscone South. There are <strong>line-of-business zones</strong>.
-
-There are 2,700+ expert-led sessions of 40-minute breakouts and 20-minute theater sessions,
-with majority of them customer led.
-25% of all seats (except for those in Hands-On Trainings and a few other workshops) are blocked for walk-ins.
-
-<strong>Workshops</strong> at Dreamforce are facilitator-led sessions with group discussion and exercises that dive deep into a specific challenge and solution. 
-
-<strong>Circles of Success</strong> sessions are where facilitators lead 10-person groups in problem-solving exercises.
-
-Salesforce Campground.
-
-Hands-on Training (HoT) classes are offered, where you can learn directly from Salesforce University experts.
-
-Half-priced ($99) certification exams and SalesforceU live classes.
-
-<strong>Dream Valley</strong> gives back to the community.
-
-Partner-sponsored parties and events also take place all week long.
-
-<strong>Dreamfest</strong> is the party of the conference, featuring incredible live music, food, and drinks. In 2017 it was held at AT&T Park with Alicia Keys and Lenny Kravitz.
-
-Hackathon
-
-
-
-## Store
-
-<a target="_blank" href="https://salesforcestore.com/"><img align="right" alt="sf-keychain-150x150-6434.jpg" src="https://user-images.githubusercontent.com/300046/43412209-ba197162-93e9-11e8-8028-193144aeb840.jpg"></a>
-Miss being at a Salesforce event? Buy the branded clothing, office supplies, electronics, all 129 products for sale at <a target="_blank" href="https://salesforcestore.com/">https://salesforcestore.com</a>
 
 
 <a name="Domains"></a>
@@ -351,7 +66,6 @@ Additional businesses:
    * <a href="#IoT">Salesforce IoT</a>
    * Thunder
    * <strong>ExactTarget</strong> Fuel Marketing Cloud emails to target specific prospects (purchased by Salesforce)
-
 
 
 ## Topics of conversation
@@ -524,12 +238,11 @@ Trailhead tutorial modules:
    * <a target="_blank" href="https://trailhead.salesforce.com/modules/salesforce1_mobile_app">
    Trailhead Module: Salesforce Mobile App Customization</a>
 
-
 <hr />
 
 ## Trailhead Playground
 
-A Trailhead Playground is an org you can use to complete hands on challenges, and try out new features and customizations. It <strong>comes with set of Trailhead-specific data</strong> that you can use when completing challenges, and a pre-installed unmanaged package that we use to test your hands-on challenges. Trailhead Playgrounds have some limits, but for the most part they give you the same customization options as a production org. 
+A Trailhead Playground is an org you can use to complete hands on challenges, and try out new features and customizations. It <strong>comes with set of Trailhead-specific data</strong> (a set of sample contacts, etc.) that you can use when completing challenges, and a pre-installed unmanaged package that we use to test your hands-on challenges. Trailhead Playgrounds have some limits, but for the most part they give you the same customization options as a production org. 
 
 https://trailhead.salesforce.com/modules/trailhead_playground_management
 Trailhead: Trailhead Playground Management 
@@ -594,6 +307,33 @@ I recommend that you use Google Authenticator instead so you only need to have o
 2. Type a 4-digit passcode.   
 
 
+## Trailhead Basics modules
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_basics">Module: Trailhead Basics</a>
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/starting_force_com">Module: Salesforce Platform Basics</a>
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/data_modeling">Module: Data Modeling</a>
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/visualforce_fundamentals">
+   Module: Visualforce Basics</a>
+
+## Salesforce Lightning UI
+
+1. Click the "cog" icon to select Setup:
+
+   <img alt="sf-setup-253x186.png" width="253" src="https://user-images.githubusercontent.com/300046/43531842-f56b78e8-956d-11e8-8ce3-66b8cb160d13.png">
+
+1. Click the app launcher icon for a list of apps:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/43531384-e10b834e-956c-11e8-9113-3506e009c7ae.png"><img alt="sf-app-launcher-1106x554.png" width="1106" src="https://user-images.githubusercontent.com/300046/43531384-e10b834e-956c-11e8-9113-3506e009c7ae.png"></a>
+
+1. Scroll down for the "All Items" list:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/43531745-a9f76656-956d-11e8-950c-6c017c1d1a19.png"><img alt="sf-all-items-843x292.png" src="https://user-images.githubusercontent.com/300046/43531745-a9f76656-956d-11e8-950c-6c017c1d1a19.png"></a>
+
+
+<hr />
 
 ## Developer Console
 
@@ -699,20 +439,9 @@ PROTIP: Drive a lot? Listen to voice-only podcasts while commuting:
    * PODCAST: The Quotable Sales Podcast by Quotable.com since July 2016 on <a target="_blank" href="https://itunes.apple.com/us/podcast/quotable-podcast-learn-from/id1132258307?mt=2">iTunes</a> and <a target="_blank" href="https://play.google.com/music/listen?u=0#/ps/I6pcs6jawpetsbyhp5qaf42ahmy">Google Play</a>.
 
 
-## Trailhead Basics modules
+<a name="AppExchange"></a>
 
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_basics">Module: Trailhead Basics</a>
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/starting_force_com">Module: Salesforce Platform Basics</a>
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/data_modeling">Module: Data Modeling</a>
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/visualforce_fundamentals">
-   Module: Visualforce Basics</a>
-
-
-
-## Tools
+## AppExchange Tools
 
 https://appexchange.salesforce.com/appxHome
 
