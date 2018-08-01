@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Salesforce Ohana"
-excerpt: "Events, Lists, Blogs, a"
+excerpt: "Glossary, Competitors, Jobs, Social media, Communities, Events, Dreamforce, Store"
 tags: [salesforce]
 image:
 # feature: sf-ohana-1900x500-178173.jpg
@@ -84,6 +84,7 @@ The competitors are:
 
 Salesforce is building the tallest building in San Francisco.
 
+![sf-tallest-648x489-44564](https://user-images.githubusercontent.com/300046/43551495-705f6efc-95a4-11e8-8da6-87dd2182b186.jpg)
 
 
 <a name="LaborDemand"></a>
@@ -92,7 +93,9 @@ Salesforce is building the tallest building in San Francisco.
 
 Salesforce has not been profitable, but its market value (stock price x shares) is growing.
 The company has seen a consistent growth rate of 35% year-over-year, which is unrivaled in the stock market:
-![crm_stock_to_20150718](https://cloud.githubusercontent.com/assets/300046/8766609/e7cf7120-2dfc-11e5-981a-433ceba95b37.png)
+
+<a target="_blank" href="https://www.nasdaq.com/symbol/crm/stock-chart?intraday=off&timeframe=10y&charttype=mountain&splits=off&earnings=off&movingaverage=None&lowerstudy=volume&comparison=off&index=&drilldown=off&sDefault=true">
+<img alt="crm_stock_to_20150718.png" src="https://cloud.githubusercontent.com/assets/300046/8766609/e7cf7120-2dfc-11e5-981a-433ceba95b37.png"></a>
 
    * Microsoft's $50 billion offer was once rejected.
    * The prediction was for a buyout/merger with Oracle, where Salesforce CEO Benoiff had worked.
@@ -306,54 +309,43 @@ Hackathon
 <a target="_blank" href="https://salesforcestore.com/"><img align="right" alt="sf-keychain-150x150-6434.jpg" src="https://user-images.githubusercontent.com/300046/43412209-ba197162-93e9-11e8-8028-193144aeb840.jpg"></a>
 Miss being at a Salesforce event? Buy the branded clothing, office supplies, electronics, all 129 products for sale at <a target="_blank" href="https://salesforcestore.com/">https://salesforcestore.com</a>
 
+
 ## Trailhead communities
 
-https://success.salesforce.com/0F9300000001omnCAA
-Trailblazer Community Corner
+<a target="_blank" href="https://success.salesforce.com/0F9300000001omnCAA">Trailblazer Community Corner</a>
 
-https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYiAAO
-Sales Cloud
+<a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYiAAO">Sales Cloud</a>
 
-https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYBAA4
-Sales Cloud Best Practices
+<a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYBAA4">Sales Cloud Best Practices</a>
 
-https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYkAAO
-Marketing Cloud
+<a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYkAAO">Marketing Cloud</a>
 
-https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDZGAA4
-Community Cloud
+<a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDZGAA4">Community Cloud</a>
 
-https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A0000004gQJSAY
-Financial Services Cloud Community
+<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A0000004gQJSAY">Financial Services Cloud Community</a>
 
-https://success.salesforce.com/featuredGroupDetail?id=a1z3A000002vaXWQAY
-Service Cloud
+<a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z3A000002vaXWQAY">
+Service Cloud</a>
 
-https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000001ocxCAA
-Nonprofits using Salesforce
+<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000001ocxCAA">Nonprofits using Salesforce</a>
 
-https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000001qUiCAI
-Pardot B2B Marketing Automation
+<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000001qUiCAI">Pardot B2B Marketing Automation</a>
 
-https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYqAAO
-Einstein Analytics
+<a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYqAAO">
+Einstein Analytics</a>
 
-https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F930000000PT4SCAW
-Heroku Enthusiasts
+<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F930000000PT4SCAW">Heroku Enthusiasts</a>
 
-https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000DGi3SAG
-Commerce Cloud (Demandware)
+<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000DGi3SAG">Commerce Cloud (Demandware)</a>
 
-https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000Lf1ZSAS
-Salefsforce Health Cloud
+<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000Lf1ZSAS">Salefsforce Health Cloud</a>
 
-https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000LgciSAC
-Quip
+<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000LgciSAC">Quip</a>
 
 
 ## Personas
 
-https://trailhead.salesforce.com/modules/ux-personas-for-salesforce">Trailhead module: UX Personas for Salesforce</a> [1 hr 10 min] 
+<a target="_blank" href="https://trailhead.salesforce.com/modules/ux-personas-for-salesforce">Trailhead module: UX Personas for Salesforce</a> [1 hr 10 min] 
 
 A "persona" represents a group of users clustered based on shared behavior, motivations, goals, pain points, or other characteristics. Categories stand in for key user groups when making decisions about your product, by representing major differences between groups. Personas can be useful for building empathy and making the users seem real. Effective personas are created based on <a target="_blank" href="https://trailhead.salesforce.com/module/ux-research-basics"> research</a> and <a target="_blank" href="https://developer.salesforce.com/files/ux-personas-ServiceCloudPersonaSurvey.pdf">surveys (pdf)</a> to ensure that they reflect the real people who use your product. 
 Personas should be based on general work tasks users perform in their roles, rather than just what they do in Salesforce. 
