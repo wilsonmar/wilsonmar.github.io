@@ -5,10 +5,10 @@ excerpt: "Get up and running on the various Salesforce technologies"
 tags: [salesforce]
 file: salesforce-onboarding.md
 image:
-# feature: pic orange wm_mcnaughton_sunset_runner_1900x500.jpg
-  feature: https://cloud.githubusercontent.com/assets/300046/14622121/097d7550-0585-11e6-9543-27d45c2487c2.jpg
-  credit: William McNaughton
-  creditlink:
+# feature: sf-ohana-1900x500-178173.jpg
+  feature: https://user-images.githubusercontent.com/300046/43407734-bd6303fe-93dc-11e8-87df-302ddbc274ff.jpg
+  credit: Salesforce
+  creditlink: https://trailhead.salesforce.com/trailblazers
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
