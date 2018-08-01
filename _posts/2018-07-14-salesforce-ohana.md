@@ -84,7 +84,9 @@ The competitors are:
 
 Salesforce is building the tallest building in San Francisco.
 
-![sf-tallest-648x489-44564](https://user-images.githubusercontent.com/300046/43551495-705f6efc-95a4-11e8-8da6-87dd2182b186.jpg)
+![sf-tallest-648x558-65050](https://user-images.githubusercontent.com/300046/43551978-2ffdeb20-95a6-11e8-92c3-c919dee9811b.jpg)
+
+It's taller than the Eiffle Tower in Paris.
 
 
 <a name="LaborDemand"></a>
