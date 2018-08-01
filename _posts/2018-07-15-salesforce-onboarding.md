@@ -33,11 +33,11 @@ Get introduced to the platform, navigate use cases, and build custom functionali
 * <a target="_blank" href="https://help.salesforce.com/apex/HTViewHelpDoc?id=glossary.htm">
    Salesforce's Glossary</a> of terms.
 
-* [My Quizlet gamifying Salesforce Acronmyns](https://quizlet.com/87010545/dev-401-all-flash-cards/) now has over 1,000 items.
+* <a target="_blank" href="https://quizlet.com/_52b1qw/">My quizlet on Salesforce Terms</a>
 
    Please let me know if you see any terms missing.
 
-* [Quizlets about Saleforce](https://quizlet.com/subject/salesforce/?sortBy=mostRecent):
+* <a target="_blank" href="https://quizlet.com/216046018/salesforce-admin-flash-cards/">Quizlet on Saleforce Admin quiz</a> https://quizlet.com/subject/salesforce/?sortBy=mostRecent
 
 * [Salesforce ADM 201 - Up through Spring '14 Release](
 https://quizlet.com/35268499/salesforce-adm-201-up-through-spring-14-release-flash-cards/)
