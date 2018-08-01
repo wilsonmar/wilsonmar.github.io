@@ -16,8 +16,8 @@ comments: true
 
 {% include _toc.html %}
 
-Here are steps and information to get those new to Salesforce to get started quickly.
-This also aims to provide succint lists for experienced Salesforce readers.
+Here are steps and information for those new to Salesforce to get started quickly yet fully.
+This also aims to provide succinct lists for experienced Salesforce readers.
 
 "PROTIP:" in this document marks the unique contribution of this website, 
 providing you advice available nowhere else.
@@ -37,11 +37,7 @@ Get introduced to the platform, navigate use cases, and build custom functionali
 
    Please let me know if you see any terms missing.
 
-* <a target="_blank" href="https://quizlet.com/216046018/salesforce-admin-flash-cards/">Quizlet on Saleforce Admin quiz</a> https://quizlet.com/subject/salesforce/?sortBy=mostRecent
-
-* [Salesforce ADM 201 - Up through Spring '14 Release](
-https://quizlet.com/35268499/salesforce-adm-201-up-through-spring-14-release-flash-cards/)
-has over 300 items.
+* <a target="_blank" href="https://quizlet.com/216046018/salesforce-admin-flash-cards/">Quizlet on Saleforce Admin quiz</a> 
 
 
 <a name="WhySalesforce"></a>
@@ -95,13 +91,12 @@ The competitors are:
 
 ## Labor Demand
 
-Here is why you want to spend time on Salesforce:
-The company has seen a growth rate of 35% year-over-year unrivaled in the stock market:
+Salesforce has not been profitable, but its market value (stock price x shares) is growing.
+The company has seen a consistent growth rate of 35% year-over-year, which is unrivaled in the stock market:
 ![crm_stock_to_20150718](https://cloud.githubusercontent.com/assets/300046/8766609/e7cf7120-2dfc-11e5-981a-433ceba95b37.png)
 
-   * Salesforce has not been profitable, but its market value (stock price x shares) is $48 billion dollars.
-   * Microsoft's $50 billion offer was rejected.
-   * The prediction is for a buyout/merger with Oracle, where Salesforce CEO Benoiff had worked.
+   * Microsoft's $50 billion offer was once rejected.
+   * The prediction was for a buyout/merger with Oracle, where Salesforce CEO Benoiff had worked.
    <br /><br />
 
 Salesforce, as a company, pioneered the 1:1:1 model, donating one percent of its time, equity, and product to non-profit organizations via the <a target="_blank" href="http://www.salesforcefoundation.org/">salesforcefoundation.org</a>
@@ -114,20 +109,24 @@ providing detailed breakdowns of salaries by job role, location, and so much mor
 https://www.masonfrank.com/salesforce-salary-survey/">
 https://www.masonfrank.com/salesforce-salary-survey/</a>
 
-DISCUSSIONS: <a target="_blank" href="https://developer.salesforce.com/forums/#!/feedtype=RECENT&dc=Jobs_Board&criteria=ALLQUESTIONS">Jobs Board</a>
-
 ## Jobs
 
-  * http://careers.force.com/jobs lists jobs inside Salesforce.
-  
+DISCUSSIONS: <a target="_blank" href="https://developer.salesforce.com/forums/#!/feedtype=RECENT&dc=Jobs_Board&criteria=ALLQUESTIONS">Jobs Board</a>
+
+  * <a target="_blank" href="https://www.masonfrank.com/search?query=remote&location%5B%5D=3871">Mason Frank's Salesforce jobs page</a>
+
+  * <a target="_blank" href="http://careers.force.com/jobs/">http://careers.force.com/jobs</a> lists jobs inside Salesforce. Applicants use workday.com, which is now owned by SAP (Salesforce's chief competitor).
+
+  * <a target="_blank" href="https://www.indeed.com/jobs?q=Salesforce&l=remote">Indeed</a> aggregates jobs on several websites
+
   * <a target="_blank" href="https://www.glassdoor.com/Job/jobs.htm?suggestCount=0&suggestChosen=true&clickSource=searchBtn&typedKeyword=sales&sc.keyword=Salesforce&locT=&locId=&jobType=">Salesforce jobs at Glassdoor</a>
 
   * <a target="_blank" href="https://www.glassdoor.com/Reviews/Salesforce-Reviews-E11159.htm">
   Salesforce company reviews at Glassdoor</a>
 
-  * bit.ly/TwitchSF
+  * <a target="_blank" href="https://www.linkedin.com/company/salesforce/jobs/">LinkedIn jobs</a>
 
-  * Stackoverflow Jobs
+  * <a target="_blank" href="https://stackoverflow.com/jobs?sort=i&q=salesforce">Stackoverflow Jobs</a>
 
   * Consulting Partners
 
@@ -136,6 +135,16 @@ DISCUSSIONS: <a target="_blank" href="https://developer.salesforce.com/forums/#!
 <a name="Social"></a>
 
 ## Stay Informed on Social Media
+
+### Skills in LinkedIn profile
+
+1. Click the  Me icon at the top of your LinkedIn homepage.
+2. Click "View profile".
+3. Scroll to the "Skills & Endorsements" section and click "Add a new skill".
+4. In the pop-up window, if it says "You’ve reached the limit of 50 skills", X back and remove some skills.
+5. Type the name of a skill and select it from the dropdown list that appears or click "Add" immediately.
+
+   You can also add skills from the Suggested skills based off your profile options that are provided.
 
 
 <a name="Chatter"></a>
@@ -245,6 +254,8 @@ Local Meetups
 
    * https://developer.salesforce.com/dugs
 
+   * bit.ly/TwitchSF by the San Francisco user group
+
 <a target="_blank" href="http://www.salesforce.org/nonprofit/nonprofit-success-pack/">NPSP (Non-Profit Success Pack) website</a> and <a target="_blank" href="http://www.npspday.org/">conferences around the country</a>:
 
    * https://seattlenpsf.wordpress.com/ is the Seattle Non-profit (ask to be invited to view)
@@ -322,9 +333,9 @@ Salesforce, as a company, owns these domain names:
    * <a target="_blank" href="https://www.quip.com/">Quip.com</a> API enables automation of processes, integration, and <strong>collabortion</strong> with any app.
 
    * <a target="_blank" href="https://www.site.com/">Site.com</a>
-   * <a target="_blank" href="https://salesforce.org/">Salesforce.org</a>, led by Suzanne DiBianca (@SuzanneDiBianca), Salesforce EVP of Corporate Relations and Chief Philanthropy Officer
    * <a target="_blank" href="https://salesforceiq.com">salesforceiq.com</a>
    PROTIP: Some product offerings have their own domain, but some don't. [<a target="_blank" href="https://status.salesforceiq.com/">status</a>]
+   * <a target="_blank" href="https://salesforce.org/">Salesforce.org</a>, led by Suzanne DiBianca (@SuzanneDiBianca), Salesforce EVP of Corporate Relations and Chief Philanthropy Officer
 
 Several domain names are no longer used and visits to it get rerouted to salesforce.com:
 
@@ -343,7 +354,7 @@ Additional businesses:
 
 
 
-## Topics in forums?
+## Topics of conversation
 
 Here are the Q&A topics in the Trailblazer Community Success Cloud URL<br /><a target="_blank" href="
 https://success.salesforce.com/answers?feedtype=RECENT&criteria=BESTANSWERS">https://success.salesforce.com/answers</a>
@@ -365,8 +376,9 @@ https://success.salesforce.com/answers?feedtype=RECENT&criteria=BESTANSWERS">htt
 * Security
 * Social Marketing
 * Trailhead Challenges
+* Other products
 
-Personas?
+TODO: Personas?
 
 
 <a name="Offerings"></a>
@@ -442,13 +454,14 @@ note DE has Enterprise capabilities, more powerful than the Professional Edition
 
 Each level has different support SLAs.
 
+For example, Salesforce Enterprise customers can open up tunnels and share data with each other. Cool. It’s EDI for the masses.
+
 Additionally:
 
 *    Partner Developer
 *    Partner Enterprise
 *    Partner Group
 *    Partner Professional
-
 
 
 <a name="VersionChangeMgmt"></a>
@@ -512,9 +525,6 @@ Trailhead tutorial modules:
    Trailhead Module: Salesforce Mobile App Customization</a>
 
 
-
-Salesforce Enterprise customers can open up tunnels and share data with each other. Cool. It’s EDI for the masses.
-
 <hr />
 
 ## Trailhead Playground
@@ -551,8 +561,8 @@ Here are some sample profiles:
    * <a target="_blank" href="https://trailhead.salesforce.com/en/me/wilsonmar/">
    https://trailhead.salesforce.com/en/me/wilsonmar</a>
 
-Notice that your profile includes how many trailhead modules you complete,
-the points earned, as well as certifications exams you've passed.
+Each profile includes how many trailhead modules and trails completed,
+and the points earned. It doesn't list certifications exams passed.
 
 Those who have been designated as a "MVP" by Salesforce also get identified in their profile.
 
