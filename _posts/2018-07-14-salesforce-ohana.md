@@ -301,11 +301,54 @@ Partner-sponsored parties and events also take place all week long.
 Hackathon
 
 
-
-## Store
+### Store
 
 <a target="_blank" href="https://salesforcestore.com/"><img align="right" alt="sf-keychain-150x150-6434.jpg" src="https://user-images.githubusercontent.com/300046/43412209-ba197162-93e9-11e8-8028-193144aeb840.jpg"></a>
 Miss being at a Salesforce event? Buy the branded clothing, office supplies, electronics, all 129 products for sale at <a target="_blank" href="https://salesforcestore.com/">https://salesforcestore.com</a>
+
+## Trailhead communities
+
+https://success.salesforce.com/0F9300000001omnCAA
+Trailblazer Community Corner
+
+https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYiAAO
+Sales Cloud
+
+https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYBAA4
+Sales Cloud Best Practices
+
+https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYkAAO
+Marketing Cloud
+
+https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDZGAA4
+Community Cloud
+
+https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A0000004gQJSAY
+Financial Services Cloud Community
+
+https://success.salesforce.com/featuredGroupDetail?id=a1z3A000002vaXWQAY
+Service Cloud
+
+https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000001ocxCAA
+Nonprofits using Salesforce
+
+https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000001qUiCAI
+Pardot B2B Marketing Automation
+
+https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYqAAO
+Einstein Analytics
+
+https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F930000000PT4SCAW
+Heroku Enthusiasts
+
+https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000DGi3SAG
+Commerce Cloud (Demandware)
+
+https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000Lf1ZSAS
+Salefsforce Health Cloud
+
+https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000LgciSAC
+Quip
 
 
 ## Personas
