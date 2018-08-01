@@ -529,9 +529,11 @@ Zuora Inc.
 
 ## User Organizations
 
-Google
+Here are those who I don't think have published but are nevertheless influencers.
 
-   * <a target="_blank" href="https://www.linkedin.com/in/adamolshansky">Adam Olshansky (<a target="_blank" href="https://twitter.com/adam17amo/">@adam17amo</a>), Salesforce Developer at Google
+Google (formerly YouTube):
+
+   * <a target="_blank" href="https://www.linkedin.com/in/adamolshansky">Adam Olshansky (<a target="_blank" href="https://twitter.com/adam17amo/">@adam17amo</a>), Salesforce Developer at Google, <a target="_blank" href="https://trailhead.salesforce.com/en/me/adammvp">Trailhead Ranger</a>
 
 BlackBerry
 
