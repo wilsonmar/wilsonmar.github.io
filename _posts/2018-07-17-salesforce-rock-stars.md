@@ -285,10 +285,9 @@ Johan Yu (<a target="_blank" href="https://twitter.com/simplysfdc">@simplysfdc</
 
    * <a target="_blank" href="http://www.SimplySfdc.com/">SimplySfdc.com</a>
 
-Keir Bowden, Chief Technical Officer at BrightGen, a Salesforce Platinum Partner in the UK:
+Keir Bowden (<a target="_blank" href="https://twitter.com/bob_buzzard">@bob_buzzard</a>), Chief Technical Officer at BrightGen, a Salesforce Platinum Partner in the UK:
 
    * <a target="_blank" href="http://bobbuzzard.blogspot.com/">bobbuzzard.blogspot.com</a>
-
    * <a target="_blank" href="https://www.blogger.com/profile/07815472992351343395">At Blogger.com</a>
 
 Keith Block, Salesforce
@@ -512,8 +511,8 @@ PODCAST about presenters at the Dreamforce Conference: <a target="_blank" href="
    * <a target="_blank" href="https://www.linkedin.com/in/mikegerholdt/">Mike Gerholdt</a>, Director of Evangelism
    * Barb Dietz, at Salesforce
 
-
-
+https://www.nowitmatters.com/blog/">nowitmatters.com</a> (<a target="_blank" href="https://twitter.com/nowitmatters">@nowitmatters</a>) in Bozeman, Montana targets non-profits.
+(<a target="_blank" href="https://www.facebook.com/nowitmatters/">FB</a>)
 
 ## Partner Organizations
 
@@ -546,6 +545,10 @@ Listed alphabetically by first name:
 <a target="_blank" href="https://www.linkedin.com/in/alextoussaint">Alex Toussaint</a> (<a target="_blank" href="https://twitter.com/alextoussaint">@alextoussaint</a>), VP Product Management – Einstein Analytics
 
 <a target="_blank" href="https://www.linkedin.com/in/mikegerholdt/">Mike Gerholdt</a>, Director of Evangelism
+
+Simon Mulcahy, Chief Innovation Office:
+
+   * <a target="_blank" href="https://www.salesforce.com/video/3071488/">Video: Bridging the Trust Gap in the 4th Industrial Revolution</a> July 24, 2018 talks with the World Economic Forum.
 
 <a target="_blank" href="https://www.linkedin.com/in/tiffanibova">Tiffani Bova</a> (<a target="_blank" href="https://twitter.com/Tiffani_Bova/">@Tiffani_Bova</a>), Global, Customer Growth and Innovation Evangelist
 

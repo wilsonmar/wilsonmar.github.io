@@ -1163,20 +1163,30 @@ Using the Serverless Framework with Node.js on AWS</a>
 4 Oct 2017, 1h 38m
 by Fernando Medina Corey (@fmc_sea, fernandomc.com)
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/azure-serverless-applications">
-Building Serverless Applications in Azure</a> 15 Aug 2017, 4h 7m
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/azure-serverless-applications">Building Serverless Applications in Azure</a> 15 Aug 2017, 4h 7m
 by Mark Heath
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/web-applications-without-server">
-Serverless Web Applications</a> 9 Dec 2015 
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/web-applications-without-server">Serverless Web Applications</a> 9 Dec 2015 
 by Rob Conery
 
-### Hacker Noon series
+
+### Random Videos
 
 <a target="_blank" href="http://engineeringjobs4u.co.uk/serverless-instant-checkout-links-with-square-square-corner-blog-medium">
 Serverless Instant Checkout Links with Square – Square Corner Blog</a>
 
 https://hackernoon.com/a-crash-course-on-serverless-apis-with-express-and-mongodb-77774f7730fe
+
+https://blog.runscope.com/posts/how-to-write-your-first-aws-lambda-function
+
+<a target="_blank" href="https://goo.gl/JXyRyo">Taking Serverless and AI to the Next Level</a> February 27, 2018
+by Yaron Haviv, Tomer Rosenthal
+
+<a target="_blank" href="https://goo.gl/hQSoKa">
+Building Serverless Application Pipelines</a> March 6, 2018
+https://www.cncf.io/wp-content/uploads/2018/03/cncf-serverless-webinar.pdf
+by Sebastien Goasguen
+
 
 ## More on Clouds #
 

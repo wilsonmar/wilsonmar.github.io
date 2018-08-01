@@ -1480,6 +1480,10 @@ by HashiCorp
 Introduction to Microservices, Docker, and Kubernetes</a>
 by James Quigley
 
+http://bit.ly/2KabhKB
+Kubernetes in Docker for Mac April 17, 2018
+by Guillaume Rose, Guillaume Tardif
+
 
 ## More
 
