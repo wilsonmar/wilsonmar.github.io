@@ -270,7 +270,7 @@ Local Meetups
 ### Dreamforce
 
 <a target="_blank" href="http://www.salesforce.com/dreamforce/">Dreamforce</a> is Salesforce's annual conference, usually <strong>4 days in September</strong>.
-   It drew 170,000 to San Francisco in 2017 (the largest software conference in the world).
+   It drew 170,000 to San Francisco in 2017 (the largest software conference in the world), despite its $2,199 per person cost (before travel and hotels).
 
    * Recorded vidoes sessions are on the <a target="_blank" href="https://www.youtube.com/user/salesforce">Salesforce YouTube channel</a>.
 
