@@ -123,7 +123,8 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
    Apex Specialist</a>
    * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_aap">
    Advanced Apex Specialist</a>
-
+   <br /><br />
+   
    PROTIP: Do the two above as preparation for <a href="#Developer">Developer certification</a>.
 
    <a name="LightningSuperbadges"></a>

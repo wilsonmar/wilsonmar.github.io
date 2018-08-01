@@ -262,8 +262,11 @@ Trailhead tutorials are great because of their quizzes (challenges).
 However, Trailhead tutorials are mainly text.
 
 PROTIP: Use a program that generates text to speech.
-Macs has it built-in, and just need to be enabled.
-I like the proper British female voice, like Mary Poppins reading to me.
+Macs has it built-in, and just need to be enabled in Apple System Preferences > Accessibility > Speech.
+![macos-speech-key-398x58](https://user-images.githubusercontent.com/300046/43554806-dac78108-95b3-11e8-80e9-00bac235554a.jpg)
+
+I like the proper British female voice "Kate", who is like Mary Poppins reading to me.
+![macos-speech-kate-317x117](https://user-images.githubusercontent.com/300046/43554819-eb2c8c32-95b3-11e8-852e-dfd4cc712f47.jpg)
 You can change the default option+` (back tick) activation key sequence.
 
 If you have the money, several video tutorials are available.
