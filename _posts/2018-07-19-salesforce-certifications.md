@@ -194,7 +194,7 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
 
 For $200 each, answer 65% of 60 multiple-choice/multiple-select questions in 105 minutes.
 
-<a target="_blank" href="http://certification.salesforce.com/SG_CertifiedAdministrator.pdf">OFFicial PDF - Salesforce Administrator Certification</a>
+<a target="_blank" href="http://certification.salesforce.com/SG_CertifiedAdministrator.pdf">Official PDF - Salesforce Administrator Certification</a>
 
    * Org. setup 2%
    * user setup 7%
@@ -213,7 +213,7 @@ Resources for preparing for the Administrator exam:
    * Trail: https://trailhead.salesforce.com/trails/force_com_admin_beginner
    [8 hrs 35 mins] topics are structed according to the above list.
 
-<a target="_blank" href="http://certification.salesforce.com/SG_CertifiedAdvancedAdministrator.pdf">OFFicial PDF -  Advanced Administrator Certification</a>
+<a target="_blank" href="http://certification.salesforce.com/SG_CertifiedAdvancedAdministrator.pdf">Official PDF -  Advanced Administrator Certification</a>
 
    * https://trailhead.salesforce.com/trail/force_com_admin_intermediate
 
@@ -248,13 +248,13 @@ Follow on Twitter:
 
 (which includes database administrators):
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperI.pdf">OFFicial PDF -  Certified Salesforce Platform Developer I 
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperI.pdf">Official PDF -  Certified Salesforce Platform Developer I 
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperII.pdf">OFFicial PDF -  Certified Salesforce Platform Developer II
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperII.pdf">Official PDF -  Certified Salesforce Platform Developer II
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedCommerceCloudDigitalDeveloper.pdf">OFFicial PDF -  Salesforce Certified Commerce Cloud Digital Developer
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedCommerceCloudDigitalDeveloper.pdf">Official PDF -  Salesforce Certified Commerce Cloud Digital Developer
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformAppBuilder.pdf">OFFicial PDF -  Salesforce Certified Platform App Builder 
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformAppBuilder.pdf">Official PDF -  Salesforce Certified Platform App Builder 
 
 Some exam resources address content for both courses:
 
@@ -304,13 +304,13 @@ Other exam prep. offerings:
 
 These are $200 each, addressing each product line (except Knowledge Cloud, Marketing Cloud, and Service Cloud):
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedSalesCloudConsultant.pdf">OFFicial PDF -  Salesforce Certified Sales Cloud Consultant</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedSalesCloudConsultant.pdf">Official PDF -  Salesforce Certified Sales Cloud Consultant</a>
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedServiceCloudConsultant.pdf">OFFicial PDF -  Salesforce Certified Service Cloud Consultant</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedServiceCloudConsultant.pdf">Official PDF -  Salesforce Certified Service Cloud Consultant</a>
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedCommunityCloudConsultant.pdf">OFFicial PDF -  Salesforce Certified Community Cloud Consultant</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedCommunityCloudConsultant.pdf">Official PDF -  Salesforce Certified Community Cloud Consultant</a>
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedFieldServiceLightningConsultant.pdf">OFFicial PDF -  Salesforce Certified Field Service Lightning Consultant</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedFieldServiceLightningConsultant.pdf">Official PDF -  Salesforce Certified Field Service Lightning Consultant</a>
 
    o Scheduling and optimization
    o Resource management
@@ -333,19 +333,19 @@ Resources addressing the above exams:
 
 These are $400 each addressing specific aspects of architecture:
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedDataArchitectureandManagementDesigner.pdf">OFFicial PDF -  Salesforce Certified Data Architecture and Management Designer</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedDataArchitectureandManagementDesigner.pdf">Official PDF -  Salesforce Certified Data Architecture and Management Designer</a>
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedCommerceCloudTechnicalSolutionDesigner.pdf">OFFicial PDF -  Salesforce Certified Commerce Cloud Technical Solution Designer</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedCommerceCloudTechnicalSolutionDesigner.pdf">Official PDF -  Salesforce Certified Commerce Cloud Technical Solution Designer</a>
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedIntegrationArchitectureDesigner.pdf">OFFicial PDF -  Salesforce Certified Integration Architecture Designer</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedIntegrationArchitectureDesigner.pdf">Official PDF -  Salesforce Certified Integration Architecture Designer</a>
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedDevelopmentLifecycleandDeploymentDesigner.pdf">OFFicial PDF -  Salesforce Certified Data Architecture and Management Designer</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedDevelopmentLifecycleandDeploymentDesigner.pdf">Official PDF -  Salesforce Certified Data Architecture and Management Designer</a>
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedSharingAndVisibilityDesigner.pdf">OFFicial PDF -  Salesforce Certified Sharing and Visibility Designer</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedSharingAndVisibilityDesigner.pdf">Official PDF -  Salesforce Certified Sharing and Visibility Designer</a>
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedMobileSolutionsArchitectureDesigner.pdf">OFFicial PDF -  Salesforce Certified Mobile Solutions Architecture Designer</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedMobileSolutionsArchitectureDesigner.pdf">Official PDF -  Salesforce Certified Mobile Solutions Architecture Designer</a>
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedIdentityAndAccessManagementDesigner.pdf">OFFicial PDF -  Salesforce Certified Identity and Access Management Designer</a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedIdentityAndAccessManagementDesigner.pdf">Official PDF -  Salesforce Certified Identity and Access Management Designer</a>
 
 
 <a name="Specialist"></a>
