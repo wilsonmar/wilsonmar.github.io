@@ -208,12 +208,25 @@ For $200 each, answer 65% of 60 multiple-choice/multiple-select questions in 105
    * Desktop and mobile admin 1%
    * AppExchange 1% 
 
-Resources for preparing for the Administrator exam:
+   To prepare the Administrator exam:
 
    * Trail: https://trailhead.salesforce.com/trails/force_com_admin_beginner
    [8 hrs 35 mins] topics are structed according to the above list.
 
 <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedAdvancedAdministrator.pdf">Official PDF -  Advanced Administrator Certification</a>
+
+   * Security and Access 20%
+   * Extending custom objects and apps 8%
+   * Auditing and monitoring 6%
+   * Sales cloud applications 10%
+   * Service cloud applications 10%
+   * Data management 10%
+   * Content management 3%
+   * Change management 10%
+   * Analytics, reports, and dashboards 10%
+   * Process automation 13%
+
+   To prepare:
 
    * https://trailhead.salesforce.com/trail/force_com_admin_intermediate
 
