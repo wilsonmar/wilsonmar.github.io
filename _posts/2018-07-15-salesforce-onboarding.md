@@ -221,11 +221,13 @@ World Tour
 
   * There is a mobile app (by Debra Nacimento) for the Salesforce World Tour.
 
+<a name="Lightning"></a>
 Lightning Now Tour to a city near you in 2018
 
-   * <a target="_blank" href="bit.ly/lightning-now-developer">Lightning Now Tour for Developers</a>
-
    * <a target="_blank" href="bit.ly/lightning-now-sales-admin">Lightning Now Tour for Sales Admins</a>
+
+   * <a target="_blank" href="bit.ly/lightning-now-developer">Lightning Now Tour for Developers</a>
+   includes a <a target="_blank" href="https://developerforce.github.io/LightningNowWorkshop/">Workshop Lab</a> from https://developerforce.github.io/LightningNowWorkshop/Exercise_d1.html
 
 Local Meetups 
 
