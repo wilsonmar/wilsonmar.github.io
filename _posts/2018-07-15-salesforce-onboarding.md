@@ -68,32 +68,6 @@ Additional businesses:
    * <strong>ExactTarget</strong> Fuel Marketing Cloud emails to target specific prospects (purchased by Salesforce)
 
 
-## Topics of conversation
-
-Here are the Q&A topics in the Trailblazer Community Success Cloud URL<br /><a target="_blank" href="
-https://success.salesforce.com/answers?feedtype=RECENT&criteria=BESTANSWERS">https://success.salesforce.com/answers</a>
-
-* Collaboration
-* Configuration & Data Management
-* CPQ and Billing
-* Customer Service & Support
-* Desktop Integration
-* Einstein Analytics
-* Email
-* Email Marketing
-* Journey Management
-* Mobile
-* Mobile Messaging
-* Packaging, Uploading & Installing Apps
-* Reports & Dashboards
-* Sales & Marketing
-* Security
-* Social Marketing
-* Trailhead Challenges
-* Other products
-
-TODO: Personas?
-
 
 <a name="Offerings"></a>
 
@@ -147,6 +121,40 @@ Customer industries:
 Integration:
 
    * <a target="_blank" href="https://www.salesforce.com/products/integration-cloud/overview/">Integration Cloud</a> Integration Builder includes Mulesoft Anypoint Platform (bought by Salesforce in an exchange of stock May 2018)
+
+## Lists of offerings
+
+## Topics of conversation
+
+<a target="_blank" href="https://status.salesforce.com/">https://status.salesforce.com</a> provides availability status by pod on these products:
+<img align="right" width="220" alt="sf-status-list" src="https://user-images.githubusercontent.com/300046/43538874-6f8e6466-9580-11e8-9e21-346c82667b50.png">
+
+Here are the Q&A topics in the Trailblazer Community Success Cloud URL<br /><a target="_blank" href="
+https://success.salesforce.com/answers?feedtype=RECENT&criteria=BESTANSWERS">https://success.salesforce.com/answers</a>
+
+* Collaboration
+* Configuration & Data Management
+* CPQ and Billing
+* Customer Service & Support
+* Desktop Integration
+* Einstein Analytics
+* Email
+* Email Marketing
+* Journey Management
+* Mobile
+* Mobile Messaging
+* Packaging, Uploading & Installing Apps
+* Reports & Dashboards
+* Sales & Marketing
+* Security
+* Social Marketing
+* Trailhead Challenges
+* Other products
+
+TODO: Personas?
+
+Trailhead offers this select of topics for Q&A:
+<img alt="sf-trailhead-product-interests-386x271-24542.jpg" width="386" src="https://user-images.githubusercontent.com/300046/43539050-f9c092f8-9580-11e8-9205-1908cc2db8b7.jpg"></a>
 
 
 <a name="Editions"></a>
