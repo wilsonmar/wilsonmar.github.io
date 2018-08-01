@@ -86,7 +86,7 @@ Salesforce is building the tallest building in San Francisco.
 
 ![sf-tallest-648x558-65050](https://user-images.githubusercontent.com/300046/43551978-2ffdeb20-95a6-11e8-92c3-c919dee9811b.jpg)
 
-It's taller than the Eiffle Tower in Paris.
+It's a few feet taller than the Eiffel Tower in Paris.
 
 
 <a name="LaborDemand"></a>
