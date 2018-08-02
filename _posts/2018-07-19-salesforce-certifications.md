@@ -167,8 +167,8 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
 4. Follow on Twitter
 
    * #Trailhead
-   * Chris Duarte (@TheChrisDuarte) - the Managing Editor of #Trailhead
-   * Sandeep Bhanot (@cloudysan) - the #Trailhead Product Owner/ Evangelist.
+   * Chris Duarte (@TheChrisDuarte) - Managing Editor of #Trailhead
+   * Sandeep Bhanot (@cloudysan) - #Trailhead Product Owner/ Evangelist
 
 <hr />
 
@@ -225,7 +225,7 @@ For $200 each, answer 65% of 60 multiple-choice/multiple-select questions in 105
 
    To prepare for the first Administrator exam:
 
-   * Trail: https://trailhead.salesforce.com/trails/force_com_admin_beginner
+   * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/force_com_admin_beginner
    [8 hrs 35 mins] topics are structed according to the above list.
 
 <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedAdvancedAdministrator.pdf">Official PDF -  Advanced Administrator Certification</a>
@@ -243,7 +243,7 @@ For $200 each, answer 65% of 60 multiple-choice/multiple-select questions in 105
 
    To prepare:
 
-   * https://trailhead.salesforce.com/trail/force_com_admin_intermediate
+   * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trail/force_com_admin_intermediate"> Admin Intermediate</a> [14 hrs] uses point-and-click formulas, data security, etc.
 
 Administrator Certification Maintenance exam:
 

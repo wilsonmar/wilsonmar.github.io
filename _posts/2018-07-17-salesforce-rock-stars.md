@@ -565,6 +565,7 @@ Simon Mulcahy, Chief Innovation Office:
    Build a Native Mobile App Using Salesforce DX and the Mobile SDK</a> Feb 1, 2018
    * Ubergeek!
 
+Suzanne DiBianca (@SuzanneDiBianca), Salesforce EVP of Corporate Relations and Chief Philanthropy Officer
 
 ## Unanmed
 
