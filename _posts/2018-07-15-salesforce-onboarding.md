@@ -153,8 +153,8 @@ https://success.salesforce.com/answers?feedtype=RECENT&criteria=BESTANSWERS">htt
 
 TODO: Personas?
 
-Trailhead offers this select of topics for Q&A:
-<img alt="sf-trailhead-product-interests-386x271-24542.jpg" width="386" src="https://user-images.githubusercontent.com/300046/43539050-f9c092f8-9580-11e8-9205-1908cc2db8b7.jpg"></a>
+Trailhead offers this selection of topics for "Answers":
+<img alt="sf-trailhead-product-interests-386x271-24542.jpg" width="386" src="https://user-images.githubusercontent.com/300046/43539050-f9c092f8-9580-11e8-9205-1908cc2db8b7.jpg">
 
 
 <a name="Editions"></a>
@@ -193,7 +193,7 @@ Additionally:
 PROTIP: Three releases are planned per year, named by season (avoiding Fall):
 
 | Force Version | API Version | Release |
-| ----:         | -----: | -- |
+| ----:         | -----: | --: |
 | <a target="_blank" href="https://www.salesforceben.com/complete-guide-to-salesforce-summer-18/">Summer '18</a> | 43.0 | <a target="_blank" href="https://resources.docs.salesforce.com/214/latest/en-us/sfdc/pdf/salesforce_summer18_release_notes.pdf">214 PDF</a> |
 | <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/spring18/">Spring '18</a> | 42.0 | <a target="_blank" href="https://resources.docs.salesforce.com/212/latest/en-us/sfdc/pdf/salesforce_spring18_release_notes.pdf">212 PDF</a> |
 | <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/winter18/">Winter '18</a> | 41.0 | <a target="_blank" href="https://resources.docs.salesforce.com/210/latest/en-us/sfdc/pdf/salesforce_winter18_release_notes.pdf">210 PDF</a> |
@@ -252,10 +252,12 @@ Trailhead tutorial modules:
 
 A Trailhead Playground is an org you can use to complete hands on challenges, and try out new features and customizations. It <strong>comes with set of Trailhead-specific data</strong> (a set of sample contacts, etc.) that you can use when completing challenges, and a pre-installed unmanaged package that we use to test your hands-on challenges. Trailhead Playgrounds have some limits, but for the most part they give you the same customization options as a production org. 
 
-https://trailhead.salesforce.com/modules/trailhead_playground_management
-Trailhead: Trailhead Playground Management 
-
 PROTIP: Salesforce is great because of its free Trailhead tutorial that are thorough.
+
+* <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_playground_management/">Trailhead module: Trailhead Playground Management</a>
+
+PROTIP: For a list of your Hands-on Orgs, got to <a target="_blank" href="https://trailhead.salesforce.com/">https://trailhead.salesforce.com</a>,
+click your picture, <a target="_blank" href="https://trailhead.salesforce.com/en/users/profiles/settings/">Settings</a>.
 
 Trailhead tutorials are great because of their quizzes (challenges).
 

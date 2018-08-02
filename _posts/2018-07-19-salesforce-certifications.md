@@ -124,7 +124,7 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
    * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_aap">
    Advanced Apex Specialist</a>
    <br /><br />
-   
+
    PROTIP: Do the two above as preparation for <a href="#Developer">Developer certification</a>.
 
    <a name="LightningSuperbadges"></a>
@@ -172,6 +172,20 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
 
 <hr />
 
+<a name="TrailheadBasics"></a>
+
+## Trailhead Basics modules
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_basics">Module: Trailhead Basics</a>
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/starting_force_com">Module: Salesforce Platform Basics</a>
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/data_modeling">Module: Data Modeling</a>
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/visualforce_fundamentals">
+   Module: Visualforce Basics</a>
+
+
 <a name="Salespeople"></a>
 
 ### Salespeople (user) certification
@@ -209,7 +223,7 @@ For $200 each, answer 65% of 60 multiple-choice/multiple-select questions in 105
    * Desktop and mobile admin 1%
    * AppExchange 1% 
 
-   To prepare the Administrator exam:
+   To prepare for the first Administrator exam:
 
    * Trail: https://trailhead.salesforce.com/trails/force_com_admin_beginner
    [8 hrs 35 mins] topics are structed according to the above list.
