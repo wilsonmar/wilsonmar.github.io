@@ -364,11 +364,12 @@ Mike Wheeler has several (highly rated) video courses on Udemy:
    * <a target="_blank" href="https://www.udemy.com/salesforce-administrator-certification-practice-tests/">Salesforce Administrator Certification Practice Tests</a> 3 full practice tests of 60 each. 180 questions total
    * <a target="_blank" href="https://www.udemy.com/salesforce-platform-app-builder-certification-practice-tests/">Salesforce Platform App Builder Certification Practice Tests</a> 2 full practice tests of 60 questions each
 
-Mohith Shrivastava, 9x Salesforce certification:
+Mohith Shrivastava, 9x Salesforce certification, MVP at Salesforce.com,Technical Architect at CodeScience:
 
    * <a target="_blank" href="http://cloudyworlds.blogspot.com/">CloudyWorlds.blogspot.com</a>
    * CodeScience at <a target="_blank" href="http://www.Codescience.com/">Codescience.com</a>
    * Prolific question-answerer on <a target="_blank" href="http://salesforce.stackexchange.com/users/645/mohith-shrivastava">StackExchange.com</a>
+   * Author of Packt book August 9, 2018 <a target="_blank" href="https://www.amazon.com/Learning-Salesforce-Lightning-Application-Development/dp/1787124673/">Learning Salesforce Lightning Application Development: Build and test lighting components for Salesforce Lightning Experience using Salesforce DX</a>
 
 Nikhil Jaitly (<a target="_blank" href="https://twitter.com/nikhj">@nikhj</a>) Salesforce Technical Architect, 22x Salesforce Certified. Melbourne Marketing Cloud meetup Co-Organizer: last tweet 2017
 
