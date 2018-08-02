@@ -22,6 +22,149 @@ This also aims to provide succinct lists for experienced Salesforce readers.
 "PROTIP:" in this document marks the unique contribution of this website, 
 providing you advice available nowhere else.
 
+<a name="Clouds"></a>
+
+### Clouds
+
+Salesforce uses the word "cloud" to brand offering to different <strong>industries</strong> and interests.
+
+   * Analytic Cloud - Business intelligence and analytics software solutions with the "Einstein" brand
+   * Commerce Cloud</a> engages shoppers for e-commerce, with order management
+   * <a target="_blank" href="http://certification.salesforce.com/communitycloud">Commmunity Cloud</a> - Connect customers, partners, and employees
+   * <a target="_blank" href="http://certification.salesforce.com/salescloud">Sales Cloud</a> - Complete CRM customer service solutions
+   * Government Cloud
+   * Health Cloud
+   * <a target="_blank" href="https://www.salesforce.com/products/integration-cloud/overview/">Integration Cloud</a> Integration Builder includes the <strong>Mulesoft</strong> Anypoint Platform (bought by Salesforce in an exchange of stock May 2018)
+
+   * <a target="_blank" href="http://certification.salesforce.com/marketingcloudconsultant">Marketing Cloud</a> - Build and manage 1:1 customer journeys. It has its own query language. No free accounts here.
+   * <a target="_blank" href="http://certification.salesforce.com/fieldservicelightningconsultant">
+   Field Service Lightning certification</a>
+
+   * <a target="_blank" href="https://www.salesforce.com/solutions/philanthropy/corporate-social-responsibility/">Philanthropy Cloud</a>
+
+   * <a target="_blank" href="http://certification.salesforce.com/servicecloud">Service Cloud</a> - Sales force automation and CRM
+   * Success Cloud 
+
+Expertise on some of the clouds are proven by <a href="https://wilsonmar.github.io/salesforce-certifications/">"consultant" certification exams</a>.
+
+Many of the "cloud" offerings all share the same "salesforce.com" domain name.
+
+<a name="Reroutes"></a>
+
+## Rerouted domains
+
+When Salesforce acquires other companies, it tends to fold acquired users into Salesforce domains, then automatically reroute requests to previous domains to Salesforce.com. Examples: 
+
+   * <a target="_blank" href="http://www.database.com/">Database.com</a> redirects to the Salesforce Platform page
+   * <a target="_blank" href="http://www.developerforce.com/">Developerforce.com</a> redirects to<br /><a target="_blank" href="https://developer.salesforce.com/">https://developer.salesforce.com</a>
+   * <a target="_blank" href="https://www.site.com/">Site.com</a> is redirected to <br />https://www.salesforce.com/products/platform/overview/
+   * Work.com was [retired July 10, 2015](https://success.salesforce.com/_ui/core/chatter/topics/TopicPage?id=0TO300000004GDW&ref=group_profile). It was a sales performance management solution for on-boarding new reps faster, for coaching reps to close more deals, and for rewarding successful behaviors. It redirects tohttps://www.salesforce.com/products/sales-cloud/overview/
+   * Salesforce1.com redirects to salesforce.com.
+
+<a name="Domains"></a>
+
+## Domain Names 
+
+Salesforce, as a company, owns these domain names (some product offerings have their own domain, but some don't):
+
+   * <a target="_blank" href="https://www.salesforce.com/">Salesforce.com</a> [<a target="_blank" href="https://status.salesforce.com/">status</a>]
+
+   * <a target="_blank" href="https://www.Force.com/"> Force.com</a>
+    runs underneath SaaS, and is categorized as a PaaS (Platform as a Service) service
+    which generalizes the coding in CRM for use in other user domains.
+   * <a target="_blank" href="https://salesforceiq.com">Salesforceiq.com</a> [<a target="_blank" href="https://status.salesforceiq.com/">status</a>]
+   * <a target="_blank" href="https://salesforce.org/">Salesforce.org</a> for non-profits
+
+   * <a target="_blank" href="https://www.data.com/">Data.com</a> - B2B prospecting and data cleansing [<a target="_blank" href="https://www.data.com/trust/">status</a>]
+   * <a target="_blank" href="https://www.desk.com/">Desk.com</a> - Customer Help Desk support for small business [<a target="_blank" href="https://status.desk.com/">status</a>]
+   * <a target="_blank" href="https://www.demandware.com/">Demandware.com</a> acquired in 2016 for manufacturing processes. It is part of the Salesforce Commerce Cloud.
+   * <a target="_blank" href="http://www.financialforce.com/">FinancialForce.com</a>
+    is also a SaaS providing software for managing financial information.
+   * <a target="_blank" href="http://www.heroku.com/">Heroku.com</a> - free hosting for low-volume apps written in open-source programming [<a target="_blank" href="https://status.heroku.com/">status</a>]
+   * <a target="_blank" href="http://www.marketingcloud.com/">MarketingCloud.com</a> (formerly ExactTarget) [<a target="_blank" href="https://status.marketingcloud.com/">status</a>]
+   * <a target="_blank" href="https://pardot.com">Pardot.com</a> [<a target="_blank" href="https://trust.pardot.com/">status</a>]
+   * <a target="_blank" href="https://www.quip.com/">Quip.com</a> "a Salesforce company" has APIs to enable automation of processes, integration, and <strong>collabortion</strong> with any app.
+
+### Status of productive use
+
+1. Use a browser to where Salesforce displays the up-time status of each instance:
+
+   <a target="_blank" href="https://status.salesforce.com/">status.salesforce.com</a>
+
+   PROTIP: The "AP0", "EU1", and "NA3" are <strong>"pods"</strong>, each where Salesforce assigns particular user organizations. Once assigned, users keep using their assigned pod. Several users are assigned to the same pod and thus use the same hardware. That's <strong>"multi-tenancy"</strong>.
+
+   <a target="_blank" href="https://status.salesforce.com/">https://status.salesforce.com</a> provides availability status by pod on these products:
+   <img align="right" width="220" alt="sf-status-list" src="https://user-images.githubusercontent.com/300046/43538874-6f8e6466-9580-11e8-9e21-346c82667b50.png">
+
+1. Click a product on the left pane, such as "Sales Cloud" and "Service Cloud".
+
+   PROTIP: Different products use the same salesforce.com domain, but use sub-domain prefixes to differentiate the product being used.
+
+1. Visit <a target="_blank" href="https://www.salesforce.com/products/?d=70130000000mIVK">this page</a> and scroll down for a list of products offered.
+
+1. Watch a demo and get pricing information for each offering.
+
+1. Scroll near the bottom to click <a target="_blank" href="https://www.salesforce.com/form/signup/freetrial-sales/?d=cta-body-promo-4">START MY FREE TRIAL</a>, and fill in your information.
+
+1. Click through the tour (Manage Your Pipeline, Close More Deals, Get Ready to Sell, Sell the Way You Want).
+
+   After 30 days, the sample "org" instance remains active with sample data.
+
+   PROTIP: Notice the sub-domain in the URL address assigned, such as "na53" in https://na53.lightning.force.com/..."
+
+   "lightning" in the URL reflects use of the new User experience screen design rather than the "classic" UX.
+
+1. Click the image at the upper-right and select "Switch to Salesforce Classic".
+
+   PROTIP: Notice the URL now begins with something like 
+   "https://na53.salesforce.com/..."
+
+1. Switch back to the Lightning UX by clicking "Setup", then 
+
+   At the top of the page are <strong>objects</strong> containing data:
+
+   ![sf-lds-heading-648x100-23173](https://user-images.githubusercontent.com/300046/43592347-94aa3c4a-9632-11e8-947e-906e2e2dedde.jpg)
+
+1. Click "More" for other objects. The Sales CRM system keeps all the data in one place throughout the customer lifecycle: Contacts which show potential turn into Leads. After qualification Leads turn into Opportunities, then after purchase are associated with Accounts.
+
+   PROTIP: By virtue of you filling out a form, you become a Contact to Salesforce and will be getting phone calls and emails.
+
+
+<a name="Topics"></a>
+
+## Topics of conversation
+
+Trailhead offers this selection of product interests for "Answers":
+<img alt="sf-trailhead-product-interests-386x271-24542.jpg" width="386" src="https://user-images.githubusercontent.com/300046/43539050-f9c092f8-9580-11e8-9205-1908cc2db8b7.jpg">
+
+Here are the Q&A topics in the Trailblazer Community Success Cloud URL<br /><a target="_blank" href="
+https://success.salesforce.com/answers?feedtype=RECENT&criteria=BESTANSWERS">https://success.salesforce.com/answers</a>
+
+* Collaboration
+* Configuration & Data Management
+* CPQ and Billing
+* Customer Service & Support
+* Desktop Integration
+* Einstein Analytics
+* Email
+* Email Marketing
+* Journey Management
+* Mobile
+* Mobile Messaging
+* Packaging, Uploading & Installing Apps
+* Reports & Dashboards
+* Sales & Marketing
+* Security
+* Social Marketing
+* Trailhead Challenges
+* Other products
+
+TODO: Personas?
+
+   You will learn how to work with each of the above in Trailhead.
+
+## Free Trailhead training
+
 Most other software companies try to make the most money they can by putting their training material behind a paywall. So learning SAP and Oracle takes many thousands of dollars. This limits how many people can effectively learn their product.
 
 Not so with Salesforce. Salesforce as a company offers classes addressing each role and certification through its <a target="_blank" href="http://www.salesforce.com/services-training/training_certification/training.jsp"><strong>Salesforce University</strong> (<a target="_blank" href="https://twitter.com/SalesforceU">@SalesforceU</a>). For example, $3,750 for the 5-day course.
@@ -29,51 +172,121 @@ PROTIP: Spending several days strait sitting in a class may seem like "drinking 
 
 But <a href="#Trailhead">Salesforce Trailhead</a> on-line training is both in-depth and offered free, with <strong>unlimited time on servers</strong>. This has enabled Salesforce users to be among the best trained of any software ecosystem.
 
-
-<a name="Training"></a>
-
-## Trailhead Training Account
+### Get Trailhead Training Account
 
 1. Obtain a Trailhead account for FREE tutorials with unlimited server time:
 
    <a target="_blank" href="https://developer.salesforce.com/trailhead">
    https://developer.salesforce.com/trailhead</a> 
 
+2. Click the green "Sign Up" button at the upper-right corner or "Start learning for free" in the middle of the screen.
+
+3. Click "Google" to use your Gmail or "LinkedIn" to use your LinkedIn.com account. Alternately, create a password within Salesforce:
+
    PROTIP: Sign up for Trailhead with a <strong>personal Gmail account</strong> instead of company email so you'll be able to sign in no matter where you work in the future.
 
-2. COURSE: <a target="_blank" href="https://trailhead.salesforce.com/trails/learn_salesforce_with_trailhead">
-   Learn Salesforce with Trailhead</a>
+4. Check "Remember me" to remember your account name (not password).
+
+   ![sf-trailhead-menu-656x93-14546](https://user-images.githubusercontent.com/300046/43597098-4ef1c3ba-963e-11e8-91b5-180ab59f41b0.jpg)
+
+5. Click "Trailmixes". Each Trailmix recommends a sequence of single web pages and Trailhead modules.
+
+6. Scroll down to click <a target="_blank" href="https://trailhead.salesforce.com/users/00550000006yDdKAAU/trailmixes/get-started-with-trailhead-end-user">Get started with Trailhead</a>. Here a summary of what you'll learn taking it:
 
    ### How Trailhead works
 
-   Learning topics are organized into modules, which are broken up into units. 
+   Learning topics are organized into <strong>modules</strong>, which are broken up into <strong>units</strong>. 
 
-   Trails group modules to provide guided learning paths suited to specific roles or needs.
+   <strong>Trails</strong> group modules to provide guided learning paths suited to specific roles or needs.
 
-   Earn points when you finish each unit by completing a quiz or a challenge in a Salesforce org.
-   Less points are earned for each additional attempt.
+   Earn points when you finish each unit by completing a quiz or challenge in a Salesforce org. If you answer wrong, less points are earned for each additional attempt.
 
    "Challenges" gives you a set of requirements that you have to figure out how to meet on your own.
    A project lays out step-by-step instructions for you to follow, then validates that you did everything correctly.
 
    More points get you higher <a target="_blank" href="https://trailhead.salesforce.com/en/trailblazer-ranks">rank</a>.
 
-   Projects and superbadges allow you to learn interactively by requiring you to implement a feature or solution in an org (a Trailhead Playground).
+   Projects and <a href="#Superbadges">superbadges</a> allow you to learn interactively by requiring you to implement a feature or solution in an org (a Trailhead Playground).
+
+7. Begin your first Trailhead module:
+
+   <a name="TrailheadBasic"></a>
+
+   <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_basics">Trailhead Module: Trailhead Basics</a>
 
 
-<a name="Trailhead"></a>
+
+
+
+   <a name="TrailheadBasics"></a>
+   Other beginner Trailhead Modules include:
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/starting_force_com">Module: Salesforce Platform Basics</a> Get introduced to the platform, navigate use cases, and build custom functionality.
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/data_modeling">Module: Data Modeling</a>
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/visualforce_fundamentals">
+   Module: Visualforce Basics</a>
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_playground_management/">Trailhead module: Trailhead Playground Management</a>
+
+   <a name="Superbadges"></a>
+
+   ### Superbadges
+
+   <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges">Superbadges"</a> provide skill-based, domain-level "specialist" credential (to put on resume) by completing modules of real-life business scenario for which you have to build a solution across entire feature areas. 
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_security">Security</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_reports">
+   Reports & Dashboards</a>
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_apex">
+   Apex Specialist</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_aap">
+   Advanced Apex Specialist</a>
+   <br /><br />
+
+   PROTIP: Do the two above as preparation for <a href="#Developer">Developer certification</a>.
+
+   <a name="LightningSuperbadges"></a>
+   
+   ### Lightning superbadges
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lightning_platform_app_builder">
+   Lightning App Customization Specialist</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lcf">
+   Lightning Component Framework Specialist</a>
+   builds a sophisticated app.
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex">
+   Lightning Experience Specialist</a>
+   super-charges interface and process automation.
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex_rollout">Lightning Experience Rollout Specialist</a>
+
+   <a name="SpecialtySuperbadges"></a>
+   
+   ### Specialist superbadges
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_process_automation">
+   Process Automation Specialist</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_business_specialist">
+   Business Administration Specialist</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_integration">
+   Data Integration Specialist</a>
+
+   ### Specialty superbadges
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_analytics_integration_specialist">
+   Einstein Analytics Data Preparation Specialist</a>
+   (Follow <a target="_blank" href="https://twitter.com/SForceAnalytics">@SForceAnalytics</a>)
+   <br /><br />
+
+   <a name="TrailheadPlayground"></a>
 
 ## Trailhead Playground
 
 A Trailhead Playground is an org you can use to complete hands on challenges, and try out new features and customizations. It <strong>comes with set of Trailhead-specific data</strong> (a set of sample contacts, etc.) that you can use when completing challenges, and a pre-installed unmanaged package that we use to test your hands-on challenges. Trailhead Playgrounds have some limits, but for the most part they give you the same customization options as a production org. 
 
 PROTIP: Salesforce is great because of its free Trailhead tutorial that are thorough.
-
-https://trailhead.salesforce.com/modules/starting_force_com
-Salesforce Platform Basics
-Get introduced to the platform, navigate use cases, and build custom functionality.
-
-* <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_playground_management/">Trailhead module: Trailhead Playground Management</a>
 
 PROTIP: For a list of your Hands-on Orgs, go to <a target="_blank" href="https://trailhead.salesforce.com/">https://trailhead.salesforce.com</a>,
 click the picture at the upper-right corner, and select <a target="_blank" href="https://trailhead.salesforce.com/en/users/profiles/settings/">Settings</a>.
@@ -125,62 +338,6 @@ Salesforce currently stores data for all product offerings (all SaaS in the clou
 
 
 <hr />
-
-<a name="Domains"></a>
-
-## Domain Names 
-
-Salesforce, as a company, owns these domain names (some product offerings have their own domain, but some don't):
-
-   * <a target="_blank" href="https://www.salesforce.com/">Salesforce.com</a> [<a target="_blank" href="https://status.salesforce.com/">status</a>]
-   * <a target="_blank" href="https://www.Force.com/"> Force.com</a>
-    runs underneath SaaS, and is categorized as a PaaS (Platform as a Service) service
-    which generalizes the coding in CRM for use in other user domains.
-   * <a target="_blank" href="https://salesforceiq.com">Salesforceiq.com</a> [<a target="_blank" href="https://status.salesforceiq.com/">status</a>]
-   * <a target="_blank" href="https://salesforce.org/">Salesforce.org</a> for non-profits
-
-   * <a target="_blank" href="https://www.data.com/">Data.com</a> - B2B prospecting and data cleansing [<a target="_blank" href="https://www.data.com/trust/">status</a>]
-   * <a target="_blank" href="https://www.desk.com/">Desk.com</a> - Customer Help Desk support for small business [<a target="_blank" href="https://status.desk.com/">status</a>]
-   * <a target="_blank" href="https://www.demandware.com/">Demandware.com</a> acquired in 2016 for manufacturing processes. It is part of the Salesforce Commerce Cloud.
-   * <a target="_blank" href="http://www.financialforce.com/">FinancialForce.com</a>
-    is also a SaaS providing software for managing financial information.
-   * <a target="_blank" href="http://www.heroku.com/">Heroku.com</a> - free hosting for low-volume apps written in open-source programming [<a target="_blank" href="https://status.heroku.com/">status</a>]
-   * <a target="_blank" href="http://www.marketingcloud.com/">MarketingCloud.com</a> (formerly ExactTarget) [<a target="_blank" href="https://status.marketingcloud.com/">status</a>]
-   * <a target="_blank" href="https://pardot.com">Pardot.com</a> [<a target="_blank" href="https://trust.pardot.com/">status</a>]
-   * <a target="_blank" href="https://www.quip.com/">Quip.com</a> "a Salesforce company" has APIs to enable automation of processes, integration, and <strong>collabortion</strong> with any app.
-
-Several domain names are no longer used and visits to it get rerouted to another Salesforce domain:
-
-   * <a target="_blank" href="http://www.database.com/">Database.com</a> redirects to the Salesforce Platform page
-   * <a target="_blank" href="http://www.developerforce.com/">Developerforce.com</a> redirects to<br /><a target="_blank" href="https://developer.salesforce.com/">https://developer.salesforce.com</a>
-   * <a target="_blank" href="https://www.site.com/">Site.com</a> is redirected to <br />https://www.salesforce.com/products/platform/overview/
-   * Work.com was [retired July 10, 2015](https://success.salesforce.com/_ui/core/chatter/topics/TopicPage?id=0TO300000004GDW&ref=group_profile). It was a sales performance management solution for on-boarding new reps faster, for coaching reps to close more deals, and for rewarding successful behaviors. It redirects tohttps://www.salesforce.com/products/sales-cloud/overview/
-   * Salesforce1.com redirects to salesforce.com.
-
-
-<a name="Clouds"></a>
-
-### Clouds
-
-Here is a list of the different "clouds" Salesforce sells.
-Products which have <a href="https://wilsonmar.github.io/salesforce-certifications/">"consultant" certification exams</a>:
-
-   * Analytic Cloud - Business intelligence and analytics software solutions with the "Einstein" brand
-   * <a target="_blank" href="http://certification.salesforce.com/communitycloud">Commmunity Cloud</a> - Connect customers, partners, and employees
-   * <a target="_blank" href="http://certification.salesforce.com/salescloud">Sales Cloud</a> - Complete CRM customer service solutions
-   * Government Cloud
-   * Health Cloud
-   * <a target="_blank" href="https://www.salesforce.com/products/integration-cloud/overview/">Integration Cloud</a> Integration Builder includes the <strong>Mulesoft</strong> Anypoint Platform (bought by Salesforce in an exchange of stock May 2018)
-
-   * <a target="_blank" href="http://certification.salesforce.com/marketingcloudconsultant">Marketing Cloud</a> - Build and manage 1:1 customer journeys. It has its own query language. No free accounts here.
-   * <a target="_blank" href="http://certification.salesforce.com/fieldservicelightningconsultant">
-   Field Service Lightning certification</a>
-
-   * <a target="_blank" href="https://www.salesforce.com/solutions/philanthropy/corporate-social-responsibility/">Philanthropy Cloud</a>
-
-   * <a target="_blank" href="http://certification.salesforce.com/servicecloud">Service Cloud</a> - Sales force automation and CRM
-   * Success Cloud 
-
 
 
 <a name="Offerings"></a>
@@ -245,40 +402,6 @@ Additionally:
 *    Partner Group
 *    Partner Professional
 
-
-<a name="Topics"></a>
-
-## Topics of conversation
-
-Trailhead offers this selection of product interests for "Answers":
-<img alt="sf-trailhead-product-interests-386x271-24542.jpg" width="386" src="https://user-images.githubusercontent.com/300046/43539050-f9c092f8-9580-11e8-9205-1908cc2db8b7.jpg">
-
-<a target="_blank" href="https://status.salesforce.com/">https://status.salesforce.com</a> provides availability status by pod on these products:
-<img align="right" width="220" alt="sf-status-list" src="https://user-images.githubusercontent.com/300046/43538874-6f8e6466-9580-11e8-9e21-346c82667b50.png">
-
-Here are the Q&A topics in the Trailblazer Community Success Cloud URL<br /><a target="_blank" href="
-https://success.salesforce.com/answers?feedtype=RECENT&criteria=BESTANSWERS">https://success.salesforce.com/answers</a>
-
-* Collaboration
-* Configuration & Data Management
-* CPQ and Billing
-* Customer Service & Support
-* Desktop Integration
-* Einstein Analytics
-* Email
-* Email Marketing
-* Journey Management
-* Mobile
-* Mobile Messaging
-* Packaging, Uploading & Installing Apps
-* Reports & Dashboards
-* Sales & Marketing
-* Security
-* Social Marketing
-* Trailhead Challenges
-* Other products
-
-TODO: Personas?
 
 
 <a name="VersionChangeMgmt"></a>
@@ -534,69 +657,6 @@ PROTIP: Drive a lot? Listen to voice-only podcasts while commuting:
    * PODCAST: The Quotable Sales Podcast by Quotable.com since July 2016 on <a target="_blank" href="https://itunes.apple.com/us/podcast/quotable-podcast-learn-from/id1132258307?mt=2">iTunes</a> and <a target="_blank" href="https://play.google.com/music/listen?u=0#/ps/I6pcs6jawpetsbyhp5qaf42ahmy">Google Play</a>.
 
 
-<a name="TrailheadBasics"></a>
-
-## Trailhead Basics modules
-
-Start with these:
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_basics">Module: Trailhead Basics</a>
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/starting_force_com">Module: Salesforce Platform Basics</a>
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/data_modeling">Module: Data Modeling</a>
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/visualforce_fundamentals">
-   Module: Visualforce Basics</a>
-
-
-   ### Superbadges
-
-   <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges">Superbadges"</a> provide skill-based, domain-level "specialist" credential (to put on resume) by completing modules of real-life business scenario for which you have to build a solution across entire feature areas. 
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_security">Security</a>
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_reports">
-   Reports & Dashboards</a>
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_apex">
-   Apex Specialist</a>
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_aap">
-   Advanced Apex Specialist</a>
-   <br /><br />
-
-   PROTIP: Do the two above as preparation for <a href="#Developer">Developer certification</a>.
-
-   <a name="LightningSuperbadges"></a>
-   
-   ### Lightning superbadges
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lightning_platform_app_builder">
-   Lightning App Customization Specialist</a>
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lcf">
-   Lightning Component Framework Specialist</a>
-   builds a sophisticated app.
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex">
-   Lightning Experience Specialist</a>
-   super-charges interface and process automation.
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex_rollout">Lightning Experience Rollout Specialist</a>
-
-   <a name="SpecialtySuperbadges"></a>
-   
-   ### Specialist superbadges
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_process_automation">
-   Process Automation Specialist</a>
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_business_specialist">
-   Business Administration Specialist</a>
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_integration">
-   Data Integration Specialist</a>
-
-   ### Specialty superbadges
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_analytics_integration_specialist">
-   Einstein Analytics Data Preparation Specialist</a>
-   (Follow <a target="_blank" href="https://twitter.com/SForceAnalytics">@SForceAnalytics</a>)
-   <br /><br />
 
 ## People behind Trailhead
 
