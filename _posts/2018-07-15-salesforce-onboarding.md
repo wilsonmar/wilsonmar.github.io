@@ -24,15 +24,20 @@ providing you advice available nowhere else.
 
 Most other software companies try to make the most money they can by putting their training material behind a paywall. So learning SAP and Oracle takes many thousands of dollars. This limits how many people can effectively learn their product.
 
-Not so with Salesforce. Their SalesforceU does offer live classes for thousands of dollars each. But their <a href="#Trailhead">Salesforce Trailhead</a> on-line training is both in-depth and offered free, with <strong>unlimited time on servers</strong>. This has enabled Salesforce users to be among the best trained of any software ecosystem.
+Not so with Salesforce. Salesforce as a company offers classes addressing each role and certification through its <a target="_blank" href="http://www.salesforce.com/services-training/training_certification/training.jsp"><strong>Salesforce University</strong> (<a target="_blank" href="https://twitter.com/SalesforceU">@SalesforceU</a>). For example, $3,750 for the 5-day course.
+PROTIP: Spending several days strait sitting in a class may seem like "drinking from a firehose".
+
+But <a href="#Trailhead">Salesforce Trailhead</a> on-line training is both in-depth and offered free, with <strong>unlimited time on servers</strong>. This has enabled Salesforce users to be among the best trained of any software ecosystem.
 
 
 <a name="Training"></a>
 
 ## Trailhead Training Account
 
-1. Obtain a Trailhead account <a target="_blank" href="https://developer.salesforce.com/trailhead">
-   here</a> for FREE tutorials which reward points appearing in your profile.
+1. Obtain a Trailhead account for FREE tutorials with unlimited server time:
+
+   <a target="_blank" href="https://developer.salesforce.com/trailhead">
+   https://developer.salesforce.com/trailhead</a> 
 
    PROTIP: Sign up for Trailhead with a <strong>personal Gmail account</strong> instead of company email so you'll be able to sign in no matter where you work in the future.
 
@@ -55,99 +60,72 @@ Not so with Salesforce. Their SalesforceU does offer live classes for thousands 
 
    Projects and superbadges allow you to learn interactively by requiring you to implement a feature or solution in an org (a Trailhead Playground).
 
-   ### Superbadges
 
-   <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges">Superbadges"</a> provide skill-based, domain-level "specialist" credential (to put on resume) by completing modules of real-life business scenario for which you have to build a solution across entire feature areas. 
+<a name="Trailhead"></a>
 
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_security">Security</a>
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_reports">
-   Reports & Dashboards</a>
+## Trailhead Playground
 
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_apex">
-   Apex Specialist</a>
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_aap">
-   Advanced Apex Specialist</a>
-   <br /><br />
+A Trailhead Playground is an org you can use to complete hands on challenges, and try out new features and customizations. It <strong>comes with set of Trailhead-specific data</strong> (a set of sample contacts, etc.) that you can use when completing challenges, and a pre-installed unmanaged package that we use to test your hands-on challenges. Trailhead Playgrounds have some limits, but for the most part they give you the same customization options as a production org. 
 
-   PROTIP: Do the two above as preparation for <a href="#Developer">Developer certification</a>.
+PROTIP: Salesforce is great because of its free Trailhead tutorial that are thorough.
 
-   <a name="LightningSuperbadges"></a>
-   
-   ### Lightning superbadges
+https://trailhead.salesforce.com/modules/starting_force_com
+Salesforce Platform Basics
+Get introduced to the platform, navigate use cases, and build custom functionality.
 
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lightning_platform_app_builder">
-   Lightning App Customization Specialist</a>
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lcf">
-   Lightning Component Framework Specialist</a>
-   builds a sophisticated app.
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex">
-   Lightning Experience Specialist</a>
-   super-charges interface and process automation.
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex_rollout">Lightning Experience Rollout Specialist</a>
+* <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_playground_management/">Trailhead module: Trailhead Playground Management</a>
 
-   <a name="SpecialtySuperbadges"></a>
-   
-   ### Specialist superbadges
+PROTIP: For a list of your Hands-on Orgs, go to <a target="_blank" href="https://trailhead.salesforce.com/">https://trailhead.salesforce.com</a>,
+click the picture at the upper-right corner, and select <a target="_blank" href="https://trailhead.salesforce.com/en/users/profiles/settings/">Settings</a>.
 
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_process_automation">
-   Process Automation Specialist</a>
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_business_specialist">
-   Business Administration Specialist</a>
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_integration">
-   Data Integration Specialist</a>
-
-   ### Specialty superbadges
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_analytics_integration_specialist">
-   Einstein Analytics Data Preparation Specialist</a>
-   (Follow <a target="_blank" href="https://twitter.com/SForceAnalytics">@SForceAnalytics</a>)
-   <br /><br />
-
-3. Salesforce as a company offers classes addressing each certification through its 
-    <a target="_blank" href="http://www.salesforce.com/services-training/training_certification/training.jsp"><strong>Salesforce University</strong> (<a target="_blank" href="https://twitter.com/SalesforceU">@SalesforceU</a>). For example, $3,750 for the 5-day course.
-
-   PROTIP: Spending several days strait sitting in a class may seem like "drinking from a firehose".
-
-4. Follow on Twitter
-
-   * #Trailhead
-   * Chris Duarte (@TheChrisDuarte) - Managing Editor of #Trailhead
-   * Sandeep Bhanot (@cloudysan) - #Trailhead Product Owner/ Evangelist
-
-<hr />
-
-<a name="TrailheadBasics"></a>
-
-## Trailhead Basics modules
-
-Start with these:
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_basics">Module: Trailhead Basics</a>
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/starting_force_com">Module: Salesforce Platform Basics</a>
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/data_modeling">Module: Data Modeling</a>
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/visualforce_fundamentals">
-   Module: Visualforce Basics</a>
-
-<hr />
+Trailhead tutorials are great because of their quizzes (challenges).
 
 
 ## Salesforce Lightning UI
+
+Salesforce currently stores data for all product offerings (all SaaS in the cloud) within a single "monolithic" database.
 
 1. Click the "cog" icon to select Setup:
 
    <img alt="sf-setup-253x186.png" width="253" src="https://user-images.githubusercontent.com/300046/43531842-f56b78e8-956d-11e8-8ce3-66b8cb160d13.png">
 
+   App logos that appear at the upper left should be no larger than 300 pixels wide by 55 pixels high.
+   Adjust the number of colors in .gif or .jpg so they are under the 20kb size limit.
+
+   At the upper-left is the App Launcher icon and the current app.
+
+
 1. Click the app launcher icon for a list of apps:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/43531384-e10b834e-956c-11e8-9113-3506e009c7ae.png"><img alt="sf-app-launcher-1106x554.png" width="1106" src="https://user-images.githubusercontent.com/300046/43531384-e10b834e-956c-11e8-9113-3506e009c7ae.png"></a>
+
+   Click the picture for a larger image in a new window.
+
+   The "Sales" app is the base CRM (Customer Relationship Management) app.
+
+   PROTIP: CRM (Customer Relationship Management) is the Salesforce company's stock market symbol.
+
+   "Managed apps" are those developed by Salesforce, such as the <a target="_blank" href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB00000009UeX">Dreamhouse" app</a>.
+
+   "AppExchange apps" are developed by 3rd parties, usually an ISV (Independent Software Vendor) Salesforce partners. AppExchange is the name of the marketplace where such apps are available.
+
+   BTW, <a target="_blank" href="http://encycolorpedia.com/1798c1">
+   Colors in Salesforce screens</a>
 
 1. Scroll down for the "All Items" list:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/43531745-a9f76656-956d-11e8-950c-6c017c1d1a19.png"><img alt="sf-all-items-843x292.png" src="https://user-images.githubusercontent.com/300046/43531745-a9f76656-956d-11e8-950c-6c017c1d1a19.png"></a>
 
+   Click the picture for a larger image in a new window.
+
+   Items on the page is a mixture of objects and actions.
+
+<hr />
+
+
+
+
+<hr />
 
 <a name="Domains"></a>
 
@@ -180,13 +158,6 @@ Several domain names are no longer used and visits to it get rerouted to another
    * Work.com was [retired July 10, 2015](https://success.salesforce.com/_ui/core/chatter/topics/TopicPage?id=0TO300000004GDW&ref=group_profile). It was a sales performance management solution for on-boarding new reps faster, for coaching reps to close more deals, and for rewarding successful behaviors. It redirects tohttps://www.salesforce.com/products/sales-cloud/overview/
    * Salesforce1.com redirects to salesforce.com.
 
-Additional businesses:  
-
-   * <a target="_blank" href="https://developer.salesforce.com/einstein">Einstein</a>, at<br />https://developer.salesforce.com/einstein (AI Vision, Predictive Analytics)
-   * <a target="_blank" href="https://www.salesforce.com/products/salesforce-iot/overview/">Salesforce IoT</a>
-   * <a target="_blank" href="https://searchsalesforce.techtarget.com/definition/Thunder-Salesforce-Thunder">Thunder</a> is a Big Data app that supports Salesforce's IoT Cloud on AWS servers, to take in massive volumes of data generated by devices, sensors, websites, applications, customers and partners and initiate actions for real-time responses. It uses open-source Apache Kafka, Storm, Spark, Cassandra.
-   * <strong>ExactTarget</strong> Fuel Marketing Cloud emails to target specific prospects (purchased by Salesforce)
-
 
 <a name="Clouds"></a>
 
@@ -195,12 +166,12 @@ Additional businesses:
 Here is a list of the different "clouds" Salesforce sells.
 Products which have <a href="https://wilsonmar.github.io/salesforce-certifications/">"consultant" certification exams</a>:
 
-   * Analytic Cloud - Business intelligence and analytics software solutions   
+   * Analytic Cloud - Business intelligence and analytics software solutions with the "Einstein" brand
    * <a target="_blank" href="http://certification.salesforce.com/communitycloud">Commmunity Cloud</a> - Connect customers, partners, and employees
    * <a target="_blank" href="http://certification.salesforce.com/salescloud">Sales Cloud</a> - Complete CRM customer service solutions
    * Government Cloud
    * Health Cloud
-   * <a target="_blank" href="https://www.salesforce.com/products/integration-cloud/overview/">Integration Cloud</a> Integration Builder includes Mulesoft Anypoint Platform (bought by Salesforce in an exchange of stock May 2018)
+   * <a target="_blank" href="https://www.salesforce.com/products/integration-cloud/overview/">Integration Cloud</a> Integration Builder includes the <strong>Mulesoft</strong> Anypoint Platform (bought by Salesforce in an exchange of stock May 2018)
 
    * <a target="_blank" href="http://certification.salesforce.com/marketingcloudconsultant">Marketing Cloud</a> - Build and manage 1:1 customer journeys. It has its own query language. No free accounts here.
    * <a target="_blank" href="http://certification.salesforce.com/fieldservicelightningconsultant">
@@ -211,46 +182,40 @@ Products which have <a href="https://wilsonmar.github.io/salesforce-certificatio
    * <a target="_blank" href="http://certification.salesforce.com/servicecloud">Service Cloud</a> - Sales force automation and CRM
    * Success Cloud 
 
-   Others:
+
+
+<a name="Offerings"></a>
+
+## Product Offerings
+
+See http://www.salesforce.com/platform/overview/
+
+Salesforce issues licenses for several offerings :
+
+   There are separate <strong>feature licenses</strong>:
+
+   * Salesforce CRM Content user
+   * Force.com Flow user
+   * Marketing user
+   * Apex (Salesforce1) Mobile user
+   <br /><br />
+
+   <a name="OtherOfferings"></a>
+
+   ### Additional product offerings
+
+   * <a target="_blank" href="https://developer.salesforce.com/einstein">Einstein</a>, at<br />https://developer.salesforce.com/einstein (AI Vision, Predictive Analytics)
+   * <a target="_blank" href="https://www.salesforce.com/products/salesforce-iot/overview/">Salesforce IoT</a>
+   * <a target="_blank" href="https://searchsalesforce.techtarget.com/definition/Thunder-Salesforce-Thunder">Thunder</a> is a Big Data app that supports Salesforce's IoT Cloud on AWS servers, to take in massive volumes of data generated by devices, sensors, websites, applications, customers and partners and initiate actions for real-time responses. It uses open-source Apache Kafka, Storm, Spark, Cassandra.
+   * <strong>ExactTarget</strong> Fuel Marketing Cloud emails to target specific prospects (purchased by Salesforce)
 
    * <a target="_blank" href="http://certification.salesforce.com/pardotconsultant">Pardot</a> - B2B marketing automation, which is part of the Sales Cloud as well.
-   * Quip for sending texts
-   * <a target="_blank" href="http://certification.salesforce.com/cpqspecialist">CPQ</a> (Configure, Price, and Quote) workflow
-
-
-<a name="Topics"></a>
-
-## Topics of conversation
-
-<a target="_blank" href="https://status.salesforce.com/">https://status.salesforce.com</a> provides availability status by pod on these products:
-<img align="right" width="220" alt="sf-status-list" src="https://user-images.githubusercontent.com/300046/43538874-6f8e6466-9580-11e8-9e21-346c82667b50.png">
-
-Here are the Q&A topics in the Trailblazer Community Success Cloud URL<br /><a target="_blank" href="
-https://success.salesforce.com/answers?feedtype=RECENT&criteria=BESTANSWERS">https://success.salesforce.com/answers</a>
-
-* Collaboration
-* Configuration & Data Management
-* CPQ and Billing
-* Customer Service & Support
-* Desktop Integration
-* Einstein Analytics
-* Email
-* Email Marketing
-* Journey Management
-* Mobile
-* Mobile Messaging
-* Packaging, Uploading & Installing Apps
-* Reports & Dashboards
-* Sales & Marketing
-* Security
-* Social Marketing
-* Trailhead Challenges
-* Other products
-
-TODO: Personas?
-
-Trailhead offers this selection of topics for "Answers":
-<img alt="sf-trailhead-product-interests-386x271-24542.jpg" width="386" src="https://user-images.githubusercontent.com/300046/43539050-f9c092f8-9580-11e8-9205-1908cc2db8b7.jpg">
+   * Quip
+   * <a target="_blank" href="http://certification.salesforce.com/cpqspecialist">CPQ</a> (Configure, Price, and Quote) and billing workflow
+   * Chatter instant messaging
+   * Social Studio
+   * Live Agent / Omni channel
+   * Lightning Platform
 
 
 <a name="Editions"></a>
@@ -282,27 +247,39 @@ Additionally:
 *    Partner Professional
 
 
-<a name="Offerings"></a>
+<a name="Topics"></a>
 
-## Product Offerings
+## Topics of conversation
 
-See http://www.salesforce.com/platform/overview/
+Trailhead offers this selection of product interests for "Answers":
+<img alt="sf-trailhead-product-interests-386x271-24542.jpg" width="386" src="https://user-images.githubusercontent.com/300046/43539050-f9c092f8-9580-11e8-9205-1908cc2db8b7.jpg">
 
-Salesforce issues licenses for several offerings :
+<a target="_blank" href="https://status.salesforce.com/">https://status.salesforce.com</a> provides availability status by pod on these products:
+<img align="right" width="220" alt="sf-status-list" src="https://user-images.githubusercontent.com/300046/43538874-6f8e6466-9580-11e8-9e21-346c82667b50.png">
 
-<a target="_blank" href="http://www.Salesforce.com/">Salesforce.com</a>
-    CRM (Customer Relationship Management) -- the company's stock market symbol --
-    is categorized as a SaaS (Software as a Service)
-    offering a complete package much like what Google Apps (Gmail), Zoho, and Quickbooks Online.
-    Salesforce also includes project management.
+Here are the Q&A topics in the Trailblazer Community Success Cloud URL<br /><a target="_blank" href="
+https://success.salesforce.com/answers?feedtype=RECENT&criteria=BESTANSWERS">https://success.salesforce.com/answers</a>
 
-   There are separate <strong>feature licenses</strong>:
+* Collaboration
+* Configuration & Data Management
+* CPQ and Billing
+* Customer Service & Support
+* Desktop Integration
+* Einstein Analytics
+* Email
+* Email Marketing
+* Journey Management
+* Mobile
+* Mobile Messaging
+* Packaging, Uploading & Installing Apps
+* Reports & Dashboards
+* Sales & Marketing
+* Security
+* Social Marketing
+* Trailhead Challenges
+* Other products
 
-   * Salesforce CRM Content user
-   * Force.com Flow user
-   * Marketing user
-   * Apex (Salesforce1) Mobile user
-   <br /><br />
+TODO: Personas?
 
 
 <a name="VersionChangeMgmt"></a>
@@ -339,57 +316,27 @@ Certification holders must keep taking <a href="https://wilsonmar.github.io/cert
 
 Join the <a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000001oku">Release Readiness Trailblazers community</a> for resources about each upcoming release.
 
-
-
-<a name="UX"></a>
-
-## UX and Branding
-
-Salesforce currently stores data for all product offerings (all SaaS in the cloud) within a single "monolithic" database.
-
-<a name="MobileApps"></a>
-
-### Mobile Apps
-
-"Salesforce1 Platform" is the brand name to emphasize that mobile capabilities are automatically provided when apps are created. "mySalesforce" refers specifically to mobile apps.
-The brand name first appeared in 2014.
-
-App logos that appear at the upper left should be no larger than 300 pixels wide by 55 pixels high.
-Adjust the number of colors in .gif or .jpg so they are under the 20kb size limit.
-BTW, <a target="_blank" href="http://encycolorpedia.com/1798c1">
-  Colors in Salesforce screens</a>
-
-   * On <a target="_blank" href="https://itunes.apple.com/us/app/social-studio/id840173798?mt=8">
-   iOS device install Social Studio app</a>
-
-   * <a target="_blank" href="https://itunes.apple.com/us/app/dreamoji/id1294827604?mt=8">
-   Dreamoji iOS</a> app provides a custom keyboard containing various Salesforce characters as emojis.
-
-Trailhead tutorial modules:
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/salesforce1_mobile_app">
-   Trailhead Module: Salesforce Mobile App Customization</a>
-
 <hr />
 
-<a name="Trailhead"></a>
 
-## Trailhead Playground
+<a name="AppExchange"></a>
 
-A Trailhead Playground is an org you can use to complete hands on challenges, and try out new features and customizations. It <strong>comes with set of Trailhead-specific data</strong> (a set of sample contacts, etc.) that you can use when completing challenges, and a pre-installed unmanaged package that we use to test your hands-on challenges. Trailhead Playgrounds have some limits, but for the most part they give you the same customization options as a production org. 
+## AppExchange Tools
 
-PROTIP: Salesforce is great because of its free Trailhead tutorial that are thorough.
+https://appexchange.salesforce.com/appxHome
 
-https://trailhead.salesforce.com/modules/starting_force_com
-Salesforce Platform Basics
-Get introduced to the platform, navigate use cases, and build custom functionality.
+* Security Zen at http://SecurityZen.net @SecurityZen_Net ‏is a new tool for managing #Salesforce Security.
 
-* <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_playground_management/">Trailhead module: Trailhead Playground Management</a>
+* Ultra Field History Tracker @UFHTAuditTool ‏since June 2018 is an advanced SFDC field history tracking app supporting both standard and custom objects, unlimited fields, forever retention WITHOUT consuming data storage.
 
-PROTIP: For a list of your Hands-on Orgs, go to <a target="_blank" href="https://trailhead.salesforce.com/">https://trailhead.salesforce.com</a>,
-click the picture at the upper-right corner, and select <a target="_blank" href="https://trailhead.salesforce.com/en/users/profiles/settings/">Settings</a>.
+* <a target="_blank" href="https://www.linkedin.com/pulse/introducing-wsproxy-salesforce-marketing-cloud-eliot-harper/">WSProxy for Salesforce Marketing Cloud</a> July 17, 2018 by Eliot Harper offers scripting support through AMPscript and Server-Side JavaScript (or SSJS) scripting languages.
 
-Trailhead tutorials are great because of their quizzes (challenges).
+Eugene Oksman (@oksman (https://twitter.com/oksman) and Akhilesh Gupta (@akhileshgupta (https://twitter.com/akhileshgupta)) lead the Mobile SDK team at Salesforce.com, searching for the best ways to help developers create mobile apps for the enterprise.
+
+* Salesforce data loading tools, web services, middleware (such as Dell Boomi, Informatica, etc.)
+
+* APTTUS Contract Management Software (CLM)
+
 
 ### Text to speech
 
@@ -440,24 +387,6 @@ Those who have been designated as a "MVP" by Salesforce also get identified in t
    ### Create a Developer Edition organization
 
    Even if you already have Enterprise Edition, Unlimited Edition, or Performance Edition, use Developer Edition for developing, staging, and testing your solutions against sample data to protect your org’s live data, especially for applications that insert, update, or delete data (as opposed to just reading data).
-
-
-## Salesforce Authenticator
-
-I recommend that you use Google Authenticator instead so you only need to have one app for many accounts.
-
-1. On your smartphone install the "Salesforce Authenticator" app.
-
-1. Enable backups by typing in your phone number. The response is a text message (from 288-401):
-
-   <tt>Ready to verify your mobile number in the Salesforce Authenticator app? SalesforceAuthenticator://verify-number?t=FvdRiT</tt>
-
-1. Press the link.
-2. Type a 4-digit passcode.   
-
-
-
-<hr />
 
 ## Developer Console
 
@@ -549,6 +478,49 @@ The choice of editors is covered in
 Pluralsight video course: Apex Absolute Beginning Guide to Coding Salesforce</a>
 
 
+## Privacy
+
+Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/learn-privacy-and-data-protection-law">Learn Privacy and Data Protection Law</a>:
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/us-privacy-law-basics"> Trailhead Module: US Privacy Law Basics</a> [50:00] around personally identifiable information (PII).
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/european-union-privacy-law-basics/">Trailhead Module: European Union Privacy Law Basics</a> [45:00] to learn about the General Data Protection Regulation (GDPR) and how to comply.
+
+
+<a name="MobileApps"></a>
+
+## Mobile Apps
+
+"Salesforce1 Platform" is the brand name to emphasize that mobile capabilities are automatically provided when apps are created. "mySalesforce" refers specifically to mobile apps.
+The brand name first appeared in 2014.
+
+   * On <a target="_blank" href="https://itunes.apple.com/us/app/social-studio/id840173798?mt=8">
+   iOS device install Social Studio app</a>
+
+   * <a target="_blank" href="https://itunes.apple.com/us/app/dreamoji/id1294827604?mt=8">
+   Dreamoji iOS</a> app provides a custom keyboard containing various Salesforce characters as emojis.
+
+Trailhead tutorial modules:
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/salesforce1_mobile_app">
+   Trailhead Module: Salesforce Mobile App Customization</a>
+
+
+### Salesforce Authenticator
+
+I recommend that you use Google Authenticator instead so you only need to have one app for many accounts.
+
+1. On your smartphone install the "Salesforce Authenticator" app.
+
+1. Enable backups by typing in your phone number. The response is a text message (from 288-401):
+
+   <tt>Ready to verify your mobile number in the Salesforce Authenticator app? SalesforceAuthenticator://verify-number?t=FvdRiT</tt>
+
+1. Press the link.
+2. Type a 4-digit passcode.   
+
+
+
 <a name="Podcasts"></a>
 
 ## Podcasts
@@ -563,32 +535,78 @@ PROTIP: Drive a lot? Listen to voice-only podcasts while commuting:
    * PODCAST: The Quotable Sales Podcast by Quotable.com since July 2016 on <a target="_blank" href="https://itunes.apple.com/us/podcast/quotable-podcast-learn-from/id1132258307?mt=2">iTunes</a> and <a target="_blank" href="https://play.google.com/music/listen?u=0#/ps/I6pcs6jawpetsbyhp5qaf42ahmy">Google Play</a>.
 
 
-<a name="AppExchange"></a>
+<a name="TrailheadBasics"></a>
 
-## AppExchange Tools
+## Trailhead Basics modules
 
-https://appexchange.salesforce.com/appxHome
+Start with these:
 
-* Security Zen at http://SecurityZen.net @SecurityZen_Net ‏is a new tool for managing #Salesforce Security.
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_basics">Module: Trailhead Basics</a>
 
-* Ultra Field History Tracker @UFHTAuditTool ‏since June 2018 is an advanced SFDC field history tracking app supporting both standard and custom objects, unlimited fields, forever retention WITHOUT consuming data storage.
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/starting_force_com">Module: Salesforce Platform Basics</a>
 
-* <a target="_blank" href="https://www.linkedin.com/pulse/introducing-wsproxy-salesforce-marketing-cloud-eliot-harper/">WSProxy for Salesforce Marketing Cloud</a> July 17, 2018 by Eliot Harper offers scripting support through AMPscript and Server-Side JavaScript (or SSJS) scripting languages.
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/data_modeling">Module: Data Modeling</a>
 
-Eugene Oksman (@oksman (https://twitter.com/oksman) and Akhilesh Gupta (@akhileshgupta (https://twitter.com/akhileshgupta)) lead the Mobile SDK team at Salesforce.com, searching for the best ways to help developers create mobile apps for the enterprise.
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/visualforce_fundamentals">
+   Module: Visualforce Basics</a>
 
-* Salesforce data loading tools, web services, middleware (such as Dell Boomi, Informatica, etc.)
 
-* APTTUS Contract Management Software (CLM)
+   ### Superbadges
 
-## Privacy
+   <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges">Superbadges"</a> provide skill-based, domain-level "specialist" credential (to put on resume) by completing modules of real-life business scenario for which you have to build a solution across entire feature areas. 
 
-Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/learn-privacy-and-data-protection-law">Learn Privacy and Data Protection Law</a>:
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_security">Security</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_reports">
+   Reports & Dashboards</a>
 
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/us-privacy-law-basics"> Trailhead Module: US Privacy Law Basics</a> [50:00] around personally identifiable information (PII).
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_apex">
+   Apex Specialist</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_aap">
+   Advanced Apex Specialist</a>
+   <br /><br />
 
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/european-union-privacy-law-basics/">Trailhead Module: European Union Privacy Law Basics</a> [45:00] to learn about the General Data Protection Regulation (GDPR) and how to comply.
+   PROTIP: Do the two above as preparation for <a href="#Developer">Developer certification</a>.
 
+   <a name="LightningSuperbadges"></a>
+   
+   ### Lightning superbadges
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lightning_platform_app_builder">
+   Lightning App Customization Specialist</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lcf">
+   Lightning Component Framework Specialist</a>
+   builds a sophisticated app.
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex">
+   Lightning Experience Specialist</a>
+   super-charges interface and process automation.
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex_rollout">Lightning Experience Rollout Specialist</a>
+
+   <a name="SpecialtySuperbadges"></a>
+   
+   ### Specialist superbadges
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_process_automation">
+   Process Automation Specialist</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_business_specialist">
+   Business Administration Specialist</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_integration">
+   Data Integration Specialist</a>
+
+   ### Specialty superbadges
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_analytics_integration_specialist">
+   Einstein Analytics Data Preparation Specialist</a>
+   (Follow <a target="_blank" href="https://twitter.com/SForceAnalytics">@SForceAnalytics</a>)
+   <br /><br />
+
+## People behind Trailhead
+
+   * #Trailhead
+   * Chris Duarte (@TheChrisDuarte) - Managing Editor of #Trailhead
+   * Sandeep Bhanot (@cloudysan) - #Trailhead Product Owner/ Evangelist
+
+
+<hr />
 
 ## More about Salesforce #
 

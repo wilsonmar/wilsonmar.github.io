@@ -18,8 +18,6 @@ comments: true
 
 This is a hands-on narrated tour on how to learn AppDynamics to detect trouble.
 
-{% include _intro.html %}
-
 <hr />
 
 ## Explore #
@@ -413,28 +411,5 @@ AppSphere</a> in 2016 is on November 14 at the Marriott Cosmopolitan Las Vegas.
 <a target="_blank" href="https://twitter.com/@AppDynamics/">
 Twitter: @AppDynamics</a>
 
-Email: <a target="_blank" href="mailto:developer@artik.cloud">developer@artik.cloud</a><br />
-answered by Developer Evangelists<br />
-<a target="_blank" href="https://www.linkedin.com/in/jswatton/">
-   Jeanine (Swatton) Jue</a><!-- j.jue@samsung.com -->
-
-* <a target="_blank" href="https://www.linkedin.com/in/yujingwu">
-   Dr. Yujing Wu</a> (@yujingwu)
-
-LinkedIn shows Samsung America being based in Seattle and Bellevue, Washington.
-Smart Home in Mountain View, California.
-Home Appliances in Rigefield Park, New Jersey and Minneapolis, Minnesota.
-
-*  <a target="_blank" href="https://www.artik.io/blog/cloud/">
-   artik.io/blog/cloud</a>
-   is the user forum.
-
 * https://blog.codecentric.de/en/2015/05/what-you-have-to-deal-with-when-you-work-with-appdynamics-or-other-apm-tools/
 
-
-
-## More on IoT #
-
-This is one of a series on IoT:
-
-{% include iot_links.html %}
