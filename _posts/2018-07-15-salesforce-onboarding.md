@@ -41,6 +41,8 @@ Salesforce, as a company, owns these domain names (some product offerings have t
    * <a target="_blank" href="https://www.data.com/">Data.com</a> - B2B prospecting and data cleansing [<a target="_blank" href="https://www.data.com/trust/">status</a>]
    * <a target="_blank" href="https://www.desk.com/">Desk.com</a> - Customer Help Desk support for small business [<a target="_blank" href="https://status.desk.com/">status</a>]
    * <a target="_blank" href="https://www.demandware.com/">Demandware.com</a> acquired in 2016 for manufacturing processes
+   * <a target="_blank" href="http://www.financialforce.com/">FinancialForce.com</a>
+    is also a SaaS providing software for managing financial information.
    * <a target="_blank" href="http://www.heroku.com/">Heroku.com</a> - free hosting for low-volume apps written in open-source programming [<a target="_blank" href="https://status.heroku.com/">status</a>]
    * <a target="_blank" href="http://www.marketingcloud.com/">MarketingCloud.com</a> (formerly ExactTarget) [<a target="_blank" href="https://status.marketingcloud.com/">status</a>]
    * <a target="_blank" href="https://pardot.com">Pardot.com</a> [<a target="_blank" href="https://trust.pardot.com/">status</a>]
@@ -83,44 +85,44 @@ Salesforce issues licenses for several offerings :
 
    There are separate <strong>feature licenses</strong>:
 
-   * Marketing User
-   * Salesforce CRM Content User
-   * Force.com Flow User
-   * Apex (Salesforce1) Mobile User
+   * Salesforce CRM Content user
+   * Force.com Flow user
+   * Marketing user
+   * Apex (Salesforce1) Mobile user
    <br /><br />
 
 "Salesforce1 Platform" is the brand name to emphasize that mobile capabilities are automatically provided when apps are created. "mySalesforce" refers specifically to mobile apps.
 The brand name first appeared in 2014.
 
-Products which have <a href="https://wilsonmar.github.io/salesfore-certifications/">"consultant" certification exams</a>:
+<a name="Clouds"></a>
 
-   * <a target="_blank" href="http://certification.salesforce.com/salescloud">Sales Cloud</a> - Complete CRM customer service solutions
-   * <a target="_blank" href="http://certification.salesforce.com/servicecloud">Service Cloud</a> - Sales force automation and CRM
-   * <a target="_blank" href="http://certification.salesforce.com/marketingcloudconsultant">Marketing Cloud</a> - Build and manage 1:1 customer journeys. It has its own query language. No free accounts here.
-   * <a target="_blank" href="http://certification.salesforce.com/communitycloud">Commmunity Cloud</a> - Connect customers, partners, and employees
-   * <a target="_blank" href="http://certification.salesforce.com/fieldservicelightningconsultant">
-   Field Service Lightning certification</a>
-   * <a target="_blank" href="http://certification.salesforce.com/pardotconsultant">Pardot</a> - B2B marketing automation, which is part of the Sales Cloud as well.
+### Clouds
 
-   There are no certifications yet for these Sales Cloud products:
+Here is a list of the different "clouds" Salesforce sells.
+Products which have <a href="https://wilsonmar.github.io/salesforce-certifications/">"consultant" certification exams</a>:
 
    * Analytic Cloud - Business intelligence and analytics software solutions   
+   * <a target="_blank" href="http://certification.salesforce.com/communitycloud">Commmunity Cloud</a> - Connect customers, partners, and employees
+   * <a target="_blank" href="http://certification.salesforce.com/salescloud">Sales Cloud</a> - Complete CRM customer service solutions
+   * Government Cloud
+   * Health Cloud
+   * <a target="_blank" href="https://www.salesforce.com/products/integration-cloud/overview/">Integration Cloud</a> Integration Builder includes Mulesoft Anypoint Platform (bought by Salesforce in an exchange of stock May 2018)
+
+   * <a target="_blank" href="http://certification.salesforce.com/servicecloud">Service Cloud</a> - Sales force automation and CRM
+   * <a target="_blank" href="http://certification.salesforce.com/marketingcloudconsultant">Marketing Cloud</a> - Build and manage 1:1 customer journeys. It has its own query language. No free accounts here.
+   * <a target="_blank" href="http://certification.salesforce.com/fieldservicelightningconsultant">
+   Field Service Lightning certification</a>
+
+   * <a target="_blank" href="https://www.salesforce.com/solutions/philanthropy/corporate-social-responsibility/">Philanthropy Cloud</a>
+
+   Others:
+
+   * <a target="_blank" href="http://certification.salesforce.com/pardotconsultant">Pardot</a> - B2B marketing automation, which is part of the Sales Cloud as well.
    * Quip for sending texts
    * <a target="_blank" href="http://certification.salesforce.com/cpqspecialist">CPQ</a> (Configure, Price, and Quote) workflow
 
-Customer industries:
 
-   * Government Cloud
-   * Health Cloud
-   * <a target="_blank" href="http://www.financialforce.com/">FinancialForce.com</a>
-    is also a SaaS providing software for managing financial information.
-   * <a target="_blank" href="https://www.salesforce.com/solutions/philanthropy/corporate-social-responsibility/">Philanthropy Cloud</a>
-
-Integration:
-
-   * <a target="_blank" href="https://www.salesforce.com/products/integration-cloud/overview/">Integration Cloud</a> Integration Builder includes Mulesoft Anypoint Platform (bought by Salesforce in an exchange of stock May 2018)
-
-## Lists of offerings
+<a name="Topics"></a>
 
 ## Topics of conversation
 
@@ -465,7 +467,7 @@ Eugene Oksman (@oksman (https://twitter.com/oksman) and Akhilesh Gupta (@akhiles
 
 Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/learn-privacy-and-data-protection-law">Learn Privacy and Data Protection Law</a>:
 
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/us-privacy-law-basics"> Trailhead Module: US Privacy Law Basics</a> [50:00]
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/us-privacy-law-basics"> Trailhead Module: US Privacy Law Basics</a> [50:00] around personally identifiable information (PII).
 
    * <a target="_blank" href="https://trailhead.salesforce.com/modules/european-union-privacy-law-basics/">Trailhead Module: European Union Privacy Law Basics</a> [45:00] to learn about the General Data Protection Regulation (GDPR) and how to comply.
 
