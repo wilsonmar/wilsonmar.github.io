@@ -22,10 +22,131 @@ This also aims to provide succinct lists for experienced Salesforce readers.
 "PROTIP:" in this document marks the unique contribution of this website, 
 providing you advice available nowhere else.
 
-https://trailhead.salesforce.com/modules/starting_force_com
-Salesforce Platform Basics
-Get introduced to the platform, navigate use cases, and build custom functionality.
+Most other software companies try to make the most money they can by putting their training material behind a paywall. So learning SAP and Oracle takes many thousands of dollars. This limits how many people can effectively learn their product.
 
+Not so with Salesforce. Their SalesforceU does offer live classes for thousands of dollars each. But their <a href="#Trailhead">Salesforce Trailhead</a> on-line training is both in-depth and offered free, with <strong>unlimited time on servers</strong>. This has enabled Salesforce users to be among the best trained of any software ecosystem.
+
+
+<a name="Training"></a>
+
+## Trailhead Training Account
+
+1. Obtain a Trailhead account <a target="_blank" href="https://developer.salesforce.com/trailhead">
+   here</a> for FREE tutorials which reward points appearing in your profile.
+
+   PROTIP: Sign up for Trailhead with a <strong>personal Gmail account</strong> instead of company email so you'll be able to sign in no matter where you work in the future.
+
+2. COURSE: <a target="_blank" href="https://trailhead.salesforce.com/trails/learn_salesforce_with_trailhead">
+   Learn Salesforce with Trailhead</a>
+
+   ### How Trailhead works
+
+   Learning topics are organized into modules, which are broken up into units. 
+
+   Trails group modules to provide guided learning paths suited to specific roles or needs.
+
+   Earn points when you finish each unit by completing a quiz or a challenge in a Salesforce org.
+   Less points are earned for each additional attempt.
+
+   "Challenges" gives you a set of requirements that you have to figure out how to meet on your own.
+   A project lays out step-by-step instructions for you to follow, then validates that you did everything correctly.
+
+   More points get you higher <a target="_blank" href="https://trailhead.salesforce.com/en/trailblazer-ranks">rank</a>.
+
+   Projects and superbadges allow you to learn interactively by requiring you to implement a feature or solution in an org (a Trailhead Playground).
+
+   ### Superbadges
+
+   <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges">Superbadges"</a> provide skill-based, domain-level "specialist" credential (to put on resume) by completing modules of real-life business scenario for which you have to build a solution across entire feature areas. 
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_security">Security</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_reports">
+   Reports & Dashboards</a>
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_apex">
+   Apex Specialist</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_aap">
+   Advanced Apex Specialist</a>
+   <br /><br />
+
+   PROTIP: Do the two above as preparation for <a href="#Developer">Developer certification</a>.
+
+   <a name="LightningSuperbadges"></a>
+   
+   ### Lightning superbadges
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lightning_platform_app_builder">
+   Lightning App Customization Specialist</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lcf">
+   Lightning Component Framework Specialist</a>
+   builds a sophisticated app.
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex">
+   Lightning Experience Specialist</a>
+   super-charges interface and process automation.
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex_rollout">Lightning Experience Rollout Specialist</a>
+
+   <a name="SpecialtySuperbadges"></a>
+   
+   ### Specialist superbadges
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_process_automation">
+   Process Automation Specialist</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_business_specialist">
+   Business Administration Specialist</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_integration">
+   Data Integration Specialist</a>
+
+   ### Specialty superbadges
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_analytics_integration_specialist">
+   Einstein Analytics Data Preparation Specialist</a>
+   (Follow <a target="_blank" href="https://twitter.com/SForceAnalytics">@SForceAnalytics</a>)
+   <br /><br />
+
+3. Salesforce as a company offers classes addressing each certification through its 
+    <a target="_blank" href="http://www.salesforce.com/services-training/training_certification/training.jsp"><strong>Salesforce University</strong> (<a target="_blank" href="https://twitter.com/SalesforceU">@SalesforceU</a>). For example, $3,750 for the 5-day course.
+
+   PROTIP: Spending several days strait sitting in a class may seem like "drinking from a firehose".
+
+4. Follow on Twitter
+
+   * #Trailhead
+   * Chris Duarte (@TheChrisDuarte) - Managing Editor of #Trailhead
+   * Sandeep Bhanot (@cloudysan) - #Trailhead Product Owner/ Evangelist
+
+<hr />
+
+<a name="TrailheadBasics"></a>
+
+## Trailhead Basics modules
+
+Start with these:
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_basics">Module: Trailhead Basics</a>
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/starting_force_com">Module: Salesforce Platform Basics</a>
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/data_modeling">Module: Data Modeling</a>
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/visualforce_fundamentals">
+   Module: Visualforce Basics</a>
+
+<hr />
+
+
+## Salesforce Lightning UI
+
+1. Click the "cog" icon to select Setup:
+
+   <img alt="sf-setup-253x186.png" width="253" src="https://user-images.githubusercontent.com/300046/43531842-f56b78e8-956d-11e8-8ce3-66b8cb160d13.png">
+
+1. Click the app launcher icon for a list of apps:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/43531384-e10b834e-956c-11e8-9113-3506e009c7ae.png"><img alt="sf-app-launcher-1106x554.png" width="1106" src="https://user-images.githubusercontent.com/300046/43531384-e10b834e-956c-11e8-9113-3506e009c7ae.png"></a>
+
+1. Scroll down for the "All Items" list:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/43531745-a9f76656-956d-11e8-950c-6c017c1d1a19.png"><img alt="sf-all-items-843x292.png" src="https://user-images.githubusercontent.com/300046/43531745-a9f76656-956d-11e8-950c-6c017c1d1a19.png"></a>
 
 
 <a name="Domains"></a>
@@ -183,10 +304,6 @@ Salesforce issues licenses for several offerings :
    * Apex (Salesforce1) Mobile user
    <br /><br />
 
-"Salesforce1 Platform" is the brand name to emphasize that mobile capabilities are automatically provided when apps are created. "mySalesforce" refers specifically to mobile apps.
-The brand name first appeared in 2014.
-
-
 
 <a name="VersionChangeMgmt"></a>
 
@@ -230,7 +347,12 @@ Join the <a target="_blank" href="https://success.salesforce.com/_ui/core/chatte
 
 Salesforce currently stores data for all product offerings (all SaaS in the cloud) within a single "monolithic" database.
 
+<a name="MobileApps"></a>
+
 ### Mobile Apps
+
+"Salesforce1 Platform" is the brand name to emphasize that mobile capabilities are automatically provided when apps are created. "mySalesforce" refers specifically to mobile apps.
+The brand name first appeared in 2014.
 
 App logos that appear at the upper left should be no larger than 300 pixels wide by 55 pixels high.
 Adjust the number of colors in .gif or .jpg so they are under the 20kb size limit.
@@ -250,16 +372,22 @@ Trailhead tutorial modules:
 
 <hr />
 
+<a name="Trailhead"></a>
+
 ## Trailhead Playground
 
 A Trailhead Playground is an org you can use to complete hands on challenges, and try out new features and customizations. It <strong>comes with set of Trailhead-specific data</strong> (a set of sample contacts, etc.) that you can use when completing challenges, and a pre-installed unmanaged package that we use to test your hands-on challenges. Trailhead Playgrounds have some limits, but for the most part they give you the same customization options as a production org. 
 
 PROTIP: Salesforce is great because of its free Trailhead tutorial that are thorough.
 
+https://trailhead.salesforce.com/modules/starting_force_com
+Salesforce Platform Basics
+Get introduced to the platform, navigate use cases, and build custom functionality.
+
 * <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_playground_management/">Trailhead module: Trailhead Playground Management</a>
 
-PROTIP: For a list of your Hands-on Orgs, got to <a target="_blank" href="https://trailhead.salesforce.com/">https://trailhead.salesforce.com</a>,
-click your picture, <a target="_blank" href="https://trailhead.salesforce.com/en/users/profiles/settings/">Settings</a>.
+PROTIP: For a list of your Hands-on Orgs, go to <a target="_blank" href="https://trailhead.salesforce.com/">https://trailhead.salesforce.com</a>,
+click the picture at the upper-right corner, and select <a target="_blank" href="https://trailhead.salesforce.com/en/users/profiles/settings/">Settings</a>.
 
 Trailhead tutorials are great because of their quizzes (challenges).
 
@@ -282,14 +410,16 @@ But completing Salesforce trailheads are important.
 
 Here's why...
 
-## Your profile
+## Trailhead profiles
 
-Here are some sample profiles:
+Here are some sample profiles from among my list of <a target="_blank" href="https://wilsonmar.github.io/salesforce-rock-stars/">Salesforce Rock Stars</a>:
 
    * <a target="_blank" href="https://trailhead.salesforce.com/en/me/laydurafe">
    https://trailhead.salesforce.com/en/me/laydurafe</a>
    * https://trailhead.salesforce.com/en/me/adammvp
    * https://trailhead.salesforce.com/en/me/00550000006gTqVAAU Naveen Poojary
+   * https://trailhead.salesforce.com/en/me/00550000006gOHXAA2 Anjaneya Reddy Bobbala got near 100,000 points by completing 135+ badges over 7 trails
+
    * <a target="_blank" href="https://trailhead.salesforce.com/en/me/wilsonmar/">
    https://trailhead.salesforce.com/en/me/wilsonmar</a>
 
@@ -298,7 +428,7 @@ and the points earned. It doesn't list certifications exams passed.
 
 Those who have been designated as a "MVP" by Salesforce also get identified in their profile.
 
-See my list of <a target="_blank" href="https://wilsonmar.github.io/salesforce-rock-stars/">Salesforce Rock Stars</a>.
+![sf-trailhead-cat-304x308-24442](https://user-images.githubusercontent.com/300046/43572325-7aa3ef20-95fc-11e8-99cf-391341ff6d8b.jpg)
 
 
 ## Developer Account
@@ -325,20 +455,6 @@ I recommend that you use Google Authenticator instead so you only need to have o
 1. Press the link.
 2. Type a 4-digit passcode.   
 
-
-## Salesforce Lightning UI
-
-1. Click the "cog" icon to select Setup:
-
-   <img alt="sf-setup-253x186.png" width="253" src="https://user-images.githubusercontent.com/300046/43531842-f56b78e8-956d-11e8-8ce3-66b8cb160d13.png">
-
-1. Click the app launcher icon for a list of apps:
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/43531384-e10b834e-956c-11e8-9113-3506e009c7ae.png"><img alt="sf-app-launcher-1106x554.png" width="1106" src="https://user-images.githubusercontent.com/300046/43531384-e10b834e-956c-11e8-9113-3506e009c7ae.png"></a>
-
-1. Scroll down for the "All Items" list:
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/43531745-a9f76656-956d-11e8-950c-6c017c1d1a19.png"><img alt="sf-all-items-843x292.png" src="https://user-images.githubusercontent.com/300046/43531745-a9f76656-956d-11e8-950c-6c017c1d1a19.png"></a>
 
 
 <hr />
