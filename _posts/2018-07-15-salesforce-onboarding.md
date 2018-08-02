@@ -92,8 +92,10 @@ Salesforce currently stores data for all product offerings (all SaaS in the clou
    App logos that appear at the upper left should be no larger than 300 pixels wide by 55 pixels high.
    Adjust the number of colors in .gif or .jpg so they are under the 20kb size limit.
 
-   At the upper-left is the App Launcher icon and the current app.
+   BTW, <a target="_blank" href="http://encycolorpedia.com/1798c1">
+   Colors in Salesforce screens</a>
 
+   At the upper-left is the App Launcher icon and the current app.
 
 1. Click the app launcher icon for a list of apps:
 
@@ -107,10 +109,7 @@ Salesforce currently stores data for all product offerings (all SaaS in the clou
 
    "Managed apps" are those developed by Salesforce, such as the <a target="_blank" href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB00000009UeX">Dreamhouse" app</a>.
 
-   "AppExchange apps" are developed by 3rd parties, usually an ISV (Independent Software Vendor) Salesforce partners. AppExchange is the name of the marketplace where such apps are available.
-
-   BTW, <a target="_blank" href="http://encycolorpedia.com/1798c1">
-   Colors in Salesforce screens</a>
+   "AppExchange apps" are developed by 3rd parties, usually an ISV (Independent Software Vendor) Salesforce partners. AppExchange is the name of the marketplace where such apps are available, either free or for a fee. An example of a
 
 1. Scroll down for the "All Items" list:
 

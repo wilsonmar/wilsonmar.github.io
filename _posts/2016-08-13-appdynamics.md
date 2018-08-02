@@ -12,11 +12,9 @@ comments: true
 ---
 <i>{{ page.excerpt }}</i>
 
-[![Gitter](https://badges.gitter.im/wilsonmar/wilsonmar.github.io.svg)](https://gitter.im/wilsonmar/wilsonmar.github.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
 {% include _toc.html %}
 
-This is a hands-on narrated tour on how to learn AppDynamics to detect trouble.
+This are my notes about AppDynamics to detect trouble.
 
 <hr />
 
@@ -397,9 +395,26 @@ The biggest concern enterprises have with cloud services is their security.
 * https://community.appdynamics.com/t5/Knowledge-Base/Introduction-to-AppDynamics-with-SSL/ta-p/20580?site=community
 
 
-<hr />
+## Videos
 
-### Social #
+https://www.youtube.com/watch?v=TbPvtcb9dGM
+Become an AppDynamics Dashboard Rockstar May 11, 2017
+by Andy Jackson is https://www.linkedin.com/in/andrewbjackson/﻿
+in the UK
+
+https://www.youtube.com/watch?v=LxOu-KQy6As
+AppDynamics Business iQ Demo Feb 9, 2017
+
+https://www.youtube.com/watch?v=ZAZmgZ3l49E
+10 Tips For Every New AppDynamics Customer May 11, 2017
+https://www.slideshare.net/appdynamics/ten-tips-for-every-new-appdynamics-customer-appd-summit-europe
+by Thomas Tammann, Solution Architect then, now Director of Customer Success
+
+https://www.youtube.com/watch?v=l6OLnIxZYVc
+Mapping your applications in AppDynamics Sep 4, 2014
+
+
+## Social #
 
 <a target="_blank" href="https://www.appdynamics.com/community/">
 <strong>https://www.appdynamics.com/community</strong></a><br />
