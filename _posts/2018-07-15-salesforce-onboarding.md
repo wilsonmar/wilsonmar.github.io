@@ -216,15 +216,80 @@ But <a href="#Trailhead">Salesforce Trailhead</a> on-line training is both in-de
 
    PROTIP: Before you begin answering quiz questions, to avoid needing to having your answers wiped away becuase you timed out, make sure you're logged by pressing the browser <strong>Refresh</strong> icon or pressing command+R on the Mac or Ctrl+R on Windows PCs.
 
-   More points get you higher <a target="_blank" href="https://trailhead.salesforce.com/en/trailblazer-ranks">rank</a>.
-
    Projects and <a href="#Superbadges">superbadges</a> challenge you to implement a feature or solution in an org (a Trailhead Playground) without step-by-step instructions.
+
+   More points get you higher <a target="_blank" href="https://trailhead.salesforce.com/en/trailblazer-ranks">rank</a>.
+   Ranger is the highest rank, requiring <strong>50,000 points</strong> from at least 100 badges.
+
+
+   ### Pace yourself
+
+   Here's an example of a progression:
+
+   | Trail/Project | Hours | Points |
+   | ----- | ---: | -----: |
+   | Intro. to Trailhead | 2 | 500 |
+   | Admin Intro. Trail | 9 | 10,200 |
+   | Admin Intermediate Trail | 5.9 | 8,200 |
+   | Take Admin 1 exam | - | - |
+   | Advanced Admin exam | - | - |
+   | Take Advanced Admin exam | - | - |
+   | Developer Beginner Trail | 15 | 19,400 |
+   | Developer Intermediate Trail | 10 | 8,100 |
+   | Developer Trail - Mobile SDK | 6.8 | 3,000 |
+   | <a href="#ConfApp">Build a Conference Management App</a> | 3 |  550 |
+   | <a href="#SuggestionApp"> Build Suggestion Box App</a> | 1.9 | ? |
+   | Quick Start: <a href="#Lightning">Lightning</a> Components | 0.5 | 150 |
+   | Quick Connect: Lightning Connect | 0.3 | 100 |
+   | Total: | 50 | 45,000 |
+
+   ### Text to speech
+
+   However, Trailhead tutorials are mainly text.
+
+   PROTIP: Use a program that generates text to speech.
+   Macs has it built-in, and just need to be enabled in Apple System Preferences > Accessibility > Speech.
+   ![macos-speech-key-398x58](https://user-images.githubusercontent.com/300046/43554806-dac78108-95b3-11e8-80e9-00bac235554a.jpg)
+
+   You can change the default option+` (back tick) activation key sequence.
+
+   I like the proper British female voice "Kate", who is like Mary Poppins reading to me.
+
+   ![macos-speech-kate-317x117](https://user-images.githubusercontent.com/300046/43554819-eb2c8c32-95b3-11e8-852e-dfd4cc712f47.jpg)
+
+   If you have the money, several video tutorials are available from Pluralsight, Lynda/LinkedIn, etc.
+   
+   But don't neglect completing Salesforce trailheads.
+   Here's why...
+
+### Trailhead profiles
+
+Here are some sample profiles from among my list of <a target="_blank" href="https://wilsonmar.github.io/salesforce-rock-stars/">Salesforce Rock Stars</a>:
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/me/laydurafe">
+   https://trailhead.salesforce.com/en/me/laydurafe</a>
+   * https://trailhead.salesforce.com/en/me/adammvp
+   * https://trailhead.salesforce.com/en/me/00550000006gTqVAAU Naveen Poojary
+   * https://trailhead.salesforce.com/en/me/00550000006gOHXAA2 Anjaneya Reddy Bobbala got near 100,000 points by completing 135+ badges over 7 trails
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/me/wilsonmar/">
+   https://trailhead.salesforce.com/en/me/wilsonmar</a>
+
+Each profile includes how many trailhead modules and trails completed,
+and the points earned. It doesn't list certifications exams passed.
+
+Those who have been designated as a "MVP" by Salesforce also get identified in their profile.
+
+![sf-trailhead-cat-304x308-24442](https://user-images.githubusercontent.com/300046/43572325-7aa3ef20-95fc-11e8-99cf-391341ff6d8b.jpg)
+
 
 <a name="Topics"></a>
 
 ## Topics of conversation
 
-1. If you are stuck, first see if someone asked questions by clicking this at the bottom-right of each Trailhead Module page:
+1. If get stuck, go through the trail again on another Playground. This struggle is part of the learning process.
+
+1. If you need help from others, first see if someone asked questions by clicking this at the bottom-right of each Trailhead Module page:
 
    <img alt="sf-questions-238x48-4407.jpg" width="238" src="https://user-images.githubusercontent.com/300046/43619809-ce1fbef0-968c-11e8-8e07-b6d8c4e46352.jpg">
 
@@ -481,45 +546,7 @@ https://appexchange.salesforce.com/appxHome
 * APTTUS Contract Management Software (CLM)
 
 
-### Text to speech
-
-However, Trailhead tutorials are mainly text.
-
-PROTIP: Use a program that generates text to speech.
-Macs has it built-in, and just need to be enabled in Apple System Preferences > Accessibility > Speech.
-![macos-speech-key-398x58](https://user-images.githubusercontent.com/300046/43554806-dac78108-95b3-11e8-80e9-00bac235554a.jpg)
-
-You can change the default option+` (back tick) activation key sequence.
-
-I like the proper British female voice "Kate", who is like Mary Poppins reading to me.
-
-![macos-speech-kate-317x117](https://user-images.githubusercontent.com/300046/43554819-eb2c8c32-95b3-11e8-852e-dfd4cc712f47.jpg)
-
-If you have the money, several video tutorials are available.
-But completing Salesforce trailheads are important.
-
-Here's why...
-
-## Trailhead profiles
-
-Here are some sample profiles from among my list of <a target="_blank" href="https://wilsonmar.github.io/salesforce-rock-stars/">Salesforce Rock Stars</a>:
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/me/laydurafe">
-   https://trailhead.salesforce.com/en/me/laydurafe</a>
-   * https://trailhead.salesforce.com/en/me/adammvp
-   * https://trailhead.salesforce.com/en/me/00550000006gTqVAAU Naveen Poojary
-   * https://trailhead.salesforce.com/en/me/00550000006gOHXAA2 Anjaneya Reddy Bobbala got near 100,000 points by completing 135+ badges over 7 trails
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/me/wilsonmar/">
-   https://trailhead.salesforce.com/en/me/wilsonmar</a>
-
-Each profile includes how many trailhead modules and trails completed,
-and the points earned. It doesn't list certifications exams passed.
-
-Those who have been designated as a "MVP" by Salesforce also get identified in their profile.
-
-![sf-trailhead-cat-304x308-24442](https://user-images.githubusercontent.com/300046/43572325-7aa3ef20-95fc-11e8-99cf-391341ff6d8b.jpg)
-
+<hr />
 
 ## Developer Account
 

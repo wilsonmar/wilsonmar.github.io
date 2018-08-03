@@ -418,7 +418,7 @@ Miss being at a Salesforce event? Buy the branded clothing, office supplies, ele
 5. Drive momentum to ensure adoption and growth of your vision.
 
    * <a target="_blank" href="https://success.salesforce.com/ideaSearch">
-   Idea Exchange/Search</a>
+   Idea Exchange/Search</a> lists all submission across all products.
 
    * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/run-an-agile-team">Learn Atlassian Agile Practices</a>
    [55 mins]
