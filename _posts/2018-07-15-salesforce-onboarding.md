@@ -352,14 +352,13 @@ click the picture at the upper-right corner, and select <a target="_blank" href=
 
    <img alt="sf-playground-avatar-363x338-26683.jpg" width="363" src="https://user-images.githubusercontent.com/300046/43617177-c870820a-967d-11e8-85c8-65e618968522.jpg">
 
-   ### Add user to Playground
-
    PROTIP: When you time-out while in a Playground, don't use your Salesforce account credentials to sign back in. Instead, close the page and Launch the Playground again from the Trailhead page.
 
-   Alternately, it may be less annoying if you add yourself as a user in each Playground you use.
+1. Click the avatar.
+1. Click Settings.
 
-1. Click the 
-
+   Notice the email address to the right of label <strong>Username:</strong> 
+   matches the domain name of the URL, such as: "wilsonmar@resourceful-moose-263556.com".
 
    ### Salesforce Lightning UI
 
@@ -404,18 +403,47 @@ click the picture at the upper-right corner, and select <a target="_blank" href=
 
 We next look into adding one of each to your Trailhead Playground.
 
-I got confused with the <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_playground_management/units/install-apps-and-packages-in-your-trailhead-playground">Install Apps and Packages in Your Trailhead Playground</a> unit of the <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_playground_management/">Trailhead module: Trailhead Playground Management</a>. So I offer this explanation:
+I got confused with the <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_playground_management/units/install-apps-and-packages-in-your-trailhead-playground">Install Apps and Packages in Your Trailhead Playground</a> unit of the <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_playground_management/">Trailhead module: Trailhead Playground Management</a>. 
 
-   zxxx
+To add a managed app such as the Salesforce <a target="_blank" href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB00000009UeX">Dreamhouse" app</a>:
 
+1. In a new browser window, go to the package home:
 
-, such as the <a target="_blank" href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB00000009UeX">Dreamhouse" app</a>.
+   <a target="_blank" href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB00000009UeX">https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB00000009UeX</a>
 
+   Notice the domain name, such as:
 
+   <pre>https://na31.lightning.force.com/packagingSetupUI/ipLanding.app?apvId=04tB00000009UeX</pre>
 
+   The above URL is a "productive" domain name for doing real work.
 
+   What we want to install in a Playground domain.
 
+   PROTIP: Don't click on the blue "Install" button or the app will install in the wrong domain.
 
+1. Copy the part of the URL string AFTER the domain, "na31.lightning.force.com/" in the example.
+1. Exit out that page.
+
+1. Switch back to the Playground.
+1. Press command+R to refresh the screen to make sure the session is still active.
+1. Construct the URL necessary by pasting it after the Playground domain name, such as:
+
+   <pre>https://resourceful-moose-263556-dev-ed.lightning.force.com/packagingSetupUI/ipLanding.app?apvId=04tB00000009UeX</pre>
+
+1. Press Enter.
+1. Now click Install.
+1. Check the box to the left of "Yes, grant access to these third-party web sites".
+1. Click Continue.
+1. Wait for the "Installing and granting access to admins Only..." message to turn to "Installation Complete!".
+1. Click Done.
+
+   To verify what was included in the app or package you installed:
+
+1. Click the cog icon and select Setup. Another browser window opens.
+1. In Quick Find, type "Installed Packages" and select Installed Packages in the Apps list.
+1. Click the "Dreamhouse" app Package Name in the list.
+1. Click "View Components" to see all components of the package.
+1. Close that browser window.
 
 
 <a name="AppExchange"></a>

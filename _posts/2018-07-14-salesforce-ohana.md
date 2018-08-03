@@ -311,6 +311,8 @@ Partner-sponsored parties and events also take place all week long.
 
 Hackathon
 
+Take <a target="_blank" href="https://trailhead.salesforce.com/modules/get_ready_for_dreamforce_prepare_most_exciting_event_year">Trailhead Module: Dreamforce Ready</a> [30 mins] to learn why Dreamforce is the must-attend event of the year and develop your game plan.
+
 
 ### Store
 
