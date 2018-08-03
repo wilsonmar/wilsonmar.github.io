@@ -92,10 +92,6 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
 
 <a target="_blank" href="http://certification.salesforce.com/SG_AccreditedSalesProfessional.pdf">Official PDF -  Salesforce Accredited Sales Professional</a>
 
-To prepare:
-
-   * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/build-your-sales-career">Build Your Sales Career</a> [1 hr 50 mins] in 4 modules.
-   Sales reps at Salesforce practice <a target="_blank" href="https://www.salesforce.com/quotable/articles/how-salesforce-does-prospecting/?d=7010M000000Npfh">"strategic prospecting"</a> based on a program developed by JBarrows Sales Training.
 
 <a name="Marketing"></a>
 
