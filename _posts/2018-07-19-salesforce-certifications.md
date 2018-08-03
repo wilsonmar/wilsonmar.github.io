@@ -123,7 +123,7 @@ For $200 each, answer 65% of 60 multiple-choice/multiple-select questions in 105
 
    To prepare for the first Administrator exam:
 
-   * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/force_com_admin_beginner
+   * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/force_com_admin_beginner">Force.com Admin Beginner</a>
    [8 hrs 35 mins] topics are structed according to the above list.
 
 <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedAdvancedAdministrator.pdf">Official PDF -  Advanced Administrator Certification</a>
@@ -313,3 +313,9 @@ Here's an example of a progression:
    | Total: | 50 | 45,000 |
 
 
+
+## More about Salesforce #
+
+This is one of a series about Salesforce
+
+{% include salesforce_links.html %}
