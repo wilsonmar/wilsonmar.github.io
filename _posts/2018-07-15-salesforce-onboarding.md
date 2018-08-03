@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Salesforce onboarding (for developers)"
-excerpt: "Get up and running on the various Salesforce technologies"
+excerpt: "Get up and running on the various Salesforce domains in clouds"
 tags: [salesforce]
 file: salesforce-onboarding.md
 image:
@@ -100,11 +100,13 @@ Salesforce, as a company, owns these domain names (some product offerings have t
 
    PROTIP: Different products use the same salesforce.com domain, but use sub-domain prefixes to differentiate the product being used.
 
-1. Visit <a target="_blank" href="https://www.salesforce.com/products/?d=70130000000mIVK">this page</a> and scroll down for a list of products offered.
+1. Visit <a target="_blank" href="https://www.salesforce.com/products/?d=70130000000mIVK">the Salesforce Products page</a> and scroll down for a list of products offered.
 
-1. Watch a demo and get pricing information for each offering.
+1. Click to Watch a demo and get pricing information for each offering.
 
 1. Scroll near the bottom to click <a target="_blank" href="https://www.salesforce.com/form/signup/freetrial-sales/?d=cta-body-promo-4">START MY FREE TRIAL</a>, and fill in your information.
+
+   A Salesforce UX (User eXperience) screen appears with sample data.
 
 1. Click through the tour (Manage Your Pipeline, Close More Deals, Get Ready to Sell, Sell the Way You Want).
 
@@ -123,13 +125,13 @@ Salesforce, as a company, owns these domain names (some product offerings have t
 
 1. Switch back to the Lightning UX by clicking "Setup", then 
 
-   At the top of the page are <strong>objects</strong> containing data:
+   At the top of the page are <strong>objects</strong> containing data, such as "Accounts", "Contacts", "Leads", "Opportunities", etc.
 
    ![sf-lds-heading-648x100-23173](https://user-images.githubusercontent.com/300046/43592347-94aa3c4a-9632-11e8-947e-906e2e2dedde.jpg)
 
-1. Click "More" for other objects. The Sales CRM system keeps all the data in one place throughout the customer lifecycle: Contacts which show potential turn into Leads. After qualification Leads turn into Opportunities, then after purchase are associated with Accounts.
+1. Click "More" for additional objects. The Sales CRM system keeps all the data in one place throughout the customer lifecycle: PROTIP: Contacts which show potential turn into Leads. After qualification Leads turn into Opportunities, then after purchase are associated with Accounts.
 
-   PROTIP: By virtue of you filling out a form, you become a Contact to Salesforce and will be getting phone calls and emails.
+   PROTIP: By virtue of you filling out a form, you become a Contact to Salesforce and will be getting phone calls and emails from salespeople.
 
 
 ## Free Trailhead training
@@ -189,34 +191,38 @@ But <a href="#Trailhead">Salesforce Trailhead</a> on-line training is both in-de
 
 ## Topics of conversation
 
-If you are stuck, first see if someone asked questions.
+1. If you are stuck, first see if someone asked questions by clicking this at the bottom-right of each Trailhead Module page:
 
-Trailhead offers this selection of product interests for "Answers":
-<img alt="sf-trailhead-product-interests-386x271-24542.jpg" width="386" src="https://user-images.githubusercontent.com/300046/43539050-f9c092f8-9580-11e8-9205-1908cc2db8b7.jpg">
+   <img alt="sf-questions-238x48-4407.jpg" width="238" src="https://user-images.githubusercontent.com/300046/43619809-ce1fbef0-968c-11e8-8e07-b6d8c4e46352.jpg">
 
-Here are the Q&A topics in the Trailblazer Community Success Cloud URL<br /><a target="_blank" href="
+2. Click "Help each other". Trailhead offers this selection of product interests for "Answers". Note the web page is in the Trailblazer Community Success Cloud URL<br /><a target="_blank" href="
 https://success.salesforce.com/answers?feedtype=RECENT&criteria=BESTANSWERS">https://success.salesforce.com/answers</a>
 
-* Collaboration
-* Configuration & Data Management
-* CPQ and Billing
-* Customer Service & Support
-* Desktop Integration
-* Einstein Analytics
-* Email
-* Email Marketing
-* Journey Management
-* Mobile
-* Mobile Messaging
-* Packaging, Uploading & Installing Apps
-* Reports & Dashboards
-* Sales & Marketing
-* Security
-* Social Marketing
-* Trailhead Challenges
-* Other products
+   * Collaboration
+   * Configuration & Data Management
+   * CPQ and Billing
+   * Customer Service & Support
+   * Desktop Integration
+   * Einstein Analytics
+   * Email
+   * Email Marketing
+   * Journey Management
+   * Mobile
+   * Mobile Messaging
+   * Packaging, Uploading & Installing Apps
+   * Reports & Dashboards
+   * Sales & Marketing
+   * Security
+   * Social Marketing
+   * Trailhead Challenges
+   * Additional products
 
    You will learn how to work with each of the above in various Trailhead modules.
+
+1. Click "Trailhead Challenges".
+1. Type in your question in the field containing "What do you want to know?", the press Enter.
+
+   <img alt="sf-trailhead-product-interests-386x271-24542.jpg" width="386" src="https://user-images.githubusercontent.com/300046/43539050-f9c092f8-9580-11e8-9205-1908cc2db8b7.jpg">
 
 TODO: Personas?
 
