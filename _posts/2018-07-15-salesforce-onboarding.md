@@ -110,6 +110,8 @@ Salesforce, as a company, owns these domain names (some product offerings have t
 
    After 30 days, the sample "org" instance remains active with sample data.
 
+   <a name="productiveURL"></a>
+
    PROTIP: Notice the sub-domain in the URL address assigned, such as "na53" in https://na53.lightning.force.com/..."
 
    "lightning" in the URL reflects use of the new User experience screen design rather than the "classic" UX.
@@ -130,9 +132,64 @@ Salesforce, as a company, owns these domain names (some product offerings have t
    PROTIP: By virtue of you filling out a form, you become a Contact to Salesforce and will be getting phone calls and emails.
 
 
+## Free Trailhead training
+
+Most other software companies try to make the most money they can by putting their training material behind a paywall. So learning SAP and Oracle takes many thousands of dollars. This limits how many people can effectively learn their product.
+
+Not so with Salesforce. Salesforce as a company offers classes addressing each role and certification through its <a target="_blank" href="http://www.salesforce.com/services-training/training_certification/training.jsp"><strong>Salesforce University</strong> (<a target="_blank" href="https://twitter.com/SalesforceU">@SalesforceU</a>). For example, $3,750 for the 5-day course.
+PROTIP: Spending several days strait sitting in a class may seem like "drinking from a firehose".
+
+But <a href="#Trailhead">Salesforce Trailhead</a> on-line training is both in-depth and offered free, with <strong>unlimited time on servers</strong>. This has enabled Salesforce users to be among the best trained of any software ecosystem.
+
+### Get Trailhead Training Account
+
+1. Obtain a Trailhead account for FREE tutorials with unlimited server time:
+
+   <a target="_blank" href="https://developer.salesforce.com/trailhead">
+   https://developer.salesforce.com/trailhead</a> 
+
+2. Click the green "Sign Up" button at the upper-right corner or "Start learning for free" in the middle of the screen.
+
+3. Click "Google" to use your Gmail or "LinkedIn" to use your LinkedIn.com account. Alternately, create a password within Salesforce:
+
+   PROTIP: Sign up for Trailhead with a <strong>personal Gmail account</strong> instead of company email so you'll be able to sign in no matter where you work in the future.
+
+4. Check "Remember me" to have the browser remember your account name (not password).
+
+   ![sf-trailhead-menu-656x93-14546](https://user-images.githubusercontent.com/300046/43597098-4ef1c3ba-963e-11e8-91b5-180ab59f41b0.jpg)
+
+5. Click "Trailmixes". Each Trailmix recommends a sequence of single web pages and Trailhead modules.
+
+6. Scroll down to click <a target="_blank" href="https://trailhead.salesforce.com/users/00550000006yDdKAAU/trailmixes/get-started-with-trailhead-end-user">Get started with Trailhead</a>. Here a summary of what you'll learn taking it:
+
+   ### How Trailhead works
+
+   Learning topics are organized into <strong>modules</strong>, which are broken up into <strong>units</strong>. 
+
+   <strong>Trails</strong> group modules to provide guided learning paths suited to specific roles or needs.
+
+   Earn <strong>points</strong> when you finish each unit by completing a quiz or challenge in a Salesforce org. If you answer wrong, less points are earned for each additional attempt.
+
+   Trailhead tutorials are great because of their quizzes (challenges).
+
+   "Challenges" gives you a set of requirements that you have to figure out how to meet on your own.
+   A project lays out step-by-step instructions for you to follow, then validates that you did everything correctly.
+
+   More points get you higher <a target="_blank" href="https://trailhead.salesforce.com/en/trailblazer-ranks">rank</a>.
+
+   Projects and <a href="#Superbadges">superbadges</a> challenge you to implement a feature or solution in an org (a Trailhead Playground) without step-by-step instructions.
+
+7. Begin your first Trailhead module:
+
+   <a name="TrailheadBasic"></a>
+
+   <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_basics">Trailhead Module: Trailhead Basics</a>
+
 <a name="Topics"></a>
 
 ## Topics of conversation
+
+If you are stuck, first see if someone asked questions.
 
 Trailhead offers this selection of product interests for "Answers":
 <img alt="sf-trailhead-product-interests-386x271-24542.jpg" width="386" src="https://user-images.githubusercontent.com/300046/43539050-f9c092f8-9580-11e8-9205-1908cc2db8b7.jpg">
@@ -159,185 +216,9 @@ https://success.salesforce.com/answers?feedtype=RECENT&criteria=BESTANSWERS">htt
 * Trailhead Challenges
 * Other products
 
+   You will learn how to work with each of the above in various Trailhead modules.
+
 TODO: Personas?
-
-   You will learn how to work with each of the above in Trailhead.
-
-## Free Trailhead training
-
-Most other software companies try to make the most money they can by putting their training material behind a paywall. So learning SAP and Oracle takes many thousands of dollars. This limits how many people can effectively learn their product.
-
-Not so with Salesforce. Salesforce as a company offers classes addressing each role and certification through its <a target="_blank" href="http://www.salesforce.com/services-training/training_certification/training.jsp"><strong>Salesforce University</strong> (<a target="_blank" href="https://twitter.com/SalesforceU">@SalesforceU</a>). For example, $3,750 for the 5-day course.
-PROTIP: Spending several days strait sitting in a class may seem like "drinking from a firehose".
-
-But <a href="#Trailhead">Salesforce Trailhead</a> on-line training is both in-depth and offered free, with <strong>unlimited time on servers</strong>. This has enabled Salesforce users to be among the best trained of any software ecosystem.
-
-### Get Trailhead Training Account
-
-1. Obtain a Trailhead account for FREE tutorials with unlimited server time:
-
-   <a target="_blank" href="https://developer.salesforce.com/trailhead">
-   https://developer.salesforce.com/trailhead</a> 
-
-2. Click the green "Sign Up" button at the upper-right corner or "Start learning for free" in the middle of the screen.
-
-3. Click "Google" to use your Gmail or "LinkedIn" to use your LinkedIn.com account. Alternately, create a password within Salesforce:
-
-   PROTIP: Sign up for Trailhead with a <strong>personal Gmail account</strong> instead of company email so you'll be able to sign in no matter where you work in the future.
-
-4. Check "Remember me" to remember your account name (not password).
-
-   ![sf-trailhead-menu-656x93-14546](https://user-images.githubusercontent.com/300046/43597098-4ef1c3ba-963e-11e8-91b5-180ab59f41b0.jpg)
-
-5. Click "Trailmixes". Each Trailmix recommends a sequence of single web pages and Trailhead modules.
-
-6. Scroll down to click <a target="_blank" href="https://trailhead.salesforce.com/users/00550000006yDdKAAU/trailmixes/get-started-with-trailhead-end-user">Get started with Trailhead</a>. Here a summary of what you'll learn taking it:
-
-   ### How Trailhead works
-
-   Learning topics are organized into <strong>modules</strong>, which are broken up into <strong>units</strong>. 
-
-   <strong>Trails</strong> group modules to provide guided learning paths suited to specific roles or needs.
-
-   Earn points when you finish each unit by completing a quiz or challenge in a Salesforce org. If you answer wrong, less points are earned for each additional attempt.
-
-   "Challenges" gives you a set of requirements that you have to figure out how to meet on your own.
-   A project lays out step-by-step instructions for you to follow, then validates that you did everything correctly.
-
-   More points get you higher <a target="_blank" href="https://trailhead.salesforce.com/en/trailblazer-ranks">rank</a>.
-
-   Projects and <a href="#Superbadges">superbadges</a> allow you to learn interactively by requiring you to implement a feature or solution in an org (a Trailhead Playground).
-
-7. Begin your first Trailhead module:
-
-   <a name="TrailheadBasic"></a>
-
-   <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_basics">Trailhead Module: Trailhead Basics</a>
-
-
-
-
-
-   <a name="TrailheadBasics"></a>
-   Other beginner Trailhead Modules include:
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/starting_force_com">Module: Salesforce Platform Basics</a> Get introduced to the platform, navigate use cases, and build custom functionality.
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/data_modeling">Module: Data Modeling</a>
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/visualforce_fundamentals">
-   Module: Visualforce Basics</a>
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_playground_management/">Trailhead module: Trailhead Playground Management</a>
-
-   <a name="Superbadges"></a>
-
-   ### Superbadges
-
-   <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges">Superbadges"</a> provide skill-based, domain-level "specialist" credential (to put on resume) by completing modules of real-life business scenario for which you have to build a solution across entire feature areas. 
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_security">Security</a>
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_reports">
-   Reports & Dashboards</a>
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_apex">
-   Apex Specialist</a>
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_aap">
-   Advanced Apex Specialist</a>
-   <br /><br />
-
-   PROTIP: Do the two above as preparation for <a href="#Developer">Developer certification</a>.
-
-   <a name="LightningSuperbadges"></a>
-   
-   ### Lightning superbadges
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lightning_platform_app_builder">
-   Lightning App Customization Specialist</a>
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lcf">
-   Lightning Component Framework Specialist</a>
-   builds a sophisticated app.
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex">
-   Lightning Experience Specialist</a>
-   super-charges interface and process automation.
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex_rollout">Lightning Experience Rollout Specialist</a>
-
-   <a name="SpecialtySuperbadges"></a>
-   
-   ### Specialist superbadges
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_process_automation">
-   Process Automation Specialist</a>
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_business_specialist">
-   Business Administration Specialist</a>
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_integration">
-   Data Integration Specialist</a>
-
-   ### Specialty superbadges
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_analytics_integration_specialist">
-   Einstein Analytics Data Preparation Specialist</a>
-   (Follow <a target="_blank" href="https://twitter.com/SForceAnalytics">@SForceAnalytics</a>)
-   <br /><br />
-
-   <a name="TrailheadPlayground"></a>
-
-## Trailhead Playground
-
-A Trailhead Playground is an org you can use to complete hands on challenges, and try out new features and customizations. It <strong>comes with set of Trailhead-specific data</strong> (a set of sample contacts, etc.) that you can use when completing challenges, and a pre-installed unmanaged package that we use to test your hands-on challenges. Trailhead Playgrounds have some limits, but for the most part they give you the same customization options as a production org. 
-
-PROTIP: Salesforce is great because of its free Trailhead tutorial that are thorough.
-
-PROTIP: For a list of your Hands-on Orgs, go to <a target="_blank" href="https://trailhead.salesforce.com/">https://trailhead.salesforce.com</a>,
-click the picture at the upper-right corner, and select <a target="_blank" href="https://trailhead.salesforce.com/en/users/profiles/settings/">Settings</a>.
-
-Trailhead tutorials are great because of their quizzes (challenges).
-
-
-## Salesforce Lightning UI
-
-Salesforce currently stores data for all product offerings (all SaaS in the cloud) within a single "monolithic" database.
-
-1. Click the "cog" icon to select Setup:
-
-   <img alt="sf-setup-253x186.png" width="253" src="https://user-images.githubusercontent.com/300046/43531842-f56b78e8-956d-11e8-8ce3-66b8cb160d13.png">
-
-   App logos that appear at the upper left should be no larger than 300 pixels wide by 55 pixels high.
-   Adjust the number of colors in .gif or .jpg so they are under the 20kb size limit.
-
-   BTW, <a target="_blank" href="http://encycolorpedia.com/1798c1">
-   Colors in Salesforce screens</a>
-
-   At the upper-left is the App Launcher icon and the current app.
-
-1. Click the app launcher icon for a list of apps:
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/43531384-e10b834e-956c-11e8-9113-3506e009c7ae.png"><img alt="sf-app-launcher-1106x554.png" width="1106" src="https://user-images.githubusercontent.com/300046/43531384-e10b834e-956c-11e8-9113-3506e009c7ae.png"></a>
-
-   Click the picture for a larger image in a new window.
-
-   The "Sales" app is the base CRM (Customer Relationship Management) app.
-
-   PROTIP: CRM (Customer Relationship Management) is the Salesforce company's stock market symbol.
-
-   "Managed apps" are those developed by Salesforce, such as the <a target="_blank" href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB00000009UeX">Dreamhouse" app</a>.
-
-   "AppExchange apps" are developed by 3rd parties, usually an ISV (Independent Software Vendor) Salesforce partners. AppExchange is the name of the marketplace where such apps are available, either free or for a fee. An example of a
-
-1. Scroll down for the "All Items" list:
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/43531745-a9f76656-956d-11e8-950c-6c017c1d1a19.png"><img alt="sf-all-items-843x292.png" src="https://user-images.githubusercontent.com/300046/43531745-a9f76656-956d-11e8-950c-6c017c1d1a19.png"></a>
-
-   Click the picture for a larger image in a new window.
-
-   Items on the page is a mixture of objects and actions.
-
-<hr />
-
-
-
-
-<hr />
 
 
 <a name="Offerings"></a>
@@ -406,9 +287,9 @@ Additionally:
 
 <a name="VersionChangeMgmt"></a>
 
-## Salesforce (CRM) Versions
+## Salesforce Versions
 
-PROTIP: Three releases are planned per year, named by season (avoiding Fall):
+PROTIP: Salesforce has <strong>three releases per year</strong>, named by season (avoiding Fall):
 
 | Force Version | API Version | Release |
 | ----:         | -----: | --: |
@@ -439,6 +320,102 @@ Certification holders must keep taking <a href="https://wilsonmar.github.io/cert
 Join the <a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000001oku">Release Readiness Trailblazers community</a> for resources about each upcoming release.
 
 <hr />
+
+
+   <a name="TrailheadPlayground"></a>
+
+## Trailhead Playground
+
+   You will need an "org" (database) to use which is different than the 
+   <a href="#productiveURL">"productive" (real) environment</a>.
+
+A Trailhead Playground is an org you can use to complete hands on challenges, and try out new features and customizations. It <strong>comes with set of Trailhead-specific data</strong> (a set of sample contacts, etc.) that you can use when completing challenges, and a pre-installed unmanaged package that we use to test your hands-on challenges. Trailhead Playgrounds have some limits, but for the most part they give you the same customization options as a production org. 
+
+PROTIP: Salesforce is great because of its free Trailhead tutorial that are thorough.
+
+PROTIP: For a list of your Hands-on Orgs, go to <a target="_blank" href="https://trailhead.salesforce.com/">https://trailhead.salesforce.com</a>,
+click the picture at the upper-right corner, and select <a target="_blank" href="https://trailhead.salesforce.com/en/users/profiles/settings/">Settings</a>.
+
+1. At the bottom of the Trailhead Module page there is often a blue <strong>"Launch"</strong> button:
+
+   <img alt="sf-trailhead-launch-377x338-30024.jpg" width="377" src="https://user-images.githubusercontent.com/300046/43616777-85b54e8e-967b-11e8-89fc-dd7830386299.jpg">
+
+   PROTIP: Remember to select the Trailhead Playground before clicking the Launch button. You can crate multiple Trailhead Playground by selecting "Create a Trailhead Playground". Over time learners have more than one Playground. 
+
+1. Click Launch for the selected Playground.
+
+   PROTIP: Notice that when in a Playground, the browser's URL is different than the <a href="#productiveURL">"productive" (real) environment</a> (such as "na53"). For example:
+
+   <pre>https://resourceful-moose-263556-dev-ed.lightning.force.com/...</pre>
+
+   At the upper-right corner, there is an avatar instead of your picture because you don't own Playground orgs.
+
+   <img alt="sf-playground-avatar-363x338-26683.jpg" width="363" src="https://user-images.githubusercontent.com/300046/43617177-c870820a-967d-11e8-85c8-65e618968522.jpg">
+
+   ### Add user to Playground
+
+   PROTIP: When you time-out while in a Playground, don't use your Salesforce account credentials to sign back in. Instead, close the page and Launch the Playground again from the Trailhead page.
+
+   Alternately, it may be less annoying if you add yourself as a user in each Playground you use.
+
+1. Click the 
+
+
+   ### Salesforce Lightning UI
+
+   Salesforce currently stores data for all product offerings (all SaaS in the cloud) within a single "monolithic" database.
+
+1. Click the "cog" icon to select Setup:
+
+   <img alt="sf-setup-253x186.png" width="253" src="https://user-images.githubusercontent.com/300046/43531842-f56b78e8-956d-11e8-8ce3-66b8cb160d13.png">
+
+   BTW, app logos that appear at the upper left should be no larger than 300 pixels wide by 55 pixels high.
+   Adjust the number of colors in .gif or .jpg so they are under the 20kb size limit.
+
+   BTW, <a target="_blank" href="http://encycolorpedia.com/1798c1">
+   Colors in Salesforce screens</a>
+
+   At the upper-left is the App Launcher icon and the current app.
+
+1. Click the app launcher icon for a list of apps and items.
+
+1. Scroll down for the "All Items" list:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/43531745-a9f76656-956d-11e8-950c-6c017c1d1a19.png"><img alt="sf-all-items-843x292.png" src="https://user-images.githubusercontent.com/300046/43531745-a9f76656-956d-11e8-950c-6c017c1d1a19.png"></a>
+
+   Click the picture above here for a larger image in a new window.
+
+   Items on the page is a mixture of objects and actions.
+
+1. Scroll back up to the top of the pop-up.
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/43531384-e10b834e-956c-11e8-9113-3506e009c7ae.png"><img alt="sf-app-launcher-1106x554.png" width="1106" src="https://user-images.githubusercontent.com/300046/43531384-e10b834e-956c-11e8-9113-3506e009c7ae.png"></a>
+
+   Click the picture above here for a larger image in a new window.
+
+   The "Sales" app is the base CRM (Customer Relationship Management) app.
+   PROTIP: CRM (Customer Relationship Management) is the Salesforce company's stock market symbol. CRM is the main offering from Salesforce as a company.
+
+   The apps shown on this page are <strong>"Managed apps"</strong> developed by Salesforce itself. 
+
+   <strong>"AppExchange apps"</strong> are developed by 3rd parties, usually an ISV (Independent Software Vendor) Salesforce partners. AppExchange is the name of the marketplace where such apps are available, either free or for a fee. 
+
+## Adding apps to Trailhead 
+
+We next look into adding one of each to your Trailhead Playground.
+
+I got confused with the <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_playground_management/units/install-apps-and-packages-in-your-trailhead-playground">Install Apps and Packages in Your Trailhead Playground</a> unit of the <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_playground_management/">Trailhead module: Trailhead Playground Management</a>. So I offer this explanation:
+
+   zxxx
+
+
+, such as the <a target="_blank" href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB00000009UeX">Dreamhouse" app</a>.
+
+
+
+
+
+
 
 
 <a name="AppExchange"></a>
@@ -656,6 +633,69 @@ PROTIP: Drive a lot? Listen to voice-only podcasts while commuting:
 
    * PODCAST: The Quotable Sales Podcast by Quotable.com since July 2016 on <a target="_blank" href="https://itunes.apple.com/us/podcast/quotable-podcast-learn-from/id1132258307?mt=2">iTunes</a> and <a target="_blank" href="https://play.google.com/music/listen?u=0#/ps/I6pcs6jawpetsbyhp5qaf42ahmy">Google Play</a>.
 
+
+
+## Other beginner Trailhead Modules
+
+   <a name="TrailheadBasics"></a>
+   Other beginner Trailhead Modules include:
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/starting_force_com">Module: Salesforce Platform Basics</a> Get introduced to the platform, navigate use cases, and build custom functionality.
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/data_modeling">Module: Data Modeling</a>
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/modules/visualforce_fundamentals">
+   Module: Visualforce Basics</a>
+
+   <a name="Superbadges"></a>
+
+### Superbadges
+
+   <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges">Superbadges"</a> provide skill-based, domain-level "specialist" credential (to put on resume) by completing modules of real-life business scenario for which you have to build a solution across entire feature areas. 
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_security">Security</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_reports">
+   Reports & Dashboards</a>
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_apex">
+   Apex Specialist</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_aap">
+   Advanced Apex Specialist</a>
+   <br /><br />
+
+   PROTIP: Do the two above as preparation for <a href="#Developer">Developer certification</a>.
+
+   <a name="LightningSuperbadges"></a>
+   
+   ### Lightning superbadges
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lightning_platform_app_builder">
+   Lightning App Customization Specialist</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lcf">
+   Lightning Component Framework Specialist</a>
+   builds a sophisticated app.
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex">
+   Lightning Experience Specialist</a>
+   super-charges interface and process automation.
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex_rollout">Lightning Experience Rollout Specialist</a>
+
+   <a name="SpecialtySuperbadges"></a>
+   
+   ### Specialist superbadges
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_process_automation">
+   Process Automation Specialist</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_business_specialist">
+   Business Administration Specialist</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_integration">
+   Data Integration Specialist</a>
+
+   ### Specialty superbadges
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_analytics_integration_specialist">
+   Einstein Analytics Data Preparation Specialist</a>
+   (Follow <a target="_blank" href="https://twitter.com/SForceAnalytics">@SForceAnalytics</a>)
+   <br /><br />
 
 
 ## People behind Trailhead
