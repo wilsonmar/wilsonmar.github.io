@@ -276,7 +276,7 @@ Salesforce.org for non-profits:
    * <a target="_blank" href="https://www.youtube.com/watch?v=iBrS2LrJ-vo&list=PLU8xqF8ZASbXWAHIF0SB1P9_3G4vvRMXI">How-to series on YouTube</a>
 
 
-### Communities
+## Communities
 
 * <a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000HTp1">
    Salesforce DX</a> (Developer eXchange)
@@ -284,6 +284,38 @@ Salesforce.org for non-profits:
 * <a target="_blank" href="https://salesforce.stackexchange.com/">https://salesforce.stackexchange.com</a>
 
 * Follow <a target="_blank" href="https://www.linkedin.com/showcase/salesforce-developers/">Salesforce Developers on Linkedin</a>
+
+### Trailhead communities
+
+<a target="_blank" href="https://success.salesforce.com/0F9300000001omnCAA">Trailblazer Community Corner</a>
+
+<a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYiAAO">Sales Cloud</a>
+
+<a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYBAA4">Sales Cloud Best Practices</a>
+
+<a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYkAAO">Marketing Cloud</a>
+
+<a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDZGAA4">Community Cloud</a>
+
+<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A0000004gQJSAY">Financial Services Cloud Community</a>
+
+<a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z3A000002vaXWQAY">
+Service Cloud</a>
+
+<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000001ocxCAA">Nonprofits using Salesforce</a>
+
+<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000001qUiCAI">Pardot B2B Marketing Automation</a>
+
+<a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYqAAO">
+Einstein Analytics</a>
+
+<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F930000000PT4SCAW">Heroku Enthusiasts</a>
+
+<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000DGi3SAG">Commerce Cloud (Demandware)</a>
+
+<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000Lf1ZSAS">Salefsforce Health Cloud</a>
+
+<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000LgciSAC">Quip</a>
 
 
 ## Events (Meet people)
@@ -375,38 +407,15 @@ Take <a target="_blank" href="https://trailhead.salesforce.com/modules/get_ready
 <a target="_blank" href="https://salesforcestore.com/"><img align="right" alt="sf-keychain-150x150-6434.jpg" src="https://user-images.githubusercontent.com/300046/43412209-ba197162-93e9-11e8-8028-193144aeb840.jpg"></a>
 Miss being at a Salesforce event? Buy the branded clothing, office supplies, electronics, all 129 products for sale at <a target="_blank" href="https://salesforcestore.com/">https://salesforcestore.com</a>
 
+## Innovation
 
-## Trailhead communities
+5 Stages:
 
-<a target="_blank" href="https://success.salesforce.com/0F9300000001omnCAA">Trailblazer Community Corner</a>
-
-<a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYiAAO">Sales Cloud</a>
-
-<a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYBAA4">Sales Cloud Best Practices</a>
-
-<a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYkAAO">Marketing Cloud</a>
-
-<a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDZGAA4">Community Cloud</a>
-
-<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A0000004gQJSAY">Financial Services Cloud Community</a>
-
-<a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z3A000002vaXWQAY">
-Service Cloud</a>
-
-<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000001ocxCAA">Nonprofits using Salesforce</a>
-
-<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000001qUiCAI">Pardot B2B Marketing Automation</a>
-
-<a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYqAAO">
-Einstein Analytics</a>
-
-<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F930000000PT4SCAW">Heroku Enthusiasts</a>
-
-<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000DGi3SAG">Commerce Cloud (Demandware)</a>
-
-<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000Lf1ZSAS">Salefsforce Health Cloud</a>
-
-<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000LgciSAC">Quip</a>
+1. Define an innovation project and the key stakeholders you’ll involve.
+2. Discover the needs and opportunities of your customer.
+3. Dare to imagine a bold solution to fulfill your customers’ needs.
+4. Do the work to rapidly demonstrate the validity of your concept and how it will work.
+5. Drive momentum to ensure adoption and growth of your vision.
 
 
 <a name="WorkWithMe"></a>

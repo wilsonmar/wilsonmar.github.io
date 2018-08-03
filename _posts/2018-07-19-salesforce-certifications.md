@@ -82,6 +82,8 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
 
    Other maintenance exams will migrate to Trailhead by Feburary, 2019. See <a target="_blank" href="http://certification.force.com/pkb/articles/Public_KB/FAQ-Changes-to-Certification-Maintenance">Exam FAQ</a>.
 
+   * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/maintain-your-salesforce-certifications">Maintain Your Salesforce Certification</a> [2 hrs]
+
 <hr />
 
 <a name="Salespeople"></a>
@@ -90,11 +92,19 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
 
 <a target="_blank" href="http://certification.salesforce.com/SG_AccreditedSalesProfessional.pdf">Official PDF -  Salesforce Accredited Sales Professional</a>
 
+To prepare:
+
+   * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/build-your-sales-career">Build Your Sales Career</a> [1 hr 50 mins]
+
+
 <a name="Marketing"></a>
 
 ### Marketing certification
 
 <a target="_blank" href="http://certification.salesforce.com/marketingcloudconsultant">Salesforce Certified Marketing Cloud Consultant</a>
+
+   * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/personalize_customer_journeys_marketing_cloud">Get to Know Marketing Cloud</a>
+   [1 hr 30 mins]
 
 <a target="_blank" href="http://certification.salesforce.com/marketingcloudsocialspe">Salesforce Certified Marketing Cloud Social Specialist</a>
 
@@ -180,6 +190,10 @@ Follow on Twitter:
 
 * <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedCommerceCloudDigitalDeveloper.pdf">Official PDF -  Salesforce Certified Commerce Cloud Digital Developer
 
+   * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/learn-about-the-role-of-commerce-cloud-functional-architect">Commerce Cloud Functional Architect</a>
+   * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/develop-for-commerce-cloud">Develop for Commerce Cloud</a>
+   * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/cc-overview">Sell Everywhere with Commerce Cloud</a>
+
 * <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformAppBuilder.pdf">Official PDF -  Salesforce Certified Platform App Builder 
 
 Some exam resources address content for both courses:
@@ -232,7 +246,13 @@ These are $200 each, addressing each product line (except Knowledge Cloud, Marke
 
 * <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedSalesCloudConsultant.pdf">Official PDF -  Salesforce Certified Sales Cloud Consultant</a>
 
+   * <a target="_blank" href="https://trailhead.salesforce.com/trails/discover-sales-cloud">Trail: Discover Sales Cloud</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/trails/drive-sales-with-operational-excellence">Trail: Drive Sales with Operational Excellence</a>
+
 * <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedServiceCloudConsultant.pdf">Official PDF -  Salesforce Certified Service Cloud Consultant</a>
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/trails/service_develop">Trail: Discover Advanced Service Cloud Features</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/trails/discover-service-for-small-business-with-service-cloud-essentials">Trail: Discover Service for Small Business with Service Cloud Essentials</a>
 
 * <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedCommunityCloudConsultant.pdf">Official PDF -  Salesforce Certified Community Cloud Consultant</a>
 
@@ -246,6 +266,8 @@ These are $200 each, addressing each product line (except Knowledge Cloud, Marke
    o Contract, entitlements, and warranty
    o Mobility
    o Quoting and invoicing
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/trails/field_service">Trail: Get on the Road with Field Service Lightning</a>
 
 * <a target="_blank" href="http://certification.salesforce.com/pardotconsultant">
 Salesforce Certified Pardot Consultant</a>

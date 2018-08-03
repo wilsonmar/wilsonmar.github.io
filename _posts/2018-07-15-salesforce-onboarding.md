@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Salesforce onboarding (for developers)"
+title: "Salesforce onboarding"
 excerpt: "Get up and running on the various Salesforce domains in clouds"
 tags: [salesforce]
 file: salesforce-onboarding.md
@@ -29,7 +29,7 @@ providing you advice available nowhere else.
 Salesforce uses the word "cloud" to brand offering to different <strong>industries</strong> and interests.
 
    * Analytic Cloud - Business intelligence and analytics software solutions with the "Einstein" brand
-   * Commerce Cloud</a> engages shoppers for e-commerce, with order management
+   * Commerce Cloud engages shoppers for e-commerce, with order management
    * <a target="_blank" href="http://certification.salesforce.com/communitycloud">Commmunity Cloud</a> - Connect customers, partners, and employees
    * <a target="_blank" href="http://certification.salesforce.com/salescloud">Sales Cloud</a> - Complete CRM customer service solutions
    * Government Cloud
@@ -326,6 +326,9 @@ Certification holders must keep taking <a href="https://wilsonmar.github.io/cert
 
 Join the <a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000001oku">Release Readiness Trailblazers community</a> for resources about each upcoming release.
 
+   * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/sf_release_prep">Prepare for Salesforce Releases</a>
+   [5 hrs 40 mins]
+
 <hr />
 
 
@@ -598,8 +601,7 @@ By Nathan Totten
 
 ## IDEs and Editors
 
-https://success.salesforce.com/issues_index?tag=Eclipse%20IDE">
-Eclipse IDE Known Issues</a>
+<a target="_blank" href="https://success.salesforce.com/issues_index?tag=Eclipse%20IDE">Eclipse IDE Known Issues</a>
 
 Welkin's Suite 
 
@@ -653,7 +655,9 @@ I recommend that you use Google Authenticator instead so you only need to have o
 1. Press the link.
 2. Type a 4-digit passcode.   
 
+   * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/identity">Secure Identity and Access Management</a> [3 hrs 55 mins]
 
+   * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/shield">Secure Your Apps with Salesforce Shield</a> [4 hrs 5 mins]
 
 <a name="Podcasts"></a>
 
