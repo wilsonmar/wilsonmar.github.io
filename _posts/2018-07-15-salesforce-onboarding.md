@@ -193,7 +193,13 @@ But <a href="#Trailhead">Salesforce Trailhead</a> on-line training is both in-de
 
 5. Click "Trailmixes". Each Trailmix recommends a sequence of single web pages and Trailhead modules.
 
-6. Scroll down to click <a target="_blank" href="https://trailhead.salesforce.com/users/00550000006yDdKAAU/trailmixes/get-started-with-trailhead-end-user">Get started with Trailhead</a>. Here a summary of what you'll learn taking it:
+6. Scroll down to click <a target="_blank" href="https://trailhead.salesforce.com/users/00550000006yDdKAAU/trailmixes/get-started-with-trailhead-end-user">Get started with Trailhead</a>. 
+
+7. Begin your first Trailhead module:
+
+   <a name="TrailheadBasic"></a>
+
+   <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_basics">Trailhead Module: Trailhead Basics</a>
 
    ### How Trailhead works
 
@@ -208,15 +214,11 @@ But <a href="#Trailhead">Salesforce Trailhead</a> on-line training is both in-de
    "Challenges" gives you a set of requirements that you have to figure out how to meet on your own.
    A project lays out step-by-step instructions for you to follow, then validates that you did everything correctly.
 
+   PROTIP: Before you begin answering quiz questions, to avoid needing to having your answers wiped away becuase you timed out, make sure you're logged by pressing the browser <strong>Refresh</strong> icon or pressing command+R on the Mac or Ctrl+R on Windows PCs.
+
    More points get you higher <a target="_blank" href="https://trailhead.salesforce.com/en/trailblazer-ranks">rank</a>.
 
    Projects and <a href="#Superbadges">superbadges</a> challenge you to implement a feature or solution in an org (a Trailhead Playground) without step-by-step instructions.
-
-7. Begin your first Trailhead module:
-
-   <a name="TrailheadBasic"></a>
-
-   <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_basics">Trailhead Module: Trailhead Basics</a>
 
 <a name="Topics"></a>
 
