@@ -434,7 +434,7 @@ To add a managed app such as the Salesforce <a target="_blank" href="https://log
 
    What we want is to install in a Playground domain.
 
-1. Copy the part of the URL string AFTER the domain (such as "na31.lightning.force.com/" in the example). The string extracted is:
+1. Highlight and copy (to your invisible operating system Clipboard) the part of the URL string AFTER the domain, for example extract:
 
    <pre>packagingSetupUI/ipLanding.app?apvId=04tB00000009UeX</pre>
 
