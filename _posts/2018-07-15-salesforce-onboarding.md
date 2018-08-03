@@ -225,7 +225,7 @@ But <a href="#Trailhead">Salesforce Trailhead</a> on-line training is both in-de
 
    <img alt="sf-questions-238x48-4407.jpg" width="238" src="https://user-images.githubusercontent.com/300046/43619809-ce1fbef0-968c-11e8-8e07-b6d8c4e46352.jpg">
 
-2. Click "Help each other". Trailhead offers this selection of product interests for "Answers". Note the web page is in the Trailblazer Community Success Cloud URL<br /><a target="_blank" href="
+2. Click "Help each other". Trailhead offers this selection of product interests for "Answers". Note the web page is in the Trailblazer Community Success Cloud URL <a target="_blank" href="
 https://success.salesforce.com/answers?feedtype=RECENT&criteria=BESTANSWERS">https://success.salesforce.com/answers</a>
 
    * Collaboration

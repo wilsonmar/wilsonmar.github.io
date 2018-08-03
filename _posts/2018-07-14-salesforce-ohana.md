@@ -110,9 +110,66 @@ The company has seen a consistent growth rate of 35% year-over-year, which is un
    * The prediction was for a buyout/merger with Oracle, where Salesforce CEO Benoiff had worked.
    <br /><br />
 
+* <a target="_blank" href="https://trailhead.salesforce.com/trail/innovation_salesforce_way">Trail: Innovation the Salesforce Way</a> [4 hrs 20 mins]
+
 Salesforce, as a company, pioneered the 1:1:1 model, donating one percent of its time, equity, and product to non-profit organizations via the <a target="_blank" href="http://www.salesforcefoundation.org/">salesforcefoundation.org</a>
 
-<a target="_blank" href="https://www.glassdoor.com/Job/jobs.htm?suggestCount=0&suggestChosen=true&clickSource=searchBtn&typedKeyword=sales&sc.keyword=Salesforce&locT=&locId=&jobType=">Salesforce jobs at Glassdoor</a>
+   * <a target="_blank" href="https://www.glassdoor.com/Reviews/Salesforce-Reviews-E11159.htm">Employee reviews on Glassdoor</a> mention concern with work-life balance.
+
+
+## Personas
+
+<a target="_blank" href="https://trailhead.salesforce.com/modules/ux-personas-for-salesforce">Trailhead module: UX Personas for Salesforce</a> [1 hr 10 min] 
+
+A "persona" represents a group of users clustered based on shared behavior, motivations, goals, pain points, or other characteristics. A persona is an archetype that represents a group of users clustered based on shared behaviors, motivations, goals, pain points, or other characteristics. During the design and development process, persona categories stand in for key user groups when making decisions about your product, by representing major differences between groups. Personas can be useful for building empathy and making the users seem real. Effective personas are created based on <a target="_blank" href="https://trailhead.salesforce.com/module/ux-research-basics"> research</a> and <a target="_blank" href="https://developer.salesforce.com/files/ux-personas-ServiceCloudPersonaSurvey.pdf">surveys (pdf)</a> to ensure that they reflect the real people who use your product.<a target="_blank" href="https://www.amazon.com/Essential-Persona-Lifecycle-Building-Personas/dp/0123814189/">*</a>  
+Personas should be based on general work tasks users perform in their roles, rather than just what they do in Salesforce. 
+
+<a target="_blank" href="https://developer.salesforce.com/files/ux-personas-sales-personas.pdf">PDF: Sales Persona</a>:
+
+   * Data Expert
+   * Deal Closer
+   * Pipeline Builder
+   * Sales Leader
+   * Trusted Advisor
+   <br /><br />
+
+<a target="_blank" href="https://developer.salesforce.com/files/ux-personas-service-personas.pdf">PDF: Service Persona</a>
+
+   * Service Admin
+   * Case Solver
+   * Expert Agent
+   * Team Leader
+   * Trusted Advisor
+   <br /><br />
+
+<a target="_blank" href="https://developer.salesforce.com/files/marketing.pdf">PDF: Marketing Persona</a>
+
+   * Designer-Developer
+   * IT Services
+   * Marketing Manager
+   * Marketing Specialist
+   * Strategic Leader
+   <br /><br />
+
+<a target="_blank" href="https://developer.salesforce.com/files/community-persona-cards.pdf">PDF: Community Persona</a>
+
+   * Community End User
+   * Community Manager
+   * Community Admin
+   * Community Builder
+   <br /><br />
+
+
+### Development Lifecycle Roles
+
+In a smaller company, one person can wear many hats, but in a larger company, specialized roles define what each person is responsible for. Logical roles include the following:
+
+* <strong>Release manager</strong> manages the release schedule and coordinates releases with the business. The release manager could be in charge of pulling changes from version control.
+* <strong>Product manager</strong> provides the business requirements of apps and features, and works with the development team to implement those requirements. The product manager also performs user acceptance testing to ensure that requirements have been implemented.
+* <strong>Software developer</strong> develops new functionality in sandbox, including both declarative point-and-click development and code.
+* <strong>Quality engineer</strong> tests new functionality in sandbox.
+* <strong>Administrator</strong> performs administrative tasks in the production org, and tracks all changes made in production.
+* <strong>Trainer</strong> conducts training of company employees for new applications and features.
 
 
 ## Jobs
@@ -127,21 +184,19 @@ providing detailed breakdowns of salaries by job role, location, and so much mor
 https://www.masonfrank.com/salesforce-salary-survey/">
 https://www.masonfrank.com/salesforce-salary-survey/</a>
 
-  * <a target="_blank" href="https://www.masonfrank.com/search?query=remote&location%5B%5D=3871">Recruiting agency Mason Frank's Salesforce jobs page</a>
+   * <a target="_blank" href="https://www.masonfrank.com/search?query=remote&location%5B%5D=3871">Recruiting agency Mason Frank's Salesforce jobs page</a>
 
-  * <a target="_blank" href="http://careers.force.com/jobs/">http://careers.force.com/jobs</a> lists jobs inside Salesforce. Applicants use workday.com.
+   * <a target="_blank" href="http://careers.force.com/jobs/">http://careers.force.com/jobs</a> lists jobs inside Salesforce. Applicants use workday.com.
 
-  * <a target="_blank" href="https://www.indeed.com/jobs?q=Salesforce&l=remote">Indeed</a> aggregates jobs on several websites
+   * <a target="_blank" href="https://www.indeed.com/jobs?q=Salesforce&l=remote">Indeed</a> aggregates jobs on several websites
 
-  * <a target="_blank" href="https://www.glassdoor.com/Reviews/Salesforce-Reviews-E11159.htm">
-  Salesforce company reviews at Glassdoor</a>
+   * <a target="_blank" href="https://www.glassdoor.com/Job/jobs.htm?suggestCount=0&suggestChosen=true&clickSource=searchBtn&typedKeyword=sales&sc.keyword=Salesforce&locT=&locId=&jobType=">Salesforce jobs at Glassdoor</a>
 
-  * <a target="_blank" href="https://www.linkedin.com/company/salesforce/jobs/">LinkedIn jobs</a>
+   * <a target="_blank" href="https://www.linkedin.com/company/salesforce/jobs/">LinkedIn jobs</a>
 
-  * <a target="_blank" href="https://stackoverflow.com/jobs?sort=i&q=salesforce">Stackoverflow Jobs</a>
+   * <a target="_blank" href="https://stackoverflow.com/jobs?sort=i&q=salesforce">Stackoverflow Jobs</a>
 
-  * Consulting Partners and ISVs (Independent Software Vendors)
-
+   * Consulting Partners and ISVs (Independent Software Vendors)
 
 
 <a name="Social"></a>
@@ -165,6 +220,7 @@ https://www.masonfrank.com/salesforce-salary-survey/</a>
 
    * <a target="_blank" href="https://trailhead.salesforce.com/modules/chatter">
    Trailhead Module: Chatter Administration for Salesforce Classic</a>
+
 
 ### Salesforce employee teams
 
@@ -351,36 +407,6 @@ Einstein Analytics</a>
 <a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000Lf1ZSAS">Salefsforce Health Cloud</a>
 
 <a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000LgciSAC">Quip</a>
-
-
-## Personas
-
-<a target="_blank" href="https://trailhead.salesforce.com/modules/ux-personas-for-salesforce">Trailhead module: UX Personas for Salesforce</a> [1 hr 10 min] 
-
-A "persona" represents a group of users clustered based on shared behavior, motivations, goals, pain points, or other characteristics. Categories stand in for key user groups when making decisions about your product, by representing major differences between groups. Personas can be useful for building empathy and making the users seem real. Effective personas are created based on <a target="_blank" href="https://trailhead.salesforce.com/module/ux-research-basics"> research</a> and <a target="_blank" href="https://developer.salesforce.com/files/ux-personas-ServiceCloudPersonaSurvey.pdf">surveys (pdf)</a> to ensure that they reflect the real people who use your product. 
-Personas should be based on general work tasks users perform in their roles, rather than just what they do in Salesforce. 
-
-   * https://developer.salesforce.com/files/ux-personas-fivewspersonas.pdf
-   * https://developer.salesforce.com/files/ux-personas-sales-personas.pdf
-   * https://developer.salesforce.com/files/ux-personas-service-personas.pdf
-   * https://developer.salesforce.com/files/marketing.pdf
-   * https://developer.salesforce.com/files/community-persona-cards.pdf\
-
-See book: https://www.amazon.com/Essential-Persona-Lifecycle-Building-Personas/dp/0123814189/
-
-* https://trailhead.salesforce.com/trail/innovation_salesforce_way
-
-
-### Development Lifecycle Roles
-
-In a smaller company, one person can wear many hats, but in a larger company, specialized roles define what each person is responsible for. Logical roles include the following:
-
-* <strong>Release manager</strong> manages the release schedule and coordinates releases with the business. The release manager could be in charge of pulling changes from version control.
-* <strong>Product manager</strong> provides the business requirements of apps and features, and works with the development team to implement those requirements. The product manager also performs user acceptance testing to ensure that requirements have been implemented.
-* <strong>Software developer</strong> develops new functionality in sandbox, including both declarative point-and-click development and code.
-* <strong>Quality engineer</strong> tests new functionality in sandbox.
-* <strong>Administrator</strong> performs administrative tasks in the production org, and tracks all changes made in production.
-* <strong>Trainer</strong> conducts training of company employees for new applications and features.
 
 
 <a name="WorkWithMe"></a>
