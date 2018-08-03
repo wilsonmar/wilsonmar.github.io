@@ -425,18 +425,22 @@ To add a managed app such as the Salesforce <a target="_blank" href="https://log
 
    ![sf-install-dreamhouse-648x414-38763](https://user-images.githubusercontent.com/300046/43645276-9ee7e10a-96ee-11e8-9976-2e0d8ac85bd2.jpg)
 
-   Notice the URL has a "productive" domain name for doing real work:
+   Notice the URL has a "productive" domain name for doing real work, separated from the rest of the URL in this example:
 
-   <pre>https://na31.lightning.force.com/packagingSetupUI/ipLanding.app?apvId=04tB00000009UeX</pre>
+   <pre>https://na31.lightning.force.com/
+   packagingSetupUI/ipLanding.app?apvId=04tB00000009UeX</pre>
 
    PROTIP: Don't click on the blue "Install" button or the app will install in the wrong domain.
 
    What we want is to install in a Playground domain.
 
-1. Copy the part of the URL string AFTER the domain, "na31.lightning.force.com/" in the example.
-1. Exit out that page.
+1. Copy the part of the URL string AFTER the domain (such as "na31.lightning.force.com/" in the example). The string extracted is:
 
-1. Switch back to the Playground.
+   <pre>packagingSetupUI/ipLanding.app?apvId=04tB00000009UeX</pre>
+
+1. Exit out from that browser window.
+
+1. Switch back to the Playground window.
 1. Press command+R to refresh the screen to make sure the session is still active.
 1. Construct the URL necessary by pasting it after the Playground domain name, such as:
 
