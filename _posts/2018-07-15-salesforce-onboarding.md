@@ -92,18 +92,19 @@ Salesforce, as a company, owns these domain names (some product offerings have t
 
 Before we go anywhere, know that it is not cheap to run Salesforce in production.
 
-At http://www.salesforce.com/crm/editions-pricing.jsp
-note DE has Enterprise capabilities, more powerful than the Professional Edition.
+Each level license has different support SLAs.
+See <a target="_blank" href="http://www.salesforce.com/crm/editions-pricing.jsp">http://www.salesforce.com/crm/editions-pricing.jsp</a>
 
-* Essentials (for small business) 1-800-667-6389
+* Developer Edition (DE) is free, yet has Enterprise capabilities. But cannot deploy anything into production (in "productive use").
+
+   PROTIP: Those with this license test deployments to production by deploying to another free test org.
+
+* Essentials (for small business) 1-800-667-6389 is the lowest cost, at $1,200 a month
 * Contact Manager
 * Group 
 * Professional
-* Enterprise
+* Enterprise is more powerful than the Professional Edition.
 * Unlimited
-* Developer Edition (DE)
-
-Each level has different support SLAs.
 
 For example, Salesforce Enterprise customers can open up tunnels and share data with each other. Cool. It’s EDI for the masses.
 
@@ -244,7 +245,7 @@ https://success.salesforce.com/answers?feedtype=RECENT&criteria=BESTANSWERS">htt
    * Sales & Marketing
    * Security
    * Social Marketing
-   * Trailhead Challenges
+   * <strong>Trailhead Challenges</strong>
    * Additional products
 
    You will learn how to work with each of the above in various Trailhead modules.
@@ -254,7 +255,6 @@ https://success.salesforce.com/answers?feedtype=RECENT&criteria=BESTANSWERS">htt
 
    <img alt="sf-trailhead-product-interests-386x271-24542.jpg" width="386" src="https://user-images.githubusercontent.com/300046/43539050-f9c092f8-9580-11e8-9205-1908cc2db8b7.jpg">
 
-TODO: Personas?
 
 
 <a name="Offerings"></a>
@@ -332,7 +332,7 @@ Join the <a target="_blank" href="https://success.salesforce.com/_ui/core/chatte
 <hr />
 
 
-   <a name="TrailheadPlayground"></a>
+<a name="TrailheadPlayground"></a>
 
 ## Trailhead Playground
 
@@ -402,10 +402,10 @@ click the picture at the upper-right corner, and select <a target="_blank" href=
 
    Click the picture above here for a larger image in a new window.
 
+   The list apps shown above are <strong>"Managed apps"</strong> developed by Salesforce itself. 
+
    The "Sales" app is the base CRM (Customer Relationship Management) app.
    PROTIP: CRM (Customer Relationship Management) is the Salesforce company's stock market symbol. CRM is the main offering from Salesforce as a company.
-
-   The apps shown on this page are <strong>"Managed apps"</strong> developed by Salesforce itself. 
 
    <strong>"AppExchange apps"</strong> are developed by 3rd parties, usually an ISV (Independent Software Vendor) Salesforce partners. AppExchange is the name of the marketplace where such apps are available, either free or for a fee. 
 
@@ -417,19 +417,19 @@ I got confused with the <a target="_blank" href="https://trailhead.salesforce.co
 
 To add a managed app such as the Salesforce <a target="_blank" href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB00000009UeX">Dreamhouse" app</a>:
 
-1. In a new browser window, go to the package home:
+1. In a new browser window, go to the "home page" for the Dreamhouse managed package:
 
    <a target="_blank" href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB00000009UeX">https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB00000009UeX</a>
 
-   Notice the domain name, such as:
+   ![sf-install-dreamhouse-648x414-38763](https://user-images.githubusercontent.com/300046/43645276-9ee7e10a-96ee-11e8-9976-2e0d8ac85bd2.jpg)
+
+   Notice the URL has a "productive" domain name for doing real work:
 
    <pre>https://na31.lightning.force.com/packagingSetupUI/ipLanding.app?apvId=04tB00000009UeX</pre>
 
-   The above URL is a "productive" domain name for doing real work.
-
-   What we want to install in a Playground domain.
-
    PROTIP: Don't click on the blue "Install" button or the app will install in the wrong domain.
+
+   What we want is to install in a Playground domain.
 
 1. Copy the part of the URL string AFTER the domain, "na31.lightning.force.com/" in the example.
 1. Exit out that page.
@@ -439,6 +439,8 @@ To add a managed app such as the Salesforce <a target="_blank" href="https://log
 1. Construct the URL necessary by pasting it after the Playground domain name, such as:
 
    <pre>https://resourceful-moose-263556-dev-ed.lightning.force.com/packagingSetupUI/ipLanding.app?apvId=04tB00000009UeX</pre>
+
+   PROTIP: This "hack" works because somehow Salesforce treats the URL as a "declarative" statement of what is desired rather than as a usual read-only request URL.
 
 1. Press Enter.
 1. Now click Install.
@@ -458,7 +460,7 @@ To add a managed app such as the Salesforce <a target="_blank" href="https://log
 
 <a name="AppExchange"></a>
 
-## AppExchange Tools
+## AppExchange 3rd-Party Tools
 
 https://appexchange.salesforce.com/appxHome
 
@@ -467,8 +469,6 @@ https://appexchange.salesforce.com/appxHome
 * Ultra Field History Tracker @UFHTAuditTool ‏since June 2018 is an advanced SFDC field history tracking app supporting both standard and custom objects, unlimited fields, forever retention WITHOUT consuming data storage.
 
 * <a target="_blank" href="https://www.linkedin.com/pulse/introducing-wsproxy-salesforce-marketing-cloud-eliot-harper/">WSProxy for Salesforce Marketing Cloud</a> July 17, 2018 by Eliot Harper offers scripting support through AMPscript and Server-Side JavaScript (or SSJS) scripting languages.
-
-Eugene Oksman (@oksman (https://twitter.com/oksman) and Akhilesh Gupta (@akhileshgupta (https://twitter.com/akhileshgupta)) lead the Mobile SDK team at Salesforce.com, searching for the best ways to help developers create mobile apps for the enterprise.
 
 * Salesforce data loading tools, web services, middleware (such as Dell Boomi, Informatica, etc.)
 
@@ -636,6 +636,8 @@ The brand name first appeared in 2014.
    * <a target="_blank" href="https://itunes.apple.com/us/app/dreamoji/id1294827604?mt=8">
    Dreamoji iOS</a> app provides a custom keyboard containing various Salesforce characters as emojis.
 
+Eugene Oksman (@oksman (https://twitter.com/oksman) and Akhilesh Gupta (@akhileshgupta (https://twitter.com/akhileshgupta)) lead the Mobile SDK team at Salesforce.com, searching for the best ways to help developers create mobile apps for the enterprise.
+
 Trailhead tutorial modules:
 
    * <a target="_blank" href="https://trailhead.salesforce.com/modules/salesforce1_mobile_app">
@@ -674,7 +676,9 @@ PROTIP: Drive a lot? Listen to voice-only podcasts while commuting:
 
 
 
-## Other beginner Trailhead Modules
+## More Trailhead Learning
+
+### Other beginner Trailhead Modules
 
    <a name="TrailheadBasics"></a>
    Other beginner Trailhead Modules include:
