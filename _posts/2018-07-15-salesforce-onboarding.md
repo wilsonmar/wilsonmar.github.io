@@ -221,18 +221,20 @@ But <a href="#Trailhead">Salesforce Trailhead</a> on-line training is both in-de
    More points get you higher <a target="_blank" href="https://trailhead.salesforce.com/en/trailblazer-ranks">rank</a>.
    Ranger is the highest rank, requiring <strong>50,000 points</strong> from at least 100 badges.
 
-
-   ### Pace yourself
+   ### Plan to Pace Yourself
 
    Here's an example of a progression:
 
    | Trail/Project | Hours | Points |
    | ----- | ---: | -----: |
    | Intro. to Trailhead | 2 | 500 |
+   | <a target="_blank" href="https://trailhead.salesforce.com/modules/starting_force_com">Module: Salesforce Platform Basics</a> Get introduced to the platform, navigate use cases, and build custom functionality. | 2 | 300 |
    | Admin Intro. Trail | 9 | 10,200 |
+   | <a target="_blank" href="https://trailhead.salesforce.com/modules/data_modeling">Module: Data Modeling</a> | - | - |
+   | <a target="_blank" href="https://trailhead.salesforce.com/modules/visualforce_fundamentals">Module: Visualforce Basics</a> | - | - |
    | Admin Intermediate Trail | 5.9 | 8,200 |
    | Take Admin 1 exam | - | - |
-   | Advanced Admin exam | - | - |
+   | Advanced Admin Trail | - | - |
    | Take Advanced Admin exam | - | - |
    | Developer Beginner Trail | 15 | 19,400 |
    | Developer Intermediate Trail | 10 | 8,100 |
@@ -711,17 +713,6 @@ PROTIP: Drive a lot? Listen to voice-only podcasts while commuting:
 
 ## More Trailhead Learning
 
-### Other beginner Trailhead Modules
-
-   <a name="TrailheadBasics"></a>
-   Other beginner Trailhead Modules include:
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/starting_force_com">Module: Salesforce Platform Basics</a> Get introduced to the platform, navigate use cases, and build custom functionality.
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/data_modeling">Module: Data Modeling</a>
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/visualforce_fundamentals">
-   Module: Visualforce Basics</a>
 
    <a name="Superbadges"></a>
 

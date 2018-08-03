@@ -94,8 +94,8 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
 
 To prepare:
 
-   * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/build-your-sales-career">Build Your Sales Career</a> [1 hr 50 mins]
-
+   * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/build-your-sales-career">Build Your Sales Career</a> [1 hr 50 mins] in 4 modules.
+   Sales reps at Salesforce practice <a target="_blank" href="https://www.salesforce.com/quotable/articles/how-salesforce-does-prospecting/?d=7010M000000Npfh">"strategic prospecting"</a> based on a program developed by JBarrows Sales Training.
 
 <a name="Marketing"></a>
 
@@ -236,8 +236,6 @@ Other exam prep. offerings:
    by Inspiring Generations Academy
 
 
-
-
 <a name="SolutionConsultant"></a>
 
 ### Solution Consultant certification
@@ -315,26 +313,6 @@ The highest level of certification costs $6,000 plus travel to a Salesforce offi
 * <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedTechnicalArchitect.pdf">Official PDF -  Salesforce Certified Technical Architect - Review Board</a>
 
 <hr />
-
-## Pace yourself
-
-Here's an example of a progression:
-
-   | Trail/Project | Hours | Points |
-   | ----- | ---: | -----: |
-   | Admin Intro. Trail | 9 | 10,200 |
-   | Admin Intermediate Trail | 5.9 | 8,200 |
-   | Take Admin 1 exam | - | - |
-   | Developer Beginner Trail | 15 | 19,400 |
-   | Developer Intermediate Trail | 10 | 8,100 |
-   | Developer Trail - Mobile SDK | 6.8 | 3,000 |
-   | <a href="#ConfApp">Build a Conference Management App</a> | 3 |  550 |
-   | <a href="#SuggestionApp"> Build Suggestion Box App</a> | 1.9 | ? |
-   | Quick Start: <a href="#Lightning">Lightning</a> Components | 0.5 | 150 |
-   | Quick Connect: Lightning Connect | 0.3 | 100 |
-   | Total: | 50 | 45,000 |
-
-
 
 ## More about Salesforce #
 
