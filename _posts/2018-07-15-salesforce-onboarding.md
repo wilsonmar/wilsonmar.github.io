@@ -430,7 +430,7 @@ To add a managed app such as the Salesforce <a target="_blank" href="https://log
    <pre>https://na31.lightning.force.com/
    packagingSetupUI/ipLanding.app?apvId=04tB00000009UeX</pre>
 
-   PROTIP: Don't click on the blue "Install" button or the app will install in the wrong domain.
+   PROTIP: Don't click on the blue "Install" button or the app will install in the wrong domain ("na31" in the example above).
 
    What we want is to install in a Playground domain.
 
