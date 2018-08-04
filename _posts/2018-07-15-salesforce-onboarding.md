@@ -326,7 +326,8 @@ https://success.salesforce.com/answers?feedtype=RECENT&criteria=BESTANSWERS">htt
    * Social Marketing
    * <strong>Trailhead Challenges</strong>
    * Additional products
-
+   <br />
+   
    You will learn how to work with each of the above in various Trailhead modules.
 
 1. Click "Trailhead Challenges".
@@ -730,13 +731,13 @@ PROTIP: Drive a lot? Listen to voice-only podcasts while commuting:
    * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_reports">
    Reports & Dashboards</a>
 
+   PROTIP: These two are preparation for <a href="#Developer">Developer certification</a>:
+
    * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_apex">
    Apex Specialist</a>
    * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_aap">
    Advanced Apex Specialist</a>
    <br /><br />
-
-   PROTIP: Do the two above as preparation for <a href="#Developer">Developer certification</a>.
 
    <a name="LightningSuperbadges"></a>
    

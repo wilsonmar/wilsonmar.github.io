@@ -207,6 +207,20 @@ https://www.masonfrank.com/salesforce-salary-survey/</a>
 
 ## Stay Informed on Social Media
 
+<a name="Podcasts"></a>
+
+### Podcasts
+
+PROTIP: Drive a lot? Listen to voice-only podcasts while commuting:
+
+   * <a target="_blank" href="https://salesforce.com/marketingcloudcast/">The Marketing Cloudcast</a> has 99+ episodes since Oct. 2016 <a target="_blank" href="https://play.google.com/music/listen?u=0#/ps/I6pcs6jawpetsbyhp5qaf42ahmy">
+   on Google Play</a>. It "offers key marketing campaign tactics, popular trends, interviews with marketing leaders, and relevant insights — such as social media stats and data management strategies in marketing today. Hosts Megan Collins ( @CollinsMeMegan) and Tina Rozul (@crozul) dive into topics such as performance on individual marketing channels, marketing career advice, the future of marketing, and beyond. 
+
+   * PODCAST about presenters at Salesforce Dreamforce conferences: <a target="_blank" href="https://www.salesforce.com/blog/2017/07/blazing-trails-a-new-salesforce-podcast.html">Blazing Trails</a> since July 2017 <a target="_blank" href="https://itunes.apple.com/us/podcast/blazing-trails/id1259579050?mt=2">on iTunes</a> and <a target="_blank" href="https://soundcloud.com/blazingtrailspodcast">SoundCloud.com</a>.
+
+   * PODCAST: The Quotable Sales Podcast by Quotable.com since July 2016 on <a target="_blank" href="https://itunes.apple.com/us/podcast/quotable-podcast-learn-from/id1132258307?mt=2">iTunes</a> and <a target="_blank" href="https://play.google.com/music/listen?u=0#/ps/I6pcs6jawpetsbyhp5qaf42ahmy">Google Play</a>.
+
+
 ### Salesforce employee teams
 
 Salesforce Developer Relations Team of evangelists:
@@ -390,7 +404,7 @@ Partner-sponsored parties and events also take place all week long.
 
 <strong>Dreamfest</strong> is the party of the conference, featuring incredible live music, food, and drinks. In 2017 it was held at AT&T Park with Alicia Keys and Lenny Kravitz.
 
-Hackathon
+Hackathon?
 
 Take <a target="_blank" href="https://trailhead.salesforce.com/modules/get_ready_for_dreamforce_prepare_most_exciting_event_year">Trailhead Module: Dreamforce Ready</a> [30 mins] to learn why Dreamforce is the must-attend event of the year and develop your game plan.
 
@@ -398,7 +412,7 @@ Take <a target="_blank" href="https://trailhead.salesforce.com/modules/get_ready
 
 ![sf-mascots-648x425-98567](https://user-images.githubusercontent.com/300046/43673576-9d8f42e6-9782-11e8-8cdc-7442e646554b.jpg)
 
-The "NO SOFTWARE" mascotm called Sassy, is the original mascot for Salesforce.
+The "NO SOFTWARE" mascot called Sassy is the original mascot for Salesforce.
 
 Astro, created by Rochelle Truong in 2015, is a racoon in a spacesuit.
 
