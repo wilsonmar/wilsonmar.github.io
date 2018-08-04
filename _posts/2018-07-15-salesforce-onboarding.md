@@ -172,7 +172,8 @@ Most other software companies try to make the most money they can by putting the
 Not so with Salesforce. Salesforce as a company offers classes addressing each role and certification through its <a target="_blank" href="http://www.salesforce.com/services-training/training_certification/training.jsp"><strong>Salesforce University</strong> (<a target="_blank" href="https://twitter.com/SalesforceU">@SalesforceU</a>). For example, $3,750 for the 5-day course.
 PROTIP: Spending several days strait sitting in a class may seem like "drinking from a firehose".
 
-But <a href="#Trailhead">Salesforce Trailhead</a> on-line training is both in-depth and offered free, with <strong>unlimited time on servers</strong>. This has enabled Salesforce users to be among the best trained of any software ecosystem.
+<a href="#Trailhead">Salesforce Trailhead</a> on-line training is both in-depth and offered free, with <strong>unlimited time on servers</strong>. This has enabled Salesforce users to be among the best trained of any software ecosystem.
+
 
 ### Get Trailhead Training Account
 
@@ -180,6 +181,8 @@ But <a href="#Trailhead">Salesforce Trailhead</a> on-line training is both in-de
 
    <a target="_blank" href="https://developer.salesforce.com/trailhead">
    https://developer.salesforce.com/trailhead</a> 
+
+   <img align="right" alt="sf-trailhead-logo-100x87.png" src="https://user-images.githubusercontent.com/300046/43672913-f4546384-9775-11e8-8ec8-e0b730b7b9f3.png">
 
 2. Click the green "Sign Up" button at the upper-right corner or "Start learning for free" in the middle of the screen.
 
@@ -195,7 +198,9 @@ But <a href="#Trailhead">Salesforce Trailhead</a> on-line training is both in-de
 
 6. Scroll down to click <a target="_blank" href="https://trailhead.salesforce.com/users/00550000006yDdKAAU/trailmixes/get-started-with-trailhead-end-user">Get started with Trailhead</a>. 
 
-7. Begin your first Trailhead module:
+7. Click the Link to read a Medium.co article about Trailhead and Trailblazers.
+
+8. Begin your first Trailhead module:
 
    <a name="TrailheadBasic"></a>
 
@@ -219,7 +224,12 @@ But <a href="#Trailhead">Salesforce Trailhead</a> on-line training is both in-de
    Projects and <a href="#Superbadges">superbadges</a> challenge you to implement a feature or solution in an org (a Trailhead Playground) without step-by-step instructions.
 
    More points get you higher <a target="_blank" href="https://trailhead.salesforce.com/en/trailblazer-ranks">rank</a>.
-   Ranger is the highest rank, requiring <strong>50,000 points</strong> from at least 100 badges.
+   "Ranger" is the highest rank, requiring <strong>50,000 points</strong> from at least 100 badges. <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23TrailheadRanger&src=typd">#TrailheadRanger</a>
+
+   There are enough course for <a target="_blank" href="https://trailhead.salesforce.com/en/me/preeharris">Preethi Harris</a> to reach <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23DoubleRanger&src=typd">#DoubleRanger</a>
+
+   PROTIP: You can create <a target="_blank" href="https://trailhead.salesforce.com/en/users/005500000061uyuAAA/trailmixes/new">your own custom trailmix</a> on <a target="_blank" href="https://trailhead.salesforce.com/mytrailhead/">myTrailhead</a>, in different languages.
+
 
    ### Plan to Pace Yourself
 
@@ -668,15 +678,11 @@ The brand name first appeared in 2014.
    * On <a target="_blank" href="https://itunes.apple.com/us/app/social-studio/id840173798?mt=8">
    iOS device install Social Studio app</a>
 
-   * <a target="_blank" href="https://itunes.apple.com/us/app/dreamoji/id1294827604?mt=8">
-   Dreamoji iOS</a> app provides a custom keyboard containing various Salesforce characters as emojis.
+Eugene Oksman (@oksman (https://twitter.com/oksman) and Akhilesh Gupta (@akhileshgupta (https://twitter.com/akhileshgupta)) lead the Mobile SDK team at Salesforce.com.
 
-Eugene Oksman (@oksman (https://twitter.com/oksman) and Akhilesh Gupta (@akhileshgupta (https://twitter.com/akhileshgupta)) lead the Mobile SDK team at Salesforce.com, searching for the best ways to help developers create mobile apps for the enterprise.
+On Trailhead:
 
-Trailhead tutorial modules:
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/salesforce1_mobile_app">
-   Trailhead Module: Salesforce Mobile App Customization</a>
+   * Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/modules/salesforce1_mobile_app">Salesforce Mobile App Customization</a>
 
 
 ### Salesforce Authenticator

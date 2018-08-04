@@ -16,9 +16,9 @@ comments: true
 {% include _toc.html %}
 
 "Ohana" is the Hawaiian word for "family". Salesforces uses the hash tag \#SalesforceOhana 
-to describe the inclusive culture it aims to foster. Thus the Hawaiian music and decorations.
+to describe the inclusive culture it aims to foster. Thus the Hawaiian decorations and musician at events.
 
-Here are steps and information for those new to Salesforce to get "plugged in" quickly yet fully.
+This page presents steps and information for those new to Salesforce to get "plugged in" quickly yet fully.
 
 <a name="Glossary"></a>
 
@@ -29,9 +29,7 @@ Here are steps and information for those new to Salesforce to get "plugged in" q
 
    "SFDC" is an acronym for "Salesforce dot com".
 
-* <a target="_blank" href="https://quizlet.com/_52b1qw/">My quizlet on Salesforce Terms</a>
-
-   Please let me know if you see any terms missing.
+* <a target="_blank" href="https://quizlet.com/_52b1qw/">My quizlet on Salesforce Terms</a>. Please let me know if you see any terms missing.
 
 * <a target="_blank" href="https://quizlet.com/216046018/salesforce-admin-flash-cards/">Quizlet on Saleforce Admin quiz</a> 
 
@@ -67,11 +65,11 @@ Marc Benioff has this (from Gartner) on his Twitter header picture:
 
    ![salesforce-market-share-1500x500](https://user-images.githubusercontent.com/300046/43361208-59796650-9286-11e8-919d-bdfd0b5937b7.jpg)
 
-* Gartner says "Salesforce leads market share with 16% in 2013 vs. SAP with 13%, and Oracle with 10%."
+Gartner says "Salesforce leads market share with 16% in 2013 vs. SAP with 13%, and Oracle with 10%."
 
-   Salesforce/Force.com seem to be more attractive to <strong>mid-market</strong> customers than SAP and Oracle. And smaller companies tend to more flexible about all work being done on-site.
+PROTIP: Salesforce/Force.com seem to be more attractive to <strong>mid-market</strong> customers than SAP and Oracle. And smaller companies tend to more flexible about all work being done on-site.
 
-The competitors are:
+The top competitors to Salesforce are:
 
 * SAP
 * Oracle
@@ -84,11 +82,9 @@ The competitors are:
 
 ## Locations
 
-Salesforce buildt the tallest building in San Francisco.
+Salesforce buildt the tallest building in San Francisco, a few feet taller than the Eiffel Tower in Paris.
 
 ![sf-tallest-648x558-65050](https://user-images.githubusercontent.com/300046/43551978-2ffdeb20-95a6-11e8-92c3-c919dee9811b.jpg)
-
-It's a few feet taller than the Eiffel Tower in Paris.
 
 It's built on top of former landfill in an earthquake-prone area.
 But it's certified LEED Platinum -- the highest rating in the US.
@@ -96,9 +92,9 @@ But it's certified LEED Platinum -- the highest rating in the US.
 It's part of a whole downtown re-development that includes the Salesforce Transit Center under a 5 acre park.
 
 
-<a name="LaborDemand"></a>
+<a name="Financials"></a>
 
-## Labor Demand
+## Financials
 
 Salesforce has not been profitable, but its market value (stock price x shares) is growing.
 The company has seen a consistent growth rate of 35% year-over-year, which is unrivaled in the stock market:
@@ -110,11 +106,7 @@ The company has seen a consistent growth rate of 35% year-over-year, which is un
    * The prediction was for a buyout/merger with Oracle, where Salesforce CEO Benoiff had worked.
    <br /><br />
 
-* <a target="_blank" href="https://trailhead.salesforce.com/trail/innovation_salesforce_way">Trail: Innovation the Salesforce Way</a> [4 hrs 20 mins]
-
-Salesforce, as a company, pioneered the 1:1:1 model, donating one percent of its time, equity, and product to non-profit organizations via the <a target="_blank" href="http://www.salesforcefoundation.org/">salesforcefoundation.org</a>
-
-   * <a target="_blank" href="https://www.glassdoor.com/Reviews/Salesforce-Reviews-E11159.htm">Employee reviews on Glassdoor</a> mention concern with work-life balance.
+* Trail: <a target="_blank" href="https://trailhead.salesforce.com/trail/innovation_salesforce_way">Innovation the Salesforce Way</a> [4 hrs 20 mins]
 
 
 ## Personas
@@ -178,15 +170,11 @@ https://medium.com/trailhead/huge-demand-for-salesforce-talent-3bb30c597b39
 
 DISCUSSIONS: <a target="_blank" href="https://developer.salesforce.com/forums/#!/feedtype=RECENT&dc=Jobs_Board&criteria=ALLQUESTIONS">Jobs Board</a>
 
-Mason Frank International, a recruiter, publishes a report each year about the Salesforce ecosystem,
-providing detailed breakdowns of salaries by job role, location, and so much more.
-<a target="_blank" href="
+Mason Frank International, a recruiter, publishes a report each year about the Salesforce ecosystem, providing detailed breakdowns of salaries by job role, location, and so much more. See <a target="_blank" href="
 https://www.masonfrank.com/salesforce-salary-survey/">
 https://www.masonfrank.com/salesforce-salary-survey/</a>
 
    * <a target="_blank" href="https://www.masonfrank.com/search?query=remote&location%5B%5D=3871">Recruiting agency Mason Frank's Salesforce jobs page</a>
-
-   * <a target="_blank" href="http://careers.force.com/jobs/">http://careers.force.com/jobs</a> lists jobs inside Salesforce. Applicants use workday.com.
 
    * <a target="_blank" href="https://www.indeed.com/jobs?q=Salesforce&l=remote">Indeed</a> aggregates jobs on several websites
 
@@ -198,10 +186,11 @@ https://www.masonfrank.com/salesforce-salary-survey/</a>
 
    * Consulting Partners and ISVs (Independent Software Vendors)
 
+### Jobs inside Salesforce
 
-<a name="Social"></a>
+   * <a target="_blank" href="http://careers.force.com/jobs/">http://careers.force.com/jobs</a> lists jobs inside Salesforce. Applicants use workday.com.
 
-## Stay Informed on Social Media
+   * <a target="_blank" href="https://www.glassdoor.com/Reviews/Salesforce-Reviews-E11159.htm">Employee reviews on Glassdoor</a> mention concern with work-life balance.
 
 ### Skills in LinkedIn profile
 
@@ -214,13 +203,9 @@ https://www.masonfrank.com/salesforce-salary-survey/</a>
    You can also add skills from the Suggested skills based off your profile options that are provided.
 
 
-<a name="Chatter"></a>
+<a name="Social"></a>
 
-### Chatter
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/modules/chatter">
-   Trailhead Module: Chatter Administration for Salesforce Classic</a>
-
+## Stay Informed on Social Media
 
 ### Salesforce employee teams
 
@@ -270,13 +255,23 @@ Salesforce Certification Group:
 
 Salesforce.org for non-profits:
 
+Salesforce, as a company, pioneered the <strong>1:1:1 model</strong>, donating one percent of its time, equity, and product to non-profit organizations via the <a target="_blank" href="http://www.salesforcefoundation.org/">salesforcefoundation.org</a>
+
+
    * http://www.salesforce.org/contact-us/ to join mailing list
    * <a target="_blank" href="https://twitter.com/SalesforceOrg">@SalesforceOrg</a>
    * https://www.instagram.com/SalesforceOrg/
    * <a target="_blank" href="https://www.youtube.com/watch?v=iBrS2LrJ-vo&list=PLU8xqF8ZASbXWAHIF0SB1P9_3G4vvRMXI">How-to series on YouTube</a>
 
 
-## Communities
+<a name="Chatter"></a>
+
+### Chatter
+
+   * Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/modules/chatter">Chatter Administration for Salesforce Classic</a>
+
+
+### Communities
 
 * <a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000HTp1">
    Salesforce DX</a> (Developer eXchange)
@@ -323,16 +318,14 @@ Einstein Analytics</a>
 <a target="_blank" href="https://developer.salesforce.com/calendar">https://developer.salesforce.com/calendar</a>
 is where you find and register for events.
 
-TrailheadDX (Developer eXperience)
-
-   * #TDX18 
+TrailheadDX (Developer eXperience), <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23TDX18&src=typd">#TDX18</a>
 
 World Tour
 
   * There is a mobile app (by Debra Nacimento) for the Salesforce World Tour.
 
 <a name="Lightning"></a>
-Lightning Now Tour to a city near you in 2018
+Lightning Now Tour at a city near you in 2017 and 2018
 
    * <a target="_blank" href="bit.ly/lightning-now-sales-admin">Lightning Now Tour for Sales Admins</a>
 
@@ -362,7 +355,7 @@ Local Meetups
 
    * Recorded vidoes sessions are on the <a target="_blank" href="https://www.youtube.com/user/salesforce">Salesforce YouTube channel</a>.
 
-   * Use #DF17, #DF18, etc. on Twitter, Instagram, and other social media.
+   * <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23DF18&src=typd">#DF18 on Twitter</a>, Instagram, and other social media.
 
 Agenda Builder
 
@@ -401,6 +394,31 @@ Hackathon
 
 Take <a target="_blank" href="https://trailhead.salesforce.com/modules/get_ready_for_dreamforce_prepare_most_exciting_event_year">Trailhead Module: Dreamforce Ready</a> [30 mins] to learn why Dreamforce is the must-attend event of the year and develop your game plan.
 
+### Mascots
+
+![sf-mascots-648x425-98567](https://user-images.githubusercontent.com/300046/43673576-9d8f42e6-9782-11e8-8cdc-7442e646554b.jpg)
+
+The "NO SOFTWARE" mascotm called Sassy, is the original mascot for Salesforce.
+
+Astro, created by Rochelle Truong in 2015, is a racoon in a spacesuit.
+
+The goat is called Cloudy.
+
+Einstein is the mascot of the <a target="_blank" href="https://www.salesforce.com/products/einstein/overview/">Salesforce Artificial Intelligence platform</a>. BTW, the likeness to Albert Einstein is owned by Hebrew University in Israel.
+
+The bear is called Codey.
+
+The owl is called Appy. And it's a she.
+
+<!-- ![sf-mascots-appy-980x492](https://user-images.githubusercontent.com/300046/43673518-ad0d8a3a-9781-11e8-9b3a-35281a8d5ad9.png -->
+
+See <a target="_blank" href="https://www.slideshare.net/salesforceeng/hit-the-trail-with-trailhead/">Kim Shain's slidedeck</a>.
+
+### Dreamoji
+
+The Dreamoji app provides a custom keyboard containing Salesforce emojis you can insert into messages, tweets, etc.
+
+On <a target="_blank" href="https://itunes.apple.com/us/app/dreamoji/id1294827604?mt=8">iOS</a>, search for Dreamoji.
 
 ### Store
 
