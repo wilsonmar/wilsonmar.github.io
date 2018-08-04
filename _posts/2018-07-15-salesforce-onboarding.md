@@ -67,6 +67,7 @@ Many of the "cloud" offerings all share the same "salesforce.com" domain name.
 
 When Salesforce acquires other companies, it tends to fold acquired users into Salesforce domains, then automatically reroute requests to previous domains to Salesforce.com. Examples: 
 
+   * <a target="_blank" href="http://www.appexchange.com/">AppExchange.com</a> redirects to appexchange.salesforce.com
    * <a target="_blank" href="http://www.database.com/">Database.com</a> redirects to the Salesforce Platform page
    * <a target="_blank" href="http://www.developerforce.com/">Developerforce.com</a> redirects to<br /><a target="_blank" href="https://developer.salesforce.com/">https://developer.salesforce.com</a>
    * <a target="_blank" href="https://www.site.com/">Site.com</a> is redirected to <br />https://www.salesforce.com/products/platform/overview/
@@ -109,6 +110,15 @@ Salesforce, as a company, owns these domain names (some product offerings have t
    * <a target="_blank" href="https://pardot.com">Pardot.com</a> [<a target="_blank" href="https://trust.pardot.com/">status</a>]
    * <a target="_blank" href="https://www.quip.com/">Quip.com</a> "a Salesforce company" has APIs to enable automation of processes, integration, and <strong>collabortion</strong> with any app.
 
+### Github repos:
+
+Salesforce employees maintain these accounts within (now Microsoft's) GitHub.com:
+
+   * https://github.com/salesforcelabs/
+   * https://github.com/forcedotcom/
+   * https://github.com/salesforce-ux/
+   * https://github.com/financialforcedev/
+   * https://github.com/SalesforceFoundation by http://www.salesforce.org/nonprofit/nonprofit-success-pack/  tools to help manage programs, donations, volunteers, and supporters.
 
 <a name="Editions"></a>
 
