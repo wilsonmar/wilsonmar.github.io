@@ -166,6 +166,8 @@ In a smaller company, one person can wear many hats, but in a larger company, sp
 
 ## Jobs
 
+   * <a target="_blank" href="https://success.salesforce.com/search?type=Jobs&keywords=lightning">Jobs listed within the Salesforce Trailblazer Community</a>
+
 https://medium.com/trailhead/huge-demand-for-salesforce-talent-3bb30c597b39
 
 DISCUSSIONS: <a target="_blank" href="https://developer.salesforce.com/forums/#!/feedtype=RECENT&dc=Jobs_Board&criteria=ALLQUESTIONS">Jobs Board</a>

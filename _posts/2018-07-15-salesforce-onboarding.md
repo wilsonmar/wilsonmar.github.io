@@ -641,6 +641,26 @@ https://appexchange.salesforce.com/appxHome
 
    Even if you already have Enterprise Edition, Unlimited Edition, or Performance Edition, use Developer Edition for developing, staging, and testing your solutions against sample data to protect your org’s live data, especially for applications that insert, update, or delete data (as opposed to just reading data).
 
+   ### Clear fresh developer edition org
+
+   From <a target="_blank" href="https://apex-commons.github.io/remove-code-from-fresh-salesforce-org/">here</a>
+
+1. Go to Setup | Administration Setup | Manage Users | Profiles | System Administrator
+1. Click Edit
+1. Under “Custom App Settings”, change the “Default” to something other than Force.com
+1. Click Save
+1. Go to Setup | App Setup | Create | Apps
+1. Delete Force.com
+1. Go to Setup | App Setup | Create | Tabs
+1. Delete “Start Here”
+1. Go to Setup | App Setup | Develop | Pages
+1. Delete “Start Here”
+1. Go to Setup | App Setup | Develop | Classes
+1. Delete startHereController and XMLDom.
+
+Now you can https://apex-commons.github.io/contribute/
+
+
 ## Developer Console
 
 https://trailhead.salesforce.com/en/modules/developer_console">
