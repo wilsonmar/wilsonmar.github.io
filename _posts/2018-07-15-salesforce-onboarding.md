@@ -81,12 +81,13 @@ Salesforce, as a company, owns these domain names (some product offerings have t
 
    * <a target="_blank" href="https://www.salesforce.com/">Salesforce.com</a> [<a target="_blank" href="https://status.salesforce.com/">status</a>]
 
-      * https://login.salesforce.com
-      * https://help.salesforce.com
-      * https://develop.salesforce.com
+      * https://login.salesforce.com/
+      * https://help.salesforce.com/
+      * https://develop.salesforce.com/
+      * https://appexchange.salesforce.com/
       <br /><br />
 
-   * <a target="_blank" href="https://www.Force.com/"> Force.com</a> is the domain used by Trailhead and <a target="_blank" href="https://www.similarweb.com/website/force.com#websiteContent">other segments</a>:
+   * <a target="_blank" href="https://www.Force.com/"> Force.com</a> is the "platform" domain used by Trailhead and <a target="_blank" href="https://www.similarweb.com/website/force.com#websiteContent">other segments</a>:
 
       * https://???.content.force.com/
       * https://???.secure.force.com/
@@ -288,7 +289,7 @@ PROTIP: Spending several days strait sitting in a class may seem like "drinking 
 
    You can change the default option+` (back tick) activation key sequence.
 
-   I like the proper British female voice "Kate", who is like Mary Poppins reading to me.
+   PROTIP: I like the proper British female voice "Kate", who is like Mary Poppins reading to me. For some reason, I am less distracted by minor pronouciation imperfections by American voices rather than the Queen's English.
 
    ![macos-speech-kate-317x117](https://user-images.githubusercontent.com/300046/43554819-eb2c8c32-95b3-11e8-852e-dfd4cc712f47.jpg)
 
@@ -581,7 +582,7 @@ To add a managed app such as the Salesforce <a target="_blank" href="https://log
 1. Press command+R to refresh the screen to make sure the session is still active.
 1. Construct the URL necessary by pasting it after the Playground domain name, such as:
 
-   <pre>https://resourceful-moose-263556-dev-ed.lightning.force.com/packagingSetupUI/ipLanding.app?apvId=04tB00000009UeX</pre>
+   <tt>https://resourceful-moose-263556-dev-ed.lightning.force.com/packagingSetupUI/ipLanding.app?apvId=04tB00000009UeX</tt>
 
    PROTIP: This "hack" works because somehow Salesforce treats the URL as a "declarative" statement of what is desired rather than as a usual read-only request URL.
 
