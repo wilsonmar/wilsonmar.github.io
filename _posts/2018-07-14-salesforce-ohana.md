@@ -61,7 +61,7 @@ For developers, Salesforce provides an easy and fast way to create apps:
 
 ### Competitors in CRM
 
-Marc Benioff has this (from Gartner) on his Twitter header picture:
+<a target="_blank" href="https://twitter.com/Benioff">Marc @Benioff's Twitter</a> header picture has this (from Gartner):
 
    ![salesforce-market-share-1500x500](https://user-images.githubusercontent.com/300046/43361208-59796650-9286-11e8-919d-bdfd0b5937b7.jpg)
 
@@ -329,8 +329,10 @@ Einstein Analytics</a>
 
 ## Events (Meet people)
 
-<a target="_blank" href="https://developer.salesforce.com/calendar">https://developer.salesforce.com/calendar</a>
-is where you find and register for events.
+<a target="_blank" href="https://developer.salesforce.com/calendar">https://developer.salesforce.com/calendar</a> is where you find and register for events.
+
+   * <a target="_blank" href="https://twitter.com/hashtag/SalesforceTour?src=hash">#SalesforceTour</a>
+   <br /><br />
 
 TrailheadDX (Developer eXperience), <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23TDX18&src=typd">#TDX18</a>
 

@@ -69,9 +69,11 @@ Salesforce, as a company, owns these domain names (some product offerings have t
 
    * <a target="_blank" href="https://www.salesforce.com/">Salesforce.com</a> [<a target="_blank" href="https://status.salesforce.com/">status</a>]
 
-   * <a target="_blank" href="https://www.Force.com/"> Force.com</a>
-    runs underneath SaaS, and is categorized as a PaaS (Platform as a Service) service
-    which generalizes the coding in CRM for use in other user domains.
+   * <a target="_blank" href="https://www.Force.com/"> Force.com</a> is the domain used by Trailhead and other segments:
+
+      * https://veterans.force.com/
+      <br />
+
    * <a target="_blank" href="https://salesforceiq.com">Salesforceiq.com</a> [<a target="_blank" href="https://status.salesforceiq.com/">status</a>]
    * <a target="_blank" href="https://salesforce.org/">Salesforce.org</a> for non-profits
 
@@ -288,11 +290,13 @@ Here are some sample profiles from among my list of <a target="_blank" href="htt
    https://trailhead.salesforce.com/en/me/wilsonmar</a>
 
 Each profile includes how many trailhead modules and trails completed,
-and the points earned. It doesn't list certifications exams passed.
-
-Those who have been designated as a "MVP" by Salesforce also get identified in their profile.
+and the points earned. Skills distribution by category:
 
 ![sf-trailhead-cat-304x308-24442](https://user-images.githubusercontent.com/300046/43572325-7aa3ef20-95fc-11e8-99cf-391341ff6d8b.jpg)
+
+Profiles don't list certifications exams passed.
+
+QUESTION: Those who have been designated as a "MVP" by Salesforce also get identified in their profile?
 
 
 <a name="Topics"></a>
@@ -326,7 +330,7 @@ https://success.salesforce.com/answers?feedtype=RECENT&criteria=BESTANSWERS">htt
    * Social Marketing
    * <strong>Trailhead Challenges</strong>
    * Additional products
-   <br />
+   <br /><br />
    
    You will learn how to work with each of the above in various Trailhead modules.
 
@@ -434,6 +438,8 @@ click the picture at the upper-right corner, and select <a target="_blank" href=
 
 1. Click Launch for the selected Playground.
 
+   PROTIP: To quickly shift between tabs on a browser, use keyboard shortcut keys <strong>control+tab</strong> and control+shift+tab on the Mac.
+
    PROTIP: Notice that when in a Playground, the browser's URL is different than the <a href="#productiveURL">"productive" (real) environment</a> (such as "na53"). For example:
 
    <pre>https://resourceful-moose-263556-dev-ed.lightning.force.com/...</pre>
@@ -443,6 +449,8 @@ click the picture at the upper-right corner, and select <a target="_blank" href=
    <img alt="sf-playground-avatar-363x338-26683.jpg" width="363" src="https://user-images.githubusercontent.com/300046/43617177-c870820a-967d-11e8-85c8-65e618968522.jpg">
 
    PROTIP: When you time-out while in a Playground, don't use your Salesforce account credentials to sign back in. Instead, close the page and Launch the Playground again from the Trailhead page.
+
+   You can <a target="_blank" href="https://trailhead.salesforce.com/en/modules/trailhead_playground_management/units/get-your-trailhead-playground-username-and-password">set a password to the Username associated with each Trailhead Playground</a>.
 
 1. Click the avatar.
 1. Click Settings.
@@ -489,7 +497,35 @@ click the picture at the upper-right corner, and select <a target="_blank" href=
 
    <strong>"AppExchange apps"</strong> are developed by 3rd parties, usually an ISV (Independent Software Vendor) Salesforce partners. AppExchange is the name of the marketplace where such apps are available, either free or for a fee. 
 
-## Adding apps to Trailhead 
+### Einstein Trailhead Playground
+
+1. Go to the sign-up page for a Trailhead Playground with Einstein Prediction Builder at
+
+   https://developer.salesforce.com/promotions/orgs/einsteinbuilder
+
+1. Fill out the form completely. In the Email field, enter an active email address because a confirmation email will be sent there.
+
+1. In the Username field, enter a email address unique among all other Trailhead users.
+
+   PROTIP: It doesn’t have to be a valid email account. 
+   For example, I used "wilsonmar@einstein.com".
+
+1. Click Sign me up. A confirmation message appears.
+1. Check your spam folder if you don't see the email.
+1. When you receive the activation email, open it and click "Verify Account".
+1. Change (set) your password and enter a security answer. Write it down.
+1. Click Change Password to get logged in to the Einstein Trailhead Playground's Setup page.
+
+1. In the Trailhead Playground picklist, select "Log into a Developer Edition".
+1. Login to the Username (such as my "wilsonmar@einstein.com") and the password you assigned.
+1. Among the email associated with the Username, highlight and copy the Verification Code.
+1. Paste the verification code in the "Verify Your Identity" dialog.
+1. Click "Allow".
+1. Click "Yes! Save It."
+1. Scroll down to see your Einstein Username being the default. 
+1. Click "Launch".
+
+### Adding apps to Trailhead 
 
 We next look into adding one of each to your Trailhead Playground.
 
