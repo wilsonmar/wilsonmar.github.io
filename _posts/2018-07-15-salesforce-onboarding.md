@@ -148,7 +148,7 @@ Additionally:
    PROTIP: The "AP0", "EU1", and "NA3" are <strong>"pods"</strong>, each where Salesforce assigns particular user organizations. Once assigned, users keep using their assigned pod. Several users are assigned to the same pod and thus use the same hardware. That's <strong>"multi-tenancy"</strong>.
 
    <a target="_blank" href="https://status.salesforce.com/">https://status.salesforce.com</a> provides availability status by pod on these products:
-   <img align="right" width="220" alt="sf-status-list" src="https://user-images.githubusercontent.com/300046/43538874-6f8e6466-9580-11e8-9e21-346c82667b50.png">
+   <a target="_blank" href="https://status.salesforce.com/">https://status.salesforce.com<img align="right" width="220" alt="sf-status-list" src="https://user-images.githubusercontent.com/300046/43538874-6f8e6466-9580-11e8-9e21-346c82667b50.png"></a>
 
 1. Click a product on the left pane, such as "Sales Cloud" and "Service Cloud".
 
