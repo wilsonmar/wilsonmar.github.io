@@ -400,9 +400,10 @@ Phil Walton (<a target="_blank" href="https://twitter.com/SalesforcePhil">@Sales
 
    * <a target="_blank" href="http://www.cloudgalacticos.co.uk/blog/">cloudgalacticos.co.uk/blog</a> since 2007
 
-Piyush Soni, Salesforce Admin, Developer from Jaipur, Rajasthan, India:
+<a target="_blank" href="https://trailhead.salesforce.com/en/me/piyush-soni">Piyush Soni</a>, Salesforce Admin, Developer from Jaipur, Rajasthan, India:
 
    * <a target="_blank" href="https://sfdcmonkey.com/">sfdcmonkey.com</a>
+   * Trailmix: <a target="_blank" href="https://trailhead.salesforce.com/en/users/005500000060ZGNAA2/trailmixes/learn-lightning-component-development-faster">Learn Lightning Component Development Faster</a>
 
 Prajakta Samant, #Salesforce #evangelist (<a target="_blank" href="https://twitter.com/prajsszz">@prajsszz</a>) in Pune, India.
 

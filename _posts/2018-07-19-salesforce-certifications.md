@@ -171,7 +171,7 @@ Many resources address content for both courses:
 
 Follow on Twitter:
 
-   * #AwesomeAdmin
+   * <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23AwesomeAdmin&src=typd">#AwesomeAdmin</a>
 
 
 <a name="Developer"></a>
@@ -250,6 +250,9 @@ These are $200 each, addressing each product line (except Knowledge Cloud, Marke
 
 * <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedCommunityCloudConsultant.pdf">Official PDF -  Salesforce Certified Community Cloud Consultant</a>
 
+   * Trailmix: <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedFieldServiceLightningConsultant.pdf">Architect Journey: Analytics Architecture</a>
+
+
 * <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedFieldServiceLightningConsultant.pdf">Official PDF -  Salesforce Certified Field Service Lightning Consultant</a>
 
    o Scheduling and optimization
@@ -307,6 +310,8 @@ Salesforce Certified Pardot Specialist</a>
 The highest level of certification costs $6,000 plus travel to a Salesforce office to sit in front review board for 4 hours.
 
 * <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedTechnicalArchitect.pdf">Official PDF -  Salesforce Certified Technical Architect - Review Board</a>
+
+<a target="_blank" href="https://twitter.com/search?f=tweets&q=%23journeytocta&src=typd">#JourneyToCTA</a>
 
 <hr />
 

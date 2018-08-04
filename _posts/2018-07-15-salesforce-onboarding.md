@@ -22,6 +22,18 @@ This also aims to provide succinct lists for experienced Salesforce readers.
 "PROTIP:" in this document marks the unique contribution of this website, 
 providing you advice available nowhere else.
 
+<a name="Browsers"></a>
+
+## Browsers
+
+Salesforce is one of first major companies that works completely over the public internet, on internet browsers.
+
+PROTIP: While there is no installing custom software (from Salesforce) on each user's machine, users can use whatever internet browser is installed with their machine. That would be Internet Explorer that comes with Windows and Safari on Macs. But in practice many users install Firefox and Chrome browsers.
+
+DEVDOC: In [Supported Browsers](https://developer.salesforce.com/docs/atlas.en-us.salesforce_supported_browsers_cheatsheet.meta/salesforce_supported_browsers_cheatsheet/)
+some Internet Explorer support is limited. Firefox needs to be configured.
+
+
 <a name="Clouds"></a>
 
 ### Clouds
@@ -63,16 +75,25 @@ When Salesforce acquires other companies, it tends to fold acquired users into S
 
 <a name="Domains"></a>
 
-## Domain Names 
+## Root Domain Names 
 
 Salesforce, as a company, owns these domain names (some product offerings have their own domain, but some don't):
 
    * <a target="_blank" href="https://www.salesforce.com/">Salesforce.com</a> [<a target="_blank" href="https://status.salesforce.com/">status</a>]
 
-   * <a target="_blank" href="https://www.Force.com/"> Force.com</a> is the domain used by Trailhead and other segments:
+      * https://login.salesforce.com
+      * https://help.salesforce.com
+      * https://develop.salesforce.com
+      <br /><br />
 
+   * <a target="_blank" href="https://www.Force.com/"> Force.com</a> is the domain used by Trailhead and <a target="_blank" href="https://www.similarweb.com/website/force.com#websiteContent">other segments</a>:
+
+      * https://???.content.force.com/
+      * https://???.secure.force.com/
+      * https://???.visual.force.com/
       * https://veterans.force.com/
-      <br />
+      * https://???.lightning.force.com/
+      <br /><br />
 
    * <a target="_blank" href="https://salesforceiq.com">Salesforceiq.com</a> [<a target="_blank" href="https://status.salesforceiq.com/">status</a>]
    * <a target="_blank" href="https://salesforce.org/">Salesforce.org</a> for non-profits
@@ -147,7 +168,7 @@ Additionally:
 
    <a name="productiveURL"></a>
 
-   PROTIP: Notice the sub-domain in the URL address assigned, such as "na53" in https://na53.lightning.force.com/..."
+   PROTIP: Notice the <strong>sub-domain</strong> at the front of the URL address assigned, such as "na53" in "https://na53.lightning.force.com/...".
 
    "lightning" in the URL reflects use of the new User experience screen design rather than the "classic" UX.
 
@@ -196,7 +217,7 @@ PROTIP: Spending several days strait sitting in a class may seem like "drinking 
 
    ![sf-trailhead-menu-656x93-14546](https://user-images.githubusercontent.com/300046/43597098-4ef1c3ba-963e-11e8-91b5-180ab59f41b0.jpg)
 
-5. Click "Trailmixes". Each Trailmix recommends a sequence of single web pages and Trailhead modules.
+5. Click <a target="_blank" href="https://trailhead.salesforce.com/en/trailmixes">Trailmixes</a>. Each Trailmix recommends a sequence of single web pages and Trailhead modules. At last count there were 60 of them.
 
 6. Scroll down to click <a target="_blank" href="https://trailhead.salesforce.com/users/00550000006yDdKAAU/trailmixes/get-started-with-trailhead-end-user">Get started with Trailhead</a>. 
 
@@ -241,15 +262,15 @@ PROTIP: Spending several days strait sitting in a class may seem like "drinking 
    | ----- | ---: | -----: |
    | Intro. to Trailhead | 2 | 500 |
    | <a target="_blank" href="https://trailhead.salesforce.com/modules/starting_force_com">Module: Salesforce Platform Basics</a> Get introduced to the platform, navigate use cases, and build custom functionality. | 2 | 300 |
-   | Admin Intro. Trail | 9 | 10,200 |
+   | Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/force_com_admin_beginner">Admin Beginner</a> | 7 | 8,200 |
    | <a target="_blank" href="https://trailhead.salesforce.com/modules/data_modeling">Module: Data Modeling</a> | - | - |
    | <a target="_blank" href="https://trailhead.salesforce.com/modules/visualforce_fundamentals">Module: Visualforce Basics</a> | - | - |
-   | Admin Intermediate Trail | 5.9 | 8,200 |
+   | Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/force_com_admin_intermediate">Admin Intermediate</a> | 13 | 8,200 |
    | Take Admin 1 exam | - | - |
    | Advanced Admin Trail | - | - |
    | Take Advanced Admin exam | - | - |
-   | Developer Beginner Trail | 15 | 19,400 |
-   | Developer Intermediate Trail | 10 | 8,100 |
+   | Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/force_com_dev_beginner">Developer Beginner</a> | 15 | 19,400 |
+   | Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/force_com_dev_intermediate"> Developer Intermediate</a> | 23 | 9,100 |
    | Developer Trail - Mobile SDK | 6.8 | 3,000 |
    | <a href="#ConfApp">Build a Conference Management App</a> | 3 |  550 |
    | <a href="#SuggestionApp"> Build Suggestion Box App</a> | 1.9 | ? |
@@ -440,6 +461,8 @@ click the picture at the upper-right corner, and select <a target="_blank" href=
 
    PROTIP: To quickly shift between tabs on a browser, use keyboard shortcut keys <strong>control+tab</strong> and control+shift+tab on the Mac.
 
+   PROTIP: I stick a small physical dot (from a glue gun) near the control and command keys so I can find them without looking at the keyboard.
+
    PROTIP: Notice that when in a Playground, the browser's URL is different than the <a href="#productiveURL">"productive" (real) environment</a> (such as "na53"). For example:
 
    <pre>https://resourceful-moose-263556-dev-ed.lightning.force.com/...</pre>
@@ -609,14 +632,26 @@ https://appexchange.salesforce.com/appxHome
 
 ## Developer Console
 
-1. In Salesforce, click the cog icon and select "Developer Console" 
+https://trailhead.salesforce.com/en/modules/developer_console">
+
+1. To open "Developer Console" for an org, click the cog icon and select "Developer Console".
 
    ![sf-dev-console-245x145-9152](https://user-images.githubusercontent.com/300046/43218480-c28dad54-9001-11e8-9b7e-d76d26ac107f.jpg)
 
-2. You'll get a pop-up a window with this at the bottom:
+   See https://help.salesforce.com/articleView?id=code_dev_console.htm&type=5
+
+2. A headless browser window pops up with this tabs pane at the bottom:
 
    ![sf-dev-console-tabs-610x170-26186](https://user-images.githubusercontent.com/300046/43218626-29752254-9002-11e8-858e-087fece5cc17.jpg)
 
+   * The Developer Console doesn’t have version control or conflict resolution like DX does.
+
+   The main pane displays the source code editor for the current <strong>workspace</strong>, which is a collection of resources (files).
+
+   * Apex classes
+   * Visualforce pages
+   * SOQL queries
+   * Lightning components
 
 ## REST API Workbench
 
@@ -681,7 +716,7 @@ June 11, 2018
 By Nathan Totten
 
 
-## IDEs and Editors
+## Other IDEs and Editors
 
 <a target="_blank" href="https://success.salesforce.com/issues_index?tag=Eclipse%20IDE">Eclipse IDE Known Issues</a>
 
@@ -738,20 +773,6 @@ I recommend that you use Google Authenticator instead so you only need to have o
    * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/identity">Secure Identity and Access Management</a> [3 hrs 55 mins]
 
    * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/shield">Secure Your Apps with Salesforce Shield</a> [4 hrs 5 mins]
-
-<a name="Podcasts"></a>
-
-## Podcasts
-
-PROTIP: Drive a lot? Listen to voice-only podcasts while commuting:
-
-   * <a target="_blank" href="https://salesforce.com/marketingcloudcast/">The Marketing Cloudcast</a> has 99+ episodes since Oct. 2016 <a target="_blank" href="https://play.google.com/music/listen?u=0#/ps/I6pcs6jawpetsbyhp5qaf42ahmy">
-   on Google Play</a>. It "offers key marketing campaign tactics, popular trends, interviews with marketing leaders, and relevant insights — such as social media stats and data management strategies in marketing today. Hosts Megan Collins ( @CollinsMeMegan) and Tina Rozul (@crozul) dive into topics such as performance on individual marketing channels, marketing career advice, the future of marketing, and beyond. 
-
-   * PODCAST about presenters at Salesforce Dreamforce conferences: <a target="_blank" href="https://www.salesforce.com/blog/2017/07/blazing-trails-a-new-salesforce-podcast.html">Blazing Trails</a> since July 2017 <a target="_blank" href="https://itunes.apple.com/us/podcast/blazing-trails/id1259579050?mt=2">on iTunes</a> and <a target="_blank" href="https://soundcloud.com/blazingtrailspodcast">SoundCloud.com</a>.
-
-   * PODCAST: The Quotable Sales Podcast by Quotable.com since July 2016 on <a target="_blank" href="https://itunes.apple.com/us/podcast/quotable-podcast-learn-from/id1132258307?mt=2">iTunes</a> and <a target="_blank" href="https://play.google.com/music/listen?u=0#/ps/I6pcs6jawpetsbyhp5qaf42ahmy">Google Play</a>.
-
 
 
 ## More Trailhead Learning
