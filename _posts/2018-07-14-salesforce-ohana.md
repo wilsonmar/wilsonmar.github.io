@@ -175,10 +175,9 @@ DISCUSSIONS: <a target="_blank" href="https://developer.salesforce.com/forums/#!
 Mason Frank International, a recruiter, publishes a report each year about the Salesforce ecosystem, providing detailed breakdowns of salaries by job role, location, and so much more. See <a target="_blank" href="
 https://www.masonfrank.com/salesforce-salary-survey/">
 https://www.masonfrank.com/salesforce-salary-survey/</a>
-
    * <a target="_blank" href="https://www.masonfrank.com/search?query=remote&location%5B%5D=3871">Recruiting agency Mason Frank's Salesforce jobs page</a>
 
-   * <a target="_blank" href="https://www.indeed.com/jobs?q=Salesforce&l=remote">Indeed</a> aggregates jobs on several websites
+   * <a target="_blank" href="https://www.indeed.com/jobs?q=Salesforce&l=remote">Indeed</a> aggregates jobs from several employer websites
 
    * <a target="_blank" href="https://www.glassdoor.com/Job/jobs.htm?suggestCount=0&suggestChosen=true&clickSource=searchBtn&typedKeyword=sales&sc.keyword=Salesforce&locT=&locId=&jobType=">Salesforce jobs at Glassdoor</a>
 
@@ -260,6 +259,7 @@ Salesforce Customer Success team (in the Success Cloud) who helps paying teams u
 Salesforce Trailhead team:
 
    * https://medium.com/trailhead
+   * https://www.linkedin.com/company/salesforce-trailhead/
 
 Salesforce Certification Group:
 
@@ -436,7 +436,11 @@ See <a target="_blank" href="https://www.slideshare.net/salesforceeng/hit-the-tr
 
 The Dreamoji app provides a custom keyboard containing Salesforce emojis you can insert into messages, tweets, etc.
 
-On <a target="_blank" href="https://itunes.apple.com/us/app/dreamoji/id1294827604?mt=8">iOS</a>, search for Dreamoji.
+On your iOS device, search for <a target="_blank" href="https://itunes.apple.com/us/app/dreamoji/id1294827604?mt=8">Dreamoji</a>, then Get it. After it loads, in Settings, General, Keyboard, Keyboards, select "Dreamoji", enable "Allow Full Access".
+
+When Messaging, click the happy face icon to the right of the text entry field.
+
+On your Android, see https://t.co/UzK0VF7e9G
 
 ### Store
 

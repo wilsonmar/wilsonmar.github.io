@@ -119,6 +119,7 @@ Salesforce employees maintain these accounts within (now Microsoft's) GitHub.com
    * https://github.com/salesforce-ux/
    * https://github.com/financialforcedev/
    * https://github.com/SalesforceFoundation by http://www.salesforce.org/nonprofit/nonprofit-success-pack/  tools to help manage programs, donations, volunteers, and supporters.
+   (<a target="_blank" href="https://www.youtube.com/channel/UC6ZEIvlahVCA8k5tYTr_a2A">YouTube acct.</a>)
 
 <a name="Editions"></a>
 
@@ -617,6 +618,12 @@ To add a managed app such as the Salesforce <a target="_blank" href="https://log
 ## AppExchange 3rd-Party Tools
 
 https://appexchange.salesforce.com/appxHome
+
+<a target="_blank" href="https://appexchange.salesforce.com/collection/SalesforceLabs">
+Salesforce Labs Solutions at https://appexchange.salesforce.com/collection/SalesforceLabs</a>
+are free and customizable Labs Apps built by Salesforce employees.
+
+Examples from 3rd-parties (partners):
 
 * Security Zen at http://SecurityZen.net @SecurityZen_Net ‏is a new tool for managing #Salesforce Security.
 
