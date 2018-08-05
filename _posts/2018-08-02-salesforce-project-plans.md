@@ -21,12 +21,9 @@ This describes how we apply our deep IT experience to the full lifecycle from en
 
 This high-level sequence of activities help us focus on specific achievements along the way, in a logical approach:
 
-<a href="#Engagement">1. Engagement</a> 
-
-<a href="#NeedsRoles">2. Needs, Roles, Deliverables</a>
-
-<a href="#EnvProcesses">3. Environment Processes</a> (sand boxes, permissions, getting to "production")
-
+<a href="#Engagement">1. Engagement</a><br />
+<a href="#NeedsRoles">2. Needs, Roles, Deliverables</a><br />
+<a href="#EnvProcesses">3. Environment Processes</a> (sand boxes, permissions, getting to "production")<br />
 <a href="#Builds">4. Incremental build of value</a>
 
 <hr />
@@ -133,12 +130,15 @@ Trail: <a target="_blank" href="https://trailhead.salesforce.com/en/trails/run-a
    * Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/agile-frameworks-scrum-and-kanban">Atlassian Overview of Agile Frameworks</a> +200
 
 
-## Tools
+## Tools - KanBan
 
    * <a target="_blank" href="https://success.salesforce.com/ideaSearch">
    Salesforce Idea Exchange/Search</a> lists all submission across all products.
+   <br /><br />
 
-To track progress, many teams use a Kanban board, where a card represents each task worked on. A card first appears in "Upcoming" state. Cards within a stage are sorted by the highest priority. When a task is assigned, it is moved to the "Ready" stage during planning. Many teams designate a WIP (Work In Process) limit of how many cards the team can work on simultaneously. When ready, the card is moved to the "Dev" stage, then "Testing". There is a stage for blocked tasks. When completed, it's "Ready for Review". Cards in the "Done" column meet all criteria for being shippable to production.
+Scrum limits the capacity by focusing on a 2-week section of their backlog. Kanban limits the capacity based on preventing multitasking with work-in-progess limits.
+
+To track progress, many teams use a <strong>Kanban board</strong>, where a card represents each task worked on. A card first appears in "Upcoming" state. Cards within a stage are sorted by the highest priority. When a task is assigned, it is moved to the "Ready" stage during planning. Many teams designate a WIP (Work In Process) limit of how many cards the team can work on simultaneously. When ready, the card is moved to the "Dev" stage, then "Testing". There is a stage for blocked tasks. When completed, it's "Ready for Review". Cards in the "Done" column meet all criteria for being shippable to production.
 
 The above implements the "5 stages of innovation":
 

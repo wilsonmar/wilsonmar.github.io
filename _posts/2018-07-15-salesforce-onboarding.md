@@ -73,6 +73,7 @@ Salesforce, as a company, owns these domain names (some product offerings have t
       * https://login.salesforce.com/
       * https://help.salesforce.com/
       * https://develop.salesforce.com/
+      * https://partners.salesforce.com/
       * https://appexchange.salesforce.com/
       <br /><br />
 
@@ -114,7 +115,7 @@ When Salesforce acquires other companies, it tends to fold acquired users into S
    * Work.com was [retired July 10, 2015](https://success.salesforce.com/_ui/core/chatter/topics/TopicPage?id=0TO300000004GDW&ref=group_profile). It was a sales performance management solution for on-boarding new reps faster, for coaching reps to close more deals, and for rewarding successful behaviors. It redirects tohttps://www.salesforce.com/products/sales-cloud/overview/
    * Salesforce1.com redirects to salesforce.com.
 
-   
+
 ### Github repos:
 
 Salesforce employees maintain these accounts within (now Microsoft's) GitHub.com:

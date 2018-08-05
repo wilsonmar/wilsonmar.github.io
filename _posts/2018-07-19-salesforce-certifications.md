@@ -184,36 +184,33 @@ Follow on Twitter:
 (which includes database administrators):
 
 <a name="CSPD1"></a>
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperI.pdf">Official PDF -  Certified Salesforce Platform Developer I </a>
+<a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperI.pdf">Official PDF -  Certified Salesforce Platform Developer I </a>
 
 <a name="CSPD2"></a>
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperII.pdf">Official PDF -  Certified Salesforce Platform Developer II</a>
+<a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperII.pdf">Official PDF -  Certified Salesforce Platform Developer II</a>
 
 <a name="SCCCDD"></a>
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedCommerceCloudDigitalDeveloper.pdf">Official PDF -  Salesforce Certified Commerce Cloud Digital Developer</a>
+<a target="_blank" href="http://certification.salesforce.com/SG_CertifiedCommerceCloudDigitalDeveloper.pdf">Official PDF -  Salesforce Certified Commerce Cloud Digital Developer</a>
 
    * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/learn-about-the-role-of-commerce-cloud-functional-architect">Commerce Cloud Functional Architect</a>
    * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/develop-for-commerce-cloud">Develop for Commerce Cloud</a>
    * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/cc-overview">Sell Everywhere with Commerce Cloud</a>
    <br /><br />
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformAppBuilder.pdf">Official PDF -  Salesforce Certified Platform App Builder</a>
+<a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformAppBuilder.pdf">Official PDF -  Salesforce Certified Platform App Builder</a>
 
-Some exam resources address content for both courses:
+   Some exam resources address content for both courses:
 
    * https://developer.salesforce.com
 
    * http://certification.salesforce.com/developers
    focuses on declarative configuration rather than programming.
 
-   * <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.fundamentals.meta/fundamentals/">
-   https://developer.salesforce.com/docs/atlas.en-us.fundamentals.meta/fundamentals", the
-   <strong>Lightning Platform Fundamentals</strong> is the "Bible" for Salesforce developer certification questions.
-   It has "Try it" hands-on exercises to develop a Recruitment app.
+   * <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.fundamentals.meta/fundamentals/"><strong>Lightning Platform Fundamentals</strong></a> is the "Bible" for Salesforce developer certification questions. It has "Try it" hands-on exercises to develop a Recruitment app.
    Its January 2015 version 9 online contained 402 pages, and was called "Force.com" instead of "Lightning".
    <br /><br />
 
-Salesforce offers classes:
+   Salesforce offers classes:
 
    * SalesforceU's Instructor-led course: Programmatic Development Using Apex and Visualforce(DEV450)
 
