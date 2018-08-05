@@ -35,7 +35,7 @@ This high-level sequence of activities help us focus on specific achievements al
 
 ## 1. Engagement
 
-Who's involved? When and How do we meet?
+Who's involved? When and How do we meet? Where do we store our notes?
 
 What are our hopes and concerns? 
 
