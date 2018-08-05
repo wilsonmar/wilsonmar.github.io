@@ -409,9 +409,7 @@ Free Expo Pass holders and all other pass holders get access to:
 
    * <strong>Dreamforest</strong> is 8 a.m –7 p.m. Thursday & 8 a.m.–3 p.m Friday
 
-Dreamforce drew 170,000 to San Francisco in 2017 (the largest software conference in the world), despite the $2,199 per person cost (before travel and hotels) for the full pass, which provides access to Tuesday or Wednesday events, meals, plus:
-
-   * Dreamfest, receptions, conference materials, breakout sessions, hands-on training, experience zones, some keynotes.
+Dreamforce drew 170,000 to San Francisco in 2017 (the largest software conference in the world), despite the $2,199 per person cost (before travel and hotels) for the full pass, which provides access to Tuesday or Wednesday events, conference materials, meals, plus:
 
    * Welcome Reception
 
@@ -425,11 +423,13 @@ Dreamforce drew 170,000 to San Francisco in 2017 (the largest software conferenc
 
    * Salesforce Campground.
 
-   * Hands-on Training (HoT) classes are offered for additional fee, where you can learn directly from Salesforce University experts.
+   * Hands-on Training (HoT) classes are offered for additional fee, where you can learn directly from Salesforce University experts, live and in-person.
 
-   * Half-priced ($99) certification exams and SalesforceU live classes.
+   * Half-priced ($99) certification exams 
 
    * <strong>Dream Valley</strong> gives back to the community.
+
+   * Experience zones?
 
 Partner-sponsored parties and events also take place all week long.
 
