@@ -58,7 +58,7 @@ All this provides clarity so people know the boundaries of the work ahead.
 
 Who will participate and when? What is the cadence of work and meetings?
 
-What are the deliverables? 
+What are the deliverables? The "Product Backlog" of everything that can be done are a superset of what is actually targeted to be built during each "sprint" of work.
 
 Which role is responsible for each deliverable?
 
