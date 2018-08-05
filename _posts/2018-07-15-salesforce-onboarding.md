@@ -61,18 +61,6 @@ Expertise on some of the clouds are proven by <a href="https://wilsonmar.github.
 
 Many of the "cloud" offerings all share the same "salesforce.com" domain name.
 
-<a name="Reroutes"></a>
-
-## Rerouted domains
-
-When Salesforce acquires other companies, it tends to fold acquired users into Salesforce domains, then automatically reroute requests to previous domains to Salesforce.com. Examples: 
-
-   * <a target="_blank" href="http://www.appexchange.com/">AppExchange.com</a> redirects to appexchange.salesforce.com
-   * <a target="_blank" href="http://www.database.com/">Database.com</a> redirects to the Salesforce Platform page
-   * <a target="_blank" href="http://www.developerforce.com/">Developerforce.com</a> redirects to<br /><a target="_blank" href="https://developer.salesforce.com/">https://developer.salesforce.com</a>
-   * <a target="_blank" href="https://www.site.com/">Site.com</a> is redirected to <br />https://www.salesforce.com/products/platform/overview/
-   * Work.com was [retired July 10, 2015](https://success.salesforce.com/_ui/core/chatter/topics/TopicPage?id=0TO300000004GDW&ref=group_profile). It was a sales performance management solution for on-boarding new reps faster, for coaching reps to close more deals, and for rewarding successful behaviors. It redirects tohttps://www.salesforce.com/products/sales-cloud/overview/
-   * Salesforce1.com redirects to salesforce.com.
 
 <a name="Domains"></a>
 
@@ -113,6 +101,20 @@ Not owned by Salesforce but they seem close:
    * <a target="_blank" href="http://www.financialforce.com/">FinancialForce.com</a> provides SaaS for managing financial information. Salesforce invested in this company.
 
 
+<a name="Reroutes"></a>
+
+## Rerouted domains
+
+When Salesforce acquires other companies, it tends to fold acquired users into Salesforce domains, then automatically reroute requests to previous domains to Salesforce.com. Examples: 
+
+   * <a target="_blank" href="http://www.appexchange.com/">AppExchange.com</a> redirects to appexchange.salesforce.com
+   * <a target="_blank" href="http://www.database.com/">Database.com</a> redirects to the Salesforce Platform page
+   * <a target="_blank" href="http://www.developerforce.com/">Developerforce.com</a> redirects to<br /><a target="_blank" href="https://developer.salesforce.com/">https://developer.salesforce.com</a>
+   * <a target="_blank" href="https://www.site.com/">Site.com</a> is redirected to <br />https://www.salesforce.com/products/platform/overview/
+   * Work.com was [retired July 10, 2015](https://success.salesforce.com/_ui/core/chatter/topics/TopicPage?id=0TO300000004GDW&ref=group_profile). It was a sales performance management solution for on-boarding new reps faster, for coaching reps to close more deals, and for rewarding successful behaviors. It redirects tohttps://www.salesforce.com/products/sales-cloud/overview/
+   * Salesforce1.com redirects to salesforce.com.
+
+   
 ### Github repos:
 
 Salesforce employees maintain these accounts within (now Microsoft's) GitHub.com:
