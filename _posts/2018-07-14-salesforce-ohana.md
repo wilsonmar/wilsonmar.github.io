@@ -441,21 +441,22 @@ Take <a target="_blank" href="https://trailhead.salesforce.com/modules/get_ready
 
 ![sf-mascots-648x425-98567](https://user-images.githubusercontent.com/300046/43673576-9d8f42e6-9782-11e8-8cdc-7442e646554b.jpg)
 
-The "NO SOFTWARE" mascot called Sassy is the original mascot for Salesforce.
+The "NO SOFTWARE" mascot, called <strong>Sassy</strong>, was the original mascot for Salesforce. 
+The company's main number is still 800.NO-SOFTWARE.
 
 Astro, created by Rochelle Truong in 2015, is a racoon in a spacesuit.
 
-The goat is called Cloudy.
+The goat is called <strong>Cloudy</strong>.
 
 Einstein is the mascot of the <a target="_blank" href="https://www.salesforce.com/products/einstein/overview/">Salesforce Artificial Intelligence platform</a>. BTW, the likeness to Albert Einstein is owned by Hebrew University in Israel.
 
-The bear is called Codey.
+The bear is called <strong>Codey</strong>.
 
-The owl is called Appy. And it's a she.
+The owl is called <strong>Appy</strong>. And it's a she.
 
 <!-- ![sf-mascots-appy-980x492](https://user-images.githubusercontent.com/300046/43673518-ad0d8a3a-9781-11e8-9b3a-35281a8d5ad9.png -->
 
-See <a target="_blank" href="https://www.slideshare.net/salesforceeng/hit-the-trail-with-trailhead/">Kim Shain's slidedeck</a>.
+See <a target="_blank" href="https://www.slideshare.net/salesforceeng/hit-the-trail-with-trailhead/">Kim Shain's slidedeck</a> about mascot branding guidelines.
 
 ### Dreamoji
 
