@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Salesforce Ohana"
-excerpt: "Glossary, Competitors, Jobs, Social media, Communities, Events, Dreamforce, Store"
+excerpt: "Glossary, Competitors, Social media, Communities, Events, Dreamforce, Store"
 tags: [salesforce]
 image:
 # feature: sf-ohana-1900x500-178173.jpg
@@ -165,7 +165,7 @@ In a smaller company, one person can wear many hats, but in a larger company, sp
 
 ## Industries
 
-Options for industries in Salesforce forms:
+Options for 12 industries as recognized by Salesforce:
 
    * Automotive
    * Communications

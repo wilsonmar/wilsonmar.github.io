@@ -20,11 +20,15 @@ comments: true
 
 https://medium.com/trailhead/huge-demand-for-salesforce-talent-3bb30c597b39
 
+The advantage of a career working with Salesforce is that one can be productive without being an expert programmer. This and being in SasS (without server admin troubles), a small team can support a (smaller) company without a lot of buraucracy, unlike being on massive SAP projects.
+
 ## Jobs inside Salesforce
 
    * <a target="_blank" href="http://careers.force.com/jobs/">http://careers.force.com/jobs</a> lists jobs inside Salesforce. Applicants use workday.com.
 
-   * <a target="_blank" href="https://www.glassdoor.com/Reviews/Salesforce-Reviews-E11159.htm">Employee reviews on Glassdoor</a> mention concern with work-life balance.
+   * <a target="_blank" href="https://www.glassdoor.com/Reviews/Salesforce-Reviews-E11159.htm">Salesforce employee reviews on Glassdoor</a> mention concern with work-life balance.
+
+   * Salesforce is rated highly among "Best Places to Work".
 
 ## Job listings
 
@@ -45,14 +49,28 @@ https://www.masonfrank.com/salesforce-salary-survey/</a>
 
    * <a target="_blank" href="https://stackoverflow.com/jobs?sort=i&q=salesforce">Stackoverflow Jobs</a>
 
+   * <a target="_blank" href="https://developer.salesforce.com/forums?communityId=09aF00000004HMGIA2#!/feedtype=RECENT&dc=Jobs_Board&criteria=ALLQUESTIONS">Job Board on Salesforce</a> have postings by both job seekers and recruiters.
+
 ## Consulting Partners and ISVs (Independent Software Vendors)
 
 Top Salesforce partners are "Master Certified by Salesforce" in all 12 industries and cloud platforms.
 
-http://www.accenture.com/salesforcecareers
-by Accenture, which employs 11,800 Salesforce pros.
-bradley.m.altbach@accenture.com
+http://www.accenture.com/salesforcecareers by Accenture, which employs 11,800 Salesforce pros in Chicago and elsewhere. Contact: bradley.m.altbach@accenture.com
+
+## Skills
+
+This list of Admin management skills is from Jeff Talbot (marin(dot)consulting(at)gmail.com):
+
+   * Managing database customizations - Objects, Object relationships, Fields, Page Layouts
+   * Managing security - Users, Roles, Profiles, Permission Sets
+   * Managing data - Views, Reports, Dashboards
+   * Managing data integrity - Data imports, mass data updates, Validation Rules
+   * Managing automation - Workflow, Flow, Triggers, Process Builder
+   * Managing data integration - Integrating websites, retail management software (POS), and finance software with Salesforce
 
 
+## More about Salesforce #
 
+This is one of a series about Salesforce
 
+{% include salesforce_links.html %}
