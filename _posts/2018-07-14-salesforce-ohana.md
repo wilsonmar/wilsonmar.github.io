@@ -16,7 +16,7 @@ comments: true
 {% include _toc.html %}
 
 "Ohana" is the Hawaiian word for "family". Salesforces uses the hash tag \#SalesforceOhana 
-to describe the inclusive culture it aims to foster. Thus the Hawaiian decorations and musician at events.
+to describe the inclusive culture it aims to foster. Thus the Hawaiian (Polynesian) decorations and musician at events.
 
 This page presents steps and information for those new to Salesforce to get "plugged in" quickly yet fully.
 
@@ -181,36 +181,8 @@ Options for industries in Salesforce forms:
    * Retail &amp; Consumer Goods
    * Other
 
-## Jobs
 
-   * <a target="_blank" href="https://success.salesforce.com/search?type=Jobs&keywords=lightning">Jobs listed within the Salesforce Trailblazer Community</a>
-
-https://medium.com/trailhead/huge-demand-for-salesforce-talent-3bb30c597b39
-
-DISCUSSIONS: <a target="_blank" href="https://developer.salesforce.com/forums/#!/feedtype=RECENT&dc=Jobs_Board&criteria=ALLQUESTIONS">Jobs Board</a>
-
-Mason Frank International, a recruiter, publishes a report each year about the Salesforce ecosystem, providing detailed breakdowns of salaries by job role, location, and so much more. See <a target="_blank" href="
-https://www.masonfrank.com/salesforce-salary-survey/">
-https://www.masonfrank.com/salesforce-salary-survey/</a>
-   * <a target="_blank" href="https://www.masonfrank.com/search?query=remote&location%5B%5D=3871">Recruiting agency Mason Frank's Salesforce jobs page</a>
-
-   * <a target="_blank" href="https://www.indeed.com/jobs?q=Salesforce&l=remote">Indeed</a> aggregates jobs from several employer websites
-
-   * <a target="_blank" href="https://www.glassdoor.com/Job/jobs.htm?suggestCount=0&suggestChosen=true&clickSource=searchBtn&typedKeyword=sales&sc.keyword=Salesforce&locT=&locId=&jobType=">Salesforce jobs at Glassdoor</a>
-
-   * <a target="_blank" href="https://www.linkedin.com/company/salesforce/jobs/">LinkedIn jobs</a>
-
-   * <a target="_blank" href="https://stackoverflow.com/jobs?sort=i&q=salesforce">Stackoverflow Jobs</a>
-
-   * Consulting Partners and ISVs (Independent Software Vendors)
-
-### Jobs inside Salesforce
-
-   * <a target="_blank" href="http://careers.force.com/jobs/">http://careers.force.com/jobs</a> lists jobs inside Salesforce. Applicants use workday.com.
-
-   * <a target="_blank" href="https://www.glassdoor.com/Reviews/Salesforce-Reviews-E11159.htm">Employee reviews on Glassdoor</a> mention concern with work-life balance.
-
-### Skills in LinkedIn profile
+## Skills in LinkedIn profile
 
 1. Click the  Me icon at the top of your LinkedIn homepage.
 2. Click "View profile".
@@ -311,7 +283,7 @@ Salesforce, as a company, pioneered the <strong>1:1:1 model</strong>, donating o
 
 * <a target="_blank" href="https://salesforce.stackexchange.com/">https://salesforce.stackexchange.com</a>
 
-* Follow <a target="_blank" href="https://www.linkedin.com/showcase/salesforce-developers/">Salesforce Developers on Linkedin</a>
+* Follow <a target="_blank" href="https://www.linkedin.com/showcase/salesforce-developers/">Salesforce Developers on LinkedIn</a>
 
 ### Trailhead communities
 
@@ -387,7 +359,7 @@ Local Meetups
 
 <a target="_blank" href="http://www.salesforce.com/dreamforce/">Dreamforce</a> is Salesforce's annual conference, usually <strong>4 days in September</strong>.
 
-   * <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23DF18&src=typd">#DF18 on Twitter</a>, Instagram, and other social media.
+   * Hastags <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23RoadToDF18&src=typd">#RoadToDF18</a> and <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23DF18&src=typd">#DF18</a> (from <a target="_blank" href="https://twitter.com/Dreamforce?lang=en">Twitter account @Dreamforce</a>), on Instagram, and other social media.
 
    * Recorded vidoes sessions are on the <a target="_blank" href="https://www.youtube.com/user/salesforce">Salesforce YouTube channel</a>.
 
