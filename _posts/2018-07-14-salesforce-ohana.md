@@ -163,6 +163,23 @@ In a smaller company, one person can wear many hats, but in a larger company, sp
 * <strong>Administrator</strong> performs administrative tasks in the production org, and tracks all changes made in production.
 * <strong>Trainer</strong> conducts training of company employees for new applications and features.
 
+## Industries
+
+Options for industries in Salesforce forms:
+
+   * Automotive
+   * Communications
+   * Financial Services
+   * Healthcare
+   * High Tech
+   * Higher Education
+   * Life Sciences
+   * Manufacturing
+   * Media
+   * Nonprofit
+   * Public Sector
+   * Retail &amp; Consumer Goods
+   * Other
 
 ## Jobs
 
@@ -369,44 +386,52 @@ Local Meetups
 ### Dreamforce
 
 <a target="_blank" href="http://www.salesforce.com/dreamforce/">Dreamforce</a> is Salesforce's annual conference, usually <strong>4 days in September</strong>.
-   It drew 170,000 to San Francisco in 2017 (the largest software conference in the world), despite its $2,199 per person cost (before travel and hotels).
-
-   * Recorded vidoes sessions are on the <a target="_blank" href="https://www.youtube.com/user/salesforce">Salesforce YouTube channel</a>.
 
    * <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23DF18&src=typd">#DF18 on Twitter</a>, Instagram, and other social media.
 
+   * Recorded vidoes sessions are on the <a target="_blank" href="https://www.youtube.com/user/salesforce">Salesforce YouTube channel</a>.
+
+   * <a target="_blank" href="https://www.youtube.com/channel/UCMSfoJzq24tEKNfdB4GaIqg">Dreamforce videos on YouTube</a>
+
 Agenda Builder
 
-<a target="_blank" href="https://trailhead.salesforce.com/modules/get_ready_for_dreamforce_onsite">Trailhead Module: Dreamforce & Next Steps</a> [40 mins] Make the most of your time at Dreamforce and keep learning after the event.
+Take Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/modules/get_ready_for_dreamforce_onsite">Dreamforce & Next Steps</a> [40 mins] to make the most of your time at Dreamforce and keep learning after the event.
 
 The Dreamforce Campus in downtown San Francisco has over 85 rooms in nine different locations.
 
-Free shuttles and pedi-cabs take you to and from major locations. It’s only 20 minutes from one end of the campus to the other. There is a bike valet in Jessie Square.
+Free shuttles and pedi-cabs take people between major locations. It’s about 20 minutes from one end of the campus to the other. There is a bike valet in Jessie Square.
 
-Welcome Reception
+<a target="_blank" href="https://www.salesforce.com/form/dreamforce/free-expo-18/?d=7010M000000O6p9QAC">Register for a free Expo Pass</a> 
 
-The <strong>Customer Success Expo</strong> is the world’s largest cloud ecosystem under one roof
-within the Moscone South. There are <strong>line-of-business zones</strong>.
+Free Expo Pass holders and all other pass holders get access to:
 
-There are 2,700+ expert-led sessions of 40-minute breakouts and 20-minute theater sessions,
-with majority of them customer led.
-25% of all seats (except for those in Hands-On Trainings and a few other workshops) are blocked for walk-ins.
+   * <strong>Customer Success Expo</strong> 10 a.m.–5 p.m. Thursday & 10 a.m.–2 p.m. Friday - has line-of-business zones. 
 
-<strong>Workshops</strong> at Dreamforce are facilitator-led sessions with group discussion and exercises that dive deep into a specific challenge and solution. 
+   * <strong>Dreamforest</strong> is 8 a.m –7 p.m. Thursday & 8 a.m.–3 p.m Friday
 
-<strong>Circles of Success</strong> sessions are where facilitators lead 10-person groups in problem-solving exercises.
+Dreamforce drew 170,000 to San Francisco in 2017 (the largest software conference in the world), despite the $2,199 per person cost (before travel and hotels) for the full pass, which provides access to Tuesday or Wednesday events, meals, plus:
 
-Salesforce Campground.
+   * Dreamfest, receptions, conference materials, breakout sessions, hands-on training, experience zones, some keynotes.
 
-Hands-on Training (HoT) classes are offered, where you can learn directly from Salesforce University experts.
+   * Welcome Reception
 
-Half-priced ($99) certification exams and SalesforceU live classes.
+   * <strong>Dreamfest</strong> is the party of the conference, featuring incredible live music, food, and drinks. In 2017 it was held at AT&T Park with Alicia Keys and Lenny Kravitz.
 
-<strong>Dream Valley</strong> gives back to the community.
+   * 2,700+ expert-led sessions of 40-minute <strong>breakout sessions</strong> and 20-minute theater sessions, with majority of them customer led. 25% of all seats (except for those in Hands-On Trainings and a few other workshops) are blocked for walk-ins.
+
+   * <strong>Workshops</strong> at Dreamforce are facilitator-led sessions with group discussion and exercises that dive deep into a specific challenge and solution. 
+
+   * <strong>Circles of Success</strong> sessions are where facilitators lead 10-person groups in problem-solving exercises.
+
+   * Salesforce Campground.
+
+   * Hands-on Training (HoT) classes are offered for additional fee, where you can learn directly from Salesforce University experts.
+
+   * Half-priced ($99) certification exams and SalesforceU live classes.
+
+   * <strong>Dream Valley</strong> gives back to the community.
 
 Partner-sponsored parties and events also take place all week long.
-
-<strong>Dreamfest</strong> is the party of the conference, featuring incredible live music, food, and drinks. In 2017 it was held at AT&T Park with Alicia Keys and Lenny Kravitz.
 
 Hackathon?
 
