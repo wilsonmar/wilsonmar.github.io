@@ -69,6 +69,17 @@ This list of Admin management skills is from Jeff Talbot (marin(dot)consulting(a
    * Managing data integration - Integrating websites, retail management software (POS), and finance software with Salesforce
 
 
+### Skills in LinkedIn profile
+
+1. Click the  Me icon at the top of your LinkedIn homepage.
+2. Click "View profile".
+3. Scroll to the "Skills & Endorsements" section and click "Add a new skill".
+4. In the pop-up window, if it says "You’ve reached the limit of 50 skills", X back and remove some skills.
+5. Type the name of a skill and select it from the dropdown list that appears or click "Add" immediately.
+
+   You can also add skills from the Suggested skills based off your profile options that are provided.
+
+
 ## More about Salesforce #
 
 This is one of a series about Salesforce
