@@ -59,12 +59,12 @@ Salesforce uses the word "cloud" to brand offering to different <strong>industri
 
 Expertise on some of the clouds are proven by <a href="https://wilsonmar.github.io/salesforce-certifications/">"consultant" certification exams</a>.
 
-Many of the "cloud" offerings all share the same "salesforce.com" domain name.
+Many of the "cloud" offerings all share the same "salesforce.com" and force.com domain names.
 
 
 <a name="Domains"></a>
 
-## Root Domain Names 
+## DNS Domain Names 
 
 Salesforce, as a company, owns these domain names (some product offerings have their own domain, but some don't):
 
@@ -72,6 +72,7 @@ Salesforce, as a company, owns these domain names (some product offerings have t
 
       * https://login.salesforce.com/
       * https://help.salesforce.com/
+      * https://certification.salesforce.com/
       * https://develop.salesforce.com/
       * https://partners.salesforce.com/
       * https://appexchange.salesforce.com/
