@@ -77,7 +77,7 @@ We want everyone to have a way to achieve a clear understanding of how to get ch
 
 In "green field" situations where an organization is starting from scratch, we begin with a <strong>sample/demo</strong> set of databases and code.
 
-Code includes tests and utility tools (Git, backups, etc.).
+Code includes tests and <strong>utility tools</strong> (Wireframing, Salesforce features, Git, backups, etc.).
 
 This is a key aspect of modern "DevOps" strategy, in order to move fast but also safely.
 
@@ -90,15 +90,30 @@ At the end of this phase, people know whether they can work together using the s
 
 ## 4. Incremental build of value
 
-We have found that small increments of useful change is more productive than "big bang" releases. This allows more participation and quicker course adjustments when necessary.
+It is our experience that small increments of useful change is more productive than "big bang" releases. That is because of the greater customer participation and quicker course adjustments possible. 
+
+User story documents about what will be created do not cover every detail (not a contract).
 
 While working on each increment, we consider all aspects holistically: the UX, Database Schema Design, Testing, Performance, Migration utilities, manual workarounds, etc. Our focus is delivering working code increments rather than comprehensive documentation.
 
-To stay targeted on what's most useful (avoid waste), constant vigilence about tradeoffs and targets, and agreement about them, is necessary. We know what each of us did the day before, what is blocking us, and what we aim to do the same day because we, on a daily basis, hold short "scrums" (as in rugby).
+To stay targeted on what's most useful (avoid waste), constant vigilence about tradeoffs and targets, and agreement about them, is necessary. We know what each of us did the day before, what is blocking us, and what we aim to do the same day because we, on a daily basis, hold short "scrums" (as in rugby). Most of all, this enable multi-skilled team members to quickly double-up on or take over tasks when necessary.
 
-We keep regular cadence of pre-scheduled system demos (every two weeks) based on agreements reached in the previous meeting. If we discover during our work that something won't fit within the "time box", we reduce the scope. "Fit in" includes all aspects necessary for "productive use" (security, migrations, testing, training, etc.).
+We keep a regular cadence of pre-scheduled system demos (every two weeks) based on agreements reached in the previous meeting. If we discover during our work that something won't fit within the "time box", we reduce the scope. "Fit in" includes all aspects necessary for "productive use" (security, migrations, testing, training, etc.).
+
+The "retrospective" after each sprint is when the team analyzes improvement in how the team works, and plan for some "actionable experiments".
 
 <hr />
+
+## Preparations, Cadence, Roles
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/43689153-1ae54610-98b3-11e8-930d-a51350689efb.jpg">
+<img alt="ScrumOverviewResized-972x678.jpg" width="972" height="678" src="https://user-images.githubusercontent.com/300046/43689153-1ae54610-98b3-11e8-930d-a51350689efb.jpg"></a>
+
+Those who review designs are expected to do so while work is being done rather than "grandstand" during the demo.
+
+## Checklist 
+
+[ ] User Stories
 
 ## Agile Processes
 
@@ -109,6 +124,7 @@ Trail: <a target="_blank" href="https://trailhead.salesforce.com/en/trails/learn
    * Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/salesforce-agile-basics">Salesforce Agile Basics</a>
 
    * Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/scrum-and-kanban-at-salesforce">Scrum and Kanban at Salesforce</a> +500
+   <br /><br />
 
 Trail: <a target="_blank" href="https://trailhead.salesforce.com/en/trails/run-an-agile-team">Learn Atlassian Agile Practices</a> consists of:
 
@@ -116,10 +132,26 @@ Trail: <a target="_blank" href="https://trailhead.salesforce.com/en/trails/run-a
 
    * Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/agile-frameworks-scrum-and-kanban">Atlassian Overview of Agile Frameworks</a> +200
 
+
+## Tools
+
+   * <a target="_blank" href="https://success.salesforce.com/ideaSearch">
+   Salesforce Idea Exchange/Search</a> lists all submission across all products.
+
+To track progress, many teams use a Kanban board, where a card represents each task worked on. A card first appears in "Upcoming" state. Cards within a stage are sorted by the highest priority. When a task is assigned, it is moved to the "Ready" stage during planning. Many teams designate a WIP (Work In Process) limit of how many cards the team can work on simultaneously. When ready, the card is moved to the "Dev" stage, then "Testing". There is a stage for blocked tasks. When completed, it's "Ready for Review". Cards in the "Done" column meet all criteria for being shippable to production.
+
+The above implements the "5 stages of innovation":
+
+1. Define an innovation project and the key stakeholders you’ll involve.
+2. Discover the needs and opportunities of your customer.
+3. Dare to imagine a bold solution to fulfill your customers’ needs.
+4. Do the work to rapidly demonstrate the validity of your concept and how it will work.
+5. Drive momentum to ensure adoption and growth of your vision.
+
 ## References
 
-https://en.wikipedia.org/wiki/Lean_software_development
-
+* https://en.wikipedia.org/wiki/Lean_software_development
+* http://sfdcsrini.blogspot.com/2014/10/scrum-agile-basics.html
 
 ## More about Salesforce #
 

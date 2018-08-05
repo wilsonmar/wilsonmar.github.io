@@ -182,17 +182,6 @@ Options for 12 industries as recognized by Salesforce:
    * Other
 
 
-## Skills in LinkedIn profile
-
-1. Click the  Me icon at the top of your LinkedIn homepage.
-2. Click "View profile".
-3. Scroll to the "Skills & Endorsements" section and click "Add a new skill".
-4. In the pop-up window, if it says "You’ve reached the limit of 50 skills", X back and remove some skills.
-5. Type the name of a skill and select it from the dropdown list that appears or click "Add" immediately.
-
-   You can also add skills from the Suggested skills based off your profile options that are provided.
-
-
 <a name="Social"></a>
 
 ## Stay Informed on Social Media
@@ -357,7 +346,9 @@ Local Meetups
 
 ### Dreamforce
 
-<a target="_blank" href="http://www.salesforce.com/dreamforce/">Dreamforce</a> is Salesforce's annual conference, usually <strong>4 days in September</strong>.
+The Saturday, Sunday, and Monday before Dreamforce are <a target="_blank" href="https://www.salesforce.com/dreamforce/certification/">Bootcamp courses</a> for $2,499 (vs. $3,499 at other times).
+
+<a target="_blank" href="http://www.salesforce.com/dreamforce/">Dreamforce</a> is Salesforce's annual conference, usually <strong>4 days in September</strong> (Tuesday thru Friday).
 
    * Hastags <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23RoadToDF18&src=typd">#RoadToDF18</a> and <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23DF18&src=typd">#DF18</a> (from <a target="_blank" href="https://twitter.com/Dreamforce?lang=en">Twitter account @Dreamforce</a>), on Instagram, and other social media.
 
@@ -445,21 +436,10 @@ On your Android, see https://t.co/UzK0VF7e9G
 <a target="_blank" href="https://salesforcestore.com/"><img align="right" alt="sf-keychain-150x150-6434.jpg" src="https://user-images.githubusercontent.com/300046/43412209-ba197162-93e9-11e8-8028-193144aeb840.jpg"></a>
 Miss being at a Salesforce event? Buy the branded clothing, office supplies, electronics, all 129 products for sale at <a target="_blank" href="https://salesforcestore.com/">https://salesforcestore.com</a>
 
-## Innovation
+## Partners
 
-5 Stages:
+https://partners.salesforce.com/s/education/consultants/Consulting_Program
 
-1. Define an innovation project and the key stakeholders you’ll involve.
-2. Discover the needs and opportunities of your customer.
-3. Dare to imagine a bold solution to fulfill your customers’ needs.
-4. Do the work to rapidly demonstrate the validity of your concept and how it will work.
-5. Drive momentum to ensure adoption and growth of your vision.
-
-   * <a target="_blank" href="https://success.salesforce.com/ideaSearch">
-   Idea Exchange/Search</a> lists all submission across all products.
-
-   * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/run-an-agile-team">Learn Atlassian Agile Practices</a>
-   [55 mins]
 
 <a name="WorkWithMe"></a>
 

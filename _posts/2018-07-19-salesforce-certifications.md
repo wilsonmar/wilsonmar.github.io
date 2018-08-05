@@ -26,17 +26,19 @@ http://certification.salesforce.com/
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/43396367-84f9318c-93be-11e8-9389-f0e30f5c1419.jpg">
 <img alt="sf-architectjourney-799x627-86747.jpg" width="799" src="https://user-images.githubusercontent.com/300046/43396367-84f9318c-93be-11e8-9389-f0e30f5c1419.jpg"></a>
 
+By level of technicality:
+
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom" align="left"><th> Seq. </th><th> # </th><th> Certification </th></tr>
 <tr valign="top"><td> 1. </td><td> 1 </td><td> <a href="#Salespeople">Sales professional (user)</a></td></tr>
-<tr valign="top"><td> 2. </td><td> 2 </td><td> <a href="#Administrator">Administrator</a></td></tr>
-<tr valign="top"><td> 3. </td><td> 4 </td><td> <a href="#Developer">Developer</a></td></tr>
-<tr valign="top"><td> 4. </td><td> 7 </td><td> <a href="#SolutionConsultant">Solution Consultant</a></td></tr>
-<tr valign="top"><td> 5. </td><td> 2 </td><td> <a href="#Specialist">Specialist (CPQ)</a></td></tr>
-<tr valign="top"><td> 6. </td><td> 7 </td><td> <a href="#Designer">Designer</a></td></tr>
-<tr valign="top"><td> 7. </td><td> 3 </td><td> <a href="#Marketing">Marketing</a></td></tr>
+<tr valign="top"><td> 2. </td><td> 3 </td><td> <a href="#Marketing">Marketing</a></td></tr>
+<tr valign="top"><td> 3. </td><td> 2 </td><td> <a href="#Administrator">Administrator</a></td></tr>
+<tr valign="top"><td> 4. </td><td> 4 </td><td> <a href="#Developer">Developer</a></td></tr>
+<tr valign="top"><td> 5. </td><td> 7 </td><td> <a href="#SolutionConsultant">Solution Consultant</a></td></tr>
+<tr valign="top"><td> 6. </td><td> 2 </td><td> <a href="#Specialist">Specialist (CPQ)</a></td></tr>
+<tr valign="top"><td> 7. </td><td> 7 </td><td> <a href="#Designer">Designer</a></td></tr>
 <tr valign="top"><td> 8. </td><td> 1 </td><td> <a href="#TechnicalArchitect">Technical Architect</a></td></tr>
-<tr valign="top"><td></td><td colspan="2"> <strong>26 total</strong> </td></tr>
+<tr valign="top"><td></td><td colspan="2"> <strong>27 total</strong> </td></tr>
 </table>
 
 The list above is the recommended sequence of advancement through the various exams.
@@ -88,15 +90,16 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
 
 <a name="Salespeople"></a>
 
-### Salespeople (user) certification
+## Salespeople (user) certification
 
 <a target="_blank" href="http://certification.salesforce.com/SG_AccreditedSalesProfessional.pdf">Official PDF -  Salesforce Accredited Sales Professional</a>
 
 
 <a name="Marketing"></a>
 
-### Marketing certification
+## Marketing certification
 
+<a name="MarketingCloud"></a>
 <a target="_blank" href="http://certification.salesforce.com/marketingcloudconsultant">Salesforce Certified Marketing Cloud Consultant</a>
 
    * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/personalize_customer_journeys_marketing_cloud">Get to Know Marketing Cloud</a>
@@ -109,7 +112,7 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
 
 <a name="Administrator"></a>
 
-### Administrator certification
+## Administrator certification
 
 For $200 each, answer 65% of 60 multiple-choice/multiple-select questions in 105 minutes.
 
@@ -176,21 +179,25 @@ Follow on Twitter:
 
 <a name="Developer"></a>
 
-### Developer certification
+## Developer certification
 
 (which includes database administrators):
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperI.pdf">Official PDF -  Certified Salesforce Platform Developer I 
+<a name="CSPD1"></a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperI.pdf">Official PDF -  Certified Salesforce Platform Developer I </a>
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperII.pdf">Official PDF -  Certified Salesforce Platform Developer II
+<a name="CSPD2"></a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperII.pdf">Official PDF -  Certified Salesforce Platform Developer II</a>
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedCommerceCloudDigitalDeveloper.pdf">Official PDF -  Salesforce Certified Commerce Cloud Digital Developer
+<a name="SCCCDD"></a>
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedCommerceCloudDigitalDeveloper.pdf">Official PDF -  Salesforce Certified Commerce Cloud Digital Developer</a>
 
    * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/learn-about-the-role-of-commerce-cloud-functional-architect">Commerce Cloud Functional Architect</a>
    * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/develop-for-commerce-cloud">Develop for Commerce Cloud</a>
    * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/cc-overview">Sell Everywhere with Commerce Cloud</a>
+   <br /><br />
 
-* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformAppBuilder.pdf">Official PDF -  Salesforce Certified Platform App Builder 
+* <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformAppBuilder.pdf">Official PDF -  Salesforce Certified Platform App Builder</a>
 
 Some exam resources address content for both courses:
 
@@ -204,6 +211,7 @@ Some exam resources address content for both courses:
    <strong>Lightning Platform Fundamentals</strong> is the "Bible" for Salesforce developer certification questions.
    It has "Try it" hands-on exercises to develop a Recruitment app.
    Its January 2015 version 9 online contained 402 pages, and was called "Force.com" instead of "Lightning".
+   <br /><br />
 
 Salesforce offers classes:
 
@@ -212,12 +220,14 @@ Salesforce offers classes:
    * DEV401 (Building Applications with Force.com and <a href="#Visualforce">Visualforce</a> classic UI)
 
    * DEV501 involves Apex coding
+   <br /><br />
 
 Trailhead:
 
    <a target="_blank" href="https://trailhead.salesforce.com/en/users/00550000006yDdKAAU/trailmixes/prepare-for-your-salesforce-platform-developer-i-credential">Trailmix for Developers</a> consists of several Trailhead modules.
 
    * https://trailhead.salesforce.com/trails/force_com_dev_beginner
+   <br /><br />
 
 Other exam prep. offerings:
 
@@ -230,42 +240,51 @@ Other exam prep. offerings:
    Salesforce Developer Practice Exam For 2018</a>
    2 practice tests, 75 questions each for $34.99 
    by Inspiring Generations Academy
+   <br /><br />
 
 
 <a name="SolutionConsultant"></a>
 
-### Solution Consultant certification
+## Solution Consultant certification
 
 These are $200 each, addressing each product line (except Knowledge Cloud, Marketing Cloud, and Service Cloud):
 
+<a name="SalesCloud"></a>
 * <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedSalesCloudConsultant.pdf">Official PDF -  Salesforce Certified Sales Cloud Consultant</a>
 
    * <a target="_blank" href="https://trailhead.salesforce.com/trails/discover-sales-cloud">Trail: Discover Sales Cloud</a>
    * <a target="_blank" href="https://trailhead.salesforce.com/trails/drive-sales-with-operational-excellence">Trail: Drive Sales with Operational Excellence</a>
+   <br /><br />
 
+<a name="ServiceCloud"></a>
 * <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedServiceCloudConsultant.pdf">Official PDF -  Salesforce Certified Service Cloud Consultant</a>
 
    * <a target="_blank" href="https://trailhead.salesforce.com/trails/service_develop">Trail: Discover Advanced Service Cloud Features</a>
    * <a target="_blank" href="https://trailhead.salesforce.com/trails/discover-service-for-small-business-with-service-cloud-essentials">Trail: Discover Service for Small Business with Service Cloud Essentials</a>
+   <br /><br />
 
+<a name="CommCloud"></a>
 * <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedCommunityCloudConsultant.pdf">Official PDF -  Salesforce Certified Community Cloud Consultant</a>
 
    * Trailmix: <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedFieldServiceLightningConsultant.pdf">Architect Journey: Analytics Architecture</a>
+   <br /><br />
 
-
+<a name="FieldService"></a>
 * <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedFieldServiceLightningConsultant.pdf">Official PDF -  Salesforce Certified Field Service Lightning Consultant</a>
 
-   o Scheduling and optimization
-   o Resource management
-   o Asset management
-   o Inventory management
-   o Work Order and Service Appointments lifecycle management
-   o Contract, entitlements, and warranty
-   o Mobility
-   o Quoting and invoicing
+   * Scheduling and optimization
+   * Resource management
+   * Asset management
+   * Inventory management
+   * Work Order and Service Appointments lifecycle management
+   * Contract, entitlements, and warranty
+   * Mobility
+   * Quoting and invoicing
 
    * <a target="_blank" href="https://trailhead.salesforce.com/trails/field_service">Trail: Get on the Road with Field Service Lightning</a>
+   <br /><br />
 
+<a name="Pardot1"></a>
 * <a target="_blank" href="http://certification.salesforce.com/pardotconsultant">
 Salesforce Certified Pardot Consultant</a>
 
@@ -274,7 +293,7 @@ Resources addressing the above exams:
 
 <a name="Designer"></a>
 
-### Designer certification
+## Designer certification
 
 These are $400 each addressing specific aspects of architecture:
 
@@ -312,6 +331,18 @@ The highest level of certification costs $6,000 plus travel to a Salesforce offi
 * <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedTechnicalArchitect.pdf">Official PDF -  Salesforce Certified Technical Architect - Review Board</a>
 
 <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23journeytocta&src=typd">#JourneyToCTA</a>
+
+## Partners 
+
+Salesforce requirs of their Partners to employ people with these certifications:
+
+   *  <a href="#SalesCloud">Sales Cloud Consultant</a>
+   *  <a href="#ServiceCloud">Service Cloud Consultant</a>
+   *  <a href="#CSPD1">Platform Developer I</a>
+   *  <a href="#CommunityCloud">Community Cloud Consultant</a>
+   *  <a href="#MarketingCloud">Marketing Cloud Consultant</a>
+   *  <a href="#Pardot1">Pardot Consultant</a>
+   *  <a href="#SCCCDD">Commerce Cloud Digital Developer</a>
 
 <hr />
 
