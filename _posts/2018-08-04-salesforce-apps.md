@@ -16,7 +16,33 @@ comments: true
 
 {% include _toc.html %}
 
+<a name="AppExchange"></a>
+
+## AppExchange 3rd-Party Tools
+
+https://appexchange.salesforce.com/appxHome
+
+<a target="_blank" href="https://appexchange.salesforce.com/collection/SalesforceLabs">
+Salesforce Labs Solutions at https://appexchange.salesforce.com/collection/SalesforceLabs</a>
+are free and customizable Labs Apps built by Salesforce employees.
+
+Examples from 3rd-parties (partners):
+
+* Security Zen at http://SecurityZen.net @SecurityZen_Net ‏is a new tool for managing #Salesforce Security.
+
+* Ultra Field History Tracker @UFHTAuditTool ‏since June 2018 is an advanced SFDC field history tracking app supporting both standard and custom objects, unlimited fields, forever retention WITHOUT consuming data storage.
+
+* <a target="_blank" href="https://www.linkedin.com/pulse/introducing-wsproxy-salesforce-marketing-cloud-eliot-harper/">WSProxy for Salesforce Marketing Cloud</a> July 17, 2018 by Eliot Harper offers scripting support through AMPscript and Server-Side JavaScript (or SSJS) scripting languages.
+
+* Salesforce data loading tools, web services, middleware (such as Dell Boomi, Informatica, etc.)
+
+* APTTUS Contract Management Software (CLM)
+
+
+
 While preparing for a developer Salesforce job, we built some add-on components to develop our skill and demonstrate our capabilties.
+
+## AppExchange Categories
 
 AppExchange has these categories of add-ons:
 
