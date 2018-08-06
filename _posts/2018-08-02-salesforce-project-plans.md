@@ -151,7 +151,22 @@ This diagram summarizes how we roll:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/43689153-1ae54610-98b3-11e8-930d-a51350689efb.jpg">
 <img alt="ScrumOverviewResized-972x678.jpg" width="972" height="678" src="https://user-images.githubusercontent.com/300046/43689153-1ae54610-98b3-11e8-930d-a51350689efb.jpg"></a>
 
-The Product Owner prioritizes, to ensure the team delivers business value. 
+
+### Development Lifecycle Roles
+
+In a smaller company, one person can wear many hats, but in a larger company, specialized roles define what each person is responsible for. Logical roles include the following:
+
+* <strong>Release manager</strong> manages the release schedule and coordinates releases with the business. The release manager could be in charge of pulling changes from version control.
+* <strong>Product manager</strong> provides the business requirements of apps and features, and works with the development team to implement those requirements. The product manager also performs user acceptance testing to ensure that requirements have been implemented.
+* <strong>Software developer</strong> develops new functionality in sandbox, including both declarative point-and-click development and code.
+* <strong>Quality engineer</strong> tests new functionality in sandbox.
+* <strong>Administrator</strong> performs administrative tasks in the production org, and tracks all changes made in production.
+* <strong>Trainer</strong> conducts training of company employees for new applications and features.
+
+The Product Owner prioritizes work items to ensure the team delivers business value. 
+
+Scrum Master is a facilitator of Agile adoption and removes obstacles external to the team.
+In some Agile frameworks, the Scrum Master takes does "Project Manager".
 
 
 ## Innovation

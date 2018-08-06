@@ -109,7 +109,7 @@ The company has seen a consistent growth rate of 35% year-over-year, which is un
 * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trail/innovation_salesforce_way">Innovation the Salesforce Way</a> [4 hrs 20 mins]
 
 
-## Personas
+## User Personas
 
 <a target="_blank" href="https://trailhead.salesforce.com/modules/ux-personas-for-salesforce">Trailhead module: UX Personas for Salesforce</a> [1 hr 10 min] 
 
@@ -150,37 +150,6 @@ Personas should be based on general work tasks users perform in their roles, rat
    * Community Admin
    * Community Builder
    <br /><br />
-
-
-### Development Lifecycle Roles
-
-In a smaller company, one person can wear many hats, but in a larger company, specialized roles define what each person is responsible for. Logical roles include the following:
-
-* <strong>Release manager</strong> manages the release schedule and coordinates releases with the business. The release manager could be in charge of pulling changes from version control.
-* <strong>Product manager</strong> provides the business requirements of apps and features, and works with the development team to implement those requirements. The product manager also performs user acceptance testing to ensure that requirements have been implemented.
-* <strong>Software developer</strong> develops new functionality in sandbox, including both declarative point-and-click development and code.
-* <strong>Quality engineer</strong> tests new functionality in sandbox.
-* <strong>Administrator</strong> performs administrative tasks in the production org, and tracks all changes made in production.
-* <strong>Trainer</strong> conducts training of company employees for new applications and features.
-
-## Industries
-
-Options for 12 industries as recognized by Salesforce:
-
-   * Automotive
-   * Communications
-   * Financial Services
-   * Healthcare
-   * High Tech
-   * Higher Education
-   * Life Sciences
-   * Manufacturing
-   * Media
-   * Nonprofit
-   * Public Sector
-   * Retail &amp; Consumer Goods
-   * Other
-
 
 <a name="Social"></a>
 

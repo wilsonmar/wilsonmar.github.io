@@ -95,6 +95,32 @@ PROTIP: Spending several days strait sitting in a class may seem like "drinking 
    More points get you higher <a target="_blank" href="https://trailhead.salesforce.com/en/trailblazer-ranks">rank</a>.
    "Ranger" is the highest rank, requiring <strong>50,000 points</strong> from at least 100 badges. <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23TrailheadRanger&src=typd">#TrailheadRanger</a>
 
+   ### Trailhead profiles
+
+   There are enough Trails for <a target="_blank" href="https://trailhead.salesforce.com/en/me/preeharris">Preethi Harris</a> to reach <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23DoubleRanger&src=typd">#DoubleRanger</a>
+
+   <a target="_blank" href="https://trailhead.salesforce.com/en/me/preeharris"><img alt="sf-doubleranger-648x262-35274.jpg" width="648" src="https://user-images.githubusercontent.com/300046/43724991-8fd41d7a-9958-11e8-9c11-686ed2ffb0b7.jpg"></a>
+
+   Some sample profiles from among my list of <a target="_blank" href=" https://wilsonmar.github.io/salesforce-rock-stars/">Salesforce Rock Stars</a>:
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/me/laydurafe">
+   https://trailhead.salesforce.com/en/me/laydurafe</a>
+   * https://trailhead.salesforce.com/en/me/adammvp
+   * https://trailhead.salesforce.com/en/me/00550000006gTqVAAU Naveen Poojary
+   * https://trailhead.salesforce.com/en/me/00550000006gOHXAA2 Anjaneya Reddy Bobbala got near 100,000 points by completing 135+ badges over 7 trails
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/me/wilsonmar/">
+   https://trailhead.salesforce.com/en/me/wilsonmar</a>
+   <br /><br />
+
+   Each profile includes how many trailhead modules and trails completed, and the points earned. Skills distribution by category:
+
+   ![sf-trailhead-cat-304x308-24442](https://user-images.githubusercontent.com/300046/43572325-7aa3ef20-95fc-11e8-99cf-391341ff6d8b.jpg)
+
+   Profiles don't list certifications exams passed.
+
+   QUESTION: Those who have been designated as a "MVP" by Salesforce also get identified in their profile?
+
    ### Custom Trailmix
 
    PROTIP: You can create <a target="_blank" href="https://trailhead.salesforce.com/en/users/005500000061uyuAAA/trailmixes/new">your own custom trailmix</a> on <a target="_blank" href="https://trailhead.salesforce.com/mytrailhead/">myTrailhead</a>, in different languages.
@@ -126,7 +152,7 @@ PROTIP: Spending several days strait sitting in a class may seem like "drinking 
 
    ### Text to speech
 
-   However, Trailhead tutorials are mainly text.
+   Trailhead content are mainly text. There are a few videos.
 
    PROTIP: Use a program that generates text to speech.
    Macs has it built-in, and just need to be enabled in Apple System Preferences > Accessibility > Speech.
@@ -142,32 +168,6 @@ PROTIP: Spending several days strait sitting in a class may seem like "drinking 
    
    But don't neglect completing Salesforce trailheads.
    Here's why...
-
-### Trailhead profiles
-
-There are enough courses for <a target="_blank" href="https://trailhead.salesforce.com/en/me/preeharris">Preethi Harris</a> to reach <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23DoubleRanger&src=typd">#DoubleRanger</a>
-<a target="_blank" href="https://trailhead.salesforce.com/en/me/preeharris">
-<img alt="sf-doubleranger-648x262-35274" width="648" height=262" src="https://user-images.githubusercontent.com/300046/43724991-8fd41d7a-9958-11e8-9c11-686ed2ffb0b7.jpg"></a>
-
-Some sample profiles from among my list of <a target="_blank" href="https://wilsonmar.github.io/salesforce-rock-stars/">Salesforce Rock Stars</a>:
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/me/laydurafe">
-   https://trailhead.salesforce.com/en/me/laydurafe</a>
-   * https://trailhead.salesforce.com/en/me/adammvp
-   * https://trailhead.salesforce.com/en/me/00550000006gTqVAAU Naveen Poojary
-   * https://trailhead.salesforce.com/en/me/00550000006gOHXAA2 Anjaneya Reddy Bobbala got near 100,000 points by completing 135+ badges over 7 trails
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/me/wilsonmar/">
-   https://trailhead.salesforce.com/en/me/wilsonmar</a>
-
-Each profile includes how many trailhead modules and trails completed,
-and the points earned. Skills distribution by category:
-
-![sf-trailhead-cat-304x308-24442](https://user-images.githubusercontent.com/300046/43572325-7aa3ef20-95fc-11e8-99cf-391341ff6d8b.jpg)
-
-Profiles don't list certifications exams passed.
-
-QUESTION: Those who have been designated as a "MVP" by Salesforce also get identified in their profile?
 
 
 <a name="TrailheadPlayground"></a>
