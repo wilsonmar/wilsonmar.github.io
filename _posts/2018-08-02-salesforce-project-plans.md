@@ -113,28 +113,6 @@ The "retrospective" after each sprint is when the team analyzes improvement in h
 
 Those who review designs are expected to do so while work is being done rather than "grandstand" during the demo.
 
-## Checklist 
-
-[ ] User Stories
-
-## Agile Processes
-
-The above are explained in these courses covering development processses within Salesforce:
-
-Trail: <a target="_blank" href="https://trailhead.salesforce.com/en/trails/learn-salesforce-agile-practices">Learn Salesforce Agile Practices</a> consists of:
-
-   * Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/salesforce-agile-basics">Salesforce Agile Basics</a>
-
-   * Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/scrum-and-kanban-at-salesforce">Scrum and Kanban at Salesforce</a> +500
-   <br /><br />
-
-Trail: <a target="_blank" href="https://trailhead.salesforce.com/en/trails/run-an-agile-team">Learn Atlassian Agile Practices</a> consists of:
-
-   * Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/agile-basics/">Atlassian Agile Basics</a>
-
-   * Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/agile-frameworks-scrum-and-kanban">Atlassian Overview of Agile Frameworks</a> +200
-
-
 ## Tools - KanBan
 
    * <a target="_blank" href="https://success.salesforce.com/ideaSearch">
@@ -153,7 +131,27 @@ The above implements the "5 stages of innovation":
 4. Do the work to rapidly demonstrate the validity of your concept and how it will work.
 5. Drive momentum to ensure adoption and growth of your vision.
 
+## Checklist 
+
+[ ] User Stories
+
+
 ## References
+
+The above are explained in these courses covering development processses within Salesforce:
+
+Trail: <a target="_blank" href="https://trailhead.salesforce.com/en/trails/learn-salesforce-agile-practices">Learn Salesforce Agile Practices</a> consists of:
+
+   * Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/salesforce-agile-basics">Salesforce Agile Basics</a>
+
+   * Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/scrum-and-kanban-at-salesforce">Scrum and Kanban at Salesforce</a> +500
+   <br /><br />
+
+Trail: <a target="_blank" href="https://trailhead.salesforce.com/en/trails/run-an-agile-team">Learn Atlassian Agile Practices</a> consists of:
+
+   * Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/agile-basics/">Atlassian Agile Basics</a>
+
+   * Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/agile-frameworks-scrum-and-kanban">Atlassian Overview of Agile Frameworks</a> +200
 
 * https://en.wikipedia.org/wiki/Lean_software_development
 * http://sfdcsrini.blogspot.com/2014/10/scrum-agile-basics.html
