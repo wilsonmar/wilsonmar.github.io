@@ -124,7 +124,10 @@ PROTIP: Spending several days strait sitting in a class may seem like "drinking 
    ### Custom Trailmix
 
    PROTIP: You can create <a target="_blank" href="https://trailhead.salesforce.com/en/users/005500000061uyuAAA/trailmixes/new">your own custom trailmix</a> on <a target="_blank" href="https://trailhead.salesforce.com/mytrailhead/">myTrailhead</a>, in different languages.
+   For example:
 
+   * <a target="_blank" href="https://trailhead.salesforce.com/users/00550000006FKOWAA4/trailmixes/lightning-components-basics">Alba Azcona's Lightning Components - Basics</a>
+   
 
    ### Plan to Pace Yourself
 
@@ -413,7 +416,8 @@ To add a managed app such as the Salesforce <a target="_blank" href="https://log
 
 ## Clear fresh developer edition org
 
-Some tutorials ask that you remove sample data. Based on <a target="_blank" href="https://apex-commons.github.io/remove-code-from-fresh-salesforce-org/">this page</a>:
+Some tutorials ask that you remove sample data. Based on <a target="_blank" href="https://apex-commons.github.io/remove-code-from-fresh-salesforce-org/">this page</a>
+and https://help.salesforce.com/articleView?id=deleting_trial_data.htm&type=5
 
 1. Go to Setup, Administration Setup, Manage Users, Profiles, System Administrator
 1. Click Edit

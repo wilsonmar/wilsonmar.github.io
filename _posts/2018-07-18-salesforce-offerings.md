@@ -23,9 +23,9 @@ Technically, many of Salesforce's "cloud" and feature offerings share use of the
 
 <a name="Clouds"></a>
 
-### Clouds
+### Clouds = Standard Apps
 
-Salesforce uses the word "cloud" to brand offering to different <strong>industries</strong> and interests.
+Salesforce uses the word "cloud" to brand <strong>Salesforce apps (applications)</strong>:
 
    * Analytic Cloud - Business intelligence and analytics software solutions with the "Einstein" brand
    * Commerce Cloud engages shoppers for e-commerce, with order management
@@ -48,7 +48,7 @@ Expertise on some of the clouds are proven by <a href="https://wilsonmar.github.
 
 ### Industries
 
-Not all of the 12 industries that Salesforce recognizes and (requires its partners to support) are called its separate "Cloud":
+Salesforce recognizes these 12 industries (and requires its partners support):
 
    * Automotive
    * Communications
@@ -64,12 +64,11 @@ Not all of the 12 industries that Salesforce recognizes and (requires its partne
    * Retail &amp; Consumer Goods
    * Other
 
-
 <a name="Domains"></a>
 
-### DNS Domain Names 
+### Salesforce.com and Force.com
 
-Salesforce, as a company, owns these domain names (some product offerings have their own domain, but some don't):
+Salesforce, as a company, owns several domain names (some product offerings have their own domain, but some don't):
 
    * <a target="_blank" href="https://www.salesforce.com/">Salesforce.com</a> [<a target="_blank" href="https://status.salesforce.com/">status</a>]
 
@@ -79,6 +78,8 @@ Salesforce, as a company, owns these domain names (some product offerings have t
       * https://develop.salesforce.com/
       * https://partners.salesforce.com/
       * https://appexchange.salesforce.com/
+
+      * https://<em>custom-brand-subdomain</em>.my.salesforce.com/ are production custom <a target="_blank" href="https://help.salesforce.com/articleView?id=domain_name_overview.htm&type=5">My Domains</a>, which is used for Single sign-on (SSO) with SAML or external identity provider Facebook, Google, LinkedIn, Twitter. It is also used (required) by Lightning UX. See <a target="_blank" href="http://salesforce.vidyard.com/watch/oFQ26FCXPVOA90xZaVDDjA">this video</a>.
       <br /><br />
 
    * <a target="_blank" href="https://www.Force.com/"> Force.com</a> is the "platform" domain used by Trailhead and <a target="_blank" href="https://www.similarweb.com/website/force.com#websiteContent">other segments</a>:
@@ -89,6 +90,10 @@ Salesforce, as a company, owns these domain names (some product offerings have t
       * https://veterans.force.com/
       * https://???.lightning.force.com/
       <br /><br />
+
+<a name="OtherDomains"></a>
+
+### Other DNS Domain Names 
 
    * <a target="_blank" href="https://salesforceiq.com">Salesforceiq.com</a> [<a target="_blank" href="https://status.salesforceiq.com/">status</a>]
    * <a target="_blank" href="https://salesforce.org/">Salesforce.org</a> for non-profits
@@ -106,7 +111,7 @@ Not owned by Salesforce but they seem close:
    * <a target="_blank" href="http://www.financialforce.com/">FinancialForce.com</a> provides SaaS for managing financial information. Salesforce invested in this company.
 
 
-   ### Status of productive use
+### Status of productive use
 
 1. Use a browser to where Salesforce displays the up-time status of each instance:
 
