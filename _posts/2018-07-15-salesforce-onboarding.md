@@ -820,12 +820,9 @@ I recommend that you use Google Authenticator instead so you only need to have o
    * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/shield">Secure Your Apps with Salesforce Shield</a> [4 hrs 5 mins]
 
 
-## More Trailhead Learning
+<a name="Superbadges"></a>
 
-
-   <a name="Superbadges"></a>
-
-### Superbadges
+## Superbadges
 
    <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges">Superbadges"</a> provide skill-based, domain-level "specialist" credential (to put on resume) by completing modules of real-life business scenario for which you have to build a solution across entire feature areas. 
 
@@ -838,7 +835,7 @@ I recommend that you use Google Authenticator instead so you only need to have o
    * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_apex">
    Apex Specialist</a>
    * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_aap">
-   Advanced Apex Specialist</a>
+   Advanced Apex Specialist</a> [12 hrs - 16 hrs]
    <br /><br />
 
    <a name="LightningSuperbadges"></a>
