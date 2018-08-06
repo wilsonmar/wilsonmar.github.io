@@ -18,7 +18,7 @@ comments: true
 
 Here is reference information for those new to Salesforce to understand how the company structures its offerings.
 
-Technically, many of Salesforce's "cloud" and feature offerings share use of the same "salesforce.com" and force.com DNS domain names.
+Technically, many of Salesforce's "cloud" and feature offerings share use of the same salesforce.com and force.com DNS domain names.
 
 
 <a name="Clouds"></a>

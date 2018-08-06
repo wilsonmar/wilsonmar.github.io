@@ -61,16 +61,18 @@ Possible conflicting files are:
 🍺  /usr/local/Cellar/heroku/3.43.5: 992 files, 6.2M, built in 7 seconds
    </pre>
 
-1. Fix brew link
+1. If you get the message:
 
-   Error: The `brew link` step did not complete successfully
-   The formula built, but is not symlinked into /usr/local
+   <pre>Error: The `brew link` step did not complete successfully
+   The formula built, but is not symlinked into /usr/local</pre>
+
+   Fix it by first:
 
    <pre><strong>
    brew link --overwrite --dry-run heroku
    </strong></pre>
 
-1. To force the link and overwrite all conflicting files:
+   To force the link and overwrite all conflicting files:
 
    <pre><strong>
    brew link --overwrite heroku
@@ -109,14 +111,17 @@ Password (typing will be hidden):
    </pre>
 
    QUESTION: Where was that installed?
+
    PROTIP: On a Mac, the installer creates folder:<a target="_blank" href="https://devcenter.heroku.com/articles/heroku-cli#download-and-install">*</a>
 
-   ~/.netrc 
+   <pre>~/.netrc</pre>
+
+   TODO: Set password for auto login.
 
 
+## New Instance
 
-
-   ### New Instance
+A new instance can be created using either on Heroku on-line (shown in this section) or <a href="#NewScript">in a shell script</a>.
 
 1. Create a new instance:
 
@@ -145,7 +150,9 @@ Password (typing will be hidden):
 1. See https://devcenter.heroku.com/articles/pipelines
 1. Click Deploy App.
 
-## Script instead
+<a name="NewScript"></a>
+
+## Script to create new instance
 
 Instead of the manual approach, use my Bash script to do the equivalent of the above. It's at:
 
