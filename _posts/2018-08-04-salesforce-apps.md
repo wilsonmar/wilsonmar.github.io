@@ -18,6 +18,12 @@ comments: true
 
 <a name="AppExchange"></a>
 
+While preparing for a developer Salesforce job, we built some add-on components to develop our skill and demonstrate our capabilties.
+
+## AppExchange
+
+
+
 ## AppExchange 3rd-Party Tools
 
 https://appexchange.salesforce.com/appxHome
@@ -39,8 +45,6 @@ Examples from 3rd-parties (partners):
 * APTTUS Contract Management Software (CLM)
 
 
-
-While preparing for a developer Salesforce job, we built some add-on components to develop our skill and demonstrate our capabilties.
 
 ## AppExchange Categories
 
