@@ -347,8 +347,10 @@ To https://git.heroku.com/guarded-ridge-66528.git
 
    <pre><strong>
 heroku ps:scale web=1
-   </pre>
+   </strong></pre>
 
+   Expected response:
+   
    <pre>
 Scaling dynos... done, now running web at 1:Free
    </pre>
