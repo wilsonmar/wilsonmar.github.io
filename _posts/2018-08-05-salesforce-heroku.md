@@ -350,22 +350,20 @@ heroku ps:scale web=1
    </strong></pre>
 
    Expected response:
-   
-   <pre>
-Scaling dynos... done, now running web at 1:Free
+
+   <pre>Scaling dynos... done, now running web at 1:Free
    </pre>
 
 10. Open the app's web page in your default browser:
 
-   <pre><strong>
-heroku open
-   </strong></pre>
+    <pre><strong>heroku open
+    </strong></pre>
 
-   A sample URL:
+    A sample URL:
 
-   <pre>
-https://guarded-ridge-66528.herokuapp.com/
-   </pre>
+    <pre>
+    https://guarded-ridge-66528.herokuapp.com/
+    </pre>
 
 
 ## Add-on Postgres database
@@ -392,9 +390,9 @@ described at https://elements.heroku.com/addons/heroku-postgresql
 1. Select the Settings tab.
 1. In the "Config Vars" section, click Reveal Config Vars (Key/Value pairs):
 
-   * DATABASE_URL = postgres://abcdvnhzwoskmf:9310494d102ba4df7de3b3fe33921de3410228045309e28ae5f98411e01033c0@ec2-184-73-199-189.compute-1.amazonaws.com:5432/det6u4itvvuivx
+   * <tt>DATABASE_URL</tt> = postgres://abcdvnhzwoskmf:9310494d102ba4df7de3b3fe33921de3410228045309e28ae5f98411e01033c0@ec2-184-73-199-189.compute-1.amazonaws.com:5432/det6u4itvvuivx
 
-   * PGSSLMODE = "require", which Heroku should have taken from the app.json file:
+   * <tt>PGSSLMODE</tt> = "require", which Heroku should have taken from the app.json file:
 
    <pre>
   "env": {
