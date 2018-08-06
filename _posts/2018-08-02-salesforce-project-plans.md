@@ -135,7 +135,7 @@ While working on each increment, we consider all aspects holistically: the UX, D
 When changes need to be organized into <strong>releases</strong>, we
 keep to a regular cadence of pre-scheduled <strong>system demos</strong> (every two weeks) to review a group of changes going into production. 
 
-If we discover during our work that something won't fit within the "time box", we reduce the scope of features. "Fit in" includes all aspects necessary for "productive use" (security, migrations, testing, training, etc.).
+If we discover during our work that something can't fit within the "time box", we reduce the scope of features. "Fit in" includes all aspects necessary for "productive use" (security, migrations, testing, training, etc.).
 
 ![agile-parallel-751x296.png](https://user-images.githubusercontent.com/300046/43693290-516a4f50-98ea-11e8-8157-d3f3b26e8a24.png)
 
@@ -170,7 +170,7 @@ The above implements the "5 stages of innovation":
 
 An example of checklist:
 
-[ ] User Stories
+- [ ] User Stories
 
 etc.
 
