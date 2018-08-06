@@ -29,24 +29,25 @@ http://certification.salesforce.com/
 By level of technicality:
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom" align="left"><th> Seq. </th><th> # </th><th> Certification </th></tr>
-<tr valign="top"><td> 1. </td><td> 1 </td><td> <a href="#Salespeople">Sales professional (user)</a></td></tr>
-<tr valign="top"><td> 2. </td><td> 3 </td><td> <a href="#Marketing">Marketing</a></td></tr>
-<tr valign="top"><td> 3. </td><td> 2 </td><td> <a href="#Administrator">Administrator</a></td></tr>
-<tr valign="top"><td> 4. </td><td> 4 </td><td> <a href="#Developer">Developer</a></td></tr>
+<tr valign="bottom" align="left"><th> Seq. </th><th> # </th><th> Position </th><th> Avg. Salary </th></tr>
+<tr valign="top"><td> 1. </td><td> 1 </td><td> <a href="#Salespeople">Sales professional (user)</a></td><td align="right">$90,275</td></tr>
+<tr valign="top"><td> 2. </td><td> 3 </td><td> <a href="#Marketing">Marketing</a></td><td align="right">$85,627</td></tr>
+<tr valign="top"><td> - </td><td> - </td><td> Business Analyst</a></td><td align="right">$85,529</td></tr>
+<tr valign="top"><td> 3. </td><td> 2 </td><td> <a href="#Administrator">Administrator</a></td><td align="right">$88,230</td></tr>
+<tr valign="top"><td> 4. </td><td> 4 </td><td> <a href="#Developer">Developer</a></td><td align="right">$112,620</td></tr>
 <tr valign="top"><td> 5. </td><td> 7 </td><td> <a href="#SolutionConsultant">Solution Consultant</a></td></tr>
 <tr valign="top"><td> 6. </td><td> 2 </td><td> <a href="#Specialist">Specialist (CPQ)</a></td></tr>
 <tr valign="top"><td> 7. </td><td> 7 </td><td> <a href="#Designer">Designer</a></td></tr>
-<tr valign="top"><td> 8. </td><td> 1 </td><td> <a href="#TechnicalArchitect">Technical Architect</a></td></tr>
+<tr valign="top"><td> 8. </td><td> 1 </td><td> <a href="#TechnicalArchitect">Technical Architect</a></td><td align="right">$136,819</td></tr>
 <tr valign="top"><td></td><td colspan="2"> <strong>27 total</strong> </td></tr>
 </table>
-
-The list above is the recommended sequence of advancement through the various exams.
 
 PROTIP: Developers are advised to first pass the <a href="#Administrator">Administrator certification</a>.
 
 PROTIP: Beware of the age of each resource, the version each training class was created. 
 Salesforce is undergoing rapid change in branding (to Lightning and DX plus Einstein).
+
+Average salaries are from <a target="_blank" href="https://trailhead.salesforce.com/trails/build-your-career-with-salesforce-skills/modules/career-development-planning/units/explore-career-options/">Career Pathways</a> from an unknown point back in time. Use it as relative comparisons.
 
 <hr />
 
