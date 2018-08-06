@@ -92,7 +92,7 @@ PROTIP: Spending several days strait sitting in a class may seem like "drinking 
 
    Projects and <a href="#Superbadges">superbadges</a> challenge you to implement a feature or solution in an org (a Trailhead Playground) without step-by-step instructions.
 
-   More points get you higher <a target="_blank" href="https://trailhead.salesforce.com/en/trailblazer-ranks">rank</a>.
+   More points get you higher <a target="_blank" href="https://trailhead.salesforce.com/en/trailblazer-ranks">rank</a>. PROTIP: Each rank takes double the effort from the previous rank.
    "Ranger" is the highest rank, requiring <strong>50,000 points</strong> from at least 100 badges. <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23TrailheadRanger&src=typd">#TrailheadRanger</a>
 
    ### Trailhead profiles
@@ -183,6 +183,23 @@ PROTIP: Salesforce is great because of its free Trailhead tutorial that are thor
 
 PROTIP: For a list of your Hands-on Orgs, go to <a target="_blank" href="https://trailhead.salesforce.com/">https://trailhead.salesforce.com</a>,
 click the picture at the upper-right corner, and select <a target="_blank" href="https://trailhead.salesforce.com/en/users/profiles/settings/">Settings</a>.
+
+1. Install the Google Chrome browser (if you haven't already done so).
+
+1. Open Chrome and click the icon at the upper-right corner with the three dots for a menu to select "New incognito window".
+
+1. Highlight and copy this URL, then paste or type in this URL in the Address field:
+
+   https://trailhead.salesforce.com
+
+   PROTIP: Using an icognito screen ignores all the previous cookies that may confuse the website.
+
+1. Login using the email associated with the Trailhead Username you wish to use.
+
+
+1. If the "Verify Your Identity" page appears about a text to your phone, go to your phone and get the code to type into Google Chrome.
+
+   PROTIP: Press command+` (back tick at the upper-left keyboard) to switch among Chrome windows.
 
 1. At the bottom of the Trailhead Module page there is often a blue <strong>"Launch"</strong> button:
 
