@@ -32,7 +32,7 @@ By level of technicality:
 <tr valign="bottom" align="left"><th> Seq. </th><th> # </th><th> Position </th><th> Avg. Salary </th></tr>
 <tr valign="top"><td> 1. </td><td> 1 </td><td> <a href="#Salespeople">Sales professional (user)</a></td><td align="right">$90,275</td></tr>
 <tr valign="top"><td> 2. </td><td> 3 </td><td> <a href="#Marketing">Marketing</a></td><td align="right">$85,627</td></tr>
-<tr valign="top"><td> - </td><td> - </td><td> Business Analyst</a></td><td align="right">$85,529</td></tr>
+<tr valign="top"><td> - </td><td> - </td><td> Business Analyst</td><td align="right">$85,529</td></tr>
 <tr valign="top"><td> 3. </td><td> 2 </td><td> <a href="#Administrator">Administrator</a></td><td align="right">$88,230</td></tr>
 <tr valign="top"><td> 4. </td><td> 4 </td><td> <a href="#Developer">Developer</a></td><td align="right">$112,620</td></tr>
 <tr valign="top"><td> 5. </td><td> 7 </td><td> <a href="#SolutionConsultant">Solution Consultant</a></td></tr>

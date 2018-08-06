@@ -57,6 +57,9 @@ Who will participate and when? What is the cadence of work and meetings?
 
 What are the deliverables? The "Product Backlog" of everything that can be done are a superset of what is actually targeted to be built during each "sprint" of work.
 
+A <a target="_blank" href="https://www.atlassian.com/agile/product-management/roadmaps">Roadmap</a> provides a grand timeline. For example:
+![agile_roadmap-564x185](https://user-images.githubusercontent.com/300046/43692795-8f0b34d0-98e7-11e8-9d8f-03d9219edcb3.jpg)
+
 Which role is responsible for each deliverable?
 
 What is the strategy for tradeoffs between quality, cost, time?
@@ -93,7 +96,9 @@ User story documents about what will be created do not cover every detail (not a
 
 While working on each increment, we consider all aspects holistically: the UX, Database Schema Design, Testing, Performance, Migration utilities, manual workarounds, etc. Our focus is delivering working code increments rather than comprehensive documentation.
 
-To stay targeted on what's most useful (avoid waste), constant vigilence about tradeoffs and targets, and agreement about them, is necessary. We know what each of us did the day before, what is blocking us, and what we aim to do the same day because we, on a daily basis, hold short "scrums" (as in rugby). Most of all, this enable multi-skilled team members to quickly double-up on or take over tasks when necessary.
+![agile-parallel-751x296.png](https://user-images.githubusercontent.com/300046/43693290-516a4f50-98ea-11e8-8157-d3f3b26e8a24.png)
+
+To stay targeted on what's most useful (to avoid waste), constant vigilence about tradeoffs and targets, and agreement about them, is necessary. We know what each of us did the day before, what is blocking us, and what we aim to do the same day because we, on a daily basis, hold short "scrums" (as in rugby). Most of all, this enable multi-skilled team members to quickly double-up on or take over tasks when necessary.
 
 We keep a regular cadence of pre-scheduled system demos (every two weeks) based on agreements reached in the previous meeting. If we discover during our work that something won't fit within the "time box", we reduce the scope. "Fit in" includes all aspects necessary for "productive use" (security, migrations, testing, training, etc.).
 
