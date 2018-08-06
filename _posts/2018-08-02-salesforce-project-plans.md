@@ -187,7 +187,8 @@ An example of checklist:
 
 - [ ] User Stories
 
-etc.
+TODO: etc.
+
 
 ## References
 

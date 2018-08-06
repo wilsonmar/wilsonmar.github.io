@@ -838,7 +838,7 @@ I recommend that you use Google Authenticator instead so you only need to have o
 
    <a name="LightningSuperbadges"></a>
    
-   ### Lightning superbadges
+### Lightning superbadges
 
    * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lightning_platform_app_builder">
    Lightning App Customization Specialist</a>
@@ -852,16 +852,13 @@ I recommend that you use Google Authenticator instead so you only need to have o
 
    <a name="SpecialtySuperbadges"></a>
    
-   ### Specialist superbadges
+### Specialist superbadges
 
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_process_automation">
-   Process Automation Specialist</a>
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_business_specialist">
-   Business Administration Specialist</a>
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_integration">
-   Data Integration Specialist</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_process_automation">Process Automation Specialist</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_business_specialist">Business Administration Specialist</a> make use of the <a target="_blank" href="https://na31.lightning.force.com/packagingSetupUI/ipLanding.app?apvId=04tf4000000x3Yd">BSX Unmanaged Package</> by CPBHE
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_integration">Data Integration Specialist</a>
 
-   ### Specialty superbadges
+### Specialty superbadges
 
    * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_analytics_integration_specialist">
    Einstein Analytics Data Preparation Specialist</a>

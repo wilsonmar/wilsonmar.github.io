@@ -549,12 +549,10 @@ Heroku Agile Accelerator from AppExchange Trello
 https://github.com/jamesward/heroku-buildpack-static
 Heroku buildpack for handling static sites and single page web apps 
 
-
 https://github.com/jamesward/hello-kafka-salesforce
 
 https://github.com/jamesward/atom-heroku-tools
 Stores a Heroku API Access Token the user's .netrc file
-
 
 https://github.com/heroku
 

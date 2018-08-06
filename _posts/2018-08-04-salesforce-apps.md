@@ -70,7 +70,7 @@ AppExchange has these categories of add-ons:
 * Order Management
 * Payment
 * Personalization
-* POS
+* POS (Point of Sale devices)
 * Product Information Management
 * Ratings & Reviews
 * Rich Media
