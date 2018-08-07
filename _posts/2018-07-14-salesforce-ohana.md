@@ -411,7 +411,9 @@ On your Android, see https://t.co/UzK0VF7e9G
 ### Store
 
 <a target="_blank" href="https://salesforcestore.com/"><img align="right" alt="sf-keychain-150x150-6434.jpg" src="https://user-images.githubusercontent.com/300046/43412209-ba197162-93e9-11e8-8028-193144aeb840.jpg"></a>
-Miss being at a Salesforce event? Buy the branded clothing, office supplies, electronics, all 129 products for sale at <a target="_blank" href="https://salesforcestore.com/">https://salesforcestore.com</a>
+Miss being at a Salesforce event? Buy the branded clothing, office supplies, electronics, all 129+ products for sale at <a target="_blank" href="https://salesforcestore.com/">https://salesforcestore.com</a>
+
+   PROTIP: Ironically, the site uses ASP.NET and jQuery (rather than React and web services).
 
 ## Partners
 
