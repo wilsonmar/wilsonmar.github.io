@@ -82,7 +82,9 @@ The top competitors to Salesforce are:
 
 ## Locations
 
-Salesforce buildt the tallest building in San Francisco, a few feet taller than the Eiffel Tower in Paris.
+See https://www.salesforce.com/company/locations/
+
+Salesforce buildt the tallest building in San Francisco, The Landmark @ One Market, to be a few feet taller than the Eiffel Tower in Paris.
 
 ![sf-tallest-648x558-65050](https://user-images.githubusercontent.com/300046/43551978-2ffdeb20-95a6-11e8-92c3-c919dee9811b.jpg)
 

@@ -24,11 +24,15 @@ The advantage of a career working with Salesforce is that one can be productive 
 
 ## Jobs inside Salesforce
 
-   * <a target="_blank" href="http://careers.force.com/jobs/">http://careers.force.com/jobs</a> lists jobs inside Salesforce. Applicants use workday.com.
+   * <a target="_blank" href="http://careers.force.com/jobs/">http://careers.force.com/jobs</a> lists jobs inside Salesforce. Applicants use workday.com to apply.
 
-   * <a target="_blank" href="https://www.glassdoor.com/Reviews/Salesforce-Reviews-E11159.htm">Salesforce employee reviews on Glassdoor</a> mention concern with work-life balance.
+   * <a target="_blank" href="https://www.glassdoor.com/Reviews/Salesforce-Reviews-E11159.htm">Salesforce employee reviews on Glassdoor</a> - some mention concern with work-life balance.
+
+   * <a target="_blank" href="https://www.linkedin.com/company/salesforce/jobs/">linkedin.com/company/salesforce/jobs</a>
 
    * Salesforce is rated highly among "Best Places to Work".
+
+   * FOLLOW: <a target="_blank" href="http://www.twitter.com/salesforcejobs">@salesforcejobs</a>
 
 ## Job listings
 

@@ -31,8 +31,8 @@ Salesforce uses the word "cloud" to brand <strong>Salesforce apps (applications)
    * Commerce Cloud engages shoppers for e-commerce, with order management
    * <a target="_blank" href="http://certification.salesforce.com/communitycloud">Commmunity Cloud</a> - Connect customers, partners, and employees
    * <a target="_blank" href="http://certification.salesforce.com/salescloud">Sales Cloud</a> - Complete CRM customer service solutions
-   * Government Cloud
-   * Health Cloud
+   * Government Cloud app
+   * <a target="_blank" href="https://status.salesforce.com/">Health Cloud</a> reports on the health of services by pod (within each region).
    * <a target="_blank" href="https://www.salesforce.com/products/integration-cloud/overview/">Integration Cloud</a> Integration Builder includes the <strong>Mulesoft</strong> Anypoint Platform (bought by Salesforce in an exchange of stock May 2018)
 
    * <a target="_blank" href="http://certification.salesforce.com/marketingcloudconsultant">Marketing Cloud</a> - Build and manage 1:1 customer journeys. It has its own query language. No free accounts here.
@@ -73,11 +73,12 @@ Salesforce, as a company, owns several domain names (some product offerings have
    * <a target="_blank" href="https://www.salesforce.com/">Salesforce.com</a> [<a target="_blank" href="https://status.salesforce.com/">status</a>]
 
       * https://login.salesforce.com/
-      * https://help.salesforce.com/
+      * https://appexchange.salesforce.com/
       * https://certification.salesforce.com/
       * https://develop.salesforce.com/
+      * https://help.salesforce.com/
       * https://partners.salesforce.com/
-      * https://appexchange.salesforce.com/
+      * https://trust.salesforce.com/en/
 
       * https://<em>custom-brand-subdomain</em>.my.salesforce.com/ are production custom <a target="_blank" href="https://help.salesforce.com/articleView?id=domain_name_overview.htm&type=5">My Domains</a>, which is used for Single sign-on (SSO) with SAML or external identity provider Facebook, Google, LinkedIn, Twitter. It is also used (required) by Lightning UX. See <a target="_blank" href="http://salesforce.vidyard.com/watch/oFQ26FCXPVOA90xZaVDDjA">this video</a>.
       <br /><br />

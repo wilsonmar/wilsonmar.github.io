@@ -22,6 +22,13 @@ While preparing for a developer Salesforce job, we built some add-on components 
 
 ## AppExchange
 
+https://github.com/twilio/twilio-salesforce
+A Salesforce/Force.com library for communicating with the Twilio REST API and generating TwiML. Need help? Post your questions to http://getsatisfaction.com/twilio or email us at help@twilio.com http://www.twilio.com/salesforce
+
+
+https://github.com/SalesforceFoundation/ApexDoc
+The latest java source for ApexDoc, a tool to document your Salesforce Apex classes.
+
 
 
 ## AppExchange 3rd-Party Tools

@@ -20,11 +20,13 @@ Salesforce calls "Trailblazers" those who have transformed their careers using i
    * <a target="_blank" href="https://www.salesforce.com/campaign/blaze-your-trail/">See videos of "Trailblazers"
 who are using the software</a>.
 
-This page lists individuals who have contributed significant blogs, tweets, courses, or otherwise have been recognized some way:
+This page lists individuals who have significant blogs, tweets, courses, or otherwise have contributed some way:
 
    <a name="MVP"></a>
 
    * <a target="_blank" href="https://success.salesforce.com/mvp/">https://success.salesforce.com/mvp</a> (About 200+ are selected each year).
+
+   * Webinar: <a target="_blank" href="https://longshoreconsulting.webinarninja.com/webinars/18315/register/">#AdminHour: All About the Salesforce MVP Program</a>
 
    <a name="GolderHoodie"></a>
 
@@ -280,6 +282,10 @@ Jitendra Zaa, a 7X Salesforce Certificate, MVP and Technical Architect, working 
 
    * <a target="_blank" href="http://www.jitendrazaa.com/blog/">jitendrazaa.com/blog</a>
    since 2008
+   * <a target="_blank" href="https://www.youtube.com/watch?v=4H1kj8GUebw">Performing Load Testing in Salesforce using Selenium and TestNG</a> [3:05] Aug 27, 2017
+   * <a target="_blank" href="https://www.youtube.com/watch?v=8CRsCmM_jyI">Getting started with Selenium and Salesforce - Part 1</a> Mar 28, 2015 [11:08]
+   * <a target="_blank" href="https://www.youtube.com/watch?v=2pb7wmOpYxI">Selenium automated testing Part 2</a> 
+   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=VSa7PgIANvs">Continuous integration in Salesforce Using Jenkins and Git in 20 minutes</a> and <a target="_blank" href="http://www.jitendrazaa.com/blog/salesforce/continuous-integration-in-salesforce-using-jenkins-and-git-video-tutorial/">blog</a> Mar 22, 2015
 
 Johan Yu (<a target="_blank" href="https://twitter.com/simplysfdc">@simplysfdc</a>):
 
@@ -363,6 +369,12 @@ Mike Wheeler has several (highly rated) video courses on Udemy:
    186 lectures 20 hours
    * <a target="_blank" href="https://www.udemy.com/salesforce-administrator-certification-practice-tests/">Salesforce Administrator Certification Practice Tests</a> 3 full practice tests of 60 each. 180 questions total
    * <a target="_blank" href="https://www.udemy.com/salesforce-platform-app-builder-certification-practice-tests/">Salesforce Platform App Builder Certification Practice Tests</a> 2 full practice tests of 60 questions each
+
+Missy Longshore, since 2009:
+
+   * PODCAST: <a target="_blank" href="http://www.longshoreconsulting.com/adminhour.html">#AdminHour</a> First and Third Thursday every Month at 10am PT
+   * <a target="_blank" href="https://nonprofitcrmsummit.com/p/salesforce-nonprofit-admin-magic-coaching-crew">Nonprofit CRM Summit</a> coaching for $400
+   * <a target="_blank" href="https://nonprofitcrmsummit.com/p/lightning-boot-camp-full">Lightning boot camp $99</a> 
 
 Mohith Shrivastava, 9x Salesforce certification, MVP at Salesforce.com,Technical Architect at CodeScience:
 
