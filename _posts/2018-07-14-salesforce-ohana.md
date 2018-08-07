@@ -41,19 +41,23 @@ This page presents steps and information for those new to Salesforce to get "plu
 For end-users, get away from:
 
    * Reliance on spreadsheets and Access databases
-   * Collaboration via email
-   * Documents shared on local file directories
+   * Collaboration via email (new people joining can't get to conversation history)
+   * Data on local file directories (not accessible by others)
    * Time-intensive, manual steps
 
 For developers, Salesforce provides an easy and fast way to create apps:
 
+   * Being on the cloud, all data in one place to do work, enabling teamwork globally
+   * highly scalable instantly
    * Free development environments called "orgs" (organizations). (no 7 day trials)
-   * Integrations
-   * Free, full-featured copy of the Salesforce1 mobile Platform introduced 2013
-   * Develop apps with clicks or code
    * Fine-grained access control
-   * highly scalable
+
+   * Extensible UI with clicks or code
+   * Free, full-featured copy of the Salesforce1 mobile Platform introduced 2013
    * API-first to integrate anything with everything
+   * Integrations with Gmail, other systems
+   * Innovation in Machine Learning for personalization, Analytics
+   * Innovation in object recognition
    * Use popular UI frameworks like Bootstrap, JQuery (in VisualForce classic)
    * <a href="#Lightning">Lightning</a> HTML UI components for user-developed apps.
 
@@ -345,6 +349,8 @@ Free Expo Pass holders and all other pass holders get access to:
 
 Dreamforce drew 170,000 to San Francisco in 2017 (the largest software conference in the world), despite the $2,199 per person cost (before travel and hotels) for the full pass, which provides access to Tuesday or Wednesday events, conference materials, meals, plus:
 
+   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=wrWADRbjmS4">Opening Keynote</a> Oct 8, 2016 [5:16]
+
    * Welcome Reception
 
    * <strong>Dreamfest</strong> is the party of the conference, featuring incredible live music, food, and drinks. In 2017 it was held at AT&T Park with Alicia Keys and Lenny Kravitz.
@@ -411,6 +417,15 @@ Miss being at a Salesforce event? Buy the branded clothing, office supplies, ele
 
 https://partners.salesforce.com/s/education/consultants/Consulting_Program
 
+## Learning Resources
+
+Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/salesforce_advantage">
+Navigate the Salesforce Advantage</a> [1 hr 20 mins] consists of:
+
+   * Salesforce Success Model
+   * Salesforce Cloud Benefits
+   * Salesforce Technology Model
+   * Salesforce Ecosystem
 
 <a name="WorkWithMe"></a>
 
