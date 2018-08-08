@@ -505,7 +505,7 @@ https://trailhead.salesforce.com/en/modules/developer_console">
 
    ![sf-dev-console-tabs-610x170-26186](https://user-images.githubusercontent.com/300046/43218626-29752254-9002-11e8-858e-087fece5cc17.jpg)
 
-   * The Developer Console doesn’t have version control or conflict resolution like DX does.
+   * BLAH: The Developer Console doesn’t have version control or conflict resolution like DX does.
 
    The main pane displays the source code editor for the current <strong>workspace</strong>, which is a collection of resources (files).
 
@@ -513,6 +513,20 @@ https://trailhead.salesforce.com/en/modules/developer_console">
    * Visualforce pages
    * SOQL queries
    * Lightning components
+
+   ### Concerns
+
+1. Click menu item <strong>File, New</strong> for a list of what the Console deals with:
+
+   <img alt="sf-devconsole-new-404x315-35101.jpg" width="404" src="https://user-images.githubusercontent.com/300046/43817461-cb1f9b90-9a96-11e8-99d0-f963734f54b5.jpg"></a>
+
+
+
+
+
+
+PROTIP: Connect additional monitors so you can have the Developer Console on one screen, and "Execute Anonymous Window" in another.
+
 
 ## REST API Workbench
 
