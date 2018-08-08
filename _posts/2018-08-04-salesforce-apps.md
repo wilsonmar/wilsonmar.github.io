@@ -96,6 +96,9 @@ While preparing for a developer Salesforce job, we built some add-on components 
 
 * Two-way sync of data in a shopping website running WordPress/WooCommerce with Salesforce.
 
+* A URL Shortener utility https://medium.freecodecamp.org/how-to-build-a-serverless-url-shortener-using-aws-lambda-and-s3-4fbdf70cbf5c
+
+
 ## Learning
 
 https://trailhead.salesforce.com/en/modules/appexchange_licensing

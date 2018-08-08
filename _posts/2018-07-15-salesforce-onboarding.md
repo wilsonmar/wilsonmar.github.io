@@ -493,9 +493,9 @@ https://success.salesforce.com/answers?feedtype=RECENT&criteria=BESTANSWERS">htt
 
 ## Developer Console
 
-https://trailhead.salesforce.com/en/modules/developer_console">
+There is a Trailhead Module: https://trailhead.salesforce.com/en/modules/developer_console
 
-1. To open "Developer Console" for an org, click the cog icon and select "Developer Console".
+1. To open "Developer Console" for an org, click the "cog" icon to select "Developer Console".
 
    ![sf-dev-console-245x145-9152](https://user-images.githubusercontent.com/300046/43218480-c28dad54-9001-11e8-9b7e-d76d26ac107f.jpg)
 
@@ -505,27 +505,46 @@ https://trailhead.salesforce.com/en/modules/developer_console">
 
    ![sf-dev-console-tabs-610x170-26186](https://user-images.githubusercontent.com/300046/43218626-29752254-9002-11e8-858e-087fece5cc17.jpg)
 
-   * BLAH: The Developer Console doesn’t have version control or conflict resolution like DX does.
+   PROTIP: BLAH: The Developer Console doesn’t have version control or conflict resolution like DX does.
 
-   The main pane displays the source code editor for the current <strong>workspace</strong>, which is a collection of resources (files).
+   The main pane displays the source code editor for the current workspace, which is a collection of resources (files).
+
+1. Flip back and forth to other Chrome windows using <strong>command+tilde</strong>(at the upper-left corner of the keyboard).
+
+1. Click menu item <strong>File, New</strong> for a list of what the Console deals with:
+
+   <img alt="sf-devconsole-new-404x315-35101.jpg" width="404" src="https://user-images.githubusercontent.com/300046/43817461-cb1f9b90-9a96-11e8-99d0-f963734f54b5.jpg">
 
    * Apex classes
    * Visualforce pages
    * SOQL queries
    * Lightning components
+   <br /><br />
 
-   ### Concerns
+1. Copy text from another window and paste it in the editor window.
+1. To save, press Ctrl+S.
 
-1. Click menu item <strong>File, New</strong> for a list of what the Console deals with:
+   PROTIP: A common error is forgetting to save before execute. Execute without saving to see what the error is (such as "Unread").
 
-   <img alt="sf-devconsole-new-404x315-35101.jpg" width="404" src="https://user-images.githubusercontent.com/300046/43817461-cb1f9b90-9a96-11e8-99d0-f963734f54b5.jpg"></a>
+1. Press control+E to Debug | Open Execute Anonymous Window.
 
+2. Drag the top gray part of the "Enter Apex Code" window to position it on your screen.
 
+   PROTIP: Connect additional monitors so you can have the Developer Console on one screen, and "Execute Anonymous Window" in another.
 
+1. In the new "Enter Apex Code" window, if there is text left over from the previous session, click on it and press command+A then delete key to delete it.
 
+1. In the new "Enter Apex Code" window, copy the following and paste it this:
 
+   <pre>
+Account a = new Account(Name='Test Trigger');
+insert a;
+   </pre>
 
-PROTIP: Connect additional monitors so you can have the Developer Console on one screen, and "Execute Anonymous Window" in another.
+1. Click Execute.
+1. In the <strong>Log</strong> tab at the bottom of the screen, click the top entry in blue.
+1. Check "Debug Only" to see USER_DEBUG event Details. For example, "Hello World!" or "Email sent successfully".
+1. PROTIP: At the top among orange tabs, so history does not hide tabs about source code, click the X to the right of the "Log executeAnonymous..." tab.
 
 
 ## REST API Workbench
