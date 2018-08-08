@@ -18,8 +18,6 @@ comments: true
 
 <a name="AppExchange"></a>
 
-While preparing for a developer Salesforce job, we built some add-on components to develop our skill and demonstrate our capabilties.
-
 
 
 ## AppExchange Categories
@@ -61,14 +59,7 @@ AppExchange has these categories of add-ons:
 * Testing & Segmentation
 * Translation
 
-
-## Twillio API for Salesforce
-
-https://github.com/twilio/twilio-salesforce
-is a Salesforce/Force.com library (from 2016) for communicating with the Twilio REST API and generating TwiML. http://www.twilio.com/salesforce
-Post questions to http://getsatisfaction.com/twilio or email 
-help@twilio.com 
-
+## Interesting
 
 https://github.com/SalesforceFoundation/ApexDoc
 The latest java source for ApexDoc, a tool to document your Salesforce Apex classes.
@@ -94,6 +85,16 @@ Examples from 3rd-parties (partners):
 * Salesforce data loading tools, web services, middleware (such as Dell Boomi, Informatica, etc.)
 
 * APTTUS Contract Management Software (CLM)
+
+## Our Ideas
+
+While preparing for a developer Salesforce job, we built some add-on components to develop our skill and demonstrate our capabilties.
+
+* Capture images such as bar codes or QR codes, converts to text, then inserts that info into Salesforce. Also, photos categorization on Machine Learning object recognition services within Amazon, Azure, Google, IBM, etc. This by a Android/iOS smartphone or a custom device such as the $249 Amazon DeepLens and <a target="_blank" href="https://www.target.com/p/google-vision-kit-aiy/-/A-53417081">$90 Google Vision Kit</a>.
+
+* In a component window, watch a webcam of your house or behind your back.
+
+* Two-way sync of data in a shopping website running WordPress/WooCommerce with Salesforce.
 
 
 ## More about Salesforce #

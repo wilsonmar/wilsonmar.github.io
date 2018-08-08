@@ -191,19 +191,20 @@ Salesforce employees maintain these accounts within (now Microsoft's) GitHub.com
 
 Before we go further, know that it is <strong>not cheap to run Salesforce in production</strong>.
 
-Each level license has different support SLAs.
-See <a target="_blank" href="http://www.salesforce.com/crm/editions-pricing.jsp">http://www.salesforce.com/crm/editions-pricing.jsp</a>
-
-* Developer Edition (DE) is free, yet has Enterprise capabilities. But cannot deploy anything into production (in "productive use").
-
+Developer Edition (DE) is free, yet has Enterprise capabilities. But cannot deploy anything into production (in "productive use").
    PROTIP: Those with this license test deployments to production by deploying to another free test org.
 
-* Essentials (for small business) 1-800-667-6389 is the lowest cost, at $1,200 a month
-* Contact Manager
-* Group 
-* Professional
-* Enterprise is more powerful than the Professional Edition.
-* Unlimited
+<table border="1" cellpadding="4" cellspacing="0">
+<tr valign="bottom"><th align="left"> Plan</th><th>Per User per Year</th></tr>
+<tr valign="top"><td>Essentials (for small business)  </td><td align="right"> $300 </td></tr> 
+<tr valign="top"><td>Professional ("Complete CRM for any size team") </td><td align="right"> $900</td></tr>
+<tr valign="top"><td>Enterprise ("Deeply customizable") </td><td align="right"> $1,800</td></tr>
+<tr valign="top"><td>Unlimited</td><td align="right"> $3,600 </td></tr>
+</table>
+
+Call 1-800-667-6389 or see <a target="_blank" href="http://www.salesforce.com/crm/editions-pricing.jsp">http://www.salesforce.com/crm/editions-pricing.jsp</a>
+
+Each level license has different support SLAs.
 
 For example, Salesforce Enterprise customers can open up tunnels and share data with each other. Cool. It’s EDI for the masses.
 
