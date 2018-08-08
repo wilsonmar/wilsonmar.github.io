@@ -625,11 +625,20 @@ On Mac:
    </strong></tt>
 
 0. My favorite approach is to open Code from the Mac Finder, by right-clicking on a folder
-   and select <strong>Open with</strong> Visual Studio Code (version 1.0+).
+   and select <strong>Open with</strong> Visual Studio Code
    <a target="_blank" href="http://stackoverflow.com/questions/30159158/how-do-i-set-up-a-link-to-open-up-visual-studio-code-from-terminal-on-osx">
    per these instructions</a>
 
-0. Select Code's menu View, Command Palette at the top of the screen.
+0. If you're working with JavaScript, install it from the Welcome screen, reached from Help, Welcome.
+
+0. Under the "Customize" heading on the right, click the "JavaScript" link, then OK at the pop-up.
+0. Click "Typescript" as well.
+0. If you're using Protractor, search for that and install what appears:
+
+   <img alt="text-edit-protractor-258x236-23265.jpg" width="258" src="https://user-images.githubusercontent.com/300046/43851048-e0453164-9af6-11e8-981b-f75e6e78b2d8.jpg">
+
+
+0. Press shift+command+P or select Code's menu View, Command Palette at the top of the screen.
 
 0. Begin typing this until the full command is recognized in the list:
 
