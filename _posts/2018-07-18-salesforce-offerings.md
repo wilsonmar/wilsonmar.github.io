@@ -21,6 +21,59 @@ Here is reference information for those new to Salesforce to understand how the 
 Technically, many of Salesforce's "cloud" and feature offerings share use of the same salesforce.com and force.com DNS domain names.
 
 
+<a name="WhySalesforce"></a>
+
+## Why Salesforce? #
+
+For end-users, get away from:
+
+   * Reliance on spreadsheets and Access databases
+   * Collaboration via email (new people joining can't get to conversation history)
+   * Data on local file directories (not accessible by others)
+   * Time-intensive, manual steps
+
+For developers, Salesforce provides an easy and fast way to create apps:
+
+   * Being on the cloud, all data in one place to do work, enabling teamwork globally
+   * highly scalable instantly
+   * Free development environments called "orgs" (organizations). (no 7 day trials)
+   * Fine-grained access control
+
+   * Extensible UI with clicks or code
+   * Free, full-featured copy of the Salesforce1 mobile Platform introduced 2013
+   * API-first to integrate anything with everything
+   * Integrations with Gmail, other systems
+   * Innovation in Machine Learning for personalization, Analytics
+   * Innovation in object recognition
+   * Use popular UI frameworks like Bootstrap, JQuery (in VisualForce classic)
+   * <a href="#Lightning">Lightning</a> HTML UI components for user-developed apps.
+
+   * Salesforce was designed with a <strong>metadata-driven</strong> architecture. Everything, including the code, configuration, and apps, is specified as metadata.
+
+Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/drucker_customer_market_driven/">Drucker School—Customer & Market Strategy</a> [1 hr 45 mins] +700
+to turn your organization into a customer and market-driven powerhouse with these insights.
+
+### Competitors in CRM
+
+<a target="_blank" href="https://twitter.com/Benioff">Marc @Benioff's Twitter</a> header picture has this (from Gartner):
+
+   ![salesforce-market-share-1500x500](https://user-images.githubusercontent.com/300046/43361208-59796650-9286-11e8-919d-bdfd0b5937b7.jpg)
+
+Gartner says "Salesforce leads market share with 16% in 2013 vs. SAP with 13%, and Oracle with 10%."
+
+PROTIP: Salesforce/Force.com seem to be more attractive to <strong>mid-market</strong> customers than SAP and Oracle. And smaller companies tend to more flexible about all work being done on-site.
+
+The top competitors to Salesforce are:
+
+* SAP
+* Oracle
+* Microsoft Dynamics 365
+
+* SOHO
+* Hubspot
+* SugarCRM
+* Highrise
+
 <a name="Clouds"></a>
 
 ### Clouds = Standard Apps
