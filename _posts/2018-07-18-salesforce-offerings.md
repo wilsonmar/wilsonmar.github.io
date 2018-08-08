@@ -215,6 +215,8 @@ Additionally:
 *    Partner Group
 *    Partner Professional
 
+Trailhead Module: https://trailhead.salesforce.com/en/modules/premier-success-plans
+
 
 <a name="Features"></a>
 

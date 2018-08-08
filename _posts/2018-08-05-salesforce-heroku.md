@@ -547,6 +547,9 @@ described at https://elements.heroku.com/addons/heroku-postgresql
 
 <a target="_blank" href="https://trailhead.salesforce.com/modules/java-app-development-on-heroku">Java App Development on Heroku</a> [1 hr] Deploy production Java apps on Heroku.
 
+<a target="_blank" href="https://trailhead.salesforce.com/en/modules/apex_integration_services/">Apex Integration Services</a> [2 hrs] +1600
+
+
 ## Other Topics
 
 Heroku Shield

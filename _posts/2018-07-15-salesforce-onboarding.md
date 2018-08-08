@@ -637,6 +637,11 @@ I recommend that you use Google Authenticator instead so you only need to have o
    * Chris Duarte (@TheChrisDuarte) - Managing Editor of #Trailhead
    * Sandeep Bhanot (@cloudysan) - #Trailhead Product Owner/ Evangelist
 
+## More learning
+
+https://trailhead.salesforce.com/en/modules/search_solution_basics
+Search Solution Basics [45 mins] +300
+
 
 <hr />
 

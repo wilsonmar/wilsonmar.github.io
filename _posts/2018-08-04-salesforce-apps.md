@@ -96,6 +96,22 @@ While preparing for a developer Salesforce job, we built some add-on components 
 
 * Two-way sync of data in a shopping website running WordPress/WooCommerce with Salesforce.
 
+## Learning
+
+https://trailhead.salesforce.com/en/modules/appexchange_licensing
+App Licensing and Customer Support for AppExchange
+[1 hr 45 mins] +400
+
+https://trailhead.salesforce.com/en/modules/salesforce-crm-customization-and-extension
+Salesforce CRM Customization and Extension
+[1 hr] +500
+
+https://trailhead.salesforce.com/en/modules/appexchange_app_updates
+App Upgrading for AppExchange [45 mins] +300
+
+https://trailhead.salesforce.com/en/modules/isv_app_trials
+AppExchange App Trial Management [1 hr 20 mins] +500
+
 
 ## More about Salesforce #
 
