@@ -235,7 +235,7 @@ Salesforce employees maintain these accounts within (now Microsoft's) GitHub.com
    * https://github.com/forcedotcom/
    * https://github.com/salesforce-ux/
    * https://github.com/financialforcedev/
-   * https://github.com/SalesforceFoundation by http://www.salesforce.org/nonprofit/nonprofit-success-pack/  tools to help manage programs, donations, volunteers, and supporters.
+   * https://github.com/SalesforceFoundation/ by http://www.salesforce.org/nonprofit/nonprofit-success-pack/  tools to help manage programs, donations, volunteers, and supporters.
    (<a target="_blank" href="https://www.youtube.com/channel/UC6ZEIvlahVCA8k5tYTr_a2A">YouTube acct.</a>)
 
 <a name="Editions"></a>

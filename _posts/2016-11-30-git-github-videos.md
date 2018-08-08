@@ -393,10 +393,10 @@ by @StevenBorg (salesy hand-wavy boss) and
 
 <a target="_blank" href="https://www.youtube.com/watch?v=pA-7jqklxSU">
 Master Your Metadata: Best Practices for Versioning, CI and Deployments</a>
-with Atlassian Nov 17, 2014 says prefix branche name with "destroy/" 
+with Atlassian Nov 17, 2014 says prefix destructive branches with branch name "destroy/".
 
 <a target="_blank" href="https://www.youtube.com/watch?v=odQJi9kfZ-A">
-Introduction to Git for Force.com Developers</a> among Dreamforce Video Nov 25, 2013 by John Stevenson (<a target="_blank" href="https://twitter.com/jr0cket">@jr0cket</a>, <a target="_blank" href="http://jr0cket.co.uk/git-workshop/">Git Workshop</a>, <a target="_blank" href="http://jr0cket.co.uk/developer-guides/">Dev Guides</a>), Salesforce Developer Evangelist
+Introduction to Git for Force.com Developers</a> [53:50] among Dreamforce Video Nov 25, 2013 by John Stevenson (<a target="_blank" href="https://twitter.com/jr0cket">@jr0cket</a>, <a target="_blank" href="http://jr0cket.co.uk/git-workshop/">Git Workshop</a>, <a target="_blank" href="http://jr0cket.co.uk/developer-guides/">Dev Guides</a>), Salesforce Developer Evangelist
 
 See <a target="_blank" href="https://wilsonmar.github.io/salesforce/">my Salesforce blogs</a>
 

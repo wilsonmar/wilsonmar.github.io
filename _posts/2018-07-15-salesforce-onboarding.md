@@ -521,7 +521,10 @@ There is a Trailhead Module: https://trailhead.salesforce.com/en/modules/develop
    * Lightning components
    <br /><br />
 
-1. Copy text from another window and paste it in the editor window.
+1. Copy text from another place and paste it in the editor window.
+
+   PROTIP: Save code in a Git repository (such as GitHub) so that you can go back to any point in time.
+
 1. To save, press Ctrl+S.
 
    PROTIP: A common error is forgetting to save before execute. Execute without saving to see what the error is (such as "Unread").
