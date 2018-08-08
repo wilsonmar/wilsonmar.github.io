@@ -613,9 +613,20 @@ June 11, 2018
 By Nathan Totten
 
 
-## Other IDEs and Editors
+## Force.com Eclipse IDE
+
+1. Download and install the Java Developer (free) edition of Eclipse. It comes with the "EGit" plugin.
+1. Open Eclipse 
+1. Identify yourself with GitHub credentials.
+1. Add the Force.com IDE plugin.
+1. Window > Open Perspective > Git repository exploring.
+1. Create a new Force.com Project (with a username and Security Token to the Trailhouse org)
+
+   Install http://bit.ly/ApexWorkbookPackage1_4 (Apex Workbook by Sbob)
 
 <a target="_blank" href="https://success.salesforce.com/issues_index?tag=Eclipse%20IDE">Eclipse IDE Known Issues</a>
+
+## Other IDEs and Editors
 
 Welkin's Suite 
 
