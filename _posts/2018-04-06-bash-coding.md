@@ -790,7 +790,7 @@ to obtain the URLs (one URL for .exe and one URL for .pkg).
 
 The "basename" command obtains the file name from a file path variable.
 
-PKG_LINK=$(curl -s https://www.microsoft.com/net/learn/get-started/macos#macos | grep -B1 "Download .NET SDK" | grep href | grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*" | grep -E ".pkg")
+<pre>PKG_LINK=$(curl -s https://www.microsoft.com/net/learn/get-started/macos#macos | grep -B1 "Download .NET SDK" | grep href | grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*" | grep -E ".pkg")</pre>
 
 <a name="JenkinsStart"></a>
 
@@ -798,7 +798,7 @@ PKG_LINK=$(curl -s https://www.microsoft.com/net/learn/get-started/macos#macos |
 
 To start the Jenkins server to a specified port:
 
-    <pre>jenkins --httpPort=$JENKINS_PORT  &</pre>
+    jenkins --httpPort=$JENKINS_PORT  &
 
    The "&" puts the process in the background so that the script can continue running.
 
@@ -829,15 +829,14 @@ The command "jenkins" above is actually a bash script that invokes Java:
 
 The code within "$(...)" is run to obtain the value. In this case, it's:
 
-    <pre>/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home
-    </pre>
+    /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home
 
    The link above is the folder where MacOS keeps the Java SDK.
    Java executables (java, javac, etc.) are in the bin folder below that location.
 
 The path to jenkins.war and jenkins-cli.war executable files are physcally at:
 
-   <pre>ls /usr/local/opt/jenkins/libexec</pre>
+    ls /usr/local/opt/jenkins/libexec
 
 
 <a name="Jenkins"></a>
@@ -890,15 +889,15 @@ The folder is a symlink created by brew to the physical path where brew installe
 The "2.113" means that several versions of Jenkins can be installed side-by-side.
 This version number changes over time. So it is captured by command:
 
-   <pre>JENKINS_VERSION=$(jenkins --version)  # 2.113</pre>
+    JENKINS_VERSION=$(jenkins --version)  # 2.113
 
 The folder is actually a symlnk which points to the physical folder defined by:
 JENKINS_CONF="/usr/local/Cellar/Jenkins/$JENKINS_VERSION/homebrew.mxcl.jenkins.plist"
 
 The path is defined in a variable so simplify the sed command to make the change:
 
-         sed -i "s/httpPort=8080/httpPort=$JENKINS_PORT/g" $JENKINS_CONF
-               # --httpPort=8080 is default.
+    sed -i "s/httpPort=8080/httpPort=$JENKINS_PORT/g" $JENKINS_CONF
+        # --httpPort=8080 is default.
 
 
 <a name="JenkinsFirstTime"></a>
