@@ -398,6 +398,8 @@ with Atlassian Nov 17, 2014 says prefix destructive branches with branch name "d
 <a target="_blank" href="https://www.youtube.com/watch?v=odQJi9kfZ-A">
 Introduction to Git for Force.com Developers</a> [53:50] among Dreamforce Video Nov 25, 2013 by John Stevenson (<a target="_blank" href="https://twitter.com/jr0cket">@jr0cket</a>, <a target="_blank" href="http://jr0cket.co.uk/git-workshop/">Git Workshop</a>, <a target="_blank" href="http://jr0cket.co.uk/developer-guides/">Dev Guides</a>), Salesforce Developer Evangelist
 
+   * <a target="_blank" href="http://resources.docs.salesforce.com/rel1/doc/en-us/static/pdf/SF_Git_cheatsheet_web.pdf">Git Cheatsheet from Salesforce</a> includes Heroku commands.
+
 See <a target="_blank" href="https://wilsonmar.github.io/salesforce/">my Salesforce blogs</a>
 
 ## From Git hosting companies:
