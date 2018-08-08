@@ -37,7 +37,7 @@ This page presents steps and information for those new to Salesforce to get "plu
 
 ## Locations
 
-Salesforce buildt the tallest building in San Francisco, <a target="_blank" href="http://www.salesforcetower.com/">the Salesforce Tower</a>, on Mission between Freemont and 1st (South of the Montgomery BART station), is a few feet taller than the Eiffel Tower in Paris.
+<a target="_blank" href="http://www.salesforcetower.com/">The Salesforce Tower</a>, on Mission between Freemont and 1st (South of the Montgomery BART station), is the tallest building in San Francisco -- a few feet taller than the Eiffel Tower in Paris:
 
 ![sf-tallest-648x558-65050](https://user-images.githubusercontent.com/300046/43551978-2ffdeb20-95a6-11e8-92c3-c919dee9811b.jpg)
 
