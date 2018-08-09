@@ -39,7 +39,7 @@ Various people have used different nicknames, so here they are together:
 <tr valign="top"><td>Workflow focus</td><td>"org. centric"</td><td>"source-centric"</td></tr>
 <tr valign="top"><td>Org instances</td><td>"nurture as dear pets"</td><td>"dispose like cattle"</td></tr>
 <tr valign="top"><td>Env. for dev. test</td><td>in sandboxes (SBX)</td><td>in scratch orgs</td></tr>
-<tr valign="top"><td>Speed of testing</td><td>occassional</td><td>continuous</td></tr>
+<tr valign="top"><td>Speed of release</td><td>occassional</td><td>continuous</td></tr>
 </table>
 
 Salesforce began with its "clicks, not code" slogan because, with Salesforce, citizen developers usually didn't have to bother with the internal workings (metadata) when customizing apps.
@@ -119,7 +119,7 @@ The <strong>checkout</strong> command in Git selects the specific points in time
 People using Git are always working with the entire state of the repo at whatever point in time one chooses.
 As part of checkout, <strong>branches</strong> mark specific points in time.
 
-Salesforce calls this <strong>"Second Generation Packaging"</strong> (2GP)<a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_enable_secondgen_pkg.htm">*</a>.
+Salesforce calls this <a target="_blank" title="video [49:12] Jun 5, 2017" href="https://www.youtube.com/watch?v=z11co_ZqUH8/">"Second Generation Packaging"</a> (2GP) <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_enable_secondgen_pkg.htm">*</a>.
 
 With Salesforce DX, your local project is tied to a repository. Use each repository to keep a history of all work you have done for your artifact. Use branches to track the changes for each of your releases. Each project contains, at a minimum, one artifact. 
 
@@ -547,10 +547,27 @@ by Austen Collins (@Austen Collins, austin@serverless.com), founder and CEO of S
 
 * <a target="_blank" href="http://salesforce.vidyard.com/watch/WQzCAyBR8FiJQ8yVXWDwWR">Salesforce Environments: Getting Started with Scratch Orgs</a> by Rohit Mehta (@rohitforce), Product Manager
 
+Dileep Burki, <a target="_blank" href="https://www.linkedin.com/in/dileep-burki-483a25/">Sr. Product Manager</a>:
 
-https://www.youtube.com/watch?v=z11co_ZqUH8
-Second Generation Packaging for Customers and Partners
+   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=Prlurg2ORnU/">How Everyone Can Leverage Salesforce DX Packaging</a> 19 Nov 2017
 
+   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=z11co_ZqUH8/">"Second Generation Packaging"</a> (2GP) [49:12] Jun 5, 2017
+
+Others from Salesforce Developers on YouTube:
+
+   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=wUc1l5keYmo/">Salesforce DX - Continuous Integration and Continuous Delivery</a>
+
+   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=FUFkbr9uueU/">From Change Sets to Salesforce DX: The Evolution of Collaboration</a>
+
+   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=6lNG6iFVGQg/">Migrating to Salesforce DX</a>
+
+   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=ZMjKmQ9j9I8/">Simplify your code with Salesforce DX and module development</a>
+
+   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=UaPPhFWHBQ0/">Top 10 Things to Know About Salesforce DX</a>
+
+   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=exZ3TICOzd8/">Get Started with Salesforce DX!</a>
+
+   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=Pf33nrsqZOc/">Introduction to Salesforce DX</a>
 
 ## Happy Trails
 
