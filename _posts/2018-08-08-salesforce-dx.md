@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Salesforce DX (Developer eXperience)"
+title: "Salesforce DX (Developer eXperience) deep dive"
 excerpt: "Begin to use Git and GitHub (DevHub) for software-driven (modular) continuous development"
 tags: [salesforce, git]
 file: sfdx.md
@@ -17,37 +17,88 @@ comments: true
 {% include _toc.html %}
 
 
-This is a step-by-step tutorial on switching to continuous development and testing using Git and GitHub with the Salesforce DX (Developer eXperience), which consists of these new tools:
+This is a step-by-step hands-on tutorial on using the Salesforce DX (Developer eXperience) for continuous testing and development. 
 
-   * Scratch orgs created on the fly for temporary use for a "scope" 
+PROTIP: SFDX was announced in 2015 and entered <a target="_blank" href="https://developer.salesforce.com/blogs/developer-relations/2017/06/introducing-salesforce-dx-open-beta.html">Open Beta June 2017</a>, available in all prod and business orgs.
+
+## Why SFDX?
+
+<a target="_blank" alt="Apr 19, 2018" href="https://www.youtube.com/watch?v=zsZDEL6oO0Q&t=3m43s">This diagram</a> and the table under it illustrate the shift being introduced by DX:
+
+<a target="_blank" title="sfdx-shift-1272x529.png" href="https://user-images.githubusercontent.com/300046/43903651-26a9807a-9baa-11e8-9044-5b0251ee0649.png"><img alt="sfdx-shift-648x270-43358.jpg" width="648" src="https://user-images.githubusercontent.com/300046/43903631-1d2c7b38-9baa-11e8-9d94-6f08f43fe60f.jpg"></a>
+
+Various people have used different nicknames, so here they are together:
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr valign="bottom"><th>Aspect</th><th>Traditional</th><th>DX</th></tr>
+<tr valign="top"><td>Approach</td><td>"Clicks, not code"</td><td>"Clicks AND code"</td></tr>
+<tr valign="top"><td>Configuration</td><td>config. in metadata</td><td>"config. as code"</td></tr>
+<tr valign="top"><td>Source of "Truth"</td><td>What's in org</td><td>What's in VCS</td></tr>
+<tr valign="top"><td>Versioning</td><td>Carry org. forward</td><td>What's in VCS</td></tr>
+<tr valign="top"><td>Unit of change</td><td>Change Set</td><td>Package</td></tr>
+<tr valign="top"><td>Workflow focus</td><td>"org. centric"</td><td>"source-centric"</td></tr>
+<tr valign="top"><td>Org instances</td><td>"nurture as dear pets"</td><td>"dispose like cattle"</td></tr>
+<tr valign="top"><td>Env. for dev. test</td><td>in sandboxes (SBX)</td><td>in scratch orgs</td></tr>
+<tr valign="top"><td>Speed of testing</td><td>occassional</td><td>continuous</td></tr>
+</table>
+
+Salesforce began with its "clicks, not code" slogan because, with Salesforce, citizen developers usually didn't have to bother with the internal workings (metadata) when customizing apps.
+And Salesforce has had Activity tracking which tracks every change to user data in the database. 
+
+Changes were introduced by "change sets" against sandboxes which duplicated the production org. This means the development workflow is focused on what's in the org., with org instances nutured as dear pets.
+
+However, throughout the software development industry today,
+there is a movement toward storing <strong>configuration as code</strong>, 
+of keeping metadata out of inside the org and into versioned code bases separate from the data.
+
+This transition is necessary to provide more flexibility to developers. This new approach puts versioning at the center of the workflow so that the state of an org can be brought back to any point in the past (like a time machine).
+
+Such an approach requires more use of command-line terminals. That's why I (not Salesforce) call it "clicks AND code".
+
+The versioning system is distributed, meaning complete duplicates of an org with all metadata can be worked on simultaneously by different people. So instead of having to tag-team work on change-sets against a limited number of sandboxes, each developer can test on <strong>scratch orgs</strong> that are brought up based on what each developer on his/her laptop.
+Reduced need for coordination enables faster, continuous testing to occur.
+
+
+
+## DX Tools
+
+DX consists of these new tools:
+
+   * Scratch (ephemeral/destructible) orgs created on the fly for temporary use for a "scope" 
    * Dev Hub for managing scratch orgs
    * A Salesforce CLI binary that runs side-by-side with the Heroku CLI
    * Support for the Lightning Test service and Lightning linting to Salesforce CLI
    * Continuous integration with test automation
+   * <a href="#MetadatExport">Metadata reporting and export from orgs</a>
 
 But the change is about more than the tools. Instead of building code and customizations around a monolithic org, code and customizations are built around <strong>artifact</strong> (a logical set of code) that represents a subset of the org that can be tested independently from other components in your org. This is so an artifact can be released independently. 
 
-The metadata components within an artifact can only live in one artifact at a time.
 The source of truth for source-driven development is in the VCS (Version Control System) rather than in the production org. This means the configuration of the org exists outside the org. So new orgs can be fully created.
 
-## Timeline
+<table border="1" cellpadding="4" cellspacing="0">
+<tr valign="bottom"><th>Features</th><th>Scratch Org</th><th>Developer</th><th>Partial Copy</th><th> Full</th></tr>
+<tr valign="top"><td>Refresh</td><td>Ephemeral</td><td>1 day</td><td>5 days</td><td>29 days</td></tr>
+<tr valign="top"><td>Metadata</td><td>version control</td><td>Production</td><td>Production</td><td>Production</td></tr>
+<tr valign="top"><td>Customer data</td><td>-</td><td>-</td><td>Sample</td><td>All data</td></tr>
+<tr valign="top"><td>Data limit</td><td>200 MB</td><td>200 MB (1 GB Pro)</td><td>5 GB</td><td>Matches Prod.</td></tr>
+</table>
 
-Salesforce DX entered <a target="_blank" href="https://developer.salesforce.com/blogs/developer-relations/2017/06/introducing-salesforce-dx-open-beta.html">Open Beta June 2017</a> available in all prod and business orgs.
+<a name="MetadatExport"></a>
+### Metadata export from orgs
 
-## Why?
+PROTIP: What is not shown in the diagram is that metadata in existing orgs can be extracted into source code for storage in GitHub. This is easier said than done because there are several sources:
 
-Salesforce has Activity tracking which tracks every change to user data in the database.
-But that is not designed to track changes to configuration settings that users are usually not concerned about.
+* Metadata API
+* Salesforce DX Source Tracking to do push and pull
+* Packaging
+* Change Sets
+* Apex MD API
+* Tooling API
 
-Traditionally, the "clicks, not code" approach Salesforce provides kept the focus on features and workflow rather than <strong>specific settings configuring Salesforce apps</strong>.
+<a target="_blank" href="https://www.youtube.com/watch?v=zsZDEL6oO0Q&t=9m50s">In 2018</a>, documentation about metadata is disparate, it's non consistent, not easy to find and navigate."
+A Metadata Report generated from each org lists for each Metadata Type whether it's exposed by the Metadata API, in source tracking, and unlocked packaging, all in one place.
 
-Today, throughout the software development industry,
-there is a movement toward storing <strong>"configuration as code"</strong>.
-
-Thus, the transition of change management driven by meta-data vs. source code.
-
-Another way to describe this is "moving from an org-centric model to source-centric model" workflow.
-
+<a name="Git"></a>
 ### Git
 
 DX is enabled by the rapid and near ubiquitous adoption of <strong>Git</strong> to store text 
@@ -68,35 +119,140 @@ The <strong>checkout</strong> command in Git selects the specific points in time
 People using Git are always working with the entire state of the repo at whatever point in time one chooses.
 As part of checkout, <strong>branches</strong> mark specific points in time.
 
-Salesforce calls this <strong>"Second Generation Packaging"</strong>.
-
-ISVs (Service Vendors) who build customized Salesforce apps
-persona-based customizations.
+Salesforce calls this <strong>"Second Generation Packaging"</strong> (2GP)<a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_enable_secondgen_pkg.htm">*</a>.
 
 With Salesforce DX, your local project is tied to a repository. Use each repository to keep a history of all work you have done for your artifact. Use branches to track the changes for each of your releases. Each project contains, at a minimum, one artifact. 
 
-In more complex orgs, you may find it necessary to have multiple related artifacts developed as part of the same project. This happens when sets of components and customizations depend on others. 
-
-The "shape" of a scratch org is its configuration.
+In more complex orgs, you may find it necessary to have multiple related artifacts developed as part of the same project. This happens when sets of components and customizations depend on others.
 
 ## Install
 
 1. SFDX CLI
 
-1. Account credentials
+   PROTIP: There is "brew install sfdx". However:
 
+   <pre><strong>npm install --global sfdx-cli</strong></pre>
+
+1. Verify
+
+   <pre><strong>sfdx force --help</strong></pre>
+
+1. Verify version installed:
+
+   <pre><strong>sfdx version</strong></pre>
+
+   <pre>
+ ▸    sfdx-cli: update available from 6.26.0 to 6.27.0-24408b4625
+sfdx-cli/6.26.0 (darwin-x64) node-v10.7.0
+   </pre>
+
+1. Update
+
+   <pre><strong>sfdx update</strong></pre>
+
+   <pre>
+ ▸    Use "npm install --global sfdx-cli" to update npm-based installations.
+sfdx-cli: Updating plugins... done
+   </pre>
+
+1. Verify the version of the installed salesforcedx plug-in:
+
+   <pre><strong>sfdx plugins --core</strong></pre>
+
+   <pre>
+ ▸    sfdx-cli: update available from 6.26.0 to 6.27.0-24408b4625
+@salesforce/plugin-generator 0.0.10 (core)
+@salesforce/sfdx-trust 1.0.8 (core)
+builtins 1.0.0 (core)
+salesforcedx 43.9.0 (core)
+   </pre>
+
+   ### Uninstall CLI
+
+1. Where installed:
+
+   <pre>
+/usr/local/Caskroom/sfdx
+/usr/local/bin/sfdx
+/usr/local/lib/sfdx
+/usr/local/lib/sfdx/bin/sfdx
+~/.config/sfdx
+~/.local/share/sfdx
+~/Library/Caches/sfdx
+~/.cache/sfdx
+   </pre>
+
+1. Apply for a 30-day DevHub trial account:
+
+   https://developer.salesforce.com/promotions/orgs/dx-signup
 
 ## Sample DX project
 
-   The following set of steps obtains assets from GitHub to create a scratch org:
+On your local machine (laptop), perform these steps to obtain assets from GitHub to create a scratch org:
 
 1. Create a "subject" folder or navigate to an existing one:
 
-1. Download the Dreamforce ’16 Developer Keynote sample application, called the DreamHouse app stored in GitHub:
+1. Download samples from GitHub 
+
+   This shows how to use Salesforce DX with Travis CI, a cloud-based continuous integration (CI) service for building and testing software projects hosted on GitHub:
+
+   <pre><strong>git clone https://github.com/forcedotcom/sfdx-travisci.git
+   cd sfdx-travisci
+   </strong></pre>
+
+   This was created by Wade Wegner, <a target="_blank" href="https://www.linkedin.com/in/wadewegner/">Salesforce SVP Product Management</a>.
+
+   Alternately, download the Dreamforce ’16 Developer Keynote sample application, called the DreamHouse app stored in GitHub:
 
    <pre><strong>git clone https://github.com/forcedotcom/sfdx-dreamhouse.git
    cd sfdx-dreamhouse
    </strong></pre>
+
+   ### Script orgInit.sh
+
+   dreamhouse-sfdx has a scripts folder containing orgInit.sh:
+
+   ### Scratch orgs config
+
+   <a name="CreateScratch"></a>
+
+1. Create a scratch org with an <strong>-alias</strong> named "demo":
+
+   <pre><strong>sfdx force:org:create -s -f config/project-scratch-def.json -a "demo"</strong></pre>
+
+   The output: the org ID and the username.
+
+   A <strong>scratch org</strong> is a dedicated, configurable, and short-term Salesforce environments that are quickly spun up when starting a new project, a new feature branch, or a feature test.
+
+   <tt>-n --durationdays 7</tt> can also be added to limit the time.
+
+   The json -file specified defines the <strong>"scope"</strong> of the app, which includes the Salesforce <strong>edition</strong> and preferences for features the app is enabled to work with (such as S1Desktop and Chatter):
+
+   <pre>
+{
+    "orgName": "Salesforce DX Company",
+    "edition": "Developer",
+    "orgPreferences" : {
+        "enabled": ["S1DesktopEnabled"]
+    }
+}</pre>
+
+   PROTIP: The <strong>project-scratch-def.json</strong> temporarily <strong>overrides</strong> enterprise-level scope settings during test runs defined in 
+   the <strong>enterprise-scratch-def.json</strong>:
+
+   <pre>
+{
+  "orgName": "Your Company",
+  "edition": "Enterprise",
+  "orgPreferences": {
+    "enabled": [
+      "S1DesktopEnabled"
+    ],
+    "disabled": [
+      "ChatterEnabled"
+    ]
+  }
+}</pre>
 
    ### List Orgs
 
@@ -116,44 +272,24 @@ The "shape" of a scratch org is its configuration.
 
    <pre><strong>sfdx force:org:display</strong></pre>
 
+1. Check status:
+
+   <pre><strong>sfdx force:source:status</strong></pre>
+
+   <pre>
+STATE                     FULL NAME    TYPE        PROJECT PATH
+─────                     ──────────   ──────────  ─────────────────────────────────
+Local Deleted             MyClass      ApexClass   /MyClass.cls-meta.xml
+   </pre>
+
+
    ### Push Orgs
 
-1. Push org source to DevHub:
+1. Push app metadata into the current scratch org:
 
    <pre><strong>sfdx force:source:push</strong></pre>
 
-   ### Open Org
-
-1. Open org:
-
-   <pre><strong>sfdx force:org:open</strong></pre>
-
-
-   ### List packages
-
-   <pre><strong>sfdx force:package2:list</strong></pre>
-
-<hr />
-
-
-
-   ### DX App Autopsy
-
-   Let's analyze its files at the root of the project repo:
-
-   The <strong>settings.json</strong> file within folder <tt>.vscode</tt> saves Visual Studio Code preferences.
-
-   Other similar files may be added for other IDEs.
-
-   The <strong>.gitignore</strong> file specifies files and folders which are not to be uploaded to the team/public repository (DevHub or GitHub). This goes with the <tt>.git</tt> folder created by Git when cloning.
-
-   QUESTION: A <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_exclude_source.htm">.forceignore</a> file in the repo root folder is used to exclude source When Syncing or Converting. As a generic example, it contains this to ignore LESS files:
-
-   <pre>
-**.less
-   </pre>
-
-   The <strong>.project</strong> file specifies metadata about the project:
+   PROTIP: Metadata about the project is defined in the <strong>.project</strong> file:
 
    <pre>
 &LT;?xml version="1.0" encoding="UTF-8"?>
@@ -168,6 +304,119 @@ The "shape" of a scratch org is its configuration.
   &LT;/natures>
 &LT;/projectDescription>
    <pre>
+
+   TODO: force-app
+
+   ### Assign permissions
+
+1. Assign the dreamhouse permission set to the default user "dreamhouse":
+
+   <pre><strong>sfdx force:user:permset:assign -n dreamhouse</strong></pre>
+
+   ### Load data
+
+1. Load data:
+
+   <pre><strong>sfdx force:data:tree:import --plan data/sample-data-plan.json</strong></pre>
+
+   The <tt>data</tt> folder specifies <strong>app objects</strong> handled by the app. 
+   In this case, it's properties for sale and what brokers are trying to sell them.
+
+   The <strong>sample-data-plan.json</strong> specifies a json file for each app object handled by the app and whether its reference is for "saveRefs" or "resolveRefs":
+
+   <pre>
+[
+  {
+    "sobject": "Broker__c",
+    "saveRefs": true,
+    "files": [
+      "brokers-data.json"
+    ]
+  },
+  {
+    "sobject": "Property__c",
+    "resolveRefs": true,
+    "files": [
+      "properties-data.json"
+    ]
+  }
+]</pre>
+
+   Each json file defines the <strong>records</strong> for each object type.
+
+   A record within <strong>brokers-data.json</strong> contains these attributes and properties:
+
+   <pre>
+    {
+      "attributes": {
+        "type": "Broker__c",
+        "referenceId": "CarolineBrookerRef"
+      },
+      "name": "Caroline Kingsley",
+     "Title__c": "Senior Broker",
+    "Phone__c": "617-244-3672",
+    "Mobile_Phone__c": "617-244-3672",
+    "Email__c": "caroline@dreamhouse.demo",
+    "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/people/caroline_kingsley.jpg"
+    },</pre>
+
+A record within <strong>properties-data.json</strong> contains information about the property listed.
+
+
+   ### Open Org
+
+1. Open org using the alias and automatically log in with cached authentication token (rather than passwords).
+
+   <pre><strong>sfdx force:org:open -u demo</strong></pre>
+
+   This should pop up a browser window containing Salesforce UI.
+
+   At this point we have a brand-new empty scratch org. Next we populate it with the source we first pulled out of GitHub. For this, we use the source synchronization APIs, also available in the CLI.
+
+   ### On Salesforce UX
+
+1. In Setup, type theme in the Quick Find box. Click Themes and Branding, 
+1. Flip the toggle to hide background images in Lightning Experience.
+1. Select "DreamHouse" in the App Launcher.
+
+1. Click the (real estate) Properties tab and notice that there are 12 new properties.
+1. Click the Brokers tab and see that there are eight new brokers.
+
+1. Click the Data Import tab and click Initialize Sample Data
+
+
+   ### List packages
+
+   <pre><strong>sfdx force:package2:list</strong></pre>
+
+   ### Delete Org
+
+1. Delete org using alias:
+
+   <pre><strong>sfdx force:org:delete -u demo</strong></pre>
+
+   <pre>
+Enqueue scratch org with name: demo for deletion? Are you sure (y/n)?
+   </pre>
+
+   Now repeat <a name="CreateScratch">scratch org creation</a> and continue.
+
+
+   ### DX App Assets
+
+   Let's analyze Dreamhouse files at the root of the project repo:
+
+   The <strong>settings.json</strong> file within folder <tt>.vscode</tt> saves Visual Studio Code preferences.
+
+   Other similar files may be added for other IDEs.
+
+   The <strong>.gitignore</strong> file specifies files and folders which are not to be uploaded to the team/public repository (DevHub or GitHub). This goes with the <tt>.git</tt> folder created by Git when cloning.
+
+   QUESTION: A <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_exclude_source.htm">.forceignore</a> file in the repo root folder is used to exclude source When Syncing or Converting. As a generic example, it contains this to ignore LESS files:
+
+   <pre>
+**.less
+   </pre>
 
    The <strong>sxdx-project.json</strong> file specifies <strong>external</strong> attributes:
 
@@ -195,86 +444,11 @@ delete-scratch-org: false
 show-scratch-org-url: true
    </pre>
 
+### force-app folder
 
-   ### Scratch orgs config
+Under /main/default/classes are the minimum needed. But Dreamhouse has the full set:
 
-1. Create a scratch org named "default scratch org":
 
-   <pre><strong>sfdx force:org:create -s -f config/project-scratch-def.json -a "default scratch org"</strong></pre>
-
-   A <strong>scratch org</strong> is a dedicated, configurable, and short-term Salesforce environments that are quickly spun up when starting a new project, a new feature branch, or a feature test.
-
-   In the <strong>enterprise-scratch-def.json</strong> defines the <strong>"scope"</strong> of the app, which includes the product edition and what other products the app are enabled to work with (such as S1Desktop and Chatter):
-
-   <pre>
-{
-  "orgName": "Your Company",
-  "edition": "Enterprise",
-  "orgPreferences": {
-    "enabled": [
-      "S1DesktopEnabled"
-    ],
-    "disabled": [
-      "ChatterEnabled"
-    ]
-  }
-}</pre>
-
-   The <strong>project-scratch-def.json</strong> temporarily <strong>overrides</strong> enterprise-level scope settings during test runs:
-
-   <pre>
-{
-    "orgName": "Salesforce DX Company",
-    "edition": "Developer",
-    "orgPreferences" : {
-        "enabled": ["S1DesktopEnabled"]
-    }
-}</pre>
-
-### data folders
-
-The <tt>data</tt> folder specifies <strong>app objects</strong> handled by the app. 
-In this case, it's properties for sale and what brokers are trying to sell them.
-
-The <strong>sample-data-plan.json</strong> specifies a json file for each app object handled by the app and whether its reference is for "saveRefs" or "resolveRefs":
-
-   <pre>
-[
-  {
-    "sobject": "Broker__c",
-    "saveRefs": true,
-    "files": [
-      "brokers-data.json"
-    ]
-  },
-  {
-    "sobject": "Property__c",
-    "resolveRefs": true,
-    "files": [
-      "properties-data.json"
-    ]
-  }
-]</pre>
-
-Each json file defines the <strong>records</strong> for each object type.
-
-A record within <strong>brokers-data.json</strong> contains these attributes and properties:
-
-   <pre>
-    {
-      "attributes": {
-        "type": "Broker__c",
-        "referenceId": "CarolineBrookerRef"
-      },
-      "name": "Caroline Kingsley",
-     "Title__c": "Senior Broker",
-    "Phone__c": "617-244-3672",
-    "Mobile_Phone__c": "617-244-3672",
-    "Email__c": "caroline@dreamhouse.demo",
-    "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/people/caroline_kingsley.jpg"
-    },</pre>
-
-A record within <strong>properties-data.json</strong> contains information about the property listed.
 
 
 ### .sfdx top folder
@@ -285,7 +459,56 @@ What's in apex.db is defined within <tt>.sfdx/typings/lwc/apex/</tt> -- <strong>
 
 BotController.d.ts
 
+## TODO: Setup Test
+
+1. Test Permissions
+1. Test Data
+
+   PROTIP: Scratch orgs are meant for use by individual developers rather than a team sandbox.
+
+   HOW? SFDX keeps track of both changes you make locally as well as any in your scratch org.
+
+   SFDX transforms large source files into smaller files to provide more project flexibility and reduce merge conflicts.
+
+## TODO: Run Test thru DevHub
+
+1. Run test
+1. Determine result
+
+   Retrieve metadata source from an org and convert it to Salesforce DX format stored in a VCS repo. 
+
+1. Make changes using editor
+
+   PROTIP: Any changes made within a scratch org (using point-and-click) needs to be tracked in the Git source to be repeatable.
+
+1. Repeat test cycle with the Metadata API package created in the build phase.
+
+   When proven ready:
+
+1. Deploy on a sandbox, a representation of the production org. 
+
+1. In a sandbox, replicate and test the steps to release into the production org.
+
+1. TODO: Deploy to production
+
 <hr />
+
+## Extract metadata from org
+
+Here is the separation process:
+
+1. Identified potential artifacts.
+
+   Metadata components can only live in one artifact at a time. So shared Metadata components should live as <strong>shared components in a single base artifact</strong>.
+
+1. TODO: Use the Metadata API to retrieve the source related to your artifact. See the App Development with Salesforce DX module:
+
+1. Use the Salesforce CLI and your testing org to create a package.xml that identifies the components of the artifact. Extract the source.
+
+1. Create a VCS repository for each artifact. 
+
+   Build release cycles specific to those applications.
+
 
 ## Social
 
@@ -322,6 +545,9 @@ by Austen Collins (@Austen Collins, austin@serverless.com), founder and CEO of S
 
 ## Videos
 
+* <a target="_blank" href="http://salesforce.vidyard.com/watch/WQzCAyBR8FiJQ8yVXWDwWR">Salesforce Environments: Getting Started with Scratch Orgs</a> by Rohit Mehta (@rohitforce), Product Manager
+
+
 https://www.youtube.com/watch?v=z11co_ZqUH8
 Second Generation Packaging for Customers and Partners
 
@@ -342,9 +568,10 @@ Get Started with Salesforce DX
    Salesforce DX Development Model</a>    
    * <a target="_blank" href="https://trailhead.salesforce.com/modules/sfdx_app_dev">App Development with Salesforce DX</a>
    * <a target="_blank" href="https://trailhead.salesforce.com/modules/sfdx_travis_ci">Continuous Integration Using Salesforce DX</a> using Travis
-   </a>
+
    * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/unlocked-packages-for-customers">Unlocked Packages for Customers</a> [55 mins] +700
    * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/app_deployment">Change Management</a> [1 hr 15 mins] +500
+   * Application Lifecycle Management (ALM)
 
    * Trailhead project: <a target="_blank" href="https://trailhead.salesforce.com/en/projects/quick-start-salesforce-dx">Quick Start: Salesforce DX</a> 
    * Trailhead project: <a target="_blank" href="https://trailhead.salesforce.com/en/projects/quick-start-unlocked-packages">Quick Start: Unlocked Packages</a> 
@@ -352,36 +579,30 @@ Get Started with Salesforce DX
 
 <a target="_blank" href="https://trailhead.salesforce.com/en/modules/process-design-without-limits">Process Design Without Limits</a>
 
+The above replace many <a target="_blank" href="https://developer.salesforce.com/page/Force.com_workbook">Workbooks</a>
 
 
 ## References 
 
 * <a target="_blank" href='https://developer.salesforce.com/docs/atlas.en-us.214.0.sfdx_cli_reference.meta/sfdx_cli_reference' >Salesforce CLI Command Reference</a></li>
 
-* <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.214.0.sfdx_dev.meta/sfdx_dev">Salesforce DX Developer Guide</a></li>
+* <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.214.0.sfdx_dev.meta/sfdx_dev">Salesforce DX Developer Guide</a>
 
-* <a target="_blank" href="https://developer.salesforce.com/tools/extension_vscode">Salesforce Extensions for VSCode</a></li>
+* <a target="_blank" href="https://developer.salesforce.com/tools/extension_vscode">Salesforce Extensions for VSCode</a>
 
-* <a target="_blank" href="http://salesforce.vidyard.com/watch/WQzCAyBR8FiJQ8yVXWDwWR">Salesforce Environments: Getting Started with Scratch Orgs</a></li>
+* <a target="_blank" href="http://salesforce.vidyard.com/watch/M3APX9oM72RDUoiqNi8yyg">Salesforce CLI: Harnessing the Power of Salesforce Through the Command Line</a>
 
-* <a target="_blank" href="http://salesforce.vidyard.com/watch/M3APX9oM72RDUoiqNi8yyg">Salesforce CLI: Harnessing the Power of Salesforce Through the Command Line</a></li>
+https://developer.secure.force.com/cookbook/
+Best practices and code samples
 
 
 ## Misc notes
 
 https://developer.salesforce.com/promotions/orgs/dx-signup
 
-Set Up Salesforce DX Environment
+QUESTION: ISVs (Service Vendors) who build customized Salesforce apps
+persona-based customizations.
 
-   sfdx force # tools for the salesforce developer
-   sfdx plugins # manage plugins
-   sfdx update # update sfdx-cli
-
-Set Up the Project on Your Local Machine
-~ 10 mins
-
-Create and Test Our Scratch Org
-~ 15 mins
 
 <hr />
 
