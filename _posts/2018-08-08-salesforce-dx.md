@@ -122,6 +122,38 @@ In more complex orgs, you may find it necessary to have multiple related artifac
 
    <pre><strong>sfdx force --help</strong></pre>
 
+   <pre>
+Usage: sfdx force: [-v] [--json] [--loglevel &LT;string>] [flags]
+&nbsp;
+Flags:
+ -v, --version        display the Salesforce API version
+ --json               format output as json
+ --loglevel LOGLEVEL  logging level for this command invocation
+                      (error*,trace,debug,info,warn,fatal)
+&nbsp;
+Usage: sfdx force:COMMAND
+&nbsp;
+Help topics, type sfdx help TOPIC for more details:
+&nbsp;
+ force:alias        manage username aliases
+ force:apex         work with Apex code
+ force:auth         authorize an org for use with the Salesforce CLI
+ force:config       configure the Salesforce CLI
+ force:data         manipulate records in your org
+ force:doc          display help for force commands
+ force:lightning    create and test Lightning component bundles
+ force:limits       view your org’s limits
+ force:mdapi        retrieve and deploy metadata using Metadata API
+ force:org          manage your Salesforce DX orgs
+ force:package      develop second-generation packages; install and uninstall first- and second-generation packages
+ force:package1     develop first-generation managed and unmanaged packages
+ force:project      set up a Salesforce DX project
+ force:schema       view standard and custom objects
+ force:source       sync your project with your orgs
+ force:user         perform user-related admin tasks
+ force:visualforce  create and edit Visualforce files
+   </pre>
+
 1. Verify version installed:
 
    <pre><strong>sfdx version</strong></pre>
@@ -177,17 +209,9 @@ On your local machine (laptop), perform these steps to obtain assets from GitHub
 
 1. Create a "subject" folder or navigate to an existing one:
 
-1. Download samples from GitHub 
+1. Install Git https://help.github.com/articles/set-up-git/
 
-   This shows how to use Salesforce DX with Travis CI, a cloud-based continuous integration (CI) service for building and testing software projects hosted on GitHub:
-
-   <pre><strong>git clone https://github.com/forcedotcom/sfdx-travisci.git
-   cd sfdx-travisci
-   </strong></pre>
-
-   This was created by Wade Wegner, <a target="_blank" href="https://www.linkedin.com/in/wadewegner/">Salesforce SVP Product Management</a>.
-
-   Alternately, download the Dreamforce ’16 Developer Keynote sample application, called the DreamHouse app stored in GitHub:
+1. Download a sample repo from GitHub - the Dreamforce ’16 Developer Keynote sample application, called the DreamHouse app stored in GitHub. It was created by Wade Wegner, <a target="_blank" href="https://www.linkedin.com/in/wadewegner/">Salesforce SVP Product Management</a>:
 
    <pre><strong>git clone https://github.com/forcedotcom/sfdx-dreamhouse.git
    cd sfdx-dreamhouse
@@ -478,7 +502,7 @@ BotController.d.ts
 <a name="MetadatExport"></a>
 ### Metadata export from orgs
 
-PROTIP: What is not shown in the diagram is that metadata in existing orgs can be extracted into source code for storage in GitHub. This is easier said than done because there are several sources:
+PROTIP: Metadata in existing orgs can be extracted into source code for storage in GitHub in <tt>sfdx-project.json</tt> files. This is easier said than done because there are several sources:
 
 * Metadata API
 * Salesforce DX Source Tracking to do push and pull
@@ -487,20 +511,62 @@ PROTIP: What is not shown in the diagram is that metadata in existing orgs can b
 * Apex MD API
 * Tooling API
 
-<a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_unsupported_types.htm">Unsupported Metadata Types</a>
+A special token is used in CI runs.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=zsZDEL6oO0Q&t=9m50s">VIDEO: In 2018</a>, documentation about metadata is disparate, it's non consistent, not easy to find and navigate."
 A Metadata Report generated from each org lists for each Metadata Type whether it's exposed by the Metadata API, in source tracking, and unlocked packaging, all in one place.
 
-Here is how to extract metadata from orgs:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Prlurg2ORnU/">How Everyone Can Leverage Salesforce DX Packaging</a> 19 Nov 2017 shows how to get unmanaged metadata into a DX package.
 
-1. Identified potential artifacts.
+The strategy is to, over time, to identify <strong>unpackaged metadata</strong>
+and organize them into Salesforce DX packages.
 
-   Metadata components can only live in one artifact at a time. So shared Metadata components should live as <strong>shared components in a single base artifact</strong>.
+1. Enable your org with Salesforce DX <strong>DevHub</strong> and 2nd Generation Packaging.
 
-1. TODO: Use the Metadata API to retrieve the source related to your artifact. See the App Development with Salesforce DX module:
+   In Setup, search for "Dev Hub".
 
-1. Use the Salesforce CLI and your testing org to create a package.xml that identifies the components of the artifact. Extract the source.
+   https://sfdc.co/dx-pkgs
+
+1. Convert metadata in the org calling the Metadata API (mdapi):
+
+   <pre><strong>sfdx force:mdapi:convert --rootdir mdapi-source --outputdir force-app
+   </strong></pre>
+
+   See the App Development with Salesforce DX module:
+
+1. Identify and put <strong>shared</strong> components in shared package of artifacts.
+
+   PROTIP: Metadata components can only live in one artifact at a time. So shared Metadata components should live as <strong>shared components in a single base artifact</strong>.
+
+   * <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_unsupported_types.htm">Unsupported Metadata Types</a>
+
+1. Use the Salesforce CLI and your testing org to create a package.xml that identifies the components of the artifact. 
+
+1. Construct the command with the current date/time:
+
+   <pre><strong>sfdx force:package2:create --containeroptions Unlocked --name "Expense 2018.08.11 10:49"</strong></pre>
+
+   "Unlocked" allows full editability. "Locked" does not allow editability.
+
+1. Highlight and copy the VALUE for package2 output (such as "0H00000008OQdKAM") and paste it in the <tt>sdfx-project.json</tt> file:
+
+   <pre>
+   "path": "force-app",
+   "id": "0H00000008OQdKAM",
+   "versionName": "Expense App",
+   "versionDescription": "Move Expense App metadata into a package2",
+   "versionNumber": "1.0.0.NEXT",
+   "default": true
+   </pre>
+
+   The "NEXT" is a token which will be auto-incremented.
+
+1. 
+
+   <pre><strong>sfdx force:package2:version:create --directory</strong></pre>
+
+
+1. Extract the source.
 
 1. Create a VCS repository for each artifact. 
 
@@ -509,11 +575,62 @@ Here is how to extract metadata from orgs:
 
 ## Social
 
-Look for Twitter tag #SalesforceDX 
+Look for Twitter tag <a target="_blank" href="https://twitter.com/search?q=%23salesforcedx&src=typd">#SalesforceDX</a>
 
 \#BASFDUG (Bay Area/San Francisco Dev User Group) has a <a target="_blank" href="http://bit.ly/TwitchSF">the /TwitchSF channel</a>, and <a target="_blank" href="https://www.youtube.com/channel/UCdTNaauk7anhmVfg-ulzX2Q/videos/">YouTube channel</a> (<a target="_blank" href="https://bit.ly/2kMVC8q">bit.ly/2kMVC8q</a>).
 
    * JOIN: <a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000HTp1">Salesforce DX Beta group</a> Success Community.
+
+
+## Continuous Integration
+
+1. Sign up for an account at https://travis-ci.org/ using your GitHub account.
+
+   PROTIP: Plans begin from $69 per month for 1 concurrent job.
+
+1. Click Authorize travis-ci to log in with your GitHub credentials, then enter your GitHub password.
+
+
+1. Fork to your own GitHub account a repo that has a <strong>.travisci.yml</strong> file for processing by Travis CI, a cloud-based continuous integration (CI) service for building and testing software projects hosted on GitHub:
+
+   <pre><strong>git clone https://github.com/forcedotcom/sfdx-travisci.git
+   cd sfdx-travisci
+   </strong></pre>
+
+   The .travisci.yml file:
+
+   <pre>
+sudo: true
+os: trusty
+cache: false
+&nbsp;
+env:
+- URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
+&nbsp;
+before_install:
+- openssl aes-256-cbc -K $encrypted_b1fbf710b918_key -iv $encrypted_b1fbf710b918_iv
+  -in assets/server.key.enc -out assets/server.key -d
+- export SFDX_AUTOUPDATE_DISABLE=false
+- export SFDX_USE_GENERIC_UNIX_KEYCHAIN=true
+- export SFDX_DOMAIN_RETRY=300
+- export SFDX_DISABLE_APP_HUB=true
+- export SFDX_LOG_LEVEL=DEBUG
+- mkdir sfdx
+- wget -qO- $URL | tar xJ -C sfdx --strip-components 1
+- "./sfdx/install"
+- export PATH=./sfdx/$(pwd):$PATH
+- sfdx --version
+- sfdx plugins --core
+- sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key --username $USERNAME --setdefaultdevhubusername -a HubOrg
+&nbsp;
+script:
+- sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg --wait 2
+- sfdx force:org:display -u ciorg
+- sfdx force:source:push -u ciorg
+- sfdx force:apex:test:run -u ciorg --wait 10
+- sfdx force:org:delete -u ciorg -p
+   </pre>
+
 
 
 ## Rock stars
@@ -548,9 +665,9 @@ Rohit Mehta (@rohitforce), Product Manager
 
 Dileep Burki, <a target="_blank" href="https://www.linkedin.com/in/dileep-burki-483a25/">Sr. Product Manager</a>:
 
-   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=Prlurg2ORnU/">How Everyone Can Leverage Salesforce DX Packaging</a> 19 Nov 2017
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Prlurg2ORnU/">How Everyone Can Leverage Salesforce DX Packaging</a> 19 Nov 2017 shows how to get unmanaged metadata into a DX package.
 
-   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=z11co_ZqUH8/">"Second Generation Packaging"</a> (2GP) [49:12] Jun 5, 2017
+   * <a target="_blank" href="https://www.youtube.com/watch?v=z11co_ZqUH8/">"Second Generation Packaging"</a> (2GP) [49:12] Jun 5, 2017
 
 Josh Kaplan (@JoshSFDC), Product Manager
 
@@ -560,19 +677,27 @@ Josh Kaplan (@JoshSFDC), Product Manager
 
 Wade Wegner (@WadeWegner), <a target="_blank" href="https://www.linkedin.com/in/wadewegner/">Salesforce SVP Product Management</a>
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=Pf33nrsqZOc/">Introduction to Salesforce DX</a> 3 Jul 2017 at TrailheadDX
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Pf33nrsqZOc/">Introduction to Salesforce DX</a> 3 Jul 2017 [38:20] at TrailheadDX evaluates whether DX meets Principles of Modern Software Delivery. He also shows code.
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=6lNG6iFVGQg/">Migrating to Salesforce DX</a> 10 Aug 2017 [57:10]
 
 Others from Salesforce Developers on YouTube:
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=FUFkbr9uueU/">From Change Sets to Salesforce DX: The Evolution of Collaboration</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=FUFkbr9uueU/">From Change Sets to Salesforce DX: The Evolution of Collaboration</a> Nov 19, 2017 with Schneider Electric
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=6lNG6iFVGQg/">Migrating to Salesforce DX</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=ZMjKmQ9j9I8/">Simplify your code with Salesforce DX and module development</a> Dec 14, 2017
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=ZMjKmQ9j9I8/">Simplify your code with Salesforce DX and module development</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=hXST9yOyQLk/">Getting Started in VS Code with Salesforce DX</a> Nov 15, 2017
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=exZ3TICOzd8/">Get Started with Salesforce DX!</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=exZ3TICOzd8/">Get Started with Salesforce DX!</a> 
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=vkvtKIog_98/">Life Before and After Salesforce DX for Salesforce Industries</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=vkvtKIog_98/">Life Before and After Salesforce DX for Salesforce Industries</a> Nov 13, 2017 by Shafi Ulla, DevOps Engineer & Akshay Patravali 
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=iDBb0RDqY2A/">Copying Your Org's Shape into Scratch Orgs</a> Nov 13, 2017
+
+
+Ruth Sears-Blazej (@ruth_sfdc_docs) write docs about SFDC.
+
 
 ## Happy Trails
 
