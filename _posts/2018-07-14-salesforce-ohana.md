@@ -35,7 +35,7 @@ This page presents steps and information for those new to Salesforce to get "plu
 
 
 
-## Locations
+## Office Locations
 
 <a target="_blank" href="http://www.salesforcetower.com/">The Salesforce Tower</a>, on Mission between Freemont and 1st (South of the Montgomery BART station), is the tallest building in San Francisco -- a few feet taller than the Eiffel Tower in Paris:
 
@@ -324,11 +324,19 @@ Dreamforce drew 170,000 to San Francisco in 2017 (the largest software conferenc
 
    * Experience zones?
 
+   * Developer Forest and Admin Meadow are powered by Trailhead
+
+   * Internet of Things (IoT) Cabin
+
 Partner-sponsored parties and events also take place all week long.
 
 Hackathon?
 
-Take <a target="_blank" href="https://trailhead.salesforce.com/modules/get_ready_for_dreamforce_prepare_most_exciting_event_year">Trailhead Module: Dreamforce Ready</a> [30 mins] to learn why Dreamforce is the must-attend event of the year and develop your game plan.
+Read about preparing for and getting the most from Dreamforce:
+
+   * Take <a target="_blank" href="https://trailhead.salesforce.com/modules/get_ready_for_dreamforce_prepare_most_exciting_event_year">Trailhead Module: Dreamforce Ready</a> [30 mins] 
+
+   * <a target="_blank" href="https://developer.salesforce.com/blogs/developer-relations/2016/09/developers-guide-dreamforce.html">The Developer’s Guide to Dreamforce</a> September 21, 2016
 
 ### Mascots
 

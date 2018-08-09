@@ -400,6 +400,8 @@ Introduction to Git for Force.com Developers</a> [53:50] among Dreamforce Video 
 
    * <a target="_blank" href="http://resources.docs.salesforce.com/rel1/doc/en-us/static/pdf/SF_Git_cheatsheet_web.pdf">Git Cheatsheet from Salesforce</a> includes Heroku commands.
 
+<a target="_blank" href="https://www.youtube.com/watch?v=hvomhBeGUCM">Manage Org Changes Using the Force.com Migration Tool and Git</a> Nov 25, 2013 by Kyle Bowerman (@kylebowerman) talks about command "ant fetchmyorg", the Force.com migration tool written in Java.
+
 See <a target="_blank" href="https://wilsonmar.github.io/salesforce/">my Salesforce blogs</a>
 
 ## From Git hosting companies:
