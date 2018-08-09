@@ -35,7 +35,7 @@ Various people have used different nicknames, so here they are together:
 <tr valign="top"><td>Configuration</td><td>config. in metadata</td><td>"config. as code"</td></tr>
 <tr valign="top"><td>Source of "Truth"</td><td>What's in org</td><td>What's in VCS</td></tr>
 <tr valign="top"><td>Versioning</td><td>Carry org. forward</td><td>What's in VCS</td></tr>
-<tr valign="top"><td>Unit of change</td><td>Change Set</td><td>Package</td></tr>
+<tr valign="top"><td>Unit of change</td><td>Change Set</td><td>Package 2GP</td></tr>
 <tr valign="top"><td>Workflow focus</td><td>"org. centric"</td><td>"source-centric"</td></tr>
 <tr valign="top"><td>Org instances</td><td>"nurture as dear pets"</td><td>"dispose like cattle"</td></tr>
 <tr valign="top"><td>Env. for dev. test</td><td>in sandboxes (SBX)</td><td>in scratch orgs</td></tr>
@@ -45,15 +45,15 @@ Various people have used different nicknames, so here they are together:
 Salesforce began with its "clicks, not code" slogan because, with Salesforce, citizen developers usually didn't have to bother with the internal workings (metadata) when customizing apps.
 And Salesforce has had Activity tracking which tracks every change to user data in the database. 
 
-Changes were introduced by "change sets" against sandboxes which duplicated the production org. This means the development workflow is focused on what's in the org., with org instances nutured as dear pets.
+Changes were introduced by "change sets" against sandboxes which duplicated the production org. This means the development workflow is focused on what's in the org., with org instances nutured as dear pets. For example, after Person accounts are enabled, there is no going back.
 
 However, throughout the software development industry today,
 there is a movement toward storing <strong>configuration as code</strong>, 
 of keeping metadata out of inside the org and into versioned code bases separate from the data.
 
-This transition is necessary to provide more flexibility to developers. This new approach puts versioning at the center of the workflow so that the state of an org can be brought back to any point in the past (like a time machine).
+This transition is necessary to provide more flexibility to developers. This new approach puts versioning at the center of the workflow so that the state of an org can be brought back to any point in the past (like a time machine). 
 
-Such an approach requires more use of command-line terminals. That's why I (not Salesforce) call it "clicks AND code".
+Such an approach requires more use of command-line terminals. That's why I (not Salesforce) call it "clicks AND code". CLI can completely replace the ANT deployment tool and unmanaged packages.
 
 The versioning system is distributed, meaning complete duplicates of an org with all metadata can be worked on simultaneously by different people. So instead of having to tag-team work on change-sets against a limited number of sandboxes, each developer can test on <strong>scratch orgs</strong> that are brought up based on what each developer on his/her laptop.
 Reduced need for coordination enables faster, continuous testing to occur.
@@ -82,21 +82,6 @@ The source of truth for source-driven development is in the VCS (Version Control
 <tr valign="top"><td>Customer data</td><td>-</td><td>-</td><td>Sample</td><td>All data</td></tr>
 <tr valign="top"><td>Data limit</td><td>200 MB</td><td>200 MB (1 GB Pro)</td><td>5 GB</td><td>Matches Prod.</td></tr>
 </table>
-
-<a name="MetadatExport"></a>
-### Metadata export from orgs
-
-PROTIP: What is not shown in the diagram is that metadata in existing orgs can be extracted into source code for storage in GitHub. This is easier said than done because there are several sources:
-
-* Metadata API
-* Salesforce DX Source Tracking to do push and pull
-* Packaging
-* Change Sets
-* Apex MD API
-* Tooling API
-
-<a target="_blank" href="https://www.youtube.com/watch?v=zsZDEL6oO0Q&t=9m50s">In 2018</a>, documentation about metadata is disparate, it's non consistent, not easy to find and navigate."
-A Metadata Report generated from each org lists for each Metadata Type whether it's exposed by the Metadata API, in source tracking, and unlocked packaging, all in one place.
 
 <a name="Git"></a>
 ### Git
@@ -303,7 +288,7 @@ Local Deleted             MyClass      ApexClass   /MyClass.cls-meta.xml
   &LT;natures>
   &LT;/natures>
 &LT;/projectDescription>
-   <pre>
+   </pre>
 
    TODO: force-app
 
@@ -315,12 +300,9 @@ Local Deleted             MyClass      ApexClass   /MyClass.cls-meta.xml
 
    ### Load data
 
-1. Load data:
+1. Apply the <tt>data</tt> folder which specifies <strong>app objects</strong> handled by the app. With Dreamhouse, it's properties for sale and what brokers are trying to sell them.
 
    <pre><strong>sfdx force:data:tree:import --plan data/sample-data-plan.json</strong></pre>
-
-   The <tt>data</tt> folder specifies <strong>app objects</strong> handled by the app. 
-   In this case, it's properties for sale and what brokers are trying to sell them.
 
    The <strong>sample-data-plan.json</strong> specifies a json file for each app object handled by the app and whether its reference is for "saveRefs" or "resolveRefs":
 
@@ -343,7 +325,6 @@ Local Deleted             MyClass      ApexClass   /MyClass.cls-meta.xml
 ]</pre>
 
    Each json file defines the <strong>records</strong> for each object type.
-
    A record within <strong>brokers-data.json</strong> contains these attributes and properties:
 
    <pre>
@@ -360,7 +341,7 @@ Local Deleted             MyClass      ApexClass   /MyClass.cls-meta.xml
     "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/people/caroline_kingsley.jpg"
     },</pre>
 
-A record within <strong>properties-data.json</strong> contains information about the property listed.
+   A record within <strong>properties-data.json</strong> contains information about the property listed.
 
 
    ### Open Org
@@ -493,9 +474,25 @@ BotController.d.ts
 
 <hr />
 
-## Extract metadata from org
 
-Here is the separation process:
+<a name="MetadatExport"></a>
+### Metadata export from orgs
+
+PROTIP: What is not shown in the diagram is that metadata in existing orgs can be extracted into source code for storage in GitHub. This is easier said than done because there are several sources:
+
+* Metadata API
+* Salesforce DX Source Tracking to do push and pull
+* Packaging
+* Change Sets
+* Apex MD API
+* Tooling API
+
+<a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_unsupported_types.htm">Unsupported Metadata Types</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=zsZDEL6oO0Q&t=9m50s">VIDEO: In 2018</a>, documentation about metadata is disparate, it's non consistent, not easy to find and navigate."
+A Metadata Report generated from each org lists for each Metadata Type whether it's exposed by the Metadata API, in source tracking, and unlocked packaging, all in one place.
+
+Here is how to extract metadata from orgs:
 
 1. Identified potential artifacts.
 
@@ -545,7 +542,9 @@ by Austen Collins (@Austen Collins, austin@serverless.com), founder and CEO of S
 
 ## Videos
 
-* <a target="_blank" href="http://salesforce.vidyard.com/watch/WQzCAyBR8FiJQ8yVXWDwWR">Salesforce Environments: Getting Started with Scratch Orgs</a> by Rohit Mehta (@rohitforce), Product Manager
+Rohit Mehta (@rohitforce), Product Manager
+
+   * <a target="_blank" href="http://salesforce.vidyard.com/watch/WQzCAyBR8FiJQ8yVXWDwWR">Salesforce Environments: Getting Started with Scratch Orgs</a>
 
 Dileep Burki, <a target="_blank" href="https://www.linkedin.com/in/dileep-burki-483a25/">Sr. Product Manager</a>:
 
@@ -553,21 +552,27 @@ Dileep Burki, <a target="_blank" href="https://www.linkedin.com/in/dileep-burki-
 
    * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=z11co_ZqUH8/">"Second Generation Packaging"</a> (2GP) [49:12] Jun 5, 2017
 
+Josh Kaplan (@JoshSFDC), Product Manager
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=UaPPhFWHBQ0/">Top 10 Things to Know About Salesforce DX</a> 15 Nov 2017 [20:12]
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=wUc1l5keYmo/">Salesforce DX - Continuous Integration and Continuous Delivery</a> 5 Jul 2017 [30:44]
+
+Wade Wegner (@WadeWegner), <a target="_blank" href="https://www.linkedin.com/in/wadewegner/">Salesforce SVP Product Management</a>
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Pf33nrsqZOc/">Introduction to Salesforce DX</a> 3 Jul 2017 at TrailheadDX
+
 Others from Salesforce Developers on YouTube:
 
-   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=wUc1l5keYmo/">Salesforce DX - Continuous Integration and Continuous Delivery</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=FUFkbr9uueU/">From Change Sets to Salesforce DX: The Evolution of Collaboration</a>
 
-   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=FUFkbr9uueU/">From Change Sets to Salesforce DX: The Evolution of Collaboration</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=6lNG6iFVGQg/">Migrating to Salesforce DX</a>
 
-   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=6lNG6iFVGQg/">Migrating to Salesforce DX</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=ZMjKmQ9j9I8/">Simplify your code with Salesforce DX and module development</a>
 
-   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=ZMjKmQ9j9I8/">Simplify your code with Salesforce DX and module development</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=exZ3TICOzd8/">Get Started with Salesforce DX!</a>
 
-   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=UaPPhFWHBQ0/">Top 10 Things to Know About Salesforce DX</a>
-
-   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=exZ3TICOzd8/">Get Started with Salesforce DX!</a>
-
-   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=Pf33nrsqZOc/">Introduction to Salesforce DX</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=vkvtKIog_98/">Life Before and After Salesforce DX for Salesforce Industries</a>
 
 ## Happy Trails
 
@@ -611,6 +616,8 @@ The above replace many <a target="_blank" href="https://developer.salesforce.com
 
 https://developer.secure.force.com/cookbook/
 Best practices and code samples
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=YW9aPrxvK3A/">ANT tool</a> 6 Nov 2015.
 
 
 ## Misc notes
