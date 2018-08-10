@@ -18,6 +18,10 @@ comments: true
 
 <a name="AppExchange"></a>
 
+1. To get on the AppExchange store, click the App Launcher icon on the upper-left of any Salesforce console screen.
+
+
+
 https://partners.salesforce.com/AppExchangeTrailblazerChecklist
 
 ## AppExchange Categories
@@ -61,9 +65,16 @@ AppExchange has these categories of add-ons:
 
 ## Interesting
 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=BLwNCCr1gZ0">Manage Your Agile Development from Salesforce</a> Oct 26, 2016 Ray Pendyck (<a target="_blank" href="https://twitter.com/raypendyck">@raypendyck</a>) demos Salesforce's <a target="_blank" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N30000000ps3jEAA">Agile Acelerator on AppExchange</a> for licensed users.
+   * <a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000009MJV">Agile Accelerator Community</a>
+   * <a target="_blank" href="https://appexchange.salesforce.com/servlet/servlet.FileDownload?file=00P3A00000RrREfUAN">Getting Started PDF</a> from Summer '16.
+
 https://github.com/SalesforceFoundation/ApexDoc
 The latest java source for ApexDoc, a tool to document your Salesforce Apex classes.
 
+https://github.com/salesforce/grammaticus
+Grammaticus is a grammar engine that allows users to rename nouns while keeping content grammatically correct.
+Grammaticus encodes the article, noun, and adjective declensions for over 30 languages, and supports programmatic use of nouns
 
 
 ## AppExchange 3rd-Party Tools
