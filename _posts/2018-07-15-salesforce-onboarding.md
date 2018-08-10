@@ -626,9 +626,12 @@ By Nathan Totten
 
 <a target="_blank" href="https://success.salesforce.com/issues_index?tag=Eclipse%20IDE">Eclipse IDE Known Issues</a>
 
-## Apex Interactive Debugger
+## Developer Tools
+
+https://developer.salesforce.com/page/Tools
 
 https://developer.salesforce.com/blogs/engineering/2016/01/apex-interactive-debugger.html
+Apex Interactive Debugger
 
 ## Other IDEs and Editors
 
