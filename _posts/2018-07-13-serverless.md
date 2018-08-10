@@ -1170,7 +1170,7 @@ by Mark Heath
 by Rob Conery
 
 
-### Random Videos
+### Random Resources
 
 <a target="_blank" href="http://engineeringjobs4u.co.uk/serverless-instant-checkout-links-with-square-square-corner-blog-medium">
 Serverless Instant Checkout Links with Square – Square Corner Blog</a>
@@ -1186,6 +1186,8 @@ by Yaron Haviv, Tomer Rosenthal
 Building Serverless Application Pipelines</a> March 6, 2018
 https://www.cncf.io/wp-content/uploads/2018/03/cncf-serverless-webinar.pdf
 by Sebastien Goasguen
+
+https://techbeacon.com/50-best-starter-kits-resources-building-serverless-apps
 
 
 ## More on Clouds #
