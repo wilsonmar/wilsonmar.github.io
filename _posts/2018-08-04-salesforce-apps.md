@@ -18,7 +18,7 @@ comments: true
 
 <a name="AppExchange"></a>
 
-
+https://partners.salesforce.com/AppExchangeTrailblazerChecklist
 
 ## AppExchange Categories
 

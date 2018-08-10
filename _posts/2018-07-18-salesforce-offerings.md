@@ -276,7 +276,7 @@ Partner Orgs have a 50,000 limit on API calls each 24 hours vs.
 <tr valign="top"><td>Unlimited</td><td align="right"> $3,600 </td></tr>
 </table>
 
-"<a target="_blank" href="https://partners.salesforce.com/s/education/appinnovators/Trialforce">Trialforce</a>" is used for AppExchange Partners to deliver free trails to prospects.
+"<a target="_blank" href="https://partners.salesforce.com/s/education/appinnovators/Trialforce">TrialForce</a>" is used for AppExchange Partners to deliver free trails to prospects.
 
 QUESTION: What are "Group", "Personal", and "Performance" editions?
 

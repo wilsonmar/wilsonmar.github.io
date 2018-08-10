@@ -61,10 +61,12 @@ Each repo is <strong>distributed</strong>, meaning each clone of a repo is a com
 
 ## Enable Dev Hub in Production Org
 
-   PROTIP: Developer Edition Orgs cannot be enabled as a "Dev Hub". 
-   Dev Hub can only be enabled on environments that have active paying users, such as Production or Business Orgs. See https://developer.salesforce.com/page/An_Introduction_to_Environments
+   ![sfdx-devhub-req-648x478-60179](https://user-images.githubusercontent.com/300046/43937840-613735c0-9c1d-11e8-9062-873ea87335b0.jpg)
 
-   <strong>BLAH: What that means is previously FREE Developer accounts will be limited to 30 days when working with scratch Orgs (which require Dev Hub to activate).</strong>
+   PROTIP: Developer Edition Orgs cannot be enabled as a "Dev Hub". 
+   Dev Hub can only be enabled on environments that have active paying users, such as Production or Business Orgs. See <a target="_blank" href="https://developer.salesforce.com/page/An_Introduction_to_Environments/">Intro to Environments</a>.
+
+   <strong>BLAH: What that means is previously unlimited FREE Developer accounts will be limited to 30 days when working with scratch Orgs (which require Dev Hub to activate).</strong>
 
 1. Apply for a <strong>30-day trial</strong> account which can be enabled with a "Dev Hub":
 
@@ -72,8 +74,7 @@ Each repo is <strong>distributed</strong>, meaning each clone of a repo is a com
 
    QUESTION: Can suffixed email names such as "me+v1@sane.com" and "me+v2@sane.com" be recognized as separate emails?
 
-1. You'll get an email.
-
+1. You'll get an email to validate.
 1. In Setup, Quick Find, search for "Dev Hub" and click on the response in the list.
 1. Click the Dev Hub toggle to "Enabled".
 

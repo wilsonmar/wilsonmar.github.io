@@ -214,6 +214,8 @@ Others:
    * http://sfdcsrini.blogspot.com/2014/10/scrum-agile-basics.html
    * https://developer.salesforce.com/blogs/engineering/2014/08/meet-gus-keeping-salesforce-agile.html (unifying Bugforce, Scrumforce, and QAforce)
 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=BLwNCCr1gZ0">Manage Your Agile Development from Salesforce</a> Oct 26, 2016 demos Salesforce's Agile Acellerator on AppExchange for licensed users.
+
 ## More about Salesforce #
 
 This is one of a series about Salesforce
