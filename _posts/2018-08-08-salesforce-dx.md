@@ -134,7 +134,9 @@ With Salesforce DX, your local project is tied to a repository. Use each reposit
 
 In more complex orgs, you may find it necessary to have multiple related artifacts developed as part of the same project. This happens when sets of components and customizations depend on others.
 
-## Install
+## Install SFDX CLI
+
+See https://developer.salesforce.com/tools/sfdxcli
 
 1. SFDX CLI
 
@@ -719,7 +721,7 @@ Wade Wegner (@WadeWegner), <a target="_blank" href="https://www.linkedin.com/in/
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=Pf33nrsqZOc/">Introduction to Salesforce DX</a> 3 Jul 2017 [38:20] at TrailheadDX evaluates whether DX meets Principles of Modern Software Delivery. He also shows code.
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=6lNG6iFVGQg/">Migrating to Salesforce DX</a> 10 Aug 2017 [57:10]
+   * <a target="_blank" href="https://www.youtube.com/watch?v=6lNG6iFVGQg/">Migrating to Salesforce DX</a> Jul 5, 2017 during TrailheadDX [45:00] by architects Jim Wunderlich & Mike Miller
 
 Others from Salesforce Developers on YouTube:
 
