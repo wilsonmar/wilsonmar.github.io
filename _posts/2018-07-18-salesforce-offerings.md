@@ -144,6 +144,13 @@ Salesforce, as a company, owns several domain names (some product offerings have
       * https://veterans.force.com/
       * https://???.lightning.force.com/
       <br /><br />
+      Instances starting with "CS" are sandbox environments.
+
+      Instances starting with "AP" are producution in Asia Pacific.
+
+      Instances starting with "NA" are production in North America.
+
+      Instances starting with "EU" are producution in Europe (EMEA).
 
 <a name="OtherDomains"></a>
 
@@ -242,24 +249,45 @@ Salesforce employees maintain these accounts within (now Microsoft's) GitHub.com
 
 ### Product Editions
 
-Before we go further, know that it is <strong>not cheap to run Salesforce in production</strong>.
+Before we go further, know that it is <strong>not cheap to run Salesforce in production</strong> (in "productive use").
 
-Developer Edition (DE) is free, yet has Enterprise capabilities. But cannot deploy anything into production (in "productive use").
-   PROTIP: Those with this license test deployments to production by deploying to another free test org.
+Only Developer environments can create managed packages.
+
+Developer Edition (DE) is free. But the account is limited to keep 5MB of data on each of 2 CRM environments and 3 Force.com licenses.
+
+<strong>Developer "Pro"</strong> Orgs can hold up to <strong>1 GB data</strong> (about 500,00 - 1,000,000 records). QUESTION: How to get Pro Developer?
+
+Enrolled partners of Salesforce, who pay a minimum of $1,000/year, can get a <strong>Partner Developer Edition</strong> (PDE) which can keep up to <strong>250 MB</strong> of data (to hold about 125,000 records).
+
+But DE Orgs cannot be upgraded to Partner DE Orgs because partners access the <a target="_blank" href="https://partners.salesforce.com/s/education/general/Environment_Hub">Partner Environment Hub</a>.
+
+Partner Test Editions can be at either the Pro Edition or Enterprise/Plaform Edition.
+Pro Edition users get 10 PE licenses. Enterprise uses get 25 full CRM licenses and 20 Force.com Platform licenses. Only Enterprise/Platform licenses can create a <a target="_blank" href="https://help.salesforce.com/articleView?id=create_test_instance.htm&type=5">Sandbox</a> for pre-prod testing.
+
+There are <a target="_blank" href="https://partners.salesforce.com/s/education/general/Partner_Orgs">more differences in limits</a>.
+Partner Orgs have a 50,000 limit on API calls each 24 hours vs.
+15,000 for Individual Developers.
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th align="left"> Plan</th><th>Per User per Year</th></tr>
-<tr valign="top"><td>Essentials (for small business)  </td><td align="right"> $300 </td></tr> 
+<tr valign="top"><td>Essentials (for small business) </td><td align="right"> $300 </td></tr> 
 <tr valign="top"><td>Professional ("Complete CRM for any size team") </td><td align="right"> $900</td></tr>
 <tr valign="top"><td>Enterprise ("Deeply customizable") </td><td align="right"> $1,800</td></tr>
 <tr valign="top"><td>Unlimited</td><td align="right"> $3,600 </td></tr>
 </table>
 
+"<a target="_blank" href="https://partners.salesforce.com/s/education/appinnovators/Trialforce">Trialforce</a>" is used for AppExchange Partners to deliver free trails to prospects.
+
+QUESTION: What are "Group", "Personal", and "Performance" editions?
+
 Call 1-800-667-6389 or see <a target="_blank" href="http://www.salesforce.com/crm/editions-pricing.jsp">http://www.salesforce.com/crm/editions-pricing.jsp</a>
+and https://developer.salesforce.com/page/An_Introduction_to_Environments
 
-Each level license has different support SLAs.
+QUESTION: Each level license has different support SLAs?
 
-For example, Salesforce Enterprise customers can open up tunnels and share data with each other. Cool. It’s EDI for the masses.
+PROTIP: Those with this license test deployments to production by deploying to another free test org.
+
+Salesforce Enterprise customers can open up tunnels and share data with each other. (EDI for the masses.)
 
 Additionally:
 

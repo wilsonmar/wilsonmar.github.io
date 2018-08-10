@@ -45,7 +45,7 @@ Various people have used different nicknames, so here they are together:
 Salesforce began with its "clicks, not code" slogan because, with Salesforce, citizen developers usually didn't have to bother with the internal workings (metadata) when customizing apps.
 And Salesforce has had Activity tracking which tracks every change to user data in the database. 
 
-Changes were introduced by "change sets" against sandboxes which duplicated the production org. This means the development workflow is focused on what's in the org., with org instances nutured as dear pets. For example, after Person accounts are enabled, there is no going back.
+Changes have been introduced by "change sets" against sandboxes which duplicated the production org. This means the development workflow is focused on what's in the org., with org instances nutured as dear pets. For example, after Person accounts are enabled, there is no going back.
 
 However, throughout the software development industry today,
 there is a movement toward storing <strong>configuration as code</strong>, 
@@ -58,7 +58,7 @@ Such an approach requires more use of command-line terminals. That's why I (not 
 The versioning system is distributed, meaning complete duplicates of an org with all metadata can be worked on simultaneously by different people. So instead of having to tag-team work on change-sets against a limited number of sandboxes, each developer can test on <strong>scratch orgs</strong> that are brought up based on what each developer on his/her laptop.
 Reduced need for coordination enables faster, continuous testing to occur.
 
-
+PROTIP: A Sandbox is a nearly identical copy of your production environment available only to Enterprise or Unlimited Edition customers. 
 
 ## DX Tools
 
@@ -199,9 +199,24 @@ salesforcedx 43.9.0 (core)
 ~/.cache/sfdx
    </pre>
 
-1. Apply for a 30-day DevHub trial account:
+   ### Enable Dev Hub in Production Org
+
+   PROTIP: Developer Edition orgs cannot be enabled as a "Dev Hub". 
+   Dev Hub can only be enabled on environments that have active paying users, such as Production or Business Orgs. See https://developer.salesforce.com/page/An_Introduction_to_Environments
+
+1. Apply for a <strong>30-day trial</strong> account which can be enabled with a "Dev Hub":
 
    https://developer.salesforce.com/promotions/orgs/dx-signup
+
+   QUESTION: Can suffixed email names such as "me+v1@sane.com" and "me+v2@sane.com" be recognized as separate emails?
+
+1. You'll get an email.
+
+1. In Setup, Quick Find, search for "Dev Hub" and click on the response in the list.
+1. Click the Dev Hub toggle to "Enabled".
+
+   PROTIP: This cannot be undone.
+
 
 ## Sample DX project
 
@@ -516,6 +531,8 @@ A special token is used in CI runs.
 <a target="_blank" href="https://www.youtube.com/watch?v=zsZDEL6oO0Q&t=9m50s">VIDEO: In 2018</a>, documentation about metadata is disparate, it's non consistent, not easy to find and navigate."
 A Metadata Report generated from each org lists for each Metadata Type whether it's exposed by the Metadata API, in source tracking, and unlocked packaging, all in one place.
 
+These instructions are based on video:
+
    * <a target="_blank" href="https://www.youtube.com/watch?v=Prlurg2ORnU/">How Everyone Can Leverage Salesforce DX Packaging</a> 19 Nov 2017 shows how to get unmanaged metadata into a DX package.
 
 The strategy is to, over time, to identify <strong>unpackaged metadata</strong>
@@ -546,7 +563,8 @@ and organize them into Salesforce DX packages.
 
    <pre><strong>sfdx force:package2:create --containeroptions Unlocked --name "Expense 2018.08.11 10:49"</strong></pre>
 
-   "Unlocked" allows full editability. "Locked" does not allow editability.
+   PROTIP: "Unlocked" allows full editability. "Locked" does not allow editability.
+   There are different icons to flag the difference in the Apex classes screen.
 
 1. Highlight and copy the VALUE for package2 output (such as "0H00000008OQdKAM") and paste it in the <tt>sdfx-project.json</tt> file:
 
@@ -561,16 +579,32 @@ and organize them into Salesforce DX packages.
 
    The "NEXT" is a token which will be auto-incremented.
 
-1. 
+1. Queue version creation from source:
 
-   <pre><strong>sfdx force:package2:version:create --directory</strong></pre>
+   <pre><strong>sfdx force:package2:version:create --directory force-app</strong></pre>
 
+1. Grab the Id returned:
 
-1. Extract the source.
+   04tB0000000IaLi
+
+1. Install the package:
+
+   <pre><strong>sfdx force:package:install --wait 2 --id 04tB0000000IaLi</strong></pre>
+
+1. Refresh the org UI to view Installed Packages.
+  
+1. Click View Components, Package Components. 
+1. Click "View dependencies".
+
+   There is warning that changes done in the UI needs to be changed in the code as well.
+
+1. Make changes in the code.
+1. Increment the versionNumber.
+1. Do a build.
 
 1. Create a VCS repository for each artifact. 
 
-   Build release cycles specific to those applications.
+1. Build release cycles specific to those applications.
 
 
 ## Social
