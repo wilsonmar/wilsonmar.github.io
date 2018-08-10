@@ -59,6 +59,27 @@ Such an approach requires more use of command-line terminals. That's why I (not 
 
 Each repo is <strong>distributed</strong>, meaning each clone of a repo is a complete duplicate with all version history. This means an Org with all its metadata can be worked on <strong>simultaneously</strong> by different people, instead of having to tag-team time on a change-set,  each developer can test on his/own <strong>scratch orgs</strong> based on what each developer has on his/her own laptop. Reduced need for coordination enables faster, <strong>continuous</strong> testing and deployment to occur.
 
+## Enable Dev Hub in Production Org
+
+   PROTIP: Developer Edition Orgs cannot be enabled as a "Dev Hub". 
+   Dev Hub can only be enabled on environments that have active paying users, such as Production or Business Orgs. See https://developer.salesforce.com/page/An_Introduction_to_Environments
+
+   <strong>BLAH: What that means is previously FREE Developer accounts will be limited to 30 days when working with scratch Orgs (which require Dev Hub to activate).</strong>
+
+1. Apply for a <strong>30-day trial</strong> account which can be enabled with a "Dev Hub":
+
+   https://developer.salesforce.com/promotions/orgs/dx-signup
+
+   QUESTION: Can suffixed email names such as "me+v1@sane.com" and "me+v2@sane.com" be recognized as separate emails?
+
+1. You'll get an email.
+
+1. In Setup, Quick Find, search for "Dev Hub" and click on the response in the list.
+1. Click the Dev Hub toggle to "Enabled".
+
+   PROTIP: This cannot be undone.
+
+
 ## DX Tools
 
 DX consists of these new tools:
@@ -200,24 +221,6 @@ salesforcedx 43.9.0 (core)
 ~/Library/Caches/sfdx
 ~/.cache/sfdx
    </pre>
-
-   ### Enable Dev Hub in Production Org
-
-   PROTIP: Developer Edition orgs cannot be enabled as a "Dev Hub". 
-   Dev Hub can only be enabled on environments that have active paying users, such as Production or Business Orgs. See https://developer.salesforce.com/page/An_Introduction_to_Environments
-
-1. Apply for a <strong>30-day trial</strong> account which can be enabled with a "Dev Hub":
-
-   https://developer.salesforce.com/promotions/orgs/dx-signup
-
-   QUESTION: Can suffixed email names such as "me+v1@sane.com" and "me+v2@sane.com" be recognized as separate emails?
-
-1. You'll get an email.
-
-1. In Setup, Quick Find, search for "Dev Hub" and click on the response in the list.
-1. Click the Dev Hub toggle to "Enabled".
-
-   PROTIP: This cannot be undone.
 
 
 ## Sample DX project

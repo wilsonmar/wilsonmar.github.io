@@ -167,7 +167,7 @@ Salesforce, as a company, owns several domain names (some product offerings have
    * <a target="_blank" href="https://pardot.com">Pardot.com</a> [<a target="_blank" href="https://trust.pardot.com/">status</a>]
    * <a target="_blank" href="https://www.quip.com/">Quip.com</a> "a Salesforce company" has APIs to enable automation of processes, integration, and <strong>collabortion</strong> with any app.
 
-Not owned by Salesforce but they seem close:
+Not owned by Salesforce (but they seem close):
 
    * <a target="_blank" href="http://www.financialforce.com/">FinancialForce.com</a> provides SaaS for managing financial information. Salesforce invested in this company.
 
