@@ -51,14 +51,13 @@ However, throughout the software development industry today,
 there is a movement toward storing <strong>configuration as code</strong>, 
 of keeping metadata out of inside the org and into versioned code bases separate from the data.
 
+The new "source of truth" for source-driven development is in the VCS (Version Control System) rather than in the production org. This means the configuration of the org exists outside the org. So new orgs can be fully created.
+
 This transition is necessary to provide more flexibility to developers. This new approach puts versioning at the center of the workflow so that the state of an org can be brought back to any point in the past (like a time machine). 
 
 Such an approach requires more use of command-line terminals. That's why I (not Salesforce) call it "clicks AND code". CLI can completely replace the ANT deployment tool and unmanaged packages.
 
-The versioning system is distributed, meaning complete duplicates of an org with all metadata can be worked on simultaneously by different people. So instead of having to tag-team work on change-sets against a limited number of sandboxes, each developer can test on <strong>scratch orgs</strong> that are brought up based on what each developer on his/her laptop.
-Reduced need for coordination enables faster, continuous testing to occur.
-
-PROTIP: A Sandbox is a nearly identical copy of your production environment available only to Enterprise or Unlimited Edition customers. 
+Each repo is <strong>distributed</strong>, meaning each clone of a repo is a complete duplicate with all version history. This means an Org with all its metadata can be worked on <strong>simultaneously</strong> by different people, instead of having to tag-team time on a change-set,  each developer can test on his/own <strong>scratch orgs</strong> based on what each developer has on his/her own laptop. Reduced need for coordination enables faster, <strong>continuous</strong> testing and deployment to occur.
 
 ## DX Tools
 
@@ -68,20 +67,23 @@ DX consists of these new tools:
    * Dev Hub for managing scratch orgs
    * A Salesforce CLI binary that runs side-by-side with the Heroku CLI
    * Support for the Lightning Test service and Lightning linting to Salesforce CLI
-   * Continuous integration with test automation
    * <a href="#MetadatExport">Metadata reporting and export from orgs</a>
+   * Continuous integration with test automation
 
 But the change is about more than the tools. Instead of building code and customizations around a monolithic org, code and customizations are built around <strong>artifact</strong> (a logical set of code) that represents a subset of the org that can be tested independently from other components in your org. This is so an artifact can be released independently. 
 
-The source of truth for source-driven development is in the VCS (Version Control System) rather than in the production org. This means the configuration of the org exists outside the org. So new orgs can be fully created.
-
 <table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom"><th>Features</th><th>Scratch Org</th><th>Developer</th><th>Partial Copy</th><th> Full</th></tr>
+<tr valign="bottom"><th>Features</th><th>Scratch Org</th><th>Developer</th><th>Partial Copy Sandbox</th><th> Full Sandbox</th></tr>
 <tr valign="top"><td>Refresh</td><td>Ephemeral</td><td>1 day</td><td>5 days</td><td>29 days</td></tr>
 <tr valign="top"><td>Metadata</td><td>version control</td><td>Production</td><td>Production</td><td>Production</td></tr>
 <tr valign="top"><td>Customer data</td><td>-</td><td>-</td><td>Sample</td><td>All data</td></tr>
 <tr valign="top"><td>Data limit</td><td>200 MB</td><td>200 MB (1 GB Pro)</td><td>5 GB</td><td>Matches Prod.</td></tr>
+<tr valign="top"><td>API calls/24 hrs</td><td>? </td><td>15K (50K)</td><td>-</td><td>-</td></tr>
 </table>
+
+A Sandbox that is nearly identical copy of a production environment is available only to Enterprise or Unlimited Edition customers. 
+
+Number within parentheses are for Partner Developers.
 
 <a name="Git"></a>
 ### Git
