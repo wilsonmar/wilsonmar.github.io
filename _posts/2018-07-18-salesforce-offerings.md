@@ -59,7 +59,7 @@ to turn your organization into a customer and market-driven powerhouse with thes
 
    ![salesforce-market-share-1500x500](https://user-images.githubusercontent.com/300046/43361208-59796650-9286-11e8-919d-bdfd0b5937b7.jpg)
 
-Gartner says "Salesforce leads market share with 16% in 2013 vs. SAP with 13%, and Oracle with 10%."
+Gartner says "Salesforce leads market share with 16% in 2013 vs. SAP with 13%, and Oracle with 10%." See https://en.wikipedia.org/wiki/Comparison_of_CRM_systems
 
 PROTIP: Salesforce/Force.com seem to be more attractive to <strong>mid-market</strong> customers than SAP and Oracle. And smaller companies tend to more flexible about all work being done on-site.
 
@@ -73,6 +73,14 @@ The top competitors to Salesforce are:
 * Hubspot
 * SugarCRM
 * Highrise
+
+
+<a name="Languages"></a>
+
+### Languages
+
+en, fi, fr, de, es, it, ja, ko, pt-br, ru, sv, th, zh-cn, zh-tw, da, nl-nl
+
 
 <a name="Clouds"></a>
 
@@ -88,7 +96,7 @@ Salesforce uses the word "cloud" to brand <strong>Salesforce apps (applications)
    * <a target="_blank" href="https://status.salesforce.com/">Health Cloud</a> reports on the health of services by pod (within each region).
    * <a target="_blank" href="https://www.salesforce.com/products/integration-cloud/overview/">Integration Cloud</a> Integration Builder includes the <strong>Mulesoft</strong> Anypoint Platform (bought by Salesforce in an exchange of stock May 2018)
 
-   * <a target="_blank" href="http://certification.salesforce.com/marketingcloudconsultant">Marketing Cloud</a> - Build and manage 1:1 customer journeys. It has its own query language. No free accounts here.
+   * <a target="_blank" href="http://certification.salesforce.com/marketingcloudconsultant">Marketing Cloud</a> Build and manage 1:1 customer journeys via email. From ExactTarget acquisition in 2013. It has its own query language. No free accounts here. [<a target="_blank" href="https://en.wikipedia.org/wiki/Salesforce_Marketing_Cloud">Wikipedia</a>]
    * <a target="_blank" href="http://certification.salesforce.com/fieldservicelightningconsultant">
    Field Service Lightning certification</a>
 

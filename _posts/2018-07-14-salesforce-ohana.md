@@ -202,6 +202,11 @@ Salesforce, as a company, pioneered the <strong>1:1:1 model</strong>, donating o
 
 * Follow <a target="_blank" href="https://www.linkedin.com/showcase/salesforce-developers/">Salesforce Developers on LinkedIn</a>
 
+* Join: <a target="_blank" href="https://www.linkedin.com/groups/40244/profile">Salesforce.com</a> by Stephen Cummins in Ireland of consulting firm @AppSelekt.
+
+* Join: <a target="_blank" href="https://www.linkedin.com/groups/47390/profile">LinkedIn Group: Salesforce Evolution</a>
+
+
 ### Trailhead communities
 
 <a target="_blank" href="https://success.salesforce.com/0F9300000001omnCAA">Trailblazer Community Corner</a>

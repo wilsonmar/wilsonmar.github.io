@@ -31,7 +31,7 @@ Various people have used different nicknames, so here they are together:
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th>Aspect</th><th>Traditional</th><th>DX</th></tr>
-<tr valign="top"><td>Approach</td><td>"Clicks, not code"</td><td>"Clicks AND code"</td></tr>
+<tr valign="top"><td>Slogan</td><td>"Clicks, not code"</td><td>"Clicks AND code"</td></tr>
 <tr valign="top"><td>Configuration</td><td>config. in metadata</td><td>"config. as code"</td></tr>
 <tr valign="top"><td>Source of "Truth"</td><td>What's in org</td><td>What's in VCS</td></tr>
 <tr valign="top"><td>Versioning</td><td>Carry org. forward</td><td>What's in VCS</td></tr>
@@ -64,7 +64,7 @@ Each repo is <strong>distributed</strong>, meaning each clone of a repo is a com
    ![sfdx-devhub-req-648x478-60179](https://user-images.githubusercontent.com/300046/43937840-613735c0-9c1d-11e8-9062-873ea87335b0.jpg)
 
    PROTIP: Developer Edition Orgs cannot be enabled as a "Dev Hub". 
-   Dev Hub can only be enabled on environments that have active paying users, such as Production or Business Orgs. See <a target="_blank" href="https://developer.salesforce.com/page/An_Introduction_to_Environments/">Intro to Environments</a>.
+   Dev Hub can only be enabled on environments that have active paying users, such as Production or Business Orgs. See <a target="_blank" href="https://developer.salesforce.com/page/An_Introduction_to_Environments">Intro to Environments</a>.
 
    <strong>BLAH: What that means is previously unlimited FREE Developer accounts will be limited to 30 days when working with scratch Orgs (which require Dev Hub to activate).</strong>
 
@@ -721,7 +721,7 @@ Wade Wegner (@WadeWegner), <a target="_blank" href="https://www.linkedin.com/in/
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=Pf33nrsqZOc/">Introduction to Salesforce DX</a> 3 Jul 2017 [38:20] at TrailheadDX evaluates whether DX meets Principles of Modern Software Delivery. He also shows code.
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=6lNG6iFVGQg/">Migrating to Salesforce DX</a> Jul 5, 2017 during TrailheadDX [45:00] by architects Jim Wunderlich & Mike Miller
+   * <a target="_blank" href="https://www.youtube.com/watch?v=6lNG6iFVGQg/">Migrating to Salesforce DX</a> Jul 5, 2017 during TrailheadDX [45:00] by architects Jim Wunderlich & Mike Miller 
 
 Others from Salesforce Developers on YouTube:
 
@@ -737,6 +737,7 @@ Others from Salesforce Developers on YouTube:
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=iDBb0RDqY2A/">Copying Your Org's Shape into Scratch Orgs</a> Nov 13, 2017
 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=12WcMzjs0lw">Use Metadata API with Salesforce DX</a> by Jitendra Zaa
 
 Ruth Sears-Blazej (@ruth_sfdc_docs) write docs about SFDC.
 
