@@ -575,6 +575,8 @@ https://github.com/financialforcedev/orizuru
 Streamlined communication between Heroku dynos / other worker processes 
 It leverages Apache Avro for schema validation and communication.
 
+https://gabebw.com/blog/2016/06/06/how-to-host-sites-on-a-subdomain-with-heroku
+
 
 ## Competitors
 

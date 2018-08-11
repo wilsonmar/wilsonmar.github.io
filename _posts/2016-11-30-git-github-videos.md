@@ -681,6 +681,25 @@ series</a>:
 
 ## From those who ask for money:
 
+### Thoughtbot.com
+
+Among videos:
+
+   * <a target="_blank" href="https://thoughtbot.com/upcase/videos/git-getting-to-confident">Getting to confident</a>
+   * <a target="_blank" href="https://thoughtbot.com/upcase/videos/git-managing-history">Managing History</a> git log.
+   * <a target="_blank" href="https://thoughtbot.com/upcase/videos/git-undoing">Undoing</a> sample Gem file. Ammend commits. Show changes. git unstage = reset. git uncommit = reset --soft HEAD^, Cancel commit with cquit editor command.
+ 
+The remainder are for $29 per month for all their tutorials primarily on Ruby and some Python, also Vim, TDD:
+
+   * Crafting History With Rebase
+   * Git Object Model
+   * Object Model Operations
+   * Customizing Git
+   * GitHub and Remotes
+   * Vim and Git
+   * thoughtbot's Git Flow
+   * Learning More
+
 ### BuildAModule.com
 
 There are several free videos among BuildAModule.com's library of 1800+ videos on <a href="https://buildamodule.com/video/change-management-and-version-control-installing-git-and-working-on-the-command-line-welcome-to-change-management-and-version-control">Change Management and Version Control using Git</a>. 
