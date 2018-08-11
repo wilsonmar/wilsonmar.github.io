@@ -402,7 +402,11 @@ Oliver Hansen (<a target="_blank" href="https://twitter.com/nesensa">@nesensa</a
 
    * <a target="_blank" href="https://salesforceblogs.com/">https://salesforceblogs.com</a>
 
-Paul Battisson from Harrogate UK, A Force.com MVP and experience Technical Architect who has worked for a number of leading ISVs and Consulting partners. A Cetified Salesforce Developer, Advanced Developer, Platform App Builder, Platform Developer I and Platform Developer II.
+Patrick Watkins (<a target="_blank" href="https://twitter.com/nc_watkins">@nc_watkins</a>):
+
+   * Video course: <a target="_blank" href="https://app.pluralsight.com/library/courses/play-by-play-implementing-sustainable-scalable-salesforce-governance/table-of-contents">Play by Play: Implementing Sustainable and Scalable Salesforce Governance</a> 2 Aug 2018 with Don Robins.
+
+Paul Battisson from Harrogate UK, A Force.com MVP and experienced Technical Architect who has worked for a number of leading ISVs and Consulting partners. A Cetified Salesforce Developer, Advanced Developer, Platform App Builder, Platform Developer I, and Platform Developer II.
 
    * <a target="_blank" href="http://paulbattisson.com/blog">paulbattisson.com/blog</a>
    since Feb 2007 
