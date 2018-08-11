@@ -26,9 +26,10 @@ providing you advice available nowhere else.
 
 ## Browsers using SaaS
 
-Salesforce is one of first companies to provide software completely over the public internet, with users using internet browsers such as Internet Explorer, Chrome, Firefox. Salesforce offers software as a web service, which many refers to using the acronym "SaaS".
+Salesforce is one of first companies to provide software completely over the public internet, with users using internet browsers such as Internet Explorer, Chrome, Firefox. 
 
-http://montclare.com/saas-250/ names Salesforce the #1 most "<a target="_blank" href="http://montclare.com/methodology/">successful</a>" SaaS company in the world.
+Salesforce offers software as a web service, which many refers to using the acronym "SaaS".
+BTW, <a target="_blank" href="http://montclare.com/saas-250/">Montclare.com</a> named Salesforce the #1 most "<a target="_blank" href="http://montclare.com/methodology/">successful</a>" SaaS company in the world.
 
 PROTIP: While there is no installing custom software (from Salesforce) on each user's machine, users can use whatever internet browser is installed with their machine. That would be Internet Explorer that comes with Windows and Safari on Macs. But in practice many users install Firefox and Chrome browsers.
 
