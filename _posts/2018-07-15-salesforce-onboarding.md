@@ -648,6 +648,9 @@ The choice of editors is covered in
 <a target="_blank" href="https://app.pluralsight.com/player?course=apex-absolute-beginner-guide-coding-salesforce&author=david-liu&name=apex-absolute-beginner-guide-coding-salesforce-m5&clip=3&mode=live">
 Pluralsight video course: Apex Absolute Beginning Guide to Coding Salesforce</a>
 
+<a target="_blank" href="https://aws.amazon.com/cloud9/">Cloud9</a> was <a target="_blank" href="https://c9.io/announcement">acquired by Amazon on July 14, 2016</a>.
+There is no additional charge for using it for AWS. For Salesforce, there is a 7-day trial. 
+<a target="_blank" href="https://cloud9-salesforce.readme.io/docs">Docs</a>
 
 ## Privacy
 

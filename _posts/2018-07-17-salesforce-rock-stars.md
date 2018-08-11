@@ -419,6 +419,12 @@ Phil Walton (<a target="_blank" href="https://twitter.com/SalesforcePhil">@Sales
 
    * <a target="_blank" href="http://www.cloudgalacticos.co.uk/blog/">cloudgalacticos.co.uk/blog</a> since 2007
 
+Philip Weinmeister (<a target="_blank" href="https://twitter.com/PhilWeinmeister">@PhilWeinmeister</a>), MVP, 18x SF Certified, @CommunityCloud MVP:
+
+   * <a target="_blank" href="https://weinforce.wordpress.com">weinforce.wordpress.com</a>
+   * BOOK: <a target="_blank" href="http://www.cloudgalacticos.co.uk/blog/">Practical Salesforce.com Development Without Code: Customizing</a> since 2007
+   * BOOK: <a target="_blank" href="http://www.cloudgalacticos.co.uk/blog/">Practical Guide to Salesforce Communities</a> (thanks for signing me a copy, Phil!)
+
 <a target="_blank" href="https://trailhead.salesforce.com/en/me/piyush-soni">Piyush Soni</a>, Salesforce Admin, Developer from Jaipur, Rajasthan, India:
 
    * <a target="_blank" href="https://sfdcmonkey.com/">sfdcmonkey.com</a>
