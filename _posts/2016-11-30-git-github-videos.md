@@ -583,9 +583,7 @@ and (since 2017) for Windows.
 
 ### Git Real 1 and 2
 
-This series 
-<a target="_blank" href="https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history">
-on thoughtbot</a>
+This series <a target="_blank" href="https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history">previously on thoughtbot</a>
 provides a real hands-on learning experience by making you enter the commands.
 
 http://thddaniel.github.io/2014/11/09/Git%20Real%202/
@@ -683,22 +681,22 @@ series</a>:
 
 ### Thoughtbot.com
 
-Among videos:
+<a target="_blank" href="https://github.com/thoughtbot">Thoughtbot</a> developer Chris Toomey:
 
    * <a target="_blank" href="https://thoughtbot.com/upcase/videos/git-getting-to-confident">Getting to confident</a>
    * <a target="_blank" href="https://thoughtbot.com/upcase/videos/git-managing-history">Managing History</a> git log.
    * <a target="_blank" href="https://thoughtbot.com/upcase/videos/git-undoing">Undoing</a> sample Gem file. Ammend commits. Show changes. git unstage = reset. git uncommit = reset --soft HEAD^, Cancel commit with cquit editor command.
  
-The remainder are for $29 per month for all their tutorials primarily on Ruby and some Python, also Vim, TDD:
+The remainder are for $29 per month (for all their tutorials primarily on Ruby and some Python, also Vim & zsh nerdness, TDD, etc.):
 
-   * Crafting History With Rebase
-   * Git Object Model
-   * Object Model Operations
-   * Customizing Git
-   * GitHub and Remotes
-   * Vim and Git
-   * thoughtbot's Git Flow
-   * Learning More
+   * <a target="_blank" href="https://thoughtbot.com/upcase/videos/git-crafting-history">Crafting History With Rebase</a> - git add patch, cherry-pick, rebase
+   * <a target="_blank" href="https://thoughtbot.com/upcase/videos/git-object-model">Git Object Model</a>: blobs, hashing, trees, subtrees, commits
+   * <a target="_blank" href="https://thoughtbot.com/upcase/videos/git-object-model-operations">Object Model Operations</a>: refs, heads, tags
+   * <a target="_blank" href="https://thoughtbot.com/upcase/videos/git-customizing">Customizing Git</a>: g alias for git, git config, alias, hooks
+   * <a target="_blank" href="https://thoughtbot.com/upcase/videos/git-github-and-remotes">GitHub and Remotes</a>: hub, heroku parity, tracking branches
+   * <a target="_blank" href="https://thoughtbot.com/upcase/videos/git-vim-and-git">Vim and Git</a>
+   * <a target="_blank" href="https://thoughtbot.com/upcase/videos/git-thoughtbot-git-flow">thoughtbot's Git Flow</a> Push Up to a PR
+   * <a target="_blank" href="https://thoughtbot.com/upcase/videos/git-learning-more">Learning More</a> https://forum.upcase.com/c/workflow/git
 
 ### BuildAModule.com
 
@@ -1672,10 +1670,11 @@ David Demaree wrote Git for Humans at<br />
 <a target="_blank" href="https://abookapart.com/products/git-for-humans/">
 https://abookapart.com/products/git-for-humans</a>
 
-
 Mark Lodato wrote the <a target="_blank" href="https://marklodato.github.io/visual-git-guide/index-en.html">Visual Git Guide</a>
 
 <a target="_blank" href="https://www.amazon.com/Rys-Git-Tutorial-Ryan-Hodson-ebook/dp/B00QFIA5OC">Ry's Git Tutorial Kindle book is free on Amazon</a>
+
+<a target="_blank" href="https://www.learnenough.com/git-tutorial">Learn Enough Git</a>
 
 
 ## More #
