@@ -37,7 +37,7 @@ This page presents steps and information for those new to Salesforce to get "plu
 
 ## Office Locations
 
-<a target="_blank" href="http://www.salesforcetower.com/">The Salesforce Tower</a>, on Mission between Freemont and 1st (South of the Montgomery BART station), is the tallest building in San Francisco -- a few feet taller than the Eiffel Tower in Paris:
+<a target="_blank" href="http://www.salesforcetower.com/">The Salesforce Tower</a>, on Mission between Freemont and 1st (South of the Montgomery BART station), at 61 stories, is the tallest building not just in San Francisco but everywhere West of the Mississipi -- a few feet taller than the Eiffel Tower in Paris:
 
 ![sf-tallest-648x558-65050](https://user-images.githubusercontent.com/300046/43551978-2ffdeb20-95a6-11e8-92c3-c919dee9811b.jpg)
 
@@ -49,7 +49,7 @@ It's part of a whole downtown re-development that includes the Salesforce Transi
 Salesforce corporate address is "The Landmark @ One Market".
 See https://www.salesforce.com/company/locations/
 
-
+<a target="_blank" href="https://www.salesforce.com/blog/2018/07/dreampitch-startup-ultimate-elevator-pitch?d=cta-body-promo-111">Dreampitch</a>
 
 <a name="Financials"></a>
 
@@ -200,12 +200,24 @@ Salesforce, as a company, pioneered the <strong>1:1:1 model</strong>, donating o
 
 * <a target="_blank" href="https://salesforce.stackexchange.com/">https://salesforce.stackexchange.com</a>
 
-* Follow <a target="_blank" href="https://www.linkedin.com/showcase/salesforce-developers/">Salesforce Developers on LinkedIn</a>
+### LinkedIn Groups
 
-* Join: <a target="_blank" href="https://www.linkedin.com/groups/40244/profile">Salesforce.com</a> by Stephen Cummins in Ireland of consulting firm @AppSelekt.
+* <a target="_blank" href="https://www.linkedin.com/groups/40244/profile">Salesforce.com</a> by Stephen Cummins in Ireland of consulting firm @AppSelekt.
 
-* Join: <a target="_blank" href="https://www.linkedin.com/groups/47390/profile">LinkedIn Group: Salesforce Evolution</a>
+* <a target="_blank" href="https://www.linkedin.com/showcase/salesforce-developers/">Salesforce Developers</a>
 
+* <a target="_blank" href="https://www.linkedin.com/groups/47390/profile">Salesforce Evolution</a>
+
+* <a target="_blank" href="https://www.linkedin.com/groups/1778935/profile">Salesforce Data Quality Forum</a>
+by Gregg Thaler 
+
+* <a target="_blank" href="https://www.linkedin.com/groups/1778935/profile">Salesforce Power Usaers Group</a>
+
+* <a target="_blank" href="https://www.linkedin.com/groups/1778935/profile">Salesforce Solutions and Tips</a>
+
+* <a target="_blank" href="https://www.linkedin.com/groups/1778935/profile">Salesforce Certification Group</a>
+
+* <a target="_blank" href="https://www.linkedin.com/groups/1778935/profile">Salesforce Professional Network</a>
 
 ### Trailhead communities
 
