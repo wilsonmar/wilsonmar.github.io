@@ -42,7 +42,7 @@ Various people have used different nicknames, so here they are together:
 <tr valign="top"><td>Speed of release</td><td>occassional</td><td>continuous</td></tr>
 </table>
 
-Salesforce began with its "clicks, not code" slogan because Salesforce has made it so citizen developers can customize apps within the GUI rather than coding internal configurations.
+Salesforce began with its "clicks, not code" slogan because Salesforce has made it so apps can be customized mostly within the GUI rather than coding internal configurations.
 And Salesforce has had Activity tracking which tracks every change to user data in the database. 
 
 Traditionally, changes are introduced by creating "change sets" tested within sandboxes which duplicate the production org. This means the development workflow is focused on what's in the org., with org instances nutured as dear pets. For example, after Person accounts are enabled, there is no going back.
