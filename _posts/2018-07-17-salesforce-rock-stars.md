@@ -118,9 +118,10 @@ Biswajeet Samal, from Pune, India
    * <a target="_blank" href="http://biswajeetsamal.com/blog/">biswajeetsamal.com/blog</a>
    since Mar 2014 
 
-Brent Downey (<a target="_blank" href="https://twitter.com/brentdowney">@brentdowney</a>):
+Brent Downey (<a target="_blank" href="https://twitter.com/brentdowney">@brentdowney</a>), since 2010:
 
    * <a target="_blank" href="https://www.adminhero.com/">adminhero.com blog</a>
+   * <a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000009MK4">adminhero community</a>
 
 Brett Nelson, multi-talented developer from Eagan, MN:
 
