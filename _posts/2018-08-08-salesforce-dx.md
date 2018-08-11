@@ -343,7 +343,8 @@ Local Deleted             MyClass      ApexClass   /MyClass.cls-meta.xml
 
 1. Assign the dreamhouse permission set to the default user "dreamhouse":
 
-   <pre><strong>sfdx force:user:permset:assign -n dreamhouse</strong></pre>
+   <pre><strong>sfdx force:user:permset:assign -n dreamhouse \
+   --permsetname Dreamhouse</strong></pre>
 
    ### Load data
 
@@ -591,9 +592,9 @@ and organize them into Salesforce DX packages.
 
    <pre><strong>sfdx force:package2:version:create --directory force-app</strong></pre>
 
-1. Grab the Id returned:
+1. Grab the Id returned, such as:
 
-   04tB0000000IaLi
+   <pre>04tB0000000IaLi</pre>
 
 1. Install the package:
 
@@ -673,7 +674,11 @@ script:
 - sfdx force:org:delete -u ciorg -p
    </pre>
 
+1. Run test and get results in a human-readable format:
 
+   <pre><strong>sfdx force:apex:test:run --resultformat human</strong></pre>
+
+   Alternately, specify "junit" to view results using JUnit4 tools used by continuous integration.
 
 ## Rock stars
 
