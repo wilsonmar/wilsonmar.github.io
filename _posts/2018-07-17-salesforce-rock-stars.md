@@ -50,6 +50,8 @@ This page lists individuals who have significant blogs, tweets, courses, or othe
    * <a target="_blank" href="https://academy.whatfix.com/salesforce-blogs/">
    Top Salesforce Blogs 2018 That Every Trailblazer Should Follow</a>
 
+   * <a target="_blank" href="https://www.geckoboard.com/blog/15-salesforce-pros-you-should-be-following-on-twitter/">15 Salesforce Pros You Should Be Following on Twitter</a>
+
 TODO: Put this data into a database so an app can dynamic sort lists. For now, just press Ctrl+F to find text.
 
 
@@ -556,6 +558,10 @@ BlackBerry
 Listed alphabetically by first name:
 
 <a target="_blank" href="https://www.linkedin.com/in/alextoussaint">Alex Toussaint</a> (<a target="_blank" href="https://twitter.com/alextoussaint">@alextoussaint</a>), VP Product Management – Einstein Analytics
+
+Charlie Isaacs (<a target="_blank" href="https://twitter.com/charlieisaacs">@charlieisaacs</a>) VP, CTO for Customer Connection.
+
+Jeremy Waite (<a target="_blank" href="https://twitter.com/jeremywaite">@jeremywaite</a>),  Salesforce Evangelist
 
 Keith Block ([@KeithBlock on Twitter](https://twitter.com/KeithBlock))
 

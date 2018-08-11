@@ -152,13 +152,13 @@ Salesforce, as a company, owns several domain names (some product offerings have
       * https://veterans.force.com/
       * https://???.lightning.force.com/
       <br /><br />
-      Instances starting with "CS" are sandbox environments.
+      Instances starting with "cs" are sandbox environments.
 
-      Instances starting with "AP" are producution in Asia Pacific.
+      Instances starting with "ap" are producution in Asia Pacific.
 
-      Instances starting with "NA" are production in North America.
+      Instances starting with "na" are production in North America.
 
-      Instances starting with "EU" are producution in Europe (EMEA).
+      Instances starting with "eu" are producution in Europe (EMEA).
 
 <a name="OtherDomains"></a>
 
