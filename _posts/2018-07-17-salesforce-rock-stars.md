@@ -172,8 +172,7 @@ Dan Appleman was the first Salesforce instructor at Pluralsight:
 
    * Author of http://advancedapex.com/
    
-   * <a target="_blank" href="https://www.pluralsight.com/courses/salesforce-developers-career-strategies-opportunities">Career Strategies and Opportunities for Salesforce Platform Developers
-   Sep 2 2015 1h 42m</a>
+   * <a target="_blank" href="https://www.pluralsight.com/courses/salesforce-developers-career-strategies-opportunities">Career Strategies and Opportunities for Salesforce Platform Developers</a> Sep 2 2015 [1h 42m]
 
    * <a target="_blank" href="https://www.pluralsight.com/courses/javascript-in-salesforce-getting-started">Getting Started with JavaScript in Salesforce
    Jan 24 2017 2h 18m</a>
@@ -263,6 +262,9 @@ Harshit Pandey, Principal Technical Architect at Intuitive Surgical, previously 
 
    * <a target="_blank" href="https://about.me/harshit.pandey">https://about.me/harshit.pandey</a>
 
+Jeff Susich
+
+   * VIDEO COURSE: <a target="_blank" href="https://app.pluralsight.com/library/courses/salesforce-accidental-admin-reports-dashboards-classic-lightning/table-of-contents">Reports & Dashboards in Classic and Lightning</a> 31 Jul 2018
 
 Jean Velonis (<a target="_blank" href="https://twitter.com/SalesforcePrincess">@SalesforcePrincess</a>):
 
@@ -449,6 +451,10 @@ Prajakta Samant, #Salesforce #evangelist (<a target="_blank" href="https://twitt
 
 Rebecca Dente (@sfdc_nerd) was in the inaugural class of Salesforce MVPs, a <a target="_blank" href="https://www.linkedin.com/in/rdente">MTI Partner</a> in Boston.
 
+Robert Watson (@WatsonRobertB)
+
+   * VIDEO: <a target="_blank" href="https://app.pluralsight.com/library/search?i=1&m_Sort=displayDate&q=salesforce&q1=course&x1=categories">Play by Play: Battle of trhe IDEs</a> since May 2017 
+
 Rubin Ortiz 
 
    * <a target="_blank" href="http://www.salesforceben.com/platform-developer-certification-guide-tips/">salesforceben.com</a>
@@ -461,7 +467,9 @@ Sara Morgan Nettles (<a target="_blank" href="http://twitter.com/SaraHasNoLimits
 
    * <a target="_blank" href="https://saramorgan.net/">saramorgan.net</a>
 
-   * Pluralsight Author of Pluralsight video tutorial <a target="_blank" href="https://app.pluralsight.com/library/courses/salesforce-lightning-components-customizing-getting-started/table-of-contents">
+   * Pluralsight video tutorial <a target="_blank" href="https://app.pluralsight.com/library/courses/lightning-component-development-best-practices">Lightning Component Development Best Practices</a> 10 Dec 2017 [2h 10m]
+
+   * Pluralsight video tutorial <a target="_blank" href="https://app.pluralsight.com/library/courses/salesforce-lightning-components-customizing-getting-started/table-of-contents">
    Customizing Salesforce with Lightning Components: Getting Started</a> 10 May 2017
 
    * Lynda/LinkedIn 2h 12m video course: <a target="_blank" href="https://www.linkedin.com/learning/visualforce-improving-performance">Visualforce: Improving Performance</a> August 20, 2015

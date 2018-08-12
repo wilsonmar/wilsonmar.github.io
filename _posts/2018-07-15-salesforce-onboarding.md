@@ -638,15 +638,24 @@ Apex Interactive Debugger
 
 ## Other IDEs and Editors
 
+The choice of editors is covered in 
+
+   *<a target="_blank" href="https://app.pluralsight.com/player?course=apex-absolute-beginner-guide-coding-salesforce&author=david-liu&name=apex-absolute-beginner-guide-coding-salesforce-m5&clip=3&mode=live">
+   Pluralsight video course: Apex Absolute Beginning Guide to Coding Salesforce</a>
+
+   * VIDEO CLASS: <a target="_blank" href="https://app.pluralsight.com/library/courses/play-by-play-battle-of-salesforce-ides">Play by Play Battle of the Salesforce IDEs</a> Sep 2 2015 [1h 42m]
+
+MavensMate is no longer maintained as of 2017.
+
+Illumated Cloud is licensed to add-on to IntelliJ IDEA Java CE IDE. 
+It provides complete Apex-aware completion (pulling documentation in).
+It's smart because it extracts metadata from your Org into an offline symbol table to feed auto code completion.
+It also has an excellent interactive debugger from offline logs.
+Git integration.
+
 Welkin's Suite 
 
 Aside.io
-
-MavensCode
-
-The choice of editors is covered in 
-<a target="_blank" href="https://app.pluralsight.com/player?course=apex-absolute-beginner-guide-coding-salesforce&author=david-liu&name=apex-absolute-beginner-guide-coding-salesforce-m5&clip=3&mode=live">
-Pluralsight video course: Apex Absolute Beginning Guide to Coding Salesforce</a>
 
 <a target="_blank" href="https://aws.amazon.com/cloud9/">Cloud9</a> was <a target="_blank" href="https://c9.io/announcement">acquired by Amazon on July 14, 2016</a>.
 There is no additional charge for using it for AWS. For Salesforce, there is a 7-day trial. 
