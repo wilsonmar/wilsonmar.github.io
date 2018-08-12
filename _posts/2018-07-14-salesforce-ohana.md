@@ -206,7 +206,9 @@ Salesforce, as a company, pioneered the <strong>1:1:1 model</strong>, donating o
 
 * <a target="_blank" href="https://www.linkedin.com/showcase/salesforce-developers/">Salesforce Developers</a>
 
-* <a target="_blank" href="https://www.linkedin.com/groups/47390/profile">Salesforce Evolution</a>
+* <a target="_blank" href="https://www.linkedin.com/groups/142613/profile">Salesforce Developers/Contractors</a>
+
+* <a target="_blank" href="https://www.linkedin.com/groups/47390/profile">Salesforce Evolution</a> by <a target="_blank" href="https://www.appselekt.com/blog/salesforce-evolution">AppSelekt</a>
 
 * <a target="_blank" href="https://www.linkedin.com/groups/1778935/profile">Salesforce Data Quality Forum</a>
 by Gregg Thaler 
@@ -218,6 +220,7 @@ by Gregg Thaler
 * <a target="_blank" href="https://www.linkedin.com/groups/1778935/profile">Salesforce Certification Group</a>
 
 * <a target="_blank" href="https://www.linkedin.com/groups/1778935/profile">Salesforce Professional Network</a>
+
 
 ### Trailhead communities
 
@@ -396,6 +399,9 @@ Miss being at a Salesforce event? Buy the branded clothing, office supplies, ele
 ## Partners
 
 https://partners.salesforce.com/s/education/consultants/Consulting_Program
+
+   * <a target="_blank" href="https://www.linkedin.com/company/salesforce-consulting-group/">Salesforce Consulting Group</a> = http://www.sfcg.ca/
+
 
 ## Learning Resources
 

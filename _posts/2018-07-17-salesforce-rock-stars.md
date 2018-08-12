@@ -52,6 +52,10 @@ This page lists individuals who have significant blogs, tweets, courses, or othe
 
    * <a target="_blank" href="https://www.geckoboard.com/blog/15-salesforce-pros-you-should-be-following-on-twitter/">15 Salesforce Pros You Should Be Following on Twitter</a>
 
+   * <a target="_blank" href="https://www.tenfold.com/crm/salesforce-leaders-twitter-linkedin/">25 Salesforce Leaders to follow on Twitter and LinkedIn</a>
+
+   * <a target="_blank" href="https://www.linkedin.com/title/salesforce-consultant">Top Salesforce Consultant profiles on LinkedIn</a>
+
 TODO: Put this data into a database so an app can dynamic sort lists. For now, just press Ctrl+F to find text.
 
 
@@ -108,7 +112,7 @@ Ashish Agarwal in Singapore:
    * <a target="_blank" href="https://asagarwal.com/blog/">asagarwal.com/blog</a>
    since Apr 2010 
 
-Ben McCarthy, 5X Salesforce Developer MVP, Salesforce Certified Technical Architect, based in London:
+Ben McCarthy, 5X Salesforce Developer MVP, Salesforce Certified Technical Architect, based in London with partner Empua:
 
    * <a target="_blank" href="http://www.salesforceben.com/">salesforceben.com</a>
    * Author of "Visualforce Development Cookbook"
@@ -122,6 +126,10 @@ Brent Downey (<a target="_blank" href="https://twitter.com/brentdowney">@brentdo
 
    * <a target="_blank" href="https://www.adminhero.com/">adminhero.com blog</a>
    * <a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000009MK4">adminhero community</a>
+
+Brent Leary (@BrentLeary)
+
+   * https://www.linkedin.com/pulse/salesforce-evp-iot-cloud-adam-bosworth-relationship-microsoft-leary
 
 Brett Nelson, multi-talented developer from Eagan, MN:
 
@@ -137,6 +145,8 @@ Brian Fear (<a target="_blank" href="http://twitter.com/sfdcfox/">@sfdcfox</a>, 
    * <a target="_blank" href="http://sfdcfox.blogspot.com/">sfdcfox.blogspot.com</a> since 2016.
    * A top <a target="_blank" href="https://salesforce.stackexchange.com/users/2984/sfdcfox">contributor on stackexchange.com</a>.
    * https://github.com/brianmfear has several useful tools.
+
+Charlie Isaacs (@CharlieIsaacs), Salesforce’s CTO for Customer Connection on IoT
 
 <a name="ChristinePereira"></a>
 Christine Pereira, founder of SoulfulSelling.com, created <a target="_blank" href="https://www.lynda.com/Christine-V-Pereira/7995629-1.html">several video courses on Lynda/LinkedIn</a>:
@@ -212,6 +222,10 @@ Desynit Salesforce Innovators, a team of certified Advanced Salesforce developer
    * <a target="_blank" href="http://desynit.com/good-systems-blog/">desynit.com/good-systems-blog</a> since Mar 2012 
 
 Don Robins, MVP
+
+   * <a target="_blank" href="https://www.forcementor.com/">forcementor.com</a>
+   * Pluralsight interviewer 
+   * Owner of <a target="_blank" href="https://www.linkedin.com/groups/142613/profile">Salesforce Developers/Contractors group on LinkedIn</a>
 
 Douglas C. Ayers, Salesforce MVP from Nashville, TN:
 
@@ -433,13 +447,15 @@ Philip Weinmeister (<a target="_blank" href="https://twitter.com/PhilWeinmeister
 
 Prajakta Samant, #Salesforce #evangelist (<a target="_blank" href="https://twitter.com/prajsszz">@prajsszz</a>) in Pune, India.
 
-Sagar Sindhi from Rajpura, India:
-
-   * <a target="_blank" href="https://sagarsindhiblog.wordpress.com/">sagarsindhiblog.wordpress.com</a> since May 2017 
+Rebecca Dente (@sfdc_nerd) was in the inaugural class of Salesforce MVPs, a <a target="_blank" href="https://www.linkedin.com/in/rdente">MTI Partner</a> in Boston.
 
 Rubin Ortiz 
 
    * <a target="_blank" href="http://www.salesforceben.com/platform-developer-certification-guide-tips/">salesforceben.com</a>
+
+Sagar Sindhi from Rajpura, India:
+
+   * <a target="_blank" href="https://sagarsindhiblog.wordpress.com/">sagarsindhiblog.wordpress.com</a> since May 2017 
 
 Sara Morgan Nettles (<a target="_blank" href="http://twitter.com/SaraHasNoLimits">@SaraHasNoLimits</a>), Member of Team Trailhead, Certified Salesforce Advanced Developer and Platform Developer I and II, Developer at Synaptic AP from Louisiana, USA:
 
@@ -479,6 +495,10 @@ Shyam Nair, Salesforce Developer from Bengaluru, India:
    since Jan 2017 
 
 <a target="_blank" href="https://www.linkedin.com/in/tomblamire">Tom Blamire</a> (<a target="_blank" href="https://twitter.com/Salesforce_Tom/">@Salesforce_Tom</a>), CRM Specialist, CME Group
+
+Trish Bertuzzi (@BridgeGroupInc), Chief Strategist at The Bridge Group:
+
+   * Wrote <a target="_blank" href="http://www.bridgegroupinc.com/sales-development-playbook">Sales Development Playbook</a>
 
 Vinay Chaturvedi, Salesforce Evangelist from Noida, India:
 
@@ -569,17 +589,31 @@ BlackBerry
 
 Listed alphabetically by first name:
 
+Adam Blitzer (@AdamBlitzer), co-founder of Pardot, now EVP & GM of Sales Cloud 
+
 <a target="_blank" href="https://www.linkedin.com/in/alextoussaint">Alex Toussaint</a> (<a target="_blank" href="https://twitter.com/alextoussaint">@alextoussaint</a>), VP Product Management – Einstein Analytics
 
+Amanda Berkey (@amandaberkey) 
+
 Charlie Isaacs (<a target="_blank" href="https://twitter.com/charlieisaacs">@charlieisaacs</a>) VP, CTO for Customer Connection.
+
+Dan Darcy (@DanDarcy), SVP of Productivity at Salesforce
 
 Jeremy Waite (<a target="_blank" href="https://twitter.com/jeremywaite">@jeremywaite</a>),  Salesforce Evangelist
 
 Keith Block ([@KeithBlock on Twitter](https://twitter.com/KeithBlock))
 
+Megan Kierstead (@megkierstead)
+
+   * <a target="_blank" href="https://success.salesforce.com/Sessions#/session/a2q3A000000BKjAQAW">how Virtual Reality (VR) is being used at Salesforce</a>
+
 <a target="_blank" href="https://www.linkedin.com/in/mikegerholdt/">Mike Gerholdt</a>, Director of Evangelism
 
+Natalia Burina (@Nale), director of product management
+
 Parker Harris, co-founder, SVP Engineering
+
+Peter Coffee (@PeterCoffee), VP for Strategic Research. He was a PC Week writer before.
 
 Simon Mulcahy, Chief Innovation Office:
 
@@ -592,6 +626,8 @@ Simon Mulcahy, Chief Innovation Office:
 <a target="_blank" href="https://www.linkedin.com/in/tomhasselman">Tom Hasselman</a> (<a target="_blank" href="https://twitter.com/prajsszz">@TomHasselman</a>), Sr. Product Marketing Manager
 
 <a target="_blank" href="https://www.linkedin.com/in/vala-afshar-3030021">Vala Afshar</a> (<a target="_blank" href="https://twitter.com/prajsszz">@ValaAfshar</a>), Chief Digital Evangelist
+
+   * Articles on HuffPost include <a target="_blank" href="http://www.huffingtonpost.com/vala-afshar/the-next-generation-of-cu_b_11921916.html?">artificial intelligence will power the next generation of the customer experience</a>
 
 <a target="_blank" href="https://www.linkedin.com/in/wadewegner">Wade Wegner</a> (<a target="_blank" href="https://twitter.com/WadeWegner">@WadeWegner</a>), VP, Product Management:
 
