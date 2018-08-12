@@ -174,6 +174,7 @@ Salesforce, as a company, owns several domain names (some product offerings have
    * <a target="_blank" href="http://www.marketingcloud.com/">MarketingCloud.com</a> (formerly ExactTarget) [<a target="_blank" href="https://status.marketingcloud.com/">status</a>]
    * <a target="_blank" href="https://pardot.com">Pardot.com</a> [<a target="_blank" href="https://trust.pardot.com/">status</a>]
    * <a target="_blank" href="https://www.quip.com/">Quip.com</a> "a Salesforce company" has APIs to enable automation of processes, integration, and <strong>collabortion</strong> with any app.
+   * <a target="_blank" href="https://sforce.co/">sforce.co</a> is Salesforce's own URL shortener, which also tracks the origin of links resolved.
 
 Not owned by Salesforce (but they seem close):
 

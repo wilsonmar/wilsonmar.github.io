@@ -453,7 +453,7 @@ Rebecca Dente (@sfdc_nerd) was in the inaugural class of Salesforce MVPs, a <a t
 
 Robert Watson (@WatsonRobertB)
 
-   * VIDEO: <a target="_blank" href="https://app.pluralsight.com/library/search?i=1&m_Sort=displayDate&q=salesforce&q1=course&x1=categories">Play by Play: Battle of trhe IDEs</a> since May 2017 
+   * VIDEO: <a target="_blank" href="https://app.pluralsight.com/library/search?i=1&m_Sort=displayDate&q=salesforce&q1=course&x1=categories">Play by Play: Battle of the IDEs</a>
 
 Rubin Ortiz 
 

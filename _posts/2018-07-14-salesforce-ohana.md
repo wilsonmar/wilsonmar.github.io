@@ -130,7 +130,12 @@ PROTIP: Drive a lot? Listen to voice-only podcasts while commuting:
 
 ### Salesforce employee teams
 
+Here are the social media channels controlled by various teams within Salesforce:
+
 Salesforce Developer Relations Team of evangelists:
+
+   * <a target="_blank" href="https://www.facebook.com/salesforcedevs/">facebook.com/salesforcedevs</a> 
+   (previously <a target="_blank" href="https://www.facebook.com/forcedotcom/">facebook.com/forcedotcom</a>)
 
    * [@SalesforceDevs on Twitter](https://twitter.com/SalesforceDevs)
 
@@ -221,6 +226,7 @@ by Gregg Thaler
 
 * <a target="_blank" href="https://www.linkedin.com/groups/1778935/profile">Salesforce Professional Network</a>
 
+https://www.salesforceben.com/the-linkedin-guide-book-for-trailblazers/
 
 ### Trailhead communities
 

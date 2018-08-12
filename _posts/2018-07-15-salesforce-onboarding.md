@@ -650,7 +650,7 @@ MavensMate is no longer maintained as of 2017.
 Illumated Cloud is licensed to add-on to IntelliJ IDEA Java CE IDE. 
 It provides complete Apex-aware completion (pulling documentation in).
 It's smart because it extracts metadata from your Org into an offline symbol table to feed auto code completion.
-It also has an excellent interactive debugger from offline logs.
+It also has an (offline) interactive debugger that can run to cursor.
 Git integration.
 
 Welkin's Suite 

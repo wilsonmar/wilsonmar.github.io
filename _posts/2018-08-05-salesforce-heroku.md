@@ -580,12 +580,15 @@ https://gabebw.com/blog/2016/06/06/how-to-host-sites-on-a-subdomain-with-heroku
 https://thoughtbot.com/upcase/videos/heroku-tips-and-tricks
 video [subscription]
 
+http://resources.docs.salesforce.com/rel1/doc/en-us/static/pdf/SF_Git_cheatsheet_web.pdf
+Git CheatSheet for Working with Private Spaces in Heroku dynos
+
 
 ## Competitors
 
 https://cloud.google.com/cloud-build/
 https://github.com/apps/google-cloud-build
-offers the first 120 build minutes per day free
+Google Cloud offers the first 120 build minutes per day free
 
 
 ## More about Salesforce #

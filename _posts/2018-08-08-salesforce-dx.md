@@ -17,11 +17,10 @@ comments: true
 {% include _toc.html %}
 
 
-This is a step-by-step hands-on tutorial on using the Salesforce DX (Developer eXperience) for continuous testing and development. 
+This is a step-by-step hands-on tutorial on using the Salesforce DX (Developer eXperience) for continuous testing and development. Succinct and without hype. PROTIPs here present wisdom and knowledge from experience unique to this site.
+Unlike Trailhead's instructions, this displays output from commands.
 
 PROTIP: SFDX was announced in 2015 and entered <a target="_blank" href="https://developer.salesforce.com/blogs/developer-relations/2017/06/introducing-salesforce-dx-open-beta.html">Open Beta June 2017</a>, available in all prod and business orgs.
-
-Unlike Trailhead's instructions, this displays the output from commands.
 
 ## Why SFDX?
 
@@ -29,7 +28,7 @@ Unlike Trailhead's instructions, this displays the output from commands.
 
 <a target="_blank" title="sfdx-shift-1272x529.png" href="https://user-images.githubusercontent.com/300046/43903651-26a9807a-9baa-11e8-9044-5b0251ee0649.png"><img alt="sfdx-shift-648x270-43358.jpg" width="648" src="https://user-images.githubusercontent.com/300046/43903631-1d2c7b38-9baa-11e8-9d94-6f08f43fe60f.jpg"></a>
 
-Various people have used different nicknames, so here they are together:
+PROTIP: Various people have used different nicknames, so here they are together:
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th>Aspect</th><th>Traditional</th><th>DX</th></tr>
@@ -132,9 +131,13 @@ As part of checkout, <strong>branches</strong> mark specific points in time.
 
 Salesforce calls this <a target="_blank" title="video [49:12] Jun 5, 2017" href="https://www.youtube.com/watch?v=z11co_ZqUH8/">"Second Generation Packaging"</a> (2GP) <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_enable_secondgen_pkg.htm">*</a>.
 
-With Salesforce DX, your local project is tied to a repository. Use each repository to keep a history of all work you have done for your artifact. Use branches to track the changes for each of your releases. Each project contains, at a minimum, one artifact. 
+With Salesforce DX, a local project is tied to a repository. Each project contains, at a minimum, one artifact. Each repository keeps a history of all work done for artifacts. Branches are used to track the changes for each release. 
 
 In more complex orgs, you may find it necessary to have multiple related artifacts developed as part of the same project. This happens when sets of components and customizations depend on others.
+
+http://resources.docs.salesforce.com/rel1/doc/en-us/static/pdf/SF_Git_cheatsheet_web.pdf
+Git CheatSheet
+
 
 ## Install SFDX CLI
 
@@ -187,7 +190,7 @@ builtins 1.0.0 (core)
 salesforcedx 43.9.0 (core)
    </pre>
 
-1. Get a list of top-level sub-commands:
+1. Get a list of operations under the force topic:
 
    <pre><strong>sfdx force --help</strong></pre>
 
@@ -329,6 +332,27 @@ Help topics, type sfdx help TOPIC for more details:
   force:visualforce:page:create       # create a Visualforce page
    </pre>
 
+1. Get a list of just org operations:
+
+   <pre><strong>sfdx force:org --help</strong></pre>
+
+   <pre>
+Usage: sfdx force:org:COMMAND [command-specific-options]
+&nbsp;
+manage your Salesforce DX orgs
+&nbsp;
+sfdx force:org commands: (get help with sfdx help force:org:COMMAND)
+ force:org:create        create a scratch org
+ force:org:delete        mark a scratch org for deletion
+ force:org:display       get org description
+ force:org:list          list all orgs you’ve created or authenticated to
+ force:org:open          open an org in your browser
+ force:org:shape:create  create a snapshot of org edition, features, and licenses
+ force:org:shape:delete  delete all org shapes for a target org
+ force:org:shape:list    list all org shapes you’ve created
+   </pre>
+
+
    ### Uninstall CLI
 
 1. Where installed:
@@ -423,9 +447,9 @@ On your local machine (laptop), perform these steps to obtain assets from GitHub
 
    <a name="CreateScratch"></a>
 
-1. Create a scratch org with an <strong>-alias</strong> named "demo":
+1. Create an empty scratch org with an <strong>-alias</strong> named "demo1":
 
-   <pre><strong>sfdx force:org:create -s -f config/project-scratch-def.json -a "demo"</strong></pre>
+   <pre><strong>sfdx force:org:create -s -f config/project-scratch-def.json -a "demo1"</strong></pre>
 
    <tt>-n --durationdays 7</tt> can also be added to limit the time.
 
@@ -452,7 +476,7 @@ On your local machine (laptop), perform these steps to obtain assets from GitHub
 &nbsp;
      ALIAS  SCRATCH ORG NAME       USERNAME                       ORG ID              EXPIRATION DATE
 ───  ─────  ─────────────────────  ─────────────────────────────  ──────────────────  ───────────────
-(U)  demo   Salesforce DX Company  test-iydplvaqyiko@example.com  00D0q0000000q6gEAA  2018-08-19
+(U)  demo1  Salesforce DX Company  test-iydplvaqyiko@example.com  00D0q0000000q6gEAA  2018-08-19
    </pre>
 
    PROTIP: The default lifetime duration is 7 days from creation.
@@ -468,7 +492,7 @@ On your local machine (laptop), perform these steps to obtain assets from GitHub
 KEY              VALUE
 ───────────────  ────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Access Token     00D0q0000000q6g!ARkAQIlr.EB_hhK5lPcFiPKsScAPVqoqtTCap8nHArYvN5Gv.aw6obwbUffVQt0bKhdm7mmwVqAcb4r3PMEqRIntAtfoabcd
-Alias            demo
+Alias            demo1
 Client Id        SalesforceDevelopmentExperience
 Created By       wilsonmar@gmail.com
 Created Date     2018-08-12T07:04:42.000+0000
@@ -485,6 +509,8 @@ Username         test-iydplvaqyiko@example.com
 1. Check status:
 
    <pre><strong>sfdx force:source:status</strong></pre>
+
+   A long list appears:
 
    <pre>
 STATE                     FULL NAME    TYPE        PROJECT PATH
