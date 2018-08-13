@@ -285,14 +285,17 @@ Partner Orgs have a 50,000 limit on API calls each 24 hours vs.
 <tr valign="top"><td>Unlimited</td><td align="right"> $3,600 </td></tr>
 </table>
 
-"<a target="_blank" href="https://partners.salesforce.com/s/education/appinnovators/Trialforce">TrialForce</a>" is used for AppExchange Partners to deliver free trails to prospects.
+<img align="right" alt="sf-editions-200x198-14557.jpg" width="200" src="https://user-images.githubusercontent.com/300046/44049701-12a414e6-9ef2-11e8-907a-95a19132704a.jpg">
 
-QUESTION: What are "Group", "Personal", and "Performance" editions?
+Partner editions can include "Group Edition" (GE), and an "Unlimited / Performance Edition" (PXE).
+A GE org has a limit of five user licenses and do support record types. Salesforce is phasing out GE and replacing it with "Salesforce IQ".
 
 Call 1-800-667-6389 or see <a target="_blank" href="http://www.salesforce.com/crm/editions-pricing.jsp">http://www.salesforce.com/crm/editions-pricing.jsp</a>
 and https://developer.salesforce.com/page/An_Introduction_to_Environments
 
 QUESTION: Each level license has different support SLAs?
+
+"<a target="_blank" href="https://partners.salesforce.com/s/education/appinnovators/Trialforce">TrialForce</a>" is used for AppExchange Partners to deliver free trails to prospects.
 
 PROTIP: Those with this license test deployments to production by deploying to another free test org.
 

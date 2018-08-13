@@ -21,6 +21,23 @@ comments: true
 1. To get on the AppExchange store, click the App Launcher icon on the upper-left of any Salesforce console screen.
 
 
+AppExchange partners build ISVforce apps and Lightning Platform OEM Embedded apps.
+
+ISVforce apps augment Sales Cloud or Service Cloud business functions.
+ISVforce apps are installed by customers into existing orgs, so they use Salesforce features that the customer has available, which can include Salesforce Communities and additional objects added. This is like adding Saleforce Einstein capabilties.
+
+OEM Embedded apps can be sold to those who don’t use Salesforce already as well as existing Salesforce customers.
+Such customers would receive a Salesforce app embedded with the app under three types of user licenses:
+   * Lightning Platform for administrators
+   * Customer Community for users of the app, seeing only their own data and using a limited part of the app.
+   * Customer Community Plus for those who can be included in role hierarchy permissions.
+   <br /><br />
+
+Those who purchase over 100 licenses get a 10% discount.
+Those who purchase over 500 licenses get a 15% discount.
+
+https://developer.salesforce.com/docs/atlas.en-us.214.0.packagingGuide.meta/packagingGuide/oem_user_license_comparison.htm
+review the full list of considerations
 
 https://partners.salesforce.com/AppExchangeTrailblazerChecklist
 
@@ -111,6 +128,10 @@ While preparing for a developer Salesforce job, we built some add-on components 
 
 
 ## Learning
+
+https://trailhead.salesforce.com/en/modules/isv_plan
+AppExchange App Strategy
+to Identify the tools and technologies needed to build your AppExchange app.
 
 https://trailhead.salesforce.com/en/modules/appexchange_licensing
 App Licensing and Customer Support for AppExchange

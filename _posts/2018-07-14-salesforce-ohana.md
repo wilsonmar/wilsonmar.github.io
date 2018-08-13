@@ -25,11 +25,13 @@ This page presents steps and information for those new to Salesforce to get "plu
 ## Glossary of Terms and Acronyms
 
 * <a target="_blank" href="https://help.salesforce.com/apex/HTViewHelpDoc?id=glossary.htm">
-   Salesforce's Glossary</a> of terms.
+   Salesforce's Glossary</a> of terms. It doesn't define acronmns, such as:
 
-   "SFDC" is an acronym for "Salesforce dot com".
+   * "SFDC" is an acronym for "Salesforce dot com"
+   * "PAM" = Partner Account Manager (email isvpartners@salesforce.com)
+   <br /><br />
 
-* <a target="_blank" href="https://quizlet.com/_52b1qw/">My quizlet on Salesforce Terms</a>. Please let me know if you see any terms missing.
+* Use a game to learn them <a target="_blank" href="https://quizlet.com/306205592/">on my Quizlet</a>. Please let me know if you see any terms missing.
 
 * <a target="_blank" href="https://quizlet.com/216046018/salesforce-admin-flash-cards/">Quizlet on Saleforce Admin quiz</a> 
 

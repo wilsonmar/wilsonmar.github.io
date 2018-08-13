@@ -159,13 +159,6 @@ Christine Pereira, founder of SoulfulSelling.com, created <a target="_blank" hre
    * <a target="_blank" href="https://www.lynda.com/Salesforce-tutorials/Learn-Salesforce-Basics/513603-2.html">Learning Salesforce</a> [1:39:00] 11/25/2016
    * <a target="_blank" href="https://www.lynda.com/Salesforce-tutorials/Salesforce-Sales-Managers/555794-2.html">Salesforce for Customer Service</a> [50:43] 7/1/2017
 
-<a name="ChristopheCoenraets"></a>
-Christophe Coenraets, Developer Evangelist at Salesforce.com:
-
-   * <a target="_blank" href="https://coenraets.org/blog/">coenraets.org/blog</a>
-   focuses on mobile application development, [Read More](http://coenraets.org/blog/bio/)
-   * <a target="_blank" href="https://www.youtube.com/watch?v=G931jWBnxHU">Youtube: Advanced Lightning Components</a> Jul 3, 2017
-
 <a name="DanAppleman"></a>
 
 Dan Appleman was the first Salesforce instructor at Pluralsight:
@@ -608,6 +601,14 @@ Adam Blitzer (@AdamBlitzer), co-founder of Pardot, now EVP & GM of Sales Cloud
 Amanda Berkey (@amandaberkey) 
 
 Charlie Isaacs (<a target="_blank" href="https://twitter.com/charlieisaacs">@charlieisaacs</a>) VP, CTO for Customer Connection.
+
+<a name="ChristopheCoenraets"></a>
+Christophe Coenraets (<a target="_blank" href="https://twitter.com/ccoenraets">@ccoenraets</a>), Principal Developer Evangelist, in Boston:
+
+   * <a target="_blank" href="https://coenraets.org/blog/">coenraets.org/blog</a>
+   focuses on mobile application development, [Read More](http://coenraets.org/blog/bio/)
+   * <a target="_blank" href="https://www.youtube.com/watch?v=G931jWBnxHU">Youtube: Advanced Lightning Components</a> Jul 3, 2017
+   * <a target="_blank" href="http://ccoenraets.github.io/salesforce-lightning-tutorial">Salesforce Lightning Components Tutorial</a>
 
 Dan Darcy (@DanDarcy), SVP of Productivity at Salesforce
 
