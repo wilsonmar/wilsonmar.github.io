@@ -36,6 +36,8 @@ Such customers would receive a Salesforce app embedded with the app under three 
 Those who purchase over 100 licenses get a 10% discount.
 Those who purchase over 500 licenses get a 15% discount.
 
+See https://developer.salesforce.com/docs/atlas.en-us.214.0.packagingGuide.meta/packagingGuide/oem_user_license_comparison.htm
+
 https://developer.salesforce.com/docs/atlas.en-us.214.0.packagingGuide.meta/packagingGuide/oem_user_license_comparison.htm
 review the full list of considerations
 
@@ -120,9 +122,11 @@ While preparing for a developer Salesforce job, we built some add-on components 
 
 * Capture images such as bar codes or QR codes, converts to text, then inserts that info into Salesforce. Also, photos categorization on Machine Learning object recognition services within Amazon, Azure, Google, IBM, etc. This by a Android/iOS smartphone or a custom device such as the $249 Amazon DeepLens and <a target="_blank" href="https://www.target.com/p/google-vision-kit-aiy/-/A-53417081">$90 Google Vision Kit</a>.
 
-* In a component window, watch a webcam of your house or behind your back.
+* In a component window, watch a webcam of your house or behind your back. Use Einstein to alert if something changes.
 
-* Two-way sync of data in a shopping website running WordPress/WooCommerce with Salesforce.
+* Send a ping into Salesforce when a button is pressed.
+
+* Two-way sync of data in a shopping website running WordPress/WooCommerce.
 
 * A URL Shortener utility https://medium.freecodecamp.org/how-to-build-a-serverless-url-shortener-using-aws-lambda-and-s3-4fbdf70cbf5c
 

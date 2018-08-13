@@ -278,35 +278,33 @@ Partner Orgs have a 50,000 limit on API calls each 24 hours vs.
 15,000 for Individual Developers.
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom"><th align="left"> Plan</th><th>Per User per Year</th></tr>
-<tr valign="top"><td>Essentials (for small business) </td><td align="right"> $300 </td></tr> 
-<tr valign="top"><td>Professional ("Complete CRM for any size team") </td><td align="right"> $900</td></tr>
-<tr valign="top"><td>Enterprise ("Deeply customizable") </td><td align="right"> $1,800</td></tr>
-<tr valign="top"><td>Unlimited</td><td align="right"> $3,600 </td></tr>
+<tr valign="bottom"><th align="left"> Plan</th><th>Per User per Year</th><th>Validation Rules/Object</th></tr>
+<tr valign="top"><td>Essentials ("for small business") </td><td align="right"> $300 </td><td> - </td></tr> 
+<tr valign="top"><td>Professional ("Complete CRM for any size team") </td><td align="right"> $900</td><td align="right"> 20 </td></tr>
+<tr valign="top"><td>Enterprise ("Deeply customizable") </td><td align="right"> $1,800</td><td align="right"> 200 </td></tr>
+<tr valign="top"><td>Unlimited</td><td align="right"> $3,600</td><td align="right"> 200 </td>
 </table>
 
-<img align="right" alt="sf-editions-200x198-14557.jpg" width="200" src="https://user-images.githubusercontent.com/300046/44049701-12a414e6-9ef2-11e8-907a-95a19132704a.jpg">
+See <a target="_blank" href="https://help.salesforce.com/articleView?id=overview_limits_general.htm&type=5&language=en_US">declarative limits</a>.
 
-Partner editions can include "Group Edition" (GE), and an "Unlimited / Performance Edition" (PXE).
-A GE org has a limit of five user licenses and do support record types. Salesforce is phasing out GE and replacing it with "Salesforce IQ".
+<a target="_blank" href="https://trailhead.salesforce.com/modules/isv_plan/units/isv_plan_editions"><img align="right" alt="sf-editions-200x198-14557.jpg" width="200" src="https://user-images.githubusercontent.com/300046/44049701-12a414e6-9ef2-11e8-907a-95a19132704a.jpg"></a>
+
+Partner editions can include "Group Edition" (GE), "Unlimited (UX)" and "Performance Edition" (PXE).
+A GE org has a limit of five user licenses and minimal features (does not support record types, role hierarchies). 
+Salesforce is replacing GE with "Salesforce IQ".
+
+QUESTION: What is "Partner Developer"?
+
+QUESTION: Each level license has different support SLAs?
 
 Call 1-800-667-6389 or see <a target="_blank" href="http://www.salesforce.com/crm/editions-pricing.jsp">http://www.salesforce.com/crm/editions-pricing.jsp</a>
 and https://developer.salesforce.com/page/An_Introduction_to_Environments
-
-QUESTION: Each level license has different support SLAs?
 
 "<a target="_blank" href="https://partners.salesforce.com/s/education/appinnovators/Trialforce">TrialForce</a>" is used for AppExchange Partners to deliver free trails to prospects.
 
 PROTIP: Those with this license test deployments to production by deploying to another free test org.
 
 Salesforce Enterprise customers can open up tunnels and share data with each other. (EDI for the masses.)
-
-Additionally:
-
-*    Partner Developer
-*    Partner Enterprise
-*    Partner Group
-*    Partner Professional
 
 Trailhead Module: https://trailhead.salesforce.com/en/modules/premier-success-plans
 

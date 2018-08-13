@@ -27,9 +27,10 @@ This page presents steps and information for those new to Salesforce to get "plu
 * <a target="_blank" href="https://help.salesforce.com/apex/HTViewHelpDoc?id=glossary.htm">
    Salesforce's Glossary</a> of terms. It doesn't define acronmns, such as:
 
-   * "SFDC" is an acronym for "Salesforce dot com"
-   * "PAM" = Partner Account Manager (email isvpartners@salesforce.com)
-   <br /><br />
+   * SFDC is an acronym for "Salesforce dot com"
+   * PAM = Partner Account Manager (email isvpartners@salesforce.com)
+   * MOAR = MuleSoft Anypoint Platform
+<br /><br />
 
 * Use a game to learn them <a target="_blank" href="https://quizlet.com/306205592/">on my Quizlet</a>. Please let me know if you see any terms missing.
 
