@@ -297,6 +297,10 @@ Joe Ferraro
 
    * https://www.linkedin.com/company/cloud-conversion/
 
+John Loghry
+
+   * <a target="_blank" href="https://www.linkedin.com/pulse/visualforce-lightning-my-top-5-tips-james-loghry/">Visualforce to Lightning: My Top 5 Tips</a> Jan 5, 2017
+
 Jitendra Zaa, a 7X Salesforce Certificate, MVP and Technical Architect, working from Hartford, CT:
 
    * <a target="_blank" href="http://www.jitendrazaa.com/blog/">jitendrazaa.com/blog</a>

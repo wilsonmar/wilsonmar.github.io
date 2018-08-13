@@ -132,15 +132,21 @@ PROTIP: Drive a lot? Listen to voice-only podcasts while commuting:
 
 Here are the social media channels controlled by various teams within Salesforce:
 
-Salesforce Developer Relations Team of evangelists:
+Salesforce Admin Relations Team of evangelists: (email: buttonclickmike@salesforce.com)
+
+   * <a target="_blank" href="https://www.facebook.com/SalesforceAdmins/">facebook.com/SalesforceAdmins</a> 
+   * [@SalesforceAdmins on Twitter](https://twitter.com/SalesforceAdmins)
+   * <a target="_blank" href="https://admin.salesforce.com/posts/">
+   https://admin.salesforce.com/posts</a> (Salesforce Admin Relations Blog postings)
+
+Salesforce Developer Relations Team of evangelists: (email: developer@salesforce.com)
 
    * <a target="_blank" href="https://www.facebook.com/salesforcedevs/">facebook.com/salesforcedevs</a> 
    (previously <a target="_blank" href="https://www.facebook.com/forcedotcom/">facebook.com/forcedotcom</a>)
-
    * [@SalesforceDevs on Twitter](https://twitter.com/SalesforceDevs)
 
    * <a target="_blank" href="https://developer.salesforce.com/blogs/">
-   https://developer.salesforce.com/blogs</a> (Salesforce Developer Releations Blog)
+   https://developer.salesforce.com/blogs</a> (Salesforce Developer Relations Blog)
 
    * <a target="_blank" href="https://www.pscp.tv/SalesforceDevs/1RDGldYDWOzGL">Broadcasts on pscp.tv</a> (Periscope) viewed on the Periscope Live Video Streaming app on <a target="_blank" href="https://itunes.apple.com/us/app/id972909677?mt=8">iOS</a> and <a target="_blank" href="https://play.google.com/store/apps/details?id=tv.periscope.android">Android</a>. Sign-up, and follow @SalesforceDevs.
 

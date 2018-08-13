@@ -36,6 +36,9 @@ PROTIP: While there is no installing custom software (from Salesforce) on each u
 DEVDOC: In [Supported Browsers](https://developer.salesforce.com/docs/atlas.en-us.salesforce_supported_browsers_cheatsheet.meta/salesforce_supported_browsers_cheatsheet/)
 some Internet Explorer support is limited. Firefox needs to be configured.
 
+https://resources.docs.salesforce.com/214/latest/en-us/sfdc/pdf/salesforce_technical_requirements.pdf
+Requirements
+
 
 ## Free Trailhead training
 
@@ -194,9 +197,11 @@ click the picture at the upper-right corner, and select <a target="_blank" href=
 
 1. Open Chrome and click the icon at the upper-right corner with the three dots for a menu to select "New incognito window".
 
+   Alternately, clear all cookies from your browser. On Chrome, click the three dots, Settings, scroll down to click Advanced, Clear browsing data, Clear Data.
+
 1. Highlight and copy this URL, then paste or type in this URL in the Address field:
 
-   https://trailhead.salesforce.com
+   <a target="_blank" href="https://trailhead.salesforce.com/">https://trailhead.salesforce.com</a>
 
    PROTIP: Using an icognito screen ignores all the previous cookies that may confuse the website.
 
