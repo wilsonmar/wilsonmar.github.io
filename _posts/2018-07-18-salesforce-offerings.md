@@ -279,19 +279,21 @@ Partner Orgs have a 50,000 limit on API calls each 24 hours vs.
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th align="left"> Plan</th><th>Per User per Year</th><th>Validation Rules/Object</th></tr>
-<tr valign="top"><td>Essentials ("for small business") </td><td align="right"> $300 </td><td> - </td></tr> 
+<tr valign="top"><td>Essentials ("for small business") </td><td align="right"> $300 </td><td align="right"> - </td></tr> 
 <tr valign="top"><td>Professional ("Complete CRM for any size team") </td><td align="right"> $900</td><td align="right"> 20 </td></tr>
 <tr valign="top"><td>Enterprise ("Deeply customizable") </td><td align="right"> $1,800</td><td align="right"> 200 </td></tr>
-<tr valign="top"><td>Unlimited</td><td align="right"> $3,600</td><td align="right"> 200 </td>
+<tr valign="top"><td>Unlimited</td><td align="right"> $3,600</td><td align="right"> 200 </td></tr>
 </table>
 
-See <a target="_blank" href="https://help.salesforce.com/articleView?id=overview_limits_general.htm&type=5&language=en_US">declarative limits</a>.
+Salesforce editions that are no longer sold include: Contact Manager, Group, Personal, Performance, or Database.com.
 
 <a target="_blank" href="https://trailhead.salesforce.com/modules/isv_plan/units/isv_plan_editions"><img align="right" alt="sf-editions-200x198-14557.jpg" width="200" src="https://user-images.githubusercontent.com/300046/44049701-12a414e6-9ef2-11e8-907a-95a19132704a.jpg"></a>
 
 Partner editions can include "Group Edition" (GE), "Unlimited (UX)" and "Performance Edition" (PXE).
-A GE org has a limit of five user licenses and minimal features (does not support record types, role hierarchies). 
+A GE org has a limit of 5 user licenses and minimal features (does not support record types, role hierarchies).
 Salesforce is replacing GE with "Salesforce IQ".
+See <a target="_blank" href="https://help.salesforce.com/articleView?id=overview_limits_general.htm&type=5&language=en_US">Salesforce Features and Edition Allocations</a>.
+
 
 QUESTION: What is "Partner Developer"?
 

@@ -444,6 +444,7 @@ On your local machine (laptop), perform these steps to obtain assets from GitHub
   }
 }</pre>
 
+   Other features: "S1DesktopEnabled","AuthorApex","NetworksEnabled","Communities"
 
    <a name="CreateScratch"></a>
 
@@ -919,6 +920,10 @@ Rohit Mehta (@rohitforce), Product Manager
 Dileep Burki, <a target="_blank" href="https://www.linkedin.com/in/dileep-burki-483a25/">Sr. Product Manager</a>:
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=Prlurg2ORnU/">How Everyone Can Leverage Salesforce DX Packaging</a> 19 Nov 2017 shows how to get unmanaged metadata into a DX package.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=MY2_AfjtBp8">
+   This video</a> Architecting Unlocked Packages in Your Salesforce Org
+   John Daniel, Platform Architect of Morgan & Morgan Law Firm
+   interviewed by Dilip Burki (@burki_db), Sr Dir Product Management.
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=z11co_ZqUH8/">"Second Generation Packaging"</a> (2GP) [49:12] Jun 5, 2017
 

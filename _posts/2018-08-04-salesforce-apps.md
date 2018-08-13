@@ -23,8 +23,12 @@ comments: true
 
 AppExchange partners build ISVforce apps and Lightning Platform OEM Embedded apps.
 
+### ISVforce apps
+
 ISVforce apps augment Sales Cloud or Service Cloud business functions.
 ISVforce apps are installed by customers into existing orgs, so they use Salesforce features that the customer has available, which can include Salesforce Communities and additional objects added. This is like adding Saleforce Einstein capabilties.
+
+### OEM Embedded apps
 
 OEM Embedded apps can be sold to those who don’t use Salesforce already as well as existing Salesforce customers.
 Such customers would receive a Salesforce app embedded with the app under three types of user licenses:
@@ -43,7 +47,18 @@ review the full list of considerations
 
 https://partners.salesforce.com/AppExchangeTrailblazerChecklist
 
-## AppExchange Categories
+### Ligntning Components
+
+When a customization is too complex or specialized to implement in the declarative interface alone, Salesforce  provides programmatic tools for app development:
+
+   * Apex, Salesforce’s cloud-based programming language, which is syntactically similar to Java or C#. Apex works with the objects and user actions that are the backbone of apps.
+
+   * Visualforce, a tag-based markup language similar to HTML, for building UI pages and components. Like Apex, it works with objects and user actions. It also works with third-party libraries like jQuery and AngularJS.
+
+   * Lightning Components, a JavaScript framework for building reusable components that can render UI, handle client-side events, and communicate with the Salesforce server. These can be sold on the AppExchange!
+
+
+## AppExchange Use Case Categories
 
 AppExchange has these categories of add-ons:
 
