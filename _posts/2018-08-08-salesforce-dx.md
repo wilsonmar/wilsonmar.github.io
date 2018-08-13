@@ -820,7 +820,9 @@ and organize them into Salesforce DX packages.
 1. Build release cycles specific to those applications.
 
 
-## Social
+## Social community
+
+<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000HTp1">SFDX Chatter Success Community group</a>
 
 Look for Twitter tag <a target="_blank" href="https://twitter.com/search?q=%23salesforcedx&src=typd">#SalesforceDX</a>
 
