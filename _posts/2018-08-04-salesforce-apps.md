@@ -28,10 +28,10 @@ This is a step-by-step hands-on tutorial to Apps and AppExchange, with technical
 
 1. Click the app launcher icon for a pop-up listing apps and items.
 
-   The list of apps shown can be different depending on licensing and permissions:
-
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/43531384-e10b834e-956c-11e8-9113-3506e009c7ae.png"><img alt="sf-app-launcher-1106x554.png" width="1106" src="https://user-images.githubusercontent.com/300046/43531384-e10b834e-956c-11e8-9113-3506e009c7ae.png"></a><br />
    <small>(Click the picture above here for a larger image in a new window.)</small>
+
+   Thia list of apps varies depending on licensing and permissions.
 
    The "Sales" app is the base CRM (Customer Relationship Management) app.
    PROTIP: CRM (Customer Relationship Management) is the Salesforce company's stock market symbol. CRM is the main offering from Salesforce as a company.
