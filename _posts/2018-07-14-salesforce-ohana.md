@@ -71,6 +71,23 @@ The company has seen a consistent growth rate of 35% year-over-year, which is un
 * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trail/innovation_salesforce_way">Innovation the Salesforce Way</a> [4 hrs 20 mins]
 
 
+<a name="Permissions"></a>
+
+## Permissions by Role
+
+The 6 standard profiles of permissions:
+
+* Administrator
+* Solution Manager
+* Read Only
+* Standard User
+* Marketing User
+* Contract Manager
+
+Up to 1000 Permission sets per org can be setup to grant additional permissions without changing user profiles.
+
+<a name="Personas"></a>
+
 ## User Personas
 
 <a target="_blank" href="https://trailhead.salesforce.com/modules/ux-personas-for-salesforce">Trailhead module: UX Personas for Salesforce</a> [1 hr 10 min] 
