@@ -242,7 +242,7 @@ click the picture at the upper-right corner, and select <a target="_blank" href=
    Notice the email address to the right of label <strong>Username:</strong> 
    matches the domain name of the URL, such as: "wilsonmar@resourceful-moose-263556.com".
 
-   ### Salesforce Lightning UI
+   ### Lightning UI Apps and Items
 
    Salesforce currently stores data for all product offerings (all SaaS in the cloud) within a single "monolithic" database.
 

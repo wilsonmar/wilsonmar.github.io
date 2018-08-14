@@ -160,22 +160,16 @@ Christine Pereira, founder of SoulfulSelling.com, created <a target="_blank" hre
    * <a target="_blank" href="https://www.lynda.com/Salesforce-tutorials/Salesforce-Sales-Managers/555794-2.html">Salesforce for Customer Service</a> [50:43] 7/1/2017
 
 <a name="DanAppleman"></a>
-
 Dan Appleman was the first Salesforce instructor at Pluralsight:
 
-   * Author of http://advancedapex.com/
+   * BOOK: <a target="_blank" href="https://www.amazon.com/dp/193675410X">Advanced Apex Programming for Salesforce.com and Force.com Paperback – September 1, 2015</a>
+   * <a target="_blank" href="https://advancedapex.com/blog/">advancedapex.com/blog</a> since Jun 2012, the companion to book "Advanced Apex Programming for Salesforce.com and Force.com"
    
-   * <a target="_blank" href="https://www.pluralsight.com/courses/salesforce-developers-career-strategies-opportunities">Career Strategies and Opportunities for Salesforce Platform Developers</a> Sep 2 2015 [1h 42m]
-
-   * <a target="_blank" href="https://www.pluralsight.com/courses/javascript-in-salesforce-getting-started">Getting Started with JavaScript in Salesforce
-   Jan 24 2017 2h 18m</a>
-
-   * <a target="_blank" href="http://www.pluralsight.com/courses/forcedotcom-dotnet-developers">Force.com for .NET Developers
-   1h 37m 25 Feb 2013 video</a>
-
-   * <a target="_blank" href="https://www.pluralsight.com/courses/forcedotcom-apex-for-developers">
-   Force.com and Apex Fundamentals for Developers
-   [Intermediate] Sep 8 2016 3h 45m</a>
+   * Pluralsight video: <a target="_blank" href="https://www.pluralsight.com/courses/javascript-in-salesforce-getting-started">Getting Started with JavaScript in Salesforce</a> Jan 24 2017 2h 18m
+   * Pluralsight video: <a target="_blank" href="https://www.pluralsight.com/courses/forcedotcom-apex-for-developers">
+   Force.com and Apex Fundamentals for Developers</a> Sep 8 2016 [3h 45m]
+   * Pluralsight video: <a target="_blank" href="https://www.pluralsight.com/courses/salesforce-developers-career-strategies-opportunities">Career Strategies and Opportunities for Salesforce Platform Developers</a> Sep 2 2015 [1h 42m]
+   * Pluralsight video: <a target="_blank" href="http://www.pluralsight.com/courses/forcedotcom-dotnet-developers">Force.com for .NET Developers</a> 25 Feb 2013 [1h 37m]
 
 Daniel Peter (<a target="_blank" href="http://twitter.com/danieljpeter">@danieljpeter</a>), MVP Dev. Group Leader in Bay Area Foster City, CA:
 
@@ -234,6 +228,9 @@ Fabrice Cathala (<a target="_blank" href="https://twitter.com/https://twitter.co
 
    * <a target="_blank" href="https://saas-components.com/">saas-components.com</a>
 
+Felicia Duarte:
+   * Apress book: <a target="_blank" href="https://www.amazon.com/dp/1484229932">Learn Salesforce Lightning: The Visual Guide to the Lightning UI Paperback – December 20, 2017</a>
+
 Francis Pindar, 5X MVP from the UK:
 
    * <a target="_blank" href="https://www.udemy.com/salesforce-certified-administrator-201-2017/">Salesforce Certified Administrator (aka 201) 2018</a> 92 lectures 15 hour Udemy video
@@ -255,8 +252,11 @@ Harshit Pandey, Principal Technical Architect at Intuitive Surgical, previously 
 
    * <a target="_blank" href="https://about.me/harshit.pandey">https://about.me/harshit.pandey</a>
 
-Jeff Susich
+Jason Ouellette:
+   * BOOK: Development with the Force.com Platform: Building Business Applications in the Cloud (3rd Edition) 
+   (2009-10-16)
 
+Jeff Susich:
    * VIDEO COURSE: <a target="_blank" href="https://app.pluralsight.com/library/courses/salesforce-accidental-admin-reports-dashboards-classic-lightning/table-of-contents">Reports & Dashboards in Classic and Lightning</a> 31 Jul 2018
 
 Jean Velonis (<a target="_blank" href="https://twitter.com/SalesforcePrincess">@SalesforcePrincess</a>):
@@ -368,6 +368,9 @@ Matt Lacey, Melbourne, Australia:
    * <a target="_blank" href="https://www.laceysnr.com/">laceysnr.com</a>
    since Mar 2010 
 
+Michael Wicherski:
+   * Apress BOOK: <a target="_blank" href="https://www.amazon.com/gp/product/1484232992">Beginning Salesforce Developer – December 6, 2017</a>
+
 Mike Topalovich, 9x certified Salesforce architect, developer and part time CTO in Chicago:
 
    * <a target="_blank" href="http://topalovich.com/">topalovich.com</a>
@@ -420,9 +423,12 @@ Patrick Watkins (<a target="_blank" href="https://twitter.com/nc_watkins">@nc_wa
    * Video course: <a target="_blank" href="https://app.pluralsight.com/library/courses/play-by-play-implementing-sustainable-scalable-salesforce-governance/table-of-contents">Play by Play: Implementing Sustainable and Scalable Salesforce Governance</a> 2 Aug 2018 with Don Robins.
 
 Paul Battisson from Harrogate UK, A Force.com MVP and experienced Technical Architect who has worked for a number of leading ISVs and Consulting partners. A Cetified Salesforce Developer, Advanced Developer, Platform App Builder, Platform Developer I, and Platform Developer II.
-
    * <a target="_blank" href="http://paulbattisson.com/blog">paulbattisson.com/blog</a>
    since Feb 2007 
+
+Paul Goodey:
+   * BOOK: <a target="_blank" href="https://www.amazon.com/gp/product/178862551X/">Salesforce CRM Admin Cookbook - Second Edition: Solutions to help you implement, configure, and customize your business applications with Salesforce CRM and Lightning Experience Paperback – December 22, 2017</a>
+   * BOOK: <a target="_blank" href="https://www.amazon.com/gp/product/1786468964/">Salesforce CRM - The Definitive Admin Handbook - Fourth Edition</a>
 
 Peter Knolle, Certified Salesforce.com professional, and Force.com MVP:
 
@@ -435,7 +441,7 @@ Phil Walton (<a target="_blank" href="https://twitter.com/SalesforcePhil">@Sales
 Philip Weinmeister (<a target="_blank" href="https://twitter.com/PhilWeinmeister">@PhilWeinmeister</a>), MVP, 18x SF Certified, @CommunityCloud MVP:
 
    * <a target="_blank" href="https://weinforce.wordpress.com">weinforce.wordpress.com</a>
-   * BOOK: <a target="_blank" href="https://www.amazon.com/gp/product/1484216903/">Salesforce.com Lightning Process Builder and Visual Workflow: A Practical Guide to Model-Driven Development on the Force.com Platform (Apress)</a>
+   * BOOK: <a target="_blank" href="https://www.amazon.com/gp/product/1484216903/">Salesforce.com Lightning Process Builder and Visual Workflow: A Practical Guide to Model-Driven Development on the Force.com Platform (Apress)</a>, with Jonathan Keel
    * BOOK: <a target="_blank" href="https://www.amazon.com/gp/product/1484200985/">Practical Salesforce.com Development Without Code: Customizing Salesforce on the Force.com Platform (Apress)</a>
    * BOOK: <a target="_blank" href="https://www.amazon.com/gp/product/1484236084/">Practical Guide to Salesforce Communities: Building, Enhancing, and Managing an Online Community with Salesforce Community Cloud</a> (thanks for signing me a copy, Phil!)
 
@@ -445,6 +451,10 @@ Philip Weinmeister (<a target="_blank" href="https://twitter.com/PhilWeinmeister
    * Trailmix: <a target="_blank" href="https://trailhead.salesforce.com/en/users/005500000060ZGNAA2/trailmixes/learn-lightning-component-development-faster">Learn Lightning Component Development Faster</a>
 
 Prajakta Samant, #Salesforce #evangelist (<a target="_blank" href="https://twitter.com/prajsszz">@prajsszz</a>) in Pune, India.
+
+Rakesh Gupta, <a target="_blank" href="https://www.linkedin.com/in/rakeshistom/">4x Salesforce MVP | Salesforce Architect Trainer</a>:
+   * Packt BOOK: <a target="_blank" href="https://www.amazon.com/dp/178934431X">Salesforce Process Builder Quick Start Guide: Build complex workflows by clicking, not coding – July 24, 2018</a>
+   * Packt BOOK: <a target="_blank" href="https://www.amazon.com/Mastering-Salesforce-Administration-Rakesh-Gupta/dp/1786463180">Mastering Salesforce CRM Administration – March 27, 2017</a>
 
 Rebecca Dente (@sfdc_nerd) was in the inaugural class of Salesforce MVPs, a <a target="_blank" href="https://www.linkedin.com/in/rdente">MTI Partner</a> in Boston.
 
@@ -669,9 +679,6 @@ TODO: Identify writers
 
    * <a target="_blank" href="https://succeedwithsalesforce.com/">succeedwithsalesforce.com</a>
    since Aug 2015 from Secaucus, NJ
-
-   * <a target="_blank" href="https://advancedapex.com/blog/">advancedapex.com/blog</a>
-   since Jun 2012, the companion to book "Advanced Apex Programming for Salesforce.com and Force.com"
 
    * <a target="_blank" href="https://blog.wdcigroup.net/">blog.wdcigroup.net</a>
    since Nov 2008 from Australia and Malaysia, specialises in Salesforce and Dell Boomi platforms. They build and integrate cloud solutions, building and selling cloud applications on the Salesforce Appexchange.
