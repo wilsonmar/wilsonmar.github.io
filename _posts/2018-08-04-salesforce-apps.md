@@ -47,8 +47,9 @@ comments: true
    <img width="320" src="https://cdnjs.cloudflare.com/ajax/libs/design-system/2.6.2/images/carousel/carousel-01.jpg">
 
 1. Flip back to the "Home" page tab on your browser.
+1. Press Esc (escape) on your keyboard to exit the App Launcher dialog.
 
-   AppExchange partners build ISVforce apps and Lightning Platform OEM Embedded apps.
+AppExchange partners build ISVforce apps and Lightning Platform OEM Embedded apps.
 
 ### ISVforce apps
 
