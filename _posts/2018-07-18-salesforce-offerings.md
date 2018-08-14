@@ -285,7 +285,7 @@ Partner Orgs have a 50,000 limit on API calls each 24 hours vs.
 <tr valign="top"><td>Unlimited</td><td align="right"> $3,600</td><td align="right"> 200 </td></tr>
 </table>
 
-Salesforce editions that are no longer sold include: Contact Manager, Group, Personal, Performance, or Database.com.
+Salesforce editions no longer sold include: Contact Manager, Group, Personal, Performance, or Database.com.
 
 <a target="_blank" href="https://trailhead.salesforce.com/modules/isv_plan/units/isv_plan_editions"><img align="right" alt="sf-editions-200x198-14557.jpg" width="200" src="https://user-images.githubusercontent.com/300046/44049701-12a414e6-9ef2-11e8-907a-95a19132704a.jpg"></a>
 

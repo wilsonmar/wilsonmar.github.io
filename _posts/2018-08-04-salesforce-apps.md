@@ -1,14 +1,13 @@
 ---
 layout: post
 title: "Salesforce Apps"
-excerpt: "Components to add from AppExchange"
+excerpt: "Apps and Components to add from AppExchange"
 tags: [salesforce]
 file: saleforce-apps.md
 image:
-# feature: sf-ohana-1900x500-178173.jpg
-  feature: https://user-images.githubusercontent.com/300046/43407734-bd6303fe-93dc-11e8-87df-302ddbc274ff.jpg
+  feature: https://cdnjs.cloudflare.com/ajax/libs/design-system/2.6.2/images/carousel/carousel-01.jpg
   credit: Salesforce
-  creditlink: https://trailhead.salesforce.com/trailblazers
+  creditlink: https://appexchange.salesforce.com
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -18,10 +17,38 @@ comments: true
 
 <a name="AppExchange"></a>
 
-1. To get on the AppExchange store, click the App Launcher icon on the upper-left of any Salesforce console screen.
+1. With the Lightning Experience, hover your mouse over the App Launcher icon (with the 9 dots) at the upper-left of any Salesforce console screen, and "App Launcher" appears:
 
+   <img alt="sf-app-launcher-186x93-6209.jpg" width="186" src="https://user-images.githubusercontent.com/300046/44078505-df9ff480-9f63-11e8-8eae-8a296520e8e9.jpg">
 
-AppExchange partners build ISVforce apps and Lightning Platform OEM Embedded apps.
+   Next to it is the current app ("Sales Console" in this example).
+
+1. Click the app launcher icon for a pop-up listing apps and items.
+
+   The list of apps shown can be different depending on licensing and permissions:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/43531384-e10b834e-956c-11e8-9113-3506e009c7ae.png"><img alt="sf-app-launcher-1106x554.png" width="1106" src="https://user-images.githubusercontent.com/300046/43531384-e10b834e-956c-11e8-9113-3506e009c7ae.png"></a><br />
+   <small>(Click the picture above here for a larger image in a new window.)</small>
+
+   The "Sales" app is the base CRM (Customer Relationship Management) app.
+   PROTIP: CRM (Customer Relationship Management) is the Salesforce company's stock market symbol. CRM is the main offering from Salesforce as a company.
+
+1. PROTIP: The three lines under each icon means you can drag and place it where you want. For example, drag "Sales" to the upper-left corner.
+
+1. Click "Visit App Exchange".
+
+   <strong>"AppExchange apps"</strong> are developed by 3rd parties, usually an ISV (Independent Software Vendor) Salesforce partners. An app is either free or for a fee. 
+
+   <strong>"Managed apps"</strong> are managed by Salesforce.
+
+1. Click "AppExchange" at the lower-left of the pop-up for https://appexchange.salesforce.com/
+
+   PROTIP: The mascot "Appy" is an owl. She is associated with AppExchange.
+   <img width="320" src="https://cdnjs.cloudflare.com/ajax/libs/design-system/2.6.2/images/carousel/carousel-01.jpg">
+
+1. Flip back to the "Home" page tab on your browser.
+
+   AppExchange partners build ISVforce apps and Lightning Platform OEM Embedded apps.
 
 ### ISVforce apps
 
@@ -40,14 +67,7 @@ Such customers would receive a Salesforce app embedded with the app under three 
 Those who purchase over 100 licenses get a 10% discount.
 Those who purchase over 500 licenses get a 15% discount.
 
-See https://developer.salesforce.com/docs/atlas.en-us.214.0.packagingGuide.meta/packagingGuide/oem_user_license_comparison.htm
-
-https://developer.salesforce.com/docs/atlas.en-us.214.0.packagingGuide.meta/packagingGuide/oem_user_license_comparison.htm
-review the full list of considerations
-
-https://partners.salesforce.com/AppExchangeTrailblazerChecklist
-
-### Ligntning Components
+### Lightning Components
 
 When a customization is too complex or specialized to implement in the declarative interface alone, Salesforce  provides programmatic tools for app development:
 
@@ -133,17 +153,17 @@ Examples from 3rd-parties (partners):
 
 ## Our Ideas
 
-While preparing for a developer Salesforce job, we built some add-on components to develop our skill and demonstrate our capabilties.
+Here are some innovations:
 
-* Capture images such as bar codes or QR codes, converts to text, then inserts that info into Salesforce. Also, photos categorization on Machine Learning object recognition services within Amazon, Azure, Google, IBM, etc. This by a Android/iOS smartphone or a custom device such as the $249 Amazon DeepLens and <a target="_blank" href="https://www.target.com/p/google-vision-kit-aiy/-/A-53417081">$90 Google Vision Kit</a>.
+* When a button is pressed, send a ping into Salesforce.
+
+* Adapt the <a target="_blank" href="https://www.target.com/p/google-vision-kit-aiy/-/A-53417081">$90 Google Vision Kit</a> with a stand-alone camera to capture images such as bar codes or QR codes, converts to text, then inserts that info into Salesforce. Also, photos categorization on Machine Learning object recognition services within Amazon, Azure, Google, IBM, etc. This by a Android/iOS smartphone or a custom device such as the $249 Amazon DeepLens.
 
 * In a component window, watch a webcam of your house or behind your back. Use Einstein to alert if something changes.
 
-* Send a ping into Salesforce when a button is pressed.
-
 * Two-way sync of data in a shopping website running WordPress/WooCommerce.
 
-* A URL Shortener utility https://medium.freecodecamp.org/how-to-build-a-serverless-url-shortener-using-aws-lambda-and-s3-4fbdf70cbf5c
+* A <a target="_blank" href="https://medium.freecodecamp.org/how-to-build-a-serverless-url-shortener-using-aws-lambda-and-s3-4fbdf70cbf5c">URL Shortener utility</a>
 
 
 ## Learning
@@ -165,6 +185,16 @@ App Upgrading for AppExchange [45 mins] +300
 
 https://trailhead.salesforce.com/en/modules/isv_app_trials
 AppExchange App Trial Management [1 hr 20 mins] +500
+
+## Miscellaneous links
+
+
+See https://developer.salesforce.com/docs/atlas.en-us.214.0.packagingGuide.meta/packagingGuide/oem_user_license_comparison.htm
+
+https://developer.salesforce.com/docs/atlas.en-us.214.0.packagingGuide.meta/packagingGuide/oem_user_license_comparison.htm
+review the full list of considerations
+
+https://partners.salesforce.com/AppExchangeTrailblazerChecklist
 
 
 ## More about Salesforce #
