@@ -5,7 +5,7 @@ excerpt: "Apps and Components to add from AppExchange"
 tags: [salesforce]
 file: saleforce-apps.md
 image:
-# ![sf-appy-1900x500-102438
+# sf-appy-1900x500-102438
   feature: https://user-images.githubusercontent.com/300046/44081931-2e69aeb8-9f6d-11e8-8f80-a212ae3a80b0.jpg
   credit: Salesforce
   creditlink: https://appexchange.salesforce.com
@@ -75,9 +75,9 @@ Those who purchase over 500 licenses get a 15% discount.
 
 When a customization is too complex or specialized to implement in the declarative interface alone, Salesforce  provides programmatic tools for app development:
 
-   * Apex, Salesforce’s cloud-based programming language, which is syntactically similar to Java or C#. Apex works with the objects and user actions that are the backbone of apps.
+   * Apex, Salesforce’s cloud-based programming language, is syntactically similar to Java or C#. But Apex makes it easy to work with domain objects (such as Leads, Opportunities, Accounts, Contacts, etc.).
 
-   * Visualforce, a tag-based markup language similar to HTML, for building UI pages and components. Like Apex, it works with objects and user actions. It also works with third-party libraries like jQuery and AngularJS.
+   * Visualforce, a tag-based markup language similar to HTML, is used to build UI pages and components. Like Apex, it works with objects and user actions. It also works with third-party libraries like jQuery and AngularJS.
 
    * Lightning Components, a JavaScript framework for building reusable components that can render UI, handle client-side events, and communicate with the Salesforce server. These can be sold on the AppExchange!
 
