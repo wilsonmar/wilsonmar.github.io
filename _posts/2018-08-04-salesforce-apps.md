@@ -5,7 +5,8 @@ excerpt: "Apps and Components to add from AppExchange"
 tags: [salesforce]
 file: saleforce-apps.md
 image:
-  feature: https://cdnjs.cloudflare.com/ajax/libs/design-system/2.6.2/images/carousel/carousel-01.jpg
+# ![sf-appy-1900x500-102438
+  feature: https://user-images.githubusercontent.com/300046/44081931-2e69aeb8-9f6d-11e8-8f80-a212ae3a80b0.jpg
   credit: Salesforce
   creditlink: https://appexchange.salesforce.com
 comments: true
@@ -16,6 +17,8 @@ comments: true
 {% include _toc.html %}
 
 <a name="AppExchange"></a>
+
+This is a step-by-step hands-on tutorial to Apps and AppExchange, with technical commentary along the way.
 
 1. With the Lightning Experience, hover your mouse over the App Launcher icon (with the 9 dots) at the upper-left of any Salesforce console screen, and "App Launcher" appears:
 
@@ -46,7 +49,7 @@ comments: true
    PROTIP: The mascot "Appy" is an owl. She is associated with AppExchange.
    <img width="320" src="https://cdnjs.cloudflare.com/ajax/libs/design-system/2.6.2/images/carousel/carousel-01.jpg">
 
-1. Flip back to the "Home" page tab on your browser.
+1. Close the tab or or flip back to the "Home" page tab on your browser.
 1. Press Esc (escape) on your keyboard to exit the App Launcher dialog.
 
 AppExchange partners build ISVforce apps and Lightning Platform OEM Embedded apps.
