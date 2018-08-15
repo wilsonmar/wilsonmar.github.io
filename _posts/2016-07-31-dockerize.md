@@ -97,6 +97,39 @@ ENTRYPOINT ["/home/demo/box/boot.sh"]
    More examples at <a target="_blank" href="https://docs.docker.com/engine/examples/">
    https://docs.docker.com/engine/examples</a>
 
+   <a target="_blank" href="https://rawgit.com/sudo-bmitch/dc2018/master/faq-stackoverflow-lightning.html#20">PROTIP</a>: A chmod or chown changes a timestamp on the file even when there is no permission or ownership change made. Each dd command adds a 1MB layer.
+   Thus, each chmod command changes permissions and causes a copy of the entire 1MB file to the next layer.
+
+   PROTIP: Reduce the image size by merging RUN lines:
+
+   <pre>
+FROM busybox
+RUN mkdir /data \
+ && dd if=/dev/zero bs=1024 count=1024 of=/data/one \
+ && chmod -R 0777 /data \
+ && dd if=/dev/zero bs=1024 count=1024 of=/data/two \
+ && chmod -R 0777 /data \
+ && rm /data/one
+CMD ls -alh /data
+   </pre>
+
+
+  To handle UID/GID and permission issues, update image to match host uid/gid:
+
+   <pre>
+FROM debian:latest
+ARG UID=1000
+ARG GID=1000
+RUN groupadd -g $GID cuser \
+ && useradd -m -u $UID -g $GID -s /bin/bash cuser
+USER cuser
+   </pre>
+   Then:
+   <pre>
+$ docker build \
+  --build-arg UID=$(id -u) --build-arg GID=$(id -g) .
+   </pre>
+
    <a target="_blank" href="https://docs.docker.com/engine/reference/builder/#/exec-form-entrypoint-example">
    This</a> Dockerfile shows use of the ENTRYPOINT to run Apache in the foreground (i.e., as PID 1):
 
@@ -106,6 +139,20 @@ RUN apt-get update && apt-get install -y --force-yes apache2
 EXPOSE 80 443
 VOLUME ["/var/www", "/var/log/apache2", "/etc/apache2"]
 ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+   </pre>
+
+   <a target="_blank" href="https://rawgit.com/sudo-bmitch/dc2018/master/faq-stackoverflow-lightning.html#43">Another example</a>:
+
+   <pre>
+FROM jenkins/jenkins:lts
+USER root
+RUN  apt-get update \
+  && wget -O /usr/local/bin/gosu "https://github.com/..." \
+  && chmod +x /usr/local/bin/gosu \
+  && curl -sSL https://get.docker.com/ | sh \
+  && usermod -aG docker jenkins
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
    </pre>
 
    An example for Java on WebLogic:
@@ -125,6 +172,7 @@ ENTRYPOINT ["java","<a target="_blank" href="http://www.thezonemanager.com/2015/
 
   Run docker run <em>image-name</em> to create a container out of the image to execute it.
 
+  See https://github.com/sudo-bmitch/dc2018
 
 ### Dockerizing programming code #
 

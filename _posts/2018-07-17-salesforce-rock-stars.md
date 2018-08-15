@@ -160,10 +160,11 @@ Christine Pereira, founder of SoulfulSelling.com, created <a target="_blank" hre
    * <a target="_blank" href="https://www.lynda.com/Salesforce-tutorials/Salesforce-Sales-Managers/555794-2.html">Salesforce for Customer Service</a> [50:43] 7/1/2017
 
 <a name="DanAppleman"></a>
-Dan Appleman (<a target="_blank" href="http://twitter.com/danappleman">@danappleman</a>):
+Dan Appleman (<a target="_blank" href="http://twitter.com/danappleman">@danappleman</a>), CTO of Full Circle Insights:
    * BOOK: <a target="_blank" href="https://www.amazon.com/dp/193675410X">Advanced Apex Programming for Salesforce.com and Force.com – September 1, 2015</a>
    * <a target="_blank" href="https://advancedapex.com/blog/">advancedapex.com/blog</a> since Jun 2012, the companion to book "Advanced Apex Programming for Salesforce.com and Force.com"
-   
+   * Personal website: <a target="_blank" href="http://danappleman.com/">danappleman.com</a>
+
    Dan Appleman was the first Salesforce instructor at Pluralsight:
 
    * video: <a target="_blank" href="https://www.pluralsight.com/courses/salesforce-enterprise-building-private-blockchain">Building an Enterprise Private Blockchain on Salesforce</a> 21 Feb 2018 [1h 27m]
@@ -310,7 +311,6 @@ Johan Yu (<a target="_blank" href="https://twitter.com/simplysfdc">@simplysfdc</
    * <a target="_blank" href="http://www.SimplySfdc.com/">SimplySfdc.com</a>
 
 Keir Bowden (<a target="_blank" href="https://twitter.com/bob_buzzard">@bob_buzzard</a>), Chief Technical Officer at BrightGen, a Salesforce Platinum Partner in the UK:
-
    * <a target="_blank" href="http://bobbuzzard.blogspot.com/">bobbuzzard.blogspot.com</a>
    * <a target="_blank" href="https://www.blogger.com/profile/07815472992351343395">At Blogger.com</a>
 
@@ -397,12 +397,11 @@ Missy Longshore, since 2009:
    * <a target="_blank" href="https://nonprofitcrmsummit.com/p/salesforce-nonprofit-admin-magic-coaching-crew">Nonprofit CRM Summit</a> coaching for $400
    * <a target="_blank" href="https://nonprofitcrmsummit.com/p/lightning-boot-camp-full">Lightning boot camp $99</a> 
 
-Mohith Shrivastava, 9x Salesforce certification, MVP at Salesforce.com,Technical Architect at CodeScience:
-
+Mohith Shrivastava, 9x Salesforce certification, MVP at Salesforce.com, Technical Architect at CodeScience:
    * <a target="_blank" href="http://cloudyworlds.blogspot.com/">CloudyWorlds.blogspot.com</a>
    * CodeScience at <a target="_blank" href="http://www.Codescience.com/">Codescience.com</a>
    * Prolific question-answerer on <a target="_blank" href="http://salesforce.stackexchange.com/users/645/mohith-shrivastava">StackExchange.com</a>
-   * Author of <a target="_blank" href="https://www.packtpub.com/mapt/book/application_development/9781787124677">Packt book</a> August 9, 2018 <a target="_blank" href="https://www.amazon.com/Learning-Salesforce-Lightning-Application-Development/dp/1787124673/">Learning Salesforce Lightning Application Development: Build and test lighting components for Salesforce Lightning Experience using Salesforce DX</a>
+   * <a target="_blank" href="https://www.packtpub.com/mapt/book/application_development/9781787124677">Packt book</a>: August 9, 2018 <a target="_blank" href="https://www.amazon.com/Learning-Salesforce-Lightning-Application-Development/dp/1787124673/">Learning Salesforce Lightning Application Development: Build and test lighting components for Salesforce Lightning Experience using Salesforce DX</a>
 
 Nikhil Jaitly (<a target="_blank" href="https://twitter.com/nikhj">@nikhj</a>) Salesforce Technical Architect, 22x Salesforce Certified. Melbourne Marketing Cloud meetup Co-Organizer: last tweet 2017
 
@@ -425,7 +424,7 @@ Patrick Watkins (<a target="_blank" href="https://twitter.com/nc_watkins">@nc_wa
    * Video course: <a target="_blank" href="https://app.pluralsight.com/library/courses/play-by-play-implementing-sustainable-scalable-salesforce-governance/table-of-contents">Play by Play: Implementing Sustainable and Scalable Salesforce Governance</a> 2 Aug 2018 with Don Robins.
 
 Paul Battisson from Harrogate UK, A Force.com MVP and experienced Technical Architect who has worked for a number of leading ISVs and Consulting partners. A Cetified Salesforce Developer, Advanced Developer, Platform App Builder, Platform Developer I, and Platform Developer II.
-   * <a target="_blank" href="http://paulbattisson.com/blog">paulbattisson.com/blog</a>
+   * Blog: <a target="_blank" href="http://paulbattisson.com/blog">paulbattisson.com/blog</a>
    since Feb 2007 
 
 Paul Goodey:
