@@ -160,16 +160,17 @@ Christine Pereira, founder of SoulfulSelling.com, created <a target="_blank" hre
    * <a target="_blank" href="https://www.lynda.com/Salesforce-tutorials/Salesforce-Sales-Managers/555794-2.html">Salesforce for Customer Service</a> [50:43] 7/1/2017
 
 <a name="DanAppleman"></a>
-Dan Appleman was the first Salesforce instructor at Pluralsight:
-
-   * BOOK: <a target="_blank" href="https://www.amazon.com/dp/193675410X">Advanced Apex Programming for Salesforce.com and Force.com Paperback – September 1, 2015</a>
+Dan Appleman:
+   * BOOK: <a target="_blank" href="https://www.amazon.com/dp/193675410X">Advanced Apex Programming for Salesforce.com and Force.com – September 1, 2015</a>
    * <a target="_blank" href="https://advancedapex.com/blog/">advancedapex.com/blog</a> since Jun 2012, the companion to book "Advanced Apex Programming for Salesforce.com and Force.com"
    
-   * Pluralsight video: <a target="_blank" href="https://www.pluralsight.com/courses/javascript-in-salesforce-getting-started">Getting Started with JavaScript in Salesforce</a> Jan 24 2017 2h 18m
-   * Pluralsight video: <a target="_blank" href="https://www.pluralsight.com/courses/forcedotcom-apex-for-developers">
+   Dan Appleman was the first Salesforce instructor at Pluralsight:
+
+   * video: <a target="_blank" href="https://www.pluralsight.com/courses/javascript-in-salesforce-getting-started">Getting Started with JavaScript in Salesforce</a> Jan 24 2017 2h 18m
+   * video: <a target="_blank" href="https://www.pluralsight.com/courses/forcedotcom-apex-for-developers">
    Force.com and Apex Fundamentals for Developers</a> Sep 8 2016 [3h 45m]
-   * Pluralsight video: <a target="_blank" href="https://www.pluralsight.com/courses/salesforce-developers-career-strategies-opportunities">Career Strategies and Opportunities for Salesforce Platform Developers</a> Sep 2 2015 [1h 42m]
-   * Pluralsight video: <a target="_blank" href="http://www.pluralsight.com/courses/forcedotcom-dotnet-developers">Force.com for .NET Developers</a> 25 Feb 2013 [1h 37m]
+   * video: <a target="_blank" href="https://www.pluralsight.com/courses/salesforce-developers-career-strategies-opportunities">Career Strategies and Opportunities for Salesforce Platform Developers</a> Sep 2 2015 [1h 42m]
+   * video: <a target="_blank" href="http://www.pluralsight.com/courses/forcedotcom-dotnet-developers">Force.com for .NET Developers</a> 25 Feb 2013 [1h 37m]
 
 Daniel Peter (<a target="_blank" href="http://twitter.com/danieljpeter">@danieljpeter</a>), MVP Dev. Group Leader in Bay Area Foster City, CA:
 
@@ -452,22 +453,23 @@ Philip Weinmeister (<a target="_blank" href="https://twitter.com/PhilWeinmeister
 
 Prajakta Samant, #Salesforce #evangelist (<a target="_blank" href="https://twitter.com/prajsszz">@prajsszz</a>) in Pune, India.
 
-Rakesh Gupta, <a target="_blank" href="https://www.linkedin.com/in/rakeshistom/">4x Salesforce MVP | Salesforce Architect Trainer</a>:
+Rakesh Gupta, <a target="_blank" href="https://www.linkedin.com/in/rakeshistom/">4x Salesforce MVP | Salesforce Architect Trainer</a> in Mumbai, India:
    * Packt BOOK: <a target="_blank" href="https://www.amazon.com/dp/178934431X">Salesforce Process Builder Quick Start Guide: Build complex workflows by clicking, not coding – July 24, 2018</a>
    * Packt BOOK: <a target="_blank" href="https://www.amazon.com/Mastering-Salesforce-Administration-Rakesh-Gupta/dp/1786463180">Mastering Salesforce CRM Administration – March 27, 2017</a>
+   * Developing Application with Salesforce Chatter
+   * Salesforce.com Customization Handbook
+   * Learning Salesforce Visual Workflow
+   * Learning Salesforce Visual Workflow (Second Edition) 
 
-Rebecca Dente (@sfdc_nerd) was in the inaugural class of Salesforce MVPs, a <a target="_blank" href="https://www.linkedin.com/in/rdente">MTI Partner</a> in Boston.
+Rebecca Dente (<a target="_blank" href="http://twitter.com/sfdc_nerd">@sfdc_nerd</a>) was in the inaugural class of Salesforce MVPs, a <a target="_blank" href="https://www.linkedin.com/in/rdente">MTI Partner</a> in Boston
 
-Robert Watson (@WatsonRobertB)
-
+Robert Watson (<a target="_blank" href="http://twitter.com/WatsonRobertB">@WatsonRobertB</a>)
    * VIDEO: <a target="_blank" href="https://app.pluralsight.com/library/search?i=1&m_Sort=displayDate&q=salesforce&q1=course&x1=categories">Play by Play: Battle of the IDEs</a>
 
 Rubin Ortiz 
-
    * <a target="_blank" href="http://www.salesforceben.com/platform-developer-certification-guide-tips/">salesforceben.com</a>
 
 Sagar Sindhi from Rajpura, India:
-
    * <a target="_blank" href="https://sagarsindhiblog.wordpress.com/">sagarsindhiblog.wordpress.com</a> since May 2017 
 
 Sara Morgan Nettles (<a target="_blank" href="http://twitter.com/SaraHasNoLimits">@SaraHasNoLimits</a>), Member of Team Trailhead, Certified Salesforce Advanced Developer and Platform Developer I and II, Developer at Synaptic AP from Louisiana, USA:
@@ -489,7 +491,6 @@ Santanu Boral, Salesforce MVP and 15x certified:
    since Jan 2017 
 
 Scott VonSchilling, Certified Salesforce advanced developer, from New Jersey:
-
    * <a target="_blank" href="https://scottvonschilling.com/">scottvonschilling.com</a>
    since Jul 2014 
 
@@ -614,7 +615,6 @@ Charlie Isaacs (<a target="_blank" href="https://twitter.com/charlieisaacs">@cha
 
 <a name="ChristopheCoenraets"></a>
 Christophe Coenraets (<a target="_blank" href="https://twitter.com/ccoenraets">@ccoenraets</a>), Principal Developer Evangelist, in Boston:
-
    * <a target="_blank" href="https://coenraets.org/blog/">coenraets.org/blog</a>
    focuses on mobile application development, [Read More](http://coenraets.org/blog/bio/)
    * <a target="_blank" href="https://www.youtube.com/watch?v=G931jWBnxHU">Youtube: Advanced Lightning Components</a> Jul 3, 2017
