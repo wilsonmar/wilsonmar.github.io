@@ -30,6 +30,7 @@ This page presents steps and information for those new to Salesforce to get "plu
    * FLS = Field Level Security
    * PAM = Partner Account Manager (email isvpartners@salesforce.com)
    * MOAR = MuleSoft Anypoint Platform
+   * OWD = Organization-Wide Default
    * SFDC is an acronym for "Salesforce dot com"
    <br /><br />
 
