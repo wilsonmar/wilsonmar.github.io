@@ -160,12 +160,13 @@ Christine Pereira, founder of SoulfulSelling.com, created <a target="_blank" hre
    * <a target="_blank" href="https://www.lynda.com/Salesforce-tutorials/Salesforce-Sales-Managers/555794-2.html">Salesforce for Customer Service</a> [50:43] 7/1/2017
 
 <a name="DanAppleman"></a>
-Dan Appleman:
+Dan Appleman (<a target="_blank" href="http://twitter.com/danappleman">@danappleman</a>):
    * BOOK: <a target="_blank" href="https://www.amazon.com/dp/193675410X">Advanced Apex Programming for Salesforce.com and Force.com – September 1, 2015</a>
    * <a target="_blank" href="https://advancedapex.com/blog/">advancedapex.com/blog</a> since Jun 2012, the companion to book "Advanced Apex Programming for Salesforce.com and Force.com"
    
    Dan Appleman was the first Salesforce instructor at Pluralsight:
 
+   * video: <a target="_blank" href="https://www.pluralsight.com/courses/salesforce-enterprise-building-private-blockchain">Building an Enterprise Private Blockchain on Salesforce</a> 21 Feb 2018 [1h 27m]
    * video: <a target="_blank" href="https://www.pluralsight.com/courses/javascript-in-salesforce-getting-started">Getting Started with JavaScript in Salesforce</a> Jan 24 2017 2h 18m
    * video: <a target="_blank" href="https://www.pluralsight.com/courses/forcedotcom-apex-for-developers">
    Force.com and Apex Fundamentals for Developers</a> Sep 8 2016 [3h 45m]
