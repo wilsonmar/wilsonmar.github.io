@@ -30,8 +30,11 @@ This page presents steps and information for those new to Salesforce to get "plu
    * FLS = Field Level Security
    * PAM = Partner Account Manager (email isvpartners@salesforce.com)
    * MOAR = MuleSoft Anypoint Platform
+   * NPSP = Non-Profit Success Pack
    * OWD = Organization-Wide Default
-   * SFDC is an acronym for "Salesforce dot com"
+   * SFDC = an acronym for "Salesforce dot com"
+   * SOQL = Salesforce Object Query Language
+   * TDTM = Table-Driven Trigger Management
    <br /><br />
 
 * Use a game to learn them <a target="_blank" href="https://quizlet.com/306205592/">on my Quizlet</a>. Please let me know if you see any terms missing.
@@ -435,23 +438,6 @@ Miss being at a Salesforce event? Buy the branded clothing, office supplies, ele
 https://partners.salesforce.com/s/education/consultants/Consulting_Program
 
    * <a target="_blank" href="https://www.linkedin.com/company/salesforce-consulting-group/">Salesforce Consulting Group</a> = http://www.sfcg.ca/
-
-
-## Learning Resources
-
-Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/salesforce_advantage">
-Navigate the Salesforce Advantage</a> [1 hr 20 mins] consists of:
-
-   * Salesforce Success Model
-   * Salesforce Cloud Benefits
-   * Salesforce Technology Model
-   * Salesforce Ecosystem
-
-<a name="WorkWithMe"></a>
-
-##  Work with me
-
-I am interested into automatic generation of test code, Einstein Machine Learning AI, IoT.
 
 
 ## More about Salesforce #
