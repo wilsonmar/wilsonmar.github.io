@@ -378,16 +378,13 @@ Mike Topalovich, 9x certified Salesforce architect, developer and part time CTO 
    * <a target="_blank" href="http://topalovich.com/">topalovich.com</a>
    since Aug 2007 
 
+<a name="MikeWheeler"></a>
 Mike Wheeler has several (highly rated) video courses on Udemy:
 
-   * <a target="_blank" href="https://www.udemy.com/salesforce-sales-cloud-consultant/">Salesforce Sales Cloud Consultant Certification Course</a>
-   103 lectures 10.5 hours
-   * <a target="_blank" href="https://www.udemy.com/salesforce-service-cloud-certification/">Salesforce Service Cloud Consultant Certification Course</a>
-   115 lectures 10.5 hours
-   * <a target="_blank" href="https://www.udemy.com/salesforce-administrator/">The Complete Salesforce Administrator Certification Course</a>
-   89 lectures 11 hours
-   * <a target="_blank" href="https://www.udemy.com/salesforce-platform-app-builder/">Salesforce Platform App Builder Developer 401 Certification</a>
-   186 lectures 20 hours
+   * <a target="_blank" href="https://www.udemy.com/salesforce-sales-cloud-consultant/">Salesforce Sales Cloud Consultant Certification Course</a> 103 lectures 10.5 hours
+   * <a target="_blank" href="https://www.udemy.com/salesforce-service-cloud-certification/">Salesforce Service Cloud Consultant Certification Course</a> 115 lectures 10.5 hours
+   * <a target="_blank" href="https://www.udemy.com/salesforce-administrator/">The Complete Salesforce Administrator Certification Course</a> 89 lectures 11 hours
+   * <a target="_blank" href="https://www.udemy.com/salesforce-platform-app-builder/">Salesforce Platform App Builder Developer 401 Certification</a> 186 lectures 20 hours
    * <a target="_blank" href="https://www.udemy.com/salesforce-administrator-certification-practice-tests/">Salesforce Administrator Certification Practice Tests</a> 3 full practice tests of 60 each. 180 questions total
    * <a target="_blank" href="https://www.udemy.com/salesforce-platform-app-builder-certification-practice-tests/">Salesforce Platform App Builder Certification Practice Tests</a> 2 full practice tests of 60 questions each
 
@@ -466,8 +463,12 @@ Rebecca Dente (<a target="_blank" href="http://twitter.com/sfdc_nerd">@sfdc_nerd
 Robert Watson (<a target="_blank" href="http://twitter.com/WatsonRobertB">@WatsonRobertB</a>)
    * VIDEO: <a target="_blank" href="https://app.pluralsight.com/library/search?i=1&m_Sort=displayDate&q=salesforce&q1=course&x1=categories">Play by Play: Battle of the IDEs</a>
 
-Rubin Ortiz 
+Rubin Ortiz
    * <a target="_blank" href="http://www.salesforceben.com/platform-developer-certification-guide-tips/">salesforceben.com</a>
+
+Ryan Ozimek (<a target="_blank" href="https://twitter.com/cozimek">@cozimek</a>), Social Entrepreneur as CEO of <a target="_blank" href="https://www.picnet.net/">picnet.net</a> and classy Joomla developer at <a target="_blank" href="https://www.SoapBoxEngage.com/">SoapBox Engage</a>:
+  * Not only did he have a hand at creating NPSP, he's still evangelizing it (on his own dime) with conferences for non-profits he facilitates: annual <a target="_blank" href="http://www.npspday.org/events">NPSP Day around the world</a>.
+   * GitHub: <a target="_blank" href="http://github.com/cozimek/">cozimek</a>
 
 Sagar Sindhi from Rajpura, India:
    * <a target="_blank" href="https://sagarsindhiblog.wordpress.com/">sagarsindhiblog.wordpress.com</a> since May 2017 
