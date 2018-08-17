@@ -468,6 +468,7 @@ Rubin Ortiz
 
 Ryan Ozimek (<a target="_blank" href="https://twitter.com/cozimek">@cozimek</a>), Social Entrepreneur as CEO of <a target="_blank" href="https://www.picnet.net/">picnet.net</a> and classy Joomla developer at <a target="_blank" href="https://www.SoapBoxEngage.com/">SoapBox Engage</a>:
   * Not only did he have a hand at creating NPSP, he's still evangelizing it (on his own dime) with conferences for non-profits he facilitates: annual <a target="_blank" href="http://www.npspday.org/events">NPSP Day around the world</a>.
+   * Newsletter: <a target="_blank" href="https://www.soapboxengage.com/pub-crawl">"Pub Crawl"</a> summarizes the entire <a target="_blank" href="http://www.salesforce.org/help/power-of-us-hub/">Power of Us Hub</a>
    * GitHub: <a target="_blank" href="http://github.com/cozimek/">cozimek</a>
 
 Sagar Sindhi from Rajpura, India:
