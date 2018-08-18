@@ -55,6 +55,9 @@ https://www.masonfrank.com/salesforce-salary-survey/</a>
 
    * <a target="_blank" href="https://developer.salesforce.com/forums?communityId=09aF00000004HMGIA2#!/feedtype=RECENT&dc=Jobs_Board&criteria=ALLQUESTIONS">Job Board on Salesforce</a> have postings by both job seekers and recruiters.
 
+   * Facebook group: <a target="_blank" href="https://www.facebook.com/groups/658045354373001/">Salesforce job seekers</a>
+
+
 ## Consulting Partners and ISVs (Independent Software Vendors)
 
 Top Salesforce partners are "Master Certified by Salesforce" in all 12 industries and cloud platforms.

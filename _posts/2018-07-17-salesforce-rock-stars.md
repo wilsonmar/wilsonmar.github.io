@@ -379,7 +379,7 @@ Mike Topalovich, 9x certified Salesforce architect, developer and part time CTO 
    since Aug 2007 
 
 <a name="MikeWheeler"></a>
-Mike Wheeler is the "dean" of Salesforce, with several low-cost yet deep content video courses on Udemy:
+Mike Wheeler is the "dean" of independent Salesforce training, with several low-cost yet deep content video courses on Udemy:
    * <a target="_blank" href="https://www.facebook.com/groups/MikeWheelerMedia/">Facebook group</a>
    * <a target="_blank" href="https://www.youtube.com/channel/UCATFPXgPiwxUIFerDb5lN1w">YouTube channel</a>
    * <a target="_blank" href="https://trailhead.salesforce.com/users/005500000062BWFAA2/trailmixes/mike-wheeler-administrator-certification-trailmix">His Trailmix for learning Admin</a>
