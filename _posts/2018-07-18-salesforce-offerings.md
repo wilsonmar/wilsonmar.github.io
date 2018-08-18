@@ -79,7 +79,22 @@ The top competitors to Salesforce are:
 
 ### Languages
 
-en, fi, fr, de, es, it, ja, ko, pt-br, ru, sv, th, zh-cn, zh-tw, da, nl-nl
+* en = english
+* fi = finnish
+* fr = french
+* de = deutch (German)
+* es = espania (Spanish)
+* it = italian
+* ja = japanese
+* ko = korean
+* pt-br = Portuguese (as written and spoken in Brazil)
+* ru = russian
+* sv = swedish
+* th = thai
+* zh-cn = chinese (simplified)
+* zh-tw = chinese taiwan (traditional)
+* da = danish
+* nl-nl = Standard Dutch (as spoken in The Netherlands) 
 
 
 <a name="Clouds"></a>
