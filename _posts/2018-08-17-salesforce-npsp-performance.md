@@ -1,4 +1,20 @@
-salesforce-npsp-performance.md
+---
+layout: post
+title: "Salesforce NPSP performance"
+excerpt: "How Salesforce uses Gatling to measure speed and capacity of microservices for non-profit add-in NPSP"
+tags: [salesforce, gatling]
+file: salesforce-npsp-performance.md
+image:
+# feature: sf-ohana-1900x500-178173.jpg
+  feature: https://user-images.githubusercontent.com/300046/43407734-bd6303fe-93dc-11e8-87df-302ddbc274ff.jpg
+  credit: Salesforce
+  creditlink: https://trailhead.salesforce.com/trailblazers
+comments: true
+---
+<i>{{ page.excerpt }}</i>
+<hr />
+
+{% include _toc.html %}
 
 This article examines the repo used for measurement of performance (speed) of microservices running the Salesforce NPSP (Non-Profit Success Pack). This is not documentation, but a step-by-step exploration because there are so few good examples of how Gatling is used for performance testing. And I'd like to be useful to non-profits using Salesforce.
 
@@ -268,3 +284,11 @@ Simulation performance.simulations.Injector started...
 <a target="_blank" href="http://www.salesforce.org/power-of-us"> The Power of Us" community</a>.
 
 https://github.com/salesforce/vulnreport
+
+<hr />
+
+## More about Salesforce #
+
+This is one of a series about Salesforce
+
+{% include salesforce_links.html %}
