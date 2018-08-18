@@ -16,7 +16,7 @@ comments: true
 
 {% include _toc.html %}
 
-This is not documentation, but a step-by-step exploration. There are so few good examples of how Gatling is used. And I'd like to be useful to non-profits using Salesforce.
+This is not documentation, but a step-by-step exploration tour with commentary. There are so few good examples of how Gatling is used. And I'd like to be useful to non-profits using Salesforce.
 
 1. Visit the repo:
 
@@ -49,6 +49,10 @@ This is not documentation, but a step-by-step exploration. There are so few good
 
    <pre><strong>brew info gradle</strong></pre>
 
+1. Edit file gradlew. Notice it has no file extension because the first line defines it as a shell file:
+
+   <pre>\#!/usr/bin/env sh</pre>
+
 4. On a Mac, set permissions:
          
    <pre><strong>chmod +x gradlew</strong></pre>
@@ -69,11 +73,6 @@ This is not documentation, but a step-by-step exploration. There are so few good
    
    See <a target="_blank" href="https://wilsonmar.github.io/scala-programming/">My notes on Scala programming</a>
 
-   The NPSP performance framework is built on <strong>Gatling</strong> which is a Netty-based Aka framework written in Java and thus runs on top of a Java Virtual Machine.
-
-   PROTIP: The advantage of Gatling over competiting tools such as LoadRunner and JMeter is that
-   those other tools implement each virtual users as threads. However, Gatling implements virtual users as asynchronous messages, which scales much better and can deal easily with thousands of concurrent users.
-
    ### Gatling
 
 1. The "dependencies" section within "build.gradle" mentions a Gatling version:
@@ -85,14 +84,7 @@ This is not documentation, but a step-by-step exploration. There are so few good
     compile group: 'io.gatling.highcharts', name: 'gatling-charts-highcharts', version: gatlingVersion
    </pre>
 
-   See the <a target="_blank" href="https://gatling.io/2017/04/21/gatling-2-2-5/">blog about 2.2.5 being released on 21 April 2017</a>.
-
-   PROTIP: <a target="_blank" href="https://gatling.io/2018/07/24/gatling-frontline-on-aws-marketplace/">On July 24, 2018 it was announced</a> that the Enterprise version of Gatling is available for rent <a target="_blank" href="https://aws.amazon.com/marketplace/pp/B07DTWPZG8">on the AWS Marketplace of Amazon Linux server images</a>. See <a target="_blank" href="https://gatling.io/gatling-frontline/product-sheet/">the product sheet</a> about Grafana and plug-ins for CI/CD Jenkins, Bamboo, TeamCity.
-
-   QUESTION: Gatling 3 in the next version but it has not been updated since August 2017 at https://oss.sonatype.org/content/repositories/snapshots/io/gatling/highcharts/gatling-charts-highcharts/3.0.0-SNAPSHOT/
-
 1. BLAH: The last release on GitHub was April 14, 2016 at:
-
    https://github.com/gatling/gatling/releases
 
    Gatling CEO Stephane Landelle (slandelle) explains in https://github.com/gatling/gatling/issues/3288
@@ -105,15 +97,27 @@ This is not documentation, but a step-by-step exploration. There are so few good
 
    There was some disagreement on this topic vs. GitHub's explanation of how it's designed to use tags and releases: https://help.github.com/articles/about-releases/
 
-   https://github.com/gatling/gatling#the-application-under-test-
-
 1. See current version of docs at:
 
    https://gatling.io/docs/current/general/
 
+   See the <a target="_blank" href="https://gatling.io/2017/04/21/gatling-2-2-5/">blog about 2.2.5 being released on 21 April 2017</a>.
+
+   The NPSP performance framework is built on <strong>Gatling</strong> which is a Netty-based Aka framework written in Java and thus runs on top of a Java Virtual Machine.
+
+   PROTIP: The advantage of Gatling over competiting tools such as LoadRunner and JMeter is that
+   those other tools implement each virtual users as threads. However, Gatling implements virtual users as asynchronous messages, which scales much better and can deal easily with thousands of concurrent users.
+
+   QUESTION: Gatling 3 in the next version but it has not been updated since August 2017 at https://oss.sonatype.org/content/repositories/snapshots/io/gatling/highcharts/gatling-charts-highcharts/3.0.0-SNAPSHOT/
+
+   PROTIP: <a target="_blank" href="https://gatling.io/2018/07/24/gatling-frontline-on-aws-marketplace/">On July 24, 2018 it was announced</a> that the Enterprise version of Gatling is available for rent <a target="_blank" href="https://aws.amazon.com/marketplace/pp/B07DTWPZG8">on the AWS Marketplace of Amazon Linux server images</a>. See <a target="_blank" href="https://gatling.io/gatling-frontline/product-sheet/">the product sheet</a> about Grafana and plug-ins for CI/CD Jenkins, Bamboo, TeamCity.
+
+
 1. The marketing home page for Gatling is at https://gatling.io/
 
    NOTE: Gatling is open sourced by a company in France:
+
+   https://github.com/gatling/gatling#the-application-under-test-
 
 
    ### incaLoadTest in build.gradle
