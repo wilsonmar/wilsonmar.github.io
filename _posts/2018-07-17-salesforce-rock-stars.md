@@ -379,17 +379,21 @@ Mike Topalovich, 9x certified Salesforce architect, developer and part time CTO 
    since Aug 2007 
 
 <a name="MikeWheeler"></a>
-Mike Wheeler has several (highly rated) video courses on Udemy:
+Mike Wheeler is the "dean" of Salesforce, with several low-cost yet deep content video courses on Udemy:
+   * <a target="_blank" href="https://www.facebook.com/groups/MikeWheelerMedia/">Facebook group</a>
+   * <a target="_blank" href="https://www.youtube.com/channel/UCATFPXgPiwxUIFerDb5lN1w">YouTube channel</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/users/005500000062BWFAA2/trailmixes/mike-wheeler-administrator-certification-trailmix">His Trailmix for learning Admin</a>
+
+   * <a target="_blank" href="https://www.udemy.com/salesforce-administrator/">The Complete Salesforce Administrator Certification Course</a> 89 lectures 11 hours
+   * <a target="_blank" href="https://www.udemy.com/salesforce-administrator-certification-practice-tests/">Salesforce Administrator Certification Practice Tests</a> 3 full practice tests of 60 each. 180 questions total
+
+   * <a target="_blank" href="https://www.udemy.com/salesforce-platform-app-builder/">Salesforce Platform App Builder Developer 401 Certification</a> 186 lectures 20 hours
+   * <a target="_blank" href="https://www.udemy.com/salesforce-platform-app-builder-certification-practice-tests/">Salesforce Platform App Builder Certification Practice Tests</a> 2 full practice tests of 60 questions each
 
    * <a target="_blank" href="https://www.udemy.com/salesforce-sales-cloud-consultant/">Salesforce Sales Cloud Consultant Certification Course</a> 103 lectures 10.5 hours
    * <a target="_blank" href="https://www.udemy.com/salesforce-service-cloud-certification/">Salesforce Service Cloud Consultant Certification Course</a> 115 lectures 10.5 hours
-   * <a target="_blank" href="https://www.udemy.com/salesforce-administrator/">The Complete Salesforce Administrator Certification Course</a> 89 lectures 11 hours
-   * <a target="_blank" href="https://www.udemy.com/salesforce-platform-app-builder/">Salesforce Platform App Builder Developer 401 Certification</a> 186 lectures 20 hours
-   * <a target="_blank" href="https://www.udemy.com/salesforce-administrator-certification-practice-tests/">Salesforce Administrator Certification Practice Tests</a> 3 full practice tests of 60 each. 180 questions total
-   * <a target="_blank" href="https://www.udemy.com/salesforce-platform-app-builder-certification-practice-tests/">Salesforce Platform App Builder Certification Practice Tests</a> 2 full practice tests of 60 questions each
 
 Missy Longshore, since 2009:
-
    * PODCAST: <a target="_blank" href="http://www.longshoreconsulting.com/adminhour.html">#AdminHour</a> First and Third Thursday every Month at 10am PT
    * <a target="_blank" href="https://nonprofitcrmsummit.com/p/salesforce-nonprofit-admin-magic-coaching-crew">Nonprofit CRM Summit</a> coaching for $400
    * <a target="_blank" href="https://nonprofitcrmsummit.com/p/lightning-boot-camp-full">Lightning boot camp $99</a> 
