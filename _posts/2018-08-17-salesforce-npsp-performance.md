@@ -133,8 +133,6 @@ This is not documentation, but a step-by-step exploration tour with commentary. 
    NOTE: "gradlew" is a generated gradle wrapper to make the project self contained and independent of the OS installed Gradle version. The Gradle wrapper documentation is found here: 
    https://docs.gradle.org/current/userguide/gradle_wrapper.html
 
-   "incaLoadTest" is defined within file "build.gradle" file at the root of the repo.
-
    The response begins with:
 
    <pre>Downloading https://services.gradle.org/distributions/gradle-4.0-all.zip
@@ -146,6 +144,10 @@ This is not documentation, but a step-by-step exploration tour with commentary. 
    <pre>/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/bin/jav</pre>
 
    ### Other tasks in build.gradle
+
+1. Use a text editor to open file "build.gradle" at the root of the repo.
+
+   "incaLoadTest" is defined within file "build.gradle".
 
 1. Notice the tasks in "build.gradle", listed here by the order found in the file:
 
