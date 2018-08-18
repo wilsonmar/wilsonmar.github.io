@@ -47,14 +47,11 @@ where I put the latest versions of each:
 ### Tom Preston-Werner 
 
 Co-founder of GitHub until 2014
-(<a target="_blank" href="https://twitter.com/mojombo">
-@mojombo</a>, 
+(<a target="_blank" href="https://twitter.com/mojombo">@mojombo</a>, 
 http://tom.preston-werner.com/)
 
-* <a target="_blank" href="https://vimeo.com/17118008">
-   Mastering Git Basics</a>
-   [53:22]
-   casual
+* <a target="_blank" href="https://vimeo.com/17118008">Mastering Git Basics</a> March 25, 2010
+   [<a target="_blank" href="http://www.erlang-factory.com/upload/presentations/244/ErlangFactroySFBay2010-TomPreston-Werner.pdf">slides</a>][53:22] casual sit down, yet deep. Windows install use msysgit. 
 
 ### Scott Chacon, CIO of GitHub
 
@@ -1263,7 +1260,7 @@ BTW I don't agree with Dan's statement: "I purposefully focus on the command lin
 
    Discard changes with <tt>git checkout <em>filename</em></tt>
 
-   Remove a cloned folder using <tt>rm -rf hello-world/<tt>.
+   Remove a cloned folder using <tt>rm -rf hello-world/</tt>.
 
 0. <a target="_blank" href="https://www.youtube.com/watch?v=QCNkz5BjDEs"> 
    Traversing Git History</a> [18:55] looks into the .git folder. git log. git show.
@@ -1665,16 +1662,17 @@ gh-branches branch of a repo in GitHub</a>.
 As of this writing, the last commit was in 2014, before Git 2.0.
 However, the book provides contrast of Git vs. Subversion.
 
-
 David Demaree wrote Git for Humans at<br />
 <a target="_blank" href="https://abookapart.com/products/git-for-humans/">
 https://abookapart.com/products/git-for-humans</a>
 
-Mark Lodato wrote the <a target="_blank" href="https://marklodato.github.io/visual-git-guide/index-en.html">Visual Git Guide</a>
+Mark Lodato's <a target="_blank" href="https://marklodato.github.io/visual-git-guide/index-en.html">Visual Git Guide</a> illustrates Git commands in detail.
+
+<a target="_blank" href="http://onlywei.github.io/explain-git-with-d3/#">Visualizing Git Concepts in D3</a> provides an interactive environment to illustrate the impact of git commands you type in.
 
 <a target="_blank" href="https://www.amazon.com/Rys-Git-Tutorial-Ryan-Hodson-ebook/dp/B00QFIA5OC">Ry's Git Tutorial Kindle book is free on Amazon</a>
 
-<a target="_blank" href="https://www.learnenough.com/git-tutorial">Learn Enough Git</a>
+<a target="_blank" href="https://www.learnenough.com/git-tutorial">LearnEnoughGit.com</a>
 
 
 ## More #

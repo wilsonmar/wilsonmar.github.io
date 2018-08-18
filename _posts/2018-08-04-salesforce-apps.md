@@ -52,6 +52,12 @@ This is a step-by-step hands-on tutorial to Apps and AppExchange, with technical
 1. Close the tab or or flip back to the "Home" page tab on your browser.
 1. Press Esc (escape) on your keyboard to exit the App Launcher dialog.
 
+### Apps you build
+
+Various tutorials
+
+The <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.fundamentals.meta/fundamentals/adg_app_arch.htm">Sample Recruiting App is within the Lightning Platform Fundamentals section of Developer Documentation</a>
+
 AppExchange partners build ISVforce apps and Lightning Platform OEM Embedded apps.
 
 ### ISVforce apps

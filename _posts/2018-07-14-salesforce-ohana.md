@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Salesforce Ohana"
-excerpt: "Glossary, Competitors, Social media, Communities, Events, Dreamforce, Store"
+excerpt: "Glossary, Offices, Financials, Roles, Personas, Podcasts, Social media, Communities, Events, Dreamforce, Store"
 tags: [salesforce]
 image:
 # feature: sf-ohana-1900x500-178173.jpg
