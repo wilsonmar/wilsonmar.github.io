@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Salesforce NPSP performance"
-excerpt: "How Salesforce uses Gatling to measure speed and capacity of microservices for non-profit add-in NPSP (Non-Profit Success Pack)"
+excerpt: "How Gatling is used to measure the speed and capacity of microservices for Salesforce add-on NPSP (Non-Profit Success Pack)"
 tags: [salesforce, gatling]
 file: salesforce-npsp-performance.md
 image:
@@ -16,10 +16,28 @@ comments: true
 
 {% include _toc.html %}
 
-This is not documentation, but a step-by-step exploration because there are so few good examples of how Gatling is used for performance testing. And I'd like to be useful to non-profits using Salesforce.
+This is not documentation, but a step-by-step exploration. There are so few good examples of how Gatling is used. And I'd like to be useful to non-profits using Salesforce.
+
+1. Visit the repo:
+
+   <pre>https://github.com/SalesforceFoundation</pre>
+
+   The GitHub account is associated with the website <a target="_blank" href="https://www.salesforce.org/">salesforce.org</a> (non-profit).
+
+   There are dozens of repositories.
+
+   Jason Lantz (jlantz) from Dallas is involved with it.
+
+2. Visit the Performance framework code base:
+
+   <pre>git clone https://github.com/SalesforceFoundation/performance</pre>
+
+   NOTE: I'm the first and only one to fork it to another GitHub account.
+
+   ### On your local machine
 
 1. Create and navigate to a container folder.
-2. Download or Git clone the Performance framework code base.
+2. Download or Git clone the Performance framework repo. Either the original or your fork:
 
    <pre>git clone https://github.com/SalesforceFoundation/performance</pre>
 
@@ -67,23 +85,18 @@ This is not documentation, but a step-by-step exploration because there are so f
     compile group: 'io.gatling.highcharts', name: 'gatling-charts-highcharts', version: gatlingVersion
    </pre>
 
-   NOTE: There was <a target="_blank" href="https://gatling.io/2017/04/21/gatling-2-2-5/">a blog about this on 21 April 2017</a>.
+   See the <a target="_blank" href="https://gatling.io/2017/04/21/gatling-2-2-5/">blog about 2.2.5 being released on 21 April 2017</a>.
 
    PROTIP: <a target="_blank" href="https://gatling.io/2018/07/24/gatling-frontline-on-aws-marketplace/">On July 24, 2018 it was announced</a> that the Enterprise version of Gatling is available for rent <a target="_blank" href="https://aws.amazon.com/marketplace/pp/B07DTWPZG8">on the AWS Marketplace of Amazon Linux server images</a>. See <a target="_blank" href="https://gatling.io/gatling-frontline/product-sheet/">the product sheet</a> about Grafana and plug-ins for CI/CD Jenkins, Bamboo, TeamCity.
 
-   Gatling 3 is due out 2018.
-
-1. The marketing home page for Gatling is at https://gatling.io/
-
-   NOTE: Gatling is open sourced by a company in France:
+   QUESTION: Gatling 3 in the next version but it has not been updated since August 2017 at https://oss.sonatype.org/content/repositories/snapshots/io/gatling/highcharts/gatling-charts-highcharts/3.0.0-SNAPSHOT/
 
 1. BLAH: The last release on GitHub was April 14, 2016 at:
 
    https://github.com/gatling/gatling/releases
 
    Gatling CEO Stephane Landelle (slandelle) explains in https://github.com/gatling/gatling/issues/3288
-   why the company stopped using releases and tags:
-
+   why the company stopped using GitHub releases and tags:
    * Github turns git tags into something they call "releases", that are actually only a source download. This might makes sense for scripting languages, but definitively not for a compiled one such as Scala. Because of Github abuse of the "release" word, people used to download this crap and then complain and open issues because they didn't get what they expected...
    * We used to use the sbt-release plugin, which would automatically create tags, but this plugin made our life a misery and broke several releases so we dropped it.
    * You can get the release content from the milestone
@@ -94,9 +107,13 @@ This is not documentation, but a step-by-step exploration because there are so f
 
    https://github.com/gatling/gatling#the-application-under-test-
 
-1. See the doc for a specific version at:
+1. See current version of docs at:
 
-   https://gatling.io/docs/2.3/general/
+   https://gatling.io/docs/current/general/
+
+1. The marketing home page for Gatling is at https://gatling.io/
+
+   NOTE: Gatling is open sourced by a company in France:
 
 
    ### incaLoadTest in build.gradle
@@ -229,11 +246,30 @@ Simulation performance.simulations.Injector started...
    https://github.com/gatling/gatling#the-application-under-test-
 
 
-   ### Data galore
+   ### Results
+
+   Run results are in the <stong>build</stong> folder.
+
+   * In ~/performance/build/tmp are temporary folders compileTestScala and scala/compilerAnalysis 
+
+   * In ~/performance/build/classes/scala/test/performance/simulations are classes from the Scala compiler that are run.
+
+   * In ~/performance/build/gatling-results are injector folders, each containing a simulation.log file.
+   There is a line for each assertion.
+
+   * In ~/performance/build/resources/test/performance/data are .csv files like <a name="sourcedata">source data</a>
+
+
+   <a name="sourcedata"></a>
+
+   ### Source Data Galore
+
+   See also https://github.com/SalesforceFoundation/NPSP-Test-Data
+   for 100X data generation.
 
 2. Navigate to framework's data directory so we can explore the files:
 
-   <pre>.../performance/src/test/resources/performance/data</pre>
+   <pre>~/performance/src/test/resources/performance/data</pre>
 
    The repo contains a significant amount of data values at path:
 
