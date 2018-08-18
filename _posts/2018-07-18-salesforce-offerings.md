@@ -90,20 +90,20 @@ Salesforce uses the word "cloud" to brand <strong>Salesforce apps (applications)
 
    * Analytic Cloud - Business intelligence and analytics software solutions with the "Einstein" brand
    * Commerce Cloud engages shoppers for e-commerce, with order management
-   * <a target="_blank" href="http://certification.salesforce.com/communitycloud">Commmunity Cloud</a> - Connect customers, partners, and employees
-   * <a target="_blank" href="http://certification.salesforce.com/salescloud">Sales Cloud</a> - Complete CRM customer service solutions
-   * Government Cloud app
-   * <a target="_blank" href="https://status.salesforce.com/">Health Cloud</a> reports on the health of services by pod (within each region).
-   * <a target="_blank" href="https://www.salesforce.com/products/integration-cloud/overview/">Integration Cloud</a> Integration Builder includes the <strong>Mulesoft</strong> Anypoint Platform (bought by Salesforce in an exchange of stock May 2018)
+   * <a target="_blank" href="http://certification.salesforce.com/communitycloud">Commmunity Cloud</a> - Connect customers, partners, and employees [<a target="_blank" href="http://certification.salesforce.com/communitycloud">cert</a>]
+   * <a target="_blank" href="http://certification.salesforce.com/salescloud">Sales Cloud</a> - Complete CRM customer service solutions [<a target="_blank" href="http://certification.salesforce.com/salescloud">cert</a>]
+   * Government Cloud app 
+   * <a target="_blank" href="https://status.salesforce.com/">Health Cloud</a> for patient care [no cert?]
+   * <a target="_blank" href="https://www.salesforce.com/products/integration-cloud/overview/">Integration Cloud</a> Integration Builder includes the <strong>Mulesoft</strong> Anypoint Platform (bought by Salesforce in an exchange of stock May 2018) [no cert]
 
-   * <a target="_blank" href="http://certification.salesforce.com/marketingcloudconsultant">Marketing Cloud</a> Build and manage 1:1 customer journeys via email. From ExactTarget acquisition in 2013. It has its own query language. No free accounts here. [<a target="_blank" href="https://en.wikipedia.org/wiki/Salesforce_Marketing_Cloud">Wikipedia</a>]
+   * <a target="_blank" href="http://certification.salesforce.com/servicecloud">Service Cloud</a> - Sales force automation and CRM [<a target="_blank" href="http://certification.salesforce.com/servicecloud">cert</a>]
+   * Success Cloud [no cert?]
+   * <a target="_blank" href="http://certification.salesforce.com/marketingcloudconsultant">Marketing Cloud</a> Build and manage 1:1 customer journeys via email. From ExactTarget acquisition in 2013. It has its own query language. No free accounts here. [<a target="_blank" href="https://en.wikipedia.org/wiki/Salesforce_Marketing_Cloud">Wikipedia</a>, <a target="_blank" href="http://certification.salesforce.com/marketingcloudconsultant">cert</a>]
+
    * <a target="_blank" href="http://certification.salesforce.com/fieldservicelightningconsultant">
-   Field Service Lightning certification</a>
+   Field Service Lightning certification</a> [<a target="_blank" href="http://certification.salesforce.com/fieldservicelightningconsultant">cert</a>]
 
-   * <a target="_blank" href="https://www.salesforce.com/solutions/philanthropy/corporate-social-responsibility/">Philanthropy Cloud</a>
-
-   * <a target="_blank" href="http://certification.salesforce.com/servicecloud">Service Cloud</a> - Sales force automation and CRM
-   * Success Cloud 
+   * <a target="_blank" href="https://www.salesforce.com/solutions/philanthropy/corporate-social-responsibility/">Philanthropy Cloud</a> [no cert]
 
 Expertise on some of the clouds are proven by <a href="https://wilsonmar.github.io/salesforce-certifications/">"consultant" certification exams</a>.
 
