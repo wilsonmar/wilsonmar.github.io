@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Salesforce NPSP performance"
-excerpt: "How Salesforce uses Gatling to measure speed and capacity of microservices for non-profit add-in NPSP"
+excerpt: "How Salesforce uses Gatling to measure speed and capacity of microservices for non-profit add-in NPSP (Non-Profit Success Pack)"
 tags: [salesforce, gatling]
 file: salesforce-npsp-performance.md
 image:
@@ -16,7 +16,7 @@ comments: true
 
 {% include _toc.html %}
 
-This article examines the repo used for measurement of performance (speed) of microservices running the Salesforce NPSP (Non-Profit Success Pack). This is not documentation, but a step-by-step exploration because there are so few good examples of how Gatling is used for performance testing. And I'd like to be useful to non-profits using Salesforce.
+This is not documentation, but a step-by-step exploration because there are so few good examples of how Gatling is used for performance testing. And I'd like to be useful to non-profits using Salesforce.
 
 1. Create and navigate to a container folder.
 2. Download or Git clone the Performance framework code base.
@@ -88,9 +88,9 @@ This article examines the repo used for measurement of performance (speed) of mi
    * We used to use the sbt-release plugin, which would automatically create tags, but this plugin made our life a misery and broke several releases so we dropped it.
    * You can get the release content from the milestone
    * Tags would mostly be useful for unfriendly forks
+   <br /><br />
 
-   There was some disagreement on this topic.
-   https://help.github.com/articles/about-releases/
+   There was some disagreement on this topic vs. GitHub's explanation of how it's designed to use tags and releases: https://help.github.com/articles/about-releases/
 
    https://github.com/gatling/gatling#the-application-under-test-
 
@@ -168,11 +168,13 @@ This article examines the repo used for measurement of performance (speed) of mi
    * Injector_TestData.scala
    * Injector_Zuul.scala
    * Injector.scala
+   <br /><br />
 
-   The <pre>lib</pre> folder contains common code:
+   The <tt>lib</tt> folder contains common code:
 
    * CommonHeader.scala
    * JenkinsParam.scala
+   <br /><br />
 
 3. Edit file <tt>Injector.scala</tt>
 
@@ -185,7 +187,7 @@ import performance.simulations.lib.JenkinsParam._
    </pre>
 
 
-   1. Now back to the Terminal:
+1. Now back to the Terminal:
 
    <pre>
 > Task :incaLoadTest
@@ -271,6 +273,7 @@ Simulation performance.simulations.Injector started...
    * QARequests.scala
    * SandboxGreenSanity.scala 
    * TestData.scala
+   <br /><br />
 
 1. View source for the "io.gatling.core" at:
 
