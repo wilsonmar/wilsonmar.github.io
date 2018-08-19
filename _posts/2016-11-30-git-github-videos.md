@@ -16,7 +16,7 @@ comments: true
 
 {% include _toc.html %}
 
-This page was created so that you can search for a keyword to how various people talk about the same topic. This is because YouTube provides only a few on the same topic sought.
+<a target="_blank" href="https://wilsonmar.github.io/git-github-videos">This article</a> was created so that you can search for a keyword to how various people talk about the same topic. This is because YouTube provides only a few on the same topic sought.
 
 ## By Me - Wilson Mar
 
