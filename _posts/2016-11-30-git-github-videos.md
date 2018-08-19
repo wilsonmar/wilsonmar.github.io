@@ -774,22 +774,18 @@ For $300 per year, Pluralsight has purchased several other video training compan
 
 When LinkedIn bought Lynda in 2016, the whole Lynda library of videoes got included
 in LinkedIn's Premium subscription of $29/month.
-That means you get to send emails to strangers and learn as well.<br />
-
-Someone put the videos from
+It is also available free in many public libraries.
 <a target="_blank" href="https://www.linkedin.com/learning/git-essential-training/">
 https://www.linkedin.com/learning/git-essential-training</a>
-in YouTube. But realize that 
-
+and
 <a target="_blank" href="https://www.lynda.com/Git-tutorials/Git-Essential-Training/100222-2.html">
-   Git Essential Training released 24 Aug 2012</a>
-   [6h 25m]
+   Git Essential Training 24 Aug 2012</a> [6h 25m]
    by Kevin Skoglund
+<!--
    is in <a target="_blank" href="https://www.youtube.com/watch?v=vsqsRhxGyKo&list=PLb5HO8RZjX-kZnThtY4f4yKgb2CQWwh8c">
    this YouTube playlist</a> published Sep 26, 2015.
 
    CAUTION: You're missing the quizzes unless you're on Lynda.com.
-
 1) What is Git - 
 
 0. <a target="_blank" href="https://www.youtube.com/watch?v=vsqsRhxGyKo">
@@ -977,7 +973,7 @@ Go to Lynda.com for these:
 0. Exploring integrated development environments
 0. Exploring graphical user interfaces
 0. Understanding Git hosting
-
+-->
 
 ### Envato Tuts+
 
@@ -1131,7 +1127,7 @@ into a publishing, training, and consulting business at
 
 ### Ryan Ireland (Mijingo)
 
-A 40-video intro for $71 at<br />
+A 40-video intro for $71 at
 <a target="_blank" href="https://mijingo.com/git-essentials">
 https://mijingo.com/git-essentials</a> (or $289 with a one-hour call).
 Some of them:
@@ -1181,8 +1177,6 @@ such as autocomplete:
 7. <a target="_blank" href="https://www.youtube.com/watch?v=Ft2LXlaSEfs&list=PLhW3qG5bs-L8OlICbNX9u4MZ3rAt5c5GG&index=7">
    How To Add Eclipse Project To GitHub | How to Commit, Push, Pull from Eclipse to GitHub</a> [11:36] Nov 14, 2017
 
-
-
 ### Zach Govani
 
 On the Mobile Developers of Berkeley YouTube channel all on Sep 29, 2017 
@@ -1218,7 +1212,7 @@ https://www.linkedin.com/in/davidmahler/
 
 ### Corey Schafer
 
-Among his videos on Python is Git Tutorial series that focus on the most confusing aspects:
+Among his videos on Python is Git Tutorial series that focus on the most confusing aspects         :
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=HVsySz-h9r4">
    Command-Line Fundamentals</a> Aug 3, 2015 [30:32]
@@ -1227,12 +1221,11 @@ Among his videos on Python is Git Tutorial series that focus on the most confusi
 * <a target="_blank" href="https://www.youtube.com/watch?v=KLEDKgMmbBI">
    Using the Stash Command</a> Apr 17, 2015 [10:32]
 * <a target="_blank" href="https://www.youtube.com/watch?v=iCGrKFH2oeo">
-   Diff and Merge Tools</a> Apr 28, 2015 [9:37]
+   Diff and Merge Tools</a> Apr 28, 2015 [9:37] show install of brew cask install diffmerge
 * <a target="_blank" href="https://www.youtube.com/watch?v=iCGrKFH2oeo">
    Change DiffMerge Font-Size on Mac OSX</a> Apr 28, 2015 [2:13]
 * <a target="_blank" href="https://www.youtube.com/watch?v=iCGrKFH2oeo">
    Difference between "add -A", "add -u", "add .", and "add *"</a> Sep 22, 2015 [10:14]
-
 
 
 ### Jack Lotkowski "jacklot" (The Modern Coder)
@@ -1251,10 +1244,10 @@ Among his videos on Python is Git Tutorial series that focus on the most confusi
    How to resolve merge conflicts in Git</a> [10:58]
    Jan 22, 2017
 
+<a name="Gitschooldude"></a>
 ### Dan Gitschooldude
 
-From Sep 2015 to Nov 2016, <a target="_blank" href="https://gaming.youtube.com/channel/UCshmCws1MijkZLMkPmOmzbQ">
-this series</a> I think is the most in-depth among all videos on YouTube.
+From Sep 2015 to Nov 2016, <a target="_blank" href="https://gaming.youtube.com/channel/UCshmCws1MijkZLMkPmOmzbQ">this series</a> I think is the most in-depth among all videos on YouTube.
 No diagrams. Everything shown occurs on the command line, even the title of each video.
 
 BTW I don't agree with Dan's statement: "I purposefully focus on the command line usage of Git, because lets face it, if you're using a GUI with Git, you probably have no idea what's going on :P"
@@ -1584,15 +1577,12 @@ These videos have ads:
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=6UcjERNFTH4">
    Creating a new git repository</a> [8:33] Feb 1, 2016
-
 * <a target="_blank" href="https://www.youtube.com/watch?v=tICdLNBJVFA">
    Creating a git branch</a> [10:28]  Feb 1, 2016
-
 * <a target="_blank" href="https://www.youtube.com/watch?v=CEtqad1jM2E">
    Git Rebase Tutorial</a> [16:34] Mar 6, 2018
    Talks though a difficult to read https://git-scm.com/docs/git-rebase
    "never perform a rebase"
-
 * <a target="_blank" href="https://www.youtube.com/watch?v=__cR7uPBOIk">
    A Step by Step Guide for How to Resolve Git Merge Conflicts</a>
    [10:57] Mar 7, 2018
