@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Salesforce offerings"
-excerpt: "Clouds, Industries, Domains, GitHub, editions, pricing, features, versions"
+excerpt: "Competitors, Languages, Clouds, Industries, Domains, GitHubs, editions, pricing, features, versions"
 tags: [salesforce]
 file: salesforce-offerings.md
 image:
@@ -79,22 +79,25 @@ The top competitors to Salesforce are:
 
 ### Languages
 
+QUESTION: Is there a basis for sorting, other than English being on top:
+
 * en = english
-* fi = finnish
-* fr = french
 * de = deutch (German)
 * es = espania (Spanish)
+* fr = french
 * it = italian
 * ja = japanese
-* ko = korean
-* pt-br = Portuguese (as written and spoken in Brazil)
-* ru = russian
 * sv = swedish
-* th = thai
+* ko = korean
 * zh-cn = chinese (simplified)
 * zh-tw = chinese taiwan (traditional)
-* da = danish
+* pt-br = Portuguese (as written and spoken in Brazil)
 * nl-nl = Standard Dutch (as spoken in The Netherlands) 
+
+* fi = finnish
+* ru = russian
+* th = thai
+* da = danish
 
 
 <a name="Clouds"></a>
@@ -167,12 +170,10 @@ Salesforce, as a company, owns several domain names (some product offerings have
       * https://veterans.force.com/
       * https://???.lightning.force.com/
       <br /><br />
-      Instances starting with "cs" are sandbox environments.
 
-      Instances starting with "ap" are producution in Asia Pacific.
-
-      Instances starting with "na" are production in North America.
-
+      Instances starting with "cs" are sandbox environments.<br />
+      Instances starting with "ap" are producution in Asia Pacific.<br />
+      Instances starting with "na" are production in North America.<br />
       Instances starting with "eu" are producution in Europe (EMEA).
 
 <a name="OtherDomains"></a>
@@ -181,6 +182,7 @@ Salesforce, as a company, owns several domain names (some product offerings have
 
    * <a target="_blank" href="https://salesforceiq.com">Salesforceiq.com</a> [<a target="_blank" href="https://status.salesforceiq.com/">status</a>]
    * <a target="_blank" href="https://salesforce.org/">Salesforce.org</a> for non-profits
+   * <a target="_blank" href="https://site.com/">site.com</a> 
 
    * <a target="_blank" href="https://www.data.com/">Data.com</a> - B2B prospecting and data cleansing [<a target="_blank" href="https://www.data.com/trust/">status</a>]
    * <a target="_blank" href="https://www.desk.com/">Desk.com</a> - Customer Help Desk support for small business [<a target="_blank" href="https://status.desk.com/">status</a>]

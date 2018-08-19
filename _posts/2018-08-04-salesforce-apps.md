@@ -54,9 +54,13 @@ This is a step-by-step hands-on tutorial to Apps and AppExchange, with technical
 
 ### Apps you build
 
-Various tutorials
+Various tutorials:
 
-The <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.fundamentals.meta/fundamentals/adg_app_arch.htm">Sample Recruiting App is within the Lightning Platform Fundamentals section of Developer Documentation</a>
+   * The <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.fundamentals.meta/fundamentals/adg_app_arch.htm">Sample Recruiting App is within the Lightning Platform Fundamentals section of Developer Documentation</a>
+
+
+
+## Partner-built apps
 
 AppExchange partners build ISVforce apps and Lightning Platform OEM Embedded apps.
 
