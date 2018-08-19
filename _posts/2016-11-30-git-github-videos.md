@@ -1108,16 +1108,11 @@ It starts by diving right in with diff:
    https://www.sitepoint.com/premium/courses/introduction-to-git-2902">
    Introduction to Git course</a> as a prerequisite.
 
-### TechJini
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=RA4aQxWirKA">
-   Git Merge vs Rebase?</a> [7:40]
-
 
 ### Lambda School
 
 <a target="_blank" href="https://www.youtube.com/watch?v=2TqKJHhMnuw">
-This Git and Github video on Mar 5, 2018 [5:28]</a>
+This Git and Github video on Mar 5, 2018</a> [5:28]
 is the first of 12 sessions from the March '18 Mini Bootcamp by Lambda School.
 at https://github.com/LambdaSchool/Precourse/tree/master/Lesson1-Git
 And a Slack channel enabled interations during and after the live class.
@@ -1150,10 +1145,11 @@ Some of them:
 0. <a target="_blank" href="https://www.youtube.com/watch?v=QtXj9tt-RUE">
    How to Create and Apply Git Patches</a>
 
+<hr />
 
 <a name="FromIndividuals"></a>
 
-## From Individuals
+## Free from Individuals
 
 Several people, on their personal time, created videos for others to enjoy, for free:
 
@@ -1204,21 +1200,44 @@ On the Mobile Developers of Berkeley YouTube channel all on Sep 29, 2017
    How to use .gitignore files</a> [4:45] 
 
 
-### David Mahler
+### @DavidMahler
+
+https://www.linkedin.com/in/davidmahler/
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=uR6G2v_WsRA">
     Introduction to Git - Core Concepts</a> [28:37] Jun 21, 2017
 * <a target="_blank" href="https://www.youtube.com/watch?v=FyAAIHHClqI">
     Introduction to Git - Branching and Merging</a> [28:47] Sep 18, 2017
+* <a target="_blank" href="https://www.youtube.com/watch?v=Gg4bLk8cGNo">
+    Introduction to Git - Remotes</a> [31:15] Mar 27, 2018
+
+### TechJini
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=RA4aQxWirKA">
+   Git Merge vs Rebase?</a> [7:40]
+
+### Corey Schafer
+
+Among his videos on Python is Git Tutorial series that focus on the most confusing aspects:
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=HVsySz-h9r4">
+   Command-Line Fundamentals</a> Aug 3, 2015 [30:32]
+* <a target="_blank" href="https://www.youtube.com/watch?v=FdZecVxzJbk">
+   Fixing Common Mistakes and Undoing Bad Commits</a> Oct 26, 2015 [21:30]
+* <a target="_blank" href="https://www.youtube.com/watch?v=KLEDKgMmbBI">
+   Using the Stash Command</a> Apr 17, 2015 [10:32]
+* <a target="_blank" href="https://www.youtube.com/watch?v=iCGrKFH2oeo">
+   Diff and Merge Tools</a> Apr 28, 2015 [9:37]
+* <a target="_blank" href="https://www.youtube.com/watch?v=iCGrKFH2oeo">
+   Change DiffMerge Font-Size on Mac OSX</a> Apr 28, 2015 [2:13]
+* <a target="_blank" href="https://www.youtube.com/watch?v=iCGrKFH2oeo">
+   Difference between "add -A", "add -u", "add .", and "add *"</a> Sep 22, 2015 [10:14]
 
 
 
+### Jack Lotkowski "jacklot" (The Modern Coder)
 
-### Jack Lotkowski
-
-"jacklot" (The Modern Coder)
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=f1wnYdLEpgI&t=13s">
+* <a target="_blank" href="https://www.youtube.com/watch?v=f1wnYdLEpgI">
    A better Git workflow with rebase (instead of merge)</a>
    [6:42] Nov 24, 2017 has animated graphics that overlay on top of commands and responses.
    "My team at Amazon [in Seattle] adopted this workflow."
