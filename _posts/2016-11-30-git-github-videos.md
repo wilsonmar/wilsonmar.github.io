@@ -520,19 +520,9 @@ How to Add & Clone Remote Repositories</a> [3:30] Nov 11, 2016 by Justin
 Tobias Guenther (tg@fournova.com in Germany) is a developer of Tower, a feature-rich git client for Mac OSX
 and (since 2017) for Windows.
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=M-O8ZNW9icQ&list=PLyCj4RCToz5DRDx3sJ4iW9i8D2G8OdHYH">
-   YouTube playlist to "Learn Git on the Command Line"</a>
-
-   Alternately, the same videos are shown at:
-
-   <a target="_blank" href="http://www.git-tower.com/learn/git/videos">
-   http://www.git-tower.com/learn/git/videos</a>
-
-   The web page has links to his $89 Advanced videos..
-
-
-<a target="_blank" href="https://www.youtube.com/channel/UCrl5xG-L4ZCFkR-bhUy9BVg">
-[Learn Git Video Course]</a>
+On his <a target="_blank" href="https://www.youtube.com/channel/UCrl5xG-L4ZCFkR-bhUy9BVg">
+YouTube channel</a> is a <a target="_blank" href="https://www.youtube.com/watch?v=M-O8ZNW9icQ&list=PLyCj4RCToz5DRDx3sJ4iW9i8D2G8OdHYH">
+playlist to "Learn Git on the Command Line"</a>:
 
 1. <a target="_blank" href="https://www.youtube.com/watch?v=M-O8ZNW9icQ&list=PLyCj4RCToz5BEcpZgwLfAhzxVRlDY3z-O">
   What is Version Control [3:08]</a>
@@ -556,6 +546,7 @@ and (since 2017) for Windows.
   Introducing to Branches [1:40]</a>
 11. <a target="_blank" href="https://www.youtube.com/watch?v=3iO4jxTtGbw&index=11&list=PLyCj4RCToz5DRDx3sJ4iW9i8D2G8OdHYH">
   Creating and Checking Out Branches [1:40]</a>
+
 12. <a target="_blank" href="https://www.youtube.com/watch?v=3ESL7ShlXTo&list=PLyCj4RCToz5BEcpZgwLfAhzxVRlDY3z-O&index=2">
   Merging Branches [1:40]</a>
 13. <a target="_blank" href="https://www.youtube.com/watch?v=vSl5v-Xf-3I&list=PLyCj4RCToz5BEcpZgwLfAhzxVRlDY3z-O&index=13">
@@ -563,6 +554,20 @@ and (since 2017) for Windows.
 14. <a target="_blank" href="https://www.youtube.com/watch?v=aRszgF44NWk&list=PLyCj4RCToz5BEcpZgwLfAhzxVRlDY3z-O&index=14">
   Dealing with Merge Conflicts [1:40]</a>
 
+   The following "Advanced" videos are also shown at:
+   <a target="_blank" href="http://www.git-tower.com/learn/git/videos">
+   http://www.git-tower.com/learn/git/videos</a> for $89:
+
+15. <a target="_blank" href="https://www.youtube.com/watch?v=rW5TEgxyllQ&index=15&list=PLyCj4RCToz5BEcpZgwLfAhzxVRlDY3z-O">
+   Undoing Things [5:44]</a>
+16. <a target="_blank" href="https://www.youtube.com/watch?v=yyWiSTIFYTw&index=16&list=PLyCj4RCToz5BEcpZgwLfAhzxVRlDY3z-O">
+   Tags [1:46]</a>
+17. <a target="_blank" href="https://www.youtube.com/watch?v=zSP7oGefvrk&index=17&list=PLyCj4RCToz5BEcpZgwLfAhzxVRlDY3z-O">Introduction to Remote Repositories [2:52]</a>
+18. <a target="_blank" href="https://www.youtube.com/watch?v=ITIJXrxk_n8&index=18&list=PLyCj4RCToz5BEcpZgwLfAhzxVRlDY3z-O">Connecting a Remote Repository [3:01]</a>
+19. <a target="_blank" href="https://www.youtube.com/watch?v=Ry0pk2nlBAs&index=19&list=PLyCj4RCToz5BEcpZgwLfAhzxVRlDY3z-O">Staging & Committing Changes [4:29]</a>
+20. <a target="_blank" href="https://www.youtube.com/watch?v=JV4mv5PNv9A&list=PLyCj4RCToz5BEcpZgwLfAhzxVRlDY3z-O&index=20">Publishing a Local Repository on a Remote [2:57]</a>
+21. <a target="_blank" href="https://www.youtube.com/watch?v=e2GXy88TFl0&list=PLyCj4RCToz5BEcpZgwLfAhzxVRlDY3z-O&index=21">Pushing Changes to a Remote [4:26]</a>
+22. <a target="_blank" href="https://www.youtube.com/watch?v=C_FCRx4qOBo&index=22&list=PLyCj4RCToz5BEcpZgwLfAhzxVRlDY3z-O">Pulling & Fetching Changes from a Remote [5:01]</a>
 23. <a target="_blank" href="https://www.youtube.com/watch?v=PnHlnx_nmCI&list=PLyCj4RCToz5BEcpZgwLfAhzxVRlDY3z-O&index=23">
   Rebase as an Alternative to Merge [5:17]</a>
 24. <a target="_blank" href="https://www.youtube.com/watch?v=wNIIx9PMSEc&list=PLyCj4RCToz5BEcpZgwLfAhzxVRlDY3z-O&index=24">
