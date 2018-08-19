@@ -1086,8 +1086,10 @@ It starts by diving right in with diff:
 0. <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/300/lesson/1/module/36">Introduction to Github</a> [07:44]
 0. <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/300/lesson/2/module/36">Secure Communication</a> [09:17]
 0. <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/300/lesson/3/module/36">Working with Github</a> [09:46]
+
 0. <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/301/lesson/1/module/36">Intro to Bitbucket and Secure Communication</a> [07:39]
 0. <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/301/lesson/2/module/36">Working with Bitbucket</a> [08:51]
+
 0. <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/305/lesson/1/module/36">GitLab Prerequisites</a> [07:59] on Centos
 0. <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/305/lesson/2/module/36">GitLab CE Download, Install and Configure</a> [10:42] CentOS7 on Apache curl from Amazon, Chef. Edit gitlab.rb for external_url. Default root / 5ivel!fe
 0. <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/305/lesson/3/module/36">GitLab Architecture</a> [09:24] <a target="_blank" href="https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/development/architecture.md">Component Diagram</a>

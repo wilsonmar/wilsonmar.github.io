@@ -169,7 +169,7 @@ Examples from 3rd-parties (partners):
 
 Here are some innovations:
 
-* When a button is pressed, send a ping into Salesforce.
+* When an IoT button is pressed, send a ping into Salesforce Chatter and update the database with a timestamp.
 
 * Adapt the <a target="_blank" href="https://www.target.com/p/google-vision-kit-aiy/-/A-53417081">$90 Google Vision Kit</a> with a stand-alone camera to capture images such as bar codes or QR codes, converts to text, then inserts that info into Salesforce. Also, photos categorization on Machine Learning object recognition services within Amazon, Azure, Google, IBM, etc. This by a Android/iOS smartphone or a custom device such as the $249 Amazon DeepLens.
 
@@ -179,6 +179,7 @@ Here are some innovations:
 
 * A <a target="_blank" href="https://medium.freecodecamp.org/how-to-build-a-serverless-url-shortener-using-aws-lambda-and-s3-4fbdf70cbf5c">URL Shortener utility</a>
 
+* Access several weather APIs associated with a contact, such as https://darksky.net/forecast/45.4852,-108.9704/us12/en
 
 ## Learning
 

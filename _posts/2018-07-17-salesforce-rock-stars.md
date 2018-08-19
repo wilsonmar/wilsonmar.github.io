@@ -393,6 +393,8 @@ Mike Wheeler is the "dean" of independent Salesforce training, with several low-
    * <a target="_blank" href="https://www.udemy.com/salesforce-sales-cloud-consultant/">Salesforce Sales Cloud Consultant Certification Course</a> 103 lectures 10.5 hours
    * <a target="_blank" href="https://www.udemy.com/salesforce-service-cloud-certification/">Salesforce Service Cloud Consultant Certification Course</a> 115 lectures 10.5 hours
 
+   PROTIP: The nice thing about Udemy courses is popular bookmarks by viewers are highlighted on videos.
+
 Missy Longshore, since 2009:
    * PODCAST: <a target="_blank" href="http://www.longshoreconsulting.com/adminhour.html">#AdminHour</a> First and Third Thursday every Month at 10am PT
    * <a target="_blank" href="https://nonprofitcrmsummit.com/p/salesforce-nonprofit-admin-magic-coaching-crew">Nonprofit CRM Summit</a> coaching for $400
