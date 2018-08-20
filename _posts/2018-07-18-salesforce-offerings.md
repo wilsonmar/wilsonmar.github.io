@@ -40,10 +40,10 @@ For end-users, get away from:
    * Data on local file directories (not accessible by others)
    * Time-intensive, manual steps
    <br /><br />
-The true power of Salesforce is the ease of customization.
+The true power of Salesforce is the ease of customization and, paradoxically, powerful features.
 Gartner rated Salesforce at the upper-right corner of its Magic Quandrant of systems for "citizen programmers". Salesforce provides an easy and fast way to create sophisticated apps:
 
-   * An app can be created in minutes using point and click, selecting sophisticated features that would take months to build in.
+   * An app can be created in minutes using point and click, selecting sophisticated features that have been built up over the years from features common among all Salesforce customers -- features that would not be economical for any single company to fund on their own.
    * Free development environments called "orgs" (organizations). (no 7 day trials)
    * Fine-grained access control
    * Extensible UI with clicks or code
