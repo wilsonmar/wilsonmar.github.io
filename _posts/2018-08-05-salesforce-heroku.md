@@ -20,6 +20,13 @@ The marketing home page for Heroku is at<br /><a target="_blank" href="https://w
 
 Salesforce bought Heroku some time ago.
 
+## Why Heroku
+
+Heroku provides (up to 5) free personal app websites for developers and provides a easy way to bring GitHub repositories to the public cloud. Heroku automatically scales apps running on its platform.
+
+Heroku can be setup to automatically deploy apps to a public web server whenever there is a Git push or pull request.
+
+
 ## Get started with Heroku
 
 1. Click this URL to register for an account:<br />
@@ -104,7 +111,7 @@ Email:
 Password (typing will be hidden): 
    </strong></tt>
 
-   If you got it right:
+   If you got it right, you see a message such as:
 
    <pre>
    Logged in as wilsonmar@gmail.com
@@ -536,6 +543,9 @@ described at https://elements.heroku.com/addons/heroku-postgresql
 1. Click Recently Viewed to select All Contacts.
 1. Scroll down to click Tim Barr, then click the Details tab and see that the Phone was changed from "(312) 596-1000".
 
+
+<a target="_blank" href="https://app.pluralsight.com/library/courses/github-integrating-node-applications/table-of-contents">Integrating Node Applications with GitHub</a> [1h 43m] 5 Aug 2016 by Daniel Stern
+covers deploying GitHub branches automatically with cloud-based deployment software Heroku, from acount sign-up to ...
 
 ## Other Trailhead Modules to Learn
 

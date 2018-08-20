@@ -663,21 +663,19 @@ series</a>:
 0. <a target="_blank" href="https://www.youtube.com/watch?v=uUuTYDg9XoI">
    What is Git?</a> [3:48]
 0. <a target="_blank" href="https://www.youtube.com/watch?v=QqP7YZlZEOo">
-   GIT: Installation, Configuration and First Commit</a> [7:21]
+   Installation, Configuration and First Commit</a> [7:21]
 0. <a target="_blank" href="https://www.youtube.com/watch?v=JTE2Fn_sCZs">
-   GIT: Working with Branches</a> [6:36]
+   Working with Branches</a> [6:36]
 0. <a target="_blank" href="https://www.youtube.com/watch?v=0iuqXh0oojo">
-   GIT: Merging and Workflow</a> [7:10]
-
+   Merging and Workflow</a> [7:10]
 0. <a target="_blank" href="https://www.youtube.com/watch?v=xgo60yhetZk&">
-   GIT: Git Flow Introduction</a> [5:06]
+   Git Flow Introduction</a> [5:06]
 0. <a target="_blank" href="https://www.youtube.com/watch?v=XbapC7nm49s&t=34s">
-   GIT: Git Flow Feature Branch and Pushing to GitHub</a>
-   [11:16] 6 Dec 2015
+   Git Flow Feature Branch and Pushing to GitHub</a>[11:16] 6 Dec 2015
 0. <a target="_blank" href="https://www.youtube.com/watch?v=mcWsX_setW4">
-   GIT: Git Flow and Github Pull Request</a> 
-   [6:53] 1 Jan 2016
+   Git Flow and Github Pull Request</a> [6:53] 1 Jan 2016
 
+<hr />
 
 ## From those who ask for money:
 
@@ -751,7 +749,7 @@ For $300 per year, Pluralsight has purchased several other video training compan
 
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/github-integrating-node-applications/">
    Integrating Node Applications with GitHub</a>
-   by Daniel Stern
+   by Daniel Stern (@danieljackstern)
 
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/git-advanced-tips-tricks/">
    Advanced Git Tips and Tricks May 02, 2016</a>
@@ -1387,11 +1385,18 @@ Among tutorials on JavaScript, WordPress, Sublime Text, CSS, and other front-end
    GitHub (Pushing to a Server)</a> [14:44]
    begins with getting an account.
 
+<a name="AmeerBasha"></a>
+
 ### Ameer Basha
 
-GIT QuickStart using Visual Studio:
+Among series on Blue Prism RPA is this GIT QuickStart using Visual Studio by Ameer from India:
 
-0. 3 <a target="_blank" href="https://www.youtube.com/watch?v=4yKQO7dUspI">
+CAUTION: The speaker constantly blows into the microphone, which is giving me an ear ache.
+
+0. <a target="_blank" href="https://www.youtube.com/watch?v=xellB6JaMV0&list=PLZVSOFwGx4zBAtge4Ub2Uq2rZ_O5Cs8qK&index=1">1.Overview Of GIT</a> Jan 7, 2017 [7:27]
+0. <a target="_blank" href="https://www.youtube.com/watch?v=OSe72HykXaM&list=PLZVSOFwGx4zBAtge4Ub2Uq2rZ_O5Cs8qK&index=2">How to Connect VS 2012/2013/2015 to an Existing GIT Project</a> [12:32]
+
+0. <a target="_blank" href="https://www.youtube.com/watch?v=4yKQO7dUspI">
    GIT Repository and clone</a> [11:36] 14 Jan 2017
 0. 4 <a target="_blank" href="https://www.youtube.com/watch?v=Xb7r3KETy6g">
    Working with branches</a> [16:54] 16 Jan 2017
