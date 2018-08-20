@@ -25,6 +25,10 @@ Technically, many of Salesforce's "cloud" and feature offerings share use of the
 
 ## Why Salesforce? #
 
+Companies that implement Salesforce CRM see improvements in sales of 30% because Salesforce
+provides a data collection system to implement a disciplined approach to selling.
+Data collection also enables Sales Managers to make decisions based on facts.
+
 For end-users, get away from:
 
    * Reliance on spreadsheets and Access databases
