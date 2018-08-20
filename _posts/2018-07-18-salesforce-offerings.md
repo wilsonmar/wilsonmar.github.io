@@ -25,35 +25,37 @@ Technically, many of Salesforce's "cloud" and feature offerings share use of the
 
 ## Why Salesforce? #
 
-Companies that implement Salesforce CRM see improvements in sales of 30% because Salesforce
+Companies that implement Salesforce CRM see improvement in sales of 30% because Salesforce
 provides a data collection system to implement a disciplined approach to selling.
 Data collection also enables Sales Managers to make decisions based on facts.
 
+   * Being on the cloud, all data in one place to do work, enabling teamwork globally
+   * Highly scalable without effort
+   * Integrations with Gmail, other systems
+   <br /><br />
 For end-users, get away from:
 
    * Reliance on spreadsheets and Access databases
    * Collaboration via email (new people joining can't get to conversation history)
    * Data on local file directories (not accessible by others)
    * Time-intensive, manual steps
+   <br /><br />
+The true power of Salesforce is the ease of customization.
+Gartner rated Salesforce at the upper-right corner of its Magic Quandrant of systems for "citizen programmers". Salesforce provides an easy and fast way to create sophisticated apps:
 
-For developers, Salesforce provides an easy and fast way to create apps:
-
-   * Being on the cloud, all data in one place to do work, enabling teamwork globally
-   * highly scalable instantly
+   * An app can be created in minutes using point and click, selecting sophisticated features that would take months to build in.
    * Free development environments called "orgs" (organizations). (no 7 day trials)
    * Fine-grained access control
-
    * Extensible UI with clicks or code
    * Free, full-featured copy of the Salesforce1 mobile Platform introduced 2013
    * API-first to integrate anything with everything
-   * Integrations with Gmail, other systems
    * Innovation in Machine Learning for personalization, Analytics
    * Innovation in object recognition
    * Use popular UI frameworks like Bootstrap, JQuery (in VisualForce classic)
    * <a href="#Lightning">Lightning</a> HTML UI components for user-developed apps.
 
    * Salesforce was designed with a <strong>metadata-driven</strong> architecture. Everything, including the code, configuration, and apps, is specified as metadata.
-
+   <br /><br />
 Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/drucker_customer_market_driven/">Drucker School—Customer & Market Strategy</a> [1 hr 45 mins] +700
 to turn your organization into a customer and market-driven powerhouse with these insights.
 
