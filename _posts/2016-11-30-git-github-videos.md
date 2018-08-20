@@ -1447,12 +1447,11 @@ Git - Resolving Conflicts</a> [7:39] Jan 12, 2017
    https://github.com/dustindavis/FluentGuard</a>
 
 
-### Seth House
+### Seth House (whiteinge)
 
 <a target="_blank" href="https://www.youtube.com/watch?v=AqDLz4yq_CI&list=PLA4B47B9B5F3691E3">
-Git mastery in 20-minute increments series</a>
-is the most fearless and deep.
-It was created when Seth is at cars.com in Jul 2012. 
+Git mastery in 20-minute increments series</a> is fearless and deep.
+It was created when Seth was at cars.com July 2012. 
 
 0. <a target="_blank" href="https://www.youtube.com/watch?v=AqDLz4yq_CI&list=PLA4B47B9B5F3691E3&index=1">
    Objects</a>
@@ -1620,20 +1619,53 @@ These videos have ads:
 9. <a target="_blank" href="https://www.youtube.com/watch?v=U3uwMr3u2Q4&list=PLriKzYyLb28nCh3jJLROcYBvj7ZO0l-3G&index=9">
    The Git revert command</a>
 
-## Other video classes #
+### SAP
 
-* <a target="_blank" href="https://open.sap.com/courses/git1">
+<a target="_blank" href="https://open.sap.com/courses/git1">
   SAP Cloud Platform Version Control within SAP Web IDE</a> video course
-  presented by Arnaldo Cavazos ran on OpenSAP.com April 10 - May 16, 2018.
-  This class may not be available after that.
-  The class focuses not on Git Bash commands but on <a target="_blank" href="https://account.hanatrial.ondemand.com/cockpit#/acc/p388752trial/service/webidecp/overview">SAP's Web IDE Full Stack</a> under Neo Trial (Europe Rot) of
-  <a target="_blank" href="
+  presented by Arnaldo Cavazos first ran on OpenSAP.com April 10 - May 16, 2018.
+
+The class focuses not on Git Bash commands but on <a target="_blank" href="https://account.hanatrial.ondemand.com/cockpit#/acc/p388752trial/service/webidecp/overview">SAP's Web IDE Full Stack</a> under Neo Trial (Europe Rot) of a Git service within <a target="_blank" href="
   https://cloudplatform.sap.com">
   https://cloudplatform.sap.com</a>
-  <a target="_blank" href="https://account.hanatrial.ondemand.com/cockpit#/acc/p388752trial/git">
-  Git Service</a>
 
-   https://git.hanatrial.ondemand.com/p388752trial/cprepo
+Week 1: 
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/7CSF8eMvTYvGrUG2fFFsFW">Unit 1: Understanding Distributed Version Control</a>
+   * Unit 2: Cloning Strategies: Cloning from SAP Cloud Platform
+   * Unit 3: Cloning Strategies: Cloning from External GitHub
+   * Unit 4: Cloning Strategies: Creating and Connecting Orphaned Repositories
+   * Unit 5: Saving, Staging, and Committing
+   * Unit 6: Stashing
+   * Unit 7: Local Branches
+   * Unit 8: Tags vs. Branches
+   * Unit 9: Reverting
+Week 2:
+   * Unit 1: Fast-Forward Merging
+   * Unit 2: Automatic 3-Way Merging
+   * Unit 3: 3-Way Merging with Conflicts
+   * Unit 4: Automatic Rebasing
+   * Unit 5: Rebasing with Conflicts
+   * Unit 6: Hard Resets
+   * Unit 7: Mixed Resets
+   * Unit 8: Problem-Solving with Web IDE Git
+   * Unit 9: Extra Tool: Cherry-Picking
+Week 3:
+   * Unit 1: Remote Branches
+   * Unit 2: Pushing
+   * Unit 3: Fetching
+   * Unit 4: Practice: Rebasing with Conflicts onto a Remote Branch
+   * Unit 5: Practice: 3-Way Merging onto a Remote Branch
+   * Unit 6: Extra Tools: Diff and Blame
+   * Unit 7: Workflows: Centralized
+   * Unit 8: Workflows: Feature Branch
+   * Unit 9: Workflows: Gitflow
+   * Unit 10: Bonus Lecture on Workflows: Distributed (aka Forking, aka Open Source)
+Week 4:
+   * Unit 1: Gerrit: Purpose and Typical Setup
+   * Unit 2: Gerrit Walkthrough (with 'Perfect' Code)
+   * Unit 3: Gerrit Walkthrough (with Problem Code)
+
+## Other video classes #
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=7YXsj7A9aYI">
    Basics of Git tutorial [52:20]</a> 26 Feb 2015
