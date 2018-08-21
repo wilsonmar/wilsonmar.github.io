@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Terraform from Hashicorp"
-excerpt: "I declare! Client-only immutable multi-cloud provisioning, with open-sourced Enterprise support"
+excerpt: "Client-only immutable multi-cloud provisioning, with open-sourced Enterprise support"
 tags: [DevOps, ecosystem]
 shorturl: "https://goo.gl/"
 image:
@@ -16,16 +16,16 @@ comments: true
 
 {% include _toc.html %}
 
-This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to 
+<a target="_blank" href="https://wilsonmar.github.io/terraform">This tutorial</a> is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to 
 using Hashicorp's Terraform to build, change, and version clusters of 
 <a href="#Immutable">immutable</a> servers (through load balancers) 
 running in clouds using <a href="#Idempotent">idempotent</a> declarative specifications.
 
-This tutorial integrates examples and wisdom from videos and blogs by <a href="#RockStars">"rock stars"</a> working in various organizations.
+This integrates examples and wisdom from videos and blogs by <a href="#RockStars">"rock stars"</a> working in various organizations.
 
 ## Infrastructure as Code Competition
 
-Like AWS Cloud Formation, Terraform automation <strong>saves money</strong> by getting servers running quicker and more consistently than manually clicking through the GUI.
+Like AWS Cloud Formation, Terraform automation <strong>saves money</strong> by automating the configuration of servers, which is quicker and more consistent than manually clicking through the GUI.
 
 The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and Terraform:
 
@@ -439,7 +439,13 @@ remote: Total 12 (delta 1), reused 9 (delta 0), pack-reused 0
 Unpacking objects: 100% (12/12), done.
    </pre>  
 
-   Alternately, another example:
+
+   ### Licensing
+   
+   <a target="_blank" href="https://www.hashicorp.com/products/terraform-old/">
+   Paid Pro and Premium licenses of Terraform</a>
+   add version control integration, MFA security, and other enterprise features.
+
 
 ### Gruntwork's sample
 
@@ -468,16 +474,37 @@ For those without the big bucks, Yevgeniy (Jim) Brikman (<a target="_blank" href
 
    The sample scripts referenced by this tutorial contain moustache variable mark-up so that you can generate a set for your organization.
 
-   <br /><br />
-
-   <a target="_blank" href="
+   * <a target="_blank" href="
    https://www.terraform.io/docs/providers/azurerm/r/virtual_machine_scale_set.html">
    https://www.terraform.io/docs/providers/azurerm/r/virtual_machine_scale_set.html</a>
 
-   <a targt="_blank" href="
+   * <a targt="_blank" href="
    https://training.gruntwork.io/courses/reference-architecture-walkthrough/lectures/4211191">
    https://training.gruntwork.io/courses/reference-architecture-walkthrough/lectures/4211191</a>
 
+   <a name="Terragrunt"></a>
+
+   #### Terragrunt from Gruntwork
+
+   Gruntwork has open-sourced its <a target="_blank" href="https://github.com/gruntwork-io/terragrunt">https://github.com/gruntwork-io/terragrunt</a> executables which is a thin wrapper for Terraform that provides extra tools for working with multiple Terraform modules, and managing remote state.
+
+   The executable can be installed on macOS using <tt>brew install terragrunt</tt>
+
+   Using it means you henceforth run the terragrunt executable instead of terraform:
+
+   * terragrunt get
+   * terragrunt plan
+   * terragrunt apply
+   * terragrunt output
+   * terragrunt destroy<br /><br />
+
+   The program also expects an additional top level in all <tt>.tfvars</tt> files:
+
+   <pre>terragrunt = {
+     # (put your Terragrunt configuration here)
+   }</pre>
+
+   Unlike Terraform, Terragrunt can configure remote state, locking, extra arguments, and lots more.
 
    <a name="HCL"></a>
 
@@ -508,13 +535,6 @@ For those without the big bucks, Yevgeniy (Jim) Brikman (<a target="_blank" href
    <a target="_blank" href="https://github.com/hashicorp/hcl2">HCL2</a>
    combines the interpolation language HIL to produce a single configuration language that supports arbitrary expressions.
    It's not backward compatible, with no direct migration path.
-
-   ### Licensing
-   
-   <a target="_blank" href="https://www.hashicorp.com/products/terraform-old/">
-   Paid Pro and Premium licenses of Terraform</a>
-   add version control integration, MFA security, and other enterprise features.
-
 
 
    ### Validate .tf files
