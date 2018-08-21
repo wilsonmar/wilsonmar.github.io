@@ -25,16 +25,24 @@ Technically, many of Salesforce's "cloud" and feature offerings share use of the
 
 ## Why Salesforce? #
 
-Companies that implement Salesforce CRM see improvement in sales of 30% because Salesforce
-provides a data collection system to implement a disciplined approach to selling.
-Data collection also enables Sales Managers to make decisions based on facts.
-
    * Being on the cloud, all data in one place to do work, enabling teamwork globally
    * Highly scalable without effort
+   <br /><br />
+Companies that implement Salesforce CRM see improvement in sales of 30% because Salesforce
+provides a data collection system to implement a <strong>disciplined</strong> approach to selling.
+
+   * Mobile "Salesforce1" apps
    * Integrations with Gmail, other systems
+   * "Web-to-Lead" automatically sends web form fills directly into Lead records in Salesforce.
+   <br /><br />
+Data collection also enables Sales Managers to make decisions based on facts.
+   * Calculation of how much is in each part of the sales funnel
+   * Since the status of each opportunity 
+   * Campaigns returns analysis
    <br /><br />
 For end-users, get away from:
 
+   * Waiting for approvals because Salesforce does relentless follow-up
    * Reliance on spreadsheets and Access databases
    * Collaboration via email (new people joining can't get to conversation history)
    * Data on local file directories (not accessible by others)
@@ -47,7 +55,6 @@ Gartner rated Salesforce at the upper-right corner of its Magic Quandrant of sys
    * Free development environments called "orgs" (organizations). (no 7 day trials)
    * Fine-grained access control
    * Extensible UI with clicks or code
-   * Free, full-featured copy of the Salesforce1 mobile Platform introduced 2013
    * API-first to integrate anything with everything
    * Innovation in Machine Learning for personalization, Analytics
    * Innovation in object recognition

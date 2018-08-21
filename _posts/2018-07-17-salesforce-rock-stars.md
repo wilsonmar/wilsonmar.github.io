@@ -361,6 +361,9 @@ Mohith Shrivastava, 9x Salesforce certification, MVP at Salesforce.com, Technica
    * Prolific question-answerer on <a target="_blank" href="http://salesforce.stackexchange.com/users/645/mohith-shrivastava">StackExchange.com</a>
    * <a target="_blank" href="https://www.packtpub.com/mapt/book/application_development/9781787124677">Packt book</a>: August 9, 2018 <a target="_blank" href="https://www.amazon.com/Learning-Salesforce-Lightning-Application-Development/dp/1787124673/">Learning Salesforce Lightning Application Development: Build and test lighting components for Salesforce Lightning Experience using Salesforce DX</a>
 
+<a target="_blank" href="https://success.salesforce.com/profileView?u=0053A00000DgYVRQA3">Narender Singh</a>, (<a target="_blank" href="https://twitter.com/Nads_P07">@Nads_P07</a>), <a target="_blank" href="https://www.linkedin.com/in/narender-singh-81423a128/">Salesforce Administrator & Developer at Miri InfoTech</a> at New Delhi Area, India:
+   * <a target="_blank" href="https://success.salesforce.com/answers">#1 on Trailhead with 2,800+ Answers</a>
+
 Nikhil Jaitly (<a target="_blank" href="https://twitter.com/nikhj">@nikhj</a>) Salesforce Technical Architect, 22x Salesforce Certified. Melbourne Marketing Cloud meetup Co-Organizer: last tweet 2017
 
 Nitin Gupta, 3x Salesforce Certified from New Delhi, India:

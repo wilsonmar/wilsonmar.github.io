@@ -63,6 +63,8 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
    Alternately, pick a <a target="_blank" href="http://www.kryteriononline.com/Locate-Test-Center">
    Kryterion test center</a> near you.
 
+2. Consider https://www.biorhythm-calculator.net/
+
 2. Register at <a target="_blank" href="https://www.webassessor.com/wa.do?page=publicHome&branding=SALESFORCE">webassessor.com</a> (SU18) 
 
    PROTIP: You need to use a different email address than what you used to register for ASQTB or any other exam.

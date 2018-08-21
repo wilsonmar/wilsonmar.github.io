@@ -20,7 +20,48 @@ comments: true
 
 This is a step-by-step hands-on tutorial to Apps and AppExchange, with technical commentary along the way.
 
-1. With the Lightning Experience, hover your mouse over the App Launcher icon (with the 9 dots) at the upper-left of any Salesforce console screen, and "App Launcher" appears:
+## Apps menu
+
+   <img align="right" alt="sf-classic-apps-list-160x414-19052.jpg" src="https://user-images.githubusercontent.com/300046/44360835-4b87f700-a479-11e8-89d3-8daa2ce63237.jpg">
+1. The Apps menu
+
+   The Classic user interface has a blue "hot dog" menu at the upper-right corner.
+
+   Whatever you select will be removed from the list, but appear in the blue hot dog,
+   and remain there the next time until another is selected.
+
+   The "Sales" app is the base CRM (Customer Relationship Management) app,
+   the main offering from Salesforce as a company.
+
+   PROTIP: CRM is the Salesforce company's <a target="_blank" href="https://www.nasdaq.com/symbol/crm">stock market symbol</a>. 
+
+   Apps in the list are NOT alphabetically listed. Custom app are added to the list as well:
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr valign="bottom"><th>Seq.</th><th>Menu</th></tr>
+   <tr valign="top"><td align="right">1.</td><td>Sales</td></tr>
+   <tr valign="top"><td align="right">2.</td><td>Service</td></tr>
+   <tr valign="top"><td align="right">3.</td><td>Marketing</td></tr>
+   <tr valign="top"><td align="right">4.</td><td>Community</td></tr>
+   <tr valign="top"><td align="right">5.</td><td>Site.com</td></tr>
+   <tr valign="top"><td align="right">6.</td><td>Salesforce Chatter</td></tr>
+   <tr valign="top"><td align="right">7.</td><td>Content</td></tr>
+   <tr valign="top"><td align="right">9.</td><td>Charitable</td></tr>
+   <tr valign="top"><td align="right">10.</td><td>Garage</td></tr>
+   <tr valign="top"><td align="right">11.</td><td>Conference</td></tr>
+   <tr valign="top"><td align="right">12.</td><td>Suggestion Box</td></tr>
+   <tr valign="top"><td align="right">13.</td><td>Trail Tracker</td></tr>
+   <tr valign="top"><td align="right">14.</td><td>App Launcher</td></tr>
+   <tr valign="top"><td align="right">15.</td><td>Relaxation Gauntlet</td></tr>
+   <tr valign="top"><td align="right">-</td><td>-</td></tr>
+   <tr valign="top"><td align="right">16.</td><td>AppExchange</td></tr>
+   <tr valign="top"><td align="right">17.</td><td>Developer Community</td></tr>
+   <tr valign="top"><td align="right">18.</td><td>Success Community</td></tr>
+   </table>
+
+1. Select the "App Launcher" for a tiled page. You can move each app to the position you want in
+   Setup > Managed Apps > App Menu.   
+
+   Alternately, with the Lightning Experience, hover your mouse over the App Launcher icon (with the 9 dots) at the upper-left of any Salesforce console screen, and "App Launcher" appears:
 
    <img alt="sf-app-launcher-186x93-6209.jpg" width="186" src="https://user-images.githubusercontent.com/300046/44078505-df9ff480-9f63-11e8-8eae-8a296520e8e9.jpg">
 
@@ -32,9 +73,6 @@ This is a step-by-step hands-on tutorial to Apps and AppExchange, with technical
    <small>(Click the picture above here for a larger image in a new window.)</small>
 
    Thia list of apps varies depending on licensing and permissions.
-
-   The "Sales" app is the base CRM (Customer Relationship Management) app.
-   PROTIP: CRM (Customer Relationship Management) is the Salesforce company's stock market symbol. CRM is the main offering from Salesforce as a company.
 
 1. PROTIP: The three lines under each icon means you can drag and place it where you want. For example, drag "Sales" to the upper-left corner.
 
