@@ -83,6 +83,11 @@ A key differentiator is Terraform's plan command, which provides more than just 
 * StackOverflow
 * IRC (Internet Relay Chat)
 
+## Licensing
+   
+   <a target="_blank" href="https://www.hashicorp.com/products/terraform-old/">
+   Paid Pro and Premium licenses of Terraform</a>
+   add version control integration, MFA security, and other enterprise features.
 
 ## Installation #
 
@@ -438,14 +443,6 @@ remote: Compressing objects: 100% (12/12), done.
 remote: Total 12 (delta 1), reused 9 (delta 0), pack-reused 0
 Unpacking objects: 100% (12/12), done.
    </pre>  
-
-
-   ### Licensing
-   
-   <a target="_blank" href="https://www.hashicorp.com/products/terraform-old/">
-   Paid Pro and Premium licenses of Terraform</a>
-   add version control integration, MFA security, and other enterprise features.
-
 
 ### Gruntwork's sample
 
