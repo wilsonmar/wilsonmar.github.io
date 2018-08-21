@@ -30,10 +30,10 @@ Technically, many of Salesforce's "cloud" and feature offerings share use of the
    <br /><br />
 Companies that implement Salesforce CRM see improvement in sales of 30% because Salesforce
 provides a data collection system to implement a <strong>disciplined</strong> approach to selling.
-
-   * Mobile "Salesforce1" apps
-   * Integrations with Gmail, other systems
-   * "Web-to-Lead" automatically sends web form fills directly into Lead records in Salesforce.
+   * Leads can be automatically allocated
+   * Emails can be automatically sent out
+   * "Web-to-Lead" automatically sends web form fills directly into Salesforce Sales Cloud Lead records.
+   * "Email to Case" integrates with Gmail and Outlook to automatically reads emails into Service Cloud case records.
    <br /><br />
 Data collection also enables Sales Managers to make decisions based on facts.
    * Calculation of how much is in each part of the sales funnel
@@ -41,8 +41,7 @@ Data collection also enables Sales Managers to make decisions based on facts.
    * Campaigns returns analysis
    <br /><br />
 For end-users, get away from:
-
-   * Waiting for approvals because Salesforce does relentless follow-up
+   * Waiting for <strong>approvals</strong> because Salesforce does relentless follow-up
    * Reliance on spreadsheets and Access databases
    * Collaboration via email (new people joining can't get to conversation history)
    * Data on local file directories (not accessible by others)
@@ -52,6 +51,7 @@ The true power of Salesforce is the ease of customization and, paradoxically, po
 Gartner rated Salesforce at the upper-right corner of its Magic Quandrant of systems for "citizen programmers". Salesforce provides an easy and fast way to create sophisticated apps:
 
    * An app can be created in minutes using point and click, selecting sophisticated features that have been built up over the years from features common among all Salesforce customers -- features that would not be economical for any single company to fund on their own.
+   * Mobile "Salesforce1" apps are generated automatically, making Salesforce the top-rated mobile development platform.
    * Free development environments called "orgs" (organizations). (no 7 day trials)
    * Fine-grained access control
    * Extensible UI with clicks or code
