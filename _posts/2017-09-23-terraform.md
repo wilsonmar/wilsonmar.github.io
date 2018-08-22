@@ -481,7 +481,7 @@ For those without the big bucks, Yevgeniy (Jim) Brikman (<a target="_blank" href
 
    <a name="Terragrunt"></a>
 
-   #### Terragrunt from Gruntwork
+#### Terragrunt from Gruntwork
 
    Gruntwork has open-sourced its <a target="_blank" href="https://github.com/gruntwork-io/terragrunt">https://github.com/gruntwork-io/terragrunt</a> executables which is a thin wrapper for Terraform that provides extra tools for working with multiple Terraform modules, and managing remote state.
 
@@ -505,7 +505,7 @@ For those without the big bucks, Yevgeniy (Jim) Brikman (<a target="_blank" href
 
    <a name="HCL"></a>
 
-   ### HCL (Hashicorp Configuration Language) 
+### HCL (Hashicorp Configuration Language) 
 
    Terraform defined HCL (Hashicorp Configuration Language) for both human and machine consumption. HCL is defined at <a target="_blank" href="https://github.com/hashicorp/hcl">https://github.com/hashicorp/hcl</a> and described at <a target="_blank" href="
    https://www.terraform.io/docs/configuration/syntax.html">
@@ -534,9 +534,9 @@ For those without the big bucks, Yevgeniy (Jim) Brikman (<a target="_blank" href
    It's not backward compatible, with no direct migration path.
 
 
-   ### Validate .tf files
+### Validate .tf files
 
-3. Navigate into the repo and view files in:
+1. Navigate into the repo and view files in:
 
    <tt><strong>ls single-web-server
    </strong></tt>
