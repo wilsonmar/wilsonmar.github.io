@@ -56,15 +56,17 @@ Gartner rated Salesforce at the upper-right corner of its Magic Quandrant of sys
    <br /><br />
    * An app can be created in minutes using point and click, selecting sophisticated features that have been built up over the years from features common among all Salesforce customers -- features that would not be economical for any single company to fund on their own.
    * Mobile "Salesforce1" apps are generated automatically, making Salesforce the top-rated mobile development platform.
+   * Internationalization includes forms for localization and multi-lingual forms
    * Free development environments called "orgs" (organizations). (no 7 day trials)
    * Fine-grained access control
    * Extensible UI with clicks or code
-   * API-first to integrate anything with everything
+   * Contextual field types (such as currency, Email, Geolocation, Percent, Phone, URL, etc.) that are treated appropriately without additional coding
    * Innovation in Machine Learning for personalization, Analytics
    * Innovation in object recognition
    * Use popular UI frameworks like Bootstrap, JQuery (in VisualForce classic)
    * <a href="#Lightning">Lightning</a> HTML UI components for user-developed apps.
 
+   * API-first to integrate anything with everything
    * Salesforce was designed with a <strong>metadata-driven</strong> architecture. Everything, including the code, configuration, and apps, is specified as metadata.
    <br /><br />
 Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/drucker_customer_market_driven/">Drucker School—Customer & Market Strategy</a> [1 hr 45 mins] +700
@@ -374,7 +376,7 @@ Salesforce issues separate <strong>feature licenses</strong>?
    * Live Agent / Omni channel
 
    * Lightning Platform
-
+   * "Knowledge" is a re-imagining of "Solution Management" 
 
 <a name="VersionChangeMgmt"></a>
 

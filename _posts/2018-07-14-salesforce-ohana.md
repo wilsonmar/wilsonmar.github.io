@@ -27,6 +27,7 @@ This page presents steps and information for those new to Salesforce to get "plu
 * <a target="_blank" href="https://help.salesforce.com/apex/HTViewHelpDoc?id=glossary.htm">
    Salesforce's Glossary</a> of terms. It doesn't define acronmns, such as:
 
+   * CPQ = Configure, Price, and Quote (workflow)
    * FLS = Field Level Security
    * PAM = Partner Account Manager (email isvpartners@salesforce.com)
    * MOAR = MuleSoft Anypoint Platform

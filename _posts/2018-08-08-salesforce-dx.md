@@ -1011,6 +1011,9 @@ https://developer.salesforce.com/promotions/orgs/dx-signup
 QUESTION: ISVs (Service Vendors) who build customized Salesforce apps
 persona-based customizations.
 
+No blog about Salesforce coding is complete without hearing what Keir Bowden has to say about it.
+<a target="_blank" href="https://medium.com/@bob_buzzard/salesforcedx-view-from-the-coal-face-864fee29ddd8">SalesforceDX — View from the Coal Face</a> from Nov 19, 2016
+talks about the new Force.com IDE being tightly integrated with the new CLI, combining the Heroku toolbelt with the Force CLI.
 
 <hr />
 
