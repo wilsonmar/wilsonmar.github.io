@@ -78,10 +78,11 @@ The company has seen a consistent growth rate of 35% year-over-year, which is un
 
 
 <a name="Permissions"></a>
+<img align="right" alt="sf-profiles-209x415.jpg" width="209" src="https://user-images.githubusercontent.com/300046/44485761-e0702900-a60e-11e8-8a1e-df4f5cb3c2c9.jpg">
 
-## Permissions by Role
+## Permissions by Profile
 
-The 6 standard profiles of permissions:
+There are many in addition to the 6 standard profiles which can have unique field visibility and permissions:
 
 * Administrator
 * Solution Manager
@@ -90,13 +91,13 @@ The 6 standard profiles of permissions:
 * Marketing User
 * Contract Manager
 
-Up to 1000 Permission sets per org can be setup to grant additional permissions without changing user profiles.
+Up to 1000 <strong>Permission sets</strong> per org can be setup to grant additive permissions without changing user profiles.
 
 <a name="Personas"></a>
 
 ## User Personas
 
-<a target="_blank" href="https://trailhead.salesforce.com/modules/ux-personas-for-salesforce">Trailhead module: UX Personas for Salesforce</a> [1 hr 10 min] 
+Base on <a target="_blank" href="https://trailhead.salesforce.com/modules/ux-personas-for-salesforce">Trailhead module: UX Personas for Salesforce</a> [1 hr 10 min] 
 
 A "persona" represents a group of users clustered based on shared behavior, motivations, goals, pain points, or other characteristics. A persona is an archetype that represents a group of users clustered based on shared behaviors, motivations, goals, pain points, or other characteristics. During the design and development process, persona categories stand in for key user groups when making decisions about your product, by representing major differences between groups. Personas can be useful for building empathy and making the users seem real. Effective personas are created based on <a target="_blank" href="https://trailhead.salesforce.com/module/ux-research-basics"> research</a> and <a target="_blank" href="https://developer.salesforce.com/files/ux-personas-ServiceCloudPersonaSurvey.pdf">surveys (pdf)</a> to ensure that they reflect the real people who use your product.<a target="_blank" href="https://www.amazon.com/Essential-Persona-Lifecycle-Building-Personas/dp/0123814189/">*</a>  
 Personas should be based on general work tasks users perform in their roles, rather than just what they do in Salesforce. 
