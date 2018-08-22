@@ -28,13 +28,14 @@ Technically, many of Salesforce's "cloud" and feature offerings share use of the
    * Being on the cloud, all data in one place to do work, enabling teamwork globally
    * Highly scalable without effort
    <br /><br />
-Companies that implement Salesforce CRM see improvement in sales of 30% because Salesforce
-provides a data collection system to implement a <strong>disciplined</strong> approach to selling.
+Companies that implement Salesforce CRM see improvement in sales of 30%+ because Salesforce
+provides a data collection system to implement a <strong>disciplined</strong> approach to selling:
    <br /><br />
-   * Leads can be automatically allocated
-   * Emails can be automatically sent out
+   * Leads can be automatically allocated among salespeople
+   * Emails can be automatically sent out (by autoresponders)
    * "Web-to-Lead" automatically sends web form fills directly into Salesforce Sales Cloud Lead records.
-   * "Email to Case" integrates with Gmail and Outlook to automatically reads emails into Service Cloud case records.
+   * "Email-to-Case" integrates with Gmail and Outlook to automatically reads emails into Service Cloud case records.
+   * "Question-to-Case" let moderators create cases from Chatter questions.
    <br /><br />
 Data collection also enables Sales Managers to make decisions based on facts.
    <br /><br />

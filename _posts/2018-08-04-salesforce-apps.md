@@ -16,8 +16,6 @@ comments: true
 
 {% include _toc.html %}
 
-<a name="AppExchange"></a>
-
 This is a step-by-step hands-on tutorial to Apps and AppExchange, with technical commentary along the way.
 
 ## Apps menu

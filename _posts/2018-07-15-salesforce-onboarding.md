@@ -364,6 +364,10 @@ To add a managed app such as the Salesforce <a target="_blank" href="https://log
 1. Close that browser window.
 
 
+## Chrome Extensions
+
+https://www.jitendrazaa.com/blog/salesforce/top-google-chrome-extensions-for-salesforce/
+
 
 <a name="Superbadges"></a>
 
