@@ -82,7 +82,7 @@ The company has seen a consistent growth rate of 35% year-over-year, which is un
 
 ## Permissions by Profile
 
-There are many in addition to the 6 standard profiles which can have unique field visibility and permissions:
+There are many in addition to the 6 standard profiles which can have unique field visibility, page layout, and permissions:
 
 * Administrator
 * Solution Manager
