@@ -261,10 +261,21 @@ Not owned by Salesforce (but they seem close):
 
 Salesforce issues separate <strong>feature licenses</strong> for a set number of users:
 
-   * Salesforce CRM Content user
-   * Force.com Flow user
-   * Marketing user
+   * Marketing User
    * Apex (Salesforce1) Mobile user
+   * Offline User
+   * Knowledge User - "Knowledge" is a re-imagining of "Solution Management" 
+   * Flow user (of Force.com)
+   * Service Cloud User
+   * Data.com User
+   * Live Agent User
+   * Site.com Contributor User
+   * Site.com Publisher User
+   * Chatter Answers User
+   * Work.com User
+   * Salesforce CRM Content user
+
+### Other Features
 
    * <a target="_blank" href="https://developer.salesforce.com/einstein">Einstein</a>, at https://developer.salesforce.com/einstein (covers AI Vision, Predictive Analytics)
 
@@ -276,12 +287,10 @@ Salesforce issues separate <strong>feature licenses</strong> for a set number of
    * <a target="_blank" href="http://certification.salesforce.com/cpqspecialist">CPQ</a> (Configure, Price, and Quote) and billing workflow
 
    * Quip
-   * Chatter instant messaging
    * Social Studio
    * Live Agent / Omni channel
 
    * Lightning Platform
-   * "Knowledge" is a re-imagining of "Solution Management" 
    * "Lightning Bolt" is the ability to select among page templates for your Community within Site Studio.
    Community Builder lets you brand your community, create and customize pages, add drag-and-drop Lighting components, create custom navigation, and manage community page content.
    <br /><br />
