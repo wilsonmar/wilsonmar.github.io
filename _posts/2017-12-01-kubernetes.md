@@ -2,7 +2,6 @@
 layout: post
 title: "Kubernetes (K8s)"
 excerpt: "Container engine for every cloud"
-shorturl: "https://goo.gl/"
 filename: kubernetes.md
 modified:
 tags: [google, cloud]
@@ -481,7 +480,7 @@ has 257 issues and 20 pending Pull Requests.
 
    <pre><strong>
    kubectl config current-context
-   </pre><strong>
+   </strong></pre>
 
    The response on minikube is "minikube".
 
