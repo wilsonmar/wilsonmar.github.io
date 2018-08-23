@@ -1727,6 +1727,8 @@ Mark Lodato's <a target="_blank" href="https://marklodato.github.io/visual-git-g
 
 <a target="_blank" href="https://www.learnenough.com/git-tutorial">LearnEnoughGit.com</a>
 
+<a target="_blank" href="https://ine.com/products/git-fundamentals?variant=1481009627141">
+Git Fundamentals</a> 5 Feb 2018 [3h 27m] by Eric Parker
 
 ## More #
 
