@@ -65,7 +65,13 @@ This is not documentation, but a step-by-step exploration tour with commentary. 
 
    <strong>Scala</strong> is a programming language that runs on top of the Java Virtual Machine (JVM).
 
-3. So make sure Java and Gradle are installed.
+   PROTIP: IBM's Cognitive School has a <a target="_blank" href="https://cognitiveclass.ai/courses/introduction-to-scala/">free intro. class on Scala</a>
+   See my notes on:
+   * <a target="_blank" href="https://wilsonmar.github.io/scala-ecosystem/">the Scala-ecosystem</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/scala-programming">Scala-programming</a>
+   <br /><br />
+
+3. So make sure Java and Gradle are installed:
 
    <pre><strong>java --version</strong></pre>
 
