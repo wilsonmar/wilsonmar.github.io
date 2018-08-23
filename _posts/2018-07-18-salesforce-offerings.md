@@ -286,13 +286,15 @@ Salesforce issues separate <strong>feature licenses</strong> for a set number of
    * <a target="_blank" href="http://certification.salesforce.com/pardotconsultant">Pardot</a> - B2B marketing automation, which is part of the Sales Cloud as well.
    * <a target="_blank" href="http://certification.salesforce.com/cpqspecialist">CPQ</a> (Configure, Price, and Quote) and billing workflow
 
-   * Quip
-   * Social Studio
    * Live Agent / Omni channel
+   * Quip
 
-   * Lightning Platform
+   * Social Studio
    * "Lightning Bolt" is the ability to select among page templates for your Community within Site Studio.
    Community Builder lets you brand your community, create and customize pages, add drag-and-drop Lighting components, create custom navigation, and manage community page content.
+   * Lightning Platform
+   * Lightning Sync (of contacts, events, emails, tasks) separates unresolved items for reconciliation.
+
    <br /><br />
 
 See http://www.salesforce.com/platform/overview/
