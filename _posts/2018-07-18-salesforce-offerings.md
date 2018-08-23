@@ -33,12 +33,14 @@ provides a data collection system to implement a <strong>disciplined</strong> ap
    <br /><br />
    * Leads can be automatically allocated among salespeople
    * Emails can be automatically sent out (by autoresponders)
+   * Templates for each step, with each step in the sales funnel defined, but can be adapted
    * "Web-to-Lead" automatically sends web form fills directly into Salesforce Sales Cloud Lead records.
    * "Email-to-Case" integrates with Gmail and Outlook to automatically reads emails into Service Cloud case records.
    * "Question-to-Case" let moderators create cases from Chatter questions.
    <br /><br />
 Data collection also enables Sales Managers to make decisions based on facts.
    <br /><br />
+   * A large number of default Dashboards are available with jew a few clicks
    * Calculation of how much is in each part of the sales funnel
    * Since the status of each opportunity 
    * Campaigns returns analysis
@@ -55,8 +57,8 @@ The true power of Salesforce is the ease of customization and, paradoxically, po
 Gartner rated Salesforce at the upper-right corner of its Magic Quandrant of systems for "citizen programmers". Salesforce provides an easy and fast way to create sophisticated apps:
    <br /><br />
    * An app can be created in minutes using point and click, selecting sophisticated features that have been built up over the years from features common among all Salesforce customers -- features that would not be economical for any single company to fund on their own.
-   * Mobile "Salesforce1" apps are generated automatically, making Salesforce the top-rated mobile development platform.
-   * Internationalization includes forms for localization and multi-lingual forms
+   * Mobile "Salesforce1" apps are generated automatically, making Salesforce the top-rated mobile development platform
+   * Internationalization is built-in for <a href="#Languages">languages</a> with multi-lingual forms
    * Free development environments called "orgs" (organizations). (no 7 day trials)
    * Fine-grained access control
    * Extensible UI with clicks or code
@@ -64,7 +66,7 @@ Gartner rated Salesforce at the upper-right corner of its Magic Quandrant of sys
    * Innovation in Machine Learning for personalization, Analytics
    * Innovation in object recognition
    * Use popular UI frameworks like Bootstrap, JQuery (in VisualForce classic)
-   * <a href="#Lightning">Lightning</a> HTML UI components for user-developed apps.
+   * <a href="#Lightning">Lightning</a> HTML UI components for user-developed apps
 
    * API-first to integrate anything with everything
    * Salesforce was designed with a <strong>metadata-driven</strong> architecture. Everything, including the code, configuration, and apps, is specified as metadata.
@@ -98,25 +100,34 @@ The top competitors to Salesforce are:
 
 ### Languages
 
-QUESTION: Is there a basis for sorting, other than English being on top:
+PROTIP: The default sorting of Displayed Languages in the Language Settings dialog under Company Profile is by major and then minor translations. Language codes are not shown but here they are:
 
 * en = english
 * de = deutch (German)
-* es = espania (Spanish)
+* es = espania (Spain)
 * fr = french
 * it = italian
 * ja = japanese
+
 * sv = swedish
 * ko = korean
-* zh-cn = chinese (simplified)
 * zh-tw = chinese taiwan (traditional)
+* zh-cn = chinese (simplified)
 * pt-br = Portuguese (as written and spoken in Brazil)
 * nl-nl = Standard Dutch (as spoken in The Netherlands) 
 
+* da = danish
+* th = thai
 * fi = finnish
 * ru = russian
-* th = thai
-* da = danish
+* Spanish (Mexico)
+* Norwegian
+
+## Currencies
+
+"Advanced currency management" is necessary to calculate and track exchange rates
+"Activate Multiple Currencies" in the Company Information Profile.
+After activation, "Currency Setup" appears.
 
 
 <a name="Clouds"></a>
@@ -255,6 +266,10 @@ Not owned by Salesforce (but they seem close):
    PROTIP: Notice the URL now begins with something like 
    "https://na53.salesforce.com/..."
 
+   PROTIP: When setting up a Community Cloud<a target="_blank" href="https://www.udemy.com/salesforce-administrator/learn/v4/t/lecture/4309744?start=0">*</a>, the admin adds a unique name (such as "mypeeps") to create a separate domain name such as:
+
+   https://mypeeps.developer-edition.na53.force.com
+
 1. Switch back to the Lightning UX by clicking "Setup", then 
 
    At the top of the page are <strong>objects</strong> containing data, such as "Accounts", "Contacts", "Leads", "Opportunities", etc.
@@ -367,16 +382,18 @@ Salesforce issues separate <strong>feature licenses</strong>?
 
    * <strong>ExactTarget</strong> Fuel Marketing Cloud emails to target specific prospects (purchased by Salesforce)
    * <a target="_blank" href="http://certification.salesforce.com/pardotconsultant">Pardot</a> - B2B marketing automation, which is part of the Sales Cloud as well.
-
-   * Quip
    * <a target="_blank" href="http://certification.salesforce.com/cpqspecialist">CPQ</a> (Configure, Price, and Quote) and billing workflow
 
+   * Quip
    * Chatter instant messaging
    * Social Studio
    * Live Agent / Omni channel
 
    * Lightning Platform
    * "Knowledge" is a re-imagining of "Solution Management" 
+   * "Lightning Bolt" is the ability to select among page templates for your Community within Site Studio.
+   Community Builder lets you brand your community, create and customize pages, add drag-and-drop Lighting components, create custom navigation, and manage community page content.
+
 
 <a name="VersionChangeMgmt"></a>
 

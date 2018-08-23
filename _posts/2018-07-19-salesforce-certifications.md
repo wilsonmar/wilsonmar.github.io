@@ -153,7 +153,11 @@ For $200 each, answer 65% of 60 multiple-choice/multiple-select questions in 105
 
    To prepare:
 
-   * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trail/force_com_admin_intermediate"> Admin Intermediate</a> [14 hrs] uses point-and-click formulas, data security, etc.
+   * Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/trail/force_com_admin_intermediate"> Admin Intermediate</a> [14 hrs] uses point-and-click formulas, data security, etc.
+   * Trailhead Module: <a target="_blank" href="https://resources.docs.salesforce.com/206/latest/en-us/sfdc/pdf/communities.pdf">Setup and Manage Salesforce Communities</a> [440 pages from Spring '17']
+   * Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/community_rollout_impl">Community Rollout Strategy</a> [1 hr 40 mins]
+
+
 
 Administrator Certification Maintenance exam:
 
