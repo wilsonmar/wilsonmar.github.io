@@ -366,9 +366,9 @@ Trailhead Module: https://trailhead.salesforce.com/en/modules/premier-success-pl
 
 ### Product Features
 
-See http://www.salesforce.com/platform/overview/
+<img align="right" alt="sf-feature-user-types-182x330-25641.jpg" src="https://user-images.githubusercontent.com/300046/44497561-6e600a00-a637-11e8-8e6e-1110c1f3f3f8.jpg">
 
-Salesforce issues separate <strong>feature licenses</strong>?
+Salesforce issues separate <strong>feature licenses</strong> for a set number of users:
 
    * Salesforce CRM Content user
    * Force.com Flow user
@@ -393,6 +393,9 @@ Salesforce issues separate <strong>feature licenses</strong>?
    * "Knowledge" is a re-imagining of "Solution Management" 
    * "Lightning Bolt" is the ability to select among page templates for your Community within Site Studio.
    Community Builder lets you brand your community, create and customize pages, add drag-and-drop Lighting components, create custom navigation, and manage community page content.
+   <br /><br />
+
+See http://www.salesforce.com/platform/overview/
 
 
 <a name="VersionChangeMgmt"></a>
