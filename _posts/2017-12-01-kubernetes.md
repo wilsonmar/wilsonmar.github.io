@@ -1429,6 +1429,12 @@ The 8 labs covering 8 hours of the
 <a target="_blank" href="https://webinars-run.qwiklab.com/quests/29">
 Kubernetes in the Google Cloud Qwiklab quest</a>
 
+## Kubeflow
+
+https://github.com/kubeflow/kubeflow
+makes deployment of Kubernetes for Machine Learning (TensorFlow)
+<a target="_blank" href="http://www.kai-waehner.de/blog/2018/05/09/deep-learning-at-extreme-scale-%E2%80%A8with-apache-kafka-open-source-ecosystem/">using Kafka</a>
+
 ## References
 
 by Adron Hall:
