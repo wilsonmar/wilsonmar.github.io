@@ -377,6 +377,9 @@ Nitin Indora, Gurgaon, India:
 Oliver Hansen (<a target="_blank" href="https://twitter.com/nesensa">@nesensa</a>):
    * <a target="_blank" href="https://salesforceblogs.com/">https://salesforceblogs.com</a>
 
+Phil Choi:
+   * BOOK: <a target="_blank" href="https://www.amazon.com/gp/product/1625174918">Force.com Platform Fundamentals: An Introduction to Custom Application Development in the Cloud Paperback – October 15, 2013</a>
+
 Patrick Watkins (<a target="_blank" href="https://twitter.com/nc_watkins">@nc_watkins</a>):
    * Video course: <a target="_blank" href="https://app.pluralsight.com/library/courses/play-by-play-implementing-sustainable-scalable-salesforce-governance/table-of-contents">Play by Play: Implementing Sustainable and Scalable Salesforce Governance</a> 2 Aug 2018 with Don Robins.
 

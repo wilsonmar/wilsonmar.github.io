@@ -5,10 +5,10 @@ excerpt: "Understand by watching it run on your machine, then change the script 
 modified:
 tags: [git]
 image:
-# feature: pic blue black stars spin 1900x500.jpg
-  feature: https://cloud.githubusercontent.com/assets/300046/14621973/fe6e21a6-0583-11e6-9a94-a969a51759b6.jpg
-  credit: Jeremy Thomas
-  creditlink: https://www.flickr.com/photos/132218932@N03/page2
+# git-basics-1900x500-247310.jpg from png
+  feature: https://user-images.githubusercontent.com/300046/44609628-b60ca000-a7b5-11e8-95c9-bfc5d1871487.jpg
+  credit: Wilson Mar
+  creditlink: https://github.com/wilsonmar/git-utilities/blob/master/git-basics.sh
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -39,7 +39,7 @@ The script includes <tt>git stash</tt> commands which uses a "hidden compartment
 
 1. If you cannot run scripts, view the results anyway by viewing captured from a run:
 
-   <pre>https://github.com/wilsonmar/git-utilities/master/git-basics.<strong>log</strong></pre>
+   <pre>https://github.com/wilsonmar/git-utilities/blob/master/git-basics.log</pre>
 
    ### Live run
 
