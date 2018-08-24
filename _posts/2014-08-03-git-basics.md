@@ -45,7 +45,7 @@ The script includes <tt>git stash</tt> commands which uses a "hidden compartment
 
 3. If you Fork the repo to your own account, remember to rename the account name in the URLs in this tutorial.
 
-4. Highlight the entire command below by double-clicking it until the whole line is highlighted.
+4. Highlight the entire command below by clicking on it until the whole line is highlighted.
 
    <pre><strong>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/git-utilities/master/git-basics.sh)"</strong></pre>
 
@@ -63,9 +63,9 @@ The script includes <tt>git stash</tt> commands which uses a "hidden compartment
 
 8. Press Enter to invoke the command.
 
-## Commentary
+## Commentary on run output
 
-Numbers below refer to numbers mentioned in the script.
+Numbers below refer to numbers mentioned in the script and appearing in the run output:
 
 1. git init within /Users/wilsonmar/git_repo:
 
