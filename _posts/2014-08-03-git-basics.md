@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Git basics (automated by a script)"
-excerpt: "Understand by watching it run on your machine, then change the script to experiment"
+excerpt: "Get tips about the most common git commands (including stash, checkout, etc.) executed in a script so can experiment on your own"
 modified:
 tags: [git]
 image:
@@ -18,9 +18,9 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/git-basics">This tutorial</a> shows you a rather basic (typical) workflow for using Git. 
 
-To save you time and the potential for typos, we've created a <strong>Bash script</strong> that you can run on your Mac or within git bash terminal on your Windows machine. The script performs a set of commands to establish a specific condition of untracked files and entries in the Git stage and commit history.
+To save you time and the potential for typos, we've created a <strong>Bash script</strong> that you can run on your Mac or within a Git Bash terminal on your Windows machine. The script performs a set of commands to establish a specific condition of untracked files and entries in the Git stage and commit history.
 
-Having a repeatable script enables you to experiment on commands and also provide you a way to check whether its upgrades to Git that has changed outputs or you not typing commands properly.
+Having a repeatable script enables you to experiment on commands. When example commands are not coming back correctly, a script also provide you a way to say <strong>"it was working before"</strong> rather than blaming yourself for not typing commands correctly.
 
 Steps in the script includes how to travel back in time (using git checkout) and what you can do if you're in the middle of working on a file <strong>eligible for commit</strong> but you need to immediately edit and commit other files right away, but don't want to lose the current set of changes.
 
