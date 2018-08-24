@@ -94,7 +94,9 @@ Various tutorials:
 
    * The <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.fundamentals.meta/fundamentals/adg_app_arch.htm">Sample Recruiting App is within the Lightning Platform Fundamentals section of Developer Documentation</a>
 
+## Tabs
 
+Apps are defined as its down set of <strong>tabs</strong>.
 
 ## Partner-built apps
 
