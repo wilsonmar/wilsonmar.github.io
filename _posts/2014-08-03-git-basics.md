@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Git-basics (within a script)"
+title: "Git basics (automated by a script)"
 excerpt: "Understand by watching it run on your machine, then change the script to experiment"
 modified:
-tags: []
+tags: [git]
 image:
 # feature: pic blue black stars spin 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14621973/fe6e21a6-0583-11e6-9a94-a969a51759b6.jpg
@@ -26,14 +26,14 @@ Steps in the script includes how to travel back in time (using git checkout) and
 
 The script includes <tt>git stash</tt> commands which uses a "hidden compartment" where you can temporarily store files so they won't be included in the next commit. For detailed information about the stash, see the official documentation at:
 
-   * <a target="_blank" href="https://git-scm.com/docs/git-basics">https://git-scm.com/docs/git-basics</a>
+   * <a target="_blank" href="https://git-scm.com/docs/git-stash">https://git-scm.com/docs/git-stash</a>
    <br /><br />
 
 <hr />
 
-1. In a browser view the script at:
+1. In a browser view the git-basics script at:
 
-   <pre><strong>https://github.com/wilsonmar/git-utilities/master/git-basics.sh</strong></pre>
+   <pre><strong>https://github.com/wilsonmar/git-utilities/blob/master/git-basics.sh</strong></pre>
 
 2. Click the "Star" to give us some cred. Thanks!
 
