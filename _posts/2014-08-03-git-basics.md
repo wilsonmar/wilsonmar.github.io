@@ -229,3 +229,9 @@ checkout branch-B and then stash.
   ss=stash save
   ssu=stash save --include-untracked
 </pre>
+
+## More about Git & GitHub #
+
+This is one of a series on Git and GitHub:
+
+{% include git_links.html %}
