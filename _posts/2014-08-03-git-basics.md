@@ -67,9 +67,7 @@ The script includes <tt>git stash</tt> commands which uses a "hidden compartment
 
 Numbers below refer to numbers mentioned in the script and appearing in the run output:
 
-1. git init within /Users/wilsonmar/git_repo:
-
-   This is the location of the folder created by the script.
+1. git init (within /Users/wilsonmar/git_repo, which is the location of the folder created by the script).
 
    On your machine, you would see your user id instead of "wilsonmar".
 
@@ -98,6 +96,8 @@ Numbers below refer to numbers mentioned in the script and appearing in the run 
 
 10. File harry is created, but not added nor committed by git.
 
+    QUIZ: Which of the above will show up in a <tt>git status</tt> command.
+
 11. A file listing shows that all the files created are visible.
 
     PROTIP: A git checkout command later will change the files and their contents.
@@ -114,7 +114,7 @@ Numbers below refer to numbers mentioned in the script and appearing in the run 
 
 15. We use <tt>git checkout HEAD@{4}</tt> to return to the working directory as it was after the 2nd commit of Don.
 
-    Why did the command abort and did not complete? 
+    QUIZ: Why did the command abort and did not complete? 
 
     PROTIP: The "M" next to file ed means Modified and thus being tracked by Git.
     Being tracked by Git means it must be specifically added or stashed before git can commit.
@@ -134,7 +134,7 @@ Numbers below refer to numbers mentioned in the script and appearing in the run 
 
 20. Here is when we travel back in time using the <tt>git checkout</tt> command.
 
-    Don't be scared off by the statement about 'detached HEAD'.
+    PROTIP: Don't be scared off by the statement about 'detached HEAD'.
 
     Notice the last statement returned from <tt>git checkout</tt>, such as:
 
@@ -144,7 +144,7 @@ Numbers below refer to numbers mentioned in the script and appearing in the run 
 
 21. Displaying the contents of file ed (using the cat command) reveals that only the first line is there.
 
-    Why isn't the second line there?
+    QUIZ: Why isn't the second line there?
 
     Because it has been stashed away.
 
