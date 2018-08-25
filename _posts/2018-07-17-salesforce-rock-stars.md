@@ -562,6 +562,9 @@ Adam Blitzer (@AdamBlitzer), co-founder of Pardot, now EVP & GM of Sales Cloud
 
 Amanda Berkey (@amandaberkey) 
 
+Ankit Arora, MVP, Moderator, Developer:
+   * <a target="_blank" href="http://forceguru.blogspot.com/2011/12/displaying-role-hierarchy-on.html">http://forceguru.blogspot.com</a>
+
 Charlie Isaacs (<a target="_blank" href="https://twitter.com/charlieisaacs">@charlieisaacs</a>) VP, CTO for Customer Connection.
 
 <a name="ChristopheCoenraets"></a>
