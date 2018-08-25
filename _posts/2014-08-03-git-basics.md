@@ -230,6 +230,11 @@ checkout branch-B and then stash.
   ssu=stash save --include-untracked
 </pre>
 
+## Git Basics tutorials
+
+https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners
+
+
 ## More about Git & GitHub #
 
 This is one of a series on Git and GitHub:
