@@ -390,3 +390,9 @@ TechNet Virtual Lab: Introduction to Team Foundation Build 2015 (vNext), Test Ru
 This is one of a series on DevOps:
 
 {% include devops_links.html %}
+
+## More about Git & GitHub #
+
+This is one of a series on Git and GitHub:
+
+{% include git_links.html %}

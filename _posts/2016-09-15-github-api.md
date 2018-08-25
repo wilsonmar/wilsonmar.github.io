@@ -426,7 +426,7 @@ the JSON returned from API calls.
 
 
 
-## More #
+## More about Git & GitHub #
 
 This is one of a series on Git and GitHub:
 

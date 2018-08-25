@@ -385,3 +385,9 @@ The objective of Jenkins2 is to install with a
 (a more "curated" experience than v1)
 that cover 80% of use cases out of the box.
 
+
+## More about Git & GitHub #
+
+This is one of a series on Git and GitHub:
+
+{% include git_links.html %}

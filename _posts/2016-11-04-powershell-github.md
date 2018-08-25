@@ -197,3 +197,9 @@ e.psm1:2096 char:21
 This is one of a series:
 
 {% include api_links.html %}
+
+## More about Git & GitHub #
+
+This is one of a series on Git and GitHub:
+
+{% include git_links.html %}

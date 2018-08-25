@@ -29,6 +29,7 @@ This page presents steps and information for those new to Salesforce to get "plu
 
    * CPQ = Configure, Price, and Quote (workflow)
    * CMS = Content Management System
+   * CRUD = Create Read Update Delete (basic database/API functions)
    * FLS = Field Level Security
    * PAM = Partner Account Manager (email isvpartners@salesforce.com)
    * MOAR = MuleSoft Anypoint Platform

@@ -226,3 +226,8 @@ Unpacking objects: 100% (3/3), done.
 0. Save the changes.
 
 
+## More about Git & GitHub #
+
+This is one of a series on Git and GitHub:
+
+{% include git_links.html %}
