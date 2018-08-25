@@ -219,6 +219,8 @@ Here are some innovations:
 
 * Access several weather APIs associated with a contact, such as https://darksky.net/forecast/45.4852,-108.9704/us12/en
 
+* https://codeburst.io/6-interesting-apis-to-check-out-in-2018-5d6830063f29
+
 ## Learning
 
 https://trailhead.salesforce.com/en/modules/isv_plan

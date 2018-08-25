@@ -33,37 +33,43 @@ The script includes <tt>git stash</tt> commands which uses a "hidden compartment
 
 <hr />
 
+   ### Preparation (Optional)
+
 1. In a browser view the git-basics script at:
 
    <pre><strong>https://github.com/wilsonmar/git-utilities/blob/master/git-basics.sh</strong></pre>
 
+   This is the script that this tutorial requests you to run. 
+
+   PROTIP: It's wise to examine any script before running it to check if there are potentially malicious commands. The script does not pull in other scripts.
+
 2. Click the "Star" to give us some cred. Thanks!
 
-1. If you cannot run scripts, view the results anyway by viewing captured from a run:
+3. If you cannot run scripts, view the results anyway by viewing captured from a run:
 
    <pre>https://github.com/wilsonmar/git-utilities/blob/master/git-basics.log</pre>
 
    ### Live run
 
-3. If you Fork the repo to your own account, remember to rename the account name in the URLs in this tutorial.
+4. If you Fork the repo to your own account, remember to rename the account name in the URLs in this tutorial.
 
-4. Highlight the entire command below by clicking on it until the whole line is highlighted.
+5. Highlight the entire command below by clicking on it until the whole line is highlighted.
 
    <pre><strong>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/git-utilities/master/git-basics.sh)"</strong></pre>
 
-5. On a Mac, press command+C to copy it into your Clipboard.
+6. On a Mac, press command+C to copy it into your Clipboard.
 
    On Windows, press Ctrl+C to copy it into your Clipboard.
 
-6. On a Mac, open a Terminal by moving your cursor to the upper-right corner and clicking the magnifying glass search icon. Type "Ter" to click "Terminal.app" when it appears.
+7. On a Mac, open a Terminal by moving your cursor to the upper-right corner and clicking the magnifying glass search icon. Type "Ter" to click "Terminal.app" when it appears.
 
    On Windows, click the Windows icon and type "bash" to click "git bash" when it appears.
 
-7. On a Mac, click under the prompt and press command+V to paste the command.
+8. On a Mac, click under the prompt and press command+V to paste the command.
 
    On Windows, right-click under the prompt and press command+V to paste the command.
 
-8. Press Enter to invoke the command.
+9. Press Enter to invoke the command.
 
 ## Commentary on run output
 
@@ -72,6 +78,11 @@ Numbers below refer to numbers mentioned in the script and appearing in the run 
 1. git init (within /Users/wilsonmar/git_repo, which is the location of the folder created by the script).
 
    On your machine, you would see your user id instead of "wilsonmar".
+
+   <pre>git config --global core.safecrlf false</pre>
+
+   is issued to mute warnings on Windows machines such as 
+   "LF will be replaced by CRLF".
 
 2. Create README.md & .gitignore files:
 
@@ -106,7 +117,7 @@ Numbers below refer to numbers mentioned in the script and appearing in the run 
 
 12. The extra attributes in <tt>git status -s -b</tt> displays a compressed list.
 
-    PROTIP: This command is so frequently used that many define an alias for it by editing the ~/.bash_profile file, and add <tt>gsl</tt>.
+    PROTIP: This command is so frequently used that many define an alias for it by editing the ~/.bash_profile file, and add <tt>gsl</tt>. See <a target="_blank" href="https://wilsonmar.github.io/git-shortcuts">my Git Shortcuts tutorial</a>.
 
     An alias is also frequently added for <tt>git log</tt> command because so many tags are usually needed to make the log more concise.
 
