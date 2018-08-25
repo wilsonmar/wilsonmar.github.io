@@ -90,10 +90,17 @@ This is not documentation, but a step-by-step exploration tour with commentary. 
     compile group: 'io.gatling.highcharts', name: 'gatling-charts-highcharts', version: gatlingVersion
    </pre>
 
+
    The NPSP performance framework is built on <strong>Gatling</strong> which is a Netty-based Aka framework written in Java and thus runs on top of a Java Virtual Machine.
 
-   PROTIP: The advantage of Gatling over competiting tools such as LoadRunner and JMeter is that
+   PROTIP: The advantage of Gatling over competing tools such as LoadRunner and JMeter is that
    those other tools implement each virtual users as threads. However, Gatling implements virtual users as asynchronous messages, which scales much better and can deal easily with thousands of concurrent users.
+
+   See the <a target="_blank" href="https://gatling.io/2017/04/21/gatling-2-2-5/">blog about 2.2.5 being released on 21 April 2017</a>.
+
+   PROTIP: <a target="_blank" href="https://gatling.io/2018/07/24/gatling-frontline-on-aws-marketplace/">On July 24, 2018 it was announced</a> that the Enterprise version of Gatling is available for rent <a target="_blank" href="https://aws.amazon.com/marketplace/pp/B07DTWPZG8">on the AWS Marketplace of Amazon Linux server images</a>. See <a target="_blank" href="https://gatling.io/gatling-frontline/product-sheet/">the product sheet</a> about Grafana and plug-ins for CI/CD Jenkins, Bamboo, TeamCity.
+
+   QUESTION: Gatling 3 in the next version but it has not been updated since August 2017 at https://oss.sonatype.org/content/repositories/snapshots/io/gatling/highcharts/gatling-charts-highcharts/3.0.0-SNAPSHOT/
 
 1. BLAH: The last release on GitHub was April 14, 2016 at:
    https://github.com/gatling/gatling/releases
@@ -124,6 +131,14 @@ This is not documentation, but a step-by-step exploration tour with commentary. 
    NOTE: Gatling is open sourced by a company in France:
 
    https://github.com/gatling/gatling#the-application-under-test-
+
+1. See current version of docs at:
+
+   https://gatling.io/docs/current/general/
+
+1. The marketing home page for Gatling is at https://gatling.io/
+
+   NOTE: Gatling is open sourced by a company in France:
 
 
    ### incaLoadTest in build.gradle
@@ -221,7 +236,7 @@ import performance.simulations.lib.JenkinsParam._
    <pre>
 > Task :incaLoadTest
 21:33:33.412 [INFO ] a.e.s.Slf4jLogger - Slf4jLogger started
-<===========--> 88% EXECUTING [9m 34s]
+===========--> 88% EXECUTING [9m 34s]
 > :incaLoadTest
 > IDLE
    </pre>
