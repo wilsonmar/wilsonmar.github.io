@@ -84,6 +84,8 @@ Gartner says "Salesforce leads market share with 16% in 2013 vs. SAP with 13%, a
 
 PROTIP: Salesforce/Force.com seem to be more attractive to <strong>mid-market</strong> customers than SAP and Oracle. And smaller companies tend to more flexible about all work being done on-site.
 
+Being a popular CRM solutions means it is easier to find sales reps who already know how to use the software
+
 The top competitors to Salesforce are:
 
 * SAP
@@ -91,9 +93,13 @@ The top competitors to Salesforce are:
 * Microsoft Dynamics 365 SaaS integrated with its $26.9 billion LinkedIn acquisition with an initiative called <a target="_blank" href="https://www.forbes.com/sites/bobevans1/2017/12/11/how-microsoft-is-using-linkedin-to-take-on-salesforce-com-and-transform-the-science-of-sales/#5240fbcd2998">Microsoft Relationship Sales and initial customer Park Place</a>.
 
 * SOHO
-* Hubspot
+* <a target="_blank" href="https://www.marketingautomationinsider.com/hubspot-vs-salesforce/">Hubspot</a>
 * SugarCRM
 * Highrise
+* ActiveCampaign
+* Infusionsoft
+* PipeDrive
+
 
 ## Currencies
 
