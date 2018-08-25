@@ -386,6 +386,10 @@ Trailhead Module: https://trailhead.salesforce.com/en/modules/premier-success-pl
 
 ### Languages
 
+Salesforce <strong>locale</strong> settings determine the display formats for date and time, users’ names, addresses, and commas and periods in numbers.<a target="_blank" href="https://help.salesforce.com/articleView?id=admin_supported_locales.htm&type=5">*</a>
+
+Single language organizations can change their locale but cannot change their language.
+
 PROTIP: The default sorting of Displayed Languages in the Language Settings dialog under Company Profile is by major and then minor translations. Language codes are not shown but here they are:
 
 * en = english

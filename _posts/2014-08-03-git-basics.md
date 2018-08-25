@@ -22,6 +22,8 @@ To save you time and the potential for typos, we've created a <strong>Bash scrip
 
 Having a repeatable script enables you to experiment on commands. When example commands are not coming back correctly, a script also provide you a way to say <strong>"it was working before"</strong> rather than blaming yourself for not typing commands correctly.
 
+BTW I've viewed <a target="_blank" href="https://wilsonmar.github.io/git-github-videos/">every video and book on this topic</a> and I haven't seen this approach. So such an approach is unique to this website.
+
 Steps in the script includes how to travel back in time (using git checkout) and what you can do if you're in the middle of working on a file <strong>eligible for commit</strong> but you need to immediately edit and commit other files right away, but don't want to lose the current set of changes.
 
 The script includes <tt>git stash</tt> commands which uses a "hidden compartment" where you can temporarily store files so they won't be included in the next commit. For detailed information about the stash, see the official documentation at:
