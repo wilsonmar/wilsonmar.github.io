@@ -194,7 +194,7 @@ Salesforce, as a company, owns several domain names (some product offerings have
    * <a target="_blank" href="https://salesforce.org/">Salesforce.org</a> for non-profits
    * <a target="_blank" href="https://site.com/">site.com</a> 
 
-   * <a target="_blank" href="https://www.data.com/">Data.com</a> - B2B prospecting and data cleansing [<a target="_blank" href="https://www.data.com/trust/">status</a>]
+   * <a target="_blank" href="https://www.data.com/">Data.com</a> B2B Prospector: Get More Accounts button to search for companies and import them as accounts, then clean contacts and leads [<a target="_blank" href="https://www.data.com/trust/">status</a>]
    * <a target="_blank" href="https://www.desk.com/">Desk.com</a> - Customer Help Desk support for small business [<a target="_blank" href="https://status.desk.com/">status</a>]
    * <a target="_blank" href="https://www.demandware.com/">Demandware.com</a> acquired in 2016 for manufacturing processes. It is part of the Salesforce Commerce Cloud.
    * <a target="_blank" href="http://www.heroku.com/">Heroku.com</a> - free hosting for low-volume apps written in open-source programming [<a target="_blank" href="https://status.heroku.com/">status</a>]

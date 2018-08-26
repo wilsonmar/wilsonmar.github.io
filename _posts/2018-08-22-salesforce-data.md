@@ -112,6 +112,29 @@ Pity it only handles CSV files.
 * Email to Case
 * Email to database
 
+## Learning Modules
+
+Project: <a target="_blank" href="https://trailhead.salesforce.com/en/projects/import-and-export-with-data-management-tools">
+Import and Export with Data Management Tools</a> +300
+to use Data Loader and the Data Import Wizard to manage data in Salesforce.
+
+* <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lex_implementation_data_management">Data Management</a> +550 Learn how to import and export data in Salesforce.
+
+* <a target="_blank" href="https://trailhead.salesforce.com/en/modules/salesforceiq-to-sales-cloud-setup">SalesforceIQ to Sales Cloud Setup</a> +1000 to optimize your new Sales Cloud org for your growing business.
+
+* <a target="_blank" href="https://trailhead.salesforce.com/en/modules/data_quality">Data Quality</a> +700 to discover strategies for assessing and improving the quality of your data in Salesforce.
+
+* <a target="_blank" href="https://trailhead.salesforce.com/en/modules/data_modeling">Data Modeling</a> +1500 to give your data structure with objects, fields, and relationships.
+
+* <a target="_blank" href="https://trailhead.salesforce.com/en/modules/large-data-volumes">Large Data Volumes</a> +400 Plan for and work with large data volumes within Salesforce.
+
+* <a target="_blank" href="https://trailhead.salesforce.com/en/modules/data-migration-and-service-cloud-setup">Data Migration and Service Cloud Setup</a> +200 to move your data from Desk.com to Service Cloud and perform your initial setup.
+
+Account Data Strategies</a> +200
+Learn how your sales team can use data to close deals.
+
+* <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lightning_data_service">Lightning Data Service Basics</a> +1100
+Learn about force:recordData, its benefits, and how to use it in your components.
 
 ## References
 

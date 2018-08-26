@@ -223,23 +223,19 @@ Here are some innovations:
 
 ## Learning
 
-https://trailhead.salesforce.com/en/modules/isv_plan
-AppExchange App Strategy
-to Identify the tools and technologies needed to build your AppExchange app.
-
-https://trailhead.salesforce.com/en/modules/appexchange_licensing
-App Licensing and Customer Support for AppExchange
-[1 hr 45 mins] +400
-
-https://trailhead.salesforce.com/en/modules/salesforce-crm-customization-and-extension
-Salesforce CRM Customization and Extension
+* <a target="_blank" href="https://trailhead.salesforce.com/en/modules/salesforce-crm-customization-and-extension">Salesforce CRM Customization and Extension</a>
 [1 hr] +500
 
-https://trailhead.salesforce.com/en/modules/appexchange_app_updates
-App Upgrading for AppExchange [45 mins] +300
+* <a target="_blank" href="https://trailhead.salesforce.com/en/modules/isv_plan">AppExchange App Strategy</a>
+to Identify the tools and technologies needed to build your AppExchange app.
 
-https://trailhead.salesforce.com/en/modules/isv_app_trials
-AppExchange App Trial Management [1 hr 20 mins] +500
+* <a target="_blank" href="https://trailhead.salesforce.com/en/modules/appexchange_licensing">App Licensing and Customer Support for AppExchange</a> [1 hr 45 mins] +400
+
+* <a target="_blank" href="https://trailhead.salesforce.com/en/modules/appexchange_app_updates">App Upgrading for AppExchange</a> [45 mins] +300
+
+* <a target="_blank" href="https://trailhead.salesforce.com/en/modules/isv_app_trials">AppExchange App Trial Management</a> [1 hr 20 mins] +500
+
+* <a target="_blank" href="https://trailhead.salesforce.com/en/modules/app-development-without-limits">App Development Without Limits</a> +1500 to avoid limits as you develop scalable apps.
 
 ## Miscellaneous links
 
