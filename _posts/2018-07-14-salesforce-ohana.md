@@ -35,6 +35,7 @@ This page presents steps and information for those new to Salesforce to get "plu
    * MOAR = MuleSoft Anypoint Platform
    * NPSP = Non-Profit Success Pack
    * OWD = Organization-Wide Default
+   * PRM = Partner Relationship Mgmt.
    * SFDC = an acronym for "Salesforce dot com"
    * SOQL = Salesforce Object Query Language
    * TDTM = Table-Driven Trigger Management
