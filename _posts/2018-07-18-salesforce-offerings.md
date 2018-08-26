@@ -31,6 +31,7 @@ Technically, many of Salesforce's "cloud" and feature offerings share use of the
 Companies that implement Salesforce CRM see improvement in sales of 30%+ because Salesforce
 provides a data collection system to implement a <strong>disciplined</strong> approach to selling:
    <br /><br />
+   * Lead scoring: the value of each lead can be calculated so salespeople focus on the best leads
    * Leads can be automatically allocated among salespeople
    * Emails can be automatically sent out (by autoresponders)
    * Templates for each step, with each step in the sales funnel defined, but can be adapted
