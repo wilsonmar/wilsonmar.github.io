@@ -38,12 +38,13 @@ provides a data collection system to implement a <strong>disciplined</strong> ap
    * "Email-to-Case" integrates with Gmail and Outlook to automatically reads emails into Service Cloud case records.
    * "Question-to-Case" let moderators create cases from Chatter questions.
    <br /><br />
-Data collection also enables Sales Managers to make decisions based on facts.
+Data collection also enables Managers to make decisions based on facts.
    <br /><br />
    * A large number of default Dashboards are available with jew a few clicks
    * Calculation of how much is in each part of the sales funnel
    * Since the status of each opportunity 
    * Campaigns returns analysis
+   * Data enables Sales and Marketing to work together better, proactively
    <br /><br />
 For end-users, get away from:
    <br /><br />
