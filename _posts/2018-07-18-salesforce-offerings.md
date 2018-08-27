@@ -421,8 +421,12 @@ PROTIP: The default sorting of Displayed Languages in the Language Settings dial
 * th = thai
 * fi = finnish
 * ru = russian
-* Spanish (Mexico)
-* Norwegian
+* es-mx = Spanish (Mexico)
+* no = Norwegian
+<br /><br />
+
+MEH: Each product record in a Pricebook is for a single currency. So a product sold in several currencies would appear multiple times in a Pricebook.
+
 
 <a name="VersionChangeMgmt"></a>
 
