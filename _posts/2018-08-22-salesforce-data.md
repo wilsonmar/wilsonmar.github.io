@@ -18,6 +18,17 @@ comments: true
 
 This article is a succinct hands-on deep dive on how to get data in and out of Salesforce.
 
+Based on VIDEO: <a target="_blank" title="Oct 17, 2017 [5:56]" href="https://www.youtube.com/watch?v=YbdCyWgWDNo&t=1m14s">Data Import: Choosing the Right Tool</a>:
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th>&nbsp;</th><th><a href="#DataImportWizard">Data Import Wizard</a></th><th><a href="#ApexDataLoader">Apex Data Loader</a></th></tr>
+<tr valign="top"><td>Import data format</td><td>CSV</td><td>CSV</td></tr>
+<tr valign="top"><td>Max. # records</td><td> &LT; 50,000</td><td> < 5 million</td></tr>
+<tr valign="top"><td>Catch duplicates</td><td>yes</td><td>no</td></tr>
+<tr valign="top"><td>Import Opportunities</td><td>no</td><td>yes</td></tr>
+<tr valign="top"><td>Can turn off workflow</td><td>yes</td><td>no</td></tr>
+<tr valign="top"><td>Can export data</td><td>no</td><td>yes</td></tr>
+</table>
+
 ## Excel to CSV
 
 Many use Microsoft Excel to create and edit CSV files for import into Salesforce.
@@ -31,15 +42,32 @@ There are some tricks to using it.
 
    Double-quotes within text are problematic because they are also used to define the beginning and end of fields.
 
+### Excel Connector
+
+<a target="_blank" href="https://developer.salesforce.com/page/Force.com_Excel_Connector">
+The Force.com Excel Connector</a> is an Add-on to Microsoft Excel via the Toolkit for Office.
+It provides <strong>bi-directional access</strong> to the Force.com API. 
+
+So it's useful for cleaning and mass-updating salesforce.com-based data. 
+
+Updated features include access to Products2 and custom objects, API names or labels, simple query wizard, readable user names, etc.
+
+It allows you to upload and export data directly in and out of an excel sheet.
+
+<a name="DataImportWizard"></a>
+
 ## Inbuilt Data Import Wizard
 
-https://help.salesforce.com/apex/HTViewHelpDoc?id=import_which_data_import_tool.htm&language=en
-The Data Import Wizard is inbuilt in Salesforce to provide step-by-step guidance to manually specify how to get CSV files into Salesforce standard objects such as Leads, Accounts, Contacts, Solutions and custom objects. 
+The <a target="_blank" href="https://help.salesforce.com/apex/HTViewHelpDoc?id=import_which_data_import_tool.htm&language=en">Data Import Wizard</a> is inbuilt within Salesforce to provide step-by-step guidance to manually specify how to get CSV files into Salesforce standard objects such as Leads, Accounts, Contacts, Solutions and custom objects. 
 
 Based on <a target="_blank" href="http://opfocus.com/5-best-practices-for-salesforce-com-apex-data-loader/
 ">this article</a>:
 
-1. Create a dedicated Data Loader Salesforce user account that cannot fire triggers, workflows, or other automation.
+1. Create a dedicated Data Loader Salesforce user account.
+
+1. Login by appending the Security Token to extend the account's Password.
+
+1. Set that account's User Profile to not fire triggers, workflows, or other automation.
 
 1. Setup that user whenever you setup automation.
 
@@ -47,6 +75,8 @@ Based on <a target="_blank" href="http://opfocus.com/5-best-practices-for-salesf
    Include this field in your workflow rules, triggers or other automation, similar to option 1.
 
 1. Toggle the flag on/off depending on the type of data load. 
+
+1. Download the DataLoader.
 
 1. Have a program calculate the number of records in the file. Salesforce limits imports of up to <strong>50,000 records</strong> at a time. Use this Linux command:
 
@@ -58,12 +88,11 @@ Based on <a target="_blank" href="http://opfocus.com/5-best-practices-for-salesf
 
 1. After an upload, run a report to calculate records and identify what has changed.
 
-Trailhead module:
+<a name="ApexDataLoader"></a>
 
 ## Inbuilt Apex Data Loader
 
-https://developer.salesforce.com/page/Data_Loader
-The standard Salesforce Data Loader</a> is for migrating CSV datasets into Salesforce, up to 5 million records at a time.
+The <a target="_blank" href="https://developer.salesforce.com/page/Data_Loader">standard Salesforce Data Loader</a> is for migrating CSV datasets into Salesforce, up to 5 million records at a time.
 
 But recurring data loads can be scheduled.
 It is a program that communicates with the Salesforce cloud, installed locally on a laptop or on-premise server. Some consider it annoying to install on a Mac.
@@ -106,11 +135,18 @@ It connects to Box.
 
 Pity it only handles CSV files.
 
+## LexiLoader
+
+
 ## Others:
 
 * Web Form 
 * Email to Case
 * Email to database
+
+## Export
+
+Backups Weekly. No Daily.
 
 ## Learning Modules
 
@@ -130,6 +166,8 @@ to use Data Loader and the Data Import Wizard to manage data in Salesforce.
 
 * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/data-migration-and-service-cloud-setup">Data Migration and Service Cloud Setup</a> +200 to move your data from Desk.com to Service Cloud and perform your initial setup.
 
+* <a target="_blank" href="https://trailhead.salesforce.com/en/modules/custom_metadata_types">Custom Metadata Types</a> +1400 Learn how to customize, deploy, package, and upgrade application metadata with ease.
+
 Account Data Strategies</a> +200
 Learn how your sales team can use data to close deals.
 
@@ -143,6 +181,9 @@ Learn about force:recordData, its benefits, and how to use it in your components
 
 * http://www.salesforceben.com/best-data-loader-for-salesforce/
    "Best Data loader for Salesforce" (2014) by Ben McCarthy
+
+VIDEO: <a target="_blank" title="Oct 17, 2017 [21:47]" href="https://www.youtube.com/watch?v=XaDGT9U2n_w">
+How to: Use Two Great (and Free) Data Tools - Data Loader and Excel Connector</a>
 
 
 ## More about Salesforce #
