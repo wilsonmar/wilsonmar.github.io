@@ -84,7 +84,11 @@ Numbers below refer to numbers mentioned in the script and appearing in the run 
    is issued to mute warnings on Windows machines such as 
    "LF will be replaced by CRLF".
 
-2. Create README.md & .gitignore files:
+2. Create README.md & .gitignore files using echo piping commands:
+
+   <pre><strong>echo "#git-basics.sh">README.md
+   echo "amy">.gitignore
+   </strong></pre>
 
    PROTIP: The git stash command ignores files specified in the .gitignore file which specifies files which should not be pushed up to GitHub or GitLab.
 
