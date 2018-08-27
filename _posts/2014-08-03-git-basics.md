@@ -33,7 +33,7 @@ The script includes <tt>git stash</tt> commands which uses a "hidden compartment
 
 <hr />
 
-   ### Preparation (Optional)
+### Preparations (Optional)
 
 1. In a browser view the git-basics script at:
 

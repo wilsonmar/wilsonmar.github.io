@@ -123,12 +123,14 @@ Cards in "Testing" stage indicate the need for team review. There is a "blocked"
 
 Each day we hold short meeting when the Product Owner explains the logic of priorities to maximize business value, then resolve conflicts with technical dependencies and <a target="_blank" href="https://kanbantool.com/kanban-library/implementing-kanban/the-daily-kanban-stand-up">impediment tasks</a>. Before each scrum, status and impediments are logged and each person reviews the KanBan board to see what each of us did the day before and what we aim to do that day.
 
-How does each person pick cards to work on? 
+PROTIP: During daily scrums, rather than hold what amounts to a "roll call", each developer summarizes an analysis for how to segment work into discrete units flowing into production, including risk identification and mitigation. Many individuals use the "Pomerdero Technique", which segments each day into 50-minute sessions of work followed by 10 minutes of relaxation. 
+
+How does each person pick SCRUM cards to work on? 
 
 Many teams designate a WIP (Work In Process) limit of how many cards the team can work on simultaneously. This is sometimes necessary to reduce <strong>cycle time</strong> - how long it takes for tasks to travel through the team’s workflow.
 
 Kanban limits the capacity based on preventing multitasking with work-in-progess limits.
-Scrum limits capacity by focusing on a 2-week section of their backlog. 
+Scrum limits capacity by focusing on limited time (2-3 week) section of their backlog. 
 
 While working on each increment, we consider all aspects holistically: the UX, Database Schema Design, Testing, Performance, Migration utilities, manual workarounds, etc. Our focus is delivering working code increments rather than comprehensive documentation.
 

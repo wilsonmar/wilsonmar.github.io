@@ -185,6 +185,10 @@ Learn about force:recordData, its benefits, and how to use it in your components
 VIDEO: <a target="_blank" title="Oct 17, 2017 [21:47]" href="https://www.youtube.com/watch?v=XaDGT9U2n_w">
 How to: Use Two Great (and Free) Data Tools - Data Loader and Excel Connector</a>
 
+https://www.udemy.com/salesforce-administrator/learn/v4/t/lecture/4309758?start=0
+Data Import Wizard and the Data Loader
+by Mike Wheeler
+
 
 ## More about Salesforce #
 

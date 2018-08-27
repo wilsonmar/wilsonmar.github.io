@@ -119,6 +119,8 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
 
 For $200 each, answer 65% of 60 multiple-choice/multiple-select questions in 105 minutes.
 
+### Basic Administrator
+
 <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedAdministrator.pdf">Official PDF - Salesforce Administrator Certification</a>
 
    * Org. setup 2%
@@ -138,6 +140,8 @@ For $200 each, answer 65% of 60 multiple-choice/multiple-select questions in 105
    * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/force_com_admin_beginner">Force.com Admin Beginner</a>
    [8 hrs 35 mins] topics are structed according to the above list.
 
+### Advanced Administrator
+
 <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedAdvancedAdministrator.pdf">Official PDF -  Advanced Administrator Certification</a>
 
    * Security and Access 20%
@@ -147,7 +151,7 @@ For $200 each, answer 65% of 60 multiple-choice/multiple-select questions in 105
    * Service cloud applications 10%
    * Data management 10%
    * Content management 3%
-   * Change management 10%
+   * Change management 10% [<a target="_blank" href="https://trailhead.salesforce.com/en/modules/app_deployment">module</a>]
    * Analytics, reports, and dashboards 10%
    * Process automation 13%
 
@@ -157,7 +161,7 @@ For $200 each, answer 65% of 60 multiple-choice/multiple-select questions in 105
    * Trailhead Module: <a target="_blank" href="https://resources.docs.salesforce.com/206/latest/en-us/sfdc/pdf/communities.pdf">Setup and Manage Salesforce Communities</a> [440 pages from Spring '17']
    * Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/community_rollout_impl">Community Rollout Strategy</a> [1 hr 40 mins]
 
-
+### Maintenance
 
 Administrator Certification Maintenance exam:
 
@@ -166,9 +170,7 @@ Administrator Certification Maintenance exam:
 
 Many resources address content for both courses:
 
-   * https://admin.salesforce.com/
-
-   * 201
+   * <a target="_blank" href="https://admin.salesforce.com/">https://admin.salesforce.com</a>
 
    * <a target="_blank" href="http://www.shellblack.com/administration/how-to/">
    http://www.shellblack.com/administration/how-to</a>
