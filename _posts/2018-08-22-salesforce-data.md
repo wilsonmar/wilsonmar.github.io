@@ -60,6 +60,8 @@ It allows you to upload and export data directly in and out of an excel sheet.
 
 The <a target="_blank" href="https://help.salesforce.com/apex/HTViewHelpDoc?id=import_which_data_import_tool.htm&language=en">Data Import Wizard</a> is inbuilt within Salesforce to provide step-by-step guidance to manually specify how to get CSV files into Salesforce standard objects such as Leads, Accounts, Contacts, Solutions and custom objects. 
 
+![sf-soql-652x218](https://user-images.githubusercontent.com/300046/44670591-5940fd80-a9e0-11e8-8904-44ca9e4a8cc6.jpg)
+
 Based on <a target="_blank" href="http://opfocus.com/5-best-practices-for-salesforce-com-apex-data-loader/
 ">this article</a>:
 
@@ -137,6 +139,10 @@ Pity it only handles CSV files.
 
 ## LexiLoader
 
+## Talend 
+
+https://www.talend.com/resources/integrating-with-salesforce/
+Talend is a robust data loading tool schedule data loads from other systems, into Salesforce, to perform system integrations. It's open-source (free). 
 
 ## Others:
 
@@ -146,7 +152,18 @@ Pity it only handles CSV files.
 
 ## Export
 
-Backups Weekly. No Daily.
+PROTIP: No Daily.
+
+Backups in prod (and Sandboxes) can occur Weekly. 
+
+Backups in DE orgs can occur Monthly. 
+
+More frequent backups can occur using a 3rd party app on AppExchange.
+
+The backup file consists of many CSV files: one for each object and internal tables:
+
+![sf-backup-objects-598x410-28455](https://user-images.githubusercontent.com/300046/44672521-ed619380-a9e5-11e8-9976-992d85a3145d.jpg)
+
 
 ## Learning Modules
 
@@ -185,9 +202,13 @@ Learn about force:recordData, its benefits, and how to use it in your components
 VIDEO: <a target="_blank" title="Oct 17, 2017 [21:47]" href="https://www.youtube.com/watch?v=XaDGT9U2n_w">
 How to: Use Two Great (and Free) Data Tools - Data Loader and Excel Connector</a>
 
-https://www.udemy.com/salesforce-administrator/learn/v4/t/lecture/4309758?start=0
-Data Import Wizard and the Data Loader
-by Mike Wheeler
+For those who have bought Mike Wheeler's Udemy class:
+
+   * https://www.udemy.com/salesforce-administrator/learn/v4/t/lecture/4309758?start=0
+   Data Import Wizard and the Data Loader
+
+   * https://www.udemy.com/salesforce-administrator/learn/v4/t/lecture/4812698?start=0
+   Additional Salesforce Data Management Tools
 
 
 ## More about Salesforce #

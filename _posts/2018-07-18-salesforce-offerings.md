@@ -101,6 +101,8 @@ The top competitors to Salesforce are:
 * ActiveCampaign
 * Infusionsoft
 * PipeDrive
+* <a target="_blank" href="https://www.egnyte.com/">Egnyte</a>
+* <a target="_blank" href="https://www.showpad.com/">Showpad</a>
 
 
 ## Currencies
