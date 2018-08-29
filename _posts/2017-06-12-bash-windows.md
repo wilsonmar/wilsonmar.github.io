@@ -169,3 +169,12 @@ https://blogs.msdn.microsoft.com/wsl/2016/06/15/wsl-file-system-support/
 published 15 June 2016 by Jack Hammons, who writes:<br />
 <a target="_blank" href="https://blogs.msdn.microsoft.com/wsl/">
 https://blogs.msdn.microsoft.com/wsl</a>, the home page of WSL.
+
+
+
+
+## More on DevOps #
+
+This is one of a series on DevOps:
+
+{% include devops_links.html %}
