@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Git basics (automated by a script)"
-excerpt: "Get tips about the most common git commands (including stash, checkout, etc.) executed in a script so can experiment on your own"
+excerpt: "Get tips about the most common git commands (including stash, checkout, etc.) executed in a script so you can experiment on your own"
 modified:
 tags: [git]
 image:
@@ -39,7 +39,7 @@ The script includes <tt>git stash</tt> commands which uses a "hidden compartment
 
    <pre><strong>https://github.com/wilsonmar/git-utilities/blob/master/git-basics.sh</strong></pre>
 
-   This is the script that this tutorial requests you to run. 
+   This is the script you run to perform the tutorial below. 
 
    PROTIP: It's wise to examine any script before running it to check if there are potentially malicious commands. The script does not pull in other scripts.
 

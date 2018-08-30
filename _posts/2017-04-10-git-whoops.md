@@ -146,7 +146,15 @@ If you didn't mean to fork a repository, but you did anyway,
 
    ### Status
 
-   The <strong>git status</strong> command details the status of changes to the repo. 
+   The <strong>git status</strong> command details the status of changes to the repo.
+
+
+   ### Committed but not pushed
+
+   To get a list of commits but not yet pushed:
+
+   <pre><strong>git log origin/master..HEAD --oneline
+   </strong></pre>
 
 
    <a name="LocalClean"></a>
@@ -167,6 +175,7 @@ If you didn't mean to fork a repository, but you did anyway,
    * <strong>-f</strong> removes files untracked. It's required.
    * <strong>-d</strong> removes untracked directories.
    * <strong>-x</strong> removes files Git ignores due to mention in .gitignore.
+   <br /><br />
 
    [<a target="_blank" href="https://git-scm.com/docs/git-clean">SCM</a>]
 
