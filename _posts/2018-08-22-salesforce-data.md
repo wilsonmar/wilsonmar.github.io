@@ -164,6 +164,20 @@ The backup file consists of many CSV files: one for each object and internal tab
 
 ![sf-backup-objects-598x410-28455](https://user-images.githubusercontent.com/300046/44672521-ed619380-a9e5-11e8-9976-992d85a3145d.jpg)
 
+## Data Quality
+
+This is covered in the 211 course and:
+
+   * Trailhead module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/data_quality">Data Quality</a> +700 
+   <br /><br />
+
+Topics:
+
+* Assess, cleanse, and maintain data quality
+
+* Prevent duplicate records using Duplicate Management
+
+* Clean and enrich data with data.com
 
 ## Learning Modules
 
@@ -174,8 +188,6 @@ to use Data Loader and the Data Import Wizard to manage data in Salesforce.
 * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lex_implementation_data_management">Data Management</a> +550 Learn how to import and export data in Salesforce.
 
 * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/salesforceiq-to-sales-cloud-setup">SalesforceIQ to Sales Cloud Setup</a> +1000 to optimize your new Sales Cloud org for your growing business.
-
-* <a target="_blank" href="https://trailhead.salesforce.com/en/modules/data_quality">Data Quality</a> +700 to discover strategies for assessing and improving the quality of your data in Salesforce.
 
 * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/data_modeling">Data Modeling</a> +1500 to give your data structure with objects, fields, and relationships.
 
