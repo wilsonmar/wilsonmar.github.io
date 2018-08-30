@@ -2,7 +2,6 @@
 layout: post
 title: "Cloud-Foundry"
 excerpt: "From Pivotal, the Java Spring Boot web services people."
-shorturl: "https://goo.gl/yb4WGG"
 tags: []
 image:
 # feature: pic blue black stars spin 1900x500.jpg
@@ -1382,3 +1381,12 @@ and Kevin Rutten
 ## Hackathons
 
 https://thenewstack.io/brainstorming-new-platform-ideas-cloud-foundry-hackathon/
+
+
+
+
+## More on DevOps #
+
+This is one of a series on DevOps:
+
+{% include devops_links.html %}
