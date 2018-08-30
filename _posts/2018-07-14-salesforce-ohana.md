@@ -37,6 +37,7 @@ This page presents steps and information for those new to Salesforce to get "plu
    * OWD = Organization-Wide Default
    * PRM = Partner Relationship Mgmt.
    * SFDC = an acronym for "Salesforce dot com"
+   * SFMC = Salesforce Marketing Cloud
    * SOQL = Salesforce Object Query Language
    * TDTM = Table-Driven Trigger Management
    <br /><br />
