@@ -191,6 +191,12 @@ If you didn't mean to fork a repository, but you did anyway,
    * Specifying git rm without --cached removes the file from both cached and working directory.
    <br /><br />
 
+   To <strong>remove every file</strong> from Git's index/Staging:
+
+   <pre><strong>git rm --cached -r .
+   </strong></pre>
+
+   * The -r means -recursive of all files and folders under the current folder.
 
    [<a target="_blank" href="https://git-scm.com/docs/git-reset/">SCM</a>],
    <a href="https://wilsonmar.github.io/git-flow#Add">Return</a>
