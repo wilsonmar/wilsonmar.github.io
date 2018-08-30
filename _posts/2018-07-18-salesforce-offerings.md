@@ -208,6 +208,7 @@ Salesforce, as a company, owns several domain names (some product offerings have
 Not owned by Salesforce (but they seem close):
 
    * <a target="_blank" href="http://www.financialforce.com/">FinancialForce.com</a> provides SaaS for managing financial information. Salesforce invested in this company.
+   * <a target="_blank" href="https://atginfo.com/">ATG (Advanced Technology Group)</a> provides SaaS for "Quote to Cash" add-on plus trains on Salesforce Billing.
 
 
 ### Status of productive use
