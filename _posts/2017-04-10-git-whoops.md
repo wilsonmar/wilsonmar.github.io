@@ -480,6 +480,8 @@ This page combines the wisdom from these who came before me:
 * https://opensource.com/article/18/6/git-reset-revert-rebase-commands
    19 Jun 2018
 
+* https://evilmartians.com/chronicles/git-push---force-and-how-to-deal-with-it
+
 ## More #
 
 This is one of a series on Git and GitHub:

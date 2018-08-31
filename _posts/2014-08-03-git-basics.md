@@ -16,7 +16,7 @@ comments: true
 
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/git-basics">This tutorial</a> shows you a rather basic (typical) workflow for using Git. 
+<a target="_blank" href="https://wilsonmar.github.io/git-basics">This tutorial</a> shows you a basic (typical) workflow for using Git.
 
 To save you time and the potential for typos, we've created a <strong>Bash script</strong> that you can run on your Mac or within a Git Bash terminal on your Windows machine. The script performs a set of commands to establish a specific condition of untracked files and entries in the Git stage and commit history.
 
@@ -71,9 +71,13 @@ The script includes <tt>git stash</tt> commands which uses a "hidden compartment
 
 9. Press Enter to invoke the command.
 
-## Commentary on run output
+## Commentary on command output
 
-Numbers below refer to numbers mentioned in the script and appearing in the run output:
+This diagram illustrates the rough relationship among commands:
+
+![git-basics-932x435-54240](https://user-images.githubusercontent.com/300046/44905476-62c3b180-accf-11e8-90da-7ba4f79c8ace.jpg)
+
+Specific points in the script are referenced by the squence numbers below:
 
 1. git init (within /Users/wilsonmar/git_repo, which is the location of the folder created by the script).
 
