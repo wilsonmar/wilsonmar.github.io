@@ -36,6 +36,7 @@ This page presents steps and information for those new to Salesforce to get "plu
    * NPSP = Non-Profit Success Pack
    * OWD = Organization-Wide Default
    * PRM = Partner Relationship Mgmt.
+   * QTC = Quote to Cash (Billing workflow)
    * SFDC = an acronym for "Salesforce dot com"
    * SFMC = Salesforce Marketing Cloud
    * SOQL = Salesforce Object Query Language

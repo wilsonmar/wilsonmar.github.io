@@ -99,7 +99,7 @@ Trailhead Projects:
 
 https://api.einstein.ai
 
-(api.metamind.io is the previous endpoint)
+(api.metamind.io was the previous endpoint)
 
 ### Einstein Language
 
@@ -141,7 +141,6 @@ Surface Data from IBM Watson Discovery in Salesforce
 1. Wait for email "Welcome to Salesforce Einstein Platform Services".
 1. Click the blue "Sandbox Users". Select a Salesforce certificate: Production Users Sandbox Users.
 1. At https://test.salesforce.com/, login to your Einsteain org account.
-1. 
 
    ### Reset private key
 
@@ -167,11 +166,13 @@ Surface Data from IBM Watson Discovery in Salesforce
 
 This is <a target="_blank" href="https://metamind.readme.io/v1/docs/generate-an-oauth-token">done within code</a>, 
 
-   * To clone the JWT repo by using this command:<br />
-   git clone https://github.com/salesforceidentity/jwt
+   * To clone the JWT repo by using command:
 
-   * To clone the Apex code repo by using this command:<br />
-   git clone https://github.com/MetaMind/apex-utils
+   <pre>git clone https://github.com/salesforceidentity/jwt</pre>
+
+   * To clone the Apex code repo by using command:
+
+   <pre>git clone https://github.com/MetaMind/apex-utils</pre>
 
 But to do it manually:
 
@@ -188,7 +189,7 @@ Now paste the Token in your API form.
 
 ## Internal tools
 
-<a target="_blank' href="https://salesforce.wd1.myworkdayjobs.com/en-US/External_Career_Site/job/California---San-Francisco/Lead-or-Principal-Software-Engineer---Personalization-Platform--Philanthropy-Cloud-Einstein_JR10580">Job Descriptions for Machine Learning Engineer</a> reveal the technologies used behind the scenes:
+<a target="_blank" href="https://salesforce.wd1.myworkdayjobs.com/en-US/External_Career_Site/job/California---San-Francisco/Lead-or-Principal-Software-Engineer---Personalization-Platform--Philanthropy-Cloud-Einstein_JR10580">Job Descriptions for Machine Learning Engineer</a> reveal the technologies used behind the scenes:
 
 * <a target="_blank" href="https://predictionio.apache.org">Apache PredictionIO</a> to train and serve models
 
@@ -196,9 +197,9 @@ Now paste the Token in your API form.
 
 * <a target="_blank" href="https://wilsonmar.github.io/kubernetes">Kubernetes</a> for scaling services
 
-* SparkML, Google Tensorflow, and <a target="_blank" href="https://mahout.apache.org/">Apache Mahout</a> (linear algebra Scala DSL) machine learning algorithm libraries for <strong>Personalization</strong> 
-
 * JVM based languages (Java, Scala) (no Python?) because ... 
+
+* <a target="_blank" href="https://spark.apache.org/docs/1.2.2/ml-guide.html">SparkML</a>, Google Tensorflow, and <a target="_blank" href="https://mahout.apache.org/">Apache Mahout</a> (linear algebra Scala DSL & native solvers for CPU/GPU/CUDA acceleration) machine learning algorithm libraries for <strong>Personalization</strong> 
 
 * Spark and <a target="_blank" href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-spark.html">Amazon EMR (Elastic Map Reduce)</a> on AWS cloud to process massive amount of data in large-scale data pipelines and computation systems
 
