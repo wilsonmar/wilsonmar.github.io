@@ -32,11 +32,11 @@ The Einstein Intent API <strong>categorizes</strong> unstructured text into <str
 
 The "AI-Powered" Einstein features listed in the <a target="_blank" href="https://www.salesforce.com/editions-pricing/sales-cloud/">Sales Cloud pricing sheet</a> at additional cost for Enterprise+ (not Pro):
 
-   * Einstein Forecasting
+   * <a href="#EinsteinForecasting">Einstein Forecasting</a> (prediction)
    * <a href="#LeadScoring">Lead Scoring</a>
    * <a href="#OpportunityScoring">Opportunity Scoring</a>
    * <a href="#OpportunityInsights">Opportunity Insights</a>
-   * <a href="#AccountInsights"></a>Account Insights</a>
+   * <a href="#AccountInsights">Account Insights</a>
    * <a href="#ActivityCapture">Activity Capture</a>
    * <a href="#AutomatedContacts">Automated Contacts</a>
    * <a href="#Inbox">Inbox (Google Gmail)</a>
@@ -46,11 +46,13 @@ The "AI-Powered" Einstein features listed in the <a target="_blank" href="https:
 
 ## Einstein Offerings
 
-See https://www.salesforce.com/products/einstein/features/#platform-scroll-tab?d=cta-body-promo-16
+Based on <a target="_blank" href="https://www.salesforce.com/products/einstein/features/#platform-scroll-tab?d=cta-body-promo-16">this</a>:
+
+<a name="EinsteinForecasting"></a>
 
 <strong>Einstein Prediction Builder</strong> 
 makes predictions about almost any field in Salesforce with just a few clicks.
-It predicts the likelihood that customers show up for a reservation, so you can prioritize which customers to call for confirmation. Then you can schedule restaurant staff appropriately, fill more seats, and make more diners happy.
+For example, it predicts the likelihood that customers show up for a reservation, so you can prioritize which customers to call for confirmation. This enables more appropriate scheduling of restaurant staff, fill more seats, and make more diners happy.
 
 <a name="LeadScoring"></a>
 
