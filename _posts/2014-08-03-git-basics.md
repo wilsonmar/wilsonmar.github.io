@@ -83,10 +83,9 @@ Specific points in the script are referenced by the squence numbers below:
 
    On your machine, you would see your user id instead of "wilsonmar".
 
-   <pre>git config --global core.safecrlf false</pre>
+1. To mute warnings on Windows machines such as "LF will be replaced by CRLF":
 
-   is issued to mute warnings on Windows machines such as 
-   "LF will be replaced by CRLF".
+   <pre>git config --global core.safecrlf false</pre>
 
 2. Create README.md & .gitignore files using echo piping commands:
 

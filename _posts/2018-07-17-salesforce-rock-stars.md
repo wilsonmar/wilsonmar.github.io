@@ -264,6 +264,9 @@ Joe Ferraro:
 John Loghry:
    * <a target="_blank" href="https://www.linkedin.com/pulse/visualforce-lightning-my-top-5-tips-james-loghry/">Visualforce to Lightning: My Top 5 Tips</a> Jan 5, 2017
 
+John N Robinson:
+   * Owner of <a target="_blank" href="https://www.linkedin.com/groups/66190/about">Salesforce Power Users Group on LinkedIn</a> since 2008.
+
 Jitendra Zaa, a 7X Salesforce Certificate, MVP and Technical Architect, working from Hartford, CT:
    * <a target="_blank" href="http://www.jitendrazaa.com/blog/">jitendrazaa.com/blog</a>
    since 2008

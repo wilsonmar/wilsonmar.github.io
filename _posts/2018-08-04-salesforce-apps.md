@@ -102,6 +102,8 @@ Apps are defined as its down set of <strong>tabs</strong>.
 
 AppExchange partners build ISVforce apps and Lightning Platform OEM Embedded apps.
 
+<a target="_blank" href="https://www.skuid.com/">Skuid</a> is a low-code cloud platform that was an early adopter of SLDS and <a target="_blank" href="https://www.linkedin.com/pulse/skuid-lightning-experience-qa-ken-mcelrath/">"is the only scalable, enterprise class, fully integrated and native user experience platform running on Lightning."</a>
+
 ### ISVforce apps
 
 ISVforce apps augment Sales Cloud or Service Cloud business functions.
