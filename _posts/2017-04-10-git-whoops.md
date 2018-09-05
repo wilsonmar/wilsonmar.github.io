@@ -40,7 +40,7 @@ If you didn't mean to fork a repository, but you did anyway,
    select <strong>Your profile</strong>.
 <br /><br />
 
-   <a href="https://wilsonmar.github.io/git-flow#Fork">Return</a>
+   <a href="https://wilsonmar.github.io/git-basics#Fork">Return</a>
 
 
    <a name="GitConfig"></a>
@@ -61,7 +61,7 @@ If you didn't mean to fork a repository, but you did anyway,
 
    Edit the text file.
 
-   <a href="https://wilsonmar.github.io/git-flow#GitConfig">Return</a>
+   <a href="https://wilsonmar.github.io/git-basics#GitConfig">Return</a>
 
 
   
@@ -77,7 +77,7 @@ If you didn't mean to fork a repository, but you did anyway,
    rm -rf gitclass
    </strong></pre>
 
-   <a href="https://wilsonmar.github.io/git-flow#Clone">Return</a>
+   <a href="https://wilsonmar.github.io/git-basics#Clone">Return</a>
 
 
 
@@ -105,7 +105,7 @@ If you didn't mean to fork a repository, but you did anyway,
 
 
    [<a target="_blank" href="https://git-scm.com/docs/git-checkout/">SCM</a>],
-   <a href="https://wilsonmar.github.io/git-flow#Checkout">Return</a>
+   <a href="https://wilsonmar.github.io/git-basics#Checkout">Return</a>
 
 
    <a name="NewBranch"></a>
@@ -118,7 +118,7 @@ If you didn't mean to fork a repository, but you did anyway,
    </strong></pre>
 
    [<a target="_blank" href="https://git-scm.com/docs/git-branch/">SCM</a>],
-   <a href="https://wilsonmar.github.io/git-flow#NewBranch">Return</a>
+   <a href="https://wilsonmar.github.io/git-basics#NewBranch">Return</a>
 
 
    <a name="Editing"></a>
@@ -208,7 +208,7 @@ If you didn't mean to fork a repository, but you did anyway,
    * The -r means -recursive of all files and folders under the current folder.
 
    [<a target="_blank" href="https://git-scm.com/docs/git-reset/">SCM</a>],
-   <a href="https://wilsonmar.github.io/git-flow#Add">Return</a>
+   <a href="https://wilsonmar.github.io/git-basics#Add">Return</a>
 
 
    <a name="Commit"></a>
@@ -263,7 +263,7 @@ If you didn't mean to fork a repository, but you did anyway,
    manual on the git revert command</a>.
 
    <a target="_blank" href="https://git-scm.com/docs/git-revert">SCM</a>,
-   <a href="https://wilsonmar.github.io/git-flow#Commit">Return</a>
+   <a href="https://wilsonmar.github.io/git-basics#Commit">Return</a>
 
 
    <a name="LocalCommits"></a>
@@ -305,7 +305,7 @@ If you didn't mean to fork a repository, but you did anyway,
    </strong></pre>
    
    [<a target="_blank" href="https://git-scm.com/docs/git-push/">SCM</a>],
-   <a href="https://wilsonmar.github.io/git-flow#Push">Return</a>
+   <a href="https://wilsonmar.github.io/git-basics#Push">Return</a>
 
 
    <a name="Tags"></a>
@@ -324,7 +324,7 @@ If you didn't mean to fork a repository, but you did anyway,
 
 
    [<a target="_blank" href="https://git-scm.com/docs/git-tag/">SCM</a>],
-   <a href="https://wilsonmar.github.io/git-flow#Tags">Return</a>
+   <a href="https://wilsonmar.github.io/git-basics#Tags">Return</a>
 
    <a name="Fallback"></a>
 
@@ -360,7 +360,7 @@ If you didn't mean to fork a repository, but you did anyway,
    NOTE: The colon is the secret special sauce. There is no "delete" command with this.
 
    [<a target="_blank" href="https://git-scm.com/docs/git-branch/">SCM</a>],
-   <a href="https://wilsonmar.github.io/git-flow#DeleteBranch">Return</a>
+   <a href="https://wilsonmar.github.io/git-basics#DeleteBranch">Return</a>
 
 
 
@@ -370,7 +370,7 @@ If you didn't mean to fork a repository, but you did anyway,
 
    A pull request can be cancelled in the GitHub web GUI.
 
-   <a href="https://wilsonmar.github.io/git-flow#PullRequest">Return</a>
+   <a href="https://wilsonmar.github.io/git-basics#PullRequest">Return</a>
 
 
    <a name="Upstream"></a>
@@ -388,7 +388,7 @@ If you didn't mean to fork a repository, but you did anyway,
    </strong></pre>
 
    [<a target="_blank" href="https://git-scm.com/docs/git-remote/">SCM</a>],
-   <a href="https://wilsonmar.github.io/git-flow#Upstream">Return</a>
+   <a href="https://wilsonmar.github.io/git-basics#Upstream">Return</a>
 
 
    <a name="Pull"></a>
@@ -407,7 +407,7 @@ If you didn't mean to fork a repository, but you did anyway,
    </strong></pre>
 
 
-   <a href="https://wilsonmar.github.io/git-flow#MergeLocal">Return</a>
+   <a href="https://wilsonmar.github.io/git-basics#MergeLocal">Return</a>
 
 
    <a name="MyRepoFetch"></a>
@@ -427,7 +427,7 @@ If you didn't mean to fork a repository, but you did anyway,
    </strong></pre>
 
 
-   <a href="https://wilsonmar.github.io/git-flow#MyRepoFetch">Return</a>
+   <a href="https://wilsonmar.github.io/git-basics#MyRepoFetch">Return</a>
 
 
    <a name="MergeLocal"></a>
@@ -440,7 +440,7 @@ If you didn't mean to fork a repository, but you did anyway,
    </strong></pre>
 
    [<a target="_blank" href="https://git-scm.com/docs/git-merge/">SCM</a>],
-   <a href="https://wilsonmar.github.io/git-flow#MergeLocal">Return</a>
+   <a href="https://wilsonmar.github.io/git-basics#MergeLocal">Return</a>
 
 
 
