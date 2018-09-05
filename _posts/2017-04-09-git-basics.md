@@ -5,10 +5,10 @@ excerpt: "Here is a quick way to learn version control for enterprise teams"
 modified:
 tags: []
 image:
-# feature: pic blue black stars spin 1900x500.jpg
-  feature: https://cloud.githubusercontent.com/assets/300046/14621973/fe6e21a6-0583-11e6-9a94-a969a51759b6.jpg
-  credit: Jeremy Thomas
-  creditlink: https://www.flickr.com/photos/132218932@N03/page2
+# git-basics-1900x500-247310.jpg from png
+  feature: https://user-images.githubusercontent.com/300046/44609628-b60ca000-a7b5-11e8-95c9-bfc5d1871487.jpg
+  credit: Wilson Mar
+  creditlink: https://github.com/wilsonmar/git-utilities/blob/master/git-basics.sh
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -108,13 +108,21 @@ Here is how you can use the different browser windows:
 
    When you login, a "cookie" is created so the browser doesn't annoy you to login all the time. That is not a good thing when you're switching among different accounts.
    
-   ### Bash script types for you
+
+   ### Bash script types commands for you
 
    Another unique aspect of this course I haven't seen anywhere else is a shell script I created that types the various Git and other commands in this course for you:
 
    ```git-basics.sh```
 
    The ".sh" means it's a shell script run by Mac and Linux Terminals, also called <strong>"Bash" for born again shell</strong>. 
+
+   BTW I've viewed <a target="_blank" href="https://wilsonmar.github.io/git-github-videos/">every video and book on this topic</a> and I haven't seen this approach. So such an approach is a unique innovation of just this website.
+
+   If commands you type are not coming back correctly, a script provides you a way to determine whether <strong>"it was working before"</strong> rather than blaming yourself for not typing commands correctly.
+
+
+   ### View script
 
    It is good security practice to view any script before running it.
    It's at: 
