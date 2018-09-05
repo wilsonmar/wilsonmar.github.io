@@ -148,6 +148,7 @@ Here is how you can use the different browser windows:
 
 3. To open <strong>git bash</strong>, press the Micosoft icon on the keyboard. Type git. When "git bash" appears, click on it.
 
+   ![image](https://user-images.githubusercontent.com/300046/45103610-892d8680-b0ed-11e8-921c-d2b03b32a6ba.png)
 
 ### Mac Terminal
 
