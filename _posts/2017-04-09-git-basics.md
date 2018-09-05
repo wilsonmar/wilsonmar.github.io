@@ -885,7 +885,7 @@ A  newfile.md
    That 7-characters is the prefix to a much longer "hash code" that Git generates from each commit. 
    Content within Git is very difficult to alter because any change would result in a different hash. And insertions would break the chain of commits.
 
-   * Entries are pruned (removed) automatically after 90 days (by default).
+   * Locally, entries are pruned (removed) automatically after 90 days (by default).
 
 
    <a name="log"></a>
@@ -980,7 +980,7 @@ and the repository exists.
 
    ```-a``` adds the tag permanently. Without this parameter, the tag remains local.
 
-   The v1.2.3 formatmis called "semantic versioning" described at
+   The v1.2.3 format is called "semantic versioning" described at
    <a target="_blank" href="http://semver.org/">http://semver.org</a>
 
    PROTIP: This stores the tag within folder <tt>.git/refs/tags/</tt>.
