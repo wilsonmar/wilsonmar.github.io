@@ -1220,7 +1220,7 @@ added: xome
 
 4. Merge tracking branch:
 
-   <pre><strong>git merge origin master
+   <pre><strong>git merge origin master -m"OK" --no-edit
    </strong></pre> 
 
    Sample response:
