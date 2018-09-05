@@ -299,7 +299,7 @@ git config --global user.name "Wilson Mar"
 git config --global user.id "wilsonmar+GitHub@gmail.com"
    </strong></pre>
 
-2. On a Windows machine, to annoying mute warnings about conversion of line endings in files saved on Mac machines:
+2. On a Windows machine, to mute annoying warnings about conversion of line endings in files saved on Mac machines:
 
    <pre><strong>
 git config --global core.safecrlf false
