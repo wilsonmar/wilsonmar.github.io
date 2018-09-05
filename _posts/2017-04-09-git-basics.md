@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Git flow client based workflow (in and out of GitHub/GitLab)"
+title: "Git basics client based workflow (in and out of GitHub/GitLab)"
 excerpt: "Here is a quick way to learn version control for enterprise teams"
 modified:
 tags: []
@@ -60,8 +60,8 @@ Several "cheat sheets" have been created, but they are structured according to h
 So unique to this website is this map of all commands and actions covered in this tutorial, so you'll have a quick reference:
 
 <!--Git-Apress-Wilson-Mar-v06.pptx-->
-<a target="_blank" title="git-flow-1208x651-153217.jpg" href="https://user-images.githubusercontent.com/300046/45064768-d3bded00-b072-11e8-8669-4f6bf423c056.jpg">
-<img alt="git-flow-648x350-54823" src="https://user-images.githubusercontent.com/300046/45064738-acffb680-b072-11e8-99a4-ba6b19961713.jpg"><br />
+<a target="_blank" title="git-basics-1208x651-153217.jpg" href="https://user-images.githubusercontent.com/300046/45064768-d3bded00-b072-11e8-8669-4f6bf423c056.jpg">
+<img alt="git-basics-648x350-54823" src="https://user-images.githubusercontent.com/300046/45064738-acffb680-b072-11e8-99a4-ba6b19961713.jpg"><br />
 Click on the diagram to pop-up a full-size image</a>
 
 Sorry, this is a rather busy diagram because we're covering a lot in this course.
@@ -79,7 +79,7 @@ So that you can click the Pause button or drag the timing bubble on the video's 
 
    * <a target="_blank" href="https://grastorftest.com/video.html">Click this link to pop-up a <strong>video</strong> of the diagram in another window of your default internet browser</a>
    
-   * <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/images/git-flow-v05.mp4?raw=true">Click this link to <strong>download</strong> a video (11 MB mp4) of the diagram</a> 
+   * <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/images/github-flow-v05.mp4?raw=true">Click this link to <strong>download</strong> a video (11 MB mp4) of the diagram</a> 
 
 ## Tools of the trade (several screens and programs)
 
@@ -96,7 +96,7 @@ PROTIP: I recommend that you install several browsers on your Mac:
 
 Here is how you can use the different browser windows:
 
-1. <a target="_blank" href="https://www.code2bits.com/how-to-install-chrome-on-macos-using-homebrew">Install the Chrome browser</a> to view <a target="_blank" href="https://wilsonmar.github.io/git-flow">this tutorial page</a> and the <a href="#Video">pop-up video</a> because Chrome supports the latest web technologies (such as PWA, etc.).
+1. <a target="_blank" href="https://www.code2bits.com/how-to-install-chrome-on-macos-using-homebrew">Install the Chrome browser</a> to view <a target="_blank" href="https://wilsonmar.github.io/git-basics">this tutorial page</a> and the <a href="#Video">pop-up video</a> because Chrome supports the latest web technologies (such as PWA, etc.).
 
 2. <a target="_blank" href="https://brave.com/download/">Install the Brave browser</a> to work with <strong>your own repositories</strong> on GitHub/GitLab:
 
@@ -112,14 +112,14 @@ Here is how you can use the different browser windows:
 
    Another unique aspect of this course I haven't seen anywhere else is a shell script I created that types the various Git and other commands in this course for you:
 
-   ```git-flow.sh```
+   ```git-basics.sh```
 
    The ".sh" means it's a shell script run by Mac and Linux Terminals, also called <strong>"Bash" for born again shell</strong>. 
 
    It is good security practice to view any script before running it.
    It's at: 
 
-   <a target="_blank" href="https://github.com/wilsonmar/git-utilities/blob/master/git-flow.sh">https://github.com/wilsonmar/git-utilities/blob/master/git-flow.sh</a>
+   <a target="_blank" href="https://github.com/wilsonmar/git-utilities/blob/master/git-basics.sh">https://github.com/wilsonmar/git-utilities/blob/master/git-basics.sh</a>
 
    Click on the link above to open another window on your browser (such as <a href="#Firefox">Firefox</a>).
 
@@ -149,7 +149,7 @@ Here is how you can use the different browser windows:
 
 ### Mac Terminal
 
-   NOTE: On the Mac, the git-flow.sh script installs a Git client if needed.
+   NOTE: On the Mac, the git-basics.sh script installs a Git client if needed.
 
 1. Open a Bash terminal by command+Tab (holding down the command key, then press Tab) for the Spotlight. Type "ter" until "Terminal.app" appears, press Enter to select it.
 
@@ -171,7 +171,7 @@ To get you started quickly, you can:
 
 1. Copy this entire line (which may wrap around) after highlighting it:
 
-   ```sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/git-utilities/master/git-flow.sh)"```
+   ```sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/git-utilities/master/git-basics.sh)"```
 
    (Position your mouse at the beginning of the string, drage the mouse as you drag across the line, then relase at the end of the line. Press command+C to copy to your Clipboard.)
 
@@ -183,7 +183,7 @@ To get you started quickly, you can:
 
    Line prefixed by <tt>>>></tt> precede each section and step of the script:
 
-## index to git-flow.sh output
+## index to git-basics.sh output
 
    Numbering of sections in the script:
 
@@ -230,11 +230,11 @@ To get you started quickly, you can:
    Files from GitHub load the folder with files containing default values.
    If the file is there already, don't overlay the file.
 
-5. <strong>git-flow.sh</strong>, the shell script, is copied for use in <a href="#RunLocally">running locally</a>.
+5. <strong>git-basics.sh</strong>, the shell script, is copied for use in <a href="#RunLocally">running locally</a>.
 
-6. <strong>git-flow.env</strong> is copied in to provide variable definitions with values which you can customize. The command which brings them into memory is:
+6. <strong>git-basics.env</strong> is copied in to provide variable definitions with values which you can customize. The command which brings them into memory is:
 
-   <pre><strong>source git-flow.env</strong></pre>
+   <pre><strong>source git-basics.env</strong></pre>
 
    The variables and the values are displayed.
 
@@ -253,22 +253,22 @@ To get you started quickly, you can:
 
 10. The script creates a <strong>volatile/non-persistent workspace folder</strong> which the script <em>deletes</em> at the beginning of each run, and populates again with downloads.
 
-    The name of the volatile folder is based on the variable $WORKSPACE_FOLDER defined in file <tt>git-flow.env</tt>.
+    The name of the volatile folder is based on the variable $WORKSPACE_FOLDER defined in file <tt>git-basics.env</tt>.
     Thus, if you may the value of the variable, a different workspace would be created on the next run.
 
     This is what enables the script to be run over and over again.
 
 ### Run locally
 
-    CAUTION: If you want to run git-flow.sh from folder "git-utilities", first enable the script:
+    CAUTION: If you want to run git-basics.sh from folder "git-utilities", first enable the script:
 
-    <pre><strong>chmod +x git-flow.sh</strong></pre>
+    <pre><strong>chmod +x git-basics.sh</strong></pre>
 
     Otherwise error messages make it seem like the file is not there.
 
     To run the file, type a "./" in front of the script file name:
 
-    <pre><strong>./git-flow.sh</strong></pre>
+    <pre><strong>./git-basics.sh</strong></pre>
 
 <a name="GitConfig"></a>
    
@@ -340,7 +340,7 @@ git config --list
    The response:
 
    <pre>
-Initialized empty Git repository in /Users/kevingrastorf/git-flow-workspace/gits/myacct/local-repo/.git/
+Initialized empty Git repository in /Users/kevingrastorf/git-basics-workspace/gits/myacct/local-repo/.git/
    </pre>
 
    This creates in the current folder a folder always named <strong>.git</strong>
@@ -1428,7 +1428,7 @@ You can run "git stash pop" or "git stash drop" at any time.
 
 <a name="GitFlowSoftware"></a>
 
-## git-flow software
+## git-basics software
 
 Saeed Noursalehi says at Microsoft
 <a target="_blank" href="https://www.youtube.com/watch?v=rKgBV4yfK3g&t=14m33s">*</a>
@@ -1456,7 +1456,7 @@ These branches are used more in corporate rather than open source software.
 
 0. [3:30] Install it on a Mac:
 
-   <pre>brew install git-flow</pre>
+   <pre>brew install git-basics</pre>
 
    * http://github.com/nvie/gitflow/wiki/Mac-OS-X
    * http://github.com/nvie/gitflow/wiki/Windows
@@ -1561,7 +1561,7 @@ Now, start committing on your feature. When done, use:
 
 0. List branches:
 
-   <pre><strong>git-flow feature</strong></pre>
+   <pre><strong>git-basics feature</strong></pre>
 
 0. Publish:
 
@@ -1633,7 +1633,7 @@ https://github.com/zacksiri
    [6:53] 1 Jan 2016
 
 
-git-flow software is described by <a target="_blank" href="https://www.youtube.com/watch?v=SChuTnuBYMg">
+git-basics software is described by <a target="_blank" href="https://www.youtube.com/watch?v=SChuTnuBYMg">
 this video</a> and <a target="_blank" href="http://mediacurrent.com/blog/webinar-git-intro">
 blog</a> from 2013 by @KBasarab and at:
 
@@ -1641,8 +1641,8 @@ blog</a> from 2013 by @KBasarab and at:
    http://datasift.github.com/gitflow</a>
 
 * https://blog.axosoft.com/gitflow/
-* https://leanpub.com/git-flow/read
-* https://www.git-tower.com/learn/git/ebook/en/desktop-gui/advanced-topics/git-flow
+* https://leanpub.com/git-basics/read
+* https://www.git-tower.com/learn/git/ebook/en/desktop-gui/advanced-topics/git-basics
 
 ### Hubflow fork software
 
