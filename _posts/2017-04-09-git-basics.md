@@ -230,7 +230,24 @@ To get you started quickly, you can:
    Files from GitHub load the folder with files containing default values.
    If the file is there already, don't overlay the file.
 
-5. <strong>git-basics.sh</strong>, the shell script, is copied for use in <a href="#RunLocally">running locally</a>.
+   ### Run locally
+
+5. <strong>git-basics.sh</strong>, the shell script, is copied for use to edit and run locally on your laptop.
+
+   First, cd to the folder:
+
+   <pre><strong>cd git-utilities</strong></pre>
+
+   To avoid error messages make it seem like the file is not there,
+   change premissions to enable the script file to be executed
+
+   <pre><strong>chmod +x git-basics.sh</strong></pre>
+
+   To run the file, type a "./" in front of the script file name:
+
+   <pre><strong>./git-basics.sh</strong></pre>
+
+   ### Variable values
 
 6. <strong>git-basics.env</strong> is copied in to provide variable definitions with values which you can customize. The command which brings them into memory is:
 
@@ -257,18 +274,6 @@ To get you started quickly, you can:
     Thus, if you may the value of the variable, a different workspace would be created on the next run.
 
     This is what enables the script to be run over and over again.
-
-### Run locally
-
-    CAUTION: If you want to run git-basics.sh from folder "git-utilities", first enable the script:
-
-    <pre><strong>chmod +x git-basics.sh</strong></pre>
-
-    Otherwise error messages make it seem like the file is not there.
-
-    To run the file, type a "./" in front of the script file name:
-
-    <pre><strong>./git-basics.sh</strong></pre>
 
 <a name="GitConfig"></a>
    
@@ -424,8 +429,6 @@ and used it to create an account on <a target="_blank" href="https://www.github.
    * ```--recursive``` says to pull in sub-modules (repositories stored within the repository).
 
 
-   <a name="Fork"></a>
-
    ### Fork from another repository
 
    Since our objective is to work on open source repositories we don't own,
@@ -445,7 +448,9 @@ and used it to create an account on <a target="_blank" href="https://www.github.
 
    PROTIP: Technically "Hub" is called a "wrapper" around Git’s CLI so you can do it all from the command line rather than switching to GitHub’s web page.
 
-3. The forked repository created from a previous run needs to be first deleted from GitHub/GitLab, manually:
+   <a name="Fork"></a>
+
+3. The forked repository created from a previous run needs to be first deleted from GitHub/GitLab, manually.
 
    [ <a href="https://wilsonmar.github.io/git-whoops/#Fork">Whoops</a> ]
 
@@ -515,6 +520,9 @@ upstream git://github.com/hotwilson/some-repo.git (push)
 
    You may want to un-comment the command to pause to read your response of pressing any key after doing the action stated.
 
+   <a name="Clone"></a>
+
+   ### Clone
 
 7. When a repository is cloned, Git automatically creates that repo's folder and within it a folder named dot git to hold objects that track changes to the repository.
 
@@ -587,6 +595,8 @@ upstream git://github.com/hotwilson/some-repo.git (push)
 ## 4.x Branch and edit locally
 
 Here's where you add value to that Open-Source repository.
+
+   <a name="Checkout"></a>
 
    The <strong>git checkout</strong> command controls what Git extracts out from the repository database to the repository's Working Directory. 
 
@@ -777,6 +787,8 @@ git config          user.id "wilsonmar+GitHub@gmail.com"
 
    There should be no response when nothing has been put in Git staging.
 
+   <a name="Add"></a>
+
 3. You can change several files, but only the files you add to <strong>Git's staging area</strong> 
    will be pushed to GitHub. 
 
@@ -953,6 +965,9 @@ and the repository exists.
 
    ```-a``` adds the tag permanently. Without this parameter, the tag remains local.
 
+   The v1.2.3 formatmis called "semantic versioning" described at
+   <a target="_blank" href="http://semver.org/">http://semver.org</a>
+
    PROTIP: This stores the tag within folder <tt>.git/refs/tags/</tt>.
 
 4. Tags require an additional git push command to be pushed to GitHub.
@@ -986,6 +1001,21 @@ and the repository exists.
 
    Unless you have been designated a committer in the upstream repository, you can't push changes to it. But you can request their committers to pull changes from your forked repo. When a committer of that repo merges (or in other words, accepts) your PR, you'll get an email from GitHub.
 
+0. Request the pull from the upstream repo. For example: 
+
+   <pre><strong>git request-pull v1.0 https://github.com/<em>upstream/sisters  master</em>
+   </strong></pre>
+
+   * The URL must be specified (rather than a remote designator such as "upstream").
+
+   * This feature is described at: <a target="_blank" href="http://git-scm.com/docs/git-request-pull">
+   http://git-scm.com/docs/git-request-pull</a> which says
+   "this will produce a request to the upstream, summarizing the changes 
+   <strong>between</strong> the v1.0 release and your master,
+   to pull it from your public repository."
+
+   See https://about.gitlab.com/2016/12/01/how-to-keep-your-fork-up-to-date-with-its-origin/
+
 
 <a name="UpdateUpstream"></a>
 
@@ -997,6 +1027,8 @@ and the repository exists.
    In the script there is a message:
 
    <pre>Press any key after adding a file</pre>
+
+   <a name="Upstream"></a>
 
 2. To enable dowload by Git, we add the upstream remote. 
 
@@ -1067,6 +1099,10 @@ Your branch is behind 'upstream/master' by 1 commit, and can be fast-forwarded.
 newfile
    </pre>
 
+   <a name="Merge"></a>
+
+   ### git merge upstream
+
 7. git merge upstream/master"
 
    <pre><strong>git merge upstream/master</strong></pre>
@@ -1080,6 +1116,17 @@ Fast-forward
  1 file changed, 1 deletion(-)
  delete mode 100644 newfile
    </pre>
+
+   Notice the slash separator between the upstream remote and 
+   the upstream branch (master).
+
+   CAUTION: Once you start a merge, nothing else can be done until you reconcile
+   ALL conflicts. One cannot save a partially-resolved merge.
+   There is no way yet of testing a partially merged tree.
+   You can't go back if you make a mistake.
+
+   [ <a href="https://wilsonmar.github.io/git-whoops#Merge">Whoops</a> ]
+
 
 8. git push origin master"
 
@@ -1118,18 +1165,70 @@ To github.com:wilsonmar/some-repo.git
 
 ## 9.x Update your origin repository
 
-This part have changes
+In this section we change something on GitHub/GitLab and then fetch it locally, see what changed, and merge it.
 
-   <a name="Fetch"></a>
+1. "Change something on the origin in GitHub wilsonmar/some-repo ..."
 
-   ### Fetch
+   <pre>Press any key after adding a file ...</pre>
 
-   So many prefer to take it one step at a time -- 
+2. Fetch (instead of pull)
 
-0. first a 
-
-   <pre><strong>git fetch upstream
+   <pre><strong>git fetch origin master
    </strong></pre> 
+
+   Sample response:
+
+   <pre>
+remote: Counting objects: 2, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (2/2), done.
+From github.com:wilsonmar/some-repo
+ * branch            master     -> FETCH_HEAD
+   9c9468b..bbac92d  master     -> origin/master
+   </pre>
+
+3. See what changed:
+
+   <pre><strong>git diff master..origin/master
+   </strong></pre> 
+
+   Sample response:
+
+   <pre>
+----------------------------------------------------------
+renamed: me 2018-09-04b to 2018-09-04-a
+----------------------------------------------------------
+----------------------------------------------------------
+added: smoky
+----------------------------------------------------------
+@@ -0,0 +1 @@
++bear
+----------------------------------------------------------
+added: xome
+----------------------------------------------------------
+@@ -0,0 +1 @@
++hello
+   </pre>
+
+4. Merge tracking branch:
+
+   <pre><strong>git merge origin master
+   </strong></pre> 
+
+   Sample response:
+
+   <pre>
+   </pre>
+
+
+
+
+
+
+
+
+
 
 0. To see files changed vs. the tracking branch:
 
@@ -1197,25 +1296,9 @@ This part have changes
    <pre>git diff HEAD HEAD^ -- <em>file1</em></pre><br />
    
 
-   <a name="Merge"></a>
-
-   ### git merge
-
-0. If they don't affect you:
-
-   <pre><strong>git merge upstream/master
-   </strong></pre>
-
-   Notice the slash separator between the upstream remote and 
-   the upstream branch (master).
-
-   CAUTION: Once you start a merge, nothing else can be done until you reconcile
-   ALL conflicts. One cannot save a partially-resolved merge.
-   There is no way yet of testing a partially merged tree.
-   You can't go back if you make a mistake.
 
 
-   [ <a href="https://wilsonmar.github.io/git-whoops#Merge">Whoops</a> ]
+
 
 
 0. Use a cat or less command to verify file contents after merging:
@@ -1233,43 +1316,6 @@ This part have changes
    There are variations to these commands, but this is the typical workflow.
 
    [ <a href="https://wilsonmar.github.io/git-whoops#PushOrigin">Whoops</a> ]
-
-
-   <a name="Tag"></a>
-
-   ### Tag
-
-0. To make specific commits easier to find,
-   add a tag to the latest commit so that it travels with that commit:
-
-   <pre><strong>git tag -a v1.2.3</strong></pre>
-
-   The example here is called a semantic tag described in the website 
-   <a target="_blank" href="http://semver.org/">http://semver.org</a>
-
-
-0. Tags are pushed using its own separate command:
-
-   <pre><strong>git push --tags</strong></pre>
-
-
-   ### File a pull request from git command line
-
-0. Request the pull from the upstream repo. For example: 
-
-   <pre><strong>git request-pull v1.0 https://github.com/<em>upstream/sisters  master</em>
-   </strong></pre>
-
-   * The URL must be specified (rather than a remote designator such as "upstream").
-
-   * This feature is described at: <a target="_blank" href="http://git-scm.com/docs/git-request-pull">
-   http://git-scm.com/docs/git-request-pull</a> which says
-   "this will produce a request to the upstream, summarizing the changes 
-   <strong>between</strong> the v1.0 release and your master,
-   to pull it from your public repository."
-
-   See https://about.gitlab.com/2016/12/01/how-to-keep-your-fork-up-to-date-with-its-origin/
-
 
    <hr />
 
@@ -1423,193 +1469,6 @@ You can run "git stash pop" or "git stash drop" at any time.
    by Prem Aseem Jain at
    <a target="_blank" href="hhttps://premaseem.wordpress.com/2016/01/19/github-how-to-sync-from-forked-repoit/">
    premaseem.wordpress.com</a>
-
-<hr />
-
-<a name="GitFlowSoftware"></a>
-
-## git-basics software
-
-Saeed Noursalehi says at Microsoft
-<a target="_blank" href="https://www.youtube.com/watch?v=rKgBV4yfK3g&t=14m33s">*</a>
-"hotfixes happen in topic branches off a release branch. 
-All topic branches are merged using a pull request.".
-
-
-Those who DO have permissions to update can use 
-an approach described in a popular blog, which identified different types of updates at:<br />
-<a target="_blank" href="http://nvie.com/posts/a-successful-git-branching-model/">
-http://nvie.com/posts/a-successful-git-branching-model</a>
-
-Each of these are a different type of branch:
-
-   * Hotfix (from master and back to master)
-   * Bugfix
-   * Release - for next release development
-   * Feature
-   * Support
-
-These branches are used more in corporate rather than open source software.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=CHzL017R1e8">Video:</a><br />
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CHzL017R1e8" frameborder="0" allowfullscreen> </iframe>
-
-0. [3:30] Install it on a Mac:
-
-   <pre>brew install git-basics</pre>
-
-   * http://github.com/nvie/gitflow/wiki/Mac-OS-X
-   * http://github.com/nvie/gitflow/wiki/Windows
-   * http://github.com/nvie/gitflow/wiki/Linux
-
-0. Create content in a folder (such as "davebock_www") and [4:01] initialize Git:
-
-   <pre><strong>git init
-   </strong></pre>
-
-0. Customize .gitignore file:
-
-   <pre><strong>git init</strong></pre>
-
-0. Add to Git and commit (Git commit commands are still necessary):
-
-   <pre><strong>git add .
-   git commit -m"initial commit"</strong></pre>
-
-0. Push to GitHub:
-
-   <pre><strong>git remote add origin git@github.com:CodeSherpas/da...
-   git push origin master</strong></pre>
-
-
-0. View the branches:
-
-   <pre>git branch -avv</pre>
-
-   Atlassian presents their take on the different branches <a target="_blank" href="https://youtu.be/gLWSJXBbJuE">
-   in this video</a>:
-
-   <a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/25337661/bd873a68-28ca-11e7-9c40-732e5c254f3d.png">
-   <img alt="github branches atlassian 650x260" src="https://cloud.githubusercontent.com/assets/300046/25337661/bd873a68-28ca-11e7-9c40-732e5c254f3d.png"><br />(click for full screen and to print)</a>
-
-0. Set the upstream tracking branch:
-
-   <pre>git branch --set-upstream develop origin/master</pre>
-
-0. Activate:
-
-   <pre>git flow init -d</pre>
-
-0. Answer the series of questions:
-
-   <pre>
-Which branch should be used for bringing forth production releases?
-   - master
-Branch name for production releases: [master] 
-Branch name for "next release" development: [develop] 
-&nbsp;
-How to name your supporting branch prefixes?
-Feature branches? [feature/] 
-Release branches? [release/] 
-Hotfix branches? [hotfix/] 
-Support branches? [support/] 
-Version tag prefix? [] 
-   </pre>
-
-0. View menu:
-
-   <pre>git flow</pre>
-
-   <pre>
-usage: git flow <subcommand>
-&nbsp;
-Available subcommands are:
-   init      Initialize a new git repo with support for the branching model.
-   feature   Manage your feature branches.
-   release   Manage your release branches.
-   hotfix    Manage your hotfix branches.
-   support   Manage your support branches.
-   version   Shows version information.
-&nbsp;
-Try 'git flow &LT;subcommand> help' for details.
-   </pre>
-
-0. Instead of native git commands
-   the "git flow" command is issued with a new branch name:
-
-   * <tt>git flow hotfix start <em>branchx</em></tt>
-   * <tt>git flow bugfix start <em>branchx</em></tt>
-   * <tt>git flow release start <em>branchx</em></tt>
-   * <tt>git flow feature start <em>branchx</em></tt>
-   * <tt>git flow support start <em>branchx</em></tt>
-
-   A sample of the response:
-
-   <pre>
-Switched to a new branch 'feature/controller'
-&nbsp;
-Summary of actions:
-- A new branch 'feature/branchx' was created, based on 'develop'
-- You are now on branch 'feature/branchx'
-&nbsp;
-Now, start committing on your feature. When done, use:
-&nbsp;
-     git flow feature finish branchx
-   <pre>
-
-0. Edit files (such as generate controller).
-
-0. List branches:
-
-   <pre><strong>git-basics feature</strong></pre>
-
-0. Publish:
-
-   <pre><strong>git flow feature publish branchx
-   </strong></pre>
-
-   The response:
-
-   <pre>
-Summary of actions:
-- A new remote branch 'feature/branchx' was created
-- The local branch 'feature/branchx' was configured to track the remote branch
-- You are now on branch 'feature/branchx'   
-   </pre>
-
-0. Instead of native git commands
-   the "git flow" command is issued with a git flow branch name 
-   and whether you want to  finish (git merge):
-
-   * <tt>git flow hotfix finish <em>branchx</em></tt>
-   * <tt>git flow bugfix finish <em>branchx</em></tt>
-   * <tt>git flow release finish <em>branchx</em></tt>
-   * <tt>git flow feature finish <em>branchx</em></tt>
-   * <tt>git flow support finish <em>branchx</em></tt>
-
-   The response:
-
-   <pre>
-Switched to branch 'develop'
-Already up-to-date.
-Deleted branch feature/branchx (was 31a9657).
-&nbsp;
-Summary of actions:
-- The feature branch 'feature/branchx' was merged into 'develop'
-- Feature branch 'feature/branchx' has been removed
-- You are now on branch 'develop'   
-   </pre>
-
-   ### To Master
-
-0. List Git Flow commands available [12:14]:
-
-   <pre><strong>git flow release start initial deploy</strong></pre>
-
-0. You are automatically prompted for a tag message (because it's master).
-
-   This also occurs with Hotfix.
-
 
 
 ### More Videos
