@@ -128,7 +128,7 @@ Salesforce uses the word "cloud" to brand <strong>Salesforce apps (applications)
 
    * <a target="_blank" href="http://certification.salesforce.com/servicecloud">Service Cloud</a> - Sales force automation and CRM [<a target="_blank" href="http://certification.salesforce.com/servicecloud">cert</a>]
    * Success Cloud [no cert?]
-   * <a target="_blank" href="http://certification.salesforce.com/marketingcloudconsultant">Marketing Cloud</a> Build and manage 1:1 customer journeys via email. From ExactTarget acquisition in 2013. It has its own query language. No free accounts here. [<a target="_blank" href="https://en.wikipedia.org/wiki/Salesforce_Marketing_Cloud">Wikipedia</a>, <a target="_blank" href="http://certification.salesforce.com/marketingcloudconsultant">cert</a>]
+   * <a target="_blank" href="http://certification.salesforce.com/marketingcloudconsultant">Marketing Cloud</a> was acquired from ExactTarget acquisition in 2013. Build and manage 1:1 customer journeys via email. It has its own query language (<a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.mc-programmatic-content.meta/mc-programmatic-content/index.htm">AMPscript</a>). No free accounts here. [<a target="_blank" href="https://en.wikipedia.org/wiki/Salesforce_Marketing_Cloud">Wikipedia</a>, <a target="_blank" href="http://certification.salesforce.com/marketingcloudconsultant">cert</a>]
 
    * <a target="_blank" href="http://certification.salesforce.com/fieldservicelightningconsultant">
    Field Service Lightning certification</a> [<a target="_blank" href="http://certification.salesforce.com/fieldservicelightningconsultant">cert</a>]
