@@ -673,25 +673,25 @@ Here's where you add value to that Open-Source repository.
 
    ``\n``` is an escape character for new line
 
-   The md in the file name designates markdown format. The README.md file
-   GitHub can create with this specific name to describe each repository.
-
    Alternately, you can of course edit files manually, we can use vim or another text editor (such as nano, atom, etc.) to change contents inside files. 
 
    <pre><strong>vim README.md
    </strong></pre>
 
-   * If you use vim, press the I key to begin insertion and press Esc to end insertion mode.
+   The md in the file name designates markdown format. The README.md file Git hosts can create with this specific name to describe each repository.
+
+   If you use vim, press the I key to begin insertion and press Esc to end insertion mode.
    When out of insertion mode, type : to enter command mode, 
    then <strong>wq</strong> to write and quit the program or
    then <strong>q!</strong> to quit without changes.
 
    PROTIP: Remember to save the file before switching.
 
+4. Display the last 3 lines in the file to confirm:
 
-4. Use cat program to display all lines in .gitignore:
+   <pre><strong>tail -3 .ignore</strong></pre>
 
-   <pre><strong>cat .gitignore</strong></pre>
+   This is better than using the cat program which displays all lines.
 
 
    <a name="GitStatus"></a>
@@ -718,6 +718,8 @@ Here's where you add value to that Open-Source repository.
 
    ```??``` marks a file untracked by Git, one that has never been added to Git.
 
+
+   ### Hide file from git status
 
    EXTRA: PROTIP: To have git status not display a particular file:
 
@@ -883,7 +885,9 @@ A  newfile.md
 
 9. List <strong>commits</strong> that have occurred on the local machine:
 
-   <pre><strong>git log --pretty=format:"%h %s %ad" --graph --since=1.days --date=relative;git log --show-signature -n 1</strong></pre>
+   <pre><strong>git log --pretty=format:"%h %s %ad" --graph --since=1.days --date=relative;git log --show-signature -n 1 | tail -n 10 </strong></pre>
+
+   ```| tail -n 10``` limits the output to 10 lines
 
    <a name="Rebasing"></a>
 
@@ -1127,8 +1131,9 @@ Fast-forward
    There is no way yet of testing a partially merged tree.
    You can't go back if you make a mistake.
 
-   [ <a href="https://wilsonmar.github.io/git-whoops#Merge">Whoops</a> ]
+   [ <a href="https://wilsonmar.github.io/git-whoops#Merge">Whoops</a> <a target="_blank" href="https://git-scm.com/docs/git-merge">Ref</a> ]
 
+   
 
 8. git push origin master"
 
@@ -1230,7 +1235,7 @@ added: xome
 
 
 
-
+### Viewing files
 
 0. To see files changed vs. the tracking branch:
 
@@ -1269,7 +1274,6 @@ added: xome
    <pre><strong>git log master ^origin/master
    </strong></pre>
 
-
 0. then a 
 
    <pre><strong>git checkout master</strong></pre>
@@ -1298,17 +1302,6 @@ added: xome
    <pre>git diff HEAD HEAD^ -- <em>file1</em></pre><br />
    
 
-
-
-
-
-
-0. Use a cat or less command to verify file contents after merging:
-
-   <pre><strong>cat README.md
-   </strong></pre>
-
-
    <a name="PushOrigin"></a>
 
    ### git push origin master
@@ -1334,9 +1327,11 @@ added: xome
    Even if you are not working with a repo that others update,
    you yourself may update files on GitHub.
 
+
+
    <a name="MyRepoFetch"></a>
-   
-   ### Fetch my changes
+
+## fetch --dry-run
 
 0. Locally, when a team creates branches of the master, 
    everything that the team is working on can be seen with one command:
@@ -1378,11 +1373,11 @@ From github.com:github/github
    [ <a href="https://wilsonmar.github.io/git-whoops#Upstream">Whoops</a> ]
 
 
-   <a name="MergeLocal"></a>
+<a name="MergeLocal"></a>
 
-   ### Pull rebase
+### Pull rebase with git up alias
 
-0. Use the Git utlity which resolves conflicts:
+ Use the Git utlity which resolves conflicts:
    It tries to find out which commits are really your local ones, and which had come from upstream in an earlier fetch.
 
    <pre><strong>git pull --rebase --autostash
@@ -1459,6 +1454,12 @@ You can run "git stash pop" or "git stash drop" at any time.
 
    [ <a href="https://wilsonmar.github.io/git-whoops#MergeLocal">Whoops</a> ]
 
+<hr />
+
+### Trunk-based Development
+
+Thoughtworks advocates for their <a target="_blank" href="https://www.thoughtworks.com/de/insights/blog/enabling-trunk-based-development-deployment-pipelines">Trunk-Based Development</a> instead of using different branches, so every commit keeps the repository production ready. Their approach combines <a target="_blank" href="https://martinfowler.com/articles/feature-toggles.html">feature toggle code</a> which allows features to be turned on or off in production.
+
 
 ### Other videos and articles
 
@@ -1505,27 +1506,8 @@ blog</a> from 2013 by @KBasarab and at:
 * https://leanpub.com/git-basics/read
 * https://www.git-tower.com/learn/git/ebook/en/desktop-gui/advanced-topics/git-basics
 
-### Hubflow fork software
-
-Datasift people created an upgrade to GitFlow to work with GitHub, which they call 
-<a target="_blank" href="https://datasift.github.io/gitflow/TheHubFlowTools.html">
-   HubFlow</a>
-
-   <pre>
-git clone https://github.com/datasift/gitflow
-cd gitflow
-sudo ./install.sh
-sudo git hf upgrade
-   </pre>
-
-The flow of <strong>hf</strong> git commands are explained 
-    <a target="_blank" href="https://datasift.github.io/gitflow/GitFlowForGitHub.html">
-    here</a>
-
 
 ### References
-
-BTW Thoughtworks advocates for their <a target="_blank" href="https://www.thoughtworks.com/de/insights/blog/enabling-trunk-based-development-deployment-pipelines">Trunk-Based Development</a> instead of using different branches, so every commit keeps the repository production ready. Their approach combines <a target="_blank" href="https://martinfowler.com/articles/feature-toggles.html">feature toggle code</a> which allows features to be turned on or off in production.
 
 * https://danielmiessler.com/study/git/
   Daniel Miessler's Git Tutorial from 2014
