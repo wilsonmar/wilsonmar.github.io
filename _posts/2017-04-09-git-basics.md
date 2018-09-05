@@ -18,7 +18,7 @@ comments: true
 
 This is a hands-on deep dive immersive course to get those new to Git productive for professional usage using a local Git client. <!-- See the introduction video. -->
 
-You learn in minimum time because I've spent a lot of time on sequencing your learning and on giving you tools for learning quickly.
+You learn in minimum time because I've spent a lot of time on sequencing your learning and on time-saving automation.
 
 
 <a name="TerminalvsGUI"></a>
@@ -31,11 +31,11 @@ Git command-line client installed</a>.
    Due to the open-source availability to how Git works,
    there are many Git clients available.
 
-   But NOT all of them install a <strong>git bash</strong> program so you can run commands like a Linux command line (shown by this tutorial).
+   But NOT clients include a <strong>git bash</strong> program so you can run commands like a Linux command line (shown by this tutorial).
 
-   Most IDEs today have incorporated commonly used Git client functionality into their software. 
+   Most IDEs and text editors today have incorporated commonly used Git client functionality into their software. 
 
-   On <strong>IntelliJ</strong>, get the Git menu by right-clicking on the project in the left Solution pane to see this menu:
+   On <strong>IntelliJ</strong>, get its Git menu by right-clicking on the project in the left Solution pane to see this menu:
 
    <a target="_blank" title="git-intellij-1308x490.jpg" href="https://user-images.githubusercontent.com/300046/44702989-21bf6900-aa53-11e8-8fc4-6b91b621e7ca.jpg">
    <img alt="git-intellij-648x243.jpg" src="https://user-images.githubusercontent.com/300046/44702935-ee7cda00-aa52-11e8-941b-9913757f4702.jpg"></a>
@@ -136,7 +136,9 @@ Here is how you can use the different browser windows:
 
    Since a Bash shell does not come with <strong>Microsoft Windows</strong> machines, a bash terminal program called <strong>git bash</strong> needs to be install by the Windows <strong>Chocolatey</strong> installer installing the <strong>msysgit</strong> package. But you must have Administrator permissions to install them.
 
-1. So that you can update versions automatically later, automate client installs on Windows, by first installing <a target="_blank" href="https://choclately.org/">Chocolatey</strong> using a PowerShell command. 
+1. So that you can update versions automatically later, automate client installs on Windows, by first installing <a target="_blank" href="https://choclately.org/">Chocolatey</a> using a PowerShell command:
+
+      <@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
 2. While you're on a command window, have Chocolatey install a Git client:
 
@@ -181,7 +183,7 @@ To get you started quickly, you can:
 
    In the output displayed on the Terminal:
 
-   Line prefixed by <tt>>>></tt> precede each section and step of the script:
+   Lines prefixed by <tt>&GT;GT;GT;</tt> precede each section and step of the script:
 
 ## index to git-basics.sh output
 
