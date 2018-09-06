@@ -317,9 +317,9 @@ git config --list
 
    PROTIP: If you see a : (colon) on the last line of the Terminal screen, press <strong>q</strong> to quit out of the listing.
 
-   In our class we don't have the time to go through all the configurations that control how Git makes use of its many features. 
+   BONUS:
 
-   PROTIP: I have a script that installs them and other apps on a Mac according to a specification file. It's at https://github.com/wilsonmar/mac-setup/master/blog/mac-install-all.sh
+   In our class we don't have the time to go through all the configurations that control how Git makes use of its many features. But I have a script that installs them and other apps on a Mac according to a specification file. It's at https://github.com/wilsonmar/mac-setup/master/blog/mac-install-all.sh
 
 4. PROTIP: Create a folder with a name such as <strong>gits</strong> or "project" to hold anonymouse Git repositories from various GitHub/GitLab accounts. This would be immediately under your $HOME folder:
 
@@ -341,6 +341,8 @@ git config --list
 
    ### Clone locally
 
+   The following is based on <a target="_blank" href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">this</a>.
+
 6. PROTIP: If you are creating a local repository, first create an account or project <strong>container</strong> folder to hold the various repositories. 
 
    <pre><strong>mkdir local-repo && cd local-repo
@@ -361,6 +363,13 @@ Initialized empty Git repository in /Users/kevingrastorf/git-basics-workspace/gi
 
    This creates in the current folder a folder always named <strong>.git</strong>
    into which Git stores and retrieves all change history.
+
+8. git add .
+9. git commit -m "First commit"
+10. git remote add origin remote repository URL
+11. git remote -v
+12. git push -u origin master
+
 
 
 <hr />
