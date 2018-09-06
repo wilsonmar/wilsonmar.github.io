@@ -21,36 +21,6 @@ This is a hands-on deep dive immersive course to get those new to Git productive
 You learn in minimum time because I've spent a lot of time on sequencing your learning and on time-saving automation.
 
 
-<a name="TerminalvsGUI"></a>
-
-### Terminal vs GUI
-
-This is designed for someone with a <a target="_blank" href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">
-Git command-line client installed</a>.
-
-   Due to the open-source availability to how Git works,
-   there are many Git clients available.
-
-   But NOT clients include a <strong>git bash</strong> program so you can run commands like a Linux command line (shown by this tutorial).
-
-   Most IDEs and text editors today have incorporated commonly used Git client functionality into their software. 
-
-   On <strong>IntelliJ</strong>, get its Git menu by right-clicking on the project in the left Solution pane to see this menu:
-
-   <a target="_blank" title="git-intellij-1308x490.jpg" href="https://user-images.githubusercontent.com/300046/44702989-21bf6900-aa53-11e8-8fc4-6b91b621e7ca.jpg">
-   <img alt="git-intellij-648x243.jpg" src="https://user-images.githubusercontent.com/300046/44702935-ee7cda00-aa52-11e8-941b-9913757f4702.jpg"></a>
-
-   In <strong>Eclipse</strong>, right-click on the project in the left Solution pane, then select <strong>Team</strong> for the Git menu:
-
-   ![git eclipse menu 518x648](https://cloud.githubusercontent.com/assets/300046/25332307/ebf39f84-28b3-11e7-9d3b-5132a549cf13.png)
-
-   * Eclipse "Switch To" = git checkout
-
-   * Return to this picture after going through this course to see if you recognize what each GUI item does.
-
-   * See <a target="_blank" href="https://www.youtube.com/watch?v=rblGZRWqFVI">Using Git within Eclipse</a>
-
-
 <a name="Flowchart"></a>
 
 ## Full flowchart animated
@@ -160,8 +130,6 @@ Here is how you can use the different browser windows:
 
 ### Mac Terminal
 
-   NOTE: On the Mac, the git-basics.sh script installs a Git client if needed.
-
 1. Open a Bash terminal by command+Tab (holding down the command key, then press Tab) for the Spotlight. Type "ter" until "Terminal.app" appears, press Enter to select it.
 
 2. Click anywhere on the Terminal window. Press <strong>command+N</strong> for the Basic session colors and other UI. Alternately, point your cursor beyond the top of the screen for the Terminal menu to appear and select Shell, New Window and select one of the <strong>themes</strong>.
@@ -173,6 +141,37 @@ Here is how you can use the different browser windows:
    * Pro is black
    * Red Sands is earthy brown
    <br /><br />
+
+
+<a name="TerminalvsGUI"></a>
+
+### Terminal vs GUI
+
+This is designed for someone with a <a target="_blank" href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">
+Git command-line client installed</a>.
+
+   Due to the open-source availability to how Git works,
+   there are many Git clients available.
+
+   But NOT clients include a <strong>git bash</strong> program so you can run commands like a Linux command line (shown by this tutorial).
+
+   Most IDEs and text editors today have incorporated commonly used Git client functionality into their software. 
+
+   On <strong>IntelliJ</strong>, get its Git menu by right-clicking on the project in the left Solution pane to see this menu:
+
+   <a target="_blank" title="git-intellij-1308x490.jpg" href="https://user-images.githubusercontent.com/300046/44702989-21bf6900-aa53-11e8-8fc4-6b91b621e7ca.jpg">
+   <img alt="git-intellij-648x243.jpg" src="https://user-images.githubusercontent.com/300046/44702935-ee7cda00-aa52-11e8-941b-9913757f4702.jpg"></a>
+
+   In <strong>Eclipse</strong>, right-click on the project in the left Solution pane, then select <strong>Team</strong> for the Git menu:
+
+   ![git eclipse menu 518x648](https://cloud.githubusercontent.com/assets/300046/25332307/ebf39f84-28b3-11e7-9d3b-5132a549cf13.png)
+
+   * Eclipse "Switch To" = git checkout
+
+   * Return to this picture after going through this course to see if you recognize what each GUI item does.
+
+   * See <a target="_blank" href="https://www.youtube.com/watch?v=rblGZRWqFVI">Using Git within Eclipse</a>
+
 
 <a name="shcommand"></a>
 
@@ -192,7 +191,8 @@ To get you started quickly, you can:
 
    In the output displayed on the Terminal:
 
-   Lines prefixed by <tt>&GT;GT;GT;</tt> precede each section and step of the script:
+   Lines prefixed by ```>>>``` precede each section and step of the script:
+
 
 ## index to git-basics.sh output
 
@@ -223,6 +223,8 @@ To get you started quickly, you can:
 
 ## 1.x Client Install and Configuration
 
+   On the Mac, the git-basics.sh script installs a Git client if needed.
+
 1. The first thing the script does is figure out what operating system it is running on. That uses a command common to all operating systems:
 
    <pre>uname -a</pre>
@@ -231,26 +233,63 @@ To get you started quickly, you can:
 
 2. If the script is running on a <strong>Mac</strong>, the script installs <strong>Homebrew</strong> if needed.
 
-3. A Git client is installed if needed.
+3. A Git client is installed if the git command is not found.
+
+   <pre><strong>brew install git</strong></pre>
+
    Its version is output so you know what you have.
 
-4. The script looks for a <strong>persistent</strong> folder named <strong>git-utilities</strong> and creates it if it doesn't exist there. 
+4. For the script to automatically <a href="#CreateRepo">create a repository in GitHub</a> and fork a repository from another account, it first installs the <a target="_blank" href="https://hub.github.com/">"hub" add-in to Git:
 
-   Alternately, the entire git-utilities repo is put in the same location.
+   <pre><strong>brew install hub</strong></pre>
+
+   BTW: There is no "cask" in the brew command because it only works within the command line, not GUI.
+
+   PROTIP: Technically "Hub" is called a "wrapper" around Git’s CLI so you can do it all from the command line rather than switching to GitHub’s web page.
+
+   <a name="EnvVars"></a>
+
+   ### Enviornment variables & values
+
+5. File <tt><strong>git-basics.env</strong></tt> is downloaded to your $HOME account folder (by a curl command):
+
+   <pre>curl -O "https://raw.githubusercontent.com/wilsonmar/git-utilities/master/git-basics.env"</pre>
+
+   The file provides values to environment variables controlling the script. It is loaded into memory using this command:
+
+   <pre><strong>source git-basics.env</strong></pre>
+
+   The variables and the values are displayed.
+
+   PROTIP: The <tt>git-basics.env</tt> file is placed in your $HOME folder, separate from any folder that can be pushed back to Git hosting because you may want to <strong>type your password</strong> in the file for more automatic functionality in the script, such as deleting repos, functions which even hub does not perform.
+
+   ### git-scripts folder in $HOME
+
+6. The script looks for a <strong>persistent</strong> folder named <strong>git-scripts</strong> and creates it if it doesn't exist there. 
 
    Files from GitHub load the folder with files containing default values.
    If the file is there already, don't overlay the file.
 
-   ### Run locally
+7. <strong>git-basics.sh</strong>, the shell script, is copied into that "git-utilities" folder so you have the option of editing the files and re-running locally on your laptop.
 
-5. <strong>git-basics.sh</strong>, the shell script, is copied for use to edit and run locally on your laptop.
+8. To halt processing for customizations, press <strong>control+C</strong> on the Mac or Press any key to continue default processing. 
 
-   First, cd to the folder:
+   This is so you can <a href="#EditRun">edit the files downloaded so you can run rerun locally (as described below)</a>.
 
-   <pre><strong>cd git-utilities</strong></pre>
+   <a name="#EditRun"></a>
 
-   To avoid error messages make it seem like the file is not there,
-   change premissions to enable the script file to be executed
+   ### Edit and rerun locally
+
+   The script <tt>git-basics.sh</tt> is designed to both run without modification and to allow you to customize it. There are several reasons you want to customize files in the "~/git-utilities" folder the script added for you:
+
+   * Edit the <tt>git-basics.env</tt> to place <tt>exit</tt> anywhere you want the script to stop.
+
+   * Edit the <tt>git-basics.env</tt> file to replace <tt>"secret here"</tt> with your GitHub password so that the script can automatically <strong>delete</strong> repos locally, so that you don't have to manually do it every time you run. PROTIP: The <tt>git-basics.env</tt> file is copied to a separate folder than the script so that you never upload it back to a Git hosting GitHub/GitLab.
+
+   * Adopt the <tt>git-basics.sh</tt> to automate other activities using Git.
+   PROTIP: Select a <strong>text editor</strong>. See my notes at <a target="_blank" href="https://wilsonmar.github.io/text-editors/">https://wilsonmar.github.io/text-editors</a>
+
+   PROTIP: To avoid error messages that says the file is not there, change premissions to enable the script file to be executed
 
    <pre><strong>chmod +x git-basics.sh</strong></pre>
 
@@ -258,19 +297,14 @@ To get you started quickly, you can:
 
    <pre><strong>./git-basics.sh</strong></pre>
 
-   ### Variable values
 
-6. <strong>git-basics.env</strong> is copied in to provide variable definitions with values which you can customize. The command which brings them into memory is:
+   ### Continuing processing
 
-   <pre><strong>source git-basics.env</strong></pre>
+9. <strong>aliases.txt</strong> containing keyboard shortcut definitions are copied in. Again, if the file is there already, it is not overlaid.
 
-   The variables and the values are displayed.
+10. If a <strong>~/.bash_profile</strong> is not found, the script creates it in your $HOME folder.
 
-7. <strong>aliases.txt</strong> containing keyboard shortcut definitions are copied in. Again, if the file is there already, it is not overlaid.
-
-8. If a <strong>~/.bash_profile</strong> is not found, the script creates it.
-
-9. Whenever a Bash terminal session is opened, it automatically runs the <strong>~/.bash_profile</strong> script file at the user home folder. The "~/" specifies that the file is in the user's $HOME folder.
+11. Whenever a Bash terminal session is opened, it automatically runs the <strong>~/.bash_profile</strong> script file at the user home folder. The "~/" specifies that the file is in the user's $HOME folder.
 
    The file contains a definition of the <strong>PATH</strong> the operating system searches for executables.
 
@@ -278,8 +312,7 @@ To get you started quickly, you can:
 
    The aliases.txt file is concatenated to the bottom of the <strong>~/.bash_ profile</strong> 
 
-
-10. The script creates a <strong>volatile/non-persistent workspace folder</strong> which the script <em>deletes</em> at the beginning of each run, and populates again with downloads.
+12. The script creates a <strong>volatile/non-persistent workspace folder</strong> which, when configured, the script <em>deletes</em> at the beginning of each run, and populates again with downloads.
 
     The name of the volatile folder is based on the variable $WORKSPACE_FOLDER defined in file <tt>git-basics.env</tt>.
     Thus, if you may the value of the variable, a different workspace would be created on the next run.
@@ -317,16 +350,31 @@ git config --list
 
    PROTIP: If you see a : (colon) on the last line of the Terminal screen, press <strong>q</strong> to quit out of the listing.
 
+   WARNING: This is commented out because it's too long.
+
    BONUS:
 
-   In our class we don't have the time to go through all the configurations that control how Git makes use of its many features. But I have a script that installs them and other apps on a Mac according to a specification file. It's at https://github.com/wilsonmar/mac-setup/master/blog/mac-install-all.sh
+   In our class we don't have the time to go through all the configurations that control how Git makes use of its many features. 
+   For example, GitHub Enterprise users whitelist hostnames using:
+   
+   * git config --global --add hub.host my.example.org
+   <br /><br />
 
-4. PROTIP: Create a folder with a name such as <strong>gits</strong> or "project" to hold anonymouse Git repositories from various GitHub/GitLab accounts. This would be immediately under your $HOME folder:
+   But I have a script that installs them and other apps on a Mac according to a specification file. It's at https://github.com/wilsonmar/mac-setup/master/blog/mac-install-all.sh
+
+
+
+   <a name="CloneLocal"></a>
+
+   ### Git init locally
+
+
+4. PROTIP: Optionally, create a folder with a name such as <strong>gits</strong> or "project" to hold anonymouse Git repositories from various GitHub/GitLab accounts. This would be immediately under your $HOME folder:
 
    <pre><strong>cd $HOME && mkdir gits && cd gits
    </strong></pre>
 
-5. PROTIP: Create an <strong>account container folder</strong> to hold repositories under <strong>each account</strong> on GitHub/GitLab or to group repositories relared to the same subject:
+5. PROTIP: Optionally, create an <strong>account container folder</strong> to hold repositories under <strong>each account</strong> on GitHub/GitLab or to group repositories relared to the same subject:
 
    <pre><strong>mkdir myacct && cd myacct
    </strong></pre>
@@ -336,16 +384,9 @@ git config --list
 
    <pre>/gits/hotwilson/----+----1----+----2</pre>
 
-
-   <a name="CloneLocal"></a>
-
-   ### Clone locally
-
-   The following is based on <a target="_blank" href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">this</a>.
-
 6. PROTIP: If you are creating a local repository, first create an account or project <strong>container</strong> folder to hold the various repositories. 
 
-   <pre><strong>mkdir local-repo && cd local-repo
+   <pre><strong>mkdir local-init && cd local-init
    </strong></pre>
 
    This is unlike git clone commands which create the folder for you.
@@ -358,7 +399,7 @@ git config --list
    The response:
 
    <pre>
-Initialized empty Git repository in /Users/kevingrastorf/git-basics-workspace/gits/myacct/local-repo/.git/
+Initialized empty Git repository in /Users/kevingrastorf/git-basics-workspace/gits/myacct/local-init/.git/
    </pre>
 
    This creates in the current folder a folder always named <strong>.git</strong>
@@ -366,9 +407,16 @@ Initialized empty Git repository in /Users/kevingrastorf/git-basics-workspace/gi
 
 8. git add .
 9. git commit -m "First commit"
-10. git remote add origin remote repository URL
-11. git remote -v
-12. git push -u origin master
+
+   ### <a name="CreateRepo"></a>
+
+10. <a target="_blank" href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">GitHub docs</a> say that you need to first create repos in the GUI. However, the Hub add-in enables it:
+
+    <pre><strong>hub create -d "My new thing"</strong></pre>
+
+11. git remote add origin remote repository URL
+12. git remote -v
+13. git push -u origin master
 
 
 
@@ -459,14 +507,6 @@ and used it to create an account on <a target="_blank" href="https://www.github.
    ### Fork using Hub add-in to Git
 
    <a target="_blank" href="https://x-team.com/blog/speed-up-your-github-workflow-with-hub/">BLOG</a>: Instead of doing that manually, we have a way to do that in a command-line script.
-
-2. For the script to automatically fork a repository from another account, it first installs the "hub" add-in to Git:
-
-   <pre><strong>brew install hub</strong></pre>
-
-   BTW: There is no "cask" in the command because it only works within the command line, not GUI.
-
-   PROTIP: Technically "Hub" is called a "wrapper" around Git’s CLI so you can do it all from the command line rather than switching to GitHub’s web page.
 
    <a name="Fork"></a>
 
@@ -606,7 +646,6 @@ upstream git://github.com/hotwilson/some-repo.git (push)
     <br /><br />
 
     PROTIP: Git defaults to the master branch. But many organizations protect that name for production use, and instead create a “development” or “dev” branch for developers to work with.
-
 
 <hr />
 
@@ -950,6 +989,10 @@ A  newfile.md
 
    The two aliases above include a `git push` for maximum convenience.
 
+   GitHub Enterprise uses can push to multiple remotes with one command:
+
+   <pre>git push production,staging</pre>
+
    If you see an error message like this, it means you don't have permissions:
 
    <pre>
@@ -958,6 +1001,8 @@ fatal: Could not read from remote repository.
 Please make sure you have the correct access rights
 and the repository exists.
    </pre>
+
+   ### Two-factor authentication
 
    If you setup 2FA (two-factor authentication), Git will prompt you for a username and password. Because of 2FA, GitHub expects a <a target="_blank" href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/">personal access token</a>. If you type in your account password, GitHub responds with "fatal: Authentication failed for https://github.com/...". 
 
@@ -1034,7 +1079,7 @@ and the repository exists.
 
    That is why my script has "Press when ready" steps - for all three manual actions below:
 
-   ### Create request
+   ### 1. Create a pull/merge request
 
 1. To make a pull/merge request, log into your Git hosting GUI and navigate to your origin repo.
 
@@ -1060,7 +1105,7 @@ and the repository exists.
 
    See https://about.gitlab.com/2016/12/01/how-to-keep-your-fork-up-to-date-with-its-origin/
 
-   ### Request merge
+   ### 2. Squash and merge 
 
 5. Next, on a different browser, login as the committer of that upstream repo.
 
@@ -1080,7 +1125,7 @@ and the repository exists.
 
     A purple "Merged" appears at the top of the screen.
 
-    ### Changes to Upstream
+   ### 3. Add file to upstream
 
     While still in the upstream repo (hotwilson), establish conditions for the next set of steps, in the upstream remote, make a change such as adding a file. 
 
@@ -1306,12 +1351,9 @@ added: xome
    <pre>
    </pre>
 
+<hr />
 
-
-
-
-
-
+## BONUS topics
 
 ### Viewing files
 
