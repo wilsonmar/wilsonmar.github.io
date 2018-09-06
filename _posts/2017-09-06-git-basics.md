@@ -36,9 +36,9 @@ Click on the diagram to pop-up a full-size image</a>
 
 Sorry, this is a rather busy diagram because we're covering a lot in this course.
 
-<a name="Video"></a>
+<a name="DigramVideo"></a>
 
-### Video
+### Diagram Video
 
 <!--<a target="_blank" href="https://www.youtube.com/embed/zeZJbb2eshM">
 Older video</a>-->
@@ -66,7 +66,7 @@ PROTIP: I recommend that you install several browsers on your Mac:
 
 Here is how you can use the different browser windows:
 
-1. <a target="_blank" href="https://www.code2bits.com/how-to-install-chrome-on-macos-using-homebrew">Install the Chrome browser</a> to view <a target="_blank" href="https://wilsonmar.github.io/git-basics">this tutorial page</a> and the <a href="#Video">pop-up video</a> because Chrome supports the latest web technologies (such as PWA, etc.).
+1. <a target="_blank" href="https://www.code2bits.com/how-to-install-chrome-on-macos-using-homebrew">Install the Chrome browser</a> to view <a target="_blank" href="https://wilsonmar.github.io/git-basics">this tutorial page</a> and the <a href="#DiagramVideo">pop-up video</a> because Chrome supports the latest web technologies (such as PWA, etc.).
 
 2. <a target="_blank" href="https://brave.com/download/">Install the Brave browser</a> to work with <strong>your own repositories</strong> on GitHub/GitLab:
 
