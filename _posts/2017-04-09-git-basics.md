@@ -210,7 +210,7 @@ To get you started quickly, you can:
 
    6.x <a href="#Add2Staging">Local edit, add, commit, push</a>
 
-   7.x <a href="#UpdateUpstream">Update with Upstream changes</a>
+   7.x <a href="#PullMerge">Pull and Merge</a>
 
    8.x <a href="#UpdateOrigin">Update origin with upstream changes</a>
 
@@ -991,7 +991,7 @@ and the repository exists.
 
     [ <a href="https://wilsonmar.github.io/git-whoops#Tags">Whoops</a> ]
 
-    CAUTION: A double-push is needed for tags because it uses Git notes features. Since notes were not designed for many notes/tags, using them is known to slow commits.
+    CAUTION: An additional push commands is needed for tags because it uses Git notes features. Since notes were not designed for many notes/tags, using them is known to slow commits.
 
 
    <a name="DeleteBranch"></a>
@@ -1010,26 +1010,84 @@ and the repository exists.
     NOTE: The colon is the secret special sauce. There is no "delete" command with this.
 
 
-   <a name="PullRequest"></a>
+<a name="PullMerge"></a>
 
-   ### Pull Request
+## 7.x Pull and Merge
 
-   Unless you have been designated a committer in the upstream repository, you can't push changes to it. But you can request their committers to pull changes from your forked repo. When a committer of that repo merges (or in other words, accepts) your PR, you'll get an email from GitHub.
+   Unless you have been designated a committer in the upstream repository, you can't directly push changes to it like you can with your own repo. 
 
-0. Request the pull from the upstream repo. For example: 
+   But you can send a request to committers of that upstream repo to pull and merge changes from your forked repo. 
 
-   <pre><strong>git request-pull v1.0 https://github.com/<em>upstream/sisters  master</em>
+   Each Git hosting service has their own GUI to make such requests.
+
+   GitHub calls them Pull Requests.<br />
+   GitLab calls them Merge Requests.
+
+   That is why my script has "Press when ready" steps - for all three manual actions below:
+
+   ### Create request
+
+1. To make a pull/merge request, log into your Git hosting GUI and navigate to your origin repo.
+
+2. Click Compare. If there are differences, you'll see a green "Create pull request".
+
+3. Type in a Title for the request, such as "For the class".
+
+4. Click the green "Create pull request".
+
+   You can make more changes.
+
+   Alternately, there is a command to request the pull from the upstream repo. For example: 
+
+   <pre><strong>git request-pull v1.2.3 https://github.com/hotwilson/master  master</em>
    </strong></pre>
 
    * The URL must be specified (rather than a remote designator such as "upstream").
 
    * This feature is described at: <a target="_blank" href="http://git-scm.com/docs/git-request-pull">
    http://git-scm.com/docs/git-request-pull</a> which says
-   "this will produce a request to the upstream, summarizing the changes 
-   <strong>between</strong> the v1.0 release and your master,
+   "this will produce a request to the upstream, summarizing the changes <strong>between</strong> the v1.0 release and your master,
    to pull it from your public repository."
 
    See https://about.gitlab.com/2016/12/01/how-to-keep-your-fork-up-to-date-with-its-origin/
+
+   ### Request merge
+
+5. Next, on a different browser, login as the committer of that upstream repo.
+
+   If you don't own the account, talk to the owner (class instructor).
+
+6. Navigate to the repo that was forked, such as hotwilson. 
+
+7. Click the "Pull requests" tab. 
+
+8. Check the request that you added in the step above.
+
+9. If there are no conflicts, click <strong>Squash and merge</strong> (or in other words, accept) the request.
+
+   ![git-alt-merge-309x262-20359](https://user-images.githubusercontent.com/300046/45144563-bb85c500-b17b-11e8-8fe7-950067bc9300.jpg)
+
+10. Click "Confirm Squash and merge".
+
+    A purple "Merged" appears at the top of the screen.
+
+    ### Changes to Upstream
+
+    While still in the upstream repo (hotwilson), establish conditions for the next set of steps, in the upstream remote, make a change such as adding a file. 
+
+11. Click "Create new file" button.
+
+12. Type in a new file name. I like a date and time such as
+
+    2018-09-30-8
+
+13. Click under "Edit new file".
+
+14. Type in some text, such as "hello".
+
+15. Press Shift+down arrow to scroll to the bottom of the page.
+
+16. Click the green "Commit new file".
 
 
 <a name="UpdateUpstream"></a>
@@ -1037,6 +1095,8 @@ and the repository exists.
 ## 8.x Update origin with upstream changes
 
    Next, let's look at what happens if, over time, changes occur in the upstream repo. 
+
+   See https://help.github.com/articles/syncing-a-fork/
 
 1. Open a different browser (Firefox or Brave) to login and make a change.
    In the script there is a message:
