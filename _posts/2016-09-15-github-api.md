@@ -166,7 +166,7 @@ The cURL utility is used by many documents when describing REST API.
 }
    </pre>
 
-   As <a target="_blank" href="https://spring.io/understanding/HATEOAS>
+   PROTIP: As <a target="_blank" href="https://spring.io/understanding/HATEOAS">
    this notes</a>, including hypermedia links with the responses
    means programs are not dependent on a fixed specification 
    staged somewhere else on the website, on another website, or perhaps distributed by email.
@@ -424,7 +424,13 @@ the JSON returned from API calls.
   annual conference in Greenville, SC late September
   records videos.
 
+## Video
 
+* https://www.youtube.com/watch?v=PPLorPKmHBA
+   How To Interact With Github API Using JavaScript
+   by Jun 11, 2016
+   Theodore Anderson
+   who types like a demon live using Angular
 
 ## More about Git & GitHub #
 
