@@ -27,6 +27,7 @@ This page presents steps and information for those new to Salesforce to get "plu
 * <a target="_blank" href="https://help.salesforce.com/apex/HTViewHelpDoc?id=glossary.htm">
    Salesforce's Glossary</a> of terms. It doesn't define acronmns, such as:
 
+   * ABM = Account-based Marketing
    * CPQ = Configure, Price, and Quote (workflow)
    * CMS = Content Management System
    * CRM = Customer Relationship Management
@@ -59,9 +60,13 @@ This page presents steps and information for those new to Salesforce to get "plu
 
 It's built on top of former landfill in an earthquake-prone area.
 But it's certified LEED Platinum -- the highest rating in the US.
+<a target="_blank" href="https://www.youtube.com/watch?v=DqOWyL5S1UE">
+<img alt="salelsforce-tower-lobby-299x156-60483.jpg" src="https://user-images.githubusercontent.com/300046/45239024-0d743b00-b2a1-11e8-94ef-dc5c9a0073b4.png">
+this video of the lobby's amazing wall-to-wall video wall</a>.
 
-It's part of a whole downtown re-development that includes the Salesforce <strong>Transit Center</strong> under a 5 acre park. It's among many <a target="_blank" href="https://employbl.com/">other tech companies in San Francisco</a>.
+It's part of a whole downtown $6 billion re-development that includes the 5-acre Salesforce Park above the Transbay Transit Center public transportation hub. 
 
+Among many <a target="_blank" href="https://employbl.com/">other tech companies in San Francisco</a>.
 Salesforce corporate address is "The Landmark @ One Market".
 See https://www.salesforce.com/company/locations/
 
