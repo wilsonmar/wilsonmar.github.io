@@ -128,6 +128,7 @@ Here is how you can use the different browser windows:
 
    ![image](https://user-images.githubusercontent.com/300046/45103610-892d8680-b0ed-11e8-921c-d2b03b32a6ba.png)
 
+
 ### Mac Terminal
 
 1. Open a Bash terminal by command+Tab (holding down the command key, then press Tab) for the Spotlight. Type "ter" until "Terminal.app" appears, press Enter to select it.
@@ -177,7 +178,7 @@ Git command-line client installed</a>.
 
 ## Single sh command run
 
-To get you started quickly, you can:
+To get you started quickly:
 
 1. Copy this entire line (which may wrap around) after highlighting it:
 
@@ -247,6 +248,11 @@ To get you started quickly, you can:
 
    PROTIP: Technically "Hub" is called a "wrapper" around Git’s CLI so you can do it all from the command line rather than switching to GitHub’s web page.
 
+   Also install jq to enable Git to process JSON:
+
+   <pre><strong>brew install jq</strong></pre>
+
+
    <a name="EnvVars"></a>
 
    ### Enviornment variables & values
@@ -263,6 +269,7 @@ To get you started quickly, you can:
 
    PROTIP: The <tt>git-basics.env</tt> file is placed in your $HOME folder, separate from any folder that can be pushed back to Git hosting because you may want to <strong>type your password</strong> in the file for more automatic functionality in the script, such as deleting repos, functions which even hub does not perform.
 
+
    ### git-scripts folder in $HOME
 
 6. The script looks for a <strong>persistent</strong> folder named <strong>git-scripts</strong> and creates it if it doesn't exist there. 
@@ -276,6 +283,9 @@ To get you started quickly, you can:
 
    This is so you can <a href="#EditRun">edit the files downloaded so you can run rerun locally (as described below)</a>.
 
+   If you do edit the file locally, comment out the read command line and its fancy_echo command by adding a # in front of them.
+
+
    <a name="#EditRun"></a>
 
    ### Edit and rerun locally
@@ -288,6 +298,9 @@ To get you started quickly, you can:
 
    * Adopt the <tt>git-basics.sh</tt> to automate other activities using Git.
    PROTIP: Select a <strong>text editor</strong>. See my notes at <a target="_blank" href="https://wilsonmar.github.io/text-editors/">https://wilsonmar.github.io/text-editors</a>
+
+
+   ### chmod
 
    PROTIP: To avoid error messages that says the file is not there, change premissions to enable the script file to be executed
 
@@ -318,6 +331,12 @@ To get you started quickly, you can:
     Thus, if you may the value of the variable, a different workspace would be created on the next run.
 
     This is what enables the script to be run over and over again.
+
+13. Before invoking a Git command, load the default <a href="SSH">SSH public key file</a> to make sure it is available for use with "hands-free" GitHub API calls: 
+
+   <pre><strong>export RSA_PUBLIC_KEY=$(cat ~/.ssh/id_rsa.pub)</strong></pre>
+   
+
 
 <a name="GitConfig"></a>
    
@@ -352,22 +371,14 @@ git config --list
 
    WARNING: This is commented out because it's too long.
 
-   BONUS:
-
    In our class we don't have the time to go through all the configurations that control how Git makes use of its many features. 
-   For example, GitHub Enterprise users whitelist hostnames using:
-   
-   * git config --global --add hub.host my.example.org
-   <br /><br />
 
-   But I have a script that installs them and other apps on a Mac according to a specification file. It's at https://github.com/wilsonmar/mac-setup/master/blog/mac-install-all.sh
-
+   BONUS: <a href="#MoConfigs">More configuration settings</a>
 
 
    <a name="CloneLocal"></a>
 
-   ### Git init locally
-
+   ### Local Git projects container folder 
 
 4. PROTIP: Optionally, create a folder with a name such as <strong>gits</strong> or "project" to hold anonymouse Git repositories from various GitHub/GitLab accounts. This would be immediately under your $HOME folder:
 
@@ -384,19 +395,22 @@ git config --list
 
    <pre>/gits/hotwilson/----+----1----+----2</pre>
 
-6. PROTIP: If you are creating a local repository, first create an account or project <strong>container</strong> folder to hold the various repositories. 
+
+   <a name="CreateRepo"></a>
+   
+   ### Init repo
+
+6. PROTIP: If you are creating a local repository, first create an account or <strong>project container</strong> folder to hold the various repositories. 
 
    <pre><strong>mkdir local-init && cd local-init
    </strong></pre>
-
-   This is unlike git clone commands which create the folder for you.
 
 7. The git init command creates a blank Git repository:
 
    <pre><strong>git init
    </strong></pre>
 
-   The response:
+   The sample response:
 
    <pre>
 Initialized empty Git repository in /Users/kevingrastorf/git-basics-workspace/gits/myacct/local-init/.git/
@@ -405,19 +419,27 @@ Initialized empty Git repository in /Users/kevingrastorf/git-basics-workspace/gi
    This creates in the current folder a folder always named <strong>.git</strong>
    into which Git stores and retrieves all change history.
 
-8. git add .
-9. git commit -m "First commit"
+8. Add contents:
 
-   ### <a name="CreateRepo"></a>
+   <pre>git add --all
+   git commit -m "First commit"
+   </pre>
 
-10. <a target="_blank" href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">GitHub docs</a> say that you need to first create repos in the GUI. However, the Hub add-in enables it:
+9. Delete the "local-init" repo created by a previous run on GitHub. This requires use of the GitHub API because "hub delete" does no work.
+
+   BONUS: See the <a href="GitHubAPI">GitHub API description</a>
+
+10. Although <a target="_blank" href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">GitHub docs</a> say that you need to first create repos in the GUI. However, the Hub add-in enables it:
 
     <pre><strong>hub create -d "My new thing"</strong></pre>
 
-11. git remote add origin remote repository URL
-12. git remote -v
-13. git push -u origin master
+   This is instead of
+   * git remote add origin remote repository URL
+   * git push -u origin master
+   <br /><br />
 
+11. git remote -v
+12. Manually check on GitHub to make sure it's really there.
 
 
 <hr />
@@ -426,7 +448,8 @@ Initialized empty Git repository in /Users/kevingrastorf/git-basics-workspace/gi
 
 ## 3.x Cloud repository setup
 
-Now let's talk about working with repositories in the <strong>cloud</strong>. 
+Now let's talk about working with repositories in <strong>cloud hosts</strong>
+such as Microsoft's GitHub, GitLab, Atlassian's BitBucket, etc.
 
 Identify a public GitHub repository and something that you can contribute to, such as suggesting a typo fix. But you have no right to edit that repo. For example:
 
@@ -466,7 +489,11 @@ and used it to create an account on <a target="_blank" href="https://www.github.
 
    When the Git client runs, it <strong>retrieves the private key in the id_rsa</strong> file to encrypt what it sends. The GitHub or GitLab cloud service decrypts using the public key.
 
-1. List the files in folder .ssh to confirm it's there:
+1. When this script runs, it uses the built-in command "cat" to retrieve the contents of the public key for later use by the GitHubAPI:
+
+   <pre>export RSA_PUBLIC_KEY=$(cat ~/.ssh/id_rsa.pub)</a>
+
+2. List the files in folder .ssh to confirm it's there:
 
    <pre><strong>ls -a ~/.ssh
    </strong></pre>
@@ -510,18 +537,16 @@ and used it to create an account on <a target="_blank" href="https://www.github.
 
    <a name="Fork"></a>
 
-3. The forked repository created from a previous run needs to be first deleted from GitHub/GitLab, manually.
+3. The forked repository created from a previous run needs to be first deleted from GitHub/GitLab, manually because there is no "hub delete repo".
+
+   Click Settings tab. Scroll down to click "Delete this repository". Type the repo name. Click the red "I understand...".
 
    [ <a href="https://wilsonmar.github.io/git-whoops/#Fork">Whoops</a> ]
-
-   (Click Settings tab. Scroll down to click "Delete this repository". Type the repo name. Click the red "I understand...")
 
    PROTIP: Click <a target="_blank" href="https://wilsonmar.github.io/git-whoops/">"Whoops"</a> links for instructions on un-doing the commands immediately
    before the link. There is a "Return" link there to get back here and continue.
 
-   TODO: Automate the above.
-
-   You may want to un-comment the command to pause to read your response of pressing any key after doing the action stated.
+   Un-comment the command to pause to read your response of pressing any key after doing the action stated.
 
 4. Use hub to clone before forking.
 
@@ -565,6 +590,7 @@ Fetching origin
 Already up to date.
    </pre>
 
+   BONUS: <a href="DefaultBranch">Set default branch</a>
 
 5. Verify using a <tt>git remote -v</tt> to show it looks like this:
 
@@ -676,23 +702,6 @@ Here's where you add value to that Open-Source repository.
 
    <pre><strong>git checkout -b feat1
    </strong></pre>
-
-   <!--
-   <pre><strong>git branch <em>feat1</em>
-   </strong></pre>
-
-   <em>"feat1"</em> would be different for you. 
-   Those who want to add additional information (metadata)
-   about a branch use this command:
-
-   <pre><strong>git branch --edit-description <em>feat1</em>
-   </strong></pre>
-
-   This will result in an editor window for you to enter metadata about the branch.
-
-   PROTIP: In real life, the example here -- "feat1" (feature1) 
-   would instead begin with an issue number or some reference to the need for the branch.
-   -->
 
    PROTIP: Atlassian defines its branches<a target="_blank" href="https://www.youtube.com/watch?v=O4SoB3TFkjA&t=18m26s">*</a> 
    with a type (feature, bugfix, hotfix, etc.), a <strong>slash</strong>, an issue number, then a short description.
@@ -1052,8 +1061,7 @@ and the repository exists.
 
    ### Delete branch
 
-11. Because branches are just markers within Git, once a feature branch is in GitHub, 
-   that branch can be deleted from the local repo 
+11. Because branches are just markers within Git, once a feature branch is in GitHub, that branch can be deleted from the local repo:
 
     <pre><strong>git branch -d feat1</strong></pre>
 
@@ -1353,7 +1361,67 @@ added: xome
 
 <hr />
 
+<a name="GitHubAPI"></a>
+
+## GitHub API
+
+* See https://gist.github.com/caspyin/2288960 about GitHub API
+* From https://gist.github.com/robwierzbowski/5430952 on Windows
+* From https://gist.github.com/jerrykrinock/6618003 on Mac
+
+
+<hr />
+
 ## BONUS topics
+
+<a name="MoConfigs"></a>
+
+### More configuration settings
+
+   For example, GitHub Enterprise users whitelist hostnames using:
+   
+   * git config --global --add hub.host my.example.org
+   <br /><br />
+
+   Change default commit message editor program to Sublime Text (instead of vi):
+   
+   <pre>git config core.editor "~/Sublime\ Text\ 3/sublime_text -w"</pre>
+
+   Allow all Git commands to use colored output, if possible:
+
+   <pre>git config color.ui auto</pre>
+
+   Get the size of what was transmitted on the current repo folder:
+
+   <pre><strong>git count-objects -v</strong></pre>
+
+   <pre>
+count: 1749
+size: 12308
+in-pack: 344
+packs: 1
+size-pack: 109
+prune-packable: 0
+garbage: 0
+size-garbage: 0
+   </pre>
+
+   <pre>git remote show origin</pre>
+
+   But I have a script that installs them and other apps on a Mac according to a specification file. It's at https://github.com/wilsonmar/mac-setup/master/blog/mac-install-all.sh
+
+
+
+<a name="DefaultBranch"></a>
+
+### Set default branch
+
+<pre>
+DEFAULT_BRANCH="develop"
+git symbolic-ref HEAD refs/heads/$DEFAULT_BRANCH
+cat .git/HEAD
+git branch -avv
+</pre>
 
 ### Viewing files
 

@@ -29,6 +29,7 @@ This page presents steps and information for those new to Salesforce to get "plu
 
    * CPQ = Configure, Price, and Quote (workflow)
    * CMS = Content Management System
+   * CRM = Customer Relationship Management
    * CRUD = Create Read Update Delete (basic database/API functions)
    * FLS = Field Level Security
    * GTL = Guide Template Language (in Marketing Cloud)
@@ -59,7 +60,7 @@ This page presents steps and information for those new to Salesforce to get "plu
 It's built on top of former landfill in an earthquake-prone area.
 But it's certified LEED Platinum -- the highest rating in the US.
 
-It's part of a whole downtown re-development that includes the Salesforce Transit Center under a 5 acre park.
+It's part of a whole downtown re-development that includes the Salesforce <strong>Transit Center</strong> under a 5 acre park. It's among many <a target="_blank" href="https://employbl.com/">other tech companies in San Francisco</a>.
 
 Salesforce corporate address is "The Landmark @ One Market".
 See https://www.salesforce.com/company/locations/
