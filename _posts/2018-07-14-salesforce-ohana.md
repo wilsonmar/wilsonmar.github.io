@@ -56,7 +56,7 @@ This page presents steps and information for those new to Salesforce to get "plu
 
 ## Office Locations
 
-<a target="_blank" href="http://www.salesforcetower.com/">The Salesforce Tower</a>, on Mission between Freemont and 1st (South of the Montgomery BART station), is the tallest building not just in San Francisco but everywhere West of the Mississipi -- a few feet taller than the Eiffel Tower in Paris:
+<a target="_blank" href="http://www.salesforcetower.com/">The Salesforce Tower</a> is the tallest building not just in San Francisco but everywhere West of the Mississipi -- a few feet taller than the Eiffel Tower in Paris:
 
 ![sf-tallest-648x558-65050](https://user-images.githubusercontent.com/300046/43551978-2ffdeb20-95a6-11e8-92c3-c919dee9811b.jpg)
 
@@ -66,7 +66,7 @@ It's built on top of former landfill in an earthquake-prone area.
 And it's certified LEED Platinum -- the highest rating in the US. <a target="_blank" href="https://www.youtube.com/watch?v=DqOWyL5S1UE&t=6s">Click this picture to see a video of the lobby's amazing wall-to-wall video wall:<br />
 <img alt="salelsforce-tower-lobby-299x156-60483.jpg" src="https://user-images.githubusercontent.com/300046/45239024-0d743b00-b2a1-11e8-94ef-dc5c9a0073b4.png"></a>
 
-It's part of a whole downtown $6 billion re-development that includes the 5-acre Salesforce Park above the Transbay Transit Center public transportation hub. 
+It's on Mission between Freemont and 1st (South of the Montgomery BART station), a part of a whole downtown $6 billion re-development that includes the 5-acre Salesforce Park above the Transbay Transit Center public transportation hub. 
 
 Salesforce corporate address is "The Landmark @ One Market".
 See https://www.salesforce.com/company/locations/
