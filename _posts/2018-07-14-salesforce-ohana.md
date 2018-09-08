@@ -63,7 +63,7 @@ This page presents steps and information for those new to Salesforce to get "plu
 In other words, Salesforce "towers above" <a target="_blank" href="https://employbl.com/">other tech companies in San Francisco</a>. <a target="_blank" href="https://www.salesforce.com/blog/2018/07/dreampitch-startup-ultimate-elevator-pitch?d=cta-body-promo-111">Dreampitches</a> are done riding up its 61 stories.
 
 It's built on top of former landfill in an earthquake-prone area.
-And it's certified LEED Platinum -- the highest rating in the US. <a target="_blank" href="https://www.youtube.com/watch?v=DqOWyL5S1UE">Click this picture to see a video of the lobby's amazing wall-to-wall video wall:<br />
+And it's certified LEED Platinum -- the highest rating in the US. <a target="_blank" href="https://www.youtube.com/watch?v=DqOWyL5S1UE&t=6s">Click this picture to see a video of the lobby's amazing wall-to-wall video wall:<br />
 <img alt="salelsforce-tower-lobby-299x156-60483.jpg" src="https://user-images.githubusercontent.com/300046/45239024-0d743b00-b2a1-11e8-94ef-dc5c9a0073b4.png"></a>
 
 It's part of a whole downtown $6 billion re-development that includes the 5-acre Salesforce Park above the Transbay Transit Center public transportation hub. 
