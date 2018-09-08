@@ -168,6 +168,17 @@ The backup file consists of many CSV files: one for each object and internal tab
 
 ![sf-backup-objects-598x410-28455](https://user-images.githubusercontent.com/300046/44672521-ed619380-a9e5-11e8-9976-992d85a3145d.jpg)
 
+## Data Types
+
+Data type—primitive types: collections, sObjects, user-defined types, and built-in Apex types.
+
+There are three main types of collections in Apex:
+
+* Sets – <strong>unordered</strong> collection of elements that do not contain any duplicates. 
+* Lists – ordered collection of elements distinguished by <strong>indices</strong>.
+* Maps – key-value pairs with each unique key mappings to a single value. Keys and values can be any data type—primitive type.
+
+
 ## Data Quality
 
 This is covered in the 211 course and:
