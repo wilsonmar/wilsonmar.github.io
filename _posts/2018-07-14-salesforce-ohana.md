@@ -32,6 +32,7 @@ This page presents steps and information for those new to Salesforce to get "plu
    * CMS = Content Management System
    * CRM = Customer Relationship Management
    * CRED = Create Read Edit Delete (basic operations permissions defined in user profiles)
+   * FSL = Field Service Lightning
    * FLS = Field Level Security (access defined in user profiles)
    * GTL = Guide Template Language (in Marketing Cloud)
    * PAM = Partner Account Manager (email isvpartners@salesforce.com)
@@ -351,7 +352,7 @@ The Saturday, Sunday, and Monday before Dreamforce are <a target="_blank" href="
 
    * Hastags <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23RoadToDF18&src=typd">#RoadToDF18</a> and <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23DF18&src=typd">#DF18</a> (from <a target="_blank" href="https://twitter.com/Dreamforce?lang=en">Twitter account @Dreamforce</a>), on Instagram, and other social media.
 
-   * Recorded vidoes sessions are on the <a target="_blank" href="https://www.youtube.com/user/salesforce">Salesforce YouTube channel</a>.
+   * Recorded vidoes of <a target="_blank" href="https://success.salesforce.com/sessions?eventId=a1Q3A00001XoCSUUA3#/">sessions</a> are on the <a target="_blank" href="https://www.youtube.com/user/salesforce">Salesforce YouTube channel</a>.
 
    * <a target="_blank" href="https://www.youtube.com/channel/UCMSfoJzq24tEKNfdB4GaIqg">Dreamforce videos on YouTube</a>
 
@@ -377,7 +378,11 @@ Dreamforce drew 170,000 to San Francisco in 2017 (the largest software conferenc
 
    * Welcome Reception
 
-   * <strong>Dreamfest</strong> is the party of the conference, featuring incredible live music, food, and drinks. In 2017 it was held at AT&T Park with Alicia Keys and Lenny Kravitz.
+   * <a target="_blank" href="https://www.eventbrite.com/e/marc-benioff-keynote-streaming-party-tickets-49069872309">Marc Benioff Keynote Streaming Party</a> 2-5 Tuesday and by <a target="_blank" href="https://www.newvoicemedia.com/en-us/events/dreamforce-happy-hour-and-keynote">New Voice Media</a>
+
+   * <strong>Dreamfest</strong> (7pm+ Wednesday) is the party of the conference hosted by Salesforce, featuring incredible live music, food, and drinks. In 2017 it was held at AT&T Park with Alicia Keys and Lenny Kravitz. Previous Dreamfest headliners include U2, Foo Fighters, The Killers & Green Day. 
+
+   * The $1,000 per ticket also gets you in the Dreamfest after-party https://www.theconcertforkids.com/ by Salesforce.org benefitting the UCSF Benioff Children’s Hospitals, at the Civic Center Plaza features Metallica in 2018.  After Party Featuring MC Hammer immediately follows the concert.
 
    * 2,700+ expert-led sessions of 40-minute <strong>breakout sessions</strong> and 20-minute theater sessions, with majority of them customer led. 25% of all seats (except for those in Hands-On Trainings and a few other workshops) are blocked for walk-ins.
 
@@ -406,6 +411,8 @@ Hackathon?
 Read about preparing for and getting the most from Dreamforce:
 
    * Take <a target="_blank" href="https://trailhead.salesforce.com/modules/get_ready_for_dreamforce_prepare_most_exciting_event_year">Trailhead Module: Dreamforce Ready</a> [30 mins] 
+
+   * <a target="_blank" href="https://www.newvoicemedia.com/en-us/online-guides/the-ultimate-dreamforce-2018-guide">New Voice Media's Ultimate Dreamforce Guide 2018</a>
 
    * <a target="_blank" href="https://developer.salesforce.com/blogs/developer-relations/2016/09/developers-guide-dreamforce.html">The Developer’s Guide to Dreamforce</a> September 21, 2016
 

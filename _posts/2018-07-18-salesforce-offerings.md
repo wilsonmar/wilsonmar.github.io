@@ -76,19 +76,7 @@ Gartner rated Salesforce at the upper-right corner of its Magic Quandrant of sys
 Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/drucker_customer_market_driven/">Drucker School—Customer & Market Strategy</a> [1 hr 45 mins] +700
 to turn your organization into a customer and market-driven powerhouse with these insights.
 
-### Governor limits
 
-Since Salesforce processes customer data in a shared environment, it must make sure that any given customer's process does not disturb others. 
-
-* Total number of records retrieved by a SOQL query – 50,000, so we "bulkify" code
-* Total number of SOQL queries issued – 100 (Synchronous) 200 (Asynchronous), so we avoid querying large datasets
-* Total number of DML statements issued – 150, so we avoid SOQL Queries or DML statements inside FOR Loops
-* Total number of callouts (HTTP requests or Web services calls) in a transaction – 100
-* Maximum CPU time on Salesforce servers – 10,000ms (Synchronous) 60,000ms (Asynchronous)
-<br /><br />
-PROTIP: These and <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_limits.htm">other limits</a> are not negatives of working with Salesforce. They are needed for any system. It's just that many sites risk not having them because it's an effort to put them in and they add some overhead.
-
-https://developer.salesforce.com/page/Apex_Code_Best_Practices
 
 ### Competitors in CRM
 
@@ -353,6 +341,20 @@ Salesforce employees maintain these accounts within (now Microsoft's) GitHub.com
    (<a target="_blank" href="https://www.youtube.com/channel/UC6ZEIvlahVCA8k5tYTr_a2A">YouTube acct.</a>)
 
 <a name="Editions"></a>
+
+### Governor limits
+
+Since Salesforce processes customer data in a shared environment, it must make sure that any given customer's process does not disturb others. 
+
+* Total number of records retrieved by a SOQL query – 50,000, so we "bulkify" code
+* Total number of SOQL queries issued – 100 (Synchronous) 200 (Asynchronous), so we avoid querying large datasets
+* Total number of DML statements issued – 150, so we avoid SOQL Queries or DML statements inside FOR Loops
+* Total number of callouts (HTTP requests or Web services calls) in a transaction – 100
+* Maximum CPU time on Salesforce servers – 10,000ms (Synchronous) 60,000ms (Asynchronous)
+<br /><br />
+PROTIP: These and <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_limits.htm">other limits</a> are not negatives of working with Salesforce. They are needed for any system. It's just that many sites risk not having them because it's an effort to put them in and they add some overhead.
+
+https://developer.salesforce.com/page/Apex_Code_Best_Practices
 
 ### Product Editions
 
