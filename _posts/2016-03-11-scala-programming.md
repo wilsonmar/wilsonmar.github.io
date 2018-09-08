@@ -15,19 +15,21 @@ comments: true
 
 {% include _toc.html %}
 
-I don't want to repeat what others have already written.
+I don't want to repeat here what others have already written.
 
 My aim with this effort is a faster, easier way to 
 show how to build a full application using Scala, 
 not just to impress others about supposedly cool concepts.
 
-So I will be organizing this into a hands-on approach to introduce the Scala programming language in a sequence for quick learning.
+So this is organized to introduce the Scala programming language sequenced for quick learning.
 
 Compilation is covered in the Ecosystem page.
+The big thing about Scala is that it enables developers to alter compiler behavior by programming macros (user-defined functions that are called by the compiler) and implicit classes, to create your own operators or override existing ones (essentially being unary and binary functions with non-alphanumeric identifiers), also known as the "pimp my library" pattern. Unfortunately, language tools such as IntelliJ have found it <a target="_blank" href="https://movio.co/blog/migrate-Scala-to-Go/">difficult to help with that aspect</a>.
+
+## Language features
 
 0. Functional programming
 0. Applications
-
 
 0. Data Types
 0. Variables
@@ -49,7 +51,6 @@ Compilation is covered in the Ecosystem page.
 0. while
 0. for
 
-
 ## Scala vs. Java
 
 With Scala:
@@ -70,7 +71,7 @@ I think that Static Code Analyzers should be run on the most basic of code,
 by the most junior of developers.
 This is so one doesn't develop bad habits being introduced by
 most programming tutorials available, which use 
-naming conventions not safe for enterprise work.
+naming conventions not useful for enterprise work.
 
 Some "best practices" documents:
 
@@ -92,13 +93,12 @@ Useful for understanding idioms in Twitter's code.
    1. hygienic-rules
    2. language-rules
    3. architecture
-   4. concurrency-parallelism.
+   4. concurrency-parallelism
    5. actors
 
    It's a rather "chicken or the egg" issue -
    how can someone understand what to avoid unless they understand what 
    it is they are avoiding?
-
 
 
 ## Exception mechanism similar to Java's
