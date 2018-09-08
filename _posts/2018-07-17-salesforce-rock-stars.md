@@ -312,7 +312,8 @@ Mark Cane, Salesforce Certified Technical Architect, Certified Scrum Professiona
    * <a target="_blank" href="https://www.audit9.blog/">audit9.blog</a>
    since Apr 2012 
 
-Martin Gessner, <a target="_blank" href="https://www.linkedin.com/in/martin-gessner-66bb071/">Salesforce Solution Architect and founder of Focus on Force</a> in Sydney, Australia.
+Martin Gessner, <a target="_blank" href="https://www.linkedin.com/in/martin-gessner-66bb071/">Salesforce Solution Architect and founder of Focus on Force</a> in Sydney, Australia
+   * The <a target="_blank" href="https://www.focusonforce.com">Focus on Force website</a> provides very good study guides and sample exams for $19 each.
 
 Matheus Goncalves, with 15 years of total IT experience from Atlanta, GA:
    * <a target="_blank" href="https://matheusgoncalves.com/blog/">matheusgoncalves.com/blog</a>

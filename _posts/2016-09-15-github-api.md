@@ -410,7 +410,6 @@ the JSON returned from API calls.
 
 ## Resources
 
-
 0. <a target="blank" href="https://developer.github.com/v3/repos/#create">
    https://developer.github.com/v3/repos/#create</a>
 

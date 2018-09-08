@@ -31,8 +31,8 @@ This page presents steps and information for those new to Salesforce to get "plu
    * CPQ = Configure, Price, and Quote (workflow)
    * CMS = Content Management System
    * CRM = Customer Relationship Management
-   * CRUD = Create Read Update Delete (basic database/API functions)
-   * FLS = Field Level Security
+   * CRED = Create Read Edit Delete (basic operations permissions defined in user profiles)
+   * FLS = Field Level Security (access defined in user profiles)
    * GTL = Guide Template Language (in Marketing Cloud)
    * PAM = Partner Account Manager (email isvpartners@salesforce.com)
    * MOAR = MuleSoft Anypoint Platform
@@ -54,15 +54,15 @@ This page presents steps and information for those new to Salesforce to get "plu
 
 ## Office Locations
 
-<a target="_blank" href="http://www.salesforcetower.com/">The Salesforce Tower</a>, on Mission between Freemont and 1st (South of the Montgomery BART station), at 61 stories, is the tallest building not just in San Francisco but everywhere West of the Mississipi -- a few feet taller than the Eiffel Tower in Paris:
+<a target="_blank" href="http://www.salesforcetower.com/">The Salesforce Tower</a>, on Mission between Freemont and 1st (South of the Montgomery BART station), is the tallest building not just in San Francisco but everywhere West of the Mississipi -- a few feet taller than the Eiffel Tower in Paris:
 
 ![sf-tallest-648x558-65050](https://user-images.githubusercontent.com/300046/43551978-2ffdeb20-95a6-11e8-92c3-c919dee9811b.jpg)
 
+<a target="_blank" href="https://www.salesforce.com/blog/2018/07/dreampitch-startup-ultimate-elevator-pitch?d=cta-body-promo-111">Dreampitches</a> are done riding up its 61 stories.
+
 It's built on top of former landfill in an earthquake-prone area.
-But it's certified LEED Platinum -- the highest rating in the US.
-<a target="_blank" href="https://www.youtube.com/watch?v=DqOWyL5S1UE">
-<img alt="salelsforce-tower-lobby-299x156-60483.jpg" src="https://user-images.githubusercontent.com/300046/45239024-0d743b00-b2a1-11e8-94ef-dc5c9a0073b4.png">
-this video of the lobby's amazing wall-to-wall video wall</a>.
+And it's certified LEED Platinum -- the highest rating in the US. <a target="_blank" href="https://www.youtube.com/watch?v=DqOWyL5S1UE">Click this picture to see a video of the lobby's amazing wall-to-wall video wall:<br />
+<img alt="salelsforce-tower-lobby-299x156-60483.jpg" src="https://user-images.githubusercontent.com/300046/45239024-0d743b00-b2a1-11e8-94ef-dc5c9a0073b4.png"></a>
 
 It's part of a whole downtown $6 billion re-development that includes the 5-acre Salesforce Park above the Transbay Transit Center public transportation hub. 
 
@@ -70,14 +70,13 @@ Among many <a target="_blank" href="https://employbl.com/">other tech companies 
 Salesforce corporate address is "The Landmark @ One Market".
 See https://www.salesforce.com/company/locations/
 
-<a target="_blank" href="https://www.salesforce.com/blog/2018/07/dreampitch-startup-ultimate-elevator-pitch?d=cta-body-promo-111">Dreampitch</a>
 
 <a name="Financials"></a>
 
 ## Financials
 
-Salesforce has not been profitable, but its market value (stock price x shares) is growing.
-The company has seen a consistent growth rate of 35% year-over-year, which is unrivaled in the stock market:
+Salesforce has not been profitable historically, but its market value (stock price x shares) is growing.
+The company has seen a consistent growth rate of 35% year-over-year, unrivaled in the stock market:
 
 <a target="_blank" href="https://www.nasdaq.com/symbol/crm/stock-chart?intraday=off&timeframe=10y&charttype=mountain&splits=off&earnings=off&movingaverage=None&lowerstudy=volume&comparison=off&index=&drilldown=off&sDefault=true">
 <img alt="crm_stock_to_20150718.png" src="https://cloud.githubusercontent.com/assets/300046/8766609/e7cf7120-2dfc-11e5-981a-433ceba95b37.png"></a>
@@ -408,6 +407,10 @@ Read about preparing for and getting the most from Dreamforce:
    * Take <a target="_blank" href="https://trailhead.salesforce.com/modules/get_ready_for_dreamforce_prepare_most_exciting_event_year">Trailhead Module: Dreamforce Ready</a> [30 mins] 
 
    * <a target="_blank" href="https://developer.salesforce.com/blogs/developer-relations/2016/09/developers-guide-dreamforce.html">The Developer’s Guide to Dreamforce</a> September 21, 2016
+
+   * <a target="_blank" href="https://www.salesforceben.com/ultimate-dreamforce-parties-2018/"> Ultimate Dreamforce parties 2018</a>
+
+* <a target="_blank" href="https://academy.whatfix.com/dreamforce-parties-2018">40+ Dreamforce parties 2018 That You Must Attend (by WhatFix)</a>
 
 ### Mascots
 

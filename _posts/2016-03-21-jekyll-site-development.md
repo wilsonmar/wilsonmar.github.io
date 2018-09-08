@@ -1069,7 +1069,9 @@ QUESTION: Spell checking in GitHub?
 
 * Tutorial: http://jekyll.tips/jekyll-casts/
 
-https://geekflare.com/cloud-storage-static-website/
+* https://geekflare.com/cloud-storage-static-website/
+
+* https://snipcart.com/blog/static-site-e-commerce-part-2-integrating-snipcart-with-jekyll
 
 ## Jekyll MinimalMistake users in the wild #
 
