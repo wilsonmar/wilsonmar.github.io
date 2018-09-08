@@ -30,14 +30,14 @@ What's new here is the sequence and hands-on approach of how information is intr
 * 2011 TypeSafe formed to provide commercial support for a <a href="#WhatIsReactive">Reactive</a> Platform.
 * 2003 <a href="#Odersky">Martin Odersky</a>'s group releases Version 1.0 of Scala after a year of work. 
 
-![Features of each version are detailed on the Wikipedia page](https://en.wikipedia.org/wiki/Scala_%28programming_language%29#Versions)
+[Features of each version are detailed on the Wikipedia page](https://en.wikipedia.org/wiki/Scala_%28programming_language%29#Versions)
 
 <a name="WhatIsReactive"></a>
 
 ## What is Reactive?
 
 On 2013, several people associated with Typesafe published a website named
-![http://www.reactivemanifesto.org/](http://www.reactivemanifesto.org/)
+[http://www.reactivemanifesto.org/](http://www.reactivemanifesto.org/)
 which asked readers to sign the manifesto as a commitment to build "Reactive"
 system with a more "coherant" appoach to systems that 
 have these characteristics:
@@ -48,9 +48,9 @@ have these characteristics:
 * Message Driven - rely on asynchronous message-passing that ensures loose coupling, isolation, location transparency, and provides the means to delegate errors as messages.
 
 Terms used in the Manifesto are further defined in a
-![Glossary](http://www.reactivemanifesto.org/glossary),
+[Glossary](http://www.reactivemanifesto.org/glossary),
 and reflect the blog article by @jboner named
-![Reactive Manifesto 2.0](https://www.lightbend.com/blog/reactive-manifesto-20).
+[Reactive Manifesto 2.0](https://www.lightbend.com/blog/reactive-manifesto-20).
 dated September 16, 2014.
 
 Tweets about this topic are at 
@@ -956,7 +956,7 @@ https://github.com/axel22/">axel22</a>)
 and clone https://github.com/scalameter/scalameter.git 
 and https://github.com/scalameter/scalameter-examples
 
-Among ![Alex's videos](https://www.youtube.com/channel/UCoyqnhi_BdpLrBVMvkNIMMw) 
+Among [Alex's videos](https://www.youtube.com/channel/UCoyqnhi_BdpLrBVMvkNIMMw) 
 is this one showing JVM GC profile:
 
    <amp-youtube data-videoid="UHCeXdxkx70" layout="responsive" width="480" height="270"></amp-youtube>
@@ -1070,7 +1070,7 @@ http://blog.takipi.com/the-top-100-scala-libraries-in-2015-based-on-64562-github
 * https://github.com/adamw/elasticmq for message-based queuing
 * https://github.com/adamw/macwire for dependency injection.
 
-The ranking named ![H2](http://www.h2database.com/html/main.html)
+The ranking named [H2](http://www.h2database.com/html/main.html)
 as the most popular database at #21.
 As a "very fast open source small footprint JBDC API database",
 H2 outranked MySQL (#33), and PostgreSQL (#50). 
@@ -1094,7 +1094,7 @@ The Scala Hacker Guide
 http://amzn.to/1JfA1bV
 
 http://www.atomicscala.com/free-sample
-![$25 self-published ebook released March 2015 on Gumroad](https://gumroad.com/l/AtomicScala/)
+[$25 self-published ebook released March 2015 on Gumroad](https://gumroad.com/l/AtomicScala/)
 by Bruce Teckel
 is about Scala 2.11
 
@@ -1150,11 +1150,11 @@ Martin Odersky
    <amp-youtube data-videoid="ecekSCX3B4Q" layout="responsive" width="480" height="270"></amp-youtube>
 
 * Martin conducted on Coursera COURSE:
-![Functional Programming Principles in Scala](https://www.coursera.org/course/progfun)
+[Functional Programming Principles in Scala](https://www.coursera.org/course/progfun)
 which is not available now.
 
 * However, still available from May 2015 is Martin's COURSE:
-![Principles of Reactive Programming](https://www.coursera.org/course/reactive)
+[Principles of Reactive Programming](https://www.coursera.org/course/reactive)
 
 * Book: Programming in Scala: 
 http://www.artima.com/shop/programming_in_scala
@@ -1163,7 +1163,7 @@ Errata: http://booksites.artima.com/programming_in_scala
 
 Josh Suereth (@jsuereth)
 
-* ![Scalawags YouTube channel](https://www.youtube.com/channel/UCHxNwi3l5CGZo1kG47k7i2Q)
+* [Scalawags YouTube channel](https://www.youtube.com/channel/UCHxNwi3l5CGZo1kG47k7i2Q)
 hangouts 
 
 * Google+
@@ -1186,7 +1186,7 @@ and inventor of Akka.
 
 Duncan K. DeVore (@ironfish, VP of Engineering at a power company)
 
-* ![VIDEO: The Autobiography of Building a Reactive Application at ScalaDays 2014 Berlin](https://www.parleys.com/tutorial/building-reactive-application)
+* [VIDEO: The Autobiography of Building a Reactive Application at ScalaDays 2014 Berlin](https://www.parleys.com/tutorial/building-reactive-application)
 
 Shadaj Laddad
 
@@ -1195,7 +1195,7 @@ Shadaj Laddad
 
 Alvin Alexander
 
-* ![OReilly book "Scala Cookbook"](http://www.amazon.com/gp/product/1449339611/)
+* [OReilly book "Scala Cookbook"](http://www.amazon.com/gp/product/1449339611/)
 * http://alvinalexander.com/
 
 Viktor Klang,
