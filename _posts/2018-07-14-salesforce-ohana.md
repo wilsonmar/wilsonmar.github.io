@@ -36,6 +36,7 @@ This page presents steps and information for those new to Salesforce to get "plu
    * GTL = Guide Template Language (in Marketing Cloud)
    * PAM = Partner Account Manager (email isvpartners@salesforce.com)
    * MOAR = MuleSoft Anypoint Platform
+   * NPS = Net Promoter Score (metric of possible vs. negative customer recommendations)
    * NPSP = Non-Profit Success Pack
    * OWD = Organization-Wide Default
    * PRM = Partner Relationship Mgmt.
@@ -46,10 +47,11 @@ This page presents steps and information for those new to Salesforce to get "plu
    * TDTM = Table-Driven Trigger Management
    <br /><br />
 
-* Use a game to learn them <a target="_blank" href="https://quizlet.com/306205592/">on my Quizlet</a>. Please let me know if you see any terms missing.
+* <a target="_blank" href="https://vlocity.com/resources/industry-cloud-dictionary">Vlocity's industry cloud dictionary</a>
+
+* Use a game to learn terms <a target="_blank" href="https://quizlet.com/306205592/">on my Quizlet</a>. Please let me know if you see any terms missing.
 
 * <a target="_blank" href="https://quizlet.com/216046018/salesforce-admin-flash-cards/">Quizlet on Saleforce Admin quiz</a> 
-
 
 
 ## Office Locations
