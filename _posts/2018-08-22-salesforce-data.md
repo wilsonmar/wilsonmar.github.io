@@ -137,6 +137,10 @@ It connects to Box.
 
 Pity it only handles CSV files.
 
+## Vlocity
+
+Vlocity's DataRaptor is an extract, transform and load (ETL) tool that integrates with their Omniscripts to read and write Salesforce data. The DataRaptor Designer enables app developers to map data to the input format required by OmniScripts, to transform the data as required by business logic, and to write the output data back to Salesforce in compliance with the  Salesforce object model.
+
 ## LexiLoader
 
 ## Talend 

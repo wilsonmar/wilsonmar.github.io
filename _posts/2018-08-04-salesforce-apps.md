@@ -109,11 +109,8 @@ AppExchange partners build ISVforce apps and Lightning Platform OEM Embedded app
 ISVforce apps augment Sales Cloud or Service Cloud business functions.
 ISVforce apps are installed by customers into existing orgs, so they use Salesforce features that the customer has available, which can include Salesforce Communities and additional objects added. This is like adding Saleforce Einstein capabilties.
 
-<a target="_blank" href="https://vlocity.com/">Vlocity</a> adds to Salesforce UX user interface components: cards, guided interactions (called OmniScripts™).
-It became a Forbes Cloud 100 company on that.
-Vlocity is just any AppExchange Premier Partner, it's Salesforce corp's largest non-M&A investment, with >$50M invested.
-Vlocity "lives together" with Salesforce in its San Francisco HQ.
-
+<a target="_blank" href="https://vlocity.com/">Vlocity</a> adds to Salesforce UX user interface components: cards, guided interactions (called OmniScripts™), and ETL. These are applied to industry-specific offerings. The company offers clickstream tracking integrated with Salesforce Wave Analytics to provide timing, integrations, and outcomes of sales and services interactions. The "Vlocity Intelligence" uses "learning algorithms" to determines the most appropriate resources to present to visitors based on a "ranking" of attribute profile data from Contacts, Accounts, Interactions, or any standard or custom object. It also provides an API to that data.
+It became a Forbes Cloud 100 company on all that. BTW Vlocity isn't just any AppExchange Premier Partner, it's Salesforce corp's largest non-M&A investment, with >$50M invested. Vlocity "lives together" with Salesforce in its San Francisco HQ.
 
 ### OEM Embedded apps
 
