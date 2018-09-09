@@ -34,8 +34,18 @@ Automated functional verification tools can help testers quickly figure out the 
 In other words, when a "New" button does not appear when it should, the test framework should report more than just "fail", but (as an admin) look up the various settings that impact visibility (such as User Profile license enablement, Field Level Security, etc.)
 
 People use Selenium for cross-browser testing to ensure that different browsers render correctly.
-The SikuliX build of Selenium includes Google's OpenCV to work with images captured from the screen.
+
+The "SikuliX" build of Selenium includes Google's OpenCV to work with images captured from the screen.
 Some add to that Google's Tesseract to read text in pictures.
+
+The "Protractor" build of Selenium tests web apps built using the Angular framework.
+
+Selenium is actually an API.
+"Selenium scripts" are actually programmed in Java, C#, Python, which each call the Selenium API.
+In turn, Selenium APIs call a WebDriver program to access the browser DOM IDs and other elements.
+
+Each browser requires a different WebDriver program.
+
 
 ## Internal to Salesforce
 
@@ -51,7 +61,7 @@ GUS (Grand Unified System) is released to Salesforce customers as the <a target=
 
 AFAIK code Salesforce uses internally is not open sourced.
 
-So each user organization has to create their own framework for functional testing.
+So each Salesforce user company has to create their own framework for functional testing.
 
 
 ## Frameworks
@@ -62,21 +72,23 @@ https://www.udemy.com/webdriver-test-automation-framework-step-by-step/learn/v4/
 
 I think the Gherkin language should be used even if you do not use Cucumber testing tool.
 
+A framework should support priortization of test items so the highest risk (named "P1") are executed first.
+
+Some Selenium scripts are kicked off when Git makes a push.
+
+The Apache "SureFire" test report.
+
 
 ## Maintenance
 
-Selenium works by having WebDriver access the browser DOM IDs and other elements.
-
 PROTIP: CSS IDs in Salesforce are very dynamic. The page layout in Salesforce Visualforce pages are known to change regularly. This challenges script maintenance work in every cycle. 
 
-1. In Chrome, go to your Salesforce org, such as:
-
-1. Press F12 or click ...
 
 ### Raprise
 
 Adam Sandman
 https://www.inflectra.com/Rapise/
+
 https://www.youtube.com/watch?list=PL1GncVUgF5nsGzdRMXyV9GKZNwCh2IZ2I&v=ansM4vXpiaY
 
 http://uitestingplayground.com/
