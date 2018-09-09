@@ -4,10 +4,10 @@ title: "Salesforce exhibitors (at Dreamforce)"
 excerpt: "360 videos of answers to the same questions"
 tags: [salesforce]
 image:
-# feature: sf-ohana-1900x500-178173.jpg
-  feature: https://user-images.githubusercontent.com/300046/43407734-bd6303fe-93dc-11e8-87df-302ddbc274ff.jpg
-  credit: Salesforce
-  creditlink: https://trailhead.salesforce.com/trailblazers
+# sf-showfloor-1900x500-172633.jpg 
+  feature: https://user-images.githubusercontent.com/300046/45259787-3e806880-b392-11e8-841f-1c5c557375e2.jpg
+  credit:
+  creditlink:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -16,11 +16,15 @@ comments: true
 {% include _toc.html %}
 
 
-At Salesforce Dreamforce September 2018, I'm recording a short video of each exhibitor, posted to YouTube. I ask a representative from each vendor the <strong>same questions</strong> so I can cut an additional video featuring the best answers across speakers. That's why I'm using a <strong>360 camera</strong>, so in post-production every speaker can be positioned on the same spot on the screen. And viewers also get an immersive feel as well (and look around during boring parts). 
+At Salesforce Dreamforce September 2018, I'm recording a short video of each exhibitor, posted on YouTube. I ask a representative from each vendor the <strong>same questions</strong> so I can cut an additional video featuring the best answers across speakers. That's why I'm using a <strong>360 camera</strong>, so in post-production every speaker can be positioned on the same spot on the screen. And viewers also get an immersive feel as well (and look around during boring parts). 
 
 I'm doing these videos for those want to be there but cannot attend the largest software convention in the world by the most beloved software company. 
 
-I contact exhibitors ahead of time so we get interesting statements.
+## Conference List
+
+I count 257 exhibitors on <a target="_blank" href="https://www.salesforce.com/dreamforce/expo/">https://www.salesforce.com/dreamforce/expo</a>, which is why I contact each ahead of time to get releases. <a target="_blank" href="https://www.crunchbase.com/event/dreamforce-2018#section-overview">Crunchbase assigns a ranking to each company</a>.
+
+## Questions of exhibitors
 
 Asked of each <strong>ISV (software vendor)</strong>:
 1. How does you organization add additional value?
@@ -28,7 +32,7 @@ Asked of each <strong>ISV (software vendor)</strong>:
 3. How does it work? What is the tech under the hood?
 4. How can people get trained on your technology?
 
-   * Example a: We have free 7-day trials, with unlimited free access to StackOverflow.com. Or you can take a 5-day class for $3,000.
+   * Example a: We have free 7-day trials, with unlimited free access to StackOverflow.com. Or you can come to our 5-day class for $3,000.
    * Example b: Like Salesforce, we have free in-depth tutorials and provide free cloud instances with no time limits.
    <br /><br />
 
@@ -87,6 +91,29 @@ If you have other questions I can ask, please let me know.
 
 The idea is to get past what we can read on websites,
 yet keep it short.
+
+## The 360 camera
+
+Videos shot with a 360 camera have a button at the corner you can click to pan around and up or down. For example:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=H6SsB3JYqQg">360° Great Hammerhead Shark Encounter | National Geographic</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=H6SsB3JYqQg">Experience the Blue Angels in 360-degree video</a> (USA Today)
+   <br /><br />
+
+Because the objective is to upload to YouTube, I don't need 5.2K/4K resolution, HDR, or super-accurate colors.
+Nor do I need waterproofing.
+
+Low-light capability can be useful at parties.
+Image stabilization is helpful.
+
+However, I do need a camera that can shoot pretty much continuously.
+So streaming capability would help to reduce memory overload.
+And connection to a big battery pack is a must.
+
+The convenience of the workflow is important to save time. The GoPro Fusion's workflow is cumbersome.
+I use an iPhone and MacBookPro, so the 360 ONE is a natural choice for me.
+
+* https://www.youtube.com/watch?v=DN5YWVmrERE
 
 <hr />
 
