@@ -141,12 +141,19 @@ Pity it only handles CSV files.
 
 Vlocity's DataRaptor is an extract, transform and load (ETL) tool that integrates with their Omniscripts to read and write Salesforce data. The DataRaptor Designer enables app developers to map data to the input format required by OmniScripts, to transform the data as required by business logic, and to write the output data back to Salesforce in compliance with the  Salesforce object model.
 
-## LexiLoader
-
 ## Talend 
 
-https://www.talend.com/resources/integrating-with-salesforce/
-Talend is a robust data loading tool schedule data loads from other systems, into Salesforce, to perform system integrations. It's open-source (free). 
+<a target="_blank" href="https://www.talend.com/resources/integrating-with-salesforce/">
+Talend Components for Salesforce Data Integration</a> integrates with Talend's Open Studio and Integration Suite, which Forrester put at the top of all other vendors in both current offering and Strategy dimensions for "Data Integration Tools". 
+
+The tool is open-source (free). It works on Hadoop and Spark big data. It schedules data loads from other systems, using the Salesforce API, to perform system integrations. 
+
+In addition to Input and BulkExec connectors, Talend has more sophisticated connectors such as "GetUpdated" which changes data.
+
+## LexiLoader
+
+http://macappstore.org/lexiloader/
+says does not exist.
 
 ## Others:
 

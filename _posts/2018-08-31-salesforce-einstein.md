@@ -48,6 +48,9 @@ The "AI-Powered" Einstein features listed in the <a target="_blank" href="https:
 
 Based on <a target="_blank" href="https://www.salesforce.com/products/einstein/features/#platform-scroll-tab?d=cta-body-promo-16">this</a>:
 
+<a target="_blank" href="https://www.youtube.com/watch?v=dYX4SWPrZzo">Einstein: AI in the Salesforce Platform</a> Dec 15, 2016
+
+
 <a name="EinsteinForecasting"></a>
 
 <strong>Einstein Prediction Builder</strong> 
