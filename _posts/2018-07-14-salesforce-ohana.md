@@ -32,6 +32,7 @@ This page presents steps and information for those new to Salesforce to get "plu
    * CMS = Content Management System
    * CRM = Customer Relationship Management
    * CRED = Create Read Edit Delete (basic operations permissions defined in user profiles)
+   * CTI = Computer Telephony Integration<a target="_blank" href="https://www.newvoicemedia.com/">*</a>
    * FSL = Field Service Lightning
    * FLS = Field Level Security (access defined in user profiles)
    * GTL = Guide Template Language (in Marketing Cloud)
