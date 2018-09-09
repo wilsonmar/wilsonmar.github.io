@@ -27,7 +27,8 @@ I count 257 exhibitors on <a target="_blank" href="https://www.salesforce.com/dr
 ## Questions of exhibitors
 
 Asked of each <strong>ISV (software vendor)</strong>:
-1. How does you organization add additional value?
+
+1. How does you organization add value? What "pain points" do you address?
 2. What differentiates what you provide?
 3. How does it work? What is the tech under the hood?
 4. How can people get trained on your technology?
@@ -63,8 +64,8 @@ Asked of each <strong>services provider</strong>:
 
 5. At Glassdoor.com, what percentage of employees say they would recommend your organization to a friend?
 
-   * Example a: 84%, and we're ranked #10 on the Forbes Best Places to Work list
-   * Example b: 64%, but we just got a new CEO, but don't listen to the sour grapes people
+   * Example a: 64%, but we just got a new CEO, but don't listen to the sour grapes people
+   * Example b: 84%, and we're ranked #10 on the Forbes Best Places to Work list
    <br /><br />
 
 6. What has your company done to encourage collaboration among people in different departments?

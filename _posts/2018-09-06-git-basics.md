@@ -27,29 +27,25 @@ You learn in minimum time because I've spent a lot of time on sequencing your le
 
 Several "cheat sheets" have been created, but they are structured according to how the program works, not the sequence how you work.
 
-So unique to this website is this map of all commands and actions covered in this tutorial, so you'll have a quick reference:
+Because we are covering a lot, unique to this website is this <strong>animated map</strong> of all commands and actions covered in this tutorial:
 
 <!--Git-Apress-Wilson-Mar-v06.pptx-->
 <a target="_blank" title="git-basics-1208x651-153217.jpg" href="https://user-images.githubusercontent.com/300046/45064768-d3bded00-b072-11e8-8669-4f6bf423c056.jpg">
 <img alt="git-basics-648x350-54823" src="https://user-images.githubusercontent.com/300046/45064738-acffb680-b072-11e8-99a4-ba6b19961713.jpg"><br />
-Click on the diagram to pop-up a full-size image</a>
-
-Sorry, this is a rather busy diagram because we're covering a lot in this course.
+ * Click on the diagram to pop-up a full-size image</a>
 
 <a name="DigramVideo"></a>
-
-### Diagram Video
-
-<!--<a target="_blank" href="https://www.youtube.com/embed/zeZJbb2eshM">
-Older video</a>-->
-
-I'm working on a video in which I verbally narrate the video using text on this web page. Until then I have for you an animated diagram.
 
 So that you can click the Pause button or drag the timing bubble on the video's timeline while watching:
 
    * <a target="_blank" href="https://grastorftest.com/video.html">Click this link to pop-up a <strong>video</strong> of the diagram in another window of your default internet browser</a>
    
-   * <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/images/github-flow-v05.mp4?raw=true">Click this link to <strong>download</strong> a video (11 MB mp4) of the diagram</a> 
+   * <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/images/github-flow-v05.mp4?raw=true">Click this link to <strong>download</strong> a video (11 MB mp4) of the diagram</a> (doesn't work on mobile)
+
+<!--<a target="_blank" href="https://www.youtube.com/embed/zeZJbb2eshM">
+Older video</a>-->
+
+BTW I'm working on a video in which I verbally narrate the video using text on this web page. Until then I have for you an animated diagram.
 
 ## Tools of the trade (several screens and programs)
 
