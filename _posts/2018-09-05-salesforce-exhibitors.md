@@ -101,7 +101,7 @@ Videos shot with a 360 camera have a button at the corner you can click to pan a
    <br /><br />
 
 Because the objective is to upload to YouTube, I don't need 5.2K/4K resolution, HDR, or super-accurate colors.
-Nor do I need waterproofing.
+Nor do I need waterproofing, geolocation tagging, fine audio.
 
 Low-light capability can be useful at parties.
 Image stabilization is helpful.
@@ -111,9 +111,12 @@ So streaming capability would help to reduce memory overload.
 And connection to a big battery pack is a must.
 
 The convenience of the workflow is important to save time. The GoPro Fusion's workflow is cumbersome.
-I use an iPhone and MacBookPro, so the 360 ONE is a natural choice for me.
 
-* https://www.youtube.com/watch?v=DN5YWVmrERE
+I use an iPhoneX and MacBookPro, so the 360 ONE is a natural choice for me.
+It stores image data in Adobe DNG Raw format, so it can be viewed right away without additional processing.
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=DN5YWVmrERE">Insta360 ONE review in-depth with tutorial guide: the best 360 camera for learning to shoot in 360</a> [31:01]
+* https://www.youtube.com/watch?v=yXKsDv8LzR8 [11:02]
 
 <hr />
 
