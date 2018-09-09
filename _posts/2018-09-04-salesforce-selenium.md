@@ -26,11 +26,11 @@ That's not what we're talking about here.
 Salesforce users have a tremendous need for automation that pretends to be real users (for functional testing)
 because of the complex security apparatus within Salesforce.
 
-   * Buttons can appear for one user but not another.
-   * A user can see a field one day but not another after configurations are changed.
+   * Buttons can appear for one user but not another;
+   * A user can see a field one day but not another after configurations are changedl;
    <br /><br />
 
-A functional verification framework can help tests by automatically figuring out the various settings that is determining why a given label, control, or data element on the screen either should be or should not be there.
+Automated functional verification tools can help testers quickly figure out the various settings affecting whether a given label, control, or data element on the screen either should be or should not be there.
 In other words, when a "New" button does not appear when it should, the test framework should report more than just "fail", but (as an admin) look up the various settings that impact visibility (such as User Profile license enablement, Field Level Security, etc.)
 
 
