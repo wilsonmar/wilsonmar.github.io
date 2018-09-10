@@ -68,12 +68,6 @@ So each Salesforce user company has to create their own framework for functional
 
 ## Frameworks
 
-https://hub.appirio.com/tech-blog/useful-selenium-webdriver-code-snippets
-
-I think the Gherkin language should be used even if you do not use the <a target="_blank" href="https://wilsonmar.github.io/cucumber/">Cucumber testing tool</a>.
-It's a standard way of using regular English sentences to describe what a system should do (its behaviors).
-Other human languages can be used as well.
-
 A framework should support priortization of <strong>test items</strong> so that the highest risk (named "P1") receive the highest priority (run before those of lowest priority, unless there are technical dependencies). There are several classes of tests:
 
 a. "Positive Happy Path"<br />
@@ -82,6 +76,11 @@ c. "Positive Secondary Path"<br />
 d. "Negative Secondary Path"
 
 Under "Continuous Integration", Selenium scripts are kicked off by Jenkins when Git makes a push.
+
+To enable automation efforts focus to focus on the user rather than the code, 
+I think the Gherkin language should be used even if you do not use the <a target="_blank" href="https://wilsonmar.github.io/cucumber/">Cucumber testing tool</a>.
+It's a standard way of using regular English sentences to describe what a system should do (its behaviors).
+Other human languages can be used as well.
 
 Apache "SureFire" generates test reports.
 
@@ -100,6 +99,9 @@ Different user
 <hr />
 
 ## Alternative tools
+
+https://hub.appirio.com/tech-blog/useful-selenium-webdriver-code-snippets
+
 
 ### Raprise
 
