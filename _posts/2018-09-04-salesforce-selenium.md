@@ -43,9 +43,10 @@ The "Protractor" build of Selenium tests web apps built using the Angular framew
 Selenium is actually an API.
 "Selenium scripts" are actually programmed in Java, C#, Python, which each call the Selenium API.
 In turn, Selenium APIs call a WebDriver program to access the browser DOM IDs and other elements.
-
 Each browser requires a different WebDriver program.
 
+JUnit and NUnit libraries are used within Java and C# programming code.
+Since Java programs use Maven to manage versions.
 
 ## Internal to Salesforce
 
@@ -57,7 +58,7 @@ At the SeleniumConf Boston 11 June 2013, <a target="_blank" href="https://www.li
 VIDEO: <a target="_blank" href="https://saucelabs.com/resources/webinars/selenium-at-salesforce-scale">Selenium at Salesforce Scale</a> Apr 28, 2015
 Engineers David Louvton and Sagar Wanaselja show you Salesforce's best practices and how they automate their Selenium tests at scale. 500 commits per day by 120 teams. No code, just bragging in this video.
 
-GUS (Grand Unified System) is released to Salesforce customers as the <a target="_blank" href="https://sfdc.co/AgileSuccess/">Agile Accelerator"</a> on AppExchange.
+GUS (Grand Unified System) is released to Salesforce customers as the <a target="_blank" href="https://sfdc.co/AgileSuccess/">Agile Accelerator</a> on AppExchange.
 
 AFAIK code Salesforce uses internally is not open sourced.
 
@@ -69,20 +70,34 @@ So each Salesforce user company has to create their own framework for functional
 https://hub.appirio.com/tech-blog/useful-selenium-webdriver-code-snippets
 
 https://www.udemy.com/webdriver-test-automation-framework-step-by-step/learn/v4/t/lecture/2913882?start=0
+shows use of JUnit 4.
 
 I think the Gherkin language should be used even if you do not use Cucumber testing tool.
 
 A framework should support priortization of test items so the highest risk (named "P1") are executed first.
 
-Some Selenium scripts are kicked off when Git makes a push.
+Under "Continuous Integration", Selenium scripts are kicked off when Git makes a push.
 
 The Apache "SureFire" test report.
+
+## Verifications
+
+Error messages
+
+Same user & same page vs. other fields (title of page, field labels, field values)
+
+Same user but different pages
+
+Different user
 
 
 ## Maintenance
 
 PROTIP: CSS IDs in Salesforce are very dynamic. The page layout in Salesforce Visualforce pages are known to change regularly. This challenges script maintenance work in every cycle. 
 
+<hr />
+
+## Alternative tools
 
 ### Raprise
 
