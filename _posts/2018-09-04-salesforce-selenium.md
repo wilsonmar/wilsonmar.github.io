@@ -28,7 +28,9 @@ because of the complex security apparatus within Salesforce.
 
    * Buttons can appear for one user but not another;
    * A user can see a field one day but not another after configurations are changedl;
+   * There is two sets of layouts with different UX: a vintage Visualforce and new Lightning;
    <br /><br />
+CSS IDs in Salesforce are very dynamic. The page layout in Salesforce Visualforce pages are known to change regularly. This challenges script maintenance work in every cycle. 
 
 Automated functional verification tools can help testers quickly figure out the various settings affecting whether a given label, control, or data element on the screen either should be or should not be there.
 In other words, when a "New" button does not appear when it should, the test framework should report more than just "fail", but (as an admin) look up the various settings that impact visibility (such as User Profile license enablement, Field Level Security, etc.)
@@ -53,7 +55,7 @@ Since Java programs use Maven to manage versions.
 On June 7, 2013, Salesforce employee <a target="_blank" href="https://www.linkedin.com/in/jimevansmusic/">Jim Evans</a> (<a target="_blank" href="https://twitter.com/jimevansmusic">@jimevansmusic</a>, a Selenium committer) published <a target="_blank" href="
 https://developer.salesforce.com/blogs/engineering/2013/06/automated-testing-using-selenium-at-salesforce.html">this blog</a> saying that "At Salesforce, we use the Selenium open-source project to execute over 40,000 UI-based test cases on our applications as part of our continuous integration build infrastructure."
 
-At the SeleniumConf Boston 11 June 2013, <a target="_blank" href="https://www.linkedin.com/in/david-louvton-191899/">David Louvton</a> and Amool Gupta presented <a target="_blank" href="https://www.youtube.com/watch?v=zFv-4AsPLmY">"Scaling Selenium: The Selenium Infrastructure at Salesforce"</a>
+At the SeleniumConf Boston 11 June 2013, <a target="_blank" href="https://www.linkedin.com/in/david-louvton-191899/">David Louvton</a> and Amool Gupta presented <a target="_blank" href="https://www.youtube.com/watch?v=zFv-4AsPLmY">"Scaling Selenium: The Selenium Infrastructure at Salesforce"</a>.
 
 VIDEO: <a target="_blank" href="https://saucelabs.com/resources/webinars/selenium-at-salesforce-scale">Selenium at Salesforce Scale</a> Apr 28, 2015
 Engineers David Louvton and Sagar Wanaselja show you Salesforce's best practices and how they automate their Selenium tests at scale. 500 commits per day by 120 teams. No code, just bragging in this video.
@@ -61,7 +63,6 @@ Engineers David Louvton and Sagar Wanaselja show you Salesforce's best practices
 GUS (Grand Unified System) is released to Salesforce customers as the <a target="_blank" href="https://sfdc.co/AgileSuccess/">Agile Accelerator</a> on AppExchange.
 
 AFAIK code Salesforce uses internally is not open sourced.
-
 So each Salesforce user company has to create their own framework for functional testing.
 
 
@@ -69,18 +70,24 @@ So each Salesforce user company has to create their own framework for functional
 
 https://hub.appirio.com/tech-blog/useful-selenium-webdriver-code-snippets
 
-https://www.udemy.com/webdriver-test-automation-framework-step-by-step/learn/v4/t/lecture/2913882?start=0
-shows use of JUnit 4.
+I think the Gherkin language should be used even if you do not use the <a target="_blank" href="https://wilsonmar.github.io/cucumber/">Cucumber testing tool</a>.
+It's a standard way of using regular English sentences to describe what a system should do (its behaviors).
+Other human languages can be used as well.
 
-I think the Gherkin language should be used even if you do not use Cucumber testing tool.
+A framework should support priortization of <strong>test items</strong> so that the highest risk (named "P1") receive the highest priority (run before those of lowest priority, unless there are technical dependencies). There are several classes of tests:
 
-A framework should support priortization of test items so the highest risk (named "P1") are executed first.
+a. "Positive Happy Path"<br />
+b. "Negative Happy Path"<br />
+c. "Positive Secondary Path"<br />
+d. "Negative Secondary Path"
 
-Under "Continuous Integration", Selenium scripts are kicked off when Git makes a push.
+Under "Continuous Integration", Selenium scripts are kicked off by Jenkins when Git makes a push.
 
-The Apache "SureFire" test report.
+Apache "SureFire" generates test reports.
 
 ## Verifications
+
+Wait until page is loaded.
 
 Error messages
 
@@ -89,11 +96,6 @@ Same user & same page vs. other fields (title of page, field labels, field value
 Same user but different pages
 
 Different user
-
-
-## Maintenance
-
-PROTIP: CSS IDs in Salesforce are very dynamic. The page layout in Salesforce Visualforce pages are known to change regularly. This challenges script maintenance work in every cycle. 
 
 <hr />
 

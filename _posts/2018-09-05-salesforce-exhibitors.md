@@ -16,13 +16,17 @@ comments: true
 {% include _toc.html %}
 
 
-At Salesforce Dreamforce September 2018, I'm recording a short video of each exhibitor, posted on YouTube. I ask a representative from each vendor the <strong>same questions</strong> so I can cut an additional video featuring the best answers across speakers. That's why I'm using a <strong>360 camera</strong>, so in post-production every speaker can be positioned on the same spot on the screen. And viewers also get an immersive feel as well (and look around during boring parts). 
+At Salesforce Dreamforce September 2018, my friends and I are recording a short video of each exhibitor, for posting on YouTube. I'm doing these videos for those want to be there but cannot attend the largest software convention in the world by the most beloved software company. There are 257 exhibitors on <a target="_blank" href="https://www.salesforce.com/dreamforce/expo/">https://www.salesforce.com/dreamforce/expo</a>. <a target="_blank" href="https://www.crunchbase.com/event/dreamforce-2018#section-overview">Crunchbase assigns a ranking to each company</a>.
 
-I'm doing these videos for those want to be there but cannot attend the largest software convention in the world by the most beloved software company. 
+QUESTION: Please send me contact information to them you know. Would would like to contact each one ahead of time to get signed releases.
 
-## Conference List
+Our videos are different because we ask a representative from each vendor the <a href="#Questions">same questions (below)</a> so I can cut an additional video featuring the best answers among all exhibitor companies. 
 
-I count 257 exhibitors on <a target="_blank" href="https://www.salesforce.com/dreamforce/expo/">https://www.salesforce.com/dreamforce/expo</a>, which is why I contact each ahead of time to get releases. <a target="_blank" href="https://www.crunchbase.com/event/dreamforce-2018#section-overview">Crunchbase assigns a ranking to each company</a>.
+A new camera enables every speaker in the video to be positioned on the same spot on the screen because the camera records in 360 panorama, which makes it so people can concentrate on the conversation rather than framing the shot. Framing and zooming can now occur in post-production. And viewers also get an immersive feel as well (and look around during boring parts). 
+
+Please review the list of questions we intend on asking (based on a review of the best questions job candidates should ask):
+
+<a name="Questions"></a>
 
 ## Questions of exhibitors
 

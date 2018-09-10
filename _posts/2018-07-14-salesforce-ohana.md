@@ -421,6 +421,9 @@ Read about preparing for and getting the most from Dreamforce:
 
 * <a target="_blank" href="https://academy.whatfix.com/dreamforce-parties-2018">40+ Dreamforce parties 2018 That You Must Attend (by WhatFix)</a>
 
+* <a target="_blank" href="https://chat.whatsapp.com/invite/2cAoxNR1cRgFxyMht9CuUZ">WhatsApp Chat Group</a> created by <a target="_blank" href="https://www.linkedin.com/in/pranav-varma">Pranav Varma</a>
+
+
 ### Mascots
 
 ![sf-mascots-648x425-98567](https://user-images.githubusercontent.com/300046/43673576-9d8f42e6-9782-11e8-8cdc-7442e646554b.jpg)
