@@ -77,7 +77,7 @@ d. "Negative Secondary Path"
 
 Under "Continuous Integration", Selenium scripts are kicked off by Jenkins when Git makes a push.
 
-To enable automation efforts focus to focus on the user rather than the code, 
+To enable automation efforts to focus on the user rather than the code, 
 I think the Gherkin language should be used even if you do not use the <a target="_blank" href="https://wilsonmar.github.io/cucumber/">Cucumber testing tool</a>.
 It's a standard way of using regular English sentences to describe what a system should do (its behaviors).
 Other human languages can be used as well.
