@@ -30,8 +30,8 @@ Several "cheat sheets" have been created, but they are structured according to h
 Because we are covering a lot, unique to this website is this <strong>animated map</strong> of all commands and actions covered in this tutorial:
 
 <!--Git-Apress-Wilson-Mar-v06.pptx-->
-<a target="_blank" title="git-basics-1208x651-153217.jpg" href="https://user-images.githubusercontent.com/300046/45064768-d3bded00-b072-11e8-8669-4f6bf423c056.jpg">
-<img alt="git-basics-648x350-54823" src="https://user-images.githubusercontent.com/300046/45064738-acffb680-b072-11e8-99a4-ba6b19961713.jpg"><br />
+<a target="_blank" title="git-browse-v7-1189x592-137966.jpg" href="https://user-images.githubusercontent.com/300046/45312507-85cd3d00-b4e9-11e8-8baf-a29cf8d504d0.jpg">
+<img alt="git-browse-v7-648x323-52563.jpg" src="https://user-images.githubusercontent.com/300046/45312569-ae553700-b4e9-11e8-92d5-93a84147db7f.jpg"><br />
  * Click on the diagram to pop-up a full-size image</a>
 
 <a name="DigramVideo"></a>

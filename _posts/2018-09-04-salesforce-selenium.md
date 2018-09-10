@@ -83,6 +83,8 @@ I think the Gherkin language should be used even if you do not use the <a target
 It's a standard way of using regular English sentences to describe what a system should do (its behaviors).
 Other human languages can be used as well.
 
+An effective framework minimizes work by providing a library of "page objects" that replace repetitive coding with calls to methods within objects.
+
 Apache "SureFire" generates test reports.
 
 Other aspects of the full workflow include a management system for managing the anomalies and "defects" found.
