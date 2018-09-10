@@ -108,6 +108,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    <a target="_blank" href="https://www.raspberrypi.org/blog/">
    blog at Raspberrypi.org</a>.
 
+   For the next step, open a Terminal and cd ~/Downloads.
 
 
    <a name="CalcHash"></a>
@@ -123,7 +124,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    On MacOS, open a Terminal and cd to the downloads folder to use a built-in command:
 
    <pre><strong>cd ~/Downloads
-   shasum <em>2018-03-13-raspbian-stretch.zip</em>
+   shasum <em>2018-06-27-raspbian-stretch.zip</em>
    </strong></pre>
 
    <a target="_blank" href="http://osxdaily.com/2012/02/05/check-sha1-checksum-in-mac-os-x/">

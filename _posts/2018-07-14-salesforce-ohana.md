@@ -43,6 +43,7 @@ This page presents steps and information for those new to Salesforce to get "plu
    * OWD = Organization-Wide Default
    * PRM = Partner Relationship Mgmt.
    * QTC = Quote to Cash (Billing workflow)
+   * SaaS = Software as a Service
    * SFDC = an acronym for "Salesforce dot com"
    * SFMC = Salesforce Marketing Cloud
    * SOQL = Salesforce Object Query Language
@@ -428,10 +429,9 @@ Read about preparing for and getting the most from Dreamforce:
 
 ![sf-mascots-648x425-98567](https://user-images.githubusercontent.com/300046/43673576-9d8f42e6-9782-11e8-8cdc-7442e646554b.jpg)
 
-The "NO SOFTWARE" mascot, called <strong>Sassy</strong> (<a target="_blank" href="https://twitter.com/TooSaaSy">@TooSaaSy), was the original mascot for Salesforce. 
-The company's main number is still 800.NO-SOFTWARE.
+The "NO SOFTWARE" mascot, called <strong>Sassy</strong> (<a target="_blank" href="https://twitter.com/TooSaaSy">@TooSaaSy</a>, <a target="_blank" href="https://twitter.com/hashtag/WhereIsSaaSy?src=hash">#WhereIsSasSy</a>), is the original mascot for Salesforce. The company's main number is still 800.NO-SOFTWARE.
 
-Astro, created by Rochelle Truong in 2015, is a racoon in a spacesuit.
+Astro, created by Rochelle Truong in 2015, is the racoon in a spacesuit.
 
 The goat is called <strong>Cloudy</strong>.
 
