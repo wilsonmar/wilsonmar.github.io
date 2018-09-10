@@ -37,7 +37,7 @@ In other words, when a "New" button does not appear when it should, the test fra
 
 People use Selenium for cross-browser testing to ensure that different browsers render correctly.
 
-The "SikuliX" build of Selenium includes Google's OpenCV to work with images captured from the screen.
+The <a target="_blank" href="https://wilsonmar.github.io/opencv-sikulix-robot/">SikuliX" build of Selenium</a> includes Google's OpenCV to work with images captured from the screen.
 Some add to that Google's Tesseract to read text in pictures.
 
 The "Protractor" build of Selenium tests web apps built using the Angular framework.
@@ -76,6 +76,7 @@ c. "Positive Secondary Path"<br />
 d. "Negative Secondary Path"
 
 Under "Continuous Integration", Selenium scripts are kicked off by Jenkins when Git makes a push.
+Some frameworks track the results of each test and automatically put tests on the schedule to make full 24/7 use of test servers.
 
 To enable automation efforts to focus on the user rather than the code, 
 I think the Gherkin language should be used even if you do not use the <a target="_blank" href="https://wilsonmar.github.io/cucumber/">Cucumber testing tool</a>.
@@ -83,6 +84,8 @@ It's a standard way of using regular English sentences to describe what a system
 Other human languages can be used as well.
 
 Apache "SureFire" generates test reports.
+
+Other aspects of the full workflow include a management system for managing the anomalies and "defects" found.
 
 ## Verifications
 
