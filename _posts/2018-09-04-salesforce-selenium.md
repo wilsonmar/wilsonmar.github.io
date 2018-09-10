@@ -68,7 +68,7 @@ So each Salesforce user company has to create their own framework for functional
 
 ## Frameworks
 
-A framework should support priortization of <strong>test items</strong> so that the highest risk (named "P1") receive the highest priority (run before those of lowest priority, unless there are technical dependencies). There are several classes of tests:
+A framework should support priortization of <strong>test items</strong> so that the highest risk (named "P1") receive the highest priority (run before those of lowest priority, unless there are technical dependencies). One (of many) ways to classify automation scripts:
 
 a. "Positive Happy Path"<br />
 b. "Negative Happy Path"<br />
