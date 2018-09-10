@@ -101,14 +101,18 @@ analytics:
 google_ad_client         :
 google_ad_slot           :
 
+# snipcart.com
+site:
+  api.key="MDg0YjAxNjEtMDcyZC00OWEyLWIwMDUtYTgwNGEyZjI5OGIzNjM2MDc1MDcyOTYxODQzMjAw"
+
 # Site owner/author:
 owner:
   name: Wilson Mar
   avatar: https://cloud.githubusercontent.com/assets/14143059/19370193/7c75dcd2-9167-11e6-993f-0ba63422714b.jpg
-  bio: "Hello. Join me!"
+  bio: "Hello. Hire me!"
   email: wilsonmar@gmail.com
   phone: 310 320-7878
-  whatsapp: 3103207878
+  whatsapp: +13103207878
 #  citrix: MTYzMDs3NDc=-ak2yo1dniypx1ree0398hj3d61raszy7bg5xce1137dfjcqnl0mfp52ygs1fwnom
   disqus-shortname: wilsonmargithubio
   twitter: wilsonmar
@@ -126,7 +130,7 @@ owner:
   stackoverflow: 112099/wilson-mar
   linkedin: wilsonmar
   xing: #username
-  instagram: #username
+  instagram: wilsonmar9177
   lastfm: #username
   tumblr: #username
   pinterest: wilsonmar4
@@ -145,4 +149,5 @@ include: [".htaccess"]
 exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
 
 collections:
-- us-states
+  - products
+  - us-states
