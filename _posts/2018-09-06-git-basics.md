@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Git basics client based workflow (in and out of GitHub/GitLab)"
-excerpt: "Here is a quick way to learn version control for enterprise teams"
+excerpt: "Here is a quick way to learn Git version control for enterprise teams"
 modified:
 tags: []
 image:
@@ -1652,7 +1652,7 @@ Thoughtworks advocates for their <a target="_blank" href="https://www.thoughtwor
 * <a target="_blank" href="https://www.youtube.com/watch?v=07hOKRl6Wiw">
    GitHub Fork and Sync repository</a>
    by Prem Aseem Jain at
-   <a target="_blank" href="hhttps://premaseem.wordpress.com/2016/01/19/github-how-to-sync-from-forked-repoit/">
+   <a target="_blank" href="https://premaseem.wordpress.com/2016/01/19/github-how-to-sync-from-forked-repoit/">
    premaseem.wordpress.com</a>
 
 
