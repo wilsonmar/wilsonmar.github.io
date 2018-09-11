@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Salesforce Selenium"
+title: "Salesforce Selenium (Protractor Gerkhin)"
 excerpt: "Automate not just testing but also explanations about user state"
 tags: [salesforce]
 file: salesforce-selenium.md
@@ -16,7 +16,7 @@ comments: true
 
 {% include _toc.html %}
 
-This article is about how to automate user clicks and typing on Salesforce Visualforce and Lightning UI. This is for functional testing and for automating work.
+This article is about the easiest way to automate user clicks and typing on Salesforce Visualforce and Lightning UI. This is for functional testing and for automating work.
 
 Salesforce has built-in "process automation" capabilities such as Validation rules.
 That's not what we're talking about here.
@@ -39,8 +39,6 @@ People use Selenium for cross-browser testing to ensure that different browsers 
 
 The <a target="_blank" href="https://wilsonmar.github.io/opencv-sikulix-robot/">SikuliX" build of Selenium</a> includes Google's OpenCV to work with images captured from the screen.
 Some add to that Google's Tesseract to read text in pictures.
-
-The "Protractor" build of Selenium tests web apps built using the Angular framework.
 
 Selenium is actually an API.
 "Selenium scripts" are actually programmed in Java, C#, Python, which each call the Selenium API.
@@ -83,11 +81,27 @@ I think the Gherkin language should be used even if you do not use the <a target
 It's a standard way of using regular English sentences to describe what a system should do (its behaviors).
 Other human languages can be used as well.
 
-An effective framework minimizes work by providing a library of "page objects" that replace repetitive coding with calls to methods within objects.
-
 Apache "SureFire" generates test reports.
 
 Other aspects of the full workflow include a management system for managing the anomalies and "defects" found.
+
+## Protractor
+
+The "Protractor" build of Selenium adds the capability to test apps built using the Angular framework.
+(Protractor makes querying for elements much easier by adding accessors to Angular models, bindings, ng-options, and finding elements inside ng-repeat.
+But many prefer it over Selenium for other apps as well.
+Protractor adds a convenient waitfor functions and accessors (locators) by button text, partial button text.
+It enables find by a combination of CSS and text (get me all the divs with class ‘pet’ and text ‘dog’).
+
+Overall, Protractor requires less code than Selenium.
+
+Protractor adds the addLocator function to add custom locators. For example, get elements by handlebars properties.
+
+## Page Objects
+
+An effective framework minimizes work by providing a library of "page objects" that replace repetitive test coding with calls to methods within objects.
+
+
 
 ## Verifications
 
