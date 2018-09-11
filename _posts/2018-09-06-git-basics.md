@@ -27,7 +27,7 @@ You learn in minimum time because I've spent a lot of time on sequencing your le
 
 ## Full flowchart animated
 
-Several "cheat sheets" have been created, but they are structured according to how the program works, not the sequence how you work.
+Several others have created "cheat sheets", but they are structured according to how the program works, not the sequence how you work.
 
 Because we are covering a lot, unique to this website is this <strong>animated map</strong> of all commands and actions covered in this tutorial:
 
