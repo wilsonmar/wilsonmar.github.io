@@ -38,7 +38,7 @@ So that you can click the Pause button or drag the timing bubble on the video's 
 
    * <a target="_blank" href="https://grastorftest.com/video.html">Click this link to pop-up a <strong>video</strong> of the diagram in another window of your default internet browser</a>
    
-   * <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/images/github-flow-v05.mp4?raw=true">Click this link to <strong>download</strong> a video (11 MB mp4) of the diagram</a> (doesn't work on mobile)
+   * <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/images/git-basics-v07.gif?raw=true">Click this link to <strong>download</strong> a video (11 MB mp4) of the diagram</a> (doesn't work on mobile)
 
 <!--<a target="_blank" href="https://www.youtube.com/embed/zeZJbb2eshM">
 Older video</a>-->
@@ -483,11 +483,11 @@ and used it to create an account on <a target="_blank" href="https://www.github.
 
    When the Git client runs, it <strong>retrieves the private key in the id_rsa</strong> file to encrypt what it sends. The GitHub or GitLab cloud service decrypts using the public key.
 
-1. When this script runs, it uses the built-in command "cat" to retrieve the contents of the public key for later use by the GitHubAPI:
+1. When this script runs, one can optionally use the built-in command "cat" to retrieve the contents of the public key for later use by the GitHubAPI:
 
    <pre>export RSA_PUBLIC_KEY=$(cat ~/.ssh/id_rsa.pub)</pre>
 
-2. List the files in folder .ssh to confirm it's there:
+2. Alternately, list the files in folder .ssh to confirm the file size:
 
    <pre><strong>ls -a ~/.ssh
    </strong></pre>

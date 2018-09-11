@@ -23,9 +23,11 @@ Based on VIDEO: <a target="_blank" title="Oct 17, 2017 [5:56]" href="https://www
 <tr><th>&nbsp;</th><th><a href="#DataImportWizard">Data Import Wizard</a></th><th><a href="#ApexDataLoader">Apex Data Loader</a></th></tr>
 <tr valign="top"><td>Import data format</td><td>CSV</td><td>CSV</td></tr>
 <tr valign="top"><td>Max. # records</td><td> &LT; 50,000</td><td> < 5 million</td></tr>
+<tr valign="top"><td>Update existing records</td><td>yes</td><td>no</td></tr>
+<tr valign="top"><td>Delete existing records</td><td>no</td><td>yes</td></tr>
 <tr valign="top"><td>Catch duplicates</td><td>yes</td><td>no</td></tr>
 <tr valign="top"><td>Import Opportunities</td><td>no</td><td>yes</td></tr>
-<tr valign="top"><td>Can turn off Workflow</td><td>yes</td><td>no</td></tr>
+<tr valign="top"><td>Can turn off Workflow rules</td><td>yes</td><td>no</td></tr>
 <tr valign="top"><td>Can export data</td><td>no</td><td>yes</td></tr>
 <tr valign="top"><td>Can save mappings</td><td>no</td><td>yes</td></tr>
 </table>
@@ -204,7 +206,8 @@ Topics:
 
 * Prevent duplicate records using Duplicate Management
 
-* Clean and enrich data with data.com
+* Clean and enrich data with data.com, which uses external databases as the basis for cleaning Leads, Contacts, Accounts (not product Opportunities or Assets).
+
 
 ## Learning Modules
 

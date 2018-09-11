@@ -97,10 +97,10 @@ yet keep it short.
 
 ## The 360° camera
 
-What's also different about what we're doing here is that we are using a new camera that records in 360 degree panorama. This revolutionizes video recording becuase it enables people to concentrate on the conversation rather than framing the shot. Framing and zooming can now occur in post-production. Now different speakers in the video and be positioned on the same spot on the screen. 
+What's also different about what we're doing here is that we are using a new camera that records in 360 degree panorama. This revolutionizes video recording becuase it enables people to concentrate on the conversation rather than framing the shot. Framing and zooming can now occur in post-production. Now different speakers in the video and be positioned on the same spot on the screen. And viewers also get an immersive feel as well (and look around during boring parts). 
 
-When viewing videos shot with a 360 camera, you can drag your mouse to pan around and up or down. For example:
-National Geographic has several videos filmed in 360:
+When viewing videos shot with a 360 camera, you can drag your mouse to pan around and up or down. Try that on 
+National Geographic's several videos filmed in 360:
 '
    * <a target="_blank" href="https://www.youtube.com/watch?v=H6SsB3JYqQg">360° Great Hammerhead Shark Encounter</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=XPhmpfiWEEw">360° Antarctica - Unexpected Snow</a>
@@ -127,7 +127,7 @@ I use an iPhoneX and MacBookPro, so the <a target="_blank" href="https://www.ama
 * https://www.youtube.com/watch?v=yXKsDv8LzR8 [11:02]
 <br /><br />
 
-The camera has a (flimsy) standard ¼” screw hole for 3rd-party mounts and accessories. I got the <a target="_blank" href="https://www.amazon.com/gp/product/B07D14F549">bundle</a> to experiment. Having the camera on the chest strap would lose the 360 recording. And viewers also get an immersive feel as well (and look around during boring parts). 
+The camera has a (flimsy) standard ¼” screw hole for 3rd-party mounts and accessories. I got the <a target="_blank" href="https://www.amazon.com/gp/product/B07D14F549">bundle</a> to experiment. Having the camera on the chest strap would lose the 360 recording. 
 
 <img align="right" width="230" alt="salesforce-exhibit-headmount-123825.png" src="https://user-images.githubusercontent.com/300046/45332151-22183380-b52c-11e8-8673-d0f9b4d41c5b.png">
 The headstrap doesn't seem as "professional" as the <a target="_blank" href="https://www.amazon.com/Insta360-Selfie-Stick-Screw-Thread/dp/B075QB5CSQ">stick</a>, which extends from 11 inches to 46 inches, so I can hold it in my hand at eye level, or higher. The <a target="_blank" href="https://www.amazon.com/Smatree-Q3-Telescoping-Session-Cameras/dp/B00XN1P9QI/">Smatree Q3 Telescoping Selfie Stick with Tripod Stand</a> only extends 36 inches (not eye level).
