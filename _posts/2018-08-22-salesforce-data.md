@@ -25,9 +25,23 @@ Based on VIDEO: <a target="_blank" title="Oct 17, 2017 [5:56]" href="https://www
 <tr valign="top"><td>Max. # records</td><td> &LT; 50,000</td><td> < 5 million</td></tr>
 <tr valign="top"><td>Catch duplicates</td><td>yes</td><td>no</td></tr>
 <tr valign="top"><td>Import Opportunities</td><td>no</td><td>yes</td></tr>
-<tr valign="top"><td>Can turn off workflow</td><td>yes</td><td>no</td></tr>
+<tr valign="top"><td>Can turn off Workflow</td><td>yes</td><td>no</td></tr>
 <tr valign="top"><td>Can export data</td><td>no</td><td>yes</td></tr>
+<tr valign="top"><td>Can save mappings</td><td>no</td><td>yes</td></tr>
 </table>
+
+Both can handle custom as well as standard objects.
+
+## Data Types
+
+Data type—primitive types: collections, sObjects, user-defined types, and built-in Apex types.
+
+There are three main types of collections in Apex:
+
+* Sets – <strong>unordered</strong> collection of elements that do not contain any duplicates. 
+* Lists – ordered collection of elements distinguished by <strong>indices</strong>.
+* Maps – key-value pairs with each unique key mappings to a single value. Keys and values can be any data type—primitive type.
+
 
 ## Excel to CSV
 
@@ -163,27 +177,18 @@ says does not exist.
 
 ## Export
 
-PROTIP: No Daily.
+To first into Setup.
 
-Backups in prod (and Sandboxes) can occur Weekly. 
+Backups in DE orgs can occur Monthly only. 
 
-Backups in DE orgs can occur Monthly. 
+Backups in prod (and Sandboxes) can occur Weekly or monthly (not daily). 
 
 More frequent backups can occur using a 3rd party app on AppExchange.
 
-The backup file consists of many CSV files: one for each object and internal tables:
+The output is a zip file Salesforce emails to you.
+A backup file is a CSV file for each object, consists of many : one for each object and internal tables:
 
 ![sf-backup-objects-598x410-28455](https://user-images.githubusercontent.com/300046/44672521-ed619380-a9e5-11e8-9976-992d85a3145d.jpg)
-
-## Data Types
-
-Data type—primitive types: collections, sObjects, user-defined types, and built-in Apex types.
-
-There are three main types of collections in Apex:
-
-* Sets – <strong>unordered</strong> collection of elements that do not contain any duplicates. 
-* Lists – ordered collection of elements distinguished by <strong>indices</strong>.
-* Maps – key-value pairs with each unique key mappings to a single value. Keys and values can be any data type—primitive type.
 
 
 ## Data Quality
