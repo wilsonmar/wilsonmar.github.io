@@ -30,7 +30,7 @@ Several "cheat sheets" have been created, but they are structured according to h
 Because we are covering a lot, unique to this website is this <strong>animated map</strong> of all commands and actions covered in this tutorial:
 
 <a target="_blank" title="git-browse-v7-1189x592-137966.jpg" href="https://user-images.githubusercontent.com/300046/45312507-85cd3d00-b4e9-11e8-8baf-a29cf8d504d0.jpg">
-<img alt="git-browse-v7-648x323-52563.jpg" width="648" src="https://user-images.githubusercontent.com/300046/45312569-ae553700-b4e9-11e8-92d5-93a84147db7f.jpg"><br />Click on the diagram to pop-up a full-size image</a>
+<img alt="git-browse-v7-648x323-52563.jpg" width="648" src="https://user-images.githubusercontent.com/300046/45312569-ae553700-b4e9-11e8-92d5-93a84147db7f.jpg"><br /><small>Click on the diagram to pop-up a full-size image</small></a>
 
 <a name="DigramVideo"></a>
 
