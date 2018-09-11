@@ -16,9 +16,11 @@ comments: true
 
 {% include _toc.html %}
 
-This is a hands-on deep dive immersive course to get those new to Git productive for professional usage using a local Git client. <!-- See the introduction video. -->
+This is a hands-on deep dive immersive course to get those new to Git productive for professional usage using a local Git client.
 
 You learn in minimum time because I've spent a lot of time on sequencing your learning and on time-saving automation.
+
+<amp-youtube data-videoid="U50-J6objfc" layout="responsive" width="480" height="270"></amp-youtube>
 
 
 <a name="Flowchart"></a>
