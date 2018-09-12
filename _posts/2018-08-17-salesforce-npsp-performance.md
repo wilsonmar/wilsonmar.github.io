@@ -102,13 +102,14 @@ This is not documentation, but a step-by-step exploration tour with commentary. 
 
    QUESTION: Gatling 3 in the next version but it has not been updated since August 2017 at https://oss.sonatype.org/content/repositories/snapshots/io/gatling/highcharts/gatling-charts-highcharts/3.0.0-SNAPSHOT/
 
-1. BLAH: The last release on GitHub was April 14, 2016 at:
+1. NOTE: The last release on GitHub was dated April 14, 2016 at:
    https://github.com/gatling/gatling/releases
 
-   Gatling CEO Stephane Landelle (slandelle) explains in https://github.com/gatling/gatling/issues/3288
-   why the company stopped using GitHub releases and tags:
+   Gatling CEO Stephane Landelle (@slandelle) explains in https://github.com/gatling/gatling/issues/3288
+   why (in 2016) the company stopped using GitHub releases and tags:
+   
    * Github turns git tags into something they call "releases", that are actually only a source download. This might makes sense for scripting languages, but definitively not for a compiled one such as Scala. Because of Github abuse of the "release" word, people used to download this crap and then complain and open issues because they didn't get what they expected...
-   * We used to use the sbt-release plugin, which would automatically create tags, but this plugin made our life a misery and broke several releases so we dropped it.
+   * We used to use the sbt-release plugin, which would automatically create tags, but this plugin made our life a misery [sic] and broke several releases so we dropped it.
    * You can get the release content from the milestone
    * Tags would mostly be useful for unfriendly forks
    <br /><br />
