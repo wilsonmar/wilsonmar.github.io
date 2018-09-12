@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Git basics client based workflow (in and out of GitHub/GitLab)"
-excerpt: "Here is a quick way to learn Git version control for enterprise teams"
+title: "Git basics (client-based workflow)"
+excerpt: "Here is a quick way to learn Git version control for contributing to open source"
 modified:
 tags: []
 image:

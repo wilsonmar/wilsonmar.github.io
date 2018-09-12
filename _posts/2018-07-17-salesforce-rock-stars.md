@@ -56,6 +56,8 @@ This page lists individuals who have significant blogs, tweets, courses, or othe
 
    * <a target="_blank" href="https://www.linkedin.com/title/salesforce-consultant">Top Salesforce Consultant profiles on LinkedIn</a>
 
+   * <a target="_blank" href="https://www.forcetalks.com/news/top-salesforce-bloggers-2017/">Top Salesforce Bloggers 2017</a>
+
 TODO: Put this data into a database so an app can dynamic sort lists. For now, just press Ctrl+F to find text.
 
 
@@ -218,7 +220,7 @@ Francis Pindar, 5X MVP from the UK:
 Gilian Bruce (<a target="_blank" href="https://twitter.com/gilliankbruce">@gilliankbruce</a>), Salesforce Admin Evangelist:
    * <a target="_blank" href="https://admin.salesforce.com/salesforce-admin-podcast">Salesforce Admins Podcast</a>, <a target="_blank" href="https://itunes.apple.com/us/podcast/the-salesforce-admins-podcast/id914088438?mt=2">on iTunes</a> and <a target="_blank" href="https://play.google.com/music/listen?u=0#/ps/Is37tsqndivyt7k24po3ew3imiq">Google Play</a>, are 10 min. twice weekly. Features real-life Salesforce Admins, product managers, and community leaders who transform businesses, careers, and community implementing Enterprise CRM solutions.
 
-Guha from Virginia:
+Guha Arumugam (<a target="_blank" href="https://twitter.com/SF_Guha">@SF_Guha</a>) of Acumen Solutions from Virginia/DC:
    * <a target="_blank" href="http://guhasdevforce.com/">guhasdevforce.com</a> since May 2016 
 
 Harshit Pandey, Principal Technical Architect at Intuitive Surgical, previously Technical Architect at Salesforce.com Developer Relations Team:
@@ -474,6 +476,9 @@ Shyam Nair, Salesforce Developer from Bengaluru, India:
 
 Trish Bertuzzi (@BridgeGroupInc), Chief Strategist at The Bridge Group:
    * Wrote <a target="_blank" href="http://www.bridgegroupinc.com/sales-development-playbook">Sales Development Playbook</a>
+
+Vishnu Kumar
+   * Blog: <a target="_blank" href="https://www.forcetalks.com/blog/ai-buddy-an-einstein-assistant-is-live-now/">AI Buddy</a>
 
 Vinay Chaturvedi, Salesforce Evangelist from Noida, India:
    * <a target="_blank" href="https://vinaychaturvedi.com/blog/">vinaychaturvedi.com/blog</a>

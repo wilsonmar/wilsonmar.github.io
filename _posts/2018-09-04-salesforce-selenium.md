@@ -213,6 +213,9 @@ Hands-on Training: Write Apex Tests Using Best Practices
 Dreamforce Video
 
 
+Udemy class
+appsenseca@gmail.com
+
 
 ## More about Salesforce #
 
