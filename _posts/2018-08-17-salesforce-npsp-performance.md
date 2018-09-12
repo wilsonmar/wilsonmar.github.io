@@ -91,10 +91,10 @@ This is not documentation, but a step-by-step exploration tour with commentary. 
    </pre>
 
 
-   The NPSP performance framework is built on <strong>Gatling</strong> which is a Netty-based Aka framework written in Java and thus runs on top of a Java Virtual Machine.
+   The NPSP performance framework is built on <strong>Gatling</strong> which is a Netty-based Akka framework written in Scala and thus runs on top of a Java Virtual Machine.
 
    PROTIP: The advantage of Gatling over competing tools such as LoadRunner and JMeter is that
-   those other tools implement each virtual users as threads. However, Gatling implements virtual users as asynchronous messages, which scales much better and can deal easily with thousands of concurrent users.
+   those other tools implement each virtual users as threads. However, Gatling implements virtual users as asynchronous messages (Akka), which scales much better and can deal easily with thousands of concurrent users.
 
    See the <a target="_blank" href="https://gatling.io/2017/04/21/gatling-2-2-5/">blog about 2.2.5 being released on 21 April 2017</a>.
 
