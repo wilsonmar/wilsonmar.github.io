@@ -179,18 +179,17 @@ says does not exist.
 
 ## Export
 
-To first into Setup.
-
 Backups in DE orgs can occur Monthly only. 
 
 Backups in prod (and Sandboxes) can occur Weekly or monthly (not daily). 
-
-More frequent backups can occur using a 3rd party app on AppExchange.
 
 The output is a zip file Salesforce emails to you.
 A backup file is a CSV file for each object, consists of many : one for each object and internal tables:
 
 ![sf-backup-objects-598x410-28455](https://user-images.githubusercontent.com/300046/44672521-ed619380-a9e5-11e8-9976-992d85a3145d.jpg)
+
+More frequent backups can occur using a 3rd party app on AppExchange, such as
+<a target="_blank" href="https://www.ownbackup.com/">ownbackup.com</a>
 
 
 ## Data Quality
