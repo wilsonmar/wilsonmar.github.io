@@ -209,6 +209,8 @@ Topics:
 
 * Clean and enrich data with data.com, which uses external databases as the basis for cleaning Leads, Contacts, Accounts (not product Opportunities or Assets).
 
+See validity.com #DemandTools, #PeopleImport, #DupeBlocker and #BriteVerify 
+
 
 ## Learning Modules
 
