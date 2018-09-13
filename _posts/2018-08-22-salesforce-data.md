@@ -183,10 +183,12 @@ Backups in DE orgs can occur Monthly only.
 
 Backups in prod (and Sandboxes) can occur Weekly or monthly (not daily). 
 
-The output is a zip file Salesforce emails to you.
+The output is a set of 500MB zip file Salesforce emails to you.
 A backup file is a CSV file for each object, consists of many : one for each object and internal tables:
 
 ![sf-backup-objects-598x410-28455](https://user-images.githubusercontent.com/300046/44672521-ed619380-a9e5-11e8-9976-992d85a3145d.jpg)
+
+Export does not include any of your metadata -- critical in rebuilding custom work and relationships. 
 
 More frequent backups can occur using a 3rd party app on AppExchange, such as
 <a target="_blank" href="https://www.ownbackup.com/">ownbackup.com</a>

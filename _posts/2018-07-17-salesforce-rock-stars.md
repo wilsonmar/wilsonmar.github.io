@@ -58,6 +58,9 @@ This page lists individuals who have significant blogs, tweets, courses, or othe
 
    * <a target="_blank" href="https://www.forcetalks.com/news/top-salesforce-bloggers-2017/">Top Salesforce Bloggers 2017</a>
 
+   * Follow <a target="_blank" href="https://twitter.com/SFDC_HERO">SFDC_HERO</a> of the month on Twitter.
+
+
 TODO: Put this data into a database so an app can dynamic sort lists. For now, just press Ctrl+F to find text.
 
 
