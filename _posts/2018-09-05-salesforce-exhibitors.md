@@ -138,6 +138,9 @@ So streaming capability would help to reduce memory overload.
 It can stream live to periscope.com.
 And connection to a big battery pack is a must.
 
+Adobe Premiere can be used for editing 360 videos
+<a target="_blank" href="https://studio.knightlab.com/results/storytelling-layers-on-360-video/how-to-edit-360-video-in-premiere/">*</a>
+
 <hr />
 
 ## More about Salesforce #
