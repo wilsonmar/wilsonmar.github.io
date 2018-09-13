@@ -29,7 +29,7 @@ This page presents steps and information for those new to Salesforce to get "plu
 
    * ABM = Account-based Marketing
    * CPQ = Configure, Price, and Quote (workflow)
-   * CMS = Content Management System
+   * CMS = Content Management System (for websites)
    * CRM = Customer Relationship Management
    * CRED = Create Read Edit Delete (basic operations permissions defined in user profiles)
    * CTI = Computer Telephony Integration<a target="_blank" href="https://www.newvoicemedia.com/">*</a>
@@ -37,11 +37,11 @@ This page presents steps and information for those new to Salesforce to get "plu
    * FLS = Field Level Security (access defined in user profiles)
    * GTL = Guide Template Language (in Marketing Cloud)
    * PAM = Partner Account Manager (email isvpartners@salesforce.com)
-   * MOAR = MuleSoft Anypoint Platform
+   * MOAR = MuleSoft Anypoint Platform (for API management)
    * NPS = Net Promoter Score (metric of possible vs. negative customer recommendations)
    * NPSP = Non-Profit Success Pack
    * OWD = Organization-Wide Default
-   * PRM = Partner Relationship Mgmt.
+   * PRM = Partner Relationship Management
    * QTC = Quote to Cash (Billing workflow)
    * SaaS = Software as a Service
    * SFDC = an acronym for "Salesforce dot com"
@@ -59,20 +59,21 @@ This page presents steps and information for those new to Salesforce to get "plu
 
 ## Office Locations
 
-<a target="_blank" href="http://www.salesforcetower.com/">The Salesforce Tower</a> is the tallest building not just in San Francisco but everywhere West of the Mississipi -- a few feet taller than the Eiffel Tower in Paris:
+<a target="_blank" href="http://www.salesforcetower.com/">The Salesforce Tower</a> (<a target="_blank" href="https://twitter.com/SalesforceTower">@SalesforceTower</a>) delivered May 2018 is the tallest building not just in San Francisco but everywhere West of the Mississipi -- a few feet taller than the Eiffel Tower in Paris:
 
 ![sf-tallest-648x558-65050](https://user-images.githubusercontent.com/300046/43551978-2ffdeb20-95a6-11e8-92c3-c919dee9811b.jpg)
 
-In other words, Salesforce "towers above" <a target="_blank" href="https://employbl.com/">other tech companies in San Francisco</a>. <a target="_blank" href="https://www.salesforce.com/blog/2018/07/dreampitch-startup-ultimate-elevator-pitch?d=cta-body-promo-111">Dreampitches</a> are done riding up its 61 stories.
+In other words, Salesforce "towers above" <a target="_blank" href="https://employbl.com/">other tech companies in San Francisco</a>. <a target="_blank" href="https://www.salesforce.com/blog/2018/07/dreampitch-startup-ultimate-elevator-pitch?d=cta-body-promo-111">Dreampitches</a> are done in the 40 seconds riding up its 61 stories.
 
-It's built on top of former landfill in an earthquake-prone area.
-And it's certified LEED Platinum -- the highest rating in the US. <a target="_blank" href="https://www.youtube.com/watch?v=DqOWyL5S1UE&t=6s">Click this picture to see a video of the lobby's amazing wall-to-wall video wall:<br />
+Designed by Pelli, Clarke, Pelli Architects, the top 6 stories is lit by 11,000 LEDs programmed by <a target="_blank" href="http://www.jimcampbell.tv/portfolio/public_art/salesforce_tower/">artist Jim Campbell</a>. <a target="_blank" href="https://www.youtube.com/watch?v=DqOWyL5S1UE&t=6s">Click this picture to see a video of the lobby's amazing wall-to-wall video wall:<br />
 <img alt="salelsforce-tower-lobby-299x156-60483.jpg" src="https://user-images.githubusercontent.com/300046/45239024-0d743b00-b2a1-11e8-94ef-dc5c9a0073b4.png"></a>
 
+The tower is built on top of former landfill in an earthquake-prone area.
+And it's certified LEED Platinum -- the highest rating in the US. 
 It's on Mission between Freemont and 1st (South of the Montgomery BART station), a part of a whole downtown $6 billion re-development that includes the 5-acre Salesforce Park above the Transbay Transit Center public transportation hub. 
 
 Salesforce corporate address is "The Landmark @ One Market".
-See https://www.salesforce.com/company/locations/
+See other https://www.salesforce.com/company/locations/
 
 
 <a name="Financials"></a>
@@ -358,6 +359,8 @@ The Saturday, Sunday, and Monday before Dreamforce are <a target="_blank" href="
 
    * <a target="_blank" href="https://www.youtube.com/channel/UCMSfoJzq24tEKNfdB4GaIqg">Dreamforce videos on YouTube</a>
 
+Use <a target="_blank" href="https://dreamforce.twibbon.com/">https://dreamforce.twibbon.com</a> to make put your profile picture inside a frame, for use in social media.
+
 Agenda Builder
 
 Take Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/modules/get_ready_for_dreamforce_onsite">Dreamforce & Next Steps</a> [40 mins] to make the most of your time at Dreamforce and keep learning after the event.
@@ -439,7 +442,7 @@ Einstein is the mascot of the <a target="_blank" href="https://www.salesforce.co
 
 The bear is called <strong>Codey</strong>.
 
-The owl is called <strong>Appy</strong>. And it's a she.
+The owl is called <strong>Appy</strong>. She is associated with AppExchange.
 
 <!-- ![sf-mascots-appy-980x492](https://user-images.githubusercontent.com/300046/43673518-ad0d8a3a-9781-11e8-9b3a-35281a8d5ad9.png -->
 
