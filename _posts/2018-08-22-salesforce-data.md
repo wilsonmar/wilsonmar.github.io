@@ -177,7 +177,7 @@ says does not exist.
 * Email to Case
 * Email to database
 
-## Export
+## Export / Backup
 
 Backups in DE orgs can occur Monthly only. 
 
