@@ -17,26 +17,26 @@ comments: true
 
 The tool Prometheus (at <a target="_blank" href="https://prometheus.io/">https://prometheus.io</a>)
 gathers metrics from targets at the cluster, node, and microservice API levels,
-unlike the legacy statsd daemon which is concerned only with system-level metrics.
+unlike the legacy statsd daemon which is concerned only with system-level metrics such as CPU, Memory, etc.
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/41593555-b83a2cce-737d-11e8-9d60-e8e2daf36c06.jpg"><img alt="prometheus-arch-837x372-30025.jpg" width="837" src="https://user-images.githubusercontent.com/300046/41593555-b83a2cce-737d-11e8-9d60-e8e2daf36c06.jpg"></a>
 <a target="_blank" href="https://www.youtube.com/watch?v=5GYe_-qqP30&t=15m14s">*</a>
 
-Prometheus uses <a href="#Exporters">job exporters</a> to expose metrics on hosts and applications.
-Prometheus scrapes metrics using instrumention <strong>jobs</strong>, either directly or via an intermediary <strong>push gateway</strong> for short-lived jobs. It stores all scraped samples locally and runs <strong>rules</strong> over the data to either aggregate and record new time series from existing data or to generate <strong>alerts</strong>. Prometheus comes with a multi-dimensional numeric time-series database and exposes it in an API so that Grafana or other API consumers can use the Prometheus <strong>PromQL</strong> query language to extract data for visualization.
+Prometheus <strong>scrapes</strong> (gathers) metrics on hosts and applications using instrumention <a href="#Exporters">job exporters</a> to expose metrics, either directly or via an intermediary <strong>push gateway</strong> for short-lived jobs. It stores all scraped samples locally and runs <strong>rules</strong> over the data to either aggregate and record new time series from existing data or to generate <strong>alerts</strong>. Prometheus comes with a multi-dimensional numeric <strong>time-series database</strong> which exposes its data in an <strong>API</strong> so that <strong>Grafana</strong> or other API consumers can use the Prometheus <strong>PromQL</strong> query language to extract data for visualization. Rules running in the Prometheus database can <strong>push</strong> (send) alerts to the Prometheus <strong>Alert Manager</strong> to forward to email, Slack, Pager Duty, and other notification mechanisms.
 
-<a target="_blank" href="https://prometheus.io/docs/introduction/overview/">https://prometheus.io/docs</a> 
-contains docs. It says in 2012 SoundCloud wrote Prometheus in Golang and open sourced it at <a target="_blank" href="https://github.com/prometheus/">https://github.com/prometheus</a>.
 
 ## Background
 
-In Greek mythology, the Titan Prometheus was an immortal servant of the gods, who stole and gave to humankind fire, which changed the human race forever (for better and worse). But this made mankind dangerous to the gods. Ridley Scott named his <a target="_blank" href="https://www.imdb.com/title/tt1446714/trivia">2012 film "Prometheus"</a>, saying: "It's the story of creation; the gods and the man who stood against them." 
+<a target="_blank" href="https://prometheus.io/docs/introduction/overview/">https://prometheus.io/docs</a> 
+contains docs. It says in 2012 SoundCloud wrote Prometheus in <a target="_blank" href="https://wilsonmar.github.io/golang/">Golang</a> and open sourced it at <a target="_blank" href="https://github.com/prometheus/">https://github.com/prometheus</a>.
+
+The name Prometheus comes from Greek mythology. The Titan Prometheus was an immortal servant of the gods, who stole and gave to humankind fire, which changed the human race forever (for better and worse). But this made mankind dangerous to the gods. Ridley Scott named his <a target="_blank" href="https://www.imdb.com/title/tt1446714/trivia">2012 film "Prometheus"</a>, saying: "It's the story of creation; the gods and the man who stood against them." 
 
 ## Competitive comparisons
 
-Prometheus does not concern itself with logging (like Elastic) nor tracing (like Zipkin).
+Prometheus does not concern itself with logging (like Elastic) nor transaction tracing (like Zipkin).
 
-Unlike central data collectors such as Splunk, each Prometheus server is standalone and thus not dependent on network storage or other remote services. So it's available even when other parts of the infrastructure are broken.
+Unlike central data collectors such as Splunk, each Prometheus server is distributed standalone and thus not dependent on network storage or other remote services. So it's available even when other parts of the infrastructure are broken.
 
 Targets being monitored are discovered via <strong>service discovery</strong> as well as static configuration.
 
