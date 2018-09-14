@@ -268,7 +268,7 @@ Not owned by Salesforce (but they seem close):
 
 <a name="Features"></a>
 
-### Product Features
+### User Product Feature Licenses
 
 <img align="right" alt="sf-feature-user-types-182x330-25641.jpg" src="https://user-images.githubusercontent.com/300046/44497561-6e600a00-a637-11e8-8e6e-1110c1f3f3f8.jpg">
 
@@ -288,7 +288,7 @@ Salesforce issues separate <strong>feature licenses</strong> for a set number of
    * Work.com User
    * Salesforce CRM Content user
 
-### Other Features
+### Offerings
 
    * <a target="_blank" href="https://developer.salesforce.com/einstein">Einstein</a>, at https://developer.salesforce.com/einstein (covers AI Vision, Predictive Analytics)
 
@@ -314,7 +314,6 @@ Salesforce issues separate <strong>feature licenses</strong> for a set number of
    <br /><br />
 
 See http://www.salesforce.com/platform/overview/
-
 
 <a name="Reroutes"></a>
 
@@ -352,13 +351,161 @@ Since Salesforce processes customer data in a shared environment, it must make s
 * Total number of callouts (HTTP requests or Web services calls) in a transaction – 100
 * Maximum CPU time on Salesforce servers – 10,000ms (Synchronous) 60,000ms (Asynchronous)
 <br /><br />
-PROTIP: These and <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_limits.htm">other limits</a> are not negatives of working with Salesforce. They are needed for any system. It's just that many sites risk not having them because it's an effort to put them in and they add some overhead.
+
+PROTIP: These and <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_limits.htm">other limits</a> are not negatives of working with Salesforce. They are needed for any system because every system has its limits. It's just that many sites risk not having them because it's an effort to put them in and they add some overhead.
 
 https://developer.salesforce.com/page/Apex_Code_Best_Practices
 
+
+
 ### Product Editions
 
-Before we go further, know that it is <strong>not cheap to run Salesforce in production</strong> (in "productive use").
+<table border="1" cellpadding="4" cellspacing="0">
+<tr valign="bottom"><th align="left"> Feature: </th><th>Developer</th><th>Essentials</th><th>Professional</th><th>Enterprise</th><th>Unlimited</th></tr>
+<tr valign="top"><td>$/user per Month</td><td align="right"> - </td><td align="right"> $25 </td><td align="right"> $75 </td><td align="right"> $150 </td><td align="right"> $300</td></tr> 
+<tr valign="top"><td>$/user per Year</td><td align="right"> -</td><td align="right"> $300 </td><td align="right"> $900 </td><td align="right"> $1800 </td><td align="right"> $3600</td></tr> 
+<tr valign="top"><td>Dev. sandboxes</td><td align="right"> -</td><td align="right">-</td><td align="right">10</td><td align="right">25</td><td align="right">100</td></tr> 
+<tr valign="top"><td>Custom apps</td><td align="right">10</td><td align="right">9,999</td><td align="right">255+</td><td align="right">260+</td><td align="right">unlim.</td></tr> 
+<tr valign="top"><td>Custom objects</td><td align="right">400</td><td align="right">50</td><td align="right">200</td><td align="right">2,000</td><td align="right">?</td></tr> 
+<tr valign="top"><td>Data storage/user</td><td align="right"> -</td><td align="right">20 MB</td><td align="right">20 MB</td><td align="right">20 MB</td><td align="right">120 MB</td></tr> 
+<tr valign="top"><td><a target="_blank" href="https://help.salesforce.com/articleView?id=overview_storage.htm&type=5">Max File storage/org</a></td><td align="right"> -</td><td align="right">1 GB</td><td align="right">?</td><td align="right">10 GB</td><td align="right">10 GB</td></tr> 
+<tr valign="top"><td>Max File storage/user</td><td align="right"> -</td><td align="right">512 MB</td><td align="right">512 MB</td><td align="right">2 GB</td><td align="right">2 GB</td></tr> 
+<tr valign="top"><td>Validation Rules/user</td><td align="right"> 100</td><td align="right">100</td><td align="right">100</td><td align="right">100</td><td align="right">500</td></tr> 
+</table>
+
+<a target="_blank" href="https://help.salesforce.com/articleView?id=overview_other_editions.htm&type=5">Salesforce editions no longer sold</a> include: Contact Manager, Group, Personal, Performance, or Database.com.
+
+
+<a name="FeaturesByEdition"></a>
+
+## Features by Edition
+
+https://store.salesforce.com/editions
+<a target="_blank" href="https://a.sfdcstatic.com/content/dam/www/ocms-backup/assets/pdf/datasheets/DS_SalesCloud_EdCompare.pdf">in a PDF</a>
+
+<a name="Essentials"></a>
+
+### Essentials users get
+
+* Lead management
+* Account and contact management
+* Automatic data capture
+* Opportunity tracking
+
+* Task and event tracking
+* Case management
+
+* Native sales collaboration
+* Email integration
+* Chatter
+* Mass email
+* Salesforce inbox
+
+* Customizable reports and dashboards
+* Mobile access and administration
+* Salesforce mobile app
+<br /><br />
+<em>for additonal cost:</em>
+
+* Lightning Dialer
+
+<a name="ProLicense"></a>
+
+### Professional licensees get
+
+* Products and price books
+* Orders
+* Contracts
+* Person Accounts
+
+* Unlimited apps & tabs
+* Single Sales Console App
+
+* Limited number of processes, record types, profiles, & role permission sets
+* Duplicate blocking
+* Rules-based lead scoring, routing & assignment
+
+* Google apps integration
+* Analytics snapshots
+<br /><br />
+<em>Only in salesforce classic:</em>
+
+* Campaigns (Campaign Management)
+* Quotes and orders
+* Collaborative forecasting
+* Mass email
+* Knowledge (read-only)
+<br /><br />
+<em>for additonal cost:</em>
+
+* Developer Pro sandbox
+* Web services API (included in Enterprise)
+* SalesforceIQ Inbox
+* Sales Data
+* Sales Cloud Engage
+* Steelbrick CPQ
+* Campaign Influence
+* Accelerators (standard with Ultimate)
+
+
+<a name="EnterpriseLicense"></a>
+
+### Enterprise licensees
+
+* Custom app development
+* Custom record types
+* Multiple Sales Console Apps
+* Multiple sandboxes
+
+* Enterprise territory management
+* Advanced forecasting
+* Advanced reporting
+
+* Team Selling (Sales Teams)
+* Workflow automation
+* Calendar all
+
+* Full profiles and page layouts
+* Salesforce Identity
+* Salesforce Private AppExchange
+* Integration via web service API
+<br /><br />
+<em>Only in salesforce classic:</em>
+
+* Report history tracking
+* Approval automation
+<br /><br />
+<em>for additonal cost:</em>
+
+* Developer Pro sandbox
+* Full sandbox
+
+* Opportunity splits
+* Knowledge (read-write)
+* Pardot B2B Marketing Automation
+* Salesforce Engage
+* Salesforce CPQ
+
+Salesforce Enterprise customers can open up tunnels and share data with each other. (EDI for the masses.)
+
+
+<a name="UnlimitedLicense"></a>
+
+### Unlimited licensees get
+
+* Unlimited custom apps
+* Custom tabs and objects
+
+* Multiple sandboxes
+* 100 Developer sandboxes
+* 5 Developer Pro sandboxes (additional charge in other license levels)
+* 24/7 toll-free support
+<br /><br />
+<em>for additonal cost:</em>
+
+* Partner and Communities
+
+### Partner Developer Pro Editions
 
 Only Developer environments can create managed packages.
 
@@ -371,21 +518,11 @@ Enrolled partners of Salesforce, who pay a minimum of $1,000/year, can get a <st
 But DE Orgs cannot be upgraded to Partner DE Orgs because partners access the <a target="_blank" href="https://partners.salesforce.com/s/education/general/Environment_Hub">Partner Environment Hub</a>.
 
 Partner Test Editions can be at either the Pro Edition or Enterprise/Plaform Edition.
-Pro Edition users get 10 PE licenses. Enterprise uses get 25 full CRM licenses and 20 Force.com Platform licenses. Only Enterprise/Platform licenses can create a <a target="_blank" href="https://help.salesforce.com/articleView?id=create_test_instance.htm&type=5">Sandbox</a> for pre-prod testing.
+Pro Edition users get 10 PE licenses. Enterprise users get 25 full CRM licenses and 20 Force.com Platform licenses. Only Enterprise/Platform licenses can create a <a target="_blank" href="https://help.salesforce.com/articleView?id=create_test_instance.htm&type=5">Sandbox</a> for pre-prod testing.
 
 There are <a target="_blank" href="https://partners.salesforce.com/s/education/general/Partner_Orgs">more differences in limits</a>.
 Partner Orgs have a 50,000 limit on API calls each 24 hours vs.
 15,000 for Individual Developers.
-
-<table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom"><th align="left"> Plan</th><th>Per User per Year</th><th>Validation Rules/Object</th></tr>
-<tr valign="top"><td>Essentials ("for small business") </td><td align="right"> $300 </td><td align="right"> - </td></tr> 
-<tr valign="top"><td>Professional ("Complete CRM for any size team") </td><td align="right"> $900</td><td align="right"> 20 </td></tr>
-<tr valign="top"><td>Enterprise ("Deeply customizable") </td><td align="right"> $1,800</td><td align="right"> 200 </td></tr>
-<tr valign="top"><td>Unlimited</td><td align="right"> $3,600</td><td align="right"> 200 </td></tr>
-</table>
-
-Salesforce editions no longer sold include: Contact Manager, Group, Personal, Performance, or Database.com.
 
 <a target="_blank" href="https://trailhead.salesforce.com/modules/isv_plan/units/isv_plan_editions"><img align="right" alt="sf-editions-200x198-14557.jpg" width="200" src="https://user-images.githubusercontent.com/300046/44049701-12a414e6-9ef2-11e8-907a-95a19132704a.jpg"></a>
 
@@ -406,10 +543,7 @@ and https://developer.salesforce.com/page/An_Introduction_to_Environments
 
 PROTIP: Those with this license test deployments to production by deploying to another free test org.
 
-Salesforce Enterprise customers can open up tunnels and share data with each other. (EDI for the masses.)
-
 Trailhead Module: https://trailhead.salesforce.com/en/modules/premier-success-plans
-
 
 
 <a name="Languages"></a>
