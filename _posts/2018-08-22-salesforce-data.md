@@ -18,6 +18,13 @@ comments: true
 
 This article is a succinct hands-on deep dive on how to get data in and out of Salesforce.
 
+## Data Objects
+
+![sf-data-diagram-764x418-22034](https://user-images.githubusercontent.com/300046/45555383-e617f380-b7f5-11e8-850c-18ec3664a70d.jpg)
+<a target="_blank" href="https://app.pluralsight.com/player?course=play-by-play-diagramming-salesforce-solutions&author=don-robins&name=005dd0f2-15a7-4ce3-98ca-1d0e8dcd854d&clip=4&mode=live">*</a>
+
+## Wizard vs Loader
+
 Based on VIDEO: <a target="_blank" title="Oct 17, 2017 [5:56]" href="https://www.youtube.com/watch?v=YbdCyWgWDNo&t=1m14s">Data Import: Choosing the Right Tool</a>:
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th>&nbsp;</th><th><a href="#DataImportWizard">Data Import Wizard</a></th><th><a href="#ApexDataLoader">Apex Data Loader</a></th></tr>
@@ -168,7 +175,8 @@ In addition to Input and BulkExec connectors, Talend has more sophisticated conn
 
 ## LexiLoader
 
-http://macappstore.org/lexiloader/
+<a target="_blank" href="http://macappstore.org/lexiloader/">
+http://macappstore.org/lexiloader</a>
 says does not exist.
 
 ## Others:

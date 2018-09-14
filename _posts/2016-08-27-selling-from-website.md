@@ -23,11 +23,10 @@ Here are the offerings:
 If you're selling a few each month, you don't want monthly charges.<br />
 <a target="_blank" href="https://www.gumroad.com/">
    Gumroad</a> charges 5% + $2 on each sale, on top of credit card charges.
-   
 
 If you have at least $500 steady sales each month,<br /> 
 <a target="_blank" href="https://www.snipcart.com/">
-   Snipcart.com</a> charges $10 a month if they do not get more than $500 from the 2%
+   Snipcart.com</a> charges $10 a month minimum if they do not get more than $500 from the 2%
    they charge on every transaction.
 
 
@@ -42,14 +41,13 @@ There's a price for everything.
    * <a target="_blank" href="https://gumroad.com/l/intro-to-jekyll">
    Introduction to Jekyll</a> - $20.
 
-
-
-
-
-## Coding #
-
 https://gist.github.com/melborne/5393407
 provides a liquid tag for Gumroad Overlay
+
+## Snipcart
+
+Snipcart provides 
+
 
 ## More on front-end software development #
 

@@ -26,7 +26,7 @@ This is not documentation, but a step-by-step exploration tour with commentary. 
 
    There are dozens of repositories.
 
-   Jason Lantz (jlantz) from Dallas is involved with it.
+   Notes says Jason Lantz (jlantz) from Dallas is involved with it.
 
 2. Visit the Performance framework code base:
 
