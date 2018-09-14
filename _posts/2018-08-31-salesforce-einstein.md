@@ -30,17 +30,20 @@ The Einstein Intent API <strong>categorizes</strong> unstructured text into <str
 
 ## Offerings
 
-The "AI-Powered" Einstein features listed in the <a target="_blank" href="https://www.salesforce.com/editions-pricing/sales-cloud/">Sales Cloud pricing sheet</a> at additional cost for Enterprise+ (not Pro):
+The "AI-Powered" Einstein features listed in the <a target="_blank" href="https://www.salesforce.com/editions-pricing/sales-cloud/">Sales Cloud pricing sheet</a> at additional cost for Enterprise+ (not Pro): <a target="_blank" href="https://a.sfdcstatic.com/content/dam/www/ocms-backup/assets/pdf/datasheets/DS_SalesCloud_EdCompare.pdf">PDF</a>
 
-   * <a href="#EinsteinForecasting">Einstein Forecasting</a> (prediction)
    * <a href="#LeadScoring">Lead Scoring</a>
    * <a href="#OpportunityScoring">Opportunity Scoring</a>
    * <a href="#OpportunityInsights">Opportunity Insights</a>
+
    * <a href="#AccountInsights">Account Insights</a>
    * <a href="#ActivityCapture">Activity Capture</a>
+
    * <a href="#AutomatedContacts">Automated Contacts</a>
    * <a href="#Inbox">Inbox (Google Gmail)</a>
    * <a href="#SalesAnalytics">Sales Analytics</a>
+
+   * <a href="#EinsteinForecasting">Einstein Forecasting</a> (prediction)
 
 <hr />
 
