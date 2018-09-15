@@ -32,6 +32,13 @@ Because we are covering a lot, unique to this website is this <strong>animated m
 <a target="_blank" title="git-browse-v7-1189x592-137966.jpg" href="https://user-images.githubusercontent.com/300046/45312507-85cd3d00-b4e9-11e8-8baf-a29cf8d504d0.jpg">
 <img alt="git-browse-v7-648x323-52563.jpg" width="648" src="https://user-images.githubusercontent.com/300046/45312569-ae553700-b4e9-11e8-92d5-93a84147db7f.jpg"><br /><small>Click on the diagram to pop-up a full-size image</small></a>
 
+21/ In this tutorial, we also learn how to recover from mistakes right after we try each command.
+22/ This means we often use commands to verify status after key steps.
+23/ Verification steps are part of bash scripts I've created so that you can tell, on your own, whether you're typed incorrectly or whether there's some issue with the system. 24/ Having a script means you can change something to see how it affects the whole workflow. 25/ The scripts are a very unique aspect that I haven't seen elsewhere.
+26/ Another special aspect of this course are the keyboard shortcuts pros use to boost their efficiency.
+27/ At the end of each segment we review key learnings to make sure you have mastered each skill.
+28/ Now here's our first review: Among all these, what do you think will be the most helpful aspect of this course to you? NEXT: Let's first learn the basic actions using a Git client.
+
 <a name="DigramVideo"></a>
 
 So that you can click the Pause button or drag the timing bubble on the video's timeline while watching:

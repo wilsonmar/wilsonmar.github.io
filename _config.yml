@@ -1,11 +1,11 @@
 # Site wide configuration
 locale                   : "en-US"
 encoding                 : UTF-8
-title                    : "Home"
+title                    : "Index"
 title_separator          : "-"
 name                     : &name "Wilson Mar"
 description              : &description "I have a dream..."
-url                      : https://wilsonmar.github.io # overridden by _config-dev.yml during jekyll serve.
+url: https://wilsonmar.github.io  # base url overridden by _config-dev.yml during jekyll serve:
 gh_repo                  : "https://github.com/wilsonmar/wilsonmar.github.io"
 github:
    repo:  https://github.com/wilsonmar/wilsonmar.github.io
@@ -95,13 +95,13 @@ social:
 analytics:
   provider               : "google-universal" # false (default), "google", "google-universal", "custom"
   google:
-    tracking_id          : "UA-2011187-3"
+    tracking_id          : "UA-125784220-1"
 
 # Google AdSense
 google_ad_client         :
 google_ad_slot           :
 
-# snipcart.com
+# snipcart:
 site:
   api.key="MDg0YjAxNjEtMDcyZC00OWEyLWIwMDUtYTgwNGEyZjI5OGIzNjM2MDc1MDcyOTYxODQzMjAw"
 
@@ -149,5 +149,4 @@ include: [".htaccess"]
 exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
 
 collections:
-  - products
-  - us-states
+  products:

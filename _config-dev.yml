@@ -1,5 +1,5 @@
-# Develop override settings
 
+# base url overrides  _config.yml during jekyll serve:
 url: http://localhost:4000
 
 analytics:

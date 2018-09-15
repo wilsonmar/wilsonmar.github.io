@@ -49,6 +49,23 @@ Employees of salesforce.org don't get CRM stock.
 
 4. There is a SMS verification step for first time access.
 
+## Modules
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr valign="bottom"><th>GitHub</th><th>Docs</th><th># Builds</th></tr>
+<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/Affiliations">SalesforceFoundation/Affiliations</a></td><td><a target="_blank" href="#"></a></td><td align="right">122</td></tr>
+<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/CampaignTools">SalesforceFoundation/CampaignTools</a></td><td><a target="_blank" href="#"></a></td><td align="right">347</td></tr>
+<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/Contacts_and_Organizations">SalesforceFoundation/Contacts_and_Organizations</a></td><td><a target="_blank" href="#"></a></td><td align="right">268</td></tr>
+<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/Cumulus">SalesforceFoundation/Cumulus</a></td><td><a target="_blank" href="#"></a></td><td align="right">20,362</td></tr>
+<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/CumulusCI-Test">SalesforceFoundation/CumulusCI-Test</a></td><td><a target="_blank" href="#"></a></td><td align="right">273</td></tr>
+<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/HEDAP">SalesforceFoundation/HEDAP</a></td><td><a target="_blank" href="http://developer.salesforce.org/HEDAP/ApexDocumentation/API.html"></a></td><td align="right">2,952</td></tr>
+<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/Households">SalesforceFoundation/Households</a></td><td><a target="_blank" href="#"></a></td><td align="right">274</td></tr>
+<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/Recurring_Donations">SalesforceFoundation/Recurring_Donations</a></td><td><a target="_blank" href="#"></a></td><td align="right">238</td></tr>
+<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/Relationships">SalesforceFoundation/Relationships</a></td><td><a target="_blank" href="#"></a></td><td align="right">172</td></tr>
+<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/Volunteers-for-Salesforce">SalesforceFoundation/Volunteers-for-Salesforce</a></td><td><a target="_blank" href="#"></a></td><td align="right">810</td></tr>
+</table>
+
+
 
 ## Install in DE Org
 
@@ -63,18 +80,41 @@ Employees of salesforce.org don't get CRM stock.
 
    ![sfnpsp-installers-648x424-34529](https://user-images.githubusercontent.com/300046/45557872-d3082200-b7fb-11e8-8a50-753ea3bc2156.jpg)
 
-5. Optionally click "Metadata from Github" and "Metadata from Zip".
+   BTW the "hot dog" icons say "Metadata from Github" and "Metadata from Zip".
 6. Click "Install"
-7. Look for emails from "support@salesforce.com" for each of the items listed above, such as "Package Contacts & Organizations Install Successful".
+7. Look for emails from "support@salesforce.com" for each of the 9 items listed above, such as "Package Contacts & Organizations Install Successful".
 
    "Some components, such as custom objects, custom report types, and workflow rules, must be activated using the package deploy process, before they are available to your organization."
 
    Your matching rule NPSP Contact Personal Email Match for identifying duplicate records has been activated and is now ready to use.
 
-3. Documentation about installation is included among other topics at:
-   
-   <a target="_blank" href="https://powerofus.force.com/articles/Resource/NPSP-Documentation">https://powerofus.force.com/articles/Resource/NPSP-Documentation</a>
+   ### Configuration
 
+1. Open a New Ingonito window and login.
+
+   PROTIP: Press command+` (back-tick) to switch among browser windows.
+
+   https://powerofus.force.com/articles/Resource/NPSP-Post-Install-Checklist
+   outlines these steps:
+
+1. Create Opportunity Sales Processes, Record Types, and Stages. For example, if your organization handles memberships, create a Membership Record Type and appropriate stages for a Membership opportunity's process.
+
+1. Assign New Record Types to Profiles
+
+1. Edit Page Layouts
+
+1. Assign Page Layouts
+
+1. Override Lead Conversion Button
+
+1. Run Health Check
+
+   Select the NPSP Settings tab, then select System Tools.
+
+1. To confirm that everything appears as it should, create a test contact, account/household and opportunity.
+
+1. Post feedback at:
+   https://powerofus.force.com/_ui/core/chatter/groups/GroupProfilePage?g=0F980000000CjRe
 
 ## User usage steps
 
@@ -172,21 +212,6 @@ status of builds on the build server on Heroku
 
 https://mrbelvedereci.herokuapp.com/repos/
 
-<table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom"><th>GitHub</th><th>Docs</th><th># Builds</th></tr>
-<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/Affiliations">SalesforceFoundation/Affiliations</a></td><td><a target="_blank" href="#"></a></td><td align="right">122</td></tr>
-<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/CampaignTools">SalesforceFoundation/CampaignTools</a></td><td><a target="_blank" href="#"></a></td><td align="right">347</td></tr>
-<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/Contacts_and_Organizations">SalesforceFoundation/Contacts_and_Organizations</a></td><td><a target="_blank" href="#"></a></td><td align="right">268</td></tr>
-<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/Cumulus">SalesforceFoundation/Cumulus</a></td><td><a target="_blank" href="#"></a></td><td align="right">20,362</td></tr>
-<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/CumulusCI-Test">SalesforceFoundation/CumulusCI-Test</a></td><td><a target="_blank" href="#"></a></td><td align="right">273</td></tr>
-<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/HEDAP">SalesforceFoundation/HEDAP</a></td><td><a target="_blank" href="http://developer.salesforce.org/HEDAP/ApexDocumentation/API.html"></a></td><td align="right">2,952</td></tr>
-<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/Households">SalesforceFoundation/Households</a></td><td><a target="_blank" href="#"></a></td><td align="right">274</td></tr>
-<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/Recurring_Donations">SalesforceFoundation/Recurring_Donations</a></td><td><a target="_blank" href="#"></a></td><td align="right">238</td></tr>
-<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/Relationships">SalesforceFoundation/Relationships</a></td><td><a target="_blank" href="#"></a></td><td align="right">172</td></tr>
-<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/Volunteers-for-Salesforce">SalesforceFoundation/Volunteers-for-Salesforce</a></td><td><a target="_blank" href="#"></a></td><td align="right">810</td></tr>
-</table>
-
-
 
 ## Code
 
@@ -260,6 +285,12 @@ https://github.com/forcedotcom/cinnamon
 <a target="_blank" href="http://www.salesforce.org/power-of-us"> The Power of Us" community</a>.
 
 https://github.com/salesforce/vulnreport
+
+## References
+
+* Documentation about installation is included among other topics at:
+   
+   <a target="_blank" href="https://powerofus.force.com/articles/Resource/NPSP-Documentation">https://powerofus.force.com/articles/Resource/NPSP-Documentation</a>
 
 
 <hr />

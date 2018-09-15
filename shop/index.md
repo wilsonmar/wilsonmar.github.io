@@ -12,11 +12,11 @@ image:
 
 {% include _toc.html %}
 
-Over time, people have asked me where they can get some of my stuff.
-Here's some of them.
+Over time, people have asked me about my stuff (what I think of them, where they can get some, etc.).
+So I've made notes here, so I remember where I got them.
 
 * [Backpack](#Backpack)
-* [Locators](#Locators)
+
 * [Water](#Water)
 * [Food](#Food)
 * [Liquids](#Liquids)
@@ -25,7 +25,9 @@ Here's some of them.
 * [Shelter](#Shelter)
 * [Lighting](#Lighting)
 
+* [Glasses](#SunProtection)
 * [Electrical](#Electrical)
+* [Locators](#Locators)
 * [Adapters](#Adapters)
 * [Headphones](#Headphones)
 
@@ -164,23 +166,6 @@ Other alteratives I considered:
    <a target="_blank" href="https://www.indiegogo.com/projects/bobby-the-best-anti-theft-backpack-by-xd-design#/">
    Indiegogo</a>
 
-<a name="Locators"></a>
-
-## Locator chips
-
-I got a few Tile
-chips when they were first on Kickstarter.
-
-But after a year, when I needed it, I realized
-they had died.
-
-
-<a name="SunProtection"></a>
-
-## Weather Protection
-
-[ ] Sunglasses
-
 
 <a name="Water"></a>
 
@@ -300,7 +285,7 @@ PROTIP: An extra pair of socks and underwear makes for great padding at the bott
 
 [ ] Hat, because you loose a lot of heat.
 
-[ ] Gloves with touch-screen fingertips.
+[ ] Gloves with touch-screen fingertips. I prefer leather gloves for its wind protection.
 
 [ ] Woolite Travel Laundry Soap or Travelon Laundry Soap Sheets 
    so you can hand wash laundry in a sink.
@@ -345,6 +330,26 @@ But here are a few items when you don't have 600-count sheets in a five-star hot
 
 [ ] Flashlight. Have it near where you can reach in the dark.
 
+
+
+<a name="SunProtection"></a>
+
+## Sun Protection
+
+[ ] Sunglasses (in a case)
+
+[ ] Reading glasses (in a case)
+
+
+<a name="Locators"></a>
+
+## Locator chips
+
+I got a few Tile
+chips when they were first on Kickstarter.
+
+But after a year, when I needed it, I realized
+they had died.
 
 
 <a name="Electrical"></a>

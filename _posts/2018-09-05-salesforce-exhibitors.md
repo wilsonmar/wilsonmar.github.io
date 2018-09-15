@@ -35,8 +35,8 @@ Asked of each <strong>ISV (software vendor)</strong>:
 3. How does it work? What is the tech under the hood?
 4. How can people get trained on your technology?
 
-   * Example a: We have free 7-day trials, with unlimited free access to StackOverflow.com. Or you can come to our 5-day class for $3,000.
-   * Example b: Like Salesforce, we have free in-depth tutorials and provide free cloud instances with no time limits.
+   * "We have free 7-day trials, with unlimited free access to StackOverflow.com. Or you can come to our 5-day class for $3,000."
+   * "Like Salesforce, we have free in-depth tutorials and provide free cloud instances with no time limits."
    <br /><br />
 
 Asked of each <strong>services provider</strong>:
@@ -45,20 +45,20 @@ Asked of each <strong>services provider</strong>:
 
 2. What specifically <strong>differentiates</strong> what you provide?
 
-   * Example a: We have the best people. We have the best culture. We have the latest technologies. Blah. Blah. Blah.
-   * Example b: Like GitLab and Automattic, we stay transparent by having people write blogs rather than PowerPoints.
+   * "We have the best people. We have the best culture. We have the latest technologies. Blah. Blah. Blah."
+   * "Like GitLab and Automattic, we stay transparent by having people write blogs rather than PowerPoints."
    <br /><br />
 
 3. What do people have to do to get to work on new technologies like artificial intelligence?
 
-   * Example a: That's between people and their boss.
-   * Example b: The company provides free Pluralsight licenses. Travel to one conference a year. And I personally get up at 5 AM every day to study for certification exams, which the company pays for whether I pass or not.
+   * "That's between people and their boss."
+   * "The company provides free Pluralsight licenses. Travel to one conference a year. And I personally get up at 5 AM every day to study for certification exams, which the company pays for whether I pass or not."
    <br /><br />
 
 4. How do people at your organization maintain work-life balance?
 
-   * Example a: We offer to freeze employees' eggs so they can have children later.
-   * Example b: We work with our customers so our people fly during weekdays and we train our customers on how to manage remote employees
+   * "We offer to freeze employees' eggs so they can have children later."
+   * "We work with our customers so our people fly during weekdays and we train our customers on how to manage remote employees."
    <br /><br />
 
 
@@ -66,20 +66,20 @@ Asked of each <strong>services provider</strong>:
 
 5. At Glassdoor.com, what percentage of employees say they would recommend your organization to a friend?
 
-   * Example a: 64%, but we just got a new CEO, but don't listen to the sour grapes people
-   * Example b: 84%, and we're ranked #10 on the Forbes Best Places to Work list
+   * "64%, but we just got a new CEO, but don't listen to the sour grapes people."
+   * "84%, and we're ranked #10 on the Forbes Best Places to Work list."
    <br /><br />
 
 6. What has your company done to encourage <strong>collaboration and teamwork</strong> among people in different departments?
  
-   * Example a: The directors get together. And we have a cafeteria.
-   * Example b: We have weekly all-hands lunches. We have a professional organizational psychologist working with us and have implemented programs to achieve and leverage diversity. The whole company travels to a retreat every 9 months.
+   * "The directors get together. And we have a cafeteria."
+   * "We have weekly all-hands lunches. We have a professional organizational psychologist working with us and have implemented programs to achieve and leverage diversity. The whole company travels to a retreat every 9 months."
    <br /><br />
 
 7. What does your company do to be <strong>different</strong> than other employers?
 
-   * Example a: 
-   * Example b: Employees don't have to pay medical insurance premiums.
+   * "
+   * "Employees don't have to pay medical insurance premiums."
    <br /><br />
 
 8. Do you give out <strong>souvenirs (spiffs)</strong>? Is there a story behind why this item?

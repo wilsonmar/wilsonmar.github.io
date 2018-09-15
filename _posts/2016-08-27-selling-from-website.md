@@ -15,22 +15,33 @@ comments: true
 
 {% include _toc.html %}
 
-One aspect of the "A" of the JAM stack - APIs called by JavaScript from within static sites -
+One aspect of the "A" of the JAM stack (JavaScript, APIs, Microservices ) - APIs called by JavaScript from within static sites -
 is shopping.
 
-Here are the offerings:
+Here are the offerings for "headless" ecommerce web services:
 
-If you're selling a few each month, you don't want monthly charges.<br />
+1. If you're selling a few each month, you don't want monthly charges.<br />
 <a target="_blank" href="https://www.gumroad.com/">
    Gumroad</a> charges 5% + $2 on each sale, on top of credit card charges.
 
-If you have at least $500 steady sales each month,<br /> 
+2. Woocommerce
+
+3. If you have at least $500 steady sales each month,<br /> 
 <a target="_blank" href="https://www.snipcart.com/">
    Snipcart.com</a> charges $10 a month minimum if they do not get more than $500 from the 2%
    they charge on every transaction.
 
+4. Stripe
 
-## Gumroad coding #
+5. PayPal
+
+6. Shopify
+
+7. Foxycart (see https://t.co/MbjI57285c)
+
+<hr />
+
+## Gumroad #
 
 I feel like I'm on an airline with Gumroad.
 There's a price for everything.
@@ -46,7 +57,20 @@ provides a liquid tag for Gumroad Overlay
 
 ## Snipcart
 
-Snipcart provides 
+Snipcart provides tutorials
+
+Jekyll generator dated June 01, 2016 at 
+
+   * http://snipcart.github.io/snipcart-jekyll-integration/ is the demo site
+   * https://github.com/snipcart/snipcart-jekyll-integration contains code for the demo
+   * https://snipcart.com/blog/static-site-e-commerce-part-2-integrating-snipcart-with-jekyll describes how to construct the demo
+
+Gatsby generator
+
+
+## Forms
+
+https://formspree.io/
 
 
 ## More on front-end software development #
