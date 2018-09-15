@@ -52,19 +52,20 @@ Employees of salesforce.org don't get CRM stock.
 ## Modules
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom"><th>GitHub</th><th>Docs</th><th># Builds</th></tr>
-<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/Affiliations">SalesforceFoundation/Affiliations</a></td><td><a target="_blank" href="#"></a></td><td align="right">122</td></tr>
-<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/CampaignTools">SalesforceFoundation/CampaignTools</a></td><td><a target="_blank" href="#"></a></td><td align="right">347</td></tr>
-<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/Contacts_and_Organizations">SalesforceFoundation/Contacts_and_Organizations</a></td><td><a target="_blank" href="#"></a></td><td align="right">268</td></tr>
-<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/Cumulus">SalesforceFoundation/Cumulus</a></td><td><a target="_blank" href="#"></a></td><td align="right">20,362</td></tr>
-<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/CumulusCI-Test">SalesforceFoundation/CumulusCI-Test</a></td><td><a target="_blank" href="#"></a></td><td align="right">273</td></tr>
-<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/HEDAP">SalesforceFoundation/HEDAP</a></td><td><a target="_blank" href="http://developer.salesforce.org/HEDAP/ApexDocumentation/API.html"></a></td><td align="right">2,952</td></tr>
-<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/Households">SalesforceFoundation/Households</a></td><td><a target="_blank" href="#"></a></td><td align="right">274</td></tr>
-<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/Recurring_Donations">SalesforceFoundation/Recurring_Donations</a></td><td><a target="_blank" href="#"></a></td><td align="right">238</td></tr>
-<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/Relationships">SalesforceFoundation/Relationships</a></td><td><a target="_blank" href="#"></a></td><td align="right">172</td></tr>
-<tr valign="top"><td><a target="_blank" href="https://github.com/SalesforceFoundation/Volunteers-for-Salesforce">SalesforceFoundation/Volunteers-for-Salesforce</a></td><td><a target="_blank" href="#"></a></td><td align="right">810</td></tr>
+<tr valign="bottom"><th>id</th><th>GitHub</th><th>Docs</th><th># Builds</th></tr>
+<tr valign="top"><td>npe5</td><td><a target="_blank" href="https://github.com/SalesforceFoundation/Affiliations">.../Affiliations</a></td><td><a target="_blank" href="#"></a></td><td align="right">122</td></tr>
+<tr valign="top"><td>-</td><td><a target="_blank" href="https://github.com/SalesforceFoundation/CampaignTools">.../CampaignTools</a></td><td><a target="_blank" href="#"></a></td><td align="right">347</td></tr>
+<tr valign="top"><td>-</td><td><a target="_blank" href="https://github.com/SalesforceFoundation/Contacts_and_Organizations">.../Contacts_and_Organizations</a></td><td><a target="_blank" href="#"></a></td><td align="right">268</td></tr>
+<tr valign="top"><td>-</td><td><a target="_blank" href="https://github.com/SalesforceFoundation/Cumulus">.../Cumulus</a></td><td><a target="_blank" href="#"></a></td><td align="right">20,362</td></tr>
+<tr valign="top"><td>-</td><td><a target="_blank" href="https://github.com/SalesforceFoundation/CumulusCI-Test">.../CumulusCI-Test</a></td><td><a target="_blank" href="#"></a></td><td align="right">273</td></tr>
+<tr valign="top"><td>-</td><td><a target="_blank" href="https://github.com/SalesforceFoundation/HEDAP">.../HEDAP</a></td><td><a target="_blank" href="http://developer.salesforce.org/HEDAP/ApexDocumentation/API.html"></a></td><td align="right">2,952</td></tr>
+<tr valign="top"><td>np01/np02</td><td><a target="_blank" href="https://github.com/SalesforceFoundation/Households">.../Households</a></td><td><a target="_blank" href="#"></a></td><td align="right">274</td></tr>
+<tr valign="top"><td>npe03</td><td><a target="_blank" href="https://github.com/SalesforceFoundation/Recurring_Donations">.../Recurring_Donations</a></td><td><a target="_blank" href="#"></a></td><td align="right">238</td></tr>
+<tr valign="top"><td>npe4</td><td><a target="_blank" href="https://github.com/SalesforceFoundation/Relationships">.../Relationships</a></td><td><a target="_blank" href="#"></a></td><td align="right">172</td></tr>
+<tr valign="top"><td>-</td><td><a target="_blank" href="https://github.com/SalesforceFoundation/Volunteers-for-Salesforce">.../Volunteers-for-Salesforce</a></td><td><a target="_blank" href="#"></a></td><td align="right">810</td></tr>
 </table>
 
+All repos are under https://github.com/SalesforceFoundation/...
 
 
 ## Install in DE Org
