@@ -80,7 +80,7 @@ It allows you to upload and export data directly in and out of an excel sheet.
 
 <a name="DataImportWizard"></a>
 
-## Inbuilt Data Import Wizard
+## In-built Data Import Wizard
 
 The <a target="_blank" href="https://help.salesforce.com/apex/HTViewHelpDoc?id=import_which_data_import_tool.htm&language=en">Data Import Wizard</a> is inbuilt within Salesforce to provide step-by-step guidance to manually specify how to get CSV files into Salesforce standard objects such as Leads, Accounts, Contacts, Solutions and custom objects. 
 
@@ -116,7 +116,7 @@ Based on <a target="_blank" href="http://opfocus.com/5-best-practices-for-salesf
 
 <a name="ApexDataLoader"></a>
 
-## Inbuilt Apex Data Loader
+## In-built Apex Data Loader
 
 The <a target="_blank" href="https://developer.salesforce.com/page/Data_Loader">standard Salesforce Data Loader</a> is for migrating CSV datasets into Salesforce, up to 5 million records at a time.
 
@@ -179,6 +179,15 @@ In addition to Input and BulkExec connectors, Talend has more sophisticated conn
 <a target="_blank" href="http://macappstore.org/lexiloader/">
 http://macappstore.org/lexiloader</a>
 says does not exist.
+
+## BOFC (Bulk Object Field Creator)
+
+Import & Export Salesforce fields using CSV or XLSX files to perform bulk CRUD operations with Point & Click.
+from tech9logy.com 
+
+Grabs your Salesforce Process builder flow into excel. 
+
+See http://salesforcebofc.com/
 
 ## Others:
 

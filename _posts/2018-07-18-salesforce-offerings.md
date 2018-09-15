@@ -144,18 +144,20 @@ Expertise on some of the clouds are proven by <a href="https://wilsonmar.github.
 Salesforce recognizes these 12 industries (and requires its partners support):
 
    * Automotive
-   * Communications
-   * Financial Services
-   * Healthcare
+   * <a target="_blank" href="https://www.salesforce.com/solutions/industries/communications/overview/comms-unify-journey/?d=cta-body-promo-188">Communications</a>
+   * <a target="_blank" href="https://www.salesforce.com/solutions/industries/financial-services/financial-services-cloud/ria-financial-services/?d=cta-body-promo-191">Financial Services</a>
+   * <a target="_blank" href="https://www.salesforce.com/solutions/industries/healthcare/health-cloud/personalized-patient-experiences/?d=cta-body-promo-263">Healthcare</a>
    * High Tech
-   * Higher Education
-   * Life Sciences
-   * Manufacturing
-   * Media
+   * <a target="_blank" href="https://www.salesforce.com/solutions/industries/healthcare/life-sciences/health-care-innovation/?d=cta-body-promo-262">Life Sciences</a>
+   * <a target="_blank" href="https://www.salesforce.com/solutions/industries/manufacturing/overview/channel-distribution-management/?d=cta-body-promo-126">Manufacturing</a>
+   * <a target="_blank" href="https://www.salesforce.com/solutions/industries/media/overview/maximize-audience-engagement/?d=cta-body-promo-189">Media</a>
    * Nonprofit
+   * Higher Education
    * Public Sector
    * Retail &amp; Consumer Goods
-   * Other
+
+   * Other - Travel & Hospitality
+   * <a target="_blank" href="https://www.salesforce.com/solutions/industries/?d=cta-body-promo-4">Wealth Management</a>
 
 <a name="Domains"></a>
 
