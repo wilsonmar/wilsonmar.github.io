@@ -15,11 +15,11 @@ comments: true
 
 {% include _toc.html %}
 
-"Ohana" is the Hawaiian word for "family". Salesforces uses the hash tag \#SalesforceOhana 
-to describe the inclusive culture it aims to foster. Thus the Hawaiian (Polynesian) decorations and musician at events.
-
 This page presents steps and information for those new to Salesforce to get "plugged in" quickly yet fully.
 
+"Ohana" is the Hawaiian word for "family". Salesforces uses the Twittr hash tag \#SalesforceOhana 
+to describe the inclusive culture it aims to foster. Thus the Hawaiian (Polynesian) decorations and musician at events.
+PROTIP: The Hawaiian word "Aloha" means hello (and goodbye) has been applied to the feature of Salesforce that, rather than failing installation, allows installation of a package even though it has reached its maximum number of Custom Objects.
 
 ## Office Locations
 
@@ -244,15 +244,20 @@ by Gregg Thaler
 
 https://www.salesforceben.com/the-linkedin-guide-book-for-trailblazers/
 
+
 ### Trailhead communities
 
 <a target="_blank" href="https://success.salesforce.com/0F9300000001omnCAA">Trailblazer Community Corner</a>
 
 <a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYiAAO">Sales Cloud</a>
 
+https://www.facebook.com/ServiceCloud/?ref=timeline_chaining
+
 <a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYBAA4">Sales Cloud Best Practices</a>
 
 <a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDYkAAO">Marketing Cloud</a>
+
+https://www.facebook.com/MarketingCloud/
 
 <a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDZGAA4">Community Cloud</a>
 
@@ -276,6 +281,7 @@ Einstein Analytics</a>
 
 <a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000LgciSAC">Quip</a>
 
+https://www.facebook.com/sfdcpoint/
 
 ## Events (Meet people)
 
@@ -317,6 +323,8 @@ Local Meetups
 ### Dreamforce
 
 The Saturday, Sunday, and Monday before Dreamforce are <a target="_blank" href="https://www.salesforce.com/dreamforce/certification/">Bootcamp courses</a> for $2,499 (vs. $3,499 at other times).
+
+https://www.facebook.com/dreamforce/
 
 <a target="_blank" href="http://www.salesforce.com/dreamforce/">Dreamforce</a> is Salesforce's annual conference, usually <strong>4 days in September</strong> (Tuesday thru Friday).
 
@@ -431,13 +439,6 @@ On your Android, see https://t.co/UzK0VF7e9G
 Miss being at a Salesforce event? Buy the branded clothing, office supplies, electronics, all 129+ products for sale at <a target="_blank" href="https://salesforcestore.com/">https://salesforcestore.com</a>
 
    PROTIP: Ironically, the site uses ASP.NET and jQuery (rather than React and web services).
-
-## Partners
-
-https://partners.salesforce.com/s/education/consultants/Consulting_Program
-
-   * <a target="_blank" href="https://www.linkedin.com/company/salesforce-consulting-group/">Salesforce Consulting Group</a> = http://www.sfcg.ca/
-
 
 ## More about Salesforce #
 

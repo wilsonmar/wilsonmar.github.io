@@ -112,6 +112,8 @@ If you don't have a "real" non-profit org:
 
    "Your matching rule NPSP Contact Personal Email Match for identifying duplicate records has been activated and is now ready to use.
 
+8. Determine whether Aloha has been enabled via the Subscriber Overview page that comes with the LMA application.
+
 ## Model of Relationships among Data Objects
 
 Internally, data values are stored within "objects" that hold data, like a tab within a spreadsheet.
@@ -304,7 +306,19 @@ It has hundreds of open Issues and dozens of open Pull Requests.
 
    "Dev" is the only permanent branch.
 
-### Setup for DX:
+### Donations
+
+In Opportunity objects, many non-profits use General Accounting Units (GAUs) to segregate donated funds for specific purposes or special restrictions (such as a scholarship GAU specifically for scholarships). 
+
+### TDTM
+
+https://powerofus.force.com/articles/Resource/NPSP-Apex-Class-Descriptions
+describes each Table-Driven Trigger Management class in the code at:
+https://github.com/SalesforceFoundation/Cumulus/tree/rel/3.110/src/classes
+
+
+
+## Setup for DX:
 
    * In the orgs folder, a json file defines features enabled in each environment (feature, dev, beta, release)
    * <a target="_blank" href="https://github.com/SalesforceFoundation/Volunteers-for-Salesforce/blob/master/sfdx-project.json">sfdx-project.json</a> points to the src folder.
@@ -395,9 +409,8 @@ which also created the <a target="_blank" href="https://djhconsulting.com/auctio
 Trailhead module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/nonprofit_volunteer_basics">Volunteers for Salesforce (V4S) Basics</a>
 describes how V4S handles common volunteer management processes:
 
-   * Tracking the skills volunteers have and matching volunteers to jobs by skills and availability
-
-   * Managing the volunteer <strong>jobs</strong> that an organization needs filled
+   * Managing volunteer <strong>jobs</strong> that an organization needs filled
+   * Tracking <strong>skills</strong> volunteers have and matching volunteers to jobs by skills and availability
    * Tracking hours against specific volunteer <strong>shifts</strong>
    * Allowing volunteers to sign up for shifts via the website
    * Displaying a calendar of jobs and shifts on an organization’s website
@@ -411,27 +424,28 @@ describes how V4S handles common volunteer management processes:
 
 Tabs included in V4S include: Volunteers Help, Volunteers Wizard (to create new campaigns, jobs, and shifts), Volunteer Jobs, Shift Calendar, Calendar view, Find Volunteers.
 
+<a target="_blank" href="https://s3-us-west-2.amazonaws.com/sfdo-docs/V4S_Entity_Relationship_Diagram.pdf"><img alt="sf-v4s-erd-535x408-33376.png" src="https://user-images.githubusercontent.com/300046/45627161-8700eb80-ba4e-11e8-9c9d-72545e3d80b9.png"></a>
+
 Looking into https://github.com/SalesforceFoundation/Volunteers-for-Salesforce
 
-https://github.com/SalesforceFoundation/Volunteers-for-Salesforce/blob/master/cumulusci.yml
+* https://github.com/SalesforceFoundation/Volunteers-for-Salesforce/blob/master/cumulusci.yml
 
 Within folder v4sStaticResources, momentjs.com is a popular free library to Parse, validate, manipulate, and display dates and times in JavaScript.
 
-With src folder processed using soap requests:
+With src folder processed using SOAP requests:
 * package.xml defines member names within types: ApexClass, ApexComponent, ApexPage, ApexTrigger, CustomField, CustomLabel, etc.
 * Groundwire_Volunteers.app defines tabs defined by ...tab files within the tabs folder.
 * Each tab file specifies the page layout and associated label and motif.
-
-      * About_Volunteers
-      * Volunteers_Wizard
-      * Volunteer_Job__c
-      * Shift_Calendar
-      * Find_Volunteers
-      * standard-Lead
-      * standard-Contact
-      * standard-Campaign
-      * standard-report
-      * standard-Dashboard
+  * About_Volunteers
+  * Volunteers_Wizard
+  * Volunteer_Job__c
+  * Shift_Calendar
+  * Find_Volunteers
+  * standard-Lead
+  * standard-Contact
+  * standard-Campaign
+  * standard-report
+  * standard-Dashboard
 
 For internationalization:
    * folder translations has language text files for German (de), Spanish (es), French (fr), Hebrew (iw), Japanese (ja), and Dutch (nl_NL)
@@ -439,23 +453,18 @@ For internationalization:
    * folder objectTranslations
    * folder staticresources
 
+## Data Load
 
-   * 
-
-## Donations
-
-In Opportunity objects, many non-profits use General Accounting Units (GAUs) to segregate donated funds for specific purposes or special restrictions (such as a scholarship GAU specifically for scholarships). 
-
-## TDTM
-
-https://powerofus.force.com/articles/Resource/NPSP-Apex-Class-Descriptions
-describes each Table-Driven Trigger Management class in the code at:
-https://github.com/SalesforceFoundation/Cumulus/tree/rel/3.110/src/classes
+https://www.youtube.com/watch?v=L8ip1tWhEKU
+Importing Data into Salesforce for Nonprofits – Offered Monthly
+by Salesforce.org
 
 
 ## Social
 
 @SFDCFoundation
+
+https://www.facebook.com/SalesforceOrg/?ref=timeline_chaining
 
 https://github.com/salesforce/vulnreport
 
@@ -488,6 +497,11 @@ On YouTube channels <a target="_blank" href="https://www.youtube.com/channel/UC6
    16:56
    Live Demo: Nonprofit Fundraising
    by Salesforce.org
+
+Playlist: https://www.youtube.com/watch?v=1Acc7Fq8CfQ&list=PLU8xqF8ZASbXC-QFldf_Nm-oa0v1Hra9q
+Get Started with Salesforce for Nonprofits
+
+
 
 ## Resources
 

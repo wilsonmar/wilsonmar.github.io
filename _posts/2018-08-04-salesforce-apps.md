@@ -233,6 +233,9 @@ The same scan can be performed locally using an Eclipse plugin from the vendor a
 
 Salesforce can provide a license to integrate it into your Continuous Integration (CI) build system.
 
+https://security.secure.force.com/sourcescanner/
+Org ID not attached to your Appexchange Publishing Console
+
 
 
 ## AppExchange 3rd-Party Tools
@@ -273,7 +276,13 @@ Here are some innovations:
 
 * https://codeburst.io/6-interesting-apis-to-check-out-in-2018-5d6830063f29
 
+* Send WhatsApp via Twillio.
+
+
 ## Learning
+
+Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/isv_developer_beginner">ISV Developer Beginner</a>
+[9 hrs 30 mins]
 
 * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/salesforce-crm-customization-and-extension">Salesforce CRM Customization and Extension</a>
 [1 hr] +500
@@ -291,6 +300,7 @@ to Identify the tools and technologies needed to build your AppExchange app.
 
 ## Miscellaneous links
 
+https://www.facebook.com/APPEXCHANGE/
 
 See https://developer.salesforce.com/docs/atlas.en-us.214.0.packagingGuide.meta/packagingGuide/oem_user_license_comparison.htm
 
@@ -298,6 +308,29 @@ https://developer.salesforce.com/docs/atlas.en-us.214.0.packagingGuide.meta/pack
 review the full list of considerations
 
 https://partners.salesforce.com/AppExchangeTrailblazerChecklist
+
+
+
+## Partners
+
+https://partners.salesforce.com/s/education/consultants/Consulting_Program
+
+   * <a target="_blank" href="https://www.linkedin.com/company/salesforce-consulting-group/">Salesforce Consulting Group</a> = http://www.sfcg.ca/
+
+Partners use the <a target="_blank" href="https://partners.salesforce.com/s/education/general/Environment_Hub">Environment Hub</a> to create orgs for development and testing purposes.
+
+http://p.force.com/isvtech has past recordings of Technical Enablement for AppExchange Partners on the third Thursday of every month.
+
+appinnovators@salesforce.com
+
+https://twitter.com/partnerforce
+
+https://www.facebook.com/salesforcedevs
+
+https://partners.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000001s8E
+Partner Roadmap Group
+
+https://www.appexchangeguides.com/i/929930-a-complete-guide-to-the-salesforce-isv-technical-enablement-team/1?
 
 
 ## More about Salesforce #

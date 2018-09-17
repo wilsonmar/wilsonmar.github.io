@@ -57,6 +57,7 @@ https://www.masonfrank.com/salesforce-salary-survey/</a>
 
    * Facebook group: <a target="_blank" href="https://www.facebook.com/groups/658045354373001/">Salesforce job seekers</a>
 
+   * https://www.facebook.com/salesforcejobs/
 
 ## Consulting Partners and ISVs (Independent Software Vendors)
 
@@ -114,6 +115,11 @@ The job entails sitting as well as working at a computer for extended periods of
 
    You can also add skills from the Suggested skills based off your profile options that are provided.
 
+
+## Videos
+
+https://www.facebook.com/events/119880015402173
+Trailhead: Your Path into the Salesforce Developer Economy
 
 ## More about Salesforce #
 

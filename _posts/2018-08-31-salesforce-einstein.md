@@ -30,6 +30,10 @@ The Einstein Intent API <strong>categorizes</strong> unstructured text into <str
 
 ## Offerings
 
+Based on <a target="_blank" href="https://www.salesforce.com/products/einstein/features/#platform-scroll-tab?d=cta-body-promo-16">this</a>:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=dYX4SWPrZzo">Einstein: AI in the Salesforce Platform</a> Dec 15, 2016
+
 The "AI-Powered" Einstein features listed in the <a target="_blank" href="https://www.salesforce.com/editions-pricing/sales-cloud/">Sales Cloud pricing sheet</a> at additional cost for Enterprise+ (not Pro): <a target="_blank" href="https://a.sfdcstatic.com/content/dam/www/ocms-backup/assets/pdf/datasheets/DS_SalesCloud_EdCompare.pdf">PDF</a>
 
    * <a href="#LeadScoring">Lead Scoring</a>
@@ -45,14 +49,10 @@ The "AI-Powered" Einstein features listed in the <a target="_blank" href="https:
 
    * <a href="#EinsteinForecasting">Einstein Forecasting</a> (prediction)
 
+   * <a href="#EinsteinObjectDetection">Object Detection</a> (image recognition)
+   * <a href="#EinsteinBots">Bots</a>
+
 <hr />
-
-## Einstein Offerings
-
-Based on <a target="_blank" href="https://www.salesforce.com/products/einstein/features/#platform-scroll-tab?d=cta-body-promo-16">this</a>:
-
-<a target="_blank" href="https://www.youtube.com/watch?v=dYX4SWPrZzo">Einstein: AI in the Salesforce Platform</a> Dec 15, 2016
-
 
 <a name="EinsteinForecasting"></a>
 
@@ -91,6 +91,17 @@ to quickly gain pipeline visibility, track team performance, and uncover opportu
 
 
 ## Image classification
+
+<a name="EinsteinObjectDetection"></a>
+
+https://developer.salesforce.com/events/webinars/einstein-object-detection
+
+https://appexchange.salesforce.com/listingDetail?listingId=a0N3000000Dq45IEAR
+
+
+<a name="EinsteinBots"></a>
+
+https://developer.salesforce.com/events/webinars/build-smarter-apps-einstein-platform-services
 
 ### Salesforce Social Studio 
 

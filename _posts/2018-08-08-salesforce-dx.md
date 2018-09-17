@@ -1003,6 +1003,7 @@ Best practices and code samples
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=YW9aPrxvK3A/">ANT tool</a> 6 Nov 2015.
 
+https://developer.salesforce.com/events/webinars/salesforce-dx-ama
 
 ## Misc notes
 
@@ -1011,9 +1012,12 @@ https://developer.salesforce.com/promotions/orgs/dx-signup
 QUESTION: ISVs (Service Vendors) who build customized Salesforce apps
 persona-based customizations.
 
-No blog about Salesforce coding is complete without hearing what Keir Bowden has to say about it.
-<a target="_blank" href="https://medium.com/@bob_buzzard/salesforcedx-view-from-the-coal-face-864fee29ddd8">SalesforceDX — View from the Coal Face</a> from Nov 19, 2016
-talks about the new Force.com IDE being tightly integrated with the new CLI, combining the Heroku toolbelt with the Force CLI.
+Keir Bowden: <a target="_blank" href="https://medium.com/@bob_buzzard/salesforcedx-view-from-the-coal-face-864fee29ddd8">SalesforceDX — View from the Coal Face</a> from Nov 19, 2016 talks about the new Force.com IDE being tightly integrated with the new CLI, combining the Heroku toolbelt with the Force CLI.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=YA1g-nJJUVU&t=1m25s">Salesforce DX Product Manager AMA</a> 27 Feb 2018 
+
+https://developer.salesforce.com/events/webinars/adopting-salesforce-dx
+August 17, 2017
 
 <hr />
 
@@ -1022,3 +1026,5 @@ talks about the new Force.com IDE being tightly integrated with the new CLI, com
 This is one of a series about Salesforce
 
 {% include salesforce_links.html %}
+
+It's unfair to lump in @Benioff among biliionaires. Does Amazon provide free in-depth training? Benoiff started Salesforce with a nonprofit arm

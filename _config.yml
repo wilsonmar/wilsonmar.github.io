@@ -25,6 +25,10 @@ plugins:
   - jekyll-gist
   - algoliasearch-jekyll
 
+# snipcart:
+site:
+  api.key: "MDg0YjAxNjEtMDcyZC00OWEyLWIwMDUtYTgwNGEyZjI5OGIzNjM2MDc1MDcyOTYxODQzMjAw"
+
 algolia:
   application_id: 'EILX55I5BP'
   index_name:     'your_index_name'
@@ -100,10 +104,6 @@ analytics:
 # Google AdSense
 google_ad_client         :
 google_ad_slot           :
-
-# snipcart:
-site:
-  api.key="MDg0YjAxNjEtMDcyZC00OWEyLWIwMDUtYTgwNGEyZjI5OGIzNjM2MDc1MDcyOTYxODQzMjAw"
 
 # Site owner/author:
 owner:
