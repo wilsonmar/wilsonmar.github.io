@@ -144,23 +144,23 @@ Expertise on some of the clouds are proven by <a href="https://wilsonmar.github.
 
 ### Industries
 
-Salesforce recognizes these 12 industries (and requires its partners support):
+Different lists of 12 industries are listed by Salesforce, such as AppExchange Industry Collections:
 
    * Automotive
    * <a target="_blank" href="https://www.salesforce.com/solutions/industries/communications/overview/comms-unify-journey/?d=cta-body-promo-188">Communications</a>
    * <a target="_blank" href="https://www.salesforce.com/solutions/industries/financial-services/financial-services-cloud/ria-financial-services/?d=cta-body-promo-191">Financial Services</a>
-   * <a target="_blank" href="https://www.salesforce.com/solutions/industries/healthcare/health-cloud/personalized-patient-experiences/?d=cta-body-promo-263">Healthcare</a>
+   * Government and Public Sector
    * High Tech
+   * <a target="_blank" href="https://www.salesforce.com/solutions/industries/healthcare/health-cloud/personalized-patient-experiences/?d=cta-body-promo-263">Healthcare</a>
    * <a target="_blank" href="https://www.salesforce.com/solutions/industries/healthcare/life-sciences/health-care-innovation/?d=cta-body-promo-262">Life Sciences</a>
    * <a target="_blank" href="https://www.salesforce.com/solutions/industries/manufacturing/overview/channel-distribution-management/?d=cta-body-promo-126">Manufacturing</a>
    * <a target="_blank" href="https://www.salesforce.com/solutions/industries/media/overview/maximize-audience-engagement/?d=cta-body-promo-189">Media</a>
-   * Nonprofit
-   * Higher Education
-   * Public Sector
+   * Nonprofits (including Higher Education)
+   * <a target="_blank" href="https://www.salesforce.com/solutions/industries/?d=cta-body-promo-4">Wealth Management</a> (only in Solutions)
+   * Professional Services (AppExchange)
+   * Real Estate (AppExchange)
    * Retail &amp; Consumer Goods
-
-   * Other - Travel & Hospitality
-   * <a target="_blank" href="https://www.salesforce.com/solutions/industries/?d=cta-body-promo-4">Wealth Management</a>
+   * Travel, Transportation, and Hospitality
 
 <a name="Domains"></a>
 

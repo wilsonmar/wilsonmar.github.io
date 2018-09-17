@@ -188,6 +188,53 @@ Grammaticus is a grammar engine that allows users to rename nouns while keeping 
 Grammaticus encodes the article, noun, and adjective declensions for over 30 languages, and supports programmatic use of nouns
 
 
+<a name="CodeScans"></a>
+
+## Code scans
+
+Fill out this web page to manually request an automated scan of all unpackaged code in your Salesforce organization:
+
+   <a target="_blank" href="https://security.secure.force.com/security/tools/forcecom/scanner">
+   https://security.secure.force.com/security/tools/forcecom/scanner</a>
+
+Documentation about the <a target="_blank" href="https://www.checkmarx.com/products/static-application-security-testing/">Checkmarx Static Analysis Suite (CxSAST)</a> at <a target="_blank" href="https://security.secure.force.com/security/tools/forcecom/scannerhelp">https://security.secure.force.com/security/tools/forcecom/scannerhelp</a> describes the security and quality issues the scanner identifies. 
+
+The security vulnerabilities the scanner aims to detect include coverage of security standards OWASP Top 10, SANS 25, etc.:
+
+   * Cross Site Scripting (reflected, stored, and DOM based)
+   * SOQL/SOSL Injection
+   * Access Control Issues (Sharing, FLS)
+   * Cross site request forgery attacks
+   * Arbitrary Redirects
+   * Overly permissive postMessage targets
+   <br /><br />
+
+The Force.com Security Source Scanner also detects common Apex coding and design issues:
+
+   * DML statements inside loops
+   * SOQL/SOSL inside loops
+   * Hardcoding Trigger.new[0]
+   * Hardcoding Trigger.old[0]
+   * Queries with no Where clause or no LIMIT clause
+   * Not bulkifying apex methods
+   * Async (@future) methods inside loops
+   * Hardcoding IDs
+   * Multiple triggers on same object
+   * Static Resource referencing
+   * Multiple Visualforce forms in the same page
+   * Test methods without assert
+   <br /><br />
+
+This service can be quite slow depending on how many scans are in the queue. 
+
+The same scan can be performed locally using an Eclipse plugin from the vendor at 
+
+   * https://checkmarx.atlassian.net/wiki/spaces/KC/pages/74317880/Setting+Up+the+CxSAST+Eclipse+Plugin
+
+Salesforce can provide a license to integrate it into your Continuous Integration (CI) build system.
+
+
+
 ## AppExchange 3rd-Party Tools
 
 https://appexchange.salesforce.com/appxHome

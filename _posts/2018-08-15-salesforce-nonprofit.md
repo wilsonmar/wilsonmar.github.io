@@ -59,8 +59,7 @@ Salesforce provides free to non-profits its first 10 seat licenses, then <a targ
    * HEDAP = HEDA (Higher-Ed Data Architecture) Package
    <br /><br />
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=x4QbZRIGyG0">VIDEO</a>:
-   <a target="_blank" href="https://roundcorner.com/ngo-connect/">roundCorner's NGO-Connect</a> further customizes NPSP.
+   <a target="_blank" href="https://www.youtube.com/watch?v=x4QbZRIGyG0">VIDEO</a>: <a target="_blank" href="https://roundcorner.com/ngo-connect/">roundCorner's NGO-Connect</a> further customizes NPSP.
 
 
 ## Power of Us Only for Registered Non-Profits
@@ -86,6 +85,8 @@ Salesforce provides free to non-profits its first 10 seat licenses, then <a targ
 5. If you can get in, then you can post feedback at:
    https://powerofus.force.com/_ui/core/chatter/groups/GroupProfilePage?g=0F980000000CjRe
 
+6. Attend https://powerofus.force.com/articles/Customer_Service/Salesforce-com-Foundation-Weekly-Office-Hours
+   1st & 4th Friday in each month at 9:00AM Pacific / 11:00AM Central / noon Eastern 
 
 ## Install in DE Org
 
@@ -111,14 +112,14 @@ If you don't have a "real" non-profit org:
 
    "Your matching rule NPSP Contact Personal Email Match for identifying duplicate records has been activated and is now ready to use.
 
-## Terminology
+## Model of Relationships among Data Objects
 
 Internally, data values are stored within "objects" that hold data, like a tab within a spreadsheet.
 Within an object, each row is a record and each column is a field.
-That's why the above are also called "object models". 
+That's why the above are also called "object models", which is the basis for how data is imported.
 
 <a target="_blank" href="https://s3-us-west-2.amazonaws.com/sfdo-docs/npsp_entity_relationship_diagram.pdf">
-<img alt="sfnpsp-erd-584x407.png" width="584" src="https://user-images.githubusercontent.com/300046/45602571-f12d7800-b9dd-11e8-83cd-5ef11911317f.png"><small>Click the Entity Relationship Diagram above to download its PDF.</small></a>
+<img alt="sfnpsp-erd-584x407.png" width="584" src="https://user-images.githubusercontent.com/300046/45602571-f12d7800-b9dd-11e8-83cd-5ef11911317f.png"><small>Click the Entity Relationship Diagram above to download its zoomable PDF.</small></a>
 
 Standard Salesforce (before NPSP) are in blue.
 NPSP modifies Salesforce databases and programming code to use different words on screen layouts, reports, and dashboards:
@@ -129,6 +130,12 @@ NPSP modifies Salesforce databases and programming code to use different words o
 
 These are referred to using several terms: data model, account model, household account model, object model.
 
+At the upper-left, the fork symbol at the end of blue lines to leads illustrate that many leads can lookup details about the same campaign.
+A particular level can be assigned to many households (accounts).
+
+View objects in Setup > Object Manager > select an object > Fields & Relationships.
+
+Use the Schema Builder drag and drop Salesforce tool for creating a custom objects.
 
 ## Configuration
 
@@ -208,7 +215,7 @@ users have standard objects "Accounts", "Contacts", and "Reports".
      * Soft Credits
      * Matching Gifts/Grants
      * In-Kind Gifts
-   * Volunteers
+   * <a href="#V4S">Volunteers</a>
    <br /><br />
 
    Custom reports can include additional non-profit objects:
@@ -252,7 +259,7 @@ Nevertheless, non-profits have similar needs for IT support as any organization:
 <tr valign="top"><td>np01/<br />np02</td><td><a target="_blank" href="https://github.com/SalesforceFoundation/Households">.../Households</a></td><td><a target="_blank" href="#"></a></td><td align="right">274</td></tr>
 <tr valign="top"><td>npe03</td><td><a target="_blank" href="https://github.com/SalesforceFoundation/Recurring_Donations">.../Recurring_Donations</a></td><td><a target="_blank" href="#"></a></td><td align="right">238</td></tr>
 <tr valign="top"><td>npe4</td><td><a target="_blank" href="https://github.com/SalesforceFoundation/Relationships">.../Relationships</a></td><td><a target="_blank" href="#"></a></td><td align="right">172</td></tr>
-<tr valign="top"><td>-</td><td><a target="_blank" href="https://github.com/SalesforceFoundation/Volunteers-for-Salesforce">.../Volunteers-for-Salesforce</a></td><td><a target="_blank" href="#"></a></td><td align="right">810</td></tr>
+<tr valign="top"><td>-</td><td><a target="_blank" href="#V4S">.../Volunteers-for-Salesforce</a></td><td><a target="_blank" href="#"></a></td><td align="right">810</td></tr>
 </table>
 
 ### Cumulus 
@@ -285,7 +292,9 @@ It has hundreds of open Issues and dozens of open Pull Requests.
    * PSC = Payment Soft Credits
    * RLLP = Rollup
    * RD = Recurring Donations
+   * RP = 
    * REL = Relationships
+   * SDRs = Sales Relationship Representatives
    * STG = Settings
    * TDDM = Table-Driven Trigger Management
    * USER = Users
@@ -376,14 +385,33 @@ Python framework for building portable automation for Salesforce projects
    https://github.com/forcedotcom/cinnamon
 
 
-<a name="Volunteers"></a>
+<a name="V4S"></a>
 
-### Volunteers for Salesforce
+### Volunteers for Salesforce (V4S)
 
-https://github.com/SalesforceFoundation/Volunteers-for-Salesforce
-is from https://github.com/davidhabib">David Habib</a>
-and others at <a target="_blank" href="https://djhconsulting.com/auctions-for-salesforce/">DJH Consulting</a>
+V4S was mainly written by <a target="_blank" href="https://github.com/davidhabib">David Habib</a> of <a target="_blank" href="https://djhconsulting.com/">DJH Consulting</a>
 which also created the <a target="_blank" href="https://djhconsulting.com/auctions-for-salesforce/">free Auctions app</a>.
+
+Trailhead module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/nonprofit_volunteer_basics">Volunteers for Salesforce (V4S) Basics</a>
+describes how V4S handles common volunteer management processes:
+
+   * Tracking the skills volunteers have and matching volunteers to jobs by skills and availability
+
+   * Managing the volunteer <strong>jobs</strong> that an organization needs filled
+   * Tracking hours against specific volunteer <strong>shifts</strong>
+   * Allowing volunteers to sign up for shifts via the website
+   * Displaying a calendar of jobs and shifts on an organization’s website
+   * Sending email reminders for upcoming shifts to confirmed volunteers
+   * Sending Thank You emails to volunteers that sign up for a shift from the website
+
+   * Allowing volunteers to report the hours they’ve worked
+   * Tracking the <strong>hours</strong> a volunteer works
+   * Tracking the volunteer hours and jobs for a specific event
+   <br /><br />
+
+Tabs included in V4S include: Volunteers Help, Volunteers Wizard (to create new campaigns, jobs, and shifts), Volunteer Jobs, Shift Calendar, Calendar view, Find Volunteers.
+
+Looking into https://github.com/SalesforceFoundation/Volunteers-for-Salesforce
 
 https://github.com/SalesforceFoundation/Volunteers-for-Salesforce/blob/master/cumulusci.yml
 
@@ -411,6 +439,8 @@ For internationalization:
    * folder objectTranslations
    * folder staticresources
 
+
+   * 
 
 ## Donations
 
