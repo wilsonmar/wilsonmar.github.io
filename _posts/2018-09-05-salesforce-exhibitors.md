@@ -95,6 +95,11 @@ If you have other questions I can ask, please let me know.
 The idea is to get past what we can read on websites,
 yet keep it short.
 
+
+<hr />
+
+<a name="360camera"></a>
+
 ## The 360° camera
 
 What's also different about what we're doing here is that we are using a new camera that records in 360 degree panorama. This revolutionizes video recording becuase it enables people to concentrate on the conversation rather than framing the shot. Framing and zooming can now occur in post-production. Now different speakers in the video and be positioned on the same spot on the screen. And viewers also get an immersive feel as well (and look around during boring parts). 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Salesforce Ohana"
-excerpt: "Glossary, Offices, Financials, Roles, Personas, Podcasts, Social media, Communities, Events, Dreamforce, Store"
+excerpt: "Offices, Financials, Roles, Personas, Podcasts, Social media, Communities, Events, Dreamforce, Store"
 tags: [salesforce]
 image:
 # feature: sf-ohana-1900x500-178173.jpg
@@ -19,42 +19,6 @@ comments: true
 to describe the inclusive culture it aims to foster. Thus the Hawaiian (Polynesian) decorations and musician at events.
 
 This page presents steps and information for those new to Salesforce to get "plugged in" quickly yet fully.
-
-<a name="Glossary"></a>
-
-## Glossary of Terms and Acronyms
-
-* <a target="_blank" href="https://help.salesforce.com/apex/HTViewHelpDoc?id=glossary.htm">
-   Salesforce's Glossary</a> of terms. It doesn't define acronmns, such as:
-
-   * ABM = Account-based Marketing
-   * CPQ = Configure, Price, and Quote (workflow)
-   * CMS = Content Management System (for websites)
-   * CRM = Customer Relationship Management
-   * CRED = Create Read Edit Delete (basic operations permissions defined in user profiles)
-   * CTI = Computer Telephony Integration<a target="_blank" href="https://www.newvoicemedia.com/">*</a>
-   * FSL = Field Service Lightning
-   * FLS = Field Level Security (access defined in user profiles)
-   * GTL = Guide Template Language (in Marketing Cloud)
-   * PAM = Partner Account Manager (email isvpartners@salesforce.com)
-   * MOAR = MuleSoft Anypoint Platform (for API management)
-   * NPS = Net Promoter Score (metric of possible vs. negative customer recommendations)
-   * NPSP = Non-Profit Success Pack
-   * OWD = Organization-Wide Default
-   * PRM = Partner Relationship Management
-   * QTC = Quote to Cash (Billing workflow)
-   * SaaS = Software as a Service
-   * SFDC = an acronym for "Salesforce dot com"
-   * SFMC = Salesforce Marketing Cloud
-   * SOQL = Salesforce Object Query Language
-   * TDTM = Table-Driven Trigger Management
-   <br /><br />
-
-* <a target="_blank" href="https://vlocity.com/resources/industry-cloud-dictionary">Vlocity's industry cloud dictionary</a>
-
-* Use a game to learn terms <a target="_blank" href="https://quizlet.com/306205592/">on my Quizlet</a>. Please let me know if you see any terms missing.
-
-* <a target="_blank" href="https://quizlet.com/216046018/salesforce-admin-flash-cards/">Quizlet on Saleforce Admin quiz</a> 
 
 
 ## Office Locations
@@ -247,10 +211,13 @@ Salesforce, as a company, pioneered the <strong>1:1:1 model</strong>, donating o
    * Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/modules/chatter">Chatter Administration for Salesforce Classic</a>
 
 
-### Communities
+### Success Communities
 
 * <a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000HTp1">
    Salesforce DX</a> (Developer eXchange)
+
+* <a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000001oI5">
+   French group</a>
 
 * <a target="_blank" href="https://salesforce.stackexchange.com/">https://salesforce.stackexchange.com</a>
 

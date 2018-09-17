@@ -18,14 +18,15 @@ comments: true
 
 Here is reference information for those new to Salesforce to understand how the company structures its offerings.
 
-Technically, many of Salesforce's "cloud" and feature offerings share use of the same salesforce.com and force.com DNS domain names.
-
-
 <a name="WhySalesforce"></a>
 
 ## Why Salesforce? #
 
-   * Being on the cloud, all data in one place to do work, enabling teamwork globally
+Salesforce marketing calls itself the "Intelligent Customer Success Platform".
+
+Customer success is one of the core values, which also include trust, innovation, and equality.
+
+   * Being on the cloud, all data is in one connected platform to do work, enabling teamwork globally, anytime.
    * Highly scalable without effort
    <br /><br />
 Companies that implement Salesforce CRM see improvement in sales of 30%+ because Salesforce
@@ -76,6 +77,7 @@ Gartner rated Salesforce at the upper-right corner of its Magic Quandrant of sys
 Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/drucker_customer_market_driven/">Drucker School—Customer & Market Strategy</a> [1 hr 45 mins] +700
 to turn your organization into a customer and market-driven powerhouse with these insights.
 
+<a target="_blank" href="https://trailhead.salesforce.com/en/trails/salesforce_advantage">Navigate the Salesforce Advantage</a> [1 hr 20 mins] - Learn about the key differentiators that drive our success: our core values, innovative technology, and vibrant ecosystem.
 
 
 ### Competitors in CRM
@@ -112,6 +114,7 @@ The top competitors to Salesforce are:
 "Advanced currency management" is necessary to calculate and track exchange rates
 "Activate Multiple Currencies" in the Company Information Profile.
 After activation, "Currency Setup" appears.
+
 
 
 <a name="Clouds"></a>
@@ -162,6 +165,8 @@ Salesforce recognizes these 12 industries (and requires its partners support):
 <a name="Domains"></a>
 
 ### Salesforce.com and Force.com
+
+Technically, many of Salesforce's "cloud" and feature offerings share use of the same salesforce.com and force.com DNS domain names.
 
 Salesforce, as a company, owns several domain names (some product offerings have their own domain, but some don't):
 

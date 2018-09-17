@@ -97,7 +97,8 @@ Annappa Ph, Salesforce developer in India:
    since Jan 2017 
 
 Andrew Fawcett, Force.com MVP and CTO at Financialforce.com:
-   * <a target="_blank" href="http://andyinthecloud.com/">andyinthecloud.com</a>
+   * BLOG: <a target="_blank" href="http://andyinthecloud.com/">andyinthecloud.com</a>
+   * <a target="_blank" href="https://www.packtpub.com/application-development/forcecom-enterprise-architecture-second-edition">Packt book</a>: Force.com Enterprise Architecture - Second Edition March 2017
 
 Andrez Perez, a Master Technical Instructor at Salesforce.com and owns 11x Salesforce certifications:
    * <a target="_blank" href="https://eltoroit.herokuapp.com">eltoroit.herokuapp.com</a>
