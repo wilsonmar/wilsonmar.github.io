@@ -1005,6 +1005,14 @@ Best practices and code samples
 
 https://developer.salesforce.com/events/webinars/salesforce-dx-ama
 
+## Kubernetes?
+
+https://engineering.salesforce.com/@_jamesward
+James Ward, Director, Open Source and Engineering Engagement at Salesforce, wrote
+https://engineering.salesforce.com/adopting-kubernetes-46b6c13b204b
+Adopting Kubernetes
+
+
 ## Misc notes
 
 https://developer.salesforce.com/promotions/orgs/dx-signup

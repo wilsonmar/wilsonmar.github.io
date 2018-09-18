@@ -22,9 +22,12 @@ Here is reference information for those new to Salesforce to understand how the 
 
 ## Why Salesforce? #
 
-Salesforce marketing calls itself the "Intelligent Customer Success Platform".
+Let's follow the conversation pattern for "Winning by Design":
 
-Customer success is one of the core values, which also include trust, innovation, and equality.
+![sales-wbd-800x410-40746](https://user-images.githubusercontent.com/300046/45659573-6d918b00-bab2-11e8-9e0b-446ec40779bd.jpeg)
+
+Salesforce marketing calls itself the "Intelligent Customer Success Platform".
+Customer success is one of what Salesforce defines as its core values, which also include trust, innovation, and equality.
 
    * Being on the cloud, all data is in one connected platform to do work, enabling teamwork globally, anytime.
    * Highly scalable without effort

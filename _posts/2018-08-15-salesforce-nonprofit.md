@@ -61,6 +61,8 @@ Salesforce provides free to non-profits its first 10 seat licenses, then <a targ
 
    <a target="_blank" href="https://www.youtube.com/watch?v=x4QbZRIGyG0">VIDEO</a>: <a target="_blank" href="https://roundcorner.com/ngo-connect/">roundCorner's NGO-Connect</a> further customizes NPSP.
 
+   Early versions were called "Nonprofit Starter Pack".
+
 
 ## Power of Us Only for Registered Non-Profits
 
@@ -459,6 +461,10 @@ https://www.youtube.com/watch?v=L8ip1tWhEKU
 Importing Data into Salesforce for Nonprofits – Offered Monthly
 by Salesforce.org
 
+PROTIP: When adding contacts, in the Contact Details section, enter all relevant details for your new Contact (but leave the Account Name field blank). Leaving the Account Name field blank is the key step to creating a new Household.
+Salesforce automatically creates a Household, and derives the name of the Household from the name of the Contact.
+
+To create a new Contact within a Household, in the upper right hand corner of the Account Detail page, click Manage Household.
 
 ## Social
 
