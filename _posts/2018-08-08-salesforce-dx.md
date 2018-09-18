@@ -1027,6 +1027,10 @@ Keir Bowden: <a target="_blank" href="https://medium.com/@bob_buzzard/salesforce
 https://developer.salesforce.com/events/webinars/adopting-salesforce-dx
 August 17, 2017
 
+https://www.youtube.com/watch?v=VSa7PgIANvs
+Continuous integration in Salesforce Using Jenkins and Git in 20 minutes
+by Jitendra Zaa Mar 22, 2015
+
 <hr />
 
 ## More about Salesforce #

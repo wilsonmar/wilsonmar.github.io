@@ -466,6 +466,28 @@ Salesforce automatically creates a Household, and derives the name of the Househ
 
 To create a new Contact within a Household, in the upper right hand corner of the Account Detail page, click Manage Household.
 
+## metaci
+
+MetaCI CLI replaces mrbelvedereci. 
+
+https://github.com/SalesforceFoundation/MetaCI-CLI
+
+https://asciinema.org/a/143755
+
+https://asciinema.org/a/144450
+
+<pre>
+metaci repo list
+metaci plan list
+metaci org list
+metaci build list
+metaci build info 2 --log
+metaci service list
+metaci service add
+metaci plan run 1
+etc.
+</pre>
+
 ## Social
 
 @SFDCFoundation

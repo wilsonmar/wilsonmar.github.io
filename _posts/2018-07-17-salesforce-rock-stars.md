@@ -505,7 +505,7 @@ Xi Xiao (<a target="_blank" href="https://twitter.com/xixiaofinland">@xixiaofinl
    * <a target="_blank" href="http://salesforceway.com/">salesforceway.com</a> blog.
    * PODCAST: <a target="_blank" href="https://itunes.apple.com/fi/podcast/salesforceway/id1383914828">salesforceway.com</a> since Feb. 2018.
 
-Zac Otero, a factory worker who used Trailhead to train himself to become a Salesforce administrator is Salesforce's first Golden Hoodie recipient.
+Zac Otero, a factory worker who used Trailhead to train himself to become a Salesforce administrator, is Salesforce's first Golden Hoodie recipient.
 
 
 ## Groups
