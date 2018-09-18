@@ -29,7 +29,7 @@ PROTIP: The Hawaiian word "Aloha" means hello (and goodbye) has been applied to 
 
 In other words, Salesforce "towers above" <a target="_blank" href="https://employbl.com/">other tech companies in San Francisco</a>. <a target="_blank" href="https://www.salesforce.com/blog/2018/07/dreampitch-startup-ultimate-elevator-pitch?d=cta-body-promo-111">Dreampitches</a> are done in the 40 seconds riding up its 61 stories.
 
-Designed by Pelli, Clarke, Pelli Architects, the top 6 stories is lit by 11,000 LEDs programmed by <a target="_blank" href="http://www.jimcampbell.tv/portfolio/public_art/salesforce_tower/">artist Jim Campbell</a>. <a target="_blank" href="https://www.youtube.com/watch?v=DqOWyL5S1UE&t=6s">Click this picture to see a video of the lobby's amazing wall-to-wall video wall:<br />
+Designed by <a target="_blank" href="http://pcparch.com/">Pelli, Clarke, Pelli Architects</a>, the top 6 stories is lit by 11,000 LEDs programmed by <a target="_blank" href="http://www.jimcampbell.tv/portfolio/public_art/salesforce_tower/">artist Jim Campbell</a>. <a target="_blank" href="https://www.youtube.com/watch?v=DqOWyL5S1UE&t=6s">Click this picture to see a video of the lobby's amazing wall-to-wall video wall:<br />
 <img alt="salelsforce-tower-lobby-299x156-60483.jpg" src="https://user-images.githubusercontent.com/300046/45239024-0d743b00-b2a1-11e8-94ef-dc5c9a0073b4.png"></a>
 
 The tower is built on top of former landfill in an earthquake-prone area.
