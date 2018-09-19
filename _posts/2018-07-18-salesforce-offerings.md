@@ -31,9 +31,9 @@ I appreciate the time you're taking here. Naturally, you have some questions abo
 Obviously, this page provides you information you're looking for.
 Typically, initial discussions would finish with seeing whether there is a fit. 
 
-### Summary
+## Summary
 
-This page presents some common concerns which drive organizations to consider Salesforce.
+This section presents some common concerns which drive organizations to consider Salesforce.
 I'll then show you real examples of several implementations.
 
 ### Situation / Pain
@@ -59,6 +59,8 @@ Are your people <strong>frustrated</strong> with efficiency-sapping conditions s
    <br /><br />
 
 Do you relate to these conditions?
+
+Salesforce automation saves time by salespeople so they can sell more.
 
 ### 3rd-party use-cases
 
@@ -421,7 +423,7 @@ https://developer.salesforce.com/page/Apex_Code_Best_Practices
 ### Product Editions
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom"><th align="left"> Feature: </th><th>Developer</th><th><a href="#Essentials">Essentials</a></th><th><a href="#ProLicense">Professional</a></th><th><a href="#EnterpriseLicense">Enterprise</a></th><th><a href="#UnlimitedLicense">Unlimited</a></th></tr>
+<tr valign="bottom"><th align="left"> Feature: </th><th><a href="#DevLicense">Developer</a></th><th><a href="#Essentials">Essentials</a></th><th><a href="#ProLicense">Professional</a></th><th><a href="#EnterpriseLicense">Enterprise</a></th><th><a href="#UnlimitedLicense">Unlimited</a></th></tr>
 <tr valign="top"><td>$/user per Month</td><td align="right"> - </td><td align="right"> $25 </td><td align="right"> $75 </td><td align="right"> $150 </td><td align="right"> $300</td></tr> 
 <tr valign="top"><td>$/user per Year</td><td align="right"> -</td><td align="right"> $300 </td><td align="right"> $900 </td><td align="right"> $1800 </td><td align="right"> $3600</td></tr> 
 <tr valign="top"><td>Dev. sandboxes</td><td align="right"> -</td><td align="right">-</td><td align="right">10</td><td align="right">25</td><td align="right">100</td></tr> 
@@ -443,6 +445,13 @@ https://developer.salesforce.com/page/Apex_Code_Best_Practices
 
 https://store.salesforce.com/editions
 <a target="_blank" href="https://a.sfdcstatic.com/content/dam/www/ocms-backup/assets/pdf/datasheets/DS_SalesCloud_EdCompare.pdf">in a PDF</a>
+
+<a name="DevLicense"></a>
+
+### Developer License
+
+Developer Edition users are limited to 2 users in the org.
+
 
 <a name="Essentials"></a>
 

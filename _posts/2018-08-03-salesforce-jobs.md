@@ -24,6 +24,13 @@ The advantage of a career working with Salesforce is that one can be productive 
 
 https://www.cio.com/article/3168901/it-skills-training/salesforce-skills-in-high-demand-in-2017.html
 
+## Gig economy
+
+Take a look at those offering Salesforce services on a temporary, ad hoc basis:
+
+   * <a target="_blank" href="https://www.fiverr.com/search/gigs?utf8=✓&source=top-bar&locale=en&search_in=everywhere&query=salesforce">Fiverr.com</a>
+
+
 ## Jobs inside Salesforce
 
    * <a target="_blank" href="http://careers.force.com/jobs/">http://careers.force.com/jobs</a> lists jobs inside Salesforce. Applicants use workday.com to apply.
