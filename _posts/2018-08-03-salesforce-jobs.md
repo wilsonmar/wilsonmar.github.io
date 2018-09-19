@@ -22,6 +22,8 @@ https://medium.com/trailhead/huge-demand-for-salesforce-talent-3bb30c597b39
 
 The advantage of a career working with Salesforce is that one can be productive without being an expert programmer. This and being in SasS (without server admin troubles), a small team can support a (smaller) company without a lot of buraucracy, unlike being on massive SAP projects.
 
+https://www.cio.com/article/3168901/it-skills-training/salesforce-skills-in-high-demand-in-2017.html
+
 ## Jobs inside Salesforce
 
    * <a target="_blank" href="http://careers.force.com/jobs/">http://careers.force.com/jobs</a> lists jobs inside Salesforce. Applicants use workday.com to apply.

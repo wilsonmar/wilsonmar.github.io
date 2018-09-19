@@ -22,20 +22,61 @@ Here is reference information for those new to Salesforce to understand how the 
 
 ## Why Salesforce? #
 
-Let's follow the conversation pattern for discovery call from <a target="_blank" href="https://vimeo.com/164670618">"Winning by Design"</a> <a target="_blank" href="https://medium.com/@justdansmith/the-anatomy-of-a-perfect-discovery-call-67d499ed8b72">*</a>
+Let's follow the conversation <a target="_blank" href="https://vimeo.com/268176646">pattern</a><a target="_blank" href="https://medium.com/@justdansmith/the-anatomy-of-a-perfect-discovery-call-67d499ed8b72">*</a>
 
 ![sales-wbd-800x410-40746](https://user-images.githubusercontent.com/300046/45659573-6d918b00-bab2-11e8-9e0b-446ec40779bd.jpeg)
 
-(AxNOT = Appreciate Time Naturally Obviously Typically)</a>
+<a target="_blank" href="https://vimeo.com/164670618">(AxNOT)</a>:
+I appreciate the time you're taking here. Naturally, you have some questions about Salesforce because of its popularity.
+Obviously, this page provides you information you're looking for.
+Typically, initial discussions would finish with seeing whether there is a fit. 
 
-Salesforce marketing calls itself the "Intelligent Customer Success Platform".
+### Summary
+
+This page presents some common concerns which drive organizations to consider Salesforce.
+I'll then show you real examples of several implementations.
+
+### Situation / Pain
+
+Are your people <strong>frustrated</strong> with efficiency-sapping conditions such as:
+
+   * Losing information written down in scraps of paper
+   * New people not getting the conversation history on emails 
+   * Time-consuming work on spreadsheets and Access databases that can be error-prone
+   * Data on local file directories (not accessible by others)
+   * Different parts of the organization organizaing their information differently
+   * Repetitive manual work to keep several people informed
+   * Waiting for <strong>approvals</strong> 
+   * Waiting for <strong>system changes</strong> 
+   <br /><br />
+
+Do you relate to these conditions?
+
+### 3rd-party use-cases
+
+Next I'll show how organizations of different sizes have significantly benefited from using Salesforce.
+
+Salesforce is called the "Intelligent Customer Success Platform" 
+
+Salesforce has structured its services and pricing for use by a wide range of many of the Fortune 500 and by smaller
+As companies grow, they can use more features.
+
+Small organizations can benefit from Salesforce because all they need to get organized is an internet connection and a browser.
+Those companies don't have server rooms to build, power, refrigerate, and guard. 
+Most companies over-buy hardware to cover future growth.
+So in many cases, we see the using Salesforce <strong>saves money</strong> versus excess capacity built.
+With Salesforce, companies pay only what they use for the number of employees.
+You don't pay for idle hardware.
+But when you need, you can scale quickly, globally, without all the effort and time that goes with buying hardware.
+
+Being on the cloud, all data is in one connected platform to do work, enabling teamwork globally, anytime.
+That's why some companies adopt Salesforce because their customers say they will have more confidence with their capability if they use Salesforce.
+Or they adopt Salesforce to keep up with competitors who are doing more with less people.
+
 Customer success is one of what Salesforce defines as its core values, which also include trust, innovation, and equality.
 
-   * Being on the cloud, all data is in one connected platform to do work, enabling teamwork globally, anytime.
-   * Highly scalable without effort
-   <br /><br />
-Companies that implement Salesforce CRM see improvement in sales of 30%+ because Salesforce
-provides a data collection system to implement a <strong>disciplined</strong> approach to selling:
+Companies that implement Salesforce CRM see improved sales of 30%+ because Salesforce
+provides a central data collection system needed to implement a <strong>disciplined</strong> approach to selling:
    <br /><br />
    * Lead scoring: the value of each lead can be calculated so salespeople focus on the best leads
    * Leads can be automatically allocated among salespeople
@@ -45,22 +86,16 @@ provides a data collection system to implement a <strong>disciplined</strong> ap
    * "Email-to-Case" integrates with Gmail and Outlook to automatically reads emails into Service Cloud case records.
    * "Question-to-Case" let moderators create cases from Chatter questions.
    <br /><br />
+
 Data collection also enables Managers to make decisions based on facts.
    <br /><br />
-   * A large number of default Dashboards are available with jew a few clicks
+   * A large number of default Dashboards are available with just a few clicks
    * Calculation of how much is in each part of the sales funnel
    * Since the status of each opportunity 
    * Campaigns returns analysis
    * Data enables Sales and Marketing to work together better, proactively
    <br /><br />
-For end-users, get away from:
-   <br /><br />
-   * Waiting for <strong>approvals</strong> because Salesforce does relentless follow-up
-   * Reliance on spreadsheets and Access databases
-   * Collaboration via email (new people joining can't get to conversation history)
-   * Data on local file directories (not accessible by others)
-   * Time-intensive, manual steps
-   <br /><br />
+
 The true power of Salesforce is the ease of customization and, paradoxically, powerful features.
 Gartner rated Salesforce at the upper-right corner of its Magic Quandrant of systems for "citizen programmers". Salesforce provides an easy and fast way to create sophisticated apps:
    <br /><br />
@@ -79,6 +114,7 @@ Gartner rated Salesforce at the upper-right corner of its Magic Quandrant of sys
    * API-first to integrate anything with everything
    * Salesforce was designed with a <strong>metadata-driven</strong> architecture. Everything, including the code, configuration, and apps, is specified as metadata.
    <br /><br />
+
 Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/drucker_customer_market_driven/">Drucker School—Customer & Market Strategy</a> [1 hr 45 mins] +700
 to turn your organization into a customer and market-driven powerhouse with these insights.
 
