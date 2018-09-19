@@ -20,12 +20,13 @@ comments: true
    * ABM = Account-based Marketing
    * CPQ = Configure, Price, and Quote (workflow)
    * CMS = Content Management System (for websites)
-   * CRM = Customer Relationship Management
+   * CRM = Customer/Constituent Relationship Management
    * CRED = Create Read Edit Delete (basic operations permissions defined in user profiles)
    * CTI = Computer Telephony Integration<a target="_blank" href="https://www.newvoicemedia.com/">*</a>
-   * FSL = Field Service Lightning
+   * ER = Executive Review (in Approval process)
+   * FSL = Field Service Lightning (offering)
    * FLS = Field Level Security (access defined in user profiles)
-   * GAU = General Accounting Units (to apply donations)
+   * GAU = General Accounting Units (to apply donations to nonprofits)
    * GTL = Guide Template Language (in Marketing Cloud)
    * LMA = License Management Application
    * LMO = License Management Organization
@@ -35,13 +36,16 @@ comments: true
    * NPSP = Non-Profit Success Pack
    * OWD = Organization-Wide Default
    * OCR = Opportunity Contact Roles
-   * PRM = Partner Relationship Management
+   * PRM = Partner Relationship Management (offering)
    * QTC = Quote to Cash (Billing workflow)
    * SaaS = Software as a Service
+   * SAQL = Salesforce Analytics Query Language
    * SFDC = an acronym for "Salesforce dot com"
    * SFMC = Salesforce Marketing Cloud
-   * SOQL = Salesforce Object Query Language
+   * SOQL = Salesforce Object Query Language <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm">*</a>
+   * SOSL = Salesforce Object Search Language <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_sosl.htm">*</a>
    * TDTM = Table-Driven Trigger Management
+   * TP = Trailhead Playground
    <br /><br />
 
 * <a target="_blank" href="https://vlocity.com/resources/industry-cloud-dictionary">Vlocity's industry cloud dictionary</a>

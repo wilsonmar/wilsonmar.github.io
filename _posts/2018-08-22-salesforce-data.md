@@ -78,6 +78,10 @@ Updated features include access to Products2 and custom objects, API names or la
 
 It allows you to upload and export data directly in and out of an excel sheet.
 
+### Google Sheets
+
+https://support.google.com/docs/answer/9073952?co=GENIE.Platform%3DDesktop&hl=en
+
 <a name="DataImportWizard"></a>
 
 ## In-built Data Import Wizard

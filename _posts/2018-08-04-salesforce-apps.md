@@ -56,6 +56,8 @@ This is a step-by-step hands-on tutorial to Apps and AppExchange, with technical
    <tr valign="top"><td align="right">18.</td><td>Success Community</td></tr>
    </table>
 
+   PROTIP: There are limits to how many apps can be installed, depending on the level of license you have.
+
 1. Select the "App Launcher" for a tiled page. You can move each app to the position you want in
    Setup > Managed Apps > App Menu.   
 
@@ -278,8 +280,19 @@ Here are some innovations:
 
 * Send WhatsApp via Twillio.
 
+* Wikipedia of the town
+
+* Glassdoor.com ratings
+
+* Cats
+
+* Messaging as in Google Gmail
+
 
 ## Learning
+
+<a target="https://www.udemy.com/salesforce-administrator/learn/v4/t/lecture/7682832?start=0">
+Mike Wheeler's video course about AppExchange in 2016 (on Udemy)</a>
 
 Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/isv_developer_beginner">ISV Developer Beginner</a>
 [9 hrs 30 mins]
@@ -298,7 +311,7 @@ to Identify the tools and technologies needed to build your AppExchange app.
 
 * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/app-development-without-limits">App Development Without Limits</a> +1500 to avoid limits as you develop scalable apps.
 
-## Miscellaneous links
+## Social 
 
 https://www.facebook.com/APPEXCHANGE/
 
@@ -308,7 +321,6 @@ https://developer.salesforce.com/docs/atlas.en-us.214.0.packagingGuide.meta/pack
 review the full list of considerations
 
 https://partners.salesforce.com/AppExchangeTrailblazerChecklist
-
 
 
 ## Partners

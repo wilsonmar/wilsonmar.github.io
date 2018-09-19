@@ -22,9 +22,11 @@ Here is reference information for those new to Salesforce to understand how the 
 
 ## Why Salesforce? #
 
-Let's follow the conversation pattern for "Winning by Design":
+Let's follow the conversation pattern for discovery call from <a target="_blank" href="https://vimeo.com/164670618">"Winning by Design"</a> <a target="_blank" href="https://medium.com/@justdansmith/the-anatomy-of-a-perfect-discovery-call-67d499ed8b72">*</a>
 
 ![sales-wbd-800x410-40746](https://user-images.githubusercontent.com/300046/45659573-6d918b00-bab2-11e8-9e0b-446ec40779bd.jpeg)
+
+(AxNOT = Appreciate Time Naturally Obviously Typically)</a>
 
 Salesforce marketing calls itself the "Intelligent Customer Success Platform".
 Customer success is one of what Salesforce defines as its core values, which also include trust, innovation, and equality.
@@ -371,10 +373,11 @@ https://developer.salesforce.com/page/Apex_Code_Best_Practices
 ### Product Editions
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom"><th align="left"> Feature: </th><th>Developer</th><th>Essentials</th><th>Professional</th><th>Enterprise</th><th>Unlimited</th></tr>
+<tr valign="bottom"><th align="left"> Feature: </th><th>Developer</th><th><a href="#Essentials">Essentials</a></th><th><a href="#ProLicense">Professional</a></th><th><a href="#EnterpriseLicense">Enterprise</a></th><th><a href="#UnlimitedLicense">Unlimited</a></th></tr>
 <tr valign="top"><td>$/user per Month</td><td align="right"> - </td><td align="right"> $25 </td><td align="right"> $75 </td><td align="right"> $150 </td><td align="right"> $300</td></tr> 
 <tr valign="top"><td>$/user per Year</td><td align="right"> -</td><td align="right"> $300 </td><td align="right"> $900 </td><td align="right"> $1800 </td><td align="right"> $3600</td></tr> 
 <tr valign="top"><td>Dev. sandboxes</td><td align="right"> -</td><td align="right">-</td><td align="right">10</td><td align="right">25</td><td align="right">100</td></tr> 
+<tr valign="top"><td>Dev. Pro sandboxes</td><td align="right"> -</td><td align="right">-</td><td align="right">?</td><td align="right">?</td><td align="right">5</td></tr> 
 <tr valign="top"><td>Custom apps</td><td align="right">10</td><td align="right">9,999</td><td align="right">255+</td><td align="right">260+</td><td align="right">unlim.</td></tr> 
 <tr valign="top"><td>Custom objects</td><td align="right">400</td><td align="right">50</td><td align="right">200</td><td align="right">2,000</td><td align="right">?</td></tr> 
 <tr valign="top"><td>Data storage/user</td><td align="right"> -</td><td align="right">20 MB</td><td align="right">20 MB</td><td align="right">20 MB</td><td align="right">120 MB</td></tr> 
@@ -504,12 +507,12 @@ Salesforce Enterprise customers can open up tunnels and share data with each oth
 ### Unlimited licensees get
 
 * Unlimited custom apps
+* 24/7 toll-free support
 * Custom tabs and objects
 
 * Multiple sandboxes
 * 100 Developer sandboxes
 * 5 Developer Pro sandboxes (additional charge in other license levels)
-* 24/7 toll-free support
 <br /><br />
 <em>for additonal cost:</em>
 
