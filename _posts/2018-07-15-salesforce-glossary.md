@@ -28,7 +28,7 @@ comments: true
    * FLS = Field Level Security (access defined in user profiles)
    * GAU = General Accounting Units (to apply donations to nonprofits)
    * GTL = Guide Template Language (in Marketing Cloud)
-   * GMT = Greenwich Mean Time (for time zones, also called UTC)
+   * GMT = Greenwich Mean Time (for time zone offsets, also called UTC)
    * IoT = Internet of Things (industry term)
    * LMA = License Management Application
    * LMO = License Management Organization
