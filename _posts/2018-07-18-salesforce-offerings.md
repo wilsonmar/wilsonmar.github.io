@@ -38,6 +38,13 @@ I'll then show you real examples of several implementations.
 
 ### Situation / Pain
 
+How do your salespeople work?
+
+   * How do they get leads?
+   * What do they have to do to get approval?
+   * Who helps them generate contracts?
+   * What statistics do sales managers have?
+
 Are your people <strong>frustrated</strong> with efficiency-sapping conditions such as:
 
    * Losing information written down in scraps of paper
