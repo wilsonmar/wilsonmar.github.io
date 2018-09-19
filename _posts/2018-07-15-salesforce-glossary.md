@@ -28,6 +28,8 @@ comments: true
    * FLS = Field Level Security (access defined in user profiles)
    * GAU = General Accounting Units (to apply donations to nonprofits)
    * GTL = Guide Template Language (in Marketing Cloud)
+   * GMT = Greenwich Mean Time (for time zones, also called UTC)
+   * IoT = Internet of Things (industry term)
    * LMA = License Management Application
    * LMO = License Management Organization
    * PAM = Partner Account Manager (email isvpartners@salesforce.com)
@@ -46,6 +48,7 @@ comments: true
    * SOSL = Salesforce Object Search Language <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_sosl.htm">*</a>
    * TDTM = Table-Driven Trigger Management
    * TP = Trailhead Playground
+   * U2F = Universal 2nd Factor (security key for user authentication)
    <br /><br />
 
 * <a target="_blank" href="https://vlocity.com/resources/industry-cloud-dictionary">Vlocity's industry cloud dictionary</a>
