@@ -40,10 +40,11 @@ I'll then show you real examples of several implementations.
 
 How do your salespeople work?
 
-   * How do they get leads?
+   * How do they get leads? (target potential customers)
+   * How do they prioritize what leads they work on?
    * What do they have to do to get approval?
-   * Who helps them generate contracts?
-   * What statistics do sales managers have?
+   * How much time does it take to do after-sale work like generating contracts and other back-office work?
+   * What statistics do sales managers have to make decisions and anticipate customer needs?
 
 Are your people <strong>frustrated</strong> with efficiency-sapping conditions such as:
 
@@ -54,22 +55,24 @@ Are your people <strong>frustrated</strong> with efficiency-sapping conditions s
    * Different parts of the organization organizaing their information differently
    * Repetitive manual work to keep several people informed
    * Waiting for <strong>approvals</strong> 
-   * Waiting for <strong>system changes</strong> 
+   * Waiting for <strong>system changes</strong> within in-house systems
    <br /><br />
 
 Do you relate to these conditions?
 
 ### 3rd-party use-cases
 
-Next I'll show how organizations of different sizes have significantly benefited from using Salesforce.
+Next I'll show how Salesforce has structured its services and pricing for use by many of the Fortune 500 and by startups.
+And why Salesforce is used by many different industries because of its automation out-of-the-box and flexibility.
 
 Salesforce is called the "Intelligent Customer Success Platform" 
 
-Salesforce has structured its services and pricing for use by a wide range of many of the Fortune 500 and by smaller
 As companies grow, they can use more features.
 
+GE, Wells Fargo, Philips, American Red Cross, Comcast
+
 Small organizations can benefit from Salesforce because all they need to get organized is an internet connection and a browser.
-Those companies don't have server rooms to build, power, refrigerate, and guard. 
+Those companies don't have server rooms to build, power, refrigerate, and guard. In several places for disaster recovery.
 Most companies over-buy hardware to cover future growth.
 So in many cases, we see the using Salesforce <strong>saves money</strong> versus excess capacity built.
 With Salesforce, companies pay only what they use for the number of employees.
@@ -121,6 +124,8 @@ Gartner rated Salesforce at the upper-right corner of its Magic Quandrant of sys
    * API-first to integrate anything with everything
    * Salesforce was designed with a <strong>metadata-driven</strong> architecture. Everything, including the code, configuration, and apps, is specified as metadata.
    <br /><br />
+
+The 2018 survey by 3rd-party BLuewolf found that 94% of Salesforce customers say it makes their job easier.
 
 Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/drucker_customer_market_driven/">Drucker School—Customer & Market Strategy</a> [1 hr 45 mins] +700
 to turn your organization into a customer and market-driven powerhouse with these insights.
