@@ -18,12 +18,15 @@ comments: true
 <a target="_blank" href="https://help.salesforce.com/apex/HTViewHelpDoc?id=glossary.htm">Salesforce's Glossary</a> of terms doesn't define acronyms, such as:
 
    * ABM = Account-based Marketing
+   * BPMN = Business Process Modeling Notation (industry standard used in Approval Process Visualizer graphics)
    * CPQ = Configure, Price, and Quote (workflow)
    * CMS = Content Management System (for websites)
    * CRM = Customer/Constituent Relationship Management
    * CRED = Create Read Edit Delete (basic operations permissions defined in user profiles)
    * CTI = Computer Telephony Integration<a target="_blank" href="https://www.newvoicemedia.com/">*</a>
+   * DML = Data Manipulation Language (industry term)
    * ER = Executive Review (in Approval process)
+   * ETL = Extract Transform and Load (industry term for populating clean data in databases)
    * FSL = Field Service Lightning (offering)
    * FLS = Field Level Security (access defined in user profiles)
    * GAU = General Accounting Units (to apply donations to nonprofits)

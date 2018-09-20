@@ -24,6 +24,11 @@ This article is a succinct hands-on deep dive on how to get data in and out of S
 <img alt="sf-data-diagram-764x418-22034.jpg" src="https://user-images.githubusercontent.com/300046/45555383-e617f380-b7f5-11e8-850c-18ec3664a70d.jpg"><br />
 <small>Click to pop-up full screen image</small></a><a target="_blank" href="https://app.pluralsight.com/player?course=play-by-play-diagramming-salesforce-solutions&author=don-robins&name=005dd0f2-15a7-4ce3-98ca-1d0e8dcd854d&clip=4&mode=live">*</a>
 
+PROTIP: <a target="_blank" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000018leZEAQ">Etherios EasyDescribe free app</a> to view and extract object metadata by <a target="_blank" href="http://www.westmonroepartners.com/">West Monroe Partners (of Chicago)</a> is dated 2010 for Winter 11 / 1.91.0 and listed as "private".
+
+<a target="_blank" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N30000009wZkUEAU">Layout Page free app</a> from Clerisoft in 2015 converts any Salesforce Page Layout (Standard OR Custom) into a Standard Visualforce Page in just 3 steps.
+
+
 ## Wizard vs Loader
 
 Based on VIDEO: <a target="_blank" title="Oct 17, 2017 [5:56]" href="https://www.youtube.com/watch?v=YbdCyWgWDNo&t=1m14s">Data Import: Choosing the Right Tool</a>:
@@ -41,6 +46,7 @@ Based on VIDEO: <a target="_blank" title="Oct 17, 2017 [5:56]" href="https://www
 </table>
 
 Both can handle custom as well as standard objects.
+Both trigger validation rules during importing.
 
 ## Data Types
 
@@ -51,6 +57,9 @@ There are three main types of collections in Apex:
 * Sets – <strong>unordered</strong> collection of elements that do not contain any duplicates. 
 * Lists – ordered collection of elements distinguished by <strong>indices</strong>.
 * Maps – key-value pairs with each unique key mappings to a single value. Keys and values can be any data type—primitive type.
+<br /><br />
+
+The import file should include a record owner for each record (defaulting to the account used to do importing).
 
 
 ## Excel to CSV
