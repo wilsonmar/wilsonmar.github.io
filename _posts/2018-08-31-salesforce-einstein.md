@@ -241,6 +241,15 @@ Shubha Nabar, Director, Data Science (SalesforceIQ):
 
    * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=wrWADRbjmS4&t=2m11s">at Opening Keynote Oct 5, 2016</a> [5:16]
 
+## IBM Watson
+
+https://developer.salesforce.com/blogs/2018/09/discover-whats-next-for-ibm-at-dreamforce-2018.html
+
+https://github.com/watson-developer-cloud/salesforce-sdk
+is a Salesforce library for Salesforce Apex to communicate with IBM Watson using REST APIs to solve complex problems.
+See http://www.ibm.com/watson/developercloud/
+
+
 ## Learning resources
 
 https://metamind.readme.io/

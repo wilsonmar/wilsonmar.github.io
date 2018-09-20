@@ -438,6 +438,12 @@ https://developer.salesforce.com/page/Apex_Code_Best_Practices
 
 <a target="_blank" href="https://help.salesforce.com/articleView?id=overview_other_editions.htm&type=5">Salesforce editions no longer sold</a> include: Contact Manager, Group, Personal, Performance, or Database.com.
 
+Additional storage space for Salesforce data can be purchased for $125/month for each block of 500MB.
+That's $1500 per year.
+
+Additional space for storing files can be purchased for $5/month per gigabyte. 
+In other words, this means 1TB would cost an additional $5,120/month.
+
 
 <a name="FeaturesByEdition"></a>
 
