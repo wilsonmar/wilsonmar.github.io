@@ -15,11 +15,9 @@ comments: true
 
 {% include _toc.html %}
 
-This page takes you step-by-step to establish an envrionment to create your own "known good" rig.
+This page takes you step-by-step to establish an environment to create your own "known good" rig.
 
 We begin with a manual walkthrough, which we then automate.
-
-> How about I do this for you? Call me!
 
 ## Establish Environment
 
