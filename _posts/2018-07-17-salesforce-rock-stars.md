@@ -512,6 +512,10 @@ Zac Otero, a factory worker who used Trailhead to train himself to become a Sale
 
 It's one thing to have opinions, but it's quite another level to share opinions on the same platform.
 
+<a target="_blank" href="https://salesforcecowboys.podbean.com/">Salesforce Cowboys podcast</a> since 2018:
+   * Matt Sai
+   * Paul D. Tunison
+
 <a target="_blank" href="https://salesforceweek.ly/">salesforceweek.ly</a> (<a target="_blank" href="https://twitter.com/SalesforceWeek">@SalesforceWeek</a>) is one of the most popular blogs in the Salesforce ecosystem, since Oct 2013, offering different tones of narration: [<a href="#Top2018">Top2018</a>]
 
    * Mike Gill (<a target="_blank" href="https://twitter.com/agentgill">@agentgill</a>)
