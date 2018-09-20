@@ -442,7 +442,7 @@ Additional storage space for Salesforce data can be purchased for $125/month for
 That's $1500 per year.
 
 Additional space for storing files can be purchased for $5/month per gigabyte. 
-In other words, this means 1TB would cost an additional $5,120/month.
+This means 1TB would cost an additional $5,120/month.
 
 
 <a name="FeaturesByEdition"></a>
