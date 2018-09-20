@@ -1440,7 +1440,7 @@ makes deployment of Kubernetes for Machine Learning (TensorFlow)
 by Adron Hall:
 
    * <a target="_blank" href="https://www.pelo.tech/blog/running-kubernetes/">
-   Kubernetes with Gcloud and Terraform</a> April 5, 2017
+   Kubernetes with GCloud and Terraform</a> April 5, 2017
 
    * <a target="_blank" href="http://blog.adron.me/articles/setting-up-gcp-container-cluster/">
    Setting up a GCP Container Cluster - Part I</a> January 31, 2017.
@@ -1466,6 +1466,8 @@ https://www.terraform.io/docs/providers/aws/guides/eks-getting-started.html
 
 https://devops.college/the-journey-from-monolith-to-docker-to-kubernetes-part-1-f5dbd730f620
 
+https://github.com/ramitsurana/awesome-kubernetes
+
 
 ## Social
 
@@ -1489,9 +1491,9 @@ http://bit.ly/2KabhKB
 Kubernetes in Docker for Mac April 17, 2018
 by Guillaume Rose, Guillaume Tardif
 
+  
+## More on DevOps #
 
-## More
+This is one of a series on DevOps:
 
-This is one of a series on AI, Machine Learning, Deep Learning, Robotics, and Analytics:
-
-{% include ai_links.html %}
+{% include devops_links.html %}
