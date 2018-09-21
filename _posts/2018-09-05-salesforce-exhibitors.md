@@ -15,12 +15,31 @@ comments: true
 
 {% include _toc.html %}
 
+## Exhibitor Sheet
+
+257 exhibitors are listed on <a target="_blank" href="https://www.salesforce.com/dreamforce/expo/">https://www.salesforce.com/dreamforce/expo</a>. <a target="_blank" href="https://www.crunchbase.com/event/dreamforce-2018#section-overview">Crunchbase assigns a ranking to each company</a>.
+
+I created <a target="_blank" href="https://docs.google.com/spreadsheets/d/1v5Tti0WFdqZrG2sY2r-Pbv7lGvIf2440iKrCZtqlLiM/edit?usp=sharing">this Google Sheet</a> and added:
+
+   * _Type of company
+   * _stars, _Rec (recommend to a friend), _CEO rating, _#revs (number of reviews) in Glassdoor
+   * _URL of company
+   * _Profile page on Salesforce
+   * _booth number at Dreamforce
+   * _YouTube account page
+   * _Twitter account URL
+   * _TFollowers (Twitter followers)
+   * _TJoinedYr (Twitter join year)
+   * _TLocation (location specified on Twitter)
+   * _TDesc (Description on Twitter account)
+
+## Videos with each exhibitor
 
 At Salesforce Dreamforce #DF18, we are recording a short video talking with each exhibitor, for posting on YouTube. I'm doing these videos for those want to be there but cannot attend the largest software convention in the world by the most beloved software company. 
 
 These videos are different because we ask a representative from each vendor the <a href="#Questions">same questions (below)</a> so we can cut an additional video featuring the best answers among all exhibitor companies. 
 
-QUESTION: Please send me contact information to them you know. We need to contact each one ahead of time to get signed releases. There are 257 exhibitors on <a target="_blank" href="https://www.salesforce.com/dreamforce/expo/">https://www.salesforce.com/dreamforce/expo</a>. <a target="_blank" href="https://www.crunchbase.com/event/dreamforce-2018#section-overview">Crunchbase assigns a ranking to each company</a>.
+QUESTION: Please send me contact information to them you know. We need to contact each one ahead of time to get signed releases. 
 
 Please review the list of questions we intend on asking (based on a review of the best questions job candidates should ask):
 
