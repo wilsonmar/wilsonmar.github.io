@@ -5,8 +5,8 @@ excerpt: "Apps and Components to add from AppExchange"
 tags: [salesforce]
 file: saleforce-apps.md
 image:
-# sf-appy-1900x500-102438
-  feature: https://user-images.githubusercontent.com/300046/44081931-2e69aeb8-9f6d-11e8-8f80-a212ae3a80b0.jpg
+# feature: sf-get-started-1900x500-166833.jpg
+  feature: https://user-images.githubusercontent.com/300046/43513032-f7cb0bd2-9539-11e8-88db-f3bff1cbfe17.jpg
   credit: Salesforce
   creditlink: https://appexchange.salesforce.com
 comments: true
