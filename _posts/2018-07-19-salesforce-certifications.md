@@ -60,20 +60,25 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
 1. Prepare to take exams remotely on your own computer by <a target="_blank" href="http://certification.force.com/pkb/articles/Public_KB/Online-Proctoring-Completing-Your-Exam-Remotely">
    downloading and installing Kryterion’s Sentinel Secure software</a>.
 
-   Alternately, pick a <a target="_blank" href="http://www.kryteriononline.com/Locate-Test-Center">
-   Kryterion test center</a> near you.
-
-2. Consider https://www.biorhythm-calculator.net/
-
 2. Register at <a target="_blank" href="https://www.webassessor.com/wa.do?page=publicHome&branding=SALESFORCE">webassessor.com</a> (SU18) 
 
-   PROTIP: You need to use a different email address than what you used to register for ASQTB or any other exam.
+   PROTIP: You need to use a different email address than what you used to register for ASQTB or any other exams also offered by Webassessor.
+   Crazy, I know, but that's what they're doing.
 
    PROTIP: Exams fees are half-off at Dreamforce conferences. For example, pay $99 instead of $200.
    Be sure to sign up under the Dreamforce category rather than the normal item.
    Retake fees are the same: $100.
 
-3. Link your Trailhead and Webassessor accounts. Different emails may be used in Trailhead and Webassessor accounts.
+3. Link your Trailhead and Webassessor accounts. 
+
+   BLAH: Different emails must be used in Trailhead and Webassessor accounts.
+
+4. When selecting a day to take the exam, consider <a target="_blank" href="https://www.biorhythm-calculator.net/">https://www.biorhythm-calculator.net</a> to pick positive days and not days when a line crosses over 0 or at the bottom.
+
+   PROTIP: If you select remote, select the Time Zone. Don't wait for the spinner icon.
+
+5. If you use a test center, pick a <a target="_blank" href="http://www.kryteriononline.com/Locate-Test-Center">
+   Kryterion test center</a> near you. Bring 2 forms of ID and the code generated on the exam confirmation email.
 
 4. Sign up for the <a target="_blank" href="http://certification.salesforce.com/credential-status-request">
    Cert Status Request</a> to receive an email that provides you with a list of all credentials you hold, your required release exams, and due dates.
@@ -88,6 +93,21 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
    Other maintenance exams will migrate to Trailhead by Feburary, 2019. See <a target="_blank" href="http://certification.force.com/pkb/articles/Public_KB/FAQ-Changes-to-Certification-Maintenance">Exam FAQ</a>.
 
    * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/maintain-your-salesforce-certifications">Maintain Your Salesforce Certification</a> [2 hrs]
+
+<a name="ExamResults"></a>
+
+## Exam Results
+
+After the exam I got an email from certification@salesforce.com with subject "Your Salesforce Certification Exam Results".
+Strangely, the email does not present a total grade, just percentage of each section.
+So to calculate my score after a failed attempt at the Administrator exam, I created <a target="_blank" href="https://docs.google.com/spreadsheets/d/1CkZyNLhDpTZJUanYWvLX9whYWnlvlN6VDO3AMCpzjRk/edit#gid=0">this Google spreadsheet:<br />
+<a target="_blank" href="https://docs.google.com/spreadsheets/d/1CkZyNLhDpTZJUanYWvLX9whYWnlvlN6VDO3AMCpzjRk/edit#gid=0"><img alt="sf-admin-results-sheet-435x326-43348.jpg" width="435" src="https://user-images.githubusercontent.com/300046/45868367-be1f1780-bd42-11e8-889c-4cf21cd74f10.jpg"></a>
+
+The score is summarized at the lower-right corner.
+
+PROTIP: If you want to calculate your own score, in the email you got, highlight and copy the lines under "Section-Level Scoring:" and paste in cell A2, replacing the sample.
+
+NOTE: Formula `=REGEXEXTRACT(A2,"[^ ]+$")` in column B references column A to extract the percentage number.
 
 <hr />
 
@@ -340,11 +360,11 @@ The highest level of certification costs $6,000 plus travel to a Salesforce offi
 
 ## Partners 
 
-Salesforce requirs of their Partners to employ people with these certifications:
+Salesforce requires its Partners to employ people with these certifications:
 
+   *  <a href="#CSPD1">Platform Developer I</a>
    *  <a href="#SalesCloud">Sales Cloud Consultant</a>
    *  <a href="#ServiceCloud">Service Cloud Consultant</a>
-   *  <a href="#CSPD1">Platform Developer I</a>
    *  <a href="#CommunityCloud">Community Cloud Consultant</a>
    *  <a href="#MarketingCloud">Marketing Cloud Consultant</a>
    *  <a href="#Pardot1">Pardot Consultant</a>
