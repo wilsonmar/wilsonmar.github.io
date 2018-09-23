@@ -45,6 +45,7 @@ comments: true
    * QTC = Quote to Cash (Billing workflow)
    * SaaS = Software as a Service
    * SAQL = Salesforce Analytics Query Language
+   * SFCC = Salesforce Commerce Cloud (based on Demandware + CloudCraze acquisitions not built on force.com)
    * SFDC = an acronym for "Salesforce dot com"
    * SFMC = Salesforce Marketing Cloud
    * SOQL = Salesforce Object Query Language <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm">*</a>

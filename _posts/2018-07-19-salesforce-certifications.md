@@ -15,7 +15,11 @@ comments: true
 <hr />
 
 {% include _toc.html %}
-
+  creditlink: 
+<!-- # sf-appy-1900x500-102438
+  feature: https://user-images.githubusercontent.com/300046/44081931-2e69aeb8-9f6d-11e8-8f80-a212ae3a80b0.jpg
+  credit: Salesforce
+-->
 
 This page contains the list of resources about certification for each role:
 

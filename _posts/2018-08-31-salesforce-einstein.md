@@ -103,6 +103,9 @@ https://appexchange.salesforce.com/listingDetail?listingId=a0N3000000Dq45IEAR
 
 https://developer.salesforce.com/events/webinars/build-smarter-apps-einstein-platform-services
 
+https://venturebeat.com/2018/09/19/salesforce-announces-einstein-voice-a-voice-assistant-for-enterprises/
+
+
 ### Salesforce Social Studio 
 
 Salesforce Social Studio integrates with Einstein Vision enable you to "visually listen" to detect attributes about an image, such as detecting your brand logo or that of your competitor in photos in order to learn more about the subjects' lifestyles and preferences.

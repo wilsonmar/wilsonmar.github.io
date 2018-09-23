@@ -36,6 +36,8 @@ The tower is built on top of former landfill in an earthquake-prone area.
 And it's certified LEED Platinum -- the highest rating in the US. 
 It's on Mission between Freemont and 1st (South of the Montgomery BART station), a part of a whole downtown $6 billion re-development that includes the 5-acre Salesforce Park above the Transbay Transit Center public transportation hub. 
 
+BTW Benoiff has been working with the city and other businesses to get all 6,500 homeless people off the streets of San Francisco.
+
 Salesforce corporate address is "The Landmark @ One Market".
 See other https://www.salesforce.com/company/locations/
 

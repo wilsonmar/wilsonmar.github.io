@@ -28,6 +28,23 @@ PROTIP: <a target="_blank" href="https://appexchange.salesforce.com/listingDetai
 
 <a target="_blank" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N30000009wZkUEAU">Layout Page free app</a> from Clerisoft in 2015 converts any Salesforce Page Layout (Standard OR Custom) into a Standard Visualforce Page in just 3 steps.
 
+There is more "smarts" with Master-detail vs. lookup:
+* Only 2 are allowed per object (vs 25 lookups)
+* Access to parent determines access to children.
+* All users who can access a specific parent record will also has access to all the related child records (parent has private OWD setting and has sharing rules on top of it)
+* Activities tagged to child records has to be shown on parent account too
+* When the parent record is deleted all the child records attached are deleted.
+* Rollup summary fields to parent based on  SUM, AVG, MIN of child records
+* A child of one master detail relationship cannot be the parent of another.
+
+References:
+* https://www.youtube.com/watch?v=fUD4MzgA0gk
+* http://certifiedondemand.com/lookup-or-master-detail-relationship-in-salesforce
+* http://www.salesforcetutorial.com/object-relationships-in-salesforce/
+* https://help.salesforce.com/HTViewHelpDoc?id=relationships_considerations.htm
+* https://help.salesforce.com/HTViewHelpDoc?id=overview_of_custom_object_relationships.htm
+* https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/relationships_among_objects.htm
+
 
 ## Wizard vs Loader
 
@@ -227,11 +244,16 @@ A backup file is a CSV file for each object, consists of many : one for each obj
 
 ![sf-backup-objects-598x410-28455](https://user-images.githubusercontent.com/300046/44672521-ed619380-a9e5-11e8-9976-992d85a3145d.jpg)
 
-Export does not include any of your metadata -- critical in rebuilding custom work and relationships. 
+* Export does not include any of your metadata (critical in rebuilding custom work and relationships).
+* Export does not include attached files. 
+* Export can take a week or more to process through the queue.
+* Exports are not allowed from sandboxes.
+<br /><br />
 
 More frequent backups can occur using a 3rd party app on AppExchange, such as
 <a target="_blank" href="https://www.ownbackup.com/">ownbackup.com</a>
 
+https://reflectionenterprise.com/salesforce-data-export/
 
 ## Data Quality
 

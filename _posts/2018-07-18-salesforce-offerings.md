@@ -64,14 +64,13 @@ Salesforce automation saves time by salespeople so they can sell more.
 
 ### 3rd-party use-cases
 
-Next I'll show how Salesforce has structured its services and pricing for use by many of the Fortune 500 and by startups.
-And why Salesforce is used by many different industries because of its automation out-of-the-box and flexibility.
+Next I'll show how Salesforce has structured its services and pricing for use by organizations large and small in many different industries.
+Among its customers on the Fortune 500 is Amazon, Google (Alphabet), T-Mobile, Comcast, Adiddas, General Electric, Wells Fargo, Philips, American Red Cross, etc.
 
-Salesforce is called the "Intelligent Customer Success Platform" 
-
+Salesforce is used by because of its automation out-of-the-box and flexibility.
 As companies grow, they can use more features.
 
-GE, Wells Fargo, Philips, American Red Cross, Comcast
+Salesforce is called the "Intelligent Customer Success Platform" 
 
 Small organizations can benefit from Salesforce because all they need to get organized is an internet connection and a browser.
 Those companies don't have server rooms to build, power, refrigerate, and guard. In several places for disaster recovery.
@@ -81,7 +80,8 @@ With Salesforce, companies pay only what they use for the number of employees.
 You don't pay for idle hardware.
 But when you need, you can scale quickly, globally, without all the effort and time that goes with buying hardware.
 
-Being on the cloud, all data is in one connected platform to do work, enabling teamwork globally, anytime.
+Salesforce is completely run on the cloud, with no on-premises option.
+So all data is in one connected platform to do work, enabling teamwork globally, anytime.
 That's why some companies adopt Salesforce because their customers say they will have more confidence with their capability if they use Salesforce.
 Or they adopt Salesforce to keep up with competitors who are doing more with less people.
 
@@ -235,6 +235,7 @@ Salesforce, as a company, owns several domain names (some product offerings have
       * https://partners.salesforce.com/
       * https://trust.salesforce.com/en/
 
+      * https://_____-dev-ed.my.salesforce.com/ are created from Developer Edition accounts for its pod. So if you're on the na31 pod, see <a target="_blank" href="https://na31.salesforce.com/domainname/DomainName.apexp">https://na31.salesforce.com/domainname/DomainName.apex</a>
       * https://<em>custom-brand-subdomain</em>.my.salesforce.com/ are production custom <a target="_blank" href="https://help.salesforce.com/articleView?id=domain_name_overview.htm&type=5">My Domains</a>, which is used for Single sign-on (SSO) with SAML or external identity provider Facebook, Google, LinkedIn, Twitter. It is also used (required) by Lightning UX. See <a target="_blank" href="http://salesforce.vidyard.com/watch/oFQ26FCXPVOA90xZaVDDjA">this video</a>.
       <br /><br />
 
@@ -434,6 +435,7 @@ https://developer.salesforce.com/page/Apex_Code_Best_Practices
 <tr valign="top"><td><a target="_blank" href="https://help.salesforce.com/articleView?id=overview_storage.htm&type=5">Max File storage/org</a></td><td align="right"> -</td><td align="right">1 GB</td><td align="right">?</td><td align="right">10 GB</td><td align="right">10 GB</td></tr> 
 <tr valign="top"><td>Max File storage/user</td><td align="right"> -</td><td align="right">512 MB</td><td align="right">512 MB</td><td align="right">2 GB</td><td align="right">2 GB</td></tr> 
 <tr valign="top"><td>Validation Rules/user</td><td align="right"> 100</td><td align="right">100</td><td align="right">100</td><td align="right">100</td><td align="right">500</td></tr> 
+<tr valign="top"><td>Backup frequency days</td><td align="right">29</td><td align="right">29</td><td align="right">7</td><td align="right">7</td><td align="right">7</td></tr> 
 </table>
 
 <a target="_blank" href="https://help.salesforce.com/articleView?id=overview_other_editions.htm&type=5">Salesforce editions no longer sold</a> include: Contact Manager, Group, Personal, Performance, or Database.com.
