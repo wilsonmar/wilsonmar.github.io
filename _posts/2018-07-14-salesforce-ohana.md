@@ -46,7 +46,7 @@ See other https://www.salesforce.com/company/locations/
 
 ## Financials
 
-Salesforce has not been profitable historically, but its market value (stock price x shares) is growing.
+Salesforce has not been profitable historically, but its market value (stock price x shares) is among the fastest growing companies.
 The company has seen a consistent growth rate of 35% year-over-year, unrivaled in the stock market:
 
 <a target="_blank" href="https://www.nasdaq.com/symbol/crm/stock-chart?intraday=off&timeframe=10y&charttype=mountain&splits=off&earnings=off&movingaverage=None&lowerstudy=volume&comparison=off&index=&drilldown=off&sDefault=true">

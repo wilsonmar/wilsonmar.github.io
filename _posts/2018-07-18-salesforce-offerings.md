@@ -41,7 +41,7 @@ I'll then show you real examples of several implementations.
 How do your salespeople work?
 
    * How do they get leads? (target potential customers)
-   * How do they prioritize what leads they work on?
+   * How do they prioritize what leads they work on? How do they focus on key accounts?
    * What do they have to do to get approval?
    * How much time does it take to do after-sale work like generating contracts and other back-office work?
    * What statistics do sales managers have to make decisions and anticipate customer needs?
