@@ -21,12 +21,22 @@ Salesforce users are able to enjoy the productivity gains from advances in AI qu
 
 ## The Salesforce advantage in AI
 
-Unlike other companies, which are building AI capabilties, then integrating them into their products,
+Unlike many other companies which have customer-built systems, building AI capabilties requires hiring expers, then integrating AI into existing systems,
 Salesforce users already have data structured and stored for use by AI.
 
-Einstein can be added to process existing data. For example, text users enter into a service request form can be designated for analysis. The Einstein Intent API processes the text to automatically determine how to routed the request to the correct department.
+Einstein can be "simply" added to process existing data. For example, text users enter into a service request form can be designated for analysis. The Einstein Intent API processes the text to automatically determine how to routed the request to the correct department.
 
-The Einstein Intent API <strong>categorizes</strong> unstructured text into <strong>user-defined labels</strong> to better understand what users are trying to accomplish. Use this API to analyze text from emails, chats, or web forms to: Determine which products prospects are interested in, and send customer inquiries to the appropriate sales person. Route service cases to the correct agents or departments, or provide self-service options. Understand customer posts to provide personalized self-service in your communities.
+## Salesforce + IBM Watson
+
+The pool of top people who can build AI is limited, and so expensive.
+https://www.linkedin.com/pulse/einstein-my-dear-watson-predicted-salesforce-joins-ibm-cummins/
+
+So Salesforce has partnered up with IBM.<a target="_blank" href="https://developer.salesforce.com/blogs/2018/09/discover-whats-next-for-ibm-at-dreamforce-2018.html">*</a>
+
+https://github.com/watson-developer-cloud/salesforce-sdk
+is a Salesforce library for Salesforce Apex to communicate with IBM Watson using REST APIs to solve complex problems.
+See http://www.ibm.com/watson/developercloud/
+
 
 ## Offerings
 
@@ -51,6 +61,8 @@ The "AI-Powered" Einstein features listed in the <a target="_blank" href="https:
 
    * <a href="#EinsteinObjectDetection">Object Detection</a> (image recognition)
    * <a href="#EinsteinBots">Bots</a>
+
+The Einstein Intent API <strong>categorizes</strong> unstructured text into <strong>user-defined labels</strong> to better understand what users are trying to accomplish. Use this API to analyze text from emails, chats, or web forms to: Determine which products prospects are interested in, and send customer inquiries to the appropriate sales person. Route service cases to the correct agents or departments, or provide self-service options. Understand customer posts to provide personalized self-service in your communities.
 
 <hr />
 
@@ -243,14 +255,6 @@ Now paste the Token in your API form.
 Shubha Nabar, Director, Data Science (SalesforceIQ):
 
    * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=wrWADRbjmS4&t=2m11s">at Opening Keynote Oct 5, 2016</a> [5:16]
-
-## IBM Watson
-
-https://developer.salesforce.com/blogs/2018/09/discover-whats-next-for-ibm-at-dreamforce-2018.html
-
-https://github.com/watson-developer-cloud/salesforce-sdk
-is a Salesforce library for Salesforce Apex to communicate with IBM Watson using REST APIs to solve complex problems.
-See http://www.ibm.com/watson/developercloud/
 
 
 ## Learning resources
