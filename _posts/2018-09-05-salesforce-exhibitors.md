@@ -26,6 +26,7 @@ I created <a target="_blank" href="https://docs.google.com/spreadsheets/d/1v5Tti
 
    * _URL of company
    * _Profile page on Salesforce
+   * _LinkedIn company URL
    * _booth number at Dreamforce
 
    * _YouTube account page
