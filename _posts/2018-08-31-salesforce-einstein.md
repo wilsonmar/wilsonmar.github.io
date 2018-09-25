@@ -26,6 +26,10 @@ Salesforce users already have data structured and stored for use by AI.
 
 Einstein can be "simply" added to process existing data. For example, text users enter into a service request form can be designated for analysis. The Einstein Intent API processes the text to automatically determine how to routed the request to the correct department.
 
+Salesforce purchased 200 data science people by its acquisition of http://www.metamind.io/
+
+Benioff has also been a lead investor in machine translation company <a target="_blank" href="http://www.linkedin.com/company/1617147">Cloudwords</a> since its seed funding days.
+
 ## Salesforce + IBM Watson
 
 The pool of top people who can build AI is limited, and so expensive.
@@ -34,11 +38,12 @@ https://www.linkedin.com/pulse/einstein-my-dear-watson-predicted-salesforce-join
 So Salesforce has partnered up with IBM.<a target="_blank" href="https://developer.salesforce.com/blogs/2018/09/discover-whats-next-for-ibm-at-dreamforce-2018.html">*</a>
 
 https://github.com/watson-developer-cloud/salesforce-sdk
-is a Salesforce library for Salesforce Apex to communicate with IBM Watson using REST APIs to solve complex problems.
+is a Salesforce library for Salesforce Apex to communicate with IBM Watson Assistant (Conversations) using REST APIs.
 See http://www.ibm.com/watson/developercloud/
 
+IBM introduced a service which automatically detects bias and explains how AI makes decisions—as the decisions are being made—runs on the IBM Cloud. IBM is open sourcing their AI bias detection and mitigation toolkit.
 
-## Offerings
+## Einstein Offerings
 
 Based on <a target="_blank" href="https://www.salesforce.com/products/einstein/features/#platform-scroll-tab?d=cta-body-promo-16">this</a>:
 
@@ -118,9 +123,10 @@ https://developer.salesforce.com/events/webinars/build-smarter-apps-einstein-pla
 https://venturebeat.com/2018/09/19/salesforce-announces-einstein-voice-a-voice-assistant-for-enterprises/
 
 
-### Salesforce Social Studio 
+### Salesforce Social Studio Vision
 
-Salesforce Social Studio integrates with Einstein Vision enable you to "visually listen" to detect attributes about an image, such as detecting your brand logo or that of your competitor in photos in order to learn more about the subjects' lifestyles and preferences.
+Salesforce Social Studio integrated with Einstein Vision was one of the first capabilities released.
+It enables users to "visually listen" for attributes about an image, such as detecting your brand logo or that of your competitor in photos in order to learn more about the subjects' lifestyles and preferences.
 
 Trailhead Projects:
 

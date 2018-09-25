@@ -17,7 +17,7 @@ comments: true
 
 ## Exhibitor Sheet
 
-257 exhibitors are listed on <a target="_blank" href="https://www.salesforce.com/dreamforce/expo/">https://www.salesforce.com/dreamforce/expo</a>. <a target="_blank" href="https://www.crunchbase.com/event/dreamforce-2018#section-overview">Crunchbase assigns a ranking to each company</a>.
+257 exhibitors are listed on <a target="_blank" href="https://www.salesforce.com/dreamforce/expo/">https://www.salesforce.com/dreamforce/expo</a>. 
 
 I created <a target="_blank" href="https://docs.google.com/spreadsheets/d/1v5Tti0WFdqZrG2sY2r-Pbv7lGvIf2440iKrCZtqlLiM/edit?usp=sharing">this Google Sheet</a> and added:
 
@@ -35,6 +35,8 @@ I created <a target="_blank" href="https://docs.google.com/spreadsheets/d/1v5Tti
    * _TJoinedYr (Twitter join year)
    * _TLocation (location specified on Twitter)
    * _TDesc (Description on Twitter account)
+
+Not included is the <a target="_blank" href="https://www.crunchbase.com/event/dreamforce-2018#section-overview">Crunchbase ranking of companies</a>.
 
 ## Videos with each exhibitor
 

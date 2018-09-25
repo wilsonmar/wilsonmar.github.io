@@ -18,6 +18,8 @@ comments: true
 
 This article is a succinct hands-on deep dive on how to get data in and out of Salesforce.
 
+3 billion transactions go through Salesforce daily.
+
 ## Data Objects
 
 <a target="_blank" title="sf-data-diagram-764x418-22034.jpg" href="https://user-images.githubusercontent.com/300046/45555383-e617f380-b7f5-11e8-850c-18ec3664a70d.jpg">
