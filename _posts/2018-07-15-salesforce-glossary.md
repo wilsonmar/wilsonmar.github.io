@@ -18,7 +18,7 @@ comments: true
 <a target="_blank" href="https://help.salesforce.com/apex/HTViewHelpDoc?id=glossary.htm">Salesforce's Glossary</a> of terms doesn't define acronyms, such as:
 
    * ABM = Account-based Marketing
-   * BOFC = Bulk Object Field Creator (http://salesforcebofc.com/ from Tech9ology)
+   * BOFC = Bulk Object Field Creator (http://salesforcebofc.com/ from Tech9logy)
    * BPMN = Business Process Modeling Notation (industry standard used in Approval Process Visualizer graphics)
    * CPQ = Configure, Price, and Quote (workflow)
    * CMS = Content Management System (for websites)

@@ -374,6 +374,10 @@ Salesforce requires its Partners to employ people with these certifications:
    *  <a href="#Pardot1">Pardot Consultant</a>
    *  <a href="#SCCCDD">Commerce Cloud Digital Developer</a>
 
+## Social
+
+https://www.linkedin.com/groups/2043240/
+
 <hr />
 
 ## More about Salesforce #

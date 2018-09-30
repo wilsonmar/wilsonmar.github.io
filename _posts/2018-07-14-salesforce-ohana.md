@@ -292,7 +292,7 @@ https://www.facebook.com/sfdcpoint/
    * <a target="_blank" href="https://twitter.com/hashtag/SalesforceTour?src=hash">#SalesforceTour</a>
    <br /><br />
 
-TrailheadDX (Developer eXperience), <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23TDX18&src=typd">#TDX18</a>
+TrailheadDX (Developer eXperience), <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23TDX18&src=typd">#TDX18</a> is May 29-30 with Bootcamp May 30-June 2.
 
 World Tour
 
@@ -322,11 +322,13 @@ Local Meetups
    * https://seattlenpsf.wordpress.com/ is the Seattle Non-profit (ask to be invited to view)
 
 
-### Dreamforce
+## Dreamforce Conference
 
 The Saturday, Sunday, and Monday before Dreamforce are <a target="_blank" href="https://www.salesforce.com/dreamforce/certification/">Bootcamp courses</a> for $2,499 (vs. $3,499 at other times).
 
-https://www.facebook.com/dreamforce/
+* https://www.facebook.com/dreamforce/
+
+* https://www.linkedin.com/groups/8354546/  Dreamforce Networking group on LinkedIn
 
 <a target="_blank" href="http://www.salesforce.com/dreamforce/">Dreamforce</a> is Salesforce's annual conference, usually <strong>4 days in September</strong> (Tuesday thru Friday).
 
@@ -337,6 +339,15 @@ https://www.facebook.com/dreamforce/
    * <a target="_blank" href="https://www.youtube.com/channel/UCMSfoJzq24tEKNfdB4GaIqg">Dreamforce videos on YouTube</a>
 
 Use <a target="_blank" href="https://dreamforce.twibbon.com/">https://dreamforce.twibbon.com</a> to make put your profile picture inside a frame, for use in social media.
+
+### Before Dreamforce
+
+The Saturday, Sunday, and Monday before Dreamforce are <a target="_blank" href="https://www.salesforce.com/dreamforce/certification/">Bootcamp courses</a> for $2,499 (vs. $3,499 at other times).
+
+* https://www.facebook.com/dreamforce/
+
+* https://www.linkedin.com/groups/8354546/  Dreamforce Networking group on LinkedIn
+
 
 Agenda Builder
 
