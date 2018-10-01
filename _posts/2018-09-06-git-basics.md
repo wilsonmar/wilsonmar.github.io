@@ -46,8 +46,7 @@ So that you can click the Pause button or drag the timing bubble on the video's 
    * <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/images/git-basics-flow-v09a-720p.mp4?raw=true">Click this link to <strong>download</strong> a video (4.5 MB mp4) of the diagram</a> (doesn't work on mobile)
 
    * Contact me to get the PowerPoint file if you have Microsoft Office 2016 suite purchased/installed.
-<!--
-https://wilsonmar.github.io/images/Git-basics-v09a.pptx
+<!-- https://wilsonmar.github.io/images/Git-basics-v09a.pptx
 
    * <a target="_blank" href="https://grastorftest.com/video.html">Click this link to pop-up a <strong>video</strong> of the diagram in another window of your default internet browser</a>
    
