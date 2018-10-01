@@ -116,7 +116,8 @@ Here is how you can use the different browser windows:
 
 1. So that you can update versions automatically later, automate client installs on Windows, by first installing <a target="_blank" href="https://choclately.org/">Chocolatey</a> using a PowerShell command:
 
-      <@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+   <pre>&LT;@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+   </pre>
 
 2. While you're on a command window, have Chocolatey install a Git client:
 
