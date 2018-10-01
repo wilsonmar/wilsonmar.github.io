@@ -29,8 +29,8 @@ Several others have created "cheat sheets", but they are structured according to
 
 Because we are covering a lot, unique to this website is this <strong>animated map</strong> of all commands and actions covered in this tutorial:
 
-<a target="_blank" title="git-browse-v7-1189x592-137966.jpg" href="https://user-images.githubusercontent.com/300046/45312507-85cd3d00-b4e9-11e8-8baf-a29cf8d504d0.jpg">
-<img alt="git-browse-v7-648x323-52563.jpg" width="648" src="https://user-images.githubusercontent.com/300046/45312569-ae553700-b4e9-11e8-92d5-93a84147db7f.jpg"><br /><small>Click on the diagram to pop-up a full-size image</small></a>
+<a target="_blank" title="git-basics-v09a-1226x606.jpg" href="https://user-images.githubusercontent.com/300046/46283982-07354f80-c52b-11e8-830f-7769be410455.jpg">
+<img alt="git-basics-v09a-648x321-53378.jpg" width="648" src="https://user-images.githubusercontent.com/300046/46283933-d523ed80-c52a-11e8-912d-5f040a2f16e4.jpg"><br /><small>Click on the diagram to pop-up a full-screen image</small></a>
 
 21/ In this tutorial, we also learn how to recover from mistakes right after we try each command.
 22/ This means we often use commands to verify status after key steps.
@@ -43,11 +43,15 @@ Because we are covering a lot, unique to this website is this <strong>animated m
 
 So that you can click the Pause button or drag the timing bubble on the video's timeline while watching:
 
+   * <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/images/git-basics-flow-v09a-720p.mp4?raw=true">Click this link to <strong>download</strong> a video (4.5 MB mp4) of the diagram</a> (doesn't work on mobile)
+
+   * Contact me to get the PowerPoint file if you have Microsoft Office 2016 suite purchased/installed.
+<!--
+https://wilsonmar.github.io/images/Git-basics-v09a.pptx
+
    * <a target="_blank" href="https://grastorftest.com/video.html">Click this link to pop-up a <strong>video</strong> of the diagram in another window of your default internet browser</a>
    
-   * <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/images/git-basics-v07.gif?raw=true">Click this link to <strong>download</strong> a video (11 MB mp4) of the diagram</a> (doesn't work on mobile)
-
-<!--<a target="_blank" href="https://www.youtube.com/embed/zeZJbb2eshM">
+<a target="_blank" href="https://www.youtube.com/embed/zeZJbb2eshM">
 Older video</a>-->
 
 BTW I'm working on a video in which I verbally narrate the video using text on this web page. Until then I have for you an animated diagram.
