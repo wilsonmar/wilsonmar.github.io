@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Salesforce exhibitors' (videos at Dreamforce)"
+title: "Salesforce exhibitors (videos at Dreamforce)"
 excerpt: "Videos of answers to the same questions"
 tags: [salesforce]
 image:

@@ -20,6 +20,14 @@ This is a hands-on deep dive immersive course to get those new to Git productive
 
 <amp-youtube data-videoid="U50-J6objfc" layout="responsive" width="480" height="270"></amp-youtube>
 
+In this tutorial, we also learn how to recover from mistakes right after we try each command.
+This means we often use commands to verify status after key steps.
+Verification steps are part of bash scripts I've created so that you can tell, on your own, whether you're typed incorrectly or whether there's some issue with the system. Having a script means you can change something to see how it affects the whole workflow. 
+The scripts are a very unique aspect that I haven't seen elsewhere.
+Another special aspect of this course are the keyboard shortcuts pros use to boost their efficiency.
+At the end of each segment we review key learnings to make sure you have mastered each skill.
+Now here's our first review: Among all these, what do you think will be the most helpful aspect of this course to you? NEXT: Let's first learn the basic actions using a Git client.
+
 
 <a name="Flowchart"></a>
 
@@ -32,12 +40,6 @@ Because we are covering a lot, unique to this website is this <strong>animated m
 <a target="_blank" title="git-basics-v09a-1226x606.jpg" href="https://user-images.githubusercontent.com/300046/46283982-07354f80-c52b-11e8-830f-7769be410455.jpg">
 <img alt="git-basics-v09a-648x321-53378.jpg" width="648" src="https://user-images.githubusercontent.com/300046/46283933-d523ed80-c52a-11e8-912d-5f040a2f16e4.jpg"><br /><small>Click on the diagram to pop-up a full-screen image</small></a>
 
-21/ In this tutorial, we also learn how to recover from mistakes right after we try each command.
-22/ This means we often use commands to verify status after key steps.
-23/ Verification steps are part of bash scripts I've created so that you can tell, on your own, whether you're typed incorrectly or whether there's some issue with the system. 24/ Having a script means you can change something to see how it affects the whole workflow. 25/ The scripts are a very unique aspect that I haven't seen elsewhere.
-26/ Another special aspect of this course are the keyboard shortcuts pros use to boost their efficiency.
-27/ At the end of each segment we review key learnings to make sure you have mastered each skill.
-28/ Now here's our first review: Among all these, what do you think will be the most helpful aspect of this course to you? NEXT: Let's first learn the basic actions using a Git client.
 
 <a name="DigramVideo"></a>
 
@@ -46,14 +48,8 @@ So that you can click the Pause button or drag the timing bubble on the video's 
    * <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/images/git-basics-flow-v09a-720p.mp4?raw=true">Click this link to <strong>download</strong> a video (4.5 MB mp4) of the diagram</a> (doesn't work on mobile)
 
    * Contact me to get the PowerPoint file if you have Microsoft Office 2016 suite purchased/installed.
-<!-- https://wilsonmar.github.io/images/Git-basics-v09a.pptx
 
-   * <a target="_blank" href="https://grastorftest.com/video.html">Click this link to pop-up a <strong>video</strong> of the diagram in another window of your default internet browser</a>
-   
-<a target="_blank" href="https://www.youtube.com/embed/zeZJbb2eshM">
-Older video</a>-->
-
-BTW I'm working on a video in which I verbally narrate the video using text on this web page. Until then I have for you an animated diagram.
+BTW I'm working on a video in which I verbally narrate the video using text on this web page. Until then I have for you an animated diagram above.
 
 ## Tools of the trade (several screens and programs)
 
@@ -180,13 +176,13 @@ Git command-line client installed</a>.
 
 <a name="shcommand"></a>
 
-## Single sh command run
+## Remote bash command run
 
 To get you started quickly:
 
 1. Copy this entire line (which may wrap around) after highlighting it:
 
-   ```sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/git-utilities/master/git-basics.sh)"```
+   ```bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/git-utilities/master/git-basics.sh)"```
 
    (Position your mouse at the beginning of the string, drage the mouse as you drag across the line, then relase at the end of the line. Press command+C to copy to your Clipboard.)
 

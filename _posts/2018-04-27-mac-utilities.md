@@ -649,8 +649,10 @@ https://support.apple.com/kb/DL75?viewlocale=en_US&locale=en_US
 Apple's Common Criteria Tools for 10.5
 
 
-## More on OSX
+<hr />
 
-This is one of a series on Mac OSX:
+## More on macOS
+
+This is one of a series on macOS (Mac OSX):
 
 {% include mac_links.html %}
