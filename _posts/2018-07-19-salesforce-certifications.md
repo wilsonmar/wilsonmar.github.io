@@ -47,11 +47,16 @@ The Average salary are from <a target="_blank" href="https://trailhead.salesforc
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/43396367-84f9318c-93be-11e8-9389-f0e30f5c1419.jpg">
 <img alt="sf-architectjourney-799x627-86747.jpg" width="799" src="https://user-images.githubusercontent.com/300046/43396367-84f9318c-93be-11e8-9389-f0e30f5c1419.jpg"></a>
 
-From <a target="_blank" href="https://twitter.com/SantanuBoral">@SantanuBoral</a> 3 Oct 2018:<br />
-<a target="_blank" title="sf-cert-path-1920x1076-145082.jpg" href="https://user-images.githubusercontent.com/300046/46624542-50b70900-caee-11e8-995a-04e7d3889560.jpg">
-<img alt="sf-cert-path-648x364-30734.jpg" width="648" src="https://user-images.githubusercontent.com/300046/46624493-2cf3c300-caee-11e8-8c60-2e32b57cd432.jpg"></a>
+<a target="_blank" href="https://twitter.com/SantanuBoral">@SantanuBoral</a> on <a target="_blank" href="https://santanuboral.blogspot.com/2018/10/effective-certification-path.html">5 Oct 2018</a> analyzed overlaps among certs to come up with solid lines linking his recommended sequence to certification:<br />
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/46637364-20d12b00-cb19-11e8-8190-53e6c6e25055.png">
+<img alt="sf-cert-seq-1600x879-165387.jpg" width="648" src="https://user-images.githubusercontent.com/300046/46637364-20d12b00-cb19-11e8-8190-53e6c6e25055.png"></a>
 
-By contrast, Mike Wheeler and David Liu advise Developers to first pass the <a href="#Administrator">Administrator certification</a>.
+Dashed lines represent optionals.
+Orange boxes highlight Application Architect certifications.
+Green boxes highlight System Architect certifications.
+
+Blue boxes highlight <a href="#CSPD1">Platform Developer I</a> as the pre-requisite cert.
+However, by contrast, Mike Wheeler and David Liu advise Developers to first pass the <a href="#Administrator">Administrator certification</a>.
 
 <hr />
 
