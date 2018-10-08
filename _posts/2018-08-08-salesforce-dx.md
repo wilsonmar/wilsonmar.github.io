@@ -1031,6 +1031,19 @@ https://www.youtube.com/watch?v=VSa7PgIANvs
 Continuous integration in Salesforce Using Jenkins and Git in 20 minutes
 by Jitendra Zaa Mar 22, 2015
 
+* https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000Lg5U
+Packaging 2 Beta Trailblazer Community
+
+* https://www.youtube.com/watch?v=Prlurg2ORnU&list=PLJC5QQjmffkSOVDNGPSEUIMrIrOtmBkBO&index=1
+How Everyone Can Leverage Salesforce DX Packaging
+
+* https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000HTp1
+Salesforce DX Trailblazer Community
+
+* https://developer.salesforce.com/docs/atlas.en-us.214.0.sfdx_dev.meta/sfdx_dev/sfdx_dev_dev2gp.htm
+Develop Packages (Beta)
+
+
 <hr />
 
 ## More about Salesforce #

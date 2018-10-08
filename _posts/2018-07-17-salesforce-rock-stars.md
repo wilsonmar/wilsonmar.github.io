@@ -30,7 +30,7 @@ This page lists individuals who have significant blogs, tweets, courses, or othe
 
    <a name="GolderHoodie"></a>
 
-   * Only 7 Golden Hoodies have been awarded by Salesforce, <a target="_blank" href="https://www.businessinsider.com/salesforces-golden-hoodies-are-the-rarest-of-swag-2017-11">the rarest of awardees</a>.
+   * Golden Hoodies awarded by Salesforce, <a target="_blank" href="https://www.businessinsider.com/salesforces-golden-hoodies-are-the-rarest-of-swag-2017-11">the rarest of awardees</a>. See them together at https://twitter.com/i/status/1048729421585240066
 
    <a name="TopBlogger"></a>
 
@@ -340,8 +340,8 @@ Michael Wicherski:
    * Apress BOOK: <a target="_blank" href="https://www.amazon.com/gp/product/1484232992">Beginning Salesforce Developer – December 6, 2017</a>
 
 Mike Topalovich, 9x certified Salesforce architect, developer and part time CTO in Chicago:
-   * <a target="_blank" href="http://topalovich.com/">topalovich.com</a>
-   since Aug 2007 
+   * BLOG: <a target="_blank" href="http://topalovich.com/">topalovich.com</a>
+   since Aug 2007 wrote in 2016 a series on strategies and "Patterns for Migrating from Visualforce to Lightning Components".
 
 <a name="MikeWheeler"></a>
 Mike Wheeler is the "dean" of independent Salesforce training, with several low-cost yet deep content video courses on Udemy:
@@ -510,7 +510,13 @@ Zac Otero, a factory worker who used Trailhead to train himself to become a Sale
 
 ## Groups
 
-It's one thing to have opinions, but it's quite another level to share opinions on the same platform.
+It's one thing to have opinions, but it's quite another level to share opinions on the same publishing platform.
+
+<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A0000001zan">Ladies be Architects</a> Trailblazer Community:
+   * Gemma Emmett (<a target="_blank" href="https://www.alwaysablezard.com">alwaysablezard.com</a>, <a target="_blank" href="https://twitter.com/gemziebeth">@gemziebeth</a>, 𝚂𝚘𝚕𝚞𝚝𝚒𝚘𝚗 𝙰𝚛𝚌𝚑𝚒𝚝𝚎𝚌𝚝 @𝚋𝚕𝚞𝚎𝚠𝚘𝚕𝚏 UK)
+   * Charly Prinsloo (NA) 
+   * Susannah St-Germain (NA)
+
 
 <a target="_blank" href="https://salesforcecowboys.podbean.com/">Salesforce Cowboys podcast</a> since 2018:
    * Matt Sai

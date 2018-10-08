@@ -24,8 +24,8 @@ And it's also annoying to address any person named Alexa in the room ;)
 ## Shared Devices in shared locations
 
 <a target="_blank" href="https://console.aws.amazon.com/a4b/home?region=us-east-1#/conference/add-provider"><img align="right" href="a4b-providers-224x305.jpg" width="224" src="https://user-images.githubusercontent.com/300046/46209070-f3e77180-c2e9-11e8-9160-50f3f298758e.jpg"></a>
-But an Amazon Echo device in the ceiling of a <strong>conference room</strong> enables enrolled Alexa users to use voice to control that Polycom speakerphone and say "Alexa, start the meeting" for <a target="_blank" href="https://aws.amazon.com/chime/">Amazon Chime</a> or other <strong>voice/video conferencing provider</strong>:
-* <a target="_blank" href="https://chime.aws/">chime.aws/</a> from Amazon
+An Amazon Echo device (in the ceiling of) a <strong>conference room</strong> enables users <a href="#Enrolled">enrolled in Alexa for Business</a> to use their voice to control the speakerphone and say "Alexa, start the meeting" to the Alexa skill communicating with a <strong>voice/video conferencing provider</strong>. Their marketing pages:
+* <a target="_blank" href="https://chime.aws/">chime.aws/</a> which resolves to <a target="_blank" href="https://aws.amazon.com/chime/">aws.amazon.com/chime</a>
 * <a target="_blank" href="https://www.crestron.com/">Crestron.com/</a> 
 * <a target="_blank" href="http://response.polycom.com/04-DR-PS-2017-Q4-Amazon-Alexa-LP">Polycom.com/</a> 
 * <a target="_blank" href="http://www.ringcentral.com/">RingCentral.com/</a> 
@@ -33,30 +33,23 @@ But an Amazon Echo device in the ceiling of a <strong>conference room</strong> e
 * <a target="_blank" href="https://twineholdings.com/">TwineHoldings.com/</a> 
 * <a target="_blank" href="https://www.vonage.com/">Vongage.com</a> 
 * <a target="_blank" href="https://zoom.us/">Zoom.us</a> 
+* <a target="_blank" href="https://www.fuze.com/">fuze.com</a> provides analytics and real-time intelligence, with an expanded version of caller ID that pulls information from a caller's online profiles to provide more information on the caller. It integrates with existing enterprise software services, such as Salesforce and Gmail.
 <br /><br />
-See https://aws.amazon.com/alexaforbusiness/solutions/
-
-
-
-## Worth the money?
-
-In addition to the cost of Alexa devices, Amazon charges $7 per month for each shared device plus
-$3 per month per user enrolled in an Alexa for Business account.
-
-Additionally, to host calls (of up to 100) Amazon Chime Pro users are charged $3 per day up to $15 per month. (vs. free on Google Hangouts)
-
-Vague conceptual benefits are described at <a target="_blank" href="https://aws.amazon.com/a4b">https://aws.amazon.com/a4b</a> which resolves to<br />
-   <a target="_blank" href="https://aws.amazon.com/alexaforbusiness/">https://aws.amazon.com/alexaforbusiness</a>
 
 ## Features summary
+
+Vague conceptual benefits are described in text at <br />
+<a target="_blank" href="https://aws.amazon.com/a4b">https://aws.amazon.com/a4b</a> resolves to<br />
+<a target="_blank" href="https://aws.amazon.com/alexaforbusiness/">https://aws.amazon.com/alexaforbusiness</a>
+
+See https://aws.amazon.com/alexaforbusiness/solutions/
 
 https://www.youtube.com/watch?v=u9NMQllvT3M
 Empower Your Organization with Alexa for Business
 Apr 12, 2018
 It's part of the <a target="_blank" href="https://pages.awscloud.com/aws-innovate-ml.html?sc_channel=EL&sc_campaign=Explainer_2018_vid&sc_medium=YouTube&sc_content=video2331&sc_detail=MACHINELEARNING&sc_country=US">AWS INNOVATE SPECIAL EDITION - MACHINE LEARNING videos</a>.
 
-Eric ChenMou explains how to 
-<a target="_blank" href="https://www.youtube.com/watch?v=JJFDQ7rXxvc&t=2m20s">Look up information using the Wikipedia public Skill</a>
+Eric ChenMou explains how to <a target="_blank" href="https://www.youtube.com/watch?v=JJFDQ7rXxvc&t=2m20s">Look up information using the Wikipedia public Skill</a>
 
 Dial phones by name?
 
@@ -64,7 +57,18 @@ I imagine in the future, Amazon can also control lights and projectors, take not
 
 When <a target="_blank" href="https://www.amazon.com/dp/B0753K4CWG">Alexa Auto</a> becomes widely available, Salespeople would be able to debrief in-person calls.
 
-## A4B Account
+
+## Alexa for Business pricing
+
+Amazon uses "Alexa for Business" accounts to manage users and the Alexa skills they can use in rooms.
+A4B accounts are charged $7 per month for each <strong>shared device</strong> (in addition to the cost of Alexa devices) plus $3 per month per user enrolled in an Alexa for Business account.
+
+Additionally, to host calls (of up to 100 participants at a time) Amazon Chime Pro users are charged $3 per day up to $15 per month. (vs. free on Google Hangouts)
+
+
+<a name="Enrolled"></a>
+
+## Create A4B Account
 
 1. PROTIP: To differentiate browser defaults, use a different browser (such as Safari) to work with your Alexa for business account than your personal account (using Google Chrome). That or open different Incognito windows.
 
@@ -74,12 +78,11 @@ When <a target="_blank" href="https://www.amazon.com/dp/B0753K4CWG">Alexa Auto</
 
    PROTIP: As of this writing (Sep. 2018), A4b is only supported in the <strong>US East (N. Virginia)</strong>.
 
-
 3. "Get Started" by creating an Alexa for Business account 
 
    https://console.aws.amazon.com/a4b/home?region=us-east-1#/welcome
 
-   The ARN (Amazon Resource Number) for one or more AWS Alexa for Business accounts to which you want to grant access to the private skill.
+   PROTIP: This generates the ARN (Amazon Resource Number) for one or more AWS Alexa for Business accounts to which you want to grant access to the private skill.
 
 4. Fill out the deomgraphic information about you (as an individual). NOTE: I don't know the point of this.
 

@@ -20,7 +20,11 @@ PROTIP: Store maps of public transportation routes and timetables on your mobile
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/46287132-677dbe80-c536-11e8-9384-07beb4164cda.gif">
 <img alt="bart-sf-map-500x500-49171.gif" width="200" src="https://user-images.githubusercontent.com/300046/46287132-677dbe80-c536-11e8-9384-07beb4164cda.gif"><br />Click image for pop-up full-screen</a>
 
-## AirDrop from Mac to iPhoneX
+## Cable
+
+<a target="_blank" href="">
+
+## WiFi AirDrop from Mac to iPhoneX
 
    On your iPhone X:
 
