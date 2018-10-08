@@ -16,15 +16,16 @@ comments: true
 {% include _toc.html %}
 
 
-It would be annoying for a worker to talk with his/her own Alexa in open-plan offices. 
+Those in open-plan offices would find it annoying to hear other workers talk with their own Alexa. 
 
-And it's also annoying to address any person named Alexa in the room ;)
-
+So Amazon is offering a way for several people in the same room to share use of an Echo device in the same room.
 
 ## Shared Devices in shared locations
 
 <a target="_blank" href="https://console.aws.amazon.com/a4b/home?region=us-east-1#/conference/add-provider"><img align="right" href="a4b-providers-224x305.jpg" width="224" src="https://user-images.githubusercontent.com/300046/46209070-f3e77180-c2e9-11e8-9160-50f3f298758e.jpg"></a>
-An Amazon Echo device (in the ceiling of) a <strong>conference room</strong> enables users <a href="#Enrolled">enrolled in Alexa for Business</a> to use their voice to control the speakerphone and say "Alexa, start the meeting" to the Alexa skill communicating with a <strong>voice/video conferencing provider</strong>. Their marketing pages:
+An Amazon Echo device (in the ceiling of) a <strong>conference room</strong> enables users to control lights and room temperature just like they can at home.
+
+<a href="#Enrolled">Users enrolled in Alexa for Business</a> can use their voice to control a speakerphone and say "Alexa, start the meeting" to the Alexa skill communicating with a <strong>voice/video conferencing provider</strong>. Their marketing pages:
 * <a target="_blank" href="https://chime.aws/">chime.aws/</a> which resolves to <a target="_blank" href="https://aws.amazon.com/chime/">aws.amazon.com/chime</a>
 * <a target="_blank" href="https://www.crestron.com/">Crestron.com/</a> 
 * <a target="_blank" href="http://response.polycom.com/04-DR-PS-2017-Q4-Amazon-Alexa-LP">Polycom.com/</a> 
@@ -36,10 +37,18 @@ An Amazon Echo device (in the ceiling of) a <strong>conference room</strong> ena
 * <a target="_blank" href="https://www.fuze.com/">fuze.com</a> provides analytics and real-time intelligence, with an expanded version of caller ID that pulls information from a caller's online profiles to provide more information on the caller. It integrates with existing enterprise software services, such as Salesforce and Gmail.
 <br /><br />
 
+* Echo (the tall tube containing speakers) can now be used as a speakerphone
+* Echo Show (with the monitor) is for individual use on desks within private offices
+* Echo Dot is for controlling speakerphone devices such as Polycom
+
+
 ## Features summary
 
+BTW, it would be annoying to address any person named Alexa in the room ;) 
+But the wake word can be changed from "Alexa" to "computer", as in Star Trek since the 60's.
+
 Vague conceptual benefits are described in text at <br />
-<a target="_blank" href="https://aws.amazon.com/a4b">https://aws.amazon.com/a4b</a> resolves to<br />
+<a target="_blank" href="https://aws.amazon.com/a4b">https://aws.amazon.com/a4b</a> which resolves to<br />
 <a target="_blank" href="https://aws.amazon.com/alexaforbusiness/">https://aws.amazon.com/alexaforbusiness</a>
 
 See https://aws.amazon.com/alexaforbusiness/solutions/
@@ -57,8 +66,13 @@ I imagine in the future, Amazon can also control lights and projectors, take not
 
 When <a target="_blank" href="https://www.amazon.com/dp/B0753K4CWG">Alexa Auto</a> becomes widely available, Salespeople would be able to debrief in-person calls.
 
+https://www.youtube.com/watch?time_continue=3&v=u9NMQllvT3M
+Empower Your Organization with Alexa for Business Apr 12, 2018 [45:51]
+by Olivier Klein, Emerging Technologies Solutions Architect, Amazon Web Services, APAC
 
 ## Alexa for Business pricing
+
+Alexa for Business is similar to <a target="_blank" href="https://arstechnica.com/gadgets/2018/06/alexa-for-hotels-lets-guests-order-room-service-control-in-room-smart-devices/">"Alexa for Hospitality"</a> to control Alexa in hotel rooms, vacation rentals, and similar locations (initially at Marriott Hotels, Westin Hotels & Resorts, St. Regis Hotels & Resorts, Aloft Hotels, and Autograph Collection Hotels.) Such offerings have privacy measures: recordings of Alexa commands are deleted daily.
 
 Amazon uses "Alexa for Business" accounts to manage users and the Alexa skills they can use in rooms.
 A4B accounts are charged $7 per month for each <strong>shared device</strong> (in addition to the cost of Alexa devices) plus $3 per month per user enrolled in an Alexa for Business account.

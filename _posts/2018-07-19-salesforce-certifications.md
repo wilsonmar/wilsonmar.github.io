@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Salesforce certifications (training and exams)"
-excerpt: "How to get recognized for your knowledge and persistance"
+excerpt: "To get recognized for your knowledge, skills, and persistance"
 tags: [salesforce]
 file: 2018-07-19-salesforce-certifications.md
 image:
@@ -15,22 +15,18 @@ comments: true
 <hr />
 
 {% include _toc.html %}
-  creditlink: 
+
 <!-- # sf-appy-1900x500-102438
   feature: https://user-images.githubusercontent.com/300046/44081931-2e69aeb8-9f6d-11e8-8f80-a212ae3a80b0.jpg
   credit: Salesforce
 -->
 
-This page contains the list of resources about certification for each role:
-
+This page contains the list of resources about certification for each role:<br />
 <a target="_blank" href="http://certification.salesforce.com/">http://certification.salesforce.com</a>
 
-## Technical track
+## Job Roles
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/43396367-84f9318c-93be-11e8-9389-f0e30f5c1419.jpg">
-<img alt="sf-architectjourney-799x627-86747.jpg" width="799" src="https://user-images.githubusercontent.com/300046/43396367-84f9318c-93be-11e8-9389-f0e30f5c1419.jpg"></a>
-
-By level of technicality:
+Since multiple certifications are a "thing" among Saleforce practioners, here is a list of how many exams there, by job title:
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom" align="left"><th> Seq. </th><th> #exams </th><th> Position </th><th> Avg. Salary </th></tr>
@@ -48,12 +44,14 @@ By level of technicality:
 
 The Average salary are from <a target="_blank" href="https://trailhead.salesforce.com/trails/build-your-career-with-salesforce-skills/modules/career-development-planning/units/explore-career-options/">Career Pathways</a> from an unknown point back in time. Use it as relative comparisons.
 
-PROTIP: Developers are advised to first pass the <a href="#Administrator">Administrator certification</a>.
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/43396367-84f9318c-93be-11e8-9389-f0e30f5c1419.jpg">
+<img alt="sf-architectjourney-799x627-86747.jpg" width="799" src="https://user-images.githubusercontent.com/300046/43396367-84f9318c-93be-11e8-9389-f0e30f5c1419.jpg"></a>
 
-From <a target="_blank" href="https://twitter.com/MarkTossell">@MarkTossell</a>:<br />
+From <a target="_blank" href="https://twitter.com/SantanuBoral">@SantanuBoral</a> 3 Oct 2018:<br />
 <a target="_blank" title="sf-cert-path-1920x1076-145082.jpg" href="https://user-images.githubusercontent.com/300046/46624542-50b70900-caee-11e8-995a-04e7d3889560.jpg">
 <img alt="sf-cert-path-648x364-30734.jpg" width="648" src="https://user-images.githubusercontent.com/300046/46624493-2cf3c300-caee-11e8-8c60-2e32b57cd432.jpg"></a>
 
+By contrast, Mike Wheeler and David Liu advise Developers to first pass the <a href="#Administrator">Administrator certification</a>.
 
 <hr />
 
@@ -219,10 +217,11 @@ Follow on Twitter:
 (which includes database administrators):
 
 <a name="CSPD1"></a>
-<a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperI.pdf">Official PDF -  Certified Salesforce Platform Developer I </a>
+<a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperI.pdf">Official PDF -  Certified Salesforce Platform Developer I (PD1)</a>
+does not require programming.
 
 <a name="CSPD2"></a>
-<a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperII.pdf">Official PDF -  Certified Salesforce Platform Developer II</a>
+<a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperII.pdf">Official PDF -  Certified Salesforce Platform Developer II (PD2)</a>
 
 <a name="SCCCDD"></a>
 <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedCommerceCloudDigitalDeveloper.pdf">Official PDF -  Salesforce Certified Commerce Cloud Digital Developer</a>
