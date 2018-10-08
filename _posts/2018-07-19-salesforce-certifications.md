@@ -23,7 +23,7 @@ comments: true
 
 This page contains the list of resources about certification for each role:
 
-http://certification.salesforce.com/
+<a target="_blank" href="http://certification.salesforce.com/">http://certification.salesforce.com</a>
 
 ## Technical track
 
@@ -33,10 +33,10 @@ http://certification.salesforce.com/
 By level of technicality:
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom" align="left"><th> Seq. </th><th> # </th><th> Position </th><th> Avg. Salary </th></tr>
+<tr valign="bottom" align="left"><th> Seq. </th><th> #exams </th><th> Position </th><th> Avg. Salary </th></tr>
 <tr valign="top"><td> 1. </td><td> 1 </td><td> <a href="#Salespeople">Sales professional (user)</a></td><td align="right">$90,275</td></tr>
-<tr valign="top"><td> 2. </td><td> 3 </td><td> <a href="#Marketing">Marketing</a></td><td align="right">$85,627</td></tr>
 <tr valign="top"><td> - </td><td> - </td><td> Business Analyst</td><td align="right">$85,529</td></tr>
+<tr valign="top"><td> 2. </td><td> 3 </td><td> <a href="#Marketing">Marketing</a></td><td align="right">$85,627</td></tr>
 <tr valign="top"><td> 3. </td><td> 2 </td><td> <a href="#Administrator">Administrator</a></td><td align="right">$88,230</td></tr>
 <tr valign="top"><td> 4. </td><td> 4 </td><td> <a href="#Developer">Developer</a></td><td align="right">$112,620</td></tr>
 <tr valign="top"><td> 5. </td><td> 7 </td><td> <a href="#SolutionConsultant">Solution Consultant</a></td></tr>
@@ -46,12 +46,14 @@ By level of technicality:
 <tr valign="top"><td></td><td colspan="2"> <strong>27 total</strong> </td></tr>
 </table>
 
+The Average salary are from <a target="_blank" href="https://trailhead.salesforce.com/trails/build-your-career-with-salesforce-skills/modules/career-development-planning/units/explore-career-options/">Career Pathways</a> from an unknown point back in time. Use it as relative comparisons.
+
 PROTIP: Developers are advised to first pass the <a href="#Administrator">Administrator certification</a>.
 
-PROTIP: Beware of the age of each resource, the version each training class was created. 
-Salesforce is undergoing rapid change in branding (to Lightning and DX plus Einstein).
+From <a target="_blank" href="https://twitter.com/MarkTossell">@MarkTossell</a>:<br />
+<a target="_blank" title="sf-cert-path-1920x1076-145082.jpg" href="https://user-images.githubusercontent.com/300046/46624542-50b70900-caee-11e8-995a-04e7d3889560.jpg">
+<img alt="sf-cert-path-648x364-30734.jpg" width="648" src="https://user-images.githubusercontent.com/300046/46624493-2cf3c300-caee-11e8-8c60-2e32b57cd432.jpg"></a>
 
-Average salaries are from <a target="_blank" href="https://trailhead.salesforce.com/trails/build-your-career-with-salesforce-skills/modules/career-development-planning/units/explore-career-options/">Career Pathways</a> from an unknown point back in time. Use it as relative comparisons.
 
 <hr />
 
@@ -377,6 +379,10 @@ Salesforce requires its Partners to employ people with these certifications:
 ## Social
 
 https://www.linkedin.com/groups/2043240/
+
+PROTIP: Beware of the age of each resource, the version each training class was created. 
+Salesforce is undergoing rapid change in branding (to Lightning and DX plus Einstein).
+
 
 <hr />
 
