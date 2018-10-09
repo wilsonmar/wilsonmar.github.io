@@ -15,17 +15,30 @@ comments: true
 
 {% include _toc.html %}
 
+This article focuses specifically on use of Alexa by <strong>Salesforce</strong> users.
+When <a target="_blank" href="https://www.amazon.com/dp/B0753K4CWG">Alexa Auto</a> hardware becomes widely available with skills, Salespeople would be able to verbally retrieve and enter information in Salesforce.
+
+The Alexa toolkit for Salesforce is a part of a <a target="_blank" href="https://www.salesforce.com/campaign/aws/">whole alliance with AWS</a> Cloud and other tech from Amazon.
+
+https://trailhead.salesforce.com/en/modules/alexa-development-basics/units/get-started-with-alexa
+
+
+## Shared Devices in shared locations
 
 Those in open-plan offices would find it annoying to hear other workers talk with their own Alexa. 
 
 So Amazon is offering a way for several people in the same room to share use of an Echo device in the same room.
 
-## Shared Devices in shared locations
+An Amazon Echo device in a <strong>conference room</strong> enables users to control lights (via a Phillips Hue bulb) and room temperature (via a Nest thermostat) just like they can at home:
+* Echo (the tall tube containing speakers) can be used as a speakerphone
+* Echo Show (with the monitor) is for individual use on desks within private offices
+* Echo Dot is for controlling speakerphone devices such as Polycom
+
+You can use your voice to control a speakerphone and say 
+* "Alexa, start the meeting" to the Alexa skill communicating through a <a target="_blank" href="https://aws.amazon.com/alexaforbusiness/solutions/">voice/video conferencing provider</a>. 
 
 <a target="_blank" href="https://console.aws.amazon.com/a4b/home?region=us-east-1#/conference/add-provider"><img align="right" href="a4b-providers-224x305.jpg" width="224" src="https://user-images.githubusercontent.com/300046/46209070-f3e77180-c2e9-11e8-9160-50f3f298758e.jpg"></a>
-An Amazon Echo device (in the ceiling of) a <strong>conference room</strong> enables users to control lights and room temperature just like they can at home.
-
-<a href="#Enrolled">Users enrolled in Alexa for Business</a> can use their voice to control a speakerphone and say "Alexa, start the meeting" to the Alexa skill communicating with a <strong>voice/video conferencing provider</strong>. Their marketing pages:
+Their marketing pages:
 * <a target="_blank" href="https://chime.aws/">chime.aws/</a> which resolves to <a target="_blank" href="https://aws.amazon.com/chime/">aws.amazon.com/chime</a>
 * <a target="_blank" href="https://www.crestron.com/">Crestron.com/</a> 
 * <a target="_blank" href="http://response.polycom.com/04-DR-PS-2017-Q4-Amazon-Alexa-LP">Polycom.com/</a> 
@@ -35,49 +48,61 @@ An Amazon Echo device (in the ceiling of) a <strong>conference room</strong> ena
 * <a target="_blank" href="https://www.vonage.com/">Vongage.com</a> 
 * <a target="_blank" href="https://zoom.us/">Zoom.us</a> 
 * <a target="_blank" href="https://www.fuze.com/">fuze.com</a> provides analytics and real-time intelligence, with an expanded version of caller ID that pulls information from a caller's online profiles to provide more information on the caller. It integrates with existing enterprise software services, such as Salesforce and Gmail.
+* Google Hangouts
 <br /><br />
 
-* Echo (the tall tube containing speakers) can now be used as a speakerphone
-* Echo Show (with the monitor) is for individual use on desks within private offices
-* Echo Dot is for controlling speakerphone devices such as Polycom
+PROTIP: Should Echos be mounted in the <strong>ceiling</strong> (so they don't "walk away")? Consider 
+<a target="_blank" href="https://arstechnica.com/gadgets/2018/06/alexa-for-hotels-lets-guests-order-room-service-control-in-room-smart-devices/">this</a>:
+<a target="_blank" href="https://www.amazon.com/alexaforhospitality">"Alexa for Hospitality"</a> to control Alexa in hotel rooms, vacation rentals, and similar locations. Initial installers (at Marriott Hotels, Westin Hotels & Resorts, St. Regis Hotels & Resorts, Aloft Hotels, and Autograph Collection Hotels) are anticipating that some guests would prefer them removed from their room.
+The offering also has privacy measures such as deletion of Alexa command recordings daily or as commanded.
 
+<a name="a4b"></a>
 
-## Features summary
+## Alexa for Business Console UI
+
+Vague conceptual benefits are described in text at <br />
+<a target="_blank" href="https://aws.amazon.com/a4b">https://aws.amazon.com/a4b</a> acronymn resolves to<br />
+<a target="_blank" href="https://aws.amazon.com/alexaforbusiness/">https://aws.amazon.com/alexaforbusiness</a>
+
+   <img align="right" alt="a4b-console-menu-199x511-11688.jpg" width="199" src="https://user-images.githubusercontent.com/300046/46208438-f9dc5300-c2e7-11e8-8c2d-5381ba0f0be5.jpg">
+
+"Alexa for Business" accounts are used to manage <strong>users</strong> and what Alexa <a href="#Skills">skills</a> they can use in specific <strong>rooms</strong>.
+The Alexa for Business  Console UI is shown at right.
+
+A4B accounts are charged $7 per month for each <strong>shared device</strong> (in addition to the cost of Alexa devices) plus $3 per month per user enrolled in an Alexa for Business account. (versus free for home use)
+
+Additionally, to host calls (of up to 100 participants at a time) Amazon Chime Pro users are charged $3 per day up to $15 per month. (vs. free on Google Hangouts)
+
+Having <strong>room profiles</strong> enables skills to fill in context in commands such as:
+
+* "Alexa, set the temperature to 22 degrees" (Centigrade set as the default)
+* "Alexa, when is the next shuttle to building C"
+* "Alexa, tell the office the projector in this room is broken"
+* "Alexa, ask Team to book this room"
+<br /><br />
+
+A4B enables the use of <a href="#PrivateSkills">private skills</a> available only to the A4B account rather than publically.
+
+<a href="#SkillGroups">Skill groups</a> assembles a set of skills to make it easier to assign a whole set of skills.
+
+<amp-youtube data-videoid="u9NMQllvT3M" layout="responsive" width="480" height="270"></amp-youtube>
+In the video above, Olivier Klein, Emerging Technologies Solutions Architect within Amazon Web Services APAC, describes
+<a target="_blank" href="https://www.youtube.com/watch?time_continue=3&v=u9NMQllvT3M">
+Empower Your Organization with Alexa for Business Apr 12, 2018</a> [45:51]
+as part of the <a target="_blank" href="https://pages.awscloud.com/aws-innovate-ml.html?sc_channel=EL&sc_campaign=Explainer_2018_vid&sc_medium=YouTube&sc_content=video2331&sc_detail=MACHINELEARNING&sc_country=US">AWS INNOVATE SPECIAL EDITION - MACHINE LEARNING videos</a>.
 
 BTW, it would be annoying to address any person named Alexa in the room ;) 
 But the wake word can be changed from "Alexa" to "computer", as in Star Trek since the 60's.
 
-Vague conceptual benefits are described in text at <br />
-<a target="_blank" href="https://aws.amazon.com/a4b">https://aws.amazon.com/a4b</a> which resolves to<br />
-<a target="_blank" href="https://aws.amazon.com/alexaforbusiness/">https://aws.amazon.com/alexaforbusiness</a>
+### Skills
 
-See https://aws.amazon.com/alexaforbusiness/solutions/
+[6:16] A4B skills can include:
+* "Alexa, start the meeting"
+* "Alexa, ask the office for the guest wi-fi password" (not associated with a specific guest sponsor)
+* "Alexa, what is for lunch in the cafeteria"
+<br /><br />
 
-https://www.youtube.com/watch?v=u9NMQllvT3M
-Empower Your Organization with Alexa for Business
-Apr 12, 2018
-It's part of the <a target="_blank" href="https://pages.awscloud.com/aws-innovate-ml.html?sc_channel=EL&sc_campaign=Explainer_2018_vid&sc_medium=YouTube&sc_content=video2331&sc_detail=MACHINELEARNING&sc_country=US">AWS INNOVATE SPECIAL EDITION - MACHINE LEARNING videos</a>.
-
-Eric ChenMou explains how to <a target="_blank" href="https://www.youtube.com/watch?v=JJFDQ7rXxvc&t=2m20s">Look up information using the Wikipedia public Skill</a>
-
-Dial phones by name?
-
-I imagine in the future, Amazon can also control lights and projectors, take notes, arrange the next meeting, etc. 
-
-When <a target="_blank" href="https://www.amazon.com/dp/B0753K4CWG">Alexa Auto</a> becomes widely available, Salespeople would be able to debrief in-person calls.
-
-https://www.youtube.com/watch?time_continue=3&v=u9NMQllvT3M
-Empower Your Organization with Alexa for Business Apr 12, 2018 [45:51]
-by Olivier Klein, Emerging Technologies Solutions Architect, Amazon Web Services, APAC
-
-## Alexa for Business pricing
-
-Alexa for Business is similar to <a target="_blank" href="https://arstechnica.com/gadgets/2018/06/alexa-for-hotels-lets-guests-order-room-service-control-in-room-smart-devices/">"Alexa for Hospitality"</a> to control Alexa in hotel rooms, vacation rentals, and similar locations (initially at Marriott Hotels, Westin Hotels & Resorts, St. Regis Hotels & Resorts, Aloft Hotels, and Autograph Collection Hotels.) Such offerings have privacy measures: recordings of Alexa commands are deleted daily.
-
-Amazon uses "Alexa for Business" accounts to manage users and the Alexa skills they can use in rooms.
-A4B accounts are charged $7 per month for each <strong>shared device</strong> (in addition to the cost of Alexa devices) plus $3 per month per user enrolled in an Alexa for Business account.
-
-Additionally, to host calls (of up to 100 participants at a time) Amazon Chime Pro users are charged $3 per day up to $15 per month. (vs. free on Google Hangouts)
+Alexa for Business can also control lights and projectors, take notes, arrange the next meeting, etc. 
 
 
 <a name="Enrolled"></a>
@@ -99,11 +124,6 @@ Additionally, to host calls (of up to 100 participants at a time) Amazon Chime P
    PROTIP: This generates the ARN (Amazon Resource Number) for one or more AWS Alexa for Business accounts to which you want to grant access to the private skill.
 
 4. Fill out the deomgraphic information about you (as an individual). NOTE: I don't know the point of this.
-
-   ### Console UI
-
-   <img align="right" alt="a4b-console-menu-199x511-11688.jpg" width="199" src="https://user-images.githubusercontent.com/300046/46208438-f9dc5300-c2e7-11e8-8c2d-5381ba0f0be5.jpg">
-   Alexa for Business (a4b) adds <a target="https://docs.aws.amazon.com/a4b/latest/APIReference/API_Operations.html">Actions</a> and <a target="_blank" href="https://docs.aws.amazon.com/a4b/latest/APIReference/API_Types.html">Data types</a>.
 
    ### Room and its Calendar
 
@@ -130,21 +150,50 @@ Additionally, to host calls (of up to 100 participants at a time) Amazon Chime P
 
 2. Define a <a target="_blank" href="https://console.aws.amazon.com/a4b/home?region=us-east-1#/calendar">calendar to each room</a>
 
-## Public skills
 
-### Tact.ai
+## Skills
+
+<amp-youtube data-videoid="JJFDQ7rXxvc" layout="responsive" width="480" height="270"></amp-youtube>
+Eric ChenMou (Dec 1, 2017) explains how to <a target="_blank" href="https://www.youtube.com/watch?v=JJFDQ7rXxvc&t=2m20s">Look up information in Wikipedia using a public Skill</a> and Acronyms using private quiz skills about
+<a target="_blank" href="https://quizlet.com/143906977/aws-acronyms-flash-cards/">AWS Acronyms</a> or industry terms.
+
+Internally, Alexa for Business (a4b) adds <a target="_blank" href="https://docs.aws.amazon.com/a4b/latest/APIReference/API_Operations.html">Actions</a> and <a target="_blank" href="https://docs.aws.amazon.com/a4b/latest/APIReference/API_Types.html">Data types</a>.
+
+
+### Tact.ai skill
 
 https://www.amazon.com/Tactile-Inc-Tact/dp/B077GG5Q96
 
-https://tact.ai/
-Tact.ai changes how salespeople work at Fortune 500 customers like GE, Cisco Systems, Kelly Services and others by delivering the first omnichannel AI-powered digital assistant for sales teams. The Skill unlocks the Tact Sales Assistant on any Alexa-powered device, bringing together customer data scattered across email, calendar, CRM, LinkedIn, Zendesk and other legacy systems. Whether in your office, home, open floor or shared workspace, Tact for Alexa provides contextual insights and the type of frictionless experience that drives greater sales productivity, higher win rates, and faster sales cycles.
+<a target="_blank" href="https://tact.ai/">Tact.ai</a> brings together customer data scattered across email, calendar, CRM, LinkedIn, Zendesk and other legacy systems. Whether in your office, home, open floor or shared workspace, Tact for Alexa provides contextual insights and the type of frictionless experience that drives greater sales productivity, higher win rates, and faster sales cycles. The skill changes how salespeople work at Fortune 500 customers like GE, Cisco Systems, Kelly Services and others by delivering an omnichannel AI-powered digital assistant for sales teams. The Skill unlocks the Tact Sales Assistant on any Alexa-powered device.
 
-
-Tact is a sales experience platform that transforms a salesperson's connected device into an AI-powered smart assistant that automates administrative tasks and creates a friction-less selling experience.
+Tact.ai is a sales experience platform that transforms a salesperson's connected device into an AI-powered smart assistant that automates administrative tasks and creates a friction-less selling experience.
 
 To use the Tact skill, you need Tact enterprise license. Contact us at 1-844-HEY-TACT or drop an email to sales@tact.ai to get started.
 
 Note: This skill utilizes your voice profile to enable personalized experiences.
+
+
+<a name="SkillGroups"></a>
+
+## Skill groups
+
+Skills are associated with each room as a "<strong>skills group</strong>".
+
+Make a private skill available to shared devices by adding the private skill to a skill group,
+   then add the skill group to your rooms.
+   Alexa for Business automatically enables skills for Alexa devices assigned to rooms.
+
+https://developer.amazon.com/docs/alexa-for-business/create-and-publish-private-skills-devconsole.html
+When you are ready to make your skill available to select organizations, do the following:
+
+1. Open the skill in the developer console.
+2. Navigate to the Distribution page.
+3. Make sure you have completed all fields in the Skill Preview section for each language.
+4. In the left-hand navigation, click Availability.
+5. For the availability option, select Alexa for Business Organizations, then click Save and continue.
+6. Navigate to the Certification page. Review and correct any validation errors. All validations must pass before you can submit the skill.
+7. Click Submission, then click Submit for review.
+8. When you publish a skill privately, its status changes to Live in the developer portal. This process can take up to two hours.
 
 
 ## Private Skills
@@ -159,30 +208,10 @@ Some ideas for <strong>private</strong> skills Alexa can look up based on your v
 
 Such skills would not in the public Alexa Skills Store. To make private skills available for your users to discover and enable using their Alexa app, see http://docs.aws.amazon.com/a4b/latest/ag/private-skills.html
 
-Private skills are not subject to certification.
+Private skills are not subject to certification by Amazon.
 
-Publish a private skill.
 On the Alexa for Business Console, navigate to the Skills section.
 Find the skill in the Private Skills tab and check the box under the column "Available for users" to enable the skill for all users in the organization.
-
-## Skill groups
-
-   Skills are associated with each room as a "<strong>skills group</strong>".
-   Make a private skill available to shared devices by adding the private skill to a skill group,
-   then add the skill group to your rooms.
-   Alexa for Business automatically enables skills for Alexa devices assigned to rooms.
-
-https://developer.amazon.com/docs/alexa-for-business/create-and-publish-private-skills-devconsole.html
-When you are ready to make your skill available to select organizations, do the following:
-
-1. Open the skill in the developer console.
-2. Navigate to the Distribution page.
-3. Make sure you have completed all fields in the Skill Preview section for each language.
-4. In the left-hand navigation, click Availability.
-5. For the availability option, select Alexa for Business Organizations, then click Save and continue.
-6. Navigate to the Certification page. Review and correct any validation errors. All validations must pass before you can submit the skill.
-7. Clxick Submission, then click Submit for review.
-8. When you publish a skill privately, its status changes to Live in the developer portal. This process can take up to two hours.
 
 
 
@@ -208,13 +237,12 @@ The ASK CLI requires elements installed when the full <a target="_blank" href="h
 2. After a full backup, install XCode from within the App Store on your Mac. PROTIP: It is a large download.
 
    
-
    ### ASK CLI install
 
 3. Install <a target="_blank" href="https://developer.amazon.com/docs/smapi/ask-cli-command-reference.html">ASK CLI</a> (Alexa Skills Kit Command Line Interface) globally:
 
    <pre><strong>npm install -g ask-cli
-   ask --version</strong></pre>
+   </strong></pre>
 
    Example response:
 
@@ -223,11 +251,22 @@ The ASK CLI requires elements installed when the full <a target="_blank" href="h
 updated 1 package in 4.63s
    </pre>
 
+4. Verify version:
+
+   <pre><strong>
+   ask --version</strong></pre>
+
+   Example response:
+
+   <pre>1.4.4
+   </pre>
+
+
    ### Amazon IAM User
 
-4. PROTIP: Use Amazon IAM to define a developer account. For example "py-ec1-1".
+5. PROTIP: Use Amazon IAM to define a developer account. For example "py-ec1-1".
 
-   PROTIP: What permissions???
+6. PROTIP: What permissions???
 
    ### ask init
 
@@ -235,7 +274,7 @@ updated 1 package in 4.63s
 
    <pre>cd ~
    mkdir projects ; cd projects
-   mkdir salesforce-ask ;  cd salesforce-ask
+   mkdir salesforce-ask ; cd salesforce-ask
    </pre>
 
 5. Initialize ASK CLI to your Amazon credentials:
@@ -362,8 +401,8 @@ Getting Started with Alexa for Business
 
 * http://docs.aws.amazon.com/a4b/latest/APIReference/Welcome.html Alexa for Business API Guide
 
-* Alexa for Business Forums
-https://forums.aws.amazon.com/forum.jspa?forumID=273
+* https://forums.aws.amazon.com/forum.jspa?forumID=273
+Alexa for Business Forums
 
 * https://aws.amazon.com/alexaforbusiness/faqs/
 Alexa for Business FAQs
