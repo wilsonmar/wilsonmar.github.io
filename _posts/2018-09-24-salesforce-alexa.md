@@ -213,9 +213,8 @@ Private skills are not subject to certification by Amazon.
 On the Alexa for Business Console, navigate to the Skills section.
 Find the skill in the Private Skills tab and check the box under the column "Available for users" to enable the skill for all users in the organization.
 
-
-
 <a target="_blank" href="https://console.aws.amazon.com/a4b/home?region=us-east-1#/user-enrollment">Invite users</a>
+
 
 ## Local install on a Mac
 
