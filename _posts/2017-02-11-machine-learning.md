@@ -15,21 +15,9 @@ comments: true
 
 {% include _toc.html %}
 
-Google CEO Sundar Pichai said in 2016:
+To give you an idea of the pervasiveness of AI and Machine Learning, Google CEO Sundar Pichai said in 2016:
 
-> "Machine learning is a core, transformative way by which we’re rethinking how we’re doing everything. We are thoughtfully applying it across all our products, be it search, ads, YouTube, or Play. And we’re in early days, but you will see us — in a systematic way — apply machine learning in all these areas."
-
-Machine learning is a type of AI (Artificial Intelligence) 
-that enables computers to do things without 
-being explicitly programmed by human developers. 
-Rather than explicit programming, Machine Learning algorithms identify 
-rules through "training” based on many examples.
-
-Recommended by Elon Musk: Nick Bostrom "SuperIntelligence: Paths, Dangers, Strategies"
-
-Computers are also dealing with less structured data than before, such as
-(natural language text, images, and videos)
-rather than neat rows in tables.
+> "Machine learning is a core, transformative way by which we’re rethinking how we’re doing everything. We are thoughtfully applying it across all our products, be it search, ads, YouTube, or Play. And we’re in early days, but you will see us — in a systematic way — apply machine learning in all these areas." 
 
 
 ## Skill-building from games
@@ -37,16 +25,23 @@ rather than neat rows in tables.
 In 1997, when Deep Blue beat world chess champion Gary Kasparov, 
 it did so by "brute force", by using a supercomputer to 
 analyze the outcome of every possible move, looking further ahead than any human possibly could.
+That wasn't Machine Learning or AI.
 
-In 2016, IBM's Watson software beat top Jeopardy game champions
+But In 2016, IBM's Watson software beat top Jeopardy game champions
 by "learning" from books and encyclopedias. 
 IBM only created the program that enables the computer to learn.
 The software makes use of a "model" from <strong>example</strong> 
 inputs to make predictions
 vs. following strictly static program instructions (logic defined by human developers).
 
-In 2017, the top ranked player in the Chinese game Go was
-<a target="_blank" href="https://www.nytimes.com/2017/05/23/business/google-deepmind-alphago-go-champion-defeat.html">
+> Machine learning is a type of AI (Artificial Intelligence) that enables computers to do things <strong>without being explicitly programmed</strong> by human developers. Rather than explicit programming, Machine Learning algorithms identify rules through "training” based on many examples.
+
+<a target="_blank" href="https://www.ted.com/talks/noriko_arai_can_a_robot_pass_a_university_entrance_exam">
+<img alt="ai-todai-robot-441x441.jpg" src="https://user-images.githubusercontent.com/300046/29997360-3aeeac38-8fce-11e7-8913-fc600e6d13de.jpg"></a><br />
+The photo above is the <a target="_blank" href="http://21robot.org/news/">Todai Robot</a> in scored among the upper 20% of students in Japan's university entrance exams. Writing essays using a pen on paper. In Japanese. It knows 8,000 Japanese words, 2,000 mathematical axioms, and uses "symbolic computation" for "automatic reasoning" on 15 billion sentences. <a target="_blank" href="http://21robot.org/news/">
+Back in 2014</a>.
+
+In 2017, the top ranked player in the Chinese game Go was <a target="_blank" href="https://www.nytimes.com/2017/05/23/business/google-deepmind-alphago-go-champion-defeat.html">
 defeated by Google's AlphaGo</a>, which is based on Google's DeepMind acquisition.
 The software made moves that many considered illogical.
 BTW, Go is considered the most complex game ever invented.
@@ -60,23 +55,21 @@ The software adjusted its strategies during the tournament.
 And its algorithms for strategy and negotiation are game-independent, 
 meaning they're not just about poker, but a range of adversarial problems.
 
-<!--Texas Hold'em
+<!-- Play all games, Texas Hold'em
 -->
 
-21 August 2017, Elon Musk tweets: "OpenAI first ever to defeat world's best players in competitive eSports [dota2]. Vastly more complex than traditional board games like Chess & Go". <a target="_blank" href="https://www.youtube.com/watch?v=XbDmxEOj9OY">VIDEO</a>.
+> Rather than neat rows structured in fixed columns and rows within tables, AI computers deal with less structured data, such as (natural language text, images, and videos).
 
-<a target="_blank" href="https://www.ted.com/talks/noriko_arai_can_a_robot_pass_a_university_entrance_exam">
-<img align="right" alt="ai-todai-robot-441x441" width="441" height="441" src="https://user-images.githubusercontent.com/300046/29997360-3aeeac38-8fce-11e7-8913-fc600e6d13de.jpg"></a><a target="_blank" href="http://21robot.org/news/">Todai Robot</a> scored among the upper 20% of students in university entrance exams. Writing essays using a pen on paper. In Japanese. It knows 8,000 Japanese words, 2,000 mathematical axioms, and uses "symbolic computation" for "automatic reasoning" on 15 billion sentences. <a target="_blank" href="http://21robot.org/news/">
-Back in 2014</a>.
+21 August 2017, Elon Musk tweets: "OpenAI first ever to defeat world's best players in competitive eSports [dota2]. Vastly more complex than traditional board games like Chess & Go". <a target="_blank" href="https://www.youtube.com/watch?v=XbDmxEOj9OY">VIDEO</a>.
 
 
 ## Use Cases 
 
-For ordinary people:
+What ordinary people might appreciate:
 
-* Estimate the price of a house given real estate data (multiple regression)
-* Classify movie reviews from imdb.com into positive and negative (binary) categories
-* Classify news wire articles by topic (multi-class classification)
+* Estimate the price of a house given real estate data (multiple regression), so you don't waste time on properties that don't fit your criteria.
+* Classify movie reviews from imdb.com into positive and negative categories (such as "revenge"), to spend time only on movies you want to see.
+* Classify news wire articles by topic (multi-class classification), to save time avoiding skimming articles not of interest to you specifically.
 <br /><br />
 
 For small businesses:
@@ -626,6 +619,8 @@ Apr 26, 2017 by Dr. Joseph Reger, CTO of Fujitsu Technology Solutions
 <a target="_blank" href="https://open.sap.com/courses/ml1/items/K1SvFgJiUIExvx0APIEc6">
 Enterprise Machine Learning in a Nutshell</a>
 free class from SAP.
+
+Recommended by Elon Musk: Nick Bostrom "SuperIntelligence: Paths, Dangers, Strategies"
 
 
 ## More #

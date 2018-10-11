@@ -169,6 +169,12 @@ For $200 each, answer 65% of 60 multiple-choice/multiple-select questions in 105
    * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/force_com_admin_beginner">Force.com Admin Beginner</a>
    [8 hrs 35 mins] topics are structed according to the above list.
 
+### Platform App Builder
+
+<a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformAppBuilder.pdf">Official PDF -  Salesforce Certified Platform App Builder</a>
+does not require programming. 
+
+
 ### Advanced Administrator
 
 <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedAdvancedAdministrator.pdf">Official PDF -  Advanced Administrator Certification</a>
@@ -223,7 +229,7 @@ Follow on Twitter:
 
 <a name="CSPD1"></a>
 <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperI.pdf">Official PDF -  Certified Salesforce Platform Developer I (PD1)</a>
-does not require programming.
+was previously called the "DEV401" exam called "Certified Force.com Developer".
 
 <a name="CSPD2"></a>
 <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperII.pdf">Official PDF -  Certified Salesforce Platform Developer II (PD2)</a>
@@ -235,8 +241,6 @@ does not require programming.
    * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/develop-for-commerce-cloud">Develop for Commerce Cloud</a>
    * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/cc-overview">Sell Everywhere with Commerce Cloud</a>
    <br /><br />
-
-<a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformAppBuilder.pdf">Official PDF -  Salesforce Certified Platform App Builder</a>
 
    Some exam resources address content for both courses:
 
