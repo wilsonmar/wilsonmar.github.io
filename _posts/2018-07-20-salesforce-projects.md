@@ -137,9 +137,9 @@ PROTIP: Many of the projects introduce techniques for connecting Salesforce with
 
 ## Sample Reference apps
 
-Salesforce people have created (and maintained) <a target="_blank" href="https://trailhead.salesforce.com/sample-gallery">several reference apps</a> that demonstrate best-practices when building with Salesforce!
+Salesforce people have created (and maintained) several reference apps that demonstrate best-practices when building with Salesforce.
 
-PROTIP: Click the app name to reach directly its GitHub repository.
+PROTIP: Click the app name to reach directly its GitHub repository under <a target="_blank" href="https://github.com/trailheadapps">https://github.com/trailheadapps</a>
 
 * <a target="_blank" href="https://github.com/dreamhouseapp/dreamhouse-sfdx">DreamHouse</a> was made to be installed using <a target="_blank" href="https://wilsonmar.github.io/salesforce-dx">Salesforce DX</a>
 
@@ -150,11 +150,19 @@ PROTIP: Click the app name to reach directly its GitHub repository.
 * <a target="_blank" href="https://github.com/trailheadapps/dreaminvest">DreamInvest</a> is a financial services app to find mutual funds based on several criteria (return, sector, etc). This app demonstrates how to build configurable Lightning Components Salesforce admins can use to create sophisticated apps in App Builder. It features Performance Best Practices such a Data Caching.
 
 * <a target="_blank" href="https://github.com/trailheadapps/easy-spaces">Easy Spaces</a> is an event management app built with dynamic flows, Flow Actions, and object-agnostic Lightning components. This app also demonstrates how to structure your source code for modular distribution using unlocked packages.
+
 <br /><br />
 
 <a target="_blank" href="https://trailhead.salesforce.com/users/00550000006yDdKAAU/trailmixes/sample-gallery-trailmix">
 This Trailmix</a> features the apps listed above.
 
+Additionally, there are repos not listed in the <a target="_blank" href="https://trailhead.salesforce.com/sample-gallery">sample-gallery web page</a>:
+
+* <a target="_blank" href="https://github.com/trailheadapps/purealoe-distributor">Pure Aloe Distributor</a> 
+
+* <a target="_blank" href="https://github.com/trailheadapps/einstein-twitter-analyzer">Einstein Twitter Analyzer</a> 
+
+* <a target="_blank" href="https://github.com/trailheadapps/northern-trail-manufacturing">Northern Trail Manufacturing</a> 
 
 
 <hr />

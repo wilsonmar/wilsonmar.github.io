@@ -385,7 +385,15 @@ with 45 minutes to present.
 PROTIP: The format of what is presented are useful as mental models for newbies to keep in mind as they get an understanding of key aspects of Salesforce systems.
 VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=5EtvbPPPaK8">Mock CTA Presentation - Laptops for Schools with Gemma Emmett</a> 
 
-   * System Landscape
+   * Actor, License, Objects/Functionality
+   * [4:11] Role Hierarchy (internal and external)
+   * [5:23] System Landscape
+   * [8:15] Org. Strategy
+   * [8:33] SSO
+   * [11:12] Data Model (of objects), archival
+   * [20:47] Integrations
+   * [29:39] Functionality Customer Onboarding (schools, corporations, 3rd parties)
+   * [30:00] Functionality Transactions
    <br /><br />
 
 ## Partners 
