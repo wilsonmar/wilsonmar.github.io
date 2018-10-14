@@ -512,7 +512,7 @@ Zac Otero, a factory worker who used Trailhead to train himself to become a Sale
 
 It's one thing to have opinions, but it's quite another level to share opinions on the same publishing platform.
 
-<a target="_blank" href="http://archladies.com/">archladies.com</a> and <a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A0000001zan">Ladies be Architects Trailblazer Community forum</a>:
+<a target="_blank" href="http://archladies.com/">archladies.com</a> and <a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A0000001zan">Ladies be Architects Trailblazer Community forum</a> and <a target="_blank" href="https://www.youtube.com/channel/UCeEH6YG30ajz2jLBfYoDjRQ">YouTube videos</a> by:
    * Gemma Emmett (<a target="_blank" href="https://www.alwaysablezard.com">alwaysablezard.com</a>, <a target="_blank" href="https://twitter.com/gemziebeth">@gemziebeth</a>, 𝚂𝚘𝚕𝚞𝚝𝚒𝚘𝚗 𝙰𝚛𝚌𝚑𝚒𝚝𝚎𝚌𝚝 @𝚋𝚕𝚞𝚎𝚠𝚘𝚕𝚏 UK)
    * Charly Prinsloo (<a target="_blank" href="https://www.charly-says.com">charly-says.com</a>, <a target="_blank" href="https://twitter.com/charlyprinsloo">@charlyprinsloo</a>, 𝚂𝚘𝚕𝚞𝚝𝚒𝚘𝚗 𝙰𝚛𝚌𝚑𝚒𝚝𝚎𝚌𝚝 @Deloitte)
    * Susannah St-Germain (<a target="_blank" href="accidentaladmintoawesomearch.com">accidentaladmintoawesomearch.com</a>, <a target="_blank" href="https://twitter.com/sunnydalelow">@sunnydalelow</a>, Columbia)

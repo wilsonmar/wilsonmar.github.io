@@ -375,11 +375,18 @@ Salesforce Certified Pardot Specialist</a>
 
 ## Technical Architect
 
-The highest level of certification costs $6,000 plus travel to a Salesforce office to sit in front review board for 4 hours.
+The highest level of certification costs $6,000 plus travel to a Salesforce office to sit in front review board for 4 hours,
+with 45 minutes to present.
 
 * <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedTechnicalArchitect.pdf">Official PDF -  Salesforce Certified Technical Architect - Review Board</a>
 
 <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23journeytocta&src=typd">#JourneyToCTA</a>
+
+PROTIP: The format of what is presented are useful as mental models for newbies to keep in mind as they get an understanding of key aspects of Salesforce systems.
+VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=5EtvbPPPaK8">Mock CTA Presentation - Laptops for Schools with Gemma Emmett</a> 
+
+   * System Landscape
+   <br /><br />
 
 ## Partners 
 
