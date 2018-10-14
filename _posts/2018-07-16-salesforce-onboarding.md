@@ -96,7 +96,7 @@ PROTIP: Spending several days strait sitting in a class may seem like "drinking 
 
    PROTIP: Before you begin answering quiz questions, to avoid needing to having your answers wiped away becuase you timed out, make sure you're logged by pressing the browser <strong>Refresh</strong> icon or pressing command+R on the Mac or Ctrl+R on Windows PCs.
 
-   Projects and <a href="#Superbadges">superbadges</a> challenge you to implement a feature or solution in an org (a Trailhead Playground) without step-by-step instructions.
+   <a target="_blank" href="https://wilsonmar.github.io/salesforce-projects">superbadges</a> challenge you to implement a feature or solution in an org (a Trailhead Playground) without step-by-step instructions.
 
    More points get you higher <a target="_blank" href="https://trailhead.salesforce.com/en/trailblazer-ranks">rank</a>. PROTIP: Each rank takes double the effort from the previous rank.
    "Ranger" is the highest rank, requiring <strong>50,000 points</strong> from at least 100 badges. <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23TrailheadRanger&src=typd">#TrailheadRanger</a>
@@ -315,7 +315,7 @@ We next look into adding one of each to your Trailhead Playground.
 
 I got confused with the <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_playground_management/units/install-apps-and-packages-in-your-trailhead-playground">Install Apps and Packages in Your Trailhead Playground</a> unit of the <a target="_blank" href="https://trailhead.salesforce.com/modules/trailhead_playground_management/">Trailhead module: Trailhead Playground Management</a>.
 
-PROTIP: I recommend following <a target="_blank" href="https://trailhead.salesforce.com/help?article=Installing-a-package-or-app-to-complete-a-Trailhead-challenge">this article</a>, which is mentioned in Superbadges.
+PROTIP: I recommend following <a target="_blank" href="https://trailhead.salesforce.com/help?article=Installing-a-package-or-app-to-complete-a-Trailhead-challenge">this article</a> mentioned in the Superbadges tutorial.
 
 To add a managed app such as the Salesforce <a target="_blank" href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB00000009UeX">Dreamhouse" app</a>:
 
@@ -367,63 +367,6 @@ To add a managed app such as the Salesforce <a target="_blank" href="https://log
 ## Chrome Extensions
 
 https://www.jitendrazaa.com/blog/salesforce/top-google-chrome-extensions-for-salesforce/
-
-
-<a name="Superbadges"></a>
-
-## Superbadges
-
-   <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges">Superbadges"</a> provide skill-based, domain-level "specialist" credential (to put on resume) by completing modules of real-life business scenario for which you have to build a solution across entire feature areas. 
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_reports">
-   Reports & Dashboards</a>
-
-   PROTIP: These two are preparation for <a href="#Developer">Developer certification</a>:
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_apex">
-   Apex Specialist</a>
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_aap">
-   Advanced Apex Specialist</a> [12 hrs - 16 hrs]
-   <br /><br />
-
-### Security
-
-<a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_security">Security superbadge</a>
-
-   * Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/data_security">Data Security</a> [1 hr 50 mins] to control access to data using point-and-click security tools.
-
-   * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/identity">Secure Identity and Access Management</a> [3 hrs 55 mins]
-
-   * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/shield">Secure Your Apps with Salesforce Shield</a> [4 hrs 5 mins]
-
-   <a name="LightningSuperbadges"></a>
-   
-### Lightning superbadges
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lightning_platform_app_builder">
-   Lightning App Customization Specialist</a>
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lcf">
-   Lightning Component Framework Specialist</a>
-   builds a sophisticated app.
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex">
-   Lightning Experience Specialist</a>
-   super-charges interface and process automation.
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex_rollout">Lightning Experience Rollout Specialist</a>
-
-   <a name="SpecialtySuperbadges"></a>
-   
-### Specialist superbadges
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_process_automation">Process Automation Specialist</a>
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_business_specialist">Business Administration Specialist</a> make use of the <a target="_blank" href="https://na31.lightning.force.com/packagingSetupUI/ipLanding.app?apvId=04tf4000000x3Yd">BSX Unmanaged Package</> by CPBHE
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_integration">Data Integration Specialist</a>
-
-### Specialty superbadges
-
-   * <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_analytics_integration_specialist">
-   Einstein Analytics Data Preparation Specialist</a>
-   (Follow <a target="_blank" href="https://twitter.com/SForceAnalytics">@SForceAnalytics</a>)
-   <br /><br />
 
 
 ## Clear fresh developer edition org

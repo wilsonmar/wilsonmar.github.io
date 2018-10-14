@@ -1043,6 +1043,7 @@ Salesforce DX Trailblazer Community
 * https://developer.salesforce.com/docs/atlas.en-us.214.0.sfdx_dev.meta/sfdx_dev/sfdx_dev_dev2gp.htm
 Develop Packages (Beta)
 
+* https://www.youtube.com/watch?v=cb8AWg-lFPQ Achieving Next-Generation Agility with Salesforce DX
 
 <hr />
 

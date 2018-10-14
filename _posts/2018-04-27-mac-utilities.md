@@ -635,6 +635,10 @@ NOTE</a>:
 
 nix-shell environment on top of nixos/nixpkgs 
 
+## Mac Message Reset
+
+https://github.com/mattgraham/dotfiles/blob/master/bash/message_reset
+
 ## References
 
 https://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities/69332

@@ -5,7 +5,6 @@ excerpt: "To get recognized for your knowledge, skills, and persistance"
 tags: [salesforce]
 file: 2018-07-19-salesforce-certifications.md
 image:
-# feature: sf-get-started-1900x500-166833.jpg
   feature: https://user-images.githubusercontent.com/300046/43513032-f7cb0bd2-9539-11e8-88db-f3bff1cbfe17.jpg
   credit: Salesforce
   creditlink: 
