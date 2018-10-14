@@ -257,7 +257,7 @@ Salesforce, as a company, owns several domain names (some product offerings have
 
 ### Other DNS Domain Names 
 
-   * <a target="_blank" href="https://salesforceiq.com">Salesforceiq.com</a> [<a target="_blank" href="https://status.salesforceiq.com/">status</a>]
+   * <a target="_blank" href="https://salesforceiq.com">Salesforceiq.com</a> [<a target="_blank" href="https://status.salesforceiq.com/">status</a>] redirects to Salesforce.com, but at this writing the <a target="_blank" href="https://api.salesforceiq.com/#overview">api.salesforceiq.com</a> for Developers and <a target="_blank" href="https://app.salesforceiq.com/">login</a> are still up.
    * <a target="_blank" href="https://salesforce.org/">Salesforce.org</a> for non-profits
    * <a target="_blank" href="https://site.com/">site.com</a> 
 

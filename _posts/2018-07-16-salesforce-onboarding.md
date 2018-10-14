@@ -61,9 +61,12 @@ PROTIP: Spending several days strait sitting in a class may seem like "drinking 
 
 2. Click the green "Sign Up" button at the upper-right corner or "Start learning for free" in the middle of the screen.
 
-3. Click "Google" to use your Gmail or "LinkedIn" to use your LinkedIn.com account. Alternately, create a password within Salesforce:
+3. Click "Google" to use your Gmail or "LinkedIn" to use your LinkedIn.com account. Alternately, create a password within Salesforce.
 
    PROTIP: Sign up for Trailhead with a <strong>personal Gmail account</strong> instead of company email so you'll be able to sign in no matter where you work in the future.
+
+   You can later <a target="_blank" href="http://salesforce.vidyard.com/watch/kXk6BaNlWJP27UyFO8vNUg">merge accounts</a>, but that
+   sometimes results in the loss of history information.
 
 4. Check "Remember me" to have the browser remember your account name (not password).
 
@@ -161,7 +164,7 @@ PROTIP: Spending several days strait sitting in a class may seem like "drinking 
 
    ### Text to speech
 
-   Trailhead content are mainly text. There are a few videos.
+   Trailhead content are mainly text. There are a few videos, such as the <a target="_blank" href="http://salesforce.vidyard.com/watch/kXk6BaNlWJP27UyFO8vNUg">Who Sees What</a> for Lightning Experience and Salesforce Classic.
 
    PROTIP: Use a program that generates text to speech.
    Macs has it built-in, and just need to be enabled in Apple System Preferences > Accessibility > Speech.
@@ -217,6 +220,8 @@ click the picture at the upper-right corner, and select <a target="_blank" href=
    <img alt="sf-trailhead-launch-377x338-30024.jpg" width="377" src="https://user-images.githubusercontent.com/300046/43616777-85b54e8e-967b-11e8-89fc-dd7830386299.jpg">
 
    PROTIP: Remember to select the Trailhead Playground before clicking the Launch button. You can crate multiple Trailhead Playground by selecting "Create a Trailhead Playground". Over time learners have more than one Playground. 
+
+   If you don't see the Launch button because you've passed the questions before, click the link to repeat the questions.
 
 1. Click Launch for the selected Playground.
 

@@ -18,9 +18,11 @@ comments: true
 <a target="_blank" href="https://help.salesforce.com/apex/HTViewHelpDoc?id=glossary.htm">Salesforce's Glossary</a> of terms doesn't define acronyms, such as:
 
    * ABM = Account-based Marketing
+   * ACV = Annual Contract Value (in CPQ)
+   * ARR = Annual Recurring Revenue (in CPQ)
    * BOFC = Bulk Object Field Creator (http://salesforcebofc.com/ from Tech9logy)
    * BPMN = Business Process Modeling Notation (industry standard used in Approval Process Visualizer graphics)
-   * CPQ = Configure, Price, and Quote (workflow)
+   * CPQ = Configure, Price, and Quote (Steelbrick add-on)
    * CMS = Content Management System (for websites)
    * CRM = Customer/Constituent Relationship Management
    * CRED = Create Read Edit Delete (basic operations permissions defined in user profiles)
@@ -36,6 +38,8 @@ comments: true
    * IoT = Internet of Things (industry term)
    * LMA = License Management Application
    * LMO = License Management Organization
+   * MCV = Monthly Contract Value (in CPQ)
+   * MRR = Monthly Recurring Revenue (in CPQ)
    * PAM = Partner Account Manager (email isvpartners@salesforce.com)
    * MOAR = MuleSoft Anypoint Platform (for API management)
    * NPS = Net Promoter Score (metric of possible vs. negative customer recommendations)
@@ -51,6 +55,8 @@ comments: true
    * SFMC = Salesforce Marketing Cloud
    * SOQL = Salesforce Object Query Language <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm">*</a>
    * SOSL = Salesforce Object Search Language <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_sosl.htm">*</a>
+   * SKU = Stock Keeping Unit (industry term)
+   * TCV = Total Contract Value (in CPQ)
    * TDTM = Table-Driven Trigger Management
    * TP = Trailhead Playground
    * U2F = Universal 2nd Factor (security key for user authentication)

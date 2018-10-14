@@ -67,11 +67,32 @@ It makes use of the <a target="_blank" href="https://na31.lightning.force.com/pa
 
    <hr />
 
-1. <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex">Lightning Experience Specialist</a> [4 - 6 hrs]
+1. <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex">Lightning Experience Specialist</a> [4 - 6 hrs] Its pre-requisite Modules:
 
-1. <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lcf">Lightning Component Framework Specialist</a> [10 - 12 hrs]
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lex_customization">Lightning Experience Customization</a> [2 hr 50 mins] 
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/business_process_automation">Lightning Flow</a> [4 hrs]
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lightning_app_builder">Lightning App Builder</a> [1 hr 35 mins]
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lex_implementation_reports_dashboards">Reports & Dashboards for Lightning Experience</a> [1 hr 55 mins]
+   <br /><br />
 
-1. <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex_rollout">Lightning Experience Rollout Specialist</a> [9 - 12 hrs]
+1. <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lcf">Lightning Component Framework Specialist</a> [10 - 12 hrs]] Its pre-requisite Modules:
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lex_dev_overview">Lightning Experience Development</a> [1 hr 20 mins] 
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lex_dev_lc_basics">Lightning Component Basics</a> [4 hrs]
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lightning_data_service">Lightning Data Service Basics</a> [1 hr 40 mins]
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lightning_design_system">Lightning Design System</a> [2 hrs 15 mins]
+   <br /><br />
+
+   PROTIP: This uses the Salesforce Lightning Design System (SLDS) markup.
+
+1. <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex_rollout">Lightning Experience Rollout Specialist</a> [9 - 12 hrs] Its pre-requisite Modules:
+
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lex_migration_rollout">Lightning Experience Rollout</a> [1 hr] 
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lightning_app_builder">Lightning App Builder</a> [1 hr 35 mins] (repeat)
+   * Project: <a target="_blank" href="https://trailhead.salesforce.com/en/projects/suggestion_box">Build a Suggestion Box App</a> [1 hr 55 mins]
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lex_migration_whatsnew">Lightning Experience Features</a> [1 hr 40 mins]
+   <br /><br />
+
 
    <hr />
 

@@ -299,7 +299,17 @@ These are $200 each, addressing each product line (except Knowledge Cloud, Marke
 * <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedServiceCloudConsultant.pdf">Official PDF -  Salesforce Certified Service Cloud Consultant</a>
 
    * <a target="_blank" href="https://trailhead.salesforce.com/trails/service_develop">Trail: Discover Advanced Service Cloud Features</a>
-   * <a target="_blank" href="https://trailhead.salesforce.com/trails/discover-service-for-small-business-with-service-cloud-essentials">Trail: Discover Service for Small Business with Service Cloud Essentials</a>
+   * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/discover-service-for-small-business-with-service-cloud-essentials">Discover Service for Small Business with Service Cloud Essentials</a>
+   * Trailmix by Zak Khan: <a target="_blank" href="https://trailhead.salesforce.com/en/users/005500000061HTqAAM/trailmixes/service-cloud-certification-fast-path">Service Cloud Certification Fast Path</a>
+   * Trailmix by Kimberly King: <a target="_blank" href="https://trailhead.salesforce.com/en/users/00550000007HZgRAAW/trailmixes/service-cloud-prep">Service Cloud Prep</a>
+   <br /><br />
+
+   Trailhead Modules related to Service Cloud Functionalities:
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/service_basics">Service Cloud Basics</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/trails/service_cloud">Keep Customers Happy with Service Cloud</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/service-cloud-platform-quick-look">Service Cloud Platform: Quick Look</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/service-cloud-platform-efficiency">Service Cloud Platform Efficiency</a>
+   * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/service_components">Service Console Components</a>
    <br /><br />
 
 <a name="CommCloud"></a>

@@ -26,6 +26,8 @@ The advantage of doing this on AWS S3
 rather than Gulp.js is that it is publicly accessible to many
 more people than only those who can setup a Gulp server.
 
+https://medium.freecodecamp.org/how-to-post-process-user-images-programmatically-with-rails-amazon-s3-including-testing-c72645536b54
+
 ## Roadmap #
 
    The first three steps are described in qwikLabs:
