@@ -70,8 +70,8 @@ It takes me about one day for each second of video produced using this approach:
 
 ## The steps
 
-1. Create a folder in the Camtasia folder within "Movies". 
-2. In there create a PowerPoint file.
+1. On a Mac Finder, create a folder in the Camtasia folder within the default "Movies" directory on Macs. 
+2. Create a PowerPoint or other presentation file. 
 
    ### Animation with narration
 
@@ -110,6 +110,7 @@ It takes me about one day for each second of video produced using this approach:
 
     <pre>SwaggerLoadGen-v01</pre>
 
+    PROTIP: Zero-fill numbers (such as 01) so they sort in sequence.
 
 
     <a name="RecordAudio"></a>
@@ -127,10 +128,10 @@ It takes me about one day for each second of video produced using this approach:
 
 13. Click the red dot to begin recording.
 
-    PROTP: Speak slower than usual. Enunciate by moving your cheeks.
+    PROTP: Speak slower than usual. Enunciate by moving your cheeks. Smile and you'll sound friendlier in the audio.
 
     PROTIP: Record and save small sentences. This makes segments easier to manipulate.
-    This also means smaller files. Zero-fill numbers (such as 001).
+    This also means smaller files. 
 
     PROTIP: Spikes on the level meter should only ocassionally reach the top. Beyond that, "clipping" occurs.
 
