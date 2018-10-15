@@ -68,7 +68,7 @@ However, adding narration at specific spots is relatively simple.
 
 It takes me about one day for each second of video produced using this approach:
 
-## The steps
+## Setup
 
 1. On a Mac Finder, create a folder in the Camtasia folder within the default "Movies" directory on Macs. 
 2. Create a PowerPoint or other presentation file. 
@@ -97,10 +97,15 @@ It takes me about one day for each second of video produced using this approach:
    eject the installer from the left panel of Finder. 
    Move to Trash the installer file to save disk space.
 
-7. When invoking Audacity for the first time, check "Don't show this again at start up".
+6. Download and install the MP3 add-in to Audacity from:
 
-8. PROTIP: To avoid an echo, record early in the morning within a padded room,
-   when/where there is the least noise.
+   <a target="_blank" href="https://lame.buanzo.org/#lameosxdl">https://lame.buanzo.org/#lameosxdl</a>
+
+## Recording
+
+1. When invoking Audacity for the first time, check "Don't show this again at start up".
+
+8. PROTIP: To avoid echo effects, go to a quiet padded room and record early in the morning when/where there is the least noise.
 
 9. PROTIP: Audacity's UI was not designed well. Use a second monitor to dispaly the narration. Audacity seems to like being on the primary display.
 
