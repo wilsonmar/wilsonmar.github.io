@@ -194,6 +194,7 @@ does not require programming.
    * Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/trail/force_com_admin_intermediate"> Admin Intermediate</a> [14 hrs] uses point-and-click formulas, data security, etc.
    * Trailhead Module: <a target="_blank" href="https://resources.docs.salesforce.com/206/latest/en-us/sfdc/pdf/communities.pdf">Setup and Manage Salesforce Communities</a> [440 pages from Spring '17']
    * Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/community_rollout_impl">Community Rollout Strategy</a> [1 hr 40 mins]
+   * BOOK: <a target="_blank" href="https://www.packtpub.com/mapt/book/big_data_and_business_intelligence/9781786463180">Mastering Salesforce CRM Administration March 2017</a> by Rakesh Gupta
 
 ### Maintenance
 

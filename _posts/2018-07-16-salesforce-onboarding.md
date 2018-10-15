@@ -49,6 +49,18 @@ PROTIP: Spending several days strait sitting in a class may seem like "drinking 
 
 <a href="#Trailhead">Salesforce Trailhead</a> on-line training is both in-depth and offered free, with <strong>unlimited time on servers</strong>. This has enabled Salesforce users to be among the best trained of any software ecosystem.
 
+## Different ways to get org instances
+
+Partners of Salesforce can use <strong>Trialforce</strong> to provision and manage free trial and demo Salesforce organizations holding apps and components.
+Trialforce enables the configuration of trials to specific specifications with relevant sample data, and even customize the look and feel to reflect company branding.
+
+<a target="_blank" href="https://partners.salesforce.com/s/education/general/Environment_Hub">NOTE</a>:
+Salesforce partners manage multiple member orgs using the Environment Hub.
+
+See https://partners.salesforce.com/s/education/general/Partner_Orgs
+
+ISVs (Independent Solution Vendors) use the ISVForce:
+See https://developer.salesforce.com/docs/atlas.en-us.packagingGuide.meta/packagingGuide/packaging_intro.htm
 
 ### Get Trailhead Training Account
 

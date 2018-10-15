@@ -123,7 +123,8 @@ Within an object, each row is a record and each column is a field.
 That's why the above are also called "object models", which is the basis for how data is imported.
 
 <a target="_blank" href="https://s3-us-west-2.amazonaws.com/sfdo-docs/npsp_entity_relationship_diagram.pdf">
-<img alt="sfnpsp-erd-584x407.png" width="584" src="https://user-images.githubusercontent.com/300046/45602571-f12d7800-b9dd-11e8-83cd-5ef11911317f.png"><small>Click the Entity Relationship Diagram above to download its zoomable PDF.</small></a>
+<img alt="sfnpsp-erd-584x407.png" width="584" src="https://user-images.githubusercontent.com/300046/45602571-f12d7800-b9dd-11e8-83cd-5ef11911317f.png"><br />
+<small>Click the Entity Relationship Diagram of objects above to download a zoomable PDF.</small></a>
 
 Standard Salesforce (before NPSP) are in blue.
 NPSP modifies Salesforce databases and programming code to use different words on screen layouts, reports, and dashboards:

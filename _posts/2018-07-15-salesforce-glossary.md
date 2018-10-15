@@ -59,6 +59,8 @@ comments: true
    * SKU = Stock Keeping Unit (industry term)
    * TCV = Total Contract Value (in CPQ)
    * TDTM = Table-Driven Trigger Management
+   * TMO = Trialforce Management Organization (for partners to provide free trials to potential customers)
+   * TSO = Trialforce Source Organization (a partner authorized to provide free trials to potential customers)
    * TP = Trailhead Playground
    * U2F = Universal 2nd Factor (security key for user authentication)
    <br /><br />

@@ -35,15 +35,13 @@ Now here's our first review: Among all these, what do you think will be the most
 
 Several others have created "cheat sheets", but they are structured according to how the program works, not the sequence how you work.
 
-Because we are covering a lot, unique to this website is this <strong>animated map</strong> of all commands and actions covered in this tutorial:
+Because we are covering a lot, unique to this website is this <strong>map</strong> of all commands and actions covered in this tutorial:
 
 <a target="_blank" title="git-basics-v09a-1226x606.jpg" href="https://user-images.githubusercontent.com/300046/46283982-07354f80-c52b-11e8-830f-7769be410455.jpg">
-<img alt="git-basics-v09a-648x321-53378.jpg" width="648" src="https://user-images.githubusercontent.com/300046/46283933-d523ed80-c52a-11e8-912d-5f040a2f16e4.jpg"><br /><small>Click on the diagram to pop-up a full-screen image</small></a>
-
+<img alt="git-basics-v09a-648x321-53378.jpg" width="648" src="https://user-images.githubusercontent.com/300046/46283933-d523ed80-c52a-11e8-912d-5f040a2f16e4.jpg"><br /><small>Click on the flowchart above to pop-up a full-screen (static) image</small></a>
 
 <a name="DigramVideo"></a>
-
-So that you can click the Pause button or drag the timing bubble on the video's timeline while watching:
+For an <strong>animated</strong> flowchart where you can click the Pause button or drag the timing bubble on the video's timeline while watching:
 
    * <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/images/git-basics-flow-v09a-720p.mp4?raw=true">Click this link to <strong>download</strong> a video (4.5 MB mp4) of the diagram</a> (doesn't work on mobile)
 
@@ -51,55 +49,38 @@ So that you can click the Pause button or drag the timing bubble on the video's 
 
 BTW I'm working on a video in which I verbally narrate the video using text on this web page. Until then I have for you an animated diagram above.
 
-## Tools of the trade (several screens and programs)
+   I've viewed <a target="_blank" href="https://wilsonmar.github.io/git-github-videos/">every video and book on this topic</a> and I haven't seen this approach. So such an approach is a unique innovation of just this website.
 
-The work of working with source code using Git and two repositories on GitHub/GitLab. So this, by definition, involves several screens from several programs.
+## A script types commands for you
 
-   PROTIP: I think it helps to have several physical screens rather than switching among them by pressing command+tab on Mac or Alt+Esc on Windows. 
-   It's faster than switching among tabs of same program using command+` (back tic).
-
-PROTIP: I recommend that you install several browsers on your Mac:
-
-   <pre><strong>brew cask install google-chrome</strong></pre>
-   <pre><strong>brew cask install brave</strong></pre>
-   <pre><strong>brew cask install firefox</strong></pre>
-
-Here is how you can use the different browser windows:
-
-1. <a target="_blank" href="https://www.code2bits.com/how-to-install-chrome-on-macos-using-homebrew">Install the Chrome browser</a> to view <a target="_blank" href="https://wilsonmar.github.io/git-basics">this tutorial page</a> and the <a href="#DiagramVideo">pop-up video</a> because Chrome supports the latest web technologies (such as PWA, etc.).
-
-2. <a target="_blank" href="https://brave.com/download/">Install the Brave browser</a> to work with <strong>your own repositories</strong> on GitHub/GitLab:
-
-   PROTIP: The Brave browser doesn't support 1Password to quickly retrieve your secrets. So I use it for running https://localhost web pages and searching using <a target="_blank" href="https://startpage.com">startpage.com</a> which doesn't track you like searching on google.com.
-
-   <a name="Firefox"></a>
-
-3. <a target="_blank" href="https://www.code2bits.com/how-to-install-chrome-on-macos-using-homebrew">Install the Firefox browser</a> to <strong>view another account's repository</strong> on GitHub/GitLab.
-
-   When you login, a "cookie" is created so the browser doesn't annoy you to login all the time. That is not a good thing when you're switching among different accounts.
-   
-
-   ### Bash script types commands for you
-
-   Another unique aspect of this course I haven't seen anywhere else is a shell script I created that types the various Git and other commands in this course for you:
-
-   ```git-basics.sh```
-
-   The ".sh" means it's a shell script run by Mac and Linux Terminals, also called <strong>"Bash" for born again shell</strong>. 
-
-   BTW I've viewed <a target="_blank" href="https://wilsonmar.github.io/git-github-videos/">every video and book on this topic</a> and I haven't seen this approach. So such an approach is a unique innovation of just this website.
-
-   If commands you type are not coming back correctly, a script provides you a way to determine whether <strong>"it was working before"</strong> rather than blaming yourself for not typing commands correctly.
-
-
-   ### View script
-
-   It is good security practice to view any script before running it.
-   It's at: 
+1. We begin by using an internet browser to see 
 
    <a target="_blank" href="https://github.com/wilsonmar/git-utilities/blob/master/git-basics.sh">https://github.com/wilsonmar/git-utilities/blob/master/git-basics.sh</a>
 
-   Click on the link above to open another window on your browser (such as <a href="#Firefox">Firefox</a>).
+   this <strong>shell script</strong> file.
+
+   Follow along with me on your own machine.
+
+   
+
+   that automatically <strong>types</strong> the various commands in this course for you.
+   The ".sh" means it's a shell script run by Mac and Linux Terminals, also called <strong>"Bash" for born again shell</strong>. 
+
+xThere are several ways for y
+
+
+<strong>git-basics.sh</strong> 
+
+   In an internet browser, This course provides a 
+   If commands you type are not coming back correctly, a script provides you a way to determine whether <strong>"it was working before"</strong> rather than blaming yourself for not typing commands correctly.
+
+   The script lives at this URL:
+
+1. Open an internet browser such as Brave to view the URL.
+
+   The URL is at the bottom of the flowchart.
+
+   ### Shell script first line
 
    The first line inside each shell script specifies the program which processes it. In this case it's
 
@@ -110,7 +91,9 @@ Here is how you can use the different browser windows:
    The script references other files in this repository.
 
 
-### Windows Git Bash install
+   ## Terminal / Git Bash
+
+2. To make use of it on your laptop, you need to open the <strong>Terminal</strong> program on a Mac or, if you're on a Windows machine, the <strong>Git Bash</strong> program installed. 
 
    Since a Bash shell does not come with <strong>Microsoft Windows</strong> machines, a bash terminal program called <strong>git bash</strong> needs to be install by the Windows <strong>Chocolatey</strong> installer installing the <strong>msysgit</strong> package. But you must have Administrator permissions to install them.
 
@@ -129,9 +112,6 @@ Here is how you can use the different browser windows:
 
    ![image](https://user-images.githubusercontent.com/300046/45103610-892d8680-b0ed-11e8-921c-d2b03b32a6ba.png)
 
-
-### Mac Terminal
-
 1. Open a Bash terminal by command+Tab (holding down the command key, then press Tab) for the Spotlight. Type "ter" until "Terminal.app" appears, press Enter to select it.
 
 2. Click anywhere on the Terminal window. Press <strong>command+N</strong> for the Basic session colors and other UI. Alternately, point your cursor beyond the top of the screen for the Terminal menu to appear and select Shell, New Window and select one of the <strong>themes</strong>.
@@ -143,6 +123,18 @@ Here is how you can use the different browser windows:
    * Pro is black
    * Red Sands is earthy brown
    <br /><br />
+
+### Terminal commands
+
+   The Terminal opens on your user account's <strong>home</strong> directory.
+
+1. You can return to your Users Home folder anytime by typing the <strong>cd</strong> (change directory) command.
+
+1. You can specify another path to go or type the <strong>$HOME</strong> built-in variable.
+   Shell scripts make use of built-in variables such as <strong>$HOME</strong> for your account home folder, 
+
+1. There is also a built-in command <strong>pwd</strong> (present working directory), which is equivalent to the "dir" command on Windows machines.
+
 
 
 <a name="TerminalvsGUI"></a>

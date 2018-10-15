@@ -158,7 +158,7 @@ This Trailmix</a> features the apps listed above.
 
 Additionally, there are repos not listed in the <a target="_blank" href="https://trailhead.salesforce.com/sample-gallery">sample-gallery web page</a>:
 
-* <a target="_blank" href="https://github.com/trailheadapps/purealoe-distributor">Pure Aloe Distributor</a> 
+* <a target="_blank" href="https://github.com/trailheadapps/purealoe-distributor">Pure Aloe Distributor</a> is a companion to the Pure Aloe app, to explore how to integrate decoupled applications with Salesforce via Platform Events written in NodeJs.
 
 * <a target="_blank" href="https://github.com/trailheadapps/einstein-twitter-analyzer">Einstein Twitter Analyzer</a> 
 

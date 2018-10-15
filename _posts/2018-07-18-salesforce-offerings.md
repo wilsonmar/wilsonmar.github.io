@@ -62,7 +62,7 @@ Do you relate to these conditions?
 
 Salesforce automation saves time by salespeople so they can sell more.
 
-### 3rd-party use-cases
+### Use cases
 
 Next I'll show how Salesforce has structured its services and pricing for use by organizations large and small in many different industries.
 Among its customers on the Fortune 500 is Amazon, Google (Alphabet), T-Mobile, Comcast, Adiddas, General Electric, Wells Fargo, Philips, American Red Cross, etc.
@@ -72,7 +72,9 @@ As companies grow, they can use more features.
 
 Salesforce is called the "Intelligent Customer Success Platform" 
 
-Small organizations can benefit from Salesforce because all they need to get organized is an internet connection and a browser.
+### SME
+
+Small and Medium sized (SME) organizations can benefit from Salesforce because all they need to get organized is an internet connection and a browser.
 Those companies don't have server rooms to build, power, refrigerate, and guard. In several places for disaster recovery.
 Most companies over-buy hardware to cover future growth.
 So in many cases, we see the using Salesforce <strong>saves money</strong> versus excess capacity built.
@@ -84,6 +86,24 @@ Salesforce is completely run on the cloud, with no on-premises option.
 So all data is in one connected platform to do work, enabling teamwork globally, anytime.
 That's why some companies adopt Salesforce because their customers say they will have more confidence with their capability if they use Salesforce.
 Or they adopt Salesforce to keep up with competitors who are doing more with less people.
+
+### Essential features SalesforceIQ
+
+The <a target="_blank" href="https://www.salesforce.com/products/sales-cloud/pricing/">Sales Cloud</a> <a href="#Editions">Essentials license</a> 
+provides these basic CRM features:
+
+   * One list
+   * Automatic data capture
+   * Customizable sales tracking for one list
+   * Intelligent follow-up reminders
+   * Contact auto-complete
+   * Shared address book
+   * Sent-email notifications
+   * Seamless collaboration
+   * Smart mobile apps
+   * Webinars and live trainings
+
+### Customer Success
 
 Customer success is one of what Salesforce defines as its core values, which also include trust, innovation, and equality.
 
@@ -420,6 +440,7 @@ PROTIP: These and <a target="_blank" href="https://developer.salesforce.com/docs
 https://developer.salesforce.com/page/Apex_Code_Best_Practices
 
 
+<a name="Editions"></a>
 
 ### Product Editions
 
