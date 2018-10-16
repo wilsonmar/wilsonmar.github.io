@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Salesforce Alexa (Skills custom voice UI)"
-excerpt: "Voice commands in your conference rooms"
+title: "Salesforce Alexa for Business skills for custom voice UI"
+excerpt: "Voice commands via shared Echo devices in common rooms"
 tags: [salesforce]
 image:
 # feature: sf-ohana-1900x500-178173.jpg

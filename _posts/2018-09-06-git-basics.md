@@ -51,51 +51,9 @@ BTW I'm working on a video in which I verbally narrate the video using text on t
 
    I've viewed <a target="_blank" href="https://wilsonmar.github.io/git-github-videos/">every video and book on this topic</a> and I haven't seen this approach. So such an approach is a unique innovation of just this website.
 
-## A script types commands for you
+## Setup utilities
 
-1. We begin by using an internet browser to see 
-
-   <a target="_blank" href="https://github.com/wilsonmar/git-utilities/blob/master/git-basics.sh">https://github.com/wilsonmar/git-utilities/blob/master/git-basics.sh</a>
-
-   this <strong>shell script</strong> file.
-
-   Follow along with me on your own machine.
-
-   
-
-   that automatically <strong>types</strong> the various commands in this course for you.
-   The ".sh" means it's a shell script run by Mac and Linux Terminals, also called <strong>"Bash" for born again shell</strong>. 
-
-xThere are several ways for y
-
-
-<strong>git-basics.sh</strong> 
-
-   In an internet browser, This course provides a 
-   If commands you type are not coming back correctly, a script provides you a way to determine whether <strong>"it was working before"</strong> rather than blaming yourself for not typing commands correctly.
-
-   The script lives at this URL:
-
-1. Open an internet browser such as Brave to view the URL.
-
-   The URL is at the bottom of the flowchart.
-
-   ### Shell script first line
-
-   The first line inside each shell script specifies the program which processes it. In this case it's
-
-   ```#!/bin/bash```
-
-   Shell scripts make use of built-in variables such as <strong>$HOME</strong> for your account home folder, and built-in commands such as <strong>pwd</strong> for present working directory, which is equivalent to the "dir" command on Windows machines.
-
-   The script references other files in this repository.
-
-
-   ## Terminal / Git Bash
-
-2. To make use of it on your laptop, you need to open the <strong>Terminal</strong> program on a Mac or, if you're on a Windows machine, the <strong>Git Bash</strong> program installed. 
-
-   Since a Bash shell does not come with <strong>Microsoft Windows</strong> machines, a bash terminal program called <strong>git bash</strong> needs to be install by the Windows <strong>Chocolatey</strong> installer installing the <strong>msysgit</strong> package. But you must have Administrator permissions to install them.
+Now setup Homebrew/Chocolatey, Git/msysgit.
 
 1. So that you can update versions automatically later, automate client installs on Windows, by first installing <a target="_blank" href="https://choclately.org/">Chocolatey</a> using a PowerShell command:
 
@@ -124,25 +82,18 @@ xThere are several ways for y
    * Red Sands is earthy brown
    <br /><br />
 
-### Terminal commands
+   ## Terminal / Git Bash
 
-   The Terminal opens on your user account's <strong>home</strong> directory.
+3. To make use of it on your laptop, you need to open the <strong>Terminal</strong> program on a Mac or, if you're on a Windows machine, the <strong>Git Bash</strong> program installed. 
 
-1. You can return to your Users Home folder anytime by typing the <strong>cd</strong> (change directory) command.
+   Since a Bash shell does not come with <strong>Microsoft Windows</strong> machines, a bash terminal program called <strong>git bash</strong> needs to be install by the Windows <strong>Chocolatey</strong> installer installing the <strong>msysgit</strong> package. But you must have Administrator permissions to install them.
 
-1. You can specify another path to go or type the <strong>$HOME</strong> built-in variable.
-   Shell scripts make use of built-in variables such as <strong>$HOME</strong> for your account home folder, 
+   <a name="TerminalvsGUI"></a>
 
-1. There is also a built-in command <strong>pwd</strong> (present working directory), which is equivalent to the "dir" command on Windows machines.
+   ### Terminal vs GUI
 
-
-
-<a name="TerminalvsGUI"></a>
-
-### Terminal vs GUI
-
-This is designed for someone with a <a target="_blank" href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">
-Git command-line client installed</a>.
+   This tutorial is designed for someone with a <a target="_blank" href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">
+   Git command-line client installed</a>.
 
    Due to the open-source availability to how Git works,
    there are many Git clients available.
@@ -167,30 +118,117 @@ Git command-line client installed</a>.
    * See <a target="_blank" href="https://www.youtube.com/watch?v=rblGZRWqFVI">Using Git within Eclipse</a>
 
 
-<a name="shcommand"></a>
+## Ways to obtain a file in Git repository
 
-## Remote bash command run
+   PROTIP: There are several ways to obtain this file from GitHub, GitLab, BitBucket, or other host:
 
-To get you started quickly:
+   a. Download ZIP file<br />
+   b. Open in Desktop client (Git for GitHub)<br />
+   c. git clone git url<br />
+   d. bash curl command to a script (see immediately below)
+   <br /><br />
 
-1. Copy this entire line (which may wrap around) after highlighting it:
+## A script types commands for you
 
-   ```bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/git-utilities/master/git-basics.sh)"```
+We have created an automation script is to automatically <strong>types for you</strong> the various commands in this course,
+to see whether commands you are requested to type manually are actually working, to determine whether <strong>"it was working before"</strong> so you don't blame yourself for not typing commands correctly and waste time debugging.
 
-   (Position your mouse at the beginning of the string, drage the mouse as you drag across the line, then relase at the end of the line. Press command+C to copy to your Clipboard.)
+1. Let's look at it using an internet browser (such as Brave) provided with a full URL:
 
-2. Open a Git-capable Terminal.
-3. Click on the blank part and right-click to select Paste.
-4. Press Enter to run it.
+   <a target="_blank" href="https://github.com/wilsonmar/git-utilities/blob/master/git-basics.sh">https://github.com/wilsonmar/git-utilities/blob/master/git-basics.sh</a>
 
-   In the output displayed on the Terminal:
+   Follow along with me on your own machine as we disect each part of the URL.
 
-   Lines prefixed by ```>>>``` precede each section and step of the script:
+   The file is associated with a <strong>account</strong> on <strong>GitHub.com</strong> named "wilsonmar".
 
+   The file is in a <strong>repository</strong> (or "repo") named "git-utilities".
+
+   The ".sh" means it's a <strong>shell script</strong> file.
+
+   The first line inside each shell script specifies the program which processes it. In this case it's
+
+   ```#!/bin/bash```
+
+   which is the default <strong>shell program</strong> that comes with MacOS machines to process commands of the operating system.
+   
+   A <strong>"blob"</strong> is a set of characters in the last revision identified together by a "hash" calculated from those changes plus some metadata such as the data of the change, the person making the change, etc. We will see later the hash shown is actually the first 7 characters of the full hash.
+
+   ### Bash curl command pasted in Terminal
+
+   A convenient way is this:
+
+2. Open a Terminal or Git Bash dialog.
+3. Run a Bash script is by pasting in a Terminal a <strong>bash curl</strong> copied from a web page.
+   This places you at your account's home directory such as, in my case:<br />
+   
+   <pre>/Users/wilsonmar</pre>
+
+   On your dialog, a different name would appear instead of "wilsonmar".
+
+4. PROTIP: You can return to this folder by several commands:
+   <tt>cd</tt> (change directory) command by itself or <tt>cd ~</tt> (the tilde character), which resolves to <tt>cd $HOME</tt>.
+
+5. <tt>$HOME</tt> is a built-in variable for your account's home directory.
+
+   Shell scripts make use of built-in variables such as <strong>$HOME</strong>. 
+
+6. There is also a built-in command <strong>pwd</strong> (present working directory), which is equivalent to the "dir" command on Windows machines.
+
+   ### ./bash_profile
+   
+7. PROTIP: When a Terminal or Git Bash session is started, the operating system automatically (in the background) runs command:
+
+   <pre>source ~/.bash_profile</pre>
+
+   This places into memory definitions for the PATH of directories the operating system looks for the location of programs requested to run, for <strong>export</strong> of environment variables.
+
+8. The dot character in the file name means that the file is normally hidden, so additional parameters need to be specicifed to see them, such as:
+
+   <pre><strong>ls -al</strong></pre>
+
+   PROTIP: Don't type the "[ll]" shown in the flowchart because that defines a <strong>keyboard alias</strong> which the bash_profile also defines them.
+
+   ### git-basics.sh add aliases
+
+9. PROTIP: A set of <strong>aliases</strong> is defined at:
+
+   <a target="_blank" href="https://github.com/wilsonmar/git-utilities/blob/master/aliases.txt">https://github.com/wilsonmar/git-utilities/blob/master/aliases.txt</a>
+
+   You can copy and paste the raw text into your <tt>./bash_profile</tt> open in a text editor.
+
+   Or you can run a script to do that for you, described below.
+   
+   What follows are the steps to get the aliases to be available in your laptop, among other tasks.
+
+
+   <a name="shcommand"></a>
+
+   ## Remote bash command run
+
+   To get you started quickly:
+
+10. Highlight this entire line (which may wrap around) 
+
+    ```bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/git-utilities/master/git-basics.sh)"```
+
+    (Position your mouse at the beginning of the string, drage the mouse as you drag across the line, then relase at the end of the line. Press command+C to copy to your Clipboard.)
+
+11. Press command+C to copy into your operating system's Clipboard.
+12. Open a (Git-capable) Terminal or Git Bash session.
+13. Click on the blank part and right-click to select Paste.
+14. Press Enter to run it.
+
+    In the output displayed on the Terminal:
+
+    Lines prefixed by ```>>>``` output by function echo_f() precede each section and step of the script:
+
+    Lines prefixed by ```$``` output by function echo_c() precede each command:
 
 ## index to git-basics.sh output
 
    Numbering of sections in the script:
+
+   0.x <a href="#BashUtils">Script start-up</a>
 
    1.x <a href="#MacInstall">Mac client Install and Configuration</a>
    
@@ -211,6 +249,13 @@ To get you started quickly:
    9.x <a href="#OriginChange">Get changes in origin to local</a>
 
    In outputs on Terminals, "$" precede commands issued by the script, so you can type the exact commands.
+
+<a name="BashStart"></a>
+
+## 0.x Bash script start-up
+
+
+
 
 
 <a name="MacInstall"></a>
