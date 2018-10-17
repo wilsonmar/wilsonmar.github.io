@@ -26,22 +26,15 @@ Salesforce users already have data structured and stored for use by AI.
 
 Einstein can be "simply" added to process existing data. For example, text users enter into a service request form can be designated for analysis. The Einstein Intent API processes the text to automatically determine how to routed the request to the correct department.
 
-Salesforce purchased 200 data science people by its acquisition of http://www.metamind.io/
-
 Benioff has also been a lead investor in machine translation company <a target="_blank" href="http://www.linkedin.com/company/1617147">Cloudwords</a> since its seed funding days.
 
-## Salesforce + IBM Watson
+## API Endpoint
 
-The pool of top people who can build AI is limited, and so expensive.
-https://www.linkedin.com/pulse/einstein-my-dear-watson-predicted-salesforce-joins-ibm-cummins/
+Salesforce purchased 200 data science people by its acquisition of http://www.metamind.io/
+Thus, "api.metamind.io" was the previous endpoint to APIs, which is now:
 
-So Salesforce has partnered up with IBM.<a target="_blank" href="https://developer.salesforce.com/blogs/2018/09/discover-whats-next-for-ibm-at-dreamforce-2018.html">*</a>
+   <a target="_blank" href="https://api.einstein.ai">https://api.einstein.ai</a>
 
-https://github.com/watson-developer-cloud/salesforce-sdk
-is a Salesforce library for Salesforce Apex to communicate with IBM Watson Assistant (Conversations) using REST APIs.
-See http://www.ibm.com/watson/developercloud/
-
-IBM introduced a service which automatically detects bias and explains how AI makes decisions—as the decisions are being made—runs on the IBM Cloud. IBM is open sourcing their AI bias detection and mitigation toolkit.
 
 ## Einstein Offerings
 
@@ -125,8 +118,8 @@ https://venturebeat.com/2018/09/19/salesforce-announces-einstein-voice-a-voice-a
 
 ### Salesforce Social Studio Vision
 
-Salesforce Social Studio integrated with Einstein Vision was one of the first capabilities released.
-It enables users to "visually listen" for attributes about an image, such as detecting your brand logo or that of your competitor in photos in order to learn more about the subjects' lifestyles and preferences.
+Salesforce Social Studio integrated with Einstein Vision was one of the first Einstein capabilities released.
+It enables users to "visually listen" for attributes about an image, such as detecting a brand logo or that of its competitor in photos -- in order to learn more about the subjects' lifestyles and preferences.
 
 Trailhead Projects:
 
@@ -135,15 +128,9 @@ Trailhead Projects:
    * <a target="_blank" href="https://trailhead.salesforce.com/projects/build-a-cat-rescue-app-that-recognizes-cat-breeds">Build a Cat Rescue App That Recognizes Cat Breeds</a>
 
 
-## API Endpoint
-
-https://api.einstein.ai
-
-(api.metamind.io was the previous endpoint)
-
 ### Einstein Language
 
-The Salesforce Platform includes "Einstein Language" to build natural language processing (NLP) into apps and unlock powerful insights within text. Einstein Language contains two NLP services: Einstein Intent and Einstein Sentiment APIs:
+"Einstein Language" builds natural language processing (NLP) into apps and unlock powerful insights within text. Einstein Language contains two NLP services: Einstein Intent and Einstein Sentiment APIs:
 
    * The Einstein Sentiment API <strong>classifies</strong> text into <strong>positive, negative, and neutral</strong> to understand what the words people use can tell us about how they’re feeling. Use this API to analyze emails, social media, and text from chat to: Identify the sentiment or emotion in a prospect’s emails to trend a lead or opportunity up or down. Provide proactive service by helping dissatisfied customers first or extending promotional offers to satisfied customers. Monitor how people perceive your brand across social media channels, identify brand evangelists, and note customer satisfaction.
 
@@ -158,12 +145,22 @@ The Salesforce Platform includes "Einstein Language" to build natural language p
 1. Enter Bot name and description.
 
 
-## IBM
+## Salesforce + IBM Watson
 
+The pool of top people who can build AI is limited, and so expensive.
+https://www.linkedin.com/pulse/einstein-my-dear-watson-predicted-salesforce-joins-ibm-cummins/
+
+So Salesforce has partnered up with IBM.<a target="_blank" href="https://developer.salesforce.com/blogs/2018/09/discover-whats-next-for-ibm-at-dreamforce-2018.html">*</a>
+
+https://github.com/watson-developer-cloud/salesforce-sdk
+is a Salesforce library for Salesforce Apex to communicate with IBM Watson Assistant (Conversations) using REST APIs.
+See http://www.ibm.com/watson/developercloud/
+
+IBM introduced a service which automatically detects bias and explains how AI makes decisions—as the decisions are being made—runs on the IBM Cloud. IBM is open sourcing their AI bias detection and mitigation toolkit.
 https://trailhead.salesforce.com/en/projects/surface-data-from-ibm-watson-discovery-in-salesforce
 Surface Data from IBM Watson Discovery in Salesforce
 
-
+<hr />
 
 ## Get an Einstein Platform Services Account
 

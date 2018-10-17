@@ -244,10 +244,15 @@ by Gregg Thaler
 
 * <a target="_blank" href="https://www.linkedin.com/groups/1778935/profile">Salesforce Professional Network</a>
 
-https://www.salesforceben.com/the-linkedin-guide-book-for-trailblazers/
+From: https://www.salesforceben.com/the-linkedin-guide-book-for-trailblazers/
 
 
 ### Trailhead communities
+
+<a target="_blank" href="https://toptrailblazers.com/c/">https://toptrailblazers.com/c/</a> lists communities.
+
+<a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000001oXHCAY">MVP Office Hours</a> #MVPOHMeeting
+1st & 3rd Fridays #MVPOHQuestion 
 
 <a target="_blank" href="https://success.salesforce.com/0F9300000001omnCAA">Trailblazer Community Corner</a>
 
