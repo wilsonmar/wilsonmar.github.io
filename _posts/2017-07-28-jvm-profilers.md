@@ -35,7 +35,8 @@ using JProfiler and JVisualVM.
    | JProfiler | 2017-01-21 | jprofiler_macos_10_0.dmg | 148 MB | $698 |
    | JProfiler | 2016-06-21 | jprofiler_macos_9_2.dmg | 126 MB | $698 |
    | <a href="#JVisualVM">JVisualVM</a> | 2016 | GitHub 1.3.9 | 13 MB | free |
-   | Yourkit   | 2016.02    | yjp-2016.02-b43-mac | 8.7 MB | $649 |
+   | <a href="#YourKit">Yourkit</a> | 2016.02    | yjp-2016.02-b43-mac | 8.7 MB | $649 |
+   | <a href="#Censum">jClarity Censum</a> | -| - | - MB | $? |
 
 <hr />
 
@@ -476,6 +477,7 @@ Oracle also provides optional tools for heap dump analysis and DTrace recording.
 
 Java SE Suite provides Deterministic GC.
 
+<a name="YourKit"></a>
 
 ## YourKit #
 
@@ -488,6 +490,23 @@ has profilers for both JVM and .NET.
 
 0. In https://www.yourkit.com/purchase/
    license is $649 with a year of support.
+
+
+<a name="Censum"></a>
+
+## Censum
+
+<a target="_blank" href="https://www.jclarity.com/index.php">Censum from JClarity.com</a> (by Martijn Verburg based in London) 
+is available as both a local VM log reader (for $749/year) and as a SaaS web app.
+
+* <a target="_blank" href="https://groups.google.com/a/jclarity.com/forum/#!forum/friends/join">
+Friends of jClarity mailing list / forum!</a>
+
+https://blog.codecentric.de/en/2017/09/jvm-fire-using-flame-graphs-analyse-performance/
+
+
+CTO/CEO <a target="_blank" href="http://martijnverburg.blogspot.com/">Martijn Verburg</a> (<a target="_blank" href="https://twitter.com/karianna">@karianna</a>) speaks at <a target="_blank" href="https://www.youtube.com/watch?v=bjp7bhzyhQo&feature=share&list=PLRsbF2sD7JVq8QYW0vlbOS2JuXUWaWMnT&index=30">VIDEO: The Diabolical Developer's Guide to Performance Tuning</a>  introduces the Performance Diagnostic Methodology (PDM).
+
 
 ## Tapiki #
 

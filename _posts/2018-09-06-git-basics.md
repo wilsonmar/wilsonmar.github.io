@@ -130,16 +130,16 @@ Now setup Homebrew/Chocolatey, Git/msysgit.
 
 ## A script types commands for you
 
-We have created an automation script is to automatically <strong>types for you</strong> the various commands in this course,
-to see whether commands you are requested to type manually are actually working, to determine whether <strong>"it was working before"</strong> so you don't blame yourself for not typing commands correctly and waste time debugging.
 
-1. Let's look at it using an internet browser (such as Brave) provided with a full URL:
+An bash script was created to automatically <strong>type for you</strong> the various commands in this course. It's to see whether what you are asked to type manually actually works. This is so we can see whether <strong>it was working before</strong>, so you don't blame yourself for not typing commands correctly and waste time debugging.
+
+1. Let's look at the script by providing an internet browser (such as Brave) with this full URL:
 
    <a target="_blank" href="https://github.com/wilsonmar/git-utilities/blob/master/git-basics.sh">https://github.com/wilsonmar/git-utilities/blob/master/git-basics.sh</a>
 
-   Follow along with me on your own machine as we disect each part of the URL.
+   Follow along with me on your own machine.
 
-   The file is associated with a <strong>account</strong> on <strong>GitHub.com</strong> named "wilsonmar".
+   This file in GitHub.com is associated with an <strong>account</strong> named "wilsonmar".
 
    The file is in a <strong>repository</strong> (or "repo") named "git-utilities".
 
@@ -151,11 +151,11 @@ to see whether commands you are requested to type manually are actually working,
 
    which is the default <strong>shell program</strong> that comes with MacOS machines to process commands of the operating system.
    
-   A <strong>"blob"</strong> is a set of characters in the last revision identified together by a "hash" calculated from those changes plus some metadata such as the data of the change, the person making the change, etc. We will see later the hash shown is actually the first 7 characters of the full hash.
+   A <strong>"blob"</strong> is the set of characters in the last revision identified by a "hash" calculated from the text changed plus some metadata such as the data of the change, the person making the change, etc. The 7 characters shown is the first 7 characters of the full hash string.
 
    ### Bash curl command pasted in Terminal
 
-   A convenient way is this:
+   To run the shell script without first downloading it:
 
 2. Open a Terminal or Git Bash dialog.
 3. Run a Bash script is by pasting in a Terminal a <strong>bash curl</strong> copied from a web page.
@@ -1748,7 +1748,7 @@ blog</a> from 2013 by @KBasarab and at:
 * <a target="_blank" href="https://www.youtube.com/watch?v=gLWSJXBbJuE&feature=youtu.be">
    Atlassian Stash - Git workflows in the Enterprise</a>
 
-* https://www.youtube.com/watch?v=wKmmFQwGWBM
+* <a target="_blank" href="https://www.youtube.com/watch?v=wKmmFQwGWBM">GitFlow how to get it right</a> Apr 24, 2014 [25:15] by Basil Abbas
 
 * <a target="_blank" href="https://www.memrise.com/course/1494375/learn-git-everything-you-need-to-know/">http://tiny.cc/learngit</a>
    provides a webpage to memorize Git concepts.
@@ -1759,6 +1759,8 @@ blog</a> from 2013 by @KBasarab and at:
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=SChuTnuBYMg
 ">Git Flow for Daily Use</a> by Mediacurrent Drupal, Apr 11, 2013
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=a0wO87gel60&index=38&list=PLRsbF2sD7JVq8QYW0vlbOS2JuXUWaWMnT">Git Workflow Strategies for Technical Debt Management</a> May 17, 2017 by Raquel Pau Fernández
 
 
 ## More #

@@ -50,7 +50,7 @@ The number of pods replicated is based on <strong>deployment</strong> yaml files
 Service yaml files specify what ports are used in deployments.
 
 
-## Open Sourced
+## Open Sourced = Free
 
 <img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
 <a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">
@@ -75,6 +75,7 @@ PROTIP: The word "Kubernetes" is a registered trademark of the Linux Foundation,
    * v1.7 was led by a Googler.
    * v1.8 is led by a Microsoft employee (<a target="_blank" href="https://twitter.com/jaydumars?lang=en">Jaice Singer DuMars</a>) after Microsoft joined the CNCF July 2017.
    <br /><br />
+
 Its Google heritage means Kubernetes is about scaling for a lot of traffic
 with redundancies to achieve high availability (HA).
 
@@ -98,20 +99,23 @@ CNCF is part of the Linux Foundation, so...
    * Linux Foundation : Certified Kubernetes Administrator (CKA)  -  English
    * Linux Foundation : Certified Kubernetes Application Developer (CKAD)  -  English
    <br /><br />
+
 5. Click "Or Sign In With" tab and select "Sign in for exams powered by the Linux Foundation".
-
 6. Log in using your preferred account.
-
 7. Click "Handbook link" to download it.
 8. Select the date, then click OK.
 9. Setup your home computer to take the exam <a target="_blank" href="http://www.examslocal.com/linuxfoundation/"> at home</a> using the Chrome extension from "Innovative Exams", which uses your laptop camera and microphone watching you use a virtual Ubuntu machine. 
-10. Take the 180 minute exam 
+10. Take the 180 minute (2 hour) exam.
 
    No multiple choice questions.
 
    PROTIP: The Linux Foundation exam focuses on "pure" commands only and excludes add-ons such as OpenStack.
 
-### Support in clouds
+## Free Playpen
+
+<a target="_blank" href="https://play-with-k8s.com/">play-with-k8s.com</a> gives you a 4-hour playpen.
+
+## Paid Support in clouds
 
 If you want to pay for Kubernetes support, Red Hat® OpenShift, at <a target="_blank" href="
 https://www.redhat.com/en/technologies/cloud-computing/openshift">
@@ -145,11 +149,12 @@ It of course leverages AWS Elastic Load Balancing, IAM authentication, Amazon VP
 
 * Microsoft's Azure Kubernetes Service (AKS)
 
-* <a target="_blank" href="https://blog.digitalocean.com/introducing-digitalocean-kubernetes/">
+* Digital Ocean - see <a target="_blank" href="https://blog.digitalocean.com/introducing-digitalocean-kubernetes/">
    https://blog.digitalocean.com/introducing-digitalocean-kubernetes</a>
 
-
 * KUBE2GO, OpenShift Dedicated, OpenShift Online, 
+
+## Add-ons
 
 * <a target="_blank" href="https://github.com/appscode/">AppsCode</a> provides several utiities for Kubernetes.
 * <a target="_blank" href="https://coreos.com/tectonic/">CoreOS Tectonic</a> multi-cloud is being integrated with RedHat.
@@ -157,7 +162,7 @@ It of course leverages AWS Elastic Load Balancing, IAM authentication, Amazon VP
 * <a target="_blank" href="">Giant Swarm managed Kubernetes</a>
 * <a target="_blank" href="https://console.bluemix.net/containers-kubernetes/catalog/cluster/">IBM Cloud Kubernetes Service (IKS) works with their IBM Cloud Container Registry. See <a target="_blank" href="https://console.bluemix.net/docs/containers/cs_tutorials_cf.html#cf_tutorial">tutorial</a>
 * <a target="_blank" href="https://www.madcore.ai">Madcore.ai</a>
-* <a target="_blank" href="https://mesosphere.com/product/">Mesosphere DC/OS</a> (Data Center Operating System) runs Apache Mesos to abstract CPU, memory, storage to provide an API to program a multi-cloud multi-tenant data center (at Twitter, Yelp, Ebay, Azure, Apple, etc.) as if it's a single pool of resources.
+
 * Mail.Ru Cloud Solutions Containers
 * <a target="_blank" href="https://www.mirantis.com/software/mcp/">Mirantis' Cloud Platform</a>
 * PKS (Pivotal Kubernetes Service)
@@ -174,16 +179,15 @@ It of course leverages AWS Elastic Load Balancing, IAM authentication, Amazon VP
 
 Other orchestration systems for Docker containers:
 
-* Docker Swarm
+## Competitors
 
-   Docker Swarm incorporated <a href="#Rancher">Rancher</a> from Rancher Labs.
+* Docker Swarm incorporated <a href="#Rancher">Rancher</a> from Rancher Labs.
 
-* <a target="_blank" href="https://translate.googleusercontent.com/translate_c?depth=1&hl=en&rurl=translate.google.com&sl=ko&sp=nmt4&tl=en&u=https://www.yongbok.net/blog/apache-mesos-cluster-resource-management/&usg=ALkJrhjiggTWHQtSdhkl8jOvGnAx43NIQw">Mesos from Apache</a>, which runs other containers in addition to Docker. K8SM is a Mesos Framework developed for Apache Mesos to use Google's Kubernetes. <a target="_blank" href="https://translate.google.com/translate?hl=en&sl=ko&tl=en&u=http://www.yongbok.net/blog/how-to-install-kubernetes-mesos-framework-on-ubuntu/">Installation</a>.
+* <a target="_blank" href="https://mesosphere.com/product/">Mesosphere DC/OS</a> (Data Center Operating System) runs Apache Mesos to abstract CPU, memory, storage to provide an API to program a multi-cloud multi-tenant data center (at Twitter, Yelp, Ebay, Azure, Apple, etc.) as if it's a single pool of resources. Kubernetes can run on top of it, but the DC/OS has premium (licensed) enterprise features. So it's not for you if you never want to pay for anything.
 
-<br /><br />
-<a target="_blank" href="">
-Container Orchestration Wars (2017)</a> at the Velocity Conf 19 Jun 2017
-by Karl Isenberg (@karlfi) of Mesosphere
+   <a target="_blank" href="https://translate.googleusercontent.com/translate_c?depth=1&hl=en&rurl=translate.google.com&sl=ko&sp=nmt4&tl=en&u=https://www.yongbok.net/blog/apache-mesos-cluster-resource-management/&usg=ALkJrhjiggTWHQtSdhkl8jOvGnAx43NIQw">Mesos from Apache</a>, which runs other containers in addition to Docker. K8SM is a Mesos Framework developed for Apache Mesos to use Google's Kubernetes. <a target="_blank" href="https://translate.google.com/translate?hl=en&sl=ko&tl=en&u=http://www.yongbok.net/blog/how-to-install-kubernetes-mesos-framework-on-ubuntu/">Installation</a>.
+
+   See <a target="_blank" href="https://www.youtube.com/watch?v=NRZ6N4e-Mko">Container Orchestration Wars (2017)</a> at the Velocity Conf 19 Jun 2017 by Karl Isenberg (@karlfi) of Mesosphere
 
 
 ### Kublet
@@ -210,7 +214,15 @@ The <strong>describe</strong> command provides more detailed information.
    The kubectl client communicates using REST API calls to an <strong>API Server</strong> 
    which handles authentication and authorization.
 
-   <a name="Scheduler"></a>
+   <pre>kubectl get apiservices</pre>
+
+   API's were initially monolithic but has since been split up into:
+   * core "" to handle pod & svc
+   * apps to handle deploy, sts, ds
+   * authorization to handle role, rb
+   * storage to handle pv (persistent volume) and <a href="#PVC">pvc</a>
+
+<a name="Scheduler"></a>
    
 ### Scheduler
 
@@ -834,6 +846,8 @@ daemonset "kube-flannel.ds" created
 
 <hr />
 
+   <a name="PVC"></a>
+
    ### Volumes
    
    Containers also share attached data <strong>volumes</strong> available within each Pod.
@@ -1392,12 +1406,18 @@ See https://kubernetes.io/docs/concepts/cluster-administration/network-plugins/
 
 ## Learning resources
 
-Nigel Poulton (@NigelPoulton, nigelpoulton.com)
+Nigel Poulton (@NigelPoulton, <a target="_blank" href="https://www.nigelpoulton.com/">nigelpoulton.com</a>), Docker Captain:
 
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files">
    Getting Started with Kubernetes</a> 22 May 2017
 
-   * Book "Docker for Sysadmins".
+   * Book: "Docker for Sysadmins"
+
+   * Book: "Docker Deep Dive"
+
+   * Book: "Kubernetes Deep Dive"
+
+   * <a target="_blank" href="https://acloud.guru/course/kubernetes-deep-dive/dashboard">A Cloud Guru video course on Kubernetes</a> (released Oct 2018) referencing the WordPress sample app at <a target="_blank" href="https://github.com/nigelpoulton/k8s-sample-apps">https://github.com/nigelpoulton/k8s-sample-apps</a>
 
 
 ## Make your own K8s
@@ -1472,6 +1492,7 @@ https://github.com/ramitsurana/awesome-kubernetes
 ## Social
 
 https://kubernetes.io/community/
+
 
 ## Videos
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Salesforce rock stars"
-excerpt: "Individuals and teams who have published something or influenced"
+excerpt: "Individuals and teams who have published or influenced"
 tags: [salesforce]
 image:
 # feature: sf-ohana-1900x500-178173.jpg
@@ -20,7 +20,11 @@ Salesforce calls "Trailblazers" those who have transformed their careers using i
    * <a target="_blank" href="https://www.salesforce.com/campaign/blaze-your-trail/">See videos of "Trailblazers"
 who are using the software</a>.
 
-This page lists individuals who have significant blogs, tweets, courses, or otherwise have contributed some way:
+   * <a target="_blank" href="https://trailhead-leaderboard-developer-edition.na35.force.com/Leader_Board">This Leader Board</a> lists Trailblazers by Ranger Rank, # Badges, SuperBadges, Points.
+
+   <a target="_blank" href="https://trailhead-leaderboard-developer-edition.na35.force.com/Leader_Board"><img alt="salesforce-leaderboard-648x102-15013.jpg" width="648" src="https://user-images.githubusercontent.com/300046/47058010-6a0c2500-d180-11e8-8afd-4d30cfa0bc03.jpg"></a>
+
+Lists of individuals who have significant blogs, tweets, courses, or otherwise have contributed some way:
 
    <a name="MVP"></a>
 

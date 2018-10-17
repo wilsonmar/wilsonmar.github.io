@@ -778,7 +778,7 @@ tornado==4.1
 
 0. Just for laughs:
 
-   <tt><source>
+   <tt><strong>
    pip install
    </strong></tt>
 

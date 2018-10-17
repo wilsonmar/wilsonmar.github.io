@@ -20,17 +20,24 @@ comments: true
 There are several ways to install Java.
 This is the one that worked for me.
 
-<a name="AppleJavaC"></a>
+<a name="DifferentJavas"></a>
 
-### Apple Java
+## Different Javas
+   
+Several organizations work on OpenSDK specs from <a target="_blank" href="https://adoptopenjdk.net/">AdoptOpenJDK</a> and certified for Java SE TCK compliance on x64 reference architecture systems
 
-WARNING: The version that comes installed on Apple Macs can be obsolete.
+   * <a target="_blank" href="https://www.azul.com/downloads/zulu">Azul Zulu</a> <a target="_blank" href="https://www.azul.com/downloads/zulu/zulu-mac/">downloads for macOS</a>, from a company that also sells Java optimization products
 
-CAUTION: Do not delete the default version.
-But if you did, to re-install <strong>Java 6</strong> for OS X 2014-001,
-it can be obtained from
-<a target="_blank" href="https://support.apple.com/kb/DL1572?locale=en_US">
-https://support.apple.com/kb/DL1572?locale=en_US</a>
+   Its zulu8.30.0.1-jdk8.0.172-macosx_x64 from zip April 18, 2018 is 179.2 MB expanded
+
+   * <a target="_blank" href="https://www.oracle.com/technetwork/java/eol-135779.html">Oracle</a> and http://jdk.java.net/
+
+   * <a target="_blank" href="https://www.ibm.com/us-en/marketplace/support-for-runtimes">IBM</a> OpenJDK with Eclipse OpenJ9 
+
+   * <a target="_blank" href="https://access.redhat.com/articles/1299013">Red Hat</a>
+
+  * https://en.wikipedia.org/wiki/List_of_Java_virtual_machines
+   <br /><br />
 
 
 <a name="WhichJava"></a>
@@ -39,7 +46,35 @@ https://support.apple.com/kb/DL1572?locale=en_US</a>
 
 On a Terminal open to any folder:
 
-0. To see what JRE you have already installed:
+0. The $JAVA_HOME environment variable is used by Groovy, Grails, Spring Boot, and others:
+
+   <tt><strong>
+   echo $JAVA_HOME
+   </strong></tt>
+
+   Sample response:
+
+   <pre>
+   /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home
+   </pre>
+
+   PROTIP: This command is my preferred way to see what a machine has because
+   if you invoke java or javac, if it's not installed, MacOS prompts you to install the JDK. Clever. But don't do it if you want <a href="#DifferentJavas">
+   other version of Java</a>.
+
+   <a name="AppleJavaC"></a>
+
+   ### Apple Java
+
+   PROTIP: The version that comes installed on Apple Macs is obsolete and thus not have the latest security patches. But do not delete the default version.
+   
+   But if you did, to re-install <strong>Java 6</strong> for OS X 2014-001,
+   it can be obtained from
+   <a target="_blank" href="https://support.apple.com/kb/DL1572?locale=en_US">
+   https://support.apple.com/kb/DL1572?locale=en_US</a>
+
+
+0. To see what Java VM you have already installed:
 
    <pre><strong>
    java -version
@@ -48,13 +83,13 @@ On a Terminal open to any folder:
    A sample response:
 
    <pre>
-java version "1.8.0_06-ea"
-Java(TM) SE Runtime Environment (build 1.8.0_06-ea-b13)
-Java HotSpot(TM) 64-Bit Server VM (build 23.2-b04, mixed mode)
+java version "1.8.0_162"
+Java(TM) SE Runtime Environment (build 1.8.0_162-b12)
+Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    </pre>
 
 0. PROTIP: Developers use the JDK rather than the JRE (Runtime Environment),
-   see what version of the Java Compiler is installed:
+   see what version of the <strong>Java Compiler</strong> is installed:
 
    <pre><strong>
    javac -version
@@ -63,13 +98,10 @@ Java HotSpot(TM) 64-Bit Server VM (build 23.2-b04, mixed mode)
    A sample response:
 
    <pre>
-   javac 1.8.0_74
+   javac 1.8.0_162
    </pre>
 
-   If it's not installed, MacOS prompts you to install the JDK.
-   Clever. But don't do it if you want the Oracle version.
-
-0. Click <strong>More Info...</strong>.
+0. If you do see the MacOS prompt to install Java, click <strong>More Info...</strong>.
 
    <pre><strong>
    /usr/libexec/java_home -V
@@ -77,7 +109,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 23.2-b04, mixed mode)
 
    That's a capital V.
 
-   The response on my machine:
+   The response on my machine on Sierra:
 
    <pre>
 Matching Java Virtual Machines (4):
@@ -94,17 +126,9 @@ Matching Java Virtual Machines (4):
    /Library/Java/JavaVirtualMachines/
    </pre>
 
-0. The $JAVA_HOME environment variable is used by Groovy, Grails, Spring Boot, and others:
+   NOTE: This directory is at the root for the machine, not a particular user home folder.
 
-   <tt><strong>
-   echo $JAVA_HOME
-   </strong></tt>
-
-   The response:
-
-   <pre>
-   /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home
-   </pre>
+   ### Maven
 
 0. See what derivative program such as Maven uses:
 
@@ -115,38 +139,39 @@ Matching Java Virtual Machines (4):
    The sample response:
 
    <pre>
-Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-10T09:41:47-07:00)
-Maven home: /usr/local/Cellar/maven/3.3.9/libexec
-Java version: 1.8.0_74, vendor: Oracle Corporation
-Java home: /Library/Java/JavaVirtualMachines/jdk1.8.0_74.jdk/Contents/Home/jre
-Default locale: en_US, platform encoding: US-ASCII
-OS name: "mac os x", version: "10.11.5", arch: "x86_64", family: "mac"
+Apache Maven 3.5.3 (3383c37e1f9e9b3bc3df5050c29c8aff9f295297; 2018-02-24T12:49:05-07:00)
+Maven home: /usr/local/Cellar/maven/3.5.3/libexec
+Java version: 1.8.0_162, vendor: Oracle Corporation
+Java home: /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre
+Default locale: en_US, platform encoding: utf-8
+OS name: "mac os x", version: "10.13.6", arch: "x86_64", family: "mac"
    </pre>
 
-0. See:
+0. Where is the Java executable?
 
    <tt><strong>
    command -v java
    </strong></tt>
 
-   If you get this:
+   You should see this:
 
    <pre>
    /usr/bin/java
    </pre>
 
+   PROTIP: java in the above path is a binary file.
 
 
    <a name="OracleJavaC"></a>
 
    ### Latest Version of Oracle Java #
 
-0. PROTIP: <strong>Hold off downloading</strong> the java .dmg installer file,
+0. PROTIP: <strong>Hold off downloading</strong> the java .dmg installer file
    as described at
    <a target="_blank" href="https://java.com/en/download/help/mac_install.xml">
    https://java.com/en/download/help/mac_install.xml</a>
 
-   WARNING: Oracle installs an annoying Ask Toolbar, sometimes without asking.
+   WARNING: Oracle installs an annoying Ask Toolbar, without asking.
 
    Oracles docs on installing the JDK:<br />
    <a target="_blank" href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html">
@@ -156,12 +181,10 @@ OS name: "mac os x", version: "10.11.5", arch: "x86_64", family: "mac"
    <a target="_blank" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">
    http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>
 
-   
-   ### Multiple Versions of JDK #
-
 0. Click the "Download" button for the JDK (not the JRE).
 
    NOTE: Downloads of the JDK contains the JRE.
+
 
    <a name="JenvInstall"></a>
 
@@ -177,86 +200,20 @@ OS name: "mac os x", version: "10.11.5", arch: "x86_64", family: "mac"
    <br />
    describes the steps.
 
-0. Install Jenv by specifying the location URL:
+0. Install Jenv by specifying the location URL: https://raw.githubusercontent.com/entrypass/jenv/homebrew/homebrew/jenv.rb
 
    <tt><strong>
-   brew install https://raw.githubusercontent.com/entrypass/jenv/homebrew/homebrew/jenv.rb
+   brew install jenv
    </strong></tt>
 
-   The long response:
+   The response:
 
    <pre>
-==> Auto-updated Homebrew!
-Updated Homebrew from fa19447 to 7c5e149.
-Updated 3 taps (homebrew/core, homebrew/dupes, pivotal/tap).
-==> New Formulae
-lean-cli                                 libdivecomputer                        
-==> Updated Formulae
-antigen                    konoha                     prometheus               
-cogl                       kyua                       qbs                      
-fabio                      libfreenect                rapidjson                
-ffmpeg                     libgit2-glib               rclone                   
-ffmpegthumbnailer          mkvtoolnix                 rebar                    
-gawk                       mpv                        repo                     
-git-fresh                  mypy                       sngrep                   
-git-lfs                    ncdu                       swiftlint                
-giter8                     nghttp2                    tailor                   
-gssh                       open-mpi                   the_platinum_searcher    
-homebrew/dupes/ed          openvpn                    tile38                   
-homebrew/dupes/tcl-tk      osh                        tippecanoe               
-infer                      pcap_dnsproxy              tor                      
-jlog                       pivotal/tap/pivnet-cli     vegeta                   
-joe                        ponyc                      yle-dl                   
+==> Downloading https://github.com/gcuisinier/jenv/archive/0.4.4.tar.gz
+==> Downloading from https://codeload.github.com/gcuisinier/jenv/tar.gz/0.4.4
 ######################################################################## 100.0%
-==> Cloning https://github.com/gcuisinier/jenv.git
-Cloning into '/Users/mac/Library/Caches/Homebrew/jenv--git'...
-remote: Counting objects: 122, done.
-remote: Compressing objects: 100% (75/75), done.
-remote: Total 122 (delta 8), reused 94 (delta 5), pack-reused 0
-Receiving objects: 100% (122/122), 29.04 KiB | 0 bytes/s, done.
-Resolving deltas: 100% (8/8), done.
-Checking connectivity... done.
-Note: checking out '76268a9b90248f260037137ac9212db9ba1e72c6'.
-&nbsp;
-You are in 'detached HEAD' state. You can look around, make experimental
-changes and commit them, and you can discard any commits you make in this
-state without impacting any branches by performing another checkout.
-&nbsp;
-If you want to create a new branch to retain commits you create, you may
-do so (now or later) by using -b with the checkout command again. Example:
-&nbsp;
-  git checkout -b <new-branch-name>
-&nbsp;
-==> Checking out tag 0.2.0-201404260
-==> Caveats
-Add 'jenv init' to your shell to enable shims and autocompletion.
-&nbsp;
-$ echo 'eval "$(jenv init -)"' >> ~/.bash_profile
-&nbsp;
-Fish shell export functions are available at /usr/local/Cellar/jenv/0.2.0-201404260/fish
-&nbsp;
-Bash completion has been installed to:
-  /usr/local/etc/bash_completion.d
-&nbsp;
-zsh completion has been installed to:
-  /usr/local/share/zsh/site-functions
-==> Summary
-🍺  /usr/local/Cellar/jenv/0.2.0-201404260: 70 files, 61K, built in 2 seconds
+🍺  /usr/local/Cellar/jenv/0.4.4: 78 files, 65.5KB, built in 8 seconds
    </pre>
-
-   The destination of the install is different than standard Java install:
-
-   <pre>
-   Cloning into '/Users/mac/Library/Caches/Homebrew/jenv--git'...
-   </pre>
-
-0. Do what the jenv message says and 
-   activate jenv by adding this to the bottom of the file
-   activated when a Terminal shell window starts:
-
-   <pre><strong>
-   echo 'eval "$(jenv init -)"' >> ~/.bash_profile
-   </strong></pre>
 
 0. To see if jenv can run, list its version and commands:
 
@@ -264,9 +221,10 @@ zsh completion has been installed to:
    jenv
    </strong></tt>
 
-   The desired response is like this:
+   The response is like this (at time of writing Oct 15, 2018):
 
    <pre>
+jenv 0.4.4
 Usage: jenv <command> [<args>]
 &nbsp;
 Some useful jenv commands are:
@@ -284,119 +242,68 @@ See `jenv help <command>' for information on a specific command.
 For full documentation, see: https://github.com/hikage/jenv#readme
    </pre>
 
-
-   TROUBLESHOOTING:
-   If you get this:   
-
-   <pre>
-/usr/local/bin/jenv: line 25: cd: /Users/mac/.jenv: No such file or directory
-/usr/local/Cellar/jenv/0.2.0-201404260/libexec/jenv: line 25: cd: /Users/mac/.jenv: No such file or directory
-/usr/local/Cellar/jenv/0.2.0-201404260/libexec/jenv---version: line 17: cd: /Users/mac/.jenv: No such file or directory
-   </pre>
-
-   Rather than using instructions at <a target="_blank" href="https://github.com/gcuisinier/jenv#gettings-started">
-   https://github.com/gcuisinier/jenv#gettings-started</a><br />
-   and<br />
-   <a target="_blank" href="https://github.com/gcuisinier/jenv/blob/master/README.md">https://github.com/gcuisinier/jenv/blob/master/README.md</a><br />
-   to
+0. See where it was installed:
 
    <tt><strong>
-   git clone https://github.com/gcuisinier/jenv.git ~/.jenv
+   which jenv
    </strong></tt>
 
-   The response:
+   My response:
 
-   <pre>
-Cloning into '/Users/mac/.jenv'...
-remote: Counting objects: 874, done.
-remote: Total 874 (delta 0), reused 0 (delta 0), pack-reused 874
-Receiving objects: 100% (874/874), 362.88 KiB | 199.00 KiB/s, done.
-Resolving deltas: 100% (367/367), done.
-Checking connectivity... done.
-   </pre>
+   <pre>/usr/local/bin/jenv</pre>
 
-   PROTIP: Installing using clone means that you would have to manually check
-   whether a new version is available, then manually do the upgrade.
-   So instead of doing that, forget the ~/.jenv folder and do this:
+   NOTE: The file jenv is a binary executable.
 
-0. Use Homebrew's directories rather than ~/.jenv add to the bottom of your profile file:
+0. Use Homebrew's directories rather than ~/.jenv add to the bottom of your bash_profile file:
 
    <tt><strong>
    export JENV_ROOT=/usr/local/var/jenv
    </strong></tt>
 
-0. To enable shims and autocompletion add to the botton of your profile file:
+0. To enable shims and autocompletion add to the botton of your bash_profile file:
   
    <pre><strong>
    if which jenv > /dev/null; then eval "$(jenv init -)"; fi
    </strong></pre>
 
-0. To see what jenv recognizes:
+   ## Jenv for several Java versions
 
-   <tt><strong>
-   jenv versions
-   </strong></tt>
-
-   The response if none if brew cask was not installed:
-
-   <pre>
-   * system (set by /usr/local/var/jenv/version)
-   </pre>
-
-0. Install Java GUI using brew <strong>cask</strong>, 
-   and `--force` to update sub-versions:
+0. Get info:
 
    <pre><strong>
-   sudo brew update && brew cask install java --force
+   jenv info java
+   </strong></pre>
+
+   Sample response:
+
+   <pre>
+   Jenv will exec : /usr/bin/java
+Exported variables :
+  JAVA_HOME=/Users/wilsonmar/.jenv/versions/system
+   </pre>
+
+0. List installers available for use by jenv:
+
+   <pre><strong>
+   ls -al /Library/Java/JavaVirtualMachines/
    </strong></pre>
 
    The response:
 
    <pre>
-   ==> Downloading http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-ma
-Warning: The default Caskroom location has moved to /usr/local/Caskroom.
-&nbsp;
-Please migrate your Casks to the new location and delete /opt/homebrew-cask/Caskroom,
-or if you would like to keep your Caskroom at /opt/homebrew-cask/Caskroom, add the
-following to your HOMEBREW_CASK_OPTS:
-&nbsp;
-  --caskroom=/opt/homebrew-cask/Caskroom
-&nbsp;
-For more details on each of those options, see https://github.com/caskroom/homebrew-cask/issues/21913.
-==> Caveats
-This Cask makes minor modifications to the JRE to prevent issues with
-packaged applications, as discussed here:
-&nbsp;
-  https://bugs.eclipse.org/bugs/show_bug.cgi?id=411361
-&nbsp;
-If your Java application still asks for JRE installation, you might need
-to reboot or logout/login.
-&nbsp;
-Installing this Cask means you have AGREED to the Oracle Binary Code
-License Agreement for Java SE at
-&nbsp;
-  http://www.oracle.com/technetwork/java/javase/terms/license/index.html
-&nbsp;
-==> Downloading http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-
-==> Verifying checksum for Cask java
-==> Running installer for java; your password may be necessary.
-==> Package installers may write to any location; options such as --appdir are i
-Password:
-==> installer: Package name is JDK 8 Update 102
-==> installer: Upgrading at base path /
-==> installer: The upgrade was successful.
-🍺  java was successfully installed!
+total 0
+drwxr-xr-x  5 root  wheel  160 Mar 30  2018 .
+drwxr-xr-x  5 root  wheel  160 Mar 30  2018 ..
+drwxr-xr-x  2 root  wheel   64 Mar 30  2018 jdk-10.jdk
+drwxr-xr-x  2 root  wheel   64 Mar 30  2018 jdk1.8.0_144.jdk
+drwxr-xr-x  3 root  wheel   96 Mar 30  2018 jdk1.8.0_162.jdk
    </pre>
 
-   TROUBLESHOOTING:
-   If you get stuck on “verifying…” during the installation process of Java
-   on Mac El Capitan, it’s probably because of "rootless".
-   See http://osxdaily.com/2015/10/05/disable-rootless-system-integrity-protection-mac-os-x/
+   If you don't see any, you need to first download a JVM installer containing folders bin, lib, jre, include, bundle, db, man.
 
+   The path to a particular version is constructed by adding "/Contents/Home" to the end of the path.
 
-   ## Jenv for several Java versions
-
-0. The point of jenv is to add additional versions, such as back version JDK 7:
+0. The point of jenv is to add additional versions, such as back version JDK 7.
 
    <pre><strong>
    jenv add /Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home
@@ -408,14 +315,13 @@ Password:
    oracle64-1.7.0.65 added
    </pre>
 
-
 0. Add JDK 8:
 
    <pre><strong>
-   jenv add /Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home
+   jenv add /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home
    </strong></pre>
 
-   http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-macosx-x64.dmg
+   http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u162-macosx-x64.dmg
 
    The response:
 
@@ -423,22 +329,27 @@ Password:
    oracle64-1.8.0.45 added
    </pre>
 
+   The above provide a handle for jenv provide other apps to use.
 
-0. List the libraries jenv knows about:
+0. List the Java versions jenv knows about:
 
-   <pre><strong>
+   <tt><strong>
    jenv versions
-   </strong></pre>
+   </strong></tt>
 
-0. Highlight, copy and paste the version you want to use.
+   The response if none if brew cask was not installed:
 
-0. To configure global version:
+   <pre>
+   * system (set by /usr/local/var/jenv/version)
+   </pre>
+
+0. To configure global version for all apps to use:
 
    <pre><strong>
    jenv global oracle64-1.8.0.45
    </strong></pre>
 
-   The response:
+   Example response:
 
    <pre>
    system
@@ -451,19 +362,14 @@ Password:
 
 ### Open JDK #
 
-Open JDK is the open-sourced implementation of the
-JRE spec, at
+Open JDK is the open-sourced implementation of the JRE spec, at
 <a target="_blank" href="http://openjdk.java.net/">http://openjdk.java.net</a>
-is at JVM 7.
 
-  * https://en.wikipedia.org/wiki/List_of_Java_virtual_machines
-
-But it is still not ready for "prime time" on Mac as installation is a dirty affair.
+But some say it is not ready for "prime time" on MacOS because its installation is a dirty affair:
 
    * https://wiki.openjdk.java.net/display/MacOSXPort/Mac+OS+X+Port+Project+Status
 
-Open JDK's
-<a target="_blank" href="http://openjdk.java.net/install/">
+Open JDK's <a target="_blank" href="http://openjdk.java.net/install/">
 install page at http://openjdk.java.net/install/</a>
 shows apt-get (for Debian, Ubuntu) and
 yum (for Red Hat, CentOS, Oracle Linus, Fedora).
@@ -508,26 +414,13 @@ For OSX, this page recommends using Make to compile from source</a>.
    <a target="_blank" href="https://mihail.stoynov.com/2015/01/29/building-openjdk-9-on-a-osx-or-any-linux/">
    Mihail recommends</a>:
 
-0. Install ccache compiler cache.
+0. Install ccache (compiler cache):
 
    <tt><strong>
    brew install ccache
    </strong></tt>
 
 0. Make a symlink /usr/bin/gcc -> /usr/local/Cellar/apple-gcc42/4.2.1-5666.3/bin/gcc-4.2 (same for g++)
-
-0. If you're at Mavericks Apply patches: 1, 2, 3, 4.
-
-0. if you're at Mavericks Comment out NS_AVAILABLE(10_9, NA) in line 16 of /System/Library/Frameworks/Foundation.framework/Headers/NSUserNotification.h
-
-9. Build:
-
-   <tt><strong>
-   make all<br />
-   make install
-   </strong></tt>
-
-   Built image should be available at build/macosx-x86_64-normal-server-release/jdk/
 
 
 <a name="TestBuild"></a>
