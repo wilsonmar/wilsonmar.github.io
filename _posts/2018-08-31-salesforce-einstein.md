@@ -26,7 +26,11 @@ Salesforce users already have data structured and stored for use by AI.
 
 Einstein can be "simply" added to process existing data. For example, text users enter into a service request form can be designated for analysis. The Einstein Intent API processes the text to automatically determine how to routed the request to the correct department.
 
-Benioff has also been a lead investor in machine translation company <a target="_blank" href="http://www.linkedin.com/company/1617147">Cloudwords</a> since its seed funding days.
+CEO Benioff has also been a lead investor in machine translation company <a target="_blank" href="http://www.linkedin.com/company/1617147">Cloudwords</a> since its seed funding days.
+
+Shubha Nabar (Senior Director, Software Engineering) is the Einstein boss at Salesforce. See her talk Mar 7, 2017 [18:58]:
+<amp-youtube data-videoid="_wKOk3Gtmac" layout="responsive" width="480" height="270"></amp-youtube>
+
 
 ## API Endpoint
 
@@ -35,12 +39,16 @@ Thus, "api.metamind.io" was the previous endpoint to APIs, which is now:
 
    <a target="_blank" href="https://api.einstein.ai">https://api.einstein.ai</a>
 
+The Einstein Intent API <strong>categorizes</strong> unstructured text into <strong>user-defined labels</strong> to better understand what users are trying to accomplish. Use this API to analyze text from emails, chats, or web forms to: Determine which products prospects are interested in, and send customer inquiries to the appropriate sales person. Route service cases to the correct agents or departments, or provide self-service options. Understand customer posts to provide personalized self-service in your communities.
+
 
 ## Einstein Offerings
 
-Based on <a target="_blank" href="https://www.salesforce.com/products/einstein/features/#platform-scroll-tab?d=cta-body-promo-16">this</a>:
+<a target="_blank" title="sf-einstein-apps-1131x532-75871.jpg" href="https://user-images.githubusercontent.com/300046/47138815-a66e7c80-d277-11e8-85cc-c9eda708b0d9.jpg"><img alt="sf-einstein-apps-571x267-30100" width="571" src="https://user-images.githubusercontent.com/300046/47138098-bab17a00-d275-11e8-8ef8-2febe50635c0.jpg"></a>
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=dYX4SWPrZzo">Einstein: AI in the Salesforce Platform</a> Dec 15, 2016
+Based on <a target="_blank" href="https://www.salesforce.com/products/einstein/features/#platform-scroll-tab?d=cta-body-promo-16">this Einstein: AI in the Salesforce Platform</a> Dec 15, 2016 teaser music video followed by the high-level Marketing pitch breakout session at Dreamforce '16:
+<amp-youtube data-videoid="dYX4SWPrZzo" layout="responsive" width="480" height="270"></amp-youtube>
+<br />
 
 The "AI-Powered" Einstein features listed in the <a target="_blank" href="https://www.salesforce.com/editions-pricing/sales-cloud/">Sales Cloud pricing sheet</a> at additional cost for Enterprise+ (not Pro): <a target="_blank" href="https://a.sfdcstatic.com/content/dam/www/ocms-backup/assets/pdf/datasheets/DS_SalesCloud_EdCompare.pdf">PDF</a>
 
@@ -59,8 +67,6 @@ The "AI-Powered" Einstein features listed in the <a target="_blank" href="https:
 
    * <a href="#EinsteinObjectDetection">Object Detection</a> (image recognition)
    * <a href="#EinsteinBots">Bots</a>
-
-The Einstein Intent API <strong>categorizes</strong> unstructured text into <strong>user-defined labels</strong> to better understand what users are trying to accomplish. Use this API to analyze text from emails, chats, or web forms to: Determine which products prospects are interested in, and send customer inquiries to the appropriate sales person. Route service cases to the correct agents or departments, or provide self-service options. Understand customer posts to provide personalized self-service in your communities.
 
 <hr />
 
@@ -98,9 +104,10 @@ extends the full power of the Salesforce platform to email and calendar and neve
 <strong>Sales Analytics</strong>
 to quickly gain pipeline visibility, track team performance, and uncover opportunities to grow business.
 
+https://www.youtube.com/watch?v=R07CtsAmrd0
+Einstein Analytics Overview Jun 14, 2017 [1:30]
 
-
-## Image classification
+### Image classification
 
 <a name="EinsteinObjectDetection"></a>
 
@@ -114,6 +121,9 @@ https://appexchange.salesforce.com/listingDetail?listingId=a0N3000000Dq45IEAR
 https://developer.salesforce.com/events/webinars/build-smarter-apps-einstein-platform-services
 
 https://venturebeat.com/2018/09/19/salesforce-announces-einstein-voice-a-voice-assistant-for-enterprises/
+
+https://www.youtube.com/watch?v=1l6D4TWnDq0
+Introducing Einstein Voice Oct 16, 2018
 
 
 ### Salesforce Social Studio Vision
@@ -136,6 +146,8 @@ Trailhead Projects:
 
 ## Einstein Bots
 
+Create one:
+
 1. In the "Quick", type "bots" to click "Einstein Bots".
 1. Toggle "Einstein Bots" on.
 1. Click "I'm authorized by my company to accept these terms."
@@ -144,6 +156,11 @@ Trailhead Projects:
 1. Click Next.
 1. Enter Bot name and description.
 
+## Einstein Dataflow
+
+https://help.salesforce.com/articleView?id=000267071&type=1
+
+Users with the "Edit Wave Analytics Dataflows“ user permission and an organization with <a target="_blank" href="https://help.salesforce.com/articleView?id=bi_integrate_understand_enable_replication.htm&type=5">replication</a> enabled.
 
 ## Salesforce + IBM Watson
 
@@ -161,6 +178,20 @@ https://trailhead.salesforce.com/en/projects/surface-data-from-ibm-watson-discov
 Surface Data from IBM Watson Discovery in Salesforce
 
 <hr />
+
+## Get an Einstein org
+
+1. Spin up an
+
+   https://developer.salesforce.com/promotions/orgs/analytics-de
+
+1. Verify account in your email.
+1. Click the Object Manager tab.
+
+   Note two new custom objects: AcquiredAccount__c and OpportunityHistory__c.
+
+Einstein Analytics - Setting up Apps Sep 25, 2017 [11:00]:
+<amp-youtube data-videoid="49-buxIS3Tw" layout="responsive" width="480" height="270"></amp-youtube>
 
 ## Get an Einstein Platform Services Account
 
@@ -300,6 +331,11 @@ For SI Partners:
    <br /><br />
 
 For ISV Partners: Einstein Analytics for ISVs Getting Started Guide https://partners.salesforce.com/06930000005LUZM
+
+## Learning
+
+https://trailhead.salesforce.com/en/users/00550000006FDjQAAW/trailmixes/einstein-analytics
+Phil Choi's Trailmix for Einstein Analytics
 
 ## More about Salesforce #
 

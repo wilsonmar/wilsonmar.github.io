@@ -215,6 +215,8 @@ Salesforce, as a company, pioneered the <strong>1:1:1 model</strong>, donating o
 
 ### Success Communities
 
+NOTE: https://trailblazer.salesforce.com resolves to https://success.salesforce.com/
+
 * <a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F93A000000HTp1">
    Salesforce DX</a> (Developer eXchange)
 
@@ -248,6 +250,10 @@ From: https://www.salesforceben.com/the-linkedin-guide-book-for-trailblazers/
 
 
 ### Trailhead communities
+
+https://trailblazercommunitygroups.com/
+
+https://trailhead.salesforce.com/community/students for students in accredited schools
 
 <a target="_blank" href="https://toptrailblazers.com/c/">https://toptrailblazers.com/c/</a> lists communities.
 
@@ -290,7 +296,13 @@ Einstein Analytics</a>
 
 https://www.facebook.com/sfdcpoint/
 
+
 ## Events (Meet people)
+
+<a target="_blank" href="https://twitter.com/search?q=%23salesforcesaturday&src=typd">#SalesforceSaturdays</a>
+   
+   * https://twitter.com/DenverSfSat, #DenverSalesforceSaturday, https://denversalesforcesaturday.splashthat.com/ by @dougdunfee
+   <br /><br />
 
 <a target="_blank" href="https://developer.salesforce.com/calendar">https://developer.salesforce.com/calendar</a> is where you find and register for events.
 

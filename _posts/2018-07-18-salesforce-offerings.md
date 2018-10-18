@@ -682,9 +682,13 @@ MEH: Each product record in a Pricebook is for a single currency. So a product s
 
 <a name="VersionChangeMgmt"></a>
 
-### Salesforce Versions
+## Versions of Salesforce
 
 PROTIP: Salesforce has <strong>three releases per year</strong>, named by season (avoiding Fall):
+
+<!--
+| <a target="_blank" href="https://www.salesforceben.com/complete-guide-to-salesforce-winter-19/">Winter '19</a> | 44.0 | <a target="_blank" href="https://resources.docs.salesforce.com/215/latest/en-us/sfdc/pdf/salesforce_winter19_release_notes.pdf">215 PDF</a> |
+-->
 
 | Force Version | API Version | Release |
 | ----:         | -----: | --: |

@@ -28,15 +28,17 @@ Kubernetes is called "container orchestration" software because it automates the
 
 Each Kubernetes node has a different IP address.
 
-![k8s-container-sets-479x364](https://user-images.githubusercontent.com/300046/33526550-6c98a980-d800-11e7-9862-ff202492e08b.jpg)
+![k8s-container-sets-479x364.jpg](https://user-images.githubusercontent.com/300046/33526550-6c98a980-d800-11e7-9862-ff202492e08b.jpg)
 <!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
 
 Kubernetes automates resilience into containers by abstacting the network and storage of a virtual <strong>containers</strong> in replaceable "pods". Each pod can hold one or more Docker containers.
 
-Within a pod, each container has a different <strong>port number</strong>.
-But containers share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage, and other resources.
+![kubernetes-structure-502x205-12351.png](https://user-images.githubusercontent.com/300046/47167711-5cf45080-d2bc-11e8-8c95-a76b1b92373a.png)
 
-Kubernetes replicates Pods across several worker <strong>nodes</strong> (VM or physical machines).
+Within a pod, each container has a different <strong>port number</strong>.
+Containers within the same pod share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage, and other resources.
+
+Kubernetes replicates Pods (the same set of containers in each) across several worker <strong>nodes</strong> (VM or physical machines).
 
 <a target="_blank" title="from Yongbok Kim (who writes in Korean)" href="https://user-images.githubusercontent.com/300046/33525757-6fcd2624-d7f3-11e7-9745-79ce5f9600e9.jpg">
 <img alt="k8s-arch-ruo91-797x451-104467" src="https://user-images.githubusercontent.com/300046/33525757-6fcd2624-d7f3-11e7-9745-79ce5f9600e9.jpg"></a>
@@ -220,7 +222,7 @@ The <strong>describe</strong> command provides more detailed information.
    * core "" to handle pod & svc
    * apps to handle deploy, sts, ds
    * authorization to handle role, rb
-   * storage to handle pv (persistent volume) and <a href="#PVC">pvc</a>
+   * storage to handle pv (persistent volume) and <a href="#PVC">pvc</a>, sc (storage classes)
 
 <a name="Scheduler"></a>
    
@@ -845,6 +847,8 @@ daemonset "kube-flannel.ds" created
    <pre>kubectl expose deployment *deployment-name* [options]</pre>
 
 <hr />
+
+## Container Storage Interface (CSI)
 
    <a name="PVC"></a>
 

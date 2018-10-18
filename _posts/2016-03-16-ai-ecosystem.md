@@ -15,9 +15,9 @@ comments: true
 
 {% include _toc.html %}
 
-## Leading Companies #
+## Leading AI Companies #
 
-In the 2010's there is an "arms race" in offering 
+In the 201X's there is an "arms race" in offering 
 Artificial intelligence and Machine Learning (ML) services in their clouds:
 
    * [Microsoft Cortana in Azure cloud](/microsoft-ai)
@@ -25,10 +25,26 @@ Artificial intelligence and Machine Learning (ML) services in their clouds:
    * IBM Watson
    * Amazon Alexa and Lex Chatbot
    * Apple Siri
-   * Facebook 
-   <br />
+   * Facebook
 
-Each of the above are cloud vendors hoping to cash in by charging for storing and processing data on their cloud. Facebook, as we all know to our chagrin, makes money from selling their user's data to advertisers.
+   * Baidu (China's Google)
+   * Alibaba (China's Amazon and PayPal - Alipay)
+   * Tencent (China's Facebook: WeChat operator)
+   <br /><br />
+
+Each of the above are cloud vendors may cash in by charging for storing and processing data on their cloud. Facebook, Instagram, and Google, as we all know to our chagrin, makes money from selling their user's data to advertisers.
+
+In 2016, AI researchers from six major tech companies, including Apple, Amazon, and Google, formed the Partnership on AI (PAI). In 2018, Baidu (the first from China) joined the now 70 member organizations that include Tufts University and Wikimedia.
+
+## Alternative clouds
+
+H2O.ai
+
+floydhub.com
+
+
+
+## Pubs 
 
 Benedict Evans, resident futurist at venture capital firm Andreessen Horowitz, 
 observes in a <a target="_blank" href="http://ben-evans.com/benedictevans/2016/6/23/ai-apple-and-google"> blog post</a> that the future of AI remains opaque: 
@@ -37,8 +53,6 @@ observes in a <a target="_blank" href="http://ben-evans.com/benedictevans/2016/6
 <a target="_blank" href="https://gibhut.com/josephmisiti/awesome-machine-learning/">
 awesome-machine-learning</a>
 provides many links to resources, so they will not be repeated here.
-
-## Pubs 
 
 There is a website that specializes in academic publications about Artificial Intelligence.
 See the <a target="_blank" href="https://docs.google.com/spreadsheets/d/1xej5Nca2xUUtrZ1GCyPjFMqI9ZgNq_OhgnTxOOMQ2js/edit#gid=404493967">Arxiv Paper Analysis Worksheet (Responses) on Google Sheet</a>

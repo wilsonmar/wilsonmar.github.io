@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python Conda Anaconda Miniconda Pip on Mac OS"
+title: "Python Install (Conda Anaconda Miniconda Pip) on MacOS"
 excerpt: "Confusion and errors from many alternatives and options"
 tags: [python, apple, mac, setup]
 shorturl: "https://goo.gl/wNVxWD"
@@ -35,15 +35,13 @@ There are two separate versions of Python such that
 <a href="#CommandVersions">
 some Python functions in one version do not work with commands in another version</a>.
 
-<a href="#PythonMacVersion">The version of Python that comes with Apple Mac OSX is obsolete</a> 
-and needs to be <a href="#UpgradePython">updated</a>
+<a href="#PythonMacVersion">The version of Python that comes with Apple Mac OSX is obsolete</a> and needs to be <a href="#UpgradePython">updated</a>
 with <a href="#XCode">XCode</a>.
 
-Version 2 of Python must be the default Python command for Apple's use.
+To use Python3 as the default version for the python command, set an alias python=python3 in you Mac's ~/.bash_profile.
 
 Despite all this hassle, Python is the preferred language of 
-Artificial Intelligence
-and Machine Learning 
+Artificial Intelligence and Machine Learning 
 at the forefront of computer science innovation today.
 
 The heavy use of math in AI and ML means it's best to 
@@ -55,7 +53,6 @@ that each contain a desired version of Python (2.7 vs 3.6) for a specific purpos
 plus specific versions of add-on Python packages (such as TensorFlow).
 
 PIP install is troublesome, often because they are more recent than those in Conda.
-
 
 <a name="Packaging"></a>
 
@@ -805,12 +802,10 @@ You must give at least one requirement to install (see "pip help install")
    
    This solves the &quot;Project X depends on version 1.x but, Project Y needs 4.x&quot; dilemma, 
    and keeps your global site-packages directory clean and manageable.
-   - <a target="blank" href="http://docs.python-guide.org/en/latest/starting/install/osx/">
-   Python Guide</a>
+   
+   * <a target="blank" href="http://docs.python-guide.org/en/latest/starting/install/osx/">Python Guide</a>
 
-   -----
-
-   before the `pip install` command:
+   Before the `pip install` command:
    Automatically download the packages listed
    (after you manually change the /path/to)
 

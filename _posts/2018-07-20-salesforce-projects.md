@@ -26,10 +26,10 @@ PROTIP: Don't make the mistake made by many Salesforce novices who avoid looking
 Superbadges prescribe an order to taking the pre-requisite Trailhead Modules and projects.
 
 PROTIP: I've arranged this list of superbadges in a rough sequence for taking them.
-At last count (October 12, 2018), there are 13 superbadges. 
+
 <a target="_blank" href="https://toptrailblazers.com/b/super_badges">https://toptrailblazers.com/b/super_badges</a> lists the number of people who have completed each (around 2-300 at last count).
 
-1. The <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_security">Security Specialist</a> [4 - 6 hours] works with standard objects. Its pre-requisite Modules:
+1. The <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_security">Security Specialist<img align="right" alt="sf-superbadge-security-specialist.png" src="https://user-images.githubusercontent.com/300046/47075401-bd4e9980-d1b9-11e8-99c3-6cf5ae0b2d6f.png"></a> [4 - 6 hours] works with standard objects. Its pre-requisite Modules:
 
    * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/data_security">Data Security</a> [1 hr 50 mins] 
    * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/identity_basics">Identity Basics</a> [45 mins]
@@ -38,7 +38,7 @@ At last count (October 12, 2018), there are 13 superbadges.
 
    PROTIP: Good to do this earlier because it impacts and controls everything else. 
 
-1. <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_business_specialist">Business Administration Specialist</a> [4 - 6 hrs]
+1. <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_business_specialist">Business Administration Specialist<img align="right" alt="sf-superbadge-business-administration-specialist.png" src="https://user-images.githubusercontent.com/300046/47076285-9ee99d80-d1bb-11e8-8af8-985555738959.png"></a> [4 - 6 hrs]
 It makes use of the <a target="_blank" href="https://na31.lightning.force.com/packagingSetupUI/ipLanding.app?apvId=04tf4000000x3Yd">BSX Unmanaged Package</a> by CPBHE. Its pre-requisite Modules:
 
    * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lex_implementation_reports_dashboards">Reports & Dashboards for Lightning Experience</a> [1 hr 55 mins]
@@ -49,7 +49,7 @@ It makes use of the <a target="_blank" href="https://na31.lightning.force.com/pa
 
    PROTIP: Good to do this earlier because it provides the "why" of Salesforce adoption payoffs. 
 
-1. The <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_process_automation">Process Automation Specialist</a> [6 - 8 hrs] Its pre-requisite Modules:
+1. The <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_process_automation">Process Automation Specialist<img align="right" alt="sf-superbadge-process-automation-specialist.png" src="https://user-images.githubusercontent.com/300046/47075856-a3fa1d00-d1ba-11e8-9d41-c142aee814c4.png"></a> [6 - 8 hrs] Its pre-requisite Modules:
 
    * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/point_click_business_logic">Formulas & Validations</a> [45 mins]
    * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/business_process_automation">Lightning Flow</a>
@@ -77,7 +77,7 @@ It makes use of the <a target="_blank" href="https://na31.lightning.force.com/pa
 
    <hr />
 
-1. <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex">Lightning Experience Specialist</a> [4 - 6 hrs] Its pre-requisite Modules:
+1. <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex">Lightning Experience Specialist<img align="right" alt="sf-superbadge-lightning-experience-specialist.png" src="https://user-images.githubusercontent.com/300046/47075993-ff2c0f80-d1ba-11e8-90f9-fdc41324f06f.png"></a> [4 - 6 hrs] Its pre-requisite Modules:
 
    * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lex_customization">Lightning Experience Customization</a> [2 hr 50 mins] 
    * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/business_process_automation">Lightning Flow</a> [4 hrs]
@@ -85,7 +85,7 @@ It makes use of the <a target="_blank" href="https://na31.lightning.force.com/pa
    * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lex_implementation_reports_dashboards">Reports & Dashboards for Lightning Experience</a> [1 hr 55 mins]
    <br /><br />
 
-1. <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lcf">Lightning Component Framework Specialist</a> [10 - 12 hrs]] Its pre-requisite Modules:
+1. <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lcf">Lightning Component Framework Specialist<img align="right" alt="sf-superbadge-lightning-component-framework-specialist.png" src="https://user-images.githubusercontent.com/300046/47076504-1a4b4f00-d1bc-11e8-9ad0-1b48412fa29d.png"></a> [10 - 12 hrs]] Its pre-requisite Modules:
 
    * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lex_dev_overview">Lightning Experience Development</a> [1 hr 20 mins] 
    * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lex_dev_lc_basics">Lightning Component Basics</a> [4 hrs]
@@ -95,7 +95,7 @@ It makes use of the <a target="_blank" href="https://na31.lightning.force.com/pa
 
    PROTIP: This uses the Salesforce Lightning Design System (SLDS) markup.
 
-1. <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex_rollout">Lightning Experience Rollout Specialist</a> [9 - 12 hrs] Its pre-requisite Modules:
+1. <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_lex_rollout">Lightning Experience Rollout Specialist<img align="right" alt="sf-superbadge-lightning-experience-rollout-specialist.png" src="https://user-images.githubusercontent.com/300046/47076111-369abc00-d1bb-11e8-9bb4-ac7eacf90a7e.png"></a> [9 - 12 hrs] Its pre-requisite Modules:
 
    * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lex_migration_rollout">Lightning Experience Rollout</a> [1 hr] 
    * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lightning_app_builder">Lightning App Builder</a> [1 hr 35 mins] (repeat)
@@ -113,16 +113,16 @@ It makes use of the <a target="_blank" href="https://na31.lightning.force.com/pa
 
 
    <hr />
-
-1. <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge-lex-rd">Lightning Experience Reports & Dashboards Specialist</a> [4 - 6 hrs]
+<!--img align="right" alt="sf-superbadge-reports-dashboards-specialist.png" src="https://user-images.githubusercontent.com/300046/47075633-2fbf7980-d1ba-11e8-8fd6-9ec5eac2d011.png"-->
+1. <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge-lex-rd">Lightning Experience Reports & Dashboards Specialist<img align="right" alt="sf-superbadge-lightning-experience-reports-dashboards-specialist.png" src="https://user-images.githubusercontent.com/300046/47076568-42d34900-d1bc-11e8-85c2-f6e93c1bfad0.png"></a> [4 - 6 hrs]
    takes the place of the "Reports & Dashboards Specialist" superbadge retired in 2017. Its pre-requisite Modules:
-
+   
    * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lex_implementation_reports_dashboards">Reports & Dashboards for Lightning Experience</a> [1 hr 55 mins]
    * <a target="_blank" href="https://trailhead.salesforce.com/en/projects/create-reports-and-dashboards-for-sales-and-marketing-managers">Create Reports and Dashboards for Sales and Marketing Managers</a> [1 hr 30 mins]
    * Project: <a target="_blank" href="https://trailhead.salesforce.com/en/projects/quickstart-app-builder">Quick Start: Lightning App Builder</a> [20 mins] no coding.
    <br /><br />   
 
-1. <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_analytics_integration_specialist">Einstein Analytics Data Prepartion Specialist</a> Analytics Administration Basics</a> [1 hr 35 mins] Its pre-requisite Modules:
+1. <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_analytics_integration_specialist">Einstein Analytics Data Prepartion Specialist<img align="right" alt="sf-superbadge-einstein-analytics-data-preparation-specialist.png" src="https://user-images.githubusercontent.com/300046/47076431-f12abe80-d1bb-11e8-905e-7baef5ada7a7.png">Analytics Administration Basics</a> [1 hr 35 mins] Its pre-requisite Modules:
 
    * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/wave_enable_setup">Apex Integration Analytics Administration Basics</a> [[1 hr 35 mins] ]
    * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/wave_enable_data_integration_basics">Analytics Data Integration Basics</a> [1 hr 20 mins]
@@ -131,7 +131,7 @@ It makes use of the <a target="_blank" href="https://na31.lightning.force.com/pa
 
    (Follow <a target="_blank" href="https://twitter.com/SForceAnalytics">@SForceAnalytics</a>)
 
-1. <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_integration">Data Integration Specialist</a> [8 - 15 hrs] Its pre-requisite Modules:
+1. <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges/superbadge_integration">Data Integration Specialist<img align="right" alt="sf-superbadge-data-integration-specialist.png" src="https://user-images.githubusercontent.com/300046/47076358-c6406a80-d1bb-11e8-899e-a15928a23842.png"></a> [8 - 15 hrs] Its pre-requisite Modules:
 
    * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/apex_integration_services">Apex Integration Services</a> [2 hrs]
    * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/asynchronous_apex">Asynchronous Apex</a> [1 hr 30 mins]
@@ -157,8 +157,10 @@ PROTIP: Many of the projects introduce techniques for connecting Salesforce with
 <a name="BattleStation"></a>
 Project: <a target="_blank" href="https://trailhead.salesforce.com/en/projects/workshop-battle-station">Build a Battle Station App</a> [2 hrs 30 mins] 
    * <a target="_blank" href="https://blog.jeffdouglas.com/2015/12/21/how-we-built-the-build-a-battle-station-project/">How we built the "Build a Battle Station App"</a> by Jeff Douglas — 21 Dec 2015
+   * <a target="_blank" href="https://www.youtube.com/watch?v=dQKvqmXqZrg">How to Nov 10, 2017</a> [1:48] using <a target="_blank" href="https://guideme.io">GuideMe.io</a> EdCast
 
-   No sound, watching someone struggle:
+   No sound, watching someone seemingly clicking around randomly:
+
    1. <a target="_blank" href="https://www.youtube.com/watch?v=sIU0zKNYPyE">7:04</a> May 17, 2018
    1. <a target="_blank" href="https://www.youtube.com/watch?v=JLu0nNXZFVE">17:14</a> May 17, 2018
    1. <a target="_blank" href="https://www.youtube.com/watch?v=QUIs-T32Op8">21:05</a> May 17, 2018

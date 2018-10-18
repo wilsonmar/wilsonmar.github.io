@@ -41,12 +41,13 @@ comments: true
    * LMO = License Management Organization
    * MCV = Monthly Contract Value (in CPQ)
    * MRR = Monthly Recurring Revenue (in CPQ)
-   * PAM = Partner Account Manager (email isvpartners@salesforce.com)
+   * MMF = Minimally Marketable Features (a type of release)
    * MOAR = MuleSoft Anypoint Platform (for API management)
    * NPS = Net Promoter Score (metric of possible vs. negative customer recommendations)
    * NPSP = Non-Profit Success Pack
    * OWD = Organization-Wide Default
    * OCR = Opportunity Contact Roles
+   * PAM = Partner Account Manager (email isvpartners@salesforce.com)
    * PRM = Partner Relationship Management (offering)
    * QTC = Quote to Cash (Billing workflow)
    * SaaS = Software as a Service
