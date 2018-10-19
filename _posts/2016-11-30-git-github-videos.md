@@ -150,7 +150,7 @@ https://githubuniverse.com</a>
 OCT 16 - 17, 2018 at PALACE OF FINE ARTS | SAN FRANCISCO
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=u9s_W8lCrDU">
-    Opening Keynote</a>
+    Opening Keynote 2016</a> by GitHub CEO Chris Wanstrath
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=pspy1H6A3FM">
     2014</a>
@@ -516,7 +516,7 @@ Squashing Commits</a> [1:37] Nov 22, 2016 by John
 How to Add & Clone Remote Repositories</a> [3:30] Nov 11, 2016 by Justin
 
 
-### Tower client
+### Tower GUI  client
 
 Tobias Guenther (tg@fournova.com in Germany) is a developer of Tower, a feature-rich git client for Mac OSX
 and (since 2017) for Windows.
@@ -586,12 +586,8 @@ playlist to "Learn Git on the Command Line"</a>:
 
 ### Git Real 1 and 2
 
-This series <a target="_blank" href="https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history">previously on thoughtbot</a>
-provides a real hands-on learning experience by making you enter the commands.
-
-http://thddaniel.github.io/2014/11/09/Git%20Real%202/
-
-by Greg Pollock
+This series by Greg Pollock was <a target="_blank" href="https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history">previously on thoughtbot</a>.
+It provides a real hands-on learning experience by making you enter the commands. See http://thddaniel.github.io/2014/11/09/Git%20Real%202/
 
 0. <a target="_blank" href="https://www.youtube.com/watch?v=JU07VxBCTr4&t=27s">
    Introduction (1/7)</a> [8:19]
@@ -736,7 +732,7 @@ For $300 per year, Pluralsight has purchased several other video training compan
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/using-git-with-gui">
    Using Git with a GUI Mar 08, 2016</a> 
    [2h 38m]
-   by Xavier Morera
+   by Xavier Morera (<a target="_blank" href="https://twitter.com/xmorea">@xmorera</a>)
 
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/how-git-works">
    How Git Works Mar 10, 2016</a>
@@ -785,11 +781,13 @@ and
 <a target="_blank" href="https://www.lynda.com/Git-tutorials/Git-Essential-Training/100222-2.html">
    Git Essential Training 24 Aug 2012</a> [6h 25m]
    by Kevin Skoglund
+
 <!--
    is in <a target="_blank" href="https://www.youtube.com/watch?v=vsqsRhxGyKo&list=PLb5HO8RZjX-kZnThtY4f4yKgb2CQWwh8c">
    this YouTube playlist</a> published Sep 26, 2015.
 
    CAUTION: You're missing the quizzes unless you're on Lynda.com.
+
 1) What is Git - 
 
 0. <a target="_blank" href="https://www.youtube.com/watch?v=vsqsRhxGyKo">
@@ -1125,7 +1123,7 @@ into a publishing, training, and consulting business at
 <a target="_blank" href="http://vogella.com/">vogella.com</a>.
 
 * He published a <a target="_blank" href="http://www.amazon.com/gp/product/B00R1XABSU/">
-   $9 book on git</a> referencing his git repository at<br />
+   $9 book on Amazon Kindle</a>, referencing his git repository at<br />
    <a target="_blank" href="http://github.com/vogella/">http://github.com/vogella</a>
 
 
@@ -1216,7 +1214,7 @@ https://www.linkedin.com/in/davidmahler/
 
 ### Corey Schafer
 
-Among his videos on Python is Git Tutorial series that focus on the most confusing aspects         :
+Among his YouTube <a target="_blank" href="https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g">videos on Python</a> is this Git Tutorial series that focus on the most confusing aspects:
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=HVsySz-h9r4">
    Command-Line Fundamentals</a> Aug 3, 2015 [30:32]
@@ -1619,6 +1617,15 @@ These videos have ads:
    What's the .gitignore file?</a>
 9. <a target="_blank" href="https://www.youtube.com/watch?v=U3uwMr3u2Q4&list=PLriKzYyLb28nCh3jJLROcYBvj7ZO0l-3G&index=9">
    The Git revert command</a>
+
+
+### DevForge Network
+
+Makes use of hand-draw diagrams and gamer references:
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=6nY-aq_rV8I">Learn to Git: ProblemSpace</a> Jul 6, 2015
+2. <a target="_blank" href="https://www.youtube.com/watch?v=8KCQe9Pm1kg">Learn to Git: Basic Concepts</a> Jul 6, 2015
+
 
 ### SAP
 
