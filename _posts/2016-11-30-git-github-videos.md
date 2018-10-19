@@ -483,6 +483,7 @@ Git Evangelist at Atlassian Amsterdam:
    * <a target="_blank" href="https://www.youtube.com/watch?v=v-MFXnF1vXE">
    Git Branching for Agile Teams, Sep. 2014</a>
 
+Basil Abbas <a target="_blank" href="https://www.youtube.com/watch?v=wKmmFQwGWBM">GitFlow how to get it right</a> Apr 24, 2014 [25:15] makes use of Source Tree GUI.
 
 ### GitKraken client
 

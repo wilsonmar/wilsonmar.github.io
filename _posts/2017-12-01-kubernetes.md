@@ -33,12 +33,16 @@ Each Kubernetes node has a different IP address.
 
 Kubernetes automates resilience into containers by abstacting the network and storage of a virtual <strong>containers</strong> in replaceable "pods". Each pod can hold one or more Docker containers.
 
-![kubernetes-structure-502x205-12351.png](https://user-images.githubusercontent.com/300046/47167711-5cf45080-d2bc-11e8-8c95-a76b1b92373a.png)
-
 Within a pod, each container has a different <strong>port number</strong>.
 Containers within the same pod share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage, and other resources.
 
 Kubernetes replicates Pods (the same set of containers in each) across several worker <strong>nodes</strong> (VM or physical machines).
+
+![kubernetes-structure-502x205-12351.png](https://user-images.githubusercontent.com/300046/47167711-5cf45080-d2bc-11e8-8c95-a76b1b92373a.png)
+
+A private ClusterIP is accessible by nodes only within the same cluster.
+
+Services listen on the same <strong>nodePort</strong> (TCP 30000 - 32767 defined by `--service-node-port-range`).
 
 <a target="_blank" title="from Yongbok Kim (who writes in Korean)" href="https://user-images.githubusercontent.com/300046/33525757-6fcd2624-d7f3-11e7-9745-79ce5f9600e9.jpg">
 <img alt="k8s-arch-ruo91-797x451-104467" src="https://user-images.githubusercontent.com/300046/33525757-6fcd2624-d7f3-11e7-9745-79ce5f9600e9.jpg"></a>
@@ -46,24 +50,28 @@ Kubernetes replicates Pods (the same set of containers in each) across several w
 The diagram above is referenced throughout this tutorial, particularly in the <a href="#Details">Details section below</a>. It is by Yongbok Kim who presents <a target="_blank" href="https://translate.google.com/translate?hl=en&sl=ko&tl=en&u=http://www.yongbok.net/blog/google-kubernetes-container-cluster-manager/">
 animations on his website</a>.
 
+   Communications with outside service network callers occur through a single Virtual IP address (VIP) going through a <strong>kube-proxy</strong> pod within each node.
+   The Kube-proxy load balances traffic to <strong>deployments</strong>, which are load-balanced sets of pods within each node. Kube-proxy IPVS Mode is native to the Linux kernel.
+   CBR0 (Custom Bridge zero) forwards the eth0, which rewrites the destination IP to a pod behind the Service<a target="_blank" href="https://acloud.guru/course/kubernetes-deep-dive/learn/2ddbcafb-9f4f-ed6c-3cec-912cb68a7944/36910c67-4dfd-3343-648a-3a266aa9f667/watch?backUrl=~2Fcourses&backUrl=~2Fcourses&backUrl=~2Fcourses,~2Fcourses">3:18 into chapter 6 Big Picture</a>
+
 PROTIP: Kubernetes recently added <strong>auto-scaling</strong> based on metrics API measurement of demand. Before that, Kubernetes manages the instantiating, starting, stopping, updating, and deleting of a <strong>pre-defined number of pod replicas</strong> based on declarations in <strong>*.yaml</strong> files or interactive commands.
 
 The number of pods replicated is based on <strong>deployment</strong> yaml files. 
 Service yaml files specify what ports are used in deployments.
 
-
 ## Open Sourced = Free
 
 <img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
-<a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">
-This blog</a> and <a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
-notes that the Kubernetes logo has 7 sides because its initial developers were Star Trek fans:
-The predecessor to Kubernetes was called Borg.
+Kubernetes was created inside Google (using the [Golang](/Golang/) programming language).
+Logos for each Google service are 6 sided hexagons.
+This <a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">blog</a> and
+<a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
+note that the Kubernetes logo has 7 sides because its initial developers were Star Trek fans:
+The predecessor to Kubernetes was called the Borg.
 A key Borg character is called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>.
 
-Kubernetes was created inside Google (using the [Golang](/Golang/) programming language)
-and used for over a decade before being open-sourced in 2014 to the 
-Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>).
+Kubernetes was used inside Google for over a decade before being open-sourced in 2014 to the 
+Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>) collective.
 
 Kubernetes is often abbreviated as "k8s", with 8 replacing the number of characters between k and s.
 Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to <a target="_blank" href="https://kubernetes.io/">https://kubernetes.io</a>, the home page for the software.
@@ -85,7 +93,32 @@ with redundancies to achieve high availability (HA).
 ### Certification in Kubernetes
 
 On November 8, 2016 CNCF announced their 
-<a target="_blank" href="https://www.cncf.io/certification/expert/">3-hour task-based Certified Kubernetes Administrator (CKA)</a> and 2-hour Kubernetes Application Developer (CKAD) exams. 
+<a target="_blank" href="https://www.cncf.io/certification/expert/">3-hour task-based Certified Kubernetes Administrator (CKA)</a> and <a target="_blank" href="https://www.cncf.io/certification/ckad/">2-hour Kubernetes Application Developer (CKAD)</a> exams. Each is $300, which includes one free retake. 
+To compare the domain focus for each exam:
+
+<table border="1" cellspacing="0" cellpadding="4">
+<tr><th> CKA </th><th> CKAD </th></tr>
+<tr valign="top"><td>
+    19% Core Concepts<br />
+    12% Installation, Configuration & Validation<br />
+    12% Security<br />
+    11% Networking<br />
+    11% Cluster Maintenance<br />
+    10% Troubleshooting<br />
+    08% Application Lifecycle Management<br />
+    07% Storage<br />
+    05% Scheduling<br />
+    05% Logging / Monitoring<br />
+</td><td>
+    20% Pod Design<br />
+    18% Configuration<br />
+    18% Observability<br />
+    13% Services & Networking<br />
+    13% Core Concepts<br />
+    10% Multi-Container Pods<br />
+    08% State Persistence
+</td></tr>
+</table>
 
 CNCF is part of the Linux Foundation, so... 
 
@@ -181,8 +214,6 @@ It of course leverages AWS Elastic Load Balancing, IAM authentication, Amazon VP
 
 Other orchestration systems for Docker containers:
 
-## Competitors
-
 * Docker Swarm incorporated <a href="#Rancher">Rancher</a> from Rancher Labs.
 
 * <a target="_blank" href="https://mesosphere.com/product/">Mesosphere DC/OS</a> (Data Center Operating System) runs Apache Mesos to abstract CPU, memory, storage to provide an API to program a multi-cloud multi-tenant data center (at Twitter, Yelp, Ebay, Azure, Apple, etc.) as if it's a single pool of resources. Kubernetes can run on top of it, but the DC/OS has premium (licensed) enterprise features. So it's not for you if you never want to pay for anything.
@@ -219,7 +250,7 @@ The <strong>describe</strong> command provides more detailed information.
    <pre>kubectl get apiservices</pre>
 
    API's were initially monolithic but has since been split up into:
-   * core "" to handle pod & svc
+   * core "" to handle pod & svc & ep (endpoint)
    * apps to handle deploy, sts, ds
    * authorization to handle role, rb
    * storage to handle pv (persistent volume) and <a href="#PVC">pvc</a>, sc (storage classes)
@@ -255,8 +286,6 @@ The <strong>describe</strong> command provides more detailed information.
    The <strong>Node controller</strong> assigns a CIDR block to newly registered nodes,
    then continually monitors node health. When necessary, it taints unhealthy nodes and
    gracefully evicts unhealthy pods. The default timeout is 40 seconds.
-
-   Communications with outside callers occur through a single Virtual IP address (VIP) going through the <strong>kube-proxy</strong> which load balances traffic to <strong>deployments</strong>, which are load-balanced sets of pods within each node.
 
    Load balancing among nodes (hosts within a cloud) are handled by third-party port forwarding
    via Ingress controllers. See <a target="_blank" href="https://kubernetes.io/docs/concepts/services-networking/ingress/">Ingress definitions</a>.
@@ -923,6 +952,10 @@ This "Kubernetes" folder contains scripts to implement what was described in the
 which is part of the <a taget="_blank" href="https://run.qwiklab.com/quests/29">
 "Kubernetes in the Google Cloud" quest</a>.
 
+Bob Reselman's 3-day hands-on classes on Kubernetes makes use of <strong>bash scripts</strong> and sample app at
+<a target="_blank" href="https://github.com/reselbob/CoolWithKube">https://github.com/reselbob/CoolWithKube</a>
+  
+
 <a name="IAC"></a>
 
 ## Infrastructure as code
@@ -1394,7 +1427,7 @@ The container engine pulls images and stopping/starting containers.
    * https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/
 
 
-### CNI
+### CNI Plugins
 
 The Controller Network Interface (CNI) is installed using 
 basic cbr0 using the bridge and host-local CNI plugins.
@@ -1406,6 +1439,16 @@ The CNI plugin is selected by passing Kubelet the command-line option:
    </pre>
 
 See https://kubernetes.io/docs/concepts/cluster-administration/network-plugins/
+
+   * Flannel
+   * Cisco ACI
+   * Cilium
+   * Contiv
+   * Contrail
+   * NSX-T
+   * OpenVswitch
+   * Project Calico
+   * Weave Net
 
 
 ## Learning resources
@@ -1421,7 +1464,7 @@ Nigel Poulton (@NigelPoulton, <a target="_blank" href="https://www.nigelpoulton.
 
    * Book: "Kubernetes Deep Dive"
 
-   * <a target="_blank" href="https://acloud.guru/course/kubernetes-deep-dive/dashboard">A Cloud Guru video course on Kubernetes</a> (released Oct 2018) referencing the WordPress sample app at <a target="_blank" href="https://github.com/nigelpoulton/k8s-sample-apps">https://github.com/nigelpoulton/k8s-sample-apps</a>
+   * <a target="_blank" href="https://acloud.guru/course/kubernetes-deep-dive/dashboard">A Cloud Guru video course "Kubernetes Deep Dive"</a> (released Oct 2018) references a WordPress sample app at <a target="_blank" href="https://github.com/nigelpoulton/k8s-sample-apps">https://github.com/nigelpoulton/k8s-sample-apps</a>
 
 
 ## Make your own K8s
@@ -1452,6 +1495,7 @@ https://run.qwiklab.com/searches/lab?keywords=Build%20a%20Slack%20Bot%20with%20N
 The 8 labs covering 8 hours of the
 <a target="_blank" href="https://webinars-run.qwiklab.com/quests/29">
 Kubernetes in the Google Cloud Qwiklab quest</a>
+
 
 ## Kubeflow
 
@@ -1498,7 +1542,7 @@ https://github.com/ramitsurana/awesome-kubernetes
 https://kubernetes.io/community/
 
 
-## Videos
+## Learning, Video and Live
 
 <a target="_blank" href="https://www.youtube.com/watch?v=90kZRyPcRZw">
 Kubernetes Deconstructed</a> Dec 15, 2017 [33:14]
@@ -1516,7 +1560,7 @@ http://bit.ly/2KabhKB
 Kubernetes in Docker for Mac April 17, 2018
 by Guillaume Rose, Guillaume Tardif
 
-  
+
 ## More on DevOps #
 
 This is one of a series on DevOps:
