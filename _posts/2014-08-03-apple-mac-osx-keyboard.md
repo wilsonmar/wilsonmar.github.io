@@ -489,6 +489,31 @@ To hide Library again:
 
    <tt><strong>sudo chflags hidden /Library/ ~/Library/</strong></tt>
 
+### System Preferences keyboard shortcut
+
+Apple's System Preferences is a dialog I go to often.
+But it doesn't have a default universal keyboard shortcut.
+
+So let's make one, using control+command+comma.
+(I use my middle finger to reach the comma).
+
+1. Click the Apple icon. Notice whether there is a shortcut for System Preferences. Below is what it looks like after going through the steps below.
+
+   ![mac-keyboard-shortcut-233x280-13919.jpg](https://user-images.githubusercontent.com/300046/47263045-529da680-d4b6-11e8-8275-92c5f22b2d9b.jpg)
+
+2. Select System Preferences.
+3. Click the Keyboard panel.
+4. Click "Shortcuts" tab.
+5. Select "Application Shortcuts" from the list.
+6. Click the [+] plus button for the pulldown menu.
+7. Choose "All Applications", then in the field labeled "Menu Title" enter "System Preferences…".
+8. Click in the field labeled "Keyboard Shortcut".
+9. Press the hotkey you want to use. For me use <strong>Control+Command+,</strong>. You should see the icons appear.
+10. Click “Add” to close out of System Preferences. 
+11. Exit System Preferences by clicking the red dot.
+12. Try it: Hit the shortcut you just created.
+
+
 
 
 <a id="ChromeTabz"></a>

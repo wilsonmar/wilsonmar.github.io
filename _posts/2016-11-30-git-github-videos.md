@@ -1214,7 +1214,7 @@ https://www.linkedin.com/in/davidmahler/
 
 ### Corey Schafer
 
-Among his YouTube <a target="_blank" href="https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g">videos on Python</a> is this Git Tutorial series that focus on the most confusing aspects:
+Among his YouTube <a target="_blank" href="https://www.youtube.com/watch?v=YYXdXT2l-Gg&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU">videos on Python</a> is this Git Tutorial series that focus on the most confusing aspects:
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=HVsySz-h9r4">
    Command-Line Fundamentals</a> Aug 3, 2015 [30:32]

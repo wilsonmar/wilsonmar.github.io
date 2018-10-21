@@ -15,11 +15,40 @@ comments: true
 
 {% include _toc.html %}
 
+## Uname = Darwin (BSD)
+
+The command that is common to all Linux/BSD variants is the one that returns the operating system name:
+
+   <pre><strong>uname
+   </strong></pre>
+
+   On macOS, the response is "Darwin".
+
+MacOS (Mac OS X) comes with the <strong>BSD</strong> (Berkeley Standard Distribution) version of command line tools which are slightly <strong>different</strong> from the <strong>Linux</strong> version (in Red Hat, Debian, Ubuntu, CoreOS, etc.) even though both are compliant with <a target="_blank" href="http://en.wikipedia.org/wiki/POSIX">POSIX standards</a>.
+
+
+## apt (Advanced Packaging Tool)
+
+On Debian and its derivatives is the `apt-cache` utility that goes with the `apt-get` package manager (like Homebrew and MacPorts).
+They are ported to Mac via  https://github.com/KubaKaszycki/mac-apt
+
+1. Use it to search within Python libraries:
+
+   <pre>apt-cache search python3 | wc -l</pre>
+
+   See https://www.dedoimedo.com/computers/aptitude.html
+
+There is also http://rudix.org/ which is a collection of "the hassle-free way to get Unix programs on OS X".
+Its packages include zshell and tig (Git spelled backwards), the Text-Mode Interface for Git.
+
+
 ## System Preferences GUI
 
-macOS provides a GUI to manage system configuration settings. Mouse to the upper-left corner of the screen and click the Apple icon that appears to choose "System Preferences...". 
+macOS provides a GUI to manage system configuration settings. 
 
-Alternately, you can also open the dialog with this command:
+1. Mouse to the upper-left corner of the screen and click the Apple icon that appears to choose "System Preferences...". 
+
+   Alternately, you can also open the dialog with this command:
 
    <pre><strong>open /Applications/System\ Preferences.app</strong></pre>
 
@@ -119,18 +148,6 @@ PROTIP: Save these files to provide to Support:
 Instead of "basic", there is also "mini" and "full" scope of output. When providing full scope, output in .spx file extension so that it opens automatically using the GUI:
 
    <pre>system_profiler -detailLevel full -xml > ~/Desktop/system_report_mini.spx</pre>
-
-
-### Uname = Darwin (BSD)
-
-The command that must be common to all Linux/BSD variants is the one that returns the operating system name:
-
-   <pre><strong>uname
-   </strong></pre>
-
-   On macOS, the response is "Darwin".
-
-MacOS (Mac OS X) comes with the <strong>BSD</strong> (Berkeley Standard Distribution) version of command line tools which are slightly <strong>different</strong> from the <strong>Linux</strong> version (in Red Hat, Debian, Ubuntu, CoreOS, etc.) even though both are compliant with <a target="_blank" href="http://en.wikipedia.org/wiki/POSIX">POSIX standards</a>.
 
 
 

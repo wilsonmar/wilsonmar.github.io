@@ -48,7 +48,7 @@ Each browser requires a different WebDriver program.
 JUnit and NUnit libraries are used within Java and C# programming code.
 Since Java programs use Maven to manage versions.
 
-## Internal to Salesforce
+## Selenium Internal to Salesforce
 
 On June 7, 2013, Salesforce employee <a target="_blank" href="https://www.linkedin.com/in/jimevansmusic/">Jim Evans</a> (<a target="_blank" href="https://twitter.com/jimevansmusic">@jimevansmusic</a>, a Selenium committer) published <a target="_blank" href="
 https://developer.salesforce.com/blogs/engineering/2013/06/automated-testing-using-selenium-at-salesforce.html">this blog</a> saying that "At Salesforce, we use the Selenium open-source project to execute over 40,000 UI-based test cases on our applications as part of our continuous integration build infrastructure."
@@ -68,10 +68,16 @@ So each Salesforce user company has to create their own framework for functional
 
 A framework should support priortization of <strong>test items</strong> so that the highest risk (named "P1") receive the highest priority (run before those of lowest priority, unless there are technical dependencies). One (of many) ways to classify automation scripts:
 
-a. "Positive Happy Path"<br />
-b. "Negative Happy Path"<br />
-c. "Positive Secondary Path"<br />
-d. "Negative Secondary Path"
+a. "Positive Login Happy Path" (the most common paths to get in should just work)<br />
+b. "Negative Login Happy Path" (the most common user errors during login should be caught)<br />
+c. "Positive Menu Happy Path" (the most common paths through menus should just work)<br />
+d. "Negative Menu Happy Path" (the most common user errors menus should be caught)<br />
+e. "Positive New User Path" (the most common new user paths should work)<br />
+f. "Negative New User Path" (the most common new user user errors should be caught)
+g. "Positive Retrieval Path" (the most common data retrieval paths should work)<br />
+h. "Negative Retrieval Path" (the most common data retrieval user errors should be caught)
+i. "Positive Deletion Path" (the most common data deletion paths should work)<br />
+j. "Negative Deletion Error Path" (the most common data deletion errors should be caught)
 
 Under "Continuous Integration", Selenium scripts are kicked off by Jenkins when Git makes a push.
 Some frameworks track the results of each test and automatically put tests on the schedule to make full 24/7 use of test servers.

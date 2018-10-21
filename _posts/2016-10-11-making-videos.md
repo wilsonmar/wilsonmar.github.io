@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Making videos"
-excerpt: "Using Camtasia to make a video from PowerPoint is tedious."
+excerpt: "Tediously using Camtasia and Audacity PowerPoint on a Mac."
 tags: [Videos, Evangelism]
 image:
 # pic silver robot white skin handshake 1900x500
@@ -88,7 +88,7 @@ It takes me about one day for each second of video produced using this approach:
    Record voice narration as I reveal each part of the diagram. 
    To record sound files, then export in mp3 format:
    
-   ### Narration audio
+   ### Install Audacity to record audio
 
 6. I manually download and install <a target="_blank" href="https://www.audacityteam.org/download/">Audacity</a> from FOSSHUB. 
    It has no brew. So I invoke the .dmg file, drag the icon, etc.
@@ -103,11 +103,19 @@ It takes me about one day for each second of video produced using this approach:
 
 ## Recording
 
-1. When invoking Audacity for the first time, check "Don't show this again at start up".
+1. PROTIP: To avoid echo effects, go to a quiet padded room and record early in the morning when/where there is the least noise.
 
-8. PROTIP: To avoid echo effects, go to a quiet padded room and record early in the morning when/where there is the least noise.
+1. Click the Audacity icon to bring up the program. If you see this pop-up: 
 
-9. PROTIP: Audacity's UI was not designed well. Use a second monitor to dispaly the narration. Audacity seems to like being on the primary display.
+   <img alt="making-videos-running-372x164-15707.jpg" width="372" src="https://user-images.githubusercontent.com/300046/47220580-68ed1a80-d36f-11e8-918e-df68cc33559a.jpg">
+   
+   open a Terminal session, go to this folder to delete the file name starting with <tt>audacity-lock-...</tt>
+
+   <pre>cd "~/Library/Application Support/audacity/SessionData"</pre>
+
+1. When using Audacity for the first time, check "Don't show this again at start up".
+
+9. PROTIP: Use a second monitor to dispaly the narration. Audacity seems to like being on the primary display.
 
    PROTIP: I think it's too mentally taxing to coordinate the graphics as I speak. So I prefer recording the entire narration before messing with the visuals.
 

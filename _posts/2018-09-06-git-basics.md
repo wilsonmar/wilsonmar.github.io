@@ -18,7 +18,7 @@ comments: true
 
 This is a hands-on deep dive immersive course to get those new to Git productive for professional usage using a local Git client. You learn in minimum time because I've spent a lot of time on sequencing your learning and on time-saving automation. The introduction to this course:
 
-<amp-youtube data-videoid="U50-J6objfc" layout="responsive" width="480" height="270"></amp-youtube>
+<amp-youtube data-videoid="KiebiTlSe4A" layout="responsive" width="480" height="270"></amp-youtube>
 
 In this tutorial, we also learn how to recover from mistakes right after we try each command.
 This means we often use commands to verify status after key steps.
@@ -104,6 +104,8 @@ Now setup Homebrew/Chocolatey, Git/msysgit.
 
    On <strong>IntelliJ</strong>, get its Git menu by right-clicking on the project in the left Solution pane to see this menu:
 
+   We will return to this after going through this course to see if you recognize what each GUI item does.
+
    <a target="_blank" title="git-intellij-1308x490.jpg" href="https://user-images.githubusercontent.com/300046/44702989-21bf6900-aa53-11e8-8fc4-6b91b621e7ca.jpg">
    <img alt="git-intellij-648x243.jpg" src="https://user-images.githubusercontent.com/300046/44702935-ee7cda00-aa52-11e8-941b-9913757f4702.jpg"></a>
 
@@ -111,11 +113,11 @@ Now setup Homebrew/Chocolatey, Git/msysgit.
 
    ![git eclipse menu 518x648](https://cloud.githubusercontent.com/assets/300046/25332307/ebf39f84-28b3-11e7-9d3b-5132a549cf13.png)
 
-   * Eclipse "Switch To" = git checkout
+   * The "Switch To" in Eclipse is the equivalent of `git checkout`. This avoids confusion with the "checkout" function in Subversion, which does something completely different than git checkout. Git does not isolate what is checked out nor lock portions of code like what Subversion does, which results in people waiting for others to finish. For this reason, many have migrated from Subversion to Git.
+   We will soon show how Git enables every portion of code to be worked on at the same time.
 
-   * Return to this picture after going through this course to see if you recognize what each GUI item does.
-
-   * See <a target="_blank" href="https://www.youtube.com/watch?v=rblGZRWqFVI">Using Git within Eclipse</a>
+   * See <a target="_blank" href="https://www.youtube.com/watch?v=C0bFLGJqnI8&list=PL-suslzEBiMo0B5RcAikOaqDLKoG9Okub">VIDEO: Using Git within Eclipse</a> May 21, 2013 by 
+Dr. Brian Fraser 
 
 
 ## Ways to obtain a file in Git repository

@@ -95,7 +95,9 @@ http://www.aumcore.com/
 
 <a id="FontBook"></a>
 
-## Apple Font Book app
+## View fonts you have on Mac
+
+Use Apple's Font Book app:
 
 0. In Finder, choose Go > Applications. Scroll to Font Book and double-click to open it.
 
@@ -258,17 +260,32 @@ This is not only a casual, fun-looking font, but one that makes it easier to rea
 
 ## Anti-OCR fonts
 
+For when you don't want your text to be recognized by Tesseract or other Optical Character Recognition (OCR) scanning software.
+
 pdf ocrx extract text from PDF files.
 
 http://videos.komando.com/watch/4124/kims-picks-new-nsa-proof-font
 
-ZXX fonts by Sang Mun, former NSA contractor, has 6 styles
+ZXX fonts by Sang Mun, former NSA contractor, has 6 styles:
 * Sans 
 * Bold
 * Camo has camoflouge 
 * False puts the real letter inside larger false letters
 * Noise has dots
 * XCD puts a cross over letters. It’s the most successful.
+
+## Comic font to use in meme cartoons
+
+Words in this cartoon meme, from World's Finest Comics #153 (1965), is changed to create various memes:
+
+![fonts-comic-bat-slap-320x314-61000](https://user-images.githubusercontent.com/300046/47255706-82a36600-d432-11e8-81dc-39272a5e639d.png)
+
+It doesn't look right if one of the standard fonts for word processing are used on comics such as this.
+
+It's more appropriate to use Neale Davidson's Comic Book font is at https://www.dafont.com/comic-book.font
+
+Instead of using a scan, which looks pixelated, Miles Goodhew at http://blog.m0les.com/2012/12/bat-slap-retro-vectored.html
+vectorized it into an SVG file using the Inkscape open-source drawing program from https://inkscape.org/
 
 
 ## More on OSX

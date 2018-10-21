@@ -50,6 +50,7 @@ comments: true
    * PAM = Partner Account Manager (email isvpartners@salesforce.com)
    * PRM = Partner Relationship Management (offering)
    * QTC = Quote to Cash (Billing workflow)
+   * RSFs = Rollup Summary Fields
    * SaaS = Software as a Service
    * SAQL = Salesforce Analytics Query Language
    * SFCC = Salesforce Commerce Cloud (based on Demandware + CloudCraze acquisitions not built on force.com)
