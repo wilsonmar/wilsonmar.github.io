@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Service Mesh (Istio, Linkerd, Envoy)"
+title: "Service Mesh (Envoy, Istio, Linkerd)"
 excerpt: "One sidecar proxy to separate cross-cutting operational concerns from business logic"
 modified:
 tags: [git]
@@ -16,7 +16,8 @@ comments: true
 
 {% include _toc.html %}
 
-"Service mesh" architecture is about microservices applications working within a "data plane" a standard way to hand-off access control authentication, encrypted communications, monitoring, logging, timeout handling, load balancing, health checks, and other operational cross-cutting concerns to a sidecar proxy within its pod, which works with a <strong>control plane</strong> common to all services.
+"Service mesh" architecture is about microservices applications working within a "data plane" a standard way to hand-off  service-to-service access control authentication, encrypted communications, monitoring, logging, timeout handling, load balancing, health checks, and other operational cross-cutting concerns to a sidecar proxy within its pod, which works with a <strong>control plane</strong> common to all services. 
+The control plane aggregates telemetry data for display on dashboards such as the hero image above.
 
 The implementations:
 
@@ -48,6 +49,8 @@ Within a Service Mesh, apps create service instances from service definitions (t
 
 ## Istio
 
+<img align="right" width="151" alt="istio-logo-151x201-32530.png" src="https://user-images.githubusercontent.com/300046/47399117-561e7100-d6f4-11e8-8fa1-0fa9cd33b4a0.png">
+
 https://istio.io/
 aims to provide a a uniform way to secure, connect, and monitor microservices.
 It provides rich automatic tracing, monitoring, and logging of all services to a "service mesh" -- the network of microservices.
@@ -60,20 +63,8 @@ Istio makes it easy to create a network of deployed services with load balancing
 "without any changes in service code". 
 
 
-<a name="Linkerd"></a>
 
-## Linkerd
-
-https://linkerd.io/2/getting-started/
-for installation, etc.
-
-Provides Grafana dashboards:
-
-<img width="785" alt="svcmesh-linkerd-dataplane-grafana-1570x462" src="https://user-images.githubusercontent.com/300046/47396344-93303680-d6e7-11e8-828e-9ef45b288adf.png">
-
-
-
-## gRPC
+### gRPC
 
 https://grpc.io/blog/principles
 
@@ -99,7 +90,7 @@ https://www.youtube.com/watch?v=hNFM2pDGwKI
 Introduction to gRPC: A general RPC framework that puts mobile and HTTP/2 first (M.Atamel, R.Tsang)
 
 
-## Envoy from Lyft
+### Envoy from Lyft
 
 https://www.envoyproxy.io/
 
@@ -123,7 +114,7 @@ Envoy provides robust APIs for dynamically managing its configuration.
 
 https://twitter.com/EnvoyProxy
 
-## NGINX
+### NGINX
 
 NGINX built the equivalent of Istio Envoy.
 
@@ -131,6 +122,20 @@ https://www.nginx.com/blog/what-is-a-service-mesh/
 
 https://www.nginx.com/blog/introducing-the-nginx-microservices-reference-architecture/
 
+
+
+<a name="Linkerd"></a>
+
+### Linkerd
+
+https://linkerd.io/2/getting-started/
+for installation, etc.
+
+Provides Grafana dashboards:
+
+<img width="785" alt="svcmesh-linkerd-dataplane-grafana-1570x462" src="https://user-images.githubusercontent.com/300046/47396344-93303680-d6e7-11e8-828e-9ef45b288adf.png">
+
+<hr >
 
 ## Patterns
 
@@ -140,15 +145,30 @@ The circuit breaker pattern isolates unhealthy instances, then gradually brings 
 
 <hr />
 
+## Workshop 
+
+There is a quite thorough hands-on workshop using GKE (Google Kubernetes Engine).
+
+   * https://github.com/retroryan/istio-workshop is the original worked on by Ryan, etc. contains exercises.
+
+   * https://github.com/srinandan/istio-workshop
+
+   In this workshop, you'll learn how to install and configure Istio, an open source framework for connecting, securing, and managing microservices, on Google Kubernetes Engine, Google’s hosted Kubernetes product. You will also deploy an Istio-enabled multi-service application 
+
+   * <a target="_blank" href="https://github.com/jamesward/istio-workshop">https://github.com/jamesward/istio-workshop</a> from Nov 2017 is a whole workshop with code.
+
+<hr />
+
 ## Rock Stars
 
 Ray Tsang (@saturnism, saturnism.me), Google Cloud Platform Developer Advocate in NYC:
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=AGztKw580yQ">Making Microservices Micro with Istio Service Mesh</a> Nov 10, 2017 at Devoxx
+   <br /><br />
 
-   * <a target="_blank" href="https://github.com/jamesward/istio-workshop">https://github.com/jamesward/istio-workshop</a> from Nov 2017 is a whole workshop with code.
-   This is gold.
+Kelsey Hightower:
 
+   * https://www.youtube.com/watch?v=s4qasWn_mFc Istio and Kubernetes (conversation)
 
 ## References
 
@@ -159,6 +179,11 @@ by Defog Tech
 https://www.youtube.com/watch?v=QiXK0B9FhO0
 What is a service mesh? May 27, 2018
 by Defog Tech
+
+https://www.youtube.com/watch?v=gauOI0O9fRM
+Microservices in the Cloud with Kubernetes and Istio (Google I/O '18) May 9, 2018
+by Sandeep Dinesh
+
 
 ## Social
 
