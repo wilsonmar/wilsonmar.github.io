@@ -29,7 +29,7 @@ Aug 23, 2017
    <br /><br />
 
 * Object-oriented programming with classes and their methods
-* <a target="_blank" href="https://realpython.com/python-boto3-aws-s3/">Python, Boto3, and AWS S3: Demystified by Ralu Bolovan
+* <a href="#Cloud">Cloud Python</a>
 
 
 ## Command generator
@@ -134,10 +134,31 @@ Applicable to both:
 
 ## mocking
 
+Mocks
 
 
+<a name="Cloud"></a>
 
-## Amazon Boto3
+## Python in the Cloud 
+
+On AWS: 
+
+   * <a target="_blank" href="https://www.botmetric.com/blog/aws-cloud-automation-python-boto3-scripts/">Intro to Boto3</a>
+   * https://linuxacademy.com/howtoguides/posts/show/topic/14209-automating-aws-with-python-and-boto3 has a whole video course
+   * <a target="_blank" href="https://realpython.com/python-boto3-aws-s3/">Python, Boto3, and AWS S3: Demystified</a> by Ralu Bolovan
+   <br /><br />
+
+On Azure:
+
+   * <a target="_blank" href="https://github.com/Azure/azure-sdk-for-python/">https://github.com/Azure/azure-sdk-for-python/pulls</a> has a large set of libraries so you can install each individually. To install them all:
+
+   <pre>pip install azure</pre>
+
+   * https://docs.microsoft.com/python/azure/
+   * https://azure.microsoft.com/resources/samples/?platform=python
+   * https://github.com/Azure/azure-sdk-for-python/wiki/Contributing-to-the-tests
+   * https://azure.microsoft.com/en-us/support/community/
+   <br /><br />
 
 ## More about Python
 
