@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Service Mesh (Envoy, Istio, Linkerd)"
-excerpt: "One sidecar proxy to separate cross-cutting operational concerns from business logic"
+excerpt: "The sidecar proxy separates cross-cutting operational concerns from business logic, handing off to a control pane to do the rest"
 modified:
 tags: [git]
 image:
@@ -41,8 +41,6 @@ The control plane includes an application programming interface, a command‑lin
 Cloud Foundry Spring Cloud?
 
 Within a Service Mesh, apps create service instances from service definitions (templates) for service instances. Thus, the term service refers to both instance definitions and the instances themselves.
-
-   * <a href="#Linkerd">Linkerd</a> (<a target="_blank" href="https://linkerd.io/">https://linkerd.io</a>) is a <a target="_blank" href="https://www.cncf.io/projects/">Cloud Native Foundation (CNF) incubating project</a> that also includes graduates Kubernetes and Prometheus, plus Helm, OpenTracing, gRPC, etc..  Linkerd provides Grafana dashboards and CLI debugging tools for Kubernetes service with no cluster-wide installation. It was built in the Rust programming language. Its customers include Salesforce, Walmart, PayPal, Expedia, Comcast.
 
 
 <a name="Istio"></a>
@@ -127,6 +125,9 @@ https://www.nginx.com/blog/introducing-the-nginx-microservices-reference-archite
 <a name="Linkerd"></a>
 
 ### Linkerd
+
+<a href="#Linkerd">Linkerd</a> (<a target="_blank" href="https://linkerd.io/">https://linkerd.io</a>) is a <a target="_blank" href="https://www.cncf.io/projects/">Cloud Native Foundation (CNF) incubating project</a> that also includes graduates Kubernetes and Prometheus, plus Helm, OpenTracing, gRPC, etc..  Linkerd provides Grafana dashboards and CLI debugging tools for Kubernetes service with no cluster-wide installation. It was built in the Rust programming language. Its customers include Salesforce, Walmart, PayPal, Expedia, Comcast.
+
 
 https://linkerd.io/2/getting-started/
 for installation, etc.
