@@ -58,11 +58,19 @@ Alternatives to Homebrew:
 
 0. Make a full backup of your system before following these instructions.
 
-0. Install XCode.
+0. Open a Terminal to install XCode:
 
-   If XCode is not already installed, you are prompted to install it.
+   <pre><strong>xcode</strong></pre>
+
+   If XCode is not already installed, you are prompted to install it:
+
+   ![mac-xcode-addition-452x114-9389](https://user-images.githubusercontent.com/300046/47534548-f8656280-d874-11e8-86aa-0a63aa1d89c7.jpg)   
 
    Homebrew requires OS X 10.5+ and the Xcode command line tools.
+
+   To download the Command Line Utilities, go to https://developer.apple.com/download/more/
+   and look for your version of "Command Line Tools (macOS 10.14) for XCode 10", 
+   one that doesn't say "beta".
 
    Since the El Capitan version of Mac OSX, 
    file permissions in /usr/local have changed,
