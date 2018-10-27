@@ -172,35 +172,6 @@ RubyGems Environment:
    QUESTION: List of versions?
 
 
-   ### View rvm version number #
-
-   <tt><strong>
-   rvm info
-   </strong></tt>
-
-0. List:
-
-   <tt><strong>
-   rvm list known
-   </strong></tt>
-
-0. For a smaller response:
-   
-   <pre><strong>
-   rvm --version
-   </strong></pre>
-
-   The response on 2016-06-16:
-
-   <tt>
-   rvm 1.27.0 (master) by Wayne E. Seguin &LT;wayneeseguin@gmail.com>, Michal Papis &LT;mpapis@gmail.com> [https://rvm.io/]
-   </tt>
-
-0. Visit the RVM.io website
-
-   https://rvm.io/support/troubleshooting
-
-
    ### Update RubyGems and Bundler:
 
 0. Update:
@@ -384,6 +355,77 @@ rdoc's executable "ri" conflicts with /usr/bin/ri
 
 ## Ruby Version Manager (rvm) #
 
+See https://rvm.io/support/troubleshooting
+
+
+### Install RVM
+
+1. In a Terminal:
+
+   <pre><strong>curl -L https://get.rvm.io | bash -s stable</strong></pre>
+
+   Sample response:
+
+   <pre>
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   194  100   194    0     0    544      0 --:--:-- --:--:-- --:--:--   544
+100 24361  100 24361    0     0  31643      0 --:--:-- --:--:-- --:--:-- 1076k
+Downloading https://github.com/rvm/rvm/archive/1.29.4.tar.gz
+Downloading https://github.com/rvm/rvm/releases/download/1.29.4/1.29.4.tar.gz.asc
+gpg: Signature made Sun Jul  1 13:41:26 2018 MDT
+gpg:                using RSA key 62C9E5F4DA300D94AC36166BE206C29FBF04FF17
+gpg: Good signature from "Michal Papis (RVM signing) <mpapis@gmail.com>" [unknown]
+gpg:                 aka "Michal Papis <michal.papis@toptal.com>" [unknown]
+gpg:                 aka "[jpeg image of size 5015]" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 409B 6B17 96C2 7546 2A17  0311 3804 BB82 D39D C0E3
+     Subkey fingerprint: 62C9 E5F4 DA30 0D94 AC36  166B E206 C29F BF04 FF17
+GPG verified '/Users/wilsonmar/.rvm/archives/rvm-1.29.4.tgz'
+Upgrading the RVM installation in /Users/wilsonmar/.rvm/
+    RVM PATH line found in /Users/wilsonmar/.mkshrc /Users/wilsonmar/.profile /Users/wilsonmar/.bashrc /Users/wilsonmar/.zshrc.
+    RVM sourcing line found in /Users/wilsonmar/.profile /Users/wilsonmar/.bash_profile /Users/wilsonmar/.zlogin.
+Upgrade of RVM in /Users/wilsonmar/.rvm/ is complete.
+/Users/wilsonmar/.bash_profile:1:PATH=/usr/local/bin/python3:/usr/bin/python:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/share/dotnet
+&nbsp;
+  * WARNING: Above files contains PATH= with no $PATH inside, this can break RVM,
+    for details check https://github.com/rvm/rvm/issues/1351#issuecomment-10939525
+    to avoid this warning prepend $PATH
+&nbsp;
+  * No new notes to display.
+   </pre>
+
+
+   ### View rvm version number #
+
+   <tt><strong>
+   rvm info
+   </strong></tt>
+
+0. For a smaller response:
+   
+   <pre><strong>
+   rvm --version
+   </strong></pre>
+
+   The response on 2018-10-26:
+
+   <pre>
+   rvm 1.29.4 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+   </pre>
+
+   The response on 2016-06-16 had an email:
+
+   <pre>
+   rvm 1.27.0 (master) by Wayne E. Seguin &LT;wayneeseguin@gmail.com>, Michal Papis &LT;mpapis@gmail.com> [https://rvm.io/]
+   </pre>
+
+
+
+
+### Secure route:
+
 See https://rvm.io/rvm/security
 
 1. First try:
@@ -491,6 +533,8 @@ Installation of RVM in /Users/wilsonmar/.rvm/ is almost complete:
 
    No response is returned.
 
+   ### Get latest version of Ruby
+
 8. Get on the latest version of RVM:
 
    <tt><strong>
@@ -545,13 +589,6 @@ Upgrade Notes:
 RVM reloaded!
    </pre>
 
-0. Obtain version:
-
-   <tt><strong>rvm --version
-   </strong></tt>
-
-   <pre>rvm 1.29.3 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
-   </pre>
 
 
    ### Uninstall Ruby
@@ -559,7 +596,7 @@ RVM reloaded!
 0. Uninstall all versions of Ruby:
 
    <tt><strong>
-rvm uninstall ruby
+   rvm uninstall ruby
    </strong></tt>
 
 0. Have the rvm shell configuration loaded:
@@ -601,12 +638,17 @@ rvm uninstall ruby
    </pre>
 
 
-## To upgrade #
+## To upgrade Ruby using RVM #
+
+0. First run:
+
+   <tt><strong>
+   rvm autolibs homebrew
+   </strong></tt>
 
 0. Run:
 
    <tt><strong>
-   rvm autolibs homebrew<br />
    rvm install ruby
    </strong></tt>
 
