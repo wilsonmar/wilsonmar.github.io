@@ -21,9 +21,7 @@ The control plane aggregates telemetry data for display on dashboards such as th
 
 The implementations:
 
-   * <a href="#Istio">Istio</a>, backed by Google, IBM, and Lyft (which contributed its <a href="#Envoy">Envoy proxy</a>), works within Kubernetes as a sidecar proxy instance.
-
-   * Envoy service proxy 
+   * <a href="#Istio">Istio</a>, backed by Google, IBM, and Lyft (which contributed its <a href="#Envoy">Envoy proxy</a> which works within Kubernetes as a sidecar proxy instance)
 
    * NGINX proxy
    <br /><br />
@@ -57,8 +55,9 @@ https://istio.io/docs/reference/config/
 
 Istio provides APIs that let it integrate into any logging platform, or telemetry or policy system.
 
-Istio makes it easy to create a network of deployed services with load balancing, service-to-service authentication, monitoring, and more, 
-"without any changes in service code". 
+Istio makes it easy to create a network of deployed services with load balancing, service-to-service authentication, monitoring, and more.
+
+"Without any changes in service code" applies only if the app has not implemented its own mechanism duplicative of Istio, like retry logic (which can bring a system down without attenuation mechanisms). 
 
 
 

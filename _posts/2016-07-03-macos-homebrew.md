@@ -81,6 +81,8 @@ Alternatives to Homebrew:
    The formula built, but is not symlinked into /usr/local
    </pre>
 
+   xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+
 0. So in a Terminal shell window at any folder:
 
    <tt><strong>

@@ -33,12 +33,12 @@ Now here's our first review: Among all these, what do you think will be the most
 
 ## Full flowchart animated
 
-Several others have created "cheat sheets", but they are structured according to how the program works, not the sequence how you work.
+Several others have created "cheat sheets", but they are structured like a dictionary or according to how the program works, not the sequence how you work.
 
-Because we are covering a lot, unique to this website is this <strong>map</strong> of all commands and actions covered in this tutorial:
+To start off, let's look at the major chapters, marked by red numbered dots. The first diagram is about installation and configuration:
 
-<a target="_blank" title="git-basics-v09a-1226x606.jpg" href="https://user-images.githubusercontent.com/300046/46283982-07354f80-c52b-11e8-830f-7769be410455.jpg">
-<img alt="git-basics-v09a-648x321-53378.jpg" width="648" src="https://user-images.githubusercontent.com/300046/46283933-d523ed80-c52a-11e8-912d-5f040a2f16e4.jpg"><br /><small>Click on the flowchart above to pop-up a full-screen (static) image</small></a>
+<a target="_blank" title="git-basics-10d-flow-1215x683.jpg" href="https://user-images.githubusercontent.com/300046/47591914-86515400-d92e-11e8-9f48-268a5aad1b9d.jpg">
+<img alt="git-basics-10d-flow-1215x683.jpg" width="648" src="https://user-images.githubusercontent.com/300046/47591914-86515400-d92e-11e8-9f48-268a5aad1b9d.jpg"><br /><small>Click on the flowchart above to pop-up a full-screen (static) image</small></a>
 
 <a name="DigramVideo"></a>
 For an <strong>animated</strong> flowchart where you can click the Pause button or drag the timing bubble on the video's timeline while watching:
@@ -288,7 +288,7 @@ An bash script was created to automatically <strong>type for you</strong> the va
 
    PROTIP: Technically "Hub" is called a "wrapper" around Git’s CLI so you can do it all from the command line rather than switching to GitHub’s web page.
 
-   Also install jq to enable Git to process JSON:
+1. Also install jq to enable Git to process JSON:
 
    <pre><strong>brew install jq</strong></pre>
 
@@ -1684,10 +1684,39 @@ You can run "git stash pop" or "git stash drop" at any time.
 
 <hr />
 
-### Trunk-based Development
+### Trunk-based Development in MS Release Flow
 
-Thoughtworks advocates for their <a target="_blank" href="https://www.thoughtworks.com/de/insights/blog/enabling-trunk-based-development-deployment-pipelines">Trunk-Based Development</a> instead of using different branches, so every commit keeps the repository production ready. Their approach combines <a target="_blank" href="https://martinfowler.com/articles/feature-toggles.html">feature toggle code</a> which allows features to be turned on or off in production.
+Thoughtworks advocates for their <a target="_blank" href="https://www.thoughtworks.com/de/insights/blog/enabling-trunk-based-development-deployment-pipelines">Trunk-Based Development</a> instead of using different branches, so every commit keeps the repository production ready. 
 
+<a target="_blank" href="https://www.youtube.com/watch?v=ykZbBD-CmP8&t=4m1s">VIDEO: Git patterns and anti-patterns for successful developers</a>
+[20:25] at Microsoft Build conference May 7-9, 2018
+by Edward Thomson (@ethomson) about Visual Studio Team Services
+says Microsoft now recommends Trunk-based Development, where coding is based on the trunk, which is a synoym for the master branch.
+Make Small, simple changes and integrate into the master branch.
+easier to code review small chunks
+fewer merge conflicts
+encourages pull requests
+simpler to ship, faster velocity
+
+
+Keeping code isolated from other developers is Technical Debt.
+So code in <a target="_blank" href="https://martinfowler.com/articles/feature-toggles.html">feature toggle codes</a> which allows features to be turned on or off in production.
+
+[8:51] GitHub Flow adds an additional step 
+
+   1. Master is locked temporarily 
+   2. Merge master into the branch to deploy
+   3. Build and run test suite on the branch to deploy
+   4. Deploy the branch to canary servers; monitor for problems
+   5. Deploy the branch to production servers; monitor for problems
+   6. Merge the pull request into master; unlock the master branch
+
+[15:20] Microsoft does "Release Flow" releases to production at the end of 3-week sprints.
+
+Like GitHub, Microsoft fixes bugs in master first so that they can't be forgotten and create the same error in the future.
+The changes are cherry-picked into the release branch.
+
+See <a target="_blank" href="https://aka.ms/releaseflow">https://aka.ms/releaseflow</a> dated April 19, 2018
 
 ### Other videos and articles
 

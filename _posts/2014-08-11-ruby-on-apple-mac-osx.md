@@ -78,8 +78,8 @@ CAUTION: Don't touch the system Ruby that comes with your Mac.
 
 0. This should return "hey":
 
-   <tt><strong>ruby -e "puts 'hey'"
-   </strong></tt>
+   <pre><strong>ruby -e "puts 'hey'"
+   </strong></pre>
 
    PROTIP: The ruby command by itself will not return anything ... forever.
 
