@@ -52,7 +52,11 @@ CAUTION: Don't touch the system Ruby that comes with your Mac.
    The response for the High Sierra default:
 
    <tt>
-   ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-darwin17]
+   ruby 2.3.7p456 (2018-03-28 revision 63024) [universal.x86_64-darwin17]
+
+
+
+ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-darwin17]
    </tt>
 
    The response for the Sierra default:
@@ -906,6 +910,17 @@ For pkg-config to find this software you may need to set:
    brew uninstall rbenv ruby-build
    </strong></pre>
 
+
+## Ruby apps on Mac
+
+The programs I've figured out how to install using my bash script:
+
+* istats
+* gitlab (command line utilities)
+* ruby-jmeter
+* travis
+* rails
+* rust (language)
 
 ## Resources:
 

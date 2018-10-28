@@ -51,7 +51,7 @@ Do you get a double-quote " instead of @ when you press shift-2?
 
 ## Dark Edge Browser #
 
-PROTIP: Use a <strong>Dark</strong> theme. That uses less electricity, doesn't use us the screen as quickly, is gentler on your eyes.
+PROTIP: Use a <strong>Dark</strong> theme. That uses less electricity, doesn't burn up screen, and is gentler on your eyes.
 
 0. Click the three dots at the upper right corner.
 0. Select Settings.
