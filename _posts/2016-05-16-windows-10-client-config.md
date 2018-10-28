@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Windows 10 (Server 2012 & 2016) Client UI Configuration"
+title: "Windows 10 client config (Server 2012 & 2016)"
 excerpt: "How I setup my Windows UI look and feel"
 tags: [windows, mac, setup]
 image:
@@ -15,9 +15,162 @@ comments: true
 
 {% include _toc.html %}
 
-Here is how I setup a Windows 10 client on my laptop.
+Here is how to setup a Windows 10 client.
 
-NOTE: 64-bit programs install to C:\Program Files.
+TODO: PowerShell script to automate these manual commands.
+
+NOTE: 64-bit programs install to C:\Program Files.<br />
+Older 32-bit programs install to C:\(x86) Program Files.
+
+## No machine? Use AWS Workspaces
+
+This is a hands-on tutorial on a super easy way to spin up server instances in the cloud using 
+<strong>Amazon's Workspaces</strong>.
+
+1. Login to the console.
+
+   <a target="_blank" href="https://console.aws.amazon.com">https://console.aws.amazon.com</a>
+
+1. If you don't have an account that's less than a year old so you can use free small instances,
+   click "Create a new AWS account" to use an email not used before.
+   
+1. Define user.
+
+1. Click the region to select "Oregon", which is the only region supporting Workspaces in the US.
+
+1. Click Services at the top black menu bar to type enough of "Workspaces" to select it.
+
+1. Click "Get Started Now".
+
+1. Click the blue "Launch" under "Quick Setup" (Advanced only applies to people who work with Active Directory)
+
+   https://us-west-2.console.aws.amazon.com/workspaces/home?region=us-west-2#
+
+1. For Bundles select "Standard with Windows 10" because it's Free Tier Elgible.
+
+1. Fill out username, names, email, etc. and click "Launch WorkSpaces".
+
+1. Click "View the Workspaces Console".
+1. Click the refresh icon or press control+R while you wait (about 20 minutes) for the Status to go from "PENDING" to "AVAILABLE".
+
+1. assign desktop applications to your Windows WorkSpaces users using Amazon WorkSpaces Application Manager (WAM). 
+
+   ### While you're waiting
+
+1. While the server is coming up, highlight and copy the <strong>Registration code</strong>
+1. Open the Amazon Workspaces app
+1. Mouse to the top of the screen for Workspaces > Options > Manage Registrations.
+1. Paste the Registration Code in the form
+
+   ### After the server instance becomes available:
+
+1. Click the black arrow to the left of the Workspace ID to expand it
+
+
+1. In your email client, open the email with subject "Your Amazon WorkSpace".
+1. Click the long link for the pop-up in browser:
+
+   <img width="291" alt="awsworkspaces-credentials.png" src="https://user-images.githubusercontent.com/300046/47616087-8f047000-da7d-11e8-8c7f-183c90271ad5.png">
+
+1. Generate a password, paste it in and click "Update User". Save the Login somewhere.
+1. Switch to your Workspaces local client instead of clicking Download.
+1. Mouse to the top of the screen for Workspaces > Options > Manage Registrations.
+1. Paste the Registration Code in the form
+1. Click Continue to login.
+1. Input the user name and password and Sign In.
+
+   If the button is gray and can't be clicked, exit the program and invoke it again.
+
+1. Click "Yes" to Remember Me.
+
+
+1. ??? Save the .rpd file. Rename it.
+1. Double-click on the .rdp file to open it
+
+   ### WorkSpaces appears
+
+1. Say "No" to Network.
+
+   image here
+
+1. Start Camtasia screen recording.
+1. Invoke Mozilla Firefox. Wait for "installing updates".
+1. Triple-click on the URL to specify https://wilsonmar.github.io/windows
+
+
+   ### PowerShell
+
+1. Click Windows icon at the bottom of the screen.
+1. Cursor over the list of Programs and scroll down to the bottom of the programs list.
+1. Click on "Windows PowerShell" to expand the list.
+1. Right-click on "Windows PowerShell" to select "Run as Administrator".
+1. Click "Yes" to "make changes to your device".
+1. When the PowerShell screen appears, expand it to full screen.
+
+
+   ### Make font larger
+
+1. Click on the blue icon at the top of "Administrator: Windows PowerShell" to select Properties from the menu.
+
+   picture here
+
+1. Click the Font tab.
+1. Click <strong>18</strong> instead of the default 12 point Size. Click OK.
+
+1. Click Colors tab.
+1. Click the black color at the left of the list.
+
+
+   ### Install Chocolatey package manager
+
+1. Go to https://chocolatey.org/install#installing-chocolatey
+1. Highlight and copy command from website for PowerShell:
+
+   <tt><strong>Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))</strong></tt>
+   
+1. Click on the PowerShell window and right-click to select <strong>Paste</strong>.
+
+1. When done, refresh the environment for the PowerShell session:
+
+    <pre><strong>refreshenv</strong></pre>
+
+1. clear screen.
+
+
+   ### Install Git package
+
+1. Install Git client:
+
+    <pre><strong>choco install git -y
+
+    </strong></pre>
+
+1. clear screen.
+
+
+   ### Use Git Bash
+
+1, Highlight and copy command from the git-basics website
+
+   <a target="_blank" href="https://wilsonmar.githbub.io/git-basics#gitbash">https://wilsonmar.githbub.io/git-basics#gitbash</a>
+   
+1. At the lower-left corner of the screen, click the Windows icon for a menu.
+1. Click "Git Bash".
+
+1. Click the icon to select Options menu.
+1. Click "Text".
+1. Click Font 12 (point).
+1. Click Save to exit dialog.
+
+1. Click to expand screen full screen.
+1. Paste
+
+1. When done, refresh the environment for the PowerShell session:
+
+    <pre><strong>refreshenv</strong></pre>
+
+1. clear screen
+
 
 
 <a id="Versionz"></a>
@@ -25,13 +178,10 @@ NOTE: 64-bit programs install to C:\Program Files.
 ## Versions of Windows 10 #
 
 See <a target="_blank" href="https://en.wikipedia.org/wiki/Windows_10_version_history">
-https://en.wikipedia.org/wiki/Windows_10_version_history</a>
+https://en.wikipedia.org/wiki/Windows_10_version_history</a> and
+<a target="_blank" href="https://www.microsoft.com/en-us/itpro/windows-10/release-information">
+https://www.microsoft.com/en-us/itpro/windows-10/release-information</a>
 
-In MSDN.com, "1511" became available 3/30/2016.
-
-"1709" "Fall Creators", is expected October 17, 2017
-
-TODO: PowerShell script to automate these manual commands.
 
 
 ## Keyboard settings 
@@ -236,7 +386,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.144-b01, mixed mode)
 0. This:
 
    <tt><strong>choco install msysgit -y
-   </tt></strong>
+   </strong></tt>
 
 0. Click the Windows "start" icon.
 0. "Git Bash" should appear among the application icons.
