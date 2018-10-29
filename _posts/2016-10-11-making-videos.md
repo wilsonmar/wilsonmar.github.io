@@ -252,6 +252,16 @@ It takes me about one day for each second of video produced using this approach:
 Small videos can be converted to gif file format using:<br />
 https://ezgif.com/video-to-gif
 
+## Archive Camtasia
+
+When Camtasia makes a recording, it stores them in folder Movies > Camtasia 2018 > Temporary recordings.
+
+Camtasia then automatically inserts the video into whatever camproj file is displayed.
+However, it leaves the file in the Temporary recordings folder.
+So when I archive the folder, those recordings are not in the folder.
+
+To make a proper archive, open Camtasia. Open you project. Click File > Export project as zip. Make sure "Include all clip bin items" is checked. Save the ZIP file to a location such as Downloads.
+
 ## More Resources
 
 https://www.bmyers.com (Bill Myers) is the king of monitization,
