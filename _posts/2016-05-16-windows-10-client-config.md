@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Windows 10 client config (Server 2012 & 2016)"
+title: "Windows 10 client config (Server 2012+)"
 excerpt: "How I setup my Windows UI look and feel"
 tags: [windows, mac, setup]
 image:
@@ -19,17 +19,18 @@ Here is how to setup a Windows 10 client.
 
 TODO: PowerShell script to automate these manual commands.
 
-NOTE: 64-bit programs install to C:\Program Files.<br />
-Older 32-bit programs install to C:\(x86) Program Files.
+NOTE: 64-bit programs install to "C:\Program Files" on 64-bit machines.<br />
+Older 32-bit programs install to "C:\Program Files (x86)".
+
+Apps on a 32-bit computer cannot use all 4 GB (RAM) memory installed because of memory used by video cards, network cards, sound cards, and other devices.
 
 ## No machine? Use AWS Workspaces
 
-This is a hands-on tutorial on a super easy way to spin up server instances in the cloud using 
-<strong>Amazon's Workspaces</strong>.
+Quickly spin up server instances in the cloud using <strong>Amazon's Workspaces</strong>.
 
-1. Login to the console.
+1. Login to the console:
 
-   <a target="_blank" href="https://console.aws.amazon.com">https://console.aws.amazon.com</a>
+   <a target="_blank" href="https://console.aws.amazon.com/">https://console.aws.amazon.com</a>
 
 1. If you don't have an account that's less than a year old so you can use free small instances,
    click "Create a new AWS account" to use an email not used before.
@@ -91,7 +92,7 @@ This is a hands-on tutorial on a super easy way to spin up server instances in t
 
 1. Say "No" to Network.
 
-   image here
+   TODO: image here
 
 1. Start Camtasia screen recording.
 1. Invoke Mozilla Firefox. Wait for "installing updates".
@@ -112,7 +113,7 @@ This is a hands-on tutorial on a super easy way to spin up server instances in t
 
 1. Click on the blue icon at the top of "Administrator: Windows PowerShell" to select Properties from the menu.
 
-   picture here
+   ![win10-powershell-options-231x261-9032](https://user-images.githubusercontent.com/300046/47624326-ff90a880-dae0-11e8-82d0-fd37a44fed08.jpg)
 
 1. Click the Font tab.
 1. Click <strong>18</strong> instead of the default 12 point Size. Click OK.

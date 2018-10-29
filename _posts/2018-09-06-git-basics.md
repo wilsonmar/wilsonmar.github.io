@@ -31,7 +31,7 @@ Now here's our first review: Among all these, what do you think will be the most
 
 <a name="Flowchart"></a>
 
-## Full flowchart animated
+## Script and Topics flowchart
 
 Several others have created "cheat sheets", but they are structured like a dictionary or according to how the program works, not the sequence how you work.
 
