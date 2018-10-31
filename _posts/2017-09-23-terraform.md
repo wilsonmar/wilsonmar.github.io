@@ -36,9 +36,8 @@ Terraform's advantage over Amazon's Cloud Formation scripts is that Terraform ca
 
 Terraform makes infrastructure provisioning Repeatable. Versioned. Documented. Automated. Testable. Shareable.
 
-Terraform and Ansible work in unison and complement each other. Terraform can bootstrap the underlying cloud infrastructure and then Ansible provisions the user space. To test a service on a dedicated server, skip using Terraform and run the Ansible playbook on that machine.
-Linux Academy has a <a target="_blank" href="https://github.com/linuxacademy/terransible">"Deploy to AWS with Ansible and Terraform" video class</a> by Derek Morgan who shows how to do just that, with <a target="_blank" href=https://github.com/linuxacademy/terransible">code</a> 
-and <a target="_blank" href="https://www.lucidchart.com/documents/view/c1ceaa2b-647c-49bd-9dca-bcaffc04be3b">diagram</a>.
+Terraform and Ansible can work in unison and complement each other. Terraform can bootstrap the underlying cloud infrastructure and then Ansible provisions the user space. To test a service on a dedicated server, skip using Terraform and run the Ansible playbook on that machine.
+Linux Academy has a <a target="_blank" href="https://github.com/linuxacademy/terransible">"Deploy to AWS with Ansible and Terraform" video class</a> by Derek Morgan who shows how to do just that, with <a target="_blank" href="https://github.com/linuxacademy/terransible">code</a> and <a target="_blank" href="https://www.lucidchart.com/documents/view/c1ceaa2b-647c-49bd-9dca-bcaffc04be3b">diagram</a>.
 
 <a name="Immutable"></a>
 
