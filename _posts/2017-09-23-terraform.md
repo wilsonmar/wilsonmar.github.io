@@ -41,7 +41,7 @@ Linux Academy has a <a target="_blank" href="https://github.com/linuxacademy/ter
 
 <a name="Immutable"></a>
 
-"Immutable" means once instantiated, it doesn't change. In DevOps, this strategy means individual servers are treated like "cattle" (removed from the herd) and not as "pets" (kept alive as long as possible).
+"Immutable" means once instantiated, it doesn't change. In DevOps, this strategy means individual servers are treated like "cattle" (removed from the herd) and not as "pets" (courageously kept alive as long as possible).
 When I make a mistake in a complicated setup, I can get going again quickly and easily with less troubleshooting because I can just re-run the script.
 
 Additionally...
@@ -49,7 +49,7 @@ Additionally...
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th> Feature </th><th> CloudFormation </th><th> Terraform </th></tr>
 <tr><td> Source code </td><td> closed-source </td><td> <a target="_blank" href="https://github.com/hashicorp/terraform/">open source</a> </td></tr>
-<tr><td> Open Source contributions? </td><td> No </td><td> Yes (GitHub issues) </td></tr>
+<tr><td> Open Source contributions? </td><td> No </td><td> Yes (<a target="_blank" href="https://github.com/hashicorp/terraform/issues">GitHub issues</a>) </td></tr>
 <tr><td> Configuration format </td><td> JSON </td><td> <a href="#HCL">HCL JSON</a> </td></tr>
 <tr><td> <a href="#State">State management</a> </td><td> JSON </td><td> <a href="#HCL">HCL JSON</a> </td></tr>
 <tr><td> <a href="#Providers">Cloud Providers</a> support </td><td> AWS only </td><td> AWS, GCE, Azure (20+) </td></tr>
