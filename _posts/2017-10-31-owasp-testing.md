@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "OWASP testing with sample BWA (Broken Web App)"
-excerpt: "Practice identifying security vulnerabilities in sample app"
+title: "Test for OWASP using ZAP on the Broken Web App"
+excerpt: "Practice penetration testing identifying security vulnerabilities in sample BWA app"
 tags: [API, devsecops]
 filename: owasp-testing.md
 image:
@@ -13,43 +13,40 @@ comments: true
 ---
 <i>{{ page.excerpt }}</i>
 
+
+## Penetration (Pen) Testing Tools
+
+Among <a target="_blank" href=" https://www.owasp.org/index.php/Appendix_A:_Testing_Tools">web app penetration testing tools</a>,
+the <a target="_blank" href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">Zed Attack Proxy (ZAP)</a>
+is offered free, and is actively maintained by hundreds of international volunteers. 
+Use it to scan for security vulnerabilities in your web applications while you are developing and testing your applications. 
+
 ## OWASP Top 10
 
-YouTube videos from F5 DevCentral about <a target="_blank" href="https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project">OWASP (Open Web Application Security Project) Top 10</a> - <a target="_blank" href="https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf">2017 PDF</a>:
+ZAP looks for vulnerabilities described by the non-profit OWASP (Open Web Application Security Project)
+<a target="_blank" href="https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project">OWASP (Open Web Application Security Project) Top 10</a> - <a target="_blank" href="https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf">2017 PDF</a>:
 
-   1. <a target="_blank" href="https://www.youtube.com/watch?v=rWHvp7rUka8&index=82&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC">Injection Attacks</a>
+YouTube videos from F5 DevCentral 2017 by John Wagnon (and Description from OWASP):
 
-   2. <a target="_blank" href="https://www.youtube.com/watch?v=mruO75ONWy8&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=84">Broken Authentication</a>
+   1. <a target="_blank" href="https://www.youtube.com/watch?v=rWHvp7rUka8&index=82&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC">Injection Attacks</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection">Description</a>, <a target="_blank" href="https://devcentral.f5.com/articles/owasp-mitigation-strategies-part-1-injection-attacks">blog article</a>)
 
-   3. <a target="_blank" href="https://www.youtube.com/watch?v=2RKbacrkUBU&index=83&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC">Sensitive Data Exposure</a>
+   2. <a target="_blank" href="https://www.youtube.com/watch?v=mruO75ONWy8&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=84">Broken Authentication</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication">Description</a>)
 
-   4. <a target="_blank" href="https://www.youtube.com/watch?v=g2ey7ry8_CQ&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=87">XML External Entities (XXE)</a>
+   3. <a target="_blank" href="https://www.youtube.com/watch?v=2RKbacrkUBU&index=83&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC">Sensitive Data Exposure</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure">Description</a>)
 
-   5. <a target="_blank" href="https://www.youtube.com/watch?v=P38at6Tp8Ms&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=88">Broken Access Control</a>
+   4. <a target="_blank" href="https://www.youtube.com/watch?v=g2ey7ry8_CQ&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=87">XML External Entities (XXE)</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)">Description</a>)
 
-   6. <a target="_blank" href="https://www.youtube.com/watch?v=JuGSUMtKTPU&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=90">Security Misconfiguration</a>
+   5. <a target="_blank" href="https://www.youtube.com/watch?v=P38at6Tp8Ms&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=88">Broken Access Control</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control">Description</a>)
 
-   7. <a target="_blank" href="https://www.youtube.com/watch?v=IuzU4y-UjLw&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=92">Cross-Site Scripting (XSS)</a>
+   6. <a target="_blank" href="https://www.youtube.com/watch?v=JuGSUMtKTPU&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=90">Security Misconfiguration</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration">Description</a>)
 
-   8. <a target="_blank" href="https://www.youtube.com/watch?v=nkTBwbnfesQ&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=94">Insecure Deserialization</a>
+   7. <a target="_blank" href="https://www.youtube.com/watch?v=IuzU4y-UjLw&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=92">Cross-Site Scripting (XSS)</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)">Description</a>)
 
-   9. <a target="_blank" href="https://www.youtube.com/watch?v=IGsNYVDKRV0&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=97">Using Components with Known Vulnerabilities</a>
+   8. <a target="_blank" href="https://www.youtube.com/watch?v=nkTBwbnfesQ&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=94">Insecure Deserialization</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization">Description</a>)
 
-   10. <a target="_blank" href="https://www.youtube.com/watch?v=mruO75ONWy8&index=84&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC">Insufficient Logging and Monitoring</a>
+   9. <a target="_blank" href="https://www.youtube.com/watch?v=IGsNYVDKRV0&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=97">Using Components with Known Vulnerabilities</a>  (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities">Description</a>)
 
-
-## Penetration Testing Tools
-
-Among web app penetration testing tools listed <a target="_blank" href="
-https://www.owasp.org/index.php/Appendix_A:_Testing_Tools">here</a>,
-the Zed Attack Proxy (ZAP) described <a target="_blank" href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">here</a>
-provides automated scanners to find vulnerabilities described by the non-profit 
-OWASP (Open Web Application Security Project).
-
-The Zed Attack Proxy (ZAP) is offered free, and is actively maintained by hundreds of international volunteers. It can help you automatically find security vulnerabilities in your web applications while you are developing and testing your applications. 
-
-It's a tool for experienced pen-testers to use for manual security testing.
-"Tools" is designed to be easy-to-use by people with a wide range of security experience and as such is ideal for developers and functional testers who are new to penetration testing. The tools include not just code, but also cheatsheets, documents, research.
+   10. <a target="_blank" href="https://www.youtube.com/watch?v=mruO75ONWy8&index=84&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC">Insufficient Logging and Monitoring</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A10-Insufficient_Logging%26Monitoring">Description</a>)
 
 ## Test Scope
 
@@ -64,7 +61,7 @@ VMware Workstation on Windows or VMware Fusion on Mac:
 
 0. Instantiate a server. <a target="_blank" href="https://groups.google.com/forum/#!topic/gce-discussion/SKdU6JMHbE8"> In Sep 2017</a> nested VT-x is supported on GCE, according to Paul R. Nash, Group Product Manager, Google Compute Engine.
 
-0. Within the server, download:
+0. Within a console on the server, download:
 
    <pre><strong>
    curl -O https://sourceforge.net/projects/owaspbwa/files/latest/download
@@ -74,8 +71,10 @@ VMware Workstation on Windows or VMware Fusion on Mac:
    because it contains various apps in Ruby, PHP, WordPress, etc.
 
    It's briefly described at
-   https://owaspbwa.org, which resolves to
-   https://code.google.com/archive/p/owaspbwa/
+   <a target="_blank" href="https://owaspbwa.org">https://owaspbwa.org</a>, which resolves to
+   <a target="_blank" href="https://code.google.com/archive/p/owaspbwa/">https://code.google.com/archive/p/owaspbwa/</a>
+
+   Note it's from 2015.
 
 0. Unpack the 7z file. Navigate into the folder.
 0. Double-click on file <strong>OWASP Broken Web Apps.vmx</strong> to open image in Virtualbox or VMWare workstation:
@@ -101,8 +100,8 @@ VMware Workstation on Windows or VMware Fusion on Mac:
    https://www.youtube.com/watch?v=FOEFL8bbbCU
    [7:05]
 
-   https://www.youtube.com/watch?v=0dxzGK1ZPxA
-   Beyond 1.0 from 2013 
+   <a target="_blank" href="https://www.youtube.com/watch?v=0dxzGK1ZPxA">
+   Beyond 1.0 from 2013</a>
    Chuck Willis (@chuckatsf) describes BWA origins
 
 
