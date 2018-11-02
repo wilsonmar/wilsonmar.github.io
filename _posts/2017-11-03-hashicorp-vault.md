@@ -368,6 +368,7 @@ docker run --cap-add=IPC_LOCK -e 'VAULT_LOCAL_CONFIG={"backend": {"file": {"path
    https://www.vaultproject.io/downloads.html</a>
 
    * vault_0.7.3_darwin_amd64.zip for Mac 64 expands to a vault app of 59.6 MB.
+   <br /><br />
 
 0. Verify the SHA256 hash.
 0. On a Mac, drag and drop the vault app file to your root Applications folder.
@@ -376,7 +377,7 @@ docker run --cap-add=IPC_LOCK -e 'VAULT_LOCAL_CONFIG={"backend": {"file": {"path
 
    If you get an error that the binary could not be found, then your PATH environment variable was not setup properly. 
 
-   BLAH
+   BLAH:
 
    This automated script should install vault at version 0.1.2 into folder 
 
@@ -410,26 +411,12 @@ docker run --cap-add=IPC_LOCK -e 'VAULT_LOCAL_CONFIG={"backend": {"file": {"path
    https://github.com/Voronenko/hashi_vault_utils
    provides command scripts and commentary on this topic.
 
-## Sealing
-
-In case of an emergency, Vault should be sealed immediately to 
-prevent any actions or requests to be performed against the Vault server:
-
-   <pre><strong>vault seal
-   </strong></pre>
-
-   This gives time to investigate the cause of the issue and to find an appropriate solution.
-
-   * A secret stored in Vault is leaked A new secret should be generated and replaced in Vault, with a key rotation following.
-   * Vault user credentials are leaked The user credentials should be revoked and a key rotation should be performed.
-   * Vault unseal keys are leaked A rekey should be performed.
-
 
 ### Unsealing
 
 When a Vault server is started, it starts in a sealed state. 
 
-Almost no operations are possible with a Vault that is sealed.
+No operations are possible with a Vault that is sealed.
 
 Unsealing is the process of constructing the master key necessary to read the decryption key
 used to decrypt the data.
@@ -483,6 +470,21 @@ path "secret/project/name" {
   policy = "read"
 }
    </pre>
+
+
+## Sealing
+
+In case of an emergency, Vault should be sealed immediately to 
+prevent any actions or requests to be performed against the Vault server:
+
+   <pre><strong>vault seal
+   </strong></pre>
+
+This buys time to investigate the cause of the issue and to find an appropriate solution, such as:
+
+   * If a secret stored in Vault is leaked - a new secret should be generated and replaced in Vault, with a key rotation following.
+   * If vault user credentials are leaked - the user credentials should be revoked and a key rotation should be performed.
+   * If vault unseal keys are leaked - a rekey should be performed.
 
 
 ## Install Consul server
@@ -602,7 +604,7 @@ Success! Deleted 'secret/donttel' if it existed.
 ## Access secrets in vault
 
 
-   ### Rekey 
+### Rekey 
 
    Vault's <strong>rekey</strong> command allows for the recreation of unseal keys as well as changing the number of key shares and key threshold. This is useful for adding or removing Vault admins.
 
@@ -613,6 +615,8 @@ Success! Deleted 'secret/donttel' if it existed.
 <a name="AppProgramming"></a>
 
 ## Store and access secrets within a program
+
+Use libraries for:
 
 * Python
 * C#
