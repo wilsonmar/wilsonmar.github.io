@@ -1539,7 +1539,7 @@ https://github.com/ramitsurana/awesome-kubernetes
 
 ## Social
 
-https://kubernetes.io/community/
+<a target="_blank" href="https://kubernetes.io/community/">https://kubernetes.io/community</a>
 
 
 ## Learning, Video and Live
@@ -1556,9 +1556,12 @@ by HashiCorp
 Introduction to Microservices, Docker, and Kubernetes</a>
 by James Quigley
 
-http://bit.ly/2KabhKB
-Kubernetes in Docker for Mac April 17, 2018
+<a target="_blank" href="http://bit.ly/2KabhKB">
+Kubernetes in Docker for Mac</a> April 17, 2018
 by Guillaume Rose, Guillaume Tardif
+
+YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=ALW6VBviSgQ&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=109">
+What is Kubernetes?</a> Jun 18, 2018 by Jason Rahm
 
 
 ## More on DevOps #

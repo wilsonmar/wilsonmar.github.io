@@ -61,7 +61,7 @@ Additionally...
 <tr><td> <a href="#Modules">Extensible Modules</a> </td><td> No </td><td> <a href="#Modules">Yes</a> </td></tr>
 </table>
 
-Terraform also provides parallel execution control, iterations, and (perhaps most of all) management of resources already created (desired state configuration) over several cloud providers (not just AWS).
+Terraform also provides <strong>parallel execution</strong> control, iterations, and (perhaps most of all) management of resources already created (desired state configuration) over several cloud providers (not just AWS).
 
 A key differentiator is Terraform's plan command, which provides more than just a "dry-run" before configurations are applied for real. Under the covers, the plan command generates an executable, and uses it to apply, which guarantees the plan is the same as the apply.
 

@@ -13,8 +13,32 @@ comments: true
 ---
 <i>{{ page.excerpt }}</i>
 
+## OWASP Top 10
 
-## Background
+YouTube videos from F5 DevCentral about <a target="_blank" href="https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project">OWASP (Open Web Application Security Project) Top 10</a> - <a target="_blank" href="https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf">2017 PDF</a>:
+
+   1. <a target="_blank" href="https://www.youtube.com/watch?v=rWHvp7rUka8&index=82&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC">Injection Attacks</a>
+
+   2. <a target="_blank" href="https://www.youtube.com/watch?v=mruO75ONWy8&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=84">Broken Authentication</a>
+
+   3. <a target="_blank" href="https://www.youtube.com/watch?v=2RKbacrkUBU&index=83&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC">Sensitive Data Exposure</a>
+
+   4. <a target="_blank" href="https://www.youtube.com/watch?v=g2ey7ry8_CQ&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=87">XML External Entities (XXE)</a>
+
+   5. <a target="_blank" href="https://www.youtube.com/watch?v=P38at6Tp8Ms&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=88">Broken Access Control</a>
+
+   6. <a target="_blank" href="https://www.youtube.com/watch?v=JuGSUMtKTPU&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=90">Security Misconfiguration</a>
+
+   7. <a target="_blank" href="https://www.youtube.com/watch?v=IuzU4y-UjLw&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=92">Cross-Site Scripting (XSS)</a>
+
+   8. <a target="_blank" href="https://www.youtube.com/watch?v=nkTBwbnfesQ&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=94">Insecure Deserialization</a>
+
+   9. <a target="_blank" href="https://www.youtube.com/watch?v=IGsNYVDKRV0&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=97">Using Components with Known Vulnerabilities</a>
+
+   10. <a target="_blank" href="https://www.youtube.com/watch?v=mruO75ONWy8&index=84&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC">Insufficient Logging and Monitoring</a>
+
+
+## Penetration Testing Tools
 
 Among web app penetration testing tools listed <a target="_blank" href="
 https://www.owasp.org/index.php/Appendix_A:_Testing_Tools">here</a>,
@@ -249,9 +273,11 @@ You can also:
 
 ## Resources
 
-https://app.pluralsight.com/library/courses/owasp-zap-web-app-pentesting-getting-started/table-of-contents
-Getting Started with OWASP Zed Attack Proxy (ZAP) for Web Application Penetration Testing</a>	
+<a target="_blank" href="https://app.pluralsight.com/library/courses/owasp-zap-web-app-pentesting-getting-started/table-of-contents">Getting Started with OWASP Zed Attack Proxy (ZAP) for Web Application Penetration Testing</a>	
 1h 40m video course 16 Feb 2017 by Mike Woolard
+
+
+## More
 
 More about API usage and management:
 

@@ -659,6 +659,24 @@ class Employees(Resource):
    after buiding schemas using http://graphene-python.org/
 
 
+## f5-sdk for Python
+
+Jason Rahm's Getting started with F5 Networks® BIG-IP® iControl® REST interface at <a target="_blank" href="https://github.com/F5Networks/f5-common-python">https://github.com/F5Networks/f5-common-python</a> with docs at <a target="_blank" href="https://f5-sdk.readthedocs.io/en/latest/">https://f5-sdk.readthedocs.io/en/latest/</a>
+
+1. <a target="_blank" href="https://devcentral.f5.com/articles/getting-started-with-the-f5-common-python-sdk-27438"> f5-common-python SDK</a> 27-Jul-2017 
+
+2. <a target="_blank" href="https://devcentral.f5.com/articles/getting-started-with-the-python-sdk-part-2-unnamed-resources-and-commands-27602">unnamed resources and commands</a> 24-Aug-2017
+
+3. <a target="_blank" href="https://devcentral.f5.com/articles/getting-started-with-the-python-sdk-part-3-working-with-statistics-31387">working with statistics</a> 07-Jun-2018
+
+4. <a target="_blank" href="https://devcentral.f5.com/articles/getting-started-with-the-python-sdk-part-4-working-with-request-parameters-31420#comment11117">working with request parameters</a> 14-Jun-2018
+
+5. <a target="_blank" href="https://devcentral.f5.com/articles/getting-started-with-the-python-sdk-part-5-request-parameters-revisited-31509">request parameters revisited</a> 22-Jun-2018
+
+6. <a target="_blank" href="https://devcentral.f5.com/articles/getting-started-with-the-python-sdk-part-6-transactions-31951?tag=devops">transactions</a> 13-Sep-2018
+
+
+
 ## Resources
 
 This tutorial was originally described at 
