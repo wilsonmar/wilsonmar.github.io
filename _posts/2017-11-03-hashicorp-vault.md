@@ -43,7 +43,7 @@ by Armon Dadgar, Hashicorp's CTO,
 is a whiteboard talk about avoiding "secret sprawl" living in clear text with
 empheral (temporary) passwords and cryptographic offload to a central service.
 
-![hashicorp-vault-dadgar-927x522-94211](https://user-images.githubusercontent.com/300046/38281567-67193598-3768-11e8-9061-ebc6abbeb1e9.jpg)
+<a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM"><img alt="hashicorp-vault-dadgar-927x522-94211" src="https://user-images.githubusercontent.com/300046/38281567-67193598-3768-11e8-9061-ebc6abbeb1e9.jpg"></a>
 
 
 ## Alternatives
