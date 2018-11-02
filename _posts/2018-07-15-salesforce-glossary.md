@@ -40,6 +40,7 @@ comments: true
    * LMA = License Management Application
    * LMO = License Management Organization
    * MCV = Monthly Contract Value (in CPQ)
+   * MQL = Marketing Qualified Lead
    * MRR = Monthly Recurring Revenue (in CPQ)
    * MMF = Minimally Marketable Features (a type of release)
    * MOAR = MuleSoft Anypoint Platform (for API management)
@@ -53,6 +54,7 @@ comments: true
    * RSFs = Rollup Summary Fields
    * SaaS = Software as a Service
    * SAQL = Salesforce Analytics Query Language
+   * SAL = Sales Qualified Lead
    * SFCC = Salesforce Commerce Cloud (based on Demandware + CloudCraze acquisitions not built on force.com)
    * SFDC = an acronym for "Salesforce dot com"
    * SFMC = Salesforce Marketing Cloud
