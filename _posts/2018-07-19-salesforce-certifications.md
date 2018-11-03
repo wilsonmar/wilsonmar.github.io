@@ -151,22 +151,17 @@ For $200 each, answer 65% of 60 multiple-choice/multiple-select questions in 105
 
 <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedAdministrator.pdf">Official PDF - Salesforce Administrator Certification</a>
 
-   * Org. setup 2%
-   * user setup 7%
-   * Security and access 14%
-   * Standard and custom objects 15%
-   * Sales and Marketing applications 12%
-   * Activity management and collaboration 3%
-   * Data management 8%
-   * Analytics - reports and dashboards 10%
-   * Workflow/Process Automation 12%
-   * Desktop and mobile admin 1%
-   * AppExchange 1% 
+<a target="_blank" href="https://docs.google.com/spreadsheets/d/1CkZyNLhDpTZJUanYWvLX9whYWnlvlN6VDO3AMCpzjRk/edit#gid=0"><img alt="sf-admin-results-sheet-435x326-43348.jpg" width="435" src="https://user-images.githubusercontent.com/300046/45868367-be1f1780-bd42-11e8-889c-4cf21cd74f10.jpg"></a>
 
-   To prepare for the first Administrator exam:
+   The score emailed to you is summarized at the lower-right corner.
+
+   PROTIP: If you want to calculate your own score, in the email you got, highlight and copy the lines under "Section-Level Scoring:" and paste in cell A2, replacing the sample.
+
+To prepare for the first Administrator exam:
 
    * Trail: <a target="_blank" href="https://trailhead.salesforce.com/trails/force_com_admin_beginner">Force.com Admin Beginner</a>
    [8 hrs 35 mins] topics are structed according to the above list.
+   * <a target="_blank" href="https://www.examtopics.com/exams/Salesforce/ADM-201/">Free ExamTopics.com online exam ADM-201</a>
 
 ### Platform App Builder
 
@@ -195,6 +190,7 @@ does not require programming.
    * Trailhead Module: <a target="_blank" href="https://resources.docs.salesforce.com/206/latest/en-us/sfdc/pdf/communities.pdf">Setup and Manage Salesforce Communities</a> [440 pages from Spring '17']
    * Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/community_rollout_impl">Community Rollout Strategy</a> [1 hr 40 mins]
    * BOOK: <a target="_blank" href="https://www.packtpub.com/mapt/book/big_data_and_business_intelligence/9781786463180">Mastering Salesforce CRM Administration March 2017</a> by Rakesh Gupta
+   * <a target="_blank" href="https://www.examtopics.com/exams/Salesforce/ADM-211/">Free ExamTopics.com online exam ADM-211</a>
 
 ### Maintenance
 
@@ -231,6 +227,8 @@ Follow on Twitter:
 <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperI.pdf">Official PDF -  Certified Salesforce Platform Developer I (PD1)</a>
 was previously called the "DEV401" exam called "Certified Force.com Developer".
 
+   * <a target="_blank" href="https://www.examtopics.com/exams/Salesforce/DEV-401/">Free ExamTopics.com online exam DEV-401</a>
+
 <a name="CSPD2"></a>
 <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperII.pdf">Official PDF -  Certified Salesforce Platform Developer II (PD2)</a>
 
@@ -260,6 +258,9 @@ was previously called the "DEV401" exam called "Certified Force.com Developer".
    * DEV401 (Building Applications with Force.com and <a href="#Visualforce">Visualforce</a> classic UI)
 
    * DEV501 involves Apex coding
+
+      * <a target="_blank" href="https://www.examtopics.com/exams/Salesforce/DEV-501/">Free ExamTopics.com online exam DEV-501</a>
+
    <br /><br />
 
 Trailhead:
