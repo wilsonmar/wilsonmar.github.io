@@ -16,6 +16,7 @@ comments: true
 {% include _toc.html %}
 
 
+<img align="right" alt="ruby-stack-v01-300x213-11679.jpg" src="https://user-images.githubusercontent.com/300046/48075182-db4b6080-e19f-11e8-9c83-4ccfceda1425.png">
 The major commands around Ruby:
 
    0. ruby
@@ -824,6 +825,21 @@ puts tree(ARGV.first || ".") if __FILE__==$0
    rvm implode --force
    </strong></pre>
 
+   <pre>
+Are you SURE you wish for rvm to implode?
+This will recursively remove /Users/wilsonmar/.rvm and other rvm traces?
+(anything other than 'yes' will cancel) > yes
+Removing rvm-shipped binaries (rvm-prompt, rvm, rvm-sudo rvm-shell and rvm-auto-ruby)
+Removing rvm wrappers in /Users/wilsonmar/.rvm/bin
+Hai! Removing /Users/wilsonmar/.rvm
+/Users/wilsonmar/.rvm has been removed.
+&nbsp;
+Note you may need to manually remove /etc/rvmrc and ~/.rvmrc if they exist still.
+Please check all .bashrc .bash_profile .profile and .zshrc for RVM source lines and delete or comment out if this was a Per-User installation.
+Also make sure to remove `rvm` group if this was a system installation.
+Finally it might help to relogin / restart if you want to have fresh environment (like for installing RVM again).
+   </pre>
+
 0. Remove folders:
 
    <pre>
@@ -833,13 +849,13 @@ puts tree(ARGV.first || ".") if __FILE__==$0
    sudo rm ~/.rvmrc
    </pre>
 
-0. Check references to rvm in files:
+0. Check references to rvm in files (replace vim with your favorite text editor command such as subl, code, etc.):
 
-   vim .bash_profile
+   vim ~/.bash_profile
 
-   vim .bashrc
+   vim ~/.bashrc
 
-   vim .profile 
+   vim ~/.profile 
 
 0. Restart Terminal sessions.
 
