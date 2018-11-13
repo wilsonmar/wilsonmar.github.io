@@ -21,6 +21,12 @@ the <a target="_blank" href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Pr
 is offered free, and is actively maintained by hundreds of international volunteers. 
 Use it to scan for security vulnerabilities in your web applications while you are developing and testing your applications. 
 
+ZAP is a tool for Dynamic App Security Testing (DAST) run while the app under test is running.
+
+By contrast SAST (Static App Security Testing) tools focus on scanning application source code for vulnerabilities in coding. Static Application Security Testing (SAST) vendors include Veracode, Perforce, http://www.castsoftware.com/ and Checkmarx, which adds an agent running along the app to report to a central Security Handler, called Interactive App Security Testing (IAST).
+
+Security tests should also cover the efficacy of Runtime Application Self-Protection (RASP) built within apps, rather than relying completely on the infrastructure Web Application Firewall (WAF).
+
 ## OWASP Top 10
 
 ZAP looks for vulnerabilities described by the non-profit OWASP (Open Web Application Security Project)
@@ -47,8 +53,23 @@ YouTube videos from F5 DevCentral 2017 by John Wagnon (and Description from OWAS
    9. <a target="_blank" href="https://www.youtube.com/watch?v=IGsNYVDKRV0&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=97">Using Components with Known Vulnerabilities</a>  (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities">Description</a>)
 
    10. <a target="_blank" href="https://www.youtube.com/watch?v=mruO75ONWy8&index=84&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC">Insufficient Logging and Monitoring</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A10-Insufficient_Logging%26Monitoring">Description</a>)
+   <br /><br />
+
+Cross-Site Request Forgery (CSRF)
+
+There is also SAN's <a target="_blank" href="https://www.sans.org/top25-software-errors/">Top 25 Software Errors</a> that include
+Insecure Interaction Between Components,
+Risky Resource Management, and
+Porous Defenses
+
+Additionally:
+* Payment Card Industry Data Security Standard (PCI DSS)
+* Health Insurance Portability and Accountability Act (HIPAA)
+* Motor Industry Software Reliability Association (MISRA)
 
 ## Test Scope
+
+DAST cannot identify non-reflective vulnerabilities (i.e – Cross-Site Scripting) that don’t generate feedback when triggered.
 
 ## Get sample broken app
 
