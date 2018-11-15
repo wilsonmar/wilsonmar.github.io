@@ -129,12 +129,12 @@ Earlier:
 
 ## Operating Systems in the cloud #
 
-As of May 2016, Microsoft Azure works with SUSE and Oracle,
+As of May 2016, Microsoft Azure works with SUSE and Oracle Java,
 but not Red Hat Enterprise Linux (RHEL).
 
 Amazon provides software to host whatever OS is put into images.
-But its free server images are based on CentOS.
-Amazon is working on "Linux2".
+But its free server images are based on CentOS, derived from Red Hat as both use the yum package manager.
+Amazon is working on "Linux2" based on Red Hat.
 
 ## Network speed
 
@@ -157,6 +157,28 @@ To compare network speeds:
    ![cloud-services-gcping-507x224-14208](https://user-images.githubusercontent.com/300046/40890488-10f2b1de-6734-11e8-8aea-6ebfb3edfa3c.jpg)
 
 
+## Downtime
+
+<a target="_blank" href="https://status.aws.amazon.com/">https://status.aws.amazon.com</a> is Amazon's AWS Service Health Dashboard applicable to all users. Under the tab for each continent is a list of each service plus region combination.
+
+PROTIP: Most new services begin in the N. Virginia region "US-EAST-1", as do the most famous outages.
+So if you are running a production load, try to use a different region than N. Virginia.
+
+https://phd.aws.amazon.com/ is your Personal Health Dashboard for your account.
+
+<a target="_blank" href="http://downdetector.com/status/aws-amazon-web-services">
+http://downdetector.com/status/aws-amazon-web-services</a>
+provides 3rd-party crowd-source status.
+
+<a target="_blank" href="https://istheservicedown.com/problems/amazon-web-services-aws/history">
+https://istheservicedown.com/problems/amazon-web-services-aws/history</a>
+is a private-party site reporting the history of downtimes on AWS. For example:
+
+![cloud-services-aws-down-608x190-19517](https://user-images.githubusercontent.com/300046/48566709-b306e480-e8b8-11e8-9f58-381992245e5a.jpg)
+
+
+For a list of outages further back:
+https://outage.report/aws-amazon-web-services
 
 ## Links to service brand names #
 
@@ -184,10 +206,14 @@ Here are the names of brand names, some with links to marketing or documentation
 </td><td><a target="_blank" href="http://aws.amazon.com/iam/details/mfa/">MFA (Multi-Factor Authentication)</a>
 </td>
     <td>-</td></tr>
-<tr valign="top" class="tblEven"><th align="left">Auditing (who did what when)<br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/operational-insights/">Azure Operational Insights</a>
+<tr valign="top" class="tblEven"><th align="left">Audit logs<br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/operational-insights/">Azure Operational Insights</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/cloudtrail/">CloudTrail</a>
 </td>
     <td>-</td></tr>
+<tr valign="top" class="tblEven"><th align="left">Who Did What When</th><td>None
+</td><td><a target="_blank" href="http://aws.amazon.com/config/">AWS Config</a></td>
+    <td>-</td></tr>
+
 <tr valign="top" class="tblOdd"><th align="left">Monitoring, Logging, Alerting</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/application-insights/">Azure Application Insights</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/cloudwatch/">CloudWatch</a></td>
     <td>-</td></tr>
@@ -322,9 +348,6 @@ Here are the names of brand names, some with links to marketing or documentation
 <td><a target="_blank" href="https://azure.microsoft.com/en-us/documentation/services/app-service/logic/">Logic Apps</a></td>
 <td><a target="_blank" href="http://aws.amazon.com/lambda/">AWS Lambda</a></td>
     <td>-</td></tr>
-<tr valign="top" class="tblEven"><th align="left"><br /></th><td>None
-</td><td><a target="_blank" href="http://aws.amazon.com/config/">AWS Config</a></td>
-    <td>-</td></tr>
 
 </tbody></table>
 
@@ -339,10 +362,6 @@ TomsITPro</a> and
 
 <a target="_blank" href="http://resources.sdtimes.com/whitepaper-ibm-q4-2015-bluemix-ebook">
 IBM Bluemix</a>
-
-<a target="_blank" href="http://downdetector.com/status/aws-amazon-web-services">
-http://downdetector.com/status/aws-amazon-web-services</a>
-provides 3rd-party crowd-source status.
 
 <a target="_blank" href="https://www.pluralsight.com/resource-center/webinars/watch-understanding-the-difference-between-microsoft-azure-and-amazon-aws">
 "Understanding the Difference Between Microsoft Azure and Amazon AWS" by veteran Pluralsight video presenter Elias Khanser, a Microsoft MVP</a>
