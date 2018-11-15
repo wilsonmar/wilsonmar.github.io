@@ -118,11 +118,7 @@ Terraform can work with :
 
 ### Install on MacOS
 
-1. If you plan on frequently switching among several versions installed of Terraform:
-
-   <a target="_blank" href="
-   https://github.com/kamatama41/tfenv">
-   https://github.com/kamatama41/tfenv</a>
+1. MEH: If you plan on frequently switching among several versions installed of Terraform, one alternative is:
 
    <tt><strong>brew install tfenv
    </strong></tt>
@@ -130,41 +126,45 @@ Terraform can work with :
    The response at time of writing:
 
    <pre>
-[INFO] Installing Terraform v0.11.7
-[INFO] Downloading release tarball from https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_darwin_amd64.zip
+==> Downloading https://github.com/kamatama41/tfenv/archive/v0.6.0.tar.gz
+==> Downloading from https://codeload.github.com/Zordrak/tfenv/tar.gz/v0.6.0
 ######################################################################## 100.0%
-[INFO] Downloading SHA hash file from https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_SHA256SUMS
-tfenv: tfenv-install: [WARN] No keybase install found, skipping GPG signature verification
-Archive:  tfenv_download.9qWxLw/terraform_0.11.7_darwin_amd64.zip
-  inflating: /usr/local/Cellar/tfenv/0.6.0/versions/0.11.7/terraform  
-[INFO] Installation of terraform v0.11.7 successful
-[INFO] Switching to v0.11.7
-[INFO] Switching completed
+🍺  /usr/local/Cellar/tfenv/0.6.0: 19 files, 23.5KB, built in 6 seconds
    </pre>
 
-   <pre>tfenv: tfenv-install: [WARN] No keybase install found, skipping GPG signature verification
-   </pre>
+   Source for this is from <a target="_blank" href="https://github.com/Zordrak/tfenv">
+   https://github.com/Zordrak/tfenv</a> (previously from <a target="_blank" href="https://github.com/kamatama41/tfenv">https://github.com/kamatama41/tfenv</a>)
 
-   When tfenv is used, do not install using, alternately:
+   Alas, I don't recommend it because when I tried to install the latest version using tfenv:
 
-   <tt><strong>brew install terraform
-   </strong></tt>
+   <tt><strong>tfenv install latest</strong></tt>
 
-   Notice the installer is for a specific version of MacOS (such as High Sierra):
+   The error message I got was:
 
    <pre>
-==> Downloading https://homebrew.bintray.com/bottles/terraform-0.10.6.sierra.bot
-######################################################################## 100.0%
-==> Pouring terraform-0.10.6.sierra.bottle.tar.gz
-==> Caveats
-zsh completions have been installed to:
-  /usr/local/share/zsh/site-functions
-==> Summary
-🍺  /usr/local/Cellar/terraform/0.10.6: 7 files, 63.6MB
+[INFO] Installing Terraform v0.12.0
+[INFO] Downloading release tarball from https://releases.hashicorp.com/terraform/0.12.0/terraform_0.12.0_darwin_amd64.zip
+&nbsp;
+curl: (22) The requested URL returned error: 403 
+tfenv: tfenv-install: [ERROR] Tarball download failed
+   </pre>
+
+   When tfenv is used, do not install from the website or using :
+
+   <tt>brew install terraform
+   </tt>
+
+   PROTIP: The installer is for a specific version of MacOS (such as High Sierra):
+
+   <pre>
+==> Downloading https://homebrew.bintray.com/bottles/terraform-0.11.10.high_sierra.bottle.1.tar.gz
+Already downloaded: /Users/wilsonmar/Library/Caches/Homebrew/downloads/00744f3d03e5309d7548edd315f26202944b1594b0f98017fba6b7e12b191a90--terraform-0.11.10.high_sierra.bottle.1.tar.gz
+==> Pouring terraform-0.11.10.high_sierra.bottle.1.tar.gz
+🍺  /usr/local/Cellar/terraform/0.11.10: 6 files, 102.1MB
    </pre>   
 
    PROTIP: This creates folder <strong>.terraform.d</strong> on your $HOME folder, containing files
-   checkpoint_cache     checkpoint_signature
+   checkpoint_cache and checkpoint_signature
 
 2. Proceed to <a href="#ScriptInit">Get sample Terraform scripts</a>.
 
@@ -270,10 +270,10 @@ sudo apt-get install docker-ce
    <tt><strong>terraform \-\-version 
    	</strong></tt>
 
-   WARNING: The response at time of writing, Terraform is not even "1.0" release, meaning it's in beta maturity:
+   WARNING: The response at time of writing, Terraform is not even "1.0.0" release, meaning it's in beta maturity:
 
    <pre>
-   Terraform v0.11.7
+   Terraform v0.11.10
    </pre>
 
 
@@ -328,13 +328,16 @@ All other commands:
    <tt><strong>terraform plan \-\-help
     </strong></tt>
 
+
    ### Terraform Console
 
 4. Open the Terraform Console (REPL) from a Terminal/command shell:
 
    <tt><strong>terraform console</strong></tt>
 
-   The response is the <strong>></strong> prompt.
+   The response is the prompt
+
+   <strong>></strong> 
 
 5. Commands can interpret numbers:
 
