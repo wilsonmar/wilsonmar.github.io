@@ -157,7 +157,7 @@ To compare network speeds:
    ![cloud-services-gcping-507x224-14208](https://user-images.githubusercontent.com/300046/40890488-10f2b1de-6734-11e8-8aea-6ebfb3edfa3c.jpg)
 
 
-## Downtime
+## Outage tracking #
 
 <a target="_blank" href="https://status.aws.amazon.com/">https://status.aws.amazon.com</a> is Amazon's AWS Service Health Dashboard applicable to all users. Under the tab for each continent is a list of each service plus region combination.
 
