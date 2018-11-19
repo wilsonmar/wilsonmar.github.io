@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mac OSX Homebrew"
-excerpt: "Packaged for easy digestion"
+excerpt: "How to install brew packages based on XCode, Ruby, Homebrew"
 tags: [homebrew, apple, mac, setup]
 image:
 # feature: pic brown homebrew logo 1900x500.jpg
@@ -39,32 +39,50 @@ and adds symlinks to the /usr/local folder.
 
 Homebrew is the newest and most popular package utility on OSX.
 
-Its web page is at <a target="_blank" href="http://brew.sh/">
-http://brew.sh</a>
-
 Alternatives to Homebrew:
 
    * https://www.macports.org/ 
 
-   sudo port install tree
+   <pre>sudo port install tree</pre>
 
    * http://www.finkproject.org/
+
+Homebrew's web page is at <a target="_blank" href="http://brew.sh/">
+http://brew.sh</a>
 
 <hr />
 
 <a id="Preparations"></a>
 
-## Preparations #
+## Preparations: XCode CLI #
 
-0. Make a full backup of your system before following these instructions.
+0. Make a full backup of your system right before following these instructions.
 
-0. Open a Terminal to install XCode:
+0. Open the App Store to install XCode, Apple's IDE for developing Swift and Objective-C to run on iPhones and iPads.
 
-   <pre><strong>xcode</strong></pre>
+   PROTIP: Apple's App Store only installs .app files. So programs invoked from the command line Terminal (such as gcc) need to be installed a different way.
+
+0. To verify XCode CLI install:
+
+   <pre><strong>
+   /usr/bin/xcodebuild -version
+   </strong></pre>
+
+   This message means that it's not installed:
+
+   <pre>
+   xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance
+   </pre>
+
+0. Open a Terminal to install XCode CLI:
+
+   <pre><strong>xcode-select --install</strong></pre>
 
    If XCode is not already installed, you are prompted to install it:
 
    ![mac-xcode-addition-452x114-9389](https://user-images.githubusercontent.com/300046/47534548-f8656280-d874-11e8-86aa-0a63aa1d89c7.jpg)   
+
+   Installation is to folder: <tt>/Library/Developer/CommandLineTools/</tt>.
 
    Homebrew requires OS X 10.5+ and the Xcode command line tools.
 
@@ -72,7 +90,7 @@ Alternatives to Homebrew:
    and look for your version of "Command Line Tools (macOS 10.14) for XCode 10", 
    one that doesn't say "beta".
 
-   Since the El Capitan version of Mac OSX, 
+0. Since the El Capitan version of Mac OSX, 
    file permissions in /usr/local have changed,
    causing error messages such as:
 
@@ -83,17 +101,35 @@ Alternatives to Homebrew:
 
    xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
 
-0. So in a Terminal shell window at any folder:
+   So in a Terminal shell window at any folder:
 
    <tt><strong>
    sudo chown -R :staff /usr/local
    </strong></tt>
 
 
+0. Verify installation by getting the version of the <a target="_blank" href="https://en.wikipedia.org/wiki/GNU_Compiler_Collection">GNU Compiler Collection</a>:
+
+   <tt><strong>
+   gcc \-\-version
+   </strong></tt>
+
+   You should see something like this (for Mojave):
+
+   <pre>
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/c++/4.2.1
+Apple LLVM version 10.0.0 (clang-1000.10.44.4)
+Target: x86_64-apple-darwin18.2.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+   </pre>
+
 
 <a id="HomebrewSetupz"></a>
 
 ## Install Homebrew #
+
+   Homebrew makes use of Ruby, which comes with macOS.
 
 1. Install Homebrew if you haven't already.
 
@@ -121,7 +157,7 @@ Alternatives to Homebrew:
    which brew
    </strong></pre>
 
-   The response:
+   The response is the brew executable program at:
 
    <pre>
    /usr/local/bin/brew
@@ -130,6 +166,20 @@ Alternatives to Homebrew:
    The "brew" above is a shell script file.
 
    PROTIP: The "/usr/local" is the default specified by the  $HOMEBREW_PREFIX enviornment variable.
+
+
+0. Identify where the Homebrew program stores packages:
+
+   <pre><strong>
+   brew --repository
+   </strong></pre>
+
+   The response:
+
+   <pre>
+   /usr/local/Homebrew
+   </pre>
+
 
    ### Update Homebrew itself #
 
