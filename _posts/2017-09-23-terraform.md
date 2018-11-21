@@ -1504,6 +1504,10 @@ includes:
   shows how to take input from a CSV file.
 
 
+<a target="_blank" href="https://www.youtube.com/watch?v=1JAx2npuprk&list=PLtK75qxsQaMIHQOaDd0Zl_jOuu1m3vcWO&index=1">
+Terraform Basics mini-course on YouTube in 5-parts</a> from "tutorialLinux".
+
+
 ## More on DevOps #
 
 This is one of a series on DevOps:

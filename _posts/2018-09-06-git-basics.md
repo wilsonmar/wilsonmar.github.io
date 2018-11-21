@@ -18,7 +18,9 @@ comments: true
 
 This is a hands-on deep dive immersive course to get those new to Git productive for professional usage using a local Git client. You learn in minimum time because I've spent a lot of time on sequencing your learning and on time-saving automation. The introduction to this course:
 
-<amp-youtube data-videoid="KiebiTlSe4A" layout="responsive" width="480" height="270"></amp-youtube>
+<amp-youtube data-videoid="OVwS_Swkhik" layout="responsive" width="480" height="270"></amp-youtube>
+
+   I've viewed <a target="_blank" href="https://wilsonmar.github.io/git-github-videos/">every video and book on this topic</a> and I haven't seen this approach. So such an approach is a unique innovation of just this website.
 
 In this tutorial, we also learn how to recover from mistakes right after we try each command.
 This means we often use commands to verify status after key steps.
@@ -48,8 +50,6 @@ For an <strong>animated</strong> flowchart where you can click the Pause button 
    * Contact me to get the PowerPoint file if you have Microsoft Office 2016 suite purchased/installed.
 
 BTW I'm working on a video in which I verbally narrate the video using text on this web page. Until then I have for you an animated diagram above.
-
-   I've viewed <a target="_blank" href="https://wilsonmar.github.io/git-github-videos/">every video and book on this topic</a> and I haven't seen this approach. So such an approach is a unique innovation of just this website.
 
 ## Setup utilities
 
@@ -116,18 +116,22 @@ Now setup Homebrew/Chocolatey, Git/msysgit.
    * The "Switch To" in Eclipse is the equivalent of `git checkout`. This avoids confusion with the "checkout" function in Subversion, which does something completely different than git checkout. Git does not isolate what is checked out nor lock portions of code like what Subversion does, which results in people waiting for others to finish. For this reason, many have migrated from Subversion to Git.
    We will soon show how Git enables every portion of code to be worked on at the same time.
 
-   * See <a target="_blank" href="https://www.youtube.com/watch?v=C0bFLGJqnI8&list=PL-suslzEBiMo0B5RcAikOaqDLKoG9Okub">VIDEO: Using Git within Eclipse</a> May 21, 2013 by 
-Dr. Brian Fraser 
+   * See <a target="_blank" href="https://www.youtube.com/watch?v=C0bFLGJqnI8&list=PL-suslzEBiMo0B5RcAikOaqDLKoG9Okub">VIDEO: Using Git within Eclipse</a> May 21, 2013 by Dr. Brian Fraser 
 
 
-## Ways to obtain a file in Git repository
+## Ways to get a shell script 
+
+   a. bash curl command to a script (see immediately below)
+
+## Ways to get a Git repository
 
    PROTIP: There are several ways to obtain this file from GitHub, GitLab, BitBucket, or other host:
 
    a. Download ZIP file<br />
-   b. Open in Desktop client (Git for GitHub)<br />
-   c. git clone git url<br />
-   d. bash curl command to a script (see immediately below)
+   b. Open in Desktop client (using Git for GitHub)<br />
+   c. git clone https or SSH url<br />
+   d. hub command<br />
+   e. bash curl command to a script (see immediately below)
    <br /><br />
 
 ## A script types commands for you

@@ -25,8 +25,6 @@ Here I'm taking a "deep dive" approach because I haven't seen one on the interne
 I've pulled out the various incantations suggested by others on StackOverlow
 and put them here in context.
 
-{% include _intro.html %}
-
 ## TL;DR Summary #
 
 PROTIP: Various methods of installing Python are incompatible with each other.
@@ -38,12 +36,13 @@ some Python functions in one version do not work with commands in another versio
 <a href="#PythonMacVersion">The version of Python that comes with Apple Mac OSX is obsolete</a> and needs to be <a href="#UpgradePython">updated</a>
 with <a href="#XCode">XCode</a>.
 
-To use Python3 as the default version for the python command, set an alias python=python3 in you Mac's ~/.bash_profile.
+To use Python3 as the default version for the python command, set in you Mac's ~/.bash_profile
 
-Despite all this hassle, Python is the preferred language of 
+   <pre>alias python=python3</pre>
+
+Despite all this hassle around versioning, Python is the preferred language of 
 Artificial Intelligence and Machine Learning 
 at the forefront of computer science innovation today.
-
 The heavy use of math in AI and ML means it's best to 
 <a href="#AnacondaInstall">
 install Anaconda</a> and use conda commands (instad of Miniconda or pip with virtualenv).
@@ -60,11 +59,7 @@ PIP install is troublesome, often because they are more recent than those in Con
 
 There is what can be a confusing conflict of choice here for installing Python and its package manager.
 
-The "traditional" approach:
-
-   * <a href="#PackagInstallerz">Download Python installer from python.org</a>. 
-
-   Not recommended. That would be too easy.
+   * Not recommended is the "traditional" approach of <a href="#PackagInstallerz">download Python installer from python.org</a>. 
 
    * <a href="#PIPz">pip</a> (Python Installation Packager) is built on top of <strong>setuptools</strong> which
    is what downloads and installs Python software over a network (usually the Internet) with a single command (easy_install). 
@@ -343,7 +338,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
    ### Start a HTTP Server Using Python #
 
-   A simple HTTP server service can be started with command:
+   A simple HTTP server service can be started with this Python 2 command:
 
    <tt><strong>
    python -m SimpleHTTPServer
@@ -361,45 +356,45 @@ Type "help", "copyright", "credits" or "license" for more information.
 Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...   
    </pre>
 
-   CAUTION: Hitting Ctrl-C, does not shutdown the server gracefully, and the binded address will still be in use.
+   CAUTION: Hitting Ctrl-C on a Mac, does not shutdown the server gracefully, and the binded address will still be in use.
 
    TODO: Add port designation in command line.
 
 
-## Don't Uninstall Python 2.7 #
+## Don't Uninstall Default Python on macs #
 
 > The version of Python that comes with Mac OSX should not be removed 
 because some Apple system software have hard-coded references to it.
 
-That is the reason why elevated privilages (sudo) is necessary to remove Python from your Mac.
+In this bad advice to harm yourself:
 
-Nevertheless here's the bad advice to harm yourself:
+1. Elevated privilages (sudo) are necessary to remove Python from your Mac 
 
    <pre><strong>
    sudo rm -rf ~/Library/Frameworks/Python.framework/Versions/2.7
    sudo rm -rf "/Applications/Python 2.7"
    </strong></pre>
 
-   Remove symbolic links pointing to the python version see 
+2. Remove symbolic links pointing to the python version:
 
    <pre><strong>
    cd /usr/local/bin/
    ls -l /usr/local/bin | grep '../Library/Frameworks/Python.framework/Versions/2.7' | awk '{print $9}' | tr -d @ | xargs rm
    </strong></pre>
 
-   Remove references to deleted paths in PATH environment variable within shell profile files.  
+3. Remove references to deleted paths in PATH environment variable within shell profile files.  
    Depending on which shell you use, any of the following files may have been modified: 
    
    <pre>
-   ~/.bash_login, 
-   ~/.bash_profile, 
-   ~/.cshrc, 
-   ~/.profile, 
-   ~/.tcshrc,
+   ~/.bash_profile
+   ~/.bash_login
+   ~/.cshrc
+   ~/.profile
+   ~/.tcshrc
    ~/.zprofile
    </pre> 
 
-0. List symbolic links pointing to the python version: 
+4. List symbolic links pointing to the python version: 
 
    <pre><strong>
    ls -l /usr/bin/python
@@ -411,13 +406,13 @@ Nevertheless here's the bad advice to harm yourself:
 -rwxr-xr-x  2 root  wheel 58416 Jul 14  2015 /usr/bin/python
    </pre>
 
-   If instead you followed some bad advice and see something like this:
+   Or if instead you followed some bad advice and see something like this:
 
    <pre>
 lrwxr-xr-x  1 root  wheel  18 Feb  7 20:54 /usr/bin/python -> /usr/bin/python2.7
    </pre>
 
-0. List symbolic links pointing to the python version: 
+5. List symbolic links pointing to the python version: 
 
    <pre><strong>
    cd ~
@@ -432,7 +427,7 @@ lrwxr-xr-x  1 root  wheel  75 Oct  8 10:46 /usr/bin/python2.7 -> ../../System/Li
 
    The "../../" means that it's above your HOME folder, in the root of the Mac OS.
 
-0. So let's go there:
+6. So let's go there:
  
    <pre><strong> 
    cd /System/Library/Frameworks/Python.framework/Versions/2.7/bin/
@@ -440,7 +435,7 @@ lrwxr-xr-x  1 root  wheel  75 Oct  8 10:46 /usr/bin/python2.7 -> ../../System/Li
 
    There are the executables "python" and "python2.7" plus others.
 
-0. Run:
+7. Run:
 
    <pre><strong>python2.7</strong></pre>
 
@@ -453,9 +448,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> 
    </pre>
 
-0. Exit
+8. Exit
 
-0. Run the generic python generically:
+9. Run the generic python generically:
 
    <pre><strong>
    python
@@ -480,7 +475,7 @@ Type "help", "copyright", "credits" or "license" for more information.
    this</a>:
 
 
-   ### Alias symlink to the rescue #
+### Alias symlink to the rescue #
 
    CAUTION: I'm still working on the following:
 
@@ -525,135 +520,12 @@ lrwxr-xr-x  1 mac  staff  39 Mar  5 00:41 /usr/local/bin/python2.7 -> ../Cellar/
 
 <a name="UpgradePython"></a>
 
-<a name="XCode"></a>
-
-## XCode
-
-To build Python on a machine requires a GCC compiler.
-One comes with command-line tools installed with
-Apple's XCode IDE. Newer versions also installs a Git client.
-
-### XCode install
+0. Install XCode CLI.
 
 
-0. Get the installation location in a Terminal window:
+   <a name="PackagInstallerz"></a>
 
-   <pre><strong>
-   xcode-select -p
-   </strong></pre>
-
-   The answer:
-
-   <pre>
-   /Applications/Xcode.app/Contents/Developer
-   </pre>
-
-
-It used to be that one can enter a command:
-
-   <pre>xcode-select --install</pre>
-
-   The response on my Sierra machine is:
-
-   <pre>
-   xcode-select: error: command line tools are already installed, use "Software Update" to install updates
-   </pre>
-
-So below is the "Software Update" approach:
-
-0. Use an internet browser to <a target="_blank" href="https://developer.apple.com/xcode/">
-   https://developer.apple.com/xcode</a>
-
-0. Provide your Apple ID and password. Get one if you don't already have one.
-
-0. Go through Apple's location verification if prompted.
-
-0. Click "Download" and provide your Apple ID.
-   You'll need to establish an Apple ID.
-
-0. Select the version to download:
-
-   | File               | Date       | Download | Unpacked |
-   | :----------------- | :--------- | -------: | ------: |
-   | XCode_8.2.1 8C1002 | 2016-12-19 |   ? GB | ? GB |
-   | XCode_8_beta_2.xip | 2016-07-05 |   5.9 GB | 12.32 GB |
-   | XCode_7.31         | 2016-05-03 |   3.8 GB | ? |
-   | XCode_4.1          | 2014-      |   2.9 GB | ? |
-   | XCode_3.2.4        | 2014-      |   2.? GB | ? |
-
-   NOTE: These are massive files that may take a while to download if you don't have a fast internet connection.
-
-   CAUTION: Even more important, make sure that your machine will have enough free space available.
-
-0. Open App Store. Click Open.
-
-0. Remember to delete the installer after you're done, then 
-
-   ### XCode version
-
-0. Confirm the version installed.
-
-   <pre><strong>
-   /usr/bin/xcodebuild -version
-   </strong></pre>
-
-   The answer:
-
-   <pre>
-Xcode 8.2.1
-Build version 8C1002
-   </pre>
-
-   The should match up with the Build Number on the Apple web page.
-
-   Alternately, for a more precise version number and other info 
-   (Mavericks and up):
-
-   <pre><strong>
-   pkgutil --pkg-info=com.apple.pkg.CLTools_Executables
-   </strong></pre>
-
-   This is a specific version of:
-
-   <pre>
-   pkgutil --pkgs | grep -i tools
-   </pre>
-
-   The response:
-
-   <pre>
-package-id: com.apple.pkg.CLTools_Executables
-version: 8.2.0.0.1.1480973914
-volume: /
-location: /
-install-time: 1484969093
-groups: com.apple.FindSystemFiles.pkg-group 
-   </pre>
-
-
-0. Get the version of GCC installed:
-
-   <pre>
-   gcc --version
-   </pre>
-
-   The answer:
-
-   <pre>
-Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
-Apple LLVM version 8.0.0 (clang-800.0.42.1)
-Target: x86_64-apple-darwin16.4.0
-Thread model: posix
-InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
-   </pre>
-
-
-
-
-
-<a name="PackagInstallerz"></a>
-
-## Download Python installer #
+   ### Download Python installer #
 
 If you must do it the hard way, bareback, etc:
 
@@ -662,10 +534,11 @@ If you must do it the hard way, bareback, etc:
    https://www.python.org/downloads/mac-osx</a>
 
 0. Click the Latest link at the top or a <br />
-   specific "Mac OS X 64-bit/32-bit installer".
+   specific "Mac OS X 64-bit installer" for macOS 10,9+.
 
    | File                         | Date       | Download |
    | :--------------------------- | :--------- | ------: |
+   | <a target="_blank" href="https://www.python.org/downloads/release/python-2715/">python-2.7.15-macosx10.9.pkg</a> | 2018-05-01 | 22.7 MB |
    | python-2.7.12-macosx10.6.pkg | 2016-06-25 | 21.3 MB |
    | python-2.7.11-macosx10.6.pkg | 2015-12-05 | 21.1 MB |
    | python-2.7.10-macosx10.6.pkg | 2015-05-23 | 21.1 MB |

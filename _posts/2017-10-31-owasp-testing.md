@@ -69,6 +69,7 @@ Additionally:
 
 ## Test Scope
 
+As a "black box" approach,
 DAST cannot identify non-reflective vulnerabilities (i.e – Cross-Site Scripting) that don’t generate feedback when triggered.
 
 ## Get sample broken app
@@ -290,6 +291,30 @@ You can also:
 1. Setup Authentication (Form Based or Script Based)
 2. Run as Pre-Build as part of a Selenium Build
 3. Generate Reports (.xhtml, .xml, .json)
+
+## Other DAST vendors
+
+  https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+
+1. https://en.wikipedia.org/wiki/Veracode at https://www.veracode.com/security/vulnerability-scanning-tools
+   acquired on Nov 5 2018 from Broadcom by private equity firm Thoma Bravo who also funded Compuware and Dynatrace, Solar Winds and McAfee https://thomabravo.com/2018/11/05/thoma-bravo-to-acquire-veracode-software-from-broadcom-inc-nasdaqavgo/
+   Only scans Java.
+
+2. MicroFocus (formerly HP) https://en.wikipedia.org/wiki/Fortify_Software
+   WebInspect
+
+3. Checkmarx based in Israel, offers Codebashing, a developer education platform for secure coding training.
+
+4. Synopsys acquired Black Duck, Coverity, and  
+   https://en.wikipedia.org/wiki/Cigital
+    Cigital SecureAssist – A lightweight IDE plugin that points out common security vulnerabilities in real time
+
+5. IBM AppScan
+
+
+   * https://en.wikipedia.org/wiki/Parasoft Parasoft 
+
+   * Tenable.io Nessus
 
 ## Resources
 

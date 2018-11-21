@@ -17,31 +17,33 @@ image: # pic-black-bkg-white-cloud_1920x1200
 <img class="img-right" align="right"
 alt="cloud platforms black icons 300x330-300-58kb.jpg" width="300" height="330" src="https://cloud.githubusercontent.com/assets/300046/17864330/e4dbabc0-685a-11e6-84e5-361c5fc8c28d.jpg">
 
-This article compares the various cloud services platforms:
+This article compares the largest cloud services platforms:
 Amazon AWS vs.
 [Google Cloud Platform](/gcp/) vs.
 IBM Softlayer vs. 
 Microsoft Azure vs. 
+Alibaba Cloud vs.
 Rackspace.
-These are the biggest ones.
 
 Major multi-cloud vendors include Oracle, SalesForce Heroku, SkyTap.
 
 Software for private clouds include Red Hat OpenStack and VMWare. 
 
-Software for hybrid include <a target="_blank" href="https://github.com/cloudfoundry/bosh">CloudFoundry</a>, Hashicorp Terraform, and others.
+Software for hybrid private/public clouds include <a target="_blank" href="https://github.com/cloudfoundry/bosh">CloudFoundry</a>, Hashicorp Terraform, and others.
+[NetApp](http://www.netapp.com/us/solutions/cloud/hybrid-cloud/), or [EMC](http://www.emc.com/en-us/cloud/hybrid-cloud-computing/index.htm)
+
 
 ## Advantages of Cloud
 
-Evaluations can be based on the 6 advantages of cloud:
+Evaluations can be based on the advantages of cloud:
 
 1. Trade capital expense for variable expense (conserve cash)
-2. Benefit from massive economies of scale (leverage experts who can focus on difficult issues)
-3. Stop guessing about capacity (over-provisioning)
-4. Increase speed and agility (big team of experts working on innovations)
+2. Stop guessing about capacity (over-provisioning, which can be expensive)
+3. Benefit from economies of scale (tap into available capacity pooled among many customers)
+4. Expand and go global in minutes (make use of infrastructure established around the world, which is time consuming, expensive, and dangerous to do on your own)
+(leverage experts working within cloud vendors who can focus on facilities, security, and scalability capabilities)
 5. Stop spending money running and maintaining data centers "friends don't let friends build data centers"
-6. Expand and go global in minutes (time consuming and dangerous to do on your own)
-
+6. Increase speed and agility (make use of innovations)
 PROTIP: Memorize the above list for exams.
 
 Amazon's "Well Architected" notes the constraints removed by being in the cloud:
@@ -50,17 +52,17 @@ Amazon's "Well Architected" notes the constraints removed by being in the cloud:
 * Make experimentation easier (overcome fear of change)
 * Allow architecture to evolve (rather than being frozen in time)
 
-
 ## TL;DR - The biggest differences
 
 The perspective of an individual is not to select a cloud vendor, but to select the cloud vendor which provides the best career prospects. Here's my logic:
 
 * If you write in C# on .NET (and want to continue leveraging that experience), Azure is the natural choice. (But other clouds are trying to support Windows.)
-* If you're looking to get a job in cloud, go for AWS because of its current <a href="#marketshare">market share</a>. AWS has the most sophisticated authentication and database services.
-* If you're running really large loads, Google offers fast fiber networks that don't limit what large machines can achieve. Plus Google is ahead in Machine Learning with its popular Tensorflow in Python.
+* If you're looking to get a job in cloud, go for AWS because of its current <a href="#marketshare">market share</a> and [pace of innovation](https://aws.amazon.com/products/). AWS has the most sophisticated authentication and database services.
+* Due to competitive reasons, Target, Best Buy, eBay, and Sony Music use Google. WalMart uses Azure. 
+* If you're running really large loads on each server, Google offers fast fiber networks that don't limit what large machines can achieve. Plus Google is ahead in Machine Learning with its popular Tensorflow in Python.
 * Google's SSD drives are expensive, though needed for speed.
 
-* IBM has bare-metal machines, if that's your thing.
+* IBM has bare-metal machines, if that's your thing. But since 2017 AWS provides them as well.
 * Increasingly, companies doing business in a particular country are required to keep data within a cloud data center within that country (such as Google in Belgium).
 <br /><br />
 
@@ -162,9 +164,11 @@ To compare network speeds:
 <a target="_blank" href="https://status.aws.amazon.com/">https://status.aws.amazon.com</a> is Amazon's AWS Service Health Dashboard applicable to all users. Under the tab for each continent is a list of each service plus region combination.
 
 PROTIP: Most new services begin in the N. Virginia region "US-EAST-1", as do the most famous outages.
-So if you are running a production load, try to use a different region than N. Virginia.
+So if you are running a production load, try to use a different region than that.
+Nevertheless, that's where one must provision <strong>AWS Cloud Front CDN</strong> for worldwide distribution.
 
-https://phd.aws.amazon.com/ is your Personal Health Dashboard for your account.
+<a target="_blank" href="https://phd.aws.amazon.com/">https://phd.aws.amazon.com</a> 
+is your Personal Health Dashboard for your account.
 
 <a target="_blank" href="http://downdetector.com/status/aws-amazon-web-services">
 http://downdetector.com/status/aws-amazon-web-services</a>
@@ -365,6 +369,9 @@ IBM Bluemix</a>
 
 <a target="_blank" href="https://www.pluralsight.com/resource-center/webinars/watch-understanding-the-difference-between-microsoft-azure-and-amazon-aws">
 "Understanding the Difference Between Microsoft Azure and Amazon AWS" by veteran Pluralsight video presenter Elias Khanser, a Microsoft MVP</a>
+
+https://cloudonaut.io/my-mental-model-of-aws/
+
 
 ## More on DevOps #
 
