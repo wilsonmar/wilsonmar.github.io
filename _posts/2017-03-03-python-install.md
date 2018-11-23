@@ -27,29 +27,40 @@ and put them here in context.
 
 ## TL;DR Summary #
 
-PROTIP: Various methods of installing Python are incompatible with each other.
+<a href="#PythonMacVersion">The version of Python that comes with Apple MacOS is obsolete</a> and needs to be <a href="#UpgradePython">updated</a> along with Apple [XCode CLI](/xCode-cli/) for the MacOS version you're using.
 
-There are two separate versions of Python such that
-<a href="#CommandVersions">
-some Python functions in one version do not work with commands in another version</a>.
+There are two separate versions of Python: 2 and 3. 
+<a href="#CommandVersions"> some Python functions in one version do not work with commands in another version</a>.
 
-<a href="#PythonMacVersion">The version of Python that comes with Apple Mac OSX is obsolete</a> and needs to be <a href="#UpgradePython">updated</a>
-with <a href="#XCode">XCode</a>.
+This has given rise to several versions of Python frameworks being maintained in parallel. For example, the web application development framework exists as Django 1.3 and Django 1.0.
 
-To use Python3 as the default version for the python command, set in you Mac's ~/.bash_profile
+Adding to the confusion is that <a href="#Packaging">various methods of installing Python</a> are incompatible with each other.
+This has given rise to the need for <strong>package managers</strong> such as pip (Python Installation Packager) that enable one to switch among different versions of Python installed.
 
-   <pre>alias python=python3</pre>
+<a href="#PIPz">pip</a> (Python Installation Packager) is built on top of <strong>setuptools</strong> which
+is what downloads and installs Python software from the <strong>PyPI (Python Package Index)</strong> library online at <a target="_blank" href="https://pypi.org/">https://pypi.org</a>. 
+Setuptools itself is installed using <a href="#easy_install">easy_install</a>.
+
+This complexity necessitates the packaging of whole <a href="virtualenv">virtual environments</a> to <strong>isolate</strong>
+within a folder (directory) everything (all dependencies) that each Python **project** (application) needs to run.
+This means duplicated files for each Python application, which consume more disk space.
+
+An additional complication is that there are several alternative virtual environment packagers such as
+<a href="#easy_install">easy_install</a>, virtualenv, and pipenv.
+
+* <a href="#PIPz">pip</a> (Python Installation Packager) is a package manager.
+* Virtualenv is an environment manager. 
+* <a href="#Conda">Conda</a> does both.
+
+* <a href="#MiniConda">Miniconda</a> is a lightweight distribution of Conda, and uses conda commands.
+* Anaconda is installed on top of miniconda to provide a curated collection of <a target="_blank" href="https://docs.continuum.io/anaconda/pkgs.html">over 720 "common" packages</a> for scientific Python users.
+
+It's a "hot mess".
 
 Despite all this hassle around versioning, Python is the preferred language of 
-Artificial Intelligence and Machine Learning 
-at the forefront of computer science innovation today.
-The heavy use of math in AI and ML means it's best to 
-<a href="#AnacondaInstall">
-install Anaconda</a> and use conda commands (instad of Miniconda or pip with virtualenv).
-These provide for custom 
-<a href="virtualenv">virtual environments</a> 
-that each contain a desired version of Python (2.7 vs 3.6) for a specific purpose/project,
-plus specific versions of add-on Python packages (such as TensorFlow).
+Artificial Intelligence and Machine Learning at the forefront of computer science innovation today.
+The heavy use of math in AI and ML by TensorFlow means it's best to 
+<a href="#AnacondaInstall">install Anaconda</a> and use conda commands (instead of Miniconda or pip with virtualenv).
 
 PIP install is troublesome, often because they are more recent than those in Conda.
 
@@ -59,11 +70,7 @@ PIP install is troublesome, often because they are more recent than those in Con
 
 There is what can be a confusing conflict of choice here for installing Python and its package manager.
 
-   * Not recommended is the "traditional" approach of <a href="#PackagInstallerz">download Python installer from python.org</a>. 
-
-   * <a href="#PIPz">pip</a> (Python Installation Packager) is built on top of <strong>setuptools</strong> which
-   is what downloads and installs Python software over a network (usually the Internet) with a single command (easy_install). 
-   It itself is installed using easy_install.
+   * Not recommended is the manual approach of <a href="#PackagInstallerz">download Python installer from python.org</a>, even though that's the method described in various websites. 
 
    * <a href="#easy_install">easy_install</a> is an environment manager.
    <br /><br />
@@ -74,16 +81,6 @@ There is what can be a confusing conflict of choice here for installing Python a
    such as Qt bindings (PySide)".
 
 Alternatively, there are these alternatives:
-
-   * <a href="#Conda">Conda</a> is the command-line interface (CLI) 
-   tool that combines functionality of pip and virtualenv
-   
-   * <a href="#MiniConda">Miniconda</a> is a lightweight distribution of Conda.
-
-   So miniconda users also use conda commands.
-   
-   * Anaconda contains a curated collection of <a target="_blank" href="https://docs.continuum.io/anaconda/pkgs.html">
-   over 720 "common" packages</a> for scientific Python users. It goes on top of miniconda.
 
    * Install using Homebrew, then add <a target="_blank" href="https://github.com/Homebrew/homebrew-science/">
    homebrew science</a> for scientific work (according to <a target="_blank" href="http://stackoverflow.com/questions/33541876/os-x-deciding-between-anaconda-and-homebrew-python-environments">this</a>).
@@ -97,134 +94,9 @@ CAUTION: <a target="_blank" href="http://stackoverflow.com/questions/33874084/ho
    MacPorts, Fink, and Homebrew do not coexist on a single machine</a>.
 
 
-Differences among them:
-
-* Pip is a package manager.
-* Virtualenv is an environment manager. 
-* Conda is both.
-
-* Conda handles library dependencies outside of the Python packages as well as 
-   the Python packages themselves. 
-
-* Conda installs from binary, meaning that someone (e.g., Continuum) 
-   has already done the hard work of compiling the package, making installation easier, and faster.
-
-* pip can install anything from PyPI in one command. 
-* Conda requires at least three commands: skeleton, build, install, and possibly more
-
-* Conda uses its own format, which has some advantages (like being static, and again, Python agnostic). 
-
-<a target="_blank" href="http://kylepurdon.com/blog/using-continuum-analytics-conda-as-a-replacement-for-virtualenv-pyenv-and-more.html">
-Conda provides an alternative</a> set of 
-<a href="#CommandsTable">commands</a>
-popular for scientific (Machine Learning) computing.
-
-   <a target="_blank" href="http://conda.pydata.org/docs/_downloads/conda-cheatsheet.pdf">
-   http://conda.pydata.org/docs/_downloads/conda-cheatsheet.pdf</a>
-
-
-<a target="_blank" href="http://conda.pydata.org/docs/_downloads/conda-pip-virtualenv-translator.html">
-This table</a> lists the difference in commands between Conda and pip:
-
-<table border="1" cellpadding="4" cellspacing="0">
-<colgroup>
-<col width="17%" />
-<col width="25%" />
-<col width="33%" />
-<col width="25%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Task</th>
-<th class="head">Conda package and environment manager command</th>
-<th class="head">Pip package manager command</th>
-<th class="head">Virtualenv environment manager command</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Install a package</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-<td>-</td>
-</tr>
-<tr class="row-odd"><td>Update a package</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-<td>-</td>
-</tr>
-<tr class="row-even"><td>Update package manager</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></tt></td>
-<td>Linux/OSX: <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">pip</span></tt> Win: <tt class="docutils literal"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">pip</span></tt></td>
-<td>-</td>
-</tr>
-<tr class="row-odd"><td>Uninstall a package</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">remove</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">uninstall</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-<td>-</td>
-</tr>
-<tr class="row-even"><td>Create an environment</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span> <span class="pre">python</span></tt></td>
-<td>-</td>
-<td><tt class="docutils literal"><span class="pre">cd</span> <span class="pre">$ENV_BASE_DIR;</span> <span class="pre">virtualenv</span> <span class="pre">$ENVIRONMENT_NAME</span></tt></td>
-</tr>
-<tr class="row-odd"><td>Activate an environment</td>
-<td><tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">$ENVIRONMENT_NAME</span></tt></td>
-<td>-</td>
-<td><tt class="docutils literal"><span class="pre">source</span> <span class="pre">$ENV_BASE_DIR/$ENVIRONMENT_NAME<br />/bin/activate</span></tt></td>
-</tr>
-<tr class="row-even"><td>Deactivate an environment</td>
-<td><tt class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span></tt></td>
-<td>-</td>
-<td><tt class="docutils literal"><span class="pre">deactivate</span></tt></td>
-</tr>
-<tr class="row-odd"><td>Search available packages</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">search</span> <span class="pre">$SEARCH_TERM</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">search</span> <span class="pre">$SEARCH_TERM</span></tt></td>
-<td>-</td>
-</tr>
-<tr class="row-even"><td>Install package from specific source</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--channel</span> <span class="pre">$URL</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--index-url</span> <span class="pre">$URL</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-<td>-</td>
-</tr>
-<tr class="row-odd"><td>List installed packages</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">list</span></tt></td>
-<td>-</td>
-</tr>
-<tr class="row-even"><td>Create requirements file</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">--export</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">freeze</span></tt></td>
-<td>-</td>
-</tr>
-<tr class="row-odd"><td>List all environments</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">info</span> <span class="pre">--envs</span></tt></td>
-<td>-</td>
-<td><tt class="docutils literal"><span class="pre">Install virtualenv wrapper</span>,<br />then 
-<span class="pre">lsvirtualenv</span></tt></td>
-</tr>
-<tr class="row-even"><td>Install other package manager</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">pip</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">conda</span></tt></td>
-<td>-</td>
-</tr>
-<tr class="row-odd"><td>Install Python</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">python=x.x</span></tt></td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr class="row-even"><td>Update Python</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">python</span></tt> *</td>
-<td>-</td>
-<td>-</td>
-</tr>
-</tbody>
-</table>
-
-<hr />
-
 <a name="PythonMacVersion"></a>
 
-## Python comes with Mac OSX #
+## Python comes with MacOS, Kinda #
 
 Ever since the <a target="_blank" href="https://wilsonmar.github.io/python-install.md">Mavericks version of Mac OSX</a>,
 Python 2 comes installed on MacOS machines.
@@ -265,7 +137,7 @@ Python 2 comes installed on MacOS machines.
    python
    </strong></tt>
 
-   The response:
+   The response shows that version 2 comes with MacOS:
 
    <pre>
 Python 2.7.12 (default, Oct 16 2016, 19:01:27) 
@@ -332,6 +204,102 @@ Type "help", "copyright", "credits" or "license" for more information.
    http://sjbyrnes.com/python/ notes
 
 0. Enter Python again for the instructions to follow.
+
+
+<a name="CommandVersions"></a>
+
+## Python 3 vs. 2
+
+Sure, they say "all new Python code should be written for version 3.
+There are so many new features in Python 3 that it doesn't make much sense to stick with Python 2 unless you're working with old code."
+
+Most new features introduced with Python 3 versions not backwards compatible with version 2.
+
+
+   <a name="Python3z"></a>
+
+   ### Using Python 3
+
+0. After installing Python3, obtain the Python 3 command line with:
+
+   <tt><strong>python3</strong></tt>
+
+   The response I got:
+
+   <pre>
+Python 3.4.2 (v3.4.2:ab2c023a9432, Oct  5 2014, 20:42:22)
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+   </pre>
+
+Here are the steps to remove Python3 from your Mac:
+
+   <pre>
+   ls -l ~/Library/Frameworks/Python.framework/Versions/3.4/bin/python3
+   </pre>
+
+   sudo rm -rf that.
+
+
+### Floating point
+
+In Python 2, type:
+
+   1/2
+
+   The response is:
+
+   0
+
+In Python3, type:
+
+   1/2
+
+   The response is:
+
+   0.5
+
+
+### Print
+
+For the most part, Python 2 code works with Python 3. 
+
+Where Python 2 code fails most often is the print statement.
+Printing in Python 2 is done like so:
+
+   <pre><strong>print "Hello", "world!"</strong></pre>
+
+   The response:
+
+   Hello world!
+
+   If you input the above in Python 3, the response is:
+
+   SyntaxError: Missing parentheses in call to 'print'
+ 
+   This is because Python 3 uses a function:
+
+   <pre>print("Hello", "world!")</pre>
+
+So in Python 2.6+, use the __future__ module to back-port:
+
+   <pre>from __future__ import print_function
+   print("Hello", "world!")
+   </pre>
+
+Try this:
+
+   <pre><strong>
+   import sys
+   print('Python: {}'.format(sys.version))
+   </strong></pre>
+
+   The response:
+
+   <pre>
+Python: 3.5.2 |Anaconda custom (x86_64)| (default, Jul  2 2016, 17:52:12) 
+[GCC 4.2.1 Compatible Apple LLVM 4.2 (clang-425.0.28)]
+   </pre>   
 
 
    <a name="PythonHTTP"></a>
@@ -475,57 +443,17 @@ Type "help", "copyright", "credits" or "license" for more information.
    this</a>:
 
 
-### Alias symlink to the rescue #
-
-   CAUTION: I'm still working on the following:
-
-   If you tried to commit suicide like the above, the work-around is an alias,
-   which the operating system resolves before going down PATH.
-
-0. Get a Python 2.7 installed. For example, at:
-
-   ../Cellar/python/2.7.12_2/bin/python2.7
-
-0. Verify the sym link:
-
-   <pre><strong>
-   ls -l /usr/local/bin
-   </strong></pre>
-
-   The response:
-
-   <pre>
-lrwxr-xr-x  1 mac  staff  39 Mar  5 00:41 /usr/local/bin/python2.7 -> ../Cellar/python/2.7.12_2/bin/python2.7
-   </pre>
-
-0. Edit ~/.bash_shell to add a shell alias:
-
-   <pre>
-   alias python=/usr/local/bin/python2.7
-   </pre>
-
-0. Close and open another Terminal.
-0. Verify the version.
-
-   <pre><strong>
-   cd ~
-   python --version
-   </strong></pre>
-
-   The response should be the newer sub-version:
-
-   <pre>2.7.12 </pre>
-
 <hr />
 
 <a name="UpgradePython"></a>
 
-0. Install XCode CLI.
+## Upgrade Python #
 
+1. Install XCode CLI.
 
    <a name="PackagInstallerz"></a>
 
-   ### Download Python installer #
+### Download Python installer #
 
 If you must do it the hard way, bareback, etc:
 
@@ -662,9 +590,55 @@ You must give at least one requirement to install (see "pip help install")
    lists of Python package dependencies are in a requirements.txt file.
 
 
-   <a name="VirtualEnvironments"></a>
+## Alias symlink to the rescue #
 
-   ### Virtual Environments #
+   If you tried to commit suicide like the above, the work-around is an alias,
+   which the operating system resolves before going down PATH.
+
+
+1. To use Python3 as the default version for the python command, set in you Mac's ~/.bash_profile
+
+   <pre>alias python=python3</pre>
+
+0. Get a Python 2.7 installed. For example, at:
+
+   ../Cellar/python/2.7.12_2/bin/python2.7
+
+0. Verify the sym link:
+
+   <pre><strong>
+   ls -l /usr/local/bin
+   </strong></pre>
+
+   The response:
+
+   <pre>
+lrwxr-xr-x  1 mac  staff  39 Mar  5 00:41 /usr/local/bin/python2.7 -> ../Cellar/python/2.7.12_2/bin/python2.7
+   </pre>
+
+0. Edit ~/.bash_shell to add a shell alias:
+
+   <pre>
+   alias python=/usr/local/bin/python2.7
+   </pre>
+
+0. Close and open another Terminal.
+0. Verify the version.
+
+   <pre><strong>
+   cd ~
+   python --version
+   </strong></pre>
+
+   The response should be the newer sub-version:
+
+   <pre>2.7.12 </pre>
+   
+<hr />
+
+<a name="VirtualEnvironments"></a>
+
+## Virtual Environments #
 
    Examples of instructions for installing a <strong>requirements.txt</strong> file 
    are typically preceded by a `source bin/activate` command
@@ -739,7 +713,7 @@ You must give at least one requirement to install (see "pip help install")
 <a target="_blank" href="https://hynek.me/articles/virtualenv-lives/">
 Hynek Schlawack recommends</a>
 
-   * Don’t pip-install anything into its global site-packages beyond virtualenv.
+   * Don’t pip-install anything beyond virtualenv into its global site-packages.
 
    * Install <strong>both</strong> virtualenv and system isolation (they are not mutually exclusive):
 
@@ -1754,119 +1728,130 @@ http://www.pyimagesearch.com/2016/12/05/macos-install-opencv-3-and-python-3-5/
 <hr />
 
 
-<a name="CommandVersions"></a>
+<a name="CondaVsPip"></a>
 
-## Python 3 vs. 2
+## Conda vs Pip
 
-Sure, they say "all new Python code should be written for version 3.
-There are so many new features in Python 3 that it doesn't make much sense to stick with Python 2 unless you're working with old code."
+* Conda handles library dependencies outside of the Python packages as well as Python packages themselves. 
 
-Most new features introduced with Python 3 versions not backwards compatible with version 2.
+* Conda installs from binary, meaning that someone (e.g., Continuum) 
+   has already done the hard work of compiling the package, making installation easier, and faster.
 
+* pip can install anything from PyPI in one command. 
+* Conda requires at least three commands: skeleton, build, install, and possibly more.
 
-   <a name="Python3z"></a>
+* Conda uses its own format, which has some advantages (like being static, and again, Python agnostic). 
 
-   ### Using Python 3
-
-0. After installing Python3, obtain the Python 3 command line with:
-
-   <tt><strong>python3</strong></tt>
-
-   The response I got:
-
-   <pre>
-Python 3.4.2 (v3.4.2:ab2c023a9432, Oct  5 2014, 20:42:22)
-[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
-   </pre>
-
-Here are the steps to remove Python3 from your Mac:
-
-   <pre>
-   ls -l ~/Library/Frameworks/Python.framework/Versions/3.4/bin/python3
-   </pre>
-
-   sudo rm -rf that.
+<a target="_blank" href="http://kylepurdon.com/blog/using-continuum-analytics-conda-as-a-replacement-for-virtualenv-pyenv-and-more.html">
+Conda provides an alternative</a> set of 
+<a href="#CommandsTable">commands</a>
+popular for scientific (Machine Learning) computing.
+See <a target="_blank" href="http://conda.pydata.org/docs/_downloads/conda-cheatsheet.pdf">
+   http://conda.pydata.org/docs/_downloads/conda-cheatsheet.pdf</a>
 
 
-### Floating point
+<a target="_blank" href="http://conda.pydata.org/docs/_downloads/conda-pip-virtualenv-translator.html">
+This table</a> lists the difference in commands between Conda and pip:
 
-In Python 2, type:
+<table border="1" cellpadding="4" cellspacing="0">
+<colgroup>
+<col width="17%" />
+<col width="25%" />
+<col width="33%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Task</th>
+<th class="head">Conda package and environment manager command</th>
+<th class="head">Pip package manager command</th>
+<th class="head">Virtualenv environment manager command</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Install a package</td>
+<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
+<td>-</td>
+</tr>
+<tr class="row-odd"><td>Update a package</td>
+<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
+<td>-</td>
+</tr>
+<tr class="row-even"><td>Update package manager</td>
+<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></tt></td>
+<td>Linux/OSX: <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">pip</span></tt> Win: <tt class="docutils literal"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">pip</span></tt></td>
+<td>-</td>
+</tr>
+<tr class="row-odd"><td>Uninstall a package</td>
+<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">remove</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">uninstall</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
+<td>-</td>
+</tr>
+<tr class="row-even"><td>Create an environment</td>
+<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span> <span class="pre">python</span></tt></td>
+<td>-</td>
+<td><tt class="docutils literal"><span class="pre">cd</span> <span class="pre">$ENV_BASE_DIR;</span> <span class="pre">virtualenv</span> <span class="pre">$ENVIRONMENT_NAME</span></tt></td>
+</tr>
+<tr class="row-odd"><td>Activate an environment</td>
+<td><tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">$ENVIRONMENT_NAME</span></tt></td>
+<td>-</td>
+<td><tt class="docutils literal"><span class="pre">source</span> <span class="pre">$ENV_BASE_DIR/$ENVIRONMENT_NAME<br />/bin/activate</span></tt></td>
+</tr>
+<tr class="row-even"><td>Deactivate an environment</td>
+<td><tt class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span></tt></td>
+<td>-</td>
+<td><tt class="docutils literal"><span class="pre">deactivate</span></tt></td>
+</tr>
+<tr class="row-odd"><td>Search available packages</td>
+<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">search</span> <span class="pre">$SEARCH_TERM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">search</span> <span class="pre">$SEARCH_TERM</span></tt></td>
+<td>-</td>
+</tr>
+<tr class="row-even"><td>Install package from specific source</td>
+<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--channel</span> <span class="pre">$URL</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--index-url</span> <span class="pre">$URL</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
+<td>-</td>
+</tr>
+<tr class="row-odd"><td>List installed packages</td>
+<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">list</span></tt></td>
+<td>-</td>
+</tr>
+<tr class="row-even"><td>Create requirements file</td>
+<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">--export</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">freeze</span></tt></td>
+<td>-</td>
+</tr>
+<tr class="row-odd"><td>List all environments</td>
+<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">info</span> <span class="pre">--envs</span></tt></td>
+<td>-</td>
+<td><tt class="docutils literal"><span class="pre">Install virtualenv wrapper</span>,<br />then 
+<span class="pre">lsvirtualenv</span></tt></td>
+</tr>
+<tr class="row-even"><td>Install other package manager</td>
+<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">pip</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">conda</span></tt></td>
+<td>-</td>
+</tr>
+<tr class="row-odd"><td>Install Python</td>
+<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">python=x.x</span></tt></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="row-even"><td>Update Python</td>
+<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">python</span></tt> *</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
 
-   1/2
-
-   The response is:
-
-   0
-
-In Python3, type:
-
-   1/2
-
-   The response is:
-
-   0.5
-
-
-### Print
-
-For the most part, Python 2 code works with Python 3. 
-
-Where Python 2 code fails most often is the print statement.
-Printing in Python 2 is done like so:
-
-   <pre><strong>print "Hello", "world!"</strong></pre>
-
-   The response:
-
-   Hello world!
-
-   If you input the above in Python 3, the response is:
-
-   SyntaxError: Missing parentheses in call to 'print'
- 
-   This is because Python 3 uses a function:
-
-   <pre>print("Hello", "world!")</pre>
-
-So in Python 2.6+, use the __future__ module to back-port:
-
-   <pre>from __future__ import print_function
-   print("Hello", "world!")
-   </pre>
-
-Try this:
-
-   <pre><strong>
-   import sys
-   print('Python: {}'.format(sys.version))
-   </strong></pre>
-
-   The response:
-
-   <pre>
-Python: 3.5.2 |Anaconda custom (x86_64)| (default, Jul  2 2016, 17:52:12) 
-[GCC 4.2.1 Compatible Apple LLVM 4.2 (clang-425.0.28)]
-   </pre>   
-
-
-BLAH: This doesn't work for me:
-
-   <pre><strong>
-import numpy
-print('Numpy: {}'.format(numpy.version))
-   </strong></pre>
-
-   The response:
-
-   <pre>
-Numpy: &LT;module 'numpy.version' from '/Users/mac/anaconda/lib/python3.5/site-packages/numpy/version.py'>
-   </pre>   
-
+<hr />
 
 <a name="PyCharm"></a>
 
-## PyCharm
+## PyCharm IDE
 
 https://discussions.udacity.com/t/referencing-pygame-from-pycharm-with-anaconda/223711/13
 
@@ -1877,8 +1862,7 @@ https://discussions.udacity.com/t/referencing-pygame-from-pycharm-with-anaconda/
 
 <a target="_blank" href="https://dato.com/products/create/">
 GraphLab Create</a> from Dato 
-provides scalable "pre-implemented" ML algorithms 
-using Python installed using Anaconda.
+provides scalable "pre-implemented" ML algorithms using Anaconda.
 Entire courses on its use is at
 
 * https://www.coursera.org/learn/ml-foundations
