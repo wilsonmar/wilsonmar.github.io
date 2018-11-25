@@ -27,7 +27,7 @@ and put them here in context.
 
 ## TL;DR Summary #
 
-<a href="#PythonMacVersion">The version of Python that comes with Apple MacOS is obsolete</a> and needs to be <a href="#UpgradePython">updated</a> along with Apple [XCode CLI](/xCode-cli/) for the MacOS version you're using.
+<a href="#PythonMacVersion">The version of Python that comes with Apple MacOS is obsolete</a> and needs to be <a href="#UpgradePython">updated</a> along with Apple [XCode CLI](/xcode/) for the MacOS version you're using.
 
 There are two separate versions of Python: 2 and 3. 
 <a href="#CommandVersions"> some Python functions in one version do not work with commands in another version</a>.
@@ -38,8 +38,12 @@ Adding to the confusion is that <a href="#Packaging">various methods of installi
 This has given rise to the need for <strong>package managers</strong> such as pip (Python Installation Packager) that enable one to switch among different versions of Python installed.
 
 <a href="#PIPz">pip</a> (Python Installation Packager) is built on top of <strong>setuptools</strong> which
-is what downloads and installs Python software from the <strong>PyPI (Python Package Index)</strong> library online at <a target="_blank" href="https://pypi.org/">https://pypi.org</a>. 
+is what downloads and installs Python packages from the <strong>PyPI (Python Package Index)</strong> library online at <a target="_blank" href="https://pypi.org/">https://pypi.org</a>. 
+
 Setuptools itself is installed using <a href="#easy_install">easy_install</a>.
+
+MacOS does not come installed with a package manager for Python.
+
 
 This complexity necessitates the packaging of whole <a href="virtualenv">virtual environments</a> to <strong>isolate</strong>
 within a folder (directory) everything (all dependencies) that each Python **project** (application) needs to run.
@@ -61,6 +65,11 @@ Despite all this hassle around versioning, Python is the preferred language of
 Artificial Intelligence and Machine Learning at the forefront of computer science innovation today.
 The heavy use of math in AI and ML by TensorFlow means it's best to 
 <a href="#AnacondaInstall">install Anaconda</a> and use conda commands (instead of Miniconda or pip with virtualenv).
+
+<a target="_blank" href="http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html">
+   IPython (Jupyter) Notebook</a> 
+   enables a "notebook" interface to re-run commands.
+See http://sjbyrnes.com/python/ 
 
 PIP install is troublesome, often because they are more recent than those in Conda.
 
@@ -96,7 +105,7 @@ CAUTION: <a target="_blank" href="http://stackoverflow.com/questions/33874084/ho
 
 <a name="PythonMacVersion"></a>
 
-## Python comes with MacOS, Kinda #
+## Obsolete Python comes with MacOS #
 
 Ever since the <a target="_blank" href="https://wilsonmar.github.io/python-install.md">Mavericks version of Mac OSX</a>,
 Python 2 comes installed on MacOS machines.
@@ -119,9 +128,26 @@ Python 2 comes installed on MacOS machines.
    and needs to be <a href="#UpgradePython">upgraded</a>.
    But keep to version 2, not version 3 of Python.
 
+0. As with other programs that come with Apple's macOS, Python2 is installed in:
+
+   <pre>
+   type -a python
+   </pre>
+
+   The response:
+
+   <pre>
+   python is /usr/bin/python
+   </pre>
+
+   You may also see this if you've installed a shim to enable switching of Python versions:
+
+   <pre>
+   python is /Users/wilsonmar/.pyenv/shims/python
+   </pre>
 
 
-## Interactive Python on CLI #
+## Folders Python on CLI #
 
 0. List your present working directory:
 
@@ -167,7 +193,7 @@ Type "help", "copyright", "credits" or "license" for more information.
    \>\>\> os.getcwd()
    </strong></tt>
 
-   In the response, substitue my "mac" user name with yours:
+   In the response, the "mac" user name is substituted with your user name:
 
    <pre>
    '/Users/mac/Downloads'
@@ -196,25 +222,66 @@ Type "help", "copyright", "credits" or "license" for more information.
    exit()
    </strong></tt>
 
-   NOTE: MacOS does not come installed with a package manager for Python.
+   The above works the same for both Python 2 and Python 3.
 
-   <a target="_blank" href="http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html">
-   IPython (Jupyter) Notebook</a> 
-   enables a "notebook" interface to re-run commands.
-   http://sjbyrnes.com/python/ notes
 
-0. Enter Python again for the instructions to follow.
+   ### Python3 
+
+0. Python3 is installed in a different folder than Python 2.
+
+   <pre><strong>
+   type -a python3
+   </strong></pre>
+
+   The response:
+
+   <pre>
+   python3 is /Users/wilsonmar/.pyenv/shims/python3
+   python3 is /usr/local/bin/python3
+   </pre>
+
+
+   ### Download Python program files
+
+0. To download a file from GitHub within Python interactive prompt:
+
+
+
+0. To create a new folder using Python3: TODO:
+
+0. To create a new file using Python3, import the pathlib module's Path object:
+
+   <pre>from pathlib import Path
+   Path('empty_file').touch()
+   </pre>
+
+
 
 
 <a name="CommandVersions"></a>
 
 ## Python 3 vs. 2
 
-Sure, they say "all new Python code should be written for version 3.
+Since 2018, many say "all new Python code should be written for version 3.
 There are so many new features in Python 3 that it doesn't make much sense to stick with Python 2 unless you're working with old code."
 
-Most new features introduced with Python 3 versions not backwards compatible with version 2.
+Most new features introduced with Python 3 are not backwards compatible with version 2.
 
+1. Get the location where Python is installed:
+
+   <tt><strong>which python<br />
+   which python3</strong></tt>
+
+   * Python v2 is installed in /usr/bin/python
+   * Python v3 is installed in /usr/local/bin/python3
+   <br /><br />
+
+   This is why Python scripts for different versions of Python begin with a different shebang line:
+   
+   * <tt>#! /usr/bin/env python3</tt>
+   * <tt>#! /usr/bin/env python3</tt>
+
+   There are also differences in several functions are coded:
 
    <a name="Python3z"></a>
 
@@ -231,14 +298,6 @@ Python 3.4.2 (v3.4.2:ab2c023a9432, Oct  5 2014, 20:42:22)
 [GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
    </pre>
-
-Here are the steps to remove Python3 from your Mac:
-
-   <pre>
-   ls -l ~/Library/Frameworks/Python.framework/Versions/3.4/bin/python3
-   </pre>
-
-   sudo rm -rf that.
 
 
 ### Floating point
@@ -590,7 +649,9 @@ You must give at least one requirement to install (see "pip help install")
    lists of Python package dependencies are in a requirements.txt file.
 
 
-## Alias symlink to the rescue #
+## Di
+
+### Alias symlink to the rescue #
 
    If you tried to commit suicide like the above, the work-around is an alias,
    which the operating system resolves before going down PATH.
@@ -1523,7 +1584,7 @@ The path to Python should be the first in PATH:
    </strong></tt>
 
 
-   ### Troubleshoot
+   ### Troubleshoot brew install
 
 0. To reset:
 
@@ -1534,10 +1595,68 @@ Warning: Already linked: /usr/local/Cellar/python/2.7.12_2<br />
 To relink: brew unlink python && brew link python
    </pre>
 
- 
+## Scripting Python versions
 
+TODO: Use a shim so that a script can display the version of Python it is using:
 
-   ### Conda info #
+<pre>
+python3
+Python 3.6.7 (default, Nov 20 2018, 22:03:43) 
+[GCC 4.2.1 Compatible Apple LLVM 10.0.0 (clang-1000.10.44.4)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+>>> import sys
+>>> print(sys.version)  # parentheses necessary in python 3.
+</pre>
+Some answers:
+
+<pre>3.6.7 (default, Nov 20 2018, 22:03:43) 
+[GCC 4.2.1 Compatible Apple LLVM 10.0.0 (clang-1000.10.44.4)]
+&nbsp;
+2.5.2 (r252:60911, Jul 31 2008, 17:28:52) 
+[GCC 4.2.3 (Ubuntu 4.2.3-2ubuntu7)]
+</pre>
+
+Per https://docs.python.org/3/library/sys.html#sys.hexversion
+
+<pre>
+>>> sys.version_info
+sys.version_info(major=3, minor=6, micro=7, releaselevel='final', serial=0)
+(2, 5, 2, 'final', 0)
+&nbsp;
+>>> sys.hexversion
+50726896
+>>> '%x' % sys.hexversion
+'30607f0'
+>>> sys.hexversion < 0x02060000
+True
+</pre>
+
+For a script to ensure that it's running the version of Python intended:
+
+<pre>
+#!/usr/bin/env/python
+import sys
+if sys.version_info<(2,6,0):
+  sys.stderr.write("You need python 2.6 or later to run this script\n")
+  exit(1)
+</pre>
+
+Alternately:
+
+<pre>
+>>> from platform import python_version
+>>> print(python_version())
+3.6.7
+</pre>
+
+<pre>
+import platform
+from distutils.version import StrictVersion 
+assert(StrictVersion(platform.python_version()) >= "2.6")
+</pre>
+
+### Conda info #
 
 0. Get a list:
 
@@ -2021,8 +2140,6 @@ When Python is installed using pip, see where it's installed:
 <hr />
 ## Miscellaneous #
 
-PROTIP: For python3 scripts, use the shebang line "#! /usr/bin/env python3".
-
 http://stackoverflow.com/questions/990754/how-to-leave-exit-deactivate-a-python-virtualenv?rq=1
 
 https://gist.github.com/alyssaq/f60393545173379e0f3f
@@ -2036,6 +2153,11 @@ https://docs.python.org/3/library/2to3.html
 https://joernhees.de/blog/2014/02/25/scientific-python-on-mac-os-x-10-9-with-homebrew/
 recommends several pip libraries
 
+https://linuxacademy.com/cp/socialize/index/type/community_post/id/14209
+released 1/25/2017 by Michael Jenkins
+makes use of AWS Boto3 with Python2 to create S3 buckets, upload files, and delete S3 buckets in
+<a target="_blank" href="https://linuxacademy.com/amazon-web-services/training/lesson/name/python-s3-code-examples">
+code examples</a> as part of Linux Academy's Red Hat Certified Specialist in Virtualization (EX318) Preparation video Course
 
 ## More on OSX
 
