@@ -222,66 +222,8 @@ Type "help", "copyright", "credits" or "license" for more information.
    exit()
    </strong></tt>
 
-   The above works the same for both Python 2 and Python 3.
+   The exit() commmand works the same for both Python 2 and Python 3.
 
-
-   ### Python3 
-
-0. Python3 is installed in a different folder than Python 2.
-
-   <pre><strong>
-   type -a python3
-   </strong></pre>
-
-   The response:
-
-   <pre>
-   python3 is /Users/wilsonmar/.pyenv/shims/python3
-   python3 is /usr/local/bin/python3
-   </pre>
-
-
-   ### Download Python program files
-
-0. To download a file from GitHub within Python interactive prompt:
-
-
-
-0. To create a new folder using Python3: TODO:
-
-0. To create a new file using Python3, import the pathlib module's Path object:
-
-   <pre>from pathlib import Path
-   Path('empty_file').touch()
-   </pre>
-
-
-
-
-<a name="CommandVersions"></a>
-
-## Python 3 vs. 2
-
-Since 2018, many say "all new Python code should be written for version 3.
-There are so many new features in Python 3 that it doesn't make much sense to stick with Python 2 unless you're working with old code."
-
-Most new features introduced with Python 3 are not backwards compatible with version 2.
-
-1. Get the location where Python is installed:
-
-   <tt><strong>which python<br />
-   which python3</strong></tt>
-
-   * Python v2 is installed in /usr/bin/python
-   * Python v3 is installed in /usr/local/bin/python3
-   <br /><br />
-
-   This is why Python scripts for different versions of Python begin with a different shebang line:
-   
-   * <tt>#! /usr/bin/env python3</tt>
-   * <tt>#! /usr/bin/env python3</tt>
-
-   There are also differences in several functions are coded:
 
    <a name="Python3z"></a>
 
@@ -300,23 +242,51 @@ Type "help", "copyright", "credits" or "license" for more information.
    </pre>
 
 
-### Floating point
+<a name="CommandVersions"></a>
 
-In Python 2, type:
+## Python 3 vs. 2
 
-   1/2
+Since 2018, many say "all new Python code should be written for version 3.
+There are so many new features in Python 3 that it doesn't make much sense to stick with Python 2 unless you're working with old code."
 
-   The response is:
+Most new features introduced with Python 3 are not backwards compatible with version 2.
 
-   0
 
-In Python3, type:
+   ### Python3 executables
 
-   1/2
+1. Python3 is installed in a different folder than Python 2.
 
-   The response is:
+   <pre><strong>
+   type -a python3
+   </strong></pre>
 
-   0.5
+   The response:
+
+   <pre>
+   python3 is /Users/wilsonmar/.pyenv/shims/python3
+   python3 is /usr/local/bin/python3
+   </pre>
+
+1. Get the location where Python is installed:
+
+   <tt><strong>which python<br />
+   which python3</strong></tt>
+
+   * Python v2 is installed in /usr/bin/python
+   * Python v3 is installed in /usr/local/bin/python3
+   <br /><br />
+
+   ### Python command for Python3
+
+   Some prefer to 
+   If you want 
+   If you tried to commit suicide like the above, the work-around is an alias,
+   which the operating system resolves before going down PATH.
+
+1. To use Python3 as the default version for the python command, set in you Mac's ~/.bash_profile
+
+   <pre>alias python=python3</pre>
+
 
 
 ### Print
@@ -361,9 +331,51 @@ Python: 3.5.2 |Anaconda custom (x86_64)| (default, Jul  2 2016, 17:52:12)
    </pre>   
 
 
-   <a name="PythonHTTP"></a>
+### Floating point
 
-   ### Start a HTTP Server Using Python #
+In Python 2, type:
+
+   1/2
+
+   The response is:
+
+   0
+
+In Python3, type:
+
+   1/2
+
+   The response is:
+
+   0.5
+
+
+## Python programming code
+
+1. Download or view a Python program:
+
+   By convention, Python programming source files have a file suffix of .py regardless of the version.
+   This is because, unlike on Windows, Linux looks at the first line of script files to identify what program is used to run the file.
+
+   The "shebang" first line in Python 2 programs start with:
+
+   <pre>#!/usr/bin/env python
+   </pre>
+
+   This is an absolute file system path because the executor doesn't look on the $PATH for the program defined in ~/.bash_profile.
+
+   The "shebang" first line in Python 3 programs start with:
+
+   <pre>#!/usr/bin/env python3
+   </pre>
+
+   env is an executable file from virtualenv.
+
+
+
+<a name="PythonHTTP"></a>
+
+## Start a HTTP Server Using Python #
 
    A simple HTTP server service can be started with this Python 2 command:
 
@@ -386,6 +398,18 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
    CAUTION: Hitting Ctrl-C on a Mac, does not shutdown the server gracefully, and the binded address will still be in use.
 
    TODO: Add port designation in command line.
+
+
+   ### File handling using Pathlib 
+
+0. To create a new folder using Python3: TODO:
+
+0. To create a new file using Python3, import the pathlib module's Path object:
+
+   <pre>from pathlib import Path
+   Path('empty_file').touch()
+   </pre>
+
 
 
 ## Don't Uninstall Default Python on macs #
@@ -650,16 +674,6 @@ You must give at least one requirement to install (see "pip help install")
 
 
 ## Di
-
-### Alias symlink to the rescue #
-
-   If you tried to commit suicide like the above, the work-around is an alias,
-   which the operating system resolves before going down PATH.
-
-
-1. To use Python3 as the default version for the python command, set in you Mac's ~/.bash_profile
-
-   <pre>alias python=python3</pre>
 
 0. Get a Python 2.7 installed. For example, at:
 
