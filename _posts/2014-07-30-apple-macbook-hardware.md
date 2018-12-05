@@ -70,6 +70,12 @@ The 2018 version of 15-inch MacBook Pro:
 
 If you need more than 16 GB RAM, build a (unsupported) <a target="_blank" href="https://hackintosh.com/">Hackintosh desktop</a> on PC hardware. For example: a water-cooled i7–8700k processor, 8GB RX580 graphics card for a 4K LG HDR monitor. Oh, and a pair of Yamaha HS5 studio monitors (speakers) with a Roland audio interface. Plus SSD and HDD storage.
 
+<a target="_blank" href="https://www.youtube.com/watch?v=WU7U2kJsQv0">
+VIDEO: Rick Beato's Hackintosh build</a>
+
+https://www.youtube.com/watch?v=i_-K1UtI8PE&t=1m21s
+talks about the Clover Boot Loader
+
 
 <a id="Register"></a>
 

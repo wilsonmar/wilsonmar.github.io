@@ -171,7 +171,7 @@ CodeDeploy agent in EC2 Deploy Group
 ## Snapshot AMIs #
 
 Building a server from installers in S3
-can be time-consuming because it take so much I/O.
+can be time-consuming because it take so much I/O and network bandwidth.
 
 Michael Tripoli & Karate Vick at <a target="_blank" href="https://medium.com/@NetflixTechBlog">
 Netflix</a> <a target="_blank" href="https://github.com/Netflix/aminator/">
@@ -246,6 +246,28 @@ ARG DOCKER_COMPOSE=1.6.2
    </pre>
 
 * http://blog.serverbooter.com/blog/2013/10/24/simple-clouformation-with-multiple-aws-accounts/
+
+## Boto Python
+
+https://github.com/boto/boto3
+The README page says "Boto3 is the Amazon Web Services (AWS) Software Development Kit (SDK) for Python, which allows Python developers to write software that makes use of services like Amazon S3 and Amazon EC2."
+
+
+<a target="_blank" href="http://www.oznetnerd.com/python-demystifying-aws-boto3/">NOTE</a>:
+Boto 3 is built on top of Botocore used by the AWS CLI:
+
+* <a target="_blank" href="http://boto3.readthedocs.io/en/latest/guide/session.html">Sessions</a>
+* Clients: low level service connections
+<br /><br />
+
+Boto 3 consists of these major features:
+
+* <a target="_blank" href="http://boto3.readthedocs.io/en/latest/guide/resources.html">Resources</a>: a high level, object oriented interface
+* Collections: a tool to iterate and manipulate groups of resources
+* Paginators: automatic paging of responses
+* Waiters: a way to block until a certain state has been reached
+
+
 
 ## More on DevOps #
 

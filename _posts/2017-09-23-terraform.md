@@ -1493,8 +1493,7 @@ Some CloudFormation templates are compatible with OpenStack Heat templates.
 
 <a target="_blank" href="
 https://www.youtube.com/channel/UCgWfCzNeAPmPq_1lRQ64JtQ/videos">
-https://www.youtube.com/channel/UCgWfCzNeAPmPq_1lRQ64JtQ/videos</a>
-SignalWarrant's videos on PowerShell
+SignalWarrant's videos on PowerShell</a>
 by David Keith Hall
 includes:
 
@@ -1506,6 +1505,10 @@ includes:
 
 <a target="_blank" href="https://www.youtube.com/watch?v=1JAx2npuprk&list=PLtK75qxsQaMIHQOaDd0Zl_jOuu1m3vcWO&index=1">
 Terraform Basics mini-course on YouTube in 5-parts</a> from "tutorialLinux".
+
+http://chevalpartners.com/devops-infrastructure-as-code-on-azure-platform-with-hashicorp-terraform-part-1/
+quotes https://www.hashicorp.com/blog/azure-resource-manager-support-for-packer-and-terraform from 2016 about support for
+Azure Resource Manager
 
 
 ## More on DevOps #
