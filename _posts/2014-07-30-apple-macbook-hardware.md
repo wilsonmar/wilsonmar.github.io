@@ -31,6 +31,8 @@ comments: true
    * Mac Mini (late 2012 or newer)
    <br /><br />
 
+   http://osxdaily.com/2018/09/27/run-macos-mojave-unsupported-mac-dosdude-patch/
+
    MacOS Sierra can run using these hardware models:
 
    <ul>
@@ -58,23 +60,26 @@ The 2018 version of 15-inch MacBook Pro:
 
 * Intel Core i7, Core i9
 * <strong>Max DDR4 RAM of 32GB (up from 16GB)</strong>
-* 2TB to <strong>4TB SSD</strong>
+* Max 2TB to <strong>4TB SSD</strong>
 * Quieter third generation keyboard
 * Touch Bar
 * Radeon Pro discrete graphics with 4GB of video memory
-* Retina Display True Tone (not a touch screen)
+* Retina Display True Tone (still not a touch screen)
 * T2 system on chip processor for security features
 
 
 ### Hackintosh
 
-If you need more than 16 GB RAM, build a (unsupported) <a target="_blank" href="https://hackintosh.com/">Hackintosh desktop</a> on PC hardware. For example: a water-cooled i7–8700k processor, 8GB RX580 graphics card for a 4K LG HDR monitor. Oh, and a pair of Yamaha HS5 studio monitors (speakers) with a Roland audio interface. Plus SSD and HDD storage.
+If you need more than 16 GB RAM or add PCI add-in cards, build an (unsupported) <a target="_blank" href="https://hackintosh.com/">Hackintosh desktop</a> on PC hardware. For example: a water-cooled i7–8700k processor, 8GB RX580 graphics card for a 4K LG HDR monitor. Oh, and a pair of Yamaha HS5 studio monitors (speakers) with a Roland audio interface. Plus SSD and HDD storage.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=WU7U2kJsQv0">
 VIDEO: Rick Beato's Hackintosh build</a>
 
-https://www.youtube.com/watch?v=i_-K1UtI8PE&t=1m21s
-talks about the Clover Boot Loader
+<a target="_blank" href="https://www.youtube.com/watch?v=i_-K1UtI8PE&t=1m21s">
+talks about the Clover Boot Loader</a>
+
+Alas, Apple's Kalamata project <a target="_blank" href="https://www.bloomberg.com/news/articles/2018-04-02/apple-is-said-to-plan-move-from-intel-to-own-mac-chips-from-2020">
+announced they will use their own chips instead of Intel chips</a> which make Hackintosh possible via an x86 boot loader.
 
 
 <a id="Register"></a>

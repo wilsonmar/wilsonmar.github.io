@@ -18,7 +18,7 @@ comments: true
 
 This is a hands-on deep dive immersive course to get those new to Git productive for professional usage using a local Git client. You learn in minimum time because I've spent a lot of time on sequencing your learning and on time-saving automation. The introduction to this course:
 
-<amp-youtube data-videoid="OVwS_Swkhik" layout="responsive" width="480" height="270"></amp-youtube>
+<amp-youtube data-videoid="uSh-yN2E0rU" layout="responsive" width="480" height="270"></amp-youtube>
 
    I've viewed <a target="_blank" href="https://wilsonmar.github.io/git-github-videos/">every video and book on this topic</a> and I haven't seen this approach. So such an approach is a unique innovation of just this website.
 
@@ -54,6 +54,8 @@ BTW I'm working on a video in which I verbally narrate the video using text on t
 ## Setup utilities
 
 Now setup Homebrew/Chocolatey, Git/msysgit.
+
+<amp-youtube data-videoid="OVwS_Swkhik" layout="responsive" width="480" height="270"></amp-youtube>
 
 1. So that you can update versions automatically later, automate client installs on Windows, by first installing <a target="_blank" href="https://choclately.org/">Chocolatey</a> using a PowerShell command:
 
