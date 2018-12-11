@@ -17,8 +17,7 @@ comments: true
 
 {% include _toc.html %}
 
-This is a hands-on "deep dive" tutorial with commentary along the way, 
-arranged in a sequence to make this complex material easier to understand quickly.
+<a target="_blank" href="https://wilsonmar.github.io/kubernetes/">This</a> is a hands-on introduction with insightful commentary carefully sequenced to make complex material easier to understand quickly. This is not a "demo", but an immersive step-by-step "deep dive" tutorial aimed to make you productive.
 
 ## Why Kubernetes?
 
@@ -31,9 +30,10 @@ Each Kubernetes node has a different IP address.
 ![k8s-container-sets-479x364.jpg](https://user-images.githubusercontent.com/300046/33526550-6c98a980-d800-11e7-9862-ff202492e08b.jpg)
 <!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
 
-Kubernetes automates resilience into containers by abstacting the network and storage of a virtual <strong>containers</strong> in replaceable "pods". Each pod can hold one or more Docker containers.
+Kubernetes automates resilience into containers by abstacting the network and storage of virtual <strong>containers</strong> in replaceable "pods". Each pod can hold one or more Docker container hosts.
 
 Within a pod, each container has a different <strong>port number</strong>.
+
 Containers within the same pod share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage, and other resources.
 
 Kubernetes replicates Pods (the same set of containers in each) across several worker <strong>nodes</strong> (VM or physical machines).
@@ -222,6 +222,7 @@ Other orchestration systems for Docker containers:
 
    See <a target="_blank" href="https://www.youtube.com/watch?v=NRZ6N4e-Mko">Container Orchestration Wars (2017)</a> at the Velocity Conf 19 Jun 2017 by Karl Isenberg (@karlfi) of Mesosphere
 
+* Hashicorp <a target="_blank" href="https://www.nomadproject.io/">Nomad</a>.
 
 ### Kublet
 
@@ -1562,6 +1563,10 @@ by Guillaume Rose, Guillaume Tardif
 
 YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=ALW6VBviSgQ&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=109">
 What is Kubernetes?</a> Jun 18, 2018 by Jason Rahm
+
+## Video courses
+
+* <a target="_blank" href="https://training.linuxfoundation.org/training/kubernetes-fundamentals/">Kubernetes Fundamentals</a> $299 video course offered on EdX.com from LinuxFoundation.
 
 
 ## More on DevOps #
