@@ -122,6 +122,9 @@ layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/15745
    Amazon had an early lead in 2006 and has maintaing its lead even though Microsoft and Google are growing fast as well with 50%+ annual growth<a target="_blank" href="http://www.kpcb.com/internet-trends" title="slide 185/294 from Mary Meeker's May 30, 2018">*</a>
    <img alt="aws-onboarding-cloud-growth-441x272.jpg" width="441" src="https://user-images.githubusercontent.com/300046/40881057-5dc36fd6-667a-11e8-9166-cd5803dde7c3.jpg">
 
+   At the end of 2018, corporate filings reavealed this:<br />
+   <a target="_blank" href="https://www.zdnet.com/article/top-cloud-providers-2018-how-aws-microsoft-google-ibm-oracle-alibaba-stack-up/"><img alt="cloud-run-rate-2018.png" src="https://user-images.githubusercontent.com/300046/50023160-9c2cde00-ff9b-11e8-8a67-92331c509ef4.png"></a>
+
 Earlier:
 
    <amp-img layout="responsive" alt="cloud chart iaas market share 2015-529x488-c22.jpg" width="529" height="488" 
