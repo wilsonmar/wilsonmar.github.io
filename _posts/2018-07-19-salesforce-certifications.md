@@ -53,7 +53,7 @@ Salesforce requires its Partners to employ people holding these certifications:
    *  <a href="#ServiceCloud">Service Cloud Consultant</a>
    *  <a href="#CommunityCloud">Community Cloud Consultant</a>
    *  <a href="#MarketingCloud">Marketing Cloud Consultant</a>
-   *  <a href="#Pardot1">Pardot Consultant</a>
+   *  <a href="#Pardot1">Pardot Consultant</a> Specialist
    *  <a href="#SCCCDD">Commerce Cloud Digital Developer</a>
 
 
@@ -77,9 +77,13 @@ However, by contrast, Mike Wheeler and David Liu advise Developers to first pass
 
 <a name="ExamInfo"> </a>
 
-## Exam Registration
+## Exam Lifecycle
 
-When ready, <a target="_blank" href="http://certification.force.com/pkb/articles/Public_KB/Scheduling-an-Exam">register for certification tests</a>. 
+1. PROTIP: Consider your career objectives and personal lifestyle to see how to fit in certification preparation. It takes perseverance and sacrifice,
+   such as taking time away from movies, sports, going out, or other diversions.
+   Are you willing to watch certification videos instead of watching TV?
+
+1. <a target="_blank" href="http://certification.force.com/pkb/articles/Public_KB/Scheduling-an-Exam">Register to take certification tests</a>. 
 
 1. Prepare to take exams remotely on your own computer by <a target="_blank" href="http://certification.force.com/pkb/articles/Public_KB/Online-Proctoring-Completing-Your-Exam-Remotely">
    downloading and installing Kryterion’s Sentinel Secure software</a>.
@@ -97,12 +101,14 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
 
    BLAH: Different emails must be used in Trailhead and Webassessor accounts.
 
-4. When selecting a day to take the exam, consider <a target="_blank" href="https://www.biorhythm-calculator.net/">https://www.biorhythm-calculator.net</a> to pick positive days and not days when a line crosses over 0 or at the bottom.
-
-   PROTIP: If you select remote, select the Time Zone. Don't wait for the spinner icon.
+4. PROTIP: When selecting a day to take the exam, consider <a target="_blank" href="https://www.biorhythm-calculator.net/">https://www.biorhythm-calculator.net</a> to pick positive days and not days when a line crosses over 0 or at the bottom.
 
 5. If you use a test center, pick a <a target="_blank" href="http://www.kryteriononline.com/Locate-Test-Center">
-   Kryterion test center</a> near you. Bring 2 forms of ID and the code generated on the exam confirmation email.
+   Kryterion test center</a> near you. Bring 2 forms of ID.
+   
+   PROTIP: Write down the code generated on the exam confirmation email in a card in your wallet because you may not be able to retrieve your email at the testing center (due to bad internet service, battery running out, etc.).
+
+   PROTIP: If you select remote, select the Time Zone. Don't wait for the spinner icon.
 
 4. Sign up for the <a target="_blank" href="http://certification.salesforce.com/credential-status-request">
    Cert Status Request</a> to receive an email that provides you with a list of all credentials you hold, your required release exams, and due dates.
@@ -124,14 +130,15 @@ When ready, <a target="_blank" href="http://certification.force.com/pkb/articles
 
 After the exam I got an email from certification@salesforce.com with subject "Your Salesforce Certification Exam Results".
 Strangely, the email does not present a total grade, just percentage of each section.
-So to calculate my score after a failed attempt at the Administrator exam, I created <a target="_blank" href="https://docs.google.com/spreadsheets/d/1CkZyNLhDpTZJUanYWvLX9whYWnlvlN6VDO3AMCpzjRk/edit#gid=0">this Google spreadsheet:<br />
-<a target="_blank" href="https://docs.google.com/spreadsheets/d/1CkZyNLhDpTZJUanYWvLX9whYWnlvlN6VDO3AMCpzjRk/edit#gid=0"><img alt="sf-admin-results-sheet-435x326-43348.jpg" width="435" src="https://user-images.githubusercontent.com/300046/45868367-be1f1780-bd42-11e8-889c-4cf21cd74f10.jpg"></a>
 
-The score is summarized at the lower-right corner.
+To calculate my summary score (after a failed attempt) at the Administrator exam, I created <a target="_blank" href="https://docs.google.com/spreadsheets/d/1CkZyNLhDpTZJUanYWvLX9whYWnlvlN6VDO3AMCpzjRk/edit#gid=0">this Google spreadsheet:<br />
+<a target="_blank" href="https://docs.google.com/spreadsheets/d/1CkZyNLhDpTZJUanYWvLX9whYWnlvlN6VDO3AMCpzjRk/edit#gid=0"><img alt="sf-admin-results-sheet-601x330-46761.png" width="435" src="https://user-images.githubusercontent.com/300046/50537308-cf3ea800-0b2b-11e9-87a2-c9ea03a1db1a.png"></a>
 
-PROTIP: If you want to calculate your own score, in the email you got, highlight and copy the lines under "Section-Level Scoring:" and paste in cell A2, replacing the sample.
+The summary score calculation is at the lower-right corner. I manually changed font color to red.
 
-NOTE: Formula `=REGEXEXTRACT(A2,"[^ ]+$")` in column B references column A to extract the percentage number.
+PROTIP: If you want to calculate your own score, in the email you got, highlight and copy the lines under "Section-Level Scoring:", open  <a target="_blank" href="https://docs.google.com/spreadsheets/d/1CkZyNLhDpTZJUanYWvLX9whYWnlvlN6VDO3AMCpzjRk/edit#gid=0">this Google spreadsheet, and paste in cell A2, replacing the sample.
+
+NOTE: To extract the percentage number from text in column A into a number in the "Score" column, I used formula `=REGEXEXTRACT(A2,"[^ ]+$")` in each row of column B.
 
 <hr />
 
