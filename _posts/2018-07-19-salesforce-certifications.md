@@ -131,7 +131,7 @@ However, by contrast, Mike Wheeler and David Liu advise Developers to first pass
 After the exam I got an email from certification@salesforce.com with subject "Your Salesforce Certification Exam Results".
 Strangely, the email does not present a total grade, just percentage of each section.
 
-To calculate my summary score (after a failed attempt) at the Administrator exam, I created <a target="_blank" href="https://docs.google.com/spreadsheets/d/1CkZyNLhDpTZJUanYWvLX9whYWnlvlN6VDO3AMCpzjRk/edit#gid=0">this Google spreadsheet:<br />
+To calculate my summary score at the Administrator exam, I created <a target="_blank" href="https://docs.google.com/spreadsheets/d/1CkZyNLhDpTZJUanYWvLX9whYWnlvlN6VDO3AMCpzjRk/edit#gid=0">this Google spreadsheet:<br />
 <a target="_blank" href="https://docs.google.com/spreadsheets/d/1CkZyNLhDpTZJUanYWvLX9whYWnlvlN6VDO3AMCpzjRk/edit#gid=0"><img alt="sf-admin-results-sheet-601x330-46761.png" width="601" src="https://user-images.githubusercontent.com/300046/50537308-cf3ea800-0b2b-11e9-87a2-c9ea03a1db1a.png"></a>
 
 The summary score calculation is at the lower-right corner. I manually changed font color to red.
