@@ -32,33 +32,40 @@ PROTIP: Various people have used different nicknames, so here they are together:
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th>Aspect</th><th>Traditional</th><th>DX</th></tr>
-<tr valign="top"><td>Slogan</td><td>"Clicks, not code"</td><td>"Clicks AND code"</td></tr>
-<tr valign="top"><td>Configuration</td><td>config. in metadata</td><td>"config. as code"</td></tr>
+<tr valign="top"><td>Slogan</td><td>"Clicks, not code"</td><td>"Clicks AND versioned code"</td></tr>
+<tr valign="top"><td>Configuration</td><td>config. among other metadata</td><td>"config. as code"</td></tr>
 <tr valign="top"><td>Source of "Truth"</td><td>What's in org</td><td>What's in VCS</td></tr>
 <tr valign="top"><td>Versioning</td><td>Carry org. forward</td><td>What's in VCS</td></tr>
 <tr valign="top"><td>Unit of change</td><td>Change Set</td><td>Package 2GP</td></tr>
 <tr valign="top"><td>Workflow focus</td><td>"org. centric"</td><td>"source-centric"</td></tr>
-<tr valign="top"><td>Org instances</td><td>"nurture as dear pets"</td><td>"dispose like cattle"</td></tr>
+<tr valign="top"><td>Org instances</td><td>"nurture as dear pets"</td><td>"dispose like numbered cattle"</td></tr>
 <tr valign="top"><td>Env. for dev. test</td><td>in sandboxes (SBX)</td><td>in scratch orgs</td></tr>
 <tr valign="top"><td>Speed of release</td><td>occassional</td><td>continuous</td></tr>
 </table>
 
+<em>The table above is explained in the text below:</em>
+
 Salesforce began with its "clicks, not code" slogan because Salesforce has made it so apps can be customized mostly within the GUI rather than coding internal configurations.
+This enabled "citizen developers" to customize their apps without a Computer Science degree.
+
 And Salesforce has had Activity tracking which tracks every change to user data in the database. 
 
 Traditionally, changes are introduced by creating "change sets" tested within sandboxes which duplicate the production org. This means the development workflow is focused on what's in the org., with org instances nutured as dear pets. For example, after Person accounts are enabled, there is no going back.
 
 However, throughout the software development industry today,
 there is a movement toward storing <strong>configuration as code</strong>, 
-of keeping metadata out of inside the org and into versioned code bases separate from the data.
+of keeping metadata out from inside data in the org and 
+into <strong>versioned</strong> code bases separate from the data.
 
-The new "source of truth" for source-driven development is in the VCS (Version Control System) rather than in the production org. This means the configuration of the org exists outside the org. So new orgs can be fully created.
+The new "source of truth" for source-driven development is in the VCS (Version Control System) rather than in the production org. This means the configuration of the org exists outside the org. So experimental orgs can be easily created and tested without fear of disruption. 
 
 This transition is necessary to provide more flexibility to developers. This new approach puts versioning at the center of the workflow so that the state of an org can be brought back to any point in the past (like a time machine). 
 
 Such an approach requires more use of command-line terminals. That's why I (not Salesforce) call it "clicks AND code". CLI can completely replace the ANT deployment tool and unmanaged packages.
 
 Each repo is <strong>distributed</strong>, meaning each clone of a repo is a complete duplicate with all version history. This means an Org with all its metadata can be worked on <strong>simultaneously</strong> by different people, instead of having to tag-team time on a change-set,  each developer can test on his/own <strong>scratch orgs</strong> based on what each developer has on his/her own laptop. Reduced need for coordination enables faster, <strong>continuous</strong> testing and deployment to occur.
+
+The bottom line of all this is to reduce the "friction" that keep changes from occurring more quickly and frequently -- continuously rather than occassionally.
 
 ## Enable Dev Hub in Production Org
 
@@ -97,11 +104,11 @@ But the change is about more than the tools. Instead of building code and custom
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th>Features</th><th>Scratch Org</th><th>Developer</th><th>Partial Copy Sandbox</th><th> Full Sandbox</th></tr>
-<tr valign="top"><td>Refresh</td><td>Ephemeral</td><td>1 day</td><td>5 days</td><td>29 days</td></tr>
-<tr valign="top"><td>Metadata</td><td>version control</td><td>Production</td><td>Production</td><td>Production</td></tr>
-<tr valign="top"><td>Customer data</td><td>-</td><td>-</td><td>Sample</td><td>All data</td></tr>
-<tr valign="top"><td>Data limit</td><td>200 MB</td><td>200 MB (1 GB Pro)</td><td>5 GB</td><td>Matches Prod.</td></tr>
-<tr valign="top"><td>API calls/24 hrs</td><td>? </td><td>15K (50K)</td><td>-</td><td>-</td></tr>
+<tr valign="top"><td>Refresh:</td><td>Ephemeral</td><td>1 day</td><td>5 days</td><td>29 days</td></tr>
+<tr valign="top"><td>Metadata:</td><td>version control</td><td>Production</td><td>Production</td><td>Production</td></tr>
+<tr valign="top"><td>Customer data:</td><td>-</td><td>-</td><td>Sample</td><td>All data</td></tr>
+<tr valign="top"><td>Data limit:</td><td>200 MB</td><td>200 MB (1 GB Pro)</td><td>5 GB</td><td>Matches Prod.</td></tr>
+<tr valign="top"><td>API calls/24 hrs:</td><td>? </td><td>15K (50K)</td><td>-</td><td>-</td></tr>
 </table>
 
 A Sandbox that is nearly identical copy of a production environment is available only to Enterprise or Unlimited Edition customers. 
@@ -158,7 +165,12 @@ See https://developer.salesforce.com/tools/sfdxcli
 sfdx-cli/6.26.0 (darwin-x64) node-v10.7.0
    </pre>
 
-1. Update
+
+   ### Update
+
+1. Before upddating SFDX, update node and npm.
+
+1. Update SFDX
 
    <pre><strong>sfdx update</strong></pre>
 
@@ -171,13 +183,15 @@ sfdx-cli: Updating plugins... done
 
    <pre><strong>npm install --global sfdx-cli</strong></pre>
 
-   The message that appears all overwrite each other on the screen.
+   The response include warnings about deprecated packages and vulnerabilities.
 
    <pre>
 /usr/local/bin/sfdx -> /usr/local/lib/node_modules/sfdx-cli/bin/run
-+ sfdx-cli@6.28.0
-updated 1 package in 30.559s
++ sfdx-cli@6.44.0
+added 1315 packages in 57.348s
    </pre>
+
+   You may need to run the command another time until you get an ending.
 
 1. Verify the version of the installed salesforcedx plug-in:
 
@@ -187,7 +201,7 @@ updated 1 package in 30.559s
 @salesforce/plugin-generator 0.0.10 (core)
 @salesforce/sfdx-trust 1.0.8 (core)
 builtins 1.0.0 (core)
-salesforcedx 43.9.0 (core)
+salesforcedx 43.11.0 (core)
    </pre>
 
 1. Get a list of operations under the force topic:
@@ -368,10 +382,13 @@ sfdx force:org commands: (get help with sfdx help force:org:COMMAND)
 ~/.cache/sfdx
    </pre>
 
+1. To uninstall:
 
+   <pre><strong>sfdx plugins:uninstall salesforcedx</strong></pre>
 
 
 ## Sample DX project
+
 
 On your local machine (laptop), perform these steps to obtain assets from GitHub to create a scratch org:
 
@@ -379,11 +396,21 @@ On your local machine (laptop), perform these steps to obtain assets from GitHub
 
 1. Install Git https://help.github.com/articles/set-up-git/
 
-1. Download a sample repo from GitHub - the Dreamforce ’16 Developer Keynote sample application, called the DreamHouse app stored in GitHub. It was created by Wade Wegner, <a target="_blank" href="https://www.linkedin.com/in/wadewegner/">Salesforce SVP Product Management</a>:
+1. Download a sample repo from GitHub - the Dreamforce ’16 Developer Keynote sample application, called the DreamHouse app stored in GitHub. It's author is listed as Wade Wegner, <a target="_blank" href="https://www.linkedin.com/in/wadewegner/">Salesforce SVP Product Management</a>:
 
    <pre><strong>git clone https://github.com/forcedotcom/sfdx-dreamhouse.git
    cd sfdx-dreamhouse
    </strong></pre>
+
+
+   <pre>
+git clone https://github.com/forcedotcom/sfdx-simple.git
+cd sfdx-simple
+sfdx force:auth:web:login -d -a "Hub Org"
+sfdx force:config:set defaultdevhubusername=someone@gmail.com
+sfdx force:org:create -s -f config/project-scratch-def.json
+   </pre>
+
 
    ### Login DevHub
 

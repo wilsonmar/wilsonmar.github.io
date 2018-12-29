@@ -377,7 +377,8 @@ brew install vim --override-system-vi
 brew install macvim --override-system-vim --custom-system-icons
    </pre>
 
-   ### GNU Debugger
+
+### GNU Debugger
 
    Although with its Mavericks version, <a target="_blank" href="https://developer.apple.com/library/content/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html">Apple</a> (along with the transition from GCC to Clang)
    substituted GDB (the GNU interactive debugger) with <a target="_blank" href="http://lldb.llvm.org/">LLDB (the standalone LLVM debugger)</a>.
@@ -543,6 +544,16 @@ brew install moreutils --without-parallel
    Riff on it at https://news.ycombinator.com/item?id=9013570
 
 <hr />
+
+## Openssl
+
+1. To generate a random set of 32 upper and lower case characters (with special characters) for use as a password:
+
+   <pre><strong>openssl rand -base64 32</strong></pre>
+
+   Example:
+
+   <pre>sUZmmvWZ5u+jbpHqdYRMQ2jn0wCrDx2IBc1LcJsyy4w=</pre>
 
 
 ## Certificates

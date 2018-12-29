@@ -43,12 +43,28 @@ Since multiple certifications are a "thing" among Saleforce practioners, here is
 
 The Average salary are from <a target="_blank" href="https://trailhead.salesforce.com/trails/build-your-career-with-salesforce-skills/modules/career-development-planning/units/explore-career-options/">Career Pathways</a> from an unknown point back in time. Use it as relative comparisons.
 
+## Partner valued certifications
+
+The most "valuable" certifications to hold are those which
+Salesforce requires its Partners to employ people holding these certifications:
+
+   *  <a href="#CSPD1">Platform Developer I</a>
+   *  <a href="#SalesCloud">Sales Cloud Consultant</a>
+   *  <a href="#ServiceCloud">Service Cloud Consultant</a>
+   *  <a href="#CommunityCloud">Community Cloud Consultant</a>
+   *  <a href="#MarketingCloud">Marketing Cloud Consultant</a>
+   *  <a href="#Pardot1">Pardot Consultant</a>
+   *  <a href="#SCCCDD">Commerce Cloud Digital Developer</a>
+
+
+## Sequence of certifications
+
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/43396367-84f9318c-93be-11e8-9389-f0e30f5c1419.jpg">
 <img alt="sf-architectjourney-799x627-86747.jpg" width="799" src="https://user-images.githubusercontent.com/300046/43396367-84f9318c-93be-11e8-9389-f0e30f5c1419.jpg"></a>
 
 <a target="_blank" href="https://twitter.com/SantanuBoral">@SantanuBoral</a> on <a target="_blank" href="https://santanuboral.blogspot.com/2018/10/effective-certification-path.html">5 Oct 2018</a> analyzed overlaps among certs to come up with solid lines linking his recommended sequence to certification:<br />
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/46637364-20d12b00-cb19-11e8-8190-53e6c6e25055.png">
-<img alt="sf-cert-seq-1600x879-165387.jpg" width="648" src="https://user-images.githubusercontent.com/300046/46637364-20d12b00-cb19-11e8-8190-53e6c6e25055.png"></a>
+<img alt="sf-cert-seq-1600x879-165387.jpg" width="648" src="https://user-images.githubusercontent.com/300046/46637364-20d12b00-cb19-11e8-8190-53e6c6e25055.png"><small>Click image to pop it up full screen</small></a>
 
 Dashed lines represent optionals.
 Orange boxes highlight Application Architect certifications.
@@ -225,7 +241,7 @@ Follow on Twitter:
 
 <a name="CSPD1"></a>
 <a target="_blank" href="http://certification.salesforce.com/SG_CertifiedPlatformDeveloperI.pdf">Official PDF -  Certified Salesforce Platform Developer I (PD1)</a>
-was previously called the "DEV401" exam called "Certified Force.com Developer".
+was previously the "DEV401" exam called "Certified Force.com Developer".
 
    * <a target="_blank" href="https://www.examtopics.com/exams/Salesforce/DEV-401/">Free ExamTopics.com online exam DEV-401</a>
 
@@ -398,19 +414,7 @@ VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=5EtvbPPPaK8">Moc
    * [30:00] Functionality Transactions
    <br /><br />
 
-## Partners 
-
-Salesforce requires its Partners to employ people with these certifications:
-
-   *  <a href="#CSPD1">Platform Developer I</a>
-   *  <a href="#SalesCloud">Sales Cloud Consultant</a>
-   *  <a href="#ServiceCloud">Service Cloud Consultant</a>
-   *  <a href="#CommunityCloud">Community Cloud Consultant</a>
-   *  <a href="#MarketingCloud">Marketing Cloud Consultant</a>
-   *  <a href="#Pardot1">Pardot Consultant</a>
-   *  <a href="#SCCCDD">Commerce Cloud Digital Developer</a>
-
-## Social
+## Social media
 
 https://www.linkedin.com/groups/2043240/
 
