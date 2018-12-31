@@ -83,6 +83,8 @@ However, by contrast, Mike Wheeler and David Liu advise Developers to first pass
    such as taking time away from movies, sports, going out, or other diversions.
    Are you willing to watch certification videos instead of watching TV?
 
+   PROTIP: Bone-conducting headphones enable you to listen without disturbing others while you drive or walk around.
+
 1. <a target="_blank" href="http://certification.force.com/pkb/articles/Public_KB/Scheduling-an-Exam">Register to take certification tests</a>. 
 
 1. Prepare to take exams remotely on your own computer by <a target="_blank" href="http://certification.force.com/pkb/articles/Public_KB/Online-Proctoring-Completing-Your-Exam-Remotely">
@@ -95,7 +97,7 @@ However, by contrast, Mike Wheeler and David Liu advise Developers to first pass
 
    PROTIP: Exams fees are half-off at Dreamforce conferences. For example, pay $99 instead of $200.
    Be sure to sign up under the Dreamforce category rather than the normal item.
-   Retake fees are the same: $100.
+   Retake fees are $100.
 
 3. Link your Trailhead and Webassessor accounts. 
 
@@ -104,7 +106,7 @@ However, by contrast, Mike Wheeler and David Liu advise Developers to first pass
 4. PROTIP: When selecting a day to take the exam, consider <a target="_blank" href="https://www.biorhythm-calculator.net/">https://www.biorhythm-calculator.net</a> to pick positive days and not days when a line crosses over 0 or at the bottom.
 
 5. If you use a test center, pick a <a target="_blank" href="http://www.kryteriononline.com/Locate-Test-Center">
-   Kryterion test center</a> near you. Bring 2 forms of ID.
+   Kryterion test center</a> near you. Bring 2 forms of ID (drivers license and credit card)
    
    PROTIP: Write down the code generated on the exam confirmation email in a card in your wallet because you may not be able to retrieve your email at the testing center (due to bad internet service, battery running out, etc.).
 
@@ -134,7 +136,7 @@ Strangely, the email does not present a total grade, just percentage of each sec
 To calculate my summary score at the Administrator exam, I created <a target="_blank" href="https://docs.google.com/spreadsheets/d/1CkZyNLhDpTZJUanYWvLX9whYWnlvlN6VDO3AMCpzjRk/edit#gid=0">this Google spreadsheet:<br />
 <a target="_blank" href="https://docs.google.com/spreadsheets/d/1CkZyNLhDpTZJUanYWvLX9whYWnlvlN6VDO3AMCpzjRk/edit#gid=0"><img alt="sf-admin-results-sheet-601x330-46761.png" width="601" src="https://user-images.githubusercontent.com/300046/50537308-cf3ea800-0b2b-11e9-87a2-c9ea03a1db1a.png"></a>
 
-The summary score calculation is at the lower-right corner. I manually changed font color to red.
+The summary score calculation is at the lower-right corner. I manually changed font color to red for sections which I need to study further.
 
 PROTIP: If you want to calculate your own score, in the email you got, highlight and copy the lines under "Section-Level Scoring:", open  <a target="_blank" href="https://docs.google.com/spreadsheets/d/1CkZyNLhDpTZJUanYWvLX9whYWnlvlN6VDO3AMCpzjRk/edit#gid=0">this Google spreadsheet, and paste in cell A2, replacing the sample.
 
