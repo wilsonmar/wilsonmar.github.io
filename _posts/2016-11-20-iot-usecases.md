@@ -45,6 +45,13 @@ There are several end-uses for a computer that are <strong>constantly on</strong
 
 * Run an <strong>IoT Gateway server</strong> for home automation.
 
+* <a target="_blank" href="https://blog.dataplicity.com/how-to-build-a-raspberry-pi-thermometer-you-can-access-anywhere-a-beginner-s-guide-4ad44ce9f4c9">
+Raspberry Pi thermometer you can access anywhere (a beginner’s guide)</a>
+via the Dataplicity cloud.
+
+* <a target="_blank" href="https://www.raspberrypi-spy.co.uk/2017/07/pool-temperature-monitoring-and-pump-control-with-the-pi-zero-w/">
+Pool Temperature Monitoring and Pump Control with the Pi Zero W</a>
+
 
 ## More on IoT #
 
