@@ -1543,6 +1543,12 @@ https://github.com/ramitsurana/awesome-kubernetes
 <a target="_blank" href="https://kubernetes.io/community/">https://kubernetes.io/community</a>
 
 
+## Jobs
+
+<a target="_blank" href="https://www.sdxcentral.com/articles/news/kubernetes-dominates-in-it-job-searches/2019/01/">
+Kubernetes Dominates in IT Job Searches</a>
+
+
 ## Learning, Video and Live
 
 <a target="_blank" href="https://www.youtube.com/watch?v=90kZRyPcRZw">
