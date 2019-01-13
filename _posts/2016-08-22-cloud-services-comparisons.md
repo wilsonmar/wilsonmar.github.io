@@ -19,13 +19,14 @@ alt="cloud platforms black icons 300x330-300-58kb.jpg" width="300" height="330" 
 
 This article compares the largest cloud services platforms:
 Amazon AWS vs.
+Microsoft Azure vs. 
 [Google Cloud Platform](/gcp/) vs.
 IBM Softlayer vs. 
-Microsoft Azure vs. 
+Rackspace vs.
 Alibaba Cloud vs.
-Rackspace.
+<a target="_blank" href="https://www.huaweicloud.com/en-us/about/about_us.html">Huawei Cloud</a>.
 
-Major multi-cloud vendors include Oracle, SalesForce Heroku, SkyTap.
+Major multi-cloud vendors include Oracle, SalesForce's Heroku, SkyTap, etc.
 
 Software for private clouds include Red Hat OpenStack and VMWare. 
 
@@ -52,12 +53,15 @@ Amazon's "Well Architected" notes the constraints removed by being in the cloud:
 * Make experimentation easier (overcome fear of change)
 * Allow architecture to evolve (rather than being frozen in time)
 
-## TL;DR - The biggest differences
+## TL;DR - Picking a single cloud
 
-The perspective of an individual is not to select a cloud vendor, but to select the cloud vendor which provides the best career prospects. Here's my logic:
+Organizations are going multi-cloud.
+But an given individual has a limited amount of time to keep up with changes.
+So many individual technologists need to select the cloud vendor which provides the best career prospects. Here's my logic:
 
-* If you write in C# on .NET (and want to continue leveraging that experience), Azure is the natural choice. (But other clouds are trying to support Windows.)
-* If you're looking to get a job in cloud, go for AWS because of its current <a href="#marketshare">market share</a> and [pace of innovation](https://aws.amazon.com/products/). AWS has the most sophisticated authentication and database services.
+* If you write in C# on .NET and want to continue leveraging that experience, Azure is the natural choice. (But other clouds are trying to support Windows.)
+   Azure now provides free learning instances</a>
+* If you're looking for the fastest and easiest path to get a job in cloud, go for AWS because of its current <a href="#marketshare">market share</a> and [pace of innovation](https://aws.amazon.com/products/). AWS has the most sophisticated authentication and database services.
 * Due to competitive reasons, Target, Best Buy, eBay, and Sony Music use Google. WalMart uses Azure. 
 * If you're running really large loads on each server, Google offers fast fiber networks that don't limit what large machines can achieve. Plus Google is ahead in Machine Learning with its popular Tensorflow in Python.
 * Google's SSD drives are expensive, though needed for speed.
