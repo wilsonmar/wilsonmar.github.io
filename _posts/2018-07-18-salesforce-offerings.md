@@ -253,7 +253,7 @@ Salesforce, as a company, owns several domain names (some product offerings have
       * https://develop.salesforce.com/
       * https://help.salesforce.com/
       * https://partners.salesforce.com/
-      * https://trust.salesforce.com/en/
+      * https://trust.salesforce.com/en/ is for availability status
 
       * https://_____-dev-ed.my.salesforce.com/ are created from Developer Edition accounts for its pod. So if you're on the na31 pod, see <a target="_blank" href="https://na31.salesforce.com/domainname/DomainName.apexp">https://na31.salesforce.com/domainname/DomainName.apex</a>
       * https://<em>custom-brand-subdomain</em>.my.salesforce.com/ are production custom <a target="_blank" href="https://help.salesforce.com/articleView?id=domain_name_overview.htm&type=5">My Domains</a>, which is used for Single sign-on (SSO) with SAML or external identity provider Facebook, Google, LinkedIn, Twitter. It is also used (required) by Lightning UX. See <a target="_blank" href="http://salesforce.vidyard.com/watch/oFQ26FCXPVOA90xZaVDDjA">this video</a>.
@@ -410,6 +410,7 @@ When Salesforce acquires other companies, it tends to fold acquired users into S
    * <a target="_blank" href="https://www.site.com/">Site.com</a> is redirected to <br />https://www.salesforce.com/products/platform/overview/
    * Work.com was [retired July 10, 2015](https://success.salesforce.com/_ui/core/chatter/topics/TopicPage?id=0TO300000004GDW&ref=group_profile). It was a sales performance management solution for on-boarding new reps faster, for coaching reps to close more deals, and for rewarding successful behaviors. It redirects tohttps://www.salesforce.com/products/sales-cloud/overview/
    * <a target="_blank" href="https://www.salesforce1.com/">Salesforce1.com</a> redirects to salesforce.com.
+   * <a target="_blank" href="https://salesforce.vidyard.com/">https://salesforce.vidyard.com</a> shows videos
 
 ### Github accounts
 
