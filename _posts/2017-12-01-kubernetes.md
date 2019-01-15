@@ -1577,20 +1577,36 @@ What is Kubernetes?</a> Jun 18, 2018 by Jason Rahm
 
 * <a target="_blank" href="https://training.linuxfoundation.org/training/kubernetes-fundamentals/">Kubernetes Fundamentals</a> $299 video course offered on EdX.com from LinuxFoundation.
 
-## References
+## Kubernetes for Machine Learning
 
-https://opensource.com/article/19/1/why-data-scientists-love-kubernetes
-say that to get around Jupyter notebooks correctness and functionality being dependent on their environment, 
-use <a target="_blank" href="https://mybinder.org/">Binder service</a> which takes Jupyter notebooks within a Git repository to build a container image, then launches the image in a Kubernetes cluster with an exposed route accessible from the public internet. 
+<a target="_blank" href="https://opensource.com/article/19/1/why-data-scientists-love-kubernetes">This article</a>
+talks about Jupyter notebooks correctness and functionality being dependent on their environment, called "training serving skew".
+To get around that, use the <a target="_blank" href="https://mybinder.org/">Binder service</a> which takes Jupyter notebooks within a Git repository to build a container image, then launches the image in a Kubernetes cluster with an exposed route accessible from the public internet. 
 
 <a target="_blank" href="https://github.com/openshift/source-to-image">OpenShift's Source-to-image (S2I)</a> and
 <a target="_blank" href="https://github.com/jupyter-on-openshift/s2i-notebook-builder">
 Graham Dumpleton's OpenShift S2I builder </a>
-builds artifacts from source and injects them into docker images,
-It's used by the <a target="_blank" href="https://github.com/SeldonIO/seldon-core/blob/master/docs/articles/openshift_s2i.md">Seldon-Core</a>
-to scale Machine Learning environments.
+builds artifacts from source and injects them into docker images.
 
-<a target="_blank" href="https://www.kubeflow.org/">Kubeflow</a> provides templates and custom resources to deploy a range of machine learning libraries and tools on Kubernetes.
+It's used by <a target="_blank" href="https://github.com/SeldonIO/seldon-core/blob/master/docs/articles/openshift_s2i.md">Seldon-Core</a>
+to scale Machine Learning environments. There are <a target="_blank" href="https://github.com/kubeflow/example-seldon">Seldon-Core Examples</a>
+
+Seldon-Core is used by
+<a target="_blank" href="https://www.kubeflow.org/docs/about/kubeflow/">Kubeflow</a> makes deployments of machine learning (ML) workflows on Kubernetes simple, portable and scalable. It provides templates and custom resources to deploy TensorFlow and other machine learning libraries and tools on Kubernetes.
+Included in Kubeflow is JupyterHub to create and manage multi-user interactive Jupyter notebooks.
+It began as <a target="_blank" href="https://www.tensorflow.org/tfx/">TensorFlow Extended</a> at Google.
+
+<a target="_blank" href="https://github.com/kubernetes-incubator">https://github.com/kubernetes-incubator</a>
+is a collection of repositories such as the 
+spartakus Anonymous Usage Collector,
+metrics-server, 
+external-dns which configures external DNS servers (AWS Route53, Google CloudDNS and others) for Kubernetes Ingresses and Services,
+and kube-aws which is a command-line tool to declaratively manage Kubernetes clusters on AWS.
+
+<a target="_blank" href="https://radanalytics.io/">https://radanalytics.io</a>
+Oshinko empowers intelligent app developement on the OpenShift platform
+deploying and managing Apache Spark clusters
+It has a spark cluster management app (oshinko-webui)
 
 ## More on DevOps #
 
