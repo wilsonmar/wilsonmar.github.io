@@ -1551,6 +1551,9 @@ Kubernetes Dominates in IT Job Searches</a>
 
 ## Learning, Video and Live
 
+<a target="_blank" href="https://www.youtube.com/watch?v=1lgsQ3PKz9M">
+Kubernetes for Beginners</a> by Siraj  Jan 8, 2019 [11:04]
+
 <a target="_blank" href="https://www.youtube.com/watch?v=90kZRyPcRZw">
 Kubernetes Deconstructed</a> Dec 15, 2017 [33:14]
 by Carson Anderson of DOMO (@carsonoid)
@@ -1574,6 +1577,20 @@ What is Kubernetes?</a> Jun 18, 2018 by Jason Rahm
 
 * <a target="_blank" href="https://training.linuxfoundation.org/training/kubernetes-fundamentals/">Kubernetes Fundamentals</a> $299 video course offered on EdX.com from LinuxFoundation.
 
+## References
+
+https://opensource.com/article/19/1/why-data-scientists-love-kubernetes
+say that to get around Jupyter notebooks correctness and functionality being dependent on their environment, 
+use <a target="_blank" href="https://mybinder.org/">Binder service</a> which takes Jupyter notebooks within a Git repository to build a container image, then launches the image in a Kubernetes cluster with an exposed route accessible from the public internet. 
+
+<a target="_blank" href="https://github.com/openshift/source-to-image">OpenShift's Source-to-image (S2I)</a> and
+<a target="_blank" href="https://github.com/jupyter-on-openshift/s2i-notebook-builder">
+Graham Dumpleton's OpenShift S2I builder </a>
+builds artifacts from source and injects them into docker images,
+It's used by the <a target="_blank" href="https://github.com/SeldonIO/seldon-core/blob/master/docs/articles/openshift_s2i.md">Seldon-Core</a>
+to scale Machine Learning environments.
+
+<a target="_blank" href="https://www.kubeflow.org/">Kubeflow</a> provides templates and custom resources to deploy a range of machine learning libraries and tools on Kubernetes.
 
 ## More on DevOps #
 
