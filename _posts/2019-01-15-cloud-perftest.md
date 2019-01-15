@@ -33,7 +33,11 @@ Covered here are strategies for several alternative architectures:
 
 ## Custom executables
 
-We start with custom executables running on server instances, such as WordPress, SugarCRM, and others.
+We start with custom executables running on server instances, such as WordPress, SugarCRM, and Java war files.
+
+Custom executables typically access one or more databases such as MySQL.
+
+In the case of WordPress, such sites are slower relative to static websites.
 
 WordPress is written in the PHP programming language which is now considered archaic versus Python, Scala, Go, and other new languages.
 But WordPress nonetheless still is among the most popular programs running on the internet 
@@ -42,8 +46,6 @@ because of its vast ecosystem of developers and add-on functionality.
 Note that PHP is an <a target="_blank" href="http://en.wikipedia.org/wiki/Interpreted_language">interpreted language</a>, meaning that PHP programming source code is processed by the PHP interpreter program every time to respond to each new request. 
 So WordPress usually takes more time to render the HTML displayed on client internet browsers than other technologies such as static HTML pages served without processing. WordPress is also slower than websites that run a program compiled from Java, Go, or other compiled programming language.
 
-Custom executables typically access one or more databases such as MySQL.
-So that can slow WordPress sites down relative to static websites.
 
 ## Dealing with hardware and patching
 
@@ -52,7 +54,7 @@ and populate it with the software, then configure it.
 
 Business owners who had a WordPress site built must continue to pay thousands of dollars each year for "maintenance" to avoid falling behind. Patches for operating system security, the PHP interpreter -- every aspect of technology -- must be updated ocassionally. This constant maintenance does not add additional functionality to the end user, so is feels like a disruption and waste of time and money.
 
-Enter SaaS.
+Enter SaaS in a cloud.
 
 
 <a name="SaaS"></a>
@@ -118,9 +120,9 @@ But modern SSD (Solid State Device) drives used today are very fast.
 
 Server manufacturers usually provide more speed along with larger capacity:
 
-   * Faster CPU with larger RAM
-   * Faster disk type with larger capacity disks
-   * Faster network speeds with larger capacity networks
+   * Faster CPUs come with larger RAM
+   * Faster disk types come with larger capacity disks
+   * Faster network speeds come with larger capacity network pipes
    <br /><br />
 
 For example, to get more RAM you also pay for faster CPU whether you want that or not.
@@ -299,15 +301,13 @@ TODO: Complete this article:
 
 ## Auto-scaling
 
- additional servers are added to a load balancer when
+But Amazon continues to offer traditional elastic load balancer service with auto-scaling groups of individual servers.
+The service is controlled using Chef specifications.
 
-auto-scaling group
-
-based on individual servers
-Chef 
-
-sticky sessions
-and "bleeding" instances
+The concern with clusters of traditional programs is <strong>sticky sessions</strong> which stay on a particular server instance until time-out, which can be several hours. Meanwhile, that particular server instance cannot be downed for security updates, memory reclaimation, or whatever.
+In other words, it takes a long time to "bleed" instances of user sessions.
+This situation is caused by programs that was written using cookies that 
+The Load Balancer woul
 
 Load balancer limits.
 
@@ -318,11 +318,8 @@ Instance limits.
 
 ## AWS Lightsale
 
-In 2018 Amazon introduced its Lightsail service.
-
-https://lightsail.aws.amazon.com/ls/docs/en/articles/getting-started-with-amazon-lightsail
-
-don't have to worry about scaling because AWS does it for you.
+In 2018 Amazon introduced its <a target="_blank" href="https://lightsail.aws.amazon.com/ls/docs/en/articles/getting-started-with-amazon-lightsail">Lightsail service</a>, which <strong>automatically scales</strong> EC2 instances running executables without the need to setup VPCs and auto-scaling groups.
+And rates are comparable to public hosting companies (starting at $5 per month).
 
 
 ## Istio and Envoy for Tracing
