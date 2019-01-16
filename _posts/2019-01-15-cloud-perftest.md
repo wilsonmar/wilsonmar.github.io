@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Site Reliability and Load Tesing in the Cloud Era"
-excerpt: "Considerations for performance, high availability, latency, etc."
-tags: [Cloud, comparison]
+excerpt: "Considerations for performance, high availability, latency, at lowest cost"
+tags: [Cloud, perftest]
 comments: true
 image: # pic-black-bkg-white-cloud_1920x1200
   feature: https://cloud.githubusercontent.com/assets/300046/15269257/8104a824-19b6-11e6-9c42-014bf608009a.jpg
@@ -26,6 +26,9 @@ The attempt here is a logical converage of strategies for several alternative ar
 * <a href="#AutoScaling">Auto-scaling</a>
 * <a href="#ContainerScaling">Container scaling</a>
 * <a href="#Lightsail">Amazon Lightsail</a>
+<br /><br />
+
+This will be re-published on Medium.
 
 
 <a name="Custom"></a>
