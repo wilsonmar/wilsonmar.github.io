@@ -16,8 +16,7 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 
 <a target="_blank" href="https://wilsonmar.github.io/cloud-perftest/">This</a> is a story, a "deep-dive documentary", about how to ensure performance, scalability, availability, resilience, and affordability from building, testing, and running computer software applications on various environments. 
-
-Covered here are strategies for several alternative architectures:
+The attempt here is a logical converage of strategies for several alternative architectures:
 
 * <a href="#Custom">Custom executables</a>
 * <a href="#SaaS">SaaS</a>
@@ -125,7 +124,7 @@ Server manufacturers usually provide more speed along with larger capacity:
    * Faster network performance (speed) interfaces come with larger capacity network pipes
    <br /><br />
 
-For example, to get more RAM you also pay for faster CPU whether you want that or not.
+For example, to get a server with more RAM, you also pay for more cores (vCPUs) whether you want it or not.
 
 A doubling of RAM usually costs twice as much, or more.
 However, upgrading usually doesn't yield the same increase in how much is processed.
@@ -251,7 +250,7 @@ When multiple server instances are involved, a Load Balancer is needed to distri
 
 Load Balancers can also make use of SSL certificates on them to convert "https://" requests which have been encrypted to unencrypted "http://" requests. This reduces the deryption and encryption workload on individual servers. Some load balancers (such as F5) are specialized servers with special (ASIC) custom chips to process faster than standard computers.
 
-BTW, when servers behind a firewall use unencrypted traffic, a single "Bastion host" is needed for administrators (on pre-defined addresses) to obtain files from the open internet. Such a server is the only one that goes through a "Gateway", which uses NAT (Network Address Translation) to hide IP addresses from the outside world. 
+BTW, when servers behind a firewall use unencrypted traffic, a single "Bastion host" is setup for administrators (on pre-defined IP addresses) to obtain files from the open internet. Such a server is the only one that goes through a NAT (Network Address Translation) "Gateway" which hides IP addresses from the outside world. 
 
 Files needed by application servers are obtained from an internal Network File Share (NFS) or file respository server managed by utility software such as Nexus or Artifactory.
 
@@ -298,9 +297,8 @@ TODO: Detailed comparison of various cloud vendor service names and offerings (A
 
 <hr />
 
-TODO: Complete this article:
 
-## References
+References:
 
 Based on the <a target="_blank" href="http://deeplizard.com/learn/playlist/PLZbbT5o_s2xoWPNdBbqi9eWnMJ5cDrr1M">Deep Lizard's AWS - Amazon Web Services EC2 Management video series</a> from November 2017.
 
@@ -309,15 +307,28 @@ Based on the <a target="_blank" href="http://deeplizard.com/learn/playlist/PLZbb
 
 ## Auto-scaling
 
-But Amazon continues to offer traditional elastic load balancer service with auto-scaling groups of individual servers.
+Amazon continues to offer traditional elastic load balancer service with auto-scaling groups of individual servers.
 The service is controlled using Chef specifications.
 
 The concern with clusters of traditional programs is <strong>sticky sessions</strong> which stay on a particular server instance until time-out, which can be several hours. Meanwhile, that particular server instance cannot be downed for security updates, memory reclaimation, or whatever.
 In other words, it takes a long time to "bleed" instances of user sessions.
-This situation is caused by programs that was written using cookies that 
-The Load Balancer woul
+This situation is caused by programs that was written to depend on the exchange of cookies in HTTP headers exchanged between client and server.
+With such an architecture, Load Balancers need to return a client to a specific server instance, and thus not "stateless".
+
+Apps that are "stateless" can better take advantage of advanced scaling features.
+
+### Sticky vs. Stateless (more scalable and cheaper)
+
+Apps need to be "stateless" in order to make use of server instances than can disappear at any time, such as AWS EC2 instances purchased according to "spot rates" which fluctuate under an aucton system established by Amazon. Such rates are the lowest cost among all ways of charging.
+Thus, a system can be considered financially defective if it cannot take advantage of the lowest cost instances.
+Such a situation can and should be identified as early as the technical planning stage.
+That is the rationale for considering performance issues early on rather than shortly before production when nothing much can be changed.
+
+
+TODO: Complete this article:
 
 Load balancer limits.
+
 
 Instance limits.
 
