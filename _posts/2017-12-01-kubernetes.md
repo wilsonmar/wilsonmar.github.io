@@ -59,6 +59,13 @@ PROTIP: Kubernetes recently added <strong>auto-scaling</strong> based on metrics
 The number of pods replicated is based on <strong>deployment</strong> yaml files. 
 Service yaml files specify what ports are used in deployments.
 
+<a target="_blank" href="https://linuxacademy.com/cp/guides/download/refsheets/guides/refsheets/linuxacademy-kubernetesadmin-archdiagrams-1_1516737832.pdf">This Architectural Diagram pdf</a>:
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/51218893-5a75b700-18fc-11e9-89af-7ba9ca3000c5.jpg"><img alt="
+k8s-linuxacademy-arch-912x415-32433.jpg" src="https://user-images.githubusercontent.com/300046/51218893-5a75b700-18fc-11e9-89af-7ba9ca3000c5.jpg"></a>
+is described in the <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/155">
+Linux Academy's CKA course</a> of 05:34:43 hours of videos by Chad Miller (<a target="_blank" href="https://twitter.com/OpenChad/">@OpenChad</a>).
+
+
 ## Open Sourced = Free
 
 <img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
@@ -669,8 +676,7 @@ This section further explains the <a href="#Architecture">architecture diagram a
 
 <!-- https://linuxacademy.com/cp/guides/download/refsheets/guides/refsheets/linuxacademy-kubernetesadmin-archdiagrams-1_1516737832.pdf -->
 
-As described by the <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/155">
-Linux Academy's CKA course</a> -- 05:34:43 of videos by Chad Miller (<a target="_blank" href="https://twitter.com/OpenChad/">@OpenChad</a>) provides <a target="_blank" href="https://linuxacademy.com/cp/exercises/view/id/670/module/155">this sequence of commands</a>
+<a target="_blank" href="https://linuxacademy.com/cp/exercises/view/id/670/module/155">This sequence of commands</a>:
 
 1. Select "CloudNativeKubernetes" sandboxes.
 1. Select the first instance as the "Kube Master".

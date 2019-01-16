@@ -296,6 +296,10 @@ TODO: Detailed comparison of various cloud vendor service names and offerings (A
 
 TODO: Complete this article:
 
+## References
+
+Based on the <a target="_blank" href="http://deeplizard.com/learn/playlist/PLZbbT5o_s2xoWPNdBbqi9eWnMJ5cDrr1M">Deep Lizard's AWS - Amazon Web Services EC2 Management video series</a>.
+
 
 <a name="AutoScaling"></a>
 
@@ -346,3 +350,5 @@ Here is a list of tasks mentioned above, in usual sequence of execution:
 1. What yields the highest rate of business transactions at the least total cost?
 
 1. How quickly additional capacity is added after a request.
+
+
