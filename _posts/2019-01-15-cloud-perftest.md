@@ -343,6 +343,8 @@ Instance limits.
 In 2018 Amazon introduced its <a target="_blank" href="https://lightsail.aws.amazon.com/ls/docs/en/articles/getting-started-with-amazon-lightsail">Lightsail service</a>, which <strong>automatically scales</strong> EC2 instances running executables without the need to setup VPCs and auto-scaling groups.
 And rates are comparable to public hosting companies (starting at $5 per month).
 
+But note that each plan has a limit beyond which additional storage and data transfer costs would be incurred.
+
 
 ## Istio and Envoy for Tracing
 
