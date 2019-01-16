@@ -120,9 +120,9 @@ But modern SSD (Solid State Device) drives used today are very fast.
 
 Server manufacturers usually provide more speed along with larger capacity:
 
-   * Faster CPUs come with larger RAM
+   * More cores (vCPUs) and faster CPUs come with larger RAM
    * Faster disk types come with larger capacity disks
-   * Faster network speeds come with larger capacity network pipes
+   * Faster network performance (speed) interfaces come with larger capacity network pipes
    <br /><br />
 
 For example, to get more RAM you also pay for faster CPU whether you want that or not.
@@ -132,7 +132,11 @@ However, upgrading usually doesn't yield the same increase in how much is proces
 For example, a doubling of RAM does not usually yield a doubling of transaction throughput.
 So one question performance engineers are asked to answer is whether running two smaller servers processes more transactions than a big server with the equivalent memory of several smaller servers.<a href="#Tasks">*</a>
  
-Another alternative is to add a separate <strong>caching server</strong> (such as Redis, MemcacheD, AWS RDS, or ElastiCache) that tries to respond to requests before they hit the web server or database server. 
+BTW, Amazon sells RAM memory by "GiB" (for Gibibyte) rather than the more traditional "Gigabytes" used by hard disk drive manufacturers to mean a 1,000,000,000,when using a "base 10" method of counting, where each digit can have 10 values (from 0 thru 9). Counting each digit, that's 10 to the 9th power.
+A Gibitype is based on "base 2" (1 or 0) counting that computers use internally, and 2 to the 30th power which is equivalent to worth 1,073,741,824 bytes in base 10. The difference between the two increases exponentially as numbers get larger: about 7% at the Gibibyte/Gigabyte level but 9% at the Tibibyte/Terabyte level (the equivalent of 1,099,511,627,776 bytes in base 2).
+
+
+One alternative for increasing throughput is to add a separate <strong>caching server</strong> (such as Redis, MemcacheD, AWS RDS, or ElastiCache) that tries to respond to requests before they hit the web server or database server. 
 Cache servers typically holds responses in a large amount of memory.
 But to ensure that money for a caching server is not wasted, the <strong>cache hit ratio</strong> should be measured when running under simulated load.
 
@@ -298,7 +302,7 @@ TODO: Complete this article:
 
 ## References
 
-Based on the <a target="_blank" href="http://deeplizard.com/learn/playlist/PLZbbT5o_s2xoWPNdBbqi9eWnMJ5cDrr1M">Deep Lizard's AWS - Amazon Web Services EC2 Management video series</a>.
+Based on the <a target="_blank" href="http://deeplizard.com/learn/playlist/PLZbbT5o_s2xoWPNdBbqi9eWnMJ5cDrr1M">Deep Lizard's AWS - Amazon Web Services EC2 Management video series</a> from November 2017.
 
 
 <a name="AutoScaling"></a>
