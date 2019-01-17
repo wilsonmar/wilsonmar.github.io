@@ -339,10 +339,10 @@ One of the risks with being able to get a lot of capacity quickly is that bills 
 For example, I kept being charged $35 a month on an account I used only once to provision a server that I shortly terminated.
 It turns out that Google's shutdown script doesn't remove <a target="_blank" href="https://cloud.google.com/compute/docs/load-balancing/network/forwarding-rules">Forwarding rules</a> created when servers run within a cluster.
 
-Tad Einstein recommended commands instead of manual UI Networking -> Load Balancing -> advanced options -> Forwarding rules:
+Tad Einstein recommended commands instead of manual UI Networking -> Load Balancing -> advanced options -> Forwarding rules to list their IDs to be used for deletion:
 
-   <pre>gcloud compute forwarding-rules list
-   gcloud compute forwarding-rules delete [FORWARDING_RULE]</pre>
+<pre>RESULT=$(gcloud compute forwarding-rules list)
+gcloud compute forwarding-rules delete [FORWARDING_RULE]</pre>
 
 So the advice here is to run cloud scripts using automation script so that commands such as the above can be inserted when needed.
 
