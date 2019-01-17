@@ -134,7 +134,7 @@ However, upgrading usually doesn't yield the same increase in how much is proces
 For example, a doubling of RAM does not usually yield a doubling of transaction throughput.
 So one question performance engineers are asked to answer is whether running two smaller servers processes more transactions than a big server with the equivalent memory of several smaller servers.<a href="#Tasks">*</a>
  
-BTW, Amazon sells RAM memory by "GiB" (for Gibibyte) rather than the more traditional "Gigabytes" used by hard disk drive manufacturers to mean a 1,000,000,000,when using a "base 10" method of counting, where each digit can have 10 values (from 0 thru 9). Counting each digit, that's 10 to the 9th power.
+BTW, Amazon sells RAM memory by "GiB" (for Gibibyte) rather than the more traditional "Gigabytes" used by hard disk drive manufacturers to mean 1,000,000,000,when using a "base 10" method of counting, where each digit can have 10 values (from 0 thru 9). Counting each digit, that's 10 to the 9th power.<a target="_blank" href="https://steemit.com/data-science/@deeplizard/hexadecimal-explained-or-higher-than-base-10-positional-numeral-systems">*</a>
 A Gibitype is based on "base 2" (1 or 0) counting that computers use internally, and 2 to the 30th power which is equivalent to worth 1,073,741,824 bytes in base 10. The difference between the two increases exponentially as numbers get larger: about 7% at the Gibibyte/Gigabyte level but 9% at the Tibibyte/Terabyte level (the equivalent of 1,099,511,627,776 bytes in base 2).
 
 
@@ -143,7 +143,7 @@ Cache servers typically holds responses in a large amount of memory.
 But to ensure that money for a caching server is not wasted, the <strong>cache hit ratio</strong> should be measured when running under simulated load.
 
 
-The potential for failure due to load may not be concern for many "vanity" websites which don't anticipate a lot of traffic. 
+The potential for failure due to load may not be of concern for "vanity" websites which don't anticipate a lot of traffic. 
 
 But most businesses websites prefer their websites to be able to handle more business without much manual vigilence.
 
@@ -324,14 +324,34 @@ Apps that are "stateless" can better take advantage of advanced scaling features
 
 Apps need to be "stateless" in order to make use of server instances than can disappear at any time, such as AWS EC2 instances purchased according to "spot rates" which fluctuate under an aucton system established by Amazon. Such rates are the lowest cost among all ways of charging.
 Thus, a system can be considered financially defective if it cannot take advantage of the lowest cost instances.
-Such a situation can and should be identified as early as the technical planning stage.
+Such a situation can and should be identified during technical planning stage.
 That is the rationale for considering performance issues early on rather than shortly before production when nothing much can be changed.
+
+
+Speaking of "sticky", there are sticky service charges ...
+
+## Automation to avoid runaway bills
+
+One of the risks with being able to get a lot of capacity quickly is that bills can pile up just as quickly, and sometime inexplicably.
+<a target="_blank" href="https://stackoverflow.com/questions/37675663/huge-costs-for-the-network-load-balancing-forwarding-rules-on-google-cloud-platf/41675413
+">Runaway bills</a> are a concern when using clouds.
+
+For example, I kept being charged $35 a month on an account I used only once to provision a server that I shortly terminated.
+It turns out that Google's shutdown script doesn't remove <a target="_blank" href="https://cloud.google.com/compute/docs/load-balancing/network/forwarding-rules">Forwarding rules</a> created when servers run within a cluster.
+
+Tad Einstein recommended commands instead of manual UI Networking -> Load Balancing -> advanced options -> Forwarding rules:
+
+   <pre>gcloud compute forwarding-rules list
+   gcloud compute forwarding-rules delete [FORWARDING_RULE]</pre>
+
+So the advice here is to run cloud scripts using automation script so that commands such as the above can be inserted when needed.
+
 
 <a name="Monitoring"></a>
 
-## Monitoring
+## Monitoring Granularity
 
-The default granularity of AWS monitoring service (CloudWatch) is on datapoint every 5 minutes, and does not include monitoring of memory usage.
+The default granularity of AWS monitoring service (CloudWatch) is one datapoint every 5 minutes, and does not include monitoring of memory usage.
 Monitoring of memory usage and granularity of 3 minutes can be configured.
 But that still doesn't cover situations when sub-second ganularity would better inform debugging of "micro events".
 
