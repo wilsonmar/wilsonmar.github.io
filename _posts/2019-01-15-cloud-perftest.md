@@ -184,7 +184,7 @@ Tests to identify such issues require <strong>"soak" test runs</strong>. Such lo
 But doing so would enable the testing of conditions in the future when databases grow larger over time.
 Laws require that data from production be "scrubbed" of personally identifiable information.
 
-Traditionally, load testing occurred near the end of projects, but to enable Agile practices, many businesses today seek to "shift left" (ahead in time) so that risks are exposed as development occurs so that they can be fixed while the code is still in developer's minds. To facilitate that, load tests a(with monitoring) can be made to automatically begin (by a Continuous Integration utility such as Jenkins) when code is uploaded to a team source repository.
+Traditionally, load testing occurred near the end of projects, but to enable Agile practices, many businesses today seek to "shift left" (ahead in time) so that risks are exposed as development occurs so that they can be fixed while the code is still in developer's minds. To facilitate that, load tests (along with <a href="#Monitoring">monitoring</a>) can be made to automatically begin (by a Continuous Integration utility such as Jenkins) when code is uploaded to a team source repository.
 
 
 Planning for load testing includes <strong>characterizing</strong> the load coming from various use cases (how many people registering, browsing, buying, etc. at the same time).
@@ -326,6 +326,16 @@ Apps need to be "stateless" in order to make use of server instances than can di
 Thus, a system can be considered financially defective if it cannot take advantage of the lowest cost instances.
 Such a situation can and should be identified as early as the technical planning stage.
 That is the rationale for considering performance issues early on rather than shortly before production when nothing much can be changed.
+
+<a name="Monitoring"></a>
+
+## Monitoring
+
+The default granularity of AWS monitoring service (CloudWatch) is on datapoint every 5 minutes, and does not include monitoring of memory usage.
+Monitoring of memory usage and granularity of 3 minutes can be configured.
+But that still doesn't cover situations when sub-second ganularity would better inform debugging of "micro events".
+
+To save on disk space, many monitoring vendors sample readings from among servers, which would reduce granularity of a specific server even more.
 
 
 TODO: Complete this article:
