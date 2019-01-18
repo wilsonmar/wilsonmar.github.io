@@ -1446,7 +1446,7 @@ dtan4
    is Ruby code.
 
 <a target="_blank" href="https://www.linkedin.com/in/kylerockman/">
-Kyle Rockman</a> (<a target="_blank" href="https://twitter.com/Rocktavious">@Rocktavious</a>)
+Kyle Rockman</a> (<a target="_blank" href="https://twitter.com/Rocktavious">@Rocktavious</a>, author of <a target="_blank" href="https://makers.underarmour.com/hello-jenkins-pipelines/">Jenkins Pipelines</a> and <a target="_blank" href="https://github.com/rocktavious">github.com/rocktavious</a>)
 <a target="_blank" href="https://www.hashicorp.com/resources/how-non-technical-staff-use-terraform">presented at HashiConf17</a> 
 (<a target="_blank" href="https://slides.com/roctavious/estate">slides</a>)
 a self-service app to use Terraform (powered by React+Redux using Jinga2 to Gunicorn + Djanjo back end running HA in AWS) 
