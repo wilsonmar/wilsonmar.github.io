@@ -1091,6 +1091,9 @@ say "script ended."  # through speaker
 
 https://jasonjwilliamsny.github.io/wrangling-genomics/01-automating_a_workflow.html
 
+<a target="_blank" href="http://www.tldp.org/LDP/abs/html/abs-guide.html">
+Advanced Bash-Scripting Guide: An in-depth exploration of the art of shell scripting</a>
+2012 by Mendel Cooper
 
 https://www.greenend.org.uk/rjk/tech/shellmistakes.html
 
