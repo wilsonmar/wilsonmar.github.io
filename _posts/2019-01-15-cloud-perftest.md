@@ -346,7 +346,7 @@ Tad Einstein recommends this command to delete Forwarding rule in a Bash script:
 To obtain the FORWARDING_RULE value, one can get a list manually via the UI at Networking -> Load Balancing -> advanced options -> Forwarding rules.
 Alternately, this command lists them:
 
-<pre>RESULT=$(gcloud compute forwarding-rules list)</strong>
+<pre>RESULT=$(gcloud compute forwarding-rules list)</pre>
 
 It is necessary to select the specific rule when there are several Forwarding rules being used.
 So the Forwarding rule must be captured when it is created.
@@ -357,7 +357,7 @@ Automated monitoring and alerts are useful so you can sleep better at night rath
 
 <a name="Monitoring"></a>
 
-## Monitoring Granularity
+## Monitoring granularity and fidelity
 
 The default granularity of AWS monitoring service (CloudWatch) is one datapoint every <strong>5 minutes</strong>, and does not include monitoring of memory usage. Monitoring of memory usage and granularity of <strong>3 minutes</strong> can be configured.
 But that still doesn't cover situations where sub-second ganularity is needed to inform debugging of "micro events".
