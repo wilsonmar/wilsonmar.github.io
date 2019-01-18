@@ -356,6 +356,7 @@ So the advice here is to run cloud scripts using automated scripts so that comma
 Some organizations prefer to automate all aspects of setting up all aspects of a server, installing the operating system, drivers, etc.
 This is would enable the organization to quickly respond to "zero day" security vulnerabilities can can crop up in any part of a system.
 This would also enable the organization to take advantage of lower prices for "bare metal" server instances from IBM and (since 2018) AWS.
+But is the total cost of running bare-metal boxes really cheaper than other approaches?
 
 Automated monitoring and alerts replace the need for constant human vigilence, so you can sleep better at night rather than worrying.
 
