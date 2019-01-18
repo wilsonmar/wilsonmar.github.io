@@ -353,7 +353,7 @@ So the Forwarding rule must be captured when it is created.
 
 So the advice here is to run cloud scripts using automated scripts so that commands such as the above can be inserted when needed.
 
-Automated monitoring and alerts are useful so you can sleep better at night rather than worrying.
+Automated monitoring and alerts replace the need for constant human vigilence, so you can sleep better at night rather than worrying.
 
 <a name="Monitoring"></a>
 
@@ -362,20 +362,20 @@ Automated monitoring and alerts are useful so you can sleep better at night rath
 The default granularity of AWS monitoring service (CloudWatch) is one datapoint every <strong>5 minutes</strong>, and does not include monitoring of memory usage. Monitoring of memory usage and granularity of <strong>3 minutes</strong> can be configured.
 But that still doesn't cover situations where sub-second ganularity is needed to inform debugging of "micro events".
 
-To save on disk space, many traditional monitoring truncate data of more granular detail over time.
-For example, although individual data points are every 5 minutes, after a week, only the average of each day's data are kept.
-This is not a useful practice for helping with debugging issues over time.
-A compromise is calculate and store, in addition to averages, 90th or 95th percentile calculations.<a target="_blank" href="https://www.dynatrace.com/news/blog/why-averages-suck-and-percentiles-are-great/" title="Why Averages Suck and Percentiles are Great, November 14, 2012 by Michael Kopp">*</a>
-
-To further save on disk space, many monitoring vendors <strong>sample</strong> readings from among servers,
+To save on disk space, many monitoring vendors <strong>sample</strong> readings from among servers,
 taking perhaps just 1% of all readings captured. 
 This would reduce the fidelity of a specific server even more.
+
+To further save on disk space, many traditional monitoring utilities <strong>truncate</strong> data of more granular detail over time.
+For example, although individual data points are collected every 5 minutes, after a week, only the average of each day's data are kept.
+This is not a useful practice for helping with debugging issues over time.
+A compromise is to calculate and store, in addition to averages, 90th or 95th percentile calculations.<a target="_blank" href="https://www.dynatrace.com/news/blog/why-averages-suck-and-percentiles-are-great/" title="Why Averages Suck and Percentiles are Great, November 14, 2012 by Michael Kopp">*</a>
 
 So when there is a cluster of machines, use general metrics to determine whether they are all using comparable amounts of CPU, memory, etc..
 (An example of such a metric is the <a target="_blank" href="https://dsp.stackexchange.com/questions/811/determining-the-mean-and-standard-deviation-in-real-time">running</a> Coefficient of Variation (CV) obtained by dividing the standard deviation into the average.)
 
 More granular metrics on just one of the servers within a cluster can then be used.
-This would reduce disk space usage. 
+This would reduce disk space usage for metrics.
 This would also provide an indicator of the impact of adding more grandular measurements to a machine.
 
 On the metrics dashboard, <strong>one line</strong> representing whether all servers are at a similar level of load can replace a graph containing separate lines for each server. Taking that further, one line can represent whether all metrics about a cluster are "nominal" can replace a whole set of lines about each metric about a cluster. That's kinda like a person's FICO (finacial) score that consists of several aspects of credit trusworthiness.
