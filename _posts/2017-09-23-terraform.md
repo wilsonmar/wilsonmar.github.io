@@ -454,9 +454,14 @@ Unpacking objects: 100% (12/12), done.
    <img width="683" alt="terraform-ref-arch-683x407-106209" src="https://user-images.githubusercontent.com/300046/39746950-248190d8-5269-11e8-840d-ba14a45499bc.jpg"></a>
 
    An additional $500 a month gets you access to their <a target="_blank" href="https://gruntwork.teachable.com/p/reference-architecture-walkthrough/">
-   Reference Architecture Walktrough video class</a>.
+   Reference Architecture Walktrough video class</a>. But previews of the class is free:
 
-For those without the big bucks, Yevgeniy (Jim) Brikman (<a target="_blank" href="https://www.ybrikman.com/">ybrikman.com</a>, co-founder of DevOps as a Service <a target="_blank" href="https://Gruntwork.io/">Gruntwork.io</a>) has generously shared:
+   * <a target="_blank" href="https://gruntwork.teachable.com/courses/reference-architecture-walkthrough/lectures/4211191">Course overview</a>
+   * <a target="_blank" href="https://gruntwork.teachable.com/courses/reference-architecture-walkthrough/lectures/4211435">Architecture overview</a>
+   * <a target="_blank" href="https://gruntwork.teachable.com/courses/reference-architecture-walkthrough/lectures/4211737">Code organization overview</a>
+   <br /><br />
+
+For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" href="https://www.ybrikman.com/">ybrikman.com</a>, co-founder of DevOps as a Service <a target="_blank" href="https://Gruntwork.io/">Gruntwork.io</a>) has generously shared:
 
    * <a target="_blank" href="
    https://github.com/gruntwork-io/intro-to-terraform">
