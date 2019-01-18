@@ -332,30 +332,54 @@ Speaking of "sticky", there are sticky service charges ...
 
 ## Automation to avoid runaway bills
 
-One of the risks with being able to get a lot of capacity quickly is that bills can pile up just as quickly, and sometime inexplicably.
+One of the risks with being able to get a lot of capacity quickly is that bills can pile up just as quickly, and sometimes inexplicably.
 <a target="_blank" href="https://stackoverflow.com/questions/37675663/huge-costs-for-the-network-load-balancing-forwarding-rules-on-google-cloud-platf/41675413
 ">Runaway bills</a> are a concern when using clouds.
 
 For example, I kept being charged $35 a month on an account I used only once to provision a server that I shortly terminated.
 It turns out that Google's shutdown script doesn't remove <a target="_blank" href="https://cloud.google.com/compute/docs/load-balancing/network/forwarding-rules">Forwarding rules</a> created when servers run within a cluster.
 
-Tad Einstein recommended commands instead of manual UI Networking -> Load Balancing -> advanced options -> Forwarding rules to list their IDs to be used for deletion:
+Tad Einstein recommends this command to delete Forwarding rule in a Bash script:
 
-<pre>RESULT=$(gcloud compute forwarding-rules list)
-gcloud compute forwarding-rules delete [FORWARDING_RULE]</pre>
+   <pre>gcloud compute forwarding-rules delete "$FORWARDING_RULE"</pre>
 
-So the advice here is to run cloud scripts using automation script so that commands such as the above can be inserted when needed.
+To obtain the FORWARDING_RULE value, one can get a list manually via the UI at Networking -> Load Balancing -> advanced options -> Forwarding rules.
+Alternately, this command lists them:
 
+<pre>RESULT=$(gcloud compute forwarding-rules list)</strong>
+
+It is necessary to select the specific rule when there are several Forwarding rules being used.
+So the Forwarding rule must be captured when it is created.
+
+So the advice here is to run cloud scripts using automated scripts so that commands such as the above can be inserted when needed.
+
+Automated monitoring and alerts are useful so you can sleep better at night rather than worrying.
 
 <a name="Monitoring"></a>
 
 ## Monitoring Granularity
 
-The default granularity of AWS monitoring service (CloudWatch) is one datapoint every 5 minutes, and does not include monitoring of memory usage.
-Monitoring of memory usage and granularity of 3 minutes can be configured.
-But that still doesn't cover situations when sub-second ganularity would better inform debugging of "micro events".
+The default granularity of AWS monitoring service (CloudWatch) is one datapoint every <strong>5 minutes</strong>, and does not include monitoring of memory usage. Monitoring of memory usage and granularity of <strong>3 minutes</strong> can be configured.
+But that still doesn't cover situations where sub-second ganularity is needed to inform debugging of "micro events".
 
-To save on disk space, many monitoring vendors sample readings from among servers, which would reduce granularity of a specific server even more.
+To save on disk space, many traditional monitoring truncate data of more granular detail over time.
+For example, although individual data points are every 5 minutes, after a week, only the average of each day's data are kept.
+This is not a useful practice for helping with debugging issues over time.
+A compromise is calculate and store, in addition to averages, 90th or 95th percentile calculations.<a target="_blank" href="https://www.dynatrace.com/news/blog/why-averages-suck-and-percentiles-are-great/" title="Why Averages Suck and Percentiles are Great, November 14, 2012 by Michael Kopp">*</a>
+
+To further save on disk space, many monitoring vendors <strong>sample</strong> readings from among servers,
+taking perhaps just 1% of all readings captured. 
+This would reduce the fidelity of a specific server even more.
+
+So when there is a cluster of machines, use general metrics to determine whether they are all using comparable amounts of CPU, memory, etc..
+(An example of such a metric is the <a target="_blank" href="https://dsp.stackexchange.com/questions/811/determining-the-mean-and-standard-deviation-in-real-time">running</a> Coefficient of Variation (CV) obtained by dividing the standard deviation into the average.)
+
+More granular metrics on just one of the servers within a cluster can then be used.
+This would reduce disk space usage. 
+This would also provide an indicator of the impact of adding more grandular measurements to a machine.
+
+On the metrics dashboard, <strong>one line</strong> representing whether all servers are at a similar level of load can replace a graph containing separate lines for each server. Taking that further, one line can represent whether all metrics about a cluster are "nominal" can replace a whole set of lines about each metric about a cluster. That's kinda like a person's FICO (finacial) score that consists of several aspects of credit trusworthiness.
+
 
 
 TODO: Complete this article:
@@ -401,4 +425,9 @@ Here is a list of tasks mentioned above, in usual sequence of execution:
 
 1. How quickly additional capacity is added after a request.
 
+
+## References
+
+* <a target="_blank" href="https://www.digitalocean.com/community/tutorials/an-introduction-to-load-testing">
+An Introduction to Load Testing</a> September 12, 2017
 
