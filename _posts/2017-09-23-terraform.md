@@ -1445,8 +1445,15 @@ dtan4
    https://github.com/dtan4/terraforming</a>
    is Ruby code.
 
+<a target="_blank" href="https://www.linkedin.com/in/kylerockman/">
+Kyle Rockman</a> (<a target="_blank" href="https://twitter.com/Roktavious">@Roktavious</a>)
+<a target="_blank" href="https://www.hashicorp.com/resources/how-non-technical-staff-use-terraform">presented at HashiConf17</a> 
+(<a target="_blank" href="https://slides.com/roctavious/estate">slides</a>)
+a self-service app to use Terraform (powered by React+Redux using Jinga2 to Gunicorn + Djanjo back end running HA in AWS) 
+that he hopes to open-source at <a target="_blank" href="https://github.com/underarmour">github.com/underarmour</a>
 
-Others (YouTube videos):
+
+### Others (YouTube videos):
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=p2ESyuqPw1A">
 Terraform w/ Lee Trout Chadev</a>
