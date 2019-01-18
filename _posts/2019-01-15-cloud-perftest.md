@@ -353,13 +353,17 @@ So the Forwarding rule must be captured when it is created.
 
 So the advice here is to run cloud scripts using automated scripts so that commands such as the above can be inserted when needed.
 
+Some organizations prefer to automate all aspects of setting up all aspects of a server, installing the operating system, drivers, etc.
+This is would enable the organization to quickly respond to "zero day" security vulnerabilities can can crop up in any part of a system.
+This would also enable the organization to take advantage of lower prices for "bare metal" server instances from IBM and (since 2018) AWS.
+
 Automated monitoring and alerts replace the need for constant human vigilence, so you can sleep better at night rather than worrying.
 
 <a name="Monitoring"></a>
 
 ## Monitoring granularity and fidelity
 
-The default granularity of AWS monitoring service (CloudWatch) is one datapoint every <strong>5 minutes</strong>, and does not include monitoring of memory usage. Monitoring of memory usage and granularity of <strong>3 minutes</strong> can be configured.
+The default granularity of AWS monitoring service (CloudWatch) is one datapoint every <strong>5 minutes</strong>, and does not include monitoring of memory usage. Monitoring of memory usage and granularity of <strong>1 minutes</strong> can be configured (at additional cost).
 But that still doesn't cover situations where sub-second ganularity is needed to inform debugging of "micro events".
 
 To save on disk space, many monitoring vendors <strong>sample</strong> readings from among servers,
@@ -367,7 +371,8 @@ taking perhaps just 1% of all readings captured.
 This would reduce the fidelity of a specific server even more.
 
 To further save on disk space, many traditional monitoring utilities <strong>truncate</strong> data of more granular detail over time.
-For example, although individual data points are collected every 5 minutes, after a week, only the average of each day's data are kept.
+For example, individual data points collected are deleted after a week.
+Some keep just the average of each day's measurement.
 This is not a useful practice for helping with debugging issues over time.
 A compromise is to calculate and store, in addition to averages, 90th or 95th percentile calculations.<a target="_blank" href="https://www.dynatrace.com/news/blog/why-averages-suck-and-percentiles-are-great/" title="Why Averages Suck and Percentiles are Great, November 14, 2012 by Michael Kopp">*</a>
 
