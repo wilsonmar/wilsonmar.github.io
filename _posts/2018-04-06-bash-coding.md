@@ -1089,7 +1089,10 @@ say "script ended."  # through speaker
 
 ## References
 
-https://jasonjwilliamsny.github.io/wrangling-genomics/01-automating_a_workflow.html
+<a target="_blank" href="https://www.amazon.com/dp/1788990552/">
+$18 Mastering Linux Shell Scripting: A practical guide to Linux command-line, Bash scripting, and Shell programming, 2nd Edition Paperback</a> 
+– April 19, 2018 by Mokhtar Ebrahim and Andrew Mallett 
+
 
 <a target="_blank" href="http://www.tldp.org/LDP/abs/html/abs-guide.html">
 Advanced Bash-Scripting Guide: An in-depth exploration of the art of shell scripting</a>
@@ -1110,12 +1113,14 @@ http://www.linuxjournal.com/article/9001  on CPU Load Averages
 https://www.digitalocean.com/community/tutorials/how-to-use-bash-s-job-control-to-manage-foreground-and-background-processes
 
 https://github.com/Bash-it/bash-it
-a collection of community Bash commands and scripts for Bash 3.2+. (And a shameless ripoff of oh-my-zsh 😃)
+a collection of community Bash commands and scripts for Bash 3.2+. (And a shameless ripoff of oh-my-zsh )
 Includes autocompletion, themes, aliases, custom functions, a few stolen pieces from Steve Losh, and more.
 
 https://github.com/denysdovhan/bash-handbook
 
    See https://scriptingosx.com/2017/10/on-the-shebang/
+
+https://jasonjwilliamsny.github.io/wrangling-genomics/01-automating_a_workflow.html
 
 ## TODO's
 

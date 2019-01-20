@@ -240,6 +240,7 @@ This is explained by <a target="_blank" href="https://www.thoughtworks.com/insig
 
 * http://www.devopsonline.co.uk/
 
+* <a target="_blank" href="https://www.lucidchart.com/blog/devops-process-flow">lucidchart.com/blog/devops-process-flow</a> describes the <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/DevopsDoctrine.html">DevOps Doctrine Lucid Chart</a> shown in LinuxAcademy.com's video course.
 
 
 ## More on DevOps #

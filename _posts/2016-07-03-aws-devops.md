@@ -21,8 +21,8 @@ https://wilsonmar.github.io/aws-devops/</a>
 This tutorial describes information to get certified as a <a target="_blank" href="https://aws.amazon.com/certification/certified-devops-engineer-professional/">
 AWS Certified DevOps Engineer - Professional</a>,
 which focuses on continuous integration and deployment in the AWS EC2 cloud.
-It costs $300 USD to <strong>write out</strong> 80 essay (not multiple-choice) questions in 170 minutes (with no breaks). <strong>That's 2.1 seconds per question.</strong>
-Those who fail the exam must wait 30 days before being allowed to retake the exam,
+You pay $300 USD to <strong>write out</strong> 80 essay (not multiple-choice) questions in 170 minutes (3 hours with no breaks). <strong>That's 2.1 seconds per essay question.</strong>
+Those who fail the exam must wait 30 days before being allowed to retake the exam (at additional cost),
 and only 3 times in a 12 month period.
 
 Its pre-requisite is passing either one:
@@ -36,7 +36,7 @@ Amazon</a> defines "DevOps is the combination of cultural philosophies, practice
 
 <a name="CodeDeploy"></a>
 
-## CodeCommit, CodePipeline, Code Deploy #
+## CodeCommit, CodePipeline, CodeDeploy #
 
 ![aws devops 201606-650x209-i11](https://cloud.githubusercontent.com/assets/300046/17295043/77eae0e8-57b7-11e6-958b-dc26ebe74361.jpg)
 
@@ -106,7 +106,6 @@ Amazon</a> defines "DevOps is the combination of cultural philosophies, practice
 
 0. Create a Deployment Group or Autoscaling Group
 0. CodePipeline
-
 
 0. appspec.yml file in the root folder in source code repo
 
@@ -215,6 +214,7 @@ Security, Governance, and Validation</a> 2h 11m July 26, 2016
    * Delegation & Federation
    * Corporate Identity Federation
    * Web Identity Federation
+   <br /><br />
 
 4. <a target="_blank" href="https://app.pluralsight.com/library/courses/high-availability-elasticity-aws-certified-devops-engineer">
 High Availability and Elasticity</a> 2h 51m Sept 26, 2016
