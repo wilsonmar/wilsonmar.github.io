@@ -47,6 +47,9 @@ An average LinkedIn user has about 1300 contacts within this distribution in 201
 
 ![social-media-strategy-linkedin-648x431-13031](https://user-images.githubusercontent.com/300046/51442384-06772380-1caa-11e9-8277-007214c6fb80.jpg)
 
+Among 500 Million users, 70% are outside USA, according to OmnicoreAgency.com.
+
+
 <strong>Number of Followers</strong> are also tracked on LinkedIn.
 
 <strong>Hit count</strong> is the number of people who landed on the site.
