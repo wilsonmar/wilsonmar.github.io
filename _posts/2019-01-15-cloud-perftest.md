@@ -254,10 +254,9 @@ Load Balancers can also use (X.509) SSL certificates installed to convert "https
 
 To determine whether each instance within an AWS EC2 Auto Scaling Group might be "OutOfService", Elastic Load Balancer listeners
 automatically check the health of instances within its Auto Scaling Group. The frequency between "pings" is set by the "Grace Period" (such as 300 seconds).<a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/2062/lesson/3/module/206">*</a>
-AWS can keep a time-series ELB Access Logs of requests processed by a Load Balancer, which saves response latencies along with time of occurance, client IP address, request paths, and server responses. But in AWS such need to be activated at intervals of either 5 or 60 minutes. AWS does NOT provide an UI to process the data using Elastic Map Reduce or other tool. Trends identified would include the time between acceptance of a connection to the first byte sent to an instance. 
+AWS can keep a time-series ELB Access Logs of requests processed by a Load Balancer, which saves response latencies along with time of occurance, client IP address, request paths, and server responses. But in AWS such need to be activated at intervals of either 5 or 60 minutes. AWS does NOT provide an UI to process the data using Elastic Map Reduce or other tool. Trends identified would include the time between acceptance of a connection to the first byte sent to an instance. Timings would include processing of a public key to match the one in the ELB setup with a back-end instance authentication policy.
 <!-- This is for either Layer 7 HTTP/HTTPS that uses X-Forwarded-for header to get client IP addresses or Layer 4 TPC using proxy protocol to get client address.
 -->
-In secure environments, timings would include processing of a public key to match the one in the ELB setup with a back-end instance authentication policy.
 
 TODO: Load balancer limits.
 
@@ -268,8 +267,11 @@ Files needed by application servers are obtained from an internal Network File S
 The concern with scaling is QUESTION: how quickly additional capacity is added or removed before/after need?
 
 The traditional on-premises approach is to order and buy <strong>excess</strong> server hardware based on projected peaks many months or years in advance. Thus, servers would use a fraction of their capacity, which remains unused much of the time. And if processing volume exceeds the peak, the whole system would degrade or fail. In a cloud, although capacity can be added dynamically, it needs to be added slightly before need to provide a margin to handle growth while additional instances are brought up.
- 
+Bootstrapping instances in ASG can take 10 minutes or more. To avoid false alarms from being in "pending:complete" state before bootstrapping completes,
+create an <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">ASG Lifecycle Hook</a> to hold instance in a "pending:wait" state until bootstrapping completes.
 
+
+TODO: <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Auto Scaling Limits</a>
 
 
 ## Cloud
@@ -382,9 +384,7 @@ then route to the cloud of their choice. QUESTION: How much latency does that in
 
 ## Monitoring granularity and fidelity
 
-
 Automated monitoring and alerts replace the need for constant human vigilence, so you can sleep better at night rather than worrying.
-
 
 Some organizations prefer to automate all aspects of setting up all aspects of a server, installing the operating system, drivers, etc.
 This is would enable the organization to quickly respond to "zero day" security vulnerabilities can can crop up in any part of a system.
