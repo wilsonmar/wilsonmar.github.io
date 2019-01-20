@@ -16,7 +16,7 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 
 <a target="_blank" href="https://wilsonmar.github.io/cloud-perftest/">This</a> is a story, a "deep-dive documentary", about how to ensure performance, scalability, availability, resilience, and affordability from building, testing, and running computer software applications on various environments. 
-The attempt here is a logical converage of strategies for several alternative architectures:
+The attempt here is a logical sequence to cover tactics and strategies for several alternative architectures over cloud platforms.
 
 * <a href="#Custom">Custom executables</a>
 * <a href="#SaaS">SaaS</a>
@@ -28,7 +28,7 @@ The attempt here is a logical converage of strategies for several alternative ar
 * <a href="#Lightsail">Amazon Lightsail</a>
 <br /><br />
 
-This will be re-published on Medium.
+TODO: Split up this long page into separate pages, and re-published on Medium as separate parts.
 
 
 <a name="Custom"></a>
@@ -250,23 +250,33 @@ Testing that deliberately downs a server to measure the speed of recovery is cal
 ## Load Balancing
 
 When multiple server instances are involved, a Load Balancer is needed to distribute work among them.
+Load Balancers can also use (X.509) SSL certificates installed to convert "https://" encrypted requests to unencrypted "http://" requests received. This reduces the decryption and encryption workload on individual servers. Some load balancers (such as F5) are specialized servers with special (ASIC) chips to process faster than standard computers.
 
-Load Balancers can also make use of SSL certificates on them to convert "https://" requests which have been encrypted to unencrypted "http://" requests. This reduces the deryption and encryption workload on individual servers. Some load balancers (such as F5) are specialized servers with special (ASIC) custom chips to process faster than standard computers.
+To determine whether each instance within an AWS EC2 Auto Scaling Group might be "OutOfService", Elastic Load Balancer listeners
+automatically check the health of instances within its Auto Scaling Group. The frequency between "pings" is set by the "Grace Period" (such as 300 seconds).<a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/2062/lesson/3/module/206">*</a>
+AWS can keep a time-series ELB Access Logs of requests processed by a Load Balancer, which saves response latencies along with time of occurance, client IP address, request paths, and server responses. But in AWS such need to be activated at intervals of either 5 or 60 minutes. AWS does NOT provide an UI to process the data using Elastic Map Reduce or other tool. Trends identified would include the time between acceptance of a connection to the first byte sent to an instance. 
+<!-- This is for either Layer 7 HTTP/HTTPS that uses X-Forwarded-for header to get client IP addresses or Layer 4 TPC using proxy protocol to get client address.
+-->
+In secure environments, timings would include processing of a public key to match the one in the ELB setup with a back-end instance authentication policy.
+
+TODO: Load balancer limits.
 
 BTW, when servers behind a firewall use unencrypted traffic, a single "Bastion host" is setup for administrators (on pre-defined IP addresses) to obtain files from the open internet. Such a server is the only one that goes through a NAT (Network Address Translation) "Gateway" which hides IP addresses from the outside world. 
 
 Files needed by application servers are obtained from an internal Network File Share (NFS) or file respository server managed by utility software such as Nexus or Artifactory.
 
-The concern with scaling is how quickly additional capacity is added.
+The concern with scaling is QUESTION: how quickly additional capacity is added or removed before/after need?
 
-The traditional on-premises approach is to order and buy excess server hardware based on projected peaks many months or years in advance. Servers would use a fraction of their capacity, which remains unused much of the time. And if processing volume exceeds the peak, the whole system would degrade or fail.
+The traditional on-premises approach is to order and buy <strong>excess</strong> server hardware based on projected peaks many months or years in advance. Thus, servers would use a fraction of their capacity, which remains unused much of the time. And if processing volume exceeds the peak, the whole system would degrade or fail. In a cloud, although capacity can be added dynamically, it needs to be added slightly before need to provide a margin to handle growth while additional instances are brought up.
+ 
+
 
 
 ## Cloud
 
-A public cloud of servers such as Amazon AWS pools unused capacity for allocation when needed.
+A cloud of servers such as Amazon AWS <strong>pools unused capacity</strong> for allocation when needed.
 
-When spinning up EC2 (Elastic Compute Cloud) server instances,
+When spinning up AWS EC2 (Elastic Compute Cloud) server instances,
 there is a concern about how quickly additional capacity can be added.
 Currently, it can take 20 minutes or more between the request and when a new server being able to process application transactions. It helps to track the actual time in order to design auto-scaling settings.<a href="#Task">*</a>
 
@@ -336,10 +346,12 @@ One of the risks with being able to get a lot of capacity quickly is that bills 
 <a target="_blank" href="https://stackoverflow.com/questions/37675663/huge-costs-for-the-network-load-balancing-forwarding-rules-on-google-cloud-platf/41675413
 ">Runaway bills</a> are a concern when using clouds.
 
-For example, I kept being charged $35 a month on an account I used only once to provision a server that I shortly terminated.
-It turns out that Google's shutdown script doesn't remove <a target="_blank" href="https://cloud.google.com/compute/docs/load-balancing/network/forwarding-rules">Forwarding rules</a> created when servers run within a cluster.
+For example, when I kept being charged $35 a month on an account I provisioned server instances I shortly terminated, investigation by
+Tad Einstein from Google revealed that Google's shutdown script doesn't automatically remove <a target="_blank" href="https://cloud.google.com/compute/docs/load-balancing/network/forwarding-rules">Forwarding rules</a> created when servers run within a cluster.
 
-Tad Einstein recommends this command to delete Forwarding rule in a Bash script:
+<a target="_blank" href="https://cloud.google.com/load-balancing/docs/https/"><img alt="gcp-forwarding-rule-703x261-34213.png" src="https://user-images.githubusercontent.com/300046/51440177-46321100-1c92-11e9-99a1-4ff5a76a08b0.png"></a>
+
+To delete Forwarding rules in a Bash script:
 
    <pre>gcloud compute forwarding-rules delete "$FORWARDING_RULE"</pre>
 
@@ -348,10 +360,28 @@ Alternately, this command lists them:
 
 <pre>RESULT=$(gcloud compute forwarding-rules list)</pre>
 
-It is necessary to select the specific rule when there are several Forwarding rules being used.
-So the Forwarding rule must be captured when it is created.
+The RESULT variable above captures the list of forwarding rules created.
+If there is a possibility that there are several, it is necessary to select the specific rule to delete.
+So ideally you would build up the whole environment each time so there is no question there is no lingering rules.
 
-So the advice here is to run cloud scripts using automated scripts so that commands such as the above can be inserted when needed.
+### Automation options
+
+The advice here is to run cloud using automated scripts so that commands such as the above can be inserted when needed.
+
+AWS has its CloudFormation YAML declarative specifications are "configuration as code",
+stored in a version control repository such as GitHub, which enables fall-back to the complete set of files at various points back in time.
+Puppet then puts instances into a specific state.
+
+Hashicorp's Terraform equivalent HCL (which adds comments to YAML) can work across several clouds (AWS, Azure, GCP, etc.).
+
+Also to enable multi-cloud capability, some companies put their public-facing load balancers in their own data centers,
+then route to the cloud of their choice. QUESTION: How much latency does that introduce?
+
+
+<a name="Monitoring"></a>
+
+## Monitoring granularity and fidelity
+
 
 Automated monitoring and alerts replace the need for constant human vigilence, so you can sleep better at night rather than worrying.
 
@@ -360,11 +390,6 @@ Some organizations prefer to automate all aspects of setting up all aspects of a
 This is would enable the organization to quickly respond to "zero day" security vulnerabilities can can crop up in any part of a system.
 This would also enable the organization to take advantage of lower prices for "bare metal" server instances from IBM and (since 2018) AWS.
 But is the total cost of running bare-metal boxes really cheaper than other approaches?
-
-
-<a name="Monitoring"></a>
-
-## Monitoring granularity and fidelity
 
 The default granularity of AWS monitoring service (CloudWatch) is one datapoint every <strong>5 minutes</strong>, and does not include monitoring of memory usage. Monitoring of memory usage and granularity of <strong>1 minutes</strong> can be configured (at additional cost).
 But that still doesn't cover situations where sub-second ganularity is needed to inform debugging of "micro events".
@@ -389,13 +414,27 @@ This would also provide an indicator of the impact of adding more grandular meas
 On the metrics dashboard, <strong>one line</strong> representing whether all servers are at a similar level of load can replace a graph containing separate lines for each server. Taking that further, one line can represent whether all metrics about a cluster are "nominal" can replace a whole set of lines about each metric about a cluster. That's kinda like a person's FICO (finacial) score that consists of several aspects of credit trusworthiness.
 
 
+QUESTION: How much time elapsed between alarm and reponse? This would involve recording events in a database, with analytics on that database.
+Within AWS, CloudWatch would store a new row within RDS.
+
+Furthermore, an email, SMS text, or Slack notification can be sent out when a thresholds or events occur.
+Within AWS, 
+
+To get ahead of events, how long could the alarm event could be <strong>predicted</strong>?
+That's where ratios might be used.
+
+<hr />
 
 TODO: Complete this article:
 
-Load balancer limits.
+AWS <a target="_blank" href="https://www.youtube.com/watch?v=xhc1boyBkJw">Elastic Beanstalk</a> to deploy apps
 
 
 Instance limits.
+
+Blue-Green Deployments
+
+A/B testing
 
 
 <a name="Lightsail"></a>
