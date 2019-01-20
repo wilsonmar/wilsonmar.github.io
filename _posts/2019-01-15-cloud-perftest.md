@@ -376,6 +376,13 @@ Puppet then puts instances into a specific state.
 
 Hashicorp's Terraform equivalent HCL (which adds comments to YAML) can work across several clouds (AWS, Azure, GCP, etc.).
 
+
+
+There are some differences in settings during testing vs. during production. For example, production Auto-Scaling Termination Policies would use "ClosestToNextInstanceHour" to save some money for Windows instances which are charged by the hour rather than Linux instances which are charged by the minute.
+But when testing a new launch configuration, it may be easier to terminate "NewestInstance" first.
+
+
+
 Also to enable multi-cloud capability, some companies put their public-facing load balancers in their own data centers,
 then route to the cloud of their choice. QUESTION: How much latency does that introduce?
 
