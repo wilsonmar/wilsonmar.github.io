@@ -42,6 +42,13 @@ An effective <strong>influencer</strong> is one who can get people to do the abo
 
 ## Measurements #
 
+<strong>1st Level Connections</strong> on LinkedIn are the number of individuals who have connected to one another.
+An average LinkedIn user has about 1300 contacts within this distribution in 2018:<a target="_blank" href="http://tradeshows.academy/interesting-statistics-on-the-number-of-linkedin-connections-per-user/">*</a>
+
+![social-media-strategy-linkedin-648x431-13031](https://user-images.githubusercontent.com/300046/51442384-06772380-1caa-11e9-8277-007214c6fb80.jpg)
+
+<strong>Number of Followers</strong> are also tracked on LinkedIn.
+
 <strong>Hit count</strong> is the number of people who landed on the site.
 The same person who looks at 10 pages would register 10 hits.
 
