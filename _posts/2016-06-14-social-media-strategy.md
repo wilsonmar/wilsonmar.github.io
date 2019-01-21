@@ -21,9 +21,9 @@ What is the purpose of social media?
 
 It's not enough just to have an account with some words and pictures.
 
-What percent of your activity results in some <strong>action</strong> by readers:
+An effective influencer is one who can get others to take <strong>action</strong> such as:
 
-   * Buy something
+   * Buy something (generate revenue)
 
    * Retweet to expand <strong>reach</strong>
 
@@ -33,13 +33,14 @@ What percent of your activity results in some <strong>action</strong> by readers
 
    * Download a white paper (pdf)
 
-   * Friend you on Facebook
+   * Like or Friend you on Facebook, GitHub, etc.
 
-   * Follow you on Instagram
+   * Follow you on Instagram, LinkedIn, etc.
    
    etc.
 
-An effective <strong>influencer</strong> is one who can get people to do the above.
+Some websites "gamify" their site to reward points for visitors to do the above
+What percent of your activity results in some <strong>action</strong> by readers:
 
 
 ## Measurements #
