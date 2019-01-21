@@ -35,7 +35,9 @@ What percent of your activity results in some <strong>action</strong> by readers
 
    * Friend you on Facebook
 
-   * etc.
+   * Follow you on Instagram
+   
+   etc.
 
 An effective <strong>influencer</strong> is one who can get people to do the above.
 

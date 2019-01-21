@@ -250,9 +250,10 @@ Testing that deliberately downs a server to measure the speed of recovery is cal
 ## Load Balancing
 
 When multiple server instances are involved, a Load Balancer is needed to distribute work among them.
-Load Balancers can also use (X.509) SSL certificates installed to convert "https://" encrypted requests to unencrypted "http://" requests received. This reduces the decryption and encryption workload on individual servers. Some load balancers (such as F5) are specialized servers with special (ASIC) chips to process faster than standard computers. F5 itself, NGINX, Cisco, and others also have software-based load balancers.
+Load Balancers can also use (X.509) SSL certificates installed to convert "https://" encrypted requests to unencrypted "http://" requests passed on to web servers. This reduces the decryption and encryption workload on individual servers. Some load balancers (such as F5) are specialized servers with special (ASIC) chips to process faster than standard computers. F5 itself, NGINX, Cisco, and others also have software-based load balancers.
 
-Each Load Balancers and Auto Scaling Group (ASG) keeps its own set of logs to S3 objects.
+
+Each Load Balancer and Auto Scaling Group (ASG) keeps its own set of logs to S3 objects.
 So first set S3 bucket Properties > Logging of "aws-bucket-logging" to enabled.
 
 To determine whether each instance within an AWS EC2 Auto Scaling Group (ASG) is "OutOfService", Elastic Load Balancer listeners
@@ -287,8 +288,7 @@ So filtering and analytics visualization are done using additional tools:
 
 <a target="_blank" href="http://dangoldin.com/2018/02/20/analyzing-aws-elb-logs/">
 SQL queries for ELB Logs</a>
-filter for Non 200 response codes
-and the time frame of calls.
+filter for response codes that are not 200, and the time frame of calls.
 
 
 
