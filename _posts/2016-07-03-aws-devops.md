@@ -192,12 +192,12 @@ This is simpler than Packer from Hashicorp.
 
 <a target="_blank" href="https://au.linkedin.com/in/Nick Triantafillou">
 Australian</a> Nick Triantafillou (@xelfer)
-recorded 6 hours of videos that covers 60 lessons in
+for $99 provides 6 hours of videos covering 60 lessons in
 <a target="_blank" href="https://acloud.guru/learn/aws-certified-devops-engineer-professional">
-his course</a> which can be purchased separately for $99.
+his ACloud.guru course</a>.
 
 Mike Pfeiffer
-created at Pluralsight a series of video courses, one for each <strong>"domain" of the AWS Certified DevOps Engineer Professional exam:
+created at Pluralsight a series of video courses, one for each "domain" of the AWS Certified DevOps Engineer Professional exam:
 
 1. <a target="_blank" href="https://app.pluralsight.com/library/courses/continuous-delivery-automation-aws-certified-devops-engineer">
 Continuous Delivery and Process Automation</a> 4h 16m Apr 28, 2016
@@ -207,6 +207,7 @@ Monitoring, Metrics, and Logging</a> 2h 46m June 2, 2016
 
    * CloudWatch
    * CloudTrail
+   <br /><br />
 
 3. <a target="_blank" href="https://app.pluralsight.com/library/courses/security-governance-validation-aws-certified-devops-engineer">
 Security, Governance, and Validation</a> 2h 11m July 26, 2016
@@ -226,8 +227,9 @@ High Availability and Elasticity</a> 2h 51m Sept 26, 2016
    * Aurora
    * SQS
    * Kinesis
+   <br /><br />
 
-Justin Manga (@jmenga, pseudo.co.de) in video course
+Justin Manga (@jmenga, pseudo.co.de) in Pluralsight video course
 <a target="_blank" href="https://app.pluralsight.com/player?course=docker-ansible-continuous-delivery">
 Continuous Delivery using Docker and Ansible</a> 
 shows learners how to create a Python app,
@@ -249,9 +251,9 @@ ARG DOCKER_COMPOSE=1.6.2
 
 ## Boto Python
 
-https://github.com/boto/boto3
 The README page says "Boto3 is the Amazon Web Services (AWS) Software Development Kit (SDK) for Python, which allows Python developers to write software that makes use of services like Amazon S3 and Amazon EC2."
 
+<a target="_blank" href="https://github.com/boto/boto3">https://github.com/boto/boto3</a>
 
 <a target="_blank" href="http://www.oznetnerd.com/python-demystifying-aws-boto3/">NOTE</a>:
 Boto 3 is built on top of Botocore used by the AWS CLI:

@@ -42,12 +42,12 @@ An effective <strong>influencer</strong> is one who can get people to do the abo
 
 ## Measurements #
 
-<strong>1st Level Connections</strong> on LinkedIn are the number of individuals who have connected to one another.
+<strong>1st Level Connections</strong> on LinkedIn are the number of others who have connected to an individual user.
 An average LinkedIn user has about 1300 contacts within this distribution in 2018:<a target="_blank" href="http://tradeshows.academy/interesting-statistics-on-the-number-of-linkedin-connections-per-user/">*</a>
 
 ![social-media-strategy-linkedin-648x431-13031](https://user-images.githubusercontent.com/300046/51442384-06772380-1caa-11e9-8277-007214c6fb80.jpg)
 
-Among 500 Million users, 70% are outside USA, according to OmnicoreAgency.com.
+Among its 500 Million LinkedIn users, 70% are outside the USA, according to OmnicoreAgency.com.
 
 
 <strong>Number of Followers</strong> are also tracked on LinkedIn.
@@ -86,13 +86,13 @@ refers to the number of times some visitor clicks on an ad banner.
    "Chicago lawyer" was at one time the top rate.
 
 <strong>CPR (Cost Per Registration)</strong>
-counts those who finishes filling up an enquiry form.
+is based on a count of how many finish filling up a registration form (and confirmation email).
 
-<strong>CPS (Cost Per Sale)</strong> is the most desirable measure because that's the ultimate
+<strong>CPS (Cost Per Sale)</strong> is the most desirable measure to sites because that's the ultimate
 action for real revenue on ecommerce sites.
 
 <strong>CPA (Cost Per Action)</strong>
-is an include metrice that can include 
+is an inclusive metrice that can include 
 ad click, ad click, video view, registration, sale, or other activity.
 
 

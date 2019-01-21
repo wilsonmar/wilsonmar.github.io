@@ -250,17 +250,59 @@ Testing that deliberately downs a server to measure the speed of recovery is cal
 ## Load Balancing
 
 When multiple server instances are involved, a Load Balancer is needed to distribute work among them.
-Load Balancers can also use (X.509) SSL certificates installed to convert "https://" encrypted requests to unencrypted "http://" requests received. This reduces the decryption and encryption workload on individual servers. Some load balancers (such as F5) are specialized servers with special (ASIC) chips to process faster than standard computers.
+Load Balancers can also use (X.509) SSL certificates installed to convert "https://" encrypted requests to unencrypted "http://" requests received. This reduces the decryption and encryption workload on individual servers. Some load balancers (such as F5) are specialized servers with special (ASIC) chips to process faster than standard computers. F5 itself, NGINX, Cisco, and others also have software-based load balancers.
 
-To determine whether each instance within an AWS EC2 Auto Scaling Group might be "OutOfService", Elastic Load Balancer listeners
-automatically check the health of instances within its Auto Scaling Group. The frequency between "pings" is set by the "Grace Period" (such as 300 seconds).<a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/2062/lesson/3/module/206">*</a>
-AWS can keep a time-series ELB Access Logs of requests processed by a Load Balancer, which saves response latencies along with time of occurance, client IP address, request paths, and server responses. But in AWS such need to be activated at intervals of either 5 or 60 minutes. AWS does NOT provide an UI to process the data using Elastic Map Reduce or other tool. Trends identified would include the time between acceptance of a connection to the first byte sent to an instance. Timings would include processing of a public key to match the one in the ELB setup with a back-end instance authentication policy.
-<!-- This is for either Layer 7 HTTP/HTTPS that uses X-Forwarded-for header to get client IP addresses or Layer 4 TPC using proxy protocol to get client address.
+Each Load Balancers and Auto Scaling Group (ASG) keeps its own set of logs to S3 objects.
+So first set S3 bucket Properties > Logging of "aws-bucket-logging" to enabled.
+
+To determine whether each instance within an AWS EC2 Auto Scaling Group (ASG) is "OutOfService", Elastic Load Balancer listeners
+automatically check the health of instances within each ASG. The frequency between "pings" is set by the "Grace Period" (such as 300 seconds).<a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/2062/lesson/3/module/206">*</a>
+AWS can keep a time-series ELB Access Logs of requests processed by a Load Balancer, which saves response latencies along with time of occurance, client IP address, request paths, and server responses. But in AWS such need to be activated at intervals of either 5 or 60 minutes. 
+
+AWS does NOT provide an UI to process the logs it stores in S3. 
+So filtering and analytics visualization are done using additional tools:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=PFUcF9Ye0fc">
+   Amazon Elasticsearch Service & Kinesis</a> Mar 29, 2017 rather overkill with replicas
+
+   ![cloud-perftest-kinesis-643x145-6219](https://user-images.githubusercontent.com/300046/51477772-798aa380-1d57-11e9-857c-179262c97b76.jpg)
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=g1wxfYVjCPY">
+    Amazon CloudWatch Logs Insights (DEV375)</a> at AWS re:Invent 2018 Nov 29
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=uoLsrKZha0E">
+   S3 logs using Athena?</a>
+
+   * AWS Elastic Map Reduce
+
+   * Logz.io
+
+   * <a target="_blank" href="https://www.sumologic.com/blog/amazon-web-services/monitoring-aws-auto-scaling-and-elastic-load-balancers-with-log-analytics/">Sumologic</a> has an <a target="_blank" href="https://www.sumologic.com/application/elb/">app specifically to analyze ELB logs</a>. 
+
+   ![cloud-perftest-sumologic-elb-300ppi-1024x1020](https://user-images.githubusercontent.com/300046/51481296-89a78080-1d61-11e9-9cd0-6ed562d323ce.png)
+
+   * Splunk has its custom query language
+
+   <br /><br />
+
+<a target="_blank" href="http://dangoldin.com/2018/02/20/analyzing-aws-elb-logs/">
+SQL queries for ELB Logs</a>
+filter for Non 200 response codes
+and the time frame of calls.
+
+
+
+   <br /><br />
+
+Trends identified would include the time between acceptance of a connection to the first byte sent to an instance. Timings includes processing of a public key to match the one in the ELB setup with a back-end instance authentication policy.
+
+<!-- This is for either Layer 7 HTTP/HTTPS that uses X-Forwarded-for header to get client IP addresses via Application Load Balancers or 
+Layer 4 TCP using proxy protocol to get client addresses via Network or Classic Load Balancers
 -->
 
 TODO: Load balancer limits.
 
-BTW, when servers behind a firewall use unencrypted traffic, a single "Bastion host" is setup for administrators (on pre-defined IP addresses) to obtain files from the open internet. Such a server is the only one that goes through a NAT (Network Address Translation) "Gateway" which hides IP addresses from the outside world. 
+BTW, when servers behind a firewall use unencrypted traffic, they should not have connection to the public internet. But to obtain files from the open internet, a single "Bastion host" is setup for administrators (on pre-defined IP addresses). Such a server is the only one that goes through a NAT (Network Address Translation) "Gateway" which hides IP addresses from the outside world. 
 
 Files needed by application servers are obtained from an internal Network File Share (NFS) or file respository server managed by utility software such as Nexus or Artifactory.
 
@@ -325,7 +367,7 @@ Based on the <a target="_blank" href="http://deeplizard.com/learn/playlist/PLZbb
 Amazon continues to offer traditional elastic load balancer service with auto-scaling groups of individual servers.
 The service is controlled using Chef specifications.
 
-The concern with clusters of traditional programs is <strong>sticky sessions</strong> which stay on a particular server instance until time-out, which can be several hours. Meanwhile, that particular server instance cannot be downed for security updates, memory reclaimation, or whatever.
+The concern with clusters of executable programs is <strong>sticky sessions</strong> which stay on a particular server instance until time-out, which can be several hours. Meanwhile, that particular server instance cannot be downed for security updates, memory reclaimation, or whatever.
 In other words, it takes a long time to "bleed" instances of user sessions.
 This situation is caused by programs that was written to depend on the exchange of cookies in HTTP headers exchanged between client and server.
 With such an architecture, Load Balancers need to return a client to a specific server instance, and thus not "stateless".
@@ -334,7 +376,7 @@ Apps that are "stateless" can better take advantage of advanced scaling features
 
 ### Sticky vs. Stateless (more scalable and cheaper)
 
-Apps need to be "stateless" in order to make use of server instances than can disappear at any time, such as AWS EC2 instances purchased according to "spot rates" which fluctuate under an aucton system established by Amazon. Such rates are the lowest cost among all ways of charging.
+Apps need to be "stateless" in order to make use of server instances than can disappear at any time, such as AWS EC2 <strong>Spot instances</strong> purchased according to "spot rates" which fluctuate under an aucton system established by Amazon. Such rates are usually the lowest cost among all ways of charging.
 Thus, a system can be considered financially defective if it cannot take advantage of the lowest cost instances.
 Such a situation can and should be identified during technical planning stage.
 That is the rationale for considering performance issues early on rather than shortly before production when nothing much can be changed.
@@ -374,7 +416,7 @@ AWS has its CloudFormation YAML declarative specifications are "configuration as
 stored in a version control repository such as GitHub, which enables fall-back to the complete set of files at various points back in time.
 Puppet then puts instances into a specific state.
 
-Hashicorp's Terraform equivalent HCL (which adds comments to YAML) can work across several clouds (AWS, Azure, GCP, etc.).
+Hashicorp's Terraform equivalent HCL (which adds comments to YAML) is "multi-cloud" (stands up instances in AWS, Azure, GCP, etc.).
 
 
 
@@ -393,8 +435,8 @@ then route to the cloud of their choice. QUESTION: How much latency does that in
 
 Automated monitoring and alerts replace the need for constant human vigilence, so you can sleep better at night rather than worrying.
 
-Some organizations prefer to automate all aspects of setting up all aspects of a server, installing the operating system, drivers, etc.
-This is would enable the organization to quickly respond to "zero day" security vulnerabilities can can crop up in any part of a system.
+Some organizations prefer to automate all aspects of setting up computing capabilities -- installing the operating system, drivers, etc.
+This enables the organization to quickly respond to "zero day" security vulnerabilities which can crop up in any part of a system.
 This would also enable the organization to take advantage of lower prices for "bare metal" server instances from IBM and (since 2018) AWS.
 But is the total cost of running bare-metal boxes really cheaper than other approaches?
 
@@ -444,6 +486,7 @@ Blue-Green Deployments
 A/B testing
 
 
+
 <a name="Lightsail"></a>
 
 ## AWS Lightsale
@@ -451,8 +494,9 @@ A/B testing
 In 2018 Amazon introduced its <a target="_blank" href="https://lightsail.aws.amazon.com/ls/docs/en/articles/getting-started-with-amazon-lightsail">Lightsail service</a>, which <strong>automatically scales</strong> EC2 instances running executables without the need to setup VPCs and auto-scaling groups.
 And rates are comparable to public hosting companies (starting at $5 per month).
 
-But note that each plan has a limit beyond which additional storage and data transfer costs would be incurred.
+Each Lightsale plan has a limit beyond which additional storage and data transfer costs would be incurred.
 
+TODO: Serverless
 
 ## Istio and Envoy for Tracing
 
