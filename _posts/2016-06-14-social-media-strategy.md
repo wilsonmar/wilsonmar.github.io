@@ -33,10 +33,12 @@ An effective influencer is one who can get others to take <strong>action</strong
 
    * Download a white paper (pdf)
 
-   * Like or Friend you on Facebook, GitHub, etc.
+   * Friend you on Facebook or Connect with you on LinkedIn
 
-   * Follow you on Instagram, LinkedIn, etc.
-   
+   * Follow you on Instagram, LinkedIn, GitHub, etc.
+
+   * Like/Star your post on Facebook, Twitter, GitHub, etc.
+
    etc.
 
 Some websites "gamify" their site to reward points for visitors to do the above

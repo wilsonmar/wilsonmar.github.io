@@ -253,14 +253,16 @@ When multiple server instances are involved, a Load Balancer is needed to distri
 Load Balancers can also use (X.509) SSL certificates installed to convert "https://" encrypted requests to unencrypted "http://" requests passed on to web servers. This reduces the decryption and encryption workload on individual servers. Some load balancers (such as F5) are specialized servers with special (ASIC) chips to process faster than standard computers. F5 itself, NGINX, Cisco, and others also have software-based load balancers.
 
 
-Each Load Balancer and Auto Scaling Group (ASG) keeps its own <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-monitoring-features.html">set of logs to S3 objects</a>.
-So first set S3 bucket Properties > Logging of "aws-bucket-logging" to enabled.
+Each Elastic Load Balancer (ELB) and EC2 Auto Scaling Group (ASG) keeps its own <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-monitoring-features.html">set of logs to S3 objects</a>.
+The default is only EC2 status checks.
+So set S3 bucket Properties > Logging of "aws-bucket-logging" to enabled.
 
-To determine whether each instance within an AWS EC2 Auto Scaling Group (ASG) is "OutOfService", Elastic Load Balancer listeners
-automatically check the health of instances within each ASG. The frequency between "pings" is set by the "Grace Period" (such as 300 seconds).<a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/2062/lesson/3/module/206">*</a>
-AWS can keep a time-series ELB Access Logs of requests processed by a Load Balancer, which saves response latencies along with time of occurance, client IP address, request paths, and server responses. But in AWS such need to be activated at intervals of either 5 or 60 minutes. 
+To determine whether each instance within an ASG is "OutOfService" and need to be replaced, listeners
+periodically checks the health of each instance. The frequency between "pings" is set by the "Grace Period" (such as 300 seconds).<a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/2062/lesson/3/module/206">*</a>
 
-AWS does NOT provide an UI to process the logs it stores in S3. 
+AWS can keep a time-series ELB Access Logs of requests processed by a Load Balancer, which saves response latencies along with time of occurance, client IP address, request paths, and server responses. But they need to be activated at intervals of either 5 or 60 minutes. 
+
+AWS does NOT provide an UI to process and present analytics visualization to the logs it stores in S3. 
 So filtering and analytics visualization are done using additional tools:
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=PFUcF9Ye0fc">
@@ -302,9 +304,19 @@ Layer 4 TCP using proxy protocol to get client addresses via Network or Classic 
 
 TODO: Load balancer limits.
 
+### Bastion Hosts
+
 BTW, when servers behind a firewall use unencrypted traffic, they should not have connection to the public internet. But to obtain files from the open internet, a single "Bastion host" is setup for administrators (on pre-defined IP addresses). Such a server is the only one that goes through a NAT (Network Address Translation) "Gateway" which hides IP addresses from the outside world. 
 
-Files needed by application servers are obtained from an internal Network File Share (NFS) or file respository server managed by utility software such as Nexus or Artifactory.
+Once vetted, files needed by application servers are obtained from an internal Network File Share (NFS) or file respository server managed by utility software such as Nexus or Artifactory.
+
+## A/B Testing
+
+DNS (Domain Name Service) servers within Amazon's Route 53 service resolves IP addresses from host names.
+It can also be used to allocate to different sets of servers handling different versions of an app.
+
+
+### Time to Additional Capacity
 
 The concern with scaling is QUESTION: how quickly additional capacity is added or removed before/after need?
 
@@ -312,11 +324,6 @@ The traditional on-premises approach is to order and buy <strong>excess</strong>
 Bootstrapping instances in ASG can take 10 minutes or more. To avoid false alarms from being in "pending:complete" state before bootstrapping completes,
 create an <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">ASG Lifecycle Hook</a> to hold instance in a "pending:wait" state until bootstrapping completes.
 
-
-TODO: <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Auto Scaling Limits</a>
-
-
-## Cloud
 
 A cloud of servers such as Amazon AWS <strong>pools unused capacity</strong> for allocation when needed.
 
@@ -326,11 +333,15 @@ Currently, it can take 20 minutes or more between the request and when a new ser
 
 So some operators define one or more "standby" server instances to instantly process sudden increases in load while additional servers spin up. The number of such servers are determined by <strong>"spike tests"</strong> which emulate sudden increases in load.<a href="#Tasks">*</a>
 
-The complex way that AWS charges for disk drives (input/output) make spike tests useful to determine real costs. AWS uses 
+TODO: The complex way that AWS charges for disk drives (input/output) make spike tests useful to determine real costs.
+
+TODO: <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Auto Scaling Limits</a>
 
 
 
-A big concern with measurement during load testing is the time between clients and servers communicating.
+### Affinity Groups
+
+A big concern with measurement during load testing is the time between client request and (the first byte of) response from server.
 Time over the network is both significant and can take up 75% of the total response time.
 To eliminate that time, ideally, load generators would be next to web servers.
 That would enable accurate diagnosis of response times purely on the server (and underlying services).
@@ -514,6 +525,14 @@ https://wilsonmar.github.io/service-mesh
 Tracing 
 
 Control plane
+
+https://www.wikiwand.com/en/Application-release_automation
+Application Release Automation (ARA) goes beyond just Jenkins, Ansible
+ARA includes capabilities in automation, environment modeling, and release coordination.
+ARA uses structured release-automation techniques that allow for increased visibility for the whole team.
+
+<a target="_blank" href="https://www.method123.com/project-lifecycle.php">Project Management Life Cycle (PMLC)</a>
+
 
 
 <a name="Tasks"></a>
