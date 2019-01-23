@@ -21,15 +21,15 @@ What is the purpose of social media?
 
 It's not enough just to have an account with some words and pictures.
 
-An effective influencer is one who can get others to take <strong>action</strong> such as:
+Influencers are "effective" to the extent they can <strong>get others to take action</strong> such as:
 
    * Buy something (generate revenue)
 
-   * Retweet to expand <strong>reach</strong>
+   * Retweet to expand <strong>reach</strong> through their follower's contacts
+
+   * Forward a resource to specific individuals (by providing emails of someone else)
 
    * Link to your site from their website
-
-   * Forward to someone else
 
    * Download a white paper (pdf)
 
