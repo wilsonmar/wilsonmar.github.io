@@ -41,8 +41,7 @@ Influencers are "effective" to the extent they can <strong>get others to take ac
 
    etc.
 
-Some websites "gamify" their site to reward points for visitors to do the above
-What percent of your activity results in some <strong>action</strong> by readers:
+Some websites "gamify" their site with reward points for visitors to do the above.
 
 
 ## Measurements #
