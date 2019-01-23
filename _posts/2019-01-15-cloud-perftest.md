@@ -313,8 +313,8 @@ Once vetted, files needed by application servers are obtained from an internal N
 ## A/B Testing
 
 DNS (Domain Name Service) servers within Amazon's Route 53 service resolves IP addresses from host names.
-It can also be used to allocate to different sets of servers handling different versions of an app.
-
+Application Load Balances can also be used to allocate to different sets of servers handling different versions of an app.
+<a target="_blank" href="https://interactive.linuxacademy.com/diagrams/DevopsDoctrine.html">This</a>
 
 ### Time to Additional Capacity
 
@@ -525,11 +525,6 @@ https://wilsonmar.github.io/service-mesh
 Tracing 
 
 Control plane
-
-https://www.wikiwand.com/en/Application-release_automation
-Application Release Automation (ARA) goes beyond just Jenkins, Ansible
-ARA includes capabilities in automation, environment modeling, and release coordination.
-ARA uses structured release-automation techniques that allow for increased visibility for the whole team.
 
 <a target="_blank" href="https://www.method123.com/project-lifecycle.php">Project Management Life Cycle (PMLC)</a>
 

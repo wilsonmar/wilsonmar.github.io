@@ -33,9 +33,9 @@ comments: true
 * <a target="_blank" href="https://www.wordpress.com/">Wordpress</a> blogs
 * <a target="_blank" href="https://www.Tumblr.com/">Tumblr</a> multi-media blogs
 
-* <a target="_blank" href="https://www.quora.com/">Quora</a> questions and answers
 * <a target="_blank" href="https://www.stackoverflow.com/">StackOverflow</a> question and answers
-* <a target="_blank" href="https://www.slideshare.com/">SlideShare</a> presentations
+* <a target="_blank" href="https://www.quora.com/">Quora</a> questions and answers
+* <a target="_blank" href="https://www.slideshare.net/">SlideShare</a> presentations
 
 * <a target="_blank" href="https://www.yelp.com/">Yelp</a> ratings
 * <a target="_blank" href="https://www.foursquare.com/">Foursquare</a>
@@ -48,7 +48,7 @@ comments: true
 * <a target="_blank" href="https://www.uber.com/">Uber</a>
 * <a target="_blank" href="https://www.lyft.com/">Lyft</a>
 
-* <a target="_blank" href="https://www.imdb.com/">IMDB</a> media (Amazon)
+* <a target="_blank" href="https://www.imdb.com/">IMDB</a> media (owned by Amazon)
 * <a target="_blank" href="https://www.tsu.co/">tsu.co</a>
 
 * <a target="_blank" href="https://www.soundcloud.com/">Soundcloud</a> music and podcasts
@@ -56,6 +56,7 @@ comments: true
 * <a target="_blank" href="https://www.last.fm/">Lastfm</a> music
 
 * <a target="_blank" href="https://www.kickstarter.com/">Kickstarter</a> crowd funding
+* <a target="_blank" href="https://www.gofundme.com/">GoFundMe</a> crowd funding
 
 * <a target="_blank" href="https://www.empire.kred/">Empire.Kred</a> game
 * <a target="_blank" href="https://www.appearoo.com/">Appearoo</a> social aggregator (was XeeMe until Sep 2014)
