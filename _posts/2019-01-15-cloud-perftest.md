@@ -312,8 +312,12 @@ Once vetted, files needed by application servers are obtained from an internal N
 
 ## A/B Testing
 
-DNS (Domain Name Service) servers within Amazon's Route 53 service resolves IP addresses from host names.
-Application Load Balances can also be used to allocate to different sets of servers handling different versions of an app.
+Cloud-based DNS (Domain Name Service) servers (within Amazon's Route 53 service) resolves IP addresses from host names.
+It can also allocate a percentage of traffic to different sets of servers for Blue/Green Deployment or A/B testing.
+Blue/Green Deployment is used to transition users to a new set of an app enviornment for a new version.
+A/B testing allocates varying percentage of users to variations of an app to compare user reaction/satisfaction.
+
+Instead of directly interacting with Route 53, the switchover can be specified from within the OpsWorks and Elastic Beanstalk consoles or via Cloud Formation templates 
 <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/DevopsDoctrine.html">This</a>
 
 ### Time to Additional Capacity
