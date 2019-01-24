@@ -28,7 +28,7 @@ Commentaries here are given "just-in-time" after you do each step.
 
 Dyntrace offers <a target="_blank" href="https://d3sj466wqlrld0.cloudfront.net/certificate/docs/dtu_dynatrace_professional_certification_mindmap_031618.pdf"> this "MindMap" PDF</a> of the subject matter tested by their Professional-level certification (there is also a <a target="_blank" href="https://d3sj466wqlrld0.cloudfront.net/certificate/docs/dtu_dynatrace_associate_certification_mindmap_031618.pdf">less complicated one</a> for the Associate level exam).
 
-<a target="_blank" href="dynatrace-mindmap-pro-1057x714](https://user-images.githubusercontent.com/300046/41882532-abec6b0c-78a6-11e8-8a90-7063f741c7e0.jpg"><img alt="dynatrace-mindmap-pro-1057x714.jpg" width="1057" src="https://user-images.githubusercontent.com/300046/41882532-abec6b0c-78a6-11e8-8a90-7063f741c7e0.jpg"></a>
+<a target="_blank" href="dynatrace-mindmap-pro-1057x714" href="https://user-images.githubusercontent.com/300046/41882532-abec6b0c-78a6-11e8-8a90-7063f741c7e0.jpg"><img alt="dynatrace-mindmap-pro-1057x714.jpg" width="1057" src="https://user-images.githubusercontent.com/300046/41882532-abec6b0c-78a6-11e8-8a90-7063f741c7e0.jpg"></a>
 
 The major "arteries" are the types of monitoring:
 
