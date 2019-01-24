@@ -37,29 +37,41 @@ comments: true
 * <a target="_blank" href="https://www.quora.com/">Quora</a> questions and answers
 * <a target="_blank" href="https://www.slideshare.net/">SlideShare</a> presentations
 
+Customer ratings:
+
 * <a target="_blank" href="https://www.yelp.com/">Yelp</a> ratings
 * <a target="_blank" href="https://www.foursquare.com/">Foursquare</a>
+* <a target="_blank" href="https://www.uber.com/">Uber</a>
+* <a target="_blank" href="https://www.lyft.com/">Lyft</a>
+
+* <a target="_blank" href="https://www.soundcloud.com/">Soundcloud</a> music and podcasts
+* <a target="_blank" href="https://www.apple.com/">Apple</a> music
+* <a target="_blank" href="https://www.last.fm/">Lastfm</a> music
+
+* <a target="_blank" href="https://www.imdb.com/">IMDB</a> media (owned by Amazon)
+* <a target="_blank" href="https://www.tsu.co/">tsu.co</a>
+
+Search results:
 
 * <a target="_blank" href="https://www.amazon.com/">Amazon</a> lists
 * <a target="_blank" href="https://www.google.com/">Google</a>
 * <a target="_blank" href="https://www.bing.com/">Bing</a> search engine (Microsoft)
 * <a target="_blank" href="https://www.stumbleupon.com/">StumbleUpon</a>
 
-* <a target="_blank" href="https://www.uber.com/">Uber</a>
-* <a target="_blank" href="https://www.lyft.com/">Lyft</a>
+Coding:
 
-* <a target="_blank" href="https://www.imdb.com/">IMDB</a> media (owned by Amazon)
-* <a target="_blank" href="https://www.tsu.co/">tsu.co</a>
+* <a target="_blank" href="https://www.github.com/">GitHub</a> coding Stars and Follows
 
-* <a target="_blank" href="https://www.soundcloud.com/">Soundcloud</a> music and podcasts
-* <a target="_blank" href="https://www.apple.com/">Apple</a> music
-* <a target="_blank" href="https://www.last.fm/">Lastfm</a> music
+Investors:
 
 * <a target="_blank" href="https://www.kickstarter.com/">Kickstarter</a> crowd funding
 * <a target="_blank" href="https://www.gofundme.com/">GoFundMe</a> crowd funding
 
-* <a target="_blank" href="https://www.empire.kred/">Empire.Kred</a> game
+Aggregators:
+
 * <a target="_blank" href="https://www.appearoo.com/">Appearoo</a> social aggregator (was XeeMe until Sep 2014)
+
+* <a target="_blank" href="https://www.empire.kred/">Empire.Kred</a> game
 
 > BTW, I and my colleagues can help you with this. Call me!
 
