@@ -317,7 +317,7 @@ It can also allocate a percentage of traffic to different sets of servers for Bl
 Blue/Green Deployment is used to transition users to a new set of an app enviornment for a new version.
 A/B testing allocates varying percentage of users to variations of an app to compare user reaction/satisfaction.
 
-Instead of directly interacting with Route 53, the switchover can be specified from within the OpsWorks and Elastic Beanstalk consoles or via Cloud Formation templates 
+Instead of directly interacting with Route 53, the switchover can be specified in OpsWorks and Elastic Beanstalk consoles or via Cloud Formation templates 
 <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/DevopsDoctrine.html">This</a>
 
 ### Time to Additional Capacity
