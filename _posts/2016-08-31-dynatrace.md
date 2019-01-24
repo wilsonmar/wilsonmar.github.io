@@ -75,14 +75,30 @@ There are different editions of Dynatrace for the Development Team, Test Center,
 The product that enables "Shift-Left" is one that enables identification of performance issues
 during development.
 
-Competitors to Dynatrace include AppDynamics.
+## Competitors
 
-QUESTION: Does Dynatrace compete with OverOps, which analyzes Java and .NET source code.
+They are legion:
+* AppDynamics, built on top of the open-source Lucene engine for search
+* ElasticSearch (Elastic stack)
+* DataDog
+* Logz.io
+<br /><br />
+
+Dynatrace does not directly compete with OverOps, which analyzes Java and .NET source code.
+
 
 <a name="Dashboard"></a>
 
 ## Dashboard
 
+The bottom line with APM is its dashboards, which display data collected in clever ways.
+The Dynatrace dashboard for User Experience and Satisfaction presents a lot of data, but in a clean and clear way:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/51681903-06ca3400-1fb4-11e9-98fc-5391107479c1.jpg"><img alt="dynatrace-user-sat-944x388.jpg" src="https://user-images.githubusercontent.com/300046/51681903-06ca3400-1fb4-11e9-98fc-5391107479c1.jpg"></a>
+
+Circles around around face icons represent relative percentages. Green is good. Red is bad.
+
+Other dashboards would present a world map in one pane, response time in another, etc.
 
 <hr />
 
@@ -179,8 +195,6 @@ QUESTION: Does Dynatrace compete with OverOps, which analyzes Java and .NET sour
    Or get a code by paying $200 at ?
 1. Schedule exam at https://prod.examity.com/dynatrace/Student/ScheduleAnExam.aspx
    Sechedule can be next day.
-
-   
 
    The <a target="_blank" href="https://d3sj466wqlrld0.cloudfront.net/certificate/docs/du_certificate_industry_associate_blueprint.pdf">
    DOWNLOAD: Associate Exam Blueprint.pdf</a>
