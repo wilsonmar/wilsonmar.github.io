@@ -137,6 +137,7 @@ are <strong>automatically baselined</strong> as the basis for detecting anomalie
 Dynatrace is following the industry trend of moving to the cloud:
 ![dynatrace-cloud-aws-653x397](https://user-images.githubusercontent.com/300046/51728714-32463080-203f-11e9-92ae-ee60703209c7.png)
 
+See <a target="_blank" href="https://github.com/Dynatrace/AWSMonitoringTutorials/">https://github.com/Dynatrace/AWSMonitoringTutorials</a>
 
 ## OneAgent for whole stack
 
@@ -165,7 +166,7 @@ When a token is added in the HTTP header at the client, Dynatrace tracks it thro
 So Dynatrace is able to display where response time contribution within application transactions:
 ![dynatrace-time-contrib-826x296](https://user-images.githubusercontent.com/300046/51728911-ed6ec980-203f-11e9-88f8-5a2bebe0911f.png)
 
-The transaction names above are from Dynatrace's own sample NodeJs "Easy Travel",
+The transaction names above are from Dynatrace's own sample "Easy Travel" (monolithic app)
 instantiated within AWS using Beanstalk, ECS container services
 and Sprint Boot app<a target="_blank" href="https://github.com/grabnerandi/SpringBootBookstoreWithProblems">*</a>
    
