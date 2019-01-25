@@ -137,6 +137,26 @@ are <strong>automatically baselined</strong> as the basis for detecting anomalie
 Dynatrace is following the industry trend of moving to the cloud:
 ![dynatrace-cloud-aws-653x397](https://user-images.githubusercontent.com/300046/51728714-32463080-203f-11e9-92ae-ee60703209c7.png)
 
+
+## OneAgent for whole stack
+
+<img width="727" alt="dynatrace tech analyzed 1454x510" src="https://cloud.githubusercontent.com/assets/300046/23992099/165b6448-0a12-11e7-8a66-67cd9b865497.png">
+
+Dynatrace collects data from servers through an installed agent program,
+called "OneAgent" because one program collects data for all aspects in the stack:
+
+* Applications
+* Services
+* Processes
+* Hosts
+* Containers
+* Data centers
+<br /><br />
+
+A map of all entitities are shown together in the "Smartscape" view.
+
+All this enables Dynatrace to recognize when changes have occured, and take appropriate action.
+
 ## Full-stack discovery
 
 Tracing is in the "Dynatrace" name and Dynatrace has continued innovation in providing end-to-end tracing of transactions through the technical stack.
@@ -157,23 +177,6 @@ and full stack resource discovery has led to self-healing at scale. See:
 
 Traditionally, products such as Splunk analyzed logs emitted from servers.
 Dynatrace does that too.
-
-## OneAgent for whole stack
-
-<img width="727" alt="dynatrace tech analyzed 1454x510" src="https://cloud.githubusercontent.com/assets/300046/23992099/165b6448-0a12-11e7-8a66-67cd9b865497.png">
-
-Dynatrace collects data from servers through an installed agent program,
-called "OneAgent" because one program collects data for all aspects in the stack:
-
-* Applications
-* Services
-* Processes
-* Hosts
-* Containers
-* Data centers
-<br /><br />
-
-All this enables Dynatrace to recognize when changes have occured, and take appropriate action.
 
 
 ## Provisioning
