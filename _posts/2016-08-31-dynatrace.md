@@ -78,13 +78,16 @@ during development.
 ## Competitors
 
 They are legion:
+* Splunk is a legacy product
 * AppDynamics, built on top of the open-source Lucene engine for search
 * ElasticSearch (Elastic stack)
 * DataDog
 * Logz.io
 <br /><br />
 
-Dynatrace does not directly compete with OverOps, which analyzes Java and .NET source code.
+Notes:
+* http://blog.takipi.com/splunk-vs-elk-the-log-management-tools-decision-making-guide/
+* Dynatrace does not directly compete with OverOps, which analyzes Java and .NET source code.
 
 
 <a name="Dashboard"></a>
@@ -124,6 +127,7 @@ Other dashboards would present a world map in one pane, response time in another
    <a target="_blank" href="https://bit.ly/onlineperfclinic">
    https://bit.ly/onlineperfclinic</a>
    (https://community.dynatrace.com/community/pages/viewpage.action?pageId=178101202)
+   also on YouTube.
 
 0. View past webinars
 
@@ -162,10 +166,12 @@ Other dashboards would present a world map in one pane, response time in another
 
 0. Twitter
 
-   <a target="_blank" href="https://twitter.com/Dynatrace">
+   * <a target="_blank" href="https://twitter.com/Dynatrace">
    @Dynatrace</a>
+   * <a target="_blank" href="https://twitter.com/grabnerandi">
+   @grabnerandi</a> (Andreas Grabner, Developer Evangelist)
 
-0. Look through their GitHub source repositories:
+0. GitHub source repositories:
 
    <a target="_blank" href="https://github.com/dynatrace-innovationlab/">
    https://github.com/dynatrace-innovationlab</a>
@@ -373,14 +379,6 @@ SaaS = Software as a Service:
 * Keynote monitors what end-users experience through the public network
 * Dynatrace Load
 * Business Service Management
-
-
-## Competition
-
-Gartner ...
-
-http://blog.takipi.com/splunk-vs-elk-the-log-management-tools-decision-making-guide/
-
 
 <hr />
 
