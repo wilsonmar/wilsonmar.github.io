@@ -65,16 +65,6 @@ Also:
    * Problems
    * Integration and API
 
-## Product Editions
-
-There are different editions of Dynatrace for the Development Team, Test Center, and Production:
-
-<a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/23922979/11b6313a-08db-11e7-9376-a6627907b058.png">
-<img alt="dynatrace across lifecycle 898x527.jpg" width="898" src="https://cloud.githubusercontent.com/assets/300046/23922979/11b6313a-08db-11e7-9376-a6627907b058.png">(Click to pop up larger image)</a>
-
-The product that enables "Shift-Left" is one that enables identification of performance issues
-during development.
-
 ## Product Offerings
 
    Dynatrace AppMon Personal & UEM ???
@@ -92,6 +82,16 @@ SaaS = Software as a Service:
 * Keynote monitors what end-users experience through the public network
 * Dynatrace Load
 * Business Service Management
+
+## Product Editions
+
+There are different editions of Dynatrace for the Development Team, Test Center, and Production:
+
+<a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/23922979/11b6313a-08db-11e7-9376-a6627907b058.png">
+<img alt="dynatrace across lifecycle 898x527.jpg" width="898" src="https://cloud.githubusercontent.com/assets/300046/23922979/11b6313a-08db-11e7-9376-a6627907b058.png">(Click to pop up larger image)</a>
+
+The product that enables "Shift-Left" is one that enables identification of performance issues
+during development.
 
 ## Competitors
 
@@ -121,16 +121,16 @@ Circles around around face icons represent relative percentages. Green is good. 
 
 Competitors' dashboards would present a world map in one pane, response time in another, etc.
 
+Metrics displayed can focus on specific periods of time:
+
+![dynatrace-time-periods](https://user-images.githubusercontent.com/300046/51729692-be0d8c00-2042-11e9-84c5-78232c0affe2.png)
+
 Visualizations of metrics on response time, failures rate, HTTP errors, CPU, Throughput, Network traffic, Retransmissions, Connectivity, etc. 
 are <strong>automatically baselined</strong> as the basis for detecting anomalies.
 
    * memory leaks
    * CPU hotspots
    * n+1 problem - when client makes many more API calls to server.
-
-   See <a target="_blank" href="https://github.com/grabnerandi/SpringBootBookstoreWithProblems">
-   https://github.com/grabnerandi/SpringBootBookstoreWithProblems</a>
-
    * SQL statements - Too many, slow.
    <br /><br />
 
@@ -145,7 +145,10 @@ When a token is added in the HTTP header at the client, Dynatrace tracks it thro
 So Dynatrace is able to display where response time contribution within application transactions:
 ![dynatrace-time-contrib-826x296](https://user-images.githubusercontent.com/300046/51728911-ed6ec980-203f-11e9-88f8-5a2bebe0911f.png)
 
-The transaction names above are from Dynatrace's own sample app "Easy Travel".
+The transaction names above are from Dynatrace's own sample NodeJs "Easy Travel",
+instantiated within AWS using Beanstalk, ECS container services
+and Sprint Boot app<a target="_blank" href="https://github.com/grabnerandi/SpringBootBookstoreWithProblems">*</a>
+   
 
 In recent years, Dynatace added AI-powered Analytics to discover <strong>root cause</strong>
 and full stack resource discovery has led to self-healing at scale. See:
@@ -218,6 +221,8 @@ The following focusing on analysis of server applications running <strong>locall
 
    dynaTrace_license_201703161023.key
 
+   Each agent installer is pre-configured to where the agent sends its information.
+   
    NOTE: The video mentioned in the email (https://www.youtube.com/watch?v=2ycuNlYUl9E) 
    What is Dynatrace AppMon and How to Get Started – January 2016
 
@@ -315,7 +320,6 @@ On Apache, IIS: <tt>-agentpath:PATH/dtagent.dll=name=MyAppTier,server=collector1
    Without changing a line of code get 100% end-to-end code-level performance visibility: Browser, Web-, App- and (No)SQL Activity
 
    See every SQL Statement, Exception, Log message and HTTP Request detail
-
 
 <hr />
 
