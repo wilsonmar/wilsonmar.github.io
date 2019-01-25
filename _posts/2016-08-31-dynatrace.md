@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Dynatrace"
+title: "Dynatrace (APM)"
 excerpt: "He sees you when you're sleeping. He knows when you're awake ..."
 tags: [Clouds, Monitoring, Analytics]
 shorturl: "https://goo.gl/wer9DB"
@@ -24,27 +24,6 @@ step-by-logical-step hands-on approach to dive deep into the technology and its 
 This is so you're not stumbling around wasting time on high-level sales pitches.
 Commentaries here are given "just-in-time" after you do each step.
 
-## Mind Map
-
-Dyntrace offers <a target="_blank" href="https://d3sj466wqlrld0.cloudfront.net/certificate/docs/dtu_dynatrace_professional_certification_mindmap_031618.pdf"> this "MindMap" PDF</a> of the subject matter tested by their Professional-level certification (there is also a <a target="_blank" href="https://d3sj466wqlrld0.cloudfront.net/certificate/docs/dtu_dynatrace_associate_certification_mindmap_031618.pdf">less complicated one</a> for the Associate level exam).
-
-<a target="_blank" href="dynatrace-mindmap-pro-1057x714" href="https://user-images.githubusercontent.com/300046/41882532-abec6b0c-78a6-11e8-8a90-7063f741c7e0.jpg"><img alt="dynatrace-mindmap-pro-1057x714.jpg" width="1057" src="https://user-images.githubusercontent.com/300046/41882532-abec6b0c-78a6-11e8-8a90-7063f741c7e0.jpg"></a>
-
-The major "arteries" are the types of monitoring:
-
-   * Real User Monitoring
-   * Application Monitoring
-   * Infrastructure Monitoring
-   * Network Monitoring
-   * Additional components
-   <br /><br />
-Also:
-
-   * Dynatrace Managed (server & monitoring setup)
-   * System Settings (Global, Entity, Account)
-   * Problems
-   * Integration and API
-
 ## Acronyms used here
 
    ADK = Application Development Kit
@@ -61,9 +40,30 @@ Also:
 
 PureModel = PurePath + PureStack
 
-   * PurePath monitors horizontally across the server tiers
+   * PurePath traces requests horizontally across processes end-to-end tracing at the code-level
+   * PureStack dives into the vertical infrastructure tiers
 
-   * PureStack dives into the vertical infrastructure
+## Mind Map
+
+Dyntrace offers <a target="_blank" href="https://d3sj466wqlrld0.cloudfront.net/certificate/docs/dtu_dynatrace_professional_certification_mindmap_031618.pdf"> this "MindMap" PDF</a> of the subject matter tested by their Professional-level certification (there is also a <a target="_blank" href="https://d3sj466wqlrld0.cloudfront.net/certificate/docs/dtu_dynatrace_associate_certification_mindmap_031618.pdf">less comprehensive one</a> for the Associate level exam).
+
+<a target="_blank" href="dynatrace-mindmap-pro-1057x714" href="https://user-images.githubusercontent.com/300046/41882532-abec6b0c-78a6-11e8-8a90-7063f741c7e0.jpg"><img alt="dynatrace-mindmap-pro-1057x714.jpg" width="1057" src="https://user-images.githubusercontent.com/300046/41882532-abec6b0c-78a6-11e8-8a90-7063f741c7e0.jpg"></a>
+
+The major "arteries" are the types of monitoring:
+
+   * Real User Monitoring
+   * Application Monitoring
+   * Infrastructure Monitoring
+   * Network Monitoring
+   * Additional components
+   <br /><br />
+
+Also:
+
+   * Dynatrace Managed (server & monitoring setup)
+   * System Settings (Global, Entity, Account)
+   * Problems
+   * Integration and API
 
 ## Product Editions
 
@@ -75,14 +75,32 @@ There are different editions of Dynatrace for the Development Team, Test Center,
 The product that enables "Shift-Left" is one that enables identification of performance issues
 during development.
 
+## Product Offerings
+
+   Dynatrace AppMon Personal & UEM ???
+
+Two Dynatrace products have downloads:
+
+* Application Monitoring rich client AppMon
+* Data Center RUM (Real User Monitor) captures traffic and analyzes it
+
+SaaS = Software as a Service:
+
+* Application Monitoring Appmon web
+* Synthetic Monitoring has fake users logging in, etc.
+* Dynatrace adds HTTP header
+* Keynote monitors what end-users experience through the public network
+* Dynatrace Load
+* Business Service Management
+
 ## Competitors
 
-They are legion:
-* Splunk is a legacy product
+* Splunk has been around the longest to process logs
 * AppDynamics, built on top of the open-source Lucene engine for search
 * ElasticSearch (Elastic stack)
 * DataDog
 * Logz.io
+* etc.
 <br /><br />
 
 Notes:
@@ -90,9 +108,9 @@ Notes:
 * Dynatrace does not directly compete with OverOps, which analyzes Java and .NET source code.
 
 
-<a name="Dashboard"></a>
+<a name="Dashboards"></a>
 
-## Dashboard
+## Dashboards
 
 The bottom line with APM is its dashboards, which display data collected in clever ways.
 The Dynatrace dashboard for User Experience and Satisfaction presents a lot of data, but in a clean and clear way:
@@ -101,130 +119,74 @@ The Dynatrace dashboard for User Experience and Satisfaction presents a lot of d
 
 Circles around around face icons represent relative percentages. Green is good. Red is bad.
 
-Other dashboards would present a world map in one pane, response time in another, etc.
+Competitors' dashboards would present a world map in one pane, response time in another, etc.
 
-<hr />
+Visualizations of metrics on response time, failures rate, HTTP errors, CPU, Throughput, Network traffic, Retransmissions, Connectivity, etc. 
+are <strong>automatically baselined</strong> as the basis for detecting anomalies.
 
-## Interact with people
+   * memory leaks
+   * CPU hotspots
+   * n+1 problem - when client makes many more API calls to server.
 
-0. Forums:
+   See <a target="_blank" href="https://github.com/grabnerandi/SpringBootBookstoreWithProblems">
+   https://github.com/grabnerandi/SpringBootBookstoreWithProblems</a>
 
-   <a target="_blank" href="https://community.dynatrace.com/community/display/DL/Downloads/">
-   https://community.dynatrace.com/community/display/DL/Downloads</a>
+   * SQL statements - Too many, slow.
+   <br /><br />
 
-0. Listen to podcasts:
+Dynatrace is following the industry trend of moving to the cloud:
+![dynatrace-cloud-aws-653x397](https://user-images.githubusercontent.com/300046/51728714-32463080-203f-11e9-92ae-ee60703209c7.png)
 
-   <a target="_blank" href="https://www.spreaker.com/show/pureformance/">
-   https://www.spreaker.com/show/pureformance</a>
+## Full-stack discovery
 
-0. Ask a question of pre-sales:
+Tracing is in the "Dynatrace" name and Dynatrace has continued innovation in providing end-to-end tracing of transactions through the technical stack.
+When a token is added in the HTTP header at the client, Dynatrace tracks it through the web server and database.
 
-   <a target="_blank" href="https://answers.dynatrace.com/">
-   https://answers.dynatrace.com</a>
+So Dynatrace is able to display where response time contribution within application transactions:
+![dynatrace-time-contrib-826x296](https://user-images.githubusercontent.com/300046/51728911-ed6ec980-203f-11e9-88f8-5a2bebe0911f.png)
 
-0. Register and attend <strong>live webinars</strong> at:
+The transaction names above are from Dynatrace's own sample app "Easy Travel".
 
-   <a target="_blank" href="https://bit.ly/onlineperfclinic">
-   https://bit.ly/onlineperfclinic</a>
-   (https://community.dynatrace.com/community/pages/viewpage.action?pageId=178101202)
-   also on YouTube.
+In recent years, Dynatace added AI-powered Analytics to discover <strong>root cause</strong>
+and full stack resource discovery has led to self-healing at scale. See:
+* https://help.dynatrace.com/intelligent-problem-detection/<br />
+* https://help.dynatrace.com/intelligent-problem-detection/prediction/prediction/
 
-0. View past webinars
+Traditionally, products such as Splunk analyzed logs emitted from servers.
+Dynatrace does that too.
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=eYzl1PTGS7Y&index=24&list=PLqt2rd0eew1bmDn54E2_M2uvbhm_WxY_6">
-   On YouTube</a>
+## OneAgent for whole stack
 
-0. Ways to meet other users:
+<img width="727" alt="dynatrace tech analyzed 1454x510" src="https://cloud.githubusercontent.com/assets/300046/23992099/165b6448-0a12-11e7-8a66-67cd9b865497.png">
 
-   <a target="_blank" href="https://community.compuwareapm.com/community/display/PUB/Events/">
-   https://community.dynatrace.com/community/display/DL/Downloads</a>
+Dynatrace collects data from servers through an installed agent program,
+called "OneAgent" because one program collects data for all aspects in the stack:
 
-0. Join and attend Meetups:
+* Applications
+* Services
+* Processes
+* Hosts
+* Containers
+* Data centers
+<br /><br />
 
-   <a target="_blank" href="https://www.meetup.com/pro/dynatrace/">
-   https://www.meetup.com/pro/dynatrace</a>
-
-0. Subscribe, then meet people at the <strong>annual conference</strong> each Feburary in Vegas:
-
-   <a target="_blank" href="https://www.dynatrace.com/perform/">
-   https://www.dynatrace.com/perform</a><br />
-
-0. Have Dynatrace salespeople look at your Purepath file:
-
-   <a target="_blank" href="https://bit.ly/sharepurepath">
-   https://bit.ly/sharepurepath</a>
-   (https://community.dynatrace.com/community/display/EVAL/Share+your+PurePath)
-
-   CAUTION: Many enterprises are fearful of releasing data outside the corporate firewall.
-   Check with your Security people before sending the file out.
-
-0. LinkedIn Groups
-
-   <a target="_blank" href="https://www.linkedin.com/groups/1868499/profile">
-   https://www.linkedin.com/groups/1868499/profile<br />
-   Dynatrace APM User Group</a>
-
-0. Twitter
-
-   * <a target="_blank" href="https://twitter.com/Dynatrace">
-   @Dynatrace</a>
-   * <a target="_blank" href="https://twitter.com/grabnerandi">
-   @grabnerandi</a> (Andreas Grabner, Developer Evangelist)
-
-0. GitHub source repositories:
-
-   <a target="_blank" href="https://github.com/dynatrace-innovationlab/">
-   https://github.com/dynatrace-innovationlab</a>
-
-   <a target="_blank" href="https://github.com/Dynatrace/Dynatrace-Docker">
-   https://github.com/Dynatrace/Dynatrace-Docker</a>
-
-   <a target="_blank" href="https://github.com/grabnerandi/">
-   https://github.com/grabnerandi</a>
+All this enables Dynatrace to recognize when changes have occured, and take appropriate action.
 
 
-## Get Certified
+## Provisioning
 
-   <a target="_blank" href="https://university.dynatrace.com/certificate/industry">
-   https://university.dynatrace.com/certificate/industry</a><br />
-   Dynatrace Certification website lists a learning path.
+Docker, VMWare, EC2, Azure, CloudFoundry
 
-   The "Industry Associate" level validates understanding of APM was retired April 1, 2018.
+Scripts: Chef, Puppet, Ansible, PowerShell
 
-   The exam is done on your desktop computer, not at a testing center.
+Overprovisioned?
 
-1. Enter your profile info (time zone, phone, picture ID, etc.) at 
-   https://prod.examity.com/Dynatrace/Student/MyProfile.aspx
-1. Write down your answers to security questions.
-1. Do a computer check at https://prod.examity.com/systemcheck/ComputerReadinessCheck.aspx
-1. Get a promotion code if that is part of your organization's deal with Dynatrace.
-   Or get a code by paying $200 at ?
-1. Schedule exam at https://prod.examity.com/dynatrace/Student/ScheduleAnExam.aspx
-   Sechedule can be next day.
-
-   The <a target="_blank" href="https://d3sj466wqlrld0.cloudfront.net/certificate/docs/du_certificate_industry_associate_blueprint.pdf">
-   DOWNLOAD: Associate Exam Blueprint.pdf</a>
-   Answer 80% correct 70 multiple choice items in 2 hours.
-   It's free. 
-
-   The Pro written exam is $200 plus $250 for the practical exam.
-
-   Mind Map for <a target="_blank" href="https://d3sj466wqlrld0.cloudfront.net/certificate/docs/dtu_dynatrace_associate_certification_mindmap_031618.pdf">Associate</a> and <a target="_blank" href="https://d3sj466wqlrld0.cloudfront.net/certificate/docs/dtu_dynatrace_professional_certification_mindmap_031618.pdf">Pro</a>.
-
-   <a target="_blank" href="https://university.dynatrace.com/certificate/appmon">
-   AppMon</a>
-
-   <a target="_blank" href="https://university.dynatrace.com/certificate/dcrum">
-   DC RUM</a>
-   
-   <a target="_blank" href="https://university.dynatrace.com/certificate/synthetic">
-   Synthetic</a>
-
-   Master-level.
-
-<hr />
 
 ## Free lifetime local license
+
+During the 30-day free trial period, install up to 5 distributed servers (in the cloud).
+
+After the 30-day trial period, install only on local machines.
 
 The following focusing on analysis of server applications running <strong>locally</strong> on your laptop.
 
@@ -291,94 +253,69 @@ The following focusing on analysis of server applications running <strong>locall
 0. dynatrace-full-darwin-x86.jar.cpgz.
 
 
-## Provisioning
+<hr />
 
-Docker, VMWare, EC2, Azure, CloudFoundry
+## Get Certified
 
-Scripts: Chef, Puppet, Ansible, PowerShell
+   <a target="_blank" href="https://university.dynatrace.com/certificate/industry">
+   https://university.dynatrace.com/certificate/industry</a><br />
+   Dynatrace Certification website lists a learning path.
 
-Overprovisioned?
+   The "Industry Associate" level validates understanding of APM was retired April 1, 2018.
 
+   The exam is done on your desktop computer, not at a testing center.
 
-### Troubled sample apps
+1. Enter your profile info (time zone, phone, picture ID, etc.) at 
+   https://prod.examity.com/Dynatrace/Student/MyProfile.aspx
+1. Write down your answers to security questions.
+1. Do a computer check at https://prod.examity.com/systemcheck/ComputerReadinessCheck.aspx
+1. Get a promotion code if that is part of your organization's deal with Dynatrace.
+   Or get a code by paying $200 at ?
+1. Schedule exam at https://prod.examity.com/dynatrace/Student/ScheduleAnExam.aspx
+   Sechedule can be next day.
 
+   The <a target="_blank" href="https://d3sj466wqlrld0.cloudfront.net/certificate/docs/du_certificate_industry_associate_blueprint.pdf">
+   DOWNLOAD: Associate Exam Blueprint.pdf</a>
+   Answer 80% correct 70 multiple choice items in 2 hours.
+   It's free. 
 
-Source code to programs that exhibit:
+   The Pro written exam is $200 plus $250 for the practical exam.
 
-### memory leaks
+   <a target="_blank" href="https://university.dynatrace.com/certificate/appmon">
+   AppMon</a>
 
-### CPU hotspots
+   <a target="_blank" href="https://university.dynatrace.com/certificate/dcrum">
+   DC RUM</a>
+   
+   <a target="_blank" href="https://university.dynatrace.com/certificate/synthetic">
+   Synthetic</a>
 
-### n+1 problem 
+   Master-level.
 
-The n+1 problem is when regression test finds client makes many more API calls to server.
-
-   <a target="_blank" href="https://github.com/grabnerandi/SpringBootBookstoreWithProblems">
-   https://github.com/grabnerandi/SpringBootBookstoreWithProblems</a>
-
-## SQL statements
-
-Too many, slow.
-
+<hr />
 
 ### API "FireAndIce"
 
-   http://anapioficeandfire.com/Documentation#library-graphql
+See http://anapioficeandfire.com/Documentation#library-graphql
 
 https://www.youtube.com/watch?v=O0SQL8DJxaI
 Online Perf Clinic – Shift-Left Performance with Spring Boot Microservices, Jenkins and Dynatrace
 
 
-## Agents
-
-<img width="727" alt="dynatrace tech analyzed 1454x510" src="https://cloud.githubusercontent.com/assets/300046/23992099/165b6448-0a12-11e7-8a66-67cd9b865497.png">
-
 For infrastructure monitoring:
-
-During the 30-day free trial period, install up to 5 distributed servers (in the cloud).
-
-After the 30-day trial period, install only on local machines.
 
 Use the "Add Tier" wizard.
 
-On Apache, IIS: -agentpath:PATH/dtagent.dll=name=MyAppTier,server=collector1
+On Apache, IIS: <tt>-agentpath:PATH/dtagent.dll=name=MyAppTier,server=collector1</tt>
 
 ## Desktop
 
-   ### IntelliJ
+0. Use within IntelliJ IDE
 
-0. Use within IntelliJ
+   Without changing a line of code get 100% end-to-end code-level performance visibility: Browser, Web-, App- and (No)SQL Activity
 
+   See every SQL Statement, Exception, Log message and HTTP Request detail
 
-0. Without changing a line of code get 100% end-to-end code-level performance visibility: Browser, Web-, App- and (No)SQL Activity
-
-0. See every SQL Statement, Exception, Log message and HTTP Request detail
-
-
-## SaaS server
-
-0. Provide your email to:
-
-   https://www.dynatrace.com/trial/
-
-
-## Product Offerings
-
-   Dynatrace AppMon Personal & UEM ???
-
-Two Dynatrace products have downloads:
-
-* Application Monitoring rich client AppMon
-* Data Center RUM (Real User Monitor) captures traffic and analyzes it
-
-SaaS = Software as a Service:
-
-* Application Monitoring Appmon web
-* Synthetic Monitoring has fake users logging in, etc.
-* Dynatrace adds HTTP header
-* Keynote monitors what end-users experience through the public network
-* Dynatrace Load
-* Business Service Management
 
 <hr />
 
@@ -389,16 +326,6 @@ https://github.com/Dynatrace/superdump
 (Not A replacement for in-depth analysis tools such as WinDbg.)
 
 can be triggered via web-frontend (HTTP-upload) or via REST-API.
-
-
-## Application Monitoring
-
-   Baselines
-
-https://help.dynatrace.com/intelligent-problem-detection/<br />
-https://help.dynatrace.com/intelligent-problem-detection/prediction/prediction/
-
-
 
 ## ADK
 
@@ -571,6 +498,85 @@ Protocol is protobuf
    https://www.infoq.com/articles/Diagnose-Microservice-Performance-Anti-Patterns
 
    https://www.infoq.com/articles/Diagnosing-Common-Java-Database-Performance-Hotspots
+
+
+## Interact with people
+
+0. Forums:
+
+   <a target="_blank" href="https://community.dynatrace.com/community/display/DL/Downloads/">
+   https://community.dynatrace.com/community/display/DL/Downloads</a>
+
+0. Listen to podcasts:
+
+   <a target="_blank" href="https://www.spreaker.com/show/pureformance/">
+   https://www.spreaker.com/show/pureformance</a>
+
+0. Ask a question of pre-sales:
+
+   <a target="_blank" href="https://answers.dynatrace.com/">
+   https://answers.dynatrace.com</a>
+
+0. Register and attend <strong>live webinars</strong> at:
+
+   <a target="_blank" href="https://bit.ly/onlineperfclinic">
+   https://bit.ly/onlineperfclinic</a>
+   (https://community.dynatrace.com/community/pages/viewpage.action?pageId=178101202)
+   also on YouTube.
+
+0. View past webinars
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=eYzl1PTGS7Y&index=24&list=PLqt2rd0eew1bmDn54E2_M2uvbhm_WxY_6">
+   On YouTube</a>
+
+0. Ways to meet other users:
+
+   <a target="_blank" href="https://community.compuwareapm.com/community/display/PUB/Events/">
+   https://community.dynatrace.com/community/display/DL/Downloads</a>
+
+0. Join and attend Meetups:
+
+   <a target="_blank" href="https://www.meetup.com/pro/dynatrace/">
+   https://www.meetup.com/pro/dynatrace</a>
+
+0. Subscribe, then meet people at the <strong>annual conference</strong> each Feburary in Vegas:
+
+   <a target="_blank" href="https://www.dynatrace.com/perform/">
+   https://www.dynatrace.com/perform</a><br />
+
+0. Have Dynatrace salespeople look at your Purepath file:
+
+   <a target="_blank" href="https://bit.ly/sharepurepath">
+   https://bit.ly/sharepurepath</a>
+   (https://community.dynatrace.com/community/display/EVAL/Share+your+PurePath)
+
+   CAUTION: Many enterprises are fearful of releasing data outside the corporate firewall.
+   Check with your Security people before sending the file out.
+
+0. LinkedIn Groups
+
+   <a target="_blank" href="https://www.linkedin.com/groups/1868499/profile">
+   https://www.linkedin.com/groups/1868499/profile<br />
+   Dynatrace APM User Group</a>
+
+0. Twitter
+
+   * <a target="_blank" href="https://twitter.com/Dynatrace">
+   @Dynatrace</a>
+   * <a target="_blank" href="https://twitter.com/grabnerandi">
+   @grabnerandi</a> (Andreas Grabner, Developer Evangelist)
+
+0. GitHub source repositories:
+
+   <a target="_blank" href="https://github.com/dynatrace-innovationlab/">
+   https://github.com/dynatrace-innovationlab</a>
+
+   <a target="_blank" href="https://github.com/Dynatrace/Dynatrace-Docker">
+   https://github.com/Dynatrace/Dynatrace-Docker</a>
+
+   <a target="_blank" href="https://github.com/grabnerandi/">
+   https://github.com/grabnerandi</a>
+
 
 ## More on cloud #
 
