@@ -932,18 +932,19 @@ git config          user.id "wilsonmar+GitHub@gmail.com"
 
    <pre><strong>git status -s -b</strong></pre>
 
-   Notice the green "M" and "A" showing it's being tracked:
+   Notice the green "M" (for modifed) and "A" (for Add) showing it's being tracked:
 
    <pre>
 M  .gitignore
 A  newfile.md
    </pre>
 
+
    <a name="Commit"></a>
 
    ### git commit
 
-6. The commit supplies a message describing changes, which applies to all files added. 
+6. The commit supplies a message describing changes, which applies to all files added. For example:
 
    <pre><strong>git commit -m"Add .DS_Store to .gitignore @hotwilson"</strong></pre>
 
