@@ -53,7 +53,7 @@ Let's begin with an example.
 
     <pre>
 FROM node:0.10.44-slim
-ADD . /home/demo/box/
+COPY . /home/demo/box/
 RUN cd /home/demo/box && npm install
 ENTRYPOINT ["/home/demo/box/boot.sh"]
    </pre>
@@ -76,8 +76,8 @@ ENTRYPOINT ["/home/demo/box/boot.sh"]
    * ENV foo /bar
    * WORKDIR ${foo}    # sets working directory to /bar
    * VOLUME /tmp
-   * ADD . $foo        # add . /bar to file system
    * COPY \$foo /quux 
+   * ADD . $foo  # where $foo is a .tar compressed file which ADD automatically unzips
 
    * HEALTHCHECK--interval=5m --timeout=3s \<br />
      CMD curl -f http://localhost/ || exit 1
