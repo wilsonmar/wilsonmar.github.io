@@ -104,16 +104,24 @@ But the change is about more than the tools. Instead of building code and custom
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th>Features</th><th>Scratch Org</th><th>Developer</th><th>Partial Copy Sandbox</th><th> Full Sandbox</th></tr>
-<tr valign="top"><td>Refresh:</td><td>Ephemeral</td><td>1 day</td><td>5 days</td><td>29 days</td></tr>
-<tr valign="top"><td>Metadata:</td><td>version control</td><td>Production</td><td>Production</td><td>Production</td></tr>
-<tr valign="top"><td>Customer data:</td><td>-</td><td>-</td><td>Sample</td><td>All data</td></tr>
-<tr valign="top"><td>Data limit:</td><td>200 MB</td><td>200 MB (1 GB Pro)</td><td>5 GB</td><td>Matches Prod.</td></tr>
+<tr valign="top"><td>Retention:</td><td>Ephemeral</td><td>1 day</td><td>5 days</td><td>29 days</td></tr>
+<tr valign="top"><td>Data limit:</td><td>200 MB</td><td>200 MB (1 GB Pro)</td><td>5 GB\*</td><td>Matches Prod.</td></tr>
+<tr valign="top"><td>Customer data:</td><td>Test</td><td>Test</td><td>Sample</td><td>All data</td></tr>
 <tr valign="top"><td>API calls/24 hrs:</td><td>? </td><td>15K (50K)</td><td>-</td><td>-</td></tr>
 </table>
 
-A Sandbox that is nearly identical copy of a production environment is available only to Enterprise or Unlimited Edition customers. 
+All sandboxes contain metadata (application and configuration information) which define reports, dashboards, price books, products, apps, and customizations in Setup.
+
+Sandboxes are created based on specifications defined in a <strong>Sandbox template</strong>.
+
+\* Up to 10,000 records per object can be stored.
+
+A Sandbox that is a nearly identical copy of all production data is available only to Enterprise or Unlimited Edition customers. 
+Sandboxes cost about 25% of total spend.
+
 
 Number within parentheses are for Partner Developers.
+
 
 <a name="Git"></a>
 ### Git
