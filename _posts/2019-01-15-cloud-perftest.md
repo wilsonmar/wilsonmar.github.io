@@ -225,7 +225,9 @@ Some AMI creators charge its users money.
 But many pay it because it saves them hassle and time, which mean money.
 
 Is the extra cost worth the extra savings? Load testing can answer that question.
-To determine the cost of processing using any given server configuration, one needs to measure use of processing, storage, and network data transfers at various levels of user load accessing the server at various points as load increases.<a href="#Tasks">*</a>
+QUESTION: To determine the cost of processing using any given server configuration, one needs to measure use of processing, storage, and network data transfers at various levels of user load accessing the server at various points as load increases.<a href="#Tasks">*</a>
+
+Such tests enaables load engineering work into profit centers by identify cost savings.
 
 NEXT: Server images are necessary to create multiple instances of the same application.
 
@@ -246,10 +248,18 @@ Multiple servers are also needed to ensure <strong>reliability</strong> -- to ha
 Testing that deliberately downs a server to measure the speed of recovery is called 
 <strong>"resilency testing"</strong>.<a href="#Tasks">*</a>
 
+## Monitoring
+
+On AWS, to collect measurements and streamed to CloudWatch, a CloudWatch Logs Agent needs to be installed on each server instance.
+
+AWS CloudWatch Log Groups are defined to capture and send alerts about specific errors to SNS (imple Notification Service) emails.
+
+After 60 days, logs can be sent to AWS Glacier for lower-cost longer term retention if a S3 Lifecycle policy is defined.
+
 
 ## Load Balancing
 
-When multiple server instances are involved, a Load Balancer is needed to distribute work among them.
+When multiple server instances are involved, a <strong>Load Balancer</strong> is needed to balance (distribute) work among instances.
 Load Balancers can also use (X.509) SSL certificates installed to convert "https://" encrypted requests to unencrypted "http://" requests passed on to web servers. This reduces the decryption and encryption workload on individual servers. Some load balancers (such as F5) are specialized servers with special (ASIC) chips to process faster than standard computers. F5 itself, NGINX, Cisco, and others also have software-based load balancers.
 
 
@@ -292,7 +302,7 @@ So filtering and analytics visualization are done using additional tools:
 
 <a target="_blank" href="http://dangoldin.com/2018/02/20/analyzing-aws-elb-logs/">
 SQL queries for ELB Logs</a>
-filter for response codes that are not 200, the time frame of calls, etc.
+filters for response codes that are not 200, the time frame of calls, etc.
 
 
 
