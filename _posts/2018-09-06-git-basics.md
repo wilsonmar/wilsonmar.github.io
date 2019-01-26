@@ -971,7 +971,7 @@ A  newfile.md
 
    ### Local Reflog
 
-8. List history of actions that have occurred on the local machine.
+8. List history of actions that have occurred locally (on your laptop):
 
    <pre><strong>git reflog -5</strong></pre>
 
@@ -995,11 +995,47 @@ A  newfile.md
 
    ### Local Log
 
-9. List <strong>commits</strong> that have occurred on the local machine:
+9. List the last 10 <strong>commits</strong>:
 
-   <pre><strong>git log --pretty=format:"%h %s %ad" --graph --since=1.days --date=relative;git log --show-signature -n 1 | tail -n 10 </strong></pre>
+   <pre><strong>git log --pretty=format:"%h %s %ad" --graph --since=1.days --date=relative;git log --show-signature -n 1 | tail -n 10</strong></pre>
 
-   ```| tail -n 10``` limits the output to 10 lines
+   ```|``` "pipes" the result of one command into another command (tail).
+
+   ```| tail -n 10``` limits the output to 10 lines.
+
+
+   <a name="Undelete"></a>
+
+   ### Undelete
+
+9. List <strong>names of files deleted</strong> anywhere within the repository:<a target="_blank" href="https://hibbard.eu/how-to-restore-a-previously-deleted-file-from-a-git-repository/">*</a><a target="_blank" href="https://stackoverflow.com/questions/7203515/git-how-to-find-a-deleted-file-in-the-project-commit-history">*</a>
+
+   <pre><strong>git log --diff-filter=D --summary | grep "delete mode"</strong></pre>
+
+   ```grep``` is a commonly used command to filter output to just lines containing the word specified.
+
+   An example of the output:
+
+   <pre>delete mode 100644 _layouts/product.html</pre>
+
+   NOTE: An underline in front of file and folder names indicates those created by the program itself, not one added by users.
+   
+   PROTIP: cd to the root of the repository to reference the file path shown.
+
+9. List the hash of commits related to the file specified:
+
+   <pre><strong>git log --oneline --follow -- "_layouts/product.html"</pre></strong>
+
+   An example output:
+
+   <pre>a21b79e Update museum image size</pre>
+
+   The hash prefix (a21b79e) is for the commit which deleted the file.
+   
+9. Un-delete the file using ```^``` (caret character) which specifies the commit just <strong>prior</strong> to the one specified in the command. For example:
+
+   <pre><strong>>git checkout a21b79e^ -- "_layouts/product.html"</strong>
+
 
    <a name="Rebasing"></a>
 
@@ -1017,10 +1053,8 @@ A  newfile.md
 
    ```-i``` for interactive
 
-   See <a target="_blank" href="https://wilsonmar.github.io/git-rebase">my blog on this</a>.
-
-   Study <a target="_blank" href="http://wilsonmar.github.io/git-rebase">http://wilsonmar.github.io/git-rebase</a>
-   for step-by-step instructions. Then return here.
+   My blog on rebasing at <a target="_blank" href="http://wilsonmar.github.io/git-rebase">http://wilsonmar.github.io/git-rebase</a>
+   provides step-by-step instructions. Then return here.
 
 
    <a name="Push"></a>
