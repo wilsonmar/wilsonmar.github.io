@@ -26,7 +26,11 @@ PROTIP: SFDX was announced in 2015 and entered <a target="_blank" href="https://
 
 <a target="_blank" alt="Apr 19, 2018" href="https://www.youtube.com/watch?v=zsZDEL6oO0Q&t=3m43s">This diagram</a> and the table under it illustrate the shift being introduced by DX:
 
-<a target="_blank" title="sfdx-shift-1272x529.png" href="https://user-images.githubusercontent.com/300046/43903651-26a9807a-9baa-11e8-9044-5b0251ee0649.png"><img alt="sfdx-shift-648x270-43358.jpg" width="648" src="https://user-images.githubusercontent.com/300046/43903631-1d2c7b38-9baa-11e8-9d94-6f08f43fe60f.jpg"></a>
+
+<amp-youtube data-videoid="WAWim8CJlUM" layout="responsive" width="480" height="270"></amp-youtube>
+
+<!--<a target="_blank" title="sfdx-shift-1272x529.png" href="https://user-images.githubusercontent.com/300046/43903651-26a9807a-9baa-11e8-9044-5b0251ee0649.png"><img alt="sfdx-shift-648x270-43358.jpg" width="648" src="https://user-images.githubusercontent.com/300046/43903631-1d2c7b38-9baa-11e8-9d94-6f08f43fe60f.jpg"></a>
+-->
 
 PROTIP: Various people have used different nicknames, so here they are together:
 
@@ -103,8 +107,8 @@ DX consists of these new facilities:
 But the change is about more than the tools. Instead of building code and customizations around a monolithic org, code and customizations are built around <strong>artifact</strong> (a logical set of code) that represents a subset of the org that can be tested independently from other components in your org. This is so an artifact can be released independently. 
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom"><th>Features</th><th>Scratch DX Org</th><th>Developer</th><th>Partial Copy Sandbox</th><th> Full Sandbox</th></tr>
 <tr valign="top"><td>Environment:</td><td>Dev</td><td>Integration & QA</td><td>UAT</td><td>Staging</td></tr>
+<tr valign="bottom"><th>Features</th><th>Scratch DX Org</th><th>Developer</th><th>Partial Copy Sandbox</th><th> Full Sandbox</th></tr>
 <tr valign="top"><td>Retention:</td><td>Ephemeral</td><td>1 day</td><td>5 days</td><td>29 days</td></tr>
 <tr valign="top"><td>Data limit:</td><td>200 MB</td><td>200 MB (1 GB Pro)</td><td>5 GB*</td><td>Matches Prod.</td></tr>
 <tr valign="top"><td>Customer data:</td><td>-</td><td>-</td><td>Sample</td><td>All data</td></tr>
