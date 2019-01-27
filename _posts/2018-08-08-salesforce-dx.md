@@ -103,10 +103,10 @@ DX consists of these new facilities:
 But the change is about more than the tools. Instead of building code and customizations around a monolithic org, code and customizations are built around <strong>artifact</strong> (a logical set of code) that represents a subset of the org that can be tested independently from other components in your org. This is so an artifact can be released independently. 
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom"><th>Features</th><th>Scratch Org</th><th>Developer</th><th>Partial Copy Sandbox</th><th> Full Sandbox</th></tr>
+<tr valign="bottom"><th>Features</th><th>Scratch DX Org</th><th>Developer</th><th>Partial Copy Sandbox</th><th> Full Sandbox</th></tr>
 <tr valign="top"><td>Retention:</td><td>Ephemeral</td><td>1 day</td><td>5 days</td><td>29 days</td></tr>
-<tr valign="top"><td>Data limit:</td><td>200 MB</td><td>200 MB (1 GB Pro)</td><td>5 GB\*</td><td>Matches Prod.</td></tr>
-<tr valign="top"><td>Customer data:</td><td>Test</td><td>Test</td><td>Sample</td><td>All data</td></tr>
+<tr valign="top"><td>Data limit:</td><td>200 MB</td><td>200 MB (1 GB Pro)</td><td>5 GB*</td><td>Matches Prod.</td></tr>
+<tr valign="top"><td>Customer data:</td><td>-</td><td>-</td><td>Sample</td><td>All data</td></tr>
 <tr valign="top"><td>API calls/24 hrs:</td><td>? </td><td>15K (50K)</td><td>-</td><td>-</td></tr>
 </table>
 
@@ -114,7 +114,9 @@ But the change is about more than the tools. Instead of building code and custom
 
 All sandboxes contain metadata (application and configuration information) which define reports, dashboards, price books, products, apps, and customizations in Setup. The data limit use of space for both metadata and customer data, consisting of standard and custom object records, documents, and attachments.
 
-Sandboxes are created based on specifications defined in a <strong>Sandbox template</strong>.
+Partial Copy and Full Sandboxes are created based on specifications defined in a <a target="_blank" href="https://help.salesforce.com/articleView?id=data_sandbox_templates.htm&type=5">Sandbox template</a>.
+It appears when searched in Setup only if you have permissions to view/edit them.
+An email is sent when a Sandbox finishes being populated.
 
 \* Up to 10,000 records per object can be stored.
 
