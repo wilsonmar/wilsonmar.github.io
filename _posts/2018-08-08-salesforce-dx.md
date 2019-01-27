@@ -104,6 +104,7 @@ But the change is about more than the tools. Instead of building code and custom
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th>Features</th><th>Scratch DX Org</th><th>Developer</th><th>Partial Copy Sandbox</th><th> Full Sandbox</th></tr>
+<tr valign="top"><td>Environment:</td><td>Dev</td><td>Integration & QA</td><td>UAT</td><td>Staging</td></tr>
 <tr valign="top"><td>Retention:</td><td>Ephemeral</td><td>1 day</td><td>5 days</td><td>29 days</td></tr>
 <tr valign="top"><td>Data limit:</td><td>200 MB</td><td>200 MB (1 GB Pro)</td><td>5 GB*</td><td>Matches Prod.</td></tr>
 <tr valign="top"><td>Customer data:</td><td>-</td><td>-</td><td>Sample</td><td>All data</td></tr>
