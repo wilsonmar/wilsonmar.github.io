@@ -318,9 +318,11 @@ TODO: Load balancer limits.
 
 ### Bastion Hosts
 
-BTW, when servers behind a firewall use unencrypted traffic, they should not have connection to the public internet. But to obtain files from the open internet, a single "Bastion host" is setup for administrators (on pre-defined IP addresses). Such a server is the only one that goes through a NAT (Network Address Translation) "Gateway" which hides IP addresses from the outside world. 
+BTW, when servers behind a firewall use unencrypted traffic, they should not have connection to the public internet. But to obtain files from the open internet, traditionally, a "Bastion host" is setup for administrators (on pre-defined IP addresses). Such a server is the only one that goes through a NAT (Network Address Translation) "Gateway" which hides IP addresses from the outside world. 
 
 Once vetted, files needed by application servers are obtained from an internal Network File Share (NFS) or file respository server managed by utility software such as Nexus or Artifactory.
+
+Bation hosts and inbound ports and SSH keys can be replaced by the AWS Systems Manager Session Manager.
 
 ## A/B Testing
 
