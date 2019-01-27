@@ -110,17 +110,22 @@ But the change is about more than the tools. Instead of building code and custom
 <tr valign="top"><td>API calls/24 hrs:</td><td>? </td><td>15K (50K)</td><td>-</td><td>-</td></tr>
 </table>
 
-All sandboxes contain metadata (application and configuration information) which define reports, dashboards, price books, products, apps, and customizations in Setup.
+(Number within parentheses are for Partner Developers.)
+
+All sandboxes contain metadata (application and configuration information) which define reports, dashboards, price books, products, apps, and customizations in Setup. The data limit use of space for both metadata and customer data, consisting of standard and custom object records, documents, and attachments.
 
 Sandboxes are created based on specifications defined in a <strong>Sandbox template</strong>.
 
 \* Up to 10,000 records per object can be stored.
 
-A Sandbox that is a nearly identical copy of all production data is available only to Enterprise or Unlimited Edition customers. 
+A Full Sandbox (that is a nearly identical copy of all production data) is available only to Enterprise or Unlimited Edition customers. 
 Sandboxes cost about 25% of total spend.
 
+https://trailhead.salesforce.com/en/content/learn/modules/application-lifecycle-and-development-models
+Application Lifecycle and Development Models
 
-Number within parentheses are for Partner Developers.
+https://trailhead.salesforce.com/content/learn/modules/declarative-change-set-development/plan-for-changes-to-your-org
+Change Set Development Model
 
 
 <a name="Git"></a>
