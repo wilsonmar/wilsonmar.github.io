@@ -26,10 +26,10 @@ PROTIP: SFDX was announced in 2015 and entered <a target="_blank" href="https://
 
 <a target="_blank" alt="Apr 19, 2018" href="https://www.youtube.com/watch?v=zsZDEL6oO0Q&t=3m43s">This diagram</a> and the table under it illustrate the shift being introduced by DX:
 
+<amp-youtube data-videoid="0Wu8v6s_6Bg" layout="responsive" width="480" height="270"></amp-youtube>
 
-<amp-youtube data-videoid="WAWim8CJlUM" layout="responsive" width="480" height="270"></amp-youtube>
-
-<!--<a target="_blank" title="sfdx-shift-1272x529.png" href="https://user-images.githubusercontent.com/300046/43903651-26a9807a-9baa-11e8-9044-5b0251ee0649.png"><img alt="sfdx-shift-648x270-43358.jpg" width="648" src="https://user-images.githubusercontent.com/300046/43903631-1d2c7b38-9baa-11e8-9d94-6f08f43fe60f.jpg"></a>
+<!--https://youtu.be/WAWim8CJlUM is obsoleted
+<a target="_blank" title="sfdx-shift-1272x529.png" href="https://user-images.githubusercontent.com/300046/43903651-26a9807a-9baa-11e8-9044-5b0251ee0649.png"><img alt="sfdx-shift-648x270-43358.jpg" width="648" src="https://user-images.githubusercontent.com/300046/43903631-1d2c7b38-9baa-11e8-9d94-6f08f43fe60f.jpg"></a>
 -->
 
 PROTIP: Various people have used different nicknames, so here they are together:
