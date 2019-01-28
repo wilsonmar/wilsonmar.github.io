@@ -372,6 +372,8 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
    `--volumes-from` is how data volumes are associated (for sharing).
 
 
+   <a target="_blank" href="https://medium.com/devopslinks/how-to-build-a-serverless-ci-cd-pipeline-on-aws-907be91c2e48">*</a>
+
 
 ### Install local Windows 10 #
 
@@ -621,6 +623,33 @@ Jul 27 22:37:40 centos-512mb-sfo2-01 systemd[1]: Started Docker Application Cont
 
 0. Skip to <a href="#VerifyInstall">verify Docker install</a> below.
 
+<hr />
+
+<a name="Docker4Win10"></a>
+
+### Install Docker on Windows 10
+
+1. Spin up a standard AWS Linux 2 EC2 instance.
+
+1, Login the instance and run:
+
+   <pre><strong>
+   sudo yum update -y
+   sudo amazon-linux-extras install docker
+   sudo service docker start
+   </strong></pre>
+
+1. Add the ec2-user to the docker group so you can execute Docker commands without using sudo:
+
+   <pre><strong>sudo usermod -a -G docker ec2-user</strong></pre>
+
+1. Log out and log back into your EC2 instance so ec2-user can assume the new permissions. 
+
+1. Verify the ec2-user can run Docker commands without sudo:
+
+   <pre><strong>docker info</strong></pre>
+
+1. Skip to <a href="#VerifyInstall">verify Docker install</a> below.
 
 <hr />
 

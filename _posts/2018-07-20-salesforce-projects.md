@@ -168,11 +168,16 @@ Project: <a target="_blank" href="https://trailhead.salesforce.com/en/projects/w
    1. <a target="_blank" href="https://www.youtube.com/watch?v=Fwwqe48dhgU">28:46</a> May 17, 2018
    1. <a target="_blank" href="https://www.youtube.com/watch?v=sRKxydxRkDg">3:29</a> May 17, 2018
 
-## Sample Reference apps
+
+## Trailhead apps
 
 Salesforce people have created (and maintained) several reference apps that demonstrate best-practices when building with Salesforce.
 
 PROTIP: Click the app name to reach directly its GitHub repository under <a target="_blank" href="https://github.com/trailheadapps">https://github.com/trailheadapps</a>
+
+* <a target="_blank" href="https://github.com/trailheadapps/lwc-recipes">Recipies</a> was made with Lightning Web Components.
+
+* <a target="_blank" href="https://github.com/trailheadapps/ebikes-lwc">EBikes</a> was made with Lightning Web Components.
 
 * <a target="_blank" href="https://github.com/dreamhouseapp/dreamhouse-sfdx">DreamHouse</a> was made to be installed using <a target="_blank" href="https://wilsonmar.github.io/salesforce-dx">Salesforce DX</a>
 
@@ -184,12 +189,10 @@ PROTIP: Click the app name to reach directly its GitHub repository under <a targ
 
 * <a target="_blank" href="https://github.com/trailheadapps/easy-spaces">Easy Spaces</a> is an event management app built with dynamic flows, Flow Actions, and object-agnostic Lightning components. This app also demonstrates how to structure your source code for modular distribution using unlocked packages.
 
-<br /><br />
-
 <a target="_blank" href="https://trailhead.salesforce.com/users/00550000006yDdKAAU/trailmixes/sample-gallery-trailmix">
-This Trailmix</a> features the apps listed above.
+List of Trailmix featuring the apps listed above.</a>
 
-Additionally, there are repos not listed in the <a target="_blank" href="https://trailhead.salesforce.com/sample-gallery">sample-gallery web page</a>:
+Additionally, repos not listed in the <a target="_blank" href="https://trailhead.salesforce.com/sample-gallery">sample-gallery web page</a>:
 
 * <a target="_blank" href="https://github.com/trailheadapps/purealoe-distributor">Pure Aloe Distributor</a> is a companion to the Pure Aloe app, to explore how to integrate decoupled applications with Salesforce via Platform Events written in NodeJs.
 

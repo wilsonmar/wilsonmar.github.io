@@ -292,6 +292,9 @@ People who have commented on this include:
 ## Resources #
 
 <a target="_blank" href="https://app.pluralsight.com/library/courses/static-site-generator-build-better-blog/table-of-contents">
+Static Site Generator Build Better Blog</a> Pluralsight video course.
+
+<a target="_blank" href="https://medium.com/@sithum/automate-static-website-deployment-from-github-to-s3-using-aws-codepipeline-16acca25ebc1">Automate static website deployment from Github to S3 using AWS CodePipeline</a>
 
 
 ## More on front-end styling #

@@ -19,8 +19,7 @@ You are at <a target="_blank" href="https://wilsonmar.github.io/aws-devops/">
 https://wilsonmar.github.io/aws-devops/</a>
 
 This tutorial describes information to get certified as a <a target="_blank" href="https://aws.amazon.com/certification/certified-devops-engineer-professional/">
-AWS Certified DevOps Engineer - Professional</a>,
-which focuses on continuous integration and deployment in the AWS EC2 cloud.
+AWS Certified DevOps Engineer - Professional</a> able to setup and manage continuous integration and deployment in the AWS EC2 cloud.
 You pay $300 USD to <strong>write out</strong> 80 essay (not multiple-choice) questions in 170 minutes (3 hours with no breaks). <strong>That's 2.1 seconds per essay question.</strong>
 Those who fail the exam must wait 30 days before being allowed to retake the exam (at additional cost),
 and only 3 times in a 12 month period.
@@ -36,16 +35,16 @@ Amazon</a> defines "DevOps is the combination of cultural philosophies, practice
 
 <a name="CodeDeploy"></a>
 
-## CodeCommit, CodePipeline, CodeDeploy #
+## CodeCommit, CodeBuild, CodePipeline, CodeDeploy #
 
 ![aws devops 201606-650x209-i11](https://cloud.githubusercontent.com/assets/300046/17295043/77eae0e8-57b7-11e6-958b-dc26ebe74361.jpg)
+
++ CodeBuild
 
 ### Setup instances #
 
 0. In IAM Service, create Role "codedeploy".
-
 0. Create CDInstanceRole
-
 0. In Compute EC2 service, launch Amazon Linux, t2.micro, 2 instances, using the role created above.
    In Advanced Details, paste script from https://gist.github.com/mikepfeiffer/4d9386afdcceaf29493a
 
@@ -89,6 +88,10 @@ Amazon</a> defines "DevOps is the combination of cultural philosophies, practice
 0. Do not define Build Stage (until we have a build).
 0. Create Service Role using default name "AWS-CodePipeline-Service". View Policy Document to review Actions allowed the role:
 0. Review Pipeline summary.
+0. Cleanup: Delete the pipeline you just created.
+
+PROTIP: Each pipeline costs about $1 per month, and charges only if a deployment occurs.
+
 
 ### View app deployed #
 
@@ -269,7 +272,22 @@ Boto 3 consists of these major features:
 * Paginators: automatic paging of responses
 * Waiters: a way to block until a certain state has been reached
 
+## References
 
+<a target="_blank" href="https://aws.amazon.com/training/course-descriptions/devops-engineering/">Amazon's own DevOps Engineering on AWS</a> 3-day classroom course covers:
+
+* Use the principal concepts and practices behind the DevOps methodology
+* Design and implement an infrastructure on AWS that supports one or more DevOps development projects
+* Use AWS CloudFormation and AWS OpsWorks to deploy the infrastructure necessary to create development, test, and production environments for a software development project
+* Use AWS CodeCommit and AWS CodeBuild to understand the array of options for enabling a continuous integration (CI) environment on AWS
+* Use AWS CodePipeline to design and implement a continuous integration and continuous delivery (CI/CD) pipeline on AWS
+* Use AWS CodeStar to manage all software development activities in one place
+* Implement several common continuous deployment (CD) use cases using AWS technologies, including blue/green deployment and A/B testing
+
+* Distinguish between the array of application deployment technologies available on AWS, including AWS CodeDeploy, AWS OpsWorks, AWS Elastic Beanstalk, Amazon Elastic Container Service (Amazon ECS), and Amazon Elastic Container Registry (Amazon ECR), and decide which technology best fits a given scenario
+* Use Amazon EC2 Systems Manager for patch management
+* Leverage automated testing in different stages of a CI/CD pipeline
+* Fine-tune the applications you deliver on AWS for high performance, and use AWS tools and technologies to monitor your application and environment for potential issues
 
 ## More on DevOps #
 
