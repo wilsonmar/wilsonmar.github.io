@@ -312,9 +312,8 @@ Trends identified would include the time between acceptance of a connection to t
 
 <!-- This is for either Layer 7 HTTP/HTTPS that uses X-Forwarded-for header to get client IP addresses via Application Load Balancers or 
 Layer 4 TCP using proxy protocol to get client addresses via Network or Classic Load Balancers
--->
-
 TODO: Load balancer limits.
+-->
 
 ### Bastion Hosts
 
@@ -322,7 +321,8 @@ BTW, when servers behind a firewall use unencrypted traffic, they should not hav
 
 Once vetted, files needed by application servers are obtained from an internal Network File Share (NFS) or file respository server managed by utility software such as Nexus or Artifactory.
 
-Bation hosts and inbound ports and SSH keys can be replaced by the AWS Systems Manager Session Manager.
+Bation hosts and inbound ports and SSH keys can be replaced by the <a target="_blank" href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html">AWS Systems Manager Session Manager</a>, which also maintains an audit trail. But its IAM setup is tricky.<a target="_blank" href="https://acloud.guru/series/release-review/view/109">*</a>
+
 
 ## A/B Testing
 

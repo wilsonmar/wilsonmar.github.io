@@ -1189,6 +1189,8 @@ by Sebastien Goasguen
 
 https://techbeacon.com/50-best-starter-kits-resources-building-serverless-apps
 
+https://github.com/awslabs/serverless-application-model
+
 
 ## More on Clouds #
 

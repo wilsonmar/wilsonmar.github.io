@@ -670,7 +670,8 @@ On Mac:
 
 ## AWS Cloud9
 
-<a target="_blank" href="https://console.aws.amazon.com/cloud9/home/product">AWS Cloud9</a> (under the Developer Tools category) works completely in the browser running in EC2 under the hood.
+<a target="_blank" href="https://console.aws.amazon.com/cloud9/home/product">AWS Cloud9</a> for (Serveless) Lambda (under the Developer Tools category) works completely in the browser running in EC2 under the hood.
+Key bindings from various other editors.
 It auto-hibernates. 
 Terminal, Git, NVM, Python, are pre-installed.
 AWS Resources tab provides Lambda and Gateway integration.

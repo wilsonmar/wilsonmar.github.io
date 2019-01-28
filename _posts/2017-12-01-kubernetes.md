@@ -1615,6 +1615,11 @@ Oshinko empowers intelligent app developement on the OpenShift platform
 deploying and managing Apache Spark clusters
 It has a spark cluster management app (oshinko-webui)
 
+## Resources
+
+Vicky Tanya Seno at Santa Monica College is preparing a course of Kubernetes on ACloud.guru
+
+
 ## More on DevOps #
 
 This is one of a series on DevOps:
