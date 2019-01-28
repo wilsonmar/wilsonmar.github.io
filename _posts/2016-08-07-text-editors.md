@@ -668,6 +668,18 @@ On Mac:
    Make Visual Studio Code Your Editor video course at Scotch.io</a>
 
 
+## AWS Cloud9
+
+<a target="_blank" href="https://console.aws.amazon.com/cloud9/home/product">AWS Cloud9</a> (under the Developer Tools category) works completely in the browser running in EC2 under the hood.
+It auto-hibernates. 
+Terminal, Git, NVM, Python, are pre-installed.
+AWS Resources tab provides Lambda and Gateway integration.
+
+<a target="_blank" href="https://acloud.guru/series/release-review/view/105">Reviewed</a> using https://github.com/ACloudGuru/acg-rr-cloud9
+
+CAUTION: Do your own backups.
+
+
 ## References
 
 https://earthsci.stanford.edu/computing/unix/editing/editorchoices.php
