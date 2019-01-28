@@ -259,8 +259,9 @@ After 60 days, logs can be sent to AWS Glacier for lower-cost longer term retent
 
 ## Load Balancing
 
-When multiple server instances are involved, a <strong>Load Balancer</strong> is needed to balance (distribute) work among instances. Load Balancers can also use (X.509) SSL certificates installed to convert "https://" encrypted requests to unencrypted "http://" requests passed on to web servers. This "SSL termination" reduces the decryption and encryption workload on individual servers. But some prefer end-to-end security between all servers.
-Some load balancers (such as F5) are specialized servers with special (ASIC) chips to process faster than standard computers. F5 itself, NGINX, Cisco, and others also have software-based load balancers which can be used instead of AWS offerings.
+When multiple server instances are involved, a <a target="_blank" href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-create-https-ssl-load-balancer.html">Load Balancer</a> is needed to balance (distribute) work among instances. Load Balancers can also use (X.509) SSL certificates installed to convert "https://" (port 443)  encrypted requests to unencrypted "http://" (port 80) requests passed on to web servers. This reduces the decryption and encryption workload on individual servers on the back-end. But some prefer end-to-end security between all servers by <a target="_blank" href="https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html">generating</a> and installing SSL certs in every server instance.
+
+Some load balancers (such as F5) are specialized hardware (with ASIC chips) to process faster than standard computers. F5 itself, NGINX, Cisco, and others also have software-based load balancers which can be used instead of AWS offerings.
 
 
 Each Elastic Load Balancer (ELB) and EC2 Auto Scaling Group (ASG) keeps its own <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-monitoring-features.html">set of logs to S3 objects</a>.
