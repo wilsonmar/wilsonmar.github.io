@@ -264,6 +264,10 @@ When multiple server instances are involved, a <a target="_blank" href="https://
 Some load balancers (such as F5) are specialized hardware (with ASIC chips) to process faster than standard computers. F5 itself, NGINX, Cisco, and others also have software-based load balancers which can be used instead of AWS offerings.
 
 
+To duplicate a production instance containing the latest version of all data, first setup EC2 instances to save incremental snapshots into S3.
+
+
+
 Each Elastic Load Balancer (ELB) and EC2 Auto Scaling Group (ASG) keeps its own <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-monitoring-features.html">set of logs to S3 objects</a>.
 The default is only EC2 status checks.
 So set S3 bucket Properties > Logging of "aws-bucket-logging" to enabled.

@@ -72,36 +72,6 @@ As companies grow, they can use more features.
 
 Salesforce is called the "Intelligent Customer Success Platform" 
 
-### SME
-
-Small and Medium sized (SME) organizations can benefit from Salesforce because all they need to get organized is an internet connection and a browser.
-Those companies don't have server rooms to build, power, refrigerate, and guard. In several places for disaster recovery.
-Most companies over-buy hardware to cover future growth.
-So in many cases, we see the using Salesforce <strong>saves money</strong> versus excess capacity built.
-With Salesforce, companies pay only what they use for the number of employees.
-You don't pay for idle hardware.
-But when you need, you can scale quickly, globally, without all the effort and time that goes with buying hardware.
-
-Salesforce is completely run on the cloud, with no on-premises option.
-So all data is in one connected platform to do work, enabling teamwork globally, anytime.
-That's why some companies adopt Salesforce because their customers say they will have more confidence with their capability if they use Salesforce.
-Or they adopt Salesforce to keep up with competitors who are doing more with less people.
-
-### Essential features SalesforceIQ
-
-The <a target="_blank" href="https://www.salesforce.com/products/sales-cloud/pricing/">Sales Cloud</a> <a href="#Editions">Essentials license</a> 
-provides these basic CRM features:
-
-   * One list
-   * Automatic data capture
-   * Customizable sales tracking for one list
-   * Intelligent follow-up reminders
-   * Contact auto-complete
-   * Shared address book
-   * Sent-email notifications
-   * Seamless collaboration
-   * Smart mobile apps
-   * Webinars and live trainings
 
 ### Customer Success
 
@@ -129,7 +99,9 @@ Data collection also enables Managers to make decisions based on facts.
    <br /><br />
 
 The true power of Salesforce is the ease of customization and, paradoxically, powerful features.
-Gartner rated Salesforce at the upper-right corner of its Magic Quandrant of systems for "citizen programmers". Salesforce provides an easy and fast way to create sophisticated apps:
+Gartner rated Salesforce at the upper-right corner of its Magic Quandrant of systems for "citizen programmers". 
+
+Salesforce provides an easy and fast way to create sophisticated apps:
    <br /><br />
    * An app can be created in minutes using point and click, selecting sophisticated features that have been built up over the years from features common among all Salesforce customers -- features that would not be economical for any single company to fund on their own.
    * Mobile "Salesforce1" apps are generated automatically, making Salesforce the top-rated mobile development platform
@@ -147,12 +119,53 @@ Gartner rated Salesforce at the upper-right corner of its Magic Quandrant of sys
    * Salesforce was designed with a <strong>metadata-driven</strong> architecture. Everything, including the code, configuration, and apps, is specified as metadata.
    <br /><br />
 
-The 2018 survey by 3rd-party BLuewolf found that 94% of Salesforce customers say it makes their job easier.
+Resources:
 
-Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/drucker_customer_market_driven/">Drucker School—Customer & Market Strategy</a> [1 hr 45 mins] +700
+* Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/drucker_customer_market_driven/">Drucker School—Customer & Market Strategy</a> [1 hr 45 mins] +700
 to turn your organization into a customer and market-driven powerhouse with these insights.
+* <a target="_blank" href="https://trailhead.salesforce.com/en/trails/salesforce_advantage">Navigate the Salesforce Advantage</a> [1 hr 20 mins] - Learn about the key differentiators that drive our success: our core values, innovative technology, and vibrant ecosystem.
 
-<a target="_blank" href="https://trailhead.salesforce.com/en/trails/salesforce_advantage">Navigate the Salesforce Advantage</a> [1 hr 20 mins] - Learn about the key differentiators that drive our success: our core values, innovative technology, and vibrant ecosystem.
+The 2018 survey by 3rd-party Bluewolf found that 94% of Salesforce customers say it makes their job easier.
+
+## SME
+
+Small and Medium sized (SME) organizations can benefit from Salesforce because all they need to get organized is an internet connection and a browser.
+Those companies don't have server rooms to build, power, refrigerate, and guard. In several places for disaster recovery.
+Most companies over-buy hardware to cover future growth.
+So in many cases, we see the using Salesforce <strong>saves money</strong> versus excess capacity built.
+With Salesforce, companies pay only what they use for the number of employees.
+You don't pay for idle hardware.
+But when you need, you can scale quickly, globally, without all the effort and time that goes with buying hardware.
+
+Salesforce is completely run on the cloud, with no on-premises option.
+So all data is in one connected platform to do work, enabling teamwork globally, anytime.
+That's why some companies adopt Salesforce because their customers say they will have more confidence with their capability if they use Salesforce.
+Or they adopt Salesforce to keep up with competitors who are doing more with less people.
+
+### Essential features in SalesforceIQ
+
+The <a target="_blank" href="https://www.salesforce.com/products/sales-cloud/pricing/">Sales Cloud</a> <a href="#Editions">Essentials license</a> 
+provides these basic CRM features:
+
+   * One list
+   * Automatic data capture
+   * Customizable sales tracking for one list
+   * Intelligent follow-up reminders
+   * Contact auto-complete
+   * Shared address book
+   * Sent-email notifications
+   * Seamless collaboration
+   * Smart mobile apps
+   * Webinars and live trainings
+
+
+## Add-ons
+
+An army of partners and 3rd-party developers create add-on functionality for Salesforce.
+
+An example of a native app (completely within Salesforce) is <a target="_blank" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000003J3PzEAK">Internet Creations' Case Flags</a> which adds color-coded flags to provide real-time visibility to cases requiring responses to customers. Such alerts reduce customer SLA violations.
+
+Another example is <a target="_blank" href="https://www.autorabit.com/">AutoRabit</a> which provides an easy GUI to move data and metadata for CI/CD. Their DataLoader provides an automated way to get around complex issues with some metadata and dependencies that Salesforce itself has not yet resolved.
 
 
 ### Competitors in CRM
@@ -288,12 +301,39 @@ Salesforce, as a company, owns several domain names (some product offerings have
    * <a target="_blank" href="http://www.marketingcloud.com/">MarketingCloud.com</a> (formerly ExactTarget) [<a target="_blank" href="https://status.marketingcloud.com/">status</a>]
    * <a target="_blank" href="https://pardot.com">Pardot.com</a> [<a target="_blank" href="https://trust.pardot.com/">status</a>]
    * <a target="_blank" href="https://www.quip.com/">Quip.com</a> "a Salesforce company" enables <a target="_blank" href="https://quip.com/cAJzAnydf6gp">spreadsheets</a> and word document files to be exposed on the internet. It also has APIs to enable automation of processes, integration, and collabortion with any app.
+
    * <a target="_blank" href="https://sforce.co/">sforce.co</a> is Salesforce's own URL shortener, which also tracks the origin of links resolved.
+   * <a target="_blank" href="https://salesforce.vidyard.com/">https://salesforce.vidyard.com</a> shows videos
 
 Not owned by Salesforce (but they seem close):
 
    * <a target="_blank" href="http://www.financialforce.com/">FinancialForce.com</a> provides SaaS for managing financial information. Salesforce invested in this company.
    * <a target="_blank" href="https://atginfo.com/">ATG (Advanced Technology Group)</a> provides SaaS for "Quote to Cash" add-on plus trains on Salesforce Billing.
+
+
+<a name="Reroutes"></a>
+
+### Rerouted domains
+
+When Salesforce acquires other companies, it tends to route traffic from their previous websites into Salesforce domains. Examples: 
+
+   * <a target="_blank" href="http://www.appexchange.com/">AppExchange.com</a> redirects to appexchange.salesforce.com
+   * <a target="_blank" href="http://www.database.com/">Database.com</a> redirects to the Salesforce Platform page
+   * <a target="_blank" href="http://www.developerforce.com/">Developerforce.com</a> redirects to<br /><a target="_blank" href="https://developer.salesforce.com/">https://developer.salesforce.com</a>
+   * <a target="_blank" href="https://www.site.com/">Site.com</a> is redirected to <br />https://www.salesforce.com/products/platform/overview/
+   * Work.com was [retired July 10, 2015](https://success.salesforce.com/_ui/core/chatter/topics/TopicPage?id=0TO300000004GDW&ref=group_profile). It was a sales performance management solution for on-boarding new reps faster, for coaching reps to close more deals, and for rewarding successful behaviors. It redirects tohttps://www.salesforce.com/products/sales-cloud/overview/
+   * <a target="_blank" href="https://www.salesforce1.com/">Salesforce1.com</a> redirects to salesforce.com.
+
+### Github accounts
+
+Salesforce employees maintain these accounts within (now Microsoft's) GitHub.com:
+
+   * https://github.com/salesforcelabs/
+   * https://github.com/forcedotcom/
+   * https://github.com/salesforce-ux/
+   * https://github.com/financialforcedev/
+   * https://github.com/SalesforceFoundation/ by http://www.salesforce.org/nonprofit/nonprofit-success-pack/  tools to help manage programs, donations, volunteers, and supporters.
+   (<a target="_blank" href="https://www.youtube.com/channel/UC6ZEIvlahVCA8k5tYTr_a2A">YouTube acct.</a>)
 
 
 ### Status of productive use
@@ -393,35 +433,10 @@ Salesforce issues separate <strong>feature licenses</strong> for a set number of
    * Lightning Sync (of contacts, events, emails, tasks) separates unresolved items for reconciliation.
 
    * Cloud Scheduler, a calendaring feature in Salesforce Classic for requesting meetings and finding mutually convenient times to meet, is <a target="_blank" href="https://help.salesforce.com/articleView?id=Cloud-Scheduler-to-begin-phased-retirement-with-Winter-17&type=1&language=en_US">being retired</a> in Winter '17 to Winter '18 Releases
-
    <br /><br />
 
 See http://www.salesforce.com/platform/overview/
 
-<a name="Reroutes"></a>
-
-### Rerouted domains
-
-When Salesforce acquires other companies, it tends to fold acquired users into Salesforce domains, then automatically reroute requests to previous domains to Salesforce.com. Examples: 
-
-   * <a target="_blank" href="http://www.appexchange.com/">AppExchange.com</a> redirects to appexchange.salesforce.com
-   * <a target="_blank" href="http://www.database.com/">Database.com</a> redirects to the Salesforce Platform page
-   * <a target="_blank" href="http://www.developerforce.com/">Developerforce.com</a> redirects to<br /><a target="_blank" href="https://developer.salesforce.com/">https://developer.salesforce.com</a>
-   * <a target="_blank" href="https://www.site.com/">Site.com</a> is redirected to <br />https://www.salesforce.com/products/platform/overview/
-   * Work.com was [retired July 10, 2015](https://success.salesforce.com/_ui/core/chatter/topics/TopicPage?id=0TO300000004GDW&ref=group_profile). It was a sales performance management solution for on-boarding new reps faster, for coaching reps to close more deals, and for rewarding successful behaviors. It redirects tohttps://www.salesforce.com/products/sales-cloud/overview/
-   * <a target="_blank" href="https://www.salesforce1.com/">Salesforce1.com</a> redirects to salesforce.com.
-   * <a target="_blank" href="https://salesforce.vidyard.com/">https://salesforce.vidyard.com</a> shows videos
-
-### Github accounts
-
-Salesforce employees maintain these accounts within (now Microsoft's) GitHub.com:
-
-   * https://github.com/salesforcelabs/
-   * https://github.com/forcedotcom/
-   * https://github.com/salesforce-ux/
-   * https://github.com/financialforcedev/
-   * https://github.com/SalesforceFoundation/ by http://www.salesforce.org/nonprofit/nonprofit-success-pack/  tools to help manage programs, donations, volunteers, and supporters.
-   (<a target="_blank" href="https://www.youtube.com/channel/UC6ZEIvlahVCA8k5tYTr_a2A">YouTube acct.</a>)
 
 <a name="Editions"></a>
 
@@ -445,6 +460,8 @@ https://developer.salesforce.com/page/Apex_Code_Best_Practices
 
 ### Product Editions
 
+QUESTION: If you know the answer to replace the ? below, I would appreciate you taking a minute to let me know.
+
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th align="left"> Feature: </th><th><a href="#DevLicense">Developer</a></th><th><a href="#Essentials">Essentials</a></th><th><a href="#ProLicense">Professional</a></th><th><a href="#EnterpriseLicense">Enterprise</a></th><th><a href="#UnlimitedLicense">Unlimited</a></th></tr>
 <tr valign="top"><td>$/user per Month</td><td align="right"> - </td><td align="right"> $25 </td><td align="right"> $75 </td><td align="right"> $150 </td><td align="right"> $300</td></tr> 
@@ -467,6 +484,8 @@ That's $1500 per year.
 
 Additional space for storing files can be purchased for $5/month per gigabyte. 
 This means 1TB would cost an additional $5,120/month.
+
+BTW the above quotes can change anytime.
 
 
 <a name="FeaturesByEdition"></a>
@@ -688,14 +707,17 @@ MEH: Each product record in a Pricebook is for a single currency. So a product s
 PROTIP: Salesforce has <strong>three releases per year</strong>, named by season (avoiding Fall):
 
 <!--
-| <a target="_blank" href="https://www.salesforceben.com/complete-guide-to-salesforce-winter-19/">Winter '19</a> | 44.0 | <a target="_blank" href="https://resources.docs.salesforce.com/215/latest/en-us/sfdc/pdf/salesforce_winter19_release_notes.pdf">215 PDF</a> |
+| <a target="_blank" href="https://www.salesforceben.com/complete-guide-to-salesforce-winter-19/">Winter '19</a> | 44.0 | <a target="_blank" href="https://resources.docs.salesforce.com/215/latest/en-us/sfdc/pdf/salesforce_winter19_release_notes.pdf">215 </a> |
 -->
 
-| Force Version | API Version | Release |
+| Version Name | API Version | Release PDF |
 | ----:         | -----: | --: |
-| <a target="_blank" href="https://www.salesforceben.com/complete-guide-to-salesforce-summer-18/">Summer '18</a> | 43.0 | <a target="_blank" href="https://resources.docs.salesforce.com/214/latest/en-us/sfdc/pdf/salesforce_summer18_release_notes.pdf">214 PDF</a> |
-| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/spring18/">Spring '18</a> | 42.0 | <a target="_blank" href="https://resources.docs.salesforce.com/212/latest/en-us/sfdc/pdf/salesforce_spring18_release_notes.pdf">212 PDF</a> |
-| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/winter18/">Winter '18</a> | 41.0 | <a target="_blank" href="https://resources.docs.salesforce.com/210/latest/en-us/sfdc/pdf/salesforce_winter18_release_notes.pdf">210 PDF</a> |
+| <a target="_blank" href="https://releasenotes.docs.salesforce.com/en-us/spring19/release-notes/salesforce_release_notes.htm">Spring '19</a> | <a target="_blank" href="https://releasenotes.docs.salesforce.com/en-us/spring19/release-notes/salesforce_release_notes.htm">44.0</a> | 
+<a target="_blank" href="https://resources.docs.salesforce.com/218/latest/en-us/sfdc/pdf/salesforce_spring19_release_notes.pdf">218 </a> |
+| <a target="_blank" href="https://releasenotes.docs.salesforce.com/en-us/winter19/release-notes/salesforce_release_notes.htm">Winter '19</a> | <a target="_blank" href="https://releasenotes.docs.salesforce.com/en-us/winter19/release-notes/salesforce_release_notes.htm">44.0</a> | <a target="_blank" href="https://resources.docs.salesforce.com/216/latest/en-us/sfdc/pdf/salesforce_winter19_release_notes.pdf">216 </a> |
+| <a target="_blank" href="https://www.salesforceben.com/complete-guide-to-salesforce-summer-18/">Summer '18</a> | 43.0 | <a target="_blank" href="https://resources.docs.salesforce.com/214/latest/en-us/sfdc/pdf/salesforce_summer18_release_notes.pdf">214 </a> |
+| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/spring18/">Spring '18</a> | 42.0 | <a target="_blank" href="https://resources.docs.salesforce.com/212/latest/en-us/sfdc/pdf/salesforce_spring18_release_notes.pdf">212 </a> |
+| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/winter18/">Winter '18</a> | 41.0 | <a target="_blank" href="https://resources.docs.salesforce.com/210/latest/en-us/sfdc/pdf/salesforce_winter18_release_notes.pdf">210 </a> |
 | <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/summer17/">Summer '17</a> | 40.0 |
 | <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/spring17/">Spring '17</a> | 39.0 |
 | <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/winter17/">Winter '17</a> | 38.0 |
