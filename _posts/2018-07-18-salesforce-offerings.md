@@ -127,6 +127,52 @@ to turn your organization into a customer and market-driven powerhouse with thes
 
 The 2018 survey by 3rd-party Bluewolf found that 94% of Salesforce customers say it makes their job easier.
 
+## Add-ons
+
+An army of partners and 3rd-party developers create add-on functionality for Salesforce.
+
+An example of a native app (completely within Salesforce) is <a target="_blank" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000003J3PzEAK">Internet Creations' Case Flags</a> which adds color-coded flags to provide real-time visibility to cases requiring responses to customers. Such alerts reduce customer SLA violations.
+
+Another example is <a target="_blank" href="https://www.autorabit.com/">AutoRabit</a> which provides an easy GUI to move data and metadata for CI/CD. Their DataLoader provides an automated way to get around complex issues with some metadata and dependencies that Salesforce itself has not yet resolved.
+
+
+## Currencies
+
+Although Salesforce does not recalculate foreigh currencies as they change constantly,
+its "Advanced currency management" calculates and track exchange rates periodically if
+"Activate Multiple Currencies" is set in the Company Information Profile.
+After activation, "Currency Setup" appears.
+
+
+## Competitors and Market Share
+
+The top competitors to Salesforce are:
+
+* SAP
+* Oracle
+* Microsoft Dynamics 365 SaaS integrated with its $26.9 billion LinkedIn acquisition with an initiative called <a target="_blank" href="https://www.forbes.com/sites/bobevans1/2017/12/11/how-microsoft-is-using-linkedin-to-take-on-salesforce-com-and-transform-the-science-of-sales/#5240fbcd2998">Microsoft Relationship Sales and initial customer Park Place</a>.
+
+* SOHO
+* <a target="_blank" href="https://www.marketingautomationinsider.com/hubspot-vs-salesforce/">Hubspot</a>
+* SugarCRM
+* Highrise
+* ActiveCampaign
+* Infusionsoft
+* PipeDrive
+* <a target="_blank" href="https://www.egnyte.com/">Egnyte</a>
+* <a target="_blank" href="https://www.showpad.com/">Showpad</a>
+<br /><br />
+
+Gartner says "Salesforce leads market share with 16% in 2013 vs. SAP with 13%, and Oracle with 10%." See https://en.wikipedia.org/wiki/Comparison_of_CRM_systems
+
+<a target="_blank" href="https://twitter.com/Benioff">Marc @Benioff's Twitter</a> header picture has this (from Gartner):
+
+   ![salesforce-market-share-1500x500](https://user-images.githubusercontent.com/300046/43361208-59796650-9286-11e8-919d-bdfd0b5937b7.jpg)
+
+Being a popular CRM solutions means it is easier to find sales reps who already know how to use the software
+
+PROTIP: Salesforce/Force.com seem to be more attractive to <strong>mid-market</strong> customers than SAP and Oracle. And smaller companies tend to more flexible about all work being done on-site.
+
 ## SME
 
 Small and Medium sized (SME) organizations can benefit from Salesforce because all they need to get organized is an internet connection and a browser.
@@ -144,12 +190,11 @@ Or they adopt Salesforce to keep up with competitors who are doing more with les
 
 ### Essential features in SalesforceIQ
 
-The <a target="_blank" href="https://www.salesforce.com/products/sales-cloud/pricing/">Sales Cloud</a> <a href="#Editions">Essentials license</a> 
-provides these basic CRM features:
+The <a target="_blank" href="https://www.salesforce.com/products/sales-cloud/pricing/">Sales Cloud</a> <a href="#Editions">Essentials license</a> provides these basic CRM features:
 
-   * One list
    * Automatic data capture
-   * Customizable sales tracking for one list
+   * One list (instead of being scattered among emails and other places), accessible on the web
+   * Customizable sales tracking
    * Intelligent follow-up reminders
    * Contact auto-complete
    * Shared address book
@@ -157,52 +202,9 @@ provides these basic CRM features:
    * Seamless collaboration
    * Smart mobile apps
    * Webinars and live trainings
+   <br /><br />
 
-
-## Add-ons
-
-An army of partners and 3rd-party developers create add-on functionality for Salesforce.
-
-An example of a native app (completely within Salesforce) is <a target="_blank" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000003J3PzEAK">Internet Creations' Case Flags</a> which adds color-coded flags to provide real-time visibility to cases requiring responses to customers. Such alerts reduce customer SLA violations.
-
-Another example is <a target="_blank" href="https://www.autorabit.com/">AutoRabit</a> which provides an easy GUI to move data and metadata for CI/CD. Their DataLoader provides an automated way to get around complex issues with some metadata and dependencies that Salesforce itself has not yet resolved.
-
-
-### Competitors in CRM
-
-<a target="_blank" href="https://twitter.com/Benioff">Marc @Benioff's Twitter</a> header picture has this (from Gartner):
-
-   ![salesforce-market-share-1500x500](https://user-images.githubusercontent.com/300046/43361208-59796650-9286-11e8-919d-bdfd0b5937b7.jpg)
-
-Gartner says "Salesforce leads market share with 16% in 2013 vs. SAP with 13%, and Oracle with 10%." See https://en.wikipedia.org/wiki/Comparison_of_CRM_systems
-
-PROTIP: Salesforce/Force.com seem to be more attractive to <strong>mid-market</strong> customers than SAP and Oracle. And smaller companies tend to more flexible about all work being done on-site.
-
-Being a popular CRM solutions means it is easier to find sales reps who already know how to use the software
-
-The top competitors to Salesforce are:
-
-* SAP
-* Oracle
-* Microsoft Dynamics 365 SaaS integrated with its $26.9 billion LinkedIn acquisition with an initiative called <a target="_blank" href="https://www.forbes.com/sites/bobevans1/2017/12/11/how-microsoft-is-using-linkedin-to-take-on-salesforce-com-and-transform-the-science-of-sales/#5240fbcd2998">Microsoft Relationship Sales and initial customer Park Place</a>.
-
-* SOHO
-* <a target="_blank" href="https://www.marketingautomationinsider.com/hubspot-vs-salesforce/">Hubspot</a>
-* SugarCRM
-* Highrise
-* ActiveCampaign
-* Infusionsoft
-* PipeDrive
-* <a target="_blank" href="https://www.egnyte.com/">Egnyte</a>
-* <a target="_blank" href="https://www.showpad.com/">Showpad</a>
-
-
-## Currencies
-
-"Advanced currency management" is necessary to calculate and track exchange rates
-"Activate Multiple Currencies" in the Company Information Profile.
-After activation, "Currency Setup" appears.
-
+<hr />
 
 
 <a name="Clouds"></a>

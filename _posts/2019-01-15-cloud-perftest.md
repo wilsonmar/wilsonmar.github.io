@@ -236,7 +236,7 @@ NEXT: Server images are necessary to create multiple instances of the same appli
 
 ## Multiple instances for elasticity, reliability
 
-Eventually, load would grow beyond what a single server can handle.
+If your website is successful in growing visitors, load at peak would grow beyond what a single server can handle.
 
 Then <strong>multiple servers</strong> would be needed for "elasticity" -- the ability to deal with variations in load by adding more resources during high load or consolidating when the load decreases.
 
@@ -247,6 +247,11 @@ Multiple servers are also needed to ensure <strong>reliability</strong> -- to ha
 <strong>Fail-over tests</strong> measure whether fault tolerance can really occur.
 Testing that deliberately downs a server to measure the speed of recovery is called 
 <strong>"resilency testing"</strong>.<a href="#Tasks">*</a>
+
+
+<a target="_blank" href="https://wilsonmar.github.io/cloudformation">CloudFormation</> templates automate the creation of various components around the creation of a cluster of EC2 servers.
+An alternative are <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform</a> specifications which are multi-vendor (Azure, Google, etc. as well as Amazon).
+
 
 ## Monitoring
 
@@ -259,12 +264,12 @@ After 60 days, logs can be sent to AWS Glacier for lower-cost longer term retent
 
 ## Load Balancing
 
-When multiple server instances are involved, a <a target="_blank" href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-create-https-ssl-load-balancer.html">Load Balancer</a> is needed to balance (distribute) work among instances. Load Balancers can also use (X.509) SSL certificates installed to convert "https://" (port 443)  encrypted requests to unencrypted "http://" (port 80) requests passed on to web servers. This reduces the decryption and encryption workload on individual servers on the back-end. But some prefer end-to-end security between all servers by <a target="_blank" href="https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html">generating</a> and installing SSL certs in every server instance.
+When multiple server instances are involved, a <a target="_blank" href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-create-https-ssl-load-balancer.html">Load Balancer</a> is needed to balance (distribute) work among instances. Load Balancers can also use (X.509) <a target="_blank" href="https://aws.amazon.com/blogs/aws/new-tls-termination-for-network-load-balancers/">SSL/TLS</a> certificates installed to convert "https://" (port 443)  encrypted requests to unencrypted "http://" (port 80) requests passed on to web servers. This reduces the decryption and encryption workload on individual servers on the back-end. But some prefer end-to-end security between all servers by <a target="_blank" href="https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html">generating</a> and installing SSL certs in every server instance.
 
 Some load balancers (such as F5) are specialized hardware (with ASIC chips) to process faster than standard computers. F5 itself, NGINX, Cisco, and others also have software-based load balancers which can be used instead of AWS offerings.
 
 
-To duplicate a production instance containing the latest version of all data, first setup EC2 instances to save incremental snapshots into S3.
+To duplicate a running production instance containing the latest version of all data, first setup EC2 instances to save incremental data snapshots into S3 (for Disaster Recovery). But a volumn in running instance should be briefly stopped and flushed of data before doing snapshots.
 
 
 

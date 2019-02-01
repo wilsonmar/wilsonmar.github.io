@@ -28,7 +28,7 @@ Lists of individuals who have significant blogs, tweets, courses, or otherwise h
 
    <a name="MVP"></a>
 
-   * <a target="_blank" href="https://success.salesforce.com/mvp/">https://success.salesforce.com/mvp</a> (About 200+ are selected each year).
+   * <a target="_blank" href="https://success.salesforce.com/mvp">https://success.salesforce.com/mvp</a> (About 200+ are selected each year).
 
    * Webinar: <a target="_blank" href="https://longshoreconsulting.webinarninja.com/webinars/18315/register/">#AdminHour: All About the Salesforce MVP Program</a>
 
