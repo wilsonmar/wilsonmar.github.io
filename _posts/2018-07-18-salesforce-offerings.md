@@ -709,29 +709,28 @@ MEH: Each product record in a Pricebook is for a single currency. So a product s
 PROTIP: Salesforce has <strong>three releases per year</strong>, named by season (avoiding Fall):
 
 <!--
-| <a target="_blank" href="https://www.salesforceben.com/complete-guide-to-salesforce-winter-19/">Winter '19</a> | 44.0 | <a target="_blank" href="https://resources.docs.salesforce.com/215/latest/en-us/sfdc/pdf/salesforce_winter19_release_notes.pdf">215 </a> |
+| <a target="_blank" href="https://www.salesforceben.com/complete-guide-to-salesforce-winter-19/">Winter '19</a> | 44 | <a target="_blank" href="https://resources.docs.salesforce.com/215/latest/en-us/sfdc/pdf/salesforce_winter19_release_notes.pdf">215 </a> |
 -->
 
 | Version Name | API Version | Release PDF |
 | ----:         | -----: | --: |
-| <a target="_blank" href="https://releasenotes.docs.salesforce.com/en-us/spring19/release-notes/salesforce_release_notes.htm">Spring '19</a> | <a target="_blank" href="https://releasenotes.docs.salesforce.com/en-us/spring19/release-notes/salesforce_release_notes.htm">44.0</a> | 
-<a target="_blank" href="https://resources.docs.salesforce.com/218/latest/en-us/sfdc/pdf/salesforce_spring19_release_notes.pdf">218 </a> |
+| <a target="_blank" href="https://releasenotes.docs.salesforce.com/en-us/spring19/release-notes/salesforce_release_notes.htm">Spring '19</a> | <a target="_blank" href="https://releasenotes.docs.salesforce.com/en-us/spring19/release-notes/salesforce_release_notes.htm">45</a> | <a target="_blank" href="https://resources.docs.salesforce.com/218/latest/en-us/sfdc/pdf/salesforce_spring19_release_notes.pdf">218 </a> |
 | <a target="_blank" href="https://releasenotes.docs.salesforce.com/en-us/winter19/release-notes/salesforce_release_notes.htm">Winter '19</a> | <a target="_blank" href="https://releasenotes.docs.salesforce.com/en-us/winter19/release-notes/salesforce_release_notes.htm">44.0</a> | <a target="_blank" href="https://resources.docs.salesforce.com/216/latest/en-us/sfdc/pdf/salesforce_winter19_release_notes.pdf">216 </a> |
-| <a target="_blank" href="https://www.salesforceben.com/complete-guide-to-salesforce-summer-18/">Summer '18</a> | 43.0 | <a target="_blank" href="https://resources.docs.salesforce.com/214/latest/en-us/sfdc/pdf/salesforce_summer18_release_notes.pdf">214 </a> |
-| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/spring18/">Spring '18</a> | 42.0 | <a target="_blank" href="https://resources.docs.salesforce.com/212/latest/en-us/sfdc/pdf/salesforce_spring18_release_notes.pdf">212 </a> |
-| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/winter18/">Winter '18</a> | 41.0 | <a target="_blank" href="https://resources.docs.salesforce.com/210/latest/en-us/sfdc/pdf/salesforce_winter18_release_notes.pdf">210 </a> |
-| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/summer17/">Summer '17</a> | 40.0 |
-| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/spring17/">Spring '17</a> | 39.0 |
-| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/winter17/">Winter '17</a> | 38.0 |
-| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/summer16/">Summer '16</a> | 37.0 |
-| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/spring16/">Spring '16</a> | 36.0 |
-| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/winter16/">Winter '16</a> | 35.0 |
-| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/summer15/">Summer '15</a> | 34.0 |
-| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/spring15/">Spring '15</a> | 33.0 |
-| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/winter15/">Winter '15</a> | 32.0 |
-| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/summer14/">Summer '14</a> | 31.0 |
-| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/spring14/">Spring '14</a> | 30.0 |
-| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/winter14/">Winter '14</a> | 29.0 |
+| <a target="_blank" href="https://www.salesforceben.com/complete-guide-to-salesforce-summer-18/">Summer '18</a> | 43 | <a target="_blank" href="https://resources.docs.salesforce.com/214/latest/en-us/sfdc/pdf/salesforce_summer18_release_notes.pdf">214 </a> |
+| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/spring18/">Spring '18</a> | 42 | <a target="_blank" href="https://resources.docs.salesforce.com/212/latest/en-us/sfdc/pdf/salesforce_spring18_release_notes.pdf">212 </a> |
+| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/winter18/">Winter '18</a> | 41 | <a target="_blank" href="https://resources.docs.salesforce.com/210/latest/en-us/sfdc/pdf/salesforce_winter18_release_notes.pdf">210 </a> |
+| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/summer17/">Summer '17</a> | 40 |
+| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/spring17/">Spring '17</a> | 39 |
+| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/winter17/">Winter '17</a> | 38 |
+| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/summer16/">Summer '16</a> | 37 |
+| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/spring16/">Spring '16</a> | 36 |
+| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/winter16/">Winter '16</a> | 35 |
+| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/summer15/">Summer '15</a> | 34 |
+| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/spring15/">Spring '15</a> | 33 |
+| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/winter15/">Winter '15</a> | 32 |
+| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/summer14/">Summer '14</a> | 31 |
+| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/spring14/">Spring '14</a> | 30 |
+| <a target="_blank" href="http://www.salesforce.com/customer-resources/releases/winter14/">Winter '14</a> | 29 |
 
 In addition to releases above, beta releases of Minimally Marketable Features (MMF) go out.
 
