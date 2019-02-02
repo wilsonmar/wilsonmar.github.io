@@ -37,27 +37,30 @@ So I've made notes here, so I remember where I got them.
 
 ## Backpack #
 
-Since I travel a lot, I need a backpack designed for secure <strong>urban</strong>
+Since I travel a lot, I need a backpack designed for secure <strong>urban</strong> use
 laptop transportation rather than wilderness bushwacking.
 
-The backpack that meets my specs is <a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS">Cabin Max Metz Backpack Flight Approved Carry on Bag ($50)</a><a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS"><img align="right" width="150" src="../images/Cabin Max Metz Backpack.png" /></a>
+So the backpack that makes the most sense for my everyday carry needs is <a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS">Cabin Max Metz Backpack Flight Approved Carry on Bag ($50)</a><a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS"><img align="right" width="150" src="../images/Cabin Max Metz Backpack.png" /></a>
 <img align="right" src="http://ir-na.amazon-adsystem.com/e/ir?t=wilsonslifenotes&l=as2&o=1&a=B00IR2VEUS" width="1" height="1" border="0" alt="" />
 
-   It's bigger than most backpacks, more a carry-on bag (IATA 21 x 14 x 9).
-   So it's less business-like and less comfortable to carry for long periods.
+   I'd like to put a patch (such as an American flag) over the big logo, though.
 
-   Nevertheless, the cinch straps on its side flattens it out.
-   And the room's there when needed at a light 700g with water resistant 600D material, which the <a target="_blank" href="https://www.amazon.com/dp/B01J24H2K0/">Amazon Basics bag</a> does not have.
+   I like that it's the maximum size to be a carry-on bag (IATA 21 x 14 x 9), so I can go for a weekend without an additional bag.
 
-   I'd like to put a patch (such as an American flag) over the logo, though.
+   The room's there when needed at a light 700g with water resistant 600D material, which the <a target="_blank" href="https://www.amazon.com/dp/B01J24H2K0/">Amazon Basics bag</a> does not have.
 
-To minimize (TSA approved) locks to secure,
-I like having one big compartment that unzips completely open,
-rather than several pockets everywhere. That's so I can fashion little bags of clothing to cushion my laptop. 
+   Thus it's bigger than most backpacks, less comfortable to carry for long periods, and less "business-like".
 
-There is a front flap that also unzips completely to see where various small items like pens, batteries, cords, etc.
+   For my daily commute, I use the <strong>cinch straps on its side</strong> flatten it out.
 
-There are other qualities I considered during my survey of various ones out there.
+   I like having one big compartment that unzips completely open, rather than several pockets that snag on stuff.
+   This also minimizes the number of (TSA approved) locks to secure the pack when I need to.
+
+   I made custom little bags to put clothing in around my laptop. 
+
+   There is a front flap that also unzips completely to see where various small items like pens, batteries, cords, etc.
+
+Other qualities and alternatives I;ve considered during my survey of various ones out there are below
 
 <!-- https://www.youtube.com/watch?v=MiTD6Hs6HBk
 -->
@@ -182,36 +185,49 @@ Other alteratives I considered:
 
 ## Food
 
-I keep a couple meals in my pack.
+I keep a couple meals in my pack with a bottle of water.
 Ideally, it would not have much sugar, salt, MSG, etc.
 
 [_] A bag of mixed nuts (unsalted)
 
 [_] Jerky has a lot of salt
 
-   PROTIP: Put a date on each item and enter a replacement appointment on your calendar so it's eaten before gong stale.
+   CALENDAR PROTIP: Food spoils over time. So write a date on each item and enter a replacement recurring appointment on your calendar a few months out so it's eaten before gong stale.
+
+[ ] A Cup, made of metal or silicon, to cook with.
 
 [ ] Long titanium spoon to eat from a Mountain House foil pouch.
 
-[ ] Big Cup, made of metal or silicon to cook with.
+[ ] Small sissors with rounded tips for kids, with a cover. From Walmart's art section. It's never been a problem at the airports.
 
-[ ] Herbs and spices you like to add to your food. Tameric. Cardemon.
+[ ] Small vials of herbs and spices you like to add to your food. Tameric. Cardemon.
 
+[ ] Medicines.
 
 
 <a name="Liquids"></a>
 
 ## Liquids bag
 
+I get small 3 oz. bottles or fill up little tubes rather than handling and carrying big bottles.
+
+[ ] Thick plastic waterproof bags (rather than zip-locks that leak over time)
+
+[ ] Deoderant
+
 [ ] Shampoo
 
-[ ] Sunscreen
+[ ] Dish soap
 
-[ ] Hand sanitizer
+[ ] Hand sanitizer with a hook hanging on the outside of my pack
 
 [ ] Hair gel
 
+[ ] Sunscreen
+
 [ ] Personal lubricant. Jo hybrid is our favorite.
+
+[ ] Bug repellant
 
 
 <a name="Toiletries"></a>
@@ -230,25 +246,23 @@ Ideally, it would not have much sugar, salt, MSG, etc.
 
 [ ] Toothbrush
 
-[ ] Toothpaste
+[ ] Toothpaste (small size)
 
 [ ] Dental floss
 
 [ ] Disposeable shaver
 
-[ ] First-aid 
+[ ] First-aid band-aids
 
 [ ] Q-tips
 
-[ ] Small roll of toilet paper in a wet and abrasion-resistent bag.
+[ ] Earplugs in a plastic case to keep dirt off them
+
+[ ] Small roll of toilet paper in a waterproof and abrasion-resistent bag.
 
 [ ] travel-sized Febreze To Go.
 
-[ ] Ear plugs - Hearos Ear Plugs (they’re cheap and effective) 
-
 [ ] Eye mask
-
-[ ] Bug repellant
 
 [ ] Matches
 
@@ -258,7 +272,7 @@ Ideally, it would not have much sugar, salt, MSG, etc.
 
 [ ] Whistle
 
-[ ] Compass
+[ ] Compass, with a hook hanging outside my bag
 
 [ ] Mirror
 
