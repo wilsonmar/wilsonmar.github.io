@@ -657,18 +657,15 @@ On Mac:
 
    BTW, "hello" in the example above can be any file.
 
-   ### Tutorials on VSCode
+### Tutorials on VSCode
 
    * http://michaelcrump.net/using-github-with-visualstudio-code/
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=UcW1FHNvy8M">
    VIDEO: Supercharge Your JavaScript Debugging Workflow With VS Code</a>
 
-   * <a target="_blank" href="https://scotch.io/courses/make-visual-studio-code-your-editor/">
-   Make Visual Studio Code Your Editor video course at Scotch.io</a>
-
-<a target="_blank" href="https://tutorialzine.com/2017/06/15-essential-plugins-for-visual-studio-code">
-15 Essential Plugins for Visual Studio Code</a> June 27, 2017
+<a target="_blank" href="https://scotch.io/courses/make-visual-studio-code-your-editor/">
+Make Visual Studio Code Your Editor video course at Scotch.io</a> by Chris Sevilleja (@chrisoncode) 
 
    Getting Started:
 
@@ -679,12 +676,14 @@ On Mac:
    5. Extensions, 8:00
    6. Search and Multi-Cursor 7:38
    
-   Main Features:
+      Main Features:
+
    7. Git 10:46
    8. Intellisense 10:22
    9. Terminal 4:40
    
-   Language Specific:
+      Language Specific:
+
    10. HTML 7:03
    11. CSS and Sass 6:56
    12. JavaScript 9:35
@@ -692,15 +691,21 @@ On Mac:
    14. Node and npm 6:38
    15. PHP and Laravel 7:40
 
-   Important Extensions:
+      Important Extensions:
+
    16. Project Manager 7:26
    17. Settings Sync 6:40
    
-   More Features 
+      More Features:
+      
    18. Tasks 12:44
    19. Debugging 8:36
    20. VS Code 1.10 Features 5:28
    21. Custom Status and Activity Bar 7:26
+   <br /><br />
+
+<a target="_blank" href="https://tutorialzine.com/2017/06/15-essential-plugins-for-visual-studio-code">
+15 Essential Plugins for Visual Studio Code</a> June 27, 2017
 
 ## AWS Cloud9
 
