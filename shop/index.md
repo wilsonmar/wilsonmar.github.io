@@ -205,7 +205,7 @@ Ideally, it would not have much sugar, salt, MSG, etc.
 
 [ ] Long titanium spoon to eat from a Mountain House foil pouch.
 
-[ ] Small sissors with rounded tips for kids, with a cover. From Walmart's art section. It's never been a problem at the airports.
+[ ] Small sissors with rounded tips for kids, with a cover. It's never been a problem at the airports. From Walmart's art section. 
 
 [ ] Small vials of herbs and spices you like to add to your food. Tameric. Cardemon.
 
@@ -236,6 +236,10 @@ I get small 3 oz. bottles or fill up little tubes rather than handling and carry
 
 [ ] Bug repellant
 
+[ ] Balsamic vinegar
+
+[ ] Port (to go in clam and other chowders)
+
 
 <a name="Toiletries"></a>
 
@@ -249,19 +253,17 @@ I get small 3 oz. bottles or fill up little tubes rather than handling and carry
 
 [ ] Deoderant
 
-[ ] Nail clipper
-
 [ ] Toothbrush
 
 [ ] Toothpaste (small size)
 
-[ ] Dental floss
-
 [ ] Disposeable shaver
 
-[ ] First-aid band-aids
+[ ] Dental floss
 
-[ ] Q-tips
+[ ] Eye mask
+
+[ ] First-aid bag with band-aids
 
 [ ] Earplugs in a plastic case to keep dirt off them
 
@@ -269,13 +271,7 @@ I get small 3 oz. bottles or fill up little tubes rather than handling and carry
 
 [ ] travel-sized Febreze To Go.
 
-[ ] Eye mask
-
 [ ] Matches
-
-[ ] Trowel
-
-[ ] Nylon cord
 
 [ ] Whistle
 
@@ -287,6 +283,18 @@ I get small 3 oz. bottles or fill up little tubes rather than handling and carry
 
 [ ] Wash Towel (polyester for faster drying than cotton)
    Use it to clean computer screens.
+
+I keep in my car:
+
+[ ] Q-tips
+
+[ ] Nail clipper
+
+[ ] Trowel
+
+[ ] Screwdrivers (flat and phillips head)
+
+[ ] Nylon cord
 
 
 <a name="Clothing"></a>
@@ -340,10 +348,11 @@ For traveling, here are a few items when you don't have 600-count sheets in a fi
    $50 Cocoon Silk TravelSheet</a> 
    Silk Sleep Sack) keeps your skin away from quesionable sheets
    with a nice-feeling one. Lightweight and compresses to a small size.
+   Yeah, I'm spoiled.
 
 [ ] Clear repair duct tape to patch fabric tears without looking trashy.
    <a target="_blank" href="https://www.amazon.com/gp/offer-listing/B00O9JNY9W/ref=wilsonslifenotes?ie=UTF8&mv_size_name=0&qid=1477256614&sr=8-1/"> 
-   $5.80 for 5 yards 1.5 inch wide</a>.
+   $5.80 for 5 yards 1.5 inch wide</a>. I put this in an insulated box in the car.
 
 
 <a name="Lighting"></a>
@@ -352,7 +361,7 @@ For traveling, here are a few items when you don't have 600-count sheets in a fi
 
 I use my phone as a flashlight. 
 
-But for doing stuff in the dark nothing beats strap-on headlamps.
+But for being to use both hands in the dark, nothing beats strap-on headlamps.
 I keep one in the car.
 
 
