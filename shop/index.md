@@ -40,13 +40,31 @@ So I've made notes here, so I remember where I got them.
 Since I travel a lot, I need a backpack designed for secure <strong>urban</strong>
 laptop transportation rather than wilderness bushwacking.
 
-Do the qualities I'm personally looking for below match your needs too?
+The backpack that meets my specs is <a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS">Cabin Max Metz Backpack Flight Approved Carry on Bag ($50)</a>
 
-I've done a survey of various ones out there,
-and here's the features I've seen.
+<a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS"><img align="right" width="150" src="../images/Cabin Max Metz Backpack.png" /></a>
+<img align="right" src="http://ir-na.amazon-adsystem.com/e/ir?t=wilsonslifenotes&l=as2&o=1&a=B00IR2VEUS" width="1" height="1" border="0" alt="" />
 
-https://www.youtube.com/watch?v=MiTD6Hs6HBk
+   It's bigger than most backpacks, more a carry-on bag (IATA 21 x 14 x 9).
+   So it's less business-like and less comfortable to carry for long periods.
 
+   But the room's there when needed at a light 700g with water resistant 600D material, which the <a target="_blank" href="https://www.amazon.com/dp/B01J24H2K0/">Amazon Basics bag</a> does not have.
+
+   Nevertheless, the cinch straps on its side flattens it out.
+
+   I'd like to put a patch over the logo, though.
+
+I like having one big compartment that unzips completely open,
+rather than several pockets everywhere. That's so I can use clothing to cushion my laptop. This one only needs two (TSA approved) locks to secure.
+
+There is a front flap that also unzips completely to see where various small items like pens, batteries, cords, etc.
+
+There are other qualities I considered during my survey of various ones out there.
+
+<!-- https://www.youtube.com/watch?v=MiTD6Hs6HBk
+-->
+
+An alternative:
 
 <a target="_blank" href="https://www.amazon.com/Shockproof-Lightweight-ScanSmart-Friendly-Resistant/dp/B01FJJUFEM/">
 $42 On Amazon: Kopack Laptop Backpack Shockproof Anti-theft Travel bag Lightweight Hiking Daypack ScanSmart TSA Friendly Waterproof 15.6 16 most 17 inch</a>
@@ -133,17 +151,6 @@ See <a target="_blank" href="https://www.youtube.com/watch?v=dn9xLG1Or4U">
    * Lumos Astor by Gandharv Bakshi for cyclists with built-in lights.
    * LocTote
 
-<a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS"><img align="right" width="150" src="../images/Cabin Max Metz Backpack.png" /></a>
-<img src="http://ir-na.amazon-adsystem.com/e/ir?t=wilsonslifenotes&l=as2&o=1&a=B00IR2VEUS" width="1" height="1" border="0" alt="" />
-
-The backpack that meets my specs:
-
-   * <a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS">Cabin Max Metz Backpack Flight Approved Carry on Bag ($50)</a>
-
-   It's bigger than some backpacks, but the cinch straps on its side flattens it out.
-
-   I'd like to put a patch over the logo, though.
-
 ### Alternatives 
 
 Other alteratives I considered:
@@ -166,16 +173,13 @@ Other alteratives I considered:
    <a target="_blank" href="https://www.indiegogo.com/projects/bobby-the-best-anti-theft-backpack-by-xd-design#/">
    Indiegogo</a>
 
-
 <a name="Water"></a>
 
 ## Water
 
-A hose to suck water from a sack inside the backpack is great for backpackers.
+[_] A hose to suck water from a sack inside the backpack is great not just for backpackers. Offices can have water quality issues too.
 
-It's a true luxury to have a hot drink on a cold night or a cold drink on a hot day.
-
-Double-walled canisters keep hot drinks hot and cold drinks cold.
+[_] It's a true luxury to have a hot drink on a cold night or a cold drink on a hot day. Double-walled canisters keep hot drinks hot and cold drinks cold.
 
 
 <a name="Food"></a>
@@ -183,19 +187,19 @@ Double-walled canisters keep hot drinks hot and cold drinks cold.
 ## Food
 
 I keep a couple meals in my pack.
-
 Ideally, it would not have much sugar, salt, MSG, etc.
 
-   * Jerky has a lot of salt
+[_] A bag of mixed nuts (unsalted)
 
-PROTIP: Put a date on each item and enter a replacement appointment on your calendar
-so it's eaten before gong stale.
+[_] Jerky has a lot of salt
 
-[ ] Long spoon
+   PROTIP: Put a date on each item and enter a replacement appointment on your calendar so it's eaten before gong stale.
 
-[ ] Big Cup, made of metal to cook with.
+[ ] Long titanium spoon to eat from a Mountain House foil pouch.
 
-[ ] Herbs and spices you like to add to your food.
+[ ] Big Cup, made of metal or silicon to cook with.
+
+[ ] Herbs and spices you like to add to your food. Tameric. Cardemon.
 
 
 
@@ -274,40 +278,41 @@ so it's eaten before gong stale.
 
 PROTIP: An extra pair of socks and underwear makes for great padding at the bottom for electronics.
 
+[ ] Gloves with touch-screen fingertips. I prefer leather gloves for its wind protection.
+
+[ ] Hat, because you loose a lot of heat.
+
+[ ] Scarf (sharmag)
+
+[ ] Money & passport hider
+
 [ ] A rainsuit (with pants) takes less room than I thought. The Frogger
 
    The rainsuit means I don't need to carry around an umbrella, which doesn't work that well anyway.
 
 [ ] Big waterproof bag for storing soiled underwear.
 
-[ ] Underwear from Ex-officio, at $25 each, is worth every penny for its comfort and quick-drying properties
-   (not cotton)
-
-[ ] Hat, because you loose a lot of heat.
-
-[ ] Gloves with touch-screen fingertips. I prefer leather gloves for its wind protection.
+[ ] Underwear from Ex-officio, at $25 each, is worth every penny to me for its comfort and quick-drying properties (not cotton)
 
 [ ] Woolite Travel Laundry Soap or Travelon Laundry Soap Sheets 
    so you can hand wash laundry in a sink.
 
-[ ] Scarf
-
-[ ] Stain remover
+[ ] Stain remover stick
 
 [ ] Extra bag for souvenirs
-
-[ ] Money & passport hider
 
 
 <a name="Shelter"></a>
 
 ## Shelter
 
-A tent and sleeping bag are really the two items which separate a city packing and wilderness packing.
+A tent (with stakes) is the item which separates a city pack and wilderness backpacking.
 
-But here are a few items when you don't have 600-count sheets in a five-star hotel:
+I keep a 4-season sleeping bag and pads in my car in case of breakdown in the Winter.
 
-[ ] A "space" or "survival" mylar reflective blanket is less than an once.
+For traveling, here are a few items when you don't have 600-count sheets in a five-star hotel:
+
+[ ] I keep a "space" or "survival" mylar reflective blanket in my pack. It's less than an once.
    <a target="_blank" href="https://www.amazon.com/Mylar-Mens-Emergency-Thermal-Blankets/dp/B007IYIYFE/ref=wilsonslifenotes?ie=UTF8&qid=1477256492&sr=8-1&keywords=space+blanket">
    $6.20 for 10</a>
 
@@ -319,7 +324,7 @@ But here are a few items when you don't have 600-count sheets in a five-star hot
    Silk Sleep Sack) keeps your skin away from quesionable sheets
    with a nice-feeling one. Lightweight and compresses to a small size.
 
-[ ] Clear repair duct tape. A small roll to patch fabric tears.
+[ ] Clear repair duct tape to patch fabric tears without looking trashy.
    <a target="_blank" href="https://www.amazon.com/gp/offer-listing/B00O9JNY9W/ref=wilsonslifenotes?ie=UTF8&mv_size_name=0&qid=1477256614&sr=8-1/"> 
    $5.80 for 5 yards 1.5 inch wide</a>.
 
@@ -328,7 +333,9 @@ But here are a few items when you don't have 600-count sheets in a five-star hot
 
 ## Lighting
 
-[ ] Flashlight. Have it near where you can reach in the dark.
+I use my phone as a flashlight. 
+
+But for doing stuff in the dark nothing beats strap-on headlamps.
 
 
 
@@ -345,11 +352,9 @@ But here are a few items when you don't have 600-count sheets in a five-star hot
 
 ## Locator chips
 
-I got a few Tile
-chips when they were first on Kickstarter.
+I got a few Tile chips (for about $20 each) when they were first on Kickstarter.
 
-But after a year, when I needed it, I realized
-they had died.
+But after a year, when I needed it, I realized they had died.
 
 
 <a name="Electrical"></a>
@@ -373,31 +378,49 @@ they had died.
 
 ## Headphones
 
-Where do I get those headsets that the feds and CIA wear,
-so I can look bad-ass too?
+Where do I get those headsets with the clear cord that the feds and CIA wear,
+so I can look bad-ass too? That will remain a fantasy because in-ear headphones hurt my ear. 
 
-There is nothing that says "leave me alone" like having headphones on.
+But even though they are troublesome to contort so they fit into its case and take up more room in my backpack, an over-the-ear headphone I wear as <strong>ear muffs to keep warm</strong> in the winter. And there is nothing that says "don't talk to me" like having big headphones on.
 
-In-ear headphones hurt my ear.
+When I want to seem more approachable, I wear a bone-conducting headphone. I also wear them in the car so I don't get a ticket when I listen to my iPhone while driving a noisy van. But I found others can hear the sound from them.
+
+I've had several headphones over the years. That's not to be fashionable, but because I lose them, sit or step on them or, in the case of the Sony MX1000, they break easily. <a target="_blank" href="https://www.techradar.com/reviews/hands-on-sony-wh-1000xm3-wireless-headphones-review">Newer Sony model WH-1000XM3</a>
+($249+ available since August 2018) now has a more solid pivot mechanism.
+The new model still suffers from a built-in microphone others have trouble hearing since it doesn't have a boom like some others.
+So its Google Assistant and Alexa integration may not work well.
+
+I've sworn off Sony products several times (since my Vaio disaster).
+But the Sony headphone does have all the rest of other features:
+noise-cancelling, either 3.5mm cord (for airplane use) or Bluetooth, 30 hour battery life. Newer models has gone to a USB Type-C charging port.
+
+When adjusting position, I've accidentally hit its playback controls because they are touch-sensitive on the right earcup. To skip forward, swipe forward. Swipe left to go back. Pause and resume by double-tapping. Nice when I'm wearing gloves.
+
+The <a target="_blank" href="https://thewirecutter.com/reviews/best-headphones/#best-wireless-headphones">Sony H.ear On WH-H900N recommended by WireCutter</a> has a few less features.
+
+My biggest annoyance with Bluetooth is with Apple. I have to constantly turn on or off either my Mac or iPhone so the headphone doesn't pair with the wrong device.
+A first-world problem, yes. But still annoying.
 
 
 <a name="Adapters"></a>
 
 ## Adapters
 
-[ ] Micro USB to USB-A to transfer and charge Android mobile phone.
+[_] Micro USB to USB-A to transfer and charge Android mobile phone.
 
-[ ] PROTIP: The Android mobile battery charger enables me to charge one battery while another is being used.
+[_] PROTIP: The Android mobile battery charger enables me to charge one battery while another is being used.
 
-   PROTIP: The ability to remove and replace batteries is why I went with Android rather than iPhones.
+   PROTIP: The ability to remove and replace batteries is why I went with Android S3 rather than iPhones. But there are precious few models left that do.
 
-[ ] A Google Cast HDMI plug and micro-USB electrical with a long chord
+[_] A Google Cast HDMI plug and micro-USB electrical with a long chord
    to project to a TV from your laptop.
 
 
 ## Resources #
 
-http://www.homehostelsvalencia.com/backpack-for-europe-travel-packing-list/
+* <a target="_blank" href="http://www.homehostelsvalencia.com/backpack-for-europe-travel-packing-list/">Backpack for Europe Travel Packing List</a>
+
+* <a target="_blank" href="https://scotch.io/cool-stuff">"Cool stuff" list at scotch.io</a> for broadcasting, etc.
 
 
 ## Support this site
