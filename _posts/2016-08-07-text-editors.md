@@ -27,8 +27,8 @@ Built-in OSX:
 
 Free:
 
-   * <a href="#atom">Atom</a> from GitHub (free)
-   * <a href="#Code">Visual Studio Code</a> from Microsoft (free)
+   * <a href="#Code">Visual Studio Code</a> from Microsoft (free, built using Electron)
+   * <a href="#atom">Atom</a> from GitHub (free, built using Electron)
    * <a target="_blank" href="http://brackets.io/">
    Adobe Brackets</a> is on Windows too
    * <a target="_blank" href="http://barebones.com/products/textwrangler/">
@@ -37,7 +37,7 @@ Free:
    * <a target="_blank" href="http://www.annedawson.net/Python_Editor_IDLE.htm">
    Python IDLE Editor</a>
 
-   * mvim ? for Mac
+   * mcvim ? for Mac
 
 Licensed nagware:
 
@@ -667,6 +667,40 @@ On Mac:
    * <a target="_blank" href="https://scotch.io/courses/make-visual-studio-code-your-editor/">
    Make Visual Studio Code Your Editor video course at Scotch.io</a>
 
+<a target="_blank" href="https://tutorialzine.com/2017/06/15-essential-plugins-for-visual-studio-code">
+15 Essential Plugins for Visual Studio Code</a> June 27, 2017
+
+   Getting Started:
+
+   1. Introduction 7:55
+   2. VS Code Basics 8:01
+   3. Command Palette and Shortcuts 6:18
+   4. Settings 8:04
+   5. Extensions, 8:00
+   6. Search and Multi-Cursor 7:38
+   
+   Main Features:
+   7. Git 10:46
+   8. Intellisense 10:22
+   9. Terminal 4:40
+   
+   Language Specific:
+   10. HTML 7:03
+   11. CSS and Sass 6:56
+   12. JavaScript 9:35
+   13. Angular 6:09
+   14. Node and npm 6:38
+   15. PHP and Laravel 7:40
+
+   Important Extensions:
+   16. Project Manager 7:26
+   17. Settings Sync 6:40
+   
+   More Features 
+   18. Tasks 12:44
+   19. Debugging 8:36
+   20. VS Code 1.10 Features 5:28
+   21. Custom Status and Activity Bar 7:26
 
 ## AWS Cloud9
 

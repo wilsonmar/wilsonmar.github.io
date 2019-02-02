@@ -277,7 +277,7 @@ Each Elastic Load Balancer (ELB) and EC2 Auto Scaling Group (ASG) keeps its own 
 The default is only EC2 status checks.
 So set S3 bucket Properties > Logging of "aws-bucket-logging" to enabled.
 
-BTW, for higher security, accounts writing logs to S3 buckets are set to write-only, with separate accounts for reading.
+BTW, for higher security, accounts writing logs to S3 buckets are set to write-only, with separate accounts to transfer, read-only, and delete.
 
 To determine whether each instance within an ASG is "OutOfService" and need to be replaced, listeners
 periodically checks the health of each instance. The frequency between "pings" is set by the "Grace Period" (such as 300 seconds).<a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/2062/lesson/3/module/206">*</a>
@@ -350,8 +350,9 @@ The concern with scaling is QUESTION: how quickly additional capacity is added o
 
 The traditional on-premises approach is to order and buy <strong>excess</strong> server hardware based on projected peaks many months or years in advance. Thus, servers would use a fraction of their capacity, which remains unused much of the time. And if processing volume exceeds the peak, the whole system would degrade or fail. In a cloud, although capacity can be added dynamically, it needs to be added slightly before need to provide a margin to handle growth while additional instances are brought up.
 Bootstrapping instances in ASG can take 10 minutes or more. To avoid false alarms from being in "pending:complete" state before bootstrapping completes, create an <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">ASG Lifecycle Hook</a> to hold instance in a "pending:wait" state until bootstrapping completes.
-Hooks time out after 60 minutes. But an API call in the bootstrapping script can release the hook.<a target="_blank" href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html">*</a>
+Hooks time out after 60 minutes. But an <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">API call</a> in the bootstrapping script can release the hook.<a target="_blank" href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html">*</a>
 
+![aws-ec2-whenever-cpu-34970](https://user-images.githubusercontent.com/300046/52156066-f79e5280-2653-11e9-98d9-b3ef01cc0024.png)
 
 A cloud of servers such as Amazon AWS <strong>pools unused capacity</strong> for allocation when needed.
 
