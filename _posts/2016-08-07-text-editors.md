@@ -691,13 +691,13 @@ Make Visual Studio Code Your Editor video course at Scotch.io</a> by Chris Sevil
    14. Node and npm 6:38
    15. PHP and Laravel 7:40
 
-      Important Extensions:
+       Important Extensions:
 
    16. Project Manager 7:26
    17. Settings Sync 6:40
    
-      More Features:
-      
+       More Features:
+
    18. Tasks 12:44
    19. Debugging 8:36
    20. VS Code 1.10 Features 5:28
