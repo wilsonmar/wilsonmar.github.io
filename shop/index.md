@@ -40,22 +40,20 @@ So I've made notes here, so I remember where I got them.
 Since I travel a lot, I need a backpack designed for secure <strong>urban</strong>
 laptop transportation rather than wilderness bushwacking.
 
-The backpack that meets my specs is <a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS">Cabin Max Metz Backpack Flight Approved Carry on Bag ($50)</a>
-
-<a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS"><img align="right" width="150" src="../images/Cabin Max Metz Backpack.png" /></a>
+The backpack that meets my specs is <a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS">Cabin Max Metz Backpack Flight Approved Carry on Bag ($50)</a><a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS"><img align="right" width="150" src="../images/Cabin Max Metz Backpack.png" /></a>
 <img align="right" src="http://ir-na.amazon-adsystem.com/e/ir?t=wilsonslifenotes&l=as2&o=1&a=B00IR2VEUS" width="1" height="1" border="0" alt="" />
 
    It's bigger than most backpacks, more a carry-on bag (IATA 21 x 14 x 9).
    So it's less business-like and less comfortable to carry for long periods.
 
-   But the room's there when needed at a light 700g with water resistant 600D material, which the <a target="_blank" href="https://www.amazon.com/dp/B01J24H2K0/">Amazon Basics bag</a> does not have.
-
    Nevertheless, the cinch straps on its side flattens it out.
+   And the room's there when needed at a light 700g with water resistant 600D material, which the <a target="_blank" href="https://www.amazon.com/dp/B01J24H2K0/">Amazon Basics bag</a> does not have.
 
-   I'd like to put a patch over the logo, though.
+   I'd like to put a patch (such as an American flag) over the logo, though.
 
+To minimize (TSA approved) locks to secure,
 I like having one big compartment that unzips completely open,
-rather than several pockets everywhere. That's so I can use clothing to cushion my laptop. This one only needs two (TSA approved) locks to secure.
+rather than several pockets everywhere. That's so I can fashion little bags of clothing to cushion my laptop. 
 
 There is a front flap that also unzips completely to see where various small items like pens, batteries, cords, etc.
 
@@ -63,11 +61,6 @@ There are other qualities I considered during my survey of various ones out ther
 
 <!-- https://www.youtube.com/watch?v=MiTD6Hs6HBk
 -->
-
-An alternative:
-
-<a target="_blank" href="https://www.amazon.com/Shockproof-Lightweight-ScanSmart-Friendly-Resistant/dp/B01FJJUFEM/">
-$42 On Amazon: Kopack Laptop Backpack Shockproof Anti-theft Travel bag Lightweight Hiking Daypack ScanSmart TSA Friendly Waterproof 15.6 16 most 17 inch</a>
 
 
 ### Durability #
@@ -154,6 +147,9 @@ See <a target="_blank" href="https://www.youtube.com/watch?v=dn9xLG1Or4U">
 ### Alternatives 
 
 Other alteratives I considered:
+
+   * <a target="_blank" href="https://www.amazon.com/Shockproof-Lightweight-ScanSmart-Friendly-Resistant/dp/B01FJJUFEM/">
+   $42 On Amazon: Kopack Laptop Backpack Shockproof Anti-theft Travel bag Lightweight Hiking Daypack ScanSmart TSA Friendly Waterproof 15.6 16 most 17 inch</a>
 
    * <a target="_blank" href="http://sdrtraveller.com/products/d3-traveller">
    The D3 Traveller</a> is a duffle bag which costs $983 because it looks like a used trash can liner.
@@ -280,7 +276,7 @@ PROTIP: An extra pair of socks and underwear makes for great padding at the bott
 
 [ ] Gloves with touch-screen fingertips. I prefer leather gloves for its wind protection.
 
-[ ] Hat, because you loose a lot of heat.
+[ ] Hat, because you loose a lot of heat through your head.
 
 [ ] Scarf (sharmag)
 
@@ -288,9 +284,9 @@ PROTIP: An extra pair of socks and underwear makes for great padding at the bott
 
 [ ] A rainsuit (with pants) takes less room than I thought. The Frogger
 
-   The rainsuit means I don't need to carry around an umbrella, which doesn't work that well anyway.
+   The rainsuit replaces umbrella, which doesn't work that well anyway for protecting pants. So wear dark pants ;)
 
-[ ] Big waterproof bag for storing soiled underwear.
+[ ] Big waterproof airtight bag for storing soiled underwear.
 
 [ ] Underwear from Ex-officio, at $25 each, is worth every penny to me for its comfort and quick-drying properties (not cotton)
 
@@ -336,7 +332,7 @@ For traveling, here are a few items when you don't have 600-count sheets in a fi
 I use my phone as a flashlight. 
 
 But for doing stuff in the dark nothing beats strap-on headlamps.
-
+I keep one in the car.
 
 
 <a name="SunProtection"></a>
@@ -369,7 +365,7 @@ But after a year, when I needed it, I realized they had died.
 [ ] Instead of turning on the light to wake everyone up,
    Streamlight 73001 Nano Light Miniature Keychain LED Flashlight is an amazing little flashlight that is super bright and tiny.
 
-[ ] I have a Mac, so I need a VGA monitor adapter. And an Ethernet network dongle.
+[ ] I have a Mac, so I need HDMI and VGA monitor adapter. And an Ethernet network dongle.
 
    PROTIP: I don't recommend solar panels. Small ones don't make that much energy. Plus I'm not outside much.
 
