@@ -43,22 +43,28 @@ laptop transportation rather than wilderness bushwacking.
 So the backpack that makes the most sense for my everyday carry needs is <a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS">Cabin Max Metz Backpack Flight Approved Carry on Bag ($50)</a><a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS"><img align="right" width="150" src="../images/Cabin Max Metz Backpack.png" /></a>
 <img align="right" src="http://ir-na.amazon-adsystem.com/e/ir?t=wilsonslifenotes&l=as2&o=1&a=B00IR2VEUS" width="1" height="1" border="0" alt="" />
 
-   I'd like to put a patch (such as an American flag) over the big logo, though.
+   I'd like to put a patch (such as an American flag) over their big logo, though.
 
-   I like that it's the maximum size to be a carry-on bag (IATA 21 x 14 x 9), so I can go for a weekend without an additional bag.
+   I like that it's the maximum size to be a carry-on bag (IATA 21 x 14 x 9), so don't need an additional bag
+   when I go for a weekend or need to carry several laptops, camera or recording gear, etc.
 
    The room's there when needed at a light 700g with water resistant 600D material, which the <a target="_blank" href="https://www.amazon.com/dp/B01J24H2K0/">Amazon Basics bag</a> does not have.
 
    Thus it's bigger than most backpacks, less comfortable to carry for long periods, and less "business-like".
 
-   For my daily commute, I use the <strong>cinch straps on its side</strong> flatten it out.
+   For my daily commute, I use the <strong>compression/cinch straps on its side</strong> flatten it out.
 
    I like having one big compartment that unzips completely open, rather than several pockets that snag on stuff.
    This also minimizes the number of (TSA approved) locks to secure the pack when I need to.
 
-   I made custom little bags to put clothing in around my laptop. 
+   The front "Quick Access Pocket" I put receipts in, so it's not locked. 
 
-   There is a front flap that also unzips completely to see where various small items like pens, batteries, cords, etc.
+   PROTIP: I made custom little bags to use as padding to cushion all around my laptop.
+   Hats, gloves, scarf at the top because they are used in the winter.
+   Change of socks and underwear, which I rarely need, at the bottom.
+   Extra shirt and towels on the left and right compartments.
+
+   There is a front flap that also unzips completely to see where various small items like glasses, headphones, pens, batteries, cords, SD chips, etc.
 
 Other qualities and alternatives I;ve considered during my survey of various ones out there are below
 
