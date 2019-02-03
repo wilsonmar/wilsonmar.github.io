@@ -37,8 +37,7 @@ So I've made notes here, so I remember where I got them.
 
 ## Backpack #
 
-Since I travel a lot, I need a backpack designed for secure <strong>urban</strong> use
-laptop transportation rather than wilderness bushwacking.
+Since I travel a lot, I need a backpack designed for secure <strong>urban</strong> travel rather than wilderness bushwacking.
 
 So the backpack that makes the most sense for my everyday carry needs is <a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS">Cabin Max Metz Backpack Flight Approved Carry on Bag ($50)</a><a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS"><img align="right" width="150" src="../images/Cabin Max Metz Backpack.png" /></a>
 <img align="right" src="http://ir-na.amazon-adsystem.com/e/ir?t=wilsonslifenotes&l=as2&o=1&a=B00IR2VEUS" width="1" height="1" border="0" alt="" />
@@ -48,10 +47,12 @@ So the backpack that makes the most sense for my everyday carry needs is <a targ
 
    I like that it's the maximum size to be a carry-on bag (IATA 21 x 14 x 9), so don't need an additional bag
    when I go for a weekend or need to carry several laptops, camera or recording gear, etc.
+   So it's bigger than most backpacks.
 
    The room's there when needed at a light 700g with water resistant 600D material, which the <a target="_blank" href="https://www.amazon.com/dp/B01J24H2K0/">Amazon Basics bag</a> does not have. 
 
-   Thus it's bigger than most backpacks, less comfortable to carry for long periods, and less "business-like".
+   <img align="right" alt="sho-backpack-carry-217789.png" width="278" height="418" src="https://user-images.githubusercontent.com/300046/52171400-8382ae00-272a-11e9-9d00-01c79c8f9712.png"></a>
+   Thus it's  less comfortable to carry for long periods, and less "business-like".
 
    I like having one big compartment that unzips completely open, rather than several pockets that snag on stuff.
    This also minimizes the number of (TSA approved) locks to secure the pack when I need to.
