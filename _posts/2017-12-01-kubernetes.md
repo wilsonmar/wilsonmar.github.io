@@ -1617,6 +1617,9 @@ It has a spark cluster management app (oshinko-webui)
 
 ## Resources
 
+<a target="_blank" href="https://github.com/hjacobs/kubernetes-failure-stories">
+https://github.com/hjacobs/kubernetes-failure-stories</a>
+
 Vicky Tanya Seno at Santa Monica College is preparing a course of Kubernetes on ACloud.guru
 
 
