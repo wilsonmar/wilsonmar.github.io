@@ -1622,6 +1622,9 @@ https://github.com/hjacobs/kubernetes-failure-stories</a>
 
 Vicky Tanya Seno at Santa Monica College is preparing a course of Kubernetes on ACloud.guru
 
+Kubstack
+https://twitter.com/pst418
+
 
 ## More on DevOps #
 
