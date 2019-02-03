@@ -51,8 +51,8 @@ So the backpack that makes the most sense for my everyday carry needs is <a targ
 
    The room's there when needed at a light 700g with water resistant 600D material, which the <a target="_blank" href="https://www.amazon.com/dp/B01J24H2K0/">Amazon Basics bag</a> does not have. 
 
-   <img align="right" alt="sho-backpack-carry-217789.png" width="278" height="418" src="https://user-images.githubusercontent.com/300046/52171400-8382ae00-272a-11e9-9d00-01c79c8f9712.png"></a>
-   Thus it's  less comfortable to carry for long periods, and less "business-like".
+   <img align="right" alt="sho-backpack-carry-276x418-217789.png" width="139" height="209" src="https://user-images.githubusercontent.com/300046/52171400-8382ae00-272a-11e9-9d00-01c79c8f9712.png">
+   Thus it's less comfortable to carry for long periods, and less "executive business style".
 
    I like having one big compartment that unzips completely open, rather than several pockets that snag on stuff.
    This also minimizes the number of (TSA approved) locks to secure the pack when I need to.
@@ -61,14 +61,17 @@ So the backpack that makes the most sense for my everyday carry needs is <a targ
 
    It has side <strong>compression/cinch straps</strong> to flatten it out. But I rarely use them.
 
-   PROTIP: I made custom little bags to use as padding to cushion all around my laptop.
+   PROTIP: I custom-made little boxes that doubles as padding to cushion all around my laptop.
    Hats, gloves, scarf at the top because they are used in the winter.
    Change of socks and underwear, which I rarely need, at the bottom.
    Extra shirt and towels on the left and right compartments.
 
-   There is a front flap that also unzips completely to see where various small items like glasses, headphones, pens, batteries, cords, SD chips, etc.
+   The boxes are made of insulation material because many items (food, medicines) degrade when hot.
+   The material also provides some stiffness.
+   
+   The pack has a front flap that also unzips completely to see where various small items like glasses, headphones, pens, batteries, cords, SD chips, etc.
 
-Other qualities and alternatives I;ve considered during my survey of various ones out there are below
+Other qualities and alternatives I've considered during my survey of various ones out there are below.
 
 <!-- https://www.youtube.com/watch?v=MiTD6Hs6HBk
 -->
@@ -184,6 +187,9 @@ Other alteratives I considered:
 
 ## Water
 
+Normally a person needs a half gallon (64 oz) per day or more.
+Water weighs 8 pounds per gallon. 
+
 [_] A hose to suck water from a sack inside the backpack is great not just for backpackers. Offices can have water quality issues too.
 
 [_] It's a true luxury to have a hot drink on a cold night or a cold drink on a hot day. Double-walled canisters keep hot drinks hot and cold drinks cold.
@@ -202,13 +208,15 @@ Ideally, it would not have much sugar, salt, MSG, etc.
 
    CALENDAR PROTIP: Food spoils over time. So write a date on each item and enter a replacement recurring appointment on your calendar a few months out so it's eaten before gong stale.
 
-[ ] A Cup, made of metal or silicon, to cook with.
+[ ] A cup, made of silicon, can be put in a microwave to cook a soup can.
 
-[ ] Long titanium spoon to eat from a Mountain House foil pouch.
+[ ] Long titanium spoon to eat from a Mountain House foil pouch. Regular spoons are too short cause you to have food on your knuckles.
 
-[ ] Small sissors with rounded tips for kids, with a cover. It's never been a problem at the airports. From Walmart's art section. 
+[ ] Small sissors with rounded tips for kids, with a cover. I've never had TSA at airports flag it. $2 from Walmart's art section. 
 
-[ ] Small vials of herbs and spices you like to add to your food. Tameric. Cardemon.
+[ ] Small waterproof vials of herbs and spices you like to add to your food. Tameric. Cardemon.
+
+<a name="medicines"></a>
 
 [ ] Medicines.
 
@@ -308,7 +316,7 @@ PROTIP: An extra pair of socks and underwear makes for great padding at the bott
 
 [ ] Hat, because you loose a lot of heat through your head.
 
-[ ] Scarf (sharmag)
+[ ] Scarf (shemag) of 42 x 42 can be used to filter water and as an evaperative cooler. Also breathes through it in smoke.
 
 [ ] Money & passport hider
 
@@ -319,6 +327,7 @@ PROTIP: An extra pair of socks and underwear makes for great padding at the bott
 [ ] Big waterproof airtight bag for storing soiled underwear.
 
 [ ] Underwear from Ex-officio, at $25 each, is worth every penny to me for its comfort and quick-drying properties (not cotton)
+   It doubles as a bathing suit (kept in a waterproof bag)
 
 [ ] Woolite Travel Laundry Soap or Travelon Laundry Soap Sheets 
    so you can hand wash laundry in a sink.
@@ -332,9 +341,31 @@ PROTIP: An extra pair of socks and underwear makes for great padding at the bott
 
 ## Shelter
 
+Variations in where to sleep, from the most comfortable to least:
+
+   1. In a building (hotel, AirBnB home, CouchSurfing)
+   2. In a vehicle
+   3. In the wilderness or park
+   4. <a href="#SleepInCity">In the city ("rough sleeping")</a>
+   <br /><br />
+
+Different equiqment is needed for each type of sleeping accomodation.
+
+### In a building
+
+I am terrified of bed bugs.
+
+[ ] <a target="_blank" href="https://www.amazon.com/Cocoon-TravelSheet-Natural-86-Inch-35-Inch/dp/B001DX9YTQ/ref=wilsonslifenotes?ie=UTF8&qid=1477256236&sr=8-1&keywords=Silk+Sleep+Sacks">
+   $50 Cocoon Silk TravelSheet</a> 
+   Silk Sleep Sack) keeps your skin away from quesionable sheets
+   with a nice-feeling one. Lightweight and compresses to a small size.
+   Yeah, I'm spoiled.
+
+
+
 A tent (with stakes) is the item which separates a city pack and wilderness backpacking.
 
-I keep a 4-season sleeping bag and pads in my car in case of breakdown in the Winter.
+[ ] I keep a 4-season sleeping bag and pads in my car in case of breakdown in the Winter.
 
 For traveling, here are a few items when you don't have 600-count sheets in a five-star hotel:
 
@@ -345,15 +376,59 @@ For traveling, here are a few items when you don't have 600-count sheets in a fi
    I was glad I had one to put on top of someone who had fallen, passed out on the sidewalk.
    That may keep someone from going into shock.
 
-[ ] <a target="_blank" href="https://www.amazon.com/Cocoon-TravelSheet-Natural-86-Inch-35-Inch/dp/B001DX9YTQ/ref=wilsonslifenotes?ie=UTF8&qid=1477256236&sr=8-1&keywords=Silk+Sleep+Sacks">
-   $50 Cocoon Silk TravelSheet</a> 
-   Silk Sleep Sack) keeps your skin away from quesionable sheets
-   with a nice-feeling one. Lightweight and compresses to a small size.
-   Yeah, I'm spoiled.
-
 [ ] Clear repair duct tape to patch fabric tears without looking trashy.
    <a target="_blank" href="https://www.amazon.com/gp/offer-listing/B00O9JNY9W/ref=wilsonslifenotes?ie=UTF8&mv_size_name=0&qid=1477256614&sr=8-1/"> 
-   $5.80 for 5 yards 1.5 inch wide</a>. I put this in an insulated box in the car.
+   $5.80 for 5 yards 1.5 inch wide</a>. I put this in an insulated box because adhesives degrade.
+
+
+<a href="#SleepInCars"></a>
+
+### Sleeping in cars #
+
+In New York City, the Bowry (Chinatown).
+
+
+<a href="#SleepInCity"></a>
+
+### Rough Sleeping #
+
+I think it's wise to be experienced and prepared to sleep in the "cuts" (hideaway spots like bushes and alleys).
+It's not just in case you're homeless. I've been in a city where I can't find any hotel room available.
+I've slept on a sidewalk in front of a store waiting for it to open so I am among the first to buy a hot item.
+I've slept on a sidewalk to squat a spot to watch a parade the next morning.
+
+So I'm not so quick to judge people sleeping in the city.
+Public Shelters can be dangerous places. I can't keep my fancy backpack from being stolen there while I sleep.
+
+[ ] Pepper spray as a defensive weapon.
+
+Many cities and towns have a thing against people sleeping on the street. 
+Their solution is usually have the police annoy the homeless (waking them up in the middle of the night) so they move to another city.
+I think that's unconstitutional "cruel and unusual punishment," under the Eighth Amendment. 
+The Ninth U.S. Circuit Court of Appeals on <a target="_blank" href="http://www.governing.com/topics/public-justice-safety/tns-homelessness-cities-cannot-prosecute-when-no-shelters-available.html">September 2018</a> ruled against "criminal penalties for sitting, sleeping, or lying outside on public property for homeless individuals who cannot obtain shelter."<a target="_blank" href="https://www.nytimes.com/2018/09/05/us/-homeless-sleeping-on-street-ruling.html">*</a>
+ The state, the court said, "may not criminalize conduct that is an unavoidable consequence of being homeless." The suit was brough by Eric Tars of the <a target="_blank" href="https://www.nlchp.org/">National Law Center on Homelessness & Poverty</a>.
+
+So I try to boycott <a target="_blank" href="https://www.nlchp.org/documents/Housing-Not-Handcuffs">such towns</a>, primarily Boise, Dallas, Denver. I applaud Saleforce billionaire Mark Benioff for leadership in this. Meanwhile, Amazon is doing what?
+
+[ ] Donate to the <a target="_blank" href="http://hsh.sfgov.org/services/emergencyshelter/navigation-centers/">Navigation Centers in San Francisco</a>. They provide a viable shelter by proving storage, eliminating curfews (for those who work odd hours), not  requiring  resident  to  exit  the  premises  each    morning, allowing pets, and permits   mixed   gender   sleeping   arrangements rather   than  requiring  families  and  couples  to  separate. But one has to <a target="_blank" href="https://sf311.org/web/guest/shelter-reservation-waitlist">dial 311</a> (415-701-2311) to get on their waiting list.
+
+More than a dozen cities from Santa Rosa to Seattle and Austin, Texas, are copying the model<a target="_blank" href="https://www.sfchronicle.com/bayarea/article/SF-s-homeless-navigation-centers-seem-to-be-13025012.php">*</a>
+
+Anyway, dangers from rough sleeping makes it helpful to have a buddy with you. If you're traveling alone, perhaps team up with another homeless person. Better yet, many cities have street counselors.
+
+PROTIP: Get everything in gray.
+
+[ ] A decoy wallet to give robbers. Dropping it on the floor gives you time to run away.
+
+[ ] Moneybelt
+
+[ ] A chain with lock to tie the backpack like you would a bicycle. They can be heavy, though.
+
+[ ] Earplugs to reduce noise.
+
+[ ] Keep the USB drive containing a full backup of your laptop separately from your backpack, such as in your sleeping bag by your feet.
+
+[ ] A bottle with a wide opening to pee in.
 
 
 <a name="Lighting"></a>
@@ -362,7 +437,7 @@ For traveling, here are a few items when you don't have 600-count sheets in a fi
 
 I use my phone as a flashlight. 
 
-But for being to use both hands in the dark, nothing beats strap-on headlamps.
+But for being to use both hands in the dark, nothing beats strap-on headlamps (with extra batteries and red lens filter).
 I keep one in the car.
 
 
@@ -405,8 +480,7 @@ But after a year, when I needed it, I realized they had died.
 
 ## Headphones
 
-Where do I get those headsets with the clear cord that the feds and CIA wear,
-so I can look bad-ass too? That will remain a fantasy because in-ear headphones hurt my ear. 
+It would be cool to wear <a target="_blank" href="http://earherosports.com/">those headsets with the clear cord that the FBI and CIA wear</a>. Bad-ass. But that remains a fantasy for me because every in-ear headphones hurt my ear.
 
 But even though they are troublesome to contort so they fit into its case and take up more room in my backpack, an over-the-ear headphone I wear as <strong>ear muffs to keep warm</strong> in the winter. And there is nothing that says "don't talk to me" like having big headphones on.
 
