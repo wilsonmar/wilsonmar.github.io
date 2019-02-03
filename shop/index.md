@@ -49,10 +49,11 @@ So the backpack that makes the most sense for my everyday carry needs is <a targ
    when I go for a weekend or need to carry several laptops, camera or recording gear, etc.
    So it's bigger than most backpacks.
 
+   <img align="right" alt="sho-backpack-carry-276x418-217789.png" width="139" height="209" src="https://user-images.githubusercontent.com/300046/52171400-8382ae00-272a-11e9-9d00-01c79c8f9712.png">
    The room's there when needed at a light 700g with water resistant 600D material, which the <a target="_blank" href="https://www.amazon.com/dp/B01J24H2K0/">Amazon Basics bag</a> does not have. 
 
-   <img align="right" alt="sho-backpack-carry-276x418-217789.png" width="139" height="209" src="https://user-images.githubusercontent.com/300046/52171400-8382ae00-272a-11e9-9d00-01c79c8f9712.png">
    Thus it's less comfortable to carry for long periods, and less "executive business style".
+   Would be nice to have more comfortable straps that transfers weight to the hips.
 
    I like having one big compartment that unzips completely open, rather than several pockets that snag on stuff.
    This also minimizes the number of (TSA approved) locks to secure the pack when I need to.
