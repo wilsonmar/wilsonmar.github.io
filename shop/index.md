@@ -55,10 +55,12 @@ So the backpack that makes the most sense for my everyday carry needs is <a targ
    Thus it's less comfortable to carry for long periods, and less "executive business style".
    Would be nice to have more comfortable straps that transfers weight to the hips.
 
+   The front "Quick Access Pocket" I put receipts in, so it's not locked. 
+
+   The front flap that also unzips completely to see where various small items like glasses, headphones, pens, batteries, cords, SD chips, etc.
+
    I like having one big compartment that unzips completely open, rather than several pockets that snag on stuff.
    This also minimizes the number of (TSA approved) locks to secure the pack when I need to.
-
-   The front "Quick Access Pocket" I put receipts in, so it's not locked. 
 
    It has side <strong>compression/cinch straps</strong> to flatten it out. But I rarely use them.
 
@@ -70,8 +72,6 @@ So the backpack that makes the most sense for my everyday carry needs is <a targ
    The boxes are made of insulation material because many items (food, medicines) degrade when hot.
    The material also provides some stiffness.
    
-   The pack has a front flap that also unzips completely to see where various small items like glasses, headphones, pens, batteries, cords, SD chips, etc.
-
 Other qualities and alternatives I've considered during my survey of various ones out there are below.
 
 <!-- https://www.youtube.com/watch?v=MiTD6Hs6HBk
