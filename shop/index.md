@@ -16,19 +16,20 @@ Over time, people have asked me about my stuff (what I think of them, where they
 So I've made notes here, so I remember where I got them.
 
 * [Backpack](#Backpack)
-
+* [Glasses](#SunProtection)
 * [Water](#Water)
-* [Food](#Food)
-* [Liquids](#Liquids)
 * [Toiletries](#Toiletries)
 * [Clothing](#Clothing)
-* [Shelter](#Shelter)
 * [Lighting](#Lighting)
 
-* [Glasses](#SunProtection)
+* [Food](#Food)
+* [Liquids](#Liquids)
+* [Shelter](#Shelter)
+
 * [Electrical](#Electrical)
 * [Locators](#Locators)
 * [Adapters](#Adapters)
+
 * [Headphones](#Headphones)
 
 <hr />
@@ -99,6 +100,14 @@ Below are discussion of specific attributes versus trade-offs:
    A sleek look without side pockets (that never seem to be the right size) is a halmark of the Astor, Minaal packs.
 
    With locks is a trade-off sacrifice of quick easy access to glasses, water.
+
+<a name="SunProtection"></a>
+
+### Glasses
+
+[_] Sunglasses (in a case)
+
+[_] Reading glasses (in a case)
 
 
 <a name="Water"></a>
@@ -325,12 +334,6 @@ I keep in my car a bag I put in my luggage when I travel:
 
 [_] Nail clipper
 
-[_] Trowel
-
-[_] Screwdrivers (flat and phillips head)
-
-[_] Nylon cord
-
 [_] Woolite Travel Laundry Soap or Travelon Laundry Soap Sheets so you can hand wash laundry in a sink.
 
 
@@ -376,17 +379,11 @@ Different equiqment is needed for each type of sleeping accomodation.
 
 ### In a building
 
-I am terrified of bed bugs.
+For traveling to hotels, here are a few items
 
-[_] <a target="_blank" href="https://www.amazon.com/Cocoon-TravelSheet-Natural-86-Inch-35-Inch/dp/B001DX9YTQ/ref=wilsonslifenotes?ie=UTF8&qid=1477256236&sr=8-1&keywords=Silk+Sleep+Sacks">
-   $50 Cocoon Silk TravelSheet</a> 
-   Silk Sleep Sack) keeps your skin away from quesionable sheets
-   with a nice-feeling one. Lightweight and compresses to a small size.
-   Yeah, I'm spoiled.
+[_] UV flashlight to reveal proteins if sheets are not fresh (free of bed bugs, etc.). I've found issues even in five-star hotels.
 
-For traveling, here are a few items when you don't have 600-count sheets in a five-star hotel:
-
-[_] I keep a "space" or "survival" mylar reflective blanket in my pack. It's less than an once.
+[_] A "space" or "survival" mylar reflective blanket in my pack. It's less than an once.
    <a target="_blank" href="https://www.amazon.com/Mylar-Mens-Emergency-Thermal-Blankets/dp/B007IYIYFE/ref=wilsonslifenotes?ie=UTF8&qid=1477256492&sr=8-1&keywords=space+blanket">
    $6.20 for 10</a>
 
@@ -397,6 +394,12 @@ For traveling, here are a few items when you don't have 600-count sheets in a fi
    <a target="_blank" href="https://www.amazon.com/gp/offer-listing/B00O9JNY9W/ref=wilsonslifenotes?ie=UTF8&mv_size_name=0&qid=1477256614&sr=8-1/"> 
    $5.80 for 5 yards 1.5 inch wide</a>. I put this in an insulated box because adhesives degrade.
 
+[_] <a target="_blank" href="https://www.amazon.com/Cocoon-TravelSheet-Natural-86-Inch-35-Inch/dp/B001DX9YTQ/ref=wilsonslifenotes?ie=UTF8&qid=1477256236&sr=8-1&keywords=Silk+Sleep+Sacks">
+   $50 Cocoon Silk TravelSheet</a> 
+   Silk Sleep Sack) keeps your skin away from quesionable sheets
+   with a nice-feeling one. Lightweight and compresses to a small size.
+   Yeah, I'm spoiled.
+
 
 <a href="#SleepInCars"></a>
 
@@ -405,6 +408,18 @@ For traveling, here are a few items when you don't have 600-count sheets in a fi
 [_] I keep a 4-season sleeping bag and pads in my car in case of breakdown in the Winter.
 
 In New York City, the Bowry (Chinatown).
+
+[_] Nylon cord
+
+[_] Trowel in case I have to dig in dirt
+
+[_] Screwdrivers (flat and phillips head)
+
+[_] Converter (400 Watts)
+
+[_] Jumber cables
+
+[_] Tire inflator
 
 
 <a href="#SleepInCity"></a>
@@ -460,15 +475,6 @@ I use my phone as a flashlight.
 
 But for being to use both hands in the dark, nothing beats strap-on headlamps (with extra batteries and red lens filter).
 I keep one in the car.
-
-
-<a name="SunProtection"></a>
-
-## Sun Protection
-
-[_] Sunglasses (in a case)
-
-[_] Reading glasses (in a case)
 
 
 <a name="Locators"></a>
