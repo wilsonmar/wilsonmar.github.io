@@ -13,7 +13,7 @@ image:
 {% include _toc.html %}
 
 Over time, people have asked me about my stuff (what I think of them, where they can get some, etc.).
-So I've made notes here, so I remember where I got them.
+So I've made notes here, so I remember where I got them. I focus on the (luxurious) essentials here:
 
 * [Backpack](#Backpack)
 * [Glasses](#SunProtection)
@@ -112,10 +112,10 @@ Below are discussion of specific attributes versus trade-offs:
 
 <a name="Water"></a>
 
-### Water tube & internal bladder
+### Water 
 
    Normally a person needs a half gallon (64 oz) per day or more.
-   Water weighs 8 pounds per gallon. 
+   Water weighs 8 pounds per gallon. So it can be the heaviest item in your backpack.
 
    [_] A "LifeStraw" to suck water from a sack inside the backpack is great not just for backpackers. 
    Offices can have water quality issues too.
@@ -196,6 +196,8 @@ I don't care about the pack being:
 
    * Velcro patch to attach skateboard [Unitty]
 
+### Alternatives 
+
 See <a target="_blank" href="https://www.youtube.com/watch?v=dn9xLG1Or4U">
 5 Amazing backpacks #1</a> and
 <a target="_blank" href="https://www.youtube.com/watch?v=Z4EK6y0o0M8">
@@ -204,9 +206,7 @@ See <a target="_blank" href="https://www.youtube.com/watch?v=dn9xLG1Or4U">
    * Lumos Astor by Gandharv Bakshi for cyclists with built-in lights.
    * LocTote
 
-### Alternatives 
-
-Other alteratives I considered:
+Other alteratives considered:
 
    * <a target="_blank" href="https://www.amazon.com/Shockproof-Lightweight-ScanSmart-Friendly-Resistant/dp/B01FJJUFEM/">
    $42 On Amazon: Kopack Laptop Backpack Shockproof Anti-theft Travel bag Lightweight Hiking Daypack ScanSmart TSA Friendly Waterproof 15.6 16 most 17 inch</a>
@@ -416,6 +416,10 @@ In New York City, the Bowry (Chinatown).
 [_] Screwdrivers (flat and phillips head)
 
 [_] Converter (400 Watts)
+
+[_] Extra car battery to use 
+
+[_] Electriccal heater (that doesn't use up oxygen)
 
 [_] Jumber cables
 
