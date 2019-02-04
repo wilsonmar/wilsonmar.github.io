@@ -95,15 +95,20 @@ Below are discussion of specific attributes versus trade-offs:
 
    Most backpacks for wilderness travel have several pockets for easy access.
 
-   I prefer a <strong>front flap</strong> that also unzips completely to see where various small items like glasses, headphones, pens, batteries, cords, SD chips, etc. Valuables such as passport and currency I put in a <strong>internal wallet</strong> I wear under my shirt.
-
    A sleek look without side pockets (that never seem to be the right size) is a halmark of the Astor, Minaal packs.
 
+   I prefer a <strong>front flap</strong> that unzips completely to see at a glance where various small items are (headphones, pens, batteries, cords, SD chips, etc.) 
+   
+   [_] Valuables such as passport and currency I put in a <strong>internal wallet</strong> I wear under my shirt.
+
    With locks is a trade-off sacrifice of quick easy access to glasses, water.
+
 
 <a name="SunProtection"></a>
 
 ### Glasses
+
+Glasses can be expensive.
 
 [_] Sunglasses (in a case)
 
