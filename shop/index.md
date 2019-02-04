@@ -86,11 +86,44 @@ Below are discussion of specific attributes versus trade-offs:
    That's where I keep a couple of <strong>lost/emergency contact</strong> cards
    inside Ziplock bags.
 
+   I keep these in that pocket or hanging outside the pack:
+
+   [_] Compass, with a hook hanging outside my bag
+
+   [_] Large carabiner to attach the pack so it stays on top the handle of a rolling luggage bag.
+
    Most backpacks for wilderness travel have several pockets for easy access.
 
    I prefer a <strong>front flap</strong> that also unzips completely to see where various small items like glasses, headphones, pens, batteries, cords, SD chips, etc. Valuables such as passport and currency I put in a <strong>internal wallet</strong> I wear under my shirt.
 
    A sleek look without side pockets (that never seem to be the right size) is a halmark of the Astor, Minaal packs.
+
+   With locks is a trade-off sacrifice of quick easy access to glasses, water.
+
+
+<a name="Water"></a>
+
+### Water tube & internal bladder
+
+   Normally a person needs a half gallon (64 oz) per day or more.
+   Water weighs 8 pounds per gallon. 
+
+   [_] A "LifeStraw" to suck water from a sack inside the backpack is great not just for backpackers. 
+   Offices can have water quality issues too.
+
+   Hikers enjoy the convenience of an external water tube to reach an internal water bag so
+   it's not necessary to stop and remove the bottle for a drink.
+   Some bags have them built-in but there are add-ons available.
+
+### Cooking and heating
+
+   [_] It's a true luxury to have a hot drink on a cold night or a cold drink on a hot day. 
+   <strong>Double-walled canisters</strong> keep hot drinks hot and cold drinks cold.
+
+   [_] I got a cup made of <strong>silicon</strong> so I can microwave water or to cook a Campbell's soup can.
+   
+   [_] I need an aluminum pot holder to handle it when hot.
+
 
 
 ### Internal arrangement
@@ -121,12 +154,6 @@ Below are discussion of specific attributes versus trade-offs:
    "YKK" brand zippers (from Japan) are considered the best.
    New versions are leak-resistant.
 
-### Hanging outside pack
-
-[ ] Compass, with a hook hanging outside my bag
-
-[ ] Large carabiner to attach the pack so it stays on top the handle of a rolling luggage bag.
-
 ### Security
 
    Mimizing external pockets also minimizes the number of (TSA approved) locks to secure the pack when I need to.
@@ -147,28 +174,11 @@ Below are discussion of specific attributes versus trade-offs:
    The trouble with them is that I need to hassle with keeping its battery charged.
 
 
+
 Other qualities and alternatives I've considered during my survey of various ones out there are below.
 
 <!-- https://www.youtube.com/watch?v=MiTD6Hs6HBk
 -->
-
-
-<a name="Water"></a>
-
-### Water tube & internal bladder
-
-   Normally a person needs a half gallon (64 oz) per day or more.
-   Water weighs 8 pounds per gallon. 
-
-   [_] A "LifeStraw" to suck water from a sack inside the backpack is great not just for backpackers. 
-   Offices can have water quality issues too.
-
-   [_] It's a true luxury to have a hot drink on a cold night or a cold drink on a hot day. 
-   Double-walled canisters keep hot drinks hot and cold drinks cold.
-
-   Hikers enjoy the convenience of an external water tube to reach an internal water bag so
-   it's not necessary to stop and remove the bottle for a drink.
-   Some bags have them built-in but there are add-ons available.
 
 
 ### Non-features #
@@ -224,17 +234,15 @@ Ideally, it would not have much sugar, salt, MSG, etc.
 
    CALENDAR PROTIP: Food spoils over time. So write a date on each item and enter a replacement recurring appointment on your calendar a few months out so it's eaten before gong stale.
 
-[ ] A cup, made of silicon, can be put in a microwave to cook a soup can.
+[_] Long titanium spoon to eat from a Mountain House foil pouch. Regular spoons are too short cause you to have food on your knuckles.
 
-[ ] Long titanium spoon to eat from a Mountain House foil pouch. Regular spoons are too short cause you to have food on your knuckles.
+[_] Small sissors with rounded tips for kids, with a cover. I've never had TSA at airports flag it. $2 from Walmart's art section. 
 
-[ ] Small sissors with rounded tips for kids, with a cover. I've never had TSA at airports flag it. $2 from Walmart's art section. 
-
-[ ] Small waterproof vials of herbs and spices you like to add to your food. Tameric. Cardemon.
+[_] Small waterproof vials of herbs and spices you like to add to your food. Tameric. Cardemon.
 
 <a name="medicines"></a>
 
-[ ] Medicines.
+[_] Medicines.
 
 
 <a name="Liquids"></a>
@@ -243,27 +251,27 @@ Ideally, it would not have much sugar, salt, MSG, etc.
 
 I get small 3 oz. bottles or fill up little tubes rather than handling and carrying big bottles.
 
-[ ] Thick plastic waterproof bags (rather than zip-locks that leak over time)
+[_] Thick plastic waterproof bags (rather than zip-locks that leak over time)
 
-[ ] Deoderant
+[_] Deoderant
 
-[ ] Shampoo
+[_] Shampoo
 
-[ ] Dish soap
+[_] Dish soap
 
-[ ] Hand sanitizer with a hook hanging on the outside of my pack
+[_] Hand sanitizer with a hook hanging on the outside of my pack
 
-[ ] Hair gel
+[_] Hair gel
 
-[ ] Sunscreen
+[_] Sunscreen
 
-[ ] Personal lubricant. Jo hybrid is our favorite.
+[_] Personal lubricant. Jo hybrid is our favorite.
 
-[ ] Bug repellant
+[_] Bug repellant
 
-[ ] Balsamic vinegar
+[_] Balsamic vinegar
 
-[ ] Port wine (to go in clam and other chowders)
+[_] Port wine (to go in clam and other chowders)
 
 
 <a name="Toiletries"></a>
@@ -272,58 +280,58 @@ I get small 3 oz. bottles or fill up little tubes rather than handling and carry
 
 I keep a small bag in my backpack for essential toiletries:
 
-[ ] Deoderant
+[_] Deoderant
 
-[ ] Toothbrush
+[_] Toothbrush
 
-[ ] Toothpaste (small size)
+[_] Toothpaste (small size)
 
-[ ] Disposeable shaver
+[_] Disposeable shaver
 
-[ ] Dental floss
+[_] Dental floss
 
-[ ] Small roll of toilet paper in a waterproof and abrasion-resistent bag.
+[_] Small roll of toilet paper in a waterproof and abrasion-resistent bag.
 
-[ ] travel-sized Febreze To Go.
+[_] travel-sized Febreze To Go.
 
-[ ] Wash cloth (polyester for faster drying than cotton)
+[_] Wash cloth (polyester for faster drying than cotton)
    Use it to clean computer screens.
 
 
-[ ] Toiletries bag that hangs, such as the Ogio Doppler bag.
+[_] Toiletries bag that hangs, such as the Ogio Doppler bag.
 
-[ ] First-aid bag with band-aids
+[_] First-aid bag with band-aids
 
-[ ] Breath mints
+[_] Breath mints
 
-[ ] Antacids
+[_] Antacids
 
-[ ] Eye mask
+[_] Eye mask
 
-[ ] Earplugs in a plastic case to keep dirt off them
+[_] Earplugs in a plastic case to keep dirt off them
 
-[ ] Matches
+[_] Matches
 
-[ ] Whistle
+[_] Whistle
 
-[ ] Mirror
+[_] Mirror
 
-[ ] Nail clipper
+[_] Nail clipper
 
 
 I keep in my car a bag I put in my luggage when I travel:
 
-[ ] Q-tips
+[_] Q-tips
 
-[ ] Nail clipper
+[_] Nail clipper
 
-[ ] Trowel
+[_] Trowel
 
-[ ] Screwdrivers (flat and phillips head)
+[_] Screwdrivers (flat and phillips head)
 
-[ ] Nylon cord
+[_] Nylon cord
 
-[ ] Woolite Travel Laundry Soap or Travelon Laundry Soap Sheets so you can hand wash laundry in a sink.
+[_] Woolite Travel Laundry Soap or Travelon Laundry Soap Sheets so you can hand wash laundry in a sink.
 
 
 <a name="Clothing"></a>
@@ -332,24 +340,24 @@ I keep in my car a bag I put in my luggage when I travel:
 
 PROTIP: An extra pair of socks and underwear makes for great padding for electronics.
 
-[ ] Gloves with touch-screen fingertips. I prefer leather gloves for its wind protection.
+[_] Gloves with touch-screen fingertips. I prefer leather gloves for its wind protection.
 
-[ ] Hat (cap), because you loose a lot of heat through your head.
+[_] Hat (cap), because you loose a lot of heat through your head.
 
-[ ] Scarf (shemag) of 42 x 42 can be used to filter water and as an evaperative cooler. Also breathes through it in smoke.
+[_] Scarf (shemag) of 42 x 42 can be used to filter water and as an evaperative cooler. Also breathes through it in smoke.
 
-[ ] Money & passport hider
+[_] Money & passport hider
 
-[ ] A rainsuit (with pants) takes less room than I thought. The Frogger rainsuit replaces umbrella, which doesn't work that well anyway for protecting pants. So wear dark pants ;)
+[_] A rainsuit (with pants) takes less room than I thought. The Frogger rainsuit replaces umbrella, which doesn't work that well anyway for protecting pants. So wear dark pants ;)
 
-[ ] Big waterproof airtight bag for storing soiled underwear.
+[_] Big waterproof airtight bag for storing soiled underwear.
 
-[ ] Underwear from Ex-officio, at $25 each, is worth every penny to me for its comfort and quick-drying properties (not cotton)
+[_] Underwear from Ex-officio, at $25 each, is worth every penny to me for its comfort and quick-drying properties (not cotton)
    It doubles as a bathing suit (kept in a waterproof bag)
 
-[ ] Stain remover stick
+[_] Stain remover stick
 
-[ ] Extra bag for souvenirs
+[_] Extra bag for souvenirs
 
 
 <a name="Shelter"></a>
@@ -370,7 +378,7 @@ Different equiqment is needed for each type of sleeping accomodation.
 
 I am terrified of bed bugs.
 
-[ ] <a target="_blank" href="https://www.amazon.com/Cocoon-TravelSheet-Natural-86-Inch-35-Inch/dp/B001DX9YTQ/ref=wilsonslifenotes?ie=UTF8&qid=1477256236&sr=8-1&keywords=Silk+Sleep+Sacks">
+[_] <a target="_blank" href="https://www.amazon.com/Cocoon-TravelSheet-Natural-86-Inch-35-Inch/dp/B001DX9YTQ/ref=wilsonslifenotes?ie=UTF8&qid=1477256236&sr=8-1&keywords=Silk+Sleep+Sacks">
    $50 Cocoon Silk TravelSheet</a> 
    Silk Sleep Sack) keeps your skin away from quesionable sheets
    with a nice-feeling one. Lightweight and compresses to a small size.
@@ -378,14 +386,14 @@ I am terrified of bed bugs.
 
 For traveling, here are a few items when you don't have 600-count sheets in a five-star hotel:
 
-[ ] I keep a "space" or "survival" mylar reflective blanket in my pack. It's less than an once.
+[_] I keep a "space" or "survival" mylar reflective blanket in my pack. It's less than an once.
    <a target="_blank" href="https://www.amazon.com/Mylar-Mens-Emergency-Thermal-Blankets/dp/B007IYIYFE/ref=wilsonslifenotes?ie=UTF8&qid=1477256492&sr=8-1&keywords=space+blanket">
    $6.20 for 10</a>
 
    I was glad I had one to put on top of someone who had fallen, passed out on the sidewalk.
    That may keep someone from going into shock.
 
-[ ] Clear repair duct tape to patch fabric tears without looking trashy.
+[_] Clear repair duct tape to patch fabric tears without looking trashy.
    <a target="_blank" href="https://www.amazon.com/gp/offer-listing/B00O9JNY9W/ref=wilsonslifenotes?ie=UTF8&mv_size_name=0&qid=1477256614&sr=8-1/"> 
    $5.80 for 5 yards 1.5 inch wide</a>. I put this in an insulated box because adhesives degrade.
 
@@ -394,7 +402,7 @@ For traveling, here are a few items when you don't have 600-count sheets in a fi
 
 ### Sleeping in cars #
 
-[ ] I keep a 4-season sleeping bag and pads in my car in case of breakdown in the Winter.
+[_] I keep a 4-season sleeping bag and pads in my car in case of breakdown in the Winter.
 
 In New York City, the Bowry (Chinatown).
 
@@ -413,7 +421,7 @@ I've slept on a sidewalk to squat a spot to watch a parade the next morning.
 So I'm not so quick to judge people sleeping in the city.
 Public Shelters can be dangerous places. I can't keep my fancy backpack from being stolen there while I sleep.
 
-[ ] Pepper spray as a defensive weapon.
+[_] Pepper spray as a defensive weapon.
 
 Many cities and towns have a thing against people sleeping on the street. 
 Their solution is usually have the police annoy the homeless (waking them up in the middle of the night) so they move to another city.
@@ -423,7 +431,7 @@ The Ninth U.S. Circuit Court of Appeals on <a target="_blank" href="http://www.g
 
 So I try to boycott <a target="_blank" href="https://www.nlchp.org/documents/Housing-Not-Handcuffs">such towns</a>, primarily Boise, Dallas, Denver. I applaud Saleforce billionaire Mark Benioff for leadership in this. Meanwhile, Amazon is doing what?
 
-[ ] Donate to the <a target="_blank" href="http://hsh.sfgov.org/services/emergencyshelter/navigation-centers/">Navigation Centers in San Francisco</a>. They provide a viable shelter by proving storage, eliminating curfews (for those who work odd hours), not  requiring  resident  to  exit  the  premises  each    morning, allowing pets, and permits   mixed   gender   sleeping   arrangements rather   than  requiring  families  and  couples  to  separate. But one has to <a target="_blank" href="https://sf311.org/web/guest/shelter-reservation-waitlist">dial 311</a> (415-701-2311) to get on their waiting list.
+[_] Donate to the <a target="_blank" href="http://hsh.sfgov.org/services/emergencyshelter/navigation-centers/">Navigation Centers in San Francisco</a>. They provide a viable shelter by proving storage, eliminating curfews (for those who work odd hours), not  requiring  resident  to  exit  the  premises  each    morning, allowing pets, and permits   mixed   gender   sleeping   arrangements rather   than  requiring  families  and  couples  to  separate. But one has to <a target="_blank" href="https://sf311.org/web/guest/shelter-reservation-waitlist">dial 311</a> (415-701-2311) to get on their waiting list.
 
 More than a dozen cities from Santa Rosa to Seattle and Austin, Texas, are copying the model<a target="_blank" href="https://www.sfchronicle.com/bayarea/article/SF-s-homeless-navigation-centers-seem-to-be-13025012.php">*</a>
 
@@ -431,17 +439,17 @@ Anyway, dangers from rough sleeping makes it helpful to have a buddy with you. I
 
 PROTIP: Get everything in gray.
 
-[ ] A decoy wallet to give robbers. Dropping it on the floor gives you time to run away.
+[_] A decoy wallet to give robbers. Dropping it on the floor gives you time to run away.
 
-[ ] Moneybelt
+[_] Moneybelt
 
-[ ] A chain with lock to tie the backpack like you would a bicycle. They can be heavy, though.
+[_] A chain with lock to tie the backpack like you would a bicycle. They can be heavy, though.
 
-[ ] Earplugs to reduce noise.
+[_] Earplugs to reduce noise.
 
-[ ] Keep the USB drive containing a full backup of your laptop separately from your backpack, such as in your sleeping bag by your feet.
+[_] Keep the USB drive containing a full backup of your laptop separately from your backpack, such as in your sleeping bag by your feet.
 
-[ ] A bottle with a wide opening to pee in.
+[_] A bottle with a wide opening to pee in.
 
 
 <a name="Lighting"></a>
@@ -458,9 +466,9 @@ I keep one in the car.
 
 ## Sun Protection
 
-[ ] Sunglasses (in a case)
+[_] Sunglasses (in a case)
 
-[ ] Reading glasses (in a case)
+[_] Reading glasses (in a case)
 
 
 <a name="Locators"></a>
@@ -476,15 +484,15 @@ But after a year, when I needed it, I realized they had died.
 
 ## Electrical
 
-[ ] In many airports, my electrical cord with 3-prong plugs enabled me to keep my stuff charged.
+[_] In many airports, my electrical cord with 3-prong plugs enabled me to keep my stuff charged.
 
-[ ] There is a big battery to power my Mac laptop for a few hours.
+[_] There is a big battery to power my Mac laptop for a few hours.
    But it's heavy.
 
-[ ] Instead of turning on the light to wake everyone up,
+[_] Instead of turning on the light to wake everyone up,
    Streamlight 73001 Nano Light Miniature Keychain LED Flashlight is an amazing little flashlight that is super bright and tiny.
 
-[ ] I have a Mac, so I need HDMI and VGA monitor adapter. And an Ethernet network dongle.
+[_] I have a Mac, so I need HDMI and VGA monitor adapter. And an Ethernet network dongle.
 
    PROTIP: I don't recommend solar panels. Small ones don't make that much energy. Plus I'm not outside much.
 
