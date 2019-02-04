@@ -47,15 +47,18 @@ Below are discussion of specific attributes versus trade-offs:
 ### Color
 
    Mine is black but there is a <a target="_blank" href="https://www.amazon.com/gp/product/B00M7DYI24/">gray camo</a> fabric.
+   A **dark gray** color backpack is less noticeable than a bright-colored pack to alert thieves.
+
    I'd like to put a patch (such as an American flag) over their big logo, though.
 
-### Size
+### Size & Weight
 
    The <strong>maximum size</strong> to qualify as carry-on luggage is defined by IATA to be 22 x 16 x 8 inches.
    Some airlines have different standards, such as (21 x 14 x 9). I prefer a backpack this size so I don't need an additional bag
    when I go for a weekend or need to carry several laptops, camera or recording gear, etc.
 
    The room's there when needed at a **Lightweight** 700g with water resistant 600D material, which the <a target="_blank" href="https://www.amazon.com/dp/B01J24H2K0/">Amazon Basics bag</a> does not have. 
+   The LocTote, XDDesign Bobby packs feature <strong>Cut-proof</strong> fabric.
 
    Such a size may be too big for most.
    But I would rather cinch up a pack than not have enough room when I need it.
@@ -72,33 +75,77 @@ Below are discussion of specific attributes versus trade-offs:
 
    <img align="right" alt="sho-backpack-carry-276x418-217789.png" width="139" height="209" src="https://user-images.githubusercontent.com/300046/52171400-8382ae00-272a-11e9-9d00-01c79c8f9712.png">
    A large backpack is less comfortable to carry for long periods, and less "executive business style".
-   Would be nice to have more comfortable straps that transfers weight to the hips.
+
+   It Would be nice to have more adjustable shoulder straps that <strong>transfers weight to the hips</strong>.
+   Front straps are especially importnat for women's physique.
+
 
 ### External quick access
 
    In the front "Quick Access Pocket" I put receipts in, so it's not locked. 
+   That's where I keep a couple of <strong>lost/emergency contact</strong> cards
+   inside Ziplock bags.
 
    Most backpacks for wilderness travel have several pockets for easy access.
 
    I prefer a <strong>front flap</strong> that also unzips completely to see where various small items like glasses, headphones, pens, batteries, cords, SD chips, etc. Valuables such as passport and currency I put in a <strong>internal wallet</strong> I wear under my shirt.
 
-### Internal
+   A sleek look without side pockets (that never seem to be the right size) is a halmark of the Astor, Minaal packs.
 
-   I like having one big compartment that unzips completely open, rather than several pockets that snag on stuff.
-   This also minimizes the number of (TSA approved) locks to secure the pack when I need to.
+
+### Internal arrangement
+
+   I like having one big compartment that unzips completely open, splayed) [Astor],
+   rather than several pockets that snag on stuff.
 
    PROTIP: I custom-made little boxes that doubles as padding to cushion all around my laptop.
    Hats, gloves, scarf at the top because they are used in the winter.
    Change of socks and underwear, which I rarely need, at the bottom.
    Extra shirt and towels on the left and right compartments.
 
-   The boxes are made of insulation material because many items (food, medicines) degrade when hot.
+   Some boxes are made of insulation material because many items (food, medicines) degrade when hot.
    The material also provides some stiffness.
    Some packs contain soft pull-out packs. 
-   But I prefer stiffer boxes so they stack neatly in the pack.
+   But I prefer stiffer water-tight boxes so they stack neatly in the pack.
 
    They are more effecive than **internal compression straps** to keep things inside the pack from 
    knocking into each other.
+
+   The [XDDesign Bobby] features high density foam.
+
+   Having internal compartments that are <strong>water-tight</strong> seals 
+
+### Zippers #
+
+   Zippers is where my previous backpacks wore out first.
+   "YKK" brand zippers (from Japan) are considered the best.
+   New versions are leak-resistant.
+
+### Hanging outside pack
+
+[ ] Compass, with a hook hanging outside my bag
+
+[ ] Large carabiner to attach the pack so it stays on top the handle of a rolling luggage bag.
+
+### Security
+
+   Mimizing external pockets also minimizes the number of (TSA approved) locks to secure the pack when I need to.
+
+   **Easily lockable zippers** make it harder for people standing behind me in line to explore the pockets on my backpack.
+
+   The XDDesign Bobby pack features hidden zippers.
+
+   High-tech packs have:
+
+   - an alarm that sounds if someone picks it up. This can be added on.
+   - Red LED rear light for safety [Astor]
+   - Red LED side light for safety [Astor]
+   - Front lights [Astor]
+   - Locator beacon (such as Tile)
+   <br /><br />
+
+   The trouble with them is that I need to hassle with keeping its battery charged.
+
 
 Other qualities and alternatives I've considered during my survey of various ones out there are below.
 
@@ -106,53 +153,27 @@ Other qualities and alternatives I've considered during my survey of various one
 -->
 
 
-### Durability #
+<a name="Water"></a>
 
-- [ ] **Heavy-duty zippers**, as that is where my previous backpacks wore out first.
-     "YKK" brand zippers (from Japan) are considered the best.
-     New versions are leak-resistant.
+### Water tube & internal bladder
 
-### Comfort
+   Normally a person needs a half gallon (64 oz) per day or more.
+   Water weighs 8 pounds per gallon. 
 
-- [ ] Adjustable shoulder and side straps really help, especially for women.
+   [_] A "LifeStraw" to suck water from a sack inside the backpack is great not just for backpackers. 
+   Offices can have water quality issues too.
 
-- [ ] <strong>water tube</strong> to reach an internal water bag 
-   makes it not necessary to stop and remove the bottle for a drink.
+   [_] It's a true luxury to have a hot drink on a cold night or a cold drink on a hot day. 
+   Double-walled canisters keep hot drinks hot and cold drinks cold.
+
+   Hikers enjoy the convenience of an external water tube to reach an internal water bag so
+   it's not necessary to stop and remove the bottle for a drink.
    Some bags have them built-in but there are add-ons available.
-
-- [ ] Pack can open completely open (splayed) [Astor]
-
-### Security
-
-- [ ] A **dark gray** color backpack is less noticeable than a bright-colored pack for thieves.
-
-- [ ] **Easily lockable zippers** to make it harder for people standing behind me in line to explore
-     the pockets on my backpack
-
-- [ ] A sleek look without side pockets (that never seem to be the right size) [Astor, Minaal]
-
-- [ ] <strong>Cut-proof</strong> fabric [LocTote, XDDesign Bobby]
-
-- [ ] Hidden zippers [XDDesign Bobby]
-
-- [ ] High density foam [XDDesign Bobby]
-
-- [ ] Emergency information slot
-
-- [ ] Alarm. This can be added on.
-
-- [ ] Red LED rear light for safety [Astor]
-- [ ] Red LED side light for safety [Astor]
-- [ ] Front lights [Astor]
-- [ ] Locator beacon (such as Tile)
 
 
 ### Non-features #
 
 I don't care about the pack being:
-
-   * water-tight as I use Ziplock bags and rigid water-tight boxes
-    to hold stuff, anyway.
 
    * Velcro patch to attach skateboard [Unitty]
 
@@ -173,7 +194,7 @@ Other alteratives I considered:
 
    * <a target="_blank" href="http://sdrtraveller.com/products/d3-traveller">
    The D3 Traveller</a> is a duffle bag which costs $983 because it looks like a used trash can liner.
-   It is ultralight even though has double walls of waterproof scan-resistent fabric.
+   It is ultralight even though has double walls of waterproof <strong>scan-resistent</strong> fabric.
 
    * <a target="_blank" href="http://www.amazon.com/Osprey-Farpoint-Travel-Backpack-Volcanic/dp/B014EBM3KA/ref=wilsonslifenotes">Osprey Farpoint 40 Travel Backpack ($160)</a>
    This one's nice but a bit spendy.
@@ -188,17 +209,6 @@ Other alteratives I considered:
    AND
    <a target="_blank" href="https://www.indiegogo.com/projects/bobby-the-best-anti-theft-backpack-by-xd-design#/">
    Indiegogo</a>
-
-<a name="Water"></a>
-
-## Water
-
-Normally a person needs a half gallon (64 oz) per day or more.
-Water weighs 8 pounds per gallon. 
-
-[_] A hose to suck water from a sack inside the backpack is great not just for backpackers. Offices can have water quality issues too.
-
-[_] It's a true luxury to have a hot drink on a cold night or a cold drink on a hot day. Double-walled canisters keep hot drinks hot and cold drinks cold.
 
 
 <a name="Food"></a>
@@ -253,18 +263,14 @@ I get small 3 oz. bottles or fill up little tubes rather than handling and carry
 
 [ ] Balsamic vinegar
 
-[ ] Port (to go in clam and other chowders)
+[ ] Port wine (to go in clam and other chowders)
 
 
 <a name="Toiletries"></a>
 
 ## Toiletries
 
-[ ] Toiletries bag that hangs, such as the Ogio Doppler bag.
-
-[ ] Breath mints
-
-[ ] Antacids
+I keep a small bag in my backpack for essential toiletries:
 
 [ ] Deoderant
 
@@ -276,30 +282,36 @@ I get small 3 oz. bottles or fill up little tubes rather than handling and carry
 
 [ ] Dental floss
 
-[ ] Eye mask
-
-[ ] First-aid bag with band-aids
-
-[ ] Earplugs in a plastic case to keep dirt off them
-
 [ ] Small roll of toilet paper in a waterproof and abrasion-resistent bag.
 
 [ ] travel-sized Febreze To Go.
+
+[ ] Wash cloth (polyester for faster drying than cotton)
+   Use it to clean computer screens.
+
+
+[ ] Toiletries bag that hangs, such as the Ogio Doppler bag.
+
+[ ] First-aid bag with band-aids
+
+[ ] Breath mints
+
+[ ] Antacids
+
+[ ] Eye mask
+
+[ ] Earplugs in a plastic case to keep dirt off them
 
 [ ] Matches
 
 [ ] Whistle
 
-[ ] Compass, with a hook hanging outside my bag
-
 [ ] Mirror
 
 [ ] Nail clipper
 
-[ ] Wash Towel (polyester for faster drying than cotton)
-   Use it to clean computer screens.
 
-I keep in my car:
+I keep in my car a bag I put in my luggage when I travel:
 
 [ ] Q-tips
 
@@ -311,32 +323,29 @@ I keep in my car:
 
 [ ] Nylon cord
 
+[ ] Woolite Travel Laundry Soap or Travelon Laundry Soap Sheets so you can hand wash laundry in a sink.
+
 
 <a name="Clothing"></a>
 
 ## Clothing
 
-PROTIP: An extra pair of socks and underwear makes for great padding at the bottom for electronics.
+PROTIP: An extra pair of socks and underwear makes for great padding for electronics.
 
 [ ] Gloves with touch-screen fingertips. I prefer leather gloves for its wind protection.
 
-[ ] Hat, because you loose a lot of heat through your head.
+[ ] Hat (cap), because you loose a lot of heat through your head.
 
 [ ] Scarf (shemag) of 42 x 42 can be used to filter water and as an evaperative cooler. Also breathes through it in smoke.
 
 [ ] Money & passport hider
 
-[ ] A rainsuit (with pants) takes less room than I thought. The Frogger
-
-   The rainsuit replaces umbrella, which doesn't work that well anyway for protecting pants. So wear dark pants ;)
+[ ] A rainsuit (with pants) takes less room than I thought. The Frogger rainsuit replaces umbrella, which doesn't work that well anyway for protecting pants. So wear dark pants ;)
 
 [ ] Big waterproof airtight bag for storing soiled underwear.
 
 [ ] Underwear from Ex-officio, at $25 each, is worth every penny to me for its comfort and quick-drying properties (not cotton)
    It doubles as a bathing suit (kept in a waterproof bag)
-
-[ ] Woolite Travel Laundry Soap or Travelon Laundry Soap Sheets 
-   so you can hand wash laundry in a sink.
 
 [ ] Stain remover stick
 
@@ -345,7 +354,7 @@ PROTIP: An extra pair of socks and underwear makes for great padding at the bott
 
 <a name="Shelter"></a>
 
-## Shelter
+## Shelter for sleeping
 
 Variations in where to sleep, from the most comfortable to least:
 
@@ -367,12 +376,6 @@ I am terrified of bed bugs.
    with a nice-feeling one. Lightweight and compresses to a small size.
    Yeah, I'm spoiled.
 
-
-
-A tent (with stakes) is the item which separates a city pack and wilderness backpacking.
-
-[ ] I keep a 4-season sleeping bag and pads in my car in case of breakdown in the Winter.
-
 For traveling, here are a few items when you don't have 600-count sheets in a five-star hotel:
 
 [ ] I keep a "space" or "survival" mylar reflective blanket in my pack. It's less than an once.
@@ -391,12 +394,16 @@ For traveling, here are a few items when you don't have 600-count sheets in a fi
 
 ### Sleeping in cars #
 
+[ ] I keep a 4-season sleeping bag and pads in my car in case of breakdown in the Winter.
+
 In New York City, the Bowry (Chinatown).
 
 
 <a href="#SleepInCity"></a>
 
 ### Rough Sleeping #
+
+A tent (with stakes) is the item which separates a city pack and wilderness backpacking.
 
 I think it's wise to be experienced and prepared to sleep in the "cuts" (hideaway spots like bushes and alleys).
 It's not just in case you're homeless. I've been in a city where I can't find any hotel room available.
