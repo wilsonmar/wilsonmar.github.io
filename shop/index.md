@@ -42,27 +42,50 @@ Since I travel a lot, I need a backpack designed for secure <strong>urban</stron
 So the backpack that makes the most sense for my everyday carry needs is <a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS">Cabin Max Metz Backpack Flight Approved Carry on Bag ($50)</a><a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS"><img align="right" width="150" src="../images/Cabin Max Metz Backpack.png" /></a>
 <img align="right" src="http://ir-na.amazon-adsystem.com/e/ir?t=wilsonslifenotes&l=as2&o=1&a=B00IR2VEUS" width="1" height="1" border="0" alt="" />
 
+Below are discussion of specific attributes versus trade-offs:
+
+### Color
+
    Mine is black but there is a <a target="_blank" href="https://www.amazon.com/gp/product/B00M7DYI24/">gray camo</a> fabric.
    I'd like to put a patch (such as an American flag) over their big logo, though.
 
-   I like that it's the maximum size to be a carry-on bag (IATA 21 x 14 x 9), so don't need an additional bag
+### Size
+
+   The <strong>maximum size</strong> to qualify as carry-on luggage is defined by IATA to be 22 x 16 x 8 inches.
+   Some airlines have different standards, such as (21 x 14 x 9). I prefer a backpack this size so I don't need an additional bag
    when I go for a weekend or need to carry several laptops, camera or recording gear, etc.
-   So it's bigger than most backpacks.
+
+   The room's there when needed at a **Lightweight** 700g with water resistant 600D material, which the <a target="_blank" href="https://www.amazon.com/dp/B01J24H2K0/">Amazon Basics bag</a> does not have. 
+
+   Such a size may be too big for most.
+   But I would rather cinch up a pack than not have enough room when I need it.
+   The pack has side <strong>compression/cinch straps</strong> to flatten it out. But I rarely use them.
+
+### Wheels
+
+   Some cannot carry backpacks, so a regular rolling bag would be needed.
+   Wheels dd weight, so I've steered away from them (I can't resist the pun).
+
+   A backpack would allow me to get on the plane with essentially two pieces of carry-on luggage.
+
+### Comfort
 
    <img align="right" alt="sho-backpack-carry-276x418-217789.png" width="139" height="209" src="https://user-images.githubusercontent.com/300046/52171400-8382ae00-272a-11e9-9d00-01c79c8f9712.png">
-   The room's there when needed at a light 700g with water resistant 600D material, which the <a target="_blank" href="https://www.amazon.com/dp/B01J24H2K0/">Amazon Basics bag</a> does not have. 
-
-   Thus it's less comfortable to carry for long periods, and less "executive business style".
+   A large backpack is less comfortable to carry for long periods, and less "executive business style".
    Would be nice to have more comfortable straps that transfers weight to the hips.
 
-   The front "Quick Access Pocket" I put receipts in, so it's not locked. 
+### External quick access
 
-   The front flap that also unzips completely to see where various small items like glasses, headphones, pens, batteries, cords, SD chips, etc.
+   In the front "Quick Access Pocket" I put receipts in, so it's not locked. 
+
+   Most backpacks for wilderness travel have several pockets for easy access.
+
+   I prefer a <strong>front flap</strong> that also unzips completely to see where various small items like glasses, headphones, pens, batteries, cords, SD chips, etc. Valuables such as passport and currency I put in a <strong>internal wallet</strong> I wear under my shirt.
+
+### Internal
 
    I like having one big compartment that unzips completely open, rather than several pockets that snag on stuff.
    This also minimizes the number of (TSA approved) locks to secure the pack when I need to.
-
-   It has side <strong>compression/cinch straps</strong> to flatten it out. But I rarely use them.
 
    PROTIP: I custom-made little boxes that doubles as padding to cushion all around my laptop.
    Hats, gloves, scarf at the top because they are used in the winter.
@@ -71,7 +94,12 @@ So the backpack that makes the most sense for my everyday carry needs is <a targ
 
    The boxes are made of insulation material because many items (food, medicines) degrade when hot.
    The material also provides some stiffness.
-   
+   Some packs contain soft pull-out packs. 
+   But I prefer stiffer boxes so they stack neatly in the pack.
+
+   They are more effecive than **internal compression straps** to keep things inside the pack from 
+   knocking into each other.
+
 Other qualities and alternatives I've considered during my survey of various ones out there are below.
 
 <!-- https://www.youtube.com/watch?v=MiTD6Hs6HBk
@@ -83,29 +111,6 @@ Other qualities and alternatives I've considered during my survey of various one
 - [ ] **Heavy-duty zippers**, as that is where my previous backpacks wore out first.
      "YKK" brand zippers (from Japan) are considered the best.
      New versions are leak-resistant.
-
-- [ ] **Internal compression straps** to keep things from 
-   knocking into each other inside the pack.
-
-   Some provide soft pull-out packs. 
-   But I prefer harder boxes so they stack neater in the pack.
-
-### Size
-
-   This is a filter for various options available:
-
-- [ ] The <strong>maximum size</strong>
-   to qualify as carry-on luggage (22 x 16 x 8 inches) 
-   may be too big for some.
-   But I would rather cinch up a pack than not have enough room when I need it.
-
-- [ ] **Lightweight** to me is generally 2 pounds or less.
-   But it's a trade-off.
-
-- [ ] <strong>Wheels</strong> add weight, 
-   so I've steered away from them. (I can't resist the pun).
-
-   But seriously, some (with sore backs) find wheels a must.
 
 ### Comfort
 

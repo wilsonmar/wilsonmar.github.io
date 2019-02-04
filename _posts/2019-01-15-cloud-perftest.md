@@ -31,6 +31,30 @@ The attempt here is a logical sequence to cover tactics and strategies for sever
 TODO: Split up this long page into separate pages, and re-published on Medium as separate parts.
 
 
+## URL Landing Page Efficiencies
+
+It is even more important for an organization's marketing landing page to be fast as its headquarters lobby to be stylish.
+More potential and actual customers visit on-line than in person.
+
+It is now common for developers to manage direct URLs to images and other resources, such as this on Amazon cloud:
+
+   * https://d20vrrgs8k4bvw.cloudfront.net/documents/en-US/nd209_Robo_syllabus_v2.pdf
+   <br /><br />
+
+QUESTION: How much difference does using a CDN (Content Distribution Network) make? There are several companies offering the service.
+
+Several sites track how fast landing pages load from various points in the world:
+
+   * <a target="_blank" href="https://gtmetrix.com/">GTMetrix.com</a> includes mobile timings from Samsung Galaxy Nexus phone.
+   * https://tools.pingdom.com/
+   <br /><br />
+
+<a target="_blank" href="https://developers.google.com/speed/pagespeed/insights/">Google's Page Speed Insights</a>
+points out internal issues such as whether images are compressed enough and the many other specific tricks to make the site as fast as possible. <a target="_blank" href="https://testmysite.thinkwithgoogle.com/">testmysite.ThinkWithGoogle.com</a> evaluates mobile through 3G and 4G networks.
+
+??? show what users see, in slow motion.
+
+
 <a name="Custom"></a>
 
 ## Custom executables
