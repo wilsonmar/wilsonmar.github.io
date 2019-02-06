@@ -20,26 +20,16 @@ This is not documentation, but a step-by-step exploration tour with commentary. 
 
 1. Visit the repo:
 
-   <pre>https://github.com/SalesforceFoundation</pre>
-
-   The GitHub account is associated with the website <a target="_blank" href="https://www.salesforce.org/">salesforce.org</a> (non-profit).
-
-   There are dozens of repositories.
-
+   <a target="_blank" href="https://github.com/wilsonmar/performance">https://github.com/wilsonmar/performance</a>
+   forked from  <a target="_blank" href="https://github.com/SalesforceFoundation">https://github.com/SalesforceFoundation</a> associated with the website <a target="_blank" href="https://www.salesforce.org/">salesforce.org</a> (non-profit).
    Notes says Jason Lantz (jlantz) from Dallas is involved with it.
-
-2. Visit the Performance framework code base:
-
-   <pre>git clone https://github.com/SalesforceFoundation/performance</pre>
-
-   NOTE: I'm the first and only one to fork it to another GitHub account.
 
    ### On your local machine
 
 1. Create and navigate to a container folder.
 2. Download or Git clone the Performance framework repo. Either the original or your fork:
 
-   <pre>git clone https://github.com/SalesforceFoundation/performance</pre>
+   <pre>git clone https://github.com/wilsonmar/performance</pre>
 
    ### Gradle
 
@@ -292,7 +282,7 @@ Simulation performance.simulations.Injector started...
 
    ### Source Data Galore
 
-   See also https://github.com/SalesforceFoundation/NPSP-Test-Data
+   See <a target="_blank" href="https://github.com/SalesforceFoundation/NPSP-Test-Data">https://github.com/SalesforceFoundation/NPSP-Test-Data</a>
    for 100X data generation.
 
 2. Navigate to framework's data directory so we can explore the files:
@@ -348,7 +338,7 @@ Simulation performance.simulations.Injector started...
 
 @SFDCFoundation
 
-<a target="_blank" href="http://www.salesforce.org/power-of-us"> The Power of Us" community</a>.
+<a target="_blank" href="http://www.salesforce.org/power-of-us"> The Power of Us" community</a> for approved non-profits.
 
 https://github.com/salesforce/vulnreport
 

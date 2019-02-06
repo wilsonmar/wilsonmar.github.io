@@ -42,17 +42,23 @@ It is now common for developers to manage direct URLs to images and other resour
    <br /><br />
 
 QUESTION: How much difference does using a CDN (Content Distribution Network) make? There are several companies offering the service.
+Have a public cloud enables test clients to be quickly installed around the world to evaluate customer experience.
+<a target="_blank" Href="https://instapage.com/blog/page-speed-tools">Several sites</a> track <a target="_blank" href="https://geekflare.com/monitor-website-uptime/">uptime availability</a> and how fast landing pages load from various points in the world:
 
-Several sites track how fast landing pages load from various points in the world:
-
+   * <a target="_blank" href="https://www.uptrends.com/free-website-monitoring">uptrends.com</a>, for free, tracks hits to a website and emails to business email addresses
+   * <a target="_blank" href="https://www.uptimerobot.com/"> also looks for text on a page to alert to detect defacement, and display results to a public site. For up to 50 sites per account. 
+   * <a target="_blank" href="http://yslow.org/">yslow.org</a> is based on work at Yahoo in 2001.
    * <a target="_blank" href="https://gtmetrix.com/">GTMetrix.com</a> includes mobile timings from Samsung Galaxy Nexus phone.
-   * https://tools.pingdom.com/
+   * <a target="_blank" href="https://tools.pingdom.com/">Pingdom.com</a>, associated with SolarWinds, says free but it's really a 15-day trial.
+   * https://tools.keycdn.com/speed
+   * https://www.dotcom-tools.com/website-speed-test.aspx
+   * http://pagelocity.com/
    <br /><br />
 
 <a target="_blank" href="https://developers.google.com/speed/pagespeed/insights/">Google's Page Speed Insights</a>
-points out internal issues such as whether images are compressed enough and the many other specific tricks to make the site as fast as possible. <a target="_blank" href="https://testmysite.thinkwithgoogle.com/">testmysite.ThinkWithGoogle.com</a> evaluates mobile through 3G and 4G networks.
+points out internal issues such as whether images are compressed enough and the many other specific tricks to make the site as fast as possible. <a target="_blank" href="https://testmysite.thinkwithgoogle.com/">testmysite.ThinkWithGoogle.com</a> evaluates mobile through 3G and 4G networks. <a target="_blank" Href="https://www.thinkwithgoogle.com/feature/mobile/">Google Speed Scorecard</a> compares the speed of various sites in one table.
 
-??? show what users see, in slow motion.
+<a target="_blank" href="http://www.webpagetest.org/"> shows what users see, in slow motion</a> of pages in various stages of completeness.
 
 
 <a name="Custom"></a>
