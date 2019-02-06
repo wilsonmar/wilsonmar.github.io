@@ -83,17 +83,21 @@ Below are discussion of specific attributes versus trade-offs:
 
 ### External quick access
 
+   Most backpacks for wilderness travel have several pockets for easy access.
+
    In the front "Quick Access Pocket" I put receipts in, so it's not locked. 
    That's where I keep a couple of <strong>lost/emergency contact</strong> cards
    inside Ziplock bags.
 
    I keep these in that pocket or hanging outside the pack:
 
-   [_] Compass, with a hook hanging outside my bag
+   [_] <strong>Magnetic compass</strong>. The Brunton compass I can squeeze to rotate the plate to remind me to adjust for <a target="_blank" href="https://www.rei.com/learn/expert-advice/compass-declination.html">magnetic declination</a>  vs. True North on maps.
+   In the continental U.S., declination can vary from nearly 20 degrees east in places on the West Coast to nearly 20 degrees west in places on the East Coast. A 15 degree error when traveling over a mile puts you a quarter-mile away from your destination. <a target="_blank" href="https://maps.ngdc.noaa.gov/viewers/historical_declination/">Magnetic North</a> has moved over 2.5 degrees during the past 22 years (<a target="_blank" href="https://www.ncei.noaa.gov/news/world-magnetic-model-out-cycle-release">recently at a faster rate toward Russia</a>).
 
-   [_] Large carabiner to attach the pack so it stays on top the handle of a rolling luggage bag.
+   [_] Large <strong>carabiner and straps</strong> to attach the pack so it stays on top the handle of a rolling luggage bag.
 
-   Most backpacks for wilderness travel have several pockets for easy access.
+   [_] Thermometer for ambient temperature. Not really accurate but good to know.
+
 
    A sleek look without side pockets (that never seem to be the right size) is a halmark of the Astor, Minaal packs.
 
@@ -101,7 +105,7 @@ Below are discussion of specific attributes versus trade-offs:
    
    [_] Valuables such as passport and currency I put in a <strong>internal wallet</strong> I wear under my shirt.
 
-   With locks is a trade-off sacrifice of quick easy access to glasses, water.
+   Locks are a trade-off sacrifice of quick easy access to glasses, water.
 
 
 <a name="SunProtection"></a>
