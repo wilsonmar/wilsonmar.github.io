@@ -201,11 +201,11 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    7. Run again to verify that the result is 4, which makes the test pass.
    <br /><br />
 
-1. View the repository of sample app, with test assets targeting the sample site:
+1. View the repository of a sample app, containing test assets targeting its sample site:
 
    <a target="_blank" href="https://github.com/juliemr/protractor-demo/">https://github.com/juliemr/protractor-demo</a>
 
-1. Notice the repo has not been updated since 2015. So it will likely encounter deprecation and security errors if built locally.
+ 1. Notice the repo has not been updated since 2015. So it will likely encounter deprecation and security errors if built locally.
 
    There are also Pull Requests and Issues pending for a long time.
 
@@ -488,7 +488,7 @@ and then configuring the conf.js file.
    </strong></pre>
 
 
-<a name="EditingScripts></a>
+<a name="EditingScripts"></a>
 
 ## Editing scripts
 
@@ -512,7 +512,7 @@ PROTIP: Instead of hard-coding username and password in the code,
 read a file from your user home folder to populate values in variables.
 
 
-<a name="Verifications></a>
+<a name="Verifications"></a>
 
 ## Verifications
 
@@ -540,19 +540,19 @@ You need a sample app to test against, and sample scripts that test that site.
 
 The provided repository contains an automated test for email sending functionality via Gmail as outlined below:
 
-    1. Login to gmail
-    2. Compose and Send an email with an alert message for not having body
-    3. No verification is done in the code for any action like Login page displayed, compose email box etc 
+   1. Login to gmail
+   2. Compose and Send an email with an alert message for not having body
+   3. No verification is done in the code for any action like Login page displayed, compose email box etc 
    <br /><br />
 
 Your task is to implement below test case:
 
-    1. Login to account1 on Gmail
-    2. Compose an email with unique subject, body and attachment
-    3. Send it to account2
-    4. Login to account2
-    5. Open the email
-    6. Verify the subject, body and attachment name
+   1. Login to account1 on Gmail
+   2. Compose an email with unique subject, body and attachment
+   3. Send it to account2
+   4. Login to account2
+   5. Open the email
+   6. Verify the subject, body and attachment name
    <br /><br />
 
 Notes:
