@@ -60,6 +60,18 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
 
    See <a target="_blank" href="http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js">this StackOverflow thread</a>.
 
+1. Install browser UI apps for cross-browser testing. On Macs:
+
+   <pre>brew cask install google-chrome
+   brew cask install firefox
+   </pre>
+
+   Alternately, on Windows:
+
+   <pre>choco install googlechrome -y
+   choco install firefox -y
+   </pre>
+
 1. Open a Terminal session on Mac or cmd session on Windows.
 
 1. Install Node and NPM (Node Package Manager) globally:
