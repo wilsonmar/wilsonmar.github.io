@@ -126,6 +126,17 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
 
    <tt>-y</tt> enables you to skip confirmation prompts.
 
+1. Install Java8 using a package manager. On Mac, use Homebrew:
+
+   <pre><strong>brew cask install jdk8
+   </strong></pre>
+
+   ALternately, on Windows:
+
+   <pre><strong>choco install jdk8 -y
+   </strong></pre>
+
+   WARNING: You must specify version 8 because the default version 11 onward have a different licensing by Oracle.
 
 ## Your test assets repository
 
@@ -201,19 +212,6 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
    <br /><br />
 
 
-   ### Grunt automation
-
-1. To run the gruntfile.js
-
-   <pre><strong>grunt
-   </strong></pre>   
-   
-   http://localhost:3000/#!/EventRatings/new
-
-
-1. View Protractor file
-
-
 ## Run Test
 
 These are steps every time you run:
@@ -259,7 +257,7 @@ exports.config = {
 
 ### Start WebDriver
 
-1. Start WebDriver to a port:
+1. Start WebDriver to a port. It was installe with Protractor:
 
    <pre><strong>webdriver-manager start 
    </strong></pre>
@@ -474,6 +472,21 @@ Notes:
    <pre><strong>sudo npm install -g grunt-cli</strong></pre>
 
 1. Type in your password.
+
+
+   ### Grunt automation
+
+1. To run the gruntfile.js
+
+   <pre><strong>grunt
+   </strong></pre>   
+   
+   http://localhost:3000/#!/EventRatings/new
+
+
+1. View Protractor file
+
+
 -->
 
 
