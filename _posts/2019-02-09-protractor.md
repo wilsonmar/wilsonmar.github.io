@@ -17,14 +17,13 @@ comments: true
 
 {% include _toc.html %}
 
-## TD;DR Summary
+## TL;DR Summary
 
 Protractor was written by the team who created the testing framework at <a target="_blank" href="http://angularjs.io/">Angular.io</a> (formerly <a target="_blank" href="http://angularjs.org/">Angular.js</a>) so they can automate its testing.
 The first version of Protractor was released in July, 2013. 
 Google continues to support the work.
 
-Unlike traditional static HTML, on client machines running Angular apps, 
-JavaScript <strong>dynamically generates HTML</strong> on the fly.
+Unlike traditional static HTML, client browsers running Angular apps <strong>dynamically generates HTML</strong> and JavaScript on the fly.
 
 Since static or generated on the client, HTML is stored in a DOM (Document Object Model) web browsers maintain for each session.
 And Protractor grabs specific HTML elements from within each DOM.
@@ -70,12 +69,11 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
 
    <pre><strong>C:\Program Files\nodejs</strong></pre>
 
-1. On Windows, configure Node System Variables NODE_HOME to point to the same path.
+1. On Windows, go to Computer Properties to add a System Variable <strong>NODE_HOME</strong> to point to the same path above.
 
 1. Use NPM to install Protractor from <a target="_blank" href="https://github.com/angular/protractor">https://github.com/angular/protractor</a>
 
-   <pre><strong>
-   npm install -g protractor
+   <pre><strong>npm install -g protractor
    protractor --version
    </strong></pre>
 
@@ -90,8 +88,7 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
 
 1. To update WebDriver "plug-in" for each internet browser needed to take over the keyboard and mouse.
 
-   <pre><strong>
-   webdriver-manager update
+   <pre><strong>webdriver-manager update
    webdriver-manager version
    </strong></pre>
 
@@ -106,12 +103,19 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
    * https://code.google.com/p/chromedriver/
 
 
+1. Install Git using a package manager. <a target="_blank" href="https://chocolatey.org/packages/git.install">On Windows</a>:
+
+   <pre><strong>choco install git.install -y
+   </strong></pre>
+
+   <tt>-y</tt> enables you to skip confirmation prompts.
+
+
 ## Your test assets repository
 
 1. If you don't have a projects folder, create one under your user home folder. On Bash mine is:
 
-   <pre><strong>
-   cd ~
+   <pre><strong>cd ~
    mkdir gits
    cd gits
    </strong></pre>
@@ -120,8 +124,7 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
 
 1. Create a folder for each repository owner. For example, if your GitHub account is "wilsonmar", then:
 
-   <pre><strong>
-   cd ~/gits
+   <pre><strong>cd ~/gits
    mkdir wilsonmar
    cd wilsonmar
    pwd
@@ -131,8 +134,7 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
 
 1. Navigate to your projects folder. If you want to use a repository from "wilsonmar", then:
 
-   <pre><strong>
-   cd ~/gits/wilsonmar
+   <pre><strong>cd ~/gits/wilsonmar
    pwd
    </strong></pre>
    
@@ -140,15 +142,14 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
 
 1. Retrieve a sample repository:
 
-   <pre><strong>
-   git clone https://github.com/taylonr/intro-to-protractor 
+   <pre><strong>git clone https://github.com/taylonr/intro-to-protractor 
    cd intro-to-protractor
    ls
    </strong>
 
    Sample response:
-   <pre>
-   Cloning into 'intro-to-protractor'...
+
+   <pre>Cloning into 'intro-to-protractor'...
    remote: Enumerating objects: 262, done.
    remote: Total 262 (delta 0), reused 0 (delta 0), pack-reused 262
    Receiving objects: 100% (262/262), 174.79 KiB | 3.64 MiB/s, done.
@@ -170,8 +171,7 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
 
 1. To download libraries based on the <tt>package.json</tt> file:
 
-   <pre><strong>
-   npm install
+   <pre><strong>npm install
    </strong></pre>   
    
 
@@ -189,8 +189,7 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
 
 1. To run the gruntfile.js
 
-   <pre><strong>
-   grunt
+   <pre><strong>grunt
    </strong></pre>   
    
    http://localhost:3000/#!/EventRatings/new
@@ -246,8 +245,7 @@ exports.config = {
 
 1. Start WebDriver to a port:
 
-   <pre><strong>
-   webdriver-manager start 
+   <pre><strong>webdriver-manager start 
    </strong></pre>
 
    This response expected:
@@ -262,8 +260,7 @@ exports.config = {
 
 1. View processes in the new Terminal session:
 
-   <pre><strong>
-   ps -a
+   <pre><strong>ps -a
    </strong></pre>
 
    Among the response:
@@ -275,8 +272,7 @@ exports.config = {
 
    Alternately, start in background by adding a "&" to the end of the command:
 
-   <pre><strong>
-   webdriver-manager start &
+   <pre><strong>webdriver-manager start &
    </strong></pre>
 
    Now you can continue on the same Terminal session while webdriver runs in the background.
@@ -288,8 +284,7 @@ exports.config = {
 
 1. View WebDriver web page: On Mac Terminal, use the open command to open a browser at the URL specified:
 
-   <pre><strong>
-   open <a target="_blank" href="http://localhost:4444/wd/hub/static/resource/hub.html">http://localhost:4444/wd/hub/static/resource/hub.html</a>
+   <pre><strong>open <a target="_blank" href="http://localhost:4444/wd/hub/static/resource/hub.html">http://localhost:4444/wd/hub/static/resource/hub.html</a>
    </strong></pre>
 
 
@@ -352,8 +347,7 @@ Alternately, if on Eclipse configured with the Protractor plugin:
 
 1. To invoke from a command-line Terminal:
 
-   <pre><strong>
-   protractor conf.js
+   <pre><strong>protractor conf.js
    </strong></pre>
 
    A sample test output: 
