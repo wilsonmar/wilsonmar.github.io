@@ -54,10 +54,11 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
 
 1. Install package manager for your operating system so that in the future it recognizes the need for updates and does it with one command.
 
-   * On Windows, Chocolatey from chocolatey.org
-   * On Macs, Homebrew from homebrew.org
-   <br /><br />
+   On Macs, install Homebrew using the default Ruby instance:
 
+   <pre>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</pre>
+
+   On Windows, install Chocolatey from chocolatey.org. 
    See <a target="_blank" href="http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js">this StackOverflow thread</a>.
 
 1. Install browser UI apps for cross-browser testing. On Macs:
@@ -475,22 +476,33 @@ and then configuring the conf.js file.
    </strong></pre>
 
 
+<a name="EditingScripts></a>
 
-<a name="Verifications></a>
-
-## Verifications
+## Editing scripts
 
 <a target="_blank" href="https://stackoverflow.com/questions/20927652/how-to-use-protractor-on-non-angularjs-website">
 To use Protractor on an non-Angular.js website</a>, access the webdriver instance directly with browser.driver. 
-For example:
+For <a target="_blank" href="https://github.com/angular/protractor/blob/f52438549f7d920da1600199feaf58059d6fd692/spec/withLoginConf.js">example</a>:
 
    <pre>
    browser.driver.findElement(by.id('username')).sendKeys('Jane');
    browser.driver.findElement(by.id('password')).sendKeys('1234');
    browser.driver.findElement(by.id('clickme')).click();
+   &nbsp;
+    browser.driver.wait(function() {
+      return browser.driver.getCurrentUrl().then(function(url) {
+        return /index/.test(url);
+      });
+    });
    </pre>
 
-PROTIP: Instead of hard-coding username and password in the code, read a file from your user home folder to populate values in variables.
+PROTIP: Instead of hard-coding username and password in the code, 
+read a file from your user home folder to populate values in variables.
+
+
+<a name="Verifications></a>
+
+## Verifications
 
 * Wait until page is loaded.
 
