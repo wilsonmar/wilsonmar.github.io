@@ -16,11 +16,23 @@ comments: true
 
 {% include _toc.html %}
 
-This is a hands-on deep dive immersive course to get those new to Git productive for professional usage using a local Git client. You learn in minimum time because I've spent a lot of time on sequencing your learning and on time-saving automation. The introduction to this course:
-
 <amp-youtube data-videoid="uSh-yN2E0rU" layout="responsive" width="480" height="270"></amp-youtube>
+<br />
 
-   I've viewed <a target="_blank" href="https://wilsonmar.github.io/git-github-videos/">every video and book on this topic</a> and I haven't seen this approach. So such an approach is a unique innovation of just this website.
+Hello, I'm Wilson Mar [<a target="_blank" href="https://www.twitter.com/wilsonmar">@wilsonmar</a>], 
+and I look forward to seeing you at our next course.
+I began working on Git in 2010 and, since 2014, have been holding live, full-day hands-on tutorials at conferences.
+
+Over the years, skill at using Git on the Bash command line has become a <strong>pre-requisite</strong> for many IT jobs, on Macs, Windows, and Linux.
+
+So I've viewed <a target="_blank" href="https://wilsonmar.github.io/git-github-videos/">every video and book</a> 
+I can find on this topic, and listed them in my blog. 
+
+I focus on helping you to <strong>contribute to open source</strong>, using techniques and utilities that top professionls use.
+
+You'll learn in minimum time because I've spent a lot of time on <strong>sequencing</strong> your learning and on <strong>time-saving automation</strong>. 
+
+The introduction to this course:
 
 In this tutorial, we also learn how to recover from mistakes right after we try each command.
 This means we often use commands to verify status after key steps.

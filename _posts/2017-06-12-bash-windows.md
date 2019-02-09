@@ -3,6 +3,7 @@ layout: post
 title: "Bash shell running within Windows using Microsoft's WSL (Windows Subystem for Linux)"
 excerpt: "It's less like Power Rangers clicking rings, more like living in a foreign country"
 tags: [Bash, Windows, IoT]
+file: 2017-06-12-bash-windows.md
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg

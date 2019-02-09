@@ -573,6 +573,9 @@ Protocol is protobuf
    @Dynatrace</a>
    * <a target="_blank" href="https://twitter.com/grabnerandi">
    @grabnerandi</a> (Andreas Grabner, Developer Evangelist)
+   * #perform2019 
+   * #dynatracer 
+   * #apm
 
 0. GitHub source repositories:
 
