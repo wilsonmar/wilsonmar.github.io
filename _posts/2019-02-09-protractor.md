@@ -111,8 +111,8 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
    NOTE: There is a WebDriver that is "headless" and does not involve iteraction on a browser UI:
    PhantomJS uses <a target="_blank" href="https://github.com/detro/ghostdriver">GhostDriver</a> to run tests in Headless mode.  
 
-   * https://code.google.com/p/chromedriver/
-
+   * <a target="_blank" href="https://code.google.com/p/chromedriver/">https://code.google.com/p/chromedriver/</a>
+   <br /><br />
 
 1. Install Git using a package manager. On Mac, use Homebrew:
 
@@ -128,10 +128,13 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
 
 1. Install Java8 using a package manager. On Mac, use Homebrew:
 
-   <pre><strong>brew cask install jdk8
+   <pre><strong>brew tap caskroom/versions
+   brew cask install java8
    </strong></pre>
 
-   ALternately, on Windows:
+   You'll need to input your password.
+
+   Alternately, on Windows:
 
    <pre><strong>choco install jdk8 -y
    </strong></pre>
@@ -150,8 +153,7 @@ Java(TM) SE Runtime Environment (build 1.8.0_162-b12)
 Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    </pre>   
 
-
-## Your test assets repository
+1, Exit your command instance and enter it again so installations take.
 
 1. If you don't have a projects folder, create one under your user home folder. On Bash mine is:
 
@@ -160,9 +162,36 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    cd gits
    </strong></pre>
 
-   If you had forked a repository online in GitHub, you would instead specify your own GitHub account name.
+   Others use "project".
 
-1. Create a folder for each repository owner. For example, if your GitHub account is "wilsonmar", then:
+
+## Your test assets repository
+
+1. Identify a repository you want to use. There are several:
+
+   * https://github.com/taylonr/intro-to-protractor 
+
+   It's best to use a sample that has a running app in the cloud.
+
+1. In a browser view the app running write down steps to run through the app, such as:
+
+   1. Load <a target="_blank" href="http://juliemr.github.io/protractor-demo/">http://juliemr.github.io/protractor-demo</a>
+   2. Click on the left box and enter 2.
+   3. Ignore the operator as "+".
+   4. Click on right box and enter 2.
+   5. Click on "Go!" to perform the calculation.
+   6. Verify that the result is 4.
+   <br /><br />
+
+   ![protractor-calculator-juliemr -648x235-7150](https://user-images.githubusercontent.com/300046/52525724-b9b8b400-2c7b-11e9-8a56-97ea39c6f5a7.jpg)
+
+
+1. Because <tt>git clone</tt> does not establish a folder for the account (just the repo), 
+   I manually create then cd into a folder for each GitHub account before I clone the repo.
+   Several repos can have the same repo name.
+
+   But if you had <strong>forked</strong> a repository online in GitHub, you would specify your own GitHub account name.
+   For example, if your GitHub account is "wilsonmar", then create a folder:
 
    <pre><strong>cd ~/gits
    mkdir wilsonmar
@@ -170,17 +199,20 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    pwd
    </strong></pre>
    
-   Into this folder I clone or create GitHub repositories.
-
 1. Navigate to your projects folder. If you want to use a repository from "wilsonmar", then:
 
    <pre><strong>cd ~/gits/wilsonmar
    pwd
    </strong></pre>
    
-   At this folder I retrieve GitHub repositories.
+   At this folder I retrieve GitHub repositories. There are several available.
 
-1. Retrieve a sample repository:
+   * https://github.com/taylonr/intro-to-protractor 
+   * http://juliemr.github.io/protractor-demo/
+
+   https://github.com/juliemr/protractor-demo/
+
+1. Retrieve a sample repository from 2015:
 
    <pre><strong>git clone https://github.com/taylonr/intro-to-protractor 
    cd intro-to-protractor
