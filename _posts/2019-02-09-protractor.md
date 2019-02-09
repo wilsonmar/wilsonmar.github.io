@@ -175,9 +175,15 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    runs against the sample app at <a target="_blank" href="https://meanjs.herokuapp.com">https://meanjs.herokuapp.com</a>
    as described in his <a target="_blank" href="https://app.pluralsight.com/library/courses/protractor-introduction/table-of-contents">
    "Protractor Introduction"</a> video class released March 10 2015. 
+
+   The sample app repo includes the MEAN.JS stack which consists of <a target="_blank" href="http://www.mongodb.org/">MongoDB</a>, <a target="_blank" href="http://www.nodejs.org/">Node.js</a>, <a target="_blank" href="http://expressjs.com/">Express API framework</a>, and <a target="_blank" href="http://angularjs.org/">AngularJS</a>.
+
    But the site is no longer active and there are errors when building the app.
 
-   So let's not use it.
+   Another one is "http://www.thetestroom.com/". 
+   But the full URL specified in the script associated with it is no longer available.
+
+   So let's not use them.
 
 1. Alternately, in a browser view the sample app running. 
 
@@ -245,13 +251,11 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    <pre>LICENSE      README.md    <strong>app</strong>          howtos       package.json <strong>test</strong>
    </pre>
 
-   File <strong>package.json</strong> specifies dependencies that Node will download before beginning run. 
+   File <strong>package.json</strong> specifies dependencies that Node will download before beginning runs.
 
    PROTIP: The app folder contains the app's code. The "tests" folder contains tests associated with the app's source code
    <strong>in the same repository</strong>. This is getting more common than separate teams which maintain separate
    repositories for app and test code.
-
-   Other sample app repos may include the MEAN.JS stack which consists of <a target="_blank" href="http://www.mongodb.org/">MongoDB</a>, <a target="_blank" href="http://www.nodejs.org/">Node.js</a>, <a target="_blank" href="http://expressjs.com/">Express API framework</a>, and <a target="_blank" href="http://angularjs.org/">AngularJS</a>.
 
    PROTIP: The app folder contains the app's code. The "tests" folder contains tests associated with the app's source code
    <strong>in the same repository</strong>. This is getting more common than separate teams which maintain separate
@@ -297,6 +301,8 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 ## Run Test
 
 These are steps every time you run:
+
+<a name="config.js"></a>
 
 ### Protractor Config for Jasmine
 
@@ -397,14 +403,15 @@ exports.config = {
 
 ### Spec.js file
 
-View a sample spec.js file to get (open) a URL to expect the title to be as stated in ".toContain" method:
+View a sample spec.js file that was specified in a <a href="#config.js">config.js file</a>,
+which gets (opens) a URL to expect the title to be as stated in ".toContain" method:
 
    <pre>
 // spec.js
 describe('Protractor Demo App', function() {
   it('should have a title', function() {
-    browser.get('http://www.thetestroom.com/');
-    expect(browser.getTitle()).toContain('Zoo Adoption');
+    browser.get('<a target="_blank" href="http://juliemr.github.io/protractor-demo/">http://juliemr.github.io/protractor-demo/</a>');
+    expect(browser.getTitle()).toContain('Super Calculator');
   });
 });
    </pre>
