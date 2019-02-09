@@ -49,8 +49,9 @@ Daniel Amorim, in his 17 Apr 2014 <a target="_blank" href="https://www.thoughtwo
 Protractor is a <a target="_blank" href="http://nodejs.org/">NodeJs</a> application written in JavaScript or TypeScript.
 It makes calls to a WebDriver which controls a web browser such as Microsoft's Edge, Apple's Safari, Google's Chrome, Mozilla's Firefox, etc.
 
+Other components are described as we install each:
 
-## Install steps
+## Install prerequisites
 
 1. Install package manager for your operating system so that in the future it recognizes the need for updates and does it with one command.
 
@@ -178,7 +179,11 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 
    So let's not use it.
 
-1. Alternately, in a browser view the sample app running. Write down steps to run through the app, such as:
+1. Alternately, in a browser view the sample app running. 
+
+   ![protractor-calculator-juliemr -648x235-7150](https://user-images.githubusercontent.com/300046/52525724-b9b8b400-2c7b-11e9-8a56-97ea39c6f5a7.jpg)
+
+   Write down steps to run through the app, such as:
 
    1. Load <a target="_blank" href="http://juliemr.github.io/protractor-demo/">http://juliemr.github.io/protractor-demo</a>
    2. Click on the left box and enter 2.
@@ -189,8 +194,6 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    6. Change the test result to 4.
    7. Run again to verify that the result is 4, which makes the test pass.
    <br /><br />
-
-   ![protractor-calculator-juliemr -648x235-7150](https://user-images.githubusercontent.com/300046/52525724-b9b8b400-2c7b-11e9-8a56-97ea39c6f5a7.jpg)
 
 1. View the repository of sample app, with test assets targeting the sample site:
 
