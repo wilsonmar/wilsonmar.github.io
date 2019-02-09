@@ -173,7 +173,9 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    runs against the sample app at <a target="_blank" href="https://meanjs.herokuapp.com">https://meanjs.herokuapp.com</a>
    as described in his <a target="_blank" href="https://app.pluralsight.com/library/courses/protractor-introduction/table-of-contents">
    "Protractor Introduction"</a> video class released March 10 2015. 
-   But the site is no longer active and there are errors when building the app.   
+   But the site is no longer active and there are errors when building the app.
+
+   So let's not use it.
 
 1. Alternately, in a browser view the sample app running. Write down steps to run through the app, such as:
 
@@ -189,13 +191,9 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 
    ![protractor-calculator-juliemr -648x235-7150](https://user-images.githubusercontent.com/300046/52525724-b9b8b400-2c7b-11e9-8a56-97ea39c6f5a7.jpg)
 
-1. View the repository of test assets targeting the sample site:
+1. View the repository of sample app, with test assets targeting the sample site:
 
    <a target="_blank" href="https://github.com/juliemr/protractor-demo/">https://github.com/juliemr/protractor-demo</a>
-
-   PROTIP: The app folder contains the app's code. The "tests" folder contains tests associated with the app's source code
-   <strong>in the same repository</strong>. This is getting more common than separate teams which maintain separate
-   repositories for app and test code.
 
 1. Notice the repo has not been updated since 2015. So it will likely encounter deprecation and security errors if built locally.
 
@@ -216,54 +214,61 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 
    If you didn't fork the repo, create folder for account "juliemr".
    
-1. Navigate to the project folder. If you want to use a repository from "wilsonmar", then:
-
-   <pre><strong>cd ~/gits/wilsonmar
-   pwd
-   </strong></pre>
-   
-   At this folder I retrieve GitHub repositories. There are several available.
-
-   * https://github.com/taylonr/intro-to-protractor 
-   * http://juliemr.github.io/protractor-demo/
-
-
-1. Retrieve a sample repository :
+1. Clone the sample repository :
 
    <pre><strong>git clone https://github.com/juliemr/protractor-demo/
    cd protractor-demo
-   ls
    </strong></pre>
 
    Sample response:
 
-   <pre>Cloning into 'intro-to-protractor'...
-   remote: Enumerating objects: 262, done.
-   remote: Total 262 (delta 0), reused 0 (delta 0), pack-reused 262
-   Receiving objects: 100% (262/262), 174.79 KiB | 3.64 MiB/s, done.
-   Resolving deltas: 100% (83/83), done.
+   <pre>Cloning into 'protractor-demo'...
+   remote: Enumerating objects: 150, done.
+   remote: Total 150 (delta 0), reused 0 (delta 0), pack-reused 150
+   Receiving objects: 100% (150/150), 112.96 KiB | 3.32 MiB/s, done.
+   Resolving deltas: 100% (56/56), done.
    </pre>
 
-   The list of folders and files at the top of the repo:
+1. List folders and files at the top of the repo:
 
-   <pre>LICENSE       README.md     config        package.json
-   LICENSE.md    app           gruntfile.js  public
-   Procfile      bower.json    karma.conf.js server.js
+   <pre><strong>ls
+   </strong></pre>
+
+   The response:
+
+   <pre>LICENSE      README.md    app          howtos       package.json test
    </pre>
 
-   File <strong>package.json</strong> specifies dependencies that Node will download before beginning run. That includes the MEAN.JS stack which consists of <a target="_blank" href="http://www.mongodb.org/">MongoDB</a>, <a target="_blank" href="http://www.nodejs.org/">Node.js</a>, <a target="_blank" href="http://expressjs.com/">Express API framework</a>, and <a target="_blank" href="http://angularjs.org/">AngularJS</a>.
+   File <strong>package.json</strong> specifies dependencies that Node will download before beginning run. 
+
+   PROTIP: The app folder contains the app's code. The "tests" folder contains tests associated with the app's source code
+   <strong>in the same repository</strong>. This is getting more common than separate teams which maintain separate
+   repositories for app and test code.
+
+   Other sample app repos may include the MEAN.JS stack which consists of <a target="_blank" href="http://www.mongodb.org/">MongoDB</a>, <a target="_blank" href="http://www.nodejs.org/">Node.js</a>, <a target="_blank" href="http://expressjs.com/">Express API framework</a>, and <a target="_blank" href="http://angularjs.org/">AngularJS</a>.
+
+   PROTIP: The app folder contains the app's code. The "tests" folder contains tests associated with the app's source code
+   <strong>in the same repository</strong>. This is getting more common than separate teams which maintain separate
+   repositories for app and test code.
+
+1. Get into the test folder:
+
+   <pre><strong>cd test
+   </strong></pre>
 
    File <strong>server.js</strong> is the file specified to Node.js to begin processing.
 
-   The recommended way would be to use the [Official Yo Generator](http://meanjs.org/generator.html) which generates the latest stable copy of the MEAN.JS boilerplate and supplies multiple sub-generators to ease your daily development cycles.
+
 
 1. To download libraries to implement the <tt>package.json</tt> file:
 
    <pre><strong>npm install
    </strong></pre>   
    
+   Older libraries may encounter deprecated dependencies.
 
-   ### IDE to edit
+
+## IDE to edit
 
 1. If you prefer using an IDE, add code completions and other helpers.
 
@@ -271,6 +276,14 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    * WebStorm - https://www.jetbrains.com/webstorm/
    * Visual Studio Code - https://code.visualstudio.com/
    <br /><br />
+
+
+## Protractor script edits
+
+1. If you need to navigate to a page which does not use Angular, you can<a target="_blank" href="https://github.com/angular/protractor/blob/master/docs/timeouts.md#waiting-for-angular-on-page-load
+">*</a> turn off waiting for Angular by setting before the browser.get:
+
+   <pre>browser.waitForAngularEnabled(false)</pre>
 
 
 ## Run Test
@@ -508,6 +521,9 @@ Notes:
 
 
 <!--
+
+   The recommended way would be to use the [Official Yo Generator](http://meanjs.org/generator.html) which generates the latest stable copy of the MEAN.JS boilerplate and supplies multiple sub-generators to ease your daily development cycles.
+
 
 ### Task Runners
 
