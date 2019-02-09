@@ -182,7 +182,9 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    3. Ignore the operator as "+".
    4. Click on right box and enter 2.
    5. Click on "Go!" to perform the calculation.
-   6. Verify that the result is 4.
+   6. Verify the negative test case of 5, which makes the test fail.
+   6. Change the test result to 4.
+   7. Run again to verify that the result is 4, which makes the test pass.
    <br /><br />
 
    ![protractor-calculator-juliemr -648x235-7150](https://user-images.githubusercontent.com/300046/52525724-b9b8b400-2c7b-11e9-8a56-97ea39c6f5a7.jpg)
@@ -194,6 +196,10 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    PROTIP: The app folder contains the app's code. The "tests" folder contains tests associated with the app's source code
    <strong>in the same repository</strong>. This is getting more common than separate teams which maintain separate
    repositories for app and test code.
+
+1. Notice the repo has not been updated since 2015. So it will likely encounter deprecation and security errors if built locally.
+
+   There are also Pull Requests and Issues pending for a long time.
 
 1. Because <tt>git clone</tt> does not establish a folder for the account (just the repo), 
    I manually create then cd into a folder for each GitHub account before I clone the repo.
@@ -207,8 +213,10 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    cd wilsonmar
    pwd
    </strong></pre>
+
+   If you didn't fork the repo, create folder for account "juliemr".
    
-1. Navigate to your projects folder. If you want to use a repository from "wilsonmar", then:
+1. Navigate to the project folder. If you want to use a repository from "wilsonmar", then:
 
    <pre><strong>cd ~/gits/wilsonmar
    pwd
@@ -219,12 +227,11 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    * https://github.com/taylonr/intro-to-protractor 
    * http://juliemr.github.io/protractor-demo/
 
-   https://github.com/juliemr/protractor-demo/
 
-1. Retrieve a sample repository from 2015:
+1. Retrieve a sample repository :
 
-   <pre><strong>git clone https://github.com/taylonr/intro-to-protractor 
-   cd intro-to-protractor
+   <pre><strong>git clone https://github.com/juliemr/protractor-demo/
+   cd protractor-demo
    ls
    </strong></pre>
 
