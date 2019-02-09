@@ -161,6 +161,7 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
    </pre>
 
    The list of folders:
+
    <pre>
    LICENSE       README.md     config        package.json
    LICENSE.md    app           gruntfile.js  public
