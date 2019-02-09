@@ -138,6 +138,19 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
 
    WARNING: You must specify version 8 because the default version 11 onward have a different licensing by Oracle.
 
+1. Verify Java install:
+
+   <pre><strong>java -version
+   </strong></pre>
+
+   Sample response:
+
+   <pre>java version "1.8.0_162"
+Java(TM) SE Runtime Environment (build 1.8.0_162-b12)
+Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
+   </pre>   
+
+
 ## Your test assets repository
 
 1. If you don't have a projects folder, create one under your user home folder. On Bash mine is:
@@ -196,7 +209,7 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
 
    The recommended way would be to use the [Official Yo Generator](http://meanjs.org/generator.html) which generates the latest stable copy of the MEAN.JS boilerplate and supplies multiple sub-generators to ease your daily development cycles.
 
-1. To download libraries based on the <tt>package.json</tt> file:
+1. To download libraries to implement the <tt>package.json</tt> file:
 
    <pre><strong>npm install
    </strong></pre>   
