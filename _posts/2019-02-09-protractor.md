@@ -65,12 +65,12 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
 
 1. Install Node and NPM (Node Package Manager) globally:
 
-1. On Windows, configure Node System Variables NODE_HOME to 
+   On Windows, see <a target="_blank" href="https://thepracticalsysadmin.com/quickly-get-node-js-up-and-running-on-windows/">
+   this blog</a>. The use of choco should add to the PATH variable:
 
    <pre><strong>C:\Program Files\nodejs</strong></pre>
 
-1. On Windows, add where Node is installed to the PATH variable.
-
+1. On Windows, configure Node System Variables NODE_HOME to point to the same path.
 
 1. Use NPM to install Protractor from <a target="_blank" href="https://github.com/angular/protractor">https://github.com/angular/protractor</a>
 
@@ -413,6 +413,38 @@ You need a sample app to test against, and sample scripts that test that site.
 
    This may not be active by the time you read this.
 
+### Test Gmail as sample app 
+
+The provided repository contains an automated test for email sending functionality via Gmail as outlined below:
+
+    1. Login to gmail
+    2. Compose and Send an email with an alert message for not having body
+    3. No verification is done in the code for any action like Login page displayed, compose email box etc 
+   <br /><br />
+
+Your task is to implement below test case:
+
+    1. Login to account1 on Gmail
+    2. Compose an email with unique subject, body and attachment
+    3. Send it to account2
+    4. Login to account2
+    5. Open the email
+    6. Verify the subject, body and attachment name
+   <br /><br />
+
+Notes:
+   1. Account details should be configurable in params.
+   2. Improve the existing code base to the best of your knowledge and expertise.
+	3. Don't include packages and additional auto generated files like node_modules.
+	4. The tests should pass
+
+   The tests above are called "e2e" or end-to-end from login.
+
+1. To run the tests:
+
+   <pre><strong>npm run e2e</strong></pre>
+
+
 <!--
 
 ### Task Runners
@@ -435,37 +467,12 @@ You need a sample app to test against, and sample scripts that test that site.
 -->
 
 
-### Test Gmail as sample app 
-
-The provided repository contains an automated test for email sending functionality via Gmail as outlined below
-
-    1. Login to gmail
-    2. Compose and Send an email with an alert message for not having body
-    3. No verification is done in the code for any action like Login page displayed, compose email box etc 
-
-Your task is to implement below test case
-
-    1. Login to account1 on Gmail
-    2. Compose an email with unique subject, body and attachment
-    3. Send it to account2
-    4. Login to account2
-    5. Open the email
-    6. Verify the subject, body and attachment name
-
-    Notes
-        1. Account details should be configurable in params.
-        2. Improve the existing code base to the best of your knowledge and expertise.
-		3. Don't include packages and additional auto generated files like node_modules.
-		4. The test should be passing
-
-1. To run the tests:
-
-   <pre><strong>npm run e2e</strong></pre>
-
 
 <a name="Cucumber"></a>
 
 ## Cucumber
+
+   CucumberJS supports <strong>async</strong> programming concepts in scripts with <strong>TypeScript</strong>, a strongly typed superset of plain Javascript.
 
 1. for Cucumber, we use Typescript, which adds additional ("object oriented programming" featuers)  to JavaScript. 
 
@@ -491,6 +498,8 @@ To learn Angular, consider [Thinkster Popular Guide](http://www.thinkster.io/), 
 
 https://developers.perfectomobile.com/display/PD/Writing+Protractor+First+Test+Script
 
+https://medium.com/@igniteram/e2e-testing-with-protractor-cucumber-using-typescript-564575814e4a
+Sep 14, 2016
 
 
 ## Project ideas
