@@ -167,13 +167,15 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 
 ## Your test assets repository
 
-1. Identify a repository you want to use. There are several:
+1. Identify a repository of sample Protractor code you want to use. It's best to use a sample repo in GitHub that works on a sample app running in the cloud. There are several:
 
-   * https://github.com/taylonr/intro-to-protractor 
+   Nate Taylor's sample test assets at https://github.com/taylonr/intro-to-protractor 
+   runs against the sample app at <a target="_blank" href="https://meanjs.herokuapp.com">https://meanjs.herokuapp.com</a>
+   as described in his <a target="_blank" href="https://app.pluralsight.com/library/courses/protractor-introduction/table-of-contents">
+   "Protractor Introduction"</a> video class released March 10 2015. 
+   But the site is no longer active and there are errors when building the app.   
 
-   It's best to use a sample that has a running app in the cloud.
-
-1. In a browser view the app running write down steps to run through the app, such as:
+1. Alternately, in a browser view the sample app running. Write down steps to run through the app, such as:
 
    1. Load <a target="_blank" href="http://juliemr.github.io/protractor-demo/">http://juliemr.github.io/protractor-demo</a>
    2. Click on the left box and enter 2.
@@ -185,6 +187,13 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 
    ![protractor-calculator-juliemr -648x235-7150](https://user-images.githubusercontent.com/300046/52525724-b9b8b400-2c7b-11e9-8a56-97ea39c6f5a7.jpg)
 
+1. View the repository of test assets targeting the sample site:
+
+   <a target="_blank" href="https://github.com/juliemr/protractor-demo/">https://github.com/juliemr/protractor-demo</a>
+
+   PROTIP: The app folder contains the app's code. The "tests" folder contains tests associated with the app's source code
+   <strong>in the same repository</strong>. This is getting more common than separate teams which maintain separate
+   repositories for app and test code.
 
 1. Because <tt>git clone</tt> does not establish a folder for the account (just the repo), 
    I manually create then cd into a folder for each GitHub account before I clone the repo.
@@ -458,13 +467,6 @@ and then configuring the conf.js file.
 
 You need a sample app to test against, and sample scripts that test that site.
 
-1. See if you like the example described in the <a target="_blank" href="https://app.pluralsight.com/library/courses/protractor-introduction/table-of-contents">
-   Protractor Introduction</a> video class released March 10 2015
-   by Nate Taylor. He created a sample website, which you can view by clinking on this link:
-
-   <a target="_blank" href="https://meanjs.herokuapp.com">https://meanjs.herokuapp.com</a>
-
-   This may not be active by the time you read this.
 
 ### Test Gmail as sample app 
 
