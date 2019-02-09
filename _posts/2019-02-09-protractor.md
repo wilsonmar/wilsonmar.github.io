@@ -403,7 +403,7 @@ describe('Protractor Demo App', function() {
 });
    </pre>
 
-   <tt>//</tt> double forward slashes in front of lines comments them out from being read.
+   <tt>//</tt> (double forward slashes) in front of a line comments it out from being read.
 
    <tt>describe</tt> describes a <strong>test suite</strong> group (category) of tests.
 
