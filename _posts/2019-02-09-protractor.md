@@ -149,7 +149,7 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
    <pre><strong>git clone https://github.com/taylonr/intro-to-protractor 
    cd intro-to-protractor
    ls
-   </strong>
+   </strong></pre>
 
    Sample response:
 
