@@ -203,11 +203,13 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 
    There are also Pull Requests and Issues pending for a long time.
 
+1. <strong>Fork</strong> the repository online in GitHub so that you can make changes.
+
 1. Because <tt>git clone</tt> does not establish a folder for the account (just the repo), 
    I manually create then cd into a folder for each GitHub account before I clone the repo.
    Several repos can have the same repo name.
 
-   But if you had <strong>forked</strong> a repository online in GitHub, you would specify your own GitHub account name.
+   Since you forked the repo you would specify your own GitHub account name when cloning.
    For example, if your GitHub account is "wilsonmar", then create a folder:
 
    <pre><strong>cd ~/gits
@@ -216,11 +218,11 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    pwd
    </strong></pre>
 
-   If you didn't fork the repo, create folder for account "juliemr".
+   Alternately, if you didn't fork the repo, create folder for account "juliemr", the account holding our sample repo.
    
-1. Clone the sample repository :
+1. Clone the sample repository using your own account name:
 
-   <pre><strong>git clone https://github.com/juliemr/protractor-demo/
+   <pre><strong>git clone https://github.com/<em>your account name</em>/protractor-demo/
    cd protractor-demo
    </strong></pre>
 
@@ -240,7 +242,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 
    The response:
 
-   <pre>LICENSE      README.md    app          howtos       package.json test
+   <pre>LICENSE      README.md    <strong>app</strong>          howtos       package.json <strong>test</strong>
    </pre>
 
    File <strong>package.json</strong> specifies dependencies that Node will download before beginning run. 
