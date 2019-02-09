@@ -556,6 +556,7 @@ Your task is to implement below test case:
    <br /><br />
 
 Notes:
+
    1. Account details should be configurable in params.
    2. Improve the existing code base to the best of your knowledge and expertise.
 	3. Don't include packages and additional auto generated files like node_modules.
