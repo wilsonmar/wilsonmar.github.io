@@ -160,10 +160,9 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
    Resolving deltas: 100% (83/83), done.
    </pre>
 
-   The list of folders:
+   The list of folders and files at the top of the repo:
 
-   <pre>
-   LICENSE       README.md     config        package.json
+   <pre>LICENSE       README.md     config        package.json
    LICENSE.md    app           gruntfile.js  public
    Procfile      bower.json    karma.conf.js server.js
    </pre>
