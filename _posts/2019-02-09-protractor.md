@@ -283,8 +283,10 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 1. If you need to navigate to a page which does not use Angular, you can<a target="_blank" href="https://github.com/angular/protractor/blob/master/docs/timeouts.md#waiting-for-angular-on-page-load
 ">*</a> turn off waiting for Angular by setting before the browser.get:
 
-   <pre>browser.waitForAngularEnabled(false)</pre>
+   <pre>browser.waitForAngularEnabled(false);</pre>
 
+   PROTIP: Remember the semi-colon to end each sentence.
+   
 
 ## Run Test
 
@@ -410,6 +412,11 @@ describe('Protractor Demo App', function() {
    <tt>browser.get</tt> specifies the URL handled by the browser.
 
    <tt>expect</tt> statements specify <a name="#Verifications">verifications</a>.
+
+PROTIP: We recommend an <strong>incremental</strong> approach. 
+First, run for just the URL appearing. Then add more test steps.
+Once you obtain a successful test, commit the changes to the team repo (off your laptop).
+This would make it easier to debug.
 
 
 ### Run from inside Eclipse
