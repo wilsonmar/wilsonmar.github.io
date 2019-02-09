@@ -286,7 +286,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    <pre>browser.waitForAngularEnabled(false);</pre>
 
    PROTIP: Remember the semi-colon to end each sentence.
-   
+
 
 ## Run Test
 
@@ -402,6 +402,8 @@ describe('Protractor Demo App', function() {
   });
 });
    </pre>
+
+   <tt>//</tt> double forward slashes in front of lines comments them out from being read.
 
    <tt>describe</tt> describes a <strong>test suite</strong> group (category) of tests.
 
