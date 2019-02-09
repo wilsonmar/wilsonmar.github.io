@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Protractor"
-excerpt: "Automate testing of Angular and using Selenium driven by Gherkin specs run by Cucumber"
+excerpt: "Automate testing of Angular Js web apps using Selenium driven by Gherkin specs run by Cucumber"
 modified:
-tags: [git]
+tags: [testing]
 file: 2019-02-09-protractor.md
 image:
 # protractor-report-1900x500.jpb
@@ -16,11 +16,6 @@ comments: true
 <hr />
 
 {% include _toc.html %}
-
-<!-->
-mnsadeeshkumar@gmail.com
-https://drive.google.com/open?id=1yEforQ1318C-9rtwAPLk136njIgi1QmM
--->
 
 ## TD;DR Summary
 
