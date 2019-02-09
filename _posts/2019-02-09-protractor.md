@@ -96,7 +96,6 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
    <pre>[08:06:39] I/version - webdriver-manager 12.1.1
    </pre>
 
-
    NOTE: There is a WebDriver that is "headless" and does not involve iteraction on a browser UI:
    PhantomJS uses <a target="_blank" href="https://github.com/detro/ghostdriver">GhostDriver</a> to run tests in Headless mode.  
 
@@ -168,11 +167,11 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
    Procfile      bower.json    karma.conf.js server.js
    </pre>
 
-   <tt>package.json</tt> specifies dependencies that Node will download before beginning run. That includes the MEAN.JS stack which consists of [MongoDB](http://www.mongodb.org/), [Node.js](http://www.nodejs.org/), [Express](http://expressjs.com/), and [AngularJS](http://angularjs.org/) based applications. 
+   File <strong>package.json</strong> specifies dependencies that Node will download before beginning run. That includes the MEAN.JS stack which consists of [MongoDB](http://www.mongodb.org/), [Node.js](http://www.nodejs.org/), [Express](http://expressjs.com/), and [AngularJS](http://angularjs.org/) based applications. 
 
-   * <tt>server.js</tt> is the file specified to Node.js to begin processing.
+   file <strong>server.js</strong> is the file specified to Node.js to begin processing.
 
-   The recommended way would be to use the [Official Yo Generator](http://meanjs.org/generator.html) which will generate the latest stable copy of the MEAN.JS boilerplate and supplies multiple sub-generators to ease your daily development cycles.
+   The recommended way would be to use the [Official Yo Generator](http://meanjs.org/generator.html) which generates the latest stable copy of the MEAN.JS boilerplate and supplies multiple sub-generators to ease your daily development cycles.
 
 1. To download libraries based on the <tt>package.json</tt> file:
 
@@ -405,7 +404,7 @@ and then configuring the conf.js file.
 You need a sample app to test against, and sample scripts that test that site.
 
 1. See if you like the example described in the <a target="_blank" href="https://app.pluralsight.com/library/courses/protractor-introduction/table-of-contents">
-   Protractor Introduction</a> video class released 2016 
+   Protractor Introduction</a> video class released March 10 2015
    by Nate Taylor. He created a sample website, which you can view by clinking on this link:
 
    <a target="_blank" href="https://meanjs.herokuapp.com">https://meanjs.herokuapp.com</a>
