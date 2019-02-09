@@ -103,7 +103,12 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
    * https://code.google.com/p/chromedriver/
 
 
-1. Install Git using a package manager. <a target="_blank" href="https://chocolatey.org/packages/git.install">On Windows</a>:
+1. Install Git using a package manager. On Mac, use Homebrew:
+
+   <pre><strong>brew install git
+   </strong></pre>
+
+   Alternately, <a target="_blank" href="https://chocolatey.org/packages/git.install">On Windows</a>:
 
    <pre><strong>choco install git.install -y
    </strong></pre>
