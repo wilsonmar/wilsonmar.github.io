@@ -391,7 +391,7 @@ exports.config = {
 
 ### Spec.js file
 
-A sample spec.js file to get (open) a URL to expect the title to be as stated in ".toContain" method:
+View a sample spec.js file to get (open) a URL to expect the title to be as stated in ".toContain" method:
 
    <pre>
 // spec.js
@@ -420,6 +420,8 @@ First, run for just the URL appearing. Then add more test steps.
 Once you obtain a successful test, commit the changes to the team repo (off your laptop).
 This would make it easier to debug.
 
+So first let's run the file as-is without changes.
+
 
 ### Run from inside Eclipse
 
@@ -444,7 +446,7 @@ Alternately, if on Eclipse configured with the Protractor plugin:
 
 1. To invoke from a command-line Terminal:
 
-   <pre><strong>protractor conf.js
+   <pre><strong>protractor local.chrome.conf.js
    </strong></pre>
 
    A sample test output: 
@@ -473,9 +475,22 @@ and then configuring the conf.js file.
    </strong></pre>
 
 
+
 <a name="Verifications></a>
 
 ## Verifications
+
+<a target="_blank" href="https://stackoverflow.com/questions/20927652/how-to-use-protractor-on-non-angularjs-website">
+To use Protractor on an non-Angular.js website</a>, access the webdriver instance directly with browser.driver. 
+For example:
+
+   <pre>
+   browser.driver.findElement(by.id('username')).sendKeys('Jane');
+   browser.driver.findElement(by.id('password')).sendKeys('1234');
+   browser.driver.findElement(by.id('clickme')).click();
+   </pre>
+
+PROTIP: Instead of hard-coding username and password in the code, read a file from your user home folder to populate values in variables.
 
 * Wait until page is loaded.
 
