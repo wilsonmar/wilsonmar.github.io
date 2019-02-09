@@ -167,9 +167,9 @@ It makes calls to a WebDriver which controls a web browser such as Microsoft's E
    Procfile      bower.json    karma.conf.js server.js
    </pre>
 
-   File <strong>package.json</strong> specifies dependencies that Node will download before beginning run. That includes the MEAN.JS stack which consists of [MongoDB](http://www.mongodb.org/), [Node.js](http://www.nodejs.org/), [Express](http://expressjs.com/), and [AngularJS](http://angularjs.org/) based applications. 
+   File <strong>package.json</strong> specifies dependencies that Node will download before beginning run. That includes the MEAN.JS stack which consists of <a target="_blank" href="http://www.mongodb.org/">MongoDB</a>, <a target="_blank" href="http://www.nodejs.org/">Node.js</a>, <a target="_blank" href="http://expressjs.com/">Express API framework</a>, and <a target="_blank" href="http://angularjs.org/">AngularJS</a>.
 
-   file <strong>server.js</strong> is the file specified to Node.js to begin processing.
+   File <strong>server.js</strong> is the file specified to Node.js to begin processing.
 
    The recommended way would be to use the [Official Yo Generator](http://meanjs.org/generator.html) which generates the latest stable copy of the MEAN.JS boilerplate and supplies multiple sub-generators to ease your daily development cycles.
 
