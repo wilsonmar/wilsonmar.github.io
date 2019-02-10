@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Protractor"
-excerpt: "Automate testing of Angular Js web apps using Selenium driven by Gherkin specs run by Cucumber"
+title: "Protractor (functional testing)"
+excerpt: "Automate testing of Angular Js web apps using Selenium (behavior) driven by Gherkin specs run by Cucumber"
 modified:
 tags: [testing]
 file: 2019-02-09-protractor.md
@@ -30,6 +30,7 @@ And Protractor grabs specific HTML elements from within each DOM.
 
 One of the major advantages pointed out on <a target="_blank" href="https://protractor.angular.io/">https://protractor.angular.io</a> (formerly <a target="_blank" href="https://protractortest.org/">protractortest.org</a>)
 is that Protractor runs tests quicker than Selenium because it optimizes the need for manually adding (usually arbitrary) "sleep" and "wait" commands in test scripts. JavaScript is <a target="_blank" href="https://www.sohamkamani.com/blog/2016/03/14/wrapping-your-head-around-async-programming/">asynchronous</a> (not sychronous like Java).
+Protractor can movs to the next step in the script even if a promise is pending.
 
 Protractor adds "accessors" to Angular models, bindings, ng-options, and finding elements inside ng-repeat. 
 
@@ -526,6 +527,8 @@ and then configuring the conf.js file.
    <pre><strong>npm install -g protractor-html-reporter-2
    </strong></pre>
 
+1. TODO: Configure
+
 
 <a name="EditingScripts"></a>
 
@@ -555,11 +558,11 @@ read a file from your user home folder to populate values in variables.
 
 ### Timings
 
-* Add <tt>wait</tt> helper function to pause for 9 seconds:
+* Add helper function to pause for 9 seconds (9000 milliseconds):
 
    <pre>browser.sleep(9000);</pre>
 
-* Add <tt>wait</tt> helper function to pause until an event is deteted.
+* Add <tt>wait</tt> helper function to pause until an event is detected.
 
 * Capture the amount of time taken to do each step or series of steps.
 
