@@ -723,6 +723,10 @@ https://developers.perfectomobile.com/display/PD/Writing+Protractor+First+Test+S
 https://medium.com/@igniteram/e2e-testing-with-protractor-cucumber-using-typescript-564575814e4a
 Sep 14, 2016
 
+https://spin.atomicobject.com/2014/12/17/asynchronous-testing-protractor-angular/
+
+https://bridge360blog.com/2015/05/05/improving-protractor-tests-using-shared-functions-and-promises/
+
 
 ## Project ideas
 
