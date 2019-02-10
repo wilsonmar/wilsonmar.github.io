@@ -167,7 +167,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    Others use "project".
 
 
-## Your test assets repository
+## Sample app and tests
 
 1. Identify a repository of sample Protractor code you want to use. It's best to use a sample repo in GitHub that works on a sample app running in the cloud. There are several:
 
@@ -201,11 +201,14 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    7. Run again to verify that the result is 4, which makes the test pass.
    <br /><br />
 
+
+   ### Fork test assets repository to your account
+
 1. View the repository of a sample app, containing test assets targeting its sample site:
 
    <a target="_blank" href="https://github.com/juliemr/protractor-demo/">https://github.com/juliemr/protractor-demo</a>
 
- 1. Notice the repo has not been updated since 2015. So it will likely encounter deprecation and security errors if built locally.
+1. Notice the repo has not been updated since 2015. So it will likely encounter deprecation and security errors if built locally.
 
    There are also Pull Requests and Issues pending for a long time.
 
@@ -226,6 +229,8 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 
    Alternately, if you didn't fork the repo, create folder for account "juliemr", the account holding our sample repo.
    
+   ### Clone locally
+
 1. Clone the sample repository using your own account name:
 
    <pre><strong>git clone https://github.com/<em>your account name</em>/protractor-demo/
