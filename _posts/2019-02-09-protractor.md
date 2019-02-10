@@ -81,11 +81,16 @@ Other components are described as we install each:
 
 1. Use NPM to install Protractor from <a target="_blank" href="https://github.com/angular/protractor">https://github.com/angular/protractor</a>
 
-   <pre><strong>npm install -g protractor
+   <pre><strong>npm install -g protractor --save-dev
    protractor --version
    </strong></pre>
 
-   At the end of sample output:
+   <tt>-g</tt> installs globally for accessibility from all folders rather than just the node_module folder of the current folder.
+
+   <tt>--save-dev</tt> adds an entry within the ""devDependencies" section of <strong>package.json</strong>.
+
+   At the end of sample output should be:
+
    <pre>Version 5.4.2</pre>
 
    NOTE: There is no need to install Selenium and WebDrivers as it comes within the Protractor install.
