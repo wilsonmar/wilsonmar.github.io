@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Protractor (functional testing)"
-excerpt: "Automate testing of Angular Js web apps using Selenium (behavior) driven by Gherkin specs run by Cucumber"
+title: "Protractor (automated functional testing)"
+excerpt: "Using Jasmine to verify AngularJs web app UI based on Selenium (behavior) driven by Gherkin specs run by Cucumber"
 modified:
 tags: [testing]
 file: 2019-02-09-protractor.md
@@ -309,6 +309,11 @@ To install plugins for autocomplete in Eclipse<a target="_blank" href="https://w
 To install plugins for autocomplete in Microsoft Visual Studio Code<a target="_blank" href="https://www.udemy.com/protractor-tutorial/learn/v4/t/lecture/12689515?start=0">*</a>
 
 
+To run Jasmine tests through WebStorm, follow WebStorm’s simple 13-step process to get it running. But note Jasmine isn’t a "first class citizen". 
+Jasmine can run only through the karma test driver. 
+Follow more steps to be able to use WebStorm’s debugger.
+
+
 ## Protractor script edits
 
 1. If you need to navigate to a page which does not use Angular, you can<a target="_blank" href="https://github.com/angular/protractor/blob/master/docs/timeouts.md#waiting-for-angular-on-page-load
@@ -333,18 +338,18 @@ These are steps every time you run:
 // conf.js
 exports.config = {
   framework: 'jasmine',
-  seleniumAddress: '<a href="#WebDriverURL">http://localhost:4444/wd/hub</a>',
+  seleniumAddress: 'http://localhost:4444/wd/hub',
   specs: ['<a href="#spec.js">local.chrome.spec.js</a>']
 }
    </pre>
 
    The above specifies the use of the Jasmine JavaScript framework to run specs (short for specifications, or test case files).
-   Jasmine allows you to write both unit and functional tests.
+   Jasmine (<a target="_blank" href="https://jasmine.github.io/">https://jasmine.github.io</a> from Pivotal Labs) 
+   allows you to write both unit and functional tests.
+   Alternately, there is a <a href="#Cumcumber">"cucumber" framework</a> or <a href="#Mocha">Mocha</a>
 
-   Alternately, there is a <a href="#Cumcumber">"cucumber" framework</a> or Mocha.
-
-   NOTE: The seleniumAddress URL shown here does not display on a browser because it is an "end point" which listens for API requests.
-   But it does have a htm file for display.
+   NOTE: The <tt>seleniumAddress</tt> URL shown here does not display on a browser because it is an "end point" that listens for API requests.
+   But it does have a <a href="#WebDriverUI">UI to display its sessions</a>.
 
    The <tt>seleniumAddress</tt> URL is to one of the options made available by Protractor:<a target="_blank" href="  https://github.com/angular/protractor/blob/master/lib/config.ts">*</a>:
 
@@ -355,16 +360,67 @@ exports.config = {
    5. directConnect - to connect directly to the browser Drivers for Firefox and Chrome browsers.
    <br /><br />
 
+   PROTIP: In the file name specify where the run occurs and what browser. For example: "local.chrome.conf.js" for chrome run locally. 
+   Or "sauce.firefox.conf.js" for running Firefox on the remote <a target="_blank" href="https://docs.saucelabs.com/reference/test-configuration/#timeouts">"SauceLabs cloud</a>.
+
+   The square "[ ]" brackets for <t>specs:</tt> (notice the plural) means that a <strong>list</strong> of several spec.js files can be specified,
+   separated by commas.
+
+### config.js for cloud runs
+
    Examples of other configuration js files include:
+   * <a target="_blank" href="https://www.sourcelabs.com/">SauceLabs.com</a>
    * <a target="_blank" href="https://help.crossbrowsertesting.com/selenium-testing/frameworks/protractor/">CrossBrowserTesting.com</a>
    * <a target="_blank" href="https://developers.perfectomobile.com/display/PD/Writing+Protractor+First+Test+Script">PerfectoMobile.com</a>
    <br /><br />
 
-   PROTIP: In the file name specify where the run occurs and what browser. For example: "local.chrome.conf.js" for chrome run locally. 
-   Or "sauce.firefox.conf.js" for running Firefox on the remote <a target="_blank" href="https://docs.saucelabs.com/reference/test-configuration/#timeouts">"SauceLabs cloud</a>.
 
-   The square "[ ]" brackets for <t>specs:</tt> means that a <strong>list</strong> of spec.js files can be specified,
-   separated by commas.
+<a name="RunReports"></a>
+
+### config.js for reporting
+
+1. Generate HTML report by installing <a target="_blank" href="https://www.linkedin.com/in/abhishekkyd/">Abhishek Yadav</a>'s <a target="_blank" href="https://www.npmjs.com/package/protractor-html-reporter-2">
+https://www.npmjs.com/package/protractor-html-reporter-2</a>
+
+   <pre><strong>npm install -g protractor-html-reporter-2
+   npm install -g jasmine-reporters
+   </strong></pre>
+
+1. Add to the conf.js file:
+
+   <pre>
+//HTMLReport called once tests are finished:
+// https://www.npmjs.com/package/protractor-html-reporter-2
+
+onComplete: function() {
+     var browserName, browserVersion;
+     var capsPromise = browser.getCapabilities();
+ 
+     capsPromise.then(function (caps) {
+        browserName = caps.get('browserName');
+        browserVersion = caps.get('version');
+        platform = caps.get('platform');
+ 
+        var HTMLReport = require('protractor-html-reporter-2');
+ 
+        testConfig = {
+            reportTitle: 'Protractor Test Execution Report',
+            outputPath: './',
+            outputFilename: 'ProtractorTestReport',
+            screenshotPath: './screenshots',
+            testBrowser: browserName,
+            browserVersion: browserVersion,
+            modifiedSuiteName: false,
+            screenshotsOnlyOnFailure: true,
+            testPlatform: platform
+        };
+        new HTMLReport().from('xmlresults.xml', testConfig);
+    });
+ }
+    </pre>
+
+TODO: https://www.npmjs.com/package/jasmine-reporters
+
 
 
 ### Start WebDriver
@@ -404,9 +460,9 @@ exports.config = {
    Now you can continue on the same Terminal session while webdriver runs in the background.
 
 
-   <a name="WebDriverURL"></a>
+   <a name="WebDriverUI"></a>
    
-   ### SeleniumAddress WebDriver URL
+   ### SeleniumAddress WebDriver UI
 
 1. View WebDriver web page: On Mac Terminal, use the open command to open a browser at the URL specified:
 
@@ -425,7 +481,7 @@ exports.config = {
 
 <a name="spec.js"></a>
 
-### Spec.js file
+### Specs.js file
 
 View a sample spec.js file that was specified in a <a href="#config.js">config.js file</a>,
 which gets (opens) a URL to expect the title to be as stated in ".toContain" method:
@@ -512,6 +568,31 @@ Alternately, if on Eclipse configured with the Protractor plugin:
    1 tests, 1 assertion, 0 failures.
    </pre>
 
+### Test Runner Karma
+
+Jasmine does not have a command line utility to run tests like Mocha:
+
+   <pre><strong>mocha tests --recursive --watch
+   </strong></pre>
+
+   "tests" are where tests are located. 
+   
+   The recursive flag finds all files in subdirectories.
+   
+   The watch flag reruns tests automatically when a change is detected in source or test files.
+
+Mocha's approach enable tests to be initited by a right-click on the spec folder within WebStorm.<a target="_blank" href="https://intellij-support.jetbrains.com/hc/en-us/community/posts/115000469810-Settings-for-running-single-test">*</a>
+
+Jasmine users can use Karma, also written by the Angular team, at <a target="_blank" href="http://karma-runner.github.io/">http://karma-runner.github.io</a>.
+
+Karma supports Mocha too.
+
+<a target="_blank" href="https://medium.com/dailyjs/javascript-test-runners-benchmark-3a78d4117b4">This article</a>
+reports the various ways to run various test runners. While <a target="_blank" href="https://github.com/mocha-parallel/mocha-parallel-tests">mocha-parallel-tests</a> are fast. But even though <a target="_blank" href="https://github.com/facebook/jest">Jest</a> (the testing platform developed by Facebook) and <a target="_blank" href="https://github.com/avajs/ava">AVA</a> are slower, their additional features may be worth the cost. Those features include <a target="_blank"  href="https://blog.jetbrains.com/webstorm/2018/10/testing-with-jest-in-webstorm/#snapshot_testing">snapshot testing</a> and test coverage.
+
+See https://raygun.com/blog/mocha-vs-jasmine-chai-sinon-cucumber/
+
+
 ### Browser appearance
 
 During test runs, browser windows are opened and closed by Protractor.
@@ -519,20 +600,10 @@ During test runs, browser windows are opened and closed by Protractor.
 ![protractor-being-controlled-396x125-5009.png](https://user-images.githubusercontent.com/300046/52523982-9256ec80-2c65-11e9-860b-46d66a1827cc.jpg)
 
 
+## Code Coverage Reporter
 
-<a name="RunReports"></a>
-
-## Reports
-
-1. Generate HTML report by installing <a target="_blank" href="https://www.linkedin.com/in/abhishekkyd/">Abhishek Yadav</a>'s <a target="_blank" href="https://www.npmjs.com/package/protractor-html-reporter-2">
-https://www.npmjs.com/package/protractor-html-reporter-2</a>
-and then configuring the conf.js file.
-
-   <pre><strong>npm install -g protractor-html-reporter-2
-   </strong></pre>
-
-1. TODO: Configure
-
+The <a target="_blank" href="https://istanbul.js.org/">istanbul coverage reporter</a> 
+instruments ES5 and ES2015+ JavaScript code with line counters, to enable tracking of how well unit-tests exercise the codebase.
 
 <a name="IdElements"></a>
 
@@ -545,9 +616,9 @@ Use Chrome Developer Tools to see HTML id and names.
 
 ## Editing scripts
 
-<a target="_blank" href="https://stackoverflow.com/questions/20927652/how-to-use-protractor-on-non-angularjs-website">
-To use Protractor on an non-Angular.js website</a>, access the webdriver instance directly with browser.driver. 
-For <a target="_blank" href="https://github.com/angular/protractor/blob/f52438549f7d920da1600199feaf58059d6fd692/spec/withLoginConf.js">example</a>:
+1. <a target="_blank" href="https://stackoverflow.com/questions/20927652/how-to-use-protractor-on-non-angularjs-website">
+   To use Protractor on an non-Angular.js website</a>, access the webdriver instance directly with browser.driver. 
+   For <a target="_blank" href="https://github.com/angular/protractor/blob/f52438549f7d920da1600199feaf58059d6fd692/spec/withLoginConf.js">example</a>:
 
    <pre>
    browser.driver.findElement(by.id('username')).sendKeys('Jane');
@@ -561,8 +632,16 @@ For <a target="_blank" href="https://github.com/angular/protractor/blob/f5243854
     });
    </pre>
 
-PROTIP: Instead of hard-coding username and password in the code, 
-read a file from your user home folder to populate values in variables.
+1. PROTIP: Instead of hard-coding username and password in the code, read a file from your user home folder to populate values in variables, such as:
+
+   https://stackoverflow.com/questions/22312671/setting-environment-variables-for-node-to-retrieve/28821696#28821696
+
+   <pre>browser.driver.findElement(by.id('password')).sendKeys(process.env.APP_PASSWORD);
+   </pre>
+
+   Alternately, read from a CSV file.
+
+   See https://medium.com/@tacomanator/environments-with-create-react-app-7b645312c09d
 
 
 <a name="Timings"></a>
@@ -700,14 +779,105 @@ Notes:
 -->
 
 
-
 <a name="Cucumber"></a>
 
 ## Cucumber
 
-   CucumberJS supports <strong>async</strong> programming concepts in scripts with <strong>TypeScript</strong>, a strongly typed superset of plain Javascript.
+CucumberJS supports <strong>async</strong> programming concepts in scripts with <strong>TypeScript</strong>.
 
 1. for Cucumber, we use Typescript, which adds additional ("object oriented programming" featuers)  to JavaScript. 
+
+   A strongly typed superset of plain Javascript.
+
+
+<a name="Mocha"></a>
+
+## Mocha
+
+The Mocha library (<a target="_blank" href="https://mochajs.org/">https://mochajs.org</a>)
+appeared in 2011 with a different approach than Jasmine.
+
+While Jasmine describes itself as having "batteries included," meaning that it attempts to provide everything a developer needs in a test framework,
+Mocha instead aims to cover the basics and allow other developers to extend it with other frameworks,
+such as Chai and Sinon, which provides more sophisticated capabilities than Jasmine alone.
+
+The syntax between Jasmine and Mocha/Chai are not that different. Where Jasmine is:
+
+<pre>expect(group.validFrom).<strong>toEqual</strong>('2016-01-22T19:00:00+00:00');</pre>
+
+Chai's syntax:
+
+<pre>expect(group.validFrom).<strong>to.equal</strong>('2016-01-22T19:00:00+00:00');</pre>
+
+See https://medium.com/@praveenjanakarajan/jasmine-or-mocha-66942388b196
+
+
+<a name="Chai"></a>
+
+### Chai
+
+Mocha does not have a built in assertion library. 
+So alternatives are <a target="_blank" href="http://chaijs.com/">Chai</a>, should.js, expect.js, and better-assert. 
+
+Chai is often chosen as the assertion library with Mocha.
+Chai comes with three different assertion flavors: 
+
+   * The expect style is similar to what Jasmine provides -- a style from Behavior-Driven Development.
+   * "Should" uses a similar chained format, and is different only in style. 
+   * "Assert" is a more "classical" format rooted in traditional TDD (Test-Driven Development)
+   <br /><br />
+   
+Developers tend to choose the style with which they are most familiar.
+
+Chai uses a "fluent" syntax where comparison operators can be chained together:
+
+   <pre>expect(foo).to.equal('foo')       // equality
+   expect(foo).to.not.equal('foo')   // inequality
+   expect(foo).to.be.a('string')   	 // type assertion
+   </pre>
+
+For example, if you want to write an expectation that verifies that <tt>calculator.add(1, 4)</tt> returns 5, 
+see https://www.codementor.io/codementorteam/javascript-testing-framework-comparison-jasmine-vs-mocha-8s9k27za3
+
+
+<a name="TestDoubles"></a>
+
+### Test doubles
+
+A "test double" library is used to replace one object with another for testing purposes, 
+like actors being replaced with stunt doubles for dangerous action scenes during moviemaking. 
+Or like a clone of an object.
+
+In Jasmine, test doubles come in the form of "spies". Each spy function replaces a function whose behavior you want to manipulate in a test
+while recording the results. 
+
+   * Tell a spy to call the original function (the function it is spying on). By default, a spy will not call the original function.
+   * See how many times each spy was called
+   * See what arguments a spy was called with
+   * Specify a return value to force the code to go down a certain path
+   * Force a spy to throw an error
+   <br /><br />
+   
+For sample coding, see https://raygun.com/blog/mocha-vs-jasmine-chai-sinon-cucumber/
+
+Mocha does not come with a "test double" library.
+So <a target="_blank" hre="http://sinonjs.org/">Sinon</a> is added.
+
+Sinon breaks up test doubles into three different categories, each with subtle differences: 
+spies, stubs, and mocks.
+
+### Fake server
+
+One feature that Sinon has that Jasmine does not is a fake server. 
+
+Fakes are used to simulate external behaviors without actually making any external calls.
+It's needed because unit tests should not make calls outside their scope to networks or databases.
+So test "fakes" are used to isolate a test from external dependencies. 
+
+More precisely, a fake server provides fake responses to AJAX requests made to specified URLs.
+
+In summary, SinonJS is a more complete framework test double framework than Jasmine, 
+including not only spies but also stubs and fakes. 
 
 
 ## Object recognition
