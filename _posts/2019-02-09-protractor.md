@@ -20,34 +20,27 @@ comments: true
 ## TL;DR Summary
 
 Protractor was written by the team who created the testing framework so they can automate its testing.
-The first version of Protractor was released in July, 2013. 
-Google continues to support the work.
-
 Unlike traditional static HTML, client browsers running Angular apps <strong>dynamically generates HTML</strong> and JavaScript on the fly.
-
+Protractor adds "accessors" to Angular models, bindings, ng-options, and finding elements inside ng-repeat. 
 Since static or generated on the client, HTML is stored in a DOM (Document Object Model) web browsers maintain for each session.
 And Protractor grabs specific HTML elements from within each DOM.
 
-One of the major advantages pointed out on <a target="_blank" href="https://protractor.angular.io/">https://protractor.angular.io</a> (formerly <a target="_blank" href="https://protractortest.org/">protractortest.org</a>)
-is that Protractor runs tests quicker than Selenium because it optimizes the need for manually adding (usually arbitrary) "sleep" and "wait" commands in test scripts. JavaScript is <a target="_blank" href="https://www.sohamkamani.com/blog/2016/03/14/wrapping-your-head-around-async-programming/">asynchronous</a> (not sychronous like Java).
-Protractor can movs to the next step in the script even if a promise is pending.
-
-Protractor adds "accessors" to Angular models, bindings, ng-options, and finding elements inside ng-repeat. 
+The first version of Protractor was released in July, 2013. 
+Google continues to support the work.
 
 Even if a website is not using Angular, many still prefer coding Protractor rather than Selenium alone.
-Overall, Protractor requires less code than Selenium and provides additional functions to make querying of elements easier:
+One of the major advantages pointed out on <a target="_blank" href="https://protractor.angular.io/">https://protractor.angular.io</a> (formerly <a target="_blank" href="https://protractortest.org/">protractortest.org</a>)
+is that Protractor runs tests quicker than Selenium because it optimizes the need for manually adding (usually arbitrary) "sleep" and "wait" commands in test scripts. JavaScript is <a target="_blank" href="https://www.sohamkamani.com/blog/2016/03/14/wrapping-your-head-around-async-programming/">asynchronous</a> (not sychronous like Java).
+Protractor can advance to the next step in the script even if a promise is pending.
 
-   * Protractor adds a convenient "waitfor" functions and accessors (locators) by button text, partial button text. 
-   * It enables "find" by a combination of CSS and text (get me all the divs with class ‘pet’ and text ‘dog’).
-   * Protractor adds the "addLocator" function to add custom locators. For example, get elements by handlebars properties.
-
+Overall, Protractor requires <strong>less coding</strong> than Selenium and provides <a href="#AdditionalFunctions">additional functions</a> to make querying of elements easier.
 
 <img align="right" alt="protractor-daniel-amorim-250x285-7982.jpg" width="250" src="https://user-images.githubusercontent.com/300046/52523432-78b2a680-2c5f-11e9-8f41-3efac46c2d27.jpg">
 
 Daniel Amorim, in his 17 Apr 2014 <a target="_blank" href="https://www.thoughtworks.com/insights/blog/testing-angularjs-apps-protractor">
 "Testing AngularJS apps with Protractor"</a>, showed this diagram:
 
-Protractor is a <a target="_blank" href="http://nodejs.org/">NodeJs</a> application written in JavaScript or TypeScript.
+Protractor is a <a target="_blank" href="http://nodejs.org/">NodeJs</a> application written in JavaScript or TypeScript (invented by Microsoft).
 It makes calls to a WebDriver which controls a web browser such as Microsoft's Edge, Apple's Safari, Google's Chrome, Mozilla's Firefox, etc.
 
 Other components are described as we install each:
@@ -643,6 +636,31 @@ Use Chrome Developer Tools to see HTML id and names.
 
    See https://medium.com/@tacomanator/environments-with-create-react-app-7b645312c09d
 
+<a name="AdditionalFunctions"></a>
+
+### Additional Functions
+
+Protractor adds a convenient "waitfor" functions and accessors (locators) by button text, partial button text. 
+
+Protractor enables "find" by a combination of CSS and text (get me all the divs with class ‘pet’ and text ‘dog’).
+
+Protractor adds the "addLocator" function to add custom locators. For example, get elements by handlebars properties.
+
+By.id
+By.css
+By.className
+By.linkText
+By.js
+By.name
+By.xpath
+By.tagName
+
+   <pre>
+   element(by.model(‘locator’));
+   element(by.binding(‘locator’));
+   element(by.repeater(‘locator’));
+   </pre>
+
 
 <a name="Timings"></a>
 
@@ -670,21 +688,6 @@ Manage Cookies: addCookie, deleteCookie
 
 * Browser management functions: get, quit, close, executeScript, getTitle, getCurrentUrl
 
-* Locator strategies:
-By.id
-By.css
-By.className
-By.linkText
-By.js
-By.name
-By.xpath
-By.tagName
-
-   <pre>
-   element(by.model(‘locator’));
-   element(by.binding(‘locator’));
-   element(by.repeater(‘locator’));
-   </pre>
 
 * UI actions: click, sendKeys, isDisplayed, isSelected, getAttribute, getText, clear
 

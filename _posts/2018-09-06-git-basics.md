@@ -20,26 +20,28 @@ comments: true
 <br />
 
 Hello, I'm Wilson Mar [<a target="_blank" href="https://www.twitter.com/wilsonmar">@wilsonmar</a>], 
-and I look forward to seeing you at our next course.
 I began working on Git in 2010 and, since 2014, have been holding live, full-day hands-on tutorials at conferences.
 
-Over the years, skill at using Git on the Bash command line has become a <strong>pre-requisite</strong> for many IT jobs, on Macs, Windows, and Linux.
+Skill at using Git on the Bash command line has become a <strong>pre-requisite</strong> for many IT jobs, on Macs, Windows, and Linux.
 
 So I've viewed <a target="_blank" href="https://wilsonmar.github.io/git-github-videos/">every video and book</a> 
-I can find on this topic, and listed them in my blog. 
+I can find on Git and its connection to GitHub, GitLab, and other repositories, and listed them in my blog. 
 
-I focus on helping you to <strong>contribute to open source</strong>, using techniques and utilities that top professionls use.
+Throughout this course, we are on a hunt to answer these questions about working with code.
 
 You'll learn in minimum time because I've spent a lot of time on <strong>sequencing</strong> your learning and on <strong>time-saving automation</strong>. 
 
-The introduction to this course:
+The focus of this course is on helping you to confidently <strong>contribute to open source</strong>, 
+using techniques and utilities that top professionls use.
 
 In this tutorial, we also learn how to recover from mistakes right after we try each command.
-This means we often use commands to verify status after key steps.
+This means we often use commands to <strong>verify status</strong> after key steps.
 Verification steps are part of bash scripts I've created so that you can tell, on your own, whether you're typed incorrectly or whether there's some issue with the system. Having a script means you can change something to see how it affects the whole workflow. 
 The scripts are a very unique aspect that I haven't seen elsewhere.
-Another special aspect of this course are the keyboard shortcuts pros use to boost their efficiency.
+
+Another special aspect of this course are the <strong>keyboard shortcuts</strong> pros use to boost their efficiency.
 At the end of each segment we review key learnings to make sure you have mastered each skill.
+
 Now here's our first review: Among all these, what do you think will be the most helpful aspect of this course to you? NEXT: Let's first learn the basic actions using a Git client.
 
 
