@@ -448,7 +448,9 @@ Another example is:
 // spec.js
 describe('Protractor Demo App', function() {
   it('should have a title', function() {
-    browser.get('<a target="_blank" href="http://juliemr.github.io/protractor-demo/">http://juliemr.github.io/protractor-demo/</a>');
+    browser.get('<a target="_blank" href="http://juliemr.github.io/protractor-demo/">http://juliemr.github.io/protractor-demo/</a>').then(function(){
+       console.log("Executed.");
+    });
     expect(browser.getTitle()).toContain('Super Calculator');
   });
 });
@@ -464,6 +466,8 @@ describe('Protractor Demo App', function() {
    The two are referenced in <a href="#RunReports">run reports</a>
 
    <tt>browser.get</tt> specifies the URL handled by the browser.
+
+   <tt>.then</tt> forces conditional execution of the console.log() so that it's not random due to JavaScript exeuction being asynchronous.
 
    <tt>expect</tt> statements specify <a name="#Verifications">verifications</a>.
 
