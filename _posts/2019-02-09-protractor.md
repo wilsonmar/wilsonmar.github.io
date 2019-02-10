@@ -534,6 +534,13 @@ and then configuring the conf.js file.
 1. TODO: Configure
 
 
+<a name="IdElements"></a>
+
+## Identifying elements
+
+Use Chrome Developer Tools to see HTML id and names.
+
+
 <a name="EditingScripts"></a>
 
 ## Editing scripts
