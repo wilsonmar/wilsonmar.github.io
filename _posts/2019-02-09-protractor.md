@@ -208,7 +208,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 
    <a target="_blank" href="https://github.com/juliemr/protractor-demo/">https://github.com/juliemr/protractor-demo</a>
 
-1. Notice the repo has not been updated since 2015. So it will likely encounter deprecation and security errors if built locally.
+1. Notice the repo has NOT been updated since 2015. So it will likely encounter deprecation and security errors if built locally.
 
    There are also Pull Requests and Issues pending for a long time.
 
@@ -258,11 +258,8 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 
    File <strong>package.json</strong> specifies dependencies that Node will download before beginning runs.
 
-   PROTIP: The app folder contains the app's code. The "tests" folder contains tests associated with the app's source code
-   <strong>in the same repository</strong>. This is getting more common than separate teams which maintain separate
-   repositories for app and test code.
-
-   PROTIP: The app folder contains the app's code. The "tests" folder contains tests associated with the app's source code
+   PROTIP: The "app" folder contains the app's code. 
+   The "tests" folder contains tests associated with the app's source code
    <strong>in the same repository</strong>. This is getting more common than separate teams which maintain separate
    repositories for app and test code.
 
@@ -288,11 +285,12 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 
 ## IDE to edit
 
-If you prefer using an IDE, see my <a target="_blank" href="https://wilsonmar.github.io/text-editors">tutorials on text editors</a>:
+If you prefer using an IDE, see <a target="_blank" href="https://wilsonmar.github.io/text-editors">my tutorial on text editors</a>:
 
    * Eclipse
    * WebStorm - https://www.jetbrains.com/webstorm/
    * Visual Studio Code - https://code.visualstudio.com/
+   * others
    <br /><br />
 
 Then add code completions and other helpers.
