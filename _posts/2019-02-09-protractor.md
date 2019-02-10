@@ -19,7 +19,7 @@ comments: true
 
 ## TL;DR Summary
 
-Protractor was written by the team who created the testing framework at <a target="_blank" href="http://angularjs.io/">Angular.io</a> (formerly <a target="_blank" href="http://angularjs.org/">Angular.js</a>) so they can automate its testing.
+Protractor was written by the team who created the testing framework so they can automate its testing.
 The first version of Protractor was released in July, 2013. 
 Google continues to support the work.
 
@@ -29,7 +29,7 @@ Since static or generated on the client, HTML is stored in a DOM (Document Objec
 And Protractor grabs specific HTML elements from within each DOM.
 
 One of the major advantages pointed out on <a target="_blank" href="https://protractor.angular.io/">https://protractor.angular.io</a> (formerly <a target="_blank" href="https://protractortest.org/">protractortest.org</a>)
-is that Protractor runs tests quicker than Selenium because it optimizes the need for manually adding (usually arbitrary) "sleep" and "wait" commands in test scripts.
+is that Protractor runs tests quicker than Selenium because it optimizes the need for manually adding (usually arbitrary) "sleep" and "wait" commands in test scripts. JavaScript is <a target="_blank" href="https://www.sohamkamani.com/blog/2016/03/14/wrapping-your-head-around-async-programming/">asynchronous</a> (not sychronous like Java).
 
 Protractor adds "accessors" to Angular models, bindings, ng-options, and finding elements inside ng-repeat. 
 
@@ -268,6 +268,9 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 
    File <strong>server.js</strong> is the file specified to Node.js to begin processing.
 
+   PROTIP: Create a <strong>test-suites</strong> folder to hold <strong>...spec.ts</strong> (TypeScript) files.
+
+   PROTIP: Have a <strong>page-objects</strong> folder to define a folder for each page (login, etc.).
 
 
 1. To download libraries to implement the <tt>package.json</tt> file:
@@ -280,12 +283,26 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 
 ## IDE to edit
 
-1. If you prefer using an IDE, add code completions and other helpers.
+If you prefer using an IDE, see my <a target="_blank" href="https://wilsonmar.github.io/text-editors">tutorials on text editors</a>:
 
    * Eclipse
    * WebStorm - https://www.jetbrains.com/webstorm/
    * Visual Studio Code - https://code.visualstudio.com/
    <br /><br />
+
+Then add code completions and other helpers.
+
+To install plugins for autocomplete in Eclipse<a target="_blank" href="https://www.udemy.com/protractor-tutorial/learn/v4/t/lecture/10519024?start=0">*</a>
+
+1. Pull down menu Help.
+1. Find "Angularjs".
+1. Scroll down to select "AngularJs Eclipse 1.2.0" to click "Install".
+1. To verify, pull down Preferences to see "AngularJs" on the left pane.
+1. Right-click on your project to select Configure, "Convert to Tern Project...".
+1. Under Tern, Modules, select "Protractor". Apply and Close.
+1. When you type "browser." and press contrl+space to see autocomplete suggestions.
+
+To install plugins for autocomplete in Microsoft Visual Studio Code<a target="_blank" href="https://www.udemy.com/protractor-tutorial/learn/v4/t/lecture/12689515?start=0">*</a>
 
 
 ## Protractor script edits
@@ -340,7 +357,10 @@ exports.config = {
    <br /><br />
 
    PROTIP: In the file name specify where the run occurs and what browser. For example: "local.chrome.conf.js" for chrome run locally. 
-   Or "swarm.firefox.conf.js" for running Firefox on the remote "Swarm" cloud.
+   Or "sauce.firefox.conf.js" for running Firefox on the remote <a target="_blank" href="https://docs.saucelabs.com/reference/test-configuration/#timeouts">"SauceLabs cloud</a>.
+
+   The square "[ ]" brackets for <t>specs:</tt> means that a <strong>list</strong> of spec.js files can be specified,
+   separated by commas.
 
 
 ### Start WebDriver
@@ -408,6 +428,20 @@ which gets (opens) a URL to expect the title to be as stated in ".toContain" met
 
    <pre>
 // spec.js
+describe('Angular.io landing', function() {
+  it('should have a title', function() {
+    browser.get('<a target="_blank" href="http://angular.io/">https://angular.io</a>');
+    expect(browser.getTitle()).toContain('Angular');
+  });
+});
+   </pre>
+
+The above is the angular.io marketing page .(formerly <a target="_blank" href="http://angularjs.org/">AngularJs.org</a>).
+
+Another example is:
+
+   <pre>
+// spec.js
 describe('Protractor Demo App', function() {
   it('should have a title', function() {
     browser.get('<a target="_blank" href="http://juliemr.github.io/protractor-demo/">http://juliemr.github.io/protractor-demo/</a>');
@@ -416,11 +450,12 @@ describe('Protractor Demo App', function() {
 });
    </pre>
 
+
    <tt>//</tt> (double forward slashes) in front of a line comments it out from being read.
 
    <tt>describe</tt> describes a <strong>test suite</strong> group (category) of tests.
 
-   <tt>it</tt> specifies a <strong>test case</strong>.
+   <tt>it</tt> specifies a <strong>spec</strong> (specification) or test case.
 
    The two are referenced in <a href="#RunReports">run reports</a>
 
@@ -443,8 +478,9 @@ So first let's run the file as-is without changes.
    <pre>C:\Users\wilsonmar\AppData\Roaming\npm\node_modules</pre>
 
 1. Eclipse needs to know the path to a "Main" file. That's the <strong>cli.js</strong> file.
-   Copy that file to the root of your test assets repository folder from
-   ???
+   So copy the whole <strong>protractor folder</strong> from under node_modules into the root of your test assets repository project's folder.
+   
+   Then specify the Main file as: <tt>$(workspace_loc:/Js1/protractor/built/cli.js)</tt>
 
 Alternately, if on Eclipse configured with the Protractor plugin:
 
@@ -512,23 +548,61 @@ PROTIP: Instead of hard-coding username and password in the code,
 read a file from your user home folder to populate values in variables.
 
 
+<a name="Timings"></a>
+
+### Timings
+
+* Add <tt>wait</tt> helper function to pause for 9 seconds:
+
+   <pre>browser.sleep(9000);</pre>
+
+* Add <tt>wait</tt> helper function to pause until an event is deteted.
+
+* Capture the amount of time taken to do each step or series of steps.
+
+
+
 <a name="Verifications"></a>
 
-## Verifications
+### Verifications
 
-* Wait until page is loaded.
+* Use driver.manage() to manage timeouts: implicitlyWait, pageLoadTimeOut,
+Manage Current Window: maximize, getPosition, 
+Manage Cookies: addCookie, deleteCookie
+
+* There is a findElement and plural findElements, isElementPresent
+
+* Browser management functions: get, quit, close, executeScript, getTitle, getCurrentUrl
+
+* Locator strategies:
+By.id
+By.css
+By.className
+By.linkText
+By.js
+By.name
+By.xpath
+By.tagName
+
+   <pre>
+   element(by.model(‘locator’));
+   element(by.binding(‘locator’));
+   element(by.repeater(‘locator’));
+   </pre>
+
+* UI actions: click, sendKeys, isDisplayed, isSelected, getAttribute, getText, clear
 
 * Error messages
 
-* Take a screen shot on error.
-
-* Capture the amount of time taken to do each step or series of steps.
+* To take a screen shot on error, use the <tt>takeScreenshot</tt> helper function.
 
 * Same user & same page vs. other fields (title of page, field labels, field values)
 
 * Same user but different pages
 
 * Test different users (persona) to ensure those with different permissions can still do their job.
+
+See https://github.com/abhishekkyd/WebDriverJS-examples
 
 
 ## Sample app for testing

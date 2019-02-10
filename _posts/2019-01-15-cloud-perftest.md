@@ -573,6 +573,9 @@ And rates are comparable to public hosting companies (starting at $5 per month).
 
 Each Lightsale plan has a limit beyond which additional storage and data transfer costs would be incurred.
 
+Among <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/LightSailContinuum.html">Linux Academy's diagrams</a>
+
+
 TODO: Serverless
 
 ## Istio and Envoy for Tracing
