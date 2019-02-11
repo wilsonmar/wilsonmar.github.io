@@ -87,7 +87,8 @@ Other components are described as we install each:
 
    <tt>-g</tt> installs globally for accessibility from all folders rather than just the node_module folder of the current folder.
 
-   <tt>--save-dev</tt> adds an entry within the ""devDependencies" section of <strong>package.json</strong>.
+   <tt>--save-dev</tt> adds an entry within the ""devDependencies" section of <strong>package.json</strong> instead of "dependencies".
+   This is because the test suite is not needed to run the app in production state.
 
    At the end of sample output should be:
 
