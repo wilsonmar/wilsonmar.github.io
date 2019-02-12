@@ -19,7 +19,7 @@ comments: true
 
 ## TL;DR Summary
 
-Protractor was written by the team who created the testing framework so they can automate its testing.
+Protractor was written by the team who created the Angular testing framework so they can automate its testing.
 Unlike traditional static HTML, client browsers running Angular apps <strong>dynamically generates HTML</strong> and JavaScript on the fly.
 Protractor adds "accessors" to Angular models, bindings, ng-options, and finding elements inside ng-repeat. 
 Since static or generated on the client, HTML is stored in a DOM (Document Object Model) web browsers maintain for each session.
