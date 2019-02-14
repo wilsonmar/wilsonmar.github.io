@@ -34,7 +34,7 @@ The key areas of learning envisioned by Salesforce for myTrailhead is:
 
 1. Visit the marketing page for "myTrailhead":
 
-   https://trailhead.salesforce.com/en/mytrailhead
+   <a target="_blank" href="https://trailhead.salesforce.com/en/mytrailhead">https://trailhead.salesforce.com/en/mytrailhead</a>
 
 1. Click "LEARN MORE" near the "COMING SOON" cartoon.
 
@@ -59,9 +59,7 @@ The key areas of learning envisioned by Salesforce for myTrailhead is:
 
    * Managers can track progress through trails in <a target="_blank" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000EFpAtUAL">Trail Tracker Salesforce app</a> from the App Exchange.
 
-1. On a Chrome browser, see the 25-minute <strong>Demo webinar</strong> by <a target="_blank" href="http://www.salesforcehacker.com/">SalesforceHacker</a> Adam Torman (<a target="_blank" href="https://www.twitter.com/atorman">@atorman</a>)  
-Sr. Director of Salesforce Trailhead Product Management
-and Vik Mediratta (<a target="_blank" href="https://www.twitter.com/vikmediratta">@vikmediratta</a>) Sr. Manager of Salesforce Trailhead Marketing.
+1. On a Chrome browser, see the 25-minute <strong>Demo webinar</strong> by <a target="_blank" href="http://www.salesforcehacker.com/">SalesforceHacker</a> Adam Torman (<a target="_blank" href="https://www.twitter.com/atorman">@atorman</a>) Sr. Director of Salesforce Trailhead Product Management and Vik Mediratta (<a target="_blank" href="https://www.twitter.com/vikmediratta">@vikmediratta</a>) Sr. Manager of Salesforce Trailhead Marketing.
 
    <a target="_blank" href="https://trailhead.salesforce.com/mytrailhead/webinar">https://trailhead.salesforce.com/mytrailhead/webinar</a>
 
@@ -120,7 +118,7 @@ and Vik Mediratta (<a target="_blank" href="https://www.twitter.com/vikmediratta
 1. Define dominant and auxilliary colors (in RGB) and corporate logo (SVG file) at the upper left.
 
    <pre>&LT;meta content='#ffffff' name='msapplication-TileColor'>
-   &LT; content='browserconfig.xml' name='msapplication-config'>
+   &LT;<meta content='browserconfig.xml' name='msapplication-config'>
    &LT;meta content='#ffffff' name='theme-color'>
    </pre>
 
@@ -146,11 +144,11 @@ and Vik Mediratta (<a target="_blank" href="https://www.twitter.com/vikmediratta
 
 1. Define what each persona (job category) needs to know.
 
-1. Use *Trail Mixer* to define the sequence (trail) learning path for each group of employees.
+1. Use the Salesforce *Trail Mixer* app to define the sequence (trail) learning path for each group of employees.
 
    PROTIP: Try to use the same set of <a target="_blank" href="https://wilsonmar.github.io/salesforce-personas">personas</a> that Salesforce uses.
 
-   <table cellpadding="4" cellspacing="0">
+   <table border="1" cellpadding="4" cellspacing="0">
    <tr><th> Persona </th><th> Trailmix </th></td>
    <tr valign="top"><td>1. <a target="_blank" href="https://trailhead.salesforce.com/en/career-path/marketing">Salesforce Marketing Manager</a>
    		</td><td><a target="_blank" href="https://trailhead.salesforce.com/en/users/00550000006yDdKAAU/trailmixes/build-your-marketing-career-on-salesforce">Trailmix</a>
@@ -176,7 +174,7 @@ and Vik Mediratta (<a target="_blank" href="https://www.twitter.com/vikmediratta
 
 1. Store assets in GitHub or other version control system.
 
-1. Read the Medium article <a target="_blank" href="https://medium.com/trailhead/write-the-trailhead-way/home">"Go Behind the Scenes with Trailhead’s Writers"</a>
+1. Read the Medium articles listed at <a target="_blank" href="https://medium.com/trailhead/write-the-trailhead-way/home">"Go Behind the Scenes with Trailhead’s Writers"</a>
 
 1. Read the page <a target="_blank" href="https://partners.salesforce.com/s/education/general/myTrailhead">Partner myTrailhead</a>
 
