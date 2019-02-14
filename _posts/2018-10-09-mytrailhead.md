@@ -23,7 +23,7 @@ So I've looked through the various links and put my notes and links in this sequ
 
 The key areas of learning envisioned by Salesforce for myTrailhead is:
 
-   * Onboarding new hires and culture/HR Awareness
+   * Onboarding new hires and culture/HR Awareness ("Business Value of Equality, Impact of Unconscious Mind, Diversity & Inclusion, Equality Ally Strategies)
    * Product learning and enablement
    * Sales Rep enablement and training (for Sales Cloud customers)
    * Service Agent enablement and training (for Service Cloud customers)
@@ -57,7 +57,7 @@ The key areas of learning envisioned by Salesforce for myTrailhead is:
 
    * Learners can add their own sequence of trailhead modules
 
-   * Managers can track progress through trails in <a target="_blank" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000EFpAtUAL">Trail Tracker Salesforce app</a> from the App Exchange.
+   * Managers can track employee progress through trails in <a target="_blank" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000EFpAtUAL">Trail Tracker Salesforce app</a> from the App Exchange.
 
    ### Videos
 
@@ -77,19 +77,33 @@ The key areas of learning envisioned by Salesforce for myTrailhead is:
    <br /><br />
 
    <a target="_blank" href="https://www.salesforce.com/video/3623346/">
-   Check out how Salesforce uses Trailhead - the First myTrailhead Case Study</a>
+   Check out how Salesforce uses Trailhead - the First myTrailhead Case Study</a> by Megan Petersen (@MeganPTweets), Director Trailhead Global Strategic Programs [20:27] 
+ 
+   * [1:07] Josh Birk, Dev Evangelist, is the "Godfather" of Trailhead
+   * [6:37] 600 badges have been created for Salesforce employees using myTrailhead
+   <br /><br />
+
+   <a target="_blank" href="https://www.salesforce.com/video/1774255/">
+   Learn with Trailhead - Newbies guide</a> by Dana Hall (@theDanaHall), Senior Manager - Trailhead Marketing
 
    <a target="_blank" href="https://www.salesforce.com/video/3621201/">
    Camping World's Road to Making Learning Fun with myTrailhead</a>
 
+   * [11:29] 4.4 years is the average tenure at a role
+   * [11:29] 5 years is the half-life of a learned skill
+   <br /><br />
+
    <a target="_blank" href="https://www.salesforce.com/video/3621200/">
    Learn How Customers are Reinventing Learning and Enablement with myTrailhead</a>
+
+   * 
+   <br /><br />
 
    <a target="_blank" href="https://www.salesforce.com/video/3631338/">
    myTrailhead—Content Writing Tips, Tricks, and Best Practices</a>
 
-   <a target="_blank" href="https://www.salesforce.com/video/3595683/">
-   3 Steps for Driving myTrailhead Adoption in Your Organization</a>
+   * 
+   <br /><br />
 
    ### Readings
 
@@ -118,12 +132,17 @@ The key areas of learning envisioned by Salesforce for myTrailhead is:
 
 1. Reserve the domain name to be used in the URL to access the learning.
 
-1. Define dominant and auxilliary colors (in RGB) and corporate logo (SVG file) at the upper left.
+1. Define dominant and auxilliary colors (in RGB) 
 
    <pre>&LT;meta content='#ffffff' name='msapplication-TileColor'>
    &LT;<meta content='browserconfig.xml' name='msapplication-config'>
    &LT;meta content='#ffffff' name='theme-color'>
    </pre>
+
+1. Craft corporate logo (SVG file) at the upper left is 200x200 pixels at 72x72 resolution:
+
+   ![sf-trailhead-logo-200x200-10033](https://user-images.githubusercontent.com/300046/52775602-0d295a00-300e-11e9-8319-f266592da35a.png)
+
 
 1. Craft icons:
 
@@ -158,30 +177,31 @@ The key areas of learning envisioned by Salesforce for myTrailhead is:
    <table border="1" cellpadding="4" cellspacing="0">
    <tr><th> Category </th><th> Trailmix </th></td>
    <tr valign="top"><td>1. <a target="_blank" href="https://trailhead.salesforce.com/en/career-path/marketing">Salesforce Marketing Manager</a>
-   		</td><td><a target="_blank" href="https://trailhead.salesforce.com/en/users/00550000006yDdKAAU/trailmixes/build-your-marketing-career-on-salesforce">Trailmix</a>
-   		</td></tr>
+   </td><td><a target="_blank" href="https://trailhead.salesforce.com/en/users/00550000006yDdKAAU/trailmixes/build-your-marketing-career-on-salesforce">Trailmix</a>
+   </td></tr>
    <tr valign="top"><td>2. <a target="_blank" href="https://trailhead.salesforce.com/en/career-path/sales">Salesforce Sales Manager</a>
-   		</td><td><a target="_blank" href="https://trailhead.salesforce.com/en/users/00550000006yDdKAAU/trailmixes/build-your-sales-career-on-salesforce">Trailmix</a>
-   		</td></tr>
+   </td><td><a target="_blank" href="https://trailhead.salesforce.com/en/users/00550000006yDdKAAU/trailmixes/build-your-sales-career-on-salesforce">Trailmix</a>
+   </td></tr>
    <tr valign="top"><td>3. <a target="_blank" href="https://trailhead.salesforce.com/en/career-path/business-analyst">Salesforce Business Analyst</a>
-   		</td><td><a target="_blank" href="https://trailhead.salesforce.com/users/00550000006yDdKAAU/trailmixes/build-your-admin-career-on-salesforce">Trailmix</a>
-   		</td></tr>
+   </td><td><a target="_blank" href="https://trailhead.salesforce.com/users/00550000006yDdKAAU/trailmixes/build-your-admin-career-on-salesforce">Trailmix</a>
+   </td></tr>
    <tr valign="top"><td>4. <a target="_blank" href="https://trailhead.salesforce.com/en/career-path/admin">Salesforce Administrator</a>
-   		</td><td><a target="_blank" href="https://trailhead.salesforce.com/users/00550000006yDdKAAU/trailmixes/build-your-admin-career-on-salesforce">Trailmix</a>
-   		</td></tr>
+   </td><td><a target="_blank" href="https://trailhead.salesforce.com/users/00550000006yDdKAAU/trailmixes/build-your-admin-career-on-salesforce">Trailmix</a>
+   </td></tr>
    <tr valign="top"><td>5. <a target="_blank" href="https://trailhead.salesforce.com/en/career-path/developer">Salesforce Developer</a>
-   		</td><td><a target="_blank" href="https://trailhead.salesforce.com/users/00550000006yDdKAAU/trailmixes/build-your-developer-career-on-salesforce">Trailmix</a>
-   		</td></tr>
+   </td><td><a target="_blank" href="https://trailhead.salesforce.com/users/00550000006yDdKAAU/trailmixes/build-your-developer-career-on-salesforce">Trailmix</a>
+   </td></tr>
    <tr valign="top"><td>6. <a target="_blank" href="https://trailhead.salesforce.com/en/career-path/technical-architect">Salesforce Technical Architect</a>
-   		</td><td><a target="_blank" href="https://trailhead.salesforce.com/users/00550000006yDdKAAU/trailmixes/build-your-architect-career-on-salesforce">Trailmix</a>
-   		</td></tr>
+   </td><td><a target="_blank" href="https://trailhead.salesforce.com/users/00550000006yDdKAAU/trailmixes/build-your-architect-career-on-salesforce">Trailmix</a>
+   </td></tr>
    </table>
 
    <hr />
 
    NOTE: myTrailhead publishers can leverage public Trailhead content as a starting point for own custom trails.
 
-1. Store assets in GitHub or other version control system.
+1. Create repository in GitHub or other version control system.
+1. Define folder structure, file types, naming conventions.
 
 1. Read the Medium articles listed at <a target="_blank" href="https://medium.com/trailhead/write-the-trailhead-way/home">"Go Behind the Scenes with Trailhead’s Writers"</a>
 
@@ -199,15 +219,46 @@ The key areas of learning envisioned by Salesforce for myTrailhead is:
 1. Define module names and descriptions.
 1. Design reward badge images.
 
+    PROTIP: Badge images are stored at ___ x ___ pixels, ___ per pixel, in .png format.
+
 1. Design "bite-sized" learning. What are the critical skills?
 
 1. Embed videos within HTML iFrames by providing the link to videos in "free" YouTube or $150+ a month <a target="_blank" href="https://www.vidyard.com/">Vidyard.com</a>.
 
-1. Use *Trail Checker* to build interactive quizzes to assess skills, so employees will get immediate feedback and points for getting the answers correct. 
+1. Use the *Trail Checker* app to build interactive quizzes to assess skills, so employees will get immediate feedback and points for getting the answers correct. 
 
    This makes learning "competency based".
 
 1. Build peer assessments scorecards so that managers and peers can consistently rate and reward employees for demonstrating use of skills.
+
+## Sell it
+
+1. Order stickers of custom badges. See <a target="_blank" href="https://www.salesforce.com/blog/2018/12/salesforce-trailblazer-sticker-addiction.html">"Salesforce’s Growing Sticker Addiction"</a>
+
+1. Order Trailhead hoodies on Salesforce's store.
+
+1. Order swag with corporate logo.
+
+1. Sample screens and reports 
+
+   Make announcement at each stage:
+
+1. Intention and Q&A sessions with managers
+
+1. Select pilot users
+
+1. Announcement and "Train the trainer" pilot sessions
+
+2. "Get prepared" actions and pre sign-up sessions
+
+3. "Initial use": tutorials and learning sessions
+
+4. "Advanced use" tutorials and Expert sessions
+
+VIDEO: <a target="_blank" href="https://www.salesforce.com/video/3595683/">3 Steps for Driving myTrailhead Adoption in Your Organization</a> by Jill McBride [18:04]
+
+   * 
+   <br /><br />
 
 
 ## More about Salesforce #
