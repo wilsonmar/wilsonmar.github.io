@@ -15,8 +15,9 @@ image: # pic-black-bkg-white-cloud_1920x1200
 {% include _toc.html %}
 
 
-<a target="_blank" href="https://wilsonmar.github.io/cloud-perftest/">This</a> is a story, a "deep-dive documentary", about how to ensure performance, scalability, availability, resilience, and affordability from building, testing, and running computer software applications on various environments. 
-The attempt here is a logical sequence to cover tactics and strategies for several alternative architectures over cloud platforms.
+<a target="_blank" href="https://wilsonmar.github.io/cloud-perftest/">This</a> is a "deep-dive documentary", about how to ensure performance, scalability, availability, resilience, and affordability from building, testing, and running computer software applications running in production on various cloud environments. 
+
+The attempt here is a logical sequence to cover tactics and strategies for several alternative architectures:
 
 * <a href="#Custom">Custom executables</a>
 * <a href="#SaaS">SaaS</a>
@@ -63,26 +64,26 @@ points out internal issues such as whether images are compressed enough and the 
 
 <a name="Custom"></a>
 
-## Custom executables
+## Impact of language
 
-We start with custom executables running on server instances, such as WordPress, SugarCRM, and Java war files.
+Websites that expose <strong>static</strong> HTML files for retrieval run fast because such files are not generated. And the files can be distributed around the world in CDNs (Content Distribution Networks) such as Akamai, AWS CloudFront, CloudFlare, Fastly, etc.
 
-Custom executables typically access one or more databases such as MySQL.
+Websites that run WordPress are slower than static sites because WordPress generates HTML files for every request. The programming that does the generation is written in the PHP programming language.
+PHP is an <a target="_blank" href="http://en.wikipedia.org/wiki/Interpreted_language">interpreted language</a>, meaning that PHP programming source code is processed by the PHP interpreter program every time to respond to each new request. 
 
-In the case of WordPress, such sites are slower relative to static websites.
-
-WordPress is written in the PHP programming language which is now considered archaic versus Python, Scala, Go, and other new languages.
-But WordPress nonetheless still is among the most popular programs running on the internet 
+WordPress still is among the most popular programs running on the internet 
 because of its vast ecosystem of developers and add-on functionality.
+To many, the overhead of PHP is worth the features provided by PHP sites that use SugarCRM, WooCommerce, and many others.
 
-Note that PHP is an <a target="_blank" href="http://en.wikipedia.org/wiki/Interpreted_language">interpreted language</a>, meaning that PHP programming source code is processed by the PHP interpreter program every time to respond to each new request. 
-So WordPress usually takes more time to render the HTML displayed on client internet browsers than other technologies such as static HTML pages served without processing. WordPress is also slower than websites that run a program compiled from Java, Go, or other compiled programming language.
+PHP and Python are usually slower than programs written in Java, Go, or other programming language <strong>compiled</strong> into low-level run-time files that computers execute.
+
+Java programs require the additional installation of a JVM (Java Virtual Machine) that allocates memory among programs.
+Go comes with its own run-time environment.
 
 
 ## Dealing with hardware and patching
 
-The difficulty with WordPress and other custom applications is that one must setup a server
-and populate it with the software, then configure it.
+The difficulty with both WordPress and compiled applications is that one must setup a server and populate it with the software, then configure it.
 
 Business owners who had a WordPress site built must continue to pay thousands of dollars each year for "maintenance" to avoid falling behind. Patches for operating system security, the PHP interpreter -- every aspect of technology -- must be updated ocassionally. This constant maintenance does not add additional functionality to the end user, so is feels like a disruption and waste of time and money.
 
@@ -93,9 +94,10 @@ Enter SaaS in a cloud.
 
 ## SaaS (Software as a Service)
 
-Software vendors such as <a target="_blank" href="https://wilsonmar.github.io/salesforce/">Salesforce</a> begam emerging in the lates 1990's to offer software completely through an internet browser because they take care of providing the underlying technologies such as operating system software, databases, and the "framework" that enables customization of functionality. SaaS vendors also handle hardware provisioning, making sure to have whatever number of servers are available, behind the scenes, like dining at a fine restaurant.
+To take advantge of the availability of the internet, in the late 1990's 
+software vendors such as <a target="_blank" href="https://wilsonmar.github.io/salesforce/">Salesforce</a> emerged to offer users functionality completely through an internet browser. Such vendors take care of providing the underlying technologies such as operating system software, databases, and the "framework" that enables customization of functionality. SaaS vendors also handle hardware provisioning, making sure to have whatever number of servers are available, behind the scenes, like dining at a fine restaurant.
 
-As with regular use of fine restaurants, SaaS offerings can seem "expensive" to some, costing thousands of dollars for every user, plus additional costs to hold storage. For example, Salesforce charges $5,000 to store one Terrabyte of data each month, compared to a multi-terrabyte USB drive for a $100 dollar one-time purchase.
+As with regular use of fine restaurants, SaaS offerings can seem expensive to some, costing thousands of dollars for every user, plus additional costs to hold storage. For example, Salesforce charges $5,000 to store one Terabyte of data each month, compared to a multi-terrabyte USB drive for a $100 dollar one-time purchase.
 
 Those who develop using a framework such as Salesforce must first learn all the intracies of their framework and unique programming language -- which can take many months of serious study. 
 
@@ -168,9 +170,23 @@ BTW, Amazon sells RAM memory by "GiB" (for Gibibyte) rather than the more tradit
 A Gibitype is based on "base 2" (1 or 0) counting that computers use internally, and 2 to the 30th power which is equivalent to worth 1,073,741,824 bytes in base 10. The difference between the two increases exponentially as numbers get larger: about 7% at the Gibibyte/Gigabyte level but 9% at the Tibibyte/Terabyte level (the equivalent of 1,099,511,627,776 bytes in base 2).
 
 
-One alternative for increasing throughput is to add a separate <strong>caching server</strong> (such as Redis, MemcacheD, AWS RDS, or ElastiCache) that tries to respond to requests before they hit the web server or database server. 
+To entice customers to make use of the more "advanced" types of servers, Amazon offers
+Single-Root I/O Virtualization (SR-IOV) 
+Amazon also offers its Elastic Network Adapters (ENA) which deliver <strong>20 Gbps</strong> (Gigabits per second) speed within a single placement group.
+
+BTW a placement group is ??? 
+
+QUESTION: Are such enhanced networking mechanisms and their higher packet per server (PPS) performance worth the price?
+
+If you are using AWS Direct Connect, private pipes to other data centers are 50 Mbs to 10 Gbps, depending on what you pay for.
+
+Another alternative for increasing throughput is to add a separate <strong>caching server</strong> (such as Redis, MemcacheD, AWS RDS, or ElastiCache) that tries to respond to requests before they hit the web server or database server. 
 Cache servers typically holds responses in a large amount of memory.
 But to ensure that money for a caching server is not wasted, the <strong>cache hit ratio</strong> should be measured when running under simulated load.
+
+
+> "After you have identified your architectural approach, you should use <strong>benchmarking and load testing</strong> data to drive your selection of resource types and configuration options" -- 512 in Amazon's "Performance Efficiency Pillar: AWS Well-Architected Framework (AWS Whitepaper)
+
 
 
 The potential for failure due to load may not be of concern for "vanity" websites which don't anticipate a lot of traffic. 
