@@ -201,7 +201,7 @@ The key areas of learning envisioned by Salesforce for myTrailhead is:
 
    This makes learning "competency based".
 
-1. Build peer assessments scorecards so that managers and peers can consistently rate and reward employees for a performance of skills.
+1. Build peer assessments scorecards so that managers and peers can consistently rate and reward employees for demonstrating use of skills.
 
 
 ## More about Salesforce #
