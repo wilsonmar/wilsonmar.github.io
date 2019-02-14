@@ -239,7 +239,9 @@ The key areas of learning envisioned by Salesforce for myTrailhead is:
 
 1. Order swag with corporate logo.
 
-1. Sample screens and reports 
+1. Define step-by-step workflows to demo/train each group of employees:
+
+1. Walk through workflows and take pictures of sample screens and reports 
 
    Make announcement at each stage:
 
