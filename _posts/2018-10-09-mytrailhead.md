@@ -59,6 +59,8 @@ The key areas of learning envisioned by Salesforce for myTrailhead is:
 
    * Managers can track progress through trails in <a target="_blank" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000EFpAtUAL">Trail Tracker Salesforce app</a> from the App Exchange.
 
+   ### Videos
+
 1. On a Chrome browser, see the 25-minute <strong>Demo webinar</strong> by <a target="_blank" href="http://www.salesforcehacker.com/">SalesforceHacker</a> Adam Torman (<a target="_blank" href="https://www.twitter.com/atorman">@atorman</a>) Sr. Director of Salesforce Trailhead Product Management and Vik Mediratta (<a target="_blank" href="https://www.twitter.com/vikmediratta">@vikmediratta</a>) Sr. Manager of Salesforce Trailhead Marketing.
 
    <a target="_blank" href="https://trailhead.salesforce.com/mytrailhead/webinar">https://trailhead.salesforce.com/mytrailhead/webinar</a>
@@ -89,6 +91,7 @@ The key areas of learning envisioned by Salesforce for myTrailhead is:
    <a target="_blank" href="https://www.salesforce.com/video/3595683/">
    3 Steps for Driving myTrailhead Adoption in Your Organization</a>
 
+   ### Readings
 
 1. Take a 3 hrs 39 min. trailhead module
    <a target="_blank" href="https://trailhead.salesforce.com/users/00550000006yDdKAAU/trailmixes/get-started-with-trailhead-companies">
@@ -142,6 +145,9 @@ The key areas of learning envisioned by Salesforce for myTrailhead is:
    </pre>
 
 1. Craft the banner page image.
+
+
+   ### Trailheads by Category
 
 1. Define what each persona (job category) needs to know.
 
