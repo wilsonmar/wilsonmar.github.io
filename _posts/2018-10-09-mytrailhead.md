@@ -149,7 +149,7 @@ The key areas of learning envisioned by Salesforce for myTrailhead is:
    PROTIP: Try to use the same set of <a target="_blank" href="https://wilsonmar.github.io/salesforce-personas">personas</a> that Salesforce uses.
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr><th> Persona </th><th> Trailmix </th></td>
+   <tr><th> Category </th><th> Trailmix </th></td>
    <tr valign="top"><td>1. <a target="_blank" href="https://trailhead.salesforce.com/en/career-path/marketing">Salesforce Marketing Manager</a>
    		</td><td><a target="_blank" href="https://trailhead.salesforce.com/en/users/00550000006yDdKAAU/trailmixes/build-your-marketing-career-on-salesforce">Trailmix</a>
    		</td></tr>
@@ -170,6 +170,8 @@ The key areas of learning envisioned by Salesforce for myTrailhead is:
    		</td></tr>
    </table>
 
+   <hr />
+   
    NOTE: myTrailhead publishers can leverage public Trailhead content as a starting point for own custom trails.
 
 1. Store assets in GitHub or other version control system.
