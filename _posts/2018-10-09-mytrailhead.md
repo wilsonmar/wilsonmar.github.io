@@ -124,21 +124,22 @@ The key areas of learning envisioned by Salesforce for myTrailhead is:
 
 1. Craft icons:
 
-   * &LT;link href='/apple-touch-icon-57x57.png' rel='apple-touch-icon' sizes='57x57'>
-   * &LT;link href='/apple-touch-icon-60x60.png' rel='apple-touch-icon' sizes='60x60'>
-   * &LT;link href='/apple-touch-icon-72x72.png' rel='apple-touch-icon' sizes='72x72'>
-   * &LT;link href='/apple-touch-icon-76x76.png' rel='apple-touch-icon' sizes='76x76'>
-   * &LT;link href='/apple-touch-icon-114x114.png' rel='apple-touch-icon' sizes='114x114'>
-   * &LT;link href='/apple-touch-icon-120x120.png' rel='apple-touch-icon' sizes='120x120'>
-   * &LT;link href='/apple-touch-icon-144x144.png' rel='apple-touch-icon' sizes='144x144'>
-   * &LT;link href='/apple-touch-icon-152x152.png' rel='apple-touch-icon' sizes='152x152'>
-   * &LT;link href='/apple-touch-icon-180x180.png' rel='apple-touch-icon' sizes='180x180'>
-   * &LT;link href='/android-chrome-192x192.png' rel='icon' sizes='192x192' type='image/png'>
-   * &LT;link href='/site.webmanifest' rel='manifest'>
-   * &LT;link color='#ffffff' href='/safari-pinned-tab.svg' rel='mask-icon'>
-   * &LT;link href='/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
-   * &LT;link href='/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
-   <br /><br />
+   <pre>
+   &LT;link href='/apple-touch-icon-57x57.png' rel='apple-touch-icon' sizes='57x57'>
+   &LT;link href='/apple-touch-icon-60x60.png' rel='apple-touch-icon' sizes='60x60'>
+   &LT;link href='/apple-touch-icon-72x72.png' rel='apple-touch-icon' sizes='72x72'>
+   &LT;link href='/apple-touch-icon-76x76.png' rel='apple-touch-icon' sizes='76x76'>
+   &LT;link href='/apple-touch-icon-114x114.png' rel='apple-touch-icon' sizes='114x114'>
+   &LT;link href='/apple-touch-icon-120x120.png' rel='apple-touch-icon' sizes='120x120'>
+   &LT;link href='/apple-touch-icon-144x144.png' rel='apple-touch-icon' sizes='144x144'>
+   &LT;link href='/apple-touch-icon-152x152.png' rel='apple-touch-icon' sizes='152x152'>
+   &LT;link href='/apple-touch-icon-180x180.png' rel='apple-touch-icon' sizes='180x180'>
+   &LT;link href='/android-chrome-192x192.png' rel='icon' sizes='192x192' type='image/png'>
+   &LT;link href='/site.webmanifest' rel='manifest'>
+   &LT;link color='#ffffff' href='/safari-pinned-tab.svg' rel='mask-icon'>
+   &LT;link href='/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+   &LT;link href='/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+   </pre>
 
 1. Craft the banner page image.
 
@@ -171,7 +172,7 @@ The key areas of learning envisioned by Salesforce for myTrailhead is:
    </table>
 
    <hr />
-   
+
    NOTE: myTrailhead publishers can leverage public Trailhead content as a starting point for own custom trails.
 
 1. Store assets in GitHub or other version control system.
