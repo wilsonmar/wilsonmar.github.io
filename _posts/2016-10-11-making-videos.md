@@ -36,7 +36,7 @@ Apple's $300 Final Cut Pro X</a> (FCPX) is what many 360 degree equirectangular 
 
 * $95 Sony Movie Studio Vegas is only for Windows.
 
-* The program I'd like to try next is Articulate Storyline and <a target="_blank" href="https://articulate.com/360/replay">Replay</a> to create interactive video tutorials with webcam and other aspects of a full "learning management suite" (LMS). Although Articulate360 provides a <a target"_blank" href="https://itunes.apple.com/us/app/peek/id1164486237?ls=1&mt=12">free Peek desktop client</a> installed to record on MacOS, the video editing product consists of these 3 Windows clients:
+* The program I'd like to try next is Articulate Storyline and <a target="_blank" href="https://articulate.com/360/replay">Replay</a> to create interactive video tutorials with webcam and other aspects of a full "learning management suite" (LMS). Although Articulate360 provides a <a target="_blank" href="https://itunes.apple.com/us/app/peek/id1164486237?ls=1&mt=12">free Peek desktop client</a> installed to record on MacOS, the video editing product consists of these 3 Windows clients:
 
    * Rise for responsive authoring
    * Articulate Review for collaboration
