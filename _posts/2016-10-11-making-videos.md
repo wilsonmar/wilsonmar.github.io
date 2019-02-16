@@ -116,12 +116,17 @@ Adding narration at specific spots is relatively simple.
    To record sound files, then export in mp3 format:
    
 
-## Recording
+## Recording space
 
 1. PROTIP: To avoid echo effects, go to a quiet padded room without a refigerator and other noise-making appliances. Record early in the morning when/where there is the least noise.
 
-   PROTIP: Have a small mirror near the camera so you can see yourself smiling.
+2. PROTIP: Have a small mirror near the camera so you can see yourself smiling.
    Smile and you'll sound friendlier in the audio.
+
+3. PROTIP: If you wear glasses, avoid glare from the screen. Dim your screen, adjust the location of a sparate monitor, as well as placing bright lights at each side.
+
+
+## Recording
 
    ### First time use
 
