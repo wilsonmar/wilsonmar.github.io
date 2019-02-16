@@ -170,15 +170,11 @@ BTW, Amazon sells RAM memory by "GiB" (for Gibibyte) rather than the more tradit
 A Gibitype is based on "base 2" (1 or 0) counting that computers use internally, and 2 to the 30th power which is equivalent to worth 1,073,741,824 bytes in base 10. The difference between the two increases exponentially as numbers get larger: about 7% at the Gibibyte/Gigabyte level but 9% at the Tibibyte/Terabyte level (the equivalent of 1,099,511,627,776 bytes in base 2).
 
 
-To entice customers to make use of the more "advanced" types of servers, Amazon offers
-Single-Root I/O Virtualization (SR-IOV) 
-Amazon also offers its Elastic Network Adapters (ENA) which deliver <strong>20 Gbps</strong> (Gigabits per second) speed within a single placement group.
+More "advanced" types of servers can be configured to use <a target="_blank" href="https://docs.microsoft.com/en-us/windows-hardware/drivers/network/overview-of-single-root-i-o-virtualization--sr-iov-">Single-Root I/O Virtualization (SR-IOV)</a> and <a target="_blank" href="https://aws.amazon.com/blogs/aws/elastic-network-adapter-high-performance-network-interface-for-amazon-ec2/">Elastic Network Adapters (ENA)</a> which deliver <strong>20 Gbps</strong> (Gigabits per second) speed. The logical spread of low-latency instances within a single <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">cluster placement group</a> is defined within a single Availability Zone.
+BTW Cluster placement groups are defined to ensure that instances in one partition do not share underlying hardware with instances in other partitions. 
 
-BTW a placement group is ??? 
-
-QUESTION: Are such enhanced networking mechanisms and their higher packet per server (PPS) performance worth the price?
-
-If you are using AWS Direct Connect, private pipes to other data centers are 50 Mbs to 10 Gbps, depending on what you pay for.
+QUESTION: Are the higher packet per server (PPS) performance the the above <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking.html">enhanced networking</a> mechanisms worth the price? Nodes within the same placement group communicate at the full line rate of 10 Gpbs flows and <strong>25 aggregate</strong> without any slowing due to over-subscription.
+PROTIP: If you are using AWS Direct Connect, private pipes to other data centers are 50 Mbs to 10 Gbps, depending on what you pay for.
 
 Another alternative for increasing throughput is to add a separate <strong>caching server</strong> (such as Redis, MemcacheD, AWS RDS, or ElastiCache) that tries to respond to requests before they hit the web server or database server. 
 Cache servers typically holds responses in a large amount of memory.
