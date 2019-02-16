@@ -16,35 +16,35 @@ comments: true
 
 I'm looking for a more efficient way to make videos to explain concepts.
 
-Here is an example of a video I created and put on YouTube:
+Here is an early attempt at making a video and put on YouTube:
 
 <amp-youtube data-videoid="-ivRuvEIeIY" layout="responsive" width="480" height="270">
 </amp-youtube>
+<br />
 
-Click the "CC" at the bottom of the frame for Closed Captions which I input into Camtasia to sync with audio and visuals.
-Its highest resolution is 720p HD.
+Click the "CC" at the bottom of the frame for Closed Captions which I input into Camtasia to sync with audio and visuals. Its highest resolution is 720p HD.
 
 
 ## Video editing software options
 
-I've been using Camtasia.
+Here are the video editing software I've heard about:
 
-<a target="_blank" href="https://www.apple.com/final-cut-pro/">
+* $259 Camtasia 2018 is what I'm using. It has both Windows and Mac editions. As with anything, it has <a href="#Camtasia">annoyances</a>.
+
+* <a target="_blank" href="https://www.apple.com/final-cut-pro/">
 Apple's $300 Final Cut Pro X</a> (FCPX) is what many 360 degree equirectangular VR videographers use to make experiences on HTC Vive VR headsets. Intuitive yet powerful. Great if you have the latest iMac Pro with the 5K monitor, multiple camera inputs. Also lots of 3rd-party plug-ins. It's the upgrade to the $70 iMovie.
 
-Adobe Premiere Pro "works with" other Adobe tools such as Photoshop to manipulate pictures.
+* Adobe Premiere Pro "works with" other Adobe tools such as Photoshop to manipulate pictures.
 
-Pros tell they prefer the above over $999 Avid Media Composer 7.
+* <a target="_blank" href="https://spark.adobe.com/make/video-maker/">Adobe Spark</a> is free.
 
-$1115 Pinnacle Studio 16 Ultimate
+* $999 Avid Media Composer 7 is the descendant of the software used by pros since the 90s.
 
-$95 Sony Movie Studio Vegas is only for Windows.
+* $1115 Pinnacle Studio 16 Ultimate
 
-The program I'd like to try next is Articulate Storyline and Replay 
-https://articulate.com/360/replay
-so that I can create interactive video tutorials with webcam and other aspects of a full "learning management suite".
-Although Articulate360 provides a 
-<a target"_blank" href"https://itunes.apple.com/us/app/peek/id1164486237?ls=1&mt=12">free Peek desktop client</a> installed to record on MacOS, the video editing product consists of these 3 Windows clients:
+* $95 Sony Movie Studio Vegas is only for Windows.
+
+* The program I'd like to try next is Articulate Storyline and <a target="_blank" href="https://articulate.com/360/replay">Replay</a> to create interactive video tutorials with webcam and other aspects of a full "learning management suite" (LMS). Although Articulate360 provides a <a target"_blank" href="https://itunes.apple.com/us/app/peek/id1164486237?ls=1&mt=12">free Peek desktop client</a> installed to record on MacOS, the video editing product consists of these 3 Windows clients:
 
    * Rise for responsive authoring
    * Articulate Review for collaboration
@@ -54,41 +54,33 @@ Although Articulate360 provides a
    * Replay
 
 
+<a name="Camtasia"></a>
+
 ## Camtasia Annoyances
 
 I use Camtasia for Mac for capturing Skype and Hangout video calls.
 
-The earlier version used to crash a lot after the file grew beyond 2 GB.
+The earlier version used to crash a lot after the file grew beyond 2 GB. But the 2018 edition is rather stable.
 
-One annoying flaw still with Camtasia is that I can't freeze frame and extend an image. So I have to capture each PowerPoint screen I've animated.
+One annoying flaw still with Camtasia is that I can't freeze frame and extend an image. So I have to capture each PowerPoint screen I've animated. This is perhaps the most time-consuming flaw.
 
-Since Mac screens are a different aspect ratio than YouTube, I have to add an overlay on each frame.
+This makes me take about one day for each second of video produced using this approach.
 
-However, adding narration at specific spots is relatively simple.
+PROTIP: If you are using a Mac, get a separate monitor of 1900x1080 (Full HD) resolution. This has the "16:9" aspect ratio YouTube displays. If you capture video or screen images from a Mac screen, you would have annoying blocks on the edges. To get full screen HD images, you would have to add an overlay on each frame.
 
-It takes me about one day for each second of video produced using this approach:
+Adding narration at specific spots is relatively simple.
 
-## Setup
+   PROTIP: To share assets, I <strong>export</strong> and copy to a folder online in Google Drive. This is because videos can include 
 
-1. On a Mac Finder, create a folder in the Camtasia folder within the default "Movies" directory on Macs. 
-2. Create a PowerPoint or other presentation file. 
 
-   ### Animation with narration
+## Setup software
 
-3. In the PowerPoint Notes section, write down every word I plan to say as I create a diagram or flowchart.
+1. On a Mac Finder, navigate to the Mac's "Movies" directory and into the "Camtasia 2018" folder created by the Camtasia installer. Previous versions have their own folder name. Camtasia creates a "Temporary Recordings" folder to store its recordings.
 
-   PROTIP: Some Mac users prefer using Apple's presentation program, which has superior features. However, I prefer Microsoft PowerPoint simply because I may work on the file with others who work on Windows laptops.
+   WARNING: File created for each recording, such as "Rec 2-15-2019 2.trec" is not named for sorting by name.
 
-4. Define <strong>animations</strong> in PowerPoint to reveal objects and lines of the diagram in sequence (within PowerPoint).
 
-   PROTIP: Since the diagram is an introduction, consider beginning with the objective output and work backward. The diagram does not need to be the sequence of the actual data flow.
-
-5. Highlight and bold words where animation appears.
-
-   Record voice narration as I reveal each part of the diagram. 
-   To record sound files, then export in mp3 format:
-   
-   ### Install Audacity to record audio
+   ### Install Audacity and mp3 plug-in
 
 6. I manually download and install <a target="_blank" href="https://www.audacityteam.org/download/">Audacity</a> from FOSSHUB. 
    It has no brew. So I invoke the .dmg file, drag the icon, etc.
@@ -101,9 +93,36 @@ It takes me about one day for each second of video produced using this approach:
 
    <a target="_blank" href="https://lame.buanzo.org/#lameosxdl">https://lame.buanzo.org/#lameosxdl</a>
 
+
+
+## Presentation materials
+
+1. Install PowerPoint
+
+   PROTIP: Some Mac users prefer using Apple's presentation program, which has superior features. However, I prefer Microsoft PowerPoint simply because I may work on the file with others who work on Windows laptops.
+
+2. Create a PowerPoint or other presentation file. 
+
+3. In the PowerPoint Notes section, write down every word I plan to say as I create a diagram or flowchart.
+
+4. Define <strong>animations</strong> in PowerPoint to reveal objects and lines of the diagram in sequence (within PowerPoint).
+
+   PROTIP: Since the diagram is an introduction, consider beginning with the objective output and work backward. The diagram does not need to be the sequence of the actual data flow.
+
+5. Highlight and bold words where animation appears.
+
+   Record voice narration as I reveal each part of the diagram. 
+   To record sound files, then export in mp3 format:
+   
+
 ## Recording
 
-1. PROTIP: To avoid echo effects, go to a quiet padded room and record early in the morning when/where there is the least noise.
+1. PROTIP: To avoid echo effects, go to a quiet padded room without a refigerator and other noise-making appliances. Record early in the morning when/where there is the least noise.
+
+   PROTIP: Have a small mirror near the camera so you can see yourself smiling.
+   Smile and you'll sound friendlier in the audio.
+
+   ### First time use
 
 1. Click the Audacity icon to bring up the program. If you see this pop-up: 
 
@@ -130,18 +149,18 @@ It takes me about one day for each second of video produced using this approach:
 
     ### Record audio
 
-10. Press command+N to open a new Audacity session dialog.
+10. Press <strong>command+N</strong> to open a new Audacity session dialog. For me, it is easier and less mentally taxing than using a mouse.
 
-11. Drink a warm drink to hydrate your mouth so you make less pronouciation mistakes.
+11. Clear your throat and drink a warm drink to hydrate your mouth, so you make less pronouciation mistakes.
 
-    PROTIP: Anything that makes you unfortable, no matter how trivial, will reflect in the tone of your voice. So get comfortable.
+    PROTIP: Anything that makes you uncomfortable, no matter how trivial, will reflect in the tone of your voice. So get comfortable.
     The pros stand up during recordings.
 
-12. PROTIP: Read each sentence out loud before recording so during recording you can focus on emphasis rather than understanding the meaning of that sentence.
+12. PROTIP: Read each sentence out loud before recording so during recording you can focus on emphasis rather than the underlying meaning of sentences.
 
-13. Click the red dot to begin recording.
+13. Take a deep breath and stretch your mouth (to a smile) before clicking the red dot to begin recording.
 
-    PROTP: Speak slower than usual. Enunciate by moving your cheeks. Smile and you'll sound friendlier in the audio.
+    PROTP: A producer's job is to notice whether the speaker is speaking too fast or too slowly. Enunciate by moving your cheeks. 
 
     PROTIP: Record and save small sentences. This makes segments easier to manipulate.
     This also means smaller files. 
@@ -169,7 +188,7 @@ It takes me about one day for each second of video produced using this approach:
 
     PROTIP: Name the file with a sequence number. Use even numbers so you can insert later.
 
-16. Select ".WAV".
+16. Select ".mp4" or ".WAV".
 
     <a target="_blank" href="https://feedback.techsmith.com/techsmith/topics/how_to_export_audio_file_mp3_from_an_video_using_camtasia_for_mac">Camtasia does not export .mp3</a> either.
 
