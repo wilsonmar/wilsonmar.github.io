@@ -16,14 +16,6 @@ comments: true
 
 I'm looking for a more efficient way to make videos to explain concepts.
 
-Here is an early attempt at making a video and put on YouTube:
-
-<amp-youtube data-videoid="-ivRuvEIeIY" layout="responsive" width="480" height="270">
-</amp-youtube>
-<br />
-
-Click the "CC" at the bottom of the frame for Closed Captions which I input into Camtasia to sync with audio and visuals. Its highest resolution is 720p HD.
-
 
 ## Video editing software options
 
@@ -66,11 +58,20 @@ One annoying flaw still with Camtasia is that I can't freeze frame and extend an
 
 This makes me take about one day for each second of video produced using this approach.
 
-PROTIP: If you are using a Mac, get a separate monitor of 1900x1080 (Full HD) resolution. This has the "16:9" aspect ratio YouTube displays. If you capture video or screen images from a Mac screen, you would have annoying blocks on the edges. To get full screen HD images, you would have to add an overlay on each frame.
+PROTIP: If you are using a Mac, get a separate monitor of 1900x1080 (Full HD) resolution. This has the "16:9" aspect ratio YouTube displays. https://en.wikipedia.org/wiki/Display_resolution
+
+The 2560×1440 pixel resolution on Apple Mac Book Pro "Retina" screens have an aspect ratio of <strong>21:9</strong>. So images or video captured on a Mac's screen would have annoying blocks on the edges when shown on YouTube. To get full screen HD images, you would have to add an overlay on each frame.
+
+
+Here is an early attempt at making a video and put on YouTube:
+
+<amp-youtube data-videoid="-ivRuvEIeIY" layout="responsive" width="480" height="270">
+</amp-youtube>
+<br />
+
+Click the "CC" at the bottom of the frame for Closed Captions which I input into Camtasia to sync with audio and visuals. Its highest resolution is 720p HD.
 
 Adding narration at specific spots is relatively simple.
-
-   PROTIP: To share assets, I <strong>export</strong> and copy to a folder online in Google Drive. This is because videos can include 
 
 
 ## Setup software
@@ -205,7 +206,7 @@ Adding narration at specific spots is relatively simple.
 
 15. Record live video or animated introduction and ending.
 
-    The recording would be in 1920x1080 pixels for 1080p.
+    The recording would be in 1920x1080 pixels ("Full HD") for 1080p.
 
     The title formats can be re-used, with differeent text.
 
@@ -234,7 +235,7 @@ Adding narration at specific spots is relatively simple.
 0. Drag from Finder and drop files into the Camtasia Media Bin.
 0. Shut down other programs running, if you can to conserve RAM for Camtasia's use.
 
-    ### In Camtasia: 
+   ### In Camtasia: 
 
 0. Click the list icon and then click the Name heading to sort the elements by date.
 0. Add captions to the audio track. 
@@ -251,9 +252,7 @@ Adding narration at specific spots is relatively simple.
 
     This is the most confusing aspect of Camtasia.
 
-    TODO: On one element, 
-
-    NOTE: Zooming reduces the resolution of images, making them look fuzzy.
+    NOTE: Zooming reduces the resolution of images, and can make them look fuzzy.
 
 0. Adjust the screen size.
 0. Copy the properties to all visual elements.
@@ -268,8 +267,8 @@ Adding narration at specific spots is relatively simple.
 
 ## Video to Gif
 
-Small videos can be converted to gif file format using:<br />
-https://ezgif.com/video-to-gif
+Small videos can be converted to lower-resolution gif or higher-resolution png animation file format using:<br />
+<a target="_blank" href="https://ezgif.com/video-to-gif">https://ezgif.com/video-to-gif</a>
 
 ## Archive Camtasia
 
