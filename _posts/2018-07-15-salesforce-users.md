@@ -39,10 +39,11 @@ Up to 1000 <strong>Permission sets</strong> per org can be setup to grant additi
 
 ## User Personas
 
-Base on <a target="_blank" href="https://trailhead.salesforce.com/modules/ux-personas-for-salesforce">Trailhead module: UX Personas for Salesforce</a> [1 hr 10 min] 
+A "persona" represents a group of users clustered based on shared behavior, motivations, goals, pain points, or other characteristics. A persona is an <strong>archetype</strong> that represents a group of users clustered based on shared behaviors, motivations, goals, pain points, or other characteristics. During the design and development process, persona categories stand in for key user groups when making decisions about your product, by representing major differences between groups. Personas can be useful for building empathy and making the users seem real. Effective personas are created based on <a target="_blank" href="https://trailhead.salesforce.com/module/ux-research-basics"> research</a> and <a target="_blank" href="https://developer.salesforce.com/files/ux-personas-ServiceCloudPersonaSurvey.pdf">surveys (pdf)</a> to ensure that they reflect the real people who use your product.<a target="_blank" href="https://www.amazon.com/Essential-Persona-Lifecycle-Building-Personas/dp/0123814189/">*</a>  
 
-A "persona" represents a group of users clustered based on shared behavior, motivations, goals, pain points, or other characteristics. A persona is an archetype that represents a group of users clustered based on shared behaviors, motivations, goals, pain points, or other characteristics. During the design and development process, persona categories stand in for key user groups when making decisions about your product, by representing major differences between groups. Personas can be useful for building empathy and making the users seem real. Effective personas are created based on <a target="_blank" href="https://trailhead.salesforce.com/module/ux-research-basics"> research</a> and <a target="_blank" href="https://developer.salesforce.com/files/ux-personas-ServiceCloudPersonaSurvey.pdf">surveys (pdf)</a> to ensure that they reflect the real people who use your product.<a target="_blank" href="https://www.amazon.com/Essential-Persona-Lifecycle-Building-Personas/dp/0123814189/">*</a>  
-Personas should be based on general work tasks users perform in their roles, rather than just what they do in Salesforce. 
+Personas should be based on <strong>work tasks</strong> users perform in their roles.
+
+The Trailhead module: <a target="_blank" href="https://trailhead.salesforce.com/modules/ux-personas-for-salesforce">Trailhead module: UX Personas for Salesforce</a> [1 hr 10 min] defined by Salesforce were based around the various cloud products: Sales (Marketing) Cloud, Service Cloud, Community Cloud, etc.
 
 <a target="_blank" href="https://developer.salesforce.com/files/ux-personas-sales-personas.pdf">PDF: Sales Persona</a>:
 
@@ -78,6 +79,17 @@ Personas should be based on general work tasks users perform in their roles, rat
    * Community Admin
    * Community Builder
    <br /><br />
+
+More about personas:
+
+* https://www.smashingmagazine.com/2014/08/a-closer-look-at-personas-part-1/
+  recommends use of
+* https://creativecompanion.wordpress.com/2011/05/05/the-persona-core-poster/
+
+* Full details on creating and using personas is this: http://www.diva-portal.org/smash/get/diva2:319155/FULLTEXT01.pdf
+
+* https://venngage.com/blog/user-persona-examples/ points to
+* https://blog.appsee.com/how-to-get-persona-l-with-your-mobile-app-users/
 
 
 ### Development Lifecycle Roles
