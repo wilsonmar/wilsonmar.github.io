@@ -270,7 +270,7 @@ Adding narration at specific spots is relatively simple.
 Small videos can be converted to lower-resolution gif or higher-resolution png animation file format using:<br />
 <a target="_blank" href="https://ezgif.com/video-to-gif">https://ezgif.com/video-to-gif</a>
 
-## Archive Camtasia
+## Archive Share Camtasia
 
 When Camtasia makes a recording, it stores them in folder Movies > Camtasia 2018 > Temporary recordings.
 
@@ -278,16 +278,18 @@ Camtasia then automatically inserts the video into whatever camproj file is disp
 However, it leaves the file in the Temporary recordings folder.
 So when I archive the folder, those recordings are not in the folder.
 
-To make a proper archive, open Camtasia. Open you project. Click File > Export project as zip. Make sure "Include all clip bin items" is checked. Save the ZIP file to a location such as Downloads.
+To make a proper archive for sharing, open Camtasia. Open you project. Click File > <strong>Export project as zip</strong>. Make sure "Include all clip bin items" is checked. Save the ZIP file to a location such as Downloads.
+
+PROTIP: Due to the large size of files, I copy the zip file to a network Google Drive, then delete the file from my laptop.
+
 
 ## More Resources
 
-https://www.bmyers.com (Bill Myers) is the king of monitization,
-and has a $10/month subscription to watch his short tutorials.
+<a target="_blank" href="https://www.bmyers.com/">bmyers.com</a> (Bill Myers) is the king of monitization, and has a $10/month subscription to watch his short tutorials.
 
-http://www.davidfrosdick.com/
+<a target="_blank" href="http://www.davidfrosdick.com/">davidfrosdick.com</a>
 
-macintoshtipz.com
+<a target="_blank" href="https://www.macintoshtipz.com/">macintoshtipz.com</a>
 
-https://obsproject.com/
+<a target="_blank" href="https://obsproject.com/">obsproject.com</a>
 
