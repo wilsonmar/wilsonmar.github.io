@@ -97,11 +97,22 @@ More about personas:
 In a smaller company, one person can wear many hats, but in a larger company, specialized roles define what each person is responsible for. Logical roles include the following:
 
 * <strong>Release manager</strong> manages the release schedule and coordinates releases with the business. The release manager could be in charge of pulling changes from version control.
+
 * <strong>Product manager</strong> provides the business requirements of apps and features, and works with the development team to implement those requirements. The product manager also performs user acceptance testing to ensure that requirements have been implemented.
+
 * <strong>Software developer</strong> develops new functionality in sandbox, including both declarative point-and-click development and code.
+
 * <strong>Quality engineer</strong> tests new functionality in sandbox.
+
 * <strong>Administrator</strong> performs administrative tasks in the production org, and tracks all changes made in production.
+
 * <strong>Trainer</strong> conducts training of company employees for new applications and features.
+
+In larger classic enterprises, each role can be formalized into separate teams or departments of people, with its attendent communication and coordination issues.
+
+In smaller, Agile companies, one person may do all the above.
+Or different people in a team assume these roles at different times.
+
 
 ## More about Salesforce #
 
