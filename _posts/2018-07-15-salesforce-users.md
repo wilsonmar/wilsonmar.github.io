@@ -94,24 +94,25 @@ More about personas:
 
 ### Development Lifecycle Roles
 
-In a smaller company, one person can wear many hats, but in a larger company, specialized roles define what each person is responsible for. Logical roles include the following:
+Traditionally, HR departments in classic enterprises have define jobs roles such as these you might see on job boards:
 
-* <strong>Release manager</strong> manages the release schedule and coordinates releases with the business. The release manager could be in charge of pulling changes from version control.
+* <strong>Product managers</strong> define the business requirements of apps and features, and works with the development team to implement those requirements. The product manager also performs user acceptance testing to ensure that requirements have been implemented.
 
-* <strong>Product manager</strong> provides the business requirements of apps and features, and works with the development team to implement those requirements. The product manager also performs user acceptance testing to ensure that requirements have been implemented.
+* <strong>Software developers</strong> develop new functionality in sandbox, including both declarative point-and-click development and code.
 
-* <strong>Software developer</strong> develops new functionality in sandbox, including both declarative point-and-click development and code.
+* <strong>Quality engineers</strong> test new functionality.
 
-* <strong>Quality engineer</strong> tests new functionality in sandbox.
+* <strong>Release managers</strong> manage the release schedule and coordinates releases with the business. Some could be in charge of pulling changes from version control and moving them among various environments.
 
-* <strong>Administrator</strong> performs administrative tasks in the production org, and tracks all changes made in production.
+* <strong>Administrators</strong> perform administrative tasks in the production org, and tracks all changes made in production.
 
-* <strong>Trainer</strong> conducts training of company employees for new applications and features.
+* <strong>Trainers</strong> design and conduct training of employees and partners for new applications and features.
 
-In larger classic enterprises, each role can be formalized into separate teams or departments of people, with its attendent communication and coordination issues.
+PROTIP: In larger enterprises, such formalizations into separate teams or entire departments of people has attendent communication and coordination issues.
+Such separation assume an <strong>assembly-line</strong> approach where one group can pass its output to another group with communication mainly among managers rather than workers.
 
-In smaller, Agile companies, one person may do all the above.
-Or different people in a team assume these roles at different times.
+In smaller, Agile companies, one person may do all the above for a particular <strong>product</strong>. ("wear many hats").
+Or different people in a team assume different roles at different times.
 
 
 ## More about Salesforce #
