@@ -27,7 +27,7 @@ PROTIP: The Hawaiian word "Aloha" means hello (and goodbye) has been applied to 
 
 ![sf-tallest-648x558-65050](https://user-images.githubusercontent.com/300046/43551978-2ffdeb20-95a6-11e8-92c3-c919dee9811b.jpg)
 
-In other words, Salesforce "towers above" <a target="_blank" href="https://employbl.com/">other tech companies in San Francisco</a>. <a target="_blank" href="https://www.salesforce.com/blog/2018/07/dreampitch-startup-ultimate-elevator-pitch?d=cta-body-promo-111">Dreampitches</a> are done in the 40 seconds riding up its 61 stories.
+In other words, Salesforce "towers above" <a target="_blank" href="https://employbl.com/">other tech companies in San Francisco</a>. <a target="_blank" href="https://www.salesforce.com/blog/2018/07/dreampitch-startup-ultimate-elevator-pitch?d=cta-body-promo-111">Dreampitches</a> are done in the 40 seconds to the 61st floor "Ohana Floor" observation area for non-profits. Beginning Feb 23, 2019, <a target="_blank" href="https://www.salesforcetowertours.com/">tours</a> there are offered once a month on Saturday for groups of 50 for an hour.
 
 Designed by <a target="_blank" href="http://pcparch.com/">Pelli, Clarke, Pelli Architects</a>, the top 6 stories is lit by 11,000 LEDs programmed by <a target="_blank" href="http://www.jimcampbell.tv/portfolio/public_art/salesforce_tower/">artist Jim Campbell</a>. <a target="_blank" href="https://www.youtube.com/watch?v=DqOWyL5S1UE&t=6s">Click this picture to see a video of the lobby's amazing wall-to-wall video wall:<br />
 <img alt="salelsforce-tower-lobby-299x156-60483.jpg" src="https://user-images.githubusercontent.com/300046/45239024-0d743b00-b2a1-11e8-94ef-dc5c9a0073b4.png"></a>
@@ -62,11 +62,15 @@ The company has seen a consistent growth rate of 35% year-over-year, unrivaled i
 
 ## Stay Informed on Social Media
 
+<a target="_blank" href="https://www.reddit.com/r/salesforce/">reddit.com/r/salesforce/</a> subreddit is very active.
+
+<a target="_blank" href="https://discordapp.com/invite/S4HhsyG">Salesforce Study Group on Discord mobile app</a>.
+
 <a name="Podcasts"></a>
 
 ### Podcasts
 
-PROTIP: Drive a lot? Listen to voice-only podcasts while commuting:
+PROTIP: Drive a lot? Take public transportation? Listen to voice-only podcasts while commuting:
 
    * <a target="_blank" href="https://salesforce.com/marketingcloudcast/">The Marketing Cloudcast</a> has 99+ episodes since Oct. 2016 <a target="_blank" href="https://play.google.com/music/listen?u=0#/ps/I6pcs6jawpetsbyhp5qaf42ahmy">
    on Google Play</a>. It "offers key marketing campaign tactics, popular trends, interviews with marketing leaders, and relevant insights — such as social media stats and data management strategies in marketing today. Hosts Megan Collins ( @CollinsMeMegan) and Tina Rozul (@crozul) dive into topics such as performance on individual marketing channels, marketing career advice, the future of marketing, and beyond. 
