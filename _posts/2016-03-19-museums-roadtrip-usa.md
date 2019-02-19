@@ -56,7 +56,7 @@ the route</a> mapped below:
 
 ## Gas and Charging #
 
-<a target="_blank" href="https://www.tesla.com/supercharger">Tesla supercharger locations:<br />
+[<a target="_blank" href="https://en.wikipedia.org/wiki/Tesla_Supercharger">Tesla supercharger</a>] <a target="_blank" href="https://www.tesla.com/supercharger">locations:<br />
 <img alt="map tesla charging stations 650x334-c59" width="650" height="334" src="https://cloud.githubusercontent.com/assets/300046/17037278/538ea0f8-4f4d-11e6-907a-6a0b65a807e5.jpg"></a>
 
 A map of stations offering Ethanol-free premium gasoline is at
