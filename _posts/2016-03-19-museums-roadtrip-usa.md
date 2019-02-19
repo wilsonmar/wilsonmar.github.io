@@ -56,8 +56,7 @@ the route</a> mapped below:
 
 ## Gas and Charging #
 
-Tesla superchargers:
-
+<a target="_blank" href="https://www.tesla.com/supercharger">Tesla supercharger locations</a>:
 <a target="_blank" title="Tesla Superchargers in the US planned for 2016" href="https://www.tesla.com/supercharger">
 <img alt="map tesla charging stations 650x334-c59" width="650" height="334" src="https://cloud.githubusercontent.com/assets/300046/17037278/538ea0f8-4f4d-11e6-907a-6a0b65a807e5.jpg"></a>
 
