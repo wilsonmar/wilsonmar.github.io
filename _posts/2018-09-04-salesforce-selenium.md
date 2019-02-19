@@ -50,7 +50,7 @@ Since Java programs use Maven to manage versions.
 
 ## Selenium Internal to Salesforce
 
-On June 7, 2013, Salesforce employee <a target="_blank" href="https://www.linkedin.com/in/jimevansmusic/">Jim Evans</a> (<a target="_blank" href="https://twitter.com/jimevansmusic">@jimevansmusic</a>, a Selenium committer) published <a target="_blank" href="
+On June 7, 2013, Salesforce employee <a target="_blank" href="https://www.linkedin.com/in/jimevansmusic/">Jim Evans</a> (<a target="_blank" href="https://twitter.com/jimevansmusic">@jimevansmusic</a>, a Selenium committer of <a target="_blank" href="https://twitter.com/hashtag/IEDriver?src=hash">#IEDriver</a>) published <a target="_blank" href="
 https://developer.salesforce.com/blogs/engineering/2013/06/automated-testing-using-selenium-at-salesforce.html">this blog</a> saying that "At Salesforce, we use the Selenium open-source project to execute over 40,000 UI-based test cases on our applications as part of our continuous integration build infrastructure."
 
 At the SeleniumConf Boston 11 June 2013, <a target="_blank" href="https://www.linkedin.com/in/david-louvton-191899/">David Louvton</a> and Amool Gupta presented <a target="_blank" href="https://www.youtube.com/watch?v=zFv-4AsPLmY">"Scaling Selenium: The Selenium Infrastructure at Salesforce"</a>.
@@ -92,6 +92,8 @@ Apache "SureFire" generates test reports.
 Other aspects of the full workflow include a management system for managing the anomalies and "defects" found.
 
 ## Protractor
+
+See my <a target="_blank" href="https://wilsonmar.github.io/protractor">tutorial about Protractor</a>.
 
 The "Protractor" build of Selenium adds the capability to test apps built using the Angular framework.
 (Protractor makes querying for elements much easier by adding accessors to Angular models, bindings, ng-options, and finding elements inside ng-repeat.
@@ -177,17 +179,18 @@ Steps to Create Script Automation Script
 
 Rajeev Mehta of 3PillarGlobal, in <a target="_blank" href="https://www.3pillarglobal.com/insights/automated-testing-with-salesforce-and-selenium">this article</a> explains how he automatically generates access tokens for testing.
 
-
-by Jitendra Zaa (Salesforce MVP)
+By Jitendra Zaa (Salesforce MVP):
 
    * <a target="_blank" href="https://www.jitendrazaa.com/blog/salesforce/getting-started-with-selenium-and-salesforce-salesforce-automation-testing-video-tutorial-part-1/">https://www.jitendrazaa.com/blog/salesforce</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=8CRsCmM_jyI">Getting started with Selenium IDE and Salesforce - Part 1</a> Mar 28, 2015 [11:08] (unfortunately, Selenium IDE is gone)
    * <a target="_blank" href="https://www.youtube.com/watch?v=2pb7wmOpYxI">Selenium automated testing Part 2</a> 
    * <a target="_blank" href="https://www.youtube.com/watch?v=4H1kj8GUebw">Performing Load Testing in Salesforce using Selenium and TestNG</a> [3:05] Aug 27, 2017
    * <a target="_blank" href="https://www.youtube.com/watch?v=VSa7PgIANvs">Continuous integration in Salesforce Using Jenkins and Git in 20 minutes</a>
+   <br /><br />
 
 MST Solutions:
-   * <a target="_blank" href="https://www.youtube.com/watch?v=kN_DWzbh7-Q">Automated Salesforce Testing using Selenium Webdriver</a> Dec 29, 2015 [5:48] 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=kN_DWzbh7-Q">Automated Salesforce Testing using Selenium Webdriver</a> Dec 29, 2015 [5:48] is not high quality
+
 
 ## Cucumber
 
