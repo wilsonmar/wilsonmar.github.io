@@ -16,42 +16,54 @@ comments: true
 
 {% include _toc.html %}
 
-"Dockerizing" an application is the process of converting an application to run within a Docker container
+This is a hands-on tutorial on how to create Dockerfile and docker-compose files
+that contain commands controlling how Docker instantiates Containers across several operating systems.
+
+<strong>"Dockerizing"</strong> an application is the process of converting an application to run within a Docker Container
 and creating the Dockerfile for it.
 
-I keep examples of Dockerfiles at<br />
+![dockerize-fig-596x287-21931](https://user-images.githubusercontent.com/300046/53098570-ef6a6200-34f1-11e9-930e-cbc42d086535.jpg)
+
+Traditionally, to defined what processes ran on a machine, a build script or manual typing on a Terminal used the operating system's CLI (Command Line Interface). Such scripts are stored in a particular Git repository within the GitHub version control system. 
+
+(I keep examples of Dockerfiles at<br />
 <a target="_blank" href="https://github.com/wilsonmar/Dockerfiles">
-https://github.com/wilsonmar/Dockerfiles</a>
+https://github.com/wilsonmar/Dockerfiles</a>)
 
-This is a hands-on tutorial on how to create
-Dockerfile and docker-compose files
-that contain commands controlling how Docker instantiates containers across several operating systems.
-
+When we use Docker, instead of a shell script, we create a Dockerfile which specifies various layers of pre-built packages in DockerHub. 
 A Docker image is a read-only template used to create and launch a Docker container.
 
+There is a separate Dockerfile in each folder within a Git-controlled repository stored in a GitHub or other Version Control system so that entire sets of files can be retrieved from every point in time. 
 
+Dockerfiles specify images containing app assets which are pulled into Docker instances by the Docker Engine. 
+On a Mac, the Container Engine runs within a Docker for Mac process. 
 
+Each image is generated from a static snapshot of an instance.
+
+Container orchestration utilities such as Kubernetes or Docker Compose make requests of Docker Engine through its API to automatically create additional pods as needed based on specification of a Helm or Compose file. Kubernetes can also remove pod instances when monitoring indicates that less are needed.
+
+Docker images and containers are a key building block for the Service Mesh architecture which has an Envoy component in each pod to handle communication and security certificates.
 
 
 ## Dockerize apps #
 
 Let's begin with an example.
 
-0. Navigate to the folder containing a Dockerfile.
+0. Create or navigate to the folder containing a Dockerfile (or should contain one).
 
-   NOTE: Creating the Dockerfile is called "dockerizing" a folder.
+   A folder is needed because each Dockerfile must be named "Dockerfile".
 
 0. View the Dockerfile:
 
-    <tt><strong>
-    cat Dockerfile
-    </strong></tt>
+   <tt><strong>cat Dockerfile</strong></tt>
 
-    Alternately, you may prefer to open the file using a text editor or IDE.
+   Alternately, you may prefer to open the file using a text editor or IDE.
 
-    There are only a handful of instructions (verbs) in a Dockerfile.
+   There are only a handful of instructions (verbs) in a Dockerfile.
 
-    <pre>
+   For example:
+
+   <pre>
 FROM node:0.10.44-slim
 COPY . /home/demo/box/
 RUN cd /home/demo/box && npm install
@@ -224,6 +236,55 @@ ENTRYPOINT ["java","<a target="_blank" href="http://www.thezonemanager.com/2015/
    mount a local path and map it to a path within the container 
 
    ~/Source/projecta:/usr/src/app
+
+
+## Java
+
+The JVM historically looked in <tt>/proc</tt> to figure out how much memory was available so it can set its heap size based on that value. 
+
+However, containers like Docker don’t provide container specific information in <tt>/proc</tt> because it's a priviledged folder, like <tt>/sys</tt>.
+
+And JVM was written before Docker switches (<tt>-m</tt>, <tt>–memory</tt> and <tt>–memory-swap</tt>) and the Kubernetes switch (<tt>–limits</tt>) which instruct the Linux kernel to kill the process (as an OOM (Out of Memory) error) if it tries to exceed the limit specified.
+When <tt>-m 150M</tt> is specified in the Docker command line, the docker daemon will limit 150M in RAM and 150M in Swap. 
+As a result, the process can allocate the 300M and it explains why our process didn’t receive any kill from the Kernel.
+
+So Christine Flood <a target="_blank" href="https://developers.redhat.com/blog/2017/04/04/openjdk-and-containers/#more-433899">proposed</a>
+a JVM command line argument which tells the <a target="_blank" href="https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gc-ergonomics.html">JVM ergonomics</a> to look in <tt>/sys/fs/cgroup/memory/memory.limit_in_bytes</tt> to figure out how much memory is available:
+
+   <pre>
+-XX:+UnlockExperimentalVMOptions
+-XX:+UseCGroupMemoryLimitForHeap
+   </pre>
+
+These are added as the $JAVA_OPTIONS environment variable included in a Docker command such as:
+
+   <pre>CMD java -XX:+PrintFlagsFinal -XX:+PrintGCDetails $JAVA_OPTIONS -jar java-container.jar</pre>
+
+When running Docker:
+
+   <pre>docker run -d --name mycontainer8g -p 8080:8080 -m 800M -e JAVA_OPTIONS='-Xmx300m' rafabene/java-container:openjdk-env</pre>
+
+docker logs mycontainer8g|grep -i MaxHeapSize
+
+
+
+
+If this patch isn’t available in the OpenJDK version you are running you can simulate it by setting -XX:MaxRAM=n explicitly.
+
+Java 10 has all the improvements needed to run inside a container.
+
+But those staying with JDK 8u131+ and JDK 9 need to specify an experimental VM option 
+that allows the JVM ergonomics to read the memory values from CGgroups:
+
+docker run -it --name mycontainer -p 8080:8080 -m 600M rafabene/java-container:openjdk10
+
+One way to solve this problem is using the Fabric8 Base image that is capable of understanding that it is running inside a restricted container and it will automatically adjust the maximum heap size if you haven’t done it yourself.
+
+
+http://rafabene.com/2017/07/07/java-inside-docker/
+
+
+
 
 
 <a name="DockerCompose"></a>
