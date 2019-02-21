@@ -142,6 +142,7 @@ http://uitestingplayground.com/
 ### Isaac Lewis 
 
 https://github.com/isalew/selenium-sfdc/blob/master/selenium-sfdc.js
+Salesforce REST API for Selenium IDE
 
 ### Logicline Framework
 

@@ -38,7 +38,7 @@ There is a separate Dockerfile in each folder within a Git-controlled repository
 Dockerfiles specify images containing app assets which are pulled into Docker instances by the Docker Engine. 
 On a Mac, the Container Engine runs within a Docker for Mac process. 
 
-Each image is generated from a static snapshot of an instance.
+Each <a target="_blank" href="https://docs.docker.com/engine/reference/commandline/image_build/">image is built</a> from a static snapshot of an Container.
 
 Container orchestration utilities such as Kubernetes or Docker Compose make requests of Docker Engine through its API to automatically create additional pods as needed based on specification of a Helm or Compose file. Kubernetes can also remove pod instances when monitoring indicates that less are needed.
 
@@ -356,8 +356,11 @@ This tutorial is based on these and other resources:
    * https://runnable.com/docker/java/dockerize-your-java-application
 
 https://www.udemy.com/zero-to-docker/learn/v4/t/lecture/7270460?start=0
+
 https://github.com/schoolofdevops/voting-app-worker
+
 https://schoolofdevops.com
+
 https://hub.docker.com/u/schoolofdevops/
 
 

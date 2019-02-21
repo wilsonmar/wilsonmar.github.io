@@ -19,7 +19,7 @@ comments: true
 
 * <a target="_blank" href="https://www.twitter.com/">Twitter</a>
 * <a target="_blank" href="https://www.facebook.com/">Facebook</a>
-* <a target="_blank" href="https://www.linkedin.com/">LinkedIn</a> (Microsoft)
+* <a target="_blank" href="https://www.linkedin.com/">LinkedIn</a> (Microsoft) * <a target="_blank" href="https://www.linkedin.com/mynetwork/invite-connect/connections/">connections</a>
 * <a target="_blank" href="https://www.xing.com/">Xing</a> social network
 
 * <a target="_blank" href="https://www.youtube.com/">YouTube</a> videos (Google)
