@@ -188,17 +188,19 @@ By Jitendra Zaa (Salesforce MVP):
    * <a target="_blank" href="https://www.youtube.com/watch?v=VSa7PgIANvs">Continuous integration in Salesforce Using Jenkins and Git in 20 minutes</a>
    <br /><br />
 
-MST Solutions:
-   * <a target="_blank" href="https://www.youtube.com/watch?v=kN_DWzbh7-Q">Automated Salesforce Testing using Selenium Webdriver</a> Dec 29, 2015 [5:48] is not high quality
+https://www.forcetalks.com/blog/salesforce-with-selenium/
+by Manglesh Manglesh Sep 14, 2017
+provides sample code in video
+https://automationeasyway.wordpress.com/2017/09/10/automation-testing-setup/
 
 
-## Cucumber
+MST Solutions: <a target="_blank" href="https://www.youtube.com/watch?v=kN_DWzbh7-Q">Automated Salesforce Testing using Selenium Webdriver</a> Dec 29, 2015 [5:48] unrecognizable audio about use of Excel file for data-driven testing is provided at
+   https://www.mstsolutions.com/technical/automated-salesforce-testing-using-selenium-webdriver/
 
-https://www.youtube.com/watch?v=US39w9XwuP4
-Test Automation With Cucumber JVM, Selenium, and Mocha
-Dreamforce Video
 
-https://github.com/wilsonmar/DevSecOps/tree/master/Kakunin
+https://bluecanvas.io/2016/12/13/apex-unit-selenium-salesforce.html
+Use ApexUnit and Selenium to Speed Up Salesforce Development
+
 
 ## Lightning
 

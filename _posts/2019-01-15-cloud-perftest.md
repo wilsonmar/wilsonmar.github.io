@@ -61,6 +61,9 @@ points out internal issues such as whether images are compressed enough and the 
 
 <a target="_blank" href="http://www.webpagetest.org/"> shows what users see, in slow motion</a> of pages in various stages of completeness.
 
+<a target="_blank" href="http://checkgzipcompression.com/">http://checkgzipcompression.com</a> reports whether a site has Gzip enabled.
+
+
 
 <a name="Custom"></a>
 
@@ -164,7 +167,8 @@ For example, to get a server with more RAM, you also pay for more cores (vCPUs) 
 A doubling of RAM usually costs twice as much, or more.
 However, upgrading usually doesn't yield the same increase in how much is processed.
 For example, a doubling of RAM does not usually yield a doubling of transaction throughput.
-So one question performance engineers are asked to answer is whether running two smaller servers processes more transactions than a big server with the equivalent memory of several smaller servers.<a href="#Tasks">*</a>
+
+QUESTION: So one question performance engineers are asked to answer is whether running two smaller servers processes more transactions than a big server with the equivalent memory of several smaller servers.<a href="#Tasks">*</a>
  
 BTW, Amazon sells RAM memory by "GiB" (for Gibibyte) rather than the more traditional "Gigabytes" used by hard disk drive manufacturers to mean 1,000,000,000,when using a "base 10" method of counting, where each digit can have 10 values (from 0 thru 9). Counting each digit, that's 10 to the 9th power.<a target="_blank" href="https://steemit.com/data-science/@deeplizard/hexadecimal-explained-or-higher-than-base-10-positional-numeral-systems">*</a>
 A Gibitype is based on "base 2" (1 or 0) counting that computers use internally, and 2 to the 30th power which is equivalent to worth 1,073,741,824 bytes in base 10. The difference between the two increases exponentially as numbers get larger: about 7% at the Gibibyte/Gigabyte level but 9% at the Tibibyte/Terabyte level (the equivalent of 1,099,511,627,776 bytes in base 2).
@@ -191,12 +195,11 @@ But most businesses websites prefer their websites to be able to handle more bus
 
 
 
-
 <a name="BusinessObjective"></a>
 
 ## The Business Objective
 
-The big takaway from this line of thinking is that here we focus on the <strong>business objective</strong> of obtaining the <strong>safest way to achieve the highest rate of business transactions at the least total cost</strong>.<a href="#Tasks">*</a>
+The big takeaway from this line of thinking is that here we focus on the <strong>business objective</strong> of obtaining the <strong>safest way to achieve the highest rate of business transactions at the least total cost</strong>.<a href="#Tasks">*</a>
 
 The total cost calculation should include the cost of dissatisfied customers who cannot reach the website
 or abandon the site (and not buy) when it's too slow due to it being overloaded.
@@ -261,17 +264,21 @@ There are several different types of server images:
    * Docker containers from DockerHub.com, Quary.io, etc.
    <br /><br />
 
-All the images except Docker contain the underlying operating system and utilities in each imageß.
+All the images (except Docker) contain the underlying operating system and utilities in each image.
 
 Some AMI creators charge its users money. 
-But many pay it because it saves them hassle and time, which mean money.
+But many pay it because it saves them hassle and time.
 
-Is the extra cost worth the extra savings? Load testing can answer that question.
-QUESTION: To determine the cost of processing using any given server configuration, one needs to measure use of processing, storage, and network data transfers at various levels of user load accessing the server at various points as load increases.<a href="#Tasks">*</a>
+QUESTION: Is the extra cost worth the extra savings? Load testing can answer that question.
 
-Such tests enaables load engineering work into profit centers by identify cost savings.
+Historically, Intel processors are used by AWS, but in 2018, machines with <strong>ARM processors</strong> became available, 
+for a 40% cost savings.
 
-NEXT: Server images are necessary to create multiple instances of the same application.
+QUESTION: To determine the cost of processing using any given server configuration, one needs to measure use of processing, storage, network data transfers, etc. at various levels of user load accessing the server at various points as load increases.<a href="#Tasks">*</a>
+
+> Instead of just testing, "performance engineering" yields <strong>configuration changes which identify cost savings</strong>.
+
+NEXT: Server images are necessary to create multiple instances of the same application, for "elasticitiy".
 
 
 <a name="MultipleInstances"></a>

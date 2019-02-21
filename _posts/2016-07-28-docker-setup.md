@@ -141,24 +141,17 @@ containing Docker commands.
 
 Each container runs as an isolated process on a shared kernel.
 
+Containers are more similar to isolation mechanisms where the resources (CPU, memory, filesystem, network, etc.) for one process are isolated from another. This isolation is possible due to a Linux kernel feature <a target="_blank" href="https://en.wikipedia.org/wiki/Cgroups">CGroups</a> (abbreviated from "Control Groups").
 
 ### Competition
 
-http://www.boycottdocker.org/
-raises some technical concerns.
+<a target="_blank" href="http://www.boycottdocker.org/">boycottdocker.org</a> raises some technical concerns.
 
 Alternatives to Docker:
 
-<a target="_blank" href="https://coreos.com/">
-CoreOS</a> developed
-<a target="_blank" href="https://github.com/appc/spec/">
-appc</a> with a <strong>rkt</strong> (pronounced "rocket") implementation
-in their 
-<a target="_blank" href="https://www.opencontainers.org/">
-Open Containers Initiative</a> (OCI).
+* <a target="_blank" href="https://coreos.com/">CoreOS</a> developed <a target="_blank" href="https://github.com/appc/spec/">appc</a> with a <strong>rkt</strong> (pronounced "rocket") implementation in their <a target="_blank" href="https://www.opencontainers.org/">Open Containers Initiative</a> (OCI). The <a target="_blank" href="https://github.com/opencontainers/runc/">runC</a> CLI tool for spawning and running containers is built using Go v1.6+.
 
-<a target="_blank" href="https://www.ubuntu.com/cloud/lxd">
-Canonical of Ubuntu has their LXD</a>
+* <a target="_blank" href="https://www.ubuntu.com/cloud/lxd">Canonical of Ubuntu has their LXD</a>
 
 
 <hr />
@@ -914,7 +907,7 @@ Live Restore Enabled: false
    If you're already linked, an "Unlink" appears.
    Proceeding as if there isn't.
 
-0. CAUTION: Select "Public and Private" means Docker can see your private repositories.
+0. CAUTION: Selecting "Public and Private" means Docker can see ALL your private repositories.
 
    PROTIP: Open a another set of GitHub and Docker accounts based on another email account
    to work only with public-facing repos for this exercise.
@@ -928,13 +921,13 @@ Live Restore Enabled: false
 
 0. Click on the repo.
 0. Type in a short description and click Create.
-0. Under the "Docker Pull Command" at the right pane:
+0. Under the "Docker Pull Command" at the right pane, for example:
 
    <tt><strong>
    docker pull wilsonmar/99bottles-jmeter
    </strong></tt>
 
-   Notice the target isn't a URL but an account name.
+   Notice that, to Dockerhub, "target" isn't a URL but an account name.
 
 0. Copy and paste the command above.
 
@@ -962,7 +955,7 @@ jenkins/jenkins     latest              9ec0e1781a1b        41 hours ago        
 nginx               latest              1e5ab59102ce        8 days ago          108MB
    </pre>
 
-0. Remove all images pulled:
+0. Remove all images pulled, to save disk space:
 
    <tt><strong>docker rmi $(docker images -a -q)
    </strong></tt>
@@ -1231,23 +1224,23 @@ On Linux:
 
 OSX with Docker for Mac
 
-    The vm_max_map_count setting must be set within the xhyve virtual machine:
+   The vm_max_map_count setting must be set within the xhyve virtual machine:
 
-    <tt><strong>screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty
-    </strong></tt>
+   <tt><strong>screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty
+   </strong></tt>
 
-    Log in with root and no password. Then configure the sysctl setting as you would for Linux:
+   Log in with root and no password. Then configure the sysctl setting as you would for Linux:
 
-    <tt><strong>sysctl -w vm.max_map_count=262144
-    </strong></tt>
+   <tt><strong>sysctl -w vm.max_map_count=262144
+   </strong></tt>
 
-OSX with Docker Toolbox 
+MacOS with Docker Toolbox:
 
-    The vm_max_map_count setting must be set via docker-machine:
+   The vm_max_map_count setting must be set via docker-machine:
 
-    <tt><strong>docker-machine ssh<br />
-    sudo sysctl -w vm.max_map_count=262144
-    </strong></tt>
+   <tt><strong>docker-machine ssh<br />
+   sudo sysctl -w vm.max_map_count=262144
+   </strong></tt>
 
 
 
@@ -1266,9 +1259,8 @@ OSX with Docker Toolbox
 
    Dockur UCP also provides specialized monitoring.
 
-   <a target="_blank" href="https://docs.docker.com/ucp/">
-   https://docs.docker.com/ucp</a><br />
-   has more information about Docker UCP.
+   See <a target="_blank" href="https://docs.docker.com/ucp/">
+   https://docs.docker.com/ucp</a>
 
 
 
@@ -1333,7 +1325,7 @@ To try something more ambitious, you can run an Ubuntu container with:
 &nbsp;
 Share images, automate workflows, and more with a free Docker Hub account:
  https://hub.docker.com
-    </pre>
+   </pre>
 
 
 0. Run the container just downloaded in a Mac:
@@ -1342,7 +1334,7 @@ Share images, automate workflows, and more with a free Docker Hub account:
    docker run -it ubuntu bash
    </strong></tt>
 
-   PROTIP: Mac uses ubuntu commands.
+   PROTIP: Mac uses Ubuntu commands.
 
    The response:
 
@@ -1508,7 +1500,9 @@ Options:
    docker exec -it test ps aux
    </strong></tt>
 
-Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+   <pre>
+   Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+   </pre>
 
    <pre>
 docker: Cannot connect to the Docker daemon. Is the docker daemon running on this host?.
@@ -1521,7 +1515,7 @@ See 'docker run --help'.
 
    ### Docker pull
    
-0. To bring the Dockerfile local without running it also:
+1. To bring the Dockerfile local without running it also:
 
    <tt><strong>docker pull library/hello-world
    </strong></tt>
@@ -1569,10 +1563,9 @@ node                0.10.44-slim        f73347dab179        12 weeks ago        
    </strong></tt>
 
 
-   ### Dockviz
+### Dockviz
 
-0. PROTIP: Consider a third-party tool to display visualizations of image data:
-
+PROTIP: Consider a third-party tool to display visualizations of image data:
    <a target="_blank" href="https://github.com/justone/dockviz">
    dockviz</a> presents Docker image and container information in graphic form
    to help you understand what's going on inside the system.
@@ -1587,11 +1580,11 @@ node                0.10.44-slim        f73347dab179        12 weeks ago        
    It presents an ImageLayers badge about the size of an image, and how many layers it is composed of.
 
 
-   <a name="DockerSearch"></a>
+<a name="DockerSearch"></a>
 
-   ### Base DockerHub Search #
+### Base DockerHub Search #
 
-0. See the Officially supported repositories at:<br />
+See the Officially supported repositories at:<br />
    <a target="_blank" href="https://hub.docker.com/explore/">
    https://hub.docker.com/explore</a>
 
@@ -2527,7 +2520,7 @@ Commands:
 
    choco install kubernetes-kompose
 
-   ### Alternatives include 
+### Alternatives include 
 
    * Kubernetes by Google, 
    * Mesos
@@ -2539,7 +2532,7 @@ Commands:
    * Helios
 
 
-   ### Monitoring
+### Monitoring
 
    Monitor using cAdvisor collecting stats to write to InfluxDB, displayed by Grafana,
    described
