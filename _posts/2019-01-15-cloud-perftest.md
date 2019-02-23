@@ -47,11 +47,11 @@ The Developer Tools built into Chrome is used to identify how web driver program
 Those concerned about what is keeping <a href="#LandingPages">landing pages</a> from loading faster use Google's Lighthouse and other web tools to get recommendations about techniques to speed up landing pages. To get timings about other pages within the app, right now your functional test scripts have to save them.
 Those who want to put load on the server use load generators operated by load testing scripts that replace work on real app clients with "synthetic" or "virtual" users. While load is imposed, status such as the rate of transactions and errors encountered are reported by load generators. Metrics such as CPU and memory within servers are obtained by Dynatrace agents installed on servers. Results from runs are then analyzed. 
 
-Web-based services such as StormRunner, <a target="_blank" href="https://www.blazemeter.com/">BlazeMeter</a>, <a target="_blank" href="https://flood.io/">Flood.io</a>, and others  enable Load testing scripts load tests to be run from a web browser instead of a local controller. Traditionally, load testing scripts are created using JMeter or LoadRunner's VuGen client application which capture, then turn into test scripts, what is exchanged over the network wire between server and clients. But as more and more work is done within browsers instead of servers, TruClient was created for LoadRunner VuGen to record and emulate the DOM and actions of individual virtual users. Flood.io Elements does that also, but using just a web browser. 
+Web-based services such as <a target="_blank" href="https://www.microfocus.com/en-us/products/stormrunner-load-agile-cloud-testing/overview">StormRunner</a>, <a target="_blank" href="https://www.blazemeter.com/">BlazeMeter</a>, <a target="_blank" href="https://flood.io/">Flood.io</a>, and others  enable Load testing scripts load tests to be run from a web browser instead of a local controller. Traditionally, load testing scripts are created using JMeter or LoadRunner's VuGen client application which capture, then turn into test scripts, what is exchanged over the network wire between server and clients. But as more and more work is done within browsers instead of servers, TruClient was created for LoadRunner VuGen to record and emulate the DOM and actions of individual virtual users. Flood.io Elements does that also, but using just a web browser. 
 
 JMeter scripts can invoke the APIs of Web Drivers to control <a target="_blank" href="https://www.blazemeter.com/blog/mixing-selenium-into-your-load-scenario">many browsers running in BlazeMeter</a>. To load test APIs, we're looking forward to mature tools to convert SOAPUI scripts and Open API (Swagger) specs into load testing scripts. 
 
-As with all code, when scripts are stored in a Git Repository pushed to a GitHub repository, <a target="_blank" href="https://wilsonmar.github.io/git-hooks">hooks</a> can be defined to automatically initiate <strong>monitoring</strong> and build of servers before kicking off load testing jobs.
+As with all code, when scripts are stored in a Git Repository pushed to a GitHub repository or a merge request is made, <a target="_blank" href="https://wilsonmar.github.io/git-hooks">hooks</a> can automatically initiate <strong>monitoring</strong> and build of servers before kicking off load testing jobs.
 
 
 <a name="LandingPages"></a>
@@ -118,7 +118,7 @@ Enter SaaS in a cloud.
 
 <a name="SaaS"></a>
 
-## SaaS (Software as a Service)
+## SaaS (Software as a Service) for apps in the cloud
 
 To take advantge of the availability of the internet, in the late 1990's 
 software vendors such as <a target="_blank" href="https://wilsonmar.github.io/salesforce/">Salesforce</a> emerged to offer users functionality completely through an internet browser. Such vendors take care of providing the underlying technologies such as operating system software, databases, and the "framework" that enables customization of functionality. SaaS vendors also handle hardware provisioning, making sure to have whatever number of servers are available, behind the scenes, like dining at a fine restaurant.
