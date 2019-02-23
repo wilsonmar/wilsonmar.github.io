@@ -642,32 +642,6 @@ Use Chrome Developer Tools to see HTML id and names.
 
    See https://medium.com/@tacomanator/environments-with-create-react-app-7b645312c09d
 
-<a name="AdditionalFunctions"></a>
-
-### Additional Functions
-
-Protractor adds a convenient "waitfor" functions and accessors (locators) by button text, partial button text. 
-
-Protractor enables "find" by a combination of CSS and text (get me all the divs with class ‘pet’ and text ‘dog’).
-
-Protractor adds the "addLocator" function to add custom locators. For example, get elements by handlebars properties.
-
-By.id
-By.css
-By.className
-By.linkText
-By.js
-By.name
-By.xpath
-By.tagName
-
-   <pre>
-   element(by.model(‘locator’));
-   element(by.binding(‘locator’));
-   element(by.repeater(‘locator’));
-   </pre>
-
-
 <a name="Timings"></a>
 
 ### Timings
@@ -788,6 +762,45 @@ Notes:
 -->
 
 
+## Object recognition
+
+https://github.com/agilethought/inside-protractor-locators
+
+Every protractor locator is formatted as (by.*), where * is the locator you have chosen to locate the element. Here is a list of the most common locators:
+
+
+## Page Objects
+
+https://www.protractortest.org/#/page-objects
+
+
+
+<a name="AdditionalFunctions"></a>
+
+### Additional Functions
+
+Protractor adds a convenient "waitfor" functions and accessors (locators) by button text, partial button text. 
+
+Protractor enables "find" by a combination of CSS and text (get me all the divs with class ‘pet’ and text ‘dog’).
+
+Protractor adds the "addLocator" function to add custom locators. For example, get elements by handlebars properties.
+
+By.id
+By.css
+By.className
+By.linkText
+By.js
+By.name
+By.xpath
+By.tagName
+
+   <pre>
+   element(by.model(‘locator’));
+   element(by.binding(‘locator’));
+   element(by.repeater(‘locator’));
+   </pre>
+
+
 <a name="Cucumber"></a>
 
 ## Cucumber
@@ -797,6 +810,7 @@ CucumberJS supports <strong>async</strong> programming concepts in scripts with 
 1. for Cucumber, we use Typescript, which adds additional ("object oriented programming" featuers)  to JavaScript. 
 
    A strongly typed superset of plain Javascript.
+
 
 
 <a name="Mocha"></a>
@@ -887,17 +901,6 @@ More precisely, a fake server provides fake responses to AJAX requests made to s
 
 In summary, SinonJS is a more complete framework test double framework than Jasmine, 
 including not only spies but also stubs and fakes. 
-
-
-## Object recognition
-
-https://github.com/agilethought/inside-protractor-locators
-
-Every protractor locator is formatted as (by.*), where * is the locator you have chosen to locate the element. Here is a list of the most common locators:
-
-## Page Objects
-
-https://www.protractortest.org/#/page-objects
 
 
 ## Learning Resources

@@ -19,6 +19,7 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 The attempt here is a logical sequence to cover tactics and strategies for several alternative architectures:
 
+* <a href="Tools">Tools landscape</a>
 * <a href="#Custom">Custom executables</a>
 * <a href="#SaaS">SaaS</a>
 * <a href="#SingleInstance">Single-instance</a>
@@ -29,8 +30,31 @@ The attempt here is a logical sequence to cover tactics and strategies for sever
 * <a href="#Lightsail">Amazon Lightsail</a>
 <br /><br />
 
-TODO: Split up this long page into separate pages, and re-published on Medium as separate parts.
+<!-- TODO: Split up this long page into separate pages, and re-published on Medium as separate parts. -->
 
+<a name="Tools"></a>
+
+## Tools landscape
+
+![cloud-perftest-v2-1171x587-70051](https://user-images.githubusercontent.com/300046/53289410-b0dbde00-3763-11e9-93b1-17d5c6a4b152.jpg)
+
+We test for several reasons using various tools. One is see whether the User Interface (UI) displays what users are intended to see. We want to inspect and perhaps manipulate the  (Domain Object Model) which stores the state of each user's browser that Angular, React, Vue, or other UI libraries manipulate via JavaScript. We also need to unit test our server's API, one at a time. We do several types of performance testing to ensure that the infrastructure can deliver acceptable response time, absorb spikes, scale well, and not leak memory.
+
+The Developer Tools built into Chrome is used to identify how web driver programs know where to click and type in the UI. There is a different web driver for each browser. Each Web Driver exposes an Application Programming Interface (API) that functional testing scripts call. This design means that functional test scripts can be written in any language (Java, Python, C#, etc.). Selenium provides a framework. Protractor adds to Selenium the ability to interpret the Gherkin language to specify tests coded in a more recognizable natural language. 
+
+Protractor also adds the ability to dynamically read the DOM (Domain Object Model) which stores the state of each user's browser which Angular, React, Vue, or other UI libraries manipulate via JavaScript. Jasmine or Mocha or Jest provide developers tools to test JavaScript, such as assertions, mocks, and other capabilities covered in another video. To unit test API services exposed by your own app server to mobile apps, developers often use SoapUI because it is a free open-source tool, which also tests REST APIs exchanging JSON-formatted data as well as SOAP XML. 
+
+Those concerned about what is keeping <a href="#LandingPages">landing pages</a> from loading faster use Google's Lighthouse and other web tools to get recommendations about techniques to speed up landing pages. To get timings about other pages within the app, right now your functional test scripts have to save them.
+Those who want to put load on the server use load generators operated by load testing scripts that replace work on real app clients with "synthetic" or "virtual" users. While load is imposed, status such as the rate of transactions and errors encountered are reported by load generators. Metrics such as CPU and memory within servers are obtained by Dynatrace agents installed on servers. Results from runs are then analyzed. 
+
+Web-based services such as StormRunner, BlazeMeter, Flood.io, and others  enable Load testing scripts load tests to be run from a web browser instead of a local controller. Traditionally, load testing scripts are created using JMeter or LoadRunner's VuGen client application which capture then turn into test scripts what is exchanged over the network wire between server and clients. But as more and more work is done on browsers instead of servers, so TruClient was created for LoadRunner VuGen to record and emulate the DOM and actions of individual virtual users. Flood.io Elements does that, but using just a web browser. 
+
+JMeter scripts can invoke the APIs of web driver to control browsers running in BlazeMeter. To load test APIs, we're looking forward to mature tools to convert SOAPUI scripts and Open API (Swagger) specs into load testing scripts. 
+
+As with all code, when scripts are stored in a Git Repository pushed to a GitHub repository, hooks can be defined to automatically kick off a Jenkins job which runs the tests. Jenkins can also kick off monitoring before also kicking off load testing jobs.
+
+
+<a name="LandingPages"></a>
 
 ## URL Landing Page Efficiencies
 
@@ -62,7 +86,6 @@ points out internal issues such as whether images are compressed enough and the 
 <a target="_blank" href="http://www.webpagetest.org/"> shows what users see, in slow motion</a> of pages in various stages of completeness.
 
 <a target="_blank" href="http://checkgzipcompression.com/">http://checkgzipcompression.com</a> reports whether a site has Gzip enabled.
-
 
 
 <a name="Custom"></a>
