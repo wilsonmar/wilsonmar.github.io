@@ -535,30 +535,39 @@ But I found others can hear the sound from them.
 They co-exist better when wearing glasses.
 
 I've had several headphones over the years. That's not to be fashionable, but because I lose them, sit or step on them or, in the case of the Sony MX1000, they broke easily at the swivel. Newer Sony models now has a more solid pivot mechanism.
-The new model still suffers from a built-in microphone others have trouble hearing since it doesn't have a boom like some others.
-So its Google Assistant and Alexa integration may not work well.
 
-I've sworn off Sony products several times (since my Vaio disaster).
-"You have to manually turn on the aptX/AAC codec. To do so you have to either do a terminal command. The other option is to download the developers kit Xcode and then download Bluetooth file exchange and there are a few boxes you check to manually turn on the aptX/AAC."
- 
-But the Sony headphones does have all the cool features:
+The Sony headphones does have all the cool features:
 noise-cancelling, either 3.5mm cord (for use on airplanes) or Bluetooth, 30 hour battery with 10 minute charge for 5 hours of playback. 
 
-The <a target="_blank" href="https://www.sony.com/electronics/headphones-connect-app">Sony H.ear On WH-H900N recommended by WireCutter</a>. It's <a target="_blank" href="https://www.costco.com/Sony-WH-H900N-Bluetooth-Noise-Canceling-Headphones%2c-Black.product.100403345.html">available at Costco</a> and Amazon for $230. 
-It needs to be paird with a smartphone or it turns off after 5 minutes. In other words, you can't use it just for noise cancellation.
-And it doesn't have a microphone.
+> Bottom line, I don't recommend the Sony for it's fatal flaw, which was not fixed from the ealier WH-1000 model:
+<strong>the hinge that allows the headphone to fold is easily broken</strong>. 
+And Sony refuses to replace ones that break.
+I've experienced Sony's user-hostile policies since I found that Sony purposely bricked my Vaio laptop when voltage drops too low.
+That's is why I've sworn off Sony products altogether.
 
+Compare that to Bose. I once commented to a salesclerk that my Bose headphone chord frayed, and he just gave me a new cable.
+
+The <a target="_blank" href="https://www.sony.com/electronics/headphones-connect-app">Sony H.ear On WH-H900N recommended by WireCutter</a>. It's <a target="_blank" href="https://www.costco.com/Sony-WH-H900N-Bluetooth-Noise-Canceling-Headphones%2c-Black.product.100403345.html">available at Costco</a> and Amazon for $230. 
+
+Also, the new model still suffers from a built-in microphone others have trouble hearing since it doesn't have a boom like some others.
+So its Google Assistant and Alexa integration may not work well.
+"You have to manually turn on the aptX/AAC codec. To do so you have to either do a terminal command. The other option is to download the developers kit Xcode and then download Bluetooth file exchange and there are a few boxes you check to manually turn on the aptX/AAC."
+ 
 The <a target="_blank" href="https://www.amazon.com/Sony-WH-CH700N-Canceling-Headphones-WHCH700N/dp/B079GPFLT1/s">WH-CH700N</a> at $198 list is less than $100 refurbished.
 
-New models have gone to a USB Type-C charging port, and
-pairs with the <a target="_blank" href="Sony Headphones Connect app for Android/iOS">Sony | Headphones Connect app</a> for Android/iOS so you can specify sound Equilizer settings.
+New models have gone to a <strong>USB Type-C charging port</strong>, but 
+MEH: the headphone doesn't work when being charged.
+MEH: Also, it needs to be paired with a smartphone or it turns off after 5 minutes. In other words, you can't use it just for noise cancellation on an airplane without worrying whether your smartphone has enough juice for the trip.
 
 The flagship <a target="_blank" href="https://www.techradar.com/reviews/hands-on-sony-wh-1000xm3-wireless-headphones-review">WH-1000XM3</a>
 ($249 - $350 available since August 2018) adds touch controls and microphone to make calls. When adjusting position, I've accidentally hit its playback controls because they are touch-sensitive on the right earcup. To skip forward, swipe forward. Swipe left to go back. Pause and resume by double-tapping. Swipe up or down to control volume. Tap once to activate voice assistant and answer phone calls. Nice when I'm wearing gloves.
 
+This model also pairs with the <a target="_blank" href="Sony Headphones Connect app for Android/iOS">Sony | Headphones Connect app</a> for Android/iOS so you can specify sound Equilizer settings.
+
 The older WH-1000XM2 has slightly smaller earcups, sensitivity, and impedence.
 
-My biggest annoyance with Bluetooth is with Apple. I have to constantly turn on or off either my Mac or iPhone so the headphone doesn't pair with the wrong device. A first-world problem, yes. But still annoying.
+My annoyance with Bluetooth is with Apple. I have to constantly turn on or off either my Mac or iPhone so the headphone doesn't pair with the wrong device. A first-world problem, yes. But still annoying.
+
 
 
 <a name="Adapters"></a>
