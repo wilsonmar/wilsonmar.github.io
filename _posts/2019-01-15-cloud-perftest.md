@@ -373,6 +373,8 @@ Each Elastic Load Balancer (ELB) and EC2 Auto Scaling Group (ASG) keeps its own 
 The default is only EC2 status checks.
 So set S3 bucket Properties > Logging of "aws-bucket-logging" to enabled.
 
+![aws-asg-add-steps-503x157-7559](https://user-images.githubusercontent.com/300046/53306409-bcf69700-385a-11e9-9df4-769ceedf5bf2.jpg)
+
 BTW, for higher security, accounts writing logs to S3 buckets are set to write-only, with separate accounts to transfer, read-only, and delete.
 
 To determine whether each instance within an ASG is "OutOfService" and need to be replaced, listeners
