@@ -18,7 +18,8 @@ image: # pic-black-bkg-white-cloud_1920x1200
 <a target="_blank" href="https://wilsonmar.github.io/cloud-perftest/">This</a> is my draft of an attempt at a logic presentation about how to ensure scalability, availability, resilience, and affordability from building, testing, and running computer software applications in production on various cloud environments. 
 
 * I begin with the <a href="TestingTools">Testing Tools landscape</a>
-* <a href="#Custom">App architecture (Static vs. Dynamic generation and executables)</a>
+* <a href="#Statics">Static vs. Dynamic HTML generation and CDNs</a>
+* <a href="#Executables">Executable app architecture</a>
 * <a href="#SaaS">SaaS</a>
 * <a href="#SingleInstance">Single-instance</a>
 * <a href="#MultipleInstances">Multiple (clustered) instances with auto-scaling</a>
@@ -80,21 +81,29 @@ A public cloud enables test clients to be quickly installed around the world to 
    * http://pagelocity.com/
    <br /><br />
 
-### CDN
+
+<a name="Statics"></a>
+
+### Static vs. Dynamic HTML generation and CDNs
 
 Instead of images and other resources being served from the same host name as HTML, it is now common for developers to manage direct URLs to images and other resources on a Content Delivery Network (CDN) such as Amazon's cloudfront.net:
 
    * "https://d20vrrgs8k4bvw.<strong>cloudfront.net</strong>/documents/en-US/nd209_Robo_syllabus_v2.pdf"
    <br /><br />
 
-Companies offering the service include AWS CloudFront, Microsoft, Google, Akamai, CloudFlare, Fastly, etc.
+<a target="_blank" href="https://www.znetlive.com/blog/comparing-top-4-cdns-amazon-cloudfront-vs-google-cloud-cdn-vs-ibm-cloud-delivery-network-vs-azure-content-delivery-network/">Companies offering CDN services</a> include <a target="_blank" href="https://aws.amazon.com/cloudfront/">AWS CloudFront</a>, 
+Microsoft Azure CDN, Google Cloud CDN, Akamai, CloudFlare, Fastly, etc.
+
+Sites running Google Cloud CDN have a single IP address that can run everywhere (do not require a separate regional DNS).
+Google transfers up to 5TB objects on HTTP/2.
 
 QUESTION: How much faster does a CDN (Content Distribution Network) provide resource to viewers in different parts of the world? 
+Google charges are based on different incidents like cache fill bandwidth, cache egress bandwidth and HTTP/HTTPS requests.
 
 
 <a name="Custom"></a>
 
-## App architectures
+## Executable app architectures
 
 Websites that expose <strong>static</strong> HTML files for retrieval run fast because such files are not generated. 
 
@@ -112,6 +121,7 @@ Go comes with its own run-time environment.
 
 The difficulty with both interpreted and compiled applications is that one must setup a <strong>server</strong> and populate it with the software, then configure it.
 Over time, reconfigure it for security patches (such as for TLS 1.2, Heartbleed, etc.).
+
 
 Business owners who had a website built must continue to pay thousands of dollars each year for "maintenance" to keep it running.
 Patches for operating system security, the PHP interpreter -- every aspect of technology -- must be updated ocassionally. 
@@ -152,7 +162,8 @@ But there is a "hassle factor" with Serverless.
 With both SaaS, Serverless, and other shared-cloud environments, programmers must ensure that their code does not run too long or take too much memory, lest the cloud vendor issue errors that prevent execution.<a href="#Task"></a> This is needed both because custom code runs within an infrastructure with others and because costs accumulate for each request made.
 
 Such does not seem as important for those who stand up their own server to host WordPress.
-Inefficiencies in WordPress configurations and programming are hidden in lower capacity unless investigated.
+
+Inefficiencies in WordPress configurations and programming are hidden as lower capacity unless investigated.
 
 
 <a name="SingleInstance"></a>
@@ -224,7 +235,7 @@ But most businesses websites prefer their websites to be able to handle more bus
 
 <a name="BusinessObjective"></a>
 
-## The Business Objective
+## Business Objective Economics
 
 The big takeaway from this line of thinking is that here we focus on the <strong>business objective</strong> of obtaining the <strong>safest way to achieve the highest rate of business transactions at the least total cost</strong>.<a href="#Tasks">*</a>
 
