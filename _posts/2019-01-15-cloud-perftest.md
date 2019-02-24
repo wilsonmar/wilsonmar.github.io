@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Site Reliability and Load Tesing in the Cloud Era"
-excerpt: "Considerations for performance, high availability, latency, at lowest cost"
+title: "Site Reliability and Load Tesing in Cloud Economics"
+excerpt: "How to achieve work productivity, high availability, scalability, resiliency, low latency, at lowest cost?"
 tags: [Cloud, perftest]
 comments: true
 image: # pic-black-bkg-white-cloud_1920x1200
@@ -15,11 +15,9 @@ image: # pic-black-bkg-white-cloud_1920x1200
 {% include _toc.html %}
 
 
-<a target="_blank" href="https://wilsonmar.github.io/cloud-perftest/">This</a> is a "deep-dive documentary", about how to ensure performance, scalability, availability, resilience, and affordability from building, testing, and running computer software applications running in production on various cloud environments. 
+<a target="_blank" href="https://wilsonmar.github.io/cloud-perftest/">This</a> is my draft of an attempt at a logic presentation about how to ensure scalability, availability, resilience, and affordability from building, testing, and running computer software applications in production on various cloud environments. 
 
-The attempt here is a logical sequence to cover tactics and strategies for several alternative architectures:
-
-* <a href="Tools">Tools landscape</a>
+* I begin with the <a href="Tools">tools landscape</a>
 * <a href="#Custom">Custom executables</a>
 * <a href="#SaaS">SaaS</a>
 * <a href="#SingleInstance">Single-instance</a>
@@ -51,7 +49,7 @@ Web-based services such as <a target="_blank" href="https://www.microfocus.com/e
 
 JMeter scripts can invoke the APIs of Web Drivers to control <a target="_blank" href="https://www.blazemeter.com/blog/mixing-selenium-into-your-load-scenario">many browsers running in BlazeMeter</a>. To load test APIs, we're looking forward to mature tools to convert SOAPUI scripts and Open API (Swagger) specs into load testing scripts. 
 
-As with all code, when scripts are stored in a Git Repository pushed to a GitHub repository or a merge request is made, <a target="_blank" href="https://wilsonmar.github.io/git-hooks">hooks</a> can automatically initiate <strong>monitoring</strong> and build of servers before kicking off load testing jobs.
+As with all code, when scripts are stored in a Git Repository pushed to GitHub (or other Version Control repository), when a pull/merge request is made, <a target="_blank" href="https://wilsonmar.github.io/git-hooks">hooks</a> can automatically initiate <strong>monitoring</strong> and <strong>build</strong> of app instances before kicking off testing jobs. Many have created a cascade of CI/CD automation to step through several test environments that ensure changes safely yet quickly get into production.
 
 
 <a name="LandingPages"></a>
@@ -61,13 +59,22 @@ As with all code, when scripts are stored in a Git Repository pushed to a GitHub
 It is even more important for an organization's marketing landing page to be fast as its headquarters lobby to be stylish.
 More potential and actual customers visit on-line than in person.
 
-It is now common for developers to manage direct URLs to images and other resources, such as this on Amazon cloud:
+<a target="_blank" href="https://developers.google.com/speed/pagespeed/insights/">Google's Page Speed Insights</a>
+points out internal issues such as whether images are compressed enough and the many other specific tricks to make the site as fast as possible. <a target="_blank" href="https://testmysite.thinkwithgoogle.com/">testmysite.ThinkWithGoogle.com</a> evaluates mobile through 3G and 4G networks. <a target="_blank" Href="https://www.thinkwithgoogle.com/feature/mobile/">Google Speed Scorecard</a> compares the speed of various sites in one table.
 
-   * https://d20vrrgs8k4bvw.cloudfront.net/documents/en-US/nd209_Robo_syllabus_v2.pdf
+<a target="_blank" href="http://www.webpagetest.org/"> shows what users see, in slow motion</a> of pages in various stages of completeness.
+
+<a target="_blank" href="http://checkgzipcompression.com/">http://checkgzipcompression.com</a> reports whether a site has Gzip enabled.
+
+Instead of images and other resources being served from the same host name as HTML, it is now common for developers to manage direct URLs to images and other resources on a Content Delivery Network (CDN) such as Amazon's cloudfront.net:
+
+   * "https://d20vrrgs8k4bvw.<strong>cloudfront.net</strong>/documents/en-US/nd209_Robo_syllabus_v2.pdf"
    <br /><br />
 
-QUESTION: How much difference does using a CDN (Content Distribution Network) make? There are several companies offering the service.
-Have a public cloud enables test clients to be quickly installed around the world to evaluate customer experience.
+QUESTION: How much faster does a CDN (Content Distribution Network) provide resource to viewers in different parts of the world? 
+There are several companies offering the service.
+
+A public cloud enables test clients to be quickly installed around the world to evaluate customer experience.
 <a target="_blank" Href="https://instapage.com/blog/page-speed-tools">Several sites</a> track <a target="_blank" href="https://geekflare.com/monitor-website-uptime/">uptime availability</a> and how fast landing pages load from various points in the world:
 
    * <a target="_blank" href="https://www.uptrends.com/free-website-monitoring">uptrends.com</a>, for free, tracks hits to a website and emails to business email addresses
@@ -79,13 +86,6 @@ Have a public cloud enables test clients to be quickly installed around the worl
    * https://www.dotcom-tools.com/website-speed-test.aspx
    * http://pagelocity.com/
    <br /><br />
-
-<a target="_blank" href="https://developers.google.com/speed/pagespeed/insights/">Google's Page Speed Insights</a>
-points out internal issues such as whether images are compressed enough and the many other specific tricks to make the site as fast as possible. <a target="_blank" href="https://testmysite.thinkwithgoogle.com/">testmysite.ThinkWithGoogle.com</a> evaluates mobile through 3G and 4G networks. <a target="_blank" Href="https://www.thinkwithgoogle.com/feature/mobile/">Google Speed Scorecard</a> compares the speed of various sites in one table.
-
-<a target="_blank" href="http://www.webpagetest.org/"> shows what users see, in slow motion</a> of pages in various stages of completeness.
-
-<a target="_blank" href="http://checkgzipcompression.com/">http://checkgzipcompression.com</a> reports whether a site has Gzip enabled.
 
 
 <a name="Custom"></a>
