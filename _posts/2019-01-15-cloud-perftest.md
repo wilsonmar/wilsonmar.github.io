@@ -17,7 +17,12 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 <a target="_blank" href="https://wilsonmar.github.io/cloud-perftest/">This</a> is my draft of an attempt at a logic presentation about how to ensure scalability, availability, resilience, and affordability from building, testing, and running computer software applications in production on various cloud environments. 
 
-* I begin with the <a href="TestingTools">Testing Tools landscape</a>
+Job descriptions are now asking for skills that used to be for previously segregated jobs.
+Load testers must now know functional tools.
+Site reliability engineers who used to just monitor things now must also know how to insert synthetic loads.
+Developers are expected to know everything.
+
+* I begin with the <a href="TestingTools">Testing Tools Landscape</a>
 * <a href="#Statics">Static vs. Dynamic HTML generation and CDNs</a>
 * <a href="#Executables">Executable app architecture</a>
 * <a href="#SaaS">SaaS</a>
@@ -86,19 +91,26 @@ A public cloud enables test clients to be quickly installed around the world to 
 
 ### Static vs. Dynamic HTML generation and CDNs
 
-Instead of images and other resources being served from the same host name as HTML, it is now common for developers to manage direct URLs to images and other resources on a Content Delivery Network (CDN) such as Amazon's cloudfront.net:
+Instead of a URL using the same host name (server) as HTML, it is now common for images, video, and pdf files to be served on a Content Delivery Network (CDN). 
+Such as Amazon's cloudfront.net:
 
    * "https://d20vrrgs8k4bvw.<strong>cloudfront.net</strong>/documents/en-US/nd209_Robo_syllabus_v2.pdf"
    <br /><br />
 
 <a target="_blank" href="https://www.znetlive.com/blog/comparing-top-4-cdns-amazon-cloudfront-vs-google-cloud-cdn-vs-ibm-cloud-delivery-network-vs-azure-content-delivery-network/">Companies offering CDN services</a> include <a target="_blank" href="https://aws.amazon.com/cloudfront/">AWS CloudFront</a>, 
-Microsoft Azure CDN, Google Cloud CDN, Akamai, CloudFlare, Fastly, etc.
+Microsoft Azure Blob CDN, Google Cloud CDN, Akamai (IBM), CloudFlare, Fastly, etc.
 
 Sites running Google Cloud CDN have a single IP address that can run everywhere (do not require a separate regional DNS).
-Google transfers up to 5TB objects on HTTP/2.
+IBM provides Wildcard Certificate and Domain Validation (DV) SAN Certificates.
+AWS can encrypt individual fields.
+
+Google transfers up to 5TB objects.
 
 QUESTION: How much faster does a CDN (Content Distribution Network) provide resource to viewers in different parts of the world? 
-Google charges are based on different incidents like cache fill bandwidth, cache egress bandwidth and HTTP/HTTPS requests.
+Google charges based on cache fill bandwidth and cache egress bandwidth as well as HTTP/HTTPS requests.
+
+QUESTION: Are resources retrieved faster on AWS Cloudfront because it offers the most Points of Presence (PoP)? (136 vs. Google's 90+, Azure's 54)?
+AWS serves Video on Demand 
 
 
 <a name="Custom"></a>
