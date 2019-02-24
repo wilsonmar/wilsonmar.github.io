@@ -17,8 +17,8 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 <a target="_blank" href="https://wilsonmar.github.io/cloud-perftest/">This</a> is my draft of an attempt at a logic presentation about how to ensure scalability, availability, resilience, and affordability from building, testing, and running computer software applications in production on various cloud environments. 
 
-* I begin with the <a href="Tools">tools landscape</a>
-* <a href="#Custom">Custom executables</a>
+* I begin with the <a href="TestingTools">Testing Tools landscape</a>
+* <a href="#Custom">App architecture (Static vs. Dynamic generation and executables)</a>
 * <a href="#SaaS">SaaS</a>
 * <a href="#SingleInstance">Single-instance</a>
 * <a href="#MultipleInstances">Multiple (clustered) instances with auto-scaling</a>
@@ -30,9 +30,9 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 <!-- TODO: Split up this long page into separate pages, and re-published on Medium as separate parts. -->
 
-<a name="Tools"></a>
+<a name="TestingTools"></a>
 
-## Tools landscape
+## Testing Tools Landscape
 
 ![cloud-perftest-v2-1171x587-70051](https://user-images.githubusercontent.com/300046/53289410-b0dbde00-3763-11e9-93b1-17d5c6a4b152.jpg)
 
@@ -54,7 +54,7 @@ As with all code, when scripts are stored in a Git Repository pushed to GitHub (
 
 <a name="LandingPages"></a>
 
-## URL Landing Page Efficiencies
+### Landing Page Efficiencies
 
 It is even more important for an organization's marketing landing page to be fast as its headquarters lobby to be stylish.
 More potential and actual customers visit on-line than in person.
@@ -87,15 +87,16 @@ Instead of images and other resources being served from the same host name as HT
    * "https://d20vrrgs8k4bvw.<strong>cloudfront.net</strong>/documents/en-US/nd209_Robo_syllabus_v2.pdf"
    <br /><br />
 
+Companies offering the service include AWS CloudFront, Microsoft, Google, Akamai, CloudFlare, Fastly, etc.
+
 QUESTION: How much faster does a CDN (Content Distribution Network) provide resource to viewers in different parts of the world? 
-There are several companies offering the service.
 
 
 <a name="Custom"></a>
 
-## Impact of language
+## App architectures
 
-Websites that expose <strong>static</strong> HTML files for retrieval run fast because such files are not generated. And the files can be distributed around the world in CDNs (Content Distribution Networks) such as Akamai, AWS CloudFront, CloudFlare, Fastly, etc.
+Websites that expose <strong>static</strong> HTML files for retrieval run fast because such files are not generated. 
 
 Websites that run WordPress are slower than static sites because WordPress generates HTML files for every request. The programming that does the generation is written in the PHP programming language.
 PHP is an <a target="_blank" href="http://en.wikipedia.org/wiki/Interpreted_language">interpreted language</a>, meaning that PHP programming source code is processed by the PHP interpreter program every time to respond to each new request. 
@@ -109,12 +110,12 @@ PHP and Python are usually slower than programs written in Java, Go, or other pr
 Java programs require the additional installation of a JVM (Java Virtual Machine) that allocates memory among programs.
 Go comes with its own run-time environment.
 
+The difficulty with both interpreted and compiled applications is that one must setup a <strong>server</strong> and populate it with the software, then configure it.
+Over time, reconfigure it for security patches (such as for TLS 1.2, Heartbleed, etc.).
 
-## Dealing with hardware and patching
-
-The difficulty with both WordPress and compiled applications is that one must setup a server and populate it with the software, then configure it.
-
-Business owners who had a WordPress site built must continue to pay thousands of dollars each year for "maintenance" to avoid falling behind. Patches for operating system security, the PHP interpreter -- every aspect of technology -- must be updated ocassionally. This constant maintenance does not add additional functionality to the end user, so is feels like a disruption and waste of time and money.
+Business owners who had a website built must continue to pay thousands of dollars each year for "maintenance" to keep it running.
+Patches for operating system security, the PHP interpreter -- every aspect of technology -- must be updated ocassionally. 
+This constant maintenance does not add additional functionality to the end user, so is feels like a disruption and waste of time and money.
 
 Enter SaaS in a cloud.
 
