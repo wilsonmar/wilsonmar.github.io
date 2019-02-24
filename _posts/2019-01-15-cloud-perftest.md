@@ -17,12 +17,9 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 <a target="_blank" href="https://wilsonmar.github.io/cloud-perftest/">This</a> is my draft of an attempt at a logic presentation about how to ensure scalability, availability, resilience, and affordability from building, testing, and running computer software applications in production on various cloud environments. 
 
-Job descriptions are now asking for skills that used to be for previously segregated jobs.
-Load testers must now know functional tools.
-Site reliability engineers who used to just monitor things now must also know how to insert synthetic loads.
+* I begin with the <a href="TestingTools">Testing Tools Landscape</a> because job descriptions are now asking for skills that used to be for previously segregated jobs.
+Load testers must now know functional tools. Site reliability engineers who used to just monitor things now must also know how to insert synthetic loads.
 Developers are expected to know everything.
-
-* I begin with the <a href="TestingTools">Testing Tools Landscape</a>
 * <a href="#Statics">Static vs. Dynamic HTML generation and CDNs</a>
 * <a href="#Executables">Executable app architecture</a>
 * <a href="#SaaS">SaaS</a>
