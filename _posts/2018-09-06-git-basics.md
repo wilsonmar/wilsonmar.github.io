@@ -26,7 +26,7 @@ because skill with Git and Linux commands are pre-requsite to many IT jobs.
 
 Along the way, I devoured <a target="_blank" href="https://wilsonmar.github.io/git-github-videos/">every video and book</a> I could find on the subject and listed them in my blog.
 
-I'm also created tutorials on how to install Git clients and hook it up to repositories in the cloud.
+I'm also created tutorials on how to <a target="_blank" href="https://wilsonmar.github.io/git-config/">install Git clients</a> and hook it up to repositories in the cloud.
 
 Throughout this course, we are on a hunt to answer these <strong>questions</strong> about working with code.
 

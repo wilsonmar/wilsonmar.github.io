@@ -291,13 +291,14 @@ http://rafabene.com/2017/07/07/java-inside-docker/
 
 ## Docker Compose #
 
-Docker compose creates multiple containers with a single operation. 
+Most apps are database-driven, so we introduce a separate service for a database layer with its own data volume (storage space).
 
-See https://docs.docker.com/compose/
+The <strong>docker-compose.yml</strong> file contains instructions to stitch multiple pieces together such as database container, 
+application container, host folder where you store your application repository, environmental aspects such as volumes, and ports.
 
 An example <strong>docker-compose-dev.yml</strong> file from 
 <a target="_blank" href="https://sloppy.io/from-dev-to-prod-with-nodejs-and-hackathon-starter-using-docker-compose-part-1/">
-here</a>:
+here</a> defining services:
 
    <pre>
 version: '2'
@@ -327,6 +328,36 @@ services:
 networks:
   all:
    </pre>
+
+For the version, see <a target="_blank" href="https://docs.docker.com/compose/">https://docs.docker.com/compose</a>
+
+
+Another one:
+
+   <pre>
+version: '3.2'
+volumes: 
+  postgres-data:
+services:
+  db:
+    image: postgres
+    volumes: 
+      - postgres-data:/var/lib/postgresql/data
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/project
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+   </pre>
+
+   The <tt>depends_on:</tt> specifies the launch of "db" before the app service.
+
 
 0. Define attributes of Docker host in environment variables:
 

@@ -93,7 +93,7 @@ Amit Chaudhary, 7X certs from Michigan:
    * <a target="_blank" href="http://amitsalesforce.blogspot.com/">amitsalesforce.blogspot.com</a>
    since Nov 2014 
 
-<a target="_blank" href="https://www.linkedin.com/in/aoplinger/">Amy Oplinger</a> (<a target="_blank" href="https://twitter.com/SalesforceAmy">@SalesforceAmy/">@SalesforceAmy</a>), Salesforce MVP, 5X Certified, Freelance Consultant, Women in Tech and Nonprofit User Group Leader, Dreamforce Speaker from Cleveland/Akron, Ohio Area:
+<a target="_blank" href="https://www.linkedin.com/in/aoplinger/">Amy Oplinger</a> (<a target="_blank" href="https://twitter.com/SalesforceAmy">@SalesforceAmy</a>), Salesforce MVP, 5X Certified, Freelance Consultant, Women in Tech and Nonprofit User Group Leader, Dreamforce Speaker from Cleveland/Akron, Ohio Area:
    * <a target="_blank" href="https://salesforcesaas.wordpress.com/">salesforcesaas.wordpress.com</a>
 
 Annappa Ph, Salesforce developer in India:
