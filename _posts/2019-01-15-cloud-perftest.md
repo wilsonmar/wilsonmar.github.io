@@ -31,17 +31,6 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 <!-- TODO: Split up this long page into separate pages, and re-published on Medium as separate parts. -->
 
-## Performance Engineering Redefined
-
-![cloud-perftest-v04-slope-926x507-39682](https://user-images.githubusercontent.com/300046/53456754-873de380-39fd-11e9-9403-389d2c3e89f7.jpg)
-
-Here we're talking about the different types of load testing at different levels of load and lengths of test runs.
-We begin performance engineering by identifying how quickly users can <strong>ramp up</strong>. We first use a very aggressive rate which reaches a breaking point too quickly. We then back off at a slower rate to find a rate that achieves the most number of users the quickest. This is to see how many users can jump on the system at the same time,such as the beginning of the day, after a Superbowl ad, etc. These <strong>Stress Tests</strong> identify the <strong>capacity</strong> of a single server. We mever want to be at that point because we want to take action before reaching the <strong>point of UX degradation</strong>. When also can't put the threshold for bringing another server on board immediately under that point because there is always some <strong>lead time</strong>. If we want to add on-premises machines, this can be like 6 months. In a cloud environment, it can be half an hour. Under that point is the <strong>threshold to trigger</strong> when additional capacity should be added. This threshold is typically CPU percentage being reached for a certain period of time.
-
-We do a <strong>Spike Test</strong> to verify resiliency, the ability of the system to absorb sudden temporary spikes while maintaining adequate response time.
-
-In a cloud enviornment that is "elastic", we need to ensure that our configurations indeed cause new instances to be created. The test would also need to include <strong>un-instantation</strong> to reduce the number of instances when load recedes below the threshold. Below that is the level we can do a <strong>Soak Test</strong> to ensure that the level is sustainable without memory leaks.
-
 
 <a name="TestingTools"></a>
 
@@ -266,6 +255,29 @@ The potential for failure due to load may not be of concern for "vanity" website
 
 But most businesses websites prefer their websites to be able to handle more business without much manual vigilence.
 
+
+## Performance Engineering Redefined
+
+![cloud-perftest-v04-slope-926x507-39682](https://user-images.githubusercontent.com/300046/53456754-873de380-39fd-11e9-9403-389d2c3e89f7.jpg)
+
+Here we're talking about the different <strong>levels</strong> of load and <strong>lengths</strong> of test runs using different <strong>types of testing</strong>.
+We begin by identifying how quickly users can <strong>ramp up</strong>, starting with a very aggressive rate so we can identify what is <strong>"too quick"</strong>. We then back off at a slower rate to find a rate that achieves the most number of users the quickest. This is to see how many users can jump on the system at the same time, such as the beginning of the day, after a Superbowl ad, etc. The rate that new users arrive is just as important as the total number of concurrent users running, because authentication infrastructure can be a bottleneck.
+
+When we have a single machine, such as just one EC2 instance, we need to identify its <strong>capacity</strong> 
+by seeing it reach its <strong>breaking point</strong>, by running <strong>Stress Tests</strong>.
+This is so that we really know if we provisioned the appropriate type of server having enough RAM and CPU speed.
+
+We don't want to expose our users to a broken server, so our <strong>threshold to add capacity</strong> is really the <strong>point of UX degradation</strong>. But the <strong>lead time</strong> to get additional capacity is more than just technical timings. With on-premises machines, it can take like 6 months to make a decision, so companies over-buy capacity that sits unused. 
+
+The <strong>nominal</strong> level of load is the momentary peaks reached each day, the level where long <strong>soak tests</strong> are run to ensure the <strong>endurance</strong> of the system over time -- to ensure that the level is sustainable without memory leaks and excessive use of disk space.
+
+<strong>"Headroom"</strong> is how much capacity is available to absorb future growth.
+
+When we have a cluster of servers, we need to makes sure we have the <strong>elasticity</strong> we hoped for. So We do <strong>Spike Tests</strong> to verify resiliency, the ability of the system to absorb sudden temporary spikes while maintaining adequate response time.
+
+When <strong>fail-over</strong> facilities are available, we need to test for that.
+
+In an elastic cloud enviornment, we need to ensure that our configurations can indeed create <strong>new instances</strong> on a timely basis. Tests of elasticity should also include <strong>un-instantation</strong> to reduce the number of instances when load recedes below the threshold. 
 
 
 <a name="BusinessObjective"></a>
