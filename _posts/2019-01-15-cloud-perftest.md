@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Site Reliability and Load Tesing in Cloud Economics"
+title: "Site Reliability and Load Engineering in Cloud Economics"
 excerpt: "How to achieve work productivity, high availability, scalability, resiliency, low latency, at lowest cost?"
 tags: [Cloud, perftest]
 comments: true
