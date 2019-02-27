@@ -31,6 +31,18 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 <!-- TODO: Split up this long page into separate pages, and re-published on Medium as separate parts. -->
 
+## Performance Engineering Redefined
+
+![cloud-perftest-v04-slope-926x507-39682](https://user-images.githubusercontent.com/300046/53456754-873de380-39fd-11e9-9403-389d2c3e89f7.jpg)
+
+Here we're talking about the different types of load testing at different levels of load and lengths of test runs.
+We begin performance engineering by identifying how quickly users can <strong>ramp up</strong>. We first use a very aggressive rate which reaches a breaking point too quickly. We then back off at a slower rate to find a rate that achieves the most number of users the quickest. This is to see how many users can jump on the system at the same time,such as the beginning of the day, after a Superbowl ad, etc. These <strong>Stress Tests</strong> identify the <strong>capacity</strong> of a single server. We mever want to be at that point because we want to take action before reaching the <strong>point of UX degradation</strong>. When also can't put the threshold for bringing another server on board immediately under that point because there is always some <strong>lead time</strong>. If we want to add on-premises machines, this can be like 6 months. In a cloud environment, it can be half an hour. Under that point is the <strong>threshold to trigger</strong> when additional capacity should be added. This threshold is typically CPU percentage being reached for a certain period of time.
+
+We do a <strong>Spike Test</strong> to verify resiliency, the ability of the system to absorb sudden temporary spikes while maintaining adequate response time.
+
+In a cloud enviornment that is "elastic", we need to ensure that our configurations indeed cause new instances to be created. The test would also need to include <strong>un-instantation</strong> to reduce the number of instances when load recedes below the threshold. Below that is the level we can do a <strong>Soak Test</strong> to ensure that the level is sustainable without memory leaks.
+
+
 <a name="TestingTools"></a>
 
 ## Testing Tools Landscape
