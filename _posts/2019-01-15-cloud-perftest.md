@@ -228,6 +228,24 @@ But most businesses websites prefer their websites to be able to handle more bus
 ## Performance test run types
 
 
+Here we're talking about the different <strong>levels</strong> of load and <strong>lengths</strong> of test runs using different <strong>types of testing</strong>. This is the heart of a performance test plan.
+
+We begin by identifying how quickly users can <strong>ramp-up</strong>, starting with a very aggressive rate so we can identify what is <strong>"too quick"</strong>. We then back off to a rate that brings up the most number of users the quickest. We need to use a <strong>Stress Test</strong> scenario that keeps adding new users until the <strong>breaking point</strong> so that we can tell how many users can really jump on the system at the same time, such at the beginning of a call-center shift or on Black Friday, etc. The <strong>rate</strong> that new users enter the system is just as important as the total number of concurrent users running, because <strong>authentication infrastructure</strong> limitations is often a bottleneck.
+
+The first web page that a team puts up is usually a <strong>"server unavailable"</strong> page where user traffic is diverted. When the team is just getting started, the <strong>fail-over</strong> test is whether that diversion can really occur.
+ 
+But want the <strong>threshold for action</strong> to be the <strong>point of UX degradation</strong>, when response time begins to suffer due to load. In that threshold we also need to consider the <strong>lead time</strong> to get additional <strong>capacity</strong>. With on-premises machines, this can be like 6 months. So, traditionally, companies over-bought capacity that often go unused. The value of an elastic cloud such as Amazom is that we pay only what we use. 
+
+We still need to identify the <strong>nominal</strong> level of load -- the momentary <strong>peaks</strong> reached each day, the level where long <strong>soak tests</strong> are run to ensure the <strong>endurance</strong> of the system over time -- to ensure that the level is sustainable without memory leaks and excessive use of disk space.
+
+Knowing this helps us save time on <strong>Smoke tests</strong> which verifies the <strong>viability</strong> of each buid. 
+
+Where we need to be vigilent is making sure there is enough <strong>"Headroom"</strong> capacity available to absorb future growth. Along this headroom line is where we provision the appropriate type of server having enough RAM and CPU speed.
+
+If we have a cluster of servers, we need to make sure we have the <strong>elasticity</strong> we hoped for. So We do <strong>Spike Tests</strong> to verify <strong>resiliency</strong> -- the ability of the system to absorb sudden temporary spikes while maintaining adequate response time, then come back to normal levels of memory usage.
+
+In an elastic cloud enviornment, we need to ensure that our configurations can indeed <strong>instantiate</strong> additional capacity on a timely basis. Tests of elasticity should also include <strong>un-instantation</strong> to reduce the number of instances when load recedes below the threshold. 
+
 
 QUESTIONS: About your app/system:
 1. How quickly can users ramp up? What is "too quick" of a ramp-up?
