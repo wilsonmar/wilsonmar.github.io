@@ -17,7 +17,7 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 <a target="_blank" href="https://wilsonmar.github.io/cloud-perftest/">This</a> is my draft of sequencing a logical presentation about how to ensure scalability, availability, resilience, and affordability from building, testing, and running computer software applications in production on various cloud environments. 
 
-* I begin with the <a href="TestingTools">"Full Stack" Testing Tools Landscape</a> 
+* I begin with the <a href="#TestingTools">"Full Stack" Testing Tools Landscape</a> 
 * <a href="#Statics">Static vs. Dynamic HTML generation and CDNs</a>
 * <a href="#Executables">Executable app architecture</a>
 * <a href="#SaaS">SaaS</a>
@@ -35,41 +35,6 @@ image: # pic-black-bkg-white-cloud_1920x1200
 <a name="TestingTools"></a>
 
 ## Testing Tools Landscape
-
-![cloud-perftest-v07-tools-697x330-39140](https://user-images.githubusercontent.com/300046/53567599-b8b5cc80-3b2d-11e9-8a6c-9e76c842326d.jpg)
-
-This video describes the current landscape of key tools, for both functional and performance testing.
-So the diagram has a lot going on. I'm covering this because job descriptions are now asking for skills that used to be for previously segregated jobs.
-Load testers must now know functional tools. Site reliability engineers who used to just monitor things now must also know how to insert synthetic loads.
-Developers are expected to know everything. That's the new downsizing strategy.
-
-Both sets of tools cover several aspects. One is see whether the User Interface (UI) displays what users are intended to see. We want to inspect and perhaps manipulate the  (Domain Object Model) which stores the state of each user's browser that Angular, React, Vue, or other UI libraries manipulate via JavaScript. We also need to unit test our server's API, one at a time. We do several types of performance testing to ensure that the infrastructure can deliver acceptable response time, absorb spikes, scale well, and not leak memory.
-
-The Developer Tools built into Chrome is used to identify how web driver programs know where to click and type in the UI. There is a different web driver for each browser. Each Web Driver exposes an Application Programming Interface (API) that functional testing scripts call. This design means that functional test scripts can be written in any language (Java, Python, C#, etc.). Selenium provides a framework. Protractor adds to Selenium the ability to interpret the Gherkin language to specify tests coded in a more recognizable natural language. 
-
-<a target="_blank" href="https://wilsonmar.github.io/protractor/">Protractor</a> also adds the ability to dynamically read the DOM (Document Object Model) which stores the state of each user's browser which Angular, React, Vue, or other UI libraries manipulate via JavaScript. Jasmine or Mocha or Jest provide developers tools to test JavaScript, such as assertions, mocks, and other capabilities covered in another video. These and tools such as Karate, Rest Assured, and <a target="_blank" href="https://wilsonmar.github.io/pact/">Pact</a> are used to catch errors in dependencies among services needing each other.
-
-To unit test API services exposed by your app, developers often use SoapUI because it is a free open-source tool, which also tests REST APIs exchanging JSON-formatted data as well as SOAP XML. 
-
-Those concerned about what is keeping <a href="#LandingPages">landing pages</a> from loading faster use <strong>Google's Lighthouse</strong> to get recommendations about techniques to speed up landing pages. And Google Analytics provides timings for public production transactions. To test code in production, some developers code "feature flags" to expose parts of code to a subset of users in production. So now which specific flags are being used at at given time needs to be tracked for correlation to timings.
-
-When apps are being developed within the public firewall, if we get functional test scripts to obtain <strong>timings</strong> on each step within the app (and store them in a time-series database), we can get early <strong>alerts</strong>, without additional test scripting.
-
-Those who want to put load on the server use <strong>load generators</strong> operated by load testing scripts that replace work on real app clients with "synthetic" or <strong>"virtual" users</strong>, which defines the level of load imposed by scripts. While load is being injected, status such as the rate of transactions and errors encountered are reported by load generators to some controller. Metrics such as CPU and memory utilization within servers are obtained by <a target="_blank" href="https://wilsonmar.github.io/dynatrace">Dynatrace</a> agents installed on servers. Results from runs are then analyzed and presented in dashboards.
-
-Traditionally, to get load generators to run as many users, scripts emulate (which emulate what occurs in the browser) are created based on what is exchanged over the network <strong>wire</strong> between server and clients. Communications are captured into load test scripts, then edited to add correlations and verifications. That's what LoadRunner's VuGen, JMeter, and other proxy-based client emulators do. 
-
-But as more and more processing is done within browsers instead of on servers, <strong>TruClient for LoadRunner</strong> was created to record and emulate the DOM and actions of each individual virtual user. This, btw, takes a lot more memory. <a target="_blank" href="https://flood.io/">Flood.io</a> Elements does that also, but using just a web browser as a web-based service. The availability of cloud-based services such as Flood, <a target="_blank" href="https://www.microfocus.com/en-us/products/stormrunner-load-agile-cloud-testing/overview">StormRunner</a>, <a target="_blank" href="https://www.blazemeter.com/">BlazeMeter</a> , and others enabled large servers or a large number of servers to be used for a short periods of time.
-
-Several advances have sought to shift load testing "left" on the timeine. JMeter scripts can now <a target="_blank" href="https://www.blazemeter.com/blog/mixing-selenium-into-your-load-scenario">invoke the APIs of Web Drivers</a>. But there are limitations.
-
-Neoload can process Selenium scripts.
-
-To load test APIs, we're looking forward to mature tools to convert SOAPUI scripts and Open API (Swagger) specs into load testing scripts. 
-
-As with all code, when scripts are stored in a Git Repository pushed to GitHub (or other Version Control repository), when a pull/merge request is made, <a target="_blank" href="https://wilsonmar.github.io/git-hooks">hooks</a> can automatically initiate <strong>monitoring</strong> and <strong>build</strong> of app instances before kicking off testing jobs. Many have created a cascade of CI/CD automation to step through several test environments that ensure changes safely yet quickly get into production.
-
-Part of the modern development toolchain are code <strong>scanners</strong> and code <strong>profilers</strong> to detect issues while the code is still fresh in developers' mind.
 
 
 <a name="LandingPages"></a>
@@ -261,21 +226,6 @@ But most businesses websites prefer their websites to be able to handle more bus
 <a name="RunTypes"></a>
 
 ## Performance test run types
-
-![cloud-perftest-v07-types-565x286-24044](https://user-images.githubusercontent.com/300046/53567693-05010c80-3b2e-11e9-8642-c6748dca40c9.jpg)
-
-
-QUESTIONS: About your app/system:
-1. How quickly can users ramp up? What is "too quick" of a ramp-up?
-2. What is the maximum <strong>rate</strong> (per second) transactions can be processed before UX degrades?
-3. What is the signal threshold to request additional capacity?
-4. How much time does it take to obtain additional capacity (from realization to actual availability)?
-5. What is the maximum <strong>nominal</strong> load on normal days?
-6. How much <strong>headroom</strong> is there for future growth? 
-7. What is the highest temporary <strong>spike</strong> the system can absorb temporarily?
-8. Does the system recover fully after a failure? (resiliency)
-9. Can instances be decomissioned automatically? (elasticity)
-10. Does the system leak memory or consume too much disk space over time?
 
 
 <a name="BusinessObjective"></a>
