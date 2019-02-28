@@ -228,6 +228,20 @@ But most businesses websites prefer their websites to be able to handle more bus
 ## Performance test run types
 
 
+
+QUESTIONS: About your app/system:
+1. How quickly can users ramp up? What is "too quick" of a ramp-up?
+2. What is the maximum <strong>rate</strong> (per second) transactions can be processed before UX degrades?
+3. What is the signal threshold to request additional capacity?
+4. How much time does it take to obtain additional capacity (from realization to actual availability)?
+5. What is the maximum <strong>nominal</strong> load on normal days?
+6. How much <strong>headroom</strong> is there for future growth? 
+7. What is the highest temporary <strong>spike</strong> the system can absorb temporarily?
+8. Does the system recover fully after a failure? (resiliency)
+9. Can instances be decomissioned automatically? (elasticity)
+10. Does the system leak memory or consume too much disk space over time?
+
+
 <a name="BusinessObjective"></a>
 
 ## Business Objective Economics
