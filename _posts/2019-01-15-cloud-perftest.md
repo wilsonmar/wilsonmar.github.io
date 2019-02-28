@@ -69,7 +69,7 @@ To load test APIs, we're looking forward to mature tools to convert SOAPUI scrip
 
 As with all code, when scripts are stored in a Git Repository pushed to GitHub (or other Version Control repository), when a pull/merge request is made, <a target="_blank" href="https://wilsonmar.github.io/git-hooks">hooks</a> can automatically initiate <strong>monitoring</strong> and <strong>build</strong> of app instances before kicking off testing jobs. Many have created a cascade of CI/CD automation to step through several test environments that ensure changes safely yet quickly get into production.
 
-Part of the modern development toolchain are code scanners and code profilers to detect issues while the code is still fresh in developers' mind.
+Part of the modern development toolchain are code <strong>scanners</strong> and code <strong>profilers</strong> to detect issues while the code is still fresh in developers' mind.
 
 
 <a name="LandingPages"></a>
