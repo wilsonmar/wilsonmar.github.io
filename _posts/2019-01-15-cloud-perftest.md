@@ -227,6 +227,7 @@ But most businesses websites prefer their websites to be able to handle more bus
 
 ## Performance test run types
 
+![cloud-perftest-v08-types-553x276-24044](https://user-images.githubusercontent.com/300046/53589081-6f30a600-3b5c-11e9-978a-f69f0f5c2705.jpg)
 
 Here we're talking about the different <strong>levels</strong> of load and <strong>lengths</strong> of test runs using different <strong>types of testing</strong>. This is the heart of a performance test plan.
 
