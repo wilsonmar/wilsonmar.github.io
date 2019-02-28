@@ -17,7 +17,7 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 <a target="_blank" href="https://wilsonmar.github.io/cloud-perftest/">This</a> is my draft of sequencing a logical presentation about how to ensure scalability, availability, resilience, and affordability from building, testing, and running computer software applications in production on various cloud environments. 
 
-* I begin with the <a href="TestingTools">Testing Tools Landscape</a> 
+* I begin with the <a href="TestingTools">"Full Stack" Testing Tools Landscape</a> 
 * <a href="#Statics">Static vs. Dynamic HTML generation and CDNs</a>
 * <a href="#Executables">Executable app architecture</a>
 * <a href="#SaaS">SaaS</a>
@@ -36,7 +36,7 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 ## Testing Tools Landscape
 
-![cloud-perftest-v2-1171x587-70051](https://user-images.githubusercontent.com/300046/53289410-b0dbde00-3763-11e9-93b1-17d5c6a4b152.jpg)
+![cloud-perftest-v07-tools-697x330-39140](https://user-images.githubusercontent.com/300046/53567599-b8b5cc80-3b2d-11e9-8a6c-9e76c842326d.jpg)
 
 This video describes the current landscape of key tools, for both functional and performance testing.
 So the diagram has a lot going on. I'm covering this because job descriptions are now asking for skills that used to be for previously segregated jobs.
@@ -68,6 +68,8 @@ Neoload can process Selenium scripts.
 To load test APIs, we're looking forward to mature tools to convert SOAPUI scripts and Open API (Swagger) specs into load testing scripts. 
 
 As with all code, when scripts are stored in a Git Repository pushed to GitHub (or other Version Control repository), when a pull/merge request is made, <a target="_blank" href="https://wilsonmar.github.io/git-hooks">hooks</a> can automatically initiate <strong>monitoring</strong> and <strong>build</strong> of app instances before kicking off testing jobs. Many have created a cascade of CI/CD automation to step through several test environments that ensure changes safely yet quickly get into production.
+
+Part of the modern development toolchain are code scanners and code profilers to detect issues while the code is still fresh in developers' mind.
 
 
 <a name="LandingPages"></a>
@@ -256,28 +258,41 @@ The potential for failure due to load may not be of concern for "vanity" website
 But most businesses websites prefer their websites to be able to handle more business without much manual vigilence.
 
 
-## Performance Engineering Redefined
+<a name="RunTypes"></a>
 
-![cloud-perftest-v04-slope-926x507-39682](https://user-images.githubusercontent.com/300046/53456754-873de380-39fd-11e9-9403-389d2c3e89f7.jpg)
+## Performance test run types
 
-Here we're talking about the different <strong>levels</strong> of load and <strong>lengths</strong> of test runs using different <strong>types of testing</strong>.
-We begin by identifying how quickly users can <strong>ramp up</strong>, starting with a very aggressive rate so we can identify what is <strong>"too quick"</strong>. We then back off at a slower rate to find a rate that achieves the most number of users the quickest. This is to see how many users can jump on the system at the same time, such as the beginning of the day, after a Superbowl ad, etc. The rate that new users arrive is just as important as the total number of concurrent users running, because authentication infrastructure can be a bottleneck.
+![cloud-perftest-v07-types-565x286-24044](https://user-images.githubusercontent.com/300046/53567693-05010c80-3b2e-11e9-8642-c6748dca40c9.jpg)
 
-When we have a single machine, such as just one EC2 instance, we need to identify its <strong>capacity</strong> 
-by seeing it reach its <strong>breaking point</strong>, by running <strong>Stress Tests</strong>.
-This is so that we really know if we provisioned the appropriate type of server having enough RAM and CPU speed.
+Here we're talking about the different <strong>levels</strong> of load and <strong>lengths</strong> of test runs using different <strong>types of testing</strong>. This is the heart of a performance test plan.
 
-We don't want to expose our users to a broken server, so our <strong>threshold to add capacity</strong> is really the <strong>point of UX degradation</strong>. But the <strong>lead time</strong> to get additional capacity is more than just technical timings. With on-premises machines, it can take like 6 months to make a decision, so companies over-buy capacity that sits unused. 
+We begin by identifying how quickly users can <strong>ramp-up</strong>, starting with a very aggressive rate so we can identify what is <strong>"too quick"</strong>. We then back off to a rate that brings up the most number of users the quickest. We need to use a <strong>Stress Test</strong> scenario that keeps adding new users until the <strong>breaking point</strong> so that we can tell how many users can really jump on the system at the same time, such at the beginning of a call-center shift or on Black Friday, etc. The <strong>rate</strong> that new users enter the system is just as important as the total number of concurrent users running, because <strong>authentication infrastructure</strong> limitations is often a bottleneck.
 
-The <strong>nominal</strong> level of load is the momentary peaks reached each day, the level where long <strong>soak tests</strong> are run to ensure the <strong>endurance</strong> of the system over time -- to ensure that the level is sustainable without memory leaks and excessive use of disk space.
+The first web page that a team puts up is usually a <strong>"server unavailable"</strong> page where user traffic is diverted. When the team is just getting started, the <strong>fail-over</strong> test is whether that diversion can really occur.
+ 
+But want the <strong>threshold for action</strong> to be the <strong>point of UX degradation</strong>, when response time begins to suffer due to load. In that threshold we also need to consider the <strong>lead time</strong> to get additional <strong>capacity</strong>. With on-premises machines, this can be like 6 months. So, traditionally, companies over-bought capacity that often go unused. The value of an elastic cloud such as Amazom is that we pay only what we use. 
 
-<strong>"Headroom"</strong> is how much capacity is available to absorb future growth.
+We still need to identify the <strong>nominal</strong> level of load -- the momentary <strong>peaks</strong> reached each day, the level where long <strong>soak tests</strong> are run to ensure the <strong>endurance</strong> of the system over time -- to ensure that the level is sustainable without memory leaks and excessive use of disk space.
 
-When we have a cluster of servers, we need to makes sure we have the <strong>elasticity</strong> we hoped for. So We do <strong>Spike Tests</strong> to verify resiliency, the ability of the system to absorb sudden temporary spikes while maintaining adequate response time.
+The helps us save time on <strong>Smoke tests</strong> which verifies the <strong>viability</strong> of each buid. 
 
-When <strong>fail-over</strong> facilities are available, we need to test for that.
+Where we need to be vigilent is making sure there is enough <strong>"Headroom"</strong> capacity available to absorb future growth. Along this headroom line is where we provision the appropriate type of server having enough RAM and CPU speed.
 
-In an elastic cloud enviornment, we need to ensure that our configurations can indeed create <strong>new instances</strong> on a timely basis. Tests of elasticity should also include <strong>un-instantation</strong> to reduce the number of instances when load recedes below the threshold. 
+If we have a cluster of servers, we need to make sure we have the <strong>elasticity</strong> we hoped for. So We do <strong>Spike Tests</strong> to verify <strong>resiliency</strong> -- the ability of the system to absorb sudden temporary spikes while maintaining adequate response time.
+
+But in an elastic cloud enviornment, we need to ensure that our configurations can indeed instantiate additional instances on a timely basis. Tests of elasticity should also include <strong>un-instantation</strong> to reduce the number of instances when load recedes below the threshold. 
+
+QUESTIONS: About your app/system:
+1. How quickly can users ramp up? What is "too quick" of a ramp-up?
+2. What is the maximum <strong>rate</strong> (per second) transactions can be processed before UX degrades?
+3. What is the signal threshold to request additional capacity?
+4. How much time does it take to obtain additional capacity (from realization to actual availability)?
+5. What is the maximum <strong>nominal</strong> load on normal days?
+6. How much <strong>headroom</strong> is there for future growth? 
+7. What is the highest temporary <strong>spike</strong> the system can absorb temporarily?
+8. Does the system recover fully after a failure? (resiliency)
+9. Can instances be decomissioned automatically? (elasticity)
+10. Does the system leak memory or consume too much disk space over time?
 
 
 <a name="BusinessObjective"></a>
