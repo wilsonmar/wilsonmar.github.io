@@ -36,8 +36,7 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 ## Testing Tools Landscape
 
-![cloud-perftest-v07-tools-697x330-39140](https://user-images.githubusercontent.com/300046/53567599-b8b5cc80-3b2d-11e9-8a6c-9e76c842326d.jpg)
-
+![cloud-perftest-v10-tools-695x329](https://user-images.githubusercontent.com/300046/53644473-ace90980-3c04-11e9-8337-9fee0e0cca2a.jpg)
 
 This video describes the current landscape of key tools, for both functional and performance testing.
 So the diagram has a lot going on. I'm covering this because job descriptions are now asking for skills that used to be for previously segregated jobs.
@@ -48,7 +47,9 @@ Both sets of tools cover several aspects. One is see whether the User Interface 
 
 The Developer Tools built into Chrome is used to identify how web driver programs know where to click and type in the UI. There is a different web driver for each browser. Each Web Driver exposes an Application Programming Interface (API) that functional testing scripts call. This design means that functional test scripts can be written in any language (Java, Python, C#, etc.). Selenium provides a framework. Protractor adds to Selenium the ability to interpret the Gherkin language to specify tests coded in a more recognizable natural language. 
 
-<a target="_blank" href="https://wilsonmar.github.io/protractor/">Protractor</a> also adds the ability to dynamically read the DOM (Document Object Model) which stores the state of each user's browser which Angular, React, Vue, or other UI libraries manipulate via JavaScript. Jasmine or Mocha or Jest provide developers tools to test JavaScript, such as assertions, mocks, and other capabilities covered in another video. These and tools such as Karate, Rest Assured, and <a target="_blank" href="https://wilsonmar.github.io/pact/">Pact</a> are used to catch errors in dependencies among services needing each other.
+<a target="_blank" href="https://wilsonmar.github.io/protractor/">Protractor</a> also adds the ability to dynamically read the DOM (Document Object Model) which stores the state of each user's browser which Angular, React, Vue, or other UI libraries manipulate via JavaScript. To test JavaScript (even while offline), Jasmine was created along with Angular. Instead of a "batteries included" approach, Mocha focused on what it does, and enabled other libraries such as Chai to focus on mocking and snapshotting. Then Jest was created by Facebook with React, with the same "one library does it all" strategy.
+
+Karate, Rest Assured, and <a target="_blank" href="https://wilsonmar.github.io/pact/">Pact</a> are called integration testing tools because they are used to catch errors in dependencies among services needing each other.
 
 To unit test API services exposed by your app, developers often use SoapUI because it is a free open-source tool, which also tests REST APIs exchanging JSON-formatted data as well as SOAP XML. 
 
