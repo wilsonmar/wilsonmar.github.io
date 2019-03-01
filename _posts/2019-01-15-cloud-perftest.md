@@ -58,9 +58,9 @@ When apps are being developed within the public firewall, if we get functional t
 
 Those who want to put load on the server use <strong>load generators</strong> operated by load testing scripts that replace work on real app clients with "synthetic" or <strong>"virtual" users</strong>, which defines the level of load imposed by scripts. While load is being injected, status such as the rate of transactions and errors encountered are reported by load generators to some controller. Metrics such as CPU and memory utilization within servers are obtained by <a target="_blank" href="https://wilsonmar.github.io/dynatrace">Dynatrace</a> agents installed on servers. Results from runs are then analyzed and presented in dashboards.
 
-Traditionally, to get load generators to run as many users, scripts emulate (which emulate what occurs in the browser) are created based on what is exchanged over the network <strong>wire</strong> between server and clients. Communications are captured into load test scripts, then edited to add correlations and verifications. That's what LoadRunner's VuGen, JMeter, and other proxy-based client emulators do. 
+Traditionally, to get load generators to run as many users, scripts don't duplicate what occurs in the browser, but the HTML exchanged over the network <strong>wire</strong> between server and clients. Communications are captured into load test scripts, then edited to add correlations and verifications. That's what LoadRunner's VuGen, JMeter, and other proxy-based client emulators do. 
 
-But as more and more processing is done within browsers instead of on servers, <strong>TruClient for LoadRunner</strong> was created to record and emulate the DOM and actions of each individual virtual user. This, btw, takes a lot more memory. <a target="_blank" href="https://flood.io/">Flood.io</a> Elements does that also, but using just a web browser as a web-based service. The availability of cloud-based services such as Flood, <a target="_blank" href="https://www.microfocus.com/en-us/products/stormrunner-load-agile-cloud-testing/overview">StormRunner</a>, <a target="_blank" href="https://www.blazemeter.com/">BlazeMeter</a> , and others enabled large servers or a large number of servers to be used for a short periods of time.
+But innovations such as http/2 asynchonous communication and AngularJs code running within browsers cause more and more processing within browsers instead of on servers. So <strong>TruClient for LoadRunner</strong> was created to record and emulate the DOM and actions of each individual virtual user such as clicking buttons and typing on forms. This, btw, takes a lot more memory. <a target="_blank" href="https://flood.io/">Flood.io</a> Elements does that also, but using just a web browser as a web-based service. The availability of cloud-based services such as Flood, <a target="_blank" href="https://www.microfocus.com/en-us/products/stormrunner-load-agile-cloud-testing/overview">StormRunner</a>, <a target="_blank" href="https://www.blazemeter.com/">BlazeMeter</a> , and others enabled large servers or a large number of servers to be used for a short periods of time.
 
 Several advances have sought to shift load testing "left" on the timeine. JMeter scripts can now <a target="_blank" href="https://www.blazemeter.com/blog/mixing-selenium-into-your-load-scenario">invoke the APIs of Web Drivers</a>. But there are limitations.
 
@@ -259,9 +259,40 @@ The potential for failure due to load may not be of concern for "vanity" website
 But most businesses websites prefer their websites to be able to handle more business without much manual vigilence.
 
 
+<a name="BusinessObjective"></a>
+
+## Business Objective Economics
+
+The big takeaway from this line of thinking is that here we focus on the <strong>business objective</strong> of obtaining the <strong>safest way to achieve the highest rate of business transactions at the least total cost</strong>.<a href="#Tasks">*</a>
+
+The total cost calculation should include the cost of dissatisfied customers who cannot reach the website
+or abandon the site (and not buy) when it's too slow due to it being overloaded.
+
+Total costs also includes the time to build and maintain the software.
+
+And also for testing.
+
+
+## Load Testing
+
+A business can't wait for production (paying) users to generate the load to see if the system really works because then it would be too late .
+
+Compared with the negative consequences of business risks, load testing is needed to identify risks that otherwise lay hidden. For example, programs that open a new connection with the database to service every user (rather than "pooling" connections for reuse) would require additional memory to be allocated on the database. So load tests are needed to determine optimal configuration settings. 
+
+Load testing is done to identify errors in design such as memory "leaks" that consume more and more memory over time, requiring each production server to be rebooted. Load testing is needed to determine how often rather than using some arbitrary time like once every night. Some data centers find they need to reboot every hour.
+
+Traditionally, load testing occurred near the end of projects, but to enable Agile practices, many businesses today seek to "shift left" (ahead in time) so that risks are exposed as development occurs so that they can be fixed while the code is still in developer's minds. To facilitate that, load tests (along with <a href="#Monitoring">monitoring</a>) can be made to automatically begin (by a Continuous Integration utility such as Jenkins) when code is uploaded to a team source repository.
+
+Planning for load testing includes <strong>characterizing</strong> the load coming from various use cases (how many people registering, browsing, buying, etc. at the same time).
+
+Running servers in the cloud makes performance testing easier and more economical than
+duplicating the set of production equipment on-premises, which include not just web servers but also
+utility servers such as DNS, Active Directory/LDAP, etc.
+
+
 <a name="RunTypes"></a>
 
-## Performance test run types
+### Performance test run types
 
 ![cloud-perftest-v08-types-553x276-24044](https://user-images.githubusercontent.com/300046/53589081-6f30a600-3b5c-11e9-978a-f69f0f5c2705.jpg)
 
@@ -295,51 +326,6 @@ QUESTIONS: About your app/system:
 8. Does the system recover fully after a failure? (resiliency)
 9. Can instances be decomissioned automatically? (elasticity)
 10. Does the system leak memory or consume too much disk space over time?
-
-
-<a name="BusinessObjective"></a>
-
-## Business Objective Economics
-
-The big takeaway from this line of thinking is that here we focus on the <strong>business objective</strong> of obtaining the <strong>safest way to achieve the highest rate of business transactions at the least total cost</strong>.<a href="#Tasks">*</a>
-
-The total cost calculation should include the cost of dissatisfied customers who cannot reach the website
-or abandon the site (and not buy) when it's too slow due to it being overloaded.
-
-Total costs also includes the time to build and maintain the software.
-
-And also for testing.
-
-
-## Load Testing
-
-A business can't wait for production (paying) users to generate the load to see if the system really works because then it would be too late.
-
-So during development, special programs and programming artificially generate load by pretending to be real users. Such programs include JMeter, LoadRunner, Neotys, Flood.io, etc. Load testing programs replace the clients they emulate. 
-
-Traditionally, load testing programs are created by capturing communications (HTML files passing between client and server). This is to emulate as many users as possible on each artificial load generator by limitng the scope of client processing.
-
-However, innovations such as http/2 asynchonous communication and AngularJs code running within browsers now require load testing to adapt functional UI testing tools which control each client user's keyboard and mouse. This approach of running several test instances previously designed for use by an individual tester means less users can be emulated on each load generator machine.
-
-Nevertheless, compared with the negative consequences of business risks, load testing is needed to identify risks that otherwise lay hidden.
-
-Programs that open a new connection with the database to service every user (rather than "pooling" connections for reuse) would require additional memory to be allocated on the database. So load tests are needed to determine optimal configuration settings. By definition, <strong>dynamic Security scans</strong> are conducted while the system is under load.
-
-Load testing is done to identify errors in design such as memory "leaks" that consume more and more memory over time, requiring each production server to be rebooted. Load testing is needed to determine how often rather than using some arbitrary time like once every night. Some data centers find they need to reboot every hour.
-
-Tests to identify such issues require <strong>"soak" test runs</strong>. Such long runs can consume a lot of unique data values. So it can be time consuming to manufacture enough data for this purpose.
-But doing so would enable the testing of conditions in the future when databases grow larger over time.
-Laws require that data from production be "scrubbed" of personally identifiable information.
-
-Traditionally, load testing occurred near the end of projects, but to enable Agile practices, many businesses today seek to "shift left" (ahead in time) so that risks are exposed as development occurs so that they can be fixed while the code is still in developer's minds. To facilitate that, load tests (along with <a href="#Monitoring">monitoring</a>) can be made to automatically begin (by a Continuous Integration utility such as Jenkins) when code is uploaded to a team source repository.
-
-
-Planning for load testing includes <strong>characterizing</strong> the load coming from various use cases (how many people registering, browsing, buying, etc. at the same time).
-
-Running servers in the cloud makes performance testing easier and more economical than
-duplicating the set of production equipment on-premises, which include not just web servers but also
-utility servers such as DNS, Active Directory/LDAP, etc.
-
 
 
 <a name="ServerImages"></a>
@@ -689,7 +675,7 @@ A/B testing
 
 <a name="Lightsail"></a>
 
-## AWS Lightsale
+## AWS Lightsail
 
 In 2018 Amazon introduced its <a target="_blank" href="https://lightsail.aws.amazon.com/ls/docs/en/articles/getting-started-with-amazon-lightsail">Lightsail service</a>, which <strong>automatically scales</strong> EC2 instances running executables without the need to setup VPCs and auto-scaling groups.
 And rates are comparable to public hosting companies (starting at $5 per month).
