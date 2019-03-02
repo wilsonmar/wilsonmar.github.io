@@ -38,48 +38,57 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 ![cloud-perftest-v10-tools-695x329](https://user-images.githubusercontent.com/300046/53644473-ace90980-3c04-11e9-8337-9fee0e0cca2a.jpg)
 
-This video describes the current landscape of key tools, for both functional and performance testing.
-So the diagram has a lot going on. I'm covering this because job descriptions are now asking for skills that used to be for previously segregated jobs.
-Load testers must now know functional tools. Site reliability engineers who used to just monitor things now must also know how to insert synthetic loads.
-Developers are expected to know everything. That's the new downsizing strategy.
+In this diagram, a lot is going on because we're covering here the landscape of key tools for both functional and performance testing, and from unit to integration stages. Tools for both categories are here in one diagram because <strong>job descriptions</strong> are now asking for skills that used to be for previously segregated jobs. 
+Load testers must now know functional tools. 
+Site reliability engineers who used to just monitor things now must also know how to insert synthetic loads.
+Developers are expected to know everything. That's the new strategy for small Agile teams.
 
-Both sets of tools cover several aspects. One is see whether the User Interface (UI) displays what users are intended to see. We want to inspect and perhaps manipulate the  (Domain Object Model) which stores the state of each user's browser that Angular, React, Vue, or other UI libraries manipulate via JavaScript. We also need to unit test our server's API, one at a time. We do several types of performance testing to ensure that the infrastructure can deliver acceptable response time, absorb spikes, scale well, and not leak memory.
+I'll be revealing each line and box at a time, starting from apps running in a <strong>system under test</strong>, accessed by an application <strong>client</strong> which today is typically an internet browser such as Google Chrome running on a laptop.
 
-The Developer Tools built into Chrome is used to identify how web driver programs know where to click and type in the UI. There is a different web driver for each browser. Each Web Driver exposes an Application Programming Interface (API) that functional testing scripts call. This design means that functional test scripts can be written in any language (Java, Python, C#, etc.). Selenium provides a framework. Protractor adds to Selenium the ability to interpret the Gherkin language to specify tests coded in a more recognizable natural language. 
+In a shift-left Agile development environment, both categories of tools (functional and performance) cover similar aspects throughout the development lifecycle. One aspect is to see whether the User Interface <strong>(UI)</strong> displays what users are intended to see. We want to inspect and perhaps manipulate the Domain Object Model <strong>(DOM)</strong> which stores the state of each user's browser that Angular, React, Vue, or other UI libraries manipulate via <strong>JavaScript</strong>. 
 
-<a target="_blank" href="https://wilsonmar.github.io/protractor/">Protractor</a> also adds the ability to dynamically read the DOM (Document Object Model) which stores the state of each user's browser which Angular, React, Vue, or other UI libraries manipulate via JavaScript. To test JavaScript (even while offline), Jasmine was created along with Angular. Instead of a "batteries included" approach, Mocha focused on what it does, and enabled other libraries such as Chai to focus on mocking and snapshotting. Then Jest was created by Facebook with React, with the same "one library does it all" strategy.
+We also need to unit test the APIs (Application Programming Interfaces) computers use to talk with other computers.
+
+We do several types of what are called <strong>non-functional tests</strong> to ensure that the infrastructure can indeed deliver acceptable response time, absorb spikes, scale well, not leak memory, and meet other requirements.
+
+Among the first functional test scripts are those to test JavaScript (even while offline). Jasmine was created along with Angular. Jasmine had a "batteries included" approach, so Mocha came along with a focus on assertions, and depended on other libraries such as Chai to innovate on mocking,  snapshotting, and other features. Then Jest was created along with React by Facebook, with the same "one library does it all" strategy, with even more features than Jasmine.
+
+Built into the Chrome browser are <strong>Developer Tools</strong> which are used to manually identify the <strong>identifiers</strong> that <strong>Web driver</strong> programs use to automate the clicking and typing in the UI. There is a different web driver for each browser. Each Web Driver exposes an API that automated testing scripts call. This design is why functional test scripts can be written in any language (Java, Python, C#, etc.). Selenium provides a framework for organizing the scripts. 
+
+<a target="_blank" href="https://wilsonmar.github.io/protractor/">Protractor</a> adds to Selenium the ability to interpret the <strong>Gherkin</strong> written language to specify tests in a more natural way. 
+Protractor also adds the ability to dynamically read the DOM (Document Object Model) which stores the state of each user's browser which Angular, React, Vue, or other UI libraries manipulate via JavaScript. 
 
 Karate, Rest Assured, and <a target="_blank" href="https://wilsonmar.github.io/pact/">Pact</a> are called integration testing tools because they are used to catch errors in dependencies among services needing each other.
 
-To unit test API services exposed by your app, developers often use SoapUI because it is a free open-source tool, which also tests REST APIs exchanging JSON-formatted data as well as SOAP XML. 
+To unit test API services exposed by an app, developers often use SoapUI because it is a free open-source tool, which also tests REST APIs exchanging JSON-formatted data as well as SOAP XML. 
 
-Those concerned about what is keeping <a href="#LandingPages">landing pages</a> from loading faster use <strong>Google's Lighthouse</strong> to get recommendations about techniques to speed up landing pages. And Google Analytics provides timings for public production transactions. To test code in production, some developers code "feature flags" to expose parts of code to a subset of users in production. So now which specific flags are being used at at given time needs to be tracked for correlation to timings.
+Those concerned about what is keeping <a href="#LandingPages">landing pages</a> from loading faster manually use Google Page Speed or <strong>Lighthouse</strong> to get recommendations about techniques to speed up landing pages. And <strong>Google Analytics</strong> provides timings for public production transactions. To test code in production, some developers code "feature flags" to expose parts of code to a subset of users in production. So now, the specific flags being used at at given time needs to be tracked for correlation to timings.
 
 When apps are being developed within the public firewall, if we get functional test scripts to obtain <strong>timings</strong> on each step within the app (and store them in a time-series database), we can get early <strong>alerts</strong>, without additional test scripting.
 
-Those who want to put load on the server use <strong>load generators</strong> operated by load testing scripts that replace work on real app clients with "synthetic" or <strong>"virtual" users</strong>, which defines the level of load imposed by scripts. While load is being injected, status such as the rate of transactions and errors encountered are reported by load generators to some controller. Metrics such as CPU and memory utilization within servers are obtained by <a target="_blank" href="https://wilsonmar.github.io/dynatrace">Dynatrace</a> agents installed on servers. Results from runs are then analyzed and presented in dashboards.
+Those who want to put load on apps use <strong>load generators</strong> operated by load testing scripts that replace work on real app clients with "synthetic" or <strong>"virtual" users</strong>. The number of such virtual users is often used to define the level of load imposed by scripts. While load is being injected, <strong>status</strong> such as the rate of transactions and errors encountered are reported by load generators to some controller. <strong>Metrics</strong> such as CPU and memory utilization within servers are obtained by <a target="_blank" href="https://wilsonmar.github.io/dynatrace">Dynatrace</a> or other monitoring agents installed on servers. Results from runs are then analyzed and presented in <strong>dashboards</strong>.
 
-Traditionally, to get load generators to run as many users, scripts don't duplicate what occurs in the browser, but the HTML exchanged over the network <strong>wire</strong> between server and clients. Communications are captured into load test scripts, then edited to add correlations and verifications. That's what LoadRunner's VuGen, JMeter, and other proxy-based client emulators do. 
+Traditionally, to get load generators to run as many virtual users as possible, load testing scripts don't duplicate what occurs in the browser, but mimic just what is exchanged over the network <strong>wire</strong> between an app its clients. Communications are captured as load test scripts, then edited to add correlations and verifications. That's what LoadRunner's VuGen, JMeter, and other proxy-based client emulators do. 
 
-But innovations such as http/2 asynchonous communication and AngularJs code running within browsers cause more and more processing within browsers instead of on servers. So <strong>TruClient for LoadRunner</strong> was created to record and emulate the DOM and actions of each individual virtual user such as clicking buttons and typing on forms. This, btw, takes a lot more memory. <a target="_blank" href="https://flood.io/">Flood.io</a> Elements does that also, but using just a web browser as a web-based service. The availability of cloud-based services such as Flood, <a target="_blank" href="https://www.microfocus.com/en-us/products/stormrunner-load-agile-cloud-testing/overview">StormRunner</a>, <a target="_blank" href="https://www.blazemeter.com/">BlazeMeter</a> , and others enabled large servers or a large number of servers to be used for a short periods of time.
+Then innovations such as http/2 asynchonous communication and AngularJs code running within browsers cause more and more processing within browsers instead of on servers. So <strong>TruClient for LoadRunner</strong> was created to record and emulate the DOM and actions of each individual virtual user such as clicking buttons and typing on forms. This takes up a lot more memory. <a target="_blank" href="https://flood.io/">Flood.io</a> Elements does that also, but using just a web browser as a web-based service. The availability of cloud-based services such as Flood, <a target="_blank" href="https://www.microfocus.com/en-us/products/stormrunner-load-agile-cloud-testing/overview">StormRunner</a>, <a target="_blank" href="https://www.blazemeter.com/">BlazeMeter</a> , and others is enabling large servers or a large number of servers to be used for a short periods of time.
 
-Several advances have sought to shift load testing "left" on the timeine. JMeter scripts can now <a target="_blank" href="https://www.blazemeter.com/blog/mixing-selenium-into-your-load-scenario">invoke the APIs of Web Drivers</a>. But there are limitations.
+Several advances have "shifted left" the testing of apps on the development process timeline. JMeter scripts can now invoke the APIs of Web Drivers, albeit with <a target="_blank" href="https://www.blazemeter.com/blog/mixing-selenium-into-your-load-scenario">some limitations</a>.
 
-Neoload can process Selenium scripts.
+<strong>Neoload</strong> can process Selenium scripts as well as scripts created the traditional way.
 
-To load test APIs, we're looking forward to mature tools to convert SOAPUI scripts and Open API (Swagger) specs into load testing scripts. 
+To load test APIs, we're looking forward to mature tools to automatically convert SOAPUI scripts and Open API (Swagger) specs into load testing scripts. Our objective is to begin testing as soon as code is pushed or merge requested from a <strong>local Git</strong> Repository to <strong>GitHub</strong> (or other Version Control repository).
 
-As with all code, when scripts are stored in a Git Repository pushed to GitHub (or other Version Control repository), when a pull/merge request is made, <a target="_blank" href="https://wilsonmar.github.io/git-hooks">hooks</a> can automatically initiate <strong>monitoring</strong> and <strong>build</strong> of app instances before kicking off testing jobs. Many have created a cascade of CI/CD automation to step through several test environments that ensure changes safely yet quickly get into production.
+Part of the modern development toolchain are code <strong>scanners</strong> and code <strong>profilers</strong> to detect issues while the code is still fresh in the developer's mind.
 
-Part of the modern development toolchain are code <strong>scanners</strong> and code <strong>profilers</strong> to detect issues while the code is still fresh in developers' mind.
+Furthermore, <a target="_blank" href="https://wilsonmar.github.io/git-hooks">hooks</a> can automatically initiate <strong>build</strong> of app instances, <strong>monitoring</strong>, and <strong>profiling</strong> to be initiated before kicking off testing jobs. Many have created a cascade of CI/CD automation to step through several test environments that ensure changes safely yet quickly get into production.
+
 
 
 <a name="LandingPages"></a>
 
 ### Landing Page Efficiencies
 
-It is even more important for an organization's marketing landing page to be fast as its headquarters lobby to be stylish.
-More potential and actual customers visit on-line than in person.
+More potential and actual customers visit on-line than in person. So it is even more important for an organization's marketing landing page to be fast as its headquarters lobby to be stylish. 
 
 <a target="_blank" href="https://developers.google.com/speed/pagespeed/insights/">Google's Page Speed Insights</a>
 points out internal issues such as whether images are compressed enough and the many other specific tricks to make the site as fast as possible. 
@@ -291,31 +300,6 @@ duplicating the set of production equipment on-premises, which include not just 
 utility servers such as DNS, Active Directory/LDAP, etc.
 
 
-<a name="RunTypes"></a>
-
-### Performance test run types
-
-![cloud-perftest-v08-types-553x276-24044](https://user-images.githubusercontent.com/300046/53589081-6f30a600-3b5c-11e9-978a-f69f0f5c2705.jpg)
-
-Here we're talking about the different <strong>levels</strong> of load and <strong>lengths</strong> of test runs using different <strong>types of testing</strong>. This is the heart of a performance test plan.
-
-We begin by identifying how quickly users can <strong>ramp-up</strong>, starting with a very aggressive rate so we can identify what is <strong>"too quick"</strong>. We then back off to a rate that brings up the most number of users the quickest. We need to use a <strong>Stress Test</strong> scenario that keeps adding new users until the <strong>breaking point</strong> so that we can tell how many users can really jump on the system at the same time, such at the beginning of a call-center shift or on Black Friday, etc. The <strong>rate</strong> that new users enter the system is just as important as the total number of concurrent users running, because <strong>authentication infrastructure</strong> limitations is often a bottleneck.
-
-The first web page that a team puts up is usually a <strong>"server unavailable"</strong> page where user traffic is diverted. When the team is just getting started, the <strong>fail-over</strong> test is whether that diversion can really occur.
- 
-But want the <strong>threshold for action</strong> to be the <strong>point of UX degradation</strong>, when response time begins to suffer due to load. In that threshold we also need to consider the <strong>lead time</strong> to get additional <strong>capacity</strong>. With on-premises machines, this can be like 6 months. So, traditionally, companies over-bought capacity that often go unused. The value of an elastic cloud such as Amazom is that we pay only what we use. 
-
-We still need to identify the <strong>nominal</strong> level of load -- the momentary <strong>peaks</strong> reached each day, the level where long <strong>soak tests</strong> are run to ensure the <strong>endurance</strong> of the system over time -- to ensure that the level is sustainable without memory leaks and excessive use of disk space.
-
-Knowing this helps us save time on <strong>Smoke tests</strong> which verifies the <strong>viability</strong> of each buid. 
-
-Where we need to be vigilent is making sure there is enough <strong>"Headroom"</strong> capacity available to absorb future growth. Along this headroom line is where we provision the appropriate type of server having enough RAM and CPU speed.
-
-If we have a cluster of servers, we need to make sure we have the <strong>elasticity</strong> we hoped for. So We do <strong>Spike Tests</strong> to verify <strong>resiliency</strong> -- the ability of the system to absorb sudden temporary spikes while maintaining adequate response time, then come back to normal levels of memory usage.
-
-In an elastic cloud enviornment, we need to ensure that our configurations can indeed <strong>instantiate</strong> additional capacity on a timely basis. Tests of elasticity should also include <strong>un-instantation</strong> to reduce the number of instances when load recedes below the threshold. 
-
-
 QUESTIONS: About your app/system:
 1. How quickly can users ramp up? What is "too quick" of a ramp-up?
 2. What is the maximum <strong>rate</strong> (per second) transactions can be processed before UX degrades?
@@ -327,6 +311,32 @@ QUESTIONS: About your app/system:
 8. Does the system recover fully after a failure? (resiliency)
 9. Can instances be decomissioned automatically? (elasticity)
 10. Does the system leak memory or consume too much disk space over time?
+
+
+<a name="RunTypes"></a>
+
+### Performance test run types
+
+![cloud-perftest-v08-types-553x276-24044](https://user-images.githubusercontent.com/300046/53589081-6f30a600-3b5c-11e9-978a-f69f0f5c2705.jpg)
+
+This video is about the heart of a performance test plan -- the different <strong>levels</strong> of load and <strong>lengths</strong> of test runs using different <strong>types of load testing</strong>. 
+
+We begin by identifying how quickly users can <strong>ramp-up</strong>, starting with a very aggressive rate so we can identify what is <strong>"too quick"</strong>. We then back off to a rate that brings up the most number of users the quickest. We need to use a <strong>Stress Test</strong> scenario that keeps adding new users until the <strong>breaking point</strong> so that we can tell how many users can really jump on the system at about the same time, such as at the beginning of a call-center shift or on Black Friday, etc. The <strong>rate</strong> that new users enter the system is just as important as the total number of concurrent users running, because limitations in the <strong>authentication infrastructure</strong> is often a bottleneck.
+
+The first web page that a team puts up is usually a <strong>"server unavailable"</strong> page where user traffic is diverted to. When the team is just getting started, the <strong>fail-over</strong> test is whether that diversion can really occur.
+ 
+We want to identify the <strong>threshold for action</strong> as the <strong>point of UX degradation</strong> when response time begins to suffer due to load. In that threshold we also need to consider the <strong>lead time</strong> to get additional <strong>capacity</strong>. With on-premises machines, this can be like 6 months. So, traditionally, companies over-bought capacity that often go unused. The value of an elastic cloud such as Amazom is that we pay only what we use, when we use it. 
+
+We still need to identify the <strong>nominal</strong> level of load -- the momentary <strong>peaks</strong> reached each day, the level where long <strong>soak tests</strong> are run to ensure the <strong>endurance</strong> of the system over time -- to ensure that the level is sustainable without memory leaks and excessive use of disk space.
+
+Knowing this helps us save time on <strong>Smoke tests</strong> which verifies the <strong>viability</strong> of each buid. 
+
+Where we need to be vigilent is making sure there is enough <strong>"Headroom"</strong> capacity available to absorb future growth. Along this headroom line is where we provision the appropriate type of server having enough RAM and CPU speed.
+
+If we have a cluster of servers, we need to make sure we have the <strong>elasticity</strong> we hoped for. So We do <strong>Spike Tests</strong> to verify <strong>resiliency</strong> -- the ability of the system to absorb sudden temporary spikes while maintaining adequate response time, then come back to normal levels of memory usage and rate of operation.
+
+In an elastic cloud enviornment, we need to ensure that our configurations can indeed <strong>instantiate</strong> additional capacity on a timely basis. Tests of elasticity should also include <strong>un-instantation</strong> to reduce the number of instances when load recedes below threshold steps. 
+
 
 
 <a name="ServerImages"></a>
