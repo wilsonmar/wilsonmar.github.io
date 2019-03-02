@@ -18,7 +18,7 @@ image: # pic-black-bkg-white-cloud_1920x1200
 <a target="_blank" href="https://wilsonmar.github.io/cloud-perftest/">This</a> is my draft of sequencing a logical presentation about how to ensure scalability, availability, resilience, and affordability from building, testing, and running computer software applications in production on various cloud environments. 
 
 * I begin with the <a href="#TestingTools">"Full Stack" Testing Tools Landscape</a> 
-* <a href="#Statics">Static vs. Dynamic HTML generation and CDNs</a>
+* <a href="#Statics">Static vs. Dynamic HTML generation</a> and <a href="#CDNx">CDNs</a>
 * <a href="#Executables">Executable app architecture</a>
 * <a href="#SaaS">SaaS</a>
 * <a href="#SingleInstance">Single-instance</a>
@@ -112,9 +112,9 @@ A public cloud enables test clients to be quickly installed around the world to 
    <br /><br />
 
 
-<a name="Statics"></a>
+<a name="CDNs"></a>
 
-### Static vs. Dynamic HTML generation and CDNs
+### CDNs for static vs. Dynamic HTML generation
 
 Instead of a URL using the same host name (server) as HTML, it is now common for images, video, and pdf files to be served on a Content Delivery Network (CDN). 
 Such as Amazon's cloudfront.net:
@@ -138,27 +138,27 @@ QUESTION: Are resources retrieved faster on AWS Cloudfront because it offers the
 AWS serves Video on Demand 
 
 
+<a name="Static"></a>
+
+## Static vs. Dynamic CMS sites
+
+The architecture of Content Management Systems (CMS) such as WordPress and Drupal is that they <strong>dynamically generate</strong> HTML presented in response to each request from users. This is great for personalization, but is slower than the newer approach of having <strong>static</strong> HTML files sitting in CDNs distributed for fast retrieval. 
+
+The programming that does the generation within WordPress is written in the PHP programming language.
+PHP is an <a target="_blank" href="http://en.wikipedia.org/wiki/Interpreted_language">interpreted language</a>, meaning that PHP programming source code is processed by the PHP interpreter program every time to respond to each new request. 
+
+WordPress and Drupal are among the most popular programs running on the internet because of its vast ecosystem of developers and add-on functionality. To many, the overhead of PHP is worth the features provided by PHP sites that use SugarCRM, WooCommerce, and many others.
+
 <a name="Custom"></a>
 
 ## Executable app architectures
 
-Websites that expose <strong>static</strong> HTML files for retrieval run fast because such files are not generated. 
-
-Websites that run WordPress are slower than static sites because WordPress generates HTML files for every request. The programming that does the generation is written in the PHP programming language.
-PHP is an <a target="_blank" href="http://en.wikipedia.org/wiki/Interpreted_language">interpreted language</a>, meaning that PHP programming source code is processed by the PHP interpreter program every time to respond to each new request. 
-
-WordPress still is among the most popular programs running on the internet 
-because of its vast ecosystem of developers and add-on functionality.
-To many, the overhead of PHP is worth the features provided by PHP sites that use SugarCRM, WooCommerce, and many others.
-
 PHP and Python are usually slower than programs written in Java, Go, or other programming language <strong>compiled</strong> into low-level run-time files that computers execute.
 
-Java programs require the additional installation of a JVM (Java Virtual Machine) that allocates memory among programs.
-Go comes with its own run-time environment.
+Java programs require the additional installation of a JVM (Java Virtual Machine) that allocates memory among programs. The programming language Go comes with its own run-time environment.
 
 The difficulty with both interpreted and compiled applications is that one must setup a <strong>server</strong> and populate it with the software, then configure it.
 Over time, reconfigure it for security patches (such as for TLS 1.2, Heartbleed, etc.).
-
 
 Business owners who had a website built must continue to pay thousands of dollars each year for "maintenance" to keep it running.
 Patches for operating system security, the PHP interpreter -- every aspect of technology -- must be updated ocassionally. 
