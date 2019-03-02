@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Python Robot"
-excerpt: "A robot python mimics what human users do to entertain real developers"
-tags: [Clouds, IoT]
+title: "Python Robot testing"
+excerpt: "A robot python mimics what human testers do manually (to entertain real developers)"
+tags: [Clouds, testing]
 shorturl: "https://goo.gl/qOoEVx"
 image:
 # pic silver robot white skin handshake 1900x500
@@ -12,8 +12,6 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
-[![Gitter](https://badges.gitter.im/wilsonmar/wilsonmar.github.io.svg)](https://gitter.im/wilsonmar/wilsonmar.github.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 {% include _toc.html %}
 
