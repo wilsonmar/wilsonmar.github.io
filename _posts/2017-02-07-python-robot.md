@@ -236,3 +236,7 @@ https://www.slideshare.net/pekkaklarck/robot-framework-introduction
 This is one of a series on IoT:
 
 {% include iot_links.html %}
+
+This is one of a series on Python:
+
+{% include python_links.html %}
