@@ -211,7 +211,9 @@ Otherwise, <a href="#Security">click here to go to the Security section</a>.
 
 1. Click "Connect using SSH" again.
 
-1. Highlight a portion of the terminal by clicking on the beginning, the hold down the cursor to drag your mouse across. Press Enter to copy the text into the browser's orange clipboard icon.
+   According to the "Help" tab on the right edge of the Lightsail console:
+
+1. Highlight a portion of the Lightsail terminal window by clicking on the beginning of what you want to copy, then hold down the left-mouse and drag your mouse across to the end of the text to be copied. Press Enter to copy the text into the browser's orange clipboard icon.
 
 1. Click on the organge clipboard icon and press command+A to copy all to your invisible Clipboard.
 
