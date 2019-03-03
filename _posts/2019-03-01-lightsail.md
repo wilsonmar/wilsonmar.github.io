@@ -16,12 +16,14 @@ comments: true
 
 {% include _toc.html %}
 
-<a href="https://wilsonmar.github.io/lightsail/">This tutorial</a> is about Amazon Lightsail, which charges a <strong>fixed monthly price</strong> for several specific mixes of compute, memory, disk, and data transfer capacities (2, 4, 8 GB). 
+<a href="https://wilsonmar.github.io/lightsail/">This tutorial</a> is about Amazon Lightsail, which charges a <strong>fixed monthly price</strong> for a single EC2 server using specific mixes of compute, memory, disk, and data transfer capacities (2, 4, 8 GB). 
 
 Amazon Lightsail was announced in 2018.
 The service competes with offerings by several traditional hosting services for WordPress, such as ???
 
 Lightsail's competitive difference is <strong>solid-State</strong> storage which are fast and reliable.
+
+In <a target="_blank" href="https://aws.amazon.com/s/lp/lightsail-vs-ec2/">Lightsail vs EC2</a>, Lightsail is noted to make "server management easier by automatically configuring key resources like networking and security".
 
 ## Get on AWS
 
@@ -68,6 +70,8 @@ Lightsail's competitive difference is <strong>solid-State</strong> storage which
    
    ### Save key pair for SSH
 
+   NOTE: There is 1 default SSH per region.
+
 1. MEH: <a href="#WebSSH">Lightsail's online SSH doesn't work</a>, so click "Create New" under "SSH key pair manager".
 1. Type the key pair name such as <tt><strong>ywam-1-Ubuntu18-512MB-Virginia-1</strong></tt>, and click "Generate".
 1. Click "Download key", then Save File "*.pem" into your default Downloads folder.
@@ -82,7 +86,7 @@ Lightsail's competitive difference is <strong>solid-State</strong> storage which
 1. Click the orange "Create instance".
 1. The Lightsail console displays your instances under a menu:
 
-   <tt>Instances - Databases - Networking - Storage - Snapshots</tt>
+   <tt>Instances Databases Networking Storage Snapshots Tags History Delete</tt>
 
    For YWAM, we don't use an Amazon database, but one we include within the instance.
    
@@ -133,10 +137,9 @@ and press command+C to copy the text to your invisible Clipboard.
 
    <tt><strong>ssh -i "$SSHKEY" ec2-user@</strong></tt> 
    
-   then press command+V to pase the IP address from your Clipboard, such as "3.94.159.30".
+   then press command+V to paste the IP address from your Clipboard, such as "3.94.159.30".
 
-   You should see:
-   NOTE: There is 1 default SSH per region.
+   You should see some informative and marketing messages:
 
    <pre>
 Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-1021-aws x86_64)
@@ -177,17 +180,21 @@ See "man sudo_root" for details.
 
    QUESTION TO AMAZON: How to copy text from the SSH window?
 
-   QUESTION TO AMAZON: How to copy text into the session?
-
-   QUESTION TO AMAZON: How to get around the auto-repeat of a character pressed on the screen?
-
 1. Click the red dot at the upper-left corner of the browser window to exit.
 
 1. Click "Connect using SSH" again.
 
-1. Copy and paste
+1. Highlight a portion of the terminal by clicking on the beginning, the hold down the cursor to drag your mouse across. Press Enter to copy the text into the browser's orange clipboard icon.
 
-   <pre><strong>echo $pwd</strong></pre>
+1. Click on the organge clipboard icon and press command+A to copy all to your invisible Clipboard.
+
+   QUESTION TO AMAZON: How to copy text into the session?
+
+   QUESTION TO AMAZON: How to get around the auto-repeat of a character pressed on the screen?
+
+   <pre>echo $pwd</pre>
+
+
 
 1. On a Mac, hold down control and press C to escape any running command.
 
