@@ -186,10 +186,17 @@ To run a command as administrator (user "root"), use "sudo <command>".
 See "man sudo_root" for details.
    </pre>
 
+   ### Monitor the instance
+
+1. See <a target="_blank" href="https://lightsail.aws.amazon.com/ls/docs/en/articles/managing-your-instance-using-lightsail">Managing your Amazon Lightsail instance</a>.
+
+   https://www.binarytides.com/linux-commands-monitor-network/
+
    ### Delete the instance
 
 1. Press command+Tab to switch to the Lightsail console.
 1. Click the icon with the 3 veritical dots next to your instance, then select "Delete".
+
 
 ### Lightsail's online SSH doesn't work
 
