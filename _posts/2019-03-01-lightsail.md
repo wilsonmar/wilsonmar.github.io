@@ -205,11 +205,9 @@ Otherwise, <a href="#Security">click here to go to the Security section</a>.
 
    PROTIP: On a Mac, rotate among browser windows by holding down keyboard command then  pressing the "back-tick" key at the upper-right corner of the keyboard.
 
-   QUESTION TO AMAZON: How to copy text from the SSH window?
-
 1. Click the red dot at the upper-left corner of the browser window to exit.
 
-1. Click "Connect using SSH" again.
+1. At the Lightsail console, click the orange icon for terminal to the right of the instance you want to work on. 
 
    According to the "Help" tab on the right edge of the Lightsail console:
 
