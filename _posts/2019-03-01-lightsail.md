@@ -47,7 +47,7 @@ In <a target="_blank" href="https://aws.amazon.com/s/lp/lightsail-vs-ec2/">Light
 
    <a target="_blank" href="https://lightsail.aws.amazon.com/ls/webapp/home/instances">https://lightsail.aws.amazon.com/ls/webapp/home/instances</a>
 
-1. Bookmark the above to get back to it quickly.
+1. Bookmark the above to get back to it quickly. You also return to this by clicking "Home" at the top menu.
 
    ### Create new instance
 
@@ -96,8 +96,7 @@ In <a target="_blank" href="https://aws.amazon.com/s/lp/lightsail-vs-ec2/">Light
 
    We don't need the load balancer and its firewall to filter traffic.
 
-   We will grow by snapshoting (transfer to another region) and create and attach a disk with
-   EC2 migrate for more capacity and features.
+   We will grow by snapshoting (transfer to another region) and <a target="_blank" href="https://lightsail.aws.amazon.com/ls/docs/en/articles/create-and-attach-additional-block-storage-disks-linux-unix">create and attach an EBS disk volume</a> with EC2 migrate for more capacity and features.
 
 1. Click on your instance name ("ywam-1-Ubuntu18-512MB-Virginia-1").
 
@@ -181,7 +180,7 @@ See "man sudo_root" for details.
 
    ### Lightsail's online SSH doesn't work
 
-1. Click the orange "Connect using SSH" for a new browser window to open up.
+1. For a new browser window to open up, on the Home screen click the icon under the instance name or, if you've click the instance name, click the orange "Connect using SSH" 
 
    PROTIP: On a Mac, rotate among browser windows by holding down keyboard command then  pressing the "back-tick" key at the upper-right corner of the keyboard.
 
@@ -199,9 +198,11 @@ See "man sudo_root" for details.
 
    QUESTION TO AMAZON: How to get around the auto-repeat of a character pressed on the screen?
 
-   <pre>echo $pwd</pre>
+   <pre>cat bitnami_application_password</pre>
 
+   To get the RSA fingerprint:
 
+   aws ec2 get-console-output --instance-id instance_id
 
 1. On a Mac, hold down control and press C to escape any running command.
 
