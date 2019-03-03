@@ -21,17 +21,17 @@ comments: true
 Amazon Lightsail was announced in 2018.
 In <a target="_blank" href="https://aws.amazon.com/s/lp/lightsail-vs-ec2/">Lightsail vs EC2</a>, Lightsail is noted to make "server management easier by automatically configuring key resources like networking and security".
 
-The service competes with <strong>VPS (Virtual Private Servers)</strong> (full root access) offerings by several traditional hosting services.
-For example (paid by the year):
+The service competes with <strong>VPS (Virtual Private Servers)</strong> (full root access) offerings by several traditional hosting services. Among hosts offering the fastest load times (paid by the year):
 
 * $14/month for 1GB RAM, 30GB SSD, unlimited data transfer at <a target="_blank" href="https://www.dreamhost.com/hosting/vps/">Dreamhost.com</a>
+* $20/month for 4GB RAM, 40GB disk, unlimited data transfer, plus 3 dedicated IPs and SSL free 1st year at <a target="_blank" href="https://www.godaddy.com/hosting/vps-hosting">GodDaddy.com</a> 
 * $19/month for 2GB RAM, 30GB SSD, 1TB data transfer at <a target="_blank" href="https://www.bluehost.com/hosting/vps/">Bluehost.com</a>
 * $30/month for 2GB RAM, 120GB disk, 1.5TB data transfer at <a target="_blank" href="https://www.hostgator.com/vps-hosting">hostgator.com</a>
 * $80/month for 4GB RAM, 40GB SSD, 5 TB data transfer at <a target="_blank" href="https://www.siteground.com/cloud-hosting.htm">SiteGround.com</a>
 <br /><br />
 
 Lightsail's competitive difference is not just <strong>solid-State</strong> storage which are fast and reliable,
-but that its users can move up to EC2 when a more complex configuration is needed.
+but that its users can <strong>move up to EC2</strong> (using a snapshot) when more complex configuration is needed.
 
 ## Get on AWS
 
@@ -186,7 +186,12 @@ To run a command as administrator (user "root"), use "sudo <command>".
 See "man sudo_root" for details.
    </pre>
 
-   ### Lightsail's online SSH doesn't work
+   ### Delete the instance
+
+1. Press command+Tab to switch to the Lightsail console.
+1. Click the icon with the 3 veritical dots and select "Delete".
+
+### Lightsail's online SSH doesn't work
 
 1. For a new browser window to open up, on the Home screen click the icon under the instance name or, if you've click the instance name, click the orange "Connect using SSH" 
 
