@@ -199,6 +199,8 @@ See "man sudo_root" for details.
 If you are using Lightsail's SSH terminal window, read below.
 Otherwise, <a href="#Security">click here to go to the Security section</a>.
 
+<a name="LighsailTerminal"></a>
+
 ### Lightsail's online SSH window
 
 1. For a new browser window to open up, on the Home screen click the icon under the instance name or, if you've click the instance name, click the orange "Connect using SSH" 
