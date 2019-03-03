@@ -123,10 +123,17 @@ and press command+C to copy the text to your invisible Clipboard.
 
    <tt><strong>export SSHKEY=~/Downloads/ywam-1-Ubuntu18-512MB-Virginia-1.pem</strong></tt>
 
-1. Verify by typeing on the Terminal prompt, type <tt>echo $SSHKEY</tt>
-1. Use the variable on the Terminal prompt, type <tt>chmod 400 "$SSHKEY"</tt>
+1. Use the variable on the Terminal prompt<a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html">*</a>, type:
 
-   <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html">*</a>
+   <pre><strong>chmod 400 "$SSHKEY"</strong></pre>
+
+1. Verify by typeing on the Terminal prompt, type: 
+
+   <pre><strong>echo "$SSHKEY"</strong></pre>
+
+   The response should start with:
+
+   <pre>-r--------@ 1 </pre>
 
 1. Press command+Tab to switch to the Lightsail console.
 1. Highlight on the Lightsail console the Public IP such as <strong>3.94.159.30</strong>.
@@ -135,7 +142,7 @@ and press command+C to copy the text to your invisible Clipboard.
 1. Press command+Tab to switch to the Finder and navigate to the Download folder.
 1. On the Terminal prompt, type 
 
-   <tt><strong>ssh -i "$SSHKEY" ec2-user@</strong></tt> 
+   <pre><strong>ssh -i "$SSHKEY" ec2-user@</strong></pre> 
    
    then press command+V to paste the IP address from your Clipboard, such as "3.94.159.30".
 
