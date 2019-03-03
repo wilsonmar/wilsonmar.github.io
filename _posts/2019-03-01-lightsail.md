@@ -189,7 +189,7 @@ See "man sudo_root" for details.
    ### Delete the instance
 
 1. Press command+Tab to switch to the Lightsail console.
-1. Click the icon with the 3 veritical dots and select "Delete".
+1. Click the icon with the 3 veritical dots next to your instance, then select "Delete".
 
 ### Lightsail's online SSH doesn't work
 
