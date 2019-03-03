@@ -21,7 +21,7 @@ comments: true
 Amazon Lightsail was announced in 2018.
 In <a target="_blank" href="https://aws.amazon.com/s/lp/lightsail-vs-ec2/">Lightsail vs EC2</a>, Lightsail is noted to make "server management easier by automatically configuring key resources like networking and security".
 
-The service competes with VPS (Virtual Private Servers) offerings by several traditional hosting services.
+The service competes with <strong>VPS (Virtual Private Servers)</strong> (full root access) offerings by several traditional hosting services.
 For example (paid by the year):
 
 * $14/month for 1GB RAM, 30GB SSD, unlimited data transfer at <a target="_blank" href="https://www.dreamhost.com/hosting/vps/">Dreamhost.com</a>
