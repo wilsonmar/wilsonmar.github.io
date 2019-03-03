@@ -43,7 +43,7 @@ but that its users can <strong>move up to EC2</strong> (using a snapshot) when m
 
    WARNING: Windows instances are more expensive than Linux instances.
 
-1. Scroll down to select "Get started with Lightsail" for the AWS Management Console:
+1. Scroll down to select "Get started with Lightsail" for the AWS Management Console, for example:
 
    <a target="_blank" href="https://us-west-2.console.aws.amazon.com/console/home">https://us-west-2.console.aws.amazon.com/console/home</a>
 
@@ -65,7 +65,10 @@ but that its users can <strong>move up to EC2</strong> (using a snapshot) when m
    ### Create new instance
 
 1. Click the orange "Create instance".
-1. Select an Instance region near you.
+1. Select an Instance region near you (such as Viginia-1 aka "us-east-1a")
+
+   ![lightsaid-blueprints-648x516-24565](https://user-images.githubusercontent.com/300046/53700191-ba95bf00-3dbd-11e9-95bf-fd87f4cb36dc.jpg)
+
 1. Select "Lunix/Unix" under "Select a platform".
 1. Click "OS only" under "Select a blueprint".
 
