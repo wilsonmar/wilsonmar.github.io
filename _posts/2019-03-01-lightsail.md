@@ -76,7 +76,9 @@ but that its users can <strong>move up to EC2</strong> (using a snapshot) when m
 
    <pre><strong>echo $pwd</strong></pre>
    
-   ### Save key pair for SSH
+   ### Save key pair for SSH?
+
+   If Lightsail's browser SSH terminal works, then skip the section below and <a name="SelectPlan">click here to go to the Select Plan</a> section.
 
    NOTE: There is 1 default SSH per region.
 
@@ -85,6 +87,8 @@ but that its users can <strong>move up to EC2</strong> (using a snapshot) when m
 1. Click "Download key", then Save File "*.pem" into your default Downloads folder.
 
    This will be used to SSH into the Linux instance.
+
+   <a name="SelectPlan"></a>
 
    ### Select plan
 
@@ -115,7 +119,7 @@ but that its users can <strong>move up to EC2</strong> (using a snapshot) when m
 
    ### SSH into instance
 
-   MEH: Lightsail's online SSH doesn't work, so:
+   MEH: If Lightsail's online SSH doesn't work:
 
 1. On your Mac, open a Terminal session by cursor to the top menu and click the search icon, then type "Terminal.app" until it shows up for you to click.
 1. Cursor up to the top and select "Shell", "Window", and select one of the options for different background colors.
@@ -134,7 +138,7 @@ and press command+C to copy the text to your invisible Clipboard.
 
    <pre><strong>chmod 400 "$SSHKEY"</strong></pre>
 
-1. Verify by typeing on the Terminal prompt, type: 
+1. Verify by typing on the Terminal prompt: 
 
    <pre><strong>echo "$SSHKEY"</strong></pre>
 
@@ -153,7 +157,12 @@ and press command+C to copy the text to your invisible Clipboard.
    
    then press command+V to paste the IP address from your Clipboard, such as "3.94.159.30".
 
-   You should see some informative and marketing messages:
+
+<a name="TerminalStartUp"></a>
+
+## Terminal start-up
+
+You should see some informative and marketing messages when the terminal appears:
 
    <pre>
 Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-1021-aws x86_64)
@@ -186,19 +195,11 @@ To run a command as administrator (user "root"), use "sudo <command>".
 See "man sudo_root" for details.
    </pre>
 
-   ### Monitor the instance
 
-1. See <a target="_blank" href="https://lightsail.aws.amazon.com/ls/docs/en/articles/managing-your-instance-using-lightsail">Managing your Amazon Lightsail instance</a>.
+If you are using Lightsail's SSH terminal window, read below.
+Otherwise, <a href="#Security">click here to go to the Security section</a>.
 
-   https://www.binarytides.com/linux-commands-monitor-network/
-
-   ### Delete the instance
-
-1. Press command+Tab to switch to the Lightsail console.
-1. Click the icon with the 3 veritical dots next to your instance, then select "Delete".
-
-
-### Lightsail's online SSH doesn't work
+### Lightsail's online SSH window
 
 1. For a new browser window to open up, on the Home screen click the icon under the instance name or, if you've click the instance name, click the orange "Connect using SSH" 
 
@@ -218,13 +219,32 @@ See "man sudo_root" for details.
 
    QUESTION TO AMAZON: How to get around the auto-repeat of a character pressed on the screen?
 
+1. On a Mac, hold down control and press C to escape any running command.
+
+
+<a name="Security"></a>
+
+## Security
+
+1. To get the RSA fingerprint, aka the instance ID:
+
+   <pre>aws ec2 get-console-output --instance-id instance_id</pre>
+
+1. To get the password (which is not needed if you're using the pem file to login):
+
    <pre>cat bitnami_application_password</pre>
 
-   To get the RSA fingerprint:
 
-   aws ec2 get-console-output --instance-id instance_id
+   ### Monitor the instance
 
-1. On a Mac, hold down control and press C to escape any running command.
+1. See <a target="_blank" href="https://lightsail.aws.amazon.com/ls/docs/en/articles/managing-your-instance-using-lightsail">Managing your Amazon Lightsail instance</a>.
+
+   https://www.binarytides.com/linux-commands-monitor-network/
+
+   ### Delete the instance
+
+1. Press command+Tab to switch to the Lightsail console.
+1. Click the icon with the 3 veritical dots next to your instance, then select "Delete".
 
 
 ## Resources
