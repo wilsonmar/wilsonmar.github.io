@@ -91,7 +91,7 @@ but that its users can <strong>move up to EC2</strong> (using a snapshot) when m
    NOTE: There is 1 default SSH per region.
 
 1. MEH: <a href="#WebSSH">Lightsail's online SSH doesn't work</a>, so click "Create New" under "SSH key pair manager".
-1. Type the key pair name such as <tt><strong>ywam-1-Ubuntu18-512MB-Virginia-1</strong></tt>, and click "Generate".
+1. Type the key pair name such as <tt><strong>ywam-1-wilsonmar-gmail-Ubuntu18-512MB-us-east-1a</strong></tt>, and click "Generate".
 1. Click "Download key", then Save File "*.pem" into your default Downloads folder.
 
    This will be used to SSH into the Linux instance.
@@ -102,7 +102,7 @@ but that its users can <strong>move up to EC2</strong> (using a snapshot) when m
 
 1. For instance plan, select Linux, select the $3.50 a month for 512 MB RAM. Later we can upgrade if needed for more memory and data transfer.
 
-1. Under "Identify your instance", change the name to "ywam-1-Ubuntu18-512MB-Virginia-1" or one you prefer.
+1. Under "Identify your instance", change the name to "ywam-1-wilsonmar-gmail-Ubuntu18-512MB-us-east-1a" or one you prefer.
 1. Click the orange "Create instance".
 1. The Lightsail console displays your instances under a menu:
 
@@ -118,9 +118,9 @@ but that its users can <strong>move up to EC2</strong> (using a snapshot) when m
 
    We will grow by snapshoting (transfer to another region) and <a target="_blank" href="https://lightsail.aws.amazon.com/ls/docs/en/articles/create-and-attach-additional-block-storage-disks-linux-unix">create and attach an EBS disk volume</a> with EC2 migrate for more capacity and features.
 
-1. Click on your instance name ("ywam-1-Ubuntu18-512MB-Virginia-1").
+1. Click on your instance name ("ywam-1-wilsonmar-gmail-Ubuntu18-512MB-us-east-1a").
 
-   https://lightsail.aws.amazon.com/ls/webapp/us-east-1/instances/ywam-1-Ubuntu18-512MB-Virginia-1/connect
+   https://lightsail.aws.amazon.com/ls/webapp/us-east-1/instances/ywam-1-wilsonmar-gmail-Ubuntu18-512MB-us-east-1a /connect
 
 
    <a name="WebSSH"></a>
@@ -134,13 +134,13 @@ but that its users can <strong>move up to EC2</strong> (using a snapshot) when m
 1. Login by providing your laptop's password.
 
 1. Press command+Tab to switch to the Finder and navigate to the Download folder.
-1. Right-click on the pem file downloaded, such as <tt><strong>ywam-1-Ubuntu18-512MB-Virginia-1.pem</strong></tt>, 
+1. Right-click on the pem file downloaded, such as <tt><strong>ywam-1-wilsonmar-gmail-Ubuntu18-512MB-us-east-1a</strong></tt>, 
 and press command+C to copy the text to your invisible Clipboard.
 
 1. Press command+Tab to switch to the Terminal.
 1. On the Terminal prompt, create an Environment Variable by a command such as:
 
-   <tt><strong>export SSHKEY=~/Downloads/ywam-1-Ubuntu18-512MB-Virginia-1.pem</strong></tt>
+   <tt><strong>export SSHKEY=~/Downloads/ywam-1-wilsonmar-gmail-Ubuntu18-512MB-us-east-1a.pem</strong></tt>
 
    <tt>~</tt> indicates your user account.
 
@@ -219,18 +219,13 @@ Otherwise, <a href="#Security">click here to go to the Security section</a>.
 
 1. Click the red dot at the upper-left corner of the browser window to exit.
 
-1. At the Lightsail console, click the orange icon for terminal to the right of the instance you want to work on. 
+1. <img align="right" width="121" alt="lightsail-console-icon-121x99-1596" src="https://user-images.githubusercontent.com/300046/53700390-c8e4da80-3dbf-11e9-87af-2a4e112a5ca2.jpg">At the Lightsail console, click the orange icon for terminal to the right of the instance you want to work on. 
 
-   TODO: Screenshot here.
-
-   According to the "Help" tab on the right edge of the Lightsail console:
+   According to the blue "Help" tab on the right edge of the Lightsail console:
 
 1. Highlight a portion of the Lightsail terminal window by clicking on the beginning of what you want to copy, then hold down the left-mouse and drag your mouse across to the end of the text to be copied. Press Enter to copy the text into the browser's orange clipboard icon.
 
-1. Click on the organge clipboard icon at the bottom-right of the pop-up window and 
-
-   TODO: Screenshot here.
-
+1. <img align="right" alt="lightsail-clipboard-22x29-145.png" width="22" src="https://user-images.githubusercontent.com/300046/53700401-f598f200-3dbf-11e9-85f0-f20edade0cc1.png"> Click on the organge clipboard icon at the bottom-right of the pop-up window.
 1. Press command+A to highlight all the text, then
 1. Press command+C to copy the highlighted text to your machine's invisible Clipboard.
 
@@ -275,7 +270,7 @@ Otherwise, <a href="#Security">click here to go to the Security section</a>.
    ### Delete the instance
 
 1. Press command+Tab to switch to the Lightsail console.
-1. Click the icon with the 3 veritical dots next to your instance, then select "Delete".
+1. <img alt="lightsail-3dot-menu-138x191-2901.jpg" width="138" src="https://user-images.githubusercontent.com/300046/53700433-4e688a80-3dc0-11e9-9752-5e22a1c8893c.jpg">Click the icon with the 3 veritical dots next to your instance, then select "Delete".
 
 ## Setup IP address
 
