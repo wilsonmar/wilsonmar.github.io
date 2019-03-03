@@ -270,7 +270,7 @@ Otherwise, <a href="#Security">click here to go to the Security section</a>.
    ### Delete the instance
 
 1. Press command+Tab to switch to the Lightsail console.
-1. <img alt="lightsail-3dot-menu-138x191-2901.jpg" width="138" src="https://user-images.githubusercontent.com/300046/53700433-4e688a80-3dc0-11e9-9752-5e22a1c8893c.jpg">Click the icon with the 3 veritical dots next to your instance, then select "Delete".
+1. <img align="right" alt="lightsail-3dot-menu-138x191-2901.jpg" width="138" src="https://user-images.githubusercontent.com/300046/53700433-4e688a80-3dc0-11e9-9752-5e22a1c8893c.jpg">Click the icon with the 3 veritical dots next to your instance, then select "Delete".
 
 ## Setup IP address
 
