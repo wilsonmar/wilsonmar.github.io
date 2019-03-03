@@ -36,6 +36,7 @@ but that its users can <strong>move up to EC2</strong> (using a snapshot) when m
 ## Get on AWS
 
 1. Get a email from Gmail.com if you don't already have one.
+1. Use the <strong>Google Chrome browser</strong>. Don't use the Firefox browser because it repeats characters on its own in Lightsial's pop-up terminal.
 1. Sign up for an Amazon account if you don't already have one. New accounts get one year of free tier access.
 
 1. <a target="_blank" href="https://aws.amazon.com/lightsail/pricing/">https://aws.amazon.com/lightsail/pricing/</a>
@@ -52,6 +53,10 @@ but that its users can <strong>move up to EC2</strong> (using a snapshot) when m
 
 1. Click "Save" for your language (default English).
 1. Click "later" for the Lightsail console:
+
+   <a name="LightsailConsole"></a>
+
+   ### Lightsail Console
 
    <a target="_blank" href="https://lightsail.aws.amazon.com/ls/webapp/home/instances">https://lightsail.aws.amazon.com/ls/webapp/home/instances</a>
 
@@ -134,6 +139,8 @@ and press command+C to copy the text to your invisible Clipboard.
 
    <tt><strong>export SSHKEY=~/Downloads/ywam-1-Ubuntu18-512MB-Virginia-1.pem</strong></tt>
 
+   <tt>~</tt> indicates your user account.
+
 1. Use the variable on the Terminal prompt<a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html">*</a>, type:
 
    <pre><strong>chmod 400 "$SSHKEY"</strong></pre>
@@ -153,7 +160,7 @@ and press command+C to copy the text to your invisible Clipboard.
 1. Press command+Tab to switch to the Finder and navigate to the Download folder.
 1. On the Terminal prompt, type 
 
-   <pre><strong>ssh -i "$SSHKEY" ec2-user@</strong></pre> 
+   <pre><strong>ssh -i "$SSHKEY" ubunto@</strong></pre> 
    
    then press command+V to paste the IP address from your Clipboard, such as "3.94.159.30".
 
@@ -211,33 +218,52 @@ Otherwise, <a href="#Security">click here to go to the Security section</a>.
 
 1. At the Lightsail console, click the orange icon for terminal to the right of the instance you want to work on. 
 
+   TODO: Screenshot here.
+
    According to the "Help" tab on the right edge of the Lightsail console:
 
 1. Highlight a portion of the Lightsail terminal window by clicking on the beginning of what you want to copy, then hold down the left-mouse and drag your mouse across to the end of the text to be copied. Press Enter to copy the text into the browser's orange clipboard icon.
 
-1. Click on the organge clipboard icon and press command+A to copy all to your invisible Clipboard.
+1. Click on the organge clipboard icon at the bottom-right of the pop-up window and 
 
-   QUESTION TO AMAZON: How to copy text into the session?
+   TODO: Screenshot here.
 
-   QUESTION TO AMAZON: How to get around the auto-repeat of a character pressed on the screen?
+1. Press command+A to highlight all the text, then
+1. Press command+C to copy the highlighted text to your machine's invisible Clipboard.
 
-1. On a Mac, hold down control and press C to escape any running command.
+1. Press command+Tab to switch to a program on your laptop.
+1. Click on where you want to paste.
+1. Press command+V to paste the text.
 
 
 <a name="Security"></a>
 
 ## Security
 
-1. To get the RSA fingerprint, aka the instance ID:
+   QUESTION TO AMAZON: How to copy text into the session? The following doesn't work:
+
+1. Highlight and copy (with command+C) a command you want to issue in the Lightsail terminal.
+
+1. At the prompt, right-click to 
+
+   QUESTION TO AMAZON: How to get around the auto-repeat of a character pressed on the screen?
+
+1. On a Mac, hold down control and press C to escape any running command.
+
+   To get the RSA fingerprint, aka the instance ID:
 
    <pre>aws ec2 get-console-output --instance-id instance_id</pre>
 
-1. To get the password (which is not needed if you're using the pem file to login):
+   Alternately, to get the password (which is not needed if you're using the pem file to login):
 
    <pre>cat bitnami_application_password</pre>
 
+   TODO: To run a script, copy the script such as:
 
-   ### Monitor the instance
+   <pre>sh ... </pre>
+
+
+## Monitor the instance
 
 1. See <a target="_blank" href="https://lightsail.aws.amazon.com/ls/docs/en/articles/managing-your-instance-using-lightsail">Managing your Amazon Lightsail instance</a>.
 
@@ -248,6 +274,13 @@ Otherwise, <a href="#Security">click here to go to the Security section</a>.
 1. Press command+Tab to switch to the Lightsail console.
 1. Click the icon with the 3 veritical dots next to your instance, then select "Delete".
 
+## Setup IP address
+
+When using hard-coded scripts to verify the instance from the public internet, it's easier to use a host name.
+
+1. Press command+Tab to switch to the <a href="#LightsailConsole">Lightsail Console</a>.
+1. Press the "Networking" tab.
+1. TODO: Associate a host name you bought on Amazon Route 53 or set the A record for a free domain created on ???
 
 ## Resources
 
