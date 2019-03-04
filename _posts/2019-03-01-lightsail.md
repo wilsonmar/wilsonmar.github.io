@@ -168,6 +168,33 @@ and press command+C to copy the text to your invisible Clipboard.
    then press command+V to paste the IP address from your Clipboard, such as "3.94.159.30".
 
 
+<a name="LighsailTerminal"></a>
+
+### Lightsail's online SSH window
+
+1. For a new browser window to open up, on the Home screen click the icon under the instance name or, if you've click the instance name, click the orange "Connect using SSH" 
+
+   PROTIP: On a Mac, rotate among browser windows by holding down keyboard command then  pressing the "back-tick" key at the upper-right corner of the keyboard.
+
+   The messages appearing on initiation are shown in section <a hre="#TerminalStartUp">Terminal Start-Up</a> below.
+
+1. Click the red dot at the upper-left corner of the browser window to exit.
+
+1. <img align="right" width="121" alt="lightsail-console-icon-121x99-1596" src="https://user-images.githubusercontent.com/300046/53700390-c8e4da80-3dbf-11e9-87af-2a4e112a5ca2.jpg">At the Lightsail console, click the orange icon for terminal to the right of the instance you want to work on. 
+
+   According to the blue "Help" tab on the right edge of the Lightsail console:
+
+1. Highlight a portion of the Lightsail terminal window by clicking on the beginning of what you want to copy, then hold down the left-mouse and drag your mouse across to the end of the text to be copied. Press Enter to copy the text into the browser's orange clipboard icon.
+
+1. <img align="right" alt="lightsail-clipboard-22x29-145.png" width="22" src="https://user-images.githubusercontent.com/300046/53700401-f598f200-3dbf-11e9-85f0-f20edade0cc1.png"> Click on the orange clipboard icon at the bottom-right of the pop-up window.
+1. Press command+A to highlight all the text, then
+1. Press command+C to copy the highlighted text to your machine's invisible Clipboard.
+
+1. Press command+Tab to switch to a program on your laptop.
+1. Click on where you want to paste.
+1. Press command+V to paste the text.
+
+
 <a name="TerminalStartUp"></a>
 
 ## Terminal start-up
@@ -205,60 +232,45 @@ To run a command as administrator (user "root"), use "sudo <command>".
 See "man sudo_root" for details.
    </pre>
 
+Notice the "Memory usage: 28%".
 
-If you are using Lightsail's SSH terminal window, read below.
-Otherwise, <a href="#Security">click here to go to the Security section</a>.
+   ### Paste commands
 
-<a name="LighsailTerminal"></a>
+   The following is not clear in the documentation:
 
-### Lightsail's online SSH window
+1. <img align="right" alt="lightsail-clipboard-22x29-145.png" width="22" src="https://user-images.githubusercontent.com/300046/53700401-f598f200-3dbf-11e9-85f0-f20edade0cc1.png"> Click on the orange clipboard icon at the bottom-right of the pop-up window.
+1. Copy a command from below, such as these<a target="_blank" href="https://vitux.com/5-ways-to-check-available-memory-in-ubuntu/">*</a>  to list memory by megabytes across the screen:
 
-1. For a new browser window to open up, on the Home screen click the icon under the instance name or, if you've click the instance name, click the orange "Connect using SSH" 
+   <pre>free -m</pre>
 
-   PROTIP: On a Mac, rotate among browser windows by holding down keyboard command then  pressing the "back-tick" key at the upper-right corner of the keyboard.
+   Alternately, to list details:
 
-1. Click the red dot at the upper-left corner of the browser window to exit.
+   <pre>vmstat -s</pre>
 
-1. <img align="right" width="121" alt="lightsail-console-icon-121x99-1596" src="https://user-images.githubusercontent.com/300046/53700390-c8e4da80-3dbf-11e9-87af-2a4e112a5ca2.jpg">At the Lightsail console, click the orange icon for terminal to the right of the instance you want to work on. 
-
-   According to the blue "Help" tab on the right edge of the Lightsail console:
-
-1. Highlight a portion of the Lightsail terminal window by clicking on the beginning of what you want to copy, then hold down the left-mouse and drag your mouse across to the end of the text to be copied. Press Enter to copy the text into the browser's orange clipboard icon.
-
-1. <img align="right" alt="lightsail-clipboard-22x29-145.png" width="22" src="https://user-images.githubusercontent.com/300046/53700401-f598f200-3dbf-11e9-85f0-f20edade0cc1.png"> Click on the organge clipboard icon at the bottom-right of the pop-up window.
-1. Press command+A to highlight all the text, then
-1. Press command+C to copy the highlighted text to your machine's invisible Clipboard.
-
-1. Press command+Tab to switch to a program on your laptop.
-1. Click on where you want to paste.
-1. Press command+V to paste the text.
+1. Paste the command in the text window that appears.
+1. Right-click the Lightsail command window. The command doesn't show up until you press Enter.
+1. Cursor up to see the previous command.
 
 
 <a name="Security"></a>
 
-## Security
-
-   QUESTION TO AMAZON: How to copy text into the session? The following doesn't work:
+## Paste commands: Security
 
 1. Highlight and copy (with command+C) a command you want to issue in the Lightsail terminal.
 
 1. At the prompt, right-click to 
 
-   QUESTION TO AMAZON: How to get around the auto-repeat of a character pressed on the screen?
-
 1. On a Mac, hold down control and press C to escape any running command.
 
-   To get the RSA fingerprint, aka the instance ID:
+   To get the AWS RSA fingerprint, aka the instance ID, install the AWS CLI then the command:
 
-   <pre>aws ec2 get-console-output --instance-id instance_id</pre>
+   <pre>sudo apt  install awscli 
+   aws ec2 get-console-output --instance-id instance_id</pre>
 
    Alternately, to get the password (which is not needed if you're using the pem file to login):
 
    <pre>cat bitnami_application_password</pre>
 
-   TODO: To run a script, copy the script such as:
-
-   <pre>sh ... </pre>
 
 
 ## Monitor the instance
