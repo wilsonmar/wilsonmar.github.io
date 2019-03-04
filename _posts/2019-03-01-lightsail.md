@@ -16,22 +16,21 @@ comments: true
 
 {% include _toc.html %}
 
-<a href="https://wilsonmar.github.io/lightsail/">This tutorial</a> is about Amazon Lightsail, which charges a <strong>fixed monthly price</strong> for a single EC2 server using specific mixes of compute, memory, disk, and data transfer capacities (2, 4, 8 GB). 
+<a href="https://wilsonmar.github.io/lightsail/">This tutorial</a> is about Amazon Lightsail, which charges a <strong>fixed monthly price</strong> for a single EC2 server using specific mixes of compute, memory, disk, and data transfer capacities. 
 
-Amazon Lightsail was announced in 2018.
-In <a target="_blank" href="https://aws.amazon.com/s/lp/lightsail-vs-ec2/">Lightsail vs EC2</a>, Lightsail is noted to make "server management easier by automatically configuring key resources like networking and security".
+Amazon Lightsail was announced in 2018, to make "server management easier by automatically configuring key resources like networking and security".
 
-The service competes with <strong>VPS (Virtual Private Servers)</strong> (full root access) offerings by several traditional hosting services. Among hosts offering the fastest load times (paid by the year):
+The service competes with offerings by several traditional hosting services. Among hosts offering the fastest load times (paid by the year):
 
 * $14/month for 1GB RAM, 30GB SSD, unlimited data transfer at <a target="_blank" href="https://www.dreamhost.com/hosting/vps/">Dreamhost.com</a>
-* $20/month for 4GB RAM, 40GB disk, unlimited data transfer, plus 3 dedicated IPs and SSL free 1st year at <a target="_blank" href="https://www.godaddy.com/hosting/vps-hosting">GodDaddy.com</a> 
+* $20/month for 4GB RAM, 40GB disk, unlimited data transfer, plus 3 dedicated IPs and SSL free 1st year at <a target="_blank" href="https://www.godaddy.com/hosting/vps-hosting">GodDaddy.com</a> with a 45-day refund.
 * $19/month for 2GB RAM, 30GB SSD, 1TB data transfer at <a target="_blank" href="https://www.bluehost.com/hosting/vps/">Bluehost.com</a>
 * $30/month for 2GB RAM, 120GB disk, 1.5TB data transfer at <a target="_blank" href="https://www.hostgator.com/vps-hosting">hostgator.com</a>
 * $80/month for 4GB RAM, 40GB SSD, 5 TB data transfer at <a target="_blank" href="https://www.siteground.com/cloud-hosting.htm">SiteGround.com</a>
 <br /><br />
 
 Lightsail's competitive difference is not just <strong>solid-State</strong> storage which are fast and reliable,
-but that its users can <strong>move up to EC2</strong> (using a snapshot) when more complex configuration is needed.
+but that its users can <a target="_blank" href="https://aws.amazon.com/s/lp/lightsail-vs-ec2/">move up to EC2</a> (using a snapshot) when more complex configuration is needed.
 
 ## Get on AWS
 

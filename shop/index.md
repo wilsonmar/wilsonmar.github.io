@@ -164,7 +164,7 @@ Glasses can be expensive.
 
    The [XDDesign Bobby] features high density foam.
 
-   Having internal compartments that are <strong>water-tight</strong> seals 
+   Having internal compartments that are <strong>water-tight</strong> seals.
 
 ### Zippers #
 
@@ -238,6 +238,7 @@ Other alteratives considered:
    <a target="_blank" href="https://www.indiegogo.com/projects/bobby-the-best-anti-theft-backpack-by-xd-design#/">
    Indiegogo</a>
 
+   * <a target="_blank" href="http://thru-hiker.com/projects/lab_pack.php">How to make your own backpack</a>
 
 <a name="Food"></a>
 
