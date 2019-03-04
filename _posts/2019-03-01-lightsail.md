@@ -80,9 +80,10 @@ but that its users can <strong>move up to EC2</strong> (using a snapshot) when m
    
    TODO: Copy the script from our GitHub repo and paste it in the form. ???
 
-   But for now, alternately:
+   But for now, list detail about hardware and CPU:
 
-   <pre><strong>echo $pwd</strong></pre>
+   <pre><strong>lshw -short
+   lscpu</strong></pre>
    
    ### Save key pair for SSH?
 
@@ -264,7 +265,7 @@ Notice the "Memory usage: 28%".
 
    To get the AWS RSA fingerprint, aka the instance ID, install the AWS CLI then the command:
 
-   <pre>sudo apt  install awscli 
+   <pre>sudo apt install awscli 
    aws ec2 get-console-output --instance-id instance_id</pre>
 
    Alternately, to get the password (which is not needed if you're using the pem file to login):
