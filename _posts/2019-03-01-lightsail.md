@@ -46,6 +46,7 @@ but that its users can <a target="_blank" href="https://aws.amazon.com/s/lp/ligh
 
    <a target="_blank" href="https://us-west-2.console.aws.amazon.com/console/home">https://us-west-2.console.aws.amazon.com/console/home</a>
 
+1. In the black menu at the upper-right, click the region name if you want a different region.
 1. In the "Find services" field, type "Lightsail" enough to click on the selection that appears.
 
    Lightsail provides suitable for a wide range of skill levels from beginners without any AWS experience to power users and developers who need to implement things in a fast and efficient way.
@@ -77,13 +78,71 @@ but that its users can <a target="_blank" href="https://aws.amazon.com/s/lp/ligh
 
 1. Click "Add launch script".
    
-   TODO: Copy the script from our GitHub repo and paste it in the form. ???
+1. Highlight and copy the script from our GitHub repo
 
-   But for now, list detail about hardware and CPU:
+   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/Ruby/ywam-setup-all.sh)"</strong></pre>
 
-   <pre><strong>lshw -short
-   lscpu</strong></pre>
+1. Click the orange Clipboard icon.
+1. Paste it in the form. Sample responses:
+
+   From the command to list detail about hardware:
+
+   <pre><strong>lshw -short</strong></pre>
    
+   <pre>
+WARNING: you should run this program as super-user.
+H/W path    Device  Class      Description
+==========================================
+                    system     Computer
+/0                  bus        Motherboard
+/0/0                memory     479MiB System memory
+/0/1                processor  Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz
+/0/100              bridge     440FX - 82441FX PMC [Natoma]
+/0/100/1            bridge     82371SB PIIX3 ISA [Natoma/Triton II]
+/0/100/1.1          storage    82371SB PIIX3 IDE [Natoma/Triton II]
+/0/100/1.3          bridge     82371AB/EB/MB PIIX4 ACPI
+/0/100/2            display    GD 5446
+/0/100/3            generic    Xen Platform Device
+/1          eth0    network    Ethernet interface
+WARNING: output may be incomplete or inaccurate, you should run this program as super-user
+   </pre>
+
+   From the command to get CPU statistics:
+
+   <pre><strong>lscpu</strong></pre>
+   
+   <pre>
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              1
+On-line CPU(s) list: 0
+Thread(s) per core:  1
+Core(s) per socket:  1
+Socket(s):           1
+NUMA node(s):        1
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               63
+Model name:          Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz
+Stepping:            2
+CPU MHz:             2400.026
+BogoMIPS:            4800.10
+Hypervisor vendor:   Xen
+Virtualization type: full
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            30720K
+NUMA node0 CPU(s):   0
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse
+36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology 
+cpuid pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_tim
+er aes xsave avx f16c rdrand hypervisor lahf_lm abm cpuid_fault invpcid_single pti fsgsbas
+e bmi1 avx2 smep bmi2 erms invpcid xsaveopt
+   </pre>
+
+
    ### Save key pair for SSH?
 
    If Lightsail's browser SSH terminal works, then skip the section below and <a name="SelectPlan">click here to go to the Select Plan</a> section.
