@@ -319,12 +319,16 @@ QUESTIONS: About your app/system:
 
 ![cloud-perftest-v08-types-553x276-24044](https://user-images.githubusercontent.com/300046/53589081-6f30a600-3b5c-11e9-978a-f69f0f5c2705.jpg)
 
-This video is about the heart of a performance test plan -- the different <strong>levels</strong> of load and <strong>lengths</strong> of test runs using different <strong>types of load testing</strong>. 
+<!-- --> 
+This video is about the heart of a performance test plan -- imposing different <strong>levels</strong> of load over a period of time. The load imposed is defined by the number of <strong>virtual users</strongs>, and result in a <strong>rate</strong> of processing stated in <strong>hits per second</strong>, a metric that can also be monitored in production.
 
-We begin by identifying how quickly users can <strong>ramp-up</strong>, starting with a very aggressive rate so we can identify what is <strong>"too quick"</strong>. We then back off to a rate that brings up the most number of users the quickest. We need to use a <strong>Stress Test</strong> scenario that keeps adding new users until the <strong>breaking point</strong> so that we can tell how many users can really jump on the system at about the same time, such as at the beginning of a call-center shift or on Black Friday, etc. The <strong>rate</strong> that new users enter the system is just as important as the total number of concurrent users running, because limitations in the <strong>authentication infrastructure</strong> is often a bottleneck.
+We begin by identifying the quickest rate users can <strong>ramp-up</strong>, starting with a very aggressive test run that reaches a <strong>breaking point</strong> <strong>"too quick"</strong>. But we get to identify the <strong>error</strong> messages and initial <strong>bottlenecks</strong>. GUI transactions that don't reach the server should divert users to a <strong>"server unavailabe"</strong> page off the app server under stress. 
 
-The first web page that a team puts up is usually a <strong>"server unavailable"</strong> page where user traffic is diverted to. When the team is just getting started, the <strong>fail-over</strong> test is whether that diversion can really occur.
- 
+We then back off to find a rate that brings up the most number of users the quickest. This scenario is called a <strong>Stress Test</strong> that keeps adding new users until the <strong>breaking point</strong> so that we can tell the maximum number of users can really jump on the system at about the same time, such as at the beginning of a call-center shift or on Black Friday, etc. The <strong>rate</strong> new users enter the system is just as important as the total number of concurrent users running, because limitations in the <strong>authentication infrastructure</strong> is often a bottleneck.
+
+In a cloud environment, <strong>fail-over tests</strong> would divert users to another availability zone or region.
+<!-- -->
+
 We want to identify the <strong>threshold for action</strong> as the <strong>point of UX degradation</strong> when response time begins to suffer due to load. In that threshold we also need to consider the <strong>lead time</strong> to get additional <strong>capacity</strong>. With on-premises machines, this can be like 6 months. So, traditionally, companies over-bought capacity that often go unused. The value of an elastic cloud such as Amazom is that we pay only what we use, when we use it. 
 
 We still need to identify the <strong>nominal</strong> level of load -- the momentary <strong>peaks</strong> reached each day, the level where long <strong>soak tests</strong> are run to ensure the <strong>endurance</strong> of the system over time -- to ensure that the level is sustainable without memory leaks and excessive use of disk space.
