@@ -341,6 +341,7 @@ If we have a cluster of servers, we need to make sure we have the <strong>elasti
 
 In an elastic cloud enviornment, we need to ensure that our configurations can indeed <strong>instantiate</strong> additional capacity on a timely basis. Tests of elasticity should also include <strong>un-instantation</strong> to reduce the number of instances when load recedes below threshold steps. 
 
+In each enviornment, we want to track <strong>availability</strong> over time, because that affects employee and customer productivity and satisfaction.
 
 
 <a name="ServerImages"></a>
