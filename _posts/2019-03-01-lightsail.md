@@ -142,6 +142,34 @@ er aes xsave avx f16c rdrand hypervisor lahf_lm abm cpuid_fault invpcid_single p
 e bmi1 avx2 smep bmi2 erms invpcid xsaveopt
    </pre>
 
+   From the command to get VM statistics:
+
+   <pre><strong>vmstat</strong></pre>
+
+   <pre>
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0  67232  30276 293508    0    0   215   438   24   59  1  0 98  0  1
+   </pre>
+
+   From the command to list free disk space:
+
+   <pre><strong>free -m</strong></pre>
+   
+   <pre>
+              total        used        free      shared  buff/cache   available
+Mem:            479          98          65           0         316         364
+Swap:             0           0           0
+   </pre>
+
+   From the command to get free RAM usage statistics:
+
+   <pre><strong>grep MemFree /proc/meminfo</strong></pre>
+
+   <pre>
+MemFree:           67232 kB
+   </pre>
+
 
    ### Save key pair for SSH?
 
