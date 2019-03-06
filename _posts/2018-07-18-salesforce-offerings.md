@@ -150,6 +150,7 @@ The top competitors to Salesforce are:
 
 * <a target="_blank" href="https://www.salesnexus.com/">SalesNexus</a>
 * Oracle
+* <a target="_blank" href="https://open.sap.com/courses/c4h4/">SAP Sales Cloud</s>
 * Microsoft Dynamics 365 SaaS integrated with its $26.9 billion LinkedIn acquisition with an initiative called <a target="_blank" href="https://www.forbes.com/sites/bobevans1/2017/12/11/how-microsoft-is-using-linkedin-to-take-on-salesforce-com-and-transform-the-science-of-sales/#5240fbcd2998">Microsoft Relationship Sales and initial customer Park Place</a>.
 
 * SOHO

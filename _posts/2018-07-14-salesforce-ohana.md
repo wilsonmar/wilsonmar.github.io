@@ -64,7 +64,7 @@ The company has seen a consistent growth rate of 35% year-over-year, unrivaled i
 
 <a target="_blank" href="https://www.reddit.com/r/salesforce/">reddit.com/r/salesforce/</a> subreddit is very active.
 
-<a target="_blank" href="https://discordapp.com/invite/S4HhsyG">Salesforce Study Group on Discord mobile app</a>.
+<a target="_blank" href="https://discordapp.com/invite/S4HhsyG">Salesforce Study Group on Discord mobile app</a> "Chat for Gamers". Click the (+) icon and paste in "https://discordapp.com/invite/S4HhsyG".
 
 <a name="Podcasts"></a>
 
