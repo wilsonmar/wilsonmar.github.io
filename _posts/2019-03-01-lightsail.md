@@ -77,100 +77,14 @@ but that its users can <a target="_blank" href="https://aws.amazon.com/s/lp/ligh
 1. Click "Ubuntu 18.04 LTS".
 
 1. Click "Add launch script".
-   
 1. Highlight and copy the script from our GitHub repo
 
    <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/Ruby/ywam-setup-all.sh)"</strong></pre>
 
-1. Click the orange Clipboard icon.
-1. Paste it in the form. Sample responses:
+   PROTIP: Output from launch script do not appear on the terminal.
 
-   From the command to list detail about hardware:
 
-   <pre><strong>lshw -short</strong></pre>
    
-   <pre>
-WARNING: you should run this program as super-user.
-H/W path    Device  Class      Description
-==========================================
-                    system     Computer
-/0                  bus        Motherboard
-/0/0                memory     479MiB System memory
-/0/1                processor  Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz
-/0/100              bridge     440FX - 82441FX PMC [Natoma]
-/0/100/1            bridge     82371SB PIIX3 ISA [Natoma/Triton II]
-/0/100/1.1          storage    82371SB PIIX3 IDE [Natoma/Triton II]
-/0/100/1.3          bridge     82371AB/EB/MB PIIX4 ACPI
-/0/100/2            display    GD 5446
-/0/100/3            generic    Xen Platform Device
-/1          eth0    network    Ethernet interface
-WARNING: output may be incomplete or inaccurate, you should run this program as super-user
-   </pre>
-
-   From the command to get CPU statistics:
-
-   <pre><strong>lscpu</strong></pre>
-   
-   <pre>
-Architecture:        x86_64
-CPU op-mode(s):      32-bit, 64-bit
-Byte Order:          Little Endian
-CPU(s):              1
-On-line CPU(s) list: 0
-Thread(s) per core:  1
-Core(s) per socket:  1
-Socket(s):           1
-NUMA node(s):        1
-Vendor ID:           GenuineIntel
-CPU family:          6
-Model:               63
-Model name:          Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz
-Stepping:            2
-CPU MHz:             2400.026
-BogoMIPS:            4800.10
-Hypervisor vendor:   Xen
-Virtualization type: full
-L1d cache:           32K
-L1i cache:           32K
-L2 cache:            256K
-L3 cache:            30720K
-NUMA node0 CPU(s):   0
-Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse
-36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology 
-cpuid pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_tim
-er aes xsave avx f16c rdrand hypervisor lahf_lm abm cpuid_fault invpcid_single pti fsgsbas
-e bmi1 avx2 smep bmi2 erms invpcid xsaveopt
-   </pre>
-
-   From the command to get VM statistics:
-
-   <pre><strong>vmstat</strong></pre>
-
-   <pre>
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0      0  67232  30276 293508    0    0   215   438   24   59  1  0 98  0  1
-   </pre>
-
-   From the command to list free disk space:
-
-   <pre><strong>free -m</strong></pre>
-   
-   <pre>
-              total        used        free      shared  buff/cache   available
-Mem:            479          98          65           0         316         364
-Swap:             0           0           0
-   </pre>
-
-   From the command to get free RAM usage statistics:
-
-   <pre><strong>grep MemFree /proc/meminfo</strong></pre>
-
-   <pre>
-MemFree:           67232 kB
-   </pre>
-
-
    ### Save key pair for SSH?
 
    If Lightsail's browser SSH terminal works, then skip the section below and <a name="SelectPlan">click here to go to the Select Plan</a> section.
@@ -320,6 +234,97 @@ See "man sudo_root" for details.
    </pre>
 
 Notice the "Memory usage: 28%".
+
+
+
+1. Click the orange Clipboard icon.
+1. Paste it in the form. Sample responses:
+
+   From the command to list detail about hardware:
+
+   <pre><strong>lshw -short</strong></pre>
+   
+   <pre>
+WARNING: you should run this program as super-user.
+H/W path    Device  Class      Description
+==========================================
+                    system     Computer
+/0                  bus        Motherboard
+/0/0                memory     479MiB System memory
+/0/1                processor  Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz
+/0/100              bridge     440FX - 82441FX PMC [Natoma]
+/0/100/1            bridge     82371SB PIIX3 ISA [Natoma/Triton II]
+/0/100/1.1          storage    82371SB PIIX3 IDE [Natoma/Triton II]
+/0/100/1.3          bridge     82371AB/EB/MB PIIX4 ACPI
+/0/100/2            display    GD 5446
+/0/100/3            generic    Xen Platform Device
+/1          eth0    network    Ethernet interface
+WARNING: output may be incomplete or inaccurate, you should run this program as super-user
+   </pre>
+
+   From the command to get CPU statistics:
+
+   <pre><strong>lscpu</strong></pre>
+   
+   <pre>
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              1
+On-line CPU(s) list: 0
+Thread(s) per core:  1
+Core(s) per socket:  1
+Socket(s):           1
+NUMA node(s):        1
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               63
+Model name:          Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz
+Stepping:            2
+CPU MHz:             2400.026
+BogoMIPS:            4800.10
+Hypervisor vendor:   Xen
+Virtualization type: full
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            30720K
+NUMA node0 CPU(s):   0
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse
+36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology 
+cpuid pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_tim
+er aes xsave avx f16c rdrand hypervisor lahf_lm abm cpuid_fault invpcid_single pti fsgsbas
+e bmi1 avx2 smep bmi2 erms invpcid xsaveopt
+   </pre>
+
+   From the command to get VM statistics:
+
+   <pre><strong>vmstat</strong></pre>
+
+   <pre>
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0  67232  30276 293508    0    0   215   438   24   59  1  0 98  0  1
+   </pre>
+
+   From the command to list free disk space:
+
+   <pre><strong>free -m</strong></pre>
+   
+   <pre>
+              total        used        free      shared  buff/cache   available
+Mem:            479          98          65           0         316         364
+Swap:             0           0           0
+   </pre>
+
+   From the command to get free RAM usage statistics:
+
+   <pre><strong>grep MemFree /proc/meminfo</strong></pre>
+
+   <pre>
+MemFree:           67232 kB
+   </pre>
+
 
    ### Paste commands
 
