@@ -322,7 +322,10 @@ QUESTIONS: About your app/system:
 <!-- --> 
 This video is about the heart of a performance testing and engineering -- imposing different <strong>levels</strong> of load over a period of time. Load imposed on UI is defined by the number of <strong>virtual users</strong>. But our interest is in <strong>rates</strong> of processing (stated in <strong>hits per second</strong> or per minute), a metric that can also be monitored in production. Finding that number is one of our objective because we want to provide <strong>actionable intelligence</strong> to Operations in production.
 
-We begin by identifying the quickest rate users can <strong>ramp-up</strong>, starting with a very aggressive test run that reaches a <strong>breaking point</strong> <strong>"too quick"</strong>. But we get to identify the <strong>error</strong> messages and initial <strong>bottlenecks</strong>. GUI transactions that don't reach the server should divert users to a <strong>"server unavailabe"</strong> page off the app server under stress. 
+We begin by identifying the quickest rate users can <strong>ramp-up</strong>, starting with a very aggressive test run that reaches a <strong>breaking point</strong> <strong>"too quick"</strong>. But we get to identify the <strong>error</strong> messages and initial <strong>bottlenecks</strong>. 
+??? operations
+
+GUI transactions that don't reach the server should divert users to a <strong>"server unavailabe"</strong> page off the app server under stress. 
 
 We then back off to find a rate that brings up the most number of users the quickest. This scenario is called a <strong>Stress Test</strong> that keeps adding new users until the <strong>breaking point</strong> so that we can tell the maximum number of users can really jump on the system at about the same time, such as at the beginning of a call-center shift or on Black Friday, etc. The <strong>rate</strong> new users enter the system is just as important as the total number of concurrent users running, because limitations in the <strong>authentication infrastructure</strong> is often a bottleneck.
 

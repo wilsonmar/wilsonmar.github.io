@@ -145,11 +145,15 @@ Containers are more similar to isolation mechanisms where the resources (CPU, me
 
 ### Competition
 
-<a target="_blank" href="http://www.boycottdocker.org/">boycottdocker.org</a> raises some technical concerns.
+<a target="_blank" href="http://www.boycottdocker.org/">boycottdocker.org</a> raises some technical concerns about Docker.
 
 Alternatives to Docker:
 
-* <a target="_blank" href="https://coreos.com/">CoreOS</a> developed <a target="_blank" href="https://github.com/appc/spec/">appc</a> with a <strong>rkt</strong> (pronounced "rocket") implementation in their <a target="_blank" href="https://www.opencontainers.org/">Open Containers Initiative</a> (OCI). The <a target="_blank" href="https://github.com/opencontainers/runc/">runC</a> CLI tool for spawning and running containers is built using Go v1.6+.
+* <a target="_blank" href="https://coreos.com/">CoreOS</a> developed <a target="_blank" href="https://github.com/appc/spec/">appc</a> with a <strong>rkt</strong> (pronounced "rocket") implementation in their <a target="_blank" href="https://www.opencontainers.org/">Open Containers Initiative</a> (OCI). The <a target="_blank" href="https://github.com/opencontainers/runc/">runC</a> CLI tool for spawning and running containers is built using Go v1.6+. CoreOS offers a <a target="_blank" href="https://coreos.com/why">Container Linux distribution</a>, an upstream variant of Red Hat Enterprise Linux from <a target="_blank" href="https://
+projectatomic.io/">projectatomic.io</a>
+Atomic Host collection of distributions.
+
+<a target="_blank" href="https://github.com/linuxkik/linuxkit/">open-source LinuxKit</a> originated from Docker, inc. as a tool for building minimal custom operating systems, to host the Docker platform.
 
 * <a target="_blank" href="https://www.ubuntu.com/cloud/lxd">Canonical of Ubuntu has their LXD</a>
 
