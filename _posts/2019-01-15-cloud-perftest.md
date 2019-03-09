@@ -320,7 +320,7 @@ QUESTIONS: About your app/system:
 ![cloud-perftest-v08-types-553x276-24044](https://user-images.githubusercontent.com/300046/53589081-6f30a600-3b5c-11e9-978a-f69f0f5c2705.jpg)
 
 <!-- --> 
-This video is about the heart of a performance test plan -- imposing different <strong>levels</strong> of load over a period of time. The load imposed is defined by the number of <strong>virtual users</strong>, and result in a <strong>rate</strong> of processing stated in <strong>hits per second</strong>, a metric that can also be monitored in production.
+This video is about the heart of a performance testing and engineering -- imposing different <strong>levels</strong> of load over a period of time. Load imposed on UI is defined by the number of <strong>virtual users</strong>. But our interest is in <strong>rates</strong> of processing (stated in <strong>hits per second</strong> or per minute), a metric that can also be monitored in production. Finding that number is one of our objective because we want to provide <strong>actionable intelligence</strong> to Operations in production.
 
 We begin by identifying the quickest rate users can <strong>ramp-up</strong>, starting with a very aggressive test run that reaches a <strong>breaking point</strong> <strong>"too quick"</strong>. But we get to identify the <strong>error</strong> messages and initial <strong>bottlenecks</strong>. GUI transactions that don't reach the server should divert users to a <strong>"server unavailabe"</strong> page off the app server under stress. 
 
