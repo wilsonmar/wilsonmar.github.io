@@ -1,0 +1,347 @@
+---
+layout: post
+title: "How to contribute to Salesforce Non-profits"
+excerpt: "How the Salesforce Benefit corp benefits non-profits, technically"
+tags: [salesforce]
+image:
+# feature: hands-up-1900x500-56276.jpg
+  feature: https://user-images.githubusercontent.com/300046/54075520-819e9400-426e-11e9-958c-62abf07d34a6.jpg
+  credit: Brampton
+  creditlink: https://www.brampton.ca/EN/City-Hall/Employment/Seasonal/Pages/VolunteerOpportunities.aspx
+comments: true
+---
+<i>{{ page.excerpt }}</i>
+<hr />
+
+{% include _toc.html %}
+
+This tutorial is an example of the procedures volunteer software developers use to get setup, then make contributions in a collaborative way.
+
+The objective here is that you (a developer/graphic artist/ etc.) get trained on a professional approach to software development while improving the organization's digital assets. The sections are:
+
+* <a href="#Understand">      A) Understand the mission</a> (the organization and yours)
+* <a href="#TechArchitecture">B) Understand the technical architecture</a>
+* <a href="#Website">         C) Copy the public-facing website</a>
+* <a href="#Salesforce">      D) Create a copy of the Salesforce org</a>
+* <a href="#Changes">         E) Plan changes, update test scripts</a>
+* <a href="#TestDeploy">      F) Run tests, make changes, and deploy</a>
+
+<hr />
+
+<a name="Understand"></a>
+
+## A) Understand the mission
+
+   <a name="Persona"></a>
+   
+   The persona are: prospective and active interns, hosts, mentors, donors. 
+
+
+   <a name="TrainingSite"></a>
+
+   ### Know about the mission
+
+1. Click <a target="_blank" href="https://coursesites.com/?sig=Mwuk9E96d1zi4kLs58vOveO3Tl8=&courseId=_190749_1&timestamp=1549132709&inviteId=BB?BB_QzCGaVfkHcOjnCyDupFaIrNNbv5DmyN82PEvwEmTOMMtUG+4ivX5IA==#invitation-student">this link to register for training on the Blackboard system</a>
+
+2. Access the YWAM Converge training content <a target="_blank" href="https://blackboard.coursesites.com/ultra/courses/_190749_1/cl/outline">https://blackboard.coursesites.com/ultra/courses/_190749_1/cl/outline</a>
+
+3. Click "YWAM Values" on the left menu to read it.
+4. Click "Start Here" on the left menu to read "Welcome to Converge".
+5. Scroll down to watch the "What is YWAM" video. <strong>Click the volume icon to unmute.</strong>
+
+   When did YWAM (the parent organization) start? See <a target="_blank" href="https://youtu.be/Uz0EesM-G04">https://youtu.be/Uz0EesM-G04</a>
+
+6. Scroll down the page to see the diagram:
+
+   <img alt="YWAMOCNJ" src="https://learn-us-east-1-prod-fleet01-xythos.s3.us-east-1.amazonaws.com/5744c71523ee6/664071?response-content-disposition=inline%3B%20filename%2A%3DUTF-8%27%27Converge%2520Course%2520Visual.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20190303T112411Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21599&X-Amz-Credential=AKIAIBGJ7RCS23L3LEJQ%2F20190303%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=6209dd2bae17a961b527599366c730a00dedebda83db2616a834fb3f1e0f24f1">
+
+
+   ### Pick a project
+
+1. Pick a project you are interested in. Some John posts at <a target="_blank" href="https://www.catchafire.org/">Catch-a-Fire</a>:
+
+   a. John: Write manual procedures about how the system works, illustrated by a <a href="#TechArchitecture">flowchart</a>.
+   
+   b. Dan: Upgrade front-end server versions.
+   
+   c. Create automated test scripts (based on manual procedures) to verify whether the system works "end-to-end" for different personas.
+   
+   d. Wilson: Create instructions (this page) to enable volunteers to create a dev environment and contribute changes. 
+   
+   e. Wilson/Dan: Convert bash scripts and instructions to create a dev instance of Ruby server running on Ubuntu.
+   
+   f. Kermit: Define manual procedures and scripts to create a stand-alone Saleforce Trailhead Dev. instance containing metadata and cleansed data from production org sandbox:
+
+      ### Administrator:
+
+      1. Configure templates and <a target="_blank" href="https://help.salesforce.com/articleView?id=data_sandbox_create.htm&type=5">generate a Dev. sandbox</a> from prod instance.
+      2. Create test scripts on sandbox so it doesn't degrade the production instance.
+      3. Export metadata (coding) from sandbox.
+      4. Create data extract from sandbox.
+      5. <strong>Cleanse data</strong> 
+      6. generate using <a target="_blank" href="http://mockaroo.com">mockaroo.com</a> (generates up to 1,000 rows free).
+      7. Copy cleansed data into a location available to developers.
+
+      ### Developer (volunteer):
+
+      7. Import metadata (coding) into Dev. instance.
+      8. <a target="_blank" href="http://pages.mail.salesforce.com/gettingstarted/sales-cloud/import-export-data/">Import</a> cleansed data into Dev using DataLoader.
+      9. Run test scripts on imported Dev. instance.
+      <br /><br />
+   
+   g. Enable and test disaster recovery.
+
+   h. To best communicate with student/interns, we need someone to research, propose, and then develop the best option for texting internationally to students, hosts, mentors, donors. Wilson said he and Kermit saw a company offering a good texting solution at Dreamforce. Texts can replace emails if they include links to static web pages or links with reminders to log in to dashboard to complete an activity.  
+
+   i. Make introduction videos to each of the persona: propspective and active interns, hosts, donors. These are on the website.
+
+   j. Create training for mentors in "drip" emails or videos.
+
+   k. <strong>Translations</strong> of the site into various languages. We have a team currently translating the site into Spanish. A LOT of their work is already done. At some point, I want to get a Volunteer Project posted to insert the “es:” text into the code. (BTW, all the training videos are also being translated to Spanish to be inserted into the videos too. That will be another project. The team in Colombia is translating those SRT files now.)
+   
+   l. Propose one of your own.
+
+### Collaborate
+
+If you haven't used the tools mentioned here, we will train you so that you can contribute confidently.
+
+1. Make an appointment with John at<br /><a target="_blank" href="https://www.ywamocnj.org/make-an-appointment/">https://www.ywamocnj.org/make-an-appointment</a> or https://ywamocnj.doodle.com/jthenry
+
+   John makes use of Zoom for group video conferencing than can be recorded.
+
+2. From John, get an invite to the Slack channel used by developers.
+
+3. Use your email to get a free GitHub account and let us know what your GitHub account name is. Then you can fork our GitHub to your own account. Create a branch under your account to make changes, then create a Pull/Merge Request. 
+
+4. We share sensitive info like passwords only on WhatsApp chat.
+
+5. Saleforce Chatter real-time text message we use to make announcements that get sent out as emails.
+
+
+<a name="TechArchitecture"></a>
+
+## B) Understand the technical architecture
+
+The system consists of several components, <a target="_blank" href="https://docs.google.com/presentation/d/1o_T8XRfeiDLD62ums2hHYid5_qIFNHUlAkQ3YtV6E1k/edit#slide=id.p">described by this system flow chart on Google (created using Lucid Chart)<img align="right" alt="ywan-architecutre-2019a-200x183-7427" width="200" src="https://user-images.githubusercontent.com/300046/53695300-b2bb2800-3d87-11e9-9b8e-759a92d654dd.jpg"></a>
+
+   * <a href="#TrainingSite">A training management website</a> used by interns to learn about being an intern.
+   * <a href="#Website">A public-facing website</a> that exchanges information dynamically with
+   * <a href="#Salesforce">A Salesforce org</a>
+   * Videos are stored as Private on YouTube.
+
+
+<a name="Website"></a>
+
+## C) Copy the public-facing website
+
+1. Open an internet browser to visit the production webpage for this organization at 
+
+   <a target="_blank" href="https://www.ywamocnj.org/">https://www.ywamocnj.org/</a><br />
+   Youth With A Mission - Ocean City New Jersey
+
+   The tech behind the website consists of several components (all free open-source):
+
+   * Ubuntu 18 operating system (contains ssh and yum package manager)
+   * Utility Git (needed by Capistrano)
+   * PostgreSQL database
+   * Ruby (programming language interpreter)
+   * Rails engine <a target="_blank" href="https://www.refinerycms.com/">Refinery CMS</a> which support for Amazon S3 cloud storage and makes use of
+   * ElasticSearch to do indexing and
+   * Dragonfly for image editing
+
+   * Redis database to manage queues to Salesforce
+   * Sidekiq to proxy and manage Redis
+   * NGINX ?
+   * TODO: Utility to backup database
+   * TODO: Utility to cleanse data
+   <br /><br />
+
+2. Code and documentation about the website is at this GitHub repository:
+
+   <a target="_blank" href="https://github.com/ipoconnection/ipo-web">https://github.com/ipoconnection/ipo-web</a>
+
+   BTW The name "IPO" is a carry-over of previous branding, and kinda stuck. We should rename it someday.
+
+   Optionally, if you want to examine the repo off-line, on your machine, create a folder and clone the repo onto your local laptop.
+
+3. Click the "Branch: master" and select the branch Dan is current using: <tt>upgrade-rails-4.0</tt>
+
+   That branch name will be different in the future.
+
+   <tt>README.md</tt> describes each component and installation process in more detail.
+
+   <tt>README.rdoc</tt> contains instructions for running on an Appl MacOS laptop. 
+   But since the system runs under Ubuntu in production, we are converting scripts and instructions to that OS, and assume that you are using a Docker or cloud image (running on Amazon Lightsail</a>, etc.).
+
+4. Create a VPC instance within <a target="_blank" href="https://wilsonmar.github.io/lightsail">Amazon Lightsail</a> or other bare-bones VPS (Virtual Private Server). 
+
+   PROTP: Begin with the 512 MB RAM to practice loading, then move up as necessary.
+
+   TODO: In the future we will define files to use Docker with Kubernetes.  
+
+5. Open an SSH session to your machine and login using the <strong>default user</strong> ("ubuntu").
+6. Create another user, <strong>deployer</strong>.
+
+	<pre>sudo adduser deployer --ingroup admin
+	</pre>
+
+1. Type in password when prompted with "Enter new UNIX password:".
+
+   <pre>
+passwd: password updated successfully
+Changing the user information for deployer
+Enter the new value, or press ENTER for the default
+Full Name []: 
+Room Number []: 
+Work Phone []: 
+Home Phone []: 
+Other []: 
+Is the information correct? [Y/n] 
+   </pre>
+
+7. Reboot and login as deployer to run the Bash script which installs software, configure it, and populate the database, and runs a smoke test to verify viability.
+
+8. Copy the command to invoke the install script to your Clipboard (by triple-clicking this line before pressing command+C) this string:
+
+   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/Ruby/ywam-setup-all.sh)"</strong></pre>
+
+1. Get on your VPC command line interface and press command+V to paste the command.
+
+   On Amazon Lightsail, you would need to first click on the orange clipboard icon, then paste in its form, then click on the CLI (black screen), then right-click to paste (on a Mac, press two fingers at once on the touchpad). Press Enter to run the command.
+
+   BTW The script is supposed to be idempotent because it erases resident folders from the previous run.
+
+
+<a name="Salesforce"></a>
+
+## D) Create a copy of the YWAM Salesforce org.
+
+Each developer makes use of their own account to work on a copy of the production Salesforce org.
+
+1. Sign up for a free Developer org. and sign into it.
+2. <a href="#LoadSF">Load the metadata into your own org.</a>
+3. Ask Dan to create .csv files containing cleansed data that has also been reduced in size. 
+4. From Dan ??? Obtain the export files and import into your org.
+5. Configure the API connection between the website and Salesforce API.
+
+a Salesforce Account
+
+The production Salesforce instance is <a target="_blank" href="https://studentmobilizationcentre.my.salesforce.com">https://studentmobilizationcentre.my.salesforce.com</a>, but to avoid additional charges we are trying to keep the number of people accessing it. Named users in SF are first initial and last name with no space.
+
+   1. John Henry, as the CEO, owns the all-powerful System Administrator permissions for the production org.
+   2. Mary Henry has the Standard "Executive Director" role.
+   3. support@ywamconverge.org is only emails.
+   4. API IDM is the user for API calls (does not use the UI).
+   5. Daniel Bryan is the root System Administrator.
+
+   6. James Strong "System Administrator" ?
+   7. jessica.kalisa@gmail.com "Program Volunteer".
+
+   8. kermit Vestal kermitv@ywamocnj.org
+   9. wilsonmar@uofn.edu
+   10. ?
+   <br /><br />
+
+There is a secret repository holding passwords to the production site.
+
+PROPOSAL: Volunteers use generic accounts rather than named ones. For example:
+
+   * admin@ywamconverge.org has the SF Standard "Executive Assistant" role.
+
+   * "tester.312" has permissions to conduct tests and view security settings.
+
+   * "user.415" has permissions to view reports and add opportunities.
+
+   * TODO: Map out users, their roles, and permissions.
+
+
+<a name="LoadSF"></a>
+
+### Load metadata into your own org.
+
+@Kermit?
+
+<a name="SFwebsite"></a>
+
+### Configure the API connection between the website and Salesforce
+
+@Dan?
+
+
+<a name="Changes"></a>
+## E) Plan changes, update test scripts
+
+We prefer to use a "test first" approach.
+
+
+
+<a name="TestDeploy"></a>
+
+## F) Run tests, make changes, and deploy
+
+1. Run a test of the existing test suite to ensure that everything works.
+
+2. Define what changes you would like to make, in small increments of commit
+
+   * If it's a form, take a picture of the form, paste it in PowerPoint or Google GSuite and add the field.
+   * Plan out the commits that you'll be making to get to done.
+   * Review with others regularly. Here is an opportunity for all sides to learn something new, and be better friends.
+   <br /><br />
+
+3. Create a branch, named beginning with your assigned user name followed by a dash and number.
+
+4. Make changes to the test suite, and make commits.
+
+5. Create a Pull (Merge) Request:
+
+   Please send a [GitHub Pull Request to opengovernment](https://github.com/opengovernment/opengovernment/pull/new/master) with a clear list of what you've done (read more about [pull requests](http://help.github.com/pull-requests/)). When you send a pull request, we will love you forever if you include test code. We can always use more test coverage. Please follow our coding conventions (below) and make sure all of your commits are atomic (one feature per commit).
+
+   Always write a clear log message for your commits. One-line messages are fine for small changes, but bigger changes should look like this:
+
+    $ git commit -m "A brief summary of the commit
+    > 
+    > A paragraph describing what changed and its impact."
+
+5. Change the test suite and make sure it runs to success.
+
+   We optimize for readability:
+
+   * We indent Bash shell files using three spaces (soft tabs).
+   * We use HAML for all views.
+   * We avoid logic in views, putting HTML generators into helpers.
+   * We ALWAYS put spaces after list items and method parameters (`[1, 2, 3]`, not `[1,2,3]`), around operators (`x += 1`, not `x+=1`), and around hash arrows.
+  
+   Plese consider the people who will read your code, and make it look nice for them. It's sort of like driving a car: Perhaps you love doing donuts when you're alone, but with passengers the goal is to make the ride as smooth as possible.
+
+6. Visually review with others while it's in your unit test environment.
+
+7. Check the new branch into GitHub.
+
+8. Others make comments on the code.
+
+9. One of the leads moves the branch into a test org and run the tests.
+
+   https://github.com/ipoconnection/ipo-web/blob/master/TESTS_README.md
+
+10. One of the leads deploys the change into production, then run post-deploy tests.
+
+
+
+## Other CONTRIBUTE.md files on the internet
+
+* https://www.firsttimersonly.com/
+* https://kbroman.org/github_tutorial/pages/fork.html
+* https://github.com/firstcontributions/first-contributions
+* https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project
+* https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/
+* https://gist.github.com/MarcDiethelm/7303312
+
+
+
+<hr />
+
+## More about Salesforce #
+
+This is one of a series about Salesforce
+
+{% include salesforce_links.html %}
