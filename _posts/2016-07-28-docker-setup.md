@@ -139,9 +139,7 @@ containing Docker commands.
 
 "By using containers, resources can be isolated, services restricted, and processes provisioned to have a private view of the operating system with their own process ID space, file system structure, and network interfaces. Multiple containers can share the same kernel, but each container can be constrained to only use a defined amount of resources such as CPU, memory and I/O." -- Wikipedia
 
-Each container runs as an isolated process on a shared kernel.
-
-Containers are more similar to isolation mechanisms where the resources (CPU, memory, filesystem, network, etc.) for one process are isolated from another. This isolation is possible due to a Linux kernel feature <a target="_blank" href="https://en.wikipedia.org/wiki/Cgroups">CGroups</a> (abbreviated from "Control Groups").
+Each container runs as an isolated process on a shared kernel. The isolation mechanisms that keeps resources (CPU, memory, filesystem, network, etc.) of each process isolated from others is a Linux kernel feature <a target="_blank" href="https://en.wikipedia.org/wiki/Cgroups">CGroups</a> (abbreviated from "Control Groups") developed within Google.
 
 ### Competition
 
@@ -149,11 +147,11 @@ Containers are more similar to isolation mechanisms where the resources (CPU, me
 
 Alternatives to Docker:
 
-* <a target="_blank" href="https://coreos.com/">CoreOS</a> developed <a target="_blank" href="https://github.com/appc/spec/">appc</a> with a <strong>rkt</strong> (pronounced "rocket") implementation in their <a target="_blank" href="https://www.opencontainers.org/">Open Containers Initiative</a> (OCI). The <a target="_blank" href="https://github.com/opencontainers/runc/">runC</a> CLI tool for spawning and running containers is built using Go v1.6+. CoreOS offers a <a target="_blank" href="https://coreos.com/why">Container Linux distribution</a>, an upstream variant of Red Hat Enterprise Linux from <a target="_blank" href="https://
+* <a target="_blank" href="https://coreos.com/">CoreOS</a> developed <a target="_blank" href="https://github.com/appc/spec/">appc</a> with a <strong>rkt</strong> (pronounced "rocket") implementation in their <a target="_blank" href="https://www.opencontainers.org/">Open Containers Initiative</a> (OCI). The <a target="_blank" href="https://github.com/opencontainers/runc/">runC</a> OS for spawning and running containers is built using Go v1.6+. CoreOS offers a <a target="_blank" href="https://coreos.com/why">Container Linux distribution</a>, an upstream variant of Red Hat Enterprise Linux from <a target="_blank" href="https://
 projectatomic.io/">projectatomic.io</a>
 Atomic Host collection of distributions.
 
-<a target="_blank" href="https://github.com/linuxkik/linuxkit/">open-source LinuxKit</a> originated from Docker, inc. as a tool for building minimal custom operating systems, to host the Docker platform.
+   <a target="_blank" href="https://github.com/linuxkik/linuxkit/">open-source LinuxKit</a> originated from Docker, inc. as a tool for building minimal custom operating systems, to host the Docker platform.
 
 * <a target="_blank" href="https://www.ubuntu.com/cloud/lxd">Canonical of Ubuntu has their LXD</a>
 
