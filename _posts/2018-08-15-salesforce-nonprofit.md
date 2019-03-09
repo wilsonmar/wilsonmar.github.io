@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Salesforce Non-profits"
-excerpt: "How the Benefit corp benefits non-profits, technically"
+title: "Salesforce Non-profit (NPSP)"
+excerpt: "How the Salesforce Benefit corp benefits non-profits, technically"
 tags: [salesforce]
 image:
 # feature: sf-ohana-1900x500-178173.jpg
@@ -18,7 +18,7 @@ comments: true
 This article are my  notes about the NPSP (Non-Profit Success Pack) from the Salesforce Foundation and friends.
 When done, it will be a hands-on succinct introduction to how non-profits make use of NPSP.
 
-## Non-profit integral
+## Non-profit integral to Salesforce
 
 Salesforce has a generous industry-leading approach to supporting non-profits. Their 1/1/1 was institued at the founding of the company in 1998, not as an after-thought.
 
@@ -28,7 +28,7 @@ Salesforce provides free to non-profits its first 10 seat licenses, then <a targ
    - IPEDS ID from the National Center for Education Statistics (NCES),
    - Acceptable evidence of 501(c)(4) status, such as copy of the Form 990
 
-1. salesforce.org is a separate employer entitity than Salesforce, Inc.
+1. Salesforce.org is a separate employer entitity than Salesforce, Inc.
    (Employees of salesforce.org don't get CRM stock.)
 
    <a target="_blank" href="http://www.salesforce.org/nonprofit/">http://www.salesforce.org/nonprofit</a>
@@ -51,7 +51,7 @@ Salesforce provides free to non-profits its first 10 seat licenses, then <a targ
    <a target="_blank" title="sfnpsp-connected-891x453-49722.jpg" href="https://user-images.githubusercontent.com/300046/45586115-54b88800-b8ae-11e8-9f0a-871814b73b7e.jpg">
    <img alt="sfnpsp-connected-891x453-49722.jpg" src="https://user-images.githubusercontent.com/300046/45586115-54b88800-b8ae-11e8-9f0a-871814b73b7e.jpg"></a>
 
-3. nurtured creation of NPSP (Non-Profit Success Pack) which adds to core Salesforce orgs specifically for non-profits. It's described at
+3. Nurtured creation of NPSP (Non-Profit Success Pack) which adds to core Salesforce orgs specifically for non-profits. It's described at
    
    <a target="_blank" href="http://www.salesforce.org/nonprofit/nonprofit-success-pack/">http://www.salesforce.org/nonprofit/nonprofit-success-pack</a>
 
@@ -118,22 +118,18 @@ If you don't have a "real" non-profit org:
 
 ## Model of Relationships among Data Objects
 
-Internally, data values are stored within "objects" that hold data, like a tab within a spreadsheet.
-Within an object, each row is a record and each column is a field.
-That's why the above are also called "object models", which is the basis for how data is imported.
+Internally, data values are stored within <strong>"objects"</strong> that hold data, like a tab within a spreadsheet. Within an object, each <strong>row is a record</strong> and each (vertical) <strong>column is a field</strong>. These are referred collectively as  <strong>"object models"</strong>, which forms the basis for how data is imported.
+These are also referred to as (aka): data model, account model, household account model, object model.
 
-<a target="_blank" href="https://s3-us-west-2.amazonaws.com/sfdo-docs/npsp_entity_relationship_diagram.pdf">
-<img alt="sfnpsp-erd-584x407.png" width="584" src="https://user-images.githubusercontent.com/300046/45602571-f12d7800-b9dd-11e8-83cd-5ef11911317f.png"><br />
+<a target="_blank" href="https://powerofus.force.com/articles/Resource/NPSP-Entity-Relationship-Diagram"><img alt="sfnpsp-erd-584x407.png" width="584" src="https://user-images.githubusercontent.com/300046/45602571-f12d7800-b9dd-11e8-83cd-5ef11911317f.png"><br />
 <small>Click the Entity Relationship Diagram of objects above to download a zoomable PDF.</small></a>
 
 Standard Salesforce (before NPSP) are in blue.
 NPSP modifies Salesforce databases and programming code to use different words on screen layouts, reports, and dashboards:
 
-   * Contacts => Constiuents and Donors in NPSP
+   * Contacts => Constituents and Donors in NPSP
    * Accounts (companies) => Households in NPSP 
    * Opportunities (products) => Donations in NPSP (revenue-generating events)
-
-These are referred to using several terms: data model, account model, household account model, object model.
 
 At the upper-left, the fork symbol at the end of blue lines to leads illustrate that many leads can lookup details about the same campaign.
 A particular level can be assigned to many households (accounts).
