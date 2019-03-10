@@ -15,9 +15,9 @@ comments: true
 
 {% include _toc.html %}
 
-This tutorial is an example of the procedures volunteer software developers use to get setup, then make contributions in a collaborative way.
+This document is under constant draft change at the moment.
 
-The objective here is that you (a developer/graphic artist/ etc.) get trained on a professional approach to software development while improving the organization's digital assets. The sections are:
+This is an example of a hands-on tutorial that volunteer software developers reference to get setup in order to make contributions in a collaborative way. This was written to ensure that you (a developer/graphic artist, etc.) get <strong>trained</strong> on a professional approach to software development while improving the non-profit's digital assets. The sections here are:
 
 * <a href="#Understand">      A) Understand the mission</a> (the organization and yours)
 * <a href="#TechArchitecture">B) Understand the technical architecture</a>
@@ -34,12 +34,15 @@ The objective here is that you (a developer/graphic artist/ etc.) get trained on
 
    <a name="Persona"></a>
    
-   The persona are: prospective and active interns, hosts, mentors, donors. 
+   For this non-profit, the <strong>persona</strong> are: interns, hosts, mentors, donors. 
+   Each person goes through different status over time: prospective, active, inactive, alum.
 
 
-   <a name="TrainingSite"></a>
 
-   ### Know about the mission
+
+a name="TrainingSite"></a>
+
+### Know about the mission
 
 1. Click <a target="_blank" href="https://coursesites.com/?sig=Mwuk9E96d1zi4kLs58vOveO3Tl8=&courseId=_190749_1&timestamp=1549132709&inviteId=BB?BB_QzCGaVfkHcOjnCyDupFaIrNNbv5DmyN82PEvwEmTOMMtUG+4ivX5IA==#invitation-student">this link to register for training on the Blackboard system</a>
 
@@ -51,9 +54,9 @@ The objective here is that you (a developer/graphic artist/ etc.) get trained on
 
    When did YWAM (the parent organization) start? See <a target="_blank" href="https://youtu.be/Uz0EesM-G04">https://youtu.be/Uz0EesM-G04</a>
 
-6. Scroll down the page to see the diagram:
+6. Scroll down the page to see the diagram summarizing the activities by phase:
 
-   <img alt="YWAMOCNJ" src="https://learn-us-east-1-prod-fleet01-xythos.s3.us-east-1.amazonaws.com/5744c71523ee6/664071?response-content-disposition=inline%3B%20filename%2A%3DUTF-8%27%27Converge%2520Course%2520Visual.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20190303T112411Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21599&X-Amz-Credential=AKIAIBGJ7RCS23L3LEJQ%2F20190303%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=6209dd2bae17a961b527599366c730a00dedebda83db2616a834fb3f1e0f24f1">
+   ![ywam-contribute-648x636-38472](https://user-images.githubusercontent.com/300046/54088143-34372b00-4331-11e9-952c-c7470f39d708.jpg)
 
 
    ### Pick a project
@@ -72,7 +75,7 @@ The objective here is that you (a developer/graphic artist/ etc.) get trained on
    
    f. Kermit: Define manual procedures and scripts to create a stand-alone Saleforce Trailhead Dev. instance containing metadata and cleansed data from production org sandbox:
 
-      ### Administrator:
+   ### Administrator:
 
       1. Configure templates and <a target="_blank" href="https://help.salesforce.com/articleView?id=data_sandbox_create.htm&type=5">generate a Dev. sandbox</a> from prod instance.
       2. Create test scripts on sandbox so it doesn't degrade the production instance.
@@ -81,10 +84,11 @@ The objective here is that you (a developer/graphic artist/ etc.) get trained on
       5. <strong>Cleanse data</strong> 
       6. generate using <a target="_blank" href="http://mockaroo.com">mockaroo.com</a> (generates up to 1,000 rows free).
       7. Copy cleansed data into a location available to developers.
+      <br /><br />
 
-      ### Developer (volunteer):
+   ### Developer (volunteer):
 
-      7. Import metadata (coding) into Dev. instance.
+      1. Import metadata (coding) into Dev. instance.
       8. <a target="_blank" href="http://pages.mail.salesforce.com/gettingstarted/sales-cloud/import-export-data/">Import</a> cleansed data into Dev using DataLoader.
       9. Run test scripts on imported Dev. instance.
       <br /><br />
@@ -134,7 +138,7 @@ The system consists of several components, <a target="_blank" href="https://docs
 
 ## C) Copy the public-facing website
 
-1. Open an internet browser to visit the production webpage for this organization at 
+1. Open an internet browser to visit the production webpage for the non-profit at:
 
    <a target="_blank" href="https://www.ywamocnj.org/">https://www.ywamocnj.org/</a><br />
    Youth With A Mission - Ocean City New Jersey
@@ -214,17 +218,10 @@ Is the information correct? [Y/n]
 
 <a name="Salesforce"></a>
 
-## D) Create a copy of the YWAM Salesforce org.
+## D) Create a copy of the Salesforce database
 
-Each developer makes use of their own account to work on a copy of the production Salesforce org.
 
-1. Sign up for a free Developer org. and sign into it.
-2. <a href="#LoadSF">Load the metadata into your own org.</a>
-3. Ask Dan to create .csv files containing cleansed data that has also been reduced in size. 
-4. From Dan ??? Obtain the export files and import into your org.
-5. Configure the API connection between the website and Salesforce API.
-
-a Salesforce Account
+### Production security
 
 The production Salesforce instance is <a target="_blank" href="https://studentmobilizationcentre.my.salesforce.com">https://studentmobilizationcentre.my.salesforce.com</a>, but to avoid additional charges we are trying to keep the number of people accessing it. Named users in SF are first initial and last name with no space.
 
@@ -254,6 +251,43 @@ PROPOSAL: Volunteers use generic accounts rather than named ones. For example:
 
    * TODO: Map out users, their roles, and permissions.
 
+### Dataflow diagram
+
+![salesforce-contribute-v05-677x301-30618](https://user-images.githubusercontent.com/300046/54088161-85dfb580-4331-11e9-9d10-095f90c4688c.jpg)
+
+The diagram here illustrates, on one page, how the various pieces fit together.
+
+Your first exposure to Salesforce is likly the <a target="_blank" href="https://trailhead.salesforce.com/">Salesforce Trailhead website https://trailhead.salesforce.com</a> which provides anyone a free Trailhead account with up to 5 "hands-on org" in a "playground" to use while taking learning modules. The <a target="_blank" href="https://trailhead.salesforce.com/sample-gallery">sample gallery</a> developed by Salesforce Developer Evangelists can be loaded as Dev orgs through the <strong>App Exchange</strong>. Sample packages are "unmanaged" and can be altered when installed. There are also <strong>managed</strong> packages (such as the Non-Profit Success Pack) from Salesforce partners.
+
+Each org (database) contains two types of information: master data values such as customer names and <strong>metadata</strong> (Apex coding, form layouts, and other configurations).
+
+Those who have bought one of the various levels of licenses for production usage have a single PROD org instance. Administrators go into Setup's Sandbox function to create copies of metadata in various types of Sandboxes (abbreviated SBX). Different levels of licenses come with different numbers of each type of sandbox. Dev (Development) Sandboxes are created so developers can add a few records specific to test what they are changing. Other types of Sandboxes contain data copied in. <strong>Dev Pro</strong> Sandboxes have up to 200 MB of test data. <strong>Partial</strong> Sandboxes hold a sampling of data for integration testing.
+<strong>Full</strong> Sandboxes contain a complete copy of production records and metadata. 
+
+Since it can take awhile to copy, an email is sent when it's done. To get data records into Sandboxes, we export based on filters in <strong>templates</strong> define within the Salesforce website. The export process also sends an email.
+
+The <strong>DataLoader</strong> utility is used to put data in Sandboxes. Because we are dealing with private production data, <strong>cleansing</strong> for duplicates and/or <strong>masking</strong> for privacy after export needs to done. Doing that directly in production provides for validation before committing. 
+
+Trraditionally, developers create <strong>Change Sets</strong> to patch metadata, and run Salesforce Apex tests and <strong>UI tests using Selenium or TOSCA/Flood.io</a> before pushing changes through various environments.
+
+In 2018, Salesforce made available DX (Developer Experience) that manages temporary <strong>Scratch</strong> orgs updated by metadata stored in a Git version control repository. Temporary means <strong>7-30</strong> days before they disappear automatically.
+
+To provide <strong>testing scripts</strong> the <strong>test data</strong> they need, <strong>custom scripts</strong> are written to load the test data into Scratch orgs and Playground org. 
+QUESTION: Can the DataLoader put custom external test data into the Dev Sandbox?<br />
+QUESTION: Can the DataLoader put data into Playground orgs?<br />
+QUESTION: Can a custom package be created from a Sandbox?
+
+
+### Procedures
+
+Each developer makes use of their own Salesforce org to work. This can be a Developer Sandbox provided from the Administrator or a copy of the production Salesforce org. in a Salesforce Trailhead Playground org.
+
+1. At <a target="_blank" href="https://trailhead.salesforce.com/">Salesforce Trailhead website https://trailhead.salesforce.com</a>, sign up for a free Developer org. and sign into it. You may need to first open an <strong>incognito window</strong> to avoid cookies from other Salesforce sessions.
+2. <a href="#LoadSF">Load the metadata into your own org.</a>
+3. Ask for .csv files containing masked data that has also been cleansed and reduced in size. 
+4. Import the test data into your org.
+5. <a href="#SFwebsite">Configure the API connection between the website and Salesforce API.</a>
+
 
 <a name="LoadSF"></a>
 
@@ -269,10 +303,14 @@ PROPOSAL: Volunteers use generic accounts rather than named ones. For example:
 
 
 <a name="Changes"></a>
+
 ## E) Plan changes, update test scripts
 
-We prefer to use a "test first" approach.
+Draft a description of what the system will look like when you're done. This can be an edited graphic of a form or report.
 
+Define commit messages for the sequence of changes. This can provide a roadmap for estimating effort and timelines.
+
+We believe in the advantages of a "test first" approach. Create test scripts to validate new fields that have not yet been created. Code changes would cause the test to pass.
 
 
 <a name="TestDeploy"></a>
@@ -296,11 +334,9 @@ We prefer to use a "test first" approach.
 
    Please send a [GitHub Pull Request to opengovernment](https://github.com/opengovernment/opengovernment/pull/new/master) with a clear list of what you've done (read more about [pull requests](http://help.github.com/pull-requests/)). When you send a pull request, we will love you forever if you include test code. We can always use more test coverage. Please follow our coding conventions (below) and make sure all of your commits are atomic (one feature per commit).
 
-   Always write a clear log message for your commits. One-line messages are fine for small changes, but bigger changes should look like this:
+   Always write a clear log message for your commits. One-line messages are fine for small changes, but bigger changes should contain a paragraph describing what changed and its impact:
 
-    $ git commit -m "A brief summary of the commit
-    > 
-    > A paragraph describing what changed and its impact."
+   <pre>git commit -m "A brief summary of the commit"</pre>
 
 5. Change the test suite and make sure it runs to success.
 
