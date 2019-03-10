@@ -99,8 +99,7 @@ with redundancies to achieve high availability (HA).
 
 ### Certification in Kubernetes
 
-On November 8, 2016 CNCF announced their 
-<a target="_blank" href="https://www.cncf.io/certification/expert/">3-hour task-based Certified Kubernetes Administrator (CKA)</a> and <a target="_blank" href="https://www.cncf.io/certification/ckad/">2-hour Kubernetes Application Developer (CKAD)</a> exams. Each is $300, which includes one free retake. 
+On November 8, 2016 CNCF announced their <a target="_blank" href="https://www.cncf.io/certification/expert/">3-hour task-based Certified Kubernetes Administrator (CKA)</a> and <a target="_blank" href="https://www.cncf.io/certification/ckad/">2-hour Kubernetes Application Developer (CKAD)</a> exams. Each is $300, which includes one free retake. 
 To compare the domain focus for each exam:
 
 <table border="1" cellspacing="0" cellpadding="4">
@@ -152,6 +151,8 @@ CNCF is part of the Linux Foundation, so...
    No multiple choice questions.
 
    PROTIP: The Linux Foundation exam focuses on "pure" commands only and excludes add-ons such as OpenStack.
+
+<a target="_blank" href="https://medium.com/@krystiannowaczyk/how-i-passed-the-cka-certified-kubernetes-administrator-exam-f94b11566528">"How I passed the CKA (Certified Kubernetes Administrator) Exam"</a> by Krystian Nowaczyk (who maintains https://github.com/ramitsurana/awesome-kubernetes) provides a list of resources he used.
 
 ## Free Playpen
 
