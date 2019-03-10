@@ -37,13 +37,6 @@ This is an example of a hands-on tutorial that volunteer software developers ref
    For this non-profit, the <strong>persona</strong> are: interns, hosts, mentors, donors. 
    Each person goes through different status over time: prospective, active, inactive, alum.
 
-
-
-
-a name="TrainingSite"></a>
-
-### Know about the mission
-
 1. Click <a target="_blank" href="https://coursesites.com/?sig=Mwuk9E96d1zi4kLs58vOveO3Tl8=&courseId=_190749_1&timestamp=1549132709&inviteId=BB?BB_QzCGaVfkHcOjnCyDupFaIrNNbv5DmyN82PEvwEmTOMMtUG+4ivX5IA==#invitation-student">this link to register for training on the Blackboard system</a>
 
 2. Access the YWAM Converge training content <a target="_blank" href="https://blackboard.coursesites.com/ultra/courses/_190749_1/cl/outline">https://blackboard.coursesites.com/ultra/courses/_190749_1/cl/outline</a>
@@ -56,7 +49,7 @@ a name="TrainingSite"></a>
 
 6. Scroll down the page to see the diagram summarizing the activities by phase:
 
-   ![ywam-contribute-648x636-38472](https://user-images.githubusercontent.com/300046/54088143-34372b00-4331-11e9-952c-c7470f39d708.jpg)
+   <img alt="ywam-contribute-648x636-38472.jpg" width="648" src="https://user-images.githubusercontent.com/300046/54088143-34372b00-4331-11e9-952c-c7470f39d708.jpg">
 
 
    ### Pick a project
@@ -75,7 +68,7 @@ a name="TrainingSite"></a>
    
    f. Kermit: Define manual procedures and scripts to create a stand-alone Saleforce Trailhead Dev. instance containing metadata and cleansed data from production org sandbox:
 
-   ### Administrator:
+   ### &nbsp; &nbsp; &nbsp; Administrator:
 
       1. Configure templates and <a target="_blank" href="https://help.salesforce.com/articleView?id=data_sandbox_create.htm&type=5">generate a Dev. sandbox</a> from prod instance.
       2. Create test scripts on sandbox so it doesn't degrade the production instance.
@@ -86,7 +79,7 @@ a name="TrainingSite"></a>
       7. Copy cleansed data into a location available to developers.
       <br /><br />
 
-   ### Developer (volunteer):
+   ### &nbsp; &nbsp; &nbsp; Developer (volunteer):
 
       1. Import metadata (coding) into Dev. instance.
       8. <a target="_blank" href="http://pages.mail.salesforce.com/gettingstarted/sales-cloud/import-export-data/">Import</a> cleansed data into Dev using DataLoader.
@@ -97,7 +90,7 @@ a name="TrainingSite"></a>
 
    h. To best communicate with student/interns, we need someone to research, propose, and then develop the best option for texting internationally to students, hosts, mentors, donors. Wilson said he and Kermit saw a company offering a good texting solution at Dreamforce. Texts can replace emails if they include links to static web pages or links with reminders to log in to dashboard to complete an activity.  
 
-   i. Make introduction videos to each of the persona: propspective and active interns, hosts, donors. These are on the website.
+   i. Make <strong>introduction videos</strong> to each of the <a href="#persona">persona</a> for display on the website and to make emails more "alive".
 
    j. Create training for mentors in "drip" emails or videos.
 
