@@ -1147,18 +1147,6 @@ Login with your Docker ID to push and pull images from Docker Hub. If you don't 
    </strong></tt>
 
 
-
-
-   ### Docker support websites
-
-   https://forums.docker.com
-   
-   Register at http://dockr.ly/community for the 
-   "Docker community" Slack channel at https://blog.docker.com/2016/11/introducing-docker-community-directory-docker-community-slack/
-
-   https://stackoverflow.com/
-
-
 <a name="ModulesInstalled"></a>
 
 ### Modules installed #
@@ -2121,9 +2109,18 @@ default   -        virtualbox   Running   tcp://192.168.99.100:2376           v1
    which is:
 
    <pre>
+
+### Configre Docker client
+
+# export DOCKER_TLS_VERIFY="1" specifies authentication of the Docker daemon the client attempts to communicate with:
 export DOCKER_TLS_VERIFY="1"
+
+# export DOCKER_HOST informs the client of the socket location to use when communicating with the Docker daemon:
 export DOCKER_HOST="tcp://192.168.99.100:2376"
+
+# export DOCKER_CERT_PATH specifies the location of key and certificates the client uses for TLS-enabled communication:
 export DOCKER_CERT_PATH="/Users/mac/.docker/machine/machines/default"
+
 export DOCKER_MACHINE_NAME="default"
 # Run this command to configure your shell: 
 # eval $(docker-machine env)
@@ -2132,12 +2129,36 @@ export DOCKER_MACHINE_NAME="default"
    PROTIP: On a Mac, the docker-machine VM is called "default", existing in directory<br />
    /Users/\<username>/.docker/machine/machines/default/ 
 
-0. See if the environment variables are set:
+1. Verify the environment variables are set:
 
    <tt><strong>env | grep DOCKER
    </strong></tt>
 
-0. To unset commands:
+1. In the tls folder, edit the file <tt>CA-CSR.json</tt> that defines the algorithm (rsa), the size of bits (4096), and names of the OU hierarchy used to generate the cert:
+
+   <pre>cfssl gencert -initca ca-csr.json | cfssljson -bare ca -</pre>
+
+1. File <tt>daemon-csr.json</tt> defines the CN (Common Name) and hosts as well used to generate the cert:
+
+   <pre>cfssl gencert -ca=ca.pem -ca-key=ca-key.pem \
+      -config=ca-config.json -profile=daemon daemon-csr.json \
+      | cfssljson -bare daemon -</pre>
+
+1. Verify the daemon-key.pem and daemon.pem files were generated:
+
+   <tt><strong>ls -l daemon*.pem</strong></tt>
+
+1. Use regex to specify all files to make readable:
+
+   <tt><strong>chmod -v 0400 {ca,daemon}*.pem</strong></tt>
+
+1. Copy the file to where they are referenced:
+
+   <tt><strong>sudo mkdir /etc/docker/tls
+   sudo cp {daemon*,ca}.pem /etc/docker/tls
+   rm -f daemon*.pem</strong></tt>
+
+1. After use, to unset environment variables:
 
    <tt><strong>eval $(docker-machine env -u)
    </strong></tt>
@@ -2154,10 +2175,9 @@ unset DOCKER_MACHINE_NAME
    </pre>
 
 
+### Remove images
 
-   ### Remove images
-
-0. To remove an individual Docker image listed above (to free up disk space):
+1. To remove an individual Docker image listed above (to free up disk space):
 
    <tt><strong>docker rmi hello-world
    </strong></tt>
@@ -2169,7 +2189,7 @@ Error response from daemon: conflict: unable to remove repository reference "hel
    </pre>
 
 
-0. To stop all running docker containers:
+1. To stop all running docker containers:
 
    <tt><strong>docker stop $(docker ps -a -q)
    </strong>
@@ -2180,7 +2200,7 @@ Error response from daemon: conflict: unable to remove repository reference "hel
    aa2ccdb153cc
    </pre>
 
-0. To save disk space, remove containers identified in a list of container IDs obtained:
+1. To save disk space, remove containers identified in a list of container IDs obtained:
 
    <tt><strong>docker rm $(docker ps -a -q)
    </strong></tt>
@@ -2191,14 +2211,12 @@ Error response from daemon: conflict: unable to remove repository reference "hel
 Error response from daemon: You cannot remove a running container aa2ccdb153cc54070e6e2ef24e004b40e3e78555b0bca77badd143c3d984bb1c. Stop the container before attempting removal or force remove
    </pre>
 
-
    See <a target="_blank" href="https://docs.docker.com/docker-for-windows/">
    https://docs.docker.com/docker-for-windows</a>
 
-Inside the container we will create a simple ‘Hello World’ script.
-none
+   Inside the container we will create a simple ‘Hello World’ script.none
 
-powershell.exe Add-Content C:\helloworld.ps1 'Write-Host "Hello World"'
+   <pre>powershell.exe Add-Content C:\helloworld.ps1 'Write-Host "Hello World"'</pre>
 
 
 
@@ -2427,7 +2445,7 @@ bash: print: command not found
 See https://docs.docker.com/compose/install/.
 
 
-0. Describe you stack in a <strong>docker-compose.yml</strong>.
+1. Describe you stack in a <strong>docker-compose.yml</strong>.
    Example:
 
    <pre>
@@ -2449,7 +2467,7 @@ See https://docs.docker.com/compose/install/.
    here</a>
 
 
-0. Type the command by itself for a list of sub-commands:
+1. Type the command by itself for a list of sub-commands:
 
    <tt><strong>docker-compose
    </strong></tt>
@@ -2507,7 +2525,7 @@ Commands:
      </pre>
 
 
-0. Docker compose creates multiple containers with a single command:
+1. Docker compose creates multiple containers with a single command:
 
    <tt><strong>docker-compose up \-\-x-smart-recreate
    </strong></tt>
@@ -2522,7 +2540,7 @@ Commands:
 
    choco install kubernetes-kompose
 
-### Alternatives include 
+   Alternatives to Kubernetes include 
 
    * Kubernetes by Google, 
    * Mesos
@@ -2532,17 +2550,17 @@ Commands:
    * Serf
    * Cloudify
    * Helios
+   <br /><br />
 
 
 ### Monitoring
 
-   Monitor using cAdvisor collecting stats to write to InfluxDB, displayed by Grafana,
-   described
-   <a target="_blank" href="https://dockerhanoi.wordpress.com/2015/08/19/docker-monitoring-with-cadvisor-influxdb-and-grafana/">
-   here</a>
+There are several alternatives to collects stats for monitoring dashboard:
+
+A. cAdvisor to write to InfluxDB time-series database for display by Grafana is described <a target="_blank" href="https://dockerhanoi.wordpress.com/2015/08/19/docker-monitoring-with-cadvisor-influxdb-and-grafana/">here</a>
 
 
-0. Get the IP address of the running Docker instance:
+1. Get the IP address of the running Docker instance:
 
    <pre>
 DOCKER_HOST=$(docker-machine ip $(docker-machine active))
@@ -2695,10 +2713,15 @@ AppDynamics Docker monitoring</a>
 Lightweight Docker Images in 5 Steps</a> · 13 Dec 2016 · Semaphore Engineering Blog
 by Igor Šarčević
 
-## Social
 
-Register for Slack channel at
-https://community.docker.com/registrations/groups/4316
+## Docker support websites
+
+* <a target="_blank" href="https://forums.docker.com">https://forums.docker.com</a>
+   
+* Register at <a target="_blank" href="http://dockr.ly/community">http://dockr.ly/community</a> for the <a target="_blank" href="https://community.docker.com/registrations/groups/4316
+">Docker community" Slack channel</a> at https://blog.docker.com/2016/11/introducing-docker-community-directory-docker-community-slack/
+
+* <a target="_blank" href="https://stackoverflow.com/questions/tagged/docker">https://stackoverflow.com/questions/tagged/docker</a>
 
 
 ## More on DevOps #
