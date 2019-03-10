@@ -1626,6 +1626,8 @@ Vicky Tanya Seno at Santa Monica College is preparing a course of Kubernetes on 
 Kubstack
 https://twitter.com/pst418
 
+https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days-e4603ac40746
+
 
 ## More on DevOps #
 
