@@ -160,8 +160,8 @@ Atomic Host collection of distributions.
 * Over the years, Kelsey Hightower - has updated his <a target="_blank" href="https://github.com/kelseyhightower/kubernetes-the-hard-way">Kubernetes the hard way</a> to use (instead of Docker) <a target="_blank" href="https://github.com/kubernetes-incubator/cri-o)%20v1.0.0-beta.0">CRI-O</a>, <a target="_blank" href="https://github.com/containerd/containerd">containerd</a>, and <a target="_blank" href="https://github.com/google/gvisor">gvisor</a>. Other options include <a target="_blank" href="https://github.com/clearcontainers/runtime">clearcontainers</a> and <a target="_blank" href="https://katacontainers.io/">katacontainers</a>.
 
 
-* <a target="_blank" href="https://www.redhat.com/en/blog/red-hat-enterprise-linux-8-beta-new-set-container-tools">
-RHEL 8 beta - Enterprise Linux 8 Beta</a> introduces a new Container Tools module which consists of the <strong>podman-docker.noarch</strong> "package to emulate Docker CLI using podman, Buildah, Skopeo, and several other bits." 
+* Red Hat created <a target="_blank" href="https://quay.io">quay.io</a> container registry to compete with DockerHub. But the "other shoe has dropped" when <a target="_blank" href="https://www.redhat.com/en/blog/red-hat-enterprise-linux-8-beta-new-set-container-tools">
+RHEL Enterprise Linux 8 Beta</a> introduces a new <strong>Container Tools</strong> module which consists of the <strong>podman-docker.noarch package to emulate Docker CLI</strong>. Other bits include <a target="_blank" href="https://github.com/containers/buildah">Buildah</a> to build OCI images and <a target="_blank" href="https://github.com/containers/skopeo">Skopeo</a> to <a target="_blank" href="https://rhelblog.redhat.com/2017/05/11/skopeo-copy-to-the-rescue/">copy images</a>. 
 
 <hr />
 

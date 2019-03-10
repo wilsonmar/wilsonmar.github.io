@@ -19,11 +19,11 @@ This document is under constant draft change at the moment.
 
 This is an example of a hands-on tutorial that volunteer software developers reference to get setup in order to make contributions in a collaborative way. This was written to ensure that you (a developer/graphic artist, etc.) get <strong>trained</strong> on a professional approach to software development while improving the non-profit's digital assets. The sections here are:
 
-A. <a href="#Understand">      Understand the mission</a> (the organization and yours)
-B. <a href="#TechArchitecture">Understand the technical architecture</a>
-C. <a href="#Website">         Copy the public-facing website</a>
-D. <a href="#Salesforce">      Create a copy of the Salesforce org</a>
-E. <a href="#Changes">         Plan changes, update test scripts</a>
+A. <a href="#Understand">      Understand the mission</a> (the organization and yours)<br />
+B. <a href="#TechArchitecture">Understand the technical architecture</a><br />
+C. <a href="#Website">         Copy the public-facing website</a><br />
+D. <a href="#Salesforce">      Create a copy of the Salesforce org</a><br />
+E. <a href="#Changes">         Plan changes, update test scripts</a><br />
 F. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
 
 <hr />
