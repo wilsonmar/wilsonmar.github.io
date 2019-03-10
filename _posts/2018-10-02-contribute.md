@@ -19,12 +19,12 @@ This document is under constant draft change at the moment.
 
 This is an example of a hands-on tutorial that volunteer software developers reference to get setup in order to make contributions in a collaborative way. This was written to ensure that you (a developer/graphic artist, etc.) get <strong>trained</strong> on a professional approach to software development while improving the non-profit's digital assets. The sections here are:
 
-* <a href="#Understand">      A) Understand the mission</a> (the organization and yours)
-* <a href="#TechArchitecture">B) Understand the technical architecture</a>
-* <a href="#Website">         C) Copy the public-facing website</a>
-* <a href="#Salesforce">      D) Create a copy of the Salesforce org</a>
-* <a href="#Changes">         E) Plan changes, update test scripts</a>
-* <a href="#TestDeploy">      F) Run tests, make changes, and deploy</a>
+A. <a href="#Understand">      Understand the mission</a> (the organization and yours)
+B. <a href="#TechArchitecture">Understand the technical architecture</a>
+C. <a href="#Website">         Copy the public-facing website</a>
+D. <a href="#Salesforce">      Create a copy of the Salesforce org</a>
+E. <a href="#Changes">         Plan changes, update test scripts</a>
+F. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
 
 <hr />
 
@@ -335,15 +335,14 @@ Each developer makes use of their own Salesforce org to work. This can be a Deve
 
 5. Change the test suite and make sure it runs to success.
 
+   Please consider the people who will read your code, and make code reable for them.
    We optimize for readability:
 
-   * We indent Bash shell files using three spaces (soft tabs).
-   * We use HAML for all views.
-   * We avoid logic in views, putting HTML generators into helpers.
-   * We ALWAYS put spaces after list items and method parameters (`[1, 2, 3]`, not `[1,2,3]`), around operators (`x += 1`, not `x+=1`), and around hash arrows.
+   * Indent Bash shell files using three spaces (soft tabs).
+   * Use HAML for all views.
+   * Avoid logic in views, putting HTML generators into helpers.
+   * Put spaces after list items and method parameters (`[1, 2, 3]`, not `[1,2,3]`), around operators (`x += 1`, not `x+=1`), and around hash arrows.
    <br /><br />
-
-   Please consider the people who will read your code, and make code reable for them.
 
 6. Visually review with others while it's in your unit test environment.
 
