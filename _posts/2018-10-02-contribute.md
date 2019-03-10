@@ -250,7 +250,7 @@ PROPOSAL: Volunteers use generic accounts rather than named ones. For example:
 
 The diagram here illustrates, on one page, how the various pieces fit together.
 
-Your first exposure to Salesforce is likly the <a target="_blank" href="https://trailhead.salesforce.com/">Salesforce Trailhead website https://trailhead.salesforce.com</a> which provides anyone a free Trailhead account with up to 5 "hands-on org" in a "playground" to use while taking learning modules. The <a target="_blank" href="https://trailhead.salesforce.com/sample-gallery">sample gallery</a> developed by Salesforce Developer Evangelists can be loaded as Dev orgs through the <strong>App Exchange</strong>. Sample packages are "unmanaged" and can be altered when installed. There are also <strong>managed</strong> packages (such as the Non-Profit Success Pack) from Salesforce partners.
+Your first exposure to Salesforce is likely the <a target="_blank" href="https://trailhead.salesforce.com/">Salesforce Trailhead website https://trailhead.salesforce.com</a> which provides anyone a free Trailhead account with up to 5 "hands-on org" in a "playground" to use while taking learning modules. The <a target="_blank" href="https://trailhead.salesforce.com/sample-gallery">sample gallery</a> developed by Salesforce Developer Evangelists can be loaded as Dev orgs through the <strong>App Exchange</strong>. Sample packages are "unmanaged" and can be altered when installed. There are also <strong>managed</strong> packages (such as the Non-Profit Success Pack) from Salesforce partners.
 
 Each org (database) contains two types of information: master data values such as customer names and <strong>metadata</strong> (Apex coding, form layouts, and other configurations).
 
@@ -299,11 +299,13 @@ Each developer makes use of their own Salesforce org to work. This can be a Deve
 
 ## E) Plan changes, update test scripts
 
-Draft a description of what the system will look like when you're done. This can be an edited graphic of a form or report.
+1. Draft a description of what the system will look like when you're done. This can be a picture of an altered form or report.
 
-Define commit messages for the sequence of changes. This can provide a roadmap for estimating effort and timelines.
+2. Define commit messages for the sequence of changes. This can provide a roadmap for estimating effort and timelines.
 
-We believe in the advantages of a "test first" approach. Create test scripts to validate new fields that have not yet been created. Code changes would cause the test to pass.
+3. Define the tests for each feature added or changed.
+
+4. We believe in the advantages of a "test first" approach. Create test scripts to validate new fields that have not yet been created. If the change is removal of a field, write a "negative" test to verify the absence of the field among a list. Then code changes that cause the test to pass.
 
 
 <a name="TestDeploy"></a>
@@ -339,20 +341,21 @@ We believe in the advantages of a "test first" approach. Create test scripts to 
    * We use HAML for all views.
    * We avoid logic in views, putting HTML generators into helpers.
    * We ALWAYS put spaces after list items and method parameters (`[1, 2, 3]`, not `[1,2,3]`), around operators (`x += 1`, not `x+=1`), and around hash arrows.
-  
-   Plese consider the people who will read your code, and make it look nice for them. It's sort of like driving a car: Perhaps you love doing donuts when you're alone, but with passengers the goal is to make the ride as smooth as possible.
+   <br /><br />
+
+   Please consider the people who will read your code, and make code reable for them.
 
 6. Visually review with others while it's in your unit test environment.
 
-7. Check the new branch into GitHub.
+7. Check the new branch into GitHub (or whatever version control repository your team uses).
 
 8. Others make comments on the code.
 
-9. One of the leads moves the branch into a test org and run the tests.
+9. One of the leads moves the branch into a test org and run more tests.
 
    https://github.com/ipoconnection/ipo-web/blob/master/TESTS_README.md
 
-10. One of the leads deploys the change into production, then run post-deploy tests.
+10. One of the leads deploys the change into production, then run <strong>post-deploy</strong> tests.
 
 
 

@@ -141,7 +141,9 @@ containing Docker commands.
 
 Each container runs as an isolated process on a shared kernel. The isolation mechanisms that keeps resources (CPU, memory, filesystem, network, etc.) of each process isolated from others is a Linux kernel feature <a target="_blank" href="https://en.wikipedia.org/wiki/Cgroups">CGroups</a> (abbreviated from "Control Groups") developed within Google.
 
-### Competition
+<a name="Alternatives"></a>
+
+## Alternatives to Docker
 
 <a target="_blank" href="http://www.boycottdocker.org/">boycottdocker.org</a> raises some technical concerns about Docker.
 
@@ -157,6 +159,9 @@ Atomic Host collection of distributions.
 
 * Over the years, Kelsey Hightower - has updated his <a target="_blank" href="https://github.com/kelseyhightower/kubernetes-the-hard-way">Kubernetes the hard way</a> to use (instead of Docker) <a target="_blank" href="https://github.com/kubernetes-incubator/cri-o)%20v1.0.0-beta.0">CRI-O</a>, <a target="_blank" href="https://github.com/containerd/containerd">containerd</a>, and <a target="_blank" href="https://github.com/google/gvisor">gvisor</a>. Other options include <a target="_blank" href="https://github.com/clearcontainers/runtime">clearcontainers</a> and <a target="_blank" href="https://katacontainers.io/">katacontainers</a>.
 
+
+* <a target="_blank" href="https://www.redhat.com/en/blog/red-hat-enterprise-linux-8-beta-new-set-container-tools">
+RHEL 8 beta - Enterprise Linux 8 Beta</a> introduces a new Container Tools module which consists of the <strong>podman-docker.noarch</strong> "package to emulate Docker CLI using podman, Buildah, Skopeo, and several other bits." 
 
 <hr />
 
