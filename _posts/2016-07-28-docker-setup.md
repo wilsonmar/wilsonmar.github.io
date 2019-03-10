@@ -155,6 +155,8 @@ Atomic Host collection of distributions.
 
 * <a target="_blank" href="https://www.ubuntu.com/cloud/lxd">Canonical of Ubuntu has their LXD</a>
 
+* Over the years, Kelsey Hightower - has updated his <a target="_blank" href="https://github.com/kelseyhightower/kubernetes-the-hard-way">Kubernetes the hard way</a> to use (instead of Docker) <a target="_blank" href="https://github.com/kubernetes-incubator/cri-o)%20v1.0.0-beta.0">CRI-O</a>, <a target="_blank" href="https://github.com/containerd/containerd">containerd</a>, and <a target="_blank" href="https://github.com/google/gvisor">gvisor</a>. Other options include <a target="_blank" href="https://github.com/clearcontainers/runtime">clearcontainers</a> and <a target="_blank" href="https://katacontainers.io/">katacontainers</a>.
+
 
 <hr />
 
