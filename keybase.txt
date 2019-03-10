@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/wilsonmar
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://wilsonmar.github.io
+  * I am wilsonmar (https://keybase.io/wilsonmar) on keybase.
+  * I have a public key ASDxj5xIICs5HUqp9uu3ehYrtA5Wk0tvtr_UrvBu_MuvUAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012047bae1d28188c8ec8e8a4278ba1ff2e3425baa03ca19144284ded7aca307acb20a",
+      "host": "keybase.io",
+      "kid": "0120f18f9c48202b391d4aa9f6ebb77a162bb40e56934b6fb6bfd4aef06efccbaf500a",
+      "uid": "f5d91bd5814a408ef8b7862911daeb19",
+      "username": "wilsonmar"
+    },
+    "merkle_root": {
+      "ctime": 1552258083,
+      "hash": "e667b99d4279ed97f1c8b3112304f84eb6ce40eda9cc2a609473a79c5019669e2578a229341ffdc6a76b4fc77a2f277e7028bd2a52dbd735aedbf76457ce0ebb",
+      "hash_meta": "3ce526fa00ed92dbd5c8126d9ac56a678178b4a2e6afe5e3360096e32349f8c5",
+      "seqno": 4917059
+    },
+    "service": {
+      "entropy": "L62rAAMVbKjrRoNsLtSCVq2Z",
+      "hostname": "wilsonmar.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "3.1.0"
+  },
+  "ctime": 1552258129,
+  "expire_in": 504576000,
+  "prev": "ddc0de95557e1583d445902aaf8f00f1cc68d84b3c1f742db89a56a492e4f162",
+  "seqno": 10,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg8Y+cSCArOR1Kqfbrt3oWK7QOVpNLb7a/1K7wbvzLr1AKp3BheWxvYWTESpcCCsQg3cDelVV+FYPURZAqr48A8cxo2Es8H3QtuJpWpJLk8WLEIKZO0sqr5895N4dgf6IKy9+j8Kf3iIYnuJKrK5c3/+slAgHCo3NpZ8RAnNNUKHC53Z73vpZTv3UUXCY7Ef37lhXyufeGEaFYHoBVs5euNlnRIFe8LCWA8WCAor3kxGZ3Mu6dGm71wyfHB6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIBnNQq93VFcFBg2wmi9V3MBnMTDxu2akGOCRINfn2wyPo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/wilsonmar
+
+==================================================================

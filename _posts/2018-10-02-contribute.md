@@ -54,7 +54,7 @@ F. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
 
    ### Pick a project
 
-1. Pick a project you are interested in. Some John posts at <a target="_blank" href="https://www.catchafire.org/">Catch-a-Fire</a>:
+1. Pick a project you are interested in. Some John posts at <a target="_blank" href="https://www.catchafire.org/volunteer/?name_filter=ywam&page=1">CatchAFire.org</a>:
 
    a. John: Write manual procedures about how the system works, illustrated by a <a href="#TechArchitecture">flowchart</a>.
    
@@ -71,9 +71,9 @@ F. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
    ### &nbsp; &nbsp; &nbsp; Administrator:
 
       1. Configure templates and <a target="_blank" href="https://help.salesforce.com/articleView?id=data_sandbox_create.htm&type=5">generate a Dev. sandbox</a> from prod instance.
-      2. Create test scripts on sandbox so it doesn't degrade the production instance.
-      3. Export metadata (coding) from sandbox.
-      4. Create data extract from sandbox.
+      2. Create test scripts on sandbox so running it doesn't corrupt or degrade the production instance.
+      3. Export metadata (coding) from Sandbox.
+      4. Create data extract from Sandbox.
       5. <strong>Cleanse data</strong> 
       6. generate using <a target="_blank" href="http://mockaroo.com">mockaroo.com</a> (generates up to 1,000 rows free).
       7. Copy cleansed data into a location available to developers.
@@ -121,10 +121,14 @@ If you haven't used the tools mentioned here, we will train you so that you can 
 
 The system consists of several components, <a target="_blank" href="https://docs.google.com/presentation/d/1o_T8XRfeiDLD62ums2hHYid5_qIFNHUlAkQ3YtV6E1k/edit#slide=id.p">described by this system flow chart on Google (created using Lucid Chart)<img align="right" alt="ywan-architecutre-2019a-200x183-7427" width="200" src="https://user-images.githubusercontent.com/300046/53695300-b2bb2800-3d87-11e9-9b8e-759a92d654dd.jpg"></a>
 
-   * <a href="#TrainingSite">A training management website</a> used by interns to learn about being an intern.
+   * <a href="#TrainingSite">A training management website</a> used by interns to learn about being an intern. Videos on it are stored (as Public) on the <a target="_blank" href="https://www.youtube.com/channel/UCacj____6p8-iiIN_Nk-iBw">YouTube channel</a>
    * <a href="#Website">A public-facing website</a> that exchanges information dynamically with
-   * <a href="#Salesforce">A Salesforce org</a>
-   * Videos are stored as Private on YouTube.
+   * <a href="#Salesforce">A Salesforce org</a> database
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=FwNdD0yrBE4&list=PLJY5a7HPiwbWpw63i-4sFoKfXvEe-zxBV">Audio podcasts from 2018</a> are also stored on YouTube.
+   * Apple podcasts?
+   * Facebook?
+   * Instagram?
 
 
 <a name="Website"></a>
