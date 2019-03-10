@@ -49,7 +49,7 @@ F. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
 
 6. Scroll down the page to see the diagram summarizing the activities by phase:
 
-   <img alt="ywam-contribute-648x636-38472.jpg" width="648" src="https://user-images.githubusercontent.com/300046/54088143-34372b00-4331-11e9-952c-c7470f39d708.jpg">
+   <img alt="ywam-contribute-648x636-38472.jpg" width="500" src="https://user-images.githubusercontent.com/300046/54088143-34372b00-4331-11e9-952c-c7470f39d708.jpg">
 
 
    ### Pick a project
