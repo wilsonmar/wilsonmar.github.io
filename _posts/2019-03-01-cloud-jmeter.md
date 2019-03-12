@@ -11,6 +11,8 @@ image: # docker-jmeter-1900x500-75034
 ---
 <i>{{ page.excerpt }}</i>
 
+{% include _toc.html %}
+
 The diagram here describes progress toward distributing runs of JMeter within Docker, and scaling those Docker instances using Amazon's EKS (Elastic Kubernetes Service). Each step is a MVP (Minimim Viable Product)" stage deliverable.
 
 <!-- v16 -->
