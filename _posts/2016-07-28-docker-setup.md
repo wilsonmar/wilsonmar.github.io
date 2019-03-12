@@ -141,6 +141,9 @@ containing Docker commands.
 
 Each container runs as an isolated process on a shared kernel. The isolation mechanisms that keeps resources (CPU, memory, filesystem, network, etc.) of each process isolated from others is a Linux kernel feature <a target="_blank" href="https://en.wikipedia.org/wiki/Cgroups">CGroups</a> (abbreviated from "Control Groups") developed within Google.
 
+During PyCon on Friday, March 15, 2013. Solomon Hykes, the founder of Docker, gave a lightning talk on "The future of Linux Containers, delivered".
+
+
 <a name="Alternatives"></a>
 
 ## Alternatives to Docker

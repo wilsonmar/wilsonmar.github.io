@@ -720,6 +720,40 @@ Control plane
 
 
 
+## MVP
+
+This flowchart shows how (1) these two servers within an on-prem. data server can be tested for performance locally and from an AWS cloud.
+
+The Apigee service needs to be setup first becuase it authenticates requests based on pre-assigned <strong>tokens</strong> provided to those who call the service. We'll need several types of tokens: we use tokens with a low threshold to test rejection mechanisms. But generally we use tokens with a high threshold for stress testing apps.
+
+Agents in servers collect for a (2) <strong>Monitoring</strong> service such as Dynatrace or SignalFx, and others. 
+Various metrics from the monitoring system are displayed on its <strong>Dashboard</strong>.
+The important aspect about this is that <strong>Trends</strong> are displayed.
+
+Now we can begin to write and run (3) <strong>JMeter</strong> scripts to impose artificial loads.
+From a laptop, we can only impose a limited load. But that is OK because we use laptops just to craft scripts.
+Once viable, the scripts, along with associated files, are pushed into a (4) private Version Control repository such as AWS Code Commit.
+Within enterprise settings, instead of downloading installer packages from the internet, it is safer to obtain installers that have been vetted by Security then made available from a (5) private repository such as <strong>Artifactory</strong> or Enterprise DockerHub. 
+A lot of work is needed to vet the many dependencies for teams who prefer to build machines <em><strong>from the ground up</em></strong> using Configuration as Code <strong>(CaC)</strong>, a practice that enables them to quickly respond to issues anywhere in the tech stack.
+
+To make calls to the Amazon cloud, we install the (7) <strong>AWS CLI</strong> and associated tools to craft (8) <strong>Cloud Formation</strong> files that instantiate services such as EC2 to run servers within the AWS Cloud.
+Within AWS, we (9) instantiate images containing JMeter using common scripts in the code repository.
+
+Before we run, we should (10) lint and <strong>audit</strong> the containers using various tools.
+
+When we need to add more JMeter instances to impose a heavier load, we add a (11) <strong>JMeter Master</strong> to coordinate the Jenkins slave nodes. The Master starts a fixed number of nodes to test (12) app <strong>auto-scaling</strong> mechanisms.
+
+When Configurations settings are under version control, changes can (13) trigger (14) <strong>CI/CD</strong> to automatically initiate test runs. If the analytics system has enough history, it can (15) recognize trends and, if anomalies are identified, issue (16) <strong>alerts</strong> while the changes are still fresh in the mind of the person who made the change.
+
+Because traffic between on-premises servers and load generators in the cloud is subject to significant variability, it would be ideal to have a (17) load generator near each machine under test. But it can be problematic going through the corporate firewall. (for example, https://aqueduct.flood.io/ to get through from internal IP's in the cloud through a firewall exiting as TLS pipe with port 80/443. Similar to Ngrok. Flood.io filters out )
+
+It can be easier to make use of a (18) web-based SaaS service such as Blazemeter or Flood.io. With them, we just upload a script and they handle the rest, such as configuring enough machines.
+
+When servers on-prem are (19) transitioned to run within AWS, we would avoid issues with firewalls and save charges for data leaving AWS.
+To ensure low latency between the services, we define them to use the same <strong>AWS affinity group</strong>. 
+
+
+
 <a name="Tasks"></a>
 
 ## Recap of tasks
