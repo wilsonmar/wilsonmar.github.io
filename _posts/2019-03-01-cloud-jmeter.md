@@ -13,10 +13,10 @@ image: # docker-jmeter-1900x500-75034
 
 {% include _toc.html %}
 
-The diagram here describes progress toward distributing runs of JMeter within Docker, and scaling those Docker instances using Amazon's EKS (Elastic Kubernetes Service). Each step is a MVP (Minimim Viable Product)" stage deliverable.
+The diagram here describes progress toward distributing runs of JMeter within EC2 and/or Docker, and scaling those instances to increase load on app servers. Each step is a deliverable within the sequence of MVP (Minimim Viable Product) stages.
 
-<!-- v16 -->
-<amp-youtube data-videoid="ZCQdv57VDE8" layout="responsive" width="480" height="270"></amp-youtube>
+<!-- v17 -->
+<amp-youtube data-videoid="AyY58ywXPxI" layout="responsive" width="480" height="270"></amp-youtube>
 <br />
 
 To keep it simple, let's say our system under test on-prem. consists of (1) a server responding to API requests behind a governance proxy such as <strong>Apigee</strong>. The API front-end needs to be setup first becuase it authenticates requests based on pre-assigned <strong>tokens</strong> provided to those who call the service. We'll use several types of tokens. We generally use tokens with a lot of credits for stress or soak testing. We also need one with no credits to test rejection mechanisms. And an automated way is needed to reset tokens after each test.
