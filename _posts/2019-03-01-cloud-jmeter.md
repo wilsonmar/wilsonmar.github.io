@@ -15,7 +15,9 @@ image: # docker-jmeter-1900x500-75034
 
 The diagram here describes progress toward distributing runs of JMeter within EC2 and/or Docker, and scaling those instances to increase load on app servers. Each step is a deliverable within the sequence of MVP (Minimim Viable Product) stages.
 
-<!-- v17 -->
+## Flowchart
+
+<!-- v18 -->
 <amp-youtube data-videoid="AyY58ywXPxI" layout="responsive" width="480" height="270"></amp-youtube>
 <br />
 
@@ -47,6 +49,8 @@ When servers on-prem are (19) transitioned to run within a cloud, we would avoid
 Next, we'll look at configuration settings for the cloud, such as <strong>AWS affinity groups</strong> to specify low latency between servers within the same Availability Zone.
 
 <hr />
+
+## Steps
 
 Below are more details about each deliverable:
 
@@ -227,7 +231,7 @@ I gave a lightning talk on this work.  The slide deck I used for it is at http:/
 
 <a name="Dockerize"></a>
 
-### Dockerfile
+### Dockerize
 
    Docker commands are issued from a CLI or a shell script:
 
