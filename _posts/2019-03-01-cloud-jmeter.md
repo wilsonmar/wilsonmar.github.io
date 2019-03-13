@@ -50,20 +50,72 @@ Next, we'll look at configuration settings for the cloud, such as <strong>AWS af
 
 Below are more details about each deliverable:
 
-1. Setup the application under test on-premises.
+1. Setup the application under test, with API <strong>tokens</strong>.
 
    For the purpose of this exercise, we run a simple "hello world" program in the background. A real production configuration would have a load-balanced API Gateway service in front of machines responding to API requests.
 
    See TODO: Small sample app on your laptop.
 
-2. On a laptop, install and run a single instance of JMeter against the app.
+2. Install monitoring (Dynatrace, SignalFx, Splunk, etc.) with a <a href="#Visualization">dashboard for analytics visualization.</a>
+
+   The InfluxDB time-series database and Grafana analytics visualization tools are popular.
+
+   Each InfluxDB dataset contains several key-value pairs, consisting of the fieldset and a timestamp. InfluxDB has no external dependencies and provides a SQL-like language with built in time-centric functions. This component can be adopted for collecting JMeter statistics.
+
+3. On a laptop, install and run a single instance of JMeter.
+
+   Pre-requisites to JMeter is a Java Virtual Machine.
 
    The assumption is that JMeter has been installed.
    There are different installation processes for Windows vs. MacOS vs. Linux machines.
 
    See TODO: Install JMeter shell script.
 
-3. Configure a Master instance to control JMeter slaves
+4. Version Control within the cloud (AWS Code Commit)
+
+5. Identify installers, vet them, and store versions in Artifactory.
+
+6. Install Docker.
+
+7. Install AWS CLI and dependencies Python, jq, cf-lint, etc.
+
+8. Code AWS Cloud Formation (CF) to create within the AWS cloud a EC2/Docker instance, JMeter, JMeter
+
+   https://www.blazemeter.com/blog/top-6-docker-images-for-jmeter-users-and-performance-testers
+
+   One of the advantages of Docker that, once encapsulated within a Docker container, that container can be run unmodified on various operating systems (Windows, MacOS, Linux, etc.).
+
+   Details of <a href="#DockerHub">selecting</a> or <a href="#Dockerize">building an image</a>, then creating a Dockerfile to use that image are <a href="#Dockerize">here</a>.
+
+   Each JMeter host (server) process uses two ports; one to listen for instructions from the master and another to write responses back to the master.  The server image exposed two ports for this purpose.
+   
+   Started n-instances of jmeter-server.  Each of which was bound to two well known ports on the host.
+
+   Determine IP addresses from the container ID of the server instance.
+
+   Started the Jmeter client (master).  The client image was crafted to receive the location of the remote server instances during invocation and write its log & test results back to the host
+
+   When the JMeter client started up it connected with every server instance.  I monitored the master's log file on the host for all the action.  When the tests completed I simply removed all the Docker containers.  This left me with just the logs & test results! 
+
+   The Master sends JMX files to slave nodes.
+
+   Configure Master machine with an equitable number of users (for 500 users total on 2 slaves, setup 250 each).
+
+   All systems should have the same version of Java and JMeter.
+
+   All systems should be connected to each other in the <strong>same subnet</strong>.
+
+9. Load JMeter script.
+
+10. Docker COI Audits
+
+   Install auditctl to obtain Docker audit events.
+
+   Run Docker daemon to trigger:
+
+   <pre>dockerd -v</pre>
+
+11. Configure a Master instance to control JMeter slaves
 
    When there is more than one JMeter instance, a <strong>master</strong> instance is needed to send instructions and receive responses.
 
@@ -85,70 +137,31 @@ Below are more details about each deliverable:
 
    After run, view JMeter's output results file.
 
-4. Configure Docker containers to run distributed JMeter within Docker
+12. Verify app auto-scaling.
 
-   https://www.blazemeter.com/blog/top-6-docker-images-for-jmeter-users-and-performance-testers
+    Driver must:
+    * Create the specified number of JMeter server containers
+    * Create the JMeter master container
+    * Fire off the test
+    * Wait for the test to complete
+    * Remove all the containers
 
-   One of the advantages of Docker that, once encapsulated within a Docker container, that container can be run unmodified on various operating systems (Windows, MacOS, Linux, etc.).
+    It took some scripting foo along with some Docker image revisions.  I now have a setup that allows me to:
 
-   Details of <a href="#DockerHub">selecting</a> or <a href="#Dockerize">building an image</a>, then creating a Dockerfile to use that image are <a href="#Dockerize">here</a>.
+    <pre><strong>driver.sh -s jmxfile.jmx -d data-dir -n 8</strong></pre>
 
-   Each JMeter host (server) process uses two ports; one to listen for instructions from the master and another to write responses back to the master.  The server image exposed two ports for this purpose.
-   
-   Started n-instances of jmeter-server.  Each of which was bound to two well known ports on the host.
+13. Identify change trigger.
 
-   Determine IP addresses from the container ID of the server instance.
+14. Kick off CI/CD job.
 
-   Started the Jmeter client (master).  The client image was crafted to receive the location of the remote server instances during invocation and write its log & test results back to the host
+15. Trends.
 
-   When the JMeter client started up it connected with every server instance.  I monitored the master's log file on the host for all the action.  When the tests completed I simply removed all the Docker containers.  This left me with just the logs & test results! 
+16. Alerts.
 
-   The Master sends JMX files to slave nodes.
+17. Create a JMeter instance near front-end (API) server
 
-   Cconfigure Master machine with an equitable number of users (for 500 users total on 2 slaves, setup 250 each).
+18. Bring JMeter script to SaaS cloud performance testing service.
 
-5. Install monitoring services.
-
-   Dynatrace
-
-6. <a href="#Visualization">Install dashboard for analytics visualization.</a>
-
-   The InfluxDB time-series database and Grafana analytics visualization tools are popular.
-
-   Each InfluxDB dataset contains several key-value pairs, consisting of the fieldset and a timestamp. InfluxDB has no external dependencies and provides a SQL-like language with built in time-centric functions. This component can be adopted for collecting JMeter statistics.
-
-6. Run Docker with monitoring and with auditing on
-
-   Install monitoring
-
-   Install auditctl to obtain Docker audit events.
-
-   Run Docker daemon to trigger:
-
-   <pre>dockerd -v</pre>
-
-   <pre>
-
-6. Put in AWS
-
-   All systems should have the same version of Java and JMeter.
-   All systems should be connected to each other in the <strong>same subnet</strong>.
-
-driver script datadir log-dir num-servers    
-
-Driver must:
-Create the specified number of JMeter server containers
-Create the JMeter master container
-Fire of the test
-Wait for the test to complete
-Remove all the containers
-It took some scripting foo along with some Docker image revisions.  I now have a setup that allows me to:
-
-driver.sh -s jmxfile.jmx -d data-dir -n 8
-
-This does everything I need except the container cleanup.  I am in the process of implementing that.
-
-Of course this only means I need to work on my next set of tweaks on my wish list.  But that's for another post.
 
 You can find the work referenced in this blog at:
 
