@@ -107,35 +107,44 @@ Below are more details about each deliverable:
 
 9. Load JMeter script.
 
-10. Docker COI Audits
+10. Install auditctl from <a target="_blank" href="https://www.cisecurity.org/">Center for Internet Security (cisecurity.org)</a> and run Docker deamon to audit Docker events.
 
-   Install auditctl to obtain Docker audit events.
+    <a target="_blank" href="https://docs.docker.com/compliance/cis/docker_ce/">
+    CIS Docker CE benchmark</a>
 
-   Run Docker daemon to trigger:
+    https://github.com/docker/docker-bench-security
 
-   <pre>dockerd -v</pre>
+    The <a target="_blank" href="http://inspec.io"> Auditing and Testing Framework (http://inspec.io)</a> is an <a target="_blank" href="https://github.com/inspec/inspec">open-source</a> testing framework for infrastructure with a human- and machine-readable language for specifying compliance, security and policy requirements. It is implemented in the <a target="_blank" href="https://www.inspec.io/docs/reference/cli/">inspec CLI command</a> running on Debian, Ubuntu, CentOS. Its <a target="_blank" href="https://dev-sec.io/baselines/docker/">DevSec Hardening Framework</a> defines rules in a yaml attribute file.
+
+    The <a target="_blank" href="https://github.com/dev-sec/cis-docker-benchmark">CIS Docker Benchmark Profile at ttps://github.com/dev-sec/cis-docker-benchmark</a>
+
+    https://www.cisecurity.org/cis-benchmarks/#docker
+
+    To run Docker daemon to trigger:
+
+    <pre>dockerd -v</pre>
 
 11. Configure a Master instance to control JMeter slaves
 
-   When there is more than one JMeter instance, a <strong>master</strong> instance is needed to send instructions and receive responses.
+    When there is more than one JMeter instance, a <strong>master</strong> instance is needed to send instructions and receive responses.
 
-   Edit the master's <tt>jmeter.properties</tt> file to contain each remote system's IP address.
+    Edit the master's <tt>jmeter.properties</tt> file to contain each remote system's IP address.
 
-   Create a <strong>keystore</strong> by running create-rmi-keystore.sh (or .bat). The "First and last name:" has to be "rmi" (remote method execution). Supply a password you've written down. This generates file "rmi_keystore.jks". See https://jmeter.apache.org/usermanual/remote-test.html
+    Create a <strong>keystore</strong> by running create-rmi-keystore.sh (or .bat). The "First and last name:" has to be "rmi" (remote method execution). Supply a password you've written down. This generates file "rmi_keystore.jks". See https://jmeter.apache.org/usermanual/remote-test.html
 
-   The above enables remote start from the Master machine.
+    The above enables remote start from the Master machine.
 
-   This phase identifies the number of users which can be supported on a single machine. Configure Master machine with an equitable number of users (for 100 users total on 2 slaves, setup 50 each).
+    This phase identifies the number of users which can be supported on a single machine. Configure Master machine with an equitable number of users (for 100 users total on 2 slaves, setup 50 each).
 
-   Start runs:
+    Start runs:
 
-   <pre>sh jmeter-server.sh</pre>
+    <pre>sh jmeter-server.sh</pre>
 
-   Set to run in non-GUI mode using the "-n" flag:
+    Set to run in non-GUI mode using the "-n" flag:
 
-   <pre>sh jmeter.sh -n -t "/..." -R 192.168.1.2</pre>
+    <pre>sh jmeter.sh -n -t "/..." -R 192.168.1.2</pre>
 
-   After run, view JMeter's output results file.
+    After run, view JMeter's output results file.
 
 12. Verify app auto-scaling.
 
@@ -504,6 +513,9 @@ Articles:
 
    * https://www.blazemeter.com/blog/make-use-of-docker-with-jmeter-learn-how
    * https://www.blazemeter.com/blog/jmeter-distributed-testing-with-docker
+
+<a target="_blank" href="https://www.youtube.com/watch?v=UVS4CQvO4_M">
+UI, Load, and Performance Testing Your Websites on AWS</a> [42:25] WEB306 at AWS re:Invent 2014 | Nov 18, 2014
 
 
 ## Rock Stars (who have published)
