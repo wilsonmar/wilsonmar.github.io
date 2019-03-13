@@ -21,7 +21,7 @@ The diagram here describes progress toward distributing runs of JMeter within EC
 <amp-youtube data-videoid="AyY58ywXPxI" layout="responsive" width="480" height="270"></amp-youtube>
 <br />
 
-To keep it simple, let's say our system under test on-prem. consists of (1) a server responding to API requests behind a governance proxy such as <strong>Apigee</strong>. The API front-end needs to be setup first becuase it authenticates requests based on pre-assigned <strong>tokens</strong> provided to those who call the service. We'll use several types of tokens. We generally use tokens with a lot of credits for stress or soak testing. We also need one with no credits to test rejection mechanisms. And an automated way is needed to reset tokens after each test.
+To keep it simple, let's say our system under test on-prem. consists of (1) a server responding to API requests behind a governance proxy such as <strong>Apigee</strong>. The API front-end needs to be setup first because it authenticates requests based on pre-assigned <strong>tokens</strong> provided to those who call the service. 
 
 A (2) <strong>Monitoring agent</strong> on each server, such as Dynatrace or SignalFx, collects various metrics for display on a <strong>Dashboard</strong>. 
 
@@ -29,10 +29,10 @@ Now we can begin to construct (3) <strong>JMeter</strong> scripts that impose ar
 From a laptop, we can only impose a limited load. But that is OK because we use laptops just to craft scripts.
 Once viable, the scripts, along with associated files, are pushed into a (4) private Version Control repository such as AWS Code Commit.
 Within security-conscious enterprises, instead of downloading installer packages from the internet, it is safer to obtain installers that have been vetted by Security specialists before being made available from a (5) private repository such as <strong>Artifactory</strong> or Enterprise DockerHub. 
-A lot of work is needed to vet the many dependencies for those who prefer to build machines <em><strong>from the ground up</em></strong> using Configuration as Code <strong>(CaC)</strong>, a practice that enables them to quickly respond to issues by being able to quickly change anything within the tech stack.
+A lot of work is needed to vet the many dependencies for those who prefer to build machines <em><strong>from the ground up</strong></em> using Configuration as Code <strong>(CaC)</strong>, a practice that enables them to quickly respond to issues by being able to quickly change anything within the tech stack.
 
-To make use of the Amazon cloud, on the laptop we install the (7) <strong>AWS CLI</strong> and associated tools to craft (8) <strong>Cloud Formation</strong> files that instantiate services such as EC2 with Docker to run servers within the AWS Cloud.
-Within AWS, we (9) instantiate images containing JMeter using common scripts in the code repository.
+To make use of the Amazon cloud, on the laptop we install the (7) <strong>AWS CLI</strong> and associated tools to craft (8) <strong>Cloud Formation</strong> files that instantiate services such as EC2 with Docker to run server programs within the AWS Cloud.
+Within AWS, we (9) instantiate images containing JMeter using those common scripts in the code repository.
 
 Before we run, we should (10) lint and <strong>audit</strong> the containers using various tools.
 
@@ -44,7 +44,7 @@ Because network traffic between on-premises servers and load generators in the c
 
 It might be easier to make use of a (18) web-based SaaS service such as Blazemeter or Flood.io. With them, we just upload a script and they handle the rest, such as configuring enough machines.
 
-When servers on-prem are (19) transitioned to run within a cloud, we would avoid issues with firewalls and avoid charges AWS imposes for data leaving AWS.
+When servers on-prem. are (19) transitioned to run within a cloud, we would avoid issues with firewalls and avoid charges AWS imposes for data leaving AWS.
 
 Next, we'll look at configuration settings for the cloud, such as <strong>AWS affinity groups</strong> to specify low latency between servers within the same Availability Zone.
 
@@ -54,11 +54,11 @@ Next, we'll look at configuration settings for the cloud, such as <strong>AWS af
 
 Below are more details about each deliverable:
 
-1. Setup the application under test, with API <strong>tokens</strong>.
+1. Setup the application under test, with API <strong>tokens</strong> and/or GUI User ID/Password.
 
    For the purpose of this exercise, we run a simple "hello world" program in the background. A real production configuration would have a load-balanced API Gateway service in front of machines responding to API requests.
 
-   See TODO: Small sample app on your laptop.
+   PROTIP: We'll need several types of tokens. We generally use tokens with a lot of credits for stress or soak testing. We also need one with no credits to test rejection mechanisms. And an automated way is needed to reset tokens after each test.
 
 2. Install monitoring (Dynatrace, SignalFx, Splunk, etc.) with a <a href="#Visualization">dashboard for analytics visualization.</a>
 
@@ -264,10 +264,6 @@ I gave a lightning talk on this work.  The slide deck I used for it is at http:/
 1. Verify whether (by download or by Dockerizing), we now should have an image file:
 
    <pre>docker image ls</pre>
-
-## Docker image
-
-1. Create a Docker image
 
 
 ## Docker launch.sh
