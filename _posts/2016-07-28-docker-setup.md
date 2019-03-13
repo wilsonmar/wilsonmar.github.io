@@ -191,6 +191,9 @@ Instead, <strong>OverlayFS</strong> was merged into the Linux kernel.
 btrfs</a> (B-tree File System)
 is intended to address the lack of pooling, snapshots, checksums, and integral multi-device spanning in Linux file systems.
 
+Docker Engine-Community only target Docker for AWS and Docker for Azure.
+Docker Enterprise uses Docker certified infrastructure tooling, using <strong>Terraform and Ansible</strong> to target VMware, Azure, and AWS implementations.
+
 
 <a name="Docker4Mac"></a>
 
