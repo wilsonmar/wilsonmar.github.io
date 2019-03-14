@@ -17,8 +17,8 @@ The diagram here describes progress toward distributing runs of JMeter within EC
 
 ## Flowchart
 
-<!-- v18 -->
-<amp-youtube data-videoid="AyY58ywXPxI" layout="responsive" width="480" height="270"></amp-youtube>
+<!-- v20 -->
+<amp-youtube data-videoid="ZCQdv57VDE8" layout="responsive" width="480" height="270"></amp-youtube>
 <br />
 
 To keep it simple, let's say our system under test on-prem. consists of (1) a server responding to API requests behind a governance proxy such as <strong>Apigee</strong>. The API front-end needs to be setup first because it authenticates requests based on pre-assigned <strong>tokens</strong> provided to those who call the service. 
@@ -79,7 +79,7 @@ Below are more details about each deliverable:
 
 5. Identify installers, vet them, and store versions in Artifactory.
 
-6. Install Docker.
+6. Install Docker within EC2.
 
 7. Install AWS CLI and dependencies Python, jq, cf-lint, etc.
 
@@ -132,23 +132,29 @@ Below are more details about each deliverable:
 
     When there is more than one JMeter instance, a <strong>master</strong> instance is needed to send instructions and receive responses.
 
-    Edit the master's <tt>jmeter.properties</tt> file to contain each remote system's IP address.
+    1. One each JMeter node console, identify the IP addresses of the slave machines using "ifconfig" for the "inet" to "en0" entry.
+    1. Within the the master's bin folder, edit file <tt>jmeter.properties</tt>.
+    1. Find the "remote_hosts" and un-comment the line by removing the "#" on the left.
+    1. Use commas to separate multiple IP addresses. Save the file.
+    1. To enable remote start from the Master machine, create a <strong>keystore</strong> by running create-rmi-keystore.sh (or .bat). The "First and last name:" has to be "rmi" (remote method execution). Supply a password you've written down. This generates file <tt>rmi_keystore.jks</tt>. See https://jmeter.apache.org/usermanual/remote-test.html
 
-    Create a <strong>keystore</strong> by running create-rmi-keystore.sh (or .bat). The "First and last name:" has to be "rmi" (remote method execution). Supply a password you've written down. This generates file "rmi_keystore.jks". See https://jmeter.apache.org/usermanual/remote-test.html
+    1. Copy the file to the bin folder of all slave nodes. Reference the property "server.rmi.ssl.keystore.file".
 
-    The above enables remote start from the Master machine.
-
-    This phase identifies the number of users which can be supported on a single machine. Configure Master machine with an equitable number of users (for 100 users total on 2 slaves, setup 50 each).
-
-    Start runs:
+    1. Start JMeter in GUI mode:
 
     <pre>sh jmeter-server.sh</pre>
 
-    Set to run in non-GUI mode using the "-n" flag:
+    See menu Run, Remote Start to verify its IP address.
+
+    Alternately, to run in non-GUI mode using the "-n" flag:
 
     <pre>sh jmeter.sh -n -t "/..." -R 192.168.1.2</pre>
 
     After run, view JMeter's output results file.
+
+    PROTIP: Several runs are usually necessary to identify the number of virtual users which can be supported on a single machine. Configure Master machine with an equitable number of users (for 100 users total on 2 slaves, setup 50 each).
+
+    The above is based on https://www.youtube.com/watch?v=Ok8Cqc0wipk
 
 12. Verify app auto-scaling.
 
