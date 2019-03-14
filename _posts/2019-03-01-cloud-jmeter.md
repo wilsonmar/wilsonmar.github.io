@@ -38,15 +38,13 @@ Before we run, we should (10) lint and <strong>audit</strong> the containers usi
 
 When we need to add more JMeter instances to impose a heavier load, we can use a (11) <strong>JMeter Master</strong> to coordinate the Jenkins slave nodes. The Master starts a fixed number of nodes to test (12) app <strong>auto-scaling</strong> mechanisms.
 
-When Configurations settings are under version control, changes can (13) trigger (14) <strong>CI/CD</strong> to automatically initiate test runs. If the analytics system has enough history, it can (15) recognize trends and, if anomalies are identified, issue (16) <strong>alerts</strong> while the changes are still fresh in the mind of the person who made the change.
+Next, we'll look at (13) configuration settings for the cloud, such as <strong>AWS affinity groups</strong> to specify low latency between servers within the same Availability Zone.
 
-Because network traffic between on-premises servers and load generators in the cloud is subject to significant variability, it would be ideal to have a (17) load generator near each machine under test. But it can be problematic going through the corporate firewall. 
+When Configurations settings are under version control, changes can (14) trigger (15) <strong>CI/CD</strong> to automatically initiate test runs. If the analytics system has enough history, it can (16) recognize trends and, if anomalies are identified, issue (17) <strong>alerts</strong> while the changes are still fresh in the mind of the person who made the change.
 
-It might be easier to make use of a (18) web-based SaaS service such as Blazemeter or Flood.io. With them, we just upload a script and they handle the rest, such as configuring enough machines.
+Because network traffic between on-premises servers and load generators in the cloud is subject to significant variability, it would be ideal to have a (18) load generator near each machine under test. But it can be problematic going through the corporate firewall. 
 
-When servers on-prem. are (19) transitioned to run within a cloud, we would avoid issues with firewalls and avoid charges AWS imposes for data leaving AWS.
-
-Next, we'll look at configuration settings for the cloud, such as <strong>AWS affinity groups</strong> to specify low latency between servers within the same Availability Zone.
+It might be easier to make use of a (19) web-based SaaS service such as Blazemeter or Flood.io. With them, we just upload a script and they handle the rest, such as configuring enough machines.
 
 <hr />
 
@@ -136,7 +134,7 @@ Below are more details about each deliverable:
     1. Within the the master's bin folder, edit file <tt>jmeter.properties</tt>.
     1. Find the "remote_hosts" and un-comment the line by removing the "#" on the left.
     1. Use commas to separate multiple IP addresses. Save the file.
-    1. To enable remote start from the Master machine, create a <strong>keystore</strong> by running <tt>create-rmi-keystore.sh</tt> (or .bat). The "First and last name:" has to be "<strong>rmi</strong>" (remote method execution). Supply a password you've written down. This generates file <tt>rmi_keystore.jks</tt>. See https://jmeter.apache.org/usermanual/remote-test.html
+    1. To enable remote start from the Master machine, generates file <tt>rmi_keystore.jks</tt> by running <tt>create-rmi-keystore.sh</tt> (or .bat). The "First and last name:" has to be "<strong>rmi</strong>" (remote method execution). Supply a password you've written down. See https://jmeter.apache.org/usermanual/remote-test.html
 
     1. Copy the file to the bin folder of all slave nodes. Reference the property "server.rmi.ssl.keystore.file".
 
@@ -148,12 +146,11 @@ Below are more details about each deliverable:
 
     Alternately, to run in non-GUI mode using the "-n" flag:
 
-    <pre>sh jmeter.sh -n -t "/..." -R 192.168.1.2</pre>
+    <pre>sh jmeter.sh -n -t "/$JMETER_PATH" -R 192.168.1.2</pre>
 
     After run, view JMeter's output results file.
 
     PROTIP: Several runs are usually necessary to identify the number of virtual users which can be supported on a single machine. Configure Master machine with an equitable number of users (for 100 users total on 2 slaves, setup 50 each).
-
     The above is based on https://www.youtube.com/watch?v=Ok8Cqc0wipk
 
 12. Verify app auto-scaling.
