@@ -136,7 +136,7 @@ Below are more details about each deliverable:
     1. Within the the master's bin folder, edit file <tt>jmeter.properties</tt>.
     1. Find the "remote_hosts" and un-comment the line by removing the "#" on the left.
     1. Use commas to separate multiple IP addresses. Save the file.
-    1. To enable remote start from the Master machine, create a <strong>keystore</strong> by running create-rmi-keystore.sh (or .bat). The "First and last name:" has to be "rmi" (remote method execution). Supply a password you've written down. This generates file <tt>rmi_keystore.jks</tt>. See https://jmeter.apache.org/usermanual/remote-test.html
+    1. To enable remote start from the Master machine, create a <strong>keystore</strong> by running <tt>create-rmi-keystore.sh</tt> (or .bat). The "First and last name:" has to be "<strong>rmi</strong>" (remote method execution). Supply a password you've written down. This generates file <tt>rmi_keystore.jks</tt>. See https://jmeter.apache.org/usermanual/remote-test.html
 
     1. Copy the file to the bin folder of all slave nodes. Reference the property "server.rmi.ssl.keystore.file".
 
