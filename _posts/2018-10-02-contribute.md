@@ -75,7 +75,7 @@ F. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
    
    e. Wilson/Dan: Convert bash scripts and instructions to create a dev instance of Ruby server running on Ubuntu.
    
-   f. Kermit: To <strong>troubleshoot without worry</strong>, define manual procedures and scripts to create a <strong>stand-alone Saleforce Dev. instance</strong> containing metadata and filtered/cleansed data from production org sandbox:
+   f. Kermit: To <strong>troubleshoot without worry</strong>, define manual procedures and scripts to create a <strong>stand-alone Saleforce Dev. instance</strong> (a "crash dummy") containing metadata and filtered/cleansed data from production org sandbox:
 
    ### &nbsp; &nbsp; &nbsp; Administrator:
 
