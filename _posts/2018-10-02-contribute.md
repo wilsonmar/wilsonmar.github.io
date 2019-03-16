@@ -67,9 +67,9 @@ F. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
 
    a. John: Write manual procedures about how the system works, illustrated by a <a href="#TechArchitecture">flowchart</a>.
    
-   b. Dan: Upgrade front-end server versions.
+   b. Create <strong>automated test scripts</strong> (based on <a href="#Procedures">documented procedures</a>) to verify whether the system works "end-to-end" (for different personas), to identify whether the sytem still works after changes. Kinda like auto-fill on steroids.
    
-   c. Create <strong>automated test scripts</strong> (based on <a href="#Procedures">documented procedures</a>) to verify whether the system works "end-to-end" (for different personas), to identify whether the sytem still works after changes. Kinda like auto-fill on steroids.
+   c. Dan: Upgrade front-end server version upgrade (to TLS 1.2, Python, etc.).
    
    d. Wilson: Create instructions (this page) to enable volunteers to create a dev environment and contribute changes. 
    
@@ -105,7 +105,9 @@ F. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
 
    k. <strong>Translations</strong> of the site into various languages. We have a team currently translating the site into Spanish. A LOT of their work is already done. At some point, I want to get a Volunteer Project posted to insert the “es:” text into the code. (BTW, all the training videos are also being translated to Spanish to be inserted into the videos too. That will be another project. The team in Colombia is translating those SRT files now.)
    
-   l. Propose one of your own.
+   l. Architect a better to maintain passwords and other secrets.
+   
+   m. Propose one of your own.
 
 ### Collaborate
 
