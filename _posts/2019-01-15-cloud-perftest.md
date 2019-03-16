@@ -36,66 +36,67 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 ## Testing Tools Landscape
 
-![cloud-perftest-v10-tools-695x329](https://user-images.githubusercontent.com/300046/53644473-ace90980-3c04-11e9-8337-9fee0e0cca2a.jpg)
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/53644473-ace90980-3c04-11e9-8337-9fee0e0cca2a.jpg"><img alt="cloud-perftest-v10-tools-695x329.jpg" width="695" src="https://user-images.githubusercontent.com/300046/53644473-ace90980-3c04-11e9-8337-9fee0e0cca2a.jpg"></a>
 
-In this diagram, a lot is going on because we're covering here the <strong>landscape</strong> of key tools for both functional and performance testing, and from unit to integration stages. 
+In this diagram, a lot is going on because I wanted to describe the <strong>overlap</strong> between key tools for both functional and performance testing, supporting unit to integration stages of development. 
 
 I'll be revealing each line and box at a time, starting from apps running in a <strong>system under test</strong>, accessed by an application <strong>client</strong> which today is typically an internet browser such as Google Chrome running on a laptop.
 
 There are several different <strong>types</strong> of testing throughout the development lifecycle. One aspect is to see whether the User Interface <strong>(UI)</strong> displays what users are intended to see. This is typically called "functional testing".
-What users see on browsers today are changed by <strong>JavaScript</strong> which manipulate what is in each user's browser Domain Object Model <strong>(DOM)</strong>. 
+What users see on browsers today are changed by <strong>JavaScript</strong> which manipulate what is in each user's browser Domain Object Model, abbreviated as <strong>(DOM)</strong>. 
 
-Another type of testing targets <strong>unit testing</strong> of REST APIs (Application Programming Interfaces) which computers use to talk with other computers, without human interaction, transferring JSON-formatted files.
-There is also functional <strong>integration</strong> tests to see how various services interact with each other.
+Another type of testing targets <strong>unit testing</strong> of REST APIs (Application Programming Interfaces) which computers use to talk with other computers without human interaction, usually transferring JSON-formatted files.
+Functional <strong>integration</strong> tests see how various services interact with each other.
 
-Then there is <strong>load</strong> and <strong>performance</strong> testing which imposes an artificial load to identify issues.
-This is done to identify whether the infrastructure can indeed deliver acceptable response time, absorb spikes, scale well, not leak memory, and meet other what are called <strong>non-functional</strong> requirements.
+Then there is <strong>load</strong> testing which imposes an artificial load to surface issues.
+It's done to identify whether the infrastructure can indeed deliver acceptable response time, absorb spikes, scale well, not leak memory, and meet other what are called <strong>non-functional</strong> requirements.
 
-In a shift-left Agile development environment nowdays, both categories of tools (functional and performance) make use of each other's tool technologies.
-Tools for both categories are here in one diagram because <strong>job descriptions</strong> are now asking for skills that used to be for previously segregated jobs. 
+Tools for both categories are here in one diagram because <strong>job descriptions</strong> are now asking for skills that used to be in previously segregated jobs. 
 Load testers must now know functional tools. 
 Site reliability engineers who used to just monitor things now must also know how to insert synthetic loads.
 Developers are expected to know everything. That's the new strategy for small Agile teams.
 
-Let's dive in a bit deeper.
+So let's dive in a bit deeper.
 
 Development teams code JavaScript (even while offline) to use Google's Angular, React from Facebook, Vue, or other library. 
 Google created Jasmine to test code using Angular. Jasmine had a "batteries included" approach, so Mocha came along with a focus on assertions, and depended on other libraries such as Chai to innovate on mocking,  snapshotting, and other features. Then Jest was created along with React by Facebook, with the same "one library does it all" strategy, with even more features than Jasmine.
 These are unit testing tools.
 
 Built into the Chrome browser are Google's <a target="_blank" href="https://github.com/ChromeDevTools/awesome-chrome-devtools">Developer Tools</a> which are used to manually identify the <strong>identifiers</strong> used to automate the clicking and typing in the UI. 
-Since 2009, a <strong>Web driver</strong> program for each browser exposes an API that automated testing scripts call. This design is why functional test scripts can be written in any language (Java, Python, C#, etc.). Selenium provides a framework for organizing the scripts. 
+Selenium scripts reference those identifies through a <strong>Web driver</strong> program which controls each browser. Each web driver exposes an API that automated testing scripts call. This design is why functional test scripts can be written in any language (Java, Python, C#, etc.). Selenium provides a framework for organizing the scripts. 
 
 <!-- To test code in production, some developers code "feature flags" to expose parts of code to a subset of users in production. So now, the specific flags being used at at given time needs to be tracked for correlation to timings. -->
 
 <a target="_blank" href="https://wilsonmar.github.io/protractor/">Protractor</a> adds to Selenium the ability to interpret the <strong>Gherkin</strong> written language to specify tests in a more natural way. 
-Protractor also adds the ability to dynamically read the DOM (Document Object Model) which stores the state of each user's browser which Angular, React, Vue, or other UI libraries manipulate via JavaScript. 
+Protractor also has a better way to dynamically read the DOM (Document Object Model) which stores the state of each user's browser which Angular, React, Vue, or other UI libraries manipulate via JavaScript. 
 
 ### API Unit & Integration Testing
 
-To unit test API services exposed by an app, developers often use <strong>Postman</strong> or <strong>SoapUI</strong> because it is a free open-source tool, which also tests REST APIs exchanging JSON-formatted data as well as SOAP XML. 
+To unit test API services exposed by an app, developers often use <strong>Postman</strong> or <strong>SoapUI</strong> because they are a free open-source tool. BTW SoapUI also tests REST APIs exchanging JSON-formatted data as well as SOAP XML.
 
 Karate, Rest Assured, and <a target="_blank" href="https://wilsonmar.github.io/pact/">Pact</a> are called integration testing tools because they are used to catch errors in dependencies among services needing each other.
 
 ### Performance?
 
-Those who seek to "left-shift" testing for performance consider what is keeping <a href="#LandingPages">landing pages</a> from loading faster by using Google Page Speed or <strong>Lighthouse</strong> manually to get recommendations about techniques to speed up landing pages. They do this while developing the software. <strong>Google Analytics</strong> provides timings for web traffice in public production. 
+Those who seek to "left-shift" testing for performance make use of Google's <strong>Lighthouse audits</strong> to get recommendations about techniques to speed up browser display, right in the Chrome browser under <a target="_blank" href="https://github.com/ChromeDevTools/awesome-chrome-devtools">Developer Tools</a>.
 
-Google's Lighthouse makes use of <a target="_blank" href="https://github.com/ChromeDevTools/awesome-chrome-devtools">Chrome Dev Tools</a>.
+<strong>Google Analytics</strong> provides timings for web traffic in public production. 
 
-When apps are being developed within the public firewall, if we get functional test scripts to obtain <strong>timings</strong> on each step within the app (and store them in a time-series database), we can get early <strong>alerts</strong>, without additional test scripting.
+In the current movement toward reusing functional test scripts for use in performance testing, one approach is to modify functional test scripts to obtain <strong>timings</strong> on each step within the app, and store them in a time-series database so that <strong>alerts</strong> can be issued when anomalies are detected.
 
-Those who want to put an artificial load on apps use <strong>load generators</strong> operated by load testing scripts that replace work on real app clients with "synthetic" or <strong>"virtual" users</strong>. The number of such virtual users is often used to define the level of load imposed by scripts. While load is being injected, <strong>status</strong> such as the rate of transactions and errors encountered are reported by load generators to some controller. <strong>Metrics</strong> such as CPU and memory utilization within servers are obtained by <a target="_blank" href="https://wilsonmar.github.io/dynatrace">Dynatrace</a> or other monitoring <strong>agents</strong> installed on servers. Results from runs are then analyzed and presented in <strong>dashboards</strong>.
+But the principal approach for performance engineering is to create an artificial load on apps using <strong>load generators</strong> operated by load testing scripts that replace manual work on real app clients with "synthetic" or <strong>"virtual" users</strong>. The number of virtual users is often used to define the level of load imposed by scripts. While load is being injected, <strong>status</strong> such as the rate of transactions and errors encountered are reported by load generators to some master controller. 
 
-Traditionally, to get load generators to run as many virtual users as possible, load testing scripts don't duplicate what occurs in the browser, but mimic just what is exchanged over the network <strong>wire</strong> between an app its clients. Communications are captured as load test script lines, then edited to add correlations and verifications. That's what LoadRunner's VuGen, JMeter, and other proxy-based client emulators do. 
+<strong>Metrics</strong> such as CPU and memory utilization within servers are obtained by <a target="_blank" href="https://wilsonmar.github.io/dynatrace">Dynatrace</a> or other monitoring <strong>agents</strong> installed on servers. Results from runs are then analyzed and presented in <strong>dashboards</strong>.
+
+Traditionally, to get load generators to run as many virtual users as possible, load testing scripts don't duplicate what occurs in the browser, but mimic just what is exchanged over the network <strong>wire</strong> between an app and its clients. Communications are captured as load test script lines, then edited to add correlations and verifications. That's what LoadRunner's VuGen, JMeter, and other proxy-based client emulators do. 
 
 Then innovations such as http/2 asynchonous communication and AngularJs code running within browsers cause more and more processing within browsers instead of on servers. So <strong>TruClient for LoadRunner</strong> was created to record and emulate the DOM and actions of each individual virtual user such as clicking buttons and typing on forms. 
 
-JMeter can make calls to Web Driver APIs.
+JMeter scripts can also make calls to Web Driver APIs like Selenium.
 
-Taking an alternative approach, <strong>Neoload</strong> can process Selenium scripts as well as scripts created the traditional way.
+Taking an alternative approach, <strong>Neoload</strong> can call Selenium scripts as well as scripts created the traditional way.
 
-Instead of calling Web Driver APIs like Selenium, <strong>Flood.io's Element</strong> calls the newer DevTools API protocol using the <a target="_blank" href="https://github.com/GoogleChrome/puppeteer">open-source</a> <a target="_blank" href="https://developers.google.com/web/tools/puppeteer/">Chrome Puppeteer</a> headless browser control technology, both from Google.
+The newest innovation is <strong>Flood.io's Element</strong>, which, instead of calling Web Driver APIs like Selenium, calls the newer DevTools API protocol using the <a target="_blank" href="https://github.com/GoogleChrome/puppeteer">open-source</a> <a target="_blank" href="https://developers.google.com/web/tools/puppeteer/">Chrome Puppeteer</a> headless browser control technology, both from Google. Their Element scripts can be converted from TOSCA functional test scripts, which uses a low-code approach. That's why they are the new darling among those who test SAP and Salesforce.
 
 These keeping track of each user's browser memory takes up a whole lot more memory, so <strong>cloud-based</strong> services means you can now hava a lot of load generators for a short time, making them more affordable than having to buy a bunch of on-premise servers. Such services include <a target="_blank" href="https://www.microfocus.com/en-us/products/stormrunner-load-agile-cloud-testing/overview">StormRunner</a>, <a target="_blank" href="https://www.blazemeter.com/">BlazeMeter</a> , <a target="_blank" href="https://flood.io/">Flood.io</a>, and others.
 
