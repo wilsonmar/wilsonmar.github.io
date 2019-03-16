@@ -52,6 +52,10 @@ F. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
 
 7. Open a browser tab to the <a target="_blank" href="https://www.ywamocnj.org/faq/">FAQ</a> (Frequently Asked Questions) to see if you can answer the questions before revealing the answer. Kinda like a quiz.
 
+8. Watch demo video of <a target="_blank" href="https://www.youtube.com/watch?v=jQuuvYIbbTA&feature=youtu.be">How to apply for a Converge intership</a> [2:20] no sound.
+
+9. Watch demo video of <a target="_blank" href="https://youtu.be/ejz9HEbg9Xo">host app</a>
+
 
    ### Pick a project
 
