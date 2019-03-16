@@ -91,13 +91,13 @@ Traditionally, to get load generators to run as many virtual users as possible, 
 
 Then innovations such as http/2 asynchonous communication and AngularJs code running within browsers cause more and more processing within browsers instead of on servers. So <strong>TruClient for LoadRunner</strong> was created to record and emulate the DOM and actions of each individual virtual user such as clicking buttons and typing on forms. 
 
-<strong>Flood.io's Element</strong> does that also, but using Google's <a target="_blank" href="https://github.com/GoogleChrome/puppeteer">Puppeteer</a> headless browser control technology based on Google's new DevTools protocol.
-
 JMeter can make calls to Web Driver APIs.
 
-<strong>Neoload</strong> can process Selenium scripts as well as scripts created the traditional way.
+Taking an alternative approach, <strong>Neoload</strong> can process Selenium scripts as well as scripts created the traditional way.
 
-Keeping track of each user's browser memory takes up a whole lot more memory, so <strong>cloud-based</strong> services means you can now hava a lot of load generators for a short time, making them more affordable than having to buy a bunch of on-premise servers. Such services include <a target="_blank" href="https://www.microfocus.com/en-us/products/stormrunner-load-agile-cloud-testing/overview">StormRunner</a>, <a target="_blank" href="https://www.blazemeter.com/">BlazeMeter</a> , <a target="_blank" href="https://flood.io/">Flood.io</a>, and others.
+Instead of calling Web Driver APIs, <strong>Flood.io's Element</strong> calls the newer DevTools API protocol in Google's <a target="_blank" href="https://github.com/GoogleChrome/puppeteer">Puppeteer</a> headless browser control technology.
+
+These keeping track of each user's browser memory takes up a whole lot more memory, so <strong>cloud-based</strong> services means you can now hava a lot of load generators for a short time, making them more affordable than having to buy a bunch of on-premise servers. Such services include <a target="_blank" href="https://www.microfocus.com/en-us/products/stormrunner-load-agile-cloud-testing/overview">StormRunner</a>, <a target="_blank" href="https://www.blazemeter.com/">BlazeMeter</a> , <a target="_blank" href="https://flood.io/">Flood.io</a>, and others.
 
 Several advances have "shifted left" the testing of apps on the development process timeline. JMeter scripts can now invoke the APIs of Web Drivers, albeit with <a target="_blank" href="https://www.blazemeter.com/blog/mixing-selenium-into-your-load-scenario">some limitations</a>.
 
