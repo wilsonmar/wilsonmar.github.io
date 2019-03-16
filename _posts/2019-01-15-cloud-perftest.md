@@ -344,32 +344,45 @@ QUESTIONS: About your app/system:
 
 ![cloud-perftest-v08-types-553x276-24044](https://user-images.githubusercontent.com/300046/53589081-6f30a600-3b5c-11e9-978a-f69f0f5c2705.jpg)
 
-<!-- --> 
-This video is about the heart of a performance testing and engineering -- imposing different <strong>levels</strong> of load over a period of time. Load imposed on UI is defined by the number of <strong>virtual users</strong>. But our interest is in <strong>rates</strong> of processing (stated in <strong>hits per second</strong> or per minute), a metric that can also be monitored in production. Finding that number is one of our objective because we want to provide <strong>actionable intelligence</strong> to Operations in production.
+This diagram about types of performance testing I'll be presenting one word at a time. The work of performance testing is about imposing different <strong>levels</strong> of load over a period of time. The intensity of load imposed is defined by the number of <strong>virtual users</strong> that load generators run. 
 
-We begin by identifying the quickest rate users can <strong>ramp-up</strong>, starting with a very aggressive test run that reaches a <strong>breaking point</strong> <strong>"too quick"</strong>. But we get to identify the <strong>error</strong> messages and initial <strong>bottlenecks</strong>. 
-??? operations
+But our interest is also in the <strong>rates</strong> of processing (stated in <strong>hits per second</strong> or per minute), a metric that can be monitored in production. Finding that <strong>rate</strong> is one of our major objectives because we want to provide <strong>actionable intelligence</strong> to Operations in production.
 
-GUI transactions that don't reach the server should divert users to a <strong>"server unavailabe"</strong> page off the app server under stress. 
+The first thing, even while the application is being built, is to install a way to return a <strong>"server unavailabe"</strong> if the application doesn't respond to browsers pointed at it. It's useful to have an <strong>availability check</strong> on the server running around the clock at perhaps an infrequent one requst every 10 minutes (that's 6 per hour or 144 hits oer day). This is so that if it's down, you'll get an email, because that affects employee and customer productivity and satisfaction. Many such services are offered free.
 
-We then back off to find a rate that brings up the most number of users the quickest. This scenario is called a <strong>Stress Test</strong> that keeps adding new users until the <strong>breaking point</strong> so that we can tell the maximum number of users can really jump on the system at about the same time, such as at the beginning of a call-center shift or on Black Friday, etc. The <strong>rate</strong> new users enter the system is just as important as the total number of concurrent users running, because limitations in the <strong>authentication infrastructure</strong> is often a bottleneck.
+We begin by identifying the quickest rate users can <strong>ramp-up</strong>. We need to know the maximum number of users who can really jump on the system at about the same time to predice what will happen at the beginning of a call-center shift or on Black Friday, etc. The rate new users enter the system can be a bottleck as well a the total number of concurrent users running, because limitations in the <strong>authentication infrastructure</strong> is often a bottleneck.
 
-In a cloud environment, <strong>fail-over tests</strong> would divert users to another availability zone or region.
-<!-- -->
+The scenario that keeps adding new users until a <strong>breaking point</strong> is called a <strong>Stress Test</strong>. If we  start with a very aggressive rate where we see <strong>error</strong> messages, we've made progress because every set of machine has some <strong>bottleneck</strong>, and our job is to find them. When we identify a particular rate that is <strong>"too quick"</strong>, we ask is it the memory? CPU cycles? Network? Such information is the "heads-up" that Operations people need to know.
 
-We want to identify the <strong>threshold for action</strong> as the <strong>point of UX degradation</strong> when response time begins to suffer due to load. In that threshold we also need to consider the <strong>lead time</strong> to get additional <strong>capacity</strong>. With on-premises machines, this can be like 6 months. So, traditionally, companies over-bought capacity that often go unused. The value of an elastic cloud such as Amazom is that we pay only what we use, when we use it. 
+<strong>Fail-over tests</strong> would be run to divert users to another availability zone or region during disaster recovery testing.
 
-We still need to identify the <strong>nominal</strong> level of load -- the momentary <strong>peaks</strong> reached each day, the level where long <strong>soak tests</strong> are run to ensure the <strong>endurance</strong> of the system over time -- to ensure that the level is sustainable without memory leaks and excessive use of disk space.
+We often need to try different rates to bring up the most number of users the quickest. The point we want to find is when user experince <strong>degradation</strong>, when response time begins to suffer due to load. That is the true <strong>capacity</strong> of the system under test.
 
-Knowing this helps us save time on <strong>Smoke tests</strong> which verifies the <strong>viability</strong> of each buid. 
+We need to know that capacity point to calculate if we have enough <strong>lead time</strong> before hitting a <strong>threshold</strong> to get additional capacity. If we have on-premises machines, the lead time can be like 6 months. This is why, companies with a fixed capacity would over-buy to get <strong>headroom</strong> to absorb future growth that may not come. The value of an elastic cloud such as Amazon and Azure is that we pay only what we use, when we use it. 
 
-Where we need to be vigilent is making sure there is enough <strong>"Headroom"</strong> capacity available to absorb future growth. Along this headroom line is where we provision the appropriate type of server having enough RAM and CPU speed.
+Doing load testing helps us be more precise than just guessing at a CPU percentage as the <strong>threshold</strong> for bringing on another machine. The lead time includes the time it takes to recognize that additional scaling is necessary. The less headroom we allow, the more usage we can get out of machines we pay for. 
 
-If we have a cluster of servers, we need to make sure we have the <strong>elasticity</strong> we hoped for. So We do <strong>Spike Tests</strong> to verify <strong>resiliency</strong> -- the ability of the system to absorb sudden temporary spikes while maintaining adequate response time, then come back to normal levels of memory usage and rate of operation.
+We calculate headroom based on identify the <strong>nominal</strong> level of load -- the momentary <strong>peaks</strong> reached each day, the level where long <strong>soak tests</strong> are run to ensure the <strong>endurance</strong> of the system over time -- to ensure that the level is sustainable without memory leaks and excessive use of disk space.
 
-In an elastic cloud enviornment, we need to ensure that our configurations can indeed <strong>instantiate</strong> additional capacity on a timely basis. Tests of elasticity should also include <strong>un-instantation</strong> to reduce the number of instances when load recedes below threshold steps. 
+This nomial rate is also what we use in <strong>Smoke tests</strong>, where we ramp-up and sustain the nominal load to prove the <strong>viability</strong> of each configuration change.
 
-In each enviornment, we want to track <strong>availability</strong> over time, because that affects employee and customer productivity and satisfaction.
+We do <strong>Spike Tests</strong> to verify <strong>resiliency</strong> -- the ability of the system to absorb sudden temporary spikes while maintaining adequate response time, then come back to normal levels of memory usage and rate of operation.
+
+If we operate a cluster of servers, we need to make sure we have the <strong>elasticity</strong> we hoped for. 
+
+In an elastic cloud enviornment, we need to ensure that our configurations can indeed <strong>instantiate</strong> additional capacity on a timely basis. Tests of elasticity should also include <strong>un-instantation</strong> tests to make sure that instances are indeed reduced when load recedes below threshold levels.
+
+To summarize, here are the types of performance testing:
+
+1. Site availability test (10 per houe)
+2. Ramp-up rate
+3. Stress test to identify bottlenecks
+4. Smoke test (on build) for viability
+5. Soak test for endurance
+6. Spike test for resiliency
+7. Instantiation test for elasticity up
+8. Un-Instantiation test for elasticity down
+
 
 
 <a name="ServerImages"></a>

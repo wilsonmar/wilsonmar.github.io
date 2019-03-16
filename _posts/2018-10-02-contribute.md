@@ -265,7 +265,7 @@ PROPOSAL: Volunteers use generic accounts rather than named ones. For example:
 
 <a href="https://user-images.githubusercontent.com/300046/54088161-85dfb580-4331-11e9-9d10-095f90c4688c.jpg"><img alt="salesforce-contribute-v05-677x301-30618.jpg" src="https://user-images.githubusercontent.com/300046/54088161-85dfb580-4331-11e9-9d10-095f90c4688c.jpg"></a>
 
-The diagram here illustrates, on one page, how the various pieces fit together.
+The diagram here illustrates, on one page, how the various pieces talk to each other.
 
 Your first exposure to Salesforce is likely the <a target="_blank" href="https://trailhead.salesforce.com/">Salesforce Trailhead website https://trailhead.salesforce.com</a> which provides anyone a free Trailhead account with up to 5 "hands-on org" in a "playground" to use while taking learning modules. The <a target="_blank" href="https://trailhead.salesforce.com/sample-gallery">sample gallery</a> developed by Salesforce Developer Evangelists can be loaded as Dev orgs through the <strong>App Exchange</strong>. Sample packages are "unmanaged" and can be altered when installed. There are also <strong>managed</strong> packages (such as the Non-Profit Success Pack) from Salesforce partners.
 
