@@ -1,4 +1,4 @@
-   ---
+---
 layout: post
 title: "How to contribute to Salesforce Non-profits"
 excerpt: "How the Salesforce Benefit corp benefits non-profits, technically"
