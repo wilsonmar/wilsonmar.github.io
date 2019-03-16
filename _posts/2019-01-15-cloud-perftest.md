@@ -38,43 +38,68 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 ![cloud-perftest-v10-tools-695x329](https://user-images.githubusercontent.com/300046/53644473-ace90980-3c04-11e9-8337-9fee0e0cca2a.jpg)
 
-In this diagram, a lot is going on because we're covering here the landscape of key tools for both functional and performance testing, and from unit to integration stages. Tools for both categories are here in one diagram because <strong>job descriptions</strong> are now asking for skills that used to be for previously segregated jobs. 
+In this diagram, a lot is going on because we're covering here the <strong>landscape</strong> of key tools for both functional and performance testing, and from unit to integration stages. 
+
+I'll be revealing each line and box at a time, starting from apps running in a <strong>system under test</strong>, accessed by an application <strong>client</strong> which today is typically an internet browser such as Google Chrome running on a laptop.
+
+There are several different <strong>types</strong> of testing throughout the development lifecycle. One aspect is to see whether the User Interface <strong>(UI)</strong> displays what users are intended to see. This is typically called "functional testing".
+What users see on browsers today are changed by <strong>JavaScript</strong> which manipulate what is in each user's browser Domain Object Model <strong>(DOM)</strong>. 
+
+Another type of testing targets <strong>unit testing</strong> of REST APIs (Application Programming Interfaces) which computers use to talk with other computers, without human interaction, transferring JSON-formatted files.
+There is also functional <strong>integration</strong> tests to see how various services interact with each other.
+
+Then there is <strong>load</strong> and <strong>performance</strong> testing which imposes an artificial load to identify issues.
+This is done to identify whether the infrastructure can indeed deliver acceptable response time, absorb spikes, scale well, not leak memory, and meet other what are called <strong>non-functional</strong> requirements.
+
+In a shift-left Agile development environment nowdays, both categories of tools (functional and performance) make use of each other's tool technologies.
+Tools for both categories are here in one diagram because <strong>job descriptions</strong> are now asking for skills that used to be for previously segregated jobs. 
 Load testers must now know functional tools. 
 Site reliability engineers who used to just monitor things now must also know how to insert synthetic loads.
 Developers are expected to know everything. That's the new strategy for small Agile teams.
 
-I'll be revealing each line and box at a time, starting from apps running in a <strong>system under test</strong>, accessed by an application <strong>client</strong> which today is typically an internet browser such as Google Chrome running on a laptop.
+Let's dive in a bit deeper.
 
-In a shift-left Agile development environment, both categories of tools (functional and performance) cover similar aspects throughout the development lifecycle. One aspect is to see whether the User Interface <strong>(UI)</strong> displays what users are intended to see. We want to inspect and perhaps manipulate the Domain Object Model <strong>(DOM)</strong> which stores the state of each user's browser that Angular, React, Vue, or other UI libraries manipulate via <strong>JavaScript</strong>. 
+Development teams code JavaScript (even while offline) to use Google's Angular, React from Facebook, Vue, or other library. 
+Google created Jasmine to test code using Angular. Jasmine had a "batteries included" approach, so Mocha came along with a focus on assertions, and depended on other libraries such as Chai to innovate on mocking,  snapshotting, and other features. Then Jest was created along with React by Facebook, with the same "one library does it all" strategy, with even more features than Jasmine.
+These are unit testing tools.
 
-We also need to unit test the APIs (Application Programming Interfaces) computers use to talk with other computers.
+Built into the Chrome browser are Google's <a target="_blank" href="https://github.com/ChromeDevTools/awesome-chrome-devtools">Developer Tools</a> which are used to manually identify the <strong>identifiers</strong> used to automate the clicking and typing in the UI. 
+Since 2009, a <strong>Web driver</strong> program for each browser exposes an API that automated testing scripts call. This design is why functional test scripts can be written in any language (Java, Python, C#, etc.). Selenium provides a framework for organizing the scripts. 
 
-We do several types of what are called <strong>non-functional tests</strong> to ensure that the infrastructure can indeed deliver acceptable response time, absorb spikes, scale well, not leak memory, and meet other requirements.
-
-Among the first functional test scripts are those to test JavaScript (even while offline). Jasmine was created along with Angular. Jasmine had a "batteries included" approach, so Mocha came along with a focus on assertions, and depended on other libraries such as Chai to innovate on mocking,  snapshotting, and other features. Then Jest was created along with React by Facebook, with the same "one library does it all" strategy, with even more features than Jasmine.
-
-Built into the Chrome browser are <strong>Developer Tools</strong> which are used to manually identify the <strong>identifiers</strong> that <strong>Web driver</strong> programs use to automate the clicking and typing in the UI. There is a different web driver for each browser. Each Web Driver exposes an API that automated testing scripts call. This design is why functional test scripts can be written in any language (Java, Python, C#, etc.). Selenium provides a framework for organizing the scripts. 
+<!-- To test code in production, some developers code "feature flags" to expose parts of code to a subset of users in production. So now, the specific flags being used at at given time needs to be tracked for correlation to timings. -->
 
 <a target="_blank" href="https://wilsonmar.github.io/protractor/">Protractor</a> adds to Selenium the ability to interpret the <strong>Gherkin</strong> written language to specify tests in a more natural way. 
 Protractor also adds the ability to dynamically read the DOM (Document Object Model) which stores the state of each user's browser which Angular, React, Vue, or other UI libraries manipulate via JavaScript. 
 
+### API Unit & Integration Testing
+
+To unit test API services exposed by an app, developers often use <strong>Postman</strong> or <strong>SoapUI</strong> because it is a free open-source tool, which also tests REST APIs exchanging JSON-formatted data as well as SOAP XML. 
+
 Karate, Rest Assured, and <a target="_blank" href="https://wilsonmar.github.io/pact/">Pact</a> are called integration testing tools because they are used to catch errors in dependencies among services needing each other.
 
-To unit test API services exposed by an app, developers often use SoapUI because it is a free open-source tool, which also tests REST APIs exchanging JSON-formatted data as well as SOAP XML. 
+### Performance?
 
-Those concerned about what is keeping <a href="#LandingPages">landing pages</a> from loading faster manually use Google Page Speed or <strong>Lighthouse</strong> to get recommendations about techniques to speed up landing pages. And <strong>Google Analytics</strong> provides timings for public production transactions. To test code in production, some developers code "feature flags" to expose parts of code to a subset of users in production. So now, the specific flags being used at at given time needs to be tracked for correlation to timings.
+Those who seek to "left-shift" testing for performance consider what is keeping <a href="#LandingPages">landing pages</a> from loading faster by using Google Page Speed or <strong>Lighthouse</strong> manually to get recommendations about techniques to speed up landing pages. They do this while developing the software. <strong>Google Analytics</strong> provides timings for web traffice in public production. 
+
+Google's Lighthouse makes use of <a target="_blank" href="https://github.com/ChromeDevTools/awesome-chrome-devtools">Chrome Dev Tools</a>.
 
 When apps are being developed within the public firewall, if we get functional test scripts to obtain <strong>timings</strong> on each step within the app (and store them in a time-series database), we can get early <strong>alerts</strong>, without additional test scripting.
 
-Those who want to put load on apps use <strong>load generators</strong> operated by load testing scripts that replace work on real app clients with "synthetic" or <strong>"virtual" users</strong>. The number of such virtual users is often used to define the level of load imposed by scripts. While load is being injected, <strong>status</strong> such as the rate of transactions and errors encountered are reported by load generators to some controller. <strong>Metrics</strong> such as CPU and memory utilization within servers are obtained by <a target="_blank" href="https://wilsonmar.github.io/dynatrace">Dynatrace</a> or other monitoring agents installed on servers. Results from runs are then analyzed and presented in <strong>dashboards</strong>.
+Those who want to put an artificial load on apps use <strong>load generators</strong> operated by load testing scripts that replace work on real app clients with "synthetic" or <strong>"virtual" users</strong>. The number of such virtual users is often used to define the level of load imposed by scripts. While load is being injected, <strong>status</strong> such as the rate of transactions and errors encountered are reported by load generators to some controller. <strong>Metrics</strong> such as CPU and memory utilization within servers are obtained by <a target="_blank" href="https://wilsonmar.github.io/dynatrace">Dynatrace</a> or other monitoring <strong>agents</strong> installed on servers. Results from runs are then analyzed and presented in <strong>dashboards</strong>.
 
-Traditionally, to get load generators to run as many virtual users as possible, load testing scripts don't duplicate what occurs in the browser, but mimic just what is exchanged over the network <strong>wire</strong> between an app its clients. Communications are captured as load test scripts, then edited to add correlations and verifications. That's what LoadRunner's VuGen, JMeter, and other proxy-based client emulators do. 
+Traditionally, to get load generators to run as many virtual users as possible, load testing scripts don't duplicate what occurs in the browser, but mimic just what is exchanged over the network <strong>wire</strong> between an app its clients. Communications are captured as load test script lines, then edited to add correlations and verifications. That's what LoadRunner's VuGen, JMeter, and other proxy-based client emulators do. 
 
-Then innovations such as http/2 asynchonous communication and AngularJs code running within browsers cause more and more processing within browsers instead of on servers. So <strong>TruClient for LoadRunner</strong> was created to record and emulate the DOM and actions of each individual virtual user such as clicking buttons and typing on forms. This takes up a lot more memory. <a target="_blank" href="https://flood.io/">Flood.io</a> Elements does that also, but using just a web browser as a web-based service. The availability of cloud-based services such as Flood, <a target="_blank" href="https://www.microfocus.com/en-us/products/stormrunner-load-agile-cloud-testing/overview">StormRunner</a>, <a target="_blank" href="https://www.blazemeter.com/">BlazeMeter</a> , and others is enabling large servers or a large number of servers to be used for a short periods of time.
+Then innovations such as http/2 asynchonous communication and AngularJs code running within browsers cause more and more processing within browsers instead of on servers. So <strong>TruClient for LoadRunner</strong> was created to record and emulate the DOM and actions of each individual virtual user such as clicking buttons and typing on forms. 
 
-Several advances have "shifted left" the testing of apps on the development process timeline. JMeter scripts can now invoke the APIs of Web Drivers, albeit with <a target="_blank" href="https://www.blazemeter.com/blog/mixing-selenium-into-your-load-scenario">some limitations</a>.
+<strong>Flood.io's Element</strong> does that also, but using Google's <a target="_blank" href="https://github.com/GoogleChrome/puppeteer">Puppeteer</a> headless browser control technology based on Google's new DevTools protocol.
+
+JMeter can make calls to Web Driver APIs.
 
 <strong>Neoload</strong> can process Selenium scripts as well as scripts created the traditional way.
+
+Keeping track of each user's browser memory takes up a whole lot more memory, so <strong>cloud-based</strong> services means you can now hava a lot of load generators for a short time, making them more affordable than having to buy a bunch of on-premise servers. Such services include <a target="_blank" href="https://www.microfocus.com/en-us/products/stormrunner-load-agile-cloud-testing/overview">StormRunner</a>, <a target="_blank" href="https://www.blazemeter.com/">BlazeMeter</a> , <a target="_blank" href="https://flood.io/">Flood.io</a>, and others.
+
+Several advances have "shifted left" the testing of apps on the development process timeline. JMeter scripts can now invoke the APIs of Web Drivers, albeit with <a target="_blank" href="https://www.blazemeter.com/blog/mixing-selenium-into-your-load-scenario">some limitations</a>.
 
 To load test APIs, we're looking forward to mature tools to automatically convert SOAPUI scripts and Open API (Swagger) specs into load testing scripts. Our objective is to begin testing as soon as code is pushed or merge requested from a <strong>local Git</strong> Repository to <strong>GitHub</strong> (or other Version Control repository).
 
@@ -717,40 +742,6 @@ Tracing
 Control plane
 
 <a target="_blank" href="https://www.method123.com/project-lifecycle.php">Project Management Life Cycle (PMLC)</a>
-
-
-
-## MVP
-
-This flowchart shows how (1) these two servers within an on-prem. data server can be tested for performance locally and from an AWS cloud.
-
-The Apigee service needs to be setup first becuase it authenticates requests based on pre-assigned <strong>tokens</strong> provided to those who call the service. We'll need several types of tokens: we use tokens with a low threshold to test rejection mechanisms. But generally we use tokens with a high threshold for stress testing apps.
-
-Agents in servers collect for a (2) <strong>Monitoring</strong> service such as Dynatrace or SignalFx, and others. 
-Various metrics from the monitoring system are displayed on its <strong>Dashboard</strong>.
-The important aspect about this is that <strong>Trends</strong> are displayed.
-
-Now we can begin to write and run (3) <strong>JMeter</strong> scripts to impose artificial loads.
-From a laptop, we can only impose a limited load. But that is OK because we use laptops just to craft scripts.
-Once viable, the scripts, along with associated files, are pushed into a (4) private Version Control repository such as AWS Code Commit.
-Within enterprise settings, instead of downloading installer packages from the internet, it is safer to obtain installers that have been vetted by Security then made available from a (5) private repository such as <strong>Artifactory</strong> or Enterprise DockerHub. 
-A lot of work is needed to vet the many dependencies for teams who prefer to build machines <em><strong>from the ground up</em></strong> using Configuration as Code <strong>(CaC)</strong>, a practice that enables them to quickly respond to issues anywhere in the tech stack.
-
-To make calls to the Amazon cloud, we install the (7) <strong>AWS CLI</strong> and associated tools to craft (8) <strong>Cloud Formation</strong> files that instantiate services such as EC2 to run servers within the AWS Cloud.
-Within AWS, we (9) instantiate images containing JMeter using common scripts in the code repository.
-
-Before we run, we should (10) lint and <strong>audit</strong> the containers using various tools.
-
-When we need to add more JMeter instances to impose a heavier load, we add a (11) <strong>JMeter Master</strong> to coordinate the Jenkins slave nodes. The Master starts a fixed number of nodes to test (12) app <strong>auto-scaling</strong> mechanisms.
-
-When Configurations settings are under version control, changes can (13) trigger (14) <strong>CI/CD</strong> to automatically initiate test runs. If the analytics system has enough history, it can (15) recognize trends and, if anomalies are identified, issue (16) <strong>alerts</strong> while the changes are still fresh in the mind of the person who made the change.
-
-Because traffic between on-premises servers and load generators in the cloud is subject to significant variability, it would be ideal to have a (17) load generator near each machine under test. But it can be problematic going through the corporate firewall. (for example, https://aqueduct.flood.io/ to get through from internal IP's in the cloud through a firewall exiting as TLS pipe with port 80/443. Similar to Ngrok. Flood.io filters out )
-
-It can be easier to make use of a (18) web-based SaaS service such as Blazemeter or Flood.io. With them, we just upload a script and they handle the rest, such as configuring enough machines.
-
-When servers on-prem are (19) transitioned to run within AWS, we would avoid issues with firewalls and save charges for data leaving AWS.
-To ensure low latency between the services, we define them to use the same <strong>AWS affinity group</strong>. 
 
 
 

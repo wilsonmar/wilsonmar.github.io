@@ -28,7 +28,7 @@ A (2) <strong>Monitoring agent</strong> on each server, such as Dynatrace or Sig
 Now we can begin to construct (3) <strong>JMeter</strong> scripts that impose artificial loads.
 From a laptop, we can only impose a limited load. But that is OK because we use laptops just to craft scripts.
 Once viable, the scripts, along with associated files, are pushed into a (4) private Version Control repository such as AWS Code Commit.
-Within security-conscious enterprises, instead of downloading installer packages from the internet, it is safer to obtain installers that have been vetted by Security specialists before being made available from a (5) private repository such as <strong>Artifactory</strong> or Enterprise DockerHub. 
+Within security-conscious enterprises, instead of downloading installer packages from the internet, it is safer to obtain installers that have been vetted by Security specialists before being made available from a (5) private repository such as <strong>Artifactory</strong> or Docker Trusted Registry (DTR). 
 A lot of work is needed to vet the many dependencies for those who prefer to build machines <em><strong>from the ground up</strong></em> using Configuration as Code <strong>(CaC)</strong>, a practice that enables them to quickly respond to issues by being able to quickly change anything within the tech stack.
 
 To make use of the Amazon cloud, on the laptop we install the (7) <strong>AWS CLI</strong> and associated tools to craft (8) <strong>Cloud Formation</strong> files that instantiate services such as EC2 with Docker to run server programs within the AWS Cloud.
@@ -164,7 +164,8 @@ Below are more details about each deliverable:
 
     It took some scripting foo along with some Docker image revisions.  I now have a setup that allows me to:
 
-    <pre><strong>driver.sh -s jmxfile.jmx -d data-dir -n 8</strong></pre>
+    <pre><strong>driver.sh -s jmxfile.jmx \
+    -d data-dir -n 8</strong></pre>
 
 13. Identify change trigger.
 
