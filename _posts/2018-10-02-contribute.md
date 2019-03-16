@@ -69,7 +69,7 @@ F. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
    
    b. Create <strong>automated test scripts</strong> (based on <a href="#Procedures">documented procedures</a>) to verify whether the system works "end-to-end" (for different personas), to identify whether the sytem still works after changes. Kinda like auto-fill on steroids.
    
-   c. Dan: Upgrade front-end server version upgrade (to TLS 1.2, Python, etc.).
+   c. Dan: Upgrade front-end server version upgrade (to Ruby, Postgres, TLS 1.2 for Braintree, etc.).
    
    d. Wilson: Create instructions (this page) to enable volunteers to create a dev environment and contribute changes. 
    
