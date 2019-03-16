@@ -92,7 +92,7 @@ F. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
 
       1. Import metadata (coding) into Dev. instance.
       8. <a target="_blank" href="http://pages.mail.salesforce.com/gettingstarted/sales-cloud/import-export-data/">Import</a> cleansed data into Dev using DataLoader.
-      9. Run test scripts on imported Dev. instance.
+      9. Modify test scripts to run on imported Dev. instance.
       <br /><br />
    
    g. Enable and test disaster recovery.
@@ -105,7 +105,7 @@ F. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
 
    k. <strong>Translations</strong> of the site into various languages. We have a team currently translating the site into Spanish. A LOT of their work is already done. At some point, I want to get a Volunteer Project posted to insert the “es:” text into the code. (BTW, all the training videos are also being translated to Spanish to be inserted into the videos too. That will be another project. The team in Colombia is translating those SRT files now.)
    
-   l. Architect a better to maintain passwords and other secrets for team (Hashicorp Vault, etc.)
+   l. Architect a more secure way to maintain passwords and other secrets for team (Hashicorp Vault, etc.)
    
    m. Propose one of your own.
 
