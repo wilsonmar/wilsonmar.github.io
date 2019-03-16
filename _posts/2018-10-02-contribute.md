@@ -69,7 +69,7 @@ F. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
    
    b. Dan: Upgrade front-end server versions.
    
-   c. Create automated test scripts (based on <a href="#Procedures">documented procedures</a>) to verify whether the system works "end-to-end" (for different personas), to identify whether the sytem still works after changes. Kinda like auto-fill on steroids.
+   c. Create <strong>automated test scripts</strong> (based on <a href="#Procedures">documented procedures</a>) to verify whether the system works "end-to-end" (for different personas), to identify whether the sytem still works after changes. Kinda like auto-fill on steroids.
    
    d. Wilson: Create instructions (this page) to enable volunteers to create a dev environment and contribute changes. 
    
