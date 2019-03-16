@@ -1,4 +1,4 @@
----
+   ---
 layout: post
 title: "How to contribute to Salesforce Non-profits"
 excerpt: "How the Salesforce Benefit corp benefits non-profits, technically"
@@ -40,7 +40,6 @@ F. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
 1. Click <a target="_blank" href="https://coursesites.com/?sig=Mwuk9E96d1zi4kLs58vOveO3Tl8=&courseId=_190749_1&timestamp=1549132709&inviteId=BB?BB_QzCGaVfkHcOjnCyDupFaIrNNbv5DmyN82PEvwEmTOMMtUG+4ivX5IA==#invitation-student">this link to register for training on the Blackboard system</a>
 
 2. Access the YWAM Converge training content <a target="_blank" href="https://blackboard.coursesites.com/ultra/courses/_190749_1/cl/outline">https://blackboard.coursesites.com/ultra/courses/_190749_1/cl/outline</a>
-
 3. Click "YWAM Values" on the left menu to read it.
 4. Click "Start Here" on the left menu to read "Welcome to Converge".
 5. Scroll down to watch the "What is YWAM" video. <strong>Click the volume icon to unmute.</strong>
@@ -50,6 +49,8 @@ F. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
 6. Scroll down the page to see the diagram summarizing the activities by phase:
 
    <img alt="ywam-contribute-648x636-38472.jpg" width="500" src="https://user-images.githubusercontent.com/300046/54088143-34372b00-4331-11e9-952c-c7470f39d708.jpg">
+
+7. Open a browser tab to the <a target="_blank" href="https://www.ywamocnj.org/faq/">FAQ</a> (Frequently Asked Questions) to see if you can answer the questions before revealing the answer. Kinda like a quiz.
 
 
    ### Pick a project

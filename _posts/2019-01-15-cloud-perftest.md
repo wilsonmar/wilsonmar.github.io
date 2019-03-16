@@ -95,7 +95,7 @@ JMeter can make calls to Web Driver APIs.
 
 Taking an alternative approach, <strong>Neoload</strong> can process Selenium scripts as well as scripts created the traditional way.
 
-Instead of calling Web Driver APIs, <strong>Flood.io's Element</strong> calls the newer DevTools API protocol in Google's <a target="_blank" href="https://github.com/GoogleChrome/puppeteer">Puppeteer</a> headless browser control technology.
+Instead of calling Web Driver APIs like Selenium, <strong>Flood.io's Element</strong> calls the newer DevTools API protocol using the <a target="_blank" href="https://github.com/GoogleChrome/puppeteer">open-source</a> <a target="_blank" href="https://developers.google.com/web/tools/puppeteer/">Chrome Puppeteer</a> headless browser control technology, both from Google.
 
 These keeping track of each user's browser memory takes up a whole lot more memory, so <strong>cloud-based</strong> services means you can now hava a lot of load generators for a short time, making them more affordable than having to buy a bunch of on-premise servers. Such services include <a target="_blank" href="https://www.microfocus.com/en-us/products/stormrunner-load-agile-cloud-testing/overview">StormRunner</a>, <a target="_blank" href="https://www.blazemeter.com/">BlazeMeter</a> , <a target="_blank" href="https://flood.io/">Flood.io</a>, and others.
 
