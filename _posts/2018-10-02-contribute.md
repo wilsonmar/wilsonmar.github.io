@@ -97,7 +97,7 @@ F. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
    
    g. Enable and test disaster recovery.
 
-   h. To best communicate with student/interns, we need someone to research, propose, and then develop the best option for texting internationally to students, hosts, mentors, donors. Wilson said he and Kermit saw a company offering a good texting solution at Dreamforce. Texts can replace emails if they include links to static web pages or links with reminders to log in to dashboard to complete an activity.  
+   h. <a target="_blank" href="https://www.catchafire.org/volunteer/26956/ywam-converge-in-ocean-city--nj--tech-systems/">PROJECT:</a> To best communicate with student/interns, we need someone to research, propose, and then develop the best option for texting internationally to students, hosts, mentors, donors. Wilson said he and Kermit saw a company offering a good texting solution at Dreamforce. Texts can replace emails if they include links to static web pages or links with reminders to log in to dashboard to complete an activity.  
 
    i. Make <strong>introduction videos</strong> to each of the <a href="#persona">persona</a> for display on the website and to make emails more "alive".
 
