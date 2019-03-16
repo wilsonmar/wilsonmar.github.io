@@ -75,7 +75,7 @@ F. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
    
    e. Wilson/Dan: Convert bash scripts and instructions to create a dev instance of Ruby server running on Ubuntu.
    
-   f. Kermit: Define manual procedures and scripts to create a stand-alone Saleforce Trailhead Dev. instance containing metadata and cleansed data from production org sandbox:
+   f. Kermit: Define manual procedures and scripts to create a <strong>stand-alone Saleforce Dev. instance</strong> containing metadata and filtered/cleansed data from production org sandbox:
 
    ### &nbsp; &nbsp; &nbsp; Administrator:
 
@@ -105,7 +105,7 @@ F. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
 
    k. <strong>Translations</strong> of the site into various languages. We have a team currently translating the site into Spanish. A LOT of their work is already done. At some point, I want to get a Volunteer Project posted to insert the “es:” text into the code. (BTW, all the training videos are also being translated to Spanish to be inserted into the videos too. That will be another project. The team in Colombia is translating those SRT files now.)
    
-   l. Architect a better to maintain passwords and other secrets.
+   l. Architect a better to maintain passwords and other secrets for team (Hashicorp Vault, etc.)
    
    m. Propose one of your own.
 
