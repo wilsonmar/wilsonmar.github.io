@@ -36,7 +36,8 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 ## Testing Tools Landscape
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/53644473-ace90980-3c04-11e9-8337-9fee0e0cca2a.jpg"><img alt="cloud-perftest-v10-tools-695x329.jpg" width="695" src="https://user-images.githubusercontent.com/300046/53644473-ace90980-3c04-11e9-8337-9fee0e0cca2a.jpg"></a>
+<amp-youtube data-videoid="ZVwexmXsRTA" layout="responsive" width="480" height="270"></amp-youtube>
+<br />
 
 In this diagram, a lot is going on because I wanted to describe the <strong>overlap</strong> between key tools for both functional and performance testing, supporting unit to integration stages of development. 
 
@@ -107,6 +108,10 @@ To achieve "shift left", our objective is to begin load testing as soon as code 
 Part of the modern development toolchain are static code <strong>scanners</strong> and dynamic code <strong>profilers</strong> to detect issues while the code is still fresh in the developer's mind. This also applies to security type testing.
 
 <a target="_blank" href="https://wilsonmar.github.io/git-hooks">Hooks in the repository</a> can automatically initiate <strong>build</strong> of app instances, <strong>monitoring</strong>, <strong>profiling</strong>, and other preparations before kicking off a load testing job. When a cascade of automation can step through several test environments if all tests are successful, changes can happen safely yet quickly -- so quickly that they are called "continous integration and delivery", or CI/CD.
+
+Recap:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/54484877-345d8c00-4845-11e9-8894-24d65fcf7979.jpg"><img alt="cloud-perftest-v22-1828x851.jpg" width="1828" src="https://user-images.githubusercontent.com/300046/54484877-345d8c00-4845-11e9-8894-24d65fcf7979.jpg"></a>
 
 
 <a name="LandingPages"></a>
@@ -344,7 +349,7 @@ QUESTIONS: About your app/system:
 
 ![cloud-perftest-v08-types-553x276-24044](https://user-images.githubusercontent.com/300046/53589081-6f30a600-3b5c-11e9-978a-f69f0f5c2705.jpg)
 
-I'll be presenting this busy diagram about types of performance testing one concept at a time. The work of performance testing is about imposing different <strong>levels</strong> of load over a period of time. The intensity of load imposed is typically defined by the number of <strong>virtual users</strong> that load generators inject. 
+I'll be presenting this diagram about types of performance testing one concept at a time. The work of performance testing is about imposing different <strong>levels</strong> of load over a period of time. The intensity of load imposed is typically defined by the number of <strong>virtual users</strong> that load generators inject. 
 
 The outcome from load testing experiments is the <strong>rate</strong> of processing (stated in <strong>hits per second</strong> or per minute) which the server can sustain, a metric that can be monitored in production. Finding that <strong>rate</strong> is one of our major objectives because we want to provide <strong>actionable intelligence</strong> to Operations in production.
 
