@@ -27,6 +27,7 @@ image: # pic-black-bkg-white-cloud_1920x1200
 * <a href="#AutoScaling">Auto-scaling</a>
 * <a href="#ContainerScaling">Container scaling</a>
 * <a href="#Lightsail">Amazon Lightsail</a>
+* <a href="#RunTypes">Performance test run types</a>
 <br /><br />
 
 <!-- TODO: Split up this long page into separate pages, and re-published on Medium as separate parts. -->
@@ -34,7 +35,7 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 <a name="TestingTools"></a>
 
-## Testing Tools Landscape
+## Software Testing Tools Landscape
 
 <amp-youtube data-videoid="ZVwexmXsRTA" layout="responsive" width="480" height="270"></amp-youtube>
 <br />
@@ -68,7 +69,7 @@ Selenium scripts reference those identifies through a <strong>Web driver</strong
 
 <!-- To test code in production, some developers code "feature flags" to expose parts of code to a subset of users in production. So now, the specific flags being used at at given time needs to be tracked for correlation to timings. -->
 
-<a target="_blank" href="https://wilsonmar.github.io/protractor/">Protractor</a> adds to Selenium the ability to interpret the <strong>Gherkin</strong> written language to specify tests in a more natural way. 
+<a target="_blank" href="https://wilsonmar.github.io/protractor/">Protractor</a> adds to Selenium the Cucumber library so it can interpret the <strong>Gherkin</strong> written language to specify tests in a more natural way. 
 Protractor also has a better way to dynamically read the DOM (Document Object Model) which stores the state of each user's browser which Angular, React, Vue, or other UI libraries manipulate via JavaScript. 
 
 ### API Unit & Integration Testing
@@ -331,21 +332,29 @@ utility servers such as DNS, Active Directory/LDAP, etc.
 
 
 QUESTIONS: About your app/system:
-1. How quickly can users ramp up? What is "too quick" of a ramp-up?
-2. What is the maximum <strong>rate</strong> (per second) transactions can be processed before UX degrades?
-3. What is the signal threshold to request additional capacity?
-4. How much time does it take to obtain additional capacity (from realization to actual availability)?
-5. What is the maximum <strong>nominal</strong> load on normal days?
-6. How much <strong>headroom</strong> is there for future growth? 
-7. What is the highest temporary <strong>spike</strong> the system can absorb temporarily?
-8. Does the system recover fully after a failure? (resiliency)
-9. Can instances be decomissioned automatically? (elasticity)
-10. Does the system leak memory or consume too much disk space over time?
+1. Do users see a formatted "server unavailable" screen when the URL they use does not reach a working service?
+2. How quickly can users ramp up? What is "too quick" of a ramp-up?
+3. What is the optimal <strong>rate</strong> (per second) transactions can be processed before UX degrades?
+4. Does the system come up quickly?
+5. Does the system leak memory or consume too much disk space over time?
+6. What is the highest temporary <strong>spike</strong> the system can absorb temporarily?
+7. How much time does it take to obtain additional capacity (from realization to actual availability)?
+8. Can instances be decomissioned automatically? (elasticity)
+
+9. Does the system recover fully after a failure? (resiliency)
+10. What is the signal threshold to request additional capacity?
+11. What is the maximum <strong>nominal</strong> load on normal days?
+12. How much <strong>headroom</strong> is there for future growth? 
+<br /><br />
+
+These questions are answered by various types of performance testing.
 
 
 <a name="RunTypes"></a>
 
 ### Performance test run types
+
+TODO: video here.
 
 ![cloud-perftest-v08-types-553x276-24044](https://user-images.githubusercontent.com/300046/53589081-6f30a600-3b5c-11e9-978a-f69f0f5c2705.jpg)
 
@@ -353,7 +362,7 @@ I'll be presenting this diagram about types of performance testing one concept a
 
 The outcome from load testing experiments is the <strong>rate</strong> of processing (stated in <strong>hits per second</strong> or per minute) which the server can sustain, a metric that can be monitored in production. Finding that <strong>rate</strong> is one of our major objectives because we want to provide <strong>actionable intelligence</strong> to Operations in production.
 
-The first thing, even while the application is being built, is to install a way to return a <strong>"server unavailabe"</strong> if the application doesn't respond to browsers pointed at it. It's useful to have an <strong>availability check</strong> on the server running around the clock at perhaps an infrequent one requst every 10 minutes (that's 6 per hour or 144 hits oer day). This is so that if it's down, you'll get an email, because that affects employee and customer productivity and satisfaction. Many such services are offered free.
+The first thing, even while the application is being built, is to install a way to return a <strong>"server unavailable"</strong> if the application doesn't respond to browsers pointed at it. It's useful to have an <strong>availability check</strong> on the server running around the clock at perhaps an infrequent one requst every 10 minutes (that's 6 per hour or 144 hits oer day). This is so that if it's down, you'll get an email, because that affects employee and customer productivity and satisfaction. Many such services are offered free.
 
 We begin by identifying the quickest rate users can <strong>ramp-up</strong>. We need to know the maximum number of users who can really jump on the system at about the same time to predice what will happen at the beginning of a call-center shift or on Black Friday, etc. The rate new users enter the system can be a bottleck as well a the total number of concurrent users running, because limitations in the <strong>authentication infrastructure</strong> is often a bottleneck.
 
@@ -377,15 +386,19 @@ If we operate a cluster of servers, we need to make sure we have the <strong>ela
 
 In an elastic cloud enviornment, we need to ensure that our configurations can indeed <strong>instantiate</strong> additional capacity on a timely basis. Tests of elasticity should also include <strong>un-instantation</strong> tests to make sure that instances are indeed reduced when load recedes below threshold levels.
 
+![cloud-perftest-v08-types-553x276-24044](https://user-images.githubusercontent.com/300046/53589081-6f30a600-3b5c-11e9-978a-f69f0f5c2705.jpg)
+
 ### Recap
 
 Here is the list of the types of testing covered in the previous illustration. 
 
 TODO: Video here
 
-Items in blue font relate specifically to cloud environments and CI/CD.
+Items in blue font relate specifically to cloud environments and CI/CD, such as the threshold to begin scale-out.
+
 Metrics about <strong>lead time</strong> are important because time is money when we're charged by the minute in the cloud.
 The faster we can ramp-up to that maximum rate, the less we have to pay.
+The same can be said about ramping down.
 Being able to tune systems is where performance engineering efforts really pay off.
 
 Having additional instances for testing performance and fail-over is a <strong>game changer</strong> because it allows simultaneous parallel streams of work to conduct stress tests. Environments need to be otherwise <strong>quiet</strong> to properly measure memory usage during  performance tests. A system is not usable for other things when we purposely bring it to the point of degradation.
@@ -408,17 +421,18 @@ But I'd like to propose a metric that is likely controversial.
 ### Infant Mortality Rate?
 
 In the medical community, the "Infant Mortality Rate" refers to deaths of live-born babies within the first year of life. Neonatal rates refer to the first 28 days. Early Neonatal Mortality refers to the first 7 days of life.<a target="_blank" href="https://en.wikipedia.org/wiki/Infant_mortality">*</a> It's measured in terms of 1,000 live births. They are a proxy measure of the quality of healthcare in a country.
-For example, the US has historically improved infant mortality at a slower rate than other developed countries:<a target="_blank" href="https://www.healthsystemtracker.org/chart-collection/infant-mortality-u-s-compare-countries/">*</a>
-![cloud-perftest-infant-946x580-38168](https://user-images.githubusercontent.com/300046/54491803-a65ec100-4897-11e9-8ac0-beb5b37184e7.jpg)<br />(The lower the rate, the better).
+For example, the US has historically improved infant mortality at a slower rate than other developed countries:<br />
+<a target="_blank" href="https://www.healthsystemtracker.org/chart-collection/infant-mortality-u-s-compare-countries/"><img alt="cloud-perftest-infant-946x580-38168.jpg" width="946" src="https://user-images.githubusercontent.com/300046/54491803-a65ec100-4897-11e9-8ac0-beb5b37184e7.jpg"></a><br />(The lower the rate, the better).
 
 The equivalent metric for new computer systems would be improvements in <strong>failure during smoke tests per 1,000 deploy attempts in Staging</strong>.
 
-Would you agree with the statement that "the Staging environment is a not a playground. Issues there should have been identified in lower-level environments."?
+Would you agree with the statement that "the Staging environment is a not a playground?" and that 
+"Issues in Staging should have been identified in lower-level environments"?
 
 Many Operations people don't expect (or even tolerate) issues in Staging.
-But many developers see that different, and that may cause conflict and distrust.
+But many developers think differently, and that may cause conflict and distrust.
 
-That being the case, should discovery of performance issues and tuning occur in Staging? Being able to spin up duplicate environments in the cloud would help us avoid using Staging as a playground.
+So should discovery of performance issues and tuning occur in Staging? Being able to spin up duplicate environments in the cloud would help us avoid using Staging as a playground.
 
 What do you think? Would tracking this metric reduce concerns in Operations people who protect their production environment? Would it reduce distrust by providing factual history?
 
