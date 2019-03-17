@@ -92,22 +92,21 @@ Traditionally, to get load generators to run as many virtual users as possible, 
 
 Then innovations such as http/2 asynchonous communication and AngularJs code running within browsers cause more and more processing within browsers instead of on servers. So <strong>TruClient for LoadRunner</strong> was created to record and emulate the DOM and actions of each individual virtual user such as clicking buttons and typing on forms. 
 
-JMeter scripts can also make calls to Web Driver APIs like Selenium.
+JMeter scripts can also make calls to Web Driver APIs like Selenium, albeit with <a target="_blank" href="https://www.blazemeter.com/blog/mixing-selenium-into-your-load-scenario">some limitations</a>.
 
 Taking an alternative approach, <strong>Neoload</strong> can call Selenium scripts as well as scripts created the traditional way.
 
 The newest innovation is <strong>Flood.io's Element</strong>, which, instead of calling Web Driver APIs like Selenium, calls the newer DevTools API protocol using the <a target="_blank" href="https://github.com/GoogleChrome/puppeteer">open-source</a> <a target="_blank" href="https://developers.google.com/web/tools/puppeteer/">Chrome Puppeteer</a> headless browser control technology, both from Google. Their Element scripts can be converted from TOSCA functional test scripts, which uses a low-code approach. That's why they are the new darling among those who test SAP and Salesforce.
 
-These keeping track of each user's browser memory takes up a whole lot more memory, so <strong>cloud-based</strong> services means you can now hava a lot of load generators for a short time, making them more affordable than having to buy a bunch of on-premise servers. Such services include <a target="_blank" href="https://www.microfocus.com/en-us/products/stormrunner-load-agile-cloud-testing/overview">StormRunner</a>, <a target="_blank" href="https://www.blazemeter.com/">BlazeMeter</a> , <a target="_blank" href="https://flood.io/">Flood.io</a>, and others.
+This keeping track of each user's browser memory can take up a lot of RAM, so <strong>cloud-based</strong> services makes sense, to use a lot of load generators for a short time, making cloud more affordable than having to buy a bunch of on-premise servers. Cloud services include <a target="_blank" href="https://www.microfocus.com/en-us/products/stormrunner-load-agile-cloud-testing/overview">StormRunner</a>, <a target="_blank" href="https://www.blazemeter.com/">BlazeMeter</a> , <a target="_blank" href="https://flood.io/">Flood.io</a>, and others.
 
-Several advances have "shifted left" the testing of apps on the development process timeline. JMeter scripts can now invoke the APIs of Web Drivers, albeit with <a target="_blank" href="https://www.blazemeter.com/blog/mixing-selenium-into-your-load-scenario">some limitations</a>.
+To load test APIs, tools such as <strong>LoadUI</strong> automatically convert SOAPUI unit testing scripts into load testing scripts. SoapUI and Pact files have the advantage of containing <strong>data values</strong> specified during recordings.  <strong>Open API (Swagger)</strong> specs do not contain data values, but variation in a large number of values are needed for any long-running load test anyway.
 
-To load test APIs, we're looking forward to mature tools to automatically convert SOAPUI scripts and Open API (Swagger) specs into load testing scripts. Our objective is to begin testing as soon as code is pushed or merge requested from a <strong>local Git</strong> Repository to <strong>GitHub</strong> (or other Version Control repository).
+To achieve "shift left", our objective is to begin load testing as soon as code is pushed or merge from a <strong>local Git</strong> repository to <strong>GitHub</strong> (or other Version Control repository). 
 
-Part of the modern development toolchain are code <strong>scanners</strong> and code <strong>profilers</strong> to detect issues while the code is still fresh in the developer's mind.
+Part of the modern development toolchain are static code <strong>scanners</strong> and dynamic code <strong>profilers</strong> to detect issues while the code is still fresh in the developer's mind. This also applies to security type testing.
 
-Furthermore, <a target="_blank" href="https://wilsonmar.github.io/git-hooks">hooks</a> can automatically initiate <strong>build</strong> of app instances, <strong>monitoring</strong>, and <strong>profiling</strong> to be initiated before kicking off testing jobs. Many have created a cascade of CI/CD automation to step through several test environments that ensure changes safely yet quickly get into production.
-
+<a target="_blank" href="https://wilsonmar.github.io/git-hooks">Hooks in the repository</a> can automatically initiate <strong>build</strong> of app instances, <strong>monitoring</strong>, <strong>profiling</strong>, and other preparations before kicking off a load testing job. When a cascade of automation can step through several test environments if all tests are successful, changes can happen safely yet quickly -- so quickly that they are called "continous integration and delivery", or CI/CD.
 
 
 <a name="LandingPages"></a>
@@ -345,9 +344,9 @@ QUESTIONS: About your app/system:
 
 ![cloud-perftest-v08-types-553x276-24044](https://user-images.githubusercontent.com/300046/53589081-6f30a600-3b5c-11e9-978a-f69f0f5c2705.jpg)
 
-This diagram about types of performance testing I'll be presenting one word at a time. The work of performance testing is about imposing different <strong>levels</strong> of load over a period of time. The intensity of load imposed is defined by the number of <strong>virtual users</strong> that load generators run. 
+I'll be presenting this busy diagram about types of performance testing one concept at a time. The work of performance testing is about imposing different <strong>levels</strong> of load over a period of time. The intensity of load imposed is typically defined by the number of <strong>virtual users</strong> that load generators inject. 
 
-But our interest is also in the <strong>rates</strong> of processing (stated in <strong>hits per second</strong> or per minute), a metric that can be monitored in production. Finding that <strong>rate</strong> is one of our major objectives because we want to provide <strong>actionable intelligence</strong> to Operations in production.
+The outcome from load testing experiments is the <strong>rate</strong> of processing (stated in <strong>hits per second</strong> or per minute) which the server can sustain, a metric that can be monitored in production. Finding that <strong>rate</strong> is one of our major objectives because we want to provide <strong>actionable intelligence</strong> to Operations in production.
 
 The first thing, even while the application is being built, is to install a way to return a <strong>"server unavailabe"</strong> if the application doesn't respond to browsers pointed at it. It's useful to have an <strong>availability check</strong> on the server running around the clock at perhaps an infrequent one requst every 10 minutes (that's 6 per hour or 144 hits oer day). This is so that if it's down, you'll get an email, because that affects employee and customer productivity and satisfaction. Many such services are offered free.
 
@@ -372,6 +371,8 @@ We do <strong>Spike Tests</strong> to verify <strong>resiliency</strong> -- the 
 If we operate a cluster of servers, we need to make sure we have the <strong>elasticity</strong> we hoped for. 
 
 In an elastic cloud enviornment, we need to ensure that our configurations can indeed <strong>instantiate</strong> additional capacity on a timely basis. Tests of elasticity should also include <strong>un-instantation</strong> tests to make sure that instances are indeed reduced when load recedes below threshold levels.
+
+### Recap
 
 To summarize, here are the types of performance testing:
 
