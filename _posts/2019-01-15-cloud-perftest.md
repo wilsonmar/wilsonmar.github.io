@@ -379,16 +379,50 @@ In an elastic cloud enviornment, we need to ensure that our configurations can i
 
 ### Recap
 
-To summarize, here are the types of performance testing:
+Here is the list of the types of testing covered in the previous illustration. 
 
-1. Site availability test (10 per houe)
-2. Ramp-up rate
-3. Stress test to identify bottlenecks
-4. Smoke test (on build) for viability
-5. Soak test for endurance
-6. Spike test for resiliency
-7. Instantiation test for elasticity up
-8. Un-Instantiation test for elasticity down
+TODO: Video here
+
+Items in blue font relate specifically to cloud environments and CI/CD.
+Metrics about <strong>lead time</strong> are important because time is money when we're charged by the minute in the cloud.
+The faster we can ramp-up to that maximum rate, the less we have to pay.
+Being able to tune systems is where performance engineering efforts really pay off.
+
+Having additional instances for testing performance and fail-over is a <strong>game changer</strong> because it allows simultaneous parallel streams of work to conduct stress tests. Environments need to be otherwise <strong>quiet</strong> to properly measure memory usage during  performance tests. A system is not usable for other things when we purposely bring it to the point of degradation.
+
+Having automation and alerting allows us to be quicker at implementing stop-gap measures such as rebooting servers to reclaim memory. Rebooting is not the ideal situation, but it buys us time to focus on root issues.
+
+A comprehensive set of tests in each enviornment is what makes automatic and fast deployments advisable.
+
+But people in Operations who protect the production environment are usually skeptical.
+
+So I think <strong>smoke tests</strong> that include performance testing can have a more important role than many may realize.
+
+We know that rendering judgement about pass/fail too early in the development cycle can stifle innovation and experimentation.
+
+But I'd like to propose a metric that is likely controversial.
+
+
+<a name="infantmortality"></a>
+
+### Infant Mortality Rate?
+
+In the medical community, the "Infant Mortality Rate" refers to deaths of live-born babies within the first year of life. Neonatal rates refer to the first 28 days. Early Neonatal Mortality refers to the first 7 days of life.<a target="_blank" href="https://en.wikipedia.org/wiki/Infant_mortality">*</a> It's measured in terms of 1,000 live births. They are a proxy measure of the quality of healthcare in a country.
+For example, the US has historically improved infant mortality at a slower rate than other developed countries:<a target="_blank" href="https://www.healthsystemtracker.org/chart-collection/infant-mortality-u-s-compare-countries/">*</a>
+![cloud-perftest-infant-946x580-38168](https://user-images.githubusercontent.com/300046/54491803-a65ec100-4897-11e9-8ac0-beb5b37184e7.jpg)<br />(The lower the rate, the better).
+
+The equivalent metric for new computer systems would be improvements in <strong>failure during smoke tests per 1,000 deploy attempts in Staging</strong>.
+
+Would you agree with the statement that "the Staging environment is a not a playground. Issues there should have been identified in lower-level environments."?
+
+Many Operations people don't expect (or even tolerate) issues in Staging.
+But many developers see that different, and that may cause conflict and distrust.
+
+That being the case, should discovery of performance issues and tuning occur in Staging? Being able to spin up duplicate environments in the cloud would help us avoid using Staging as a playground.
+
+What do you think? Would tracking this metric reduce concerns in Operations people who protect their production environment? Would it reduce distrust by providing factual history?
+
+Leave a comment below!
 
 
 
