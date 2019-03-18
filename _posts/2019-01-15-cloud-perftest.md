@@ -19,6 +19,8 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 * I begin with the <a href="#TestingTools">"Full Stack" Testing Tools Landscape</a> 
 * <a href="#Statics">Static vs. Dynamic HTML generation</a> and <a href="#CDNx">CDNs</a>
+* <a href="#RunTypes">Performance test run types</a>
+
 * <a href="#Executables">Executable app architecture</a>
 * <a href="#SaaS">SaaS</a>
 * <a href="#SingleInstance">Single-instance</a>
@@ -27,7 +29,6 @@ image: # pic-black-bkg-white-cloud_1920x1200
 * <a href="#AutoScaling">Auto-scaling</a>
 * <a href="#ContainerScaling">Container scaling</a>
 * <a href="#Lightsail">Amazon Lightsail</a>
-* <a href="#RunTypes">Performance test run types</a>
 <br /><br />
 
 <!-- TODO: Split up this long page into separate pages, and re-published on Medium as separate parts. -->
@@ -360,27 +361,29 @@ TODO: video here.
 
 I'll be presenting this diagram about types of performance testing one concept at a time. The work of performance testing is about imposing different <strong>levels</strong> of load over a period of time. The intensity of load imposed is typically defined by the number of <strong>virtual users</strong> that load generators inject. 
 
-The outcome from load testing experiments is the <strong>rate</strong> of processing (stated in <strong>hits per second</strong> or per minute) which the server can sustain, a metric that can be monitored in production. Finding that <strong>rate</strong> is one of our major objectives because we want to provide <strong>actionable intelligence</strong> to Operations in production.
+The outcome from load testing experiments is the <strong>rate</strong> of processing (stated in <strong>hits per second</strong> or per minute) which the server can sustain, a metric that can be monitored in production. Finding that optimal rate is one of our major objectives because we want to provide <strong>actionable intelligence</strong> to Operations in production.
 
-The first thing, even while the application is being built, is to install a way to return a <strong>"server unavailable"</strong> if the application doesn't respond to browsers pointed at it. It's useful to have an <strong>availability check</strong> on the server running around the clock at perhaps an infrequent one requst every 10 minutes (that's 6 per hour or 144 hits oer day). This is so that if it's down, you'll get an email, because that affects employee and customer productivity and satisfaction. Many such services are offered free.
+The first thing, even while the application is being built, is a way to return a <strong>"service unavailable"</strong> page if the application doesn't respond to browsers pointed at it. It's useful to have an <strong>availability check</strong> on the server running around the clock at perhaps an infrequent one requst every 10 minutes (that's 6 per hour or 144 hits oer day). This is so that if it's down, you'll get an email, because that affects employee and customer productivity and satisfaction. Many such services are offered free.
 
-We begin by identifying the quickest rate users can <strong>ramp-up</strong>. We need to know the maximum number of users who can really jump on the system at about the same time to predice what will happen at the beginning of a call-center shift or on Black Friday, etc. The rate new users enter the system can be a bottleck as well a the total number of concurrent users running, because limitations in the <strong>authentication infrastructure</strong> is often a bottleneck.
+We begin by identifying the quickest <strong>rate</strong> users can optimally <strong>ramp-up</strong>. We need to know the maximum number of users who can really jump on the system at about the same time. This is so we can predict what will happen at the beginning of a call-center shift or some peak time. The rate new users enter the system can cause a bottleck as well a high number of concurrent users running, because limitations in the <strong>authentication infrastructure</strong> is often a bottleneck.
 
-The scenario that keeps adding new users until a <strong>breaking point</strong> is called a <strong>Stress Test</strong>. If we  start with a very aggressive rate where we see <strong>error</strong> messages, we've made progress because every set of machine has some <strong>bottleneck</strong>, and our job is to find them. When we identify a particular rate that is <strong>"too quick"</strong>, we ask is it the memory? CPU cycles? Network? Such information is the "heads-up" that Operations people need to know.
+The scenario that keeps adding more and more new users is called a <strong>Stress Test</strong>. If we start with a very aggressive rate where we see <strong>error</strong> messages, we've made progress because every set of machine has some <strong>bottlenecks</strong>, and our job is to find them. When we identify a particular rate that is <strong>"too quick"</strong>, we ask is it the memory? CPU cycles? Network? Such information is the "heads-up" that Operations people need to know.
 
-<strong>Fail-over tests</strong> would be run to divert users to another availability zone or region during disaster recovery testing.
+We usually need to try different rates to bring up the most number of users the quickest. 
 
-We often need to try different rates to bring up the most number of users the quickest. The point we want to find is when user experince <strong>degradation</strong>, when response time begins to suffer due to load. That is the true <strong>capacity</strong> of the system under test.
+Stress test scenarios are used in <strong>Fail-over tests</strong> run to ensure that users can indeed be diverted to another availability zone or region for disaster recovery.
 
-We need to know that capacity point to calculate if we have enough <strong>lead time</strong> before hitting a <strong>threshold</strong> to get additional capacity. If we have on-premises machines, the lead time can be like 6 months. This is why, companies with a fixed capacity would over-buy to get <strong>headroom</strong> to absorb future growth that may not come. The value of an elastic cloud such as Amazon and Azure is that we pay only what we use, when we use it. 
+The point we want to find is NOT the server's <strong>breaking point</strong>, but right before user experience (UX) <strong>degradation</strong> occurs, when response time begins to suffer due to load. That is the true <strong>capacity</strong> of the system under test.
 
-Doing load testing helps us be more precise than just guessing at a CPU percentage as the <strong>threshold</strong> for bringing on another machine. The lead time includes the time it takes to recognize that additional scaling is necessary. The less headroom we allow, the more usage we can get out of machines we pay for. 
+From that capacity level we add <strong>lead time</strong> to calculate the <strong>threshold</strong> when we request additional capacity. If we have on-premises machines, the lead time can be like 6 months. This is why companies working with a fixed capacity would over-buy to get <strong>headroom</strong> to absorb future growth that may not come. The value of an elastic cloud such as Amazon and Azure is that we pay only what we use, when we use it. 
 
-We calculate headroom based on identify the <strong>nominal</strong> level of load -- the momentary <strong>peaks</strong> reached each day, the level where long <strong>soak tests</strong> are run to ensure the <strong>endurance</strong> of the system over time -- to ensure that the level is sustainable without memory leaks and excessive use of disk space.
+Doing load testing helps us be more precise than just guessing at a CPU percentage as the <strong>threshold</strong> for bringing on another machine. Within a cloud, the lead time to bring up additional capacity includes the time it takes to recognize that additional scaling is necessary. The less headroom we allow, the more usage we can get out of machines we pay for. 
 
-This nomial rate is also what we use in <strong>Smoke tests</strong>, where we ramp-up and sustain the nominal load to prove the <strong>viability</strong> of each configuration change.
+We calculate headroom based on the <strong>nominal actual</strong> level of load -- the momentary <strong>peaks</strong> reached during each day, the level where long <strong>soak tests</strong> are run to ensure the <strong>endurance</strong> of the system over time -- to ensure that the level is sustainable without memory leaks and excessive use of disk space.
 
-We do <strong>Spike Tests</strong> to verify <strong>resiliency</strong> -- the ability of the system to absorb sudden temporary spikes while maintaining adequate response time, then come back to normal levels of memory usage and rate of operation.
+This nominal rate is also what we use in the "flat" portion of <strong>Smoke tests</strong> after a ramp-up. Such runs sustain the nominal load for a short period of time, such as 10 minutes, to prove the <strong>viability</strong> of an enviornment built after configuration changes.
+
+We do <strong>Spike Tests</strong> to verify <strong>resiliency</strong> -- the ability of the system to absorb sudden temporary spikes in load while maintaining adequate response time. The system should then return to previous levels of memory usage when back at the nominal rate of operation.
 
 If we operate a cluster of servers, we need to make sure we have the <strong>elasticity</strong> we hoped for. 
 
@@ -390,22 +393,22 @@ In an elastic cloud enviornment, we need to ensure that our configurations can i
 
 ### Recap
 
-Here is the list of the types of testing covered in the previous illustration. 
+Here is the list of the types of performance testss covered in the previous illustration. 
 
 TODO: Video here
 
-Items in blue font relate specifically to cloud environments and CI/CD, such as the threshold to begin scale-out.
+Items in blue font relate specifically to cloud environments built using automation, such as the <strong>threshold to begin scale-out</strong>.
 
 Metrics about <strong>lead time</strong> are important because time is money when we're charged by the minute in the cloud.
 The faster we can ramp-up to that maximum rate, the less we have to pay.
 The same can be said about ramping down.
 Being able to tune systems is where performance engineering efforts really pay off.
 
-Having additional instances for testing performance and fail-over is a <strong>game changer</strong> because it allows simultaneous parallel streams of work to conduct stress tests. Environments need to be otherwise <strong>quiet</strong> to properly measure memory usage during  performance tests. A system is not usable for other things when we purposely bring it to the point of degradation.
+Having additional instances for testing performance and fail-over is a <strong>game changer</strong> because it allows simultaneous parallel streams of work to conduct stress tests. Environments need to be <strong>otherwise quiet</strong> to properly measure memory usage during  performance tests. A system is not really usable while it's purposely being brought to the point of degradation.
 
 Having automation and alerting allows us to be quicker at implementing stop-gap measures such as rebooting servers to reclaim memory. Rebooting is not the ideal situation, but it buys us time to focus on root issues.
 
-A comprehensive set of tests in each enviornment is what makes automatic and fast deployments advisable.
+A comprehensive set of tests in each enviornment is what makes automatic and fast deployments doable.
 
 But people in Operations who protect the production environment are usually skeptical.
 
@@ -413,18 +416,17 @@ So I think <strong>smoke tests</strong> that include performance testing can hav
 
 We know that rendering judgement about pass/fail too early in the development cycle can stifle innovation and experimentation.
 
-But I'd like to propose a metric that is likely controversial.
+But I'd like to propose a metric that makes use of smoke test results.
 
 
 <a name="infantmortality"></a>
 
 ### Infant Mortality Rate?
 
-In the medical community, the "Infant Mortality Rate" refers to deaths of live-born babies within the first year of life. Neonatal rates refer to the first 28 days. Early Neonatal Mortality refers to the first 7 days of life.<a target="_blank" href="https://en.wikipedia.org/wiki/Infant_mortality">*</a> It's measured in terms of 1,000 live births. They are a proxy measure of the quality of healthcare in a country.
-For example, the US has historically improved infant mortality at a slower rate than other developed countries:<br />
+In the medical community, the "Infant Mortality Rate" refers to deaths of live-born babies within the first year of life. Neonatal mortality rates refer to the first 28 days. Early Neonatal Mortality refers to the first 7 days of life.<a target="_blank" href="https://en.wikipedia.org/wiki/Infant_mortality">*</a> They are measured in terms of every 1,000 live births as a proxy measure of the quality of healthcare within a country. For example, the US has over time improved infant mortality, but at a slower rate than other developed countries:<br />
 <a target="_blank" href="https://www.healthsystemtracker.org/chart-collection/infant-mortality-u-s-compare-countries/"><img alt="cloud-perftest-infant-946x580-38168.jpg" width="946" src="https://user-images.githubusercontent.com/300046/54491803-a65ec100-4897-11e9-8ac0-beb5b37184e7.jpg"></a><br />(The lower the rate, the better).
 
-The equivalent metric for new computer systems would be improvements in <strong>failure during smoke tests per 1,000 deploy attempts in Staging</strong>.
+The equivalent metric for computer systems would be improvements in <strong>failure during smoke tests per 1,000 deploy attempts in Staging</strong>.
 
 Would you agree with the statement that "the Staging environment is a not a playground?" and that 
 "Issues in Staging should have been identified in lower-level environments"?
@@ -436,7 +438,7 @@ So should discovery of performance issues and tuning occur in Staging? Being abl
 
 What do you think? Would tracking this metric reduce concerns in Operations people who protect their production environment? Would it reduce distrust by providing factual history?
 
-Leave a comment below!
+Leave a comment below! Let's have a discussion about this.
 
 
 
@@ -809,8 +811,6 @@ Tracing
 
 Control plane
 
-<a target="_blank" href="https://www.method123.com/project-lifecycle.php">Project Management Life Cycle (PMLC)</a>
-
 
 
 <a name="Tasks"></a>
@@ -832,4 +832,6 @@ Here is a list of tasks mentioned above, in usual sequence of execution:
 
 * <a target="_blank" href="https://www.digitalocean.com/community/tutorials/an-introduction-to-load-testing">
 An Introduction to Load Testing</a> September 12, 2017
+
+<a target="_blank" href="https://www.method123.com/project-lifecycle.php">Project Management Life Cycle (PMLC)</a>
 

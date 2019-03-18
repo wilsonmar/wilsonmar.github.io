@@ -60,20 +60,14 @@ One annoying flaw still with Camtasia is that I can't freeze frame and extend an
 
 This makes me take about one day for each second of video produced using this approach.
 
-PROTIP: If you are using a Mac, get a separate monitor of 1900x1080 (Full HD) resolution. This has the "16:9" aspect ratio YouTube displays. https://en.wikipedia.org/wiki/Display_resolution
-
-The 2560×1440 pixel resolution on Apple Mac Book Pro "Retina" screens have an aspect ratio of <strong>21:9</strong>. So images or video captured on a Mac's screen would have annoying blocks on the edges when shown on YouTube. To get full screen HD images, you would have to add an overlay on each frame.
-
-
-Here is an early attempt at making a video and put on YouTube:
-
+The 2560×1440 pixel resolution on Apple Mac Book Pro "Retina" screens have an aspect ratio of <strong>21:9</strong>. So images or video captured on a Mac's screen would have annoying blocks on the edges when shown on YouTube. An example is the video below -- my early attempt at making a video:
 <amp-youtube data-videoid="-ivRuvEIeIY" layout="responsive" width="480" height="270">
 </amp-youtube>
 <br />
 
-Click the "CC" at the bottom of the frame for Closed Captions which I input into Camtasia to sync with audio and visuals. Its highest resolution is 720p HD.
+I did manage to figure out how to create <a href="#CC">captioning and translations</a>, though.
 
-Adding narration at specific spots is relatively simple.
+PROTIP: If you are using a Mac, get a separate monitor of 1900x1080 (Full HD) resolution. This has the "16:9" aspect ratio YouTube displays. https://en.wikipedia.org/wiki/Display_resolution
 
 
 ## Setup software
@@ -130,7 +124,7 @@ Adding narration at specific spots is relatively simple.
 
 ## Recording
 
-   ### First time use
+### &nbsp; &nbsp; &nbsp; First time use
 
 1. Click the Audacity icon to bring up the program. If you see this pop-up: 
 
@@ -288,6 +282,25 @@ So when I archive the folder, those recordings are not in the folder.
 To make a proper archive for sharing, open Camtasia. Open you project. Click File > <strong>Export project as zip</strong>. Make sure "Include all clip bin items" is checked. Save the ZIP file to a location such as Downloads.
 
 PROTIP: Due to the large size of files, I copy the zip file to a network Google Drive, then delete the file from my laptop.
+
+<a name="CC"></a>
+
+## YouTube Closed Captioning and Translations 
+
+Here are the steps you can use to put a video on YouTube:
+
+1. Create a YouT
+
+1. Click the "CC" (for Closed Captioning) at the bottom of the frame so that a red line appears under it.
+2. Click the gear icon for a menu.
+3. Click "Subtitles(CC)" for a list of language options.
+  which I input into Camtasia to sync with audio and visuals. Its highest resolution is 720p HD.
+
+Adding narration at specific spots is relatively simple.
+
+1. Save the 
+1. Convert
+   https://dcmp.org/learn/532-converting-youtube-sbv-subtitles-to-subrip-srt-format
 
 
 ## More Resources
