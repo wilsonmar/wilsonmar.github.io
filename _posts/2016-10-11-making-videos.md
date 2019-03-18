@@ -259,10 +259,12 @@ PROTIP: If you are using a Mac, get a separate monitor of 1900x1080 (Full HD) re
 0. Copy the properties to all visual elements.
 
 0. Generate the video to .mp4 file. Click Share, Local.
-0. Extract narration .srt (SubRip) text file from Camtasia 
+
+0. Extract narration .srt (SubRip) text file from Camtasia (if you created them in Camtasia).
 
 0. Upload to YouTube, Vimeo, DailyMotion, etc.
 0. Upload .srt file to YouTube.
+
 0. Make a backup to a USB drive. Just in case.
 0. Get feedback and revise.
 
@@ -289,18 +291,104 @@ PROTIP: Due to the large size of files, I copy the zip file to a network Google 
 
 Here are the steps you can use to put a video on YouTube:
 
-1. Create a YouT
+PROTIP: Those hard of hearing would appreciate you offering closed captioning in their language.
+
+### See closed captions
+
+1. Use a browser to view an existing video on YouTube, such as this one shown above:
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=ivRuvEIeIY">https://www.youtube.com/watch?v=ivRuvEIeIY</a>
+
+   Alternately, <a target="_blank" href="https://www.youtube.com/watch?v=ivRuvEIeIY">this video</a>.
+
+
+### Download new video
+
+1. Log into YouTube.com
+1. Click the "Create a video or post" icon at the top of the screen. Click "Upload video".
+1. Click the "Public" list and select "Unlisted" until we get it configured.
+1. Switch to your Finder and navigate to your .mp4 video file.
+1. Drag and drop the file (position your cursor on the file, keep holding down the mouse while you drag it to its location, then release when it's on top of the destination).
+
+1. While the file uploads:
+
+   1. Type a title and description, and add tags for the video.
+   1. Click on "Advanced Settings" tab.
+   1. Under "Comments", click "All" and select "All except potentially inappropriate comments".
+   1. Under "Caption certification", select "This content has never aired on television in the U.S.".
+   1. Under "Community contributions" on the right side, check "Allow viewers to contribute translated titles, descriptions, and subtitles/CC".
+   1. Click "Today".
+
+1. Scroll down to select an thumbnail selected by YouTube or click "Custom thumbnail" to upload your own.
+1. Right-click on the URL generated and select "Copy Link Location".
+1. Click "Done".
+1. Switch to your editor to paste it in your blog.
+
+   ### View subtitle
+
+1. Switch back to your channel and click the new video link to <strong>view it</strong>.
+
+   <img align="right" alt="making-videos-youtube-cc-menu-211x274-6841.jpg" width="211" src="https://user-images.githubusercontent.com/300046/54519950-f85a2200-493d-11e9-965f-28c59cf824f1.jpg"></a>
 
 1. Click the "CC" (for Closed Captioning) at the bottom of the frame so that a red line appears under it.
+
+   NOTE: Closed captioning and subtitles mean the same thing.
+
 2. Click the gear icon for a menu.
 3. Click "Subtitles(CC)" for a list of language options.
-  which I input into Camtasia to sync with audio and visuals. Its highest resolution is 720p HD.
+4. Click on "English" (without the "auto-generated") to view the subtitle provided by the video creator. Subtitles for other languages may be added.
 
-Adding narration at specific spots is relatively simple.
+   Alternately, click another language shown.
 
-1. Save the 
-1. Convert
-   https://dcmp.org/learn/532-converting-youtube-sbv-subtitles-to-subrip-srt-format
+   ### Download auto-generated subtitle
+
+1. Click "Add Subtitles/CC".
+1. Click the blue "Add new subtitles or CC" button at the upper right.
+1. Click "Create new subtitles or CC" for the "Transcribe and set timings: English" page that lists subtitled text of your video.
+1. Click "Actions" and select "Download".
+1. Click "OK" to download the "captions.sbv" file. <a target="_blank" href="https://support.google.com/youtube/answer/2734698?hl=en">This page</a> explains that ".sbv" is a "SubViewer" file which must be edited and saved as "UTF-8". There are other formats.
+
+   A subtitle (closed caption) file contains both the text of what is said in the video, plus time codes for when each line of text should be displayed. 
+
+1. Switch to your Finder and navigate your "Downloads" folder.
+1. Move the file to be among your other assets used to create the video.
+1. Optionally, rename the file with a date, such as <tt>captions-2019-12-30a.sbv</tt>.
+1. Right-click on the "captions.sbv" file to select an editor to view the file. Notice time codes such as:
+
+   <pre>0:00:00.279,0:00:04.529</pre>
+
+   PROTIP: Generated sentences are <strong>missing punctuation</strong> such as command and period at the end of each sentence. Hypens in hyphenated words are removed. Some sentences may be inappropriately split up into separate sentences. Generated sentences may also be too long, causing them to take several lines on screen rather than one, which is more readable and cover less of the graphics on screen.
+
+   ### Convert for Camtasia
+
+   PROTIP: Camtasia provides a visual tool for editing captions. But it only works with subtitle files in the .srt (SubRip) format containing time codes in this format (with a sequence number):
+
+   <pre>1
+   00:00:00,599 --> 00:00:04,160
+   >> ALICE: Hi, my name is Alice Miller and this is John Brown
+   </pre>
+
+   This type of file also includes position and style information, which is especially useful for deaf or hard of hearing viewers.
+
+1. In the editor, select all the text (by pressing command+A) and copy it to your clipboard.
+1. Click this URL to go to an on-line conversion site:
+
+   <a target="_blank" href="https://dcmp.org/learn/532-converting-youtube-sbv-subtitles-to-subrip-srt-format">https://dcmp.org/learn/532-converting-youtube-sbv-subtitles-to-subrip-srt-format</a>
+
+   Alternately, go to <a target="_blank" href="https://captionsconverter.com/">https://captionsconverter.com</a>
+
+   ### Translate
+
+1. TODO: Have the file translated to another language.
+
+   https://webtranslateit.com/en/docs/translation_interface/machine_translation/
+   fee service
+
+1. Edit the file to fix what was mis-translated.
+1. Save the file.
+1. Have another native-speaker review the translation.
+
+1. Upload the file to YouTube.
 
 
 ## More Resources
