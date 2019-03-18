@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "How to contribute to Salesforce Non-profits"
-excerpt: "How the Salesforce Benefit corp benefits non-profits, technically"
+title: "How to contribute to a Non-profit using Salesforce"
+excerpt: "An example of a document for volunteers of technical talent"
 tags: [salesforce]
 image:
 # feature: hands-up-1900x500-56276.jpg
@@ -39,7 +39,7 @@ F. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
 
 1. Click <a target="_blank" href="https://coursesites.com/?sig=Mwuk9E96d1zi4kLs58vOveO3Tl8=&courseId=_190749_1&timestamp=1549132709&inviteId=BB?BB_QzCGaVfkHcOjnCyDupFaIrNNbv5DmyN82PEvwEmTOMMtUG+4ivX5IA==#invitation-student">this link to register for training on the Blackboard system</a>
 
-2. Access the YWAM Converge training content <a target="_blank" href="https://blackboard.coursesites.com/ultra/courses/_190749_1/cl/outline">https://blackboard.coursesites.com/ultra/courses/_190749_1/cl/outline</a>
+2. Access the YWAM Converge training content at <a target="_blank" href="https://blackboard.coursesites.com/ultra/courses/_190749_1/cl/outline">https://blackboard.coursesites.com/ultra/courses/_190749_1/cl/outline</a>
 3. Click "YWAM Values" on the left menu to read it.
 4. Click "Start Here" on the left menu to read "Welcome to Converge".
 5. Scroll down to watch the "What is YWAM" video. <strong>Click the volume icon to unmute.</strong>
@@ -59,6 +59,9 @@ F. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
 8. Watch demo video of <a target="_blank" href="https://www.youtube.com/watch?v=jQuuvYIbbTA&feature=youtu.be">How to apply for a Converge intership</a> [2:20] No sound.
 
 9. Watch demo video of <a target="_blank" href="https://youtu.be/ejz9HEbg9Xo">host app</a>. No sound.
+
+https://www.youtube.com/watch?v=hSqbotfxZAA
+Dec 23, 2015
 
 
    ### Pick a project
