@@ -155,9 +155,9 @@ Such as Amazon's cloudfront.net:
    <br /><br />
 
 <a target="_blank" href="https://www.znetlive.com/blog/comparing-top-4-cdns-amazon-cloudfront-vs-google-cloud-cdn-vs-ibm-cloud-delivery-network-vs-azure-content-delivery-network/">Companies offering CDN services</a> include <a target="_blank" href="https://aws.amazon.com/cloudfront/">AWS CloudFront</a>, 
-Microsoft Azure Blob CDN, Google Cloud CDN, Akamai (IBM), CloudFlare, Fastly, etc.
+Microsoft Azure Blob CDN, Google Cloud CDN, Akamai (IBM), CloudFlare, Fastly, Netlify, etc.
 
-Sites running Google Cloud CDN have a single IP address that can run everywhere (do not require a separate regional DNS).
+Sites running Google Cloud CDN have a <strong>single IP address</strong> that can run everywhere (do not require a separate regional DNS).
 IBM provides Wildcard Certificate and Domain Validation (DV) SAN Certificates.
 AWS can encrypt individual fields.
 
@@ -393,9 +393,10 @@ In an elastic cloud enviornment, we need to ensure that our configurations can i
 
 ### Recap
 
-Here is the list of the types of performance testss covered in the previous illustration. 
+Here is the list of the types of performance tests covered in the previous illustration. 
 
-TODO: Video here
+<amp-youtube data-videoid="wg-Cn5A8QKs" layout="responsive" width="480" height="270"></amp-youtube>
+<br />
 
 Items in blue font relate specifically to cloud environments built using automation, such as the <strong>threshold to begin scale-out</strong>.
 
