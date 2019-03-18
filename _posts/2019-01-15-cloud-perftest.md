@@ -38,7 +38,7 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 ## Software Testing Tools Landscape
 
-<amp-youtube data-videoid="ZVwexmXsRTA" layout="responsive" width="480" height="270"></amp-youtube>
+<amp-youtube data-videoid="vUbV4stv_zY" layout="responsive" width="480" height="270"></amp-youtube>
 <br />
 
 In this diagram, a lot is going on because I wanted to describe the <strong>overlap</strong> between key tools for both functional and performance testing, supporting unit to integration stages of development. 
