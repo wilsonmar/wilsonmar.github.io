@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JPetstore"
+title: "JPetstore (version 6)"
 excerpt: "Sample Java Spring app for your abuse and amusement"
 tags: [Clouds, IoT]
 shorturl: "https://goo.gl/Nfu9ps"
@@ -26,6 +26,11 @@ The app provides a shopping cart because it's a common use case on the internet.
 uses it as a sample app in their
 <a target="_blank" href="http://www.neotys.com/documents/doc/neoload/latest/en/html/#1609.htm">
 docs</a>.
+
+A simple way is to pull from DockerHub:
+
+   <pre>docker run -d -p 8080:8080 jloisel/jpetstore6</pre>
+
 
 ## UI assessment
 
