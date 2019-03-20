@@ -351,7 +351,7 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 
 <ul>
 <li> Franklin Institute Science Museum</li>
-<!-- <li><a target="_blank" href="http://muttermuseum.org/">Mütter Museum</a> [weird] 19 S. 22nd St.  19103
+<li><a target="_blank" href="http://muttermuseum.org/">Mütter Museum</a> [weird] 19 S. 22nd St.  19103</li>
 <li><a target="_blank" href="http://www.libertymuseum.org/"><strong>National Liberty Museum</strong></a></li>
 <li><a target="_blank" href="http://www.pafa.org/">Pennsylvania Academy of the Fine Arts</a></li>
 <li><a target="_blank" href="http://www.thegalleriesatmoore.org/">Moore College of Art and Design Galleries</a></li>
