@@ -351,7 +351,7 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 
 <ul>
 <li> Franklin Institute Science Museum</li>
-<li><a target="_blank" href="http://muttermuseum.org/">Mütter Museum</a> [weird] 19 S. 22nd St.  19103
+<!-- <li><a target="_blank" href="http://muttermuseum.org/">Mütter Museum</a> [weird] 19 S. 22nd St.  19103
 <li><a target="_blank" href="http://www.libertymuseum.org/"><strong>National Liberty Museum</strong></a></li>
 <li><a target="_blank" href="http://www.pafa.org/">Pennsylvania Academy of the Fine Arts</a></li>
 <li><a target="_blank" href="http://www.thegalleriesatmoore.org/">Moore College of Art and Design Galleries</a></li>
@@ -363,8 +363,7 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 <li>Academy of Natural Sciences</li>
 <li><a target="_blank" href="http://www.rosenbach.org/main.html">Rosenbach Museum and Library</a></li>
 <li><a target="_blank" href="http://www.philamuseum.org/main.asp"><strong>Philadelphia Museum of Art</strong></a></li>
-<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="scripts/allr.pl?&c=c&search=11070"><font COLOR="#FF0000">Posters from this museum</font></a></li -->
-<!-- <li><a target="_blank" href="http://www.rodinmuseum.org/">Rodin Museum at the Philadelphia Museum of Art</a></li>
+<li><a target="_blank" href="http://www.rodinmuseum.org/">Rodin Museum at the Philadelphia Museum of Art</a></li>
 <li> Barnes Foundation Collection, Merion</li>
 <li> Museum of American Art</li>
 <li> University Museum of Archaeology and Anthropology</li>
