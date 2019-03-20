@@ -368,10 +368,9 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 <li> Franklin Institute Science Museum</li>
 <li> Museum of American Art</li>
 <li> University Museum of Archaeology and Anthropology</li>
-<li><a target="_blank" href="http://www.woodmereartmuseum.org/">Woodmere Art Museum</a></li>
-
+<li><a target="_blank" href="https://www.woodmereartmuseum.org/">Woodmere Art Museum</a></li>
 <li>Ristorante Pesto</li>
-<li><a target="_blank" href="http://www.thedailymeal.com/vetri">Vetri Cucina</a> <a target="_blank" href="https://www.thedailymeal.com/101-best-restaurants-america-2019/slide-50">[#50]</a></li>
+<li><a target="_blank" href="https://www.thedailymeal.com/vetri">Vetri Cucina</a> <a target="_blank" href="https://www.thedailymeal.com/101-best-restaurants-america-2019/slide-50">[#50]</a></li>
 </ul>
 
 ### Pittsburgh:
