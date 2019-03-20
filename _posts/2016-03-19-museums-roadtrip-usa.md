@@ -350,6 +350,7 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 ### Philadelphia:
 
 <ul>
+<li> Franklin Institute Science Museum</li>
 <li><a target="_blank" href="http://muttermuseum.org/">Mütter Museum</a> [weird] 19 S. 22nd St.  19103
 <li><a target="_blank" href="http://www.libertymuseum.org/"><strong>National Liberty Museum</strong></a></li>
 <li><a target="_blank" href="http://www.pafa.org/">Pennsylvania Academy of the Fine Arts</a></li>
@@ -363,12 +364,11 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 <li><a target="_blank" href="http://www.rosenbach.org/main.html">Rosenbach Museum and Library</a></li>
 <li><a target="_blank" href="http://www.philamuseum.org/main.asp"><strong>Philadelphia Museum of Art</strong></a></li>
 <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="scripts/allr.pl?&c=c&search=11070"><font COLOR="#FF0000">Posters from this museum</font></a></li -->
-<li><a target="_blank" href="http://www.rodinmuseum.org/">Rodin Museum at the Philadelphia Museum of Art</a></li>
-<li> Barnes Foundation Collection (in Merion, PA)</li>
-<li> Franklin Institute Science Museum</li>
+<!-- <li><a target="_blank" href="http://www.rodinmuseum.org/">Rodin Museum at the Philadelphia Museum of Art</a></li>
+<li> Barnes Foundation Collection, Merion</li>
 <li> Museum of American Art</li>
 <li> University Museum of Archaeology and Anthropology</li>
-<!-- <li><a target="_blank" href="https://www.woodmereartmuseum.org/">Woodmere Art Museum</a></li>
+<li><a target="_blank" href="https://www.woodmereartmuseum.org/">Woodmere Art Museum</a></li>
 <li>Ristorante Pesto</li>
 <li><a target="_blank" href="https://www.thedailymeal.com/vetri">Vetri Cucina</a> <a target="_blank" href="https://www.thedailymeal.com/101-best-restaurants-america-2019/slide-50">[#50]</a></li> -->
 </ul>
