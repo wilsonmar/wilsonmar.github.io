@@ -27,9 +27,25 @@ uses it as a sample app in their
 <a target="_blank" href="http://www.neotys.com/documents/doc/neoload/latest/en/html/#1609.htm">
 docs</a>.
 
-A simple way is to pull from DockerHub:
+## Docker Quick Start 
 
-   <pre>docker run -d -p 8080:8080 jloisel/jpetstore6</pre>
+1. If you have Docker daemon installed, a simple way is to pull a public Docker image on DockerHub:
+
+   <pre><strong>docker run -d -p 8080:8080 jloisel/jpetstore6</strong></pre>
+
+2. While it's running, view the JPetstore front page:
+
+   <a target="_blank" href="http://localhost:8080/actions/Catalog.action">http://localhost:8080/actions/Catalog.action</a>
+
+1. If you have Docker daemon installed, a simple way is to pull a public Docker image on DockerHub:
+
+   <pre><strong>docker run -d -p 8080:8080 jloisel/jpetstore6</strong></pre>
+
+3. Save disk space by removing the download
+
+   <pre><strong>docker run -d -p 8080:8080 jloisel/jpetstore6</strong></pre>
+
+
 
 
 ## UI assessment

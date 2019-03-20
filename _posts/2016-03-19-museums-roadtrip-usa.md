@@ -72,6 +72,9 @@ Amtrak's Empire Builder route</a> between Chicago to Seattle and Portland takes 
 <a target="_blank" title="Amtrak's Empire Builder route" href="https://www.amtrak.com/empire-builder-train">
 <img alt="click on red dots in travel train glasgow empire builder 650x365.png" width="650" height="365" src="https://cloud.githubusercontent.com/assets/23631541/21246999/7d230200-c2e9-11e6-9fca-1a460dac2399.png"></a>
 
+## US Presidential Museums
+
+<a target="_blank" href="https://www.archives.gov/presidential-libraries">https://www.archives.gov/presidential-libraries</a>
 
 <a name="DownEastCoast"></a>
 
@@ -347,7 +350,8 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 ### Philadelphia:
 
 <ul>
-<li><a target="_blank" href="http://www.libertymuseum.org/">National Liberty Museum</a></li>
+<li><a target="_blank" href="http://muttermuseum.org/">Mütter Museum</a> [weird] 19 S. 22nd St.  19103
+<li><a target="_blank" href="http://www.libertymuseum.org/"><strong>National Liberty Museum</strong></a></li>
 <li><a target="_blank" href="http://www.pafa.org/">Pennsylvania Academy of the Fine Arts</a></li>
 <li><a target="_blank" href="http://www.thegalleriesatmoore.org/">Moore College of Art and Design Galleries</a></li>
 <li><a target="_blank" href="http://www.museum.upenn.edu/">University of Pennsylvania Museum of Archaeology and Anthropology</a></li>
@@ -363,9 +367,11 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 <li> Barnes Foundation Collection (in Merion, PA)</li>
 <li> Franklin Institute Science Museum</li>
 <li> Museum of American Art</li>
-<li> Rodin Museum</li>
 <li> University Museum of Archaeology and Anthropology</li>
 <li><a target="_blank" href="http://www.woodmereartmuseum.org/">Woodmere Art Museum</a></li>
+
+<li>Ristorante Pesto</li>
+<li><a target="_blank" href="http://www.thedailymeal.com/vetri">Vetri Cucina</a> <a target="_blank" href="https://www.thedailymeal.com/101-best-restaurants-america-2019/slide-50">[#50]</a></li>
 </ul>
 
 ### Pittsburgh:
@@ -670,10 +676,16 @@ the 4th longest in the world (after Nile, Amazon, Yangtze).<br />
 <li><a target="_blank" href="http://oi.uchicago.edu/OI/MUS/OI_Museum.html">Oriental Institute Museum at the University of Chicago</a></li>
 <li><a target="_blank" href="http://smartmuseum.uchicago.edu/">Smart Museum of Art at the University of Chicago</a></li>
 <li><a target="_blank" href="http://www.uima-art.org/">Ukrainian Institute of Modern Art</a></li>
-<li><a target="_blank" href="https://www.obamalibrary.gov/">
-Barack Obama Presidential Library</a>, Hoffman Estates</li>
+<li><a target="_blank" href="https://www.obamalibrary.gov/">Barack Obama Presidential Library</a>, Hoffman Estates</li>
+
+<li>Purple Pig</li>
+<li><a target="_blank" href="http://www.zahavrestaurant.com/">Zahav</a> [Israeli restaurant]</li>
+<li><a target="_blank" href="http://www.thedailymeal.com/au-cheval">Au Cheval burgers</a> <a target="_blank" href="https://www.thedailymeal.com/eat/101-best-casual-restaurants-america-2018-gallery/slide-6">[#29]</a></li>
+<li><a target="_blank" href="http://www.thedailymeal.com/fat-rice">Fat Rice</a>, Chicago <a target="_blank" href="https://www.thedailymeal.com/eat/101-best-casual-restaurants-america-2018-gallery/slide-74">[#58]</a></li>
+<li><a target="_blank" href="http://www.thedailymeal.com/red-apple-1">Red Apple Buffet</a></li>
 </ul>
 
+Farnsworth House, 14520 River Road, Plano, IL 60545
 
 <a name="MO"></a>
 
@@ -896,8 +908,6 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 <li><a target="_blank" href="https://www.thehenryford.org/visit/greenfield-village">Greenfield village</a></li>
 <li><a target="_blank" href="http://cranbrook.art.museum/">Cranbrook Art Museum</a>, Bloomfield Hills</li>
 <li><a target="_blank" href="http://www.dennosmuseum.org/">Dennos Museum Center</a>, Traverse City</li>
-<li><a target="_blank" href="http://www.dia.org/">Detroit Institute of Art</strong></a></li>
-<li><a target="_blank" href="http://www.diamondial.org/">Detroit Institute of Arts Image Database</a></li>
 <li><a target="_blank" href="http://www.flintarts.org/">Flint Institute of Arts</a></li>
 <li><a target="_blank" href="http://www.gramonline.org/">Grand Rapids Art Museum</a></li>
 <li><a target="_blank" href="http://www.umich.edu/~kelseydb/">Kelsey Museum of Archaeology at the University of Michigan</a>, Ann Arbor</li>
@@ -907,8 +917,15 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 <li><a target="_blank" href="http://www.shianet.org/~sac/sac.htm">Shiawassee Arts Center</a>, Owosso</li>
 <li><a target="_blank" href="http://www.umma.umich.edu/">University of Michigan Museum of Art</a>, Ann Arbor</li>
 <li><a target="_blank" href="http://www.uica.org/">Urban Institute for Contemporary Arts</a>, Grand Rapids</li>
-<li><a target="_blank" href="http://www.fordlibrarymuseum.gov/">
-Gerald R. Ford Presidential Library</a>, Ann Arbor</li>
+<li><a target="_blank" href="http://www.fordlibrarymuseum.gov/">Gerald R. Ford Presidential Library</a>, Ann Arbor</li>
+</ul>
+
+### Detroit
+
+<ul>
+<li><a target="_blank" href="http://www.dia.org/">Detroit Institute of Art</strong></a></li>
+<li><a target="_blank" href="http://www.diamondial.org/">Detroit Institute of Arts Image Database</a></li>
+<li><a target="_blank" href="http://www.thedailymeal.com/lafayette-coney-islandt">Lafayette vs. American Coney Island</a> hot dogs <a target="_blank" href="https://www.thedailymeal.com/eat/101-best-casual-restaurants-america-2018-gallery/slide-6">[#97]</a></li>
 </ul>
 
 
@@ -916,6 +933,8 @@ Gerald R. Ford Presidential Library</a>, Ann Arbor</li>
 <a name="OH"></a>
 
 > <strong> Ohio </strong>
+
+<li><a target="_blank" href="http://www.toledomuseum.org/"> Toledo Museum of Art</a></li>
 
 ### Cincinnati:
 
@@ -927,8 +946,9 @@ Gerald R. Ford Presidential Library</a>, Ann Arbor</li>
 ### Cleveland:
 
 <ul>
+<li><a target="_blank" href="https://www.rockhall.com/"> Rock and Roll Hall of Fame</a>, Cleveland</li>
 <li><a target="_blank" href="http://www.clevelandart.org/"> Cleveland Museum of Art</a></li>
-<li><a target="_blank" href="http://www.toledomuseum.org/"> Toledo Museum of Art</a></li>
+<li><a target="_blank" href="https://www.thedailymeal.com/greenhouse-tavern">The Greenhouse Tavern</a>, Cleveland <a target="_blank" href="https://www.thedailymeal.com/101-best-restaurants-america-2019/slide-4">[#97]</a></li>
 </ul>
 
 
@@ -1286,34 +1306,53 @@ The trail goes from St. Louis and Independence, Missouri through Kansas and Nebr
 > <strong> Wisconsin </strong>
 
 <ul>
-<li><a target="_blank" href="http://www.eisnermuseum.org/">William F. Eisner Museum of Advertising and Design</a>, Milwaukee</li>
 <li><a target="_blank" href="http://www.lvm.wisc.edu/">Elvehjem Museum of Art at the University of Wisconsin</a>, Madison</li>
 <li><a target="_blank" href="http://www.fairfieldartmuseum.com/">Fairfield Public Gallery</a>, Sturgeon Bay</li>
-<li><a target="_blank" href="http://www.marquette.edu/haggerty/">Haggerty Museum of Art at Marquette University</a>, Milwaukee</li>
 <li><a target="_blank" href="http://jmkac.com/">John Michael Kohler Arts Center</a>, Sheboygan</li>
 <li><a target="_blank" href="http://www.lywam.org/">Leigh Yawkey Woodson Art Museum</a>, Wausau</li>
 <li><a target="_blank" href="http://www.mmoca.org/">Madison Museum of Contemporary Art</a></li>
-<li><a target="_blank" href="http://www.mam.org/">Milwaukee Art Museum</a></li>
 <li><a target="_blank" href="http://www.focol.org/~paineart/">Paine Art Center and Arboretum</a>, Oshkosh</li>
 <li><a target="_blank" href="http://www.ramart.org/">Racine Art Museum</a></li>
 <li><a target="_blank" href="http://www.wbartmuseum.com/">West Bend Art Museum</a></li>
 <li><a target="_blank" href="http://www.beloit.edu/~museum/wright/index.htm">Wright Museum of Art at Beloit College</a>, Beloit</li>
 </ul>
 
+### Milwaukee:
+
+<ul>
+<li><a target="_blank" href="http://www.eisnermuseum.org/">William F. Eisner Museum of Advertising and Design</a>, Milwaukee</li>
+<li><a target="_blank" href="http://www.marquette.edu/haggerty/">Haggerty Museum of Art at Marquette University</a>, Milwaukee</li>
+<li><a target="_blank" href="http://www.mam.org/">Milwaukee Art Museum</a></li>
+<li><a target="_blank" href="http://www.thedailymeal.com/restaurants/ristorante-bartolotta">Ristorante Bartolotta</a> <a target="_blank" href="https://www.thedailymeal.com/101-best-restaurants-america-2019/slide-4">[#94]</a></li>
+</ul>
+
 <a name="MN"></a>
 
 > <strong> Minnesota </strong>
+
+### St. Paul:
 
 <ul>
 <li><a target="_blank" href="http://www.nwc.edu/academic/art/denler/denler.htm">Denler Art Gallery at Northwestern College</a> St. Paul</li>
 <li><a target="_blank" href="http://www.asmat.org/">American Museum of Asmat Art</a> St. Paul</li>
 <li><a target="_blank" href="http://goldstein.che.umn.edu/">Goldstein Museum of Design at the University of Minnesota</a> St. Paul</li>
+<li><a target="_blank" href="http://www.mmaa.org/">Minnesota Museum of American Art</a>, St. Paul</li>
+</ul>
+
+### Minneapolis:
+
+<ul>
 <li><a target="_blank" href="http://www.mtn.org/MIA/">The Minneapolis Institute of Arts</a></li>
 <li><a target="_blank" href="http://www.artsmia.org/">Minneapolis Institute of Arts</strong></a></li>
-<li><a target="_blank" href="http://www.mmaa.org/">Minnesota Museum of American Art</a>, St. Paul</li>
-<li><a target="_blank" href="http://www.d.umn.edu/tma/">Tweed Museum of Art at the University of Minnesota</a>, Duluth</li>
 <li><a target="_blank" href="http://www.walkerart.org/">Walker Art Center</a>, Minneapolis</li>
 <li><a target="_blank" href="http://www.weisman.umn.edu/">Weisman Art Museum at the University of Minnesota</a>, Minneapolis</li>
+</ul>
+
+### Duluth (North coast of Lake Superior)
+
+<ul>
+<li><a target="_blank" href="https://maps.roadtrippers.com/trips/17520840?lng=-103.03900847280016&lat=42.950891540446264&z=4.526513924866736">North shore scenic drive</a>
+<li><a target="_blank" href="http://www.d.umn.edu/tma/">Tweed Museum of Art at the University of Minnesota</a>, Duluth</li>
 </ul>
 
 
@@ -1348,6 +1387,7 @@ The trail goes from St. Louis and Independence, Missouri through Kansas and Nebr
 <ul>
 <li><a target="_blank" href="http://www.ndmoa.com/">North Dakota Museum of Art</a>, Grand Forks</li>
 <li><a target="_blank" href="http://www.plainsart.org/">Plains Art Museum</a>, Fargo</li>
+<li><a target="_blank" href="https://www.thedailymeal.com/restaurants/passage-india">Passage to India lunch buffet</a>, Fargo</li>
 </ul>
 
 <a name="MT"></a>
@@ -1360,8 +1400,12 @@ The trail goes from St. Louis and Independence, Missouri through Kansas and Nebr
 <li><a target="_blank" href="http://www.cmrussell.org/">C.M. Russell Museum</a>, Great Falls</li>
 <li><a target="_blank" href="http://www.artmissoula.org/">Art Museum of Missoula</a></li>
 <li><a target="_blank" href="http://www.umt.edu/partv/famus/">University of Montana Museum of Fine Arts</a>, Missoula</li>
-<li><a target="_blank" href="http://yellowstone.artmuseum.org/">Yellowstone Art Museum</a>, Billings</li>
+
+<li><a target="_blank" href="https://www.museumoftherockies.org/">Museum of the Rockies</a>, Bozeman</li>
+<li><a target="_blank" href="http://www.compustory.com/">American Computer & Robotics Museum</a>, Bozeman</li>
 <li><a target="_blank" href="https://www.tippetrise.org/">Tippet Rise Art Center</a>, near Bozeman</li>
+
+<li><a target="_blank" href="http://yellowstone.artmuseum.org/">Yellowstone Art Museum</a>, Billings</li>
 </ul>
 
 
@@ -1370,7 +1414,6 @@ The trail goes from St. Louis and Independence, Missouri through Kansas and Nebr
 > <strong> Idaho </strong>
 
 <ul>
-<li> Coeur d'Lane</li>
 <li><a target="_blank" href="http://www.boiseartmuseum.org/">Boise Art Museum</a></li>
 </ul>
 
