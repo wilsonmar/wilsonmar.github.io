@@ -359,7 +359,7 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 <li><a target="_blank" href="http://www.lasalle.edu/services/art-mus/">La Salle University Art Museum</a></li>
 <li><a target="_blank" href="http://www.icaphila.org/">Institute of Contemporary Art</a></li>
 <li><a target="_blank" href="http://www.upenn.edu/ARG/index.html">Arthur Ross Gallery at the University of Pennsylvania</a></li>
-<li> Academy of Natural Sciences</li>
+<li>Academy of Natural Sciences</li>
 <li><a target="_blank" href="http://www.rosenbach.org/main.html">Rosenbach Museum and Library</a></li>
 <li><a target="_blank" href="http://www.philamuseum.org/main.asp"><strong>Philadelphia Museum of Art</strong></a></li>
 <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="scripts/allr.pl?&c=c&search=11070"><font COLOR="#FF0000">Posters from this museum</font></a></li -->
@@ -370,7 +370,7 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 <li> University Museum of Archaeology and Anthropology</li>
 <li><a target="_blank" href="https://www.woodmereartmuseum.org/">Woodmere Art Museum</a></li>
 <li>Ristorante Pesto</li>
-<li><a target="_blank" href="https://www.thedailymeal.com/vetri">Vetri Cucina</a> <a target="_blank" href="https://www.thedailymeal.com/101-best-restaurants-america-2019/slide-50">[#50]</a></li>
+<!-- <li><a target="_blank" href="https://www.thedailymeal.com/vetri">Vetri Cucina</a> <a target="_blank" href="https://www.thedailymeal.com/101-best-restaurants-america-2019/slide-50">[#50]</a></li> -->
 </ul>
 
 ### Pittsburgh:
