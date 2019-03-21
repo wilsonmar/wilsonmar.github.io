@@ -15,9 +15,10 @@ comments: true
 
 {% include _toc.html %}
 
-This page lists where one can visit and see the most important cultural artifacts in America (given unlimited time and money). 
+This page lists where one can visit, see, and eat at the most important cultural artifacts in America (given unlimited time and money). 
+Maybe enjoy visiting sites even more using AR (Augmented Reality) there.
 
-I hope that someday soon everyone can see treasures from anywhere using VR (Virtual Reality) glasses. Then enjoy visiting sites even more using AR (Augmented Reality).
+I hope that someday soon everyone can see treasures from anywhere using VR (Virtual Reality) glasses. 
 
 It's a large country, so sites here are listed by each state of the union, along natural geography:
 
@@ -138,7 +139,7 @@ John F. Kennedy Presidential Library and Museum</a>, Columbia Point, Boston</li>
 <li>MIT Museum</li>
 <li>Arthur M. Sackler Museum</li>
 <li><a target="_blank" href="http://www.brandeis.edu/rose/">Rose Art Museum at Brandeis University</a>, Waltham</li>
-<li>Henry Wadsworth Longfellow House, Cambridge, Massachusetts</li>
+<li type="square">Henry Wadsworth Longfellow House, Cambridge, Massachusetts</li>
 </ul>
 
 ### Western Mass Turnpike 90:
@@ -154,13 +155,13 @@ John F. Kennedy Presidential Library and Museum</a>, Columbia Point, Boston</li>
 <li><a target="_blank" href="http://www.nrm.org/">Norman Rockwell Museum</a>, Stockbridge</li>
 <li><a target="_blank" href="https://artmuseum.mtholyoke.edu/">Mount Holyoke College Art Museum</a>, South Hadley</li>
 <li><a target="_blank" href="http://www.berkshiremuseum.org/">Berkshire Museum</a>, Pittsfield</li>
-<li>Herman Melville's Arrowhead, Pittsfield</li>
+<li type="square">Herman Melville's Arrowhead, Pittsfield</li>
 <li><a target="_blank" href="http://www.quadrangle.org/">The Springfield Museums at the Quadrangle</a></li>
 <li>Dr. Seuss Memorial, Springfield</li>
-<li>Site of Thoreau's Cabin, Walden Pond, Concord</li>
-<li>Wayside (home of Nathaniel Hawthorne, Louisa May Alcott, and Margaret Sidney), Concord</li>
-<li>Ralph Waldo Emerson Home, Concord</li>
-<li>Louisa May Alcott's Orchard House, Concord</li>
+<li type="square">Site of Thoreau's Cabin, Walden Pond, Concord</li>
+<li type="square">Wayside (home of Nathaniel Hawthorne, Louisa May Alcott, and Margaret Sidney), Concord</li>
+<li type="square">Ralph Waldo Emerson Home, Concord</li>
+<li type="square">Louisa May Alcott's Orchard House, Concord</li>
 </ul>
 
 ### Northward Mass up 95:
@@ -250,17 +251,18 @@ John F. Kennedy Presidential Library and Museum</a>, Columbia Point, Boston</li>
 > <strong>New Jersey</strong>
 
 <ul>
+<li><a target="_blank" href="http://www.jerseycitymuseum.org/">Jersey City Museum</a></li>
+<li><a target="_blank" href="http://www.newarkmuseum.org/">Newark Museum</a></li>
+<li><a target="_blank" href="http://www.state.nj.us/state/museum/">New Jersey State Museum</a>, Trenton</li>
+<li><a target="_blank" href="http://www.zimmerlimuseum.rutgers.edu/">Jane Voorhees Zimmerli Art Museum at Rutgers University</a>, Brunswick</li>
 <li><a target="_blank" href="http://www.princetonartmuseum.org/">Art Museum at Princeton University</a>, Princeton</li>
+
 <li><a target="_blank" href="http://thebergenmuseum.com/">Bergen Museum</a>, Hackensack</li>
 <li><a target="_blank" href="http://www.groundsforsculpture.org/">Grounds For Sculpture</a>, Hamilton</li>
-<li><a target="_blank" href="http://www.jerseycitymuseum.org/">Jersey City Museum</a></li>
 <li><a target="_blank" href="https://www.montclairartmuseum.org/">Montclair Art Museum</a></li>
 <li><a target="_blank" href="http://morrismuseum.org/">Morris Museum</a>, Morristown</li>
-<li><a target="_blank" href="http://www.state.nj.us/state/museum/">New Jersey State Museum</a>, Trenton</li>
-<li><a target="_blank" href="http://www.newarkmuseum.org/">Newark Museum</a></li>
 <li><a target="_blank" href="http://www.noyesmuseum.org/">Noyes Museum of Art</a>, Oceanville</li>
 <li><a target="_blank" href="http://www.wheatonvillage.org/">Wheaton Village Museum of American Glass</a>, Millville</li>
-<li><a target="_blank" href="http://www.zimmerlimuseum.rutgers.edu/">Jane Voorhees Zimmerli Art Museum at Rutgers University</a>, Brunswick</li>
 </ul>
 
 <a name="NYC"></a>
@@ -272,7 +274,7 @@ John F. Kennedy Presidential Library and Museum</a>, Columbia Point, Boston</li>
 Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 </ul>
 
-### New York City:
+### New York City (Manhattan)
 
 <ul>
 <li><strong>Metropolitan Museum of Art</strong> and the Cloisters</li>
@@ -308,10 +310,8 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 <li><a target="_blank" href="http://www.ukrainianmuseum.org/">Ukrainian Museum</a></li>
 <li><a target="_blank" href="http://www.whitney.org/"><strong>Whitney Museum of American Art</strong></a></li>
 <li> American Museum of Natural History</li>
-<li> Brooklyn Museum</li>
 <li> Gallery of Modern Art</li>
-<li> Morgan Library</li>
-<li> Museum of Holograph</li>
+<li> GONE: Museum of Holography</li>
 <li><a target="_blank" href="http://www.metmuseum.org/">Metropolitan Museum of Art (the Met)</a></li>
 <li><a target="_blank" href="http://www.guggenheim.org/new_york_index.shtml"><strong>Guggenheim Museum</strong></a></li>
 <li>Solomon R. Guggenheim Museum, with
@@ -321,6 +321,12 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 <li><a target="_blank" href="http://www.nyu.edu/greyart/">Grey Art Gallery at New York University</a></li>
 <li><a target="_blank" href="http://www.frick.org/"> <strong>Frick Collection</strong></a></li>
 <li><a target="_blank" href="http://hispanicsociety.org/">Hispanic Society of America</a></li>
+</ul>
+
+### New York City (Brooklyn)
+
+<ul>
+<li> Brooklyn Museum</li>
 </ul>
 
 
@@ -368,8 +374,9 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 <li> Museum of American Art</li>
 <li> University Museum of Archaeology and Anthropology</li>
 <li><a target="_blank" href="https://www.woodmereartmuseum.org/">Woodmere Art Museum</a></li>
-<li>Ristorante Pesto</li>
-<li><a target="_blank" href="https://www.thedailymeal.com/vetri">Vetri Cucina</a> <a target="_blank" href="https://www.thedailymeal.com/101-best-restaurants-america-2019/slide-50">[#50]</a></li> -->
+<br />
+<li type="circle">Ristorante Pesto</li>
+<li type="circle"><a target="_blank" href="https://www.thedailymeal.com/vetri">Vetri Cucina</a> <a target="_blank" href="https://www.thedailymeal.com/101-best-restaurants-america-2019/slide-50">[#50]</a></li>
 </ul>
 
 ### Pittsburgh:
@@ -559,6 +566,31 @@ Jimmy Carter Presidential Library and Museum</a>, Atlanta</li>
 
 > <strong> Florida</strong>
 
+### Northwest on 75 up the Gulf coast 
+
+<ul>
+<li><a target="_blank" href="http://www.ringling.org/">John and Mable Ringling Museum of Art</a>, Sarasota</li>
+<li> Fort Myers Edison Winter Home</li>
+
+<li><a target="_blank" href="http://www.tampagov.net/dept_Museum/">Tampa Museum of Art</a></li>
+<li><a target="_blank" href="http://cam.arts.usf.edu/">University of South Florida Contemporary Art Museum</a>, Tampa</li>
+
+<li><a target="_blank" href="http://floridamuseum.org/">Florida International Museum</a>, St. Petersburg</li>
+<li><a target="_blank" href="http://www.fine-arts.org/">Museum of Fine Arts</a>, St. Petersburg</li>
+<li><a target="_blank" href="http://salvadordalimuseum.org/">Salvador Dal&iacute; Museum</a>, St. Petersburg</li>
+<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="scripts/allr.pl?&c=c&search=11054"><font COLOR="#FF0000">Posters from this museum</font></a></li -->
+
+
+<li> Florida State Museum, Gainsville </li>
+<li><a target="_blank" href="http://www.harn.ufl.edu/">Harn Museum at the University of Florida</a>, Gainesville</li>
+<li><a target="_blank" href="http://www.appletonmuseum.org/">Appleton Museum of Art</a>, Ocala
+</li>
+
+<li><a target="_blank" href="http://www.thebrogan.org/">Mary Brogan Museum of Art and Science</a>, Tallahassee</li>
+<li><a target="_blank" href="http://www.pensacolamuseumofart.org/">Pensacola Museum of Art</a><li><a target="_blank" href="http://www.mofa.fsu.edu/">Florida State University Museum of Fine Arts</a>, Tallahassee</li>
+</li>
+</ul>
+
 ### South down the East coast 
 
 <ul>
@@ -602,35 +634,10 @@ Jimmy Carter Presidential Library and Museum</a>, Atlanta</li>
 <li><a target="_blank" href="http://www.bocamuseum.org/">Boca Raton Museum of Art</a></li>
 <li><a target="_blank" href="http://www.norton.org/"><strong>Norton Museum of Art</strong></a>, West Palm Beach</li>
 <li><a target="_blank" href="http://www.lowemuseum.com/">Lowe Art Museum at the University of Miami</a>, Coral Gables</li>
-
-<li><a target="_blank" href="https://www.trumanlittlewhitehouse.com/">Harry S. Truman Little White House</a>, Key West</li>
+<br />
 <li><a target="_blank" href="https://www.nps.gov/ever/planyourvisit/svdirections.htm">Shark Valley Observation Tower</a>, E of Miami</li>
+<li><a target="_blank" href="https://www.trumanlittlewhitehouse.com/">Harry S. Truman Little White House</a>, Key West</li>
 <li><a target="_blank" href="http://www.gulfcoastmuseum.org/">Gulf Coast Museum of Art</a>, Largo (the southern most point in the continental US)</li>
-</ul>
-
-### Northwest on 75 up the Gulf coast 
-
-<ul>
-<li><a target="_blank" href="http://www.ringling.org/">John and Mable Ringling Museum of Art</a>, Sarasota</li>
-<li> Fort Myers Edison Winter Home</li>
-
-<li><a target="_blank" href="http://www.tampagov.net/dept_Museum/">Tampa Museum of Art</a></li>
-<li><a target="_blank" href="http://cam.arts.usf.edu/">University of South Florida Contemporary Art Museum</a>, Tampa</li>
-
-<li><a target="_blank" href="http://floridamuseum.org/">Florida International Museum</a>, St. Petersburg</li>
-<li><a target="_blank" href="http://www.fine-arts.org/">Museum of Fine Arts</a>, St. Petersburg</li>
-<li><a target="_blank" href="http://salvadordalimuseum.org/">Salvador Dal&iacute; Museum</a>, St. Petersburg</li>
-<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="scripts/allr.pl?&c=c&search=11054"><font COLOR="#FF0000">Posters from this museum</font></a></li -->
-
-
-<li> Florida State Museum, Gainsville </li>
-<li><a target="_blank" href="http://www.harn.ufl.edu/">Harn Museum at the University of Florida</a>, Gainesville</li>
-<li><a target="_blank" href="http://www.appletonmuseum.org/">Appleton Museum of Art</a>, Ocala
-</li>
-
-<li><a target="_blank" href="http://www.thebrogan.org/">Mary Brogan Museum of Art and Science</a>, Tallahassee</li>
-<li><a target="_blank" href="http://www.pensacolamuseumofart.org/">Pensacola Museum of Art</a><li><a target="_blank" href="http://www.mofa.fsu.edu/">Florida State University Museum of Fine Arts</a>, Tallahassee</li>
-</li>
 </ul>
 
 
@@ -675,15 +682,15 @@ the 4th longest in the world (after Nile, Amazon, Yangtze).<br />
 <li><a target="_blank" href="http://smartmuseum.uchicago.edu/">Smart Museum of Art at the University of Chicago</a></li>
 <li><a target="_blank" href="http://www.uima-art.org/">Ukrainian Institute of Modern Art</a></li>
 <li><a target="_blank" href="https://www.obamalibrary.gov/">Barack Obama Presidential Library</a>, Hoffman Estates</li>
-
-<li>Purple Pig</li>
-<li><a target="_blank" href="http://www.zahavrestaurant.com/">Zahav</a> [Israeli restaurant]</li>
-<li><a target="_blank" href="http://www.thedailymeal.com/au-cheval">Au Cheval burgers</a> <a target="_blank" href="https://www.thedailymeal.com/eat/101-best-casual-restaurants-america-2018-gallery/slide-6">[#29]</a></li>
-<li><a target="_blank" href="http://www.thedailymeal.com/fat-rice">Fat Rice</a>, Chicago <a target="_blank" href="https://www.thedailymeal.com/eat/101-best-casual-restaurants-america-2018-gallery/slide-74">[#58]</a></li>
-<li><a target="_blank" href="http://www.thedailymeal.com/red-apple-1">Red Apple Buffet</a></li>
+<li type="square">Farnsworth House, 14520 River Road, Plano, IL 60545</li>
+<br />
+<li type-"circle">Purple Pig</li>
+<li type-"circle"><a target="_blank" href="http://www.zahavrestaurant.com/">Zahav</a> [Israeli restaurant]</li>
+<li type-"circle"><a target="_blank" href="http://www.thedailymeal.com/au-cheval">Au Cheval burgers</a> <a target="_blank" href="https://www.thedailymeal.com/eat/101-best-casual-restaurants-america-2018-gallery/slide-6">[#29]</a></li>
+<li type-"circle"><a target="_blank" href="http://www.thedailymeal.com/fat-rice">Fat Rice</a>, Chicago <a target="_blank" href="https://www.thedailymeal.com/eat/101-best-casual-restaurants-america-2018-gallery/slide-74">[#58]</a></li>
+<li type-"circle"><a target="_blank" href="http://www.thedailymeal.com/red-apple-1">Red Apple Buffet</a></li>
 </ul>
 
-Farnsworth House, 14520 River Road, Plano, IL 60545
 
 <a name="MO"></a>
 
@@ -923,7 +930,7 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 <ul>
 <li><a target="_blank" href="http://www.dia.org/">Detroit Institute of Art</strong></a></li>
 <li><a target="_blank" href="http://www.diamondial.org/">Detroit Institute of Arts Image Database</a></li>
-<li><a target="_blank" href="http://www.thedailymeal.com/lafayette-coney-islandt">Lafayette vs. American Coney Island</a> hot dogs <a target="_blank" href="https://www.thedailymeal.com/eat/101-best-casual-restaurants-america-2018-gallery/slide-6">[#97]</a></li>
+<li type="circle"><a target="_blank" href="http://www.thedailymeal.com/lafayette-coney-islandt">Lafayette vs. American Coney Island</a> hot dogs <a target="_blank" href="https://www.thedailymeal.com/eat/101-best-casual-restaurants-america-2018-gallery/slide-6">[#97]</a></li>
 </ul>
 
 
@@ -939,6 +946,7 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 <ul>
 <li><a target="_blank" href="http://www.cincinnatiartmuseum.org/"> Cincinnati Art Museum</a></li>
 <li><a target="_blank" href="http://www.cincymuseum.org/union-terminal"> Museum Center of Union Terminal</a></li>
+<li>American Neon Sign Museum</a></li>
 </ul>
 
 ### Cleveland:
@@ -946,7 +954,8 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 <ul>
 <li><a target="_blank" href="https://www.rockhall.com/"> Rock and Roll Hall of Fame</a>, Cleveland</li>
 <li><a target="_blank" href="http://www.clevelandart.org/"> Cleveland Museum of Art</a></li>
-<li><a target="_blank" href="https://www.thedailymeal.com/greenhouse-tavern">The Greenhouse Tavern</a>, Cleveland <a target="_blank" href="https://www.thedailymeal.com/101-best-restaurants-america-2019/slide-4">[#97]</a></li>
+<br />
+<li type="circle"><a target="_blank" href="https://www.thedailymeal.com/greenhouse-tavern">The Greenhouse Tavern</a>, Cleveland <a target="_blank" href="https://www.thedailymeal.com/101-best-restaurants-america-2019/slide-4">[#97]</a></li>
 </ul>
 
 
@@ -981,6 +990,7 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 <li><a target="_blank" href="http://web.indstate.edu/turman/">Turman Gallery at Indiana State University</a>, Terre Haute</li>
 </ul>
 
+
 <a name="KY"></a>
 
 > <strong> Kentucky </strong>
@@ -1001,10 +1011,9 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 
 ## Down the Pacific West Coast
 <ul>
-<li><a target="_blank" href="https://www.amtrak.com/coast-starlight-train">
-  The Coast Starlight line on Amtrak</a> has coastal portions between Seattle and Portland,
-  then along the middle of California.</li>
+<li><a target="_blank" href="https://www.amtrak.com/coast-starlight-train">The Coast Starlight line on Amtrak</a> has coastal portions between Seattle and Portland, and along the middle of California.</li>
 </ul>
+
 
 <a name="AK"></a>
 
@@ -1321,7 +1330,7 @@ The trail goes from St. Louis and Independence, Missouri through Kansas and Nebr
 <li><a target="_blank" href="http://www.eisnermuseum.org/">William F. Eisner Museum of Advertising and Design</a>, Milwaukee</li>
 <li><a target="_blank" href="http://www.marquette.edu/haggerty/">Haggerty Museum of Art at Marquette University</a>, Milwaukee</li>
 <li><a target="_blank" href="http://www.mam.org/">Milwaukee Art Museum</a></li>
-<li><a target="_blank" href="http://www.thedailymeal.com/restaurants/ristorante-bartolotta">Ristorante Bartolotta</a> <a target="_blank" href="https://www.thedailymeal.com/101-best-restaurants-america-2019/slide-4">[#94]</a></li>
+<li type="circle"><a target="_blank" href="http://www.thedailymeal.com/restaurants/ristorante-bartolotta">Ristorante Bartolotta</a> <a target="_blank" href="https://www.thedailymeal.com/101-best-restaurants-america-2019/slide-4">[#94]</a></li>
 </ul>
 
 <a name="MN"></a>
