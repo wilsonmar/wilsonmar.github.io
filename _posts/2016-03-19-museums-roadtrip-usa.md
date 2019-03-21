@@ -275,6 +275,7 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 ### New York City (Manhattan)
 
 <ul>
+<li><a target="_blank" href="http://www.bxma.org/">Bronx Museum of Art</a></li>
 <li><strong>Metropolitan Museum of Art</strong> and the Cloisters</li>
 <li><a target="_blank" href="http://www.alternativemuseum.org/">Alternative Museum</a></li>
 <li><a target="_blank" href="http://www.folkartmuseum.org/">American Folk Art Museum</a></li>
@@ -283,7 +284,6 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 <li><a target="_blank" href="http://ndm.si.edu/">Cooper-Hewitt, National Design Museum</a></li>
 <li><a target="_blank" href="http://www.daheshmuseum.org/">Dahesh Museum</a></li>
 <li><a target="_blank" href="http://www.diacenter.org/">Dia Center for the Arts</a></li>
-<li><a target="_blank" href="http://www.bxma.org/">Bronx Museum of Art</a></li>
 <li><a target="_blank" href="http://www.diachelsea.org/">Dia: Chelsea</a></li>
 <li><a target="_blank" href="http://www.icp.org/">International Center of Photography</a></li>
 <li><a target="_blank" href="http://www.thejewishmuseum.org/"><strong>Jewish Museum</strong></a></li>
@@ -322,13 +322,11 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 ### New York City (Brooklyn)
 
 <em>DUMBO = Down Under the Manhattan Bridge Overpass</em> is home to 25% of New York based tech firms, including Etsy.
-<a target="_blank" href="https://freetoursbyfoot.com/things-to-do-dumbo/">[tour]</a></li>
+<a target="_blank" href="https://freetoursbyfoot.com/things-to-do-dumbo/">[tour]</a>
 
 <ul>
 <li> Walk the Brooklyn Bridge</li>
-<li> Brooklyn Museum</li>
 <li type="circle"><a target="_blank" href="https://www.opentable.com/river-cafe-brooklyn">River Cafe</a> (Jacket Required) </li>
-
 <li><a target="_blank" href="http://www.brooklynmuseum.org/">Brooklyn Museum of Art</a></li>
 <li><a target="_blank" href="http://www.brooklynx.org/rotunda/default.asp">Rotunda Gallery</a></li>
 </ul>
@@ -462,7 +460,7 @@ The Smithsonian Institution: The Freer Gallery of Art and The Arthur M. Sackler 
 <li><a target="_blank" href="http://www.history.navy.mil/branches/nhcorg6.htm">U.S. Navy Art Collection</a></li>
 <li><a target="_blank" href="http://www.ushmm.org/">
 US Holocost Memorial Museum</a> 10-5:30 every day, but timed passes are necessary for visiting the permanent exhibit (20 each day from tickets.com for $1.75)</li>
-<li><a target="_blank" href="https://www.whitehouse.gov/">White House</a></li>
+<li type="square"><a target="_blank" href="https://www.whitehouse.gov/">White House</a>, 1900 Pennsylvania Avenue</li>
 </ul>
 
 <a name="WA"></a>
@@ -573,8 +571,8 @@ Jimmy Carter Presidential Library and Museum</a>, Atlanta</li>
 ### Northwest on 75 up the Gulf coast 
 
 <ul>
-<li><a target="_blank" href="http://www.ringling.org/">John and Mable Ringling Museum of Art</a>, Sarasota</li>
-<li> Fort Myers Edison Winter Home</li>
+<li type="square"><a target="_blank" href="http://www.ringling.org/">John and Mable Ringling Museum of Art</a>, Sarasota</li>
+<li type="square"> Fort Myers Edison Winter Home</li>
 
 <li><a target="_blank" href="http://www.tampagov.net/dept_Museum/">Tampa Museum of Art</a></li>
 <li><a target="_blank" href="http://cam.arts.usf.edu/">University of South Florida Contemporary Art Museum</a>, Tampa</li>
