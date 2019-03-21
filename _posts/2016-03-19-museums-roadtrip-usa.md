@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Museums Roadtrip USA"
-excerpt: "Visual art in every state and city, mapped by Machine Learning"
+excerpt: "Visual, architectural, and culinary art in every state and major city, mapped by Machine Learning"
 tags: [travel, roadtrip, museums, monuments, ML]
 image:
 # feature: pic road and clouds to mountains 1900x500.jpg
@@ -684,11 +684,11 @@ the 4th longest in the world (after Nile, Amazon, Yangtze).<br />
 <li><a target="_blank" href="https://www.obamalibrary.gov/">Barack Obama Presidential Library</a>, Hoffman Estates</li>
 <li type="square">Farnsworth House, 14520 River Road, Plano, IL 60545</li>
 <br />
-<li type-"circle">Purple Pig</li>
-<li type-"circle"><a target="_blank" href="http://www.zahavrestaurant.com/">Zahav</a> [Israeli restaurant]</li>
-<li type-"circle"><a target="_blank" href="http://www.thedailymeal.com/au-cheval">Au Cheval burgers</a> <a target="_blank" href="https://www.thedailymeal.com/eat/101-best-casual-restaurants-america-2018-gallery/slide-6">[#29]</a></li>
-<li type-"circle"><a target="_blank" href="http://www.thedailymeal.com/fat-rice">Fat Rice</a>, Chicago <a target="_blank" href="https://www.thedailymeal.com/eat/101-best-casual-restaurants-america-2018-gallery/slide-74">[#58]</a></li>
-<li type-"circle"><a target="_blank" href="http://www.thedailymeal.com/red-apple-1">Red Apple Buffet</a></li>
+<li type="circle">Purple Pig</li>
+<li type="circle"><a target="_blank" href="http://www.zahavrestaurant.com/">Zahav</a> [Israeli restaurant]</li>
+<li type="circle"><a target="_blank" href="http://www.thedailymeal.com/au-cheval">Au Cheval burgers</a> <a target="_blank" href="https://www.thedailymeal.com/eat/101-best-casual-restaurants-america-2018-gallery/slide-6">[#29]</a></li>
+<li type="circle"><a target="_blank" href="http://www.thedailymeal.com/fat-rice">Fat Rice</a>, Chicago <a target="_blank" href="https://www.thedailymeal.com/eat/101-best-casual-restaurants-america-2018-gallery/slide-74">[#58]</a></li>
+<li type="circle"><a target="_blank" href="http://www.thedailymeal.com/red-apple-1">Red Apple Buffet</a></li>
 </ul>
 
 
@@ -1267,7 +1267,8 @@ was established during the 1830s by mountain men in their fur trade, before moto
 <img alt="Oregon Trail Topo map NASA" width="500" height="310" src="https://cloud.githubusercontent.com/assets/300046/14081576/a8c6f05a-f4c8-11e5-92d6-61cbf9b8ce0e.jpg"></a>
 
 
-The trail goes from St. Louis and Independence, Missouri through Kansas and Nebraska to Fort Laramie, Wyoming. It then goes through Boise, Idaho to Portland, Oregon. The map of it in 1907:
+The trail begins from St. Louis and Independence, Missouri through Kansas and Nebraska to Fort Laramie, Wyoming. 
+It then goes through Boise, Idaho to Portland, Oregon. The map of it in 1907:
 
 <a target="_blank" href="https://upload.wikimedia.org/wikipedia/commons/1/19/Oregontrail_1907.jpg">
 <img alt="Oregon Trail 1907" width="1595" height="561" src="https://cloud.githubusercontent.com/assets/300046/14081352/93a3a5fc-f4c7-11e5-8b37-e37be9d713a0.jpg"></a>
