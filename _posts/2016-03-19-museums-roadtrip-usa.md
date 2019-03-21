@@ -73,9 +73,6 @@ Amtrak's Empire Builder route</a> between Chicago to Seattle and Portland takes 
 <a target="_blank" title="Amtrak's Empire Builder route" href="https://www.amtrak.com/empire-builder-train">
 <img alt="click on red dots in travel train glasgow empire builder 650x365.png" width="650" height="365" src="https://cloud.githubusercontent.com/assets/23631541/21246999/7d230200-c2e9-11e6-9fca-1a460dac2399.png"></a>
 
-## US Presidential Museums
-
-<a target="_blank" href="https://www.archives.gov/presidential-libraries">https://www.archives.gov/presidential-libraries</a>
 
 <a name="DownEastCoast"></a>
 
@@ -326,6 +323,7 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 ### New York City (Brooklyn)
 
 <ul>
+<li> Walk the Brooklyn Bridge</li>
 <li> Brooklyn Museum</li>
 </ul>
 
@@ -682,7 +680,7 @@ the 4th longest in the world (after Nile, Amazon, Yangtze).<br />
 <li><a target="_blank" href="http://smartmuseum.uchicago.edu/">Smart Museum of Art at the University of Chicago</a></li>
 <li><a target="_blank" href="http://www.uima-art.org/">Ukrainian Institute of Modern Art</a></li>
 <li><a target="_blank" href="https://www.obamalibrary.gov/">Barack Obama Presidential Library</a>, Hoffman Estates</li>
-<li type="square">Farnsworth House, 14520 River Road, Plano, IL 60545</li>
+<li type="square"><a target="_blank" href="https://www.farnsworthhouse.org/">Farnsworth House (1951)</a>, 14520 River Road, Plano, IL 60545</li>
 <br />
 <li type="circle">Purple Pig</li>
 <li type="circle"><a target="_blank" href="http://www.zahavrestaurant.com/">Zahav</a> [Israeli restaurant]</li>
@@ -1105,6 +1103,7 @@ Jundt Art Center and Museum at Gonzaga University</a></li>
 <li><a target="_blank" href="http://www.jmsf.org/">The Jewish Museum</a>, San Francisco</a></li>
 <li><a target="_blank" href="http://www.mocfa.org/">Museum of Craft and Folk Art</a> </li>
 <li><a target="_blank" href="http://www.cablecarmuseum.org/">Cable Car Museum</a> </li>
+<li>Alcatraz island [ferry]</li>
 </ul>
 
 <ul>
@@ -1279,7 +1278,7 @@ It then goes through Boise, Idaho to Portland, Oregon. The map of it in 1907:
 > <strong> Kansas </strong>
 
 <ul>
-<li> Dodge City: Boot Hill Museum</li>
+<li> Boot Hill Museum, Dodge City</li>
 <li><a target="_blank" href="http://www.k-state.edu/bma/">Beach Museum of Art at Kansas State University</a>, Manhattan</li>
 <li><a target="_blank" href="http://www.sandzen.org/">Birger Sandzen Memorial Gallery</a>, Lindsborg</li>
 <li><a target="_blank" href="http://skyways.lib.ks.us/kansas/museums/coutts/index.html">Coutts Memorial Museum of Art</a>, El Dorado</li>
@@ -1338,13 +1337,11 @@ It then goes through Boise, Idaho to Portland, Oregon. The map of it in 1907:
 
 > <strong> Minnesota </strong>
 
-### St. Paul:
+### Duluth (North coast of Lake Superior)
 
 <ul>
-<li><a target="_blank" href="http://www.nwc.edu/academic/art/denler/denler.htm">Denler Art Gallery at Northwestern College</a> St. Paul</li>
-<li><a target="_blank" href="http://www.asmat.org/">American Museum of Asmat Art</a> St. Paul</li>
-<li><a target="_blank" href="http://goldstein.che.umn.edu/">Goldstein Museum of Design at the University of Minnesota</a> St. Paul</li>
-<li><a target="_blank" href="http://www.mmaa.org/">Minnesota Museum of American Art</a>, St. Paul</li>
+<li><a target="_blank" href="https://maps.roadtrippers.com/trips/17520840?lng=-103.03900847280016&lat=42.950891540446264&z=4.526513924866736">North shore scenic drive</a></li>
+<li><a target="_blank" href="http://www.d.umn.edu/tma/">Tweed Museum of Art at the University of Minnesota</a>, Duluth</li>
 </ul>
 
 ### Minneapolis:
@@ -1356,11 +1353,14 @@ It then goes through Boise, Idaho to Portland, Oregon. The map of it in 1907:
 <li><a target="_blank" href="http://www.weisman.umn.edu/">Weisman Art Museum at the University of Minnesota</a>, Minneapolis</li>
 </ul>
 
-### Duluth (North coast of Lake Superior)
+### St. Paul:
 
 <ul>
-<li><a target="_blank" href="https://maps.roadtrippers.com/trips/17520840?lng=-103.03900847280016&lat=42.950891540446264&z=4.526513924866736">North shore scenic drive</a>
-<li><a target="_blank" href="http://www.d.umn.edu/tma/">Tweed Museum of Art at the University of Minnesota</a>, Duluth</li>
+<li><a target="_blank" href="http://www.nwc.edu/academic/art/denler/denler.htm">Denler Art Gallery at Northwestern College</a> St. Paul</li>
+<li><a target="_blank" href="http://www.asmat.org/">American Museum of Asmat Art</a> St. Paul</li>
+<li><a target="_blank" href="http://goldstein.che.umn.edu/">Goldstein Museum of Design at the University of Minnesota</a> St. Paul</li>
+<li><a target="_blank" href="http://www.mmaa.org/">Minnesota Museum of American Art</a>, St. Paul</li>
+<li type="square">Green Giant statue, Blue Earth 56013 (off hwy 90)</li>
 </ul>
 
 
@@ -1613,7 +1613,7 @@ Lyndon Baines Johnson Presidential Library and Museum</a>, Austin</li>
 
 <ul>
 
-<li><a target="_blank" href="https://www.nps.gov/grca/">El Tovar Hotel</a>, Grand Canyon Village</li>
+<li type="disc"><a target="_blank" href="https://www.nps.gov/grca/">El Tovar Hotel</a>, Grand Canyon Village</li>
 <li><a target="_blank" href="http://asuartmuseum.asu.edu/">Arizona State University Art Museum</a>, Tempe</li>
 <li><a target="_blank" href="http://dizzy.library.arizona.edu/branches/ccp/ccphome.html">Center for Creative Photography at the University of Arizona</a>, Tuscon</li>
 <li><a target="_blank" href="http://westernmuseum.org/">Desert Caballeros Western Museum</a>, Wickenburg</li>
@@ -1626,6 +1626,7 @@ Lyndon Baines Johnson Presidential Library and Museum</a>, Austin</li>
 <li><a target="_blank" href="http://www.tucsonarts.com/">Tucson Museum of Art</a></li>
 <li><a target="_blank" href="http://artmuseum.arizona.edu/art.html">University of Arizona Museum of Art</a>, Tucson</li>
 <li><a target="_blank" href="http://www.wvam.org/">West Valley Art Museum</a>, Surprise</li>
+<li><a target="_blank" href="http://www.mim.org/">Musical Instrument Museum</a>, Phoenix</li>
 </ul>
 
 <a name="NV"></a>
@@ -1680,16 +1681,20 @@ Areas in Arizona and New Mexico were claimed by both sides</a>.
 
 ## All the sights
 
-In addition to "museums", also included here are grand natural sights,
-<a target="_blank" href="http://www.historichotels.org/hotels-resorts/?search=top-nav">
-historic landmark hotels</a> and:
+In addition to "museums", also included here are grand natural sights:
+
+   * <a target="_blank" href="http://www.historichotels.org/hotels-resorts/?search=top-nav">historic landmark hotels</a>
+   * Restaurants with unique interiors/art
+   * <a target="_blank" href="https://www.bedandbreakfast.com/info/travelers/awards/breakfast-tournament/2018">Breakfasts at B&Bs</a>
+
+   * Cool Architecture - churches
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/List_of_botanical_gardens_and_arboretums_in_the_United_States">Gardens</a> and <a target="_blank" href="http://www.farmstayus.com/map">Farms</a>
 
    * National Monuments
    * <a target="_blank" href="https://www.archives.gov/presidential-libraries/visit">US Presidential libraries</a>, museums, and birth places
-   * Cool Architecture - Bed and Breakfast / AirBnB, churches
-   * <a target="_blank" href="https://en.wikipedia.org/wiki/List_of_botanical_gardens_and_arboretums_in_the_United_States">Gardens</a> and <a target="_blank" href="http://www.farmstayus.com/map">Farms</a>
+
    * <a target="_blank" href="https://en.wikipedia.org/wiki/List_of_new_media_art_festivals">New Media</a> art <a target="_blank" href="http://www.artfaircalendar.com/">festivals</a> and notable galleries
-   * Restaurants with unique interiors/art
+
    * <a target="_blank" href="https://www.themarysue.com/film-locations-map/">Iconic movie locations</a> of note [<a target="_blank" href="http://www.boxofficequant.com/100-years-of-set-locations/full_screen.htm">map</a>]
    * Caverns 
    * Zoos
@@ -1699,12 +1704,12 @@ historic landmark hotels</a> and:
 
    * Amusement parks
    * State Fairs
-   * Tripadvisor Excellence award winners
+   * <a target="_blank" href="https://www.tripadvisor.com/TravelersChoice">Tripadvisor Excellence award winners</a>
+   * Best restaurants from OpenTable, Zagat, Michelin
 
 ## Technical Footnote #
 
-This is rather large list, intentionally 
-to test how well the system can handle a large file
+This rather large list was originally created to intentionally to test how well the system can handle a large file
 (how quickly it can download and display).
 
 This is an upgrade of my terrible <a target="_blank" href="http://wilsonmar.com/1usa.htm">
