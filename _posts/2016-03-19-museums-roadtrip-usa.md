@@ -253,7 +253,8 @@ John F. Kennedy Presidential Library and Museum</a>, Columbia Point, Boston</li>
 <li><a target="_blank" href="http://www.state.nj.us/state/museum/">New Jersey State Museum</a>, Trenton</li>
 <li><a target="_blank" href="http://www.zimmerlimuseum.rutgers.edu/">Jane Voorhees Zimmerli Art Museum at Rutgers University</a>, Brunswick</li>
 <li><a target="_blank" href="http://www.princetonartmuseum.org/">Art Museum at Princeton University</a>, Princeton</li>
-
+<li type="circle"><a target="_blank" href="https://www.opentable.com/rats-restaurant-grounds-for-sculpture">Rats</a> [restaurant with gardens]</li>
+<br />
 <li><a target="_blank" href="http://thebergenmuseum.com/">Bergen Museum</a>, Hackensack</li>
 <li><a target="_blank" href="http://www.groundsforsculpture.org/">Grounds For Sculpture</a>, Hamilton</li>
 <li><a target="_blank" href="https://www.montclairartmuseum.org/">Montclair Art Museum</a></li>
@@ -278,7 +279,6 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 <li><a target="_blank" href="http://www.alternativemuseum.org/">Alternative Museum</a></li>
 <li><a target="_blank" href="http://www.folkartmuseum.org/">American Folk Art Museum</a></li>
 <li><a target="_blank" href="http://www.amnh.org/">American Museum of Natural History</a></li>
-<li><a target="_blank" href="http://www.brooklynmuseum.org/">Brooklyn Museum of Art</a></li>
 <li><a target="_blank" href="http://chelseaartmuseum.org/">Chelsea Art Museum</a></li>
 <li><a target="_blank" href="http://ndm.si.edu/">Cooper-Hewitt, National Design Museum</a></li>
 <li><a target="_blank" href="http://www.daheshmuseum.org/">Dahesh Museum</a></li>
@@ -300,7 +300,6 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 <li><a target="_blank" href="http://www.nyhistory.org/">New-York Historical Society</a></li>
 <li><a target="_blank" href="http://www.roerich.org/">Nicholas Roerich Museum</a></li>
 <li><a target="_blank" href="http://www.queensmuseum.org/">Queens Museum of Art</a></li>
-<li><a target="_blank" href="http://www.brooklynx.org/rotunda/default.asp">Rotunda Gallery</a></li>
 <li><a target="_blank" href="http://www.rmanyc.org/">Rubin Museum of Art: Art of the Himalayas</a></li>
 <li><a target="_blank" href="http://www.siiasmuseum.org/">Staten Island Institute of Arts and Sciences</a></li>
 <li><a target="_blank" href="http://www.studiomuseuminharlem.org/">Studio Museum in Harlem</a></li>
@@ -322,9 +321,16 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 
 ### New York City (Brooklyn)
 
+<em>DUMBO = Down Under the Manhattan Bridge Overpass</em> is home to 25% of New York based tech firms, including Etsy.
+<a target="_blank" href="https://freetoursbyfoot.com/things-to-do-dumbo/">[tour]</a></li>
+
 <ul>
 <li> Walk the Brooklyn Bridge</li>
 <li> Brooklyn Museum</li>
+<li type="circle"><a target="_blank" href="https://www.opentable.com/river-cafe-brooklyn">River Cafe</a> (Jacket Required) </li>
+
+<li><a target="_blank" href="http://www.brooklynmuseum.org/">Brooklyn Museum of Art</a></li>
+<li><a target="_blank" href="http://www.brooklynx.org/rotunda/default.asp">Rotunda Gallery</a></li>
 </ul>
 
 
@@ -1649,8 +1655,7 @@ Lyndon Baines Johnson Presidential Library and Museum</a>, Austin</li>
 <a target="_blank" href="https://en.wikipedia.org/wiki/Pony_Express#Pony_Express_route">
 "Pony Express" riders</a> (who include "Calamity Jane") operated less than 2 years: 
 between April 3, 1860 to October 24, 1861.
-Their route took 1,900-mile-long (3,100 km) 
-along 184 stations from St. Joseph, Missouri on the Missouri River
+Their 1,900-mile (3,100 km) route went along 184 stations from St. Joseph, Missouri on the Missouri River
 to San Francisco, California.
 
 <a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/14632396/b725f60a-05d5-11e6-8b45-7babd7649ae8.jpg">
@@ -1705,11 +1710,11 @@ In addition to "museums", also included here are grand natural sights:
    * Amusement parks
    * State Fairs
    * <a target="_blank" href="https://www.tripadvisor.com/TravelersChoice">Tripadvisor Excellence award winners</a>
-   * Best restaurants from OpenTable, Zagat, Michelin
+   * Most scenic restaurants according to <a target="_blank" href="hhttps://www.opentable.com/lists/most-scenic-restaurants-2018">OpenTable</a>, Zagat, Michelin
 
 ## Technical Footnote #
 
-This rather large list was originally created to intentionally to test how well the system can handle a large file
+This rather large list was originally created to be intentionally large in order to test how well the system handles a large file
 (how quickly it can download and display).
 
 This is an upgrade of my terrible <a target="_blank" href="http://wilsonmar.com/1usa.htm">
