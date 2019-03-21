@@ -941,7 +941,9 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 
 > <strong> Ohio </strong>
 
+<ul>
 <li><a target="_blank" href="http://www.toledomuseum.org/"> Toledo Museum of Art</a></li>
+</ul>
 
 ### Cincinnati:
 
@@ -1449,7 +1451,7 @@ on the way to Oklahoma City, Amarillo TX, and Flagstaff AZ before ending on the 
 
 The <a target="_blank" href="https://en.wikipedia.org/wiki/Chisholm_Trail">Chisolm Trail</a> was used between 1867-1884 to drive cows to market from various cowtowns in Texas through Oklahoma Indian Territory to Abilene and other railheads in Kansas. The Lonesome Dove TV series depicts that time.
 
-Since Illinos and Missouri are already in our <a href="#DownMississippi">Mississippi route</a>,
+Since <a href="#IL">Illinos</a> and <a href="#MO">Missouri</a> are already listed in our <a href="#DownMississippi">Mississippi route</a>,
 we begin from Oklahoma and take a long detour North to avoid too much desert along the way.
 
 
@@ -1648,6 +1650,7 @@ Lyndon Baines Johnson Presidential Library and Museum</a>, Austin</li>
 </ul>
 <br /><br />
 
+
 ## Poney Express
 
 <a target="_blank" href="https://en.wikipedia.org/wiki/Pony_Express#Pony_Express_route">
@@ -1658,11 +1661,7 @@ to San Francisco, California.
 
 <a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/14632396/b725f60a-05d5-11e6-8b45-7babd7649ae8.jpg">
 <img alt="map of Pony Express route" src="https://cloud.githubusercontent.com/assets/300046/14632487/35bdb3e0-05d6-11e6-9e8f-3293fe2ffa5b.jpg" width="649" height="221"></a>
-Map by William Henry Jackson, American artist. Text: Howard Roscoe Driggs. Scan: US Library of Congress. Photo <a target="_blank" href="https://commons.wikimedia.org/w/index.php?curid=10111804">image</a> obtained/rendered by Gwillhickers. Restoration by Crisco 1492, Public Domain.
-
-<img media="(min-width: 650px)" width="600" height="300" 
-layout="responsive" src="https://en.wikipedia.org/wiki/Pony_Express#/media/File:Pony_Express_Map_William_Henry_Jackson.jpg">
-
+<em>Map by William Henry Jackson, American artist. Text: Howard Roscoe Driggs. Scan: US Library of Congress. Photo <a target="_blank" href="https://commons.wikimedia.org/w/index.php?curid=10111804">image</a> obtained/rendered by Gwillhickers. Restoration by Crisco 1492, Public Domain.</em>
 
 ## US Civil War #
 
