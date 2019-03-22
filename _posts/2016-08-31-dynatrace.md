@@ -51,19 +51,18 @@ Dyntrace offers <a target="_blank" href="https://d3sj466wqlrld0.cloudfront.net/c
 
 The major "arteries" are the types of monitoring:
 
-   * Real User Monitoring
+   * Real User Monitoring (RUM)
    * Application Monitoring
+      * Availability Monitoring
    * Infrastructure Monitoring
    * Network Monitoring
    * Additional components
-   <br /><br />
-
-Also:
+      <br /><br />
 
    * Dynatrace Managed (server & monitoring setup)
    * System Settings (Global, Entity, Account)
-   * Problems
    * Integration and API
+   * Problems
 
 ## Product Offerings
 
