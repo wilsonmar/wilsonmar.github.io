@@ -220,11 +220,11 @@ The following focusing on analysis of server applications running <strong>locall
 
    WARNING: You can't get back to this page again?
 
-0. Get the license from email "Your Dynatrace trial license" file such as:
+0. Get the license from email "Your Dynatrace trial license" file such as this, created on 2017 March 16:
 
    dynaTrace_license_201703161023.key
 
-   Each agent installer is pre-configured to where the agent sends its information.
+   PROTIP: <strong>Each agent installer is pre-configured to where the agent sends its information.</strong>
    
    NOTE: The video mentioned in the email (https://www.youtube.com/watch?v=2ycuNlYUl9E) 
    What is Dynatrace AppMon and How to Get Started – January 2016

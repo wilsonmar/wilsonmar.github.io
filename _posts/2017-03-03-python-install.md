@@ -79,7 +79,7 @@ PIP install is troublesome, often because they are more recent than those in Con
 
 There is what can be a confusing conflict of choice here for installing Python and its package manager.
 
-   * Not recommended is the manual approach of <a href="#PackagInstallerz">download Python installer from python.org</a>, even though that's the method described in various websites. 
+   * Not recommended is the manual approach of <a href="#PackagInstallerz">download Python installer from python.org</a>, even though that's the method described in various websites and books. 
 
    * <a href="#easy_install">easy_install</a> is an environment manager.
    <br /><br />
@@ -89,19 +89,36 @@ There is what can be a confusing conflict of choice here for installing Python a
    "Avoid easy_install or pip to install a Python package that needs a library used by non Python programs,
    such as Qt bindings (PySide)".
 
-Alternatively, there are these alternatives:
+Alternatively, use a package manager. CAUTION: <a target="_blank" href="http://stackoverflow.com/questions/33874084/how-can-i-resolve-a-conflict-between-homebrew-and-macports-or-fink">MacPorts, Fink, and Homebrew do not coexist well on the same machine</a>.
 
    * Install using Homebrew, then add <a target="_blank" href="https://github.com/Homebrew/homebrew-science/">
    homebrew science</a> for scientific work (according to <a target="_blank" href="http://stackoverflow.com/questions/33541876/os-x-deciding-between-anaconda-and-homebrew-python-environments">this</a>).
 
    * <a target="_blank" href="https://trac.macports.org/wiki/Python">
-   MacPorts</a> is an alternative to Homebrew that is more compatible with other Linux.
+   MacPorts</a> is an alternative to Homebrew some claim is more compatible with other Linux.
    However, not all packages are available in MacPorts.
    <br /><br />
 
-CAUTION: <a target="_blank" href="http://stackoverflow.com/questions/33874084/how-can-i-resolve-a-conflict-between-homebrew-and-macports-or-fink">
-   MacPorts, Fink, and Homebrew do not coexist on a single machine</a>.
 
+## Use Docker
+
+1. From Dockerhub account "python" get a Docker image on your machine containing Python3 running within Alpine Linux OS:
+
+   <pre><strong>docker pull python:3-alpine</strong></strong>
+
+1. Container:
+
+   <pre><strong>docker container run -d --memory=20m --memory-swap=20m -name myPython python:3-alpine sleep 3600</strong></strong>
+
+1. Execute the container:
+
+   <pre><strong>docker exec -it myPython /bin/sh</strong></strong>
+
+1. Use the container
+
+1. Stop the Docker instance:
+
+   <pre><strong>docker pull python:3-alpine</strong></strong>
 
 <a name="PythonMacVersion"></a>
 
@@ -114,21 +131,19 @@ Python 2 comes installed on MacOS machines.
 
 0. Open a Terminal shell window and issue command:
 
-   <tt><strong>
-   python \-\-version
-   </strong></tt>
+   <pre><strong>python --version</strong></pre>
 
-   The response on a freshly installed El Capitan version:
+   The response, for example:
 
    <pre>
-   Python 2.7.6
+   Python 2.7.19
    </pre>
 
    CAUTION: The sub-version of Python that comes installed with MacOS may be obsolete
    and needs to be <a href="#UpgradePython">upgraded</a>.
    But keep to version 2, not version 3 of Python.
 
-0. As with other programs that come with Apple's macOS, Python2 is installed in:
+0. Find where Python2 is installed:
 
    <pre>
    type -a python
@@ -140,7 +155,7 @@ Python 2 comes installed on MacOS machines.
    python is /usr/bin/python
    </pre>
 
-   You may also see this if you've installed a shim to enable switching of Python versions:
+   You may also see the following if you've installed a shim to enable switching of Python versions:
 
    <pre>
    python is /Users/wilsonmar/.pyenv/shims/python
@@ -171,7 +186,7 @@ Python 2.7.12 (default, Oct 16 2016, 19:01:27)
 Type "help", "copyright", "credits" or "license" for more information.
    </pre>
 
-   The response on a new El Capital machine:
+   The response on a new El Capitan machine:
 
    <pre>
    Python 2.7.6 (default, Sep  9 2014, 15:04:36)
@@ -1796,7 +1811,7 @@ PROTIP: Delete Conda one folder at a time (without the --yes parameter).
 
 <hr />
 
-http://www.numericalexpert.com/blog/conda_tips/
+<a target="_blank" href="http://www.numericalexpert.com/blog/conda_tips/">http://www.numericalexpert.com/blog/conda_tips</a>
 
 <hr />
 
