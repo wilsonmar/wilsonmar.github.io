@@ -353,6 +353,7 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 <li><a target="_blank" href="http://www.sama-art.org/">Southern Alleghenies Museum of Art</a>, Johnstown</li>
 <li><a target="_blank" href="http://www.statemuseumpa.org/">State Museum of Pennsylvania</a>, Harrisburg</li>
 <li><a target="_blank" href="http://www.widener.edu/?pageId=60">Widener University Art Gallery and Collection</a>, Chester</li>
+<li><a target="_blank" href="https://www.rrmuseumpa.org/">Railroad Museum of Pennsylvania</a>, Ronks (Lancaster)</li>
 </ul>
 
 ### Philadelphia:
