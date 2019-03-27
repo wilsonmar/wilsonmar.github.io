@@ -20,7 +20,7 @@ But when it doesn't work, it's a frustrating mess of ill-will all around.
 
 Here are some of the lessons learned that I thought you'd want to know,
 phrased in questions that help me determine the conditions for effectiveness in multi-team collaboration.
-(Kinda like Joel Splotsky's questions uses on Stackoverflow jobs)
+(Kinda like Joel Splotsky's <a target="_blank" href="https://www.joelonsoftware.com/2006/10/25/the-guerrilla-guide-to-interviewing-version-30/">questions asked of employers</a> on <a target="_blank" href="https://stackoverflow.com/jobs">Stackoverflow jobs</a> which specialize in remote developer/IT jobs).
 
 
 ## Turnover of work
