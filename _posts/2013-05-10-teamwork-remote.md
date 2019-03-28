@@ -27,14 +27,22 @@ phrased in questions that help me determine the conditions for effectiveness in 
 
 **1. How does official turnover of shared assets occur between shifts?**
 
-  It's frustrating to be bumped off a machine.
-  Sometimes people run over the allotted time frame.
-  Sometimes a team is not ready to begin work and likely will "drop the ball".
+   When we really examine it, there is a lot of information that needs to get passed.
 
-  Like a runner who passes the baton to the next runner, 
-  it's something that needs to be practiced.
+   Like a runner who passes the baton to the next runner, 
+   it's something that needs to be practiced.
   
-  When we really examine it, there is a lot of information that needs to get passed.
+   It's frustrating to be bumped off a machine.
+   Sometimes people run over the allotted time frame.
+   Sometimes a team is not ready to begin work and likely will "drop the ball".
+
+   To ensure an "overlap" of schedules to have team-based collaboration and customer-facing engagements in the customer's working hours, one company specifies that its employees work 8 hours a day while meeting the following constraints Monday-Friday:
+
+   2 hours between 9:00AM-11:00AM EST (US "core" hours)<br />
+   2 additional hours between 8am-8pm EST (US "customer" hours)<br />
+   4 additional hours in any timezone you wish ("flex" hours)
+
+   This provides a compromise for organizations to accommodate top talent across a wide range of time zones.
 
 
 ## Details
@@ -94,7 +102,7 @@ impediements and improvements?**
 
 ## Trends
 
-**7. How does the team evaluate trends in technologies and industry trends?**
+**7. How does the team evaluate trends in technologies and industry?**
 
   Changes in technology are occuring at a quicker rate.
   Companies such as Uber make use of new technologies in new business models that disrupt previous industries.
