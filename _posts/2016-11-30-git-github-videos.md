@@ -322,7 +322,7 @@ Microsoft broadcasts all their videos on <a target="_blank" href="https://channe
 <a target="_blank" href="https://channel9.msdn.com/Series/Using-Git-with-Visual-Studio-2013">
 Using Git with Visual Studio 2013</a>
 with Visual Studio Online and Windows Azure
-was created March, 2014
+created March, 2014 by by Jeff Koch
 by @StevenBorg (salesy hand-wavy boss) and 
 @JamesTupper (technical guy) of Northwest Cadence:
 
@@ -330,21 +330,21 @@ by @StevenBorg (salesy hand-wavy boss) and
    Mod 01: Choosing the Right Version Control</a>
    begins at 12:38 (after the chit-chat)
 
-   "Learn Git before going into Visual Studio"
+   PROTIP: "Learn Git before going into Visual Studio"
 
 * <a target="_blank" href="https://channel9.msdn.com/series/Using-Git-with-Visual-Studio-2013/01">
    Mod 02: Install and Configure Git</a>
 
    [3:04] On Fedora: yum install git-core,
    On Debian: apt-get install git<br />
-   [10:00] Chocolaty `choco install`<br />
+   [10:00] Chocolatey `choco install`<br />
    [11:45] PowerShell `choco install poshgit`<br />
    [14:30] `set-executionpolicy remotesigned` and restart<br />
    [15:35] git config<br />
    [19:30] cinst git-credential-winstore
 
 * <a target="_blank" href="https://channel9.msdn.com/series/Using-Git-with-Visual-Studio-2013/03">
-   Mod 03: Git Basics</a>
+   Mod 03: Git Basics</a> 
 
 * <a target="_blank" href="https://channel9.msdn.com/series/Using-Git-with-Visual-Studio-2013/04A">
    Mod 04A: Git Fundamentals, Part 1</a>
@@ -368,8 +368,7 @@ by @StevenBorg (salesy hand-wavy boss) and
 * <a target="_blank" href="https://channel9.msdn.com/series/Using-Git-with-Visual-Studio-2013/07">
    Mod 07: Fix your Git!</a>
 
-   This summarizes <br />
-   [0:50] git commit --amend<br />
+   [0:50] UNdoing: `git commit --amend`<br />
    cherry-picking merges.
    [18:24] git revert <em>commit</em><br />
    [20:01] pcottle is now http://learngitbranching.js.org/<br />
