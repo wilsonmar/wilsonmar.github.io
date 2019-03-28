@@ -386,12 +386,21 @@ by @StevenBorg (salesy hand-wavy boss) and
    [25:40] http://rypress.com/tutorials/git/index<br />
 
 
-Robert Outlaw created Team Services Git Tutorial Sep 22, 2016: 
+Robert Outlaw created "Team Services Git Tutorial" video series Sep 22, 2016, containing a lot of text:
 
-   * <a target="_blank" href="https://channel9.msdn.com//series/Team-Services-Git-Tutorial/Git-Tutorial-Commits/">
-   Commits</a> 
-https://www.visualstudio.com/docs/git/tutorial/gitworkflow
+  * <a target="_blank" href="https://channel9.msdn.com/series/Team-Services-Git-Tutorial/Git-Tutorial-Pull">Fetch, Merge, and Pull</a> 01:47
+  * <a target="_blank" href="https://channel9.msdn.com/series/Team-Services-Git-Tutorial/Git-Tutorial-Branches">Branches</a> 01:26
+  * <a target="_blank" href="https://channel9.msdn.com//series/Team-Services-Git-Tutorial/Git-Tutorial-Commits/">Commits</a> 01:20
+  * <a target="_blank" href="https://channel9.msdn.com/series/Team-Services-Git-Tutorial/Git-Tutorial-Push">Push</a> 01:22
+  * <a target="_blank" href="https://channel9.msdn.com/series/Team-Services-Git-Tutorial/Git-Tutorial-Rebase">Rebase</a> 02:19
+  * <a target="_blank" href="https://channel9.msdn.com/series/Team-Services-Git-Tutorial/Git-Tutorial-Create-a-repo-from-the-command-line">Create a repo from the command line</a> 02:21
+  * <a target="_blank" href="https://channel9.msdn.com/series/Team-Services-Git-Tutorial/Git-Tutorial-Create-a-Git-repo-in-Visual-Studio-2015">Create a Git repo in Visual Studio 2015</a> 
 
+See https://www.visualstudio.com/docs/git/tutorial/gitworkflow and https://www.visualstudio.com/git/overview
+
+
+https://channel9.msdn.com/Shows/gamedev/Game-Dev-Show-18-Introduction-to-Git-LFS
+Intro to Git-LFS
 
 
 ## From other software publishers
