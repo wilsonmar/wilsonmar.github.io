@@ -315,14 +315,17 @@ Total costs also includes the time to build and maintain the software.
 And also for testing.
 
 
+This table of availability SLAs and outage limits:
+
 <table border="1" cellpadding="4" cellspacing="0">
 <thead>
-<tr valign="bottom"><th>SLA</th><th>Instances</th><th>AZ's</th></tr>
+<tr valign="bottom"><th>SLA</th><th>Nickname</th><th>Down/year</th><th>Down/Mo.</th><th>Instances</th><th>AZ's</th></tr>
 </thead>
 <tbody>
-<tr valign="top"><td>99.90%</td><td> 1 </td><td> 1 </td></tr>
-<tr valign="top"><td>99.95%</td><td> 2 </td><td> 1 </td></tr>
-<tr valign="top"><td>99.99%</td><td> 2 </td><td> 2 </td></tr>
+<tr valign="top"><td>99.90%</td><td>3 nines</td><td> 8.76 hours </td><td> 43.2 minutes </td><td> 1 </td><td> 1 </td></tr>
+<tr valign="top"><td>99.95%</td><td>3 and a half nines</td><td>  4.38 hours </td><td>21.56 minutes</td><td> 2 </td><td> 1 </td></tr>
+<tr valign="top"><td>99.99%</td><td>4 nines</td><td>  52.6 minutes </td><td>4.38 minutes</td><td> 2 </td><td> 2 </td></tr>
+<tr valign="top"><td>99.999%</td><td>5 nines</td><td> 5.25 minutes </td><td>26.30 seconds</td><td> 2+ </td><td> 2+ </td></tr>
 </tbody>
 </table>
 
