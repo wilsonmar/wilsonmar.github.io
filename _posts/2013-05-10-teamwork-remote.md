@@ -40,7 +40,7 @@ phrased in questions that help me determine the conditions for effectiveness in 
 
    2 hours between 9:00AM-11:00AM EST (US "core" hours)<br />
    2 additional hours between 8am-8pm EST (US "customer" hours)<br />
-   4 additional hours in any timezone you wish ("flex" hours)
+   4 additional hours in any timezone each individual desires ("flex" hours)
 
    This provides a compromise for organizations to accommodate top talent across a wide range of time zones.
 
