@@ -315,6 +315,8 @@ Total costs also includes the time to build and maintain the software.
 And also for testing.
 
 
+### Actual availability
+
 This table of availability SLAs and outage limits:
 
 <table border="1" cellpadding="4" cellspacing="0">
@@ -516,7 +518,7 @@ Testing that deliberately downs a server to measure the speed of recovery is cal
 <strong>"resilency testing"</strong>.<a href="#Tasks">*</a>
 
 
-<a target="_blank" href="https://wilsonmar.github.io/cloudformation">CloudFormation</> templates automate the creation of various components around the creation of a cluster of EC2 servers.
+<a target="_blank" href="https://wilsonmar.github.io/cloudformation">CloudFormation</a> templates automate the creation of various components around the creation of a cluster of EC2 servers.
 An alternative are <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform</a> specifications which are multi-vendor (Azure, Google, etc. as well as Amazon).
 
 
