@@ -737,8 +737,9 @@ series</a>:
 ## From those who ask for money:
 
 ### Egghead.io (@egheadio)
+https://www.linkedin.com/in/arnaldo-cavazos-79b54911/
 
-Juri Strumpflohner, in his <a target="_blank" href="https://egghead.io/courses/productive-git-for-developers">Productive Git for Developers</a> offers a video on each piece of great advice:
+<a target="_blank" href="https://www.linkedin.com/in/juristr/">Juri Strumpflohner</a>, in his <a target="_blank" href="https://egghead.io/courses/productive-git-for-developers">Productive Git for Developers</a> offers a video on each piece of great advice:
    * Only commit some of my currently modified files into the repository
    * Make my git log look pretty and readable
    * Move some commits to a separate branch that I have accidentally committed to master
