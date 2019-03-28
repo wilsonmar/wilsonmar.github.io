@@ -1523,6 +1523,9 @@ quotes https://www.hashicorp.com/blog/azure-resource-manager-support-for-packer-
 Azure Resource Manager
 
 
+<a target="_blank" href="https://www.linkedin.com/in/sajithvenkit/">Sajith Venkit</a> explains Terraform file exampled in his <a target="_blank" href="https://www.codementor.io/alibabacloud/building-docker-enterprise-2-1-cluster-using-terraform-thh42zbd6?utm_swu=8964">"Building Docker Enterprise 2.1 Cluster Using Terraform" blog</a> and <a target="_blank" href="https://github.com/sajiv3m/docker-terraform-alicloud">repo for AliCloud</a> and <a target="_blank" href="https://github.com/sajiv3m/docker-terraform-azure">Azure</a>.
+
+
 ## More on DevOps #
 
 This is one of a series on DevOps:
