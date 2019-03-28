@@ -386,7 +386,7 @@ by @StevenBorg (salesy hand-wavy boss) and
    reset rewriting history <br />
    [25:40] http://rypress.com/tutorials/git/index<br />
 
-## From software publishers
+## From other software publishers
 
 ### From Salesforce
 
@@ -405,11 +405,7 @@ See <a target="_blank" href="https://wilsonmar.github.io/salesforce/">my Salesfo
 
 ### From SAP
 
-<a target="_blank" href="https://open.sap.com/courses/git1">
-  SAP Cloud Platform Version Control within SAP Web IDE</a> video course
-  presented by Arnaldo Cavazos first ran on OpenSAP.com April 10 - May 16, 2018.
-
-This class by <a target="_blank" href="https://www.linkedin.com/in/arnaldo-cavazos-79b54911/">Analdo Cavazos</a> focuses on Git commands within <a target="_blank" href="https://account.hanatrial.ondemand.com/cockpit#/acc/p388752trial/service/webidecp/overview">SAP's Web IDE Full Stack</a> under Neo Trial (Europe Rot) of a Git service within the <a target="_blank" href="https://cloudplatform.sap.com">https://cloudplatform.sap.com</a>
+<a target="_blank" href="https://www.linkedin.com/in/arnaldo-cavazos-79b54911/">Arnaldo Cavazos</a> created the <a target="_blank" href="https://open.sap.com/courses/git1">OpenSAP.com video course "SAP Cloud Platform Version Control within SAP Web IDE"</a> which first ran April 10 - May 16, 2018. This class by focuses on Git commands within <a target="_blank" href="https://account.hanatrial.ondemand.com/cockpit#/acc/p388752trial/service/webidecp/overview">SAP's Web IDE Full Stack</a> under Neo Trial (Europe Rot) of a Git service within the <a target="_blank" href="https://cloudplatform.sap.com">https://cloudplatform.sap.com</a>. Registration needed.
 
 Week 1: 
    * <a target="_blank" href="https://open.sap.com/courses/git1/items/7CSF8eMvTYvGrUG2fFFsFW">Unit 1: Understanding Distributed Version Control</a>
@@ -431,34 +427,36 @@ Week 1:
    Unit 9: Reverting</a>
 
 Week 2:
-   * Unit 1: Fast-Forward Merging
-   * Unit 2: Automatic 3-Way Merging
-   * Unit 3: 3-Way Merging with Conflicts
-   * Unit 4: Automatic Rebasing
-   * Unit 5: Rebasing with Conflicts
-   * Unit 6: Hard Resets
-   * Unit 7: Mixed Resets
-   * Unit 8: Problem-Solving with Web IDE Git
-   * Unit 9: Extra Tool: Cherry-Picking
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/1DWojbGEQyUubOAmbE67Sb">
+   Unit 1: Fast-Forward Merging</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/7865rjWLZZkHeIbZtyfCnY">
+   Unit 2: 3-Way Merging</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/7N3kZLfFJY2JypdgviFF8j">
+   Unit 3: 3-Way Merging with Conflicts</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/1z2GJ6NlEev1knWdUqkLy4">
+   Unit 4: Automatic Rebasing</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/5MjUerOu0EvJr0y2KfmOAX">Unit 5: Rebasing with Conflicts</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/46voFPShKQZxTtu0jtJdim">Unit 6: Hard Resets</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/h75aA9cd14fvUDrAGdEMx">Unit 7: Mixed Resets</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/4I2H8ws5I61DRADQJWXXYd">Unit 8: Problem-Solving with Web IDE Git</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/2yDZTchJtkeEi7DAO7spgU">Unit 9: Extra Tool: Cherry-Picking</a>
 
 Week 3:
-   * Unit 1: Remote Branches
-   * Unit 2: Pushing
-   * Unit 3: Fetching
-   * Unit 4: Practice: Rebasing with Conflicts onto a Remote Branch
-   * Unit 5: Practice: 3-Way Merging onto a Remote Branch
-   * Unit 6: Extra Tools: Diff and Blame
-   * Unit 7: Workflows: Centralized
-   * Unit 8: Workflows: Feature Branch
-   * Unit 9: Workflows: Gitflow
-   * Unit 10: Bonus Lecture on Workflows: Distributed (aka Forking, aka Open Source)
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/3Qne6AHGGnevQ4CyzlwDbs">Unit 1: Remote Branches</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/1RyU2XgqfLbTXxbZaLCoXq">Unit 2: Pushing</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/2hMVAmnG1FQECrUNUYYyZv">Unit 3: Fetching</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/60apivN0qfrdSObw5je0z4">Unit 4: Practice: Rebasing with Conflicts onto a Remote Branch</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/6txj8wxBkU1EXPXs4Yk8hN">Unit 5: Practice: 3-Way Merging onto a Remote Branch</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/3dAYWO5e2GcucoOPIh15bf">Unit 6: Extra Tools: Diff and Blame</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/2ZRbrAYGBnOB7CQj9vSA3G">Unit 7: Workflows: Centralized</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/42xIsqfSnSiRcx50sAal1A">Unit 8: Workflows: Feature Branch</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/3RKDq0ChDV4WK60SaS25QL">Unit 9: Workflows: Gitflow</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/7ksODrehqDEt1jWsxJdyYz">Unit 10: Bonus Lecture on Workflows: Distributed (aka Forking, aka Open Source)</a>
 
 Week 4:
-   * Unit 1: Gerrit: Purpose and Typical Setup
-   * Unit 2: Gerrit Walkthrough (with 'Perfect' Code)
-   * Unit 3: Gerrit Walkthrough (with Problem Code)
-
-
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/4cYQbMxhX4SvSlx0Ie4v2B">Unit 1: Gerrit: Purpose and Typical Setup</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/6RK7j5xEICA3m4eGjc7Ujf">Unit 2: Gerrit Walkthrough (with 'Perfect' Code)</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/4aRZT8ytpgZwD7cTmIihJb">Unit 3: Gerrit Walkthrough (with Problem Code)</a>
 
 
 ## From Git hosting companies:
