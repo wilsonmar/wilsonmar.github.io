@@ -20,11 +20,12 @@ This document is under constant draft change at the moment.
 This is an example of a hands-on tutorial that volunteer software developers reference to get setup in order to make contributions in a collaborative way. This was written to ensure that you (a developer/graphic artist, etc.) get <strong>trained</strong> on a professional approach to software development while improving the non-profit's digital assets. The sections here are:
 
 A. <a href="#Understand">      Understand the mission</a> (the organization and yours)<br />
-B. <a href="#TechArchitecture">Understand the technical architecture</a><br />
-C. <a href="#Website">         Copy the public-facing website</a><br />
-D. <a href="#Salesforce">      Create a copy of the Salesforce org</a><br />
-E. <a href="#Changes">         Plan changes, update test scripts</a><br />
-F. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
+B. <a href="#Collaboration">   Understand the collaboration tools and techniques</a><br />
+C. <a href="#TechArchitecture">Understand the technical architecture</a><br />
+D. <a href="#Website">         Copy the public-facing website</a><br />
+E. <a href="#Salesforce">      Create a copy of the Salesforce org</a><br />
+F. <a href="#Changes">         Plan changes, update test scripts</a><br />
+G. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
 
 <hr />
 
@@ -114,7 +115,9 @@ Dec 23, 2015
    
    n. Propose one of your own.
 
-### Collaborate
+<a name="Collaboration"></a>
+
+## B) Collaboration
 
 If you haven't used the tools mentioned here, we will train you so that you can contribute confidently.
 
@@ -133,7 +136,7 @@ If you haven't used the tools mentioned here, we will train you so that you can 
 
 <a name="TechArchitecture"></a>
 
-## B) Understand the technical architecture
+## C) Understand the technical architecture
 
 The system consists of several components, <a target="_blank" href="https://docs.google.com/presentation/d/1o_T8XRfeiDLD62ums2hHYid5_qIFNHUlAkQ3YtV6E1k/edit#slide=id.p">described by this system flow chart on Google (created using Lucid Chart)<img align="right" alt="ywan-architecutre-2019a-200x183-7427" width="200" src="https://user-images.githubusercontent.com/300046/53695300-b2bb2800-3d87-11e9-9b8e-759a92d654dd.jpg"></a>
 
@@ -149,7 +152,7 @@ The system consists of several components, <a target="_blank" href="https://docs
 
 <a name="Website"></a>
 
-## C) Copy the public-facing website
+## D) Copy the public-facing website
 
 1. Open an internet browser to visit the production webpage for the non-profit at:
 
@@ -231,7 +234,7 @@ Is the information correct? [Y/n]
 
 <a name="Salesforce"></a>
 
-## D) Create a copy of the Salesforce database
+## E) Create a copy of the Salesforce database
 
 
 ### Production security
@@ -321,7 +324,7 @@ https://developer.salesforce.com/docs/atlas.en-us.216.0.sfdx_dev.meta/sfdx_dev/s
 
 <a name="Changes"></a>
 
-## E) Plan changes, update test scripts
+## F) Plan changes, update test scripts
 
 1. Draft a description of what the system will look like when you're done. This can be a picture of an altered form or report.
 
@@ -334,7 +337,7 @@ https://developer.salesforce.com/docs/atlas.en-us.216.0.sfdx_dev.meta/sfdx_dev/s
 
 <a name="TestDeploy"></a>
 
-## F) Run tests, make changes, and deploy
+## G) Run tests, make changes, and deploy
 
 1. Run a test of the existing test suite to ensure that everything works.
 
