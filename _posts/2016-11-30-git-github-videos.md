@@ -250,7 +250,6 @@ But someone downloaded the videos to YouTube on 1 Nov 2016:
 
 0. <a target="_blank" href="https://www.youtube.com/watch?v=2KntU_3SUqI">
    Part 1 </a>
-
 0. <a target="_blank" href="https://www.youtube.com/watch?v=4xN5vzudLM4">
    Part 2 Distributed vs Centralized</a>
 
@@ -259,7 +258,6 @@ But someone downloaded the videos to YouTube on 1 Nov 2016:
 
 0. <a target="_blank" href="https://www.youtube.com/watch?v=e2F8S8qZoLU">
    Part 3 Git vs GitHub</a> [3:49]
-
 0. <a target="_blank" href="https://www.youtube.com/watch?v=LsAOLxyqEOs">
    Part 4 GitHub Flow</a> [8:58]
 
@@ -284,13 +282,10 @@ But someone downloaded the videos to YouTube on 1 Nov 2016:
 
 0. <a target="_blank" href="https://www.youtube.com/watch?v=eOyqg-Nxvk4">
    Part 1</a>
-
 0. <a target="_blank" href="https://www.youtube.com/watch?v=zBd97SqeVLY">
    Part 2</a>
-
 0. <a target="_blank" href="https://www.youtube.com/watch?v=quq6WvyQzjI">
    Part 3</a>
-
 0. <a target="_blank" href="https://www.youtube.com/watch?v=Q4w5mDWRKoQ">
    Part 4</a>
 
@@ -299,10 +294,8 @@ But someone downloaded the videos to YouTube on 1 Nov 2016:
 
 0. <a target="_blank" href="https://www.youtube.com/watch?v=VFYUEX2_EqE">
    Part 1</a>
-
 0. <a target="_blank" href="https://www.youtube.com/watch?v=6Zkx-S699o0">
    Part 2</a>
-
 0. <a target="_blank" href="https://www.youtube.com/watch?v=Rk9D8RrejdY">
    Part 3</a>
 
@@ -311,7 +304,6 @@ But someone downloaded the videos to YouTube on 1 Nov 2016:
 
 0. <a target="_blank" href="https://www.youtube.com/watch?v=KHIL5Yq3k04">
    Part 1 Pull request. Compare. @Mention</a> [26:53]
-
 0. <a target="_blank" href="https://www.youtube.com/watch?v=szGfy1iyA3A">
    Part 2 Create project locally</a> [17:48]
 
@@ -752,23 +744,39 @@ series</a>:
 ## From those who ask for money:
 
 ### Egghead.io (@egheadio)
-https://www.linkedin.com/in/arnaldo-cavazos-79b54911/
+
+Egghead.io charges a $250 membership to unlock viewing features such as speed-up playback:
 
 <a target="_blank" href="https://www.linkedin.com/in/juristr/">Juri Strumpflohner</a>, in his <a target="_blank" href="https://egghead.io/courses/productive-git-for-developers">Productive Git for Developers</a> offers a video on each piece of great advice:
-   * Only commit some of my currently modified files into the repository
-   * Make my git log look pretty and readable
-   * Move some commits to a separate branch that I have accidentally committed to master
-   * Update my feature branch with the latest changes from master
-   * Push a rebased local branch by using `--force-with-lease`
-   * Polish my git feature branch before merging or submitting for review
-   * Automate the cleanup of my feature branch with Git Autosquash
-   * Squash all of my commits into a single one and merge into master
-   * Change the commit message of my last commit
-   * Add a file I’ve forgotten to add to my last commit
-   * Undo my last commit and split it into two separate ones
-   * Wipe a commit from my local branch
-   * Undo a commit that has already been pushed to the remote repository
-   * Temporarily store some work in progress because I have to jump to another branch
+
+   * <a target="_blank" href="https://egghead.io/lessons/git-only-commit-some-of-my-currently-modified-files-into-the-repository">
+   Only commit some of my currently modified files into the repository</a>
+   * <a target="_blank" href="https://egghead.io/lessons/git-make-my-git-log-look-pretty-and-readable">
+   Make my git log look pretty and readable</a> 2:25
+   * <a target="_blank" href="https://egghead.io/lessons/git-move-some-commits-to-a-separate-branch-that-i-have-accidentally-committed-to-master">
+   Move some commits to a separate branch that I have accidentally committed to master</a>
+   * <a target="_blank" href="https://egghead.io/lessons/git-update-my-feature-branch-with-the-latest-changes-from-master">
+   Update my feature branch with the latest changes from master</a>
+   * <a target="_blank" href="https://egghead.io/lessons/git-push-a-rebased-local-branch-by-using-force-with-lease">
+   Push a rebased local branch by using `--force-with-lease`</a>
+   * <a target="_blank" href="https://egghead.io/lessons/git-polish-my-git-feature-branch-before-merging-or-submitting-for-review">
+   Polish my git feature branch before merging or submitting for review</a>
+   * <a target="_blank" href="https://egghead.io/lessons/git-automate-the-cleanup-of-my-feature-branch-with-git-autosquash">
+   Automate the cleanup of my feature branch with Git Autosquash</a>
+   * <a target="_blank" href="https://egghead.io/lessons/git-squash-all-of-my-commits-into-a-single-one-and-merge-into-master">
+   Squash all of my commits into a single one and merge into master</a>
+   * <a target="_blank" href="https://egghead.io/lessons/git-change-the-commit-message-of-my-last-commit">
+   Change the commit message of my last commit</a>
+   * <a target="_blank" href="https://egghead.io/lessons/git-add-a-file-i-ve-forgotten-to-add-to-my-last-commit">
+   Add a file I’ve forgotten to add to my last commit</a>
+   * <a target="_blank" href="https://egghead.io/lessons/git-undo-my-last-commit-and-split-it-into-two-separate-ones">
+   Undo my last commit and split it into two separate ones</a>
+   * <a target="_blank" href="https://egghead.io/lessons/git-wipe-a-commit-from-my-local-branch">
+   Wipe a commit from my local branch</a>
+   * <a target="_blank" href="https://egghead.io/lessons/git-undo-a-commit-that-has-already-been-pushed-to-the-remote-repository">
+   Undo a commit that has already been pushed to the remote repository</a>
+   * <a target="_blank" href="https://egghead.io/lessons/git-temporarily-store-some-work-in-progress-because-i-have-to-jump-to-another-branch">
+   Temporarily store some work in progress because I have to jump to another branch</a>
 
 
 ### Thoughtbot.com
