@@ -236,6 +236,7 @@ Is the information correct? [Y/n]
 
 ## E) Create a copy of the Salesforce database
 
+The weekly backup zip of Salesforce 330 csv files is 8.3 MB. Unzipped its 107 MB.
 
 ### Production security
 
