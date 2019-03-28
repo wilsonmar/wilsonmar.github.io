@@ -315,6 +315,18 @@ Total costs also includes the time to build and maintain the software.
 And also for testing.
 
 
+<table border="1" cellpadding="4" cellspacing="0">
+<thead>
+<tr valign="bottom"><th>SLA</th><th>Instances</th><th>AZ's</th></tr>
+</thead>
+<tbody>
+<tr valign="top"><td>99.90%</td><td> 1 </td><td> 1 </td></tr>
+<tr valign="top"><td>99.95%</td><td> 2 </td><td> 1 </td></tr>
+<tr valign="top"><td>99.99%</td><td> 2 </td><td> 2 </td></tr>
+</tbody>
+</table>
+
+
 ## Load Testing
 
 A business can't wait for production (paying) users to generate the load to see if the system really works because then it would be too late .
@@ -836,3 +848,31 @@ An Introduction to Load Testing</a> September 12, 2017
 
 <a target="_blank" href="https://www.method123.com/project-lifecycle.php">Project Management Life Cycle (PMLC)</a>
 
+
+## Pluralsight videos
+
+https://app.pluralsight.com/paths/certificate/microsoft-azure-architect-design-az-301
+
+<a target="_blank" href="https://app.pluralsight.com/player?course=microsoft-azure-non-functional-requirements-gathering">
+Pluralsight video course "Gathering Non-functional Requirements for Microsoft Azure</a>
+by Harry Mumford Turner (@mumf_, harrymt.com) covers 
+
+   * Stakehold priorities
+   * performance anti-patterns: busy database, front-end, chatty I/O, extraneous fetching
+   * Availability
+   * Security 
+   * Capacity Planning and Scalability 
+   * Maintainability
+   * Accessibility
+   * Deployability
+   * Extensibility
+   * Governance
+   * Quality
+
+<a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-consumption-strategy-optimizing">
+Optimizing Consumption Strategy in Microsoft Azure</s> Sept 13, 2018 [2h 53m]
+by James Bannan
+
+<a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-consumption-strategy-optimizing">
+Designing a Monitoring Strategy for a Solution in Microsoft Azure</a> Nov 28, 2018 [3h 19m]
+by Brian Harrison

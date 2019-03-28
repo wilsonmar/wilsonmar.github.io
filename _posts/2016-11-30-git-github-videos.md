@@ -351,9 +351,16 @@ by @StevenBorg (salesy hand-wavy boss) and
 
 * <a target="_blank" href="https://channel9.msdn.com/series/Using-Git-with-Visual-Studio-2013/04B">
    Mod 04B: Git Fundamentals, Part 2</a>
+   [00:54] - What is a Branch?
+   [22:06] - Basic Branching
+   [32:53] - Basic Merging
+   [52:18] - Remote Branches
 
 * <a target="_blank" href="https://channel9.msdn.com/series/Using-Git-with-Visual-Studio-2013/04C">
    Mod 04C: Git Fundamentals, Part 3</a>
+
+   [01:06] - Rebasing
+   [08:23] - Demo: Rebasing
 
 * <a target="_blank" href="https://channel9.msdn.com/series/Using-Git-with-Visual-Studio-2013/05">
    Mod 05: Git in Visual Studio</a>
@@ -377,7 +384,7 @@ by @StevenBorg (salesy hand-wavy boss) and
    [25:40] http://rypress.com/tutorials/git/index<br />
 
 
-Robert Outlaw created "Team Services Git Tutorial" video series Sep 22, 2016, containing a lot of text:
+Robert Outlaw created  "Team Services Git Tutorial" video series Sep 22, 2016, containing a lot of text:
 
   * <a target="_blank" href="https://channel9.msdn.com/series/Team-Services-Git-Tutorial/Git-Tutorial-Pull">Fetch, Merge, and Pull</a> 01:47
   * <a target="_blank" href="https://channel9.msdn.com/series/Team-Services-Git-Tutorial/Git-Tutorial-Branches">Branches</a> 01:26
@@ -387,11 +394,25 @@ Robert Outlaw created "Team Services Git Tutorial" video series Sep 22, 2016, co
   * <a target="_blank" href="https://channel9.msdn.com/series/Team-Services-Git-Tutorial/Git-Tutorial-Create-a-repo-from-the-command-line">Create a repo from the command line</a> 02:21
   * <a target="_blank" href="https://channel9.msdn.com/series/Team-Services-Git-Tutorial/Git-Tutorial-Create-a-Git-repo-in-Visual-Studio-2015">Create a Git repo in Visual Studio 2015</a> 
 
-See https://www.visualstudio.com/docs/git/tutorial/gitworkflow and https://www.visualstudio.com/git/overview
+See <a target="_blank" href="https://www.visualstudio.com/docs/git/tutorial/gitworkflow">https://www.visualstudio.com/docs/git/tutorial/gitworkflow from 09/09/2018</a> and https://www.visualstudio.com/git/overview
+
+Others:
+
+   * <a target="_blank" href="https://channel9.msdn.com/Shows/gamedev/Game-Dev-Show-18-Introduction-to-Git-LFS">
+   Intro to Git-LFS</a>
+
+   * <a target="_blank" href="https://channel9.msdn.com/Blogs/DevOps-Interviews/Interview-with-Edward-Thomson-Git-in-VSTS?ocid=player">
+   from Ignite 2017</a> by Edward Thomson (<a target="_blank" href="https://twitter.com/ethomson">@ethomson</a>)
+   [00:19] Source control options in VSTS and TFS (edit/merge/commit)
+   [02:20] Microsoft Engineering's move to VSTS and Git
+   [03:52] Managing Git at scale - GVFS
+   [06:05] Accessing a Git repository in VSTS
 
 
-https://channel9.msdn.com/Shows/gamedev/Game-Dev-Show-18-Introduction-to-Git-LFS
-Intro to Git-LFS
+### Git in Microsoft Azure
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/search/index?search=git">In a search for Git within the Microsoft Learn</a> 
+website. In 2018 "TFS" was rebranded to "Azure DevOps".
 
 
 ## From other software publishers
