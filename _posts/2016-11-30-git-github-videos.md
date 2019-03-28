@@ -386,7 +386,9 @@ by @StevenBorg (salesy hand-wavy boss) and
    reset rewriting history <br />
    [25:40] http://rypress.com/tutorials/git/index<br />
 
-## Salesforce
+## From software publishers
+
+### From Salesforce
 
 <a target="_blank" href="https://www.youtube.com/watch?v=pA-7jqklxSU">
 Master Your Metadata: Best Practices for Versioning, CI and Deployments</a>
@@ -400,6 +402,64 @@ Introduction to Git for Force.com Developers</a> [53:50] among Dreamforce Video 
 <a target="_blank" href="https://www.youtube.com/watch?v=hvomhBeGUCM">Manage Org Changes Using the Force.com Migration Tool and Git</a> Nov 25, 2013 by Kyle Bowerman (@kylebowerman) talks about command "ant fetchmyorg", the Force.com migration tool written in Java.
 
 See <a target="_blank" href="https://wilsonmar.github.io/salesforce/">my Salesforce blogs</a>
+
+### From SAP
+
+<a target="_blank" href="https://open.sap.com/courses/git1">
+  SAP Cloud Platform Version Control within SAP Web IDE</a> video course
+  presented by Arnaldo Cavazos first ran on OpenSAP.com April 10 - May 16, 2018.
+
+This class by <a target="_blank" href="https://www.linkedin.com/in/arnaldo-cavazos-79b54911/">Analdo Cavazos</a> focuses on Git commands within <a target="_blank" href="https://account.hanatrial.ondemand.com/cockpit#/acc/p388752trial/service/webidecp/overview">SAP's Web IDE Full Stack</a> under Neo Trial (Europe Rot) of a Git service within the <a target="_blank" href="https://cloudplatform.sap.com">https://cloudplatform.sap.com</a>
+
+Week 1: 
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/7CSF8eMvTYvGrUG2fFFsFW">Unit 1: Understanding Distributed Version Control</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/50kOEiXQnlZjLSojV9HgwY">
+   Unit 2: Cloning Strategies: Cloning from SAP Cloud Platform</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/mTqajIFSkAOZ6xK4ruS3G">
+   Unit 3: Cloning Strategies: Cloning from External GitHub</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/56QEUdjvHEK5bSxDVFxXC3">
+   Unit 4: Cloning Strategies: Creating and Connecting Orphaned Repositories</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/k5AEt7sFJZwRneBIZh0IO">
+   Unit 5: Saving, Staging, and Committing</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/6qLcVjX5SZ0ycWt0psF2GO">
+   Unit 6: Stashing</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/5qyRdfi9Vb0ee1WAGd8U77">
+   Unit 7: Local Branches</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/2baH8y2ztmehd0swOYtl8D">
+   Unit 8: Tags vs. Branches</a>
+   * <a target="_blank" href="https://open.sap.com/courses/git1/items/5BMSgI9pmazBL0cZkKAFWl">
+   Unit 9: Reverting</a>
+
+Week 2:
+   * Unit 1: Fast-Forward Merging
+   * Unit 2: Automatic 3-Way Merging
+   * Unit 3: 3-Way Merging with Conflicts
+   * Unit 4: Automatic Rebasing
+   * Unit 5: Rebasing with Conflicts
+   * Unit 6: Hard Resets
+   * Unit 7: Mixed Resets
+   * Unit 8: Problem-Solving with Web IDE Git
+   * Unit 9: Extra Tool: Cherry-Picking
+
+Week 3:
+   * Unit 1: Remote Branches
+   * Unit 2: Pushing
+   * Unit 3: Fetching
+   * Unit 4: Practice: Rebasing with Conflicts onto a Remote Branch
+   * Unit 5: Practice: 3-Way Merging onto a Remote Branch
+   * Unit 6: Extra Tools: Diff and Blame
+   * Unit 7: Workflows: Centralized
+   * Unit 8: Workflows: Feature Branch
+   * Unit 9: Workflows: Gitflow
+   * Unit 10: Bonus Lecture on Workflows: Distributed (aka Forking, aka Open Source)
+
+Week 4:
+   * Unit 1: Gerrit: Purpose and Typical Setup
+   * Unit 2: Gerrit Walkthrough (with 'Perfect' Code)
+   * Unit 3: Gerrit Walkthrough (with Problem Code)
+
+
+
 
 ## From Git hosting companies:
 
@@ -675,6 +735,25 @@ series</a>:
 <hr />
 
 ## From those who ask for money:
+
+### Egghead.io (@egheadio)
+
+Juri Strumpflohner, in his <a target="_blank" href="https://egghead.io/courses/productive-git-for-developers">Productive Git for Developers</a> offers a video on each piece of great advice:
+   * Only commit some of my currently modified files into the repository
+   * Make my git log look pretty and readable
+   * Move some commits to a separate branch that I have accidentally committed to master
+   * Update my feature branch with the latest changes from master
+   * Push a rebased local branch by using `--force-with-lease`
+   * Polish my git feature branch before merging or submitting for review
+   * Automate the cleanup of my feature branch with Git Autosquash
+   * Squash all of my commits into a single one and merge into master
+   * Change the commit message of my last commit
+   * Add a file I’ve forgotten to add to my last commit
+   * Undo my last commit and split it into two separate ones
+   * Wipe a commit from my local branch
+   * Undo a commit that has already been pushed to the remote repository
+   * Temporarily store some work in progress because I have to jump to another branch
+
 
 ### Thoughtbot.com
 
@@ -1627,51 +1706,6 @@ Makes use of hand-draw diagrams and gamer references:
 2. <a target="_blank" href="https://www.youtube.com/watch?v=8KCQe9Pm1kg">Learn to Git: Basic Concepts</a> Jul 6, 2015
 
 
-### SAP
-
-<a target="_blank" href="https://open.sap.com/courses/git1">
-  SAP Cloud Platform Version Control within SAP Web IDE</a> video course
-  presented by Arnaldo Cavazos first ran on OpenSAP.com April 10 - May 16, 2018.
-
-The class focuses not on Git Bash commands but on <a target="_blank" href="https://account.hanatrial.ondemand.com/cockpit#/acc/p388752trial/service/webidecp/overview">SAP's Web IDE Full Stack</a> under Neo Trial (Europe Rot) of a Git service within <a target="_blank" href="
-  https://cloudplatform.sap.com">
-  https://cloudplatform.sap.com</a>
-
-Week 1: 
-   * <a target="_blank" href="https://open.sap.com/courses/git1/items/7CSF8eMvTYvGrUG2fFFsFW">Unit 1: Understanding Distributed Version Control</a>
-   * Unit 2: Cloning Strategies: Cloning from SAP Cloud Platform
-   * Unit 3: Cloning Strategies: Cloning from External GitHub
-   * Unit 4: Cloning Strategies: Creating and Connecting Orphaned Repositories
-   * Unit 5: Saving, Staging, and Committing
-   * Unit 6: Stashing
-   * Unit 7: Local Branches
-   * Unit 8: Tags vs. Branches
-   * Unit 9: Reverting
-Week 2:
-   * Unit 1: Fast-Forward Merging
-   * Unit 2: Automatic 3-Way Merging
-   * Unit 3: 3-Way Merging with Conflicts
-   * Unit 4: Automatic Rebasing
-   * Unit 5: Rebasing with Conflicts
-   * Unit 6: Hard Resets
-   * Unit 7: Mixed Resets
-   * Unit 8: Problem-Solving with Web IDE Git
-   * Unit 9: Extra Tool: Cherry-Picking
-Week 3:
-   * Unit 1: Remote Branches
-   * Unit 2: Pushing
-   * Unit 3: Fetching
-   * Unit 4: Practice: Rebasing with Conflicts onto a Remote Branch
-   * Unit 5: Practice: 3-Way Merging onto a Remote Branch
-   * Unit 6: Extra Tools: Diff and Blame
-   * Unit 7: Workflows: Centralized
-   * Unit 8: Workflows: Feature Branch
-   * Unit 9: Workflows: Gitflow
-   * Unit 10: Bonus Lecture on Workflows: Distributed (aka Forking, aka Open Source)
-Week 4:
-   * Unit 1: Gerrit: Purpose and Typical Setup
-   * Unit 2: Gerrit Walkthrough (with 'Perfect' Code)
-   * Unit 3: Gerrit Walkthrough (with Problem Code)
 
 ## Other video classes #
 
