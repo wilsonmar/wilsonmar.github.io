@@ -240,8 +240,7 @@ Visual Studio Online Version Control
 
 ### Jeremy Foster
 
-Easiest on the eyes: Briana Swift from GitHub with 
-Jeremy Foster, a Microsoft technical evangelist
+Briana Swift from GitHub with Jeremy Foster, a Microsoft technical evangelist
 present a series 
 <a target="_blank" href="https://mva.microsoft.com/search/SearchResults.aspx#!q=git&lang=1033">
 on Microsoft Virtual Academy</a>.
@@ -385,6 +384,15 @@ by @StevenBorg (salesy hand-wavy boss) and
    git config alias<br />
    reset rewriting history <br />
    [25:40] http://rypress.com/tutorials/git/index<br />
+
+
+Robert Outlaw created Team Services Git Tutorial Sep 22, 2016: 
+
+   * <a target="_blank" href="https://channel9.msdn.com//series/Team-Services-Git-Tutorial/Git-Tutorial-Commits/">
+   Commits</a> 
+https://www.visualstudio.com/docs/git/tutorial/gitworkflow
+
+
 
 ## From other software publishers
 

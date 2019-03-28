@@ -236,7 +236,12 @@ Is the information correct? [Y/n]
 
 ## E) Create a copy of the Salesforce database
 
-The weekly backup zip of Salesforce 330 csv files is 8.3 MB. Unzipped its 107 MB.
+Salesforce provides weekly production backup zip. 
+It's triggered by a scheduled job from a service account which receives emails when done.
+Currently, each backup consists of 330 csv files take 8.3 MB zipped. Unzipped its 107 MB.
+The output zip file is copied to an alternative cloud provider (Google Drive) because Salesforce only stores backup files 48 hours, with file names like this: <tt>ywam-prod-2019-06-03-3amET</strong>
+Due to active changes, <strong>daily</strong> backups are maintained for 13 months (370 zip files).
+The assumption is that there is a lot of financial info in the backups.
 
 ### Production security
 
