@@ -292,18 +292,22 @@ Cache servers typically holds responses in a large amount of memory.
 But to ensure that money for a caching server is not wasted, the <strong>cache hit ratio</strong> should be measured when running under simulated load.
 
 
+### Benchmarking
+
 > "After you have identified your architectural approach, you should use <strong>benchmarking and load testing</strong> data to drive your selection of resource types and configuration options" -- 512 in Amazon's "Performance Efficiency Pillar: AWS Well-Architected Framework (AWS Whitepaper)
 
+Peter Wayner conducted a <a target="_blank" href="https://www.infoworld.com/article/2613784/benchmarking-amazon-ec2--the-wacky-world-of-cloud-performance.html
+">cloud benchmarking exercise on AWS in 2013</a> using the <a target="_blank" href="https://github.com/dacapobench">open-source</a> Java-based <a target="_blank" href="http://dacapobench.org/">DaCapo benchmark suite</a>. He found that the T1 Micro -- the least expensive virtual servers AWS provides -- ran eight to 10 times slower than the M1 Medium, with more variability, and often failed to complete a task and thus not "enterprise worthy".
 
-
-The potential for failure due to load may not be of concern for "vanity" websites which don't anticipate a lot of traffic. 
-
-But most businesses websites prefer their websites to be able to handle more business without much manual vigilence.
 
 
 <a name="BusinessObjective"></a>
 
 ## Business Objective Economics
+
+The potential for failure due to load may not be of concern for "vanity" websites which don't anticipate a lot of traffic. 
+
+But most businesses websites prefer their websites to be able to handle more business without much manual vigilence.
 
 The big takeaway from this line of thinking is that here we focus on the <strong>business objective</strong> of obtaining the <strong>safest way to achieve the highest rate of business transactions at the least total cost</strong>.<a href="#Tasks">*</a>
 
@@ -331,10 +335,6 @@ This table of availability SLAs and outage limits:
 </tbody>
 </table>
 
-
-
-Peter Wayner conducted a <a target="_blank" href="https://www.infoworld.com/article/2613784/benchmarking-amazon-ec2--the-wacky-world-of-cloud-performance.html
-">cloud benchmarking exercise on AWS in 2013</a> using the <a target="_blank" href="https://github.com/dacapobench">open-source</a> Java-based <a target="_blank" href="http://dacapobench.org/">DaCapo benchmark suite</a>. He found that the T1 Micro -- the least expensive virtual servers AWS provides -- ran eight to 10 times slower than the M1 Medium, with more variability, and often failed to complete a task and thus not "enterprise worthy".
 
 
 ## Load Testing
