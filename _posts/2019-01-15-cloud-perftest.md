@@ -324,12 +324,17 @@ This table of availability SLAs and outage limits:
 <tr valign="bottom"><th>SLA</th><th>Nickname</th><th>Down/year</th><th>Down/Mo.</th><th>Instances</th><th>AZ's</th></tr>
 </thead>
 <tbody>
-<tr valign="top"><td>99.90%</td><td>3 nines</td><td> 8.76 hours </td><td> 43.2 minutes </td><td> 1 </td><td> 1 </td></tr>
-<tr valign="top"><td>99.95%</td><td>3 and a half nines</td><td>  4.38 hours </td><td>21.56 minutes</td><td> 2 </td><td> 1 </td></tr>
-<tr valign="top"><td>99.99%</td><td>4 nines</td><td>  52.6 minutes </td><td>4.38 minutes</td><td> 2 </td><td> 2 </td></tr>
-<tr valign="top"><td>99.999%</td><td>5 nines</td><td> 5.25 minutes </td><td>26.30 seconds</td><td> 2+ </td><td> 2+ </td></tr>
+<tr valign="top"><td>99.90%</td><td>3 nines</td><td> 8.76 hours </td><td> 43.2 min. </td><td> 1 </td><td> 1 </td></tr>
+<tr valign="top"><td>99.95%</td><td>3 and a half nines</td><td> 4.38 hours </td><td>21.56 min.</td><td> 2 </td><td> 1 </td></tr>
+<tr valign="top"><td>99.99%</td><td>4 nines</td><td>  52 min. 36 sec. </td><td>4.38 min.</td><td> 2 </td><td> 2 </td></tr>
+<tr valign="top"><td>99.999%</td><td>5 nines</td><td> 5 min. 15 sec. </td><td>26.30 sec.</td><td > <a target="_blank" href="https://searchcloudcomputing.techtarget.com/tip/Attain-magical-five-nines-availability-for-cloud-applications">services</a> </td><td> 2+ </td></tr>
 </tbody>
 </table>
+
+
+
+Peter Wayner conducted a <a target="_blank" href="https://www.infoworld.com/article/2613784/benchmarking-amazon-ec2--the-wacky-world-of-cloud-performance.html
+">cloud benchmarking exercise on AWS in 2013</a> using the <a target="_blank" href="https://github.com/dacapobench">open-source</a> Java-based <a target="_blank" href="http://dacapobench.org/">DaCapo benchmark suite</a>. He found that the T1 Micro -- the least expensive virtual servers AWS provides -- ran eight to 10 times slower than the M1 Medium, with more variability, and often failed to complete a task and thus not "enterprise worthy".
 
 
 ## Load Testing
