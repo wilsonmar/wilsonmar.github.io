@@ -446,6 +446,8 @@ But I'd like to propose a metric that makes use of smoke test results.
 
 ### Infant Mortality Rate?
 
+To illustrate the status, I've been using an analogy.
+
 In the medical community, the "Infant Mortality Rate" refers to deaths of live-born babies within the first year of life. Neonatal mortality rates refer to the first 28 days. Early Neonatal Mortality refers to the first 7 days of life.<a target="_blank" href="https://en.wikipedia.org/wiki/Infant_mortality">*</a> They are measured in terms of every 1,000 live births as a proxy measure of the quality of healthcare within a country. For example, the US has over time improved infant mortality, but at a slower rate than other developed countries:<br />
 <a target="_blank" href="https://www.healthsystemtracker.org/chart-collection/infant-mortality-u-s-compare-countries/"><img alt="cloud-perftest-infant-946x580-38168.jpg" width="946" src="https://user-images.githubusercontent.com/300046/54491803-a65ec100-4897-11e9-8ac0-beb5b37184e7.jpg"></a><br />(The lower the rate, the better).
 
@@ -619,6 +621,10 @@ A/B testing allocates varying percentage of users to variations of an app to com
 
 Instead of directly interacting with Route 53, the switchover can be specified in OpsWorks and Elastic Beanstalk consoles or via Cloud Formation templates 
 <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/DevopsDoctrine.html">This</a>
+
+A/B testing differs from "Blue-Green Deployments" in that several versions of a complete set of services are employed during A/B testing.
+But only one set of services are being used at a time when switching between Blue and Green Deployments.
+
 
 ### Time to Additional Capacity
 
@@ -804,9 +810,7 @@ AWS <a target="_blank" href="https://www.youtube.com/watch?v=xhc1boyBkJw">Elasti
 
 Instance limits.
 
-Blue-Green Deployments
 
-A/B testing
 
 
 
@@ -826,14 +830,7 @@ TODO: Serverless
 
 ## Istio and Envoy for Tracing
 
-Emerging since 2018 technology
-
-https://wilsonmar.github.io/service-mesh
-
-Tracing 
-
-Control plane
-
+See https://wilsonmar.github.io/service-mesh
 
 
 <a name="Tasks"></a>
