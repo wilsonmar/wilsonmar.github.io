@@ -258,7 +258,7 @@ within each server.
 In order to get a given server to process more load, its hardware components can be upgraded manually.
 This is called "scaling up".
 
-Magnetic hard drives are slow. Many times slower than the rate CPUs transfer data.
+Magnetic hard drives are slow -- many times slower than the rate CPUs transfer data.
 But modern SSD (Solid State Device) drives used today are very fast.
 (That's the reason why AWS does not allow the use of magnetic drives as a server boot-up data volume.)
 
@@ -297,8 +297,7 @@ But to ensure that money for a caching server is not wasted, the <strong>cache h
 > "After you have identified your architectural approach, you should use <strong>benchmarking and load testing</strong> data to drive your selection of resource types and configuration options" -- 512 in Amazon's "Performance Efficiency Pillar: AWS Well-Architected Framework (AWS Whitepaper)
 
 Peter Wayner conducted a <a target="_blank" href="https://www.infoworld.com/article/2613784/benchmarking-amazon-ec2--the-wacky-world-of-cloud-performance.html
-">cloud benchmarking exercise on AWS in 2013</a> using the <a target="_blank" href="https://github.com/dacapobench">open-source</a> Java-based <a target="_blank" href="http://dacapobench.org/">DaCapo benchmark suite</a>. He found that the T1 Micro -- the least expensive virtual servers AWS provides -- ran eight to 10 times slower than the M1 Medium, with more variability, and often failed to complete a task and thus not "enterprise worthy".
-
+">cloud benchmarking exercise on AWS in 2013</a> using the <a target="_blank" href="https://github.com/dacapobench">open-source</a> Java-based <a target="_blank" href="http://dacapobench.org/">DaCapo benchmark suite</a>. He found that the least expensive virtual server type AWS provides, <strong>T1 Micro ran eight to 10 times slower than the M1 Medium</strong>, with more variability, and often failed to complete a task and thus not "enterprise worthy".
 
 
 <a name="BusinessObjective"></a>
@@ -777,6 +776,8 @@ A compromise is to calculate and store, in addition to averages, 90th or 95th pe
 
 So when there is a cluster of machines, use general metrics to determine whether they are all using comparable amounts of CPU, memory, etc..
 (An example of such a metric is the <a target="_blank" href="https://dsp.stackexchange.com/questions/811/determining-the-mean-and-standard-deviation-in-real-time">running</a> Coefficient of Variation (CV) obtained by dividing the standard deviation into the average.)
+
+<a target="_blank" href="https://www.youtube.com/watch?v=QkcBASKLyeU">CPU measured as "busy" (not idle) may be really just "stalled" waiting for resources</a>. The "showboost" and "pmcarch" utility measuring instructions per cycle (IPC)
 
 More granular metrics on just one of the servers within a cluster can then be used.
 This would reduce disk space usage for metrics.
