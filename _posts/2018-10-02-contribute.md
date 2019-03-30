@@ -125,7 +125,12 @@ If you haven't used the tools mentioned here, we will train you so that you can 
 
    John makes use of Zoom for group video conferencing than can be recorded.
 
-2. From John, get an invite to the Slack channel used by developers.
+2. From John, get an email invite to the Slack channel used by developers (join the channels):
+
+   <a target="_blank" href="http://ywamconverge.slack.com/">http://ywamconverge.slack.com</a>
+
+   Click the "Channels" heading on the left pane.
+   Click on a channel name. Click on "Join Channel".
 
 3. Use your email to get a free GitHub account and let us know what your GitHub account name is. Then you can fork our GitHub to your own account. Create a branch under your account to make changes, then create a Pull/Merge Request. 
 
