@@ -78,10 +78,10 @@ The system consists of several components, <a target="_blank" href="https://docs
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=FwNdD0yrBE4&list=PLJY5a7HPiwbWpw63i-4sFoKfXvEe-zxBV">Audio podcasts from 2018</a> are also stored on YouTube.
    * Apple podcasts?
-   * Facebook?
+
+   * <a target="_blank" href="https://www.facebook.com/YWAMOCNJ/">Facebook</a>
    * Instagram?
-
-
+ 
 <a name="PickProject"></a>
 
 ## C) Pick a project
@@ -159,6 +159,7 @@ If you haven't used the tools mentioned here, we will train you so that you can 
 
 5. Saleforce Chatter real-time text message we use to make announcements that get sent out as emails.
 
+6. WhatsApp group.
 
 
 <a name="Website"></a>
