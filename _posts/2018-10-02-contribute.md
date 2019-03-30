@@ -251,7 +251,13 @@ Is the information correct? [Y/n]
 Salesforce provides weekly production backup zip. 
 It's triggered by a scheduled job from a service account which receives emails when done.
 Currently, each backup consists of 330 csv files take 8.3 MB zipped. Unzipped its 107 MB.
-The output zip file is copied to an alternative cloud provider (Google Drive) because Salesforce only stores backup files 48 hours, with file names like this: <tt>ywam-prod-2019-06-03-3amET.zip</tt> (from a default name such as "WE_00DG0000000ggbAMAQ_1.ZIP").
+The output zip file is copied to an alternative cloud provider (Google Drive) because Salesforce only stores backup files 48 hours, with file name (from a default name such as "WE_00DG0000000ggbAMAQ_1.ZIP") to this example: 
+
+   <tt>ywam-prod-data-2019-06-03-3amET.zip</tt>
+
+Metadata is extracted to a name such as:
+
+   <tt>ywam-prod-meta-2019-06-03-3amET.zip</tt>
 
 Due to active changes, <strong>daily</strong> backups are maintained for 13 months (370 zip files).
 The assumption is that there is a lot of financial info in the backups.
