@@ -20,9 +20,9 @@ This document is under constant draft change at the moment.
 This is an example of a hands-on tutorial that volunteer software developers reference to get setup in order to make contributions in a collaborative way. This was written to ensure that you (a developer/graphic artist, etc.) get <strong>trained</strong> on a professional approach to software development while improving the non-profit's digital assets. The sections here are:
 
 A. <a href="#Understand">      Understand the mission</a> (the organization and yours)<br />
-B. <a href="#PickProject">   Pick a project</a><br />
-C. <a href="#Collaboration">   Setup collaboration tools and techniques</a><br />
-D. <a href="#TechArchitecture">Understand the technical architecture</a><br />
+B. <a href="#TechArchitecture">Understand the technical architecture</a><br />
+C. <a href="#PickProject">     Pick a project</a><br />
+D. <a href="#Collaboration">   Setup collaboration tools and techniques</a><br />
 E. <a href="#Website">         Copy the public-facing website</a><br />
 F. <a href="#Salesforce">      Create a copy of the Salesforce org</a><br />
 G. <a href="#Changes">         Plan changes, update test scripts</a><br />
@@ -66,9 +66,25 @@ https://www.youtube.com/watch?v=hSqbotfxZAA
 Dec 23, 2015
 
 
+<a name="TechArchitecture"></a>
+
+## B) Understand the technical architecture
+
+The system consists of several components, <a target="_blank" href="https://docs.google.com/presentation/d/1o_T8XRfeiDLD62ums2hHYid5_qIFNHUlAkQ3YtV6E1k/edit#slide=id.p">described by this system flow chart on Google (created using Lucid Chart)<img align="right" alt="ywan-architecutre-2019a-200x183-7427" width="200" src="https://user-images.githubusercontent.com/300046/53695300-b2bb2800-3d87-11e9-9b8e-759a92d654dd.jpg"></a>
+
+   * <a href="#TrainingSite">A training management website</a> used by interns to learn about being an intern. Videos on it are stored (as Public) on the <a target="_blank" href="https://www.youtube.com/channel/UCacj____6p8-iiIN_Nk-iBw">YouTube channel</a>
+   * <a href="#Website">A public-facing website</a> that exchanges information dynamically with
+   * <a href="#Salesforce">A Salesforce org</a> database
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=FwNdD0yrBE4&list=PLJY5a7HPiwbWpw63i-4sFoKfXvEe-zxBV">Audio podcasts from 2018</a> are also stored on YouTube.
+   * Apple podcasts?
+   * Facebook?
+   * Instagram?
+
+
 <a name="PickProject"></a>
 
-## B) Pick a project
+## C) Pick a project
 
 Some are listed in the <a target="_blank" href="https://rwjf.catchafire.org/dashboard">CatchAFire.org dahboard</a>
 
@@ -122,7 +138,7 @@ Some are listed in the <a target="_blank" href="https://rwjf.catchafire.org/dash
 
 <a name="Collaboration"></a>
 
-## C) Setup Collaboration
+## D) Setup Collaboration
 
 If you haven't used the tools mentioned here, we will train you so that you can contribute confidently.
 
@@ -143,21 +159,6 @@ If you haven't used the tools mentioned here, we will train you so that you can 
 
 5. Saleforce Chatter real-time text message we use to make announcements that get sent out as emails.
 
-
-<a name="TechArchitecture"></a>
-
-## D) Understand the technical architecture
-
-The system consists of several components, <a target="_blank" href="https://docs.google.com/presentation/d/1o_T8XRfeiDLD62ums2hHYid5_qIFNHUlAkQ3YtV6E1k/edit#slide=id.p">described by this system flow chart on Google (created using Lucid Chart)<img align="right" alt="ywan-architecutre-2019a-200x183-7427" width="200" src="https://user-images.githubusercontent.com/300046/53695300-b2bb2800-3d87-11e9-9b8e-759a92d654dd.jpg"></a>
-
-   * <a href="#TrainingSite">A training management website</a> used by interns to learn about being an intern. Videos on it are stored (as Public) on the <a target="_blank" href="https://www.youtube.com/channel/UCacj____6p8-iiIN_Nk-iBw">YouTube channel</a>
-   * <a href="#Website">A public-facing website</a> that exchanges information dynamically with
-   * <a href="#Salesforce">A Salesforce org</a> database
-
-   * <a target="_blank" href="https://www.youtube.com/watch?v=FwNdD0yrBE4&list=PLJY5a7HPiwbWpw63i-4sFoKfXvEe-zxBV">Audio podcasts from 2018</a> are also stored on YouTube.
-   * Apple podcasts?
-   * Facebook?
-   * Instagram?
 
 
 <a name="Website"></a>
