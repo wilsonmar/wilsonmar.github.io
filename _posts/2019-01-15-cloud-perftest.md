@@ -334,7 +334,7 @@ This table of availability SLAs and outage limits:
 </tbody>
 </table>
 
-
+BTW "99.95%" is <a target="_blank" href="https://github.com/enterprise">GitHub's SLA for Enterprise subscribers</a>
 
 ## Load Testing
 
