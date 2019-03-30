@@ -328,7 +328,7 @@ PROTIP: Those hard of hearing would appreciate you offering closed captioning in
 
 1. Switch back to your channel and click the new video link to <strong>view it</strong>.
 
-   <img align="right" alt="making-videos-youtube-cc-menu-211x274-6841.jpg" width="211" src="https://user-images.githubusercontent.com/300046/54519950-f85a2200-493d-11e9-965f-28c59cf824f1.jpg"></a>
+   <img align="right" alt="making-videos-youtube-cc-menu-211x274-6841.jpg" width="211" src="https://user-images.githubusercontent.com/300046/54519950-f85a2200-493d-11e9-965f-28c59cf824f1.jpg">
 
 1. Click the "CC" (for Closed Captioning) at the bottom of the frame so that a red line appears under it.
 
@@ -352,7 +352,10 @@ PROTIP: Those hard of hearing would appreciate you offering closed captioning in
 
 1. Switch to your Finder and navigate your "Downloads" folder.
 1. Move the file to be among your other assets used to create the video.
-1. Optionally, rename the file with a date, such as <tt>captions-2019-12-30a.sbv</tt>.
+1. Optionally, rename the file with a date, such as 
+
+   <tt>captions-2019-12-30a.sbv</tt>
+
 1. Right-click on the "captions.sbv" file to select an editor to view the file. Notice time codes such as:
 
    <pre>0:00:00.279,0:00:04.529</pre>
