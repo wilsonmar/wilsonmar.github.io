@@ -262,6 +262,9 @@ Metadata is extracted to a name such as:
 Due to active changes, <strong>daily</strong> backups are maintained for 13 months (370 zip files).
 The assumption is that there is a lot of financial info in the backups.
 
+TODO: Add to the name the number of days since Jan 1 of the year.
+
+
 ### Production security
 
 The production Salesforce instance is <a target="_blank" href="https://studentmobilizationcentre.my.salesforce.com">https://studentmobilizationcentre.my.salesforce.com</a>, but to avoid additional charges we are trying to keep the number of people accessing it. Named users in SF are first initial and last name with no space.
