@@ -86,7 +86,7 @@ The system consists of several components, <a target="_blank" href="https://docs
 
 ## C) Pick a project
 
-Some are listed in the <a target="_blank" href="https://rwjf.catchafire.org/dashboard">CatchAFire.org dahboard</a>
+Some volunteer opportunities are listed in <a target="_blank" href="https://rwjf.catchafire.org/volunteer/?name_filter=ywam%20converge&page=1">CatchAFire.org</a> managed by admins using the <a target="_blank" href="https://rwjf.catchafire.org/dashboard"> dahboard</a>.
 
 1. Pick a project you are interested in. Some John posts at <a target="_blank" href="https://www.catchafire.org/volunteer/?name_filter=ywam&page=1">CatchAFire.org</a>:
 
