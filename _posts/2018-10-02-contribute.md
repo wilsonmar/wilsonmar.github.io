@@ -255,7 +255,7 @@ The output zip file is copied to an alternative cloud provider (Google Drive) be
 
    <tt>ywam-prod-<strong>data</strong>-2019-06-03-3amET.zip</tt>
 
-Metadata is extracted to a name such as:
+Metadata (custom fields, reports, list views, workflows, etc.) is extracted to a name such as:
 
    <tt>ywam-prod-<strong>meta</strong>-2019-06-03-3amET.zip</tt>
 
@@ -265,6 +265,13 @@ Due to active changes, <strong>daily</strong> backups are maintained for 13 mont
 The assumption is that there is a lot of financial info in the backups.
 
 TODO: Add to the name the number of days since Jan 1 of the year.
+
+3rd party offerings:
+* https://skyvia.com/data-integration/salesforce-data-loader
+* https://spanning.com/resources/whitepapers/3-ways-to-restore-salesforce-data/
+* https://www.cloudally.com/how-to-recover-salesforce-data/
+* https://pages.ownbackup.com/salesforce-weekly-export
+* https://www.backupify.com/salesforce-backup
 
 
 ### Production security
