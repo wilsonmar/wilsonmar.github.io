@@ -20,23 +20,25 @@ comments: true
 
 First we work backwards, leveraging the outcome of Robert's work to make sure that it's not vaporware:
 
-### &nbsp; &nbsp; &nbsp; Production usage: the buzz phrase
+### &nbsp; &nbsp; &nbsp; &nbsp; Production usage: the buzz phrase
 
-1. Manually use an internet browser to visit the web page generated from within Heroku (under Robert's account) at 
+1. Manually use an internet browser to visit the web page generated from within Heroku (under Robert's account):
 
    <pre><a target="_blank" href="https://fathomless-inlet-53225.herokuapp.com/">https://fathomless-inlet-53225.herokuapp.com</a></pre>
 
-   You should see a random phrase generated, such as:
+   If the site is still alive, you should see a random phrase generated, such as:
 
-   "Complete Continuous Improvement Enormously Boosts Continuous Integration"
+   <strong>"Complete Continuous Improvement Enormously Boosts Continuous Integration"</strong>
 
-   "Complete" is an adjective that also include<br />'modern', 'self-service', 'integrated', 'end-to-end'
+   Below is a break-down of each sub-phrase above:
+
+   "Complete" is an <strong>adjective</strong> that also include<br />'modern', 'self-service', 'integrated', 'end-to-end'
    
-   "Continuous Improvement" is a buzz word that also include<br />'continuous testing', 'continuous integration', 'continuous deployment', 'devops'
+   "Continuous Improvement" is a <strong>buzz word</strong> that also include<br />'continuous testing', 'continuous integration', 'continuous deployment', 'devops'
    
-   "Enormously" is an adverb that also include<br />'remarkably', 'substantially', 'significantly', 'seriously'
+   "Enormously" is an <strong>adverb</strong> that also include<br />'remarkably', 'substantially', 'significantly', 'seriously'
    
-   "Boosts" is a verb that also include<br />'accelerates', 'improves', 'enhances', 'revamps'
+   "Boosts" is a <strong>verb</strong> that also include<br />'accelerates', 'improves', 'enhances', 'revamps'
    
    "Continuous Integration" is another buzz word
 
@@ -48,7 +50,15 @@ First we work backwards, leveraging the outcome of Robert's work to make sure th
 
    The program begins at bottom of the code from the `print(generate_buzz())` command within the `__main__` 
 
-   The `generate_buzz()` function
+   The `generate_buzz()` function returns out the program the `phrase` variable after using the Python built-in `title()` method that capitalizes the first character of each word.
+
+   The value for the phrase variable is obtained by joining together a sampling from among adjectives, buzz_terms array, adverbs, and verbs.
+
+   The `sample` function returns the output from`random.sample` because it is defined in the random library specified in the `import` statement at the top of the code file. The variable `n` is a commonly used name for a temporary variable containing the limit.
+
+   Within the `if` statement, the `return` clause is indented because that's Python.
+
+   The variable `list_` represents the variable specified in the calling function.
 
 
    ### Local use of Robert's Docker
