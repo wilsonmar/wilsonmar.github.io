@@ -24,15 +24,24 @@ First we work backwards, leveraging the outcome of Robert's work to make sure th
 
 1. Manually use an internet browser to visit the web page generated from within Heroku (under Robert's account) at 
 
-   <a target="_blank" href="https://fathomless-inlet-53225.herokuapp.com/">https://fathomless-inlet-53225.herokuapp.com</a>
+   <pre><a target="_blank" href="https://fathomless-inlet-53225.herokuapp.com/">https://fathomless-inlet-53225.herokuapp.com</a></pre>
 
-   You should see a random sentence generated, such as:
+   You should see a random phrase generated, such as:
 
    "Complete Continuous Improvement Enormously Boosts Continuous Integration"
 
-1. View the sample ("trivial") Python program that generated the set of adjectives, adverbs, verbs, and buzz phrase shown above at:
+   * "Complete" is an adjective that also includes 'modern', 'self-service', 'integrated', 'end-to-end'
+   * "Continuous Improvement" is a buzz word that also include 'continuous testing', 'continuous integration',
+        'continuous deployment', 'devops'
+   * "Enormously" is an adverb that also includes 'remarkably', 'substantially', 'significantly', 'seriously'
+   * "Boosts" is a verb that also includes 'accelerates', 'improves', 'enhances', 'revamps'
+   * "Continuous Integration" is another buzz word
 
-   <a target="_blank" href="https://github.com/robvanderleek/cicd-buzz/blob/master/buzz/generator.py">https://github.com/robvanderleek/cicd-buzz/blob/master/buzz/generator.py</a>
+1. View the sample ("trivial") Python program code that generates the buzz phrases above at:
+
+   <pre><a target="_blank" href="https://github.com/wilsonmar/cicd-buzz/blob/master/buzz/generator.py">https://github.com/robvanderleek/cicd-buzz/blob/master/buzz/generator.py</a></pre>
+
+   The program begins at bottom of the code from the `print(generate_buzz())` within the `__main__` 
 
 
    ### Local use of Robert's Docker
