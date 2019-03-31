@@ -16,7 +16,9 @@ comments: true
 
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/cicd-pipeline/">This</a> <strong>automates</strong> the end-to-end trivial example based on Rob van der Leek's <a target="_blank" href="https://medium.com/bettercode/how-to-build-a-modern-ci-cd-pipeline-5faa01891a5b">Apr 9, 2017 Medium article</a> and "buzz generator" in his <a target="_blank" href="https://github.com/robvanderleek/cicd-buzz">cicd-buzz" open-source repo</a>
+<a target="_blank" href="https://wilsonmar.github.io/cicd-pipeline/">This</a> <strong>automates</strong> the end-to-end trivial example based on Rob van der Leek's <a target="_blank" href="https://medium.com/bettercode/how-to-build-a-modern-ci-cd-pipeline-5faa01891a5b">Apr 9, 2017 Medium article</a> and "buzz generator" in his <a target="_blank" href="https://github.com/robvanderleek/cicd-buzz">"cicd-buzz" open-source repo</a>
+
+### &nbsp; &nbsp; The outcome: a buzz phrase
 
 First we work backwards, leveraging the outcome of Robert's work to make sure that it's not vaporware:
 
@@ -28,11 +30,16 @@ First we work backwards, leveraging the outcome of Robert's work to make sure th
 
    "Complete Continuous Improvement Enormously Boosts Continuous Integration"
 
+1. View the sample ("trivial") Python program that generated the set of adjectives, adverbs, verbs, and buzz phrase at:
+
+   <a target="_blank" href="https://github.com/robvanderleek/cicd-buzz/blob/master/buzz/generator.py">https://github.com/robvanderleek/cicd-buzz/blob/master/buzz/generator.py</a>
+
+
    ### Local use of Robert's Docker
 
 1. Open a Terminal on your Mac.
 1. Create a container folder, such as ~/git/wilsonmar.
-1. Download Wilson Mar's clone of <a target="_blank" href="https://github.com/robvanderleek/cicd-buzz">Robert's repo at https://github.com/robvanderleek/cicd-buzz</a>:
+1. Download Wilson Mar's clone of <a target="_blank" href="https://github.com/robvanderleek/cicd-buzz">Robert's repo</a>:
 
    <pre><strong>git clone <a target="_blank" href="https://github.com/wilsonmar/cicd-buzz">https://github.com/wilsonmar/cicd-buzz</a>
    cd cicd-buzz
@@ -71,19 +78,19 @@ Status: Downloaded newer image for robvanderleek/cicd-buzz:latest
 1. Run:
 
    <pre>
- * Serving Flask app "app" (lazy loading)
- * Environment: production
+ \* Serving Flask app "app" (lazy loading)
+ \* Environment: production
    WARNING: Do not use the development server in a production environment.
    Use a production WSGI server instead.
- * Debug mode: off
- * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ \* Debug mode: off
+ \* Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
    </pre>
 
    CAUTION: "0.0.0.0" is the result in this <strong>Dockerfile</strong>:
 
    <pre>
 #!/bin/bash
-\# run.sh from https://github.com/wilsonmar/cicd-buzz
+# run.sh from https://github.com/wilsonmar/cicd-buzz
 # Clean-up leftovers from previous run, then run Docker image,
 # -interactive, -volume, -working dir specified:
 &nbsp;
@@ -203,3 +210,11 @@ $0, Free CICD and Web hosting integration. Travis-ci + Github.page
 Go to the profile of Peter Chang
 Peter Chang
 Aug 19, 2018
+
+
+
+## More on DevOps #
+
+This is one of a series on DevOps:
+
+{% include devops_links.html %}
