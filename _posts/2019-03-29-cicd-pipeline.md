@@ -172,6 +172,25 @@ echo "$IMAGE IMAGE_ID=$IMAGE_ID"
 
    PROTIP: Use of "0.0.0.0" makes it externally accessible in production.
 
+   This references the <strong>Dockerfile</strong> in the same directory:
+   
+   <pre>
+FROM python:alpine:3.5
+EXPOSE 5000
+RUN apk add --update python py-pip
+COPY requirements.txt /src/requirements.txt
+RUN pip install -r /src/requirements.txt
+COPY app.py /src
+COPY buzz /src/buzz
+CMD ["python", "/src/app.py"]
+   </pre>
+
+   The requirements.txt file contains Python dependency specifications for the Python Flash library and pytest library:
+   
+   <pre>pytest==4.2.0
+   Flask==1.0.2
+   </pre>
+
    Here, the Terminal session does not take any more commands. So ...
 
 1. Open another Terminal instance.
@@ -206,7 +225,7 @@ CONTAINER ID        IMAGE                     COMMAND                CREATED    
 1. Open another Terminal instance to open the URL in an internet browser (without the `-v` for verbose of HTML headers):
 
    <pre>
-   curl 127.0.0.1:5000
+   curl localhost:5000
    </pre>
  
    Example response (the app randomly varies words output):
@@ -230,33 +249,8 @@ CONTAINER ID        IMAGE                     COMMAND                CREATED    
 
 1. Return to Press CTRL+C to quit.
 
-   This references the <strong>Dockerfile</strong> in Robert's repo:
-
-   <pre>
-FROM python:alpine:3.5
-EXPOSE 5000
-RUN apk add --update python py-pip
-COPY requirements.txt /src/requirements.txt
-RUN pip install -r /src/requirements.txt
-COPY app.py /src
-COPY buzz /src/buzz
-CMD ["python", "/src/app.py"]
-   </pre>
-
-   The requirements.txt file contains Python dependency specifications for the Python Flash library and pytest library:
-   
-<pre>pytest==4.2.0
-Flask==1.0.2
-</pre>
 
 ## Test-first
-
-tests/test_generator.py
-
-https://github.com/robvanderleek/cicd-buzz/blob/master/tests/test_generator.py
-
-1. Push the Docker image to Docker Hub as https://hub.docker.com/r/robvanderleek/cicd-buzz/tags/
-
 
 
 The script does the following steps:
