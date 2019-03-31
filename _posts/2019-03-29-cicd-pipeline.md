@@ -94,11 +94,19 @@ First we work backwards, leveraging the outcome of Robert's work to make sure th
 
    Unlike other similar scripts, this one does it all: downloads the image and cleans up after itself like a good Boyscout. All it leaves behind is the Console log.
 
-Below is an examplation of each step:
+Below is an examplation of each step in the shell script:
 
-1. Copy and paste this command to download the Docker image Robert created and uploaded into DockerHub:
+1. Define values within variables:
 
-   <pre><strong>docker image pull robvanderleek/cicd-buzz:latest
+   <pre>
+NAME="cicd-buzz"
+IMAGE="robvanderleek/cicd-buzz"
+CONTAINER_PORT="8082"
+   </pre>
+
+1. Pull the latest image from DockerHub:
+
+   <pre><strong>docker image pull "${IMAGE}:latest"
    </strong></pre>
 
    Login to DockerHub is not needed if the Docker image is open to the public, which the above is.
@@ -117,19 +125,39 @@ Digest: sha256:82992e5e8069af9664cc2f88428b4cd813752f91dfc1130fe232bd070c6b8f10
 Status: Downloaded newer image for robvanderleek/cicd-buzz:latest
    </pre>
 
+   If the image is already there, you'll see:
+
+   <pre>
+Status: Image is up to date for robvanderleek/cicd-buzz:latest
+   </pre>
+
 1. Verify the Docker image size:
 
-   <pre><strong>docker images robvanderleek/cicd-buzz
+   <pre><strong>docker images "${IMAGE}"   # 61.8MB
+IMAGE_ID=$(docker images --format="{{.Repository}} {{.ID}}" | grep "^$IMAGE " | cut -d' ' -f2)
+echo "$IMAGE IMAGE_ID=$IMAGE_ID"
    </strong></pre>
 
    As of the time of writing, the image SIZE was "61.8MB".
 
-1. Copy and paste the command to run Docker:
+1. Remove the previous process (container) if it's still running:
 
-   <pre><strong>export NAME="cicd-buzz"
-   export IMAGE="robvanderleek/cicd-buzz"
-   docker run --name ${NAME} -p 8082:5000 -i ${IMAGE} $@ &
+   <pre><strong>docker ps
+   CONTAINER_ID=$(docker ps -aqf "name=$NAME")
+   echo "$CONTAINER_ID for $IMAGE"
+   if ! [[ -z "${CONTAINER_ID// }"  ]]; then  #it's blank
+   	  echo_f "Stopping CONTAINER_ID=$CONTAINER_ID ... (takes a few seconds)"
+      docker stop "${CONTAINER_ID}" > /dev/null 2>&1
+      docker rm   "${CONTAINER_ID}" > /dev/null 2>&1
+   fi
    </strong></pre>
+
+1. Run:
+
+   <pre><strong>docker run --name ${NAME} -p "$CONTAINER_PORT:5000" -i ${IMAGE}
+   </strong></pre>
+
+   `&` would normally run in the background, but that's not the case here.
 
    Sample response:
 
@@ -143,6 +171,19 @@ Status: Downloaded newer image for robvanderleek/cicd-buzz:latest
    </pre>
 
    PROTIP: Use of "0.0.0.0" makes it externally accessible in production.
+
+   Here, the Terminal session does not take any more commands. So ...
+
+1. Open another Terminal instance.
+1. Run the <strong>test.sh</strong> Bash script I've added to the repo:
+
+   <pre><strong>echo $PWD
+   chmod +x test.sh
+   ./test.sh
+   </strong></pre>
+
+   The displays the output on a new browser window
+   and outputs information to the console.
 
 1. Open another Terminal instance to view Docker containers running:
 
