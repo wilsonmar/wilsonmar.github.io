@@ -16,7 +16,7 @@ comments: true
 
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/cicd-pipeline/">This</a> is a "deep dive" into the coding of an end-to-end DevOps workflow example based on Rob van der Leek's <a target="_blank" href="https://medium.com/bettercode/how-to-build-a-modern-ci-cd-pipeline-5faa01891a5b">Apr 9, 2017 Medium article</a> and "buzz phrase generator" in his <a target="_blank" href="https://github.com/robvanderleek/cicd-buzz">"cicd-buzz" open-source repo</a>
+<a target="_blank" href="https://wilsonmar.github.io/cicd-pipeline/">This</a> is a deep dive into the coding of various assets in an end-to-end DevOps workflow. Examples are modified from Rob van der Leek's <a target="_blank" href="https://medium.com/bettercode/how-to-build-a-modern-ci-cd-pipeline-5faa01891a5b">Apr 9, 2017 Medium article</a> and "buzz phrase generator" in his <a target="_blank" href="https://github.com/robvanderleek/cicd-buzz">"cicd-buzz" open-source repo</a>.
 
 First we work backwards, leveraging the outcome of Robert's work to make sure that it's not vaporware:
 
@@ -32,50 +32,57 @@ First we work backwards, leveraging the outcome of Robert's work to make sure th
 
    Below is a break-down of each sub-phrase above:
 
-   "Complete" is an <strong>adjective</strong> that also include<br />'modern', 'self-service', 'integrated', 'end-to-end'
+   "Complete" is an <strong>adjective</strong> that also includes<br />'modern', 'self-service', 'integrated', 'end-to-end'
    
-   "Continuous Improvement" is a <strong>buzz word</strong> that also include<br />'continuous testing', 'continuous integration', 'continuous deployment', 'devops'
+   "Continuous Improvement" is a <strong>buzz word</strong> that also includes<br />'continuous testing', 'continuous integration', 'continuous deployment', 'devops'
    
-   "Enormously" is an <strong>adverb</strong> that also include<br />'remarkably', 'substantially', 'significantly', 'seriously'
+   "Enormously" is an <strong>adverb</strong> that also includes<br />'remarkably', 'substantially', 'significantly', 'seriously'
    
-   "Boosts" is a <strong>verb</strong> that also include<br />'accelerates', 'improves', 'enhances', 'revamps'
+   "Boosts" is a <strong>verb</strong> that also includes<br />'accelerates', 'improves', 'enhances', 'revamps'
    
-   "Continuous Integration" is another buzz word
+   "Continuous Integration" is another buzz word.
 
-   ### generator.py Program code
+
+   ### generator.py coding
 
 1. Click the URL below to view the sample ("trivial") Python program code that generates the buzz phrases above:
 
    <pre><a target="_blank" href="https://github.com/wilsonmar/cicd-buzz/blob/master/buzz/generator.py">https://github.com/robvanderleek/cicd-buzz/blob/master/buzz/generator.py</a></pre>
 
-   The program begins at bottom of the code from the `print(generate_buzz())` command within the `__main__` 
+   Below is an example of how one would explain the program during a live walkthrough:
+
+   The program begins at bottom of the code with the `print(generate_buzz())` command under the `if __name__ == "__main__":` entry point.
 
    The `generate_buzz()` function returns out the program the `phrase` variable after using the Python built-in `title()` method that capitalizes the first character of each word.
 
-   The value for the phrase variable is obtained by joining together a sampling from among adjectives, buzz_terms array, adverbs, and verbs.
+   The value for the phrase variable is obtained by joining together a samples within arrays of adjectives, buzz (terms), adverbs, and verbs.
 
-   The `sample` function returns the output from`random.sample` because it is defined in the random library specified in the `import` statement at the top of the code file. The variable `n` is a commonly used name for a temporary variable containing the limit.
+   The variable `list_` in the signature of the `sample` function stands in for the variables specified in the join function.
+
+   The `sample` function returns the output from`random.sample` because it is an inbuilt function brought in via the <a target="_blank" href="https://www.geeksforgeeks.org/python-random-sample-function/">module `random`</a> specified by the `import` statement at the top of the code file. 
+   
+   PROTIP: I prefer to use `from random import sample` because `import random` brings in the whole module, which this custom code doesn't use.
+   
+   The variable `n` is a commonly used name for a temporary variable containing the limit. It is defined in the function's signature specification.
 
    Within the `if` statement, the `return` clause is indented because that's Python.
-
-   The variable `list_` represents the variable specified in the calling function.
 
 
    ### Local use of Robert's Docker
 
 1. Open a Terminal on your Mac.
-1. Create a container folder, such as ~/git/wilsonmar.
-1. Download Wilson Mar's clone of <a target="_blank" href="https://github.com/robvanderleek/cicd-buzz">Robert's repo</a>:
+1. Create a container folder. I personally use ~/gits/wilsonmar.
+1. Get a clone of the "cicd-buzz" repo:
 
    <pre><strong>git clone <a target="_blank" href="https://github.com/wilsonmar/cicd-buzz">https://github.com/wilsonmar/cicd-buzz</a>
    cd cicd-buzz
    ls</strong></pre>
 
-   This version of Robert repo contains additional shell files.
+   My version of the repo contains additional shell files.
 
-1. Install Docker if you haven't already.
+1. <a target="_blank" href="https://wilsonmar.github.io/docker-setup/">Install Docker</a> if you haven't already.
 1. NOTE: Login not needed as Robert's Docker image is from the public default DockerHub.com.
-1. Copy and paste this command to run it:
+1. Copy and paste this command to download the Docker image Robert created and uploaded into DockerHub:
 
    <pre><strong>docker image pull robvanderleek/cicd-buzz:latest
    </strong></pre>
@@ -104,12 +111,12 @@ Status: Downloaded newer image for robvanderleek/cicd-buzz:latest
 1. Run:
 
    <pre>
- \* Serving Flask app "app" (lazy loading)
- \* Environment: production
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
    WARNING: Do not use the development server in a production environment.
    Use a production WSGI server instead.
- \* Debug mode: off
- \* Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Debug mode: off
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
    </pre>
 
    CAUTION: "0.0.0.0" is the result in this <strong>Dockerfile</strong>:
