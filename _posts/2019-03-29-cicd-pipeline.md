@@ -147,7 +147,7 @@ CONTAINER ID        IMAGE                     COMMAND                CREATED    
    Example response (the app randomly varies words output):
 
    <pre>
-<html><body><h1>Self-Service Devops Seriously Accelerates Continuous Deployment</h1></body></html>
+&LT;html&LT;<body>&LT;h1>Self-Service Devops Seriously Accelerates Continuous Deployment&LT;/h1>&LT;/body>&LT;/html>
   ~/gits/wilsonmar/cicd-buzz master*
    </pre>
 
