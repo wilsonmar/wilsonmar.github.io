@@ -18,7 +18,7 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/cicd-pipeline/">This</a> <strong>automates</strong> the end-to-end trivial example based on Rob van der Leek's <a target="_blank" href="https://medium.com/bettercode/how-to-build-a-modern-ci-cd-pipeline-5faa01891a5b">Apr 9, 2017 Medium article</a> and "buzz generator" in his <a target="_blank" href="https://github.com/robvanderleek/cicd-buzz">"cicd-buzz" open-source repo</a>
 
-### &nbsp; &nbsp; The outcome: a buzz phrase
+## View the outcome: a buzz phrase
 
 First we work backwards, leveraging the outcome of Robert's work to make sure that it's not vaporware:
 
@@ -30,7 +30,7 @@ First we work backwards, leveraging the outcome of Robert's work to make sure th
 
    "Complete Continuous Improvement Enormously Boosts Continuous Integration"
 
-1. View the sample ("trivial") Python program that generated the set of adjectives, adverbs, verbs, and buzz phrase at:
+1. View the sample ("trivial") Python program that generated the set of adjectives, adverbs, verbs, and buzz phrase shown above at:
 
    <a target="_blank" href="https://github.com/robvanderleek/cicd-buzz/blob/master/buzz/generator.py">https://github.com/robvanderleek/cicd-buzz/blob/master/buzz/generator.py</a>
 
@@ -151,7 +151,15 @@ CONTAINER ID        IMAGE                     COMMAND                CREATED    
   ~/gits/wilsonmar/cicd-buzz master*
    </pre>
 
-   Alternately, open an internet browser and paste in the address:
+   NOTE: The HTML in the outcome is constructed by <a target="_blank" href="https://github.com/robvanderleek/cicd-buzz/blob/master/app.py">https://github.com/robvanderleek/cicd-buzz/blob/master/app.py</a> before and after HTML around the <tt>generator.generate_buzz()</tt> function within 
+
+   "print(generate_buzz())" within <tt>generator.py</tt> within https://github.com/robvanderleek/cicd-buzz/tree/master/buzz
+
+   NOTE: The "0.0.0.0" in this line within app.py provides a way to reach external networks.
+   
+   <tt>app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)))</tt>
+
+   Internately, open an internet browser and paste in the address:
 
    <pre>127.0.0.1:8082</pre>
 
@@ -170,17 +178,19 @@ COPY buzz /src/buzz
 CMD ["python", "/src/app.py"]
    </pre>
 
-1. In a Still in an internet browser, view the 
+   The requirements.txt file contains Python dependency specifications for the Python Flash library and pytest library:
+   
+<pre>pytest==4.2.0
+Flask==1.0.2
+</pre>
 
-   <pre><strong>
-   docker pull <a target="_blank" href="https://hub.docker.com/r/robvanderleek/cicd-buzz">robvanderleek/cicd-buzz</a>
-   </strong></pre>
+## Test-first
 
-   <pre><strong>git clone <a target="_blank" href="https://github.com/robvanderleek/cicd-buzz">https://github.com/robvanderleek/cicd-buzz</a>
-   cd cicd-buzz</strong></pre>
+tests/test_generator.py
 
-1. clone <a target="_blank" href="https://github.com/robvanderleek/cicd-buzz">cicd-buzz" open-source repo</a>
-Push the Docker image to Docker Hub as https://hub.docker.com/r/robvanderleek/cicd-buzz/tags/
+https://github.com/robvanderleek/cicd-buzz/blob/master/tests/test_generator.py
+
+1. Push the Docker image to Docker Hub as https://hub.docker.com/r/robvanderleek/cicd-buzz/tags/
 
 
 
