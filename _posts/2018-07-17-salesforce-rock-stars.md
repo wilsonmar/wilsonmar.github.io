@@ -501,6 +501,12 @@ Vinay Chaturvedi, Salesforce Evangelist from Noida, India:
    * <a target="_blank" href="https://vinaychaturvedi.com/blog/">vinaychaturvedi.com/blog</a>
    since May 2015 writes APIs in Salesforce and Salesforce Lightning.
 
+Vivek Chawla
+   * <a target="_blank" href="https://github.com/sfdx-isv/sfdx-falcon-template">https://github.com/sfdx-isv/sfdx-falcon-template</a>
+
+https://www.youtube.com/watch?v=xLjY-j5pf6c&feature=youtu.be&t=12m53s
+
+
 <a target="_blank" href="https://www.linkedin.com/in/wade-clements-577aa1/">Wade Clements</a>, Sr. Director, Customer Success and Support, CA Technologies
 
 Warren Chalklen, PhD:
