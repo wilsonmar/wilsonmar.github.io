@@ -112,6 +112,9 @@ Ashish Agarwal in Singapore:
    * <a target="_blank" href="https://asagarwal.com/blog/">asagarwal.com/blog</a>
    since Apr 2010 
 
+Asish Behera in New Jersey, USA (asish1989)
+   * <a target="_blank" href="https://salesforceworld4u.blogspot.com/">salesforceworld4u.blogspot.com</a> since Nov 2011 
+
 Ben McCarthy, 5X Salesforce Developer MVP, Salesforce Certified Technical Architect, based in London with partner Empua:
    * <a target="_blank" href="http://www.salesforceben.com/">salesforceben.com</a>
    * Author of "Visualforce Development Cookbook"
@@ -232,10 +235,9 @@ Guha Arumugam (<a target="_blank" href="https://twitter.com/SF_Guha">@SF_Guha</a
    * <a target="_blank" href="http://guhasdevforce.com/">guhasdevforce.com</a> since May 2016 
 
 Harshit Pandey, Principal Technical Architect at Intuitive Surgical, previously Technical Architect at Salesforce.com Developer Relations Team:
-
+   * <a target="_blank" href="hhttps://github.com/mailtoharshit/awesome-salesforce">https://github.com/mailtoharshit/awesome-salesforce</a> curated list of delightful Salesforce Platform Resources
    * <a target="_blank" href="http://www.oyecode.com/">Oyecode.com</a>
    * Built [Trailhead](https://developer.salesforce.com/trailhead) while he was at Salesforce
-
    * <a target="_blank" href="https://about.me/harshit.pandey">https://about.me/harshit.pandey</a>
 
 Jason Ouellette:
@@ -263,6 +265,9 @@ Jeremy Ross (<a target="_blank" href="https://twitter.com/jeremyross">@jeremyros
    iTunes</a>, has, since May 2016, 183 episodes as of this writing.
    * Join their <a target="_blank" href="https://www.gooddaysirpodcast.com/community/">Slack group</a>
    * https://twitter.com/gooddaysirpdcst, @GoodDaySir_Army ‏#GoodDaySirArmy
+
+Joey Chen in the Philippines
+   * <a target="_blank" href="https://success.salesforce.com/ProfileView?u=00530000007KSrTAAW">The one</a> with the highest rating <a target="_blank" href="https://appexchange.salesforce.com/appxstore?type=Developer">among 13131 people on Salesforce's Developer Marketplace</a>.
 
 Joe Ferraro:
    * Author of <a target="_blank" href="http://github.com/joeferraro/MavensMate">http://github.com/joeferraro/MavensMate</a> plug-ins for editors Sublime Text and Adam. But as of 2017 he's stopped maintaining it. "Use Visual Studio" he says.
@@ -294,8 +299,7 @@ Keir Bowden (<a target="_blank" href="https://twitter.com/bob_buzzard">@bob_buzz
 
 Kevin O'Hara, Rochester, MI
    * <a target="_blank" href="https://github.com/kevinohara80/nforce">nforce repo on GitHub</a>
-   is a node.js salesforce REST API wrapper for force.com, database.com, and salesforce.com.
-   It set the standard for using Salesforce APIs.
+   is a node.js salesforce REST API wrapper for force.com, database.com, and salesforce.com. It set the standard for using Salesforce APIs.
 
 Lance Shi:
    * <a target="_blank" href="https://www.sfdcinpractice.com/">sfdcinpractice.com</a>
@@ -480,6 +484,11 @@ Shyam Nair, Salesforce Developer from Bengaluru, India:
    * <a target="_blank" href="https://itscloudyhere.blog/">itscloudyhere.blog</a>
    since Jan 2017 
 
+<a target="_blank" href="https://www.linkedin.com/in/stevemolis/">Steve Molis</a> of Wakefield, Massachusetts
+   * <a target="_blank" href="https://success.salesforce.com/ProfileView?u=0053000000235ByAAI">The one with the most answers</a> among <a target="_blank" href="https://appexchange.salesforce.com/appxstore?type=Developer">13131 people on Salesforce's Developer Marketplace</a>.
+   <em>So he kinda earned the right to be a self-deprecating comedian.</em>
+   * <a target="_blank" href="https://www.slideshare.net/awesomeadmin/learn-more-with-stevemo-steve-molis">Learn More with</a> <a target="_blank" href="https://twitter.com/SteveMoForce">@SteveMoForce</a>
+
 <a target="_blank" href="https://www.linkedin.com/in/tomblamire">Tom Blamire</a> (<a target="_blank" href="https://twitter.com/Salesforce_Tom/">@Salesforce_Tom</a>), CRM Specialist, CME Group
 
 Trish Bertuzzi (@BridgeGroupInc), Chief Strategist at The Bridge Group:
@@ -663,10 +672,6 @@ TODO: Identify writers
 
    * <a target="_blank" href="https://blog.wdcigroup.net/">blog.wdcigroup.net</a>
    since Nov 2008 from Australia and Malaysia, specialises in Salesforce and Dell Boomi platforms. They build and integrate cloud solutions, building and selling cloud applications on the Salesforce Appexchange.
-
-New Jersey, USA
-
-   * <a target="_blank" href="https://salesforceworld4u.blogspot.com/">salesforceworld4u.blogspot.com</a> since Nov 2011 
 
 From The Hague, The Netherlands:
 

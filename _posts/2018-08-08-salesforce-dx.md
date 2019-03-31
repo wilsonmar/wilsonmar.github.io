@@ -936,6 +936,8 @@ script:
 
 ## Rock stars
 
+Salesforce ISV Technical Evangelists Vivek M. Chawla, Peter Martin, and Danny Chang talk about their <a target="_blank" href="https://www.youtube.com/watch?v=xLjY-j5pf6c">this January, 2018 video</a> going through <a target="_blank" href="https://www.slideshare.net/VivekMChawla/salesforce-dx-201-advanced-implementation-for-isvs">this slidedeck</a> to explain their end-to-end model for ISV application design and developer workflow using SFDX, GitHub, CircleCI and First-Generation Packaging by applying <a target="_blank" href="https://github.com/sfdx-isv/sfdx-falcon-template">https://github.com/sfdx-isv/sfdx-falcon-template</a> and <a target="_blank" href="https://github.com/sfdx-isv/sfdx-falcon-demo">https://github.com/sfdx-isv/sfdx-falcon-demo</a> app
+
 Scott Wells 
 
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/play-by-play-strategies-successful-salesforce-dx-migration-adoption/table-of-contents">
