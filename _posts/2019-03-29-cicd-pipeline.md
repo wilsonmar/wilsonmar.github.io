@@ -42,6 +42,8 @@ First we work backwards, leveraging the outcome of Robert's work to make sure th
    
    "Continuous Integration" is another buzz word.
 
+   TODO: If you want to change these, edit your copy of the program code and build another Docker image.
+
 
    ### generator.py coding
 
@@ -71,21 +73,35 @@ First we work backwards, leveraging the outcome of Robert's work to make sure th
    ### Local use of Robert's Docker
 
 1. Open a Terminal on your Mac.
-1. Create a container folder. I personally use ~/gits/wilsonmar.
-1. Get a clone of the "cicd-buzz" repo:
+1. <a target="_blank" href="https://wilsonmar.github.io/docker-setup/">Install Docker</a> if you haven't already.
+1. Make a containing folder to add the repository. I personally use ~/gits/wilsonmar.
+1. A Git clone command creates the "cicd-buzz" repo folder:
 
    <pre><strong>git clone <a target="_blank" href="https://github.com/wilsonmar/cicd-buzz">https://github.com/wilsonmar/cicd-buzz</a>
    cd cicd-buzz
    ls</strong></pre>
 
-   My version of the repo contains additional shell files.
+   My version of the repo contains a shell file named "run.sh".
 
-1. <a target="_blank" href="https://wilsonmar.github.io/docker-setup/">Install Docker</a> if you haven't already.
-1. NOTE: Login not needed as Robert's Docker image is from the public default DockerHub.com.
+1. Run the <strong>run.sh</strong> Bash script I've added to the repo:
+
+   <pre><strong>echo $PWD
+   chmod +x run.sh
+   ./run.sh
+   </strong></pre>
+
+   BTW The `chmod +x run.sh` prevents the `Permission denied` error.
+
+   Unlike other similar scripts, this one does it all: downloads the image and cleans up after itself like a good Boyscout. All it leaves behind is the Console log.
+
+Below is an examplation of each step:
+
 1. Copy and paste this command to download the Docker image Robert created and uploaded into DockerHub:
 
    <pre><strong>docker image pull robvanderleek/cicd-buzz:latest
    </strong></pre>
+
+   Login to DockerHub is not needed if the Docker image is open to the public, which the above is.
 
    Sample response:
 
@@ -108,50 +124,25 @@ Status: Downloaded newer image for robvanderleek/cicd-buzz:latest
 
    As of the time of writing, the image SIZE was "61.8MB".
 
-1. Run:
+1. Copy and paste the command to run Docker:
+
+   <pre><strong>export NAME="cicd-buzz"
+   export IMAGE="robvanderleek/cicd-buzz"
+   docker run --name ${NAME} -p 8082:5000 -i ${IMAGE} $@ &
+   </strong></pre>
+
+   Sample response:
 
    <pre>
- * Serving Flask app "app" (lazy loading)
- * Environment: production
+* Serving Flask app "app" (lazy loading)
+* Environment: production
    WARNING: Do not use the development server in a production environment.
    Use a production WSGI server instead.
- * Debug mode: off
- * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+* Debug mode: off
+* Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
    </pre>
 
-   CAUTION: "0.0.0.0" is the result in this <strong>Dockerfile</strong>:
-
-   <pre>
-#!/bin/bash
-# run.sh from https://github.com/wilsonmar/cicd-buzz
-# Clean-up leftovers from previous run, then run Docker image,
-# -interactive, -volume, -working dir specified:
-&nbsp;
-PWD="~/gits/wilsonmar/cicd-buzz"
-NAME="cicd-buzz"
-IMAGE="robvanderleek/cicd-buzz"
-&nbsp;
-docker image pull "${IMAGE}"
-docker images "${IMAGE}"   # 61.8MB
-&nbsp;
-# Populate CONTAINER_ID variable:
-docker rm ${NAME} # > /dev/null 2>&1
-# List images downloaded:
-sudo docker images "${IMAGE}"
-# Run in background:
-sudo docker run --name ${NAME} -p 8082:5000 -i ${IMAGE} $@ &
-#sudo docker run --name ${NAME} -i -v ${PWD}:${PWD} -w ${PWD} ${IMAGE} $@
-curl 127.0.0.1:8082
-# Volume DRIVERs and Networks
-docker volume ls
-docker network ls  # host, bridge, none
-# List all info:
-docker info
-# Dispose:
-CONTAINER_ID=$(docker ps -aqf "name=$NAME")
-sudo docker stop ${CONTAINER_ID} # > /dev/null 2>&1
-   </pre>
-
+   PROTIP: Use of "0.0.0.0" makes it externally accessible in production.
 
 1. Open another Terminal instance to view Docker containers running:
 
