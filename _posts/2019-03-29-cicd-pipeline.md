@@ -16,11 +16,11 @@ comments: true
 
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/cicd-pipeline/">This</a> <strong>automates</strong> the end-to-end trivial example based on Rob van der Leek's <a target="_blank" href="https://medium.com/bettercode/how-to-build-a-modern-ci-cd-pipeline-5faa01891a5b">Apr 9, 2017 Medium article</a> and "buzz generator" in his <a target="_blank" href="https://github.com/robvanderleek/cicd-buzz">"cicd-buzz" open-source repo</a>
-
-## View the outcome: a buzz phrase
+<a target="_blank" href="https://wilsonmar.github.io/cicd-pipeline/">This</a> is a "deep dive" into the coding of an end-to-end DevOps workflow example based on Rob van der Leek's <a target="_blank" href="https://medium.com/bettercode/how-to-build-a-modern-ci-cd-pipeline-5faa01891a5b">Apr 9, 2017 Medium article</a> and "buzz phrase generator" in his <a target="_blank" href="https://github.com/robvanderleek/cicd-buzz">"cicd-buzz" open-source repo</a>
 
 First we work backwards, leveraging the outcome of Robert's work to make sure that it's not vaporware:
+
+### &nbsp; &nbsp; &nbsp; Production usage: the buzz phrase
 
 1. Manually use an internet browser to visit the web page generated from within Heroku (under Robert's account) at 
 
@@ -30,18 +30,25 @@ First we work backwards, leveraging the outcome of Robert's work to make sure th
 
    "Complete Continuous Improvement Enormously Boosts Continuous Integration"
 
-   * "Complete" is an adjective that also includes 'modern', 'self-service', 'integrated', 'end-to-end'
-   * "Continuous Improvement" is a buzz word that also include 'continuous testing', 'continuous integration',
-        'continuous deployment', 'devops'
-   * "Enormously" is an adverb that also includes 'remarkably', 'substantially', 'significantly', 'seriously'
-   * "Boosts" is a verb that also includes 'accelerates', 'improves', 'enhances', 'revamps'
-   * "Continuous Integration" is another buzz word
+   "Complete" is an adjective that also include<br />'modern', 'self-service', 'integrated', 'end-to-end'
+   
+   "Continuous Improvement" is a buzz word that also include<br />'continuous testing', 'continuous integration', 'continuous deployment', 'devops'
+   
+   "Enormously" is an adverb that also include<br />'remarkably', 'substantially', 'significantly', 'seriously'
+   
+   "Boosts" is a verb that also include<br />'accelerates', 'improves', 'enhances', 'revamps'
+   
+   "Continuous Integration" is another buzz word
 
-1. View the sample ("trivial") Python program code that generates the buzz phrases above at:
+   ### generator.py Program code
+
+1. Click the URL below to view the sample ("trivial") Python program code that generates the buzz phrases above:
 
    <pre><a target="_blank" href="https://github.com/wilsonmar/cicd-buzz/blob/master/buzz/generator.py">https://github.com/robvanderleek/cicd-buzz/blob/master/buzz/generator.py</a></pre>
 
-   The program begins at bottom of the code from the `print(generate_buzz())` within the `__main__` 
+   The program begins at bottom of the code from the `print(generate_buzz())` command within the `__main__` 
+
+   The `generate_buzz()` function
 
 
    ### Local use of Robert's Docker
