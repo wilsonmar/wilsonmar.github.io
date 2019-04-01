@@ -235,7 +235,19 @@ CONTAINER ID        IMAGE                     COMMAND                CREATED    
 
 To setup Travis CI to continuously automate tests:
 
+1. In a browser go to <a target="_blank" href="https://travis-ci.org/">https://travis-ci.org</a> and sign in if you haven't already.
+2. Sign up with GitHub.
+2. Click your profile icon and click Integrations at https://github.com/settings/installations
+3. To the right of TravisCI, click "Configure".
+4. Select the repository. Click Save.
+5. In Travis-ci.com, click "Sync".
+6. https://docs.travis-ci.com/user/tutorial/
+3. A `.travis.yml` file to your repository
 
+
+Travis CI is a hosted service for Continuous Integration work. It’s free for public GitHub repositories and getting a Travis CI account is just a matter of visiting https://travis-ci.org and logging in with your GitHub credentials.
+
+Enabling Travis CI to start a build at each Push and Pull Request for your repository is as easy as flipping the switch in front of your GitHub cicd-buzz repository (click the ‘Sync account’ button in case your repository is not yet visible) :
 
 ## Test-first
 

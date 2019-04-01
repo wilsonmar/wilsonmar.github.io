@@ -47,7 +47,7 @@ phrased in questions that help me determine the conditions for effectiveness in 
 
 ## Details
 
-**2. How does details get shared about shared environments?**
+**2. How do details get shared about shared environments?**
 
    Google Docs and now Microsoft Office has cloud-based software which allows several people to see
    the impact of each other's changes to the same document. Such systems also track each change,
