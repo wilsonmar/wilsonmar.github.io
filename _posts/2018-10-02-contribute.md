@@ -58,7 +58,7 @@ H. <a href="#TestDeploy">      Run tests, make changes, and deploy</a>
    
    ### Process/Procedures
 
-8. Watch demo video of <a target="_blank" href="https://www.youtube.com/watch?v=jQuuvYIbbTA&feature=youtu.be">How to apply for a Converge intership</a> [2:20] No sound.
+8. Watch demo video of <a target="_blank" href="https://www.youtube.com/watch?v=jQuuvYIbbTA&feature=youtu.be">How to apply for a Converge intership</a> [2:20] No sound. The Ruby system is not mobile-friendly (progressive).
 
 9. Watch demo video of <a target="_blank" href="https://youtu.be/ejz9HEbg9Xo">host app</a>. No sound.
 
@@ -74,7 +74,7 @@ The system consists of several components, <a target="_blank" href="https://docs
 
    * <a href="#TrainingSite">A training management website</a> used by interns to learn about being an intern. Videos on it are stored (as Public) on the <a target="_blank" href="https://www.youtube.com/channel/UCacj____6p8-iiIN_Nk-iBw">YouTube channel</a>
    * <a href="#Website">A public-facing website</a> that exchanges information dynamically with
-   * <a href="#Salesforce">A Salesforce org</a> database
+   * <a href="#Salesforce">A Salesforce org</a> database used internally for administration.
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=FwNdD0yrBE4&list=PLJY5a7HPiwbWpw63i-4sFoKfXvEe-zxBV">Audio podcasts from 2018</a> are also stored on YouTube.
    * Apple podcasts?
@@ -111,7 +111,7 @@ Some volunteer opportunities are listed in <a target="_blank" href="https://rwjf
       3. Export metadata (coding) from Sandbox.
       4. Create data extract from Sandbox.
       5. <strong>Cleanse data</strong> 
-      6. generate using <a target="_blank" href="http://mockaroo.com">mockaroo.com</a> (generates up to 1,000 rows free).
+      6. generate additional test/mock data using <a target="_blank" href="http://mockaroo.com">mockaroo.com</a> (generates up to 1,000 rows free).
       7. Copy cleansed data into a location available to developers.
       <br /><br />
 

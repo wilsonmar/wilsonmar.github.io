@@ -18,7 +18,7 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/cicd-pipeline/">This</a> is a deep dive into the coding of various assets in an end-to-end DevOps workflow. Examples are modified from Rob van der Leek's <a target="_blank" href="https://medium.com/bettercode/how-to-build-a-modern-ci-cd-pipeline-5faa01891a5b">Apr 9, 2017 Medium article</a> and "buzz phrase generator" in his <a target="_blank" href="https://github.com/robvanderleek/cicd-buzz">"cicd-buzz" open-source repo</a>.
 
-First we work backwards, leveraging the outcome of Robert's work to make sure that it's not vaporware:
+Here we first work backwards, leveraging the outcome of Robert's work to make sure that it's not vaporware:
 
 ### &nbsp; &nbsp; &nbsp; &nbsp; Production usage: the buzz phrase
 

@@ -276,10 +276,17 @@ See validity.com #DemandTools, #PeopleImport, #DupeBlocker and #BriteVerify
 
 ## GitHub
 
-<a target="_blank" href="https://github.com/forcedotcom/CustomMetadataLoader">https://github.com/forcedotcom/CustomMetadataLoader</a> provides a tool to help users bulk create and update custom metadata records in salesforce.com from a CSV file.
+<a target="_blank" href="https://github.com/forcedotcom/CustomMetadataLoader">https://github.com/forcedotcom/CustomMetadataLoader</a> 
+provides a tool to help users bulk create and update custom metadata records in salesforce.com from a CSV file.
 
 https://github.com/rsoesemann/salesforce-plantuml
 Salesforce app to generate UML class & ER-diagrams from your org data. Leverages the PlantUML library.
+
+https://github.com/danieljpeter/salesforceMetadataBackup
+Get all salesforce metadata via rest api and apache ant and push to github
+
+https://github.com/danieljpeter/HyperBatch
+by DanielJPeter
 
 
 ## Learning Modules
