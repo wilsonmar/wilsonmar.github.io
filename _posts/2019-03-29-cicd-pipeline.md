@@ -163,7 +163,7 @@ echo "$IMAGE IMAGE_ID=$IMAGE_ID"
    fi
    </strong></pre>
 
-1. Run:
+1. Run Dockerfile:
 
    <pre><strong>docker run --name ${NAME} -p "$CONTAINER_PORT:5000" -i ${IMAGE}
    </strong></pre>
@@ -211,8 +211,7 @@ CMD ["python", "/src/app.py"]
  
    Example response (the app randomly varies words output):
 
-   <pre>
-&LT;html&LT;<body>&LT;h1>Self-Service Devops Seriously Accelerates Continuous Deployment&LT;/h1>&LT;/body>&LT;/html>
+   <pre>&LT;html>&LT;body>&LT;h1>Self-Service Devops Seriously Accelerates Continuous Deployment&LT;/h1>&LT;/body>&LT;/html>
    </pre>
 
    NOTE: The "0.0.0.0" in this line within app.py provides a way to reach external networks.
@@ -220,7 +219,7 @@ CMD ["python", "/src/app.py"]
    <tt>app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)))</tt>
 
 
-   ### Clean-up
+### Clean-up
 
    After running a single curl command, the script stops, then removes the docker process based on capturing the CONTAINER_ID in a variable.
 
@@ -237,12 +236,13 @@ To setup Travis CI to continuously automate tests:
 
 1. In a browser go to <a target="_blank" href="https://travis-ci.org/">https://travis-ci.org</a> and sign in if you haven't already.
 2. Sign up with GitHub.
-2. Click your profile icon and click Integrations at https://github.com/settings/installations
-3. To the right of TravisCI, click "Configure".
-4. Select the repository. Click Save.
-5. In Travis-ci.com, click "Sync".
-6. https://docs.travis-ci.com/user/tutorial/
-3. A `.travis.yml` file to your repository
+3. Click your profile icon and click Integrations at https://github.com/settings/installations
+4. To the right of TravisCI, click "Configure".
+5. Select the repository. Click Save.
+6. In <a target="_blank" href="https://Travis-ci.com">Travis-ci.com</a>, click "Sync".
+7. <a target="_blank" href="https://docs.travis-ci.com/user/tutorial/">https://docs.travis-ci.com/user/tutorial</a>
+
+8. A `.travis.yml` file to your repository
 
 
 Travis CI is a hosted service for Continuous Integration work. It’s free for public GitHub repositories and getting a Travis CI account is just a matter of visiting https://travis-ci.org and logging in with your GitHub credentials.
