@@ -88,51 +88,52 @@ The system consists of several components, <a target="_blank" href="https://docs
 
 Some volunteer opportunities are listed in <a target="_blank" href="https://rwjf.catchafire.org/volunteer/?name_filter=ywam%20converge&page=1">CatchAFire.org</a> managed by admins using the <a target="_blank" href="https://rwjf.catchafire.org/dashboard"> dahboard</a>.
 
-   a. Team: How to get more people to be aware of this (advanced training to make a difference)? What are the outlets?
+a. Team: How to get more people to be aware of this (advanced training to make a difference)? What are the outlets?
    
-   b. John: Create videos for display in emails (instead of text) about next steps, etc. within a drip email sequence.
+b. John: Create videos for display in emails (instead of text) about next steps, etc. within a drip email sequence.
    
-   c. Create <strong>automated test scripts</strong> (based on <a href="#Procedures">documented procedures</a>) to verify whether the system works "end-to-end" (for different personas), to identify whether the sytem still works after changes. Kinda like auto-fill on steroids.
+c. Create <strong>automated test scripts</strong> (based on <a href="#Procedures">documented procedures</a>) to verify whether the system works "end-to-end" (for different personas), to identify whether the sytem still works after changes. Kinda like auto-fill on steroids.
    
-   d. Dan: Upgrade front-end server version upgrade (to Ruby, Postgres, TLS 1.2 for Braintree, etc.).
+d. Dan: Upgrade front-end server version upgrade (to Ruby, Postgres, TLS 1.2 for Braintree, etc.).
    
-   e. Wilson: Create instructions (this page) to enable volunteers to create a dev environment and contribute changes. 
+e. Wilson: Create instructions (this page) to enable volunteers to create a dev environment and contribute changes. 
    
-   f. Wilson/Dan: Convert bash scripts and instructions to create a dev instance of Ruby server running on Ubuntu.
+f. Wilson/Dan: Convert bash scripts and instructions to create a dev instance of Ruby server running on Ubuntu.
    
-   g. Kermit: To <strong>troubleshoot without worry</strong>, define manual procedures and scripts to create a <strong>stand-alone Saleforce Dev. instance</strong> (a "crash dummy") containing metadata and filtered/cleansed data from production org sandbox:
+g. Kermit: To <strong>troubleshoot without worry</strong>, define manual procedures and scripts to create a <strong>stand-alone Saleforce Dev. instance</strong> (a "crash dummy") containing metadata and filtered/cleansed data from production org sandbox:
 
    ### &nbsp; &nbsp; &nbsp; Administrator:
 
-      1. Configure templates and <a target="_blank" href="https://help.salesforce.com/articleView?id=data_sandbox_create.htm&type=5">generate a Dev. sandbox</a> from prod instance.
-      2. Create test scripts on sandbox so running it doesn't corrupt or degrade the production instance.
-      3. Export metadata (coding) from Sandbox.
-      4. Create data extract from Sandbox.
-      5. <strong>Cleanse data</strong> 
-      6. generate additional test/mock data using <a target="_blank" href="http://mockaroo.com">mockaroo.com</a> (generates up to 1,000 rows free).
-      7. Copy cleansed data into a location available to developers.
-      <br /><br />
+   1. Configure templates and <a target="_blank" href="https://help.salesforce.com/articleView?id=data_sandbox_create.htm&type=5">generate a Dev. sandbox</a> from prod instance.
+   2. Create test scripts on sandbox so running it doesn't corrupt or degrade the production instance.
+   3. Export metadata (coding) from Sandbox.
+   4. Create data extract from Sandbox.
+   5. <strong>Cleanse data</strong> 
+   6. generate additional test/mock data using <a target="_blank" href="http://mockaroo.com">mockaroo.com</a> (generates up to 1,000 rows free).
+   7. Copy cleansed data into a location available to developers.
+   <br /><br />
 
    ### &nbsp; &nbsp; &nbsp; Developer (volunteer):
 
-      1. Import metadata (coding) into Dev. instance.
-      8. <a target="_blank" href="http://pages.mail.salesforce.com/gettingstarted/sales-cloud/import-export-data/">Import</a> cleansed data into Dev using DataLoader.
-      9. Modify test scripts to run on imported Dev. instance.
-      <br /><br />
+   1. Import metadata (coding) into Dev. instance.
+   8. <a target="_blank" href="http://pages.mail.salesforce.com/gettingstarted/sales-cloud/import-export-data/">Import</a> cleansed data into Dev using DataLoader.
+   9. Modify test scripts to run on imported Dev. instance.
+   <br /><br />
    
-   h. Enable and test disaster recovery.
+h. Enable and test disaster recovery.
 
-   i. <a target="_blank" href="https://www.catchafire.org/volunteer/26956/ywam-converge-in-ocean-city--nj--tech-systems/">PROJECT:</a> To best communicate with student/interns, we need someone to research, propose, and then develop the best option for texting internationally to students, hosts, mentors, donors. Wilson said he and Kermit saw a company offering a good texting solution at Dreamforce. Texts can replace emails if they include links to static web pages or links with reminders to log in to dashboard to complete an activity.  
+i. <a target="_blank" href="https://www.catchafire.org/volunteer/26956/ywam-converge-in-ocean-city--nj--tech-systems/">PROJECT:</a> To best communicate with student/interns, we need someone to research, propose, and then develop the best option for texting internationally to students, hosts, mentors, donors. Wilson said he and Kermit saw a company offering a good texting solution at Dreamforce. Texts can replace emails if they include links to static web pages or links with reminders to log in to dashboard to complete an activity.  
 
-   j. Make <strong>introduction videos</strong> to each of the <a href="#persona">persona</a> for display on the website and to make emails more "alive".
+j. Make <strong>introduction videos</strong> to each of the <a href="#persona">persona</a> for display on the website and to make emails more "alive".
 
-   k. Create training for mentors ?
+k. Create training for mentors ?
 
-   l. <strong>Translations</strong> of the site into various languages. We have a team currently translating the site into Spanish. A LOT of their work is already done. At some point, I want to get a Volunteer Project posted to insert the “es:” text into the code. (BTW, all the training videos are also being translated to Spanish to be inserted into the videos too. That will be another project. The team in Colombia is translating those SRT files now.)
+l. <strong>Translations</strong> of the site into various languages. We have a team currently translating the site into Spanish. A LOT of their work is already done. At some point, I want to get a Volunteer Project posted to insert the “es:” text into the code. (BTW, all the training videos are also being translated to Spanish to be inserted into the videos too. That will be another project. The team in Colombia is translating those SRT files now.)
    
-   m. Architect a more secure way to maintain passwords and other secrets for team (Hashicorp Vault, etc.)
+m. Architect a more secure way to maintain passwords and other secrets for team (Hashicorp Vault, etc.)
    
-   n. Propose one of your own.
+n. Propose one of your own.
+
 
 <a name="Collaboration"></a>
 

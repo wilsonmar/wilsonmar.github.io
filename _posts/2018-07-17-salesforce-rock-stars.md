@@ -487,6 +487,8 @@ Shyam Nair, Salesforce Developer from Bengaluru, India:
 <a target="_blank" href="https://www.linkedin.com/in/stevemolis/">Steve Molis</a> of Wakefield, Massachusetts
    * <a target="_blank" href="https://success.salesforce.com/ProfileView?u=0053000000235ByAAI">The one with the most answers</a> among <a target="_blank" href="https://appexchange.salesforce.com/appxstore?type=Developer">13131 people on Salesforce's Developer Marketplace</a>.
    <em>So he kinda earned the right to be a self-deprecating comedian.</em>
+   * Steve is a top post of ideas as well. <a target="_blank" href="https://www.youtube.com/watch?v=u0wI44Tj0yo&index=8&list=PLvY9OQrhh8a7b2qmTPyX5iNU7wS6fXz1i">Hear him talk about "duplicate whack-a-mole" and "stare and compare" 2014</a>.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=WbTnqdnRYDc&list=PLvY9OQrhh8a4mNvS5-n0Jm_q5qkbHqxJB">Video of his epic hilarious Dreamforce 13</a>
    * <a target="_blank" href="https://www.slideshare.net/awesomeadmin/learn-more-with-stevemo-steve-molis">Learn More with</a> <a target="_blank" href="https://twitter.com/SteveMoForce">@SteveMoForce</a>
 
 <a target="_blank" href="https://www.linkedin.com/in/tomblamire">Tom Blamire</a> (<a target="_blank" href="https://twitter.com/Salesforce_Tom/">@Salesforce_Tom</a>), CRM Specialist, CME Group
