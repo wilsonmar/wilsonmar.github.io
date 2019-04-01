@@ -25,7 +25,7 @@ phrased in questions that help me determine the conditions for effectiveness in 
 
 ## Turnover of work
 
-**1. How does official turnover of shared assets occur between shifts?**
+**1. How does turnover of shared assets occur between shifts?**
 
    When we really examine it, there is a lot of information that needs to get passed.
 
@@ -99,15 +99,19 @@ impediements and improvements?**
   A crucial contribution of managers is to not only track time spent and achievements by the team,
   but the catalyst or conduit for optimizing the conditions in which the team operates most efficiently.
 
+  An on-line board such as Trello, Jira, Monday, etc. provides transparency of task priorities.
 
 ## Trends
 
 **7. How does the team evaluate trends in technologies and industry?**
 
-  Changes in technology are occuring at a quicker rate.
-  Companies such as Uber make use of new technologies in new business models that disrupt previous industries.
-  Indidivuals and organizations need to think ahead.
+   Changes in technology are occuring at a quicker rate.
+   
+   Companies such as Uber make use of new technologies in new business models that disrupt previous industries.
+   
+   Organizations need to incentivize indidivuals to think ahead. But there is a fine balance for coordinated advance.
 
+   A once-a-year hackathon may not be enough.
 
 ## Skills
 
