@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "CICD pipeline"
-excerpt: "Automated End-to-end example"
+title: "CICD pipeline (Docker of Python Console program being tested within TravisCI)"
+excerpt: "Featuring a Bash shell script that does everything, explained"
 modified:
 tags: []
 image:
@@ -16,7 +16,7 @@ comments: true
 
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/cicd-pipeline/">This</a> is a deep dive into the coding of various assets in an end-to-end DevOps workflow. Examples are modified from Rob van der Leek's <a target="_blank" href="https://medium.com/bettercode/how-to-build-a-modern-ci-cd-pipeline-5faa01891a5b">Apr 9, 2017 Medium article</a> and "buzz phrase generator" in his <a target="_blank" href="https://github.com/robvanderleek/cicd-buzz">"cicd-buzz" open-source repo</a>.
+<a target="_blank" href="https://wilsonmar.github.io/cicd-pipeline/">This</a> is a hands-on deep dive into the coding of various assets in an end-to-end DevOps workflow. Examples are modified from Rob van der Leek's <a target="_blank" href="https://medium.com/bettercode/how-to-build-a-modern-ci-cd-pipeline-5faa01891a5b">Apr 9, 2017 Medium article</a> and "buzz phrase generator" in his <a target="_blank" href="https://github.com/robvanderleek/cicd-buzz">"cicd-buzz" open-source repo</a>.
 
 Here we first work backwards, leveraging the outcome of Robert's work to make sure that it's not vaporware:
 
@@ -63,11 +63,22 @@ Here we first work backwards, leveraging the outcome of Robert's work to make su
 
    The `sample` function returns the output from`random.sample` because it is an inbuilt function brought in via the <a target="_blank" href="https://www.geeksforgeeks.org/python-random-sample-function/">module `random`</a> specified by the `import` statement at the top of the code file. 
    
-   PROTIP: I prefer to use `from random import sample` because `import random` brings in the whole module, which this custom code doesn't use.
+   ### Run the Python program
+
+1. Open a Text Editor program. Navigate into the "buzz" folder to edit "generator.py".
+1. Open a Terminal on your Mac and navigate into the buzz folder.
+1. Run the generator.py program using the Python interpreter (either version 2 or 3 should work).
+
+   <pre><strong>python generator.py</strong></pre>
+
+   NOTE: I would prefer to use `from random import sample` because `import random` brings in the whole module, which this custom code doesn't use.
+   However, doing so results in `NameError: global name 'random' is not defined` when run.
    
    The variable `n` is a commonly used name for a temporary variable containing the limit. It is defined in the function's signature specification.
 
    Within the `if` statement, the `return` clause is indented because that's Python.
+
+1. Repeat the call and another set of values should appear.
 
 
    ### Local use of Robert's Docker
@@ -157,8 +168,6 @@ echo "$IMAGE IMAGE_ID=$IMAGE_ID"
    <pre><strong>docker run --name ${NAME} -p "$CONTAINER_PORT:5000" -i ${IMAGE}
    </strong></pre>
 
-   `&` would normally run in the background, but that's not the case here.
-
    Sample response:
 
    <pre>
@@ -185,69 +194,47 @@ COPY buzz /src/buzz
 CMD ["python", "/src/app.py"]
    </pre>
 
-   The requirements.txt file contains Python dependency specifications for the Python Flash library and pytest library:
+   The <strong>requirements.txt</strong> file contains Python version dependency specifications for the Python Flash library and pytest library:
    
    <pre>pytest==4.2.0
    Flask==1.0.2
    </pre>
 
-   Here, the Terminal session does not take any more commands. So ...
+   PROTIP: Normally, the Terminal session would not take any more interactive commands, but the Bash script is written to call `docker run` with
+   `&` in the background. The `stop` command.
 
-1. Open another Terminal instance.
-1. Run the <strong>test.sh</strong> Bash script I've added to the repo:
+   Rather than opening a browser instance, we use curl utility to show the HTML response in the Console.
 
-   <pre><strong>echo $PWD
-   chmod +x test.sh
-   ./test.sh
-   </strong></pre>
-
-   The displays the output on a new browser window
-   and outputs information to the console.
-
-1. Open another Terminal instance to view Docker containers running:
-
-   <pre>
-   docker ps
-   </pre>
- 
-   Example:
-
-   <pre>
-CONTAINER ID        IMAGE                     COMMAND                CREATED              STATUS              PORTS               NAMES
-8e5bc7f37e78        robvanderleek/cicd-buzz   "python /src/app.py"   About a minute ago   Up About a minute                       cicd-buzz
-   </pre>
-
-   NOTE: A script would capture the CONTAINER ID value and save it for later use.
-   export CONTAINER_ID="8e5bc7f37e78"
-
-   <pre>sudo docker logs "${CONTAINER_ID}"</pre>
-
-1. Open another Terminal instance to open the URL in an internet browser (without the `-v` for verbose of HTML headers):
-
-   <pre>
-   curl localhost:5000
+   <pre>RESPONSE=$(curl "localhost:$CONTAINER_PORT")
+   echo "RESPONSE=$RESPONSE"
    </pre>
  
    Example response (the app randomly varies words output):
 
    <pre>
 &LT;html&LT;<body>&LT;h1>Self-Service Devops Seriously Accelerates Continuous Deployment&LT;/h1>&LT;/body>&LT;/html>
-  ~/gits/wilsonmar/cicd-buzz master*
    </pre>
-
-   NOTE: The HTML in the outcome is constructed by <a target="_blank" href="https://github.com/robvanderleek/cicd-buzz/blob/master/app.py">https://github.com/robvanderleek/cicd-buzz/blob/master/app.py</a> before and after HTML around the <tt>generator.generate_buzz()</tt> function within 
-
-   "print(generate_buzz())" within <tt>generator.py</tt> within https://github.com/robvanderleek/cicd-buzz/tree/master/buzz
 
    NOTE: The "0.0.0.0" in this line within app.py provides a way to reach external networks.
    
    <tt>app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)))</tt>
 
-   Internately, open an internet browser and paste in the address:
 
-   <pre>127.0.0.1:8082</pre>
+   ### Clean-up
 
-1. Return to Press CTRL+C to quit.
+   After running a single curl command, the script stops, then removes the docker process based on capturing the CONTAINER_ID in a variable.
+
+   <pre>
+CONTAINER ID        IMAGE                     COMMAND                CREATED              STATUS              PORTS               NAMES
+8e5bc7f37e78        robvanderleek/cicd-buzz   "python /src/app.py"   About a minute ago   Up About a minute                       cicd-buzz
+   </pre>
+
+   The image file downloaded is also removed as well to conserve disk space.
+
+## TravisCI
+
+To setup Travis CI to continuously automate tests:
+
 
 
 ## Test-first
