@@ -232,6 +232,8 @@ CONTAINER ID        IMAGE                     COMMAND                CREATED    
 
 ## TravisCI
 
+Travis CI is a hosted service for Continuous Integration work. It’s free for public GitHub repositories and getting a Travis CI account is just a matter of visiting <a target="_blank" href="https://travis-ci.org">https://travis-ci.org</a> and logging in with your GitHub credentials.
+
 To setup Travis CI to continuously automate tests:
 
 1. In a browser go to <a target="_blank" href="https://travis-ci.org/">https://travis-ci.org</a> and sign in if you haven't already.
@@ -242,12 +244,13 @@ To setup Travis CI to continuously automate tests:
 6. In <a target="_blank" href="https://Travis-ci.com">Travis-ci.com</a>, click "Sync".
 7. <a target="_blank" href="https://docs.travis-ci.com/user/tutorial/">https://docs.travis-ci.com/user/tutorial</a>
 
-8. A `.travis.yml` file to your repository
+8. A `.travis.yml` file to your repository. https://docs.travis-ci.com/user/language-specific/
+   If the file is not valid YAML, Travis CI will ignore it.
+9. Push a commit from your local git history to GitHub and hooks in GitHub will trigger a build.
+9. <a target="_blank" href="https://travis-ci.org/dashboard">Travis dashboard</a>
+<br /><br />
 
-
-Travis CI is a hosted service for Continuous Integration work. It’s free for public GitHub repositories and getting a Travis CI account is just a matter of visiting https://travis-ci.org and logging in with your GitHub credentials.
-
-Enabling Travis CI to start a build at each Push and Pull Request for your repository is as easy as flipping the switch in front of your GitHub cicd-buzz repository (click the ‘Sync account’ button in case your repository is not yet visible) :
+To enable Travis CI to start a build at each Push and Pull Request for a repository, flip the switch in front of your GitHub repository (click the ‘Sync account’ button in case your repository is not yet visible) :
 
 ## Test-first
 
