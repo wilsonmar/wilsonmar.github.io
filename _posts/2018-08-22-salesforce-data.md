@@ -274,8 +274,19 @@ Topics:
 
 See validity.com #DemandTools, #PeopleImport, #DupeBlocker and #BriteVerify 
 
+## GitHub
+
+<a target="_blank" href="https://github.com/forcedotcom/CustomMetadataLoader">https://github.com/forcedotcom/CustomMetadataLoader</a> provides a tool to help users bulk create and update custom metadata records in salesforce.com from a CSV file.
+
+https://github.com/rsoesemann/salesforce-plantuml
+Salesforce app to generate UML class & ER-diagrams from your org data. Leverages the PlantUML library.
+
 
 ## Learning Modules
+
+<a target="_blank" href="http://salesforce.vidyard.com/watch/ARIjWm2qrDkJVJxEhReFug?vyemail=wilsonmar@gmail.com">This 5 part video series</a> walks you through all aspects of data import, from preparing your import files to matching owner and parent record IDs, on both Classic and Lightning.
+
+<a target="_blank" href="http://salesforce.vidyard.com/watch/SFMg1Xa4JxTUPUDPphwRJ5?vyemail=kermitv@gmail.com">This 3-part video series</a> TC: SALESFORCE DATA BACKUP AND DISASTER RECOVERY OPTIONS [SP]
 
 Project: <a target="_blank" href="https://trailhead.salesforce.com/en/projects/import-and-export-with-data-management-tools">
 Import and Export with Data Management Tools</a> +300
