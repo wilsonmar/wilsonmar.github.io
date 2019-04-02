@@ -81,18 +81,18 @@ These come from the bash terminal on Linux machines:
 <li> control + A = Go to Beginning of line (as in A to Z)</li>
 <li> control + E = Go to End of line<br /></li>
 <p></p>
-<li> control + U = Clean line<br /></li>
+<li> control + U = Clean entire line<br /></li>
 <li> control + K = Kill line from under the cursor to the end of the line.</li>
 <li> control + Y = Retrieve line<br /></li>
 <p></p>
-<li> control + N = Next line </li>
-<li> control + P = Previous line<br /></li>
+<li> control + F = Forward cursor</li>
+<li> control + B = Backward<br /></li>
 <p></p>
 <li> control + H = Backspace left of cursor</li>
 <li> control + D = Delete right of cursor<br /></li>
 <p></p>
-<li> control + F = Forward cursor</li>
-<li> control + B = Backward<br /></li>
+<li> control + P = Previous line<br /></li>
+<li> control + N = Next line </li>
 <p></p>
 <li> control + R = Record a shortcut between quotes<br /></li>
 </ul>
@@ -287,14 +287,16 @@ stuff happens. It can be annoying.
 0. Click the Apple menu at the upper left corner.
 0. Select System Preferences.
 0. Select Desktop &amp; Screen Saver.
-0. Click Hot Corners at the lower-right corner.
+0. Select the "Screen Saver" tab.
+0. Click "Hot Corners" at the lower-right corner.
+0. Select actions for each of the corners.
    
-   <amp-img media="(min-width: 320px)" width="320" height="118" 
-layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/14206160/5a816098-f7ce-11e5-8e9c-eb5c06d3b2ad.jpg"></amp-img><!-- http://merc.tv/img/scr/mac_10.10_hot_corners.jpg" -->
+<img alt="macos-corners-689x387-19023.jpg" width="689" src="https://user-images.githubusercontent.com/300046/55433395-80e9dc80-5552-11e9-94d9-9184c989f70b.jpg">
 
 PROTIP: Disable each by selecting the dash (last choice) 
 so they show up when not wanted.
 
+PROTIP: NOT having a quick way to "Put display to sleep" is considered a security vulnerability by CIS. Using the lower-left is less popular (outside of Windows).
 
 
 <a name="Cat"></a>
