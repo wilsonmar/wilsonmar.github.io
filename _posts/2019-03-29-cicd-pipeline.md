@@ -18,7 +18,7 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/cicd-pipeline/">This</a> is a hands-on deep dive into the coding of various assets in an end-to-end DevOps workflow. Examples are modified from Rob van der Leek's <a target="_blank" href="https://medium.com/bettercode/how-to-build-a-modern-ci-cd-pipeline-5faa01891a5b">Apr 9, 2017 Medium article</a> and "buzz phrase generator" in his <a target="_blank" href="https://github.com/robvanderleek/cicd-buzz">"cicd-buzz" open-source repo</a>.
 
-Here we first work backwards, leveraging the outcome of Robert's work to make sure that it's not vaporware:
+Here we first work backwards, leveraging the outcome of Robert's work (to make sure that it's not vaporware ;).
 
 ### &nbsp; &nbsp; &nbsp; &nbsp; Production usage: the buzz phrase
 
@@ -81,7 +81,9 @@ Here we first work backwards, leveraging the outcome of Robert's work to make su
 1. Repeat the call and another set of values should appear.
 
 
-   ### Local use of Robert's Docker
+   ### Local use of Docker
+
+   I created the `run.sh` script so that you have an example of a Bash script to run <strong>locally<strong>.
 
 1. Open a Terminal on your Mac.
 1. <a target="_blank" href="https://wilsonmar.github.io/docker-setup/">Install Docker</a> if you haven't already.
@@ -237,20 +239,62 @@ Travis CI is a hosted service for Continuous Integration work. It’s free for p
 To setup Travis CI to continuously automate tests:
 
 1. In a browser go to <a target="_blank" href="https://travis-ci.org/">https://travis-ci.org</a> and sign in if you haven't already.
+
+   Travis is free for open-source.
+
 2. Sign up with GitHub.
 3. Click your profile icon and click Integrations at https://github.com/settings/installations
 4. To the right of TravisCI, click "Configure".
 5. Select the repository. Click Save.
-6. In <a target="_blank" href="https://Travis-ci.com">Travis-ci.com</a>, click "Sync".
-7. <a target="_blank" href="https://docs.travis-ci.com/user/tutorial/">https://docs.travis-ci.com/user/tutorial</a>
+6. In <a target="_blank" href="https://Travis-ci.org">Travis-ci.org</a>, click "Sync".
+7. See <a target="_blank" href="https://docs.travis-ci.com/user/tutorial/">https://docs.travis-ci.com/user/tutorial</a>
 
-8. A `.travis.yml` file to your repository. https://docs.travis-ci.com/user/language-specific/
-   If the file is not valid YAML, Travis CI will ignore it.
+   PROTIP: Travis only runs builds on commits pushed only if there is a .travis.yml file in the repo.
+
+8. In the sample repo, the `.travis.yml` file specifies the language in the `pytest` script run by Travis, which uses the docker service:
+
+   <pre>
+sudo: required
+services:
+  - docker
+language: python
+script:
+  - python -m pytest -v 
+after_success:
+  - sh .travis/deploy_dockerhub.sh
+  - test "$TRAVIS_BRANCH" = "master" && "$TRAVIS_PULL_REQUEST" = "false" && sh .travis/deploy_heroku.sh
+   </pre>
+
+   WARNING: If the file is not valid YAML, Travis CI will ignore it.
+
+   <a target="_blank" href="https://docs.travis-ci.com/user/tutorial/#to-get-started-with-travis-ci">https://docs.travis-ci.com/user/tutorial/#to-get-started-with-travis-ci</a>
+   lists .travis.yml files for various languages. https://docs.travis-ci.com/user/language-specific/
+
+   The example for Node was presented <a target="_blank" href="https://slides.com/dreeve/deck/">with this slidedeck</a> by David Reeve in VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=Uft5KBimzyk">Travis CI Tutorial - How to Use Travis CI with Github for Continuous Integration</a> Jan 22, 2016 account FullStack Academy.
+
+   <pre>
+language: node_js
+node_js:
+  - "stable"
+env:
+  - NODE_ENV="development"
+  - NODE_ENV="production";SESSION_SECRET="la li"
+services:
+  - mongodb
+script: gulp travis
+   </pre>
+
 9. Push a commit from your local git history to GitHub and hooks in GitHub will trigger a build.
 9. <a target="_blank" href="https://travis-ci.org/dashboard">Travis dashboard</a>
 <br /><br />
 
 To enable Travis CI to start a build at each Push and Pull Request for a repository, flip the switch in front of your GitHub repository (click the ‘Sync account’ button in case your repository is not yet visible) :
+
+<a target="_blank" href="https://medium.com/mobileforgood/coding-tips-patterns-for-continuous-integration-with-docker-on-travis-ci-9cedb8348a62">This blog post</a> documents how to, on every push to the repository, Travis builds a new image (for testing) and when a branch is merged, the built image is pushed to Docker Hub. 
+
+<a target="_blank" href="https://medium.com/vaidikkapoor/managing-open-source-docker-images-on-docker-hub-using-travis-7fd33bc96d65">
+This blog</a> talks about automatically syncing README.
+
 
 ## Test-first
 
@@ -282,6 +326,8 @@ Go to the profile of Peter Chang
 Peter Chang
 Aug 19, 2018
 
+https://medium.com/vaidikkapoor/managing-open-source-docker-images-on-docker-hub-using-travis-7fd33bc96d65
+Jul 9, 2018
 
 
 ## More on DevOps #
