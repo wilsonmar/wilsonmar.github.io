@@ -291,12 +291,11 @@ stuff happens. It can be annoying.
 0. Click "Hot Corners" at the lower-right corner.
 0. Select actions for each of the corners.
    
-<img alt="macos-corners-689x387-19023.jpg" width="689" src="https://user-images.githubusercontent.com/300046/55433395-80e9dc80-5552-11e9-94d9-9184c989f70b.jpg">
+   <img alt="macos-corners-689x387-19023.jpg" width="689" src="https://user-images.githubusercontent.com/300046/55433395-80e9dc80-5552-11e9-94d9-9184c989f70b.jpg">
 
-PROTIP: Disable each by selecting the dash (last choice) 
-so they show up when not wanted.
+   PROTIP: Disable each by selecting the dash (last choice) so they don't show up when you're just trying to navigate to something near the edge.
 
-PROTIP: NOT having a quick way to "Put display to sleep" is considered a security vulnerability by CIS. Using the lower-left is less popular (outside of Windows).
+0. PROTIP: NOT having a quick way to "Put display to sleep" is considered a security vulnerability by CIS. The lower-left corner is less popular location on Mac than Windows.
 
 
 <a name="Cat"></a>
