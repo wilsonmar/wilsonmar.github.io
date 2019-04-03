@@ -557,7 +557,7 @@ chmod: Unable to change file mode on /Users/wilsonmar/projects/WM/bin/jad.readme
 
 ## Docker
 
-   Docker CAT?
+There is also a Docker CAT:
 https://www.cisecurity.org/benchmark/docker/
 
 https://github.com/docker/docker-bench-security
@@ -570,13 +570,17 @@ https://github.com/dev-sec/cis-docker-benchmark
 
 https://nvd.nist.gov/ncp/checklist/740
 
+![cybersecurity-NIST-Functions-382x390-19166](https://user-images.githubusercontent.com/300046/55505840-3f6c3680-5611-11e9-811d-4411e01c5afd.jpg)
+
 
 ## Other standards
-
 
 https://quizlet.com/222277746/devsecops-acronyms-and-buzzwords-flash-cards/
 
 The Functions and Categories within the NIST Cybersecurity (Program) Framework (CSF) maps NIST 800-53 to CIS Controls:
+
+![cybersecurity-nist-342x275](https://user-images.githubusercontent.com/300046/55505643-c8cf3900-5610-11e9-8f79-3e7bec5cfe7c.jpg)
+
 
 QUESTION: How does CIS relate to ITIL?
 
