@@ -104,7 +104,7 @@ file CIS-Controls-Version-7-cc.pdf
 
 https://learn.cisecurity.org/20-controls-download
 
-### Basic 
+#### &nbsp; &nbsp; &nbsp; Basic:
 
 1. Inventory and Control of Hardware Assets
 2. Inventory and Control of Software Assets
@@ -113,7 +113,7 @@ https://learn.cisecurity.org/20-controls-download
 5. Secure Configuration for Hardware and Software on Mobile Devices, Laptops, Workstations and Servers
 6. Maintenance, Monitoring and Analysis of Audit Logs
 
-### Foundational
+   #### Foundational:
 
 7. Email and Web Browser Protections
 8. Malware Defenses
@@ -126,7 +126,7 @@ https://learn.cisecurity.org/20-controls-download
 15. Wireless Access Control
 16. Account Monitoring and Control
 
-### Organizational
+    #### Organizational:
 
 17. Implement a Security Awareness and Training Program
 18. Application Software Security
