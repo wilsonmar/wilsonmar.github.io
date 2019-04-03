@@ -26,22 +26,23 @@ comments: true
 
 1. Specify a commit message when you provide a command such as:
 
-   <pre><strong>git commit -m"#BUG342 NEW: initial commit README.md"</pre></strong>
+   <pre><strong>git commit -m"#BUG342 NEW: initial commit README.md"</strong></pre>
 
    REMEMBER: If you issue a "git commit" without the "-m" which provides the commit message, Git presents you a text editor window to type in a long message. 
    (And if you see a ":" at the lower-right corner, type <pre>wq!</pre> to exit.)
 
-   <pre><strong>gas "#BUG342 NEW: initial commit README.md"</pre></strong>
+   <pre><strong>gas "#BUG342 NEW: initial commit README.md"</strong></pre>
 
    PROTIP: Specify an alias to type the minimal number of keystrokes, such as:
 
-   <pre><strong>gas "#BUG342 NEW: initial commit README.md"</pre></strong>
+   <pre><strong>gas "#BUG342 NEW: initial commit README.md"</strong></pre>
 
 1. If you are using a planning system, type the identifier for it (such as "#BUG342") in order to link code changes back to plans. Examples of planning systems:
 
    * Jira
    * https://github.com/marketplace/testquality
-
+   <br /><br />
+   
 1. Begin with a capital letter.
 
 1. Specify the <strong>status action</strong> in all capital (upper-case) letters, such as "NEW", "REMOVE", "RENAME", "DOC", "UPDATE", "IMPROVE", "FIX", "RELEASE".
@@ -69,86 +70,60 @@ comments: true
 
 ## Emojis
 
-You don't have to use them. Or you can use a small subset of them. But in case others use them, to help to find their meaning, I've listed all emojis below. These are from Carlos Cuesta's <a target="_blank" href="https://gitmoji.carloscuesta.me/">visual page</a> and <a target="_blank" href="https://github.com/carloscuesta/gitmoji">CLI</a>. I've classified them below:
+You don't have to use them. Or you can use a small subset of them. But in case others use them, to help to find their meaning, I've listed all emojis below. These are from Carlos Cuesta's <a target="_blank" href="https://gitmoji.carloscuesta.me/">visual page</a> and <a target="_blank" href="https://github.com/carloscuesta/gitmoji">CLI</a>. I've classified them below in a more concise way:
 
-### Action:
+### Status / Warnings :
 
 🎉 &#58;tada&#58; = Initial (NEW) commit.
 
-🚑 &#58;ambulance&#58; = Critical hotfix.
-
-🔥 &#58;fire&#58; = Removing code or files.
-
-✏️ &#58;pencil2&#58; = Fixing typos.
-
-🎨 &#58;art&#58; = Improving structure / format of the code.
-
-🔊 &#58;loud_sound&#58; = Adding logs.
-
-🔇 &#58;mute&#58; = Removing logs.
-
-🚀 &#58;rocket&#58; = Deploying stuff.
-
-⏪ &#58;rewind&#58; = Reverting changes.
-
-♻️ &#58;recycle&#58; = Refactoring code.
-
-
-### Attributes:
-
-💩 &#58;hankey&#58; = Writing bad code that needs to be improved.
-
 🚧 &#58;construction&#58; = Work in progress.
 
-🍻 &#58;beers&#58; = Writing code drunkenly.
-
-💥 &#58;boom&#58; = Introducing breaking changes.
-
-
-
-### Content:
-
-✅ &#58;white_check_mark&#58; = Updating tests.
-
-🔖 &#58;bookmark&#58; = Releasing / Version tags.
-
-📝 &#58;memo&#58; = Writing docs.
-
-💬 &#58;speech_balloon&#58; = Updating text and literals.
-
-💡 &#58;bulb&#58; = Documenting source code.
-
-📈 &#58;chart_with_upwards_trend&#58; = Adding analytics or tracking code.
-
-
-☸️ &#58;wheel_of_dharma&#58; = Work about Kubernetes
-
-🐳 &#58;whale&#58; = Work about Docker.
-
-👷 &#58;construction_worker&#58; = Adding CI build system.
-
-💚 &#58;green_heart&#58; = Fixing CI Build.
-
-🔧 &#58;wrench&#58; = Changing configuration files.
-
-🌐 &#58;globe_with_meridians&#58; = Internationalization and localization.
-
-🚨 &#58;rotating_light&#58; = Removing linter warnings.
-
-🏗 &#58;building_construction&#58; = Making architectural changes.
-
-🤡 &#58;clown_face&#58; = Mocking things.
-
-🥚 &#58;egg&#58; = Adding an easter egg.
-
-🏷️ &#58;label&#58; = Adding or updating types (Flow, TypeScript)
-
-
-
-### Purpose
+🚑 &#58;ambulance&#58; = Critical hotfix.
 
 ✨ &#58;sparkles&#58; = Introducing new features.
 
+🍻 &#58;beers&#58; = Writing code drunkenly.
+
+💩 &#58;hankey&#58; = Writing bad code that needs to be improved.
+
+🚨 &#58;rotating_light&#58; = Removing linter warnings.
+
+⏪ &#58;rewind&#58; = Reverting changes.
+
+⚗ &#58;alembic&#58; = Experimenting new things
+
+🔒 &#58;lock&#58; = Fixing security issues.
+
+⚡️ &#58;zap&#58; = Improving performance.
+
+🚸 &#58;children_crossing&#58; = Improving user experience / usability.
+
+🐛 &#58;bug&#58; = Fixing a bug.
+
+
+### Documentation:
+
+📝 &#58;memo&#58; = Writing docs.
+
+💡 &#58;bulb&#58; = Documenting source code.
+
+🔍 &#58;mag&#58; = Improving SEO
+
+👥 &#58;busts_in_silhouette&#58; = Adding contributor(s).
+
+
+### Testing:
+
+✅ &#58;white_check_mark&#58; = Updating tests.
+
+👌 &#58;ok_hand&#58; = Updating code due to code review changes.
+
+🤡 &#58;clown_face&#58; = Mocking things.
+
+
+### Dependency management:
+
+💥 &#58;boom&#58; = Introducing breaking changes.
 
 ⬇️ &#58;arrow_down&#58; = Downgrading dependencies.
 
@@ -160,6 +135,56 @@ You don't have to use them. Or you can use a small subset of them. But in case o
 
 ➖ &#58;heavy_minus_sign&#58; = Removing a dependency.
 
+
+
+### Coding Content:
+
+🏗 &#58;building_construction&#58; = Making architectural changes.
+
+🔥 &#58;fire&#58; = Removing code or files.
+
+✏️ &#58;pencil2&#58; = Fixing typos.
+
+🔊 &#58;loud_sound&#58; = Adding logs.
+
+🔇 &#58;mute&#58; = Removing logs.
+
+🎨 &#58;art&#58; = Improving structure / format of the code.
+
+♻️ &#58;recycle&#58; = Refactoring code logic.
+
+👷 &#58;construction_worker&#58; = Adding CI build system.
+
+🚀 &#58;rocket&#58; = Deploying stuff.
+
+🔖 &#58;bookmark&#58; = Releasing / Version tags.
+
+💬 &#58;speech_balloon&#58; = Updating text and literals.
+
+📈 &#58;chart_with_upwards_trend&#58; = Adding analytics or tracking code.
+
+☸️ &#58;wheel_of_dharma&#58; = Work about Kubernetes
+
+🌐 &#58;globe_with_meridians&#58; = Internationalization and localization.
+
+🥚 &#58;egg&#58; = Adding an easter egg.
+
+🏷️ &#58;label&#58; = Adding or updating types (Flow, TypeScript)
+
+🗃 &#58;card_file_box&#58; = Performing database related changes.
+
+♿️ &#58;wheelchair&#58; = Improving accessibility.
+
+💄 &#58;lipstick&#58; = Updating the UI and style files.
+
+
+### Configuration / Metadata:
+
+🐳 &#58;whale&#58; = Work about Docker.
+
+💚 &#58;green_heart&#58; = Fixing CI Build.
+
+🔧 &#58;wrench&#58; = Changing configuration files.
 
 🔀 &#58;twisted_rightwards_arrows&#58; = Merging branches.
 
@@ -173,37 +198,16 @@ You don't have to use them. Or you can use a small subset of them. But in case o
 
 🍱 &#58;bento&#58; = Adding or updating assets.
 
-👌 &#58;ok_hand&#58; = Updating code due to code review changes.
-
-🗃 &#58;card_file_box&#58; = Performing database related changes.
-
-👥 &#58;busts_in_silhouette&#58; = Adding contributor(s).
-
 🙈 &#58;see_no_evil&#58; = Adding or updating a .gitignore file
 
 📸 &#58;camera_flash&#58; = Adding or updating snapshots
 
-💄 &#58;lipstick&#58; = Updating the UI and style files.
-
 📱 &#58;iphone&#58; = Working on responsive design.
 
-⚗ &#58;alembic&#58; = Experimenting new things
 
-🔒 &#58;lock&#58; = Fixing security issues.
+### Operating system specific:
 
-⚡️ &#58;zap&#58; = Improving performance.
-
-🚸 &#58;children_crossing&#58; = Improving user experience / usability.
-
-🐛 &#58;bug&#58; = Fixing a bug.
-
-♿️ &#58;wheelchair&#58; = Improving accessibility.
-
-🔍 &#58;mag&#58; = Improving SEO
-
-
-
-### Operating system:
+🍏 &#58;green_apple&#58; = Fixing something on iOS.
 
 🍎 &#58;apple&#58; = Fixing something on macOS.
 
@@ -212,8 +216,6 @@ You don't have to use them. Or you can use a small subset of them. But in case o
 🏁 &#58;checkered_flag&#58; = Fixing something on Windows.
 
 🤖 &#58;robot&#58; = Fixing something on Android.
-
-🍏 &#58;green_apple&#58; = Fixing something on iOS.
 
 
 
