@@ -20,9 +20,9 @@ comments: true
 
 1. The same message can be associated with all commits added before a commit. So before doing a git commit, check what changes have been added already:
 
-   <pre><strong>git status</pre></strong>
+   <pre><strong>git status</strong></pre>
 
-   `Modified:` identify items added for the next commit.
+   `Modified:` in the response identify items added for the next commit.
 
 1. Specify a commit message when you provide a command such as:
 
