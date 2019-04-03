@@ -140,27 +140,27 @@ Below is an approach that can be used for Gap Analysis of what needs to be done 
 
 ### CIS Sub-Controls alphabetically by Sensor
 
-A. Active Device Discovery System
+<strong>A. Active Device Discovery System</strong>
 
    1.1	Utilize an Active Discovery Tool
 
-B. Anti-Spam Gateway
+<strong>B. Anti-Spam Gateway</strong>
 
    7.8	Implement DMARC and Enable Receiver-Side Verification
    7.9	Block Unnecessary File Types
    7.10	Sandbox All Email Attachments
 
-C. Application Aware Firewall
+<strong>C. Application Aware Firewall</strong>
 
    9.5	Implement Application Firewalls
 
-D. Asset Inventory System
+<strong>D. Asset Inventory System</strong>
 
    1.4	Maintain Detailed Asset Inventory
    1.5	Maintain Asset Inventory Information
    1.6	Address Unauthorized Assets
 
-E. Backup / Recovery System
+<strong>E. Backup / Recovery System</strong>
 
    10.1	Ensure Regular Automated Back Ups
    10.2	Perform Complete System Backups
@@ -168,25 +168,25 @@ E. Backup / Recovery System
    10.4	Ensure Protection of Backups
    10.5	Ensure Backups Have At least One Non-Continuously Addressable Destination
 
-F. Data Inventory / Classification System
+<strong>F. Data Inventory / Classification System</strong>
 
    13.1	Maintain an Inventory Sensitive Information
    13.2	Remove Sensitive Data or Systems Not Regularly Accessed by Organization
    14.5	Utilize an Active Discovery Tool to Identify Sensitive Data
 
-G. Dedicated Administration Systems
+<strong>G. Dedicated Administration Systems</strong>
 
    4.6	Use of Dedicated Machines For All Administrative Tasks
    11.6	Use Dedicated Machines For All Network Administrative Tasks
    11.7	Manage Network Infrastructure Through a Dedicated Network
 
-H. DNS Domain Filtering System
+<strong>H. DNS Domain Filtering System</strong>
 
    7.6	Log all URL requests
    7.7	Use of DNS Filtering Services
    8.7	Enable DNS Query Logging
 
-I. Endpoint Protection System
+<strong>I. Endpoint Protection System</strong>
 
    8.1	Utilize Centrally Managed Anti-malware Software
    8.2	Ensure Anti-Malware Software and Signatures are Updated
@@ -196,16 +196,16 @@ I. Endpoint Protection System
    13.8	Manage System's External Removable Media's Read/write Configurations
    13.9	Encrypt Data on USB Storage Devices
 
-J. Host Based Data Loss Prevention (DLP) System
+<strong>J. Host Based Data Loss Prevention (DLP) System</strong>
 
    14.7	Enforce Access Control to Data through Automated Tools
    14.8	Encrypt Sensitive Information at Rest
 
-K. Host Based Firewall
+<strong>K. Host Based Firewall</strong>
 
    9.4	Apply Host-based Firewalls or Port Filtering
 
-L. Identity & Access Management System
+<strong>L. Identity & Access Management System</strong>
 
    16.1	Maintain an Inventory of Authentication Systems
    16.2	Configure Centralized Point of Authentication
@@ -218,7 +218,7 @@ L. Identity & Access Management System
    16.10	Ensure All Accounts Have An Expiration Date
    16.11	Lock Workstation Sessions After Inactivity
 
-M. Incident Management Plans
+<strong>M. Incident Management Plans</strong>
 
    19.1	Document Incident Response Procedures
    19.2	Assign Job Titles and Duties for Incident Response
@@ -229,7 +229,7 @@ M. Incident Management Plans
    19.7	Conduct Periodic Incident Scenario Sessions for Personnel
    19.8	Create Incident Scoring and Prioritization Schema
 
-N. Log Management System / SIEM
+<strong>N. Log Management System / SIEM</strong>
 
    1.3	Use DHCP Logging to Update Asset Inventory
    4.8	Log and Alert on Changes to Administrative Group Membership
@@ -246,27 +246,27 @@ N. Log Management System / SIEM
    16.12	Monitor Attempts to Access Deactivated Accounts
    16.13	Alert on Account Login Behavior Deviation
 
-O. Multi-Factor Authentication System
+<strong>O. Multi-Factor Authentication System</strong>
 
    4.5	Use Multifactor Authentication For All Administrative Access
    11.5	Manage Network Devices Using Multi-Factor Authentication and Encrypted Sessions
    12.11	Require All Remote Login to Use Multi-factor Authentication
    16.3	Require Multi-factor Authentication
 
-P. Network Based Data Loss Prevention (DLP) System
+<strong>P. Network Based Data Loss Prevention (DLP) System</strong>
 
    13.3	Monitor and Block Unauthorized Network Traffic
    13.5	Monitor and Detect Any Unauthorized Use of Encryption
 
-Q. Network Based Intrusion Detection System (NIDS)
+<strong>Q. Network Based Intrusion Detection System (NIDS)</strong>
 
    12.6	Deploy Network-based IDS Sensor
 
-R. Network Based Intrusion Prevention System (IPS)
+<strong>R. Network Based Intrusion Prevention System (IPS)</strong>
 
    12.7	Deploy Network-Based Intrusion Prevention Systems
 
-S. Network Device Management System
+<strong>S. Network Device Management System</strong>
 
    11.1	Maintain Standard Security Configurations for Network Devices
    11.2	Document Traffic Configuration Rules
@@ -278,7 +278,7 @@ S. Network Device Management System
    15.8	Use Wireless Authentication Protocols that Require Mutual, Multi-Factor Authentication
    15.10	Create Separate Wireless Network for Personal and Untrusted Devices
 
-T. Network Firewall / Access Control System
+<strong>T. Network Firewall / Access Control System</strong>
 
    2.10	Physically or Logically Segregate High Risk Applications
    12.1	Maintain an Inventory of Network Boundaries
@@ -291,33 +291,33 @@ T. Network Firewall / Access Control System
    14.2	Enable Firewall Filtering Between VLANs
    14.3	Disable Workstation to Workstation Communication
 
-U. Network Level Authentication (NLA)
+<strong>U. Network Level Authentication (NLA)</strong>
 
    1.7	Deploy Port Level Access Control
 
-V. Network Packet Capture System
+<strong>V. Network Packet Capture System</strong>
 
    12.5	Configure Monitoring Systems to Record Network Packets
 
-W. Network Time Protocol (NTP) Systems
+<strong>W. Network Time Protocol (NTP) Systems</strong>
 
    6.1	Utilize Three Synchronized Time Sources
 
-X. Network URL Filtering System
+<strong>X. Network URL Filtering System</strong>
 
    7.4	Maintain and Enforce Network-Based URL Filters
    7.5	Subscribe to URL-Categorization service
 
-Y. Passive Device Discovery System
+<strong>Y. Passive Device Discovery System</strong>
 
    1.2	Use a Passive Asset Discovery Tool
 
-Z. Patch Management System
+<strong>Z. Patch Management System</strong>
 
    3.4	Deploy Automated Operating System Patch Management Tools
    3.5	Deploy Automated Software Patch Management Tools
 
-AA. Penetration Testing Plans
+<strong>AA. Penetration Testing Plans</strong>
 
    20.1	Establish a Penetration Testing Program
    20.2	Conduct Regular External and Internal Penetration Tests
@@ -328,18 +328,18 @@ AA. Penetration Testing Plans
    20.7	Ensure Results from Penetration Test are Documented Using Open, Machine-readable Standards
    20.8	Control and Monitor Accounts Associated with Penetration Testing
 
-AB. Privileged Account Management System
+<strong>AB. Privileged Account Management System</strong>
 
    4.1	Maintain Inventory of Administrative Accounts
    4.2	Change Default Passwords
    4.3	Ensure the Use of Dedicated Administrative Accounts
    4.4	Use Unique Passwords
 
-AC. Public Key Infrastructure (PKI)
+<strong>AC. Public Key Infrastructure (PKI)</strong>
 
    1.8	Utilize Client Certificates to Authenticate Hardware Assets
 
-AD. SCAP Based Vulnerability Management System
+<strong>AD. SCAP Based Vulnerability Management System</strong>
 
    3.1	Run Automated Vulnerability Scanning Tools
    3.2	Perform Authenticated Vulnerability Scanning
@@ -351,7 +351,7 @@ AD. SCAP Based Vulnerability Management System
    9.2	Ensure Only Approved Ports, Protocols and Services Are Running
    9.3	Perform Regular Automated Port Scans
 
-AE. Secure Coding Standards
+<strong>AE. Secure Coding Standards</strong>
 
    18.1	Establish Secure Coding Practices
    18.2	Ensure Explicit Error Checking is Performed for All In-house Developed Software
@@ -360,7 +360,7 @@ AE. Secure Coding Standards
    18.5	Use Only Standardized and Extensively Reviewed Encryption Algorithms
    18.9	Separate Production and Non-Production Systems
 
-AF. Software Application Inventory
+<strong>AF. Software Application Inventory</strong>
 
    2.1	Maintain Inventory of Authorized Software
    2.2	Ensure Software is Supported by Vendor
@@ -369,12 +369,12 @@ AF. Software Application Inventory
    2.5	Integrate Software and Hardware Asset Inventories
    2.6	Address unapproved software
 
-AG. Software Vulnerability Scanning Tool
+<strong>AG. Software Vulnerability Scanning Tool</strong>
 
    18.7	Apply Static and Dynamic Code Analysis Tools
    18.8	Establish a Process to Accept and Address Reports of Software Vulnerabilities
 
-AH. Software Whitelisting System
+<strong>AH. Software Whitelisting System</strong>
 
    2.7	Utilize Application Whitelisting
    2.8	Implement Application Whitelisting of Libraries
@@ -383,13 +383,13 @@ AH. Software Whitelisting System
    7.1	Ensure Use of Only Fully Supported Browsers and Email Clients
    7.2	Disable Unnecessary or Unauthorized Browser or Email Client Plugins
 
-AI. System Configuration Baselines & Images
+<strong>AI. System Configuration Baselines & Images</strong>
 
    5.1	Establish Secure Configurations
    5.2	Maintain Secure Images
    5.3	Securely Store Master Images
 
-AJ. System Configuration Enforcement System
+<strong>AJ. System Configuration Enforcement System</strong>
 
    5.4	Deploy System Configuration Management Tools
    7.3	Limit Use of Scripting Languages in Web Browsers and Email Clients
@@ -406,7 +406,7 @@ AJ. System Configuration Enforcement System
    15.9	Disable Wireless Peripheral Access of Devices
    18.11 Use Standard Hardening Configuration Templates for Databases
 
-AK. Training / Awareness Education Plans
+<strong>AK. Training / Awareness Education Plans</strong>
 
    17.1	Perform a Skills Gap Analysis
    17.2	Deliver Training to Fill the Skills Gap
@@ -419,15 +419,15 @@ AK. Training / Awareness Education Plans
    17.9	Train Workforce Members on Identifying and Reporting Incidents
    18.6	Ensure Software Development Personnel are Trained in Secure Coding
 
-AL. Web Application Firewall (WAF)
+<strong>AL. Web Application Firewall (WAF)</strong>
 
    18.10	Deploy Web Application Firewalls (WAFs)
 
-AM. Whole Disk Encryption System
+<strong>AM. Whole Disk Encryption System</strong>
 
    13.6	Encrypt the Hard Drive of All Mobile Devices.
 
-AN. Wireless Intrusion Detection System (WIDS)
+<strong>AN. Wireless Intrusion Detection System (WIDS)</strong>
 
    15.3	Use a Wireless Intrusion Detection System
 
