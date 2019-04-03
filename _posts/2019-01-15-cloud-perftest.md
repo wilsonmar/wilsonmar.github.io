@@ -376,9 +376,8 @@ These questions are answered by various types of performance testing.
 
 ### Performance test run types
 
-TODO: video here.
-
-![cloud-perftest-v08-types-553x276-24044](https://user-images.githubusercontent.com/300046/53589081-6f30a600-3b5c-11e9-978a-f69f0f5c2705.jpg)
+<amp-youtube data-videoid="vUbV4stv_zY" layout="responsive" width="480" height="270"></amp-youtube>
+<br />
 
 I'll be presenting this diagram about types of performance testing one concept at a time. The work of performance testing is about imposing different <strong>levels</strong> of load over a period of time. The intensity of load imposed is typically defined by the number of <strong>virtual users</strong> that load generators inject. 
 
@@ -410,9 +409,9 @@ If we operate a cluster of servers, we need to make sure we have the <strong>ela
 
 In an elastic cloud enviornment, we need to ensure that our configurations can indeed <strong>instantiate</strong> additional capacity on a timely basis. Tests of elasticity should also include <strong>un-instantation</strong> tests to make sure that instances are indeed reduced when load recedes below threshold levels.
 
-![cloud-perftest-v08-types-553x276-24044](https://user-images.githubusercontent.com/300046/53589081-6f30a600-3b5c-11e9-978a-f69f0f5c2705.jpg)
+#### Recap
 
-### Recap
+![cloud-perftest-v08-types-553x276-24044](https://user-images.githubusercontent.com/300046/53589081-6f30a600-3b5c-11e9-978a-f69f0f5c2705.jpg)
 
 Here is the list of the types of performance tests covered in the previous illustration. 
 

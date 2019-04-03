@@ -78,18 +78,18 @@ These come from the bash terminal on Linux machines:
 <li> control + left = previous session</li>
 <li> control + right = previous session</li>
 <p></p>
-<li> control + A = Go to Beginning of line (as in A to Z)</li>
 <li> control + E = Go to End of line<br /></li>
-<p></p>
-<li> control + U = Clean entire line<br /></li>
-<li> control + K = Kill line from under the cursor to the end of the line.</li>
-<li> control + Y = Retrieve line<br /></li>
+<li> control + A = Go to Beginning of line (as in A to Z)</li>
 <p></p>
 <li> control + F = Forward cursor</li>
 <li> control + B = Backward<br /></li>
 <p></p>
 <li> control + H = Backspace left of cursor</li>
 <li> control + D = Delete right of cursor<br /></li>
+<p></p>
+<li> control + U = Clean entire line<br /></li>
+<li> control + K = Kill line from under the cursor to the end of the line.</li>
+<li> control + Y = Retrieve line<br /></li>
 <p></p>
 <li> control + P = Previous line<br /></li>
 <li> control + N = Next line </li>
@@ -295,7 +295,11 @@ stuff happens. It can be annoying.
 
    PROTIP: Disable each by selecting the dash (last choice) so they don't show up when you're just trying to navigate to something near the edge.
 
-0. PROTIP: NOT having a quick way to "Put display to sleep" is considered a security vulnerability by CIS. The lower-left corner is less popular location on Mac than Windows.
+0. Exit out the Preferences diaglog.
+0. Move your cursor to the lower-left corner to bring it back to life.
+0. Press Esc to bring the screen back.
+
+   PROTIP: NOT having a quick way to "Put display to sleep" is considered a security vulnerability by CIS. The lower-left corner is less popular location on Mac than Windows.
 
 
 <a name="Cat"></a>

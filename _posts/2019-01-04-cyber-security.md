@@ -14,19 +14,18 @@ comments: true
 <hr />
 
 {% include _toc.html %}
-Cyber security.md
 
-This page contains my notes on Cyber Security resources.
+<a target="_blank" href="https://wilsonmar.github.io/cyber-security/">This page</a> contains my notes on resources for Cyber Security.
 
 ## Adobe Common Control Framework
 
-Adobe <a target="_blank" href="https://adobe.allegiancetech.com/cgi-bin/qwebcorporate.dll?idx=VM6HD7">open-sourced</a> its <a target="_blank" href="https://blogs.adobe.com/security/2017/05/open-source-ccf.html">Common Contral Framework</a> which encompasses several frameworks.
+Adobe <a target="_blank" href="https://adobe.allegiancetech.com/cgi-bin/qwebcorporate.dll?idx=VM6HD7">open-sourced</a> its <a target="_blank" href="https://blogs.adobe.com/security/2017/05/open-source-ccf.html">Common Contral Framework</a> which encompasses several frameworks. Adobe's CCF covers ISO 27001, SOC, FedRAMP, PCI DSS, GLBA, FERPA. See:
+   * https://www.adobe.com/security/compliance/ccf-download.html
+   * https://www.adobe.com/pdf/Open_Source_CCF.pdf
+   <br /><br />
 
-https://www.adobe.com/security/compliance/ccf-download.html
-https://www.adobe.com/pdf/Open_Source_CCF.pdf
-
-Adobe's CCF covers ISO 27001, SOC, FedRAMP, PCI DSS, GLBA, FERPA.
 But what about CIS?
+
 
 <a name="CIS"></a>
 
@@ -105,7 +104,7 @@ file CIS-Controls-Version-7-cc.pdf
 
 https://learn.cisecurity.org/20-controls-download
 
-#### Basic 
+### Basic 
 
 1. Inventory and Control of Hardware Assets
 2. Inventory and Control of Software Assets
@@ -114,7 +113,7 @@ https://learn.cisecurity.org/20-controls-download
 5. Secure Configuration for Hardware and Software on Mobile Devices, Laptops, Workstations and Servers
 6. Maintenance, Monitoring and Analysis of Audit Logs
 
-#### Foundational
+### Foundational
 
 7. Email and Web Browser Protections
 8. Malware Defenses
@@ -127,7 +126,7 @@ https://learn.cisecurity.org/20-controls-download
 15. Wireless Access Control
 16. Account Monitoring and Control
 
-#### Organizational
+### Organizational
 
 17. Implement a Security Awareness and Training Program
 18. Application Software Security
