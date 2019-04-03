@@ -146,290 +146,291 @@ Below is an approach that can be used for Gap Analysis of what needs to be done 
 
 <strong>B. Anti-Spam Gateway</strong>
 
-   7.8	Implement DMARC and Enable Receiver-Side Verification
-   7.9	Block Unnecessary File Types
-   7.10	Sandbox All Email Attachments
+   * 7.8	Implement DMARC and Enable Receiver-Side Verification
+   * 7.9	Block Unnecessary File Types
+   * 7.10	Sandbox All Email Attachments
 
 <strong>C. Application Aware Firewall</strong>
 
-   9.5	Implement Application Firewalls
+   * 9.5	Implement Application Firewalls
 
 <strong>D. Asset Inventory System</strong>
 
-   1.4	Maintain Detailed Asset Inventory
-   1.5	Maintain Asset Inventory Information
-   1.6	Address Unauthorized Assets
+   * 1.4	Maintain Detailed Asset Inventory
+   * 1.5	Maintain Asset Inventory Information
+   * 1.6	Address Unauthorized Assets
 
 <strong>E. Backup / Recovery System</strong>
 
-   10.1	Ensure Regular Automated Back Ups
-   10.2	Perform Complete System Backups
-   10.3	Test Data on Backup Media
-   10.4	Ensure Protection of Backups
-   10.5	Ensure Backups Have At least One Non-Continuously Addressable Destination
+   * 10.1	Ensure Regular Automated Back Ups
+   * 10.2	Perform Complete System Backups
+   * 10.3	Test Data on Backup Media
+   * 10.4	Ensure Protection of Backups
+   * 10.5	Ensure Backups Have At least One Non-Continuously Addressable Destination
 
 <strong>F. Data Inventory / Classification System</strong>
 
-   13.1	Maintain an Inventory Sensitive Information
-   13.2	Remove Sensitive Data or Systems Not Regularly Accessed by Organization
-   14.5	Utilize an Active Discovery Tool to Identify Sensitive Data
+   * 13.1	Maintain an Inventory Sensitive Information
+   * 13.2	Remove Sensitive Data or Systems Not Regularly Accessed by Organization
+   * 14.5	Utilize an Active Discovery Tool to Identify Sensitive Data
 
 <strong>G. Dedicated Administration Systems</strong>
 
-   4.6	Use of Dedicated Machines For All Administrative Tasks
-   11.6	Use Dedicated Machines For All Network Administrative Tasks
-   11.7	Manage Network Infrastructure Through a Dedicated Network
+   * 4.6	Use of Dedicated Machines For All Administrative Tasks
+   * 11.6	Use Dedicated Machines For All Network Administrative Tasks
+   * 11.7	Manage Network Infrastructure Through a Dedicated Network
 
 <strong>H. DNS Domain Filtering System</strong>
 
-   7.6	Log all URL requests
-   7.7	Use of DNS Filtering Services
-   8.7	Enable DNS Query Logging
+   * 7.6	Log all URL requests
+   * 7.7	Use of DNS Filtering Services
+   * 8.7	Enable DNS Query Logging
 
 <strong>I. Endpoint Protection System</strong>
 
-   8.1	Utilize Centrally Managed Anti-malware Software
-   8.2	Ensure Anti-Malware Software and Signatures are Updated
-   8.4	Configure Anti-Malware Scanning of Removable Devices
-   8.6	Centralize Anti-malware Logging
-   13.7	Manage USB Devices
-   13.8	Manage System's External Removable Media's Read/write Configurations
-   13.9	Encrypt Data on USB Storage Devices
+   * 8.1	Utilize Centrally Managed Anti-malware Software
+   * 8.2	Ensure Anti-Malware Software and Signatures are Updated
+   * 8.4	Configure Anti-Malware Scanning of Removable Devices
+   * 8.6	Centralize Anti-malware Logging
+   * 13.7	Manage USB Devices
+   * 13.8	Manage System's External Removable Media's Read/write Configurations
+   * 13.9	Encrypt Data on USB Storage Devices
 
 <strong>J. Host Based Data Loss Prevention (DLP) System</strong>
 
-   14.7	Enforce Access Control to Data through Automated Tools
-   14.8	Encrypt Sensitive Information at Rest
+   * 14.7	Enforce Access Control to Data through Automated Tools
+   * 14.8	Encrypt Sensitive Information at Rest
 
 <strong>K. Host Based Firewall</strong>
 
-   9.4	Apply Host-based Firewalls or Port Filtering
+   * 9.4	Apply Host-based Firewalls or Port Filtering
 
 <strong>L. Identity & Access Management System</strong>
 
-   16.1	Maintain an Inventory of Authentication Systems
-   16.2	Configure Centralized Point of Authentication
-   16.4	Encrypt or Hash all Authentication Credentials
-   16.5	Encrypt Transmittal of Username and Authentication Credentials
-   16.6	Maintain an Inventory of Accounts
-   16.7	Establish Process for Revoking Access
-   16.8	Disable Any Unassociated Accounts
-   16.9	Disable Dormant Accounts
-   16.10	Ensure All Accounts Have An Expiration Date
-   16.11	Lock Workstation Sessions After Inactivity
+   * 16.1	Maintain an Inventory of Authentication Systems
+   * 16.2	Configure Centralized Point of Authentication
+   * 16.4	Encrypt or Hash all Authentication Credentials
+   * 16.5	Encrypt Transmittal of Username and Authentication Credentials
+   * 16.6	Maintain an Inventory of Accounts
+   * 16.7	Establish Process for Revoking Access
+   * 16.8	Disable Any Unassociated Accounts
+   * 16.9	Disable Dormant Accounts
+   * 16.10	Ensure All Accounts Have An Expiration Date
+   * 16.11	Lock Workstation Sessions After Inactivity
 
 <strong>M. Incident Management Plans</strong>
 
-   19.1	Document Incident Response Procedures
-   19.2	Assign Job Titles and Duties for Incident Response
-   19.3	Designate Management Personnel to Support Incident Handling
-   19.4	Devise Organization-wide Standards for Reporting Incidents
-   19.5	Maintain Contact Information For Reporting Security Incidents
-   19.6	Publish Information Regarding Reporting Computer Anomalies and Incidents
-   19.7	Conduct Periodic Incident Scenario Sessions for Personnel
-   19.8	Create Incident Scoring and Prioritization Schema
+   * 19.1	Document Incident Response Procedures
+   * 19.2	Assign Job Titles and Duties for Incident Response
+   * 19.3	Designate Management Personnel to Support Incident Handling
+   * 19.4	Devise Organization-wide Standards for Reporting Incidents
+   * 19.5	Maintain Contact Information For Reporting Security Incidents
+   * 19.6	Publish Information Regarding Reporting Computer Anomalies and Incidents
+   * 19.7	Conduct Periodic Incident Scenario Sessions for Personnel
+   * 19.8	Create Incident Scoring and Prioritization Schema
 
 <strong>N. Log Management System / SIEM</strong>
 
-   1.3	Use DHCP Logging to Update Asset Inventory
-   4.8	Log and Alert on Changes to Administrative Group Membership
-   4.9	Log and Alert on Unsuccessful Administrative Account Login
-   6.2	Activate audit logging
-   6.3	Enable Detailed Logging
-   6.4	Ensure adequate storage for logs
-   6.5	Central Log Management
-   6.6	Deploy SIEM or Log Analytic tool
-   6.7	Regularly Review Logs
-   6.8	Regularly Tune SIEM
-   8.8	Enable Command-line Audit Logging
-   14.9	Enforce Detail Logging for Access or Changes to Sensitive Data
-   16.12	Monitor Attempts to Access Deactivated Accounts
-   16.13	Alert on Account Login Behavior Deviation
+   * 1.3	Use DHCP Logging to Update Asset Inventory
+   * 4.8	Log and Alert on Changes to Administrative Group Membership
+   * 4.9	Log and Alert on Unsuccessful Administrative Account Login
+   * 6.2	Activate audit logging
+   * 6.3	Enable Detailed Logging
+   * 6.4	Ensure adequate storage for logs
+   * 6.5	Central Log Management
+   * 6.6	Deploy SIEM or Log Analytic tool
+   * 6.7	Regularly Review Logs
+   * 6.8	Regularly Tune SIEM
+   * 8.8	Enable Command-line Audit Logging
+   * 14.9	Enforce Detail Logging for Access or Changes to Sensitive Data
+   * 16.12	Monitor Attempts to Access Deactivated Accounts
+   * 16.13	Alert on Account Login Behavior Deviation
 
 <strong>O. Multi-Factor Authentication System</strong>
 
-   4.5	Use Multifactor Authentication For All Administrative Access
-   11.5	Manage Network Devices Using Multi-Factor Authentication and Encrypted Sessions
-   12.11	Require All Remote Login to Use Multi-factor Authentication
-   16.3	Require Multi-factor Authentication
+   * 4.5	Use Multifactor Authentication For All Administrative Access
+   * 11.5	Manage Network Devices Using Multi-Factor Authentication and Encrypted Sessions
+   * 12.11	Require All Remote Login to Use Multi-factor Authentication
+   * 16.3	Require Multi-factor Authentication
 
 <strong>P. Network Based Data Loss Prevention (DLP) System</strong>
 
-   13.3	Monitor and Block Unauthorized Network Traffic
-   13.5	Monitor and Detect Any Unauthorized Use of Encryption
+   * 13.3	Monitor and Block Unauthorized Network Traffic
+   * 13.5	Monitor and Detect Any Unauthorized Use of Encryption
 
 <strong>Q. Network Based Intrusion Detection System (NIDS)</strong>
 
-   12.6	Deploy Network-based IDS Sensor
+   * 12.6	Deploy Network-based IDS Sensor
 
 <strong>R. Network Based Intrusion Prevention System (IPS)</strong>
 
-   12.7	Deploy Network-Based Intrusion Prevention Systems
+   * 12.7	Deploy Network-Based Intrusion Prevention Systems
 
 <strong>S. Network Device Management System</strong>
 
-   11.1	Maintain Standard Security Configurations for Network Devices
-   11.2	Document Traffic Configuration Rules
-   11.3	Use Automated Tools to Verify Standard Device Configurations and Detect Changes
-   11.4	Install the Latest Stable Version of Any Security-related Updates on All Network Devices
-   12.8	Deploy NetFlow Collection on Networking Boundary Devices
-   15.1	Maintain an Inventory of Authorized Wireless Access Points
-   15.7	Leverage the Advanced Encryption Standard (AES) to Encrypt Wireless Data
-   15.8	Use Wireless Authentication Protocols that Require Mutual, Multi-Factor Authentication
-   15.10	Create Separate Wireless Network for Personal and Untrusted Devices
+   * 11.1	Maintain Standard Security Configurations for Network Devices
+   * 11.2	Document Traffic Configuration Rules
+   * 11.3	Use Automated Tools to Verify Standard Device Configurations and Detect Changes
+   * 11.4	Install the Latest Stable Version of Any Security-related Updates on All Network Devices
+   * 12.8	Deploy NetFlow Collection on Networking Boundary Devices
+   * 15.1	Maintain an Inventory of Authorized Wireless Access Points
+   * 15.7	Leverage the Advanced Encryption Standard (AES) to Encrypt Wireless Data
+   * 15.8	Use Wireless Authentication Protocols that Require Mutual, Multi-Factor Authentication
+   * 15.10	Create Separate Wireless Network for Personal and Untrusted Devices
 
 <strong>T. Network Firewall / Access Control System</strong>
 
-   2.10	Physically or Logically Segregate High Risk Applications
-   12.1	Maintain an Inventory of Network Boundaries
-   12.3	Deny Communications with Known Malicious IP Addresses
-   12.4	Deny Communication over Unauthorized Ports
-   12.9	Deploy Application Layer Filtering Proxy Server
-   12.10	Decrypt Network Traffic at Proxy
-   13.4	Only Allow Access to Authorized Cloud Storage or Email Providers
-   14.1	Segment the Network Based on Sensitivity
-   14.2	Enable Firewall Filtering Between VLANs
-   14.3	Disable Workstation to Workstation Communication
+   * 2.10	Physically or Logically Segregate High Risk Applications
+   * 12.1	Maintain an Inventory of Network Boundaries
+   * 12.3	Deny Communications with Known Malicious IP Addresses
+   * 12.4	Deny Communication over Unauthorized Ports
+   * 12.9	Deploy Application Layer Filtering Proxy Server
+   * 12.10	Decrypt Network Traffic at Proxy
+   * 13.4	Only Allow Access to Authorized Cloud Storage or Email Providers
+   * 14.1	Segment the Network Based on Sensitivity
+   * 14.2	Enable Firewall Filtering Between VLANs
+   * 14.3	Disable Workstation to Workstation Communication
 
 <strong>U. Network Level Authentication (NLA)</strong>
 
-   1.7	Deploy Port Level Access Control
+   * 1.7	Deploy Port Level Access Control
 
 <strong>V. Network Packet Capture System</strong>
 
-   12.5	Configure Monitoring Systems to Record Network Packets
+   * 12.5	Configure Monitoring Systems to Record Network Packets
 
 <strong>W. Network Time Protocol (NTP) Systems</strong>
 
-   6.1	Utilize Three Synchronized Time Sources
+   * 6.1	Utilize Three Synchronized Time Sources
 
 <strong>X. Network URL Filtering System</strong>
 
-   7.4	Maintain and Enforce Network-Based URL Filters
-   7.5	Subscribe to URL-Categorization service
+   * 7.4	Maintain and Enforce Network-Based URL Filters
+   * 7.5	Subscribe to URL-Categorization service
 
 <strong>Y. Passive Device Discovery System</strong>
 
-   1.2	Use a Passive Asset Discovery Tool
+   * 1.2	Use a Passive Asset Discovery Tool
 
 <strong>Z. Patch Management System</strong>
 
-   3.4	Deploy Automated Operating System Patch Management Tools
-   3.5	Deploy Automated Software Patch Management Tools
+   * 3.4	Deploy Automated Operating System Patch Management Tools
+   * 3.5	Deploy Automated Software Patch Management Tools
 
 <strong>AA. Penetration Testing Plans</strong>
 
-   20.1	Establish a Penetration Testing Program
-   20.2	Conduct Regular External and Internal Penetration Tests
-   20.3	Perform Periodic Red Team Exercises
-   20.4	Include Tests for Presence of Unprotected System Information and Artifacts
-   20.5	Create Test Bed for Elements Not Typically Tested in Production
-   20.6	Use Vulnerability Scanning and Penetration Testing Tools in Concert
-   20.7	Ensure Results from Penetration Test are Documented Using Open, Machine-readable Standards
-   20.8	Control and Monitor Accounts Associated with Penetration Testing
+   * 20.1	Establish a Penetration Testing Program
+   * 20.2	Conduct Regular External and Internal Penetration Tests
+   * 20.3	Perform Periodic Red Team Exercises
+   * 20.4	Include Tests for Presence of Unprotected System Information and Artifacts
+   * 20.5	Create Test Bed for Elements Not Typically Tested in Production
+   * 20.6	Use Vulnerability Scanning and Penetration Testing Tools in Concert
+   * 20.7	Ensure Results from Penetration Test are Documented Using Open, Machine-readable Standards
+   * 20.8	Control and Monitor Accounts Associated with Penetration Testing
 
 <strong>AB. Privileged Account Management System</strong>
 
-   4.1	Maintain Inventory of Administrative Accounts
-   4.2	Change Default Passwords
-   4.3	Ensure the Use of Dedicated Administrative Accounts
-   4.4	Use Unique Passwords
+   * 4.1	Maintain Inventory of Administrative Accounts
+   * 4.2	Change Default Passwords
+   * 4.3	Ensure the Use of Dedicated Administrative Accounts
+   * 4.4	Use Unique Passwords
 
 <strong>AC. Public Key Infrastructure (PKI)</strong>
 
-   1.8	Utilize Client Certificates to Authenticate Hardware Assets
+   * 1.8	Utilize Client Certificates to Authenticate Hardware Assets
 
 <strong>AD. SCAP Based Vulnerability Management System</strong>
 
-   3.1	Run Automated Vulnerability Scanning Tools
-   3.2	Perform Authenticated Vulnerability Scanning
-   3.3	Protect Dedicated Assessment Accounts
-   3.6	Compare Back-to-back Vulnerability Scans
-   3.7	Utilize a Risk-rating Process
-   5.5	Implement Automated Configuration Monitoring Systems
-   9.1	Associate Active Ports, Services and Protocols to Asset Inventory
-   9.2	Ensure Only Approved Ports, Protocols and Services Are Running
-   9.3	Perform Regular Automated Port Scans
+   * 3.1	Run Automated Vulnerability Scanning Tools
+   * 3.2	Perform Authenticated Vulnerability Scanning
+   * 3.3	Protect Dedicated Assessment Accounts
+   * 3.6	Compare Back-to-back Vulnerability Scans
+   * 3.7	Utilize a Risk-rating Process
+   * 5.5	Implement Automated Configuration Monitoring Systems
+   * 9.1	Associate Active Ports, Services and Protocols to Asset Inventory
+   * 9.2	Ensure Only Approved Ports, Protocols and Services Are Running
+   * 9.3	Perform Regular Automated Port Scans
 
 <strong>AE. Secure Coding Standards</strong>
 
-   18.1	Establish Secure Coding Practices
-   18.2	Ensure Explicit Error Checking is Performed for All In-house Developed Software
-   18.3	Verify That Acquired Software is Still Supported
-   18.4	Only Use Up-to-date And Trusted Third-Party Components
-   18.5	Use Only Standardized and Extensively Reviewed Encryption Algorithms
-   18.9	Separate Production and Non-Production Systems
+   * 18.1	Establish Secure Coding Practices
+   * 18.2	Ensure Explicit Error Checking is Performed for All In-house Developed Software
+   * 18.3	Verify That Acquired Software is Still Supported
+   * 18.4	Only Use Up-to-date And Trusted Third-Party Components
+   * 18.5	Use Only Standardized and Extensively Reviewed Encryption Algorithms
+   * 18.9	Separate Production and Non-Production Systems
 
 <strong>AF. Software Application Inventory</strong>
 
-   2.1	Maintain Inventory of Authorized Software
-   2.2	Ensure Software is Supported by Vendor
-   2.3	Utilize Software Inventory Tools
-   2.4	Track Software Inventory Information
-   2.5	Integrate Software and Hardware Asset Inventories
-   2.6	Address unapproved software
+   * 2.1	Maintain Inventory of Authorized Software
+   * 2.2	Ensure Software is Supported by Vendor
+   * 2.3	Utilize Software Inventory Tools
+   * 2.4	Track Software Inventory Information
+   * 2.5	Integrate Software and Hardware Asset Inventories
+   * 2.6	Address unapproved software
 
 <strong>AG. Software Vulnerability Scanning Tool</strong>
 
-   18.7	Apply Static and Dynamic Code Analysis Tools
-   18.8	Establish a Process to Accept and Address Reports of Software Vulnerabilities
+   * 18.7	Apply Static and Dynamic Code Analysis Tools
+   * 18.8	Establish a Process to Accept and Address Reports of Software Vulnerabilities
 
 <strong>AH. Software Whitelisting System</strong>
 
-   2.7	Utilize Application Whitelisting
-   2.8	Implement Application Whitelisting of Libraries
-   2.9	Implement Application Whitelisting of Scripts
-   4.7	Limit Access to Script Tools
-   7.1	Ensure Use of Only Fully Supported Browsers and Email Clients
-   7.2	Disable Unnecessary or Unauthorized Browser or Email Client Plugins
+   * 2.7	Utilize Application Whitelisting
+   * 2.8	Implement Application Whitelisting of Libraries
+   * 2.9	Implement Application Whitelisting of Scripts
+   * 4.7	Limit Access to Script Tools
+   * 7.1	Ensure Use of Only Fully Supported Browsers and Email Clients
+   * 7.2	Disable Unnecessary or Unauthorized Browser or Email Client Plugins
 
 <strong>AI. System Configuration Baselines & Images</strong>
 
-   5.1	Establish Secure Configurations
-   5.2	Maintain Secure Images
-   5.3	Securely Store Master Images
+   * 5.1	Establish Secure Configurations
+   * 5.2	Maintain Secure Images
+   * 5.3	Securely Store Master Images
 
 <strong>AJ. System Configuration Enforcement System</strong>
 
-   5.4	Deploy System Configuration Management Tools
-   7.3	Limit Use of Scripting Languages in Web Browsers and Email Clients
-   8.3	Enable Operating System Anti-Exploitation Features/ Deploy Anti-Exploit Technologies
-   8.5	Configure Devices Not To Auto-run Content
-   12.2	Scan for Unauthorized Connections across Trusted Network Boundaries
-   12.12	Manage All Devices Remotely Logging into Internal Network
-   14.4	Encrypt All Sensitive Information in Transit
-   14.6	Protect Information through  Access Control Lists
-   15.2	Detect Wireless Access Points Connected to the Wired Network
-   15.4	Disable Wireless Access on Devices if Not Required
-   15.5	Limit Wireless Access on Client Devices
-   15.6	Disable Peer-to-peer Wireless Network Capabilities on Wireless Clients
-   15.9	Disable Wireless Peripheral Access of Devices
-   18.11 Use Standard Hardening Configuration Templates for Databases
+   * 5.4	Deploy System Configuration Management Tools
+   * 7.3	Limit Use of Scripting Languages in Web Browsers and Email Clients
+   * 8.3	Enable Operating System Anti-Exploitation Features/ Deploy Anti-Exploit Technologies
+   * 8.5	Configure Devices Not To Auto-run Content
+   * 12.2	Scan for Unauthorized Connections across Trusted Network Boundaries
+   * 12.12	Manage All Devices Remotely Logging into Internal Network
+   * 14.4	Encrypt All Sensitive Information in Transit
+   * 14.6	Protect Information through  Access Control Lists
+   * 15.2	Detect Wireless Access Points Connected to the Wired Network
+   * 15.4	Disable Wireless Access on Devices if Not Required
+   * 15.5	Limit Wireless Access on Client Devices
+   * 15.6	Disable Peer-to-peer Wireless Network Capabilities on Wireless Clients
+   * 15.9	Disable Wireless Peripheral Access of Devices
+   * 18.11 Use Standard Hardening Configuration Templates for Databases
 
 <strong>AK. Training / Awareness Education Plans</strong>
 
-   17.1	Perform a Skills Gap Analysis
-   17.2	Deliver Training to Fill the Skills Gap
-   17.3	Implement a Security Awareness Program
-   17.4	Update Awareness Content Frequently
-   17.5	Train Workforce on Secure Authentication
-   17.6	Train Workforce on Identifying Social Engineering Attacks
-   17.7	Train Workforce on Sensitive Data Handling
-   17.8	Train Workforce on Causes of Unintentional Data Exposure
-   17.9	Train Workforce Members on Identifying and Reporting Incidents
-   18.6	Ensure Software Development Personnel are Trained in Secure Coding
+   * 17.1	Perform a Skills Gap Analysis
+   * 17.2	Deliver Training to Fill the Skills Gap
+   * 17.3	Implement a Security Awareness Program
+   * 17.4	Update Awareness Content Frequently
+   * 17.5	Train Workforce on Secure Authentication
+   * 17.6	Train Workforce on Identifying Social Engineering Attacks
+   * 17.7	Train Workforce on Sensitive Data Handling
+   * 17.8	Train Workforce on Causes of Unintentional Data Exposure
+   * 17.9	Train Workforce Members on Identifying and Reporting Incidents
+   * 18.6	Ensure Software Development Personnel are Trained in Secure Coding
 
 <strong>AL. Web Application Firewall (WAF)</strong>
 
-   18.10	Deploy Web Application Firewalls (WAFs)
+   * 18.10	Deploy Web Application Firewalls (WAFs)
 
 <strong>AM. Whole Disk Encryption System</strong>
 
-   13.6	Encrypt the Hard Drive of All Mobile Devices.
+   * 13.6	Encrypt the Hard Drive of All Mobile Devices.
 
 <strong>AN. Wireless Intrusion Detection System (WIDS)</strong>
 
-   15.3	Use a Wireless Intrusion Detection System
+   * 15.3	Use a Wireless Intrusion Detection System
+
 
 CIS states the status of the above Control Measures as the <strong>percentage</strong> among all the organization's assets. But CIS doesn't weight some parts of the organization more over others.
 
