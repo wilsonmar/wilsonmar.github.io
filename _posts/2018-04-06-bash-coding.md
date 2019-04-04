@@ -23,6 +23,7 @@ which provides someone new to Macs specific steps to configure and run scripts t
 
 NOTE: This page is still actively under construction (as of July 1, 2018).
 
+
 <a name="Style"></a>
 
 ## A Question of Style
@@ -39,9 +40,52 @@ What I try to avoid is:
 The more people who can understand the code and make changes without error,
 the more valuable that script is. Elegance is as elegance does.
 
-<a name="VersionWithGap"></a>
+Below is a Bash script deep-dive.
 
-## Version with Grep
+
+<a name="ShellCheck"></a>
+
+### Lint Shellcheck
+
+Coding in this script is linted using ShellCheck online at
+<a target="_blank" href="https://shellcheck.com">shellcheck.com</a> or installed from 
+<a target="_blank" href="https://github.com/koalaman/shellcheck">https://github.com/koalaman/shellcheck</a>
+
+To override the triggering of one of its particular rules so that it does not appear as an error,
+a line like this is added
+
+<pre># shellcheck disable=SC2059</pre>
+
+<hr />
+
+
+## Shebang and comments
+   
+   Unlike the Windows operating system, which decides what program is used to open a file based on the file name "extension" behind the dot, Linux systems ignores the file name and looks into the file to see the first line, typically:
+
+   <pre><strong>#!/bin/bash</strong></pre>
+
+   `#` is a comment in Bash scripts.
+
+   `#!` is called the "Shebang". 
+   
+   `/` means the folder is at <strong>root</strong> level, above where the operating system stores files for specific users.
+
+   `/bin` is the name of the folder that holds the executable program `bash`.
+   
+   The above specifies that the script be processed by the bash program in the 
+   folder. That's where macOS put its default Bash v3.
+   
+   Alternately, if you installed a newer version, such as Bash v4, it would be stored in the folder on this Shebang line:
+   
+   <pre><strong>#!/usr/local/bin/bash</strong></pre>
+
+   <a target="_blank" href="https://www.admon.org/scripts/new-features-in-bash-4-0/">this blog describes what is improved by version 4</a>.
+
+
+   <a name="VersionWithGap"></a>
+
+   ### Version with Grep
 
 1. Test what version of Bash is installed on your Mac by typing this:
 
@@ -58,20 +102,6 @@ the more valuable that script is. Elegance is as elegance does.
    So you have a more recent version of Bash if you see:
 
    <pre>GNU bash, version 4.4.19(1)-release (x86_64-apple-darwin17.3.0)</pre>
-
-   ### Shebang
-   
-   If you have Bash v3 (that comes with MacOS), you can only use this first line used to specify Bash v3 scripts:
-
-   <pre>#!/bin/bash</pre>
-
-   The above specifies that the script be processed by the bash program in the /bin folder.
-
-   If you have Bash v4, you can use the Bash program installed in folder <tt>/usr/local/bin</tt>:
-
-   <pre>#!/usr/local/bin/bash</pre>
-
-   <a target="_blank" href="https://www.admon.org/scripts/new-features-in-bash-4-0/">this blog describes what is improved by version 4</a>.
 
 ## Traps
 
@@ -110,7 +140,7 @@ trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 </strong></pre>
 
 
-## Set "Strict Mode"
+### Set "Strict Mode"
 
 <pre>set -o nounset -o pipefail -o errexit  # "strict mode"</pre>
 
@@ -119,7 +149,7 @@ trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 E.g.</a> pipefail can be useful to ensure `curl does-not-exist-aaaaaaa.com | wc -c` doesn't exit with exit code 0..!>
 
 
-## Indent 3 spaces
+### Indent 3 spaces
 
 It's an asthetic choice.
 
@@ -130,26 +160,9 @@ But <strong>three spaces</strong> make the line indent under if align better.
 And the if statement is the most common in the script. 
 
 
-
 <a name="Homebrew"></a>
 
-## Homebrew
-
-
-<a name="ShellCheck"></a>
-
-## Lint Shellcheck
-
-Coding in this script is linted using ShellCheck online at
-<a target="_blank" href="https://shellcheck.com">shellcheck.com</a> or installed from 
-<a target="_blank" href="https://github.com/koalaman/shellcheck">https://github.com/koalaman/shellcheck</a>
-
-To override the triggering of one of its particular rules so that it does not appear as an error,
-a line like this is added
-
-<pre># shellcheck disable=SC2059</pre>
-
-<hr />
+### Homebrew
 
 ## Utility functions
 
@@ -208,9 +221,11 @@ Near the script's beginning, the MacOS <tt>df</tt> command is used to obtain the
 
 The command pipes using standard Linux utilities:
 
-   * `df` (disk free)
-   * `sed`
-   * `cut` 
+   * <a target="_blank" href="https://ss64.com/bash/df.html">`df`</a> (disk free)
+   
+   * <a target="_blank" href="https://ss64.com/bash/sed.html">`sed`</a> <a target="_blank" href="https://likegeeks.com/sed-linux/">(string editor)</a>
+
+   * <a target="_blank" href="https://ss64.com/bash/cut.html">`cut`</a> uses a space to -demarkate the 6th column.
 
 The variable is referenced at the end of the script, when the END variable is obtained for use in calculating the 
 time and disk space used during the script run.

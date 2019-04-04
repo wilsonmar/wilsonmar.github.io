@@ -226,7 +226,7 @@ If you didn't mean to fork a repository, but you did anyway,
 
    The above creates a new commit in place of the previous commit.
 
-   The action is remembered by `git reflog` locally until purged.
+   The amend action is remembered by `git reflog` locally until purged.
 
    To replace just the content of a commit, git add the change, then:
 
@@ -366,7 +366,7 @@ If you didn't mean to fork a repository, but you did anyway,
 
    <a name="PullRequest"></a>
 
-   ### Pull Request
+   ### Cancel Pull Request
 
    A pull request can be cancelled in the GitHub web GUI.
 
@@ -401,7 +401,7 @@ If you didn't mean to fork a repository, but you did anyway,
    </strong></pre>
 
 
-   Alternately, specify a timeframes:
+   Alternately, specify a timeframes reported by `git log`:
 
    <pre><strong>git reset --hard master@{"10 minutes ago"}
    </strong></pre>
@@ -441,6 +441,31 @@ If you didn't mean to fork a repository, but you did anyway,
 
    [<a target="_blank" href="https://git-scm.com/docs/git-merge/">SCM</a>],
    <a href="https://wilsonmar.github.io/git-basics#MergeLocal">Return</a>
+
+
+   <a name="BranchAfter"></a>
+
+   ### Forgot to create a branch first
+
+   If you've been committing to the master branch and realize that you should have first created a branch, you can create that branch and reset the master to that as the HEAD.
+   [<a target="_blank" href="https://lostechies.com/derickbailey/2010/06/08/git-d-oh-i-meant-to-create-a-new-branch-first/">This article</a> describes the process.
+
+   Create a branch:
+
+   <pre><strong>git branch mytopicbranch
+   </strong></pre>
+
+   Identify the commit where HEAD be:
+
+   <pre><strong>git log 
+   </strong></pre>
+
+   Copy in your Clipboard the SHA of the commit that should be HEAD, such as "2f7efb32".
+
+   Reset HEAD to that:
+
+   <pre><strong>git reset 2f7efb32 --hard
+   </strong></pre>
 
 
 

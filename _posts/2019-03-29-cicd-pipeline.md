@@ -220,6 +220,7 @@ CMD ["python", "/src/app.py"]
    
    <tt>app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)))</tt>
 
+   https://stackoverflow.com/questions/37139786/is-init-py-not-required-for-packages-in-python-3
 
 ### Clean-up
 
