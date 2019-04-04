@@ -232,22 +232,24 @@ CONTAINER ID        IMAGE                     COMMAND                CREATED    
 
    The image file downloaded is also removed as well to conserve disk space.
 
+<hr />
+
 ## TravisCI
 
-Travis CI is a hosted service for Continuous Integration work. It’s free for public GitHub repositories and getting a Travis CI account is just a matter of visiting <a target="_blank" href="https://travis-ci.org">https://travis-ci.org</a> and logging in with your GitHub credentials.
+Travis CI is a hosted service for Continuous Integration work. It’s free for public GitHub repositories. 
 
-To setup Travis CI to continuously automate tests:
+1. Use a browser to visit <a target="_blank" href="https://travis-ci.org">https://travis-ci.org</a> and get a Travis CI account
 
-1. In a browser go to <a target="_blank" href="https://travis-ci.org/">https://travis-ci.org</a> and sign in if you haven't already.
+   To setup Travis CI to continuously automate tests:
 
-   Travis is free for open-source.
+2. Sign up with  your GitHub credentials.
+3. Click your profile icon and select <a target="_blank" href="https://github.com/settings/installations"?Applications</a> from the left menu.
+4. Click "Configure" to the right of "Travis CI".
+   <img align="right" alt="cicd-buzz-travis-github-349x409-10048.jpg" width="349" src="https://user-images.githubusercontent.com/300046/55561218-0387ae80-56af-11e9-9f1d-5e04ba7ba281.jpg">
 
-2. Sign up with GitHub.
-3. Click your profile icon and click Integrations at https://github.com/settings/installations
-4. To the right of TravisCI, click "Configure".
-5. Select the repository. Click Save.
+5. Select your repository. Click Save.
 6. In <a target="_blank" href="https://Travis-ci.org">Travis-ci.org</a>, click "Sync".
-7. See <a target="_blank" href="https://docs.travis-ci.com/user/tutorial/">https://docs.travis-ci.com/user/tutorial</a>
+7. Read through <a target="_blank" href="https://docs.travis-ci.com/user/tutorial/">https://docs.travis-ci.com/user/tutorial</a>
 
    PROTIP: Travis only runs builds on commits pushed only if there is a .travis.yml file in the repo.
 
