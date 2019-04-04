@@ -149,9 +149,29 @@ a line like this is added
 
 <pre># shellcheck disable=SC2059</pre>
 
+<hr />
 
+## Utility functions
 
-## Time start and elapsed
+Shell functions are defined near the beginning of the script for use later in the script.
+
+<a target="_blank" href="https://stackoverflow.com/questions/11369522/bash-utility-script-library">
+QUESTION</a>: What are good Bash libraries with common functions?
+Libraries for bash are not common. 
+One is /etc/rc.d/functions on RedHat-based systems.
+The file contains functions commonly used in sysV init script.
+
+<a target="_blank" href="https://mywiki.wooledge.org/BashGuide">
+NOTE</a>: Bash libraries are scarce is due to limitation of Bash functions. 
+
+<a target="_blank" href="http://mywiki.wooledge.org/BashWeaknesses">
+NOTE</a>: Bash's "functions" have several issues:
+
+Code reusability: Bash functions don't return anything; they only produce output streams. Every reasonable method of capturing that stream and either assigning it to a variable or passing it as an argument requires a SubShell, which breaks all assignments to outer scopes. (See also <a target="_blank" href="https://mywiki.wooledge.org/BashFAQ/084">BashFAQ/084</a> for tricks to retrieve results from a function.) Thus, libraries of reusable functions are not feasible, as you can't ask a function to store its results in a variable whose name is passed as an argument (except by performing eval backflips).
+
+Scope: Bash has a simple system of local scope which roughly resembles "dynamic scope" (e.g. Javascript, elisp). Functions see the locals of their callers (like Python's "nonlocal" keyword), but can't access a caller's positional parameters (except through BASH_ARGV if extdebug is enabled). Reusable functions can't be guaranteed free of namespace collisions unless you resort to weird naming rules to make conflicts sufficiently unlikely. This is particularly a problem if implementing functions that expect to be acting upon variable names from frame n-3 which may have been overwritten by your reusable function at n-2. Ksh93 can use the more common lexical scope rules by declaring functions with the "function name { ... }" syntax (Bash can't, but supports this syntax anyway).
+
+### Time start and elapsed
 
 To determine elapsed time, time stamps are captured and the start and end of the script:
 
@@ -179,8 +199,130 @@ LOG_DATETIME=$(date +%Y-%m-%dT%H:%M:%S%z)-$((1 + RANDOM % 1000))
 LOGFILE="$HOME/$THISPGM.$LOG_DATETIME.log"
    </pre>
 
+### Disk Space Free and Used
 
-## Logging to file
+Near the script's beginning, the MacOS <tt>df</tt> command is used to obtain the number of blocks available at the start of run:
+
+   <pre>FREE_DISKBLOCKS_START="$(df | sed -n -e '2{p;q}' | cut -d' ' -f 6)"
+   </pre>
+
+The command pipes using standard Linux utilities:
+
+   * `df` (disk free)
+   * `sed`
+   * `cut` 
+
+The variable is referenced at the end of the script, when the END variable is obtained for use in calculating the 
+time and disk space used during the script run.
+
+
+### Text attributes
+
+Code in shell scripts first defines what is referenced in code below it.
+
+The Unix operating system (on which today's Linux distributions are based) "streams" text to the Console. Colors (colours) and other effects are specified by inserting "<strong>toggles</strong>" (attributes) that change the appearing of text following it. A <strong>reset</strong> sets all text to display in the default appearance.
+
+   <pre>
+# Set less cryptic color attributes names using tput common to all Linux distributions: 
+   blink=$(tput blink)         # 5 as in ANSI 5 in "\e[5m"
+   bold=$(tput bold)           # 1
+   dim=$(tput dim)             # 2 (faint)
+   underline=$(tput smul)      # 4
+   end_underline=$(tput rmul)
+   reverse=$(tput rev)         # 7
+# Foreground colors:
+   red=$(tput setaf 1)         # 31
+   green=$(tput setaf 2)       # 32
+   yellow=$(tput setaf 3)      # 33
+   blue=$(tput setaf 4)        # 34
+   purple=$(tput setaf 5)      # 35
+   cyan=$(tput setaf 6)        # 36
+   white=$(tput setaf 7)       # 37
+   reset=$(tput setaf 0)       # 39 default
+# Background colors:
+   b_red=$(tput setb 1)        # 41
+   b_green=$(tput setb 2)      # 42
+   b_yellow=$(tput setb 3)     # 43
+   b_blue=$(tput setb 4)       # 44
+   b_purple=$(tput setb 5)     # 45
+   b_cyan=$(tput setb 6)       # 46
+   b_white=$(tput setb 7)      # 47
+   b_reset=$(tput setb 0)      # 49 default
+# Reset all to defaults:
+   reset=$(tput sgr0)
+   </pre>
+
+   BTW To test how the codes, put this in a script:
+
+   <pre>
+echo "${green}Success! ${dim}dimmed${reset} "
+echo "${red}Failure ${bold}bolded${reset}"
+echo "${blink}${f_yellow}Caution ${bold}bolded${reset} bad"
+echo "${blue}Note${reset} blue on black is annoying"
+echo "${underline}${purple}Alert${reset} magenta underlined"
+echo "${reverse}${cyan}Info${reset} cyan reversed"
+echo "${white}Whatever white${reset} this is"
+   </pre>
+
+   The above approach is recommended because it uses the <a target="_blank" href="https://en.wikipedia.org/wiki/Tput">tput</a> utility which <a target="_blank" href="http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x405.html">works</a> on all *nix systems. Different Linux distributions and platforms recognize different toggle codes. On some platforms the <a target="_blank" href="https://stackoverflow.com/questions/17439482/how-to-make-a-text-blink-in-shell-script">alternative</a> is to define variables containing <a target="_blank" href="http://www.isthe.com/chongo/tech/comp/ansi_escapes.html">ANSI escape</a> numbers referenced in the comments above:
+
+   <pre>
+blink="\e[5m"
+blue="\e[34m"
+bold="\e[1m"
+dim="\e[2m"
+green="\e[32m"
+red="\e[31m"
+reset="\e[0m"
+underline="\e[4m"
+   </pre>
+
+   <pre>
+function echo_ok { echo -e '\033[1;32m'"$1"'\033[0m'; }
+function echo_warn { echo -e '\033[1;33m'"$1"'\033[0m'; }
+function echo_error  { echo -e '\033[1;31mERROR: '"$1"'\033[0m'; }
+   </pre>
+
+
+### Echo/print messages
+
+The color and other text attributes described above are specified within functions called to display message text to the console:
+
+   <pre>
+h1() {
+  printf "\n${bold}${underline}%s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+}
+h2() {
+  printf "\n${bold}%s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+}
+info() {
+  printf "${dim}➜ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+}
+success() {
+  printf "${green}✔ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+}
+error() {
+  printf "${red}${bold}✖ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+}
+warnError() {
+  printf "${red}✖ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+}
+warnNotice() {
+  printf "${blue}✖ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+}
+note() {
+  printf "\n${bold}${blue}Note:${reset} ${blue}%s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+}
+   </pre>
+
+The `printf` command is used instead of `echo`.
+
+"h2" is a homage to HTML heading names.
+The other functions correspond to the different levels of verbosity used by the log4j library
+(from <a target="_blank" href="https://www.npmjs.com/package/aws-code-deploy">here</a>).
+
+
+### Logging to file
 
 The script is designed so the historical record of each run pops up at the end of the script.
 This is so you can easily <strong>scroll and search</strong> through the document, something that is difficult on the Console.
@@ -221,35 +363,6 @@ yourusername ALL=(root) NOPASSWD: /usr/sbin/installer install
 NOTE</a>: An XML file can be used to specify inputs.
 
 
-## Disk Space Free and Used
-
-Near the script's beginning, the MacOS <tt>df</tt> command is used to obtain the number of blocks available at the start of run:
-
-   <pre>FREE_DISKBLOCKS_START="$(df | sed -n -e '2{p;q}' | cut -d' ' -f 6)"
-   </pre>
-
-At the end of the script, the END variable is obtained for use in calculating the 
-space used during the script run.
-
-
-
-## Functions for dependencies
-
-<a target="_blank" href="https://stackoverflow.com/questions/11369522/bash-utility-script-library">
-QUESTION</a>: What are good Bash libraries with common functions?
-Libraries for bash are not common. 
-One is /etc/rc.d/functions on RedHat-based systems.
-The file contains functions commonly used in sysV init script.
-
-<a target="_blank" href="https://mywiki.wooledge.org/BashGuide">
-NOTE</a>: Bash libraries are scarce is due to limitation of Bash functions. 
-
-<a target="_blank" href="http://mywiki.wooledge.org/BashWeaknesses">
-NOTE</a>: Bash's "functions" have several issues:
-
-Code reusability: Bash functions don't return anything; they only produce output streams. Every reasonable method of capturing that stream and either assigning it to a variable or passing it as an argument requires a SubShell, which breaks all assignments to outer scopes. (See also <a target="_blank" href="https://mywiki.wooledge.org/BashFAQ/084">BashFAQ/084</a> for tricks to retrieve results from a function.) Thus, libraries of reusable functions are not feasible, as you can't ask a function to store its results in a variable whose name is passed as an argument (except by performing eval backflips).
-
-Scope: Bash has a simple system of local scope which roughly resembles "dynamic scope" (e.g. Javascript, elisp). Functions see the locals of their callers (like Python's "nonlocal" keyword), but can't access a caller's positional parameters (except through BASH_ARGV if extdebug is enabled). Reusable functions can't be guaranteed free of namespace collisions unless you resort to weird naming rules to make conflicts sufficiently unlikely. This is particularly a problem if implementing functions that expect to be acting upon variable names from frame n-3 which may have been overwritten by your reusable function at n-2. Ksh93 can use the more common lexical scope rules by declaring functions with the "function name { ... }" syntax (Bash can't, but supports this syntax anyway).
 
 
 ## GITS_PATH
@@ -546,15 +659,6 @@ if [ -z "$MY_ZONE" ]; then  # not empty
    MY_ZONE="us-central1-b"  # set default value.
 fi
 echo "**** MY_ZONE=\"$MY_ZONE\""
-   </pre>
-
-0. Define new verbs so different colors are displayed at various levels of concern:
-
-   <pre>
-function echo_ok { echo -e '\033[1;32m'"$1"'\033[0m'; }
-function echo_warn { echo -e '\033[1;33m'"$1"'\033[0m'; }
-function echo_error  { echo -e '\033[1;31mERROR: '"$1"'\033[0m'; }
-echo_ok "Install starting. You may be asked for your password (for sudo)."
    </pre>
 
 0. If Xcode is not installed, exit the program (quit):
