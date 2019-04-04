@@ -103,13 +103,15 @@ You don't have to use them. Or you can use a small subset of them. But in case o
 
 ### Documentation:
 
-📝 &#58;memo&#58; = Writing docs.
+📝 &#58;memo&#58; = Writing docs
 
-💡 &#58;bulb&#58; = Documenting source code.
+💡 &#58;bulb&#58; = Documenting source code
 
 🔍 &#58;mag&#58; = Improving SEO
 
-👥 &#58;busts_in_silhouette&#58; = Adding contributor(s).
+👥 &#58;busts_in_silhouette&#58; = Adding contributor(s)
+
+&nbsp; &#58;book&#58; = Issue
 
 
 ### Testing:

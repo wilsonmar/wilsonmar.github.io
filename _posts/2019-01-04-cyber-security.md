@@ -621,3 +621,6 @@ Education/Experience Requirements:
 * Ability to maintain focus and develop proficiency in new skills rapidly.
 * Ability to work in a fast paced environment.
 * In-depth knowledge of more than one Information Security principle and discipline.
+
+
+https://linuxacademy.com/cp/modules/view/id/316?utm_source=intercom&utm_medium=email&utm_campaign=AprilNewsletter2019

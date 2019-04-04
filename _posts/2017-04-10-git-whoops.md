@@ -148,6 +148,7 @@ If you didn't mean to fork a repository, but you did anyway,
 
    The <strong>git status</strong> command details the status of changes to the repo.
 
+   <a name="Commmitted"></a>
 
    ### Committed but not pushed
 
@@ -455,14 +456,9 @@ If you didn't mean to fork a repository, but you did anyway,
    <pre><strong>git branch mytopicbranch
    </strong></pre>
 
-   Identify the commit where HEAD be:
+   Identify the SHA associated to the commit where HEAD should be by looking on-line or a git log command such as <a href="#Commmitted">commits not yet pushed</a>, such as "2f7efb32".
 
-   <pre><strong>git log 
-   </strong></pre>
-
-   Copy in your Clipboard the SHA of the commit that should be HEAD, such as "2f7efb32".
-
-   Reset HEAD to that:
+   Reset HEAD to that SHA, such as:
 
    <pre><strong>git reset 2f7efb32 --hard
    </strong></pre>
