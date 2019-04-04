@@ -142,7 +142,7 @@ Below is an approach that can be used for Gap Analysis of what needs to be done 
 
 <strong>A. Active Device Discovery System</strong>
 
-   1.1	Utilize an Active Discovery Tool
+   * 1.1	Utilize an Active Discovery Tool
 
 <strong>B. Anti-Spam Gateway</strong>
 
