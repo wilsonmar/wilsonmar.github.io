@@ -272,7 +272,7 @@ Lightning Now Tour at a city near you in 2017 and 2018
 
 > How about I just travel around the world attending Salesforce conferences?
 
-<a target="_blank" href="https://allthedreamin.wordpress.com/blog/">BLOG: "All the dreamin'</a> lists regional annual community-led Salesforce gatherings.
+<a target="_blank" href="https://allthedreamin.wordpress.com/blog/">BLOG: "All the dreamin'</a> lists regional annual community-led Salesforce gatherings. Dates need updating frequently, so I created a table sorted by date within the year for easy reference:
 
    <table border="1" cellpadding="4" cellspacing="0"><thead>
    <tr><th> Event Date </th><th> Name </th><th> Location </th><th> Notes </th></tr></thead><tbody>
