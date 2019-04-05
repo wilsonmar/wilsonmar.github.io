@@ -193,7 +193,7 @@ by Gregg Thaler
 From: https://www.salesforceben.com/the-linkedin-guide-book-for-trailblazers/
 
 
-### Trailhead communities
+### Trailhead communities online
 
 https://trailblazercommunitygroups.com/
 
@@ -252,13 +252,13 @@ https://www.facebook.com/sfdcpoint/
 
    * <a target="_blank" href="https://theextracurricular.org/">theextracurricular.org</a>The Extracurricular</a> is a technical learning event for Salesforce developers and architects. It is a community-built mini-event hosted inside TrailheaDX at Moscone West.
 
-<strong>World Tour</strong>
+### World Tour
 
   * There is a mobile app (by Debra Nacimento) for the Salesforce World Tour.
 
-<a name="Lightning"></a>
+   <a name="Lightning"></a>
 
-Lightning Now Tour at a city near you in 2017 and 2018
+   Lightning Now Tour at a city near you in 2017 and 2018
 
    * <a target="_blank" href="bit.ly/lightning-now-sales-admin">Lightning Now Tour for Sales Admins</a>
 
@@ -267,73 +267,44 @@ Lightning Now Tour at a city near you in 2017 and 2018
 
 <a name="Regionals"></a>
 
-<strong>Regional conferences</strong>
+### Regional conferences
 
 > How about I just travel around the world attending Salesforce conferences?
 
 <a target="_blank" href="https://allthedreamin.wordpress.com/blog/">BLOG: "All the dreamin'</a> lists regional annual community-led Salesforce gatherings.
 
-   <html border="1" cellpadding="4" cellspacing="0">
-   <thead><tr><th> Event Date </th><th> Name </th><th> Location </th><th> Notes </th></tr></thead><tbody>
-   <tr valign="top"><td> Jan. 12 </td><td> <a target="_blank" href="http://www.cactusforce.com/">CactusForce</a> </td><td> Phoenix, AZ, USA </td><td> -</td></tr>
-
+   <html border="1" cellpadding="4" cellspacing="0"><thead><tr><th> Event Date </th><th> Name </th><th> Location </th><th> Notes </th></tr></thead><tbody>
+  <tr valign="top"><td> Jan. 12 </td><td> <a target="_blank" href="http://www.cactusforce.com/">CactusForce</a> </td><td> Phoenix, AZ, USA </td><td> -</td></tr>
    <tr valign="top"><td> January 25, 2017 </td><td> <a target="_blank" href="http://witnesssuccess.com/">Witness Success</a> </td><td> Nashville, TN, USA </td><td> -</td></tr>
-
    <tr valign="top"><td> Feburary 11, 2017 </td><td> <a target="_blank" href="http://www.dreamole.es/">Dream Ole</a> </td><td> Malaga, Spain </td><td> -</td></tr>
-
    <tr valign="top"><td> March 8 </td><td> <a target="_blank" href="http://www.londonscalling.net/">London's Calling</a> </td><td> London, UK </td><td> -</td></tr>
-
    <tr valign="top"><td> March 20-22, 2019 </td><td> <a target="_blank" href="http://snowforce.io/">Snowforce</a> </td><td> Salt Lake City, UT, USA </td><td> -</td></tr>
-
    <tr valign="top"><td> March 21-22, 2019 </td><td> <a target="_blank" href="http://www.southeastdreamin.com/">Southeast Dreamin'</a> </td><td> Atlanta, GA, USA </td><td> -</td></tr>
-
    <tr valign="top"><td> April 12-14 </td><td> <a target="_blank" href="https://www.skiforce.co/">Skiforce</a> </td><td> Obergurl, Austria </td><td> groups from Vienna, Munich, Zurich, Geneva </td></tr>
-
    <tr valign="top"><td> April 30, 2018 </td><td> <a target="_blank" href="http://www.inspireeast.co.uk/">PhillyForce</a> </td><td> Philadelphia, PA, USA </td><td> -</td></tr>
-
    <tr valign="top"><td> May 4, 2018 </td><td> <a target="_blank" href="https://www.eventbrite.com/e/6th-annual-phillyforce-conference-registration-42745891111">Down Under Dreamin'</a> </td><td> Melbourne, Australia </td><td> -</td></tr>
-
    <tr valign="top"><td> May 13, 2019 </td><td> <a target="_blank" href="https://www.forceacademyla.com/">Los Angeles Force Academy</a> </td><td> Los Angeles, CA, USA </td><td> -</td></tr>
-
    <tr valign="top"><td> June 13-14, 2019 </td><td> <a target="_blank" href="http://texasdreamin.org/">Texas Dreamin'</a> </td><td> Austin, Texas, USA </td><td> -</td></tr>
-
    <tr valign="top"><td> June 15, 2019 </td><td> <a target="_blank" href="https://www.banffdreamin.com/">Banff Dreamin'</a> </td><td> Banff, Canada </td><td> -</td></tr>
-
    <tr valign="top"><td> June 15, 2019 </td><td> <a target="_blank" href="https://www.yeurleadin.eu/">YeurLeadin’</a> </td><td> Amsterdam, Netherlands </td><td> GCL only </td></tr>
-
    <tr valign="top"><td> June 27-28, 2019 </td><td> <a target="_blank" href="https://www.norcaldreamin.com/">NorCal Dreamin’</a> </td><td> Sacramento, CA, USA </td></tr>
-
    <tr valign="top"><td> July 18-19, 2019 </td><td> <a target="_blank" href="https://www.bigskydreamin.com/">Big Sky Dreamin'</a> </td><td> Bozeman, Montana, USA </td><td> - </td></tr>
-
-   <tr valign="top"><td> March 9, 2018 </td><td> <a target="_blank" href="http://www.puntadreamin.com/">Punta Dreamin'</a> </td><td> Punta del Este, Uraguay </td><td> Recorded </td></tr>
-
+   <tr valign="top"><td> March 9, 2018 </td><td> <a target="_blank" href="http://www.puntadreamin.com/">Punta Dreamin'</a> </td><td> Punta del Este, Uraguay </td><td> - </td></tr>
    <tr valign="top"><td> July 26, 2018 </td><td> <a target="_blank" href="http://www.downunderdreaming.com/sydney/">Down Under</a> </td><td> Sydney, Australia </td><td> -</td></tr>
-
    <tr valign="top"><td> July 26, 2018 </td><td> <a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDa9AAG">Dreamin'</a> </td><td> Denver, CO, USA </td><td> -</td></tr>
-
    <tr valign="top"><td> July 31 & Aug 1, 2018 </td><td> <a target="_blank" href="#Regionals">Forcelandia</a> </td><td> Portland, OR, USA </td><td> -</td></tr>
-
    <tr valign="top"><td> August 7-9 </td><td> <a target="_blank" href="http://midwestdreamin.com/">Midwest Dreamin'</a> </td><td> Chicago, IL, USA </td><td> -</td></tr>
-
    <tr valign="top"><td> August 16, 2019 </td><td> <a target="_blank" href="https://czechdreamin.com/">Czech Dreamin'</a> </td><td> Czech Republic </td><td> -</td></tr>
-
    <tr valign="top"><td> September 12-13, 2019 </td><td> <a target="_blank" href="https://www.fldreamin.com/">Florida Dreamin'</a> </td><td> Tampa, FL, USA </td><td> <a target="_blank" href="https://twitter.com/dreamin_florida">@dreamin_florida</a> #FlDreamin19 </td></tr>
-
    <tr valign="top"><td> October 4, 2019 </td><td> <a target="_blank" href="http://www.inspireeast.co.uk/">Inspire East</a> </td><td> Cambridge, UK </td><td> -</td></tr>
-
    <tr valign="top"><td> November 16, 2019 </td><td> <a target="_blank" href="https://northeastdreamin.com/">Northeast Dreamin'</a> </td><td> Manchester, NH, USA </td><td> -</td></tr>
-
    <tr valign="top"><td> December 1-2, 2018 </td><td> <a target="_blank" href="http://indiadreamin.in/">India Dreamin'</a> </td><td> Delhi, India </td><td> -</td></tr>
-
    <tr valign="top"><td> December 6, 2018 </td><td> <a target="_blank" href="http://www.downunderdreaming.com/brisbane/">Down Under</a> </td><td> Brisbane, Australia </td><td> -</td></tr>
-
    <tr valign="top"><td> December 14 </td><td> <a target="_blank" href="https://www.truenorthdreamin.com/">True North</a>  </td><td> Ottowa, Canada </td><td> - </td></tr>
-
    <tr valign="top"><td> September 20, 2019 </td><td> <a target="_blank" href="http://frenchtouchdreamin.com/">French Touch Dreamin'</a> </td><td> Paris, France </td><td> -</td></tr>
-
    </tbody></html>
 
-<strong>Local Meetups</strong>
+### Local Meetups
 
    * <a target="_blank" href="http://salesforce.meetup.com/">salesforce.meetup.com</a>
    lists meetups secheduled at meetups.com (which organizers pay $200 per year).
@@ -354,7 +325,6 @@ Lightning Now Tour at a city near you in 2017 and 2018
 <a target="_blank" href="http://www.salesforce.org/nonprofit/nonprofit-success-pack/">NPSP (Non-Profit Success Pack) website</a> and <a target="_blank" href="http://www.npspday.org/">conferences around the country</a>:
 
    * <a target="_blank" href="https://seattlenpsf.wordpress.com/">seattlenpsf.wordpress.com</a> is the Seattle Non-profit [ask to be invited to view]
-
 
 <a name="Dreamforce"></a>
 
@@ -447,7 +417,7 @@ Read about preparing for and getting the most from Dreamforce:
 * <a target="_blank" href="https://chat.whatsapp.com/invite/2cAoxNR1cRgFxyMht9CuUZ">WhatsApp Chat Group</a> created by <a target="_blank" href="https://www.linkedin.com/in/pranav-varma">Pranav Varma</a>
 
 
-### Mascots
+## Mascots
 
 ![sf-mascots-648x425-98567](https://user-images.githubusercontent.com/300046/43673576-9d8f42e6-9782-11e8-8cdc-7442e646554b.jpg)
 
@@ -467,23 +437,33 @@ The owl is called <strong>Appy</strong>. She is associated with AppExchange.
 
 See <a target="_blank" href="https://www.slideshare.net/salesforceeng/hit-the-trail-with-trailhead/">Kim Shain's slidedeck</a> about mascot branding guidelines.
 
-### Dreamoji
+
+## Dreamoji
 
 The Dreamoji app provides a custom keyboard containing Salesforce emojis you can insert into messages, tweets, etc.
 
-On your iOS device, search for <a target="_blank" href="https://itunes.apple.com/us/app/dreamoji/id1294827604?mt=8">Dreamoji</a>, then Get it. After it loads, in Settings, General, Keyboard, Keyboards, select "Dreamoji", enable "Allow Full Access".
+On your iOS device, search for <a target="_blank" href="https://itunes.apple.com/us/app/dreamoji/id1294827604?mt=8">Dreamoji</a>, then Get it. 
+
+![salesforce-dreamoji-iphone-screen-648x618-32360.jpg](https://user-images.githubusercontent.com/300046/55632739-23cf7000-5778-11e9-9f2c-38ab1c295932.jpg)
+
+After it loads, in you iPhone Settings app, General, Keyboard, Keyboards, select "Dreamoji", enable "Allow Full Access".
+
+![salesforce-dreamoji-iphone-648-1404-57477.jpg](https://user-images.githubusercontent.com/300046/55632526-bcb1bb80-5777-11e9-81d7-9f72002f268f.jpg)
+
 
 When Messaging, click the happy face icon to the right of the text entry field.
 
 On your Android, see <a target="_blank" href="https://t.co/UzK0VF7e9G">https://t.co/UzK0VF7e9G</a>
 
 
-### Store
+## Store
 
 <a target="_blank" href="https://salesforcestore.com/"><img align="right" alt="sf-keychain-150x150-6434.jpg" src="https://user-images.githubusercontent.com/300046/43412209-ba197162-93e9-11e8-8028-193144aeb840.jpg"></a>
-Miss being at a Salesforce event? Buy the branded clothing, office supplies, electronics, all 129+ products for sale at <a target="_blank" href="https://salesforcestore.com/">https://salesforcestore.com</a>
+Miss being at a Salesforce event? Buy the branded clothing, office supplies, electronics, all 129+ products for sale at 
 
-   PROTIP: Ironically, the site uses ASP.NET and jQuery (rather than React and web services).
+   <a target="_blank" href="https://salesforcestore.com/">https://salesforcestore.com</a>
+
+   PROTIP: Ironically, the site is not built as a Commerce Cloud website (uses ASP.NET and jQuery).
 
 ## More about Salesforce #
 
