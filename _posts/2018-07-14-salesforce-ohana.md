@@ -274,7 +274,8 @@ Lightning Now Tour at a city near you in 2017 and 2018
 
 <a target="_blank" href="https://allthedreamin.wordpress.com/blog/">BLOG: "All the dreamin'</a> lists regional annual community-led Salesforce gatherings.
 
-   <html border="1" cellpadding="4" cellspacing="0"><thead><tr><th> Event Date </th><th> Name </th><th> Location </th><th> Notes </th></tr></thead><tbody>
+   <table border="1" cellpadding="4" cellspacing="0"><thead>
+   <tr><th> Event Date </th><th> Name </th><th> Location </th><th> Notes </th></tr></thead><tbody>
   <tr valign="top"><td> Jan. 12 </td><td> <a target="_blank" href="http://www.cactusforce.com/">CactusForce</a> </td><td> Phoenix, AZ, USA </td><td> -</td></tr>
    <tr valign="top"><td> January 25, 2017 </td><td> <a target="_blank" href="http://witnesssuccess.com/">Witness Success</a> </td><td> Nashville, TN, USA </td><td> -</td></tr>
    <tr valign="top"><td> Feburary 11, 2017 </td><td> <a target="_blank" href="http://www.dreamole.es/">Dream Ole</a> </td><td> Malaga, Spain </td><td> -</td></tr>
@@ -303,7 +304,7 @@ Lightning Now Tour at a city near you in 2017 and 2018
    <tr valign="top"><td> December 6, 2018 </td><td> <a target="_blank" href="http://www.downunderdreaming.com/brisbane/">Down Under</a> </td><td> Brisbane, Australia </td><td> -</td></tr>
    <tr valign="top"><td> December 14 </td><td> <a target="_blank" href="https://www.truenorthdreamin.com/">True North</a>  </td><td> Ottowa, Canada </td><td> - </td></tr>
    <tr valign="top"><td> September 20, 2019 </td><td> <a target="_blank" href="http://frenchtouchdreamin.com/">French Touch Dreamin'</a> </td><td> Paris, France </td><td> -</td></tr>
-   </tbody></html>
+   </tbody></table>
 
 
 ### Local Meetups
