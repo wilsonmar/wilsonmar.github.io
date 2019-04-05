@@ -51,8 +51,7 @@ Coding in this script is linted using ShellCheck online at
 <a target="_blank" href="https://shellcheck.com">shellcheck.com</a> or installed from 
 <a target="_blank" href="https://github.com/koalaman/shellcheck">https://github.com/koalaman/shellcheck</a>
 
-To override the triggering of one of its particular rules so that it does not appear as an error,
-a line like this is added
+To override the triggering of one of its particular rules so that it does not appear as an error, add a comment line like this referencing the rule to ignore:
 
 <pre># shellcheck disable=SC2059</pre>
 
@@ -103,7 +102,7 @@ a line like this is added
 
    <pre>GNU bash, version 4.4.19(1)-release (x86_64-apple-darwin17.3.0)</pre>
 
-## Traps
+## Bash Traps
 
 The Bash trap command catches signals so it can execute some commands when appropriate,
 such as <a target="_blank" href="https://www.shellscript.sh/trap.html">

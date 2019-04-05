@@ -72,7 +72,9 @@ Here we first work backwards, leveraging the outcome of Robert's work (to make s
    <pre><strong>python generator.py</strong></pre>
 
    NOTE: I would prefer to use `from random import sample` because `import random` brings in the whole module, which this custom code doesn't use.
-   However, doing so results in `NameError: global name 'random' is not defined` when run.
+   However, running it results in:
+   
+   `NameError: global name 'random' is not defined`
    
    The variable `n` is a commonly used name for a temporary variable containing the limit. It is defined in the function's signature specification.
 
@@ -202,6 +204,8 @@ CMD ["python", "/src/app.py"]
    Flask==1.0.2
    </pre>
 
+   Flask is used by the <a target="_blank" href="https://github.com/wilsonmar/cicd-buzz/blob/master/app.py">app.py</a> program, which wraps HTML around the output.
+
    PROTIP: Normally, the Terminal session would not take any more interactive commands, but the Bash script is written to call `docker run` with
    `&` in the background. The `stop` command.
 
@@ -221,6 +225,7 @@ CMD ["python", "/src/app.py"]
    <tt>app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)))</tt>
 
    https://stackoverflow.com/questions/37139786/is-init-py-not-required-for-packages-in-python-3
+
 
 ### Clean-up
 
@@ -254,7 +259,7 @@ Travis CI is a hosted service for Continuous Integration work. It’s free for p
 
    PROTIP: Travis only runs builds on commits pushed only if there is a .travis.yml file in the repo.
 
-8. In the sample repo, the `.travis.yml` file specifies the language in the `pytest` script run by Travis, which uses the docker service:
+8. In the sample repo, the `.travis.yml` file specifies the language in the `pytest` script run by Travis:
 
    <pre>
 sudo: required
@@ -270,22 +275,52 @@ after_success:
 
    WARNING: If the file is not valid YAML, Travis CI will ignore it.
 
-   <a target="_blank" href="https://docs.travis-ci.com/user/tutorial/#to-get-started-with-travis-ci">https://docs.travis-ci.com/user/tutorial/#to-get-started-with-travis-ci</a>
-   lists .travis.yml files for various languages. https://docs.travis-ci.com/user/language-specific/
+The file specifies use of the Docker service.
 
-   The example for Node was presented <a target="_blank" href="https://slides.com/dreeve/deck/">with this slidedeck</a> by David Reeve in VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=Uft5KBimzyk">Travis CI Tutorial - How to Use Travis CI with Github for Continuous Integration</a> Jan 22, 2016 account FullStack Academy.
+`after_success` of pytest, Travis is told to run the script <a href="#TravisDockerHub">.travis/deploy_dockerhub.sh (described below)</a>.
+
+<a name="TravisDockerHub"></a>
+
+## DockerHub
+
+In the .travis folder
+https://github.com/wilsonmar/cicd-buzz/blob/master/.travis/deploy_dockerhub.sh
 
    <pre>
-language: node_js
-node_js:
-  - "stable"
-env:
-  - NODE_ENV="development"
-  - NODE_ENV="production";SESSION_SECRET="la li"
-services:
-  - mongodb
-script: gulp travis
+#!/bin/sh
+docker login -u $DOCKER_USER -p $DOCKER_PASS
+if [ "$TRAVIS_BRANCH" = "master" ]; then
+    TAG="latest"
+else
+    TAG="$TRAVIS_BRANCH"
+fi
+docker build -f Dockerfile -t $TRAVIS_REPO_SLUG:$TAG .
+docker push $TRAVIS_REPO_SLUG
    </pre>
+
+`$DOCKER_PASS` is the password into DockerHub account `$DOCKER_USER`.
+
+`$TRAVIS_BRANCH` is the Git branch name.
+
+`$TRAVIS_REPO_SLUG`
+
+`$TAG`
+
+
+<a name="DeployHeroku"></a>
+
+## Heroku
+
+https://github.com/wilsonmar/cicd-buzz/blob/master/.travis/deploy_heroku.sh
+
+<pre>
+#!/bin/sh
+wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+heroku plugins:install heroku-container-registry
+docker login -e _ -u _ --password=$HEROKU_API_KEY registry.heroku.com
+heroku container:push web --app $HEROKU_APP_NAME
+</pre>
+
 
 9. Push a commit from your local git history to GitHub and hooks in GitHub will trigger a build.
 9. <a target="_blank" href="https://travis-ci.org/dashboard">Travis dashboard</a>
@@ -297,6 +332,14 @@ To enable Travis CI to start a build at each Push and Pull Request for a reposit
 
 <a target="_blank" href="https://medium.com/vaidikkapoor/managing-open-source-docker-images-on-docker-hub-using-travis-7fd33bc96d65">
 This blog</a> talks about automatically syncing README.
+
+
+Resources on Travis:
+
+* <a target="_blank" href="https://docs.travis-ci.com/user/tutorial/#to-get-started-with-travis-ci">https://docs.travis-ci.com/user/tutorial/#to-get-started-with-travis-ci</a>
+   lists .travis.yml files for various languages. https://docs.travis-ci.com/user/language-specific/
+
+   The example for Node was presented <a target="_blank" href="https://slides.com/dreeve/deck/">with this slidedeck</a> by David Reeve in VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=Uft5KBimzyk">Travis CI Tutorial - How to Use Travis CI with Github for Continuous Integration</a> Jan 22, 2016 account FullStack Academy.
 
 
 ## Test-first

@@ -29,7 +29,7 @@ comments: true
    <pre><strong>git commit -m"#BUG342 NEW: initial commit README.md"</strong></pre>
 
    REMEMBER: If you issue a "git commit" without the "-m" which provides the commit message, Git presents you a text editor window to type in a long message. 
-   (And if you see a ":" at the lower-right corner, type <pre>wq!</pre> to exit.)
+   (And if you see a ":" at the lower-right corner, type `wq!` to exit.)
 
    <pre><strong>gas "#BUG342 NEW: initial commit README.md"</strong></pre>
 
