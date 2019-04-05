@@ -248,22 +248,23 @@ https://www.facebook.com/sfdcpoint/
    * <a target="_blank" href="https://twitter.com/hashtag/SalesforceTour?src=hash">#SalesforceTour</a>
    <br /><br />
 
-<strong>Trailhead DX (Developer Experience)</strong> <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23TDX19&src=typd">#TDX19</a>, <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23TDX18&src=typd">#TDX18</a>, etc. occurs in San Francisco around May 29-30. A Bootcamp is May 30-June 2 <a target="_blank" href="https://www.salesforce.com/trailheadx/register">for $3,999 vs. $699</a>. 
+<strong>Trailhead DX (Developer Experience)</a> <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23TDX19&src=typd">#TDX19</a>, <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23TDX18&src=typd">#TDX18</a>, etc. occurs in San Francisco around May 29-30. A Bootcamp is May 30-June 2 <a target="_blank" href="https://www.salesforce.com/trailheadx/register">for $3,999 vs. $699</a>. 
 
    * <a target="_blank" href="https://theextracurricular.org/">theextracurricular.org</a>The Extracurricular</a> is a technical learning event for Salesforce developers and architects. It is a community-built mini-event hosted inside TrailheaDX at Moscone West.
 
-### World Tour
+<strong>World Tour</strong>
 
   * There is a mobile app (by Debra Nacimento) for the Salesforce World Tour.
 
-   <a name="Lightning"></a>
+<a name="Lightning"></a>
 
-   Lightning Now Tour at a city near you in 2017 and 2018
+Lightning Now Tour at a city near you in 2017 and 2018
 
    * <a target="_blank" href="bit.ly/lightning-now-sales-admin">Lightning Now Tour for Sales Admins</a>
 
    * <a target="_blank" href="bit.ly/lightning-now-developer">Lightning Now Tour for Developers</a>
    includes a <a target="_blank" href="https://developerforce.github.io/LightningNowWorkshop/">Workshop Lab</a> from https://developerforce.github.io/LightningNowWorkshop/Exercise_d1.html
+
 
 <a name="Regionals"></a>
 
@@ -304,14 +305,17 @@ https://www.facebook.com/sfdcpoint/
    <tr valign="top"><td> September 20, 2019 </td><td> <a target="_blank" href="http://frenchtouchdreamin.com/">French Touch Dreamin'</a> </td><td> Paris, France </td><td> -</td></tr>
    </tbody></html>
 
+
 ### Local Meetups
 
    * <a target="_blank" href="http://salesforce.meetup.com/">salesforce.meetup.com</a>
-   lists meetups secheduled at meetups.com (which organizers pay $200 per year).
+   lists meetups secheduled at meetups.com (at $200 per year).
 
    * <a target="_blank" href="https://success.salesforce.com/userGroups">https://success.salesforce.com/userGroups</a>  
 
-   * <a target="_blank" href="https://developer.salesforce.com/dugs">https://developer.salesforce.com/dugs</a> has been disabled.
+   * <a target="_blank" href="https://developer.salesforce.com/dugs">https://developer.salesforce.com/dugs</a>
+
+   * <a target="_blank" href="https://bit.ly/TwitchSF">bit.ly/TwitchSF</a> by the San Francisco user group
 
 <a target="_blank" href="https://twitter.com/search?q=%23salesforcesaturday&src=typd">#SalesforceSaturdays</a> occur worldwide
    
@@ -325,10 +329,12 @@ https://www.facebook.com/sfdcpoint/
 <a target="_blank" href="http://www.salesforce.org/nonprofit/nonprofit-success-pack/">NPSP (Non-Profit Success Pack) website</a> and <a target="_blank" href="http://www.npspday.org/">conferences around the country</a>:
 
    * <a target="_blank" href="https://seattlenpsf.wordpress.com/">seattlenpsf.wordpress.com</a> is the Seattle Non-profit [ask to be invited to view]
+   <br /><br />
+
 
 <a name="Dreamforce"></a>
 
-## Dreamforce Conference by Salesforce in San Francisco
+## Dreamforce Conference
 
 <a target="_blank" href="http://www.salesforce.com/dreamforce/">Dreamforce</a> is Salesforce's annual conference, usually <strong>4 days in September</strong> (Tuesday thru Friday).
 
