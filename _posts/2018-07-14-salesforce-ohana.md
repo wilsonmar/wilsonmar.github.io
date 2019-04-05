@@ -272,10 +272,10 @@ Lightning Now Tour at a city near you in 2017 and 2018
 
 > How about I just travel around the world attending Salesforce conferences?
 
-<a target="_blank" href="https://allthedreamin.wordpress.com/blog/">BLOG: "All the dreamin'</a> lists regional annual community-led Salesforce gatherings. Dates need updating frequently, so I created a table sorted by date within the year for easy reference:
+<a target="_blank" href="https://allthedreamin.wordpress.com/blog/">BLOG: "All the dreamin'</a> lists regional annual community-led Salesforce gatherings. Dates need updating frequently, so I created a table sorted by date within the year for easy reference: Click on the Name for their website.
 
    <table border="1" cellpadding="4" cellspacing="0"><thead>
-   <tr><th> Event Date </th><th> Name </th><th> Location </th><th> Notes </th></tr></thead><tbody>
+   <tr><th> Event Date </th><th> Name (website) </th><th> Location </th><th> Notes </th></tr></thead><tbody>
   <tr valign="top"><td> Jan. 12 </td><td> <a target="_blank" href="http://www.cactusforce.com/">CactusForce</a> </td><td> Phoenix, AZ, USA </td><td> -</td></tr>
    <tr valign="top"><td> January 25, 2017 </td><td> <a target="_blank" href="http://witnesssuccess.com/">Witness Success</a> </td><td> Nashville, TN, USA </td><td> -</td></tr>
    <tr valign="top"><td> Feburary 11, 2017 </td><td> <a target="_blank" href="http://www.dreamole.es/">Dream Ole</a> </td><td> Malaga, Spain </td><td> -</td></tr>
