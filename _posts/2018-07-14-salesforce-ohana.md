@@ -289,12 +289,12 @@ Lightning Now Tour at a city near you in 2017 and 2018
    <tr valign="top"><td> June 13-14, 2019 </td><td> <a target="_blank" href="http://texasdreamin.org/">Texas Dreamin'</a> </td><td> Austin, Texas, USA </td><td> -</td></tr>
    <tr valign="top"><td> June 15, 2019 </td><td> <a target="_blank" href="https://www.banffdreamin.com/">Banff Dreamin'</a> </td><td> Banff, Canada </td><td> -</td></tr>
    <tr valign="top"><td> June 15, 2019 </td><td> <a target="_blank" href="https://www.yeurleadin.eu/">YeurLeadin’</a> </td><td> Amsterdam, Netherlands </td><td> GCL only </td></tr>
-   <tr valign="top"><td> June 27-28, 2019 </td><td> <a target="_blank" href="https://www.norcaldreamin.com/">NorCal Dreamin’</a> </td><td> Sacramento, CA, USA </td></tr>
+   <tr valign="top"><td> June 27-28, 2019 </td><td> <a target="_blank" href="https://www.norcaldreamin.com/">NorCal Dreamin’</a> </td><td> Sacramento, CA, USA </td><td> - </td></tr>
    <tr valign="top"><td> July 18-19, 2019 </td><td> <a target="_blank" href="https://www.bigskydreamin.com/">Big Sky Dreamin'</a> </td><td> Bozeman, Montana, USA </td><td> - </td></tr>
    <tr valign="top"><td> March 9, 2018 </td><td> <a target="_blank" href="http://www.puntadreamin.com/">Punta Dreamin'</a> </td><td> Punta del Este, Uraguay </td><td> - </td></tr>
    <tr valign="top"><td> July 26, 2018 </td><td> <a target="_blank" href="http://www.downunderdreaming.com/sydney/">Down Under</a> </td><td> Sydney, Australia </td><td> -</td></tr>
    <tr valign="top"><td> July 26, 2018 </td><td> <a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDa9AAG">Dreamin'</a> </td><td> Denver, CO, USA </td><td> -</td></tr>
-   <tr valign="top"><td> July 31 & Aug 1, 2018 </td><td> <a target="_blank" href="#Regionals">Forcelandia</a> </td><td> Portland, OR, USA </td><td> -</td></tr>
+   <tr valign="top"><td> July 31 & Aug 1, 2018 </td><td> <a target="_blank" href="#Regionals">Forcelandia</a> </td><td> Portland, OR, USA </td><td> Angela Mahoney</td></tr>
    <tr valign="top"><td> August 7-9 </td><td> <a target="_blank" href="http://midwestdreamin.com/">Midwest Dreamin'</a> </td><td> Chicago, IL, USA </td><td> -</td></tr>
    <tr valign="top"><td> August 16, 2019 </td><td> <a target="_blank" href="https://czechdreamin.com/">Czech Dreamin'</a> </td><td> Czech Republic </td><td> -</td></tr>
    <tr valign="top"><td> September 12-13, 2019 </td><td> <a target="_blank" href="https://www.fldreamin.com/">Florida Dreamin'</a> </td><td> Tampa, FL, USA </td><td> <a target="_blank" href="https://twitter.com/dreamin_florida">@dreamin_florida</a> #FlDreamin19 </td></tr>

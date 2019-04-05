@@ -1130,6 +1130,7 @@ Use of this feature requires a library to be specified at the top of the file:
 
    <pre>import sys</pre>
 
+
 <a name="ScreenShot"></a>
 
 ### Screen shot picture
@@ -1203,14 +1204,15 @@ At the bottom of the script is a MacOS command that translates text into voice t
 say "script ended."  # through speaker
 
 
-
-
 ## References
+
+https://dev.to/awwsmm/101-bash-commands-and-tips-for-beginners-to-experts-30je
+
+## Books you pay for
 
 <a target="_blank" href="https://www.amazon.com/dp/1788990552/">
 $18 Mastering Linux Shell Scripting: A practical guide to Linux command-line, Bash scripting, and Shell programming, 2nd Edition Paperback</a> 
 – April 19, 2018 by Mokhtar Ebrahim and Andrew Mallett 
-
 
 <a target="_blank" href="http://www.tldp.org/LDP/abs/html/abs-guide.html">
 Advanced Bash-Scripting Guide: An in-depth exploration of the art of shell scripting</a>
@@ -1222,7 +1224,6 @@ http://wiki.bash-hackers.org/commands/builtin/set
 
 http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_02_03.html
 Debugging bash scripts
-
 
 https://www.tldp.org/LDP/abs/html/abs-guide.html
 
@@ -1239,10 +1240,6 @@ https://github.com/denysdovhan/bash-handbook
    See https://scriptingosx.com/2017/10/on-the-shebang/
 
 https://jasonjwilliamsny.github.io/wrangling-genomics/01-automating_a_workflow.html
-
-## TODO's
-
-For AWS there is a <a target="_blank" href="https://www.cloudping.info/">cloudping.info</a> website which tells people which region is the quickest. Do you know if there is one like it for Azure and Google. If not we can write a Serverless program to do that.
 
 
 ## More on DevOps #
