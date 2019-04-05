@@ -15,11 +15,12 @@ comments: true
 
 {% include _toc.html %}
 
-This page presents steps and information for those new to Salesforce to get "plugged in" quickly yet fully.
+This page presents steps and information for those new to Salesforce to get "plugged in" quickly and fully.
 
-"Ohana" is the Hawaiian word for "family". Salesforces uses the Twittr hash tag \#SalesforceOhana 
-to describe the inclusive culture it aims to foster. Thus the Hawaiian (Polynesian) decorations and musician at events.
-PROTIP: The Hawaiian word "Aloha" means hello (and goodbye) has been applied to the feature of Salesforce that, rather than failing installation, allows installation of a package even though it has reached its maximum number of Custom Objects.
+"Ohana" is the Hawaiian word for "family". Salesforces uses the <a target="_blank" href="https://twitter.com/hashtag/salesforceohana">Twitter hash tag #SalesforceOhana</a>
+to describe the inclusive culture it's desirable to foster. Thus the Hawaiian (Polynesian) decorations and musician at events.
+
+PROTIP: The Hawaiian word "Aloha" (meaning both hello and goodbye), has been applied to the feature of Salesforce that, rather than failing installation, allows installation of a package even though it has reached its maximum number of Custom Objects.
 
 ## Office Locations
 
@@ -242,23 +243,21 @@ https://www.facebook.com/sfdcpoint/
 
 ## Events (Meet people)
 
-<a target="_blank" href="https://twitter.com/search?q=%23salesforcesaturday&src=typd">#SalesforceSaturdays</a>
-   
-   * https://twitter.com/DenverSfSat, #DenverSalesforceSaturday, https://denversalesforcesaturday.splashthat.com/ by @dougdunfee
-   <br /><br />
-
 <a target="_blank" href="https://developer.salesforce.com/calendar">https://developer.salesforce.com/calendar</a> is where you find and register for events.
 
    * <a target="_blank" href="https://twitter.com/hashtag/SalesforceTour?src=hash">#SalesforceTour</a>
    <br /><br />
 
-TrailheadDX (Developer eXperience), <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23TDX18&src=typd">#TDX18</a> is May 29-30 with Bootcamp May 30-June 2.
+<strong>Trailhead DX (Developer Experience)</strong> <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23TDX19&src=typd">#TDX19</a>, <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23TDX18&src=typd">#TDX18</a>, etc. occurs in San Francisco around May 29-30. A Bootcamp is May 30-June 2 <a target="_blank" href="https://www.salesforce.com/trailheadx/register">for $3,999 vs. $699</a>. 
 
-World Tour
+   * <a target="_blank" href="https://theextracurricular.org/">theextracurricular.org</a>The Extracurricular</a> is a technical learning event for Salesforce developers and architects. It is a community-built mini-event hosted inside TrailheaDX at Moscone West.
+
+<strong>World Tour</strong>
 
   * There is a mobile app (by Debra Nacimento) for the Salesforce World Tour.
 
 <a name="Lightning"></a>
+
 Lightning Now Tour at a city near you in 2017 and 2018
 
    * <a target="_blank" href="bit.ly/lightning-now-sales-admin">Lightning Now Tour for Sales Admins</a>
@@ -266,54 +265,126 @@ Lightning Now Tour at a city near you in 2017 and 2018
    * <a target="_blank" href="bit.ly/lightning-now-developer">Lightning Now Tour for Developers</a>
    includes a <a target="_blank" href="https://developerforce.github.io/LightningNowWorkshop/">Workshop Lab</a> from https://developerforce.github.io/LightningNowWorkshop/Exercise_d1.html
 
-Local Meetups 
+<a name="Regionals"></a>
+
+<strong>Regional conferences</strong>
+
+> How about I just travel around the world attending Salesforce conferences?
+
+<a target="_blank" href="https://allthedreamin.wordpress.com/blog/">BLOG: "All the dreamin'</a> lists regional annual community-led Salesforce gatherings.
+
+   <html border="1" cellpadding="4" cellspacing="0">
+   <thead><tr><th> Event Date </th><th> Name </th><th> Location </th><th> Notes </th></tr></thead><tbody>
+   <tr valign="top"><td> Jan. 12 </td><td> <a target="_blank" href="http://www.cactusforce.com/">CactusForce</a> </td><td> Phoenix, AZ, USA </td><td> -</td></tr>
+
+   <tr valign="top"><td> January 25, 2017 </td><td> <a target="_blank" href="http://witnesssuccess.com/">Witness Success</a> </td><td> Nashville, TN, USA </td><td> -</td></tr>
+
+   <tr valign="top"><td> Feburary 11, 2017 </td><td> <a target="_blank" href="http://www.dreamole.es/">Dream Ole</a> </td><td> Malaga, Spain </td><td> -</td></tr>
+
+   <tr valign="top"><td> March 8 </td><td> <a target="_blank" href="http://www.londonscalling.net/">London's Calling</a> </td><td> London, UK </td><td> -</td></tr>
+
+   <tr valign="top"><td> March 20-22, 2019 </td><td> <a target="_blank" href="http://snowforce.io/">Snowforce</a> </td><td> Salt Lake City, UT, USA </td><td> -</td></tr>
+
+   <tr valign="top"><td> March 21-22, 2019 </td><td> <a target="_blank" href="http://www.southeastdreamin.com/">Southeast Dreamin'</a> </td><td> Atlanta, GA, USA </td><td> -</td></tr>
+
+   <tr valign="top"><td> April 12-14 </td><td> <a target="_blank" href="https://www.skiforce.co/">Skiforce</a> </td><td> Obergurl, Austria </td><td> groups from Vienna, Munich, Zurich, Geneva </td></tr>
+
+   <tr valign="top"><td> April 30, 2018 </td><td> <a target="_blank" href="http://www.inspireeast.co.uk/">PhillyForce</a> </td><td> Philadelphia, PA, USA </td><td> -</td></tr>
+
+   <tr valign="top"><td> May 4, 2018 </td><td> <a target="_blank" href="https://www.eventbrite.com/e/6th-annual-phillyforce-conference-registration-42745891111">Down Under Dreamin'</a> </td><td> Melbourne, Australia </td><td> -</td></tr>
+
+   <tr valign="top"><td> May 13, 2019 </td><td> <a target="_blank" href="https://www.forceacademyla.com/">Los Angeles Force Academy</a> </td><td> Los Angeles, CA, USA </td><td> -</td></tr>
+
+   <tr valign="top"><td> June 13-14, 2019 </td><td> <a target="_blank" href="http://texasdreamin.org/">Texas Dreamin'</a> </td><td> Austin, Texas, USA </td><td> -</td></tr>
+
+   <tr valign="top"><td> June 15, 2019 </td><td> <a target="_blank" href="https://www.banffdreamin.com/">Banff Dreamin'</a> </td><td> Banff, Canada </td><td> -</td></tr>
+
+   <tr valign="top"><td> June 15, 2019 </td><td> <a target="_blank" href="https://www.yeurleadin.eu/">YeurLeadin’</a> </td><td> Amsterdam, Netherlands </td><td> GCL only </td></tr>
+
+   <tr valign="top"><td> June 27-28, 2019 </td><td> <a target="_blank" href="https://www.norcaldreamin.com/">NorCal Dreamin’</a> </td><td> Sacramento, CA, USA </td></tr>
+
+   <tr valign="top"><td> July 18-19, 2019 </td><td> <a target="_blank" href="https://www.bigskydreamin.com/">Big Sky Dreamin'</a> </td><td> Bozeman, Montana, USA </td><td> - </td></tr>
+
+   <tr valign="top"><td> March 9, 2018 </td><td> <a target="_blank" href="http://www.puntadreamin.com/">Punta Dreamin'</a> </td><td> Punta del Este, Uraguay </td><td> Recorded </td></tr>
+
+   <tr valign="top"><td> July 26, 2018 </td><td> <a target="_blank" href="http://www.downunderdreaming.com/sydney/">Down Under</a> </td><td> Sydney, Australia </td><td> -</td></tr>
+
+   <tr valign="top"><td> July 26, 2018 </td><td> <a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDa9AAG">Dreamin'</a> </td><td> Denver, CO, USA </td><td> -</td></tr>
+
+   <tr valign="top"><td> July 31 & Aug 1, 2018 </td><td> <a target="_blank" href="#Regionals">Forcelandia</a> </td><td> Portland, OR, USA </td><td> -</td></tr>
+
+   <tr valign="top"><td> August 7-9 </td><td> <a target="_blank" href="http://midwestdreamin.com/">Midwest Dreamin'</a> </td><td> Chicago, IL, USA </td><td> -</td></tr>
+
+   <tr valign="top"><td> August 16, 2019 </td><td> <a target="_blank" href="https://czechdreamin.com/">Czech Dreamin'</a> </td><td> Czech Republic </td><td> -</td></tr>
+
+   <tr valign="top"><td> September 12-13, 2019 </td><td> <a target="_blank" href="https://www.fldreamin.com/">Florida Dreamin'</a> </td><td> Tampa, FL, USA </td><td> <a target="_blank" href="https://twitter.com/dreamin_florida">@dreamin_florida</a> #FlDreamin19 </td></tr>
+
+   <tr valign="top"><td> October 4, 2019 </td><td> <a target="_blank" href="http://www.inspireeast.co.uk/">Inspire East</a> </td><td> Cambridge, UK </td><td> -</td></tr>
+
+   <tr valign="top"><td> November 16, 2019 </td><td> <a target="_blank" href="https://northeastdreamin.com/">Northeast Dreamin'</a> </td><td> Manchester, NH, USA </td><td> -</td></tr>
+
+   <tr valign="top"><td> December 1-2, 2018 </td><td> <a target="_blank" href="http://indiadreamin.in/">India Dreamin'</a> </td><td> Delhi, India </td><td> -</td></tr>
+
+   <tr valign="top"><td> December 6, 2018 </td><td> <a target="_blank" href="http://www.downunderdreaming.com/brisbane/">Down Under</a> </td><td> Brisbane, Australia </td><td> -</td></tr>
+
+   <tr valign="top"><td> December 14 </td><td> <a target="_blank" href="https://www.truenorthdreamin.com/">True North</a>  </td><td> Ottowa, Canada </td><td> - </td></tr>
+
+   <tr valign="top"><td> September 20, 2019 </td><td> <a target="_blank" href="http://frenchtouchdreamin.com/">French Touch Dreamin'</a> </td><td> Paris, France </td><td> -</td></tr>
+
+   </tbody></html>
+
+<strong>Local Meetups</strong>
 
    * <a target="_blank" href="http://salesforce.meetup.com/">salesforce.meetup.com</a>
-   lists meetups secheduled at meetups.com (at $200 per year).
+   lists meetups secheduled at meetups.com (which organizers pay $200 per year).
 
-   * https://success.salesforce.com/userGroups  
+   * <a target="_blank" href="https://success.salesforce.com/userGroups">https://success.salesforce.com/userGroups</a>  
 
-   * https://developer.salesforce.com/dugs
+   * <a target="_blank" href="https://developer.salesforce.com/dugs">https://developer.salesforce.com/dugs</a> has been disabled.
 
-   * bit.ly/TwitchSF by the San Francisco user group
+<a target="_blank" href="https://twitter.com/search?q=%23salesforcesaturday&src=typd">#SalesforceSaturdays</a> occur worldwide
+   
+   * <a target="_blank" href="https://denversalesforcesaturday.splashthat.com/">sign-up</a> for <a target="_blank" href="https://twitter.com/DenverSfSat">@DenverSfSat</a>, <a target="_blank" href="https://twitter.com/search?q=%23salesforcesaturday&src=typd">#DenverSalesforceSaturday</a> (by <a target="_blank" href="https://twitter.com/dougdunfee">@dougdunfee</a>)
+
+   * Berlin, Germany https://twitter.com/IAmStephanVogel
+
+   * <a target="_blank" href="https://www.eventbrite.com/e/lvivs-salesforce-saturday-april-2019-tickets-59696864930">Ukraine</a>
+   <br /><br />
 
 <a target="_blank" href="http://www.salesforce.org/nonprofit/nonprofit-success-pack/">NPSP (Non-Profit Success Pack) website</a> and <a target="_blank" href="http://www.npspday.org/">conferences around the country</a>:
 
-   * https://seattlenpsf.wordpress.com/ is the Seattle Non-profit (ask to be invited to view)
+   * <a target="_blank" href="https://seattlenpsf.wordpress.com/">seattlenpsf.wordpress.com</a> is the Seattle Non-profit [ask to be invited to view]
 
 
-## Dreamforce Conference
+<a name="Dreamforce"></a>
 
-The Saturday, Sunday, and Monday before Dreamforce are <a target="_blank" href="https://www.salesforce.com/dreamforce/certification/">Bootcamp courses</a> for $2,499 (vs. $3,499 at other times).
-
-* https://www.facebook.com/dreamforce/
-
-* https://www.linkedin.com/groups/8354546/  Dreamforce Networking group on LinkedIn
+## Dreamforce Conference by Salesforce in San Francisco
 
 <a target="_blank" href="http://www.salesforce.com/dreamforce/">Dreamforce</a> is Salesforce's annual conference, usually <strong>4 days in September</strong> (Tuesday thru Friday).
-
-   * Hastags <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23RoadToDF18&src=typd">#RoadToDF18</a> and <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23DF18&src=typd">#DF18</a> (from <a target="_blank" href="https://twitter.com/Dreamforce?lang=en">Twitter account @Dreamforce</a>), on Instagram, and other social media.
 
    * Recorded vidoes of <a target="_blank" href="https://success.salesforce.com/sessions?eventId=a1Q3A00001XoCSUUA3#/">sessions</a> are on the <a target="_blank" href="https://www.youtube.com/user/salesforce">Salesforce YouTube channel</a>.
 
    * <a target="_blank" href="https://www.youtube.com/channel/UCMSfoJzq24tEKNfdB4GaIqg">Dreamforce videos on YouTube</a>
 
+The Saturday, Sunday, and Monday before Dreamforce are <a target="_blank" href="https://www.salesforce.com/dreamforce/certification/">Bootcamp courses</a> for $2,499 each (vs. $3,499 at other times).
+
 Use <a target="_blank" href="https://dreamforce.twibbon.com/">https://dreamforce.twibbon.com</a> to make put your profile picture inside a frame, for use in social media.
+
+The Dreamforce Campus in downtown San Francisco has over 85 rooms in nine different locations.
 
 ### Before Dreamforce
 
-The Saturday, Sunday, and Monday before Dreamforce are <a target="_blank" href="https://www.salesforce.com/dreamforce/certification/">Bootcamp courses</a> for $2,499 (vs. $3,499 at other times).
+The hype before the event:
 
-* https://www.facebook.com/dreamforce/
+   * <a target="_blank" href="https://www.facebook.com/dreamforce/">facebook.com/dreamforce</a>
 
-* https://www.linkedin.com/groups/8354546/  Dreamforce Networking group on LinkedIn
+   * <a target="_blank" href="https://www.linkedin.com/groups/8354546/">Dreamforce Networking group on LinkedIn</a>
 
+   * Hastags <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23RoadToDF18&src=typd">#RoadToDF18</a> and <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23DF18&src=typd">#DF18</a> (from <a target="_blank" href="https://twitter.com/Dreamforce?lang=en">Twitter account @Dreamforce</a>), on Instagram, and other social media.
 
 Agenda Builder
 
 Take Trailhead Module: <a target="_blank" href="https://trailhead.salesforce.com/modules/get_ready_for_dreamforce_onsite">Dreamforce & Next Steps</a> [40 mins] to make the most of your time at Dreamforce and keep learning after the event.
-
-The Dreamforce Campus in downtown San Francisco has over 85 rooms in nine different locations.
 
 Free shuttles and pedi-cabs take people between major locations. It’s about 20 minutes from one end of the campus to the other. There is a bike valet in Jessie Square.
 
@@ -404,7 +475,8 @@ On your iOS device, search for <a target="_blank" href="https://itunes.apple.com
 
 When Messaging, click the happy face icon to the right of the text entry field.
 
-On your Android, see https://t.co/UzK0VF7e9G
+On your Android, see <a target="_blank" href="https://t.co/UzK0VF7e9G">https://t.co/UzK0VF7e9G</a>
+
 
 ### Store
 
