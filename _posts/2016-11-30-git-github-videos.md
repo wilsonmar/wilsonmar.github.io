@@ -1553,13 +1553,17 @@ Git - Interactive Rebase</a> [9:26] Feb 8, 2017
 Git - Resolving Conflicts</a> [7:39] Jan 12, 2017
 
 
+### Mackenzie Child
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=0x_l_qeoAtY">005: Get Started with Git and Github</a> Jan 13, 2015 [16:00] from the creator of a large library of videos on Ruby on Rails and Adobe.
+
 
 ### Dustin Davis
 
    Twitter: @c0deporn
 
    It's not the best, 
-   but this video comes up frequently on YouTube. Maybe it's got a great name: 
+   but this video comes up frequently on YouTube. Maybe it's got a great title: 
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=Y9XZQO1n_7c">
    Learn Git in 20 minutes (posted 8 Jun 2014)</a>
