@@ -720,6 +720,8 @@ Extensions for developing on the Salesforce Platform
 
 * https://gitlab.com/terja/sfdx-git
 
+* https://realpython.com/courses/python-development-visual-studio-code-setup-guide/
+
 
 ## AWS Cloud9
 

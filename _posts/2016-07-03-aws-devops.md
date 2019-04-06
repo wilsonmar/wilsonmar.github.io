@@ -73,6 +73,8 @@ https://wilsonmar.github.io/build-load-balanced-servers-in-AWS-EC2/
 
 <a target="_blank" href="https://aws.amazon.com/getting-started/projects/set-up-ci-cd-pipeline/">Projects on AWS: Set Up a CI/CD Pipeline on AWS</a>
 
+https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials.html
+
 A pipeline helps you automate steps in your software delivery process, such as initiating automatic builds and then deploying to Amazon EC2 instances. You will use AWS CodePipeline, a service that builds, tests, and deploys your code every time there is a code change, based on the release process models you define. Use CodePipeline to orchestrate each step in your release process. As part of your setup, you will plug other AWS services into CodePipeline to complete your software delivery pipeline. This guide will show you how to create a very simple pipeline that pulls code from a source repository and automatically deploys it to an Amazon EC2 instance.
 
 <hr />
