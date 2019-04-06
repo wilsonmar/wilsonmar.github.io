@@ -16,12 +16,60 @@ comments: true
 {% include _toc.html %}
 
 <a target="_blank" href="https://wilsonmar.github.io/aws-devops/">This tutorial</a> contains my notes on getting certified as a <a target="_blank" href="https://aws.amazon.com/certification/certified-devops-engineer-professional/">
-AWS Certified DevOps Engineer - Professional</a> -- able to setup and manage continuous integration and deployment in the AWS EC2 cloud -- after paying $300 USD to <strong>write out</strong> 80 essay (not multiple-choice) questions in 170 minutes (3 hours with no breaks). <strong>That's 2.1 seconds per essay question.</strong>
+AWS Certified DevOps Engineer - Professional</a> -- able to setup and manage continuous integration and deployment in the AWS cloud -- after paying $300 USD to <strong>write out</strong> 80 essay (not multiple-choice) questions in 170 minutes (3 hours with no breaks). <strong>That's 2.1 seconds per essay question.</strong>
 Those who fail the exam must wait 30 days before being allowed to retake the exam (at additional cost), and only 3 times in a 12 month period.
 
 The previous pre-requisite is passing either one:
 * https://aws.amazon.com/certification/certified-sysops-admin-associate/
 * https://aws.amazon.com/certification/certified-developer-associate/
+
+## References
+
+From <a target="_blank" href="https://www.youtube.com/user/AmazonWebServices/playlists">AWS YouTube playlist</a>:
+
+   * https://www.youtube.com/playlist?list=PLhr1KZpdzukeH9VMPbNHMCXl_NrVc1JGe
+   * https://www.youtube.com/playlist?list=PLhr1KZpdzuke5pqzTvI2ZxwP8-NwLACuU
+   * https://www.youtube.com/playlist?list=PLhr1KZpdzukeMbjRqGswHX38DCqOHZ5GA
+   * https://www.youtube.com/playlist?list=PLhr1KZpdzukfVW6NrpDzdT6Sej0p5POkN
+
+   * http://cantrill.io
+   * http://ozaws.com
+   * https://serverlesscode.com/
+   * https://paulwakeford.info/
+   * https://aws.amazon.com/blogs/aws/
+   * https://www.awsarchitectureblog.com
+   * http://blogs.aws.amazon.com/application-management
+   * http://blogs.aws.amazon.com/security/
+   * https://aws.amazon.com/blogs/compute/
+   * https://aws.amazon.com/whitepapers/
+
+https://aws.amazon.com/documentation/
+
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html
+
+User Guides from Amazon:
+
+   * <a target="_blank" href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS CodePipeline User Guide
+   * <a target="_blank" href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>
+   * <a target="_blank" href="https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html">AWS CodeBuild User Guide</a>
+   * <a target="_blank" href="https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html">AWS CodeDeploy User Guide</a>
+   * <a target="_blank" href="https://github.com/awslabs/aws-devops-essential">
+   AWS DevOps Essentials</a>
+
+From Acloud.guru
+
+* https://read.acloud.guru
+
+* <a target="_blank" href="https://acloud.guru/learn/aws-certified-devops-engineer-professional">AWS Certified DevOps Engineer - Professional 6-hour video</a> by Nick Triantafillou covers:
+
+   * Core Concepts
+   * CI/CD Automation
+   * Monitoring/Metrics/Logging
+   * Security/Governance/Validation
+   * High Availability and Elasticity
+   * Operations
+
+https://wilsonmar.github.io/-build-load-balanced-servers-in-AWS-EC2/
 
 <hr />
 
@@ -302,14 +350,6 @@ Boto 3 consists of these major features:
 * Leverage automated testing in different stages of a CI/CD pipeline
 * Fine-tune the applications you deliver on AWS for high performance, and use AWS tools and technologies to monitor your application and environment for potential issues
 
-## Amazon References
-
-* <a target="_blank" href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS CodePipeline User Guide
-* <a target="_blank" href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>
-* <a target="_blank" href="https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html">AWS CodeBuild User Guide</a>
-* <a target="_blank" href="https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html">AWS CodeDeploy User Guide</a>
-* <a target="_blank" href="https://github.com/awslabs/aws-devops-essential">
-AWS DevOps Essentials</a>
 
 ## More on DevOps #
 

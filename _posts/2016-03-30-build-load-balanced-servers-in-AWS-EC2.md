@@ -10,14 +10,14 @@ image:
   creditlink:
 comments: true
 ---
-<a href="https://wilsonmar.github.io/build-load-balanced-servers-in-AWS-EC2/">https://wilsonmar.github.io/build-load-balanced-servers-in-AWS-EC2</a>
 
 <i>{{ page.excerpt }}</i>
 <hr />
 
 {% include _toc.html %}
 
-This tutorial focuses on both the automated setup of multi-stage (dev+QA+prod) 
+<a href="https://wilsonmar.github.io/build-load-balanced-servers-in-AWS-EC2/">
+This</a> tutorial focuses on both the automated setup of multi-stage (dev+QA+prod) 
 <strong>enterprise</strong> environments within AWS
 by specifying <strong>CloudFormation</strong> 
 in the sequence needed during manual configuration on the AWS Management Console.
