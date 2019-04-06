@@ -20,6 +20,8 @@ comments: true
 
 Here we first work backwards, leveraging the outcome of Robert's work (to make sure that it's not vaporware ;).
 
+<a name="HerokuSite"></a>
+
 ### &nbsp; &nbsp; &nbsp; &nbsp; Production usage: the buzz phrase
 
 1. Manually use an internet browser to visit the web page generated from within Heroku (under Robert's account):
@@ -167,25 +169,12 @@ echo "$IMAGE IMAGE_ID=$IMAGE_ID"
    fi
    </strong></pre>
 
-1. Run Dockerfile:
+1. The run.sh invokes Dockerfile:
 
    <pre><strong>docker run --name ${NAME} -p "$CONTAINER_PORT:5000" -i ${IMAGE}
    </strong></pre>
 
-   Sample response:
-
-   <pre>
-* Serving Flask app "app" (lazy loading)
-* Environment: production
-   WARNING: Do not use the development server in a production environment.
-   Use a production WSGI server instead.
-* Debug mode: off
-* Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
-   </pre>
-
-   PROTIP: Use of "0.0.0.0" makes it externally accessible in production.
-
-   This references the <strong>Dockerfile</strong> in the same directory:
+   `${NAME}` references the <strong>Dockerfile</strong> in the same directory:
    
    <pre>
 FROM python:alpine:3.5
@@ -198,13 +187,40 @@ COPY buzz /src/buzz
 CMD ["python", "/src/app.py"]
    </pre>
 
+   `alphine:3.5` is the operating system running within the Docker container, as provided by those who own the `python` account on DockerHub.
+
+   QUESTION: What is the version of Python installed by the line:
+   `RUN apk add --update python py-pip`
+
+
+   Sample response:
+
+   <pre>
+* Serving Flask app "app" (lazy loading)
+* Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+* Debug mode: off
+* Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+   </pre>
+
+   #### app.py
+
+   NOTE: The "0.0.0.0" and port 5000 is specified in this line within program <a target="_blank" href="https://github.com/wilsonmar/cicd-buzz/blob/master/app.py">app.py</a>:
+   
+   <tt>app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)))</tt>
+
+   #### requirements.txt
+
    The <strong>requirements.txt</strong> file contains Python version dependency specifications for the Python Flash library and pytest library:
    
    <pre>pytest==4.2.0
    Flask==1.0.2
    </pre>
 
-   Flask is used by the <a target="_blank" href="https://github.com/wilsonmar/cicd-buzz/blob/master/app.py">app.py</a> program, which wraps HTML around the output.
+   `Flask` is used by the <a target="_blank" href="https://github.com/wilsonmar/cicd-buzz/blob/master/app.py">app.py</a> program which listens and responds to HTTP requests by wrapping HTML tags around the output from the text output from program  `generator.py`.
+
+   ### HTML response
 
    PROTIP: Normally, the Terminal session would not take any more interactive commands, but the Bash script is written to call `docker run` with
    `&` in the background. The `stop` command.
@@ -220,14 +236,9 @@ CMD ["python", "/src/app.py"]
    <pre>&LT;html>&LT;body>&LT;h1>Self-Service Devops Seriously Accelerates Continuous Deployment&LT;/h1>&LT;/body>&LT;/html>
    </pre>
 
-   NOTE: The "0.0.0.0" in this line within app.py provides a way to reach external networks.
-   
-   <tt>app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)))</tt>
-
    https://stackoverflow.com/questions/37139786/is-init-py-not-required-for-packages-in-python-3
 
-
-### Clean-up
+1. Clean-up within run.sh
 
    After running a single curl command, the script stops, then removes the docker process based on capturing the CONTAINER_ID in a variable.
 
@@ -273,18 +284,18 @@ after_success:
   - test "$TRAVIS_BRANCH" = "master" && "$TRAVIS_PULL_REQUEST" = "false" && sh .travis/deploy_heroku.sh
    </pre>
 
-   WARNING: If the file is not valid YAML, Travis CI will ignore it.
+   `&&` combines several commands in sequence.
 
-The file specifies use of the Docker service.
+   WARNING: If the file is not valid YAML, Travis CI will ignore it.
 
 `after_success` of pytest, Travis is told to run the script <a href="#TravisDockerHub">.travis/deploy_dockerhub.sh (described below)</a>.
 
+
 <a name="TravisDockerHub"></a>
 
-## DockerHub
+## Build in DockerHub
 
-In the .travis folder
-https://github.com/wilsonmar/cicd-buzz/blob/master/.travis/deploy_dockerhub.sh
+In the .travis folder <a target="_blank" href="https://github.com/wilsonmar/cicd-buzz/blob/master/.travis/deploy_dockerhub.sh">deploy_dockerhub.sh</a>
 
    <pre>
 #!/bin/sh
@@ -311,7 +322,87 @@ docker push $TRAVIS_REPO_SLUG
 
 ## Heroku
 
-https://github.com/wilsonmar/cicd-buzz/blob/master/.travis/deploy_heroku.sh
+Heroku hosts over the public internet applications such as the 
+<a href="#HerokuSite">described above</a>.
+
+1. Get an account on heroku.com
+1. Identify the GitHub repo.
+1. Use the assigned host name (such as "fathomless-inlet-53225") or specify your own such as "devops-cert-activity-wilsonmar" as in "https://devops-cert-activity-wilsonmar.herokuapp.com". 
+
+   PROTIP: The host name need not be the same as your repo's name.
+   Hereoku imposes a 32 character limit to host names (not counting the "herokuapp.com").
+
+1. Make note of the assigned host name. 
+1. Assign a key and paste the string in Heroku's env as `HEROKU_API_KEY`.
+1. In Git, set the repository's remote to heroku so that the repository can be sent to Heroku after changes occur, such as:
+
+   <pre>git remote add heroku https://git.heroku.com/devops-cert-activity-wilsonmar.git
+   git remote -v
+   </pre>
+
+   The response:
+
+   <pre>
+heroku	https://git.heroku.com/devops-cert-activity-wilsonmar.git (fetch)
+heroku	https://git.heroku.com/devops-cert-activity-wilsonmar.git (push)
+origin	https://github.com/wilsonmar/devops-cert-activity-wilsonmar2.git (fetch)
+origin	https://github.com/wilsonmar/devops-cert-activity-wilsonmar2.git (push)
+   </pre>
+
+
+   #### install-ubuntu.sh
+
+Travis run <a target="_blank" href="https://toolbelt.heroku.com/install-ubuntu.sh">https://toolbelt.heroku.com/install-ubuntu.sh</a>
+
+<pre>
+#!/bin/sh
+{
+    set -e
+    SUDO=''
+    if [ "$(id -u)" != "0" ]; then
+      SUDO='sudo'
+      echo "This script requires superuser access to install apt packages."
+      echo "You will be prompted for your password by sudo."
+      # clear any previous sudo permission
+      sudo -k
+    fi
+&nbsp;
+    # run inside sudo
+    $SUDO sh <<SCRIPT
+  set -ex
+&nbsp;
+  # if apt-transport-https is not installed, clear out old sources, update, then install apt-transport-https
+  dpkg -s apt-transport-https 1>/dev/null 2>/dev/null || \
+    (echo "" > /etc/apt/sources.list.d/heroku.list \
+      && apt-get update \
+      && apt-get install -y apt-transport-https)
+
+  # add heroku repository to apt
+  echo "deb https://cli-assets.heroku.com/apt ./" > /etc/apt/sources.list.d/heroku.list
+&nbsp;
+  # remove toolbelt
+  (dpkg -s heroku-toolbelt 1>/dev/null 2>/dev/null && (apt-get remove -y heroku-toolbelt heroku || true)) || true
+&nbsp;
+  # install heroku's release key for package verification
+  curl https://cli-assets.heroku.com/apt/release.key | apt-key add -
+&nbsp;
+  # update your sources
+  apt-get update
+&nbsp;
+  # install the toolbelt
+  apt-get install -y heroku
+&nbsp;
+SCRIPT
+  # test the CLI
+  LOCATION=$(which heroku)
+  echo "heroku installed to $LOCATION"
+  heroku version
+}
+</pre>
+
+#### deploy_heroku.sh
+
+Travis then runs <a target="_blank" href="https://github.com/wilsonmar/cicd-buzz/blob/master/.travis/deploy_heroku.sh">deploy_heroku.sh</a> containing:
 
 <pre>
 #!/bin/sh
@@ -321,6 +412,10 @@ docker login -e _ -u _ --password=$HEROKU_API_KEY registry.heroku.com
 heroku container:push web --app $HEROKU_APP_NAME
 </pre>
 
+
+<a name="GitCommit"></a>
+
+#### Git Commit to Transfer
 
 9. Push a commit from your local git history to GitHub and hooks in GitHub will trigger a build.
 9. <a target="_blank" href="https://travis-ci.org/dashboard">Travis dashboard</a>

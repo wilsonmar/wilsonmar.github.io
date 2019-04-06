@@ -474,3 +474,5 @@ by Julius Volz - Co-Founder, Prometheus
 <a target="_blank" href="https://www.youtube.com/watch?v=5GYe_-qqP30">
 Infrastructure and application monitoring using Prometheus</a>  at Devox UK May 17, 2017
 by Marco Pas
+
+LinuxAcademy video hands-on: <a target="_blank" href="https://beta.linuxacademy.com/#/hands-on-labs/details/fe6f98da-ab26-48a6-9b58-edc6b3c1d808">Monitoring Infrastructure and Containers with Prometheus</a>: Prometheus is able to monitor our infrastructure and applications at multiple levels: on the host itself, on any containers, and on the application. In this hands-on lab, we're going to address the first two options for monitoring: our virtual machine host and our containers. We'll first set up monitoring for our virtual machine by using Prometheus's Node Exporter, and then we'll set up container monitoring for the provided container using Google's cAdvisor. By the time we're done, we'll be able to view metrics across two levels of our system in Prometheus to track changes and view trends on our systems.

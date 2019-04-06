@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AWS DevOps"
+title: "AWS DevOps (CodeCommit, CodeBuild, CodePipeline, CodeDeploy)"
 excerpt: "Get certified in Developer Operations on AWS"
 tags: [AWS, EC2, cloud, on-boarding]
 image:
@@ -15,20 +15,17 @@ comments: true
 
 {% include _toc.html %}
 
-You are at <a target="_blank" href="https://wilsonmar.github.io/aws-devops/">
-https://wilsonmar.github.io/aws-devops/</a>
+<a target="_blank" href="https://wilsonmar.github.io/aws-devops/">This tutorial</a> contains my notes on getting certified as a <a target="_blank" href="https://aws.amazon.com/certification/certified-devops-engineer-professional/">
+AWS Certified DevOps Engineer - Professional</a> -- able to setup and manage continuous integration and deployment in the AWS EC2 cloud -- after paying $300 USD to <strong>write out</strong> 80 essay (not multiple-choice) questions in 170 minutes (3 hours with no breaks). <strong>That's 2.1 seconds per essay question.</strong>
+Those who fail the exam must wait 30 days before being allowed to retake the exam (at additional cost), and only 3 times in a 12 month period.
 
-This tutorial describes information to get certified as a <a target="_blank" href="https://aws.amazon.com/certification/certified-devops-engineer-professional/">
-AWS Certified DevOps Engineer - Professional</a> able to setup and manage continuous integration and deployment in the AWS EC2 cloud.
-You pay $300 USD to <strong>write out</strong> 80 essay (not multiple-choice) questions in 170 minutes (3 hours with no breaks). <strong>That's 2.1 seconds per essay question.</strong>
-Those who fail the exam must wait 30 days before being allowed to retake the exam (at additional cost),
-and only 3 times in a 12 month period.
-
-Its pre-requisite is passing either one:
+The previous pre-requisite is passing either one:
 * https://aws.amazon.com/certification/certified-sysops-admin-associate/
 * https://aws.amazon.com/certification/certified-developer-associate/
 
 <hr />
+
+## What is DevOps (DevSecOps)?
 
 <a target="_blank" href="https://aws.amazon.com/devops/">
 Amazon</a> defines "DevOps is the combination of cultural philosophies, practices, and tools that increases an organization's ability to deliver applications and services at high velocity."
@@ -39,9 +36,23 @@ Amazon</a> defines "DevOps is the combination of cultural philosophies, practice
 
 ![aws devops 201606-650x209-i11](https://cloud.githubusercontent.com/assets/300046/17295043/77eae0e8-57b7-11e6-958b-dc26ebe74361.jpg)
 
-+ CodeBuild
+## CodeCommit setup
 
-### Setup instances #
+<img align="right" width="252" alt="aws-codecommit-left-menu-252x481-8146.jpg" src=
+https://user-images.githubusercontent.com/300046/55664582-83b42e00-57ed-11e9-8534-a7ee42523b2b.jpg"></a>
+
+AWS CodeCommit competes with GitHub, GitLab, BitBucket, and other cloud-based text code repositories.
+
+Repositories in AWS CodeCommit have a URL that contains a region, such as:
+
+   <tt>https://git-codecommit.us-east-1.amazonaws.com/v1/repos/MyRepo</tt>
+
+Learning Resources:
+
+* <a target="_blank" href="https://beta.linuxacademy.com/#/hands-on-labs/details/660e6820-fec6-48de-a415-5f242ba5b5e7?redirect_uri=https:%2F%2Fapp.linuxacademy.com%2Fsearch">Create and Clone an AWS CodeCommit Repository</a> video hands-on course.
+
+
+### CodeDeploy Setup instances #
 
 0. In IAM Service, create Role "codedeploy".
 0. Create CDInstanceRole
@@ -65,8 +76,7 @@ Amazon</a> defines "DevOps is the combination of cultural philosophies, practice
 
 ### AWS CodeDeploy Setup #
 
-0. <a target="_blank" href="https://us-west-2.console.aws.amazon.com/codedeploy/home?region=us-west-2#/first-run/welcome">
-   Got to AWS CodeDeploy service, Get Started Now</a>.
+0. <a target="_blank" href="https://us-west-2.console.aws.amazon.com/codedeploy/home?region=us-west-2#/first-run/welcome">Got to AWS CodeDeploy service, Get Started Now</a>.
 0. Custom deployment.
 0. Specify an Application Name and Deployment Group Name according to your organization's naming standards.
 0. Select Tag Type "Amazon EC2" value "Dev" specified for 2 instances in a step above.
@@ -74,7 +84,7 @@ Amazon</a> defines "DevOps is the combination of cultural philosophies, practice
 0. No Triggers.
 0. Select a Service Role ARN defined in a prior step. Create Application.
 
-   The Console provides code to deploy from a S3 bucket.
+   The AWS Console provides code to deploy from a S3 bucket.
 
 ### AWS CodePipeline #
 
@@ -95,7 +105,10 @@ PROTIP: Each pipeline costs about $1 per month, and charges only if a deployment
 
 ### View app deployed #
 
-0. In EC2, get the Public DNS address (such as "ec2-11-222-177-132-us-west-2-compute.amazonaws.com").
+0. In EC2, copy the Public DNS address, such as:
+
+   <pre>"ec2-11-222-177-132-us-west-2-compute.amazonaws.com</pre>
+
 0. Paste URL in an internet browser.
 
    It should respond with "Congratualations".
@@ -288,6 +301,15 @@ Boto 3 consists of these major features:
 * Use Amazon EC2 Systems Manager for patch management
 * Leverage automated testing in different stages of a CI/CD pipeline
 * Fine-tune the applications you deliver on AWS for high performance, and use AWS tools and technologies to monitor your application and environment for potential issues
+
+## Amazon References
+
+* <a target="_blank" href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS CodePipeline User Guide
+* <a target="_blank" href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>
+* <a target="_blank" href="https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html">AWS CodeBuild User Guide</a>
+* <a target="_blank" href="https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html">AWS CodeDeploy User Guide</a>
+* <a target="_blank" href="https://github.com/awslabs/aws-devops-essential">
+AWS DevOps Essentials</a>
 
 ## More on DevOps #
 

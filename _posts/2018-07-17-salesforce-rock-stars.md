@@ -160,6 +160,7 @@ Dan Appleman (<a target="_blank" href="http://twitter.com/danappleman">@danapple
    * BOOK: <a target="_blank" href="https://www.amazon.com/dp/193675410X">Advanced Apex Programming for Salesforce.com and Force.com – September 1, 2015</a>
    * <a target="_blank" href="https://advancedapex.com/blog/">advancedapex.com/blog</a> since Jun 2012, the companion to book "Advanced Apex Programming for Salesforce.com and Force.com"
    * Personal website: <a target="_blank" href="http://danappleman.com/">danappleman.com</a>
+   * CTO of Full Circle Insights
 
    Dan Appleman was the first Salesforce instructor at Pluralsight:
 

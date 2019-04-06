@@ -910,6 +910,18 @@ The "basename" command obtains the file name from a file path variable.
 
 <pre>PKG_LINK=$(curl -s https://www.microsoft.com/net/learn/get-started/macos#macos | grep -B1 "Download .NET SDK" | grep href | grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*" | grep -E ".pkg")</pre>
 
+
+## cd / pushd / popd / pwd
+
+Before changing folders, `pushd` remembers a directory stack.
+
+`pwd` displays the present workding directory (folder).
+Its value the operating system maintains in an enviornment variable retrieved by 
+`echo $PWD`
+
+`popd` returns to the previous directory.
+
+
 <a name="JenkinsStart"></a>
 
 ## Jenkins server
