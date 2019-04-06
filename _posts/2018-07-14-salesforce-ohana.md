@@ -4,10 +4,10 @@ title: "Salesforce Ohana"
 excerpt: "Offices, Financials, Podcasts, Social media, Communities, Events, Dreamforce, Store"
 tags: [salesforce]
 image:
-# feature: sf-ohana-1900x500-178173.jpg
-  feature: https://user-images.githubusercontent.com/300046/43407734-bd6303fe-93dc-11e8-87df-302ddbc274ff.jpg
-  credit: Salesforce
-  creditlink: https://trailhead.salesforce.com/trailblazers
+# feature: ![salesforce-mascots-1900x500-99991.jpg
+  feature: https://user-images.githubusercontent.com/300046/55675061-26b28980-587a-11e9-8084-e7bad7c3249a.jpg
+  credit: 
+  creditlink: 
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
