@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cyber Security"
-excerpt: "Your risks and vulnerabilitys and how to mitigate them"
+excerpt: "Your risks and vulnerabilities and how to mitigate them"
 tags: [security]
 image:
 # feature: pic white hand key ownership 1900x500.jpg
