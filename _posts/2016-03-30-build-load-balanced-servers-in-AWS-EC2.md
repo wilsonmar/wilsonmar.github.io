@@ -30,7 +30,7 @@ listed from the most manual (most difficult) to the easiest (most automated):
    2. Interactively use AWS CLI (Command Line Interface) to type commands with parameters 
    3. Create shell scripts calling AWS CLI commands to specify the sequence of construction
    4. Create CloudFormation templates which declare what Amazon creates 
-   5. Use [Amazon's Elastic Beanstalk and Opsworks services](/aws-server-deploy-options/).
+   5. Use [Amazon's Elastic Beanstalk or Opsworks (Chef) deploy services](/aws-server-deploy-options/).
 
 TODO: Make this diagram into a video:
 <amp-img width="650" height="483" alt="fig-aws-enterprise-v02-650x483-80"
@@ -50,8 +50,6 @@ and
 My [AWS basic on-boarding tutorial](/aws-onboarding/) describes setting up an account,
 use of the AWS Management Console, and 
 installation of AWS Command-line Interface.
-
-
 
 
 This tutorial shows how to configure CloudFormation JSON for each aspect
