@@ -17,8 +17,9 @@ comments: true
 
 Salesforce calls "Trailblazers" those who have transformed their careers using its Trailhead online learning service.
 
-   * <a target="_blank" href="https://www.salesforce.com/campaign/blaze-your-trail/">See videos of "Trailblazers"
-who are using the software</a>.
+## Other Listings
+
+   * <a target="_blank" href="https://www.salesforce.com/campaign/blaze-your-trail/">See videos of "Trailblazers" who are using the software</a>.
 
    * <a target="_blank" href="https://trailhead-leaderboard-developer-edition.na35.force.com/Leader_Board">This Leader Board</a> lists Trailblazers by Ranger Rank, # Badges, SuperBadges, Points.
 
@@ -711,6 +712,20 @@ leading Platinum Sales force consulting partner in the UK&I. With more than 100 
 
    * <a target="_blank" href="https://makepositive.com/blog/">makepositive.com/blog</a>
    since Jul 2014 
+
+<a name="Podcasts"></a>
+
+## Podcasts
+
+PROTIP: Drive a lot? Take public transportation? Listen to voice-only podcasts while commuting:
+
+   * <a target="_blank" href="https://salesforce.com/marketingcloudcast/">The Marketing Cloudcast</a> has 99+ episodes since Oct. 2016 <a target="_blank" href="https://play.google.com/music/listen?u=0#/ps/I6pcs6jawpetsbyhp5qaf42ahmy">
+   on Google Play</a>. It "offers key marketing campaign tactics, popular trends, interviews with marketing leaders, and relevant insights — such as social media stats and data management strategies in marketing today. Hosts Megan Collins ( @CollinsMeMegan) and Tina Rozul (@crozul) dive into topics such as performance on individual marketing channels, marketing career advice, the future of marketing, and beyond. 
+
+   * PODCAST about presenters at Salesforce Dreamforce conferences: <a target="_blank" href="https://www.salesforce.com/blog/2017/07/blazing-trails-a-new-salesforce-podcast.html">Blazing Trails</a> since July 2017 <a target="_blank" href="https://itunes.apple.com/us/podcast/blazing-trails/id1259579050?mt=2">on iTunes</a> and <a target="_blank" href="https://soundcloud.com/blazingtrailspodcast">SoundCloud.com</a>.
+
+   * PODCAST: The Quotable Sales Podcast by Quotable.com since July 2016 on <a target="_blank" href="https://itunes.apple.com/us/podcast/quotable-podcast-learn-from/id1132258307?mt=2">iTunes</a> and <a target="_blank" href="https://play.google.com/music/listen?u=0#/ps/I6pcs6jawpetsbyhp5qaf42ahmy">Google Play</a>.
+
 
 
 <a name="WorkWithMe"></a>

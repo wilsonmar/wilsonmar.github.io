@@ -65,6 +65,8 @@ comments: true
 
 1. Don’t end the line with a period. That's unnecessary.
 
+The above are based on: <a target="_blank" href="https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit">Angular Git commit message guidelines</a> – well known and proven Git commit message convention which was introduced by the Angular project (A.K.A. Google).
+
 
 <a name="Emojis"></a>
 
@@ -111,7 +113,7 @@ You don't have to use them. Or you can use a small subset of them. But in case o
 
 👥 &#58;busts_in_silhouette&#58; = Adding contributor(s)
 
-&nbsp; &#58;book&#58; = Issue
+📖 &nbsp; &#58;book&#58; = Issue
 
 
 ### Testing:
@@ -220,9 +222,8 @@ You don't have to use them. Or you can use a small subset of them. But in case o
 🤖 &#58;robot&#58; = Fixing something on Android.
 
 
+The whole list of emojis are listed (without meanings) in <a target="_blank" href="https://gist.github.com/rxaviers/7360908">this cheatsheet</a>.
 
-https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
-    Angular Git commit message guidelines – well known and proven Git commit message convention which was introduced by the Angular project (A.K.A. Google).
 
 ## Automated compliance
 

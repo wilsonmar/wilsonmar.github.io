@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Salesforce Ohana"
-excerpt: "Offices, Financials, Podcasts, Social media, Communities, Events, Dreamforce, Store"
+excerpt: "Offices, Financials, Social media, Communities, Events, Dreamforce, Dreamoji, Store"
 tags: [salesforce]
 image:
 # feature: ![salesforce-mascots-1900x500-99991.jpg

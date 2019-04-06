@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Jekyll site development"
+title: "Jekyll (JAM) site development"
 excerpt: "Getting started with Jekyll"
 tags: [website, builder, simplicity, jekyll]
 image:
@@ -1080,6 +1080,9 @@ QUESTION: Spell checking in GitHub?
 * http://michaelcrump.net/running-jekyll-locally/
 
 * http://blog.christianposta.com/microservices/netflix-oss-or-kubernetes-how-about-both/
+
+* <a target="_blank" href="https://www.youtube.com/playlist?list=PL58Wk5g77lF-UQ39pejLX2Zn5DxQyExBa">JAMstack Conf 2018 - San Francisco 19 videos</a>
+
 
 ## More on front-end styling #
 
