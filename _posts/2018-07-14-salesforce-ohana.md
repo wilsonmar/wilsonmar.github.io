@@ -276,33 +276,33 @@ Lightning Now Tour at a city near you in 2017 and 2018
 
    <table border="1" cellpadding="4" cellspacing="0"><thead>
    <tr><th> Event Date </th><th> Name (website) </th><th> Location </th><th> Notes </th></tr></thead><tbody>
-  <tr valign="top"><td> Jan. 12 </td><td> <a target="_blank" href="http://www.cactusforce.com/">CactusForce</a> </td><td> Phoenix, AZ, USA </td><td> -</td></tr>
-   <tr valign="top"><td> January 25, 2017 </td><td> <a target="_blank" href="http://witnesssuccess.com/">Witness Success</a> </td><td> Nashville, TN, USA </td><td> -</td></tr>
-   <tr valign="top"><td> Feburary 11, 2017 </td><td> <a target="_blank" href="http://www.dreamole.es/">Dream Ole</a> </td><td> Malaga, Spain </td><td> -</td></tr>
-   <tr valign="top"><td> March 8 </td><td> <a target="_blank" href="http://www.londonscalling.net/">London's Calling</a> </td><td> London, UK </td><td> -</td></tr>
-   <tr valign="top"><td> March 20-22, 2019 </td><td> <a target="_blank" href="http://snowforce.io/">Snowforce</a> </td><td> Salt Lake City, UT, USA </td><td> -</td></tr>
-   <tr valign="top"><td> March 21-22, 2019 </td><td> <a target="_blank" href="http://www.southeastdreamin.com/">Southeast Dreamin'</a> </td><td> Atlanta, GA, USA </td><td> -</td></tr>
-   <tr valign="top"><td> April 12-14 </td><td> <a target="_blank" href="https://www.skiforce.co/">Skiforce</a> </td><td> Obergurl, Austria </td><td> groups from Vienna, Munich, Zurich, Geneva </td></tr>
-   <tr valign="top"><td> April 30, 2018 </td><td> <a target="_blank" href="http://www.inspireeast.co.uk/">PhillyForce</a> </td><td> Philadelphia, PA, USA </td><td> -</td></tr>
+  <tr valign="top"><td> Jan, 2020 </td><td> <a target="_blank" href="http://www.cactusforce.com/">CactusForce</a> </td><td> Phoenix, AZ, USA </td><td> -</td></tr>
+   <tr valign="top"><td> March 8, 2019 </td><td> <a target="_blank" href="http://www.londonscalling.net/">London's Calling</a> </td><td> London, UK </td><td> -</td></tr>
+   <tr valign="top"><td> March 9, 2018 </td><td> <a target="_blank" href="http://www.puntadreamin.com/">Punta Dreamin'</a> </td><td> Punta del Este, Uraguay </td><td> - </td></tr>
+   <tr valign="top"><td> March 20-22, 2019 </td><td> <a target="_blank" href="http://snowforce.io/">Snowforce</a> </td><td> Salt Lake City, UT, USA </td><td> website gone?</td></tr>
+   <tr valign="top"><td> March, 2020 </td><td> <a target="_blank" href="http://www.southeastdreamin.com/">Southeast Dreamin'</a> </td><td> Atlanta, GA, USA </td><td> -</td></tr>
+   <tr valign="top"><td> April 12, 2019 </td><td> <a target="_blank" href="http://www.dreamole.es/">Dream Ole</a> </td><td> Malaga, Spain </td><td> -</td></tr>
+   <tr valign="top"><td> April 12-14, 2019 </td><td> <a target="_blank" href="https://www.skiforce.co/">Skiforce</a> </td><td> Obergurl, Austria </td><td> groups from Vienna, Munich, Zurich, Geneva </td></tr>
    <tr valign="top"><td> May 4, 2018 </td><td> <a target="_blank" href="https://www.eventbrite.com/e/6th-annual-phillyforce-conference-registration-42745891111">Down Under Dreamin'</a> </td><td> Melbourne, Australia </td><td> -</td></tr>
+   <tr valign="top"><td> May 6, 2019 </td><td> <a target="_blank" href="https://www.eventbrite.com/e/7th-annual-phillyforce-conference-salesforce-trailblazer-community-group-registration-52224074613">PhillyForce</a> </td><td> Philadelphia, PA, USA </td><td> -</td></tr>
    <tr valign="top"><td> May 13, 2019 </td><td> <a target="_blank" href="https://www.forceacademyla.com/">Los Angeles Force Academy</a> </td><td> Los Angeles, CA, USA </td><td> -</td></tr>
    <tr valign="top"><td> June 13-14, 2019 </td><td> <a target="_blank" href="http://texasdreamin.org/">Texas Dreamin'</a> </td><td> Austin, Texas, USA </td><td> -</td></tr>
-   <tr valign="top"><td> June 15, 2019 </td><td> <a target="_blank" href="https://www.banffdreamin.com/">Banff Dreamin'</a> </td><td> Banff, Canada </td><td> -</td></tr>
+   <tr valign="top"><td> ? </td><td> <a target="_blank" href="https://www.banffdreamin.com/">Banff Dreamin'</a> </td><td> Banff, Canada </td><td> No date on website</td></tr>
    <tr valign="top"><td> June 15, 2019 </td><td> <a target="_blank" href="https://www.yeurleadin.eu/">YeurLeadin’</a> </td><td> Amsterdam, Netherlands </td><td> GCL only </td></tr>
    <tr valign="top"><td> June 27-28, 2019 </td><td> <a target="_blank" href="https://www.norcaldreamin.com/">NorCal Dreamin’</a> </td><td> Sacramento, CA, USA </td><td> - </td></tr>
+   <tr valign="top"><td> July 11-12 2019 </td><td> <a target="_blank" href="https://www.truenorthdreamin.com/">True North</a>  </td><td> Ottowa, Canada </td><td> - </td></tr>
    <tr valign="top"><td> July 18-19, 2019 </td><td> <a target="_blank" href="https://www.bigskydreamin.com/">Big Sky Dreamin'</a> </td><td> Bozeman, Montana, USA </td><td> - </td></tr>
-   <tr valign="top"><td> March 9, 2018 </td><td> <a target="_blank" href="http://www.puntadreamin.com/">Punta Dreamin'</a> </td><td> Punta del Este, Uraguay </td><td> - </td></tr>
-   <tr valign="top"><td> July 26, 2018 </td><td> <a target="_blank" href="http://www.downunderdreaming.com/sydney/">Down Under</a> </td><td> Sydney, Australia </td><td> -</td></tr>
+   <tr valign="top"><td> July 26, 2018 </td><td> <a target="_blank" href="http://www.downunderdreaming.com/sydney/">Down Under Dreamin'</a> </td><td> Sydney, Australia </td><td> -</td></tr>
    <tr valign="top"><td> July 26, 2018 </td><td> <a target="_blank" href="https://success.salesforce.com/featuredGroupDetail?id=a1z30000006IDa9AAG">Dreamin'</a> </td><td> Denver, CO, USA </td><td> -</td></tr>
+   <tr valign="top"><td> July 26-27, 2019 </td><td> <a target="_blank" href="http://witnesssuccess.com/">Witness Success</a> </td><td> Nashville, TN, USA </td><td> For women</td></tr>
    <tr valign="top"><td> July 31 & Aug 1, 2018 </td><td> <a target="_blank" href="#Regionals">Forcelandia</a> </td><td> Portland, OR, USA </td><td> Angela Mahoney</td></tr>
-   <tr valign="top"><td> August 7-9 </td><td> <a target="_blank" href="http://midwestdreamin.com/">Midwest Dreamin'</a> </td><td> Chicago, IL, USA </td><td> -</td></tr>
+   <tr valign="top"><td> August 7-9, 2019 </td><td> <a target="_blank" href="http://midwestdreamin.com/">Midwest Dreamin'</a> </td><td> Chicago, IL, USA </td><td> -</td></tr>
    <tr valign="top"><td> August 16, 2019 </td><td> <a target="_blank" href="https://czechdreamin.com/">Czech Dreamin'</a> </td><td> Czech Republic </td><td> -</td></tr>
    <tr valign="top"><td> September 12-13, 2019 </td><td> <a target="_blank" href="https://www.fldreamin.com/">Florida Dreamin'</a> </td><td> Tampa, FL, USA </td><td> <a target="_blank" href="https://twitter.com/dreamin_florida">@dreamin_florida</a> #FlDreamin19 </td></tr>
    <tr valign="top"><td> October 4, 2019 </td><td> <a target="_blank" href="http://www.inspireeast.co.uk/">Inspire East</a> </td><td> Cambridge, UK </td><td> -</td></tr>
    <tr valign="top"><td> November 16, 2019 </td><td> <a target="_blank" href="https://northeastdreamin.com/">Northeast Dreamin'</a> </td><td> Manchester, NH, USA </td><td> -</td></tr>
    <tr valign="top"><td> December 1-2, 2018 </td><td> <a target="_blank" href="http://indiadreamin.in/">India Dreamin'</a> </td><td> Delhi, India </td><td> -</td></tr>
    <tr valign="top"><td> December 6, 2018 </td><td> <a target="_blank" href="http://www.downunderdreaming.com/brisbane/">Down Under</a> </td><td> Brisbane, Australia </td><td> -</td></tr>
-   <tr valign="top"><td> December 14 </td><td> <a target="_blank" href="https://www.truenorthdreamin.com/">True North</a>  </td><td> Ottowa, Canada </td><td> - </td></tr>
    <tr valign="top"><td> September 20, 2019 </td><td> <a target="_blank" href="http://frenchtouchdreamin.com/">French Touch Dreamin'</a> </td><td> Paris, France </td><td> -</td></tr>
    </tbody></table>
 
