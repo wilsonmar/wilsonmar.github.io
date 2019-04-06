@@ -1028,6 +1028,17 @@ console.log('Web server listening at: %s', app.get('url'));
 };
 </pre>
 
+## Largest files taking up disk space
+
+Linux has a <strong>ncdu</strong> (NCurses Disk Usage) utility to list files in order of how much space they occupied.
+
+It's not in macOS by default:
+
+   <pre><strong>brew install ncdu</strong></pre>
+
+See https://mac.softpedia.com/get/Utilities/ncdu.shtml
+
+
 ## Ulimit Too Many Files
 
 By default, operating systems limit how many file descriptors to allow.

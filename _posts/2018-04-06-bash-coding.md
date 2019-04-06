@@ -1241,6 +1241,8 @@ https://github.com/denysdovhan/bash-handbook
 
 https://jasonjwilliamsny.github.io/wrangling-genomics/01-automating_a_workflow.html
 
+https://www.amazon.com/Introduction-Unix-Shell-Programming-Venkateshmurthy-ebook-dp-B00B5P724G/dp/B00B5P724G/ref=mt_kindle?_encoding=UTF8&me=&qid=
+
 
 ## More on DevOps #
 

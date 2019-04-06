@@ -34,10 +34,27 @@ Shubha Nabar (Senior Director, Software Engineering) is the Einstein boss at Sal
 
 ## API Endpoint
 
-Salesforce purchased 200 data science people by its acquisition of http://www.metamind.io/
+Salesforce purchased 200 data science people by its acquisition of Metamind. 
 Thus, "api.metamind.io" was the previous endpoint to APIs, which is now:
 
    <a target="_blank" href="https://api.einstein.ai">https://api.einstein.ai</a>
+
+To get an RSA Token used to make service calls:
+
+   <a target="_blank" href="https://api.einstein.ai/signup">https://api.einstein.ai/signup</a>
+
+Save that in a safe place.
+
+Use your key to get a token at: 
+
+https://www.youtube.com/watch?v=0ryXVwJTWxQ
+Salesforce Einstein Intent API deep dive with Daniel Peter
+https://github.com/salesforceidentity/jwt/blob/master/JWT.apex
+
+https://www.youtube.com/watch?v=YDw1GieW4cw
+Auto-Machine Learning: The Magic Behind Einstein
+by Salesforce Developers
+
 
 The Einstein Intent API <strong>categorizes</strong> unstructured text into <strong>user-defined labels</strong> to better understand what users are trying to accomplish. Use this API to analyze text from emails, chats, or web forms to: Determine which products prospects are interested in, and send customer inquiries to the appropriate sales person. Route service cases to the correct agents or departments, or provide self-service options. Understand customer posts to provide personalized self-service in your communities.
 
