@@ -1243,6 +1243,15 @@ https://jasonjwilliamsny.github.io/wrangling-genomics/01-automating_a_workflow.h
 
 https://www.amazon.com/Introduction-Unix-Shell-Programming-Venkateshmurthy-ebook-dp-B00B5P724G/dp/B00B5P724G/ref=mt_kindle?_encoding=UTF8&me=&qid=
 
+https://dev.to/awwsmm/101-bash-commands-and-tips-for-beginners-to-experts-30je
+contrasts commands that are similar (such as which, whereis, whatis)
+
+https://medium.com/the-code-review/top-10-bash-file-system-commands-you-cant-live-without-4cd937bd7df1
+
+https://medium.freecodecamp.org/sh-silence-your-bash-scripts-by-coding-your-own-silent-flag-c7e9f8b668a4
+
+https://www.udemy.com/git-bash/
+paid course
 
 ## More on DevOps #
 

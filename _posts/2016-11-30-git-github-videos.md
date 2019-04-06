@@ -1193,6 +1193,7 @@ Git Quick Start</a> [1:50:22] by Stosh Oldham
 <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/289">
 Source Control with Git</a> [5:32:24] (on Red Hat and Debina Linux)
 by Kenny Armstrong
+includes work on GitLab.
 
 
 <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/36">

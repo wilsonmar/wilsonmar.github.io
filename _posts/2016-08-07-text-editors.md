@@ -707,6 +707,20 @@ Make Visual Studio Code Your Editor video course at Scotch.io</a> by Chris Sevil
 <a target="_blank" href="https://tutorialzine.com/2017/06/15-essential-plugins-for-visual-studio-code">
 15 Essential Plugins for Visual Studio Code</a> June 27, 2017
 
+* https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces
+
+* https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+Integrates ESLint JavaScript into VS Code.
+
+* https://marketplace.visualstudio.com/items?itemName=chuckjonas.apex-pmd
+PMD static analysis for Salesforce Apex
+
+* https://marketplace.visualstudio.com/items?itemName=salesforce.salesforcedx-vscode
+Extensions for developing on the Salesforce Platform
+
+* https://gitlab.com/terja/sfdx-git
+
+
 ## AWS Cloud9
 
 <a target="_blank" href="https://console.aws.amazon.com/cloud9/home/product">AWS Cloud9</a> for (Serveless) Lambda (under the Developer Tools category) works completely in the browser running in EC2 under the hood.

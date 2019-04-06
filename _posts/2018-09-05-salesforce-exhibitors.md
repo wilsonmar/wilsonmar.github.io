@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Salesforce exhibitors (videos at Dreamforce)"
-excerpt: "Videos of answers to the same questions"
+title: "Salesforce exhibitors (partners)"
+excerpt: "Answers to the same questions"
 tags: [salesforce]
 image:
 # sf-showfloor-1900x500-172633.jpg 
@@ -17,7 +17,7 @@ comments: true
 
 ## Exhibitor Sheet
 
-257 exhibitors are listed on <a target="_blank" href="https://www.salesforce.com/dreamforce/expo/">https://www.salesforce.com/dreamforce/expo</a>. 
+257 exhibitors were listed on 2018 in <a target="_blank" href="https://www.salesforce.com/dreamforce/expo/">https://www.salesforce.com/dreamforce/expo</a>. 
 
 I created <a target="_blank" href="https://docs.google.com/spreadsheets/d/1v5Tti0WFdqZrG2sY2r-Pbv7lGvIf2440iKrCZtqlLiM/edit?usp=sharing">this Google Sheet</a> and added:
 
@@ -39,15 +39,6 @@ I created <a target="_blank" href="https://docs.google.com/spreadsheets/d/1v5Tti
 
 Not included is the <a target="_blank" href="https://www.crunchbase.com/event/dreamforce-2018#section-overview">Crunchbase ranking of companies</a>.
 
-## Videos with each exhibitor
-
-At Salesforce Dreamforce #DF18, we are recording a short video talking with each exhibitor, for posting on YouTube. I'm doing these videos for those want to be there but cannot attend the largest software convention in the world by the most beloved software company. 
-
-These videos are different because we ask a representative from each vendor the <a href="#Questions">same questions (below)</a> so we can cut an additional video featuring the best answers among all exhibitor companies. 
-
-QUESTION: Please send me contact information to them you know. We need to contact each one ahead of time to get signed releases. 
-
-Please review the list of questions we intend on asking (based on a review of the best questions job candidates should ask):
 
 <a name="Questions"></a>
 
