@@ -1184,13 +1184,20 @@ It starts by diving right in with diff:
 
 ### Linux Academy
 
-<a target="_blank" href="https://linuxacademy.com/linux/training/course/name/git-gitlab">
-   Git and GitLab - From Start to Finish</a>
-   by Terrence (Terry) Cox.
-   <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/278/">
-   It</a> is for those who pay a subscription of $286 per year
-   to access all Linux Academy videos, not just these 
-   3:20 hours over 22 vides (with no speed-up setting):
+This is for those who pay a subscription (of $286 per year) to access all Linux Academy videos, not just these.
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/289">
+Git Quick Start</a> [1:50:22] by Stosh Oldham
+
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/289">
+Source Control with Git</a> [5:32:24] (on Red Hat and Debina Linux)
+by Kenny Armstrong
+
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/36">
+   Git and GitLab - From Start to Finish</a> 3:20 hours over 22 vides (with no speed-up setting).
+by Terrence (Terry) Cox.
 
 0. <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/278/lesson/1/module/36">Introduction</a> [07:42]
 0. <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/279/lesson/1/module/36">Installing Git</a> [08:16]
@@ -1216,6 +1223,13 @@ It starts by diving right in with diff:
 0. <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/305/lesson/3/module/36">GitLab Architecture</a> [09:24] <a target="_blank" href="https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/development/architecture.md">Component Diagram</a>
 0. <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/305/lesson/4/module/36">GitLab User Administration and Secure Access</a> [10:44]
 0. <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/305/lesson/5/module/36">GitLab Group Administration</a> [10:57]
+
+
+Linux Academy <a target="_blank" href="https://linuxacademy.com/amazon-web-services/courses">AWS Certification Training</a> has 389 hours of hands-on labs and video courses, with computer time included.
+
+* <a target="_blank" href="https://beta.linuxacademy.com/#/hands-on-labs/details/660e6820-fec6-48de-a415-5f242ba5b5e7?redirect_uri=https:%2F%2Fapp.linuxacademy.com%2Fsearch">Create and Clone an AWS CodeCommit Repository</a>
+
+   <tt>https://git-codecommit.us-east-1.amazonaws.com/v1/repos/MyRepo</tt>
 
 
 ### SitePoint
