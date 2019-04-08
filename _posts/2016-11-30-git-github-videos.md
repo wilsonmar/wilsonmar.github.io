@@ -1352,7 +1352,7 @@ https://www.linkedin.com/in/davidmahler/
 
 ### Corey Schafer
 
-Among his YouTube <a target="_blank" href="https://www.youtube.com/watch?v=YYXdXT2l-Gg&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU">videos on Python</a> is this Git Tutorial series that focus on the most confusing aspects:
+Among his brilliantly clear YouTube <a target="_blank" href="https://www.youtube.com/watch?v=YYXdXT2l-Gg&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU">videos on Python</a> is this Git Tutorial series that focus on the most confusing aspects:
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=HVsySz-h9r4">
    Command-Line Fundamentals</a> Aug 3, 2015 [30:32]
@@ -1372,11 +1372,17 @@ Among his YouTube <a target="_blank" href="https://www.youtube.com/watch?v=YYXdX
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=f1wnYdLEpgI">
    A better Git workflow with rebase (instead of merge)</a>
-   [6:42] Nov 24, 2017 has animated graphics that overlay on top of commands and responses.
-   "My team at Amazon [in Seattle] adopted this workflow."
+   [6:42] Nov 24, 2017 has animated graphics that overlay on top of commands and responses. "My team at Amazon [in Seattle] adopted this workflow."
    Read the companion blog listing commands shown at <a target="_blank" href="
    https://www.themoderncoder.com/a-better-git-workflow-with-rebase/">
-   https://www.themoderncoder.com/a-better-git-workflow-with-rebase</a>
+               themoderncoder.com/a-better-git-workflow-with-rebase</a>
+
+* <a target="_blank" href="http://youtu.be/V5KrD7CmO4o">Combining Git commits with squash</a> Aug 5, 2018 [3:55] 
+
+### Academind 
+
+* <a target="_blank" href="http://youtu.be/ElRzTuYln0M">Git merger vs. rebase</a>
+Sep 6, 2018
 
 ### Mahtab alam
 
@@ -1736,6 +1742,28 @@ These videos have ads:
 * <a target="_blank" href="https://www.youtube.com/watch?v=__cR7uPBOIk">
    A Step by Step Guide for How to Resolve Git Merge Conflicts</a>
    [10:57] Mar 7, 2018
+
+### Daniel Shiffman
+
+This guy reminds me of Peewee Herman in front of a whiteboard after going through a coding bootcamp. Rainbows and unicorns. His website is <a target="_blank" href="https://thecodingtrain.com">thecodingtrain.com</a>. On YouTube: <a target="_blank" href="https://www.youtube.com/watch?list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV">The Git and GitHub for Poets series</a> (makes good use of green screen video making so you won't miss his  enthusiastic hand flings):
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV">Introduction</a> [13:42] Apr 19, 2016 about Version Control
+2. <a target="_blank" href="https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV">Branches</a> [11:55] Apr 19, 2016
+3. <a target="_blank" href="https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV">Forks and Pull Requests</a> [12:23] Apr 23, 2016  
+4. <a target="_blank" href="https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV">GitHub Issues</a> [11:31] Apr 24, 2016  
+5. <a target="_blank" href="https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV">Intro to the Command Line</a> [9:05] May 4, 2016  
+6. <a target="_blank" href="https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV">Cloing Repo and Push/Pull</a> [21:50] May 4, 2016  
+7. <a target="_blank" href="https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV">git init and git add</a> [12:55] May 17, 2016  
+8. <a target="_blank" href="https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV">GitHub Page</a> [12:58] Jun 2, 2016  
+9. <a target="_blank" href="https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV">Resolving Merge Conflicts</a> [8:49] Feb 13, 2018 about 
+10. <a target="_blank" href="https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV">Git Remotes</a> [13:55] May 16, 2016  
+12. <a target="_blank" href="https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV">GitHub Pages for Hosting p5.js</a> [7:13] Jun 3, 2016
+
+
+### Kerry Buckley
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=L7_iMewv5vQ">Git Masterclass</a> Mar 9, 2015 [1:02:05] <a target="_blank" href="https://speakerdeck.com/kerryb/git-masterclass">deck</a> (there is no "git diff -stat")
+
 
 ### Alessandro Castellani
 

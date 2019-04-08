@@ -21,7 +21,28 @@ This article presents a step-by-step tutorial so you can confidently use
 an alternative to the standard `git merge` and `git rebase` 
 that comes with Git. 
 
-## The annoyance
+## The old school way
+
+The `git merge` command as described in many tutorials:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=JtIX3HJKwfo">
+   1.9: Resolving Merge Conflicts - Git and GitHub for Poets</a>
+   by The Coding Train
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=iCGrKFH2oeo">
+   Git Tutorial: Diff and Merge Tools</a> 
+   by Corey Schafer
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=ZK20jVt7XEc">
+   Eclipse - Merge and Resolve Conflicts with git</a>
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=7riCX4Oxms8">
+   Git Merge • Git in VisualStudio (Martin Woodward)</a>
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=CRlGDDprdOQ">
+   Git MERGE vs REBASE</a>
+
+### The annoyance
 
 Although superior to others, is rather "cumbersome and scary".
  

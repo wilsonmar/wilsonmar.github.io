@@ -22,14 +22,7 @@ This is a hands-on tutorial on how to use Git rebase from the command line.
 First of all, there is a lot of misunderstanding about rebase.
 
 Randy Fay <a target="_blank" href="https://randyfay.com/node/103">
-comments (in 2011)</a>: The issue, of course, is "Does it help anybody in the future to see my topic branch and the various garbage commits on it." The answer, much of the time, is "no". That's what serious rebasing is about. The "rebasing" discussed in this tiny article is just about making sure your local changes go on top of what's already been committed, so you don't end up with stupid, dangerous, useless merge commits that don't help anything.
-
-There are several ways to rebase away you extra commit messages into one commit with a cogent message
-before others see them:
-
-   0. <a href="#InteractiveCommands">Interactively rebase to squash commits, on command-line</a>, immediately below
-   0. <a href="#RebaseOnGitHub">Rebasing on GitHub</a>
-   0. <a href="#VisualStudio">Rebase in IDEs (Microsoft's 'Visual Studio, etc.)</a>
+comments (in 2011)</a>: The issue is "Does it help anybody in the future to see my topic branch and the various garbage commits on it?" The answer, much of the time, is "no". That's what serious rebasing is about. The <strong>"rebasing"</strong> discussed in this article is about making sure your local changes go on top of what's already been committed, so you don't end up with stupid, dangerous, useless merge commits that don't help anything.
 
 ## Man page
 
@@ -39,19 +32,24 @@ before others see them:
    man git-rebase
    </strong></pre>
 
-  It says a rebase <strong>reapplies</strong> commits on top of another base tip.
+  It says a Git rebase <strong>reapplies</strong> commits on top of another base tip.
+
+   There are several ways to rebase away you extra commit messages into one commit with a single cogent message before others see them:
+
+   1. <a href="#InteractiveCommands">Interactively rebase to squash commits, on command-line</a>, immediately below
+   2. <a href="#RebaseOnGitHub">Rebasing on GitHub</a>
+   3. <a href="#VisualStudio">Rebase in IDEs (Microsoft's 'Visual Studio, etc.)</a>
 
 
 <a name="InteractiveCommands"></a>
 
 ## Interactive Rebase to squash commits
 
-First, click on the video for a 2:29 minute prevew.
+First, click on the video for a 2:29 minute preview.
 Then follow the step-by-step instructions to become a pro at making
 comments a "first-class" citizen of what you put in GitHub.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PZdVLaiAAmY" frameborder="0" allowfullscreen> </iframe>
-
 (Thanks to Contato at RodolfoBandeira.com for the video. It would be a waste of time for me to duplicate the video he created Dec 2016. Thanks, Rodolfo!)
 
 We start by doing a few prepatory steps not shown in the video:
@@ -146,7 +144,7 @@ We start by doing a few prepatory steps not shown in the video:
 
    If a colon appears at the bottom of the screen, press q to quit.
 
-0. Initiate Rebasing:
+0. Initiate Rebasing for all commits:
 
    <pre><strong>
    git rebase -i master
@@ -179,9 +177,19 @@ pick d693749 add 4.txt
 # Note that empty commits are commented out
    </pre>
 
-   NOTE: Commit ids such as "07e03c2" are a stand-in for whatever commit id Git creates for each specific commit.
+   NOTE: Commit ids here, such as "07e03c2", are a stand-in for whatever commit id Git creates for each specific commit.
 
-0. In all lines under the first line, double-click the "pick" to select it, then type "s".
+   Alternately, rebase just the <strong>last 3</strong> commits:
+
+   <pre><strong>
+   git rebase -i HEAD~3
+   </strong></pre>
+   
+   See <a target="_blank" href="https://www.youtube.com/watch?v=V5KrD7CmO4o&time=1m24s">this video</a>
+
+   The response would be a "pick" in front of each commit listed.
+
+0. In all lines under the first line, <strong>double-click the "pick"</strong> to select it, then type "s" to end up with something like this:
 
    <pre>
 pick 07e03c2 add 2.txt
@@ -189,8 +197,7 @@ s 5a71aa8 add 3.txt
 s d693749 add 4.txt
    </pre>
 
-   The comment in the file says such action specifies a <strong>squash</strong> that melds (combine)
-   content into the commit above it.
+   The comment in the file says such action specifies a "s" for <strong>squash</strong> that melds (combine) content into the commit above it.
 
    CAUTION: Do not change the commit message text. You can do that in the next screen.
 
@@ -250,7 +257,7 @@ add 4.txt
 0. See a list of commits to confirm:
 
    <pre><strong>
-   git log
+   git log --oneline
    </strong></pre>
 
 0. Retrieve files from master branch:
@@ -287,7 +294,7 @@ Fast-forwarded master to feature/feature-1.
 
    ### Verify with git reflog
 
-0. See the reference log:
+0. See the Git reference log:
 
    <pre><strong>
    git reflog
@@ -307,6 +314,7 @@ d693749 HEAD@{7}: commit: add 4.txt
 785d03b HEAD@{10}: checkout: moving from master to feature/feature-1
 785d03b HEAD@{11}: commit (initial): add 1.txt
    </pre>
+
 
 <a name="RebaseOnGitHub"></a>
 
