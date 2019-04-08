@@ -98,3 +98,9 @@ There are many tutorials which teach JavaScript string manipulation and other to
   has learners use tutorials on codeacademy.com and other sites, then adds
   quizzes, all for free.
 
+
+## Wait, there's more. Click one of these ... #
+
+This article is one of a series about tuning and performance:
+
+{% include tuning.html %}

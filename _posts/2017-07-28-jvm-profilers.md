@@ -525,5 +525,8 @@ As a comparison, take a look at the
 profiler in Visual Studio for C# Xamarin code</a>.
 
 
-## Resources
+## Wait, there's more. Click one of these ... #
 
+This article is one of a series about tuning and performance:
+
+{% include tuning.html %}

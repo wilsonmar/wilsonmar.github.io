@@ -125,8 +125,16 @@ http://automationtoolsbootcamp.com
 
 
 
-## More on DevOps #
+## More on DevSecOps #
 
-This is one of a series on DevOps:
+This is one of a series on DevSecOps:
 
 {% include devops_links.html %}
+
+## Wait, there's more. Click one of these ... #
+
+This article is one of a series about tuning and performance:
+
+{% include tuning.html %}
+
+2017-08-29-devsecops-perftest.md

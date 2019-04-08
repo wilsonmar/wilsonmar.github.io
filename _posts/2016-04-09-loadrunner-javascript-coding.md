@@ -1330,3 +1330,9 @@ There are many tutorials which teach JavaScript string manipulation and other to
    You Don't Know JS</a> by Kyle Simpson @getify http://getify.me
    speakerdeck.com/getify
 
+
+## Wait, there's more. Click one of these ... #
+
+This article is one of a series about tuning and performance:
+
+{% include tuning.html %}

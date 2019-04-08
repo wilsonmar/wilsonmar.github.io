@@ -883,3 +883,10 @@ by James Bannan
 <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-consumption-strategy-optimizing">
 Designing a Monitoring Strategy for a Solution in Microsoft Azure</a> Nov 28, 2018 [3h 19m]
 by Brian Harrison
+
+
+## Wait, there's more. Click one of these ... #
+
+This article is one of a series about tuning and performance:
+
+{% include tuning.html %}
