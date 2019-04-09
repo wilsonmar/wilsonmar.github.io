@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Bash script coding"
-excerpt: "Walk though the tricks used in a script to install, configure, and run many programs."
+title: "Bash (script) coding"
+excerpt: "Walk though the tricks used in a script to install, configure, and run many programs on macOS and Linux"
 tags: [API, devops, evaluation]
 Categories: Devops
 filename: bash-coding.md
@@ -228,6 +228,35 @@ The command pipes using standard Linux utilities:
 
 The variable is referenced at the end of the script, when the END variable is obtained for use in calculating the 
 time and disk space used during the script run.
+
+### Disk Space of folder
+
+When we want to remove a folder (as in git-patch), there is the command `du -hs` which returns something like 
+<tt>319M    .</tt>. Then we pipe that to this:
+
+<pre>FOLDER_DISK_SPACE="$(du -hs | tr -d '\040\011\012\015\056')"</pre>
+
+The <tt>tr -d</tt> command gets rid of special characters, specifed in <a target="_blank" href="http://donsnotes.com/tech/charsets/ascii.html">ASCII</a> such as \040 for space, \011 for tabs, \012\015 for Line Feed Carriage return, and \056 for period.
+
+<pre>
+   if [ "$REMOVE_REPO_FROM_WHEN_DONE" -eq "1" ]; then  # 0=No (default), "1"=Yes
+      echo_f "Removing $URL_FROM/$PATCH_FILE as REMOVE_REPO_FROM_WHEN_DONE=$REMOVE_REPO_FROM_WHEN_DONE"
+      rm -rf  "$REPO_TO_CONTAINER/$REPO_NAME_FROM"
+      if [ -d "$REPO_FROM_CONTAINER/$REPO_NAME_FROM" ]; then
+         FOLDER_DISK_SPACE="$(du -hs | tr -d '\040\011\012\015\056')"
+         echo_f "WARNING: $FOLDER_DISK_SPACE folder still at $REPO_FROM_CONTAINER/$REPO_NAME_FROM."
+         ls -al
+      fi
+   else
+      if [ -d "$REPO_FROM_CONTAINER/$REPO_NAME_FROM" ]; then
+         FOLDER_DISK_SPACE="$(du -hs | tr -d '\040\011\012\015\056')"
+         echo_f "WARNING: $FOLDER_DISK_SPACE folder remains at $REPO_FROM_CONTAINER/$REPO_NAME_FROM."
+      else
+         echo_f "Folder no longer at $REPO_FROM_CONTAINER/$REPO_NAME_FROM."
+      fi
+   fi
+</pre>
+
 
 
 ### Text attributes
