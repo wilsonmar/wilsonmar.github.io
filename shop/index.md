@@ -78,7 +78,7 @@ Below are discussion of specific attributes versus trade-offs:
    A large backpack is less comfortable to carry for long periods, and less "executive business style".
 
    It Would be nice to have more adjustable shoulder straps that <strong>transfers weight to the hips</strong>.
-   Front straps are especially importnat for women's physique.
+   Front straps are especially important for a women's physique.
 
 
 ### External quick access
