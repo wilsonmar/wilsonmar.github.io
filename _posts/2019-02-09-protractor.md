@@ -925,9 +925,3 @@ https://bridge360blog.com/2015/05/05/improving-protractor-tests-using-shared-fun
 
 Add OpenCV and Tesseract
 
-
-## Wait, there's more. Click one of these ... #
-
-This article is one of a series about tuning and performance:
-
-{% include tuning.html %}
