@@ -229,6 +229,17 @@ The command pipes using standard Linux utilities:
 The variable is referenced at the end of the script, when the END variable is obtained for use in calculating the 
 time and disk space used during the script run.
 
+The avaiable value is captured from the response: 
+2nd line, 6th item: 190920080 of the response:
+
+<pre>
+Filesystem   1024-blocks      Used Available Capacity iused               ifree %iused  Mounted on
+/dev/disk1s1   488245284 294551984 190920080    61% 2470677 9223372036852305130    0%   /
+</pre>
+
+The number of blocks needs to be converted to MB (megabytes).
+
+
 ### Disk Space of folder
 
 For the script to remove a folder (as in git-patch), we want to provide a feature flag so that is controllable during a particular run, with variable <tt>REMOVE_REPO_FROM_WHEN_DONE</tt>.
@@ -421,22 +432,6 @@ NOTE</a> on testing if a variable is blank.
    <pre>
    if [[ ! -z "${newdir// }" ]]; then  #it's not blank
    </pre>
-
-
-## Disk space used
-
-Available space on disk is obtained using command:
-
-<pre>FREE_DISKBLOCKS_START=$(df | sed -n -e '2{p;q}' | cut -d' ' -f 6)</pre>
-
-The avaiable value is captured from 2nd line, 6th item: 190920080 of the response:
-
-<pre>
-Filesystem   1024-blocks      Used Available Capacity iused               ifree %iused  Mounted on
-/dev/disk1s1   488245284 294551984 190920080    61% 2470677 9223372036852305130    0%   /
-</pre>
-
-The number of blocks needs to be converted to MB (megabytes).
 
 
 ## File Descriptors
