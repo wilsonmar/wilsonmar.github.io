@@ -231,12 +231,17 @@ time and disk space used during the script run.
 
 ### Disk Space of folder
 
-When we want to remove a folder (as in git-patch), there is the command `du -hs` which returns something like 
-<tt>319M    .</tt>. Then we pipe that to this:
+For the script to remove a folder (as in git-patch), we want to provide a feature flag so that is controllable during a particular run, with variable <tt>REMOVE_REPO_FROM_WHEN_DONE</tt>.
+
+After the folder is supposed to be removed, we want to verify whether it has. There could have been a typo in the command.
+
+If we don't want it removed, we want to know how much disk space is taken. For that we use the command `du -hs` which returns something like  <tt>319M    .</tt> which we pipe thru this:
 
 <pre>FOLDER_DISK_SPACE="$(du -hs | tr -d '\040\011\012\015\056')"</pre>
 
 The <tt>tr -d</tt> command gets rid of special characters, specifed in <a target="_blank" href="http://donsnotes.com/tech/charsets/ascii.html">ASCII</a> such as \040 for space, \011 for tabs, \012\015 for Line Feed Carriage return, and \056 for period.
+
+The full logic:
 
 <pre>
    if [ "$REMOVE_REPO_FROM_WHEN_DONE" -eq "1" ]; then  # 0=No (default), "1"=Yes
@@ -444,9 +449,7 @@ Use the tee command to concatenate to the bottom of the <tt>/etc/profile</tt> fi
 
    <pre>'ulimit -n 10032' | sudo tee -a /etc/profile</pre>
 
-A reboot is necessary for this to take.
-
-http://bencane.com/2013/09/16/understanding-a-little-more-about-etcprofile-and-etcbashrc/
+A reboot is necessary for this to take. <a target="_blank" href="http://bencane.com/2013/09/16/understanding-a-little-more-about-etcprofile-and-etcbashrc/">*</a>
 
 
 ## Save backup
