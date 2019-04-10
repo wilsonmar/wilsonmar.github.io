@@ -9,3 +9,6 @@ codekit-config.json
 node_modules
 .jekyll-metadata
 .dir
+## Environment normalization:
+/.bundle
+/vendor/bundle
