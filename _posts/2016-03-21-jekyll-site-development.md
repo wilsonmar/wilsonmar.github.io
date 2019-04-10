@@ -27,14 +27,127 @@ This is one in a series:
    0. [Authenticate on static sites](/authentication-on-static-site/)
    0. [Clickable maps in Jekyll sites](/clickable-maps-in-jekyll-posts/)
 
-There is no need to repeat excellent tutorials:
+Jekyll is currently the [most popular among static site builder options](/static-websites/).
 
-* <a target="_blank" href="https://www.youtube.com/playlist?list=PLWjCJDeWfDdfVEcLGAfdJn_HXyM4Y7_k-">
-   Thomas Bradley's videos on YouTube</a>
+## The objective
 
-Jekyll is currently the
-[most popular among static site builder options](/static-websites/).
+What we would like to do after going thrugh the below is to type this on a Terminal and a browser would open to show your Jekyll site locally.
 
+1. In the macOS `~/.bash_profile` add a shortcut, but substitute "wilsonmar" with your own GitHub account name:
+
+   <pre>
+   alias js='cd ~/gits/wilsonmar/wilsonmar.github.io;bundle exec jekyll serve --config _config.yml'
+   </pre>
+
+1. Create the folder.
+
+
+## Upgrade Apple XCode
+
+1. Install the latest XCode from Apple. This can take hours.
+
+   sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+   xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance
+
+   sudo xcodebuild -license
+
+   Agree to the terms.
+
+## Ruby build
+
+Per https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
+
+   brew install openssl libyaml libffi
+
+## Install rbenv
+
+brew install rbenv ruby-build
+
+Jana Bergant's <a target="_blank" href="https://www.udemy.com/static-website-generator-fast-secure-sites-blogs-with-jekyll/">
+Udemy course</a> uses a mac install Jekyll 3.3.0 at last viewing.
+
+   gem update --system -n /usr/local/bin
+
+   `-n /usr/local/bin` ensures avoids "You don't have write permissions for the /usr/bin directory."
+
+## Create a folder
+
+In GitHub create a <em>youraccount</em>.github.io repo.
+
+Delete file .bundle from my Home folder (rm -rf ~/.bundle). You can check out your configuration running bundle env
+
+https://jekyllrb.com/docs/
+
+In Terminal, from any folder, 
+
+   <pre>sudo gem uninstall bundler
+   gem update --system
+   </pre>
+
+   If you get this message:
+
+   <pre>
+ERROR:  While executing gem ... (Errno::EPERM)
+    Operation not permitted @ rb_sysopen - /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/gem
+   </pre>    
+
+   <pre>
+   rbenv rehash
+   sudo gem install bundler
+   </pre>
+
+   A valid response I got:
+
+   <pre>
+Successfully installed bundler-2.0.1
+Parsing documentation for bundler-2.0.1
+Done installing documentation for bundler after 4 seconds
+1 gem installed
+   </pre>
+
+   ### Install Jekyll (instead of Homebrew):
+
+   <pre>sudo gem install jekyll</strong>
+gem install jekyll --no-document
+
+   The response:
+
+   <pre>
+Successfully installed jekyll-3.8.5
+Parsing documentation for jekyll-3.8.5
+Done installing documentation for jekyll after 1 seconds
+1 gem installed
+   </pre>
+
+
+   http://ryan.mcgeary.org/2011/02/09/vendor-everything-still-applies/
+
+In _config.yml
+
+exclude: ["vendor", "lib", 
+
+   ### Demo Site
+
+1. Use or create an enclosing folder, such as "projects".
+
+   jekyll new demosite
+
+   The response should be "New jekyll site installed ...".
+
+   BLAH: I'm getting this message:
+
+   <pre>
+Your user account isn't allowed to install to the system RubyGems.
+  You can cancel this installation and run:
+&nbsp;
+      bundle install --path vendor/bundle
+&nbsp;
+  to install the gems into ./vendor/bundle/, or you can enter your password
+  and install the bundled gems to RubyGems using sudo.
+&nbsp;
+  Password: 
+   </pre>
 
 ## Bundle install #
 
@@ -47,6 +160,16 @@ After downloading, have Maven pull in dependencies based on the Gemfile:
    NOTE: Technically, "install" is not needed since it's the default command for bundle.
 
 Bundling makes the list of dependencies in the <strong>Gemfile</strong> to be downloaded.
+
+
+   <pre>
+Your user account isn't allowed to install to the system RubyGems.
+  You can cancel this installation and run:
+&nbsp;
+      bundle install --path vendor/bundle
+   </pre>      
+
+
 
 ## Grunt tasks #
 
@@ -1067,6 +1190,11 @@ QUESTION: Spell checking in GitHub?
 
 ## Footnotes
 
+There is no need to repeat excellent tutorials:
+
+* <a target="_blank" href="https://www.youtube.com/playlist?list=PLWjCJDeWfDdfVEcLGAfdJn_HXyM4Y7_k-">
+   Thomas Bradley's videos on YouTube</a>
+
 * Tutorial: http://jekyll.tips/jekyll-casts/
 
 * https://geekflare.com/cloud-storage-static-website/
@@ -1082,6 +1210,7 @@ QUESTION: Spell checking in GitHub?
 * http://blog.christianposta.com/microservices/netflix-oss-or-kubernetes-how-about-both/
 
 * <a target="_blank" href="https://www.youtube.com/playlist?list=PL58Wk5g77lF-UQ39pejLX2Zn5DxQyExBa">JAMstack Conf 2018 - San Francisco 19 videos</a>
+
 
 
 ## More on front-end styling #

@@ -15,7 +15,7 @@ comments: true
 
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/cyber-security/">This page</a> contains my notes on resources for Cyber Security.
+<a target="_blank" href="https://wilsonmar.github.io/cyber-security/">This page</a> contains my notes on resources for Cyber Security, which is a vast field. This single page is just for reference.
 
 ## Adobe Common Control Framework
 
@@ -572,6 +572,18 @@ https://github.com/dev-sec/cis-docker-benchmark
 https://nvd.nist.gov/ncp/checklist/740
 
 ![cybersecurity-NIST-Functions-382x390-19166](https://user-images.githubusercontent.com/300046/55505840-3f6c3680-5611-11e9-811d-4411e01c5afd.jpg)
+
+## FedRAMP/FISMA compliance
+
+In the US federal government, the Federal Information Security Management Act of 2002 (FISMA) is a law implented according to National Institute of Standards and Technology (NIST) Special Publication (SP) 800-53 <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">[pdf]</a>.
+
+In 2011 a "cloud first" policy was defined in the Federal Risk and Authorization Program (FedRAMP) <a target="_blank" href="https://cio.gov/wp-content/uploads/downloads/2012/09/Federal-Cloud-Computing-Strategy.pdf">[pdf]</a> where federal agencies make use of cloud service providers (CSPs) given authority to operate (ATO) after receiving system authorization from an independent security assessment conducted by a 3PAO (third party Assessor).
+
+A <strong>System  Security  Plan  (SSP)</strong> is required by the
+OMB Security Authorization of Information Systems in Cloud Computing
+<a target="_blank" href="https://cio.gov/wp-content/uploads/2012/09/fedrampmemo.pdf">[pdf]</a>
+
+Resource: <a target="_blank" href="https://www.coalfire.com/Documents/Whitepapers/FISMA-vs-FedRAMP_Controls-authorizations">Coalfire</a>
 
 
 ## Other standards

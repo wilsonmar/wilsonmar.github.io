@@ -495,6 +495,10 @@ Shyam Nair, Salesforce Developer from Bengaluru, India:
 
 <a target="_blank" href="https://www.linkedin.com/in/tomblamire">Tom Blamire</a> (<a target="_blank" href="https://twitter.com/Salesforce_Tom/">@Salesforce_Tom</a>), CRM Specialist, CME Group
 
+<a target="_blank" href="https://www.linkedin.com/in/tonivmartin/">Toni V Martin</a>
+   * <a target="_blank" href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000009QfH">Business Analyst Trailblazer Group</a> leader
+   * <a target="_blank" href="http://virtualcareersummit.com/">Business Analyst virtual summit</a> organizer. <a target="_blank" href="https://tonivmartin.teachable.com/p/salesforce-business-analyst-virtual-summit">Videos</a> are $69 after 4 days free.
+
 Trish Bertuzzi (@BridgeGroupInc), Chief Strategist at The Bridge Group:
    * Wrote <a target="_blank" href="http://www.bridgegroupinc.com/sales-development-playbook">Sales Development Playbook</a>
 

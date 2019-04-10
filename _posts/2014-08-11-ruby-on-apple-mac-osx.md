@@ -22,12 +22,11 @@ The major commands around Ruby:
    0. ruby
    0. gem
    0. bundle
-   0. rvm version manager
-   0. <a href="#rbenv">rbenv</a> version manager
+   0. <a href="#rbenv">rbenv</a> version manager or
+   0. rvm version manager 
 
-There is a war going on within the Ruby community between rvm and rbenv.
-See http://jonathan-jackson.net/rvm-and-rbenv
-
+PROTIP: There is a war going on within the Ruby community between rvm and rbenv. See http://jonathan-jackson.net/rvm-and-rbenv
+and <a target="_blank" href="http://ryan.mcgeary.org/2011/02/09/vendor-everything-still-applies/">Ryan McGeary</a> who switched to rbenv.
 
 ### Versions #
 
@@ -925,6 +924,27 @@ For pkg-config to find this software you may need to set:
    <pre><strong>
    brew uninstall rbenv ruby-build
    </strong></pre>
+
+
+## Install to /usr/local/bin
+
+"You don't have write permissions into the /usr/bin directory."
+is returned because that directory requires root credentials.
+
+This is why Homebrew installs into the `/usr/local/bin` folder.
+
+To specify that folder when installing gems, for example:
+
+   gem install cocoapods -n /usr/local/bin
+
+To automatically specify `-n /usr/local/bin`, save create file 
+`~/.gemrc` containing:
+
+   <pre>
+:gemdir:
+   - ~/.gem/ruby
+install: -n /usr/local/bin
+   </pre>
 
 
 ## Ruby apps on Mac
