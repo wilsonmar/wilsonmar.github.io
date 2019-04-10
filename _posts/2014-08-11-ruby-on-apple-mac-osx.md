@@ -354,6 +354,130 @@ rdoc's executable "ri" conflicts with /usr/bin/ri
    </pre>
 
 
+<a name="rbenv"></a>
+
+### Install rbenv
+
+CAUTION: To install rbenv, one must first <a href="#RemoveRVM">remove RVM</a> 
+because it's incompatible with rbenv.
+ 
+   <pre><strong>
+   brew update
+   brew install rbenv ruby-build
+   </strong></pre>
+
+   The response:
+
+   <pre>
+==> Installing dependencies for rbenv: openssl, ruby-build
+==> Installing rbenv dependency: openssl
+==> Downloading https://homebrew.bintray.com/bottles/openssl-1.0.2k.sierra.bottl
+######################################################################## 100.0%
+==> Pouring openssl-1.0.2k.sierra.bottle.tar.gz
+==> Using the sandbox
+==> Caveats
+A CA file has been bootstrapped using certificates from the SystemRoots
+keychain. To add additional certificates (e.g. the certificates added in
+the System keychain), place .pem files in
+  /usr/local/etc/openssl/certs
+&nbsp;
+and run
+  /usr/local/opt/openssl/bin/c_rehash
+&nbsp;
+This formula is keg-only, which means it was not symlinked into /usr/local.
+&nbsp;
+Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries
+&nbsp;
+If you need to have this software first in your PATH run:
+  echo 'export PATH="/usr/local/opt/openssl/bin:$PATH"' >> ~/.bash_profile
+&nbsp;
+For compilers to find this software you may need to set:
+    LDFLAGS:  -L/usr/local/opt/openssl/lib
+    CPPFLAGS: -I/usr/local/opt/openssl/include
+For pkg-config to find this software you may need to set:
+    PKG_CONFIG_PATH: /usr/local/opt/openssl/lib/pkgconfig
+&nbsp;
+==> Summary
+🍺  /usr/local/Cellar/openssl/1.0.2k: 1,696 files, 12M
+==> Installing rbenv dependency: ruby-build
+==> Downloading https://github.com/rbenv/ruby-build/archive/v20170201.tar.gz
+==> Downloading from https://codeload.github.com/rbenv/ruby-build/tar.gz/v201702
+######################################################################## 100.0%
+==> ./install.sh
+🍺  /usr/local/Cellar/ruby-build/20170201: 334 files, 178.8K, built in 4 seconds
+==> Installing rbenv 
+==> Downloading https://homebrew.bintray.com/bottles/rbenv-1.1.0.sierra.bottle.t
+######################################################################## 100.0%
+==> Pouring rbenv-1.1.0.sierra.bottle.tar.gz
+🍺  /usr/local/Cellar/rbenv/1.1.0: 36 files, 63.2K
+   </pre>
+
+0. What versions of Ruby are available?
+
+   <pre><strong>
+   rbenv ???
+   </strong></pre>
+
+0. To upgrade Ruby using rbenv:
+
+   <pre><strong>
+   rbenv install 2.6.1
+   </strong></pre>
+
+   The response when 2.6.1 was all the rage:
+
+   <pre>
+ruby-build: use openssl from homebrew
+Downloading ruby-2.6.1.tar.bz2...
+-> https://cache.ruby-lang.org/pub/ruby/2.6/ruby-2.6.1.tar.bz2
+Installing ruby-2.6.1...
+ruby-build: use readline from homebrew
+Installed ruby-2.6.1 to /Users/wilsonmar/.rbenv/versions/2.6.1
+   </pre>
+
+0. Make that version the default globally:
+
+   <pre><strong>
+   rbenv global 2.6.1
+   ruby -v
+   </strong></pre>
+
+   The response I got:
+
+   <pre>
+ruby 2.3.7p456 (2018-03-28 revision 63024) [universal.x86_64-darwin18]
+   </pre>
+
+
+   ### Uninstall rbenv
+
+0. To uninstall, remember rbenv was installed using brew, so:
+
+   <pre><strong>
+   brew uninstall rbenv ruby-build
+   </strong></pre>
+
+
+## Install to /usr/local/bin
+
+"You don't have write permissions into the /usr/bin directory."
+is returned because that directory requires root credentials.
+
+This is why Homebrew installs into the `/usr/local/bin` folder.
+
+To specify that folder when installing gems, for example:
+
+   gem install cocoapods -n /usr/local/bin
+
+To automatically specify `-n /usr/local/bin`, save create file 
+`~/.gemrc` containing:
+
+   <pre>
+:gemdir:
+   - ~/.gem/ruby
+install: -n /usr/local/bin
+   </pre>
+
 
 <a name="ruby-rvm"></a>
 
@@ -861,91 +985,6 @@ Finally it might help to relogin / restart if you want to have fresh environment
    See http://karloespiritu.com/replacing-rvm-with-rbenv-in-os-x/
 
 
-<a name="rbenv"></a>
-
-### Install rbenv
-
-CAUTION: To install rbenv, one must first <a href="#RemoveRVM">remove RVM</a> 
-because it's incompatible with rbenv.
- 
-   <pre><strong>
-   brew update
-   brew install rbenv ruby-build
-   </strong></pre>
-
-   The response:
-
-   <pre>
-==> Installing dependencies for rbenv: openssl, ruby-build
-==> Installing rbenv dependency: openssl
-==> Downloading https://homebrew.bintray.com/bottles/openssl-1.0.2k.sierra.bottl
-######################################################################## 100.0%
-==> Pouring openssl-1.0.2k.sierra.bottle.tar.gz
-==> Using the sandbox
-==> Caveats
-A CA file has been bootstrapped using certificates from the SystemRoots
-keychain. To add additional certificates (e.g. the certificates added in
-the System keychain), place .pem files in
-  /usr/local/etc/openssl/certs
-&nbsp;
-and run
-  /usr/local/opt/openssl/bin/c_rehash
-&nbsp;
-This formula is keg-only, which means it was not symlinked into /usr/local.
-&nbsp;
-Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries
-&nbsp;
-If you need to have this software first in your PATH run:
-  echo 'export PATH="/usr/local/opt/openssl/bin:$PATH"' >> ~/.bash_profile
-&nbsp;
-For compilers to find this software you may need to set:
-    LDFLAGS:  -L/usr/local/opt/openssl/lib
-    CPPFLAGS: -I/usr/local/opt/openssl/include
-For pkg-config to find this software you may need to set:
-    PKG_CONFIG_PATH: /usr/local/opt/openssl/lib/pkgconfig
-&nbsp;
-==> Summary
-🍺  /usr/local/Cellar/openssl/1.0.2k: 1,696 files, 12M
-==> Installing rbenv dependency: ruby-build
-==> Downloading https://github.com/rbenv/ruby-build/archive/v20170201.tar.gz
-==> Downloading from https://codeload.github.com/rbenv/ruby-build/tar.gz/v201702
-######################################################################## 100.0%
-==> ./install.sh
-🍺  /usr/local/Cellar/ruby-build/20170201: 334 files, 178.8K, built in 4 seconds
-==> Installing rbenv 
-==> Downloading https://homebrew.bintray.com/bottles/rbenv-1.1.0.sierra.bottle.t
-######################################################################## 100.0%
-==> Pouring rbenv-1.1.0.sierra.bottle.tar.gz
-🍺  /usr/local/Cellar/rbenv/1.1.0: 36 files, 63.2K
-   </pre>
-
-0. To uninstall, remember rbenv was installed using brew, so:
-
-   <pre><strong>
-   brew uninstall rbenv ruby-build
-   </strong></pre>
-
-
-## Install to /usr/local/bin
-
-"You don't have write permissions into the /usr/bin directory."
-is returned because that directory requires root credentials.
-
-This is why Homebrew installs into the `/usr/local/bin` folder.
-
-To specify that folder when installing gems, for example:
-
-   gem install cocoapods -n /usr/local/bin
-
-To automatically specify `-n /usr/local/bin`, save create file 
-`~/.gemrc` containing:
-
-   <pre>
-:gemdir:
-   - ~/.gem/ruby
-install: -n /usr/local/bin
-   </pre>
-
 
 ## Ruby apps on Mac
 
@@ -961,6 +1000,8 @@ The programs I've figured out how to install using my bash script:
 ## Resources:
 
 This also provides instructions on installation of Ruby:
+
+https://gorails.com/setup/osx/10.14-mojave#ruby
 
 http://www.createdbypete.com/articles/ruby-on-rails-development-setup-for-mac-osx/
 
