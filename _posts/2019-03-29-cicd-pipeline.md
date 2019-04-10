@@ -151,7 +151,7 @@ Status: Image is up to date for robvanderleek/cicd-buzz:latest
 1. Verify the Docker image size:
 
    <pre><strong>docker images "${IMAGE}"   # 61.8MB
-IMAGE_ID=$(docker images --format="{{.Repository}} {{.ID}}" | grep "^$IMAGE " | cut -d' ' -f2)
+IMAGE_ID=$(docker images --format="&7B;&7B;.Repository}} &7B;&7B;.ID}}" | grep "^$IMAGE " | cut -d' ' -f2)
 echo "$IMAGE IMAGE_ID=$IMAGE_ID"
    </strong></pre>
 
