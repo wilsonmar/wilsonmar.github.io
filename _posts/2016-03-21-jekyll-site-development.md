@@ -67,9 +67,78 @@ brew install rbenv ruby-build
 Jana Bergant's <a target="_blank" href="https://www.udemy.com/static-website-generator-fast-secure-sites-blogs-with-jekyll/">
 Udemy course</a> uses a mac install Jekyll 3.3.0 at last viewing.
 
-   gem update --system -n /usr/local/bin
+   <pre><strong>gem update --system -n /usr/local/bin --no-document</strong></pre>
 
    `-n /usr/local/bin` ensures avoids "You don't have write permissions for the /usr/bin directory."
+
+   `--no-document` to avoid installing documentation (which can be accessed online anyway)
+
+   The response, at time of writing was:
+
+   <pre>
+Updating rubygems-update
+Fetching rubygems-update-3.0.3.gem
+Successfully installed rubygems-update-3.0.3
+Parsing documentation for rubygems-update-3.0.3
+Installing ri documentation for rubygems-update-3.0.3
+Installing darkfish documentation for rubygems-update-3.0.3
+Done installing documentation for rubygems-update after 36 seconds
+Parsing documentation for rubygems-update-3.0.3
+Done installing documentation for rubygems-update after 0 seconds
+Installing RubyGems 3.0.3
+Bundler 1.17.3 installed
+RubyGems 3.0.3 installed
+Regenerating binstubs
+Parsing documentation for rubygems-3.0.3
+Installing ri documentation for rubygems-3.0.3
+&nbsp;
+=== 3.0.2 / 2019-01-01
+&nbsp;
+Minor enhancements:
+&nbsp;
+* Use Bundler-1.17.3. Pull request #2556 by SHIBATA Hiroshi.
+* Fix document flag description. Pull request #2555 by Luis Sagastume.
+&nbsp;
+Bug fixes:
+&nbsp;
+* Fix tests when ruby --program-suffix is used without rubygems
+  --format-executable. Pull request #2549 by Jeremy Evans.
+* Fix Gem::Requirement equality comparison when ~> operator is used. Pull
+  request #2554 by Grey Baker.
+* Unset SOURCE_DATE_EPOCH in the test cases. Pull request #2558 by Sorah
+  Fukumori.
+* Restore SOURCE_DATE_EPOCH. Pull request #2560 by SHIBATA Hiroshi.
+&nbsp;
+=== 3.0.1 / 2018-12-23
+&nbsp;
+Bug fixes:
+&nbsp;
+* Ensure globbed files paths are expanded. Pull request #2536 by Tony Ta.
+* Dup the Dir.home string before passing it on. Pull request #2545 by
+  Charles Oliver Nutter.
+* Added permissions to installed files for non-owners. Pull request #2546
+  by SHIBATA Hiroshi.
+* Restore release task without hoe. Pull request #2547 by SHIBATA Hiroshi.
+&nbsp;
+&nbsp;
+------------------------------------------------------------------------------
+&nbsp;
+RubyGems installed the following executables:
+	/Users/wilsonmar/.rbenv/versions/2.6.1/bin/gem
+	/Users/wilsonmar/.rbenv/versions/2.6.1/bin/bundle
+&nbsp;
+Ruby Interactive (ri) documentation was installed. ri is kind of like man 
+pages for Ruby libraries. You may access it like this:
+  ri Classname
+  ri Classname.class_method
+  ri Classname#instance_method
+If you do not wish to install this documentation in the future, use the
+--no-document flag, or set it as the default in your ~/.gemrc file. See
+'gem help env' for details.
+&nbsp;
+RubyGems system software updated
+   </pre>
+
 
 ## Create a folder
 
@@ -85,7 +154,7 @@ In Terminal, from any folder,
    gem update --system
    </pre>
 
-   If you get this message:
+   If the latest version is not installed, you get a message like this:
 
    <pre>
 ERROR:  While executing gem ... (Errno::EPERM)
@@ -108,8 +177,7 @@ Done installing documentation for bundler after 4 seconds
 
    ### Install Jekyll (instead of Homebrew):
 
-   <pre>sudo gem install jekyll</strong>
-gem install jekyll --no-document
+   <pre><strong>gem install jekyll --no-document</strong></pre>
 
    The response:
 

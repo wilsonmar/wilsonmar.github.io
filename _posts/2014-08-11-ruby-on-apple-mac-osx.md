@@ -413,10 +413,7 @@ For pkg-config to find this software you may need to set:
    </pre>
 
 0. What versions of Ruby are available?
-
-   <pre><strong>
-   rbenv ???
-   </strong></pre>
+   See <a target="_blank" href="https://www.ruby-lang.org/en/downloads/releases/">https://www.ruby-lang.org/en/downloads/releases/</a>
 
 0. To upgrade Ruby using rbenv:
 
@@ -445,8 +442,7 @@ Installed ruby-2.6.1 to /Users/wilsonmar/.rbenv/versions/2.6.1
    The response I got:
 
    <pre>
-ruby 2.3.7p456 (2018-03-28 revision 63024) [universal.x86_64-darwin18]
-   </pre>
+ruby 2.6.1p33 (2019-01-30 revision 66950) [x86_64-darwin18]   </pre>
 
 
    ### Uninstall rbenv
