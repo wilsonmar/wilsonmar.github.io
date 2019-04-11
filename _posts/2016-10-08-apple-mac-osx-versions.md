@@ -112,33 +112,6 @@ comments: true
 Based on <a target="_blank" rel="amphtml" href="http://en.wikipedia.org/wiki/OS_X#Versions">
 http://en.wikipedia.org/wiki/OS_X#Versions</a>
 
-## Versioned Certifications
-
-Apple Certified Support Professional certifications are for specific versions:<br />
-<a target="_blank" href="
-https://training.apple.com/en/osx.html">
-https://training.apple.com/en/osx.html</a>
-
-<a target="_blank" href="http://certifications.apple.com/">
-http://certifications.apple.com</a>
-
-The two-hour exams are $65 each at
-Apple Certification Records System (ACRS) at 
-https://training.apple.com/acrs
-Pearson Vue
-
-<a target="_blank" href="http://www.peachpit.com/promotions/welcome-apple-customers-books-138516"> Apple Training Series books from Peachpit Press</a>
-to help you prepare for the exam are expensive ($100).
- 
-<a target="_blank" href="https://www.amazon.com/macOS-Support-Essentials-10-13-Troubleshooting/dp/0134854993/">macOS Support Essentials 10.13 Troubleshooting</a> 
-is praised by everyone.
-
-To become a certified Apple Certified Mac Technician (ACMT) 2017, first pass the <a target="_blank" href="https://support.apple.com/en-us/HT207709">Mac Service Certification Exam (MAC-17A)</a>, then the Apple Service Fundamentals Exam (SVC-17A).
-For MAC-17A, correctly answer 80% of 70 questions in 2 hours. But you can refer to Apple references and courses in <a target="_blank" href="https://atlaslms.apple.com/learning/user/#!">ATLAS</a>.
-
-<a target="_blank" href="https://training.apple.com/us/en/courses/Apple_Technician_Training/acmt_2017">Apple Certified Mac Technician 2017</a>
-is a four-day $2,800 course that enables participants to pass the Apple Service Fundamentals exam (SVC-17A) and become certified to troubleshoot and repair Mac computers. 
-
 
 <a id="MacVer"></a>
 
@@ -357,18 +330,44 @@ Want to add the Windows 10 wallpaper to your desktop?
 
 Within Terminal app:
 
-1. Edit the file:
+1. Edit the file using <a target="_blank" href="https://wilsonmar.github.io/text-editors">sudo or another text editor</a>:
 
    <pre><strong>
    sudo nano /etc/pam.d/sudo
    </strong></pre>
 
-2. Provide your password.
-3. Add the following line to the top:
+2. Add the following line to the top:
 
    <pre>auth sufficient pam_tid.so</pre>
 
-4. Save the change within Nano using Control+O and then exit nano with Control+X
+3. Save the change within Nano using Control+O and then exit nano with Control+X.
+4. Reboot.
+
+
+## Versioned Professional Certifications
+
+Apple Certified Support Professional certifications are for specific versions:<br />
+<a target="_blank" href="
+https://training.apple.com/en/osx.html">
+https://training.apple.com/en/osx.html</a>
+
+<a target="_blank" href="http://certifications.apple.com/">
+http://certifications.apple.com</a>
+
+The two-hour exams are $65 each at
+Apple Certification Records System (ACRS) at <a target="_blank" href="https://training.apple.com/acrs">https://training.apple.com/acrs (Pearson Vue)</a>.
+
+<a target="_blank" href="http://www.peachpit.com/promotions/welcome-apple-customers-books-138516"> 
+Apple Training Series books ($100) from Peachpit Press</a> help you prepare for the exam are expensive.
+ 
+<a target="_blank" href="https://www.amazon.com/macOS-Support-Essentials-10-13-Troubleshooting/dp/0134854993/">
+macOS Support Essentials 10.13 Troubleshooting</a> 
+is praised by everyone.
+
+To become a certified Apple Certified Mac Technician (ACMT) 2017, first pass the <a target="_blank" href="https://support.apple.com/en-us/HT207709">Mac Service Certification Exam (MAC-17A)</a>, then the Apple Service Fundamentals Exam (SVC-17A).
+For MAC-17A, correctly answer 80% of 70 questions in 2 hours. But you can refer to Apple references and courses in <a target="_blank" href="https://atlaslms.apple.com/learning/user/#!">ATLAS</a>.
+
+<a target="_blank" href="https://training.apple.com/us/en/courses/Apple_Technician_Training/acmt_2017">Apple Certified Mac Technician 2017</a> is a four-day $2,800 course that enables participants to pass the Apple Service Fundamentals exam (SVC-17A) and become certified to troubleshoot and repair Mac computers. 
 
 
 ## More on OSX
