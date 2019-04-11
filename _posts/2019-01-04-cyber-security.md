@@ -577,11 +577,11 @@ https://nvd.nist.gov/ncp/checklist/740
 
 In the US federal government, the Federal Information Security Management Act of 2002 (FISMA) is a law implented according to National Institute of Standards and Technology (NIST) Special Publication (SP) 800-53 <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">[pdf]</a>.
 
-In 2011 a "cloud first" policy was defined in the Federal Risk and Authorization Program (FedRAMP) <a target="_blank" href="https://cio.gov/wp-content/uploads/downloads/2012/09/Federal-Cloud-Computing-Strategy.pdf">[pdf]</a> where federal agencies make use of cloud service providers (CSPs) given authority to operate (ATO) after receiving system authorization from an independent security assessment conducted by a 3PAO (third party Assessor).
+In 2011 a "cloud first" policy was defined in the Federal Risk and Authorization Program (FedRAMP) <a target="_blank" href="https://cio.gov/wp-content/uploads/downloads/2012/09/Federal-Cloud-Computing-Strategy.pdf">[pdf]</a> where federal agencies make use of cloud service providers (CSPs) given authority to operate (ATO) after receiving system authorization from an independent security assessment conducted by a 3PAO (third-party Assessor). 
 
-A <strong>System  Security  Plan  (SSP)</strong> is required by the
+A <strong>System Security Plan (SSP)</strong> is required by the
 OMB Security Authorization of Information Systems in Cloud Computing
-<a target="_blank" href="https://cio.gov/wp-content/uploads/2012/09/fedrampmemo.pdf">[pdf]</a>
+<a target="_blank" href="https://cio.gov/wp-content/uploads/2012/09/fedrampmemo.pdf">[pdf]</a>. 
 
 <a target="_blank" href="https://www.coalfire.com/Documents/Whitepapers/FISMA-vs-FedRAMP_Controls-authorizations">Coalfire</a>
 came up with this count of controls:
@@ -590,7 +590,17 @@ came up with this count of controls:
 FedRAMP added 144 control to 728 in FISMA, for a total of 872 controls.
 
 
+## DISA SIST & SRG
+
+<a target="_blank" href="https://iase.disa.mil/stigs/Pages/index.aspx"> Security Technical Implementation Guides (STIGs)</a>
+<a target="_blank" href="https://en.wikipedia.org/wiki/Security_Technical_Implementation_Guide">[Wiki]</a> defines "lock down" configuration standards to minimize vulnerabilities to malicious attack of DOD IA and IA-enabled devices/systems, both <a target="_blank" href="https://iase.disa.mil/stigs/app-security/web-servers/Pages/index.aspx">Windows and Apache Unix</a>. <a target="_blank" href="
+https://iase.disa.mil/cloud_security/Pages/index.aspx">
+Cloud Computing Security Requirements Guide (CC SRG)</a> are also defined by DISA (Defense Intelligence Systems Administration).
+
+
 ## Other standards
+
+<a target="_blank" href="https://www.cvedetails.com/top-50-products.php?year=0">Top 50 Products By Total Number Of "Distinct" Vulnerabilities - for all time</a> <a target="_blank" href="https://www.stigviewer.com/stigs">include</a> product versions now obsolete.
 
 https://quizlet.com/222277746/devsecops-acronyms-and-buzzwords-flash-cards/
 
@@ -602,6 +612,7 @@ The Functions and Categories within the NIST Cybersecurity (Program) Framework (
 NIST Information Technology Laboratory</a> emails out <a target="_blank" href="https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3">bulletins about vulnerabilities</a>
 
 QUESTION: How does CIS relate to ITIL?
+
 
 ## Security Engineer
 
