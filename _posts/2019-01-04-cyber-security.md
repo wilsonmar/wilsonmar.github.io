@@ -585,8 +585,9 @@ OMB Security Authorization of Information Systems in Cloud Computing
 
 <a target="_blank" href="https://www.coalfire.com/Documents/Whitepapers/FISMA-vs-FedRAMP_Controls-authorizations">Coalfire</a>
 came up with this count of controls:
-
 ![cyber-fisma-fedramp-counts-683x586-55388](https://user-images.githubusercontent.com/300046/55948774-75f81180-5c0e-11e9-8596-1dd0194c6dbd.jpg)
+
+FedRAMP added 144 control to 728 in FISMA, for a total of 872 controls.
 
 
 ## Other standards
