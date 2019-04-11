@@ -597,6 +597,8 @@ The Functions and Categories within the NIST Cybersecurity (Program) Framework (
 
 ![cybersecurity-nist-342x275](https://user-images.githubusercontent.com/300046/55505643-c8cf3900-5610-11e9-8f79-3e7bec5cfe7c.jpg)
 
+<a target="_blank" href="https://www.nist.gov/itl">
+NIST Information Technology Laboratory</a> emails out <a target="_blank" href="https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3">bulletins about vulnerabilities</a>
 
 QUESTION: How does CIS relate to ITIL?
 
