@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Azure DevOps"
+title: "Azure DevOps (DevSecOps)"
 excerpt: "DevSecOps in Microsoft's cloud"
 tags: [devops, devsecops]
 image:
@@ -173,8 +173,10 @@ The courses are conducted as <a target="_blank" href="https://www.edx.org/micros
 
    <a name="[1]"></a>
 
-1. <a target="_blank" href="https://www.edx.org/course/devops-practices-and-principles-2">
-   Introduction to DevOps Practices</a> DEVOPS200.1x by Steven Borg
+### 1. <a target="_blank" href="https://www.edx.org/course/devops-practices-and-principles-2">
+   Introduction to DevOps Practices</a> 
+   
+   DEVOPS200.1x by Steven Borg
 
    Learning objectives:
     Define DevOps and describe its value, history, and building blocks.
@@ -206,8 +208,9 @@ The courses are conducted as <a target="_blank" href="https://www.edx.org/micros
 
    <a name="[2]"></a>
 
-2. <a target="_blank" href="https://www.edx.org/course/infrastructure-as-code-2">
-   Infrastructure as Code</a> DEVOPS200.2x
+### 2. <a target="_blank" href="https://www.edx.org/course/infrastructure-as-code-2">Infrastructure as Code</a> 
+
+   DEVOPS200.2x
 
    * Azure Automation
    * ARM templates
@@ -238,8 +241,9 @@ The courses are conducted as <a target="_blank" href="https://www.edx.org/micros
 
    <a name="[4]"></a>
 
-4. <a target="_blank" href="https://www.edx.org/course/configuration-management-for-containerized-delivery-2">
-   Configuration Management for Containerized Delivery</a> DEVOPS200.4x
+### 4. <a target="_blank" href="https://www.edx.org/course/configuration-management-for-containerized-delivery-2">  Configuration Management for Containerized Delivery</a> 
+
+   DEVOPS200.4x
 
    * Create container images
    * Manage multiple containers using tools like Docker
@@ -257,8 +261,9 @@ The courses are conducted as <a target="_blank" href="https://www.edx.org/micros
 
    <a name="[5]"></a>
 
-5. <a target="_blank" href="https://www.edx.org/course/devops-testing-2-0">
-   DevOps Testing</a> DEVOPS200.5x
+### 5. <a target="_blank" href="https://www.edx.org/course/devops-testing-2-0">DevOps Testing</a>
+
+DEVOPS200.5x
 
 Test Driven Development Studio: https://aka.ms/edx-devops200.5x-tdds Complete DevOps Solution: https://aka.ms/edx-devops200.5x-cdos
 
@@ -273,8 +278,9 @@ Test Driven Development Studio: https://aka.ms/edx-devops200.5x-tdds Complete De
 
    <a name="[6]"></a>
 
-6. <a target="_blank" href="https://www.edx.org/course/devops-for-databases-2">
-   DevOps for Databases</a> DEVOPS200.6x
+### 6. <a target="_blank" href="https://www.edx.org/course/devops-for-databases-2">DevOps for Databases</a> 
+
+   DEVOPS200.6x
 
    * Define DevOps
    * Identify the challenges of using databases that are separate from other software languages and platforms
@@ -288,8 +294,9 @@ Test Driven Development Studio: https://aka.ms/edx-devops200.5x-tdds Complete De
 
    <a name="[7]"></a>
 
-7. <a target="_blank" href="https://www.edx.org/course/application-monitoring-and-feedback-loops-2">
-   Application Monitoring and Feedback Loops</a>  DEVOPS200.7x by Tiago Pascoal
+### 7. <a target="_blank" href="https://www.edx.org/course/application-monitoring-and-feedback-loops-2">Application Monitoring and Feedback Loops</a>  
+
+   DEVOPS200.7x by Tiago Pascoal
 
    * Understand general application monitoring and feedback loop practices and principles.
    * The different kinds of feedback and how they are used in different stages of the value stream, and their benefits.
@@ -305,7 +312,7 @@ Test Driven Development Studio: https://aka.ms/edx-devops200.5x-tdds Complete De
 
    <a name="[8]"></a>
 
-8. There are two Application courses:
+### 8. There are two Application courses:
 
    <a target="_blank" href="https://www.edx.org/course/devops-for-mobile-apps-2">
    DevOps for Mobile Apps</a> DEVOPS200.8x
@@ -324,8 +331,9 @@ Test Driven Development Studio: https://aka.ms/edx-devops200.5x-tdds Complete De
 
    <a name="[9]"></a>
 
-9. <a target="_blank" href="https://www.edx.org/course/microsoft-professional-capstone-devops-2">
-   Microsoft Professional Capstone : DevOps</a> DEVOPS200.10x  
+### 9. <a target="_blank" href="https://www.edx.org/course/microsoft-professional-capstone-devops-2">Microsoft Professional Capstone : DevOps</a> 
+
+DEVOPS200.10x  
 
    * Automating Infrastructure using Azure Resource Manager (ARM) Templates
    * Implementing Continuous Integration solutions
