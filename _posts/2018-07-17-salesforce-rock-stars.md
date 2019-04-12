@@ -486,6 +486,11 @@ Shyam Nair, Salesforce Developer from Bengaluru, India:
    * <a target="_blank" href="https://itscloudyhere.blog/">itscloudyhere.blog</a>
    since Jan 2017 
 
+<a target="_blank" href="https://www.linkedin.com/in/imshreysharma/">Shrey Sharma</a> from Jaipur, the youngest MVP.
+  * <a target="_blank" href="https://www.youtube.com/channel/UCTzF0VQiCXsZ_41fjVuX7UA">SalesforceHulk on YouTube</a>
+  since Jan 17, 2017.
+  * <a target="_blank" href="https://shreysharma.com/">shreysharma.com</a>
+  
 <a target="_blank" href="https://www.linkedin.com/in/stevemolis/">Steve Molis</a> of Wakefield, Massachusetts
    * <a target="_blank" href="https://success.salesforce.com/ProfileView?u=0053000000235ByAAI">The one with the most answers</a> among <a target="_blank" href="https://appexchange.salesforce.com/appxstore?type=Developer">13131 people on Salesforce's Developer Marketplace</a>.
    <em>So he kinda earned the right to be a self-deprecating comedian.</em>
@@ -746,3 +751,4 @@ Also interested in generation of test code, Einstein Machine Learning AI, IoT, D
 This is one of a series about Salesforce
 
 {% include salesforce_links.html %}
+

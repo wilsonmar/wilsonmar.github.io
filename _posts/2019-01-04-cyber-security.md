@@ -593,9 +593,15 @@ FedRAMP added 144 control to 728 in FISMA, for a total of 872 controls.
 ## DISA SIST & SRG
 
 <a target="_blank" href="https://iase.disa.mil/stigs/Pages/index.aspx"> Security Technical Implementation Guides (STIGs)</a>
-<a target="_blank" href="https://en.wikipedia.org/wiki/Security_Technical_Implementation_Guide">[Wiki]</a> defines "lock down" configuration standards to minimize vulnerabilities to malicious attack of DOD IA and IA-enabled devices/systems, both <a target="_blank" href="https://iase.disa.mil/stigs/app-security/web-servers/Pages/index.aspx">Windows and Apache Unix</a>. <a target="_blank" href="
+<a target="_blank" href="https://en.wikipedia.org/wiki/Security_Technical_Implementation_Guide">[Wiki]</a> defines (over 425) <strong>"lock down" configuration settings</strong> to minimize vulnerabilities to malicious attack of DOD IA (Information Assurance) and IA-enabled devices/systems, both <a target="_blank" href="https://iase.disa.mil/stigs/app-security/web-servers/Pages/index.aspx">Windows and Apache Unix</a>. <a target="_blank" href="
 https://iase.disa.mil/cloud_security/Pages/index.aspx">
-Cloud Computing Security Requirements Guide (CC SRG)</a> are also defined by DISA (Defense Intelligence Systems Administration).
+Cloud Computing Security Requirements Guide (CC SRG)</a> are also defined by DISA (Defense Information Systems Agency) which provides a Viewer to scan for them.
+
+<a target="_blank" href="https://csrc.nist.gov/Projects/scap-validation-program">SCAP (ecurity Content Automation Protocol)</a> <a target="_blank" href="https://en.wikipedia.org/wiki/Security_Content_Automation_Protocol">[Wikipedia]</a> checklists enable automated vulnerability management, measurement, and policy compliance evaluation of systems deployed in an organization.
+See the <a target="_blank" href="https://www.youtube.com/watch?v=-h_lj5sWo4A">2015 viewer video</a>.
+
+See https://www.open-scap.org/
+for tools.
 
 
 ## Other standards

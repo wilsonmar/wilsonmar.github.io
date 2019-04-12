@@ -334,7 +334,9 @@ This table of availability SLAs and outage limits:
 </tbody>
 </table>
 
-BTW "99.95%" is <a target="_blank" href="https://github.com/enterprise">GitHub's SLA for Enterprise subscribers</a>
+* 99.95% is <a target="_blank" href="https://github.com/enterprise">GitHub's SLA for Enterprise subscribers</a>
+* 99.90% is <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/devops/on-premises/">Azure's SLA</a>
+
 
 ## Load Testing
 
