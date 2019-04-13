@@ -48,6 +48,7 @@ The sequence of product usage depends on the hosting technology:
 <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/cicd-for-azure-vms/">CI/CD for Azure VMs</a>
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/56077081-09f3e580-5d95-11e9-9093-0a0c8af48149.png"><img alt="azure-devops-ref-arch-cicd-avm-1176x746.png" width="1176" src="https://user-images.githubusercontent.com/300046/56077081-09f3e580-5d95-11e9-9093-0a0c8af48149.png"></a>
+<em>Click on diagram for full-screen pop-up</em>
 
    1. Commit application code (in Visual Studio).
    2. Commit application code and Azure Resource Manager template into Azure Repos.
@@ -81,6 +82,10 @@ The Azure DevOps web page
 
 Notice the URL is "https://<em>YourOrganization</em>.visualstudio.com".
 
+1. Create your organization with a personal Microsoft account or a work or school accountdocs.microsoft.com
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=vsts">Quick Start: Create an Azure DevOps organization</a>
+
    HISTORY: In Sept 2018 these were repackaged as an upgrade of Visual Studio Online (VSO) which include capabilities in Visual Studio Team Services (VSTS) that began as a performance testing server and Team Foundation Server (TFS), which is now called "Visual Studio Server".
 
 1. Click on your icon at the upper-right corner for the account menu.
@@ -88,6 +93,10 @@ Notice the URL is "https://<em>YourOrganization</em>.visualstudio.com".
    <img alt="azure-devops-acct-menu-242x382-7242.jpg" width="242" src="https://user-images.githubusercontent.com/300046/56077392-edf24300-5d98-11e9-8dc7-f8d613510abe.jpg">
 
 1. Configure profile, Security, Usage, Notification settings, Theme, etc.
+
+   Find what permissions you or a team member have, including project-level, collection-level, and object-level…docs.microsoft.com in 
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/view-permissions?view=azure-devops">Quick Start: View permissions for yourself or others - Azure DevOps & TFS</a>
+
 
 1. Click on "Organization Settings" at the lower-left corner for the Organizations menu.
 
@@ -97,50 +106,34 @@ Notice the URL is "https://<em>YourOrganization</em>.visualstudio.com".
 
    <img alt="azure-devops-org-menu-241x770-16780.jpg" width="241" src="https://user-images.githubusercontent.com/300046/56077361-81774400-5d98-11e9-95b5-bfc434b237ce.jpg">
 
+   Learn how to structure a project, manage users, and more to support your software development teams in Azure DevOpsdocs.microsoft.com:
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/project-admin-tutorial?view=vsts">Quick Start: Get started as a project admin or organization owner in Azure DevOps</a>
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=vsts">
-Quick Start: Create an Azure DevOps organization</a>
-Create your organization with a personal Microsoft account or a work or school accountdocs.microsoft.com
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/sign-up-invite-teammates?view=vsts">Sign up for Azure DevOps and invite teammates - Azure DevOps</a> Quickstart guide to signing up and inviting others to join a project in Azure DevOpsdocs.microsoft.com
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/project-admin-tutorial?view=vsts">
-Quick Start: Get started as a project admin or organization owner in Azure DevOps</a>
-Learn how to structure a project, manage users, and more to support your software development teams in Azure DevOpsdocs.microsoft.com
+1. Find and install free extensions for Azure DevOps Services from the Visual Studio Marketplacedocs.microsoft.com
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/sign-up-invite-teammates?view=vsts">
-Sign up for Azure DevOps and invite teammates - Azure DevOps</a>
-Quickstart guide to signing up and inviting others to join a project in Azure DevOpsdocs.microsoft.com
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/marketplace/install-extension?view=azure-devops">Quick Start: Install free extensions for Azure DevOps Services</a> 
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/marketplace/install-extension?view=azure-devops">
-Quick Start: Install free extensions for Azure DevOps Services</a>
-Find and install free extensions for Azure DevOps Services from the Visual Studio Marketplacedocs.microsoft.com
+1. Quickly access artifacts by favoriting them in Azure DevOps Services & Team Foundation 
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/view-permissions?view=azure-devops">
-Quick Start: View permissions for yourself or others - Azure DevOps & TFS</a>
-How to find what permissions you or a team member have, including project-level, collection-level, and object-level…docs.microsoft.com
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/project/navigation/set-favorites?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst">Set personal or team favorites - Azure DevOps Services & TFS</a>
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/project/navigation/set-favorites?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst">
-Set personal or team favorites - Azure DevOps Services & TFS</a>
-Quickly access artifacts by favoriting them in Azure DevOps Services & Team Foundation Serverdocs.microsoft.com
+1. Track updates made to a work item or pull request by following it when using Azure Boards or Team Foundation Serverdocs.microsoft.com
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/boards/work-items/follow-work-items?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst">
-Follow work or pull requests - Azure Boards and TFS</a>
-Track updates made to a work item or pull request by following it when using Azure Boards or Team Foundation Serverdocs.microsoft.com
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/boards/work-items/follow-work-items?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst">Follow work or pull requests - Azure Boards and TFS</a>
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/get-started-stakeholder?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst">
-Get started with Stakeholder access - Azure DevOps & TFS</a>
-Add & update work items, approve releases, view work tracking progress with Stakeholder accessdocs.microsoft.com
+1. Add custom security groups, change permissions for groups or individuals tutorialdocs.microsoft.com
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/change-individual-permissions?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst">
-Change individual or group permissions - Azure DevOps & TFS</a>
-Add custom security groups, change permissions for groups or individuals tutorialdocs.microsoft.com
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/change-individual-permissions?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst">Change individual or group permissions - Azure DevOps & TFS</a>
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/restrict-access?toc=/azure/devops/user-guide/toc.json&bc=/azure/devops/user-guide/breadcrumb/toc.json&view=vsts?WT.mc_id=medium-blog-abornst">
-Grant or restrict access to select features - Azure DevOps & TFS</a>
-How to set permissions to grant or restrict access to select build, version control, or work tracking functionsdocs.microsoft.com
+1. Set permissions to grant or restrict access to select build, version control, or work tracking functionsdocs.microsoft.com
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/projects/connect-to-projects?toc=%2fazure%2fdevops%2fuser-guide%2ftoc.json&%3bbc=%2fazure%2fdevops%2fuser-guide%2fbreadcrumb%2ftoc.json&view=vsts?WT.mc_id=medium-blog-abornst">
-Connect to a project from a web browser or supported client in Azure DevOps - Azure DevOps & TFS</a>
-Learn how to connect a client to the cloud service Azure DevOps Services or on-premises Team Foundation Server (TFS)docs.microsoft.com
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/restrict-access?toc=/azure/devops/user-guide/toc.json&bc=/azure/devops/user-guide/breadcrumb/toc.json&view=vsts?WT.mc_id=medium-blog-abornst">Grant or restrict access to select features - Azure DevOps & TFS</a>
+
+1. Connect a client to the cloud service Azure DevOps Services or on-premises Team Foundation Server (TFS)docs.microsoft.com
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/projects/connect-to-projects?toc=%2fazure%2fdevops%2fuser-guide%2ftoc.json&%3bbc=%2fazure%2fdevops%2fuser-guide%2fbreadcrumb%2ftoc.json&view=vsts?WT.mc_id=medium-blog-abornst">Connect to a project from a web browser or supported client in Azure DevOps - Azure DevOps & TFS</a>
 
 See http://stories.visualstudio.com/devops/
 
@@ -166,6 +159,10 @@ Plan and track work in your new team project on Azure Boardsdocs.microsoft.com
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/boards/get-started/index-agile?view=azure-devops">
 Start using Azure Boards (Agile process)</a>
 
+1. Add & update work items, approve releases, view work tracking progress with Stakeholder accessdocs.microsoft.com
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/get-started-stakeholder?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst">Get started with Stakeholder access - Azure DevOps & TFS</a>
+
 
 <a name="AzureRepos"></a>
 
@@ -175,10 +172,17 @@ Start using Azure Boards (Agile process)</a>
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/repos/">https://azure.microsoft.com/en-us/services/devops/repos</a> is the product's website.
 
-Git version control
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/code-with-git?view=azure-devops">Quick Start: Code with Git in Azure DevOps - Azure DevOps Services & TFS</a> - Learn how to share code in a Git repo and new projectdocs.microsoft.com
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/code-with-git?view=azure-devops">Quick Start: Code with Git in Azure DevOps - Azure DevOps Services & TFS</a>
-Learn how to share code in a Git repo and new projectdocs.microsoft.com
+
+### GitHub Actions
+
+More than just hooks.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=TovCs7DiWCQ">VIDEO: Using GitHub Actions to Deploy to Azure</a> Mar 28, 2019
+
+See <a target="_blank" href="https://github.com/azure/github-actions">https://github.com/azure/github-actions</a>
+
 
 <a name="AzureArtifacts"></a>
 
@@ -224,7 +228,7 @@ Azure Pipelines is free up to 5 people. Each team get 1 hosted job with 1,800 mi
 
 ## Azure DevTest Labs
 
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/devtest-lab/">https://azure.microsoft.com/en-us/services/devtest-lab"></a> is the product's website.
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/devtest-lab/">https://azure.microsoft.com/en-us/services/devtest-lab</a> is the product's website.
 
    * Quickly provision development and test environments
    * Minimize waste with <strong>quotas and policies</strong>
@@ -607,6 +611,10 @@ Alternately, include parameters inline string:
 
 https://docs.microsoft.com/en-us/azure/active-directory/role-based-access-control-configure
 
+## Key Vault
+
+https://docs.microsoft.com/en-us/azure/key-vault/
+
 
 
 <a name="AKS"></a>
@@ -698,8 +706,6 @@ Its axis:
     Event-driven orchestration
 See https://www.microsoft.com/developerblog/2017/05/09/provision-configure-infrastructure-azure-using-saltstack/
 
-https://docs.microsoft.com/en-us/azure/key-vault/
-
 https://devops.com/devops-help-hinder-compliance/
 https://www.youtube.com/watch?v=Bo_84yKsxuc
 
@@ -718,16 +724,6 @@ Azure DevOps Launch Sep 10, 2018 (6,000+ subscribers)
 
 https://www.telerik.com/blogs/microsoft-azure-devops-what-you-need-to-know
 
-
-## GitHub Actions
-
-More than just hooks.
-
-https://www.youtube.com/watch?v=TovCs7DiWCQ
-Using GitHub Actions to Deploy to Azure
-Mar 28, 2019
-
-https://github.com/azure/github-actions
 
 ## Rock Stars
 
