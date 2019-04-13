@@ -619,6 +619,21 @@ NIST Information Technology Laboratory</a> emails out <a target="_blank" href="h
 
 QUESTION: How does CIS relate to ITIL?
 
+Criminal Justice Information Services (CJIS) Security Policy compliance for any US state or local agency that wants to access the FBI’s CJIS database.
+
+As of May 25, 2018, a European privacy law — GDPR (General Data Protection Regulation — imposes new rules on companies, government agencies, non-profits, and other organizations that offer goods and services to people in the European Union (EU), or that collect and analyze data tied to EU residents. But the GDPR applies no matter where you are located.
+
+UK Government G-Cloud. The UK Government G-Cloud is a cloud computing certification for services used by government entities in the United Kingdom.
+
+Health Insurance Portability and Accountability Act (HIPAA) is a US federal law that regulates patient Protected Health Information (PHI). A Business Associate Agreement (BAA) stipulates adherence to security and privacy provisions in HIPAA and the Health Information Technology for Economic and Clinical Health Act (HITECH) Act. 
+
+International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) 27018 code of practice covers the processing of personal information by cloud service providers.
+
+MTCS (Multi-Tier Cloud Security) Singapore 584:2013 Certification covers  Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS).
+
+Service Organization Controls (SOC) 1, 2, and 3 report is a framework by independent third-party auditors covering controls for data security, availability, processing integrity, and confidentiality as applicable to in-scope trust principles for each service.
+
+National Institute of Standards and Technology (NIST) Cybersecurity Framework (CSF) is a voluntary Framework that consists of standards, guidelines, and best practices to manage cybersecurity-related risks. Through a validated assessment performed by the Health Information Trust Alliance (HITRUST), a leading security and privacy standards development and accreditation organization, Office 365 is certified to the objectives specified in the NIST CSF.
 
 ## Security Engineer
 
