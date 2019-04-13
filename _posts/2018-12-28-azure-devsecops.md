@@ -38,10 +38,9 @@ The <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/relea
    * Administration
    * Notifications
 
-
 <hr />
 
-### Worlflows (Reference Architectures)
+### Workflows (Reference Architectures)
 
 The sequence of product usage depends on the hosting technology:
 
@@ -60,23 +59,27 @@ The sequence of product usage depends on the hosting technology:
    8. Azure Application Insights collects and analyzes health, performance, and usage data.
    9. Engineer reviews health, performance, and usage information.
    10. Update backlog item in Azure DevOps Boards.
+   <br /><br />
 
-<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/cicd-for-containers/">CI/CD for Containers</a>
+Others:   
 
-<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/azure-devops-continuous-integration-and-continuous-deployment-for-azure-web-apps/">CI/CD for Azure Web Apps</a>
-
-<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/java-cicd-using-jenkins-and-azure-web-apps/">Java CI/CD using Jenkins and Azure Web Apps</a>
-
-<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/immutable-infrastructure-cicd-using-jenkins-and-terraform-on-azure-virtual-architecture-overview/">Immutable Infrastructure CI/CD using Jenkins and Terraform</a>
-
-<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/dev-test-image-factory/">DevTest image factory</a>
-
+* <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/cicd-for-containers/">CI/CD for Containers</a>
+* <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/azure-devops-continuous-integration-and-continuous-deployment-for-azure-web-apps/">CI/CD for Azure Web Apps</a>
+* <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/java-cicd-using-jenkins-and-azure-web-apps/">Java CI/CD using Jenkins and Azure Web Apps</a>
+* <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/immutable-infrastructure-cicd-using-jenkins-and-terraform-on-azure-virtual-architecture-overview/">Immutable Infrastructure CI/CD using Jenkins and Terraform</a>
+* <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/dev-test-image-factory/">DevTest image factory</a>
 
 <hr />
 
 <a name="QuickStart"></a>
 
-## Quick Start (IAM)
+## Azure DevOps Console Quick Start
+
+After much work, here I present the steps culled from among the dizzying volume of web pages and videos about this topic.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/?view=azure-devops">DOCS:Start using Azure DevOps</a>
+
+
 
 The Azure DevOps web page 
 
@@ -114,10 +117,6 @@ Notice the URL is "https://<em>YourOrganization</em>.visualstudio.com".
 1. Find and install free extensions for Azure DevOps Services from the Visual Studio Marketplacedocs.microsoft.com
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/marketplace/install-extension?view=azure-devops">Quick Start: Install free extensions for Azure DevOps Services</a> 
-
-1. Quickly access artifacts by favoriting them in Azure DevOps Services & Team Foundation 
-
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/project/navigation/set-favorites?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst">Set personal or team favorites - Azure DevOps Services & TFS</a>
 
 1. Track updates made to a work item or pull request by following it when using Azure Boards or Team Foundation Serverdocs.microsoft.com
 
@@ -192,12 +191,16 @@ See <a target="_blank" href="https://github.com/azure/github-actions">https://gi
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/artifacts/">https://azure.microsoft.com/en-us/services/devops/artifacts</a> is the product's website.
 
-to host private Nuget (Windows), npm (Node), Maven (Java), Python packages with builds.
+To host private Nuget (Windows), npm (Node), Maven (Java), Python packages with builds.
 
 Package management such as Artifactory.
 1. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/artifacts/?view=azure-devops">View documentation</a>
 
 1. <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ms.feed">Get from the Marketplace</a>
+
+1. Quickly access artifacts by favoriting them in Azure DevOps Services & Team Foundation 
+
+   DOCS: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/project/navigation/set-favorites?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json">Set personal or team favorites</a>
 
 
 <a name="AzureTestPlans"></a>
@@ -217,6 +220,9 @@ Package management such as Artifactory.
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/pipelines/">https://azure.microsoft.com/en-us/services/devops/pipelines</a> is the product's website.
 
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/pipelines/index?view=azure-devops">User Guide</a>
+
+Forrester has Microsoft among the leaders in its <a target="_blank" href="https://azure.microsoft.com/en-us/resources/continuous-delivery-and-release-automation/">2018 Continuous Delivery And Release Automation" market assesement</a> (behind Electric Cloud, IBM, Xebia, and CA).
 
 https://www.youtube.com/watch?v=yr6PJxfACNc
 
@@ -252,7 +258,7 @@ The course catalog says they cover 6 skills/technologies:
    1. VSTS
    2. Visual Studio
    3. Azure Container Service (ACS)
-   4. <a href="#ApplicationInsights">Application Insights</a>
+   4. Application Insights
    5. Selenium
    6. Operations Management Suite (OMS)
    <br /><br />
@@ -449,7 +455,7 @@ Test Driven Development Studio: https://aka.ms/edx-devops200.5x-tdds Complete De
    * How to create and implement Unit tests and the elements of a good test 
    * How to create basic API tests (or Integration tests)
    * Performance testing and how to create a performance test using Visual Studio and Visual Studio team services (VSTS)
-   * How to analyze performance test results using <a href="#ApplicationInsights">Application Insights</a>
+   * How to analyze performance test results using Application Insights</a>
    * Exploratory testing in the context of visual Studio and Microsoft Test Manager
    <br /><br />
 
@@ -684,11 +690,6 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-
 
 https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-create-complete-vm
     Create a complete Linux virtual machine infrastructure in Azure with Terraform
-
-
-<a name="ApplicationInsights"></a>
-
-## Application Insights
 
 
 

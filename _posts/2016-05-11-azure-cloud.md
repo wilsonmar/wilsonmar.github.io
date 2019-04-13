@@ -20,7 +20,7 @@ but with less confusing grandiose marketing generalizations.
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/overview/cloud-computing-dictionary/">Cloud Computing Terms Dictionary</a>
 
-The big picture of Azure services:
+The <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/welcome-to-azure/3-tour-of-azure-services">big picture of Azure services</a>:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/56084247-94683380-5ded-11e9-9ff2-c246e3e9c530.jpg"><img alt="azure-big-picture-1923x1083-160564.jpg" src="https://user-images.githubusercontent.com/300046/56084247-94683380-5ded-11e9-9ff2-c246e3e9c530.jpg">
 <em>Click diagram for full-frame pop-up</em></a>
 
@@ -80,17 +80,13 @@ components for "High Control":
 
 1. Select your role:
 
-   * (Azure) Developer
-   * (Azure) Administrator
-   * (Azure) Solution Architect
-   <br /><br />
-
-   Other roles:
-
-   * AI Engineer
    * Business User
    * Business Analyst
+   * (Azure) Administrator
+   * (Azure) Developer
+   * (Azure) Solution Architect
    * Data Engineer
+   * AI Engineer
    <br /><br />
 
    MY OPINION: I think job roles should be multi-select checkboxes.
@@ -124,11 +120,30 @@ Module <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/w
 
 * Sign in
 * Create a resource group
-* Create a virtual machine
+
+* <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/welcome-to-azure/4-create-a-vm?pivots=linux-cloud">Create a virtual machine</a> (for 60 minutes). PROTIP: Use Firefox browser. Don't use Brave browser.
+
+   ![azure-cloud-shell-364x199-11637](https://user-images.githubusercontent.com/300046/56084383-9d5a0480-5def-11e9-98e2-ba1ef5f329ea.jpg)
+
+   PROTIP: naming conventions:
+
+   * Size
+   * Region
+   * Network
+   * Resource groups
+   <br /><br />
+
 * Get VM information with queries
 * Set environment variables from CLI output
 * Creating a new VM on the existing subnet
 * Cleanup
+
+<a target="_blank" href="https://docs.microsoft.com/learn/paths/store-data-in-azure/">
+Module: Store Data in Azure</a>
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/deploy-a-website-with-azure-app-service/">Module: Deploy a website to Azure with Azure App Service</a>
+
+<a target="_blank" href="https://docs.microsoft.com/learn/paths/administer-containers-in-azure/">Module: Administer containers in Azure</a>
 
 
 <a name="MgmtCerts"></a>
@@ -155,6 +170,8 @@ An Affinity Group is defined to create a virtual network to define the data cent
 All services within an affinity group are located in the same data center.
 
 Azure groups services using Affinity Groups to optimize performance.
+
+WARNING: Affinity groups in Azure is a higher-level concept of data centers than the facility of the same name within AWS, which refers to affinity between servers on the same subnet.
 
 
 <a name="ARM-signup"></a>
