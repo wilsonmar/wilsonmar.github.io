@@ -18,6 +18,11 @@ comments: true
 This article contains higher-level technical details on Microsoft Azure,
 but with less confusing grandiose marketing generalizations.
 
+<a target="_blank" href="https://azure.microsoft.com/en-us/overview/cloud-computing-dictionary/">Cloud Computing Terms Dictionary</a>
+
+The big picture of Azure services:
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/56084247-94683380-5ded-11e9-9ff2-c246e3e9c530.jpg"><img alt="azure-big-picture-1923x1083-160564.jpg" src="https://user-images.githubusercontent.com/300046/56084247-94683380-5ded-11e9-9ff2-c246e3e9c530.jpg">
+<em>Click diagram for full-frame pop-up</em></a>
 
 ## Architectural components #
 
@@ -25,7 +30,15 @@ but with less confusing grandiose marketing generalizations.
 layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/16688245/6898a7a0-44da-11e6-9245-ee5e1ff729f9.jpg">
 </amp-img>
 
-Developers interact with these platforms as a service (PaaS) for "Rapid Development":
+<strong>End-Users</strong> buy SaaS (Software as a Service) online with only an internet browser (and a credit card):
+
+   * Office 365
+   * Skype
+   * Dynamics CRM
+   * Salesforce
+   * Lucid Charts to draw diagrams
+
+<strong>Developers</strong> interact with a platforms as a service (PaaS) for "Rapid Development":
 
    * <a href="#ServiceFabric">Service Fabric</a> apps
    * Power (BI) apps
@@ -35,7 +48,7 @@ Developers interact with these platforms as a service (PaaS) for "Rapid Developm
    * Media Services
    * Stream Analytics
 
-Operations interact with these Infrastructure as a service (IaaS) 
+<strong>Operations people</strong> interact with Infrastructure as a service (IaaS) 
 components for "High Control":
 
    * Azure Service Fabric
@@ -49,6 +62,73 @@ components for "High Control":
    * Kubernetes 
    * Apprenda
    * Jelastic
+
+## Learning
+
+1. Get an account into "Microsoft Learn", which provides FREE temporary cloud instances for hands-on learning. This one feature is getting many to invest their time on Azure versus AWS, Google, etc.
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">https://docs.microsoft.com/en-us/learn/azure/</a>
+
+   Notice that the product categories are: .NET, Azure, Business Applications, Dynamics 365, Power Platfor, Visual Studio, and Windows.
+
+   After registering, use this URL:
+
+   https://techprofile.microsoft.com/en-us/<em>name</em>
+
+
+   ### Job Roles
+
+1. Select your role:
+
+   * (Azure) Developer
+   * (Azure) Administrator
+   * (Azure) Solution Architect
+   <br /><br />
+
+   Other roles:
+
+   * AI Engineer
+   * Business User
+   * Business Analyst
+   * Data Engineer
+   <br /><br />
+
+   MY OPINION: I think job roles should be multi-select checkboxes.
+   This segregation also adds to duplicating material.
+
+1. PROTIP: Take this sequence:
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/">Azure fundamentals</a> learning path of 12 modules prepares you to pass the <a target="_blank" href="https://www.microsoft.com/learning/exam-AZ-900.aspx">$99 AZ900 Microsoft Azure Fundamentals Exam</a>.
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/learn-business-value-of-azure/">Learn the business value of Microsoft Azure</a> learning path
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/architect-great-solutions-in-azure/">Pillars of a great Azure architecture</a>
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/cloud-operating-model/">Overview of the Microsoft Cloud Operating Model</a>
+
+
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/architect-great-solutions-in-azure/">Architect great solutions in Azure</a>
+   consists of 5 modules, similar to the "Well Architected" series from AWS:
+
+   * Pillars
+   * Design for security
+   * Design for performance and scalability
+   * Design for efficiency and operations
+   * Design for availability and recoverability
+   <br /><br />
+
+* <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-an-azure-account/">Create an Azure Account</a>
+
+Module <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/welcome-to-azure/">Core Cloud Services - Introduction to Azure</a> to create a virtual machine and add a web server.
+
+* Sign in
+* Create a resource group
+* Create a virtual machine
+* Get VM information with queries
+* Set environment variables from CLI output
+* Creating a new VM on the existing subnet
+* Cleanup
 
 
 <a name="MgmtCerts"></a>
