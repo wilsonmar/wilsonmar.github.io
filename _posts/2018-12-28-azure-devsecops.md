@@ -44,6 +44,23 @@ The <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/relea
 
 ## Quick Start (IAM)
 
+The Azure DevOps web page 
+
+Notice the URL is "https://<em>YourOrganization</em>.visualstudio.com".
+
+   HISTORY: In Sept 2018 these were repackaged as an upgrade of Visual Studio Online (VSO) which include capabilities in Visual Studio Team Services (VSTS) that began as a performance testing server and Team Foundation Server (TFS), which is now called "Visual Studio Server".
+
+<img align="right" alt="azure-devops-acct-menu-242x382-7242.jpg" width="242" src="https://user-images.githubusercontent.com/300046/56077392-edf24300-5d98-11e9-8dc7-f8d613510abe.jpg">
+1. Click on your icon at the upper-right corner for the account menu.
+
+<img align="right" alt="azure-devops-dashboard-ll-184x208-4860.jpg" width="184" src="https://user-images.githubusercontent.com/300046/56077477-e41d0f80-5d99-11e9-929b-d4310fe1ef06.jpg">
+1. Click on "Organization Settings" at the lower-left corner for the Organizations menu.
+
+<img alt="azure-devops-org-menu-241x770-16780.jpg" width="241" src="https://user-images.githubusercontent.com/300046/56077361-81774400-5d98-11e9-95b5-bfc434b237ce.jpg">
+
+
+
+
 https://docs.microsoft.com/en-us/azure/devops/project/navigation/set-favorites?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst
 Set personal or team favorites - Azure DevOps Services & TFS
 Quickly access artifacts by favoriting them in Azure DevOps Services & Team Foundation Serverdocs.microsoft.com
@@ -70,9 +87,6 @@ Learn how to connect a client to the cloud service Azure DevOps Services or on-p
 
 
 ## Features Timeline
-
-HISTORY: In Sept 2018 these were repackaged as an upgrade of Visual Studio Online (VSO) which include capabilities in Visual Studio Team Services (VSTS) that began as a performance testing server and Team Foundation Server (TFS).
-
 
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=vsts">
