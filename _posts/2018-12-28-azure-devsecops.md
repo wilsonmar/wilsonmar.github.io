@@ -29,7 +29,7 @@ comments: true
 
    5. <a href="#AzurePipelines"><strong>Azure Pipelines</strong></a> (like Jenkins, AWS CodeDeploy, etc.) for CI/CD automation 
 
-   6. <a href="#AzureDevTestLabs">Azure DevTest Labs</strong></a> (like Sauce Labs) provides self-service creation of pre-provisioned sandbox environments from private custom images in VHD.
+   6. <a href="#AzureDevTestLabs"><strong>Azure DevTest Labs</strong></a> (like Sauce Labs) provides self-service creation of pre-provisioned sandbox environments from private custom images in VHD.
 
 Each product above has its own pricing.
 
@@ -50,13 +50,19 @@ Notice the URL is "https://<em>YourOrganization</em>.visualstudio.com".
 
    HISTORY: In Sept 2018 these were repackaged as an upgrade of Visual Studio Online (VSO) which include capabilities in Visual Studio Team Services (VSTS) that began as a performance testing server and Team Foundation Server (TFS), which is now called "Visual Studio Server".
 
-<img align="right" alt="azure-devops-acct-menu-242x382-7242.jpg" width="242" src="https://user-images.githubusercontent.com/300046/56077392-edf24300-5d98-11e9-8dc7-f8d613510abe.jpg">
 1. Click on your icon at the upper-right corner for the account menu.
 
-<img align="right" alt="azure-devops-dashboard-ll-184x208-4860.jpg" width="184" src="https://user-images.githubusercontent.com/300046/56077477-e41d0f80-5d99-11e9-929b-d4310fe1ef06.jpg">
+   <img alt="azure-devops-acct-menu-242x382-7242.jpg" width="242" src="https://user-images.githubusercontent.com/300046/56077392-edf24300-5d98-11e9-8dc7-f8d613510abe.jpg">
+
+1. Configure profile, Security, Usage, Notification settings, Theme, etc.
+
 1. Click on "Organization Settings" at the lower-left corner for the Organizations menu.
 
-<img alt="azure-devops-org-menu-241x770-16780.jpg" width="241" src="https://user-images.githubusercontent.com/300046/56077361-81774400-5d98-11e9-95b5-bfc434b237ce.jpg">
+   <img alt="azure-devops-dashboard-ll-184x208-4860.jpg" width="184" src="https://user-images.githubusercontent.com/300046/56077477-e41d0f80-5d99-11e9-929b-d4310fe1ef06.jpg">
+
+1. Configure the organization:
+
+   <img alt="azure-devops-org-menu-241x770-16780.jpg" width="241" src="https://user-images.githubusercontent.com/300046/56077361-81774400-5d98-11e9-95b5-bfc434b237ce.jpg">
 
 
 
@@ -137,6 +143,8 @@ Start using Azure Boards (Agile process)</a>
 
 ## Azure Repos
 
+<img align="right" src="../images/azure-devops-repos-96.svg">
+
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/repos/">https://azure.microsoft.com/en-us/services/devops/repos</a> is the product's website.
 
 Git version control
@@ -147,6 +155,8 @@ Learn how to share code in a Git repo and new projectdocs.microsoft.com
 <a name="AzureArtifacts"></a>
 
 ## Azure Artifacts
+
+<img align="right" src="../images/azure-devops-artifacts-96.svg">
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/artifacts/">https://azure.microsoft.com/en-us/services/devops/artifacts</a> is the product's website.
 
@@ -162,12 +172,16 @@ Package management such as Artifactory.
 
 ## Azure Test Plans
 
+<img align="right" src="../images/azure-devops-testplans-96.svg">
+
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/test-plans/">https://azure.microsoft.com/en-us/services/devops/test-plans</a> is the product's website.
 
 
 <a name="AzurePipelines"></a>
 
 ## Azure Pipelines
+
+<img align="right" src="../images/azure-devops-pipelines-96.svg">
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/pipelines/">https://azure.microsoft.com/en-us/services/devops/pipelines</a> is the product's website.
 
