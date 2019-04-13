@@ -104,6 +104,8 @@ Resources associated with a particular product from <a target="_blank" href="htt
 
 ## Azure Boards
 
+<img align="right" src="../images/azure-devops-boards-96.svg">
+
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/boards/">https://azure.microsoft.com/en-us/services/devops/boards</a> is the product's website.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=Q-wnvG_pvj8">
