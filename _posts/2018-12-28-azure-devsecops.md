@@ -38,6 +38,39 @@ The <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/relea
    * Administration
    * Notifications
 
+
+<hr />
+
+### Worlflows (Reference Architectures)
+
+The sequence of product usage depends on the hosting technology:
+
+<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/cicd-for-azure-vms/">CI/CD for Azure VMs</a>
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/56077081-09f3e580-5d95-11e9-9093-0a0c8af48149.png"><img alt="azure-devops-ref-arch-cicd-avm-1176x746.png" width="1176" src="https://user-images.githubusercontent.com/300046/56077081-09f3e580-5d95-11e9-9093-0a0c8af48149.png"></a>
+
+   1. Commit application code (in Visual Studio).
+   2. Commit application code and Azure Resource Manager template into Azure Repos.
+   3. Continuous integration triggers application build and unit tests in Azure DevOps Pipelines.
+   4. Continuous Deployment trigger orchestrates deployment of application artifacts with environment-specific parameters.
+   5. Deployment to QA environment using Azure DevTest Labs
+   6. Deployment to Staging environment using Azure Virtual Machines.
+   7. Deployment to production environment using Azure Virtual Machines.
+   8. Azure Application Insights collects and analyzes health, performance, and usage data.
+   9. Engineer reviews health, performance, and usage information.
+   10. Update backlog item in Azure DevOps Boards.
+
+<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/cicd-for-containers/">CI/CD for Containers</a>
+
+<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/azure-devops-continuous-integration-and-continuous-deployment-for-azure-web-apps/">CI/CD for Azure Web Apps</a>
+
+<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/java-cicd-using-jenkins-and-azure-web-apps/">Java CI/CD using Jenkins and Azure Web Apps</a>
+
+<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/immutable-infrastructure-cicd-using-jenkins-and-terraform-on-azure-virtual-architecture-overview/">Immutable Infrastructure CI/CD using Jenkins and Terraform</a>
+
+<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/dev-test-image-factory/">DevTest image factory</a>
+
+
 <hr />
 
 <a name="QuickStart"></a>
@@ -65,36 +98,6 @@ Notice the URL is "https://<em>YourOrganization</em>.visualstudio.com".
    <img alt="azure-devops-org-menu-241x770-16780.jpg" width="241" src="https://user-images.githubusercontent.com/300046/56077361-81774400-5d98-11e9-95b5-bfc434b237ce.jpg">
 
 
-
-
-https://docs.microsoft.com/en-us/azure/devops/project/navigation/set-favorites?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst
-Set personal or team favorites - Azure DevOps Services & TFS
-Quickly access artifacts by favoriting them in Azure DevOps Services & Team Foundation Serverdocs.microsoft.com
-
-https://docs.microsoft.com/en-us/azure/devops/boards/work-items/follow-work-items?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst
-Follow work or pull requests - Azure Boards and TFS
-Track updates made to a work item or pull request by following it when using Azure Boards or Team Foundation Serverdocs.microsoft.com
-
-https://docs.microsoft.com/en-us/azure/devops/organizations/security/get-started-stakeholder?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst
-Get started with Stakeholder access - Azure DevOps & TFS
-Add & update work items, approve releases, view work tracking progress with Stakeholder accessdocs.microsoft.com
-
-https://docs.microsoft.com/en-us/azure/devops/organizations/security/change-individual-permissions?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst
-Change individual or group permissions - Azure DevOps & TFS
-Add custom security groups, change permissions for groups or individuals tutorialdocs.microsoft.com
-
-https://docs.microsoft.com/en-us/azure/devops/organizations/security/restrict-access?toc=/azure/devops/user-guide/toc.json&bc=/azure/devops/user-guide/breadcrumb/toc.json&view=vsts?WT.mc_id=medium-blog-abornst
-Grant or restrict access to select features - Azure DevOps & TFS
-How to set permissions to grant or restrict access to select build, version control, or work tracking functionsdocs.microsoft.com
-
-https://docs.microsoft.com/en-us/azure/devops/organizations/projects/connect-to-projects?toc=%2fazure%2fdevops%2fuser-guide%2ftoc.json&%3bbc=%2fazure%2fdevops%2fuser-guide%2fbreadcrumb%2ftoc.json&view=vsts?WT.mc_id=medium-blog-abornst
-Connect to a project from a web browser or supported client in Azure DevOps - Azure DevOps & TFS
-Learn how to connect a client to the cloud service Azure DevOps Services or on-premises Team Foundation Server (TFS)docs.microsoft.com
-
-
-## Features Timeline
-
-
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=vsts">
 Quick Start: Create an Azure DevOps organization</a>
 Create your organization with a personal Microsoft account or a work or school accountdocs.microsoft.com
@@ -115,6 +118,31 @@ Find and install free extensions for Azure DevOps Services from the Visual Studi
 Quick Start: View permissions for yourself or others - Azure DevOps & TFS</a>
 How to find what permissions you or a team member have, including project-level, collection-level, and object-level…docs.microsoft.com
 
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/project/navigation/set-favorites?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst">
+Set personal or team favorites - Azure DevOps Services & TFS</a>
+Quickly access artifacts by favoriting them in Azure DevOps Services & Team Foundation Serverdocs.microsoft.com
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/boards/work-items/follow-work-items?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst">
+Follow work or pull requests - Azure Boards and TFS</a>
+Track updates made to a work item or pull request by following it when using Azure Boards or Team Foundation Serverdocs.microsoft.com
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/get-started-stakeholder?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst">
+Get started with Stakeholder access - Azure DevOps & TFS</a>
+Add & update work items, approve releases, view work tracking progress with Stakeholder accessdocs.microsoft.com
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/change-individual-permissions?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst">
+Change individual or group permissions - Azure DevOps & TFS</a>
+Add custom security groups, change permissions for groups or individuals tutorialdocs.microsoft.com
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/restrict-access?toc=/azure/devops/user-guide/toc.json&bc=/azure/devops/user-guide/breadcrumb/toc.json&view=vsts?WT.mc_id=medium-blog-abornst">
+Grant or restrict access to select features - Azure DevOps & TFS</a>
+How to set permissions to grant or restrict access to select build, version control, or work tracking functionsdocs.microsoft.com
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/projects/connect-to-projects?toc=%2fazure%2fdevops%2fuser-guide%2ftoc.json&%3bbc=%2fazure%2fdevops%2fuser-guide%2fbreadcrumb%2ftoc.json&view=vsts?WT.mc_id=medium-blog-abornst">
+Connect to a project from a web browser or supported client in Azure DevOps - Azure DevOps & TFS</a>
+Learn how to connect a client to the cloud service Azure DevOps Services or on-premises Team Foundation Server (TFS)docs.microsoft.com
+
+See http://stories.visualstudio.com/devops/
 
 <hr />
 
@@ -204,37 +232,6 @@ Azure Pipelines is free up to 5 people. Each team get 1 hosted job with 1,800 mi
    * Build Windows and Linux environments
 
 
-<hr />
-
-### Reference Architectures
-
-Each consists of a flowchart with steps:
-
-<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/cicd-for-azure-vms/">CI/CD for Azure VMs</a>
-
-![azure-devops-ref-arch-cicd-avm-1176x746](https://user-images.githubusercontent.com/300046/56077081-09f3e580-5d95-11e9-9093-0a0c8af48149.png)
-
-   1. Commit application code (in Visual Studio).
-   2. Commit application code and Azure Resource Manager template into Azure Repos.
-   3. Continuous integration triggers application build and unit tests in Azure DevOps Pipelines.
-   4. Continuous Deployment trigger orchestrates deployment of application artifacts with environment-specific parameters.
-   5. Deployment to QA environment using Azure DevTest Labs
-   6. Deployment to Staging environment using Azure Virtual Machines.
-   7. Deployment to production environment using Azure Virtual Machines.
-   8. Azure Application Insights collects and analyzes health, performance, and usage data.
-   9. Engineer reviews health, performance, and usage information.
-   10. Update backlog item in Azure DevOps Boards.
-
-<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/cicd-for-containers/">CI/CD for Containers</a>
-
-<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/azure-devops-continuous-integration-and-continuous-deployment-for-azure-web-apps/">CI/CD for Azure Web Apps</a>
-
-<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/java-cicd-using-jenkins-and-azure-web-apps/">Java CI/CD using Jenkins and Azure Web Apps</a>
-
-<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/immutable-infrastructure-cicd-using-jenkins-and-terraform-on-azure-virtual-architecture-overview/">Immutable Infrastructure CI/CD using Jenkins and Terraform</a>
-
-<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/dev-test-image-factory/">DevTest image factory</a>
-
 
 <hr />
 
@@ -255,13 +252,10 @@ The course catalog says they cover 6 skills/technologies:
    5. Selenium
    6. Operations Management Suite (OMS)
    <br /><br />
+
 But Azure DevOps also makes use of other Azure services and client executables:
 
    * Visual Studio - https://app.vssps.visualstudio.com/_signedin
-
-   https://itworks-tfs.visualstudio.com/
-   
-   http://stories.visualstudio.com/devops/
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest">Azure CLI (az command) docs</a>
 
