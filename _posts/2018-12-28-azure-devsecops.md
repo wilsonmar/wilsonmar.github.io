@@ -19,17 +19,17 @@ comments: true
 
 <img align="right" alt="azure-devopssuite-52x52.png" width="52" src="https://user-images.githubusercontent.com/300046/56076532-9b605900-5d8f-11e9-89a2-9b9b02e1bf1d.png"><a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/">Azure DevOps Services (https://azure.com/devops)</a> consists of these product offerings from Microsoft:
 
-   1. <a href="#Boards">Azure Boards</a> (like Jira) to plan, track, and discuss Work Items across teams using Kanban boards (to deliver value to users faster)
+   1. <a href="#AzureBoards"><strong>Azure Boards</strong></a> (like Jira) to plan, track, and discuss Work Items across teams using Kanban boards (to deliver value to users faster)
 
-   2. <strong>Azure Repos</strong> (like GitHub and AWS Code Commit, etc.) to use Git for source version, collaborate using pull requests, and file management
+   2. <a href="#AzureRepos"><strong>Azure Repos</strong></a> (like GitHub and AWS Code Commit, etc.) to use Git for source version, collaborate using pull requests, and file management
 
-   3. <strong>Azure Artifacts</strong> (like Artifactory, Nexxus, etc.) for binary package consumption package management 
+   3. <a href="#AzureArtifacts"><strong>Azure Artifacts</strong></a> (like Artifactory, Nexxus, etc.) for binary package consumption package management 
 
-   4. <strong>Azure Test Plans</strong> to manage tests and explore (to ship with confidence)
+   4. <a href="#AzureDevTestPlans"><strong>Azure Test Plans</strong></a> to manage tests and explore (to ship with confidence)
 
-   5. <strong>Azure Pipelines</strong> (like Jenkins, AWS CodeDeploy, etc.) for CI/CD automation 
+   5. <a href="#AzurePipelines"><strong>Azure Pipelines</strong></a> (like Jenkins, AWS CodeDeploy, etc.) for CI/CD automation 
 
-   6. <a href="#AzureDevTestLabs">Azure DevTest Labs</a>
+   6. <a href="#AzureDevTestLabs">Azure DevTest Labs</strong></a> (like Sauce Labs) provides self-service creation of pre-provisioned sandbox environments from private custom images in VHD.
 
 Each product above has its own pricing.
 
@@ -100,11 +100,11 @@ How to find what permissions you or a team member have, including project-level,
 
 Resources associated with a particular product from <a target="_blank" href="https://docs.microsoft.com/en-us/learn/">Microsoft Learn</a> are provided below.
 
-<a name="Boards"></a>
+<a name="AzureBoards"></a>
 
 ## Azure Boards
 
-https://azure.microsoft.com/en-us/services/devops/boards/
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/boards/">https://azure.microsoft.com/en-us/services/devops/boards</a> is the product's website.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=Q-wnvG_pvj8">
 VIDEO: Using Azure Boards with GitHub</a>
@@ -117,22 +117,22 @@ Plan and track work in your new team project on Azure Boardsdocs.microsoft.com
 Start using Azure Boards (Agile process)</a>
 
 
-<a name="Repos"></a>
+<a name="AzureRepos"></a>
 
 ## Azure Repos
 
-https://azure.microsoft.com/en-us/services/devops/repos/
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/repos/">https://azure.microsoft.com/en-us/services/devops/repos</a> is the product's website.
 
 Git version control
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/code-with-git?view=azure-devops">Quick Start: Code with Git in Azure DevOps - Azure DevOps Services & TFS</a>
 Learn how to share code in a Git repo and new projectdocs.microsoft.com
 
-<a name="Artifacts"></a>
+<a name="AzureArtifacts"></a>
 
 ## Azure Artifacts
 
-https://azure.microsoft.com/en-us/services/devops/artifacts/
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/artifacts/">https://azure.microsoft.com/en-us/services/devops/artifacts</a> is the product's website.
 
 to host private Nuget (Windows), npm (Node), Maven (Java), Python packages with builds.
 
@@ -142,18 +142,18 @@ Package management such as Artifactory.
 1. <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ms.feed">Get from the Marketplace</a>
 
 
-<a name="TestPlans"></a>
+<a name="AzureTestPlans"></a>
 
 ## Azure Test Plans
 
-https://azure.microsoft.com/en-us/services/devops/test-plans/
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/test-plans/">https://azure.microsoft.com/en-us/services/devops/test-plans</a> is the product's website.
 
 
-<a name="Pipelines"></a>
+<a name="AzurePipelines"></a>
 
 ## Azure Pipelines
 
-https://azure.microsoft.com/en-us/services/devops/pipelines/
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/pipelines/">https://azure.microsoft.com/en-us/services/devops/pipelines</a> is the product's website.
 
 
 https://www.youtube.com/watch?v=yr6PJxfACNc
@@ -166,7 +166,7 @@ Azure Pipelines is free up to 5 people. Each team get 1 hosted job with 1,800 mi
 
 ## Azure DevTest Labs
 
-https://azure.microsoft.com/en-us/services/devtest-lab/
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/devtest-lab/">https://azure.microsoft.com/en-us/services/devtest-lab"></a> is the product's website.
 
    * Quickly provision development and test environments
    * Minimize waste with <strong>quotas and policies</strong>
@@ -174,25 +174,36 @@ https://azure.microsoft.com/en-us/services/devtest-lab/
    * Build Windows and Linux environments
 
 
+<hr />
+
 ### Reference Architectures
 
-<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/cicd-for-containers/">
-    CI/CD for Containers</a>
+Each consists of a flowchart with steps:
 
-<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/azure-devops-continuous-integration-and-continuous-deployment-for-azure-web-apps/">
-    CI/CD for Azure Web Apps</a>
+<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/cicd-for-azure-vms/">CI/CD for Azure VMs</a>
 
-<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/cicd-for-azure-vms/">
-    CI/CD for Azure VMs</a>
+![azure-devops-ref-arch-cicd-avm-1176x746](https://user-images.githubusercontent.com/300046/56077081-09f3e580-5d95-11e9-9093-0a0c8af48149.png)
 
-<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/java-cicd-using-jenkins-and-azure-web-apps/">
-    Java CI/CD using Jenkins and Azure Web Apps</a>
+   1. Commit application code (in Visual Studio).
+   2. Commit application code and Azure Resource Manager template into Azure Repos.
+   3. Continuous integration triggers application build and unit tests in Azure DevOps Pipelines.
+   4. Continuous Deployment trigger orchestrates deployment of application artifacts with environment-specific parameters.
+   5. Deployment to QA environment using Azure DevTest Labs
+   6. Deployment to Staging environment using Azure Virtual Machines.
+   7. Deployment to production environment using Azure Virtual Machines.
+   8. Azure Application Insights collects and analyzes health, performance, and usage data.
+   9. Engineer reviews health, performance, and usage information.
+   10. Update backlog item in Azure DevOps Boards.
 
-<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/immutable-infrastructure-cicd-using-jenkins-and-terraform-on-azure-virtual-architecture-overview/">
-    Immutable Infrastructure CI/CD using Jenkins and Terraform</a>
+<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/cicd-for-containers/">CI/CD for Containers</a>
 
-<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/dev-test-image-factory/">
-    DevTest image factory</a>
+<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/azure-devops-continuous-integration-and-continuous-deployment-for-azure-web-apps/">CI/CD for Azure Web Apps</a>
+
+<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/java-cicd-using-jenkins-and-azure-web-apps/">Java CI/CD using Jenkins and Azure Web Apps</a>
+
+<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/immutable-infrastructure-cicd-using-jenkins-and-terraform-on-azure-virtual-architecture-overview/">Immutable Infrastructure CI/CD using Jenkins and Terraform</a>
+
+<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/dev-test-image-factory/">DevTest image factory</a>
 
 
 <hr />
@@ -238,7 +249,7 @@ But Azure DevOps also makes use of other Azure services and client executables:
 
    * IAM
 
-   * Azure Service Fabric - https://azure.microsoft.com/en-us/services/service-fabric/
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-cloud/#azure-service-fabric">Azure Service Fabric</a>
 
    * Azure Container Service (AKS) - https://azure.microsoft.com/en-us/services/kubernetes-service/
    uses Docker to make dynamic scaling easy on Kubernetes, Docker Swarm, or Mesos DC/OS
@@ -698,7 +709,7 @@ https://github.com/azure/github-actions
 
 Sam Guckenheimer, Product Owner, Visual Studio Cloud Services
 * <a target="_blank" href="https://www.youtube.com/watch?v=BwgjfevnXoY">Decision cycle: observe, orient, decide, and act</a>
-* <a target="_blank" href="https://www.youtube.com/watch?v=ypnOgxNecos">Change Agents for DevOps</a>
+* <a target="_blank" href="https://www.youtube.com/watch?v=ypnOgxNecos">`Change A`gents for DevOps</a>
 * <a target="_blank" href="https://www.youtube.com/watch?v=8EN1kGFmiIo">Reflecting on the DevOps Journey</a> - http://aka.ms/OurDevOpsJourney.
 * <a target="_blank" href="https://www.youtube.com/watch?v=NlI0bkgdG7E">WinOps 2017 Sam Guckenheimer - Moving 70,000 Microsofties to DevOps on the Public Cloud</a> at the WinOps Conference [51:03] 
 * <a target="_blank" href="https://channel9.msdn.com/Blogs/DevOps-Interviews/Interview-with-Sam-Guckenheimer">
