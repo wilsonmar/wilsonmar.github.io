@@ -171,12 +171,21 @@ http://en.wikipedia.org/wiki/OS_X#Versions</a>
    <pre><strong>arch
    </strong></pre>
 
+1. To locate that full path to the OS Platforms SDK:
+
+   <pre><strong>xcrun --show-sdk-path
+   </strong></pre>
+
+   Sample response:
+
+   <pre>/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk</pre>
+
 
 ## Upgrades
 
 The App Store app nags you every day to upgrade.
 
-Do a full backup before upgrading.
+PROTIP: Do a full backup before upgrading.
 
 1. To find out more about why a macOS Sierra installation failed, view the log:
 

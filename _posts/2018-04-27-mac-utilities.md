@@ -153,19 +153,21 @@ Instead of "basic", there is also "mini" and "full" scope of output. When provid
 
 ## CPU Utilization uptime
 
-To see whether CPU utilization is increasing recently:
+<em><strong>Was your Mac rebooted recently?</strong></em>
 
    <pre><strong>uptime
    </strong></pre>
 
+   The response also shows whether CPU utilization is increasing recently:
+
    <pre>
- 6:35  up 9 days, 11:56, 7 users, load averages: 2.09 2.08 2.06
+ 6:35  up 9 days, 11:56, 7 users, load averages: 2.09 2.24 2.06
    </pre>
 
-   Load averages lists calculations of the average system load over three period of times:
+   "load averages" numbers are calculations of the average system load over three period of times:
    the last one-, five-, and fifteen-minute periods.
+   These count the <strong>number of processes</strong> either using or <strong>waiting</strong> for CPU (the ready queue or run queue) increments the load number by 1. In a system with four CPUs, a load average of 3.73 would indicate that there were, on average, 3.73 processes ready to run, and each one could be scheduled into a CPU.
 
-   Load averages count the number of processes using or <strong>waiting</strong> for CPU (the ready queue or run queue) increments the load number by 1. In a system with four CPUs, a load average of 3.73 would indicate that there were, on average, 3.73 processes ready to run, and each one could be scheduled into a CPU.
 
 ## Memory Statistics
 
@@ -185,29 +187,36 @@ Mach Virtual Memory Statistics: (page size of 4096 bytes)
 
    On Linux systems, the "vmstat" command is similar but not identical.
 
-0. To cancel the display, press <strong>control+C</strong>.
+To cancel the display, press <strong>control+C</strong>.
 
-NOTE: The page size (of 4096) is obtained using <tt>getconf PAGESIZE</tt>.
+NOTE: The memory page size is obtained using <tt>getconf PAGESIZE</tt>, which is "4096".
 
 
 ## Top processes
 
-0. To list the top hungry processes, and refersh the screen:
+<em><strong>Is your computer fan loud?</strong></em>
+
+0. To list the top hungry processes consuming the CPU:
 
    <pre><strong>top
    </strong></pre>
 
-0. To cancel the display, press <strong>control+C</strong>.
+   This refreshes automatically.
 
-   That works with any process you want to kill.
+0. To cancel the display, press <strong>control+C</strong> keys (which works with any process you want to kill).
 
 0. Alternately, install the htop utility using Homebrew:
 
    <pre><strong>brew install htop</strong></pre>
 
+   The response includes:
+
+   <pre>/usr/local/Cellar/htop/2.2.0_1: 11 files, 188KB</pre>
+
 0. Invoke it:
    
    <pre><strong>htop</strong></pre>
+
 
 <a id="Processes"></a>
 
@@ -300,27 +309,21 @@ More on this:
 
 ## coreutils (Core Utilities)
 
-Many who work with Linux distribution avoid minor (but annoying) differences by replacing OS X commands with GNU versions by installing the "coreutils" family of commands done using. It's among <a target="_blank" href="https://danielmiessler.com/blog/first-10-things-new-mac/">Daniel Missler's The First 10 Things I Do on a New Mac</a>.
+Many who work with Linux distribution avoid minor (but annoying) differences by replacing OS X commands based on BSD with the GNU (Linux) version by installing the "coreutils" family of commands. It's among <a target="_blank" href="https://danielmiessler.com/blog/first-10-things-new-mac/">Daniel Missler's The First 10 Things I Do on a New Mac</a>.
 This is about more than having the same toolset as on Linux machines.
-<a target="_blank" href="https://ponderthebits.com/2017/01/know-your-tools-linux-gnu-vs-mac-bsd-command-line-utilities-grep-strings-sed-and-find/">The difference between Linux vs. Mac</a>:
+See <a target="_blank" href="https://ponderthebits.com/2017/01/know-your-tools-linux-gnu-vs-mac-bsd-command-line-utilities-grep-strings-sed-and-find/">The difference between Linux vs. Mac</a>:
 
    * Native capability to search for Unicode strings are not in the Mac (BSD) version of strings.
-   * ANSI-C escape sequences (e.g., \r, \t) beyond \n are not suppoed by Mac sed.
+   * ANSI-C escape sequences (e.g., \r, \t) beyond \n are not suppoed by the Mac sed command.
    <br /><br />
 
-1. <a target="_blank" href="https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x/">
-   NOTE</a>: To begin with, add the following line to your .bashrc or .zshrc:
-   <tt>/usr/local/opt/coreutils</tt>
+   See <a target="_blank" href="https://en.wikipedia.org/wiki/GNU_Core_Utilities">https://en.wikipedia.org/wiki/GNU_Core_Utilities</a>
 
-   <pre>export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"</pre>
-
-1. get the <a target="_blank" href="https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands">
+1. Get the <a target="_blank" href="https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands">
    set of utilities from GNU Linux, but for Mac</a>:
 
    <pre><strong>brew install coreutils
    </strong></pre>
-
-   https://en.wikipedia.org/wiki/GNU_Core_Utilities
 
 1. Then you can link:
 
@@ -328,6 +331,26 @@ This is about more than having the same toolset as on Linux machines.
    </strong></pre>
 
    <a target="_blank" href="http://www.nyx.net/~mlu/pages/computing/installing_and_configuring/installing_and_configuring_command-line_utilities/#.WuMRgMgh0Wo">NOTE</a>:
+
+1. <a target="_blank" href="https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x/">
+   NOTE</a>: Add these lines to your .bashrc or .zshrc:
+   
+   <tt>/usr/local/opt/coreutils</tt>
+
+   <pre>export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"</pre>
+
+   NOTE: `brew --prefix coreutils` retrieves the path to the executable in the Homebrew package, which is, at time of writing:
+
+   <tt>/usr/local/Cellar/coreutils/8.31</tt>
+
+   PROTIP: Using a command to retrieve the path ensures that the version number from being hard-coded and thus possibly wrong.
+
+   Thus, the command is used in ~/.bash_profile to define variables for compilers to find:
+
+   <pre>export CFLAGS="-I$(brew --prefix readline)/include -I$(brew --prefix openssl)/include -I$(xcrun --show-sdk-path)/usr/include"
+   export LDFLAGS="-L$(brew --prefix readline)/lib -L$(brew --prefix openssl)/lib"
+   </pre>
+
 
    ### Bash shell
 

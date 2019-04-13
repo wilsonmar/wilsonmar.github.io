@@ -22,7 +22,7 @@ Concepts here are introduced after you take an action.
 
 ## Sample scripts
 
-### .
+### Resources
 
    DSC resources can be obtained from several places:
 
@@ -39,24 +39,23 @@ Concepts here are introduced after you take an action.
    Central repository for PowerShell Desired State Configuration (DSC) resources maintained within Microsoft.
 
 
-   <a name="FromGitHub"></a>
+<a name="FromGitHub"></a>
 
-   ### From GitHub
+### From GitHub
 
 1. The community has
 
     <a target="_blank" href="https://github.com/PowerShellOrg">
     https://github.com/PowerShellOrg</a>
 
-    https://github.com/PowerShell/SharePointDsc
-    The SharePointDsc PowerShell module provides DSC resources that can be used to deploy and manage a SharePoint farm
+    NOTE: <a target="_blank" href="https://github.com/PowerShell/SharePointDsc">https://github.com/PowerShell/SharePointDsc</a> PowerShell module provides DSC resources that can be used to deploy and manage a SharePoint farm.
 
 0. Use an internew browser (Chrome) to my sample PowerShell DSC scripts at:
 
-   <tt><strong>https://github.com/wilsonmar/powershell-dsc
-   </strong></tt>
+   <a target="_blank" href="https://github.com/wilsonmar/powershell-dsc">https://github.com/wilsonmar/powershell-dsc</a>
 
-   (I would be honored if it earns your clicking the Star)
+   (I would be honored if it earns your clicking the Star.
+   And please let me know if there is anything I could add or fix.)
 
 0. Create a GitHub account for yourself if you haven't already.
 0. Click the <strong>Fork</strong> button to make it yours, since you will be making changes.

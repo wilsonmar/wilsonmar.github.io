@@ -15,11 +15,9 @@ comments: true
 
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/azure-devops/">This page</a> 
-contains "deep dive" notes for learning and using DevSecOps using Microsoft's Azure DevOps services.
+<a target="_blank" href="https://wilsonmar.github.io/azure-devops/">This page</a> contains "deep dive" notes for learning and using DevSecOps using Microsoft's Azure DevOps services.
 
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/">
-Azure DevOps Services (https://azure.com/devops)</a> consists of these product offerings from Microsoft:
+<img align="right" alt="azure-devopssuite-52x52.png" width="52" src="https://user-images.githubusercontent.com/300046/56076532-9b605900-5d8f-11e9-89a2-9b9b02e1bf1d.png"><a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/">Azure DevOps Services (https://azure.com/devops)</a> consists of these product offerings from Microsoft:
 
    1. <a href="#Boards">Azure Boards</a> (like Jira) to plan, track, and discuss Work Items across teams using Kanban boards (to deliver value to users faster)
 
@@ -30,70 +28,174 @@ Azure DevOps Services (https://azure.com/devops)</a> consists of these product o
    4. <strong>Azure Test Plans</strong> to manage tests and explore (to ship with confidence)
 
    5. <strong>Azure Pipelines</strong> (like Jenkins, AWS CodeDeploy, etc.) for CI/CD automation 
-    
+
+   6. <a href="#AzureDevTestLabs">Azure DevTest Labs</a>
+
 Each product above has its own pricing.
 
+The <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/release-notes/">Features Timeline (product roadmap)</a> has additional "Areas":
 
-In Sept 2018 these were repackaged as an upgrade of Visual Studio Online (VSO) which include capabilities in Visual Studio Team Services (VSTS) that began as a performance testing server and Team Foundation Server (TFS).
+   * Administration
+   * Notifications
 
-Azure DevOps makes use of other Azure services and client executables:
+<hr />
 
-   * Visual Studio - https://app.vssps.visualstudio.com/_signedin
+<a name="QuickStart"></a>
 
-   https://itworks-tfs.visualstudio.com/
-   
-   http://stories.visualstudio.com/devops/
+## Quick Start (IAM)
 
-   * az CLI
+https://docs.microsoft.com/en-us/azure/devops/project/navigation/set-favorites?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst
+Set personal or team favorites - Azure DevOps Services & TFS
+Quickly access artifacts by favoriting them in Azure DevOps Services & Team Foundation Serverdocs.microsoft.com
 
-   * Azure Resource Manager (ARM) https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/
-   to deploy, update, or delete cloud resources in a single, coordinated operation. Resources can include virtual machines, storage accounts, virtual networks, services, or any component that you are managing. 
+https://docs.microsoft.com/en-us/azure/devops/boards/work-items/follow-work-items?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst
+Follow work or pull requests - Azure Boards and TFS
+Track updates made to a work item or pull request by following it when using Azure Boards or Team Foundation Serverdocs.microsoft.com
 
-   * IAM
+https://docs.microsoft.com/en-us/azure/devops/organizations/security/get-started-stakeholder?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst
+Get started with Stakeholder access - Azure DevOps & TFS
+Add & update work items, approve releases, view work tracking progress with Stakeholder accessdocs.microsoft.com
 
-   * Azure Service Fabric - https://azure.microsoft.com/en-us/services/service-fabric/
+https://docs.microsoft.com/en-us/azure/devops/organizations/security/change-individual-permissions?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json&bc=%2Fazure%2Fdevops%2Fuser-guide%2Fbreadcrumb%2Ftoc.json&view=vsts&tabs=new-nav?WT.mc_id=medium-blog-abornst
+Change individual or group permissions - Azure DevOps & TFS
+Add custom security groups, change permissions for groups or individuals tutorialdocs.microsoft.com
 
-   * Azure Container Service (AKS) - https://azure.microsoft.com/en-us/services/kubernetes-service/
-   uses Docker to make dynamic scaling easy on Kubernetes, Docker Swarm, or Mesos DC/OS
+https://docs.microsoft.com/en-us/azure/devops/organizations/security/restrict-access?toc=/azure/devops/user-guide/toc.json&bc=/azure/devops/user-guide/breadcrumb/toc.json&view=vsts?WT.mc_id=medium-blog-abornst
+Grant or restrict access to select features - Azure DevOps & TFS
+How to set permissions to grant or restrict access to select build, version control, or work tracking functionsdocs.microsoft.com
 
-   * Azure Container Registry to store images for different types of container deployments like Swarm, DC/OS and Kubernetes and Azure services such as App Service, Batch and Service Fabric.
+https://docs.microsoft.com/en-us/azure/devops/organizations/projects/connect-to-projects?toc=%2fazure%2fdevops%2fuser-guide%2ftoc.json&%3bbc=%2fazure%2fdevops%2fuser-guide%2fbreadcrumb%2ftoc.json&view=vsts?WT.mc_id=medium-blog-abornst
+Connect to a project from a web browser or supported client in Azure DevOps - Azure DevOps & TFS
+Learn how to connect a client to the cloud service Azure DevOps Services or on-premises Team Foundation Server (TFS)docs.microsoft.com
 
-   * Hashicorp Vault
 
+## Features Timeline
+
+HISTORY: In Sept 2018 these were repackaged as an upgrade of Visual Studio Online (VSO) which include capabilities in Visual Studio Team Services (VSTS) that began as a performance testing server and Team Foundation Server (TFS).
+
+
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=vsts">
+Quick Start: Create an Azure DevOps organization</a>
+Create your organization with a personal Microsoft account or a work or school accountdocs.microsoft.com
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/project-admin-tutorial?view=vsts">
+Quick Start: Get started as a project admin or organization owner in Azure DevOps</a>
+Learn how to structure a project, manage users, and more to support your software development teams in Azure DevOpsdocs.microsoft.com
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/sign-up-invite-teammates?view=vsts">
+Sign up for Azure DevOps and invite teammates - Azure DevOps</a>
+Quickstart guide to signing up and inviting others to join a project in Azure DevOpsdocs.microsoft.com
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/marketplace/install-extension?view=azure-devops">
+Quick Start: Install free extensions for Azure DevOps Services</a>
+Find and install free extensions for Azure DevOps Services from the Visual Studio Marketplacedocs.microsoft.com
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/view-permissions?view=azure-devops">
+Quick Start: View permissions for yourself or others - Azure DevOps & TFS</a>
+How to find what permissions you or a team member have, including project-level, collection-level, and object-level…docs.microsoft.com
+
+
+<hr />
+
+Resources associated with a particular product from <a target="_blank" href="https://docs.microsoft.com/en-us/learn/">Microsoft Learn</a> are provided below.
 
 <a name="Boards"></a>
 
 ## Azure Boards
 
-https://www.youtube.com/watch?v=Q-wnvG_pvj8
-Using Azure Boards with GitHub
+https://azure.microsoft.com/en-us/services/devops/boards/
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Q-wnvG_pvj8">
+VIDEO: Using Azure Boards with GitHub</a>
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/boards/get-started/plan-track-work?view=azure-devops">
+Quickstart guide to plan and track work - Azure Boards</a>
+Plan and track work in your new team project on Azure Boardsdocs.microsoft.com
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/boards/get-started/index-agile?view=azure-devops">
+Start using Azure Boards (Agile process)</a>
 
 
 <a name="Repos"></a>
 
 ## Azure Repos
 
+https://azure.microsoft.com/en-us/services/devops/repos/
+
 Git version control
 
-
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/code-with-git?view=azure-devops">Quick Start: Code with Git in Azure DevOps - Azure DevOps Services & TFS</a>
+Learn how to share code in a Git repo and new projectdocs.microsoft.com
 
 <a name="Artifacts"></a>
 
 ## Azure Artifacts
 
-Package management
+https://azure.microsoft.com/en-us/services/devops/artifacts/
+
+to host private Nuget (Windows), npm (Node), Maven (Java), Python packages with builds.
+
+Package management such as Artifactory.
+1. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/artifacts/?view=azure-devops">View documentation</a>
+
+1. <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ms.feed">Get from the Marketplace</a>
+
+
+<a name="TestPlans"></a>
+
+## Azure Test Plans
+
+https://azure.microsoft.com/en-us/services/devops/test-plans/
 
 
 <a name="Pipelines"></a>
 
 ## Azure Pipelines
 
+https://azure.microsoft.com/en-us/services/devops/pipelines/
+
+
 https://www.youtube.com/watch?v=yr6PJxfACNc
 
-Repos is https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/
-free starting prices</a> for up to 10 parallel jobs.
+Repos is <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/">free starting prices</a> for up to 10 parallel jobs.
 Azure Pipelines is free up to 5 people. Each team get 1 hosted job with 1,800 minutes per month for CI/CD and 1 self-hosted job
 
+
+<a name="AzureDevTestLabs"></a>
+
+## Azure DevTest Labs
+
+https://azure.microsoft.com/en-us/services/devtest-lab/
+
+   * Quickly provision development and test environments
+   * Minimize waste with <strong>quotas and policies</strong>
+   * Set <strong>automated shutdowns</strong> to minimize costs
+   * Build Windows and Linux environments
+
+
+### Reference Architectures
+
+<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/cicd-for-containers/">
+    CI/CD for Containers</a>
+
+<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/azure-devops-continuous-integration-and-continuous-deployment-for-azure-web-apps/">
+    CI/CD for Azure Web Apps</a>
+
+<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/cicd-for-azure-vms/">
+    CI/CD for Azure VMs</a>
+
+<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/java-cicd-using-jenkins-and-azure-web-apps/">
+    Java CI/CD using Jenkins and Azure Web Apps</a>
+
+<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/immutable-infrastructure-cicd-using-jenkins-and-terraform-on-azure-virtual-architecture-overview/">
+    Immutable Infrastructure CI/CD using Jenkins and Terraform</a>
+
+<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/dev-test-image-factory/">
+    DevTest image factory</a>
+
+
+<hr />
 
 <a name="Certs"></a>
 
@@ -112,19 +214,53 @@ The course catalog says they cover 6 skills/technologies:
    5. Selenium
    6. Operations Management Suite (OMS)
    <br /><br />
-But there are actually more.
+But Azure DevOps also makes use of other Azure services and client executables:
+
+   * Visual Studio - https://app.vssps.visualstudio.com/_signedin
+
+   https://itworks-tfs.visualstudio.com/
+   
+   http://stories.visualstudio.com/devops/
+
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest">Azure CLI (az command) docs</a>
+
+   Installing az adds sqlite and python
+
+   az --version | grep "azure-cli"
+   azure-cli (2.0.62)
+
+   There is a separate brew amazon-ecs-cli.
+
+   Use ctrl-shift-v (cmd-shift-v on macOS) to paste tutorial text into Azure Cloud Shell.
+
+   * Azure Resource Manager (ARM) https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/
+   to deploy, update, or delete cloud resources in a single, coordinated operation. Resources can include virtual machines, storage accounts, virtual networks, services, or any component that you are managing. 
+
+   * IAM
+
+   * Azure Service Fabric - https://azure.microsoft.com/en-us/services/service-fabric/
+
+   * Azure Container Service (AKS) - https://azure.microsoft.com/en-us/services/kubernetes-service/
+   uses Docker to make dynamic scaling easy on Kubernetes, Docker Swarm, or Mesos DC/OS
+
+   * Azure Container Registry to store images for different types of container deployments like Swarm, DC/OS and Kubernetes and Azure services such as App Service, Batch and Service Fabric.
+
+   * Hashicorp Vault
+
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/products/devops-tool-integrations/">Azure DevOps tool integrations</a>
 
 
 <a name="SampleAppRepos"></a>
 
 ### Sample Apps
 
-<a target="_blank" href="https://www.youtube.com/watch?v=wiCRVp6QgA0">VIDEO</a>:
-There are two repos used in course labs and also during the <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-AZ-400.aspx">Microsoft Exam AZ-400: Implementing Azure DevOps Solutions exam</a> ($160)
-<a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">Microsoft Certified: Azure DevOps Engineer Expert</a>.
+<a target="_blank" href="https://www.youtube.com/watch?v=wiCRVp6QgA0">VIDEO</a>: There are two repos used in course labs and also during the<br />
+<a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-AZ-400.aspx">Implementing Azure DevOps Solutions exam AZ-400</a> ($160) QUESTION: Is that the same as the<br />
+<a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a>?
 
-<a target="_blank" href="https://microsoft.github.io/PartsUnlimited/">
-https://microsoft.github.io/PartsUnlimited</a> (PU) is a sample .NET eCommerce website site, as described in chapters 31-35 of <a target="_blank" href="http://www.amazon.com/The-Phoenix-Project-Helping-Business/dp/0988262592">The Phoenix Project</a> by Gene Kim, Kevin Behr and George Spafford, © 2013 IT Revolution Press LLC, Portland, OR. Resemblance to “Project Unicorn” in the novel is intentional. Source files are in <a target="_blank" href="http://github.com/microsoft/partsunlimited">http://github.com/microsoft/partsunlimited</a>.
+<a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">Microsoft Certified: Azure DevOps Engineer Expert</a> and 
+
+Clone or download <a target="_blank" href="https://microsoft.github.io/PartsUnlimited/">https://microsoft.github.io/PartsUnlimited</a> (PU) - a sample .NET eCommerce website site, described as "Project Unicorn" in chapters 31-35 of <a target="_blank" href="http://www.amazon.com/The-Phoenix-Project-Helping-Business/dp/0988262592">The Phoenix Project</a> by Gene Kim, Kevin Behr and George Spafford, © 2013
 
    1. Install Visual Studio 2017 within a Windows machine. 
    1. In Tools, Get Tools and Features, select "ASP.NET and web development" and "Azure development".
@@ -145,7 +281,7 @@ https://microsoft.github.io/PartsUnlimited</a> (PU) is a sample .NET eCommerce w
    * Includes Azure RM JSON templates and PowerShell automation scripts to easily build and provision your environment
    <br /><br />
 
-<a target="_blank" href="http://microsoft.github.io/PartsUnlimitedMRP">The PartsUnlimitedMRP (PUMRP)</a> Java based app is  housed in <a target="_blank" href="https://microsoft.github.io/PartsUnlimitedMRP/">https://microsoft.github.io/PartsUnlimitedMRP</a>. The application and labs on this page use mostly open source software including Linux, Java, Apache, and MongoDB which creates a web front end, an order service, and an integration service.
+Clone or download <a target="_blank" href="https://github.com/microsoft.github.io/PartsUnlimitedMRP/">https://microsoft.github.io/PartsUnlimitedMRP (PUMRP)</a> described in <a target="_blank" href="http://microsoft.github.io/PartsUnlimitedMRP">PartsUnlimitedMRP</a> Java based app is housed in . The application and labs on this page use mostly open source software including Linux, Java, Apache, and MongoDB which creates a web front end, an order service, and an integration service.
 
    * Front end service - runs Apache Tomcat and talks to order service
    * Order and Integration service - runs Java and calls MongoDB
@@ -153,6 +289,8 @@ https://microsoft.github.io/PartsUnlimited</a> (PU) is a sample .NET eCommerce w
    * Includes a Dockerfile and sample publishing profile to publish to a Docker container
    * Includes Azure RM JSON templates and PowerShell automation scripts to easily build and provision your environment
    <br /><br />
+
+### Faculty
 
 Eamonn Kelly and Samantha Lindsey Ahmed, Steve 
 
@@ -173,8 +311,7 @@ The courses are conducted as <a target="_blank" href="https://www.edx.org/micros
 
    <a name="[1]"></a>
 
-### 1. <a target="_blank" href="https://www.edx.org/course/devops-practices-and-principles-2">
-   Introduction to DevOps Practices</a> 
+### 1. <a target="_blank" href="https://www.edx.org/course/devops-practices-and-principles-2">Introduction to DevOps Practices</a> 
    
    DEVOPS200.1x by Steven Borg
 
@@ -222,8 +359,9 @@ The courses are conducted as <a target="_blank" href="https://www.edx.org/micros
 
    <a name="[3]"></a>
 
-3. <a target="_blank" href="https://www.edx.org/course/continuous-integration-and-continuous-deployment-2">
-   Continuous Integration and Continuous Deployment</a> DEVOPS200.3x
+3. <a target="_blank" href="https://www.edx.org/course/continuous-integration-and-continuous-deployment-2">Continuous Integration and Continuous Deployment</a> 
+
+DEVOPS200.3x
 
    * Configure Git and TFVC version control options for Continuous Integration
    * How to manage Technical Debt and the sources and impact of it. 
@@ -241,7 +379,7 @@ The courses are conducted as <a target="_blank" href="https://www.edx.org/micros
 
    <a name="[4]"></a>
 
-### 4. <a target="_blank" href="https://www.edx.org/course/configuration-management-for-containerized-delivery-2">  Configuration Management for Containerized Delivery</a> 
+### 4. <a target="_blank" href="https://www.edx.org/course/configuration-management-for-containerized-delivery-2">Configuration Management for Containerized Delivery</a> 
 
    DEVOPS200.4x
 
@@ -312,14 +450,14 @@ Test Driven Development Studio: https://aka.ms/edx-devops200.5x-tdds Complete De
 
    <a name="[8]"></a>
 
-### 8. There are two Application courses:
+### 8. There are two Application courses: <a target="_blank" href="https://www.edx.org/course/devops-for-mobile-apps-2">
+   DevOps for Mobile Apps</a> 
+   
+   DEVOPS200.8x
 
-   <a target="_blank" href="https://www.edx.org/course/devops-for-mobile-apps-2">
-   DevOps for Mobile Apps</a> DEVOPS200.8x
-   <br /><br />
+### 9. <a target="_blank" href="https://www.edx.org/course/architecting-distributed-cloud-applications-2">Architecting Distributed Cloud Applications</a>
 
-   <a target="_blank" href="https://www.edx.org/course/architecting-distributed-cloud-applications-2">
-   Architecting Distributed Cloud Applications</a>  DEVOPS200.9x
+DEVOPS200.9x
 
    * Distributed cloud application fundamentals, including Why Cloud Apps?, embracing failure, orchestrators, when to split a monolith into microservices, 12-factor services, and when and how to use Containers.
    * Networking communication, including service scalability and availability, how to define/manage/version service endpoint APIs, and how to perform fault-tolerant network communication.
@@ -392,6 +530,8 @@ https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview
 
 https://www.youtube.com/watch?v=h0UDIcRnPog
 
+QUESTION: Are ARM Templates version controled?
+
 
 ### RBAC (Role-based Access Control)
 
@@ -419,7 +559,9 @@ templates</a> such as:
    * resources: A manageable item that is available through Azure. Some common resources are a virtual machine, storage account, web app, database, and virtual network, but there are many more.
    * outputs: The values that are returned after deployment
 
-Deploy predefined templates from the Azure Marketplace, the <a target="_blank" href="https://github.com/Azure/azure-quickstart-templates">https://github.com/Azure/azure-quickstart-templates</a> <a target="_blank" href="https://azure.microsoft.com/en-us/resources/templates/">QuickStart Templates repo</a>, or as a <a target="_blank" href="https://docs.microsoft.com/en-us/azure/marketplace-consumer/mytemplates-getstarted">local private</a> in PowerShell commands such as:
+## Azure Templates
+
+Deploy predefined templates from the <a target="_blank" href="https://marketplace.visualstudio.com/azuredevops">Azure Marketplace</a>, the <a target="_blank" href="https://github.com/Azure/azure-quickstart-templates">https://github.com/Azure/azure-quickstart-templates</a> <a target="_blank" href="https://azure.microsoft.com/en-us/resources/templates/">QuickStart Templates repo</a>, or as a <a target="_blank" href="https://docs.microsoft.com/en-us/azure/marketplace-consumer/mytemplates-getstarted">local private</a> in PowerShell commands such as:
 
 	<pre>New-AzureRmResourceGroupDeployment -Name <em>ExampleDeployment</em> -ResourceGroupName <em>ExampleResourceGroup</em> <em>TemplateFile</em> <em>PathToTemplate</em></pre>
 
@@ -580,6 +722,9 @@ Damien Brady (<a target="_blank" href="https://twitter.com/AbelSquidHead">@AbelS
 
 Abel Wang (<a target="_blank" href="https://twitter.com/AbelSquidHead">@AbelSquidHead</a>, abelsquidhead.com) on development 
 
+### Others
+
+Microsoft Developer Advocate and AI enthusiast Aaron (Ari) Bornstein (<a target="_blank" href="https://twitter.com/pythiccoder">@pythiccoder</a>, <a target="_blank" href="https://medium.com/@aribornstein">on Medium</a>)
 
 ## Azure's Social Media
 

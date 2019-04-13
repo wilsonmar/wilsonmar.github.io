@@ -14,17 +14,90 @@ comments: true
 <hr />
 {% include _toc.html %}
 
-This tutorial describes the use of Windows PowerShell on Azure cloud.
+This tutorial describes the use of PowerShell Core on Azure cloud.
 
-Powershell refers to both the command-line shell and scripting language designed system administration. Built on the .NET Framework, Windows PowerShell helps IT professionals and power users control and automate the administration of the Windows operating system and applications that run on Windows. Windows PowerShell <strong>cmdlets</strong>, let you manage the computers from the command line.
+Powershell refers to both the command-line shell and scripting language designed for system administration. 
+When "PowerShell Core 6.0" was announced on January 10, 2018, the word "Powershell" on its own now refers to the decade-old "PowerShell" integrated into all recent versions of Microsoft's Windows operating system. 
+
+The new "PowerShell Core" is available as a cross-platform application such that scripts written on MacOS will run on Windows, Linux, or other supported operating system. This also means that PowerShell Core does not have commands associated with the .NET Framework (for Windows OS).
+
+This is a similar rebranding of .NET vs. .NET Core. 
+
+PowerShell <strong>cmdlets</strong> let you manage the computers from the command line.
+
+See <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/learn/windows-powershell-glossary?view=powershell-6">Glossary of terms</a>
+
+## Install PowerShell Core
+
+PowerShell Core supports macOS 10.12 and higher.
+See <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-6">this for other os</a>
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6">This</a>
+says "xcode-select --install" is needed as a pre-requisite.
+
+1. Install using Homebrew:
+
+   <pre><strong>brew cask install powershell</strong></pre>
+
+   ATTENTION: Enter your password when prompted.
+
+   <a name="VerifyPSInstall"></a>
+
+1. Verify that your install is working properly:
+
+   <pre><strong>pwsh</strong></pre>
+ 
+   The response at time of writing:
+
+   <pre>
+PowerShell v6.2.0
+Copyright (c) Microsoft Corporation. All rights reserved.
+&nbsp;
+<a target="_blank" href="https://aka.ms/pscore6-docs">https://aka.ms/pscore6-docs</a>
+Type 'help' to get help.
+PS /Users/...> 
+   </pre>
+
+   `PS` means you are in the PowerShell shell. 
+
+1. To get the current version:
+
+   <pre><strong>$PSVersionTable</strong></pre>
+
+   The response at time of writing:
+
+   <pre>
+Name                           Value
+----                           -----
+PSVersion                      6.2.0
+PSEdition                      Core
+GitCommitId                    6.2.0
+OS                             Darwin 18.5.0 Darwin Kernel Version 18.5.0: Mon Mar 11 20:40:32 PDT 2019; root:xnu-4903.251.3~3/RELEASE_X86_64
+Platform                       Unix
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0…}
+PSRemotingProtocolVersion      2.3
+SerializationVersion           1.1.0.1
+WSManStackVersion              3.0
+   </pre>
+
+1. To exit out of PS and into the Bash shell:
+
+   <pre><strong>exit</strong></pre>
+
+1. <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-6">Learn PowerShell</a>
 
 
-## One-time tasks #
+   ### Upgrade PowerShell
+
+1. To upgrade:
+
+   <pre><strong>brew cask upgrade powershell</strong></pre>
+
+1. <a href="#VerifyPSInstall">Verify PowerShell install</a> again.
+
 
 <a target="_blank" href="https://technet.microsoft.com/en-us/library/dn807169.aspx">
-Windows PowerShellGet Module</a>.
-
-If you don't want to install these from the
+Windows PowerShellGet Module</a> if you don't want to install these from the
 <a target="_blank" href="https://www.microsoft.com/web/downloads/platform.aspx">Web Platform Installer (wpilauncher.exe) at
 https://www.microsoft.com/web/downloads/platform.aspx</a>
 
@@ -39,7 +112,7 @@ https://www.microsoft.com/web/downloads/platform.aspx</a>
 ### Install for ASM Imperative Commands #
 
    <strong>Imperative</strong> commands (verbs such as to start or stop an app or machine)
-   are used in ASM.
+   are used in the classic ASM. If you're not using ASM, skip this.
 
 0. http://azure.microsoft.com/en-us/downloads
 0. Click PowerShell to download WindowsAzurePowershellGet.3f.3f.3fnew.exe and invoke it to download more.
@@ -105,7 +178,7 @@ List Azure commands containing "vm":
 
 ### Enable PS1 execution #
 
-PowerShell commands can be be script files with <strong>.ps1</strong> file extension.
+PowerShell commands can be script files with <strong>.ps1</strong> file extension.
 
    <pre><strong>
    Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
