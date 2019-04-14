@@ -702,7 +702,7 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-create-c
 ## GitHub repositories
 
 https://github.com/Microsoft/DevOps-Architecture
-A guide on building a robust professional devops environment for ASP.NET Core using Azure DevOps by Jeff Palermo
+A (hands-on) guide on building a robust professional devops environment for ASP.NET Core using Azure DevOps by Jeff Palermo
 
 https://github.com/wpschaub/quick-reference-posters
 Architecting, Getting Started, Habits, Practices, Technology
