@@ -64,10 +64,14 @@ The sequence of product usage depends on the hosting technology:
 Others:   
 
 * <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/cicd-for-containers/">CI/CD for Containers</a>
+
 * <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/azure-devops-continuous-integration-and-continuous-deployment-for-azure-web-apps/">CI/CD for Azure Web Apps</a>
+
 * <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/java-cicd-using-jenkins-and-azure-web-apps/">Java CI/CD using Jenkins and Azure Web Apps</a>
+
 * <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/immutable-infrastructure-cicd-using-jenkins-and-terraform-on-azure-virtual-architecture-overview/">Immutable Infrastructure CI/CD using Jenkins and Terraform</a>
-* <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/dev-test-image-factory/">DevTest image factory</a>
+
+![azure-log-analytics-711x306-35708](https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg)
 
 <hr />
 
@@ -146,7 +150,7 @@ Resources associated with a particular product from <a target="_blank" href="htt
 
 <img align="right" src="../images/azure-devops-boards-96.svg">
 
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/boards/">https://azure.microsoft.com/en-us/services/devops/boards</a> is the product's website.
+| <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/boards/">Product</a> | <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/boards/">Docs</a> | <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/boards/get-started/index-agile">Get started</a> |
 
 <a target="_blank" href="https://www.youtube.com/watch?v=Q-wnvG_pvj8">
 VIDEO: Using Azure Boards with GitHub</a>
@@ -202,6 +206,8 @@ Package management such as Artifactory.
 
    DOCS: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/project/navigation/set-favorites?toc=%2Fazure%2Fdevops%2Fuser-guide%2Ftoc.json">Set personal or team favorites</a>
 
+* <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/dev-test-image-factory/">DevTest image factory</a>
+
 
 <a name="AzureTestPlans"></a>
 
@@ -209,7 +215,7 @@ Package management such as Artifactory.
 
 <img align="right" src="../images/azure-devops-testplans-96.svg">
 
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/test-plans/">https://azure.microsoft.com/en-us/services/devops/test-plans</a> is the product's website.
+| <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/test-plans/">Product website | Docs |
 
 
 <a name="AzurePipelines"></a>
@@ -240,7 +246,7 @@ Azure Pipelines is free up to 5 people. Each team get 1 hosted job with 1,800 mi
    * Minimize waste with <strong>quotas and policies</strong>
    * Set <strong>automated shutdowns</strong> to minimize costs
    * Build Windows and Linux environments
-
+   <br /><br />
 
 
 <hr />

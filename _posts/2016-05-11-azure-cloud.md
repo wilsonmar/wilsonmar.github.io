@@ -20,15 +20,19 @@ but with less confusing grandiose marketing generalizations.
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/overview/cloud-computing-dictionary/">Cloud Computing Terms Dictionary</a>
 
+
+## Web services
+
 The <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/welcome-to-azure/3-tour-of-azure-services">big picture of Azure services</a>:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/56084247-94683380-5ded-11e9-9ff2-c246e3e9c530.jpg"><img alt="azure-big-picture-1923x1083-160564.jpg" src="https://user-images.githubusercontent.com/300046/56084247-94683380-5ded-11e9-9ff2-c246e3e9c530.jpg">
 <em>Click diagram for full-frame pop-up</em></a>
+
 
 ## Architectural components #
 
 <amp-img width="650" height="252" alt="azure compute platform 650x252-c60.jpg"
 layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/16688245/6898a7a0-44da-11e6-9245-ee5e1ff729f9.jpg">
-</amp-img>
+</amp-img><br />
 
 <strong>End-Users</strong> buy SaaS (Software as a Service) online with only an internet browser (and a credit card):
 
@@ -63,34 +67,17 @@ components for "High Control":
    * Apprenda
    * Jelastic
 
-## Learning
+## Logging #
 
-1. Get an account into "Microsoft Learn", which provides FREE temporary cloud instances for hands-on learning. This one feature is getting many to invest their time on Azure versus AWS, Google, etc.
+![azure-log-analytics-711x306-35708](https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg)
 
-   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">https://docs.microsoft.com/en-us/learn/azure/</a>
+* Azure Monitor (pane of glass for monitoring on Azure), 
+* Azure Log Analytics (log ingestion and IaaS monitoring), and
+* Application Insights (application performance monitoring including availability, performance, and exception information)
 
-   Notice that the product categories are: .NET, Azure, Business Applications, Dynamics 365, Power Platfor, Visual Studio, and Windows.
+## Learning Account
 
-   After registering, use this URL:
-
-   https://techprofile.microsoft.com/en-us/<em>name</em>
-
-
-   ### Job Roles
-
-1. Select your role:
-
-   * Business User
-   * Business Analyst
-   * (Azure) Administrator
-   * (Azure) Developer
-   * (Azure) Solution Architect
-   * Data Engineer
-   * AI Engineer
-   <br /><br />
-
-   MY OPINION: I think job roles should be multi-select checkboxes.
-   This segregation also adds to duplicating material.
+After <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp">getting a Learning account</a>:
 
 1. PROTIP: Take this sequence:
 
@@ -103,85 +90,70 @@ components for "High Control":
    <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/cloud-operating-model/">Overview of the Microsoft Cloud Operating Model</a>
 
 
+## Architecting
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/architect-great-solutions-in-azure/">Architect great solutions in Azure</a>
-   consists of 5 modules, similar to the "Well Architected" series from AWS:
+   consists of 5 <strong>pillars</strong>, similar to the "Well Architected" series from AWS:
 
-   * Pillars
    * Design for security
-   * Design for performance and scalability
+
+   * Design for performance and scalability: Azure SQL Data Sync between regions. 
+   Azure SQL Database geo-replication allows for read-replicas.
+   Azure Cosmos DB globally distributed database to allow both reads and writes regardless of location. Azure Cache for Redis to minimize high-latency calls to remote databases to read frequently accessed data. Polyglot persistence to use different storage technologies for different data.
+
    * Design for efficiency and operations
+   
    * Design for availability and recoverability
-   <br /><br />
+
+
+## Azure account and dashboard
 
 * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-an-azure-account/">Create an Azure Account</a>
 
-Module <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/welcome-to-azure/">Core Cloud Services - Introduction to Azure</a> to create a virtual machine and add a web server.
+   Module <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/welcome-to-azure/">Core Cloud Services - Introduction to Azure</a> to create a virtual machine and add a web server.
 
 * Sign in
 * Create a resource group
 
-* <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/welcome-to-azure/4-create-a-vm?pivots=linux-cloud">Create a virtual machine</a> (for 60 minutes). PROTIP: Use Firefox browser. Don't use Brave browser.
+   <a name="ARM-signup"></a>
 
-   ![azure-cloud-shell-364x199-11637](https://user-images.githubusercontent.com/300046/56084383-9d5a0480-5def-11e9-98e2-ba1ef5f329ea.jpg)
+   ### ARM Create instance #
 
-   PROTIP: naming conventions:
+0. At the Azure portal:
 
-   * Size
-   * Region
-   * Network
-   * Resource groups
-   <br /><br />
-
-* Get VM information with queries
-* Set environment variables from CLI output
-* Creating a new VM on the existing subnet
-* Cleanup
-
-<a target="_blank" href="https://docs.microsoft.com/learn/paths/store-data-in-azure/">
-Module: Store Data in Azure</a>
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/deploy-a-website-with-azure-app-service/">Module: Deploy a website to Azure with Azure App Service</a>
-
-<a target="_blank" href="https://docs.microsoft.com/learn/paths/administer-containers-in-azure/">Module: Administer containers in Azure</a>
-
-
-<a name="MgmtCerts"></a>
-
-## Management Certificates
-
-Azure uses Management (x509 v3) Certificates (.cer file containing a public key) 
-to access resources in an Azure Subscription.
-
-There is a limit of 100 Management certs per Azure subscription (administrator).
-
-   * Development
-   * Test 
-   * Pre-prod
-   * Prod
-
-   
-<a name="MgmtCerts"></a>
-
-## Affinity Groups
-
-An Affinity Group is defined to create a virtual network to define the data center
-(region).
-All services within an affinity group are located in the same data center.
-
-Azure groups services using Affinity Groups to optimize performance.
-
-WARNING: Affinity groups in Azure is a higher-level concept of data centers than the facility of the same name within AWS, which refers to affinity between servers on the same subnet.
-
-
-<a name="ARM-signup"></a>
-
-## ARM Create instance #
-
-At <a target="_blank" href="https://portal.azure.com/">
+   <a target="_blank" href="https://portal.azure.com/">
    https://portal.azure.com</a>
 
-0. Select Resource group location / [Region](/cloud-regions/))
+
+   <a name="Regions"></a>
+
+   ### Regions & Affinity Groups
+
+0. Select Resource group physical and logical network-isolated instances of Azure / [Regions](/cloud-regions/))
+
+   * In the Americas: westus2, <strong>centralus</strong>, southcentralus, eastus, brazilsouth
+   * In Europe: westeurope (there's also France Central and <strong>North Europe</strong>)
+   * In Asia Pacific: <strong>southeastasia</strong>, japaneast, australiasoutheast,  centralindia
+   * In Middle East and Africa
+   <br /><br />
+
+   PROTIP: Bolded are the only regions that support Availability Zones: Central US, North Europe, and SouthEast Asia.
+
+   NOTE: Some services or virtual machine features are only available in certain regions, such as specific virtual machine sizes or storage types. 
+
+   Additionally, Azure has specialized regions for compliance or legal purposes:
+
+   * US DoD Central, US Gov Virginia, US Gov Iowa, and more are for US government agencies and partners. These datacenters are operated by screened US persons and include additional compliance certifications.
+
+   * China East, China North and more: These regions are available through a unique partnership between Microsoft and 21Vianet, whereby Microsoft does not directly maintain the datacenters.
+
+   Each region is paired with another region (West US paired with East US, and SouthEast Asia paired with East Asia, etc.). Such <strong>Region pairs</strong> are at least 300 miles apart.
+
+   A regional <strong>Affinity Group</strong> is defined to create a virtual network to define the data center (region). All services within an affinity group are located in the same data center. Azure groups services use Affinity Groups to optimize performance.
+
+   WARNING: Affinity groups in Azure is a higher-level concept of data centers than the facility of the same name within AWS, which refers to affinity between servers on the same subnet.
+
+   <strong>Availability Zones</strong> are specified for VMs, managed disks, load balancers, and SQL databases. AZs are physically separate datacenters within an Azure region. Each Availability Zone is made up of one or more datacenters equipped with power, cooling, and networking independent of other AZs so that each is set up to be an isolation boundary. If one zone goes down, the other continues working. Availability Zones are connected through high-speed, private fiber-optic networks.
 
 0. Options include the classic ASM (Azure Service Manager)
 and newer <a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/">
@@ -203,6 +175,59 @@ ARM (Azure Resource Manager)</a>:
 
    Each drill-down into ARM creates an additional ___ to the right.
 
+* <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/welcome-to-azure/4-create-a-vm?pivots=linux-cloud">Create a virtual machine</a> (for 60 minutes). PROTIP: Use Firefox browser. Don't use Brave browser.
+
+   ![azure-cloud-shell-364x199-11637](https://user-images.githubusercontent.com/300046/56084383-9d5a0480-5def-11e9-98e2-ba1ef5f329ea.jpg)
+
+   PROTIP: naming conventions:
+
+   * Size
+   * Region
+   * Network
+   * Resource groups
+   <br /><br />
+
+* Get VM information with queries
+
+   <pre>
+az vm show \
+  --resource-group 7f3943f2-f179-42ba-9823-ba71c7ba7824 \
+  --name myVM \
+  --query "hardwareProfile" \
+  --output tsv
+   </pre>
+
+* Set environment variables from CLI output
+* Creating a new VM on the existing subnet
+* Cleanup
+
+<a target="_blank" href="https://docs.microsoft.com/learn/paths/store-data-in-azure/">
+Module: Store Data in Azure</a>
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/deploy-a-website-with-azure-app-service/">Module: Deploy a website to Azure with Azure App Service</a>
+
+https://docs.microsoft.com/en-us/learn/modules/explore-azure-infrastructure/
+Core Cloud Services - Azure architecture and service guarantees
+
+<a target="_blank" href="https://docs.microsoft.com/learn/paths/administer-containers-in-azure/">Module: Administer containers in Azure</a>
+
+
+<a name="MgmtCerts"></a>
+
+## Management Certificates
+
+Azure uses Management (x509 v3) Certificates (.cer file containing a public key) 
+to access resources in an Azure Subscription.
+
+There is a limit of 100 Management certs per Azure subscription (administrator).
+
+   * Development
+   * Test 
+   * Pre-prod
+   * Prod
+
+   
+
 
 ## Installers #
 
@@ -214,16 +239,15 @@ ARM (Azure Resource Manager)</a>:
 * <a target="_blank" href="https://azure.microsoft.com/en-us/downloads/">
    https://azure.microsoft.com/en-us/downloads</a>
 
+
+
 <a name="Commands"></a>
 
 ## Commands #
 
+https://docs.microsoft.com/en-us/learn/modules/welcome-to-azure/4-create-a-vm?pivots=linux-cloud
 
 ### Install Commands #
-
-
-   and deployed as groups
-   (a container for each lifecycle deployment cycle)
 
    Each resource group defines scope access control for administrative actions.
 
@@ -231,7 +255,7 @@ ARM (Azure Resource Manager)</a>:
 
 <a name="AzureLogin"></a>
 
-## Azure Login #
+## Azure PowerShell Login #
 
    <tt><strong>
    Login-AzureRmAccount
@@ -303,8 +327,7 @@ Backed up as a HA Proxy.
 
 <amp-img width="611" height="296" alt="azure service fabric 20160708-611x296-c60.jpg"
 layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/16689972/cfcc70b6-44e2-11e6-9b32-a15ad6085ee5.jpg">
-</amp-img>
-
+</amp-img><br />
 
 Azure Service Fabric enables you to talk to a cluster of machines as if they were one.
 

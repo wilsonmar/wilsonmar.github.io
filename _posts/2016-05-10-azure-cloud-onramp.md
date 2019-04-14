@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Azure Cloud Onramp"
-excerpt: "The basics of how to get into and around the Azure cloud"
+title: "Azure Cloud Onramp (Consoles)"
+excerpt: "Get into and around the Azure cloud ASM & ARM portals"
 tags: [cloud, azure]
 image:
 # azure ms logo wait 1900x500-39kb.jpg
@@ -16,25 +16,56 @@ comments: true
 
 This is a step-by-step hands-on approach to getting you up and running on Azure cloud.
 
-1. Get an email adddress from hotmail.com or outlook.com
+## Microsoft Learn account
 
-   <a target="_blank" href="
-   https://signup.live.com/signup">
-   https://signup.live.com/signup</a>
+1. Get an account into "Microsoft Learn", which provides FREE temporary cloud instances for hands-on learning. This one feature is getting many to invest their time on Azure versus AWS, Google, etc.
 
-   You'll need a email address that you can share and transfer to other people.
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">https://docs.microsoft.com/en-us/learn/azure/</a>
 
-   PROTIP: Don't use an email that you use for your own banking, shopping, social media, etc.
+   Notice that the product categories are: .NET, Azure, Business Applications, Dynamics 365, Power Platfor, Visual Studio, and Windows.
 
-   If you're at a company, you will need to give someone else the password so that if you're ever "run over a bus",
-   your organization can continue.
+   ### Job Roles
 
-2. Make up an adult birthdate: 2018 - 22 = 1996
+2. Select your role:
+
+   * Business User
+   * Business Analyst
+   * (Azure) Administrator
+   * (Azure) Developer
+   * (Azure) Solution Architect
+   * Data Engineer
+   * AI Engineer
+   <br /><br />
+
+   MY OPINION: I think job roles should be multi-select checkboxes.
+   This segregation also adds to duplicating material.
+
+3. After registering, use this URL:
+
+   https://techprofile.microsoft.com/en-us/<em>name</em>
+
+
+
+## Microsoft Azure account
+
+1. Get an email adddress from a corporate assets administrator. 
+
+   PROTIP: Avoid using an email that you use for your own banking, shopping, social media, etc.
+
+   For continuity with a real cloud, you'll need an email address that you can share and transfer to other people. That's so at a company, you will need to give someone else the password so that if you're ever go on vacation or get "run over a bus", your organization can continue.
+
+   A different account is often created for each department of responsibility, plus timing.
+
+   PROTIP: You may create several email accounts. Each Azure free subscription includes a $200 credit to spend on any service for the first <strong>30 days</strong>, free access to the most popular Azure products for 12 months, and access to more than 25 products that are always free.
+
+   When someone sign up for a Microsoft cloud service subscription such as Microsoft Azure, Microsoft Intune, or Office 365, a dedicated instance of Azure AD (Active Directory) is created for your organization. Azure AD is partitioned into separate tenants. A tenant is a dedicated, isolated instance of the Azure Active Directory service, owned and managed by an organization. 
+   
+2. Make up an adult birthdate: 2019 - 22 = 1997
 
    PROTIP: Write it down for account recovery, such as in a 1Password entry.
    Also write down the date you created the account.
 
-3. You'll need a phone number for 3FA (three Factor Authentication).
+3. You'll need a phone number for multi-factor Authentication.
 
    PROTIP: Give Googgle Voice the cell number that you've been giving out to people.
    Then get a new phone number from your cell carrier (Verizon, ATT, etc.).
@@ -49,15 +80,30 @@ This is a step-by-step hands-on approach to getting you up and running on Azure 
 
    Many companies have a company (corporate) credit card.
 
-5. Pay for a subscription.
+5. Sign up for Azure:
 
-   ### Two Azure portals #
+   <a target="_blank" href="
+   https://signup.live.com/signup"><strong>
+   https://signup.live.com/signup</strong></a>
 
-Right off the bat, know that Microsoft has been transitioning from the "classic" (older)
+6. PROTIP: You don't need to sign-up for and pay for a subscription with your credit card until you have <strong>5 users</strong>.
+
+   PROTIP: Use address with a zip code that's not associated with your home address, and used only for banking.
+
+   Multiple subscriptions can be created under a single Azure account (Dev, Test, Staging, Production, etc.). This is particularly useful for businesses because access control and billing occur at the subscription level, not the account level. 
+
+7. Install the <strong>Microsoft Authenticator app</strong> on you smartphone and setup Two-factor authentication to approve access using your phone.
+
+8. Get a unique profile image and <a target="_blank" href="https://account.microsoft.com/profile/edit-picture?fref=home.banner.profile">add picture</a>.
+
+
+## Two Azure portals #
+
+Microsoft has been transitioning from the "classic" (older)
 Azure Service Management (ASM) to the Azure Resource Manager (ARM).
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom"><th> Product </th><th> Sign-up page </th><th> Console page </th></tr>
+<tr valign="bottom"><th> Product </th><th> Sign-up page </th><th> Dashboard page </th></tr>
 <tr valign="top"><td> <a href="#ASM-signup">ASM</a> </td><td>
    <a target="_blank" href="https://account.windowsazure.com/signup/"> 
    account.windowsazure.com/signup</a>
@@ -68,7 +114,7 @@ Azure Service Management (ASM) to the Azure Resource Manager (ARM).
    <a target="_blank" href="https://azure.com">
    azure.com</a><br />azure.microsoft.com/en-us/
    </td><td>    
-   <a target="_blank" href="https://portal.azure.com/"> portal.azure.com</a>
+   <a target="_blank" href="https://portal.azure.com/"><strong>portal.azure.com</strong></a>
    </td></tr>
 </table>
 
@@ -235,16 +281,16 @@ At <a target="_blank" href="https://portal.azure.com/">
 
 0. Click the X to close a blade.
 
+## Install Powershell 
+
+See <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-powershell/">https://wilsonmar.github.io/azure-cloud-powershell/</a>
+
 
 ## AZ API
 
-1. Sign-up for an email to use.
+1. Use the automation bash script for MacOS at 
 
-   ### Account ID and password
-
-2. Sign-up for a Microsoft Azure account with a password to your email account name.
-
-3. Use the automation bash script for MacOS at https://github.com/wilsonmar/mac-install-all 
+   https://github.com/wilsonmar/mac-install-all 
 
    The "mac-install-all.sh" script places a <strong>secrets.sh</strong> file in your machine's home folder.
 
@@ -252,20 +298,17 @@ At <a target="_blank" href="https://portal.azure.com/">
 
 4. Edit the file there (not in the repo directory).
 
-   <a name="AZ-actions"></a>
+   If in the secrets.sh file the TRYOUT string is edited to contain a known value for a module, that would be executed.
 
-## TRYOUT "az-vm"
-
-If in the secrets.sh file the TRYOUT string is edited to contain a known value for a module, that would be executed.
-To execute all modules:
+   To execute all modules:
 
    <tt>TRYOUT="az-vm"</tt>
 
-To execute only one or a few modules, for example:
+   Alternately, to execute only one or a few modules, for example:
 
    <tt>TRYOUT="az-vm"</tt>
 
-... the Bash script has been programmed to create an instance using az cli commands rather than manually copied and pasted onto a <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-shell/overview?view=azure-cli-latest">Azure Cloud Shell</a> instance launched on an internet browser as described (using command+shift+V) at:
+   ... the Bash script has been programmed to create an instance using az cli commands rather than manually copied and pasted onto a <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-shell/overview?view=azure-cli-latest">Azure Cloud Shell</a> instance launched on an internet browser as described (using command+shift+V) at:
 
    <a target="_blank" href="
    https://docs.microsoft.com/en-us/cli/azure/azure-cli-vm-tutorial?view=azure-cli-latest">
@@ -282,7 +325,7 @@ To execute only one or a few modules, for example:
    * Display cost of above
    <br /><br />
 
-Alternately, if in the secrets.sh file the TRYOUT string is edited to contain this:
+   Alternately, if in the secrets.sh file the TRYOUT string is edited to contain this:
 
    <tt>TRYOUT="az-func"</tt>
 
@@ -446,10 +489,8 @@ Create a Service Principal</a> using <a target="_blank" href="https://docs.micro
 
    If your APP_ID has not already been created:
 
-## TRYOUT
-
-To specify a module to run (not just install):
-If in the secrets.sh file the TRYOUT string is edited to contain "az":
+9. To specify a module to run (not just install):
+   If in the secrets.sh file the TRYOUT string is edited to contain "az":
 
    <tt>TRYOUT="az"</tt>
 
@@ -463,7 +504,7 @@ https://docs.microsoft.com/en-us/cli/azure/batch?view=azure-cli-latest
 Azure has "Web Jobs" for Azure Functions background jobs.
 
 
-## Videos
+## Resources : Videos
 
 <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-big-picture">
    Microsoft Azure: The Big Picture</a> 1h 50m Mar 10, 2016
