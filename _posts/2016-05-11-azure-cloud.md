@@ -173,7 +173,7 @@ ARM (Azure Resource Manager)</a>:
    * Management
    <br /><br />
 
-   Each drill-down into ARM creates an additional ___ to the right.
+   Each drill-down into ARM creates an additional pane? to the right.
 
 * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/welcome-to-azure/4-create-a-vm?pivots=linux-cloud">Create a virtual machine</a> (for 60 minutes). PROTIP: Use Firefox browser. Don't use Brave browser.
 
@@ -201,10 +201,100 @@ az vm show \
 * Creating a new VM on the existing subnet
 * Cleanup
 
+https://docs.microsoft.com/en-us/learn/modules/design-for-efficiency-and-operations-in-azure/2-maximize-efficiency-of-cloud-spend
+
 <a target="_blank" href="https://docs.microsoft.com/learn/paths/store-data-in-azure/">
 Module: Store Data in Azure</a>
 
+An <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/design-for-efficiency-and-operations-in-azure/4-use-automation-to-reduce-effort-and-error">example</a> of imperative declaration:
+
+<pre>
+az group create --name <em>storage-resource-group</em> \
+        --location eastus
+az storage account create --name <em>mystorageaccount</em> \
+        --resource-group <em>storage-resource-group</em> \
+        --kind BlobStorage \
+        --access-tier hot
+</pre>
+
+Declarative automation is done using Azure Resource Manager templates such as this:
+
+<pre>
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string"
+        },
+        "accountType": {
+            "type": "string",
+            "defaultValue": "Standard_RAGRS"
+        },
+        "kind": {
+            "type": "string"
+        },
+        "accessTier": {
+            "type": "string"
+        },
+        "httpsTrafficOnlyEnabled": {
+            "type": "bool",
+            "defaultValue": true
+        }
+    },
+    "variables": {
+    },
+    "resources": [
+        {
+            "apiVersion": "2018-02-01",
+            "name": "[parameters('name')]",
+            "location": "[parameters('location')]",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "[parameters('accountType')]"
+            },
+            "kind": "[parameters('kind')]",
+            "properties": {
+                "supportsHttpsTrafficOnly": "[parameters('httpsTrafficOnlyEnabled')]",
+                "accessTier": "[parameters('accessTier')]",
+                "encryption": {
+                    "services": {
+                        "blob": {
+                            "enabled": true
+                        },
+                        "file": {
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                }
+            },
+            "dependsOn": []
+        }
+    ],
+    "outputs": {
+        "storageAccountName": {
+            "type": "string",
+            "value": "[parameters('name')]"
+        }
+    }
+}
+   </pre>
+
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/deploy-a-website-with-azure-app-service/">Module: Deploy a website to Azure with Azure App Service</a>
+
+![azure-loadbal-615x424-31664](https://user-images.githubusercontent.com/300046/56093963-df388880-5e8b-11e9-9a5c-491b33df44ca.jpg)
+
+<strong>Azure Traffic Manager</strong> provides global DNS load balancing among DNS endpoints within or across Azure regions. Traffic manager also detects and removes failed endpoints.
+
+<strong>Azure Application Gateway</strong> (AppGW) provides Layer 7 (URL-based) load-balancing such as round-robin distribution of incoming traffic, cookie-based session affinity, URL path-based routing, and the ability to host multiple websites behind a single application gateway. Application Gateway monitors the health of resources in its back-end pool and automatically removes any resource considered unhealthy from the pool. Health probes continue until instances are healthy again and added back.
+
+<strong>Azure Load Balancer</strong> is a layer 4 load balancer. TCP and HTTP health-probing options to manage service availability are optional.
+
+"Availability sets"
 
 https://docs.microsoft.com/en-us/learn/modules/explore-azure-infrastructure/
 Core Cloud Services - Azure architecture and service guarantees
@@ -223,10 +313,8 @@ There is a limit of 100 Management certs per Azure subscription (administrator).
 
    * Development
    * Test 
-   * Pre-prod
+   * Pre-prod (Staging)
    * Prod
-
-   
 
 
 ## Installers #
