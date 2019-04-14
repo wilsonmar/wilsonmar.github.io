@@ -48,19 +48,15 @@ This is a step-by-step hands-on approach to getting you up and running on Azure 
 
 ## Microsoft Azure account
 
-1. Get an email adddress from a corporate assets administrator. 
+1. PROTIP: Avoid using an email that you use for your own banking, shopping, social media, etc. For continuity with a real cloud, you'll need an email address that you can share and transfer to other people. That's so at a company, you will need to give someone else the password so that if you're ever go on vacation or get "run over a bus", your organization can continue.
 
-   PROTIP: Avoid using an email that you use for your own banking, shopping, social media, etc.
+   In you're in an enterprise company, get an email adddress from a corporate assets administrator. A different account is often created for each department of responsibility.
 
-   For continuity with a real cloud, you'll need an email address that you can share and transfer to other people. That's so at a company, you will need to give someone else the password so that if you're ever go on vacation or get "run over a bus", your organization can continue.
+   PROTIP: In the name include the month and year in the account name (such as johndoe1901@hotmail.com) for 2019-01 (January). Many <strong>create several email accounts</strong> because each Azure subscription includes a $200 credit to spend on any service for the <strong>first 30 days</strong>, free access to the most popular Azure products for 12 months, and access to more than 25 products that are always free. 
 
-   A different account is often created for each department of responsibility, plus timing.
-
-   PROTIP: You may create several email accounts. Each Azure free subscription includes a $200 credit to spend on any service for the first <strong>30 days</strong>, free access to the most popular Azure products for 12 months, and access to more than 25 products that are always free.
-
-   When someone sign up for a Microsoft cloud service subscription such as Microsoft Azure, Microsoft Intune, or Office 365, a dedicated instance of Azure AD (Active Directory) is created for your organization. Azure AD is partitioned into separate tenants. A tenant is a dedicated, isolated instance of the Azure Active Directory service, owned and managed by an organization. 
+   When someone signs up for a Microsoft cloud service subscription such as Microsoft Azure, Microsoft Intune, or Office 365, a dedicated instance of Azure AD (Active Directory) is created for your organization. Azure AD is partitioned into separate tenants. A tenant is a dedicated, isolated instance of the Azure Active Directory service, owned and managed by an organization. 
    
-2. Make up an adult birthdate: 2019 - 22 = 1997
+2. For birthdate, make up an adult year: 2019 - 22 = 1997
 
    PROTIP: Write it down for account recovery, such as in a 1Password entry.
    Also write down the date you created the account.
@@ -133,7 +129,7 @@ Services NOT available in the newer ARM portal:
    * Managed Cache 
    <br /><br />
 
-Also, instead of 2 racks, ARM resources can span 3 racks.
+Also, instead of 2 racks, ARM resources can span 3 racks of computers.
 
 See: <a target="_blank" href="https://azure.microsoft.com/en-us/features/azure-portal/availability/">
    Which portal supports each Azure service, listed alphabetically</a>
@@ -196,7 +192,7 @@ See: <a target="_blank" href="https://azure.microsoft.com/en-us/features/azure-p
 
 ## ARM Dashboard Tour #
 
-At <a target="_blank" href="https://portal.azure.com/">
+0. At <a target="_blank" href="https://portal.azure.com/">
    https://portal.azure.com</a>
 
 0. Click the "hamburger" icon at the upper-left corner for English descriptions of each icon on the left edge.
@@ -263,7 +259,7 @@ At <a target="_blank" href="https://portal.azure.com/">
 
    https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-keyboard-shortcuts
 
-
+   
    ### Marketplace
 
 0. Right-click on the "Marketplace" box on the Dashboard and select "unpin"
@@ -375,7 +371,7 @@ See <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-powershell/
    See: <a target="_blank"><a target="_blank" href="https://msdn.microsoft.com/en-us/library/hh534478.aspx">
    Multi-tenant architecture</a>
 
-   Resource groups (RGs) are used for RBAC, Automated Deployments, and Billing/Monitoring purposes.
+   Resource groups (RGs) are used for RBAC, Automated Deployments, and Billing/Monitoring.
 
    ![az-ad-analogy-480x483-28094](https://user-images.githubusercontent.com/300046/38739019-f324db20-3ef0-11e8-8c29-dd9ea31ddcd4.jpg)
 
@@ -495,6 +491,14 @@ Create a Service Principal</a> using <a target="_blank" href="https://docs.micro
    <tt>TRYOUT="az"</tt>
 
 QUESTION: limits to total concurrent executions across all functions within a given region to 100?
+
+## Azure AD & PIM
+
+   Subscriptions include "Azure AD Premium P2" and "Enterprise Mobility + Security (EMS) E5".
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">Azure AD Privileged Identity Management (PIM)</a> minimizes the number of people who have access to secure information, which mitigates the risk of excessive, unnecessary, or misused access rights and provides oversight of role assignments, self-service, and just-in-time role activation and Azure AD and Azure resource access reviews.
+   It is in additional to Azure AD. paid-for subscription that 
+
 
 ## Batch commands
 

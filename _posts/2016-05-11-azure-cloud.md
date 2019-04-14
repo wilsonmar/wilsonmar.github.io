@@ -25,8 +25,9 @@ but with less confusing grandiose marketing generalizations.
 
 The <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/welcome-to-azure/3-tour-of-azure-services">big picture of Azure services</a>:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/56084247-94683380-5ded-11e9-9ff2-c246e3e9c530.jpg"><img alt="azure-big-picture-1923x1083-160564.jpg" src="https://user-images.githubusercontent.com/300046/56084247-94683380-5ded-11e9-9ff2-c246e3e9c530.jpg">
-<em>Click diagram for full-frame pop-up</em></a>
+<em>Click diagram for full-frame pop-up</em></a><br />
 
+This is missing some new services such as DevOps.
 
 ## Architectural components #
 
@@ -75,7 +76,31 @@ components for "High Control":
 * Azure Log Analytics (log ingestion and IaaS monitoring), and
 * Application Insights (application performance monitoring including availability, performance, and exception information)
 
-## Learning Account
+
+## Plan
+
+Module:  <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/cloud-operating-model/">Overview of the Microsoft Cloud Operating Model</a>
+covers business, people, and technology strategies to identify where an organization is in the digital transformation journey, identify <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/cloud-operating-model/3-modernization-triggers">triggers</a> and opportunities for cloud migration, and recognize these components needed to develop a digital transformation strategy.
+
+A. Meet business requirements
+B. Assess organization maturity
+C. Strategize business impact
+D. Upgrade business processes
+E. Identify skills gap
+F. Identify migration portfolio
+G. Perform migration
+H. Modernize the business
+
+Expenditures of time and effort need to balance:
+
+* Money Cost (OpEx vs. CapEx)
+* Time - Speed (Quick provisioning)
+* Global scale
+* Productivity
+* Performance (reduced network latency and greater economies of scale)
+* Reliability (data backup, disaster recovery, and business continuity easier and less expensive because data can be mirrored at multiple redundant sites on the cloud provider’s network)
+
+## Microsoft Learning Account
 
 After <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp">getting a Learning account</a>:
 
@@ -85,9 +110,8 @@ After <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp">g
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/learn-business-value-of-azure/">Learn the business value of Microsoft Azure</a> learning path
 
-   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/architect-great-solutions-in-azure/">Pillars of a great Azure architecture</a>
-
-   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/cloud-operating-model/">Overview of the Microsoft Cloud Operating Model</a>
+   <strong>Azure Security Center</strong> is available in free and paid tiers.
+   The Free subscription assesses Azure resources only. The "Standard" tier provides a full suite of security-related services including continuous monitoring, threat detection, just-in-time access control for ports, and more. After a free 60-day free trial, it's $15 per node per month.
 
 
 ## Architecting
@@ -104,6 +128,8 @@ After <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp">g
    * Design for efficiency and operations
    
    * Design for availability and recoverability
+
+   Based on: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/architect-great-solutions-in-azure/">Pillars of a great Azure architecture</a>
 
 
 ## Azure account and dashboard

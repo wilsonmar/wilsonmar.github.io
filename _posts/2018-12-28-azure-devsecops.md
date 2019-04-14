@@ -230,6 +230,8 @@ Package management such as Artifactory.
 
 Forrester has Microsoft among the leaders in its <a target="_blank" href="https://azure.microsoft.com/en-us/resources/continuous-delivery-and-release-automation/">2018 Continuous Delivery And Release Automation" market assesement</a> (behind Electric Cloud, IBM, Xebia, and CA).
 
+https://github.com/rfennell/AzurePipelines
+
 https://www.youtube.com/watch?v=yr6PJxfACNc
 
 Repos is <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/">free starting prices</a> for up to 10 parallel jobs.
@@ -697,7 +699,38 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-
 https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-create-complete-vm
     Create a complete Linux virtual machine infrastructure in Azure with Terraform
 
+## GitHub repositories
 
+https://github.com/Microsoft/DevOps-Architecture
+A guide on building a robust professional devops environment for ASP.NET Core using Azure DevOps by Jeff Palermo
+
+https://github.com/wpschaub/quick-reference-posters
+Architecting, Getting Started, Habits, Practices, Technology
+
+https://github.com/mpeder/azdevopssecurity
+
+https://github.com/Microsoft/azure-devops-dotnet-samples
+
+https://github.com/Microsoft/devops-project-samples
+https://github.com/Azure/azure-cli
+https://github.com/Microsoft/azure-devops-auth-samples
+https://github.com/Azure/azure-devops-cli-extension
+https://github.com/Azure/azure-devops-utils
+
+https://github.com/Microsoft/azure-devops-node-api
+https://github.com/Microsoft/azure-devops-python-api
+https://github.com/benmatselby/go-azuredevops
+https://github.com/Dinomite-Studios/unity-azure-pipelines-tasks
+
+https://github.com/Azure/azure-api-management-devops-resource-kit
+
+https://github.com/dwyl/learn-devops
+https://github.com/dwyl/learn-microsoft-azure
+
+https://github.com/igoravl/tfscmdlets
+PowerShell Cmdlets for Azure DevOps and Team Foundation Server
+
+https://github.com/Azure/DevOps-For-AI-Apps
 
 ## Related
 
@@ -715,6 +748,7 @@ See https://www.microsoft.com/developerblog/2017/05/09/provision-configure-infra
 
 https://devops.com/devops-help-hinder-compliance/
 https://www.youtube.com/watch?v=Bo_84yKsxuc
+
 
 ## Learning
 
