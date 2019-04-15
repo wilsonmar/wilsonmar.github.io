@@ -317,10 +317,13 @@ on Microsoft's website:
 <tr><td> Function key </td><td> fn + F1 ... F12 </td><td> &nbsp; </td></tr>
 <tr><td> Windows Start orb </td><td><a href="#AwkwardKeys">control+F2, then enter/return</a></td><td><a href="#AwkardKeys">awkard</a></td></tr>
 <tr><td> Num lock </td><td> Virtual Machine > Send Key </td><td> &nbsp; </td></tr>
+<tr><td> Home (top of doc) </td><td> fn + left </td><td> &nbsp; </td></tr>
+<tr><td> End (bottom of doc)  </td><td>  fn + right </td><td> &nbsp; </td></tr>
 <tr><td> Insert toggle </td><td colspan="2"> <a href="#RemapKeyboard"><em>Requires mapping</em></a></td></tr>
 </tbody>
 </table>
 
+See http://osxdaily.com/2012/02/23/keyboard-shortcuts-to-navigate-select-text-mac-os-x/
 
 <a id="InsertKeyz"></a>
 
@@ -333,7 +336,7 @@ on a Mac is problematic, especially within a virtual Windows machine.
 <li> On older Macintosh keyboards, press the Help key.</li>
 <li> On older Macintosh notebook keyboards, press <strong>fn+M</strong>.</li>
 <li> Newer Macintosh notebooks do not support fn+M. 
-So I suggest mapping <strong>Alt+F1</strong> within 
+So map <strong>Alt+F1</strong> within 
 VMware Fusion > Preferences > Keyboard &amp; Mouse > Key Mappings.</li>
 </ul>
 
