@@ -40,9 +40,11 @@ This is a step-by-step hands-on approach to getting you up and running on Azure 
    MY OPINION: I think job roles should be multi-select checkboxes.
    This segregation also adds to duplicating material.
 
+   PROTIP: These learning roles are differen than the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a>.
+
 3. After registering, use this URL:
 
-   https://techprofile.microsoft.com/en-us/<em>name</em>
+   https://techprofile.microsoft.com/en-us/<em>your name</em>
 
 
 
@@ -496,8 +498,7 @@ QUESTION: limits to total concurrent executions across all functions within a gi
 
    Subscriptions include "Azure AD Premium P2" and "Enterprise Mobility + Security (EMS) E5".
 
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">Azure AD Privileged Identity Management (PIM)</a> minimizes the number of people who have access to secure information, which mitigates the risk of excessive, unnecessary, or misused access rights and provides oversight of role assignments, self-service, and just-in-time role activation and Azure AD and Azure resource access reviews.
-   It is in additional to Azure AD. paid-for subscription that 
+   An additional paid subscription is <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">Azure AD Privileged Identity Management (PIM)</a> which minimizes the number of people who have access to secure information, which mitigates the risk of excessive, unnecessary, or misused access rights and provides oversight of role assignments, self-service, and just-in-time role activation and Azure AD and Azure resource access reviews.
 
 
 ## Batch commands
