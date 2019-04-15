@@ -20,6 +20,17 @@ but with less confusing grandiose marketing generalizations.
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/overview/cloud-computing-dictionary/">Cloud Computing Terms Dictionary</a>
 
+## Why?
+
+* Money Cost (OpEx vs. CapEx)
+* Time - Speed (Quick provisioning)
+* Global scale
+* Productivity
+* Performance (reduced network latency and greater economies of scale)
+* Reliability (data backup, disaster recovery, and business continuity easier and less expensive because data can be mirrored at multiple redundant sites on the cloud provider’s network)
+<br /><br />
+
+
 
 ## Web services
 
@@ -68,6 +79,8 @@ components for "High Control":
    * Apprenda
    * Jelastic
 
+<strong>Azure Stack</strong> runs Azure runs within a private data center.
+
 ## Logging #
 
 ![azure-log-analytics-711x306-35708](https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg)
@@ -92,13 +105,6 @@ G. Perform migration
 H. Modernize the business
 
 Expenditures of time and effort need to balance:
-
-* Money Cost (OpEx vs. CapEx)
-* Time - Speed (Quick provisioning)
-* Global scale
-* Productivity
-* Performance (reduced network latency and greater economies of scale)
-* Reliability (data backup, disaster recovery, and business continuity easier and less expensive because data can be mirrored at multiple redundant sites on the cloud provider’s network)
 
 ## Microsoft Learning Account
 
@@ -180,6 +186,8 @@ After <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp">g
    WARNING: Affinity groups in Azure is a higher-level concept of data centers than the facility of the same name within AWS, which refers to affinity between servers on the same subnet.
 
    <strong>Availability Zones</strong> are specified for VMs, managed disks, load balancers, and SQL databases. AZs are physically separate datacenters within an Azure region. Each Availability Zone is made up of one or more datacenters equipped with power, cooling, and networking independent of other AZs so that each is set up to be an isolation boundary. If one zone goes down, the other continues working. Availability Zones are connected through high-speed, private fiber-optic networks.
+
+   <strong>Network Security Groups (NSGs)</strong> inside a virtual network (VNet) are defined for communication between virtual machines to restrict unnecessary communication.
 
 0. Options include the classic ASM (Azure Service Manager)
 and newer <a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/">
@@ -497,11 +505,29 @@ by Matt Milner  Beginner Mar 10, 2016 1h 50m
    Modernizing Your Websites with Azure Platform as a Service</a>
    by Troy HuntIntermediateApr 02, 20155h 26m
 
-## Overview Tech Videos
+## Extentions Marketplace
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/windows-azure-marketplace/">
-Windows Azure Marketplace</a>
+VIDEO: <a target="_blank" href="https://app.pluralsight.com/library/courses/windows-azure-marketplace/">Windows Azure Marketplace</a>
 by Joe Kunk Intermediate Dec 19, 2013 1h 56m
+
+https://marketplace.visualstudio.com/azuredevops?noPrompt=true
+
+   1. If you get a pop-up:
+
+
+   2. Click to be brought to<br /><a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ms.vss-code-search">https://marketplace.visualstudio.com/items?itemName=ms.vss-code-search</a>
+
+   3. Click the green "Get it free" button.
+   4. Select the organization and click "Install".
+   5. Click "Proceed to organization".
+
+   QUESTION: How to automate the above installation on an org?
+
+   6. https://docs.microsoft.com/en-us/azure/devops/project/search/overview?view=azure-devops
+   7. https://docs.microsoft.com/en-us/azure/devops/project/search/work-item-search?view=azure-devops
+   8. https://docs.microsoft.com/en-us/azure/devops/project/wiki/search-wiki?view=azure-devops
+
+
 
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/applied-windows-azure/table-of-contents/">
 Applied Windows Azure</a>
@@ -594,7 +620,9 @@ by Niraj Bhatt Intermediate Mar 08, 2012 3h 18m (54)
 
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/play-by-play-azure-security-mark-russinovich">
 Play by Play: Azure Security with Mark Russinovich</a>
-by Mark Russinovich and Mark MinasiIntermediateDec 18, 201453m (180)
+by Mark Russinovich and Mark MinasiIntermediateDec 18, 2014 53m (180)
+
+   For role-based security to safeguard data according to an organization's specific security and compliance needs. Azure ATP has its own portal at https://portal.atp.azure.com, so it's not available via the Azure portal but as part of the Enterprise Mobility + Security E5 suite (EMS E5) or as a standalone license through the Cloud Solution Provider (CSP) licensing model.  Azure ATP (Advanced Threat Protection) supports <a target="_blank" href="https://docs.microsoft.com/en-us/azure-advanced-threat-protection/atp-role-groups">three roles: Administrators, Users and Viewers</a>.
 
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/play-by-play-hanselman">
 Play By Play: Azure Deployment with Scott Hanselman</a>

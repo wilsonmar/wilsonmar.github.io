@@ -17,26 +17,35 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/azure-devops/">This page</a> contains "deep dive" notes for learning and using DevSecOps using Microsoft's Azure DevOps services.
 
+<a target="_blank" href="https://www.forbes.com/sites/janakirammsv/2018/09/16/azure-devops-why-its-a-big-deal-for-microsoft-and-the-community/#353e0a8c6780">
+Azure DevOps - Why It's A Big Deal For Microsoft And The Community</a> Sep 16, 2018
+
 <img align="right" alt="azure-devopssuite-52x52.png" width="52" src="https://user-images.githubusercontent.com/300046/56076532-9b605900-5d8f-11e9-89a2-9b9b02e1bf1d.png"><a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/">Azure DevOps Services (https://azure.com/devops)</a> consists of these product offerings from Microsoft:
 
    1. <a href="#AzureBoards"><strong>Azure Boards</strong></a> (like Jira) to plan, track, and discuss Work Items across teams using Kanban boards (to deliver value to users faster)
 
    2. <a href="#AzureRepos"><strong>Azure Repos</strong></a> (like GitHub and AWS Code Commit, etc.) to use Git for source version, collaborate using pull requests, and file management
 
-   3. <a href="#AzureArtifacts"><strong>Azure Artifacts</strong></a> (like Artifactory, Nexxus, etc.) for binary package consumption package management 
+   5. <a href="#AzurePipelines"><strong>Azure Pipelines</strong></a> (like Jenkins, AWS CodeDeploy, etc.) for CI/CD automation 
 
    4. <a href="#AzureDevTestPlans"><strong>Azure Test Plans</strong></a> to manage tests and explore (to ship with confidence)
 
-   5. <a href="#AzurePipelines"><strong>Azure Pipelines</strong></a> (like Jenkins, AWS CodeDeploy, etc.) for CI/CD automation 
+   3. <a href="#AzureArtifacts"><strong>Azure Artifacts</strong></a> (like Artifactory, Nexxus, etc.) for binary package consumption package management 
 
    6. <a href="#AzureDevTestLabs"><strong>Azure DevTest Labs</strong></a> (like Sauce Labs) provides self-service creation of pre-provisioned sandbox environments from private custom images in VHD.
 
 Each product above has its own pricing.
 
+<a target="_blank" href="https://status.dev.azure.com/">https://status.dev.azure.com</a> provides status</a>.
+
 The <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/release-notes/">Features Timeline (product roadmap)</a> has additional "Areas":
 
    * Administration
    * Notifications
+
+<a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ms.feed">https://marketplace.visualstudio.com/items</a> lists extensions to be installed to your org, such as Search and Analytics:
+
+   * Analytics (<a target="_blank" href="https://devblogs.microsoft.com/devops/analytics-for-azure-devops-services-is-now-generally-available/">generally avialable</a>)
 
 <hr />
 
@@ -83,11 +92,33 @@ After much work, here I present the steps culled from among the dizzying volume 
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/?view=azure-devops">DOCS:Start using Azure DevOps</a>
 
+### A) Azure DevOps Demo Generator
+
+1. To simplify working with demos, and other education material provided by the Microsoft Azure Marketing team, visit the <a target="_blank" href="https://www.azuredevopslabs.com/">Azure Devops hands-on-labs</a> at:
+
+   <a target="_blank" href="https://azuredevopsdemogenerator.azurewebsites.net/">Azure DevOps Demo Generator at<br/>https://azuredevopsdemogenerator.azurewebsites.net</a> 
+   
+   The website creates within your Azure DevOps organization demo projects with pre-populated sample content (source code, work items, iterations, service endpoints, build and release definitions based on a chosen template.
+
+1. Click "Choose template":
+
+   * SmartHotel360 contains a complete ASP.NET 2 web mobile and desktop business apps for a hotel, and can be deployed using Docker containers.
+   * MyHealthClinic defines a team project for an ASP.NET Core app that deploys to Azure App Service
+   * MyShuttle defines a Java app and Azure App service deployment
+   * PartsUnlimited defines an ASP.NET app with customized CI/CD pipelines
+   <br /><br />
+
+   NOTE: Others (Tailwind Traders, ContosoAir) are not setup for Azure DevOps.
+
+1. Type a project name.
+1. Click "Create project" and wait until you can...
+1. Click "Navigate to project" Azure DevOps Dashboard.
+   
 
 
-The Azure DevOps web page 
+### B) VisualStudio.com
 
-Notice the URL is "https://<em>YourOrganization</em>.visualstudio.com".
+Via URL is "https://<em>YourOrganization</em>.visualstudio.com":
 
 1. Create your organization with a personal Microsoft account or a work or school accountdocs.microsoft.com
 
@@ -150,7 +181,7 @@ Resources associated with a particular product from <a target="_blank" href="htt
 
 <img align="right" src="../images/azure-devops-boards-96.svg">
 
-| <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/boards/">Product</a> | <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/boards/">Docs</a> | <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/boards/get-started/index-agile">Get started</a> |
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/boards/">Product</a> | <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/boards/">Docs</a> | <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/boards/get-started/index-agile">Get started</a> |
 
 <a target="_blank" href="https://www.youtube.com/watch?v=Q-wnvG_pvj8">
 VIDEO: Using Azure Boards with GitHub</a>
@@ -312,6 +343,11 @@ But Azure DevOps also makes use of other Azure services and client executables:
 <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a>?
 
 <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">Microsoft Certified: Azure DevOps Engineer Expert</a> and 
+
+
+<a name="PartsUnlimited"></a>
+
+#### PartsUnlimited Sample Project
 
 Clone or download <a target="_blank" href="https://microsoft.github.io/PartsUnlimited/">https://microsoft.github.io/PartsUnlimited</a> (PU) - a sample .NET eCommerce website site, described as "Project Unicorn" in chapters 31-35 of <a target="_blank" href="http://www.amazon.com/The-Phoenix-Project-Helping-Business/dp/0988262592">The Phoenix Project</a> by Gene Kim, Kevin Behr and George Spafford, © 2013
 
@@ -702,7 +738,17 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-create-c
 ## GitHub repositories
 
 https://github.com/Microsoft/DevOps-Architecture
-A (hands-on) guide on building a robust professional devops environment for ASP.NET Core using Azure DevOps by Jeff Palermo
+A (hands-on) guide on building a robust professional devops environment for ASP.NET Core using Azure DevOps by Jeff Palermo identifies these for a "professional-grade DevOps environment":
+
+   * Private build
+   * Continuous integration build
+   * Static code analysis
+   * Release candidate versioning and packaging
+   * Environment provisioning and configuration
+   * Minimum of a three-tier deployment pipeline
+   * Production diagnostics managed by development team
+   * Insanely short cycle time through the previous steps
+
 
 https://github.com/wpschaub/quick-reference-posters
 Architecting, Getting Started, Habits, Practices, Technology
@@ -750,6 +796,11 @@ https://devops.com/devops-help-hinder-compliance/
 https://www.youtube.com/watch?v=Bo_84yKsxuc
 
 
+## Live Events
+
+On Friday, June 15, 2019, attend a <a target="_blank" href="https://GlobalDevOpsBootcamp.com">Global DevOps Bootcamp event</a> throughout the world.
+Twitter: #GDBC, @gdevopsbc 
+
 ## Learning
 
 https://docs.microsoft.com/en-us/learn/
@@ -769,6 +820,7 @@ https://www.telerik.com/blogs/microsoft-azure-devops-what-you-need-to-know
 ## Rock Stars
 
 Sam Guckenheimer, Product Owner, Visual Studio Cloud Services
+* <a target="_blank" href="http://azuredevopspodcast.clear-measure.com/sam-guckenheimer-on-testing-data-collection-and-the-state-of-devops-report-episode-003">At Jeffery Palermo's AzureDevopsPodcast.clear-measure.com State of Devops report</a>
 * <a target="_blank" href="https://www.youtube.com/watch?v=BwgjfevnXoY">Decision cycle: observe, orient, decide, and act</a>
 * <a target="_blank" href="https://www.youtube.com/watch?v=ypnOgxNecos">`Change A`gents for DevOps</a>
 * <a target="_blank" href="https://www.youtube.com/watch?v=8EN1kGFmiIo">Reflecting on the DevOps Journey</a> - http://aka.ms/OurDevOpsJourney.
@@ -778,21 +830,18 @@ Rugged DevOps and DevOps Anti-Patterns</a>
 
 ### DevOps Cloud Developer Advocates
 
-<a target="_blank" href="https://twitter.com/search?q=%23LoECDA&src=typd">#LoECDA (League of Extradinary DevOps Advocates)</a>
+League of Extradinary DevOps Advocates: <a target="_blank" href="https://twitter.com/search?q=%23LoECDA&src=typd">#LoECDA</a>, <a target="_blank" href="https://twitter.com/LoECDA">@LoECDA</a>
 
-Donovan Brown (<a target="_blank" href="https://twitter.com/DonovanBrown">@DonovanBrown</a>, 
-<a target="_blank" href="http://donovanbrown.com/">http://donovanbrown.com</a>
-<a target="_blank" href="http://donovanbrown.com/page/slide-decks">slide-decks</a>.
-http://www.donovanbrown.com/post/2015/09/01/what-is-devops
-Does DevOps interviews.
+Donovan Brown (<a target="_blank" href="https://twitter.com/DonovanBrown">@DonovanBrown</a>, <a target="_blank" href="http://donovanbrown.com/">http://donovanbrown.com</a>: <a target="_blank" href="http://donovanbrown.com/page/slide-decks">slide-decks</a>.
+   * <a target="_blank" href="http://www.donovanbrown.com/post/2015/09/01/what-is-devops">DevOps interviews</a>
 
-Jessica Deen (<a target="_blank" href="https://twitter.com/jldeen">@jldeen</a>, jessicadeen.com) on Kubernetes, open-source, Linux
+Jessica Deen (<a target="_blank" href="https://twitter.com/jldeen">@jldeen</a>, <a target="_blank" href="https://jessicadeen.com">jessicadeen.com</a>) on Kubernetes, open-source, Linux
 
-Steve Marascky (<a target="_blank" href="https://twitter.com/StevenMurawski">https://twitter.com/StevenMurawski</a>, https://stevenmurawski.com/) on DSC, SRE
+Steve Marascky (<a target="_blank" href="https://twitter.com/StevenMurawski">https://twitter.com/StevenMurawski</a>, <a target="_blank" href="https://stevenmurawski.com/">https://stevenmurawski.com</a>) on DSC, SRE
 
 Damien Brady (<a target="_blank" href="https://twitter.com/AbelSquidHead">@AbelSquidHead</a>) on Octopus Deploy
 
-Abel Wang (<a target="_blank" href="https://twitter.com/AbelSquidHead">@AbelSquidHead</a>, abelsquidhead.com) on development 
+Abel Wang (<a target="_blank" href="https://twitter.com/AbelSquidHead">@AbelSquidHead</a>, <a target="_blank" href="https://abelsquidhead.com">abelsquidhead.com</a>) on development
 
 ### Others
 
