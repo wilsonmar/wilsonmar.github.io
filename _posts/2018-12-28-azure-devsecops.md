@@ -838,7 +838,7 @@ Azure DevOps Launch Sep 10, 2018 (6,000+ subscribers)
 https://www.telerik.com/blogs/microsoft-azure-devops-what-you-need-to-know
 
 
-## Rock Stars
+## Microsoft Rock Stars
 
 Sam Guckenheimer, Product Owner, Visual Studio Cloud Services
 * <a target="_blank" href="http://azuredevopspodcast.clear-measure.com/sam-guckenheimer-on-testing-data-collection-and-the-state-of-devops-report-episode-003">At Jeffery Palermo's AzureDevopsPodcast.clear-measure.com State of Devops report</a>
@@ -863,6 +863,7 @@ Steve Marascky (<a target="_blank" href="https://twitter.com/StevenMurawski">htt
 Damien Brady (<a target="_blank" href="https://twitter.com/AbelSquidHead">@AbelSquidHead</a>) on Octopus Deploy
 
 Abel Wang (<a target="_blank" href="https://twitter.com/AbelSquidHead">@AbelSquidHead</a>, <a target="_blank" href="https://abelsquidhead.com">abelsquidhead.com</a>) on development
+   * <a target="_blank" href="https://www.youtube.com/watch?v=mCRbvRwxDfQ">with Aplitools Apr 15, 2019</a>
 
 ### Others
 
@@ -897,7 +898,9 @@ https://www.preemptive.com/blog/article/1055-automating-and-scaling-app-protecti
 
 https://www.mobilize.net/blog/vbuc-azure-devops
 
+## Testing
 
+https://testingindevops.org/
 
 ## More on DevOps #
 
