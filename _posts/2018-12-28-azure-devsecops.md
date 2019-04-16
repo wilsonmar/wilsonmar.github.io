@@ -17,35 +17,42 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/azure-devops/">This page</a> contains "deep dive" notes for learning and using DevSecOps using Microsoft's Azure DevOps services.
 
+## Why?
+
 <a target="_blank" href="https://www.forbes.com/sites/janakirammsv/2018/09/16/azure-devops-why-its-a-big-deal-for-microsoft-and-the-community/#353e0a8c6780">
 Azure DevOps - Why It's A Big Deal For Microsoft And The Community</a> Sep 16, 2018
 
-<img align="right" alt="azure-devopssuite-52x52.png" width="52" src="https://user-images.githubusercontent.com/300046/56076532-9b605900-5d8f-11e9-89a2-9b9b02e1bf1d.png"><a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/">Azure DevOps Services (https://azure.com/devops)</a> consists of these product offerings from Microsoft:
+"Data estate" refers to all the data an organization owns, regardless of where it is stored.
 
-   1. <a href="#AzureBoards"><strong>Azure Boards</strong></a> (like Jira) to plan, track, and discuss Work Items across teams using Kanban boards (to deliver value to users faster)
+## Product components
 
-   2. <a href="#AzureRepos"><strong>Azure Repos</strong></a> (like GitHub and AWS Code Commit, etc.) to use Git for source version, collaborate using pull requests, and file management
+<a target="_blank" href="https://status.dev.azure.com/_history">https://status.dev.azure.com/_history lists events</a> and <a target="_blank" href="https://status.dev.azure.com/">status</a> in each geographical area by product:
 
-   5. <a href="#AzurePipelines"><strong>Azure Pipelines</strong></a> (like Jenkins, AWS CodeDeploy, etc.) for CI/CD automation 
+   1). <a href="#AzureBoards"><strong>Azure Boards</strong></a> (like Jira) to plan, track, and discuss Work Items across teams using Kanban boards (to deliver value to users faster)
 
-   4. <a href="#AzureDevTestPlans"><strong>Azure Test Plans</strong></a> to manage tests and explore (to ship with confidence)
+   2). <a href="#AzureRepos"><strong>Azure Repos</strong></a> (like GitHub and AWS Code Commit, etc.) to use Git for source version, collaborate using pull requests, and file management
 
-   3. <a href="#AzureArtifacts"><strong>Azure Artifacts</strong></a> (like Artifactory, Nexxus, etc.) for binary package consumption package management 
+   3). <a href="#AzurePipelines"><strong>Azure Pipelines</strong></a> (like Jenkins, AWS CodeDeploy, etc.) for CI/CD automation 
 
-   6. <a href="#AzureDevTestLabs"><strong>Azure DevTest Labs</strong></a> (like Sauce Labs) provides self-service creation of pre-provisioned sandbox environments from private custom images in VHD.
+   4). <a href="#AzureDevTestPlans"><strong>Azure Test Plans</strong></a> to manage tests and explore (to ship with confidence)
+
+   5). <a href="#AzureArtifacts"><strong>Azure Artifacts</strong></a> (like Artifactory, Nexxus, etc.) for binary package consumption package management 
+
+<img align="right" alt="azure-devopssuite-52x52.png" width="52" src="https://user-images.githubusercontent.com/300046/56076532-9b605900-5d8f-11e9-89a2-9b9b02e1bf1d.png"><a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/">Azure DevOps Services (https://azure.com/devops)</a> adds to the above this product offering:
+
+   6). <a href="#AzureDevTestLabs"><strong>Azure DevTest Labs</strong></a> (like Sauce Labs) provides self-service creation of pre-provisioned sandbox environments from private custom images in VHD.
+
+QUESTION: Do "Other services" include extensions installed from <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ms.feed">https://marketplace.visualstudio.com/items</a>, such as <a href="#Search">Code Search</a>, <a href="#DevOpsAnalytics">Analytics</a>, etc.
 
 Each product above has its own pricing.
-
-<a target="_blank" href="https://status.dev.azure.com/">https://status.dev.azure.com</a> provides status</a>.
 
 The <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/release-notes/">Features Timeline (product roadmap)</a> has additional "Areas":
 
    * Administration
    * Notifications
 
-<a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ms.feed">https://marketplace.visualstudio.com/items</a> lists extensions to be installed to your org, such as Search and Analytics:
+Sign into <a target="_blank" href="https://aka.ms/AzureDevOpsForum/">aka.ms/AzureDevOpsForum</a> = Developer Community Problems and Features (Active | Newest | Votes)
 
-   * Analytics (<a target="_blank" href="https://devblogs.microsoft.com/devops/analytics-for-azure-devops-services-is-now-generally-available/">generally avialable</a>)
 
 <hr />
 
@@ -70,15 +77,16 @@ The sequence of product usage depends on the hosting technology:
    10. Update backlog item in Azure DevOps Boards.
    <br /><br />
 
-Others:   
+Other "Reference Architectures":   
 
 * <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/cicd-for-containers/">CI/CD for Containers</a>
-
 * <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/azure-devops-continuous-integration-and-continuous-deployment-for-azure-web-apps/">CI/CD for Azure Web Apps</a>
-
 * <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/java-cicd-using-jenkins-and-azure-web-apps/">Java CI/CD using Jenkins and Azure Web Apps</a>
-
 * <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/immutable-infrastructure-cicd-using-jenkins-and-terraform-on-azure-virtual-architecture-overview/">Immutable Infrastructure CI/CD using Jenkins and Terraform</a>
+
+<a name="DevOpsAnalytics"></a>
+
+Analytics (<a target="_blank" href="https://devblogs.microsoft.com/devops/analytics-for-azure-devops-services-is-now-generally-available/">generally available</a>)
 
 ![azure-log-analytics-711x306-35708](https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg)
 
@@ -86,13 +94,11 @@ Others:
 
 <a name="QuickStart"></a>
 
-## Azure DevOps Console Quick Start
+## Azure DevOps Demo Generator
 
 After much work, here I present the steps culled from among the dizzying volume of web pages and videos about this topic.
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/?view=azure-devops">DOCS:Start using Azure DevOps</a>
-
-### A) Azure DevOps Demo Generator
 
 1. To simplify working with demos, and other education material provided by the Microsoft Azure Marketing team, visit the <a target="_blank" href="https://www.azuredevopslabs.com/">Azure Devops hands-on-labs</a> at:
 
@@ -113,18 +119,22 @@ After much work, here I present the steps culled from among the dizzying volume 
 1. Type a project name.
 1. Click "Create project" and wait until you can...
 1. Click "Navigate to project" Azure DevOps Dashboard.
-   
+1. [_] TASK: Add text in "About this project".
 
 
-### B) VisualStudio.com
+## Azure DevOps Dashboard = org.VisualStudio.com
 
-Via URL is "https://<em>YourOrganization</em>.visualstudio.com":
+Azure DevOps dashboards are under URL 
+
+https://<em>YourOrganization</em>.visualstudio.com/<em>project</em>
+
+   HISTORY: In Sept 2018 there was a name upgrade from Visual Studio Online (VSO) which include capabilities in Visual Studio Team Services (VSTS) that began as a performance testing server and Team Foundation Server (TFS) on-premises, now called "Visual Studio Server".
+
+Each widget on the Dashboard can be <a target="_blank" href="https://docs.microsoft.com/en-us/rest/api/azure/devops/dashboard/?view=azure-devops-rest-5.0">added or deleted</a> using an API.
 
 1. Create your organization with a personal Microsoft account or a work or school accountdocs.microsoft.com
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=vsts">Quick Start: Create an Azure DevOps organization</a>
-
-   HISTORY: In Sept 2018 these were repackaged as an upgrade of Visual Studio Online (VSO) which include capabilities in Visual Studio Team Services (VSTS) that began as a performance testing server and Team Foundation Server (TFS), which is now called "Visual Studio Server".
 
 1. Click on your icon at the upper-right corner for the account menu.
 
@@ -135,8 +145,7 @@ Via URL is "https://<em>YourOrganization</em>.visualstudio.com":
    Find what permissions you or a team member have, including project-level, collection-level, and object-level…docs.microsoft.com in 
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/view-permissions?view=azure-devops">Quick Start: View permissions for yourself or others - Azure DevOps & TFS</a>
 
-
-1. Click on "Organization Settings" at the lower-left corner for the Organizations menu.
+1. Click on "Organization Settings" at the lower-left corner for the Organization's menu.
 
    <img alt="azure-devops-dashboard-ll-184x208-4860.jpg" width="184" src="https://user-images.githubusercontent.com/300046/56077477-e41d0f80-5d99-11e9-929b-d4310fe1ef06.jpg">
 
@@ -170,6 +179,18 @@ Via URL is "https://<em>YourOrganization</em>.visualstudio.com":
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/projects/connect-to-projects?toc=%2fazure%2fdevops%2fuser-guide%2ftoc.json&%3bbc=%2fazure%2fdevops%2fuser-guide%2fbreadcrumb%2ftoc.json&view=vsts?WT.mc_id=medium-blog-abornst">Connect to a project from a web browser or supported client in Azure DevOps - Azure DevOps & TFS</a>
 
 See http://stories.visualstudio.com/devops/
+
+## API
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-5.0">Azure DevOps Services REST API Reference</a> v5 was defined in 2016 with libraries:
+
+   * .NET conceptual documentation and .NET reference documentation by <a target="_blank" href="https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2013/bb130146(v=vs.120)">extending TFS</a> via <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/integrate/get-started/client-libraries/samples?view=azure-devops">C#</a>
+   * Node.js
+   * Python
+   * Swagger 2.0 specification
+   * Web Extensions SDK
+
+QUESTION: Were there SOAPUI or Postman files built for this API?
 
 <hr />
 
@@ -849,7 +870,11 @@ Microsoft Developer Advocate and AI enthusiast Aaron (Ari) Bornstein (<a target=
 
 ## Azure's Social Media
 
-@AzureDevOps ‏
+Sign into <a target="_blank" href="https://aka.ms/AzureDevOpsForum/">aka.ms/AzureDevOpsForum</a> = Developer Community Problems and Features (Active | Newest | Votes)
+
+<a target="_blank" href="https://twitter.com/AzureDevOps">@AzureDevOps</a>
+
+<a target="_blank" href="https://aka.ms/DevOpsBlog/">aka.ms/DevOpsBlog</a>
 
 Azure Friday
 
