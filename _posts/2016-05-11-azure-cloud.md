@@ -92,8 +92,7 @@ components for "High Control":
 
 ## Plan
 
-Module:  <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/cloud-operating-model/">Overview of the Microsoft Cloud Operating Model</a>
-covers business, people, and technology strategies to identify where an organization is in the digital transformation journey, identify <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/cloud-operating-model/3-modernization-triggers">triggers</a> and opportunities for cloud migration, and recognize these components needed to develop a digital transformation strategy.
+Module:  <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/cloud-operating-model/">Overview of the Microsoft Cloud Operating Model</a> covers business, people, and technology strategies to identify where an organization is in the digital transformation journey, identify <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/cloud-operating-model/3-modernization-triggers">triggers</a> and opportunities for cloud migration, and recognize these components needed to develop a digital transformation strategy.
 
 A. Meet business requirements
 B. Assess organization maturity
@@ -104,7 +103,6 @@ F. Identify migration portfolio
 G. Perform migration
 H. Modernize the business
 
-Expenditures of time and effort need to balance:
 
 ## Microsoft Learning Account
 
@@ -129,13 +127,18 @@ After <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp">g
 
    * Design for performance and scalability: Azure SQL Data Sync between regions. 
    Azure SQL Database geo-replication allows for read-replicas.
-   Azure Cosmos DB globally distributed database to allow both reads and writes regardless of location. Azure Cache for Redis to minimize high-latency calls to remote databases to read frequently accessed data. Polyglot persistence to use different storage technologies for different data.
+   Azure Cosmos DB globally distributes NOSQL datab for reads and writes regardless of region. 
+   Azure Cache for Redis to minimize high-latency calls to remote databases to read frequently accessed data. Polyglot persistence to use different storage technologies for different data.
 
    * Design for efficiency and operations
    
    * Design for availability and recoverability
 
    Based on: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/architect-great-solutions-in-azure/">Pillars of a great Azure architecture</a>
+
+Cloud scale analytics:
+
+![azure-dataw-648x239-10988](https://user-images.githubusercontent.com/300046/56159297-8cd99380-5f81-11e9-8182-0c5199db763f.jpg)
 
 
 ## Azure account and dashboard

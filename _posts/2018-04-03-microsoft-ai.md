@@ -89,6 +89,31 @@ XiaoIce, a chatbot Microsoft launched in China, "has more than 200 million users
  Japan-based Rinna and the US-based Zo)
 
 
+## FATE and Ethical Principles
+
+Microsoft has a <a target="_blank" href="https://www.microsoft.com/research/group/fate/">FATE (Fairness, Accountability, Transparency, and Ethics)</a> research group:
+
+* Fairness: AI systems should treat all people fairly.
+* Accountability: AI systems should have algorithmic accountability.
+* Transparency: AI systems should be understandable.
+
+But who else is looking out for the other <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/azure-artificial-intelligence/5-ai-impact-and-ethics">Microsoft's ethical principles</a>
+guiding the development and use of artificial intelligence with people:
+
+* Reliability & Safety: AI systems should perform reliably and safely.
+* Inclusiveness: AI systems should empower everyone and engage people.
+* Privacy & Security: AI systems should be secure and respect privacy.
+
+<ul>
+<li><a href="http://azure.com/ai" data-linktype="external">Azure AI product page</a></li>
+<li><a href="https://azure.microsoft.com/case-studies/" data-linktype="external">Azure case studies</a></li>
+<li><a href="https://azure.microsoft.com/blog/" data-linktype="external">Microsoft Azure Blog</a></li>
+<li><a href="https://channel9.msdn.com/Shows/AI-Show" data-linktype="external">Channel 9 AI Show</a></li>
+<li><a href="https://www.microsoft.com/ai/ai-for-good" data-linktype="external">AI for Good</a></li>
+<li><a href="https://www.microsoft.com/seeing-ai/" data-linktype="external">Seeing AI application</a></li>
+<li><a href="https://news.microsoft.com/futurecomputed/" data-linktype="external">The Future Computed book</a></li>
+</ul>
+
 ## Tutorials
 
 0. Take the introductory tutorial:

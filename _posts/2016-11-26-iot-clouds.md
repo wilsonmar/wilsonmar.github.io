@@ -25,24 +25,25 @@ This assumes that you have absorbed the tutorial about
 Cloud services for IoT is fiercely contested market.
 
 0. <a target="_blank" href="https://software.intel.com/en-us/articles/connecting-to-amazon-web-services-aws-iot-using-mqtt">
-   Connecting to Amazon Web Services* (AWS*) IoT Using MQTT</a>
+   Connecting to Amazon Web Services (AWS) IoT Using MQTT</a>
 
    [See my presentation about the AWS IoT Button](/iot-aws/)
 
 0. <a target="_blank" href="https://software.intel.com/en-us/articles/connecting-intel-iot-gateways-to-ibm-watson">
    Connecting an Intel® IoT Gateway to IBM Watson</a>
 
-0. [Using Microsoft Azure* IoT Hub (Suite)](/iot-hub/)
+0. [Using Microsoft Azure IoT Hub (Suite)](/iot-hub/)
 
-0. As for Google Compute Cloud,
-   <a target="_blank" href="http://www.cloudwedge.com/agosto-leverages-mqtt-to-create-high-performance-open-source-message-broker-for-iot-496652/">
-   Agosto's IoT connection broker is a component of and gateway into Google’s Pub/Sub service, as well as the company’s IoT (M2M) Accelerator</a>
+   * http://azure.com/iot
+
+   * <a target="_blank" href="https://aka.ms/iotrefarchitecture">Azure IoT Reference Architecture</a>
+
+0. As for Google Compute Cloud, <a target="_blank" href="http://www.cloudwedge.com/agosto-leverages-mqtt-to-create-high-performance-open-source-message-broker-for-iot-496652/">Agosto's IoT connection broker is a component of and gateway into Google’s Pub/Sub service, as well as the company’s IoT (M2M) Accelerator</a>
 
 0. GE Predix began their 
   <a target="_blank" href="https://www.predix.io/resources/tutorials/journey.html?environment=workshop#1838">
    https://www.predix.io/resources/tutorials/journey.html?environment=workshop#1838</a><br />
-   Predix Transform Workshops
-   using <a target="_blank" href="https://www.predix.io/resources/tutorials/tutorial-details.html?tutorial_id=1839&tag=1838&journey=Predix%20Transform%20Workshop&environment=workshop&resources=1849,1839,1853">
+   Predix Transform Workshops using <a target="_blank" href="https://www.predix.io/resources/tutorials/tutorial-details.html?tutorial_id=1839&tag=1838&journey=Predix%20Transform%20Workshop&environment=workshop&resources=1849,1839,1853">
    set up a new Intel Edison board</a>
 
    [See my presentation about Predix](/predix-basics/)
@@ -56,9 +57,7 @@ Cloud services for IoT is fiercely contested market.
 
 0. <a target="_blank" href="http://trustedanalytics.org/">
    Trusted Analytics Platform (TAP)</a> open source platform for data scientists,
-   based on Cloud Foundry. <a target="_blank" href="https://www.youtube.com/watch?v=R8LxuxsSSwM&list=PLA0ztWy2qcuKIBiGtSpeSs4sEiLyEOtNZ">
-    Their playlist of videos on YouTube</a>
-
+   based on Cloud Foundry. <a target="_blank" href="https://www.youtube.com/watch?v=R8LxuxsSSwM&list=PLA0ztWy2qcuKIBiGtSpeSs4sEiLyEOtNZ">Their playlist of videos on YouTube</a>
 
 0. <a href="#Ubidots">
    Ubidots</a>
