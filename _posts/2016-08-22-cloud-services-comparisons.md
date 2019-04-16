@@ -38,13 +38,14 @@ Software for hybrid private/public clouds include <a target="_blank" href="https
 
 Evaluations can be based on the advantages of cloud:
 
-1. Trade capital expense for variable expense (conserve cash)
-2. Stop guessing about capacity (over-provisioning, which can be expensive)
-3. Benefit from economies of scale (tap into available capacity pooled among many customers)
-4. Expand and go global in minutes (make use of infrastructure established around the world, which is time consuming, expensive, and dangerous to do on your own)
-(leverage experts working within cloud vendors who can focus on facilities, security, and scalability capabilities)
-5. Stop spending money running and maintaining data centers "friends don't let friends build data centers"
-6. Increase speed and agility (make use of innovations)
+1. Get <strong>capacity cheaper and quicker</strong> than building and maintaining data centers. Paying as you go conserves cash up-front to trade variable expense for capital expense.
+2. Stop guessing about capacity and over-provisioning, which can be expensive.
+3. Benefit from economies of scale (tap into available <strong>more capacity pooled</strong> among many customers)
+4. Get <strong>expert specialists</strong> at facilities, security, and scalability by hiring them through cloud vendors.
+5. <strong>Go global</strong> (make use of infrastructure established around the world, which is time consuming, expensive, and dangerous to do on your own)
+6. Increase speed and agility (make use of <strong>innovations</strong>)
+<br /><br />
+
 PROTIP: Memorize the above list for exams.
 
 Amazon's "Well Architected" notes the constraints removed by being in the cloud:
@@ -53,7 +54,24 @@ Amazon's "Well Architected" notes the constraints removed by being in the cloud:
 * Make experimentation easier (overcome fear of change)
 * Allow architecture to evolve (rather than being frozen in time)
 
-## TL;DR - Picking a single cloud
+Despite all the good reasons, organization may still "drag their heels" until ...
+
+## Triggers to go cloud
+
+The <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/cloud-operating-model/6-technology-strategy">need to</a>:
+
+* <strong>Rehost (migration)</strong> ("lift-and-shift") to rehost with little code changes, to minimize application downtime.
+
+* <strong>Refactor (modernization)</strong> - transform existing apps with minimal code change to use Docker and Kubernetes.
+
+* <strong>Rearchitect (modernization)</strong> - isolate  application functionalities into separate microservices that can be independently tested, scaled up or down, and deployed, and managed.
+
+* <strong>Rebuild (modernization)</strong> - reconstruct existing app on a new PaaS platform.
+
+* <strong>Replace (modernization)</strong> - retire existing on-premises application and rewriting functionality under a new architecture such as a Serverless or SaaS ("cloud native") application.
+
+
+## Individuals must pick a single cloud?
 
 Organizations are going multi-cloud.
 But an given individual has a limited amount of time to keep up with changes.
