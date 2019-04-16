@@ -52,7 +52,7 @@ Apple's $300 Final Cut Pro X</a> (FCPX) is what many 360 degree equirectangular 
 
 LMS vendors that are <a href="https://xapi.com/adopters/">listed as adopters</a> by xAPI:
 <ul>
-<li><a target="_blank" href="https://www.watershedlrs.com/">Watershed LRS</a>
+<li><a target="_blank" href="https://www.watershedlrs.com/">Watershed LRS</a></li>
 <li><a target="_blank" href="https://www.softwareadvice.com/lms/digitalchalk-profile/">Digital Chalk</a></li>
 <li><a target="_blank" href="https://www.softwareadvice.com/lms/ispring-learn-profile/">iSpring Learn</a></li>
 <li><a target="_blank" href="https://www.softwareadvice.com/lms/learnupon-profile/">LearnUpon</a></li>
