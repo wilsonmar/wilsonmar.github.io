@@ -38,7 +38,7 @@ Apple's $300 Final Cut Pro X</a> (FCPX) is what many 360 degree equirectangular 
 
 * $95 Sony Movie Studio Vegas is only for Windows.
 
-* The program I'd like to try next is Articulate Storyline and <a target="_blank" href="https://articulate.com/360/replay">Replay</a> to create interactive video tutorials with webcam and other aspects of a full "learning management suite" (LMS). Although Articulate360 provides a <a target="_blank" href="https://itunes.apple.com/us/app/peek/id1164486237?ls=1&mt=12">free Peek desktop client</a> installed to record on MacOS, the video editing product consists of these 3 Windows clients:
+* The program I'd like to try next is Articulate Storyline and <a target="_blank" href="https://articulate.com/360/replay">Replay</a> to create interactive video tutorials with webcam and other aspects of a full "learning management suite" (LMS). Although Articulate360 provides a <a target="_blank" href="https://itunes.apple.com/us/app/peek/id1164486237?ls=1&mt=12">free Peek desktop client</a> installed to record on MacOS, the video editing product consists of these <strong>Windows</strong> clients:
 
    * Rise for responsive authoring
    * Articulate Review for collaboration
@@ -46,7 +46,21 @@ Apple's $300 Final Cut Pro X</a> (FCPX) is what many 360 degree equirectangular 
    * Storyline 
    * Studio
    * Replay
+   <br /><br />
 
+   These would be for creating RLO (reusable learning objects) by following principles from <a target="_blank" href="https://www.adlnet.gov/scorm">DoD's SCORM</a> (Sharable Content Object Reference Model), <a target="_blank" href="https://en.wikipedia.org/wiki/Aviation_Industry_Computer-Based_Training_Committee">AICC</a> (Aviation Industry CBT Committee), and now xAPI (for Experience API, aka Project Tin Can) from the ADL.
+
+LMS vendors that are <a href="https://xapi.com/adopters/">listed as adopters</a> by xAPI:
+<ul>
+<li><a target="_blank" href="https://www.watershedlrs.com/">Watershed LRS</a>
+<li><a target="_blank" href="https://www.softwareadvice.com/lms/digitalchalk-profile/">Digital Chalk</a></li>
+<li><a target="_blank" href="https://www.softwareadvice.com/lms/ispring-learn-profile/">iSpring Learn</a></li>
+<li><a target="_blank" href="https://www.softwareadvice.com/lms/learnupon-profile/">LearnUpon</a></li>
+<li><a target="_blank" href="https://www.softwareadvice.com/lms/calliduscloud-litmos-profile/">Litmos</a></li>
+<li><a target="_blank" href="https://www.softwareadvice.com/lms/talentlms-profile/">TalentLMS</a></li>
+</ul>
+
+<hr />   
 
 <a name="Camtasia"></a>
 
