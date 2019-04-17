@@ -166,7 +166,7 @@ Each widget on the Dashboard can be <a target="_blank" href="https://docs.micros
    Learn how to structure a project, manage users, and more to support your software development teams in Azure DevOpsdocs.microsoft.com:
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/project-admin-tutorial?view=vsts">Quick Start: Get started as a project admin or organization owner in Azure DevOps</a>
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/sign-up-invite-teammates?view=vsts">Sign up for Azure DevOps and invite teammates - Azure DevOps</a> Quickstart guide to signing up and inviting others to join a project in Azure DevOpsdocs.microsoft.com
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/sign-up-invite-teammates?view=vsts">Sign up for Azure DevOps and invite teammates - Azure DevOps</a> Quickstart guide to signing up and inviting others to join a project in Azure DevOpsdocs.microsoft.com
 
 1. Find and install free extensions for Azure DevOps Services from the Visual Studio Marketplacedocs.microsoft.com
 
@@ -212,7 +212,7 @@ Resources associated with a particular product from <a target="_blank" href="htt
 
 <img align="right" src="../images/azure-devops-boards-96.svg">
 
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/boards/">Product</a> | <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/boards/">Docs</a> | <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/boards/get-started/index-agile">Get started</a> |
+Websites: <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/boards/">Product</a> \| <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/boards/">Docs</a> \| <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/boards/get-started/index-agile">Get started</a>
 
 <a target="_blank" href="https://www.youtube.com/watch?v=Q-wnvG_pvj8">
 VIDEO: Using Azure Boards with GitHub</a>
@@ -235,7 +235,7 @@ Start using Azure Boards (Agile process)</a>
 
 <img align="right" src="../images/azure-devops-repos-96.svg">
 
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/repos/">https://azure.microsoft.com/en-us/services/devops/repos</a> is the product's website.
+Websites: <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/repos/">Product</a> \|
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/code-with-git?view=azure-devops">Quick Start: Code with Git in Azure DevOps - Azure DevOps Services & TFS</a> - Learn how to share code in a Git repo and new projectdocs.microsoft.com
 
@@ -255,7 +255,7 @@ See <a target="_blank" href="https://github.com/azure/github-actions">https://gi
 
 <img align="right" src="../images/azure-devops-artifacts-96.svg">
 
-Websites: <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/artifacts/">Product/a> |
+Websites: <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/artifacts/">Product/a> \|
 
 To host private Nuget (Windows), npm (NodeJs), Maven (Java), Python packages with builds.
 
@@ -277,7 +277,7 @@ Package management such as Artifactory.
 
 <img align="right" src="../images/azure-devops-testplans-96.svg">
 
-| <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/test-plans/">Product website | Docs |
+Websites: <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/test-plans/">Product</a> \|
 
 
 <a name="AzurePipelines"></a>
@@ -286,7 +286,7 @@ Package management such as Artifactory.
 
 <img align="right" width="96" src="../images/azure-devops-pipelines-96.svg">
 
-Websites: <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/pipelines/">Product</a> | <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/pipelines/index?view=azure-devops">User Guide</a> |
+Websites: <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/pipelines/">Product</a> \| <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/pipelines/index?view=azure-devops">User Guide</a> \|
 
 Azure DevOps Repos and Pipelines are <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/">free starting prices</a> for up to 5 people running 10 parallel jobs in 1 hosted job up to 1,800 minutes per month.
 I
@@ -354,6 +354,8 @@ But Azure DevOps also makes use of other Azure services and client executables:
 
    * IAM
 
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/key-vault/key-vault-whatis"><strong>Azure Key Vault</strong></a> provides an HSM. (<a target="_blank" href="https://www.vaultproject.io/docs/vs/kms.html">vs. Hashicorp Vault</a>, which enforces automatic revocation of leases with key usage audit and key rolling). KMS is focused on securely storing encryption keys and supporting cryptographic operations (encrypt and decrypt) using those keys. It supports access controls and auditing as well.
+
    * <a target="_blank" href="https://wilsonmar.github.io/azure-cloud/#azure-service-fabric">Azure Service Fabric</a>
 
    * <a target="_blank" href="https://azure.microsoft.com/en-us/services/kubernetes-service/"><strong>Azure Container Service (AKS)</strong></a> - 
@@ -362,11 +364,10 @@ But Azure DevOps also makes use of other Azure services and client executables:
    * <a target="_blank" href="https://azure.microsoft.com/en-us/services/container-registry/"><strong>Azure Container Registry (ACR)</strong></a> stores images for different types of container deployments (Swarm, DC/OS and Kubernetes, etc.) as well as Azure services such as App Service, Batch, and Service Fabric. 
    Unlike Docker Hub, ACR provides more control over who can see and use images, which ACR can sign cryptographically (to detect corruption) and encrypt at rest. The Premium SKU of Container Registry includes 500 GiB of storage that is geo-replicated.
 
-   * Hashicorp Vault
-
+   
    <a name="AppInsights"></a>
 
-   * <img align="right" alt="azure-app-insights-icon-51x50.png" width="51" src="https://user-images.githubusercontent.com/300046/56264992-82b0b580-60a5-11e9-9757-8b59981aacb1.png"></a><strong>Application Insights</strong> the APM service. It works with Azure Service Profiler for ASP.NET code. Its API and SDKs (in .NET, Java, node.js) and <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.applicationinsights.telemetryclient?view=azure-dotnet">TelemetryClient</a> to obtain metrics about requests, pages views, dependency calls, trace (log) messages, exceptions, and more. (Add <a target="_blank" href="https://stackify.com/application-insights-things-to-know/">Retrace to collect first chance exceptions</a>)
+   * <img align="right" alt="azure-app-insights-icon-51x50.png" width="51" src="https://user-images.githubusercontent.com/300046/56264992-82b0b580-60a5-11e9-9757-8b59981aacb1.png"><strong>Application Insights</strong></a> the APM service works with <strong>Azure Service Profiler</strong> for ASP.NET code. Its API and SDKs (in .NET, Java, node.js) and <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.applicationinsights.telemetryclient?view=azure-dotnet">TelemetryClient</a> to obtain metrics about requests, pages views, dependency calls, trace (log) messages, exceptions, and more. (Add <a target="_blank" href="https://stackify.com/application-insights-things-to-know/">Retrace to collect first chance exceptions</a>)
 
    * Other <a target="_blank" href="https://azure.microsoft.com/en-us/products/devops-tool-integrations/">Azure DevOps tool integrations</a>
 
