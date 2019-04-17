@@ -23,7 +23,7 @@ comments: true
 Azure DevOps - Why It's A Big Deal For Microsoft And The Community</a> Sep 16, 2018
 
 Forrester has Microsoft as a leader (behind Electric Cloud, IBM, Xebia, and CA) in its <a target="_blank" href="https://azure.microsoft.com/en-us/resources/continuous-delivery-and-release-automation/">2018 Continuous Delivery And Release Automation" market assesement:
-<img alt="azure-devops-gartner-2018-485x527-13777.jpg" src="https://user-images.githubusercontent.com/300046/56278410-69b6fd00-60c3-11e9-847b-4c7f4a8a73d6.jpg"></a>
+<img alt="azure-devops-gartner-2018-485x527-13777.jpg" width="485" src="https://user-images.githubusercontent.com/300046/56278410-69b6fd00-60c3-11e9-847b-4c7f4a8a73d6.jpg"></a>
 
 
 <a name="QuickStart"></a>
@@ -42,7 +42,7 @@ First, we need a sample application to work with.
 
 1. Click "Choose template":
 
-   * PartsUnlimited defines an ASP.NET app with customized CI/CD pipelines
+   * PartsUnlimited defines an ASP.NET app with customized CI/CD pipelines. <a href="#PartsUnlimited">More details below</a>.
    
    * SmartHotel360 contains a complete ASP.NET 2 web mobile and desktop business apps for a hotel, and can be deployed using Docker containers.
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/56323530-68b8b680-6129-11e9-9baf-81a79a04557e.jpg"><img alt="azure-devops-smarthotel-home-1896x853.jpg" width="1896" src="https://user-images.githubusercontent.com/300046/56323530-68b8b680-6129-11e9-9baf-81a79a04557e.jpg"></a>
@@ -62,6 +62,45 @@ First, we need a sample application to work with.
 1. [_] TASK: Add text in "About this project".
 
 
+<a name="PartsUnlimited"></a>
+
+#### PartsUnlimited Sample Apps
+
+1. Clone or download <a target="_blank" href="https://microsoft.github.io/PartsUnlimited/">http://aka.ms/pulabs = https://microsoft.github.io/PartsUnlimited</a> (PU) is the implementation of the eCommerce website described as "Project Unicorn" in chapters 31-35 of <a target="_blank" href="http://www.amazon.com/The-Phoenix-Project-Helping-Business/dp/0988262592">The Phoenix Project</a> by Gene Kim, Kevin Behr and George Spafford, © 2013.
+
+   David Tesar	(<a target="_blank" href="https://twitter.com/dtzar">@dtzar</a>, host of <a target="_blank" href="https://channel9.msdn.com/Shows/DevOps-Dimension/">DevOps-Dimension on channel9.msdn</a>) wrote the two branches which visually display the same front-end website content with a SQL Azure back-end (all PaaS):<br /> 
+   The master branch contains code for ASP.NET Core.<br />
+   The aspnet45 branch contains code for ASP.NET 4.5.
+
+   1. Install Visual Studio 2017 within a Windows machine. 
+   1. In Tools, Get Tools and Features, select "ASP.NET and web development" and "Azure development".
+   These two should be check in "Workloads"
+   1. Install PowerShell. The scripts folder contains .ps1 PowerShell scripts
+   1. Download and install Node v6.12.3 (which has build tools taken out in v8).	
+   1. Install Bower and Grunt (ignore deprecated warning).
+   * ASP.NET 5 support for Linux and Mono
+   * Updated to .NET Core 2.0 in Jan 2018
+   * Modern HTML5 responsive layout using bootstrap for mobile, tablet, and PC
+   * Includes a Dockerfile and sample publishing profile to publish to a Docker container
+   * Supports multiple authentication options including Azure Active Directory, Google, and Facebook
+   * Azure Machine Learning product recommendations based on Order History
+   * Designed for Azure Websites, including Testing in Production, Staging slots and environment variables for feature flags (to turn off recommendations)
+   * Includes Grunt tasks for publishing assets to Azure Storage for CDN ingestion for faster performance
+   * Entity Framework code-first using SQL Azure or an in-memory database (Mono)
+   * Basic administration pages to add or edit product information
+   * Includes Azure RM JSON templates and PowerShell automation scripts to easily build and provision your environment
+   <br /><br />
+
+2. Clone or download <a target="_blank" href="https://github.com/microsoft.github.io/PartsUnlimitedMRP/">https://microsoft.github.io/PartsUnlimitedMRP (PUMRP)</a> described in <a target="_blank" href="http://microsoft.github.io/PartsUnlimitedMRP">http://aka.ms/pumrplabs = http://microsoft.github.io/PartsUnlimitedMRP</a>, an app using mostly open source software including Linux, Java, Apache, and MongoDB to create a web front end, an order service, and an integration service.
+
+   * Front end service runs Apache Tomcat and talks to order service
+   * Order and Integration service runs Java and calls MongoDB
+   * Integration service integrates with Parts Unlimited Website
+   * Includes a Dockerfile and sample publishing profile to publish to a Docker container
+   * Includes ARM JSON templates and PowerShell automation scripts to easily build and provision your environment
+   <br /><br />
+
+
 ## Azure DevOps Core = org.VisualStudio.com
 
 After registration and project setup, get to the Azure DevOps Dashboard:
@@ -73,7 +112,7 @@ https://<em>YourOrganization</em>.visualstudio.com/<em>project</em>
 
    HISTORY: In Sept 2018 there was a name upgrade from Visual Studio Online (VSO) which include capabilities in Visual Studio Team Services (VSTS) that began as a performance testing server and Team Foundation Server (TFS) on-premises, now called "Visual Studio Server".
 
-![azure-devops-dashboard-abel-1920x552-76907](https://user-images.githubusercontent.com/300046/56325322-0e225900-612f-11e9-8e80-8bc7349abebc.jpg)
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/56325322-0e225900-612f-11e9-8e80-8bc7349abebc.jpg"><img alt="azure-devops-dashboard-abel-1920x552-76907.jpg" width="1920" src="https://user-images.githubusercontent.com/300046/56325322-0e225900-612f-11e9-8e80-8bc7349abebc.jpg"></a>
 
 Each widget on the Dashboard can be <a target="_blank" href="https://docs.microsoft.com/en-us/rest/api/azure/devops/dashboard/?view=azure-devops-rest-5.0">added or deleted</a> using an API.
 
@@ -112,7 +151,7 @@ Each widget on the Dashboard can be <a target="_blank" href="https://docs.micros
 
 ## Product components
 
-<a target="_blank" href="https://status.dev.azure.com/_history">https://status.dev.azure.com/_history lists events</a> and <a target="_blank" href="https://status.dev.azure.com/">status</a> in each geographical area by product:
+<a target="_blank" href="https://status.dev.azure.com/_history">https://status.dev.azure.com/_history lists events</a> and <a target="_blank" href="https://status.dev.azure.com/">status</a> in each geographical area (region) by product:
 
    1). <a href="#AzureBoards"><strong>Azure Boards</strong></a> (like Jira) to plan, track, and discuss Work Items across teams using Kanban boards (to deliver value to users faster)
 
@@ -224,7 +263,7 @@ Websites: <a target="_blank" href="https://azure.microsoft.com/en-us/services/de
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/code-with-git?view=azure-devops">Quick Start: Code with Git in Azure DevOps - Azure DevOps Services & TFS</a> - Learn how to share code in a Git repo and new projectdocs.microsoft.com
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/56324189-7111f100-612b-11e9-8ff3-81210b06a358.jpg"><img alt="azure-devops-repos-home-1920x568-61555.jpg" src="https://user-images.githubusercontent.com/300046/56324189-7111f100-612b-11e9-8ff3-81210b06a358.jpg"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/56324189-7111f100-612b-11e9-8ff3-81210b06a358.jpg"><img alt="azure-devops-repos-home-1920x568-61555.jpg" width="1920" src="https://user-images.githubusercontent.com/300046/56324189-7111f100-612b-11e9-8ff3-81210b06a358.jpg"></a>
 
 
 ### GitHub Actions
@@ -379,14 +418,14 @@ The course catalog says they cover 6 skills/technologies:
 
    <a name="DevOpsAnalytics"></a>
 
-   * <strong>Log Analytics</a> (<a target="_blank" href="https://devblogs.microsoft.com/devops/analytics-for-azure-devops-services-is-now-generally-available/">generally available</a>)
+   * <strong>Log Analytics</strong> (<a target="_blank" href="https://devblogs.microsoft.com/devops/analytics-for-azure-devops-services-is-now-generally-available/">generally available</a>)
 
-   ![azure-log-analytics-711x306-35708](https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg)
+      <a target="_blank" href="https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg"><img alt="azure-log-analytics-711x306-35708.jpg" width="711" src="https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg"></a>
 
 
    <a name="AppInsights"></a>
 
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview"><img align="right" alt="azure-app-insights-icon-51x50.png" width="51" src="https://user-images.githubusercontent.com/300046/56264992-82b0b580-60a5-11e9-9757-8b59981aacb1.png"><strong>Application Insights</strong></a> the APM service works with <strong>Azure Service Profiler</strong> for ASP.NET code. Its API and SDKs (in .NET, Java, node.js) and <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.applicationinsights.telemetryclient?view=azure-dotnet">TelemetryClient</a> to obtain metrics about requests, pages views, dependency calls, trace (log) messages, exceptions, and more. (Add <a target="_blank" href="https://stackify.com/application-insights-things-to-know/">Retrace to collect first chance exceptions</a>)
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview"><img align="right" alt="azure-app-insights-icon-51x50.png" width="51" src="https://user-images.githubusercontent.com/300046/56264992-82b0b580-60a5-11e9-9757-8b59981aacb1.png"><strong>Application Insights</strong></a> - the APM service works with <strong>Azure Service Profiler</strong> for ASP.NET code. Its API and SDKs (in .NET, Java, node.js) and <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.applicationinsights.telemetryclient?view=azure-dotnet">TelemetryClient</a> obtain metrics about requests, pages views, dependency calls, trace (log) messages, exceptions, and more. (Add <a target="_blank" href="https://stackify.com/application-insights-things-to-know/">Retrace to collect first chance exceptions</a>)
 
    <a target="_blank" href="https://www.youtube.com/watch?v=WJKefPAdPpg">Monitor Web Apps using Azure Application Insights</a> Nov 18, 2016
 
@@ -411,46 +450,6 @@ The course catalog says they cover 6 skills/technologies:
 
 QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a> "coming soon".
 
-<a target="_blank" href="https://github.com/MicrosoftDocs/feedback/issues">Issues with MicrosoftDocs are reported here</a>.
-
-
-<a name="PartsUnlimited"></a>
-
-#### PartsUnlimited Sample Apps
-
-1. Clone or download <a target="_blank" href="https://microsoft.github.io/PartsUnlimited/">http://aka.ms/pulabs = https://microsoft.github.io/PartsUnlimited</a> (PU) is the implementation of the eCommerce website described as "Project Unicorn" in chapters 31-35 of <a target="_blank" href="http://www.amazon.com/The-Phoenix-Project-Helping-Business/dp/0988262592">The Phoenix Project</a> by Gene Kim, Kevin Behr and George Spafford, © 2013.
-
-   David Tesar	(<a target="_blank" href="https://twitter.com/dtzar">@dtzar</a>, host of <a target="_blank" href="https://channel9.msdn.com/Shows/DevOps-Dimension/">DevOps-Dimension on channel9.msdn</a>) wrote the two branches which visually display the same front-end website content with a SQL Azure back-end (all PaaS):<br /> 
-   The master branch contains code for ASP.NET Core.<br />
-   The aspnet45 branch contains code for ASP.NET 4.5.
-
-   1. Install Visual Studio 2017 within a Windows machine. 
-   1. In Tools, Get Tools and Features, select "ASP.NET and web development" and "Azure development".
-   These two should be check in "Workloads"
-   1. Install PowerShell. The scripts folder contains .ps1 PowerShell scripts
-   1. Download and install Node v6.12.3 (which has build tools taken out in v8).	
-   1. Install Bower and Grunt (ignore deprecated warning).
-   * ASP.NET 5 support for Linux and Mono
-   * Updated to .NET Core 2.0 in Jan 2018
-   * Modern HTML5 responsive layout using bootstrap for mobile, tablet, and PC
-   * Includes a Dockerfile and sample publishing profile to publish to a Docker container
-   * Supports multiple authentication options including Azure Active Directory, Google, and Facebook
-   * Azure Machine Learning product recommendations based on Order History
-   * Designed for Azure Websites, including Testing in Production, Staging slots and environment variables for feature flags (to turn off recommendations)
-   * Includes Grunt tasks for publishing assets to Azure Storage for CDN ingestion for faster performance
-   * Entity Framework code-first using SQL Azure or an in-memory database (Mono)
-   * Basic administration pages to add or edit product information
-   * Includes Azure RM JSON templates and PowerShell automation scripts to easily build and provision your environment
-   <br /><br />
-
-2. Clone or download <a target="_blank" href="https://github.com/microsoft.github.io/PartsUnlimitedMRP/">https://microsoft.github.io/PartsUnlimitedMRP (PUMRP)</a> described in <a target="_blank" href="http://microsoft.github.io/PartsUnlimitedMRP">http://aka.ms/pumrplabs = http://microsoft.github.io/PartsUnlimitedMRP</a>, an app using mostly open source software including Linux, Java, Apache, and MongoDB to create a web front end, an order service, and an integration service.
-
-   * Front end service runs Apache Tomcat and talks to order service
-   * Order and Integration service runs Java and calls MongoDB
-   * Integration service integrates with Parts Unlimited Website
-   * Includes a Dockerfile and sample publishing profile to publish to a Docker container
-   * Includes ARM JSON templates and PowerShell automation scripts to easily build and provision your environment
-   <br /><br />
 
 ### Faculty
 
@@ -909,6 +908,9 @@ See <a target="_blank" href="http://stories.visualstudio.com/devops/">http://sto
 
 
 ## Azure's Social Media
+
+Issues with MicrosoftDocs are reported as issues within<br />
+<a target="_blank" href="https://github.com/MicrosoftDocs/feedback/issues">https://github.com/MicrosoftDocs/feedback/issues</a>.
 
 Sign into <a target="_blank" href="https://aka.ms/AzureDevOpsForum/">aka.ms/AzureDevOpsForum</a> = Developer Community Problems and Features (Active | Newest | Votes)
 
