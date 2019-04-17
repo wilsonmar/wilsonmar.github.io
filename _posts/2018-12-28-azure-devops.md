@@ -362,6 +362,8 @@ The course catalog says they cover 6 skills/technologies:
 
    But Azure DevOps also makes use of other Azure services and client executables:
 
+   * <strong>IAM</strong>
+
    * <a target="_blank" href="https://app.vssps.visualstudio.com/_signedin">https://app.vssps.visualstudio.com/</a>
    Visual Studio is <a target="_blank" href="https://aex.dev.azure.com/me?mkt=en-US">AEX.dev.azure.com</a>
 
@@ -390,26 +392,41 @@ The course catalog says they cover 6 skills/technologies:
 
    https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/#access-control
 
-   ### ARM Templates
-
    https://www.youtube.com/watch?v=h0UDIcRnPog
 
    QUESTION: How are ARM Templates version controlled?
 
    <a name="ACS"></a>
 
-   * Azure Container Service (ACS) is like Docker and rkct (from Red Hat).
+   * <strong>Azure Container Service (ACS)</strong> is like Docker and rkct (from Red Hat).
 
    There is a separate brew amazon-ecs-cli.
-
-   * IAM
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/key-vault/key-vault-whatis"><strong>Azure Key Vault</strong></a> provides an HSM. (<a target="_blank" href="https://www.vaultproject.io/docs/vs/kms.html">vs. Hashicorp Vault</a>, which enforces automatic revocation of leases with key usage audit and key rolling). KMS is focused on securely storing encryption keys and supporting cryptographic operations (encrypt and decrypt) using those keys. It supports access controls and auditing as well.
 
    * <a target="_blank" href="https://wilsonmar.github.io/azure-cloud/#azure-service-fabric">Azure Service Fabric</a>
 
-   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/kubernetes-service/"><strong>Azure Container Service (AKS)</strong></a> - 
-   uses Docker to make dynamic scaling easy on Kubernetes, Docker Swarm, or Mesos DC/OS
+   <a name="AKS"></a>
+
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/kubernetes-service/"><strong>Azure Container Service (AKS)</strong></a> - uses Docker to make dynamic scaling easy on Kubernetes, Docker Swarm, or Mesos DC/OS.
+   AKS handles auto upgrades, patching, and self-healing of Kubernetes clusters.
+
+   1. Cluster access control.
+   1. Create a managed Kubernetes cluster using the CLI:
+
+   <pre>az aks create --resource-group <em>myResourceGroup</em> --name <em>myCluster</em> --node-count <em>number_of_nodes</em> --generate-ssh-keys </pre>
+
+   1. Image scanning
+
+   https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes
+   Introduction to Azure Container Service (AKS)
+
+   https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough
+   Deploy an Azure Container Service (AKS) cluster
+
+   https://azure.microsoft.com/en-us/resources/videos/episode-198-azure-container-service-with-ross-gardler/
+   Cloud Cover Episode 198: Azure Container Service with Ross Gardler
+
 
    * <a target="_blank" href="https://azure.microsoft.com/en-us/services/container-registry/"><strong>Azure Container Registry (ACR)</strong></a> stores images for different types of container deployments (Swarm, DC/OS and Kubernetes, etc.) as well as Azure services such as App Service, Batch, and Service Fabric. 
    Unlike Docker Hub, ACR provides more control over who can see and use images, which ACR can sign cryptographically (to detect corruption) and encrypt at rest. The Premium SKU of Container Registry includes 500 GiB of storage that is geo-replicated.
@@ -703,33 +720,6 @@ Alternately, include parameters inline string:
 
 
 https://docs.microsoft.com/en-us/azure/active-directory/role-based-access-control-configure
-
-
-<a name="AKS"></a>
-
-## AKS
-
-AKS handles auto upgrades, patching, and self-healing of Kubernetes clusters.
-
-1. Cluster access control
-
-1. Create a managed Kubernetes cluster using the CLI:
-
-   <pre>az aks create --resource-group <em>myResourceGroup</em> --name <em>myCluster</em> --node-count <em>number_of_nodes</em> --generate-ssh-keys </pre>
-
-1. Image scanning
-
-
-
-https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes
-    Introduction to Azure Container Service (AKS)
-
-https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough
-    Deploy an Azure Container Service (AKS) cluster
-
-https://azure.microsoft.com/en-us/resources/videos/episode-198-azure-container-service-with-ross-gardler/
-    Cloud Cover Episode 198: Azure Container Service with Ross Gardler
-
 
 
 
