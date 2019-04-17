@@ -18,6 +18,7 @@ comments: true
 This article contains higher and practical level details about Microsoft Azure, but with less confusing grandiose marketing generalizations.
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/overview/cloud-computing-dictionary/">Cloud Computing Terms Dictionary</a>
+   * "Data estate" refers to all the data an organization owns, regardless of where it is stored.
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/best-practices/naming-conventions">
 Naming conventions for Azure resources</a>
