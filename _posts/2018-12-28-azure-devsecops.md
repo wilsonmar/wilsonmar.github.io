@@ -15,7 +15,7 @@ comments: true
 
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/azure-devops/">This page</a> contains "deep dive" notes for learning and using DevSecOps using Microsoft's Azure DevOps services.
+<a target="_blank" href="https://wilsonmar.github.io/azure-devops/">This page</a> contains succinct "deep dive" notes about learning and using Microsoft's Azure DevOps services.
 
 ## Why?
 
@@ -23,6 +23,8 @@ comments: true
 Azure DevOps - Why It's A Big Deal For Microsoft And The Community</a> Sep 16, 2018
 
 "Data estate" refers to all the data an organization owns, regardless of where it is stored.
+
+Forrester has Microsoft among the leaders in its <a target="_blank" href="https://azure.microsoft.com/en-us/resources/continuous-delivery-and-release-automation/">2018 Continuous Delivery And Release Automation" market assesement</a> (behind Electric Cloud, IBM, Xebia, and CA).
 
 ## Product components
 
@@ -275,20 +277,17 @@ Package management such as Artifactory.
 
 ## Azure Pipelines
 
-<img align="right" src="../images/azure-devops-pipelines-96.svg">
+<img align="right" width="96" src="../images/azure-devops-pipelines-96.svg">
 
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/pipelines/">https://azure.microsoft.com/en-us/services/devops/pipelines</a> is the product's website.
+Website: <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/pipelines/">Product</a> | <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/pipelines/index?view=azure-devops">User Guide</a>
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/pipelines/index?view=azure-devops">User Guide</a>
-
-Forrester has Microsoft among the leaders in its <a target="_blank" href="https://azure.microsoft.com/en-us/resources/continuous-delivery-and-release-automation/">2018 Continuous Delivery And Release Automation" market assesement</a> (behind Electric Cloud, IBM, Xebia, and CA).
+Azure DevOps Repos and Pipelines are <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/">free starting prices</a> for up to 5 people running 10 parallel jobs in 1 hosted job up to 1,800 minutes per month.
+I
+![azure-devops-pipelines-screen-1018x396-114045](https://user-images.githubusercontent.com/300046/56268588-f5725e80-60ae-11e9-8f3c-498f0a3c8d2f.png)
 
 https://github.com/rfennell/AzurePipelines
 
 https://www.youtube.com/watch?v=yr6PJxfACNc
-
-Repos is <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/">free starting prices</a> for up to 10 parallel jobs.
-Azure Pipelines is free up to 5 people. Each team get 1 hosted job with 1,800 minutes per month for CI/CD and 1 self-hosted job
 
 
 <a name="AzureDevTestLabs"></a>
@@ -356,7 +355,7 @@ But Azure DevOps also makes use of other Azure services and client executables:
 
    <a name="AppInsights"></a>
 
-   * <img align="right" alt="azure-app-insights-icon-51x50.png" src="https://user-images.githubusercontent.com/300046/56264992-82b0b580-60a5-11e9-9757-8b59981aacb1.png"></a><strong>Application Insights</strong>
+   * <img align="right" alt="azure-app-insights-icon-51x50.png" width="51" src="https://user-images.githubusercontent.com/300046/56264992-82b0b580-60a5-11e9-9757-8b59981aacb1.png"></a><strong>Application Insights</strong> the APM service. It works with Azure Service Profiler for ASP.NET code. Its API and SDKs (in .NET, Java, node.js) and <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.applicationinsights.telemetryclient?view=azure-dotnet">TelemetryClient</a> to obtain metrics about requests, pages views, dependency calls, trace (log) messages, exceptions, and more. (Add <a target="_blank" href="https://stackify.com/application-insights-things-to-know/">Retrace to collect first chance exceptions</a>)
 
    * Other <a target="_blank" href="https://azure.microsoft.com/en-us/products/devops-tool-integrations/">Azure DevOps tool integrations</a>
 
