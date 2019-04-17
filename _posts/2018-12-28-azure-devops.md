@@ -107,7 +107,7 @@ After much work, here I present the steps culled from among the dizzying volume 
 1. Click "Choose template":
 
    * SmartHotel360 contains a complete ASP.NET 2 web mobile and desktop business apps for a hotel, and can be deployed using Docker containers.
-   ![azure-devops-smarthotel-home-1896x853](https://user-images.githubusercontent.com/300046/56323530-68b8b680-6129-11e9-9baf-81a79a04557e.jpg)
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/56323530-68b8b680-6129-11e9-9baf-81a79a04557e.jpg"><img alt="azure-devops-smarthotel-home-1896x853.jpg" width="1896" src="https://user-images.githubusercontent.com/300046/56323530-68b8b680-6129-11e9-9baf-81a79a04557e.jpg"></a>
 
    * MyHealthClinic defines a team project for an ASP.NET Core app that deploys to Azure App Service
    * MyShuttle defines a Java app and Azure App service deployment
@@ -236,6 +236,8 @@ Websites: <a target="_blank" href="https://azure.microsoft.com/en-us/services/de
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/code-with-git?view=azure-devops">Quick Start: Code with Git in Azure DevOps - Azure DevOps Services & TFS</a> - Learn how to share code in a Git repo and new projectdocs.microsoft.com
 
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/56324189-7111f100-612b-11e9-8ff3-81210b06a358.jpg"><img alt="azure-devops-repos-home-1920x568-61555.jpg" src="https://user-images.githubusercontent.com/300046/56324189-7111f100-612b-11e9-8ff3-81210b06a358.jpg"></a>
+
 
 ### GitHub Actions
 
@@ -287,7 +289,7 @@ Websites: <a target="_blank" href="https://azure.microsoft.com/en-us/services/de
 
 Azure DevOps Repos and Pipelines are <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/">free starting prices</a> for up to 5 people running 10 parallel jobs in 1 hosted job up to 1,800 minutes per month.
 I
-![azure-devops-pipelines-screen-1018x396-114045](https://user-images.githubusercontent.com/300046/56268588-f5725e80-60ae-11e9-8f3c-498f0a3c8d2f.png)
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/56268588-f5725e80-60ae-11e9-8f3c-498f0a3c8d2f.png"><img alt="azure-devops-pipelines-screen-1018x396-114045.png" width="1018" src="https://user-images.githubusercontent.com/300046/56268588-f5725e80-60ae-11e9-8f3c-498f0a3c8d2f.png"></a>
 
 "WhiteSource Bolt" is a security analysis tool (like Black Duck license rating, SonarQube, Open Web Application Security Project)
 
@@ -302,7 +304,7 @@ https://www.youtube.com/watch?v=yr6PJxfACNc
 
 ## Azure DevTest Labs
 
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/devtest-lab/">https://azure.microsoft.com/en-us/services/devtest-lab</a> is the product's website.
+Websites: <a target="_blank" href="https://azure.microsoft.com/en-us/services/devtest-lab/">Product</a>
 
    * Quickly provision development and test environments
    * Minimize waste with <strong>quotas and policies</strong>
@@ -315,7 +317,7 @@ https://www.youtube.com/watch?v=yr6PJxfACNc
 
 <a name="CoursesOnDevOps"></a>
 
-## Courses on DevOps
+## Other products & services used by Azure DevOps
 
 <a target="_blank" href="https://academy.microsoft.com/en-us/professional-program/tracks/devops/">
 Microsoft Professional Program for DevOps</a> consists of 9 video courses (of 8-16 hours each) 
@@ -323,19 +325,18 @@ January—March, April—June, July—September, and October —December
 
 The course catalog says they cover 6 skills/technologies:
 
-   1. VSTS
-   2. Visual Studio
+   1. VSTS (Visual Studio Team System)
+   2. "Visual Studio"
    3. <a href="#ACS">Azure Container Service (ACS)</a>
    4. <a href="#AppInsights">Application Insights</a>
    5. Selenium
    6. Operations Management Suite (OMS)
    <br /><br />
 
-But Azure DevOps also makes use of other Azure services and client executables.
+   But Azure DevOps also makes use of other Azure services and client executables:
 
-## Other products & services used by Azure DevOps
-
-   * Visual Studio - https://app.vssps.visualstudio.com/_signedin
+   * <a target="_blank" href="https://app.vssps.visualstudio.com/_signedin">https://app.vssps.visualstudio.com/</a>
+   Visual Studio is <a target="_blank" href="https://aex.dev.azure.com/me?mkt=en-US">AEX.dev.azure.com</a>
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest">Azure CLI (az command) docs</a>
 
