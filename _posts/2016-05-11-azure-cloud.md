@@ -15,10 +15,12 @@ comments: true
 <hr />
 {% include _toc.html %}
 
-This article contains higher-level technical details on Microsoft Azure,
-but with less confusing grandiose marketing generalizations.
+This article contains higher and practical level details about Microsoft Azure, but with less confusing grandiose marketing generalizations.
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/overview/cloud-computing-dictionary/">Cloud Computing Terms Dictionary</a>
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/best-practices/naming-conventions">
+Naming conventions for Azure resources</a>
 
 ## Why?
 
@@ -39,6 +41,8 @@ The <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/welc
 <em>Click diagram for full-frame pop-up</em></a><br />
 
 This is missing some new services such as DevOps.
+
+<a target="_blank" href="https://my.visualstudio.com/Benefits?wt.mc_id=o~msft~profile~devprogram_attach&workflowid=devprogram&mkt=en-us">Visual Studio Dev Essentials</a> provides a list of tools and ecosystem.
 
 ## Architectural components #
 
@@ -89,6 +93,7 @@ components for "High Control":
 * Azure Log Analytics (log ingestion and IaaS monitoring), and
 * Application Insights (application performance monitoring including availability, performance, and exception information)
 
+Learn Module: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/handle-transient-errors-in-your-app/">Handle transient errors in your app</a>
 
 ## Plan
 
@@ -336,8 +341,17 @@ Declarative automation is done using Azure Resource Manager templates such as th
 https://docs.microsoft.com/en-us/learn/modules/explore-azure-infrastructure/
 Core Cloud Services - Azure architecture and service guarantees
 
-<a target="_blank" href="https://docs.microsoft.com/learn/paths/administer-containers-in-azure/">Module: Administer containers in Azure</a>
+From Learn Path: <a target="_blank" href="https://docs.microsoft.com/learn/paths/administer-containers-in-azure/">Administer containers in Azure</a>
 
+   QUESTION: How to use https://raw.githubusercontent.com/wilsonmar/Dockerfiles/master/azure-node/Dockerfile 
+
+https://docs.microsoft.com/en-us/learn/modules/run-docker-with-azure-container-instances/
+Azure Container Instances (ACI).
+
+Container restart policies:
+   * <strong>Always</strong> restart for long-running tasks such as a web server, so it's the default.
+   * <strong>Never</strong> for run one-time only.
+   * <strong>OnFailure</strong> only when the process short-lived tasks terminates with a nonzero exit code.
 
 <a name="MgmtCerts"></a>
 
@@ -736,6 +750,17 @@ by Yacine Khammal Intermediate Feb 14, 2012  2h 37m
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=3WWpx4W-oK8">
    YOUTUBE: Microsoft's DevOps Vision</a>
+
+<a name="Social"></a>
+
+## Social
+
+https://azure.microsoft.com/en-us/support/community/
+Azure Community Forum for support
+
+https://social.msdn.microsoft.com/Forums/en-US/home
+Developer Commmunity Forum for support
+
 
 
 ## More on DevOps #

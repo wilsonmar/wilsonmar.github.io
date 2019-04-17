@@ -53,6 +53,7 @@ The <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/relea
 
 Sign into <a target="_blank" href="https://aka.ms/AzureDevOpsForum/">aka.ms/AzureDevOpsForum</a> = Developer Community Problems and Features (Active | Newest | Votes)
 
+NOTE: Azure DevOps works with more languages than just C# (Java, etc.).
 
 <hr />
 
@@ -305,7 +306,7 @@ Azure Pipelines is free up to 5 people. Each team get 1 hosted job with 1,800 mi
 
 <hr />
 
-<a name="Certs"></a>
+<a name="CoursesOnDevOps"></a>
 
 ## Courses on DevOps
 
@@ -345,10 +346,11 @@ But Azure DevOps also makes use of other Azure services and client executables:
 
    * <a target="_blank" href="https://wilsonmar.github.io/azure-cloud/#azure-service-fabric">Azure Service Fabric</a>
 
-   * Azure Container Service (AKS) - https://azure.microsoft.com/en-us/services/kubernetes-service/
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/kubernetes-service/"><strong>Azure Container Service (AKS)</strong></a> - 
    uses Docker to make dynamic scaling easy on Kubernetes, Docker Swarm, or Mesos DC/OS
 
-   * Azure Container Registry to store images for different types of container deployments like Swarm, DC/OS and Kubernetes and Azure services such as App Service, Batch and Service Fabric.
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/container-registry/"><strong>Azure Container Registry (ACR)</strong></a> stores images for different types of container deployments (Swarm, DC/OS and Kubernetes, etc.) as well as Azure services such as App Service, Batch, and Service Fabric. 
+   Unlike Docker Hub, ACR provides more control over who can see and use images, which ACR can sign cryptographically (to detect corruption) and encrypt at rest. The Premium SKU of Container Registry includes 500 GiB of storage that is geo-replicated.
 
    * Hashicorp Vault
 
@@ -865,7 +867,7 @@ Damien Brady (<a target="_blank" href="https://twitter.com/AbelSquidHead">@AbelS
 Abel Wang (<a target="_blank" href="https://twitter.com/AbelSquidHead">@AbelSquidHead</a>, <a target="_blank" href="https://abelsquidhead.com">abelsquidhead.com</a>) on development
    * <a target="_blank" href="https://www.youtube.com/watch?v=mCRbvRwxDfQ">with Aplitools Apr 15, 2019</a>
 
-### Others
+### Other Microsoft
 
 Microsoft Developer Advocate and AI enthusiast Aaron (Ari) Bornstein (<a target="_blank" href="https://twitter.com/pythiccoder">@pythiccoder</a>, <a target="_blank" href="https://medium.com/@aribornstein">on Medium</a>)
 
@@ -897,6 +899,11 @@ https://www.telerik.com/blogs/microsoft-azure-devops-what-you-need-to-know
 https://www.preemptive.com/blog/article/1055-automating-and-scaling-app-protection-with-azure-devops/90-dotfuscator
 
 https://www.mobilize.net/blog/vbuc-azure-devops
+
+## Independents
+
+YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=H-R2bCXfz8I">Intro to Azure DevOps - Source Control, CI/CD, Automation, and more</a>  Dec 17, 2018
+by IAmTimCorey
 
 ## Testing
 

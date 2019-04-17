@@ -17,7 +17,7 @@ image: # pic-black-bkg-white-cloud_1920x1200
 <img class="img-right" align="right"
 alt="cloud platforms black icons 300x330-300-58kb.jpg" width="300" height="330" src="https://cloud.githubusercontent.com/assets/300046/17864330/e4dbabc0-685a-11e6-84e5-361c5fc8c28d.jpg">
 
-This article compares the largest cloud services platforms:
+<a target="_blank" href="https://wilsonmar.github.io/cloud-services-comparisons">This</a> article compares the largest cloud services platforms:
 Amazon AWS vs.
 Microsoft Azure vs. 
 [Google Cloud Platform](/gcp/) vs.
@@ -34,16 +34,25 @@ Software for hybrid private/public clouds include <a target="_blank" href="https
 [NetApp](http://www.netapp.com/us/solutions/cloud/hybrid-cloud/), or [EMC](http://www.emc.com/en-us/cloud/hybrid-cloud-computing/index.htm)
 
 
-## Advantages of Cloud
+## Why? Advantages of Cloud
 
 Evaluations can be based on the advantages of cloud:
 
 1. Get <strong>capacity cheaper and quicker</strong> than building and maintaining data centers. Paying as you go conserves cash up-front to trade variable expense for capital expense.
-2. Stop guessing about capacity and over-provisioning, which can be expensive.
-3. Benefit from economies of scale (tap into available <strong>more capacity pooled</strong> among many customers)
-4. Get <strong>expert specialists</strong> at facilities, security, and scalability by hiring them through cloud vendors.
-5. <strong>Go global</strong> (make use of infrastructure established around the world, which is time consuming, expensive, and dangerous to do on your own)
-6. Increase speed and agility (make use of <strong>innovations</strong>)
+
+2. Stop guessing about capacity and <strong> save money that went into idle over-provisioning</strong>, which can be expensive.
+
+3. Benefit from economies of scale by tapping into <strong>more capacity pooled</strong> among many customers.
+
+4. Increase <strong>speed</strong> to obtain capacity and achieve <strong>agility</strong>. Cloud vendors can buy newer, <strong>faster</strong> equipment.
+
+5. Get <strong>expert specialists</strong> at facilities, security, scalability, etc. by hiring them through cloud vendors who share their <strong>innovations</strong>.
+
+6. Cloud customer's workers achieve higher <strong>productivity</strong> from more efficient up-to-date methods and by off-loading tasks to specialists.
+
+7. Greater <strong>reliability</strong> to make data backup, disaster recovery, and business continuity easier and less expensive, with data being mirrored at multiple redundant sites on the cloud provider’s network.
+
+8. <strong>Go global</strong> - make use of infrastructure established around the world (time consuming, expensive, and dangerous to do on one's own).
 <br /><br />
 
 PROTIP: Memorize the above list for exams.
@@ -62,9 +71,9 @@ The <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/clou
 
 * <strong>Rehost (migration)</strong> ("lift-and-shift") to rehost with little code changes, to minimize application downtime.
 
-* <strong>Refactor (modernization)</strong> - transform existing apps with minimal code change to use Docker and Kubernetes.
+* <strong>Refactor (modernization)</strong> - transform existing apps with minimal code change to <a target="_blank" href="https://docs.microsoft.com/en-us/Azure/containers/">use Docker and Kubernetes</a>, robust <a target="_blank" href="https://docs.microsoft.com/en-us/Azure/containers/">logging</a>, "elastic" <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/app-service-autoscale-rules/">auto-scaling</a> in & out, etc.
 
-* <strong>Rearchitect (modernization)</strong> - isolate  application functionalities into separate microservices that can be independently tested, scaled up or down, and deployed, and managed.
+* <strong>Rearchitect (modernization)</strong> - isolate  application functionalities into separate <strong>microservices</strong> that can be independently tested, scaled up or down, and deployed, and managed.
 
 * <strong>Rebuild (modernization)</strong> - reconstruct existing app on a new PaaS platform.
 
@@ -98,13 +107,14 @@ So here I'm adding additional commentary here.
 
 ## Additionally...
 
-Factor | AWS EC2 | Azure |
+Factor | AWS  | Azure |
 :----- | :--- | :----- |
+Company | Amazon | Microsoft
 Initial appearance | 2006 | 2010 |
 Granularity of billing | per hour | per minute |
 Entrepreneurial Discount | - | BizSpark |
-# Data centers | 24 | 100 |
-# zones | 33 | 100 |
+\# Data centers | 24 | 100 |
+\# zones | 33 | 100 |
 Largest server | <a target="_blank" href="https://goo.gl/64UcCb">x1.32xlarge</a> | G: |
 Largest # cores | 128 | 32 |
 Largest RAM GB | 1,952 GB | 448 GB |
@@ -157,7 +167,7 @@ Earlier:
 ## Operating Systems in the cloud #
 
 As of May 2016, Microsoft Azure works with SUSE and Oracle Java,
-but not Red Hat Enterprise Linux (RHEL).
+but NOT Red Hat Enterprise Linux (RHEL).
 
 Amazon provides software to host whatever OS is put into images.
 But its free server images are based on CentOS, derived from Red Hat as both use the yum package manager.

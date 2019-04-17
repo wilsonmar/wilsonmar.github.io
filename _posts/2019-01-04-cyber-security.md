@@ -635,6 +635,17 @@ Service Organization Controls (SOC) 1, 2, and 3 report is a framework by indepen
 
 National Institute of Standards and Technology (NIST) Cybersecurity Framework (CSF) is a voluntary Framework that consists of standards, guidelines, and best practices to manage cybersecurity-related risks. Through a validated assessment performed by the Health Information Trust Alliance (HITRUST), a leading security and privacy standards development and accreditation organization, Office 365 is certified to the objectives specified in the NIST CSF.
 
+
+## Professional certifications
+
+http://www.isaca.org/CERTIFICATION/Pages/default.aspx
+* Certified in Risk and Information Systems Control (CRISC)
+* Certified Information Security Manager (CISM)
+* Certified in the Governance of Enterprise IT (CGEIT)
+* Cybersecurity Nexus – CSX Certificates and CSX-P Certification
+
+Certified Information Systems Security Professional (CISSP) is the most sought-after certification in cybersecurity.
+
 ## Security Engineer
 
 Here are "Essential Job Functions" from various job descriptions:
