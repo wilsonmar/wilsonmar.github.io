@@ -73,7 +73,7 @@ The sequence of product usage depends on the hosting technology:
    5. Deployment to QA environment using Azure DevTest Labs
    6. Deployment to Staging environment using Azure Virtual Machines.
    7. Deployment to production environment using Azure Virtual Machines.
-   8. Azure Application Insights collects and analyzes health, performance, and usage data.
+   8. <a href="#AppInsights">Azure Application Insights</a> collects and analyzes health, performance, and usage data.
    9. Engineer reviews health, performance, and usage information.
    10. Update backlog item in Azure DevOps Boards.
    <br /><br />
@@ -319,7 +319,7 @@ The course catalog says they cover 6 skills/technologies:
    1. VSTS
    2. Visual Studio
    3. Azure Container Service (ACS)
-   4. Application Insights
+   4. <a href="#AppInsights">Application Insights</a>
    5. Selenium
    6. Operations Management Suite (OMS)
    <br /><br />
@@ -332,14 +332,14 @@ But Azure DevOps also makes use of other Azure services and client executables:
 
    Installing az adds sqlite and python
 
-   az --version | grep "azure-cli"
+   <pre>az --version | grep "azure-cli"</pre>
    azure-cli (2.0.62)
 
    There is a separate brew amazon-ecs-cli.
 
    Use ctrl-shift-v (cmd-shift-v on macOS) to paste tutorial text into Azure Cloud Shell.
 
-   * Azure Resource Manager (ARM) https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/
+   * Azure Resource Manager (ARM) https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/">
    to deploy, update, or delete cloud resources in a single, coordinated operation. Resources can include virtual machines, storage accounts, virtual networks, services, or any component that you are managing. 
 
    * IAM
@@ -354,12 +354,16 @@ But Azure DevOps also makes use of other Azure services and client executables:
 
    * Hashicorp Vault
 
-   * <a target="_blank" href="https://azure.microsoft.com/en-us/products/devops-tool-integrations/">Azure DevOps tool integrations</a>
+   <a name="AppInsights"></a>
+
+   * <img align="right" alt="azure-app-insights-icon-51x50.png" src="https://user-images.githubusercontent.com/300046/56264992-82b0b580-60a5-11e9-9757-8b59981aacb1.png"></a><strong>Application Insights</strong>
+
+   * Other <a target="_blank" href="https://azure.microsoft.com/en-us/products/devops-tool-integrations/">Azure DevOps tool integrations</a>
 
 
 <a name="SampleAppRepos"></a>
 
-### Sample Apps
+### Sample Apps in pro certs
 
 <a target="_blank" href="https://www.youtube.com/watch?v=wiCRVp6QgA0">VIDEO</a>: There are two repos used in course labs and also during the<br />
 <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-AZ-400.aspx">Implementing Azure DevOps Solutions exam AZ-400</a> ($160) QUESTION: Is that the same as the<br />
@@ -522,7 +526,7 @@ Test Driven Development Studio: https://aka.ms/edx-devops200.5x-tdds Complete De
    * How to create and implement Unit tests and the elements of a good test 
    * How to create basic API tests (or Integration tests)
    * Performance testing and how to create a performance test using Visual Studio and Visual Studio team services (VSTS)
-   * How to analyze performance test results using Application Insights</a>
+   * How to analyze performance test results using <a href="#AppInsights">Application Insights</a>
    * Exploratory testing in the context of visual Studio and Microsoft Test Manager
    <br /><br />
 
@@ -550,12 +554,12 @@ Test Driven Development Studio: https://aka.ms/edx-devops200.5x-tdds Complete De
 
    * Understand general application monitoring and feedback loop practices and principles.
    * The different kinds of feedback and how they are used in different stages of the value stream, and their benefits.
-   * How to set up up monitoring with Azure Application Insights
+   * How to set up up monitoring with Azure <a href="#AppInsights">Application Insights</a>
    * Monitor web application availability
-   * Search and analyze monitoring data in Application Insights
-   * How to use and query Application Insights data and Application Maps
+   * Search and analyze monitoring data in <a href="#AppInsights">Application Insights</a>
+   * How to use and query <a href="#AppInsights">Application Insights</a> data and Application Maps
    * How to set up, configure, query and analyze data collection on Operations Management Suite (OMS) Log Analytics
-   * How to set up alerts in OMS and integrate Application Insights 
+   * How to set up alerts in OMS and integrate <a href="#AppInsights">Application Insights</a>
    * Configure and monitor a web application with New Relic
    * Configure and use Loggly
    <br /><br />
