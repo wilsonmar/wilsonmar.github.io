@@ -15,7 +15,7 @@ comments: true
 
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/azure-devops/">This page</a> contains succinct "deep dive" notes about learning and using Microsoft's Azure DevOps services.
+<a target="_blank" href="https://wilsonmar.github.io/azure-devops/">This page</a> contains succinct "deep dive" notes about learning and using Microsoft's Azure DevOps services, without the generalized sales hype and repeated content.
 
 ## Why?
 
@@ -36,7 +36,7 @@ Forrester has Microsoft as a leader (behind Electric Cloud, IBM, Xebia, and CA) 
 
    3). <a href="#AzurePipelines"><strong>Azure Pipelines</strong></a> (like Jenkins, AWS CodeDeploy, etc.) for CI/CD automation 
 
-   4). <a href="#AzureDevTestPlans"><strong>Azure Test Plans</strong></a> to manage tests and explore (to ship with confidence)
+   4). <a href="#AzureDevTestPlans"><strong>Azure Test Plans</strong></a> to manage manual and exploratory testing
 
    5). <a href="#AzureArtifacts"><strong>Azure Artifacts</strong></a> (like Artifactory, Nexxus, etc.) for binary package consumption package management 
 
@@ -87,11 +87,6 @@ Other "Reference Architectures" with workflows:
 * <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/java-cicd-using-jenkins-and-azure-web-apps/">Java CI/CD using Jenkins and Azure Web Apps</a>
 * <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/immutable-infrastructure-cicd-using-jenkins-and-terraform-on-azure-virtual-architecture-overview/">Immutable Infrastructure CI/CD using Jenkins and Terraform</a>
 
-<a name="DevOpsAnalytics"></a>
-
-Analytics (<a target="_blank" href="https://devblogs.microsoft.com/devops/analytics-for-azure-devops-services-is-now-generally-available/">generally available</a>)
-
-![azure-log-analytics-711x306-35708](https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg)
 
 <hr />
 
@@ -112,6 +107,8 @@ After much work, here I present the steps culled from among the dizzying volume 
 1. Click "Choose template":
 
    * SmartHotel360 contains a complete ASP.NET 2 web mobile and desktop business apps for a hotel, and can be deployed using Docker containers.
+   ![azure-devops-smarthotel-home-1896x853](https://user-images.githubusercontent.com/300046/56323530-68b8b680-6129-11e9-9baf-81a79a04557e.jpg)
+
    * MyHealthClinic defines a team project for an ASP.NET Core app that deploys to Azure App Service
    * MyShuttle defines a Java app and Azure App service deployment
    * PartsUnlimited defines an ASP.NET app with customized CI/CD pipelines
@@ -389,9 +386,15 @@ But Azure DevOps also makes use of other Azure services and client executables.
    * <a target="_blank" href="https://azure.microsoft.com/en-us/services/container-registry/"><strong>Azure Container Registry (ACR)</strong></a> stores images for different types of container deployments (Swarm, DC/OS and Kubernetes, etc.) as well as Azure services such as App Service, Batch, and Service Fabric. 
    Unlike Docker Hub, ACR provides more control over who can see and use images, which ACR can sign cryptographically (to detect corruption) and encrypt at rest. The Premium SKU of Container Registry includes 500 GiB of storage that is geo-replicated.
 
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tasks-overview#automate-os-and-framework-patching">ACR Tasks</a> dynamically discovers base image dependencies when it <a target="_blank" href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-base-image-update#create-a-task">builds a container image</a>, so when changes are detected, automatically rebuilds application images.
+      <a target="_blank" href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tasks-overview#automate-os-and-framework-patching">ACR Tasks</a> dynamically discovers base image dependencies when it <a target="_blank" href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-base-image-update#create-a-task">builds a container image</a>, so when changes are detected, automatically rebuilds application images.
 
-   
+   <a name="DevOpsAnalytics"></a>
+
+   * <strong>Log Analytics</a> (<a target="_blank" href="https://devblogs.microsoft.com/devops/analytics-for-azure-devops-services-is-now-generally-available/">generally available</a>)
+
+   ![azure-log-analytics-711x306-35708](https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg)
+
+
    <a name="AppInsights"></a>
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview"><img align="right" alt="azure-app-insights-icon-51x50.png" width="51" src="https://user-images.githubusercontent.com/300046/56264992-82b0b580-60a5-11e9-9757-8b59981aacb1.png"><strong>Application Insights</strong></a> the APM service works with <strong>Azure Service Profiler</strong> for ASP.NET code. Its API and SDKs (in .NET, Java, node.js) and <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.applicationinsights.telemetryclient?view=azure-dotnet">TelemetryClient</a> to obtain metrics about requests, pages views, dependency calls, trace (log) messages, exceptions, and more. (Add <a target="_blank" href="https://stackify.com/application-insights-things-to-know/">Retrace to collect first chance exceptions</a>)
@@ -564,8 +567,10 @@ DEVOPS200.3x
    * Manage these clusters in production scenarios.
    <br /><br />
    
-   https://channel9.msdn.com/Blogs/containers/Containers-101-with-Microsoft-and-Docker?ocid=player
-   Containers 101 with Microsoft and Docker.
+   Videos:
+   
+   * <a target="_blank" href="https://channel9.msdn.com/Blogs/containers/Containers-101-with-Microsoft-and-Docker?ocid=player">
+   Containers 101 with Microsoft and Docker</a>
 
    <a name="[5]"></a>
 
@@ -851,12 +856,14 @@ Jessica Deen (<a target="_blank" href="https://twitter.com/jldeen">@jldeen</a>, 
 
 Steve Marascky (<a target="_blank" href="https://twitter.com/StevenMurawski">https://twitter.com/StevenMurawski</a>, <a target="_blank" href="https://stevenmurawski.com/">https://stevenmurawski.com</a>) on DSC, SRE
 
-Damien Brady (<a target="_blank" href="https://twitter.com/AbelSquidHead">@AbelSquidHead</a>) on Octopus Deploy
+Damien Brady (<a target="_blank" href="https://twitter.com/AbelSquidHead">@</a>) on Octopus Deploy
 
 Abel Wang (<a target="_blank" href="https://twitter.com/AbelSquidHead">@AbelSquidHead</a>, <a target="_blank" href="https://abelsquidhead.com">abelsquidhead.com</a>) on development
-   * <a target="_blank" href="https://channel9.msdn.com//Shows/On-NET/Devops-For-ASPNET-Developers-Pt-3-Work-Item-Tracking/">Devops For ASP.NET Developers Pt. 3 - Work Item Tracking</a> Apr 16, 2019 Being able to visualize the work ahead is an integral part to the success of any software project. With Azure Boards, you can quickly and easily start tracking tasks, features, and bugs associated with runfaster2000.
+
    * <a target="_blank" href="https://www.youtube.com/watch?v=mCRbvRwxDfQ">with Aplitools Apr 15, 2019</a>
    * <a target="_blank" href="https://youtu.be/Bt2x6pJWZKg">Using the new Basic Process in Azure DevOps</a> with Dan Hellem Apr 8, 2019 [8:17]
+
+
 
 
 
@@ -879,6 +886,14 @@ https://docs.microsoft.com/en-us/azure/devops/learn/
    * <a target="_blank" href="https://www.youtube.com/playlist?list=PLNMUSSKcxKjfu-84Vc_Fug93D3LfRc1SE">Azure DevOps Launch Sep 10, 2018</a> (6,000+ subscribers)
 
    * <a target="_blank" href="https://www.telerik.com/blogs/microsoft-azure-devops-what-you-need-to-know">Microsoft Azure DevOps - What You Need to Know</a>
+
+<strong>DevOps For ASP.NET Developers series</strong> on Channel9 by by Donovan Brown, Cecil Phillip, Rich Lander, Jeremy Likness, AbelSquidHead
+
+   * <a target="_blank" href="https://channel9.msdn.com//Shows/On-NET/DevOps-For-ASPNET-Developers-Pt2-Source-Control/">Pt.1 - What is DevOps?</a> Apr 15, 2019 by Donovan Brown, Rich Lander, Jeremy Likness. AbelSquidHead convinces (hilariously) skeptical developer Cecil Phillip about putting the SmartHotel360 app into DevOps.
+
+   * <a target="_blank" href="https://channel9.msdn.com//Shows/On-NET/DevOps-For-ASPNET-Developers-Pt2-Source-Control/">Pt.2 - Source Control</a> Apr 15, 2019 by Donovan Brown, Cecil Phillip, Rich Lander, Jeremy Likness, AbelSquidHead. You have the option of a centralized version control with TFVC or distributed version control with Git.
+
+   * <a target="_blank" href="https://channel9.msdn.com//Shows/On-NET/Devops-For-ASPNET-Developers-Pt-3-Work-Item-Tracking/">Pt. 3 - Work Item Tracking</a> Apr 16, 2019 Being able to visualize the work ahead is an integral part to the success of any software project. With Azure Boards, you can quickly and easily start tracking tasks, features, and bugs associated with runfaster2000.
 
 <a target="_blank" href="http://aka.ms/DevOpsLearn">DevOps courses in Microsoft Virtual Academy (until April 30, 2019) http://aka.ms/DevOpsLearn</a>
 
