@@ -328,29 +328,54 @@ The course catalog says they cover 6 skills/technologies:
 
    1. VSTS
    2. Visual Studio
-   3. Azure Container Service (ACS)
+   3. <a href="#ACS">Azure Container Service (ACS)</a>
    4. <a href="#AppInsights">Application Insights</a>
    5. Selenium
    6. Operations Management Suite (OMS)
    <br /><br />
 
-But Azure DevOps also makes use of other Azure services and client executables:
+But Azure DevOps also makes use of other Azure services and client executables.
+
+## Other products & services used by Azure DevOps
 
    * Visual Studio - https://app.vssps.visualstudio.com/_signedin
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest">Azure CLI (az command) docs</a>
 
-   Installing az adds sqlite and python
+   <a name="ARM"></a>
 
-   <pre>az --version | grep "azure-cli"</pre>
-   azure-cli (2.0.62)
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/"><strong>Azure Resource Manager (ARM)</strong></a> carries out specifications entered in the Azure Dashboard. It deploys, updates, or deletes cloud resources in a single, coordinated operation. Resources can include virtual machines, storage accounts, virtual networks, services, or any component that you are managing.
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=s7bQu4Y1oHU">VIDEO</a>: ARM vs. Classic Azure Service Management
+
+   Factors to consider when defining resource groups (containers):
+
+   * All the resources in a group should share the same lifecycle. You will deploy, update, and delete them together. If one resource, such as a database server, needs to exist on a different deployment cycle, it should be in another resource group.
+   * Each resource can only exist in one resource group at a time.
+   * You can add or remove a resource to a resource group at any time.
+   * You can move a resource from one resource group to another group.
+   * A resource group can contain resources that reside in different regions.
+   * A resource group can be used to scope access control for administrative actions.
+   * A resource can be linked to a resource in another resource group when the two resources must interact with each other, but they do not share the same lifecycle (for example, multiple apps connecting to a database).
+
+   Up to 15 tags per ARM resource to logically organize resources for cost accounting.
+   Tag names are limited to 512 characters. Tag values are limited to 256 characters. 
+
+   See https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags
+
+   https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/#access-control
+
+   ### ARM Templates
+
+   https://www.youtube.com/watch?v=h0UDIcRnPog
+
+   QUESTION: How are ARM Templates version controlled?
+
+   <a name="ACS"></a>
+
+   * Azure Container Service (ACS) is like Docker and rkct (from Red Hat).
 
    There is a separate brew amazon-ecs-cli.
-
-   Use ctrl-shift-v (cmd-shift-v on macOS) to paste tutorial text into Azure Cloud Shell.
-
-   * Azure Resource Manager (ARM) https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/">
-   to deploy, update, or delete cloud resources in a single, coordinated operation. Resources can include virtual machines, storage accounts, virtual networks, services, or any component that you are managing. 
 
    * IAM
 
@@ -363,6 +388,8 @@ But Azure DevOps also makes use of other Azure services and client executables:
 
    * <a target="_blank" href="https://azure.microsoft.com/en-us/services/container-registry/"><strong>Azure Container Registry (ACR)</strong></a> stores images for different types of container deployments (Swarm, DC/OS and Kubernetes, etc.) as well as Azure services such as App Service, Batch, and Service Fabric. 
    Unlike Docker Hub, ACR provides more control over who can see and use images, which ACR can sign cryptographically (to detect corruption) and encrypt at rest. The Premium SKU of Container Registry includes 500 GiB of storage that is geo-replicated.
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tasks-overview#automate-os-and-framework-patching">ACR Tasks</a> dynamically discovers base image dependencies when it <a target="_blank" href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-base-image-update#create-a-task">builds a container image</a>, so when changes are detected, automatically rebuilds application images.
 
    
    <a name="AppInsights"></a>
@@ -381,16 +408,18 @@ But Azure DevOps also makes use of other Azure services and client executables:
 <a target="_blank" href="https://www.youtube.com/watch?v=wiCRVp6QgA0">VIDEO</a>: There are two repos used in course labs and also during the<br />
 <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-AZ-400.aspx">Implementing Azure DevOps Solutions exam AZ-400</a> ($160) which fuilfills the requirement to become a <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">Microsoft Certified: Azure DevOps Engineer Expert</a>. Expand All to see skills measured:
 
-1. Design a DevOps strategy
-1. Implement DevOps development processes
-1. Implement continuous integration
-1. Implement continuous delivery
-1. Implement dependency management
-1. Implement application infrastructure
-1. Implement continuous feedback
+1. Design a DevOps strategy (20-25%)
+1. Implement DevOps development processes (20-25%)
+1. Implement continuous integration (10-15%)
+1. Implement continuous delivery (10-15%)
+1. Implement dependency management (5-10%)
+1. Implement application infrastructure (15-20%)
+1. Implement continuous feedback (10-15%)
 <br /><br />
 
 QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a> "coming soon".
+
+<a target="_blank" href="https://github.com/MicrosoftDocs/feedback/issues">Issues with MicrosoftDocs are reported here</a>.
 
 
 <a name="PartsUnlimited"></a>
@@ -637,37 +666,6 @@ DEVOPS200.10x
 
     <a target="_blank" href="https://www.edx.org/microsoft-professional-program-devops">Microsoft Professional Program (MPP) in DevOps</a> two attempts to complete <a href="#SampleAppRepos">PartsUnlimited/ labs</a>.
 
-
-<a name="ARM"></a>
-
-## ARM
-
-https://www.youtube.com/watch?v=s7bQu4Y1oHU
-ARM vs. Classic Azure Service Management
-
-Factors to consider when defining resource groups (containers):
-
-   * All the resources in a group should share the same lifecycle. You will deploy, update, and delete them together. If one resource, such as a database server, needs to exist on a different deployment cycle, it should be in another resource group.
-   * Each resource can only exist in one resource group at a time.
-   * You can add or remove a resource to a resource group at any time.
-   * You can move a resource from one resource group to another group.
-   * A resource group can contain resources that reside in different regions.
-   * A resource group can be used to scope access control for administrative actions.
-   * A resource can be linked to a resource in another resource group when the two resources must interact with each other, but they do not share the same lifecycle (for example, multiple apps connecting to a database).
-
-Up to 15 tags per ARM resource to logically organize resources for cost accounting.
-Tag names are limited to 512 characters. Tag values are limited to 256 characters. 
-
-See https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags
-
-
-https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/#access-control
-
-### ARM Templates
-
-https://www.youtube.com/watch?v=h0UDIcRnPog
-
-QUESTION: Are ARM Templates version controled?
 
 
 ### RBAC (Role-based Access Control)
