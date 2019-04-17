@@ -367,6 +367,9 @@ There is a limit of 100 Management certs per Azure subscription (administrator).
    * Pre-prod (Staging)
    * Prod
 
+## Professional certifications
+
+<a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-AZ-103.aspx">Exam AZ-103: Microsoft Azure Administrator</a> supercedes exams AZ-100 and AZ-101 which have been retired.
 
 ## Installers #
 
@@ -756,7 +759,7 @@ by Yacine Khammal Intermediate Feb 14, 2012  2h 37m
 ## Social
 
 https://azure.microsoft.com/en-us/support/community/
-Azure Community Forum for support
+Azure Community Forums for support
 
 https://social.msdn.microsoft.com/Forums/en-US/home
 Developer Commmunity Forum for support

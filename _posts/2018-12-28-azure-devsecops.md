@@ -115,6 +115,7 @@ After much work, here I present the steps culled from among the dizzying volume 
    * MyHealthClinic defines a team project for an ASP.NET Core app that deploys to Azure App Service
    * MyShuttle defines a Java app and Azure App service deployment
    * PartsUnlimited defines an ASP.NET app with customized CI/CD pipelines
+   * QUESTION: How to get "Mercury Health Group" sample app?
    <br /><br />
 
    NOTE: Others (Tailwind Traders, ContosoAir) are not setup for Azure DevOps.
@@ -151,6 +152,12 @@ Each widget on the Dashboard can be <a target="_blank" href="https://docs.micros
 1. Click on "Organization Settings" at the lower-left corner for the Organization's menu.
 
    <img alt="azure-devops-dashboard-ll-184x208-4860.jpg" width="184" src="https://user-images.githubusercontent.com/300046/56077477-e41d0f80-5d99-11e9-929b-d4310fe1ef06.jpg">
+
+   In the <a target="_blank" href="https://itworks-tfs.visualstudio.com/_settings/organizationOverview">Overview page</a> is where the default Region is specified for all projects.
+
+   It is also where you can toggle to URL:
+
+   <pre>https://dev.azure.com/itworks-tfs/</pre>
 
 1. Configure the organization:
 
@@ -248,9 +255,9 @@ See <a target="_blank" href="https://github.com/azure/github-actions">https://gi
 
 <img align="right" src="../images/azure-devops-artifacts-96.svg">
 
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/artifacts/">https://azure.microsoft.com/en-us/services/devops/artifacts</a> is the product's website.
+Websites: <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/artifacts/">Product/a> |
 
-To host private Nuget (Windows), npm (Node), Maven (Java), Python packages with builds.
+To host private Nuget (Windows), npm (NodeJs), Maven (Java), Python packages with builds.
 
 Package management such as Artifactory.
 1. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/artifacts/?view=azure-devops">View documentation</a>
@@ -279,15 +286,19 @@ Package management such as Artifactory.
 
 <img align="right" width="96" src="../images/azure-devops-pipelines-96.svg">
 
-Website: <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/pipelines/">Product</a> | <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/pipelines/index?view=azure-devops">User Guide</a>
+Websites: <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/pipelines/">Product</a> | <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/pipelines/index?view=azure-devops">User Guide</a> |
 
 Azure DevOps Repos and Pipelines are <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/">free starting prices</a> for up to 5 people running 10 parallel jobs in 1 hosted job up to 1,800 minutes per month.
 I
 ![azure-devops-pipelines-screen-1018x396-114045](https://user-images.githubusercontent.com/300046/56268588-f5725e80-60ae-11e9-8f3c-498f0a3c8d2f.png)
 
+"WhiteSource Bolt" is a security analysis tool (like Black Duck license rating, SonarQube, Open Web Application Security Project)
+
 https://github.com/rfennell/AzurePipelines
 
 https://www.youtube.com/watch?v=yr6PJxfACNc
+
+ <a target="_blank" href="https://www.youtube.com/watch?v=jRgLSMlp28U&t=3m">VIDEO:</a> Being introduced are  <a target="_blank" href="https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core">azure-pipelines.yml files</a>
 
 
 <a name="AzureDevTestLabs"></a>
@@ -365,10 +376,18 @@ But Azure DevOps also makes use of other Azure services and client executables:
 ### Sample Apps in pro certs
 
 <a target="_blank" href="https://www.youtube.com/watch?v=wiCRVp6QgA0">VIDEO</a>: There are two repos used in course labs and also during the<br />
-<a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-AZ-400.aspx">Implementing Azure DevOps Solutions exam AZ-400</a> ($160) QUESTION: Is that the same as the<br />
-<a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a>?
+<a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-AZ-400.aspx">Implementing Azure DevOps Solutions exam AZ-400</a> ($160) which fuilfills the requirement to become a <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">Microsoft Certified: Azure DevOps Engineer Expert</a>. Expand All to see skills measured:
 
-<a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">Microsoft Certified: Azure DevOps Engineer Expert</a> and 
+1. Design a DevOps strategy
+1. Implement DevOps development processes
+1. Implement continuous integration
+1. Implement continuous delivery
+1. Implement dependency management
+1. Implement application infrastructure
+1. Implement continuous feedback
+<br /><br />
+
+QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a> "coming soon".
 
 
 <a name="PartsUnlimited"></a>
@@ -870,7 +889,10 @@ Damien Brady (<a target="_blank" href="https://twitter.com/AbelSquidHead">@AbelS
 Abel Wang (<a target="_blank" href="https://twitter.com/AbelSquidHead">@AbelSquidHead</a>, <a target="_blank" href="https://abelsquidhead.com">abelsquidhead.com</a>) on development
    * <a target="_blank" href="https://www.youtube.com/watch?v=mCRbvRwxDfQ">with Aplitools Apr 15, 2019</a>
 
-### Other Microsoft
+### Others in Microsoft
+
+YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=jRgLSMlp28U">Continuous Integration, Continuous Deployment (CI-CD) with Azure DevOps</a> Nov 1, 2018 by 
+Frank Boucher in Montreal
 
 Microsoft Developer Advocate and AI enthusiast Aaron (Ari) Bornstein (<a target="_blank" href="https://twitter.com/pythiccoder">@pythiccoder</a>, <a target="_blank" href="https://medium.com/@aribornstein">on Medium</a>)
 
@@ -907,6 +929,7 @@ https://www.mobilize.net/blog/vbuc-azure-devops
 
 YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=H-R2bCXfz8I">Intro to Azure DevOps - Source Control, CI/CD, Automation, and more</a>  Dec 17, 2018
 by IAmTimCorey
+
 
 ## Testing
 
