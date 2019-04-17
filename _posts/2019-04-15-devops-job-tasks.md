@@ -15,7 +15,9 @@ comments: true
 
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/devops-tasks/">This page</a> lists job tasks involved with DevOps (DevTestSecOps or DevXOps) as derived from the Job Task Analysis done for the <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-AZ-400.aspx">Implementing Azure DevOps Solutions exam AZ-400</a> which fuilfills requirements to be designated a <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">Microsoft Certified: Azure DevOps Engineer Expert</a>. Expand all (click on) these categories of achievements:
+Most job descriptons for DevOps roles focus on the technology stack.
+
+But <a target="_blank" href="https://wilsonmar.github.io/devops-tasks/">this page</a> lists the achievements and outcomes from working DevOps (DevTestSecOps or DevXOps), based on Job Task Analysis done for the <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-AZ-400.aspx">Implementing Azure DevOps Solutions exam AZ-400</a> which fuilfills requirements to be designated a <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">Microsoft Certified: Azure DevOps Engineer Expert</a>. Expand all (click on) these categories of achievements:
 
 1. <a href="#Strategy">Design a DevOps strategy (20-25%)</a>
 2. <a href="#DevProcess">Implement DevOps development processes (20-25%)</a>
