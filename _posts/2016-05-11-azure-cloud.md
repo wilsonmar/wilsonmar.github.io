@@ -15,7 +15,7 @@ comments: true
 <hr />
 {% include _toc.html %}
 
-This article contains higher and practical level details about Microsoft Azure, but with less confusing grandiose marketing generalizations.
+<a target="_blank" href="https://wilsonmar.github.io/azure-cloud/">This</a> article contains higher and practical level details about Microsoft Azure, but with less confusing grandiose marketing generalizations.
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/overview/cloud-computing-dictionary/">Cloud Computing Terms Dictionary</a>
    * "Data estate" refers to all the data an organization owns, regardless of where it is stored.

@@ -80,7 +80,7 @@ The sequence of product usage depends on the hosting technology:
    10. Update backlog item in Azure DevOps Boards.
    <br /><br />
 
-Other "Reference Architectures":   
+Other "Reference Architectures" with workflows:   
 
 * <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/cicd-for-containers/">CI/CD for Containers</a>
 * <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/azure-devops-continuous-integration-and-continuous-deployment-for-azure-web-apps/">CI/CD for Azure Web Apps</a>
@@ -424,9 +424,13 @@ QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.micro
 
 <a name="PartsUnlimited"></a>
 
-#### PartsUnlimited Sample Project
+#### PartsUnlimited Sample Apps
 
-Clone or download <a target="_blank" href="https://microsoft.github.io/PartsUnlimited/">https://microsoft.github.io/PartsUnlimited</a> (PU) - a sample .NET eCommerce website site, described as "Project Unicorn" in chapters 31-35 of <a target="_blank" href="http://www.amazon.com/The-Phoenix-Project-Helping-Business/dp/0988262592">The Phoenix Project</a> by Gene Kim, Kevin Behr and George Spafford, © 2013
+1. Clone or download <a target="_blank" href="https://microsoft.github.io/PartsUnlimited/">http://aka.ms/pulabs = https://microsoft.github.io/PartsUnlimited</a> (PU) is the implementation of the eCommerce website described as "Project Unicorn" in chapters 31-35 of <a target="_blank" href="http://www.amazon.com/The-Phoenix-Project-Helping-Business/dp/0988262592">The Phoenix Project</a> by Gene Kim, Kevin Behr and George Spafford, © 2013.
+
+   David Tesar	(<a target="_blank" href="https://twitter.com/dtzar">@dtzar</a>, host of <a target="_blank" href="https://channel9.msdn.com/Shows/DevOps-Dimension/">DevOps-Dimension on channel9.msdn</a>) wrote the two branches which visually display the same front-end website content with a SQL Azure back-end (all PaaS):<br /> 
+   The master branch contains code for ASP.NET Core.<br />
+   The aspnet45 branch contains code for ASP.NET 4.5.
 
    1. Install Visual Studio 2017 within a Windows machine. 
    1. In Tools, Get Tools and Features, select "ASP.NET and web development" and "Azure development".
@@ -447,18 +451,18 @@ Clone or download <a target="_blank" href="https://microsoft.github.io/PartsUnli
    * Includes Azure RM JSON templates and PowerShell automation scripts to easily build and provision your environment
    <br /><br />
 
-Clone or download <a target="_blank" href="https://github.com/microsoft.github.io/PartsUnlimitedMRP/">https://microsoft.github.io/PartsUnlimitedMRP (PUMRP)</a> described in <a target="_blank" href="http://microsoft.github.io/PartsUnlimitedMRP">PartsUnlimitedMRP</a> Java based app is housed in . The application and labs on this page use mostly open source software including Linux, Java, Apache, and MongoDB which creates a web front end, an order service, and an integration service.
+2. Clone or download <a target="_blank" href="https://github.com/microsoft.github.io/PartsUnlimitedMRP/">https://microsoft.github.io/PartsUnlimitedMRP (PUMRP)</a> described in <a target="_blank" href="http://microsoft.github.io/PartsUnlimitedMRP">http://aka.ms/pumrplabs = http://microsoft.github.io/PartsUnlimitedMRP</a>, an app using mostly open source software including Linux, Java, Apache, and MongoDB to create a web front end, an order service, and an integration service.
 
-   * Front end service - runs Apache Tomcat and talks to order service
-   * Order and Integration service - runs Java and calls MongoDB
-   * Integration service - present to integrate with Parts Unlimited Website
+   * Front end service runs Apache Tomcat and talks to order service
+   * Order and Integration service runs Java and calls MongoDB
+   * Integration service integrates with Parts Unlimited Website
    * Includes a Dockerfile and sample publishing profile to publish to a Docker container
-   * Includes Azure RM JSON templates and PowerShell automation scripts to easily build and provision your environment
+   * Includes ARM JSON templates and PowerShell automation scripts to easily build and provision your environment
    <br /><br />
 
 ### Faculty
 
-Eamonn Kelly and Samantha Lindsey Ahmed, Steve 
+Eamonn Kelly and Samantha Lindsey Ahmed, Steve Borg, Sachi Williamson
 
 ### Individual courses
 
@@ -820,55 +824,21 @@ PowerShell Cmdlets for Azure DevOps and Team Foundation Server
 
 https://github.com/Azure/DevOps-For-AI-Apps
 
-## Related
-
-https://marketplace.visualstudio.com/items?itemName=ParthoPDas.TestDrivenDevelopmentStudio&wt.mc_id=DXLEX_EDX_DEVOPS200.5X
-Test Driven Development in Visual Studio - An environment for practicing Kent Beck style TDD [F.I.R.S.T. Unit Tests, fast builds, No Mocks, Hexagonal architecture]  Open source alternative to nCrunch
-
-https://github.com/saltstack/salt
-Salt platform comes with different components such as Salt Masters, Salt Minions, Top Files, and Salt Cloud.
-Its axis:
-    Remote execution
-    Configuration automation
-    Cloud control
-    Event-driven orchestration
-See https://www.microsoft.com/developerblog/2017/05/09/provision-configure-infrastructure-azure-using-saltstack/
-
-https://devops.com/devops-help-hinder-compliance/
-https://www.youtube.com/watch?v=Bo_84yKsxuc
-
-
 ## Live Events
 
 On Friday, June 15, 2019, attend a <a target="_blank" href="https://GlobalDevOpsBootcamp.com">Global DevOps Bootcamp event</a> throughout the world.
 Twitter: #GDBC, @gdevopsbc 
 
-## Learning
-
-https://docs.microsoft.com/en-us/learn/
-
-https://docs.microsoft.com/en-us/azure/devops/learn/
-
-https://docs.microsoft.com/en-us/azure/devops/learn/events-and-talks/ 
-lists videos on their 
-https://www.youtube.com/channel/UC-ikyViYMM69joIAv7dlMsA
-YouTube channel 
-https://www.youtube.com/playlist?list=PLNMUSSKcxKjfu-84Vc_Fug93D3LfRc1SE
-Azure DevOps Launch Sep 10, 2018 (6,000+ subscribers)
-
-https://www.telerik.com/blogs/microsoft-azure-devops-what-you-need-to-know
-
 
 ## Microsoft Rock Stars
 
 Sam Guckenheimer, Product Owner, Visual Studio Cloud Services
-* <a target="_blank" href="http://azuredevopspodcast.clear-measure.com/sam-guckenheimer-on-testing-data-collection-and-the-state-of-devops-report-episode-003">At Jeffery Palermo's AzureDevopsPodcast.clear-measure.com State of Devops report</a>
-* <a target="_blank" href="https://www.youtube.com/watch?v=BwgjfevnXoY">Decision cycle: observe, orient, decide, and act</a>
-* <a target="_blank" href="https://www.youtube.com/watch?v=ypnOgxNecos">`Change A`gents for DevOps</a>
-* <a target="_blank" href="https://www.youtube.com/watch?v=8EN1kGFmiIo">Reflecting on the DevOps Journey</a> - http://aka.ms/OurDevOpsJourney.
-* <a target="_blank" href="https://www.youtube.com/watch?v=NlI0bkgdG7E">WinOps 2017 Sam Guckenheimer - Moving 70,000 Microsofties to DevOps on the Public Cloud</a> at the WinOps Conference [51:03] 
-* <a target="_blank" href="https://channel9.msdn.com/Blogs/DevOps-Interviews/Interview-with-Sam-Guckenheimer">
-Rugged DevOps and DevOps Anti-Patterns</a>
+* <a target="_blank" href="http://azuredevopspodcast.clear-measure.com/sam-guckenheimer-on-testing-data-collection-and-the-state-of-devops-report-episode-003">At Jeffery Palermo's <a target="_blank" href="https://AzureDevopsPodcast.clear-measure.com/">AzureDevopsPodcast.clear-measure.com</a> State of Devops report</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=BwgjfevnXoY">Decision cycle: observe, orient, decide, and act</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=ypnOgxNecos">`Change A`gents for DevOps</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=8EN1kGFmiIo">Reflecting on the DevOps Journey</a> - http://aka.ms/OurDevOpsJourney.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=NlI0bkgdG7E">WinOps 2017 Sam Guckenheimer - Moving 70,000 Microsofties to DevOps on the Public Cloud</a> at the WinOps Conference [51:03] 
+   * <a target="_blank" href="https://channel9.msdn.com/Blogs/DevOps-Interviews/Interview-with-Sam-Guckenheimer">Rugged DevOps and DevOps Anti-Patterns</a> on Channel9
 
 ### DevOps Cloud Developer Advocates
 
@@ -884,7 +854,11 @@ Steve Marascky (<a target="_blank" href="https://twitter.com/StevenMurawski">htt
 Damien Brady (<a target="_blank" href="https://twitter.com/AbelSquidHead">@AbelSquidHead</a>) on Octopus Deploy
 
 Abel Wang (<a target="_blank" href="https://twitter.com/AbelSquidHead">@AbelSquidHead</a>, <a target="_blank" href="https://abelsquidhead.com">abelsquidhead.com</a>) on development
+   * <a target="_blank" href="https://channel9.msdn.com//Shows/On-NET/Devops-For-ASPNET-Developers-Pt-3-Work-Item-Tracking/">Devops For ASP.NET Developers Pt. 3 - Work Item Tracking</a> Apr 16, 2019 Being able to visualize the work ahead is an integral part to the success of any software project. With Azure Boards, you can quickly and easily start tracking tasks, features, and bugs associated with runfaster2000.
    * <a target="_blank" href="https://www.youtube.com/watch?v=mCRbvRwxDfQ">with Aplitools Apr 15, 2019</a>
+   * <a target="_blank" href="https://youtu.be/Bt2x6pJWZKg">Using the new Basic Process in Azure DevOps</a> with Dan Hellem Apr 8, 2019 [8:17]
+
+
 
 ### Others in Microsoft
 
@@ -892,6 +866,23 @@ YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=jRgLSMlp28U">C
 Frank Boucher in Montreal
 
 Microsoft Developer Advocate and AI enthusiast Aaron (Ari) Bornstein (<a target="_blank" href="https://twitter.com/pythiccoder">@pythiccoder</a>, <a target="_blank" href="https://medium.com/@aribornstein">on Medium</a>)
+
+https://docs.microsoft.com/en-us/learn/
+
+https://docs.microsoft.com/en-us/azure/devops/learn/
+
+
+## Videos
+
+<a target="_blank" href="https://www.youtube.com/channel/UC-ikyViYMM69joIAv7dlMsA">Azure DevOps YouTube channel</a> lists ppt's with videos on the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/learn/events-and-talks/">DevOps Events and Talks webpage</a> :
+
+   * <a target="_blank" href="https://www.youtube.com/playlist?list=PLNMUSSKcxKjfu-84Vc_Fug93D3LfRc1SE">Azure DevOps Launch Sep 10, 2018</a> (6,000+ subscribers)
+
+   * <a target="_blank" href="https://www.telerik.com/blogs/microsoft-azure-devops-what-you-need-to-know">Microsoft Azure DevOps - What You Need to Know</a>
+
+<a target="_blank" href="http://aka.ms/DevOpsLearn">DevOps courses in Microsoft Virtual Academy (until April 30, 2019) http://aka.ms/DevOpsLearn</a>
+
+   1. <a target="_blank" href="26350-400562-cnwewvxi.o5t_H264_3400kbps_AAC_und_ch2_96kbps.mp4">Meet the Engineers: Building Line-of-Business Apps at Microsoft with CI/CD</a> 29 June 2018 [57:17]
 
 ## Azure's Social Media
 
@@ -928,6 +919,24 @@ https://www.mobilize.net/blog/vbuc-azure-devops
 
 YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=H-R2bCXfz8I">Intro to Azure DevOps - Source Control, CI/CD, Automation, and more</a>  Dec 17, 2018
 by IAmTimCorey
+
+
+## Related
+
+<a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ParthoPDas.TestDrivenDevelopmentStudio&wt.mc_id=DXLEX_EDX_DEVOPS200.5X">Test Driven Development in Visual Studio</a> - An environment for practicing Kent Beck style TDD [F.I.R.S.T. Unit Tests, fast builds, No Mocks, Hexagonal architecture]  Open source alternative to nCrunch
+
+The Salt platform at <a target="_blank" href="https://github.com/saltstack/salt">https://github.com/saltstack/salt</a>
+comes with different components such as Salt Masters, Salt Minions, Top Files, and Salt Cloud.
+Its axis:
+    Remote execution
+    Configuration automation
+    Cloud control
+    Event-driven orchestration
+See https://www.microsoft.com/developerblog/2017/05/09/provision-configure-infrastructure-azure-using-saltstack/
+
+https://devops.com/devops-help-hinder-compliance/
+
+https://www.youtube.com/watch?v=Bo_84yKsxuc
 
 
 ## Testing

@@ -14,7 +14,7 @@ comments: true
 
 {% include _toc.html %}
 
-This is a step-by-step hands-on approach to getting you up and running on Azure cloud.
+<a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">This</a> is a step-by-step hands-on approach to getting you up and running on Azure cloud.
 
 ## Microsoft Learn account
 
