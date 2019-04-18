@@ -210,6 +210,10 @@ Other "Reference Architectures" with workflows:
 * <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/java-cicd-using-jenkins-and-azure-web-apps/">Java CI/CD using Jenkins and Azure Web Apps</a>
 * <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/immutable-infrastructure-cicd-using-jenkins-and-terraform-on-azure-virtual-architecture-overview/">Immutable Infrastructure CI/CD using Jenkins and Terraform</a>
 
+## Bash Scripts
+
+Bash scripts such as <strong>azure-node-setup.sh</strong> are run from within <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/tree/master/azure-node/">https://github.com/wilsonmar/DevSecOps/tree/master/azure-node/</a>
+
 
 <hr />
 
@@ -410,13 +414,6 @@ The course catalog says they cover 6 skills/technologies:
 
    * <a target="_blank" href="https://azure.microsoft.com/en-us/services/kubernetes-service/"><strong>Azure Container Service (AKS)</strong></a> - uses Docker to make dynamic scaling easy on Kubernetes, Docker Swarm, or Mesos DC/OS.
    AKS handles auto upgrades, patching, and self-healing of Kubernetes clusters.
-
-   1. Cluster access control.
-   1. Create a managed Kubernetes cluster using the CLI:
-
-   <pre>az aks create --resource-group <em>myResourceGroup</em> --name <em>myCluster</em> --node-count <em>number_of_nodes</em> --generate-ssh-keys </pre>
-
-   1. Image scanning
 
    https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes
    Introduction to Azure Container Service (AKS)
