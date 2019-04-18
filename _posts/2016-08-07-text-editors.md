@@ -59,7 +59,7 @@ Free IDEs:
 Licensed IDEs:
 
    * IntelliJ and WebStorm and PhpStorm from JetBrains
-   * Visual Studio from Microsoft
+   * <a href="#VisualStudioForMac">Visual Studio for Mac from Microsoft</a>
 
 <hr />
 
@@ -722,7 +722,9 @@ Extensions for developing on the Salesforce Platform
 * https://gitlab.com/terja/sfdx-git
 
 
-### Visual Studio on Mac #
+<a name="VisualStudioForMac"></a>
+
+### Visual Studio for Mac #
 
 1. Install Apple's <strong>XCode</strong> on your Mac's App Store.
 
@@ -745,9 +747,10 @@ Extensions for developing on the Salesforce Platform
 
    I predict in the future this will become a paid Visual Studio Enterprise for Mac.
 
-0. Watch <a target="_blank" href="https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-12-Getting-Started-with-Visual-Studio-for-Mac">VIDEO: Snack Pack 12: Getting Started with Visual Studio for Mac</a> May 31, 2017 by James Montemagno (<a target="_blank" href="http://twitter.com/jamesmontemagno">@jamesmontemagno<a>).
+0. Watch <a target="_blank" href="https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-12-Getting-Started-with-Visual-Studio-for-Mac">VIDEO: Snack Pack 12: Getting Started with Visual Studio 2017 for Mac</a> May 31, 2017 by James Montemagno (<a target="_blank" href="http://twitter.com/jamesmontemagno">@jamesmontemagno<a>).
 
-   If you type "https://visualstudio.com" now you are redirected to "https://visualstudio.microsoft.com/".
+   WARNING: If you type "https://visualstudio.com" (the previous URL) you are redirected to:
+   <a target="_blank" href="https://visualstudio.microsoft.com/">https://visualstudio.microsoft.com</a>
 
 0. Click "Download for Mac" and select "Community 2019 for Mac".
 
@@ -769,7 +772,9 @@ Extensions for developing on the Salesforce Platform
 
    Wait for the logo to appear.
 
-   This logo (without the green) is the logo for the Visual Studio for Mac app on macOS.
+   This logo (without the green) is the logo for the Visual Studio 3019 for Mac app on macOS.
+
+   There is a different logo for the previous 2017 version.
 
 0. Click the logo that appears.
 0. Click Open for the "Visual Studio for Mac Installer" to appear.
@@ -789,7 +794,7 @@ Extensions for developing on the Salesforce Platform
 
    Sign up for <a target="_blank" href="https://www.datacamp.com/">https://www.datacamp.com/</a> to learn Data Science
 
-   Download a sample application code, such as:
+   Download <a target="_blank" href="https://github.com/aspnet/AspNetCore.Docs/tree/master/aspnetcore/tutorials/razor-pages/razor-pages-start/2.2-stage-samples">sample application code</a> for sample <a target="_blank" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-2.2&tabs=visual-studio">.NET Core 2.2 Razor pages</a>
 
 0. Switch to Finder, system "/Applications" folder and notice there is, at time of writing:
 
@@ -798,11 +803,55 @@ Extensions for developing on the Salesforce Platform
 
 0. On the Touchpad, spread 4 finger together at the same time to see that Powershell has been installed as well.
 
-0. Use your mouch to click the "Visual Studio" icon to open the program.
+0. Use your mouce to click the "Visual Studio" icon to open the program.
 
    ![vs-mac-2019-new-669x269-10031](https://user-images.githubusercontent.com/300046/56381902-5f842400-61d3-11e9-8a22-0e594d4dd570.jpg)
 
+   ### Patch
+
+0. Dismiss the pop-up by clicking the red dot at its upper left corner.
+0. Press command+, or click "Visual Studio" and select Preferences:
+0. If updates are downloaded, wait for all updates to download. While you're waiting: 
+
+   PROTIP: Uncheck "Check automatically" so that 
+
+   PROTIP: Add a recurring entry in your personal or team calendar to do the following every Wednesday at 4pm or some specified appointed time.
+
+   Copy the version, such as "8.0.4.0" being downloaded.
+
+   PROTIP: See if there are comments about the update. Switch to: 
+   <a target="_blank" href="https://developercommunity.visualstudio.com/">https://developercommunity.visualstudio.com</a>
+
+0. Click "Visual Studio for Mac" tab.
+0. In the search box type "Visual Studio 2019 for Mac update 8.0.4.0" or whatever version.
+0. PROTIP: Ignore entries that are for the Windows version, older 2017 for Mac versions, Xamarin, etc.
+0. If no issues are identified, click "Restart" for the install.
+0. PROTIP: Go back to "Check Updates" because some (such as Java) require another update to finish.
+
+   ### Sign in Microsoft
+
+0. Press command+, or click "Visual Studio", then select <strong>Account...</stron>, then go through the prompts.
+
+   PROTIP: Setup Microsoft Authenticator on your phone to use multi-factor authentication. It's cooler and safer.
+
+0. Click the red dot to exit sign-in (yeah I know they should have an "OK" button to dismiss).
+
+   ### Preferences
+
+0. Press command+, or click "Visual Studio", then select <strong>Preferences...</stron>.
+0. Author information.
+0. Key bindings.
+0. External Tools.
+
+
+
+
+
 0. Click "New".
+
+   PROTIP: "Multiplatform", "iOS", "Android", "tvOS", and others for mobile or otherwise appear on the menu after load.
+
+
 
    ### Powershell
 
@@ -825,6 +874,8 @@ Extensions for developing on the Salesforce Platform
    <pre>ls -al /usr/local/bin/powershell</pre>
    for response:
    <pre>lrwxr-xr-x  1 wilsonmar  wheel  55 Sep 25  2017 /usr/local/bin/powershell -> /usr/local/microsoft/powershell/6.0.0-beta.7/powershell</pre>
+
+<a name="Cloud9"></a>
 
 ## AWS Cloud9
 
