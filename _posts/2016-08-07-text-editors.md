@@ -807,11 +807,10 @@ Extensions for developing on the Salesforce Platform
    ![vs-mac-icons-413x105-5443](https://user-images.githubusercontent.com/300046/56381960-7a569880-61d3-11e9-96ff-c44baa1c35e1.jpg)
    <br />
 
-0. Use your mouce to click the "Visual Studio" icon to open the program.
+0. Use your mouse to click the "Visual Studio" icon to open the program.
 
    ![vs-mac-2019-new-669x269-10031](https://user-images.githubusercontent.com/300046/56381902-5f842400-61d3-11e9-8a22-0e594d4dd570.jpg)
 
-0. Click "File" then "New Solution" (which is new Project).
 0. Dismiss the pop-up by clicking the red dot at its upper left corner.
 
 
@@ -854,6 +853,8 @@ Extensions for developing on the Salesforce Platform
 0. External Tools.
 
    ### Project = Solution (.sln) file
+
+0. Click "File" then "New Solution" (which is new Project).
 
    <img align="right" alt="vs-mac-2019-types-129x386-4607.jpg" width="129" src="https://user-images.githubusercontent.com/300046/56392692-5608b500-61ef-11e9-8589-988622057ee2.jpg" />
 0. Click "File" then "New Solution" (which is new Project).
