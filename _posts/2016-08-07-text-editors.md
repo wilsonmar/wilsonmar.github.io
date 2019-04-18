@@ -789,15 +789,20 @@ Extensions for developing on the Salesforce Platform
 
    Sign up for <a target="_blank" href="https://www.datacamp.com/">https://www.datacamp.com/</a> to learn Data Science
 
+   Download a sample application code, such as:
+
 0. Switch to Finder, system "/Applications" folder and notice there is, at time of writing:
 
    * "Visual Studio.app" of 1.55 GB and "Xamarine Profiler.app" of 93.6 MB.
+   ![vs-mac-icons-413x105-5443](https://user-images.githubusercontent.com/300046/56381960-7a569880-61d3-11e9-96ff-c44baa1c35e1.jpg)
 
 0. On the Touchpad, spread 4 finger together at the same time to see that Powershell has been installed as well.
 
 0. Use your mouch to click the "Visual Studio" icon to open the program.
 
-0. 
+   ![vs-mac-2019-new-669x269-10031](https://user-images.githubusercontent.com/300046/56381902-5f842400-61d3-11e9-8a22-0e594d4dd570.jpg)
+
+0. Click "New".
 
    ### Powershell
 
