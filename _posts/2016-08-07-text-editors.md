@@ -807,10 +807,16 @@ Extensions for developing on the Salesforce Platform
 
    ![vs-mac-2019-new-669x269-10031](https://user-images.githubusercontent.com/300046/56381902-5f842400-61d3-11e9-8a22-0e594d4dd570.jpg)
 
+0. Click "File" then "New Solution" (which is new Project).
+
+
    ### Patch
 
 0. Dismiss the pop-up by clicking the red dot at its upper left corner.
 0. Press command+, or click "Visual Studio" and select Preferences:
+
+   ![vs-mac-top-menu-269x299-10152](https://user-images.githubusercontent.com/300046/56392151-e2b27380-61ed-11e9-9949-1337c9c5912c.jpg)
+
 0. If updates are downloaded, wait for all updates to download. While you're waiting: 
 
    PROTIP: Uncheck "Check automatically" so that 
@@ -820,7 +826,7 @@ Extensions for developing on the Salesforce Platform
    Copy the version, such as "8.0.4.0" being downloaded.
 
    PROTIP: See if there are comments about the update. Switch to: 
-   <a target="_blank" href="https://developercommunity.visualstudio.com/">https://developercommunity.visualstudio.com</a>
+   <a target="_blank" href="https://developercommunity.visualstudio.com/"><strong>https://developercommunity.visualstudio.com</strong></a>
 
 0. Click "Visual Studio for Mac" tab.
 0. In the search box type "Visual Studio 2019 for Mac update 8.0.4.0" or whatever version.
@@ -843,17 +849,25 @@ Extensions for developing on the Salesforce Platform
 0. Key bindings.
 0. External Tools.
 
+   ### Project = Solution (.sln) file
 
-
-
-
-0. Click "New".
+   <img align="right" alt="vs-mac-2019-types-129x386-4607.jpg" width="129" src="https://user-images.githubusercontent.com/300046/56392692-5608b500-61ef-11e9-8589-988622057ee2.jpg" />
+0. Click "File" then "New Solution" (which is new Project).
 
    PROTIP: "Multiplatform", "iOS", "Android", "tvOS", and others for mobile or otherwise appear on the menu after load.
 
+0. To work through the ".NET Core" sample, click "App", then "Web Application". Next. ".NET Core 2.2". Next. 
+0. Name your project/solution in Location (projects folder).
+0. Click "Use git for version control". This add a .gitignore file and .git folder.
+0. Create. ISSUE: Nothing happens and no error messages.
 
 
-   ### Powershell
+   ### Version Control
+
+   ![vs-mac-2019-vc-222x329-7488](https://user-images.githubusercontent.com/300046/56392533-ec88a680-61ee-11e9-8b6c-0eddb9b22737.jpg)
+
+
+### Powershell
 
 0. Spread 4 finger together at the same time on the Touchpad to see that Powershell has been installed as well.
 
