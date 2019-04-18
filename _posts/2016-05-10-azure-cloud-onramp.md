@@ -516,6 +516,39 @@ Azure has "Web Jobs" for Azure Functions background jobs.
    by Matt Milner
    makes use of VS 2010, which is rather obsolete now.
 
+1. Install in VSCode <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools">Azure Resource Manager Tools</a> for Template language support for Azure Resource Manager JSON files.
+
+## Live events to meet people
+
+https://global.azurebootcamp.net/
+April 27, 2019
+
+<a target="_blank" href="https://azure.microsoft.com/en-us/resources/videos/azure-friday-get-ready-for-global-azure-bootcamp-2019/">
+Get ready for Global Azure Bootcamp 2019</a> 
+
+<a name="Social"></a>
+
+## Social
+
+https://azure.microsoft.com/en-us/support/community/
+Azure Community Forums for support
+
+https://social.msdn.microsoft.com/Forums/en-US/home
+Developer Commmunity Forum for support
+
+## Apple Podcasts:
+ 
+   * <a target="_blank" href="https://podcasts.apple.com/us/podcast/azure-friday-hd-channel-9/id739501868">Azure Friday</a> with <a target="_blank" href="https://azure.microsoft.com/en-us/resources/videos/azure-friday/">videos</a> by Scott Hanselman
+
+   * <a target="_blank" href="https://podcasts.apple.com/us/podcast/microsoft-azure-cloud-cover-show-hd-channel-9/id417256457">Microsoft Azure Cloud Cover Show</a>
+
+   * <a target="_blank" href="https://podcasts.apple.com/us/podcast/the-azure-podcast/id728193635">The Azure Podcast</a> by Sujit D'Mello
+
+   * <a target="_blank" href="https://podcasts.apple.com/us/podcast/channel-9/id73802611">Channel 9</a> for all things Microsoft.
+
+   * <a target="_blank" href="https://podcasts.apple.com/us/podcast/azure-tuesdays-with-corey/id1023243001">Azure Tuesdays with Corey</a> by Rick Claus
+
+   * <a target="_blank" href="https://podcasts.apple.com/us/podcast/azure-ninjas/id1305172229">Azure Ninjas</a> (Microsoft Global Black Belts)
 
 ## More on DevOps #
 

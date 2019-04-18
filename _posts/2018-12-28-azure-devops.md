@@ -28,33 +28,49 @@ Forrester has Microsoft as a leader (behind Electric Cloud, IBM, Xebia, and CA) 
 
 <a name="QuickStart"></a>
 
-## Azure DevOps Demo Generator
+## &nbsp; &nbsp; &nbsp; Account Signups
 
-First, we need a sample application to work with.
+1. Get signed up with Azure and Microsoft Learn accounts. See:
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/?view=azure-devops">DOCS:Start using Azure DevOps</a>
+   <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">https://wilsonmar.github.io/azure-cloud-onramp</a> 
 
-1. To simplify working with demos, and other education material provided by the Microsoft Azure Marketing team, visit the <a target="_blank" href="https://www.azuredevopslabs.com/">Azure Devops hands-on-labs</a> at:
+   <a target="_blank" href="https://aka.ms/aft-iot">https://aka.ms/aft-iot</a>
+
+   ### Organization
+
+2. Get your own <strong>organization</strong>:
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/?view=azure-devops">DOCS:Start using Azure DevOps</a>
+
+   ### Azure DevOps Demo Generator
+
+3. Open the sample application web page from the Microsoft Azure Marketing team (based on <a target="_blank" href="https://www.azuredevopslabs.com/">Azure Devops hands-on-labs at<br />https://www.azuredevopslabs.com</a>)
 
    <a target="_blank" href="https://azuredevopsdemogenerator.azurewebsites.net/">Azure DevOps Demo Generator at<br/>https://azuredevopsdemogenerator.azurewebsites.net</a> 
    
    The website creates within your Azure DevOps organization demo projects with pre-populated sample content (source code, work items, iterations, service endpoints, build and release definitions based on a chosen template.
 
+   (Code is at <a target="_blank" href="https://github.com/CanarysAutomations/AppCenterDemoGenerator">https://github.com/CanarysAutomations/AppCenterDemoGenerator</a>)
+
 1. Click "Choose template":
 
-   * PartsUnlimited defines an ASP.NET app with customized CI/CD pipelines. <a href="#PartsUnlimited">More details below</a>.
+   * <a href="#PartsUnlimited">PartsUnlimited (below)</a> defines an ASP.NET app with customized CI/CD pipelines to create a SQL database back-end.
    
-   * SmartHotel360 contains a complete ASP.NET 2 web mobile and desktop business apps for a hotel, and can be deployed using Docker containers.
+   * SmartHotel360 <a target="_blank" href="https://github.com/Microsoft/SmartHotel360-IoT">(open sourced)</a> is an ASP.NET 2 desktop and Xamarin web-mobile app for a hotel, all deployed using Docker containers within AKS.
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/56323530-68b8b680-6129-11e9-9baf-81a79a04557e.jpg"><img alt="azure-devops-smarthotel-home-1896x853.jpg" width="1896" src="https://user-images.githubusercontent.com/300046/56323530-68b8b680-6129-11e9-9baf-81a79a04557e.jpg"></a>
 
-   * MyHealthClinic defines a team project for an ASP.NET Core app that deploys to Azure App Service
+   <a target="_blank" title="shown at Connect() 2017" href="https://www.youtube.com/watch?v=urcmaFVQnF4">VIDEO: IoT demo</a> shows the app powered by Azure <a target="_blank" href="https://aka.ms/azure-digital-twins">Digital Twins</a> to control lights and temperature of the hotel rooms, Dynamics 365, mobile Hololens for wayfinding. <a target="_blank" title="December 13th, 2017"  href="https://devblogs.microsoft.com/visualstudio/connect-2017-smarthotel360-demo-apps-and-architecture/">Demo Apps and Architecture</a>. See the <a target="_blank" href="https://aka.ms/smarthotel360-FacilityManagement">Facilities Management website running live here</a> (admin/admin).
 
-   * MyShuttle defines a Java app and Azure App service deployment
+   Azure superfan Gregor Suttie <a target="_blank" href="https://gregorsuttie.com/2018/10/31/how-to-get-started-with-azure-devops/">How to get started with Azure DevOps</a> describes the steps using SmartHotel360.
+
+   * MyHealthClinic defines an ASP.NET Core app that deploys to Azure App Service.
+
+   * MyShuttle defines a <strong>Java</strong> app and Azure App service deployment.
    
    * QUESTION: How to get "Mercury Health Group" sample app?
    <br /><br />
 
-   NOTE: Others (Tailwind Traders, ContosoAir) are not setup for Azure DevOps.
+   QUESTION: Others (Tailwind Traders, ContosoAir) setup for Azure DevOps?
 
 1. Type a project name.
 1. Click "Create project" and wait until you can...
@@ -324,11 +340,14 @@ I
 
 "WhiteSource Bolt" is a security analysis tool (like Black Duck license rating, SonarQube, Open Web Application Security Project)
 
-https://github.com/rfennell/AzurePipelines
+<a target="_blank" href="https://github.com/rfennell/AzurePipelines">https://github.com/rfennell/AzurePipelines</a>
 
-https://www.youtube.com/watch?v=yr6PJxfACNc
+<a target="_blank" href="https://www.youtube.com/watch?v=yr6PJxfACNc">Azure Pipelines</a> with Mickey Gousset giving an overview showing PartsUnlimited.
+"Piplines work with many languages".
 
- <a target="_blank" href="https://www.youtube.com/watch?v=jRgLSMlp28U&t=3m">VIDEO:</a> Being introduced are  <a target="_blank" href="https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core">azure-pipelines.yml files</a>
+<a target="_blank" href="https://www.youtube.com/watch?v=jRgLSMlp28U&t=3m">VIDEO:</a> Being introduced are  <a target="_blank" href="https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core">azure-pipelines.yml files</a>
+
+<a target="_blank" href="https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/Azure-Pipelines">Mickey Gousset</a>
 
 
 <a name="AzureDevTestLabs"></a>
@@ -806,8 +825,7 @@ https://github.com/Azure/DevOps-For-AI-Apps
 
 ## Live Events
 
-On Friday, June 15, 2019, attend a <a target="_blank" href="https://GlobalDevOpsBootcamp.com">Global DevOps Bootcamp event</a> throughout the world.
-Twitter: #GDBC, @gdevopsbc 
+On Friday, June 15, 2019, attend a <a target="_blank" href="https://GlobalDevOpsBootcamp.com">Global DevOps Bootcamp event</a> throughout the world. Twitter: #GDBC, @gdevopsbc 
 
 
 ## Microsoft Rock Stars
@@ -905,9 +923,9 @@ Sign into <a target="_blank" href="https://aka.ms/AzureDevOpsForum/">aka.ms/Azur
 
 <a target="_blank" href="https://aka.ms/DevOpsBlog/">aka.ms/DevOpsBlog</a>
 
-Azure Friday
+Apple podcasts:
 
-Visual Studio Toolbox
+   * <a target="_blank" href="https://podcasts.apple.com/us/podcast/visual-studio-toolbox-hd-channel-9/id524227383">Visual Studio Toolbox</a>
 
 DevOps Interviews
 
