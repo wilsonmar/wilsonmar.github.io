@@ -816,14 +816,14 @@ Extensions for developing on the Salesforce Platform
 
    ### Patch
 
-0. Press command+, or click "Visual Studio" and select Preferences:
+0. Press command+, or click "Visual Studio" and select "Check for Updates...":
 
    ![vs-mac-top-menu-269x299-10152](https://user-images.githubusercontent.com/300046/56392151-e2b27380-61ed-11e9-9949-1337c9c5912c.jpg)
 
-0. If updates are downloaded, wait for all updates to download. While you're waiting: 
+0. If updates are being downloaded, wait for all updates to download. While you're waiting: 
 
-   PROTIP: Uncheck "Check automatically" so that 
-
+   PROTIP: Uncheck "Check automatically" so that you can check whether future installers are good.
+   
    PROTIP: Add a recurring entry in your personal or team calendar to do the following every Wednesday at 4pm or some specified appointed time.
 
    Copy the version, such as "8.0.4.0" being downloaded.
