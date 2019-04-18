@@ -724,7 +724,9 @@ Extensions for developing on the Salesforce Platform
 
 <a name="VisualStudioForMac"></a>
 
-### Visual Studio for Mac #
+## Visual Studio for Mac #
+
+### Install
 
 1. Install Apple's <strong>XCode</strong> on your Mac's App Store.
 
@@ -766,7 +768,7 @@ Extensions for developing on the Salesforce Platform
 
 0. Rename the installer with a suffix such as "..._2019.dmg". 
 
-   <img align="right" alt="vs-mac-install-logo-263x303-8462" width="263" src="https://user-images.githubusercontent.com/300046/56370993-7e75bc80-61b9-11e9-8bf7-87e514e3e6db.jpg">
+   <img align="right" alt="vs-mac-install-logo-263x303-8462" width="132" src="https://user-images.githubusercontent.com/300046/56370993-7e75bc80-61b9-11e9-8bf7-87e514e3e6db.jpg">
 
 0. In Finder, double-click on the .dmg file to open with the "DiskImageMounter".
 
@@ -799,20 +801,22 @@ Extensions for developing on the Salesforce Platform
 0. Switch to Finder, system "/Applications" folder and notice there is, at time of writing:
 
    * "Visual Studio.app" of 1.55 GB and "Xamarine Profiler.app" of 93.6 MB.
-   ![vs-mac-icons-413x105-5443](https://user-images.githubusercontent.com/300046/56381960-7a569880-61d3-11e9-96ff-c44baa1c35e1.jpg)
 
 0. On the Touchpad, spread 4 finger together at the same time to see that Powershell has been installed as well.
+
+   ![vs-mac-icons-413x105-5443](https://user-images.githubusercontent.com/300046/56381960-7a569880-61d3-11e9-96ff-c44baa1c35e1.jpg)
+   <br />
 
 0. Use your mouce to click the "Visual Studio" icon to open the program.
 
    ![vs-mac-2019-new-669x269-10031](https://user-images.githubusercontent.com/300046/56381902-5f842400-61d3-11e9-8a22-0e594d4dd570.jpg)
 
 0. Click "File" then "New Solution" (which is new Project).
+0. Dismiss the pop-up by clicking the red dot at its upper left corner.
 
 
    ### Patch
 
-0. Dismiss the pop-up by clicking the red dot at its upper left corner.
 0. Press command+, or click "Visual Studio" and select Preferences:
 
    ![vs-mac-top-menu-269x299-10152](https://user-images.githubusercontent.com/300046/56392151-e2b27380-61ed-11e9-9949-1337c9c5912c.jpg)
@@ -836,7 +840,7 @@ Extensions for developing on the Salesforce Platform
 
    ### Sign in Microsoft
 
-0. Press command+, or click "Visual Studio", then select <strong>Account...</stron>, then go through the prompts.
+0. Press command+, or click "Visual Studio", then select <strong>Account...</strong>, then go through the prompts.
 
    PROTIP: Setup Microsoft Authenticator on your phone to use multi-factor authentication. It's cooler and safer.
 
@@ -844,7 +848,7 @@ Extensions for developing on the Salesforce Platform
 
    ### Preferences
 
-0. Press command+, or click "Visual Studio", then select <strong>Preferences...</stron>.
+0. Press command+, or click "Visual Studio", then select <strong>Preferences...</strong>.
 0. Author information.
 0. Key bindings.
 0. External Tools.
