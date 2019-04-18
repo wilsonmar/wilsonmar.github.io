@@ -550,6 +550,11 @@ Developer Commmunity Forum for support
 
    * <a target="_blank" href="https://podcasts.apple.com/us/podcast/azure-ninjas/id1305172229">Azure Ninjas</a> (Microsoft Global Black Belts)
 
+## Channel 9 Microsoft
+
+   * <a target="_blank" href="https://channel9.msdn.com/Shows/Visual-Studio-Toolbox">Visual Studio Toolbox videos</a>
+
+
 ## More on DevOps #
 
 This is one of a series on DevOps:

@@ -222,6 +222,11 @@ You don't have to use them. Or you can use a small subset of them. But in case o
 
 The whole list of emojis are listed (without meanings) in <a target="_blank" href="https://gist.github.com/rxaviers/7360908">this cheatsheet</a>.
 
+## Emojis
+
+<a target="_blank" href="https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/Visual-Studio-for-Mac-Build-Your-First-App">This video</a> shows how to using Visual Studio for Mac to create a ASP.NET Core Lazer pages web site that displays emojis retrieved using the <a target="_blank" href="https://developer.github.com/v3/">GitHub API</a>.
+
+
 
 ## Automated compliance
 

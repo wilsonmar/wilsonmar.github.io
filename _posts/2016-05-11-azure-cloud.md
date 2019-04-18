@@ -23,6 +23,8 @@ comments: true
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/best-practices/naming-conventions">
 Naming conventions for Azure resources</a>
 
+Microsoft's Azure cloud was first announced in 2008 and released in 2010.
+
 ## Why?
 
 * Money Cost (OpEx vs. CapEx)
@@ -754,17 +756,6 @@ by Yacine Khammal Intermediate Feb 14, 2012  2h 37m
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=3WWpx4W-oK8">
    YOUTUBE: Microsoft's DevOps Vision</a>
-
-<a name="Social"></a>
-
-## Social
-
-https://azure.microsoft.com/en-us/support/community/
-Azure Community Forums for support
-
-https://social.msdn.microsoft.com/Forums/en-US/home
-Developer Commmunity Forum for support
-
 
 
 ## More on DevOps #
