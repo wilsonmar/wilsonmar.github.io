@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Text Editors (vim, subl, code, atom, Eclipse, IntelliJ, etc.)"
+title: "Text Editors (vim, subl, code, atom, Eclipse, IntelliJ, Visual Studio, etc.)"
 excerpt: "One second saved per minute = 1.666% better living"
 tags: [apple, mac, setup]
 image:
@@ -659,13 +659,14 @@ On Mac:
 
 ### Tutorials on VSCode
 
-   * http://michaelcrump.net/using-github-with-visualstudio-code/
+Perhaps the most intensive tutorial is <a target="_blank" href="https://realpython.com/courses/python-development-visual-studio-code-setup-guide/">the Setup Guid from RealPython</a>
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=UcW1FHNvy8M">
-   VIDEO: Supercharge Your JavaScript Debugging Workflow With VS Code</a>
+<a target="_blank" href="https://www.youtube.com/watch?v=UcW1FHNvy8M">VIDEO: Supercharge Your JavaScript Debugging Workflow With VS Code</a>
+
+<a target="_blank" href="http://michaelcrump.net/using-github-with-visualstudio-code/">From Michael Crump</a>
 
 <a target="_blank" href="https://scotch.io/courses/make-visual-studio-code-your-editor/">
-Make Visual Studio Code Your Editor video course at Scotch.io</a> by Chris Sevilleja (@chrisoncode) 
+Make Visual Studio Code Your Editor video course at Scotch.io</a> by  Chris Sevilleja (@chrisoncode), with code from 2017 by @sevilayha at <a target="_blank" href="https://github.com/scotch-io/vscode-course">https://github.com/scotch-io/vscode-course</a>
 
    Getting Started:
 
@@ -720,8 +721,105 @@ Extensions for developing on the Salesforce Platform
 
 * https://gitlab.com/terja/sfdx-git
 
-* https://realpython.com/courses/python-development-visual-studio-code-setup-guide/
 
+### Visual Studio on Mac #
+
+1. Install Apple's <strong>XCode</strong> on your Mac's App Store.
+
+   NOTE: Each version is related to a specific version of the Apple OS Mac operating system.
+
+   Know the version by clicking on the program name next to the Apple icon, 
+   then select "About":
+
+   ![xcode about 271x48](https://cloud.githubusercontent.com/assets/300046/21987451/dc44154a-dbc0-11e6-90b6-4dce91b8c5d2.png)
+
+   * Version 10.2 (10E125)
+   * Version 8.1 (8B62)
+   * Version 7 supports iOS 9
+   <br /><br />
+
+   PROTIP: Although Xamarin Studio is currently offered,
+   its functonality is being folded into 
+   <a target="_blank" href="https://www.visualstudio.com/vs/visual-studio-mac/">
+   Visual Studio 2017 for Mac</a>, free in Preview until May 31, 2017.
+
+   I predict in the future this will become a paid Visual Studio Enterprise for Mac.
+
+0. Watch <a target="_blank" href="https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-12-Getting-Started-with-Visual-Studio-for-Mac">VIDEO: Snack Pack 12: Getting Started with Visual Studio for Mac</a> May 31, 2017 by James Montemagno (<a target="_blank" href="http://twitter.com/jamesmontemagno">@jamesmontemagno<a>).
+
+   If you type "https://visualstudio.com" now you are redirected to "https://visualstudio.microsoft.com/".
+
+0. Click "Download for Mac" and select "Community 2019 for Mac".
+
+   NOTE: The 2019 version is also called "v16".
+
+   NOTE: The "Professional" and "Enterprise" versions cost money but provides more features.
+
+0. Click "Save" on the pop-up to download <strong>visualstudioformacinstaller.dmg</strong>:
+
+   * 31.6 MB for 2019
+   * 22.8 MB for preview
+   <br /><br />
+
+0. Rename the installer with a suffix such as "..._2019.dmg". 
+
+   <img align="right" alt="vs-mac-install-logo-263x303-8462" width="263" src="https://user-images.githubusercontent.com/300046/56370993-7e75bc80-61b9-11e9-8bf7-87e514e3e6db.jpg">
+
+0. In Finder, double-click on the .dmg file to open with the "DiskImageMounter".
+
+   Wait for the logo to appear.
+
+   This logo (without the green) is the logo for the Visual Studio for Mac app on macOS.
+
+0. Click the logo that appears.
+0. Click Open for the "Visual Studio for Mac Installer" to appear.
+0. Click "Continue" in the "Thank you for downloading".
+   * 8.0.3
+
+   ![vs-mac-install-internet-484x162](https://user-images.githubusercontent.com/300046/56370860-3d7da800-61b9-11e9-9b13-de8dcaa58077.jpg)
+
+0. Uncheck or check what type of apps you want to develop.
+
+   ![vs-mac-install-options-447x297-9602](https://user-images.githubusercontent.com/300046/56370758-0f986380-61b9-11e9-869f-2bea9b6975d2.jpg)
+
+0. Click "Install and Update". 
+0. While you wait many minutes for the downloading:
+
+   Sign up for <a target="_blank" href="https://www.linkedin.com/learning/">LinkedIn Learning</a> video tutorials.
+
+   Sign up for <a target="_blank" href="https://www.datacamp.com/">https://www.datacamp.com/</a> to learn Data Science
+
+0. Switch to Finder, system "/Applications" folder and notice there is, at time of writing:
+
+   * "Visual Studio.app" of 1.55 GB and "Xamarine Profiler.app" of 93.6 MB.
+
+0. On the Touchpad, spread 4 finger together at the same time to see that Powershell has been installed as well.
+
+0. Use your mouch to click the "Visual Studio" icon to open the program.
+
+0. 
+
+   ### Powershell
+
+0. Spread 4 finger together at the same time on the Touchpad to see that Powershell has been installed as well.
+
+0. Install Powershell using Homebrew:
+
+   <pre>brew cask reinstall powershell</pre>
+   The response includes, for example:
+   <pre>installer: Package name is PowerShell - 6.2.0</pre>
+
+0. Switch to a Terminal to see where it's installed:
+
+   <pre>which powershell</pre>
+   for response:
+   <pre>/usr/local/bin/powershell</pre>
+
+0. Identify its metadata:
+
+   <pre>ls -al /usr/local/bin/powershell</pre>
+   for response:
+   <pre>lrwxr-xr-x  1 wilsonmar  wheel  55 Sep 25  2017 /usr/local/bin/powershell -> /usr/local/microsoft/powershell/6.0.0-beta.7/powershell</pre>
 
 ## AWS Cloud9
 

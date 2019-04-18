@@ -553,7 +553,7 @@ The courses are conducted as <a target="_blank" href="https://www.edx.org/micros
 
    <a name="[3]"></a>
 
-3. <a target="_blank" href="https://www.edx.org/course/continuous-integration-and-continuous-deployment-2">Continuous Integration and Continuous Deployment</a> 
+### 3. <a target="_blank" href="https://www.edx.org/course/continuous-integration-and-continuous-deployment-2">Continuous Integration and Continuous Deployment</a> 
 
 DEVOPS200.3x
 
@@ -644,10 +644,11 @@ Test Driven Development Studio: https://aka.ms/edx-devops200.5x-tdds Complete De
    * Configure and use Loggly
    <br /><br />
 
+Choose either 8 or 9:
+
    <a name="[8]"></a>
 
-### 8. There are two Application courses: <a target="_blank" href="https://www.edx.org/course/devops-for-mobile-apps-2">
-   DevOps for Mobile Apps</a> 
+### 8. <a target="_blank" href="https://www.edx.org/course/devops-for-mobile-apps-2">DevOps for Mobile Apps</a>
    
    DEVOPS200.8x
 
