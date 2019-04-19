@@ -14,25 +14,6 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 {% include _toc.html %}
 
-<img class="img-right" align="right"
-alt="cloud platforms black icons 300x330-300-58kb.jpg" width="300" height="330" src="https://cloud.githubusercontent.com/assets/300046/17864330/e4dbabc0-685a-11e6-84e5-361c5fc8c28d.jpg">
-
-<a target="_blank" href="https://wilsonmar.github.io/cloud-services-comparisons">This</a> article compares the largest cloud services platforms:
-Amazon AWS vs.
-Microsoft Azure vs. 
-[Google Cloud Platform](/gcp/) vs.
-IBM Softlayer vs. 
-Rackspace vs.
-Alibaba Cloud vs.
-<a target="_blank" href="https://www.huaweicloud.com/en-us/about/about_us.html">Huawei Cloud</a>.
-
-Major multi-cloud vendors include Oracle, SalesForce's Heroku, SkyTap, etc.
-
-Software for private clouds include Red Hat OpenStack and VMWare. 
-
-Software for hybrid private/public clouds include <a target="_blank" href="https://github.com/cloudfoundry/bosh">CloudFoundry</a>, Hashicorp Terraform, and others.
-[NetApp](http://www.netapp.com/us/solutions/cloud/hybrid-cloud/), or [EMC](http://www.emc.com/en-us/cloud/hybrid-cloud-computing/index.htm)
-
 
 ## Why? Advantages of Cloud
 
@@ -42,9 +23,9 @@ Evaluations can be based on the advantages of cloud:
 
 2. Stop guessing about capacity and <strong> save money that went into idle over-provisioning</strong>, which can be expensive.
 
-3. Benefit from economies of scale by tapping into <strong>more capacity pooled</strong> among many customers.
+3. Tap into <strong>more capacity pooled</strong> among many customers,to benefit from economies of scale.
 
-4. Increase <strong>speed</strong> to obtain capacity and achieve <strong>agility</strong>. Cloud vendors can buy newer, <strong>faster</strong> equipment.
+4. Faster <strong>time to market</strong> to obtain capacity and achieve <strong>agility</strong>. Cloud vendors can buy newer, <strong>faster</strong> equipment.
 
 5. Get <strong>expert specialists</strong> at facilities, security, scalability, etc. by hiring them through cloud vendors who share their <strong>innovations</strong>.
 
@@ -52,7 +33,7 @@ Evaluations can be based on the advantages of cloud:
 
 7. Greater <strong>reliability</strong> to make data backup, disaster recovery, and business continuity easier and less expensive, with data being mirrored at multiple redundant sites on the cloud provider’s network.
 
-8. <strong>Go global</strong> - make use of infrastructure established around the world (time consuming, expensive, and dangerous to do on one's own).
+8. <strong>Go global</strong> - make use of compute and network infrastructure established around the world (time consuming, expensive, and dangerous to do on one's own).
 <br /><br />
 
 PROTIP: Memorize the above list for exams.
@@ -73,7 +54,7 @@ The <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/clou
 
 * <strong>Refactor (modernization)</strong> - transform existing apps with minimal code change to <a target="_blank" href="https://docs.microsoft.com/en-us/Azure/containers/">use Docker and Kubernetes</a>, robust <a target="_blank" href="https://docs.microsoft.com/en-us/Azure/containers/">logging</a>, "elastic" <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/app-service-autoscale-rules/">auto-scaling</a> in & out, etc.
 
-* <strong>Rearchitect (modernization)</strong> - isolate  application functionalities into separate <strong>microservices</strong> that can be independently tested, scaled up or down, and deployed, and managed.
+* <strong>Rearchitect (modernization)</strong> - isolate  application functionalities into separate <strong>microservices</strong> that can be independently deployed, tested, scaled up or down, and managed.
 
 * <strong>Rebuild (modernization)</strong> - reconstruct existing app on a new PaaS platform.
 
@@ -96,6 +77,27 @@ So many individual technologists need to select the cloud vendor which provides 
 * IBM has bare-metal machines, if that's your thing. But since 2017 AWS provides them as well.
 * Increasingly, companies doing business in a particular country are required to keep data within a cloud data center within that country (such as Google in Belgium).
 <br /><br />
+
+## Cloud vendor comparisons
+
+<img class="img-right" align="right"
+alt="cloud platforms black icons 300x330-300-58kb.jpg" width="300" height="330" src="https://cloud.githubusercontent.com/assets/300046/17864330/e4dbabc0-685a-11e6-84e5-361c5fc8c28d.jpg">
+
+<a target="_blank" href="https://wilsonmar.github.io/cloud-services-comparisons">This</a> article compares the largest cloud services platforms:
+Amazon AWS vs.
+Microsoft Azure vs. 
+[Google Cloud Platform](/gcp/) vs.
+IBM Softlayer vs. 
+Rackspace vs.
+Alibaba Cloud vs.
+<a target="_blank" href="https://www.huaweicloud.com/en-us/about/about_us.html">Huawei Cloud</a>.
+
+Major multi-cloud vendors include Oracle, SalesForce's Heroku, SkyTap, etc.
+
+Software for private clouds include Red Hat OpenStack and VMWare. 
+
+Software for hybrid private/public clouds include <a target="_blank" href="https://github.com/cloudfoundry/bosh">CloudFoundry</a>, Hashicorp Terraform, and others.
+[NetApp](http://www.netapp.com/us/solutions/cloud/hybrid-cloud/), or [EMC](http://www.emc.com/en-us/cloud/hybrid-cloud-computing/index.htm)
 
 EDITOR's NOTE: This is not a complete treatment. 
 Additional information will be added over time.
@@ -219,7 +221,18 @@ is a private-party site reporting the history of downtimes on AWS. For example:
 For a list of outages further back:
 https://outage.report/aws-amazon-web-services
 
-## Links to service brand names #
+## Service categories:
+
+* <a href="#Security">Security</a>
+* <a href="#Networks">Networks</a>
+* <a href="#Management">Management</a>
+* <a href="#DevOps">DevOps</a> 
+* <a href="#Compute">Compute</a>
+* <a href="#Integration">Integration</a>
+* <a href="#Persistance">Persistance</a>
+* <a href="#Analytics">Analytics</a>
+
+## Service brand names #
 
 Here are the names of brand names, some with links to marketing or documentation pages:
 <table valign="top" border="1" cellspacing="0" cellpadding="4">
@@ -231,6 +244,7 @@ Here are the names of brand names, some with links to marketing or documentation
     <td><a target="_blank" href="http://azure.microsoft.com/en-us/regions/">Azure Regions</a></td>
     <td><a target="_blank" href="http://aws.amazon.com/about-aws/global-infrastructure/">global infrastructure</a></td>
     <td>-</td></tr>
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Security"></a>Security:</td></tr>
 <tr valign="top" class="tblOdd"><th align="left">Government Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/features/gov/">Azure Government</a></td><td><a target="_blank" href="http://aws.amazon.com/govcloud-us/">GovCloud</a></td>
     <td>-</td></tr>
 <tr valign="top" class="tblOdd"><th align="left">Billing</th><td>?
