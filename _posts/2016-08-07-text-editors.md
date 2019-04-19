@@ -744,14 +744,13 @@ Extensions for developing on the Salesforce Platform
 
    PROTIP: Although Xamarin Studio is currently offered,
    its functonality is being folded into 
-   <a target="_blank" href="https://www.visualstudio.com/vs/visual-studio-mac/">
-   Visual Studio 2017 for Mac</a>, free in Preview until May 31, 2017.
+   <a target="_blank" href="https://www.visualstudio.com/vs/visual-studio-mac/">Visual Studio for Mac</a> until May 31, 2017.
 
-   I predict in the future this will become a paid Visual Studio Enterprise for Mac.
+   There are now paid Professional and Enterprise editions.
 
-0. Watch <a target="_blank" href="https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-12-Getting-Started-with-Visual-Studio-for-Mac">VIDEO: Snack Pack 12: Getting Started with Visual Studio 2017 for Mac</a> May 31, 2017 by James Montemagno (<a target="_blank" href="http://twitter.com/jamesmontemagno">@jamesmontemagno<a>).
+0. Follow along when watching <a target="_blank" href="https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-12-Getting-Started-with-Visual-Studio-for-Mac">VIDEO: Snack Pack 12: Getting Started with Visual Studio 2017 for Mac</a> May 31, 2017 by James Montemagno (<a target="_blank" href="http://twitter.com/jamesmontemagno">@jamesmontemagno<a>). which covers mobile development as well.
 
-   WARNING: If you type "https://visualstudio.com" (the previous URL) you are redirected to:
+0. If you type "https://visualstudio.com" (the previous URL) you are redirected to:
    <a target="_blank" href="https://visualstudio.microsoft.com/">https://visualstudio.microsoft.com</a>
 
 0. Click "Download for Mac" and select "Community 2019 for Mac".
@@ -802,10 +801,14 @@ Extensions for developing on the Salesforce Platform
 
    * "Visual Studio.app" of 1.55 GB and "Xamarine Profiler.app" of 93.6 MB.
 
+0. Navigate to your <strong>Projects</strong> folder and drag it to the Finder's left Navigatin pane, for easy access.
+
 0. On the Touchpad, spread 4 finger together at the same time to see that Powershell has been installed as well.
 
    ![vs-mac-icons-413x105-5443](https://user-images.githubusercontent.com/300046/56381960-7a569880-61d3-11e9-96ff-c44baa1c35e1.jpg)
    <br />
+
+0. PROTIP: Drag the app icon and drop it on your Mac Dock for easy access.
 
 0. Use your mouse to click the "Visual Studio" icon to open the program.
 
@@ -861,9 +864,11 @@ Extensions for developing on the Salesforce Platform
    * In Accessibility, check "Enable".
    <br /><br />
 
-0. Restart
+0. Restart.
 
    ### Project = Solution (.sln) file
+
+0. Follow along when watching <a target="_blank" href="https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/Visual-Studio-for-Mac-Build-Your-First-App">Visual Studio for Mac: Build Your First App</a> Jan 22, 2019 by Sayed Hashimi who creates a .NET Core 2.1 Razor web app using <a target="_blank" href="https://github.com/sayedihashimi/github-emojis">https://github.com/sayedihashimi/github-emojis</a>
 
    <img align="right" alt="vs-mac-2019-types-129x386-4607.jpg" width="129" src="https://user-images.githubusercontent.com/300046/56392692-5608b500-61ef-11e9-8589-988622057ee2.jpg" />
 0. Click "File" then "New Solution" (which is new Project).
@@ -871,16 +876,18 @@ Extensions for developing on the Salesforce Platform
    PROTIP: "Multiplatform", "iOS", "Android", "tvOS", and others for mobile or otherwise appear on the menu after load.
 
 0. To work through the ".NET Core" sample, click "App", then "Web Application". Next. ".NET Core 2.2". Next. 
+
 0. Name your project/solution in Location (projects folder).
+
 0. Click "Use git for version control". This add a .gitignore file and .git folder.
 0. Click "Create". ISSUE: If nothing happens and no error messages, click outside the pop-up dialog window to show.
 0. Click to expand within the Solution pane.
    
    ![vs-mac-githubemojis-229x233-6624](https://user-images.githubusercontent.com/300046/56411948-c8a18100-623f-11e9-9442-bc1b226eed88.jpg)
 
-   ### Run (Buile) app
+   ### Run (Build) app
 
-0. Click "Run" icon to build, using default dependencies settings.
+0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=1m13s">[1:14]</a> Click "Run" icon to build, using default dependencies settings.
 
 0. Click "Yes" if you see "HTTPS development certificate is not trusted".
 
@@ -890,9 +897,21 @@ Extensions for developing on the Salesforce Platform
 
    <a target="_blank" href="http://localhost:5001">http://localhost:5001</a>
 
-   The port can be changed in Run, Run With, Custom Configuration, ASP.NET Core.
+   PROTIP: The port can be changed in Run, Run With, Custom Configuration, ASP.NET Core.
 
-0. 
+0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=1m30s">[1:30]</a> Switch back to Visual Studio. Customize the <strong>_Layout.cshtml</strong> file under Pages > Shared.
+
+   Get rid of the Enviornment sections bringing in Bootstrap to end up with <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=2m10s">this code</a>.
+
+   <pre>&LT;body>
+      @renderBody()
+   &LT;/body></pre>
+
+0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=3m15s">[3:15]</a> Add new file and classes K an Url.
+
+0. https://api.github.com/emojis is a list of emjoji codes and each rendered in a png file.
+
+
 
    ### Version Control
 

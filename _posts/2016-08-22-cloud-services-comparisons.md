@@ -368,7 +368,7 @@ Here are the names of brand names, some with links to marketing or documentation
 <tr valign="top" class="tblOdd"><th align="left"><a target="_blank" href="https://www.sumologic.com/blog/kubernetes-aws-azure-gcp/">Kubernetes scaling</a></th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/kubernetes-service/">Azure Kubernetes Service (AKS)</a></td><td><a target="_blank" href="http://aws.amazon.com/autoscaling/">ECS for Kubernetes (EKS)</a></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblOdd"><th align="left">Distributed apps</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/service-fabric/">Azure Service Fabric</a></td><td>-</a></td>
+<tr valign="top" class="tblOdd"><th align="left">Distributed apps</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/service-fabric/">Azure Service Fabric</a></td><td>-</td>
     <td>-</td></tr>
 
 <tr valign="top" class="tblOdd"><th align="left"><a target="_blank" href="https://hackernoon.com/azure-container-instances-vs-aws-fargate-3216607f63f4">Scaling service</a></th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/container-instances/">Azure Container Instances</a></td><td><a target="_blank" href="http://aws.amazon.com/fargate/">AWS Fargate</a></td>
@@ -390,7 +390,7 @@ Here are the names of brand names, some with links to marketing or documentation
     <td>-</td></tr>
 
 <tr valign="top" class="tblOdd"><th align="left">API Gateway</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/api-management/">Azure API Management</a>
-</td><td>None</td>
+</td><td><a target="_blank" href="https://aws.amazon.com/api-gateway/">Amazon API Gateway</a></td>
     <td>Apigee</td></tr>
 
 <tr valign="top" class="tblOdd"><th align="left"><br /></th><td rowspan="1"><a target="_blank" href="http://azure.microsoft.com/en-us/services/service-bus/">Azure Service Bus</a>
