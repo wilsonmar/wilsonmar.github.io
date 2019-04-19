@@ -245,6 +245,19 @@ Here are the names of brand names, some with links to marketing or documentation
     <td><a target="_blank" href="http://aws.amazon.com/about-aws/global-infrastructure/">global infrastructure</a></td>
     <td>-</td></tr>
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Security"></a>Security:</td></tr>
+<tr valign="top" class="tblEven"><th align="left">Encryption Key Mgmt.</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/key-vault/">Azure Key Vault</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/kms/">KMS (Key Management Service)</a></td>
+    <td>-</td></tr>
+<tr valign="top" class="tblEven"><th align="left">CA</th><td><a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-services/cloud-services-certs-create">Azure Key Vault</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/kms/">Certificate Manager</a></td>
+    <td>-</td></tr>
+<tr valign="top" class="tblOdd"><th align="left">Hardware Security Module</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/support/trust-center/compliance/">Azure Trust Center</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/cloudhsm/">CloudHSM </a></td>
+    <td>-</td></tr>
+<tr valign="top" class="tblOdd"><th align="left">DDoS protection</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/ddos-protection/">Axure DDoS Protection</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/shield/">Shield Advanced</a></td>
+    <td>-</td></tr>
+    
 <tr valign="top" class="tblOdd"><th align="left">Government Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/features/gov/">Azure Government</a></td><td><a target="_blank" href="http://aws.amazon.com/govcloud-us/">GovCloud</a></td>
     <td>-</td></tr>
 <tr valign="top" class="tblOdd"><th align="left">Billing</th><td>?
@@ -336,12 +349,7 @@ Here are the names of brand names, some with links to marketing or documentation
 <tr valign="top" class="tblOdd"><th align="left">Messaging</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/notification-hubs/">Azure Notification Hubs</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/sns/">SNS (Simple Notification Service)</a></td>
     <td>-</td></tr>
-<tr valign="top" class="tblEven"><th align="left">Encryption Key Mgmt.</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/key-vault/">Azure Key Vault</a>
-</td><td><a target="_blank" href="http://aws.amazon.com/kms/">KMS (Key Management Service)</a></td>
-    <td>-</td></tr>
-<tr valign="top" class="tblOdd"><th align="left">Hardware Security Module</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/support/trust-center/compliance/">Azure Trust Center</a>
-</td><td><a target="_blank" href="http://aws.amazon.com/cloudhsm/">CloudHSM </a></td>
-    <td>-</td></tr>
+
 <tr valign="top" class="tblEven"><th align="left">Management Services &amp; Options</th><td><a target="_blank" href="http://azure.microsoft.com/blog/2014/11/26/azure-resource-manager-2-5-for-visual-studio/">Azure Resource Manager</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/cloudformation/">CloudFormation</a></td>
     <td>-</td></tr>
