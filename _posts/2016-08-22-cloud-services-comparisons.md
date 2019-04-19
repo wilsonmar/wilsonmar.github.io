@@ -271,7 +271,7 @@ Here are the names of brand names, some with links to marketing or documentation
 </td><td><a target="_blank" href="http://aws.amazon.com/kms/">KMS (Key Management Service)</a></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblEven"><th align="left">CA</th><td><a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-services/cloud-services-certs-create">Azure Key Vault</a>
+<tr valign="top" class="tblEven"><th align="left">CA</th><td><a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-services/cloud-services-certs-create">Azure Cloud Services</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/kms/">Certificate Manager</a></td>
     <td>-</td></tr>
 
@@ -337,10 +337,36 @@ Here are the names of brand names, some with links to marketing or documentation
     <td>-</td></tr>
 
 
-<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Compute"></a>Compute:</td></tr>
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Compute"></a>Compute:zzz</td></tr>
+
+<tr valign="top" class="tblEven"><th align="left">App/Desktop Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/remoteapp/">Azure RemoteApp</a></td><td><a target="_blank" href="http://aws.amazon.com/workspaces/">WorkSpaces</a><br /><a target="_blank" href="http://aws.amazon.com/appstream/">Amazon AppStream</a><br /></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblEven"><th align="left">Compute Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/virtual-machines/">Virtual Machines (VMs)</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/ec2/">EC2 (Elastic Compute Cloud)</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left"><a target="_blank" href="https://wilsonmar.github.io/Docker">DockerHub</a></th>
+<td><a target="_blank" href="https://azure.microsoft.com/en-us/services/container-registry/">Azure Container Registry</a></td>
+<td><a target="_blank" href="http://aws.amazon.com/lambda/">AWS Lambda</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left">Triggers</th>
+<td><a target="_blank" href="https://azure.microsoft.com/en-us/documentation/services/app-service/logic/">Logic Apps</a></td>
+<td><a target="_blank" href="http://aws.amazon.com/ecr/">Elasticc Container Registry (ECR)</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblEven"><th align="left">Container Support</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/virtual-machines-docker-vm-extension/#Docker-and-Linux-Containers">Docker Virtual Machine Extension (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/ecs/">EC2 Container Service (ECS)</a></td>
+    <td>Kubernetes</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left"><a target="_blank" href="https://www.sumologic.com/blog/kubernetes-aws-azure-gcp/">Kubernetes scaling</a></th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/kubernetes-service/">Azure Kubernetes Service (AKS)</a></td><td><a target="_blank" href="http://aws.amazon.com/autoscaling/">ECS for Kubernetes (EKS)</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left"><a target="_blank" href="https://hackernoon.com/azure-container-instances-vs-aws-fargate-3216607f63f4">Scaling service</a></th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/container-instances/">Azure Container Instances</a></td><td><a target="_blank" href="http://aws.amazon.com/fargate/">AWS Fargate</a></td>
+    <td>-</td></tr>
 
 
-<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Integration"></a>Integration: zzz</td></tr>
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Integration"></a>Integration:</td></tr>
 
 <tr valign="top" class="tblOdd"><th align="left">Analytics</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/stream-analytics/">Azure Stream Analytics</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/kinesis/">Kinesis</a></td>
@@ -369,9 +395,6 @@ Here are the names of brand names, some with links to marketing or documentation
 
 
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="DevOps"></a>DevOps:</td></tr>    
-
-<tr valign="top" class="tblEven"><th align="left">App/Desktop Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/remoteapp/">Azure RemoteApp</a></td><td><a target="_blank" href="http://aws.amazon.com/workspaces/">WorkSpaces</a><br /><a target="_blank" href="http://aws.amazon.com/appstream/">Amazon AppStream</a><br /></td>
-    <td>-</td></tr>
 
 <tr valign="top" class="tblOdd"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/cloud-services/">Cloud Services</a>
 <br /><a target="_blank" href="http://azure.microsoft.com/en-us/services/websites/">Azure Websites and Apps</a>
@@ -445,28 +468,7 @@ Here are the names of brand names, some with links to marketing or documentation
 </td><td><a target="_blank" href="http://aws.amazon.com/elasticache/">ElasticCache</a></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblEven"><th align="left">Compute Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/virtual-machines/">Virtual Machines (VMs)</a>
-</td><td><a target="_blank" href="http://aws.amazon.com/ec2/">EC2 (Elastic Compute Cloud)</a></td>
-    <td>-</td></tr>
 <tr valign="top" class="tblOdd"><th align="left">Scaling Options</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/cloud-services-how-to-scale/">Azure Autoscale (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/autoscaling/">AutoScaling Group</a></td>
-    <td>-</td></tr>
-
-<tr valign="top" class="tblOdd"><th align="left"><a target="_blank" href="https://wilsonmar.github.io/Docker">DockerHub</a></th>
-<td><a target="_blank" href="https://azure.microsoft.com/en-us/services/container-registry/">Azure Container Registry</a></td>
-<td><a target="_blank" href="http://aws.amazon.com/lambda/">AWS Lambda</a></td>
-    <td>-</td></tr>
-
-<tr valign="top" class="tblOdd"><th align="left">Triggers</th>
-<td><a target="_blank" href="https://azure.microsoft.com/en-us/documentation/services/app-service/logic/">Logic Apps</a></td>
-<td><a target="_blank" href="http://aws.amazon.com/ecr/">Elasticc Container Registry (ECR)</a></td>
-    <td>-</td></tr>
-<tr valign="top" class="tblEven"><th align="left">Container Support</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/virtual-machines-docker-vm-extension/#Docker-and-Linux-Containers">Docker Virtual Machine Extension (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/ecs/">EC2 Container Service (ECS)</a></td>
-    <td>Kubernetes</td></tr>
-
-<tr valign="top" class="tblOdd"><th align="left"><a target="_blank" href="https://www.sumologic.com/blog/kubernetes-aws-azure-gcp/">Kubernetes scaling</a></th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/kubernetes-service/">Azure Kubernetes Service (AKS)</a></td><td><a target="_blank" href="http://aws.amazon.com/autoscaling/">ECS for Kubernetes</a></td>
-    <td>-</td></tr>
-
-<tr valign="top" class="tblOdd"><th align="left"><a target="_blank" href="https://hackernoon.com/azure-container-instances-vs-aws-fargate-3216607f63f4">Scaling service</a></th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/container-instances/">Azure Container Instances</a></td><td><a target="_blank" href="http://aws.amazon.com/fargate/">AWS Fargate</a></td>
     <td>-</td></tr>
 
 <tr valign="top" class="tblEven"><th align="left">Data Orchestration</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/data-factory/">Azure Data Factory</a>
