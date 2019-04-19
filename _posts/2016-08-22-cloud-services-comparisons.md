@@ -232,11 +232,7 @@ https://outage.report/aws-amazon-web-services
 * <a href="#Persistance">Persistance</a>
 * <a href="#Analytics">Analytics</a>
 
-<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Networks"></a>Networks:</td></tr>    
-
-<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Management"></a>Management:</td></tr>    
-<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Compute"></a>Compute:</td></tr>    
-<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Integration"></a>Integration:</td></tr>    
+Based on <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/aws-professional/services">this comparison</a>
 
 ## Service brand names #
 
@@ -258,34 +254,108 @@ Here are the names of brand names, some with links to marketing or documentation
 </td><td><a target="_blank" href="http://aws.amazon.com/billing/">Billing</a></td>
     <td>-</td></tr>
 
+
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Security"></a>Security:</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left">Multi-Factor Authentication<br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/multi-factor-authentication/">MFA (Multi-Factor Authentication)</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/iam/details/mfa/">MFA (Multi-Factor Authentication)</a>
+</td>
+    <td>-</td></tr>
+
 <tr valign="top" class="tblEven"><th align="left">Encryption Key Mgmt.</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/key-vault/">Azure Key Vault</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/kms/">KMS (Key Management Service)</a></td>
     <td>-</td></tr>
+
 <tr valign="top" class="tblEven"><th align="left">CA</th><td><a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-services/cloud-services-certs-create">Azure Key Vault</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/kms/">Certificate Manager</a></td>
     <td>-</td></tr>
+
 <tr valign="top" class="tblOdd"><th align="left">Hardware Security Module</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/support/trust-center/compliance/">Azure Trust Center</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/cloudhsm/">CloudHSM </a></td>
     <td>-</td></tr>
+
 <tr valign="top" class="tblOdd"><th align="left">DDoS protection</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/ddos-protection/">Axure DDoS Protection</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/shield/">Shield Advanced</a></td>
     <td>-</td></tr>
 
-<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Networks"></a>Networks:</td></tr>    
+
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Networks"></a>Networks: zzz</td></tr>
+
+<tr valign="top" class="tblEven"><th align="left">Load Balancing</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/virtual-machines-load-balance/">Load Balancing for Azure (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/elasticloadbalancing/">ELB (Elastic Load Balancing)</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/traffic-manager/">Azure Traffic Manager</a></td><td><a target="_blank" href="http://aws.amazon.com/route53/">Amazon Route 53</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left">Networking Options</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/virtual-network/">Azure Virtual Network</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/vpc/">VPC</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblEven"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/expressroute/">Azure ExpressRoute</a></td><td><a target="_blank" href="http://aws.amazon.com/directconnect/">AWS Direct Connect</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left">Messaging</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/notification-hubs/">Azure Notification Hubs</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/sns/">SNS (Simple Notification Service)</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left">API Management</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/api-management/">Azure API Management</a>
+</td><td>None</td>
+    <td>Apigee</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left"><a target="_blank" href="https://8kmiles.com/blog/azure-virtual-network-vs-aws-virtual-private-cloud/">VPN Gateway</a></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/api-management/">Azure Virtual Network</a>
+</td><td><a target="_blank" href="https://aws.amazon.com/vpc/">Virtual Private Cloud & Gateway (VPG)</a></td>
+    <td>Apigee</td></tr>
+
+
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Management"></a>Management:</td></tr>
+
+<tr valign="top" class="tblEven"><th align="left">What services?</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/managed-applications/">Azure Managed Applications</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/servicecatalog/">AWS Service Catalog</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left">Monitoring, Logging, Alerting</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/application-insights/">Azure Application Insights</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/cloudwatch/">CloudWatch</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblEven"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/event-hubs/">Azure Event Hubs</a>
+</td><td>None<br /></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblEven"><th align="left">Audit logs<br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/operational-insights/">Azure Operational Insights</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/cloudtrail/">CloudTrail</a>
+</td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblEven"><th align="left">Who Did What When</th><td>None
+</td><td><a target="_blank" href="http://aws.amazon.com/config/">AWS Config</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblEven"><th align="left">Zipkin tracing</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/monitor/">Azure Application Monitor Insights</a></td><td><a target="_blank" href="https://aws.amazon.com/xray/">AWS X-Ray</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblEven"><th align="left">Zipkin tracing</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/virtual-machines/secure-well-managed-iaas/">Ops. Mgmt. Suite (OMS)</a></td><td><a target="_blank" href="https://aws.amazon.com/systems-manager/">Systems Manager</a></td>
+    <td>-</td></tr>
+
+
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Compute"></a>Compute:</td></tr>
+
+
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Integration"></a>Integration:</td></tr>
 
 
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="DevOps"></a>DevOps:</td></tr>    
 
-<tr valign="top" class="tblEven"><th align="left">Cloud IDE</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/app-center/">Visual Studio App Center</a><br />
+<tr valign="top" class="tblEven"><th align="left">Cloud IDE</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/app-center/">Visual Studio App Center</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/cloud9/">Cloud9</a></td>
+    <td>-</td></tr>
+<tr valign="top" class="tblEven"><th align="left">Dev. tools</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/visual-studio-online/">Azure Visual Studio Online</a></td><td>None</td>
     <td>-</td></tr>
 
 <tr valign="top" class="tblEven"><th align="left">Management Services &amp; Options</th><td><a target="_blank" href="http://azure.microsoft.com/blog/2014/11/26/azure-resource-manager-2-5-for-visual-studio/">Azure Resource Manager</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/cloudformation/">CloudFormation</a></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblEven"><th align="left">Automation</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/automation/">Azure Automation</a>
+<tr valign="top" class="tblEven"><th align="left">Automation</th><td>-
 </td><td><a target="_blank" href="http://aws.amazon.com/opsworks/">OpsWorks</a></td>
     <td>-</td></tr>
 
@@ -306,36 +376,16 @@ Here are the names of brand names, some with links to marketing or documentation
 <br /><a target="_blank" href="http://aws.amazon.com/iam/">IAM (Identity and Access Management)</a><br /></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblOdd"><th align="left">Multi-Factor Authentication<br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/multi-factor-authentication/">MFA (Multi-Factor Authentication)</a>
-</td><td><a target="_blank" href="http://aws.amazon.com/iam/details/mfa/">MFA (Multi-Factor Authentication)</a>
-</td>
-    <td>-</td></tr>
-<tr valign="top" class="tblEven"><th align="left">Audit logs<br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/operational-insights/">Azure Operational Insights</a>
-</td><td><a target="_blank" href="http://aws.amazon.com/cloudtrail/">CloudTrail</a>
-</td>
-    <td>-</td></tr>
-<tr valign="top" class="tblEven"><th align="left">Who Did What When</th><td>None
-</td><td><a target="_blank" href="http://aws.amazon.com/config/">AWS Config</a></td>
-    <td>-</td></tr>
-
-<tr valign="top" class="tblOdd"><th align="left">Monitoring, Logging, Alerting</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/application-insights/">Azure Application Insights</a>
-</td><td><a target="_blank" href="http://aws.amazon.com/cloudwatch/">CloudWatch</a></td>
-    <td>-</td></tr>
-<tr valign="top" class="tblEven"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/event-hubs/">Azure Event Hubs</a>
-</td><td>None<br /></td>
-    <td>-</td></tr>
 
 <tr valign="top" class="tblOdd"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/cloud-services/">Cloud Services</a>
 <br /><a target="_blank" href="http://azure.microsoft.com/en-us/services/websites/">Azure Websites and Apps</a>
 <br /></td><td><a target="_blank" href="http://aws.amazon.com/elasticbeanstalk/">Elastic Beanstalk</a></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblEven"><th align="left">Dev. tools</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/visual-studio-online/">Azure Visual Studio Online</a></td><td>None</td>
-    <td>-</td></tr>
-
 
 <tr valign="top" class="tblEven"><th align="left">App/Desktop Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/remoteapp/">Azure RemoteApp</a></td><td><a target="_blank" href="http://aws.amazon.com/workspaces/">WorkSpaces</a><br /><a target="_blank" href="http://aws.amazon.com/appstream/">Amazon AppStream</a><br /></td>
     <td>-</td></tr>
+
 <tr valign="top" class="tblOdd"><th align="left">Storage Options</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/services/storage/">Azure Storage (Blobs, Tables, Queues, Files)</a></td><td><a target="_blank" href="http://aws.amazon.com/s3/">S3 (SimpleStorage)</a></td>
     <td>-</td></tr>
 <tr valign="top" class="tblEven"><th align="left">Block Storage</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs/">Azure Blob Storage (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/ebs/">Elastic Block Storage (EBS)</a></td>
@@ -356,32 +406,18 @@ Here are the names of brand names, some with links to marketing or documentation
 </td><td><a target="_blank" href="http://aws.amazon.com/rds/">RDS (Relational Database Service)</a>
 <br /><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/storage-import-export-service/">Redshift</a></td>
     <td>-</td></tr>
+
 <tr valign="top" class="tblEven"><th align="left">NoSQL Database Options</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/documentdb/">Azure DocumentDB</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/dynamodb/">DynamoDB</a></td>
     <td>BigTable</td></tr>
+
 <tr valign="top" class="tblOdd"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/cache/">Azure Managed Cache (Redis Cache)</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/elasticache/">ElasticCache</a></td>
     <td>-</td></tr>
+
 <tr valign="top" class="tblEven"><th align="left">Data Orchestration</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/data-factory/">Azure Data Factory</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/datapipeline/">DataPipeline</a></td>
     <td>-</td></tr>
-<tr valign="top" class="tblOdd"><th align="left">Networking Options</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/virtual-network/">Azure Virtual Network</a>
-</td><td><a target="_blank" href="http://aws.amazon.com/vpc/">VPC</a></td>
-    <td>-</td></tr>
-<tr valign="top" class="tblEven"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/expressroute/">Azure ExpressRoute</a></td><td><a target="_blank" href="http://aws.amazon.com/directconnect/">AWS Direct Connect</a></td>
-    <td>-</td></tr>
-<tr valign="top" class="tblOdd"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/traffic-manager/">Azure Traffic Manager</a></td><td><a target="_blank" href="http://aws.amazon.com/route53/">Amazon Route 53</a></td>
-    <td>-</td></tr>
-<tr valign="top" class="tblEven"><th align="left">Load Balancing</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/virtual-machines-load-balance/">Load Balancing for Azure (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/elasticloadbalancing/">ELB (Elastic Load Balancing)</a></td>
-    <td>-</td></tr>
-
-<tr valign="top" class="tblOdd"><th align="left">Messaging</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/notification-hubs/">Azure Notification Hubs</a>
-</td><td><a target="_blank" href="http://aws.amazon.com/sns/">SNS (Simple Notification Service)</a></td>
-    <td>-</td></tr>
-
-<tr valign="top" class="tblOdd"><th align="left">API Management</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/api-management/">Azure API Management</a>
-</td><td>None</td>
-    <td>Apigee</td></tr>
 
 <tr valign="top" class="tblOdd"><th align="left"><br /></th><td rowspan="1"><a target="_blank" href="http://azure.microsoft.com/en-us/services/batch/">Azure Batch </a>
 <br /><a target="_blank" href="http://azure.microsoft.com/en-us/services/service-bus/">Azure Service Bus</a>
