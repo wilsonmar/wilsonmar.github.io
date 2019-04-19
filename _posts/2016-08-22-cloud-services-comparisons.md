@@ -221,12 +221,12 @@ is a private-party site reporting the history of downtimes on AWS. For example:
 For a list of outages further back:
 https://outage.report/aws-amazon-web-services
 
-## Service categories:
+## Categories of cloud services:
 
 * <a href="#Security">Security</a>
 * <a href="#Networks">Networks</a>
-* <a href="#Management">Management</a>
-* <a href="#DevOps">DevOps</a> 
+* <a href="#Management">Management</a> (monitoring)
+* <a href="#DevOps">DevOps</a> (development to operations)
 * <a href="#Compute">Compute</a>
 * <a href="#Integration">Integration</a> (messaging)
 * <a href="#Persistance">Persistance</a> (databases)
