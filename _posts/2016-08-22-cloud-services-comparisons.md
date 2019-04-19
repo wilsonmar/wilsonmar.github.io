@@ -238,7 +238,6 @@ https://outage.report/aws-amazon-web-services
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="DevOps"></a>DevOps:</td></tr>    
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Compute"></a>Compute:</td></tr>    
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Integration"></a>Integration:</td></tr>    
-<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Persistance"></a>Persistance:</td></tr>    
 
 ## Service brand names #
 
@@ -298,9 +297,6 @@ Here are the names of brand names, some with links to marketing or documentation
 </td><td>None<br /></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblEven"><th align="left">Compute Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/virtual-machines/">Virtual Machines (VMs)</a>
-</td><td><a target="_blank" href="http://aws.amazon.com/ec2/">EC2 (Elastic Compute Cloud)</a></td>
-    <td>-</td></tr>
 <tr valign="top" class="tblOdd"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/cloud-services/">Cloud Services</a>
 <br /><a target="_blank" href="http://azure.microsoft.com/en-us/services/websites/">Azure Websites and Apps</a>
 <br /></td><td><a target="_blank" href="http://aws.amazon.com/elasticbeanstalk/">Elastic Beanstalk</a></td>
@@ -309,12 +305,6 @@ Here are the names of brand names, some with links to marketing or documentation
 <tr valign="top" class="tblEven"><th align="left">Dev. tools</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/visual-studio-online/">Azure Visual Studio Online</a></td><td>None</td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblEven"><th align="left">Container Support</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/virtual-machines-docker-vm-extension/#Docker-and-Linux-Containers">Docker Virtual Machine Extension (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/ecs/">EC2 Container Service</a></td>
-    <td>Kubernetes</td></tr>
-<tr valign="top" class="tblOdd"><th align="left">Scaling Options</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/cloud-services-how-to-scale/">Azure Autoscale (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/autoscaling/">AutoScaling</a></td>
-    <td>-</td></tr>
-<tr valign="top" class="tblEven"><th align="left">Analytics/Hadoop Options</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/hdinsight/">HDInsight (Hadoop)</a></td><td><a target="_blank" href="http://aws.amazon.com/elasticmapreduce/">Elastic MapReduce (EMR)</a></td>
-    <td>-</td></tr>
 
 <tr valign="top" class="tblEven"><th align="left">App/Desktop Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/remoteapp/">Azure RemoteApp</a></td><td><a target="_blank" href="http://aws.amazon.com/workspaces/">WorkSpaces</a><br /><a target="_blank" href="http://aws.amazon.com/appstream/">Amazon AppStream</a><br /></td>
     <td>-</td></tr>
@@ -394,7 +384,35 @@ Here are the names of brand names, some with links to marketing or documentation
 <br /><a target="_blank" href="http://aws.amazon.com/cognito/">Cognitor</a><br /></span></td>
     <td>-</td></tr>
 
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Persistance"></a>Persistance: zzz</td></tr>    
+
+<tr valign="top" class="tblEven"><th align="left">Compute Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/virtual-machines/">Virtual Machines (VMs)</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/ec2/">EC2 (Elastic Compute Cloud)</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left"><a target="_blank" href="https://wilsonmar.github.io/Docker">DockerHub</a></th>
+<td><a target="_blank" href="https://azure.microsoft.com/en-us/services/container-registry/">Azure Container Registry</a></td>
+<td><a target="_blank" href="http://aws.amazon.com/lambda/">AWS Lambda</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left">Triggers</th>
+<td><a target="_blank" href="https://azure.microsoft.com/en-us/documentation/services/app-service/logic/">Logic Apps</a></td>
+<td><a target="_blank" href="http://aws.amazon.com/ecr/">Elasticc Container Registry (ECR)</a></td>
+    <td>-</td></tr>
+<tr valign="top" class="tblEven"><th align="left">Container Support</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/virtual-machines-docker-vm-extension/#Docker-and-Linux-Containers">Docker Virtual Machine Extension (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/ecs/">EC2 Container Service (ECS)</a></td>
+    <td>Kubernetes</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left">Scaling Options</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/cloud-services-how-to-scale/">Azure Autoscale (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/autoscaling/">AutoScaling Group</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left"><a target="_blank" href="https://hackernoon.com/azure-container-instances-vs-aws-fargate-3216607f63f4">Scaling service</a></th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/container-instances/">Azure Container Instances</a></td><td><a target="_blank" href="http://aws.amazon.com/fargate/">AWS Fargate</a></td>
+    <td>-</td></tr>
+
+
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Analytics"></a>Analytics:</td></tr>    
+
+<tr valign="top" class="tblEven"><th align="left">Analytics/Hadoop Options</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/hdinsight/">HDInsight (Hadoop)</a></td><td><a target="_blank" href="http://aws.amazon.com/elasticmapreduce/">Elastic MapReduce (EMR)</a></td>
+    <td>-</td></tr>
 
 <tr valign="top" class="tblEven"><th align="left"><a target="_blank" href="https://wilsonmar.github.io/elastic-ecosystem/">ElasticSearch</a></th><td><a target="_blank" href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/elastic.elasticsearch/">in Marketplace</a>
 </td><td><a target="_blank" href="https://aws.amazon.com/elasticsearch-service/">ElasticSearch</a> </td>
@@ -420,11 +438,6 @@ Here are the names of brand names, some with links to marketing or documentation
 
 <tr valign="top" class="tblOdd"><th align="left">Video camera</th><td>?
 </td><td><a target="_blank" href="https://www.amazon.com/AWS-DeepLens-learning-enabled-developers/dp/B075Y3CK37/">$249</a> <a target="_blank" href="https://aws.amazon.com/deeplens/">DeepLens</a></td>
-    <td>-</td></tr>
-
-<tr valign="top" class="tblOdd"><th align="left">Triggers</th>
-<td><a target="_blank" href="https://azure.microsoft.com/en-us/documentation/services/app-service/logic/">Logic Apps</a></td>
-<td><a target="_blank" href="http://aws.amazon.com/lambda/">AWS Lambda</a></td>
     <td>-</td></tr>
 
 </tbody></table>
