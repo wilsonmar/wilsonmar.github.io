@@ -279,7 +279,7 @@ Here are the names of brand names, some with links to marketing or documentation
     <td>-</td></tr>
 
 
-<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Networks"></a>Networks: zzz</td></tr>
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Networks"></a>Networks:</td></tr>
 
 <tr valign="top" class="tblEven"><th align="left">Load Balancing</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/virtual-machines-load-balance/">Load Balancing for Azure (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/elasticloadbalancing/">ELB (Elastic Load Balancing)</a></td>
     <td>-</td></tr>
@@ -293,14 +293,6 @@ Here are the names of brand names, some with links to marketing or documentation
 
 <tr valign="top" class="tblEven"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/expressroute/">Azure ExpressRoute</a></td><td><a target="_blank" href="http://aws.amazon.com/directconnect/">AWS Direct Connect</a></td>
     <td>-</td></tr>
-
-<tr valign="top" class="tblOdd"><th align="left">Messaging</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/notification-hubs/">Azure Notification Hubs</a>
-</td><td><a target="_blank" href="http://aws.amazon.com/sns/">SNS (Simple Notification Service)</a></td>
-    <td>-</td></tr>
-
-<tr valign="top" class="tblOdd"><th align="left">API Management</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/api-management/">Azure API Management</a>
-</td><td>None</td>
-    <td>Apigee</td></tr>
 
 <tr valign="top" class="tblOdd"><th align="left"><a target="_blank" href="https://8kmiles.com/blog/azure-virtual-network-vs-aws-virtual-private-cloud/">VPN Gateway</a></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/api-management/">Azure Virtual Network</a>
 </td><td><a target="_blank" href="https://aws.amazon.com/vpc/">Virtual Private Cloud & Gateway (VPG)</a></td>
@@ -340,7 +332,32 @@ Here are the names of brand names, some with links to marketing or documentation
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Compute"></a>Compute:</td></tr>
 
 
-<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Integration"></a>Integration:</td></tr>
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Integration"></a>Integration: zzz</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left">Analytics</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/stream-analytics/">Azure Stream Analytics</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/kinesis/">Kinesis</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left">Messaging</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/notification-hubs/">Azure Notification Hubs</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/sns/">SNS (Simple Notification Service)</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblEven"><th align="left">Email Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/biztalk-services/">Azure BizTalk Services</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/ses/">SES (Simple Email Services)</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left">API Gateway</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/api-management/">Azure API Management</a>
+</td><td>None</td>
+    <td>Apigee</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left"><br /></th><td rowspan="1"><a target="_blank" href="http://azure.microsoft.com/en-us/services/batch/">Azure Batch </a>
+<br /><a target="_blank" href="http://azure.microsoft.com/en-us/services/service-bus/">Azure Service Bus</a>
+</td><td><a href="http://aws.amazon.com/sqs/">SQS (Simple Queue Service)</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/scheduler/">Azure Scheduler</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/swf/">SWF (Simple Workflow)</a></td>
+    <td>-</td></tr>
 
 
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="DevOps"></a>DevOps:</td></tr>    
@@ -419,22 +436,10 @@ Here are the names of brand names, some with links to marketing or documentation
 </td><td><a target="_blank" href="http://aws.amazon.com/datapipeline/">DataPipeline</a></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblOdd"><th align="left"><br /></th><td rowspan="1"><a target="_blank" href="http://azure.microsoft.com/en-us/services/batch/">Azure Batch </a>
-<br /><a target="_blank" href="http://azure.microsoft.com/en-us/services/service-bus/">Azure Service Bus</a>
-</td><td><a href="http://aws.amazon.com/sqs/">SQS (Simple Queue Service)</a></td>
-    <td>-</td></tr>
-<tr valign="top" class="tblOdd"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/scheduler/">Azure Scheduler</a>
-</td><td><a target="_blank" href="http://aws.amazon.com/swf/">SWF (Simple Workflow)</a></td>
-    <td>-</td></tr>
 <tr valign="top" class="tblEven"><th align="left">Search</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/search/">Azure Search</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/cloudsearch/">CloudSearch</a></td>
     <td>-</td></tr>
-<tr valign="top" class="tblOdd"><th align="left">Analytics</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/stream-analytics/">Azure Stream Analytics</a>
-</td><td><a target="_blank" href="http://aws.amazon.com/kinesis/">Kinesis</a></td>
-    <td>-</td></tr>
-<tr valign="top" class="tblEven"><th align="left">Email Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/biztalk-services/">Azure BizTalk Services</a>
-</td><td><a target="_blank" href="http://aws.amazon.com/ses/">SES (Simple Email Services)</a></td>
-    <td>-</td></tr>
+
 <tr valign="top" class="tblOdd"><th align="left">Media Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/media-services/">Azure Media Services</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/elastictranscoder/">ElasticTranscoder</a><br /><span style="text-decoration:underline;"><a target="_blank" href="http://aws.amazon.com/mobileanalytics/">MobileAnalytics</a>
 <br /><a target="_blank" href="http://aws.amazon.com/cognito/">Cognitor</a><br /></span></td>
