@@ -228,9 +228,9 @@ https://outage.report/aws-amazon-web-services
 * <a href="#Management">Management</a>
 * <a href="#DevOps">DevOps</a> 
 * <a href="#Compute">Compute</a>
-* <a href="#Integration">Integration</a>
-* <a href="#Persistance">Persistance</a>
-* <a href="#Analytics">Analytics</a>
+* <a href="#Integration">Integration</a> (messaging)
+* <a href="#Persistance">Persistance</a> (databases)
+* <a href="#Analytics">Analytics</a> (includes Machine Learning & AI)
 
 Based on <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/aws-professional/services">this comparison</a>
 
@@ -248,10 +248,6 @@ Here are the names of brand names, some with links to marketing or documentation
     <td>-</td></tr>
 
 <tr valign="top" class="tblOdd"><th align="left">Government Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/features/gov/">Azure Government</a></td><td><a target="_blank" href="http://aws.amazon.com/govcloud-us/">GovCloud</a></td>
-    <td>-</td></tr>
-
-<tr valign="top" class="tblOdd"><th align="left">Billing</th><td>?
-</td><td><a target="_blank" href="http://aws.amazon.com/billing/">Billing</a></td>
     <td>-</td></tr>
 
 
@@ -281,6 +277,10 @@ Here are the names of brand names, some with links to marketing or documentation
 
 <tr valign="top" class="tblOdd"><th align="left">DDoS protection</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/ddos-protection/">Axure DDoS Protection</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/shield/">Shield Advanced</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left">Share data security</th><td><a target="_blank" href="https://www.microsoft.com/cloud-platform/azure-information-protection">Information Protection</a>
+</td><td>?</td>
     <td>-</td></tr>
 
 
@@ -313,6 +313,9 @@ Here are the names of brand names, some with links to marketing or documentation
 </td><td><a target="_blank" href="http://aws.amazon.com/servicecatalog/">AWS Service Catalog</a></td>
     <td>-</td></tr>
 
+<tr valign="top" class="tblOdd"><th align="left">Billing</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/cost-management/">Azure Cost Management</a></td><td><a target="_blank" href="http://aws.amazon.com/billing/">Billing</a></td>
+    <td>-</td></tr>
+
 <tr valign="top" class="tblOdd"><th align="left">Monitoring, Logging, Alerting</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/application-insights/">Azure Application Insights</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/cloudwatch/">CloudWatch</a></td>
     <td>-</td></tr>
@@ -333,7 +336,7 @@ Here are the names of brand names, some with links to marketing or documentation
 <tr valign="top" class="tblEven"><th align="left">Zipkin tracing</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/monitor/">Azure Application Monitor Insights</a></td><td><a target="_blank" href="https://aws.amazon.com/xray/">AWS X-Ray</a></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblEven"><th align="left">Zipkin tracing</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/virtual-machines/secure-well-managed-iaas/">Ops. Mgmt. Suite (OMS)</a></td><td><a target="_blank" href="https://aws.amazon.com/systems-manager/">Systems Manager</a></td>
+<tr valign="top" class="tblEven"><th align="left">-</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/virtual-machines/secure-well-managed-iaas/">Ops. Mgmt. Suite (OMS)</a></td><td><a target="_blank" href="https://aws.amazon.com/systems-manager/">Systems Manager</a></td>
     <td>-</td></tr>
 
 
@@ -365,6 +368,9 @@ Here are the names of brand names, some with links to marketing or documentation
 <tr valign="top" class="tblOdd"><th align="left"><a target="_blank" href="https://www.sumologic.com/blog/kubernetes-aws-azure-gcp/">Kubernetes scaling</a></th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/kubernetes-service/">Azure Kubernetes Service (AKS)</a></td><td><a target="_blank" href="http://aws.amazon.com/autoscaling/">ECS for Kubernetes (EKS)</a></td>
     <td>-</td></tr>
 
+<tr valign="top" class="tblOdd"><th align="left">Distributed apps</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/service-fabric/">Azure Service Fabric</a></td><td>-</a></td>
+    <td>-</td></tr>
+
 <tr valign="top" class="tblOdd"><th align="left"><a target="_blank" href="https://hackernoon.com/azure-container-instances-vs-aws-fargate-3216607f63f4">Scaling service</a></th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/container-instances/">Azure Container Instances</a></td><td><a target="_blank" href="http://aws.amazon.com/fargate/">AWS Fargate</a></td>
     <td>-</td></tr>
 
@@ -387,9 +393,12 @@ Here are the names of brand names, some with links to marketing or documentation
 </td><td>None</td>
     <td>Apigee</td></tr>
 
-<tr valign="top" class="tblOdd"><th align="left"><br /></th><td rowspan="1"><a target="_blank" href="http://azure.microsoft.com/en-us/services/batch/">Azure Batch </a>
-<br /><a target="_blank" href="http://azure.microsoft.com/en-us/services/service-bus/">Azure Service Bus</a>
+<tr valign="top" class="tblOdd"><th align="left"><br /></th><td rowspan="1"><a target="_blank" href="http://azure.microsoft.com/en-us/services/service-bus/">Azure Service Bus</a>
 </td><td><a href="http://aws.amazon.com/sqs/">SQS (Simple Queue Service)</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left"><br /></th><td rowspan="1"><a target="_blank" href="http://azure.microsoft.com/en-us/services/batch/">Azure Batch</a>
+</td><td><a href="https://azure.microsoft.com/services/batch/">Amazon Batcch</a></td>
     <td>-</td></tr>
 
 <tr valign="top" class="tblOdd"><th align="left">Calendar</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/scheduler/">Azure Scheduler</a>
@@ -441,10 +450,14 @@ Here are the names of brand names, some with links to marketing or documentation
 
 <tr valign="top" class="tblOdd"><th align="left">Storage Options</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/services/storage/">Azure Storage (Blobs, Tables, Queues, Files)</a></td><td><a target="_blank" href="http://aws.amazon.com/s3/">S3 (SimpleStorage)</a></td>
     <td>-</td></tr>
-<tr valign="top" class="tblEven"><th align="left">Block Storage</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs/">Azure Blob Storage (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/ebs/">Elastic Block Storage (EBS)</a></td>
+
+<tr valign="top" class="tblEven"><th align="left">Block Storage</th><td><a target="_blank" href="https://docs.microsoft.com/en-us/rest/api/storageservices/fileservices/understanding-block-blobs--append-blobs--and-page-blobs#about-page-blobs">Azure Storage Disk</a><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs/">(how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/ebs/">Elastic Block Storage (EBS)</a></td>
     <td>-</td></tr>
 
 <tr valign="top" class="tblOdd"><th align="left">Hybrid Cloud Storage</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/storsimple/">StorSimple</a></td><td>None</td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left">Shared File Storage</th><td><a target="_blank" href="https://azure.microsoft.com/services/storage/files/">Azure Files</a></td><td><a target="_blank" href="https://aws.amazon.com/efs/">Elastic File System (EFS)</a></td>
     <td>-</td></tr>
 
 <tr valign="top" class="tblEven"><th align="left">Backup Options</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/backup/">Azure Backup</a></td><td><a target="_blank" href="http://aws.amazon.com/glacier/">Glacier</a></td>
@@ -456,7 +469,7 @@ Here are the names of brand names, some with links to marketing or documentation
 <tr valign="top" class="tblEven"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-files/">Azure File Storage (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/storagegateway/">StorageGateway</a></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblOdd"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/site-recovery/">Azure Site Recovery</a></td><td>None</td>
+<tr valign="top" class="tblOdd"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/site-recovery/">Azure Site Recovery</a></td><td>?</td>
     <td>-</td></tr>
 
 <tr valign="top" class="tblOdd"><th align="left">Database Options</th><td rowspan="1"><a target="_blank" href="http://azure.microsoft.com/en-us/services/sql-database/">Azure SQL Database</a>
@@ -472,7 +485,7 @@ Here are the names of brand names, some with links to marketing or documentation
 </td><td><a target="_blank" href="http://aws.amazon.com/elasticache/">ElasticCache</a></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblOdd"><th align="left">Scaling Options</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/cloud-services-how-to-scale/">Azure Autoscale (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/autoscaling/">AutoScaling Group</a></td>
+<tr valign="top" class="tblOdd"><th align="left">Scaling Options</th><td><a target="_blank" href="https://docs.microsoft.com/en-us/azure/app-service/app-service-environment-auto-scale">Azure Autoscaling</a> <a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/cloud-services-how-to-scale/">(how to)</a> Machine Scale Sets</td><td><a target="_blank" href="http://aws.amazon.com/autoscaling/">AWS AutoScaling Group</a></td>
     <td>-</td></tr>
 
 <tr valign="top" class="tblEven"><th align="left">Data Orchestration</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/data-factory/">Azure Data Factory</a>
@@ -481,6 +494,12 @@ Here are the names of brand names, some with links to marketing or documentation
 
 
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Analytics"></a>Analytics:</td></tr>    
+
+<tr valign="top" class="tblEven"><th align="left">Visualization</th><td><a target="_blank" href="https://powerbi.microsoft.com/en-us/">PowerBI</a></td><td><a target="_blank" href="http://aws.amazon.com/quicksight/">QuickSight</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblEven"><th align="left">Data Discovery</th><td><a target="_blank" href="https://azure.microsoft.com/services/data-catalog/">Data Catalog</a></td><td>?</td>
+    <td>-</td></tr>
 
 <tr valign="top" class="tblEven"><th align="left">Analytics/Hadoop Options</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/hdinsight/">HDInsight (Hadoop)</a></td><td><a target="_blank" href="http://aws.amazon.com/elasticmapreduce/">Elastic MapReduce (EMR)</a></td>
     <td>-</td></tr>
