@@ -235,7 +235,6 @@ https://outage.report/aws-amazon-web-services
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Networks"></a>Networks:</td></tr>    
 
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Management"></a>Management:</td></tr>    
-<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="DevOps"></a>DevOps:</td></tr>    
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Compute"></a>Compute:</td></tr>    
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Integration"></a>Integration:</td></tr>    
 
@@ -251,7 +250,12 @@ Here are the names of brand names, some with links to marketing or documentation
     <td><a target="_blank" href="http://azure.microsoft.com/en-us/regions/">Azure Regions</a></td>
     <td><a target="_blank" href="http://aws.amazon.com/about-aws/global-infrastructure/">global infrastructure</a></td>
     <td>-</td></tr>
+
 <tr valign="top" class="tblOdd"><th align="left">Government Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/features/gov/">Azure Government</a></td><td><a target="_blank" href="http://aws.amazon.com/govcloud-us/">GovCloud</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left">Billing</th><td>?
+</td><td><a target="_blank" href="http://aws.amazon.com/billing/">Billing</a></td>
     <td>-</td></tr>
 
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Security"></a>Security:</td></tr>
@@ -270,14 +274,38 @@ Here are the names of brand names, some with links to marketing or documentation
 
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Networks"></a>Networks:</td></tr>    
 
-<tr valign="top" class="tblOdd"><th align="left">Billing</th><td>?
-</td><td><a target="_blank" href="http://aws.amazon.com/billing/">Billing</a></td>
+
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="DevOps"></a>DevOps:</td></tr>    
+
+<tr valign="top" class="tblEven"><th align="left">Cloud IDE</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/app-center/">Visual Studio App Center</a><br />
+</td><td><a target="_blank" href="http://aws.amazon.com/cloud9/">Cloud9</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblEven"><th align="left">Management Services &amp; Options</th><td><a target="_blank" href="http://azure.microsoft.com/blog/2014/11/26/azure-resource-manager-2-5-for-visual-studio/">Azure Resource Manager</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/cloudformation/">CloudFormation</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblEven"><th align="left">Automation</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/automation/">Azure Automation</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/opsworks/">OpsWorks</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblEven"><th align="left">GitHub</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/repos/">Azure Repos</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/codecommit/">CodeCommit</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblEven"><th align="left">Jenkins</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/pipelines/">Azure Code Pipelines</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/codebuild/">CodeBuild</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblEven"><th align="left"><br /></th><td>?<br />
+</td><td><a target="_blank" href="http://aws.amazon.com/codedeploy/">CodeDeploy</a></td>
     <td>-</td></tr>
 
 <tr valign="top" class="tblOdd"><th align="left">Administration &amp; Security</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/active-directory/">Azure Active Directory</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/directoryservice/">DirectoryService</a>
 <br /><a target="_blank" href="http://aws.amazon.com/iam/">IAM (Identity and Access Management)</a><br /></td>
     <td>-</td></tr>
+
 <tr valign="top" class="tblOdd"><th align="left">Multi-Factor Authentication<br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/multi-factor-authentication/">MFA (Multi-Factor Authentication)</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/iam/details/mfa/">MFA (Multi-Factor Authentication)</a>
 </td>
@@ -351,18 +379,10 @@ Here are the names of brand names, some with links to marketing or documentation
 </td><td><a target="_blank" href="http://aws.amazon.com/sns/">SNS (Simple Notification Service)</a></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblEven"><th align="left">Management Services &amp; Options</th><td><a target="_blank" href="http://azure.microsoft.com/blog/2014/11/26/azure-resource-manager-2-5-for-visual-studio/">Azure Resource Manager</a>
-</td><td><a target="_blank" href="http://aws.amazon.com/cloudformation/">CloudFormation</a></td>
-    <td>-</td></tr>
 <tr valign="top" class="tblOdd"><th align="left">API Management</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/api-management/">Azure API Management</a>
 </td><td>None</td>
     <td>Apigee</td></tr>
-<tr valign="top" class="tblEven"><th align="left">Automation</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/automation/">Azure Automation</a>
-</td><td><a target="_blank" href="http://aws.amazon.com/opsworks/">OpsWorks</a></td>
-    <td>-</td></tr>
-<tr valign="top" class="tblEven"><th align="left"><br /></th><td>None<br />
-</td><td><a target="_blank" href="http://aws.amazon.com/codedeploy/">CodeDeploy</a></td>
-    <td>-</td></tr>
+
 <tr valign="top" class="tblOdd"><th align="left"><br /></th><td rowspan="1"><a target="_blank" href="http://azure.microsoft.com/en-us/services/batch/">Azure Batch </a>
 <br /><a target="_blank" href="http://azure.microsoft.com/en-us/services/service-bus/">Azure Service Bus</a>
 </td><td><a href="http://aws.amazon.com/sqs/">SQS (Simple Queue Service)</a></td>
@@ -384,10 +404,12 @@ Here are the names of brand names, some with links to marketing or documentation
 <br /><a target="_blank" href="http://aws.amazon.com/cognito/">Cognitor</a><br /></span></td>
     <td>-</td></tr>
 
-<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Persistance"></a>Persistance: zzz</td></tr>    
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Persistance"></a>Persistance:</td></tr>    
 
 <tr valign="top" class="tblEven"><th align="left">Compute Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/virtual-machines/">Virtual Machines (VMs)</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/ec2/">EC2 (Elastic Compute Cloud)</a></td>
+    <td>-</td></tr>
+<tr valign="top" class="tblOdd"><th align="left">Scaling Options</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/cloud-services-how-to-scale/">Azure Autoscale (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/autoscaling/">AutoScaling Group</a></td>
     <td>-</td></tr>
 
 <tr valign="top" class="tblOdd"><th align="left"><a target="_blank" href="https://wilsonmar.github.io/Docker">DockerHub</a></th>
@@ -402,7 +424,7 @@ Here are the names of brand names, some with links to marketing or documentation
 <tr valign="top" class="tblEven"><th align="left">Container Support</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/virtual-machines-docker-vm-extension/#Docker-and-Linux-Containers">Docker Virtual Machine Extension (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/ecs/">EC2 Container Service (ECS)</a></td>
     <td>Kubernetes</td></tr>
 
-<tr valign="top" class="tblOdd"><th align="left">Scaling Options</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/cloud-services-how-to-scale/">Azure Autoscale (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/autoscaling/">AutoScaling Group</a></td>
+<tr valign="top" class="tblOdd"><th align="left"><a target="_blank" href="https://www.sumologic.com/blog/kubernetes-aws-azure-gcp/">Kubernetes scaling</a></th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/kubernetes-service/">Azure Kubernetes Service (AKS)</a></td><td><a target="_blank" href="http://aws.amazon.com/autoscaling/">ECS for Kubernetes</a></td>
     <td>-</td></tr>
 
 <tr valign="top" class="tblOdd"><th align="left"><a target="_blank" href="https://hackernoon.com/azure-container-instances-vs-aws-fargate-3216607f63f4">Scaling service</a></th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/container-instances/">Azure Container Instances</a></td><td><a target="_blank" href="http://aws.amazon.com/fargate/">AWS Fargate</a></td>
