@@ -257,6 +257,11 @@ Here are the names of brand names, some with links to marketing or documentation
 
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Security"></a>Security:</td></tr>
 
+<tr valign="top" class="tblOdd"><th align="left">Administration &amp; Security</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/active-directory/">Azure Active Directory</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/directoryservice/">DirectoryService</a>
+<br /><a target="_blank" href="http://aws.amazon.com/iam/">IAM (Identity and Access Management)</a><br /></td>
+    <td>-</td></tr>
+
 <tr valign="top" class="tblOdd"><th align="left">Multi-Factor Authentication<br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/multi-factor-authentication/">MFA (Multi-Factor Authentication)</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/iam/details/mfa/">MFA (Multi-Factor Authentication)</a>
 </td>
@@ -281,6 +286,9 @@ Here are the names of brand names, some with links to marketing or documentation
 
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Networks"></a>Networks:</td></tr>
 
+<tr valign="top" class="tblEven"><th align="left">Content Delivery Network (CDN )</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/cdn/">Azure CDN</a></td><td><a target="_blank" href="http://aws.amazon.com/cloudfront/">CloudFront</a></td>
+    <td>-</td></tr>
+
 <tr valign="top" class="tblEven"><th align="left">Load Balancing</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/virtual-machines-load-balance/">Load Balancing for Azure (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/elasticloadbalancing/">ELB (Elastic Load Balancing)</a></td>
     <td>-</td></tr>
 
@@ -296,7 +304,7 @@ Here are the names of brand names, some with links to marketing or documentation
 
 <tr valign="top" class="tblOdd"><th align="left"><a target="_blank" href="https://8kmiles.com/blog/azure-virtual-network-vs-aws-virtual-private-cloud/">VPN Gateway</a></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/api-management/">Azure Virtual Network</a>
 </td><td><a target="_blank" href="https://aws.amazon.com/vpc/">Virtual Private Cloud & Gateway (VPG)</a></td>
-    <td>Apigee</td></tr>
+    <td>-</td></tr>
 
 
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Management"></a>Management:</td></tr>
@@ -355,12 +363,20 @@ Here are the names of brand names, some with links to marketing or documentation
 </td><td><a href="http://aws.amazon.com/sqs/">SQS (Simple Queue Service)</a></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblOdd"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/scheduler/">Azure Scheduler</a>
+<tr valign="top" class="tblOdd"><th align="left">Calendar</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/scheduler/">Azure Scheduler</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/swf/">SWF (Simple Workflow)</a></td>
     <td>-</td></tr>
 
 
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="DevOps"></a>DevOps:</td></tr>    
+
+<tr valign="top" class="tblEven"><th align="left">App/Desktop Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/remoteapp/">Azure RemoteApp</a></td><td><a target="_blank" href="http://aws.amazon.com/workspaces/">WorkSpaces</a><br /><a target="_blank" href="http://aws.amazon.com/appstream/">Amazon AppStream</a><br /></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/cloud-services/">Cloud Services</a>
+<br /><a target="_blank" href="http://azure.microsoft.com/en-us/services/websites/">Azure Websites and Apps</a>
+<br /></td><td><a target="_blank" href="http://aws.amazon.com/elasticbeanstalk/">Elastic Beanstalk</a></td>
+    <td>-</td></tr>
 
 <tr valign="top" class="tblEven"><th align="left">Cloud IDE</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/app-center/">Visual Studio App Center</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/cloud9/">Cloud9</a></td>
@@ -388,37 +404,34 @@ Here are the names of brand names, some with links to marketing or documentation
 </td><td><a target="_blank" href="http://aws.amazon.com/codedeploy/">CodeDeploy</a></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblOdd"><th align="left">Administration &amp; Security</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/active-directory/">Azure Active Directory</a>
-</td><td><a target="_blank" href="http://aws.amazon.com/directoryservice/">DirectoryService</a>
-<br /><a target="_blank" href="http://aws.amazon.com/iam/">IAM (Identity and Access Management)</a><br /></td>
+<tr valign="top" class="tblOdd"><th align="left">Media Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/media-services/">Azure Media Services</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/elastictranscoder/">ElasticTranscoder</a><br /><span style="text-decoration:underline;"><a target="_blank" href="http://aws.amazon.com/mobileanalytics/">MobileAnalytics</a>
+<br /><a target="_blank" href="http://aws.amazon.com/cognito/">Cognitor</a><br /></span></td>
     <td>-</td></tr>
 
 
-<tr valign="top" class="tblOdd"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/cloud-services/">Cloud Services</a>
-<br /><a target="_blank" href="http://azure.microsoft.com/en-us/services/websites/">Azure Websites and Apps</a>
-<br /></td><td><a target="_blank" href="http://aws.amazon.com/elasticbeanstalk/">Elastic Beanstalk</a></td>
-    <td>-</td></tr>
-
-
-<tr valign="top" class="tblEven"><th align="left">App/Desktop Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/remoteapp/">Azure RemoteApp</a></td><td><a target="_blank" href="http://aws.amazon.com/workspaces/">WorkSpaces</a><br /><a target="_blank" href="http://aws.amazon.com/appstream/">Amazon AppStream</a><br /></td>
-    <td>-</td></tr>
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Persistance"></a>Persistance:</td></tr>    
 
 <tr valign="top" class="tblOdd"><th align="left">Storage Options</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/services/storage/">Azure Storage (Blobs, Tables, Queues, Files)</a></td><td><a target="_blank" href="http://aws.amazon.com/s3/">S3 (SimpleStorage)</a></td>
     <td>-</td></tr>
 <tr valign="top" class="tblEven"><th align="left">Block Storage</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs/">Azure Blob Storage (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/ebs/">Elastic Block Storage (EBS)</a></td>
     <td>-</td></tr>
+
 <tr valign="top" class="tblOdd"><th align="left">Hybrid Cloud Storage</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/storsimple/">StorSimple</a></td><td>None</td>
     <td>-</td></tr>
+
 <tr valign="top" class="tblEven"><th align="left">Backup Options</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/backup/">Azure Backup</a></td><td><a target="_blank" href="http://aws.amazon.com/glacier/">Glacier</a></td>
     <td>Coldline</td></tr>
+
 <tr valign="top" class="tblOdd"><th align="left">Storage Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/storage-import-export-service/">Azure Import Export (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/importexport/">ImportExport</a></td>
     <td>-</td></tr>
+
 <tr valign="top" class="tblEven"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-files/">Azure File Storage (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/storagegateway/">StorageGateway</a></td>
     <td>-</td></tr>
+
 <tr valign="top" class="tblOdd"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/site-recovery/">Azure Site Recovery</a></td><td>None</td>
     <td>-</td></tr>
-<tr valign="top" class="tblEven"><th align="left">Content Delivery Network (CDN )</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/cdn/">Azure CDN</a></td><td><a target="_blank" href="http://aws.amazon.com/cloudfront/">CloudFront</a></td>
-    <td>-</td></tr>
+
 <tr valign="top" class="tblOdd"><th align="left">Database Options</th><td rowspan="1"><a target="_blank" href="http://azure.microsoft.com/en-us/services/sql-database/">Azure SQL Database</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/rds/">RDS (Relational Database Service)</a>
 <br /><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/storage-import-export-service/">Redshift</a></td>
@@ -431,21 +444,6 @@ Here are the names of brand names, some with links to marketing or documentation
 <tr valign="top" class="tblOdd"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/cache/">Azure Managed Cache (Redis Cache)</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/elasticache/">ElasticCache</a></td>
     <td>-</td></tr>
-
-<tr valign="top" class="tblEven"><th align="left">Data Orchestration</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/data-factory/">Azure Data Factory</a>
-</td><td><a target="_blank" href="http://aws.amazon.com/datapipeline/">DataPipeline</a></td>
-    <td>-</td></tr>
-
-<tr valign="top" class="tblEven"><th align="left">Search</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/search/">Azure Search</a>
-</td><td><a target="_blank" href="http://aws.amazon.com/cloudsearch/">CloudSearch</a></td>
-    <td>-</td></tr>
-
-<tr valign="top" class="tblOdd"><th align="left">Media Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/media-services/">Azure Media Services</a>
-</td><td><a target="_blank" href="http://aws.amazon.com/elastictranscoder/">ElasticTranscoder</a><br /><span style="text-decoration:underline;"><a target="_blank" href="http://aws.amazon.com/mobileanalytics/">MobileAnalytics</a>
-<br /><a target="_blank" href="http://aws.amazon.com/cognito/">Cognitor</a><br /></span></td>
-    <td>-</td></tr>
-
-<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Persistance"></a>Persistance:</td></tr>    
 
 <tr valign="top" class="tblEven"><th align="left">Compute Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/virtual-machines/">Virtual Machines (VMs)</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/ec2/">EC2 (Elastic Compute Cloud)</a></td>
@@ -471,6 +469,10 @@ Here are the names of brand names, some with links to marketing or documentation
 <tr valign="top" class="tblOdd"><th align="left"><a target="_blank" href="https://hackernoon.com/azure-container-instances-vs-aws-fargate-3216607f63f4">Scaling service</a></th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/container-instances/">Azure Container Instances</a></td><td><a target="_blank" href="http://aws.amazon.com/fargate/">AWS Fargate</a></td>
     <td>-</td></tr>
 
+<tr valign="top" class="tblEven"><th align="left">Data Orchestration</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/data-factory/">Azure Data Factory</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/datapipeline/">DataPipeline</a></td>
+    <td>-</td></tr>
+
 
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Analytics"></a>Analytics:</td></tr>    
 
@@ -480,6 +482,11 @@ Here are the names of brand names, some with links to marketing or documentation
 <tr valign="top" class="tblEven"><th align="left"><a target="_blank" href="https://wilsonmar.github.io/elastic-ecosystem/">ElasticSearch</a></th><td><a target="_blank" href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/elastic.elasticsearch/">in Marketplace</a>
 </td><td><a target="_blank" href="https://aws.amazon.com/elasticsearch-service/">ElasticSearch</a> </td>
     <td>-</td></tr>
+
+<tr valign="top" class="tblEven"><th align="left">Search</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/search/">Azure Search</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/cloudsearch/">CloudSearch</a></td>
+    <td>-</td></tr>
+
 
 <tr valign="top" class="tblEven"><th align="left">Machine Learning (ML)</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/machine-learning/">Azure Machine Learning</a>
 </td><td><a target="_blank" href="https://aws.amazon.com/machine-learning/">Machine-Learning</a> <a target="_blank" href="https://aws.amazon.com/sagemaker/">SageMaker</a></td>
