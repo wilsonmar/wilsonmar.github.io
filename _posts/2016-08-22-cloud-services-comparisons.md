@@ -232,6 +232,14 @@ https://outage.report/aws-amazon-web-services
 * <a href="#Persistance">Persistance</a>
 * <a href="#Analytics">Analytics</a>
 
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Networks"></a>Networks:</td></tr>    
+
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Management"></a>Management:</td></tr>    
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="DevOps"></a>DevOps:</td></tr>    
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Compute"></a>Compute:</td></tr>    
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Integration"></a>Integration:</td></tr>    
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Persistance"></a>Persistance:</td></tr>    
+
 ## Service brand names #
 
 Here are the names of brand names, some with links to marketing or documentation pages:
@@ -244,6 +252,9 @@ Here are the names of brand names, some with links to marketing or documentation
     <td><a target="_blank" href="http://azure.microsoft.com/en-us/regions/">Azure Regions</a></td>
     <td><a target="_blank" href="http://aws.amazon.com/about-aws/global-infrastructure/">global infrastructure</a></td>
     <td>-</td></tr>
+<tr valign="top" class="tblOdd"><th align="left">Government Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/features/gov/">Azure Government</a></td><td><a target="_blank" href="http://aws.amazon.com/govcloud-us/">GovCloud</a></td>
+    <td>-</td></tr>
+
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Security"></a>Security:</td></tr>
 <tr valign="top" class="tblEven"><th align="left">Encryption Key Mgmt.</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/key-vault/">Azure Key Vault</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/kms/">KMS (Key Management Service)</a></td>
@@ -257,9 +268,9 @@ Here are the names of brand names, some with links to marketing or documentation
 <tr valign="top" class="tblOdd"><th align="left">DDoS protection</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/ddos-protection/">Axure DDoS Protection</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/shield/">Shield Advanced</a></td>
     <td>-</td></tr>
-    
-<tr valign="top" class="tblOdd"><th align="left">Government Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/features/gov/">Azure Government</a></td><td><a target="_blank" href="http://aws.amazon.com/govcloud-us/">GovCloud</a></td>
-    <td>-</td></tr>
+
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Networks"></a>Networks:</td></tr>    
+
 <tr valign="top" class="tblOdd"><th align="left">Billing</th><td>?
 </td><td><a target="_blank" href="http://aws.amazon.com/billing/">Billing</a></td>
     <td>-</td></tr>
@@ -381,6 +392,12 @@ Here are the names of brand names, some with links to marketing or documentation
 <tr valign="top" class="tblOdd"><th align="left">Media Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/media-services/">Azure Media Services</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/elastictranscoder/">ElasticTranscoder</a><br /><span style="text-decoration:underline;"><a target="_blank" href="http://aws.amazon.com/mobileanalytics/">MobileAnalytics</a>
 <br /><a target="_blank" href="http://aws.amazon.com/cognito/">Cognitor</a><br /></span></td>
+    <td>-</td></tr>
+
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Analytics"></a>Analytics:</td></tr>    
+
+<tr valign="top" class="tblEven"><th align="left"><a target="_blank" href="https://wilsonmar.github.io/elastic-ecosystem/">ElasticSearch</a></th><td><a target="_blank" href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/elastic.elasticsearch/">in Marketplace</a>
+</td><td><a target="_blank" href="https://aws.amazon.com/elasticsearch-service/">ElasticSearch</a> </td>
     <td>-</td></tr>
 
 <tr valign="top" class="tblEven"><th align="left">Machine Learning (ML)</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/machine-learning/">Azure Machine Learning</a>
