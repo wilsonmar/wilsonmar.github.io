@@ -635,6 +635,30 @@ Service Organization Controls (SOC) 1, 2, and 3 report is a framework by indepen
 
 National Institute of Standards and Technology (NIST) Cybersecurity Framework (CSF) is a voluntary Framework that consists of standards, guidelines, and best practices to manage cybersecurity-related risks. Through a validated assessment performed by the Health Information Trust Alliance (HITRUST), a leading security and privacy standards development and accreditation organization, Office 365 is certified to the objectives specified in the NIST CSF.
 
+## Credential Rotation Lifecycle
+
+Different periods for rotating different key types. Here is the "regular basis" <a target="_blank" href="https://blogs.msdn.microsoft.com/azuresecurity/2015/07/13/certificate-management-in-azure-dos-and-donts/">recommended</a>: 
+
+<table border="1" cellpadding="4" cellspacing="0"><thead>
+<tr><th>Key Type</th><th>Rotation Period</th></tr></thead><tbody>
+<tr valign="top"><td>Tokens
+   </td><td>ADFS – 24 hours</td></tr >
+<tr valign="top"><td>Domain Passwords
+   </td><td>70 days</td></tr >
+<tr valign="top"><td>Connection strings
+   </td><td>70 days</td></tr >
+<tr valign="top"><td>Shared Access Signatures
+   </td><td>60 days</td></tr >
+<tr valign="top"><td>Self-Signed Certificate
+   </td><td>2 Years</td></tr >
+<tr valign="top"><td>Symmetric Keys
+   </td><td>2 Years</td></tr >
+<tr valign="top"><td>Asymmetric Keys
+   </td><td>2 years</td></tr >
+<tr valign="top"><td>Storage Account Keys
+   </td><td>2 years</td></tr >
+</tbody></table>
+
 
 ## Professional certifications
 
