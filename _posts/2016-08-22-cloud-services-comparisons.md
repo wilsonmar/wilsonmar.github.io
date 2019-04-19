@@ -258,8 +258,12 @@ Here are the names of brand names, some with links to marketing or documentation
 <br /><a target="_blank" href="http://aws.amazon.com/iam/">IAM (Identity and Access Management)</a><br /></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblOdd"><th align="left">Multi-Factor Authentication<br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/multi-factor-authentication/">MFA (Multi-Factor Authentication)</a>
-</td><td><a target="_blank" href="http://aws.amazon.com/iam/details/mfa/">MFA (Multi-Factor Authentication)</a>
+<tr valign="top" class="tblOdd"><th align="left">Threat Monitoring<br /></th><td><a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/intro-to-security-in-azure/2a-azure-security-center">Azure Security Center</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/config/">AWS Config</a></td>
+    <td>-</td></tr>
+
+<tr valign="top" class="tblOdd"><th align="left">Multi-Factor Authentication<br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/multi-factor-authentication/">MFA</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/iam/details/mfa/">MFA</a>
 </td>
     <td>-</td></tr>
 
@@ -327,10 +331,6 @@ Here are the names of brand names, some with links to marketing or documentation
 <tr valign="top" class="tblEven"><th align="left">Audit logs<br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/operational-insights/">Azure Operational Insights</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/cloudtrail/">CloudTrail</a>
 </td>
-    <td>-</td></tr>
-
-<tr valign="top" class="tblEven"><th align="left">Who Did What When</th><td>None
-</td><td><a target="_blank" href="http://aws.amazon.com/config/">AWS Config</a></td>
     <td>-</td></tr>
 
 <tr valign="top" class="tblEven"><th align="left">Zipkin tracing</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/monitor/">Azure Application Monitor Insights</a></td><td><a target="_blank" href="https://aws.amazon.com/xray/">AWS X-Ray</a></td>
