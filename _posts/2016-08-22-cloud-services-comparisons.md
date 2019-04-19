@@ -337,7 +337,7 @@ Here are the names of brand names, some with links to marketing or documentation
     <td>-</td></tr>
 
 
-<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Compute"></a>Compute:zzz</td></tr>
+<tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Compute"></a>Compute:</td></tr>
 
 <tr valign="top" class="tblEven"><th align="left">App/Desktop Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/remoteapp/">Azure RemoteApp</a></td><td><a target="_blank" href="http://aws.amazon.com/workspaces/">WorkSpaces</a><br /><a target="_blank" href="http://aws.amazon.com/appstream/">Amazon AppStream</a><br /></td>
     <td>-</td></tr>
@@ -396,14 +396,15 @@ Here are the names of brand names, some with links to marketing or documentation
 
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="DevOps"></a>DevOps:</td></tr>    
 
+<tr valign="top" class="tblEven"><th align="left">Cloud IDE</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/app-center/">Visual Studio App Center</a>
+</td><td><a target="_blank" href="http://aws.amazon.com/cloud9/">Cloud9</a></td>
+    <td>-</td></tr>
+
 <tr valign="top" class="tblOdd"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/cloud-services/">Cloud Services</a>
 <br /><a target="_blank" href="http://azure.microsoft.com/en-us/services/websites/">Azure Websites and Apps</a>
 <br /></td><td><a target="_blank" href="http://aws.amazon.com/elasticbeanstalk/">Elastic Beanstalk</a></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblEven"><th align="left">Cloud IDE</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/app-center/">Visual Studio App Center</a>
-</td><td><a target="_blank" href="http://aws.amazon.com/cloud9/">Cloud9</a></td>
-    <td>-</td></tr>
 <tr valign="top" class="tblEven"><th align="left">Dev. tools</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/visual-studio-online/">Azure Visual Studio Online</a></td><td>None</td>
     <td>-</td></tr>
 
@@ -411,7 +412,7 @@ Here are the names of brand names, some with links to marketing or documentation
 </td><td><a target="_blank" href="http://aws.amazon.com/cloudformation/">CloudFormation</a></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblEven"><th align="left">Automation</th><td>-
+<tr valign="top" class="tblEven"><th align="left">Chef Automation</th><td>-
 </td><td><a target="_blank" href="http://aws.amazon.com/opsworks/">OpsWorks</a></td>
     <td>-</td></tr>
 
@@ -489,19 +490,16 @@ Here are the names of brand names, some with links to marketing or documentation
 </td><td><a target="_blank" href="http://aws.amazon.com/cloudsearch/">CloudSearch</a></td>
     <td>-</td></tr>
 
-
 <tr valign="top" class="tblEven"><th align="left">Machine Learning (ML)</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/machine-learning/">Azure Machine Learning</a>
 </td><td><a target="_blank" href="https://aws.amazon.com/machine-learning/">Machine-Learning</a> <a target="_blank" href="https://aws.amazon.com/sagemaker/">SageMaker</a></td>
     <td>Tensor Flow</td></tr>
 
-<tr valign="top" class="tblEven"><th align="left">Voice Recognition</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/machine-learning/">Azure Machine Learning</a>
-</td><td><a target="_blank" href="https://aws.amazon.com/machine-learning/">Machine-Learning</a><a target="_blank" href="https://aws.amazon.com/sagemaker/">SageMaker</a></td>
-    <td>-</td></tr>
-<tr valign="top" class="tblEven"><th align="left">Translation</th><td>?
-</td><td>?</td>
+<tr valign="top" class="tblEven"><th align="left">Translation</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/">Translator Text</a>
+</td><td><a target="_blank" href="https://aws.amazon.com/translate/">Amazon Translate</a></td>
     <td><a target="_blank" href="https://translate.google.com/">Google Translate</a></td></tr>
-<tr valign="top" class="tblEven"><th align="left">Text Analytics</th><td>?
-</td><td>?</td>
+
+<tr valign="top" class="tblEven"><th align="left">Voice Recognition</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/">Azure Speaker Recognition</a>
+</td><td><a target="_blank" href="https://aws.amazon.com/rekognition/">Rekognition image and video</a></td>
     <td>-</td></tr>
 
 <tr valign="top" class="tblOdd"><th align="left">Computer Vision</th><td><a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/">Computer Vision</a><a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/face/">Face</a>
