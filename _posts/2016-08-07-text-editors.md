@@ -823,7 +823,7 @@ Extensions for developing on the Salesforce Platform
 0. If updates are being downloaded, wait for all updates to download. While you're waiting: 
 
    PROTIP: Uncheck "Check automatically" so that you can check whether future installers are good.
-   
+
    PROTIP: Add a recurring entry in your personal or team calendar to do the following every Wednesday at 4pm or some specified appointed time.
 
    Copy the version, such as "8.0.4.0" being downloaded.
@@ -848,13 +848,22 @@ Extensions for developing on the Salesforce Platform
    ### Preferences
 
 0. Press command+, or click "Visual Studio", then select <strong>Preferences...</strong>.
-0. Author information.
-0. Key bindings.
-0. External Tools.
+   * In Visual Style, select Dark User Interface theme
+   * Author information.
+   * Key bindings
+   * Fonts (some prefer others more readable ones)
+   * External Tools
+   * In Load/Save, select "Load previous solution on startup"
+     and "Always create backup copy"
+   * Markers and Rulers, check "Highlight current line" and "Visualize changed lines"
+   * Code Snippets ?
+   * Standard Header for your team standard
+   * In Accessibility, check "Enable".
+   <br /><br />
+
+0. Restart
 
    ### Project = Solution (.sln) file
-
-0. Click "File" then "New Solution" (which is new Project).
 
    <img align="right" alt="vs-mac-2019-types-129x386-4607.jpg" width="129" src="https://user-images.githubusercontent.com/300046/56392692-5608b500-61ef-11e9-8589-988622057ee2.jpg" />
 0. Click "File" then "New Solution" (which is new Project).
@@ -864,8 +873,26 @@ Extensions for developing on the Salesforce Platform
 0. To work through the ".NET Core" sample, click "App", then "Web Application". Next. ".NET Core 2.2". Next. 
 0. Name your project/solution in Location (projects folder).
 0. Click "Use git for version control". This add a .gitignore file and .git folder.
-0. Create. ISSUE: Nothing happens and no error messages.
+0. Click "Create". ISSUE: If nothing happens and no error messages, click outside the pop-up dialog window to show.
+0. Click to expand within the Solution pane.
+   
+   ![vs-mac-githubemojis-229x233-6624](https://user-images.githubusercontent.com/300046/56411948-c8a18100-623f-11e9-9442-bc1b226eed88.jpg)
 
+   ### Run (Buile) app
+
+0. Click "Run" icon to build, using default dependencies settings.
+
+0. Click "Yes" if you see "HTTPS development certificate is not trusted".
+
+0. Click "OK" to dismiss the "Mono-sgen32" is not optimized pop-up.
+
+0. In your default internet browser should appear:
+
+   <a target="_blank" href="http://localhost:5001">http://localhost:5001</a>
+
+   The port can be changed in Run, Run With, Custom Configuration, ASP.NET Core.
+
+0. 
 
    ### Version Control
 
