@@ -342,6 +342,9 @@ Here are the names of brand names, some with links to marketing or documentation
 <tr valign="top" class="tblEven"><th align="left">App/Desktop Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/remoteapp/">Azure RemoteApp</a></td><td><a target="_blank" href="http://aws.amazon.com/workspaces/">WorkSpaces</a><br /><a target="_blank" href="http://aws.amazon.com/appstream/">Amazon AppStream</a><br /></td>
     <td>-</td></tr>
 
+<tr valign="top" class="tblEven"><th align="left"><a target="_blank" href="https://www.vpsbenchmarks.com/hosters/microsoft_azure">VPS</a></th><td><a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/linux/">Linux VMs</a></td><td><a target="_blank" href="http://aws.amazon.com/lightsail/">Amazon Lightsail</a><br /></td>
+    <td>-</td></tr>
+
 <tr valign="top" class="tblEven"><th align="left">Compute Services</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/virtual-machines/">Virtual Machines (VMs)</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/ec2/">EC2 (Elastic Compute Cloud)</a></td>
     <td>-</td></tr>
