@@ -954,21 +954,31 @@ Extensions for developing on the Salesforce Platform
 
 0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=5m4s">[5:04]</a> To register the class as a service with .NET Core, create an interface by right-clicking on "GithubEmojiService" in the code and select <strong>Quick Fix</strong>, <strong>Extract Interface...</strong>. Click "OK" to accept defaults, then click the red "X" to dismiss the pop-up dialog. You should now be at new file "IGithubEmojiService.cs" containing:
 
+0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=5m34s">[5:34]</a> Return to file "GitHubEmojiService.cs" and right-click "IGithubEmojiService" to copy it and select "Go to Declaration".
+
    <pre>namespace GithubEmojis
 {
     public interface IGithubEmojiService
     {
-        System.Threading.Tasks.Task<System.Collections.Generic.IList&LT;Emoji> GetEmojis();
+        System.Threading.Tasks.Task<System.Collections.Generic.IList&LT;Emoji>> GetEmojis();
         System.Collections.Generic.IList&LT;Emoji> GetEmojisFrom(string content);
     }
 }
    </pre>
 
-0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=5m34s">[5:34]</a> Return to file "GitHubEmojiService.cs" and right-click "IGithubEmojiService" to copy it and select "Go to Declaration".
+   The code in the video was:
+
+   <pre>Task<IList&LT;Emoji>> GetEmojis();
+      IList&LT;Emoji> GetEmojisFrom(string content);
+   </pre>
 
 0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=5m39s">[5:39]</a> Return to file "GitHubEmojiService.cs" and right-click "IGithubEmojiService" to copy it to your Clipboard. Select "Go to Declaration". Edit file "Startup.cs" and at the location indicated type:
 
    <pre>services.AddSingleton&LT;IGithubEmojiService, GithubEmojiService>();</pre>
+
+0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=5m43s">[5:43]</a> In Pages, edit file <strong>Index.cshtml.cs</strong>. Under "PageModel", above <tt>public void OnGet()</tt>, insert constructor:
+
+
 
 0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=6m12s">[6:12]</a> In Pages, edit file <strong>Index.cshtml.cs</strong>. Under "PageModel", above <tt>public void OnGet()</tt>, insert constructor:
 
@@ -977,8 +987,8 @@ Extensions for developing on the Salesforce Platform
       _emojiService = emojiSvc;
    }
    public IList&LT;Emoji> Emojis {
-      get:
-      set:
+      get;
+      set;
    }</pre>
 
 0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=7m14s">[7:14]</a> Replace the <tt>OnGet</tt> to :
