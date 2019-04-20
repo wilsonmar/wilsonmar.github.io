@@ -24,17 +24,47 @@ additional programs needed as a pre-requisite by Homebrew, Python, and other dev
 
 XCode does not come with macOS.
 
-If you don't already have XCode installed, 
-<a href="#XCodeInstall">click here for install instructions</a>.
+## About XCode
+
+PROTIP: Skip Apple's websites and App. <a href="#2installers">Click here for install instructions</a>.
+
+Otherwise, read on for a run-around.
+
+0. Use an internet browser to XCode's marketing page at:
+
+   <a target="_blank" href="https://developer.apple.com/xcode/">
+   https://developer.apple.com/xcode</a>
+
+   "Xcode 10 includes everything you need to create amazing apps for all Apple platforms. Now Xcode and Instruments look great in the new Dark Mode on macOS Mojave. The source code editor lets you transform or refactor code more easily, see source control changes alongside the related line, and quickly get details on upstream code differences. You can build your own instrument with custom visualization and data analysis. Swift compiles software more quickly, helps you deliver faster apps, and generates even smaller binaries. Test suites complete many times faster, working with a team is simpler and more secure, and much more.".
+   
+   BTW the "Apple platforms" include MacOS, iPhone, iPad, Apple TV, and Apple Watch.
+
+0. Click the blue "Download" at the top of the page to see the <a target="_blank" href="https://developer.apple.com/download/">lastest version</a>
+
+0. Click that blue "Download" button to get to the "Mac App Store Preview</a> at <a target="_blank" href="https://itunes.apple.com/us/app/xcode/id497799835">https://itunes.apple.com/us/app/xcode/id497799835</a>
+
+0. Click <strong>View in Mac App Store</strong>, then "Open App Store.app" in the pop-up.
+0. Provide your Apple ID and password. Get one if you don't already have one.
+
+   Don't click the blue "OPEN" icon at the upper-right to open the app if the app was installed.
+
+0. Scroll down to click <strong> See All</strong>.
+0. Click "Sort by Most Recent".
+0. Read through the Ratings to decide for yourself.
 
 <hr />
 
-## Two different XCode installs
+<a name="2installers"></a>
+
+## Two XCode installs - different scope
 
 Because XCode IDE takes so much disk space, developers who use another  IDE (such as Visual Studio), prefer to only install XCode's <strong>command line utilities</strong> for the <strong>GCC compiler</strong> Python needs.
 Newer versions also installs a Git client.
 
 So it's a good idea to identify what has been installed.
+
+If you don't already have XCode installed, 
+<a href="#XCodeInstall">click here for install instructions</a>.
 
 
 <a name="versions"></a>
@@ -114,11 +144,13 @@ InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault
 
 ## Install Command Line Utilities
 
-See http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/
+See <a target="_blank" href="http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/">http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x</a>
 
-, the entire command line toolkit package gets placed in the following directory:
+The entire command line toolkit package gets placed in the following directory:
 
-/Library/Developer/CommandLineTools/
+   <pre><strong>ls /Library/Developer/CommandLineTools/</strong></pre>
+
+   The folders in there are: <tt>Library  Packages SDKs     usr</tt>
 
 
 <a name="XCodeInstall"></a>
@@ -147,7 +179,7 @@ Either way, if you have command utilities installed, you must first delete it.
    ls $(/Applications/Xcode.app/Contents/Developer)
    </strong></pre>
 
-   The response:
+   Either way, the response:
    
    <pre>Applications Library      Makefiles    Platforms    Toolchains   Tools        usr</pre>
 
@@ -175,22 +207,20 @@ Either way, if you have command utilities installed, you must first delete it.
 
 ### B) Initial install using App Store
 
-On MacOS the XCode IDE is downloaded from the Apple Store app and stored in the "/Applications" folder as "XCode.app".
+On MacOS the XCode IDE is downloaded from the Apple Store app and stored in the "/Applications" folder as file <strong>XCode.app</strong>.
 
 1. On the Touchpad pinch 4 fingers together to click the <strong>App Store</strong>. Search for "XCode".
 
-   If "Open" appears, then XCode.app has already been installed.
+   If the blue "Open" button appears, then XCode.app has already been installed.
 
 2. Click "Install" if that appears.
 
 3. The Apple Store app is stored in the "/Applications" folder as "XCode.app".
 
 
-
 ### XCode IDE install
 
-
-0. Get the installation location in a Terminal window:
+1. Get the installation location in a Terminal window:
 
    <pre><strong>
    xcode-select -p
@@ -203,24 +233,10 @@ On MacOS the XCode IDE is downloaded from the Apple Store app and stored in the 
    </pre>
 
 
-   ### Software update
+## Software updates
 
    So below is the "Software Update" approach:
 
-0. Use an internet browser to <a target="_blank" href="https://developer.apple.com/xcode/">
-   https://developer.apple.com/xcode</a>
-
-   "Xcode 10 includes everything you need to create amazing apps for all Apple platforms. Now Xcode and Instruments look great in the new Dark Mode on macOS Mojave. The source code editor lets you transform or refactor code more easily, see source control changes alongside the related line, and quickly get details on upstream code differences. You can build your own instrument with custom visualization and data analysis. Swift compiles software more quickly, helps you deliver faster apps, and generates even smaller binaries. Test suites complete many times faster, working with a team is simpler and more secure, and much more.".
-   
-   BTW the "Apple platforms" include MacOS, iPhone, iPad, Apple TV, and Apple Watch.
-
-0. Click <strong>View in Mac App Store</strong>, then "Open App Store.app".
-
-0. Provide your Apple ID and password. Get one if you don't already have one.
-
-0. Scroll down to click <strong> See All</strong>.
-0. Click "Sort by Most Recent".
-0. Read through the Ratings to decide for yourself.
 
    ???
 

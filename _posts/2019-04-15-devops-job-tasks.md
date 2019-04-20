@@ -29,7 +29,7 @@ However, <a target="_blank" href="https://wilsonmar.github.io/devops-tasks/">thi
 <br /><br />
 Click on each link above for its job tasks under achievements.
 
-A <strong>dashboard</strong> displaying progress toward a greenfield DevOps implementation would instead categorize areas of technologies such as:
+A <strong>dashboard</strong> displaying progress toward a greenfield DevOps implementation would instead categorize areas of technologies.
 
 
 
@@ -103,10 +103,11 @@ QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.micro
 
    * design a strategy for integrating on-premises and cloud resources
 
+<hr />
 
 <a name="DevProcess"></a>
 
-## Implement DevOps development processes (20-25%)
+## Implement DevOps development processes
 
 ### Design a version control strategy
 
@@ -164,10 +165,11 @@ QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.micro
 
    * implement tools for managing security and compliance in the pipeline
 
+<hr />
 
 <a name="CI"></a>
 
-## Implement continuous integration (10-15%)
+## Implement continuous integration
 
 ### Manage code quality and security policies
 
@@ -201,10 +203,11 @@ QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.micro
 
    * set up an automated build workflow
 
+<hr />
 
 <a name="CD"></a>
 
-## Implement continuous delivery (10-15%)
+## Implement continuous delivery
 
 ### Design a release strategy
 
@@ -244,10 +247,11 @@ QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.micro
 
    * scale a release pipeline to deploy to multiple endpoints (e.g. deployment groups, Azure Kubernetes Service, Service Fabric)
 
+<hr />
 
 <a name="DependencyManagement"></a>
 
-## Implement dependency management (5-10%)
+## Implement dependency management
 
 ### Design a dependency management strategy
 
@@ -269,10 +273,11 @@ QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.micro
 
    * configure secure access to package feeds
 
+<hr />
 
 <a name="AppInfra"></a>
 
-## Implement application infrastructure (15-20%)
+## Implement application infrastructure
 
 ### Design an infrastructure and configuration management strategy
 
@@ -318,10 +323,11 @@ QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.micro
 
    * set up an automated pipeline to inspect security and compliance
 
+<hr />
 
 <a name="feedback"></a>
 
-## Implement continuous feedback (10-15%)
+## Implement continuous feedback
 
 ### Recommend and design system feedback mechanisms
 

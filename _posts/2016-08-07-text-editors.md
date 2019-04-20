@@ -853,17 +853,19 @@ Extensions for developing on the Salesforce Platform
 0. Press command+Q to close the program.
 0. Restart the program again.
 
-> Most of the time, you'll be editing an existing repo rather than creating a new solution from scratch, so here we show how to retrieve an existing repository.
-
-See <a target="_blank" href="https://docs.microsoft.com/en-us/visualstudio/mac/version-control?view=vsmac-2019">Docs about Version control</a>.
-
 ### Get existing repo
+
+PROTIP: Most of the time, you'll be editing an existing repo rather than creating a new solution from scratch, so here we show how to retrieve an existing repository.
+
+Steps here are based on <a target="_blank" href="https://docs.microsoft.com/en-us/visualstudio/mac/version-control?view=vsmac-2019">these docs about Version control</a>.
 
 1. At an internet browser, let's look at the repository we are working with today:
 
-   <a target="_blank" href="https://github.com/sayedihashimi/github-emojis">https://github.com/sayedihashimi/github-emojis</a>
+   <a target="_blank" href="https://github.com/wilsonmar/github-emojis">https://github.com/wilsonmar/github-emojis</a>
 
-1. Since we intend on making changes, we should click <strong>Fork</strong> to fork the repository into our own account.
+   This repo was forked from account sayedihashimi.
+
+1. Since we intend on making changes, click <strong>Fork</strong> to fork the repository into your own account.
 
 1. Copy into your Clipboard the URL to clone:
 
@@ -887,7 +889,7 @@ See <a target="_blank" href="https://docs.microsoft.com/en-us/visualstudio/mac/v
    
    Also in the Git world, "checkout" means viewing something at a particular <strong>point in time</strong> when particular edits occurred in the past. This ability to "time travel" is what makes Git so powerful.
 
-   But first, we need to transfer the repository onto our local drive on our laptop:
+   But first, we need to transfer the repository onto our local drive on our laptop.
 
 1. Under the "Connect to Repository" default tab, label "Url:", double-click on the "git://" to replace it by pressing command+V to paste from Clipboard.
 
@@ -897,7 +899,8 @@ See <a target="_blank" href="https://docs.microsoft.com/en-us/visualstudio/mac/v
 
 1. Click "Checkout". The "cloning" message appears.
 
-   You should now be shown the "Solutions" pane populated with the repository from GitHub.
+   After "Packages successfully restored" appears, you should be shown the "Solutions" pane populated with the repository from GitHub.
+
 
    ### Run (Build) Project
 
@@ -915,7 +918,7 @@ See <a target="_blank" href="https://docs.microsoft.com/en-us/visualstudio/mac/v
 
    PROTIP: The port can be changed in Run > Run With > Custom Configuration > ASP.NET Core.
 
-1. Switch back to the Solution pane. To do this, keep pressing command+Tab on the Mac until you see the Visual Studio icon.
+1. Switch back to the Visual Studio Solution pane. To do this, keep pressing command+Tab on the Mac until you see the Visual Studio icon.
 
    ### Edit in new branch
 
@@ -923,9 +926,9 @@ See <a target="_blank" href="https://docs.microsoft.com/en-us/visualstudio/mac/v
 
    ![vs-mac-sol-expanded-220x301-7499](https://user-images.githubusercontent.com/300046/56457799-1a7c0100-633d-11e9-829a-c398f3b6f7e9.jpg)
 
-   At time of this writing, the repository did not have a README.md file GitHub displays. The file is not used in the application's UI. 
+   At time of this writing, the repository did not have a .gitignore nor README.md file which GitHub displays for readers. README files are usually not referenced in the application's UI. 
    
-   So this exercise will add one if it doesn't exist, or edit the file if it exists.
+   So this exercise below will add one if it doesn't exist, or edit the file if it exists.
 
    ### New branch
 
@@ -954,7 +957,18 @@ See <a target="_blank" href="https://docs.microsoft.com/en-us/visualstudio/mac/v
 
    BTW, this action is equivalent to use of the "git checkout" command on a Terminal.
 
-   ### Add new file
+   ### Add new .gitignore file
+
+0. If a <strong>.gitignore</strong> file does not exist, right-click on the project name again to select "Add", "New File ...", Misc "Empty Text File" and type Name: <strong>.gitignore</strong>. The dot in the first character designates to Linux that the file should be hidden. Click New.
+
+0. Type this text so files automatically created by macOS does not get sent up online.
+
+   <pre><strong>.DS_Store</strong></pre>
+
+   PROTIP: View a comprehensive specification for .gitignore at <a target="_blank" href="https://gitignore.io/">https://gitignore.io</a> and <a target="_blank" href="https://gist.github.com/salcode/10017553">here</a>.
+
+
+   ### Add new README.md file
 
 0. If the README.md file does not exist, right-click on the project name again to select "Add", "New File ...", Misc "Empty Text File" and type Name: README.md. Click New.
 
@@ -978,7 +992,7 @@ See <a target="_blank" href="https://docs.microsoft.com/en-us/visualstudio/mac/v
    
    Notice the green + in the icon associated with the file just changed.
 
-0. Right-click on the file name and select "Version Control", then <strong>Review and Commit</strong>.
+0. Right-click on the file name and select "Version Control", then <strong>Review Solution and Commit</strong>.
 
    ![vs-mac-file-vc-423x284-14412](https://user-images.githubusercontent.com/300046/56459143-c842dc00-634c-11e9-9cc7-d3bf2ae73218.jpg)
 
@@ -987,6 +1001,11 @@ See <a target="_blank" href="https://docs.microsoft.com/en-us/visualstudio/mac/v
    ![vs-mac-commits-767x122-8412](https://user-images.githubusercontent.com/300046/56459205-7b133a00-634d-11e9-8d7d-5d9ef72486bb.jpg)
 
 0. Click "Commit".
+
+   PROTIP: If you are prompted for GitHub credentials, if you have 2FA setup, provide one of the <a target="_blank" href="https://github.com/settings/auth/recovery-codes">Two-factor recovery Codes</a> in the Password: field instead of using Google Authenticator and the password you use to sign into GitHub online.
+
+   You should see "Pushing changes..."
+
 0. Type the commit message, then press "Commit".
 
    PROTIP: See <a target="_blank" href="https://wilsonmar.github.io/git-messages">my notes on crafting Git commit messages and using emojis</a>.
@@ -1163,6 +1182,10 @@ https://www.youtube.com/watch?v=lDIyw--42VA
 0. Click Debug to step into each call.
 
    Alternately, Run to completion (or error).
+
+BTW, additional tutorials on .NET Core Razor:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=--lYHxrsLsc">VIDEO: ASP.NET CORE for Beginners - an 8 Hour Workshop</a> Apr 15, 2018 by Jeffrey T. Fritz and guests Jon Galloway, Julie Lerman (@JulieLerman), and Shayne Boyer (@spboyer). They create a travel app, starting from the API.
 
 <hr />
 
