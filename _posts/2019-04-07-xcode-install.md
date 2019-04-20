@@ -22,10 +22,6 @@ XCode is Apple's free app for developing custom programs for all Apple devices (
 Since the Apple Store only handles individual .app files, other mechanisms are needed to install
 additional programs needed as a pre-requisite by Homebrew, Python, and other development programs.
 
-To build Python on a machine requires a <strong>GCC compiler</strong>.
-One comes with command-line tools installed with
-Apple's XCode IDE. Newer versions also installs a Git client.
-
 XCode does not come with macOS.
 
 If you don't already have XCode installed, 
@@ -33,9 +29,12 @@ If you don't already have XCode installed,
 
 <hr />
 
-## XCode components
+## Two different XCode installs
 
-Because XCode takes so much disk space, developers who use another  IDE (such as Visual Studio), prefer to only install XCode's utilities and run-time components.
+Because XCode IDE takes so much disk space, developers who use another  IDE (such as Visual Studio), prefer to only install XCode's <strong>command line utilities</strong> for the <strong>GCC compiler</strong> Python needs.
+Newer versions also installs a Git client.
+
+So it's a good idea to identify what has been installed.
 
 
 <a name="versions"></a>
@@ -112,13 +111,84 @@ InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault
    <pre>Apple Swift version 5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)
    Target: x86_64-apple-darwin18.5.0</pre>
 
-   <pre><strong>swift -version</strong></pre>
+
+## Install Command Line Utilities
+
+See http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/
+
+, the entire command line toolkit package gets placed in the following directory:
+
+/Library/Developer/CommandLineTools/
+
 
 <a name="XCodeInstall"></a>
 
-### XCode install
+## XCode IDE install
+
+XCode IDE can be installed from a Terminal command line interface (CLI) or as a package from the App Store.
+
+Either way, if you have command utilities installed, you must first delete it.
+
+1. In a Terminal window, find out where it's installed: 
+
+   <pre><strong>
+   xcode-select -p
+   </strong></pre>
+
+   After manual confirmation, the answer:
+
+   <pre>
+   /Applications/Xcode.app/Contents/Developer
+   </pre>
+
+   Alternately, combine two commands:
+
+   <pre><strong>
+   ls $(/Applications/Xcode.app/Contents/Developer)
+   </strong></pre>
+
+   The response:
+   
+   <pre>Applications Library      Makefiles    Platforms    Toolchains   Tools        usr</pre>
+
+
+### A) Initial install on Terminal CLI
+
+1. Open a Terminal.app console window at any directory:
+
+   <pre><strong>
+   xcode-select --install
+   </strong></pre>
+
+   If the XCode IDE is already installed, you'll see message:
+   
+   <pre>
+   xcode-select: error: command line tools are already installed, use "Software Update" to install updates
+   </pre>
+   
+   Otherwise, after manual confirmation, the answer:
+
+   <pre>
+   /Applications/Xcode.app/Contents/Developer
+   </pre>
+
+
+### B) Initial install using App Store
 
 On MacOS the XCode IDE is downloaded from the Apple Store app and stored in the "/Applications" folder as "XCode.app".
+
+1. On the Touchpad pinch 4 fingers together to click the <strong>App Store</strong>. Search for "XCode".
+
+   If "Open" appears, then XCode.app has already been installed.
+
+2. Click "Install" if that appears.
+
+3. The Apple Store app is stored in the "/Applications" folder as "XCode.app".
+
+
+
+### XCode IDE install
+
 
 0. Get the installation location in a Terminal window:
 
@@ -132,16 +202,6 @@ On MacOS the XCode IDE is downloaded from the Apple Store app and stored in the 
    /Applications/Xcode.app/Contents/Developer
    </pre>
 
-
-   It used to be that one can enter a command:
-
-   <pre>xcode-select --install</pre>
-
-   The response on my machine was:
-
-   <pre>
-   xcode-select: error: command line tools are already installed, use "Software Update" to install updates
-   </pre>
 
    ### Software update
 
@@ -189,10 +249,20 @@ On MacOS the XCode IDE is downloaded from the Apple Store app and stored in the 
 
 0. Remember to delete the installer after you're done, to reclaim disk space.
 
+
 <a name="XCodeUpgrade"></a>
 
-### XCode Upgrade
+### XCode IDE Upgrade
 
+Over time, Apple updates XCode and its command line utilities.
+
+1. Click the Apple icon, then click <strong>System Preferences</strong>. Here is an example notification:
+
+   ![xcode-cli-update-436x98-4795](https://user-images.githubusercontent.com/300046/56460275-7e162680-635d-11e9-8d3c-0bb89457dcd8.jpg)
+
+2. Click "Update Now".
+3. Click "Agree".
+4. When done, view the <a href="#versions">version numbers installed</a>.
 
 ## More on OSX #
 
