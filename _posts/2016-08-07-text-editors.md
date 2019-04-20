@@ -817,7 +817,7 @@ Extensions for developing on the Salesforce Platform
 0. Dismiss the pop-up by clicking the red dot at its upper left corner.
 
 
-   ### Patch
+   ### Check for Updates
 
 0. Press command+, or click "Visual Studio" and select "Check for Updates...":
 
@@ -868,7 +868,7 @@ Extensions for developing on the Salesforce Platform
 
    ### Project = Solution (.sln) file
 
-0. Follow along when watching <a target="_blank" href="https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/Visual-Studio-for-Mac-Build-Your-First-App">Visual Studio for Mac: Build Your First App</a> Jan 22, 2019 by Sayed Hashimi who creates a .NET Core 2.1 Razor web app using <a target="_blank" href="https://github.com/sayedihashimi/github-emojis">https://github.com/sayedihashimi/github-emojis</a>
+0. Follow along when watching <a target="_blank" href="https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/Visual-Studio-for-Mac-Build-Your-First-App">Visual Studio for Mac: Build Your First App</a> Jan 22, 2019 by <a target="_blank" href="https://www.linkedin.com/in/sayedibrahimhashimi/">Sayed Ibrahim Hashimi</a> who creates a .NET Core 2.1 Razor web app using a list of emoji names and associated png files.
 
    <img align="right" alt="vs-mac-2019-types-129x386-4607.jpg" width="129" src="https://user-images.githubusercontent.com/300046/56392692-5608b500-61ef-11e9-8589-988622057ee2.jpg" />
 0. Click "File" then "New Solution" (which is new Project).
@@ -887,58 +887,125 @@ Extensions for developing on the Salesforce Platform
 
    ### Run (Build) app
 
+   In the folder Visual Studio generates files to populate content for a sample website to links about .NET.
+
 0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=1m13s">[1:14]</a> Click "Run" icon to build, using default dependencies settings.
 
 0. Click "Yes" if you see "HTTPS development certificate is not trusted".
 
-0. Click "OK" to dismiss the "Mono-sgen32" is not optimized pop-up.
+0. Click "OK" to dismiss the "Mono-sgen32 is not optimized" pop-up. This means that the app is built using a 32 (rather than 64) bit compiler, for which <a target="_blank" href="https://support.apple.com/en-gb/HT208436">Apple is ending support</a>, especially on macOS Mojave (10.14). Read more about it <a target="_blank" href="https://www.macworld.co.uk/feature/mac-software/not-optimized-mac-warning-3675674/">here</a>.
 
-0. In your default internet browser should appear:
+0. In your default internet browser should appear on its own:
 
    <a target="_blank" href="http://localhost:5001">http://localhost:5001</a>
 
-   PROTIP: The port can be changed in Run, Run With, Custom Configuration, ASP.NET Core.
+   PROTIP: The port can be changed in Run > Run With > Custom Configuration > ASP.NET Core.
 
-0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=1m30s">[1:30]</a> Switch back to Visual Studio. Customize the <strong>_Layout.cshtml</strong> file under Pages > Shared.
+0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=1m30s">[1:30]</a> Switch back to Visual Studio. Under Pages > Shared, customize the <strong>_Layout.cshtml</strong> file .
 
-   Get rid of the Enviornment sections bringing in Bootstrap to end up with <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=2m10s">this code</a>.
+   <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=2m10s">[2:10]</a> Get rid of the &LT;environment&LT; sections bringing in Bootstrap</a> except for:
+   
+   <pre>&LT;link rel="stylesheet" href="~/css/site.css" /></pre>
+   
+   Replace "@ViewData["Title"] - GithubEmojis" generated with static text "Github Emojis".
 
-   <pre>&LT;body>
-      @renderBody()
-   &LT;/body></pre>
+   to end up code that contains this code:
 
-0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=3m15s">[3:15]</a> Add new file and classes K an Url.
+   <pre>&LT;!DOCTYPE html>
+&LT;html>
+    &LT;head>
+        &LT;meta charset="utf-8" />
+        &LT;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        &LT;title>Github Emojis</title>
+            &LT;link rel="stylesheet" href="~/css/site.css" />
+    &LT;/head>
+    &LT;body>
+        @RenderBody()
+    &LT;/body>
+&LT;/html>
+   </pre>
 
-0. https://api.github.com/emojis is a list of emjoji codes and each rendered in a png file.
+0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=3m8s">[3:08]</a> Right-click on the project "GitHubEmojis" to select Add > New File, name: "Emoji" (General Empty Class). Click New.
+
+0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=3m15s">[3:15]</a> In the code under "public class Emoji", in place of the "public Emojis()" fragment and type "prop" and Tab Tab for auto-complete, and edit to end up with:
+
+   <pre>public string Key {
+      get:
+      set:
+   }
+   public string Url {
+      get:
+      set:
+   }</pre>
+
+0. To add the code that retrieves the list of emjoji codes and each rendered in a png file at <a target="_blank" href="https://api.github.com/emojis">https://api.github.com/emojis</a>, clone onto your laptop repository:
+
+   git clone <a target="_blank" href="https://github.com/sayedihashimi/github-emojis">https://github.com/sayedihashimi/github-emojis</a>
+
+   NOTE: This step is missing in the video.
+
+0. Switch to Visual Studio to establish the target for receiving dragged files.
+
+0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=3m58s">[3:58]</a> In Finder, navigate in the "github-emojis" repo to file "GithubEmojiService.cs" and drag it into the <strong>GithubEmojis</strong> project (root) folder.
+
+   The file should now be among the "Program.cs" file.
+
+   <a target="_blank" href="https://github.com/wilsonmar/github-emojis/tree/master/GithubEmojis/GithubEmojis">https://github.com/wilsonmar/github-emojis/tree/master/GithubEmojis/GithubEmojis">
+
+0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=5m4s">[5:04]</a> To register the class as a service with .NET Core, create an interface by right-clicking on "GithubEmojiService" in the code and select <strong>Quick Fix</strong>, <strong>Extract Interface</strong>. Click "OK" to accept defaults, then click the red "X" to dismiss the pop-up dialog. You should now be at new file "IGithubEmojiService.cs".
+
+0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=5m34s">[5:34]</a> Return to file "GitHubEmojiService.cs" and right-click "IGithubEmojiService" to copy it and select "Go to Declaration".
+
+0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=5m39s">[5:39]</a> Return to file "GitHubEmojiService.cs" and right-click "IGithubEmojiService" to copy it to your Clipboard. Select "Go to Declaration". Edit file "Startup.cs" and at the location indicated type:
+
+   <pre>services.AddSingleton&LT;IGithubEmojiService, GithubEmojiService>();</pre>
+
+0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=6m12s">[6:12]</a> In Pages, edit file <strong>Index.cshtml.cs</strong>. Under "PageModel", type to insert:
+
+   <pre>private IGithubEmojiService _emojiService:
+   public IndexModel(IGithubEmojiService emojiSvc) {
+      _emojiService = emojiSvc;
+   }</pre>
+
+0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=7m14s">[7:14]</a> Customize OnGet() method, add a property:
+
+   <pre>public IList&LT;Emoji> Emojis {
+      get:
+      set:
+   }
+   public async Task OnGet() {
+      Emojis = await _emojiService.GetEmojis();
+   }</pre>
+
+0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=8m13s">[8:13]</a> Edit file <strong>index.cshtml</strong> to remove the line "ViewData" and all the &LT;div> lines from the boilerplate. Replace it with:
+
+   <pre>&LT;div class="allEmojis">
+      @foreach(var em in Model.Emojis) {
+         &LT;div class="allEmojis">
+            &LT;img src="@em.Url" alt="Emoji - @em.Key" width="128" height="128" /L>
+            &LT;code>@em.Key&LT;/code>
+         &LT;div>
+      }</pre>
+
+0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=9m49s">[9:49]</a> Edit file <strong>index.cshtml</strong> to remove the line "ViewData" and all the &LT;div> lines from the boilerplate. Replace it by dragging and droping the repo downloaded within folder <strong>wwwroot/css</strong> folder the <strong>site.css</strong> file, with overwrite/replace.
+
+0. File > Save All files changed.
+
+0. Click Run.
 
 
+   ### Git Version Control built-in
 
-   ### Version Control
+0. Add and commit changes using the Git version control features:
 
    ![vs-mac-2019-vc-222x329-7488](https://user-images.githubusercontent.com/300046/56392533-ec88a680-61ee-11e9-8b6c-0eddb9b22737.jpg)
 
+   After you're done editing, you should have a set of files like the ones at <a target="_blank" href="https://github.com/sayedihashimi/github-emojis">https://github.com/sayedihashimi/github-emojis</a>
 
-### Powershell
+   Clone the repository and run it as the completed solution to this exercise.
 
-0. Spread 4 finger together at the same time on the Touchpad to see that Powershell has been installed as well.
 
-0. Install Powershell using Homebrew:
-
-   <pre>brew cask reinstall powershell</pre>
-   The response includes, for example:
-   <pre>installer: Package name is PowerShell - 6.2.0</pre>
-
-0. Switch to a Terminal to see where it's installed:
-
-   <pre>which powershell</pre>
-   for response:
-   <pre>/usr/local/bin/powershell</pre>
-
-0. Identify its metadata:
-
-   <pre>ls -al /usr/local/bin/powershell</pre>
-   for response:
-   <pre>lrwxr-xr-x  1 wilsonmar  wheel  55 Sep 25  2017 /usr/local/bin/powershell -> /usr/local/microsoft/powershell/6.0.0-beta.7/powershell</pre>
+<hr />
 
 <a name="Cloud9"></a>
 
