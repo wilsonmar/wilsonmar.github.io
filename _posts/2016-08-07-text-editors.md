@@ -726,27 +726,9 @@ Extensions for developing on the Salesforce Platform
 
 ## Visual Studio for Mac #
 
-### Install
+### &nbsp; &nbsp; &nbsp; Install
 
-1. Install Apple's <strong>XCode</strong> on your Mac's App Store.
-
-   NOTE: Each version is related to a specific version of the Apple OS Mac operating system.
-
-   Know the version by clicking on the program name next to the Apple icon, 
-   then select "About":
-
-   ![xcode about 271x48](https://cloud.githubusercontent.com/assets/300046/21987451/dc44154a-dbc0-11e6-90b6-4dce91b8c5d2.png)
-
-   * Version 10.2 (10E125)
-   * Version 8.1 (8B62)
-   * Version 7 supports iOS 9
-   <br /><br />
-
-   PROTIP: Although Xamarin Studio is currently offered,
-   its functonality is being folded into 
-   <a target="_blank" href="https://www.visualstudio.com/vs/visual-studio-mac/">Visual Studio for Mac</a> until May 31, 2017.
-
-   There are now paid Professional and Enterprise editions.
+1. See <a target="_blank" href="https://wilsonmar.github.io/xcode/">https://wilsonmar.github.io/xcode</a> to install Apple's <strong>XCode</strong>.
 
 0. Follow along when watching <a target="_blank" href="https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-12-Getting-Started-with-Visual-Studio-for-Mac">VIDEO: Snack Pack 12: Getting Started with Visual Studio 2017 for Mac</a> May 31, 2017 by James Montemagno (<a target="_blank" href="http://twitter.com/jamesmontemagno">@jamesmontemagno<a>). which covers mobile development as well.
 
@@ -755,9 +737,13 @@ Extensions for developing on the Salesforce Platform
 
 0. Click "Download for Mac" and select "Community 2019 for Mac".
 
-   NOTE: The 2019 version is also called "v16".
+   PROTIP: The 2019 version is also called "v16" behind the scenes.
 
-   NOTE: The "Professional" and "Enterprise" versions cost money but provides more features.
+   The "Professional" and "Enterprise" versions cost money but provides more features.
+
+   PROTIP: Although Xamarin Studio is currently offered,
+   its functonality is being folded into 
+   <a target="_blank" href="https://www.visualstudio.com/vs/visual-studio-mac/">Visual Studio for Mac</a> until May 31, 2017.
 
 0. Click "Save" on the pop-up to download <strong>visualstudioformacinstaller.dmg</strong>:
 
@@ -799,7 +785,8 @@ Extensions for developing on the Salesforce Platform
 
 0. Switch to Finder, system "/Applications" folder and notice there is, at time of writing:
 
-   * "Visual Studio.app" of 1.55 GB and "Xamarine Profiler.app" of 93.6 MB.
+   "Visual Studio.app" of 1.55 GB and<br />
+   "Xamarine Profiler.app" of 93.6 MB.
 
 0. Navigate to your <strong>Projects</strong> folder and drag it to the Finder's left Navigatin pane, for easy access.
 
@@ -810,12 +797,11 @@ Extensions for developing on the Salesforce Platform
 
 0. PROTIP: Drag the app icon and drop it on your Mac Dock for easy access.
 
-0. Use your mouse to click the "Visual Studio" icon to open the program.
+0. Use your mouse to click the "Visual Studio" icon to open the program to see this:
 
    ![vs-mac-2019-new-669x269-10031](https://user-images.githubusercontent.com/300046/56381902-5f842400-61d3-11e9-8a22-0e594d4dd570.jpg)
 
 0. Dismiss the pop-up by clicking the red dot at its upper left corner.
-
 
    ### Check for Updates
 
@@ -850,7 +836,7 @@ Extensions for developing on the Salesforce Platform
 
    ### Preferences
 
-0. Press command+, or click "Visual Studio", then select <strong>Preferences...</strong>.
+0. Press command+comma or click "Visual Studio" in the menu, then select <strong>Preferences...</strong>.
    * In Visual Style, select Dark User Interface theme
    * Author information.
    * Key bindings
@@ -864,11 +850,171 @@ Extensions for developing on the Salesforce Platform
    * In Accessibility, check "Enable".
    <br /><br />
 
-0. Restart.
+0. Press command+Q to close the program.
+0. Restart the program again.
 
-   ### Project = Solution (.sln) file
+> Most of the time, you'll be editing an existing repo rather than creating a new solution from scratch, so here we show how to retrieve an existing repository.
 
-0. Follow along when watching <a target="_blank" href="https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/Visual-Studio-for-Mac-Build-Your-First-App">Visual Studio for Mac: Build Your First App</a> Jan 22, 2019 by <a target="_blank" href="https://www.linkedin.com/in/sayedibrahimhashimi/">Sayed Ibrahim Hashimi</a> who creates a .NET Core 2.1 Razor web app using a list of emoji names and associated png files.
+See <a target="_blank" href="https://docs.microsoft.com/en-us/visualstudio/mac/version-control?view=vsmac-2019">Docs about Version control</a>.
+
+### Get existing repo
+
+1. At an internet browser, let's look at the repository we are working with today:
+
+   <a target="_blank" href="https://github.com/sayedihashimi/github-emojis">https://github.com/sayedihashimi/github-emojis</a>
+
+1. Since we intend on making changes, we should click <strong>Fork</strong> to fork the repository into our own account.
+
+1. Copy into your Clipboard the URL to clone:
+
+   On GitHub, click the green "Clone or download" button, then the clipboard icon: 
+   <a target="_blank" href="https://github.com/wilsonmar/github-emojis">https://github.com/wilsonmar/github-emojis</a>
+   Your URL would not contain "wilsonmar" but your own account name.
+
+   ![vs-mac-github-clone-439x216](https://user-images.githubusercontent.com/300046/56458328-5cf40c80-6342-11e9-954d-575130451078.jpg)
+
+   Alternately, <a target="_blank" title="Jan 29, 2019" href="https://www.youtube.com/watch?v=LsA5t2RAfgM&t=31s">[0:31]</a> on Azure DevOps, click "Clone" and click the copy icon or highlight and copy into your Clipboard.
+
+1. <a target="_blank" title="Jan 29, 2019" href="https://www.youtube.com/watch?v=LsA5t2RAfgM&t=36s">[0:36]</a> At the app menu, click on <strong>Version Control</strong>.
+
+   ![vs-mac-2019-vc-222x329-7488](https://user-images.githubusercontent.com/300046/56392533-ec88a680-61ee-11e9-8b6c-0eddb9b22737.jpg)
+
+1. Click "Checkout...".
+
+   CAUTION: The word "Checkout" has different meaning in Git versus Subversion programs. Unfortunately, Visual Studio developers have chosen to use the meaning from the legacy Subversion world, which is akin to checking out a <strong>physical book</strong> from a library building. Others cannot use the book you hold until you check it back in.
+   
+   The equivalent word in the Git world is <strong>clone</strong>, but is akin to getting a <strong>photocopy</strong> of the book. Others can still get additional copies.
+   
+   Also in the Git world, "checkout" means viewing something at a particular <strong>point in time</strong> when particular edits occurred in the past. This ability to "time travel" is what makes Git so powerful.
+
+   But first, we need to transfer the repository onto our local drive on our laptop:
+
+1. Under the "Connect to Repository" default tab, label "Url:", double-click on the "git://" to replace it by pressing command+V to paste from Clipboard.
+
+   ![vs-mac-checkout-601x446-14893](https://user-images.githubusercontent.com/300046/56457712-ad1ba080-633b-11e9-9168-0308f6f2f68d.jpg)
+
+   Notice several fields are auto-populated in the form.
+
+1. Click "Checkout". The "cloning" message appears.
+
+   You should now be shown the "Solutions" pane populated with the repository from GitHub.
+
+   ### Run (Build) Project
+
+1. Click "Run" icon to build the app, using default settings for dependencies.
+
+0. If you see "HTTPS development certificate is not trusted", click "Yes".
+
+0. Click "OK" to dismiss the "Mono-sgen32 is not optimized" pop-up if it comes up. This means that Visual Studio was built using a 32 (rather than 64) bit compiler, for which <a target="_blank" href="https://support.apple.com/en-gb/HT208436">Apple is ending support</a>, especially on macOS Mojave (10.14). Read more about it <a target="_blank" href="https://www.macworld.co.uk/feature/mac-software/not-optimized-mac-warning-3675674/">here</a>.
+
+0. After "Build successful" appears at the top of Visual Studio, in your default internet browser should appear a new tab with URL:
+
+   <a target="_blank" href="http://localhost:5001">http://localhost:5001</a>
+
+   ![vs-mac-github-emojis-648x145-11885](https://user-images.githubusercontent.com/300046/56457870-16041800-633e-11e9-87e7-4b05c866d319.jpg)
+
+   PROTIP: The port can be changed in Run > Run With > Custom Configuration > ASP.NET Core.
+
+1. Switch back to the Solution pane. To do this, keep pressing command+Tab on the Mac until you see the Visual Studio icon.
+
+   ### Edit in new branch
+
+1. In the Solution pane, click the right-pointing arrow next to the project name to expand the tree:
+
+   ![vs-mac-sol-expanded-220x301-7499](https://user-images.githubusercontent.com/300046/56457799-1a7c0100-633d-11e9-829a-c398f3b6f7e9.jpg)
+
+   At time of this writing, the repository did not have a README.md file GitHub displays. The file is not used in the application's UI. 
+   
+   So this exercise will add one if it doesn't exist, or edit the file if it exists.
+
+   ### New branch
+
+   <a name="VersionControlMenu"></a>
+
+0. Click the Version Control menu for this:
+
+   <img alt="vs-mac-vc-242x501-13722.jpg" width="242" src="https://user-images.githubusercontent.com/300046/56458529-397e9100-6345-11e9-87cd-26f699196c76.jpg">
+
+0. Select "Manage Branches and Remotes" for this:
+
+   ![vs-mac-newrepo-600x122-6150](https://user-images.githubusercontent.com/300046/56458571-cfb2b700-6345-11e9-97cf-261a78368b0f.jpg)
+
+0. Click New.
+0. In the Name: field, enter "add-README.md".
+0. Click OK, then "Close".
+
+   ### Switch (checkout) to new branch
+
+0. In the Solutions pane, notice "(master)" next to the project name. 
+   
+   "master" is the current branch name.
+
+   <img align="right" alt="vs-mac-proj-menu-219x519-15990.jpg" width="219" src="https://user-images.githubusercontent.com/300046/56458712-7186d380-6347-11e9-96b8-e60bcbd81379.jpg">
+0. Right-click on the project name to select "Switch to Branch" and click the branch name just created.
+
+   BTW, this action is equivalent to use of the "git checkout" command on a Terminal.
+
+   ### Add new file
+
+0. If the README.md file does not exist, right-click on the project name again to select "Add", "New File ...", Misc "Empty Text File" and type Name: README.md. Click New.
+
+0. Type the text in GitHub markup language.
+
+   PROTIP: Although GitHub automatically converts text beginning with "http" into links, those clicking on such links are sent to that link within the same window. To open a new window when the link is clicked, use text like this:
+   
+   <pre>A video explaining the steps to create this repo within Visual Studio 2017 for Mac was recorded by Sayed Ibrahim Hashimi Jan 22, 2019 and is avialable at:
+   &nbsp;
+   &LT;a target="_blank" href="https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/Visual-Studio-for-Mac-Build-Your-First-App">https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/Visual-Studio-for-Mac-Build-Your-First-App&LT;/a>
+   &nbsp;
+   This repo is used in a tutorial to setup and use Visual Studio 2019 for Mac at:
+   &nbsp;
+   &LT;a target="_blank" href="https://wilsonmar.github.io/text-editors/#visual-studio-for-mac">https://wilsonmar.github.io/text-editors/#visual-studio-for-mac&LT;/a></pre>
+
+   ### Report issue
+
+   BLAH: Believe it or not, the feature that makes all text visible on a line (rather than having long sentences disappear), called <strong>"word wrapping"</strong>, is not in Visual Studio. So please add your voice to call for action in <a target="_blank" href="   https://visualstudio.uservoice.com/forums/563332-visual-studio-for-mac/suggestions/17166137-text-wrapping">this UserVoice issue</a> first reported in 2017.
+
+   ### Add and commit change
+   
+   Notice the green + in the icon associated with the file just changed.
+
+0. Right-click on the file name and select "Version Control", then <strong>Review and Commit</strong>.
+
+   ![vs-mac-file-vc-423x284-14412](https://user-images.githubusercontent.com/300046/56459143-c842dc00-634c-11e9-9cc7-d3bf2ae73218.jpg)
+
+0. Check or uncheck files you want to include in the Git Add and Commit action:
+
+   ![vs-mac-commits-767x122-8412](https://user-images.githubusercontent.com/300046/56459205-7b133a00-634d-11e9-8d7d-5d9ef72486bb.jpg)
+
+0. Click "Commit".
+0. Type the commit message, then press "Commit".
+
+   PROTIP: See <a target="_blank" href="https://wilsonmar.github.io/git-messages">my notes on crafting Git commit messages and using emojis</a>.
+
+   ### Pull (from) then push (to) remote
+   
+0. Select <a href="#VersionControlMenu">"Version Control" in the top menu</a> and select <strong>Update Solution</strong>, which first pulls changes from online, then pushes commits to it.
+
+   If there are no commits waiting to be pulled down or changes to be pushed, "Update operation completed" is shown.
+
+0. View the <strong>Log</strong> by right-clicking on the project name to select "Version Control", then "Log".
+
+0. View the file online to confirm the transfer.
+
+
+### Create project from scratch
+
+Follow along when watching <a target="_blank" href="https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/Visual-Studio-for-Mac-Build-Your-First-App">Visual Studio for Mac: Build Your First App</a> Jan 22, 2019 by <a target="_blank" href="https://www.linkedin.com/in/sayedibrahimhashimi/">Sayed Ibrahim Hashimi</a> who creates a .NET Core 2.1 Razor web app using a list of emoji names and associated png files.
+
+https://www.youtube.com/watch?v=lDIyw--42VA
+
+1. Obtain files referenced in the video. To retrieve the list of emjoji codes and each rendered in a png file at <a target="_blank" href="https://api.github.com/emojis">https://api.github.com/emojis</a>, clone onto your laptop repository:
+
+   <pre>git clone <a target="_blank" href="https://github.com/sayedihashimi/github-emojis">https://github.com/sayedihashimi/github-emojis</a></pre>
+
+   NOTE: This step is missing in the video.
+
+1. Open Visual Studio 2019 for Mac.
 
    <img align="right" alt="vs-mac-2019-types-129x386-4607.jpg" width="129" src="https://user-images.githubusercontent.com/300046/56392692-5608b500-61ef-11e9-8589-988622057ee2.jpg" />
 0. Click "File" then "New Solution" (which is new Project).
@@ -942,7 +1088,7 @@ Extensions for developing on the Salesforce Platform
 
    git clone <a target="_blank" href="https://github.com/sayedihashimi/github-emojis">https://github.com/sayedihashimi/github-emojis</a>
 
-   NOTE: This step is missing in the video.
+   [NOTE: This step is missing in the video.]
 
 0. Switch to Visual Studio to establish the target for receiving dragged files.
 
@@ -965,6 +1111,8 @@ Extensions for developing on the Salesforce Platform
     }
 }
    </pre>
+
+   BLAH: I'm getting error message "/Users/wilsonmar/projects/GithubEmojis/GithubEmojis/IGithubEmojiService.cs(70,70): Error CS0246: The type or namespace name 'Emoji' could not be found (are you missing a using directive or an assembly reference?) (CS0246) (GithubEmojis)"
 
    The code in the video was:
 
@@ -1015,18 +1163,6 @@ Extensions for developing on the Salesforce Platform
 0. Click Debug to step into each call.
 
    Alternately, Run to completion (or error).
-
-
-   ### Git Version Control built-in
-
-0. Add and commit changes using the Git version control features:
-
-   ![vs-mac-2019-vc-222x329-7488](https://user-images.githubusercontent.com/300046/56392533-ec88a680-61ee-11e9-8b6c-0eddb9b22737.jpg)
-
-   After you're done editing, you should have a set of files like the ones at <a target="_blank" href="https://github.com/sayedihashimi/github-emojis">https://github.com/sayedihashimi/github-emojis</a>
-
-   Clone the repository and run it as the completed solution to this exercise.
-
 
 <hr />
 
