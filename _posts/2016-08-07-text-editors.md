@@ -903,7 +903,7 @@ Extensions for developing on the Salesforce Platform
 
 0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=1m30s">[1:30]</a> Switch back to Visual Studio. Under Pages > Shared, customize the <strong>_Layout.cshtml</strong> file .
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=2m10s">[2:10]</a> Get rid of the &LT;environment&LT; sections bringing in Bootstrap</a> except for:
+   <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=2m10s">[2:10]</a> Get rid of the <tt>environment</tt> sections bringing in Bootstrap except for:
    
    <pre>&LT;link rel="stylesheet" href="~/css/site.css" /></pre>
    
@@ -927,15 +927,15 @@ Extensions for developing on the Salesforce Platform
 
 0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=3m8s">[3:08]</a> Right-click on the project "GitHubEmojis" to select Add > New File, name: "Emoji" (General Empty Class). Click New.
 
-0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=3m15s">[3:15]</a> In the code under "public class Emoji", in place of the "public Emojis()" fragment and type "prop" and Tab Tab for auto-complete, and edit to end up with:
+0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=3m15s">[3:15]</a> In the code under "public class Emoji", in place of the "public Emojis" fragment and type "prop" and Tab Tab for auto-complete, and edit to end up with:
 
    <pre>public string Key {
-      get:
-      set:
+      get;
+      set;
    }
    public string Url {
-      get:
-      set:
+      get;
+      set;
    }</pre>
 
 0. To add the code that retrieves the list of emjoji codes and each rendered in a png file at <a target="_blank" href="https://api.github.com/emojis">https://api.github.com/emojis</a>, clone onto your laptop repository:
@@ -952,7 +952,17 @@ Extensions for developing on the Salesforce Platform
 
    <a target="_blank" href="https://github.com/wilsonmar/github-emojis/tree/master/GithubEmojis/GithubEmojis">https://github.com/wilsonmar/github-emojis/tree/master/GithubEmojis/GithubEmojis">
 
-0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=5m4s">[5:04]</a> To register the class as a service with .NET Core, create an interface by right-clicking on "GithubEmojiService" in the code and select <strong>Quick Fix</strong>, <strong>Extract Interface</strong>. Click "OK" to accept defaults, then click the red "X" to dismiss the pop-up dialog. You should now be at new file "IGithubEmojiService.cs".
+0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=5m4s">[5:04]</a> To register the class as a service with .NET Core, create an interface by right-clicking on "GithubEmojiService" in the code and select <strong>Quick Fix</strong>, <strong>Extract Interface...</strong>. Click "OK" to accept defaults, then click the red "X" to dismiss the pop-up dialog. You should now be at new file "IGithubEmojiService.cs" containing:
+
+   <pre>namespace GithubEmojis
+{
+    public interface IGithubEmojiService
+    {
+        System.Threading.Tasks.Task<System.Collections.Generic.IList&LT;Emoji> GetEmojis();
+        System.Collections.Generic.IList&LT;Emoji> GetEmojisFrom(string content);
+    }
+}
+   </pre>
 
 0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=5m34s">[5:34]</a> Return to file "GitHubEmojiService.cs" and right-click "IGithubEmojiService" to copy it and select "Go to Declaration".
 
@@ -960,20 +970,20 @@ Extensions for developing on the Salesforce Platform
 
    <pre>services.AddSingleton&LT;IGithubEmojiService, GithubEmojiService>();</pre>
 
-0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=6m12s">[6:12]</a> In Pages, edit file <strong>Index.cshtml.cs</strong>. Under "PageModel", type to insert:
+0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=6m12s">[6:12]</a> In Pages, edit file <strong>Index.cshtml.cs</strong>. Under "PageModel", above <tt>public void OnGet()</tt>, insert constructor:
 
-   <pre>private IGithubEmojiService _emojiService:
+   <pre>private IGithubEmojiService _emojiService;
    public IndexModel(IGithubEmojiService emojiSvc) {
       _emojiService = emojiSvc;
-   }</pre>
-
-0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=7m14s">[7:14]</a> Customize OnGet() method, add a property:
-
-   <pre>public IList&LT;Emoji> Emojis {
+   }
+   public IList&LT;Emoji> Emojis {
       get:
       set:
-   }
-   public async Task OnGet() {
+   }</pre>
+
+0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=7m14s">[7:14]</a> Replace the <tt>OnGet</tt> to :
+
+   <pre>public async Task OnGet() {
       Emojis = await _emojiService.GetEmojis();
    }</pre>
 
@@ -984,14 +994,17 @@ Extensions for developing on the Salesforce Platform
          &LT;div class="allEmojis">
             &LT;img src="@em.Url" alt="Emoji - @em.Key" width="128" height="128" /L>
             &LT;code>@em.Key&LT;/code>
-         &LT;div>
-      }</pre>
-
+         &LT;/div>
+      }
+   &LT;/div></pre>
+   
 0. <a target="_blank" href="https://www.youtube.com/watch?v=2CsZpJdFFnQ&t=9m49s">[9:49]</a> Edit file <strong>index.cshtml</strong> to remove the line "ViewData" and all the &LT;div> lines from the boilerplate. Replace it by dragging and droping the repo downloaded within folder <strong>wwwroot/css</strong> folder the <strong>site.css</strong> file, with overwrite/replace.
 
 0. File > Save All files changed.
 
-0. Click Run.
+0. Click Debug to step into each call.
+
+   Alternately, Run to completion (or error).
 
 
    ### Git Version Control built-in

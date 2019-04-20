@@ -232,7 +232,6 @@ https://outage.report/aws-amazon-web-services
 * <a href="#Persistance">Persistance</a> (databases)
 * <a href="#Analytics">Analytics</a> (includes Machine Learning & AI)
 
-Based on <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/aws-professional/services">this comparison</a>
 
 ## Service brand names #
 
