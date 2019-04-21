@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "DevOps job tasks (for professional certification)"
-excerpt: "Achievements linked to job tasks using Azure"
+title: "DevOps job tasks (the work of DevOps)"
+excerpt: "Get DevOps done using job tasks and projects based on job tasks defined by professional certification"
 tags: [devops, certs]
 image:
 # cert-corporateoasis-1900x500-28088.jpg
@@ -17,7 +17,7 @@ comments: true
 
 Most job descriptons for DevOps roles focus on vendor <strong>product offerings</strong> (GitHub, Jenkins, etc.).
 
-<img align="right" alt="azure-devopsexpert-230x258-7173.jpg" width="115" src="https://user-images.githubusercontent.com/300046/56392303-56548080-61ee-11e9-8c6c-016ec8c3625a.jpg">
+<a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx"><img align="right" alt="azure-devopsexpert-230x258-7173.jpg" width="115" src="https://user-images.githubusercontent.com/300046/56392303-56548080-61ee-11e9-8c6c-016ec8c3625a.jpg"></a>
 However, <a target="_blank" href="https://wilsonmar.github.io/devops-job-tasks/">this page</a> lists the contributions, achievements, and outcomes from working DevOps (DevTestSecOps or DevXOps), based on Job Task Analysis done for the <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-AZ-400.aspx">Implementing Azure DevOps Solutions exam AZ-400</a> which fuilfills requirements to be designated a <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">Microsoft Certified: Azure DevOps Engineer Expert</a>. Expand all (click on) these high-level statements of <strong>contributions</strong>:
 
 1. <a href="#Strategy">Design a DevOps strategy</a>
@@ -32,17 +32,24 @@ Under each are job tasks.
 
 A <strong>dashboard</strong> displaying progress toward DevOps implementation would instead be grouped by <strong>categories of technology</strong>:
 
-* <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Security">Security</a>
-* <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Networks">Networks</a>
-* <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Management">Management</a> (monitoring)
-* <a href="https://wilsonmar.github.io/cloud-services-comparisons/#DevOps">DevOps</a> (development to operations)
-* <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Compute">Compute</a> (virtual machines)
-* <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Integration">Integration</a> (messaging)
-* <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Persistance">Persistance</a> (databases)
-* <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Analytics">Analytics</a> (BI, Visualization, Machine Learning & AI)
+A. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Security">Security</a>
+B. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Networks">Networks</a>
+C. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Persistance">Persistance</a> (databases)
+D. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Compute">Compute</a> (virtual machines)
+E. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Management">Management</a> (monitoring)
+F. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#DevOps">DevOps</a> (development to operations)
+G. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Integration">Integration</a> (messaging)
+H. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Analytics">Analytics</a> (BI, Visualization, Machine Learning & AI)
 <br /><br />
 
-The above list is used to <a target="_blank" href="https://wilsonmar.github.io/cloud-services-comparisons/">compare cloud service product names</a> and often as organizational management boundaries.
+The above list is often used to also define organizational boundaries, with technicians report to a manager in charge of each category. The issue with this is that each category is dependent on others to be setup at the same time. But traditional enterprise communication tends to be funneled up through category managers rather than directly among workers. 
+
+"Agile" teams aim to put skills that address ALL categories into each small team. That's a tall order considering the staggering number of technologies implemented, especially in companies which have relegated each employee to a very specific role for years and don't make it easy to hold a job which spans all these categories, even in the course of an entire 40-year career.
+
+Here is where culture, collaboration tools, and automation may help.
+
+PROTIP: The hope is that, eventually, advances in <strong>automation</strong> would enable small Agile teams to work like a start-up on their own, addressing all aspects of a traditional data center without ceremoies to get permission and clearance. So the futuristic view of the job tasks below would be how to get a computer to do each. 
+
 
 QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a> "coming soon".
 
