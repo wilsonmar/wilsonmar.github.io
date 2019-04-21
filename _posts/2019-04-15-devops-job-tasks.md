@@ -17,7 +17,7 @@ comments: true
 
 Most job descriptons for DevOps roles focus on vendor <strong>product offerings</strong> (GitHub, Jenkins, etc.).
 
-<img align="right" alt="azure-devopsexpert-230x258-7173.jpg" width="230" src="https://user-images.githubusercontent.com/300046/56392303-56548080-61ee-11e9-8c6c-016ec8c3625a.jpg">
+<img align="right" alt="azure-devopsexpert-230x258-7173.jpg" width="115" src="https://user-images.githubusercontent.com/300046/56392303-56548080-61ee-11e9-8c6c-016ec8c3625a.jpg">
 However, <a target="_blank" href="https://wilsonmar.github.io/devops-job-tasks/">this page</a> lists the contributions, achievements, and outcomes from working DevOps (DevTestSecOps or DevXOps), based on Job Task Analysis done for the <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-AZ-400.aspx">Implementing Azure DevOps Solutions exam AZ-400</a> which fuilfills requirements to be designated a <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">Microsoft Certified: Azure DevOps Engineer Expert</a>. Expand all (click on) these high-level statements of <strong>contributions</strong>:
 
 1. <a href="#Strategy">Design a DevOps strategy</a>
@@ -30,19 +30,19 @@ However, <a target="_blank" href="https://wilsonmar.github.io/devops-job-tasks/"
 <br /><br />
 Under each are job tasks.
 
-A <strong>dashboard</strong> displaying progress toward a greenfield DevOps implementation would instead be grouped by <strong>categories of technology</strong>:
+A <strong>dashboard</strong> displaying progress toward DevOps implementation would instead be grouped by <strong>categories of technology</strong>:
 
-* <a href="https://github.com/wilsonmar/cloud-services-comparisons/#Security">Security</a>
-* <a href="https://github.com/wilsonmar/cloud-services-comparisons/#Networks">Networks</a>
-* <a href="https://github.com/wilsonmar/cloud-services-comparisons/#Management">Management</a> (monitoring)
-* <a href="https://github.com/wilsonmar/cloud-services-comparisons/#DevOps">DevOps</a> (development to operations)
-* <a href="https://github.com/wilsonmar/cloud-services-comparisons/#Compute">Compute</a>
-* <a href="https://github.com/wilsonmar/cloud-services-comparisons/#Integration">Integration</a> (messaging)
-* <a href="https://github.com/wilsonmar/cloud-services-comparisons/#Persistance">Persistance</a> (databases)
-* <a href="https://github.com/wilsonmar/cloud-services-comparisons/#Analytics">Analytics</a> (BI, Visualization, Machine Learning & AI)
+* <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Security">Security</a>
+* <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Networks">Networks</a>
+* <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Management">Management</a> (monitoring)
+* <a href="https://wilsonmar.github.io/cloud-services-comparisons/#DevOps">DevOps</a> (development to operations)
+* <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Compute">Compute</a>
+* <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Integration">Integration</a> (messaging)
+* <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Persistance">Persistance</a> (databases)
+* <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Analytics">Analytics</a> (BI, Visualization, Machine Learning & AI)
 <br /><br />
 
-The above list is used to <a target="_blank" href="https://github.com/wilsonmar/cloud-services-comparisons/">compare cloud service product names</a>.
+The above list is used to <a target="_blank" href="https://github.com/wilsonmar/cloud-services-comparisons/">compare cloud service product names</a> and often as organizational management boundaries.
 
 QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a> "coming soon".
 
