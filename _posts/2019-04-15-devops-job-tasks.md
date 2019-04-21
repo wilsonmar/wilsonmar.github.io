@@ -28,13 +28,21 @@ However, <a target="_blank" href="https://wilsonmar.github.io/devops-job-tasks/"
 6. <a href="#AppInfra">Implement application infrastructure</a>
 7. <a href="#feedback">Implement continuous feedback</a>
 <br /><br />
-Click on each link above for its job tasks under achievements.
+Under each are job tasks.
 
-A <strong>dashboard</strong> displaying progress toward a greenfield DevOps implementation would instead categorize areas of technologies.
+A <strong>dashboard</strong> displaying progress toward a greenfield DevOps implementation would instead be grouped by <strong>categories of technology</strong>:
 
+* <a href="https://github.com/wilsonmar/cloud-services-comparisons/#Security">Security</a>
+* <a href="https://github.com/wilsonmar/cloud-services-comparisons/#Networks">Networks</a>
+* <a href="https://github.com/wilsonmar/cloud-services-comparisons/#Management">Management</a> (monitoring)
+* <a href="https://github.com/wilsonmar/cloud-services-comparisons/#DevOps">DevOps</a> (development to operations)
+* <a href="https://github.com/wilsonmar/cloud-services-comparisons/#Compute">Compute</a>
+* <a href="https://github.com/wilsonmar/cloud-services-comparisons/#Integration">Integration</a> (messaging)
+* <a href="https://github.com/wilsonmar/cloud-services-comparisons/#Persistance">Persistance</a> (databases)
+* <a href="https://github.com/wilsonmar/cloud-services-comparisons/#Analytics">Analytics</a> (BI, Visualization, Machine Learning & AI)
+<br /><br />
 
-
-
+The above list is used to <a target="_blank" href="https://github.com/wilsonmar/cloud-services-comparisons/">compare cloud service product names</a>.
 
 QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a> "coming soon".
 
