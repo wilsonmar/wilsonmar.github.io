@@ -36,13 +36,13 @@ A <strong>dashboard</strong> displaying progress toward DevOps implementation wo
 * <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Networks">Networks</a>
 * <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Management">Management</a> (monitoring)
 * <a href="https://wilsonmar.github.io/cloud-services-comparisons/#DevOps">DevOps</a> (development to operations)
-* <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Compute">Compute</a>
+* <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Compute">Compute</a> (virtual machines)
 * <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Integration">Integration</a> (messaging)
 * <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Persistance">Persistance</a> (databases)
 * <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Analytics">Analytics</a> (BI, Visualization, Machine Learning & AI)
 <br /><br />
 
-The above list is used to <a target="_blank" href="https://github.com/wilsonmar/cloud-services-comparisons/">compare cloud service product names</a> and often as organizational management boundaries.
+The above list is used to <a target="_blank" href="https://wilsonmar.github.io/cloud-services-comparisons/">compare cloud service product names</a> and often as organizational management boundaries.
 
 QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a> "coming soon".
 

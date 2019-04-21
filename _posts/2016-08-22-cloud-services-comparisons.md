@@ -19,17 +19,17 @@ image: # pic-black-bkg-white-cloud_1920x1200
 
 Evaluations can be based on the advantages of cloud:
 
-1. Get <strong>capacity cheaper and quicker</strong> than building and maintaining data centers. Paying as you go conserves cash up-front to trade variable expense for capital expense.
+1. Stop guessing about future capacity when building and maintaining on-premise data centers with idle <strong>over-provisioning</strong>, which can be expensive.
 
-2. Stop guessing about capacity and <strong> save money that went into idle over-provisioning</strong>, which can be expensive.
+2. Tap into <strong>more capacity pooled</strong> among many customers,to benefit from economies of scale.
 
-3. Tap into <strong>more capacity pooled</strong> among many customers,to benefit from economies of scale.
+3. Paying for public cloud use as you go <strong>conserves cash up-front</strong> which trades variable expense (OpEx) for capital expense (CapEx).
 
-4. Faster <strong>time to market</strong> to obtain capacity and achieve <strong>agility</strong>. Cloud vendors can buy newer, <strong>faster</strong> equipment.
+4. <strong>Faster</strong> to obtain capacity and achieve <strong>agility</strong>. Cloud vendors can buy <strong>newer, faster</strong> equipment.
 
 5. Get <strong>expert specialists</strong> at facilities, security, scalability, etc. by hiring them through cloud vendors who share their <strong>innovations</strong>.
 
-6. Cloud customer's workers achieve higher <strong>productivity</strong> from more efficient up-to-date methods and by off-loading tasks to specialists.
+6. Cloud customers' workers achieve higher <strong>productivity</strong> from more efficient up-to-date methods and by off-loading tasks to cloud specialists.
 
 7. Greater <strong>reliability</strong> to make data backup, disaster recovery, and business continuity easier and less expensive, with data being mirrored at multiple redundant sites on the cloud provider’s network.
 
