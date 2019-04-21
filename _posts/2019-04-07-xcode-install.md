@@ -132,6 +132,14 @@ Thread model: posix
 InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
    </pre>
 
+0. Identify the path where the <strong>make</strong> utility Java uses:
+
+   <pre><strong>xcrun --find gcc</strong></pre>
+
+   Sample response:
+
+   <pre>/Applications/Xcode.app/Contents/Developer/usr/bin/make</pre>
+
 0. Get the version of the Switch used to develop iOS mobile apps:
 
    <pre><strong>swift -version</strong></pre>
@@ -140,7 +148,6 @@ InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault
 
    <pre>Apple Swift version 5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)
    Target: x86_64-apple-darwin18.5.0</pre>
-
 
 ## Install Command Line Utilities
 
@@ -250,7 +257,7 @@ On MacOS the XCode IDE is downloaded from the Apple Store app and stored in the 
    | File               | Date       | Download | Unpacked |
    | :----------------- | :--------- | -------: | ------: |
    | XCode_10.2.1       | 2019-04-17 |   ? GB | 6.1 GB |
-   | XCode_9.0	        | 2017-09-19 | . ? GB | ? GB |
+   | XCode_9.0	         | 2017-09-19 | . ? GB | ? GB |
    | XCode_8.2.1 8C1002 | 2016-12-19 |   ? GB | ? GB |
    | XCode_8_beta_2.xip | 2016-07-05 |   5.9 GB | 12.32 GB |
    | XCode_7.31         | 2016-05-03 |   3.8 GB | ? |

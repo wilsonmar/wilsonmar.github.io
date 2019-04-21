@@ -661,9 +661,11 @@ On Mac:
 
 Perhaps the most intensive tutorial is <a target="_blank" href="https://realpython.com/courses/python-development-visual-studio-code-setup-guide/">the Setup Guid from RealPython</a>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=UcW1FHNvy8M">VIDEO: Supercharge Your JavaScript Debugging Workflow With VS Code</a>
+<a target="_blank" href="http://michaelcrump.net/using-github-with-visualstudio-code/">Using GitHub, by Michael Crump</a>
 
-<a target="_blank" href="http://michaelcrump.net/using-github-with-visualstudio-code/">From Michael Crump</a>
+<a target="_blank" href="https://code.visualstudio.com/docs/editor/versioncontrol">Version Control in VS Code</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=UcW1FHNvy8M">VIDEO: Supercharge Your JavaScript Debugging Workflow With VS Code</a>
 
 <a target="_blank" href="https://scotch.io/courses/make-visual-studio-code-your-editor/">
 Make Visual Studio Code Your Editor video course at Scotch.io</a> by  Chris Sevilleja (@chrisoncode), with code from 2017 by @sevilayha at <a target="_blank" href="https://github.com/scotch-io/vscode-course">https://github.com/scotch-io/vscode-course</a>
@@ -721,19 +723,31 @@ Extensions for developing on the Salesforce Platform
 
 * https://gitlab.com/terja/sfdx-git
 
+<hr />
 
 <a name="VisualStudioForMac"></a>
 
 ## Visual Studio for Mac #
 
-### &nbsp; &nbsp; &nbsp; Install
+Be care following videos which are not applicable to the "2019" version:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=DS4zGjyo4Zs">VIDEO: Install when it was in Preview</a>  Jan 10, 2019.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=jUiuIAZt6Dw">Using Git with Visual Studio</a> Apr 7, 2017
+
+### &nbsp; &nbsp; &nbsp; Prerequites
 
 1. See <a target="_blank" href="https://wilsonmar.github.io/xcode/">https://wilsonmar.github.io/xcode</a> to install Apple's <strong>XCode</strong>.
 
-0. Follow along when watching <a target="_blank" href="https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-12-Getting-Started-with-Visual-Studio-for-Mac">VIDEO: Snack Pack 12: Getting Started with Visual Studio 2017 for Mac</a> May 31, 2017 by James Montemagno (<a target="_blank" href="http://twitter.com/jamesmontemagno">@jamesmontemagno<a>). which covers mobile development as well.
+### &nbsp; &nbsp; &nbsp; Install
+
+Follow along watching <a target="_blank" href="https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-12-Getting-Started-with-Visual-Studio-for-Mac">VIDEO: Snack Pack 12: Getting Started with Visual Studio 2017 for Mac</a> May 31, 2017 by James Montemagno (<a target="_blank" href="http://twitter.com/jamesmontemagno">@jamesmontemagno<a>). which covers mobile development as well.
+
+   <a target="_blank" href="https://github.com/MicrosoftDocs/visualstudio-docs">https://github.com/MicrosoftDocs/visualstudio-docs</a> contains source files for the Visual Studio technical documentation published on docs.microsoft.com.
 
 0. If you type "https://visualstudio.com" (the previous URL) you are redirected to:
    <a target="_blank" href="https://visualstudio.microsoft.com/">https://visualstudio.microsoft.com</a>
+
+   <a target="_blank" href="https://visualstudio.microsoft.com/vs/mac/">https://visualstudio.microsoft.com/vs/mac</a>
 
 0. Click "Download for Mac" and select "Community 2019 for Mac".
 
@@ -751,7 +765,8 @@ Extensions for developing on the Salesforce Platform
    * 22.8 MB for preview
    <br /><br />
 
-0. Rename the installer with a suffix such as "..._2019.dmg". 
+0. Rename the installer with a suffix such as 
+   "vsstudioformac_CE_2019.dmg". 
 
    <img align="right" alt="vs-mac-install-logo-263x303-8462" width="132" src="https://user-images.githubusercontent.com/300046/56370993-7e75bc80-61b9-11e9-8bf7-87e514e3e6db.jpg">
 
@@ -840,7 +855,7 @@ Extensions for developing on the Salesforce Platform
    * In Visual Style, select Dark User Interface theme
    * Author information.
    * Key bindings
-   * Fonts (some prefer others more readable ones)
+   * <a target="_blank" href="https://wilsonmar.github.io/fonts-on-mac-os">Fonts</a> (some prefer others more readable ones)
    * External Tools
    * In Load/Save, select "Load previous solution on startup"
      and "Always create backup copy"
@@ -918,17 +933,25 @@ Steps here are based on <a target="_blank" href="https://docs.microsoft.com/en-u
 
    PROTIP: The port can be changed in Run > Run With > Custom Configuration > ASP.NET Core.
 
-1. Switch back to the Visual Studio Solution pane. To do this, keep pressing command+Tab on the Mac until you see the Visual Studio icon.
+   BTW, to switch among programs on a Mac, keep pressing command+Tab until you see the Visual Studio icon.
 
-   ### Edit in new branch
+1. Switch back to the Visual Studio Solution pane. 
+
+   ### .gitignore and README files
 
 1. In the Solution pane, click the right-pointing arrow next to the project name to expand the tree:
 
    ![vs-mac-sol-expanded-220x301-7499](https://user-images.githubusercontent.com/300046/56457799-1a7c0100-633d-11e9-829a-c398f3b6f7e9.jpg)
 
-   At time of this writing, the repository did not have a .gitignore nor README.md file which GitHub displays for readers. README files are usually not referenced in the application's UI. 
+   PROTIP: The README.md file that GitHub displays for readers is not placed within Visual Studio project files.
+
+1. Switch to the Mac Finder to see that there is a <strong>.gitignore</strong> file above the folder which VisualStudio displays.
+
+   ![vs-mac-git-170x124-3611](https://user-images.githubusercontent.com/300046/56464714-d32d5900-63ac-11e9-9eaf-47124b827a3a.jpg)
+
+   At time of this writing, the repository did not have a <strong>README.md</strong> file which GitHub displays for readers. README files are usually not referenced in the application's UI. 
    
-   So this exercise below will add one if it doesn't exist, or edit the file if it exists.
+   So the exercise below will add one if it doesn't exist, or edit the file if it exists.
 
    ### New branch
 
@@ -943,7 +966,11 @@ Steps here are based on <a target="_blank" href="https://docs.microsoft.com/en-u
    ![vs-mac-newrepo-600x122-6150](https://user-images.githubusercontent.com/300046/56458571-cfb2b700-6345-11e9-97cf-261a78368b0f.jpg)
 
 0. Click New.
-0. In the Name: field, enter "add-README.md".
+0. Type a space character in the Name: field. Prompts about characters not allowed appears:
+
+   ![vs-mac-branch-name-258x149-4319](https://user-images.githubusercontent.com/300046/56464501-3f598e00-63a8-11e9-94a2-e76818d1f762.jpg)
+
+0. In the Name: field, enter "add-README.md" or make up something else.
 0. Click OK, then "Close".
 
    ### Switch (checkout) to new branch
@@ -956,17 +983,6 @@ Steps here are based on <a target="_blank" href="https://docs.microsoft.com/en-u
 0. Right-click on the project name to select "Switch to Branch" and click the branch name just created.
 
    BTW, this action is equivalent to use of the "git checkout" command on a Terminal.
-
-   ### Add new .gitignore file
-
-0. If a <strong>.gitignore</strong> file does not exist, right-click on the project name again to select "Add", "New File ...", Misc "Empty Text File" and type Name: <strong>.gitignore</strong>. The dot in the first character designates to Linux that the file should be hidden. Click New.
-
-0. Type this text so files automatically created by macOS does not get sent up online.
-
-   <pre><strong>.DS_Store</strong></pre>
-
-   PROTIP: View a comprehensive specification for .gitignore at <a target="_blank" href="https://gitignore.io/">https://gitignore.io</a> and <a target="_blank" href="https://gist.github.com/salcode/10017553">here</a>.
-
 
    ### Add new README.md file
 
@@ -1020,12 +1036,18 @@ Steps here are based on <a target="_blank" href="https://docs.microsoft.com/en-u
 
 0. View the file online to confirm the transfer.
 
+   ### Share code
+
+   https://www.smashingmagazine.com/2018/09/visual-studio-live/
+
 
 ### Create project from scratch
 
 Follow along when watching <a target="_blank" href="https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/Visual-Studio-for-Mac-Build-Your-First-App">Visual Studio for Mac: Build Your First App</a> Jan 22, 2019 by <a target="_blank" href="https://www.linkedin.com/in/sayedibrahimhashimi/">Sayed Ibrahim Hashimi</a> who creates a .NET Core 2.1 Razor web app using a list of emoji names and associated png files.
 
-https://www.youtube.com/watch?v=lDIyw--42VA
+   * <a target="_blank" href="https://www.youtube.com/watch?v=WTVcLFTgDqs&t=7m">Another video</a> shows generation of ASP.NET Core Web App 1.1 (with ASP.NET MVC Views and Controllers).
+
+   * https://www.youtube.com/watch?v=lDIyw--42VA
 
 1. Obtain files referenced in the video. To retrieve the list of emjoji codes and each rendered in a png file at <a target="_blank" href="https://api.github.com/emojis">https://api.github.com/emojis</a>, clone onto your laptop repository:
 
