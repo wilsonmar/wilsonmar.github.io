@@ -471,6 +471,38 @@ What do you think? Would tracking this metric reduce concerns in Operations peop
 
 Leave a comment below! Let's have a discussion about this.
 
+<a name=">
+
+### How to identify trigger levels
+
+TODO: video
+
+While "nominal" is the average load, we also want to identify the highest level of load expected at the momentary <strong>peak</strong> of expected activity during normal days. This is what I call the <strong>"spike level of capacity"</strong> to which we reach during <strong>Spike Test runs</strong>. Within environments seeking high availability, this load would be split among a minimum of two hot instances within a cluster so that one machine would still be running in case one fails or is being replaced. 
+
+At the Spike test level we run experiments using different <strong>types of machines</strong> offering different amounts of RAM, CPU, and other resources on each machine -- <strong>scaling up and down</strong> to find the <strong>lowest cost</strong> machine type which can handle spike level loads but at acceptable levels of <strong>quality</strong>.
+
+To avoid overloading machines, which causes poor performance, we may have to scale up to a more powerful machine so there is enough  <strong>headroom</strong> to grow load while additional instances are getting prepared. 
+
+This spike level of load is also where additional instances are <strong>un-instantiated</strong>.
+
+During Spike Tests we identify the various metrics to trigger reduction in the number of instances.
+On the Azure cloud, the spike level can be defined with more metrics than just <strong>CPU utilization</strong>. Some apps are more CPU bound, memory bound, disk bound, or network bound. 
+
+When we ramp up again to the point where capacity should be automatically added, the trigger to <strong>add capacity</strong> is determined by experimentation to identify the <strong>lead time</strong> needed to bring on more resources before reaching that point of <strong>UX degradation</strong> we identified during initial stress testing. 
+
+In other words, the <strong>longer</strong> it takes to spin up another instance, the <strong>lower</strong> the trigger points need to be, to "buy time".
+
+<strong>Trigger levels</strong> are different for each resource because it takes different amounts of time and effort to obtain additional capacity for each particular resource.
+For example, having a Software Defined Network in the networking infrastructure would take less time to reconfigure than a traditional one.
+
+Nevertheless, various metrics would, ideally, trigger changes in capacity at about the same level of load.
+
+Over time, each application and mix of use cases will consume resources at a different pattern.
+That's why repeated test runs are necessary multiple time during the life of the application.
+
+Recap of the diagram:
+
+<a target="_blank" title="cloud-perftest-instan-1004x493-40122.jpg" href="https://user-images.githubusercontent.com/300046/56486592-5b872900-6495-11e9-98b1-a8c4b71a5b4b.jpg"><img width="1004"  src="https://user-images.githubusercontent.com/300046/56486592-5b872900-6495-11e9-98b1-a8c4b71a5b4b.jpg"></a>
 
 
 <a name="ServerImages"></a>

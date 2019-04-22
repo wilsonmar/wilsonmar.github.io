@@ -487,7 +487,7 @@ QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.micro
 
 ### Faculty
 
-Eamonn Kelly and Samantha Lindsey Ahmed, Steve Borg (steven.borg@nwcadence.com), Sachi Williamson
+Eamonn Kelly, Samantha Lindsey Ahmed, Steve Borg (<a target="_blank" href="https://twitter.com/stevenborg">@stevenborg</a>, steven.borg@nwcadence.com), Sachi Williamson
 
 ### Individual courses
 
