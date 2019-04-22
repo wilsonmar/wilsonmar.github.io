@@ -477,6 +477,12 @@ Leave a comment below! Let's have a discussion about this.
 
 TODO: video
 
+Now that we've identified the point of UX degradation using Stress Testing and the level of nominal average load, we now and the <strong>lead time</strong> to get 
+
+how do we identify the <strong>
+
+In the prior video, 
+
 While "nominal" is the average load, we also want to identify the highest level of load expected at the momentary <strong>peak</strong> of expected activity during normal days. This is what I call the <strong>"spike level of capacity"</strong> to which we reach during <strong>Spike Test runs</strong>. Within environments seeking high availability, this load would be split among a minimum of two hot instances within a cluster so that one machine would still be running in case one fails or is being replaced. 
 
 At the Spike test level we run experiments using different <strong>types of machines</strong> offering different amounts of RAM, CPU, and other resources on each machine -- <strong>scaling up and down</strong> to find the <strong>lowest cost</strong> machine type which can handle spike level loads but at acceptable levels of <strong>quality</strong>.

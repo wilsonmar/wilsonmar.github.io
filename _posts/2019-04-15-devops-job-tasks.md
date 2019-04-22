@@ -28,7 +28,39 @@ However, <a target="_blank" href="https://wilsonmar.github.io/devops-job-tasks/"
 6. <a href="#AppInfra">Implement application infrastructure</a>
 7. <a href="#feedback">Implement continuous feedback</a>
 <br /><br />
-Under each are job tasks.
+Click on each link for its <strong>job tasks, detailed below</strong>.
+
+## DevOps practices
+
+<a target="_blank" href="https://www.youtube.com/watch?v=QrwTD5eCkd4">7 DevOps practices</a>:
+
+   1. Configuration management <a href="https://wilsonmar.github.io/azure-devops/#[4]">[Course 4]</a>
+   1. Release management 
+   1. Continuous integration <a href="https://wilsonmar.github.io/azure-devops/#[3]">[Course 3]</a>
+   1. Continuous deployment <a href="https://wilsonmar.github.io/azure-devops/#[3]">[Course 3]</a>
+   1. Infrastructure as Code <a href="https://wilsonmar.github.io/azure-devops/#[2]">[Course 2]</a>
+   1. Test automation <a href="https://wilsonmar.github.io/azure-devops/#[5]">[Course 5]</a>
+   1. Application performance monitoring <a href="https://wilsonmar.github.io/azure-devops/#[7]">[Course 7]</a>
+   <br /><br />
+
+## DevOps Courses
+
+To obtain skill to make contributions listed above, there is a 10-course <a target="_blank" href="https://www.edx.org/microsoft-professional-program-devops">Microsoft Professional Program (MPP) in DevOps on Edx.org</a>:
+
+1. <a target="_blank" href="https://www.edx.org/course/devops-practices-and-principles-2">Introduction to DevOps Practices</a> 
+2. <a target="_blank" href="https://www.edx.org/course/infrastructure-as-code-2">Infrastructure as Code</a> 
+3. <a target="_blank" href="https://www.edx.org/course/continuous-integration-and-continuous-deployment-2">Continuous Integration and Continuous Deployment</a> 
+4. <a target="_blank" href="https://www.edx.org/course/configuration-management-for-containerized-delivery-2">Configuration Management for Containerized Delivery</a> 
+5. <a target="_blank" href="https://www.edx.org/course/devops-testing-2-0">DevOps Testing</a>
+6. <a target="_blank" href="https://www.edx.org/course/devops-for-databases-2">DevOps for Databases</a> 
+7. <a target="_blank" href="https://www.edx.org/course/application-monitoring-and-feedback-loops-2">Application Monitoring and Feedback Loops</a> 
+8. <a target="_blank" href="https://www.edx.org/course/devops-for-mobile-apps-2">DevOps for Mobile Apps</a>
+9. <a target="_blank" href="https://www.edx.org/course/architecting-distributed-cloud-applications-2">Architecting Distributed Cloud Applications</a>
+10. <a target="_blank" href="https://www.edx.org/course/microsoft-professional-capstone-devops-2">Microsoft Professional Capstone : DevOps</a> 
+
+QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a> "coming soon".
+
+## Categories for technology management
 
 A <strong>dashboard</strong> displaying progress toward DevOps implementation would instead be grouped by <strong>categories of technology</strong>:
 
@@ -50,10 +82,7 @@ Here is where culture, collaboration tools, and automation may help.
 
 PROTIP: The hope is that, eventually, advances in <strong>automation</strong> would enable small Agile teams to work like a start-up on their own, addressing all aspects of a traditional data center without ceremonies to get permission and clearance through various management ranks. So the futuristic view of the job tasks below would be how to get a computer to do each on its own with minimal human interaction.
 
-But, for now, people are involved in its setup, configuration, and maintenance, so they need to learn the <strong>skills</strong> below, both manually in the GUI and in automation scripts such as PowerShell and Bash scripts.
-
-
-QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a> "coming soon".
+But, for now, people are involved in its setup, configuration, and maintenance, so they need to learn the <strong>specific skills</strong> below, both manually in the GUI and in automation scripts such as Bash, Python, PowerShell, and other scripts.
 
 <hr />
 

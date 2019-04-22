@@ -16,7 +16,7 @@ comments: true
 
 {% include _toc.html %}
 
-This tutorial describes how to make use of Terminal to make your life easier and less frustrating.
+<a href="https://wilsonmar.github.io/mac-osx-terminal">This tutorial</a> describes how to make use of Terminal to make your life easier and less frustrating.
 
 What Apple calls the Terminal is a Bash shell.
 
@@ -25,37 +25,29 @@ What Apple calls the Terminal is a Bash shell.
 
 ## Open Terminal from Finder Folder #
 
-Ways to open a Terminal command line:
-
-   0. Hold down the <strong>command</strong> key down while pressing <strong>tab</strong> multiple times until Finder is highlighted in the pop-up list.
-
-   <br /><br />
-      
-Get to the Finder list of files and folders:
-
-   0. Hold the Option key and right-click the Finder icon in the Dock, then select Relaunch.
-
-   0. Press the command key with your right hand and option+esc key combo with your left hand
-   for the Force Quit menu. Then select the Finder and click Relaunch.
-
-   0. Click the Apple button at the upper-left corner to select <strong>Log out</strong>. 
-   Then log back in to your user account.
-
-
 If you're a developer, it's hard to get away from using a command-line terminal. 
 But if you're using a MacOS just for social media, you won't need a Terminal. 
 Perhaps that's why it's kinda buried:
 
-0. Click the Finder icon on the bottom.
-0. Click Applications on the left pane.
-0. Click Utilities.
-0. Click Terminal.
+There are different ways to open a Terminal command line.
 
-   This would place you at your user Home directory.
+The most popular approach involves the least number of keystrokes and you don't have to reach for a mouse:
 
-PROTIP: Since Yosemite, you can open a Terminal to a folder listed within Finder by pointing your mouse on it, then tapping with two fingers on the touchpad/mousepad.
+   1. Press <strong>command+space</strong> keys (at the same time) to bring up Apple's Spotlight universial search, then 
+   2. Type "termin" so "Terminal.app" appears.
+   3. Press the space bar to select it.
+   <br /><br />
 
-Alternately:
+If you prefer moving your mouse:
+
+   1. Click the Finder icon on the app bar.
+   2. Click Applications on the left pane.
+   3. Click Utilities.
+   4. Click Terminal.
+   <br /><br />
+
+PROTIP: If you are at the Finder program (since Yosemite) you can open a Terminal to a folder listed within Finder by pointing your mouse on it, then tapping with two fingers on the touchpad/mousepad.
+To enable that:
 
 <ol type="1">
 <li> Click the Apple icon, System Preferences....</li>
@@ -65,6 +57,15 @@ Alternately:
 <li> Check on <strong>New Terminal at Folder</strong>.</li>
 <li> Close the dialog by clicking the red dot at the upper left corner.</li>
 </ol>
+
+## Return to Terminal
+
+To return to the Terminal from any other program:
+
+   1. Hold down the <strong>command</strong> key down while pressing <strong>tab</strong> multiple times until Finder is highlighted in the pop-up list.
+  
+   This would place you at your user Home directory.
+
 
 <a id="Keyboard"></a>
 <a id="ShortKeys"></a>

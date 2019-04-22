@@ -16,44 +16,36 @@ comments: true
 
 {% include _toc.html %}
 
-This tutorial describes how to make use of Finder to manage files using a mouse.
+<a href="https://wilsonmar.github.io/mac-finder/">This tutorial</a> describes how to make use of Finder to manage files using a mouse.
 
-Three ways to relaunch the Finder:
+## Open Finder 
 
-0. Hold the Option key and right-click the Finder icon in the Dock, then select Relaunch.
+The Finder program is the one program that one cannot remove from a Mac.
 
-0. Press the command key with your right hand and option+esc key combo with your left hand
-   for the Force Quit menu. Then select the Finder and click Relaunch.
+That's why you will find it if you hold down command and press Tab until it rests on "Finder".
 
-0. Click the Apple button at the upper-left corner to select <strong>Log out</strong>. 
-   Then log back in to your user account.
+### Spotlight search
 
+PROTIP: To open a <strong>new instance</strong> of Finder with the cursor on the <strong>"Spotlight"</strong> search field within Finder, hold down the <strong>command+option</strong> keys with your left hand and press the <strong>Space bar</strong> with your right hand. Then type in the text or paste in the text being sought. Alternately, I can move my mouse to select from the Finder's Favorites menu.
 
-<a id="Terminalz"></a>
+PROTIP: Use search terms to filter a particular <strong>kind</strong> of file and date:
 
-## Open Terminal from Finder Folder #
+   <pre><strong>kind:png date:today</strong></pre>
 
-If you're a developer, it's hard to get away from using a command-line terminal. But if you're using a MacOS just for social media, you won't need a Terminal. That's why it's kinda buried:
+"yesterday" or date ranges can also be specified:
 
-0. Click the Finder icon on the bottom.
-0. Click Applications on the left pane.
-0. Click Utilities.
-0. Click Terminal.
+   <pre><strong>date:1/1/16-12/31/18 christmas</strong></pre>
 
-   This would place you at your user Home directory.
+## Get out
 
-PROTIP: Since Yosemite, you can open a Terminal to a folder listed within Finder by pointing your mouse on it, then tapping with two fingers on the touchpad/mousepad.
+With Finder open to a list of files and folders:
 
-Alternately:
+   0. For the <strong>Force Quit</strong> menu, press the <strong>command</strong> key with your right hand and <strong>option+esc</strong> key combo with your left hand. Then select the Finder and click Relaunch.
 
-<ol type="1">
-<li> Click the Apple icon, System Preferences....</li>
-<li> Press K and select Keyboard.</li>
-<li> Click Shortcuts, Services.</li>
-<li> Scroll to the <strong>Files and Folders</strong> section.</li>
-<li> Check on <strong>New Terminal at Folder</strong>.</li>
-<li> Close the dialog by clicking the red dot at the upper left corner.</li>
-</ol>
+   0. To <strong>Relaunch</strong>, hold the <strong>option</strong> key and right-click the Finder icon in the Dock, then select Relaunch.
+
+   0. To <strong>Log out</strong>, press <strong>shift + command + Q</strong> or click the Apple button at the upper-left corner to select "Log Out". Then log back in to your user account.
+
 
 
 ## More on OSX
