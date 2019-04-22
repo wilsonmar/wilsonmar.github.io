@@ -258,9 +258,15 @@ within each server.
 In order to get a given server to process more load, its hardware components can be upgraded manually.
 This is called "scaling up".
 
-Magnetic hard drives are slow -- many times slower than the rate CPUs transfer data.
-But modern SSD (Solid State Device) drives used today are very fast.
-(That's the reason why AWS does not allow the use of magnetic drives as a server boot-up data volume.)
+Magnetic hard drives are slow -- many times slower than the rate CPUs transfer data. But modern SSD (Solid State Disc) drives used today are 8X faster. <a target="_blank" href="https://ss64.com/convert.html">Typical</a> throughput rates:
+
+   * Hard disk = 30 MiB per second. (x8 = 240 Mb/Sec)
+   * Gigabit Ethernet = 125 MiB per second. (x8 = 1,000 Mb/Sec)
+   * Solid state disc = 250 MiB per second. (x8 = 2,000 Mb/Sec)
+   * Fibre Channel = 2,550 MiB per second. (x8 = 20,400 Mb/Sec) 
+   <br /><br />
+
+(That's why AWS does not allow the use of magnetic drives as a server boot-up data volume.)
 
 Server manufacturers usually provide more speed along with larger capacity:
 
