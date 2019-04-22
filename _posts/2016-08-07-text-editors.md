@@ -943,6 +943,8 @@ Steps here are based on <a target="_blank" href="https://docs.microsoft.com/en-u
 
    ![vs-mac-sol-expanded-220x301-7499](https://user-images.githubusercontent.com/300046/56457799-1a7c0100-633d-11e9-829a-c398f3b6f7e9.jpg)
 
+   Press <strong>command + shift + .</strong> to show hidden files and folders.
+   
    PROTIP: The README.md file that GitHub displays for readers is not placed within Visual Studio project files.
 
 1. Switch to the Mac Finder to see that there is a <strong>.gitignore</strong> file above the folder which VisualStudio displays.
@@ -1036,9 +1038,14 @@ Steps here are based on <a target="_blank" href="https://docs.microsoft.com/en-u
 
 0. View the file online to confirm the transfer.
 
-   ### Share code
+   ### Install extensions
 
-   https://www.smashingmagazine.com/2018/09/visual-studio-live/
+   <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=rubbersheep.gi">gi</a> by Hasit Mistry keeps .gitignore files updated with changes in the gitignore.io API for specific combinations of operating systems, IDEs, and programming languages.
+
+
+   ### Share code screen 
+
+   <a target="_blank" href="https://www.smashingmagazine.com/2018/09/visual-studio-live/">Visual Studio Live</a> enables you to share what appears on your monitor (like TeamViewer, Google Hangouts, Zoom, etc.), but from inside Visual Studio.
 
 
 ### Create project from scratch
