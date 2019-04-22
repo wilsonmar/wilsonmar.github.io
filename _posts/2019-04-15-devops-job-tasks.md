@@ -48,7 +48,9 @@ The above list is often used to also define organizational boundaries, with tech
 
 Here is where culture, collaboration tools, and automation may help.
 
-PROTIP: The hope is that, eventually, advances in <strong>automation</strong> would enable small Agile teams to work like a start-up on their own, addressing all aspects of a traditional data center without ceremoies to get permission and clearance. So the futuristic view of the job tasks below would be how to get a computer to do each. 
+PROTIP: The hope is that, eventually, advances in <strong>automation</strong> would enable small Agile teams to work like a start-up on their own, addressing all aspects of a traditional data center without ceremonies to get permission and clearance through various management ranks. So the futuristic view of the job tasks below would be how to get a computer to do each on its own with minimal human interaction.
+
+But, for now, people are involved in its setup, configuration, and maintenance, so they need to learn the <strong>skills</strong> below, both manually in the GUI and in automation scripts such as PowerShell and Bash scripts.
 
 
 QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a> "coming soon".
