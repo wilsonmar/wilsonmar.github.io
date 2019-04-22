@@ -97,7 +97,12 @@ These come from the bash terminal on Linux machines:
 <li> control + R = Record a shortcut between quotes<br /></li>
 </ul>
 
-See https://linuxacademy.com/blog/linux/ten-things-i-wish-i-knew-earlier-about-the-linux-command-line-2/
+From <a target="_blank" href="https://linuxacademy.com/blog/linux/ten-things-i-wish-i-knew-earlier-about-the-linux-command-line-2/">here</a>
+
+
+## Commands list alphabetically
+
+A list of all commands native to macOS is listed <a target="_blank" href="https://ss64.com/osx/">alphabetically at https://ss64.com/osx</a>.
 
 
 <a id="Terminal_file_listing"></a>
