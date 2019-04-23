@@ -36,7 +36,8 @@ What we would like to do after going thrugh the below is to type this on a Termi
 1. In the macOS `~/.bash_profile` add a shortcut, but substitute "wilsonmar" with your own GitHub account name:
 
    <pre>
-   alias js='cd ~/gits/wilsonmar/wilsonmar.github.io;bundle exec jekyll serve --config _config.yml'
+   alias js='cd ~/gits/wilsonmar/wilsonmar.github.io; \
+   bundle exec jekyll serve --config _config.yml'
    </pre>
 
 1. Create the folder.
