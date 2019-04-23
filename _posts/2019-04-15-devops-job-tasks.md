@@ -81,17 +81,18 @@ QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.micro
 
 A <strong>dashboard</strong> displaying progress toward DevOps implementation would instead be grouped by <strong>categories of technology</strong>:
 
-A. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Security">Security</a>
-B. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Networks">Networks</a>
-C. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Persistance">Persistance</a> (databases)
-D. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Compute">Compute</a> (virtual machines)
-E. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Management">Management</a> (monitoring)
-F. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#DevOps">DevOps</a> (development to operations)
-G. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Integration">Integration</a> (messaging)
-H. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Analytics">Analytics</a> (BI, Visualization, Machine Learning & AI)
-<br /><br />
+A. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Security">Security</a><br />
+B. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Networks">Networks</a><br />
+C. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Persistance">Persistance</a> (storage, databases)<br />
+D. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Compute">Compute</a> (virtual machines)<br />
+E. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Management">Management</a> (monitoring)<br />
+F. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#DevOps">DevOps</a> (development to operations)<br />
+G. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Integration">Integration</a> (messaging)<br />
+H. <a href="https://wilsonmar.github.io/cloud-services-comparisons/#Analytics">Analytics</a> (BI, Visualization, Machine Learning & AI)<br />
 
-The above list is often used to also define organizational boundaries, with technicians report to a manager in charge of each category. The issue with this is that each category is dependent on others to be setup at the same time. But traditional enterprise communication tends to be funneled up through category managers rather than directly among workers. 
+The above list is often used to also define organizational boundaries, where technicians report to a manager in charge of each category (such as the department of Networking, etc.). The concern with such an approach is that each category is dependent on others to be setup at the same time. Each of the above needs to be a part of each application.
+
+But traditional enterprise communication tends to be funneled up through category managers rather than directly among workers. 
 
 "Agile" teams aim to put skills that address ALL categories into each small team. That's a tall order considering the staggering number of technologies implemented, especially in companies which have relegated each employee to a very specific role for years and don't make it easy to hold a job which spans all these categories, even in the course of an entire 40-year career.
 
@@ -127,7 +128,7 @@ But, for now, people are involved in its setup, configuration, and maintenance, 
 
    * recommend an organization structure that supports scaling Agile practices
 
-   * recommend in-team and cross-team collaboration mechanisms
+   * recommend in-team and cross-team collaboration mechanisms (Skype, Zoom)
 
 ### Design a quality strategy
 
