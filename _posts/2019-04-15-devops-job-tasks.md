@@ -32,18 +32,33 @@ However, <a target="_blank" href="https://wilsonmar.github.io/devops-job-tasks/"
 <br /><br />
 Click on each link for its <strong>job tasks, detailed below</strong>.
 
+The word "testing"  is not among the titles above, perhaps because testing is pervasive, along with other "habits".
+
+## DevOps habits (values)
+
+1. Team Autonomy and Enterprise Alignment
+2. Rigorous Management of Technical Debt
+3. Focus on Flow of Customer Value
+4. Hypothesis Driven Development
+5. Evidence Gathered in Production
+6. Live Site Culture (remediate immediately and drive to root cause)
+7. Manage infrastructure as flexible resources
+<br /><br />
+
 ## DevOps practices
 
-<a target="_blank" href="https://www.youtube.com/watch?v=QrwTD5eCkd4">7 DevOps practices</a>:
+But testing is a separate item among VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=QrwTD5eCkd4">7 DevOps practices</a> as <a target="_blank" title="December 3, 2015" href="http://devops.com/2015/12/03/11626/">defined</a> by Microsoft's Sam Guckenheimer:
 
    1. Configuration management <a href="https://wilsonmar.github.io/azure-devops/#[4]">[Course 4]</a>
-   1. Release management 
-   1. Continuous integration <a href="https://wilsonmar.github.io/azure-devops/#[3]">[Course 3]</a>
-   1. Continuous deployment <a href="https://wilsonmar.github.io/azure-devops/#[3]">[Course 3]</a>
-   1. Infrastructure as Code <a href="https://wilsonmar.github.io/azure-devops/#[2]">[Course 2]</a>
-   1. Test automation <a href="https://wilsonmar.github.io/azure-devops/#[5]">[Course 5]</a>
-   1. Application performance monitoring <a href="https://wilsonmar.github.io/azure-devops/#[7]">[Course 7]</a>
+   2. Release management 
+   3. Continuous integration <a href="https://wilsonmar.github.io/azure-devops/#[3]">[Course 3]</a>
+   4. Continuous deployment <a href="https://wilsonmar.github.io/azure-devops/#[3]">[Course 3]</a>
+   5. Infrastructure as Code <a href="https://wilsonmar.github.io/azure-devops/#[2]">[Course 2]</a>
+   6. Test automation <a href="https://wilsonmar.github.io/azure-devops/#[5]">[Course 5]</a>
+   7. Application performance monitoring <a href="https://wilsonmar.github.io/azure-devops/#[7]">[Course 7]</a>
    <br /><br />
+
+All but "release management" track with Microsoft's curriculum (below).
 
 ## DevOps Courses
 
@@ -412,6 +427,15 @@ But, for now, people are involved in its setup, configuration, and maintenance, 
    
    * perform ongoing tuning to reduce meaningless or non-actionable alerts
 
+## 7 DevOps Habits
+
+1. Team Autonomy and Enterprise Alignment
+2. Rigorous Management of Technical Debt
+3. Focus on Flow of Customer Value
+4. Hypothesis Driven Development
+5. Evidence Gathered in production
+6. Live Site Culture
+7. Manage infrastructure as flexible resources
 
 ## More on DevOps #
 

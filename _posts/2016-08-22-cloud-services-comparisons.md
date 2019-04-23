@@ -223,13 +223,13 @@ https://outage.report/aws-amazon-web-services
 
 ## Categories of cloud services:
 
-* <a href="#Security">Security</a>
+* <a href="#Security">Security</a> (identity)
 * <a href="#Networks">Networks</a>
-* <a href="#Management">Management</a> (monitoring)
+* <a href="#Management">Management</a> (monitoring, governance)
 * <a href="#DevOps">DevOps</a> (development to operations)
-* <a href="#Compute">Compute</a>
-* <a href="#Integration">Integration</a> (messaging)
-* <a href="#Persistance">Persistance</a> (databases)
+* <a href="#Compute">Compute</a> (Web, mobile, containers)
+* <a href="#Integration">Integration</a> (messaging, migrate)
+* <a href="#Persistance">Persistance</a> (storage, databases)
 * <a href="#Analytics">Analytics</a> (includes Machine Learning & AI)
 
 
