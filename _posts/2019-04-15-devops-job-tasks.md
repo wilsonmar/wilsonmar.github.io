@@ -4,8 +4,10 @@ title: "DevOps job tasks (the work of DevOps)"
 excerpt: "Get DevOps done using job tasks and projects based on job tasks defined by professional certification"
 tags: [devops, certs]
 image:
+# cert-corporateoasis-1900x500-28621
+
 # cert-corporateoasis-1900x500-28088.jpg
-  feature: https://user-images.githubusercontent.com/300046/56308076-a1459980-6103-11e9-9c10-caaa836e3a6c.jpg
+  feature: https://user-images.githubusercontent.com/300046/56559784-cef56d00-655f-11e9-846e-c4707bac9a39.jpg
   credit: corporateoasis
   creditlink: https://www.corporateoasis.com
 comments: true

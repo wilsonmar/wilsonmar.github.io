@@ -475,17 +475,18 @@ Leave a comment below! Let's have a discussion about this.
 
 ### How to identify trigger levels
 
-TODO: video
+<amp-youtube data-videoid="ekh8jIcBulY" layout="responsive" width="480" height="270"></amp-youtube>
+<br />
 
-Now that we've identified the point of UX degradation using Stress Testing and the level of nominal average load, we now and the <strong>lead time</strong> to get 
+Now that we've identified the point of UX degradation using Stress Testing and the level of nominal average load expected, we now can calculate the <strong>lead time</strong> and <strong>trigger levels</strong> for elasticity.
 
-how do we identify the <strong>
+The two horizontal lines are the two trigger levels we need to identify: one to increase capacity and one to decrease capacity.
 
-In the prior video, 
+The load level we reach for a short time during <strong>Spike Test runs</strong> is the <strong>"spike capacity level"</strong>, which we calculate to be slightly higher than the highest <strong>momentary peak</strong> expected above the normal average load. In offices this often occurs around 11am during <strong>normal</strong> days, when everyone is at work on their computers. 
 
-While "nominal" is the average load, we also want to identify the highest level of load expected at the momentary <strong>peak</strong> of expected activity during normal days. This is what I call the <strong>"spike level of capacity"</strong> to which we reach during <strong>Spike Test runs</strong>. Within environments seeking high availability, this load would be split among a minimum of two hot instances within a cluster so that one machine would still be running in case one fails or is being replaced. 
+Within environments seeking high availability, load would be split among a minimum of two hot instances within a cluster so that one machine would still be running in case one fails or is being replaced. 
 
-At the Spike test level we run experiments using different <strong>types of machines</strong> offering different amounts of RAM, CPU, and other resources on each machine -- <strong>scaling up and down</strong> to find the <strong>lowest cost</strong> machine type which can handle spike level loads but at acceptable levels of <strong>quality</strong>.
+We run experiments using different <strong>types of machines</strong> offering different amounts of RAM, CPU, and other resources on <strong>each individual</strong> machine -- <strong>scaling up and down</strong> to find the <strong>lowest cost</strong> machine type which can handle spike level loads but at acceptable levels of <strong>quality</strong>.
 
 To avoid overloading machines, which causes poor performance, we may have to scale up to a more powerful machine so there is enough  <strong>headroom</strong> to grow load while additional instances are getting prepared. 
 
