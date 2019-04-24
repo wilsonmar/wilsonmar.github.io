@@ -29,13 +29,13 @@ The service competes with offerings by several traditional hosting services. Amo
 * $80/month for 4GB RAM, 40GB SSD, 5 TB data transfer at <a target="_blank" href="https://www.siteground.com/cloud-hosting.htm">SiteGround.com</a>
 <br /><br />
 
-Lightsail's competitive difference is not just <strong>solid-State</strong> storage which are fast and reliable,
-but that its users can <a target="_blank" href="https://aws.amazon.com/s/lp/lightsail-vs-ec2/">move up to EC2</a> (using a snapshot) when more complex configuration is needed.
+Lightsail's competitive difference is not just <strong>Solid-State</strong> (SSD) storage which are fast and reliable,
+but that its users can <a target="_blank" href="https://aws.amazon.com/s/lp/lightsail-vs-ec2/">move up to EC2</a> (using a snapshot) when acmore complex configuration is needed.
 
 ## Get on AWS
 
 1. Get a email from Gmail.com if you don't already have one.
-1. Use the <strong>Google Chrome browser</strong>. Don't use the Firefox browser because it repeats characters on its own in Lightsial's pop-up terminal.
+1. Use the <strong>Google Chrome browser</strong>. Don't use the Firefox browser because it repeats characters on its own in Lightsail's pop-up terminal.
 1. Sign up for an Amazon account if you don't already have one. New accounts get one year of free tier access.
 
 1. <a target="_blank" href="https://aws.amazon.com/lightsail/pricing/">https://aws.amazon.com/lightsail/pricing/</a>

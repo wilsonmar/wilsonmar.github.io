@@ -729,10 +729,12 @@ Extensions for developing on the Salesforce Platform
 
 ## Visual Studio for Mac #
 
-Be care following videos which are not applicable to the "2019" version:
+PROTIP: Avoid videos which are not applicable to the "2019" version:
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=DS4zGjyo4Zs">VIDEO: Install when it was in Preview</a>  Jan 10, 2019.
    * <a target="_blank" href="https://www.youtube.com/watch?v=jUiuIAZt6Dw">Using Git with Visual Studio</a> Apr 7, 2017
+
+The following was written after <a target="_blank" href="https://devblogs.microsoft.com/visualstudio/visual-studio-2019-for-mac-is-now-available/">April 9, 2019 release</a>.
 
 ### &nbsp; &nbsp; &nbsp; Prerequites
 
@@ -812,15 +814,19 @@ Follow along watching <a target="_blank" href="https://channel9.msdn.com/Shows/X
 
 0. PROTIP: Drag the app icon and drop it on your Mac Dock for easy access.
 
+   BTW, multiple instances of Visual Studio for Mac can be started by right-clicking its icon in the Apple Dock bar, then selecting "New Instance".
+
+   ![vs2019-mac-dock-354x137](https://user-images.githubusercontent.com/300046/56686530-68706c00-6691-11e9-85eb-b3f8141c8010.jpg)
+
 0. Use your mouse to click the "Visual Studio" icon to open the program to see this:
 
    ![vs-mac-2019-new-669x269-10031](https://user-images.githubusercontent.com/300046/56381902-5f842400-61d3-11e9-8a22-0e594d4dd570.jpg)
 
-0. Dismiss the pop-up by clicking the red dot at its upper left corner.
+0. Dismiss the "Start Window" pop-up by clicking the red dot at its upper left corner.
 
    ### Check for Updates
 
-0. Press command+, or click "Visual Studio" and select "Check for Updates...":
+0. Click "Visual Studio" at the top menu to select "Check for Updates...":
 
    ![vs-mac-top-menu-269x299-10152](https://user-images.githubusercontent.com/300046/56392151-e2b27380-61ed-11e9-9949-1337c9c5912c.jpg)
 
