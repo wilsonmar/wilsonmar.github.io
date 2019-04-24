@@ -30,11 +30,25 @@ However, <a target="_blank" href="https://wilsonmar.github.io/devops-job-tasks/"
 6. <a href="#AppInfra">Implement application infrastructure</a>
 7. <a href="#feedback">Implement continuous feedback</a>
 <br /><br />
-Click on each link for its <strong>job tasks, detailed below</strong>.
+(Click on each link for its <strong>job tasks, detailed below</strong>.)
 
-The word "testing"  is not among the titles above, perhaps because testing is pervasive, along with other "habits".
+## Amazon's DevOps Professional Exam
 
-## DevOps habits (values)
+Compare against the "domains" in Amazon's <a target="_blank" href="https://aws.amazon.com/certification/certified-devops-engineer-professional">AWS Certified DevOps Engineer – Professional Complete Exam: DOP-C01</a>:
+
+1. SDLC Automation (22%)
+2. Configuration Management and Infrastructure as Code (19%)
+3. Monitoring and Logging (15%)
+4. Policies and Standards Automation (10%)
+5. Incident and Event Response (18%)
+6. High Availability, Fault Tolerance, and Disaster Recovery (10%)
+<br /></br />
+
+These I call <strong>"processes"</strong>.
+
+## Testing and other habits (values)
+
+The word "testing" is not among the items above, perhaps because testing is pervasive, along with other "habits":
 
 1. Team Autonomy and Enterprise Alignment
 2. Rigorous Management of Technical Debt
@@ -428,15 +442,14 @@ But, for now, people are involved in its setup, configuration, and maintenance, 
    
    * perform ongoing tuning to reduce meaningless or non-actionable alerts
 
-## 7 DevOps Habits
 
-1. Team Autonomy and Enterprise Alignment
-2. Rigorous Management of Technical Debt
-3. Focus on Flow of Customer Value
-4. Hypothesis Driven Development
-5. Evidence Gathered in production
-6. Live Site Culture
-7. Manage infrastructure as flexible resources
+## Amazon's take
+
+
+<a target="_blank" href="https://www.amazon.com/AWS-Certified-DevOps-Engineer-Professional/dp/1796646377/">Study Guide</a>
+
+* <a target="_blank" href="https://acloud.guru/forums/aws-certified-devops-engineer-professional/discussion/">ACoud.guru</a>
+
 
 ## More on DevOps #
 
