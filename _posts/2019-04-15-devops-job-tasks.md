@@ -34,7 +34,7 @@ However, <a target="_blank" href="https://wilsonmar.github.io/devops-job-tasks/"
 
 ## Amazon's DevOps Professional Exam
 
-Compare against the "domains" in Amazon's <a target="_blank" href="https://aws.amazon.com/certification/certified-devops-engineer-professional">AWS Certified DevOps Engineer – Professional Complete Exam: DOP-C01</a>:
+Compare against the "domains" in Amazon's <a target="_blank" href="https://aws.amazon.com/certification/certified-devops-engineer-professional">AWS Certified DevOps Engineer – Professional Complete Exam: DOP-C00</a> (since December 2018):
 
 1. SDLC Automation (22%)
 2. Configuration Management and Infrastructure as Code (19%)
@@ -443,12 +443,11 @@ But, for now, people are involved in its setup, configuration, and maintenance, 
    * perform ongoing tuning to reduce meaningless or non-actionable alerts
 
 
-## Amazon's take
-
+## Amazon's resources
 
 <a target="_blank" href="https://www.amazon.com/AWS-Certified-DevOps-Engineer-Professional/dp/1796646377/">Study Guide</a>
 
-* <a target="_blank" href="https://acloud.guru/forums/aws-certified-devops-engineer-professional/discussion/">ACoud.guru</a>
+* <a target="_blank" href="https://acloud.guru/learn/aws-certified-devops-engineer-professional-2019">ACoud.guru vidoes</a> 
 
 
 ## More on DevOps #
