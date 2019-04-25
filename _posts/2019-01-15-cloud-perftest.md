@@ -372,6 +372,8 @@ QUESTIONS: About your app/system:
 These questions are answered by various types of performance testing.
 
 
+> "After you have identified your architectural approach, you should use <strong>benchmarking and load testing</strong> data to drive your selection of resource types and configuration options" -- 512 in Amazon's "Performance Efficiency Pillar: AWS Well-Architected Framework (AWS Whitepaper)
+
 <a name="RunTypes"></a>
 
 ### Performance test run types
@@ -442,7 +444,7 @@ But I'd like to propose a metric that makes use of smoke test results.
 
 <a name="infantmortality"></a>
 
-### Infant Mortality Rate?
+### "Infant Mortality Rate"?
 
 To illustrate the status, I've been using an analogy.
 
@@ -463,6 +465,48 @@ What do you think? Would tracking this metric reduce concerns in Operations peop
 
 Leave a comment below! Let's have a discussion about this.
 
+
+
+<a name="MultipleInstances"></a>
+
+## Multiple instances for elasticity, reliability
+
+If your website is successful in growing visitors, load at peak would grow beyond what a single server can handle.
+
+Then <strong>multiple servers</strong> would be needed for "elasticity" -- the ability to deal with variations in load by adding more resources during high load or consolidating when the load decreases.
+
+Amazon brands several of their services with the name "elastic" to highlight that aspect of their offering.
+
+Multiple servers are also needed to ensure <strong>reliability</strong> -- to have another server take over in case a particular server fails, to ensure <strong>"high availability" ("HA" for short)</strong>.
+
+<strong>Fail-over tests</strong> measure whether fault tolerance can really occur.
+Testing that deliberately downs a server to measure the speed of recovery is called 
+<strong>"resilency testing"</strong>.<a href="#Tasks">*</a>
+
+
+### Time to Additional Capacity
+
+The concern with scaling is QUESTION: how quickly additional capacity is added or removed before/after need?
+
+The traditional on-premises approach is to order and buy <strong>excess</strong> server hardware based on projected peaks many months or years in advance. Thus, servers would use a fraction of their capacity, which remains unused much of the time. And if processing volume exceeds the peak, the whole system would degrade or fail. In a cloud, although capacity can be added dynamically, it needs to be added slightly before need to provide a margin to handle growth while additional instances are brought up.
+Bootstrapping instances in ASG can take 10 minutes or more. To avoid false alarms from being in "pending:complete" state before bootstrapping completes, create an <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">ASG Lifecycle Hook</a> to hold instance in a "pending:wait" state until bootstrapping completes.
+Hooks time out after 60 minutes. But an <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">API call</a> in the bootstrapping script can release the hook.<a target="_blank" href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html">*</a>
+
+![aws-ec2-whenever-cpu-34970](https://user-images.githubusercontent.com/300046/52156066-f79e5280-2653-11e9-98d9-b3ef01cc0024.png)
+
+A cloud of servers such as Amazon AWS <strong>pools unused capacity</strong> for allocation when needed.
+
+When spinning up AWS EC2 (Elastic Compute Cloud) server instances,
+there is a concern about how quickly additional capacity can be added.
+Currently, it can take 20 minutes or more between the request and when a new server being able to process application transactions. It helps to track the actual time in order to design auto-scaling settings.<a href="#Task">*</a>
+
+So some operators define one or more "standby" server instances to instantly process sudden increases in load while additional servers spin up. The number of such servers are determined by <strong>"spike tests"</strong> which emulate sudden increases in load.<a href="#Tasks">*</a>
+
+TODO: The complex way that AWS charges for disk drives (input/output) make spike tests useful to determine real costs.
+
+TODO: <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Auto Scaling Limits</a>
+
+
 <a name="TriggerLevels"></a>
 
 ### How to identify trigger levels
@@ -470,7 +514,7 @@ Leave a comment below! Let's have a discussion about this.
 <amp-youtube data-videoid="ekh8jIcBulY" layout="responsive" width="480" height="270"></amp-youtube>
 <br />
 
-Now that we've identified the point of UX degradation using Stress Testing and the level of nominal average load expected, we now can calculate the <strong>lead time</strong> and <strong>trigger levels</strong> for elasticity.
+Now that we've identified the <strong>point of UX degradation</strong> using Stress Testing and the level of <strong>nominal average load</strong> expected, we now can calculate the <strong>lead time</strong> and <strong>trigger levels</strong> for elasticity.
 
 The two horizontal lines are the two trigger levels we need to identify: one to increase capacity and one to decrease capacity.
 
@@ -506,10 +550,11 @@ Recap of the diagram:
 
 ### Benchmarking
 
-> "After you have identified your architectural approach, you should use <strong>benchmarking and load testing</strong> data to drive your selection of resource types and configuration options" -- 512 in Amazon's "Performance Efficiency Pillar: AWS Well-Architected Framework (AWS Whitepaper)
-
+PROTIP: The smallest server type may not work.
 Peter Wayner conducted a <a target="_blank" href="https://www.infoworld.com/article/2613784/benchmarking-amazon-ec2--the-wacky-world-of-cloud-performance.html
 ">cloud benchmarking exercise on AWS in 2013</a> using the <a target="_blank" href="https://github.com/dacapobench">open-source</a> Java-based <a target="_blank" href="http://dacapobench.org/">DaCapo benchmark suite</a>. He found that the least expensive virtual server type AWS provides, <strong>T1 Micro ran eight to 10 times slower than the M1 Medium</strong>, with more variability, and often failed to complete a task and thus not "enterprise worthy".
+
+
 
 
 <a name="ServerImages"></a>
@@ -553,48 +598,12 @@ QUESTION: To determine the cost of processing using any given server configurati
 NEXT: Server images are necessary to create multiple instances of the same application, for "elasticitiy".
 
 
-<a name="MultipleInstances"></a>
 
-## Multiple instances for elasticity, reliability
-
-If your website is successful in growing visitors, load at peak would grow beyond what a single server can handle.
-
-Then <strong>multiple servers</strong> would be needed for "elasticity" -- the ability to deal with variations in load by adding more resources during high load or consolidating when the load decreases.
-
-Amazon brands several of their services with the name "elastic" to highlight that aspect of their offering.
-
-Multiple servers are also needed to ensure <strong>reliability</strong> -- to have another server take over in case a particular server fails, to ensure <strong>"high availability" ("HA" for short)</strong>.
-
-<strong>Fail-over tests</strong> measure whether fault tolerance can really occur.
-Testing that deliberately downs a server to measure the speed of recovery is called 
-<strong>"resilency testing"</strong>.<a href="#Tasks">*</a>
 
 
 <a target="_blank" href="https://wilsonmar.github.io/cloudformation">CloudFormation</a> templates automate the creation of various components around the creation of a cluster of EC2 servers.
 An alternative are <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform</a> specifications which are multi-vendor (Azure, Google, etc. as well as Amazon).
 
-
-### Time to Additional Capacity
-
-The concern with scaling is QUESTION: how quickly additional capacity is added or removed before/after need?
-
-The traditional on-premises approach is to order and buy <strong>excess</strong> server hardware based on projected peaks many months or years in advance. Thus, servers would use a fraction of their capacity, which remains unused much of the time. And if processing volume exceeds the peak, the whole system would degrade or fail. In a cloud, although capacity can be added dynamically, it needs to be added slightly before need to provide a margin to handle growth while additional instances are brought up.
-Bootstrapping instances in ASG can take 10 minutes or more. To avoid false alarms from being in "pending:complete" state before bootstrapping completes, create an <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">ASG Lifecycle Hook</a> to hold instance in a "pending:wait" state until bootstrapping completes.
-Hooks time out after 60 minutes. But an <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">API call</a> in the bootstrapping script can release the hook.<a target="_blank" href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html">*</a>
-
-![aws-ec2-whenever-cpu-34970](https://user-images.githubusercontent.com/300046/52156066-f79e5280-2653-11e9-98d9-b3ef01cc0024.png)
-
-A cloud of servers such as Amazon AWS <strong>pools unused capacity</strong> for allocation when needed.
-
-When spinning up AWS EC2 (Elastic Compute Cloud) server instances,
-there is a concern about how quickly additional capacity can be added.
-Currently, it can take 20 minutes or more between the request and when a new server being able to process application transactions. It helps to track the actual time in order to design auto-scaling settings.<a href="#Task">*</a>
-
-So some operators define one or more "standby" server instances to instantly process sudden increases in load while additional servers spin up. The number of such servers are determined by <strong>"spike tests"</strong> which emulate sudden increases in load.<a href="#Tasks">*</a>
-
-TODO: The complex way that AWS charges for disk drives (input/output) make spike tests useful to determine real costs.
-
-TODO: <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Auto Scaling Limits</a>
 
 
 
