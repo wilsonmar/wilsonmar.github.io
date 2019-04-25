@@ -484,6 +484,10 @@ The course catalog says they cover 6 skills/technologies:
 
 QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a> "coming soon".
 
+The exam is one among others:
+* Microsoft AZ-100: Azure Infrastructure and Deployment Exam (<a target="_blank" title="by Chad Crowell" href="https://linuxacademy.com/azure/training/course/name/microsoft-azure-infrastructure-and-deployment-exam-az-100">videos</a>)
+* Microsoft AZ-203: Developing Solutions for Microsoft Azure  (<a target="_blank" href="https://linuxacademy.com/azure/training/course/name/microsoft-certified-azure-developer-exam-203-prep">videos</a>)
+* Microsoft AZ-300: Architecting Solutions for Microsoft Azure  (<a target="_blank" href="https://linuxacademy.com/azure/training/course/name/microsoft-azure-infrastructure-and-deployment-exam-az-100">videos</a>)
 
 ### Faculty
 

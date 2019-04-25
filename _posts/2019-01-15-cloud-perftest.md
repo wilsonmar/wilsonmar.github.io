@@ -298,14 +298,6 @@ Cache servers typically holds responses in a large amount of memory.
 But to ensure that money for a caching server is not wasted, the <strong>cache hit ratio</strong> should be measured when running under simulated load.
 
 
-### Benchmarking
-
-> "After you have identified your architectural approach, you should use <strong>benchmarking and load testing</strong> data to drive your selection of resource types and configuration options" -- 512 in Amazon's "Performance Efficiency Pillar: AWS Well-Architected Framework (AWS Whitepaper)
-
-Peter Wayner conducted a <a target="_blank" href="https://www.infoworld.com/article/2613784/benchmarking-amazon-ec2--the-wacky-world-of-cloud-performance.html
-">cloud benchmarking exercise on AWS in 2013</a> using the <a target="_blank" href="https://github.com/dacapobench">open-source</a> Java-based <a target="_blank" href="http://dacapobench.org/">DaCapo benchmark suite</a>. He found that the least expensive virtual server type AWS provides, <strong>T1 Micro ran eight to 10 times slower than the M1 Medium</strong>, with more variability, and often failed to complete a task and thus not "enterprise worthy".
-
-
 <a name="BusinessObjective"></a>
 
 ## Business Objective Economics
@@ -471,7 +463,7 @@ What do you think? Would tracking this metric reduce concerns in Operations peop
 
 Leave a comment below! Let's have a discussion about this.
 
-<a name=">
+<a name="TriggerLevels"></a>
 
 ### How to identify trigger levels
 
@@ -510,6 +502,14 @@ That's why repeated test runs are necessary multiple time during the life of the
 Recap of the diagram:
 
 <a target="_blank" title="cloud-perftest-instan-1004x493-40122.jpg" href="https://user-images.githubusercontent.com/300046/56486592-5b872900-6495-11e9-98b1-a8c4b71a5b4b.jpg"><img width="1004"  src="https://user-images.githubusercontent.com/300046/56486592-5b872900-6495-11e9-98b1-a8c4b71a5b4b.jpg"></a>
+
+
+### Benchmarking
+
+> "After you have identified your architectural approach, you should use <strong>benchmarking and load testing</strong> data to drive your selection of resource types and configuration options" -- 512 in Amazon's "Performance Efficiency Pillar: AWS Well-Architected Framework (AWS Whitepaper)
+
+Peter Wayner conducted a <a target="_blank" href="https://www.infoworld.com/article/2613784/benchmarking-amazon-ec2--the-wacky-world-of-cloud-performance.html
+">cloud benchmarking exercise on AWS in 2013</a> using the <a target="_blank" href="https://github.com/dacapobench">open-source</a> Java-based <a target="_blank" href="http://dacapobench.org/">DaCapo benchmark suite</a>. He found that the least expensive virtual server type AWS provides, <strong>T1 Micro ran eight to 10 times slower than the M1 Medium</strong>, with more variability, and often failed to complete a task and thus not "enterprise worthy".
 
 
 <a name="ServerImages"></a>
@@ -572,103 +572,6 @@ Testing that deliberately downs a server to measure the speed of recovery is cal
 
 <a target="_blank" href="https://wilsonmar.github.io/cloudformation">CloudFormation</a> templates automate the creation of various components around the creation of a cluster of EC2 servers.
 An alternative are <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform</a> specifications which are multi-vendor (Azure, Google, etc. as well as Amazon).
-
-
-## Monitoring
-
-On AWS, to collect measurements and streamed to CloudWatch, a CloudWatch Logs Agent needs to be installed on each server instance.
-
-AWS CloudWatch Log Groups are defined to capture and send alerts about specific errors to SNS (imple Notification Service) emails.
-
-After 60 days, logs can be sent to AWS Glacier for lower-cost longer term retention if a S3 Lifecycle policy is defined.
-
-
-## Load Balancing
-
-When multiple server instances are involved, a <a target="_blank" href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-create-https-ssl-load-balancer.html">Load Balancer</a> is needed to balance (distribute) work among instances. Load Balancers can also use (X.509) <a target="_blank" href="https://aws.amazon.com/blogs/aws/new-tls-termination-for-network-load-balancers/">SSL/TLS</a> certificates installed to convert "https://" (port 443)  encrypted requests to unencrypted "http://" (port 80) requests passed on to web servers. This reduces the decryption and encryption workload on individual servers on the back-end. But some prefer end-to-end security between all servers by <a target="_blank" href="https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html">generating</a> and installing SSL certs in every server instance.
-
-Some load balancers (such as F5) are specialized hardware (with ASIC chips) to process faster than standard computers. F5 itself, NGINX, Cisco, and others also have software-based load balancers which can be used instead of AWS offerings.
-
-
-To duplicate a running production instance containing the latest version of all data, first setup EC2 instances to save incremental data snapshots into S3 (for Disaster Recovery). But a volumn in running instance should be briefly stopped and flushed of data before doing snapshots.
-
-
-
-Each Elastic Load Balancer (ELB) and EC2 Auto Scaling Group (ASG) keeps its own <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-monitoring-features.html">set of logs to S3 objects</a>.
-The default is only EC2 status checks.
-So set S3 bucket Properties > Logging of "aws-bucket-logging" to enabled.
-
-![aws-asg-add-steps-503x157-7559](https://user-images.githubusercontent.com/300046/53306409-bcf69700-385a-11e9-9df4-769ceedf5bf2.jpg)
-
-BTW, for higher security, accounts writing logs to S3 buckets are set to write-only, with separate accounts to transfer, read-only, and delete.
-
-To determine whether each instance within an ASG is "OutOfService" and need to be replaced, listeners
-periodically checks the health of each instance. The frequency between "pings" is set by the "Grace Period" (such as 300 seconds).<a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/2062/lesson/3/module/206">*</a>
-
-AWS can keep a time-series ELB Access Logs of requests processed by a Load Balancer, which saves response latencies along with time of occurance, client IP address, request paths, and server responses. But they need to be activated at intervals of either 5 or 60 minutes. 
-
-AWS does NOT provide an UI to process and present analytics visualization to the logs it stores in S3. 
-So filtering and analytics visualization are done using additional tools:
-
-   * <a target="_blank" href="https://www.youtube.com/watch?v=PFUcF9Ye0fc">
-   Amazon Elasticsearch Service & Kinesis</a> Mar 29, 2017 rather overkill with replicas
-
-   ![cloud-perftest-kinesis-643x145-6219](https://user-images.githubusercontent.com/300046/51477772-798aa380-1d57-11e9-857c-179262c97b76.jpg)
-
-   * <a target="_blank" href="https://www.youtube.com/watch?v=g1wxfYVjCPY">
-    Amazon CloudWatch Logs Insights (DEV375)</a> at AWS re:Invent 2018 Nov 29
-
-   * <a target="_blank" href="https://www.youtube.com/watch?v=uoLsrKZha0E">
-   S3 logs using Athena?</a>
-
-   * AWS Elastic Map Reduce
-
-   * Logz.io
-
-   * <a target="_blank" href="https://www.sumologic.com/blog/amazon-web-services/monitoring-aws-auto-scaling-and-elastic-load-balancers-with-log-analytics/">Sumologic</a> has an <a target="_blank" href="https://www.sumologic.com/application/elb/">app specifically to analyze ELB logs</a>. 
-
-   ![cloud-perftest-sumologic-elb-300ppi-1024x1020](https://user-images.githubusercontent.com/300046/51481296-89a78080-1d61-11e9-9cd0-6ed562d323ce.png)
-
-   * Splunk has its custom query language
-
-   <br /><br />
-
-<a target="_blank" href="http://dangoldin.com/2018/02/20/analyzing-aws-elb-logs/">
-SQL queries for ELB Logs</a>
-filters for response codes that are not 200, the time frame of calls, etc.
-
-
-
-   <br /><br />
-
-Trends identified would include the time between acceptance of a connection to the first byte sent to an instance. Timings includes processing of a public key to match the one in the ELB setup with a back-end instance authentication policy.
-
-<!-- This is for either Layer 7 HTTP/HTTPS that uses X-Forwarded-for header to get client IP addresses via Application Load Balancers or 
-Layer 4 TCP using proxy protocol to get client addresses via Network or Classic Load Balancers
-TODO: Load balancer limits.
--->
-
-### Bastion Hosts
-
-BTW, when servers behind a firewall use unencrypted traffic, they should not have connection to the public internet. But to obtain files from the open internet, traditionally, a "Bastion host" is setup for administrators (on pre-defined IP addresses). Such a server is the only one that goes through a NAT (Network Address Translation) "Gateway" which hides IP addresses from the outside world. 
-
-Once vetted, files needed by application servers are obtained from an internal Network File Share (NFS) or file respository server managed by utility software such as Nexus or Artifactory.
-
-Bation hosts and inbound ports and SSH keys can be replaced by the <a target="_blank" href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html">AWS Systems Manager Session Manager</a>, which also maintains an audit trail. But its IAM setup is tricky.<a target="_blank" href="https://acloud.guru/series/release-review/view/109">*</a>
-
-
-## A/B Testing
-
-Cloud-based DNS (Domain Name Service) servers (within Amazon's Route 53 service) resolves IP addresses from host names.
-It can also allocate a percentage of traffic to different sets of servers for Blue/Green Deployment or A/B testing.
-Blue/Green Deployment is used to transition users to a new set of an app enviornment for a new version.
-A/B testing allocates varying percentage of users to variations of an app to compare user reaction/satisfaction.
-
-Instead of directly interacting with Route 53, the switchover can be specified in OpsWorks and Elastic Beanstalk consoles or via Cloud Formation templates 
-<a target="_blank" href="https://interactive.linuxacademy.com/diagrams/DevopsDoctrine.html">This</a>
-
-A/B testing differs from "Blue-Green Deployments" in that several versions of a complete set of services are employed during A/B testing.
-But only one set of services are being used at a time when switching between Blue and Green Deployments.
 
 
 ### Time to Additional Capacity
@@ -774,6 +677,101 @@ Alternately, this command lists them:
 The RESULT variable above captures the list of forwarding rules created.
 If there is a possibility that there are several, it is necessary to select the specific rule to delete.
 So ideally you would build up the whole environment each time so there is no question there is no lingering rules.
+
+
+
+## Monitoring
+
+On AWS, to collect measurements and streamed to CloudWatch, a CloudWatch Logs Agent needs to be installed on each server instance.
+
+AWS CloudWatch Log Groups are defined to capture and send alerts about specific errors to SNS (imple Notification Service) emails.
+
+After 60 days, logs can be sent to AWS Glacier for lower-cost longer term retention if a S3 Lifecycle policy is defined.
+
+
+## Load Balancing
+
+When multiple server instances are involved, a <a target="_blank" href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-create-https-ssl-load-balancer.html">Load Balancer</a> is needed to balance (distribute) work among instances. Load Balancers can also use (X.509) <a target="_blank" href="https://aws.amazon.com/blogs/aws/new-tls-termination-for-network-load-balancers/">SSL/TLS</a> certificates installed to convert "https://" (port 443)  encrypted requests to unencrypted "http://" (port 80) requests passed on to web servers. This reduces the decryption and encryption workload on individual servers on the back-end. But some prefer end-to-end security between all servers by <a target="_blank" href="https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html">generating</a> and installing SSL certs in every server instance.
+
+Some load balancers (such as F5) are specialized hardware (with ASIC chips) to process faster than standard computers. F5 itself, NGINX, Cisco, and others also have software-based load balancers which can be used instead of AWS offerings.
+
+
+To duplicate a running production instance containing the latest version of all data, first setup EC2 instances to save incremental data snapshots into S3 (for Disaster Recovery). But a volumn in running instance should be briefly stopped and flushed of data before doing snapshots.
+
+
+
+Each Elastic Load Balancer (ELB) and EC2 Auto Scaling Group (ASG) keeps its own <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-monitoring-features.html">set of logs to S3 objects</a>.
+The default is only EC2 status checks.
+So set S3 bucket Properties > Logging of "aws-bucket-logging" to enabled.
+
+![aws-asg-add-steps-503x157-7559](https://user-images.githubusercontent.com/300046/53306409-bcf69700-385a-11e9-9df4-769ceedf5bf2.jpg)
+
+BTW, for higher security, accounts writing logs to S3 buckets are set to write-only, with separate accounts to transfer, read-only, and delete.
+
+To determine whether each instance within an ASG is "OutOfService" and need to be replaced, listeners
+periodically checks the health of each instance. The frequency between "pings" is set by the "Grace Period" (such as 300 seconds).<a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/2062/lesson/3/module/206">*</a>
+
+AWS can keep a time-series ELB Access Logs of requests processed by a Load Balancer, which saves response latencies along with time of occurance, client IP address, request paths, and server responses. But they need to be activated at intervals of either 5 or 60 minutes. 
+
+AWS does NOT provide an UI to process and present analytics visualization to the logs it stores in S3. 
+So filtering and analytics visualization are done using additional tools:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=PFUcF9Ye0fc">
+   Amazon Elasticsearch Service & Kinesis</a> Mar 29, 2017 rather overkill with replicas
+
+   ![cloud-perftest-kinesis-643x145-6219](https://user-images.githubusercontent.com/300046/51477772-798aa380-1d57-11e9-857c-179262c97b76.jpg)
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=g1wxfYVjCPY">
+    Amazon CloudWatch Logs Insights (DEV375)</a> at AWS re:Invent 2018 Nov 29
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=uoLsrKZha0E">
+   S3 logs using Athena?</a>
+
+   * AWS Elastic Map Reduce
+
+   * Logz.io
+
+   * <a target="_blank" href="https://www.sumologic.com/blog/amazon-web-services/monitoring-aws-auto-scaling-and-elastic-load-balancers-with-log-analytics/">Sumologic</a> has an <a target="_blank" href="https://www.sumologic.com/application/elb/">app specifically to analyze ELB logs</a>. 
+
+   ![cloud-perftest-sumologic-elb-300ppi-1024x1020](https://user-images.githubusercontent.com/300046/51481296-89a78080-1d61-11e9-9cd0-6ed562d323ce.png)
+
+   * Splunk has its custom query language
+
+   <br /><br />
+
+<a target="_blank" href="http://dangoldin.com/2018/02/20/analyzing-aws-elb-logs/">
+SQL queries for ELB Logs</a>
+filters for response codes that are not 200, the time frame of calls, etc.
+
+Trends identified would include the time between acceptance of a connection to the first byte sent to an instance. Timings includes processing of a public key to match the one in the ELB setup with a back-end instance authentication policy.
+
+<!-- This is for either Layer 7 HTTP/HTTPS that uses X-Forwarded-for header to get client IP addresses via Application Load Balancers or 
+Layer 4 TCP using proxy protocol to get client addresses via Network or Classic Load Balancers
+TODO: Load balancer limits.
+-->
+
+### Bastion Hosts
+
+BTW, when servers behind a firewall use unencrypted traffic, they should not have connection to the public internet. But to obtain files from the open internet, traditionally, a "Bastion host" is setup for administrators (on pre-defined IP addresses). Such a server is the only one that goes through a NAT (Network Address Translation) "Gateway" which hides IP addresses from the outside world. 
+
+Once vetted, files needed by application servers are obtained from an internal Network File Share (NFS) or file respository server managed by utility software such as Nexus or Artifactory.
+
+Bation hosts and inbound ports and SSH keys can be replaced by the <a target="_blank" href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html">AWS Systems Manager Session Manager</a>, which also maintains an audit trail. But its IAM setup is tricky.<a target="_blank" href="https://acloud.guru/series/release-review/view/109">*</a>
+
+
+## A/B Testing
+
+Cloud-based DNS (Domain Name Service) servers (within Amazon's Route 53 service) resolves IP addresses from host names.
+It can also allocate a percentage of traffic to different sets of servers for Blue/Green Deployment or A/B testing.
+Blue/Green Deployment is used to transition users to a new set of an app enviornment for a new version.
+A/B testing allocates varying percentage of users to variations of an app to compare user reaction/satisfaction.
+
+Instead of directly interacting with Route 53, the switchover can be specified in OpsWorks and Elastic Beanstalk consoles or via Cloud Formation templates 
+<a target="_blank" href="https://interactive.linuxacademy.com/diagrams/DevopsDoctrine.html">This</a>
+
+A/B testing differs from "Blue-Green Deployments" in that several versions of a complete set of services are employed during A/B testing.
+But only one set of services are being used at a time when switching between Blue and Green Deployments.
+
 
 ### Automation options
 
