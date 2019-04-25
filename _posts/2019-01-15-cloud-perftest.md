@@ -518,7 +518,8 @@ Now that we've identified the <strong>point of UX degradation</strong> using Str
 
 The two horizontal lines are the two trigger levels we need to identify: one to increase capacity and one to decrease capacity.
 
-The load level we reach for a short time during <strong>Spike Test runs</strong> is the <strong>"spike capacity level"</strong>, which we calculate to be slightly higher than the highest <strong>momentary peak</strong> expected above the normal average load. In offices this often occurs around 11am during <strong>normal</strong> days, when everyone is at work on their computers. 
+The load level we reach for a short time during <strong>Spike Test runs</strong> is the <strong>"spike capacity level"</strong>, which we calculate to be slightly higher than the highest <strong>momentary peak</strong> expected above the normal average load. 
+PROTIP: In offices this often occurs around 11am during <strong>normal</strong> days, when everyone is at work on their computers. 
 
 Within environments seeking high availability, load would be split among a minimum of two hot instances within a cluster so that one machine would still be running in case one fails or is being replaced. 
 
@@ -554,89 +555,69 @@ PROTIP: The smallest server type may not work.
 Peter Wayner conducted a <a target="_blank" href="https://www.infoworld.com/article/2613784/benchmarking-amazon-ec2--the-wacky-world-of-cloud-performance.html
 ">cloud benchmarking exercise on AWS in 2013</a> using the <a target="_blank" href="https://github.com/dacapobench">open-source</a> Java-based <a target="_blank" href="http://dacapobench.org/">DaCapo benchmark suite</a>. He found that the least expensive virtual server type AWS provides, <strong>T1 Micro ran eight to 10 times slower than the M1 Medium</strong>, with more variability, and often failed to complete a task and thus not "enterprise worthy".
 
+Now let's dive down further...
+
+## Monitoring agents
+
+On AWS, to collect measurements and streamed to CloudWatch, a CloudWatch Logs Agent needs to be installed on each server instance.
+
+AWS <strong>CloudWatch Log Groups</strong> are defined to capture and send alerts about specific errors to SNS (Simple Notification Service) emails.
+
+After 60 days, logs can be sent to AWS <strong>Glacier</strong> for lower-cost longer term retention if a S3 Lifecycle policy is defined.
+
+BTW, for security, there should be different accounts to read and write. The account that can write should not be able to delete.
 
 
+<a name="Monitoring"></a>
 
-<a name="ServerImages"></a>
+### Monitoring granularity and fidelity
 
-## Server images
+Automated monitoring and alerts replace the need for constant human vigilence, so you can sleep better at night rather than worrying.
 
-Many organizations today build all aspects of the server they use by defining programming code "configuration as code" such as Chef, Ansible, Cloud Formation, Terraform, Pulumi, etc.
-Such an approach include the storage of configuration code in a source version control repository which can retrieve the full set of all files as they were at specific points in the past. Version control systems such as GitHub and GitLab also track who made changes and why (in comment messages).
+Some organizations prefer to automate all aspects of setting up computing capabilities -- installing the operating system, drivers, etc.
+This enables the organization to quickly respond to "zero day" security vulnerabilities which can crop up in any part of a system.
+This would also enable the organization to take advantage of lower prices for "bare metal" server instances from IBM and (since 2018) AWS.
+But is the total cost of running bare-metal boxes really cheaper than other approaches?
 
-Server images created by the configuration code can be saved as server images in binary repositories such as Nexus and Artifactory. The server images are used to spin up each server instance.
-When developers share an image with testers, what is tested is exactly what developers end up with.
-When testers and operations share an image, what is used in production is what has been tested.
+The default granularity of AWS monitoring service (CloudWatch) is one datapoint every <strong>5 minutes</strong>, and does not include monitoring of memory usage. Monitoring of memory usage and granularity of <strong>1 minutes</strong> can be configured (at additional cost).
+But that still doesn't cover situations where sub-second ganularity is needed to inform debugging of "micro events".
 
-There is another advantage to using server images.
-For example, Wordpress is written as an open-source application, so anyone can customize it.
-So various teams have created server images that incorporate a pre-tested set of
-various components and features such as containing a storefront,
-or one that has been tuned for efficient and fast running.
+To save on disk space, many monitoring vendors <strong>sample</strong> readings from among servers,
+taking perhaps just 1% of all readings captured. 
+This would reduce the fidelity of a specific server even more.
 
-There are several different types of server images:
-   * AMI (Amazon Machine Images) within AWS (Amazon Web Services)
-   * Virtual machine DisK files (VMDKs) running on VMWare or VirtualBox 
-   * Virtual Hard Disk (VHD) files used with Microsoft Virtual Server and Hyper-V hypervisors
-   * Docker containers from DockerHub.com, Quary.io, etc.
-   <br /><br />
+To further save on disk space, many traditional monitoring utilities <strong>truncate</strong> data of more granular detail over time.
+For example, individual data points collected are deleted after a week.
+Some keep just the average of each day's measurement.
+This is not a useful practice for helping with debugging issues over time.
+A compromise is to calculate and store, in addition to averages, 90th or 95th percentile calculations.<a target="_blank" href="https://www.dynatrace.com/news/blog/why-averages-suck-and-percentiles-are-great/" title="Why Averages Suck and Percentiles are Great, November 14, 2012 by Michael Kopp">*</a>
 
-All the images (except Docker) contain the underlying operating system and utilities in each image.
+So when there is a cluster of machines, use general metrics to determine whether they are all using comparable amounts of CPU, memory, etc..
+(An example of such a metric is the <a target="_blank" href="https://dsp.stackexchange.com/questions/811/determining-the-mean-and-standard-deviation-in-real-time">running</a> Coefficient of Variation (CV) obtained by dividing the standard deviation into the average.)
 
-Some AMI creators charge its users money. 
-But many pay it because it saves them hassle and time.
+<a target="_blank" href="https://www.youtube.com/watch?v=QkcBASKLyeU">CPU measured as "busy" (not idle) may be really just "stalled" waiting for resources</a>. The "showboost" and "pmcarch" utility measuring instructions per cycle (IPC)
 
-QUESTION: Is the extra cost worth the extra savings? Load testing can answer that question.
+More granular metrics on just one of the servers within a cluster can then be used.
+This would reduce disk space usage for metrics.
+This would also provide an indicator of the impact of adding more grandular measurements to a machine.
 
-Historically, Intel processors are used by AWS, but in 2018, machines with <strong>ARM processors</strong> became available, 
-for a 40% cost savings.
-
-QUESTION: To determine the cost of processing using any given server configuration, one needs to measure use of processing, storage, network data transfers, etc. at various levels of user load accessing the server at various points as load increases.<a href="#Tasks">*</a>
-
-> Instead of just testing, "performance engineering" yields <strong>configuration changes which identify cost savings</strong>.
-
-NEXT: Server images are necessary to create multiple instances of the same application, for "elasticitiy".
+On the metrics dashboard, <strong>one line</strong> representing whether all servers are at a similar level of load can replace a graph containing separate lines for each server. Taking that further, one line can represent whether all metrics about a cluster are "nominal" can replace a whole set of lines about each metric about a cluster. That's kinda like a person's FICO (finacial) score that consists of several aspects of credit trusworthiness.
 
 
+QUESTION: How much time elapsed between alarm and reponse? This would involve recording events in a database, with analytics on that database.
+Within AWS, CloudWatch would store a new row within RDS.
+
+Furthermore, an email, SMS text, or Slack notification can be sent out when a thresholds or events occur.
+Within AWS, <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">
+send SNS notifications when an Auto Scaling groups launches or terminates instances</a>
 
 
-
-<a target="_blank" href="https://wilsonmar.github.io/cloudformation">CloudFormation</a> templates automate the creation of various components around the creation of a cluster of EC2 servers.
-An alternative are <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform</a> specifications which are multi-vendor (Azure, Google, etc. as well as Amazon).
-
+To get ahead of events, how long could the alarm event could be <strong>predicted</strong>?
+That's where ratios might be used.
 
 
-
-### Affinity Groups
-
-A big concern with measurement during load testing is the time between client request and (the first byte of) response from server.
-Time over the network is both significant and can take up 75% of the total response time.
-To eliminate that time, ideally, load generators would be next to web servers.
-That would enable accurate diagnosis of response times purely on the server (and underlying services).
-
-On AWS, an "affinity group" setting became available in 2018 to keep a set of servers close to each other, to minimize latancy of communication between servers. 
-
-
-
-One advantage of using a cloud vendor is that they make it easier to distribute traffic across several data centers so that if one center is hit by a disaster, a stand-by center can take over.
-Amazon calls them different "Availability Zones".
-Amazon makes two or more "AZ's" available for each of several dozen "Regions" around the world.
-
-But does that really work and how much time does it take to switch between availability zones?
-That's the job of "fail-over tests".<a href="#Tasks">*</a>
-
-The redundancy of hosting and syncing data across several regions is more complex and costly than hosting across several Availability Zones.
-
-Hosting across zones require use of multiple network VPC (Virtual Private Cloud) settings that define network security settings used.
-
-TODO: Detailed comparison of various cloud vendor service names and offerings (Amazon, Azure, Google, Alibaba, etc.)?
-
-<hr />
-
-
-References:
-
-Based on the <a target="_blank" href="http://deeplizard.com/learn/playlist/PLZbbT5o_s2xoWPNdBbqi9eWnMJ5cDrr1M">Deep Lizard's AWS - Amazon Web Services EC2 Management video series</a> from November 2017.
+<a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/logging-using-cloudtrail.html">
+AWS CloudTrail logs</a> report configuration changes such as which requests were made, the source IP addresses where the requests came from, who made the request, when the request was made, etc.
 
 
 <a name="AutoScaling"></a>
@@ -687,15 +668,85 @@ The RESULT variable above captures the list of forwarding rules created.
 If there is a possibility that there are several, it is necessary to select the specific rule to delete.
 So ideally you would build up the whole environment each time so there is no question there is no lingering rules.
 
+<hr />
+
+<a name="ServerImages"></a>
+
+## Server images
+
+Many organizations today build all aspects of the server they use by defining programming code "configuration as code" such as Chef, Ansible, Cloud Formation, Terraform, Pulumi, etc.
+Such an approach include the storage of configuration code in a source version control repository which can retrieve the full set of all files as they were at specific points in the past. Version control systems such as GitHub and GitLab also track who made changes and why (in comment messages).
+
+Server images created by the configuration code can be saved as server images in binary repositories such as Nexus and Artifactory. The server images are used to spin up each server instance.
+When developers share an image with testers, what is tested is exactly what developers end up with.
+When testers and operations share an image, what is used in production is what has been tested.
+
+There is another advantage to using server images.
+For example, Wordpress is written as an open-source application, so anyone can customize it.
+So various teams have created server images that incorporate a pre-tested set of
+various components and features such as containing a storefront,
+or one that has been tuned for efficient and fast running.
+
+There are several different types of server images:
+   * AMI (Amazon Machine Images) within AWS (Amazon Web Services)
+   * Virtual machine DisK files (VMDKs) running on VMWare or VirtualBox 
+   * Virtual Hard Disk (VHD) files used with Microsoft Virtual Server and Hyper-V hypervisors
+   * Docker containers from DockerHub.com, Quary.io, etc.
+   <br /><br />
+
+All the images (except Docker) contain the underlying operating system and utilities in each image.
+
+Some AMI creators charge its users money. 
+But many pay it because it saves them hassle and time.
+
+QUESTION: Is the extra cost worth the extra savings? Load testing can answer that question.
+
+Historically, Intel processors are used by AWS, but in 2018, machines with <strong>ARM processors</strong> became available, 
+for a 40% cost savings.
+
+QUESTION: To determine the cost of processing using any given server configuration, one needs to measure use of processing, storage, network data transfers, etc. at various levels of user load accessing the server at various points as load increases.<a href="#Tasks">*</a>
+
+> Instead of just testing, "performance engineering" yields <strong>configuration changes which identify cost savings</strong>.
+
+NEXT: Server images are necessary to create multiple instances of the same application, for "elasticitiy".
 
 
-## Monitoring
 
-On AWS, to collect measurements and streamed to CloudWatch, a CloudWatch Logs Agent needs to be installed on each server instance.
+<a target="_blank" href="https://wilsonmar.github.io/cloudformation">CloudFormation</a> templates automate the creation of various components around the creation of a cluster of EC2 servers.
+An alternative are <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform</a> specifications which are multi-vendor (Azure, Google, etc. as well as Amazon).
 
-AWS CloudWatch Log Groups are defined to capture and send alerts about specific errors to SNS (imple Notification Service) emails.
 
-After 60 days, logs can be sent to AWS Glacier for lower-cost longer term retention if a S3 Lifecycle policy is defined.
+### Affinity Groups
+
+A big concern with measurement during load testing is the time between client request and (the first byte of) response from server.
+Time over the network is both significant and can take up 75% of the total response time.
+To eliminate that time, ideally, load generators would be next to web servers.
+That would enable accurate diagnosis of response times purely on the server (and underlying services).
+
+On AWS, an "affinity group" setting became available in 2018 to keep a set of servers close to each other, to minimize latancy of communication between servers. 
+
+
+
+One advantage of using a cloud vendor is that they make it easier to distribute traffic across several data centers so that if one center is hit by a disaster, a stand-by center can take over.
+Amazon calls them different "Availability Zones".
+Amazon makes two or more "AZ's" available for each of several dozen "Regions" around the world.
+
+But does that really work and how much time does it take to switch between availability zones?
+That's the job of "fail-over tests".<a href="#Tasks">*</a>
+
+The redundancy of hosting and syncing data across several regions is more complex and costly than hosting across several Availability Zones.
+
+Hosting across zones require use of multiple network VPC (Virtual Private Cloud) settings that define network security settings used.
+
+TODO: Detailed comparison of various cloud vendor service names and offerings (Amazon, Azure, Google, Alibaba, etc.)?
+
+<hr />
+
+
+References:
+
+Based on the <a target="_blank" href="http://deeplizard.com/learn/playlist/PLZbbT5o_s2xoWPNdBbqi9eWnMJ5cDrr1M">Deep Lizard's AWS - Amazon Web Services EC2 Management video series</a> from November 2017.
+
 
 
 ## Load Balancing
@@ -708,21 +759,23 @@ Some load balancers (such as F5) are specialized hardware (with ASIC chips) to p
 To duplicate a running production instance containing the latest version of all data, first setup EC2 instances to save incremental data snapshots into S3 (for Disaster Recovery). But a volumn in running instance should be briefly stopped and flushed of data before doing snapshots.
 
 
-
-Each Elastic Load Balancer (ELB) and EC2 Auto Scaling Group (ASG) keeps its own <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-monitoring-features.html">set of logs to S3 objects</a>.
+PROTIP: Each Elastic Load Balancer (ELB) and EC2 Auto Scaling Group (ASG) keeps its own <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-monitoring-features.html">set of logs to S3 objects</a>.
 The default is only EC2 status checks.
-So set S3 bucket Properties > Logging of "aws-bucket-logging" to enabled.
+So set S3 bucket Properties > Logging of "aws-bucket-logging" to "enabled".
 
-![aws-asg-add-steps-503x157-7559](https://user-images.githubusercontent.com/300046/53306409-bcf69700-385a-11e9-9df4-769ceedf5bf2.jpg)
+   ![aws-asg-add-steps-503x157-7559](https://user-images.githubusercontent.com/300046/53306409-bcf69700-385a-11e9-9df4-769ceedf5bf2.jpg)
 
-BTW, for higher security, accounts writing logs to S3 buckets are set to write-only, with separate accounts to transfer, read-only, and delete.
+PROTIP: BTW, for higher security, accounts writing logs to S3 buckets are set to write-only, with separate accounts to transfer, read-only, and delete.
+
+AWS can keep a time-series ELB Access Logs of requests processed by a Load Balancer, which saves response latencies along with time of occurance, client IP address, request paths, and server responses. But they need to be activated at intervals of either 5 or 60 minutes. 
 
 To determine whether each instance within an ASG is "OutOfService" and need to be replaced, listeners
 periodically checks the health of each instance. The frequency between "pings" is set by the "Grace Period" (such as 300 seconds).<a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/2062/lesson/3/module/206">*</a>
 
-AWS can keep a time-series ELB Access Logs of requests processed by a Load Balancer, which saves response latencies along with time of occurance, client IP address, request paths, and server responses. But they need to be activated at intervals of either 5 or 60 minutes. 
 
-AWS does NOT provide an UI to process and present analytics visualization to the logs it stores in S3. 
+### Log Analytics Visualization
+
+PROTIP: AWS does NOT provide an UI to process and present analytics visualization to the logs it stores in S3. 
 So filtering and analytics visualization are done using additional tools:
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=PFUcF9Ye0fc">
@@ -745,7 +798,6 @@ So filtering and analytics visualization are done using additional tools:
    ![cloud-perftest-sumologic-elb-300ppi-1024x1020](https://user-images.githubusercontent.com/300046/51481296-89a78080-1d61-11e9-9cd0-6ed562d323ce.png)
 
    * Splunk has its custom query language
-
    <br /><br />
 
 <a target="_blank" href="http://dangoldin.com/2018/02/20/analyzing-aws-elb-logs/">
@@ -781,7 +833,6 @@ Instead of directly interacting with Route 53, the switchover can be specified i
 A/B testing differs from "Blue-Green Deployments" in that several versions of a complete set of services are employed during A/B testing.
 But only one set of services are being used at a time when switching between Blue and Green Deployments.
 
-
 ### Automation options
 
 The advice here is to run cloud using automated scripts so that commands such as the above can be inserted when needed.
@@ -793,66 +844,12 @@ Puppet then puts instances into a specific state.
 Hashicorp's Terraform equivalent HCL (which adds comments to YAML) is "multi-cloud" (stands up instances in AWS, Azure, GCP, etc.).
 
 
-
 There are some differences in settings during testing vs. during production. For example, production Auto-Scaling Termination Policies would use "ClosestToNextInstanceHour" to save some money for Windows instances which are charged by the hour rather than Linux instances which are charged by the minute.
 But when testing a new launch configuration, it may be easier to terminate "NewestInstance" first.
 
 
-
 Also to enable multi-cloud capability, some companies put their public-facing load balancers in their own data centers,
 then route to the cloud of their choice. QUESTION: How much latency does that introduce?
-
-
-<a name="Monitoring"></a>
-
-## Monitoring granularity and fidelity
-
-Automated monitoring and alerts replace the need for constant human vigilence, so you can sleep better at night rather than worrying.
-
-Some organizations prefer to automate all aspects of setting up computing capabilities -- installing the operating system, drivers, etc.
-This enables the organization to quickly respond to "zero day" security vulnerabilities which can crop up in any part of a system.
-This would also enable the organization to take advantage of lower prices for "bare metal" server instances from IBM and (since 2018) AWS.
-But is the total cost of running bare-metal boxes really cheaper than other approaches?
-
-The default granularity of AWS monitoring service (CloudWatch) is one datapoint every <strong>5 minutes</strong>, and does not include monitoring of memory usage. Monitoring of memory usage and granularity of <strong>1 minutes</strong> can be configured (at additional cost).
-But that still doesn't cover situations where sub-second ganularity is needed to inform debugging of "micro events".
-
-To save on disk space, many monitoring vendors <strong>sample</strong> readings from among servers,
-taking perhaps just 1% of all readings captured. 
-This would reduce the fidelity of a specific server even more.
-
-To further save on disk space, many traditional monitoring utilities <strong>truncate</strong> data of more granular detail over time.
-For example, individual data points collected are deleted after a week.
-Some keep just the average of each day's measurement.
-This is not a useful practice for helping with debugging issues over time.
-A compromise is to calculate and store, in addition to averages, 90th or 95th percentile calculations.<a target="_blank" href="https://www.dynatrace.com/news/blog/why-averages-suck-and-percentiles-are-great/" title="Why Averages Suck and Percentiles are Great, November 14, 2012 by Michael Kopp">*</a>
-
-So when there is a cluster of machines, use general metrics to determine whether they are all using comparable amounts of CPU, memory, etc..
-(An example of such a metric is the <a target="_blank" href="https://dsp.stackexchange.com/questions/811/determining-the-mean-and-standard-deviation-in-real-time">running</a> Coefficient of Variation (CV) obtained by dividing the standard deviation into the average.)
-
-<a target="_blank" href="https://www.youtube.com/watch?v=QkcBASKLyeU">CPU measured as "busy" (not idle) may be really just "stalled" waiting for resources</a>. The "showboost" and "pmcarch" utility measuring instructions per cycle (IPC)
-
-More granular metrics on just one of the servers within a cluster can then be used.
-This would reduce disk space usage for metrics.
-This would also provide an indicator of the impact of adding more grandular measurements to a machine.
-
-On the metrics dashboard, <strong>one line</strong> representing whether all servers are at a similar level of load can replace a graph containing separate lines for each server. Taking that further, one line can represent whether all metrics about a cluster are "nominal" can replace a whole set of lines about each metric about a cluster. That's kinda like a person's FICO (finacial) score that consists of several aspects of credit trusworthiness.
-
-
-QUESTION: How much time elapsed between alarm and reponse? This would involve recording events in a database, with analytics on that database.
-Within AWS, CloudWatch would store a new row within RDS.
-
-Furthermore, an email, SMS text, or Slack notification can be sent out when a thresholds or events occur.
-Within AWS, <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">
-send SNS notifications when an Auto Scaling groups launches or terminates instances</a>
-
-
-To get ahead of events, how long could the alarm event could be <strong>predicted</strong>?
-That's where ratios might be used.
-
-
-<a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/logging-using-cloudtrail.html">
-AWS CloudTrail logs</a> report configuration changes such as which requests were made, the source IP addresses where the requests came from, who made the request, when the request was made, etc.
 
 
 <hr />
