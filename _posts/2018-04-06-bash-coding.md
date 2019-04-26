@@ -1233,6 +1233,16 @@ The files are downloaded into <a target="_blank" href="https://support.apple.com
 <a target="_blank" href="http://sourabhbajaj.com/mac-setup/iTerm/README.html">ITerm2 can make use of these font files</a>.
 
 
+## "User Data" for EC2 instance bootup
+
+Here is code to install, enable, and start Apache web server:
+
+<pre>
+#!/bin/sh
+yum -y install https
+chkconfig httpd on
+/etc/init.d/httpd start
+</pre>
 
 <a name="SayText"></a>
 

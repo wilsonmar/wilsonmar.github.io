@@ -482,13 +482,14 @@ The course catalog says they cover 6 skills/technologies:
 1. Implement continuous feedback (10-15%)
 <br /><br />
 
-QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a> "coming soon"?
-
-Microsoft's DevOps exam is the culumination of other exams:
- * AZ-900: Fundamentals
+Microsoft's DevOps Expert exam is the culumination of other exams ($99 each):
+ * <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-az-900.aspx">AZ-900: Azure Fundamentals</a>
  * AZ-100: Azure Infrastructure and Deployment Exam (<a target="_blank" title="by Chad Crowell" href="https://linuxacademy.com/azure/training/course/name/microsoft-azure-infrastructure-and-deployment-exam-az-100">videos</a>)
 * AZ-203: Developing Solutions for Microsoft Azure  (<a target="_blank" href="https://linuxacademy.com/azure/training/course/name/microsoft-certified-azure-developer-exam-203-prep">videos</a>)
 * AZ-300: Architecting Solutions for Microsoft Azure  (<a target="_blank" href="https://linuxacademy.com/azure/training/course/name/microsoft-azure-infrastructure-and-deployment-exam-az-100">videos</a>)
+* <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-az-301.aspx">AZ-301: Microsoft Azure Architect Design</a> 120 minute $165
+
+QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a> "coming soon"?
 
 ### Faculty
 

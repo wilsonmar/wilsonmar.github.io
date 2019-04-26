@@ -931,6 +931,8 @@ Steps here are based on <a target="_blank" href="https://docs.microsoft.com/en-u
 
 0. Click "OK" to dismiss the "Mono-sgen32 is not optimized" pop-up if it comes up. This means that Visual Studio was built using a 32 (rather than 64) bit compiler, for which <a target="_blank" href="https://support.apple.com/en-gb/HT208436">Apple is ending support</a>, especially on macOS Mojave (10.14). Read more about it <a target="_blank" href="https://www.macworld.co.uk/feature/mac-software/not-optimized-mac-warning-3675674/">here</a>.
 
+   ### View in internet browser
+
 0. After "Build successful" appears at the top of Visual Studio, in your default internet browser should appear a new tab with URL:
 
    <a target="_blank" href="http://localhost:5001">http://localhost:5001</a>
@@ -941,25 +943,39 @@ Steps here are based on <a target="_blank" href="https://docs.microsoft.com/en-u
 
    BTW, to switch among programs on a Mac, keep pressing command+Tab until you see the Visual Studio icon.
 
-1. Switch back to the Visual Studio Solution pane. 
-
    ### .gitignore and README files
+
+1. In the browser go to https://gitignore.io to construct a .gitignore file for the combination of your operating systems (macOS and Windows), language (Python, Java, JavaScript, etc.), Platform (NodeJS, etc.), and tool (Eclipse IDE, etc.).
+
 
 1. In the Solution pane, click the right-pointing arrow next to the project name to expand the tree:
 
    ![vs-mac-sol-expanded-220x301-7499](https://user-images.githubusercontent.com/300046/56457799-1a7c0100-633d-11e9-829a-c398f3b6f7e9.jpg)
 
    Press <strong>command + shift + .</strong> to show hidden files and folders.
-   
+
+
    PROTIP: The README.md file that GitHub displays for readers is not placed within Visual Studio project files.
 
 1. Switch to the Mac Finder to see that there is a <strong>.gitignore</strong> file above the folder which VisualStudio displays.
 
    ![vs-mac-git-170x124-3611](https://user-images.githubusercontent.com/300046/56464714-d32d5900-63ac-11e9-9eaf-47124b827a3a.jpg)
 
-   At time of this writing, the repository did not have a <strong>README.md</strong> file which GitHub displays for readers. README files are usually not referenced in the application's UI. 
+1. Position the Finder window so that you can drag    
+
+1. Switch back to the Visual Studio Solution pane. 
+1. Drag the .gitignore file onto Visual Studio.
+
+   ### README.md file
+
+   PROTIP: At time of this writing, the repository did not have a <strong>README.md</strong> file which GitHub displays for readers. README files are usually not referenced in the application's UI. 
    
    So the exercise below will add one if it doesn't exist, or edit the file if it exists.
+
+1. In a Terminal windows, git add . and git commit -m"add", and finally git push changes.
+
+   PROTIP: At time of writing, Visual Studio 2019 for Mac does not work on files above the Solution/project file (.gitignore, README, and .git folders).
+
 
    ### New branch
 

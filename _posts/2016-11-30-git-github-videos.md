@@ -1863,6 +1863,8 @@ Mark Lodato's <a target="_blank" href="https://marklodato.github.io/visual-git-g
 <a target="_blank" href="https://ine.com/products/git-fundamentals?variant=1481009627141">
 Git Fundamentals</a> 5 Feb 2018 [3h 27m] by Eric Parker
 
+<a target="_blank" href="https://medium.com/devopslinks/learn-git-in-13-words-part-1-of-3-45e83db145fd">Learn Git in 13 Words </a> by Máté Safranka
+
 ## More #
 
 This is one of a series on Git and GitHub:

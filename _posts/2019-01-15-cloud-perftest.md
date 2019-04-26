@@ -525,6 +525,11 @@ Within environments seeking high availability, load would be split among a minim
 
 We run experiments using different <strong>types of machines</strong> offering different amounts of RAM, CPU, and other resources on <strong>each individual</strong> machine -- <strong>scaling up and down</strong> to find the <strong>lowest cost</strong> machine type which can handle spike level loads but at acceptable levels of <strong>quality</strong>.
 
+>>> PROTIP: The smallest server type may not work.
+Peter Wayner conducted a <a target="_blank" href="https://www.infoworld.com/article/2613784/benchmarking-amazon-ec2--the-wacky-world-of-cloud-performance.html
+">cloud benchmarking exercise on AWS in 2013</a> using the <a target="_blank" href="https://github.com/dacapobench">open-source</a> Java-based <a target="_blank" href="http://dacapobench.org/">DaCapo benchmark suite</a>. He found that the least expensive virtual server type AWS provides, <strong>T1 Micro ran eight to 10 times slower than the M1 Medium</strong>, with more variability, and often failed to complete a task and thus not "enterprise worthy". 
+<<<
+
 To avoid overloading machines, which causes poor performance, we may have to scale up to a more powerful machine so there is enough  <strong>headroom</strong> to grow load while additional instances are getting prepared. 
 
 This spike level of load is also where additional instances are <strong>un-instantiated</strong>.
@@ -549,12 +554,6 @@ Recap of the diagram:
 <a target="_blank" title="cloud-perftest-instan-1004x493-40122.jpg" href="https://user-images.githubusercontent.com/300046/56486592-5b872900-6495-11e9-98b1-a8c4b71a5b4b.jpg"><img width="1004"  src="https://user-images.githubusercontent.com/300046/56486592-5b872900-6495-11e9-98b1-a8c4b71a5b4b.jpg"></a>
 
 
-### Benchmarking
-
-PROTIP: The smallest server type may not work.
-Peter Wayner conducted a <a target="_blank" href="https://www.infoworld.com/article/2613784/benchmarking-amazon-ec2--the-wacky-world-of-cloud-performance.html
-">cloud benchmarking exercise on AWS in 2013</a> using the <a target="_blank" href="https://github.com/dacapobench">open-source</a> Java-based <a target="_blank" href="http://dacapobench.org/">DaCapo benchmark suite</a>. He found that the least expensive virtual server type AWS provides, <strong>T1 Micro ran eight to 10 times slower than the M1 Medium</strong>, with more variability, and often failed to complete a task and thus not "enterprise worthy".
-
 Now let's dive down further...
 
 ## Monitoring agents
@@ -566,6 +565,12 @@ AWS <strong>CloudWatch Log Groups</strong> are defined to capture and send alert
 After 60 days, logs can be sent to AWS <strong>Glacier</strong> for lower-cost longer term retention if a S3 Lifecycle policy is defined.
 
 BTW, for security, there should be different accounts to read and write. The account that can write should not be able to delete.
+
+### AWS
+
+From within a running instance, list all categories of metadata for that instance (such as ami-id, etc.):
+
+   curl http://169.254.169.254/latest/meta-data
 
 
 <a name="Monitoring"></a>
