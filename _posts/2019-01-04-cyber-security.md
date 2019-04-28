@@ -24,8 +24,9 @@ Adobe <a target="_blank" href="https://adobe.allegiancetech.com/cgi-bin/qwebcorp
    * https://www.adobe.com/pdf/Open_Source_CCF.pdf
    <br /><br />
 
-But what about CIS?
+Amazon's Compliance:
 
+<img width="926" alt="aws-compliance" src="https://user-images.githubusercontent.com/300046/56856297-c8c31000-6914-11e9-874e-c0417d380dfd.png">
 
 <a name="CIS"></a>
 

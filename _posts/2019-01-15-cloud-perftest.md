@@ -403,7 +403,7 @@ Doing load testing helps us be more precise than just guessing at a CPU percenta
 
 We calculate headroom based on the <strong>nominal actual</strong> level of load -- the momentary <strong>peaks</strong> reached during each day, the level where long <strong>soak tests</strong> are run to ensure the <strong>endurance</strong> of the system over time -- to ensure that the level is sustainable without memory leaks and excessive use of disk space.
 
-This nominal rate is also what we use in the "flat" portion of <strong>Smoke tests</strong> after a ramp-up. Such runs sustain the nominal load for a short period of time, such as 10 minutes, to prove the <strong>viability</strong> of an enviornment built after configuration changes.
+This nominal rate is also what we use in the "flat" portion of <strong>Smoke tests</strong> after a ramp-up. Such runs >>> also called "Canary tests" <<< sustain the nominal load for a short period of time, such as 10 minutes, to prove the <strong>viability</strong> of an enviornment built after configuration changes.
 
 We do <strong>Spike Tests</strong> to verify <strong>resiliency</strong> -- the ability of the system to absorb sudden temporary spikes in load while maintaining adequate response time. The system should then return to previous levels of memory usage when back at the nominal rate of operation.
 
@@ -439,8 +439,7 @@ So I think <strong>smoke tests</strong> that include performance testing can hav
 
 We know that rendering judgement about pass/fail too early in the development cycle can stifle innovation and experimentation.
 
-But I'd like to propose a metric that makes use of smoke test results.
-
+But I'd like to propose a metric that evaluates the "success" of smoke tests.
 
 <a name="infantmortality"></a>
 
@@ -465,6 +464,49 @@ What do you think? Would tracking this metric reduce concerns in Operations peop
 
 Leave a comment below! Let's have a discussion about this.
 
+<hr />
+
+
+<a name="ServerImages"></a>
+
+## Server images
+
+Many organizations today build all aspects of the server they use by defining programming code "configuration as code" such as Ansible, Cloud Formation, Terraform, Chef, Puppet, etc.
+Such an approach include the storage of configuration code in a source version control repository which can retrieve the full set of all files as they were at specific points in the past. Version control systems such as GitHub and GitLab also track who made changes and why (in comment messages).
+
+Server images created by the configuration code can be saved as server images in binary repositories such as Nexus and Artifactory. The server images are used to spin up each server instance.
+When developers share an image with testers, what is tested is exactly what developers end up with.
+When testers and operations share an image, what is used in production is what has been tested.
+
+There is another advantage to using server images.
+For example, Wordpress is written as an open-source application, so anyone can customize it.
+So various teams have created server images that incorporate a pre-tested set of
+various components and features such as containing a storefront,
+or one that has been tuned for efficient and fast running.
+
+There are several different types of server images:
+   * AMI (Amazon Machine Images) within AWS (Amazon Web Services)
+   * Virtual machine DisK files (VMDKs) running on VMWare or VirtualBox 
+   * Virtual Hard Disk (VHD) files used with Microsoft Virtual Server and Hyper-V hypervisors
+   * Docker containers from DockerHub.com, Quary.io, etc.
+   <br /><br />
+
+All the images (except Docker) contain the underlying operating system and utilities in each image.
+
+Some AMI creators charge its users money. 
+But many pay it because it saves them hassle and time.
+
+QUESTION: Is the extra cost worth the extra savings? Load testing can answer that question.
+
+BTW: Historically, Intel processors are used by AWS, but in 2018, machines with <strong>ARM processors</strong> became available, 
+for a 40% cost savings.
+
+QUESTION: To determine the cost of processing using any given server configuration, one needs to measure use of processing, storage, network data transfers, etc. at various levels of user load accessing the server at various points as load increases.<a href="#Tasks">*</a>
+
+> Instead of just testing, "performance engineering" yields <strong>configuration changes which identify cost savings</strong>.
+
+NEXT: Server images are necessary to create multiple instances of the same application, for "elasticitiy".
+
 
 
 <a name="MultipleInstances"></a>
@@ -486,25 +528,33 @@ Testing that deliberately downs a server to measure the speed of recovery is cal
 
 ### Time to Additional Capacity
 
-The concern with scaling is QUESTION: how quickly additional capacity is added or removed before/after need?
+The concern with scaling is how quickly additional capacity is added.
 
-The traditional on-premises approach is to order and buy <strong>excess</strong> server hardware based on projected peaks many months or years in advance. Thus, servers would use a fraction of their capacity, which remains unused much of the time. And if processing volume exceeds the peak, the whole system would degrade or fail. In a cloud, although capacity can be added dynamically, it needs to be added slightly before need to provide a margin to handle growth while additional instances are brought up.
+The traditional on-premises approach is to order and buy <strong>excess</strong> server hardware based on projected peaks many months or years in advance. Thus, servers would use a fraction of their capacity, which remains unused much of the time. And if processing volume exceeds the peak, the whole system would degrade or fail. 
+
+A cloud of servers such as Amazon AWS <strong>pools unused capacity</strong> among many customers for allocation when needed.
+
+But although capacity can be added dynamically, 
+it needs to be added on a timely basis -- before need to provide a margin to handle growth while additional instances are brought up.
+
 Bootstrapping instances in ASG can take 10 minutes or more. To avoid false alarms from being in "pending:complete" state before bootstrapping completes, create an <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">ASG Lifecycle Hook</a> to hold instance in a "pending:wait" state until bootstrapping completes.
 Hooks time out after 60 minutes. But an <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">API call</a> in the bootstrapping script can release the hook.<a target="_blank" href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html">*</a>
 
 ![aws-ec2-whenever-cpu-34970](https://user-images.githubusercontent.com/300046/52156066-f79e5280-2653-11e9-98d9-b3ef01cc0024.png)
 
-A cloud of servers such as Amazon AWS <strong>pools unused capacity</strong> for allocation when needed.
+In total, it can take 20 minutes or more between the request and when a new server being able to process application transactions. It helps to track the actual time in order to design auto-scaling settings.<a href="#Task">*</a>
 
-When spinning up AWS EC2 (Elastic Compute Cloud) server instances,
-there is a concern about how quickly additional capacity can be added.
-Currently, it can take 20 minutes or more between the request and when a new server being able to process application transactions. It helps to track the actual time in order to design auto-scaling settings.<a href="#Task">*</a>
+### Standby servers
 
 So some operators define one or more "standby" server instances to instantly process sudden increases in load while additional servers spin up. The number of such servers are determined by <strong>"spike tests"</strong> which emulate sudden increases in load.<a href="#Tasks">*</a>
 
+
+### Storage costs and complexities
+
 TODO: The complex way that AWS charges for disk drives (input/output) make spike tests useful to determine real costs.
 
-TODO: <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Auto Scaling Limits</a>
+
+DOCS: <a target="_blank" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">AWS Auto Scaling Limits</a>
 
 
 <a name="TriggerLevels"></a>
@@ -558,20 +608,20 @@ Now let's dive down further...
 
 ## Monitoring agents
 
-On AWS, to collect measurements and streamed to CloudWatch, a CloudWatch Logs Agent needs to be installed on each server instance.
+On AWS, to collect measurements and streamed to CloudWatch, a <strong>CloudWatch Logs Agent</strong> needs to be installed on each server instance.
+
+From within a running instance, list all categories of metadata for that instance (such as ami-id, etc.):
+
+   <pre>curl http://169.254.169.254/latest/meta-data
+   </pre>
 
 AWS <strong>CloudWatch Log Groups</strong> are defined to capture and send alerts about specific errors to SNS (Simple Notification Service) emails.
 
 After 60 days, logs can be sent to AWS <strong>Glacier</strong> for lower-cost longer term retention if a S3 Lifecycle policy is defined.
 
+Currently, CloudWatch does not aggregate data across regions.
+
 BTW, for security, there should be different accounts to read and write. The account that can write should not be able to delete.
-
-### AWS
-
-From within a running instance, list all categories of metadata for that instance (such as ami-id, etc.):
-
-   curl http://169.254.169.254/latest/meta-data
-
 
 <a name="Monitoring"></a>
 
@@ -675,50 +725,17 @@ So ideally you would build up the whole environment each time so there is no que
 
 <hr />
 
-<a name="ServerImages"></a>
 
-## Server images
+## CloudFormation Templates
 
-Many organizations today build all aspects of the server they use by defining programming code "configuration as code" such as Chef, Ansible, Cloud Formation, Terraform, Pulumi, etc.
-Such an approach include the storage of configuration code in a source version control repository which can retrieve the full set of all files as they were at specific points in the past. Version control systems such as GitHub and GitLab also track who made changes and why (in comment messages).
-
-Server images created by the configuration code can be saved as server images in binary repositories such as Nexus and Artifactory. The server images are used to spin up each server instance.
-When developers share an image with testers, what is tested is exactly what developers end up with.
-When testers and operations share an image, what is used in production is what has been tested.
-
-There is another advantage to using server images.
-For example, Wordpress is written as an open-source application, so anyone can customize it.
-So various teams have created server images that incorporate a pre-tested set of
-various components and features such as containing a storefront,
-or one that has been tuned for efficient and fast running.
-
-There are several different types of server images:
-   * AMI (Amazon Machine Images) within AWS (Amazon Web Services)
-   * Virtual machine DisK files (VMDKs) running on VMWare or VirtualBox 
-   * Virtual Hard Disk (VHD) files used with Microsoft Virtual Server and Hyper-V hypervisors
-   * Docker containers from DockerHub.com, Quary.io, etc.
-   <br /><br />
-
-All the images (except Docker) contain the underlying operating system and utilities in each image.
-
-Some AMI creators charge its users money. 
-But many pay it because it saves them hassle and time.
-
-QUESTION: Is the extra cost worth the extra savings? Load testing can answer that question.
-
-Historically, Intel processors are used by AWS, but in 2018, machines with <strong>ARM processors</strong> became available, 
-for a 40% cost savings.
-
-QUESTION: To determine the cost of processing using any given server configuration, one needs to measure use of processing, storage, network data transfers, etc. at various levels of user load accessing the server at various points as load increases.<a href="#Tasks">*</a>
-
-> Instead of just testing, "performance engineering" yields <strong>configuration changes which identify cost savings</strong>.
-
-NEXT: Server images are necessary to create multiple instances of the same application, for "elasticitiy".
-
-
-
-<a target="_blank" href="https://wilsonmar.github.io/cloudformation">CloudFormation</a> templates automate the creation of various components around the creation of a cluster of EC2 servers.
+<a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-formats.html">Templates</a> for <a target="_blank" href="https://wilsonmar.github.io/cloudformation">CloudFormation</a> automate the creation of components around the creation of a cluster of EC2 servers.
 An alternative are <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform</a> specifications which are multi-vendor (Azure, Google, etc. as well as Amazon).
+
+<a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-autoscaling.html">Auto Scaling Template Snippets from AWS</a>
+
+<a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/working-with-templates-cfn-designer-why.html">CloudFormation Designer</a>
+
+
 
 
 ### Affinity Groups

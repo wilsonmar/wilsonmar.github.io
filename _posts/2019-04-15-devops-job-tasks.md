@@ -36,19 +36,19 @@ However, <a target="_blank" href="https://wilsonmar.github.io/devops-job-tasks/"
 
 Compare against the "domains" in Amazon's <a target="_blank" href="https://aws.amazon.com/certification/certified-devops-engineer-professional">AWS Certified DevOps Engineer – Professional Complete Exam: DOP-C00</a> (since December 2018):
 
-1. SDLC Automation (22% CodeCommit, CodeBuild, CodeDeploy, CodePipeline)
-2. Configuration Management and Infrastructure as Code (19% CloudFormation, Elastic Beanstalk, AWS Config, ECS, Lambda, OpsWorks)
-3. Monitoring and Logging (15% CloudWatch, X-Ray)
-4. Policies and Standards Automation (10% Service Catalog, Trusted Advisor, Secrets Manager, Organizations, Macie, Cert Manager)
-5. Incident and Event Response (18% Guard Duty, Inspector Kinesis)
-6. High Availability, Fault Tolerance, and Disaster Recovery (10% SSO, CloudFront, AutoScaling, Route53, RDS, Aurora, DynamoDB)
-<br /></br />
+1. SDLC Automation : CodeCommit, CodeBuild, CodeDeploy, CodePipeline ((22%)
+2. Configuration Management and Infrastructure as Code : CloudFormation, Elastic Beanstalk, AWS Config, ECS, Lambda, OpsWorks (19%)
+3. Monitoring and Logging " CloudWatch, X-Ray (15%)
+4. Policies and Standards Automation : Service Catalog, Trusted Advisor, Secrets Manager, Organizations, Macie, Cert Manager (10%)
+5. Incident and Event Response : Guard Duty, Inspector Kinesis (18%)
+6. High Availability, Fault Tolerance, and Disaster Recovery : SSO, CloudFront, AutoScaling, Route53, RDS, Aurora, DynamoDB (10%)
+<br /><br />
 
-These I call <strong>"processes"</strong>.
+The above I also call <strong>"processes"</strong> addressed by products.
 
 ## Testing and other habits (values)
 
-The word "testing" is not among the items above, perhaps because testing is pervasive, along with other "habits":
+The word "testing" is not among the above, perhaps because testing is pervasive, along with other "habits":
 
 1. Team Autonomy and Enterprise Alignment
 2. Rigorous Management of Technical Debt
@@ -443,9 +443,9 @@ But, for now, people are involved in its setup, configuration, and maintenance, 
    * perform ongoing tuning to reduce meaningless or non-actionable alerts
 
 
-## Amazon's resources
+## Resources
 
-<a target="_blank" href="https://www.amazon.com/AWS-Certified-DevOps-Engineer-Professional/dp/1796646377/">Study Guide</a>
+<a target="_blank" href="https://www.amazon.com/AWS-Certified-DevOps-Engineer-Professional/dp/1796646377/">Amazon's Study Guide for AZ-400</a>
 
 * <a target="_blank" href="https://acloud.guru/learn/aws-certified-devops-engineer-professional-2019">ACoud.guru vidoes</a> 
 
