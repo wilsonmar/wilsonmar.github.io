@@ -860,7 +860,13 @@ For $300 per year, Pluralsight has purchased several other video training compan
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/how-git-works">
    How Git Works Mar 10, 2016</a>
    [1h 48m]
-   by Paolo Perrotta
+   by Paolo Perrotta was previously 
+   <a target="_blank" href="https://www.codeschool.com/courses/try-git">https://www.codeschool.com/courses/try-git</a>. Modules:
+   1. Git Is Not What You Think 35m 22s
+   2. Branches Demystified 29m 18s
+   3. Rebasing Made Simple 19m 34s
+   4. Distributed Version Control 25m 8s
+   <br /><br />
 
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/using-gitflow/">
    Using GitFlow Feb 22, 2016</a>
@@ -1244,13 +1250,11 @@ Linux Academy <a target="_blank" href="https://linuxacademy.com/amazon-web-servi
    https://www.sitepoint.com/premium/courses/introduction-to-git-2902">
    Introduction to Git course</a> as a prerequisite.
 
-
 ### Lambda School
 
 <a target="_blank" href="https://www.youtube.com/watch?v=2TqKJHhMnuw">
 This Git and Github video on Mar 5, 2018</a> [5:28]
-is the first of 12 sessions from the March '18 Mini Bootcamp by Lambda School.
-at https://github.com/LambdaSchool/Precourse/tree/master/Lesson1-Git
+is the first of 12 sessions from the March '18 Mini Bootcamp by Lambda School at <a target="_blank" href="https://github.com/LambdaSchool/Precourse/tree/master/Lesson1-Git">https://github.com/LambdaSchool/Precourse/tree/master/Lesson1-Git</a>
 And a Slack channel enabled interations during and after the live class.
 
 
@@ -1288,6 +1292,14 @@ Some of them:
 ## Free from Individuals
 
 Several people, on their personal time, created videos for others to enjoy, for free:
+
+### Madness Labs
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=nQDFBd5NFA8&t=2m">Using SSH keys with Github</a> Mar 30, 2019
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=9cMWR-EGFuY">Using Git with VS Code and Github</a> Jun 26, 2017
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=8jYnXZR9Zho">Madness U - GIT</a> Sep 24, 2014
 
 ### Brian Yu
 
