@@ -61,6 +61,11 @@ Licensed IDEs:
    * IntelliJ and WebStorm and PhpStorm from JetBrains
    * <a href="#VisualStudioForMac">Visual Studio for Mac from Microsoft</a>
 
+On-line (SaaS):
+
+   * <a target="_blank" href="https://www.gitpod.io/">gitpod.io</a> is Chrome add-on which replaces the green "Clone or download" button with their "Gitpod" button to an on-line IDE in the cloud and automation.
+
+
 <hr />
 
 <a name="Features"></a>
@@ -607,15 +612,14 @@ complete
 
 Microsoft's Code is slower to startup than Sublime Text.
 
-But its windowing is much more configurable, if that's important to you.
-An example of this is moving the default sidebar to the right side of the editor.
-
-Code's auto-indenting and execution of snippets work naturally.
-
-Search for add-ins on https://marketplace.visualstudio.com/
+But its windowing is much more configurable, which has enabled many add-ons that has made it the most feature-rich and thus most preferred editor today. Examples of advanced features:
+   * moving the default sidebar to the right side of the editor.
+   * auto-indenting and execution of snippets work naturally.
+   * Search for add-ins on https://marketplace.visualstudio.com/
 by opening its Extension panel (CTRL + Shift + X). 
 <a target="_blank" href="https://nickjanetakis.com/blog/switching-to-vscode-from-sublime-text">
 Nick's list</a>.
+   <br /><br />
 
 On Mac: 
 
