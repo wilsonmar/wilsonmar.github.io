@@ -98,19 +98,31 @@ But Emacs users can define macros that combine commands.
 
 ## Vim
 
-`vim` is an alias of `vi`. vim is vi plus the m from the word improved.
-vim is the most commonly available text editor in Linux.
 vi is still the standard text editor available on many Unix system. 
 A good reason to become proficient with vi is that on some industrial type systems, where no extra software can be installed, vi may be the only editor available.
+The original vi (visual editor) was developed in 1976 as part of BSD Unix system by Bill Joy, who went on to be one of the co-founders of Sun Microsystems (which Oracle later purchased). 
+vi became popular within the Unix community for its full screen visual editing not available before. 
 
-   The original vi (visual editor) was developed in 1976 as part of BSD Unix system by Bill Joy, who went on to be one of the co-founders of Sun Microsystems (which Oracle later purchased). 
-   vi became popular within the Unix community for its full screen visual editing not available before. 
+`vim` starts as an alias of `vi`. 
+vim is vi plus the m from the word improved.
+Vim is functionally a superset of vi.
+Vim is the most commonly available text editor in Linux.
 
-The newer vim and graphical gvim, do add many nice features to vi.
+gvim is the graphical (XWindows) vim.
 
-### Quitting out from command mode 
+The newer vim and graphical gvim adds many productivity features to vi.
 
-0. In a Terminal, type command:
+   * .vimrc file defines
+   * multi-level undo (J command) and redo
+   * Split screen
+   * Edit files inside zip files
+   * Diff to compare files
+   * Plug-ins
+   * edit through SSH
+   <br /><br />
+   See <a target="_blank" href="https://www.vimawesome.com/">vimawesome.com</a>
+
+1. In a Terminal, type command:
 
    <pre><strong>vimtutor
    </strong></pre>

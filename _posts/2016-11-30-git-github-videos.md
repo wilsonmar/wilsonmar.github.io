@@ -41,30 +41,27 @@ where I put the latest versions of each:
 ### Linus Torvalds
 
 <a target="_blank" href="https://www.youtube.com/watch?v=4XpnKHJAok8">
-   Tech Talk: Linus Torvalds on Git</a>
+   Tech Talk: Linus Torvalds on Git</a> May 3, 2007
    at Google
 
 ### Tom Preston-Werner 
 
 Co-founder of GitHub until 2014
-(<a target="_blank" href="https://twitter.com/mojombo">@mojombo</a>, 
-http://tom.preston-werner.com/)
+(<a target="_blank" href="https://twitter.com/mojombo">@mojombo</a>, <a target="_blank" href="https://tom.preston-werner.com">tom.preston-werner.com</a>)
 
 * <a target="_blank" href="https://vimeo.com/17118008">Mastering Git Basics</a> March 25, 2010
    [<a target="_blank" href="http://www.erlang-factory.com/upload/presentations/244/ErlangFactroySFBay2010-TomPreston-Werner.pdf">slides</a>][53:22] casual sit down, yet deep. Windows install use msysgit. 
 
 ### Scott Chacon, CIO of GitHub
 
-   Twitter: (@schacon) 
-
-   Scott wrote<br />
+   (<a target="_blank" href="https://twitter.com/schacon">@schacon</a>) 
+   wrote<br />
    <a target="_blank" href="http://git-scm.com/book/en/v2">
    git-scm.com/book/en/v2</a>, <br />
    <a target="_blank" href="https://www.gitref.com/">
    gitref.com</a>, and <br />
    <a target="_blank" href="https://www.gitref.com/">
    progit.org book</a>.
-
 
 <a target="_blank" href="https://git-scm.com/documentation/external-links">
    git-scm.com/documentation/external-links</a>
