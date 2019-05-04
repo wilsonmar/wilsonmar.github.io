@@ -15,10 +15,36 @@ comments: true
 
 {% include _toc.html %}
 
-
 This article is a succinct hands-on deep dive on how to get data in and out of Salesforce.
 
 3 billion transactions go through Salesforce daily.
+
+QUESTION: Please correct me if I'm wrong here.
+
+There is "Dirty Little Secret" to how most companies work with Salesforce data:
+
+Internally, Salesforce uses Oracle RAC databases, which "log ships" every change instantaneously to another region for disaster-proof recovery.
+
+But Salesforce provides weekly backups by default.
+
+Salesforce does not provide "point-in-time" recovery of data provided by data center operations teams.
+
+Moreover, Salesforce does not provide a way to restore data from backups taken.
+
+## RPO & RTO 
+
+The IT industry-wide has names for recovery of data in case servers fail in enterprise data centers:
+
+<strong>RPO (Recovery-Point Objective)</strong> 
+is the amount of data that a company is willing to lose.
+
+<strong>RTO (Recovery Time Objective)</strong> 
+is the time that a company is willing to wait for data to be recovered.
+
+For Salesforce users, RTO would be in days or weeks rather than in minutes.
+
+If you don't run backup jobs, Salesforce charges a minimum of $10,000 to obtain that data.
+
 
 ## Data Objects
 
