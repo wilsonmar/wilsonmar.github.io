@@ -57,42 +57,46 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 
    NOTE: Only one operating system can be loaded on the Pi.
 
+   <a name="SHA256"></a>
+
 1. At <a target="_blank" href="https://www.raspberrypi.org/downloads/raspbian/">
    https://www.raspberrypi.org/downloads/raspbian</a>
 
    ![iot-rasp-stretch-download-942x496-65658](https://user-images.githubusercontent.com/300046/35048284-8965e086-fb6a-11e7-87d3-a792e85e812e.png)
 
-1. Click the red <strong>Download ZIP</strong> below
-   <strong>Raspbian STRETCH WITH DESKTOP</strong>
-
-   PROTIP: The button sends you to downloading URL <a target="_blank" href="https://downloads.raspberrypi.org/raspbian_latest">
-   https://downloads.raspberrypi.org/raspbian_latest</a>
-   which can be used in <a target="_blank" href="https://github.com/debian-pi/raspbian-ua-netinst/releases/">
-   unattended shell scripts to automate the clicking</a>.
+   <a target="_blank" href="https://distrowatch.com/table.php?distribution=raspbian">
+   PROTIP</a>: The Raspbian OS (based on Debian) is the official release for Raspberry Pi.
 
    NOTE: The previous version name PIXEL, which stands for "Pi Improved X-Windows Environmet, Lightweight". But many refer it simply as "X".
-
-   <a target="_blank" href="https://distrowatch.com/table.php?distribution=raspbian">
-   BTW</a>: The Raspbian OS (based on Debian) is the official release for Raspberry Pi.
 
    Versions of Debian are named after 
    <a target="_blank" href="https://www.wikiwand.com/en/List_of_Toy_Story_characters">characters in Disney's “Toy Story” films</a>
 
    * "Stretch" the rubber octopus is voiced by Whoopi Goldberg
    * "Jessie" is the cowgirl, voiced by Joan Cusack
-   * <a target="_blank" href="http://disney.wikia.com/wiki/Wheezy_(Toy_Story)">Wheezy"</a> (the squeeze toy penguin with the red bow tie)
-   was the previous 4.2 version of Raspbian.
-   QUESTION: Where is the history of old versions 
-   and how does one get announcement emails?
+   * <a target="_blank" href="http://disney.wikia.com/wiki/Wheezy_(Toy_Story)">
+   "Wheezy"</a> is the squeeze toy penguin with the red bow tie.
    * <a target="_blank" href="http://pixar.wikia.com/wiki/Sid_Phillips">"Sid"</a> is the bad boy.
    <br /><br />
 
-0. Click "Save File", the OK in the pop-up to begin download 
+   QUESTION: Where is the history of old versions 
+   and how does one get announcement emails?
+   
+1. Click the red <strong>Download ZIP</strong> below
+   <strong>Raspbian STRETCH WITH DESKTOP</strong>, not "Raspbian Stretch with desktop and recommended software".
+
+   PROTIP: The button sends you to downloading URL <a target="_blank" href="https://downloads.raspberrypi.org/raspbian_latest">
+   https://downloads.raspberrypi.org/raspbian_latest</a>
+   which can be used in <a target="_blank" href="https://github.com/debian-pi/raspbian-ua-netinst/releases/">
+   unattended shell scripts to automate the clicking</a>.
+
+1. Click "Save File", the OK in the pop-up to begin download 
 
    <a name="zipSizes"></a>
 
    | Date/File | Version | Download | Unzipped | Blog |
    | --------- | ------- | ----: | ---: | ---- |
+   | 2019-04-08-raspbian-stretch.zip | 4.14 | 1.76 GB | 4.83 GB | - |
    | 2018-06-27-raspbian-stretch.zip | 4.14 | 1.76 GB | 4.83 GB | - |
    | 2018-03-13-raspbian-stretch.zip | 4.10 | 1.78 GB | 4.96 GB | - |
    | 2017-09-07-raspbian-stretch.zip | 4.9 | 1.76 GB | 4.92 GB | - |
@@ -102,34 +106,39 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    The large size of the file means it will take a while,
    depending on the speed of your network.
 
-   Alternately, Raspian provides sudo-free access to GPIO (file read/write ports), so the above can be done in Ubuntu terminal.
+   Alternately, Raspian provides sudo-free access to GPIO (file read/write ports), so the above can be done in an Ubuntu terminal.
 
-0. While you're waiting, read blogs at 
+   If you clicked "Raspbian Stretch with desktop and recommended software", the file name downloaded would contain "-full", and be bigger.
+
+1. While you're waiting, read blogs at 
    <a target="_blank" href="https://www.raspberrypi.org/blog/">
    blog at Raspberrypi.org</a>.
 
-   For the next step, open a Terminal and cd ~/Downloads.
+1. For the next step, open a Terminal and cd ~/Downloads.
+
+   PROTIP: Do not unzip the file downloaded because the program that processes it expects a zip file.
 
 
    <a name="CalcHash"></a>
 
    ### Calculate and compare hash on Mac
 
-0. Calculate a SHA hash from the downloaded file to verify SHA from the website.
+1. Calculate a SHA hash from the downloaded file to verify SHA from the website.
 
-   NOTE: The image contains
-   .elf (Executable Linkable Format) 
+   NOTE: Inside the file are .elf (Executable Linkable Format) 
    and .dtb (Device Tree Blob) files.
 
-   On MacOS, open a Terminal and cd to the downloads folder to use a built-in command:
-
-   <pre><strong>cd ~/Downloads
-   shasum <em>2018-06-27-raspbian-stretch.zip</em>
-   </strong></pre>
+   On MacOS, open a Terminal and cd to the <strong>Downloads</strong> folder to use a built-in command:
 
    <a target="_blank" href="http://osxdaily.com/2012/02/05/check-sha1-checksum-in-mac-os-x/">
    PROTIP</a>: Type just `shasum ` with a trailing space, then from Finder drag the file 
-   and drop it to the right of the command.
+   and drop it to the right of the command. You'll end up with this command:
+
+   <pre><strong>cd ~/Downloads
+   shasum /Users/<em>YourAccount</em>/Downloads/2018-06-27-raspbian-stretch.zip
+   </strong></pre>
+
+   Press Enter to invoke the command.
 
    Alternately, use the openssl utility:
 
@@ -137,14 +146,14 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    openssl sha256 2018-06-27-raspbian-stretch.zip
    </strong></pre>
 
-   The output should match the SHA-256 associated with the downloaded file on the website.
-   Example:
+1. The output should match the SHA-256 associated with the downloaded file on the website.
+   Example <a href="#SHA256">as shown above</a>:
 
    <pre>8636ab9fdd8f58a8ec7dde33b83747696d31711d17ef68267dbbcd6cfb968c24</pre>
 
-   PROTIP: A 256-bit hash (divided by 4 bits each) should have 64 characters.
+   PROTIP: A 256-bit hash, when divided by 4 bits each digit, should have 64 characters.
 
-0. PROTIP: Save the .zip file to permanent DVD media so you don't have to download again, then delete the file on your laptop (to make room for other stuff on your hard drive):
+1. PROTIP: Save the .zip file to permanent DVD media so you don't have to download again, then delete the file on your laptop (to make room for other stuff on your hard drive):
 
    A regular single-sided, single layer DVD (R+ or R-) holds 4.7GB. 
    A dual-layer "DL" DVD disk holds 8.5GB.
@@ -155,13 +164,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 
    ### Micro-SD and USB Adapter
 
-1. Buy a 32 or 64 GB sd chip.
-
-0. CAUTION: Before touching delicate electrical boards,
-   dissipate static electricity (from just walking around)
-   by touching grounded metal.
-
-0. Get an adapter if you need one (as for cameras).
+1. Buy a 32 or 64 GB SD chip along with an adapter if you need one (as for cameras).
 
    Some laptops require an adapter for USB. 
    Be sure the adapter can read the size of chip.
@@ -171,6 +174,12 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    which goes into the Mac's SD card slot.
    You may also use an adapter for USB, which may need to be plugged into a USB port
    rather than on a USB hub (even a powered one).
+
+   2017+ Mac Book Pros do not have a slot to read SD card, and need a USB-C converter rather than older types of USB ports.
+
+1. CAUTION: Before touching delicate electrical boards,
+   dissipate static electricity (from just walking around)
+   by touching grounded metal.
 
 0. Insert the Micro-SD chip into your laptop. 
 
@@ -227,7 +236,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 
    ### Mac Prep Micro-SD
 
-   A new entry should appear in Finder.
+   A new entry should appear in Finder when you plug in the SD card.
 
 0. Open a Finder window. 
    Scroll down the left panel to see it appear among the Device section.
@@ -242,7 +251,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    diskutil list
    </strong></tt>
 
-   A sample response on Mac High Sierra:
+   A sample response on Mac High Sierra and Mac Mojava:
 
    <pre>
 /dev/disk0 (internal):
@@ -296,7 +305,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 
    In the above example, the 64 GB SD card IDENTIFIER is "disk3".
 
-0. Unmount your SD card (so a utility can overwrite the entire disk)
+0. Type a command to unmount your SD card (so a utility can overwrite the entire disk)
    by constructing a command containing the disk identifier number
    for your SD card (3 in the example above):
 
@@ -307,7 +316,8 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    Again, instead of "disk3", you may type a different one.
 
    The expected response is:
-   Unmount of all volumes on disk3 was successful   
+   
+   <pre>Unmount of all volumes on disk3 was successful</pre>
 
 0. If you are using Windows, skip to <a href="#WinFlash">WindowsFlash</a>.
 
@@ -316,55 +326,54 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    ### Get Etcher for MacOS
    
    PROTIP: The <a target="_blank" href="https://www.raspberrypi.org/documentation/installation/installing-images/windows.md">official Raspberry Pi site describes use of</a>
-   another tool, but
-   (Etcher) reads from a zip file to skip unzipping hassle, 
+   another tool, but Etcher reads from a zip file to skip unzipping hassle, 
    and verifies the SD card image was written correctly to the SD card.
    It also automatically dismounts the SD card so it can be safely removed.
+   See <a target="_blank" href="https://www.raspberrypi.org/magpi/pi-sd-etcher/">https://www.raspberrypi.org/magpi/pi-sd-etcher</a>
 
-0. On MacOS, use Homebrew:
+0. On MacOS, download from their website (formerly etcher.io):
 
-   <tt><strong>
-   brew cask install etcher
-   </strong></tt>
+   <a target="_blank" href="https://www.balena.io/etcher/">https://www.balena.io/etcher</a>
 
-   Alternately, at website
-   <a target="_blank" href="https://www.etcher.io/">
-   etcher.io</a> select a platform to download the 
-   Etcher app for your platform.
+   NOTE: The Homebrew package "etcher" in no longer available.
+
+1. Click "Download for Mac" (they also have a version for Windows).
+
+1. Select a platform to download the Etcher app for your platform.
 
    <img alt="iot etcher 400x237-32kb.jpg" width="400" height="237" src="https://cloud.githubusercontent.com/assets/14143059/19876110/56a498c4-9f98-11e6-8bf1-a7ed029fd3d7.jpg">
 
-   | File downloaded | Size |
-   | --------------- | ---: |
-   | Etcher-1.1.2.dmg | 58.9 MB |
-   | Etcher-1.0.0-darwin-x64.dmg | 67.9 MB |
-   | Etcher-1.0.0-beta.16-darwin-x64 | 75.4 MB |
+   | File downloaded | Size | Date |
+   | --------------- | ---: | --- |
+   | belanaEtcher-1.5.33.dmg | 116.3 MB | 2019-05-04 |
+   | Etcher-1.1.2.dmg | 58.9 MB | 2018-11-03 |
+   | Etcher-1.0.0-darwin-x64.dmg | 67.9 MB | 2017-10-15 |
+   | Etcher-1.0.0-beta.16-darwin-x64 | 75.4 MB | 2017-06-11 |
 
-   Following 
-   <a target="_blank" href="http://thisdavej.com/beginners-guide-to-installing-node-js-on-a-raspberry-pi/">
-   Beginner's Guide to installing Node.js on a Raspberry Pi</a>:
-   (made by Resin.io) 
+   Following <a target="_blank" href="http://thisdavej.com/beginners-guide-to-installing-node-js-on-a-raspberry-pi/">
+   Beginner's Guide to installing Node.js on a Raspberry Pi</a> 
+   (made by Resin.io):
 
-   In Finder, drag and drop the Etcher .dmg file onto your ~/Applications folder.
-
-0. In a MacOS Terminal, navigate to the user Applications folder and invoke the program:
+1. In Finder double click the  belanaEtcher...dmg file to invoke it.
+1. In the pop-up, drag and drop the belanaEtcher icon file onto your ~/Applications folder.
+1. Click "Open" to the pop-up about "balanaEtcher.app" is an app downloaded from the internet.
+1. In a MacOS Terminal, navigate to the user Applications folder and invoke the program:
 
    <tt><strong>
-   open ~/Applications/Etcher.app
+   open ~/Applications/balenaEtcher.app
    </strong></tt>
 
-0. In the pop-up, click "Select Image", select the drive containing the .img file.
-
+1. In Finder, free up disk space on your machine by right-clicking on the .dmg file and "Move to Trash".
 
    ### Flash OS on SD card using a Mac
 
-0. cd to the folder where your .img file exists. For example, to go to the Desktop:
+1. cd to the folder where your .img file exists. For example, to go to the Desktop:
 
    <tt><strong>cd ~/Desktop
    </strong></tt>
 
 
-0. Manually construct a command to write the image downloaded onto the SD Card. 
+1. Manually construct a command to write the image downloaded onto the SD Card. 
    Replace the X in rdiskX with the disk number from before.
 
    <tt><strong>
@@ -390,7 +399,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    NOTE: The dd program is also used to <a href="#Backup">
    backup the SD onto your laptop</a>.
 
-0. Type in your password then wait. 
+1. Type in your password then wait. 
    No status is shown during the 30 minutes or more that it takes.
    An example of the ending response:
 
@@ -497,7 +506,7 @@ map auto_home    0Bi    0Bi    0Bi   100%       0                   0  100%   /h
 
 ## Power Up to GUI in SD card
 
-If you insert a stock Raspbian Jesse image into the Pi and powered it up,
+If you insert a stock Raspbian image into the Pi and powered it up,
 it would by default display a GUI, and have no WiFi connection.
 
    Based on <a target="_blank" href="https://www.raspberrypi.org/documentation/installation/installing-images/mac.md">this</a>.
@@ -2362,12 +2371,11 @@ http://lifehacker.com/124804/geek-to-live--how-to-assign-a-domain-name-to-your-h
 
 ## Rock Stars
 
-* http://cagewebdev.com/raspberry_pi/
-   Rolf van Gelder
+* Rolf van Gelder at <a target="_blank" href="http://cagewebdev.com/raspberry_pi/">http://cagewebdev.com/raspberry_pi</a>
+   
 
-* http://raspberrypihobbyist.blogspot.com
-   Ted B. Hale
-
+* Ted B. Hale at <a target="_blank" href="http://raspberrypihobbyist.blogspot.com/">http://raspberrypihobbyist.blogspot.com</a>
+   
 * Reference: https://blogs.msdn.microsoft.com/brunoterkaly/2014/06/11/running-net-applications-on-a-raspberry-pi-that-communicates-with-azure/
 
 * Reference: http://raspberrypihq.com/how-to-install-windows-10-iot-on-the-raspberry-pi/ describes use of FFU2IMG
@@ -2422,6 +2430,18 @@ by Benjamin Oakes
 https://www.techcoil.com/blog/setting-up-a-fast-git-server-on-raspberry-pi-zero-w-with-go-git-service-gogs-and-raspbian-stretch-lite/
 
 https://www.designnews.com/continuing-education-center/july-16-day-1-predictive-analytics-basics-applications-exploring-colaboratory-lab-project-data
+
+https://www.circuits.dk/install-grafana-influxdb-raspberry/
+
+https://www.raspberrypi.org/magpi/raspberry-pi-laptop-dock/
+NexDock
+
+https://medium.freecodecamp.org/the-easy-way-to-set-up-docker-on-a-raspberry-pi-7d24ced073ef
+
+   curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
+   sudo groupadd docker
+   sudo gpasswd -a $USER docker
+   docker run hello-world
 
 ## More on IoT #
 
