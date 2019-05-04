@@ -25,10 +25,6 @@ There is "Dirty Little Secret" to how most companies work with Salesforce data:
 
 Internally, Salesforce uses Oracle RAC databases, which "log ships" every change instantaneously to another region for disaster-proof recovery.
 
-But Salesforce provides weekly backups by default.
-
-Salesforce does not provide "point-in-time" recovery of data provided by data center operations teams.
-
 Moreover, Salesforce does not provide a way to restore data from backups taken.
 
 ## RPO & RTO 
@@ -42,6 +38,8 @@ is the amount of data that a company is willing to lose.
 is the time that a company is willing to wait for data to be recovered.
 
 For Salesforce users, RTO would be in days or weeks rather than in minutes.
+
+Salesforce, by default, does not provide "point-in-time" recovery from "snapshots" of all data at various points in time. So But Salesforce provides weekly backups by default.
 
 If you don't run backup jobs, Salesforce charges a minimum of $10,000 to obtain that data.
 
