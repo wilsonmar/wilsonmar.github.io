@@ -2021,6 +2021,8 @@ But that’s a hassle because a password would need to be entered every time the
 
 There are several alternatives.
 
+<a name="Grafana"></a>
+
 ### Grafana #
 
    The new darling for monitoring of Docker instances are
@@ -2030,6 +2032,9 @@ There are several alternatives.
    Grafana doesn't provide packages for ARM processors used by the Pi.
    But <a target="_blank" href="https://github.com/fg2it/grafana-on-raspberry">
    fg2it's repo</a> describes building of Grafana for ARM.
+
+See <a target="_blank" href="https://www.circuits.dk/install-grafana-influxdb-raspberry/">https://www.circuits.dk/install-grafana-influxdb-raspberry</a>
+
 
    The advantage of this setup is it's completely open source,
    unlike Nagios which is free up to a point.
@@ -2443,8 +2448,6 @@ by Benjamin Oakes
 https://www.techcoil.com/blog/setting-up-a-fast-git-server-on-raspberry-pi-zero-w-with-go-git-service-gogs-and-raspbian-stretch-lite/
 
 https://www.designnews.com/continuing-education-center/july-16-day-1-predictive-analytics-basics-applications-exploring-colaboratory-lab-project-data
-
-https://www.circuits.dk/install-grafana-influxdb-raspberry/
 
 https://www.raspberrypi.org/magpi/raspberry-pi-laptop-dock/
 NexDock
