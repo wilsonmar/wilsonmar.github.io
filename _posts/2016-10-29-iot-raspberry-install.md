@@ -337,11 +337,9 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 
    NOTE: The Homebrew package "etcher" in no longer available.
 
-1. Click "Download for Mac" (they also have a version for Windows).
+1. Click "Download for Mac" (they also have a version for Windows and <a target="_blank" href="https://www.youtube.com/watch?v=xb4fiFda4no">Linux</a>).
 
 1. Select a platform to download the Etcher app for your platform.
-
-   <img alt="iot etcher 400x237-32kb.jpg" width="400" height="237" src="https://cloud.githubusercontent.com/assets/14143059/19876110/56a498c4-9f98-11e6-8bf1-a7ed029fd3d7.jpg">
 
    | File downloaded | Size | Date |
    | --------------- | ---: | --- |
@@ -364,6 +362,21 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    </strong></tt>
 
 1. In Finder, free up disk space on your machine by right-clicking on the .dmg file and "Move to Trash".
+1. Verify that there are no files on the flash drive you would miss.
+
+   CAUTION: Flashing wipes out all previous contents on the flash drive.
+
+1. Switch back to Etcher to click "Select image".
+1. Click "Select drive" for Etcher to detect a flash (SD) drive.
+1. Click "Flash!" to write the image to the flash drive.
+1. Type your Admin password.
+1. Wait for the Copying, then Validating to each reach 100%.
+
+1. Exit the Etcher program by clicking the red X of the app screen.
+
+1. Skip to the <a href="#VerifySD">verify step below</a> to use the bootable Flash drive.
+
+<hr />
 
    ### Flash OS on SD card using a Mac
 
@@ -409,14 +422,16 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 4348444672 bytes transferred in 265.020326 secs (16407967 bytes/sec)
    </pre>
 
+   <a name="VerifySD"></a>
+
    You should now have a working SD card for Raspian.
 
-0. Verify what devices are mounted <a target="_blank" href="http://wiki.farmbot.org/problems-solved/installing-farmbotos/linux">:</a>
+1. Switch to a Terminal to verify <a target="_blank" href="http://wiki.farmbot.org/problems-solved/installing-farmbotos/linux">what devices are mounted</a> from any folder:
 
    <tt><strong>df -h
    </strong></tt>
 
-   A sample response:
+   This sample response confirms that the flash drive is not visible to the Mac:
 
    <pre>
 Filesystem      Size   Used  Avail Capacity iused               ifree %iused  Mounted on
@@ -431,6 +446,7 @@ map auto_home    0Bi    0Bi    0Bi   100%       0                   0  100%   /h
 
 0. Skip past alternative activity below (for Windows) to <a href="#PowerUp">Power Up Pi</a>.
 
+<hr />
 
 <a name="WinFlash"></a>
 
@@ -506,10 +522,7 @@ map auto_home    0Bi    0Bi    0Bi   100%       0                   0  100%   /h
 
 ## Power Up to GUI in SD card
 
-If you insert a stock Raspbian image into the Pi and powered it up,
-it would by default display a GUI, and have no WiFi connection.
-
-   Based on <a target="_blank" href="https://www.raspberrypi.org/documentation/installation/installing-images/mac.md">this</a>.
+Based on <a target="_blank" href="https://www.raspberrypi.org/documentation/installation/installing-images/mac.md">this</a>, if you insert a stock Raspbian image flash SD drive into the Pi and power it up, it would by default display a GUI, with no WiFi connection.
 
 0. Unlug the power adapter.
 
