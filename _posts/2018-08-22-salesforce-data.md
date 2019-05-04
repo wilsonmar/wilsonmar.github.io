@@ -32,16 +32,39 @@ Moreover, Salesforce does not provide a way to restore data from backups taken.
 The IT industry-wide has names for recovery of data in case servers fail in enterprise data centers:
 
 <strong>RPO (Recovery-Point Objective)</strong> 
-is the amount of data that a company is willing to lose.
+is the amount of data that a company is willing to lose when restoring from disaster.
 
 <strong>RTO (Recovery Time Objective)</strong> 
 is the time that a company is willing to wait for data to be recovered.
 
 For Salesforce users, RTO would be in days or weeks rather than in minutes.
 
-Salesforce, by default, does not provide "point-in-time" recovery from "snapshots" of all data at various points in time. So But Salesforce provides weekly backups by default.
+Salesforce, by default, does not provide "point-in-time" recovery from "snapshots" of all data at various points in time. 
 
 If you don't run backup jobs, Salesforce charges a minimum of $10,000 to obtain that data.
+
+
+## Export / Backup
+
+Backups in prod (and Sandboxes) can occur Weekly or monthly (not daily). 
+
+Backups in DE (Developer eXperience) orgs can occur Monthly only. 
+
+Output from a backup is a set of 500MB zip file Salesforce emails to you.
+A backup file is a CSV file for each object, consists of many : one for each object and internal tables:
+
+![sf-backup-objects-598x410-28455](https://user-images.githubusercontent.com/300046/44672521-ed619380-a9e5-11e8-9976-992d85a3145d.jpg)
+
+* Export does not include any of your metadata (critical in rebuilding custom work and relationships).
+* Export does not include attached files. 
+* Export can take a week or more to process through the queue.
+* Exports are not allowed from sandboxes.
+<br /><br />
+
+More frequent backups can occur using a 3rd party app on AppExchange, such as
+<a target="_blank" href="https://www.ownbackup.com/">ownbackup.com</a>
+or
+<a target="_blank" href="https://reflectionenterprise.com/salesforce-data-export/">reflectionenterprise.com/salesforce-data-export</a>
 
 
 ## Data Objects
@@ -258,28 +281,6 @@ https://apsona.com/pages/sfdc/nonprofits.html
 * Web Form 
 * Email to Case
 * Email to database
-
-## Export / Backup
-
-Backups in DE orgs can occur Monthly only. 
-
-Backups in prod (and Sandboxes) can occur Weekly or monthly (not daily). 
-
-The output is a set of 500MB zip file Salesforce emails to you.
-A backup file is a CSV file for each object, consists of many : one for each object and internal tables:
-
-![sf-backup-objects-598x410-28455](https://user-images.githubusercontent.com/300046/44672521-ed619380-a9e5-11e8-9976-992d85a3145d.jpg)
-
-* Export does not include any of your metadata (critical in rebuilding custom work and relationships).
-* Export does not include attached files. 
-* Export can take a week or more to process through the queue.
-* Exports are not allowed from sandboxes.
-<br /><br />
-
-More frequent backups can occur using a 3rd party app on AppExchange, such as
-<a target="_blank" href="https://www.ownbackup.com/">ownbackup.com</a>
-
-https://reflectionenterprise.com/salesforce-data-export/
 
 ## Data Quality
 
