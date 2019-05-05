@@ -44,13 +44,35 @@ Salesforce, by default, does not provide "point-in-time" recovery from "snapshot
 If you don't run backup jobs, Salesforce charges a minimum of $10,000 to obtain that data.
 
 
+## Data Quality
+
+This is covered in the 211 course and:
+
+   * Trailhead module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/data_quality">Data Quality</a> +700 
+   <br /><br />
+
+Topics:
+
+* Assess, cleanse, and maintain data quality
+
+* Prevent duplicate records using Duplicate Management
+
+* Clean and enrich data with data.com, which uses external databases as the basis for cleaning Leads, Contacts, Accounts (not product Opportunities or Assets).
+
+See validity.com #DemandTools, #PeopleImport, #DupeBlocker and #BriteVerify 
+
+
+## FieldDump from Salesforce AppExchange
+
+<a target="_blank" href="https://www.p0p.co.uk/fielddump/">FieldDump</a> is a free add-on that extracts a Data Model to a spreadsheet readable by Microsoft Excel, Google Sheet, etc.
+
+
 ## Export / Backup
 
-Backups in prod (and Sandboxes) can occur Weekly or monthly (not daily). 
+Output from a backup is a set of zip files Salesforce emails to you.
 
-Backups in DE (Developer eXperience) orgs can occur Monthly only. 
+TODO: Steps to select all fields. Do it using automated RPA.
 
-Output from a backup is a set of 500MB zip file Salesforce emails to you.
 A backup file is a CSV file for each object, consists of many : one for each object and internal tables:
 
 ![sf-backup-objects-598x410-28455](https://user-images.githubusercontent.com/300046/44672521-ed619380-a9e5-11e8-9976-992d85a3145d.jpg)
@@ -61,13 +83,77 @@ A backup file is a CSV file for each object, consists of many : one for each obj
 * Exports are not allowed from sandboxes.
 <br /><br />
 
-More frequent backups can occur using a 3rd party app on AppExchange, such as
-<a target="_blank" href="https://www.ownbackup.com/">ownbackup.com</a>
-or
-<a target="_blank" href="https://reflectionenterprise.com/salesforce-data-export/">reflectionenterprise.com/salesforce-data-export</a>
+Export Backups in DE (Developer eXperience) orgs can occur Monthly only.<br />
+Backups in prod (and Sandboxes) can occur weekly or monthly.<br />
+<strong>CAUTION: Salesforce does not allow daily backups</strong>. 
+
+More frequent backups can occur using a 3rd party app on AppExchange.
+
+Each .csv file cannot be large than 500MB.
+
+## .csv files
+
+The spreadsheet has 331 data rows plus a header row.
+
+Column names in the header row begin with an underline so they always sort to the top.
+Thus, column A is named "_Seq",
+
+The "_Backup File Name" column contains file names ending in .csv. 
+The list was created by Salesforce after all objects were selected in the export form.
+
+My list contains objects from several add-ons:
+
+   * CnP_... for "Click and Pledge"
+   * EventbriteSync__... for the Eventbrite activity calendar synchronization
+   * MC4SF__... for MailChimp for Salesforce (4SF) - https://appexchange.salesforce.com/listingDetail?listingId=a0N3000000B3byfEAB&tab=r
+   <br /><br />
+
+   CAUTION: Read the reviews to each add-on listed above.
+
+"_LABEL" is the checkbox field lable in the Export form on Salesforce.
+
+The "_Rows" counts the rows in each .csv file.  "0" values are for blank files.
+"1" values are for files containing just the header row but no data.
+"7" would be for a file with 6 data records plus a header.
+
+"_API_NAME" is ???
+
+Many use Microsoft Excel to create and edit CSV files for import into Salesforce.
+
+There are some tricks to using it.
+
+1. Excel can open CSV files automatically when it's double-clicked on Finder.
+
+1. Excel has no in-built way to specify the format of each field in CSV files. You'll need to save the file in Excel format to manually specify number fields as such.
+
+   PROTIP: The leading zero in Zip codes get stripped automatically.
+
+   Double-quotes within text are problematic because they are also used to define the beginning and end of fields.
+
+## Issues with reading CSV in Excel
+
+The issue with .csv files exported are these: 
+
+junction objections ???
+
+<a target="_blank" href="https://github.com/rsoesemann/salesforce-plantuml">https://github.com/rsoesemann/salesforce-plantuml</a> (by Robert Sösemann who ported the PMD extensible multilanguage static code analyzer to Salesforce) is an open-sourcce native Force.com application app that generates UML class & ER-diagrams from your org data. It leverages the <a target="_blank" href="http://plantuml.sourceforge.net/codejavascript2.html">PlantUML JavaScript Deflate</a> and other libraries.
 
 
-## Data Objects
+### Data Types
+
+Data type—primitive types: collections, sObjects, user-defined types, and built-in Apex types.
+
+There are three main types of collections in Apex:
+
+* Sets – <strong>unordered</strong> collection of elements that do not contain any duplicates. 
+* Lists – ordered collection of elements distinguished by <strong>indices</strong>.
+* Maps – key-value pairs with each unique key mappings to a single value. Keys and values can be any data type—primitive type.
+<br /><br />
+
+The import file should include a record owner for each record (defaulting to the account used to do importing).
+
+
+### Data Objects
 
 <a target="_blank" title="sf-data-diagram-764x418-22034.jpg" href="https://user-images.githubusercontent.com/300046/45555383-e617f380-b7f5-11e8-850c-18ec3664a70d.jpg">
 <img alt="sf-data-diagram-764x418-22034.jpg" src="https://user-images.githubusercontent.com/300046/45555383-e617f380-b7f5-11e8-850c-18ec3664a70d.jpg"><br />
@@ -95,7 +181,47 @@ References:
 * https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/relationships_among_objects.htm
 
 
-## Wizard vs Loader
+
+## Insert .CSV into Salesforce
+
+To insert data within .csv back into Salesforce, there are several approaches:
+
+   1. Use the <a href="#ExcelConnector">Excel Connector</a>
+   2. Use the <a href="#Wizard">Salesforce Wizard or DataLoader</a>
+   3. Use a <a href="#3rdParty">3rd-party utility</a>
+
+   For "DYI" who don't want to spend extra money but have the technical chops:
+
+   4. Write <a href="#JavaPgm">Java Apex code</a> to run within a Salesforce Console
+   5. Write <a href="#RESTAPI">REST API calls</a> within a custom web app program (in Java, Python, or other language) to insert into Salesforce databases.
+
+<hr />
+
+<a name="ExcelConnector"></a>
+
+### Excel Connector
+
+Because Salesforce generates .csv files that Microsoft Excel and Google Sheet can read, many think that Salesforce should also read .csv files as input for import as well, in a "round-trip".
+
+<a target="_blank" href="https://developer.salesforce.com/page/Force.com_Excel_Connector">
+The Force.com Excel Connector</a> is an Add-on to Microsoft Excel via the Toolkit for Office.
+It promises <strong>bi-directional access</strong> to the Force.com API. 
+
+So it's useful for cleaning and mass-updating salesforce.com-based data. 
+
+Updated features include access to Products2 and custom objects, API names or labels, simple query wizard, readable user names, etc.
+
+It allows you to upload and export data directly in and out of an excel sheet.
+
+QUESTION: What abut web-based (SaaS) Microsoft 360? or <a target="_blank" href="https://support.google.com/docs/answer/9073952?co=GENIE.Platform%3DDesktop&hl=en">Google Sheets</a>?
+
+
+<hr />
+
+
+<a name="Wizard"></a>
+
+## Wizard vs DataLoader
 
 Based on VIDEO: <a target="_blank" title="Oct 17, 2017 [5:56]" href="https://www.youtube.com/watch?v=YbdCyWgWDNo&t=1m14s">Data Import: Choosing the Right Tool</a>:
 <table border="1" cellpadding="4" cellspacing="0">
@@ -111,51 +237,9 @@ Based on VIDEO: <a target="_blank" title="Oct 17, 2017 [5:56]" href="https://www
 <tr valign="top"><td>Can save mappings</td><td>no</td><td>yes</td></tr>
 </table>
 
-Both can handle custom as well as standard objects.
+Both can handle custom as well as standard objects.<br />
 Both trigger validation rules during importing.
 
-## Data Types
-
-Data type—primitive types: collections, sObjects, user-defined types, and built-in Apex types.
-
-There are three main types of collections in Apex:
-
-* Sets – <strong>unordered</strong> collection of elements that do not contain any duplicates. 
-* Lists – ordered collection of elements distinguished by <strong>indices</strong>.
-* Maps – key-value pairs with each unique key mappings to a single value. Keys and values can be any data type—primitive type.
-<br /><br />
-
-The import file should include a record owner for each record (defaulting to the account used to do importing).
-
-
-## Excel to CSV
-
-Many use Microsoft Excel to create and edit CSV files for import into Salesforce.
-
-There are some tricks to using it.
-
-1. Excel can open CSV files automatically when it's double-clicked on Finder.
-1. Excel has no in-built way to specify the format of each field in CSV files. You'll need to save the file in Excel format to manually specify number fields as such.
-
-   PROTIP: The leading zero in Zip codes get stripped automatically.
-
-   Double-quotes within text are problematic because they are also used to define the beginning and end of fields.
-
-### Excel Connector
-
-<a target="_blank" href="https://developer.salesforce.com/page/Force.com_Excel_Connector">
-The Force.com Excel Connector</a> is an Add-on to Microsoft Excel via the Toolkit for Office.
-It provides <strong>bi-directional access</strong> to the Force.com API. 
-
-So it's useful for cleaning and mass-updating salesforce.com-based data. 
-
-Updated features include access to Products2 and custom objects, API names or labels, simple query wizard, readable user names, etc.
-
-It allows you to upload and export data directly in and out of an excel sheet.
-
-### Google Sheets
-
-https://support.google.com/docs/answer/9073952?co=GENIE.Platform%3DDesktop&hl=en
 
 <a name="DataImportWizard"></a>
 
@@ -206,7 +290,22 @@ Permissions?
 
 It can match external identifier keys. But its Auto Mappings is tricky to define, which can lead to wrong mappings or missing fields.
 
-## DataLoader.io
+
+<hr />
+
+<a name="3rdParty"></a>
+
+## 3rd-Party
+
+Several partners of Salesforce offer tools.
+
+### Own backup
+
+<a target="_blank" href="https://www.ownbackup.com/">ownbackup.com</a>
+is the premier solution.
+
+
+### DataLoader.io
 
 <a target="_blank" href="http://dataloader.io/">
 Dataloader.io</a> <a target="_blank" href="http://appexchange.salesforce.com/listingDetail?listingId=a0N30000009w8ZBEAY">from AppExchange</a> is a popular tools because it works on the browser ("no software"), no installation It and Salesforce security token required. It’s intuitive and wizard driven, but takes a little longer to setup and runs slower than the Salesforce Apex Data Loader. 
@@ -217,7 +316,7 @@ This app also provides users with list of fields from related objects, making ex
 Scheduling jobs?
 
 
-## Jitterbit ODBC/JDBC Data Loader
+### Jitterbit ODBC/JDBC Data Loader
 
 <a target="_blank" href="http://www.jitterbit.com/solutions/salesforce-integration/salesforce-data-loader/">
 Jitterbit</a> <a target="_blank" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000016ZoVEAU">from AppExchange</a> is a free program installed on Windows and macOS. It is offered by Jitterbit Inc. as an entry offering to their full integration suite.
@@ -226,7 +325,7 @@ It is intended for tech savvy users who operate local databases (such as MySQL) 
 
 Thus, its meant to process repetitive runs and not one-offs.
 
-## Informatica Cloud Data Loader
+### Informatica Cloud Data Loader
 
 <a target="_blank" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000016cUTEAY">
 Informatica's Cloud Data Loader</a> <a target="_blank" href="http://appexchange.salesforce.com/listingDetail?listingId=a0N300000016cUTEAY">from AppExchange</a> provides powerful data transformation logic during loading "on the fly", which enables more powerful formatting of data fields.
@@ -240,11 +339,11 @@ It connects to Box.
 
 Pity it only handles CSV files.
 
-## Vlocity
+### Vlocity
 
 Vlocity's DataRaptor is an extract, transform and load (ETL) tool that integrates with their Omniscripts to read and write Salesforce data. The DataRaptor Designer enables app developers to map data to the input format required by OmniScripts, to transform the data as required by business logic, and to write the output data back to Salesforce in compliance with the  Salesforce object model.
 
-## Talend 
+### Talend 
 
 <a target="_blank" href="https://www.talend.com/resources/integrating-with-salesforce/">
 Talend Components for Salesforce Data Integration</a> integrates with Talend's Open Studio and Integration Suite, which Forrester put at the top of all other vendors in both current offering and Strategy dimensions for "Data Integration Tools". 
@@ -253,13 +352,13 @@ The tool is open-source (free). It works on Hadoop and Spark big data. It schedu
 
 In addition to Input and BulkExec connectors, Talend has more sophisticated connectors such as "GetUpdated" which changes data.
 
-## LexiLoader
+### LexiLoader
 
 <a target="_blank" href="http://macappstore.org/lexiloader/">
 http://macappstore.org/lexiloader</a>
 says does not exist.
 
-## BOFC (Bulk Object Field Creator)
+### BOFC (Bulk Object Field Creator)
 
 Import & Export Salesforce fields using CSV or XLSX files to perform bulk CRUD operations with Point & Click.
 from tech9logy.com 
@@ -268,54 +367,120 @@ Grabs your Salesforce Process builder flow into excel.
 
 See http://salesforcebofc.com/
 
-## Apsona
+### Apsona
 
 <a target="_blank" href="https://apsona.com/">Apsona</a> is a set of SaaS-based tools for Salesforce.
 
 https://apsona.com/pages/sfdc/nonprofits.html
 
-## DemandTools
+### DemandTools
 
-## Others:
+### SOQL Studio from Visual Software systems
+
+<a target="_blank" href="https://visualsoftwaresystems.net/Product/SOQLStudio">
+SOQL Studio from Visual Software systems</a> is a $50/year IDE to query, visualize and extract Salesforce data at a depth and breadth of features not available with the force.com IDE, Developer Console, Workbench, or Data Loader. The tool returns every data point -- aggregates, compound fields, related records, multi-level child-to-parent fields. It can work with multiple queries at the same time. It allows for annotation of queries with single or multi-line comments. Queries can be saved for reuse later. Copy/Paste selected bits of you results or export the full results of your SOQL query in Excel, CSV, XML or custom text format, even if your query includes data from child objects. 
+
+### Reflection Enterprise
+
+<a target="_blank" href="https://reflectionenterprise.com/salesforce-data-export/">reflectionenterprise.com/salesforce-data-export</a>
+
+### JetBrains Illuminated Cloud
+
+The Illuminated Cloud add-in to JetBrains' IntelliJ IDE.
+
+### CloudToolKit
+
+<a target="_blank" href="https://cloudtoolkit.co/">https://cloudtoolkit.co</a>
+
+### Others:
 
 * Web Form 
 * Email to Case
 * Email to database
 
-## Data Quality
+<hr />
 
-This is covered in the 211 course and:
 
-   * Trailhead module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/data_quality">Data Quality</a> +700 
-   <br /><br />
 
-Topics:
+<hr />
 
-* Assess, cleanse, and maintain data quality
+<a name="JavaPgm"></a>
 
-* Prevent duplicate records using Duplicate Management
+## Java Apex Code
 
-* Clean and enrich data with data.com, which uses external databases as the basis for cleaning Leads, Contacts, Accounts (not product Opportunities or Assets).
+A java program is more work, but much more flexible, operating at the "atomic" level,
+particularly with <strong>junction objects</strong>.
 
-See validity.com #DemandTools, #PeopleImport, #DupeBlocker and #BriteVerify 
+Techniques from the <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.218.0.bigobjects.meta/bigobjects/big_object.htm">Big Objects Implementation Guide</a> 
+include <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.218.0.bigobjects.meta/bigobjects/async_query_overview.htm">Async</a>
+calls of <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.218.0.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm">Salesforce Object Query Language</a> in the background.
 
-## Free from Salesforce AppExchange
 
-<a target="_blank" href="https://www.p0p.co.uk/fielddump/">FieldDump</a> – Extract Data Model to a Spreadsheet
+In the <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_dml_examples_insert_update.htm">Apex Developer Guide: 
+Inserting and Updating Records</a>:
+
+Using DML, you can insert new records and commit them to the database. Similarly, you can update field values of existing records.
+
+First make a query to obtain related keys used in the query.
+
+<pre>
+try {
+    Account acct = new Account(Name='SFDC Account');
+    insert acct;
+&nbsp;
+    // Once the account is inserted, the sObject will be 
+    // populated with an ID.
+    // Get this ID.
+    ID acctID = acct.ID;
+&nbsp;
+    // Add a contact to this account.
+    Contact con = new Contact(
+        FirstName='Joe',
+        LastName='Smith',
+        Phone='415.555.1212',
+        AccountId=acctID);
+    insert con;
+} catch(DmlException e) {
+    System.debug('An unexpected error has occurred: ' + e.getMessage());
+}
+</pre>
+
+The above example inserts three account records and updates an existing account record. First, three Account sObjects are created and added to a list. An insert statement bulk inserts the list of accounts as an argument. Then, the second account record is updated, the billing city is updated, and the update statement is called to persist the change in the database.
+
+References:
+
+* Java developer resources at <a target="_blank" href="http://wiki.developerforce.com/page/Java">http://wiki.developerforce.com/page/Java</a>
+
+* <a target="_blank" href="https://github.com/forcedotcom/CustomMetadataLoader">https://github.com/forcedotcom/CustomMetadataLoader</a> provides an open-source tool to help users bulk create and update custom metadata records in salesforce.com from a CSV file.
+
+
+<a name="RESTAPI"></a>
+
+## REST API update externally
+
+The advantage of a REST API interface is scale. 
+Several instances can update Salesforce at the same time.
+
+In <a target="_blank" href="http://wiki.developerforce.com/page/Introduction_to_the_Force.com_Web_Services_Connector">Web Services Connector</a>, the "Preparing to Integrate Java Apps with Force.com APIs" and "Creating an Enterprise WSDL Application" sections where it walks through setup, prep, and actually gives you some sample code that shows how to query, update, create, and delete records.
+
+<a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_dml_foreign_keys.htm">Creating Parent and Child Records in a Single Statement Using Foreign Keys</a>
+
+<a target="_blank" href="https://developer.salesforce.com/developer-centers/integration-apis/">developer-centers/integration-apis</a> (previously https://developer.force.com/REST)
+
+https://developer.salesforce.com/docs/atlas.en-us.218.0.api.meta/api/sforce_api_calls_create.htm#MixedSaveSection
+
+   SaveResult[] = connection.create(sObject[] sObjects);
+
+Use `create()` to add one or more records, such as an Account or Contact record, to your organization’s information. The create() call is analogous to the INSERT statement in SQL.
+
+When creating objects, consider <a target="_blank" title="Jun 15, 2014" href="https://www.ajaydubedi.com/my-works/salesforce-rest-integration-java-application/"> these rules and guidelines</a>.
+
+* <a target="_blank" href="https://github.com/danieljpeter/salesforceMetadataBackup">https://github.com/danieljpeter/salesforceMetadataBackup</a> gets all salesforce metadata via rest api and apache ant and push to github
+
 
 ## GitHub
 
-<a target="_blank" href="https://github.com/forcedotcom/CustomMetadataLoader">https://github.com/forcedotcom/CustomMetadataLoader</a> 
-provides a tool to help users bulk create and update custom metadata records in salesforce.com from a CSV file.
-
-https://github.com/rsoesemann/salesforce-plantuml
-Salesforce app to generate UML class & ER-diagrams from your org data. Leverages the PlantUML library.
-
-https://github.com/danieljpeter/salesforceMetadataBackup
-Get all salesforce metadata via rest api and apache ant and push to github
-
-https://github.com/danieljpeter/HyperBatch
-by DanielJPeter
+<a target="_blank" href="https://github.com/danieljpeter/HyperBatch">https://github.com/danieljpeter/HyperBatch</a> by DanielJPeter
 
 
 ## Learning Modules
