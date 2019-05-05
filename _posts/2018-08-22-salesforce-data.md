@@ -67,20 +67,27 @@ See validity.com #DemandTools, #PeopleImport, #DupeBlocker and #BriteVerify
 <a target="_blank" href="https://www.p0p.co.uk/fielddump/">FieldDump</a> is a free add-on via AppExchange that extracts a Data Model to a spreadsheet readable by Microsoft Excel, Google Sheet, etc.
 
 
-## Export / Backup
+## Export to .csv for Backup
 
-Output from a backup is a set of zip files Salesforce emails to you.
+TODO: Steps to select all fields. Do it using test automation/RPA.
 
-TODO: Steps to select all fields. Do it using automated RPA.
+1. In Salesforce, enter Setup to look for "Export" ("Data Export").
 
-A backup file is a CSV file for each object, consists of many : one for each object and internal tables:
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/44672521-ed619380-a9e5-11e8-9976-992d85a3145d.jpg"><img alt="sf-backup-objects-598x410-28455.jpg" width="598" src="https://user-images.githubusercontent.com/300046/44672521-ed619380-a9e5-11e8-9976-992d85a3145d.jpg"></a>
 
-![sf-backup-objects-598x410-28455](https://user-images.githubusercontent.com/300046/44672521-ed619380-a9e5-11e8-9976-992d85a3145d.jpg)
+   Notice object names are not sorted.
 
-* Export does not include any of your metadata (critical in rebuilding custom work and relationships).
-* Export does not include attached files. 
-* Export can take a week or more to process through the queue.
-* Exports are not allowed from sandboxes.
+2. Click checkbox "Include all data" in "Weekly Export Service".
+3. Click "Export Now". Click "Schedule Now"
+4. Wait for an email with subject "Your Organization Data Export has completed."
+5. In your email program (Outlook/Exchange, etc.), download the zip file by clicking the link.
+
+   An export (backup) zip file contains a CSV file for each object, consists of many : one for each object and internal table. Remember:
+
+   * Export does not include any of your metadata (critical in rebuilding custom work and relationships).
+   * Export does not include attached files. 
+   * Export can take a week or more to process through the queue.
+   * Exports are not allowed from sandboxes.
 <br /><br />
 
 Export Backups in DE (Developer eXperience) orgs can occur Monthly only.<br />
@@ -411,10 +418,6 @@ Ben Edwards (<a target="_blank" href="https://twitter.com/benedwards44">@benedwa
 * Web Form 
 * Email to Case
 * Email to database
-
-<hr />
-
-
 
 <hr />
 
