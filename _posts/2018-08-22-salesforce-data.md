@@ -62,9 +62,9 @@ Topics:
 See validity.com #DemandTools, #PeopleImport, #DupeBlocker and #BriteVerify 
 
 
-## FieldDump from Salesforce AppExchange
+## FieldDump from AppExchange
 
-<a target="_blank" href="https://www.p0p.co.uk/fielddump/">FieldDump</a> is a free add-on that extracts a Data Model to a spreadsheet readable by Microsoft Excel, Google Sheet, etc.
+<a target="_blank" href="https://www.p0p.co.uk/fielddump/">FieldDump</a> is a free add-on via AppExchange that extracts a Data Model to a spreadsheet readable by Microsoft Excel, Google Sheet, etc.
 
 
 ## Export / Backup
@@ -105,7 +105,7 @@ My list contains objects from several add-ons:
 
    * CnP_... for "Click and Pledge"
    * EventbriteSync__... for the Eventbrite activity calendar synchronization
-   * MC4SF__... for MailChimp for Salesforce (4SF) - https://appexchange.salesforce.com/listingDetail?listingId=a0N3000000B3byfEAB&tab=r
+   * MC4SF__... for MailChimp for Salesforce (4SF) <a target="_blank" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N3000000B3byfEAB&tab=r">from AppExchange</a>
    <br /><br />
 
    CAUTION: Read the reviews to each add-on listed above.
@@ -386,11 +386,25 @@ SOQL Studio from Visual Software systems</a> is a $50/year IDE to query, visuali
 
 ### JetBrains Illuminated Cloud
 
-The Illuminated Cloud add-in to JetBrains' IntelliJ IDE.
+The Illuminated Cloud 
+<a target="_blank" href="https://twitter.com/IllumCloud">@IllumCloud</a>)
+add-in to JetBrains' IntelliJ IDE.
+
+It supports multiple Dev Hubs when creating scratch orgs, which is nice when working on packages in different dev hubs.
 
 ### CloudToolKit
 
-<a target="_blank" href="https://cloudtoolkit.co/">https://cloudtoolkit.co</a>
+Ben Edwards (<a target="_blank" href="https://twitter.com/benedwards44">@benedwards44</a> in New Zealand) <a target="_blank" href="https://cloudtoolkit.co/">https://cloudtoolkit.co</a> (salesforcetoolkit.com and sftoolkit.co) open sourced <a target="_blank" href="https://github.com/benedwards44/">in GitHub</a> a suite of tools running on Heroku:
+
+* <a target="_blank" href="https://schemalister.herokuapp.com/">Schema Lister</a> using the Salesforce Metadata API to build a list of objects, fields, and field attributes from within a  Salesforce Org.
+
+* <a target="_blank" href="https://schemalister.herokuapp.com/">sforgcompare</a> which uses the Salesforce Tooling or Metadata API (user selection) to compare metadata between two Orgs -- useful when planning deployments or building deployment packages, as well as seeing what configuration exists in Production to Sandbox or between Sandbox environments.
+
+* <a target="_blank" href="https://schemalister.herokuapp.com/">sfcodeclean</a> scans all the (non-packaged) Apex Classes in your Org to build a table of where each property, variable and method is used. Useful for cleaning up unused code. Only Apex Class metadata is captured from your Org. 
+
+* <a target="_blank" href="https://sfswitch.herokuapp.com/">Switch</a> which provides a web interface to easily enable and disable components in your Salesforce Org - Workflows, Triggers and Validation Rules. Very useful when doing data migrations and needing to disable certain automation in Salesforce.
+
+* <a target="_blank" href="https://packagebuilder.herokuapp.com/">packagebuilder</a> which uses the Salesforce Metadata API to build a package.xml file based on components in a Salesforce org specified online. Handy for building a package.xml file for use with ANT Force.com Migration or other IDE tools, or building a destructiveChanges.xml file.
 
 ### Others:
 
@@ -513,22 +527,20 @@ Learn about force:recordData, its benefits, and how to use it in your components
 
 ## References
 
-* http://www.arkusinc.com/archive/2013/comparing-data-loaders-for-salesforce
-   "Comparing Data Loaders for Salesforce" (2013) by Roger Mitchell 
+* <a target="_blank" href="http://www.arkusinc.com/archive/2013/comparing-data-loaders-for-salesforce">"Comparing Data Loaders for Salesforce"</a> 
+(2013) by Roger Mitchell
 
-* http://www.salesforceben.com/best-data-loader-for-salesforce/
-   "Best Data loader for Salesforce" (2014) by Ben McCarthy
+* <a target="_blank" href="http://www.salesforceben.com/best-data-loader-for-salesforce/">Best Data loader for Salesforce"</a> (2014) by Ben McCarthy
 
-VIDEO: <a target="_blank" title="Oct 17, 2017 [21:47]" href="https://www.youtube.com/watch?v=XaDGT9U2n_w">
-How to: Use Two Great (and Free) Data Tools - Data Loader and Excel Connector</a>
+VIDEO: <a target="_blank" title="Oct 17, 2017 [21:47]" href="https://www.youtube.com/watch?v=XaDGT9U2n_w">How to: Use Two Great (and Free) Data Tools - Data Loader and Excel Connector</a>
 
 For those who have bought Mike Wheeler's Udemy class:
 
-   * https://www.udemy.com/salesforce-administrator/learn/v4/t/lecture/4309758?start=0
-   Data Import Wizard and the Data Loader
+   * <a target="_blank" href="https://www.udemy.com/salesforce-administrator/learn/v4/t/lecture/4309758?start=0">Data Import Wizard and the Data Loader</a>
 
-   * https://www.udemy.com/salesforce-administrator/learn/v4/t/lecture/4812698?start=0
-   Additional Salesforce Data Management Tools
+   * <a target="_blank" href="https://www.udemy.com/salesforce-administrator/learn/v4/t/lecture/4812698?start=0">Additional Salesforce Data Management Tools</a>
+
+<a target="_blank" href="https://app.pluralsight.com/player?course=snowforce-2019-session-19&author=snowforce-io&name=fc751bae-fa01-4c94-aa39-0b66f195a591&clip=0&mode=live">SFDX Sandbox Data Loads</a> from SnowForce SLC Apr 24 2019 [48m 14s]
 
 
 ## More about Salesforce #
