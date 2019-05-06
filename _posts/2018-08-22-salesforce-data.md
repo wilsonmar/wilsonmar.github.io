@@ -67,9 +67,16 @@ See validity.com #DemandTools, #PeopleImport, #DupeBlocker and #BriteVerify
 <a target="_blank" href="https://www.p0p.co.uk/fielddump/">FieldDump</a> is a free add-on via AppExchange that extracts a Data Model to a spreadsheet readable by Microsoft Excel, Google Sheet, etc.
 
 
-## Export to .csv for Backup
+## Export .csv from Salesforce
 
-TODO: Steps to select all fields. Do it using test automation/RPA.
+There are several ways to obtain an export:
+
+   A. Using the Salesforce GUI<br />
+   B. Using the <a href="#FuseIT">FuseIT CLI program for Windows</a>
+
+<hr />
+
+### Export using Salesforce GUI
 
 1. In Salesforce, enter Setup to look for "Export" ("Data Export").
 
@@ -77,12 +84,29 @@ TODO: Steps to select all fields. Do it using test automation/RPA.
 
    Notice object names are not sorted.
 
-2. Click checkbox "Include all data" in "Weekly Export Service".
+2. Click checkbox "<strong>Include all data</strong>" under the "Weekly Export Service" heading.
 3. Click "Export Now". Click "Schedule Now"
 4. Wait for an email with subject "Your Organization Data Export has completed."
-5. In your email program (Outlook/Exchange, etc.), download the zip file by clicking the link.
+5. In your email program (Outlook/Exchange, etc.), download the zip file by clicking the link. 
+   The file name is like "WE_00DG0000000gbbAMAQ_1.ZIP".
 
-   An export (backup) zip file contains a CSV file for each object, consists of many : one for each object and internal table. Remember:
+<a name="FuseIT"></a>
+
+### Export using FuseIT
+
+Salesforce Consultants FuseIT in New Zealand has a <a target="_blank" href="https://fuseit.com/products/fuseit-sfdc-explorer/">Salesforce Explorer</a>
+
+<a target="_blank" href="https://fuseit.com/Solutions/SFDC-Explorer/Help-Data-Exports.aspx">
+https://fuseit.com/Solutions/SFDC-Explorer/Help-Data-Exports.aspx</a> that includes "Data Exports".
+Their <a target="_blank" href="https://fuseit.com/products/data-storage-and-salesforce/">MongoDB for Salesforce ("M4S")</a> connector (super cache) for <a target="_blank" href="https://fuseit.com/products/net-salesforce-integration/">ASP.NET web app integration</a> (which they call "G4S").
+
+Their <a target="_blank" href="https://fuseit.atlassian.net/wiki/spaces/FSDE/pages/13533199/Data+Export+Command+Line">CLI for Windows</a>, after download and install, can be run by a scheduler to request exports with a command such as:
+
+<pre>FuseIT.SFDC.DataExportConsole.exe /u:user@test.com /p:12345678 /t:C3P3qivIf5t6Q6uYtzxxxxxx /e:Production "C:\\SFDCexports"</pre>
+
+### .csv files exported
+
+Within the export (backup) zip file are CSV files for each object. One file for each object and internal table. Remember:
 
    * Export does not include any of your metadata (critical in rebuilding custom work and relationships).
    * Export does not include attached files. 
@@ -98,9 +122,10 @@ More frequent backups can occur using a 3rd party app on AppExchange.
 
 Each .csv file cannot be large than 500MB.
 
-## .csv files
+### Spreadsheet of .csv files 
 
-The spreadsheet has 331 data rows plus a header row.
+<a target="_blank" href="https://drive.google.com/drive/u/0/folders/1qkZBfQa9B75G0-M69be-3TdVSKjPHLXe">Our spreadsheet of objects exported</a> 
+has 331 data rows plus a header row.
 
 Column names in the header row begin with an underline so they always sort to the top.
 Thus, column A is named "_Seq",
@@ -117,13 +142,23 @@ My list contains objects from several add-ons:
 
    CAUTION: Read the reviews to each add-on listed above.
 
-"_LABEL" is the checkbox field lable in the Export form on Salesforce.
+`_SEN` containing TRUE mark fields which contain sensitive information such as email address, birthdates, Social Security Numbers, bank account identifiers, and other personally identifiable information (PEI). These fields need to be cleansed when not in the production instance.
 
-The "_Rows" counts the rows in each .csv file.  "0" values are for blank files.
-"1" values are for files containing just the header row but no data.
-"7" would be for a file with 6 data records plus a header.
+`_Rows` counts the rows in each .csv file.  
 
-"_API_NAME" is ???
+   * "0" values are for blank files.
+   * "1" values are for files containing just the header row but no data.
+   * "7" would be for a file with 6 data records plus a header.
+   <br />
+
+`_LABEL` is the checkbox field lable in the Export form on Salesforce.
+
+`_API_NAME` and `_DEPLOYED` are from the Object Manager at:
+
+   <pre>https://<em>Account</em>.lightning.force.com/lightning/setup/ObjectManager/home</pre>
+
+
+### Excel
 
 Many use Microsoft Excel to create and edit CSV files for import into Salesforce.
 
@@ -141,7 +176,7 @@ There are some tricks to using it.
 
 The issue with .csv files exported are these: 
 
-junction objections ???
+junction objects ???
 
 <a target="_blank" href="https://github.com/rsoesemann/salesforce-plantuml">https://github.com/rsoesemann/salesforce-plantuml</a> (by Robert Sösemann who ported the PMD extensible multilanguage static code analyzer to Salesforce) is an open-sourcce native Force.com application app that generates UML class & ER-diagrams from your org data. It leverages the <a target="_blank" href="http://plantuml.sourceforge.net/codejavascript2.html">PlantUML JavaScript Deflate</a> and other libraries.
 
@@ -495,7 +530,7 @@ When creating objects, consider <a target="_blank" title="Jun 15, 2014" href="ht
 * <a target="_blank" href="https://github.com/danieljpeter/salesforceMetadataBackup">https://github.com/danieljpeter/salesforceMetadataBackup</a> gets all salesforce metadata via rest api and apache ant and push to github
 
 
-## GitHub
+## GitHub / Tools
 
 <a target="_blank" href="https://github.com/danieljpeter/HyperBatch">https://github.com/danieljpeter/HyperBatch</a> by DanielJPeter
 
