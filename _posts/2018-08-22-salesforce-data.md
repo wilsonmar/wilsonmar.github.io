@@ -15,7 +15,7 @@ comments: true
 
 {% include _toc.html %}
 
-This article is a succinct hands-on deep dive on how to get data in and out of Salesforce.
+<a target="_blank" href="https://wilsonmar.github.io/salesforce-data">This article</a> is a succinct hands-on deep dive on how to get data in and out of Salesforce.
 
 3 billion transactions go through Salesforce daily.
 
