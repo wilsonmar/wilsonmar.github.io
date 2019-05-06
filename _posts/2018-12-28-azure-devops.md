@@ -25,6 +25,7 @@ Azure DevOps - Why It's A Big Deal For Microsoft And The Community</a> Sep 16, 2
 Forrester has Microsoft as a leader (behind Electric Cloud, IBM, Xebia, and CA) in its <a target="_blank" href="https://azure.microsoft.com/en-us/resources/continuous-delivery-and-release-automation/">2018 Continuous Delivery And Release Automation" market assesement:
 <img alt="azure-devops-gartner-2018-485x527-13777.jpg" width="485" src="https://user-images.githubusercontent.com/300046/56278410-69b6fd00-60c3-11e9-847b-4c7f4a8a73d6.jpg"></a>
 
+NOTE: IBM's product is called "Urban Code". IBM also acquired Red Hat and its Ansible portfolio.
 
 <a name="QuickStart"></a>
 

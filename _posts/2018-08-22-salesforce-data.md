@@ -102,7 +102,10 @@ Their <a target="_blank" href="https://fuseit.com/products/data-storage-and-sale
 
 Their <a target="_blank" href="https://fuseit.atlassian.net/wiki/spaces/FSDE/pages/13533199/Data+Export+Command+Line">CLI for Windows</a>, after download and install, can be run by a scheduler to request exports with a command such as:
 
-<pre>FuseIT.SFDC.DataExportConsole.exe /u:user@test.com /p:12345678 /t:C3P3qivIf5t6Q6uYtzxxxxxx /e:Production "C:\\SFDCexports"</pre>
+<pre>FuseIT.SFDC.DataExportConsole.exe \
+/u:user@test.com /p:12345678  \
+/t:C3P3qivIf5t6Q6uYtzxxxxxx  \
+/e:Production "C:\\SFDCexports"</pre>
 
 ### .csv files exported
 
@@ -228,14 +231,14 @@ References:
 
 To insert data within .csv back into Salesforce, there are several approaches:
 
-   1. Use the <a href="#ExcelConnector">Excel Connector</a>
-   2. Use the <a href="#Wizard">Salesforce Wizard or DataLoader</a>
-   3. Use a <a href="#3rdParty">3rd-party utility</a>
+   A. Use the <a href="#ExcelConnector">Excel Connector</a>
+   B. Use the <a href="#Wizard">Salesforce Wizard or DataLoader</a>
+   C. Use a <a href="#3rdParty">3rd-party utility</a>
 
-   For "DYI" who don't want to spend extra money but have the technical chops:
+   For "DYIers" who don't want to spend extra money but have the technical chops:
 
-   4. Write <a href="#JavaPgm">Java Apex code</a> to run within a Salesforce Console
-   5. Write <a href="#RESTAPI">REST API calls</a> within a custom web app program (in Java, Python, or other language) to insert into Salesforce databases.
+   D. Write <a href="#JavaPgm">Java Apex code</a> to run within a Salesforce Console
+   E. Write <a href="#RESTAPI">REST API calls</a> within a custom web app program (in Java, Python, or other language) to insert into Salesforce databases.
 
 <hr />
 
@@ -557,7 +560,7 @@ to use Data Loader and the Data Import Wizard to manage data in Salesforce.
 
 * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/custom_metadata_types">Custom Metadata Types</a> +1400 Learn how to customize, deploy, package, and upgrade application metadata with ease.
 
-Account Data Strategies</a> +200
+* Account Data Strategies +200
 Learn how your sales team can use data to close deals.
 
 * <a target="_blank" href="https://trailhead.salesforce.com/en/modules/lightning_data_service">Lightning Data Service Basics</a> +1100
