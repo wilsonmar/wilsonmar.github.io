@@ -21,11 +21,15 @@ comments: true
 
 QUESTION: Please correct me if I'm wrong here.
 
-There is "Dirty Little Secret" to how most companies work with Salesforce data:
+There is a "dirty little open secret" about how companies actually work with Salesforce data.
 
-Internally, Salesforce uses Oracle RAC databases, which "log ships" every change instantaneously to another region for disaster-proof recovery.
+Internally, Salesforce uses Oracle RAC databases, which "log ships" every change instantaneously to another region for disaster-proof recovery. 
 
-Moreover, Salesforce does not provide a way to restore data from backups taken.
+However, Salesforce does not provide a way for users to restore data from backups taken.
+
+Salesforce, by default, does not provide "point-in-time" recovery from "snapshots" of all data at various points in time. 
+
+If you don't run backup jobs, Salesforce charges a minimum of $10,000 to obtain that data.
 
 ## RPO & RTO 
 
@@ -39,32 +43,15 @@ is the time that a company is willing to wait for data to be recovered.
 
 For Salesforce users, RTO would be in days or weeks rather than in minutes.
 
-Salesforce, by default, does not provide "point-in-time" recovery from "snapshots" of all data at various points in time. 
-
-If you don't run backup jobs, Salesforce charges a minimum of $10,000 to obtain that data.
-
 
 ## Data Quality
 
-This is covered in the 211 course and:
-
-   * Trailhead module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/data_quality">Data Quality</a> +700 
-   <br /><br />
-
-Topics:
-
-* Assess, cleanse, and maintain data quality
-
-* Prevent duplicate records using Duplicate Management
-
-* Clean and enrich data with data.com, which uses external databases as the basis for cleaning Leads, Contacts, Accounts (not product Opportunities or Assets).
+This is covered in the 211 course and Trailhead module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/data_quality">Data Quality</a> +700 
+   * Assess, cleanse, and maintain data quality
+   * Prevent duplicate records using Duplicate Management
+   * Clean and enrich data with data.com, which uses external databases as the basis for cleaning Leads, Contacts, Accounts (not product Opportunities or Assets).
 
 See validity.com #DemandTools, #PeopleImport, #DupeBlocker and #BriteVerify 
-
-
-## FieldDump from AppExchange
-
-<a target="_blank" href="https://www.p0p.co.uk/fielddump/">FieldDump</a> is a free add-on via AppExchange that extracts a Data Model to a spreadsheet readable by Microsoft Excel, Google Sheet, etc.
 
 
 ## Export .csv from Salesforce
@@ -75,6 +62,10 @@ There are several ways to obtain an export:
    B. Using the <a href="#FuseIT">FuseIT CLI program for Windows</a>
 
 <hr />
+
+## FieldDump from AppExchange
+
+<a target="_blank" href="https://www.p0p.co.uk/fielddump/">FieldDump</a> is a free add-on via AppExchange that extracts a Data Model to a spreadsheet readable by Microsoft Excel, Google Sheet, etc.
 
 ### Export using Salesforce GUI
 
@@ -179,11 +170,6 @@ There are some tricks to using it.
 
 The issue with .csv files exported are these: 
 
-junction objects ???
-
-<a target="_blank" href="https://github.com/rsoesemann/salesforce-plantuml">https://github.com/rsoesemann/salesforce-plantuml</a> (by Robert Sösemann who ported the PMD extensible multilanguage static code analyzer to Salesforce) is an open-sourcce native Force.com application app that generates UML class & ER-diagrams from your org data. It leverages the <a target="_blank" href="http://plantuml.sourceforge.net/codejavascript2.html">PlantUML JavaScript Deflate</a> and other libraries.
-
-
 ### Data Types
 
 Data type—primitive types: collections, sObjects, user-defined types, and built-in Apex types.
@@ -198,15 +184,15 @@ There are three main types of collections in Apex:
 The import file should include a record owner for each record (defaulting to the account used to do importing).
 
 
-### Data Objects
+### Schema of Data Object Dependencies
+
+PROTIP: One cannot just insert data of any given object from a .CSV file because of <strong>dependencies</strong>.
+
+The Salesforce Console provides a dependency viewer at: ???
 
 <a target="_blank" title="sf-data-diagram-764x418-22034.jpg" href="https://user-images.githubusercontent.com/300046/45555383-e617f380-b7f5-11e8-850c-18ec3664a70d.jpg">
 <img alt="sf-data-diagram-764x418-22034.jpg" src="https://user-images.githubusercontent.com/300046/45555383-e617f380-b7f5-11e8-850c-18ec3664a70d.jpg"><br />
 <small>Click to pop-up full screen image</small></a><a target="_blank" href="https://app.pluralsight.com/player?course=play-by-play-diagramming-salesforce-solutions&author=don-robins&name=005dd0f2-15a7-4ce3-98ca-1d0e8dcd854d&clip=4&mode=live">*</a>
-
-PROTIP: <a target="_blank" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000018leZEAQ">Etherios EasyDescribe free app</a> to view and extract object metadata by <a target="_blank" href="http://www.westmonroepartners.com/">West Monroe Partners (of Chicago)</a> is dated 2010 for Winter 11 / 1.91.0 and listed as "private".
-
-<a target="_blank" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N30000009wZkUEAU">Layout Page free app</a> from Clerisoft in 2015 converts any Salesforce Page Layout (Standard OR Custom) into a Standard Visualforce Page in just 3 steps.
 
 There is more "smarts" with Master-detail vs. lookup:
 * Only 2 are allowed per object (vs 25 lookups)
@@ -216,6 +202,15 @@ There is more "smarts" with Master-detail vs. lookup:
 * When the parent record is deleted all the child records attached are deleted.
 * Rollup summary fields to parent based on  SUM, AVG, MIN of child records
 * A child of one master detail relationship cannot be the parent of another.
+<br /><br />
+
+There are many-to-many relationships. These are defined using <a target="_blank" href="https://trailhead.salesforce.com/en/content/learn/projects/build-a-data-model-for-a-recruiting-app/junction-object-job-postings"><strong>junction objects</strong></a> which combines in a custom object two master-detail relationships.
+
+<a target="_blank" href="https://github.com/rsoesemann/salesforce-plantuml">https://github.com/rsoesemann/salesforce-plantuml</a> (by Robert Sösemann who ported the PMD extensible multilanguage static code analyzer to Salesforce) is an open-sourcce native Force.com application app that generates UML class & ER-diagrams from your org data. It leverages the <a target="_blank" href="http://plantuml.sourceforge.net/codejavascript2.html">PlantUML JavaScript Deflate</a> and other libraries.
+
+ALAS: <a target="_blank" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000018leZEAQ">Etherios EasyDescribe free app</a> to view and extract object metadata by <a target="_blank" href="http://www.westmonroepartners.com/">West Monroe Partners (of Chicago)</a> is dated 2010 for Winter 11 / 1.91.0 and listed as "private".
+
+<a target="_blank" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N30000009wZkUEAU">Layout Page free app</a> from Clerisoft in 2015 converts any Salesforce Page Layout (Standard OR Custom) into a Standard Visualforce Page in just 3 steps.
 
 References:
 * https://www.youtube.com/watch?v=fUD4MzgA0gk

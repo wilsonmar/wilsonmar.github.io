@@ -43,30 +43,22 @@ What we would like to do after going thrugh the below is to type this on a Termi
 1. Create the folder.
 
 
-## Upgrade Apple XCode
-
-1. Install the latest XCode from Apple. This can take hours.
-
-   sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
-
-   xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance
-
-   sudo xcodebuild -license
-
-   Agree to the terms.
-
 ## Ruby build
 
-Per https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
+## Upgrade Apple XCode
 
-   brew install openssl libyaml libffi
+1. Install the latest XCode from Apple. See my tutorial at <a target="_blank" href="https://wilsonmar.github.io/xcode/">https://wilsonmar.github.io/xcode</a>
+
+2. Per https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
+
+   <pre><strong>brew install openssl libyaml libffi</strong></pre>
 
 ## Install rbenv
 
-brew install rbenv ruby-build
+   <pre><strong>brew install rbenv ruby-build</strong></pre>
 
 Jana Bergant's <a target="_blank" href="https://www.udemy.com/static-website-generator-fast-secure-sites-blogs-with-jekyll/">
-Udemy course</a> uses a mac install Jekyll 3.3.0 at last viewing.
+Udemy course</a> uses a mac install Jekyll 3.3.0 at last viewing:
 
    <pre><strong>gem update --system -n /usr/local/bin --no-document</strong></pre>
 
@@ -142,6 +134,9 @@ RubyGems system software updated
 
 
 ## Create a folder
+
+CAUTION: In 2019, GitHub changed <a target="_blank" href="https://github.com/pricing">their pricing policies</a> to begin charging for hosting websites (at $7/month). That $84 per year is less than what many hosting companies charge to provide a single machine. But GitHub also provides free scaling and a fast world-wide CDN for no additional cost.
+
 
 In GitHub create a <em>youraccount</em>.github.io repo.
 
