@@ -212,7 +212,7 @@ and press command+C to copy the text to your invisible Clipboard.
 
 ### Lightsail's online SSH window
 
-> The "Achilles Heel" of Lightsail is its cumbersome SSH console, where one has to copy and paste into an intermediary clipboard. Quite a hassle vs. straight SSH.
+> The "Achilles Heel" of Lightsail is its cumbersome browser CLI console, where one has to copy and paste into an intermediary clipboard. Quite a hassle vs. straight SSH.
 
 1. For a new browser window to open up, on the Home screen click the icon under the instance name or, if you've click the instance name, click the orange "Connect using SSH" 
 
