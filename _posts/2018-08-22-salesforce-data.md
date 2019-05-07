@@ -25,13 +25,9 @@ There is a "dirty little open secret" about how companies actually work with Sal
 
 Internally, Salesforce uses Oracle RAC databases, which "log ships" every change instantaneously to another region for disaster-proof recovery. 
 
-However, Salesforce does not provide a way for users to restore data from backups taken.
+However, Salesforce does not provide a way for users to restore data from backups it has taken.
 
-Salesforce, by default, does not provide "point-in-time" recovery from "snapshots" of all data at various points in time. 
-
-If you don't run backup jobs, Salesforce charges a minimum of $10,000 to obtain that data.
-
-## RPO & RTO 
+## TL;DR What is your Salesforce RPO & RTO?
 
 The IT industry-wide has names for recovery of data in case servers fail in enterprise data centers:
 
@@ -41,8 +37,24 @@ is the amount of data that a company is willing to lose when restoring from disa
 <strong>RTO (Recovery Time Objective)</strong> 
 is the time that a company is willing to wait for data to be recovered.
 
-For Salesforce users, RTO would be in days or weeks rather than in minutes.
+For Salesforce users not subscribing to a 3rd-party service, 
+RTO would be in days or weeks rather than in minutes.
 
+Export of data using built-in Salesforce functionality is not automatically enabled when an account is established. And Salesforce limits full backups to once a week. Full sandboxes cost more money.
+
+Salesforce, by default, does not provide "point-in-time" recovery from "snapshots" of all data at various points in time. 
+
+If you don't run backup jobs, Salesforce charges a minimum of $10,000 to obtain that data, 
+which will take a week or more.
+
+Sandboxes for developer use are created only with metadata, not data. 
+
+![sf-sandboxes-820x337](https://user-images.githubusercontent.com/300046/57319470-e08b5880-70b9-11e9-940a-a0e65ee180f1.png)
+
+Salesforce does not provide a comprehensive way to <strong>import</strong> CSV files exported.
+So intricate programming is needed, or pay a 3rd-party solutions thousands a month.
+
+(During cloning, existing users and their status and appends the name of the sandbox to logon Id's, but keeps passwords.)
 
 ## Data Quality
 
@@ -58,8 +70,8 @@ See validity.com #DemandTools, #PeopleImport, #DupeBlocker and #BriteVerify
 
 There are several ways to obtain an export:
 
-   A. Using the Salesforce GUI<br />
-   B. Using the <a href="#FuseIT">FuseIT CLI program for Windows</a>
+   A. Use the Salesforce GUI<br />
+   B. Use the <a href="#FuseIT">FuseIT CLI program for Windows</a>
 
 <hr />
 
@@ -570,13 +582,16 @@ Learn about force:recordData, its benefits, and how to use it in your components
 
 VIDEO: <a target="_blank" title="Oct 17, 2017 [21:47]" href="https://www.youtube.com/watch?v=XaDGT9U2n_w">How to: Use Two Great (and Free) Data Tools - Data Loader and Excel Connector</a>
 
+<a target="_blank" href="https://app.pluralsight.com/player?course=snowforce-2019-session-19&author=snowforce-io&name=fc751bae-fa01-4c94-aa39-0b66f195a591&clip=0&mode=live">SFDX Sandbox Data Loads</a> from SnowForce SLC Apr 24 2019 [48m 14s] by 
+
+Randy Barton ("SFDX Baby Steps - Using sandboxes instead of scratch orgs")
+
+
 For those who have bought Mike Wheeler's Udemy class:
 
    * <a target="_blank" href="https://www.udemy.com/salesforce-administrator/learn/v4/t/lecture/4309758?start=0">Data Import Wizard and the Data Loader</a>
 
    * <a target="_blank" href="https://www.udemy.com/salesforce-administrator/learn/v4/t/lecture/4812698?start=0">Additional Salesforce Data Management Tools</a>
-
-<a target="_blank" href="https://app.pluralsight.com/player?course=snowforce-2019-session-19&author=snowforce-io&name=fc751bae-fa01-4c94-aa39-0b66f195a591&clip=0&mode=live">SFDX Sandbox Data Loads</a> from SnowForce SLC Apr 24 2019 [48m 14s]
 
 
 ## More about Salesforce #

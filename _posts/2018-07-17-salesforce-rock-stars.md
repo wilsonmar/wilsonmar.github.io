@@ -295,6 +295,9 @@ Jitendra Zaa, a 7X Salesforce Certificate, MVP and Technical Architect, working 
 Johan Yu (<a target="_blank" href="https://twitter.com/simplysfdc">@simplysfdc</a>):
    * <a target="_blank" href="http://www.SimplySfdc.com/">SimplySfdc.com</a>
 
+Kashyap Patel, kpatel@sfapex.com (@sfapex)
+   * <a target="_blank" href="https://www.youtube.com/watch?v=4Ud26x_XGFI">VIDEO: Simplify Testing by Automatically Populating Sandboxes With Test Data</a> Nov 13, 2017 using <a target="_blank" href="https://www.sfapex.com">sfapex.com</a>
+
 Keir Bowden (<a target="_blank" href="https://twitter.com/bob_buzzard">@bob_buzzard</a>), Chief Technical Officer at BrightGen, a Salesforce Platinum Partner in the UK:
    * <a target="_blank" href="http://bobbuzzard.blogspot.com/">bobbuzzard.blogspot.com</a>
    * <a target="_blank" href="https://www.blogger.com/profile/07815472992351343395">At Blogger.com</a>
