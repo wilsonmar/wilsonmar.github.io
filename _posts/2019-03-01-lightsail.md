@@ -22,8 +22,8 @@ Amazon Lightsail was announced in 2018, to make "server management easier by aut
 
 USD per month for single Linux or Microsoft Windows instances:
 
-<table border="1" cellpadding="4" cellspacing="1"><thead><tr valign="bottom">
-<th><th valign="bottom" align="right">Linux</th><th>Windows</th><th>Memory</th><th>CPUs</th><th>SSD</th><th>Transfer</th></tr></thead><tbody>
+<table border="1" cellpadding="4" cellspacing="1"><thead><tr valign="bottom" align="right">
+<th>Linux</th><th>Windows</th><th>Memory</th><th>CPUs</th><th>SSD</th><th>Transfer</th></tr></thead><tbody>
 <tr align="right" valign="top"><td>$3.50</td><td>$8</td><td>0.5 GB</td><td>1</td><td>20 GB</td><td>1 TB</td></tr>
 <tr align="right" valign="top"><td>$5</td><td>$12</td><td>1 GB</td><td>1</td><Td>40 GB</td><td>2 TB</td></tr>
 <tr align="right" valign="top"><td>$10</TD><TD>$20</td><td>2 GB</td><td>1</td><Td>60 GB</td><td>3 TB</td></tr>
@@ -35,10 +35,10 @@ USD per month for single Linux or Microsoft Windows instances:
 
 Outbound data transfer in excess of each plan's data "Transfer" allowance is subject to overage charges. Plans in the Mumbai and Sydney Regions are charged at about half the Transfer allowance of  other regions. (0.5 TB instead of 1 TB at $3.50).
 
-You'll also need to host databases using Lightsail <strong>high availability</strong> database hosting plans providing extra instances for redundancy or failovers:
+You'll probably also need to host a <strong>database</strong> using standard (single instance) or <strong>high availability</strong> (multiple instances clustered) for redundancy or failover:
 
-<table border="1" cellpadding="4" cellspacing="1"><thead><tr valign="bottom">
-<th><th valign="bottom" align="right">Standard</th><th>HA</th><th>Memory</th><th>CPUs</th><th>SSD</th><th>Transfer</th></tr></thead><tbody>
+<table border="1" cellpadding="4" cellspacing="1"><thead><tr valign="bottom" align="right">
+<th>Standard</th><th>HA</th><th>Memory</th><th>CPUs</th><th>SSD</th><th>Transfer</th></tr></thead><tbody>
 <tr align="right" valign="top"><td>$15</td><td>$30</td><td>1 GB</td><td>1</td><Td>40 GB</td><td>100 GB</td></tr>
 <tr align="right" valign="top"><td>$30</td><td>$60</td><td>2 GB</td><td>1</td><Td>60 GB</td><td>100 GB</td></tr>
 <tr align="right" valign="top"><td>$60</TD><TD>$120</td><td>4 GB</td><td>2</td><Td>80 GB</td><td>100 GB</td></tr>
@@ -59,7 +59,7 @@ When comparing Lightsail prices vs. offerings by traditional VPS hosting vendors
 Among those offering the fastest load times (paid by the year):
 
 * $14/month for 1GB RAM, 30GB SSD, unlimited data transfer at <a target="_blank" href="https://www.dreamhost.com/hosting/vps/">Dreamhost.com</a>
-* $20/month for 4GB RAM, 40GB disk, unlimited data transfer, plus 3 dedicated IPs and SSL free 1st year at <a target="_blank" href="https://www.godaddy.com/hosting/vps-hosting">GodDaddy.com</a> with a 45-day refund.
+* $20/month for 4GB RAM, 40GB disk, unlimited data transfer, plus 3 dedicated IPs and <strong>SSL free</strong> 1st year at <a target="_blank" href="https://www.godaddy.com/hosting/vps-hosting">GodDaddy.com</a> with a <strong>45-day refund</strong>.
 * $19/month for 2GB RAM, 30GB SSD, 1TB data transfer at <a target="_blank" href="https://www.bluehost.com/hosting/vps/">Bluehost.com</a>
 * $30/month for 2GB RAM, 120GB disk, 1.5TB data transfer at <a target="_blank" href="https://www.hostgator.com/vps-hosting">hostgator.com</a>
 * $80/month for 4GB RAM, 40GB SSD, 5 TB data transfer at <a target="_blank" href="https://www.siteground.com/cloud-hosting.htm">SiteGround.com</a>
