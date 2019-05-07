@@ -33,18 +33,6 @@ USD per month for single Linux or Microsoft Windows instances:
 <tr align="right" valign="top"><td>$160</TD><TD>$240</td><td>32 GB</td><td>8</td><Td>640 GB</td><td>7 TB</td></tr>
 </tbody></table>
 
-Outbound data transfer in excess of each plan's data "Transfer" allowance is subject to overage charges. Plans in the Mumbai and Sydney Regions are charged at about half the Transfer allowance of  other regions. (0.5 TB instead of 1 TB at $3.50).
-
-You'll probably also need to host a <strong>database</strong> using standard (single instance) or <strong>high availability</strong> (multiple instances clustered) for redundancy or failover:
-
-<table border="1" cellpadding="4" cellspacing="1"><thead><tr valign="bottom" align="right">
-<th>Standard</th><th>HA</th><th>Memory</th><th>CPUs</th><th>SSD</th><th>Transfer</th></tr></thead><tbody>
-<tr align="right" valign="top"><td>$15</td><td>$30</td><td>1 GB</td><td>1</td><Td>40 GB</td><td>100 GB</td></tr>
-<tr align="right" valign="top"><td>$30</td><td>$60</td><td>2 GB</td><td>1</td><Td>60 GB</td><td>100 GB</td></tr>
-<tr align="right" valign="top"><td>$60</TD><TD>$120</td><td>4 GB</td><td>2</td><Td>80 GB</td><td>100 GB</td></tr>
-<tr align="right" valign="top"><td>$115</TD><TD>$230</td><td>8 GB</td><td>2</td><Td>160 GB</td><td>200 GB</td></tr>
-</tbody></table>
-
 When comparing Lightsail prices vs. offerings by traditional VPS hosting vendors, note what each plan includes. Included in all Lightsail plans:
 * Static IP address
 * DNS management
@@ -53,7 +41,6 @@ When comparing Lightsail prices vs. offerings by traditional VPS hosting vendors
 * Intuitive management console
 * RDP access (Windows)
 * Secure key management
-
 
 
 Among those offering the fastest load times (paid by the year):
@@ -65,8 +52,21 @@ Among those offering the fastest load times (paid by the year):
 * $80/month for 4GB RAM, 40GB SSD, 5 TB data transfer at <a target="_blank" href="https://www.siteground.com/cloud-hosting.htm">SiteGround.com</a>
 <br /><br />
 
+For the same $20, Lightsail provides twice as much disk space, but puts a cap on the free data Transfer out.
+Outbound data transfer in excess of each plan's data "Transfer" allowance is subject to overage charges. Plans in the Mumbai and Sydney Regions are charged at about half the Transfer allowance of  other regions. (0.5 TB instead of 1 TB at $3.50).
+
 Lightsail's competitive difference is not just <strong>Solid-State</strong> (SSD) storage which are fast and reliable,
 but that its users can <a target="_blank" href="https://aws.amazon.com/s/lp/lightsail-vs-ec2/">move up to EC2</a> (using a snapshot) when a more complex configuration is needed.
+
+You'll probably also need to host a <strong>database</strong> using standard (single instance) or <strong>high availability</strong> (multiple instances clustered) for redundancy or failover:
+
+<table border="1" cellpadding="4" cellspacing="1"><thead><tr valign="bottom" align="right">
+<th>Standard</th><th>HA</th><th>Memory</th><th>CPUs</th><th>SSD</th><th>Transfer</th></tr></thead><tbody>
+<tr align="right" valign="top"><td>$15</td><td>$30</td><td>1 GB</td><td>1</td><Td>40 GB</td><td>100 GB</td></tr>
+<tr align="right" valign="top"><td>$30</td><td>$60</td><td>2 GB</td><td>1</td><Td>60 GB</td><td>100 GB</td></tr>
+<tr align="right" valign="top"><td>$60</TD><TD>$120</td><td>4 GB</td><td>2</td><Td>80 GB</td><td>100 GB</td></tr>
+<tr align="right" valign="top"><td>$115</TD><TD>$230</td><td>8 GB</td><td>2</td><Td>160 GB</td><td>200 GB</td></tr>
+</tbody></table>
 
 Other competitors to Lightsail are <a target="_blank" href="https://wilsonmar.github.io/serverless">"Severless"</a> functions running in Azure, Google, or AWS Lambda. 
 But such are complete rewrites of apps.
