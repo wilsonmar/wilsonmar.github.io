@@ -20,47 +20,43 @@ comments: true
 
 Amazon Lightsail was announced in 2018, to make "server management easier by automatically configuring key resources like networking and security". One signs up for a specific mix of compute, memory, disk, and data transfer capacities. This is like <a target="_blank" href="https://www.awsrails.com/rails-ec2/">selecting EC2</a> instance types, but without specifying VPC, networking, and permissions.
 
+USD per month for single Linux or Microsoft Windows instances:
+
 <table border="1" cellpadding="4" cellspacing="1"><thead><tr valign="bottom">
-<th>$/Month</th><th align="right">Memory</th><th align="right">CPUs</th><th align="right">SSD</th><th align="right">Transfer</th></tr></thead>
-<tr align="right" valign="top"><td>$3.50</td><td>0.5 GB</td><td>1</td><td>20 GB</td><td>1 TB</td></tr>
-<tr align="right" valign="top"><td>$5.00</td><td>1 GB</td><td>1</td><Td>40 GB</td><td>2 TB</td></tr>
-<tr align="right" valign="top"><td>$10</TD><TD>2 GB</td><td>1</td><Td>60 GB</td><td>3 TB</td></tr>
-<tr align="right" valign="top"><td>$20</TD><TD>4 GB</td><td>2</td><Td>80 GB</td><td>4 TB</td></tr>
-<tr align="right" valign="top"><td>$40</TD><TD>8 GB</td><td>2</td><Td>160 GB</td><td>5 TB</td></tr>
-<tr align="right" valign="top"><td>$80</TD><TD>16 GB</td><td>4</td><Td>320 GB</td><td>6 TB</td></tr>
-<tr align="right" valign="top"><td>$160</TD><TD>32 GB</td><td>8</td><Td>640 GB</td><td>7 TB</td></tr>
+<th><th valign="bottom" align="right">Linux</th><th>Windows</th><th>Memory</th><th>CPUs</th><th>SSD</th><th>Transfer</th></tr></thead><tbody>
+<tr align="right" valign="top"><td>$3.50</td><td>$8</td><td>0.5 GB</td><td>1</td><td>20 GB</td><td>1 TB</td></tr>
+<tr align="right" valign="top"><td>$5</td><td>$12</td><td>1 GB</td><td>1</td><Td>40 GB</td><td>2 TB</td></tr>
+<tr align="right" valign="top"><td>$10</TD><TD>$20</td><td>2 GB</td><td>1</td><Td>60 GB</td><td>3 TB</td></tr>
+<tr align="right" valign="top"><td>$20</TD><TD>$40</td><td>4 GB</td><td>2</td><Td>80 GB</td><td>4 TB</td></tr>
+<tr align="right" valign="top"><td>$40</TD><TD>$70</td><td>8 GB</td><td>2</td><Td>160 GB</td><td>5 TB</td></tr>
+<tr align="right" valign="top"><td>$80</TD><TD>$120</td><td>16 GB</td><td>4</td><Td>320 GB</td><td>6 TB</td></tr>
+<tr align="right" valign="top"><td>$160</TD><TD>$240</td><td>32 GB</td><td>8</td><Td>640 GB</td><td>7 TB</td></tr>
 </tbody></table>
 
-* Only outbound data transfer in excess of your plan's data transfer allowance is subject to overage charges. Please see FAQ for more detail.
-Data Transfer Allowances: Asia Pacific (Mumbai & Sydney)
+Outbound data transfer in excess of each plan's data "Transfer" allowance is subject to overage charges. Plans in the Mumbai and Sydney Regions are charged at about half the Transfer allowance of  other regions. (0.5 TB instead of 1 TB at $3.50).
 
-Plans in the Mumbai and Sydney Regions include lower data transfer allowances than other regions.
-$3.50 	$5 USD 	$10 USD 	$20 USD 	$40 USD 	$80 USD 	$160 USD
-0.5 TB 	1 TB 	1.5 TB 	2 TB 	2.5 TB 	3 TB 	3.5 TB
+You'll also need to host databases using Lightsail <strong>high availability</strong> database hosting plans providing extra instances for redundancy or failovers:
 
- 
-Managed databases pricing
+<table border="1" cellpadding="4" cellspacing="1"><thead><tr valign="bottom">
+<th><th valign="bottom" align="right">Standard</th><th>HA</th><th>Memory</th><th>CPUs</th><th>SSD</th><th>Transfer</th></tr></thead><tbody>
+<tr align="right" valign="top"><td>$15</td><td>$30</td><td>1 GB</td><td>1</td><Td>40 GB</td><td>100 GB</td></tr>
+<tr align="right" valign="top"><td>$30</td><td>$60</td><td>2 GB</td><td>1</td><Td>60 GB</td><td>100 GB</td></tr>
+<tr align="right" valign="top"><td>$60</TD><TD>$120</td><td>4 GB</td><td>2</td><Td>80 GB</td><td>100 GB</td></tr>
+<tr align="right" valign="top"><td>$115</TD><TD>$230</td><td>8 GB</td><td>2</td><Td>160 GB</td><td>200 GB</td></tr>
+</tbody></table>
 
-Choose between our standard plan or our high availability plan (includes extra instances for redundancy or failovers).
-Standard plan 	$15 USD 	$30 USD 	$60 USD 	$115 USD
-High Availability plan 	$30 USD 	$60 USD 	$120 USD 	$230 USD
-Memory (RAM) 	1 GB 	2 GB 	4 GB 	8 GB
-Compute capacity 	1 vCPU 	1 vCPU 	2 vCPU 	2 vCPU
-SSD storage 	40 GB 	80 GB 	120 GB 	240 GB
-Data transfer allowance 	100 GB 	100 GB 	100 GB 	200 GB
-Data encrypted 	No 	Yes 	Yes 	Yes
-Included in all Lightsail plans:
- Static IP address
- DNS management
- Server monitoring
- SSH terminal access (Linux/Unix)
- Intuitive management console
- RDP access (Windows)
- Secure key management
+When comparing Lightsail prices vs. offerings by traditional VPS hosting vendors, note what each plan includes. Included in all Lightsail plans:
+* Static IP address
+* DNS management
+* Server monitoring
+* SSH terminal access (Linux/Unix)
+* Intuitive management console
+* RDP access (Windows)
+* Secure key management
 
 
 
-The service competes with offerings by several traditional hosting services. Among hosts offering the fastest load times (paid by the year):
+Among those offering the fastest load times (paid by the year):
 
 * $14/month for 1GB RAM, 30GB SSD, unlimited data transfer at <a target="_blank" href="https://www.dreamhost.com/hosting/vps/">Dreamhost.com</a>
 * $20/month for 4GB RAM, 40GB disk, unlimited data transfer, plus 3 dedicated IPs and SSL free 1st year at <a target="_blank" href="https://www.godaddy.com/hosting/vps-hosting">GodDaddy.com</a> with a 45-day refund.
