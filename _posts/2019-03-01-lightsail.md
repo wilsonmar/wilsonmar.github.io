@@ -16,9 +16,49 @@ comments: true
 
 {% include _toc.html %}
 
-<a href="https://wilsonmar.github.io/lightsail/">This tutorial</a> is about Amazon Lightsail, which charges a <strong>fixed monthly price</strong> for a single VPS (Virtual Private Server) running on a physical machine shared with others.
+<a href="https://wilsonmar.github.io/lightsail/">This tutorial</a> is about <a target="_blank" href="https://aws.amazon.com/lightsail/">Amazon Lightsail</a>, which charges a <strong>fixed monthly price</strong> for a single VPS (Virtual Private Server) running on a physical machine shared with others.
 
 Amazon Lightsail was announced in 2018, to make "server management easier by automatically configuring key resources like networking and security". One signs up for a specific mix of compute, memory, disk, and data transfer capacities. This is like <a target="_blank" href="https://www.awsrails.com/rails-ec2/">selecting EC2</a> instance types, but without specifying VPC, networking, and permissions.
+
+<table border="1" cellpadding="4" cellspacing="1"><thead><tr valign="bottom">
+<th>$/Month</th><th align="right">Memory</th><th align="right">CPUs</th><th align="right">SSD</th><th align="right">Transfer</th></tr></thead>
+<tr align="right" valign="top"><td>$3.50</td><td>0.5 GB</td><td>1</td><td>20 GB</td><td>1 TB</td></tr>
+<tr align="right" valign="top"><td>$5.00</td><td>1 GB</td><td>1</td><Td>40 GB</td><td>2 TB</td></tr>
+<tr align="right" valign="top"><td>$10</TD><TD>2 GB</td><td>1</td><Td>60 GB</td><td>3 TB</td></tr>
+<tr align="right" valign="top"><td>$20</TD><TD>4 GB</td><td>2</td><Td>80 GB</td><td>4 TB</td></tr>
+<tr align="right" valign="top"><td>$40</TD><TD>8 GB</td><td>2</td><Td>160 GB</td><td>5 TB</td></tr>
+<tr align="right" valign="top"><td>$80</TD><TD>16 GB</td><td>4</td><Td>320 GB</td><td>6 TB</td></tr>
+<tr align="right" valign="top"><td>$160</TD><TD>32 GB</td><td>8</td><Td>640 GB</td><td>7 TB</td></tr>
+</tbody></table>
+
+* Only outbound data transfer in excess of your plan's data transfer allowance is subject to overage charges. Please see FAQ for more detail.
+Data Transfer Allowances: Asia Pacific (Mumbai & Sydney)
+
+Plans in the Mumbai and Sydney Regions include lower data transfer allowances than other regions.
+$3.50 	$5 USD 	$10 USD 	$20 USD 	$40 USD 	$80 USD 	$160 USD
+0.5 TB 	1 TB 	1.5 TB 	2 TB 	2.5 TB 	3 TB 	3.5 TB
+
+ 
+Managed databases pricing
+
+Choose between our standard plan or our high availability plan (includes extra instances for redundancy or failovers).
+Standard plan 	$15 USD 	$30 USD 	$60 USD 	$115 USD
+High Availability plan 	$30 USD 	$60 USD 	$120 USD 	$230 USD
+Memory (RAM) 	1 GB 	2 GB 	4 GB 	8 GB
+Compute capacity 	1 vCPU 	1 vCPU 	2 vCPU 	2 vCPU
+SSD storage 	40 GB 	80 GB 	120 GB 	240 GB
+Data transfer allowance 	100 GB 	100 GB 	100 GB 	200 GB
+Data encrypted 	No 	Yes 	Yes 	Yes
+Included in all Lightsail plans:
+ Static IP address
+ DNS management
+ Server monitoring
+ SSH terminal access (Linux/Unix)
+ Intuitive management console
+ RDP access (Windows)
+ Secure key management
+
+
 
 The service competes with offerings by several traditional hosting services. Among hosts offering the fastest load times (paid by the year):
 
@@ -30,7 +70,10 @@ The service competes with offerings by several traditional hosting services. Amo
 <br /><br />
 
 Lightsail's competitive difference is not just <strong>Solid-State</strong> (SSD) storage which are fast and reliable,
-but that its users can <a target="_blank" href="https://aws.amazon.com/s/lp/lightsail-vs-ec2/">move up to EC2</a> (using a snapshot) when acmore complex configuration is needed.
+but that its users can <a target="_blank" href="https://aws.amazon.com/s/lp/lightsail-vs-ec2/">move up to EC2</a> (using a snapshot) when a more complex configuration is needed.
+
+Other competitors to Lightsail are <a target="_blank" href="https://wilsonmar.github.io/serverless">"Severless"</a> functions running in Azure, Google, or AWS Lambda. 
+But such are complete rewrites of apps.
 
 ## Get on AWS
 
