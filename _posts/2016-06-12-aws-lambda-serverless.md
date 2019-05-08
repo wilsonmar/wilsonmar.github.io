@@ -87,7 +87,6 @@ https://blog.symphonia.io/learning-lambda-part-5-743d8a99db53
 
 ## Resources #
 
-
 * <a target="_blank" href="https://cloudacademy.com/webinars/aws-lambda-advanced-coding-session-22/">
   video: Advanced Coding Session</a>
   and
@@ -97,6 +96,26 @@ https://blog.symphonia.io/learning-lambda-part-5-743d8a99db53
   by Alex Casalboni of CloudAcademy.
    <a target="_blank" href="https://gist.github.com/alexcasalboni/b045542bbd77b9d0bdac2db939575eec/">
   repo</a>
+
+On Pluralsight:
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-developer-serverless-architecture-monitoring">AWS Developer: Serverless Architecture and Monitoring</a> 31 Oct 2018 [1h 36m] by Ryan Lewis
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-polly-voice-enabled-serverless-website">
+Building a Voice-enabled Serverless Website with AWS Polly</a>
+10 Jul 2018, 1h 46m
+by Raluca Bolovan
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-deploying-serverless-applications-application-model">Deploying Serverless Applications in AWS Using the Serverless Application Model</a>
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/play-by-play-build-serverless-node-web-api">
+Play by Play: Build a Serverless Node Web API</a> 9 Apr 2018, 1h 16m
+by Simona Cotin and John Papa
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-nodejs-serverless-framework-using">
+Using the Serverless Framework with Node.js on AWS</a>
+4 Oct 2017, 1h 38m
+by Fernando Medina Corey (@fmc_sea, fernandomc.com)
 
 
 ## Twitter #

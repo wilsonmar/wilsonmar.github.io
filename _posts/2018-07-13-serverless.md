@@ -1149,26 +1149,26 @@ CNCF
 
 ### Pluralsight video tutorials
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-polly-voice-enabled-serverless-website">
-Building a Voice-enabled Serverless Website with AWS Polly</a>
-10 Jul 2018, 1h 46m
-by Raluca Bolovan
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/web-applications-without-server">Serverless Web Applications</a> 9 Dec 2015 [2h 40m]
+by Rob Conery
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/play-by-play-build-serverless-node-web-api">
-Play by Play: Build a Serverless Node Web API</a> 9 Apr 2018, 1h 16m
-by Simona Cotin and John Papa
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/serverless-big-picture/table-of-contents">Serverless Computing: The Big Picture</a> 17 Apr 2019 [59m] by Richard Seroter (VP of Product Marketing at Pivotal)
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-nodejs-serverless-framework-using">
-Using the Serverless Framework with Node.js on AWS</a>
-4 Oct 2017, 1h 38m
-by Fernando Medina Corey (@fmc_sea, fernandomc.com)
+Azure:
 
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/azure-serverless-applications">Building Serverless Applications in Azure</a> 15 Aug 2017, 4h 7m
 by Mark Heath
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/web-applications-without-server">Serverless Web Applications</a> 9 Dec 2015 
-by Rob Conery
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-serverless-functions-create">Microsoft Azure Developer: Create Serverless Functions</a>
 
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-serverless-computing-configuring">Configuring Serverless Computing in Microsoft Azure</a>
+
+Google:
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/google-dataflow-architecting-serverless-big-data-solutions">Architecting Serverless Big Data Solutions Using Google Dataflow</a>
+
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/google-cloud-functions-architecting-event-driven-serverless-solutions">Architecting Event-driven Serverless Solutions Using Google Cloud Functions</a>
 
 ### Random Resources
 
