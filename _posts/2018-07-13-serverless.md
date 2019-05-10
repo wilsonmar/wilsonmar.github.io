@@ -1163,6 +1163,11 @@ by Mark Heath
 
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-serverless-computing-configuring">Configuring Serverless Computing in Microsoft Azure</a>
 
+Instead of giving you an emulator for local development, Azure give you the runtime. The whole box.
+The <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local">Azure Functions Core Tools</a> is the same runtime that Azure uses in the cloud. Because you get the whole runtime, you can build any kind of function locally. Blob and Azure Message Queue Triggers as well. Not just HTTP triggers.
+
+Open an Azure Functions project in VS Code, and you are prompted to setup an extension to run and debug functions, put a breakpoint in the gutter and hit the green button in the debug panel.
+
 Google:
 
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/google-dataflow-architecting-serverless-big-data-solutions">Architecting Serverless Big Data Solutions Using Google Dataflow</a>

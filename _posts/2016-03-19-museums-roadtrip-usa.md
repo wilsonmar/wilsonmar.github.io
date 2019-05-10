@@ -67,11 +67,10 @@ https://www.pure-gas.org/extensions/map.html</a>
 
 ## Railroads #
 
-<a target="_blank" href="https://www.amtrak.com/empire-builder-train/">
-Amtrak's Empire Builder route</a> between Chicago to Seattle and Portland takes 46 hours.
+<a target="_blank" href="https://www.amtrak.com/empire-builder-train">
+Amtrak's Empire Builder train</a> between Chicago to Seattle and Portland takes 46 hours.
 
-<a target="_blank" title="Amtrak's Empire Builder route" href="https://www.amtrak.com/empire-builder-train">
-<img alt="click on red dots in travel train glasgow empire builder 650x365.png" width="650" height="365" src="https://cloud.githubusercontent.com/assets/23631541/21246999/7d230200-c2e9-11e6-9fca-1a460dac2399.png"></a>
+<a target="_blank" title="Amtrak's Empire Builder route" href="https://www.amtrak.com/empire-builder-train"><img alt="click on red dots in travel train glasgow empire builder 650x365.png" width="650" height="365" src="https://cloud.githubusercontent.com/assets/23631541/21246999/7d230200-c2e9-11e6-9fca-1a460dac2399.png"></a>
 
 
 <a name="DownEastCoast"></a>
