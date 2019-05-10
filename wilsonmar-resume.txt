@@ -20,33 +20,25 @@ U.S. Citizen. Worked in or traveled to all 50 US states, major Canadian province
 
 AWS Practitioner, Elastic Stack Configuration & Security, ISTQB Functional and Performance Engineer, Quality Manager, CQE (Statistics), CQA, SAFe Agilist, Pragmatic Marketing, PMP, MCP Microsoft Project, CPIM, OMG Certified UML Professional. ATT IoT Hackathon at CES 2016, 2015, 2014 winner.
 
-### Experience
+## Experience
 
-2014 - JetBloom - Principal DevOps Performance Evangelist
-Analyzed IoT clouds from Amazon, Microsoft, Samsung. Designed and socialized a comprehensive approach to DevOps which includes Nexus, Elastic Stack. Coded Bash, Java JUnit, SikuliX Selenium with OpenCV & Tesseract, JavaScript to achieve shift-left development Performance Engineering by including GC, Dynatrace, and other APM metrics presented after Git-triggered runs in Jenkins & uDeploy. Wrote and evangelized Confluence wikis from the ground up for enterprise-level collaboration
-and training. Initiated a Community of Practice for developers. Practiced daily stand-ups as part of SAFe Agile.
+### 2014 - Principal DevOps Performance Evangelist at JetBloom
 
-Crafted and presented step-by-step hands-on video-augmented tutorials at conferences on DevSecOps, Git, Bash & PowerShell scripting, and performance. Created end-to-end DevOps pipelines for IoT using Jenkins2 Groovy, Ansible, Packer, Terraform, Docker in Google Compute and EC2 clouds. 
+Achieved shift-left development Performance Engineering by automating memory profiling and metrics capture in Git-triggered jobs in Jenkins CI/CD. Defined proactive use of monitoring and alerts from Dynatrace, AppDynamics, Google Analytics, Cavisson, Elastic (ELK) stack. Designed a perf engineering in the cloud approach that integrates functional, performance, and security concerns.
 
-Constructed JAM-stack websites leveraging REST APIs. Defined proactive use of alerts and monitoring from AppDynamics, Google Analytics, and ELK-stack. 
+Coded Bash, JMeter, Java JUnit, SikuliX Selenium with OpenCV & Tesseract OCR. Constructed JAM-stack websites leveraging REST APIs. Created DevOps pipelines using Ansible, Packer, Terraform, Docker in Google Compute and EC2 clouds. Implemented IoT in Amazon, Microsoft, Samsung clouds. Designed and coded Python for data-handling, and use of SciPy in an Algorithmia (Machine Learning) API. Designed and programmed OAuth2 and JavaScript libraries. Crafted and presented step-by-step hands-on video-augmented tutorials at conferences on DevSecOps, Git, Bash scripting. Wrote and evangelized Confluence articles with mark-down (from the ground up) for enterprise-level collaboration and training. Initiated on-going Communities of Practice meetings among developers and operations.
 
-Designed and coded Python scripts for data-handling and use of SciPy in an Algorithmia API. Designed and coded OAuth2 and JavaScript libraries. Used
-Trello, JIRA, and other tools with daily SCRUM and velocity calculations.
+Consistently maintained SCRUM/stand-ups and KanBan as part of SAFe Agile using CA Agile. Used Trello, JIRA, and other tools with velocity calculations.
 
-2014- HP Software - Master Developer Advocate/Consultant
+### 2010-2014 Master Developer Advocate/Consultant at HP Software
 
-Introduced Salesforce CRM. Led teams in China, India, and New Zealand to reduce response time 85%. Assets from the effort are now included in SAP Mobile installers. Improved responsiveness of mobile conference app by 40% by tuning JVM and logging. For a service that performs like Google's PageSpeed in-house, established all aspects of evangelism, including architecture and development with vendors
-around the world. This includes creating videos and live presentions at meetups and technical deep-dives. Created demo environments in AWS & Syktap cloud for testing and hands-on courses (with videos).
+Introduced Salesforce CRM. Led teams in China, India, and New Zealand to reduce response time 85%. Assets from the effort are now included in SAP Mobile installers. Improved responsiveness of mobile conference app by 40% by tuning JVM and logging. For a service that performs like Google's PageSpeed in-house, established all aspects of evangelism, including architecture and development with vendors around the world. This includes creating videos and live presentions at meetups and technical deep-dives. Created environments in AWS, Skytap, and other clouds for testing, automated demos, and hands-on courses (with videos).
 
-2010-2014 MBO Partners SRE Performance/Developer
+### 2007-2010 MBO Partners SRE Performance/Developer
 
-Led international teams to get several enterprise systems into production through debugging, profiling, and benchmarking Java in WebSphere, etc. 
+Led international teams to get several enterprise systems into production through debugging, profiling, and benchmarking Java in WebSphere. Implemented and evangelized Agile processes, code reviews, static code analysis, and automation. Integrated third-party APIs, SQL, Java, and .NET C# code. Reduced response time spikes and garbage collection by 62% on an app.
 
-Implemented agile processes, code reviews, static code analysis, and automation. Reduced response time spikes and garbage collection by 62% on an app.
-
-Integrated third-party APIs, SQL, Java, and .NET C# code.
-
-to 2007 - Prior experience
+### to 2007 - Prior experience
 
 Consulting experience with an international consultancy (KPMG). Six-sigma consultant. Obtained Top Secret clearance to design and program systems for the Stealth Fighter at Lockheed Skunk Works.
 Programmed apps using C, C#, Visual Basic, and declarative languages. 
