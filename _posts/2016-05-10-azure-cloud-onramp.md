@@ -508,7 +508,6 @@ https://docs.microsoft.com/en-us/cli/azure/batch?view=azure-cli-latest
 
 Azure has "Web Jobs" for Azure Functions background jobs.
 
-
 ## Resources : Videos
 
 <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-big-picture">
@@ -536,7 +535,7 @@ Azure Community Forums for support
 https://social.msdn.microsoft.com/Forums/en-US/home
 Developer Commmunity Forum for support
 
-## Apple Podcasts:
+## Podcasts:
  
    * <a target="_blank" href="https://podcasts.apple.com/us/podcast/azure-friday-hd-channel-9/id739501868">Azure Friday</a> with <a target="_blank" href="https://azure.microsoft.com/en-us/resources/videos/azure-friday/">videos</a> by Scott Hanselman
 

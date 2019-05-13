@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Serverless AWS Lamba"
-excerpt: "An invisible server for the masses"
+title: "Azure Functions"
+excerpt: "An invisible server from Microsoft"
 tags: [node, azure, serverless]
 image:
 # banner colorful serverroom-1900x500-1200kb

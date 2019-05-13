@@ -10,15 +10,13 @@ image:
   creditlink:
 comments: true
 ---
-<a target="_blank" href="https://wilsonmar.github.io/aws-onboarding/">
-https://wilsonmar.github.io/aws-onboarding/</a>
-
 <i>{{ page.excerpt }}</i>
 <hr />
 
 {% include _toc.html %}
 
-This is a hands-on tutorial to get new enterprise administrators setup to effecctively access and use the AWS cloud. Here you do some action and explanations and PROTIP advice is provided. PROTIPs included how to install and use AWS CLI automation, smart phone apps, and 3rd party tools used by the pros.
+<a target="_blank" href="https://wilsonmar.github.io/aws-onboarding/">
+This</a> is a hands-on tutorial to get new enterprise administrators setup to effecctively access and use the AWS cloud. Here you do some action and explanations and PROTIP advice is provided. PROTIPs included how to install and use AWS CLI automation, smart phone apps, and 3rd party tools used by the pros.
 
 This highlights what is in <a target="_blank" href="https://aws.amazon.com/getting-started/">Amazon's Getting Started tutorials</a>.
 
@@ -48,9 +46,9 @@ Before we begin, know that the cloud services marketplace has competitors not ju
 
    <a target="_blank" href="https://aws.amazon.com/">https://aws.amazon.com</a> 
 
-2. Get your credit card ready.
+2. Get your credit card numbers ready.
 
-   <a target="_blank" href="https://www.linkedin.com/pulse/how-use-aws-free-tips-teaching-college-wong-chun-yin-cyrus-%E9%BB%83%E4%BF%8A%E5%BD%A5-/">PROTIP</a>: You need a credit card to open an account. But to limit your exposure, some people buy a MASTERCARD GIFT CARD from a convenience store to provide AWS.
+   <a target="_blank" href="https://www.linkedin.com/pulse/how-use-aws-free-tips-teaching-college-wong-chun-yin-cyrus-%E9%BB%83%E4%BF%8A%E5%BD%A5-/">PROTIP</a>: You need a credit card to open an account. But to limit your exposure, some people provides numbers to AWS from a MASTERCARD GIFT CARD bought from a convenience store.
 
 3. Click the yellow "Sign-Up" button if you don't already have an account.
 
@@ -111,9 +109,18 @@ Before we begin, know that the cloud services marketplace has competitors not ju
 
 Account administators who hold root accounts linked to credit cards should do the following:
 
-   ### Activate Preferences
+### Drill down the bill
 
-1. Go to https://console.aws.amazon.com/billing/home#/preferences/tags
+![aws-dir-svs-bill-648x143-8607](https://user-images.githubusercontent.com/300046/57593673-cb6b5b00-74f9-11e9-88b2-c9b9410463b9.jpg)
+
+PROTIP: AWS Directory Services is activated as a pre-requisite for instances, but is not deactivated automatically when those instances are removed, and continue to accrue charges on an hourly basis until manually stopped.
+
+PROTIP: To avoid such bogus situations, use a script to instantiate and include deactivation of AWS Directory Services as part of that automated script.
+
+
+### &nbsp; &nbsp; &nbsp; Activate Tags Preferences
+
+1. Go to <a target="_blank" href="https://console.aws.amazon.com/billing/home#/preferences/tags">https://console.aws.amazon.com/billing/home#/preferences/tags</a>
    or select your user name at the top black menu and select "My Billing Dashboard".
    The Billing dashboard appears. An example:
 
@@ -123,9 +130,18 @@ Account administators who hold root accounts linked to credit cards should do th
 3. Check all the boxes and provide your email address.
 4. Click "Save Preferences".
 
-   ### Activate Billing Tags
+   ### Activate Cost Explorer
 
-   TBD:
+   <a target="_blank" href="https://console.aws.amazon.com/billing/home#/">https://console.aws.amazon.com/billing/home#</a>
+
+   Activate <a target="_blank" href="https://console.aws.amazon.com/billing/home?#/costexplorer">AWS Cost Explorer</a> and 24 hours later, you can graph, visualize, and analyze spend. Filter by specifying date ranges, services, tags, or a combination. <a target="_blank" href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-what-is.html">Learn more</a>
+
+   ![aws-cost-explorer-activated-624x241](https://user-images.githubusercontent.com/300046/57591986-7deaf000-74f1-11e9-86a2-0904a1555c23.jpg)
+   
+   
+
+
+   Billing Tags 
 
    ### My Much? Estimate bills
 
@@ -157,7 +173,7 @@ Account administators who hold root accounts linked to credit cards should do th
 
    * Billing
    * AWSPriceListServiceFullAccess
-
+   <br /><br />
 
    ### Define organizations
 
@@ -175,6 +191,15 @@ Account administators who hold root accounts linked to credit cards should do th
    IAM Policies for this does not include:
 
    * AWSOrganizationsServiceTrustPolicy (A policy to allow AWS Organizations to share trust with other approved AWS Services for the purpose of simplifying customer configuration)
+
+
+<a name="DNS-Billing"></a>
+
+### DNS Billing
+
+Be aware that AWS has a 
+
+
 
 
 <a name="ForumAccount"></a>
@@ -389,9 +414,11 @@ PROTIP: There are several ways to install AWS CLI using Python.
    Another alternative to install (on CentOS 7) is:
 
    <pre>
-   curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+   curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" \
+      -o "awscli-bundle.zip"
    unzip awscli-bundle.zip 
-   sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+   sudo ./awscli-bundle/install \
+      -i /usr/local/aws -b /usr/local/bin/aws
    </pre>
 
 2. Verify what version of awscli you have installed:
