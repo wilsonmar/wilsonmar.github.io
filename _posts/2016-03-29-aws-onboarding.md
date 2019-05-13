@@ -109,13 +109,13 @@ Before we begin, know that the cloud services marketplace has competitors not ju
 
 Account administators who hold root accounts linked to credit cards should do the following:
 
-### Drill down the bill
+### Beware the Hourly Directory service 
 
 ![aws-dir-svs-bill-648x143-8607](https://user-images.githubusercontent.com/300046/57593673-cb6b5b00-74f9-11e9-88b2-c9b9410463b9.jpg)
 
-PROTIP: AWS Directory Services is activated as a pre-requisite for instances, but is not deactivated automatically when those instances are removed, and continue to accrue charges on an hourly basis until manually stopped.
+PROTIP: <a target="_blank" href="Ahttps://us-west-2.console.aws.amazon.com/directoryservicev2/home">AWS Directory Services</a> is activated as a pre-requisite for instances, but is not deactivated automatically when those instances are removed, and continue to accrue charges <strong>every hour</strong> until manually stopped.
 
-PROTIP: To avoid such bogus situations, use a script to instantiate and include deactivation of AWS Directory Services as part of that automated script.
+PROTIP: To avoid this money-sucing situation, use a script to instantiate and include deactivation of AWS Directory Services as part of that automated script. That or use a corporate shared Directory.
 
 
 ### &nbsp; &nbsp; &nbsp; Activate Tags Preferences
