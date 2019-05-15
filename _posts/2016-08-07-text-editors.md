@@ -232,7 +232,9 @@ The newer vim and graphical gvim adds many productivity features to vi.
    Another Cheat Sheet is at <a target="_blank" href="https://devhints.io/vim">
    https://devhints.io/vim</a>
 
-   ### While in command mode, cursor to a position in the document:
+   ### Command mode keys
+   
+   While in command mode, cursor to a position in the document:
 
    * press X to delete a character.
    * type `set number` to toggle numbering on the left edge.
