@@ -26,17 +26,23 @@ attendees of #ServelessConf type in:<br />
 
 ## Serverless = FaaS
 
-"Serverless" refer to an architectural style called
-<strong>FaaS</strong> (Function as a Service) where programming 
-code are independently deployed and run on a cloud system rather than on-premises servers.
+"Serverless" refer to an <strong>architectural style</strong> called
+<strong>FaaS</strong> (Function as a Service) where software program 
+code are independently deployed and run on a cloud system for
+"zero system administration" by the developer.
+
+For those who want to run a lean shop, 
+it's a fast, easy, low-cost route to get apps in production without worry about scalability.
+Unlike renting a machine (as in EC2) which accrue charges even when idle, charges for Serverless functions accrue only when individual requests are invoked.
+
 The developer simply uploads the source code, 
-then leave it to pros at the cloud provider to take care of 
+then leave it to the cloud provider to take care of 
 security, monitoring, disk space management, log management, 
 scaling, redundancy, backup, crash reporting, etc..
 
-Zero system administration by the developer.
-
-It's a fast route to get apps in production.
+Mike Roberts at <a target="_blank" href="http://martinfowler.com/articles/serverless.html">
+   http://martinfowler.com/articles/serverless.html</a>
+wrote "Depending on the circumstances, such systems can significantly reduce operational cost and complexity at a cost of <strong>vendor dependencies</strong> and (at the moment) immaturity of supporting services."
 
 PROTIP: It's still up to developers to do testing and 
 performance measuring and tuning.
@@ -44,11 +50,7 @@ Use of multi-tenancy makes for response-time variation.
 So do sythentic transactions outside the cloud vendor to monitor user experience,
 and to keep your app in cache to avoid process start-up after sleeping.
 
-Mike Roberts at <a target="_blank" href="http://martinfowler.com/articles/serverless.html">
-   http://martinfowler.com/articles/serverless.html</a>
-wrote
-   "Depending on the circumstances, such systems can significantly reduce operational cost and complexity at a cost of <strong>vendor dependencies</strong> and (at the moment) immaturity of supporting services."
-
+"Serverless is on the relentless historical trend toward industrialization". @simonwardley
 
 ## FaaS Providers
 
@@ -60,18 +62,28 @@ Artificial Intelligence features such as image recognition,
 text sentiment analysis, natural language process (NLP), 
 and Machine Learning.
 
-* <a href="#AWS">AWS (Amazon Web Services) Lambda</a>
-* <a href="#Azure">Microsoft Azure Functions</a>
-* <a href="#Google">Google Functions</a>
+* Google App Engine 2008
+* <a href="#AWS">AWS (Amazon Web Services) Lambda</a> Nov 2014
+* <a href="#Azure">Microsoft Azure Functions</a> 2016
+* <a href="#Google">Google Cloud Functions</a> 2018
 * <a href="#IBM">IBM Bluemix OpenWhisk</a>
 * <a href="#IronIO">Iron.io for on-premises</a>. Ironically, Iron originated the term "serverless" in 2012.
 * <a target="_blank" href="https://www.alibabacloud.com/product/function-compute/">Alibaba Function Compute</a>
+* CloudFlare
+* Pivotal Cloud Functions
 
 
 ## Frameworks
 
-<a href="https://www.quora.com/What-is-serverless-computing">
-An Awesome list of links</a>
+* <a href="https://www.quora.com/What-is-serverless-computing">An Awesome list of links at Quora</a>
+
+* Console
+* Function Code
+* Execution Roles
+* Test Events
+* Execution Results
+* Monitoring analytics
+
 
 <a name="AWS"></a>
 
@@ -81,8 +93,7 @@ The AWS Serverless Application Model (SAM) at
 <a target="_blank" href="https://github.com/awslabs/serverless-application-model">
 https://github.com/awslabs/serverless-application-model</a>
 was announced Nov 2016
-to define the SAM format
-to build <strong>Cloud Formation templates</strong> that access Amazon API Gateway APIs, AWS Lambda functions, and Amazon DynamoDB tables needed by serverless applications. 
+to define the building blocks of <strong>Cloud Formation templates</strong> that access Amazon API Gateway APIs, AWS Lambda functions, and Amazon DynamoDB tables needed by serverless applications. 
 
 Two AWS evangelists created <a target="_blank" href="https://github.com/aws-samples/aws-developer-workshop/blob/master/INSTRUCTIONS.md">pre-built templates</a> 
 with manual instructions, which they walked though in <a target="_blank" href="https://www.twitch.tv/events/PgC70I4pQoy14TP-RNS6Dw">30 minutes on Twitch.tv</a>:
@@ -95,16 +106,22 @@ with manual instructions, which they walked though in <a target="_blank" href="h
    * Under Programming Languages select <strong>Node.js</strong>.
    * Pick "Node.JS Web Application AWS Lambda (running serverless)".
 
-More examples are at https://github.com/serverless/examples
+More examples are at <a target="_blank" href="https://github.com/serverless/examples">https://github.com/serverless/examples</a>
 
    <a target="_blank" title="serverless-aws-flow-1024x656-99647.jpg" href="https://user-images.githubusercontent.com/300046/43052898-c64ded4a-8de6-11e8-9578-30b8dd619592.jpg"><img alt="serverless-aws-flow-648x416-52875.jpg" width="648" src="https://user-images.githubusercontent.com/300046/43052876-a465b17c-8de6-11e8-8303-ab83ae852eb1.jpg"></a>
 
    - Route 53 : a highly available & scalable DNS service which also manages traffic flow based on different routeing types e.g., Latency Based Routing, Geo DNS, and Weighted Round Robin as well as DNS failover.
+
    - CloudFront CDN: Content Distribution Network.
+
    - S3 : a static file storage which can store petabytes of storage if you want, with 99.999999% durability.
+
    - API Gateway : a REST-based service which allows you to create, publish, monitor and quickly scale & secure API services.
+
    - Lambda : to hold and process server side code, with no charges for server time between client requests.
+
    - MongoDB instead of DyanmoDB : a scalable database which guarantees the same consistent speed of read and write requests.
+
    - SES (Simple Email Service) : Mass emailing service, like MailChimp.
 
 PROTIP: The payoff for housing the back-end in a public cloud is for machine learning and AI services to be added.
@@ -180,6 +197,8 @@ has their Gesalt Framework
 
 
 ## Usage in the wild
+
+When a $9 million monolithic app built for the Australian Census failed, two students over two-weeks created a scalable system using $500 of compute time (including load testing).
 
 <a target="_blank" href="https://compellingScienceFiction.com/">
 Compelling Science Fiction.com</a>
@@ -1146,6 +1165,11 @@ CNCF
    https://github.com/cncf/wg-serverless
    from the Kubernetes folks
 
+### Linuxacademy.com
+
+* <a target="_blank" href="https://beta.linuxacademy.com/#/hands-on-labs/details/f2b58b6b-2a05-435a-8746-ca1ff25b9773?redirect_uri=https://app.linuxacademy.com/search?query=c%23">Creating a Simple AWS Lambda Function</a>
+[30m] Jul 22, 2018
+by Andru Estes
 
 ### Pluralsight video tutorials
 
