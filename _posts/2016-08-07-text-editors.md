@@ -99,25 +99,48 @@ On-line browser-based (SaaS) avoids need for setup and makes collaboration easie
 
 ## Cloud9 IDE in EC2
 
-<a target="_blank" href="https://aws.amazon.com/cloud9/">Cloud9 from Amazon</a> (<a target="_blank" href="https://www.youtube.com/watch?v=FvclLeg2vEQ">introduced 2017</a>) runs in the browser accessing an EC2 instance (for money). It includes a debugger and terminal to various dev enviornments for AWS <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/lightsail-instances.html">Lightsail</a>, Lambda serverless, <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/codestar-projects.html">CodeStar</a>, CodeBuild, CodePipeline, etc. Store code in <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/sample-github.html">GitHub</a> or <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/sample-codecommit.html">AWS CodeCommit</a>.
+<a target="_blank" href="https://aws.amazon.com/cloud9/">Cloud9 from Amazon</a> (under the Developer Tools category) works completely in the browser running in EC2 under the hood.
+It was <a target="_blank" href="https://www.youtube.com/watch?v=FvclLeg2vEQ">introduced in 2017</a>. 
+
+runs in the browser accessing an EC2 instance (for money). It includes a debugger and terminal to various dev enviornments for AWS <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/lightsail-instances.html">Lightsail</a>, Lambda serverless, <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/codestar-projects.html">CodeStar</a>, CodeBuild, CodePipeline, etc. 
 
 <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/get-started.html?icmpid=docs_ac9_console">AWS Get started docs</a>
    provides a procedure for each usage pattern.
 
+1. PROTIP: Search for "Cloud9" in <a target="_blank" href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/">this page</a>
+   to see whether it's available in your preferred region.
+
 1. Get an Amazon AWS account login and in IAM (AWS Identity and Access Management) set rights so you sign in as an administrator user of your AWS account.
+
 1. Open the AWS Cloud9 console at 
 
    <a target="_blank" href="https://console.aws.amazon.com/cloud9/">https://console.aws.amazon.com/cloud9</a>
 
 1. <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/create-environment.html">Create a dev environment</a> in EC2 instance (which costs money).
 
-   PROTIP: As of this writing, you can only use code to create an EC2 environment that is connected to Amazon Linux. 
+   PROTIP: As of this writing, you can only use code to create an EC2 environment that is connected to Amazon Linux (not Ubuntu or other distros).
 
-1. <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/tutorial.html">Use the IDE</a>
+   ![text-editor-cloud9-menu-bar-623x358-20606](https://user-images.githubusercontent.com/300046/57779446-56f41000-76e3-11e9-9615-670153fca872.jpg)
+
+1. Configure using Key bindings from various other editors.
+   Terminal, Git, NVM, Python, are pre-installed.
+
+1. <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/tutorial.html">Use the IDE</a> to create or edit code.
+
+1. Pull from or push code to <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/sample-github.html">GitHub</a> or <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/sample-codecommit.html">AWS CodeCommit</a>.
+
+   <a target="_blank" href="https://acloud.guru/series/release-review/view/105">ACloud.guru course reviewed</a> using <a target="_blank" href="https://github.com/ACloudGuru/acg-rr-cloud9">https://github.com/ACloudGuru/acg-rr-cloud9</a>
+
+1. Use AWS Resources tab for Lambda and Gateway integration.
+ 
+   https://docs.aws.amazon.com/cloud9/latest/user-guide/tutorial-lambda.html
 
 1. <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/share-environment.html">Working with others in a Shared Environment</a>
 
+1. It auto-hibernates, but CAUTION: Do your own backups.
 
+
+<hr />
 
 <a name="nano"></a>
 <a name="pico"></a>
@@ -1331,20 +1354,6 @@ BTW, additional tutorials on .NET Core Razor:
    * <a target="_blank" href="https://www.youtube.com/watch?v=--lYHxrsLsc">VIDEO: ASP.NET CORE for Beginners - an 8 Hour Workshop</a> Apr 15, 2018 by Jeffrey T. Fritz and guests Jon Galloway, Julie Lerman (@JulieLerman), and Shayne Boyer (@spboyer). They create a travel app, starting from the API.
 
 <hr />
-
-<a name="Cloud9"></a>
-
-## AWS Cloud9
-
-<a target="_blank" href="https://console.aws.amazon.com/cloud9/home/product">AWS Cloud9</a> for (Serveless) Lambda (under the Developer Tools category) works completely in the browser running in EC2 under the hood.
-Key bindings from various other editors.
-It auto-hibernates. 
-Terminal, Git, NVM, Python, are pre-installed.
-AWS Resources tab provides Lambda and Gateway integration.
-
-<a target="_blank" href="https://acloud.guru/series/release-review/view/105">Reviewed</a> using https://github.com/ACloudGuru/acg-rr-cloud9
-
-CAUTION: Do your own backups.
 
 
 ## References
