@@ -19,8 +19,8 @@ This describes the ecosystem around the "Serverless" computing concept to build 
 
 This article is a pre-requisite to <a target="_blank" href="https://wilsonmar.github.io/aws-lambda-serverless/">my tutorial on creating a new Amazon Lambda serverless app running in the Amazon cloud</a>.
 
-The sentiment about servers is reflected in the wi-fi password
-attendees of #ServelessConf type in:<br />
+A sentiment about physical servers is reflected in the wi-fi password used by
+attendees of <a target="_blank" href="https://twitter.com/search?q=ServelessConf">#ServelessConf</a>:<br />
 ![serverless hateservers-452x183-70kb](https://cloud.githubusercontent.com/assets/300046/18171991/196045ae-7021-11e6-9848-ce272fa8366d.jpg)
 
 
@@ -54,19 +54,18 @@ and to keep your app in cache to avoid process start-up after sleeping.
 
 ## FaaS Providers
 
-There is plenty of competition (to keep prices low).
+Compares costs using Peter Sbarski's <a target="_blank" href="https://serverlesscalc.com/">Serverless Calculator at serverlesscalc.com<br />
+<img alt="serverless-costcomp-648x490-13259" width="648" height="490" src="https://user-images.githubusercontent.com/300046/57808958-cdaffe00-7721-11e9-8ffa-a3c66c5942a4.jpg"></a>
 
-PROTIP: The future of FaaS vendors isn't the front-end but the back-end services
-that include API Gateways and 
-Artificial Intelligence features such as image recognition,
-text sentiment analysis, natural language process (NLP), 
-and Machine Learning.
-
-* Google App Engine 2008
 * <a href="#AWS">AWS (Amazon Web Services) Lambda</a> Nov 2014
 * <a href="#Azure">Microsoft Azure Functions</a> 2016
 * <a href="#Google">Google Cloud Functions</a> 2018
-* <a href="#IBM">IBM Bluemix OpenWhisk</a>
+* <a href="#IBM">IBM Bluemix OpenWhisk</a> 2018
+
+Google App Engine in 2008 was arguably the first.
+
+Others:
+
 * <a href="#IronIO">Iron.io for on-premises</a>. Ironically, Iron originated the term "serverless" in 2012.
 * <a target="_blank" href="https://www.alibabacloud.com/product/function-compute/">Alibaba Function Compute</a>
 * CloudFlare
@@ -83,6 +82,11 @@ and Machine Learning.
 * Test Events
 * Execution Results
 * Monitoring analytics
+
+PROTIP: The future of FaaS vendors isn't the front-end but the back-end services
+that include API Gateways and Artificial Intelligence features such as image recognition,
+text sentiment analysis, natural language process (NLP), 
+and Machine Learning.
 
 
 <a name="AWS"></a>
