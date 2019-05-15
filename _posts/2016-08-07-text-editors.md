@@ -55,12 +55,12 @@ Free IDEs:
    an IDE for Go from Jetbrains (makers of IntelliJ, PyCharm, etc.)
    * Aptana Studio
    * NetBeans
+   * <a href="#VisualStudioForMac">Visual Studio 2019 for Mac from Microsoft</a> (ported from Visual Studio, which is licensed) for developing <a target="_blank" href="https://wilsonmar.github.io/xamarion/">Xamarin</a> and Unity apps in the C# language
 
 Licensed IDEs:
 
-   * <a href="#VisualStudioForMac">Visual Studio 2019 for Mac from Microsoft</a> (ported from Visual Studio)
    * IntelliJ and WebStorm and PhpStorm from JetBrains
-   * BBEdit
+   * $49.99 <a target="_blank" href="https://www.barebones.com/products/bbedit/">BBEdit</a> has a 30-day evaluation period.
 
 On-line browser-based (SaaS) avoids need for setup and makes collaboration easier:
 
@@ -76,13 +76,22 @@ On-line browser-based (SaaS) avoids need for setup and makes collaboration easie
 
 ## Features #
 
+* Full project navigation
+
 * Markdown display
+* syntax coloring for numerous source code languages; 
 * Code completion
+* code folding
+
+* search and replace across multiple files
+* grep pattern matching
+* search and replace across multiple files
+* Refactoring (renaming) support
+
 * Pre-compile on the fly
 * Static code scan on the fly
-* Full project navigation
-* Refactoring (renaming) support
-* Debugging
+* Debugging with breakpoints, step into
+
 
 <hr />
 
