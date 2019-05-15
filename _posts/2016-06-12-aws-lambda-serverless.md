@@ -97,6 +97,15 @@ https://blog.symphonia.io/learning-lambda-part-5-743d8a99db53
    <a target="_blank" href="https://gist.github.com/alexcasalboni/b045542bbd77b9d0bdac2db939575eec/">
   repo</a>
 
+On LinuxAcademy:
+
+* <a target="_blank" href="https://beta.linuxacademy.com/#/challenges/details/d39c6361-d78b-41f1-bbad-98f430fb80a0?redirect_uri=https://app.linuxacademy.com/search?query=c%23">QUIZ: Serverless Architectures on AWS for the Solutions Architect</a>
+[15m] Jul 22, 2018 by Wayde Gilchrist
+
+* <a target="_blank" href="https://beta.linuxacademy.com/#/challenges/details/d39c6361-d78b-41f1-bbad-98f430fb80a0?redirect_uri=https://app.linuxacademy.com/search?query=c%23">QUIZ: Serverless Architectures on AWS for the Solutions Architect</a>
+[15m] Jul 22, 2018 by Wayde Gilchrist
+
+
 On Pluralsight:
 
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-developer-serverless-architecture-monitoring">AWS Developer: Serverless Architecture and Monitoring</a> 31 Oct 2018 [1h 36m] by Ryan Lewis
@@ -116,7 +125,6 @@ by Simona Cotin and John Papa
 Using the Serverless Framework with Node.js on AWS</a>
 4 Oct 2017, 1h 38m
 by Fernando Medina Corey (@fmc_sea, fernandomc.com)
-
 
 ## Twitter #
 
