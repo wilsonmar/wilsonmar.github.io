@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Text Editors (vim, subl, code, atom, Eclipse, IntelliJ, Visual Studio, etc.)"
-excerpt: "One second saved per minute = 1.666% better living"
+title: "Text Editors (on the Mac)"
+excerpt: "nano, pico, vim, subl, code, atom, Eclipse, IntelliJ, Visual Studio, Cloud9, etc."
 tags: [apple, mac, setup]
 image:
 # feature: pic RichTextEditorToolBar 1900x500.jpg
@@ -15,20 +15,20 @@ comments: true
 
 {% include _toc.html %}
 
-This is a random collection of notes on text editors for the Mac.
+<a target="_blank" href="https://wilsonmar.github.io/text-editors">This</a> is a collection of notes of installing and using text editors for the Mac.
 
-There is not shortage to the number of programs available to edit code.
+Below is a list of text editors grouped by licensing term:
 
-Built-in OSX:
+Built-in to (comes with) macOS:
 
-   * <a href="#vim">vim</a>
-   * <a href="#pico">pico</a>
-   * <a href="#nano">nano</a>
+   * <a href="#nano">nano</a> is an open source clone of <a href="#pico">pico</a>.
+   * <a href="#pico">pico</a> 
+   * <a href="#vim">vim</a> (for mouse-free editing efficiency)
 
-Free:
+Free to download and use:
 
-   * <a href="#Code">Visual Studio Code</a> from Microsoft (free, built using Electron)
-   * <a href="#atom">Atom</a> from GitHub (free, built using Electron)
+   * <a href="#Code">Visual Studio Code</a> from Microsoft (free, built using GitHub's Electron)
+   * <a href="#atom">Atom</a> from GitHub (free, built using GitHub's Electron)
    * <a target="_blank" href="http://brackets.io/">
    Adobe Brackets</a> is on Windows too
    * <a target="_blank" href="http://barebones.com/products/textwrangler/">
@@ -48,9 +48,9 @@ Licensed nagware:
 
 Free IDEs:
 
-   * <a href="#Eclipse">Eclipse</a>
+   * <a href="#Eclipse">Eclipse</a> for Java
    * <a target="_blank" href="https://github.com/spyder-ide/spyder">Spyder</a> (for Python pyflakes and pylint code analysis)
-   * Visual Studio Express from Microsoft
+   * <a href="#Code">Visual Studio Code</a> (from Microsoft)
    * <a target="_blank" href="https://www.jetbrains.com/go/">Gogland</a>,
    an IDE for Go from Jetbrains (makers of IntelliJ, PyCharm, etc.)
    * Aptana Studio
@@ -58,12 +58,16 @@ Free IDEs:
 
 Licensed IDEs:
 
+   * <a href="#VisualStudioForMac">Visual Studio 2019 for Mac from Microsoft</a> (ported from Visual Studio)
    * IntelliJ and WebStorm and PhpStorm from JetBrains
-   * <a href="#VisualStudioForMac">Visual Studio for Mac from Microsoft</a>
+   * BBEdit
 
-On-line (SaaS):
+On-line browser-based (SaaS) avoids need for setup and makes collaboration easier:
 
-   * <a target="_blank" href="https://www.gitpod.io/">gitpod.io</a> is Chrome add-on which replaces the green "Clone or download" button with their "Gitpod" button to an on-line IDE in the cloud and automation.
+   * <a target="_blank" href="https://www.gitpod.io/">gitpod.io</a> is a Chrome add-on which replaces the green "Clone or download" button with their "Gitpod" button to an on-line IDE in the cloud and automation.
+
+   * <a href="#Cloud9">Cloud9 from Amazon</a> runs in an EC2 instance to provide a debugger and terminal to various dev enviornments for AWS Lambda serverless, CodeStar, CodeBuild, CodePipeline, etc.
+
 
 
 <hr />
@@ -80,27 +84,60 @@ On-line (SaaS):
 * Refactoring (renaming) support
 * Debugging
 
+<hr />
 
-<a name="Emacs"></a>
+<a name="Cloud9"></a>
 
-## Emacs
+## Cloud9 IDE in EC2
 
-emacs was developed in 1976 by then 23-year old MIT and Harvard grad <a target="_blank" href="https://en.wikipedia.org/wiki/Richard_Stallman">Richard Stallman</a>, well known as the developer of gcc (open source C compiler) and the founder of the GNU Free Software Foundation. 
+<a target="_blank" href="https://aws.amazon.com/cloud9/">Cloud9 from Amazon</a> (<a target="_blank" href="https://www.youtube.com/watch?v=FvclLeg2vEQ">introduced 2017</a>) runs in the browser accessing an EC2 instance (for money). It includes a debugger and terminal to various dev enviornments for AWS <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/lightsail-instances.html">Lightsail</a>, Lambda serverless, <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/codestar-projects.html">CodeStar</a>, CodeBuild, CodePipeline, etc. Store code in <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/sample-github.html">GitHub</a> or <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/sample-codecommit.html">AWS CodeCommit</a>.
 
-Emacs has, perhaps, more manual editing commands than other editors, numbering over 1,000 commands. 
+<a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/get-started.html?icmpid=docs_ac9_console">AWS Get started docs</a>
+   provides a procedure for each usage pattern.
 
-"Some jokingly referred to emacs as the Carpal Tunnel editor, since most of the commands in emacs are accesses by typing multiple keys on the keyboard at the same time."
+1. Get an Amazon AWS account login and in IAM (AWS Identity and Access Management) set rights so you sign in as an administrator user of your AWS account.
+1. Open the AWS Cloud9 console at 
 
-But Emacs users can define macros that combine commands. 
+   <a target="_blank" href="https://console.aws.amazon.com/cloud9/">https://console.aws.amazon.com/cloud9</a>
+
+1. <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/create-environment.html">Create a dev environment</a> in EC2 instance (which costs money).
+
+   PROTIP: As of this writing, you can only use code to create an EC2 environment that is connected to Amazon Linux. 
+
+1. <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/tutorial.html">Use the IDE</a>
+
+1. <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/share-environment.html">Working with others in a Shared Environment</a>
+
+
+
+<a name="nano"></a>
+<a name="pico"></a>
+
+## pico and nano
+
+The user interface of nano and pico are identical because they were both developed by the University of Washington. nano is an open source clone of pico.
+
+According to <a target="_blank" href="https://en.wikipedia.org/wiki/Pico_%28text_editor%29">
+Wikipedia</a>, pico stands for "pine composer".
+
+pico became well known and popular because it was the default editor used with the pine e-mail client (an easy-to-use text based e-mail client popular when early internet users sent e-mail messages only in plain text data using slow dial-up modems).
+
+The <strong>^</strong> character in the menu means hold down the Mac <strong>control</strong> key while you press the character.
+
+![pico menu 75](https://cloud.githubusercontent.com/assets/300046/15268678/21302782-19a4-11e6-9f8d-873c5a3073e4.jpg)
+
+nano is easy to use for some beginners. 
+However, it lacks the advanced features of vim and emacs. 
 
 
 <a name="vim"></a>
 
 ## Vim
 
-vi is still the standard text editor available on many Unix system. 
-A good reason to become proficient with vi is that on some industrial type systems, where no extra software can be installed, vi may be the only editor available.
 The original vi (visual editor) was developed in 1976 as part of BSD Unix system by Bill Joy, who went on to be one of the co-founders of Sun Microsystems (which Oracle later purchased). 
+
+vi is still the standard text editor available on many Unix system distributions. 
+A good reason to become proficient with vi is that vi may be the only editor available on some industrial systems where no extra software can be installed.
 vi became popular within the Unix community for its full screen visual editing not available before. 
 
 `vim` starts as an alias of `vi`. 
@@ -120,6 +157,7 @@ The newer vim and graphical gvim adds many productivity features to vi.
    * Plug-ins
    * edit through SSH
    <br /><br />
+
    See <a target="_blank" href="https://www.vimawesome.com/">vimawesome.com</a>
 
 1. In a Terminal, type command:
@@ -157,8 +195,9 @@ The newer vim and graphical gvim adds many productivity features to vi.
    * command mode
    * insert mode
    * line mode
+   <br /><br />
 
-   A Cheat Sheet is at <a target="_blank" href="https://devhints.io/vim">
+   Another Cheat Sheet is at <a target="_blank" href="https://devhints.io/vim">
    https://devhints.io/vim</a>
 
    ### While in command mode, cursor to a position in the document:
@@ -203,26 +242,6 @@ The newer vim and graphical gvim adds many productivity features to vi.
    </strong></pre>
 
 
-
-<a name="nano"></a>
-<a name="pico"></a>
-
-## pico and nano
-
-The user interface of nano and pico are identical because they were both developed by the University of Washington. nano is an open source clone of pico.
-
-According to <a target="_blank" href="https://en.wikipedia.org/wiki/Pico_%28text_editor%29">
-Wikipedia</a>, pico stands for "pine composer".
-
-   ![pico menu 75](https://cloud.githubusercontent.com/assets/300046/15268678/21302782-19a4-11e6-9f8d-873c5a3073e4.jpg)
-
-pico became well known and popular because it was the default editor used with the pine e-mail client (an easy-to-use text based e-mail client popular when early internet users sent e-mail messages only in plain text data using slow dial-up modems).
-
-The ^ character means hold down the <strong>control</strong> key while you press the character.
-
-Today, nano is easy to use for beginners. However, it lacks the advanced features of vim and emacs. 
-
-
 <a name="MacVim"></a>
 
 ## MacVim
@@ -241,6 +260,20 @@ To use brew:
 
 1. Run brew install vim && brew install macvim
 2. Run brew link macvim
+
+
+<a name="Emacs"></a>
+
+## Emacs
+
+emacs was developed in 1976 by then 23-year old MIT and Harvard grad <a target="_blank" href="https://en.wikipedia.org/wiki/Richard_Stallman">Richard Stallman</a>, now well known as the developer of gcc (open source C compiler) and the founder of the <a target="_blank" href="https://www.gnu.org/software/software.en.html">GNU Free Software Foundation</a>. 
+
+Emacs has, perhaps, more manual editing commands than other editors, numbering over 1,000 commands. 
+
+Some jokingly referred to emacs as the "Carpal Tunnel editor", since most of the commands in emacs are accesses by typing multiple keys on the keyboard at the same time.
+
+But Emacs users can define macros that combine commands. 
+
 
 <a id="SublimeTextz"></a>
 
@@ -622,15 +655,15 @@ complete
 
 ## Visual Studio Code #
 
-Microsoft's Code is slower to startup than Sublime Text.
+Microsoft's Visual Studio Code is slower to startup than Sublime Text.
 
 But its windowing is much more configurable, which has enabled many add-ons that has made it the most feature-rich and thus most preferred editor today. Examples of advanced features:
    * moving the default sidebar to the right side of the editor.
    * auto-indenting and execution of snippets work naturally.
-   * Search for add-ins on https://marketplace.visualstudio.com/
-by opening its Extension panel (CTRL + Shift + X). 
-<a target="_blank" href="https://nickjanetakis.com/blog/switching-to-vscode-from-sublime-text">
-Nick's list</a>.
+   * Syntax Highlighting
+   * IntelliSense
+   * Go to Definition
+   * Find All References
    <br /><br />
 
 On Mac: 
@@ -640,12 +673,46 @@ On Mac:
    <tt><strong>brew cask install visual-studio-code
    </strong></tt>
 
-0. My favorite approach is to open Code from the Mac Finder, by right-clicking on a folder
-   and select <strong>Open with</strong> Visual Studio Code
-   <a target="_blank" href="http://stackoverflow.com/questions/30159158/how-do-i-set-up-a-link-to-open-up-visual-studio-code-from-terminal-on-osx">
+1. To open a folder in VSCode from a Terminal, type code and a dot:
+
+   <tt><strong>code .
+   </strong></tt>
+
+   Alternately, to open Code from the Mac Finder, <strong>right-click</strong> on a folder
+   and select <strong>Open with</strong> Visual Studio Code, <a target="_blank" href="http://stackoverflow.com/questions/30159158/how-do-i-set-up-a-link-to-open-up-visual-studio-code-from-terminal-on-osx">
    per these instructions</a>
 
-0. If you're working with JavaScript, install it from the Welcome screen, reached from Help, Welcome.
+   ### Search Extension on website
+
+   <a target="_blank" href="https://channel9.msdn.com/Blogs/dotnet/Get-started-VSCode-Csharp-NET-Core-Windows">VIDEO:</a>
+
+1. Search for extensions at <a target="_blank" href="https://marketplace.visualstudio.com/vscode">https://marketplace.visualstudio.com/vscode</a>by opening its Extension panel (CTRL + Shift + X). See <a target="_blank" href="https://nickjanetakis.com/blog/switching-to-vscode-from-sublime-text">Nick's list</a>.
+
+1. Select "Sort by: Downloads" to see that C# is the most downloaded.
+
+   https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp
+
+1. If you click on a logo, then "Install" on the next page.
+
+   ### Extensions in Code
+
+1. Open Visual Studio Code.
+1. Press Command-P for the Command Pallette.
+1. Enter "ext install csharp" on top of "Type '?' to get help on the actions you can take from here" if you want to install C# editor helpers.
+
+   Notice you're brought to the list of extensions as if you clicked the square icon on the left menu. Extensions installed have a gear icon rather than "install".
+
+1. Click the top editor icon on the left menu.
+
+1. Click "Restart Now" for it to take.
+ 
+
+ https://www.monodevelop.com/download/
+
+
+   ### JavaScript Extension
+
+1. If you're working with JavaScript, install it from the Welcome screen, reached from Help, Welcome.
 
 0. Under the "Customize" heading on the right, click the "JavaScript" link, then OK at the pop-up.
 0. Click "Typescript" as well.
