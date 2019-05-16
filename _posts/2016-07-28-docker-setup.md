@@ -2560,8 +2560,33 @@ Commands:
 
 There are several alternatives to collects stats for monitoring dashboard:
 
-A. cAdvisor to write to InfluxDB time-series database for display by Grafana is described <a target="_blank" href="https://dockerhanoi.wordpress.com/2015/08/19/docker-monitoring-with-cadvisor-influxdb-and-grafana/">here</a>
+<a target="_blank" href="https://opencensus.io/">opencensus.io</a>
+vendor-agnostic distributes tracing to Zipkin, Yeager, Google Stackdriver Trace, etc.
 
+<a target="_blank" href="https://www.appdynamics.com/docker/">
+AppDynamics Docker monitoring</a>
+
+Use <a target="_blank" href="https://github.com/google/cadvisor">
+https://github.com/google/cadvisor</a> (Container Advisor) to analyzes resource usage and performance characteristics of running Docker containers. 
+It keeps (in background) resource isolation parameters, historical resource usage, histograms of complete historical resource usage, and network statistics.
+<a target="_blank" href="https://github.com/google/cadvisor/blob/master/docs/running.md">Stats of NVIDIA GPU</a> are also supported.
+
+Might want to change the port number when you run the command:
+
+<pre>sudo docker run \
+  --volume=/:/rootfs:ro \
+  --volume=/var/run:/var/run:ro \
+  --volume=/sys:/sys:ro \
+  --volume=/var/lib/docker/:/var/lib/docker:ro \
+  --volume=/dev/disk/:/dev/disk:ro \
+  --publish=8080:8080 \
+  --detach=true \
+  --name=cadvisor \
+  google/cadvisor:latest
+  </pre>
+
+<a target="_blank" href="https://dockerhanoi.wordpress.com/2015/08/19/docker-monitoring-with-cadvisor-influxdb-and-grafana/">This</a> describes setting up
+cAdvisor can write to InfluxDB time-series database for display by Grafana.
 
 1. Get the IP address of the running Docker instance:
 
@@ -2595,32 +2620,6 @@ See https://docs.docker.com/swarm/
 
 See http://autopilotpattern.io/
 
-## Monitoring
-
-<a target="_blank" href="https://opencensus.io/">opencensus.io</a>
-vendor-agnostic distributes tracing to Zipkin, Yeager, Google Stackdriver Trace, etc.
-
-<a target="_blank" href="https://www.appdynamics.com/docker/">
-AppDynamics Docker monitoring</a>
-
-Use <a target="_blank" href="https://github.com/google/cadvisor">
-https://github.com/google/cadvisor</a> (Container Advisor) to analyzes resource usage and performance characteristics of running Docker containers. 
-It keeps (in background) resource isolation parameters, historical resource usage, histograms of complete historical resource usage, and network statistics.
-<a target="_blank" href="https://github.com/google/cadvisor/blob/master/docs/running.md">Stats of NVIDIA GPU</a> are also supported.
-
-Might want to change the port number when you run the command:
-
-<pre>sudo docker run \
-  --volume=/:/rootfs:ro \
-  --volume=/var/run:/var/run:ro \
-  --volume=/sys:/sys:ro \
-  --volume=/var/lib/docker/:/var/lib/docker:ro \
-  --volume=/dev/disk/:/dev/disk:ro \
-  --publish=8080:8080 \
-  --detach=true \
-  --name=cadvisor \
-  google/cadvisor:latest
-  </pre>
 
 ## Resources
 
