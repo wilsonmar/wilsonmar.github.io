@@ -31,6 +31,8 @@ attendees of <a target="_blank" href="https://twitter.com/search?q=ServelessConf
 code are independently deployed and run on a cloud system for
 "zero system administration" by the developer.
 
+This is also called an "event-driven system".
+
 For those who want to run a lean shop, 
 it's a fast, easy, low-cost route to get apps in production without worry about scalability.
 Unlike renting a machine (as in EC2) which accrue charges even when idle, charges for Serverless functions accrue only when individual requests are invoked.
@@ -54,27 +56,57 @@ and to keep your app in cache to avoid process start-up after sleeping.
 
 ## FaaS Providers
 
-Compares costs using Peter Sbarski's <a target="_blank" href="https://serverlesscalc.com/">Serverless Calculator at serverlesscalc.com<br />
+Free tiers bring down costs, as shown by <a target="_blank" href="https://www.manning.com/books/serverless-architectures-on-aws-second-edition">Peter Sbarski</a>'s <a target="_blank" href="http://serverlesscalc.com/">Serverless Calculator at serverlesscalc.com<br />
 <img alt="serverless-costcomp-648x490-13259" width="648" height="490" src="https://user-images.githubusercontent.com/300046/57808958-cdaffe00-7721-11e9-8ffa-a3c66c5942a4.jpg"></a>
 
-* <a href="#AWS">AWS (Amazon Web Services) Lambda</a> Nov 2014
-* <a href="#Azure">Microsoft Azure Functions</a> 2016
-* <a href="#Google">Google Cloud Functions</a> 2018
-* <a href="#IBM">IBM Bluemix OpenWhisk</a> 2018
+* <a href="#AWS">AWS (Amazon Web Services) Lambda</a> Nov 2014  supports NodeJs, Python, any run-time
+* <a href="#Azure">Microsoft Azure Functions</a> 2016 supports NodeJs, Java, C#, F#
+* <a href="#Google">Google Cloud Functions</a> 2018 supports NodeJs, Python
+* <a href="#IBM">IBM Bluemix OpenWhisk Functions</a> 2018
+
+* <a target="_blank" href="https://www.alibabacloud.com/product/function-compute/">Alibaba Function Compute</a>'s <a target="_blank" href="http://g.alicdn.com/aliyun-next/fc/1.1.69/price_intl.html?spm=a2c63.p38356.879954.4.2d877bb1xc2iIM">calculator</a> returned a <a target="_blank" href="https://www.alibabacloud.com/help/doc-detail/54301.htm?spm=a3c0i.intl-en-product-fc.0.0.298f2b59e2tKZC">price</a> of $330.05. 
+It supports NodeJs, Python.
 
 Google App Engine in 2008 was arguably the first.
 
-Others:
+* CloudFlare
+
+* <a target="_blank" href="https://pivotal.io/platform/pivotal-function-service">Pivotal Cloud Functions</a> built on <a target="_blank" href="https://pivotal.io/knative">Knative</a>, part of the <a target="_blank" href="https://projectriff.io/">project Riff</a> open-source project led by Google for deployment atop Kubernetes and Istio.
+defining the <a target="_blank" href="https://docs.pivotal.io/pfs/0-1/using-pfs-cli.html">pfs command line interface</a>
 
 * <a href="#IronIO">Iron.io for on-premises</a>. Ironically, Iron originated the term "serverless" in 2012.
-* <a target="_blank" href="https://www.alibabacloud.com/product/function-compute/">Alibaba Function Compute</a>
-* CloudFlare
-* Pivotal Cloud Functions
 
 
-## Frameworks
+## Services
 
 * <a href="https://www.quora.com/What-is-serverless-computing">An Awesome list of links at Quora</a>
+
+<table border="1" cellpadding="4" cellspacing="0"><thead><tr valign="bottom">
+<th>Functionality</th><th>Type</th><th>AWS service</th><th>3rd-party</th></tr>
+</thead><tbody>
+<tr valign="top"><td>Compute</td><td>Functions</td><td>AWS Lambda</td><td>Iron.io</td></tr>
+<tr valign="top"><td rowspan="2">Security</td><td>Authentication</td><td>IAM, Cognito federation</td><td>Auth0, AuthRocket, Okta</td></tr>
+   <tr valign="top"><td>Logging, Monitoring, Anomaly Analytics</td><td>CloudWatch, CloudTrail, X-Ray tracing</td><td>Honeycomb, Datadog</td></tr>
+<tr valign="top"><td>Analytics</td><td>Visualization</td><td>QuickSight</td><td>-</td></tr>
+
+<tr valign="top"><td rowspan="2">Streaming</td><td>streams</td><td>Kinesis</td><td>-</td></tr>
+   <tr valign="top"><td>Messages</td><td>SQS, SNS</td><td>Twilio</td></tr>
+
+<tr valign="top"><td rowspan="7">Persistence</td><td>Files</td><td>S3</td><td>-</td></tr>
+   <tr valign="top"><td>Time Series</td><td><a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2018/11/announcing-amazon-timestream/">Timestream</a></td><td>InfluxDB, etc.</td></tr>
+   <tr valign="top"><td>NoSQL</td><td>DynamoDB</td><td>Redis</td></tr>
+   <tr valign="top"><td>SQL</td><td><a target="_blank" href="https://aws.amazon.com/rds/aurora/">Aurora</a></td><td>MySQL, PostgeSQL</td></tr>
+   <tr valign="top"><td>Data warehouse</td><td><a target="_blank" href="https://aws.amazon.com/blogs/big-data/amazon-redshift-spectrum-extends-data-warehousing-out-to-exabytes-no-loading-required/">Redshift columnar Spectrum</a> from S3</td><td>Hadoop, Spark</td></tr>
+   <tr valign="top"><td>Search</td><td><a target="_blank" href="https://aws.amazon.com/cloudsearch/">CloudSearch</a></td><td>ElasticSearch</td></tr>
+   <tr valign="top"><td>Blockchain</td><td>QuantumLedger</td><td>-</td></tr>
+
+<tr valign="top"><td>Query/Transform</td><td>ETL, SQL</td><td>Glue, Athena, EMR</td><td>-</td></tr>
+<tr valign="top"><td>Machine Learning</td><td>-</td><td>SageMaker</td><td>Tensorflow</td></tr>
+<tr valign="top"><td>Image recognition</td><td>-</td><td>Rekognition</td><td>Algorithmia, Quandl</td></tr>
+<tr valign="top"><td>Payment</td><td>-</td><td>-</td><td>Stripe, Paypal</td></tr>
+<tr valign="top"><td>Geocoding</td><td>-</td><td>-</td><td>HERE, Loqate</td></tr>
+</tbody></table>
+
 
 * Console
 * Function Code
@@ -83,15 +115,53 @@ Others:
 * Execution Results
 * Monitoring analytics
 
-PROTIP: The future of FaaS vendors isn't the front-end but the back-end services
-that include API Gateways and Artificial Intelligence features such as image recognition,
-text sentiment analysis, natural language process (NLP), 
-and Machine Learning.
+Functions that access resources (such as PaaS databases) should be in a private cloud, which AWS calls VPC (Virtual Private Cloud).
 
+Functions that access resources over the public internet should run the function in a subnet with a NAT'd route to the internet.
+
+
+
+<a name="Architecture"></a>
+
+## Best Practices
+
+Functions need to be Stateless (not long-running tasks)
+
+NodeJs start up faster than Java.
+
+There are 3 execution models:
+
+   1. Synchronous (push event-driven pipelines) via API Gateway
+   2. Asynchronous (event requests) via SNS, S3 
+   3. Stream-based changes via DynamoDB (NoSQL) to Kinesis 
+
+CloudWatch warming triggers every 5 minutes to keep code in memory to reduce warm-up time.
+This is to avoid Freeze/thaw errors.
+
+* Limit data transformations to one per Lambda function.
+* Upgrade to latest NodeJs regularly
+
+<hr />
 
 <a name="AWS"></a>
 
 ### AWS Lambda
+
+Internally, AWS Lambda functions are run using the AWS Firecracker open-source software managing lightweight VMs, to reduce startup time and memory overhead.
+
+<a target="_blank" href="https://docs.aws.amazon.com/lex/latest/dg/gs-bp.html">AWS Lex bot Lambda Blueprint</a> provides a pre-configured patterns for building conversational interfaces : OrderFlowers, ScheduleAppointment (in Python), BookTrip (in NodeJs).
+
+Reusable <strong>Layers</strong> in libraries (like Docker) reduce dependency size.
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/57837539-3ded6c80-7780-11e9-989c-f81d11b96c2f.jpg"><img alt="serverless-layers-965x569.jpg" width="965" src="https://user-images.githubusercontent.com/300046/57837539-3ded6c80-7780-11e9-989c-f81d11b96c2f.jpg"></a>
+
+Step functions build visual workflows using State Types in state stores.
+
+Search/browse generic pre-defined apps from the AWS Serverless Application Repository (SAR). Configure one and deploy it.
+
+#### SAM
+
+Although people say Terraform templates are more flexible ...
 
 The AWS Serverless Application Model (SAM) at
 <a target="_blank" href="https://github.com/awslabs/serverless-application-model">
@@ -99,10 +169,15 @@ https://github.com/awslabs/serverless-application-model</a>
 was announced Nov 2016
 to define the building blocks of <strong>Cloud Formation templates</strong> that access Amazon API Gateway APIs, AWS Lambda functions, and Amazon DynamoDB tables needed by serverless applications. 
 
+#### Templates
+
 Two AWS evangelists created <a target="_blank" href="https://github.com/aws-samples/aws-developer-workshop/blob/master/INSTRUCTIONS.md">pre-built templates</a> 
 with manual instructions, which they walked though in <a target="_blank" href="https://www.twitch.tv/events/PgC70I4pQoy14TP-RNS6Dw">30 minutes on Twitch.tv</a>:
 
 1. [Get an AWS IAM User](/aws-iam/) with AWSCodeStarFullAccess.
+
+   CAUTION: <a target="_blank" href="https://livebook.manning.com/#!/book/serverless-architectures-on-aws-second-edition/b-installation-and-setup/v-2/29">Installation steps in Peter Sbarski's book</a> suggests providing "Administrator access to all services and resources.
+
 2. Login the AWS Console to select region N. Virginia.
 3. In <a target="_blank" href="https://aws.amazon.com/codestar/">AWS CodeStar</a>. Start a project. Node.js. create role.
 4. Choose a project template: 
@@ -127,6 +202,11 @@ More examples are at <a target="_blank" href="https://github.com/serverless/exam
    - MongoDB instead of DyanmoDB : a scalable database which guarantees the same consistent speed of read and write requests.
 
    - SES (Simple Email Service) : Mass emailing service, like MailChimp.
+
+PROTIP: The future of FaaS vendors isn't the front-end but the back-end services
+that include API Gateways and Artificial Intelligence features such as image recognition,
+text sentiment analysis, natural language process (NLP), 
+and Machine Learning.
 
 PROTIP: The payoff for housing the back-end in a public cloud is for machine learning and AI services to be added.
 For example: https://github.com/aws-samples/aws-serverless-ember
@@ -229,7 +309,7 @@ using React and GraphQL Apollo that reads off of a Kafka pipeline on Google Clou
 
 <a name="Concerns"></a>
 
-## Concerns
+## Concerns (the Downsides)
 
 ### Database idle costs money! #
 
@@ -237,9 +317,8 @@ using React and GraphQL Apollo that reads off of a Kafka pipeline on Google Clou
    in an interview with by CloudAcademy <a target="_blank" href="https://www.youtube.com/watch?v=pvmx0IVfBLc">
    Introduction to the Serverless Paradigm</a> [23:50]
 
-   PROTIP: But this is not true within AWS if you use DynamoDB, which Amazon touts as the default database.
-   While Lambda does not incur charges while idle,
-   DynamoDB instances do incur charges for data stored even though no data is read or written to it.
+   WRONG! While Lambda does not incur charges while idle,
+   DynamoDB,, which Amazon touts as the default database, do incur charges for <strong>data stored</strong> (even though no data is read or written to it).
 
    PROTIP: On AWS use <strong>SimpleDB instead of DynamoDB</strong> for true no-cost idle.
 
@@ -371,10 +450,11 @@ Below is an annotated, expanded verson of <a target="_blank" href="https://githu
 
 0. Verify version:
 
-   <pre><strong>
-   serverless -v
+   <pre><strong>serverless -v
+   sls -v
    </strong></pre>
 
+   1.42.3
    NOTE: Serverless was in Beta version 0.5.6 as of June 2016,
    with v1.0 announced 24 June 2016.
 
@@ -401,8 +481,7 @@ Below is an annotated, expanded verson of <a target="_blank" href="https://githu
 
 0. Get summary of commands using the abbreviated command:
 
-   <tt><strong>
-   sls
+   <tt><strong>sls
    </strong></tt>
 
    The response (version 1.28.0) you'll have to extend the terminal screen to avoid line wrapping:
@@ -420,36 +499,27 @@ Framework
 config ........................ Configure Serverless
 config credentials ............ Configures a new provider profile for the Serverless Framework
 create ........................ Create new Serverless service
+install ....................... Install a Serverless service from GitHub or a plugin from the Serverless registry
+package ....................... Packages a Serverless service
 deploy ........................ Deploy a Serverless service
 deploy function ............... Deploy a single function from the service
 deploy list ................... List deployed version of your Serverless Service
 deploy list functions ......... List all the deployed functions and their versions
-info .......................... Display information about the service
-install ....................... Install a Serverless service from GitHub or a plugin from the Serverless registry
 invoke ........................ Invoke a deployed function
 invoke local .................. Invoke function locally
+info .......................... Display information about the service
 logs .......................... Output the logs of a deployed function
 metrics ....................... Show metrics for a specific function
-package ....................... Packages a Serverless service
-plugin ........................ Plugin management for Serverless
-plugin install ................ Install and add a plugin to your service
-plugin uninstall .............. Uninstall and remove a plugin from your service
-plugin list ................... Lists all available plugins
-plugin search ................. Search for plugins
 print ......................... Print your compiled and resolved config file
 remove ........................ Remove Serverless service and all resources
 rollback ...................... Rollback the Serverless service to a specific deployment
 rollback function ............. Rollback the function to the previous version
 slstats ....................... Enable or disable stats
-&nbsp;
-Platform (Beta)
-* The Serverless Platform is currently in experimental beta. Follow the docs below to get started.
-* Documentation: https://serverless.com/platform/docs/
-&nbsp;
-emit .......................... Emits an event to a running Event Gateway
-login ......................... Login or sign up for the Serverless Platform
-logout ........................ Logout from the Serverless Platform
-run ........................... Runs the Event Gateway and the Emulator
+plugin ........................ Plugin management for Serverless
+plugin install ................ Install and add a plugin to your service
+plugin uninstall .............. Uninstall and remove a plugin from your service
+plugin list ................... Lists all available plugins
+plugin search ................. Search for plugins
 &nbsp;
 Plugins
 AwsConfigCredentials, Config, Create, Deploy, Emit, Info, Install, Invoke, Login, Logout, Logs, Metrics, Package, Plugin, PluginInstall, PluginList, PluginSearch, PluginUninstall, Print, Remove, Rollback, Run, SlStats
@@ -457,21 +527,25 @@ AwsConfigCredentials, Config, Create, Deploy, Emit, Info, Install, Invoke, Login
 
 0. Verify where the executable is located:
 
-   <pre><strong>
-   command -v serverless
+   <pre><strong>command -v serverless
    </strong></pre>
 
-   The response:
+   The response (with your account rather than "wilsonmar"):
 
-   <pre>
-   /usr/local/bin/serverless
+   <pre>/Users/wilsonmar/.nvm/versions/node/v9.11.1/bin/serverless
    </pre>
 
 0. Get the location of files
 
-   <pre>
-   find / -name serverless 2>/dev/null
+   <pre><strong>find / -name serverless 2>/dev/null
+   </strong></pre>
+
+   The response (with your account rather than "wilsonmar"):
+
+   <pre>/usr/local/bin/serverless
    </pre>
+
+   ### In the serverless framework folder
 
 0. Navigate to framework folders and files:
 
@@ -480,7 +554,11 @@ AwsConfigCredentials, Config, Create, Deploy, Emit, Info, Install, Invoke, Login
    ls -al
    </strong></pre>
 
-   ### In the serverless framework folder
+   The response (with your account rather than "wilsonmar"):
+
+   <pre>CHANGELOG.md      README.md         lib               package-lock.json scripts
+LICENSE.txt       bin               node_modules      package.json
+   </pre>
 
 0. View the README.md file using a Markdown reader:
 

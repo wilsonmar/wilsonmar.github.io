@@ -21,25 +21,25 @@ We begin with a manual walkthrough, which we then automate.
 
 ## Establish Environment
 
-1\. Download and install a virtualization utility on your laptop or a virtual instance.
+1. Decide what architecture you want to use, which determines installation:
 
-   * Vagrant
+   * local machine (laptop running macOS, Windows, Linux)
+   * Docker image
+   * Vagrant or VMWare image that includes an operating system
 
-   * VMWare
+2. If Docker or Vagrant, Download and install the virtualization utility on your laptop or a virtual instance.
 
-   TODO: Instead of doing all the work below, 
-   the results of it has been encapsulated into a Docker image at ...
+   ### Within a new image or locally
 
-## Download utilities
-2\. Download and install package manager for your platform.
+3. Run a script to download and install package manager for your operating system:
 
    * On Mac, Homebrew.
-
    * On Windows, Chocolatey.
+   * On Ubuntu Linux, apt-get
+   * On Red Hat, yum 
+   * etc.
 
-   * On Linux, apt-get.
-
-3\. Download and install language support utilities on your laptop or a virtual instance.
+4. Download and install language (VM) support utilities:
 
    * <a target="_blank" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">
    Java SDK download from Oracle</a>
@@ -47,21 +47,19 @@ We begin with a manual walkthrough, which we then automate.
    * <a target="_blank" href="http://openjdk.java.net/">Open JDK from http://openjdk.java.net/install/</a>
    (on the Mac, https://wiki.openjdk.java.net/display/MacOSXPort/Main)
 
+   * Azul JVM
 
-   * Utility processsors for Static Code quality Analysis.
+5. Download and install language Static Code quality Analysis:
 
-   clone the https://github.com/teamed/qulice, 
+   * clone the https://github.com/teamed/qulice, 
    the maven plug-in to your local machine,
    then add in the pom.xml of the project
-   the xml shown at http://www.qulice.com/.
-   
+   the xml shown at http://www.qulice.com/.   
 
-> The primary objective of this tutorial is to get those learning Java to make use of
-static code scanners.
 
-## Clone GitHub
+   ### Clone GitHub
 
-4\. Use Git to clone to your local laptop the repository containing source program code:
+6. Use Git to clone to your local laptop the repository containing source program code:
 
    * <a target="_blank" href="http://github.com/wilsonmar/java-sample-code/">http://github.com/wilsonmar/java-sample-code.git</a>
    based on code at http://www2.cs.uic.edu/~sloan/CLASSES/java/ 
@@ -69,22 +67,20 @@ static code scanners.
 
    * https://www.reddit.com/r/programmingbydoing/ from Graham "holyteach" Mitchell are assignments (challenges) but no answers.
 
-> We would like example code scanned by static code analyzers so they're good examples of coding technique.
+   PROTIP: We would like example code scanned by static code analyzers so they're good examples of coding technique.
 
-Even experienced programmers of Enterprise Java programs sometimes run the simplest of Java code
-in order to verify the enviornment and various libraries,
-such as after a new version in one of them.
+   PROTIP: Run the simplest of Java code in order to verify the enviornment and various libraries, such as after a new version in one of them.
+   This is so if "known-good" code don't work, then the issue is NOT the <strong>custom application code</strong> which the programmer has control.
 
-If "known-good" code don't work,
-then the issue is NOT the <strong>custom application code</strong> which the programmer has control.
-By process of elimination, the problem lies in the setup items above.
+    By process of elimination, the problem lies in the setup items above.
 
+   ### Utility class libraries 
+   
+   (from 3rd parties) which custom Java program code specify for import
 
-5\. Clone or download utility class libraries (from 3rd parties) which custom Java program code specify for import
-
-<strong>Google Guava</strong>
-is an open source, Java based library developed by Google (and not those outside) 
-It's supposed to facilitate best coding practices and helps reduce coding errors.
+1. <strong>Google Guava</strong>
+   is an open source, Java based library developed by Google (and not those outside) 
+   It's supposed to facilitate best coding practices and helps reduce coding errors.
 
    * https://github.com/google/guava
    * https://en.wikipedia.org/wiki/Google_Guava
@@ -101,11 +97,10 @@ It's supposed to facilitate best coding practices and helps reduce coding errors
    * concurrency
    * common annotations
 
-<strong>Log4J</strong>
+1. <strong>Log4J</strong>
 
    * Log4J
 
-> We would like code in libraries scanned by static code analyzers so they form a good basis for coding.
 
 ## Compile OK?
 
@@ -161,13 +156,13 @@ By "known good" we mean more than what is needed to compile:
 7\. In a terminal (or in Jenkins), manually run the shell script which compiles and runs all the samples.
 
    ```
-   chmon a+x javac_all.sh<br />
+   chmon a+x javac_all.sh
    ./javac_all.sh
   ```
 
 ## .gitignore file
 
-8\. Remove the .class files created by manual run of javac:
+8\. Remove the .class files created above by manual run of javac:
 
    ```
    rm -rf *.class
