@@ -218,9 +218,7 @@ It of course leverages AWS Elastic Load Balancing, IAM authentication, Amazon VP
    automates Kubernetes workflows.
 
 
-## Competitors
-
-Other orchestration systems for Docker containers:
+## Alternatives / Competitors 
 
 * Docker Swarm incorporated <a href="#Rancher">Rancher</a> from Rancher Labs.
 
@@ -231,6 +229,18 @@ Other orchestration systems for Docker containers:
    See <a target="_blank" href="https://www.youtube.com/watch?v=NRZ6N4e-Mko">Container Orchestration Wars (2017)</a> at the Velocity Conf 19 Jun 2017 by Karl Isenberg (@karlfi) of Mesosphere
 
 * Hashicorp <a target="_blank" href="https://www.nomadproject.io/">Nomad</a>.
+
+Other orchestration systems using Docker containers:
+
+   * Kubernetes by Google
+   * Centos
+   * Atomic
+   * Consul, Terraform
+   * Serf
+   * Cloudify
+   * Helios
+   <br /><br />
+
 
 ### Kublet
 

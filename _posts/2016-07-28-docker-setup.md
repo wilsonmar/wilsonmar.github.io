@@ -2119,19 +2119,20 @@ default   -        virtualbox   Running   tcp://192.168.99.100:2376           v1
    <pre><strong>docker-machine env default
    </strong></pre>
 
-   which is:
-
-   <pre>
 
 ### Configre Docker client
 
-# export DOCKER_TLS_VERIFY="1" specifies authentication of the Docker daemon the client attempts to communicate with:
+   <pre>
+# export DOCKER_TLS_VERIFY="1" specifies authentication of the Docker daemon 
+# the client attempts to communicate with:
 export DOCKER_TLS_VERIFY="1"
 
-# export DOCKER_HOST informs the client of the socket location to use when communicating with the Docker daemon:
+# export DOCKER_HOST informs the client of the socket location to use when 
+# communicating with the Docker daemon:
 export DOCKER_HOST="tcp://192.168.99.100:2376"
 
-# export DOCKER_CERT_PATH specifies the location of key and certificates the client uses for TLS-enabled communication:
+# export DOCKER_CERT_PATH specifies the location of key and certificates the 
+# client uses for TLS-enabled communication:
 export DOCKER_CERT_PATH="/Users/mac/.docker/machine/machines/default"
 
 export DOCKER_MACHINE_NAME="default"
@@ -2197,9 +2198,9 @@ unset DOCKER_MACHINE_NAME
 
    A common error response if you have not first
 
-   <pre>
+   <tt>
 Error response from daemon: conflict: unable to remove repository reference "hello-world" (must force) - container 75ae035ab68b is using its referenced image c54a2cc56cbb
-   </pre>
+   </tt>
 
 
 1. To stop all running docker containers:
@@ -2220,9 +2221,9 @@ Error response from daemon: conflict: unable to remove repository reference "hel
 
    You may see this error message:
 
-   <pre>
+   <tt>
 Error response from daemon: You cannot remove a running container aa2ccdb153cc54070e6e2ef24e004b40e3e78555b0bca77badd143c3d984bb1c. Stop the container before attempting removal or force remove
-   </pre>
+   </tt>
 
    See <a target="_blank" href="https://docs.docker.com/docker-for-windows/">
    https://docs.docker.com/docker-for-windows</a>
@@ -2257,7 +2258,7 @@ Error response from daemon: You cannot remove a running container aa2ccdb153cc54
    <tt><strong>docker-machine ssh
    </strong></tt>
 
-   You should see a whale:
+   You should see a whale in ASCII art:
 
    <pre>
                         ##         .
@@ -2548,22 +2549,11 @@ Commands:
 
 ## Kubernetes
 
-   https://chocolatey.org/packages/kubernetes-kompose
-   TOOL: Kompose is a convenience tool to go from local Docker development to managing your application with Kubernetes. Transformation of the Docker Compose format to Kubernetes resources manifest may not be exact, but it helps tremendously when first deploying an application on Kubernetes. Install on Windows machines:
+   TOOL: <a target="_blank" href="https://chocolatey.org/packages/kubernetes-kompose">
+   Kompose</a> is a convenience tool to go from local Docker development to managing your application with Kubernetes. Transformation of the Docker Compose format to Kubernetes resources manifest may not be exact, but it helps tremendously when first deploying an application on Kubernetes. Install on Windows machines:
 
-   choco install kubernetes-kompose
+   <pre><strong>choco install kubernetes-kompose</strong></pre>
 
-   Alternatives to Kubernetes include 
-
-   * Kubernetes by Google, 
-   * Mesos
-   * Centos
-   * Atomic
-   * Consul, Terraform
-   * Serf
-   * Cloudify
-   * Helios
-   <br /><br />
 
 
 ### Monitoring
@@ -2605,6 +2595,32 @@ See https://docs.docker.com/swarm/
 
 See http://autopilotpattern.io/
 
+## Monitoring
+
+<a target="_blank" href="https://opencensus.io/">opencensus.io</a>
+vendor-agnostic distributes tracing to Zipkin, Yeager, Google Stackdriver Trace, etc.
+
+<a target="_blank" href="https://www.appdynamics.com/docker/">
+AppDynamics Docker monitoring</a>
+
+Use <a target="_blank" href="https://github.com/google/cadvisor">
+https://github.com/google/cadvisor</a> (Container Advisor) to analyzes resource usage and performance characteristics of running Docker containers. 
+It keeps (in background) resource isolation parameters, historical resource usage, histograms of complete historical resource usage, and network statistics.
+<a target="_blank" href="https://github.com/google/cadvisor/blob/master/docs/running.md">Stats of NVIDIA GPU</a> are also supported.
+
+Might want to change the port number when you run the command:
+
+<pre>sudo docker run \
+  --volume=/:/rootfs:ro \
+  --volume=/var/run:/var/run:ro \
+  --volume=/sys:/sys:ro \
+  --volume=/var/lib/docker/:/var/lib/docker:ro \
+  --volume=/dev/disk/:/dev/disk:ro \
+  --publish=8080:8080 \
+  --detach=true \
+  --name=cadvisor \
+  google/cadvisor:latest
+  </pre>
 
 ## Resources
 
@@ -2717,9 +2733,6 @@ https://github.com/StefanScherer/packer-windows
 
 https://github.com/StefanScherer/dockerfiles-windows
 You can do this on Windows as well today with the Windows 10 1607 or Windows Server 2016 using Windows Containers.
-
-<a target="_blank" href="https://www.appdynamics.com/docker/">
-AppDynamics Docker monitoring</a>
 
 
 <a target="_blank" href="https://semaphoreci.com/blog/2016/12/13/lightweight-docker-images-in-5-steps.html">
