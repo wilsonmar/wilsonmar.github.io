@@ -65,7 +65,7 @@ Free tiers bring down costs, as shown by <a target="_blank" href="https://www.ma
 * <a href="#IBM">IBM Bluemix OpenWhisk Functions</a> 2018
 
 * <a target="_blank" href="https://www.alibabacloud.com/product/function-compute/">Alibaba Function Compute</a>'s <a target="_blank" href="http://g.alicdn.com/aliyun-next/fc/1.1.69/price_intl.html?spm=a2c63.p38356.879954.4.2d877bb1xc2iIM">calculator</a> returned a <a target="_blank" href="https://www.alibabacloud.com/help/doc-detail/54301.htm?spm=a3c0i.intl-en-product-fc.0.0.298f2b59e2tKZC">price</a> of $330.05. 
-It supports NodeJs, Python.
+Its <a target="_blank" href="https://www.alibabacloud.com/help/doc-detail/74712.htm?spm=a2c63.p38356.a3.13.3769451eduLkke">language support</a> expanded from NodeJs and Python to Java, PHP, C# (the most among FaaS vendors).
 
 Google App Engine in 2008 was arguably the first.
 
