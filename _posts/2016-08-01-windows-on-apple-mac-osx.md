@@ -74,7 +74,7 @@ A <a target="_blank" href="https://secureanycloud.com/">hardened</a> Amazon Mach
 
 <a name="WorkSpaces"></a>
 
-### Browser WorkSpaces in AWS cloud
+### Client WorkSpaces in AWS cloud
 
 This approach works not just a MacOS laptop, 
 but for any computer running a modern browser,
@@ -87,88 +87,121 @@ This makes for more stringent security, but also mean significant lag that affec
    Amazon's Workspaces Forum questions</a>
    <br /><br />
 
-0. In the <a target="_blank" href="https://console.aws.amazon.com/workspaces/home">
-   WorkSpaces Console</a> for your default region, Get Started, Launch, and
-   Select a Bundle.
+1. Use an appropriate AWS IAM account to login to the <strong>WorkSpaces Console</strong> at
 
-   An image contains only the OS, software and settings. A bundle is a combination of both that image and the hardware from which a WorkSpace can be launched.
+   <a target="_blank" href="https://console.aws.amazon.com/workspaces/home">
+   https://console.aws.amazon.com/workspaces/home</a>
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/57975600-4238a600-7989-11e9-8834-12f0d42b6c2b.jpg"><img align="right" alt="windows-on-mac-189x434-6552.jpb" width="189" height="434" src="https://user-images.githubusercontent.com/300046/57975600-4238a600-7989-11e9-8834-12f0d42b6c2b.jpg"></a>
+
+1. Select the region.
+1. Click "Directories" menu and set up a Directory.
+1. Launch. Select the Directory.
+1. For the simplest approach, select "Simple AD" Next. Small AWS Managed Microsoft AD".
+1. Use a password generator UoyJhssxbcQzrDwT8ciF. Next.
+1. Choose VPC and two subnets.
+1. Wait for Status to go from "Requested" to "Creating" to "Active".
+
+   ### Launch Workspaces
+
+   An image contains only the OS, software, and settings. A bundle is a combination of both that image and the hardware from which a WorkSpace is launched.
 
    The Free Tier provides two Standard bundle WorkSpaces for up to 40 hours of combined use per month, for two calendar months, from the time you create your first WorkSpace. Usage time accrues while you’re actively using your WorkSpace as well as the time it takes to stop after a specified period of inactivity, which by default is set to one hour. If you exceed the Free Tier limits, you will be charged the standard Amazon WorkSpaces hourly rate for the additional resources you use. At the end of two calendar months, the WorkSpaces you launched in the Free Tier will automatically be billed at the applicable hourly rate.
 
    Amazon's regular <a target="_blank" href="https://aws.amazon.com/workspaces/pricing/">
-   pricing is $25 to $75 per month per user</a>, which Amazon estimates is 59% less than traditional Virtual Desktop Infrastructures (VDI) provided by Citrix and VMware.
+   pricing is $25 to $75 per month per user</a>, which Amazon estimates is 59% less than traditional Virtual Desktop Infrastructures (VDI) from Citrix and VMware.
 
    Amazon's approach uses newer tech than VDI. 
 
-0. Specify for each user his/her Username, First Name, Last Name, and Email for the Bundle selected.
+1. Click "WorkSpaces" in menu.
+1. Click blue "Launch WorkSpaces".
+1. Select the Directory and Subnets.
 
-   PROTIP: Have the Username the same as the Email.
+   ### Users
 
-0. Click Launch Workspace for all users. When the Workspace Console goes from PENDING to AVAILABLE (in green letters).
+1. Specify for each user his/her Username, First Name, Last Name, and Email for the Bundle selected.
 
-   Return to managed users in the Amazon WorkSpaces Application Manager (WAM) at<br />
-   <a target="_blank" href="https://us-east-1.console.aws.amazon.com/wam/home">
-   https://us-east-1.console.aws.amazon.com/wam/home</a> for your current region.
+   PROTIP: Use a email as the Username.
+
+1. Click "Create Users".
+1. Check the user you want.
+
+   If a new user input was already defined, the form is cleared.
+
+1. Click "Show All Users".
+1. Check the user.
+1. Click "Next Step".
+1. Select Bundle for the OS (with 80/80?)
+1. Select Running Mode (AlwaysOn or AutoStop hours).
+1. Click "Next Step".
+
+1. Click Launch Workspace (for all users). Wait for the Workspace Console goes from PENDING to AVAILABLE (in green letters).
+
+   ### Amazon WorkSpaces Application Manager (WAM)
+
+1. Switch to return to managed users in the Amazon WorkSpaces Application Manager (WAM) at
+
+   <a target="_blank" href="https://us-west-2.console.aws.amazon.com/wam/home">
+   https://us-west-2.console.aws.amazon.com/wam/home</a> for your current region.
 
    CAUTION: There is no moving WorkSpaces from one region to another.
 
-
    ### Install WorkSpaces client
    
-0. In each user's email client, open the welcome email and click the link.
-0. Set your WorkSpaces credentials with a password.
-0. Highlight the registration code in the email and copy to your Clipboard.
+1. In each user's email client, open the welcome email and click the link.
+1. Set your WorkSpaces credentials with a password.
+1. Highlight the registration code in the email and copy to your Clipboard.
    
-0. Choose the link for your laptop model at <br />
+1. Choose the link for your laptop model at <br />
    <a target="_blank" href="http://clients.amazonworkspaces.com/">
    http://clients.amazonworkspaces.com</a> 
 
-0. Download and install the Chrome application to enable the proprietary PC over IP (PCoIP) protocol (from Teradici) to compress, encrypt and rapidly transport image pixels between client and server.
+1. Download and install the Chrome application to enable the proprietary PC over IP (PCoIP) protocol (from Teradici) to compress, encrypt and rapidly transport image pixels between client and server.
 
    On a MacOS, it's file "WorkSpaces.pkg" (38.2 MB taking 115.3 MB space).
 
    On a Chromebook, click "ADD TO CHROME" at the upper-right corner.
 
-0. Double-click on the installer and click Continue and
+1. Double-click on the installer and click Continue and
    finally, Install. Provide your password when requested.
 
-0. Move the installer file (WorkSpaces.pkg) to Trash, to recover disk space.
+1. Move the installer file (WorkSpaces.pkg) to Trash, to recover disk space.
    
-0. Do a Chromebook search to verify that the Amazon WorkSpaces client app icon appears.
+1. Do a Chromebook search to verify that the Amazon WorkSpaces client app icon appears.
 
-0. BLAH: The full graphic streaming virtual desktops tends to eat up much bandwidth. So measure how much you have used before and after sessions.
+1. BLAH: The full graphic streaming virtual desktops tends to eat up much bandwidth. So measure how much you have used before and after sessions.
 
    Optionally, your company's existing on-premises Active Directory (AD) can be reached by Amazon via an Amazon Virtual Private Cloud (VPC) with a hardware virtual private network (VPN) connection or a dedicated connection with AWS Direct Connect. 
 
    Once linked up, you use the  AWS Management Console to select the users in your Active Directory who will receive a WorkSpace. 
 
-0. Open the app for the first time.
-0. Type your user name and password and choose Sign In.
-0. Paste the registration code and click Register.
+1. Open the app for the first time.
+1. Type your user name and password and choose Sign In.
+1. Paste the registration code and click Register.
 
    ### Repeat Login
 
    NOTE: 1Password cannot auto-fill Username and Password on the MacOS WorkSpaces app nor on Chrombook.
 
-0. Login using the Username and password for the WorkSpaces client.
+1. Login using the Username and password for the WorkSpaces client.
 
    If your Amazon WorkSpaces administrator has enabled multi-factor authentication for your organization's WorkSpaces, you are prompted for a passcode to complete your login. 
 
    CAUTION: Only one browser can be used at the same time.
    Amazon logs off a session when another session is started on another computer.
 
-0. If your Amazon WorkSpaces administrator has not disabled the "Remember Me" feature, you are prompted to save your credentials securely so that you can connect to your WorkSpace easily in the future. Your credentials are securely cached while the application is running.
+1. If your Amazon WorkSpaces administrator has not disabled the "Remember Me" feature, you are prompted to save your credentials securely so that you can connect to your WorkSpace easily in the future. Your credentials are securely cached while the application is running.
 
    After the client application connects to your WorkSpace, your WorkSpace desktop is displayed.
 
-0. (Optional) If your WorkSpace uses an AD Connector directory, update the maximum lifetime of the Kerberos ticket by following the steps in Configuring Kerberos Policies in the Microsoft TechNet Library. 
+1. (Optional) If your WorkSpace uses an AD Connector directory, update the maximum lifetime of the Kerberos ticket by following the steps in Configuring Kerberos Policies in the Microsoft TechNet Library. 
 
-0. If you need to disable the "Remember Me" feature, search for help in the Amazon WorkSpaces forum.
+1. If you need to disable the "Remember Me" feature, search for help in the Amazon WorkSpaces forum.
 
    ### Configure Remote Assistance
 
-0. Open PowerShell window.
-0. Install Remote Assistance using this PowerShell command:
+1. Open PowerShell window.
+1. Install Remote Assistance using this PowerShell command:
   
    <tt><strong>Add-WindowsFeature Remote-Assistance
    <strong></tt>

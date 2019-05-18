@@ -258,10 +258,10 @@ Repeat for folder "Tricentis_TDM_Studio_12_1".
 Repeat for "Tricentis_Analytics 12.1_Documentation.zip"
 
 
+## Windows Installation
 
-## Installation
+A Mac can only be used with a <a target="_blank" href="https://wilsonmar.github.io/windows-on-apple-mac-osx/">virtual server instance running Windows</a>.
 
-A Mac can only be used with a virtual server instance running Windows.
 The Tosca Server is installed on Windows using local administrator rights.
 
 1. Oncce the Windows server instance is available (in AWS Lightsail)?
