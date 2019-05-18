@@ -4,10 +4,10 @@ title: "Salesforce Data (Importing and exporting)"
 excerpt: "How to get data in and out of Salesforce"
 tags: [salesforce]
 image:
-# salesforce-data-1900x500.jpg 
-  feature: https://user-images.githubusercontent.com/300046/44629085-5920ff00-a907-11e8-8e58-549ddd61a356.jpg
-  credit: SalesforceBen
-  creditlink: https://www.salesforceben.com/best-data-loader-for-salesforce
+# salesforce-data-unsplash-denys-1900x500-33517.jpg/png
+  feature: https://user-images.githubusercontent.com/300046/57971273-14cc0800-7949-11e9-8c20-82dc8bdbb53c.jpg
+  credit: Denys Nevozhai
+  creditlink: https://unsplash.com/photos/dq93aNzsrH0
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -15,6 +15,12 @@ comments: true
 
 {% include _toc.html %}
 
+<!--
+# salesforce-data-1900x500.jpg 
+  feature: https://user-images.githubusercontent.com/300046/44629085-5920ff00-a907-11e8-8e58-549ddd61a356.jpg
+  credit: SalesforceBen
+  creditlink: https://www.salesforceben.com/best-data-loader-for-salesforce
+-->
 <a target="_blank" href="https://wilsonmar.github.io/salesforce-data">This article</a> is a succinct hands-on deep dive on how to get data in and out of Salesforce.
 
 3 billion transactions go through Salesforce daily.
@@ -31,18 +37,16 @@ However, Salesforce does not provide a way for users to restore data from backup
 
 The IT industry-wide has names for recovery of data in case servers fail in enterprise data centers:
 
-<strong>RPO (Recovery-Point Objective)</strong> 
-is the amount of data that a company is willing to lose when restoring from disaster.
-
 <strong>RTO (Recovery Time Objective)</strong> 
-is the time that a company is willing to wait for data to be recovered.
-
+is the <strong>time</strong> that a company is willing to wait for data to be recovered.
 For Salesforce users not subscribing to a 3rd-party service, 
 RTO would be in days or weeks rather than in minutes.
 
-Export of data using built-in Salesforce functionality is not automatically enabled when an account is established. And Salesforce limits full backups to once a week. Full sandboxes cost more money.
-
+<strong>RPO (Recovery-Point Objective)</strong> 
+is the amount of <strong>data</strong> that a company is willing to lose when restoring from disaster.
 Salesforce, by default, does not provide "point-in-time" recovery from "snapshots" of all data at various points in time. 
+
+Export of data using built-in Salesforce functionality is not automatically enabled when an account is established. And Salesforce limits full backups to once a week. Full sandboxes cost more money.
 
 If you don't run backup jobs, Salesforce charges a minimum of $10,000 to obtain that data, 
 which will take a week or more.
@@ -51,8 +55,7 @@ Sandboxes for developer use are created only with metadata, not data.
 
 ![sf-sandboxes-820x337](https://user-images.githubusercontent.com/300046/57319470-e08b5880-70b9-11e9-940a-a0e65ee180f1.png)
 
-Salesforce does not provide a comprehensive way to <strong>import</strong> CSV files exported.
-So intricate programming is needed, or pay a 3rd-party solutions thousands a month.
+Salesforce does not provide a comprehensive way to <strong>import</strong> CSV files exported. So intricate programming is needed, or pay thousands a month for <a target="_blank" href="https://wilsonmar.github.io/salesforce-data/#3rd-party">3rd-party utilities (described below)</a>.
 
 (During cloning, existing users and their status and appends the name of the sandbox to logon Id's, but keeps passwords.)
 
@@ -518,22 +521,39 @@ References:
 
 <a name="RESTAPI"></a>
 
-## REST API update externally
+## REST API calls externally
 
 The advantage of a REST API interface is scale. 
-Several instances can update Salesforce at the same time.
+
+   * Several instances can update Salesforce at the same time.
+   * The interface can update various orgs.
+   * The interface can interact with resources outside Salesforce
+
+Internally, Salesforce tables contain artificial keys call "identifiers" which uniquely identify each record. That identifier is created when new data is added. In parent-child relationships, child tables contain the identifier to its parent.
+See https://developer.salesforce.com/docs/atlas.en-us.218.0.api_asynch.meta/api_bulk_v2/datafiles_xml_rel_fields.htm?search_text=relationships
+
+Rows created with data external to Salesforce contain an <strong>external_id</strong>.
+
+That external_id is in CSV files created by the export process.
+
+A program that inserts data based on CSV files cannot use the parent identifer exported because as each row is inserted, a new identifier is created.
+
+Thus, CSV files need to be imported in a specific sequence -- parent first, then its children. See <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_dml_foreign_keys.htm">Creating Parent and Child Records in a Single Statement Using Foreign Keys</a> and <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.218.0.api_asynch.meta/api_bulk_v2/datafiles_xml_rel_fields.htm?search_text=relationships">Relationships</a>
+It has a section on <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/asynch_api_code_walkthrough.htm">Async API Code walkthough</a>
+
+<a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.218.0.api_asynch.meta/api_bulk_v2/asynch_api_intro.htm">Bulk API v2</a>
+
+<hr />
 
 In <a target="_blank" href="http://wiki.developerforce.com/page/Introduction_to_the_Force.com_Web_Services_Connector">Web Services Connector</a>, the "Preparing to Integrate Java Apps with Force.com APIs" and "Creating an Enterprise WSDL Application" sections where it walks through setup, prep, and actually gives you some sample code that shows how to query, update, create, and delete records.
-
-<a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_dml_foreign_keys.htm">Creating Parent and Child Records in a Single Statement Using Foreign Keys</a>
 
 <a target="_blank" href="https://developer.salesforce.com/developer-centers/integration-apis/">developer-centers/integration-apis</a> (previously https://developer.force.com/REST)
 
 https://developer.salesforce.com/docs/atlas.en-us.218.0.api.meta/api/sforce_api_calls_create.htm#MixedSaveSection
 
-   SaveResult[] = connection.create(sObject[] sObjects);
+   <pre>SaveResult[] = connection.create(sObject[] sObjects);</pre>
 
-Use `create()` to add one or more records, such as an Account or Contact record, to your organization’s information. The create() call is analogous to the INSERT statement in SQL.
+Use `create()` to add one or more records, such as an Account or Contact record, to an  organization’s information. The create() call is analogous to the INSERT statement in SQL.
 
 When creating objects, consider <a target="_blank" title="Jun 15, 2014" href="https://www.ajaydubedi.com/my-works/salesforce-rest-integration-java-application/"> these rules and guidelines</a>.
 
