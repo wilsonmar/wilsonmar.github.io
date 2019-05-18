@@ -46,6 +46,9 @@ So it's no surprise that Toscas works with SAP based in Germany.
 
 In May 2019 Tricentis bought <a target="_blank" href="https://www.tricentis.com/blog/intellicorp-change-impact-sap-1/">LiveCompare</a> for SAP change impact analysis from IntelliCorp, a pioneer smart systems company.
 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=mN_OGOqXbiM">The #1 Continuous Testing Platform for SAP Customers</a> May 8, 2019 at Sapphire 2019
+   * <a target="_blank" href="https://www.youtube.com/watch?v=QUa9l1VLU3U&t=1m24s">Test Automation Across S/4 HANA Projects</a> May 8, 2019 [12:15] by Bhala Bhosale
+
    * <a target="_blank" href="https://www.youtube.com/watch?v=qBbB7jP-0Tw">SAP SAPPHIRE show booth highlight video</a>
 
 Tosca Commander has a SAP Solution Manager 7.2 Integration.
@@ -102,7 +105,7 @@ Additionally:
    * Tosca OSV (Orchestrated Service Virtualization) works through an OSV Addin to Tosca Commander communicating via SOAP to an OSV Host talking to OSV Database and OSV Monitor talking to License Server.
    * Tosca BI (Business Intelligence)
    * Tricentis Tosca
-   * Tosca Commander interacts with a Windows Active Directory (via TCP & UDP) to connectTosca Workspaces with a Common Repository using  TC API.
+   * Tosca Commander interacts with a Windows Active Directory (via TCP & UDP) to connectTosca Workspaces with a Common Repository using TCAPI
    Tosca Commander Interactive Testing communicates with the Interactive Testing Server and Interactive Testing Agent.
 
 ## Conferences
@@ -173,11 +176,13 @@ Specialty certifications:
     Recovery scenarios Best practice tips and exercises
    </pre>
 
-1. The Sample System Under Test si the <strong>Web Shop application</strong> at: 
+1. The Sample System Under Test is a <strong>Web Shop application</strong> at: 
    
    <a target="_blank" href="http://demowebshop.tricentis.com">http://demowebshop.tricentis.com</a>
 
-   Test cases:
+1. Right-click to View Page Source. Notice `<!DOCTYPE html>` indicates it's a HTML5 app.
+
+1. The tutorial goes over these test cases:
 
    1. Shipping Costs (core skills)
    2. Payment Process
@@ -187,7 +192,7 @@ Specialty certifications:
    6. Additional challenges
 
 
-<a target="_blank" href="https://support.tricentis.com/community/product.do?number=WIT0001025">Automation Specialist 2</a>  covers XML and Web Services test automation (REST API testing) using test case templates. <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/automation-specialist-level-2">Automation Specialist 2</a>
+<a target="_blank" href="https://support.tricentis.com/community/product.do?number=WIT0001025">Automation Specialist 2</a> covers XML and Web Services test automation (REST API testing) using test case templates. <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/automation-specialist-level-2">Automation Specialist 2</a>
 
    <pre>
     Data Driven TestCases
@@ -205,43 +210,37 @@ Specialty certifications:
         Build your own data driven test
    </pre>        
 
+API References:
+
+   * <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?version=12.1.0&url=topic1.html&tcapi=tcapi">TCAPI</a>
+   * <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?version=12.1.0&url=restapi/prerequisites.htm&tcapi=tcrsapi">TC REST API</a>
+   * <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?version=12.1.0&url=topic1.html&tcapi=tboxapi">TBox API</a>
+   * <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?version=12.1.0&url=topic1.html&tcapi=tcaddon">TCAddOn API</a>
+   * <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?version=12.1.0&url=topic3.html&tcapi=engwrap">Tosca Engine Wrapper</a> & Tosca EngineWrapper Extension
+
+
+Tosca Guided Example Project v9.2 in page 2 of
+https://support.tricentis.com/community/downloads.do
+
+
 ### Automation Specialist Practitioner training
 
 The Automation Specialist Practitioner training is a hands-on, instructor-led coaching session that builds on the core skills developed in the Tricentis online trainings with skills for you to apply to your own SUT and your project’s unique requirements. 
 
 The coaching session is delivered on site by a certified Practitioner Trainer who has a proven track record of success in a project environment.
 
-### Course Access
 
-1. To access the class in the <a target="_blank" href="https://support.tricentis.com/">Support Portal</a>, click on "My Assets" -> Academy at URL:
+## Documentation
 
-   https://tricentis.csod.com/LMS/catalog/Welcome.aspx?tab_page_id=-67&tab_id=-1
-
-1. Click "My courses".
-2. Click "Open Curriculum" for Level 1 or 2.
-
-   PROTIP: To speed up videos, click the gear icon and instead of "Normal", select "1.5".
-
-   PROTIP: Use an additional monitor so you can see the tutorial on one screen and your notes in another screen.
-
-
-### License
-
-Instead of getting a <a target="_blank" href="http://www.tricentis.com/tricentis-tosca-testsuite/trial/">Tricentis Tosca Testsuite 14-day Trial license here</a>.
-
-1. Request a training license by clicking on the email.
-
-   https://support.tricentis.com/community/training_license_request.do
-
-1. Choose on-premise or a cloud license
-
-   https://tricentis.service-now.com/community/license_overview.do
+Documentation is available both <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?lang=en&version=12.1.0&url=resources/webhelp/cover_web.htm">On-line</a> and, alternately, off-line after download:
 
 1. Create a folder to hold Tosca stuff and cd to it.
+1. Get to the documentation download page at:
 
-1. Download "Tricentis Tosca 12.1 Documentation.zip" (the latest version as of this writing) from:
+   <a target="_blank" href="https://support.tricentis.com/community/downloads.do">https://support.tricentis.com/community/downloads.do</a> or<br />
+   <a target="_blank" href="https://support.tricentis.com/community/manuals_archive.do">https://support.tricentis.com/community/manuals_archive.do</a>
 
-   <a target="_blank" href="https://support.tricentis.com/community/downloads.do">https://support.tricentis.com/community/downloads.do</a>
+1. Click to download "Tricentis Tosca 12.1 Documentation.zip" (the latest version as of this writing).
 
 1. Switch to Finder and Unzip the file "Tricentis Tosca 12.1 Documentation.zip" to a folder which contains a website.
 1. Delete the zip file.
@@ -291,17 +290,40 @@ These run in either 32 (*X86.exe) or 64-bit mode, depending on whether Tosca Com
 A <strong>Tosca Commander</strong> agent are installed on Windows machines to invoke tests and receive results.
 
 
-## Access
+### Course Access
 
-Ability to access the cloud server through the port TCP 443.
+1. To access the class in the <a target="_blank" href="https://support.tricentis.com/">Support Portal</a>, click on "My Assets" -> Academy at URL:
+
+   https://tricentis.csod.com/LMS/catalog/Welcome.aspx?tab_page_id=-67&tab_id=-1
+
+1. Click "My courses".
+2. Click "Open Curriculum" for Level 1 or 2.
+
+   PROTIP: To speed up videos, click the gear icon and instead of "Normal", select "1.5".
+
+   PROTIP: Use an additional monitor so you can see the tutorial on one screen and your notes in another screen.
+
+
+
+### Get Product License
 
 Instructions below are based on Tosca version 12.1.
+
+Instead of getting a <a target="_blank" href="http://www.tricentis.com/tricentis-tosca-testsuite/trial/">Tricentis Tosca Testsuite 14-day Trial license here</a>.
+
+1. Verify your email address.
+
+1. Request a training license by clicking on the email.
+
+   https://support.tricentis.com/community/training_license_request.do
+
+1. Choose on-premise or a cloud license
+
+   https://tricentis.service-now.com/community/license_overview.do
 
 1. Tosca's <strong>Support Portal</strong> provides links to articles, discussions, documentation, support incidents, search, , etc. at:
 
    <a target="_blank" href="https://support.tricentis.com/community/home.do?verify=s">https://support.tricentis.com/community/home.do?verify=s</a> for
-
-1. Verify your email address.
 
 1. Access the Tosca cloud license server Tricentis_Academy_Cloud.
 
@@ -312,9 +334,13 @@ Instructions below are based on Tosca version 12.1.
    ### Connect to a Cloud-hosted license server
 
    <a target="_blank" href="https://www.youtube.com/watch?v=mWebNjwzasM">
-   VIDEO: Tricentis Tosca License Activation</a>
+   VIDEO: How to Activate your Trial</a> from inside Tosca Commander.
 
 1. In Tricentis Tosca Commander, navigate to the Project menu and click on License. Click on Connect.
+
+Ability to access the cloud server through the port TCP 443.
+
+
 
 ## Workflow
 
@@ -346,3 +372,8 @@ Tosca Commander
 
    Each session includes information on testers, assignments, test progress, issues raised.
 
+## References
+
+https://www.youtube.com/watch?v=EN933IZzrVY
+Tricentis: A Tosca E2E Test Automation Example
+Aug 15, 2016 by ominik Weissböck
