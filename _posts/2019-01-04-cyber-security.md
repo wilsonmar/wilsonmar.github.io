@@ -1,13 +1,14 @@
 ---
 layout: post
 title: "Cyber Security"
-excerpt: "Your risks and vulnerabilities and how to mitigate them"
+excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them"
 tags: [security]
 image:
-# feature: pic white hand key ownership 1900x500.jpg
-  feature: https://cloud.githubusercontent.com/assets/300046/14622160/3b59e1b2-0585-11e6-9157-cc003fc0f90b.jpg
-  credit:
-  creditlink:
+# cyber-security-unsplash-denys-1900x500-83483.jpg 
+
+  feature: https://user-images.githubusercontent.com/300046/57971498-3f6b9000-794c-11e9-9b37-1e9ed4af195b.jpg
+  credit: Denys Nevozhai
+  creditlink: https://unsplash.com/photos/6OAWj_ZvScc
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
