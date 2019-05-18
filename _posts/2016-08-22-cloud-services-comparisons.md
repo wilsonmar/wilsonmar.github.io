@@ -179,13 +179,13 @@ Amazon is working on "Linux2" based on Red Hat.
 
 To compare network speeds:
 
+* Amazon's own <a target="_blank" href="http://ec2-reachability.amazonaws.com/">EC2 Reachability Test</a> does not provide ping speeds to <strong>specific IP addresses</strong> within each availability zone within each region, but a green icon when it can be currently reached at any speed.
+
 * <a target="_blank" href="http://www.cloudping.info/">http://cloudping.info</a> measures current ping speed to various regions on Amazon's EC2 cloud. Scroll down to click "HTTP Ping" to begin collection to a running line graph:
 
    ![cloud-services-amazon-392x647-65305](https://user-images.githubusercontent.com/300046/40890545-21c4a818-6735-11e8-92b3-9329d0465914.jpg)
 
-   <a target="_blank" href="https://ping.varunagw.com/aws.htm">https://ping.varunagw.com/aws.htm</a> provides green, yellow, red colors with Mean, Median, Min, and Max statistics based several measures of the speed to each EC2 region.
-
-   Amazon's own <a target="_blank" href="http://ec2-reachability.amazonaws.com/">EC2 Reachability Test</a> does not provide ping speeds, only a green icon when it can be reached at any speed.
+* <a target="_blank" href="https://ping.varunagw.com/aws.htm">https://ping.varunagw.com/aws.htm</a> provides green, yellow, red colors with Mean, Median, Min, and Max statistics based several measures of the speed to each EC2 region.
 
 * <a target="_blank" href="http://www.azurespeed.com/">http://http://www.azurespeed.com</a> measures current ping speed to various regions on Microsoft's Azure cloud. To stop collection, click "uncheck all" or individual regions of interest:
 
@@ -239,7 +239,7 @@ Here are the names of brand names, some with links to marketing or documentation
 <table valign="top" border="1" cellspacing="0" cellpadding="4">
 <thead>
 <tr valign="bottom">
-<th align="left"><br /></th><th align="left">Microsoft Azure</th><th align="left">Amazon Web Services (AWS)</th><th>Google</th></tr>
+<th align="left">Feature:</th><th align="left">Microsoft Azure</th><th align="left">Amazon Web Services (AWS)</th><th>Google</th></tr>
 </thead><tbody>
 <tr valign="top" class="tblOdd"><th align="left">Data center geography</th>
     <td><a target="_blank" href="http://azure.microsoft.com/en-us/regions/">Azure Regions</a></td>
@@ -278,7 +278,7 @@ Here are the names of brand names, some with links to marketing or documentation
 </td><td><a target="_blank" href="http://aws.amazon.com/cloudhsm/">CloudHSM </a></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblOdd"><th align="left">DDoS protection</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/ddos-protection/">Axure DDoS Protection</a>
+<tr valign="top" class="tblOdd"><th align="left">DDoS protection</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/ddos-protection/">Azure DDoS Protection</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/shield/">Shield Advanced</a></td>
     <td>-</td></tr>
 
@@ -295,7 +295,7 @@ Here are the names of brand names, some with links to marketing or documentation
 <tr valign="top" class="tblEven"><th align="left">Load Balancing</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/documentation/articles/virtual-machines-load-balance/">Load Balancing for Azure (how to)</a></td><td><a target="_blank" href="http://aws.amazon.com/elasticloadbalancing/">ELB (Elastic Load Balancing)</a></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblOdd"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/traffic-manager/">Azure Traffic Manager</a></td><td><a target="_blank" href="http://aws.amazon.com/route53/">Amazon Route 53</a></td>
+<tr valign="top" class="tblOdd"><th align="left">Region routing by latency or on fail</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/traffic-manager/">Azure Traffic Manager</a></td><td><a target="_blank" href="http://aws.amazon.com/route53/">Amazon Route 53</a></td>
     <td>-</td></tr>
 
 <tr valign="top" class="tblOdd"><th align="left">Networking Options</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/virtual-network/">Azure Virtual Network</a>

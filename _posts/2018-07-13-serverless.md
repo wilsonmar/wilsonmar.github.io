@@ -52,15 +52,15 @@ Use of multi-tenancy makes for response-time variation.
 So do sythentic transactions outside the cloud vendor to monitor user experience,
 and to keep your app in cache to avoid process start-up after sleeping.
 
-"Serverless is on the relentless historical trend toward industrialization". @simonwardley
+"Serverless is on the relentless historical trend toward industrialization" -- @simonwardley
 
-## FaaS Providers
+## FaaS Providers - Pricing
 
 Free tiers bring down costs, as shown by <a target="_blank" href="https://www.manning.com/books/serverless-architectures-on-aws-second-edition">Peter Sbarski</a>'s <a target="_blank" href="http://serverlesscalc.com/">Serverless Calculator at serverlesscalc.com<br />
 <img alt="serverless-costcomp-648x490-13259" width="648" height="490" src="https://user-images.githubusercontent.com/300046/57808958-cdaffe00-7721-11e9-8ffa-a3c66c5942a4.jpg"></a>
 
 * <a href="#AWS">AWS (Amazon Web Services) Lambda</a> Nov 2014  supports NodeJs, Python, any run-time
-* <a href="#Azure">Microsoft Azure Functions</a> 2016 supports NodeJs, Java, C#, F#
+* <a href="#Azure">Microsoft Azure Functions</a> 2016 supports NodeJs, Java, C#, F#, Python
 * <a href="#Google">Google Cloud Functions</a> 2018 supports NodeJs, Python
 * <a href="#IBM">IBM Bluemix OpenWhisk Functions</a> 2018
 
@@ -75,6 +75,79 @@ Google App Engine in 2008 was arguably the first.
 defining the <a target="_blank" href="https://docs.pivotal.io/pfs/0-1/using-pfs-cli.html">pfs command line interface</a>
 
 * <a href="#IronIO">Iron.io for on-premises</a>. Ironically, Iron originated the term "serverless" in 2012.
+
+
+<a name="Concerns"></a>
+
+## Concerns (the Downsides)
+
+### Database idle costs money! #
+
+   "You never pay for idle" Austen says 
+   in an interview with by CloudAcademy <a target="_blank" href="https://www.youtube.com/watch?v=pvmx0IVfBLc">
+   Introduction to the Serverless Paradigm</a> [23:50]
+
+   WRONG! While Lambda does not incur charges while idle,
+   DynamoDB,, which Amazon touts as the default database, do incur charges for <strong>data stored</strong> (even though no data is read or written to it).
+
+   PROTIP: On AWS use <strong>SimpleDB instead of DynamoDB</strong> for true no-cost idle.
+
+### Control
+
+PROTIP: The other side of freedom from server hassles is that developers also give away <strong>control</strong>.
+
+Having one's data in another company's cloud requires trust in that company's
+ability to keep data secure, redundant, and pricing fair.
+
+PROTIP: Going with a particular vendor's API means that you need to keep up
+with changes in APIs that can occur frequently,
+even though they may not apply to your own operation.
+
+There is the danger of vendor lock-in.
+
+But frameworks have emerged to allieviate that:
+
+
+## Serverless usage in the wild
+
+When a $9 million monolithic app built for the Australian Census failed, two students over two-weeks created a scalable system using $500 of compute time (including load testing).
+
+<a target="_blank" href="https://compellingScienceFiction.com/">
+Compelling Science Fiction.com</a>
+uses Simple Email to read emails and sends it to S3.
+Lambda emails notifications. Stories are saved in DynamoDB.
+Python pulls data.
+
+<a target="_blank" href="https://eruchibas,com/pywren.html">
+Eric Jonas</a>
+does hyperperameter sweeps, Monte Carlo simulations.
+Spark requires dedicated servers and is not very elastic.
+map of map reduce.
+
+<a target="_blank" href="https://tothestars.io/blog/2016/11/12/serverless-mapreduce">
+His Simultaneous "Big Lambda" talk</a>
+
+<a target="_blank" href="http://www.emitconference.com/">http://www.emitconference.com</a>
+Emit Conference for "event-driven architectures" August 17th, 2017 in San Francisco
+has people who've done it:
+
+   * Rob Gruhl Senior Manager of Serverless Platform Team at Nordstrom
+   * Bobby Calderwood Technology Fellow at Capital One
+   * Madhuri Yechuri Founder of Elotl
+   * Dave Copeland Director of Engineering at Stitch Fix
+   * Shawn Burke Staff Software Engineer at Uber
+
+   * Ajay Nair Head of Product (AWS Lambda) at Amazon Web Services
+   * Jason Polites Product Manager for Google Cloud Functions
+   * Chris Anderson Senior Program Manager for Azure Functions
+   * Cornelia Davis Senior Director of Technology at Pivotal Software
+
+   * Anne Thomas VP & Distinguished Analyst at Gartner, Inc.
+   * Matthew Lancaster Global Lead, Lightweight Architectures at Accenture
+
+<a target="_blank" href="https://stackshare.io/posts/evolution-of-new-york-times-tech-stack#serverless-future">
+An audio Q&A with The CTO of New York Times</a>, Nick Rockwell, who migrated the paper to
+using React and GraphQL Apollo that reads off of a Kafka pipeline on Google Cloud and Big Query.
 
 
 ## Services
@@ -108,24 +181,16 @@ defining the <a target="_blank" href="https://docs.pivotal.io/pfs/0-1/using-pfs-
 </tbody></table>
 
 
-* Console
-* Function Code
-* Execution Roles
-* Test Events
-* Execution Results
-* Monitoring analytics
-
-Functions that access resources (such as PaaS databases) should be in a private cloud, which AWS calls VPC (Virtual Private Cloud).
-
-Functions that access resources over the public internet should run the function in a subnet with a NAT'd route to the internet.
-
-
 
 <a name="Architecture"></a>
 
 ## Best Practices
 
 Functions need to be Stateless (not long-running tasks)
+
+Functions that access resources (such as PaaS databases) should be in a private cloud, which AWS calls VPC (Virtual Private Cloud).
+
+Functions that access resources over the public internet should run the function in a subnet with a NAT'd route to the internet.
 
 NodeJs start up faster than Java.
 
@@ -140,6 +205,15 @@ This is to avoid Freeze/thaw errors.
 
 * Limit data transformations to one per Lambda function.
 * Upgrade to latest NodeJs regularly
+
+
+* Console
+* Function Code
+* Execution Roles
+* Test Events
+* Execution Results
+* Monitoring analytics
+
 
 <hr />
 
@@ -168,6 +242,7 @@ The AWS Serverless Application Model (SAM) at
 https://github.com/awslabs/serverless-application-model</a>
 was announced Nov 2016
 to define the building blocks of <strong>Cloud Formation templates</strong> that access Amazon API Gateway APIs, AWS Lambda functions, and Amazon DynamoDB tables needed by serverless applications. 
+
 
 #### Templates
 
@@ -280,62 +355,34 @@ Google Firebase
 has their Gesalt Framework
 
 
-## Usage in the wild
 
-When a $9 million monolithic app built for the Australian Census failed, two students over two-weeks created a scalable system using $500 of compute time (including load testing).
+<a name="LocalTesting"></a>
 
-<a target="_blank" href="https://compellingScienceFiction.com/">
-Compelling Science Fiction.com</a>
-uses Simple Email to read emails and sends it to S3.
-Lambda emails notifications. Stories are saved in DynamoDB.
-Python pulls data.
+## Local Runs for testing #
 
-<a target="_blank" href="https://eruchibas,com/pywren.html">
-Eric Jonas</a>
-does hyperperameter sweeps, Monte Carlo simulations.
-Spark requires dedicated servers and is not very elastic.
-map of map reduce.
+For a "test-first" approach to achieve code maturity,
+doing test runs locally before committing to a team branch is important.
 
-<a target="_blank" href="https://tothestars.io/blog/2016/11/12/serverless-mapreduce">
-His Simultaneous "Big Lambda" talk</a>
+Let's examine the choices to emulate AWS Lambda locally:
 
-<a target="_blank" href="https://www.emitconference.com/">https://www.emitconference.com</a>
-Emit Conference for "event-driven architectures" August in San Francisco
-has people who've done it talk about it.
+* <a target="_blank" href="https://www.npmjs.com/package/local-node-lambda">
+   local-node-lambda</a>
 
-<a target="_blank" href="https://stackshare.io/posts/evolution-of-new-york-times-tech-stack#serverless-future">
-An audio Q&A with The CTO of New York Times</a>, Nick Rockwell, who migrated the paper to
-using React and GraphQL Apollo that reads off of a Kafka pipeline on Google Cloud and Big Query.
+* <a target="_blank" href="https://github.com/ashiina/lambda-local">
+   ashiina/lambda-local</a>
 
-<a name="Concerns"></a>
+0. Install the "Command line tool for <strong>locally running</strong>
+   and remotely deploying your node.js applications to Amazon Lambda."
+   from <a target="_blank" href="https://github.com/motdotla/node-lambda">
+   github.com/motdotla/node-lambda</a>
 
-## Concerns (the Downsides)
+   <tt><strong>
+   npm install -g <a target="_blank" href="https://www.npmjs.com/package/node-lambda">
+   node-lambda</a>
+   </strong></tt>
 
-### Database idle costs money! #
+0. Describe tests in a JSON file.
 
-   "You never pay for idle" Austen says 
-   in an interview with by CloudAcademy <a target="_blank" href="https://www.youtube.com/watch?v=pvmx0IVfBLc">
-   Introduction to the Serverless Paradigm</a> [23:50]
-
-   WRONG! While Lambda does not incur charges while idle,
-   DynamoDB,, which Amazon touts as the default database, do incur charges for <strong>data stored</strong> (even though no data is read or written to it).
-
-   PROTIP: On AWS use <strong>SimpleDB instead of DynamoDB</strong> for true no-cost idle.
-
-### Control
-
-PROTIP: The other side of freedom from server hassles is that developers also give away <strong>control</strong>.
-
-Having one's data in another company's cloud requires trust in that company's
-ability to keep data secure, redundant, and pricing fair.
-
-PROTIP: Going with a particular vendor's API means that you need to keep up
-with changes in APIs that can occur frequently,
-even though they may not apply to your own operation.
-
-There is the danger of vendor lock-in.
-
-But frameworks have emerged to allieviate that:
 
 
 ## Serverless Coding Frameworks
@@ -1141,40 +1188,11 @@ which stores project metadata in S3.
 
 
 
-<a name="LocalTesting"></a>
-
-## Local Runs for testing #
-
-For a "test-first" approach to achieve code maturity,
-doing test runs locally before committing to a team branch is important.
-
-Let's examine the choices to emulate AWS Lambda locally:
-
-* <a target="_blank" href="https://www.npmjs.com/package/local-node-lambda">
-   local-node-lambda</a>
-
-* <a target="_blank" href="https://github.com/ashiina/lambda-local">
-   ashiina/lambda-local</a>
-
-0. Install the "Command line tool for <strong>locally running</strong>
-   and remotely deploying your node.js applications to Amazon Lambda."
-   from <a target="_blank" href="https://github.com/motdotla/node-lambda">
-   github.com/motdotla/node-lambda</a>
-
-   <tt><strong>
-   npm install -g <a target="_blank" href="https://www.npmjs.com/package/node-lambda">
-   node-lambda</a>
-   </strong></tt>
-
-0. Describe tests in a JSON file.
-
 <a name="ToProd"></a>
 
-## Going to production #
+## Production limits & prep #
 
-By default, AWS Lambda limits the total concurrent executions across all functions within a given region to 100. This is a safety limit to protect you from costs due to potential runaway or recursive functions during initial development and testing. To increase this limit above the default, request a limit increase for concurrent executions at:
-
-   http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html#increase-concurrent-executions-limit
+By default, AWS Lambda limits the total concurrent executions across all functions within a given region to <strong>100</strong>. This is a safety limit to protect users from costs due to potential runaway or recursive functions during initial development and testing. To increase this limit above the default, request a limit increase for concurrent executions <a target="_blank" href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html#increase-concurrent-executions-limit">here</a>.
 
 
 <a name="Libraries"></a>
@@ -1195,9 +1213,19 @@ React Serverless app running in Azure?
    https://github.com/99xt/serverless-dynamodb-local</a>
 
 
-## Resources
+## Rock Stars #
 
-### Rock Stars #
+Adnan Rahić (<a target="_blank" href="https://twitter.com/adnanrahic">@adnanrahic</a>, bookvar.co founder)
+$50 Packt <a target="_blank" href="https://www.packtpub.com/web-development/serverless-javascript-example-video">Serverless JavaScript by Example [Video]</a> December, 2017
+
+Yan Cui (<a target="_blank" href="https://theburningmonk.com/">theburningmonk.com</a>) is an AWS Serverless Hero and author of <a target="_blank" href="https://www.manning.com/livevideo/production-ready-serverless?a_aid=aws-lambda-in-motion&a_bid=9318fc6f">Production-Ready Serverless: Operational Best Practices</a> 9h video course thru Manning. Subjects include:
+
+   * API Gateway, VPC
+   * Testing, Debugging, CI/CD, Canary Deployments
+   * Process real-time events with Kinesis & Lambda
+   * Logging, Monitoring, X-Ray, Correlation IDs, Performance, Error Handling
+   * Lambda limits, Managing Configurations, 
+
 
 <a name="PhillipMuens"></a>
 Phillip Muens (@pmmuens, github.com/pmuens) from Germany
@@ -1243,15 +1271,13 @@ John McKim  @johncmckim  blogs on Medium:
 
 CNCF
 
-   * <a target="_blank" href="https://github.com/cncf/wg-serverless/blob/master/whitepaper/cncf_serverless_whitepaper_v1.0.pdf">white paper PDF</a> in 
-   https://github.com/cncf/wg-serverless
-   from the Kubernetes folks
+   * <a target="_blank" href="https://github.com/cncf/wg-serverless/blob/master/whitepaper/cncf_serverless_whitepaper_v1.0.pdf">white paper PDF</a> in repo
+   <a target="_blank" href="https://github.com/cncf/wg-serverless">https://github.com/cncf/wg-serverless</a> from the Kubernetes folks
 
-### Linuxacademy.com
+Andru Estes
 
-* <a target="_blank" href="https://beta.linuxacademy.com/#/hands-on-labs/details/f2b58b6b-2a05-435a-8746-ca1ff25b9773?redirect_uri=https://app.linuxacademy.com/search?query=c%23">Creating a Simple AWS Lambda Function</a>
-[30m] Jul 22, 2018
-by Andru Estes
+   * <a target="_blank" href="https://beta.linuxacademy.com/#/hands-on-labs/details/f2b58b6b-2a05-435a-8746-ca1ff25b9773?redirect_uri=https://app.linuxacademy.com/search?query=c%23">Creating a Simple AWS Lambda Function</a> [30m] Jul 22, 2018
+
 
 ### Pluralsight video tutorials
 
@@ -1262,8 +1288,7 @@ by Rob Conery
 
 Azure:
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/azure-serverless-applications">Building Serverless Applications in Azure</a> 15 Aug 2017, 4h 7m
-by Mark Heath
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/azure-serverless-applications">Building Serverless Applications in Azure</a> 15 Aug 2017, 4h 7m by Mark Heath
 
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-serverless-functions-create">Microsoft Azure Developer: Create Serverless Functions</a>
 
@@ -1286,9 +1311,10 @@ Google:
 <a target="_blank" href="http://engineeringjobs4u.co.uk/serverless-instant-checkout-links-with-square-square-corner-blog-medium">
 Serverless Instant Checkout Links with Square – Square Corner Blog</a>
 
-https://hackernoon.com/a-crash-course-on-serverless-apis-with-express-and-mongodb-77774f7730fe
+<a target="_blank" href="https://hackernoon.com/a-crash-course-on-serverless-apis-with-express-and-mongodb-77774f7730fe">
+A crash course on Serverless APIs with Express and MongoDB</a>
 
-https://blog.runscope.com/posts/how-to-write-your-first-aws-lambda-function
+<a target="_blank" href="https://blog.runscope.com/posts/how-to-write-your-first-aws-lambda-function">how-to-write-your-first-aws-lambda-function</a>
 
 <a target="_blank" href="https://goo.gl/JXyRyo">Taking Serverless and AI to the Next Level</a> February 27, 2018
 by Yaron Haviv, Tomer Rosenthal
@@ -1298,9 +1324,9 @@ Building Serverless Application Pipelines</a> March 6, 2018
 https://www.cncf.io/wp-content/uploads/2018/03/cncf-serverless-webinar.pdf
 by Sebastien Goasguen
 
-https://techbeacon.com/50-best-starter-kits-resources-building-serverless-apps
+### Lists:
 
-https://github.com/awslabs/serverless-application-model
+<a target="_blank" href="https://techbeacon.com/50-best-starter-kits-resources-building-serverless-apps">https://techbeacon.com/50-best-starter-kits-resources-building-serverless-apps</a>
 
 
 ## More on Clouds #
