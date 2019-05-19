@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Tricentis"
-excerpt: "Model-based /"codeless/" functional testing"
+title: "Tricentis Tosca"
+excerpt: "Model-based functional testing through the lifecycle"
 tags: [testing]
 image:
 # ![tricentis-denys-1900x500-135601.jpg
