@@ -355,14 +355,13 @@ A Mac can only be used with a <a target="_blank" href="https://wilsonmar.github.
    ### Download installer
 
    <a target="_blank" href="https://www.youtube.com/watch?v=AmVSxxe5Cns&t=9m32s">VIDEO:</a>
-
-1. From the Support page, select <strong>Downloads</strong> from the top menu:
+   says from the Support page, select <strong>Downloads</strong> from the top menu:
 
    <a target="_blank" href="https://support.tricentis.com/community/top_downloads.do">https://support.tricentis.com/community/top_downloads.do</a>
 
    <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?lang=en&version=12.1.0&url=installation_tosca/installation_process.htm">Documentation</a>
 
-   BLAH: I don't see installer exe files.
+   BLAH: I don't see installer exe files. Support told me to:
 
 1. Highlight this "Free Trials" URL to pasting inside the Windows machine:
 
@@ -394,6 +393,10 @@ A Mac can only be used with a <a target="_blank" href="https://wilsonmar.github.
 1. Check "Check to restart after setup completion", then click Finish.
 1. Click "Yes" to confirm restart.
 1. Reconnect if you're running a virtual instance.
+1. When the machine boots up again, click the Windows icon to see this:
+
+   ![tosca-added-224x146-4301](https://user-images.githubusercontent.com/300046/57989337-8645ac80-7a56-11e9-9149-7fd0d343f759.jpg)
+
 
 
 ### Get Product License
