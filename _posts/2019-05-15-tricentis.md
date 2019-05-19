@@ -43,12 +43,14 @@ orders@eventbrite.com
 
 Consulting supporters:
 
-* Jeff Wilkinson, Managing Director, Accenture; 
+* Jeff Wilkinson, Managing Director, Accenture
 * Ramesh Pai, Global Head, NextGen QA, Wipro
 
 ## Competition for Software Test Automation
 
 Tricentis is the only vendor to achieve “leader” status in all three top analyst reports (i.e., the “Triple Crown.”).
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/57989461-0caebe00-7a58-11e9-818c-006fb0f1b3d6.jpg"><img alt="tosca-gartner-2018-1040x1084-30373.jpg" width="1040" height="1084" src="https://user-images.githubusercontent.com/300046/57989461-0caebe00-7a58-11e9-818c-006fb0f1b3d6.jpg"></a>
 
 Tosca is called a <a target="_blank" href="https://www.tricentis.com/products/robotic-process-automation/model-based-automation/">"model-based"</a> test automation tool because automated tests are conducted based a database of metadata extracted from the application under test.
 
@@ -398,14 +400,12 @@ A Mac can only be used with a <a target="_blank" href="https://wilsonmar.github.
    ![tosca-added-224x146-4301](https://user-images.githubusercontent.com/300046/57989337-8645ac80-7a56-11e9-9149-7fd0d343f759.jpg)
 
 
-
 ### Get Product License
 
-<a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?lang=en&version=12.1.0&url=licensing/lic_administering_licenses.htm
+NOTE: <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?lang=en&version=12.1.0&url=licensing/lic_administering_licenses.htm
 ">Instructions below are based on Tosca version 12.1</a>.
 
 Instead of getting a <a target="_blank" href="http://www.tricentis.com/tricentis-tosca-testsuite/trial/">Tricentis Tosca Testsuite 14-day Trial license here</a>.
-
 
 1. Verify your email address.
 
