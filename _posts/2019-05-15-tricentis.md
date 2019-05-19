@@ -14,18 +14,37 @@ comments: true
 <hr />
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/tricentis/">This article</a> is a concise, hands-on, step-by-step tutorial about learning and using <a target="_blank" href="https://www.tricentis.com/">Tricentis</a> Tosca for functional continuous testing.
+<a target="_blank" href="https://wilsonmar.github.io/tricentis/">This article</a> is a concise yet deep dive, hands-on, step-by-step tutorial about learning and using <a target="_blank" href="https://www.tricentis.com/">Tricentis</a> Tosca for continuous functional testing.
 
 ## The company
 
 <a target="_blank" href="https://www.glassdoor.com/Reviews/Tricentis-Reviews-E346785.htm">
 On Glassdoor</a> 66% of employees would recommend Tricentis to a friend and 82% approve of the (Stanford MBA) CEO <a target="_blank" href="https://www.linkedin.com/in/sandeepjohri/">Sandeep Johri</a> (as of this writing).
 
-The Tricentis HQ is in Austria (Leonard-Bernstein Straße 10, 1220 Vienna).
-Tricentis also has an office in Jersey City, United States.
-It has a presence in Australia, Belgium, Denmark, Germany, India, Netherlands, Singapore, Switzerland, Poland, and the UK.
+* Wolfgang Platz, Founder & CPO, Tricentis
+* Wayne Ariola, Tricentis
+
+Tricentis is based in Austria (Leonard-Bernstein Straße 10, 1220 Vienna).
+In the United States, Tricentis has an office in Jersey City and Silicon Valley.
+It also has a presence in Australia, Belgium, Denmark, Germany, India, Netherlands, Singapore, Switzerland, Poland, and the UK.
 
 PROTIP: The company does not allow communication with consumer email accounts such as gmail, hotmail, outlook, etc.
+
+## Conferences
+
+Each year the company hosts conferences in <a target="_blank" href="https://www.tricentis.com/accelerate/san-francisco/">San francisco</a> in the Spring and Vienna in the Fall.
+
+<a target="_blank" href="https://www.tricentis.com/accelerate/san-francisco/watch-live/">Register for the live stream</a>
+
+The conference has a mobile app "Tricentis Accelerate" (by Attendify).
+Get an event code to register.
+
+orders@eventbrite.com
+
+Consulting supporters:
+
+* Jeff Wilkinson, Managing Director, Accenture; 
+* Ramesh Pai, Global Head, NextGen QA, Wipro
 
 ## Competition for Software Test Automation
 
@@ -44,7 +63,7 @@ Being able to work on the model rather than script programming "democratizes" wh
 
 Non-programmers can rapidly create and manage sophisticated end-to-end tests—without waiting on “technical” resources. 
 
-## Users in the wild
+## Customers in the wild
 
 Tricentis has identified customers as including global enterprises such as Allianz, ANZ Bank, Cisco, Dolby, Experian, First Data, HSBC, Merck, Office Depot, Samsung, Swiss Re, Starbucks, Telstra, UBS, Vodafone, Whole Foods, and WorldPay. 
 Testimonials by customer employees:
@@ -120,23 +139,6 @@ Additionally:
    * Tricentis Tosca
    * Tosca Commander interacts with a Windows Active Directory (via TCP & UDP) to connectTosca Workspaces with a Common Repository using TCAPI
    Tosca Commander Interactive Testing communicates with the Interactive Testing Server and Interactive Testing Agent.
-
-## Conferences
-
-https://www.tricentis.com/accelerate/san-francisco/
-
-
-<a target="_blank" href="https://www.tricentis.com/accelerate/san-francisco/watch-live/">Register for the live stream</a>
-
-orders@eventbrite.com
-
-* Wolfgang Platz, Founder & CPO, Tricentis; 
-* Wayne Ariola, Tricentis
-
-Consulting supporters:
-
-* Jeff Wilkinson, Managing Director, Accenture; 
-* Ramesh Pai, Global Head, NextGen QA, Wipro
 
 
 ## Certifications
@@ -302,9 +304,9 @@ A Mac can only be used with a <a target="_blank" href="https://wilsonmar.github.
 1. Click Download. Save file.
 
    Within an Amazon Workspaces instance, Downloads would be in<br />
-   <tt>D:\Users\<em>UserName</em>\Downloads</tt>
+   <pre>D:\Users\<em>UserName</em>\Downloads</pre>
 
-1. When download is completed, double-click on the downloaded file to install to 
+1. When download is completed, double-click on the downloaded file to install to a folder named like:
 
    NDP471-KB4033342-x86-x64-AllOS-ENU
 
@@ -317,15 +319,23 @@ A Mac can only be used with a <a target="_blank" href="https://wilsonmar.github.
    On Windows 10:
 1. Click the Search icon. Type "Adv" to select "Advanced System Settings" of "Control Panel".
 1. Click "Environment Variables...". In the section System Variables section, click "New...".
-1. Type in Varible Name: `TRICENTIS_PROJECTS` with value such as `C:\Tosca_Projects` for where Tosca project data is stored. Click "OK".
+1. Type in Varible Name: `TRICENTIS_PROJECTS` with value such as `C:\Tosca_Projects` for where Tosca project data is stored. On cloud instances, specify 
+
+   `D:\Users\wilsonmar@gmail.com\Downloads\Tosca_Projects`
+
+1. Click "OK".
 
    #### TRICENTIS_HOME
 
 1. Still in "Environment Variables...", again click "New...".
-1. Type in Varible Name: `TRICENTIS_HOME` with value such as<br />
-   `C:\Program Files (x86)\TRICENTIS\Tosca Toolsuite"` for where Tosca project data is stored. Click "OK".
+1. Type in Varible Name: `TRICENTIS_HOME` with value for where Tosca project data is stored, such as:
 
-   The <strong>Tosca Commander</strong> executable is installed by running installation file TOSCA<em>version number</em>.exe such as `TOSCA12.1.exe`.
+   `C:\Program Files (x86)\TRICENTIS\Tosca Toolsuite"`
+   
+1. Click "OK".
+
+
+
 
 1. Switch to Advanced System Variables for "New..." variable `TRICENTIS_HOME` for where  executables are installed. The following 64-bit executable files installed are processor-independent:
 
@@ -367,6 +377,24 @@ A Mac can only be used with a <a target="_blank" href="https://wilsonmar.github.
 
    Version 12.1 is 1.0 GB.
    
+1. Double-click on the <strong>Tosca Commander</strong> executable named TOSCA<em>version number</em>.exe such as `TOSCA12.1.exe`.
+1. Click OK to install Microsoft pre-requisites.
+
+1. Click "Next".
+1. Check "I accept the terms in the license agreement", then "Next".
+1. To avoid connections, uncheck "Help improve Tricentis...", "Next".
+1. The default folder to install is 
+
+   `C:\Program Files (x86)\TRICENTIS\Tosca Testsuite`
+
+1. Click OK.
+1. Click Next.
+1. Click Next to default "Tosca Commander".
+1. Click Install. Wait several minutes for it to finish.
+1. Check "Check to restart after setup completion", then click Finish.
+1. Click "Yes" to confirm restart.
+1. Reconnect if you're running a virtual instance.
+
 
 ### Get Product License
 
