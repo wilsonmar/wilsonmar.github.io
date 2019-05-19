@@ -16,7 +16,20 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/tricentis/">This article</a> is a concise, hands-on, step-by-step tutorial about learning and using <a target="_blank" href="https://www.tricentis.com/">Tricentis</a> Tosca for functional continuous testing.
 
+## The company
+
+<a target="_blank" href="https://www.glassdoor.com/Reviews/Tricentis-Reviews-E346785.htm">
+On Glassdoor</a> 66% of employees would recommend Tricentis to a friend and 82% approve of the (Stanford MBA) CEO <a target="_blank" href="https://www.linkedin.com/in/sandeepjohri/">Sandeep Johri</a> (as of this writing).
+
+The Tricentis HQ is in Austria (Leonard-Bernstein Straße 10, 1220 Vienna).
+Tricentis also has an office in Jersey City, United States.
+It has a presence in Australia, Belgium, Denmark, Germany, India, Netherlands, Singapore, Switzerland, Poland, and the UK.
+
+PROTIP: The company does not allow communication with consumer email accounts such as gmail, hotmail, outlook, etc.
+
 ## Competition for Software Test Automation
+
+Tricentis is the only vendor to achieve “leader” status in all three top analyst reports (i.e., the “Triple Crown.”).
 
 Tosca is called a <a target="_blank" href="https://www.tricentis.com/products/robotic-process-automation/model-based-automation/">"model-based"</a> test automation tool because automated tests are conducted based a database of metadata extracted from the application under test.
 
@@ -33,6 +46,9 @@ Non-programmers can rapidly create and manage sophisticated end-to-end tests—w
 
 ## Users in the wild
 
+Tricentis has identified customers as including global enterprises such as Allianz, ANZ Bank, Cisco, Dolby, Experian, First Data, HSBC, Merck, Office Depot, Samsung, Swiss Re, Starbucks, Telstra, UBS, Vodafone, Whole Foods, and WorldPay. 
+Testimonials by customer employees:
+
 * Credit Karma - Ash Coleman, Head of Diversity & Inclusion, 
 * Anthem - Adam Satterfield, Director of Testing & Quality 
 * BNP Paribas - Philippe Buron
@@ -40,9 +56,6 @@ Non-programmers can rapidly create and manage sophisticated end-to-end tests—w
 ## SAP
 
 Tosca's architecture enables Tosca to enable resilient test automation—for 150+ technologies, including SAP.
-
-Tosca is based in Austria (Leonard-Bernstein Straße 10, 1220 Vienna).
-So it's no surprise that Toscas works with SAP based in Germany.
 
 In May 2019 Tricentis bought <a target="_blank" href="https://www.tricentis.com/blog/intellicorp-change-impact-sap-1/">LiveCompare</a> for SAP change impact analysis from IntelliCorp, a pioneer smart systems company.
 
@@ -232,13 +245,22 @@ The coaching session is delivered on site by a certified Practitioner Trainer wh
 
 ## Documentation
 
-Documentation is available both <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?lang=en&version=12.1.0&url=resources/webhelp/cover_web.htm">On-line</a> and, alternately, off-line after download:
+1. A matrix of links to documentation for each specific version is at: 
 
-1. Create a folder to hold Tosca stuff and cd to it.
+   <a target="_blank" href="https://support.tricentis.com/community/manuals_archive.do">https://support.tricentis.com/community/manuals_archive.do</a>
+
+   Click the "Enter" under the <strong>Online</strong> heading associated with each version, for an URL such as this for version 12.1:
+
+   <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?lang=en&version=12.1.0&url=resources/webhelp/cover_web.htm">https://support.tricentis.com/community/manuals_detail.do?lang=en&version=12.1.0&url=resources/webhelp/cover_web.htm</a>
+   
+   PROTIP: This is preferred because if you have a question, you have a URL to a specific page that can be easily shared with Support and others.
+
+   Alternately, off-line after download:
+
+1. Create a folder on your machine to hold files and cd into it.
 1. Get to the documentation download page at:
 
-   <a target="_blank" href="https://support.tricentis.com/community/downloads.do">https://support.tricentis.com/community/downloads.do</a> or<br />
-   <a target="_blank" href="https://support.tricentis.com/community/manuals_archive.do">https://support.tricentis.com/community/manuals_archive.do</a>
+   <a target="_blank" href="https://support.tricentis.com/community/downloads.do">https://support.tricentis.com/community/downloads.do</a>
 
 1. Click to download "Tricentis Tosca 12.1 Documentation.zip" (the latest version as of this writing).
 
@@ -260,63 +282,99 @@ Repeat for "Tricentis_Analytics 12.1_Documentation.zip"
 
 ## Windows Installation
 
+The following is based on <a target="_blank" href="https://documentation.tricentis.com/en/1110/content/installation_tosca/installation_process.htm">this page</a>.
+
 A Mac can only be used with a <a target="_blank" href="https://wilsonmar.github.io/windows-on-apple-mac-osx/">virtual server instance running Windows</a>.
 
-The Tosca Server is installed on Windows using local administrator rights.
+1. The Tosca Server is installed on Windows using <strong>local administrator rights</strong>. So make sure you have that associated with the user account being used.
 
-1. Once the Windows server instance is available...
+   Once the Windows server instance is available...
+
+1. Install the latest Windows updates of the category Critical (Windows 7, 8) or Quality (Windows 10). 
 
    ### .NET Framework
 
 1. Open the Firefox internet browser.
 1. Install Microsoft® .NET Framework Version 4.7.1 from:
 
-   https://www.microsoft.com/en-US/download/details.aspx?id=56116">https://www.microsoft.com/en-US/download/details.aspx?id=56116</a>
+   <a target="_blank" href="https://www.microsoft.com/en-US/download/details.aspx?id=56116">https://www.microsoft.com/en-US/download/details.aspx?id=56116</a>
 
-2. Click Download. Save file.
-1. When download is completed, double-click on the downloaded file to install.
+1. Click Download. Save file.
+
+   Within an Amazon Workspaces instance, Downloads would be in<br />
+   <tt>D:\Users\<em>UserName</em>\Downloads</tt>
+
+1. When download is completed, double-click on the downloaded file to install to 
+
+   NDP471-KB4033342-x86-x64-AllOS-ENU
+
 1. Click Yes to allow file to make changes.
 1. "I have read ..." and click Install.
-1. 
+1. Restart.
 
-The Tosca Server is installed to the folder defined by system variable `%TRICENTIS_PROJECTS%` with value such as `C:\Tosca_Projects`.
+   ### Environment Variables
 
-The <strong>Tosca Commander</strong> executable is installed by running installation file TOSCA<em>version number</em>.exe such as `TOSCA12.1.exe`.
+   On Windows 10:
+1. Click the Search icon. Type "Adv" to select "Advanced System Settings" of "Control Panel".
+1. Click "Environment Variables...". In the section System Variables section, click "New...".
+1. Type in Varible Name: `TRICENTIS_PROJECTS` with value such as `C:\Tosca_Projects` for where Tosca project data is stored. Click "OK".
 
-Executables are installed to directory `%TRICENTIS_HOME%` includes the following 64-bit executable files that are processor-independent:
+   #### TRICENTIS_HOME
+
+1. Still in "Environment Variables...", again click "New...".
+1. Type in Varible Name: `TRICENTIS_HOME` with value such as<br />
+   `C:\Program Files (x86)\TRICENTIS\Tosca Toolsuite"` for where Tosca project data is stored. Click "OK".
+
+   The <strong>Tosca Commander</strong> executable is installed by running installation file TOSCA<em>version number</em>.exe such as `TOSCA12.1.exe`.
+
+1. Switch to Advanced System Variables for "New..." variable `TRICENTIS_HOME` for where  executables are installed. The following 64-bit executable files installed are processor-independent:
 
    * TOSCACommander.exe
    * TCShell.exe
    * DbRepositorySchemaMigrator.exe
 
-The 64-bit Tosca Commander are installed with standard AddIns (Tosca Requirements, Tosca TestCase-Design, Tosca Reporting, and Tosca Structured Objects).
+1. Click 
+   The 64-bit Tosca Commander are installed with standard AddIns (Tosca Requirements, Tosca TestCase-Design, Tosca Reporting, and Tosca Structured Objects).
 
-These run in either 32 (*X86.exe) or 64-bit mode, depending on whether Tosca Commander is started in a 64-bit or 32-bit operating system.
-
-
-A <strong>Tosca Commander</strong> agent are installed on Windows machines to invoke tests and receive results.
+   These run in either 32 (*X86.exe) or 64-bit mode, depending on whether Tosca Commander is started in a 64-bit or 32-bit operating system.
 
 
-### Course Access
-
-1. To access the class in the <a target="_blank" href="https://support.tricentis.com/">Support Portal</a>, click on "My Assets" -> Academy at URL:
-
-   https://tricentis.csod.com/LMS/catalog/Welcome.aspx?tab_page_id=-67&tab_id=-1
-
-1. Click "My courses".
-2. Click "Open Curriculum" for Level 1 or 2.
-
-   PROTIP: To speed up videos, click the gear icon and instead of "Normal", select "1.5".
-
-   PROTIP: Use an additional monitor so you can see the tutorial on one screen and your notes in another screen.
+   A <strong>Tosca Commander</strong> agent is installed on Windows machines to invoke tests and receive results.
 
 
+   ### Download installer
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=AmVSxxe5Cns&t=9m32s">VIDEO:</a>
+
+1. From the Support page, select <strong>Downloads</strong> from the top menu:
+
+   <a target="_blank" href="https://support.tricentis.com/community/top_downloads.do">https://support.tricentis.com/community/top_downloads.do</a>
+
+   <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?lang=en&version=12.1.0&url=installation_tosca/installation_process.htm">Documentation</a>
+
+   BLAH: I don't see installer exe files.
+
+1. Highlight this "Free Trials" URL to pasting inside the Windows machine:
+
+   <a target="_blank" href="https://www.tricentis.com/software-testing-tool-trial-demo/">https://www.tricentis.com/software-testing-tool-trial-demo</a>
+
+1. Click "Start Free Trial" under "Tosca".
+1. Enter your email and click "Get Started".
+1. Click "Save File" in the pop-up.
+1. While you wait for the download to finish, viewing progress depends on the browser. On Firefox, click the icon at the upper-right corner:
+
+   ![tosca-trial-download-firefox-413x100-4046](https://user-images.githubusercontent.com/300046/57981627-20760800-79f7-11e9-972d-de42235637ee.jpg)
+
+   Version 12.1 is 1.0 GB.
+   
 
 ### Get Product License
 
-Instructions below are based on Tosca version 12.1.
+<a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?lang=en&version=12.1.0&url=licensing/lic_administering_licenses.htm
+">Instructions below are based on Tosca version 12.1</a>.
 
 Instead of getting a <a target="_blank" href="http://www.tricentis.com/tricentis-tosca-testsuite/trial/">Tricentis Tosca Testsuite 14-day Trial license here</a>.
+
 
 1. Verify your email address.
 
@@ -338,6 +396,11 @@ Instead of getting a <a target="_blank" href="http://www.tricentis.com/tricentis
 
 1. Access the Tosca cloud license server Tricentis_Academy_Cloud.
 
+   https://support.tricentis.com/community/article.do?number=KB0013085
+   Knowledge Base article
+
+   ???
+
    ### Connect to a Cloud-hosted license server
 
    <a target="_blank" href="https://www.youtube.com/watch?v=mWebNjwzasM">
@@ -347,6 +410,24 @@ Instead of getting a <a target="_blank" href="http://www.tricentis.com/tricentis
 
 Ability to access the cloud server through the port TCP 443.
 
+  <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?lang=en&version=10.2.0&url=tosca_server/server_component_setup.htm">
+  License Server installation</a> process [The TCP port is set to 7070 by default]
+
+
+### Training Course Access
+
+1. To access the class in the <a target="_blank" href="https://support.tricentis.com/">Support Portal</a>, click on "My Assets" -> Academy at URL:
+
+   <a target="_blank" href="https://tricentis.csod.com/LMS/catalog/Welcome.aspx?tab_page_id=-67&tab_id=-1">https://tricentis.csod.com/LMS/catalog/Welcome.aspx?tab_page_id=-67&tab_id=-1</a>
+
+   Password field must be less than 20 characters.
+
+1. Click "My courses".
+2. Click "Open Curriculum" for Level 1 or 2.
+
+   PROTIP: To speed up videos, click the gear icon and instead of "Normal", select "1.5".
+
+   PROTIP: Use an additional monitor so you can see the tutorial on one screen and your notes in another screen.
 
 
 ## Workflow
