@@ -15,11 +15,11 @@ comments: true
 
 {% include _toc.html %}
 
-There are several ways to run Microsoft Windows on an Apple Mac osX computer.
+<a target="_blank" href="https://wilsonmar.github.io/windows-on-apple-mac-osx">This</a> describes several ways to run Microsoft Windows on an Apple MacOS.
 Each approach has its own advantages and disadvantages:
 
-* <a href="#Amazon">Amazon EC2 Cloud Images</a>
-* <a href="#WorkSpaces">On an internet browser to Amazon WorkSpaces</a>
+* <a href="#Amazon">Amazon EC2 Cloud Images</a> of server machines
+* <a href="#WorkSpaces">On an internet browser to Amazon WorkSpaces</a> (virtual Desktop machines)
 * <a href="#Docker">Docker Windows instance</a>
 * <a href="#Vagrant">Vagrant Virtualbox</a>
 * <a href="#BootCamp">BootCamp</a>
@@ -117,7 +117,7 @@ This makes for more stringent security, but also mean significant lag that affec
 1. Click blue "Launch WorkSpaces".
 1. Select the Directory and Subnets.
 
-   ### Users
+   ### Set-up Users
 
 1. Specify for each user his/her Username, First Name, Last Name, and Email for the Bundle selected.
 
@@ -131,36 +131,42 @@ This makes for more stringent security, but also mean significant lag that affec
 1. Click "Show All Users".
 1. Check the user.
 1. Click "Next Step".
-1. Select Bundle for the OS (with 80/80?)
+1. Select Bundle for the OS (with default 80 GB root and 50 GB user volume).
 1. Select Running Mode (AlwaysOn or AutoStop hours).
 1. Click "Next Step".
 
-1. Click Launch Workspace (for all users). Wait for the Workspace Console goes from PENDING to AVAILABLE (in green letters).
+1. Click Launch Workspace (for all users). 
+1. Wait (about 20 minutes) for the Workspace Console goes from PENDING to AVAILABLE (in green letters). 
+1. To refresh the page, type command+R or click the recycle icon.
 
    ### Amazon WorkSpaces Application Manager (WAM)
 
-1. Switch to return to managed users in the Amazon WorkSpaces Application Manager (WAM) at
+1. Switch to return to managed users in the Amazon WorkSpaces Application Manager (WAM) for your current region at:
 
    <a target="_blank" href="https://us-west-2.console.aws.amazon.com/wam/home">
-   https://us-west-2.console.aws.amazon.com/wam/home</a> for your current region.
+   https://us-west-2.console.aws.amazon.com/wam/home</a> 
 
    CAUTION: There is no moving WorkSpaces from one region to another.
+
+   There is a WAM Standard for additional functionality.
 
    ### Install WorkSpaces client
    
 1. In each user's email client, open the welcome email and click the link.
-1. Set your WorkSpaces credentials with a password.
+1. Set your WorkSpaces credentials with a password.s
 1. Highlight the registration code in the email and copy to your Clipboard.
    
 1. Choose the link for your laptop model at <br />
    <a target="_blank" href="http://clients.amazonworkspaces.com/">
    http://clients.amazonworkspaces.com</a> 
 
-1. Download and install the Chrome application to enable the proprietary PC over IP (PCoIP) protocol (from Teradici) to compress, encrypt and rapidly transport image pixels between client and server.
+1. Click to download the "WorkSpaces.pkg" to your Downloads folder.
 
    On a MacOS, it's file "WorkSpaces.pkg" (38.2 MB taking 115.3 MB space).
 
    On a Chromebook, click "ADD TO CHROME" at the upper-right corner.
+
+1. Switch to Finder and click to invoke the installer the Chrome application to enable the proprietary PC over IP (PCoIP) protocol (from Teradici) to compress, encrypt and rapidly transport image pixels between client and server.
 
 1. Double-click on the installer and click Continue and
    finally, Install. Provide your password when requested.
@@ -176,8 +182,9 @@ This makes for more stringent security, but also mean significant lag that affec
    Once linked up, you use the  AWS Management Console to select the users in your Active Directory who will receive a WorkSpace. 
 
 1. Open the app for the first time.
-1. Type your user name and password and choose Sign In.
-1. Paste the registration code and click Register.
+1. Type your <strong>user name</strong> and password and choose Sign In.
+1. Switch to your user's email client and highlight the registration code from the "Your Amazon WorkSpace" email, then paste on the form.
+1. Click Register.
 
    ### Repeat Login
 
