@@ -74,7 +74,7 @@ Tosca purchased qTest as part of the QASymphony acquisition in 2019.
 
 ### Component architecture
 
-![tosca-arch-890x492](https://user-images.githubusercontent.com/300046/57974321-9b95da80-7973-11e9-9415-948e1d1c0075.png)
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/57974321-9b95da80-7973-11e9-9415-948e1d1c0075.png"><img alt="tosca-arch-890x492.jpg" width="890" height="492" src="https://user-images.githubusercontent.com/300046/57974321-9b95da80-7973-11e9-9415-948e1d1c0075.png"></a>
 
 Tosca Commander components:
 
@@ -128,8 +128,8 @@ Consulting supporters:
 
 ## Certifications
 
-<a target="_blank" href="https://www.tricentis.com/academy/training-certifications">https://www.tricentis.com/academy/training-certifications has several tracks:<br />
-<img alt="tosca-Certification-1120x791.jpg" width="1120" src="https://user-images.githubusercontent.com/300046/57974050-58396d00-796f-11e9-84bb-7392f555ca52.jpg"></a>
+<a target="_blank" href="https://www.tricentis.com/academy/training-certifications">https://www.tricentis.com/academy/training-certifications</a> has several tracks:<br />
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/57974050-58396d00-796f-11e9-84bb-7392f555ca52.jpg"><img alt="tosca-Certification-1120x791.jpg" width="1120" height="791" src="https://user-images.githubusercontent.com/300046/57974050-58396d00-796f-11e9-84bb-7392f555ca52.jpg"></a>
 
    * Automation Specialist Level 1 & 2 (AS1 and AS2) is the prequesite to either
    * Automation Engineer Level 1 & 2 or
@@ -264,13 +264,20 @@ A Mac can only be used with a <a target="_blank" href="https://wilsonmar.github.
 
 The Tosca Server is installed on Windows using local administrator rights.
 
-1. Oncce the Windows server instance is available (in AWS Lightsail)?
+1. Once the Windows server instance is available...
 
+   ### .NET Framework
+
+1. Open the Firefox internet browser.
 1. Install Microsoft® .NET Framework Version 4.7.1 from:
 
-   https://www.microsoft.com/en-US/download/details.aspx?id=56116
+   https://www.microsoft.com/en-US/download/details.aspx?id=56116">https://www.microsoft.com/en-US/download/details.aspx?id=56116</a>
 
-2. 
+2. Click Download. Save file.
+1. When download is completed, double-click on the downloaded file to install.
+1. Click Yes to allow file to make changes.
+1. "I have read ..." and click Install.
+1. 
 
 The Tosca Server is installed to the folder defined by system variable `%TRICENTIS_PROJECTS%` with value such as `C:\Tosca_Projects`.
 
