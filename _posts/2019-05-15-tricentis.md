@@ -519,7 +519,9 @@ Ability to access the cloud server through the port TCP 443.
 
 1. Create a new <strong>workspace</strong>.
 
-   When a workspace is created, Subset Default objects are automatically imported or via the option Import Subset. the `Standard.tce` file is located at `%TRICENTIS_PROJECTS%\ToscaCommander`.
+   When a workspace is created with "Use workspace template" checked, Subset Default objects are automatically imported or via the option Import Subset in the file is located at: 
+   
+   `%TRICENTIS_PROJECTS%\ToscaCommander\Standard.tce`
 
    The Standard.tce file (default objects) contains Modules, pre-defined Virtual Folders, and Standard Reports.
 
@@ -529,9 +531,28 @@ Ability to access the cloud server through the port TCP 443.
 
    Each <strong>TestCase</strong> describes the sequence used for the verification of properties defined in specifications: the entries needed for the execution of the TestCase; the expected output or reactions to the entries on the part of the application to be tested; the expected follow-up conditions that result from the execution of the TestCase. The status of a test case goes from Planned, In work, to Completed.
 
+   ### Project Settings
+   
+1. Click PROJECT in menu.
+1. Click Settings.
+
+   The list provides an overiew of the various technical components:
+
+   * Commander
+   * Diagnostics
+   * Engine
+   * License
+   * Special Engines
+   * TBox
+   * TCase from XL
+   * TEx
+   * TOSCAViewer
+   * Tricentis Services
+   * Wizard
+
    ### Options
 
-   <a target="_blank" href=https://user-images.githubusercontent.com/300046/58023674-a06ea180-7acd-11e9-87c6-2cf2fad27e20.jpg"><img alt="tosca-options_enable_trend_charts-836x426-38631.jpg" width="836" height="426" src="https://user-images.githubusercontent.com/300046/58023674-a06ea180-7acd-11e9-87c6-2cf2fad27e20.jpg"></a>
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/58023674-a06ea180-7acd-11e9-87c6-2cf2fad27e20.jpg"><img alt="tosca-options_enable_trend_charts-836x426-38631.jpg" width="836" height="426" src="https://user-images.githubusercontent.com/300046/58023674-a06ea180-7acd-11e9-87c6-2cf2fad27e20.jpg"></a>
 
 
    ### UI Tour
@@ -574,6 +595,9 @@ Ability to access the cloud server through the port TCP 443.
    4. verify the price of the order and that the correct shipping costs have been applied
    5. log out of the Web Shop and close Internet Explorer
    <br /><br />
+
+   The weight is calculated from 2 to the power of (Frequency class + Damange class). 
+   So 2 to 4 + 4 = 2 to the power of 8 = 256.
 
 2. Design a logical <strong>test structure</strong> to see what you need to cover your Requirements. Use TestCase-Design to create combinations of possible TestCases.
 
