@@ -191,7 +191,7 @@ Bottom-up Component and Workflow description:
 
 <a target="_blank" href="https://vimeo.com/336797866">About the Tricentis Academy</a>
 
-1. All Tosca's <a target="_blank" href="https://vimeo.com/user29095750/videos">videos are stored in Vimeo</a> and <a target="_blank" hrerf="https://www.youtube.com/user/TRICENTIS
+1. All Tosca's <a target="_blank" href="https://vimeo.com/user29095750/videos">videos are stored in Vimeo</a> and <a target="_blank" href="https://www.youtube.com/user/TRICENTIS
 ">YouTube channel</a> and also referenced from Tosca's <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?lang=en&version=12.1.0&url=video/videos.htm">videos web page</a>.
 
    BLAH: Vimeo does not provide users with speed controls like YouTube does.
@@ -594,7 +594,7 @@ Ability to access the cloud server through the port TCP 443.
    Each should have:
 
    * Precondition
-   * (workflow steps) Order Product, Start Checkout, 
+   * (workflow steps) Order Product, Start Checkout to obtain a total price
    * Verification of prices
    * Confirmation
    * Verification of success
