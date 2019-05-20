@@ -547,7 +547,7 @@ Ability to access the cloud server through the port TCP 443.
    1. Configurations structure your test configuration parameters at one specific point in your repository.
    1. TestPlanning to plan software quality assurance (QA) activities across the application lifecycle.
    1. TestCasesDesign (red) to put test cases into a logical structure by creating a TestSheet to show all possible combinations of TestCases required to ensure full test coverage.   
-   1. TestCases (blue) to create TestCases, which are made up of a series of TestSteps.
+   1. TestCases (blue) ctrl+N, cntr+F, to create TestCases, which are made up of a series of TestSteps.
    1. Modules (orange) to create modules for use in TestCases. Modules contain technical information used to steer test objects.
    1. Execution (green) to see the logs and results of standard or exploratory test runs which can be sped up with distributed execution.
    1. Issues to manage undesired behavior of the system under test. Create new issues that come up during test execution, or link existing issues to a TestCase log.
@@ -591,6 +591,17 @@ Ability to access the cloud server through the port TCP 443.
 
    A <strong>Workspace</strong> is a local copy of certain parts of a repository for a whole project.
 
+   Each should have:
+
+   * Precondition
+   * (workflow steps) Order Product, Start Checkout, 
+   * Verification of prices
+   * Confirmation
+   * Verification of success
+   * Postcondition
+
+   TCP (Test Case Parameter) applies predefined values to various test cases for various object types (case sensitive naming), such as the browser used during testing.
+
 5. Configure <strong>tests</strong>. You can centrally manage test configuration parameters for your team.
 
    To scan, right-click:
@@ -599,8 +610,6 @@ Ability to access the cloud server through the port TCP 443.
 
    The scan pop-up dialog Advanced view:<br />
    <img width="600" alt="tosca-scan-adv" src="https://user-images.githubusercontent.com/300046/58025711-48866980-7ad2-11e9-99ef-2762d94b3de7.png">
-
-   TCP (Test Case Parameter) applies predefined values to various test cases for various object types (case sensitive naming).
 
 6. Prepare and perform the execution of your tests (see chapter "Execute tests").
 
