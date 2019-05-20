@@ -16,7 +16,7 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/tricentis/">This article</a> is a  hands-on, step-by-step tutorial about learning and using <a target="_blank" href="https://www.tricentis.com/">Tricentis</a> Tosca for continuous functional testing.
 
-The unique contribution of this article is a maticulously sequenced concise yet deep presentation, with PROTIPs along the way, so you can quickly come up to speed with the product.
+The unique contribution of this article is a maticulously sequenced concise yet deep presentation, with PROTIPs along the way, so you can quickly come up to speed with the product. All one this one page.
 
 <strong>CAUTION: This article is being constructed as of May 20, 2019.</strong>
 
@@ -67,7 +67,7 @@ The model approach also enables makes <a target="_blank" href="https://www.trice
 
 Being able to work on the model rather than script programming "democratizes" who can work on testing and automation. Business experts to contribute to test automation as well as eliminate the maintenance burden that erodes most test automation initiatives. Instead of programming a test automation framework, you scan the application’s UI or API to create a business-readable automation model.
 
-Non-programmers can rapidly create and manage sophisticated end-to-end tests—without waiting on “technical” resources. 
+Non-programmers can rapidly create and manage sophisticated end-to-end tests—without waiting on "technical" resources. They can focus on business processes, workflows, and other business data.
 
 ## Customers in the wild
 
@@ -106,7 +106,7 @@ Tosca Commander has a SAP Solution Manager 7.2 Integration.
 
    Alternately, off-line after download:
 
-1. Create a folder on your machine to hold files and cd into it.
+1. Create a folder on your machine to hold documentation files and cd into it.
 1. Get to the documentation download page at:
 
    <a target="_blank" href="https://support.tricentis.com/community/downloads.do">https://support.tricentis.com/community/downloads.do</a>
@@ -512,6 +512,8 @@ Ability to access the cloud server through the port TCP 443.
 
    PROTIP: Use an additional monitor so you can see the tutorial on one screen and your notes in another screen.
 
+   PROTIP: An error occurs if a user opens the course in more than one browser window.
+
 ## Tosca Commander 
 
 1. Create a new <strong>workspace</strong>.
@@ -535,7 +537,7 @@ Ability to access the cloud server through the port TCP 443.
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/57995524-c3726480-7a7f-11e9-9872-208b3dd70286.jpg"><img alt="tosca-menu-780x168-15363.jpg" width="780" height="168" src="https://user-images.githubusercontent.com/300046/57995524-c3726480-7a7f-11e9-9872-208b3dd70286.jpg"></a>
 
-   The blue icons at the top are for save, undo, redo.
+   The blue icons at the top are for save, undo, redo. The save icon is iconic (of a removeable "discette" used during the 1990's to store data).
 
    The left pane is for navigation, the middle page is the working pane.
 
@@ -572,15 +574,33 @@ Ability to access the cloud server through the port TCP 443.
 
 2. Design a logical <strong>test structure</strong> to see what you need to cover your Requirements. Use TestCase-Design to create combinations of possible TestCases.
 
-3. Create <strong>Modules</strong> that contain the technical information Tricentis Tosca needs to steer the system under test.
+3. Create <strong>Modules</strong> that contain the technical information Tricentis Tosca needs to steer the system under test. For steering, make an element uniquely identifiable in XScan:
 
-4. Create concrete <strong>TestCases</strong> out of your Modules. TestCases are a series of TestSteps that verify your specifications.
+   * Target's own properties or Parent of subordinate controls
+   * Anchor controls on the same page
+   * In relation to an image on the page
+   * Index (sequence of occurance of the same property on a web page)
+   * SmartID ?
+   <br /><br />
+
+   Right-click on a Module's <strong>attribute</strong> (that represent individual controls shown by the app) to Convert to ControlGroup with a name.
+
+   Rename and save each module after identifying its controls.
+
+4. Create concrete <strong>TestCases</strong> folders out of your Modules. TestCases are a series of TestSteps that verify requirements specifications.
+
+   A <strong>Workspace</strong> is a local copy of certain parts of a repository for a whole project.
 
 5. Configure <strong>tests</strong>. You can centrally manage test configuration parameters for your team.
 
    To scan, right-click:
    
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/57998101-2d453b00-7a8d-11e9-9ac7-f45ac98c03c8.jpg"><img alt="tosca-scan-344x230-8124.jpg" width="344" height="230" src="https://user-images.githubusercontent.com/300046/57998101-2d453b00-7a8d-11e9-9ac7-f45ac98c03c8.jpg"></a>
+
+   The scan pop-up dialog Advanced view:<br />
+   <img width="600" alt="tosca-scan-adv" src="https://user-images.githubusercontent.com/300046/58025711-48866980-7ad2-11e9-99ef-2762d94b3de7.png">
+
+   TCP (Test Case Parameter) applies predefined values to various test cases for various object types (case sensitive naming).
 
 6. Prepare and perform the execution of your tests (see chapter "Execute tests").
 
