@@ -147,7 +147,7 @@ This diagram at the <a target="_blank" href="https://tricentis.csod.com/LMS/cata
 
 Tosca Commander components:
 
-   * Requirements Management
+   * Requirements Management (<a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?lang=en&version=12.1.0&url=requirements/rqm_introduction.htm">icons</a>)
    * TestCase Design
    * TestPlanning
    * Reporting
@@ -523,6 +523,10 @@ Ability to access the cloud server through the port TCP 443.
    JSON files (documents) are loaded into Resources for manipulation. Resources require unique names to be assigned to them. Resources can be used multiple times within the same TestCase. When test execution finishes, used resources are discarded and can no longer be used across multiple TestCases.
 
    Each <strong>TestCase</strong> describes the sequence used for the verification of properties defined in specifications: the entries needed for the execution of the TestCase; the expected output or reactions to the entries on the part of the application to be tested; the expected follow-up conditions that result from the execution of the TestCase. The status of a test case goes from Planned, In work, to Completed.
+
+   ### Options
+
+   <a target="_blank" href=https://user-images.githubusercontent.com/300046/58023674-a06ea180-7acd-11e9-87c6-2cf2fad27e20.jpg"><img alt="tosca-options_enable_trend_charts-836x426-38631.jpg" width="836" height="426" src="https://user-images.githubusercontent.com/300046/58023674-a06ea180-7acd-11e9-87c6-2cf2fad27e20.jpg"></a>
 
 
    ### UI Tour
