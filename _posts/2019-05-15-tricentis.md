@@ -321,7 +321,7 @@ https://support.tricentis.com/community/downloads.do
 
 ### Automation Specialist Practitioner training
 
-<a target="_blank" href=https://user-images.githubusercontent.com/300046/58036402-3f07fc00-7ae8-11e9-9040-039e6e8dec87.jpg"><img align="right" alt="tosca-wheel-295x296-10687.jpg" width="295" height="295" src="https://user-images.githubusercontent.com/300046/58036402-3f07fc00-7ae8-11e9-9040-039e6e8dec87.jpg"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/58036402-3f07fc00-7ae8-11e9-9040-039e6e8dec87.jpg"><img align="right" alt="tosca-wheel-295x296-10687.jpg" width="295" height="295" src="https://user-images.githubusercontent.com/300046/58036402-3f07fc00-7ae8-11e9-9040-039e6e8dec87.jpg"></a>
 
 The Automation Specialist Practitioner course is deliveryed on-site by a certified Practitioner Trainer as an instructor-led  hands-on coaching session that builds on core skills developed in Tricentis online trainings with skills to apply on a custom (your own) SUT (System Under Test) and its unique requirements. 
 The coaching session is delivered on site .
