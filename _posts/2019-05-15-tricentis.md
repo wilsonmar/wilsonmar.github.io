@@ -52,7 +52,7 @@ Tricentis is the only vendor to achieve “leader” status in all three top ana
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/57989461-0caebe00-7a58-11e9-818c-006fb0f1b3d6.jpg"><img alt="tosca-gartner-2018-1040x1084-30373.jpg" width="1040" height="1084" src="https://user-images.githubusercontent.com/300046/57989461-0caebe00-7a58-11e9-818c-006fb0f1b3d6.jpg"></a>
 
-Tosca is called a <a target="_blank" href="https://www.tricentis.com/products/robotic-process-automation/model-based-automation/">"model-based"</a> test automation tool because automated tests are conducted based a database of metadata extracted from the application under test during scans.
+Tosca is called a <a target="_blank" href="https://www.tricentis.com/products/robotic-process-automation/model-based-automation/">"model-based"</a> test automation tool because automated tests are conducted based a database of metadata (technical information) extracted from the application under test during scans.
 
 Because test cases are generated from the model, changes in the app's model (requirements) all impacted test cases can be automatically updated as well.
 This tremendously reduces test case maintenance.
@@ -150,7 +150,7 @@ Tosca Commander components:
    * Test Data Management (TDM) communicates with a TDM Repository
    * Tosca CI Remote Execution Service communicates with a Tosca CI Client on a Build server
    * Tosca Distribution Agent coordinates with Tosca Server and License server
-   * Its Engines 3.0 is used to perform GUI and non-GUI tests and its TBox framework containing (tree-like) hierarchically structured XModules to steer test objects.
+   * Its Engines 3.0 is used to perform GUI and non-GUI tests and its TBox framework containing (tree-like) hierarchically structured XModules to <strong>steer</strong> test objects.
 
 Tosca (IIS) Server has a REST API Service and Tosca Workspaces working with the License Server and Tosca Connect.
 
@@ -219,13 +219,15 @@ Specialty classes:
    * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/tdm-studio-specialist-level-1/">TDM (Test Data Management) Studio Specialist</a>
    <br /><br />
 
-This diagram at the <a target="_blank" href="https://tricentis.csod.com/LMS/catalog/Welcome.aspx?tab_page_id=-67&tab_id=-1">academy login page</a> shows the progression of certifications with names that are the opposite of what AWS and Azure use:
+This diagram at the <a target="_blank" href="https://tricentis.csod.com/LMS/catalog/Welcome.aspx?tab_page_id=-67&tab_id=-1">academy login page</a> shows the progression of certifications:
 
 ![tricentis-certs-417x152-5133](https://user-images.githubusercontent.com/300046/57994347-f74a8b80-7a79-11e9-8a63-bc2217df569f.jpg)
 
    1. Tricentis Certified Professional
    2. Tricentis Certified Specialist
    3. Tricentis Certified Expert
+
+PROTIP: The above names are the opposite of what AWS and Azure use.
 
 ### Initial certifications
 
@@ -410,6 +412,7 @@ A Mac can only be used with a <a target="_blank" href="https://wilsonmar.github.
    * TOSCACommander.exe
    * TCShell.exe
    * DbRepositorySchemaMigrator.exe
+   <br /><br />
 
 1. Click OK.
 1. Click Next.
@@ -503,20 +506,56 @@ Ability to access the cloud server through the port TCP 443.
 
 1. Create a new <strong>workspace</strong>.
 
-   ![tosca-menu-780x168-15363](https://user-images.githubusercontent.com/300046/57995524-c3726480-7a7f-11e9-9872-208b3dd70286.jpg)
+   As with other Windows UI apps, a ribbon appears for each menu item
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/57995524-c3726480-7a7f-11e9-9872-208b3dd70286.jpg"><img alt="tosca-menu-780x168-15363.jpg" width="780" height="168" src="https://user-images.githubusercontent.com/300046/57995524-c3726480-7a7f-11e9-9872-208b3dd70286.jpg"></a>
+
+   The blue icons at the top are for save, undo, redo.
+
+   Window tabs (such as "test cases") makes it easier to use the mouse among sections,
+   listed alphabetically:
+
+   * BI-Testing
+   * Configurations
+   * Execution
+   * Issues
+   * Modules
+   * Reporting
+   * Requirements
+   * TestCasesDesign
+   * TestCases
+   * TestPlanning
+   <br /><br />
+
+   The left pane is for navigation, the middle page is the working pane.
+
+   A <strong>subset</strong> is a file containing Tosca artifacts which can be shared with other projects using import and export. These have file extension ".tce", such as:
+
+   AutomationSpecialistI_BaseSubset.tce dated Feb 2, 2017.
 
 
 ## Workflow
 
-1. Identify the criteria which the system under test is expected to fulfill, then create a clear Requirement structure that reflects these criteria.
+1. Identify the <strong>criteria</strong> which the system under test is expected to fulfill, then create a clear Requirement structure that reflects these criteria.
 
-2. Design a logical test structure to see what you need to cover your Requirements. Use TestCase-Design to create combinations of possible TestCases.
+   1. open and login to the Web Shop
+   2. order the product “Blue Jeans”
+   3. check out and pay using a credit card
+   4. verify the price of the order and that the correct shipping costs have been applied
+   5. log out of the Web Shop and close Internet Explorer
+   <br /><br />
 
-3. Create Modules that contain the technical information Tricentis Tosca needs to steer the system under test.
+2. Design a logical <strong>test structure</strong> to see what you need to cover your Requirements. Use TestCase-Design to create combinations of possible TestCases.
 
-4. Create concrete TestCases out of your Modules. TestCases are a series of TestSteps that verify your specifications.
+3. Create <strong>Modules</strong> that contain the technical information Tricentis Tosca needs to steer the system under test.
 
-5. Configure your tests. You can centrally manage test configuration parameters for your entire team (see chapter "Configure tests").
+4. Create concrete <strong>TestCases</strong> out of your Modules. TestCases are a series of TestSteps that verify your specifications.
+
+5. Configure <strong>tests</strong>. You can centrally manage test configuration parameters for your team.
+
+   To scan, right-click:
+   
+   ![tosca-scan-344x230-8124](https://user-images.githubusercontent.com/300046/57998101-2d453b00-7a8d-11e9-9ac7-f45ac98c03c8.jpg)
 
 6. Prepare and perform the execution of your tests (see chapter "Execute tests").
 
