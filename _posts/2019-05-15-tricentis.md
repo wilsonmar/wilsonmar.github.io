@@ -16,7 +16,7 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/tricentis/">This article</a> is a concise yet deep dive, hands-on, step-by-step tutorial about learning and using <a target="_blank" href="https://www.tricentis.com/">Tricentis</a> Tosca for continuous functional testing.
 
-## The company
+## Tricentis The company
 
 <a target="_blank" href="https://www.glassdoor.com/Reviews/Tricentis-Reviews-E346785.htm">
 On Glassdoor</a> 66% of employees would recommend Tricentis to a friend and 82% approve of the (Stanford MBA) CEO <a target="_blank" href="https://www.linkedin.com/in/sandeepjohri/">Sandeep Johri</a> (as of this writing).
@@ -88,23 +88,47 @@ In May 2019 Tricentis bought <a target="_blank" href="https://www.tricentis.com/
 Tosca Commander has a SAP Solution Manager 7.2 Integration.
 
 
+## Documentation
+
+1. A matrix of links to documentation for each specific version is at: 
+
+   <a target="_blank" href="https://support.tricentis.com/community/manuals_archive.do">https://support.tricentis.com/community/manuals_archive.do</a>
+
+   Click the "Enter" under the <strong>Online</strong> heading associated with each version, for an URL such as this for version 12.1:
+
+   <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?lang=en&version=12.1.0&url=resources/webhelp/cover_web.htm">https://support.tricentis.com/community/manuals_detail.do?lang=en&version=12.1.0&url=resources/webhelp/cover_web.htm</a>
+   
+   PROTIP: This is preferred because if you have a question, you have a URL to a specific page that can be easily shared with Support and others.
+
+   Alternately, off-line after download:
+
+1. Create a folder on your machine to hold files and cd into it.
+1. Get to the documentation download page at:
+
+   <a target="_blank" href="https://support.tricentis.com/community/downloads.do">https://support.tricentis.com/community/downloads.do</a>
+
+1. Click to download "Tricentis Tosca 12.1 Documentation.zip" (the latest version as of this writing).
+
+1. Switch to Finder and Unzip the file "Tricentis Tosca 12.1 Documentation.zip" to a folder which contains a website.
+1. Delete the zip file.
+1. Delete folder "Tricentis Tosca 12.1 Dokumentation_de" if you don't read German.
+1. Click to open folder "Tricentis Tosca 12.1", "EN".
+1. Unzip file "Tricentis Tosca 12.1 Documentation_en.zip".
+1. Delete the zip file.
+1. Click to open folder "Tricentis Tosca 12.1 Documentation_en".
+1. Click "index.htm" to open the website.
+
+   Also:
+
+Repeat for folder "Tricentis_TDM_Studio_12_1".
+
+Repeat for "Tricentis_Analytics 12.1_Documentation.zip"
+
 ## Test Requirements management
 
 Tosca purchased qTest as part of the QASymphony acquisition in 2019.
 
 <a target="_blank" href="https://support.qasymphony.com/hc/en-us">Support QASymphony</a>
-
-## Tricentis Academy
-
-<a target="_blank" href="https://www.tricentis.com/academy">https://www.tricentis.com/academy</a>
-
-<a target="_blank" href="https://vimeo.com/336797866">About the Tricentis Academy</a>
-
-1. All Tosca's <a target="_blank" href="https://vimeo.com/user29095750/videos">videos are stored in Vimeo</a> and <a target="_blank" hrerf="https://www.youtube.com/user/TRICENTIS
-">YouTube channel</a> and also referenced from Tosca's <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?lang=en&version=12.1.0&url=video/videos.htm">videos web page</a>.
-
-   BLAH: Vimeo does not provide users with speed controls like YouTube does.
-
 
 ### Component architecture
 
@@ -143,21 +167,46 @@ Additionally:
    Tosca Commander Interactive Testing communicates with the Interactive Testing Server and Interactive Testing Agent.
 
 
-## Certifications
+## Tricentis Academy for Learning
+
+<a target="_blank" href="https://www.tricentis.com/academy">https://www.tricentis.com/academy</a>
+
+<a target="_blank" href="https://vimeo.com/336797866">About the Tricentis Academy</a>
+
+1. All Tosca's <a target="_blank" href="https://vimeo.com/user29095750/videos">videos are stored in Vimeo</a> and <a target="_blank" hrerf="https://www.youtube.com/user/TRICENTIS
+">YouTube channel</a> and also referenced from Tosca's <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?lang=en&version=12.1.0&url=video/videos.htm">videos web page</a>.
+
+   BLAH: Vimeo does not provide users with speed controls like YouTube does.
+
+
+## Certification Classes
+
+Initial certifications are free, but higher-level certifications are $149 each at<br />
+<a target="_blank" href="https://tricentis.service-now.com/community/webshop.do">
+https://tricentis.service-now.com/community/webshop.do</a>
 
 <a target="_blank" href="https://www.tricentis.com/academy/training-certifications">https://www.tricentis.com/academy/training-certifications</a> has several tracks:<br />
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/57974050-58396d00-796f-11e9-84bb-7392f555ca52.jpg"><img alt="tosca-Certification-1120x791.jpg" width="1120" height="791" src="https://user-images.githubusercontent.com/300046/57974050-58396d00-796f-11e9-84bb-7392f555ca52.jpg"></a>
+
+Core classes:
 
    * Automation Specialist Level 1 & 2 (AS1 and AS2) is the prequesite to either
    * Automation Engineer Level 1 & 2 or
    * Test Design Specialist Level 1 & 2
    * Test Architect 1 certification can be taken after passing all the above.
+   * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/qtest-specialist-level-1/">qTest Specialist</a>
+ 
+Specialty classes:
 
-Specialty certifications:
-
-   * qTest Specialist
-   * mobile
-   * etc.
+   * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/automation-specialist-for-sap/">Automation Specialist for SAP</a>
+   * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/automation-specialist-for-databases/">Automation Specialist for Databases</a>
+   * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/orchestrated-service-virtualization/">Orchestrated Service Virtualization</a>
+   * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/tosca-query-language/">Tosca Query Language</a>
+   * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/specialist-for-exploratory-testing/">Specialist for Exploratory Testing</a>
+   * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/bi-specialist/">BI Specialist</a>
+   * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/automation-specialist-for-api/">Automation Specialist for API</a>
+   * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/tosca-integration-developer/">Tosca Integration Developer</a>
+   * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/tdm-studio-specialist-level-1/">TDM (Test Data Management) Studio Specialist</a>
 
 
 ### Initial certifications
@@ -171,12 +220,12 @@ Specialty certifications:
 1. Review course details:
 
    <pre>
-  CONTROL RECOGNITION
+CONTROL RECOGNITION
     Identifying HTML controls Creating HTML Modules Modifying steering properties
     Modifying steering properties
     Use of premade Tricentis Modules Best practice tips and exercise
   &nbsp;
-  TEST AUTOMATION FEATURES
+TEST AUTOMATION FEATURES
     Test case structure
     Adding TestSteps and Test StepValues
     Handling dynamic values
@@ -184,7 +233,7 @@ Specialty certifications:
     Creation and use of a Libraries, TestStepBlocks
     Best practice tips and exercises
   &nbsp;
-  EXECUTION AND REPORTING
+EXECUTION AND REPORTING
     Executing test cases and results analysis
     Cross browser options for test execution
     Table steering with constraints
@@ -247,43 +296,6 @@ The Automation Specialist Practitioner training is a hands-on, instructor-led co
 The coaching session is delivered on site by a certified Practitioner Trainer who has a proven track record of success in a project environment.
 
 
-## Documentation
-
-1. A matrix of links to documentation for each specific version is at: 
-
-   <a target="_blank" href="https://support.tricentis.com/community/manuals_archive.do">https://support.tricentis.com/community/manuals_archive.do</a>
-
-   Click the "Enter" under the <strong>Online</strong> heading associated with each version, for an URL such as this for version 12.1:
-
-   <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?lang=en&version=12.1.0&url=resources/webhelp/cover_web.htm">https://support.tricentis.com/community/manuals_detail.do?lang=en&version=12.1.0&url=resources/webhelp/cover_web.htm</a>
-   
-   PROTIP: This is preferred because if you have a question, you have a URL to a specific page that can be easily shared with Support and others.
-
-   Alternately, off-line after download:
-
-1. Create a folder on your machine to hold files and cd into it.
-1. Get to the documentation download page at:
-
-   <a target="_blank" href="https://support.tricentis.com/community/downloads.do">https://support.tricentis.com/community/downloads.do</a>
-
-1. Click to download "Tricentis Tosca 12.1 Documentation.zip" (the latest version as of this writing).
-
-1. Switch to Finder and Unzip the file "Tricentis Tosca 12.1 Documentation.zip" to a folder which contains a website.
-1. Delete the zip file.
-1. Delete folder "Tricentis Tosca 12.1 Dokumentation_de" if you don't read German.
-1. Click to open folder "Tricentis Tosca 12.1", "EN".
-1. Unzip file "Tricentis Tosca 12.1 Documentation_en.zip".
-1. Delete the zip file.
-1. Click to open folder "Tricentis Tosca 12.1 Documentation_en".
-1. Click "index.htm" to open the website.
-
-   Also:
-
-Repeat for folder "Tricentis_TDM_Studio_12_1".
-
-Repeat for "Tricentis_Analytics 12.1_Documentation.zip"
-
-
 ## Windows Installation
 
 The following is based on <a target="_blank" href="https://documentation.tricentis.com/en/1110/content/installation_tosca/installation_process.htm">this page</a>.
@@ -334,24 +346,11 @@ A Mac can only be used with a <a target="_blank" href="https://wilsonmar.github.
 
    `C:\Program Files (x86)\TRICENTIS\Tosca Toolsuite"`
    
-1. Click "OK".
-
-
-
-
-1. Switch to Advanced System Variables for "New..." variable `TRICENTIS_HOME` for where  executables are installed. The following 64-bit executable files installed are processor-independent:
-
-   * TOSCACommander.exe
-   * TCShell.exe
-   * DbRepositorySchemaMigrator.exe
-
-1. Click 
-   The 64-bit Tosca Commander are installed with standard AddIns (Tosca Requirements, Tosca TestCase-Design, Tosca Reporting, and Tosca Structured Objects).
+   NOTE: The 64-bit Tosca Commander are installed with standard AddIns (Tosca Requirements, Tosca TestCase-Design, Tosca Reporting, and Tosca Structured Objects).
 
    These run in either 32 (*X86.exe) or 64-bit mode, depending on whether Tosca Commander is started in a 64-bit or 32-bit operating system.
 
-
-   A <strong>Tosca Commander</strong> agent is installed on Windows machines to invoke tests and receive results.
+1. Click "OK".
 
 
    ### Download installer
@@ -388,6 +387,12 @@ A Mac can only be used with a <a target="_blank" href="https://wilsonmar.github.
 
    `C:\Program Files (x86)\TRICENTIS\Tosca Testsuite`
 
+   Variable `TRICENTIS_HOME` is where executables are installed. The following 64-bit executable files installed are processor-independent:
+
+   * TOSCACommander.exe
+   * TCShell.exe
+   * DbRepositorySchemaMigrator.exe
+
 1. Click OK.
 1. Click Next.
 1. Click Next to default "Tosca Commander".
@@ -399,6 +404,8 @@ A Mac can only be used with a <a target="_blank" href="https://wilsonmar.github.
 
    ![tosca-added-224x146-4301](https://user-images.githubusercontent.com/300046/57989337-8645ac80-7a56-11e9-9149-7fd0d343f759.jpg)
 
+   The <strong>Tosca Commander</strong> agent is installed on Windows machines to invoke tests and receive results.
+
 
 ### Get Product License
 
@@ -408,18 +415,28 @@ NOTE: <a target="_blank" href="https://support.tricentis.com/community/manuals_d
 Instead of getting a <a target="_blank" href="http://www.tricentis.com/tricentis-tosca-testsuite/trial/">Tricentis Tosca Testsuite 14-day Trial license here</a>.
 
 1. Verify your email address.
-
-1. Request a training license by clicking on the email.
-
-   https://support.tricentis.com/community/training_license_request.do
-
-1. Choose on-premise or a cloud license
-
-   https://tricentis.service-now.com/community/license_overview.do
-
 1. Tosca's <strong>Support Portal</strong> provides links to articles, discussions, documentation, support incidents, search, , etc. at:
 
    <a target="_blank" href="https://support.tricentis.com/community/home.do?verify=s">https://support.tricentis.com/community/home.do?verify=s</a> for
+
+
+1. Request a training license by clicking on the email or at:
+
+   <a target="_blank" href="
+   https://support.tricentis.com/community/training_license_request.do">
+   https://support.tricentis.com/community/training_license_request.do</a>
+
+1. Choose on-premise or a cloud license (while logged on) for:
+
+   <a target="_blank" href="
+   https://tricentis.service-now.com/community/license_overview.do">
+   https://tricentis.service-now.com/community/license_overview.do</a>
+
+   Go directly to the above URL if you already requested a license.
+
+1. Click the icon on the same line as "Premium Package" to copy the license key text.
+
+   <hr />
 
 1. Access the Tosca cloud license server Tricentis_Academy_Cloud.
 
@@ -430,14 +447,17 @@ Instead of getting a <a target="_blank" href="http://www.tricentis.com/tricentis
    https://support.tricentis.com/community/article.do?number=KB0013085
    Knowledge Base article
 
-   ???
-
-   ### Connect to a Cloud-hosted license server
+   ### Connect to a local license server
 
    <a target="_blank" href="https://www.youtube.com/watch?v=mWebNjwzasM">
    VIDEO: How to Activate your Trial</a> from inside Tosca Commander.
 
-1. In Tricentis Tosca Commander, navigate to the Project menu and click on License. Click on Connect.
+1. Click the Windows icon and click "Tosca License Configuration".
+1. Click Activate.
+1. Click Local Machine. OK.
+1. Switch to the license port
+
+1. Open Tricentis Tosca Commander, navigate to the Project menu and click on License. Click on Connect.
 
 Ability to access the cloud server through the port TCP 443.
 
@@ -445,7 +465,7 @@ Ability to access the cloud server through the port TCP 443.
   License Server installation</a> process [The TCP port is set to 7070 by default]
 
 
-### Training Course Access
+## Training Course Access
 
 1. To access the class in the <a target="_blank" href="https://support.tricentis.com/">Support Portal</a>, click on "My Assets" -> Academy at URL:
 
@@ -482,9 +502,7 @@ Ability to access the cloud server through the port TCP 443.
 
 ## Interactive Testing
 
-https://vimeo.com/336815189
-
-Tosca Commander 
+VIDEO: <a target="_blank" href="https://vimeo.com/336815189">https://vimeo.com/336815189</a>
 
 1. Setup a testing session
 2. Distribute manual test cases
