@@ -102,7 +102,7 @@ Tosca Commander has a SAP Solution Manager 7.2 Integration.
 
    <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?lang=en&version=12.1.0&url=resources/webhelp/cover_web.htm">https://support.tricentis.com/community/manuals_detail.do?lang=en&version=12.1.0&url=resources/webhelp/cover_web.htm</a>
    
-   PROTIP: This is preferred because if you have a question, you have a URL to a specific page that can be easily shared with Support and others.
+   PROTIP: Use the online rather than off-line because if you have a question, you would have a ready URL to a specific page that can be easily shared with Support and others.
 
    Alternately, off-line after download:
 
@@ -136,7 +136,7 @@ Tosca purchased qTest as part of the QASymphony acquisition in 2019.
 
 ### Tosca features
 
-This diagram at the <a target="_blank" href="https://tricentis.csod.com/LMS/catalog/Welcome.aspx?tab_page_id=-67&tab_id=-1">academy login page</a> 
+This diagram at the <a target="_blank" href="https://tricentis.csod.com/LMS/catalog/Welcome.aspx?tab_page_id=-67&tab_id=-1">academy login page</a> pro
 
 ![tosca-features-373x373-13122](https://user-images.githubusercontent.com/300046/57995109-873e0480-7a7d-11e9-863f-6997cf16ddff.jpg)
 
@@ -176,6 +176,8 @@ Bottom-up Component and Workflow description:
    * <strong>Classic engines</strong> use Modules to <strong>steer</strong> tests of legacy apps such as PowerBuilder through their custom ports.
 
    * <strong>Engine 3.0</strong> use XModules steering modules created by XScan and Tosca Recorder for both Graphical User Interface (GUI) tests and non-GUI tests. The <strong>TBox framework</strong> contains (tree-like) hierarchically structures XModules to steer test objects.
+
+   * Tricentis Tosca Mobile Engine 3.0 (which replaces Tosca Mobile+) automates testing of mobile applications running on smart phones, tablets, and Android emulators and iOS simulators.  
 
    * Tosca OSV (Orchestrated Service Virtualization) works through an OSV Addin to Tosca Commander communicating via SOAP to an OSV Host talking to OSV Database and OSV Monitor talking to License Server.
    * Tosca BI (Business Intelligence)
@@ -516,7 +518,12 @@ Ability to access the cloud server through the port TCP 443.
 
    When a workspace is created, Subset Default objects are automatically imported or via the option Import Subset. the `Standard.tce` file is located at `%TRICENTIS_PROJECTS%\ToscaCommander`.
 
-   The Standard.tce file (default objects) contains some useful Modules, pre-defined Virtual Folders and Standard Reports.
+   The Standard.tce file (default objects) contains Modules, pre-defined Virtual Folders, and Standard Reports.
+
+   JSON files (documents) are loaded into Resources for manipulation. Resources require unique names to be assigned to them. Resources can be used multiple times within the same TestCase. When test execution finishes, used resources are discarded and can no longer be used across multiple TestCases.
+
+   Each <strong>TestCase</strong> describes the sequence used for the verification of properties defined in specifications: the entries needed for the execution of the TestCase; the expected output or reactions to the entries on the part of the application to be tested; the expected follow-up conditions that result from the execution of the TestCase. The status of a test case goes from Planned, In work, to Completed.
+
 
    ### UI Tour
 
@@ -530,18 +537,18 @@ Ability to access the cloud server through the port TCP 443.
 
    Window tabs (such as "test cases") makes it easier to use the mouse among <strong>sections</strong> which are listed alphabetically within the left navigation pane but can be arranged to a lifecycle sequnece such as:
 
-   1. Requirements
-   1. Configurations
-   1. TestPlanning
-   1. TestCasesDesign
-   
-   1. TestCases
-   1. Modules
-   1. Execution
-   1. Issues
+   1. Requirements (yellow) to specify requirements for your TestCases and to assign risk coverage for prioritizing test effort.
+   1. Configurations structure your test configuration parameters at one specific point in your repository.
+   1. TestPlanning to plan software quality assurance (QA) activities across the application lifecycle.
+   1. TestCasesDesign (red) to put test cases into a logical structure by creating a TestSheet to show all possible combinations of TestCases required to ensure full test coverage.   
+   1. TestCases (blue) to create TestCases, which are made up of a series of TestSteps.
+   1. Modules (orange) to create modules for use in TestCases. Modules contain technical information used to steer test objects.
+   1. Execution (green) to see the logs and results of standard or exploratory test runs which can be sped up with distributed execution.
+   1. Issues to manage undesired behavior of the system under test. Create new issues that come up during test execution, or link existing issues to a TestCase log.
 
    1. BI-Testing
-   1. Reporting
+   1. Reporting (Addin) to create reports to document the status of your project.
+   1. Test Data Management (not shown) to manage, use, and reuse your test data.
    <br /><br />
 
    A <strong>subset</strong> is a file containing Tosca artifacts which can be shared with other projects using import and export. These have file extension ".tce", such as:
