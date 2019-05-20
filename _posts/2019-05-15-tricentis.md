@@ -14,7 +14,11 @@ comments: true
 <hr />
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/tricentis/">This article</a> is a concise yet deep dive, hands-on, step-by-step tutorial about learning and using <a target="_blank" href="https://www.tricentis.com/">Tricentis</a> Tosca for continuous functional testing.
+<a target="_blank" href="https://wilsonmar.github.io/tricentis/">This article</a> is a  hands-on, step-by-step tutorial about learning and using <a target="_blank" href="https://www.tricentis.com/">Tricentis</a> Tosca for continuous functional testing.
+
+The unique contribution of this article is a maticulously sequenced concise yet deep presentation, with PROTIPs along the way, so you can quickly come up to speed with the product.
+
+<strong>CAUTION: This article is being constructed as of May 20, 2019.</strong>
 
 ## Tricentis The company
 
@@ -150,13 +154,12 @@ Tosca Commander components:
    * Test Data Management (TDM) communicates with a TDM Repository
    * Tosca CI Remote Execution Service communicates with a Tosca CI Client on a Build server
    * Tosca Distribution Agent coordinates with Tosca Server and License server
-   * Its Engines 3.0 is used to perform GUI and non-GUI tests and its TBox framework containing (tree-like) hierarchically structured XModules to <strong>steer</strong> test objects.
 
 Tosca (IIS) Server has a REST API Service and Tosca Workspaces working with the License Server and Tosca Connect.
 
    * Tosca Administration (Admin.) Console
    * DEX communicates via DEX Agent to TCAPI
-   * TDS (?) Web Service
+   * TDS (Test Data Service) Web Service
 
    * Tosca Event Monitor
    * Tosca Distribution Server
@@ -166,15 +169,18 @@ Tosca (IIS) Server has a REST API Service and Tosca Workspaces working with the 
    * Interactive Testing Server
    * Tosca Analytics via TCAPI
 
-Additionally:
+Bottom-up Component and Workflow description:
 
-   * Classic engines are used to steer tests of legacy apps such as PowerBuilder through their custom ports
-   * Tosca XScan scans XModules
+   * <strong>ActionModes</strong> steer test objects. ActionModes define how the value in the Value field should be applied for XTestStepValues in order to steer the control. ActionModes available to an XTestStepValue depend on the InterfaceType of the referenced XModule. Input values needed more than once can be buffered using the ActionMode Buffer or saved to a global variable buffer.
+
+   * <strong>Classic engines</strong> use Modules to <strong>steer</strong> tests of legacy apps such as PowerBuilder through their custom ports.
+
+   * <strong>Engine 3.0</strong> use XModules steering modules created by XScan and Tosca Recorder for both Graphical User Interface (GUI) tests and non-GUI tests. The <strong>TBox framework</strong> contains (tree-like) hierarchically structures XModules to steer test objects.
+
    * Tosca OSV (Orchestrated Service Virtualization) works through an OSV Addin to Tosca Commander communicating via SOAP to an OSV Host talking to OSV Database and OSV Monitor talking to License Server.
    * Tosca BI (Business Intelligence)
-   * Tricentis Tosca
-   * Tosca Commander interacts with a Windows Active Directory (via TCP & UDP) to connectTosca Workspaces with a Common Repository using TCAPI
-   Tosca Commander Interactive Testing communicates with the Interactive Testing Server and Interactive Testing Agent.
+   * Tosca Commander interacts with a Windows Active Directory (via TCP & UDP) to connect Tosca Workspaces with a Common Repository using TCAPI
+   * Tosca Commander Interactive Testing communicates with the Interactive Testing Server and Interactive Testing Agent.
 
 
 ## Tricentis Academy for Learning
@@ -231,13 +237,13 @@ PROTIP: The above names are the opposite of what AWS and Azure use.
 
 ### Initial certifications
 
-<a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/automation-specialist-level-1/">Tricentis Automation Specialist 1 Self-Paced Track Standard</a> course in 20-25 hours covers HTML control recognition, design automated test cases, automation features, and final execution. The course provides five automated GUI test cases that covers control recognition, usage of steering parameters and dynamic values, execution on different browsers, and reusing modules.
+<a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/automation-specialist-level-1/">Tricentis Automation Specialist 1 Self-Paced Track Standard</a> course in 20-25 hours covers HTML control recognition, design automated test cases, automation features, and final execution. Participants construct <a href="#AS1-test-cases">five automated GUI test cases</a> that covers control recognition, usage of steering parameters and dynamic values, execution on different browsers, and reusing modules.
 
-1. At <a target="_blank" href="https://support.tricentis.com/community/product.do?number=WIT0001016">https://support.tricentis.com/community/product.do?number=WIT0001016</a> click "Add to cart" (make sure the that "Product" appears briefly on the right)
-1. Go to Cart, check "I have read and agree to the Terms and Conditions", Checkout.
-1. Click "OK" to the "successful" pop-up.
-1. Type your email and click "Redeem". Click Yes to confirm.
-1. Review course details:
+   1. At <a target="_blank" href="https://support.tricentis.com/community/product.do?number=WIT0001016">https://support.tricentis.com/community/product.do?number=WIT0001016</a> click "Add to cart" (make sure the that "Product" appears briefly on the right)
+   1. Go to Cart, check "I have read and agree to the Terms and Conditions", Checkout.
+   1. Click "OK" to the "successful" pop-up.
+   1. Type your email and click "Redeem". Click Yes to confirm.
+   1. Review course details:
 
    <pre>
 CONTROL RECOGNITION
@@ -267,6 +273,8 @@ EXECUTION AND REPORTING
    <a target="_blank" href="http://demowebshop.tricentis.com">http://demowebshop.tricentis.com</a>
 
 1. Right-click to View Page Source. Notice `<!DOCTYPE html>` indicates it's a HTML5 app.
+
+   <a name="AS1-test-cases"></a>
 
 1. The tutorial goes over these test cases:
 
@@ -421,7 +429,7 @@ A Mac can only be used with a <a target="_blank" href="https://wilsonmar.github.
 1. Check "Check to restart after setup completion", then click Finish.
 1. Click "Yes" to confirm restart.
 1. Reconnect if you're running a virtual instance.
-1. When the machine boots up again, click the Windows icon to see this:
+1. When the machine boots up again, click the Windows icon to see the Tosca programs installed:
 
    ![tosca-added-224x146-4301](https://user-images.githubusercontent.com/300046/57989337-8645ac80-7a56-11e9-9149-7fd0d343f759.jpg)
 
@@ -502,37 +510,43 @@ Ability to access the cloud server through the port TCP 443.
 
    PROTIP: Use an additional monitor so you can see the tutorial on one screen and your notes in another screen.
 
-## Tosca Commander UI
+## Tosca Commander 
 
 1. Create a new <strong>workspace</strong>.
 
-   As with other Windows UI apps, a ribbon appears for each menu item
+   When a workspace is created, Subset Default objects are automatically imported or via the option Import Subset. the `Standard.tce` file is located at `%TRICENTIS_PROJECTS%\ToscaCommander`.
+
+   The Standard.tce file (default objects) contains some useful Modules, pre-defined Virtual Folders and Standard Reports.
+
+   ### UI Tour
+
+   As with other Windows UI apps such as Microsoft Word/Excel/Project, when each menu item is clicked, its <strong>ribbon</strong> appears.
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/57995524-c3726480-7a7f-11e9-9872-208b3dd70286.jpg"><img alt="tosca-menu-780x168-15363.jpg" width="780" height="168" src="https://user-images.githubusercontent.com/300046/57995524-c3726480-7a7f-11e9-9872-208b3dd70286.jpg"></a>
 
    The blue icons at the top are for save, undo, redo.
 
-   Window tabs (such as "test cases") makes it easier to use the mouse among sections,
-   listed alphabetically:
-
-   * BI-Testing
-   * Configurations
-   * Execution
-   * Issues
-   * Modules
-   * Reporting
-   * Requirements
-   * TestCasesDesign
-   * TestCases
-   * TestPlanning
-   <br /><br />
-
    The left pane is for navigation, the middle page is the working pane.
+
+   Window tabs (such as "test cases") makes it easier to use the mouse among <strong>sections</strong> which are listed alphabetically within the left navigation pane but can be arranged to a lifecycle sequnece such as:
+
+   1. Requirements
+   1. Configurations
+   1. TestPlanning
+   1. TestCasesDesign
+   
+   1. TestCases
+   1. Modules
+   1. Execution
+   1. Issues
+
+   1. BI-Testing
+   1. Reporting
+   <br /><br />
 
    A <strong>subset</strong> is a file containing Tosca artifacts which can be shared with other projects using import and export. These have file extension ".tce", such as:
 
-   AutomationSpecialistI_BaseSubset.tce dated Feb 2, 2017.
-
+      &nbsp; &nbsp; &nbsp; `AutomationSpecialistI_BaseSubset.tce` (dated Feb 2, 2017).
 
 ## Workflow
 
@@ -555,7 +569,7 @@ Ability to access the cloud server through the port TCP 443.
 
    To scan, right-click:
    
-   ![tosca-scan-344x230-8124](https://user-images.githubusercontent.com/300046/57998101-2d453b00-7a8d-11e9-9ac7-f45ac98c03c8.jpg)
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/57998101-2d453b00-7a8d-11e9-9ac7-f45ac98c03c8.jpg"><img alt="tosca-scan-344x230-8124.jpg" width="344" height="230" src="https://user-images.githubusercontent.com/300046/57998101-2d453b00-7a8d-11e9-9ac7-f45ac98c03c8.jpg"></a>
 
 6. Prepare and perform the execution of your tests (see chapter "Execute tests").
 
