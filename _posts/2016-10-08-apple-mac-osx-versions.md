@@ -25,6 +25,14 @@ comments: true
 </th><th><a href="/ruby-on-apple-mac-osx/">Ruby</a>
 </th><th> Introduced
 </th></tr>
+<tr valign="top"><td> 10.15<br />MacOS
+</td><td align="right">-
+</td><td align="right"> late 2019
+</td><td align="right"> ?
+</td><td align="right"> 3 ?
+</td><td align="right"> ?
+</td><td align="left"> Apple TV
+</td></tr>
 <tr valign="top"><td> 10.14<br />MacOS
 </td><td align="right"><a target="_blank" href="https://www.apple.com/macos/mojave-preview/">Mojave preview</a>
 </td><td align="right"> June 2018
