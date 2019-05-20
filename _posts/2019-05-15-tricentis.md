@@ -16,7 +16,7 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/tricentis/">This article</a> is a  hands-on, step-by-step tutorial about learning and using <a target="_blank" href="https://www.tricentis.com/">Tricentis</a> Tosca for continuous functional testing.
 
-The unique contribution of this article is a maticulously sequenced concise yet deep presentation, with PROTIPs along the way, so you can quickly come up to speed with the product. All one this one page.
+The unique contribution of this article is a maticulously sequenced concise yet deep presentation, with PROTIPs along the way, so you can quickly come up to speed with the product. All one this one page to simplify text search.
 
 <strong>CAUTION: This article is being constructed as of May 20, 2019.</strong>
 
@@ -173,7 +173,7 @@ Bottom-up Component and Workflow description:
 
    * <strong>ActionModes</strong> steer test objects. ActionModes define how the value in the Value field should be applied for XTestStepValues in order to steer the control. ActionModes available to an XTestStepValue depend on the InterfaceType of the referenced XModule. Input values needed more than once can be buffered using the ActionMode Buffer or saved to a global variable buffer.
 
-   * <strong>Classic engines</strong> use Modules to <strong>steer</strong> tests of legacy apps such as PowerBuilder through their custom ports.
+   * <strong>Classic engines</strong> use Modules to <strong>steer</strong> tests of legacy apps such as PowerBuilder through their custom ports. Classic modules are used to steer mainframe and older Excel spreadsheets.
 
    * <strong>Engine 3.0</strong> use XModules steering modules created by XScan and Tosca Recorder for both Graphical User Interface (GUI) tests and non-GUI tests. The <strong>TBox framework</strong> contains (tree-like) hierarchically structures XModules to steer test objects.
 
@@ -323,7 +323,7 @@ https://support.tricentis.com/community/downloads.do
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/58036402-3f07fc00-7ae8-11e9-9040-039e6e8dec87.jpg"><img align="right" alt="tosca-wheel-295x296-10687.jpg" width="295" height="295" src="https://user-images.githubusercontent.com/300046/58036402-3f07fc00-7ae8-11e9-9040-039e6e8dec87.jpg"></a>
 
-The Automation Specialist Practitioner course is deliveryed on-site by a certified Practitioner Trainer as an instructor-led  hands-on coaching session that builds on core skills developed in Tricentis online trainings with skills to apply on a custom (your own) SUT (System Under Test) and its unique requirements. 
+The Automation Specialist Practitioner course is delivered over 2-day on-site by a certified Practitioner Trainer as an instructor-led  hands-on coaching session that builds on core skills developed in Tricentis online trainings with skills to apply on a custom (your own) SUT (System Under Test) and its unique requirements. 
 The coaching session is delivered on site .
 Topics include the Tosca Ecosystem, Troubleshooting.
 
@@ -525,6 +525,10 @@ Ability to access the cloud server through the port TCP 443.
 
    The Standard.tce file (default objects) contains Modules, pre-defined Virtual Folders, and Standard Reports.
 
+   A <strong>subset</strong> is a file containing Tosca artifacts which can be shared with other projects using import and export. These have file extension ".tce", such as:
+
+   &nbsp; &nbsp; &nbsp; `AutomationSpecialistI_BaseSubset.tce` (dated Feb 2, 2017).
+
    PROTIP: *.tec files are binary format which can only be read by Tosca.
 
    JSON files (documents) are loaded into Resources for manipulation. Resources require unique names to be assigned to them. Resources can be used multiple times within the same TestCase. When test execution finishes, used resources are discarded and can no longer be used across multiple TestCases.
@@ -534,9 +538,7 @@ Ability to access the cloud server through the port TCP 443.
    ### Project Settings
    
 1. Click PROJECT in menu.
-1. Click Settings.
-
-   The list provides an overiew of the various technical components:
+1. Click Settings. The list is about the various technical components:
 
    * Commander
    * Diagnostics
@@ -581,13 +583,19 @@ Ability to access the cloud server through the port TCP 443.
    1. Test Data Management (not shown) to manage, use, and reuse your test data.
    <br /><br />
 
-   A <strong>subset</strong> is a file containing Tosca artifacts which can be shared with other projects using import and export. These have file extension ".tce", such as:
+1. Drag and drop each section tab to the above sequence.
 
-      &nbsp; &nbsp; &nbsp; `AutomationSpecialistI_BaseSubset.tce` (dated Feb 2, 2017).
+   ### Keyboard shortcuts
+
+   After highlighting an item ...
+
+   ctrl+T for a list. But remember to rename what is added.
+
+   ctrl+. to add additional item.
 
 ## Workflow
 
-1. Identify the <strong>criteria</strong> which the system under test is expected to fulfill, then create a clear Requirement structure that reflects these criteria.
+1. Identify the <strong>Requirements criteria</strong> which the system under test is expected to fulfill, then create a clear Requirement structure that reflects these criteria.
 
    1. open and login to the Web Shop
    2. order the product “Blue Jeans”
@@ -599,7 +607,18 @@ Ability to access the cloud server through the port TCP 443.
    The weight is calculated from 2 to the power of (Frequency class + Damange class). 
    So 2 to 4 + 4 = 2 to the power of 8 = 256.
 
-2. Design a logical <strong>test structure</strong> to see what you need to cover your Requirements. Use TestCase-Design to create combinations of possible TestCases.
+   Each (business risk) <strong>Contribution</strong> % is based on the total of weights.
+   This provides guidance on allocation of testing budget.
+
+2. Design a logical <strong>test structure</strong> to see what you need to cover  Requirements. Use TestCase-Design to create combinations of possible TestCases.
+
+   Right-click TestCases to create TestSheet, 
+   
+   Right-click test sheet to create Instances
+   
+   Right-click Login to create Folder, Folder structure, Virtual Folder, Test configuration parmaeter (.), Class.
+
+   Right-click an Attribute to Toggle Business Relevance by pressing Ctrl+F7 so its icon turns color. Name it Verification.
 
 3. Create <strong>Modules</strong> that contain the technical information Tricentis Tosca needs to steer the system under test. For steering, make an element uniquely identifiable in XScan:
 
@@ -629,6 +648,18 @@ Ability to access the cloud server through the port TCP 443.
 
    TCP (Test Case Parameter) applies predefined values to various test cases for various object types (case sensitive naming), such as the browser used during testing.
 
+   Build up a straight-through test case.
+   
+   Convert to a template. Build it up with data. 
+
+   Link the template to a test sheet.
+
+   Drag Test case and drop in Requirements, Schema Name gets set.
+
+   Which attribute goes to which value.
+
+   TestCase Design contain instances.
+
 5. Configure <strong>tests</strong>. You can centrally manage test configuration parameters for your team.
 
    To scan, right-click:
@@ -645,6 +676,20 @@ Ability to access the cloud server through the port TCP 443.
    * your testing status
    * the status of your system under test
 
+   Create ExecutionList and call it "Regression".
+
+   Set result to "Passed" or "Failed".
+
+   To link Requirements, drag the whole Regression suite to drop in Requirements.
+
+   Now you can right-click to "Jump to".
+
+   Execcution Test configuration can override plans, such as Browser.
+
+TODO: ToscaDoctor using TQL to lint naming convention consistency to some rules.
+
+   * No more than 15 items per level (see it all on one screen). Reorganize into folders containing clusters.
+
 ## Interactive Testing
 
 VIDEO: <a target="_blank" href="https://vimeo.com/336815189">https://vimeo.com/336815189</a>
@@ -656,6 +701,15 @@ VIDEO: <a target="_blank" href="https://vimeo.com/336815189">https://vimeo.com/3
 
 ## References
 
-https://www.youtube.com/watch?v=EN933IZzrVY
-Tricentis: A Tosca E2E Test Automation Example
-Aug 15, 2016 by ominik Weissböck
+<a target="_blank" href="https://www.youtube.com/watch?v=EN933IZzrVY">
+Tricentis: A Tosca E2E Test Automation Example</a>
+Aug 15, 2016 by Ominik Weissböck
+
+## Notes
+
+Avoid of using static waits of a specific amount of time.
+Instead, use "wait on" event such as some text appearing (20 seconds by default set by TCP "SychronizationTimeoutDuringWaitOn").
+They could be additive.
+
+Avoid copy and pasting parts of flows.
+Instead use Repetition tolders and/or ReusableTestStepBlocks.
