@@ -52,7 +52,7 @@ Tricentis is the only vendor to achieve “leader” status in all three top ana
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/57989461-0caebe00-7a58-11e9-818c-006fb0f1b3d6.jpg"><img alt="tosca-gartner-2018-1040x1084-30373.jpg" width="1040" height="1084" src="https://user-images.githubusercontent.com/300046/57989461-0caebe00-7a58-11e9-818c-006fb0f1b3d6.jpg"></a>
 
-Tosca is called a <a target="_blank" href="https://www.tricentis.com/products/robotic-process-automation/model-based-automation/">"model-based"</a> test automation tool because automated tests are conducted based a database of metadata extracted from the application under test.
+Tosca is called a <a target="_blank" href="https://www.tricentis.com/products/robotic-process-automation/model-based-automation/">"model-based"</a> test automation tool because automated tests are conducted based a database of metadata extracted from the application under test during scans.
 
 Because test cases are generated from the model, changes in the app's model (requirements) all impacted test cases can be automatically updated as well.
 This tremendously reduces test case maintenance.
@@ -130,7 +130,14 @@ Tosca purchased qTest as part of the QASymphony acquisition in 2019.
 
 <a target="_blank" href="https://support.qasymphony.com/hc/en-us">Support QASymphony</a>
 
-### Component architecture
+### Tosca features
+
+This diagram at the <a target="_blank" href="https://tricentis.csod.com/LMS/catalog/Welcome.aspx?tab_page_id=-67&tab_id=-1">academy login page</a> 
+
+![tosca-features-373x373-13122](https://user-images.githubusercontent.com/300046/57995109-873e0480-7a7d-11e9-863f-6997cf16ddff.jpg)
+
+
+### Tosca architecture components
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/57974321-9b95da80-7973-11e9-9415-948e1d1c0075.png"><img alt="tosca-arch-890x492.jpg" width="890" height="492" src="https://user-images.githubusercontent.com/300046/57974321-9b95da80-7973-11e9-9415-948e1d1c0075.png"></a>
 
@@ -147,14 +154,17 @@ Tosca Commander components:
 
 Tosca (IIS) Server has a REST API Service and Tosca Workspaces working with the License Server and Tosca Connect.
 
+   * Tosca Administration (Admin.) Console
+   * DEX communicates via DEX Agent to TCAPI
+   * TDS (?) Web Service
+
    * Tosca Event Monitor
    * Tosca Distribution Server
    * Exploratory Testin Server connects to 
    * REST API Service
-   * Tosca Administration Console
    * Tosca Data Service communicates with Tricentis Tosca vis https
    * Interactive Testing Server
-   * Tosca Analytics
+   * Tosca Analytics via TCAPI
 
 Additionally:
 
@@ -181,7 +191,7 @@ Additionally:
 
 ## Certification Classes
 
-Initial certifications are free, but higher-level certifications are $149 each at<br />
+Initial core certification classes are free, but higher-level certifications are $149 each at<br />
 <a target="_blank" href="https://tricentis.service-now.com/community/webshop.do">
 https://tricentis.service-now.com/community/webshop.do</a>
 
@@ -207,7 +217,15 @@ Specialty classes:
    * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/automation-specialist-for-api/">Automation Specialist for API</a>
    * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/tosca-integration-developer/">Tosca Integration Developer</a>
    * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/tdm-studio-specialist-level-1/">TDM (Test Data Management) Studio Specialist</a>
+   <br /><br />
 
+This diagram at the <a target="_blank" href="https://tricentis.csod.com/LMS/catalog/Welcome.aspx?tab_page_id=-67&tab_id=-1">academy login page</a> shows the progression of certifications with names that are the opposite of what AWS and Azure use:
+
+![tricentis-certs-417x152-5133](https://user-images.githubusercontent.com/300046/57994347-f74a8b80-7a79-11e9-8a63-bc2217df569f.jpg)
+
+   1. Tricentis Certified Professional
+   2. Tricentis Certified Specialist
+   3. Tricentis Certified Expert
 
 ### Initial certifications
 
@@ -474,11 +492,18 @@ Ability to access the cloud server through the port TCP 443.
    Password field must be less than 20 characters.
 
 1. Click "My courses".
-2. Click "Open Curriculum" for Level 1 or 2.
+1. Click "Open Curriculum" for Level 1 or 2.
+1. Click "Launch" associated with the top lesson without a gree check icon.
 
    PROTIP: To speed up videos, click the gear icon and instead of "Normal", select "1.5".
 
    PROTIP: Use an additional monitor so you can see the tutorial on one screen and your notes in another screen.
+
+## Tosca Commander UI
+
+1. Create a new <strong>workspace</strong>.
+
+   ![tosca-menu-780x168-15363](https://user-images.githubusercontent.com/300046/57995524-c3726480-7a7f-11e9-9872-208b3dd70286.jpg)
 
 
 ## Workflow
