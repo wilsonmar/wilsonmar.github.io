@@ -124,9 +124,11 @@ Tosca Commander has a SAP Solution Manager 7.2 Integration.
 
    Also:
 
-Repeat for folder "Tricentis_TDM_Studio_12_1".
+1. Repeat above for folder "Tricentis_TDM_Studio_12_1". 
 
-Repeat for "Tricentis_Analytics 12.1_Documentation.zip"
+   PROTIP: TDM (Test Data Management) is the older feature superceded by TDS (Test Data Service), both of which save data in a database system such as SQLite. The TDM icon has a gray bar vs. clear gap in the TDS icon. Pulling data from a database enables real-time integration with other systems which updates the same database, such as a dynamic status of "Active" or "Inactive".
+
+1. Repeat for "Tricentis_Analytics 12.1_Documentation.zip"
 
 ## Test Requirements management
 
@@ -523,13 +525,16 @@ Ability to access the cloud server through the port TCP 443.
    
    `%TRICENTIS_PROJECTS%\ToscaCommander\Standard.tce`
 
-   The Standard.tce file (default objects) contains Modules, pre-defined Virtual Folders, and Standard Reports.
+   The Standard.tsu file (default objects) contains Modules, pre-defined Virtual Folders, and Standard Reports.
 
-   A <strong>subset</strong> is a file containing Tosca artifacts which can be shared with other projects using import and export. These have file extension ".tce", such as:
+   A <strong>subset</strong> is a file containing Tosca artifacts which can be shared with other projects using import and export. These have file extension ".tsu", such as:
 
-   &nbsp; &nbsp; &nbsp; `AutomationSpecialistI_BaseSubset.tce` (dated Feb 2, 2017).
+   &nbsp; &nbsp; &nbsp; `AutomationSpecialistI_BaseSubset.tsu` (dated Feb 2, 2017).
 
-   PROTIP: *.tec files are binary format which can only be read by Tosca.
+   PROTIP: *.tsu files are binary format which can only be read by (imported into) Tosca.
+
+   Prior versions stored subset files with extension `.tce`.
+   There is no conversion utility.
 
    JSON files (documents) are loaded into Resources for manipulation. Resources require unique names to be assigned to them. Resources can be used multiple times within the same TestCase. When test execution finishes, used resources are discarded and can no longer be used across multiple TestCases.
 
@@ -637,6 +642,8 @@ Ability to access the cloud server through the port TCP 443.
 
    A <strong>Workspace</strong> is a local copy of certain parts of a repository for a whole project.
 
+   Right-click on a test case to select Run from <strong>Scratchbook</strong>.
+
    Each should have:
 
    * Precondition
@@ -713,3 +720,22 @@ They could be additive.
 
 Avoid copy and pasting parts of flows.
 Instead use Repetition tolders and/or ReusableTestStepBlocks.
+
+Action CLICK moves the mouse, triggering aanything along the way.
+ClickJUMP does not.
+Function X is a digital click on a button.
+
+To see what value is being viueled, temporarily put ".innertext=WRONG".
+
+Avoid using buffer values, referenced by entry such as ctrl+T, Tbox set buffer, then `{B[Email]}` because buffers are only local and transitory. View, Show DoNothing such as "<Buffername>". F9 key. The B[Email] must be defined before steps that use it. Use it for reorder numbers that change.
+Instead use `CP` defined by TCP.
+
+Always define clean-up scenarios to clean up the test enviornment so that test steps after a step failure don't create a cascade of several failed steps, which make troubleshooting more difficult.
+
+Define recovery scenario for known responses such as setting a new password when the previous password expires (a common situation).
+
+Analyze the time each step took to run (the time servers took to "think") by extracting and analyzing results in the <strong>Scratchbook</strong>.
+
+Generic test case: For values which can have multiple values (such as "News Stories" in the demo), define a Property named  ExplicitName with True value, then use the name of the Module with `#1` for the first, `#last` for the last, or `#{B[...]}` to lookup in the Buffer.
+
+For use with Generic controls: `ResultCount` is the number of controls which match a particular criteria within ActionMode "Buffer". It's not in a drop-down. Click the round blue circular down arrow to define fields to yield `.ResultCount->StoryCount`.
