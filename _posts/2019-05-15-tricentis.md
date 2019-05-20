@@ -321,7 +321,7 @@ https://support.tricentis.com/community/downloads.do
 
 ### Automation Specialist Practitioner training
 
-<a target="_blank" href=https://user-images.githubusercontent.com/300046/58036402-3f07fc00-7ae8-11e9-9040-039e6e8dec87.jpg"><img align="right" alt="tosca-wheel-295x296-10687.jpg" width="295" height="295" srcc="https://user-images.githubusercontent.com/300046/58036402-3f07fc00-7ae8-11e9-9040-039e6e8dec87.jpg"></a>
+<a target="_blank" href=https://user-images.githubusercontent.com/300046/58036402-3f07fc00-7ae8-11e9-9040-039e6e8dec87.jpg"><img align="right" alt="tosca-wheel-295x296-10687.jpg" width="295" height="295" src="https://user-images.githubusercontent.com/300046/58036402-3f07fc00-7ae8-11e9-9040-039e6e8dec87.jpg"></a>
 
 The Automation Specialist Practitioner course is deliveryed on-site by a certified Practitioner Trainer as an instructor-led  hands-on coaching session that builds on core skills developed in Tricentis online trainings with skills to apply on a custom (your own) SUT (System Under Test) and its unique requirements. 
 The coaching session is delivered on site .
@@ -363,7 +363,7 @@ A Mac can only be used with a <a target="_blank" href="https://wilsonmar.github.
 
    On Windows 10:
 1. Click the Search icon. Type "Adv" to select "Advanced System Settings" of "Control Panel".
-1. Click "Environment Variables...". In the section System Variables section, click "New...".
+1. Click "Environment Variables...". In section "System Variables", click "New...".
 1. Type in Varible Name: `TRICENTIS_PROJECTS` with value such as `C:\Tosca_Projects` for where Tosca project data is stored. On cloud instances, specify 
 
    `D:\Users\wilsonmar@gmail.com\Downloads\Tosca_Projects`
@@ -523,6 +523,8 @@ Ability to access the cloud server through the port TCP 443.
 
    The Standard.tce file (default objects) contains Modules, pre-defined Virtual Folders, and Standard Reports.
 
+   PROTIP: *.tec files are binary format which can only be read by Tosca.
+
    JSON files (documents) are loaded into Resources for manipulation. Resources require unique names to be assigned to them. Resources can be used multiple times within the same TestCase. When test execution finishes, used resources are discarded and can no longer be used across multiple TestCases.
 
    Each <strong>TestCase</strong> describes the sequence used for the verification of properties defined in specifications: the entries needed for the execution of the TestCase; the expected output or reactions to the entries on the part of the application to be tested; the expected follow-up conditions that result from the execution of the TestCase. The status of a test case goes from Planned, In work, to Completed.
@@ -547,7 +549,7 @@ Ability to access the cloud server through the port TCP 443.
    1. Requirements (yellow) to specify requirements for your TestCases and to assign risk coverage for prioritizing test effort.
    1. Configurations structure your test configuration parameters at one specific point in your repository.
    1. TestPlanning to plan software quality assurance (QA) activities across the application lifecycle.
-   1. TestCasesDesign (red) to put test cases into a logical structure by creating a TestSheet to show all possible combinations of TestCases required to ensure full test coverage.   
+   1. TestCasesDesign (red) to put test cases (functional flows) into a logical structure by creating a TestSheet to show all possible combinations of TestCases required to ensure full test coverage.   
    1. TestCases (blue) ctrl+N, cntr+F, to create TestCases, which are made up of a series of TestSteps.
    1. Modules (orange) to create modules for use in TestCases. Modules contain technical information used to steer test objects.
    1. Execution (green) to see the logs and results of standard or exploratory test runs which can be sped up with distributed execution.
