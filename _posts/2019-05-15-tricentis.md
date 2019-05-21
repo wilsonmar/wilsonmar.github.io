@@ -324,8 +324,8 @@ EXECUTION AND REPORTING
 API References:
 
    * <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?version=12.1.0&url=topic1.html&tcapi=tcapi">TCAPI</a>
-   * <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?version=12.1.0&url=restapi/prerequisites.htm&tcapi=tcrsapi">TC REST API</a>
-   * <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?version=12.1.0&url=topic1.html&tcapi=tboxapi">TBox API</a>
+   * <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?version=12.1.0&url=restapi/prerequisites.htm&tcapi=tcrsapi">TC (Tosca Client) REST API</a>
+   * <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?version=12.1.0&url=topic1.html&tcapi=tboxapi">TBox (Tosca Box) API</a>
    * <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?version=12.1.0&url=topic1.html&tcapi=tcaddon">TCAddOn API</a>
    * <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?version=12.1.0&url=topic3.html&tcapi=engwrap">Tosca Engine Wrapper</a> & Tosca EngineWrapper Extension
 
@@ -538,7 +538,7 @@ Ability to access the cloud server through the port TCP 443.
    
    `%TRICENTIS_PROJECTS%\ToscaCommander\Standard.tce`
 
-   The Standard.tsu file (default objects) contains Modules, pre-defined Virtual Folders, and Standard Reports.
+   The newer format Standard.tsu file (default objects) contains Modules, pre-defined Virtual Folders, and Standard Reports.
 
    A <strong>subset</strong> is a file containing Tosca artifacts which can be shared with other projects using import and export. These have file extension ".tsu", such as:
 
@@ -813,8 +813,21 @@ KB0014621
 
 Tosca uses TBox ODBC connection by installing `sqliteodbc_w64.exe` (SQLite ODBC for Win64 Installation) from https://ch-werner.de/sqliteodbc/
 
-Search "ODBC" and click "ODBC Data Sources (64-bit)" for Open ODBC Data sources with path: Control panel -> Administrative tools. Click "Run as administrator" for the "ODBC Data Source Administrator". Click the "Drivers" tab to see SQLite. Click "User DSN" tab. Click Add. Use SQLite3. https://sqlitestudio.pl/index.rvt? act=download
+Search "ODBC" and click "ODBC Data Sources (64-bit)" for Open ODBC Data sources with path: Control panel -> Administrative tools. Click "Run as administrator" for the "ODBC Data Source Administrator". Click the "Drivers" tab to see SQLite. Click "User DSN" tab. Click Add. Use SQLite3. 
 
+Get SQLiteStudio 3.2.1 https://sqlitestudio.pl/index.rvt?act=download
+(Instead of clicking Add) Drag the database file to the white part on the left.
+
+To verify a single cell value in a database:
+In TestCases: create  Databases folder. Rename it "Database".
+Create TestCase. Name it "Get count".
+ctrl+T to get "TBox DB Expert module". 
+Expand Open Connection. DSN Value "Insurance".
+For SQL Statement value, "select count(LicensePlateNuber) from TypeOfVehicle".
+Expand Result Table.
+
+
+select MileageYear from 
 
 
 

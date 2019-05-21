@@ -521,54 +521,59 @@ But after a year, when I needed it, I realized they had died.
 
 ## Headphones
 
-It would be cool to wear <a target="_blank" href="http://earherosports.com/">those headsets with the clear cord</a>. The FBI, CIA, cyclists, and other bad-ass serious people wear them so they can hear ambiant sound.
+I've had several headphones over the years. That's not to be fashionable, but because I lose them, sit or step on them or, in the case of the Sony MX1000, they broke easily at the swivel. 
 
-Earplugs block ambient sound, but hurt my ear.
+Difficulties with alternative designs:
 
-Over-the-ear headphone I wear as <strong>ear muffs to keep warm</strong> in the winter. 
-They are troublesome to contort so they fit into its case and take up more room in my backpack.
-But there is nothing that says "don't talk to me" like having big headphones on.
+   * Earplugs like Apple's AirPods do block ambient sound, but hurt my ear.
 
-When I want to seem more approachable, I wear a <strong>bone-conducting headphone</strong>. 
-I wear them in the car so I don't get a ticket when I listen to my iPhone while driving a noisy van. 
-But I found others can hear the sound from them.
+   * When I want to seem more approachable, I wear a <strong>bone-conducting headphone</strong>.  I wear them in the car so I don't get a ticket when I listen to my iPhone while driving a noisy van. But I found others can hear the sound from them.
+   And they co-exist better when wearing glasses.
 
-They co-exist better when wearing glasses.
+   * Over-the-ear headphone I wear as <strong>ear muffs to keep warm</strong> in the winter. 
+   And there is nothing that says "don't talk to me" like having big headphones on.
 
-I've had several headphones over the years. That's not to be fashionable, but because I lose them, sit or step on them or, in the case of the Sony MX1000, they broke easily at the swivel. Newer Sony models now has a more solid pivot mechanism.
+I got the flagship <a target="_blank" href="https://www.techradar.com/reviews/hands-on-sony-wh-1000xm3-wireless-headphones-review">WH-1000XM3</a>
+   ($249 - $350 available since August 2018) adds <strong>touch controls and microphone</strong> to make calls. 
+   
+   * I've accidentally hit its playback controls on the right earcup because they are touch-sensitive. To skip forward, swipe forward. Swipe left to go back. Pause and resume by double-tapping. Swipe up or down to control volume. Tap once to activate voice assistant and answer phone calls. Nice when I'm wearing gloves.
 
-The Sony headphones does have all the cool features:
-noise-cancelling, either 3.5mm cord (for use on airplanes) or Bluetooth, 30 hour battery with 10 minute charge for 5 hours of playback. 
+But the most desired now (May 2019) is <a target="_blank" href="https://www.amazon.com/Dimension-Wireless-Bluetooth-Headphones-Cancellation/dp/B07L6RKPHT/">Dolby's $499 Dimension Bluetooth headphones</a>. 
 
-> Bottom line, I don't recommend the Sony for it's fatal flaw, which was not fixed from the ealier WH-1000 model:
-<strong>the hinge that allows the headphone to fold is easily broken</strong>. 
-And Sony refuses to replace ones that break.
-I've experienced Sony's user-hostile policies since I found that Sony purposely bricked my Vaio laptop when voltage drops too low.
-That's is why I've sworn off Sony products altogether.
+* DURABILITY: Dolby has a metal connection between earpiece cup to the headband. This is versus WH-1000 models which has a plastic hinge that allows the headphone to fold is easily broken. And Sony refuses to replace ones that break.
 
-Compare that to Bose. I once commented to a salesclerk that my Bose headphone chord frayed, and he just gave me a new cable.
+   With Bose, I once commented to a salesclerk that my Bose headphone chord frayed, and he just gave me a new cable.
 
-The <a target="_blank" href="https://www.sony.com/electronics/headphones-connect-app">Sony H.ear On WH-H900N recommended by WireCutter</a>. It's <a target="_blank" href="https://www.costco.com/Sony-WH-H900N-Bluetooth-Noise-Canceling-Headphones%2c-Black.product.100403345.html">available at Costco</a> and Amazon for $230. 
+* PORTABILITY: The Sony is somewhat troublesome to contort so they fit into its case and take up more room in my backpack.
 
-Also, the new model still suffers from a built-in microphone others have trouble hearing since it doesn't have a boom like some others.
-So its Google Assistant and Alexa integration may not work well.
-"You have to manually turn on the aptX/AAC codec. To do so you have to either do a terminal command. The other option is to download the developers kit Xcode and then download Bluetooth file exchange and there are a few boxes you check to manually turn on the aptX/AAC."
+   Dolby headphones do not fold. But I would take that if it's sturdier.
+
+   MEH: The most annoying aspect of Sony is it needs to be paired with a smartphone or it turns off after 5 minutes. In other words, you can't use it just for noise cancellation on an airplane without worrying whether your smartphone has enough juice for the trip.
+
+* AMBIANT SOUND: It would be cool to wear <a target="_blank" href="http://earherosports.com/">those headsets with the clear cord</a>. The FBI, CIA, cyclists, and other bad-ass serious people wear them so they can hear ambiant sound.
+
+* NOISE CANCELLING: The Sony headphones has noise-cancelling, either 3.5mm cord (for use on airplanes) or Bluetooth.
+
+* SWITCH AMONG SOURCES: The Sony is more hassle than it's worth because I have to constantly turn Bluetooth on or off either my Mac or iPhone so the headphone doesn't pair with the wrong device.
+
+   The Dolby has 3 buttons to switch among 3 sources. Sweet.
+
+* EASE OF CONFIGURATION: With Sony, "You have to manually turn on the aptX/AAC codec. To do so you have to either do a terminal command. The other option is to download the developers kit Xcode and then download Bluetooth file exchange and there are a few boxes you check to manually turn on the aptX/AAC."
  
-The <a target="_blank" href="https://www.amazon.com/Sony-WH-CH700N-Canceling-Headphones-WHCH700N/dp/B079GPFLT1/s">WH-CH700N</a> at $198 list is less than $100 refurbished.
+   This model also pairs with the <a target="_blank" href="Sony Headphones Connect app for Android/iOS">Sony | Headphones Connect app</a> for Android/iOS so you can specify sound Equilizer settings.
 
-New models have gone to a <strong>USB Type-C charging port</strong>, but 
-MEH: the headphone doesn't work when being charged.
-MEH: Also, it needs to be paired with a smartphone or it turns off after 5 minutes. In other words, you can't use it just for noise cancellation on an airplane without worrying whether your smartphone has enough juice for the trip.
+* BATTERY LIFE: Sony claims 30 hour battery with 10 minute charge for 5 hours of playback. 
 
-The flagship <a target="_blank" href="https://www.techradar.com/reviews/hands-on-sony-wh-1000xm3-wireless-headphones-review">WH-1000XM3</a>
-($249 - $350 available since August 2018) adds touch controls and microphone to make calls. When adjusting position, I've accidentally hit its playback controls because they are touch-sensitive on the right earcup. To skip forward, swipe forward. Swipe left to go back. Pause and resume by double-tapping. Swipe up or down to control volume. Tap once to activate voice assistant and answer phone calls. Nice when I'm wearing gloves.
+   The new models have gone to a <strong>USB Type-C charging port</strong>, but its annoying is MEH: the headphone don't work when being charged. 
 
-This model also pairs with the <a target="_blank" href="Sony Headphones Connect app for Android/iOS">Sony | Headphones Connect app</a> for Android/iOS so you can specify sound Equilizer settings.
+   The <a target="_blank" href="https://www.sony.com/electronics/headphones-connect-app">Sony   H.ear On WH-H900N recommended by WireCutter</a>. It's <a target="_blank" href="https://www.costco.com/Sony-WH-H900N-Bluetooth-Noise-Canceling-Headphones%2c-Black.product.100403345.html">available at Costco</a> and Amazon for $230. 
 
-The older WH-1000XM2 has slightly smaller earcups, sensitivity, and impedence.
+   The <a target="_blank" href="https://www.amazon.com/Sony-WH-CH700N-Canceling-Headphones-WHCH700N/dp/B079GPFLT1/s">WH-CH700N</a> at $198 list is less than $100 refurbished.
 
-My annoyance with Bluetooth is with Apple. I have to constantly turn on or off either my Mac or iPhone so the headphone doesn't pair with the wrong device. A first-world problem, yes. But still annoying.
+* MICROPHONE FOR CALLS: The new Sony model still suffers from a built-in microphone others have trouble hearing since it doesn't have a boom like some others.
+   So its Google Assistant and Alexa integration may not work well.
 
+   The older WH-1000XM2 has slightly smaller earcups, sensitivity, and impedence.
 
 
 <a name="Adapters"></a>
@@ -579,7 +584,7 @@ My annoyance with Bluetooth is with Apple. I have to constantly turn on or off e
 
 [_] PROTIP: The Android mobile battery charger enables me to charge one battery while another is being used.
 
-   PROTIP: The ability to remove and replace batteries is why I went with Android S3 rather than iPhones. But there are precious few models left that do.
+   PROTIP: The ability to remove and replace batteries is why I went with Android S3 rather than iPhones. But there are precious few models left that do. Alas, Verizon doesn't serve its 3G technology.
 
 [_] A Google Cast HDMI plug and micro-USB electrical with a long chord
    to project to a TV from your laptop.
