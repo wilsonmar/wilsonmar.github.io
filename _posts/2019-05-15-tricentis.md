@@ -26,13 +26,21 @@ The unique contribution of this article is a maticulously sequenced concise yet 
 On Glassdoor</a> 66% of employees would recommend Tricentis to a friend and 82% approve of the (Stanford MBA) CEO <a target="_blank" href="https://www.linkedin.com/in/sandeepjohri/">Sandeep Johri</a> (as of this writing).
 
 * Wolfgang Platz, Founder & CPO, Tricentis
-* Wayne Ariola, Tricentis
+* Wayne Ariola, Marketing
 
 Tricentis is based in Austria (Leonard-Bernstein Straße 10, 1220 Vienna).
 In the United States, Tricentis has an office in Jersey City and Silicon Valley.
 It also has a presence in Australia, Belgium, Denmark, Germany, India, Netherlands, Singapore, Switzerland, Poland, and the UK.
 
 PROTIP: The company does not allow communication with consumer email accounts such as gmail, hotmail, outlook, etc.
+
+* 13.1K followers of <a target="_blank" href="https://twitter.com/Tricentis">@Tricentis</a> on Twitter
+* 3.711 follows in <a target="_blank" href="https://www.facebook.com/TRICENTIS">facebook.com/TRICENTIS</a> 
+* 2,900 subscribed to <a target="_blank" href="https://www.youtube.com/user/TRICENTIS">YouTube channel</a>
+* 1,125 entries in <a target="_blank" href="https://support.tricentis.com/community/discussions.do">Tricentis forum</a> 
+* <a target="_blank" href="https://www.linkedin.com/company/tricentis-technology-&-consulting-gmbh/">LinkedIn company page</a>
+* <a target="_blank" href="https://de.slideshare.net/tricentis">https://de.slideshare.net/tricentis</a> is in German
+
 
 ## Conferences
 
@@ -41,7 +49,7 @@ Each year the company hosts conferences in <a target="_blank" href="https://www.
 <a target="_blank" href="https://www.tricentis.com/accelerate/san-francisco/watch-live/">Register for the live stream</a>
 
 The conference has a mobile app "Tricentis Accelerate" (by Attendify).
-Get an event code to register.
+An event code is given to those registered.
 
 orders@eventbrite.com
 
@@ -67,7 +75,10 @@ The model approach also enables makes <a target="_blank" href="https://www.trice
 
 Being able to work on the model rather than script programming "democratizes" who can work on testing and automation. Business experts to contribute to test automation as well as eliminate the maintenance burden that erodes most test automation initiatives. Instead of programming a test automation framework, you scan the application’s UI or API to create a business-readable automation model.
 
-Non-programmers can rapidly create and manage sophisticated end-to-end tests—without waiting on "technical" resources. They can focus on business processes, workflows, and other business data.
+The Tricentis USP (Unique Selling Proposition) is that Tosca's "codeless" UI means "non-programmers" can "rapidly create and manage sophisticated end-to-end tests —- without technical resources" -- and focus on business processes, workflows, and other business data. 
+
+> My take however, is that testing is still "sophisticated" and requires someone interested in intracacies rather than magic simplicity.
+
 
 ## Customers in the wild
 
@@ -323,8 +334,6 @@ https://support.tricentis.com/community/downloads.do
 
 ### Automation Specialist Practitioner training
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/58036402-3f07fc00-7ae8-11e9-9040-039e6e8dec87.jpg"><img align="right" alt="tosca-wheel-295x296-10687.jpg" width="295" height="295" src="https://user-images.githubusercontent.com/300046/58036402-3f07fc00-7ae8-11e9-9040-039e6e8dec87.jpg"></a>
-
 The Automation Specialist Practitioner course is delivered over 2-day on-site by a certified Practitioner Trainer as an instructor-led  hands-on coaching session that builds on core skills developed in Tricentis online trainings with skills to apply on a custom (your own) SUT (System Under Test) and its unique requirements. 
 The coaching session is delivered on site .
 Topics include the Tosca Ecosystem, Troubleshooting.
@@ -517,7 +526,9 @@ Ability to access the cloud server through the port TCP 443.
 
    PROTIP: An error occurs if a user opens the course in more than one browser window.
 
-## Tosca Commander 
+## Workspace
+
+1. Open Tosca Commander from Windows.
 
 1. Create a new <strong>workspace</strong>.
 
@@ -574,21 +585,39 @@ Ability to access the cloud server through the port TCP 443.
 
    Window tabs (such as "test cases") makes it easier to use the mouse among <strong>sections</strong> which are listed alphabetically within the left navigation pane but can be arranged to a lifecycle sequnece such as:
 
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/58036402-3f07fc00-7ae8-11e9-9040-039e6e8dec87.jpg"><img align="right" alt="tosca-wheel-295x296-10687.jpg" width="295" height="295" src="https://user-images.githubusercontent.com/300046/58036402-3f07fc00-7ae8-11e9-9040-039e6e8dec87.jpg"></a>
+
    1. Requirements (yellow) to specify requirements for your TestCases and to assign risk coverage for prioritizing test effort.
-   1. Configurations structure your test configuration parameters at one specific point in your repository.
-   1. TestPlanning to plan software quality assurance (QA) activities across the application lifecycle.
-   1. TestCasesDesign (red) to put test cases (functional flows) into a logical structure by creating a TestSheet to show all possible combinations of TestCases required to ensure full test coverage.   
-   1. TestCases (blue) ctrl+N, cntr+F, to create TestCases, which are made up of a series of TestSteps.
+   
    1. Modules (orange) to create modules for use in TestCases. Modules contain technical information used to steer test objects.
+   
+   1. Configurations structure your test configuration parameters at one specific point in your repository.
+   
+   1. TestPlanning to plan software quality assurance (QA) activities across the application lifecycle.
+   
+   1. TestCasesDesign (red) to put test cases (functional flows) into a logical structure by creating a TestSheet to show all possible combinations of TestCases required to ensure full test coverage.   
+   
+   1. TestCases (blue) ctrl+N, cntr+F, to create TestCases, which are made up of a series of TestSteps.
+   
    1. Execution (green) to see the logs and results of standard or exploratory test runs which can be sped up with distributed execution.
+   
    1. Issues to manage undesired behavior of the system under test. Create new issues that come up during test execution, or link existing issues to a TestCase log.
 
    1. BI-Testing
+   
    1. Reporting (Addin) to create reports to document the status of your project.
+   
    1. Test Data Management (not shown) to manage, use, and reuse your test data.
    <br /><br />
 
 1. Drag and drop each section tab to the above sequence.
+
+   ### Table
+
+   To expand text column size to fit, double-click on the gray bar between two column headings.
+
+   Right-Click on Name. Select Column Chooser. Drag Description and drop on column heading.
+
 
    ### Keyboard shortcuts
 
@@ -706,6 +735,30 @@ VIDEO: <a target="_blank" href="https://vimeo.com/336815189">https://vimeo.com/3
 
    Each session includes information on testers, assignments, test progress, issues raised.
 
+<hr />
+
+## Functions
+
+In Tosca, functions are written under {} and Parameters under [].
+
+Action `{Click}` moves the cursor to the center of the link, triggering any mouse overs along the way.
+
+`{Click[5%][5%]}`
+
+`ClickJUMP` does not trigger mouse overs along the way.
+Alternately, a value "X" injects Javascript into the browser that clicks the element such that doesn't move the mouse.
+
+Avoid using buffer values, referenced by entry such as ctrl+T, Tbox set buffer, then `{B[Email]}` because buffers are only local and transitory. View, Show DoNothing such as "<Buffername>". F9 key. The B[Email] must be defined before steps that use it. Use it for reorder numbers that change.
+Instead use `CP` defined by TCP.
+
+Generic test case: For values which can have multiple values (such as "News Stories" in the demo), define a Property named  ExplicitName with True value, then replace the name of the Module with `#1` for the first, `#last` for the last, or `#{B[...]}` to lookup in the Buffer.
+
+For use with Generic controls: `ResultCount` is the number of controls which match a particular criteria within ActionMode "Buffer". It's not in a drop-down. Click the round blue circular down arrow to define fields to yield `.ResultCount->StoryCount`.
+
+Create a "Hover every comment" tst case under "Click last story".
+In property "Repetition" put value `{B[StoryCount]}`.
+Instead of `#1`, put `#{REPETITION}` to take action in Value `{MOUSEOVER}` for ActionMode Input.
+
 ## References
 
 <a target="_blank" href="https://www.youtube.com/watch?v=EN933IZzrVY">
@@ -721,14 +774,8 @@ They could be additive.
 Avoid copy and pasting parts of flows.
 Instead use Repetition tolders and/or ReusableTestStepBlocks.
 
-Action CLICK moves the mouse, triggering aanything along the way.
-ClickJUMP does not.
-Function X is a digital click on a button.
-
 To see what value is being viueled, temporarily put ".innertext=WRONG".
 
-Avoid using buffer values, referenced by entry such as ctrl+T, Tbox set buffer, then `{B[Email]}` because buffers are only local and transitory. View, Show DoNothing such as "<Buffername>". F9 key. The B[Email] must be defined before steps that use it. Use it for reorder numbers that change.
-Instead use `CP` defined by TCP.
 
 Always define clean-up scenarios to clean up the test enviornment so that test steps after a step failure don't create a cascade of several failed steps, which make troubleshooting more difficult.
 
@@ -736,6 +783,17 @@ Define recovery scenario for known responses such as setting a new password when
 
 Analyze the time each step took to run (the time servers took to "think") by extracting and analyzing results in the <strong>Scratchbook</strong>.
 
-Generic test case: For values which can have multiple values (such as "News Stories" in the demo), define a Property named  ExplicitName with True value, then use the name of the Module with `#1` for the first, `#last` for the last, or `#{B[...]}` to lookup in the Buffer.
+### Dynamic Control
 
-For use with Generic controls: `ResultCount` is the number of controls which match a particular criteria within ActionMode "Buffer". It's not in a drop-down. Click the round blue circular down arrow to define fields to yield `.ResultCount->StoryCount`.
+Choose properties that uniquely identify the ccontrol
+
+Update the property of the control to pull the valuee from a Buffer.
+
+Use "TBox Set Buffer" to set the Buffer to the desired control.
+
+Take the desired using the module.
+
+### Excel
+
+1. In Modules, under Standard modules > TBox XEngines > Excel.
+
