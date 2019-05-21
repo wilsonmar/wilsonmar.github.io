@@ -140,6 +140,8 @@ Tosca Commander has a SAP Solution Manager 7.2 Integration.
    PROTIP: TDM (Test Data Management) is the older feature superceded by TDS (Test Data Service), both of which save data in a database system such as SQLite. The TDM icon has a gray bar vs. clear gap in the TDS icon. Pulling data from a database enables real-time integration with other systems which updates the same database, such as a dynamic status of "Active" or "Inactive".
 
 1. Repeat for "Tricentis_Analytics 12.1_Documentation.zip"
+   Analytics is made available with the Enterprise license, which comes with a Qlic visualization tool license.
+
 
 ## Test Requirements management
 
@@ -793,7 +795,27 @@ Use "TBox Set Buffer" to set the Buffer to the desired control.
 
 Take the desired using the module.
 
-### Excel
+### Excel (v12.1)
 
 1. In Modules, under Standard modules > TBox XEngines > Excel.
+
+   `#1` refers to the header row.
+
+   `$1` refers to the first data row (row 4 in Excel).
+
+   References columns using `#1` even though Excel uses A,B,C, etc.
+
+Constraint ActionMode are considered before anything else.
+
+KB0014621
+
+## Database
+
+Tosca uses TBox ODBC connection by installing `sqliteodbc_w64.exe` (SQLite ODBC for Win64 Installation) from https://ch-werner.de/sqliteodbc/
+
+Search "ODBC" and click "ODBC Data Sources (64-bit)" for Open ODBC Data sources with path: Control panel -> Administrative tools. Click "Run as administrator" for the "ODBC Data Source Administrator". Click the "Drivers" tab to see SQLite. Click "User DSN" tab. Click Add. Use SQLite3. https://sqlitestudio.pl/index.rvt? act=download
+
+
+
+
 
