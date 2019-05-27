@@ -270,10 +270,16 @@ The newer vim and graphical gvim adds many productivity features to vi.
    * :x  to exit (shorter than :wq)
    * :e  to revert to last saved version
 
-0. Open at line 55 of the file executed automatically when opening a command-line Terminal:
+0. To open at line 55 of the file executed automatically when opening a command-line Terminal:
 
    <pre><strong>vim +55 ~/.bash_profile
    </strong></pre>
+
+0. To save a file in Vim that you’ve already edited, yet need escalated privileges to save, use <tt>:w !sudo tee %</tt>
+
+   `:w` writes the file; specifically, it writes it to sudo tee %, wherein tee directs the output of our file write to %. `%` stands for the current file. Of course, the sudo provides the privilege escalation we need.
+
+   <em>(from <a target="_blank" href="https://linuxacademy.com/blog/linux-academy/employee-spotlight-elle-krout-course-author/">Elle Krout at LinuxAcademy.com</a>)</em>
 
 
 <a name="MacVim"></a>
@@ -284,16 +290,17 @@ MacVim is a GUI app for macOS.
 
 The manual approach: 
 
-1. Download the binary release <a target="_blank" href="http://macvim-dev.github.io/macvim/">
-http://macvim-dev.github.io/macvim</a>
-or the .dmg file from https://github.com/macvim-dev/macvim/releases
+1. Download the binary release from:
+
+   <a target="_blank" href="http://macvim-dev.github.io/macvim/">http://macvim-dev.github.io/macvim</a> or the .dmg file from <a target="_blank" href="https://github.com/macvim-dev/macvim/releases">https://github.com/macvim-dev/macvim/releases</a>
+
 2. Expand archive
 3. Move MacVim.app into folder /Applications/.
 
 To use brew:
 
-1. Run brew install vim && brew install macvim
-2. Run brew link macvim
+1. Run <pre>brew install vim && brew install macvim</pre>
+2. Run <pre>brew link macvim</pre>
 
 
 <a name="Emacs"></a>
