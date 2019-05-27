@@ -24,23 +24,26 @@ PROTIP: The Hawaiian word "Aloha" (meaning both hello and goodbye), has been app
 
 ## Office Locations
 
+The Salesforce corporate address is "The Landmark @ One Market, San Francisco, California".
+
 <a target="_blank" href="http://www.salesforcetower.com/">The Salesforce Tower</a> (<a target="_blank" href="https://twitter.com/SalesforceTower">@SalesforceTower</a>) delivered May 2018 is the tallest building not just in San Francisco but everywhere West of the Mississipi -- a few feet taller than the Eiffel Tower in Paris:
 
 ![sf-tallest-648x558-65050](https://user-images.githubusercontent.com/300046/43551978-2ffdeb20-95a6-11e8-92c3-c919dee9811b.jpg)
 
-In other words, Salesforce "towers above" <a target="_blank" href="https://employbl.com/">other tech companies in San Francisco</a>. <a target="_blank" href="https://www.salesforce.com/blog/2018/07/dreampitch-startup-ultimate-elevator-pitch?d=cta-body-promo-111">Dreampitches</a> are done in the 40 seconds to the 61st floor "Ohana Floor" observation area for non-profits. Beginning Feb 23, 2019, <a target="_blank" href="https://www.salesforcetowertours.com/">tours</a> there are offered once a month on Saturday for groups of 50 for an hour.
+In other words, Salesforce literally "towers above" <a target="_blank" href="https://employbl.com/">all other tech companies in San Francisco</a>. <a target="_blank" href="https://www.salesforce.com/blog/2018/07/dreampitch-startup-ultimate-elevator-pitch?d=cta-body-promo-111">Dreampitches</a> are done in the 40 seconds to the 61st floor "Ohana Floor" observation area for non-profits. Beginning Feb 23, 2019, <a target="_blank" href="https://www.salesforcetowertours.com/">tours</a> there are offered once a month on Saturday for groups of 50 for an hour.
 
-Designed by <a target="_blank" href="http://pcparch.com/">Pelli, Clarke, Pelli Architects</a>, the top 6 stories is lit by 11,000 LEDs programmed by <a target="_blank" href="http://www.jimcampbell.tv/portfolio/public_art/salesforce_tower/">artist Jim Campbell</a>. <a target="_blank" href="https://www.youtube.com/watch?v=DqOWyL5S1UE&t=6s">Click this picture to see a video of the lobby's amazing wall-to-wall video wall:<br />
+<a target="_blank" href="https://www.youtube.com/watch?v=DqOWyL5S1UE&t=6s">Click this picture to see a video of the lobby's amazing wall-to-wall video wall:<br />
 <img alt="salelsforce-tower-lobby-299x156-60483.jpg" src="https://user-images.githubusercontent.com/300046/45239024-0d743b00-b2a1-11e8-94ef-dc5c9a0073b4.png"></a>
+
+Designed by <a target="_blank" href="http://pcparch.com/">Pelli, Clarke, Pelli Architects</a>, the top 6 stories is lit by 11,000 LEDs programmed by <a target="_blank" href="http://www.jimcampbell.tv/portfolio/public_art/salesforce_tower/">artist Jim Campbell</a>. 
 
 The tower is built on top of former landfill in an earthquake-prone area.
 And it's certified LEED Platinum -- the highest rating in the US. 
 It's on Mission between Freemont and 1st (South of the Montgomery BART station), a part of a whole downtown $6 billion re-development that includes the 5-acre Salesforce Park above the Transbay Transit Center public transportation hub. 
 
-BTW Benoiff has been working with the city and other businesses to get all 6,500 homeless people off the streets of San Francisco.
+BTW Benoiff has been working with the city and other businesses to get all 6,500 homeless people off the streets of San Francisco. Benoiff has goaded other tech firm billionaires about their contributions.
 
-Salesforce corporate address is "The Landmark @ One Market".
-See other https://www.salesforce.com/company/locations/
+<a target="_blank" href="https://www.salesforce.com/company/locations/">https://www.salesforce.com/company/locations</a> lists all locations Salesforce is located.
 
 
 <a name="Financials"></a>
@@ -182,7 +185,7 @@ NOTE: https://trailblazer.salesforce.com resolves to https://success.salesforce.
 * <a target="_blank" href="https://www.linkedin.com/groups/1778935/profile">Salesforce Data Quality Forum</a>
 by Gregg Thaler 
 
-* <a target="_blank" href="https://www.linkedin.com/groups/1778935/profile">Salesforce Power Usaers Group</a>
+* <a target="_blank" href="https://www.linkedin.com/groups/1778935/profile">Salesforce Power Users Group</a>
 
 * <a target="_blank" href="https://www.linkedin.com/groups/1778935/profile">Salesforce Solutions and Tips</a>
 
@@ -248,9 +251,9 @@ https://www.facebook.com/sfdcpoint/
    * <a target="_blank" href="https://twitter.com/hashtag/SalesforceTour?src=hash">#SalesforceTour</a>
    <br /><br />
 
-<strong>Trailhead DX (Developer Experience)</a> <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23TDX19&src=typd">#TDX19</a>, <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23TDX18&src=typd">#TDX18</a>, etc. occurs in San Francisco around May 29-30. A Bootcamp is May 30-June 2 <a target="_blank" href="https://www.salesforce.com/trailheadx/register">for $3,999 vs. $699</a>. 
+<strong>Trailhead DX (Developer Experience)</strong> <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23TDX19&src=typd">#TDX19</a>, <a target="_blank" href="https://twitter.com/search?f=tweets&q=%23TDX18&src=typd">#TDX18</a>, etc. occurs in San Francisco around May 29-30. A Bootcamp is May 30-June 2 <a target="_blank" href="https://www.salesforce.com/trailheadx/register">for $3,999 vs. $699</a>. 
 
-   * <a target="_blank" href="https://theextracurricular.org/">theextracurricular.org</a>The Extracurricular</a> is a technical learning event for Salesforce developers and architects. It is a community-built mini-event hosted inside TrailheaDX at Moscone West.
+   * <a target="_blank" href="https://theextracurricular.org/">theextracurricular.org</a> (The Extracurricular) is a technical learning event for Salesforce developers and architects. It is a community-built mini-event hosted inside TrailheaDX at Moscone West.
 
 <strong>World Tour</strong>
 
@@ -258,7 +261,7 @@ https://www.facebook.com/sfdcpoint/
 
 <a name="Lightning"></a>
 
-Lightning Now Tour at a city near you in 2017 and 2018
+Lightning Now Tour was a multi-city tour in 2017 and 2018:
 
    * <a target="_blank" href="bit.ly/lightning-now-sales-admin">Lightning Now Tour for Sales Admins</a>
 
@@ -299,22 +302,22 @@ Lightning Now Tour at a city near you in 2017 and 2018
    <tr valign="top"><td> August 7-9, 2019 </td><td> <a target="_blank" href="http://midwestdreamin.com/">Midwest Dreamin'</a> </td><td> Chicago, IL, USA </td><td> -</td></tr>
    <tr valign="top"><td> August 16, 2019 </td><td> <a target="_blank" href="https://czechdreamin.com/">Czech Dreamin'</a> </td><td> Czech Republic </td><td> -</td></tr>
    <tr valign="top"><td> September 12-13, 2019 </td><td> <a target="_blank" href="https://www.fldreamin.com/">Florida Dreamin'</a> </td><td> Tampa, FL, USA </td><td> <a target="_blank" href="https://twitter.com/dreamin_florida">@dreamin_florida</a> #FlDreamin19 </td></tr>
+   <tr valign="top"><td> September 20, 2019 </td><td> <a target="_blank" href="http://frenchtouchdreamin.com/">French Touch Dreamin'</a> </td><td> Paris, France </td><td> -</td></tr>
    <tr valign="top"><td> October 4, 2019 </td><td> <a target="_blank" href="http://www.inspireeast.co.uk/">Inspire East</a> </td><td> Cambridge, UK </td><td> -</td></tr>
    <tr valign="top"><td> November 16, 2019 </td><td> <a target="_blank" href="https://northeastdreamin.com/">Northeast Dreamin'</a> </td><td> Manchester, NH, USA </td><td> -</td></tr>
    <tr valign="top"><td> December 1-2, 2018 </td><td> <a target="_blank" href="http://indiadreamin.in/">India Dreamin'</a> </td><td> Delhi, India </td><td> -</td></tr>
    <tr valign="top"><td> December 6, 2018 </td><td> <a target="_blank" href="http://www.downunderdreaming.com/brisbane/">Down Under</a> </td><td> Brisbane, Australia </td><td> -</td></tr>
-   <tr valign="top"><td> September 20, 2019 </td><td> <a target="_blank" href="http://frenchtouchdreamin.com/">French Touch Dreamin'</a> </td><td> Paris, France </td><td> -</td></tr>
    </tbody></table>
 
 
 ### Local Meetups
 
    * <a target="_blank" href="http://salesforce.meetup.com/">salesforce.meetup.com</a>
-   lists meetups secheduled at meetups.com (at $200 per year).
+   lists meetups secheduled at meetups.com. Some organizers have shifted away from meetup.com's $200 per year charge to use the Salesforce meetings platform.
 
    * <a target="_blank" href="https://success.salesforce.com/userGroups">https://success.salesforce.com/userGroups</a>  
 
-   * <a target="_blank" href="https://developer.salesforce.com/dugs">https://developer.salesforce.com/dugs</a>
+   * <a target="_blank" href="https://developer.salesforce.com/dugs">https://developer.salesforce.com/dugs</a> (developer user groups)
 
    * <a target="_blank" href="https://bit.ly/TwitchSF">bit.ly/TwitchSF</a> by the San Francisco user group
 
