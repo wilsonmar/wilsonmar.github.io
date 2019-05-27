@@ -14,7 +14,7 @@ comments: true
 <hr />
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/tricentis/">This article</a> is a  hands-on, step-by-step tutorial about learning and using <a target="_blank" href="https://www.tricentis.com/">Tricentis</a> Tosca for continuous functional testing.
+<a target="_blank" href="https://wilsonmar.github.io/tricentis/">This article</a> contains my notes about learning and using <a target="_blank" href="https://www.tricentis.com/">Tricentis</a> Tosca for continuous functional testing.
 
 The unique contribution of this article is a maticulously sequenced concise yet deep presentation, with PROTIPs along the way, so you can quickly come up to speed with the product. All one this one page to simplify text search.
 
@@ -32,15 +32,20 @@ Tricentis is based in Austria (Leonard-Bernstein Straße 10, 1220 Vienna).
 In the United States, Tricentis has an office in Jersey City and Silicon Valley.
 It also has a presence in Australia, Belgium, Denmark, Germany, India, Netherlands, Singapore, Switzerland, Poland, and the UK.
 
+   * Get in Touch Live Chat</a>
+
+
 PROTIP: The company does not allow communication with consumer email accounts such as gmail, hotmail, outlook, etc.
 
 * 13.1K followers of <a target="_blank" href="https://twitter.com/Tricentis">@Tricentis</a> on Twitter
 * 3.711 follows in <a target="_blank" href="https://www.facebook.com/TRICENTIS">facebook.com/TRICENTIS</a> 
 * 2,900 subscribed to <a target="_blank" href="https://www.youtube.com/user/TRICENTIS">YouTube channel</a>
-* 1,125 entries in <a target="_blank" href="https://support.tricentis.com/community/discussions.do">Tricentis forum</a> 
 * <a target="_blank" href="https://www.linkedin.com/company/tricentis-technology-&-consulting-gmbh/">LinkedIn company page</a>
-* <a target="_blank" href="https://de.slideshare.net/tricentis">https://de.slideshare.net/tricentis</a> is in German
 
+* <a target="_blank" href="https://usercommunity.tricentis.com/">https://usercommunity.tricentis.com</a>
+* 1,125 entries in <a target="_blank" href="https://support.tricentis.com/community/discussions.do">Tricentis forum</a> is being retired.
+
+* <a target="_blank" href="https://de.slideshare.net/tricentis">https://de.slideshare.net/tricentis</a> is in German
 
 ## Conferences
 
@@ -102,6 +107,10 @@ In May 2019 Tricentis bought <a target="_blank" href="https://www.tricentis.com/
 
 Tosca Commander has a SAP Solution Manager 7.2 Integration.
 
+## Salesforce
+
+Version 12.2 introduces a new Salesforce Engine 3.0 for automating <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?lang=en&version=12.2.0&url=engines_3.0/salesforce/sfdc_engine.htm">Lightning UI</a>, which also inclues <a target="_blank" href="https://support.tricentis.com/community/manuals_detail.do?lang=en&version=12.2.0&url=engines_3.0/salesforce/sfdc_sitescanner.htm">scanner</a>.
+
 
 ## Documentation
 
@@ -149,6 +158,9 @@ Tosca purchased qTest as part of the QASymphony acquisition in 2019.
 
 <a target="_blank" href="https://support.qasymphony.com/hc/en-us">Support QASymphony</a>
 
+QTest also integrated with TOSCA to meeting FDA traceability requirements for signature approvals.
+
+
 ### Tosca features
 
 This diagram at the <a target="_blank" href="https://tricentis.csod.com/LMS/catalog/Welcome.aspx?tab_page_id=-67&tab_id=-1">academy login page</a> pro
@@ -173,7 +185,7 @@ Tosca Commander components:
 Tosca (IIS) Server has a REST API Service and Tosca Workspaces working with the License Server and Tosca Connect.
 
    * Tosca Administration (Admin.) Console
-   * DEX communicates via DEX Agent to TCAPI
+   * DEX (Distributed Execution) communicates via DEX Agent to TCAPI
    * TDS (Test Data Service) Web Service
 
    * Tosca Event Monitor
@@ -211,6 +223,8 @@ Bottom-up Component and Workflow description:
 
    BLAH: Vimeo does not provide users with speed controls like YouTube does.
 
+Customers who paid for Platinum (aka Enterprise) licenses access all trainings for free.
+
 
 ## Certification Classes
 
@@ -231,7 +245,7 @@ Core classes:
  
 Specialty classes:
 
-   * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/automation-specialist-for-sap/">Automation Specialist for SAP</a>
+   * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/automation-specialist-for-sap/">Automation Specialist for SAP</a> is for the Desktop app.
    * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/automation-specialist-for-databases/">Automation Specialist for Databases</a>
    * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/orchestrated-service-virtualization/">Orchestrated Service Virtualization</a>
    * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/tosca-query-language/">Tosca Query Language</a>
@@ -239,18 +253,13 @@ Specialty classes:
    * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/bi-specialist/">BI Specialist</a>
    * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/automation-specialist-for-api/">Automation Specialist for API</a>
    * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/tosca-integration-developer/">Tosca Integration Developer</a>
-   * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/tdm-studio-specialist-level-1/">TDM (Test Data Management) Studio Specialist</a>
+   * <a target="_blank" href="https://www.tricentis.com/academy/ondemand-training/tdm-studio-specialist-level-1/">TDM (Test Data Management) Studio Specialist</a> is obsoleted by the TDS product.
    <br /><br />
 
-This diagram at the <a target="_blank" href="https://tricentis.csod.com/LMS/catalog/Welcome.aspx?tab_page_id=-67&tab_id=-1">academy login page</a> shows the progression of certifications:
+This diagram at the <a target="_blank" href="https://tricentis.csod.com/LMS/catalog/Welcome.aspx?tab_page_id=-67&tab_id=-1">academy login page</a> shows an OBSOLETE progression of certifications:
 
 ![tricentis-certs-417x152-5133](https://user-images.githubusercontent.com/300046/57994347-f74a8b80-7a79-11e9-8a63-bc2217df569f.jpg)
 
-   1. Tricentis Certified Professional
-   2. Tricentis Certified Specialist
-   3. Tricentis Certified Expert
-
-PROTIP: The above names are the opposite of what AWS and Azure use.
 
 ### Initial certifications
 
@@ -339,6 +348,8 @@ https://support.tricentis.com/community/downloads.do
 The Automation Specialist Practitioner course is delivered over 2-day on-site by a certified Practitioner Trainer as an instructor-led  hands-on coaching session that builds on core skills developed in Tricentis online trainings with skills to apply on a custom (your own) SUT (System Under Test) and its unique requirements. 
 The coaching session is delivered on site .
 Topics include the Tosca Ecosystem, Troubleshooting.
+
+The one-hour exam for this allows for a single try (60%), but open book.
 
 ## Windows Installation
 
@@ -581,7 +592,10 @@ Ability to access the cloud server through the port TCP 443.
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/57995524-c3726480-7a7f-11e9-9872-208b3dd70286.jpg"><img alt="tosca-menu-780x168-15363.jpg" width="780" height="168" src="https://user-images.githubusercontent.com/300046/57995524-c3726480-7a7f-11e9-9872-208b3dd70286.jpg"></a>
 
-   The blue icons at the top are for save, undo, redo. The save icon is iconic (of a removeable "discette" used during the 1990's to store data).
+   The blue icons at the top are for save, undo, redo. The save icon is iconic (of a removeable "discette" used during the 1990's to store data). You can't undo after Save.
+   An Admin can revert a project to a previous version using change history.
+
+   PROTIP: Turn on comments w ??? Turn on association with a Git revision.
 
    The left pane is for navigation, the middle page is the working pane.
 
@@ -807,7 +821,7 @@ Take the desired using the module.
 
 Constraint ActionMode are considered before anything else.
 
-KB0014621
+KB0014621 on Excel
 
 ## Database
 
@@ -831,4 +845,8 @@ select MileageYear from
 
 
 
+
+Business Revelance to Attributes
+
+Cardinality
 
