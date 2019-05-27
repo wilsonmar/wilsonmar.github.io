@@ -148,20 +148,23 @@ After activation, "Currency Setup" appears.
 
 The top competitors to Salesforce are:
 
+* Microsoft Dynamics Cloud 365 SaaS integrated with its $26.9 billion LinkedIn acquisition with an initiative called <a target="_blank" href="https://www.forbes.com/sites/bobevans1/2017/12/11/how-microsoft-is-using-linkedin-to-take-on-salesforce-com-and-transform-the-science-of-sales/#5240fbcd2998">Microsoft Relationship Sales and initial customer Park Place</a>.
+* <a target="_blank" href="https://open.sap.com/courses/c4h4/">SAP Hybris Sales Cloud</a> and on-premises
+* Oracle Fusion
+
+* <a target="_blank" href="https://www.marketingautomationinsider.com/hubspot-vs-salesforce/">Hubspot</a>
+* NetSuite
+* Sugar CRM
 * <a target="_blank" href="https://www.salesnexus.com/">SalesNexus</a>
-* Oracle
-* <a target="_blank" href="https://open.sap.com/courses/c4h4/">SAP Sales Cloud</s>
-* Microsoft Dynamics 365 SaaS integrated with its $26.9 billion LinkedIn acquisition with an initiative called <a target="_blank" href="https://www.forbes.com/sites/bobevans1/2017/12/11/how-microsoft-is-using-linkedin-to-take-on-salesforce-com-and-transform-the-science-of-sales/#5240fbcd2998">Microsoft Relationship Sales and initial customer Park Place</a>.
 
 * SOHO
-* <a target="_blank" href="https://www.marketingautomationinsider.com/hubspot-vs-salesforce/">Hubspot</a>
-* SugarCRM
 * Highrise
 * ActiveCampaign
 * Infusionsoft
 * PipeDrive
 * <a target="_blank" href="https://www.egnyte.com/">Egnyte</a>
 * <a target="_blank" href="https://www.showpad.com/">Showpad</a>
+* <a target="_blank" href="https://www.insidesales.com/">Inside Sales</a>
 <br /><br />
 
 Gartner says "Salesforce leads market share with 16% in 2013 vs. SAP with 13%, and Oracle with 10%." See https://en.wikipedia.org/wiki/Comparison_of_CRM_systems
