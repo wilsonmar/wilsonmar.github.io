@@ -18,9 +18,14 @@ comments: true
 
 Here is reference information for those new to Salesforce to understand how the company structures its offerings.
 
+## Summary
+
+This section presents some common concerns which drive organizations to consider Salesforce.
+I'll then show you real examples of several implementations.
+
 <a name="WhySalesforce"></a>
 
-## Why Salesforce? #
+### Why Salesforce? #
 
 Let's follow the conversation <a target="_blank" href="https://vimeo.com/268176646">pattern</a><a target="_blank" href="https://medium.com/@justdansmith/the-anatomy-of-a-perfect-discovery-call-67d499ed8b72">*</a>
 
@@ -30,11 +35,6 @@ Let's follow the conversation <a target="_blank" href="https://vimeo.com/2681766
 I appreciate the time you're taking here. Naturally, you have some questions about Salesforce because of its popularity.
 Obviously, this page provides you information you're looking for.
 Typically, initial discussions would finish with seeing whether there is a fit. 
-
-## Summary
-
-This section presents some common concerns which drive organizations to consider Salesforce.
-I'll then show you real examples of several implementations.
 
 ### Situation / Pain
 
@@ -133,8 +133,9 @@ An army of partners and 3rd-party developers create add-on functionality for Sal
 
 An example of a native app (completely within Salesforce) is <a target="_blank" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000003J3PzEAK">Internet Creations' Case Flags</a> which adds color-coded flags to provide real-time visibility to cases requiring responses to customers. Such alerts reduce customer SLA violations.
 
+<!--
 Another example is <a target="_blank" href="https://www.autorabit.com/">AutoRabit</a> which provides an easy GUI to move data and metadata for CI/CD. Their DataLoader provides an automated way to get around complex issues with some metadata and dependencies that Salesforce itself has not yet resolved.
-
+-->
 
 ## Currencies
 
