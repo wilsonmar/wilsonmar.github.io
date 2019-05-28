@@ -19,21 +19,26 @@ The name Prometheus comes from Greek mythology. The Titan Prometheus was an immo
 
 Unlike the legacy "statsd" daemon which is concerned only with system-level metrics such as CPU, Memory, etc., the tool Prometheus (at <a target="_blank" href="https://prometheus.io/">https://prometheus.io</a>) gathers metrics from targets at the cluster, node, and microservice API levels.
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/41593555-b83a2cce-737d-11e8-9d60-e8e2daf36c06.jpg"><img alt="prometheus-arch-837x372-30025.jpg" width="837" src="https://user-images.githubusercontent.com/300046/41593555-b83a2cce-737d-11e8-9d60-e8e2daf36c06.jpg"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/58507263-8f1d3900-814e-11e9-93fe-327ca116d28d.jpg"><img alt="prometheus-v01-1531x644-58322.jpg" width="1531" src="https://user-images.githubusercontent.com/300046/58507263-8f1d3900-814e-11e9-93fe-327ca116d28d.jpg"></a>
 <a target="_blank" href="https://www.youtube.com/watch?v=5GYe_-qqP30&t=15m14s">*</a>
 
-In the component diagram above, Prometheus <strong>scrapes</strong> (gathers) metrics on hosts and applications using instrumention <a href="#Exporters">job exporters</a> to expose metrics, either directly or via an intermediary <strong>push gateway</strong> for short-lived jobs. It stores all scraped samples locally and runs <strong>rules</strong> over the data to either aggregate and record new time series from existing data or to generate <strong>alerts</strong>. Prometheus comes with a multi-dimensional numeric <strong>time-series database</strong> which exposes its data in an <strong>API</strong> so that <strong>Grafana</strong> or other API consumers can use the Prometheus <strong>PromQL</strong> query language to extract data for visualization. Rules running in the Prometheus database can <strong>push</strong> (send) alerts to the Prometheus <strong>Alert Manager</strong> to forward to email, Slack, Pager Duty, and other notification mechanisms.
+Prometheus has a <strong>run service</strong> that pulls or <strong>scrapes</strong> (gathers) metrics on <strong>target hosts</strong> and applications using instrumention <a href="#Exporters">job exporters</a> or other  <strong>custom metric providers</strong> to expose metrics, either directly or via an intermediary <strong>push gateway</strong> for short-lived jobs. 
+
+In addition to static configurations, Prometheus can also <strong>discover targets</strong> to monitor with its <strong>Services Discovery</strong>.
+
+Prometheus stores scraped samples locally in its own multi-dimensional numeric <strong>time-series database</strong>. Unlike central data collectors (such as Splunk), each Prometheus server runs as distributed standalone and thus not dependent on network storage or other remote services. So it's available even when other parts of the infrastructure are broken.
+
+<strong>Rules</strong> running in the Prometheus database either aggregate and record new time series from existing data. 
+
+Promethus provides multiple modes of graphing and dashboarding support, but also
+exposes its time-series data to <strong>API clients</strong> such as <strong>Grafana</strong> which make <strong>PromQL</strong> (Prometheus query language) to extract data in order to display <strong>visualizations</strong> on their websites. 
+
+Because people can't be always watching such screens, Rules are also set in Prometheus to trigger <strong>alerts</strong> pushed to the <a href="#AlertManager">Alert Manager</a> which notifies end-points such as email, Slack, Pager Duty SMS, or other notification mechanisms.
 
 
 ## Competitive comparisons
 
 Prometheus does not concern itself with logging (like Elastic) nor transaction tracing (like Zipkin).
-
-Unlike central data collectors such as Splunk, each Prometheus server is distributed standalone and thus not dependent on network storage or other remote services. So it's available even when other parts of the infrastructure are broken.
-
-Targets being monitored are discovered via <strong>service discovery</strong> as well as static configuration.
-
-Promethus provides multiple modes of graphing and dashboarding support, but many use Grafana to do visualization by accessing an API Prometheus exposes for <strong>PromQL</strong> (Prometheus Query Language) expressions.
 
 Metrics can be exported from Prometheus using the blackbox_exporter installed using <a target="_blank" href="https://github.com/cloudalchemy/ansible-blackbox-exporter">ansible-blackbox-exporter</a> or a node exported installed by <a target="_blank" href="https://github.com/cloudalchemy/ansible-node-exporter">ansible-node-exporter</a>.  PROTIP: When starting out, using Node exporter achieves less vendor lock-in associated with instrumenting code base for Prometheus.
 
@@ -118,7 +123,7 @@ The <a target="_blank" href="https://beta.linuxacademy.com/#/hands-on-labs/detai
 
    Once infrastructure monitoring is up and running, the basic Node.js application uses a Prometheus client libary to track metrics across the app.
 
-   Finally, add recording and alerting rules, build out a series of routes so any alerts created get to their desired endpoint. 
+   Finally, add recording and <a href="#Alerting">alerting</a> rules, build out a series of routes so any alerts created get to their desired endpoint. 
 
    The course also looks at creating persistent dashboards with Grafana and use its various graphing options to better track data.
 
@@ -153,8 +158,7 @@ $ prometheus --config.file "/etc/prometheus/prometheus.yml" &
 
 ## Ansible installer
 
-Paweł Krupa (<a target="_blank" href="https://twitter.com/paulfantom">@paulfantom</a>, author of the <a target="_blank" href="https://paulfantom.github.io/workshop-docker/#/1">Docker Workshop</a>)
-and Roman Demachkovych (<a target="_blank" href="https://twitter.com/rdemachkovych">@rdemachkovych</a>), together as Cloud Alchemy,
+Paweł Krupa (<a target="_blank" href="https://twitter.com/paulfantom">@paulfantom</a>, author of the <a target="_blank" href="https://paulfantom.github.io/workshop-docker/#/1">Docker Workshop</a>) and Roman Demachkovych (<a target="_blank" href="https://twitter.com/rdemachkovych">@rdemachkovych</a>), together as Cloud Alchemy,
 defined a <a target="_blank" href="https://presentation.cloudalchemy.org/#/"> presentation</a> about their <a target="_blank" href="https://github.com/cloudalchemy/ansible-prometheus">
 Ansible role for Prometheus</a>, with https://demo.cloudalchemy.org.
 
@@ -446,10 +450,16 @@ http_request_duration_microseconds{handler="prometheus",quantile="0.5"} 73334.09
 
 TBD
 
+<a name="AlertManager"></a>
+
+## Alert Manager
+
+The Alert Manager uses port 9093 by default.
+
 
 <a name="Alerting"></a>
 
-## Alerting
+### Alerting
 
 A sample config:
 
