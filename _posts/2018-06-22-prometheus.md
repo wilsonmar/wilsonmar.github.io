@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Prometheus (CNCF with Kubernetes)"
-excerpt: "Free monitoring"
+excerpt: "Open-source (free) monitoring"
 tags: [Clouds, Monitoring, Analytics, CNCF, Kubernetes]
 file: prometheus.md
 image:
@@ -15,22 +15,15 @@ comments: true
 
 {% include _toc.html %}
 
-The tool Prometheus (at <a target="_blank" href="https://prometheus.io/">https://prometheus.io</a>)
-gathers metrics from targets at the cluster, node, and microservice API levels,
-unlike the legacy statsd daemon which is concerned only with system-level metrics such as CPU, Memory, etc.
+The name Prometheus comes from Greek mythology. The Titan Prometheus was an immortal servant of the gods, who stole fire and gave it to humankind. This changed the human race forever (for better and worse). But this made mankind dangerous to the gods. Ridley Scott named his <a target="_blank" href="https://www.imdb.com/title/tt1446714/trivia">2012 film "Prometheus"</a>, saying: "It's the story of creation; the gods and the man who stood against them." 
+
+Unlike the legacy "statsd" daemon which is concerned only with system-level metrics such as CPU, Memory, etc., the tool Prometheus (at <a target="_blank" href="https://prometheus.io/">https://prometheus.io</a>) gathers metrics from targets at the cluster, node, and microservice API levels.
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/41593555-b83a2cce-737d-11e8-9d60-e8e2daf36c06.jpg"><img alt="prometheus-arch-837x372-30025.jpg" width="837" src="https://user-images.githubusercontent.com/300046/41593555-b83a2cce-737d-11e8-9d60-e8e2daf36c06.jpg"></a>
 <a target="_blank" href="https://www.youtube.com/watch?v=5GYe_-qqP30&t=15m14s">*</a>
 
-Prometheus <strong>scrapes</strong> (gathers) metrics on hosts and applications using instrumention <a href="#Exporters">job exporters</a> to expose metrics, either directly or via an intermediary <strong>push gateway</strong> for short-lived jobs. It stores all scraped samples locally and runs <strong>rules</strong> over the data to either aggregate and record new time series from existing data or to generate <strong>alerts</strong>. Prometheus comes with a multi-dimensional numeric <strong>time-series database</strong> which exposes its data in an <strong>API</strong> so that <strong>Grafana</strong> or other API consumers can use the Prometheus <strong>PromQL</strong> query language to extract data for visualization. Rules running in the Prometheus database can <strong>push</strong> (send) alerts to the Prometheus <strong>Alert Manager</strong> to forward to email, Slack, Pager Duty, and other notification mechanisms.
+In the component diagram above, Prometheus <strong>scrapes</strong> (gathers) metrics on hosts and applications using instrumention <a href="#Exporters">job exporters</a> to expose metrics, either directly or via an intermediary <strong>push gateway</strong> for short-lived jobs. It stores all scraped samples locally and runs <strong>rules</strong> over the data to either aggregate and record new time series from existing data or to generate <strong>alerts</strong>. Prometheus comes with a multi-dimensional numeric <strong>time-series database</strong> which exposes its data in an <strong>API</strong> so that <strong>Grafana</strong> or other API consumers can use the Prometheus <strong>PromQL</strong> query language to extract data for visualization. Rules running in the Prometheus database can <strong>push</strong> (send) alerts to the Prometheus <strong>Alert Manager</strong> to forward to email, Slack, Pager Duty, and other notification mechanisms.
 
-
-## Background
-
-<a target="_blank" href="https://prometheus.io/docs/introduction/overview/">https://prometheus.io/docs</a> 
-contains docs. It says in 2012 SoundCloud wrote Prometheus in <a target="_blank" href="https://wilsonmar.github.io/golang/">Golang</a> and open sourced it at <a target="_blank" href="https://github.com/prometheus/">https://github.com/prometheus</a>.
-
-The name Prometheus comes from Greek mythology. The Titan Prometheus was an immortal servant of the gods, who stole and gave to humankind fire, which changed the human race forever (for better and worse). But this made mankind dangerous to the gods. Ridley Scott named his <a target="_blank" href="https://www.imdb.com/title/tt1446714/trivia">2012 film "Prometheus"</a>, saying: "It's the story of creation; the gods and the man who stood against them." 
 
 ## Competitive comparisons
 
@@ -40,9 +33,9 @@ Unlike central data collectors such as Splunk, each Prometheus server is distrib
 
 Targets being monitored are discovered via <strong>service discovery</strong> as well as static configuration.
 
-Promethus provides multiple modes of graphing and dashboarding support, but many use Grafana to do visualization by accessing an API Prometheus exposes for <strong>PromQL</strong>.
+Promethus provides multiple modes of graphing and dashboarding support, but many use Grafana to do visualization by accessing an API Prometheus exposes for <strong>PromQL</strong> (Prometheus Query Language) expressions.
 
-Metrics can be exported from Prometheus using the blackbox_exporter installed using https://github.com/cloudalchemy/ansible-blackbox-exporter or a node exported installed by https://github.com/cloudalchemy/ansible-node-exporter  PROTIP: When starting out, using Node exporter achieves less vendor lock-in associated with instrumenting code base for Prometheus.
+Metrics can be exported from Prometheus using the blackbox_exporter installed using <a target="_blank" href="https://github.com/cloudalchemy/ansible-blackbox-exporter">ansible-blackbox-exporter</a> or a node exported installed by <a target="_blank" href="https://github.com/cloudalchemy/ansible-node-exporter">ansible-node-exporter</a>.  PROTIP: When starting out, using Node exporter achieves less vendor lock-in associated with instrumenting code base for Prometheus.
 
 <pre>
 prometheus_alertmanager_config:
@@ -63,46 +56,105 @@ prometheus_targets:
       - "localhost:9100"
 </pre>
 
-https://github.com/cloudalchemy/ansible-fluentd
+<a target="_blank" href="https://github.com/cloudalchemy/ansible-fluentd">https://github.com/cloudalchemy/ansible-fluentd</a>
 Provision fluentd log collector
 
 Its competitors are AWS CloudWatch, DataDog, Logz.io, Grafana, etc.
 
+An exporter gathers metrics and creates the endpoint that Prometheus can escape.
+
+The Node Exporter 
+
 <a target="_blank" href="https://collectd.org/wiki/index.php/Plugin:Write_Prometheus">Collectd</a>
-can be used to write Prometheus metrics.
+is used to write Prometheus metrics, popular among push solutions.
+
+The WMI Exporter provides system metrics for Windows servers.
+
+## Learning Environment
+
+The <a target="_blank" href="https://beta.linuxacademy.com/#/hands-on-labs/details/fe6f98da-ab26-48a6-9b58-edc6b3c1d808">"DevOps Monitoring Deep Dive"å</a> video course by Elle Krout. The course references an <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/ProjectForethought.html">interactive Lucid diagram called "ProjectForethought"</a> for the NodeJs simple to-do list program called Forethought that is the subject of monitoring. 
+
+1. Create within Linux Academy's <a target="_blank" href="https://playground.linuxacademy.com/server-list">Servers in the cloud</a>, the "DevOps Monitoring Deep Dive" distribution in a small-sized host. 
+1. When "READY", click the Distribution name "DevOps Monitoring Deep Dive" for details.
+1. Highlight and copy the Temp. Password by clicking the copy icon.
+1. Click "Terminal" to open another browser window.
+1. Type "cloud_user" to login:
+1. Paste the password.
+1. For a new password, I paste the password again, but add an additional character. 
+1. Again to confirm.
+
+1. When an enviornment is opened, highlight and copy this command:
+
+   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/Prometheus/prometheus-setup.sh)"</strong></pre>
+
+1. Switch to the Terminal to paste, which runs the script.
+
+   ### Docker
+
+1. Confirm the creation of the existing Docker image:
+ 
+   <pre>docker image list</pre>
+
+   The response lists "forethought" as a Docker image.
+
+1. List the contents of the forethought directory and subdirectories:
+   
+   <pre>ls -d</pre>
+
+1. Deploy the web application to a container. Map port 8080 on the container to port 80 on the host:
+
+   <tt>docker run --name ft-app -p 80:8080 -d forethought</tt>
+
+1. Check that the application is working correctly by visiting the server's provided URL.
+
+   In the script, this is done using a curl script and examining the HTML response.
+
+1. Install
+
+   NOTE: The Terminal is inside a Dockerized Ubuntu (18.04 Bionic Beaver LTS) image.
+   So `apt-get` commands are used to install <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/4049/lesson/2/module/329">Prometheus</a>, <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/4049/lesson/3/module/329">Alertmanager</a>, and <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/4049/lesson/4/module/329">Grafana</a>.
+
+   The infrastructure is monitored by using Prometheus's Node Exporter and viewed statistic about our CPU, memory, disk, file system, basic networking, and load metrics. Also monitored are contrainers being using on virtual machines.
+
+   Once infrastructure monitoring is up and running, the basic Node.js application uses a Prometheus client libary to track metrics across the app.
+
+   Finally, add recording and alerting rules, build out a series of routes so any alerts created get to their desired endpoint. 
+
+   The course also looks at creating persistent dashboards with Grafana and use its various graphing options to better track data.
 
 
-## Installation/Deployment
+## Kubernetes
 
-Prometheus joined the CNCF (Cloud Native Computing Foundation) in 2016 as its second hosted project after Kubernetes. So naturally, Prometheus works with K8s. See https://github.com/kayrus/prometheus-kubernetes.
+Prometheus joined the CNCF (Cloud Native Computing Foundation) in 2016 as its second hosted project after Kubernetes. So naturally, Prometheus works with K8s. See <a target="_blank" href="https://github.com/kayrus/prometheus-kubernetes">https://github.com/kayrus/prometheus-kubernetes</a>.
 
 In late 2016, CoreOS introduced the Operator pattern and released an example using that pattern in Prometheus Operatorn. It automatically creates/configures/manages Prometheus monitoring instances in clusters atop Kubernetes.
-See https://github.com/coreos/prometheus-operator 
-and https://devops.college/prometheus-operator-how-to-monitor-an-external-service-3cb6ac8d5acb
+See <a target="_blank" href="https://github.com/coreos/prometheus-operator">https://github.com/coreos/prometheus-operator</a> and <a target="_blank" href="https://devops.college/prometheus-operator-how-to-monitor-an-external-service-3cb6ac8d5acb">https://devops.college/prometheus-operator-how-to-monitor-an-external-service-3cb6ac8d5acb</a>
 
-PROTIP: Prometheus has not reached "1.0" yet so use of apt-get, yum, brew, installer packages are not recommended at this time.
+PROTIP: Prometheus has not reached "1.0" yet so use of apt-get, yum, brew, installer packages are not recommended at this time for production use. But that hasn't stopped many from using it in production.
 
 <pre>
 $ cd /tmp
 $ wget https://github.com/prometheus/prometheus/releases/download/v2.2.0/prometheus-2.2.0.linux-amd64.tar.gz
 $ tar -xzf prometheus-2.2.0.linux-amd64.tar.gz
-
+&nbsp;
 $ sudo chmod +x prometheus-2.2.0.linux-amd64/{prometheus,promtool} 
 $ sudo cp prometheus-2.2.0.linux-amd64/{prometheus,promtool} /usr/local/bin/
 $ sudo chown root:root /usr/local/bin/{prometheus,promtool}
-
+&nbsp;
 $ sudo mkdir -p /etc/prometheus
 $ sudo vim /etc/prometheus/prometheus.yml
 $ promtool check config prometheus.yml
-
+&nbsp;
 Checking prometheus.yml
 SUCCESS: 0 rule files found
-
+&nbsp;
 $ prometheus --config.file "/etc/prometheus/prometheus.yml" &
 </pre>
 
-Paweł Krupa (@paulfantom, author of the <a target="_blank" href="https://paulfantom.github.io/workshop-docker/#/1">Docker Workshop</a>)
-and Roman Demachkovych (@rdemachkovych), together as Cloud Alchemy,
+## Ansible installer
+
+Paweł Krupa (<a target="_blank" href="https://twitter.com/paulfantom">@paulfantom</a>, author of the <a target="_blank" href="https://paulfantom.github.io/workshop-docker/#/1">Docker Workshop</a>)
+and Roman Demachkovych (<a target="_blank" href="https://twitter.com/rdemachkovych">@rdemachkovych</a>), together as Cloud Alchemy,
 defined a <a target="_blank" href="https://presentation.cloudalchemy.org/#/"> presentation</a> about their <a target="_blank" href="https://github.com/cloudalchemy/ansible-prometheus">
 Ansible role for Prometheus</a>, with https://demo.cloudalchemy.org.
 
@@ -118,7 +170,7 @@ Ansible role for Prometheus</a>, with https://demo.cloudalchemy.org.
 * linux capabilites support
 * basic <a target="_blank" href="https://en.wikipedia.org/wiki/Security-Enhanced_Linux">SELinux</a> (Security-Enhanced Linux) security module support
 
-https://travis-ci.org/cloudalchemy/demo-site
+<a target="_blank" href="https://travis-ci.org/cloudalchemy/demo-site">https://travis-ci.org/cloudalchemy/demo-site</a>
 
 
 ## Starting Prometheus
@@ -129,7 +181,7 @@ To run Prometheus after downloading the Docker image from the "prom" account in 
 
    Start Docker and try again if you get this error message:
 
-   <pre>docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.</pre>
+   <tt>docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.</tt>
 
    The expected message is:
 
@@ -145,11 +197,15 @@ To run Prometheus after downloading the Docker image from the "prom" account in 
 
 3. Open a browser to http://localhost:9090/ to see the Graph 
 
-   <img alt="prometheus-graph-menu-403x380-51898.jpg" width="403" src="https://user-images.githubusercontent.com/300046/41504993-ea9bcd8a-71bb-11e8-8070-72af4050c796.jpg"></a>
+   <img alt="prometheus-graph-menu-403x380-51898.jpg" width="403" src="https://user-images.githubusercontent.com/300046/41504993-ea9bcd8a-71bb-11e8-8070-72af4050c796.jpg">
 
    These are metrics for the Go language/virtual machine running locally.
 
-   ### Graphing specs
+   NOTE: <a target="_blank" href="https://prometheus.io/docs/introduction/overview/">https://prometheus.io/docs</a> contains docs. It says in 2012 <strong>SoundCloud</strong> wrote Prometheus in <a target="_blank" href="https://wilsonmar.github.io/golang/">Golang</a> and open sourced it at <a target="_blank" href="https://github.com/prometheus/">https://github.com/prometheus</a>.
+
+
+
+### Graphing specs
 
 4. TODO: Select "go_gc_duration_seconds" for the median, which is 50th quantile, specified as:
 
@@ -293,9 +349,7 @@ The four golden signals of monitoring</a> begins with:
    A measure of how much demand is being placed on your system, measured in a high-level system-specific metric. For a web service, this measurement is usually HTTP requests per second, perhaps broken out by the nature of the requests (e.g., static versus dynamic content). For an audio streaming system, this measurement might focus on network I/O rate or concurrent sessions. For a key-value storage system, this measurement might be transactions and retrievals per second.
 
 To identify bottlenecks, instead of beginning with given metrics (partial answers) and trying to work backwards,
-the Utilization Saturation and Errors (USE) Method by Brendan Gregg (of Netflix), described at 
-<a target="_blank" href="http://www.brendangregg.com/usemethod.html">http://www.brendangregg.com/usemethod.html</a>,  begins by posing questions off a checklist, and then seeks answers.
-directs the construction of a checklist, which for server analysis can be used for quickly identifying resource bottlenecks or errors.
+the Utilization Saturation and Errors (USE) Method by Brendan Gregg (of Netflix), described at <a target="_blank" href="http://www.brendangregg.com/usemethod.html">http://www.brendangregg.com/usemethod.html</a>,  begins by posing questions off a checklist, and then seeks answers. To direct the construction of a checklist, which for server analysis can be used for quickly identifying resource bottlenecks or errors.
 
 * <strong>Utilization</strong> 
 
@@ -317,7 +371,7 @@ Predictive: saturation is the basis for projections of impending issues, such as
 
 ## Exporters
 
-Prometheus manages exporters to well-known services: StatsD, Node, AWS Cloudwatch, InfluxDB, JMX, SNMP, HAProxy, Consul, Memchached, Graphite, Blackbox, etc. See https://prometheus.io/docs/instrumenting/exporters
+Prometheus manages exporters to well-known services: StatsD, Node, AWS Cloudwatch, InfluxDB, JMX, SNMP, HAProxy, Consul, Memchached, Graphite, Blackbox, etc. See <a target="_blank" href="https://prometheus.io/docs/instrumenting/exporters">https://prometheus.io/docs/instrumenting/exporters</a>
 
 Custom exporters are in the category of: database, messaging systems, APIs, logging, storage, hardware related, HTTP, etc.
 
@@ -333,9 +387,11 @@ Ports:
 
 ## Node Exporter
 
-The Node Explorer has its own repo. Download from GitHub Release:
+The Prometheus <strong>Node Explorer</strong> has its own repo at <a target="_blank" href="https://github.com/prometheus/node_exporter">https://github.com/prometheus/node_exporter</a>
 
-   https://github.com/prometheus/node_exporter/releases
+To download a release from GitHub:
+
+   <a target="_blank" href="https://github.com/prometheus/node_exporter/releases">https://github.com/prometheus/node_exporter/releases</a>
 
 <pre>
 # TODO: Identify latest version URL in https://prometheus.io/download/#node_exporter
@@ -349,16 +405,19 @@ sudo cp node_exporter-*/node_exporter /usr/local/bin/
 
    <pre><strong>node_exporter --version</strong></pre>
 
-   A sample response:
+   A sample response (at time of writing): 
 
 <pre>
 node_exporter, version 0.16.0 (branch: HEAD, revision: 6
 e2053c557f96efb63aef3691f15335a70baaffd)
 . . .</pre>
 
-The node_exporter exporter runs, by default, on port 9100 to expose metrics, but can be changed:
+The node_exporter exporter runs, by default, on <strong>port 9100</strong> to expose metrics, but can be changed:
 
-   node_exporter --web.listen-address=":9100" --web.telemetrypath="/node_metrics"
+   <pre>node_exporter --web.listen-address=":9100" \
+   --web.telemetrypath="/node_metrics"</pre>
+
+And:
 
    <pre>
 scrape_configs:
@@ -385,7 +444,7 @@ http_request_duration_microseconds{handler="prometheus",quantile="0.5"} 73334.09
 
 ## Operator
 
-
+TBD
 
 
 <a name="Alerting"></a>
@@ -404,27 +463,31 @@ A sample config:
       - "1.2.3.6:9093"
    </pre>
 
-routing
-sending
-grouping
-deduplication
+* routing
+* sending
+* grouping
+* deduplication
 
-Functions: silencing, inhibition
+Functions: 
+* silencing
+* inhibition
 
 Under development: A cluster of Alertmanager instances form a mesh configuration ensure High Availability.
 
-Integrations include email
-hipchat
-pagerduty
-pushover
-slack
-opsgenie
-webhook
-victorops
+Integrations include 
+* email
+* hipchat
+* pagerduty
+* pushover
+* slack
+* opsgenie
+* webhook
+* victorops
+
 
 ## Client libraries
 
-Embed:
+Embed official client libraries:
 
 * <a href="https://github.com/prometheus/client_golang">Go</a>
 * <a href="https://github.com/prometheus/client_java">Java or Scala</a>
@@ -443,7 +506,7 @@ Unofficial third-party client libraries:
 * <a href="https://github.com/knyar/nginx-lua-prometheus">Lua</a> for Nginx
 * <a href="https://github.com/tarantool/prometheus">Lua</a> for Tarantool
 * <a href="https://github.com/andrasm/prometheus-net">.NET / C#</a>
-* <a href="https://github.com/siimon/prom-client">node.js</a>
+* <a href="https://github.com/siimon/prom-client">node.js prom-client</a>
 * <a href="https://github.com/Jimdo/prometheus_client_php">PHP</a>
 * <a href="https://github.com/pingcap/rust-prometheus">Rust</a>
 
@@ -464,7 +527,7 @@ Bryan Brazil blogs about Prometheus at https://www.robustperception.io/blog/
 The blog mentions his trainings.
 He is working on a <a target="_blank" href="https://www.safaribooksonline.com/library/view/prometheus-up/9781492034131/">on Safari Book "Prometheus: Up & Running"</a>.
 
-paulfantom/workshop-docker
+   paulfantom/workshop-docker
 
 
 <a target="_blank" href="https://www.youtube.com/watch?v=PDxcEzu62jk">
@@ -475,4 +538,28 @@ by Julius Volz - Co-Founder, Prometheus
 Infrastructure and application monitoring using Prometheus</a>  at Devox UK May 17, 2017
 by Marco Pas
 
-LinuxAcademy video hands-on: <a target="_blank" href="https://beta.linuxacademy.com/#/hands-on-labs/details/fe6f98da-ab26-48a6-9b58-edc6b3c1d808">Monitoring Infrastructure and Containers with Prometheus</a>: Prometheus is able to monitor our infrastructure and applications at multiple levels: on the host itself, on any containers, and on the application. In this hands-on lab, we're going to address the first two options for monitoring: our virtual machine host and our containers. We'll first set up monitoring for our virtual machine by using Prometheus's Node Exporter, and then we'll set up container monitoring for the provided container using Google's cAdvisor. By the time we're done, we'll be able to view metrics across two levels of our system in Prometheus to track changes and view trends on our systems.
+LinuxAcademy video hands-on courses: 
+
+* <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/4049/lesson/1/module/329">Monitoring Infrastructure and Containers with Prometheus</a>: Prometheus is used to monitor infrastructure and applications at multiple levels: on the host itself, on any containers, and on the application. This hands-on lab addresses monitoring of virtual machine host and containers. It begins by setting up monitoring for a virtual machine using Prometheus's Node Exporter. Then set up container monitoring for the provided container using Google's <strong>cAdvisor</strong>. 
+
+   View metrics in Prometheus across two levels of a system to track changes and view trends.
+
+* <a target="_blank" href="https://beta.linuxacademy.com/#/hands-on-labs/details/fe6f98da-ab26-48a6-9b58-edc6b3c1d808">DevOps Monitoring Deep Dive</a> by Elle Krout
+references an <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/ProjectForethought.html">interactive Lucid diagram called "ProjectForethought"</a> for the NodeJs simple to-do list program called Forethought that is the subject of monitoring. 
+
+   Create within Linux Academy's <a target="_blank" href="https://playground.linuxacademy.com/server-list">Servers in the cloud</a>, the "DevOps Monitoring Deep Dive" distribution in a small-sized host. It contains a Dockerized Ubuntu (18.04 Bionic Beaver LTS).
+
+   So `apt-get` commands are used to install <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/4049/lesson/2/module/329">Prometheus</a>, <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/4049/lesson/3/module/329">Alertmanager</a>, and <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/4049/lesson/4/module/329">Grafana</a>.
+
+   <tt>docker run --name ft-app -p 80:8080 -d forethought</tt>
+
+   The infrastructure is monitored by using Prometheus's Node Exporter and viewed statistic about our CPU, memory, disk, file system, basic networking, and load metrics. Also monitored are contrainers being using on virtual machines.
+
+   Once infrastructure monitoring is up and running, the basic Node.js application uses a Prometheus client libary to track metrics across the app.
+
+   Finally, add recording and alerting rules, build out a series of routes so any alerts created get to their desired endpoint. 
+
+   The course also looks at creating persistent dashboards with Grafana and use its various graphing options to better track data.
+
+
+
