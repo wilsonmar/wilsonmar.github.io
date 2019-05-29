@@ -18,8 +18,9 @@ comments: true
 
 <a href="https://wilsonmar.github.io/mac-osx-terminal">This tutorial</a> describes how to make use of Terminal to make your life easier and less frustrating.
 
-What Apple calls the Terminal is a Bash shell.
+What Apple calls the Terminal is what Linux people call a Bash shell.
 
+This information is often used as interview questions.
 
 <a id="Terminalz"></a>
 
@@ -607,7 +608,7 @@ fi
 https://github.com/gcuisinier/jenv/blob/master/README.md
 
 
-To run a bash script while avoiding the confirmation prompt:
+* To run a bash script while avoiding the confirmation prompt:
 
    <tt><strong>set \-\- -f; source bootstrap.sh
    </strong></tt>
@@ -621,23 +622,27 @@ This page contains notes for system administrators and developers,
 who need to control Macs below the UI level, which require
 typing commands into a command-line terminal screen.
 
-To list open files (process id's and ports, actually):
+1. To avoid text wrapping, pull the right edge to expand the screen width.
 
-   <pre><strong>sudo lsof -i -P
-   </strong></pre>
-
-To avoid text wrapping, pull the right edge to expand the screen width.
-
-The right-most column heading &quot;Name&quot; shows the port
-(either TCP or UDP).
-
-To filter a particular port number:
+2. To list process id's and port (such as 8080), use the "list open files" command:
 
    <pre><strong>sudo lsof -i -P | grep 8080
    </strong></pre>
 
-The second column, PID, lists the process identifier.
-Copy a number for use in the kill command:
+   PROTIP: Use grep to filter because the response is usually too many lines.
+
+   (You'll need to provide your password).
+
+   <pre>
+   COMMAND     PID           USER   FD   TYPE            DEVICE SIZE/OFF   NODE NAME
+   launchd       1           root   23u  IPv4 0x1b333861483d431      0t0    UDP *:137
+   </pre>
+
+   The right-most column heading &quot;NAME&quot; shows the port
+   (either TCP or UDP).
+
+1. The second column, PID, lists the process identifier. 
+   Copy a PID number for use in the kill command, such as:
 
    <pre><strong>sudo kill 289
    </strong></pre>
@@ -787,34 +792,32 @@ exit
 
 ## Environment Variables
 
-Like on PCs, the PATH environment variable stores
-where the operating system should look to find
-a particular program to execute.
-
 A big reason to use a command-line terminal is to set environment variables.
 
-To see what is already defined:
+Like on PCs, the <strong>PATH</strong> system environment variable stores
+where the operating system should look to find a particular program to execute.
+
+1. To see what is already defined:
 
    <pre><strong>export
    </strong></pre>
 
-http://stackoverflow.com/questions/135688/setting-environment-variables-in-os-x
-talks about setting <strong>launchd.conf</strong> and rebooting.
-This applies to all users.
+   <a target="_blank" href="http://stackoverflow.com/questions/135688/setting-environment-variables-in-os-x">This</a> 
+   talks about setting <strong>launchd.conf</strong> and rebooting.
+   This applies to all users.
 
-
-To see what was already defined:
+1. To see what is defined:
 
    <pre><strong>echo $PATH
    </strong></pre>
 
-$PATH must be upper case.
+   PROTIP: $PATH must be upper case.
 
-The response I'm getting is:
+   The response I'm getting includes:
 
-<tt>
-/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-</tt>
+   <tt>
+   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+   </tt>
 
 
 <a id="RootSudoz"></a>
@@ -822,41 +825,38 @@ The response I'm getting is:
 ## Root user for sudo commands
 
 The root user has the ability to relocate or remove required system files and to introduce new files in locations that are protected from other users.
-
-Any user with an administrator account can become the root user or reset the root password.
 A root user has the ability to access other users' files.
 
-Under a Unix system like Mac OS X you must have "root" (administrative) privileges to start IP-services using ports smaller than 1024.
+Any user with an administrator account can become the root user or reset the root password.
 
-After Mac install, the root or superuser account is not enabled. 
+Under a Unix system like MacOS you must have "root" (administrative) privileges to start IP-services using ports smaller than 1024.
+
+After MacOS install, the root or superuser account is not enabled. 
 While it is possible to enable the root account, 
 once enabled, if forgetten, you'll have to 
 <a target="_blank" rel="amphtml" href="http://danfrakes.com/2014/10/16/how-to-make-a-bootable-yosemite-installer-drive/">
 reboot from the installer drive</a> (a hassle).
 
-It is safer and easier to use the sudo command to gain temporary root access to the system.
+1. It is safer and easier to use the sudo command to gain temporary root access to the system. In a Terminal window invoke:
 
-DOTHIS: 
-In a Terminal window invoke:
+   <tt>sudo -s</tt>
+   
+   After I type in my password, the response for me is the version of bash:
 
-<tt>sudo -s</tt>
-After I type in my password, the response for me is the version of bash:
+   <tt>bash-3.2# </tt>
 
-<tt>bash-3.2# </tt>
+   to demote out of root:
 
-to demote out of root:
+   <tt>exit</tt>
 
-<tt>exit</tt>
-
-DO THIS:
 The folders that bash looks into are:
 
-<tt>/bin/echo $PATH</tt>
+   <tt>/bin/echo $PATH</tt>
 
 On a fresh Yosemite, its:
 
-<tt>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</tt>
-
+   <tt>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</tt>
+ 
 Each additional app adds to the front of the list:
 
 <tt>
@@ -891,10 +891,9 @@ contains the path echo'd.
 
 Or your PATH may be set in /etc/profile for all users
 
-Clear the terminal history:
+1. Clear the terminal history:
 
-<strong>clear</strong>
-
+   <strong>clear</strong>
 
 
 <a id="Browserz"></a>
@@ -931,47 +930,42 @@ URL=</tt>
 </ol>
 
 
-
-
 <a id="MountDmg"></a>
 
 ### Mount .dmg files using hdiutil tool
 
-.dmg (Disk Image) files can be mounted from the command line:
+1. Mount a .dmg (Disk Image) file (substituting for /path/to/diskimage):
 
-   <pre><strong>hdiutil attach /path/to/diskimage.dmg
+   <pre><strong>hdiutil attach <em>/path/to/diskimage.dmg</em>
    </strong></pre>
 
-The response is like:
+   The response is like:
 
-<pre>
+   <pre>
 /dev/disk1 Apple_partition_scheme
 /dev/disk1s1 Apple_partition_map
 /dev/disk1s2 Apple_HFS /Volumes/Mounted Disk Image
-</pre>
+   </pre>
 
-Note the disk from the message above to unmount (detatch):
+   Note the disk from the message above to unmount (detatch):
 
    <pre><strong>hdiutil detach /dev/disk1s2
    </strong></pre>
 
-The same utility can mount .iso images:
+   The same utility can mount .iso images:
 
    <pre><strong>hdiutil mount sample.iso
    </strong></pre>
-
-
 
 
 <a id="DevFolderz"></a>
 
 ## Folders accessed by developers
 
-DOTHIS: 
-In Finder, select from the left panel the first item under the 
+1. In Finder, select from the left panel the first item under the 
 <strong>Devices</strong> list.
 
-Click on <strong>Macintosh HD</strong>.
+1. Click on <strong>Macintosh HD</strong>.
 
 <ul>
 <li><strong>Applications</strong> hold apps installed.</li>
@@ -984,17 +978,18 @@ This occured during upgrade to Yosemite.</li>
 as well as a Shared folder accessible by all users.</li>
 </ul>
 
-DOTHIS:
-Click on your username (wilsonmar in my case).
-This action is the same as clicking on the last default item under the
-Favorites list.
+1. Click on your username (wilsonmar in my case).
 
-Many WordPress developers prefer to add a folder named <strong>Sites</strong>
-which holds the wordpress folder expanded from download.
+   This action is the same as clicking on the last default item under the
+   Favorites list.
+
+   Many WordPress developers prefer to add a folder named <strong>Sites</strong>
+   which holds the wordpress folder expanded from download.
 
 
 
 <a id="Curlz"></a>
+
 ## IPv6 compatibility with Curl command line apps #
 
 <tt>
@@ -1002,7 +997,7 @@ curl http://localhost:3000
 </tt>
 
 When invoked on Mac OS 10.10 (Yosemite), you need to add a parameter
-to make the request using IPv4:
+to make the request use IPv4:
 
 <tt>
 curl http://localhost:3000 <strong>--ipv4</strong>
@@ -1038,11 +1033,31 @@ console.log('Web server listening at: %s', app.get('url'));
 
 Linux has a <strong>ncdu</strong> (NCurses Disk Usage) utility to list files in order of how much space they occupied.
 
-It's not in macOS by default:
+1. It's not in macOS by default, so:
 
    <pre><strong>brew install ncdu</strong></pre>
 
-See https://mac.softpedia.com/get/Utilities/ncdu.shtml
+   See https://mac.softpedia.com/get/Utilities/ncdu.shtml
+
+1. Now list files within a folder by space used:
+
+   <pre><strong>ncdu</strong></pre>
+
+   The command takes up the whole screen (like top), so press control+C to exit.
+
+1. To get the <strong>directory utilitization</strong> size of the current directory:
+
+   <pre><strong>du -sh</strong></pre>
+ 
+   The response is like:
+
+   <pre>6.7M	.</pre>
+
+   The dot means the current folder. 
+   
+1. You can specify a sub-folder named, for example, "code":
+
+   <pre><strong>du -sh code</strong></pre>
 
 
 ## Ulimit Too Many Files
@@ -1055,7 +1070,7 @@ Linux operating systems have this command:
    <tt><strong>ulimit -a
    </strong></tt>
 
-   On my Sierra the response is:
+   On my Sierra the response was:
 
    <pre>
 core file size          (blocks, -c) 0
@@ -1071,35 +1086,36 @@ max user processes              (-u) 709
 virtual memory          (kbytes, -v) unlimited
    </pre>
 
-
-Check how many file descriptors you have:
+1. Check how many file descriptors you have:
 
    <tt><strong>launchctl limit maxfiles
    </strong></tt>
 
-   On Sierra the response is:
+   On Sierra the response was:
 
-   <pre>
-   maxfiles    10240          10240    
-   </pre>
+   <pre>maxfiles    10240          10240</pre>
 
    The first number is the "soft" number, the second one is the "hard" number.
 
-   Such numbers were set with a command such as:
+   After fixing, the numbers I now see are:
+
+   <pre>maxfiles    65536          200000</pre>
+
+1. Such numbers were set with a command such as:
 
    <tt><strong>sudo launchctl limit maxfiles 10240 10240
    </strong></tt>
 
-The maximum setting is 12288?
+   The maximum setting is 12288?
 
-<a target="_blank" href="https://superuser.com/questions/302754/increase-the-maximum-number-of-open-file-descriptors-in-snow-leopard">
-NOTE</a>: To change maxfiles on Sierra, define a plist. TODO: verify
+   <a target="_blank" href="https://superuser.com/questions/302754/increase-the-maximum-number-of-open-file-descriptors-in-snow-leopard">
+   NOTE</a>: To change maxfiles on Sierra, define a plist. TODO: verify
 
-Due to security, OSX Lion removed the "unlimited" option and now requires a number to be specified.
+   Due to security, OSX Lion removed the "unlimited" option and now requires a number to be specified.
 
-   <tt>sudo launchctl limit maxfiles unlimited
-   </tt>
 
+PROTIP: `launchctl` is a rough equivalent to the `systemctl` command used in Linux systems.
+launchctl interfaces with launchd to load, unload daemons/agents and generally control launchd.
 
 <a name="ElCapitanSIP"></a>
 

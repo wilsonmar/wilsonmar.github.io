@@ -36,48 +36,9 @@ exposes its time-series data to <strong>API clients</strong> such as <strong>Gra
 Because people can't be always watching such screens, Rules are also set in Prometheus to trigger <strong>alerts</strong> pushed to the <a href="#AlertManager">Alert Manager</a> which notifies end-points such as email, Slack, Pager Duty SMS, or other notification mechanisms.
 
 
-## Competitive comparisons
-
-Prometheus does not concern itself with logging (like Elastic) nor transaction tracing (like Zipkin).
-
-Metrics can be exported from Prometheus using the blackbox_exporter installed using <a target="_blank" href="https://github.com/cloudalchemy/ansible-blackbox-exporter">ansible-blackbox-exporter</a> or a node exported installed by <a target="_blank" href="https://github.com/cloudalchemy/ansible-node-exporter">ansible-node-exporter</a>.  PROTIP: When starting out, using Node exporter achieves less vendor lock-in associated with instrumenting code base for Prometheus.
-
-<pre>
-prometheus_alertmanager_config:
-  - scheme: http
-    static_configs:
-      - targets: 
-        - "localhost:9093"
-&nbsp;
-prometheus_scrape_configs:
-- job_name: "node"
-  file_sd_configs:
-  - files:
-    - "/etc/prometheus/file_sd/node.yml"
-&nbsp;
-prometheus_targets:
-  node:
-    - targets:
-      - "localhost:9100"
-</pre>
-
-<a target="_blank" href="https://github.com/cloudalchemy/ansible-fluentd">https://github.com/cloudalchemy/ansible-fluentd</a>
-Provision fluentd log collector
-
-Its competitors are AWS CloudWatch, DataDog, Logz.io, Grafana, etc.
-
-An exporter gathers metrics and creates the endpoint that Prometheus can escape.
-
-The Node Exporter 
-
-<a target="_blank" href="https://collectd.org/wiki/index.php/Plugin:Write_Prometheus">Collectd</a>
-is used to write Prometheus metrics, popular among push solutions.
-
-The WMI Exporter provides system metrics for Windows servers.
-
 ## Learning Environment
 
-The <a target="_blank" href="https://beta.linuxacademy.com/#/hands-on-labs/details/fe6f98da-ab26-48a6-9b58-edc6b3c1d808">"DevOps Monitoring Deep Dive"å</a> video course by Elle Krout. The course references an <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/ProjectForethought.html">interactive Lucid diagram called "ProjectForethought"</a> for the NodeJs simple to-do list program called Forethought that is the subject of monitoring. 
+The <a target="_blank" href="https://beta.linuxacademy.com/#/hands-on-labs/details/fe6f98da-ab26-48a6-9b58-edc6b3c1d808">"DevOps Monitoring Deep Dive"</a> video course by Elle Krout references an <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/ProjectForethought.html">interactive Lucid diagram called "ProjectForethought"</a> for the NodeJs simple to-do list program called Forethought that is the subject of monitoring. 
 
 1. Create within Linux Academy's <a target="_blank" href="https://playground.linuxacademy.com/server-list">Servers in the cloud</a>, the "DevOps Monitoring Deep Dive" distribution in a small-sized host. 
 1. When "READY", click the Distribution name "DevOps Monitoring Deep Dive" for details.
@@ -92,9 +53,15 @@ The <a target="_blank" href="https://beta.linuxacademy.com/#/hands-on-labs/detai
 
    <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/Prometheus/prometheus-setup.sh)"</strong></pre>
 
+1. Copy the password to your computer's Clipboard.
 1. Switch to the Terminal to paste, which runs the script.
+1. Paste the password when prompted.
 
-   ### Docker
+1. To rerun the script, discard the current instance and create a new instance.
+
+   The script is self-documented, but below are additional comments:
+
+### Below is a description of Docker
 
 1. Confirm the creation of the existing Docker image:
  
@@ -376,6 +343,8 @@ Predictive: saturation is the basis for projections of impending issues, such as
 ## Exporters
 
 Prometheus manages exporters to well-known services: StatsD, Node, AWS Cloudwatch, InfluxDB, JMX, SNMP, HAProxy, Consul, Memchached, Graphite, Blackbox, etc. See <a target="_blank" href="https://prometheus.io/docs/instrumenting/exporters">https://prometheus.io/docs/instrumenting/exporters</a>
+
+The WMI Exporter provides system metrics for Windows servers.
 
 Custom exporters are in the category of: database, messaging systems, APIs, logging, storage, hardware related, HTTP, etc.
 
