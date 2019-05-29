@@ -32,12 +32,12 @@ The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/30870969-87e52558-a2a2-11e7-8cfa-454fe9081c64.png">
 <img alt="terraform-comp-colored-650x261-36439" width="650" height="261" src="https://user-images.githubusercontent.com/300046/30870914-62437728-a2a2-11e7-8e6a-e3c847f7984f.jpg"><small>(Click to pop-up full screen image <a target="_blank" href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c#.63ls7fpkq">colorized from Gruntwork's blog</a>)</small></a>
 
-Terraform's advantage over Amazon's Cloud Formation scripts is that Terraform can also provision on-premises servers running OpenStack as well as AWS, Azure, Google Cloud, Digitial Ocean, Fastly, and other <a href="#CloudProviders">cloud providers</a> -- "anything with an API".
+Terraform's advantage over Amazon's Cloud Formation scripts is that Terraform can also provision <strong>on-premises</strong> servers running OpenStack as well as AWS, Azure, Google Cloud, Digitial Ocean, Fastly, and other <a href="#CloudProviders">cloud providers</a> -- "anything with an API".
 
-Terraform makes infrastructure provisioning Repeatable. Versioned. Documented. Automated. Testable. Shareable.
+Terraform makes infrastructure provisioning: Repeatable. Versioned. Documented. Automated. Testable. Shareable.
 
-Terraform and Ansible can work in unison and complement each other. Terraform can bootstrap the underlying cloud infrastructure and then Ansible provisions the user space. To test a service on a dedicated server, skip using Terraform and run the Ansible playbook on that machine.
-Linux Academy has a <a target="_blank" href="https://github.com/linuxacademy/terransible">"Deploy to AWS with Ansible and Terraform" video class</a> by Derek Morgan who shows how to do just that, with <a target="_blank" href="https://github.com/linuxacademy/terransible">code</a> and <a target="_blank" href="https://www.lucidchart.com/documents/view/c1ceaa2b-647c-49bd-9dca-bcaffc04be3b">diagram</a>.
+Terraform and Ansible can work in unison and complement each other. Terraform can bootstrap the underlying cloud infrastructure and then Ansible provisions the user space. To test a service on a dedicated server, skip using Terraform and run the Ansible playbook on that machine. Derek Morgan has a <a target="_blank" href="https://github.com/linuxacademy/terransible">"Deploy to AWS with Ansible and Terraform" video class</a> at LinuxAcademy which shows how to do just that, with <a target="_blank" href="https://github.com/linuxacademy/terransible">code</a> and <a target="_blank" href="https://www.lucidchart.com/documents/view/c1ceaa2b-647c-49bd-9dca-bcaffc04be3b">diagram</a>.
+
 
 <a name="Immutable"></a>
 
@@ -50,9 +50,9 @@ Additionally...
 <tr valign="bottom"><th> Feature </th><th> CloudFormation </th><th> Terraform </th></tr>
 <tr><td> Source code </td><td> closed-source </td><td> <a target="_blank" href="https://github.com/hashicorp/terraform/">open source</a> </td></tr>
 <tr><td> Open Source contributions? </td><td> No </td><td> Yes (<a target="_blank" href="https://github.com/hashicorp/terraform/issues">GitHub issues</a>) </td></tr>
+<tr><td> <a href="#State">State management</a> </td><td> by AWS </td><td> within Terraform </td></tr>
 <tr><td> Configuration format </td><td> JSON </td><td> <a href="#HCL">HCL JSON</a> </td></tr>
-<tr><td> <a href="#State">State management</a> </td><td> JSON </td><td> <a href="#HCL">HCL JSON</a> </td></tr>
-<tr><td> <a href="#Providers">Cloud Providers</a> support </td><td> AWS only </td><td> AWS, GCE, Azure (20+) </td></tr>
+<tr><td> <a href="#Providers">Multi-Cloud Providers</a> support </td><td> AWS only </td><td> AWS, GCE, Azure (20+) </td></tr>
 <tr><td> <a href="#ExecControl">Execution control</a> </td><td> No </td><td> Yes </td></tr>
 <tr><td> Iterations </td><td> No </td><td> Yes </td></tr>
 <tr><td> Manage already created resources </td><td> No </td><td> Yes (hard) </td></tr>
@@ -64,6 +64,10 @@ Additionally...
 Terraform also provides <strong>parallel execution</strong> control, iterations, and (perhaps most of all) management of resources already created (desired state configuration) over several cloud providers (not just AWS).
 
 A key differentiator is Terraform's plan command, which provides more than just a "dry-run" before configurations are applied for real. Under the covers, the plan command generates an executable, and uses it to apply, which guarantees the plan is the same as the apply.
+
+Although Terraform is "open source", the Terraform GUI requires a license.
+
+
 
 
 ## Websites to know
@@ -517,6 +521,15 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
    Terraform defined HCL (Hashicorp Configuration Language) for both human and machine consumption. HCL is defined at <a target="_blank" href="https://github.com/hashicorp/hcl">https://github.com/hashicorp/hcl</a> and described at <a target="_blank" href="
    https://www.terraform.io/docs/configuration/syntax.html">
    https://www.terraform.io/docs/configuration/syntax.html</a>.
+   An example of HCL:
+
+   <pre>provider "aws" {
+      region = "us-east-1"
+   }
+   resource "aws_instance" "example" {
+      ami = "ami-abcdef123"
+      instance_type = "t2.micro"
+   }</pre>
 
    HCL is less verbose than JSON and more concise than YML.<a target="_blank" href="https://www.terraform.io/docs/configuration/syntax.html">*</a> 
    Unlike JSON and YML, <strong>HCL allows annotations</strong> as in bash scripts:<br />
@@ -1114,8 +1127,7 @@ output "azure_rm_dns_cname" {
 
    ### Ignore state files
 
-   Terraform apply generates <strong>.tfstate</strong> files (containing JSON) to persist the state of runs. 
-   It maps resources IDs to their data. 
+   `terraform apply` generates <strong>.tfstate</strong> files (containing JSON) to persist the state of runs by mapping resource IDs to their data. 
 
    PROTIP: CAUTION: tfstate files can contain secrets, so delete them before git add.
 
@@ -1524,6 +1536,8 @@ Azure Resource Manager
 
 
 <a target="_blank" href="https://www.linkedin.com/in/sajithvenkit/">Sajith Venkit</a> explains Terraform file exampled in his <a target="_blank" href="https://www.codementor.io/alibabacloud/building-docker-enterprise-2-1-cluster-using-terraform-thh42zbd6?utm_swu=8964">"Building Docker Enterprise 2.1 Cluster Using Terraform" blog</a> and <a target="_blank" href="https://github.com/sajiv3m/docker-terraform-alicloud">repo for AliCloud</a> and <a target="_blank" href="https://github.com/sajiv3m/docker-terraform-azure">Azure</a>.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=uFaMUS6Z9fI">AWS Cloudformation vs Terraform: Prepare for DevOps/ Cloud Engineer Interview</a>
 
 
 ## More on DevOps #

@@ -1992,10 +1992,6 @@ https://blog.docker.com/2013/08/containers-docker-how-secure-are-they/
 
    <tt>0.0.0.0:49166->443/tcp, 0.0.0.0:49167->80/tcp</tt>
 
-0. To interact with a detached container:
-
-   TODO: ???
-
 
 <hr />
 
@@ -2610,7 +2606,7 @@ by dispersing containers across multiple hosts.
 Installing Docker Swarm launches a container that is used as
 the Swarm Manager master to communicate to all the nodes in a Swarm cluster.
 
-See https://docs.docker.com/swarm/
+See <a target="_blank" href="https://docs.docker.com/swarm/">https://docs.docker.com/swarm</a>
 
    <tt><strong>docker run -d swarm join --addr=node_ip:2375 token://cluster_id
    </strong></tt>
@@ -2618,8 +2614,25 @@ See https://docs.docker.com/swarm/
    <tt><strong>docker run -d -p swarm_port:2375 swarm manage token://cluster_id
    </strong></tt>
 
-See http://autopilotpattern.io/
+See <a target="_blank" href="http://autopilotpattern.io/">http://autopilotpattern.io</a>
 
+
+## Debug within container
+
+1. To reach the CLI console inside a Docker container, substitute example values in:
+
+   <pre><strong>ssh -tt -i <em>myKey</em> <em>user</em>@<em>remoteHost</em> \
+   docker exec -it <em>myContainer</em> /bin/bash</strong></pre>
+
+   `myKey` is the path to the private key.
+
+   `user` is the username for use by SSH.
+
+   `remoteHost` is the IP address of the Docker instance.
+
+   `myContainer` is the Docker Container ID listed by `docker ps`
+
+<hr />
 
 ## Resources
 

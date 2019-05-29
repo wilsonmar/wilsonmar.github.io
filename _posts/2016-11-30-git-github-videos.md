@@ -760,9 +760,9 @@ series</a>:
 
 ## From those who ask for money:
 
-### Egghead.io (@egheadio)
+### Egghead.io 
 
-Egghead.io charges a $250 membership to unlock viewing features such as speed-up playback:
+<a target="_blank" href="https://www.egghead.io/">Egghead.io</a> (@egheadio) charges $250/year ($150 during a discount period) to view code, transcripts, and unlock viewing features such as speed-up playback. Their videos are thorough and hands-on, focused on teaching front-end web dev skills.
 
 <a target="_blank" href="https://www.linkedin.com/in/juristr/">Juri Strumpflohner</a>, in his <a target="_blank" href="https://egghead.io/courses/productive-git-for-developers">Productive Git for Developers</a> offers a video on each piece of great advice:
 
@@ -795,6 +795,9 @@ Egghead.io charges a $250 membership to unlock viewing features such as speed-up
    * <a target="_blank" href="https://egghead.io/lessons/git-temporarily-store-some-work-in-progress-because-i-have-to-jump-to-another-branch">
    Temporarily store some work in progress because I have to jump to another branch</a>
 
+Cameron Nokes's Advanced Bash Automation for Web Developers course contains:
+
+   * <a target="_blank" href="https://egghead.io/lessons/bash-create-aliases-in-bash_profile-for-common-bash-commands">Create Aliases in .bash_profile for Common Bash Commands</a>
 
 ### Thoughtbot.com
 

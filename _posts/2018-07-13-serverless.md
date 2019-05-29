@@ -73,7 +73,9 @@ Google App Engine in 2008 was arguably the first.
 
 * <a target="_blank" href="https://pivotal.io/platform/pivotal-function-service">Pivotal Cloud Functions</a> built on <a target="_blank" href="https://pivotal.io/knative">Knative</a>, part of the <a target="_blank" href="https://projectriff.io/">project Riff</a> open-source project led by Google for deployment atop Kubernetes and Istio.
 defining the <a target="_blank" href="https://docs.pivotal.io/pfs/0-1/using-pfs-cli.html">pfs command line interface</a>
+* <a target="_blank" href="https://projectriff.io/">Pivotal's Project Riff</a> based on KNative.
 
+* <a target="_blank" href="https://fnproject.io/">Oracle's Fn Project</a>
 * <a href="#IronIO">Iron.io for on-premises</a>. Ironically, Iron originated the term "serverless" in 2012.
 
 
