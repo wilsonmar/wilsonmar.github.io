@@ -741,19 +741,19 @@ From the same head talking about Rails, Docker, Solidus, Elasticsearch, and Reac
 a popular <a target="_blank" href="https://www.youtube.com/playlist?list=PLjQo0sojbbxVHcVN4h9DMu6U6spKk21uP">
 series</a>:
 
-0. <a target="_blank" href="https://www.youtube.com/watch?v=uUuTYDg9XoI">
+1. <a target="_blank" href="https://www.youtube.com/watch?v=uUuTYDg9XoI">
    What is Git?</a> [3:48]
-0. <a target="_blank" href="https://www.youtube.com/watch?v=QqP7YZlZEOo">
+1. <a target="_blank" href="https://www.youtube.com/watch?v=QqP7YZlZEOo">
    Installation, Configuration and First Commit</a> [7:21]
-0. <a target="_blank" href="https://www.youtube.com/watch?v=JTE2Fn_sCZs">
+1. <a target="_blank" href="https://www.youtube.com/watch?v=JTE2Fn_sCZs">
    Working with Branches</a> [6:36]
-0. <a target="_blank" href="https://www.youtube.com/watch?v=0iuqXh0oojo">
+1. <a target="_blank" href="https://www.youtube.com/watch?v=0iuqXh0oojo">
    Merging and Workflow</a> [7:10]
-0. <a target="_blank" href="https://www.youtube.com/watch?v=xgo60yhetZk&">
+1. <a target="_blank" href="https://www.youtube.com/watch?v=xgo60yhetZk&">
    Git Flow Introduction</a> [5:06]
-0. <a target="_blank" href="https://www.youtube.com/watch?v=XbapC7nm49s&t=34s">
+1. <a target="_blank" href="https://www.youtube.com/watch?v=XbapC7nm49s&t=34s">
    Git Flow Feature Branch and Pushing to GitHub</a>[11:16] 6 Dec 2015
-0. <a target="_blank" href="https://www.youtube.com/watch?v=mcWsX_setW4">
+1. <a target="_blank" href="https://www.youtube.com/watch?v=mcWsX_setW4">
    Git Flow and Github Pull Request</a> [6:53] 1 Jan 2016
 
 <hr />
@@ -798,6 +798,9 @@ series</a>:
 Cameron Nokes's Advanced Bash Automation for Web Developers course contains:
 
    * <a target="_blank" href="https://egghead.io/lessons/bash-create-aliases-in-bash_profile-for-common-bash-commands">Create Aliases in .bash_profile for Common Bash Commands</a>
+   * <a target="_blank" href="https://egghead.io/lessons/bash-create-a-bash-script-to-open-a-pull-request-on-github-using-getopts">Create a Bash Script to Open a Pull Request on Github using getopts</a>
+   * <a target="_blank" href="https://egghead.io/lessons/git-use-exec-to-redirect-stdio-in-a-git-hook-script">Use exec to Redirect stdio in a git Hook Script</a>
+
 
 ### Thoughtbot.com
 
