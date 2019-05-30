@@ -801,6 +801,9 @@ Cameron Nokes's Advanced Bash Automation for Web Developers course contains:
    * <a target="_blank" href="https://egghead.io/lessons/bash-create-a-bash-script-to-open-a-pull-request-on-github-using-getopts">Create a Bash Script to Open a Pull Request on Github using getopts</a>
    * <a target="_blank" href="https://egghead.io/lessons/git-use-exec-to-redirect-stdio-in-a-git-hook-script">Use exec to Redirect stdio in a git Hook Script</a>
 
+Mark Shust:
+
+   * <a target="_blank" href="https://egghead.io/lessons/git-use-git-flow-as-a-reliable-version-control-model">Use Git Flow as a Reliable Version Control Model</a>
 
 ### Thoughtbot.com
 
