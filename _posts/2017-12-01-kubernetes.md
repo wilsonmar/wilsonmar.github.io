@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Kubernetes (K8s)"
-excerpt: "Container engine for every cloud"
+excerpt: "Container engine in clouds"
 filename: kubernetes.md
 modified:
 tags: [google, cloud]
@@ -23,22 +23,29 @@ comments: true
 
 Kubernetes is called "container orchestration" software because it automates the deployment, scaling and management of containerized applications<a target="_blank" href="https://en.wikipedia.org/wiki/Kubernetes">*</a>. 
 
-"Containerized" <a href="#micro-services">microservice apps</a> are <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, <a target="_blank" href="https://quay.io/">Quay.io</a>, or an organization's own binary repository setup using Nexus or Artifactory. Kubernetes also works with <strong>rkt</strong> (pronounced "rocket") containers. But this tutorial focuses on Docker.
+"Containerized" <a href="#micro-services">microservice apps</a> are <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, <a target="_blank" href="https://quay.io/">Quay.io</a>, or an organization's own binary repository setup using Nexus or Artifactory. Kubernetes also works with <strong>rkt</strong> (pronounced "rocket") containers. IBM Red Hat has their "containerd" technology. But this tutorial focuses on <strong>Docker</strong> containers.
 
-Each Kubernetes node has a different IP address.
+Kubernetes automates resilience by abstacting the network and storage shared by ephemeral replaceable <strong>pods</strong> which the Kubernetes Controller replicates to increase capacity.
+
+In the illustration below, each pod (each a different color) encapsulates one or more (Docker) container hosts (operating processes, each shown as a circle):
 
 ![k8s-container-sets-479x364.jpg](https://user-images.githubusercontent.com/300046/33526550-6c98a980-d800-11e7-9862-ff202492e08b.jpg)
 <!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
 
-Kubernetes automates resilience into containers by abstacting the network and storage of virtual <strong>containers</strong> in replaceable "pods". Each pod can hold one or more Docker container hosts.
+Containers within the same pod share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage Volumes, and other resources.
+Within a pod, each container has a different <strong>port number</strong> and can communicate with other containers in the same pod.
 
-Within a pod, each container has a different <strong>port number</strong>.
-
-Containers within the same pod share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage, and other resources.
+The <a target="_blank" href="https://wilsonmar.github.io/service-mesh">Service Mesh Istio architecture</a> has an "Envoy proxy" in each pod to facilitate the communictions and retry logic from the business logic containers in its pod.
 
 Kubernetes replicates Pods (the same set of containers in each) across several worker <strong>nodes</strong> (VM or physical machines).
 
+Each set of pods are within a <strong>node</strong>.
+Kubernetes assigns each node with a different <strong>external IP address</strong>.
+
 ![kubernetes-structure-502x205-12351.png](https://user-images.githubusercontent.com/300046/47167711-5cf45080-d2bc-11e8-8c95-a76b1b92373a.png)
+
+Nodes are managed together as a <strong>namespace</strong>.
+Kubernetes can manage several namespaces running in each <strong>cluster</strong>. 
 
 A private ClusterIP is accessible by nodes only within the same cluster.
 
@@ -54,10 +61,12 @@ animations on his website</a>.
    The Kube-proxy load balances traffic to <strong>deployments</strong>, which are load-balanced sets of pods within each node. Kube-proxy IPVS Mode is native to the Linux kernel.
    CBR0 (Custom Bridge zero) forwards the eth0, which rewrites the destination IP to a pod behind the Service<a target="_blank" href="https://acloud.guru/course/kubernetes-deep-dive/learn/2ddbcafb-9f4f-ed6c-3cec-912cb68a7944/36910c67-4dfd-3343-648a-3a266aa9f667/watch?backUrl=~2Fcourses&backUrl=~2Fcourses&backUrl=~2Fcourses,~2Fcourses">3:18 into chapter 6 Big Picture</a>
 
-PROTIP: Kubernetes recently added <strong>auto-scaling</strong> based on metrics API measurement of demand. Before that, Kubernetes manages the instantiating, starting, stopping, updating, and deleting of a <strong>pre-defined number of pod replicas</strong> based on declarations in <strong>*.yaml</strong> files or interactive commands.
+Kubernetes manages the instantiating, starting, stopping, updating, and deleting of a <strong>pre-defined number of pod replicas</strong> based on declarations in <strong>*.yaml</strong> files or interactive commands.
 
 The number of pods replicated is based on <strong>deployment</strong> yaml files. 
 Service yaml files specify what ports are used in deployments.
+
+In 2019 Kubernetes added <strong>auto-scaling</strong> based on metrics API measurement of demand.
 
 <a target="_blank" href="https://linuxacademy.com/cp/guides/download/refsheets/guides/refsheets/linuxacademy-kubernetesadmin-archdiagrams-1_1516737832.pdf">This Architectural Diagram pdf</a>:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/51218893-5a75b700-18fc-11e9-89af-7ba9ca3000c5.jpg"><img alt="
@@ -65,8 +74,10 @@ k8s-linuxacademy-arch-912x415-32433.jpg" src="https://user-images.githubusercont
 is described in the <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/155">
 Linux Academy's CKA course</a> of 05:34:43 hours of videos by Chad Miller (<a target="_blank" href="https://twitter.com/OpenChad/">@OpenChad</a>).
 
+Read <a target="_blank" href="https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/">Docs</a> and <a target="_blank" href="https://kubernetes.io/docs/tutorials/">tutorials</a> from Kubernetes.io.
 
-## Open Sourced = Free
+
+## Open Sourced but not all Free
 
 <img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
 Kubernetes was created inside Google (using the [Golang](/Golang/) programming language).
@@ -74,7 +85,7 @@ Logos for each Google service are 6 sided hexagons.
 This <a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">blog</a> and
 <a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
 note that the Kubernetes logo has 7 sides because its initial developers were Star Trek fans:
-The predecessor to Kubernetes was called the Borg.
+The predecessor to Kubernetes was called the "Borg".
 A key Borg character is called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>.
 
 Kubernetes was used inside Google for over a decade before being open-sourced in 2014 to the 
@@ -103,7 +114,7 @@ On November 8, 2016 CNCF announced their <a target="_blank" href="https://www.cn
 To compare the domain focus for each exam:
 
 <table border="1" cellspacing="0" cellpadding="4">
-<tr><th> CKA </th><th> CKAD </th></tr>
+<tr><th> CK Admin. </th><th> CK App. Dev. </th></tr>
 <tr valign="top"><td>
     19% Core Concepts<br />
     12% Installation, Configuration & Validation<br />
@@ -152,7 +163,10 @@ CNCF is part of the Linux Foundation, so...
 
    PROTIP: The Linux Foundation exam focuses on "pure" commands only and excludes add-ons such as OpenStack.
 
-<a target="_blank" href="https://medium.com/@krystiannowaczyk/how-i-passed-the-cka-certified-kubernetes-administrator-exam-f94b11566528">"How I passed the CKA (Certified Kubernetes Administrator) Exam"</a> by Krystian Nowaczyk (who maintains https://github.com/ramitsurana/awesome-kubernetes) provides a list of resources he used.
+<a target="_blank" href="https://medium.com/@krystiannowaczyk/how-i-passed-the-cka-certified-kubernetes-administrator-exam-f94b11566528">"How I passed the CKA (Certified Kubernetes Administrator) Exam"</a> by Krystian Nowaczyk (who maintains <a target="_blank" href="https://github.com/ramitsurana/awesome-kubernetes">github.com/ramitsurana/awesome-kubernetes</a>) provides a list of resources he used.
+
+<a target="_blank" href="https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days-e4603ac40746">"How to ace the CKA exam in 7 days</a> is click-bait?
+
 
 ## Free Playpen
 
@@ -168,6 +182,9 @@ by adding external host names and role-based security.
 
 One can run k8s containers in other clouds or within private data centers using OpenStack from RedHat.
 
+   * Note that IBM (which bought Red Hat in 2018) has been pushing "containerd", its replacement for Docker.
+   <br /><br />
+
 Being open-source has enabled Kubernetes to flourish on several clouds<a target="_blank" href="https://codefresh.io/kubernetes-guides/kubernetes-cloud-aws-vs-gcp-vs-azure/">*</a>
 
 * <a href="#GKE">Google Kubernetes Engine (GKE)</a> is a container management SaaS product.
@@ -180,15 +197,42 @@ GKE in GCP integration covers networking and VPC, monitoring, logging, and CI/CD
 
    ![k8s-gcp-search-656x866-37655](https://user-images.githubusercontent.com/300046/42350888-a8aca044-806f-11e8-8848-813657b7660d.jpg)
 
-* Kops for AWS (at <a target="_blank" href="https://github.com/kubernetes/kops">https://github.com/kubernetes/kops</a>)
-enables multi-master, multi-AZ cluster setup and management of multiple instance groups.
-See <a target="_blank" title="Oct 27, 2017 by Tristan Colgate-McFarlane" href="https://medium.com/qubit-engineering/kubernetes-up-integrated-authentication-5d2c908c2810">
-"How Qubit built its production ready Kubernetes (k8s) environments"</a>
+* <a target="_blank" href="https://aws.amazon.com/ecs/">
+Amazon ECS (Elastic Container Service for Kubernetes)</a> is "supercharged" with<br /><a target="_blank" href="https://aws.amazon.com/eks/">
+Amazon EKS (Elastic Kubernetes Service)</a>, which provides deeper integration into AWS infrastructure (than ECS) for better reliability (at higher cost).
 
-* <a target="_blank" href="https://aws.amazon.com/eks/">
-Amazon Elastic Container Service for Kubernetes (Amazon EKS)</a>
-was introduced December 2017 to run three Kubernetes masters across three Availability Zones in order to ensure high availability. EKS automatically detects and replaces unhealthy masters, and provides automated version upgrades and patching for the masters. So you don't have to choose appropriate instance types.
-It of course leverages AWS Elastic Load Balancing, IAM authentication, Amazon VPC isolation, AWS PrivateLink access, and AWS CloudTrail logging. 
+   Both ECS and EKS detects and automatically replaces unhealthy masters, provide version upgrades, and automated patching for masters. 
+
+   EKS is also informally called "Kubernetes-as-a-Service" (KaaS).
+
+   ECS is free since Amazon charges for the underlying EC2 instances and related resources. But each <strong>EKS cluster costs an additional $144 USD per month</strong> (20 cents per hour in the lowest cost us-east-1 region). 
+
+   <a target="_blank" href="eks-ecs-load-balacing-960x720-32943.png" href="https://user-images.githubusercontent.com/300046/58647812-931f9700-82c5-11e9-8492-ba2c65f5f865.png"><img alt="eks-ecs-load-balacing-960x720-32943.png" src="https://user-images.githubusercontent.com/300046/58647812-931f9700-82c5-11e9-8492-ba2c65f5f865.png"></a>
+
+   The diagram (<a target="_blank" href="https://cloudonaut.io/eks-vs-ecs-orchestrating-containers-on-aws/">from cloudnaut</a>) illustrates that there are <strong>additional cross-AZ traffic charges with EKS</a> because, to ensure high availability, EKS runs a proxy on each node to distribute traffic across three Kubernetes masters across three Availability Zones. Distribution among all pods is random or based on the round robin algorithm. So this additional processing cost may also require <strong>larger instance types</strong>, which EKS automatically selects.
+
+   Instance type selection is an important consideration because AWS limits the <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">number of IP Addresses per network interface based on instance size</a>, from 2 to a <strong>max of 15</strong>. 
+   Not all instance types have the Elastic Network Interface (ENI) that need to be attached to ECS and EKS containers.
+   And many types don't support IPv6 yet. 
+
+   ![eks-ecs-load-balacing-960x720-32943](https://user-images.githubusercontent.com/300046/58647812-931f9700-82c5-11e9-8492-ba2c65f5f865.png)
+
+   While ECS assigns separate ENI to each ECS task (a group of containers), EKS attaches <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/MultipleIP.html">multiple ENIs</a> per instance, with multiple private IP addresses assigned to each ENI. Since EKS shares network interfaces among pods, a different Security Group cannot be specified to restric a specific pod.
+   
+   Moreover, network interfaces, multiple private IPv4 addresses, and IPv6 addresses are only available for instances running under <strong>VPC isolation</strong> (perhaps also AWS PrivateLink access). So EKS requires AWS VPC</a>.
+
+   When EKS was introduced December 2017, it supported only Classic Load Balancer (CLB), with beta support for Application Load Balancer (ALB), the Network Load Balancer (NLB). 
+   Also, EKS leverage IAM authentication, but did not provide out-of-the-box support <a target="_blank" href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Task IAM Roles</a> (pods) used to grant access to AWS resources like ECS. For example, to allow containers to access S3, DynamoDB, SQS, or SES at runtime.
+
+   Both ECS and EKS is accessed from its ECS CLI console and supports ECS API commands and <strong>Docker Compose</strong>. AWS CloudTrail logging.
+
+   See the <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/TheEKSManifest.html">EKS Manifest diagram</a>
+   
+* AWS Fargate provides for rapid horizontal scaling on its own fleet of EC2 clusters. It is informally called the "AWS Container Manager".
+
+   Fargate supports "awsvpcc" network mode natively so that tasks running on the same instance share that's instance's ENI.
+
+   <a target="_blank" href="https://blog.totalcloud.io/ecs-vs-eks-vs-fargate-good-bad-ugly/">This totalcloud.io article</a> compares ECS, EKS, and Fargate.
 
 * Microsoft's Azure Kubernetes Service (AKS)
 
@@ -196,6 +240,9 @@ It of course leverages AWS Elastic Load Balancing, IAM authentication, Amazon VP
    https://blog.digitalocean.com/introducing-digitalocean-kubernetes</a>
 
 * KUBE2GO, OpenShift Dedicated, OpenShift Online, 
+
+* Kops for AWS (at <a target="_blank" href="https://github.com/kubernetes/kops">https://github.com/kubernetes/kops</a>) is open-source to enable multi-master, multi-AZ cluster setup and management of multiple instance groups. Admins must stand up the masters, unlike in ECS/EKS. See <a target="_blank" title="Oct 27, 2017 by Tristan Colgate-McFarlane" href="https://medium.com/qubit-engineering/kubernetes-up-integrated-authentication-5d2c908c2810">
+"How Qubit built its production ready Kubernetes (k8s) environments"</a>
 
 ## Add-ons
 
@@ -1634,7 +1681,10 @@ https://github.com/hjacobs/kubernetes-failure-stories</a>
 Vicky Tanya Seno at Santa Monica College is preparing a course of Kubernetes on ACloud.guru
 
 Kubstack
-https://twitter.com/pst418
+<a target="_blank" href="https://twitter.com/pst418">@pst418</a>
+
+
+<a target="_blank" href="https://www.gcppodcast.com/post/">GCP PODCAST</a>: <a target="_blank" href="https://www.gcppodcast.com/post/episode-3-kubernetes-and-google-container-engine/">Kubernetes and Google Container Engine</a> hosts Francesc Campoy Flores and Mark Mandel interview Brian Dorsey, Developer Advocate, Google Cloud Platform. Comments at <a target="_blank" href="https://www.reddit.com/r/gcppodcast/comments/3sf3yr/episode_3_kubernetes_and_google_container_engine/">r/gcppodcast</a>
 
 https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days-e4603ac40746
 
