@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mac OSX Terminal (command-line tips and tricks)"
-excerpt: "The terminal is your friend, who only speaks a foreign language"
+excerpt: "Make anything happen quickly without touching the mouse"
 shorturl: "https://goo.gl/Xr2fGW"
 tags: [apple, mac, setup]
 image:
@@ -26,20 +26,20 @@ This information is often used as interview questions.
 
 ## Open Terminal from Finder Folder #
 
-If you're a developer, it's hard to get away from using a command-line terminal. 
-But if you're using a MacOS just for social media, you won't need a Terminal. 
-Perhaps that's why it's kinda buried:
+If you're using a MacOS just for social media, you won't need a Terminal. 
+Perhaps that's why Terminal is kinda buried.
+But if you're a developer, it's hard to get away from using a command-line terminal. 
 
 There are different ways to open a Terminal command line.
 
-The most popular approach involves the least number of keystrokes and you don't have to reach for a mouse:
+My preferred way to open Terminal (or any action) doesn't require reaching for a mouse and uses the least number of keystrokes:
 
    1. Press <strong>command+space</strong> keys (at the same time) to bring up Apple's Spotlight universial search, then 
    2. Type "termin" so "Terminal.app" appears.
    3. Press the space bar to select it.
    <br /><br />
 
-If you prefer moving your mouse:
+Alternately, if you prefer moving your mouse:
 
    1. Click the Finder icon on the app bar.
    2. Click Applications on the left pane.
@@ -59,13 +59,11 @@ To enable that:
 <li> Close the dialog by clicking the red dot at the upper left corner.</li>
 </ol>
 
-## Return to Terminal
+## Switch among program
 
-To return to the Terminal from any other program:
+To switch among programs running:
 
-   1. Hold down the <strong>command</strong> key down while pressing <strong>tab</strong> multiple times until Finder is highlighted in the pop-up list.
-  
-   This would place you at your user Home directory.
+* Hold down the <strong>command</strong> key while pressing <strong>tab</strong> multiple times until the program you want is highlighted (with its name) in the pop-up list.
 
 
 <a id="Keyboard"></a>
@@ -377,10 +375,10 @@ Mac, Windows, and Linux systems have a hosts file that locally does the work of 
 fe80::1%lo0 localhost
    </pre>
 
+   PROTIP: `fe80::` is a block of IPV6 addresses reserved for link-local addresses used for packets sent only to directly connected devices (not routed). The network discovery protocol (NDP), which replaces ARP and DHCP in IPv4, is the biggest user of link-local addresses (NDP sorta .
+
    <tt>fe80::1</tt> is like 127.0.0.1 for IPV4, but
    actually IP address 169.254.*.* in IPV4, an address not often used.
-
-   fe80:: is a block of IPV6 addresses reserved for link-local addresses used for packets sent only to directly connected devices (not routed). The network discovery protocol (NDP), which replaces ARP and DHCP in IPv4, is the biggest user of link-local addresses (NDP sorta .
 
    Each IPV6 interface has a different link-local address starting with fe80:: and (typically) ending with a modified version the interface's MAC address (EUI-64 format) to ensure a unique address on a segment. 
 
@@ -391,13 +389,6 @@ fe80::1%lo0 localhost
 127.94.0.1  client.openvpn.net
 # END section for OpenVPN Client SSL sites
    </pre>   
-
-
-0. Flush the cache:
-
-   <pre><strong>dscacheutil -flushcache
-   </strong></pre>
-
 
 
 <a id="DNSConfigz"></a>
@@ -438,55 +429,32 @@ An example:
 <li> 192.168.0.1 </li>
 </ol>
 
-Flush the DNS cache since OSX 10.9 :
-
-   <tt><strong>
-   sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
-   </strong></tt>
-
-Previously, OSX 10.7 and 10.8, only the killall was needed.
-
-Previous to that, OSX 10.5 and 10.6, only the decacheutil was needed, without the sudo.
-
-BTW, the equivalent for Ubuntu is `sudo service network-manager restart`
-while other Linux flavors uses `sudo /etc/init.d/nscd restart`.
-Windows uses `ipconfig /flushdns`.
-
-
-
 
 <a id="DNSClearz"></a>
 
-## Clear DNS Cache Cache
+## Clear DNS Cache
+
+1. Flush the DNS cache (since OSX 10.9):
+
+   <tt><strong>
+   sudo dscacheutil -flushcache
+   </strong></tt>
+
+   `dscacheutil` is the <a target="_blank" href="https://ss64.com/osx/dscacheutil.html">Directory Service cache utility</a> used to Gather information, statistics, initiate queries, flush the cache:
+
+   BTW, the equivalent for Ubuntu is<br /> 
+   `sudo service network-manager restart`
+   while other Linux flavors uses<br />
+   `sudo /etc/init.d/nscd restart`.<br />
+   Windows uses<br />
+   `ipconfig /flushdns`.
 
 <a index="_blank" href="http://coolestguidesontheplanet.com/clear-the-local-dns-cache-in-osx/">
 Different commands</a> are needed for different versions of OS.
 <strong>OSX 10.10</strong> added requirement for sudo when using the 
 built-in discoveryutil:
 
-<tt>sudo discoveryutil udnsflushcaches</tt>
-
-<strong>OSX 10.9</strong>
-
-<tt>dscacheutil -flushcache;<br />
-sudo killall -HUP mDNSResponder</tt>
-
-<strong>OSX 10.7  to 10.8</strong>
-
-<tt>sudo killall -HUP mDNSResponder</tt>
-
-<strong>OSX 10.5 to 10.6</strong>
-
-<tt>sudo dscacheutil -flushcache</tt>
-
-<strong>Windows</strong> by contrast:
-
-<tt>ipconfig /flushdns</tt>
-
-<strong>Linux (depending on the flavor running)</strong>
-
-<tt>/etc/init.d/named restart<br />
-/etc/init.d/nscd restart</tt>
+   <tt>sudo discoveryutil udnsflushcaches</tt>
 
 
 ### Create Terminal Aliases #
@@ -504,7 +472,6 @@ this in the ~/.bash_profile script:
    alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
    </pre>
 
-Alternately:
 
 ### Brew install tree #
 
@@ -537,9 +504,8 @@ to define file path, shims, and autocompletion handlers.
 
 This is the single biggest frustration with people using Linux on Mac.
 
-
-One of the earliest articles on bash at
-http://www.macdevcenter.com/pub/a/mac/2004/02/24/bash.html
+One of the earliest articles on bash <a target="_blank" href="
+http://www.macdevcenter.com/pub/a/mac/2004/02/24/bash.html">here</a>
 shows shell variables, environment variables, and aliases.
 
 Each operating system has its own file name for its profile:
@@ -550,14 +516,14 @@ Each operating system has its own file name for its profile:
 <li> With Fish: Modify `~/.conf/fish/config.sh` to append.</li>
 </ul>
 
-If there is both a .bash_profile and a .profile file, boot-up only executes the first one it finds.
+PROTIP: If there is both a .bash_profile and a .profile file, boot-up only executes the first one it finds.
 
-On my Yosemite Mac, open a terminal and:
+1. On my Yosemite Mac, open a terminal and:
 
    <pre><strong>cd ~
    </strong></pre>
 
-View the file using the vi editor that comes with OSX:
+1. View the file using the vi editor that comes with OSX:
 
    <pre><strong>vi .bash_profile
    </strong></pre>
@@ -577,25 +543,24 @@ export NVM_DIR="/Users/wilsonmar/.nvm"
 export PATH=/Library/Frameworks/Python.framework/Versions/3.4/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
+&nbsp;
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 </pre>
 
-Exit vi by typing <tt>:q</tt>
+1. Exit vi by typing <tt>:q</tt>
 
-
-Some installers request that adding a $PATH using a command such as:
+1. Some installers request that adding a `$PATH` using a command such as:
 
    <pre>
 echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.bash_profile
    </pre>
 
-To execute profile with the changes:
+1. To execute profile with the changes:
 
    <pre><strong>source  ~/.bash_profile
    </strong></pre>
 
-Alternately, to install GHC copy and paste into ~/.bash_profile:
+   Alternately, to install GHC copy and paste into ~/.bash_profile:
 
    <pre>
 # Add GHC 7.8.4 to the PATH, via http://ghcformacosx.github.io/
@@ -608,7 +573,7 @@ fi
 https://github.com/gcuisinier/jenv/blob/master/README.md
 
 
-* To run a bash script while avoiding the confirmation prompt:
+* To run a Bash script while avoiding the confirmation prompt:
 
    <tt><strong>set \-\- -f; source bootstrap.sh
    </strong></tt>
@@ -682,8 +647,8 @@ which works on Debian, RHEL 6.6, and Ubuntu
 is not recognized on Gentoo nor CentOS 6,
 which has no folder /etc/lsb-release.
 
-Distriwatch.com describes releases.
-
+See <a target="_blank" href="https://Distriwatch.com">Distriwatch.com</a>,
+which describes releases of different Linux distributions.
 
 
 
@@ -714,7 +679,7 @@ and most configuration files are hidden.
 
 <div class="sidenote">
 Paul Irish offers his setup-a-new-machine.sh at
-https://github.com/paulirish/dotfiles
+<a target="_blank" href="https://github.com/paulirish/dotfiles">https://github.com/paulirish/dotfiles</a>
 
 ZShell (included with Mac and can be set as the default in Terminal)
 * oh-my-zsh as a ZShell framework
@@ -780,12 +745,9 @@ The command above uses global parameters $USER and $PWD,
 plus <a target="_blank" rel="amphtml" href="https://wiki.archlinux.org/index.php/Color_Bash_Prompt#List_of_colors_for_prompt_and_Bash">
 colors from this list</a>.
 
-Exit from the Terminal shell:
-<tt>
-exit
-</tt>
+1. Exit from the Terminal shell:
 
-
+   <tt>exit</tt>
 
 
 <a id="EnvVarz"></a>
@@ -820,22 +782,36 @@ where the operating system should look to find a particular program to execute.
    </tt>
 
 
+<a id="Wireless"></a>
+
+## Wireless up and down
+
+1. To set wireless (device `en0`) up or down without clicking on the icon at the top:
+
+   <tt>ifconfig en0 down</tt>
+   
+   This command requires sudo permissions.
+
+
 <a id="RootSudoz"></a>
 
 ## Root user for sudo commands
 
-The root user has the ability to relocate or remove required system files and to introduce new files in locations that are protected from other users.
-A root user has the ability to access other users' files.
+1. PROTIP: If you try a command that responds about "permissions denied", execute the command again with sudo but without retyping that command by retrieving history :
 
-Any user with an administrator account can become the root user or reset the root password.
+   <tt>sudo !!</tt>
+   
+   The root user has the ability to relocate or remove required system files and to introduce new files in locations that are protected from other users.
+   A root user has the ability to access other users' files.
 
-Under a Unix system like MacOS you must have "root" (administrative) privileges to start IP-services using ports smaller than 1024.
+   Any user with an administrator account can become the root user or reset the root password.
 
-After MacOS install, the root or superuser account is not enabled. 
-While it is possible to enable the root account, 
-once enabled, if forgetten, you'll have to 
-<a target="_blank" rel="amphtml" href="http://danfrakes.com/2014/10/16/how-to-make-a-bootable-yosemite-installer-drive/">
-reboot from the installer drive</a> (a hassle).
+   Under a *nix system like MacOS you must have "root" (administrative) privileges to start IP-services using ports smaller than 1024.
+
+   After MacOS install, the root or superuser account is not enabled. 
+   While it is possible to enable the root account, 
+   once enabled, if forgetten, you'll have to 
+   <a target="_blank" rel="amphtml" href="http://danfrakes.com/2014/10/16/how-to-make-a-bootable-yosemite-installer-drive/">reboot from the installer drive</a> (a hassle).
 
 1. It is safer and easier to use the sudo command to gain temporary root access to the system. In a Terminal window invoke:
 
@@ -967,16 +943,16 @@ URL=</tt>
 
 1. Click on <strong>Macintosh HD</strong>.
 
-<ul>
-<li><strong>Applications</strong> hold apps installed.</li>
-<li><strong>Incompatible Software</strong> hold apps which cannot be installed,
-such as Amazon Kindle, which competes with Apple's iBooks.
-This occured during upgrade to Yosemite.</li>
-<li><strong>Library/Library</strong> holds Apple internal apps.</li>
-<li><strong>System</strong> hold apps installed.</li>
-<li><strong>Users</strong> hold data for each user defined,
-as well as a Shared folder accessible by all users.</li>
-</ul>
+   <ul>
+   <li><strong>Applications</strong> hold apps installed.</li>
+   <li><strong>Incompatible Software</strong> hold apps which cannot be installed,
+   such as Amazon Kindle, which competes with Apple's iBooks.
+   This occured during upgrade to Yosemite.</li>
+   <li><strong>Library/Library</strong> holds Apple internal apps.</li>
+   <li><strong>System</strong> hold apps installed.</li>
+   <li><strong>Users</strong> hold data for each user defined,
+   as well as a Shared folder accessible by all users.</li>
+   </ul>
 
 1. Click on your username (wilsonmar in my case).
 
@@ -986,36 +962,29 @@ as well as a Shared folder accessible by all users.</li>
    Many WordPress developers prefer to add a folder named <strong>Sites</strong>
    which holds the wordpress folder expanded from download.
 
-
-
 <a id="Curlz"></a>
 
 ## IPv6 compatibility with Curl command line apps #
 
-<tt>
-curl http://localhost:3000
-</tt>
+   <tt><strong>curl http://localhost:3000</strong></tt>
 
-When invoked on Mac OS 10.10 (Yosemite), you need to add a parameter
-to make the request use IPv4:
+   Previously, when invoked on Mac OS 10.10 (Yosemite), you needed to add a parameter
+   to make the request use IPv4:
 
-<tt>
-curl http://localhost:3000 <strong>--ipv4</strong>
-</tt>
+   <tt>
+   curl http://localhost:3000 <strong>--ipv4</strong>
+   </tt>
 
-Otherwise, you will see an error message such as:
+   Otherwise, even if the URL loads fine in a browser, 
+   you will see an error message such as:
 
-<tt>
-curl: (7) Failed to connect to localhost port 3000: Connection refused
-</tt>
+   <tt>curl: (7) Failed to connect to localhost port 3000: Connection refused</tt>
 
-even if the URL loads fine in a browser.
+   This occurs because curl, under Yosemite, uses IPv6 by default but
+   some apps, such as LoopBack.io, by default uses IP v4.
 
-This occurs because curl, being under Yosemite, uses IPv6 by default but
-some apps, such as LoopBack.io, by default uses IP v4.
-
-See if you see IP v6 entries in your hosts file (::1 localhost, fe80::1%lo0 localhost).
-If they are there it is likely that curl is making requests using IP v6. 
+   See if you see IP v6 entries in your hosts file (::1 localhost, fe80::1%lo0 localhost).
+   If they are there it is likely that curl is making requests using IP v6. 
 
 You can make your LoopBack app use IPv6 by specifying an IPv6 address as shown below:
 
@@ -1058,6 +1027,48 @@ Linux has a <strong>ncdu</strong> (NCurses Disk Usage) utility to list files in 
 1. You can specify a sub-folder named, for example, "code":
 
    <pre><strong>du -sh code</strong></pre>
+
+
+<a id="EmptyTrash"></a>
+
+## Empty Trash
+
+When files or folders are moved to Trash, they are sent to folder `~/.Trash`.
+
+   * The `~` means it is at your user HOME folder.
+   * The `.` means it is a hidden folder.
+
+1. List the files.
+
+   <pre><strong>ls -al ~/.Trash</strong></pre>
+
+1. Count the number files in the folder by piping to the "word count" utility:
+
+   <pre><strong>ls -al | wc -l</strong></pre>
+   
+   (The `-al` includes hidden files and folders)
+
+   <pre><strong>find . -print | wc -l</strong></pre>
+
+   (The `find .` includes files nested within folders as well)
+
+   The above command is aliased as `cf` in my ~/.bash_profile.
+
+To recover disk space taken up by files which have been moved to Trash, 
+   there are several ways:
+
+   <img align="right" alt="macos-finder-104x107-2316.jpg" width="104" src="https://user-images.githubusercontent.com/300046/58622108-1b7f4700-8288-11e9-925e-d7a9697e66d8.jpg">
+1. Switch to the Finder and click the Finder menu to expose the menu:
+
+1. You can click on "Empty Trash" or press the Keyboard sequence <strong>shift + command + delete</strong>.
+
+1. If you rather not use a mouse within Finder, switch to Terminal and type this AppleScript command (which will take a while to run if there are a lot of files):
+
+   <pre><strong>osascript -e 'tell app "Finder" to empty'</strong></pre>
+
+   NOTE: How to put the above command is aliased as `empty` in my ~/.bash_profile.
+
+   <a target="_blank" href="https://egghead.io/lessons/bash-schedule-timed-jobs-on-macos-with-launchd">Schedule Timed Jobs on macOS with `launchd`</a> within a plist (XML) file.
 
 
 ## Ulimit Too Many Files
