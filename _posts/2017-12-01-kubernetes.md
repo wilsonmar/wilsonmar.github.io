@@ -65,10 +65,11 @@ Kubernetes can manage several namespaces running in each <strong>cluster</strong
    ![k8s-openshift-projects-461x277-64498](https://user-images.githubusercontent.com/300046/42337120-f421563c-8042-11e8-9d2b-d19615b4da0c.jpg)
 
 
+### Cluster networking
 
-A private ClusterIP is accessible by nodes only within the same cluster.
+   A private ClusterIP is accessible by nodes only within the same cluster.
 
-Services listen on the same <strong>nodePort</strong> (TCP 30000 - 32767 defined by `--service-node-port-range`).
+   Services listen on the same <strong>nodePort</strong> (TCP 30000 - 32767 defined by `--service-node-port-range`).
 
 <a target="_blank" title="from Yongbok Kim (who writes in Korean)" href="https://user-images.githubusercontent.com/300046/33525757-6fcd2624-d7f3-11e7-9745-79ce5f9600e9.jpg">
 <img alt="k8s-arch-ruo91-797x451-104467" src="https://user-images.githubusercontent.com/300046/33525757-6fcd2624-d7f3-11e7-9745-79ce5f9600e9.jpg"></a>
@@ -1721,7 +1722,7 @@ https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administr
 ## Free Playpen
 
 <a target="_blank" href="https://play-with-k8s.com/">play-with-k8s.com</a> gives you a 4-hour playpen.
-
+But that site is gone.
 
 ## More on DevOps #
 
