@@ -48,11 +48,11 @@ Additionally...
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th> Feature </th><th> CloudFormation </th><th> Terraform </th></tr>
-<tr><td> Source code </td><td> closed-source </td><td> <a target="_blank" href="https://github.com/hashicorp/terraform/">open source</a> </td></tr>
+<tr><td> <a href="#Providers">Multi-Cloud providers</a> support </td><td> AWS only </td><td> AWS, GCE, Azure (20+) </td></tr>
+<tr><td> Source code </td><td> closed-source </td><td><a href="#Licensing">open source</a> </td></tr>
 <tr><td> Open Source contributions? </td><td> No </td><td> Yes (<a target="_blank" href="https://github.com/hashicorp/terraform/issues">GitHub issues</a>) </td></tr>
 <tr><td> <a href="#State">State management</a> </td><td> by AWS </td><td> within Terraform </td></tr>
 <tr><td> Configuration format </td><td> JSON </td><td> <a href="#HCL">HCL JSON</a> </td></tr>
-<tr><td> <a href="#Providers">Multi-Cloud Providers</a> support </td><td> AWS only </td><td> AWS, GCE, Azure (20+) </td></tr>
 <tr><td> <a href="#ExecControl">Execution control</a> </td><td> No </td><td> Yes </td></tr>
 <tr><td> Iterations </td><td> No </td><td> Yes </td></tr>
 <tr><td> Manage already created resources </td><td> No </td><td> Yes (hard) </td></tr>
@@ -63,17 +63,29 @@ Additionally...
 
 Terraform also provides <strong>parallel execution</strong> control, iterations, and (perhaps most of all) management of resources already created (desired state configuration) over several cloud providers (not just AWS).
 
-A key differentiator is Terraform's plan command, which provides more than just a "dry-run" before configurations are applied for real. Under the covers, the plan command generates an executable, and uses it to apply, which guarantees the plan is the same as the apply.
+A key differentiator is Terraform's plan command, which provides more than just a "dry-run" before configurations are applied for real. Under the covers, Terraform plan generates an executable, and uses it to apply, which guarantees the plan is the same as the apply.
+
+
+NOTE: AWS Cloud Formation and Terraform can both be used at the same time.
+
+
+<a name="Licensing"></a>
+
+## Licensing
+
+Code for Terraform is open-sourced at<br />
+<a target="_blank" href="https://github.com/hashicorp/terraform/">https://github.com/hashicorp/terraform</a>
 
 Although Terraform is "open source", the Terraform GUI requires a license.
 
-
+   <a target="_blank" href="https://www.hashicorp.com/products/terraform-old/">
+   Paid Pro and Premium licenses of Terraform</a>
+   add version control integration, MFA security, and other enterprise features.
 
 
 ## Websites to know
 
-* <a target="_blank" href="https://www.terraform.io/intro/index.html">terraform.io</a>
-   marketing home page.
+* <a target="_blank" href="https://www.terraform.io/intro/index.html">terraform.io</a> - Hashicorp's marketing home page.
 
 * <a href="https://www.terraform.io/docs/enterprise-legacy/glossary/index.html" target="_blank" > Glossary of Terraform terms</a>
 
@@ -86,43 +98,26 @@ Although Terraform is "open source", the Terraform GUI requires a license.
 * StackOverflow
 * IRC (Internet Relay Chat)
 
-## Licensing
-   
-   <a target="_blank" href="https://www.hashicorp.com/products/terraform-old/">
-   Paid Pro and Premium licenses of Terraform</a>
-   add version control integration, MFA security, and other enterprise features.
+<a name="Install"></a>
 
-## Installation #
+## Install Terraform #
 
-   PROTIP: Terraform is written in the [Go language](/golang/), so there is no JVM to download.
+   PROTIP: Terraform is written in the [Go language](/golang/), so (unlike Java) there is no separate VM to download.
 
+1. Get the version number of Terraform installed:
 
-### Bootstraping options
+   <pre><strong>terraform --version</strong></pre>
 
-Terraform can work with :
+   The response I got (at time of writing) is:
 
-   <a target="_blank" href="
-   https://forge.puppet.com/inkblot/terraform">
-   https://forge.puppet.com/inkblot/terraform</a>
+   <pre>Terraform v0.12.0</pre>
 
-   <a target="_blank" href="
-   https://supermarket.chef.io/cookbooks/terraform">
-   https://supermarket.chef.io/cookbooks/terraform</a>
-
-   <a target="_blank" href="
-   https://github.com/migibert/terraform-role">
-   https://github.com/migibert/terraform-role</a>
-   Ansible role to install Terraform on Linux machines
-
-   <a target="_blank" href="
-   https://github.com/hashicorp/docker-hub-images/tree/master/terraform">
-   https://github.com/hashicorp/docker-hub-images/tree/master/terraform</a>
-   builds Docker containers for using the terraform command line program.
+   WARNING: The response at time of writing, Terraform is not even "1.0.0" release, meaning it's in beta maturity:
 
 
 ### Install on MacOS
 
-1. MEH: If you plan on frequently switching among several versions installed of Terraform, one alternative is:
+1. So that you can easily switch among several versions installed of Terraform, install and use the Terraform <strong>version manager</strong>:
 
    <tt><strong>brew install tfenv
    </strong></tt>
@@ -130,45 +125,41 @@ Terraform can work with :
    The response at time of writing:
 
    <pre>
-==> Downloading https://github.com/kamatama41/tfenv/archive/v0.6.0.tar.gz
-==> Downloading from https://codeload.github.com/Zordrak/tfenv/tar.gz/v0.6.0
+==> Downloading https://github.com/tfutils/tfenv/archive/v0.6.0.tar.gz
+==> Downloading from https://codeload.github.com/tfutils/tfenv/tar.gz/v0.6.0
 ######################################################################## 100.0%
-🍺  /usr/local/Cellar/tfenv/0.6.0: 19 files, 23.5KB, built in 6 seconds
+🍺  /usr/local/Cellar/tfenv/0.6.0: 19 files, 23.5KB, built in 7 seconds
    </pre>
 
-   Source for this is from <a target="_blank" href="https://github.com/Zordrak/tfenv">
-   https://github.com/Zordrak/tfenv</a> (previously from <a target="_blank" href="https://github.com/kamatama41/tfenv">https://github.com/kamatama41/tfenv</a>)
+   Source for this is has changed over time: from <a target="_blank" href="https://github.com/Zordrak/tfenv">https://github.com/Zordrak/tfenv</a> (previously from <a target="_blank" href="https://github.com/kamatama41/tfenv">https://github.com/kamatama41/tfenv</a>)
 
-   Alas, I don't recommend it because when I tried to install the latest version using tfenv:
+   When tfenv is used, do not install from the website or using :
+
+   <tt><strike>brew install terraform</strike></tt>
+
+2. Install the latest version of terraform using tfenv:
 
    <tt><strong>tfenv install latest</strong></tt>
 
-   The error message I got was:
+   The response:
 
    <pre>
 [INFO] Installing Terraform v0.12.0
 [INFO] Downloading release tarball from https://releases.hashicorp.com/terraform/0.12.0/terraform_0.12.0_darwin_amd64.zip
-&nbsp;
-curl: (22) The requested URL returned error: 403 
-tfenv: tfenv-install: [ERROR] Tarball download failed
+######################################################################## 100.0%
+[INFO] Downloading SHA hash file from https://releases.hashicorp.com/terraform/0.12.0/terraform_0.12.0_SHA256SUMS
+tfenv: tfenv-install: [WARN] Unable to verify GPG signature unless logged into keybase and following hashicorp
+Archive:  tfenv_download.j57U3f/terraform_0.12.0_darwin_amd64.zip
+  inflating: /usr/local/Cellar/tfenv/0.6.0/versions/0.12.0/terraform
+[INFO] Installation of terraform v0.12.0 successful
+[INFO] Switching to v0.12.0
+[INFO] Switching completed
    </pre>
 
-   When tfenv is used, do not install from the website or using :
+   See <a target="_blank" href="https://www.hashicorp.com/blog/announcing-terraform-0-12">
+   Hashicorp's version 12 announcement</a>.
 
-   <tt>brew install terraform
-   </tt>
-
-   PROTIP: The installer is for a specific version of MacOS (such as High Sierra):
-
-   <pre>
-==> Downloading https://homebrew.bintray.com/bottles/terraform-0.11.10.high_sierra.bottle.1.tar.gz
-Already downloaded: /Users/wilsonmar/Library/Caches/Homebrew/downloads/00744f3d03e5309d7548edd315f26202944b1594b0f98017fba6b7e12b191a90--terraform-0.11.10.high_sierra.bottle.1.tar.gz
-==> Pouring terraform-0.11.10.high_sierra.bottle.1.tar.gz
-🍺  /usr/local/Cellar/terraform/0.11.10: 6 files, 102.1MB
-   </pre>   
-
-   PROTIP: This creates folder <strong>.terraform.d</strong> on your $HOME folder, containing files
-   checkpoint_cache and checkpoint_signature
+   The above creates folder <strong>.terraform.d</strong> on your $HOME folder, containing files `checkpoint_cache` and `checkpoint_signature`.
 
 2. Proceed to <a href="#ScriptInit">Get sample Terraform scripts</a>.
 
@@ -215,26 +206,25 @@ Chocolatey installed 1/1 packages.
  See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
     </pre>   
 
-4. Proceed to <a href="#ScriptInit">Get sample Terraform scripts</a>.
+1. Proceed to <a href="#Config">Configuration</a>.
 
 
 ### Install on Ubuntu
 
-1. On a Console:
+1. On a Console (after substituing the current version):
 
    <pre>
-sudo curl -O https://releases.hashicorp.com/terraform/0.11.5/terraform_0.11.5_linux_amd64.zip
+sudo curl -O https://releases.hashicorp.com/terraform/0.12.0/terraform_0.12.0_linux_amd64.zip
 sudo apt-get install unzip
 sudo mkdir /bin/terraform 
 sudo unzip terraform_0.11.5_linux_amd64.zip -d /usr/local/bin/
    </pre>
 
-2. Proceed to <a href="#ScriptInit">Get sample Terraform scripts</a>.
+2. Proceed to <a href="#Config">Configuration</a>.
 
+### Install Docker:
 
-### Docker Install:
-
-1. To install Docker CE:
+1. To install Docker CE on Linux:
 
    <pre>
 sudo apt-get update
@@ -255,40 +245,22 @@ sudo apt-get update
 sudo apt-get install docker-ce
    </pre>
 
-0. Proceed to <a href="#ScriptInit">Get sample Terraform scripts</a>.
+2. Proceed to <a href="#Config">Configuration</a>.
+   (next below)
 
+<hr />
 
-<a name="Configuration"></a>
+<a name "Config"></a>
 
 ## Configuration
-
-### Version verify
-
-1. Obtain version installed, to check if it's working:
-
-   <tt><strong>terraform version 
-   </strong></tt>
-
-   Alternately:
-
-   <tt><strong>terraform \-\-version 
-   	</strong></tt>
-
-   WARNING: The response at time of writing, Terraform is not even "1.0.0" release, meaning it's in beta maturity:
-
-   <pre>
-   Terraform v0.11.10
-   </pre>
-
 
    ### Commands list & help
 
 2. For a list of commands:
 
-   <tt><strong>terraform 
-   	</strong></tt>
+   <tt><strong>terraform</strong></tt>
 
-   The response at time of writing:
+   The response of menu (at time of writing):
 
    <pre>
 Usage: terraform [--version] [--help] &LT;command> [args]
@@ -300,19 +272,18 @@ started with Terraform, stick with the common commands. For the
 other commands, please read the help and docs before usage.
 &nbsp;
 Common commands:
-    apply              Builds or changes infrastructure
+    <strike>apply</strike>              Builds or changes infrastructure
     console            Interactive console for Terraform interpolations
-    destroy            Destroy Terraform-managed infrastructure
+    <strike>destroy</strike>            Destroy Terraform-managed infrastructure
     env                Workspace management
     fmt                Rewrites config files to canonical format
-    get                Download and install modules for the configuration
+    <strike>get</strike>                Download and install modules for the configuration
     graph              Create a visual graph of Terraform resources
     import             Import existing infrastructure into Terraform
     init               Initialize a Terraform working directory
-    output             Read an output from a state file
-    plan               Generate and show an execution plan
+    <strike>output</strike>             Read an output from a state file
+    <strike>plan</strike>               Generate and show an execution plan
     providers          Prints a tree of the providers used in the configuration
-    push               Upload this Terraform module to Atlas to run
     refresh            Update local state file against real resources
     show               Inspect Terraform state or plan
     taint              Manually mark a resource for recreation
@@ -322,15 +293,40 @@ Common commands:
     workspace          Workspace management
 &nbsp;
 All other commands:
+    0.12upgrade        Rewrites pre-0.12 module source code for v0.12
     debug              Debug output management (experimental)
     force-unlock       Manually unlock the terraform state
+    push               Obsolete command for Terraform Enterprise legacy (v1)
     state              Advanced state management
    </pre>
 
 3. Help on a specific command, for example:
 
-   <tt><strong>terraform plan \-\-help
-    </strong></tt>
+   <pre><strong>terraform plan --help</strong></pre>
+
+
+### Terragrunt from Gruntwork
+
+   A popular replacement of some standard terraform commands are <strong>terragrunt</strong> commands open-sourced at <a target="_blank" href="https://github.com/gruntwork-io/terragrunt">https://github.com/gruntwork-io/terragrunt</a> by <a href="#Gruntwork">Gruntwork</a>:
+
+   <pre><strong>
+   terragrunt get
+   terragrunt plan
+   terragrunt apply
+   terragrunt output
+   terragrunt destroy
+   </strong></pre>
+
+   These thin wrapper commands provide extra tools for working with multiple Terraform modules, and <a href="#State">managing remote state</a>.
+
+   #### Mac
+
+1. To install Terragrunt on macOS:
+
+   <tt>brew install terragrunt</tt>
+
+2. Proceed to <a href="#ScriptInit">Get sample Terraform scripts</a>.
+
 
 
    ### Terraform Console
@@ -339,9 +335,9 @@ All other commands:
 
    <tt><strong>terraform console</strong></tt>
 
-   The response is the prompt
+   The response is the prompt:
 
-   <strong>></strong> 
+   <pre><strong>></strong></pre>
 
 5. Commands can interpret numbers:
 
@@ -351,7 +347,39 @@ All other commands:
 
    <pre>1:3: element: expected 2 arguments, got 3 in:</pre>
    
-6. Type <tt>exit</tt> to return to Bash Terminal window.
+6. Type <tt>exit</tt> or press (on a Mac) control+C to return to your Terminal window.
+
+   The program also expects an additional top level in all <tt>.tfvars</tt> files:
+
+   ### Terragrunt from Gruntwork
+
+   <pre>terragrunt = {
+     # (put your Terragrunt configuration here)
+   }</pre>
+
+   Unlike Terraform, Terragrunt can configure remote state, locking, extra arguments, and lots more.
+
+## Bootstraping options
+
+Terraform can work with :
+
+   <a target="_blank" href="
+   https://forge.puppet.com/inkblot/terraform">
+   https://forge.puppet.com/inkblot/terraform</a>
+
+   <a target="_blank" href="
+   https://supermarket.chef.io/cookbooks/terraform">
+   https://supermarket.chef.io/cookbooks/terraform</a>
+
+   <a target="_blank" href="
+   https://github.com/migibert/terraform-role">
+   https://github.com/migibert/terraform-role</a>
+   Ansible role to install Terraform on Linux machines
+
+   <a target="_blank" href="
+   https://github.com/hashicorp/docker-hub-images/tree/master/terraform">
+   https://github.com/hashicorp/docker-hub-images/tree/master/terraform</a>
+   builds Docker containers for using the terraform command line program.
 
 
 ## Automation
@@ -364,17 +392,21 @@ All other commands:
    * Reusing templates
    <br /><br />
 
-  <a name="Idempotent"></a>
-  PROTIP: Terrform files are "idempotent" (repeat runs don't change anything if nothing is changed). 
-  Thus Terraform defines the "desired state configuration".
+   <a name="Idempotent"></a>
+   PROTIP: Terrform files are "idempotent" (repeat runs don't change anything if nothing is changed). Thus Terraform defines the "desired state configuration".
 
-  NOTE: Terraform remote configures remote state storage with Terraform.
+   NOTE: The `terraform remote` command configures remote state storage.
+
 
 <a name="ProviderCreds"></a>
 
 ### Provider credentials
 
-Since the point of Terraform is to get you into clouds, Terraform looks for specific environment variables containing AWS credentials. Many Mac users add credentials in their ~/.bash_profile these lines:
+Since the point of Terraform is to get you into clouds, Terraform looks for specific environment variables containing AWS credentials. 
+
+1. Got to IAM in AWS to define a user with a password.
+1. Grant rules to the AWS user to use services.
+1. Mac users: add credentials in their `~/.bash_profile` these lines:
 
    <pre>
 export AWS_ACCESS_KEY_ID=(your access key id)
@@ -401,54 +433,13 @@ export AWS_SECRET_ACCESS_KEY=(your secret access key)
    GCP_REGION=""
    </pre>
 
+PROTIP: Specifying passwords in enviornment variables is more secure than typing passwords in tf files<a target="_blank" href="https://www.youtube.com/watch?v=RA1mNClGYJ4&time=5m52s">*</a>.
+
 
 <a name="ScriptInit"></a>
 
 ## Sample Terraform scripts
 
-### Terraform's sample
-
-The steps below are based on
-   <a target="_blank" href="
-   https://www.terraform.io/intro/examples/">
-   https://www.terraform.io/intro/examples</a>
-and implemented in the setup scripts at:
-   <a target="_blank" href="
-   https://github.com/wilsonmar/mac-setup/">
-   https://github.com/wilsonmar/mac-setup</a>
-which performs the following steps for you:
-
-1. Install a Git client if you haven't already.
-0. Use an internet browser (Chrome) to see the sample assets at:
-
-   <a target="_blank" href="
-   https://github.com/terraform-providers/terraform-provider-aws.git">
-   https://github.com/terraform-providers/terraform-provider-aws.git</a>
-
-0. If you are going to make changes, click the <strong>Fork</strong> button.
-0. Create or navigate to a container folder where new repositories are added. For example:
-
-   `~/gits/wilsonmar/tf-sample`
-
-0. Get the repo onto your laptop (substituting "wilsonmar" with your own account name):
-
-   <tt><strong>git clone <a target="_blank" href="
-   https://github.com/terraform-providers/terraform-provider-aws.git">
-   https://github.com/terraform-providers/terraform-provider-aws.git</a> \-\-depth=1 && 
-   cd tf-sample
-   </strong></tt>
-
-   The above is one line, but may be word-wrapped on your screen.
-
-   The response at time of writing:
-
-   <pre>
-Cloning into 'tf-sample'...
-remote: Counting objects: 12, done.
-remote: Compressing objects: 100% (12/12), done.
-remote: Total 12 (delta 1), reused 9 (delta 0), pack-reused 0
-Unpacking objects: 100% (12/12), done.
-   </pre>  
 
 ### Gruntwork's sample
 
@@ -492,27 +483,6 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
 
    <a name="Terragrunt"></a>
 
-#### Terragrunt from Gruntwork
-
-   Gruntwork has open-sourced its <a target="_blank" href="https://github.com/gruntwork-io/terragrunt">https://github.com/gruntwork-io/terragrunt</a> executables which is a thin wrapper for Terraform that provides extra tools for working with multiple Terraform modules, and managing remote state.
-
-   The executable can be installed on macOS using <tt>brew install terragrunt</tt>
-
-   Using it means you henceforth run the terragrunt executable instead of terraform:
-
-   * terragrunt get
-   * terragrunt plan
-   * terragrunt apply
-   * terragrunt output
-   * terragrunt destroy<br /><br />
-
-   The program also expects an additional top level in all <tt>.tfvars</tt> files:
-
-   <pre>terragrunt = {
-     # (put your Terragrunt configuration here)
-   }</pre>
-
-   Unlike Terraform, Terragrunt can configure remote state, locking, extra arguments, and lots more.
 
    <a name="HCL"></a>
 
@@ -521,7 +491,8 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
    Terraform defined HCL (Hashicorp Configuration Language) for both human and machine consumption. HCL is defined at <a target="_blank" href="https://github.com/hashicorp/hcl">https://github.com/hashicorp/hcl</a> and described at <a target="_blank" href="
    https://www.terraform.io/docs/configuration/syntax.html">
    https://www.terraform.io/docs/configuration/syntax.html</a>.
-   An example of HCL:
+   
+   The minimal HCL specifies the instance type used to house the AMI, which is specific to a region:
 
    <pre>provider "aws" {
       region = "us-east-1"
@@ -531,21 +502,19 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
       instance_type = "t2.micro"
    }</pre>
 
-   HCL is less verbose than JSON and more concise than YML.<a target="_blank" href="https://www.terraform.io/docs/configuration/syntax.html">*</a> 
-   Unlike JSON and YML, <strong>HCL allows annotations</strong> as in bash scripts:<br />
-   single line comments start with # (pound sign) or double forward slashes.
-   Multi-line comments are wrapped between /* and \*/.
+   Each block defined between curly braces is called a <strong>"stanza"</strong>.
 
-   Values can be interpolated using syntax wrapped in $\{\}, called interpolation syntax, in the format of $\{type.name.attribute\}. Literal $ are coded by doubling up $$. For example, $\{aws.instance.base.id\} is interpolated to something like `i-28978a2`.
+   HCL is less verbose than JSON and more concise than YML. <a target="_blank" href="https://www.terraform.io/docs/configuration/syntax.html">*</a> 
 
-   Each block with the curly braces is called a "stanza".
+   More importantly, unlike JSON and YML, <strong>HCL allows annotations (comments)</strong>. As in bash scripts: single line comments start with `#` (pound sign) or `//` (double forward slashes). Multi-line comments are wrapped between `/*` and `*/`.
 
-   Back-slashes specify continuation (as in Bash).
+   Back-slashes specify continuation of long lines (as in Bash).
+
+   Values can be interpolated using syntax wrapped in $\{\}, called interpolation syntax, in the format of $\{type.name.attribute\}. For example, `$\{aws.instance.base.id\}` is interpolated to something like `i-28978a2`. Literal `$` are coded by doubling up `$$`. 
 
    More importantly, tf files are <strong>declarative</strong>, meaning that they define the desired end-state (outcomes). If 15 servers are declared, Terraform automatically adds or removes servers to end up with 15 servers rather than specifying procedures to add 5 servers. 
    
    Terraform can do that because <strong>Terraform knows how many servers it has setup already</strong>.
-   It <strong>tracks the state</strong>.
 
    HCL does not have conditional if/else logic, which is why <a href="#Modules">modules (described below)</a> are necessary.
 
@@ -553,6 +522,7 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
    combines the interpolation language HIL to produce a single configuration language that supports arbitrary expressions.
    It's not backward compatible, with no direct migration path.
 
+   An important distinction between Cloud Formmation and Terraform is that Terraform users track the state of each resource. 
 
 ### Validate .tf files
 
@@ -768,18 +738,81 @@ resource "aws_instance" "web" {
 
    <a name="Providers"></a>
 
-   ### Cloud Providers
+   ### Terraform Cloud Providers
 
-   Terraform translates HCL into API calls to cloud providers listed at<br />
+   Terraform translates HCL into API calls defined in (at last count, 109) cloud provider repositories from Terraform, Inc. at:
+
    <a target="_blak" href="
    https://github.com/terraform-providers">
    https://github.com/terraform-providers</a>
    
-   "aws", "google", "azure", Kubernetes, GitLab, DigitalOcean, Heroku, GitHub, OpenStack, etc.
+   #### Terraform Cloud Providers
+
+   "aws", "google", "google-beta", "azurerm", "azuread",  "heroku", Kubernetes, "gitlab", DigitalOcean, Heroku, GitHub, OpenStack, "cloudscale", "cloudstack", "opentelekomcloud", "oci" (Oracle Cloud Infrastructure), "opc" (Oracle Public Cloud), "oracclepass" (Oracle Platform Cloud), "flexibleengine", "nsxt", "rancher", "rancher2", (VMware NSX-T), "vcd" (VMware vCloud Director ), "openstack", "azurestack", "scaleway", "UCloud", "JDcloud", Joyent Triton, Circonus, NaverCloud, TelefonicaOpenCloud, oneandone, Skytap, etc.
+
+   In China: "alicloud", "huaweicloud", "tencentcloud", etc.
+
+   Monitoring and other infrastructure services vendors: 
+   "datadog", "grafana", "newrelic", "pagerduty", "bigip" (F5 BigIP), "RabbitMQ", "acme", "yandex", "ciscoasa" (ASA), etc.
+
+   CDN vendors: Dyn, "fastly", "cloudflare", "netlify", "packet" (Terraform Packet), "consul" (Terraform Consul), "nutanix", "ignition", "dnsimple", "fortis", LogicMonitor,  "profitbricks", "statuscake", etc.
+
+   Database and repositories: "influxdb", "mysql", "postgresql", "vault" (Terraform), "bitbucket", "github", "archive", etc.
+
+   Servers: "docker", "dns", UltraDNS, "helm" (Terraform), "http", "vsphere" (VMware vSphere), etc.
+
+   chef, "spotinst", "linode", "hedvig", "selectel", "brightbox", "OVH", "nomad", "local", Panos, NS1, "rundeck", VMWare vRA7, random, external, "null", Icinga2, Arukas, runscope,  etc.
+
+   The follow have been archived: Atlas (Terraform), "clc" (CenturyLinkCloud), OpsGenie, (IBM) SoftLayer, PowerDNS, DNSMadeEasy, Librato, Mailgun, LogEntries, Gridscale, CIDR, etc.
 
    <a target="_blank" href="
    https://github.com/hashicorp/terraform/tree/master/builtin/providers">
    https://github.com/hashicorp/terraform/tree/master/builtin/providers</a>
+
+### Terraform Providers
+
+The steps below are based on
+   <a target="_blank" href="
+   https://www.terraform.io/intro/examples/">
+   https://www.terraform.io/intro/examples</a>
+and implemented in the setup scripts at:
+   <a target="_blank" href="
+   https://github.com/wilsonmar/mac-setup/">
+   https://github.com/wilsonmar/mac-setup</a>
+which performs the following steps for you:
+
+1. Install a Git client if you haven't already.
+1. Use an internet browser (Chrome) to see the sample assets at:
+
+   <a target="_blank" href="
+   https://github.com/terraform-providers/terraform-provider-aws.git">
+   https://github.com/terraform-providers/terraform-provider-aws.git</a>
+
+0. If you are going to make changes, click the <strong>Fork</strong> button.
+0. Create or navigate to a container folder where new repositories are added. For example:
+
+   `~/gits/wilsonmar/tf-sample`
+
+0. Get the repo onto your laptop (substituting "wilsonmar" with your own account name):
+
+   <tt><strong>git clone <a target="_blank" href="
+   https://github.com/terraform-providers/terraform-provider-aws.git">
+   https://github.com/terraform-providers/terraform-provider-aws.git</a> \-\-depth=1 && 
+   cd tf-sample
+   </strong></tt>
+
+   The above is one line, but may be word-wrapped on your screen.
+
+   The response at time of writing:
+
+   <pre>
+Cloning into 'tf-sample'...
+remote: Counting objects: 12, done.
+remote: Compressing objects: 100% (12/12), done.
+remote: Total 12 (delta 1), reused 9 (delta 0), pack-reused 0
+Unpacking objects: 100% (12/12), done.
+   </pre>  
+
 
 1. PROTIP: Make sure that the AWS region is what you want.
 
@@ -787,6 +820,8 @@ resource "aws_instance" "web" {
    https://www.terraform.io/docs/providers/aws/r/instance.html">
    https://www.terraform.io/docs/providers/aws/r/instance.html</a>
    AWS provider
+
+   ### VPC Security Group
 
 2. VPC Security group
 
@@ -1125,7 +1160,10 @@ output "azure_rm_dns_cname" {
 
    <a name="State"></a>
 
-   ### Ignore state files
+   ### State management
+
+   Although AWS manages state with CloudFormation, to be cloud-agnostic, Terraform
+   users needs to manage state (using Terraform features).
 
    `terraform apply` generates <strong>.tfstate</strong> files (containing JSON) to persist the state of runs by mapping resource IDs to their data. 
 
@@ -1325,11 +1363,11 @@ Modules help you cope with the many DevOps components and alternatives:
 * <a target="_blank" href="https://github.com/terraform-community-modules">
 https://github.com/terraform-community-modules</a>
 
-* <target="_blank" href="https://github.com/gruntwork-io/terragrunt/">
+* <a target="_blank" href="https://github.com/gruntwork-io/terragrunt/">
 https://github.com/gruntwork-io/terragrunt</a>
 is a thin wrapper for Terraform that provides extra tools for working with multiple Terraform modules. 
 
-* <target="_blank" href="https://github.com/gruntwork-io/terratest">
+* <a target="_blank" href="https://github.com/gruntwork-io/terratest">
 https://github.com/gruntwork-io/terratest</a>
 is a Go library that makes it easier to write automated tests for your infrastructure code.
 
@@ -1366,6 +1404,8 @@ Dave Cohen in April 2018 made a <a target="_blank" href="https://www.youtube.com
 <strong>Seth Vargo</strong>, Director of Evangelism at HashiCorp, gave a deep-dive hands-on introduction to Terraform at the O'Reilly conference on June 20-23, 2016. If you have a SafaribooksOnline subscription, see the videos: <a target="_blank" href="https://www.safaribooksonline.com/library/view/velocity-2016-/9781491944646/video255624.html">Part 1 [48:17]</a>, <a target="_blank" href="https://www.safaribooksonline.com/library/view/velocity-2016-/9781491944646/video255625.html">
 Part 2 [37:53]</a>
 
+<a target="_blank" href="https://www.linkedin.com/in/sauravsharma93/">Saurav Sharma</a> created a <a target="_blank" href="https://www.youtube.com/watch?v=RA1mNClGYJ4&list=PLQP5dDPLts65J8csDjrGiLH5MZgTyTsDB">YouTube Playlist</a> that references code at <a target="_blank" href="https://github.com/Cloud-Yeti/aws-labs">https://github.com/Cloud-Yeti/aws-labs</a> as starters for <a target="_blank" href="https://learn.cloudyeti.io/my-aws-videos/">website of videos</a> and <a target="_blank" href="https://www.udemy.com/lambda-course/?couponCode=LAMBDA10#instructor-1">on Udemy</a>.
+
 
 <a name="Gruntwork"></a>
 
@@ -1384,8 +1424,7 @@ co-founder of DevOps as a Service <a target="_blank" href="https://Gruntwork.io/
    * <a target="_blank" href="https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa">
    BLOG: How to manage Terraform state</a>
 
-   * <a target="_blank" href="
-https://github.com/brikis98/infrastructure-as-code-talk">
+   * <a target="_blank" href="https://github.com/brikis98/infrastructure-as-code-talk">
    Infrastructure-as-code: running microservices on AWS with Docker, ECS, and Terraform</a>
 
    * <a target="_blank" href="https://blog.gruntwork.io/terraform-tips-tricks-loops-if-statements-and-gotchas-f739bbae55f9">
@@ -1400,8 +1439,7 @@ https://github.com/brikis98/infrastructure-as-code-talk">
    from O'Reilly Media published: March 2017</a>
 
    * <a target="_blank" href="https://www.ybrikman.com/writing/2016/03/31/infrastructure-as-code-microservices-aws-docker-terraform-ecs/">
-   BLOG: Infrastructure as code: running microservices on AWS using Docker, Terraform, and ECS
-Mar 31, 2016</a>
+   BLOG: Infrastructure as code: running microservices on AWS using Docker, Terraform, and ECS</a> Mar 31, 2016
 
 
 <strong>James Turnbull</strong>

@@ -1718,11 +1718,9 @@ Kubstack
 https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days-e4603ac40746
 
 
-
 ## Free Playpen
 
-<a target="_blank" href="https://play-with-k8s.com/">play-with-k8s.com</a> gives you a 4-hour playpen.
-But that site is gone.
+<a target="_blank" href="https://play-with-k8s.com/">play-with-k8s.com</a> gives you a 4-hour playpen. But that site is gone.
 
 ## More on DevOps #
 
