@@ -903,10 +903,32 @@ Live Restore Enabled: false
    </pre>
 
 
+<a name="ContainerRegistries"></a>
 
-   <a name="DockerLogin"></a>
+### Container Registries #
 
-   ### Setup Docker Hub #
+* <a target="_blank" href="https://amazon.com/ecr">Amazon ECR (EC2 Container Registry)</a> is designed to serve requests within AWS, at lower latency than external registries. ECR does not yet support vulnerability scanning.
+
+* <a target="_blank" href="https://cloud.google.com/container-registry/docs/overview">GCR (Google Container Registry)</a>
+
+* ACR (Azure Container Registry) supports all kinds of containers, including Mesosphere. Azure manages network latency by leveraging its vast cloud computing network so that the closest clusters are used. Good for use with Azure Kubernetes Service (AKS).
+
+* GitLab a container registry?
+
+* JFrog Artifactory
+
+<a target="_blank" href="https://www.g2.com/categories/container-registry">G2</a> in 2019 gave these crowd-sourced ratings:<br />
+![dockerhub-competitors-613x540-21197](https://user-images.githubusercontent.com/300046/58724335-88cecd00-8399-11e9-9b10-30d97b0339e6.jpg)
+
+Not in their analysis are:
+
+* <a target="_blank" href="https://quay.io">quay.io</a> container registry Red Hat (now IBM) created to compete with DockerHub by providing enterprise features such as vulnerability scanning. Its <a target="_blank" href="https://www.redhat.com/en/blog/red-hat-enterprise-linux-8-beta-new-set-container-tools">
+RHEL Enterprise Linux 8 Beta</a> introduces a new <strong>Container Tools</strong> module to replace Docker.
+
+
+<a name="DockerLogin"></a>
+
+### Setup Docker Hub #
 
 0. <a target="_blank" href="https://hub.docker.com/">
    https://hub.docker.com</a>
