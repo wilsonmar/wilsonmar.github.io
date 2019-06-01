@@ -562,7 +562,10 @@ When creating objects, consider <a target="_blank" title="Jun 15, 2014" href="ht
 
 ## GitHub / Tools
 
-<a target="_blank" href="https://github.com/danieljpeter/HyperBatch">https://github.com/danieljpeter/HyperBatch</a> by DanielJPeter
+<a target="_blank" href="https://github.com/danieljpeter/HyperBatch">https://github.com/danieljpeter/HyperBatch</a> by MVP DanielJPeter
+
+<a target="_blank" href="https://github.com/fredrikhogstrom/salesforce-test-data-creation">https://github.com/fredrikhogstrom/salesforce-test-data-creation</a> by fredrikhogstrom
+provides NodeJs code to create test data for Salesforce unit tests, great for when in an unfamiliar environment. It uses multiple API's to get the data.
 
 
 ## Learning Modules
