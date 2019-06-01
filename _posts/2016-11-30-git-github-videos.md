@@ -795,7 +795,33 @@ series</a>:
    * <a target="_blank" href="https://egghead.io/lessons/git-temporarily-store-some-work-in-progress-because-i-have-to-jump-to-another-branch">
    Temporarily store some work in progress because I have to jump to another branch</a>
 
-Cameron Nokes's Advanced Bash Automation for Web Developers course contains:
+<a target="_blank" href="https://trevordmiller.com/about">Trevor Miller</a>'s <a target="_blank" href="https://egghead.io/courses/practical-git-for-everyday-professional-use">Practical Git for Everyday Professional Use</a> 60m video course
+
+   * <a target="_blank" href="https://egghead.io/lessons/misc-practical-git-create-local-repos-with-git-init">Create local repos with git init</a>
+   * <a target="_blank" href="https://egghead.io/lessons/misc-practical-git-copy-remote-repos-to-local-machines-with-git-clone">Copy remote repos to local machines with git clone</a>
+   * <a target="_blank" href="https://egghead.io/lessons/misc-practical-git-capture-code-history-snapshots-with-git-add-commit-push">apture code history snapshots with git add/commit/push</a>
+   * <a target="_blank" href="https://egghead.io/lessons/misc-practical-git-document-repos-with-readme-files">Document repos with README files</a>
+   * <a target="_blank" href="https://egghead.io/lessons/tools-practical-git-sync-local-and-remote-repos-with-git-pull">Sync local and remote repos with git pull</a>
+   * <a target="_blank" href="https://egghead.io/lessons/tools-practical-git-isolate-feature-development-with-git-branch">Isolate feature development with git branch</a>
+   * <a target="_blank" href="https://egghead.io/lessons/tools-practical-git-sync-branches-with-git-merge">Sync branches with git merge</a>
+   * <a target="_blank" href="https://egghead.io/lessons/tools-practical-git-resolve-merge-conflicts-with-git-status">Resolve merge conflicts with git status</a>
+   * <a target="_blank" href="https://egghead.io/lessons/tools-practical-git-save-uncommitted-changes-with-git-stash">Save uncommitted changes with git stash</a> 2:51
+   * <a targeT="_blank" href="https://egghead.io/lessons/tools-practical-git-navigate-git-command-pager-output-with-unix-less-commands">Navigate git command pager output with Unix less commands</A> 2:03
+   * <a targeT="_blank" href="https://egghead.io/lessons/tools-practical-git-view-commit-history-with-git-log">View commit history with git log</A> 0:40
+   * <a targeT="_blank" href="https://egghead.io/lessons/tools-practical-git-format-commit-history-with-git-log-arguments">Format commit history with git log arguments</A> 2:00
+   * <a targeT="_blank" href="https://egghead.io/lessons/tools-practical-git-filter-commit-history-with-git-log-arguments">Filter commit history with git log arguments</A> 6:49
+   * <a targeT="_blank" href="https://egghead.io/lessons/tools-practical-git-compare-file-changes-with-git-diff">Compare file changes with git diff</A> 5:20
+   * <a targeT="_blank" href="https://egghead.io/lessons/tools-practical-git-show-who-changed-a-line-last-with-git-blame">Show who changed a line last with git blame</A> 1:34
+   * <a targeT="_blank" href="https://egghead.io/lessons/tools-practical-git-use-semantic-versioning-with-git-tag">Use semantic versioning with git tag</A> 2:14
+   * <a targeT="_blank" href="https://egghead.io/lessons/tools-practical-git-clean-up-commits-with-git-rebase">Clean up commits with git rebase</A> 5:42
+   * <a targeT="_blank" href="https://egghead.io/lessons/tools-practical-git-diagnose-which-commit-broke-something-with-git-bisect">Diagnose which commit broke something with git bisect</A> 2:49
+   * <a targeT="_blank" href="https://egghead.io/lessons/tools-practical-git-run-scripts-on-git-events-with-git-hooks">Run scripts on git events with git hooks</A> 2:58
+   * <a targeT="_blank" href="https://egghead.io/lessons/misc-practical-git-configure-global-settings-with-git-config">Configure global settings with git config</A> 2:33
+   * <a targeT="_blank" href="https://egghead.io/lessons/tools-practical-git-remove-unnecessary-git-tracking-with-gitignore-files">Remove unnecessary git tracking with .gitignore files</A> 2:36
+   * <a targeT="_blank" href="https://egghead.io/lessons/tools-practical-git-remove-all-unnecessary-git-tracking-with-a-global-gitignore-file">Remove all unnecessary git tracking with a global .gitignore file</A> 0:57
+
+
+Cameron Nokes's <a target="_blank" href="https://egghead.io/courses/advanced-bash-automation-for-web-developers">Advanced Bash Automation for Web Developers</a> video course and <a target="_blank" href="https://github.com/ccnokes/automate-daily-development-tasks-with-bash/tree/master">repo</a> contains:
 
    * <a target="_blank" href="https://egghead.io/lessons/bash-create-aliases-in-bash_profile-for-common-bash-commands">Create Aliases in .bash_profile for Common Bash Commands</a>
    * <a target="_blank" href="https://egghead.io/lessons/bash-create-a-bash-script-to-open-a-pull-request-on-github-using-getopts">Create a Bash Script to Open a Pull Request on Github using getopts</a>
@@ -804,6 +830,14 @@ Cameron Nokes's Advanced Bash Automation for Web Developers course contains:
 Mark Shust:
 
    * <a target="_blank" href="https://egghead.io/lessons/git-use-git-flow-as-a-reliable-version-control-model">Use Git Flow as a Reliable Version Control Model</a>
+
+Kent C. Dodds
+
+   * <a target="_blank" href="https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github">How to Contribute to an Open Source Project on GitHub</a>
+
+   * <a target="_blank" href="https://opensource.guide/">https://opensource.guide</a>
+   are a collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.
+
 
 ### Thoughtbot.com
 
@@ -1487,6 +1521,12 @@ BTW I don't agree with Dan's statement: "I purposefully focus on the command lin
    Introduction to git grep</a> [11:34]
 0. <a target="_blank" href="https://www.youtube.com/watch?v=8-JL6NOTZOw">
    Introduction to Git Hooks</a> [17:02] 6 Nov 2016
+
+
+### Trevor Miller
+
+<a target="_blank" href="https://trevordmiller.com/about">Trevor Miller</a>'s 
+<a target="_blank" href="https://trevordmiller.teachable.com/p/real-world-git">Real-world Git: Learn the most important Git commands</a>
 
 
 ### Michael Koby
