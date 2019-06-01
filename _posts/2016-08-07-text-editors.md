@@ -37,7 +37,7 @@ Free to download and use:
    * <a target="_blank" href="http://www.annedawson.net/Python_Editor_IDLE.htm">
    Python IDLE Editor</a>
 
-   * mcvim ? for Mac
+   * <a href="#McVIM">mcvim</a> for Mac
 
 Licensed nagware:
 
@@ -281,14 +281,28 @@ The newer vim and graphical gvim adds many productivity features to vi.
 
    <em>(from <a target="_blank" href="https://linuxacademy.com/blog/linux-academy/employee-spotlight-elle-krout-course-author/">Elle Krout at LinuxAcademy.com</a>)</em>
 
+VIDEO: <a target="_blank" href="https://egghead.io/courses/learn-to-use-vim">Learn to use Vim</a>:
+
+* <a target="_blank" href="https://egghead.io/lessons/misc-intro-to-vim">Intro to Vim</a> by Mike Hartington:
+
+   * <a target="_blank" href="https://egghead.io/lessons/misc-moving-around-in-vim">Moving around in Vim</a>
+   * <a target="_blank" href="https://egghead.io/lessons/misc-vim-s-built-in-commands">Vim's different modes</a>
+   * <a target="_blank" href="https://egghead.io/lessons/misc-saving-files-in-vim">Saving Files in Vim</a>
+   * <a target="_blank" href="https://egghead.io/lessons/misc-vim-s-built-in-commands">Vim's built-in commands</a>
+   * <a target="_blank" href="https://egghead.io/lessons/misc-combining-vim-commands">Combining Vim commands</a>
+   * <a target="_blank" href="https://egghead.io/lessons/misc-copy-and-paste-inside-of-vim">Copy and Paste inside of Vim</a>
+   * <a target="_blank" href="https://egghead.io/lessons/misc-configure-vim">Configure Vim</a>
+   * <a target="_blank" href="https://egghead.io/lessons/misc-the-vim-config-file">The Vim Config file</a>
+   * <a target="_blank" href="https://egghead.io/lessons/misc-introduction-to-vim-plugins">Introduction to Vim Plugins</a>
+
 
 <a name="MacVim"></a>
 
 ## MacVim
 
-MacVim is a GUI app for macOS.
+MacVim is a GUI app for macOS modeled after the <a href="#vim">vim text editor</a>.
 
-The manual approach: 
+Install using the manual approach: 
 
 1. Download the binary release from:
 
@@ -297,7 +311,7 @@ The manual approach:
 2. Expand archive
 3. Move MacVim.app into folder /Applications/.
 
-To use brew:
+Alternately, use Homebrew:
 
 1. Run <pre>brew install vim && brew install macvim</pre>
 2. Run <pre>brew link macvim</pre>
@@ -517,7 +531,11 @@ SublimeLinter right alongside your code.   BTW SublimeLinter supports more than 
 
 ### More configuration
 
-http://docs.sublimetext.info/en/sublime-text-3/customization/settings.html
+<a target="_blank" href="http://docs.sublimetext.info/en/sublime-text-3/customization/settings.html">Customization Settings</a>
+
+<a target="_blank" href="https://egghead.io/lessons/use-sublime-text-snippets-to-avoid-repetitive-typing">VIDEO: Use Sublime Text Snippets to Avoid Repetitive Typing</a>
+
+<hr />
 
 <a id="Git_Editor"></a>
 
