@@ -725,6 +725,9 @@ But its windowing is much more configurable, which has enabled many add-ons that
    * Find All References
    <br /><br />
 
+Its <a target="_blank" href="https://www.hanselman.com/blog/VisualStudioCodeRemoteDevelopmentMayChangeEverything.aspx">Remote Development mode</a> means that rather than RDP or SSH into a remote machine, there is a client part on your machine and a "VS Code Server" basically running anywhere else. VSCode knows to enable that when it sees a "dev container configuration file" in a GitHub repository. All that's enabled by installing the <a target="_blank" href="https://aka.ms/vscode-remote/download/extension">extension pack</a>. 
+
+
 On Mac: 
 
 1. Install the GUI program using Homebrew:
