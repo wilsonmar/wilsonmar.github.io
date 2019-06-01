@@ -13,7 +13,7 @@ image:
 {% include _toc.html %}
 
 Over time, people have asked me about my stuff (what I think of them, where they can get some, etc.).
-So I've made notes here, so I remember where I got them. I focus on the (luxurious) essentials here:
+So I've made notes here, so I remember where I got them. I focus on the (luxurious) <a target="_blank" href="https://www.rei.com/learn/expert-advice/ten-essentials.html">essentials</a> here:
 
 * [Backpack](#Backpack)
 * [Glasses](#SunProtection)
@@ -38,7 +38,9 @@ So I've made notes here, so I remember where I got them. I focus on the (luxurio
 
 ## Backpack #
 
-Since I travel a lot, I need a backpack designed for secure <strong>urban</strong> travel rather than wilderness bushwacking.
+Since I travel a lot, I need a backpack designed for secure <strong>urban</strong> travel through airports and sidewalks rather than wilderness bushwacking.
+
+For years I've made do with cheap ones I got during conferences.
 
 So the backpack that makes the most sense for my everyday carry needs is <a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS">Cabin Max Metz Backpack Flight Approved Carry on Bag ($50)</a><a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS"><img align="right" width="150" src="../images/Cabin Max Metz Backpack.png" /></a>
 <img align="right" src="http://ir-na.amazon-adsystem.com/e/ir?t=wilsonslifenotes&l=as2&o=1&a=B00IR2VEUS" width="1" height="1" border="0" alt="" />
@@ -47,16 +49,16 @@ Below are discussion of specific attributes versus trade-offs:
 
 ### Color
 
-   Mine is black but there is a <a target="_blank" href="https://www.amazon.com/gp/product/B00M7DYI24/">gray camo</a> fabric.
    A **dark gray** color backpack is less noticeable than a bright-colored pack to alert thieves.
+   Mine is black but there is a <a target="_blank" href="https://www.amazon.com/gp/product/B00M7DYI24/">gray camo</a> fabric.
 
    I'd like to put a patch (such as an American flag) over their big logo, though.
 
 ### Size & Weight
 
-   The <strong>maximum size</strong> to qualify as carry-on luggage is defined by IATA to be 22 x 16 x 8 inches.
-   Some airlines have different standards, such as (21 x 14 x 9). I prefer a backpack this size so I don't need an additional bag
-   when I go for a weekend or need to carry several laptops, camera or recording gear, etc.
+   The key requirement is smaller than the <strong>maximum size</strong> to qualify as carry-on luggage defined by IATA of <strong>22 x 16 x 8 inches</strong>.
+   Some airlines demand even smaller <strong>21 x 14 x 9</strong>. I prefer a backpack this size so I don't need an additional bag
+   when I go for a weekend or need to carry several laptops, cameras, recording gear, etc.
 
    The room's there when needed at a **Lightweight** 700g with water resistant 600D material, which the <a target="_blank" href="https://www.amazon.com/dp/B01J24H2K0/">Amazon Basics bag</a> does not have. 
    The LocTote, XDDesign Bobby packs feature <strong>Cut-proof</strong> fabric.
@@ -65,112 +67,59 @@ Below are discussion of specific attributes versus trade-offs:
    But I would rather cinch up a pack than not have enough room when I need it.
    The pack has side <strong>compression/cinch straps</strong> to flatten it out. But I rarely use them.
 
-### Wheels
+   A big backpack plus carry-on roller-bag would allow me to get on the plane with essentially two pieces of luggage.
 
    Some cannot carry backpacks, so a regular rolling bag would be needed.
-   Wheels dd weight, so I've steered away from them (I can't resist the pun).
-
-   A backpack would allow me to get on the plane with essentially two pieces of carry-on luggage.
+   Wheels add weight, so I've steered away from them (sorry, can't resist the pun here).
 
 ### Comfort
 
    <img align="right" alt="sho-backpack-carry-276x418-217789.png" width="139" height="209" src="https://user-images.githubusercontent.com/300046/52171400-8382ae00-272a-11e9-9d00-01c79c8f9712.png">
-   A large backpack is less comfortable to carry for long periods, and less "executive business style".
+   A backpack the size of carry-on luggage seems less comfortable to carry for long periods, and less "executive business style". Walking into an office with it may look like you're invading the place. But that may be the message you want to send.
 
-   It Would be nice to have more adjustable shoulder straps that <strong>transfers weight to the hips</strong>.
+   It would be nice to have more adjustable shoulder straps that <strong>transfers weight to the hips</strong>.
    Front straps are especially important for a women's physique.
 
+   A smaller <strong>"day pack"</strong> that mates with a carry-on would be ideal, but I haven't found one I like.
 
-### External quick access
-
-   Most backpacks for wilderness travel have several pockets for easy access.
-
-   In the front "Quick Access Pocket" I put receipts in, so it's not locked. 
-   That's where I keep a couple of <strong>lost/emergency contact</strong> cards
-   inside Ziplock bags.
-
-   I keep these in that pocket or hanging outside the pack:
-
-   [_] <strong>Magnetic compass</strong>. The Brunton compass I can squeeze to rotate the plate to remind me to adjust for <a target="_blank" href="https://www.rei.com/learn/expert-advice/compass-declination.html">magnetic declination</a>  vs. True North on maps.
-   In the continental U.S., declination can vary from nearly 20 degrees east in places on the West Coast to nearly 20 degrees west in places on the East Coast. A 15 degree error when traveling over a mile puts you a quarter-mile away from your destination. <a target="_blank" href="https://maps.ngdc.noaa.gov/viewers/historical_declination/">Magnetic North</a> has moved over 2.5 degrees during the past 22 years (<a target="_blank" href="https://www.ncei.noaa.gov/news/world-magnetic-model-out-cycle-release">recently at a faster rate toward Russia</a>).
-
-   [_] Large <strong>carabiner and straps</strong> to attach the pack so it stays on top the handle of a rolling luggage bag.
-
-   [_] Thermometer for ambient temperature. Not really accurate but good to know.
-
-
-   A sleek look without side pockets (that never seem to be the right size) is a halmark of the Astor, Minaal packs.
-
-   I prefer a <strong>front flap</strong> that unzips completely to see at a glance where various small items are (headphones, pens, batteries, cords, SD chips, etc.) 
-   
-   [_] Valuables such as passport and currency I put in a <strong>internal wallet</strong> I wear under my shirt.
-
-   Locks are a trade-off sacrifice of quick easy access to glasses, water.
-
-
-<a name="SunProtection"></a>
-
-### Glasses
-
-Glasses can be expensive.
-
-[_] Sunglasses (in a case)
-
-[_] Reading glasses (in a hard case)
-
-
-<a name="Water"></a>
-
-### Water 
-
-   Normally a person needs a half gallon (64 oz) per day or more.
-   Water weighs 8 pounds per gallon. So it can be the heaviest item in your backpack.
-
-   [_] A "LifeStraw" to suck water from a sack inside the backpack is great not just for backpackers. 
-   Offices can have water quality issues too.
-
-   Hikers enjoy the convenience of an external water tube to reach an internal water bag so
-   it's not necessary to stop and remove the bottle for a drink.
-   Some bags have them built-in but there are add-ons available.
-
-### Cooking and heating
-
-   [_] It's a true luxury to have a hot drink on a cold night or a cold drink on a hot day. 
-   <strong>Double-walled canisters</strong> keep hot drinks hot and cold drinks cold.
-
-   [_] I got a cup made of <strong>silicon</strong> so I can microwave water or to cook a Campbell's soup can.
-   
-   [_] I need an aluminum pot holder to handle it when hot.
-
-
-
-### Internal arrangement
-
-   I like having one big compartment that unzips completely open, splayed) [Astor],
-   rather than several pockets that snag on stuff.
-
-   PROTIP: I custom-made little boxes that doubles as padding to cushion all around my laptop.
-   Hats, gloves, scarf at the top because they are used in the winter.
-   Change of socks and underwear, which I rarely need, at the bottom.
-   Extra shirt and towels on the left and right compartments.
-
-   Some boxes are made of insulation material because many items (food, medicines) degrade when hot.
-   The material also provides some stiffness.
-   Some packs contain soft pull-out packs. 
-   But I prefer stiffer water-tight boxes so they stack neatly in the pack.
-
-   They are more effecive than **internal compression straps** to keep things inside the pack from 
-   knocking into each other.
-
-   The [XDDesign Bobby] features high density foam.
-
-   Having internal compartments that are <strong>water-tight</strong> seals.
-
-### Zippers #
+### Waterproof Zippers #
 
    Zippers is where my previous backpacks wore out first.
    "YKK" brand zippers (from Japan) are considered the best.
    New versions are leak-resistant.
+   
+   <a target="_blank" href="https://www.rei.com/c/luggage/f/f-waterproof">Dry duffle bags</a> are waterproof, but are carried by hand.
+
+   <a target="_blank" href="https://www.rimowa.com/us/en/">
+   Rimowa</a> hard-shells (with wheels) have a waterproof seal and made of material airplanes use: Aluminim and light-weight polycarbonate. Their <a target="_blank" href="https://www.rimowa.com/us/en/luggage/polycarbonate/cabin-s/88352614.html">Cabin S</a> carry-on is $820.
+
+   https://heysamerica.com/products/atlantis-elite-26
+
+### External quick access
+
+   [_] Valuables such as passport and currency I put in a <strong>internal wallet</strong> I wear under my shirt.
+
+   A sleek look without side pockets (that never seem to be the right size) is a hallmark of the [Astor, Minaal] packs. Otherwise, I prefer a <strong>front flap</strong> that unzips completely to see at a glance where various small items are (headphones, pens, batteries, cords, SD chips, etc.)
+   
+   [_] <strong>External locks</strong> are a trade-off sacrifice of quick easy access to glasses, water. But the types of lock that TSA requires are only a deterrant to pick-pockets, and not effective when left alone in a room you don't control.
+   
+   PROTIP: Easy open external pockets on backpacks makes for easy pickings for pick-pockets as well. So in those I put stuff I can cheaply and easily replace:
+
+   [_] <strong>lost/emergency contact card</strong> inside a Ziplock bag so water doesn't destroy the ink. The address is not where I actually live.
+
+   [_] <strong>Magnetic compass</strong>. The Brunton compass I can squeeze (without a tool) to rotate the plate to remind me to adjust for <a target="_blank" href="https://www.rei.com/learn/expert-advice/compass-declination.html">magnetic declination</a>  vs. True North on maps.
+   
+   PROTIP: In the continental U.S., magnetic declination can vary from nearly 20 degrees East in places on the West Coast to nearly 20 degrees west in places on the East Coast. A 15 degree error when traveling over a mile puts you a quarter-mile away from your destination at the end of a day hike. Currently, <a target="_blank" href="https://maps.ngdc.noaa.gov/viewers/historical_declination/">Magnetic North</a> is roughly north of Hudson Bay in Canada. It has moved over 2.5 degrees during the past 22 years and is recently <a target="_blank" href="https://www.ncei.noaa.gov/news/world-magnetic-model-out-cycle-release">moving at a faster rate toward Russia</a>.
+   Use the <a target="_blank" href="https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml#declination">use this NOAA website to calculate</a> and <a target="_blank" href="https://www.rei.com/learn/expert-advice/compass-declination.html">learn to use it</a>.
+
+   Hanging on the outside of my pack:
+
+   [_] Large <strong>carabiner and straps</strong> to attach the pack so it stays on top the handle of a rolling luggage bag.
+
+   [_] A <strong>thermometer</strong> for ambient temperature. Not really accurate but good to know. A laser therometer is useful for use while cooking.
+   Some smart phones have one.
+
+   [_] Hand sanitizer bottle.
 
 ### Security
 
@@ -178,9 +127,9 @@ Glasses can be expensive.
 
    **Easily lockable zippers** make it harder for people standing behind me in line to explore the pockets on my backpack.
 
-   The XDDesign Bobby pack features hidden zippers.
+   The [XDDesign Bobby] pack features hidden zippers.
 
-   High-tech packs have:
+   Some high-tech packs have:
 
    - an alarm that sounds if someone picks it up. This can be added on.
    - Red LED rear light for safety [Astor]
@@ -189,9 +138,7 @@ Glasses can be expensive.
    - Locator beacon (such as Tile)
    <br /><br />
 
-   The trouble with them is that I need to hassle with keeping its battery charged.
-
-
+   PROTIP: The trouble with anything electrical is the hassle of remembering to keep its battery charged.
 
 Other qualities and alternatives I've considered during my survey of various ones out there are below.
 
@@ -240,31 +187,90 @@ Other alteratives considered:
 
    * <a target="_blank" href="http://thru-hiker.com/projects/lab_pack.php">How to make your own backpack</a>
 
+
+<a name="SunProtection"></a>
+
+### Glasses
+
+Glasses are one of the essentials. So I keep an extra set in the suitcase.
+
+[_] <strong>Sunglasses</strong> (in a hard case). For me, polarized lenses is a must-have. Maui Jim's gave free repairs if I pay to ship mine to Hawaii. But after losing too many, I've gone to Ray Bans, which are a great value. $30 from Costco.
+
+[_] <strong>Reading glasses</strong> (in a hard case) which have a yellow tint to block blue light helps me sleep better. $12 from Amazon.
+
+[_] Reading glasses that turn dark for use in the sun. $15 from Walmart.
+
+
+<a name="Water"></a>
+
+### Water 
+
+   [_] A <strong>"LifeStraw" bottle</strong> enables me to drink tap water with impunity. Offices can have water quality issues one cannot see. Its $32 from Walmart is a bargain when considering the exhorbitant prices airport shops charge for water bottles.
+   I just have to remember to empty it before going through airport security.
+
+   PROTIP: On average, a person needs a <strong>half gallon (64 oz) per day</strong>.
+
+   Water weighs 8 pounds per gallon (4 liters). So it can be the heaviest item in a backpack.
+
+   BTW, a gallon is 4 quarts. A quart is 2 pints. 4 quarts is 8 pints.
+
+   Some hikers enjoy the convenience of an external water tube to reach an internal water bag so it's not necessary to stop and remove the bottle for a drink.
+   Some bags have them built-in but there are add-ons available.
+
+### Cooking and heating
+
+   [_] It's a true luxury to have a hot drink on a cold night or a cold drink on a hot day. 
+   <strong>Double-walled canisters</strong> keep hot drinks hot and cold drinks cold.
+
+   [_] I got a <strong>cup made of silicon</strong> so I can microwave water or the contents of a Campbell's soup can.
+   
+   [_] I put it under a plate instead of using an <strong>aluminum pot holder</strong> to handle the flimsy silicon when it's hot.
+
+
+
+### Internal arrangement
+
+   I like having one big compartment that unzips completely open, splayed) [Astor],
+   rather than several pockets that snag on stuff.
+
+   PROTIP: I custom-made little boxes that doubles as padding to cushion all around my laptop.
+   Hats, gloves, scarf at the top because they are used in the winter.
+   Change of socks and underwear, which I rarely need, at the bottom.
+   Extra shirt and towels on the left and right compartments.
+
+   Some boxes are made of insulation material because many items (food, medicines) degrade when hot.
+   The material also provides some stiffness.
+   Some packs contain soft pull-out packs. 
+   But I prefer stiffer water-tight boxes so they stack neatly in the pack.
+
+   They are more effecive than **internal compression straps** to keep things inside the pack from 
+   knocking into each other.
+
+   The [XDDesign Bobby] features high density foam.
+
+   Having internal compartments that are <strong>water-tight</strong> seals.
+
+
 <a name="Food"></a>
 
-## Food
+## Food and Medicines
 
-I keep a couple meals in my pack with a bottle of water.
-Ideally, it would not have much sugar, salt, MSG, etc.
+I prefer foods without added salt, sugar, MSG, and other chemicals (such as meat jerky).
 
-[_] A bag of mixed nuts (unsalted)
+[_] A bag of mixed unsalted nuts and dried or freeze dried appricots, mangos, strawberries, etc.
 
-[_] Jerky has a lot of salt
+[_] <strong>Long titanium spoon</strong> to eat from a Mountain House foil pouch. Regular spoons are too short cause you to have food on your knuckles. $12
 
-   CALENDAR PROTIP: Food spoils over time. So write a date on each item and enter a replacement recurring appointment on your calendar a few months out so it's eaten before gong stale.
-
-[_] Long titanium spoon to eat from a Mountain House foil pouch. Regular spoons are too short cause you to have food on your knuckles.
-
-[_] Small sissors with rounded tips for kids, with a cover. I've never had TSA at airports flag it. $2 from Walmart's art section. 
-
-[_] Small waterproof vials of herbs and spices you like to add to your food. Tameric. Cardemon.
+[_] <strong>Small sissors with rounded tips</strong> for kids, with a cover. I've never had TSA at airports flag it. $2 from Walmart's art section. 
 
 <a name="medicines"></a>
-
-[_] Medicines.
-
-
 <a name="Liquids"></a>
+
+[_] <strong>Small medicine bottles are waterproof</strong> to hold medicines and herbs and spices to add to food. Tameric. Cardemon. Balsalmic vinegar. Port wine to go in clam and other chowders. (Yes, I'm a foodie snob)
+
+CALENDAR PROTIP: Food spoils over time. So write a date on each item and enter a replacement recurring appointment on my calendar a few months out so it's eaten before gong stale.
+
+[_] Small roll of toilet paper in a waterproof and abrasion-resistent bag.
 
 ## Liquids bag
 
@@ -276,21 +282,13 @@ I get small 3 oz. bottles or fill up little tubes rather than handling and carry
 
 [_] Shampoo
 
-[_] Dish soap
-
-[_] Hand sanitizer with a hook hanging on the outside of my pack
+[_] Liquid dish soap
 
 [_] Hair gel
 
 [_] Sunscreen
 
-[_] Personal lubricant. Jo hybrid is our favorite.
-
 [_] Bug repellant
-
-[_] Balsamic vinegar
-
-[_] Port wine (to go in clam and other chowders)
 
 
 <a name="Toiletries"></a>
@@ -309,13 +307,10 @@ I keep a small bag in my backpack for essential toiletries:
 
 [_] Dental floss
 
-[_] Small roll of toilet paper in a waterproof and abrasion-resistent bag.
-
 [_] travel-sized Febreze To Go.
 
 [_] Wash cloth (polyester for faster drying than cotton)
    Use it to clean computer screens.
-
 
 [_] Toiletries bag that hangs, such as the Ogio Doppler bag.
 
@@ -363,14 +358,15 @@ PROTIP: An extra pair of socks and underwear makes for great padding for electro
 
 [_] A rainsuit (with pants) takes less room than I thought. The Frogger rainsuit replaces umbrella, which doesn't work that well anyway for protecting pants. So wear dark pants ;)
 
-[_] Big waterproof airtight bag for storing soiled underwear.
-
 [_] Underwear from Ex-officio, at $25 each, is worth every penny to me for its comfort and quick-drying properties (not cotton)
    It doubles as a bathing suit (kept in a waterproof bag)
 
 [_] Stain remover stick
 
 [_] Extra bag for souvenirs
+
+[_] Big waterproof airtight bag for storing soiled underwear.
+
 
 
 <a name="Shelter"></a>
@@ -389,9 +385,9 @@ Different equiqment is needed for each type of sleeping accomodation.
 
 ### In a building
 
-For traveling to hotels, here are a few items
+For traveling to hotels, here are a few items:
 
-[_] UV flashlight to reveal proteins if sheets are not fresh (free of bed bugs, etc.). I've found issues even in five-star hotels.
+[_] <strong>UV flashlight</strong> to reveal proteins if sheets are not fresh (free of bed bugs, etc.). I've found issues even in five-star hotels.
 
 [_] A "space" or "survival" mylar reflective blanket in my pack. It's less than an once.
    <a target="_blank" href="https://www.amazon.com/Mylar-Mens-Emergency-Thermal-Blankets/dp/B007IYIYFE/ref=wilsonslifenotes?ie=UTF8&qid=1477256492&sr=8-1&keywords=space+blanket">
@@ -421,19 +417,19 @@ In New York City, the Bowry (Chinatown).
 
 [_] Nylon cord
 
-[_] Trowel in case I have to dig in dirt
+[_] <strong>Trowel</strong> in case I have to dig in dirt
 
-[_] Screwdrivers (flat and phillips head)
+[_] Screwdrivers (flat and phillips head) multi-tool
 
-[_] Converter (400 Watts)
+[_] DC to AC Converter (400 Watts)
 
 [_] Extra car battery to use 
 
 [_] Electriccal heater (that doesn't use up oxygen)
 
-[_] Jumber cables
+[_] Jumber cables with a capacitor battery
 
-[_] Tire inflator
+[_] Tire gage inflator
 
 
 <a href="#SleepInCity"></a>
@@ -442,33 +438,32 @@ In New York City, the Bowry (Chinatown).
 
 A tent (with stakes) is the item which separates a city pack and wilderness backpacking.
 
-I think it's wise to be experienced and prepared to sleep in the "cuts" (hideaway spots like bushes and alleys).
-It's not just in case you're homeless. I've been in a city where I can't find any hotel room available.
+I think it's wise to be experienced and prepared to sleep in the "cuts" (hideaway spots like bushes and alleys). It's not just in case you're homeless. I've been in a city where I can't find any hotel room available.
 I've slept on a sidewalk in front of a store waiting for it to open so I am among the first to buy a hot item.
 I've slept on a sidewalk to squat a spot to watch a parade the next morning.
 
 So I'm not so quick to judge people sleeping in the city.
 Public Shelters can be dangerous places. I can't keep my fancy backpack from being stolen there while I sleep.
 
-[_] Pepper spray as a defensive weapon.
+[_] <strong>Pepper spray</strong> as a defensive weapon.
 
-Many cities and towns have a thing against people sleeping on the street. 
-Their solution is usually have the police annoy the homeless (waking them up in the middle of the night) so they move to another city.
-I think that's unconstitutional "cruel and unusual punishment," under the Eighth Amendment. 
-The Ninth U.S. Circuit Court of Appeals on <a target="_blank" href="http://www.governing.com/topics/public-justice-safety/tns-homelessness-cities-cannot-prosecute-when-no-shelters-available.html">September 2018</a> ruled against "criminal penalties for sitting, sleeping, or lying outside on public property for homeless individuals who cannot obtain shelter."<a target="_blank" href="https://www.nytimes.com/2018/09/05/us/-homeless-sleeping-on-street-ruling.html">*</a>
- The state, the court said, "may not criminalize conduct that is an unavoidable consequence of being homeless." The suit was brough by Eric Tars of the <a target="_blank" href="https://www.nlchp.org/">National Law Center on Homelessness & Poverty</a>.
+PROTIP: Many cities and towns have a thing against people sleeping on the street. 
+Their solution is usually have the police annoy the homeless (waking them up in the middle of the night) so they move to another city. 
+So I try to boycott <a target="_blank" href="https://www.nlchp.org/documents/Housing-Not-Handcuffs">towns that practice that</a>, primarily Boise, Dallas, Denver. 
 
-So I try to boycott <a target="_blank" href="https://www.nlchp.org/documents/Housing-Not-Handcuffs">such towns</a>, primarily Boise, Dallas, Denver. I applaud Saleforce billionaire Mark Benioff for leadership in this. Meanwhile, Amazon is doing what?
+I think that's unconstitutional "cruel and unusual punishment" under the Eighth Amendment. The Ninth U.S. Circuit Court of Appeals on <a target="_blank" href="http://www.governing.com/topics/public-justice-safety/tns-homelessness-cities-cannot-prosecute-when-no-shelters-available.html">September 2018</a> ruled against "criminal penalties for sitting, sleeping, or lying outside on public property for homeless individuals who cannot obtain shelter."<a target="_blank" href="https://www.nytimes.com/2018/09/05/us/-homeless-sleeping-on-street-ruling.html">*</a>
+The state, the court said, "may not criminalize conduct that is an unavoidable consequence of being homeless." The suit was brough by Eric Tars of the <a target="_blank" href="https://www.nlchp.org/">National Law Center on Homelessness & Poverty</a>.
 
-[_] Donate to the <a target="_blank" href="http://hsh.sfgov.org/services/emergencyshelter/navigation-centers/">Navigation Centers in San Francisco</a>. They provide a viable shelter by proving storage, eliminating curfews (for those who work odd hours), not  requiring  resident  to  exit  the  premises  each    morning, allowing pets, and permits   mixed   gender   sleeping   arrangements rather   than  requiring  families  and  couples  to  separate. But one has to <a target="_blank" href="https://sf311.org/web/guest/shelter-reservation-waitlist">dial 311</a> (415-701-2311) to get on their waiting list.
+I applaud Saleforce billionaire Mark Benioff for leadership in this. Meanwhile, Amazon is doing what?
 
+[_] <strong>Please donate</strong> to the <a target="_blank" href="http://hsh.sfgov.org/services/emergencyshelter/navigation-centers/">Navigation Centers in San Francisco</a>. They provide a viable shelter by proving storage, eliminating curfews (for those who work odd hours), not requiring resident to exit the premises each morning, allowing pets, and permits mixed gender sleeping arrangements rather than separating families and couples. But one has to <a target="_blank" href="https://sf311.org/web/guest/shelter-reservation-waitlist">dial 311</a> (415-701-2311) to get on their waiting list.
 More than a dozen cities from Santa Rosa to Seattle and Austin, Texas, are copying the model<a target="_blank" href="https://www.sfchronicle.com/bayarea/article/SF-s-homeless-navigation-centers-seem-to-be-13025012.php">*</a>
 
 Anyway, dangers from rough sleeping makes it helpful to have a buddy with you. If you're traveling alone, perhaps team up with another homeless person. Better yet, many cities have street counselors.
 
 PROTIP: Get everything in gray.
 
-[_] A decoy wallet to give robbers. Dropping it on the floor gives you time to run away.
+[_] A <strong>decoy wallet</strong> to give robbers. Dropping it on the floor gives you time to run away.
 
 [_] Moneybelt
 
@@ -485,7 +480,7 @@ PROTIP: Get everything in gray.
 
 ## Lighting
 
-I use my phone as a flashlight. 
+I use my phone as a flashlight. But a headlamp flashlight will save your phone's battery during extended use.
 
 But for being to use both hands in the dark, nothing beats strap-on headlamps (with extra batteries and red lens filter).
 I keep one in the car.
@@ -504,17 +499,17 @@ But after a year, when I needed it, I realized they had died.
 
 ## Electrical
 
-[_] In many airports, my electrical cord with 3-prong plugs enabled me to keep my stuff charged.
+[_] My <strong>electrical cord with 3-prong plugs</strong> enabled me to keep my stuff charged, especially in airports. $9 from Walmart. 
 
-[_] There is a big battery to power my Mac laptop for a few hours.
-   But it's heavy.
+   PROTIP: I don't recommend solar panels. Small ones don't make much energy. Plus I'm not outside much anyway.
+
+[_] A <strong>big Lithium-Ion battery</strong> powers my Mac laptop for a few hours.
+   But it's heavy and can explode.
 
 [_] Instead of turning on the light to wake everyone up,
    Streamlight 73001 Nano Light Miniature Keychain LED Flashlight is an amazing little flashlight that is super bright and tiny.
 
 [_] I have a Mac, so I need HDMI and VGA monitor adapter. And an Ethernet network dongle.
-
-   PROTIP: I don't recommend solar panels. Small ones don't make that much energy. Plus I'm not outside much.
 
 
 <a name="Headphones"></a>

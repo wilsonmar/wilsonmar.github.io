@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Terraform from Hashicorp"
+title: "Terraform (from Hashicorp)"
 excerpt: "Client-only immutable multi-cloud provisioning, with open-sourced Enterprise support"
 tags: [DevOps, ecosystem]
 shorturl: "https://goo.gl/"
@@ -87,7 +87,7 @@ Although Terraform is "open source", the Terraform GUI requires a license.
 
 * <a target="_blank" href="https://www.terraform.io/intro/index.html">terraform.io</a> - Hashicorp's marketing home page.
 
-* <a href="https://www.terraform.io/docs/enterprise-legacy/glossary/index.html" target="_blank" > Glossary of Terraform terms</a>
+* <a target="_blank" href="https://www.terraform.io/docs/enterprise-legacy/glossary/index.html"> Glossary of Terraform terms</a>
 
 * <a target="_blank" href="https://www.terraform.io/intro/getting-started/install.html">
    Official Getting Started docs at Hashicorp</a>
@@ -250,15 +250,15 @@ sudo apt-get install docker-ce
 
 <hr />
 
-<a name "Config"></a>
+<a name="Config"></a>
 
 ## Configuration
 
-   ### Commands list & help
+### Commands list & help
 
-2. For a list of commands:
+2. For a list of commands, use the abbreviated alternate to the `terraform` command:
 
-   <tt><strong>terraform</strong></tt>
+   <tt><strong>tf</strong></tt>
 
    The response of menu (at time of writing):
 
@@ -300,9 +300,41 @@ All other commands:
     state              Advanced state management
    </pre>
 
+   BLAH: Terraform doesn't have an alias command like Git to add subcommands, so one has to  remember which command is Terragrunt and which are standard Terraform?
+
 3. Help on a specific command, for example:
 
    <pre><strong>terraform plan --help</strong></pre>
+
+
+### Community modules
+
+Modules help you cope with the many DevOps components and alternatives:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/39751305-fb4167b4-5274-11e8-9ee4-b62324002453.png">
+<img alt="terraform-devops-vendors-807x352-107086" width="807" src="https://user-images.githubusercontent.com/300046/39751536-bd617afa-5275-11e8-943f-30ebbf17da0e.jpg"></a>
+
+* <a target="_blank" href="https://github.com/terraform-community-modules">
+https://github.com/terraform-community-modules</a>
+
+* <a target="_blank" href="https://github.com/gruntwork-io/terratest">
+https://github.com/gruntwork-io/terratest</a>
+is a Go library that makes it easier to write automated tests for your infrastructure code.
+
+* <a target="_blank" href="
+   https://www.ybrikman.com/writing/2017/10/13/reusable-composable-battle-tested-terraform-modules/">
+   https://www.ybrikman.com/writing/2017/10/13/reusable-composable-battle-tested-terraform-modules</a>
+
+Blogs and tutorials on modules:
+
+* <a target="_blank" href="https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d">
+https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d</a>
+* <a target="_blank" href="https://www.youtube.com/watch?time_continue=147&v=LVgP63BkhKQ">
+How to Build Reusable, Composable, Battle tested Terraform Modules</a> [38:58]
+at Oct 12, 2017
+* <a target="_blank" href="https://linuxacademy.com/howtoguides/posts/show/topic/12369-how-to-introduction-to-terraform-modules">
+How to: Introduction to Terraform Modules</a>
+doc posted Nov 18, 2016 by: Giuseppe B
 
 
 ### Terragrunt from Gruntwork
@@ -317,9 +349,13 @@ All other commands:
    terragrunt destroy
    </strong></pre>
 
-   These thin wrapper commands provide extra tools for working with multiple Terraform modules, and <a href="#State">managing remote state</a>.
+   These wrapper commands provide a quick way to fill in gaps in Terraform and provide
+   extra tools for working with multiple Terraform modules, <a href="#State">managing remote state</a>, and keeping DRY (Don't Repeat Yourself), so that you only have to define it once, no matter how many environments you have.
 
-   #### Mac
+   PROTIP: There are some concerns about Terragrunt's use of invalid data structures. See
+   <a target="_blank" href="https://github.com/gruntwork-io/terragrunt/issues/466">https://github.com/gruntwork-io/terragrunt/issues/466</a>
+
+#### Install on MacOS
 
 1. To install Terragrunt on macOS:
 
@@ -333,7 +369,7 @@ All other commands:
 
 4. Open the Terraform Console (REPL) from a Terminal/command shell:
 
-   <tt><strong>terraform console</strong></tt>
+   <tt><strong>tf console</strong></tt>
 
    The response is the prompt:
 
@@ -492,13 +528,13 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
    https://www.terraform.io/docs/configuration/syntax.html">
    https://www.terraform.io/docs/configuration/syntax.html</a>.
    
-   The minimal HCL specifies the instance type used to house the AMI, which is specific to a region:
+   The minimal HCL specifies the provider cloud, instance type used to house the AMI, which is specific to a region:
 
    <pre>provider "aws" {
-      region = "us-east-1"
+     region = "us-east-1"
    }
    resource "aws_instance" "example" {
-      ami = "ami-abcdef123"
+      ami = "ami-2757f631"
       instance_type = "t2.micro"
    }</pre>
 
@@ -508,7 +544,7 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
 
    More importantly, unlike JSON and YML, <strong>HCL allows annotations (comments)</strong>. As in bash scripts: single line comments start with `#` (pound sign) or `//` (double forward slashes). Multi-line comments are wrapped between `/*` and `*/`.
 
-   Back-slashes specify continuation of long lines (as in Bash).
+   `\` back-slashes specify continuation of long lines (as in Bash).
 
    Values can be interpolated using syntax wrapped in $\{\}, called interpolation syntax, in the format of $\{type.name.attribute\}. For example, `$\{aws.instance.base.id\}` is interpolated to something like `i-28978a2`. Literal `$` are coded by doubling up `$$`. 
 
@@ -519,10 +555,76 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
    HCL does not have conditional if/else logic, which is why <a href="#Modules">modules (described below)</a> are necessary.
 
    <a target="_blank" href="https://github.com/hashicorp/hcl2">HCL2</a>
-   combines the interpolation language HIL to produce a single configuration language that supports arbitrary expressions.
+   is the new experimental version that combines the interpolation language HIL to produce a single configuration language that supports arbitrary expressions.
    It's not backward compatible, with no direct migration path.
 
-   An important distinction between Cloud Formmation and Terraform is that Terraform users track the state of each resource. 
+### AWS EC2 Credentials
+
+   The above minimal HCL can be in a file named `ec2.tf`.
+
+   PROTIP: Including in tf files AWS credentials such as these might inadvantly made visible to the public by getting checked into a public repository:
+
+   <pre>
+     access_key = "ACCESS_KEY_HERE"
+     secret_key = "SECRET_KEY_HERE"
+   </pre>
+
+   If you simply leave out AWS credentials, Terraform will automatically search for saved API credentials (for example, in ~/.aws/credentials) or IAM instance profile credentials.
+
+   An important distinction between Cloud Formmation and Terraform is that Terraform users track the <strong>state</strong> of each resource. 
+
+   Terraform Enterprise automatically store the history of all state revisions.
+
+   See https://www.terraform.io/docs/state/index.html
+
+
+<a name="StateS3"></a>
+
+## Saving tfstate in S3 Backend
+
+In a team environment, it helps to store state state files off a local disk and in a "backend" location central to all.
+
+1. Using AWS IAM, define a AWS user with Permissions in a Role.
+1. Obtain and save credentials for user in an environment variable.
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=rUPSyAG4C1g&list=PLQP5dDPLts65J8csDjrGiLH5MZgTyTsDB&index=3" title="Mar 17, 2019">
+   VIDEO: Terraform Remote State on Amazon S3</a>
+   describes use of a  file named <strong>`backend.tf`</strong>, such as <a target="_blank" href="https://github.com/Cloud-Yeti/aws-labs/blob/master/terraform-aws/lesson4-s3-backend-state-file/backend.tf">this AWS S3 specification</a>, after substituting "<em>YouOwn</em>" with the (globally unique) S3 bucket name defined with the current AWS credentials:
+
+   <pre>
+terraform {
+  backend "s3" {
+    bucket = "<em>YouOwn</em>-terraform"
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+   </pre>
+
+   ### Apply to create tfstate
+
+1. While in the same folder where there is a "backend.tf" file (above), have Terraform read the above to establish an EC2 instance when given the command:
+
+   <pre>tf apply</pre>
+
+1. Confirm by typing "yes".
+
+   A new file `terraform.tfstate` is created to save the configuration state.
+
+1. Manually verify on the AWS Management Console webpage set to service S3.
+
+   ### Destroy tfstate
+
+1. While in the same folder where there is a "backend.tf" file (above), have Terraform read the above to establish an EC2 instance when given the command:
+
+   <pre>tf destroy</pre>
+
+1. Confirm by typing "yes".
+
+   The file `terraform.tfstate` should be deleted.
+
+1. Manually verify on the AWS Management Console webpage set to service S3.
+
 
 ### Validate .tf files
 
@@ -543,10 +645,10 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
    Define cloud account credentials in a <strong>terraform.tfvars</strong> file containing;
 
    <pre>
-aws_access_key = "YourAWSAccessKey"
-aws_secret_key = "YourAWSSecretKey"
-private_key_path = "C:\\PathToYourPrivateKeys\PrivateKey.pem"
-accountId = "YourAWSAccountID"
+aws_access_key = "<em>YourAWSAccessKey</em>"
+aws_secret_key = "<em>YourAWSSecretKey</em>"
+private_key_path = "C:\\<em>PathToYourPrivateKeys</em>\PrivateKey.pem"
+accountId = "<em>YourAWSAccountID</em>"
    </pre>
 
    This is not good security to risk such information in a repo potentially shared.
@@ -945,7 +1047,7 @@ output "elb_dns_name" {
    <pre>git clone https://github.com/terraform-providers/terraform-provider-aws.git --depth=1
    </pre>
 
-0. Initialize Terraform <a href="#PlugIns">plug-ins</a>:
+0. Initialize Terraform working directory (like `git init`) <a href="#PlugIns">plug-ins</a>:
 
    <tt><strong>terraform init
    </strong></tt>
@@ -1089,7 +1191,7 @@ output "azure_rm_dns_cname" {
    The two dots in the command specifies to look above the current folder.
 
    The `-out` parameter specifies the output file name. 
-   Since the output of terraform plan is fed into the terraform apply command, a static file name is best.
+   Since the output of terraform plan is fed into the `terraform apply` command, a static file name is best.
    However, some prefer to avoid overwriting by automatically using a different date stamp in the file name. 
 
    The "%s" yields a date stamp like 147772345 which is the numer of seconds since the 1/1/1970 epoch.
@@ -1301,6 +1403,8 @@ TODO:
    
 ## Modules
 
+A Terraform module is a container for multiple resources that are used together.
+
 Terraform modules provide "blueprints" to deploy.
 
 The module's source can be on a local disk:
@@ -1352,39 +1456,6 @@ It's got 33 resources. The sub-modules are:
    * vault-elb (for AWS only)
    * vault-security-group-rules (for AWS only)
 
-
-### Community modules
-
-Modules help you cope with the many DevOps components and alternatives:
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/39751305-fb4167b4-5274-11e8-9ee4-b62324002453.png">
-<img alt="terraform-devops-vendors-807x352-107086" width="807" src="https://user-images.githubusercontent.com/300046/39751536-bd617afa-5275-11e8-943f-30ebbf17da0e.jpg"></a>
-
-* <a target="_blank" href="https://github.com/terraform-community-modules">
-https://github.com/terraform-community-modules</a>
-
-* <a target="_blank" href="https://github.com/gruntwork-io/terragrunt/">
-https://github.com/gruntwork-io/terragrunt</a>
-is a thin wrapper for Terraform that provides extra tools for working with multiple Terraform modules. 
-
-* <a target="_blank" href="https://github.com/gruntwork-io/terratest">
-https://github.com/gruntwork-io/terratest</a>
-is a Go library that makes it easier to write automated tests for your infrastructure code.
-
-* <a target="_blank" href="
-   https://www.ybrikman.com/writing/2017/10/13/reusable-composable-battle-tested-terraform-modules/">
-   https://www.ybrikman.com/writing/2017/10/13/reusable-composable-battle-tested-terraform-modules</a>
-
-Blogs and tutorials on modules:
-
-* <a target="_blank" href="https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d">
-https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d</a>
-* <a target="_blank" href="https://www.youtube.com/watch?time_continue=147&v=LVgP63BkhKQ">
-How to Build Reusable, Composable, Battle tested Terraform Modules</a> [38:58]
-at Oct 12, 2017
-* <a target="_blank" href="https://linuxacademy.com/howtoguides/posts/show/topic/12369-how-to-introduction-to-terraform-modules">
-How to: Introduction to Terraform Modules</a>
-doc posted Nov 18, 2016 by: Giuseppe B
 
 
 <a name="RockStars"></a>
