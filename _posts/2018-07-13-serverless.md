@@ -1281,6 +1281,10 @@ Andru Estes
    * <a target="_blank" href="https://beta.linuxacademy.com/#/hands-on-labs/details/f2b58b6b-2a05-435a-8746-ca1ff25b9773?redirect_uri=https://app.linuxacademy.com/search?query=c%23">Creating a Simple AWS Lambda Function</a> [30m] Jul 22, 2018
 
 
+<a target="_blank" href="https://egghead.io/courses/building-serverless-web-applications-with-react-aws-amplify">Building Serverless Web Applications with React & AWS Amplify</a> video course by Nader Dabit.
+
+<a target="_blank" href="https://egghead.io/courses/develop-a-serverless-backend-using-node-js-on-aws-lambda">Develop a Serverless Backend using Node.js on AWS Lambda</a> by Nik Graf
+
 ### Pluralsight video tutorials
 
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/web-applications-without-server">Serverless Web Applications</a> 9 Dec 2015 [2h 40m]

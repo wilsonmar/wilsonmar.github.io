@@ -238,13 +238,13 @@ Amazon ECS (Elastic Container Service for Kubernetes)</a> is "supercharged" by t
    See the <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/TheEKSManifest.html">EKS Manifest diagram</a> explained by Mark Richman (@mrichman) in his <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/293">video class</a>, with code at <a target="_blank" href="https://github.com/linuxacademy/eks-deep-dive-2019">https://github.com/linuxacademy/eks-deep-dive-2019</a>.
    
 
-* <a target="_blank" href="https://aws.amazon.com/fargate/">AWS Fargate</a> provides for rapid horizontal scaling on its own fleet of EC2 clusters. It is informally called the "AWS Container Manager".
+* <a target="_blank" href="https://aws.amazon.com/fargate/">AWS Fargate</a> provides for "rapid" horizontal scaling on Amazon's own fleet of EC2 clusters. It's informally called the "AWS Container Manager".
 
    Fargate supports "awsvpcc" network mode natively so that tasks running on the same instance share that's instance's ENI.
 
    <a target="_blank" href="https://blog.totalcloud.io/ecs-vs-eks-vs-fargate-good-bad-ugly/">This totalcloud.io article</a> compares ECS, EKS, and Fargate.
 
-   A concern with Fargate is 
+   A concern with Fargate is its time to load.
 
 * Microsoft's Azure Kubernetes Service (AKS)
 
@@ -255,6 +255,8 @@ Amazon ECS (Elastic Container Service for Kubernetes)</a> is "supercharged" by t
 
 * Kops for AWS (at <a target="_blank" href="https://github.com/kubernetes/kops">https://github.com/kubernetes/kops</a>) is open-source to enable multi-master, multi-AZ cluster setup and management of multiple instance groups. Admins must stand up the masters, unlike in ECS/EKS. See <a target="_blank" title="Oct 27, 2017 by Tristan Colgate-McFarlane" href="https://medium.com/qubit-engineering/kubernetes-up-integrated-authentication-5d2c908c2810">
 "How Qubit built its production ready Kubernetes (k8s) environments"</a>
+
+* https://github.com/kubernetes-sigs/kubespray
 
 * Rancher Kubernetes Engine (RKE) simplifies cluster administration (on EC2, Azure, GCE, Digital Ocean, EKS, AKS, GKE, vSphere or bare metal) - (provisiong, authentication, RBAC, Policy, Security, monitoring, Capacity scaling, Cost control). Its catalog is based on Helm.
 

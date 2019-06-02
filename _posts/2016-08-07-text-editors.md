@@ -99,10 +99,10 @@ On-line browser-based (SaaS) avoids need for setup and makes collaboration easie
 
 ## Cloud9 IDE in EC2
 
-<a target="_blank" href="https://aws.amazon.com/cloud9/">Cloud9 from Amazon</a> (under the Developer Tools category) works completely in the browser running in EC2 under the hood.
-It was <a target="_blank" href="https://www.youtube.com/watch?v=FvclLeg2vEQ">introduced in 2017</a>. 
+<a target="_blank" href="https://aws.amazon.com/cloud9/">Cloud9 from Amazon</a> (under the Developer Tools category) works completely in the browser running in EC2  (for money) under the hood.
+It was <a target="_blank" href="https://www.youtube.com/watch?v=FvclLeg2vEQ">announced at AWS re:Invent in November 2017</a>. 
 
-runs in the browser accessing an EC2 instance (for money). It includes a debugger and terminal to various dev enviornments for AWS <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/lightsail-instances.html">Lightsail</a>, Lambda serverless, <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/codestar-projects.html">CodeStar</a>, CodeBuild, CodePipeline, etc. 
+It includes a debugger and terminal to various dev enviornments for AWS <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/lightsail-instances.html">Lightsail</a>, Lambda serverless, <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/codestar-projects.html">CodeStar</a>, CodeBuild, CodePipeline, etc. 
 
 <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/get-started.html?icmpid=docs_ac9_console">AWS Get started docs</a>
    provides a procedure for each usage pattern.
@@ -139,6 +139,7 @@ runs in the browser accessing an EC2 instance (for money). It includes a debugge
 
 1. It auto-hibernates, but CAUTION: Do your own backups.
 
+* https://aws.amazon.com/blogs/mt/using-aws-cloud9-aws-codecommit-and-troposphere-to-author-aws-cloudformation-templates/
 
 <hr />
 

@@ -1,9 +1,8 @@
 ---
 layout: post
-title: "Terraform (from Hashicorp)"
-excerpt: "Client-only immutable multi-cloud provisioning, with open-sourced Enterprise support"
+title: "Terraform (vs. AWS Cloud Formation)"
+excerpt: "Immutable multi-service provisioning for Infrastructure as Code (IaC)"
 tags: [DevOps, ecosystem]
-shorturl: "https://goo.gl/"
 image:
 # feature: pic data center slice 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
@@ -19,30 +18,38 @@ comments: true
 <a target="_blank" href="https://wilsonmar.github.io/terraform">This tutorial</a> is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to 
 using Hashicorp's Terraform to build, change, and version clusters of 
 <a href="#Immutable">immutable</a> servers (through load balancers) 
-running in clouds using <a href="#Idempotent">idempotent</a> declarative specifications.
+running in clouds using <a href="#Idempotent">idempotent</a> declarative specifications (templates). "Idempotent" means that repeat runs don't change anything if nothing is changed. Thus Terraform defines the "desired state configuration" (DSC).
 
-This integrates examples and wisdom from videos and blogs by <a href="#RockStars">"rock stars"</a> working in various organizations.
+Terraform is <strong>not a "multi-cloud tool" to ease migration</strong> among clouds to avoid vendor lock-in. One would need to rewrite all templates to move from, say, AWS to Azure. Terraform doesn't abstract resources needed to do that.
+
+Terraform is better characterized as a <strong>multi-service</strong> tool. <strong>One tool</strong> to manage GitHub/GitLab, Datadog, Digital Ocean, as well as AWS resources. Can’t really do that with CF alone.
+
+Cloud Formation has <strong>nested stack</strong>.
+
+Terraform can also provision <strong>on-premises</strong> servers running OpenStack as well as AWS, Azure, Google Cloud, Digitial Ocean, Fastly, and other <a href="#CloudProviders">cloud providers</a> -- "anything with an API".
+
+
+## Automation
+
+Terraform's marketing page says it make infrastructure provisioning: Repeatable. Versioned. Documented. Automated. Testable. Shareable.
+
+Automating infrastructure deployment consists of these features:
+
+   * Provisioning resources
+   * Planning updates
+   * Using source control
+   * Reusing templates
+   <br /><br />
+
+The objective is to <strong>save money</strong> by automating the configuration of servers and other resources, which is quicker and more consistent than manually clicking through the GUI.
+
 
 ## Infrastructure as Code Competition
-
-Like AWS Cloud Formation, Terraform automation <strong>saves money</strong> by automating the configuration of servers, which is quicker and more consistent than manually clicking through the GUI.
 
 The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and Terraform:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/30870969-87e52558-a2a2-11e7-8cfa-454fe9081c64.png">
 <img alt="terraform-comp-colored-650x261-36439" width="650" height="261" src="https://user-images.githubusercontent.com/300046/30870914-62437728-a2a2-11e7-8e6a-e3c847f7984f.jpg"><small>(Click to pop-up full screen image <a target="_blank" href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c#.63ls7fpkq">colorized from Gruntwork's blog</a>)</small></a>
-
-Terraform's advantage over Amazon's Cloud Formation scripts is that Terraform can also provision <strong>on-premises</strong> servers running OpenStack as well as AWS, Azure, Google Cloud, Digitial Ocean, Fastly, and other <a href="#CloudProviders">cloud providers</a> -- "anything with an API".
-
-Terraform makes infrastructure provisioning: Repeatable. Versioned. Documented. Automated. Testable. Shareable.
-
-Terraform and Ansible can work in unison and complement each other. Terraform can bootstrap the underlying cloud infrastructure and then Ansible provisions the user space. To test a service on a dedicated server, skip using Terraform and run the Ansible playbook on that machine. Derek Morgan has a <a target="_blank" href="https://github.com/linuxacademy/terransible">"Deploy to AWS with Ansible and Terraform" video class</a> at LinuxAcademy which shows how to do just that, with <a target="_blank" href="https://github.com/linuxacademy/terransible">code</a> and <a target="_blank" href="https://www.lucidchart.com/documents/view/c1ceaa2b-647c-49bd-9dca-bcaffc04be3b">diagram</a>.
-
-
-<a name="Immutable"></a>
-
-"Immutable" means once instantiated, it doesn't change. In DevOps, this strategy means individual servers are treated like "cattle" (removed from the herd) and not as "pets" (courageously kept alive as long as possible).
-When I make a mistake in a complicated setup, I can get going again quickly and easily with less troubleshooting because I can just re-run the script.
 
 Additionally...
 
@@ -52,8 +59,9 @@ Additionally...
 <tr><td> Source code </td><td> closed-source </td><td><a href="#Licensing">open source</a> </td></tr>
 <tr><td> Open Source contributions? </td><td> No </td><td> Yes (<a target="_blank" href="https://github.com/hashicorp/terraform/issues">GitHub issues</a>) </td></tr>
 <tr><td> <a href="#State">State management</a> </td><td> by AWS </td><td> within Terraform </td></tr>
+<tr><td> <a href="#GUI">GUI*</a> </td><td> Free Console </td><td> <a href="#Licensing">licen$ed*</a> </td></tr>
 <tr><td> Configuration format </td><td> JSON </td><td> <a href="#HCL">HCL JSON</a> </td></tr>
-<tr><td> <a href="#ExecControl">Execution control</a> </td><td> No </td><td> Yes </td></tr>
+<tr><td> <a href="#ExecControl">Execution control*</a> </td><td> No </td><td> Yes </td></tr>
 <tr><td> Iterations </td><td> No </td><td> Yes </td></tr>
 <tr><td> Manage already created resources </td><td> No </td><td> Yes (hard) </td></tr>
 <tr><td> Failure handling </td><td> Optional rollback </td><td> Fix &amp; retry </td></tr>
@@ -61,17 +69,47 @@ Additionally...
 <tr><td> <a href="#Modules">Extensible Modules</a> </td><td> No </td><td> <a href="#Modules">Yes</a> </td></tr>
 </table>
 
+Terraform and Ansible can work in unison and complement each other. Terraform can bootstrap the underlying cloud infrastructure and then Ansible provisions the user space. To test a service on a dedicated server, skip using Terraform and run the Ansible playbook on that machine. Derek Morgan has a <a target="_blank" href="https://github.com/linuxacademy/terransible">"Deploy to AWS with Ansible and Terraform" video class</a> at LinuxAcademy which shows how to do just that, with <a target="_blank" href="https://github.com/linuxacademy/terransible">code</a> and <a target="_blank" href="https://www.lucidchart.com/documents/view/c1ceaa2b-647c-49bd-9dca-bcaffc04be3b">diagram</a>.
+
+
+<a name="Immutable"></a>
+
+"Immutable" means once instantiated, it doesn't change. In DevOps, this strategy means individual servers are treated like "cattle" (removed from the herd) and not as "pets" (courageously kept alive as long as possible).
+
+"When I make a mistake in a complicated setup, I can get going again quickly and easily with less troubleshooting because I can just re-run the script."
+
+WARNING: Terraform does not support rollbacks in any meaningful way.
+
 Terraform also provides <strong>parallel execution</strong> control, iterations, and (perhaps most of all) management of resources already created (desired state configuration) over several cloud providers (not just AWS).
 
-A key differentiator is Terraform's plan command, which provides more than just a "dry-run" before configurations are applied for real. Under the covers, Terraform plan generates an executable, and uses it to apply, which guarantees the plan is the same as the apply.
+A key differentiator is Terraform's plan command, which provides more than just a "dry-run" before configurations are applied for real. Under the covers, Terraform plan generates an executable, and uses it to apply, which guarantees that what appeared in plan is the same as with <a href="#TerraformApply">apply</a>.
 
 
-NOTE: AWS Cloud Formation and Terraform can both be used at the same time.
+### vs. AWS Cloud Formation
+
+First of all, if you ever want to get AWS certified, you’re going to need to know Cloud Formation. For a company, it comes down to vendor support preferred, which is needed considering that the product has been available only a few years.
+
+Those who create AMI's now also provide CFN templates to customers.
+
+Some have found Cloud Formation's references and interpolation to be difficult. 
+Troposphere and Sceptre makes CFN easier to write with basic loops and logic that CFN lacks.
+But in <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2018/09/introducing-aws-cloudformation-macros/">Sep 2018 CloudFormation got <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">macros</a> to do iteration and interpolation (find-and-replace). Caveat: it does require some dependencies to be setup.
+
+CFN also lacks the ability to upload large objects to S3.
+
+AWS Cloud Formation and Terraform can both be used at the same time.
+Terraform is often used to handle security groups, IAM resources, VPCs, Subnets, 
+and policy documents in general; while CFN is used for actual infrastructural components, now that cloud formation has released <strong>drift detection</strong>.
+
+<a target="_blank" href="https://www.reddit.com/r/aws/comments/9y25ei/why_should_i_learn_cloudformation_when_we_have/e9yqgcy/">NOTE</a>: "Combined with cfn-init and family, CloudFormation supports different forms of deployment patterns that is much more awkward to do in Terraform. ASGs with different replacement policies, automatic rollbacks based upon Cloudwatch alarms, and so forth are all well documented and work pretty straight forward in CloudFormation due to the state being managed purely internal to AWS. 
+Terraform is not really an application level deployment tool and you wind up rolling your own. Working out an odd mix of null resources and shell commands to deploy an application while trying to roll back is not straightforward and seems like a lot of reinventing the wheel."
+
+Moreover, security-concious organization make it difficult to use third party products due to time-consuming infosec clearances needed.
 
 
 <a name="Licensing"></a>
 
-## Licensing
+## Licensing open source for GUI
 
 Code for Terraform is open-sourced at<br />
 <a target="_blank" href="https://github.com/hashicorp/terraform/">https://github.com/hashicorp/terraform</a>
@@ -85,9 +123,9 @@ Although Terraform is "open source", the Terraform GUI requires a license.
 
 ## Websites to know
 
-* <a target="_blank" href="https://www.terraform.io/intro/index.html">terraform.io</a> - Hashicorp's marketing home page.
-
 * <a target="_blank" href="https://www.terraform.io/docs/enterprise-legacy/glossary/index.html"> Glossary of Terraform terms</a>
+
+* <a target="_blank" href="https://www.terraform.io/intro/index.html">terraform.io</a> - Hashicorp's marketing home page.
 
 * <a target="_blank" href="https://www.terraform.io/intro/getting-started/install.html">
    Official Getting Started docs at Hashicorp</a>
@@ -95,8 +133,13 @@ Although Terraform is "open source", the Terraform GUI requires a license.
 
 * <a target="_blank" href="https://groups.google.com/forum/#!forum/terraform-tool">Google Group terraform-tool</a>
 * LinkedIn
-* StackOverflow
-* IRC (Internet Relay Chat)
+* <a target="_blank" href="https://stackoverflow.com/search?q=terraform">StackOverflow</a>
+* <a target="_blank" href="https://www.reddit.com/r/Terraform/">r/Terraform (Reddit sub-reddit)</a>
+* <a target="_blank" href="https://www.youtube.com/watch?v=Q6SGhWK6y0o&list=PL4z1WbdlT5GKw1l2w0U-8YijoTwZp_GvU">0.12-alpha4</a> Dec 20, 2018 on
+<a target="_blank" href="https://www.youtube.com/channel/UC0gjVbm7HY5GzDTo5NbQruA">
+Mitchell Hashimoto (CEO) YouTube channel</a>  
+
+* No IRC (Internet Relay Chat)?
 
 <a name="Install"></a>
 
@@ -161,7 +204,7 @@ Archive:  tfenv_download.j57U3f/terraform_0.12.0_darwin_amd64.zip
 
    The above creates folder <strong>.terraform.d</strong> on your $HOME folder, containing files `checkpoint_cache` and `checkpoint_signature`.
 
-2. Proceed to <a href="#ScriptInit">Get sample Terraform scripts</a>.
+1. Proceed to <a href="#Config">Configuration</a>.
 
 
 ### Install on Windows
@@ -222,7 +265,7 @@ sudo unzip terraform_0.11.5_linux_amd64.zip -d /usr/local/bin/
 
 2. Proceed to <a href="#Config">Configuration</a>.
 
-### Install Docker:
+### Install Docker
 
 1. To install Docker CE on Linux:
 
@@ -248,19 +291,49 @@ sudo apt-get install docker-ce
 2. Proceed to <a href="#Config">Configuration</a>.
    (next below)
 
+### Ansible, Chef, Puppet
+
+* <a target="_blank" href="
+   https://github.com/migibert/terraform-role">
+   https://github.com/migibert/terraform-role</a>
+   Ansible role to install Terraform on Linux machines
+
+* <a target="_blank" href="
+   https://supermarket.chef.io/cookbooks/terraform">
+   https://supermarket.chef.io/cookbooks/terraform</a>
+
+* <a target="_blank" href="
+   https://forge.puppet.com/inkblot/terraform">
+   https://forge.puppet.com/inkblot/terraform</a>
+
+* <a target="_blank" href="
+   https://github.com/hashicorp/docker-hub-images/tree/master/terraform">
+   https://github.com/hashicorp/docker-hub-images/tree/master/terraform</a>
+   builds Docker containers for using the terraform command line program.
+
+
 <hr />
 
 <a name="Config"></a>
 
 ## Configuration
 
-### Commands list & help
+Instructions below are for the Command Line. 
 
-2. For a list of commands, use the abbreviated alternate to the `terraform` command:
+If you prefer using Python, there is a Python module to provide a wrapper of terraform command line tool at <a target="_blank" href="https://github.com/beelit94/python-terraform">https://github.com/beelit94/python-terraform</a>
+
+
+### Command Alias list & help
+
+1. For a list of commands, use the abbreviated alternate to the `terraform` command:
 
    <tt><strong>tf</strong></tt>
 
-   The response of menu (at time of writing):
+   Alternately, use the long form:
+
+   <tt><strong>terraform</strong></tt>
+
+   Either way, the response is a menu (at time of writing):
 
    <pre>
 Usage: terraform [--version] [--help] &LT;command> [args]
@@ -272,7 +345,7 @@ started with Terraform, stick with the common commands. For the
 other commands, please read the help and docs before usage.
 &nbsp;
 Common commands:
-    <strike>apply</strike>              Builds or changes infrastructure
+    <a href="#TerraformApply">apply</a>              Builds or changes infrastructure
     console            Interactive console for Terraform interpolations
     <strike>destroy</strike>            Destroy Terraform-managed infrastructure
     env                Workspace management
@@ -288,7 +361,7 @@ Common commands:
     show               Inspect Terraform state or plan
     taint              Manually mark a resource for recreation
     untaint            Manually unmark a resource as tainted
-    validate           Validates the Terraform files
+    <a href="#validate">validate</a>           Validates the Terraform files
     version            Prints the Terraform version
     workspace          Workspace management
 &nbsp;
@@ -300,70 +373,15 @@ All other commands:
     state              Advanced state management
    </pre>
 
-   BLAH: Terraform doesn't have an alias command like Git to add subcommands, so one has to  remember which command is Terragrunt and which are standard Terraform?
+   BLAH: Terraform doesn't have an alias command like Git to add subcommands, so one has to remember which command is Terragrunt and which are standard Terraform?
+
+   NOTE: The `terraform remote` command configures remote state storage.
 
 3. Help on a specific command, for example:
 
-   <pre><strong>terraform plan --help</strong></pre>
+   <pre><strong>tf plan --help</strong></pre>
 
-
-### Community modules
-
-Modules help you cope with the many DevOps components and alternatives:
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/39751305-fb4167b4-5274-11e8-9ee4-b62324002453.png">
-<img alt="terraform-devops-vendors-807x352-107086" width="807" src="https://user-images.githubusercontent.com/300046/39751536-bd617afa-5275-11e8-943f-30ebbf17da0e.jpg"></a>
-
-* <a target="_blank" href="https://github.com/terraform-community-modules">
-https://github.com/terraform-community-modules</a>
-
-* <a target="_blank" href="https://github.com/gruntwork-io/terratest">
-https://github.com/gruntwork-io/terratest</a>
-is a Go library that makes it easier to write automated tests for your infrastructure code.
-
-* <a target="_blank" href="
-   https://www.ybrikman.com/writing/2017/10/13/reusable-composable-battle-tested-terraform-modules/">
-   https://www.ybrikman.com/writing/2017/10/13/reusable-composable-battle-tested-terraform-modules</a>
-
-Blogs and tutorials on modules:
-
-* <a target="_blank" href="https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d">
-https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d</a>
-* <a target="_blank" href="https://www.youtube.com/watch?time_continue=147&v=LVgP63BkhKQ">
-How to Build Reusable, Composable, Battle tested Terraform Modules</a> [38:58]
-at Oct 12, 2017
-* <a target="_blank" href="https://linuxacademy.com/howtoguides/posts/show/topic/12369-how-to-introduction-to-terraform-modules">
-How to: Introduction to Terraform Modules</a>
-doc posted Nov 18, 2016 by: Giuseppe B
-
-
-### Terragrunt from Gruntwork
-
-   A popular replacement of some standard terraform commands are <strong>terragrunt</strong> commands open-sourced at <a target="_blank" href="https://github.com/gruntwork-io/terragrunt">https://github.com/gruntwork-io/terragrunt</a> by <a href="#Gruntwork">Gruntwork</a>:
-
-   <pre><strong>
-   terragrunt get
-   terragrunt plan
-   terragrunt apply
-   terragrunt output
-   terragrunt destroy
-   </strong></pre>
-
-   These wrapper commands provide a quick way to fill in gaps in Terraform and provide
-   extra tools for working with multiple Terraform modules, <a href="#State">managing remote state</a>, and keeping DRY (Don't Repeat Yourself), so that you only have to define it once, no matter how many environments you have.
-
-   PROTIP: There are some concerns about Terragrunt's use of invalid data structures. See
-   <a target="_blank" href="https://github.com/gruntwork-io/terragrunt/issues/466">https://github.com/gruntwork-io/terragrunt/issues/466</a>
-
-#### Install on MacOS
-
-1. To install Terragrunt on macOS:
-
-   <tt>brew install terragrunt</tt>
-
-2. Proceed to <a href="#ScriptInit">Get sample Terraform scripts</a>.
-
-
+   <a name="Console"></a>
 
    ### Terraform Console
 
@@ -387,51 +405,74 @@ doc posted Nov 18, 2016 by: Giuseppe B
 
    The program also expects an additional top level in all <tt>.tfvars</tt> files:
 
-   ### Terragrunt from Gruntwork
+
+### Community modules
+
+Modules help you cope with the many DevOps components and alternatives:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/39751305-fb4167b4-5274-11e8-9ee4-b62324002453.png">
+<img alt="terraform-devops-vendors-807x352-107086" width="807" src="https://user-images.githubusercontent.com/300046/39751536-bd617afa-5275-11e8-943f-30ebbf17da0e.jpg"></a>
+
+* <a target="_blank" href="https://github.com/terraform-community-modules">
+https://github.com/terraform-community-modules</a>
+
+* <a target="_blank" href="https://github.com/gruntwork-io/terratest">
+https://github.com/gruntwork-io/terratest</a>
+is a Go library that makes it easier to write automated tests for your infrastructure code.
+
+* <a target="_blank" href="
+   https://www.ybrikman.com/writing/2017/10/13/reusable-composable-battle-tested-terraform-modules/">
+   https://www.ybrikman.com/writing/2017/10/13/reusable-composable-battle-tested-terraform-modules</a>
+
+* https://github.com/terraform-aws-modules
+
+
+Blogs and tutorials on modules:
+
+* <a target="_blank" href="https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d">
+https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d</a>
+
+* <a target="_blank" href="https://www.youtube.com/watch?time_continue=147&v=LVgP63BkhKQ">
+How to Build Reusable, Composable, Battle tested Terraform Modules</a> [38:58]
+at Oct 12, 2017
+
+* <a target="_blank" href="https://linuxacademy.com/howtoguides/posts/show/topic/12369-how-to-introduction-to-terraform-modules">
+How to: Introduction to Terraform Modules</a>
+Nov 18, 2016 by Giuseppe B
+
+
+
+### Terragrunt from Gruntwork
+
+   A popular replacement of some standard terraform commands are <strong>terragrunt</strong> commands open-sourced at <a target="_blank" href="https://github.com/gruntwork-io/terragrunt">https://github.com/gruntwork-io/terragrunt</a> by <a href="#Gruntwork">Gruntwork</a>:
+
+   <pre><strong>
+   terragrunt get
+   terragrunt plan
+   terragrunt apply
+   terragrunt output
+   terragrunt destroy
+   </strong></pre>
+
+   These wrapper commands provide a quick way to fill in gaps in Terraform - providing extra tools for working with multiple Terraform modules, <a href="#State">managing remote state</a>, and keeping DRY (Don't Repeat Yourself), so that you only have to define it once, no matter how many environments you have.
+
+   Unlike Terraform, Terragrunt can configure remote state, locking, extra arguments,etc.
+
+   WARNING: There are some concerns about Terragrunt's use of invalid data structures. See
+   <a target="_blank" href="https://github.com/gruntwork-io/terragrunt/issues/466">https://github.com/gruntwork-io/terragrunt/issues/466</a>
+
+Install on MacOS:
+
+1. To install Terragrunt on macOS:
+
+   <tt>brew install terragrunt</tt>
+
+To define:
 
    <pre>terragrunt = {
      # (put your Terragrunt configuration here)
    }</pre>
 
-   Unlike Terraform, Terragrunt can configure remote state, locking, extra arguments, and lots more.
-
-## Bootstraping options
-
-Terraform can work with :
-
-   <a target="_blank" href="
-   https://forge.puppet.com/inkblot/terraform">
-   https://forge.puppet.com/inkblot/terraform</a>
-
-   <a target="_blank" href="
-   https://supermarket.chef.io/cookbooks/terraform">
-   https://supermarket.chef.io/cookbooks/terraform</a>
-
-   <a target="_blank" href="
-   https://github.com/migibert/terraform-role">
-   https://github.com/migibert/terraform-role</a>
-   Ansible role to install Terraform on Linux machines
-
-   <a target="_blank" href="
-   https://github.com/hashicorp/docker-hub-images/tree/master/terraform">
-   https://github.com/hashicorp/docker-hub-images/tree/master/terraform</a>
-   builds Docker containers for using the terraform command line program.
-
-
-## Automation
-
-   NOTE: Automating infrastructure deployment consists of these features:
-
-   * Provisioning resources
-   * Planning updates
-   * Using source control
-   * Reusing templates
-   <br /><br />
-
-   <a name="Idempotent"></a>
-   PROTIP: Terrform files are "idempotent" (repeat runs don't change anything if nothing is changed). Thus Terraform defines the "desired state configuration".
-
-   NOTE: The `terraform remote` command configures remote state storage.
 
 
 <a name="ProviderCreds"></a>
@@ -470,6 +511,7 @@ export AWS_SECRET_ACCESS_KEY=(your secret access key)
    </pre>
 
 PROTIP: Specifying passwords in enviornment variables is more secure than typing passwords in tf files<a target="_blank" href="https://www.youtube.com/watch?v=RA1mNClGYJ4&time=5m52s">*</a>.
+
 
 
 <a name="ScriptInit"></a>
@@ -531,6 +573,8 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
    The minimal HCL specifies the provider cloud, instance type used to house the AMI, which is specific to a region:
 
    <pre>provider "aws" {
+     access_key = "ACCESS_KEY_HERE"
+     secret_key = "SECRET_KEY_HERE"
      region = "us-east-1"
    }
    resource "aws_instance" "example" {
@@ -552,11 +596,13 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
    
    Terraform can do that because <strong>Terraform knows how many servers it has setup already</strong>.
 
-   HCL does not have conditional if/else logic, which is why <a href="#Modules">modules (described below)</a> are necessary.
+   HCL does not contain conditional if/else logic, which is why <a href="#Modules">modules (described below)</a> are necessary.
 
    <a target="_blank" href="https://github.com/hashicorp/hcl2">HCL2</a>
    is the new experimental version that combines the interpolation language HIL to produce a single configuration language that supports arbitrary expressions.
    It's not backward compatible, with no direct migration path.
+
+   Terraform processes all .tf files in the directory invoked, in <strong>alphabetical order</strong>.
 
 ### AWS EC2 Credentials
 
@@ -977,7 +1023,7 @@ resource "aws_security_group" "instance" {
 
    Sample contents of an outputs.tf file:
 
-  <pre>
+   <pre>
   output "public_ip" {
   value = "${aws_instance.example.public_ip}"
 }
@@ -988,7 +1034,7 @@ resource "aws_security_group" "instance" {
 
    Sample contents of an outputs.tf file for a cluster points to the Elastic Load Balancer:
 
-  <pre>
+   <pre>
 output "elb_dns_name" {
   value = "${aws_elb.example.dns_name}"
 }
@@ -1017,18 +1063,20 @@ output "elb_dns_name" {
    The library can be used as the basis to automate experimentation and
    to collect results (impact of) various configuration changes.
 
+<a name="validate"></a>
+
 ### terraform validate
 
-1. Validate the <strong>folder</strong> using <a target="_blank" href="
+1. Validate the <strong>folder</strong> (see <a target="_blank" href="
    https://www.terraform.io/docs/commands/validate.html">
-   https://www.terraform.io/docs/commands/validate.html</a>
+   https://www.terraform.io/docs/commands/validate.html</a>)
 
    <tt><strong>terraform validate single-web-server
    </strong></tt>
 
    If no issues are identified, no message appears. (no news is good news)
 
-   <a target="_blank" href="https://gist.github.com/jamtur01/a567078b7ba545c3492f7cd32a65450d">
+1. Add a <a target="_blank" href="https://gist.github.com/jamtur01/a567078b7ba545c3492f7cd32a65450d">
    pre-commit hook to validate in your Git repository</a>
 
    ### Main.tf
@@ -1191,7 +1239,7 @@ output "azure_rm_dns_cname" {
    The two dots in the command specifies to look above the current folder.
 
    The `-out` parameter specifies the output file name. 
-   Since the output of terraform plan is fed into the `terraform apply` command, a static file name is best.
+   Since the output of terraform plan is fed into the <a href="#TerraformApply">`terraform apply`</a> command, a static file name is best.
    However, some prefer to avoid overwriting by automatically using a different date stamp in the file name. 
 
    The "%s" yields a date stamp like 147772345 which is the numer of seconds since the 1/1/1970 epoch.
@@ -1219,13 +1267,14 @@ output "azure_rm_dns_cname" {
    Alternately,
 
    <tt><strong>
-   terraform apply -state=".\develop\dev.state" -var="environment_name=development"
+   terraform apply -state=".\develop\dev.state" \
+      -var="environment_name=development"
    </strong></tt>
 
-   Alternative specification of enviornment variables:
+   Alternative specification of enviornment variable:
 
    <pre>
-   TF_VAR_first_name=John terraform apply
+   TF_VAR_first_name="John" terraform apply
    </pre>
 
    Values to Terraform variables define inputs such as run-time DNS/IP addresses into 
