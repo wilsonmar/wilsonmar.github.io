@@ -3,6 +3,7 @@ layout: post
 title: "Windows on Apple MacOS laptops"
 excerpt: "RDP to EC2, Amazon WorkSpaces, Vagrant, BootCamp, VMWare Fusion, Docker"
 tags: [apple, mac, setup, VMWare, Fusion]
+file: 2016-08-01-windows-on-apple-mac-osx.md
 image:
 # feature: pic gray apple logo 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14625335/52952250-059f-11e6-84c8-5ae2d289c486.jpg
@@ -1115,10 +1116,28 @@ provides only a limited palette of 48 colors to choose from.
    Its packages are binary,so no long compile times. But practically they are usually outdated and I had to compile stuff for my system anyway.
    It needs X11 installed.
 
+## Windows Edge Browser
+
+Here's a way to get a bit of Windows on your Mac. The Edge browser.
+
+1. <a target="_blank" href="https://www.microsoftedgeinsider.com/en-us/download?platform=macos">Download Beta, Dev, and Canary Channel Insider builds of the Microsoft Edge for your Mac from Microsof'ts Insider website at https://www.microsoftedgeinsider.com/en-us/download?platform=macos</a>
+
+   It's 126,040,696 bytes (130.3 MB on disk)
+
+2. In Finder, double-click file `MicrosoftEdgeCanary-76.0.176.0.pkg`
+3. In the pop-up, click "Continue", then "Install".
+4. Provide Password. 
+5. Close, then Delete the installer file.
+6. Click "Start from Scratch".
+7. Click "Focused", then "Done".
+8. Look for the program in /Applications as "Microsoft Edge Canary.app".
+9. Drag the app's icon to your Dock bar for easy access.
+10. See https://www.microsoftedgeinsider.com/en-us/welcome?channel=canary&version=76.0.176.0
+11. On Twitter, follow <a target="_blank" href="https://twitter.com/msedgedev">@msedgedev</a>
 
 ## References
 
-* https://www.howtogeek.com/187359/5-ways-to-run-windows-software-on-a-mac/
+* <a target="_blank" href="https://www.howtogeek.com/187359/5-ways-to-run-windows-software-on-a-mac/">5 ways to run windows software on a Mac</a>
 
 
 
