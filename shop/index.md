@@ -93,6 +93,12 @@ Below are discussion of specific attributes versus trade-offs:
 
    [_] Moneybelt
 
+   [_] A cache of business cards
+
+   [_] Pen and small notebook
+
+   [_] Small measuring tape  
+
    [_] <strong>Magnetic compass</strong>. The Brunton compass I can squeeze (without a tool) to rotate the plate to remind me to adjust for <a target="_blank" href="https://www.rei.com/learn/expert-advice/compass-declination.html">magnetic declination</a>  vs. True North on maps.
    
    PROTIP: In the continental U.S., magnetic declination can vary from nearly 20 degrees East in places on the West Coast to nearly 20 degrees west in places on the East Coast. A 15 degree error when traveling over a mile puts you a quarter-mile away from your destination at the end of a day hike. Currently, <a target="_blank" href="https://maps.ngdc.noaa.gov/viewers/historical_declination/">Magnetic North</a> is roughly north of Hudson Bay in Canada. It has moved over 2.5 degrees during the past 22 years and is recently <a target="_blank" href="https://www.ncei.noaa.gov/news/world-magnetic-model-out-cycle-release">moving at a faster rate toward Russia</a>.
@@ -207,7 +213,7 @@ Glasses are one of the essentials. So I keep an extra set in the suitcase.
 
 <a name="Electrical"></a>
 
-## Electrical 
+## Electrical Electronics 
 
 [_] A <strong>electrical cord with 3-prong plugs</strong> enables me to keep all my stuff charged, especially in airports. $9 from Walmart. 
 
@@ -366,15 +372,41 @@ I keep a small bag in my backpack for essential toiletries:
 [_] Travel-sized Febreze To Go.
 
 
+## Just in case
+
+[_] A <strong>mylar reflective blanket</strong>. It's less than an ounce.
+   <a target="_blank" href="https://www.amazon.com/Mylar-Mens-Emergency-Thermal-Blankets/dp/B007IYIYFE/ref=wilsonslifenotes?ie=UTF8&qid=1477256492&sr=8-1&keywords=space+blanket">
+   $6.20 for 10</a>
+
+   I was glad I had one to put on top of someone who had fallen, passed out on the sidewalk.
+   That may keep someone from going into shock.
+
+[_] Small patch of clear repair <strong>duct tape</strong> to patch fabric tears without looking trashy.
+   <a target="_blank" href="https://www.amazon.com/gp/offer-listing/B00O9JNY9W/ref=wilsonslifenotes?ie=UTF8&mv_size_name=0&qid=1477256614&sr=8-1/"> 
+   $5.80 for 5 yards 1.5 inch wide</a>. I put this in an insulated box because adhesives degrade.
+
+[_] Needle and thread kit.
+
+
 <a name="Suitcase"></a>
 
-## Suitcase
+## In Suitcase
 
 [_] A <strong>2TB USB drive</strong> containing a full backup of your laptop separately from your backpack, such as in your sleeping bag by your feet.
 
 [_] A <strong>backup smartphone</strong> in a water and shock proof container in case the regular one is damaged.
 
-[_] A quart-size bag to hold shirt that has been ironed.
+[_] <a target="_blank" href="https://www.amazon.com/Cocoon-TravelSheet-Natural-86-Inch-35-Inch/dp/B001DX9YTQ/ref=wilsonslifenotes">
+   $50 Cocoon Silk TravelSheet</a> 
+   (Sleep Sack) keeps your skin away from quesionable sheets
+   with a nice-feeling one. Lightweight and compresses to a small size.
+   (Yeah, I'm spoiled)
+
+[_] A quart-size bag that form a bubble around shirts and suit coat to keep them from being wrinkled.
+
+[_] <strong>UV flashlight</strong> to reveal proteins if sheets are not fresh (free of bed bugs, etc.). I've found issues even in five-star hotels.
+
+
 
 ### Suitcase toiletries bag
 
@@ -434,7 +466,19 @@ PROTIP: An extra pair of socks and underwear makes for great padding for electro
 
 <a name="InCar"></a>
 
-## In Car glove compartment
+## In the Car 
+
+[_] <strong>shopping list</strong> and menu plan I keep in a Google Sheet app on my smartphone.
+
+[_] <strong>Insulating tote</strong> to take into grocery stores to keep items cold in the cart and on the way home. PROTIP: Trader Joes have such great ones that used ones show up in eBay for more than new prices.
+
+[_] <strong>Totes</strong> containing used plastic produce bags so I don't need to consume new ones.
+
+[_] <strong>Storage jars</strong> so I use less plastic.
+
+### Car glove compartment
+
+[_] <strong>Metal straws</strong> because 
 
 [_] Napkins
 
@@ -443,6 +487,8 @@ PROTIP: An extra pair of socks and underwear makes for great padding for electro
 [_] <strong>Registration</strong> from the state DMV.
 
 [_] <strong>Accident info</strong> card to give to the other driver. This is different than the insurance card, which has your home address. 
+
+[_] A <strong>sachel of coins</strong> and small bills for parking meters and toll booths. This to avoid tempting thives to break your car window.
 
 [_] A pair of waterproof <strong>work gloves</strong>
 
@@ -459,13 +505,15 @@ In case of breakdown in the Winter, in an old (squarish) backpack containing wha
 
 [_] Water in boxes.
 
-[_] <strong>strap-on headlamps</strong> (with extra batteries and red lens filter)
+[_] <strong>Rain suit</strong> (pants, jacket) so you can work outside in the rain - $23 from Walmart
+
+[_] <strong>strap-on headlamp</strong> (with extra batteries and red lens filter)
 for being to use both hands in the dark. Smartphones can be used as a flashlight. But a headlamp flashlight will save your phone's battery during extended use.
 
 [_] <strong>Hand warmer</strong> chem packs for skiers. There is an electrical heater so it doesn't use up oxygen. 
 This is where electric vehicles like a Tesla come in handy.
 
-[_] Winter clothes
+[_] Jumper cables with a capacitor battery
 
 [_] A 3-season sleeping bag and pads 
 
@@ -473,61 +521,21 @@ This is where electric vehicles like a Tesla come in handy.
 
 [_] <strong>Trowel</strong> in case I have to dig in dirt
 
-[_] Extra car battery to use 
-
-[_] Jumper cables with a capacitor battery
-
 [_] Earplugs to reduce noise.
 
 [_] A bottle with a wide opening to pee in, so you don't need to go outside.
 
 [_] <strong>Pepper spray</strong> as a defensive weapon.
 
+[_] Extra car battery (if you have the room)
 
-
-<a name="Shelter"></a>
-
-## Shelter for sleeping
-
-Variations in where to sleep, from the most comfortable to least:
-
-   1. In a building (hotel, AirBnB home, CouchSurfing)
-   2. In a vehicle
-   3. In the wilderness or park
-   4. <a href="#SleepInCity">In the city ("rough sleeping")</a>
-   <br /><br />
-
-Different equiqment is needed for each type of sleeping accomodation.
-
-### In a building
-
-For traveling to hotels, here are a few items:
-
-[_] <strong>UV flashlight</strong> to reveal proteins if sheets are not fresh (free of bed bugs, etc.). I've found issues even in five-star hotels.
-
-[_] A "space" or "survival" mylar reflective blanket in my pack. It's less than an once.
-   <a target="_blank" href="https://www.amazon.com/Mylar-Mens-Emergency-Thermal-Blankets/dp/B007IYIYFE/ref=wilsonslifenotes?ie=UTF8&qid=1477256492&sr=8-1&keywords=space+blanket">
-   $6.20 for 10</a>
-
-   I was glad I had one to put on top of someone who had fallen, passed out on the sidewalk.
-   That may keep someone from going into shock.
-
-[_] Clear repair duct tape to patch fabric tears without looking trashy.
-   <a target="_blank" href="https://www.amazon.com/gp/offer-listing/B00O9JNY9W/ref=wilsonslifenotes?ie=UTF8&mv_size_name=0&qid=1477256614&sr=8-1/"> 
-   $5.80 for 5 yards 1.5 inch wide</a>. I put this in an insulated box because adhesives degrade.
-
-[_] <a target="_blank" href="https://www.amazon.com/Cocoon-TravelSheet-Natural-86-Inch-35-Inch/dp/B001DX9YTQ/ref=wilsonslifenotes?ie=UTF8&qid=1477256236&sr=8-1&keywords=Silk+Sleep+Sacks">
-   $50 Cocoon Silk TravelSheet</a> 
-   Silk Sleep Sack) keeps your skin away from quesionable sheets
-   with a nice-feeling one. Lightweight and compresses to a small size.
-   Yeah, I'm spoiled.
 
 
 <a href="#SleepInCity"></a>
 
-### Rough Sleeping #
+### For Rough Sleeping #
 
-A tent (with stakes) is the item which separates a city pack and wilderness backpacking.
+[_] A tent (with stakes) is the item which separates a city pack and wilderness backpacking.
 
 I think it's wise to be experienced and prepared to sleep in the "cuts" (hideaway spots like bushes and alleys). It's not just in case you're homeless. I've been in a city where I can't find any hotel room available.
 I've slept on a sidewalk in front of a store waiting for it to open so I am among the first to buy a hot item.
@@ -551,6 +559,8 @@ More than a dozen cities from Santa Rosa to Seattle and Austin, Texas, are copyi
 Anyway, dangers from rough sleeping makes it helpful to have a buddy with you. If you're traveling alone, perhaps team up with another homeless person. Better yet, many cities have street counselors.
 
 [_] A chain with lock to tie the backpack like you would a bicycle. They can be heavy, though.
+
+[_] Foldable bicycle.
 
 
 ## Resources #
