@@ -15,16 +15,46 @@ comments: true
 
 {% include _toc.html %}
 
-This is a step-by-step tutorial on how to install and run the Easy Travel sample app within Docker.
+This is a step-by-step tutorial on how to install and run the Easy Travel sample stack of apps from <a target="_blank" href="https://wilsonmar.github.io/dynatrace">Dynatrace</a> so that it can to evaluate its own AppMon and UEM software.
 
 Currently, this article needs an update about Docker and misses key steps and URLs.
 Thank you for your help.
 
 ## TL;DR Summary
 
-EasyTravel is a "realistic heterogeneous" multi-tier 32-bit web application written in Java which by <a target="_blank" href="https://wilsonmar.github.io/dynatrace">Dynatrace</a> to evaluate its AppMon and UEM software.
-
 (By "Easy Travel" what we're referring to here is NOT a real travel site like Expedia.com or http://www.easytravel.co.tz).
+
+EasyTravel consists of both consumer and business portals:
+
+   * Consumer users on the easyTravel web portal to log in, search for journeys to various destinations, select promotional journeys directly that are offered and book a journey using credit card details. 
+
+   * Additionally a Business-to-Business (B2B) web portal for travel agencies to manage the journeys that they offer and review reports about bookings made by consumers.
+
+easyTravel is a multi-tier system implemented in a mix of technologies: .NET, Java, and <a target="_blank" href="https://en.wikipedia.org/wiki/Windows_Assessment_and_Deployment_Kit">Microsoft ADK (Windows Assessment and Deployment Kit)</a>.
+
+<table border="1" cellpadding="4" cellspacing="0"><thead>
+<tr valign="bottom"><th>#</th><th>Application</th><th>Technology</th><th>Memory</th><th>Notes</th></tr>
+</thead><tbody>
+<tr valign="top"><td>1.</td><td><a href="#Launcher">Launcher</a> (includes Java DB)</td><td>Java/SWT</td><td align="right"> 225 MB</td><td>(SWT pronounced "Swift")</td></tr>
+<tr valign="top"><td>2.</td><td>Customer Frontend</td><td> Java/Tomcat</td><td align="right"> &lt;190 MB</td><td>-</td></tr>
+<tr valign="top"><td>3.</td><td>Business Backend</td><td> Java/Tomcat</td><td align="right"> &lt;190 MB</td><td>-</td></tr>
+<tr valign="top"><td>4.</td><td>Credit Card Authorization</td><td> C++/ADK</td><td align="right"> &lt;1 MB<td>-</td></td></tr>
+<tr valign="top"><td>5.</td><td>Payment Backend</td><td> .NET/MVC</td><td align="right"> 65 MB</td><td>-</td></tr>
+<tr valign="top"><td>6.</td><td>B2B Frontend</td><td> .NET/MVC</td><td align="right"> 65 MB</td><td>-</td></tr>
+<tr valign="top"><td colspan="3"><strong>Overall</strong></td><td align="right"> <strong>&lt;800 MB</strong><td>-</td></td></tr>
+</tbody></table>
+
+What is special about the system is it is designed to exhibit different problem patterns based on specifications in an XML file referenced by programs.
+
+<a name="Launcher"></a>
+The Launcher starts programs in the various tiers and enables switching among demo scenarios. By default the easyTravel Launcher offers four scenario groups:
+
+   1. UEM
+   2. Production
+   3. Test Center
+   4. Development Team
+
+<hr />
 
 1. In an internet browser, get to the EasyTravel download website:
 
@@ -32,16 +62,30 @@ EasyTravel is a "realistic heterogeneous" multi-tier 32-bit web application writ
    http://bit.ly/dteasytravel</a>
    (https://community.dynatrace.com/community/display/DL/Demo+Applications+-+easyTravel)
 
-
-   YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=ps9Y14KlPyU">
-   Evaluate Dynatrace with easyTravel</a> demo app
-   published on May 14, 2015. In 1 hour it takes a whirlwind tour, half based on random questions,
+1. View YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=ps9Y14KlPyU">Evaluate Dynatrace with easyTravel</a> demo app
+   from May 14, 2015. In 1 hour Andreas Grabner (<a target="_blank" href="https://twitter.com/grabnerandi">@grabnerandi</a>) takes a whirlwind tour, half based on random questions,
    which can be confusing to newbies.
+   Contents of the video have been incorporated in the steps below.
 
+   CAUTION: Versions of EasyTravel have been tested with specific versions of Dynatrace AppMon and Dynatrace.
 
-   ### The following needs update/sequencing:
+1. Identify the latest version of Dynatrace (6.5 as of this writing March 2017).
 
-0. Identify the latest version of Dynatrace (6.5 as of this writing March 2017).
+   PROTIP: The example
+
+1. Download the assets:
+
+   * JMeter script in zip file `JMeter PERFORM 2015 Samples.zip` from https://community.dynatrace.com/community/download/attachments/243434413/JMeter%20PERFORM%202015%20Samples.zip?version=1&modificationDate=1495536503227&api=v2
+   
+   * easyTravel Database.dashboard.xml from https://community.dynatrace.com/community/download/attachments/243434413/easyTravel%20Database.dashboard.xml?version=1&modificationDate=1495536502740&api=v2
+
+   * easyTravel.profile.xml from https://community.dynatrace.com/community/download/attachments/243434413/easyTravel.profile.xml?version=1&modificationDate=1495536502790&api=v2
+
+   * dynatrace-easytravel-src.zip from http://dexya6d9gs5s.cloudfront.net/latest/dynatrace-easytravel-src.zip
+
+   * dynatrace-easytravel-linux-x86_64.jar from http://dexya6d9gs5s.cloudfront.net/latest/dynatrace-easytravel-linux-x86_64.jar
+
+   * dynatrace-easytravel-windows-x86_64-latest.msi from http://dexya6d9gs5s.cloudfront.net/latest/dynatrace-easytravel-windows-x86_64-latest.msi
 
 0. If you're on a Mac, install Ubuntu within VMWare Fusion.
 

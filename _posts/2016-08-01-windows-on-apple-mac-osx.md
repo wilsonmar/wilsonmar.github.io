@@ -1118,7 +1118,8 @@ provides only a limited palette of 48 colors to choose from.
 
 ## Windows Edge Browser
 
-Here's a way to get a bit of Windows on your Mac. The Edge browser.
+Here's a way to get a bit of Microsoft on your Mac - the Edge browser,
+now built on Google Chrome.
 
 1. <a target="_blank" href="https://www.microsoftedgeinsider.com/en-us/download?platform=macos">Download Beta, Dev, and Canary Channel Insider builds of the Microsoft Edge for your Mac from Microsof'ts Insider website at https://www.microsoftedgeinsider.com/en-us/download?platform=macos</a>
 
@@ -1133,7 +1134,7 @@ Here's a way to get a bit of Windows on your Mac. The Edge browser.
 8. Look for the program in /Applications as "Microsoft Edge Canary.app".
 9. Drag the app's icon to your Dock bar for easy access.
 10. See https://www.microsoftedgeinsider.com/en-us/welcome?channel=canary&version=76.0.176.0
-11. On Twitter, follow <a target="_blank" href="https://twitter.com/msedgedev">@msedgedev</a>
+11. On Twitter, follow <a target="_blank" href="https://twitter.com/msedgedev">@msedgedev</a> and <a target="_blank" href="https://twitter.com/MicrosoftEdge">@MicrosoftEdge</a> for videos that says Edge can recognize handwriting from a stylus. Save to Microsoft's OneNote.
 
 ## References
 

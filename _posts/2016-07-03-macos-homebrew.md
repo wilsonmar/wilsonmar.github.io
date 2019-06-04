@@ -34,21 +34,18 @@ their dependencies, such as where to find tar.gzip files for download.
 Brew installs packages in its own Cellar directory (folder)
 and adds symlinks to the /usr/local folder.
 
-
-## About Homebrew #
-
 Homebrew is the newest and most popular package utility on OSX.
-
-Alternatives to Homebrew:
-
-   * https://www.macports.org/ 
-
-   <pre>sudo port install tree</pre>
-
-   * http://www.finkproject.org/
 
 Homebrew's web page is at <a target="_blank" href="http://brew.sh/">
 http://brew.sh</a>
+
+## Alternatives to Homebrew
+
+   * <a target="_blank" href="https://www.macports.org/">https://www.macports.org</a>
+
+   <pre>sudo port install tree</pre>
+
+   * <a target="_blank" href="http://www.finkproject.org/">http://www.finkproject.org</a>
 
 <hr />
 
@@ -165,7 +162,7 @@ InstalledDir: /Library/Developer/CommandLineTools/usr/bin
 
    The "brew" above is a shell script file.
 
-   PROTIP: The "/usr/local" is the default specified by the  $HOMEBREW_PREFIX enviornment variable.
+   PROTIP: The "/usr/local" is the default specified by the $HOMEBREW_PREFIX enviornment variable.
 
 
 0. Identify where the Homebrew program stores packages:
@@ -189,11 +186,12 @@ InstalledDir: /Library/Developer/CommandLineTools/usr/bin
    brew -v
    </strong></pre>
 
-   The response (at time of writing) indicates Homebrew is not "v1.0" yet:
+   The response (at time of writing):
 
    <pre>
-   Homebrew 0.9.9 (git revision e9cc; last commit 2016-06-12)
-   Homebrew/homebrew-core (git revision 3977; last commit 2016-06-12)
+Homebrew 2.1.4
+Homebrew/homebrew-core (git revision 07aa4; last commit 2019-06-04)
+Homebrew/homebrew-cask (git revision 1a93c; last commit 2019-06-04)
    </pre>
 
    NOTE: Homebrew is open-sourced at<br />
@@ -216,7 +214,20 @@ InstalledDir: /Library/Developer/CommandLineTools/usr/bin
 
 ## Formulas #
 
-   ### Search for a formula to install #
+### Popular formulas
+
+wget
+
+iterm2
+
+htop
+
+geoip
+
+nmap
+
+
+### Search for a formula to install #
 
 0. Use an internet browser (such as Google Chrome)
    to view formula defined in
@@ -481,10 +492,6 @@ InstalledDir: /Library/Developer/CommandLineTools/usr/bin
    Type :q to quit out.  
 
 
-
-
-
-
 ## Upgrade brew formulas #
 
 0. List brew packages that are obsolete:
@@ -517,7 +524,9 @@ InstalledDir: /Library/Developer/CommandLineTools/usr/bin
    brew cleanup -n
    </strong></tt>
 
-   No response if there is nothing to clearn.
+   No response if there is nothing to clean. Otherwise, example:
+
+   <pre>Warning: Skipping awscli: most recent version 1.16.170 not installed</pre>
 
 0. To really remove all files no longer needed:
 
@@ -532,6 +541,36 @@ InstalledDir: /Library/Developer/CommandLineTools/usr/bin
    ==> This operation has freed approximately 36.6M of disk space.
    </pre>
 
+
+<a name="Remove"></a>
+
+## Remove/Uninstalll #
+
+PROTIP: Before deleting, identify its <strong>dependencies</strong>. For example:
+
+<pre>brew deps python3</strong>
+
+would yield:
+
+   <pre>
+gdbm
+openssl
+readline
+sqlite
+xz
+   </pre>
+
+Two delete commands does the same:
+
+   <pre>brew uninstall package</pre>
+
+   <pre>brew remove package</pre>
+
+Additional flags:
+
+   `–force` or `-f` forcibly removes all versions of that package.
+
+   `–ignore-dependencies` ignore dependencies for the formula when uninstalling the designated package, which may cause other brews to no longer work correctly.
 
 
 <a name="Tap"></a>
@@ -723,6 +762,13 @@ end{% endhighlight %}
    </strong></pre>
 
 
+## GUI for Homebrew packages
+
+<a target="_blank" href="https://www.cakebrew.com/">https://www.cakebrew.com/</a> is a GUI to help manage Homebrew packages:
+
+   <pre><strong>brew cask install cakebrew</strong></pre>
+
+
 ## Analytics off
 
 Homebrew now defaults to retrieving behavioral analytics tracking. Although anonymized, you may not want to participate in that. To disable the extra network traffic:
@@ -751,7 +797,7 @@ Within Fink’s directory, a FHS-like layout (/sw/bin, /sw/include, /sw/lib, etc
    <tt><strong>
    man brew
    </strong></tt>
-   
+
 
 ## Social media #
 

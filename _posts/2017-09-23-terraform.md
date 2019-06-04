@@ -883,6 +883,8 @@ resource "aws_instance" "web" {
    See <a target="_blank" href="http://www.antonbabenko.com/2016/09/21/how-i-structure-terraform-configurations.html">
    http://www.antonbabenko.com/2016/09/21/how-i-structure-terraform-configurations.html</a>
 
+   Another example is from the <a target="_blank" href="https://github.com/linuxacademy/terransible/blob/master/lab_scripts/main.tf">Terransible lab</a> and <a target="_blank" href="https://github.com/linuxacademy/terransible/blob/master/course_scripts/main.tf">course</a>
+
 
    <a name="Providers"></a>
 
