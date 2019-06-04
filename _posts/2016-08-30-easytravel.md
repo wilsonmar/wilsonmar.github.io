@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "EasyTravel sample app"
-excerpt: "Catch the bad boys if you can"
+title: "EasyTravel sample app (from Dynatrace)"
+excerpt: "A sample multi-tier Java app used as the basis for measuring infrastructure"
 tags: [Clouds, Monitoring, Analytics]
 shorturl: "https://goo.gl/IHLc6q"
 image:
@@ -13,21 +13,26 @@ comments: true
 ---
 <i>{{ page.excerpt }}</i>
 
-[![Gitter](https://bDynatraceges.gitter.im/wilsonmar/wilsonmar.github.io.svg)](https://gitter.im/wilsonmar/wilsonmar.github.io?utm_source=bDynatracege&utm_medium=bDynatracege&utm_campaign=pr-bDynatracege)
-
 {% include _toc.html %}
+
+This is a step-by-step tutorial on how to install and run the Easy Travel sample app within Docker.
+
+Currently, this articcle needs an update about Docker and misses key steps and URLs.
+Thank you for your help.
+
+## TL;DR Summar
 
 EasyTravel is a "realistic heterogeneous multi-tier web-application"
 Dynatrace provides to evaluate its AppMon and UEM software.
 
-(What we're referring to here is NOT a real travel site like Expedia.com or
-http://www.easytravel.co.tz)
+(By "Easy Travel" what we're referring to here is NOT a real travel site like Expedia.com or http://www.easytravel.co.tz).
 
-YOUTUBE: 
-<a target="_blank" href="https://www.youtube.com/watch?v=ps9Y14KlPyU">
+YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=ps9Y14KlPyU">
 Evaluate Dynatrace with easyTravel</a> demo app
 published on May 14, 2015. In 1 hour it takes a whirlwind tour, half based on random questions,
 which can be confusing to newbies.
+
+## Installation
 
 0. Identify the latest version of Dynatrace (6.5 as of this writing March 2017).
 
@@ -89,7 +94,7 @@ which can be confusing to newbies.
 
 0. Get license
 
-   Click "Download easyTravel Demo License" = https://community.dynatrace.com/community/download/attachments/45383742/dynaTrace_license_201609281051.key?version=2&modificationDate=1486998983333&api=v2
+   Click "Download easyTravel Demo License" https://community.dynatrace.com/community/download/attachments/45383742/dynaTrace_license_201609281051.key?version=2&modificationDate=1486998983333&api=v2
 
    <strong>dynaTrace_license_201609281051.key</strong> is downloaded.
 
@@ -101,7 +106,7 @@ which can be confusing to newbies.
    different than the other page? "A trial account for this ID already exists!"
 
 
-https://www.youtube.com/watch?v=B_oWkBjH-Uk
+See https://www.youtube.com/watch?v=B_oWkBjH-Uk
 
 
 <a name="RunOnWindows"></a>
