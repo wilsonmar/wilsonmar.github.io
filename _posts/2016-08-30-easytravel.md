@@ -17,32 +17,33 @@ comments: true
 
 This is a step-by-step tutorial on how to install and run the Easy Travel sample app within Docker.
 
-Currently, this articcle needs an update about Docker and misses key steps and URLs.
+Currently, this article needs an update about Docker and misses key steps and URLs.
 Thank you for your help.
 
-## TL;DR Summar
+## TL;DR Summary
 
-EasyTravel is a "realistic heterogeneous multi-tier web-application"
-Dynatrace provides to evaluate its AppMon and UEM software.
+EasyTravel is a "realistic heterogeneous" multi-tier 32-bit web application written in Java which by <a target="_blank" href="https://wilsonmar.github.io/dynatrace">Dynatrace</a> to evaluate its AppMon and UEM software.
 
 (By "Easy Travel" what we're referring to here is NOT a real travel site like Expedia.com or http://www.easytravel.co.tz).
 
-YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=ps9Y14KlPyU">
-Evaluate Dynatrace with easyTravel</a> demo app
-published on May 14, 2015. In 1 hour it takes a whirlwind tour, half based on random questions,
-which can be confusing to newbies.
-
-## Installation
-
-0. Identify the latest version of Dynatrace (6.5 as of this writing March 2017).
-
-0. If you're on a Mac, install Ubuntu within VMWare Fusion.
-
-0. In an internet browser, get to the EasyTravel download website:
+1. In an internet browser, get to the EasyTravel download website:
 
    <a target="_blank" href="http://bit.ly/dteasytravel">
    http://bit.ly/dteasytravel</a>
    (https://community.dynatrace.com/community/display/DL/Demo+Applications+-+easyTravel)
+
+
+   YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=ps9Y14KlPyU">
+   Evaluate Dynatrace with easyTravel</a> demo app
+   published on May 14, 2015. In 1 hour it takes a whirlwind tour, half based on random questions,
+   which can be confusing to newbies.
+
+
+   ### The following needs update/sequencing:
+
+0. Identify the latest version of Dynatrace (6.5 as of this writing March 2017).
+
+0. If you're on a Mac, install Ubuntu within VMWare Fusion.
 
 0. Uninstall previous version:
 
