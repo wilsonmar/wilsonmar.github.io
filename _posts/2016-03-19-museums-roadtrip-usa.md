@@ -1726,3 +1726,5 @@ sheetsee.js</a> and
 <a target="_blank" href="https://www.mapbox.com/mapbox.js/api/v2.4.0/">
 Mapbox</a> 
 libraries.
+
+> "I haven't been everywhere, but it's on my list." -- <a target="_blank" href="https://en.wikipedia.org/wiki/Susan_Sontag">Susan Sontag</a>
