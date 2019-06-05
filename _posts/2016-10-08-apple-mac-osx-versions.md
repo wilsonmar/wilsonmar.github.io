@@ -23,15 +23,15 @@ comments: true
 </th><th><a href="/php-on-apple-mac-osx/">PHP</a>
 </th><th><a href="/python-install/">Python</a>
 </th><th><a href="/ruby-on-apple-mac-osx/">Ruby</a>
-</th><th> Introduced
+</th><th> Features introduced
 </th></tr>
 <tr valign="top"><td> 10.15<br />MacOS
 </td><td align="right"> Catalina
-</td><td align="right"> June 2019
+</td><td align="right"> Fall 2019
 </td><td align="right"> ?
 </td><td align="right"> 3 ?
 </td><td align="right"> ?
-</td><td align="left"> Apple TV
+</td><td align="left"> XCode 11 <a target="_blank" href="https://www.apple.com/macos/catalina-preview/">Voice Control, Jira, Apple TV, podcasts, Sidecar iPad with pencil</a>
 </td></tr>
 <tr valign="top"><td> 10.14<br />MacOS
 </td><td align="right"><a target="_blank" href="https://www.apple.com/macos/mojave-preview/">Mojave preview</a>
