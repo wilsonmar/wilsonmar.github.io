@@ -26,8 +26,8 @@ comments: true
 </th><th> Introduced
 </th></tr>
 <tr valign="top"><td> 10.15<br />MacOS
-</td><td align="right">-
-</td><td align="right"> late 2019
+</td><td align="right"> Catalina
+</td><td align="right"> June 2019
 </td><td align="right"> ?
 </td><td align="right"> 3 ?
 </td><td align="right"> ?
@@ -39,7 +39,7 @@ comments: true
 </td><td align="right"> 2.6.0 ?
 </td><td align="right"> 2.7.10 ?
 </td><td align="right"> 2.4.2p198 ?
-</td><td align="left"> Dark Mode, Dynamic Desktop, Group FaceTime, New Mac App Store, News, Stocks, Voice Memos, HomeKit
+</td><td align="left"> Dark Mode, <a target="_blank" href="https://support.apple.com/en-us/HT201361">Shift-Command-5 to capture screen with video</a>, Dynamic Desktop, Group FaceTime, New Mac App Store, News, Stocks, Voice Memos, HomeKit
 </td></tr>
 <tr valign="top"><td> 10.13<br />MacOS
 </td><td align="right"><a target="_blank" href="https://www.apple.com/macos/high-sierra/">High Sierra</a>
