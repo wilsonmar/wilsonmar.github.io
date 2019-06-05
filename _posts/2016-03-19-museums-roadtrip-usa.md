@@ -15,10 +15,7 @@ comments: true
 
 {% include _toc.html %}
 
-This page lists where one can visit, see, and eat at the most important cultural artifacts in America (given unlimited time and money). 
-Maybe enjoy visiting sites even more using AR (Augmented Reality) there.
-
-I hope that someday soon everyone can see treasures from anywhere using VR (Virtual Reality) glasses. 
+This page lists where one can visit, see, and eat at the most important cultural artifacts in America (given unlimited time and money). I created this page as "bucket list" so that even if I can't visit each one and perhaps enjoy using AR (Augmented Reality) on-site, I can still visit their web pages. Someday soon everyone can see treasures from anywhere using VR (Virtual Reality) glasses.
 
 It's a large country, so sites here are listed by each state of the union, along natural geography:
 
@@ -199,7 +196,7 @@ John F. Kennedy Presidential Library and Museum</a>, Columbia Point, Boston</li>
 ### Southern Mass:
 
 <ul>
-<li><a target="_blank" href="http://AttleboroMuseum.org/">Attleboro Museum and Center for the Arts</a></li>
+<li><a target="_blank" href="http://attleboroartsmuseum.org/">Attleboro Museum and Center for the Arts</a></li>
 <li><a target="_blank" href="http://www.newbedfordartmuseum.org/">New Bedford Art Museum</a></li>
 <li><a target="_blank" href="http://www.clarkart.edu/">Sterling and Francine Clark Art Institute</a>, Williamstown</li>
 </ul>
