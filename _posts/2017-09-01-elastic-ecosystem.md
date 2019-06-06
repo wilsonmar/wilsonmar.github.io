@@ -304,6 +304,30 @@ Essentially, Elastic Stack aims to make full-text search easy by hiding the comp
 
  * http://stackoverflow.com/questions/2271600/elasticsearch-sphinx-lucene-solr-xapian-which-fits-for-which-usage/2288211#2288211 is Shay Bannon's answer.
 
+## Video class
+
+Will Button's 
+
+* <a target="_blank" href="https://egghead.io/courses/getting-started-with-algolia-instantsearch-js">video course "Getting Started with Algolia Instant Search</a>
+
+* <a target="_blank" href="https://egghead.io/courses/get-started-with-elasticsearch">video course Getting Started with Elasticsearch</a> from May 3, 2017 references elasticsearch 12.1.3 using code from <a target="_blank" href="https://github.com/rekibnikufesin/elasticsearch-intro/tree/master">this GitHub repo</a>. It makes use of <a target="_blank" href="https://www.kaggle.com/wcukierski/the-simpsons-by-the-data">The Simpsons datast</a> which contains the characters, locations, episode details, and script lines for approximately 600 Simpsons episodes, dating back to 1989.
+
+https://egghead.io/lessons/tools-close-and-open-an-elasticsearch-index
+https://egghead.io/lessons/tools-add-data-to-elasticsearch
+https://egghead.io/lessons/tools-search-for-data-in-elasticsearch-using-the-_search-endpoint
+https://egghead.io/lessons/elasticsearch-get-data-from-elasticsearch-by-id-using-http
+https://egghead.io/lessons/tools-paginate-through-search-results-in-elasticsearch
+https://egghead.io/lessons/tools-update-data-in-elasticsearch
+https://egghead.io/lessons/tools-search-elasticsearch-using-query-parameters
+https://egghead.io/lessons/tools-search-for-data-in-elasticsearch-using-querydsl-language
+https://egghead.io/lessons/tools-create-an-alias-for-an-elasticsearch-index
+https://egghead.io/lessons/tools-create-an-index-using-the-elasticsearch-api
+https://egghead.io/lessons/tools-delete-an-index-using-the-elasticsearch-api
+https://egghead.io/lessons/tools-monitor-elasticsearch-cluster-health-and-status-with-the-_cat-api
+https://egghead.io/lessons/tools-bulk-import-data-into-elasticsearch
+https://egghead.io/lessons/tools-understand-the-role-of-jvm-heap-in-elasticsearch-performance
+https://egghead.io/lessons/tools-reindex-data-from-an-existing-elasticsearch-index
+https://egghead.io/lessons/tools-reindex-data-from-an-existing-elasticsearch-index
 
 
 
