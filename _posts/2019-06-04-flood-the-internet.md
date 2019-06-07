@@ -21,7 +21,8 @@ https://www.independent.co.uk/environment/sea-levels-rise-internet-cables-climat
 flood-car
 -->
 
-[diagram]
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/59126381-2f7b1680-8922-11e9-9ebb-279e8cca72b8.jpg"><img alt="2019-06-04-flood-the-internet-v04-1065x545-51451.jpg" src="https://user-images.githubusercontent.com/300046/59126381-2f7b1680-8922-11e9-9ebb-279e8cca72b8.jpg"></a>
+
 
 Many are familiar with website <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a> which presents challenges to those learning manual actions to build test automation scripts for Selenium, as taught by websites <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com/">SeleniumGuidebook.com</a>.
 
