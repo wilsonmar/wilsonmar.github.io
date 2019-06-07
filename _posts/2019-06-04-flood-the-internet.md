@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Flood the-internet (measure JavaScript performance using Flood.io Element scripts)"
-excerpt: "after standing up the website challenging functional test automation Selenium to run in Docker containers within AWS cloud, measured by NewRelic"
+title: "Measure Dave Hoeffner's the-internet JavaScript performance impact"
+excerpt: "using pFlood.io Element scripts after standing up the website challenging functional test automation Selenium to run in Docker containers within AWS cloud, measured by NewRelic"
 tags: [flood, perftest, selenium, testing]
 file: flood-element-the-internet-docker-aws-newrelic.md
 image:
@@ -21,22 +21,21 @@ https://www.independent.co.uk/environment/sea-levels-rise-internet-cables-climat
 flood-car
 -->
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/59126381-2f7b1680-8922-11e9-9ebb-279e8cca72b8.jpg"><img alt="2019-06-04-flood-the-internet-v04-1065x545-51451.jpg" width="1065" src="https://user-images.githubusercontent.com/300046/59126381-2f7b1680-8922-11e9-9ebb-279e8cca72b8.jpg"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/59133539-9d7d0900-8935-11e9-9608-13d764b82a26.jpg"><img alt="v05-805x426-36896.jpg" width="805" src="https://user-images.githubusercontent.com/300046/59133539-9d7d0900-8935-11e9-9608-13d764b82a26.jpg"></a>
 
 Below is the narration (transcript) of the video:
 
 Many are familiar with website <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a> which presents challenges to those learning manual actions to build test automation scripts for Selenium, as taught by websites <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a> course offering site.
 
- We are concerned about <strong>performance</strong> with one of the <a href="#Controls">controls</a> in the webapp.
+We are concerned about <strong>performance</strong> with one of the <a href="#Controls">controls</a> in the webapp. But we don't want to disturb Dave's site for everyone else. 
 
-But we don't want to disturb Dave's site for everyone else. 
-So in this article we how how you can recreate the <strong>app in a Docker container</strong> running within the <strong>AWS cloud</strong>.
-You'll first need to get an AWS account and password for API access.
+So we emulate many clients performing <a href="#ManualActions">manual actions</a> at the same time on the <strong>app in a Docker container</strong> running within the <strong>AWS cloud</strong>.
 
-Because we are analysing the performance of JavaScript in the client app, we 
-want to use <strong>Flood Element Typescript code</strong> which emulate <a href="#ManualActions">manual actions</a> instead of using line protocols like JMeter does. The scripts run on the <a target="_blank" href="https://www.flood.io/">flood.io</a> service in the cloud. So we need to first obtain a <strong>license token</strong>.
+In this article we show how we automate getting <strong>credentials</strong> for a AWS account with a role with applicable permissions for a <strong>build script</strong> to take <strong>Dave's Docker image</strong> within Docker Hub and create the app.
 
-To create a app process to test against, we have a <strong>pull script</strong> that makes use of <strong>Dave's Docker image</strong> within Docker Hub. 
+We can then analyze the performance of JavaScript in the client app, we 
+want to use <strong>Flood Element Typescript code</strong> 
+The scripts run on the <a target="_blank" href="https://www.flood.io/">flood.io</a> service in the cloud. So we need to first obtain a <strong>license token</strong>.
 
 We would like a <strong>metrics</strong> dashboard to show exactly what happens, over time, when we run those Element scripts on various size machines. We get answers to questions such as:
 
@@ -54,10 +53,11 @@ But we don't have Dave's <strgon>original create script</strong> to modify, so w
 
 We have shared all our scripts in <strong>GitHub</strong> so you can quickly and easily repeat what we're showing here.
 
-Also, Flood Element scripts in the GitHub repository provides a reference for those moving from Selenium.
+Also, Flood Element scripts in the GitHub repository provides a reference for those moving from Selenium, to demonstrate that Element scripts can handle all the challenges presented by JavaSript.
 
 Recap: 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/59126381-2f7b1680-8922-11e9-9ebb-279e8cca72b8.jpg"><img alt="2019-06-04-flood-the-internet-v04-1065x545-51451.jpg" src="https://user-images.githubusercontent.com/300046/59126381-2f7b1680-8922-11e9-9ebb-279e8cca72b8.jpg"></a>
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/59133539-9d7d0900-8935-11e9-9608-13d764b82a26.jpg"><img alt="v05-805x426-36896.jpg" width="805" src="https://user-images.githubusercontent.com/300046/59133539-9d7d0900-8935-11e9-9608-13d764b82a26.jpg"></a>
 
 <a name="ManualActions"></a>
 
