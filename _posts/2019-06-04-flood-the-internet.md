@@ -21,12 +21,13 @@ https://www.independent.co.uk/environment/sea-levels-rise-internet-cables-climat
 flood-car
 -->
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/59126381-2f7b1680-8922-11e9-9ebb-279e8cca72b8.jpg"><img alt="2019-06-04-flood-the-internet-v04-1065x545-51451.jpg" src="https://user-images.githubusercontent.com/300046/59126381-2f7b1680-8922-11e9-9ebb-279e8cca72b8.jpg"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/59126381-2f7b1680-8922-11e9-9ebb-279e8cca72b8.jpg"><img alt="2019-06-04-flood-the-internet-v04-1065x545-51451.jpg" width="1065" src="https://user-images.githubusercontent.com/300046/59126381-2f7b1680-8922-11e9-9ebb-279e8cca72b8.jpg"></a>
 
+Below is the narration (transcript) of the video:
 
-Many are familiar with website <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a> which presents challenges to those learning manual actions to build test automation scripts for Selenium, as taught by websites <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com/">SeleniumGuidebook.com</a>.
+Many are familiar with website <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a> which presents challenges to those learning manual actions to build test automation scripts for Selenium, as taught by websites <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a> course offering site.
 
- We are concerned about <strong>performance</strong> with one of the controls in the app.
+ We are concerned about <strong>performance</strong> with one of the <a href="#Controls">controls</a> in the webapp.
 
 But we don't want to disturb Dave's site for everyone else. 
 So in this article we how how you can recreate the <strong>app in a Docker container</strong> running within the <strong>AWS cloud</strong>.
@@ -37,15 +38,15 @@ want to use <strong>Flood Element Typescript code</strong> which emulate <a href
 
 To create a app process to test against, we have a <strong>pull script</strong> that makes use of <strong>Dave's Docker image</strong> within Docker Hub. 
 
-Now can create a <strong>metrics</strong> dashboard to show exactly what happens, over time, when we run those Element scripts on various size machines. We get answers to questions such as:
+We would like a <strong>metrics</strong> dashboard to show exactly what happens, over time, when we run those Element scripts on various size machines. We get answers to questions such as:
 
    * What is the impact on the cloud bill coding the UI that cool new way? 
    * What is the capacity of a free instance type?
    <br /><br />
 
-The dashboard is powered by a <strong>monitoring process</strong> created using a <strong>Docker image from New Relic</strong>. This is because New Relic enables custom external metrics and more precise granular capture times. 
+The dashboard is created by an <strong>instrumentation script</strong> that installed a <strong>monitoring process</strong> created based on a <strong>Docker image from New Relic</strong>. We are using New Relic because New Relic enables custom external metrics and more precise granular capture times. 
 
-From the vendor website we get a <strong>license token</strong> that we put in our <strong>instrumentation script</strong> that installs a <strong>agent</strong> that sends <strong>events</strong> to be analyzed and visualized.
+From the vendor website we get a <strong>license token</strong> that we put in our that installs a <strong>agent</strong> that sends <strong>events</strong> to be analyzed and visualized.
 
 In order to simplify the pull script, we prefer to have an <strong>instrumented Docker image</strong> that has the agent already installed.
 
@@ -55,6 +56,8 @@ We have shared all our scripts in <strong>GitHub</strong> so you can quickly and
 
 Also, Flood Element scripts in the GitHub repository provides a reference for those moving from Selenium.
 
+Recap: 
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/59126381-2f7b1680-8922-11e9-9ebb-279e8cca72b8.jpg"><img alt="2019-06-04-flood-the-internet-v04-1065x545-51451.jpg" src="https://user-images.githubusercontent.com/300046/59126381-2f7b1680-8922-11e9-9ebb-279e8cca72b8.jpg"></a>
 
 <a name="ManualActions"></a>
 
@@ -80,6 +83,9 @@ Step Five: The Page Object Model</a>
 
 6. <a target="_blank" href="http://www.tjmaher.com/2015/07/the-internet-writing-automated-test.html">
 Step Six: Writing the Automated Test</a>
+
+
+<a name="Controls"></a>
 
 ## Challenges on the-internet
 
