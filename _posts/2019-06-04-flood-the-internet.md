@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Measure Dave Hoeffner's the-internet JavaScript performance impact"
-excerpt: "using pFlood.io Element scripts after standing up the website challenging functional test automation Selenium to run in Docker containers within AWS cloud, measured by NewRelic"
+title: "Measure JavaScript performance impact of Dave Hoeffner's the-internet"
+excerpt: "using Flood.io Element scripts after standing up the website challenging functional test automation Selenium to run in Docker containers within AWS cloud, measured by NewRelic"
 tags: [flood, perftest, selenium, testing]
 file: flood-element-the-internet-docker-aws-newrelic.md
 image:
@@ -16,18 +16,13 @@ comments: true
 
 {% include _toc.html %}
 
-<!--
-https://www.independent.co.uk/environment/sea-levels-rise-internet-cables-climate-change-underground-new-york-miami-a8449716.html
-flood-car
--->
-
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/59133539-9d7d0900-8935-11e9-9608-13d764b82a26.jpg"><img alt="v05-805x426-36896.jpg" width="805" src="https://user-images.githubusercontent.com/300046/59133539-9d7d0900-8935-11e9-9608-13d764b82a26.jpg"></a>
 
-Below is the narration (transcript) of the video:
+Below is the narration (transcript) of the video that focus on understanding of how components are related to each other:
 
 Many are familiar with website <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a> which presents challenges to those learning manual actions to build test automation scripts for Selenium, as taught by websites <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a> course offering site.
 
-We are concerned about <strong>performance</strong> with one of the <a href="#Controls">controls</a> in the webapp. But we don't want to disturb Dave's site for everyone else. 
+We are concerned about <strong>performance</strong> with one of the <a href="#Controls">43 controls</a> presented in the webapp. But we don't want to disturb Dave's site for everyone else. 
 
 So we emulate many clients performing <a href="#ManualActions">manual actions</a> at the same time on the <strong>app in a Docker container</strong> running within the <strong>AWS cloud</strong>.
 
@@ -35,15 +30,15 @@ In this article we show how we automate getting <strong>credentials</strong> for
 
 We can then analyze the performance of JavaScript in the client app, we 
 want to use <strong>Flood Element Typescript code</strong> 
-The scripts run on the <a target="_blank" href="https://www.flood.io/">flood.io</a> service in the cloud. So we need to first obtain a <strong>license token</strong>.
+The scripts run on the <a target="_blank" href="https://www.flood.io/">flood.io</a> service, which runs many instances of browsers in the cloud. So we need to first obtain a <strong>license token</strong>.
 
 We would like a <strong>metrics</strong> dashboard to show exactly what happens, over time, when we run those Element scripts on various size machines. We get answers to questions such as:
 
-   * What is the impact on the cloud bill coding the UI that cool new way? 
-   * What is the capacity of a free instance type?
+   * What is the impact on the cloud bill (costs) of that cool UI code? 
+   * What is the capacity of a chosen instance type (such as the free tier t2.micro)?
    <br /><br />
 
-The dashboard is created by an <strong>instrumentation script</strong> that installed a <strong>monitoring process</strong> created based on a <strong>Docker image from New Relic</strong>. We are using New Relic because New Relic enables custom external metrics and more precise granular capture times. 
+The dashboard is created by an <strong>instrumentation script</strong> that installs a <strong>monitoring process</strong> created based on a <strong>Docker image from New Relic</strong>. We are using New Relic because New Relic enables custom external metrics and more precise granular capture times. 
 
 From the vendor website we get a <strong>license token</strong> that we put in our that installs a <strong>agent</strong> that sends <strong>events</strong> to be analyzed and visualized.
 
@@ -132,3 +127,314 @@ Step Six: Writing the Automated Test</a>
 1. Status Codes
 1. Typos
 1. WYSIWYG Editor
+
+## Steps
+
+Below are the manual and automated steps, with as little hassle as possible.
+
+Two EC2 instances are instatiated using Docker:
+
+   1. A "the-internet" app under test (written in Ruby), with a monitoring agent;
+   2. Monitoring and visualization app server containing NewRelic 
+   <br /><br />
+Additionally, cloud web service flood.io is invoked.
+
+??? Terraform and Ansible / Python
+
+### Scripts from GitHub
+
+These steps are done manually on your local machine.
+
+1. Create or navigate to a project folder for this effort.
+1. Clone automation scripts from https://github.com/flood/master/README.md
+
+   * <a href="#NewRelicAgentInstall">NewRelicAgentInstall</a>
+   * <a href="#FloodScriptUpdate">Flood Script Update</a>
+
+
+<hr />
+
+   ### Setup AWS
+
+   Based on https://wilsonmar.github.io/aws-onboarding
+
+   On an internet browser such as Google Chrome, Apple Safari, or Microsoft Edge:
+
+1. Buy a Visa gift (debit) card for like $25.
+1. Open AWS master account with email.
+1. In IAM, lock down master account.
+1. In IAM, create service account. 
+1. Define service account with permissions.
+1. Store key pair (credentials) for service account locally.
+1. Select your AWS region.
+
+   ### Script A : Instantiate AWS Docker in EC2 build script
+
+1. Get to AWS EC2.
+1. Choose and AMI - Ubuntu 16.04 LTS
+1. Select EC2 instance type (t2.micro Free Tier eligible can handle up to 50 users), or "m5axlarge".
+1. [10:23] Define Security Group add "All TCP Traffic".
+1. Assign Key Pair name ___ 
+1. [2:29] Download Key Pair
+1. Save to file ???
+1. [2:37] Launch Instance
+1. PROTIP: Name instance "the-internet-app" so that files referring to this name (such as newrelicc-infra.yml) don't have to be changed.
+
+   ### Terminal - AWS Key Pair
+
+1. In Terminal store .pem file downloadd
+1. SSH into instance.
+
+   Inside "the-internet" terminal:
+
+1. [4:08] Install prerequisites for Docker for "the-internet" app:
+
+   <pre>
+sudo apt update
+
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+
+sudo apt update
+
+apt-cache policy docker-ce
+
+sudo apt install docker-ce
+
+sudo systemctl status docker
+
+# verify 
+sudo docker  --version
+
+sudo docker pull gprestes/the-internet
+
+sudo docker run -d -p 7080:5000 gprestes/the-internet
+
+# TODO: Identify the Docker ID to a variable:
+ps -fed | grep docker
+   </pre>   
+
+1. [12:04] On a browser, verify external access to "the-internet" app using the external IP address from AWS, such as:
+
+   http://52.91.73.157:7080/
+
+
+   <a name="NewRelicAgentInstall"></a>
+
+   ### Setup "NewRelic" in a EC2 Ubuntu containing Docker 
+
+   In a browser:
+
+1. Login to AWS using your service account.
+1. Get to AWS EC2.
+1. Choose and AMI - Ubuntu 16.04 LTS
+1. Select EC2 instance type (t2.micro Free Tier eligible can handle up to 50 users), or "m5axlarge".
+1. [10:23] Define Security Group add "All TCP Traffic".
+1. Assign Key Pair name ___ 
+1. [2:29] Download Key Pair
+1. Save to file ??? [15:07] ssh -i "ubuntu.pem" ubuntu@ec2-18-208-170-2.compute-1.amazonaws.com
+1. [2:37] Launch Instance
+1. Name instance "NewRelic" 
+
+   ### Save NewRelic License Key 
+
+   Based on <a target="_blank" href="https://www.ctl.io/developers/blog/post/tutorial-protecting-sensitive-info-docker">*</a>
+
+1. [8:13] On the NewRelic web page Account Settings, highlight and save the License Key text
+   
+1. Open file `./secrets.env`
+
+   NOTE: The secrets.env file is referenced in the `docker-compose.yml` file cloned from GitHub.
+
+   <pre>
+docker-compose build
+docker-compose up
+   </pre>
+
+1. [15:29] Update `newrelicc-infra.yml` with license_key value.
+
+   ### Install NewRelic instrumentation agent newrelic-infra
+
+1. [8:13] Switch back to the terminal
+1. TODO: Script to do this:
+
+   <pre>
+   # TODO: Replace with reference to secrets.env by docker-compose
+   echo "license_key: a46bf7d3b4043cdfffcab3aaef677d29cc60d6be" | sudo tee -a /etc/newrelic-infra.yml
+curl https://download.newrelic.com/infrastructure_agent/gpg/newrelic-infra.gpg | sudo apt-key add -
+
+cat /etc/lsb-release 
+# [13:33] Based on NewRelic web page  
+   # https://docs.newrelic.com/docs/infrastructure/new-relic-infrastructure/installation/
+printf "deb [arch=amd64] https://download.newrelic.com/infrastructure_agent/linux/apt bionic main" \
+   | sudo tee -a /etc/apt/sources.list.d/newrelic-infra.list
+sudo apt-get update
+sudo apt-get install newrelic-infra -y
+# Verify: more /etc/newrelic-infra.yml
+&nbsp;
+# TODO: automate this:
+vi  /etc/newrelic-infra.yml
+sudo vi /etc/newrelic-infra.yml
+&nbsp;
+# TODO: Identify the Docker ID to a variable: 
+$DOCKER_ID=$(sudo docker ps)
+   # (value such as ba965ff40ef7)
+sudo docker exec -i -t "$DOCKER_ID" /bin/bash
+&nbsp;
+# TODO: From inside NewRelic process:
+sudo docker cp ba965ff40ef7:/app/server.rb .
+
+# [19:31] Reboot:
+sudo systemctl restart newrelic-infra
+   </pre>
+
+1. [19:57] Verify that NewRelic recognizes events from "the-internet-app" (subsituting the account number), such as:
+
+   https://infrastructure.newrelic.com/accounts/2256749/hosts
+
+
+   ### Install NewRelic agent in running "the-internet-app"
+
+1. [20:38] Get inside Docker container:
+
+   <pre>
+# TODO: Identify the Docker ID to a variable: 
+$DOCKER_ID=$(sudo docker ps)
+   # (value such as ba965ff40ef7)
+sudo docker exec -i -t "$DOCKER_ID" /bin/bash
+   </pre>
+
+   Based on https://docs.newrelic.com/docs/agents/ruby-agent/installation/install-new-relic-ruby-agent
+
+1. [23:17] Add `gem 'newrelic_rpm'` in Gemfile.
+
+   <pre>
+   # TODO: From inside NewRelic process (example root@ba965ff40ef7):
+   sudo docker cp "$DOCKER_ID:/app/server.rb" .
+   sudo docker cp server.rb "$DOCKER_ID:/app/"
+   # Backup existing
+   cp Gemfile Gemfile.backup
+   # TODO: Automate 
+   ??? gem 'newrelic_rpm
+   # For the server.rb which is larger it’s not possible to echo and cat the file,
+   # so I copied it locally and edit it to include the require 'newrelic_rpm'
+   sudo docker cp ba965ff40ef7:/app/server.rb .
+   # And copy it back to the container:
+   sudo docker cp server.rb ba965ff40ef7:/app/
+   </pre>
+
+1. Verify 
+   
+   ### Script B : Add in server.rb and create new Docker image
+
+   This is so the Docker image can be used for scaling.
+
+   <pre>
+   sudo docker run -d -p 7080:5000 ruby-bundle-update
+   &nbsp;
+   # TODO: Identify the Docker ID to a variable: 
+   $DOCKER_ID=$(sudo docker ps)
+   # (value such as 363ddc8f7439)
+   sudo docker exec -i -t "$DOCKER_ID" /bin/bash
+   # Save updated files:
+   sudo docker cp server.rb "$DOCKER_ID:/app/"
+   sudo docker cp Gemfile "$DOCKER_ID:/app/"
+   # Get inside:
+   sudo docker exec -i -t  "$DOCKER_ID" /bin/bash
+   sudo docker ps
+   sudo docker commit "$DOCKER_ID" ruby-bundle-update
+   sudo docker stop "$DOCKER_ID"
+   &nbsp;
+   sudo docker ps
+   sudo docker run -d -p 7080:5000 ruby-bundle-update
+   sudo docker ps
+   &nbsp;
+   # TODO: copy file newrelic.yml from external
+   touch 1
+   vi q
+   vi 1
+   mv 1 newrelic.yml
+   vi newrelic.yml 
+   ls -lart  # to verify manually
+   &nbsp;
+   # TODO: Identify the Docker ID to a variable: 
+   $DOCKER_ID=$(sudo docker ps)
+   # (value such as 178e6dc45ab7)
+   &nbsp;
+   sudo docker cp newrelic.yml "$DOCKER_ID:/app/"
+   sudo docker commit "$DOCKER_ID" final-version
+   sudo docker stop "$DOCKER_ID"
+   # Verify:
+   sudo docker images
+   # Restart:
+   sudo docker run -d -p 7080:5000 final-version
+   &nbsp;
+   sudo docker ps
+   history > /tmp/history.file
+   </pre>
+
+
+   <a name="FloodScriptUpdate"></a>
+
+   ### Update Element .ts script for flood.io
+
+1. Update the IP address in the script (several locations):
+
+   <pre>await browser.visit('http://18.208.170.2:7080/')</pre>
+
+   ### Create the-internet Docker image
+
+   ### Instrument script for NewRelic 
+
+1. Get license from newrelic.com
+1. Insert license into script
+
+NOTE: https://github.com/ThyWoof/geek-movie-shop
+
+   ### Script B : Create Docker image / AMI ?
+
+   ### Script C : Save instrumented Docker image / AMI 
+
+   ### Script D : Run the-internet in AWS Docker process under instrumentation
+
+1. If you don't have a <a target="_blank" href="https://www.flood.io/">flood.io</a> account, get one.
+1. Confirm your account via email.
+1. Log into Flood.io.
+1. Specify script.
+1. Specify run conditions.
+
+1. Validate run pre-conditions.
+1. Initiate run.
+1. Stop run.
+1. Collect run results.
+1. Analyze run results / Generate visualizations.
+1. Display summary statistics.
+1. Post-mortum.
+
+<hr />
+
+<a name="install"></a>
+
+## Script A : Install "the-internate" components
+
+———————————————————————————————————————————————————
+gent
+
+
+
+   ### Save to DockerHub
+
+1. Docker save
+
+   ### Flood
+
+1. Create account (manually).
+1. Get license token.
+1. Insert license token in script.
+1. Specify script in GitHub.
+1. Run
+   
+-->
