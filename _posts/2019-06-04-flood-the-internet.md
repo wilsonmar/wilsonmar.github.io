@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Measure performance impact of JavaScript in Dave Hoeffner's the-internet"
-excerpt: "using Flood.io Element script after standing up the website challenging functional test automation Selenium to run in Docker containers within AWS cloud, measured by NewRelic"
+excerpt: "using Flood.io Element script after standing up the website challenging functional test Selenium automation to run in Docker containers within AWS cloud, measured by NewRelic"
 tags: [flood, perftest, selenium, testing]
 file: flood-element-the-internet-docker-aws-newrelic.md
 image:
@@ -16,15 +16,17 @@ comments: true
 
 {% include _toc.html %}
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/59193870-587af180-8b44-11e9-920c-d61ed686e4e1.jpg"><img alt="flood-the-internet-v06-766x408-32238.jpg" width="766" src="https://user-images.githubusercontent.com/300046/59193870-587af180-8b44-11e9-920c-d61ed686e4e1.jpg"></a>
-
 Below is the narration (transcript) of the video that focus on understanding of how components are related to each other:
 
-Many are familiar with website <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a> which presents challenges to those learning manual actions to build test automation scripts for Selenium, as taught by websites <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a> course offering site.
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/59193870-587af180-8b44-11e9-920c-d61ed686e4e1.jpg"><img alt="flood-the-internet-v06-766x408-32238.jpg" width="766" src="https://user-images.githubusercontent.com/300046/59193870-587af180-8b44-11e9-920c-d61ed686e4e1.jpg"></a>
 
-We are concerned about amount of <strong>memory and CPU used</strong> by one of the <a href="#Controls">43 controls</a> presented in the webapp. But we don't want to disturb Dave's site for everyone else. 
+Many are familiar with website <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a> which presents <a href="#Controls">43 controls</a> challenging those learning <a href="#ManualActions">manual actions</a> to build test automation scripts for Selenium, as taught by courses offered on websites <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a>.
 
-So we emulate <strong>several client browsers</strong> performing <a href="#ManualActions">manual actions</a> at the same time on the <strong>app in a Docker container</strong> running within the <strong>AWS cloud</strong>.
+We are concerned about the impact of running <strong>several client browsers</strong> on the server environment's <strong>memory and CPU</strong> used.
+
+But we don't want to disturb Dave's site for everyone else. 
+
+So we emulate <a href="#ManualActions">manual actions</a> on the <strong>app in a Docker container</strong> running within the <strong>AWS cloud</strong>.
 
 In this article we show how you can quickly and easily repeat what we're showing here by running scripts from our <strong>GitHub</strong> repository.
 
