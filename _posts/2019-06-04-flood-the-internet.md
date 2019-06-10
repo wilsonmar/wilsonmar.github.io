@@ -22,17 +22,19 @@ Below is the narration (transcript) of the video that focus on understanding of 
 
 Many are familiar with website <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a> which presents challenges to those learning manual actions to build test automation scripts for Selenium, as taught by websites <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a> course offering site.
 
-We are concerned about <strong>performance</strong> with one of the <a href="#Controls">43 controls</a> presented in the webapp. But we don't want to disturb Dave's site for everyone else. 
+We are concerned about amount of <strong>memory and CPU used</strong> by one of the <a href="#Controls">43 controls</a> presented in the webapp. But we don't want to disturb Dave's site for everyone else. 
 
-So we emulate many clients performing <a href="#ManualActions">manual actions</a> at the same time on the <strong>app in a Docker container</strong> running within the <strong>AWS cloud</strong>.
+So we emulate <strong>many client browsers</strong> performing <a href="#ManualActions">manual actions</a> at the same time on the <strong>app in a Docker container</strong> running within the <strong>AWS cloud</strong>.
 
-In this article we show how we automate getting <strong>credentials</strong> for a AWS account with a role with applicable permissions for a <strong>build script</strong> to take <strong>Dave's Docker image</strong> within Docker Hub and create the app.
+In this article we show how you can quickly and easily repeat what we're showing here by running and running scripts from our <strong>GitHub</strong> repository.
 
-We can then analyze the performance of JavaScript in the client app, we 
-want to use <strong>Flood Element Typescript code</strong> 
-The scripts run on the <a target="_blank" href="https://www.flood.io/">flood.io</a> service, which runs many instances of browsers in the cloud. So we need to first obtain a <strong>license token</strong>.
+how we automate getting <strong>credentials</strong> for a AWS account with a role with applicable permissions for a <strong>build script</strong> to take <strong>Dave's Docker image</strong> within Docker Hub and create the app.
 
-We would like a <strong>metrics</strong> dashboard to show exactly what happens, over time, when we run those Element scripts on various size machines. We get answers to questions such as:
+We can then analyze the performance of JavaScript in the client app. 
+To emulate multiple several users running an internet browser,
+we create <strong>Flood Element Typescript code</strong> based on manual actions, then run them withn the <a target="_blank" href="https://www.flood.io/">flood.io</a> service in the cloud. So we need to first obtain a <strong>license token</strong> that get added into the script.
+
+We would like a <strong>metrics</strong> dashboard to show exactly what happens, over time, when we run those Element scripts consuming load on various size machines. We get answers to questions such as:
 
    * What is the impact on the cloud bill (costs) of that cool UI code? 
    * What is the capacity of a chosen instance type (such as the free tier t2.micro)?
@@ -45,8 +47,6 @@ From the vendor website we get a <strong>license token</strong> that we put in o
 In order to simplify the pull script, we prefer to have an <strong>instrumented Docker image</strong> that has the agent already installed.
 
 But we don't have Dave's <strgon>original create script</strong> to modify, so we <strong>create a new image</strong> in Docker Hub.
-
-We have shared all our scripts in <strong>GitHub</strong> so you can quickly and easily repeat what we're showing here.
 
 Also, Flood Element scripts in the GitHub repository provides a reference for those moving from Selenium, to demonstrate that Element scripts can handle all the challenges presented by JavaSript.
 
@@ -132,14 +132,19 @@ Step Six: Writing the Automated Test</a>
 
 Below are the manual and automated steps, with as little hassle as possible.
 
-Two EC2 instances are instatiated using Docker:
+Two EC2 instances are instatiated using Docker by Terraform (RancherOS) within AWS:
 
    1. A "the-internet" app under test (written in Ruby), with a monitoring agent;
    2. Monitoring and visualization app server containing NewRelic 
    <br /><br />
-Additionally, cloud web service flood.io is invoked.
 
-??? Terraform and Ansible / Python
+PROTIP: This exercise stands up only one instance each -- does not show how to use multiple instances in a swarm (cluster). However, we recommend that this be done -- even for a single instance -- so that developers habitually use production mode workflows.
+
+Additionally, cloud web service flood.io is invoked for performance testing.
+
+Bash shell scripts calls <a target="_blank" href="https://wilsonmar.github.io/terraform">aTerraform</a> to instantiate, and Ansible to configure. 
+Python is used to customize.
+
 
 ### Scripts from GitHub
 
@@ -152,17 +157,16 @@ These steps are done manually on your local machine.
    * <a href="#FloodScriptUpdate">Flood Script Update</a>
 
 
-<hr />
-
-   ### Setup AWS
+### Setup AWS manually
 
    Based on https://wilsonmar.github.io/aws-onboarding
 
    On an internet browser such as Google Chrome, Apple Safari, or Microsoft Edge:
 
-1. Buy a Visa gift (debit) card for like $25.
+1. To limit financial exposure (to like $25 or whatever), buy a <a target="_blank" href="https://usa.visa.com/pay-with-visa/cards/prepaid-cards.html">pre-paid reloadable Visa</a> gift <a target="_blank" href="https://aws.amazon.com/premiumsupport/knowledge-center/accepted-payment-methods/">(debit) card</a> <a target="_blank" href="https://usa.visa.com/pay-with-visa/find-card/buy-gift-card">online</a> or at a PNC bank.
 1. Open AWS master account with email.
 1. In IAM, lock down master account.
+1. Create Security Group.
 1. In IAM, create service account. 
 1. Define service account with permissions.
 1. Store key pair (credentials) for service account locally.
@@ -396,7 +400,17 @@ NOTE: https://github.com/ThyWoof/geek-movie-shop
 
    ### Script B : Create Docker image / AMI ?
 
-   ### Script C : Save instrumented Docker image / AMI 
+   ### Script C : Save instrumented Docker image to DockerHub for reuse
+
+1. Docker save
+
+   ### Flood
+
+1. Create account (manually).
+1. Get license token.
+1. Insert license token in script.
+1. Specify script in GitHub.
+1. Run
 
    ### Script D : Run the-internet in AWS Docker process under instrumentation
 
@@ -412,29 +426,48 @@ NOTE: https://github.com/ThyWoof/geek-movie-shop
 1. Collect run results.
 1. Analyze run results / Generate visualizations.
 1. Display summary statistics.
-1. Post-mortum.
 
-<hr />
-
-<a name="install"></a>
-
-## Script A : Install "the-internate" components
-
-———————————————————————————————————————————————————
-gent
-
-
-
-   ### Save to DockerHub
-
-1. Docker save
-
-   ### Flood
-
-1. Create account (manually).
-1. Get license token.
-1. Insert license token in script.
-1. Specify script in GitHub.
-1. Run
    
--->
+
+<a name="VerifySecurity"></a>
+
+## Security scans
+
+In today's randomware enviornment, we all need to be extra vigilant to ensure security. 
+
+1. Install <a target="_blank" href="https://inspec.io/">https://inspec.io</a> 
+(created by Chef) 
+
+1. Install <a target="_blank" href="https://github.com/docker/doccker-bench-security">https://github.com/docker/doccker-bench-security</a> 
+
+1. Install CIS (Center for Internet Security) benchmarks for specific distributions and versions of Linux:
+
+   * Distribution independent Linux
+   * Debian Linux 8
+   * Ubuntu Linux 16.04 LTS 
+   * Amazon Linux 2 
+   * Centos Linux 7
+   * Oracle Linux 7
+   * Red Hat Enterprise Linux 7
+   * SUSE Linux Enterprise 12
+
+The Linux Audit Framework is used to identify potential security weaknesses or policy violations
+
+1. Install
+
+   <pre>sudo apt install auditd
+   pidof auditd</pre>
+
+1. Add rules and list them
+
+   <pre>sudo auditctl -w /usr/bin/dockerd -k docker
+   sudo auditctl -l</pre>
+
+1. Turn auditing on.
+1. Analyze report
+
+   <pre>sudo aureport</pre>
+
+
+<a target="_blank" href="https://app.pluralsight.com/library/courses/securing-docker-platform/table-of-contents">Securing the Docker Platform</a>
+by Nigel Brown Released 21 Jun 2018
