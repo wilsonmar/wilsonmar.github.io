@@ -18,7 +18,7 @@ comments: true
 
 Below is the narration (transcript) of the video that focus on understanding of how components are related to each other:
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/59193870-587af180-8b44-11e9-920c-d61ed686e4e1.jpg"><img alt="flood-the-internet-v06-766x408-32238.jpg" width="766" src="https://user-images.githubusercontent.com/300046/59193870-587af180-8b44-11e9-920c-d61ed686e4e1.jpg"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/59199056-4acc6880-8b52-11e9-96ca-fd7725ad90bd.jpg"><img alt="flood-the-internet-v06-1600x842-89548.jpg" width="1600" src="https://user-images.githubusercontent.com/300046/59199056-4acc6880-8b52-11e9-96ca-fd7725ad90bd.jpg"></a>
 
 Many are familiar with website <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a> which presents <a href="#Controls">43 controls</a> challenging those learning <a href="#ManualActions">manual actions</a> to build test automation scripts for Selenium, as taught by courses offered on websites <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a>.
 
@@ -54,7 +54,7 @@ This article describes use of a single instance type. But we can extend this wor
 
 Recap: 
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/59193870-587af180-8b44-11e9-920c-d61ed686e4e1.jpg"><img alt="flood-the-internet-v06-766x408-32238.jpg" width="766" src="https://user-images.githubusercontent.com/300046/59193870-587af180-8b44-11e9-920c-d61ed686e4e1.jpg"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/59199056-4acc6880-8b52-11e9-96ca-fd7725ad90bd.jpg"><img alt="flood-the-internet-v06-1600x842-89548.jpg" width="1600" src="https://user-images.githubusercontent.com/300046/59199056-4acc6880-8b52-11e9-96ca-fd7725ad90bd.jpg"></a>
 
 
 <a name="ManualActions"></a>
