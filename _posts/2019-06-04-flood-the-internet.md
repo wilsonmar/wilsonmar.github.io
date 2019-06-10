@@ -24,31 +24,31 @@ Many are familiar with website <a target="_blank" href="https://the-internet.her
 
 We are concerned about amount of <strong>memory and CPU used</strong> by one of the <a href="#Controls">43 controls</a> presented in the webapp. But we don't want to disturb Dave's site for everyone else. 
 
-So we emulate <strong>many client browsers</strong> performing <a href="#ManualActions">manual actions</a> at the same time on the <strong>app in a Docker container</strong> running within the <strong>AWS cloud</strong>.
+So we emulate <strong>several client browsers</strong> performing <a href="#ManualActions">manual actions</a> at the same time on the <strong>app in a Docker container</strong> running within the <strong>AWS cloud</strong>.
 
-In this article we show how you can quickly and easily repeat what we're showing here by running and running scripts from our <strong>GitHub</strong> repository.
+In this article we show how you can quickly and easily repeat what we're showing here by running scripts from our <strong>GitHub</strong> repository.
 
-how we automate getting <strong>credentials</strong> for a AWS account with a role with applicable permissions for a <strong>build script</strong> to take <strong>Dave's Docker image</strong> within Docker Hub and create the app.
+We first set up <strong>credentials</strong> for a AWS account with a role containing applicable permissions to a <strong>build script</strong>. The script makes use of <strong>Dave Hoeffer's Docker image</strong> within Docker Hub and instantiates the Docker image containing the app server under test. 
 
-We can then analyze the performance of JavaScript in the client app. 
-To emulate multiple several users running an internet browser,
-we create <strong>Flood Element Typescript code</strong> based on manual actions, then run them withn the <a target="_blank" href="https://www.flood.io/">flood.io</a> service in the cloud. So we need to first obtain a <strong>license token</strong> that get added into the script.
+Our GitHub repository also contains <strong>Flood Element Typescript code</strong> that was previously recorded based on manual actions defined. 
+This provides a reference for those moving from Selenium, to show how Element scripts handle all the challenges presented by Dave's sample app.
 
-We would like a <strong>metrics</strong> dashboard to show exactly what happens, over time, when we run those Element scripts consuming load on various size machines. We get answers to questions such as:
+We update the script with the <strong>license token</strong> we get from the <a target="_blank" href="https://www.flood.io/">flood.io</a> service in the cloud that can emulate several users running their own internet browser against our app under test in the cloud.
+
+We do all that to analyze the impact of JavaScript in the client app on the server, made visible on a <strong>metrics</strong> dashboard to show exactly what happens to memory, cpu, etc. 
+
+The metrics dashboard web page is powered by a <strong>monitoring process</strong> app. To build that app we make use of a <strong>Docker image from New Relic</strong> because it can capture <strong>custom events</strong> and more precise granular capture times. Those events are collected by an <strong>agent</strong> added to the app source code. Instructions for this is in an <strong>instrumentation script</strong>. 
+
+The agent contains a  <strong>license token</strong> obtained from the vendor website. We don't create an <strong>instrumented Docker image</strong> that has the agent already installed because the license differs for each installation.
+
+This article describes use of a single instance type. But we can extend this work to get answers to questions such as:
 
    * What is the impact on the cloud bill (costs) of that cool UI code? 
    * What is the capacity of a chosen instance type (such as the free tier t2.micro)?
+   * How much more is needed to run the anticipated peak load?
+   * What happens when that peak load is exceeded?
    <br /><br />
 
-The dashboard is created by an <strong>instrumentation script</strong> that installs a <strong>monitoring process</strong> created based on a <strong>Docker image from New Relic</strong>. We are using New Relic because New Relic enables custom external metrics and more precise granular capture times. 
-
-From the vendor website we get a <strong>license token</strong> that we put in our that installs a <strong>agent</strong> that sends <strong>events</strong> to be analyzed and visualized.
-
-In order to simplify the pull script, we prefer to have an <strong>instrumented Docker image</strong> that has the agent already installed.
-
-But we don't have Dave's <strgon>original create script</strong> to modify, so we <strong>create a new image</strong> in Docker Hub.
-
-Also, Flood Element scripts in the GitHub repository provides a reference for those moving from Selenium, to demonstrate that Element scripts can handle all the challenges presented by JavaSript.
 
 Recap: 
 
@@ -471,3 +471,4 @@ The Linux Audit Framework is used to identify potential security weaknesses or p
 
 <a target="_blank" href="https://app.pluralsight.com/library/courses/securing-docker-platform/table-of-contents">Securing the Docker Platform</a>
 by Nigel Brown Released 21 Jun 2018
+
