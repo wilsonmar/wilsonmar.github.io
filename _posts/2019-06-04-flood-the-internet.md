@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Measure JavaScript performance impact of Dave Hoeffner's the-internet"
-excerpt: "using Flood.io Element scripts after standing up the website challenging functional test automation Selenium to run in Docker containers within AWS cloud, measured by NewRelic"
+title: "Measure performance impact of JavaScript in Dave Hoeffner's the-internet"
+excerpt: "using Flood.io Element script after standing up the website challenging functional test automation Selenium to run in Docker containers within AWS cloud, measured by NewRelic"
 tags: [flood, perftest, selenium, testing]
 file: flood-element-the-internet-docker-aws-newrelic.md
 image:
@@ -16,7 +16,7 @@ comments: true
 
 {% include _toc.html %}
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/59133539-9d7d0900-8935-11e9-9608-13d764b82a26.jpg"><img alt="v05-805x426-36896.jpg" width="805" src="https://user-images.githubusercontent.com/300046/59133539-9d7d0900-8935-11e9-9608-13d764b82a26.jpg"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/59193870-587af180-8b44-11e9-920c-d61ed686e4e1.jpg"><img alt="flood-the-internet-v06-766x408-32238.jpg" width="766" src="https://user-images.githubusercontent.com/300046/59193870-587af180-8b44-11e9-920c-d61ed686e4e1.jpg"></a>
 
 Below is the narration (transcript) of the video that focus on understanding of how components are related to each other:
 
@@ -52,7 +52,8 @@ This article describes use of a single instance type. But we can extend this wor
 
 Recap: 
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/59133539-9d7d0900-8935-11e9-9608-13d764b82a26.jpg"><img alt="v05-805x426-36896.jpg" width="805" src="https://user-images.githubusercontent.com/300046/59133539-9d7d0900-8935-11e9-9608-13d764b82a26.jpg"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/59193870-587af180-8b44-11e9-920c-d61ed686e4e1.jpg"><img alt="flood-the-internet-v06-766x408-32238.jpg" width="766" src="https://user-images.githubusercontent.com/300046/59193870-587af180-8b44-11e9-920c-d61ed686e4e1.jpg"></a>
+
 
 <a name="ManualActions"></a>
 
