@@ -18,41 +18,40 @@ comments: true
 
 Below is the narration (transcript) of the video that focus on understanding of how components are related to each other:
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/59221002-83386a80-8b83-11e9-9871-ac5e3e99f47e.jpg"><img alt="flood-the-internet-v06d-1626x859-109063.jpg" width="1626" src="https://user-images.githubusercontent.com/300046/59221002-83386a80-8b83-11e9-9871-ac5e3e99f47e.jpg"></a>
+<amp-youtube data-videoid="a6wshuLBhjs" layout="responsive" width="480" height="270"></amp-youtube>
 
-Many are familiar with website <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a> which presents <a href="#Controls">43 controls</a> challenging those learning <a href="#ManualActions">manual actions</a> to build test automation scripts for Selenium, as taught by courses offered on websites <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a>.
+Many are familiar with this website: <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a>. It presents <a href="#Controls">43 controls</a> challenging those learning <a href="#ManualActions">manual actions</a> to build test automation scripts for Selenium, as taught by courses offered on websites <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a>.
 
-We are concerned about the impact of running <strong>several client browsers</strong> on the server environment's <strong>metrics of memory and CPU</strong> used.
+We would like to emulate <strong>several users</strong> at one time exercising this website because we want to see how much a challenging JavaScript control can impact the server environment's <strong>memory, CPU, and other metrics</strong>. <<<
 
-But we don't want to overload Dave's site for everyone else. 
+But we don't want our experiments to overload for everyone else Dave's public site. 
 
 So we emulate <a href="#ManualActions">manual actions</a> on the <strong>app in a Docker container</strong> running within the <strong>AWS cloud</strong>.
 
-In this pressentation we show how you can get scripts from our <strong>GitHub</strong> repository.
+In this presentation we show how you can automate the install and operation of our sample web app using scripts from our <strong>GitHub</strong> repository.
 
-We first set up <strong>credentials</strong> for a AWS account with a role containing applicable permissions to a <strong>build script</strong>. The script makes use of <strong>Dave Hoeffer's Docker image</strong> within Docker Hub and instantiates the Docker image containing the app server under test. 
+We first set up <strong>credentials</strong> for a AWS account with a role containing applicable permissions for our scripts. The <strong>build script</strong> makes use of <strong>Dave Hoeffer's Docker image</strong> within Docker Hub and uses it to create our own app server under test. <<<
 
 Our GitHub repository also contains <strong>Flood Element Typescript code</strong> that was previously recorded based on manual actions defined. 
-This provides a reference for those moving from Selenium, to show how Element scripts handle all the challenges presented by Dave's sample app.
+This pre-recorded script provides a reference for those moving from Selenium, to show how Element scripts handle all the challenges presented by Dave's sample app.
 
-We update the script with the <strong>license token</strong> we get from the <a target="_blank" href="https://www.flood.io/">flood.io</a> service in the cloud that can emulate several users running their own internet browser against our app under test in the cloud.
+After we get registered to use the <a target="_blank" href="https://www.flood.io/">flood.io</a> performance testing service in the cloud, we can upload our script and run it against our sample app based on run parameters.
 
-We do all this to analyze the impact of the client app on the server memory, cpu, etc. Those metrics are sent to an integrated <strong>metrics dashboard</strong> in the cloud at <a target="_blank" href="https://www.newrrelic.com/">newrelic.com</a> 
+We do all this so we can analyze the impact of the client app on various metrics sent to an integrated <strong>metrics dashboard</strong> in the cloud at <a target="_blank" href="https://www.newrrelic.com/">newrelic.com</a>.
 
 The metrics are sent by a <strong>monitoring process</strong> app that obtains 
-<strong>custom event</strong> collected by an <strong>agent</strong> added to the app source code. and more precise granular capture times. Those events are 
-To build that app, we provide you an <strong>instrumentation script</strong> from GitHub. The program grabs and installs a <strong>Docker image from New Relic</strong> in Docker Hub. 
+<strong>custom event</strong> collected by an <strong>agent</strong> added to the app source code. To build that app, we provide you an <strong>instrumentation script</strong> from GitHub. The program grabs and installs a <strong>Docker image from New Relic</strong> in Docker Hub. 
 
-Because the app under test was written in Ruby, the agent installed is <strong>newrelic.rpm</strong> which is specified in the <strong>Gemfile</strong> and rebundles, which downloads the plug-in.
+Because the app under test was written in Ruby, the agent installed is an rpm file (<strong>newrelic.rpm</strong>) which is specified in the <strong>Gemfile</strong>. When the source is rebundled it is automatically downloaded and installed.
 
-The agent sends the <strong>license key</strong> it obtained from the vendor back to the vendor website. 
+A <strong>license key</strong> from the vendor is installed with the agent so it can validate communications.
 
 <!-- We don't create an <strong>instrumented Docker image</strong> that has the agent already installed because the license differs for each installation. 
 -->
 
-When that same license key is copied from NewRelic and pasted onto flood.io, metrics from Flood would appear in NewRelic's metrics dashboard.
+The license key is also pasted onto flood.io's web form to validate metrics that Flood sends to  NewRelic's metrics dashboard.
 
-This article describes use of a single instance type. But we can extend this work to get answers to questions such as:
+This article describes use of a single instance type. But we can extend this work to get answers to questions about several other dimensions, such as:
 
    * What is the impact on the cloud bill (costs) of that cool JavaScript UI code? 
    * What is the capacity of a chosen instance type (such as the free tier t2.micro)?
@@ -62,7 +61,10 @@ This article describes use of a single instance type. But we can extend this wor
 
 Recap:
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/59221002-83386a80-8b83-11e9-9871-ac5e3e99f47e.jpg"><img alt="flood-the-internet-v06d-1626x859-109063.jpg" width="1626" src="https://user-images.githubusercontent.com/300046/59221002-83386a80-8b83-11e9-9871-ac5e3e99f47e.jpg"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/59231154-e4206c80-8b9c-11e9-92ba-7711776a23f9.jpg"><img alt="flood-the-internet-v06e-1621x854-110126.jpg" width="1621" src="https://user-images.githubusercontent.com/300046/59231154-e4206c80-8b9c-11e9-92ba-7711776a23f9.jpg"></a>
+
+
+<hr />
 
 
 <a name="ManualActions"></a>
