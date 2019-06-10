@@ -18,17 +18,17 @@ comments: true
 
 Below is the narration (transcript) of the video that focus on understanding of how components are related to each other:
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/59199056-4acc6880-8b52-11e9-96ca-fd7725ad90bd.jpg"><img alt="flood-the-internet-v06-1600x842-89548.jpg" width="1600" src="https://user-images.githubusercontent.com/300046/59199056-4acc6880-8b52-11e9-96ca-fd7725ad90bd.jpg"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/59221002-83386a80-8b83-11e9-9871-ac5e3e99f47e.jpg"><img alt="flood-the-internet-v06d-1626x859-109063.jpg" width="1626" src="https://user-images.githubusercontent.com/300046/59221002-83386a80-8b83-11e9-9871-ac5e3e99f47e.jpg"></a>
 
 Many are familiar with website <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a> which presents <a href="#Controls">43 controls</a> challenging those learning <a href="#ManualActions">manual actions</a> to build test automation scripts for Selenium, as taught by courses offered on websites <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a>.
 
-We are concerned about the impact of running <strong>several client browsers</strong> on the server environment's <strong>memory and CPU</strong> used.
+We are concerned about the impact of running <strong>several client browsers</strong> on the server environment's <strong>metrics of memory and CPU</strong> used.
 
-But we don't want to disturb Dave's site for everyone else. 
+But we don't want to overload Dave's site for everyone else. 
 
 So we emulate <a href="#ManualActions">manual actions</a> on the <strong>app in a Docker container</strong> running within the <strong>AWS cloud</strong>.
 
-In this article we show how you can quickly and easily repeat what we're showing here by running scripts from our <strong>GitHub</strong> repository.
+In this pressentation we show how you can get scripts from our <strong>GitHub</strong> repository.
 
 We first set up <strong>credentials</strong> for a AWS account with a role containing applicable permissions to a <strong>build script</strong>. The script makes use of <strong>Dave Hoeffer's Docker image</strong> within Docker Hub and instantiates the Docker image containing the app server under test. 
 
@@ -37,24 +37,32 @@ This provides a reference for those moving from Selenium, to show how Element sc
 
 We update the script with the <strong>license token</strong> we get from the <a target="_blank" href="https://www.flood.io/">flood.io</a> service in the cloud that can emulate several users running their own internet browser against our app under test in the cloud.
 
-We do all that to analyze the impact of JavaScript in the client app on the server, made visible on a <strong>metrics</strong> dashboard to show exactly what happens to memory, cpu, etc. 
+We do all this to analyze the impact of the client app on the server memory, cpu, etc. Those metrics are sent to an integrated <strong>metrics dashboard</strong> in the cloud at <a target="_blank" href="https://www.newrrelic.com/">newrelic.com</a> 
 
-The metrics dashboard web page is powered by a <strong>monitoring process</strong> app. To build that app we make use of a <strong>Docker image from New Relic</strong> because it can capture <strong>custom events</strong> and more precise granular capture times. Those events are collected by an <strong>agent</strong> added to the app source code. Instructions for this is in an <strong>instrumentation script</strong>. 
+The metrics are sent by a <strong>monitoring process</strong> app that obtains 
+<strong>custom event</strong> collected by an <strong>agent</strong> added to the app source code. and more precise granular capture times. Those events are 
+To build that app, we provide you an <strong>instrumentation script</strong> from GitHub. The program grabs and installs a <strong>Docker image from New Relic</strong> in Docker Hub. 
 
-The agent contains a  <strong>license token</strong> obtained from the vendor website. We don't create an <strong>instrumented Docker image</strong> that has the agent already installed because the license differs for each installation.
+Because the app under test was written in Ruby, the agent installed is <strong>newrelic.rpm</strong> which is specified in the <strong>Gemfile</strong> and rebundles, which downloads the plug-in.
+
+The agent sends the <strong>license key</strong> it obtained from the vendor back to the vendor website. 
+
+<!-- We don't create an <strong>instrumented Docker image</strong> that has the agent already installed because the license differs for each installation. 
+-->
+
+When that same license key is copied from NewRelic and pasted onto flood.io, metrics from Flood would appear in NewRelic's metrics dashboard.
 
 This article describes use of a single instance type. But we can extend this work to get answers to questions such as:
 
-   * What is the impact on the cloud bill (costs) of that cool UI code? 
+   * What is the impact on the cloud bill (costs) of that cool JavaScript UI code? 
    * What is the capacity of a chosen instance type (such as the free tier t2.micro)?
    * How much more is needed to run the anticipated peak load?
    * What happens when that peak load is exceeded?
    <br /><br />
 
+Recap:
 
-Recap: 
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/59199056-4acc6880-8b52-11e9-96ca-fd7725ad90bd.jpg"><img alt="flood-the-internet-v06-1600x842-89548.jpg" width="1600" src="https://user-images.githubusercontent.com/300046/59199056-4acc6880-8b52-11e9-96ca-fd7725ad90bd.jpg"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/59221002-83386a80-8b83-11e9-9871-ac5e3e99f47e.jpg"><img alt="flood-the-internet-v06d-1626x859-109063.jpg" width="1626" src="https://user-images.githubusercontent.com/300046/59221002-83386a80-8b83-11e9-9871-ac5e3e99f47e.jpg"></a>
 
 
 <a name="ManualActions"></a>
