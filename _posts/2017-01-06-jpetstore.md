@@ -53,8 +53,8 @@ Status: Downloaded newer image for jloisel/jpetstore6:latest
 
    <a target="_blank" href="http://localhost:8099/actions/Catalog.action">http://localhost:8080/actions/Catalog.action</a>
 
-3. Continue with steps below. Then after you're done, return here to 
-   delete Docker process and image to save disk space:
+3. Continue with content below. Then after you're done, return here to 
+   stop the Docker process and remote the docker image to save disk space:
 
    <pre><strong>docker stop jovial_bartik
    docker rmi jloisel/jpetstore6 --force</strong></pre>
@@ -399,8 +399,7 @@ Eclipse is not required, but there is a
 <a target="_blank" href="http://blog.mybatis.org/2016/12/mybatipse-eclipse-plugin-1024-is.html">
 MyBatis plug-in</a>
 
-Docs at http://www.mybatis.org/jpetstore-6/
-says:
+Docs at <a target="_blank" href="http://www.mybatis.org/jpetstore-6/">http://www.mybatis.org/jpetstore-6</a> say:
 
 The purpose of JPetStore 6 is to demonstrate how to build a web application with very few classes and no advanced coding skills. You just need to know plain Java and SQL.
 
@@ -414,6 +413,7 @@ as a demonstration of various coding features (not for benchmarking).
 
 Microsoft contracted with Vertigo Software to create a sample .Net Pet Shop when it orginally debuted its .NET framework. The repo had 3,484 lines of code and was tuned for benchmarking speed rather than coding best practices.
 
+So it's not really fair to make judgements about the speed of the underlying technologies by comparing their sample apps since they were made for different purposes.
 
 <hr />
 
