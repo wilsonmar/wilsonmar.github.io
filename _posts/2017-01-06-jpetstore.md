@@ -22,29 +22,47 @@ exploring JVM tools.
 
 The app provides a shopping cart because it's a common use case on the internet. Different items within several categories (of pets). 
 
-[NeoLoad](neoload)
-uses it as a sample app in their
-<a target="_blank" href="http://www.neotys.com/documents/doc/neoload/latest/en/html/#1609.htm">
-docs</a>.
+Several performance testing tool vendors use this as a sample app in demos and documentation:
+
+   * [NeoLoad](neoload) <a target="_blank" href="http://www.neotys.com/documents/doc/neoload/latest/en/html/#1609.htm">docs</a>.
+   * <a target="_blank" href="https://smartbear.com/solutions/performance-testing/">SmartBear</a>
+   * Octoperf
 
 ## Docker Quick Start 
 
-1. If you have Docker daemon installed, a simple way is to pull a public Docker image on DockerHub:
+1. If you have <a target="_blank" href="https://wilsonmar.github.io/docker-setup">Docker daemon installed</a>, a simple way is to have auto-pull when running a Docker image from the public DockerHub (https://hub.docker.com):
 
-   <pre><strong>docker run -d -p 8080:8080 jloisel/jpetstore6</strong></pre>
+   <pre><strong>docker run -d -p 8099:8080 jloisel/jpetstore6</strong></pre>
 
-2. While it's running, view the JPetstore front page:
+   NOTE: "8099" is the local port remapping the second 8080 is the container port.
+   Change the local port to avoid "failed: port is already allocated" error.
 
-   <a target="_blank" href="http://localhost:8080/actions/Catalog.action">http://localhost:8080/actions/Catalog.action</a>
+   The response showing progress:
 
-1. If you have Docker daemon installed, a simple way is to pull a public Docker image on DockerHub:
+   <pre>
+Unable to find image 'jloisel/jpetstore6:latest' locally
+latest: Pulling from jloisel/jpetstore6
+f8efbffe7b95: Downloading [===========================>   ]  28.74MB/51.36MB
+bd3fd4907f3c: Pull complete
+Digest: sha256:de40afbc5f494d99154f806f4b50ee5347c7df2ab0a1a3fa2841aab36b6f9e42
+Status: Downloaded newer image for jloisel/jpetstore6:latest
+9371fb7336555e2627abe5e355b9e113ff691a54728d66f48660d1e96d7aac37
+   </pre>
 
-   <pre><strong>docker run -d -p 8080:8080 jloisel/jpetstore6</strong></pre>
+2. View the JPetstore front page:
 
-3. Save disk space by removing the download
+   <a target="_blank" href="http://localhost:8099/actions/Catalog.action">http://localhost:8080/actions/Catalog.action</a>
 
-   <pre><strong>docker run -d -p 8080:8080 jloisel/jpetstore6</strong></pre>
+3. Continue with steps below. Then after you're done, return here to 
+   delete Docker process and image to save disk space:
 
+   <pre><strong>docker stop jovial_bartik
+   docker rmi jloisel/jpetstore6 --force</strong></pre>
+
+3. Confirm:
+
+   <pre><strong>docker ps
+   docker images</strong></pre>
 
 
 
