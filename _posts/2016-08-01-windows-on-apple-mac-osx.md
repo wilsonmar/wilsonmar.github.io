@@ -406,26 +406,14 @@ Docker provides a transparent interface to operating systems.
 
 ## Vagrant Virtualbox
 
-Vagrant (at https://www.vagrantup.com) is from Hashicorp, the same folks who provide Consul.
+Vagrant (at <a target="_blank" href="https://www.vagrantup.com/">https://www.vagrantup.com</a>) is from Hashicorp, the same folks who provide Consul and Terraform.
 
 Vagrant provisions complete virtual machines (Unix, Linux, Mac, or Windows) inside the Mac operating system as virtual machines. The VMs are segregated from other processes. This allows you to test software in a variety of environments.
 
 
 ### Install
 
-0. First, Apple XCode needs to be installed.
-
-   https://itunes.apple.com/au/app/xcode/id497799835?mt=12
-
-   Agree to EULA and Install.
-
-   Install Prerequisite Software (XCode Tools from Command Line): Open a Terminal (Launchpad —> Other —> Terminal). At the command prompt run the following command to install XCode Tools
-
-   <tt><strong>xcode-select —install
-   </strong></tt>
-
-   Accept the EULA.
-   Agree to install at Prompt.
+0. First, <a target="_blank" href="https://wilsonmar.github.io/xcode">Apple XCode needs to be installed</a>.
 
 0. [Install Homebrew](/macos-homebrew/)
 
@@ -563,7 +551,15 @@ All Cask dependencies satisfied.
 ==> box: Successfully added box 'precise64' (v0) for 'virtualbox'!
    </pre>
 
+0. PROTIP: Verify the box file downloaded is stored on MacOS and Linux at:
 
+   `~/.vagrant.d/boxes`
+   
+   On Windows:<br /> 
+   `C:/Users/<em>USERNAME</em>/.vagrant.d/boxes`
+
+   ### Windows image
+   
    Alternately, create a <strong>Windows 10</strong> sandbox:
 
    <tt><strong>vagrant box add windows? http://files.vagrantup.com/windows?.box
@@ -590,9 +586,9 @@ All Cask dependencies satisfied.
 
    The response in the command line:
 
-   <pre>
+   <tt>
    A `Vagrantfile` has been placed in this directory. You are now ready to `vagrant up` your first virtual environment! Please read the comments in the Vagrantfile as well as documentation on `vagrantup.com` for more information on using Vagrant.
-   </pre>
+   </tt>
 
    This creates a `.vagrant` hidden folder.
 
@@ -711,9 +707,7 @@ Available commands are:
    <pre>
 id       name    provider   state   directory                                                 
 ----------------------------------------------------------------------------------------------
-0cf0a57  acs     virtualbox saved   /Users/mac/gits/ansible                                   
-039b2ad  default virtualbox running /Users/mac/gits/wilsonmar/jhipster-sample                 
-c1d1bed  default virtualbox running /Users/mac/gits/wilsonmar/jhipster-sample/jhipster-devbox 
+0cf0a57  acs     virtualbox saved   /Users/mac/gits/ansible                          
 &nbsp; 
 The above shows information about all known Vagrant environments
 on this machine. This data is cached and may not be completely
@@ -757,9 +751,12 @@ again.
 Couldn't open file /Users/mac/vagrant-ubuntu-sandbox/base
    </pre>
 
+   PROTIP: `vagrant destroy` removes Vagrant VMs are stored in<br />
+   <tt>\Users\<em>username</em>\"VirtualBox VMs"</tt>
 
+   `VBoxManage list hdds`
 
-
+   https://www.virtualbox.org/manual/ch08.html
 
 0. Login to the new server via SSH (Secure Shell):
 
@@ -794,7 +791,7 @@ Blogs about this topic:
 
 * https://gist.github.com/tbonesteaks/000dc2d0584f30013913
 * http://sourabhbajaj.com/mac-setup/Vagrant/README.html
-
+* https://varyingvagrantvagrants.org/ is an open source Vagrant configuration focused on WordPress development.
 
 <a id="BootCamp"></a>
 

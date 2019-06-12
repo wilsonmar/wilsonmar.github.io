@@ -17,10 +17,10 @@ comments: true
 {% include _toc.html %}
 
 Below is the narration (transcript) of the video that focus on understanding of how components are related to each other:
+<a name="Video"></a>
+<amp-youtube data-videoid="a6wshuLBhjs" layout="responsive" width="480" height="270"></amp-youtube><br />
 
-<amp-youtube data-videoid="a6wshuLBhjs" layout="responsive" width="480" height="270"></amp-youtube>
-
-Many are familiar with this website: <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a>. It presents <a href="#Controls">43 controls</a> challenging those learning <a href="#ManualActions">manual actions</a> to build test automation scripts for Selenium, as taught by courses offered on websites <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a>.
+Many are familiar with this website: <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a>. It presents <a href="#Controls">43 controls</a> challenging those learning to <a href="#CodeSelenium">code test automation scripts for Selenium</a>, as taught by courses offered on websites <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a>. <<<
 
 We would like to emulate <strong>several users</strong> at one time exercising this website because we want to see how much a challenging JavaScript control can impact the server environment's <strong>memory, CPU, and other metrics</strong>. <<<
 
@@ -32,10 +32,10 @@ In this presentation we show how you can automate the install and operation of o
 
 We first set up <strong>credentials</strong> for a AWS account with a role containing applicable permissions for our scripts. The <strong>build script</strong> makes use of <strong>Dave Hoeffer's Docker image</strong> within Docker Hub and uses it to create our own app server under test. <<<
 
-Our GitHub repository also contains <strong>Flood Element Typescript code</strong> that was previously recorded based on manual actions defined. 
-This pre-recorded script provides a reference for those moving from Selenium, to show how Element scripts handle all the challenges presented by Dave's sample app.
+<a href="#ScriptsInGitHub">Our GitHub repository</a> also contains <strong>Flood Element Typescript code</strong> that was previously recorded based on manual actions defined. 
+This pre-recorded script provides a reference for those moving from Selenium, to show how Element scripts handle <a href="#Controls">all the controls presented by Dave's sample app</a>.
 
-After we get registered to use the <a target="_blank" href="https://www.flood.io/">flood.io</a> performance testing service in the cloud, we can upload our script and run it against our sample app based on run parameters.
+After we update the <strong>IP address and port number</strong> in the script, we get registered to use the <a target="_blank" href="https://www.flood.io/">flood.io</a> performance testing service in the cloud. We can then <strong>upload</strong> our script and <strong>run</strong> it against our sample app based on <strong>run parameters</strong> defined in Flood. <<<
 
 We do all this so we can analyze the impact of the client app on various metrics sent to an integrated <strong>metrics dashboard</strong> in the cloud at <a target="_blank" href="https://www.newrrelic.com/">newrelic.com</a>.
 
@@ -59,7 +59,7 @@ This article describes use of a single instance type. But we can extend this wor
    * What happens when that peak load is exceeded?
    <br /><br />
 
-Recap:
+Recap <em>(click for full screen pop up)</em>:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/59231154-e4206c80-8b9c-11e9-92ba-7711776a23f9.jpg"><img alt="flood-the-internet-v06e-1621x854-110126.jpg" width="1621" src="https://user-images.githubusercontent.com/300046/59231154-e4206c80-8b9c-11e9-92ba-7711776a23f9.jpg"></a>
 
@@ -67,108 +67,128 @@ Recap:
 <hr />
 
 
-<a name="ManualActions"></a>
+<a name="CodeSelenium"></a>
 
-## Manual testing actions
+## Scriting with Selenium
 
 T.J. Myer wrote in his website <a target="_blank" href="http://www.tjmaher.com/p/programming-projects.html">
 http://www.tjmaher.com/p/programming-projects.html</a> June - July 2015 a series describing his adventures coding Selenium on Dave's website:
 
 1. <a target="_blank" href="http://www.tjmaher.com/2015/06/simple-manipulation-of-login-page.html">
-Step One: Sketch out the simple manipulation of a Login page</a>
+Sketch out the simple manipulation of a Login page</a>
 
 2. <a target="_blank" href="http://www.tjmaher.com/2015/06/creating-common-utilities-for-webdriver.html">
-Step Two: Draft Common Utilities</a>
+Draft Common Utilities</a>
 
 3. <a target="_blank" href="http://www.tjmaher.com/2015/07/how-java-stores-constants-static-final.html">
-Step Three: Storing Constants: static finals vs enums</a>
+Storing Constants: static finals vs enums</a>
 
 4. <a target="_blank" href="http://www.tjmaher.com/2015/07/storing-locators-for-web-elements.html">
-Step Four: Storing Locators for Web Elements</a>
+Storing Locators for Web Elements</a>
 
 5. <a target="_blank" href="http://www.tjmaher.com/2015/07/the-internet-page-object-model-examples.html">
-Step Five: The Page Object Model</a>
+The Page Object Model</a>
 
 6. <a target="_blank" href="http://www.tjmaher.com/2015/07/the-internet-writing-automated-test.html">
-Step Six: Writing the Automated Test</a>
+Writing the Automated Test</a>
 
 
 <a name="Controls"></a>
 
-## Challenges on the-internet
+## Challenges on The-Internet
+
+<a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a>
 
 1. A/B Testing
-1. Add/Remove Elements
-1. Basic Auth (user and pass: admin)
-1. Broken Images
-1. Challenging DOM
-1. Checkboxes
-1. Context Menu
-1. Digest Authentication (user and pass: admin)
-1. Disappearing Elements
-1. Drag and Drop
-1. Dropdown
-1. Dynamic Content
-1. Dynamic Controls
-1. Dynamic Loading
-1. Entry Ad
-1. Exit Intent
-1. File Download
-1. File Upload
-1. Floating Menu
-1. Forgot Password
-1. Form Authentication
-1. Frames
-1. Geolocation
-1. Horizontal Slider
-1. Hovers
-1. Infinite Scroll
-1. Inputs
-1. JQuery UI Menus
-1. JavaScript Alerts
-1. JavaScript onload event error
-1. Key Presses
-1. Large & Deep DOM
-1. Multiple Windows
-1. Nested Frames
-1. Notification Messages
-1. Redirect Link
-1. Secure File Download
-1. Shifting Content
-1. Slow Resources
-1. Sortable Data Tables
-1. Status Codes
-1. Typos
-1. WYSIWYG Editor
+2. Add/Remove Elements
+3. Basic Auth (user and pass: admin)
+4. Broken Images
+5. Challenging DOM - this is the one impacting server resource
+6. Checkboxes
+7. Context Menu
+8. Digest Authentication (user and pass: admin)
+9. Disappearing Elements
+10. Drag and Drop
+11. Dropdown
+12. Dynamic Content
+13. Dynamic Controls
+14. Dynamic Loading
+15. Entry Ad
+16. Exit Intent
+17. File Download
+18. File Upload (issue in Element handling Windows vs Linux, also in Selenium)
+19. Floating Menu
+20. Forgot Password
+21. Form Authentication
+22. Frames
+23. Geolocation
+24. Horizontal Slider
+25. Hovers
+26. Infinite Scroll
+27. Inputs
+28. JQuery UI Menus
+29. JavaScript Alerts
+30. JavaScript onload event error
+31. Key Presses
+32. Large & Deep DOM
+33. Multiple Windows
+34. Nested Frames
+35. Notification Messages
+36. Redirect Link
+37. Secure File Download
+38. Shifting Content
+39. Slow Resources
+40. Sortable Data Tables
+41. Status Codes
+42. Typos
+43. WYSIWYG Editor
+
+<hr />
 
 ## Steps
 
-Below are the manual and automated steps, with as little hassle as possible.
+The actual manual and automated steps may be in a different order than the <a href="#Video">video above</a>, which is focused on presenting the logic.
 
-Two EC2 instances are instatiated using Docker by Terraform (RancherOS) within AWS:
+Here, two AWS EC2 instances are instantiated using Docker:
 
    1. A "the-internet" app under test (written in Ruby), with a monitoring agent;
    2. Monitoring and visualization app server containing NewRelic 
    <br /><br />
 
-PROTIP: This exercise stands up only one instance each -- does not show how to use multiple instances in a swarm (cluster). However, we recommend that this be done -- even for a single instance -- so that developers habitually use production mode workflows.
+   These shell scripts install and call <a target="_blank" href="https://wilsonmar.github.io/terraform">Terraform</a> to instantiate, and Ansible to configure. Python is used to customize.
 
-Additionally, cloud web service flood.io is invoked for performance testing.
+   PROTIP: This exercise stands up only one instance each and not multiple instances in a cluster for High Availability. However, we recommend that Autoscaling be done so that developers habitually use workflows needed for production usage.
 
-Bash shell scripts calls <a target="_blank" href="https://wilsonmar.github.io/terraform">aTerraform</a> to instantiate, and Ansible to configure. 
-Python is used to customize.
+Additionally, a cloud GUI at <a target="_blank" href="https://www.flood.io/">https://flood.io</a> is invoked for performance testing.
 
 
-### Scripts from GitHub
+<a name="ScriptsInGitHub"></a>
+
+### Scripts in GitHub
 
 These steps are done manually on your local machine.
 
-1. Create or navigate to a project folder for this effort.
-1. Clone automation scripts from https://github.com/flood/master/README.md
+1. Create or navigate to a project <strong>folder</strong> for this effort.
+1. Clone automation scripts:
 
-   * <a href="#NewRelicAgentInstall">NewRelicAgentInstall</a>
-   * <a href="#FloodScriptUpdate">Flood Script Update</a>
+   <pre><strong>git clone <a target="_blank" href="https://github.com/daeep/Flood_Element">https://github.com/daeep/Flood_Element</a></strong></pre>
 
+1. Review Flood Element <a target="_blank" href="https://www.typescriptlang.org/docs/home.html">TypeScript</a> coding at:
+
+   <a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/test_heroku_app.ts">https://github.com/daeep/Flood_Element/blob/master/test_heroku_app.ts</a>
+
+1. Review the installation scripts:
+
+   * <a href="#NewRelicAgentInstall">NewRelicAgentInstall-aws-ec2</a>
+   * <a href="#FloodScriptUpdate">Flood Script Update-aws-ec2</a>
+
+See:
+   * https://github.com/flood-io/load-testing-playground/tree/master/element
+   * <a target="_blank" href="https://element.flood.io/docs/1.0/get-started">https://element.flood.io/docs/1.0/get-started</a>
+   * https://github.com/flood-io/element
+
+
+<a name="SetupAWS"></a>
 
 ### Setup AWS manually
 
@@ -202,36 +222,28 @@ These steps are done manually on your local machine.
 1. In Terminal store .pem file downloadd
 1. SSH into instance.
 
+   ### Terminal - AWS Key Pair
+
    Inside "the-internet" terminal:
 
 1. [4:08] Install prerequisites for Docker for "the-internet" app:
 
    <pre>
 sudo apt update
-
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
-
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-
 sudo apt update
-
 apt-cache policy docker-ce
-
 sudo apt install docker-ce
-
+# verify:
 sudo systemctl status docker
-
-# verify 
-sudo docker  --version
-
+sudo docker --version
+# 
 sudo docker pull gprestes/the-internet
-
 sudo docker run -d -p 7080:5000 gprestes/the-internet
-
 # TODO: Identify the Docker ID to a variable:
-ps -fed | grep docker
+CONTAINER_ID=$( ps -fed | grep docker )
    </pre>   
 
 1. [12:04] On a browser, verify external access to "the-internet" app using the external IP address from AWS, such as:
@@ -297,9 +309,9 @@ vi  /etc/newrelic-infra.yml
 sudo vi /etc/newrelic-infra.yml
 &nbsp;
 # TODO: Identify the Docker ID to a variable: 
-$DOCKER_ID=$(sudo docker ps)
+$CONTAINER_ID=$(sudo docker ps)
    # (value such as ba965ff40ef7)
-sudo docker exec -i -t "$DOCKER_ID" /bin/bash
+sudo docker exec -i -t "$CONTAINER_ID" /bin/bash
 &nbsp;
 # TODO: From inside NewRelic process:
 sudo docker cp ba965ff40ef7:/app/server.rb .
@@ -319,9 +331,9 @@ sudo systemctl restart newrelic-infra
 
    <pre>
 # TODO: Identify the Docker ID to a variable: 
-$DOCKER_ID=$(sudo docker ps)
+$CONTAINER_ID=$(sudo docker ps)
    # (value such as ba965ff40ef7)
-sudo docker exec -i -t "$DOCKER_ID" /bin/bash
+sudo docker exec -i -t "$CONTAINER_ID" /bin/bash
    </pre>
 
    Based on https://docs.newrelic.com/docs/agents/ruby-agent/installation/install-new-relic-ruby-agent
@@ -330,8 +342,8 @@ sudo docker exec -i -t "$DOCKER_ID" /bin/bash
 
    <pre>
    # TODO: From inside NewRelic process (example root@ba965ff40ef7):
-   sudo docker cp "$DOCKER_ID:/app/server.rb" .
-   sudo docker cp server.rb "$DOCKER_ID:/app/"
+   sudo docker cp "$CONTAINER_ID:/app/server.rb" .
+   sudo docker cp server.rb "$CONTAINER_ID:/app/"
    # Backup existing
    cp Gemfile Gemfile.backup
    # TODO: Automate 
@@ -353,17 +365,17 @@ sudo docker exec -i -t "$DOCKER_ID" /bin/bash
    sudo docker run -d -p 7080:5000 ruby-bundle-update
    &nbsp;
    # TODO: Identify the Docker ID to a variable: 
-   $DOCKER_ID=$(sudo docker ps)
+   $CONTAINER_ID=$(sudo docker ps)
    # (value such as 363ddc8f7439)
-   sudo docker exec -i -t "$DOCKER_ID" /bin/bash
+   sudo docker exec -i -t "$CONTAINER_ID" /bin/bash
    # Save updated files:
-   sudo docker cp server.rb "$DOCKER_ID:/app/"
-   sudo docker cp Gemfile "$DOCKER_ID:/app/"
+   sudo docker cp server.rb "$CONTAINER_ID:/app/"
+   sudo docker cp Gemfile "$CONTAINER_ID:/app/"
    # Get inside:
-   sudo docker exec -i -t  "$DOCKER_ID" /bin/bash
+   sudo docker exec -i -t  "$CONTAINER_ID" /bin/bash
    sudo docker ps
-   sudo docker commit "$DOCKER_ID" ruby-bundle-update
-   sudo docker stop "$DOCKER_ID"
+   sudo docker commit "$CONTAINER_ID" ruby-bundle-update
+   sudo docker stop "$CONTAINER_ID"
    &nbsp;
    sudo docker ps
    sudo docker run -d -p 7080:5000 ruby-bundle-update
@@ -378,12 +390,12 @@ sudo docker exec -i -t "$DOCKER_ID" /bin/bash
    ls -lart  # to verify manually
    &nbsp;
    # TODO: Identify the Docker ID to a variable: 
-   $DOCKER_ID=$(sudo docker ps)
+   $CONTAINER_ID=$(sudo docker ps)
    # (value such as 178e6dc45ab7)
    &nbsp;
-   sudo docker cp newrelic.yml "$DOCKER_ID:/app/"
-   sudo docker commit "$DOCKER_ID" final-version
-   sudo docker stop "$DOCKER_ID"
+   sudo docker cp newrelic.yml "$CONTAINER_ID:/app/"
+   sudo docker commit "$CONTAINER_ID" final-version
+   sudo docker stop "$CONTAINER_ID"
    # Verify:
    sudo docker images
    # Restart:
@@ -441,12 +453,22 @@ NOTE: https://github.com/ThyWoof/geek-movie-shop
 1. Display summary statistics.
 
    
+## Other APM
+
+A full list of APM tools:
+
+* New Relic
+* Dynatrace OneAgent
+* Dynatrace AppMon
+* AppDynamics
+* NudgeAPM
+
 
 <a name="VerifySecurity"></a>
 
 ## Security scans
 
-In today's randomware enviornment, we all need to be extra vigilant to ensure security. 
+In today's ransomware enviornment, we all need to be extra vigilant to ensure security. 
 
 1. Install <a target="_blank" href="https://inspec.io/">https://inspec.io</a> 
 (created by Chef) 
@@ -485,3 +507,4 @@ The Linux Audit Framework is used to identify potential security weaknesses or p
 <a target="_blank" href="https://app.pluralsight.com/library/courses/securing-docker-platform/table-of-contents">Securing the Docker Platform</a>
 by Nigel Brown Released 21 Jun 2018
 
+##

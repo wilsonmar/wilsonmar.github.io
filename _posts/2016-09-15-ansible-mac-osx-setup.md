@@ -385,7 +385,7 @@ The <strong>requirements.txt</strong> file specifies files to download from the 
       sets up preferences and configurations for all the built-in services and apps.
 
       It references <a target="_blank" href="http://secrets.blacktree.com/?showapp=com.apple.finder">
-      http://secrets.blacktree.com/?showapp=com.apple.finder
+      http://secrets.blacktree.com/?showapp=com.apple.finder</a>
 
    * <a target="_blank" rel="amphtml" href="https://github.com/geerlingguy/homebrew">geerlingguy.homebrew</a>
 
@@ -522,10 +522,10 @@ Since Ansible was acquired by Red Hat, Inc. in October 2015, the company also co
 
 ## Resources #
 
-https://en.wikipedia.org/wiki/Ansible_(software)
+<a target="_blank" href="https://en.wikipedia.org/wiki/Ansible_(software)">https://en.wikipedia.org/wiki/Ansible_(software)</a>
 
 <a target="_blank" href="https://www.youtube.com/channel/UCp6NUFV9mSEK6RxUiEVymVg">
-Red Hat's YouTube channel</a>
+Red Hat's YouTube channel</a> has all products together.
 
 https://code.tutsplus.com/tutorials/setting-up-a-mac-dev-machine-from-zero-to-hero-with-dotfiles--net-35449
 
@@ -537,7 +537,8 @@ http://osxdaily.com/2014/01/01/4-free-os-x-utilities-mac/
 
 https://www.ansible.com/videos-ansiblefest-sf-2016
 
-
+<a target="_blank" href="https://gist.github.com/jloveland/df1bdec4705220eb5990">
+5 minutes Kubernetes Cluster on Mac</a>
 
 
 ## More on OSX
