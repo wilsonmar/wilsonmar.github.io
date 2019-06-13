@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: "Robotic Process Automation (RPA)"
