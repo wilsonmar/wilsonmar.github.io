@@ -17,24 +17,49 @@ comments: true
 
 
 RPA (Robotic Process Automation) programs mimic what human users do to help people do their job.
-RPA is an "auto-pilot" to automate any repetitive, data intensive task. 
-It can "screen scrap" to extract data from web pages.
-It has a "macro recorder" to generate scripts which can be edited.
+RPA is an "auto-pilot" to automate any repetitive, data intensive manual task. 
 
-RPA programs are like Selenium, QTP, SmartBear, and other functional test tools.
+   * It can "screen scrap" to extract data from web pages.
+   * It has a "macro recorder" to generate scripts which can be edited.
+   <br /><br />
 
-Several vendors offer RPA tools (each described below):
+RPA programs are like Selenium, QTP, SmartBear, and other functional test tools,
+so several previous test automation vendors offer RPA tools (each described below):
 
+* <a href"#AA">Automation Anywhere</a>
 * UIPath is an early entrant has become popular by offering an open-source Windows-based program.
 * <a href="#LDTP">LDTP</a>
 * <a target="_blank" href="http://www.blueprism.com/">Blue Prism</a> is built from the UK on the Microsoft .NET Framework. Its Control Room provides a centralized administration console for controlling, monitoring, executing and scheduling process execution on distributed robots.
 * Microsoft's Flow is an online service for getting cloud apps (such as Office 365 and Outlook.com) to talk to each other, much like IFTTT.com.
-* <a target="_blank" href="https://www.automationanywhere.com/">automationanywhere.com</a> claims to augmented with AI. Their Community Edition is for known businesses.
-
-
+* <a href="#Tricentis">Tricentis</a>
+* Pegasystems
+* Blue Prism
 <hr />
 
-<a name="LDTP"></a>
+Industry analyst Ovum in <a target="_blank" href="https://resources.automationanywhere.com/think">September 30, 2018 released their ranking of RPA vendors</a>:
+
+<img width="413" alt="rpa-ovum-2018-413x340" src="https://user-images.githubusercontent.com/300046/59470543-365bca80-8df5-11e9-8e40-91335ec83bdb.png">
+
+
+<a name="AA"></a>
+
+## Automation Anywhere
+
+<a target="_blank" href="https://www.automationanywhere.com/">automationanywhere.com</a> 
+ claims to augmented with AI. 
+ 
+Their Community Edition is for known businesses.
+
+AA has 3 mobile apps:
+
+   * Manage RPA on the Go to measure center of excellence ROI and digital workforce
+   * Imagine
+   * Impact
+
+Their "IQ Bot" "learns from people how to handle unstructured and unclear data so processes can be automated from end-to-end" by automating content-centric processes. Their "Bot Insight" extracts data from Bot operation to provide analytics at the origin of data ("embedded analytics").
+ 
+ 
+ <a name="LDTP"></a>
 
 ## LDTP
 
@@ -87,7 +112,15 @@ Learning Robotic Process Automation</a>
 2018 by Alok Mani Tripathi
 
 
-## Association
+<a name="Tricentis"></a>
+
+## Tricentis 
+
+Tricentis is leveraging its "model based testing" (Tosca) database to be repurposed for use in RPA.
+
+
+
+## RPA Association
 
 In 2013 Frank Casale created an association to increase his consulting services:
 
