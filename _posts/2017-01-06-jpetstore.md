@@ -56,7 +56,8 @@ Status: Downloaded newer image for jloisel/jpetstore6:latest
 3. Continue with content below. Then after you're done, return here to 
    stop the Docker process and remote the docker image to save disk space:
 
-   <pre><strong>docker stop jovial_bartik
+   <pre><strong>CONTAINER_ID=$( docker ps | grep "jloisel/jpetstore6" | cut -d " " -f 1 )
+   docker stop $CONTAINER_ID
    docker rmi jloisel/jpetstore6 --force</strong></pre>
 
 3. Confirm:
