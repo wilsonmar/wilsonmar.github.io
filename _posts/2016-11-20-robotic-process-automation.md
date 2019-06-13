@@ -23,13 +23,16 @@ It has a "macro recorder" to generate scripts which can be edited.
 
 RPA programs are like Selenium, QTP, SmartBear, and other functional test tools.
 
-Several vendors offer RPA tools:
+Several vendors offer RPA tools (each described below):
 
 * UIPath is an early entrant has become popular by offering an open-source Windows-based program.
 * <a href="#LDTP">LDTP</a>
 * <a target="_blank" href="http://www.blueprism.com/">Blue Prism</a> is built from the UK on the Microsoft .NET Framework. Its Control Room provides a centralized administration console for controlling, monitoring, executing and scheduling process execution on distributed robots.
+* Microsoft's Flow is an online service for getting cloud apps (such as Office 365 and Outlook.com) to talk to each other, much like IFTTT.com.
+* <a target="_blank" href="https://www.automationanywhere.com/">automationanywhere.com</a> claims to augmented with AI. Their Community Edition is for known businesses.
 
-* Microsoft Flow is an online service for getting cloud apps (such as Office 365 and Outlook.com) to talk to each other, much like IFTTT.com.
+
+<hr />
 
 <a name="LDTP"></a>
 
