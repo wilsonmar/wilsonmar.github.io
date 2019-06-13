@@ -15,27 +15,24 @@ comments: true
 
 {% include _toc.html %}
 
-This page describes the various ways to 
-<a href="#LocalInstall">install</a> 
-and use a simple Java application for learning Java Spring and 
-exploring JVM tools.
+This article describes the various ways to use Docker and <a href="#LocalInstall">install locally</a> the JPetstore simple Java application.
 
-The app provides a shopping cart because it's a common use case on the internet. Different items within several categories (of pets). 
+The app was originally created for learning Java Spring and exploring JVM tools.
 
-Several performance testing tool vendors use this as a sample app in demos and documentation:
+Several performance testing tool vendors use JPetstore6 as a sample app under test in demos and documentation:
 
-   * [NeoLoad](neoload) <a target="_blank" href="http://www.neotys.com/documents/doc/neoload/latest/en/html/#1609.htm">docs</a>.
+   * Octoperf (whose employee created the Docker image)
+* <a target="_blank" href="https://wilsonmar.github.io/selenium-neoload">Neoload</a> (<a target="_blank" href="http://www.neotys.com/documents/doc/neoload/latest/en/html/#1609.htm">docs</a>)
    * <a target="_blank" href="https://smartbear.com/solutions/performance-testing/">SmartBear</a>
-   * Octoperf
+   
+## JPetstore from Docker
 
-## Docker Quick Start 
+1. If you have <a target="_blank" href="https://wilsonmar.github.io/docker-setup">Docker daemon installed and running</a>, a simple way is to have auto-pull when running a Docker image from the public DockerHub (<a target="_blank" href="https://hub.docker.com/r/jloisel/jpetstore6">https://hub.docker.com</a>):
 
-1. If you have <a target="_blank" href="https://wilsonmar.github.io/docker-setup">Docker daemon installed</a>, a simple way is to have auto-pull when running a Docker image from the public DockerHub (https://hub.docker.com):
+   <pre><strong>docker run -d -p 8099:8080 jloisel/jpetstore6:latest</strong></pre>
 
-   <pre><strong>docker run -d -p 8099:8080 jloisel/jpetstore6</strong></pre>
-
-   NOTE: "8099" is the local port remapping the second 8080 is the container port.
-   Change the local port to avoid "failed: port is already allocated" error.
+   NOTE: "8099" is the local port remapping port 8080 specified in the container.
+   Change to another local port to avoid "failed: port is already allocated" error.
 
    The response showing progress:
 
@@ -53,8 +50,10 @@ Status: Downloaded newer image for jloisel/jpetstore6:latest
 
    <a target="_blank" href="http://localhost:8099/actions/Catalog.action">http://localhost:8080/actions/Catalog.action</a>
 
+   A <a href="#LandingPage">landing page showing a green parrot (below)</a> should be returned.
+
 3. Continue with content below. Then after you're done, return here to 
-   stop the Docker process and remote the docker image to save disk space:
+   stop the Docker process and remote the docker image to save disk space, memory, and other resources:
 
    <pre><strong>CONTAINER_ID=$( docker ps | grep "jloisel/jpetstore6" | cut -d " " -f 1 )
    docker stop $CONTAINER_ID
@@ -71,6 +70,8 @@ Status: Downloaded newer image for jloisel/jpetstore6:latest
 
 <a name="LandingPage"></a>
 
+The app provides a <strong>e-commerce shopping cart</strong> because that is a common use case on the internet. Different items within several categories (of pets) are available for browing and purchase. 
+
 ### Landing page (Main Menu) #
 
    <img width="650" alt="jpetstore6 main menu" src="https://cloud.githubusercontent.com/assets/300046/21746325/c24dd12a-d50e-11e6-8408-925e0c16021e.png">
@@ -83,16 +84,17 @@ Status: Downloaded newer image for jloisel/jpetstore6:latest
    Thankfully, one company has it running all the time at
    <a target="_blank" href="http://demo.kieker-monitoring.net/jpetstore/actions/Catalog.action">
    http://demo.kieker-monitoring.net/jpetstore/actions/Catalog.action</a>
-   It rated 
+   
+   At one time, the page rated 
    <a target="_blank" href="https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fdemo.kieker-monitoring.net%2Fjpetstore%2Factions%2FCatalog.action&tab=desktop">90/100 for Desktop on Google Page Speed</a>
-   and 83/100 for Mobile. Google recommends:
+   and 83/100 for Mobile. Google recommends these changes to make the page faster:
 
    * <a target="_blank" href="https://developers.google.com/speed/docs/insights/LeverageBrowserCaching">Leverage browser caching.</a> Setting an expiry date or a maximum age in the HTTP headers for static resources (.gif media files) instructs the browser to load previously downloaded resources from local disk rather than over the network.
 
    * <a target="_blank" href="https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery">Eliminate render-blocking JavaScript and CSS in above-the-fold content.</a> The browser waits for <a target="_blank" href="http://demo.kieker-monitoring.net/jpetstore/css/jpetstore.css">.../css/jpetstore.css</a> to load before rendering
    above-the-fold content. Defer or asynchronously load blocking resources, or inline the critical portions of those resources directly in the HTML.
    
-   * The css file is not mimified.
+   * Mimify the css file.
 
 
 ## Use case loops #
@@ -151,13 +153,20 @@ That answer informs the throttling of publicity so new people come in at a patte
    Except the JPetStore app does not connect with a payment gateway.
    So this is a mute point.
 
+   Checkout for user to provide payment details and billing address:
+
+   ![jpetstore6-ship-form-507x410](https://user-images.githubusercontent.com/300046/59428712-40e97600-8d9b-11e9-9069-2637f4ebe59b.jpg)
+
+   When "Continue" is pressed, a page is shown to "Confirm". 
+
+   Clicking "Confirm" would result in a "submitted" page.
+
 10. <strong>End-to-end</strong> with all the above to ensure that the system can handle a pattern of work during scalability testing (to emulate a mention on Reddit or Hacker News that causes a buying frenzy).
 
 11. <a target="_blank" href="http://demo.kieker-monitoring.net/jpetstore/actions/Order.action?listOrders=">My Orders</a> 
    lists order history for a user,
    by reading from the database.
    A link to it is at the bottom of the User Information page after a user is logged in and has completed an order.
-
 
 Additionally, there are <strong>error</strong> responses
 to each of the above, created by "negative" tests:
@@ -256,8 +265,6 @@ https://github.com/wilsonmar/mac-setup</a>
 To use the script, clone the repo and edit file <tt>secrets.sh</tt> such that variable 
 LOCALHOSTS contains the value "jpetstore-6". Then run the script <tt>./mac-setup-all.sh</tt>
 See the repo's README.
-
-TODO: Create a Docker image for this.
 
 
 ### MyBatis
