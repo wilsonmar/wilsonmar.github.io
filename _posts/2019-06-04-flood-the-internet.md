@@ -69,7 +69,7 @@ Recap <em>(click for full screen pop up)</em>:
 
 <a name="CodeSelenium"></a>
 
-## Scriting with Selenium
+## Scripting with Selenium
 
 T.J. Myer wrote in his website <a target="_blank" href="http://www.tjmaher.com/p/programming-projects.html">
 http://www.tjmaher.com/p/programming-projects.html</a> June - July 2015 a series describing his adventures coding Selenium on Dave's website:
@@ -196,7 +196,7 @@ See:
 
    On an internet browser such as Google Chrome, Apple Safari, or Microsoft Edge:
 
-1. To limit financial exposure (to like $25 or whatever), buy a <a target="_blank" href="https://usa.visa.com/pay-with-visa/cards/prepaid-cards.html">pre-paid reloadable Visa</a> gift <a target="_blank" href="https://aws.amazon.com/premiumsupport/knowledge-center/accepted-payment-methods/">(debit) card</a> <a target="_blank" href="https://usa.visa.com/pay-with-visa/find-card/buy-gift-card">online</a> or at a PNC bank.
+1. To limit financial exposure (to like $25 or whatever), buy a <a target="_blank" href="https://usa.visa.com/pay-with-visa/cards/prepaid-cards.html">pre-paid reloadable Visa</a> gift <a target="_blank" href="https://aws.amazon.com/premiumsupport/knowledge-center/accepted-payment-methods/">(debit) card</a> <a target="_blank" href="https://usa.visa.com/pay-with-visa/find-card/get-prepaid-card">pre-paid online</a> (which has an expiration date and some have a monthly service fee). The <a target="_blank" href="https://www.drawpayvisa.com/">Drawpay card</a> provides a 1% refund on purchases. Others provide fee-Free cash withdrawal at over 25,000 MoneyPass ATMs
 1. Open AWS master account with email.
 1. In IAM, lock down master account.
 1. Create Security Group.
@@ -226,7 +226,7 @@ See:
 
    Inside "the-internet" terminal:
 
-1. [4:08] Install prerequisites for Docker for "the-internet" app:
+1. [4:08] Within app server to hold "the-internet", install prerequisites (GPG certs, Docker):
 
    <pre>
 sudo apt update
@@ -239,16 +239,16 @@ sudo apt install docker-ce
 # verify:
 sudo systemctl status docker
 sudo docker --version
-# 
-sudo docker pull gprestes/the-internet
-sudo docker run -d -p 7080:5000 gprestes/the-internet
-# TODO: Identify the Docker ID to a variable:
-CONTAINER_ID=$( ps -fed | grep docker )
+DOCKER_IMAGE="gprestes/the-internet"
+sudo docker pull "$DOCKER_IMAGE"
+sudo docker run -d -p 7080:5000 "$DOCKER_IMAGE"
+CONTAINER_ID=$( docker ps | grep "$DOCKER_IMAGE" | cut -d " " -f 1 )
+WANIP4=$( curl http://canhazip.com" )  # public IP4 address.
    </pre>   
 
 1. [12:04] On a browser, verify external access to "the-internet" app using the external IP address from AWS, such as:
 
-   http://52.91.73.157:7080/
+   <a target="_blank" href="http://52.91.73.157:7080/">http://52.91.73.157:7080/</a>
 
 
    <a name="NewRelicAgentInstall"></a>
