@@ -754,7 +754,8 @@ Couldn't open file /Users/mac/vagrant-ubuntu-sandbox/base
    PROTIP: `vagrant destroy` removes Vagrant VMs are stored in<br />
    <tt>\Users\<em>username</em>\"VirtualBox VMs"</tt>
 
-   `VBoxManage list hdds`
+   If you see an error message `VBoxManage list hdds`
+   <pre>vagrant up --provider vmware_fusion</pre>
 
    https://www.virtualbox.org/manual/ch08.html
 
@@ -764,6 +765,7 @@ Couldn't open file /Users/mac/vagrant-ubuntu-sandbox/base
    </strong></tt>
 
 0. Change what you like. Mess it up if you care to. 
+
 0. Logout once done poking around:
 
    <tt><strong>exit

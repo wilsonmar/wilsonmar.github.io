@@ -46,19 +46,18 @@ Industry analyst Ovum in <a target="_blank" href="https://resources.automationan
 ## Automation Anywhere
 
 <a target="_blank" href="https://www.automationanywhere.com/">automationanywhere.com</a> 
- claims to augmented with AI. 
- 
-Their Community Edition is for known businesses.
+ claims to augmented with AI. "We deliver the world’s most sophisticated Digital Workforce Platform making work more human by automating business processes and liberating people. 
+Their Community Edition is for known businesses."
 
-AA has 3 mobile apps:
+AA has 3 <a target="_blank" href="https://resources.automationanywhere.com/watch/automation-anywhere-mobile-app-overview">mobile apps</a>:
 
    * Manage RPA on the Go to measure center of excellence ROI and digital workforce
    * Imagine
    * Impact
 
 Their "IQ Bot" "learns from people how to handle unstructured and unclear data so processes can be automated from end-to-end" by automating content-centric processes. Their "Bot Insight" extracts data from Bot operation to provide analytics at the origin of data ("embedded analytics").
- 
- 
+
+
  <a name="LDTP"></a>
 
 ## LDTP
@@ -94,6 +93,13 @@ Guided Learning
 Don't confuse RPA with the Microsoft Bot Framework.
 
 
+## Blue Prism 
+
+Blue Prism separated itself from BPM (Business Process Management).
+
+The company focuses on secure software in regulated industries. 
+
+
 ## UIPath
 
 1. Request their free "Community Edition":
@@ -118,7 +124,42 @@ Learning Robotic Process Automation</a>
 
 Tricentis is leveraging its "model based testing" (Tosca) database to be repurposed for use in RPA.
 
+<hr />
 
+
+### Autonomic
+
+An autonomic system is identified by eight characteristics:
+
+1. Knows what resources it has access to, what its capabilities and limitations are and how and why it is connected to other systems.
+0. Is able to configure and reconfigure itself depending on the changing computing environment.
+0. Is able to optimize its performance to ensure the most efficient computing process.
+0. Is able to work around encountered problems either by repairing itself or routing functions away from the trouble.
+0. Is able to detect, identify and protect itself against various types of attacks to maintain overall system security and integrity.
+0. Is able to adapt to its environment as it changes, interacting with neighboring systems and establishing communication protocols.
+0. Relies on open standards and requires access to proprietary environments to achieve full performance.
+0. Is able to anticipate the demand on its resources transparently to users.
+
+
+### Machine Learning
+
+Detection, correlation, and pattern recognition generated through machine based observation of human operation of software systems along with ongoing self-informing regression algorithms for machine based determination of successful operation leading to useful predictive capability.
+
+### Cognitive Computing
+
+Complex computational systems designed to:
+
+1. Sense (perceive the world and collect data),
+0. Comprehend (analyze and understand the information collected) and
+0. Act (make informed decisions and provide guidance based on this analysis in an independent way)
+0. Adapt (adapt capabilities based on experience) in ways comparable to the human brain.
+
+### Programming
+
+Programming skills are often required to design robots,
+
+
+<hr />
 
 ## RPA Association
 
@@ -136,30 +177,3 @@ RPA (Robotic Process Automation) is the collective term for several technologies
    * Cloud (AWS, Azure, etc.)
    * Monitoring systems
    * ITSM (ServiceNow, etc.)
-
-### Autonomic
-
-An autonomic system is identified by eight characteristics:
-
-1. Knows what resources it has access to, what its capabilities and limitations are and how and why it is connected to other systems.
-0. Is able to configure and reconfigure itself depending on the changing computing environment.
-0. Is able to optimize its performance to ensure the most efficient computing process.
-0. Is able to work around encountered problems either by repairing itself or routing functions away from the trouble.
-0. Is able to detect, identify and protect itself against various types of attacks to maintain overall system security and integrity.
-0. Is able to adapt to its environment as it changes, interacting with neighboring systems and establishing communication protocols.
-0. Relies on open standards and requires access to proprietary environments to achieve full performance.
-0. Is able to anticipate the demand on its resources transparently to users.
-
-### Machine Learning
-
-Detection, correlation, and pattern recognition generated through machine based observation of human operation of software systems along with ongoing self-informing regression algorithms for machine based determination of successful operation leading to useful predictive capability.
-
-### Cognitive Computing
-
-Complex computational systems designed to:
-
-1. Sense (perceive the world and collect data),
-0. Comprehend (analyze and understand the information collected) and
-0. Act (make informed decisions and provide guidance based on this analysis in an independent way)
-0. Adapt (adapt capabilities based on experience) in ways comparable to the human brain.
-

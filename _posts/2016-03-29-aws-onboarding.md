@@ -48,7 +48,9 @@ Before we begin, know that the cloud services marketplace has competitors not ju
 
 2. Get your credit card numbers ready.
 
-   <a target="_blank" href="https://www.linkedin.com/pulse/how-use-aws-free-tips-teaching-college-wong-chun-yin-cyrus-%E9%BB%83%E4%BF%8A%E5%BD%A5-/">PROTIP</a>: You need a credit card to open an account. But to limit your exposure, some people provides numbers to AWS from a MASTERCARD GIFT CARD bought from a convenience store.
+   <a target="_blank" href="https://www.linkedin.com/pulse/how-use-aws-free-tips-teaching-college-wong-chun-yin-cyrus-%E9%BB%83%E4%BF%8A%E5%BD%A5-/">PROTIP</a>: You need a credit card to open an account. But to limit exposure, some people provide to AWS numbers from a <a target="_blank" href="https://usa.visa.com/pay-with-visa/cards/prepaid-cards.html">pre-paid reloadable Visa</a> gift <a target="_blank" href="https://aws.amazon.com/premiumsupport/knowledge-center/accepted-payment-methods/">(debit) card</a> <a target="_blank" href="https://usa.visa.com/pay-with-visa/find-card/get-prepaid-card">pre-paid online</a> (which has an expiration date and some have a monthly service fee). The <a target="_blank" href="https://www.drawpayvisa.com/">Drawpay card</a> provides a 1% refund on purchases and a mobile app to view balances. Others provide fee-Free cash withdrawal at over 25,000 MoneyPass ATMs.
+
+   <a target="_blank" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m4&clip=5&mode=live">*</a>
 
 3. Click the yellow "Sign-Up" button if you don't already have an account.
 
@@ -118,7 +120,7 @@ PROTIP: <a target="_blank" href="Ahttps://us-west-2.console.aws.amazon.com/direc
 PROTIP: To avoid this money-sucing situation, use a script to instantiate and include deactivation of AWS Directory Services as part of that automated script. That or use a corporate shared Directory.
 
 
-### &nbsp; &nbsp; &nbsp; Activate Tags Preferences
+### [_] Activate Tags Preferences
 
 1. Go to <a target="_blank" href="https://console.aws.amazon.com/billing/home#/preferences/tags">https://console.aws.amazon.com/billing/home#/preferences/tags</a>
    or select your user name at the top black menu and select "My Billing Dashboard".
@@ -143,7 +145,7 @@ PROTIP: To avoid this money-sucing situation, use a script to instantiate and in
 
    Billing Tags 
 
-   ### My Much? Estimate bills
+   ### [_] Estimate bills
 
 1. PROTIP: Before you dive in, calculate your potential bills by providing usage estimates to the <a target="_blank" href="http://calculator.s3.amazonaws.com/index.html">AWS Calculator</a>.
 
@@ -165,7 +167,7 @@ PROTIP: To avoid this money-sucing situation, use a script to instantiate and in
    <img alt="aws-onboarding-cost-ec2-447x288.jpg" width="447" src="https://user-images.githubusercontent.com/300046/40881008-32aee9c0-6679-11e8-8c45-cee5a06d31f2.jpg">
 
 
-   ### Billing alerts
+   ### [_] Set Billing alerts
 
 3. <a target="_blank" href="https://wblinks.com/notes/aws-tips-i-wish-id-known-before-i-started/">NOTE</a>: Setup <a target="_blank" href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/monitor-charges.html">billing alerts and notifications</a>
 
@@ -175,7 +177,7 @@ PROTIP: To avoid this money-sucing situation, use a script to instantiate and in
    * AWSPriceListServiceFullAccess
    <br /><br />
 
-   ### Define organizations
+   ### [_] Define organizations
 
 1. Click your account name at the black top menu:
 
@@ -204,7 +206,7 @@ Be aware that AWS has a
 
 <a name="ForumAccount"></a>
 
-## Create Forum Account
+## [_] Create Forum Account
 
 1. PROTIP: To ensure anonymity interacting on public forums, the Administrator should create in a public email system (such as gmail.com, hotmail.com, etc.) an email address for use on forums. Don't use a real name in the email address, but a positive adjective with a number to ensure it's unique, such as "concerned123".
 
@@ -221,9 +223,8 @@ Be aware that AWS has a
 
    <a name="ComparePlans"></a>
 
-## Compare Pricing of Plans
+## [_] Compare Pricing of Plans
 
-This can be 
 1. Click <a target="_blank" href="https://console.aws.amazon.com/support/plans/home?#/">Amazon's Support Plan page here</a>.
 
    The Basic account does not enable you to communicate with Amazon people who can answer technical questions.

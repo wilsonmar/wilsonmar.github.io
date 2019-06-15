@@ -15,17 +15,30 @@ comments: true
 
 {% include _toc.html %}
 
-This article describes the various ways to use Docker and <a href="#LocalInstall">install locally</a> the JPetstore simple Java application.
-
 The app was originally created for learning Java Spring and exploring JVM tools.
+
+WARNING: There are several obsolete versions of JPetstore on the internet,
+such as <a target="_blank" href="http://sourceforge.net/projects/ibatisjpetstore/">
+v4 on Sourceforge</a>.
 
 Several performance testing tool vendors use JPetstore6 as a sample app under test in demos and documentation:
 
    * Octoperf (whose employee created the Docker image)
-* <a target="_blank" href="https://wilsonmar.github.io/selenium-neoload">Neoload</a> (<a target="_blank" href="http://www.neotys.com/documents/doc/neoload/latest/en/html/#1609.htm">docs</a>)
+   * <a target="_blank" href="https://wilsonmar.github.io/selenium-neoload">Neoload</a> (<a target="_blank" href="http://www.neotys.com/documents/doc/neoload/latest/en/html/#1609.htm">docs</a>)
    * <a target="_blank" href="https://smartbear.com/solutions/performance-testing/">SmartBear</a>
    
-## JPetstore from Docker
+This article describes the various ways to get hands-on with it:
+
+   * Install Docker, then JPetstore6, and run it on your Mac. 
+   * <a href="#LocalInstall">Install as part of others on your Mac</a>
+   * <a href="#myBatis">install from source in GitHub (from MyBatis) on your Mac</a>
+   * Install within an AWS EC2 instance (coming soon)
+
+<hr />
+
+<a name="Docker"></a>
+
+## Install locally using Docker
 
 1. If you have <a target="_blank" href="https://wilsonmar.github.io/docker-setup">Docker daemon installed and running</a>, a simple way is to have auto-pull when running a Docker image from the public DockerHub (<a target="_blank" href="https://hub.docker.com/r/jloisel/jpetstore6">https://hub.docker.com</a>):
 
@@ -40,13 +53,14 @@ Several performance testing tool vendors use JPetstore6 as a sample app under te
 Unable to find image 'jloisel/jpetstore6:latest' locally
 latest: Pulling from jloisel/jpetstore6
 f8efbffe7b95: Downloading [===========================>   ]  28.74MB/51.36MB
+....
 bd3fd4907f3c: Pull complete
 Digest: sha256:de40afbc5f494d99154f806f4b50ee5347c7df2ab0a1a3fa2841aab36b6f9e42
 Status: Downloaded newer image for jloisel/jpetstore6:latest
 9371fb7336555e2627abe5e355b9e113ff691a54728d66f48660d1e96d7aac37
    </pre>
 
-2. View the JPetstore front page:
+2. View the <a href="#LandingPage">JPetstore6 landing page</a>:
 
    <a target="_blank" href="http://localhost:8099/actions/Catalog.action">http://localhost:8080/actions/Catalog.action</a>
 
@@ -250,12 +264,6 @@ respond to:
 
 ## Local Installation
 
-WARNING: There are several obsolete versions on the internet,
-such as <a target="_blank" href="http://sourceforge.net/projects/ibatisjpetstore/">
-v4 on Sourceforge</a>.
-
-There are several variations
-
 http://support.neotys.com/misc/jpetstore-test.zip
 
 I created a bootstrap Bash script to install this natively as a localhost on a MacOS at
@@ -267,7 +275,40 @@ LOCALHOSTS contains the value "jpetstore-6". Then run the script <tt>./mac-setup
 See the repo's README.
 
 
-### MyBatis
+<a name="MyBatis"></a>
+
+## MyBatis
+
+<a name="Dependencies"></a>
+
+MyBatis has packaged up <a target="_blank" href="http://www.mybatis.org/jpetstore-6/dependency-info.html">http://www.mybatis.org/jpetstore-6/dependency-info.html</a>
+
+* Java 1.6 and above (1.8.11 at January 2017)
+
+* Spring 4 
+
+* Stripes - https://github.com/StripesFramework
+
+* MyBatis 3 SQL mapping framework for Java <br />
+   http://blog.mybatis.org/p/products.html
+
+   MyBatis mappers and dependency injection lets you build applications without dependencies.
+   Thus, the source has no code to deal with JDBC, to create objects or bind them or to handle transactions. 
+
+   (There is a port to .NET)
+
+   The iBATIS Database Layer uses simple XML descriptor filesto describe the inputs and outputs of each SQL statement. It allows the programmer to simply pass a JavaBean into a MappedStatement as a parameter (input) and receive a JavaBean as a result (output).  
+
+* Formatter Tag Library
+   by Tak Yoshida of ibatis.
+
+* Tomcat web server from the Apache Foundation.
+
+* JUnit for Mokito
+
+   Used by tests
+
+
 
 Rather than downloading a 
 <a target="_blank" href="https://github.com/mybatis/jpetstore-6/releases">release zip file</a>, 
@@ -316,14 +357,14 @@ use a Git client, as the <a target="_blank" href="https://github.com/mybatis/jpe
 0. Scroll down to the line:
 
    <tt>
-   &LT;Connector SSLEnabled="false" URIEncoding="ISO-8859-1" connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443" scheme="http" secure="false"/>
+   <Connector SSLEnabled="false" URIEncoding="ISO-8859-1" connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443" scheme="http" secure="false"/>
    </tt>
 
 0. Change port="8080" to port="$JPETSTORE_PORT".
 0. Save the file.
 
-   https://github.com/blackburntech/jpetstore-sample
-   suggests additional steps
+   <a target="_blank" href="https://github.com/blackburntech/jpetstore-sample">https://github.com/blackburntech/jpetstore-sample</a> 
+   suggests additional steps.
 
    ### Start server
 
@@ -351,37 +392,6 @@ use a Git client, as the <a target="_blank" href="https://github.com/mybatis/jpe
    <a href="#LandingPage">main menu</a>.
 
 
-
-<a name="Dependencies"></a>
-
-### Dependencies
-
-http://www.mybatis.org/jpetstore-6/dependency-info.html
-
-* Java 1.6 and above (1.8.11 at January 2017)
-
-* Spring 4 
-
-* Stripes - https://github.com/StripesFramework
-
-* MyBatis 3 SQL mapping framework for Java <br />
-   http://blog.mybatis.org/p/products.html
-
-   MyBatis mappers and dependency injection lets you build applications without dependencies.
-   Thus, the source has no code to deal with JDBC, to create objects or bind them or to handle transactions. 
-
-   (There is a port to .NET)
-
-   The iBATIS Database Layer uses simple XML descriptor filesto describe the inputs and outputs of each SQL statement. It allows the programmer to simply pass a JavaBean into a MappedStatement as a parameter (input) and receive a JavaBean as a result (output).  
-
-* Formatter Tag Library
-   by Tak Yoshida of ibatis.
-
-* Tomcat web server from the Apache Foundation.
-
-* JUnit for Mokito
-
-   Used by tests
 
 
 <a name="Monitoring"></a>

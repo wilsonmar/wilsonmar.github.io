@@ -64,17 +64,23 @@ The <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/clou
 ## Individuals must pick a single cloud?
 
 Organizations are going multi-cloud.
-But an given individual has a limited amount of time to keep up with changes.
+But an individual has a limited amount of time to keep up with changes.
 So many individual technologists need to select the cloud vendor which provides the best career prospects. Here's my logic:
 
-* If you write in C# on .NET and want to continue leveraging that experience, Azure is the natural choice. (But other clouds are trying to support Windows.)
-   Azure now provides free learning instances</a>
+* If you code in C# on .NET and want to continue leveraging that experience, Azure is the natural choice. (But other clouds are trying to support Windows.)
+
+* Azure now provides free learning instances
+
 * If you're looking for the fastest and easiest path to get a job in cloud, go for AWS because of its current <a href="#marketshare">market share</a> and [pace of innovation](https://aws.amazon.com/products/). AWS has the most sophisticated authentication and database services.
-* Due to competitive reasons, Target, Best Buy, eBay, and Sony Music use Google. WalMart uses Azure. 
+
+* Due to competitive reasons, Target, Best Buy, eBay, and Sony Music use Google. WalMart uses Azure. Since Amazon is moving into agriculture (building urban farms to provide Whole Foods and Amazong Go stores) plus health care, established competitors in those industries would not want to use AWS.
+
 * If you're running really large loads on each server, Google offers fast fiber networks that don't limit what large machines can achieve. Plus Google is ahead in Machine Learning with its popular Tensorflow in Python.
+
 * Google's SSD drives are expensive, though needed for speed.
 
 * IBM has bare-metal machines, if that's your thing. But since 2017 AWS provides them as well.
+
 * Increasingly, companies doing business in a particular country are required to keep data within a cloud data center within that country (such as Google in Belgium).
 <br /><br />
 

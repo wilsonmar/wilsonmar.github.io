@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure DevOps (DevSecOps)"
-excerpt: "DevSecOps in Microsoft's cloud"
+excerpt: "DevSecOps in Microsoft's cloud transitioned from TFS and VSTS"
 tags: [devops, devsecops]
 image:
 # azure-devops-products-1900x400-21605.jpg
@@ -22,10 +22,14 @@ comments: true
 <a target="_blank" href="https://www.forbes.com/sites/janakirammsv/2018/09/16/azure-devops-why-its-a-big-deal-for-microsoft-and-the-community/#353e0a8c6780">
 Azure DevOps - Why It's A Big Deal For Microsoft And The Community</a> Sep 16, 2018
 
-Forrester has Microsoft as a leader (behind Electric Cloud, IBM, Xebia, and CA) in its <a target="_blank" href="https://azure.microsoft.com/en-us/resources/continuous-delivery-and-release-automation/">2018 Continuous Delivery And Release Automation" market assesement:
+Forrester has Microsoft among leaders (behind Electric Cloud, IBM, Xebia, and CA) in its <a target="_blank" href="https://azure.microsoft.com/en-us/resources/continuous-delivery-and-release-automation/">2018 Continuous Delivery And Release Automation" market assesement:
 <img alt="azure-devops-gartner-2018-485x527-13777.jpg" width="485" src="https://user-images.githubusercontent.com/300046/56278410-69b6fd00-60c3-11e9-847b-4c7f4a8a73d6.jpg"></a>
 
 NOTE: IBM's product is called "Urban Code". IBM also acquired Red Hat and its Ansible portfolio.
+
+Buck Hodges, Director of Engineering for Microsoft VSTS, <a target="_blank" href="https://www.youtube.com/watch?v=aIiLhK0NIlY">Jun 27, 2018 VIDEO: how Microsoft evolved from on-premise TFS into VSTS as a service shipping in 3 week sprints, from the same code repository. Add  SPS (Shared Platform Service) for account, identity, profile, licensing.
+
+@demovisa keynote #GDBC
 
 <a name="QuickStart"></a>
 
@@ -55,7 +59,9 @@ NOTE: IBM's product is called "Urban Code". IBM also acquired Red Hat and its An
 
 1. Click "Choose template":
 
-   * <a href="#PartsUnlimited">PartsUnlimited (below)</a> defines an ASP.NET app with customized CI/CD pipelines to create a SQL database back-end.
+   * <a href="#PartsUnlimited">#PartsUnlimited (below)</a> defines an ASP.NET app with customized CI/CD pipelines to create a SQL database back-end.
+
+   https://github.com/Microsoft/PartsUnlimited
    
    * SmartHotel360 <a target="_blank" href="https://github.com/Microsoft/SmartHotel360-IoT">(open sourced)</a> is an ASP.NET 2 desktop and Xamarin web-mobile app for a hotel, all deployed using Docker containers within AKS.
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/56323530-68b8b680-6129-11e9-9baf-81a79a04557e.jpg"><img alt="azure-devops-smarthotel-home-1896x853.jpg" width="1896" src="https://user-images.githubusercontent.com/300046/56323530-68b8b680-6129-11e9-9baf-81a79a04557e.jpg"></a>
