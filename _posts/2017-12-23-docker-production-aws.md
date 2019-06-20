@@ -84,9 +84,9 @@ Videos in the course are rated as 10 hours, but it took me more like 70+ hours o
 
 ## Code in GitHub
 
-Since its release back on <strong>1 Dec 2017</strong>, some changes have occurred in AWS technologies and workflows. However, work continues on the <strong>17 repositories</strong> under the <strong>docker-production-aws</strong> GitHub account, which I've rearranged below alphabetically:
+Since its release back on <strong>1 Dec 2017</strong>, some changes have occurred in AWS technologies and workflows. However, Justin has continued work on the <strong>17 repositories</strong> under the <strong>docker-production-aws</strong> GitHub account, which I've rearranged below alphabetically:
 
-1. DOTHIS: In GitHub, <strong>watch</strong> each of these repositories:
+DOTHIS: In GitHub, <strong>watch</strong> each of these repositories:
 
    1. <a target="_blank" href="https://github.com/docker-production-aws/aws-starter">aws-starter</a> - Starter Template for AWS CloudFormation Playbooks 
    1. <a target="_blank" href="https://github.com/docker-production-aws/aws-sts">aws-sts</a> - Ansible role for assuming roles using the AWS STS service 
@@ -127,12 +127,14 @@ Since its release back on <strong>1 Dec 2017</strong>, some changes have occurre
    
 A. <a href="#microtrader-setup">microtrader-setup.sh</a> installs the <a href="#microtrader4">4 microtrader processes<a> after building them from source and testing them using mocha.
 
-B. <a href="#docker-setup">docker-setup.sh</a> installs the <a href="#microtrader4">4 microtrader processes<a> after building them from source and testing them using mocha.
+B. <a href="#docker-setup">ecr-setup.sh</a> creates Docker images in a private Elastic Repository (ECR) and configures Dockerfiles for use in ECS (Elastic Container Service).
 
 PROTIP: Since there is a flood of responses, there is a provision in the script to output to a logfile.
 
 <!-- 02 - course-introduction-slides
 -->
+
+## Exercise files = PDFs
 
 Click <a target="_blank" href="https://app.pluralsight.com/library/courses/docker-production-using-amazon-web-services/exercise-files">"Exercise files" on Pluralsight.com</a> downloads a folder named "docker-production-using-amazon-web-services". 
 Its sub-folders contain pdf files within folders of just numbers.
@@ -140,7 +142,7 @@ So I've named chapter names and put them all in one folder:
 
 ### 03 - creating-the-sample-application-slides 
 
-   The system consists of these four processes:
+The system under test consists of these four processes:
 
    <a name="microtrader4"></a>
 
@@ -150,41 +152,36 @@ So I've named chapter names and put them all in one folder:
    * Quote Generator at <a href="http://localhost:32770/quote/">http://localhost:32770/quote/</a> 
       - periodically generates stock market quotes for three fictitious companies: "Black Coat", "D'Oh", "Divinator", "MacroHard".
       - single instance
-
+      <br /><br />
    * Portfolio Service 
       - trades stocks starting from an initial portfolio of $10000 cash on hand. The trading logic is completely random and non-sensical
       - single instance
+      <br /><br />
 
    * Trader Dashboard at <a href="http://localhost:32771">http://localhost:32771</a> 
       - provides a web dashboard displaying stock market quote activity, recent stock trades and the current state of the portfolio. The dashboard also provides an operational view of the status and service discovery inforamtion for each service.
       - <strong>multiple instances</strong> for High Availability
+      <br /><br />
 
    * Audit Service at <a href="http://localhost:32768/audit/">http://localhost:32768/audit/</a> 
       - audits all stock trading activity, persisting each stock trade to an internal MySQL database
       - single instance
+      <br /><br />
 
-   To enable <strong>event bus</strong> using modern <strong>asynchronous</strong> communications (using callbacks) among processes, each app component makes use of the <a target="_blank" href="https://vertx.io/">https://vertx.io/</a> library open-sourced at <a target="_blank" href="https://en.wikipedia.org/wiki/Vert.x">https://en.wikipedia.org/wiki/Vert.x</a> was programmed in Java by Tim Fox in 2011 while he was employed by VMware. After much discussion with other parties, in January 2013, VMware moved the project and associated IP to the Eclipse Foundation, a neutral legal entity.   
-	Eclipse Vert.x is a polyglot event-driven application framework that runs on Java "Polyglot" refers to Vert.x exposing its idiomatic API in Java, JavaScript, Groovy, Ruby Python, Scala, Kotlin, Clojure and Ceylon. 
+   To enable  modern <strong>asynchronous</strong> communications through an <strong>event bus</strong> among processes, callbacks within each app component makes use of the <a target="_blank" href="https://vertx.io/">https://vertx.io/</a> library open-sourced at <a target="_blank" href="https://en.wikipedia.org/wiki/Vert.x">https://en.wikipedia.org/wiki/Vert.x</a>. It was programmed in Java by Tim Fox in 2011 while he was employed by VMware. After much discussion with other parties, in January 2013, VMware moved the project and associated IP to the Eclipse Foundation, a neutral legal entity.   
+	Eclipse Vert.x is a polyglot event-driven application framework that runs on Java "Polyglot" refers to Vert.x exposing its idiomatic API in Java, JavaScript, Groovy, Ruby Python, Scala, Kotlin, Clojure, and Ceylon. 
    Repeated functionality in Vert.x is encapsulated in a "Verticle". Thus its name.
    Vert.x assumes <strong>single-threaded</strong> scalable non-blocking app design.
-
-	Real-time messages are received using the sockJs library.
-   [Vert.x Microservices Workshop](https://github.com/cescoffier/vertx-microservices-workshop),modifications have been made:
-
-   * Groovy
-   * Node
-   * Docker
-   * fat-JAR file packages
-   * run using -cluster flag for vert.x
-
+   Real-time messages are received using the sockJs library
+   [Vert.x Microservices Workshop](https://github.com/cescoffier/vertx-microservices-workshop),(which Justin has modified):
 
    Each "microtrader" app process is built to run as a "Fat JAR" as a single deployable and runnable artifact within Docker containers. 
    
 
 
-   <a name="microtrader-setup"></a>
+<a name="microtrader-setup"></a>
 
-   #### Microtrader Build & Test Locally from Code
+#### Microtrader Build & Test Locally from Code
 
    PROTIP: I've created a shell script (in GitHub) to install the <a href="#microtrader4">4 microtrader processes<a>:
 
@@ -211,23 +208,25 @@ So I've named chapter names and put them all in one folder:
 
    * To stop the run, click the red "X" for the Terminal session. Verify that processes were terminated:
 
-    <pre>ps -al</pre>
+   <pre>ps -al</pre>
 
    <a name="circuit-breaker"></a>
 
-   This is because of a Circuit breaker pattern implemented by the Audit Service opening on failure:
+   That is because of a Circuit breaker pattern implemented by the Audit Service opening on failure:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/59765767-fca71b80-925b-11e9-97c5-81ff13f8b461.png"><img alt="circuit-breaker-pattern-971x473-41827.jpg" width="971" src="https://user-images.githubusercontent.com/300046/59765767-fca71b80-925b-11e9-97c5-81ff13f8b461.png"></a>
 
 
-### 04 - creating-docker-release-images-slides
+### 04 - Creating Docker Release Images
+
+<!-- creating-docker-release-images-slides -->
 
    <a name="Release-workflow"></a>
    
-   The release pipeline automates the workflow to a Release Environment. s
+   The release pipeline automates the workflow to a Release Environment. 
    commit to a Test Environment, performs unit testing, builds, and 
 
-   <!- 2:09 into https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m3&clip=1&mode=live
+   <!-- 2:09 into https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m3&clip=1&mode=live
    -->
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/59786983-af3fa400-9285-11e9-9889-a3d8a872d765.jpg"><img alt="release-pipeline-916x493-42235.jpg" width="916" src="https://user-images.githubusercontent.com/300046/59786983-af3fa400-9285-11e9-9889-a3d8a872d765.jpg"></a>
@@ -241,7 +240,9 @@ So I've named chapter names and put them all in one folder:
 
    <a name="iam-setup"></a>
 
-### 05 - setting-up-aws-access-slides
+### 05 - Setting up AWS Access 
+
+<!-- setting-up-aws-access-slides -->
 
    Getting EC2 Key Pairs and keeping them on your laptop is both risky and a hassle.
    
