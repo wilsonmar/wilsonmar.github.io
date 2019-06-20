@@ -76,6 +76,17 @@ The exercise files downloaded is a set of folders named "docker-production-using
 
 * 03 - creating-the-sample-application-slides ("microtrader" app programmed in Java runs as a "Fat JAR" as a single deployable and runnable artifact within Docker containers). The sample app makes use of a sophisticated event bus provided by the vert.x library so that real-time messages are received using the sockJs library.
 
+   PROTIP: I've created a script for you to install everything needed on your mac.
+
+   <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/blob/master/docker-production-aws/microtrader-setup.sh">https://github.com/wilsonmar/DevSecOps/blob/master/docker-production-aws/microtrader-setup.sh</a>
+
+   Click the following command 3 times to highlight and copy
+
+   <pre>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/docker-production-aws/microtrader-setup.sh)</pre>
+
+   ... then paste in your Terminal CLI to run it automatically.
+   
+
    <a name="microtrader-arch"></a>
 
    ![microtrader-925x522-50356](https://user-images.githubusercontent.com/300046/59731992-b4f5a500-9205-11e9-82ba-c34b3df42841.jpg)
