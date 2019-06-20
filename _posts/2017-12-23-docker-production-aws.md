@@ -76,26 +76,12 @@ The exercise files downloaded is a set of folders named "docker-production-using
 
 * 03 - creating-the-sample-application-slides ("microtrader" app programmed in Java runs as a "Fat JAR" as a single deployable and runnable artifact within Docker containers). The sample app makes use of a sophisticated event bus provided by the vert.x library so that real-time messages are received using the sockJs library.
 
-   PROTIP: I've created a script for you to install everything needed on your mac.
-
-   <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/blob/master/docker-production-aws/microtrader-setup.sh">https://github.com/wilsonmar/DevSecOps/blob/master/docker-production-aws/microtrader-setup.sh</a>
-
-   Click the following command 3 times to highlight and copy
-
-   <pre>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/docker-production-aws/microtrader-setup.sh)</pre>
-
-   ... then paste in your Terminal CLI to run it automatically.
-   
+   The script creates this:
 
    <a name="microtrader-arch"></a>
 
-   ![microtrader-925x522-50356](https://user-images.githubusercontent.com/300046/59731992-b4f5a500-9205-11e9-82ba-c34b3df42841.jpg)
-
-   <a name="circuit-breaker"></a>
-
-   Circuit breaker pattern implemented by the Audit Service opening on failure:
-
-   ![circuit-breaker-pattern-971x473-41827](https://user-images.githubusercontent.com/300046/59765767-fca71b80-925b-11e9-97c5-81ff13f8b461.png)
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/59731992-b4f5a500-9205-11e9-82ba-c34b3df42841.jpg">
+   <img alt="microtrader-925x522-50356.jpg" width="925" src="https://user-images.githubusercontent.com/300046/59731992-b4f5a500-9205-11e9-82ba-c34b3df42841.jpg"></a>
 
    * Quote Generator - periodically generates stock market quotes for three fictitious companies
 
@@ -105,18 +91,19 @@ The exercise files downloaded is a set of folders named "docker-production-using
 
    * Audit Service - audits all stock trading activity, persisting each stock trade to a MySQL database
 
-	https://en.wikipedia.org/wiki/Vert.x
-	Vert.x was started by Tim Fox in 2011 while he was employed by VMware. 
-    After much discussion with other parties, in January 2013, VMware was persuaded that it would be in the best interests of the Vert.x community to move the project and associated IP to the Eclipse Foundation, a neutral legal entity.[7]
-    Repeated functionality is encapsulated in a "Verticle".
-Vert.x is asynchronous by nature and uses callbacks to achieve this
+	<a target="_blank" href="https://en.wikipedia.org/wiki/Vert.x">https://en.wikipedia.org/wiki/Vert.x</a>  https://vertx.io/ was programmed in Java by Tim Fox in 2011 while he was employed by VMware. After much discussion with other parties, in January 2013, VMware moved the project and associated IP to the Eclipse Foundation, a neutral legal entity.
+   
+	Eclipse Vert.x is a polyglot event-driven application framework that runs on the Java Virtual Machine. "Polyglot" refers to Vert.x exposing its idiomatic API in Java, JavaScript, Groovy, Ruby Python, Scala, Kotlin, Clojure and Ceylon. 
+   single-threaded  scalable non-blocking applications.	
+   Vert.x is asynchronous by nature and uses callbacks to achieve this
+   Repeated functionality is encapsulated in a "Verticle". Thus its name.
 
-	vert.x at https://vertx.io/ programmed in Java 
 
-	Eclipse Vert.x is a polyglot event-driven application framework that runs on the Java Virtual Machine.
-	"Polyglot" refers to Vert.x exposing its idiomatic API in Java, JavaScript, Groovy, Ruby, Python, Scala, Kotlin, Clojure and Ceylon. 
-	single-threaded  scalable non-blocking applications.	
+   <a name="circuit-breaker"></a>
 
+   Circuit breaker pattern implemented by the Audit Service opening on failure:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/59765767-fca71b80-925b-11e9-97c5-81ff13f8b461.png"><img alt="circuit-breaker-pattern-971x473-41827.jpg" width="971" src="https://user-images.githubusercontent.com/300046/59765767-fca71b80-925b-11e9-97c5-81ff13f8b461.png"></a>
 
 * 04 - creating-docker-release-images-slides
 
@@ -125,7 +112,7 @@ Vert.x is asynchronous by nature and uses callbacks to achieve this
    The release pipeline automates the workflow to a Release Environment. s
    commit to a Test Environment, performs unit testing, builds, and 
 
-   ![release-pipeline-916x493-42235](https://user-images.githubusercontent.com/300046/59786983-af3fa400-9285-11e9-9889-a3d8a872d765.jpg)
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/59786983-af3fa400-9285-11e9-9889-a3d8a872d765.jpg"><img alt="release-pipeline-916x493-42235.jpg" width="916" src="https://user-images.githubusercontent.com/300046/59786983-af3fa400-9285-11e9-9889-a3d8a872d765.jpg"></a>
 
 * 05 - setting-up-aws-access-slides
 
@@ -133,7 +120,7 @@ Vert.x is asynchronous by nature and uses callbacks to achieve this
    It's more secure and flexible to define (in IAM) groups associated with policies by role.
    When a user is assigned to a group, he/she gets all the permissions for roles in the group.
 
-   ![iam-groups-roles-910x502-36375](https://user-images.githubusercontent.com/300046/59787896-bbc4fc00-9287-11e9-9ebe-c3a74f9d3320.jpg)
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/59787896-bbc4fc00-9287-11e9-9ebe-c3a74f9d3320.jpg"><img alt="iam-groups-roles-910x502-36375.jpg" src="https://user-images.githubusercontent.com/300046/59787896-bbc4fc00-9287-11e9-9ebe-c3a74f9d3320.jpg"></a>
 
 * 06 - running-docker-applications-using-the-ec2-container-service-slides
 
@@ -189,24 +176,38 @@ Since its release back on <strong>1 Dec 2017</strong>, some changes have occurre
    1. <a target="_blank" href="https://github.com/docker-production-aws/packer-ecs">packer-ecs</a> - Packer build script for creating custom AWS ECS Container Instance images 
 
    1. <a target="_blank" href="https://github.com/docker-production-aws/proxy-resources">proxy-resources</a> - Ansible playbook and CloudFormation template for deploying an HTTP proxy stack based upon Squid 
+   <br /><br />
 
- 
    <!-- So I've forked and modified the <a target="_blank" href="https://github.com/docker-production-aws">original code repository</a> to
 
    <a target="_blank" href="https://github.com/wilsonmar/docker-production-aws">https://github.com/wilsonmar/docker-production-aws</a>
    -->
 
-1. In GitHub, fork the repos to your own account. In my case it's "wilsonmar".
+
+## Microtrader Setup Shell File
+
+   PROTIP: I've created a script for you to install everything needed on your mac.
+
+   <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/blob/master/docker-production-aws/microtrader-setup.sh">https://github.com/wilsonmar/DevSecOps/blob/master/docker-production-aws/microtrader-setup.sh</a>
+
+   Triple-click the following command to highlight the whole line:
+
+   <pre>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/docker-production-aws/microtrader-setup.sh)</pre>
+
+   ... then copy it for pasting in your Terminal CLI to run it automatically.
+
+Documentation is inside the script. Here's a highlight:
 
 1. Create a folder "docker-production-aws" under your "projects" or "gits" folder.
 
 1. Clone the folders
 
+   PROTIP: I did not fork the repos to my/your own account so I don't have to keep them updated.
+
 1. Checkout the "final" branch because that is what the files should look like after course exercises are completed successfully. In the above repositories, the "master" branch is the starting point for exercises.
    
    <pre>checkout final</pre>
 
-1.
 
 ## Setup Dependency Utilities
 
