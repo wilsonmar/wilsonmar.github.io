@@ -59,6 +59,8 @@ Salesforce does not provide a comprehensive way to <strong>import</strong> CSV f
 
 (During cloning, existing users and their status and appends the name of the sandbox to logon Id's, but keeps passwords.)
 
+<a target="_blank" href="https://www.cnbc.com/2019/05/17/salesforce-says-a-major-issue-with-cloud-service-results-in-downtime.html">Salesforce encountered a data issue on May 17, 2019</a> related to Pardot.
+
 ## Data Quality
 
 This is covered in the 211 course and Trailhead module: <a target="_blank" href="https://trailhead.salesforce.com/en/modules/data_quality">Data Quality</a> +700 

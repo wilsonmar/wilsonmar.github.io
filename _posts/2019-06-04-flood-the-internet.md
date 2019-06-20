@@ -69,7 +69,7 @@ Recap <em>(click for full screen pop up)</em>:
 
 <a name="CodeSelenium"></a>
 
-## Scripting with Selenium
+## Scripting the-internet with Selenium
 
 T.J. Myer wrote in his website <a target="_blank" href="http://www.tjmaher.com/p/programming-projects.html">
 http://www.tjmaher.com/p/programming-projects.html</a> June - July 2015 a series describing his adventures coding Selenium on Dave's website:

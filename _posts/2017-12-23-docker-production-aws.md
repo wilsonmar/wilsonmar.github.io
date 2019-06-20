@@ -54,7 +54,7 @@ Videos in the course are rated as 10 hours, but it took me more like 70+ hours o
    * MFA (Multi-factor Authentication) in AWS
    * NodeJS 4.x or higher (to install the npm package manager)
    * Python programming language 2.7.14
-   * Packer from Hashicorp
+   * <a target="_blank" href="https://packer.io/docs/installation.htm">Packer from Hashicorp</a> 
    * <a target="_blank" href="https://wilsonmar.github.io/text-editors">Text editor</a> Sublime Text 3 with (darker) Material Theme.
    * iTerm2 for Mac
    * brew install tree - 1.7.0
@@ -238,7 +238,7 @@ The system under test consists of these four processes:
    4. make clean
 
 
-   <a name="iam-setup"></a>
+<a name="iam-setup"></a>
 
 ### 05 - Setting up AWS Access 
 
@@ -267,11 +267,11 @@ The system under test consists of these four processes:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/59862254-ad3a1b80-933f-11e9-8efd-f173c7b7e274.jpg"><img alt="ecs-flow-1507x827-106773.jpg" width="1507" src="https://user-images.githubusercontent.com/300046/59862254-ad3a1b80-933f-11e9-8efd-f173c7b7e274.jpg"></a>
 
-   ECR is like docker-compose. It supports rolling deployments to maintain the Desired Count based on status from the Load Balancer.
+   ECS is like docker-compose. It supports rolling deployments to maintain the Desired Count based on status from the Load Balancer.
 
-   PROTIP: TODO: I'm in the process of creating a script (using CloudFormation/Terraform) that automates the <strong>manual steps</strong> shown in <a target="_blank" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m5&clip=0&mode=live">Justin's videos</a>:
+   PROTIP: TODO: I'm in the process of creating a script that automates the <strong>manual steps</strong> shown in <a target="_blank" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m5&clip=0&mode=live">Justin's videos</a>:
 
-   <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/blob/master/docker-production-aws/ec2-setup.sh">https://github.com/wilsonmar/DevSecOps/blob/master/docker-production-aws/ec2-setup.sh</a>
+   <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/blob/master/docker-production-aws/ecs-setup.sh">https://github.com/wilsonmar/DevSecOps/blob/master/docker-production-aws/ecs-setup.sh</a>
 
    Triple-click the following command to highlight the whole line:
 
@@ -281,17 +281,122 @@ The system under test consists of these four processes:
 
    The steps to publish and run Docker apps using ECS:
 
-   1. Create repository in Amazon's ECR (Elastic Container Repository)
-   1. Publish using the release pipeline
+   Create repository in Amazon's ECR (Elastic Container Repository):
+   1. Define ECS clusters from Docker images in my ECR by substituting FROM values in Docker files with <a target="_blank" title="0:21 into" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m5&clip=3&mode=live&start=119.69">*</a>, such as "FROM dockerproductionaws/microtrader-base" to "FROM 543279062384.dkr.ecr.us-west-2.amazonaws.com/dockerproductionaws/microtrader=base".
+   1. Edit `Makefile` to override <tt>DOCKER_REGISTRY</tt> from "docker.io" to ECR host name (such as "54327906284.dkr.ecr.us-west-2.amazonaws.com")
+   1. Add in `Makefile` <tt>AWS_ACCOUNT_ID ?= </tt> your account, such as "543279062384"
+   1. Add in `Makefile` <tt>DOCKER_LOGIN_EXPRESSION := eval(aws ecr get-login --registry-ids $(AWS_ACCOUNT_ID))</tt>
+   1. `export AWS_PROFILE=docker-prodution-aws-admin`
+   1. `make login` and enter MFA code.
+   1. `make test`
+   1. `make release`
+   1. `make tag: default`
+   1. `docker images` to verify creation
+   
+      
+      Publish using the release pipeline:
 
-   1. Create ECS clusters
-   1. Create ECS task definitions
-   1. Run ECS services and tasks
+   1. `make publish`
+   1. `git commit -a -m "Add support for AWS ECR"` & `git push origin master`
+
+
+   1. Create ECS Clusters using <a target="_blank" href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">AMI Optimized AMIs for your region</a>
+   1. Make use of VPC, Subnet, and Security Group created earlier.
+   1. Verify CloudFormation used under the hood.
+   1. Get public and private IP addresses in Cluster dashboard.
+   1. Use the public IP to SSH into the instance `ssh -i ~/.ssh/docker-production-aws.pem ec2-user@34.214.122.6`
+   1. Verify with `docker info | more` and `docker ps`
+   1. `sudo yum install jq -y`
+   1. `docker inspect -f '{{json .HostConfig.Binds}}' ecs-agent | jq`
+   1. `ls -l /var/log/ecs`
+   1. Local introspection end-point `curl -s localhost:51678/v1/metadata | jq`
+   1. Local introspection end-point `curl -s localhost:51678/v1/tasks | jq`
+
+      Create ECS task definitions<a target="_blank" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m5&clip=6&mode=live&start=119.69">*</a>
+   1. HTTP_PORT 8000
+
+      Create ECS Service:
+
+   1. Select Cluster to create and provide new Service name for 1 Task.
+   1. Verify running
+   1. Run ECS services and task definition to trigger Rolling deployments.
 
 
 ###  07 - Customizing ECS Container Instances
 
    customizing-ecs-container-instances-slides
+
+This creates a custom AMI based on ECS-optimized AMIs.
+
+In ECS-optimized AMIs, the standard Advanced User Data for EC2 start-up is:
+
+   <pre>echo ECS_CLUSTER=microtrader > /etc/ecs/ecs.config</pre>
+
+But from the repo we use file `files/firstrun.sh` to do the same but also enable DOCKER _NETWORK_MODE as "host" (for Docker host networking) and append lines within the `/etc/sysonfig/docker` inside the instance:
+
+   <pre>--bridge-none --ip-forward=false --ip-masq-false --iptables=false</pre>
+
+   The above is passed to the Docker engine to disable features.
+
+Removing the /docker/network forces Docker to recreate it.
+
+Also remove the "docker0" interface.
+
+   <pre>
+|-- packer.json
+`-- scripts
+    |-- cleanup.sh
+    |-- cloud-init-options.sh
+    `-- install-os-packages.sh
+   </pre>
+
+* `scripts/configure-timezone.sh` sets time for Los Anagles and enables NTP (Network Time Protocol)
+
+* CloudWatch Logs Agent for logging and monitoring.
+
+* First run script to set HTTP proxy to secure communications, ECS Agent Config, CloudWatch Logs config, Health Check
+
+   <pre>#!/usr/bin/env bash
+   # Install packages:
+   yum install awslogs -y
+   # Configure packages:
+   echo "ENABLED=true" > /etc/awslogs.conf
+   # Start services:
+   service awslogs start</pre>
+
+* Cloud Formation <strong>cfn-init</strong> file:<a target="_blank" title="0:53 into" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m6&clip=2&mode=live&start=119.69">*</a>
+
+   <pre>config:
+     commands:
+       01_install_awslogs:
+         command: "yum install awslogs -y"
+         env:
+           MY_ENV: "true"
+         cwd: "/home/ec2-user"
+      files:
+        /etc/awslogs.conf:
+          content: "ENABLED=true"
+      services:
+        sysvinit:
+          awslogs:
+            enabled: "true"
+            ensureRunning: "true"</pre>
+
+* Custom Config for Timezone, Enable NTP, Customer Docker config.
+
+- Enable Docker Host Networking<a target="_blank" title="2:05 into" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m6&clip=7&mode=live&start=119.69">*</a>
+
+- Custom AMI Design
+- Understanding EC2 instance
+initialization
+- Using Packer to build Amazon Machine
+Images
+- Customizing Docker
+- CloudWatch Logs Integration
+- HTTP Proxy Support
+- ECS Container Instance Health Checks
+- Building and Publishing the Image
+
 
 ###  08 - Deploying AWS Infrastructure Using Ansible and CloudFormation
 

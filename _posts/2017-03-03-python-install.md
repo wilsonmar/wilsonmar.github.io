@@ -159,6 +159,7 @@ Python 2 comes installed on MacOS machines.
 
    <pre>
    python is /Users/wilsonmar/.pyenv/shims/python
+   python is /usr/bin/python
    </pre>
 
 
@@ -267,7 +268,7 @@ There are so many new features in Python 3 that it doesn't make much sense to st
 Most new features introduced with Python 3 are not backwards compatible with version 2.
 
 
-   ### Python3 executables
+### Where are Python executables?
 
 1. Python3 is installed in a different folder than Python 2.
 
@@ -290,6 +291,8 @@ Most new features introduced with Python 3 are not backwards compatible with ver
    * Python v2 is installed in /usr/bin/python
    * Python v3 is installed in /usr/local/bin/python3
    <br /><br />
+   If you get <tt>/Users/<em>user</em>/.pyenv/shims/python3</tt>
+
 
    ### Python command for Python3
 
@@ -304,7 +307,7 @@ Most new features introduced with Python 3 are not backwards compatible with ver
 
 
 
-### Print
+### Print is different
 
 For the most part, Python 2 code works with Python 3. 
 
@@ -348,21 +351,21 @@ Python: 3.5.2 |Anaconda custom (x86_64)| (default, Jul  2 2016, 17:52:12)
 
 ### Floating point
 
-In Python 2, type:
+In Python 2, type in the REPL:
 
-   1/2
+   <pre>1/2</pre>
 
    The response is:
 
-   0
+   <pre>0</pre>
 
 In Python3, type:
 
-   1/2
+   <pre>1/2</pre>
 
    The response is:
 
-   0.5
+   <pre>0.5</pre>
 
 
 ## Python programming code

@@ -27,7 +27,7 @@ Forrester has Microsoft among leaders (behind Electric Cloud, IBM, Xebia, and CA
 
 NOTE: IBM's product is called "Urban Code". IBM also acquired Red Hat and its Ansible portfolio.
 
-Buck Hodges, Director of Engineering for Microsoft VSTS, <a target="_blank" href="https://www.youtube.com/watch?v=aIiLhK0NIlY">Jun 27, 2018 VIDEO: how Microsoft evolved from on-premise TFS into VSTS as a service shipping in 3 week sprints, from the same code repository. Add  SPS (Shared Platform Service) for account, identity, profile, licensing.
+Buck Hodges (<a target="_blank" href="https://twitter.com/tfsbuck">@tfsbuck</a>), Director of Engineering for Microsoft VSTS, <a target="_blank" href="https://www.youtube.com/watch?v=aIiLhK0NIlY">Jun 27, 2018 VIDEO: Global DevOps Bootcamp 2018 Keynote</a> how Microsoft evolved from on-premise TFS into VSTS as a service shipping in 3 week sprints, from the same code repository. Add  SPS (Shared Platform Service) for account, identity, profile, licensing.
 
 @demovisa keynote #GDBC
 
