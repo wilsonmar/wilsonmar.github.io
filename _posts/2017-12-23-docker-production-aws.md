@@ -26,8 +26,9 @@ because Menga's <em>tour de force</em> covers most of the intricacies one needs 
 
 <strong>"Production"</strong> in the course title means that we need to cover management of secrets. Production also requires use of additional tools. There are so many that product names are listed alphabetically here, with links to my blog about it or the vendor's marketing page, plus the version shown in the video course
 
-   * AWS account with credit card
+   * AWS account from email with credit card
    * Ansible from Red Hat (IBM) 2.4.0
+   * Authenticator app (from Google) on iPhone/Android
    * Bash (shell) scripts
    * Boto3 (Python library for AWS) 1.4.7 <tt>pip install boto3 netaddr</tt> 0.7.19 
    * Bower (npm install -g bower)
@@ -43,7 +44,8 @@ because Menga's <em>tour de force</em> covers most of the intricacies one needs 
    * EC2 (Elastic Cloud Compute)
    * Elastic (Docker) Container Services (ECR)
    * <a target="_blank" href="https://flywaydb.org/">Flyway</a> for lightweight version control of database schema migrations
-   * Git and GitHub account
+   * Git client
+   * GitHub account
    * Gradle (multi-project Java build tool replacing ant and maven)
    * IAM
    * Java (the language )
@@ -72,7 +74,7 @@ The exercise files downloaded is a set of folders named "docker-production-using
 
 * 02 - course-introduction-slides
 
-* 03 - creating-the-sample-application-slides ("microtrader" app programmed in Java runs as a "Fat JAR" within Docker containers). The sample app makes use of a sophisticated event bus provided by the vert.x library so that real-time messages are received using the sockJs library.
+* 03 - creating-the-sample-application-slides ("microtrader" app programmed in Java runs as a "Fat JAR" as a single deployable and runnable artifact within Docker containers). The sample app makes use of a sophisticated event bus provided by the vert.x library so that real-time messages are received using the sockJs library.
 
    <a name="microtrader-arch"></a>
 
@@ -178,15 +180,22 @@ Since its release back on <strong>1 Dec 2017</strong>, some changes have occurre
    1. <a target="_blank" href="https://github.com/docker-production-aws/proxy-resources">proxy-resources</a> - Ansible playbook and CloudFormation template for deploying an HTTP proxy stack based upon Squid 
 
  
-<!-- So I've forked and modified the <a target="_blank" href="https://github.com/docker-production-aws">original code repository</a> to
+   <!-- So I've forked and modified the <a target="_blank" href="https://github.com/docker-production-aws">original code repository</a> to
 
    <a target="_blank" href="https://github.com/wilsonmar/docker-production-aws">https://github.com/wilsonmar/docker-production-aws</a>
--->
+   -->
 
-In the above repositories, the "master" branch is the starting point for exercises.
-The "final" branch is what the files should look like after course exercises are completed successfully.
+1. In GitHub, fork the repos to your own account. In my case it's "wilsonmar".
 
+1. Create a folder "docker-production-aws" under your "projects" or "gits" folder.
 
+1. Clone the folders
+
+1. Checkout the "final" branch because that is what the files should look like after course exercises are completed successfully. In the above repositories, the "master" branch is the starting point for exercises.
+   
+   <pre>checkout final</pre>
+
+1.
 
 ## Setup Dependency Utilities
 
@@ -241,7 +250,8 @@ run using -cluster flag for vert.x
 * => Audit REST endpoint is running at <a href="http://localhost:32768/audit/">http://localhost:32768/audit/</a>
 * => Trader dashboard is running at <a href="http://localhost:32771">http://localhost:32771</a>
 
-# [0:54] into https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m3&clip=8&mode=live
+<!-- # [0:54] into https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m3&clip=8&mode=live
+-->
 "The Healthcheck will curl the port defined  by the HTTP_PORT environment variable
 (or default port 35000) looking for a zero exit code (healthy) every 3 seconds and up to 20 reties.
 In Dockerfile.quote file:
