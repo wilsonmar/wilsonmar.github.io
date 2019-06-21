@@ -328,26 +328,42 @@ The system under test consists of these four processes:
 
 This creates a custom AMI based on ECS-optimized AMIs.
 
-In ECS-optimized AMIs, the standard Advanced User Data for EC2 start-up is:
+In ECS-optimized AMIs, the standard Advanced User Data for EC2 start-up defines part of the "cloud-init" framework at instance creation time:
 
    <pre>echo ECS_CLUSTER=microtrader > /etc/ecs/ecs.config</pre>
 
-But from the repo we use file `files/firstrun.sh` to do the same but also enable DOCKER _NETWORK_MODE as "host" (for Docker host networking) and append lines within the `/etc/sysonfig/docker` inside the instance:
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/59904716-802e4d00-93c1-11e9-9368-e4c746982a2a.jpg"><img alt="cfn-init-flow-1425x815-67695.jpg" width="1425" src="https://user-images.githubusercontent.com/300046/59904716-802e4d00-93c1-11e9-9368-e4c746982a2a.jpg"></a>
+
+* But from the repo we use file `files/firstrun.sh` to do the same but also
+  define the `$PROXY_URL` to a HTTP Proxy that denies traffic to malicious sites and allows traffic to trusted sites. In file `/etc/sysconfig/docker` we specify the Proxy URL the Docker Engine uses when pulling images from the EC2 Container Registry. In file `/etc/ecs/ecs.config`, we specify  NO_PROXY filtering of the EC2 Metadata Service (169.254.169.254) and the ECS Agent (169.254.178.2). In file `/etc/awslogs/proxy.conf` we define Proxy URL for use by the CloudWatch Logs agent.<a target="_blank" title="2:18 into" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m6&clip=9&mode=live&start=119.69">*</a>
+
+   Docker is stopped so removing the `/var/lib/docker/network` file forces Docker to recreate it when it starts.
+
+   The link to `docker0` is deleted so that Vert.x binds to eth0 network interface rather than docker0.
+
+   `|| true` makes it so the command always returns a zero exit code no matter what.
+
+* we create a new shell provisioner that runs `scripts/cloud-init-options.sh` which modifies the cloud-init configuration file `/etc/cloud/cloud.cfg` to set yum package manager repo_update to false and repo_upgrade to none. This is needed because the HTTP Proxy blocks the yum update process which eventually timeout after several retries, significantly increasing the startup time of your ECS container instances. 
+
+* enable DOCKER _NETWORK_MODE as "host" (for Docker host networking) and append lines within the `/etc/sysonfig/docker` inside the instance:
 
    <pre>--bridge-none --ip-forward=false --ip-masq-false --iptables=false</pre>
 
    The above is passed to the Docker engine to disable features.
 
-Removing the /docker/network forces Docker to recreate it.
+   
+* Among provisioners defined in `packer.json` is a call to shell file `scripts/install-os-packages.sh` to install  the "awslogs" yum package that is the <a target="_blank" href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html">CloudWatch Logs agent</a>:
 
-Also remove the "docker0" interface.
+   <pre>sudo yum -y install $packages</pre>
+
+
+   To install the CloudWatch Logs agent, we will create a new provisioner that references a script called install-os-packages, and you can see that the script simply installs a CloudWatch Logs agent using the yum install command. Configuration of the CloudWatch Logs agent is documented at the URL shown, and the nature of the configuration required is to configure the logs agent at instance creation time, hence we will add these configuration tasks to the firstrun script we created earlier in this module. In the script, we write to the referenced awscli. conf configuration file to configure the CloudWatch Logs region, and notice this will expect an environment variable called AWS_DEFAULT_REGION to be configured. We then write out the general AWS Logs configuration to the referenced awslogs. conf file, and here we define a standard suite of log groups that we will post logs to from the local operating system. In total, we define five log groups, one per local operating system log file type, including standard operating system logs as well as Docker logs and ECS agent logs. Notice that we are using a standard convention for defining the log group name, and again, this relies on environment variables to inject the CloudFormation STACK_NAME and AUTOSCALING_GROUP name. For the log_stream_name setting, we reference a special placeholder called instance_id, and the CloudWatch Logs agent will automatically set the stream name to the local EC2 instance ID. After writing the configuration file, we need to actually start the CloudWatch Logs agent as it is not started by default after installation. Again, it is important to remember that the firstrun script is only run at EC2 instance creation time and not actually run during the AMI build process, so we explicitly need to start the CloudWatch Logs agent inside our firstrun script.
+
 
    <pre>
 |-- packer.json
 `-- scripts
     |-- cleanup.sh
-    |-- cloud-init-options.sh
-    `-- install-os-packages.sh
    </pre>
 
 * `scripts/configure-timezone.sh` sets time for Los Anagles and enables NTP (Network Time Protocol)
