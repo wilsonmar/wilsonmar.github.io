@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Docker production AWS"
-excerpt: "from a Mac using EC2 CloudFormation, EC2 Lifecyle hooks for Auto Scaling, Ansible, Boto3 Python, Lambda, KMS, Lambda, CloudWatch, to a non-trivial fictitious stock trading sample app (microtrader app written in Java)"
+title: "Docker production AWS (with automated tests)"
+excerpt: "How to integrate Dockerized multi-process app (written in Java with Vert.X) using Shell scripts, Boto3 Python, Ansible, Packer, IAM, KMS, CloudFormation, EC2 Container Service (ECS) with lifecyle hooks for Auto Scaling, Lambda, CloudWatch"
 tags: [aws, docker, ansible, cfn]
 file: 2017-12-23-docker-production-aws.md
 image:
@@ -16,14 +16,13 @@ comments: true
 
 {% include _toc.html %}
 
-Here are my notes on <strong>automation</strong> of commands <a target="_blank" href="https://www.linkedin.com/in/jmenga/">Justin Menga</a> (<a target="_blank" href="https://github.com/mixja">mixja on GitHub</a>) manually typed in his video course <a target="_blank" href="https://app.pluralsight.com/library/courses/docker-production-using-amazon-web-services/table-of-contents">"Docker in Production Using Amazon Web Services</a>.
-His course was released by Pluralsight. And I think it would be difficult to follow along here unless you get a subscription at Pluralsight.com (less than $300 USD per year).
+There are dozens of little settings one has to get right to get it all working in production. So here are notes on how to do it by <strong>automating</strong> commands suggested by <a href="#Resources">several resources</a>.
 
-Videos in the course are rated as 10 hours, but it took me more like 70+ hours of repeated viewing, study, and scripting because Menga's <em>tour de force</em> covers most of the intricacies one needs to know and be able to actually do in a real job as an AWS Cloud Engineer.
+Dockerizing apps and running them as containers are standard DevOps practice. But there are many options to run  Docker workloads. Which cloud? And what technologies within the chosen cloud? This covers uee of AWS cloud and its IAM and ECR image repo service, but using ECS rather than Fargate or Amazon's Elastic Kubernetes (EKS).
 
-## Parts list (ingredients)
+## Parts list (ingredients for integration)
 
-<strong>"Production"</strong> in the course title means that we need to cover management of secrets. Production also requires use of additional tools. There are so many that product names are listed alphabetically here, with links to my blog about it or the vendor's marketing page, plus the version shown in the video course
+<strong>"Production"</strong> in the blog (and course) title means that we need to cover integration of a large set of components from vendors who don't necessarily talk with each other. The product needed are listed alphabetically here, with links to my blog about it or the vendor's marketing page, plus the version shown I am using (and the one in the video course):
 
    * AWS account from email with credit card
    * Ansible from Red Hat (IBM) 2.4.0
@@ -62,11 +61,14 @@ Videos in the course are rated as 10 hours, but it took me more like 70+ hours o
    * <a target="_blank" href="https://vertx.io/">Vertx</a> for microservices (https://escoffier.me/vertx-hol) event bus
    <br /><br />
 
+<hr />
+
+There are several integration points that various courses cover, solved via Stack Overflow, etc.
 
 ### hosts file fix
 
-<!-- 1:17 into https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m1&clip=6&mode=live
--->
+Menga's course from 2017 identified <a targe="_blank" title="1:17 into" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m1&clip=6&mode=live">this workaround</a>, which is no longer needed:
+
 1. To improve the performance of docker compose commands on MacOS, workaround <a target="_blank" href="https://github.com/docker/docker-py/pull/1928" title="filed 5 May 2016">an issue fixed Feb 26, 2018</a> by
    adding " localunixsocket" to "127.0.0.1   localhost":
 
@@ -79,7 +81,106 @@ Videos in the course are rated as 10 hours, but it took me more like 70+ hours o
 
 <hr />
 
-   PROTIP: Some aspects which need to be updated. But much of the course still applies to harneess Infrastructure as Code (IoC) within Amazon Web Services using Docker and EC2 Container Service (ECS) with EC2 and CloudWatch Logs Agents. It uses EC2 Container Registry (ECR) and Lifecycle Hooks Lambda functions to automate test, build, deploy and operate containerized applications in production using Ansible, CloudFormation, Python Lambda, CodeBuild, CodePipeline, etc. Most other courses do not thoroughly cover secrets management using IAM, MFA, Key Management Service (KMS), auto-scaling, CloudWatch.
+### Microtrader sample app under test
+
+The system under test is "non-trivial", consisting of four app processes
+<!-- 03 - creating-the-sample-application-slides  -->
+
+   <a name="microtrader4"></a>
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/59731992-b4f5a500-9205-11e9-82ba-c34b3df42841.jpg">
+   <img alt="microtrader-925x522-50356.jpg" width="925" src="https://user-images.githubusercontent.com/300046/59731992-b4f5a500-9205-11e9-82ba-c34b3df42841.jpg"></a>
+
+   * Quote Generator at <a href="http://localhost:32770/quote/">http://localhost:32770/quote/</a> 
+      - periodically generates stock market quotes for three fictitious companies: "Black Coat", "D'Oh", "Divinator", "MacroHard".
+      - single instance
+      <br /><br />
+   * Portfolio Service 
+      - trades stocks starting from an initial portfolio of $10000 cash on hand. The trading logic is completely random and non-sensical
+      - single instance
+      <br /><br />
+
+   * Trader Dashboard at <a href="http://localhost:32771">http://localhost:32771</a> 
+      - provides a web dashboard displaying stock market quote activity, recent stock trades and the current state of the portfolio. The dashboard also provides an operational view of the status and service discovery inforamtion for each service.
+      - <strong>multiple instances</strong> for High Availability
+      <br /><br />
+
+   * Audit Service at <a href="http://localhost:32768/audit/">http://localhost:32768/audit/</a> 
+      - audits all stock trading activity, persisting each stock trade to an internal MySQL database
+      - single instance
+      <br /><br />
+
+   ### Vert.x event bus Java library
+
+   To enable  modern <strong>asynchronous</strong> communications through an <strong>event bus</strong> among processes, callbacks within each app component makes use of the <a target="_blank" href="https://vertx.io/">https://vertx.io/</a> library open-sourced at <a target="_blank" href="https://en.wikipedia.org/wiki/Vert.x">https://en.wikipedia.org/wiki/Vert.x</a>. It was programmed in Java by Tim Fox in 2011 while he was employed by VMware. After much discussion with other parties, in January 2013, VMware moved the project and associated IP to the Eclipse Foundation, a neutral legal entity.   
+	Eclipse Vert.x is a polyglot event-driven application framework that runs on Java "Polyglot" refers to Vert.x exposing its idiomatic API in Java, JavaScript, Groovy, Ruby Python, Scala, Kotlin, Clojure, and Ceylon. 
+   Repeated functionality in Vert.x is encapsulated in a "Verticle". Thus its name.
+   Vert.x assumes <strong>single-threaded</strong> scalable non-blocking app design.
+   Real-time messages are received using the sockJs library
+   [Vert.x Microservices Workshop](https://github.com/cescoffier/vertx-microservices-workshop),(which Justin has modified):
+
+   Each "microtrader" app process is built to run as a "Fat JAR" as a single deployable and runnable artifact within Docker containers. 
+
+
+## Custom Shell Scripts
+
+   PROTIP: To simplify, I've created several shell scripts (in GitHub) that gets it all done instead of manually typing after stopping and rewinding videos to specific spots.
+   
+A. <a href="#microtrader-setup">microtrader-setup.sh</a> installs the <a href="#microtrader4">4 microtrader processes<a> after building them from source and testing them using mocha.
+
+B. <a href="#docker-setup">ecr-setup.sh</a> creates Docker images in a private Elastic Repository (ECR) and configures Dockerfiles for use in ECS (Elastic Container Service).
+
+PROTIP: Since there is a flood of responses, there is a provision in the script to output to a logfile.
+
+<!-- 02 - course-introduction-slides
+-->
+
+<hr />
+
+<a name="microtrader-setup"></a>
+
+### microtrader-setup.sh (app build from code & test locally)
+
+1. PROTIP: I've created a shell script (in GitHub) to install the <a href="#microtrader4">4 microtrader processes<a>. View it within an internet browser at:
+
+   <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/blob/master/docker-production-aws/microtrader-setup.sh">https://github.com/wilsonmar/DevSecOps/blob/master/docker-production-aws/microtrader-setup.sh</a>
+
+   * The default is "yes" to install pre-requsites needed. If you're running it multiple times, save time by setting it to "no".
+
+   * The default is "yes" to delete files before and after the run.
+
+1. To use the script on your own MacOS laptop Terminal, triple-click this command to highlight the whole line:
+
+   <pre>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/docker-production-aws/microtrader-setup.sh)"</pre>
+
+   ... then copy it for pasting in your Terminal CLI to run it automatically.
+
+1. Once on your machine, edit the files.
+   
+   Documentation is in the script. But here are highlights:
+
+   * Create a folder "docker-production-aws" under your "projects" or folder. For idempotency, and to ensure that changes in GitHub are reflected: if the folder is already there, delete it.
+   That's also why we don't clone the folders into our own account.
+
+   * Checkout the "final" branch because that is what the files should look like after course exercises are completed successfully. In the above repositories, the "master" branch is the starting point for exercises.
+   
+   <pre>checkout final</pre>
+
+   * Build "fat" jars for each Microservice, using the Gradle shadowJar plugin:<a target="_blank" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m2&clip=2&mode=live">*</a>
+
+   <pre><strong>./gradlew clean test shadowJar</strong></pre>
+
+1. To stop the run, click the red "X" for the Terminal session. 
+1. Verify that processes were terminated:
+
+   <pre>ps -al</pre>
+
+   <a name="circuit-breaker"></a>
+
+   That is because of a Circuit breaker pattern implemented by the Audit Service opening on failure:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/59765767-fca71b80-925b-11e9-97c5-81ff13f8b461.png"><img alt="circuit-breaker-pattern-971x473-41827.jpg" width="971" src="https://user-images.githubusercontent.com/300046/59765767-fca71b80-925b-11e9-97c5-81ff13f8b461.png"></a>
+
 
 
 ## Code in GitHub
@@ -116,105 +217,16 @@ DOTHIS: In GitHub, <strong>watch</strong> each of these repositories:
    <br /><br />
 
    <!-- So I've forked and modified the <a target="_blank" href="https://github.com/docker-production-aws">original code repository</a> to
-
    <a target="_blank" href="https://github.com/wilsonmar/docker-production-aws">https://github.com/wilsonmar/docker-production-aws</a>
    -->
 
 
-## Scripts
-
-   PROTIP: I've created several shell scripts (in GitHub):
-   
-A. <a href="#microtrader-setup">microtrader-setup.sh</a> installs the <a href="#microtrader4">4 microtrader processes<a> after building them from source and testing them using mocha.
-
-B. <a href="#docker-setup">ecr-setup.sh</a> creates Docker images in a private Elastic Repository (ECR) and configures Dockerfiles for use in ECS (Elastic Container Service).
-
-PROTIP: Since there is a flood of responses, there is a provision in the script to output to a logfile.
-
-<!-- 02 - course-introduction-slides
--->
 
 ## Exercise files = PDFs
 
 Click <a target="_blank" href="https://app.pluralsight.com/library/courses/docker-production-using-amazon-web-services/exercise-files">"Exercise files" on Pluralsight.com</a> downloads a folder named "docker-production-using-amazon-web-services". 
 Its sub-folders contain pdf files within folders of just numbers.
 So I've named chapter names and put them all in one folder:
-
-### 03 - creating-the-sample-application-slides 
-
-The system under test consists of these four processes:
-
-   <a name="microtrader4"></a>
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/59731992-b4f5a500-9205-11e9-82ba-c34b3df42841.jpg">
-   <img alt="microtrader-925x522-50356.jpg" width="925" src="https://user-images.githubusercontent.com/300046/59731992-b4f5a500-9205-11e9-82ba-c34b3df42841.jpg"></a>
-
-   * Quote Generator at <a href="http://localhost:32770/quote/">http://localhost:32770/quote/</a> 
-      - periodically generates stock market quotes for three fictitious companies: "Black Coat", "D'Oh", "Divinator", "MacroHard".
-      - single instance
-      <br /><br />
-   * Portfolio Service 
-      - trades stocks starting from an initial portfolio of $10000 cash on hand. The trading logic is completely random and non-sensical
-      - single instance
-      <br /><br />
-
-   * Trader Dashboard at <a href="http://localhost:32771">http://localhost:32771</a> 
-      - provides a web dashboard displaying stock market quote activity, recent stock trades and the current state of the portfolio. The dashboard also provides an operational view of the status and service discovery inforamtion for each service.
-      - <strong>multiple instances</strong> for High Availability
-      <br /><br />
-
-   * Audit Service at <a href="http://localhost:32768/audit/">http://localhost:32768/audit/</a> 
-      - audits all stock trading activity, persisting each stock trade to an internal MySQL database
-      - single instance
-      <br /><br />
-
-   To enable  modern <strong>asynchronous</strong> communications through an <strong>event bus</strong> among processes, callbacks within each app component makes use of the <a target="_blank" href="https://vertx.io/">https://vertx.io/</a> library open-sourced at <a target="_blank" href="https://en.wikipedia.org/wiki/Vert.x">https://en.wikipedia.org/wiki/Vert.x</a>. It was programmed in Java by Tim Fox in 2011 while he was employed by VMware. After much discussion with other parties, in January 2013, VMware moved the project and associated IP to the Eclipse Foundation, a neutral legal entity.   
-	Eclipse Vert.x is a polyglot event-driven application framework that runs on Java "Polyglot" refers to Vert.x exposing its idiomatic API in Java, JavaScript, Groovy, Ruby Python, Scala, Kotlin, Clojure, and Ceylon. 
-   Repeated functionality in Vert.x is encapsulated in a "Verticle". Thus its name.
-   Vert.x assumes <strong>single-threaded</strong> scalable non-blocking app design.
-   Real-time messages are received using the sockJs library
-   [Vert.x Microservices Workshop](https://github.com/cescoffier/vertx-microservices-workshop),(which Justin has modified):
-
-   Each "microtrader" app process is built to run as a "Fat JAR" as a single deployable and runnable artifact within Docker containers. 
-   
-
-
-<a name="microtrader-setup"></a>
-
-#### Microtrader Build & Test Locally from Code
-
-   PROTIP: I've created a shell script (in GitHub) to install the <a href="#microtrader4">4 microtrader processes<a>:
-
-   <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/blob/master/docker-production-aws/microtrader-setup.sh">https://github.com/wilsonmar/DevSecOps/blob/master/docker-production-aws/microtrader-setup.sh</a>
-
-   Triple-click the following command to highlight the whole line:
-
-   <pre>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/docker-production-aws/microtrader-setup.sh)"</pre>
-
-   ... then copy it for pasting in your Terminal CLI to run it automatically.
-
-   Documentation is in the script. But here are highlights:
-
-   * Create a folder "docker-production-aws" under your "projects" or folder. For idempotency, and to ensure that changes in GitHub are reflected: if the folder is already there, delete it.
-   That's also why we don't clone the folders into our own account.
-
-   * Checkout the "final" branch because that is what the files should look like after course exercises are completed successfully. In the above repositories, the "master" branch is the starting point for exercises.
-   
-   <pre>checkout final</pre>
-
-   * Build "fat" jars for each Microservice, using the Gradle shadowJar plugin:<a target="_blank" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m2&clip=2&mode=live">*</a>
-
-   <pre><strong>./gradlew clean test shadowJar</strong></pre>
-
-   * To stop the run, click the red "X" for the Terminal session. Verify that processes were terminated:
-
-   <pre>ps -al</pre>
-
-   <a name="circuit-breaker"></a>
-
-   That is because of a Circuit breaker pattern implemented by the Audit Service opening on failure:
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/59765767-fca71b80-925b-11e9-97c5-81ff13f8b461.png"><img alt="circuit-breaker-pattern-971x473-41827.jpg" width="971" src="https://user-images.githubusercontent.com/300046/59765767-fca71b80-925b-11e9-97c5-81ff13f8b461.png"></a>
 
 
 ### 04 - Creating Docker Release Images
@@ -258,12 +270,11 @@ The system under test consists of these four processes:
    5. Create users
    6. Enroll users for MFA
 
-
    <a name="ec2-setup"></a>
 
 ###  06 - Running Docker Apps in EC2 from ECR in ECS
 
-   running-docker-applications-using-the-ec2-container-service-slides
+   <!-- running-docker-applications-using-the-ec2-container-service-slides -->
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/59862254-ad3a1b80-933f-11e9-8efd-f173c7b7e274.jpg"><img alt="ecs-flow-1507x827-106773.jpg" width="1507" src="https://user-images.githubusercontent.com/300046/59862254-ad3a1b80-933f-11e9-8efd-f173c7b7e274.jpg"></a>
 
@@ -326,7 +337,18 @@ The system under test consists of these four processes:
 
    customizing-ecs-container-instances-slides
 
-This creates a custom AMI based on ECS-optimized AMIs.
+To create a custom AMI based on ECS-optimized AMIs:
+
+1. Triple-click the following command to highlight the whole line:
+
+   <pre>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/docker-production-aws/microtrader-setup.sh)"</pre>
+
+   ... then copy it for pasting in your Terminal CLI to run it automatically.
+
+   Documentation is in the script. But here are highlights:
+
+1. https://github.com/docker-production-aws/packer-ecs/blob/final/Makefile
+
 
 In ECS-optimized AMIs, the standard Advanced User Data for EC2 start-up defines part of the "cloud-init" framework at instance creation time:
 
@@ -334,53 +356,7 @@ In ECS-optimized AMIs, the standard Advanced User Data for EC2 start-up defines 
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/59904716-802e4d00-93c1-11e9-9368-e4c746982a2a.jpg"><img alt="cfn-init-flow-1425x815-67695.jpg" width="1425" src="https://user-images.githubusercontent.com/300046/59904716-802e4d00-93c1-11e9-9368-e4c746982a2a.jpg"></a>
 
-* But from the repo we use file `files/firstrun.sh` to do the same but also
-  define the `$PROXY_URL` to a HTTP Proxy that denies traffic to malicious sites and allows traffic to trusted sites. In file `/etc/sysconfig/docker` we specify the Proxy URL the Docker Engine uses when pulling images from the EC2 Container Registry. In file `/etc/ecs/ecs.config`, we specify  NO_PROXY filtering of the EC2 Metadata Service (169.254.169.254) and the ECS Agent (169.254.178.2). In file `/etc/awslogs/proxy.conf` we define Proxy URL for use by the CloudWatch Logs agent.<a target="_blank" title="2:18 into" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m6&clip=9&mode=live&start=119.69">*</a>
-
-   Docker is stopped so removing the `/var/lib/docker/network` file forces Docker to recreate it when it starts.
-
-   The link to `docker0` is deleted so that Vert.x binds to eth0 network interface rather than docker0.
-
-   `|| true` makes it so the command always returns a zero exit code no matter what.
-
-* we create a new shell provisioner that runs `scripts/cloud-init-options.sh` which modifies the cloud-init configuration file `/etc/cloud/cloud.cfg` to set yum package manager repo_update to false and repo_upgrade to none. This is needed because the HTTP Proxy blocks the yum update process which eventually timeout after several retries, significantly increasing the startup time of your ECS container instances. 
-
-* enable DOCKER _NETWORK_MODE as "host" (for Docker host networking) and append lines within the `/etc/sysonfig/docker` inside the instance:
-
-   <pre>--bridge-none --ip-forward=false --ip-masq-false --iptables=false</pre>
-
-   The above is passed to the Docker engine to disable features.
-
-   
-* Among provisioners defined in `packer.json` is a call to shell file `scripts/install-os-packages.sh` to install  the "awslogs" yum package that is the <a target="_blank" href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html">CloudWatch Logs agent</a>:
-
-   <pre>sudo yum -y install $packages</pre>
-
-
-   To install the CloudWatch Logs agent, we will create a new provisioner that references a script called install-os-packages, and you can see that the script simply installs a CloudWatch Logs agent using the yum install command. Configuration of the CloudWatch Logs agent is documented at the URL shown, and the nature of the configuration required is to configure the logs agent at instance creation time, hence we will add these configuration tasks to the firstrun script we created earlier in this module. In the script, we write to the referenced awscli. conf configuration file to configure the CloudWatch Logs region, and notice this will expect an environment variable called AWS_DEFAULT_REGION to be configured. We then write out the general AWS Logs configuration to the referenced awslogs. conf file, and here we define a standard suite of log groups that we will post logs to from the local operating system. In total, we define five log groups, one per local operating system log file type, including standard operating system logs as well as Docker logs and ECS agent logs. Notice that we are using a standard convention for defining the log group name, and again, this relies on environment variables to inject the CloudFormation STACK_NAME and AUTOSCALING_GROUP name. For the log_stream_name setting, we reference a special placeholder called instance_id, and the CloudWatch Logs agent will automatically set the stream name to the local EC2 instance ID. After writing the configuration file, we need to actually start the CloudWatch Logs agent as it is not started by default after installation. Again, it is important to remember that the firstrun script is only run at EC2 instance creation time and not actually run during the AMI build process, so we explicitly need to start the CloudWatch Logs agent inside our firstrun script.
-
-
-   <pre>
-|-- packer.json
-`-- scripts
-    |-- cleanup.sh
-   </pre>
-
-* `scripts/configure-timezone.sh` sets time for Los Anagles and enables NTP (Network Time Protocol)
-
-* CloudWatch Logs Agent for logging and monitoring.
-
-* First run script to set HTTP proxy to secure communications, ECS Agent Config, CloudWatch Logs config, Health Check
-
-   <pre>#!/usr/bin/env bash
-   # Install packages:
-   yum install awslogs -y
-   # Configure packages:
-   echo "ENABLED=true" > /etc/awslogs.conf
-   # Start services:
-   service awslogs start</pre>
-
-* Cloud Formation <strong>cfn-init</strong> file:<a target="_blank" title="0:53 into" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m6&clip=2&mode=live&start=119.69">*</a>
+A sample Cloud Formation <strong>cfn-init</strong> file:<a target="_blank" title="0:53 into" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m6&clip=2&mode=live&start=119.69">*</a>
 
    <pre>config:
      commands:
@@ -398,19 +374,68 @@ In ECS-optimized AMIs, the standard Advanced User Data for EC2 start-up defines 
             enabled: "true"
             ensureRunning: "true"</pre>
 
+The `aws-cfn-bootstrap` yum package is installed by the `install-os-packages.sh` bash script.
+
+<hr />
+
+Docker Networking modes like Docker NAT and Bridge networking. 
+
+From the repo we use file `files/firstrun.sh` to do the same but also
+  define the `$PROXY_URL` to a HTTP Proxy that denies traffic to malicious sites and allows traffic to trusted sites. In file `/etc/sysconfig/docker` we specify the Proxy URL the Docker Engine uses when pulling images from the EC2 Container Registry. In file `/etc/ecs/ecs.config`, we specify  NO_PROXY filtering of the EC2 Metadata Service (169.254.169.254) and the ECS Agent (169.254.178.2). In file `/etc/awslogs/proxy.conf` we define Proxy URL for use by the CloudWatch Logs agent.<a target="_blank" title="2:18 into" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m6&clip=9&mode=live&start=119.69">*</a>
+
+   Docker is stopped so removing the `/var/lib/docker/network` file forces Docker to recreate it when it starts.
+
+   The link to `docker0` is deleted so that Vert.x binds to eth0 network interface rather than docker0.
+
+   `|| true` makes it so the command always returns a zero exit code no matter what.
+
+* we create a new shell provisioner that runs `scripts/cloud-init-options.sh` which modifies the cloud-init configuration file `/etc/cloud/cloud.cfg` to set yum package manager repo_update to false and repo_upgrade to none. This is needed because the HTTP Proxy blocks the yum update process which eventually timeout after several retries, significantly increasing the startup time of your ECS container instances. 
+
+* enable DOCKER _NETWORK_MODE as "host" (for Docker host networking) and append lines within the `/etc/sysonfig/docker` inside the instance:
+
+   <pre>--bridge-none --ip-forward=false --ip-masq-false --iptables=false</pre>
+
+   The above is passed to the Docker engine to disable features.
+
+1. Run Packer:
+
+   <pre><strong>packer build packer.json</strong></pre>
+
+   Among provisioners defined in `packer.json` is a call to shell file `scripts/install-os-packages.sh` to install  the "awslogs" yum package that is the <a target="_blank" href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html">CloudWatch Logs agent</a>:
+
+   <pre>sudo yum -y install $packages</pre>
+
+   To install the CloudWatch Logs agent, we will create a new provisioner that references a script called install-os-packages, and you can see that the script simply installs a CloudWatch Logs agent using the yum install command. Configuration of the CloudWatch Logs agent is documented at the URL shown, and the nature of the configuration required is to configure the logs agent at instance creation time, hence we will add these configuration tasks to the firstrun script we created earlier in this module. In the script, we write to the referenced awscli. conf configuration file to configure the CloudWatch Logs region, and notice this will expect an environment variable called AWS_DEFAULT_REGION to be configured. We then write out the general AWS Logs configuration to the referenced awslogs. conf file, and here we define a standard suite of log groups that we will post logs to from the local operating system. In total, we define five log groups, one per local operating system log file type, including standard operating system logs as well as Docker logs and ECS agent logs. Notice that we are using a standard convention for defining the log group name, and again, this relies on environment variables to inject the CloudFormation STACK_NAME and AUTOSCALING_GROUP name. For the log_stream_name setting, we reference a special placeholder called instance_id, and the CloudWatch Logs agent will automatically set the stream name to the local EC2 instance ID. After writing the configuration file, we need to actually start the CloudWatch Logs agent as it is not started by default after installation. Again, it is important to remember that the firstrun script is only run at EC2 instance creation time and not actually run during the AMI build process, so we explicitly need to start the CloudWatch Logs agent inside our firstrun script.
+
+   The file needs aws credential info because Packer (being outside Amazon), doesn't support IAM.<a target="_blank" title="0:48 into" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m6&clip=12&mode=live">*</a>, so
+
+   <pre>export AWS_PROFILE=docker-production-aws-admin</pre>
+
+   <pre>aws sts assume-role --role-arn arn:aws:iam::54327906384:role/admin \
+   --role-session-name justin.menga</pre>
+
+* `scripts/configure-timezone.sh` sets time for Los Anagles and enables NTP (Network Time Protocol)
+
+* CloudWatch Logs Agent for logging and monitoring.
+
+* First run script to set HTTP proxy to secure communications, ECS Agent Config, CloudWatch Logs config, Health Check
+
+   <pre>#!/usr/bin/env bash
+   # Install packages:
+   yum install awslogs -y
+   # Configure packages:
+   echo "ENABLED=true" > /etc/awslogs.conf
+   # Start services:
+   service awslogs start</pre>
+
 * Custom Config for Timezone, Enable NTP, Customer Docker config.
 
 - Enable Docker Host Networking<a target="_blank" title="2:05 into" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m6&clip=7&mode=live&start=119.69">*</a>
 
-- Custom AMI Design
-- Understanding EC2 instance
-initialization
-- Using Packer to build Amazon Machine
-Images
-- Customizing Docker
-- CloudWatch Logs Integration
-- HTTP Proxy Support
-- ECS Container Instance Health Checks
+* Script `scripts/cleanup.sh` <a target="_blank" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m6&clip=11&mode=live">*</a>
+   stops dockers, removes lingering logs, and the dock0 interface, etc.
+
+
 - Building and Publishing the Image
 
 
@@ -471,8 +496,24 @@ continuous-delivery-using-codepipeline-slides
 (or default port 35000) looking for a zero exit code (healthy) every 3 seconds and up to 20 reties.
 In Dockerfile.quote file:
 
-   <pre>HEALTHCHECK --interval=3s CMD curl -fs http://localhost:$(HTTP_PORT:-35000)/$(HTTP_ROOT)
+   <pre>HEALTHCHECK --interval=3s CMD curl -fs http://localhost:$(HTTP_PORT:-35000)/$(HTTP_ROOT)</pre>
+
+<a name="Resources"></a>
 
 ## Resources
 
- Stephen Grider’s Udemy course “ Docker and Kubernetes: The Complete Guide”
+Beginner:
+
+   * Stephen Grider’s Udemy course “ Docker and Kubernetes: The Complete Guide”
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-managing-docker-containers/table-of-contents">Managing Docker Containers in AWS</a> Pluralsight 1h 8m video course 4 Jun 2019
+   by Jean Francois Landry covers the fundamentals of Docker containers in AWS. Hands-on labs teach you how to easily get started by running your first Docker container.
+
+Intermediate:
+
+   * <a target="_blank" href="https://www.linkedin.com/in/jmenga/">Justin Menga</a> (<a target="_blank" href="https://github.com/mixja">mixja on GitHub</a>) manually typed in his video course <a target="_blank" href="https://app.pluralsight.com/library/courses/docker-production-using-amazon-web-services/table-of-contents">"Docker in Production Using Amazon Web Services</a>. His course was released by Pluralsight. And I think it would be difficult to follow along here unless you get a subscription at Pluralsight.com (less than $300 USD per year). His videos are rated as 10 hours, but it took me more like 70+ hours of repeated viewing, study, and scripting because Menga's <em>tour de force</em> covers most of the intricacies one needs to know and be able to actually do in a real job as an AWS Cloud Engineer.
+
+The course doesn't cover use of Fargate and EKS. That's covered by:
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/using-docker-aws/table-of-contents">Using Docker on AWS</a> Pluralsight 1hr24m video course 12 Jun 2019 by <a target="_blank" href="https://linkedin.com/in/dbclinton">David Clinton</a> (<a target="_blank" href="https://twitter.com/davidbclinton">@davidbclinton</a>, <a target="_blank" href="https://bootstrap-it.com/docker4aws/">bootstrap-it.com/docker4aws</a>) covers CLI tools to use the ECR image repo service to manage containers using ECS (including Amazon's managed container launch type), Fargate, and Kubernetes (EKS).
+
