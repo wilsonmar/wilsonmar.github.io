@@ -2619,14 +2619,61 @@ curl -v http://$DOCKER_HOST  # visit in your browser.
 ## Docker Swarm #
 
 Docker Swarm creates and manages <strong>clustered</strong> (pool of) Docker servers.
-It scales containers
-by dispersing containers across multiple hosts.
+It scales containers by dispersing containers across multiple hosts.
+
+1. Be at a folder.
+1. Download the `wordpress-swarm.yml` 
+1. Initializing Docker Swarm launches a container that is used as
+the <strong>Swarm Manager</strong> master which communicates with all nodes in a Swarm cluster.
+
+   <tt><strong>docker swarm init
+   </strong></tt>
+
+   The response:<a target="_blank" href="https://app.pluralsight.com/player?course=using-docker-aws&author=david-clinton&name=440cc04e-14c6-45e5-ba8d-2df97c1b1358&clip=1&mode=live">*</a>
+
+   <pre>Swarm initialized: current node (x3t9fal0if4a84mn7o5y1o6mf) is now a manager.
+&nbsp;
+To add a worker to this swarm, run the following command:
+&nbsp;
+    docker swarm join --token SWMTKN-1-0l1x7cjd605n2m1uo3w2il86kngdb2q0otzzhf2du2idshr0xw-0otui67aoq7r7tf7h3meqk6g1 192.168.65.3:2377
+&nbsp;
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+   </pre>
+
+2. Do it:
+
+   <tt><strong>docker stack deploy -c wordpress-stack.yml  mywordpress
+   </strong></tt>
+
+   response:
+
+   <pre>Creating network mywordpress_default
+Creating service mywordpress_wordpress
+Creating service mywordpress_db
+   </pre>
+
+3. Get IP address of the host ("192.168.0.195"):
+
+   <tt><strong>ip a
+   </strong></tt>
+
+   <pre>
+en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	ether 8c:85:90:2b:ad:e9
+	inet6 fe80::10e1:325e:a565:1a27/64 secured scopeid 0x8
+	inet 192.168.0.195/24 brd 192.168.0.255 en0
+   </pre>
+
+4. Open the website:
+
+   <tt><strong>http://192.168.0.195:80</strong></tt>
+
+   If you get "Error establishing a database connection"
+
+<hr />
 
    <tt><strong>docker run swarm create
    </strong></tt>
-
-Installing Docker Swarm launches a container that is used as
-the Swarm Manager master to communicate to all the nodes in a Swarm cluster.
 
 See <a target="_blank" href="https://docs.docker.com/swarm/">https://docs.docker.com/swarm</a>
 

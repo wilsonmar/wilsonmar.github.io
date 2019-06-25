@@ -83,7 +83,7 @@ Menga's course from 2017 identified <a targe="_blank" title="1:17 into" href="ht
 
 ### Microtrader sample app under test
 
-The system under test is "non-trivial", consisting of four app processes
+The "non-trivial" system under test consists of four app processes:
 <!-- 03 - creating-the-sample-application-slides  -->
 
    <a name="microtrader4"></a>
@@ -110,7 +110,7 @@ The system under test is "non-trivial", consisting of four app processes
       - single instance
       <br /><br />
 
-   ### Vert.x event bus Java library
+### Vert.x event bus Java library
 
    To enable  modern <strong>asynchronous</strong> communications through an <strong>event bus</strong> among processes, callbacks within each app component makes use of the <a target="_blank" href="https://vertx.io/">https://vertx.io/</a> library open-sourced at <a target="_blank" href="https://en.wikipedia.org/wiki/Vert.x">https://en.wikipedia.org/wiki/Vert.x</a>. It was programmed in Java by Tim Fox in 2011 while he was employed by VMware. After much discussion with other parties, in January 2013, VMware moved the project and associated IP to the Eclipse Foundation, a neutral legal entity.   
 	Eclipse Vert.x is a polyglot event-driven application framework that runs on Java "Polyglot" refers to Vert.x exposing its idiomatic API in Java, JavaScript, Groovy, Ruby Python, Scala, Kotlin, Clojure, and Ceylon. 
@@ -397,7 +397,22 @@ From the repo we use file `files/firstrun.sh` to do the same but also
 
    The above is passed to the Docker engine to disable features.
 
-1. Run Packer:
+1. Install Packer. On MacOS use `brew install packer`.
+
+   <pre>Downloading https://homebrew.bintray.com/bottles/packer-1.4.1.mojave.bottle.tar.gz
+   zsh completions have been installed to:
+  /usr/local/share/zsh/site-functions
+==> Summary
+🍺  /usr/local/Cellar/packer/1.4.1: 7 files, 139.8MB
+   </pre>
+
+   A template json file references within folder `/usr/local/bin/packer` three types of scrips:<a target="_blank" href="https://app.pluralsight.com/player?course=linux-server-virtualization-lpic3-304-1&author=david-clinton&name=linux-server-virtualization-lpic3-304-1-m6&clip=0&mode=live">*</a>
+
+   * builders that generate machine images (specifying AWS credentials, instance type, AMI name, etc.)
+   * provisioners configure software to run images
+   * processors build artifacts from images
+
+1. Run Packer (from Hashicorp):
 
    <pre><strong>packer build packer.json</strong></pre>
 
@@ -498,11 +513,17 @@ In Dockerfile.quote file:
 
    <pre>HEALTHCHECK --interval=3s CMD curl -fs http://localhost:$(HTTP_PORT:-35000)/$(HTTP_ROOT)</pre>
 
+## Siging API Gateway requests
+
+https://github.com/jmenga/requests-aws-sign
+is a Boto3 Python package that enables AWS V4 request signing using the Python requests library.
+
+
 <a name="Resources"></a>
 
 ## Resources
 
-Beginner:
+It's irritating, but many courses, even at the same vendor (such as Pluralsight) cover the same beginner information:
 
    * Stephen Grider’s Udemy course “ Docker and Kubernetes: The Complete Guide”
 

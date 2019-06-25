@@ -16,31 +16,28 @@ comments: true
 
 {% include _toc.html %}
 
-This page dives into the <strong>technical ideosycracies</strong> of the <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/mac-setup-all.sh">"mac-setup-all.sh" bash script file</a> which installs apps on Macs.
+<a target="_blank" href="https://wilsonmar.github.io/bash-coding">This page</a> is a deep dive into the <strong>technical ideosycracies</strong> of shell script files.
 
-This tutorial picks up from <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/README.md">this README to the mac-setup script tutorial</a>,
-which provides someone new to Macs specific steps to configure and run scripts to install apps on Macs. So first finish reading that about "shbangs" and grep for Bash shell versions.
+This tutorial picks up from <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/README.md">this README</a> which provides someone new to Macs specific steps to configure and run scripts to install apps on Macs. So first finish reading that about "shbangs" and grep for Bash shell versions.
 
-NOTE: This page is still actively under construction (as of July 1, 2018).
+NOTE: This page is still actively under construction (as of June, 2019).
 
 
 <a name="Style"></a>
 
 ## A Question of Style
 
-> The best professionals I know who work as a team try more to be clear rather than to be clever.
-
-What I try to avoid is:
-
-   * Using a single line when several is more clear. I think it's OK to use more lines
-   * Using complex commands when simple ones do the same
-   * Using a lesser number of comparisons if it makes the code unreadable
-   <br /><br />
+> The best professionals I know who work as a team try to be more clear rather than be more clever.
 
 The more people who can understand the code and make changes without error,
 the more valuable that script is. Elegance is as elegance does.
 
-Below is a Bash script deep-dive.
+What I try to <strong>avoid</strong> is:
+
+   * Squeezing several commands into a single line when several lines is more clear. I think it's OK to use more lines
+   * Using complex commands when simple ones do the same
+   * Using syntax not recognized by <strong>multiple platforms</strong> (recognized by both Bourne and Bash shells on Mac and Linux)
+   <br /><br />
 
 
 <a name="ShellCheck"></a>
