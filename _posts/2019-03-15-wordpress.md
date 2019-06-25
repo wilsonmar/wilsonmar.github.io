@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "WordPress"
-excerpt: "A vibrant ecosystem for dynamic websites"
+excerpt: "A vibrant ecosystem for quickly building and maintaining dynamic feature-rich websites"
 tags: [devops, front-end, evaluation]
 Categories: Devops
-filename: wordpress.md
+filename: 2019-03-15-wordpress.md
 # wordpress-1900x500.jpg 
 image:
   feature: https://user-images.githubusercontent.com/300046/60097512-c7de0d00-9710-11e9-9618-66fbfb1f682b.jpg
@@ -20,7 +20,7 @@ comments: true
 
 ## WordPress has popular features
 
-<a target="_blank" href="https://w3techs.com/technologies/overview/content_management/all/"><img align="right" alt="wordpress-marketshare-361x324-11925.jpg" width="361" src="https://user-images.githubusercontent.com/300046/60096682-cd3a5800-970e-11e9-9447-c986c1d3fc00.jpg"></a>One report</a> states that "As of June 2019, WordPress is used by 60.8% of all the websites whose content management system is known. This is 27.5% of the top 10 million websites." That makes it (by far) the world's most popular <strong>blogging and content management</strong> software platform (among websites which use one). 
+<a target="_blank" href="https://w3techs.com/technologies/overview/content_management/all/"><img align="right" alt="wordpress-marketshare-361x324-11925.jpg" width="261" src="https://user-images.githubusercontent.com/300046/60096682-cd3a5800-970e-11e9-9447-c986c1d3fc00.jpg">One report</a> states that "As of June 2019, WordPress is used by 60.8% of all the websites whose content management system is known. This is 27.5% of the top 10 million websites." That makes it (by far) the world's most popular <strong>blogging and content management</strong> software platform (among websites which use one). 
 
 One reason for its popularity is that WordPress is <strong>free and open source</strong> software, as are all its components, which consist of a Linux operating system, Apache web server, MySQL database, and PHP language. 
 
@@ -90,9 +90,7 @@ Locally:
    * Download bits from <a target="_blank" href="https://wordpress.org/showcase/">wordpress.org/showcase</a>
    * MAMP on your macOS laptop
 
-Running WordPress in the cloud provides options for High-Availability, logging (CloudWatch), backups, CDN (CloudFront), etc:
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/50410712-bef39980-07c8-11e9-9138-bc22d4183589.png"><img alt="1,920px × 1,080px" width="1920" src="https://user-images.githubusercontent.com/300046/50410712-bef39980-07c8-11e9-9138-bc22d4183589.png"></a>
+In a cloud:
 
    * Docker image managed by Kubernetes in AWS, Azure, Google, <a href="#Alibaba">Alibaba</a>, and other cloud takes considerable work.
    * <a target="_blank" href="https://aws.amazon.com/getting-started/tutorials/launch-an-app/?trk=gs_card">AWS Elastic Beanstalk</a>
@@ -192,9 +190,13 @@ Setting Up a Server Cluster for Enterprise Web Apps</a> April 23, 2018
 
 ## AWS EC2 High Availability with Auto-Scaling
 
-1. Create an AWS root account 
+Running WordPress in the cloud provides options for High-Availability, logging (CloudWatch), backups, CDN (CloudFront), etc:
 
-2. Create an AWS account with permissions to create, update, and delete:
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/50410712-bef39980-07c8-11e9-9138-bc22d4183589.png"><img alt="1,920px × 1,080px" width="1920" src="https://user-images.githubusercontent.com/300046/50410712-bef39980-07c8-11e9-9138-bc22d4183589.png"></a>
+<a target="_blank" title="published Jan 3, 2012" href="https://www.slideshare.net/harishganesan/scaling-wordpress-in-aws-amazon-ec2">Image credit</a>: by <a target="_blank" title="harish11g.aws@gmail.com" href="http://harish11g.blogspot.com">Harish Ganesan</a> (<a target="_blank" href="https://www.linkedin.com/in/harishganesan/">*</a>) 
+
+1. Create an AWS root account 
+2. Define permissions to create, update, and delete:
 
    * Amazon Route 53 DNS
    * S3
@@ -206,13 +208,6 @@ Setting Up a Server Cluster for Enterprise Web Apps</a> April 23, 2018
    * CloudFront CDN
    <br /><br />
 
-   ![wordpress-aws-1920x1080.png](https://user-images.githubusercontent.com/300046/50410712-bef39980-07c8-11e9-9138-bc22d4183589.png)
-
-   References:
-   https://www.slideshare.net/harishganesan/scaling-wordpress-in-aws-amazon-ec2
-   by Harish Ganesan at http://harish11g.blogspot.com  - harish11g.aws@gmail.com
-   https://www.linkedin.com/in/harishganesan/
-   Published on Jan 3, 2012 
 
    ### Route 53 DNS
 
@@ -291,7 +286,7 @@ and its <a target="_blank" href="https://make.wordpress.org/cli/handbook/install
 <a target="_blank" href="https://kaiten.support/how-to-automate-wordpress-and-wp-config-php-creation/">
 PHP script generates a wp-config.php file</a>
 
-<a target="_blank" href="https://deliciousbrains.com/automating-local-wordpress-site-setup-scripts/
+<a target="_blank" href="https://deliciousbrains.com/automating-local-wordpress-site-setup-scripts/">
 written for OS contains bash scripts</a>
 
 with Alfred.
