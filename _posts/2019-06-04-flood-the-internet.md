@@ -94,51 +94,51 @@ The same issues addressed above also need to be addressed by any app automation 
 
 ## Challenges on The-Internet
 
-Click on the test name to see the GUI on-line at <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a>
+Click on <a target="_blank" href="https://the-internet.herokuapp.com/"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a> to see the GUI on-line at <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a>
 
-1. <a target="_blank" href="https://the-internet.herokuapp.com/abtest">A/B Testing</a>
-2. <a target="_blank" href="https://the-internet.herokuapp.com/add_remove_elements/">Add/Remove Elements</a>
-3. <a target="_blank" href="https://the-internet.herokuapp.com/basic_auth">Basic Auth (user and pass: admin)</a>
-4. <a target="_blank" href="https://the-internet.herokuapp.com/broken_images">Broken Images</a>
-5. <a target="_blank" href="https://the-internet.herokuapp.com/challenging_dom">-</a> <a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/04-Challenging_DOM.ts"><img width="32" src="https://flood.io/wp-content/uploads/2018/09/cropped-favicon-75x75.png">Challenging DOM</a> - this is the one impacting server resource
-6. <a target="_blank" href="https://the-internet.herokuapp.com/checkboxes">Checkboxes</a>
-7. <a target="_blank" href="https://the-internet.herokuapp.com/context_menu">Context Menu</a>
-8. <a target="_blank" href="https://the-internet.herokuapp.com/digest_auth">Digest Authentication</a> (user and pass: admin)
-9. <a target="_blank" href="https://the-internet.herokuapp.com/disappearing_elements">Disappearing Elements</a>
-10. <a target="_blank" href="https://the-internet.herokuapp.com/drag_and_drop">Drag and Drop</a>
-11. <a target="_blank" href="https://the-internet.herokuapp.com/dropdown">Dropdown</a>
-12. <a target="_blank" href="https://the-internet.herokuapp.com/dynamic_content">Dynamic Content</a>
-13. <a target="_blank" href="https://the-internet.herokuapp.com/dynamic_controls">Dynamic Controls</a>
-14. <a target="_blank" href="https://the-internet.herokuapp.com/dynamic_loading ">Dynamic Loading</a>
-15. <a target="_blank" href="https://the-internet.herokuapp.com/entry_ad">Entry Ad</a>
-16. <a target="_blank" href="https://the-internet.herokuapp.com/exit_intent"> Exit Intent</a>
-17. <a target="_blank" href="https://the-internet.herokuapp.com/download"> File Download</a>
-18. <a target="_blank" href="https://the-internet.herokuapp.com/upload"> File Upload</a> (issue in Element handling Windows vs Linux, also in Selenium)
-19. <a target="_blank" href="https://the-internet.herokuapp.com/floating_menu"> Floating Menu</a>
-20. <a target="_blank" href="https://the-internet.herokuapp.com/forgot_password"> Forgot Password</a>
-21. <a target="_blank" href="https://the-internet.herokuapp.com/login"> Form Authentication</a>
-22. <a target="_blank" href="https://the-internet.herokuapp.com/frames"> Frames</a>
-23. <a target="_blank" href="https://the-internet.herokuapp.com/geolocation"> Geolocation</a>
-24. <a target="_blank" href="https://the-internet.herokuapp.com/horizontal_slider"> Horizontal Slider</a>
-25. <a target="_blank" href="https://the-internet.herokuapp.com/hovers"> Hovers</a>
-26. <a target="_blank" href="https://the-internet.herokuapp.com/infinite_scroll"> Infinite Scroll</a>
-27. <a target="_blank" href="https://the-internet.herokuapp.com/inputs"> Inputs</a>
-28. <a target="_blank" href="https://the-internet.herokuapp.com/jqueryui/menu"> JQuery UI Menus</a>
-29. <a target="_blank" href="https://the-internet.herokuapp.com/javascript_alerts"> JavaScript Alerts</a>
-30. <a target="_blank" href="https://the-internet.herokuapp.com/javascript_error"> JavaScript onload event error</a>
-31. <a target="_blank" href="https://the-internet.herokuapp.com/key_presses"> Key Presses</a>
-32. <a target="_blank" href="https://the-internet.herokuapp.com/large"> Large & Deep DOM</a>
-33. <a target="_blank" href="https://the-internet.herokuapp.com/windows"> Multiple Windows</a>
-34. <a target="_blank" href="https://the-internet.herokuapp.com/nested_frames"> Nested Frames</a>
-35. <a target="_blank" href="https://the-internet.herokuapp.com/notification_message"> Notification Messages</a>
-36. <a target="_blank" href="https://the-internet.herokuapp.com/redirector"> Redirect Link</a>
-37. <a target="_blank" href="https://the-internet.herokuapp.com/download_secure"> Secure File Download</a>
-38. <a target="_blank" href="https://the-internet.herokuapp.com/shifting_content"> Shifting Content</a>
-39. <a target="_blank" href="https://the-internet.herokuapp.com/slow"> Slow Resources</a>
-40. <a target="_blank" href="https://the-internet.herokuapp.com/tables"> Sortable Data Tables</a>
-41. <a target="_blank" href="https://the-internet.herokuapp.com/status_codes"> Status Codes</a>
-42. <a target="_blank" href="https://the-internet.herokuapp.com/typos"> Typos</a>
-43. <a target="_blank" href="https://the-internet.herokuapp.com/tinymce"> WYSIWYG Editor</a>
+1. <a target="_blank" href="https://the-internet.herokuapp.com/abtest"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/04-Challenging_DOM.ts"><img width="21" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png">A/B Testing</a>
+2. <a target="_blank" href="https://the-internet.herokuapp.com/add_remove_elements/"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png">Add/Remove Elements</a>
+3. <a target="_blank" href="https://the-internet.herokuapp.com/basic_auth"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/02-Basic%20Auth.ts"><img width="21" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png">Basic Auth (user and pass: admin)</a>
+4. <a target="_blank" href="https://the-internet.herokuapp.com/broken_images"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/03-Broken%20Images.ts"><img width="21" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png">Broken Images</a>
+5. <a target="_blank" href="https://the-internet.herokuapp.com/challenging_dom"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/04-Challenging_DOM.ts"><img width="21" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png">Challenging DOM</a> - this is the one impacting server resource
+6. <a target="_blank" href="https://the-internet.herokuapp.com/checkboxes"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/05-Checkboxes.ts"><img width="21" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png">Checkboxes</a>
+7. <a target="_blank" href="https://the-internet.herokuapp.com/context_menu"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png">Context Menu</a>
+8. <a target="_blank" href="https://the-internet.herokuapp.com/digest_auth"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png">Digest Authentication</a> (user and pass: admin)
+9. <a target="_blank" href="https://the-internet.herokuapp.com/disappearing_elements"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/07-Disappearing_Elements.ts"><img width="21" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png">Disappearing Elements</a>
+10. <a target="_blank" href="https://the-internet.herokuapp.com/drag_and_drop"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Drag and Drop</a>
+11. <a target="_blank" href="https://the-internet.herokuapp.com/dropdown"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/09-Dropdown.ts"><img width="21" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png">Dropdown</a>
+12. <a target="_blank" href="https://the-internet.herokuapp.com/dynamic_content"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/10-Dynamic_Content.ts"><img width="21" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png">Dynamic Content</a>
+13. <a target="_blank" href="https://the-internet.herokuapp.com/dynamic_controls"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/11-Dynamic_Controls.ts"><img width="21" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png">Dynamic Controls</a>
+14. <a target="_blank" href="https://the-internet.herokuapp.com/dynamic_loading "><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/12-Dynamic_Loading.ts"><img width="21" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png">Dynamic Loading</a>
+15. <a target="_blank" href="https://the-internet.herokuapp.com/entry_ad"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Entry Ad</a>
+16. <a target="_blank" href="https://the-internet.herokuapp.com/exit_intent"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Exit Intent</a>
+17. <a target="_blank" href="https://the-internet.herokuapp.com/download"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/14-File_Download.ts"><img width="21" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png">File Download</a>
+18. <a target="_blank" href="https://the-internet.herokuapp.com/upload"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> File Upload</a> (issue in Element handling Windows vs Linux, also in Selenium)
+19. <a target="_blank" href="https://the-internet.herokuapp.com/floating_menu"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png">Floating Menu</a>
+20. <a target="_blank" href="https://the-internet.herokuapp.com/forgot_password"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png">Forgot Password</a>
+21. <a target="_blank" href="https://the-internet.herokuapp.com/login"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png">Form Authentication</a>
+22. <a target="_blank" href="https://the-internet.herokuapp.com/frames"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png">Frames</a>
+23. <a target="_blank" href="https://the-internet.herokuapp.com/geolocation"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png">Geolocation</a>
+24. <a target="_blank" href="https://the-internet.herokuapp.com/horizontal_slider"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Horizontal Slider</a>
+25. <a target="_blank" href="https://the-internet.herokuapp.com/hovers"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png">Hovers</a>
+26. <a target="_blank" href="https://the-internet.herokuapp.com/infinite_scroll"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Infinite Scroll</a>
+27. <a target="_blank" href="https://the-internet.herokuapp.com/inputs"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Inputs</a>
+28. <a target="_blank" href="https://the-internet.herokuapp.com/jqueryui/menu"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> JQuery UI Menus</a>
+29. <a target="_blank" href="https://the-internet.herokuapp.com/javascript_alerts"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> JavaScript Alerts</a>
+30. <a target="_blank" href="https://the-internet.herokuapp.com/javascript_error"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> JavaScript onload event error</a>
+31. <a target="_blank" href="https://the-internet.herokuapp.com/key_presses"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Key Presses</a>
+32. <a target="_blank" href="https://the-internet.herokuapp.com/large"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Large &amp; Deep DOM</a>
+33. <a target="_blank" href="https://the-internet.herokuapp.com/windows"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Multiple Windows</a>
+34. <a target="_blank" href="https://the-internet.herokuapp.com/nested_frames"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Nested Frames</a>
+35. <a target="_blank" href="https://the-internet.herokuapp.com/notification_message"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Notification Messages</a>
+36. <a target="_blank" href="https://the-internet.herokuapp.com/redirector"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Redirect Link</a>
+37. <a target="_blank" href="https://the-internet.herokuapp.com/download_secure"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Secure File Download</a>
+38. <a target="_blank" href="https://the-internet.herokuapp.com/shifting_content"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Shifting Content</a>
+39. <a target="_blank" href="https://the-internet.herokuapp.com/slow"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Slow Resources</a>
+40. <a target="_blank" href="https://the-internet.herokuapp.com/tables"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Sortable Data Tables</a>
+41. <a target="_blank" href="https://the-internet.herokuapp.com/status_codes"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Status Codes</a>
+42. <a target="_blank" href="https://the-internet.herokuapp.com/typos"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Typos</a>
+43. <a target="_blank" href="https://the-internet.herokuapp.com/tinymce"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> WYSIWYG Editor</a>
 
 <hr />
 
