@@ -17,6 +17,11 @@ comments: true
 
 {% include _toc.html %}
 
+The interest in WordPress here is making use of recent (working) scripts and instructions created by various people in the community to easily install and maintain WordPress. <a href="#ManyWaysToHost">See below</a>.
+
+My code for this is at <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/tree/master/wordpress">https://github.com/wilsonmar/DevSecOps/tree/master/wordpress</a>
+
+https://designextreme.com/
 
 ## WordPress has popular features
 
@@ -27,14 +32,16 @@ One reason for its popularity is that WordPress is <strong>free and open source<
    * Instead of MySQL, some use MariaDB Galera Server 10.0
    * PHP7 requires WordPress 4.4 or higher and compatible plugins
 
-Its low cost of entry has resulted in WordPress being developed by a world-wide community who have contributed over 45,000 themes, plugins, and widgets that enable an unlimited combination of features. Advances in internet technologies are quickly made available in plugins. Users can easily create and edit static webpages and blog posts using its intuitive editor. Without even thinking about details like browser compatibility or responsiveness, content creators are free to create and format text, images, and layout on every page and post. 
+Its low cost of entry has resulted in WordPress being developed by a world-wide community who have contributed over 45,000 themes, plugins, and widgets that enable an unlimited combination of features. Advances in internet technologies are quickly made available in plugins. 
+
+Users can easily create and edit static webpages and blog posts using its intuitive editor. Without even thinking about details like browser compatibility or responsiveness, content creators are free to create and format text, images, and layout on every page and post. 
 
 In summary:
 
    *    Rich text and HTML editing
    *    User roles and permissions
    *    Hundreds of themes, many optimized for mobile users
-   *    Thousands of add-ons for ecommerce, SEO, email, spam filtering, analytics and more
+   * <a target="_blank" href="https://wordpress.org/showcase/">wordpress.org/showcase</a> lists thousands of add-ons for ecommerce, SEO, email, spam filtering, analytics and more
    *    Multi-user and multi-blogging capabilities
    *    Multilingual support
    *    SEO optimized
@@ -44,6 +51,9 @@ In summary:
 Wordpress was first released on May 27, 2003 by Matt Mullenwick in San Francisco, California, USA. See <a target="_blank" href="https://en.wikipedia.org/wiki/WordPress">Wikipedia</a>.
 
 Matt's company, Automattic, makes money from providing hosting to enterprises such as the New York Times, CNN, etc. Code created is folded into the open-source repository.
+
+
+<a name="Issues"></a>
 
 ## Issues with WordPress
 
@@ -57,38 +67,36 @@ Wordpress sites also run in several processes running all the time:
 
    * a SQL database back-end
    * a <strong>Management server</strong> containing WordPress programs responding to requests
-
-Resources:
-   * https://make.wordpress.org/cli/handbook/installing/#installing-via-docker
-   * https://codex.wordpress.org/Installing_WordPress
    <br /><br />
-
 
 By contrast, <a target="_blank" href="https://wilsonmar.github.io/static-websites/">static websites</a> are HTML files which are served without interpretation by the web server. JavaScript downloaded on client browsers perform the customization.
 
 This architecture of WordPress can result in developers and users experiencing a "white screen of death" or generic "500 internal server error". This can be the result of neglecting to replace the default .htaccess file with one for running WordPress. 
 
+<a name="ManyWaysToHost"></a>
 
 ## Many ways to host WordPress
 
-There are many options for hosting a WordPress website:
+The many options for hosting a WordPress website:
 
-On the cloud:
+### On the cloud:
 
    * <a href="#WordPressOnline">WordPress online</a> provides a GUI
 
-For developers to exercise more control:
+### Easy local start on your laptop:
 
-   * <a href="#Bitnami">Bitnami AMI</a> on AWS
-   * VPS (Virtual Private Server) hosts offer tools (e.g. Fantastico) to automatically install WordPress for you. 
+   * MAMP on your laptop requires configuration
+   * MAMP on your laptop running within Virtualbox 
 
-   * <a target="_blank" href="https://lightsail.aws.amazon.com/ls/docs/en/articles/getting-started-with-amazon-lightsail">AWS Lightsail</a> to <a target="_blank" href="https://aws.amazon.com/getting-started/tutorials/launch-a-wordpress-website/">Launch a WordPress Website on Amazon</a>
+   * <a href="#DockerCompose">Run Docker Compose</a>
+   * <a href="#DockerLocal">Run docker on a laptop</a>
 
-Locally:
+### For developers to exercise more control:
 
-   * <a href="#DockerLocal">Docker Community Endition on a laptop</a>
-   * Download bits from <a target="_blank" href="https://wordpress.org/showcase/">wordpress.org/showcase</a>
-   * MAMP on your macOS laptop
+   * <a href="#Bitnami">Bitnami AWS EC2 AMI</a> on AWS
+
+   * VPS (Virtual Private Server) hosts offer tools (e.g. Fantastico) to automatically install WordPress.
+   * <a target="_blank" href="https://lightsail.aws.amazon.com/ls/docs/en/articles/getting-started-with-amazon-lightsail">AWS Lightsail</a> to <a target="_blank" href="https://aws.amazon.com/getting-started/tutorials/launch-a-wordpress-website/">Launch a WordPress Website in Amazon</a>
 
 In a cloud:
 
@@ -99,7 +107,18 @@ In a cloud:
    * AWS AMI images of EC2 instances using AWS Fargate, which takes care of scaling
    <br /><br />
 
+Click on each option to view more.
+
 <hr />
+
+## wp-cli - a way to keep up
+
+Automation is important not just during installation, but also troubleshooting, maintenance, and update.
+
+Automation such as <a target="_blank" href="https://blog.noah.hearle.com/wordpress-server-wide-plugin-update/">Noah Hearle's plugin updater</a> provide an easier way for WordPress administrators to keep up with the rapid pace of update, especially while WordPress migrates to use of React.
+
+<a target="_blank" href="https://wp-cli.org/">wp-cli.org</a> (by <a target="_blank" href="https://www.alainschlesser.com/">Alain Schlesser</a>) provides a command-line interface to manage WordPress plugins, etc. It's installed on a Mac with <a target="_blank" href="https://make.wordpress.org/cli/handbook/installing/#installing-via-homebrew">brew install wp-cli</a>.
+
 
 <a name="WordPressOnline"></a>
 
@@ -117,7 +136,49 @@ PROTIP: Even if you don't want a WordPress website, <a target="_blank" href="htt
 
 <a name="DockerLocal"></a>
 
-## Docker Community Endition on a laptop
+## Scripts to install Docker image on a laptop
+
+Several have written bash/shell scripts to install WordPress locally:
+
+That is used by <a target="_blank" href="https://blog.noah.hearle.com/wordpress-installer/">Noah Hearle's bash script to install WordPress and <strong>add several security measures</strong>. Available since Aug 2015.
+
+   1. Install and update WordPress in your own language to web root or a sub directory
+   2. Handles file and directory permissions
+   3. Removes licence.txt and readme.html
+   4. Checks for a working database connection
+   5. Adds a random database prefix
+   6. Generates random username and password for administrators
+   7. Set the maximum upload and post limits
+   8. Creates the .htaccess to allow for URL rewriting, adds browser caching and some basic security measures
+   9. Uninstall functionality
+   10. Besides the setup part, this will install WordPress without requiring WP-Cli
+   <br /><br />
+
+<a target="_blank" href="https://kaiten.support/how-to-automate-wordpress-and-wp-config-php-creation/">
+PHP script generates a wp-config.php file</a>
+
+<a target="_blank" href="https://deliciousbrains.com/automating-local-wordpress-site-setup-scripts/">
+Written for OS contains bash scripts</a>
+
+<a target="_blank" href="https://gist.github.com/ethicka/c1b71e258a88b8523b7f21f164656b88">
+William Donahoe = ethicka</a>
+
+<a target="_blank" href="https://gist.github.com/bgallagh3r/2853221">
+ Wordpress: Bash Install Script</a> -- Downloads latest WP version, updates wp-config with user supplied DB name, username and password, creates and CHMOD's uploads dir, copies all the files into the root dir you run the script from, then deletes itself!
+
+<a target="_blank" href="https://github.com/cconversion/wp-installer">
+wp-installer</a> - Run the 'wp-prov' script first to check your installation envirnment is running with the right settings (automagically writes PHP.ini and other settings, installs default configs for WordPress to get up and running).
+    Run 'wp-install' to build a new site in way less than 5mins... I average ~2-3min with this script, with all hosts configured and everything uninstallable easily.
+
+
+<a target="_blank" href="https://www.wpkube.com/automate-wordpress-installs-setup/">
+WP Quick Install</a>
+
+
+
+<a name="DockerCompose"></a>
+
+## Docker Compose 
 
 TODO: This is under construction (I'm working on it).
 
@@ -265,45 +326,6 @@ Once the instance is running, enter the public DNS provided by Amazon into your 
 
 You can go to '/wp-admin/' from your browser to access the application administration panel. The default server administrator is 'user'. Please check our documentation at https://docs.bitnami.com/aws/faq/#how-to-find-application-credentials to learn how to get your password. You may change this username and password within the application settings. You can also access your instance via SSH using the username 'bitnami' and your Amazon private key. For additional setup instructions and frequently asked questions please go to https://docs.bitnami.com/aws/apps/wordpress/
 
-## CLI Automating
-
-<a target="_blank" href="https://blog.noah.hearle.com/wordpress-installer/"> fully installs WordPress from a shell command and add a number of security measures to boot. Available since Aug 2015.
-
-    Install and update WordPress in your own language to web root or a sub directory
-    Handles file and directory permissions
-    Removes licence.txt and readme.html
-    Checks for a working database connection
-    Adds a random database prefix
-    Generates random username and password for administrators
-    Set the maximum upload and post limits
-    Creates the .htaccess to allow for URL rewriting, adds browser caching and some basic security measures
-    Uninstall functionality
-    Besides the setup part, this will install WordPress without requiring WP-Cli
-
-<a target="_blank" href="https://wp-cli.org/">wp-cli.org</a>
-and its <a target="_blank" href="https://make.wordpress.org/cli/handbook/installing/#installing-via-homebrew">brew install wp-cli</a>
-
-<a target="_blank" href="https://kaiten.support/how-to-automate-wordpress-and-wp-config-php-creation/">
-PHP script generates a wp-config.php file</a>
-
-<a target="_blank" href="https://deliciousbrains.com/automating-local-wordpress-site-setup-scripts/">
-written for OS contains bash scripts</a>
-
-with Alfred.
-
-<a target="_blank" href="https://gist.github.com/ethicka/c1b71e258a88b8523b7f21f164656b88">
-William Donahoe = ethicka</a>
-
-<a target="_blank" href="https://gist.github.com/bgallagh3r/2853221">
- Wordpress: Bash Install Script</a> -- Downloads latest WP version, updates wp-config with user supplied DB name, username and password, creates and CHMOD's uploads dir, copies all the files into the root dir you run the script from, then deletes itself!
-
-<a target="_blank" href="https://github.com/cconversion/wp-installer">
-wp-installer</a> - Run the 'wp-prov' script first to check your installation envirnment is running with the right settings (automagically writes PHP.ini and other settings, installs default configs for WordPress to get up and running).
-    Run 'wp-install' to build a new site in way less than 5mins... I average ~2-3min with this script, with all hosts configured and everything uninstallable easily.
-
-
-<a target="_blank" href="https://www.wpkube.com/automate-wordpress-installs-setup/">
-WP Quick Install</a>
 
 
 ## Duplicator plugin
@@ -334,3 +356,9 @@ https://help.salesforce.com/articleView?id=bots_service_intro.htm&type=5
 
 After configuring it with their AWS account credentials, users can generate audio feeds for their content through the Amazon Polly service (https://aws.amazon.com/polly/).
 
+
+## Resources
+
+   * https://make.wordpress.org/cli/handbook/installing/#installing-via-docker
+
+   * https://codex.wordpress.org/Installing_WordPress
