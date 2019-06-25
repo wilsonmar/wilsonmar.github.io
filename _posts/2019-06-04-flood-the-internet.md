@@ -17,7 +17,7 @@ comments: true
 {% include _toc.html %}
 
 Below is the narration (transcript) of the video that focus on understanding of how components are related to each other:
-<a name="Video"></a>
+<a name="IntroVideo"></a>
 <amp-youtube data-videoid="a6wshuLBhjs" layout="responsive" width="480" height="270"></amp-youtube><br />
 
 Many are familiar with this website: <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a>. It presents <a href="#Controls">43 controls</a> challenging those learning to <a href="#CodeSelenium">code test automation scripts for Selenium</a>, as taught by courses offered on websites <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a>. <<<
@@ -76,78 +76,75 @@ http://www.tjmaher.com/p/programming-projects.html</a> June - July 2015 a series
 
 1. <a target="_blank" href="http://www.tjmaher.com/2015/06/simple-manipulation-of-login-page.html">
 Sketch out the simple manipulation of a Login page</a>
-
 2. <a target="_blank" href="http://www.tjmaher.com/2015/06/creating-common-utilities-for-webdriver.html">
 Draft Common Utilities</a>
-
 3. <a target="_blank" href="http://www.tjmaher.com/2015/07/how-java-stores-constants-static-final.html">
 Storing Constants: static finals vs enums</a>
-
 4. <a target="_blank" href="http://www.tjmaher.com/2015/07/storing-locators-for-web-elements.html">
 Storing Locators for Web Elements</a>
-
 5. <a target="_blank" href="http://www.tjmaher.com/2015/07/the-internet-page-object-model-examples.html">
 The Page Object Model</a>
-
 6. <a target="_blank" href="http://www.tjmaher.com/2015/07/the-internet-writing-automated-test.html">
 Writing the Automated Test</a>
+
+The same issues addressed above also need to be addressed by any app automation tool.
 
 
 <a name="Controls"></a>
 
 ## Challenges on The-Internet
 
-<a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a>
+Click on the test name to see the GUI on-line at <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a>
 
-1. A/B Testing
-2. Add/Remove Elements
-3. Basic Auth (user and pass: admin)
-4. Broken Images
-5. Challenging DOM - this is the one impacting server resource
-6. Checkboxes
-7. Context Menu
-8. Digest Authentication (user and pass: admin)
-9. Disappearing Elements
-10. Drag and Drop
-11. Dropdown
-12. Dynamic Content
-13. Dynamic Controls
-14. Dynamic Loading
-15. Entry Ad
-16. Exit Intent
-17. File Download
-18. File Upload (issue in Element handling Windows vs Linux, also in Selenium)
-19. Floating Menu
-20. Forgot Password
-21. Form Authentication
-22. Frames
-23. Geolocation
-24. Horizontal Slider
-25. Hovers
-26. Infinite Scroll
-27. Inputs
-28. JQuery UI Menus
-29. JavaScript Alerts
-30. JavaScript onload event error
-31. Key Presses
-32. Large & Deep DOM
-33. Multiple Windows
-34. Nested Frames
-35. Notification Messages
-36. Redirect Link
-37. Secure File Download
-38. Shifting Content
-39. Slow Resources
-40. Sortable Data Tables
-41. Status Codes
-42. Typos
-43. WYSIWYG Editor
+1. <a target="_blank" href="https://the-internet.herokuapp.com/abtest">A/B Testing</a>
+2. <a target="_blank" href="https://the-internet.herokuapp.com/add_remove_elements/">Add/Remove Elements</a>
+3. <a target="_blank" href="https://the-internet.herokuapp.com/basic_auth">Basic Auth (user and pass: admin)</a>
+4. <a target="_blank" href="https://the-internet.herokuapp.com/broken_images">Broken Images</a>
+5. <a target="_blank" href="https://the-internet.herokuapp.com/challenging_dom">-</a> <a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/04-Challenging_DOM.ts"><img width="32" src="https://flood.io/wp-content/uploads/2018/09/cropped-favicon-75x75.png">Challenging DOM</a> - this is the one impacting server resource
+6. <a target="_blank" href="https://the-internet.herokuapp.com/checkboxes">Checkboxes</a>
+7. <a target="_blank" href="https://the-internet.herokuapp.com/context_menu">Context Menu</a>
+8. <a target="_blank" href="https://the-internet.herokuapp.com/digest_auth">Digest Authentication</a> (user and pass: admin)
+9. <a target="_blank" href="https://the-internet.herokuapp.com/disappearing_elements">Disappearing Elements</a>
+10. <a target="_blank" href="https://the-internet.herokuapp.com/drag_and_drop">Drag and Drop</a>
+11. <a target="_blank" href="https://the-internet.herokuapp.com/dropdown">Dropdown</a>
+12. <a target="_blank" href="https://the-internet.herokuapp.com/dynamic_content">Dynamic Content</a>
+13. <a target="_blank" href="https://the-internet.herokuapp.com/dynamic_controls">Dynamic Controls</a>
+14. <a target="_blank" href="https://the-internet.herokuapp.com/dynamic_loading ">Dynamic Loading</a>
+15. <a target="_blank" href="https://the-internet.herokuapp.com/entry_ad">Entry Ad</a>
+16. <a target="_blank" href="https://the-internet.herokuapp.com/exit_intent"> Exit Intent</a>
+17. <a target="_blank" href="https://the-internet.herokuapp.com/download"> File Download</a>
+18. <a target="_blank" href="https://the-internet.herokuapp.com/upload"> File Upload</a> (issue in Element handling Windows vs Linux, also in Selenium)
+19. <a target="_blank" href="https://the-internet.herokuapp.com/floating_menu"> Floating Menu</a>
+20. <a target="_blank" href="https://the-internet.herokuapp.com/forgot_password"> Forgot Password</a>
+21. <a target="_blank" href="https://the-internet.herokuapp.com/login"> Form Authentication</a>
+22. <a target="_blank" href="https://the-internet.herokuapp.com/frames"> Frames</a>
+23. <a target="_blank" href="https://the-internet.herokuapp.com/geolocation"> Geolocation</a>
+24. <a target="_blank" href="https://the-internet.herokuapp.com/horizontal_slider"> Horizontal Slider</a>
+25. <a target="_blank" href="https://the-internet.herokuapp.com/hovers"> Hovers</a>
+26. <a target="_blank" href="https://the-internet.herokuapp.com/infinite_scroll"> Infinite Scroll</a>
+27. <a target="_blank" href="https://the-internet.herokuapp.com/inputs"> Inputs</a>
+28. <a target="_blank" href="https://the-internet.herokuapp.com/jqueryui/menu"> JQuery UI Menus</a>
+29. <a target="_blank" href="https://the-internet.herokuapp.com/javascript_alerts"> JavaScript Alerts</a>
+30. <a target="_blank" href="https://the-internet.herokuapp.com/javascript_error"> JavaScript onload event error</a>
+31. <a target="_blank" href="https://the-internet.herokuapp.com/key_presses"> Key Presses</a>
+32. <a target="_blank" href="https://the-internet.herokuapp.com/large"> Large & Deep DOM</a>
+33. <a target="_blank" href="https://the-internet.herokuapp.com/windows"> Multiple Windows</a>
+34. <a target="_blank" href="https://the-internet.herokuapp.com/nested_frames"> Nested Frames</a>
+35. <a target="_blank" href="https://the-internet.herokuapp.com/notification_message"> Notification Messages</a>
+36. <a target="_blank" href="https://the-internet.herokuapp.com/redirector"> Redirect Link</a>
+37. <a target="_blank" href="https://the-internet.herokuapp.com/download_secure"> Secure File Download</a>
+38. <a target="_blank" href="https://the-internet.herokuapp.com/shifting_content"> Shifting Content</a>
+39. <a target="_blank" href="https://the-internet.herokuapp.com/slow"> Slow Resources</a>
+40. <a target="_blank" href="https://the-internet.herokuapp.com/tables"> Sortable Data Tables</a>
+41. <a target="_blank" href="https://the-internet.herokuapp.com/status_codes"> Status Codes</a>
+42. <a target="_blank" href="https://the-internet.herokuapp.com/typos"> Typos</a>
+43. <a target="_blank" href="https://the-internet.herokuapp.com/tinymce"> WYSIWYG Editor</a>
 
 <hr />
 
 ## Steps
 
-The actual manual and automated steps may be in a different order than the <a href="#Video">video above</a>, which is focused on presenting the logic.
+The actual manual and automated steps may be in a different order than the <a href="#IntroVideo">introductory video above</a>, which is focused on presenting the logic.
 
 Here, two AWS EC2 instances are instantiated using Docker:
 
