@@ -22,51 +22,7 @@ This is a hands-on introduction to installing and using <a target="_blank" href=
 
 For a basic understanding of how components are related to each other, first, view the video and its narration (transcript):
 
-<a name="IntroVideo"></a>
-<amp-youtube data-videoid="a6wshuLBhjs" layout="responsive" width="480" height="270"></amp-youtube><br />
-
-Many are familiar with this website: <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a>. It presents <a href="#Controls">43 controls</a> challenging those learning to <a href="#CodeSelenium">code test automation scripts for Selenium</a>, as taught by courses offered on websites <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a>. <<<
-
-We would like to emulate <strong>several users</strong> at one time exercising this website because we want to see how much a challenging JavaScript control can impact the server environment's <strong>memory, CPU, and other metrics</strong>. <<<
-
-But we don't want our experiments to overload for everyone else Dave's public site. 
-
-So we emulate <a href="#ManualActions">manual actions</a> on the <strong>app in a Docker container</strong> running within the <strong>AWS cloud</strong>.
-
-In this presentation we show how you can automate the install and operation of our sample web app using scripts from our <strong>GitHub</strong> repository.
-
-We first set up <strong>credentials</strong> for a AWS account with a role containing applicable permissions for our scripts. The <strong>build script</strong> makes use of <strong>Dave Hoeffer's Docker image</strong> within Docker Hub and uses it to create our own app server under test. <<<
-
-<a href="#ScriptsInGitHub">Our GitHub repository</a> also contains <strong>Flood Element Typescript code</strong> that was previously recorded based on manual actions defined. 
-This pre-recorded script provides a reference for those moving from Selenium, to show how Element scripts handle <a href="#Controls">all the controls presented by Dave's sample app</a>.
-
-After we update the <strong>IP address and port number</strong> in the script, we get registered to use the <a target="_blank" href="https://www.flood.io/">flood.io</a> performance testing service in the cloud. We can then <strong>upload</strong> our script and <strong>run</strong> it against our sample app based on <strong>run parameters</strong> defined in Flood. <<<
-
-We do all this so we can analyze the impact of the client app on various metrics sent to an integrated <strong>metrics dashboard</strong> in the cloud at <a target="_blank" href="https://www.newrrelic.com/">newrelic.com</a>.
-
-The metrics are sent by a <strong>monitoring process</strong> app that obtains 
-<strong>custom event</strong> collected by an <strong>agent</strong> added to the app source code. To build that app, we provide you an <strong>instrumentation script</strong> from GitHub. The program grabs and installs a <strong>Docker image from New Relic</strong> in Docker Hub. 
-
-Because the app under test was written in Ruby, the agent installed is an rpm file (<strong>newrelic.rpm</strong>) which is specified in the <strong>Gemfile</strong>. When the source is rebundled it is automatically downloaded and installed.
-
-A <strong>license key</strong> from the vendor is installed with the agent so it can validate communications.
-
-<!-- We don't create an <strong>instrumented Docker image</strong> that has the agent already installed because the license differs for each installation. 
--->
-
-The license key is also pasted onto flood.io's web form to validate metrics that Flood sends to  NewRelic's metrics dashboard.
-
-This article describes use of a single instance type. But we can extend this work to get answers to questions about several other dimensions, such as:
-
-   * What is the impact on the cloud bill (costs) of that cool JavaScript UI code? 
-   * What is the capacity of a chosen instance type (such as the free tier t2.micro)?
-   * How much more is needed to run the anticipated peak load?
-   * What happens when that peak load is exceeded?
-   <br /><br />
-
-Recap <em>(click for full screen pop up)</em>:
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/59231154-e4206c80-8b9c-11e9-92ba-7711776a23f9.jpg"><img alt="flood-the-internet-v06e-1621x854-110126.jpg" width="1621" src="https://user-images.githubusercontent.com/300046/59231154-e4206c80-8b9c-11e9-92ba-7711776a23f9.jpg"></a>
+<a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/"><img width="632" alt="flood-the-internet-v08-632x319" src="https://user-images.githubusercontent.com/300046/60193419-e3224880-97f4-11e9-9ed0-c7a5173ecf61.png"></a>
 
 
 <a name="CLIinstall"></a>

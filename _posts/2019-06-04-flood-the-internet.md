@@ -61,7 +61,7 @@ This article describes use of a single instance type. But we can extend this wor
 
 Recap <em>(click for full screen pop up)</em>:
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/59231154-e4206c80-8b9c-11e9-92ba-7711776a23f9.jpg"><img alt="flood-the-internet-v06e-1621x854-110126.jpg" width="1621" src="https://user-images.githubusercontent.com/300046/59231154-e4206c80-8b9c-11e9-92ba-7711776a23f9.jpg"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/60193419-e3224880-97f4-11e9-9ed0-c7a5173ecf61.png"><img alt="flood-the-internet-v08-632x319.jpg" width="1621" src="https://user-images.githubusercontent.com/300046/60193419-e3224880-97f4-11e9-9ed0-c7a5173ecf61.png"></a>
 
 
 <hr />
