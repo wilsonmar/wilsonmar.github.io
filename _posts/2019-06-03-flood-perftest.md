@@ -204,9 +204,8 @@ Options:
 +0s info: workRootPath: /Users/wilsonmar/projects/flood-io/Flood_Element/tmp/element-results/04-Challenging_DOM/2019-06-26T044133.811Z
    </pre>   
 
-  Note that the above message specifies where results will be stored, for example:<br />
-  <tt>/Users/wilsonmar/projects/flood-io/Flood_Element/tmp/element-results/04-Challenging_DOM/</tt>
-
+   NOTE: The above message specifies where results will be stored locally.
+  
    The response ends with:
 
    <pre>
@@ -234,11 +233,11 @@ Options:
 process exited
    </pre>
 
-   PROTIP: Track the number of seconds, such as "20018ms (walltime)".
+   PROTIP: Some write down the number of seconds (such as "20018ms (walltime)") along with date and script name, etc. as metadata about runs for historical comparisons.
 
-9. Look into the path, such as: `2019-06-26T044133.811Z/flood`.
+9. Look into the path using the tree command, to see these folders:
 
-   There are these folders:
+   <pre><strong>tree</strong></pre>
 
    <pre>`-- 2019-06-26T044133.811Z
     `-- flood
@@ -251,6 +250,10 @@ process exited
 
 
 ### Run several users in the cloud
+
+Docker
+
+AWS
 
 
 ## Resources
