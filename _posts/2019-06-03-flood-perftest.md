@@ -7,7 +7,7 @@ file: flood-perftest.md
 image:
 # flood-the-internet-wall-1900x500-105703.jpg
   feature: https://user-images.githubusercontent.com/300046/59104048-b4980880-88ed-11e9-9a93-c19baaef18ab.jpg
-  credit: AttendantDesign.com
+  credit: AttendantDesign
   creditlink: https://attendantdesign.com/fake-tsunami-films-flood-internet/
 comments: true
 ---
@@ -16,22 +16,20 @@ comments: true
 
 {% include _toc.html %}
 
-This is a hands-on introduction to installing and using <a target="_blank" href="https://www.flood.io/">https://flood.io</a> to performance test public sample apps.
+This is a hands-on step-by-step introduction to installing and using <a target="_blank" href="https://www.flood.io/">https://flood.io</a> Element scripts to performance test public sample apps.
 
-"PROTIP" provide additional commentary based on experience and foresight.
+PROTIPs here provide additional commentary based on experience and foresight not available elsewhere.
 
 For a basic understanding of how components are related to each other, first, view the video and its narration (transcript):
 
-<a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/"><img width="632" alt="flood-the-internet-v08-632x319" src="https://user-images.githubusercontent.com/300046/60193419-e3224880-97f4-11e9-9ed0-c7a5173ecf61.png"></a>
+<a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/"><img width="632" alt="flood-the-internet-v08-632x319.png" src="https://user-images.githubusercontent.com/300046/60193419-e3224880-97f4-11e9-9ed0-c7a5173ecf61.png"></a>
 
 
 <a name="CLIinstall"></a>
 
 ## Setup Flood Element CLI locally
 
-To run flood Element scripts using CLI commands on your Mac or Linux laptop, first install it.
-
-<!--
+To run flood Element scripts using CLI commands on your Mac or Linux laptop, first install it
 by triple-clicking this URL and pasting it in your Terminal:
 
    <pre><strong>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/flood-io/flood-local-setup.sh)"</strong></pre>
@@ -40,10 +38,8 @@ The command runs the shell script at the GitHub repo at:
 
    <a target="_blank" href="https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/flood-io/flood-local-setup.sh">https://github.com/wilsonmar/DevSecOps/master/flood-io/flood-local-setup.sh</a>
 
-The script basically does 
--->
-Do what is specified in the flood.io documentation page at:
-   <a target="_blank" href="https://element.flood.io/docs/1.0/install">https://element.flood.io/docs/1.0/install</a>
+The script basically does what is specified in the flood.io documentation page at:
+<a target="_blank" href="https://element.flood.io/docs/1.0/install">https://element.flood.io/docs/1.0/install</a>, but 
 
 1. On a Mac with Homebrew installed:
 
@@ -62,11 +58,7 @@ npm WARN deprecated core-js@1.2.7: core-js@<2.6.8 is no longer maintained. Pleas
 npm WARN deprecated cross-spawn-async@2.2.5: cross-spawn no longer requires a build toolchain, use it instead
    </pre>
 
-2. If yarn is available, use yarn to install Flood's Element CLI:
-
-   <tt><strong>yarn global add @flood/element-cli</strong></tt>
-
-   Alternately, use NPM to install globablly:
+2. Most people use NPM to install globablly:
 
    <tt><strong>npm install -g @flood/element-cli</strong></tt>
 
@@ -80,6 +72,13 @@ Chromium downloaded to /Users/wilsonmar/.nvm/versions/node/v9.11.1/lib/node_modu
 + @flood/element-cli@1.0.5
 added 626 packages from 436 contributors in 180.277s
    </pre>
+
+   Alternately, if you want the very latest beta varsion of Flood's Element CLI:
+
+   <tt><strong>yarn global upgrade @flood/element-cli@beta</strong></tt>
+
+   At the time of writing, the beta version is needed to mouse by x,y coordinates.
+
 
    <a name="Verify"></a>
    
