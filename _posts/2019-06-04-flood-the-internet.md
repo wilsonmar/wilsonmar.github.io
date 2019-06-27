@@ -16,57 +16,59 @@ comments: true
 
 {% include _toc.html %}
 
+## Intro video and narration
+
 Below is the narration (transcript) of the video that focus on understanding of how components are related to each other:
 <a name="IntroVideo"></a>
-<amp-youtube data-videoid="a6wshuLBhjs" layout="responsive" width="480" height="270"></amp-youtube><br />
+<amp-youtube data-videoid="k9Q8AN35ajk" layout="responsive" width="480" height="270"></amp-youtube><br />
 
-Many are familiar with this website: <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a> "the-internet" running on herokuapp.com. It presents <a href="#Controls">43 controls</a> challenging those learning to <a href="#CodeSelenium">code test automation scripts for Selenium</a>, as taught by courses offered on websites <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a> which explains the <a href="#ManualActions">manual actions</a> actual users perform to make use of the web app on a <strong>Google Chrome internet browser</strong>. <<<
+Many are familiar with this website: <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a> "the-internet" running on herokuapp.com. The website presents <a href="#Controls">43 controls</a> challenging those learning to <a href="#CodeSelenium">code test automation scripts for Selenium</a>, as taught by courses offered on websites <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a> which explains the <a href="#ManualActions">manual actions</a> actual users perform to make use of the web app on a <strong>Google Chrome internet browser</strong>.
 
-Selenium automation scripts run as a <strong>single user</strong>. But we also want to see what happens when <strong>many users on client browsers</strong> run at the same time exercising the website. We want to see how much a challenging JavaScript control can impact the server environment's <strong>memory, CPU, and other metrics</strong>. <<<
+Selenium automation scripts run as a <strong>single user</strong>. But we also want to see what happens when <strong>many users on client browsers</strong> run at the same time exercising the website. We want to see how much a challenging JavaScript control can impact the server environment's <strong>memory, CPU, and other resources</strong>.
 
-But we don't want our experiments to overload Dave's public site for everyone else. <<< 
+But we don't want our experiments to overload Dave's public site for everyone else.
 
-So we run the app as a <strong>Docker container</strong> within the <strong>AWS cloud</strong>. <<<
+So we run the app as a <strong>Docker container</strong> within the <strong>AWS cloud</strong>.
 
-We use the <strong>Flood.io</strong> service in the cloud or on-premises to emulate many users by running automation scripts pulled from a <<a href="#ScriptsInGitHub">GitHub repository</a>. Flood runs are controlled by <strong>run parameters</strong> such as the number of virtual users being emulated. <<<
+We use the <strong>Flood.io</strong> service in the cloud or on-premises to emulate many users by running automation scripts pulled from a <a href="#ScriptsInGitHub">GitHub repository</a>. Flood runs are controlled by <strong>run parameters</strong> such as the number of virtual users being emulated.
 
-Flood can run scripts developed by recording or <strong>scripting</strong> manual actions into for use by <strong>JMeter and Gatling</strong>. 
-Additionally, Flood can run Element scripts written in <strong>Typescript</strong> that works like Selenium, controlling each users browser. <<<
+Flood can run scripts developed by recording or <strong>scripting</strong> manual actions into Java code used by <strong>JMeter</strong> or Scala code used by <strong>Gatling</strong>. 
+Additionally, Flood can run Element scripts written in <strong>Typescript</strong> that work like Selenium, controlling each users browser.
 
-On any local laptop, Flood Element Typescripts saved in <a href="#ScriptsInGitHub">GitHub</a> can be <strong>cloned</strong> and <strong>run</strong>, one at a time, by the <strong>Flood Element CLI</strong> program installed on your local machine. <<<
+On any local laptop, Flood Element Typescripts saved in <a href="#ScriptsInGitHub">GitHub</a> can be <strong>cloned</strong> and <strong>run</strong>, one at a time, by the <strong>Flood Element CLI</strong> program installed on your local machine.
 
 ### App Build
 
-The system under test is built by invoking a <strong>build script</strong> that makes use of files stored in GitHub and <strong>credentials</strong> for an account associated with the appropriate groups with applicable permissions and roles needed. The build script makes use of a <strong>Docker image</strong> housed in Docker Hub and uses it to instantiate an app server for testing. 
+The system under test is built by invoking a <strong>build script</strong> that makes use of files stored in GitHub and <strong>credentials</strong> for an AWS account associated with the appropriate groups with applicable permissions and roles needed. The build script makes use of a <strong>Docker image</strong> housed in Docker Hub and uses it to instantiate an app server for testing. 
 
-Then the <strong>instrumentation script</strong> from GitHub installs an <strong>agent</strong> to run alongside the app. Because the sample app under test was written in the Ruby language, the agent is installed as an rpm file (`newrelic.rpm`) specified in the <strong>Gemfile</strong> referenced during installation. 
+### Instrumentation
+
+The <strong>instrumentation script</strong> from GitHub installs an <strong>agent</strong> to run alongside the app. Because the sample app under test was written in the Ruby language, the agent is installed as an rpm file (`newrelic.rpm`) specified in the <strong>Gemfile</strong> referenced during installation. 
 
 The agent sends notifications about <strong>events</strong> to a process installed using a <strong>Docker image in Docker Hub from New Relic</strong>. The <strong>monitoring process</strong> transfers events collected by agents 
 to a metrics <strong>dashboard</strong> at <a target="_blank" href="https://www.newrrelic.com/">newrelic.com</a>.
 
 To validate communications, a <strong>license key</strong> obtained manually from the new relic website is installed when the agent is installed.
 
-The <strong>IP address and port number</strong> of the metrics process are inserted into Flood Element scripts so that Flood.io in the cloud to securely analyze the impact of the client app on various metrics sent to an integrated <strong>metrics dashboard</strong> in the cloud.
-
-The license key is also pasted onto flood.io's web form to validate metrics that Flood sends to NewRelic's metrics dashboard.
+The license key, plus <strong>IP address and port number</strong>  of the metrics collector are provided to Flood so that it can add its metrics to NewRelic's <strong>metrics dashboard</strong> over time. These metrics include the number of users, transaction response times, the rate of transactions per second processed, and the transaction pass/fail and error rates.
 
 <!-- We don't create an <strong>instrumented Docker image</strong> that has the agent already installed because the license differs for each installation. 
 -->
+Recap <em>(click for full screen pop up)</em>:
 
-This article describes use of a single instance type. But we can extend this work to get answers to questions about several other dimensions, such as:
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/60298025-cc5c1e80-98e6-11e9-9fa5-d9d5cb247bbd.jpg"><img alt="flood-the-internet-v09-web-1715x877-92100.jpg" width="1148" src="https://user-images.githubusercontent.com/300046/60298025-cc5c1e80-98e6-11e9-9fa5-d9d5cb247bbd.jpg"></a>
+
+
+<hr />
+
+
+Questions about several other dimensions, such as:
 
    * What is the impact on the cloud bill (costs) of that cool JavaScript UI code? 
    * What is the capacity of a chosen instance type (such as the free tier t2.micro)?
    * How much more is needed to run the anticipated peak load?
    * What happens when that peak load is exceeded?
    <br /><br />
-
-Recap <em>(click for full screen pop up)</em>:
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/60241416-7b114800-9870-11e9-813d-47c5e4f799bd.jpg"><img alt="flood-perftest-v08-1148x586-52469.jpg" width="1148" src="https://user-images.githubusercontent.com/300046/60241416-7b114800-9870-11e9-813d-47c5e4f799bd.jpg"></a>
-
-
-<hr />
 
 
 <a name="CodeSelenium"></a>
