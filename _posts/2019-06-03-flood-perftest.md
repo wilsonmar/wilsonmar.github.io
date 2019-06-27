@@ -22,14 +22,14 @@ PROTIPs here provide additional commentary based on experience and foresight not
 
 For a basic understanding of how components are related to each other, first, view the video and its narration (transcript):
 
-<a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/"><img width="632" alt="flood-the-internet-v08-632x319.png" src="https://user-images.githubusercontent.com/300046/60193419-e3224880-97f4-11e9-9ed0-c7a5173ecf61.png"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/60241416-7b114800-9870-11e9-813d-47c5e4f799bd.jpg"><img alt="flood-perftest-v08-1148x586-52469.jpg" width="1148" src="https://user-images.githubusercontent.com/300046/60241416-7b114800-9870-11e9-813d-47c5e4f799bd.jpg"></a>
 
 
 <a name="CLIinstall"></a>
 
 ## Setup Flood Element CLI locally
 
-To run flood Element scripts using CLI commands on your Mac or Linux laptop, first install it
+To run Flood Element scripts using CLI commands on your Mac or Linux laptop, first install it
 by triple-clicking this URL and pasting it in your Terminal:
 
    <pre><strong>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/flood-io/flood-local-setup.sh)"</strong></pre>
@@ -47,7 +47,7 @@ The script basically does what is specified in the flood.io documentation page a
 
    Skip to <a href="#Verify">Verify install</a>.
 
-   NOTE: There is also a <tt>flood-io/taps/aqueduct</tt> which enables Flood Element scripts to run within a private cloud.
+   NOTE: There is also a <a target="_blank" href="https://help.flood.io/articles/2754139-step-by-step-guide-using-aqueduct-ssl-with-flood/">flood-io/taps/aqueduct</a> which enables Flood Element scripts to run <a target="_blank" href="https://flood.io/blog/flood-aqueduct-cloud-load-testing-for-behind-the-firewall/">behind the corporate firewall within a private cloud</a>.
 
 On a Linux machine:
 

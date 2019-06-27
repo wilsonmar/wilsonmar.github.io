@@ -20,36 +20,38 @@ Below is the narration (transcript) of the video that focus on understanding of 
 <a name="IntroVideo"></a>
 <amp-youtube data-videoid="a6wshuLBhjs" layout="responsive" width="480" height="270"></amp-youtube><br />
 
-Many are familiar with this website: <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a>. It presents <a href="#Controls">43 controls</a> challenging those learning to <a href="#CodeSelenium">code test automation scripts for Selenium</a>, as taught by courses offered on websites <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a>. <<<
+Many are familiar with this website: <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a> "the-internet" running on herokuapp.com. It presents <a href="#Controls">43 controls</a> challenging those learning to <a href="#CodeSelenium">code test automation scripts for Selenium</a>, as taught by courses offered on websites <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a> which explains the <a href="#ManualActions">manual actions</a> actual users perform to make use of the web app on a <strong>Google Chrome internet browser</strong>. <<<
 
-We would like to emulate <strong>several users</strong> at one time exercising this website because we want to see how much a challenging JavaScript control can impact the server environment's <strong>memory, CPU, and other metrics</strong>. <<<
+Selenium automation scripts run as a <strong>single user</strong>. But we also want to see what happens when <strong>many users on client browsers</strong> run at the same time exercising the website. We want to see how much a challenging JavaScript control can impact the server environment's <strong>memory, CPU, and other metrics</strong>. <<<
 
-But we don't want our experiments to overload for everyone else Dave's public site. 
+But we don't want our experiments to overload Dave's public site for everyone else. <<< 
 
-So we emulate <a href="#ManualActions">manual actions</a> on the <strong>app in a Docker container</strong> running within the <strong>AWS cloud</strong>.
+So we run the app as a <strong>Docker container</strong> within the <strong>AWS cloud</strong>. <<<
 
-In this presentation we show how you can automate the install and operation of our sample web app using scripts from our <strong>GitHub</strong> repository.
+We use the <strong>Flood.io</strong> service in the cloud or on-premises to emulate many users by running automation scripts pulled from a <<a href="#ScriptsInGitHub">GitHub repository</a>. Flood runs are controlled by <strong>run parameters</strong> such as the number of virtual users being emulated. <<<
 
-We first set up <strong>credentials</strong> for a AWS account with a role containing applicable permissions for our scripts. The <strong>build script</strong> makes use of <strong>Dave Hoeffer's Docker image</strong> within Docker Hub and uses it to create our own app server under test. <<<
+Flood can run scripts developed by recording or <strong>scripting</strong> manual actions into for use by <strong>JMeter and Gatling</strong>. 
+Additionally, Flood can run Element scripts written in <strong>Typescript</strong> that works like Selenium, controlling each users browser. <<<
 
-<a href="#ScriptsInGitHub">Our GitHub repository</a> also contains <strong>Flood Element Typescript code</strong> that was previously recorded based on manual actions defined. 
-This pre-recorded script provides a reference for those moving from Selenium, to show how Element scripts handle <a href="#Controls">all the controls presented by Dave's sample app</a>.
+On any local laptop, Flood Element Typescripts saved in <a href="#ScriptsInGitHub">GitHub</a> can be <strong>cloned</strong> and <strong>run</strong>, one at a time, by the <strong>Flood Element CLI</strong> program installed on your local machine. <<<
 
-After we update the <strong>IP address and port number</strong> in the script, we get registered to use the <a target="_blank" href="https://www.flood.io/">flood.io</a> performance testing service in the cloud. We can then <strong>upload</strong> our script and <strong>run</strong> it against our sample app based on <strong>run parameters</strong> defined in Flood. <<<
+### App Build
 
-We do all this so we can analyze the impact of the client app on various metrics sent to an integrated <strong>metrics dashboard</strong> in the cloud at <a target="_blank" href="https://www.newrrelic.com/">newrelic.com</a>.
+The system under test is built by invoking a <strong>build script</strong> that makes use of files stored in GitHub and <strong>credentials</strong> for an account associated with the appropriate groups with applicable permissions and roles needed. The build script makes use of a <strong>Docker image</strong> housed in Docker Hub and uses it to instantiate an app server for testing. 
 
-The metrics are sent by a <strong>monitoring process</strong> app that obtains 
-<strong>custom event</strong> collected by an <strong>agent</strong> added to the app source code. To build that app, we provide you an <strong>instrumentation script</strong> from GitHub. The program grabs and installs a <strong>Docker image from New Relic</strong> in Docker Hub. 
+Then the <strong>instrumentation script</strong> from GitHub installs an <strong>agent</strong> to run alongside the app. Because the sample app under test was written in the Ruby language, the agent is installed as an rpm file (`newrelic.rpm`) specified in the <strong>Gemfile</strong> referenced during installation. 
 
-Because the app under test was written in Ruby, the agent installed is an rpm file (<strong>newrelic.rpm</strong>) which is specified in the <strong>Gemfile</strong>. When the source is rebundled it is automatically downloaded and installed.
+The agent sends notifications about <strong>events</strong> to a process installed using a <strong>Docker image in Docker Hub from New Relic</strong>. The <strong>monitoring process</strong> transfers events collected by agents 
+to a metrics <strong>dashboard</strong> at <a target="_blank" href="https://www.newrrelic.com/">newrelic.com</a>.
 
-A <strong>license key</strong> from the vendor is installed with the agent so it can validate communications.
+To validate communications, a <strong>license key</strong> obtained manually from the new relic website is installed when the agent is installed.
+
+The <strong>IP address and port number</strong> of the metrics process are inserted into Flood Element scripts so that Flood.io in the cloud to securely analyze the impact of the client app on various metrics sent to an integrated <strong>metrics dashboard</strong> in the cloud.
+
+The license key is also pasted onto flood.io's web form to validate metrics that Flood sends to NewRelic's metrics dashboard.
 
 <!-- We don't create an <strong>instrumented Docker image</strong> that has the agent already installed because the license differs for each installation. 
 -->
-
-The license key is also pasted onto flood.io's web form to validate metrics that Flood sends to  NewRelic's metrics dashboard.
 
 This article describes use of a single instance type. But we can extend this work to get answers to questions about several other dimensions, such as:
 
@@ -61,7 +63,7 @@ This article describes use of a single instance type. But we can extend this wor
 
 Recap <em>(click for full screen pop up)</em>:
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/60193419-e3224880-97f4-11e9-9ed0-c7a5173ecf61.png"><img alt="flood-the-internet-v08-632x319.jpg" width="1621" src="https://user-images.githubusercontent.com/300046/60193419-e3224880-97f4-11e9-9ed0-c7a5173ecf61.png"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/60241416-7b114800-9870-11e9-813d-47c5e4f799bd.jpg"><img alt="flood-perftest-v08-1148x586-52469.jpg" width="1148" src="https://user-images.githubusercontent.com/300046/60241416-7b114800-9870-11e9-813d-47c5e4f799bd.jpg"></a>
 
 
 <hr />
