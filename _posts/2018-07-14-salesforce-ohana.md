@@ -131,14 +131,14 @@ Salesforce Customer Success team (in the Success Cloud) who helps paying teams u
 
 Salesforce Trailhead team:
 
-   * https://medium.com/trailhead
+   * <a target="_blank" href="https://medium.com/trailhead">https://medium.com/trailhead</a>
    * https://www.linkedin.com/company/salesforce-trailhead/
 
 Salesforce Certification Group:
 
-   * https://www.linkedin.com/groups/151420/profile 
+   * <a target="_blank" href="https://www.linkedin.com/groups/151420/">Salesforce Certification Group on LinkedIn</a>
 
-   * https://www.linkedin.com/showcase/salesforce-admins/ SalesForce Admins on LinkedIn.
+   * <a target="_blank" href="https://www.linkedin.com/showcase/salesforce-admins/">Salesforce Admins on LinkedIn</a>
 
 <a target="_blank" href="https://developer.salesforce.com/forums?communityId=09aF00000004HMGIA2#!/feedtype=RECENT&dc=Trailhead&criteria=ALLQUESTIONS"> Developer forum on Trailhead</a>
 

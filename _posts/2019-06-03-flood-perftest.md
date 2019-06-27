@@ -20,7 +20,7 @@ This is a hands-on step-by-step introduction to installing and using <a target="
 
 PROTIPs here provide additional commentary based on experience and foresight not available elsewhere.
 
-For a basic understanding of how components are related to each other, first, view the video and its narration (transcript):
+For a basic understanding of how components are related to each other, first, view the video with narration:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/60241416-7b114800-9870-11e9-813d-47c5e4f799bd.jpg"><img alt="flood-perftest-v08-1148x586-52469.jpg" width="1148" src="https://user-images.githubusercontent.com/300046/60241416-7b114800-9870-11e9-813d-47c5e4f799bd.jpg"></a>
 
@@ -29,12 +29,13 @@ For a basic understanding of how components are related to each other, first, vi
 
 ## Setup Flood Element CLI locally
 
-To run Flood Element scripts using CLI commands on your Mac or Linux laptop, first install it
-by triple-clicking this URL and pasting it in your Terminal:
+1. <a target="_blank" href="https://wilsonmar.github.io/mac-osx-terminal/">Open a Terminal</a>.
+
+1. To install on your Mac or Linux laptop `element-cli` and run a Flood Element script against a sample app (that's up all time), triple-click this URL and paste it in your Terminal:
 
    <pre><strong>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/flood-io/flood-local-setup.sh)"</strong></pre>
 
-The command runs the shell script at the GitHub repo at:
+   The command runs shell script `flood-local-setup.sh` from a GitHub repo at:
 
    <a target="_blank" href="https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/flood-io/flood-local-setup.sh">https://github.com/wilsonmar/DevSecOps/master/flood-io/flood-local-setup.sh</a>
 
@@ -121,12 +122,14 @@ added 626 packages from 436 contributors in 180.277s
    There are several sample apps with Element scripts available (or under construction):
 
    * A Woocommerce website with <a target="_blank" href="https://github.com/flood-io/load-testing-playground/tree/master/element">these Element scripts</a> as described in <a target="_blank" href="https://element.flood.io/docs/1.0/tutorials/01-woocommerce">Flood's on-line documentation</a>
-   * A Magento website with <a target="_blank" href="https://github.com/flood-io/load-testing-playground/tree/master/element/magento">these Element scripts</a> as described in <a target="_blank" href="https://element.flood.io/docs/1.0/tutorials/02-magento">Flood's on-line documentation</a>
-   * A video streaming website (YouTube) with <a target="_blank" href="https://github.com/flood-io/load-testing-playground/tree/master/element/magento">these Element scripts</a> as described in <a target="_blank" href="https://element.flood.io/docs/1.0/tutorials/03-youtube">Flood's on-line documentation</a>
 
-   * SAP-Fiori
-   * JPetstore
-   * EasyTravel from Dynatrace
+   * A Magento website with <a target="_blank" href="https://github.com/flood-io/load-testing-playground/tree/master/element/magento">these Element scripts</a> as described in <a target="_blank" href="https://element.flood.io/docs/1.0/tutorials/02-magento">Flood's on-line documentation</a>
+
+   * TODO: A video streaming website (YouTube) with <a target="_blank" href="https://github.com/flood-io/load-testing-playground/tree/master/element/magento">these Element scripts</a> as described in <a target="_blank" href="https://element.flood.io/docs/1.0/tutorials/03-youtube">Flood's on-line documentation</a>
+
+   * <a target="_blank" href="https://wilsonmar.github.io/sap-fiori">SAP-Fiori</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/jpetstore">JPetstore</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/easytravel">EasyTravel</a> from Dynatrace
    <br /><br />
 
    For the purposes of this tutorial:
