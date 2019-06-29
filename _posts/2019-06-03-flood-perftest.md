@@ -29,20 +29,48 @@ For a basic understanding of how components are related to each other, first, vi
 
 ## Setup Flood Element CLI locally
 
-1. <a target="_blank" href="https://wilsonmar.github.io/mac-osx-terminal/">Open a Terminal</a>.
+To run a Flood Element script against a sample app on the web, use Flood's `element` executable program.
 
-1. To install on your Mac or Linux laptop `element-cli` and run a Flood Element script against a sample app (that's up all time), triple-click this URL and paste it in your Terminal:
+To make that easy for you, a shell script was developed and made available in a GitHub.com repository.
+
+1. Use an internet browser (Google Chrome) to view 
+
+   <a target="_blank" href="https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/flood-io/flood-local-setup.sh">flood-local-setup.sh</a>
+
+   The script has the following steps:
+
+   1. Collect parameters controlling this run:
+   2. Context: Starting time stamp, OS versions, command attributes:
+   3. Shell utility functions:
+   4. Delete local repository if it's there (for idempotency):
+   5. Pre-requisites installation
+   6. install cli
+   7. Clone script from GitHub
+   8. Run the script
+   9. Clean up
+   <br /><br />
+
+   Notice that <tt>puppeteer</tt> is installed. The Node package..
+
+   The script has are several run control parameters (feature flags) in the script.
+
+1. To run the script with default settings on your Mac or Linux laptop, <a target="_blank" href="https://wilsonmar.github.io/mac-osx-terminal/">open a Terminal</a> and triple-click this URL and paste it in your Terminal:
 
    <pre><strong>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/flood-io/flood-local-setup.sh)"</strong></pre>
 
-   The command runs shell script `flood-local-setup.sh` from a GitHub repo at:
+   PROTIP: Security conscious people would be wise to first copy the file, vet it with Security experts, then save the certified file within a corporate-sponsored vault, perhaps using Nexus or Artifactory.
 
-   <a target="_blank" href="https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/flood-io/flood-local-setup.sh">https://github.com/wilsonmar/DevSecOps/master/flood-io/flood-local-setup.sh</a>
 
-The script basically does what is specified in the flood.io documentation page at:
-<a target="_blank" href="https://element.flood.io/docs/1.0/install">https://element.flood.io/docs/1.0/install</a>, but 
+Below examines what the script does, which is summarized in the flood.io documentation page at:
+<a target="_blank" href="https://element.flood.io/docs/1.0/install">https://element.flood.io/docs/1.0/install</a>, but with pre-edits and verifications.
 
-1. On a Mac with Homebrew installed:
+1. Get package manager for your operating system. <br />
+   On a Mac, install Homebrew.<br />
+   On Ubuntu, install apt-get. 
+
+   Many Linux distributions now come with a package manager.
+
+1. Use the package manager to install utilities. On a Mac:
 
    <tt><strong>brew install flood-io/taps/element</strong></tt>
 
@@ -50,16 +78,14 @@ The script basically does what is specified in the flood.io documentation page a
 
    NOTE: There is also a <a target="_blank" href="https://help.flood.io/articles/2754139-step-by-step-guide-using-aqueduct-ssl-with-flood/">flood-io/taps/aqueduct</a> which enables Flood Element scripts to run <a target="_blank" href="https://flood.io/blog/flood-aqueduct-cloud-load-testing-for-behind-the-firewall/">behind the corporate firewall within a private cloud</a>.
 
-On a Linux machine:
-
-1. <a target="_blank" href="https://wilsonmar.github.io/node-osx-install/">Install NodeJs NPM</a> if it's not already installed. Do this to avoid messages during element-cli installation such as:
+1. <a target="_blank" href="https://wilsonmar.github.io/node-osx-install/">Install NodeJs NPM</a> globally if it's not already installed. Do this to avoid messages during element-cli installation such as:
 
    <pre>
 npm WARN deprecated core-js@1.2.7: core-js@<2.6.8 is no longer maintained. Please, upgrade to core-js@3 or at least to actual version of core-js@2.
 npm WARN deprecated cross-spawn-async@2.2.5: cross-spawn no longer requires a build toolchain, use it instead
    </pre>
 
-2. Most people use NPM to install globablly:
+2. Most people use NPM to install the element CLI program globablly:
 
    <tt><strong>npm install -g @flood/element-cli</strong></tt>
 
@@ -119,16 +145,20 @@ added 626 packages from 436 contributors in 180.277s
 
 8. Clone (obtain) Element scripts written for a sample app (instead of running `element init` to be prompted) to generate a new minimal script per <a target="_blank" href="https://element.flood.io/docs/1.0/getting-started/03-initializing">the docs</a>):
 
-   There are several sample apps with Element scripts available (or under construction):
+   There are several sample apps with Element scripts available in Flood's load-testing-playground repo:
 
    * A Woocommerce website with <a target="_blank" href="https://github.com/flood-io/load-testing-playground/tree/master/element">these Element scripts</a> as described in <a target="_blank" href="https://element.flood.io/docs/1.0/tutorials/01-woocommerce">Flood's on-line documentation</a>
 
    * A Magento website with <a target="_blank" href="https://github.com/flood-io/load-testing-playground/tree/master/element/magento">these Element scripts</a> as described in <a target="_blank" href="https://element.flood.io/docs/1.0/tutorials/02-magento">Flood's on-line documentation</a>
 
-   * TODO: A video streaming website (YouTube) with <a target="_blank" href="https://github.com/flood-io/load-testing-playground/tree/master/element/magento">these Element scripts</a> as described in <a target="_blank" href="https://element.flood.io/docs/1.0/tutorials/03-youtube">Flood's on-line documentation</a>
+   * A video streaming website (YouTube) with <a target="_blank" href="https://github.com/flood-io/load-testing-playground/tree/master/element/youtube">these Element scripts</a> as described in <a target="_blank" href="https://element.flood.io/docs/1.0/tutorials/03-youtube">Flood's on-line documentation</a>
 
-   * <a target="_blank" href="https://wilsonmar.github.io/sap-fiori">SAP-Fiori</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/sap-fiori">SAP-Fiori</a> <a target="_blank" href="https://github.com/flood-io/load-testing-playground/tree/master/element/fiori">example.ts</a>
+
+   Under construction:
+
    * <a target="_blank" href="https://wilsonmar.github.io/jpetstore">JPetstore</a>
+   
    * <a target="_blank" href="https://wilsonmar.github.io/easytravel">EasyTravel</a> from Dynatrace
    <br /><br />
 
@@ -146,7 +176,7 @@ added 626 packages from 436 contributors in 180.277s
    The response:
 
    <pre>
-element run <file> [options]
+element run &LT;file> [options]
 &nbsp;
 Run a test script locally
 &nbsp;
@@ -190,9 +220,24 @@ Options:
   --help     Show help                                                 [boolean]
   --verbose  Verbose mode</pre>
 
+8. Define
+
+   SCRIPT_PATH="./element/fiori/example.ts"
+
+   SCRIPT_PATH="<a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/04-Challenging_DOM.ts">04-Challenging_DOM.ts</a>
+
 9. Run a sample script against one of the tests listed in <a target="_blank" href="http://wilsonmar.github.io/flood-the-internet/#challenges-on-the-internet">http://wilsonmar.github.io/flood-the-internet/#challenges-on-the-internet</a>:
 
-   <tt><strong>element run <a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/04-Challenging_DOM.ts">04-Challenging_DOM.ts</a> \-\-no-headless</strong></tt>
+   Two different approaches are available:
+
+   Use `npx` to invoke NPM binary `element-cli` without a global install<a target="_blank" href="https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b">*</a>
+
+   <pre>npx @flood/element-cli run "$SCRIPT_PATH" --no-headless
+   </pre>
+
+   Alternately, use `element` command if element-cli was installed globally:
+
+   <tt><strong>element run "$SCRIPT_PATH" \-\-no-headless</strong></tt>
 
    `--no-headless` opens a browser instance so you can see it playing back.
 
@@ -235,14 +280,13 @@ Options:
 process exited
    </pre>
 
-   PROTIP: Some write down the number of seconds (such as "20018ms (walltime)") along with date and script name, etc. as metadata about runs for historical comparisons.
+   TODO: Capture the response. Have a program scan through it to record the number of seconds (such as "20018ms (walltime)") along with date and script name, etc. as metadata about runs for historical comparisons.
 
 9. Look into the path using the tree command, to see these folders:
 
-   <pre><strong>tree</strong></pre>
+   <pre><strong>tree /user/.../2019-06-26T044133.811Z</strong></pre>
 
-   <pre>`-- 2019-06-26T044133.811Z
-    `-- flood
+   <pre>flood
         |-- files
         |-- network
         |-- objects
@@ -255,7 +299,26 @@ process exited
 
 Docker
 
+   <pre>sudo apt-get install docker -y</pre>
+
+Docker compose on Debian:
+
+   <pre>sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+   sudo chmod +x /usr/local/bin/docker-compose
+   sudo usermod -aG docker $USER</pre>
+
+   Reboot, then:
+
+   <pre>cd Downloads/
+   sudo dpkg -i docstation*.deb
+   sudo apt-get install -f
+   </pre>
+
 AWS
+
+
+https://app.flood.io/login
+
 
 
 ## Resources

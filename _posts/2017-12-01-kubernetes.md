@@ -238,9 +238,11 @@ Amazon ECS (Elastic Container Service for Kubernetes)</a> is "supercharged" by t
    See the <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/TheEKSManifest.html">EKS Manifest diagram</a> explained by Mark Richman (@mrichman) in his <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/293">video class</a>, with code at <a target="_blank" href="https://github.com/linuxacademy/eks-deep-dive-2019">https://github.com/linuxacademy/eks-deep-dive-2019</a>.
    
 
-* <a target="_blank" href="https://aws.amazon.com/fargate/">AWS Fargate</a> provides for "rapid" horizontal scaling on Amazon's own fleet of EC2 clusters. It's informally called the "AWS Container Manager".
+* <a target="_blank" href="https://aws.amazon.com/fargate/">AWS Fargate</a> Launch Type provides for horizontal scaling on Amazon's own fleet of EC2 clusters. It's informally called the "AWS Container Manager".
 
-   Fargate supports "awsvpcc" network mode natively so that tasks running on the same instance share that's instance's ENI.
+   Fargate supports <a target="_blank" href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">"awsvpc" network mode</a> natively so that tasks running on the same instance share that's instance's ENI.
+
+   "Once you do get your cluster running, there's nothing to worry about except <strong>monitoring performance</strong> and, as demand changes, adjusting the scale of your service." -- <a target="_blank" title="1:45 into" href="https://app.pluralsight.com/player?course=using-docker-aws&author=david-clinton&name=440cc04e-14c6-45e5-ba8d-2df97c1b1358&clip=2&mode=live">David Clinton*</a>
 
    <a target="_blank" href="https://blog.totalcloud.io/ecs-vs-eks-vs-fargate-good-bad-ugly/">This totalcloud.io article</a> compares ECS, EKS, and Fargate.
 

@@ -28,7 +28,7 @@ Selenium automation scripts run as a <strong>single user</strong>. But we also w
 
 But we don't want our experiments to overload Dave's public site for everyone else.
 
-So we run the app as a <strong>Docker container</strong> within the <strong>AWS cloud</strong>.
+So we run the app as a <strong>Docker container</strong> within the <strong>AWS</strong> or other cloud. <<<
 
 We use the <strong>Flood.io</strong> service in the cloud or on-premises to emulate many users by running automation scripts pulled from a <a href="#ScriptsInGitHub">GitHub repository</a>. Flood runs are controlled by <strong>run parameters</strong> such as the number of virtual users being emulated.
 
@@ -45,12 +45,12 @@ The system under test is built by invoking a <strong>build script</strong> that 
 
 The <strong>instrumentation script</strong> from GitHub installs an <strong>agent</strong> to run alongside the app. Because the sample app under test was written in the Ruby language, the agent is installed as an rpm file (`newrelic.rpm`) specified in the <strong>Gemfile</strong> referenced during installation. 
 
-The agent sends notifications about <strong>events</strong> to a process installed using a <strong>Docker image in Docker Hub from New Relic</strong>. The <strong>monitoring process</strong> transfers events collected by agents 
+Once installed, the agent sends notifications about <strong>events</strong> to a process installed using a <strong>Docker image in Docker Hub from New Relic</strong>. The <strong>monitoring process</strong> transfers events collected by agents 
 to a metrics <strong>dashboard</strong> at <a target="_blank" href="https://www.newrrelic.com/">newrelic.com</a>.
 
 To validate communications, a <strong>license key</strong> obtained manually from the new relic website is installed when the agent is installed.
 
-The license key, plus <strong>IP address and port number</strong>  of the metrics collector are provided to Flood so that it can add its metrics to NewRelic's <strong>metrics dashboard</strong> over time. These metrics include the number of users, transaction response times, the rate of transactions per second processed, and the transaction pass/fail and error rates.
+The license key, plus <strong>IP address and port number</strong>  of the metrics collector are provided to Flood so that it can add its metrics to NewRelic's <strong>metrics dashboard</strong> over time. These metrics include the number of users, transaction response times, the rate of transactions per second processed, network bandwidth throughput, and transaction pass/fail error rates. <<<
 
 <!-- We don't create an <strong>instrumented Docker image</strong> that has the agent already installed because the license differs for each installation. 
 -->
@@ -116,18 +116,18 @@ Click on <a target="_blank" href="https://the-internet.herokuapp.com/"><img widt
 14. <a target="_blank" href="https://the-internet.herokuapp.com/dynamic_loading "><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/12-Dynamic_Loading.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"> Dynamic Loading</a>
 15. <a target="_blank" href="https://the-internet.herokuapp.com/entry_ad"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Entry Ad</a>
 16. <a target="_blank" href="https://the-internet.herokuapp.com/exit_intent"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Exit Intent</a>
-17. <a target="_blank" href="https://the-internet.herokuapp.com/download"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/14-File_Download.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png">File Download</a>
+17. <a target="_blank" href="https://the-internet.herokuapp.com/download"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/14-File_Download.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"> File Download</a>
 18. <a target="_blank" href="https://the-internet.herokuapp.com/upload"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> File Upload</a> (issue in Element handling Windows vs Linux, also in Selenium)
-19. <a target="_blank" href="https://the-internet.herokuapp.com/floating_menu"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Floating Menu</a>
-20. <a target="_blank" href="https://the-internet.herokuapp.com/forgot_password"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Forgot Password</a>
-21. <a target="_blank" href="https://the-internet.herokuapp.com/login"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Form Authentication</a>
-22. <a target="_blank" href="https://the-internet.herokuapp.com/frames"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Frames</a>
-23. <a target="_blank" href="https://the-internet.herokuapp.com/geolocation"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Geolocation</a>
+19. <a target="_blank" href="https://the-internet.herokuapp.com/floating_menu"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/16-Floating_Menu.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"> Floating Menu</a>
+20. <a target="_blank" href="https://the-internet.herokuapp.com/forgot_password"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/17-Forgot_Password.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"> Forgot Password</a>
+21. <a target="_blank" href="https://the-internet.herokuapp.com/login"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/18-Form_Authentication.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"> Form Authentication</a>
+22. <a target="_blank" href="https://the-internet.herokuapp.com/frames"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/19-Frames-Nested.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"> Frames (Nested)</a>
+23. <a target="_blank" href="https://the-internet.herokuapp.com/geolocation"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/20-Geolocation.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"> Geolocation</a>
 24. <a target="_blank" href="https://the-internet.herokuapp.com/horizontal_slider"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Horizontal Slider</a>
-25. <a target="_blank" href="https://the-internet.herokuapp.com/hovers"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png">Hovers</a>
-26. <a target="_blank" href="https://the-internet.herokuapp.com/infinite_scroll"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Infinite Scroll</a>
+25. <a target="_blank" href="https://the-internet.herokuapp.com/hovers"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Hovers</a>
+26. <a target="_blank" href="https://the-internet.herokuapp.com/infinite_scroll"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/23-Infinite_Scroll.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"> Infinite Scroll</a>
 27. <a target="_blank" href="https://the-internet.herokuapp.com/inputs"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Inputs</a>
-28. <a target="_blank" href="https://the-internet.herokuapp.com/jqueryui/menu"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> JQuery UI Menus</a>
+28. <a target="_blank" href="https://the-internet.herokuapp.com/jqueryui/menu"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/24-JQueryUI.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"> JQuery UI Menus</a>
 29. <a target="_blank" href="https://the-internet.herokuapp.com/javascript_alerts"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> JavaScript Alerts</a>
 30. <a target="_blank" href="https://the-internet.herokuapp.com/javascript_error"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> JavaScript onload event error</a>
 31. <a target="_blank" href="https://the-internet.herokuapp.com/key_presses"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Key Presses</a>
@@ -196,7 +196,7 @@ See:
 
 ### Setup AWS manually
 
-   Based on https://wilsonmar.github.io/aws-onboarding
+   Based on <a target="_blank" href="https://wilsonmar.github.io/aws-onboarding">https://wilsonmar.github.io/aws-onboarding</a>
 
    On an internet browser such as Google Chrome, Apple Safari, or Microsoft Edge:
 
