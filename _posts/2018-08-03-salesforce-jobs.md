@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Salesforce Jobs"
-excerpt: "Where to look, sample job descriptions, tips"
+excerpt: "Where to look, favored certifications, sample job descriptions, tips"
 tags: [salesforce, jobs]
-file: salesforce-jobs.md
+file: 2018-08-03-salesforce-jobs.md
 image:
 # feature: sf-ohana-1900x500-178173.jpg
   feature: https://user-images.githubusercontent.com/300046/43407734-bd6303fe-93dc-11e8-87df-302ddbc274ff.jpg
@@ -18,11 +18,12 @@ comments: true
 
 ## Background
 
-https://medium.com/trailhead/huge-demand-for-salesforce-talent-3bb30c597b39
+People are saying there is <a target="_blank" href="https://medium.com/trailhead/huge-demand-for-salesforce-talent-3bb30c597b39">"huge"</a> demand for Salesforce talent.
 
 The advantage of a career working with Salesforce is that one can be productive without being an expert programmer. This and being in SasS (without server admin troubles), a small team can support a (smaller) company without a lot of buraucracy, unlike being on massive SAP projects.
 
-https://www.cio.com/article/3168901/it-skills-training/salesforce-skills-in-high-demand-in-2017.html
+<a target="_blank" href="https://www.cio.com/article/3168901/it-skills-training/salesforce-skills-in-high-demand-in-2017.html">https://www.cio.com/article/3168901/it-skills-training/salesforce-skills-in-high-demand-in-2017.html</a>
+
 
 ## Gig economy
 
@@ -31,7 +32,7 @@ Take a look at those offering Salesforce services on a temporary, ad hoc basis:
    * <a target="_blank" href="https://www.fiverr.com/search/gigs?utf8=✓&source=top-bar&locale=en&search_in=everywhere&query=salesforce">Fiverr.com</a>
 
 
-## Jobs inside Salesforce
+## Jobs inside Salesforce corporate
 
    * <a target="_blank" href="http://careers.force.com/jobs/">http://careers.force.com/jobs</a> lists jobs inside Salesforce. Applicants use workday.com to apply.
 
@@ -66,24 +67,36 @@ https://www.masonfrank.com/salesforce-salary-survey/</a>
 
    * Facebook group: <a target="_blank" href="https://www.facebook.com/groups/658045354373001/">Salesforce job seekers</a>
 
-   * https://www.facebook.com/salesforcejobs/
+   * <a target="_blank" href="https://www.facebook.com/salesforcejobs/">https://www.facebook.com/salesforcejobs</a>
+
+   <!--
+   * <a target="_blank" href="https://www.linkedin.com/company/salesforce-connection/about/">https://www.linkedin.com/company/salesforce-connection/about</a> http://www.salesforceconnection.com/ is broken
+   -->
 
 ## Consulting Partners and ISVs (Independent Software Vendors)
 
-Top Salesforce partners are "Master Certified by Salesforce" in all 12 industries and cloud platforms.
+Top Salesforce partners are required to be "Master Certified by Salesforce" in all 12 industries and cloud platforms.
 
-http://www.accenture.com/salesforcecareers by Accenture, which employs 11,800 Salesforce pros in Chicago and elsewhere. Contact: bradley.m.altbach@accenture.com
+<a target="_blank" href="http://www.accenture.com/salesforcecareers">http://www.accenture.com/salesforcecareers</a> by Accenture, which employs 11,800 Salesforce pros in Chicago and elsewhere. Contact: bradley.m.altbach@accenture.com
+
 
 ## Skills
 
 This list of Admin management skills is from Jeff Talbot (marin(dot)consulting(at)gmail.com):
 
    * Managing database customizations - Objects, Object relationships, Fields, Page Layouts
+
    * Managing security - Users, Roles, Profiles, Permission Sets
+
    * Managing data - Views, Reports, Dashboards
+
    * Managing data integrity - Data imports, mass data updates, Validation Rules
+
    * Managing automation - Workflow, Flow, Triggers, Process Builder
+
    * Managing data integration - Integrating websites, retail management software (POS), and finance software with Salesforce
+
+## Sample Job Description
 
 BASIC Qualifications:
 • Bachelor’s degree or foreign equivalent required from an accredited institution. Will also consider three years of progressive experience in the specialty in lieu of every year of education.
@@ -93,6 +106,7 @@ BASIC Qualifications:
 • Strong Analytical and Communication skills
 
 PREFERRED Skills:
+
 Technical = 80%
 • At least 2 years of experience in implementing CRM solutions with a minimum of 2 years Salesforce Force.com platform/Sales Cloud/Service Cloud implementations
 • At least 3 years of experience in Salesforce development and implementations Skills with good command on Apex, Visual force, controllers, triggers, batch processes, APIs and web services.
@@ -127,8 +141,8 @@ The job entails sitting as well as working at a computer for extended periods of
 
 ## Videos
 
-https://www.facebook.com/events/119880015402173
-Trailhead: Your Path into the Salesforce Developer Economy
+<a target="_blank" href="https://www.facebook.com/events/119880015402173">
+Trailhead: Your Path into the Salesforce Developer Economy</a>
 
 ## More about Salesforce #
 
