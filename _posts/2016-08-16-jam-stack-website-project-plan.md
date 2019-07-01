@@ -3,6 +3,8 @@ layout: post
 title: "JAM-stack website project plan"
 excerpt: "Fast, scalable websites with cart and social reach, step-by-step"
 tags: [website]
+date: 2016-08-16
+file: jam-stack-website-project-plan
 image:
 # drawing blue messaging icons flow 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15797012/6c3aa21a-29c7-11e6-8fbd-ef15a86df580.jpg
@@ -20,12 +22,14 @@ comments: true
 Here are the sequence of specific steps to build a website using
 (what Mathias Biilmann of static hosting service Netlify 
 <a target="_blank" href="https://vimeo.com/163522126">calls</a>)
-a <a target="_blank" href="https://jamstack.org/">"JAM stack"</a> 
+coined a <a target="_blank" href="https://jamstack.org/">"JAM stack"</a> 
 -- a set of software to create websites that are fast, scalable, and simple to work with. 
 JAM stands for JavaScript, APIs, and Markup.
 JavaScript on the site makes calls to API (Application Programming Interfaces) web services in the cloud
 to manage subscription forms and email campaigns.
 Content for the site is written in semi-technical markup language text stored on GitHub.com.
+
+See Redpoint's JAMstack Ecocystem.
 
 We have here a way for artists to manage and display their <strong>portfolio</strong> of 
 photos in <strong>file folders</strong> distributed across the internet for fast retrieval anywhere in the world.
