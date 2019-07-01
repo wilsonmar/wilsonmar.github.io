@@ -160,6 +160,9 @@ added 626 packages from 436 contributors in 180.277s
    * <a target="_blank" href="https://wilsonmar.github.io/jpetstore">JPetstore</a>
    
    * <a target="_blank" href="https://wilsonmar.github.io/easytravel">EasyTravel</a> from Dynatrace
+
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/resources/samples/?sort=0">
+   769+ code samples for Azure Cloud from Microsoft</a>
    <br /><br />
 
    For the purposes of this tutorial:
