@@ -22,41 +22,63 @@ Below is the narration (transcript) of the video that focus on understanding of 
 <a name="IntroVideo"></a>
 <amp-youtube data-videoid="k9Q8AN35ajk" layout="responsive" width="480" height="270"></amp-youtube><br />
 
-Many are familiar with this website: <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a> "the-internet" running on herokuapp.com. The website presents <a href="#Controls">43 controls</a> challenging those learning to <a href="#CodeSelenium">code test automation scripts for Selenium</a>, as taught by courses offered on websites <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a> which explains the <a href="#ManualActions">manual actions</a> actual users perform to make use of the web app on a <strong>Google Chrome internet browser</strong>.
+Many are familiar with this website: <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a> "the-internet" running on herokuapp.com. The website was created by Dave Hoeffner to present <a href="#Controls">43 controls</a> to provide challenges to those learning to code <a href="#CodeSelenium">Selenium scripts</a> that automate <a href="#ManualActions">manual actions</a> real users perform on a <strong>internet browser</strong> such as Google Chrome.
 
-Selenium automation scripts run as a <strong>single user</strong>. But we also want to see what happens when <strong>many users on client browsers</strong> run at the same time exercising the website. We want to see how much a challenging JavaScript control can impact the server environment's <strong>memory, CPU, and other resources</strong>.
+Dave's tutorial websites include <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a>.
 
-But we don't want our experiments to overload Dave's public site for everyone else.
+Selenium makes use of older <strong>"Web Driver"</strong> technology that controls browsers. 
 
-So we run the app as a <strong>Docker container</strong> within the <strong>AWS</strong> or other cloud. <<<
+But Google has added what it calls <strong>"Pupeteer"</strong> technology to both diagnose and control its browser, which is now much more complex than when Web Driver was created, including capture of precise <strong>timings</strong> of response time for each manual action.
 
-We use the <strong>Flood.io</strong> service in the cloud or on-premises to emulate many users by running automation scripts pulled from a <a href="#ScriptsInGitHub">GitHub repository</a>. Flood runs are controlled by <strong>run parameters</strong> such as the number of virtual users being emulated.
+Pupeteer is used in Chrome's Lighthouse Developer Tools which provides the precise diagnostics needed to <strong>script</strong> manual actions in <strong>Typescript</strong> code instead of Selenium.
+Typescript is a superset of the JavaScript programming language that is the default language controlling browsers.
 
-Flood can run scripts developed by recording or <strong>scripting</strong> manual actions into Java code used by <strong>JMeter</strong> or Scala code used by <strong>Gatling</strong>. 
-Additionally, Flood can run Element scripts written in <strong>Typescript</strong> that work like Selenium, controlling each users browser.
+Typescript is <strong>run</strong> to automate actions in the Chrome browser by the <strong>Flood Element</strong> program <strong>installed locally using a shell script</strong>.
 
-On any local laptop, Flood Element Typescripts saved in <a href="#ScriptsInGitHub">GitHub</a> can be <strong>cloned</strong> and <strong>run</strong>, one at a time, by the <strong>Flood Element CLI</strong> program installed on your local machine.
+<!-- There is currently no Docker image containing Flood Element. So it needs to be installed. The npx command installs temporarily.
+-->
+
+When the scripts are <strong>git pushed</strong> to a remote <a href="#ScriptsInGitHub">GitHub</a> repository, others can <strong>git clone</strong> onto their machine to run.
+
+Both Element Typescript and Selenium control a <strong>single user</strong> GUI at a time. But we also want to see what happens when <strong>many users on many browser instances</strong> run at the same time exercising the website. We want to see how much a challenging JavaScript control can impact the server environment's <strong>memory, CPU, and other resources</strong>.
 
 ### App Build
 
-The system under test is built by invoking a <strong>build script</strong> that makes use of files stored in GitHub and <strong>credentials</strong> for an AWS account associated with the appropriate groups with applicable permissions and roles needed. The build script makes use of a <strong>Docker image</strong> housed in Docker Hub and uses it to instantiate an app server for testing. 
+But we don't want our experiments to overload Dave's public site for everyone else.
+
+So we run the app as a <strong>Docker container</strong> within the <strong>AWS</strong> or other cloud.
+The container and environment under test is built by invoking a <strong>build script</strong> that retrieves files from GitHub which makes use of a <strong>Docker image</strong> housed in Docker Hub and uses it to instantiate an app server for testing. It uses <strong>credentials</strong> for an AWS account associated with the appropriate groups with applicable permissions and roles needed.
+
+### Emulate using Flood
+
+We use the <strong>Flood.io</strong> service in the cloud (or on-premises) to emulate those many users by running automation scripts pulled from a <a href="#ScriptsInGitHub">GitHub repository</a>.
+
+Flood Element scripts are a new innovation because it emulates actions within each user's browser.
+Historically, Java code used by <strong>JMeter</strong> or Scala code used by <strong>Gatling</strong> emulate load by simply emulating just the exchange of what is sent between client browser and server. But a lot of work now occur inside the client browser. 
+
+Multi-user Flood runs are controlled by <strong>run parameters</strong> such as the number of virtual users being emulated. <strong>Run shell scripts</strong> can be used to manage various runs, test data, and results over various <strong>variations</strong> in run conditions.
 
 ### Instrumentation
 
-The <strong>instrumentation script</strong> from GitHub installs an <strong>agent</strong> to run alongside the app. Because the sample app under test was written in the Ruby language, the agent is installed as an rpm file (`newrelic.rpm`) specified in the <strong>Gemfile</strong> referenced during installation. 
+It's important to have a <strong>metrics dashboard</strong> that helps people make sense of measurements collected over time. This article talks about use of <strong>New Relic</strong>.
 
-Once installed, the agent sends notifications about <strong>events</strong> to a process installed using a <strong>Docker image in Docker Hub from New Relic</strong>. The <strong>monitoring process</strong> transfers events collected by agents 
+We have an <strong>instrumentation script</strong> which installs an <strong>agent</strong> to run alongside the app. Because the sample app under test was written in the Ruby language, the agent is installed as a rpm file (<strong>newrelic.rpm</strong>) specified in the <strong>Gemfile</strong> referenced during installation. 
+
+During runs, the agent sends notifications about <strong>events</strong> to a process installed using a <strong>Docker image in Docker Hub from New Relic</strong>. The <strong>monitoring process</strong> transfers events collected by agents 
 to a metrics <strong>dashboard</strong> at <a target="_blank" href="https://www.newrrelic.com/">newrelic.com</a>.
 
-To validate communications, a <strong>license key</strong> obtained manually from the new relic website is installed when the agent is installed.
+To validate communications, a <strong>license key</strong> obtained manually from the New Relic website is installed when the agent is installed.
 
-The license key, plus <strong>IP address and port number</strong>  of the metrics collector are provided to Flood so that it can add its metrics to NewRelic's <strong>metrics dashboard</strong> over time. These metrics include the number of users, transaction response times, the rate of transactions per second processed, network bandwidth throughput, and transaction pass/fail error rates. <<<
+The license key, plus <strong>IP address and port number</strong> of the metrics collector are provided to Flood so that it can add its metrics to New Relic over time. These metrics include the number of users, transaction response times, the rate of transactions per second processed, network bandwidth throughput, and transaction pass/fail error rates.
+
+When we also add the <strong>cost</strong> of each run, we would be able to identify which configurations would provide the most profitable number of <strong>transactions per dollar</strong>.
 
 <!-- We don't create an <strong>instrumented Docker image</strong> that has the agent already installed because the license differs for each installation. 
 -->
+
 Recap <em>(click for full screen pop up)</em>:
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/60298025-cc5c1e80-98e6-11e9-9fa5-d9d5cb247bbd.jpg"><img alt="flood-the-internet-v09-web-1715x877-92100.jpg" width="1148" src="https://user-images.githubusercontent.com/300046/60298025-cc5c1e80-98e6-11e9-9fa5-d9d5cb247bbd.jpg"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/60542595-85e53600-9cd1-11e9-9e1e-d8b3dca5e1e9.jpg"><img alt="flood-the-internet-v11b-1168x580.jpg" width="1148" src="https://user-images.githubusercontent.com/300046/60542595-85e53600-9cd1-11e9-9e1e-d8b3dca5e1e9.jpg"></a>
 
 
 <hr />
