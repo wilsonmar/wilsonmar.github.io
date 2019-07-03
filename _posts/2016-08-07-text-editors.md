@@ -769,8 +769,23 @@ On Mac:
 
 1. Click "Restart Now" for it to take.
  
+   https://www.monodevelop.com/download/
 
- https://www.monodevelop.com/download/
+
+   ### TypeScript settings.json
+
+   PROTIP: Microsoft wrote Visual Studio Code using the TypeScript programming language, which released as an open-source project in 2012. See <a target="_blank" href="https://www.typescriptlang.org/play/index.html">typescriptlang.org/play/</a>. TypeScript syntax is a "superset" of JavaScript. So valid JavaScript is also valid TypeScript. TypeScript transpiles (compiles) to JavaScript (by the tsc program).
+
+   VSCode is configured by specifications in file <tt>settings.json</tt>. On a Mac, it's in folder 
+   <tt>/Users/.../Library/Application Support/Code/User/settings.json</tt> (where the ... is your user name).
+
+   On Windows, "typescriot.tsdk" "/Users/.../AppData/Roaming/npm/node_modules/types".
+
+   For Git users:
+
+   <tt>"git.enableSmartCommit": true,</tt>
+
+   <tt>"git.confirmSync": false,</tt>
 
 
    ### JavaScript Extension
