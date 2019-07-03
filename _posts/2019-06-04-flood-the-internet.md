@@ -20,9 +20,9 @@ comments: true
 
 Below is the narration (transcript) of the video that focus on understanding of how components are related to each other:
 <a name="IntroVideo"></a>
-<amp-youtube data-videoid="k9Q8AN35ajk" layout="responsive" width="480" height="270"></amp-youtube><br />
+<amp-youtube data-videoid="ps--j4ePPbA" layout="responsive" width="480" height="270"></amp-youtube><br />
 
-Many are familiar with this website: <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a> "the-internet" running on herokuapp.com. The website was created by Dave Hoeffner to present <a href="#Controls">43 controls</a> to provide challenges to those learning to code <a href="#CodeSelenium">Selenium scripts</a> that automate <a href="#ManualActions">manual actions</a> real users perform on a <strong>internet browser</strong> such as Google Chrome.
+Many are familiar with this website: <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a> "the-internet" running on herokuapp.com. The website was created by Dave Hoeffner to present <a href="#Controls">43 controls</a> which provide challenges to those learning to code <a href="#CodeSelenium">Selenium scripts</a> that automate <a href="#ManualActions">manual actions</a> real users perform on a <strong>internet browser</strong> such as Google Chrome.
 
 Dave's tutorial websites include <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a>.
 

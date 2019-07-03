@@ -16,13 +16,13 @@ comments: true
 
 {% include _toc.html %}
 
-This is a hands-on step-by-step introduction to installing and using <a target="_blank" href="https://www.flood.io/">https://flood.io</a> Element scripts to performance test public sample apps.
+This is a hands-on step-by-step introduction to installing and using <a target="_blank" href="https://www.flood.io/"><strong>flood.io</strwong></a> Element scripts to performance test public sample apps.
 
 PROTIPs here provide additional commentary based on experience and foresight not available elsewhere.
 
 For a basic understanding of how components are related to each other, first, view the video with narration:
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/60241416-7b114800-9870-11e9-813d-47c5e4f799bd.jpg"><img alt="flood-perftest-v08-1148x586-52469.jpg" width="1148" src="https://user-images.githubusercontent.com/300046/60241416-7b114800-9870-11e9-813d-47c5e4f799bd.jpg"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/60542595-85e53600-9cd1-11e9-9e1e-d8b3dca5e1e9.jpg"><img alt="flood-the-internet-v11b-1168x580.jpg" width="1148" src="https://user-images.githubusercontent.com/300046/60542595-85e53600-9cd1-11e9-9e1e-d8b3dca5e1e9.jpg"></a>
 
 
 <a name="CLIinstall"></a>
