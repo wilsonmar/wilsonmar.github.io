@@ -337,9 +337,10 @@ But Emacs users can define macros that combine commands.
 
 Many tutorials make use of this tool from Jon Skinner.
 
-There are two simultaneous production versions of Sublime Text: 2 and 3.
+At time of writing, there were two simultaneous production versions of Sublime Text: 2 and 3.
 This is because Sublime contains its own Python interpreter to run add-ons.
-Choose version 3.
+<strong>Choose version 3.</strong>
+
 
 ### Download and Install Sublime Text
 
@@ -467,6 +468,17 @@ Use Sublime Text on Retina? for crisp, readable text, to Settings add
    <pre><strong>
    "font_options" : ["gray_antialias"] 
    </strong></pre>
+
+### Smart title capitalization shortcut
+
+<a target="_blank" href="http://www.geekgonenomad.com/code/title-capitalization-in-sublimetext/">*</a>
+To install the https://github.com/mattstevens/sublime-titlecase
+in SublimeText 3, click SublimeText -> Preferences -> Key Bindings User, and add this line to the file:
+
+   <pre>{ "keys": ["super+shift+t"], "command": "smart_title_case" }</pre>
+
+Restart SublimeText.
+
 
 ### Install spell check
 
