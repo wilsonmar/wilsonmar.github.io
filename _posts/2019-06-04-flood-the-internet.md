@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Measure performance impact of JavaScript in Dave Hoeffner's the-internet"
-excerpt: "using Flood.io Element script after standing up the website challenging functional test Selenium automation to run in Docker containers within AWS cloud, measured by NewRelic"
+title: "Measure performance impact of JavaScript in Dave Hoeffner's the-internet website"
+excerpt: "Using Flood.io Element scripts to measure impact of challenging JavaScript in websites stood up using Docker within AWS cloud, as measured by NewRelic"
 tags: [flood, perftest, selenium, testing]
 file: flood-element-the-internet-docker-aws-newrelic.md
 image:
@@ -16,11 +16,10 @@ comments: true
 
 {% include _toc.html %}
 
-## Intro video and narration
-
-Below is the narration (transcript) of the video that focus on understanding of how components are related to each other:
 <a name="IntroVideo"></a>
 <amp-youtube data-videoid="ps--j4ePPbA" layout="responsive" width="480" height="270"></amp-youtube><br />
+
+<em>Below is the narration (transcript) of the video above.</em>
 
 Many are familiar with this website: <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a> "the-internet" running on herokuapp.com. The website was created by Dave Hoeffner to present <a href="#Controls">43 controls</a> which provide challenges to those learning to code <a href="#CodeSelenium">Selenium scripts</a> that automate <a href="#ManualActions">manual actions</a> real users perform on a <strong>internet browser</strong> such as Google Chrome.
 
@@ -79,18 +78,6 @@ When we also add the <strong>cost</strong> of each run, we would be able to iden
 Recap <em>(click for full screen pop up)</em>:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/60542595-85e53600-9cd1-11e9-9e1e-d8b3dca5e1e9.jpg"><img alt="flood-the-internet-v11b-1168x580.jpg" width="1148" src="https://user-images.githubusercontent.com/300046/60542595-85e53600-9cd1-11e9-9e1e-d8b3dca5e1e9.jpg"></a>
-
-
-<hr />
-
-
-Questions about several other dimensions, such as:
-
-   * What is the impact on the cloud bill (costs) of that cool JavaScript UI code? 
-   * What is the capacity of a chosen instance type (such as the free tier t2.micro)?
-   * How much more is needed to run the anticipated peak load?
-   * What happens when that peak load is exceeded?
-   <br /><br />
 
 
 <a name="CodeSelenium"></a>
@@ -533,4 +520,14 @@ The Linux Audit Framework is used to identify potential security weaknesses or p
 <a target="_blank" href="https://app.pluralsight.com/library/courses/securing-docker-platform/table-of-contents">Securing the Docker Platform</a>
 by Nigel Brown Released 21 Jun 2018
 
-##
+<hr />
+
+
+Questions about several other dimensions, such as:
+
+   * What is the impact on the cloud bill (costs) of that cool JavaScript UI code? 
+   * What is the capacity of a chosen instance type (such as the free tier t2.micro)?
+   * How much more is needed to run the anticipated peak load?
+   * What happens when that peak load is exceeded?
+   <br /><br />
+
