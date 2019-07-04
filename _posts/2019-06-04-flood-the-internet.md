@@ -107,7 +107,8 @@ The same issues addressed above also need to be addressed by any app automation 
 
 ## Challenges on The-Internet
 
-Click on <a target="_blank" href="https://the-internet.herokuapp.com/"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a> to see the GUI on-line at <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a>
+Click on <a target="_blank" href="https://the-internet.herokuapp.com/"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a> to see the GUI on-line at <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a><br />
+Click on <img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"> to view the Element script.
 
 1. <a target="_blank" href="https://the-internet.herokuapp.com/abtest"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://github.com/daeep/Flood_Element/blob/master/01-AB%20Testing.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"> A/B Testing</a>
 2. <a target="_blank" href="https://the-internet.herokuapp.com/add_remove_elements/"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"> Add/Remove Elements</a>
