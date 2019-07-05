@@ -52,7 +52,7 @@ The container and environment under test is built by invoking a <strong>build sc
 
 We use the <strong>Flood.io</strong> service in the cloud (or on-premises) to emulate those many users by running automation scripts pulled from a <a href="#ScriptsInGitHub">GitHub repository</a>.
 
-Flood Element scripts are a new innovation because it emulates actions within each user's browser.
+Flood Element scripts are a new innovation because it emulates <a href="#ManualActions">manual actions</a> within each user's browser.
 Historically, Java code used by <strong>JMeter</strong> or Scala code used by <strong>Gatling</strong> emulate load by simply emulating just the exchange of what is sent between client browser and server. But a lot of work now occur inside the client browser. 
 
 Multi-user Flood runs are controlled by <strong>run parameters</strong> such as the number of virtual users being emulated. <strong>Run shell scripts</strong> can be used to manage various runs, test data, and results over various <strong>variations</strong> in run conditions.
@@ -61,10 +61,10 @@ Multi-user Flood runs are controlled by <strong>run parameters</strong> such as 
 
 It's important to have a <strong>metrics dashboard</strong> that helps people make sense of measurements collected over time. This article talks about use of <strong>New Relic</strong>.
 
-We have an <strong>instrumentation script</strong> which installs an <strong>agent</strong> to run alongside the app. Because the sample app under test was written in the Ruby language, the agent is installed as a rpm file (<strong>newrelic.rpm</strong>) specified in the <strong>Gemfile</strong> referenced during installation. 
+We have an <a href="#NewRelicInstrAWS">instrumentation script</a> which installs an <strong>agent</strong> (newrelic-infra) to run alongside the app. Because the sample app under test was written in the Ruby language, the agent is installed as a rpm file (<strong>newrelic.rpm</strong>) specified in the <strong>Gemfile</strong> referenced during installation. 
 
 During runs, the agent sends notifications about <strong>events</strong> to a process installed using a <strong>Docker image in Docker Hub from New Relic</strong>. The <strong>monitoring process</strong> transfers events collected by agents 
-to a metrics <strong>dashboard</strong> at <a target="_blank" href="https://www.newrrelic.com/">newrelic.com</a>.
+to a metrics <strong>dashboard</strong> at <a target="_blank" href="https://www.newrelic.com/">newrelic.com</a>.
 
 To validate communications, a <strong>license key</strong> obtained manually from the New Relic website is installed when the agent is installed.
 
@@ -103,17 +103,17 @@ Writing the Automated Test</a>
 The same issues addressed above also need to be addressed by any app automation tool.
 
 
-<a name="Controls"></a>
+<a name="ManualActions"></a>
 
 ## Challenges on The-Internet
 
-Click on <a target="_blank" href="https://the-internet.herokuapp.com/"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a> to see the GUI on-line at <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a><br />
-Click on <a target="_blank" href="https://github.com/daeep/Flood_Element/tree/master/The%20Internet%20Herokuapp"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"> to view the Flood Element script at<br />
-https://github.com/daeep/Flood_Element/tree/master/The%20Internet%20Herokuapp</a>
+Click on <a target="_blank" href="https://the-internet.herokuapp.com/"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a> to see the sample app's UI on-line at<br /><a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a><br />
+Click on <a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=19m14s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> to view a video about manual actions and analysis of the UI page source code as the basis for Flood Element TypeScript creation.<br />
+Click on <a target="_blank" href="https://github.com/daeep/Flood_Element/tree/master/The%20Internet%20Herokuapp"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"> to view the Flood Element TypeScript at<br />https://github.com/daeep/Flood_Element/tree/master/The%20Internet%20Herokuapp</a>
 
 1. <a target="_blank" href="https://the-internet.herokuapp.com/abtest"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/01-AB%20Testing.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> A/B Test Control (also known as split testing)
 2. <a target="_blank" href="https://the-internet.herokuapp.com/add_remove_elements/"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a> Add/Remove Elements
-3. <a target="_blank" href="https://the-internet.herokuapp.com/basic_auth"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/02-Basic%20Auth.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Basic Auth (Sign in Username and Password: admin)
+3. <a target="_blank" href="https://the-internet.herokuapp.com/basic_auth"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/02-Basic%20Auth.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a><a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=19m14s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> Basic Auth (Sign in Username and Password: admin)
 4. <a target="_blank" href="https://the-internet.herokuapp.com/broken_images"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/03-Broken%20Images.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Broken Images
 5. <a target="_blank" href="https://the-internet.herokuapp.com/challenging_dom"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/04-Challenging_DOM.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Challenging DOM - this is the one impacting server resource
 6. <a target="_blank" href="https://the-internet.herokuapp.com/checkboxes"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/05-Checkboxes.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Checkboxes
@@ -161,26 +161,46 @@ another set of icons to reach run results for each test item.
 
 <hr />
 
-## Steps
+<a name="Steps"></a>
 
-The actual manual and automated steps may be in a different order than the <a href="#IntroVideo">introductory video above</a>, which is focused on presenting the logic.
+## Steps: Manual and automated scripts
 
-Here, two AWS EC2 instances are instantiated using Docker:
+The remainder of this tutorial describes the <strong>manual</strong> steps invoking automated scripts described in the <a href="#IntroVideo">introductory video above</a>.
 
-   1. A "the-internet" app under test (written in Ruby), with a monitoring agent;
-   2. Monitoring and visualization app server containing NewRelic 
-   <br /><br />
+The scripts instantiate two server instances using Docker:
 
-   These shell scripts install and call <a target="_blank" href="https://wilsonmar.github.io/terraform">Terraform</a> to instantiate, and Ansible to configure. Python is used to customize.
+1. If you're working on a local machine such as a Mac, Linux laptop, or Windows PC:
 
-   PROTIP: This exercise stands up only one instance each and not multiple instances in a cluster for High Availability. However, we recommend that Autoscaling be done so that developers habitually use workflows needed for production usage.
+   <a href="#FlooLocalInstall">flood-local</a>
 
-Additionally, a cloud GUI at <a target="_blank" href="https://www.flood.io/">https://flood.io</a> is invoked for performance testing.
+1. A <strong>monitoring process</strong> containing NewRelic software
+
+   <a href="#NewRelicAgentInstall">NewRelicAgentInstall-aws-ec2</a>
+
+2. A "the-internet" app under test (written in Ruby), with a monitoring agent;
+
+   <a href="#FloodScriptUpdate">Flood Script Update-aws-ec2</a>
+
+   <!-- These shell scripts install and call <a target="_blank" href="https://wilsonmar.github.io/terraform">Terraform</a> to instantiate, and Ansible to configure. Python is used to customize.
+   -->
+
+   PROTIP: This exercise stands up <strong>only one instance</strong> each and not multiple instances in a cluster for High Availability (HA). However, we recommend that 
+   TODO: Autoscaling be done so that developers habitually use workflows needed for production usage.
+
+Additionally, two cloud GUI 
+
+   1. A New Relic dashboard provides visualization (charts and graphs) of monitoring results
+   2. <a target="_blank" href="https://www.flood.io/">https://flood.io</a> is invoked to conduct multi-user performance emulation runs imposing artificial loads.
+
+Each step in shell and Python automation scripts is documented in the script.
+
+
+## Scripts
 
 
 <a name="ScriptsInGitHub"></a>
 
-### Scripts in GitHub
+### Project folders from GitHub
 
 These steps are done manually on your local machine.
 
@@ -195,8 +215,6 @@ These steps are done manually on your local machine.
 
 1. Review the installation scripts:
 
-   * <a href="#NewRelicAgentInstall">NewRelicAgentInstall-aws-ec2</a>
-   * <a href="#FloodScriptUpdate">Flood Script Update-aws-ec2</a>
 
 See:
    * https://github.com/flood-io/load-testing-playground/tree/master/element
@@ -301,7 +319,10 @@ docker-compose up
 
 1. [15:29] Update `newrelicc-infra.yml` with license_key value.
 
-   ### Install NewRelic instrumentation agent newrelic-infra
+
+   <a name="NewRelicInstrAWS"></a>
+
+   ### Install NewRelic instrumentation agent
 
 1. [8:13] Switch back to the terminal
 1. TODO: Script to do this:
