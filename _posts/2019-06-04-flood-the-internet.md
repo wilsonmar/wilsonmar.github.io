@@ -310,7 +310,7 @@ docker-compose up
    # TODO: Replace with reference to secrets.env by docker-compose
    echo "license_key: a46bf7d3b4043cdfffcab3aaef677d29cc60d6be" | sudo tee -a /etc/newrelic-infra.yml
 curl https://download.newrelic.com/infrastructure_agent/gpg/newrelic-infra.gpg | sudo apt-key add -
-
+&nbsp;
 cat /etc/lsb-release 
 # [13:33] Based on NewRelic web page  
    # https://docs.newrelic.com/docs/infrastructure/new-relic-infrastructure/installation/
@@ -331,7 +331,7 @@ sudo docker exec -i -t "$CONTAINER_ID" /bin/bash
 &nbsp;
 # TODO: From inside NewRelic process:
 sudo docker cp ba965ff40ef7:/app/server.rb .
-
+&nbsp;
 # [19:31] Reboot:
 sudo systemctl restart newrelic-infra
    </pre>
@@ -372,7 +372,7 @@ sudo docker exec -i -t "$CONTAINER_ID" /bin/bash
    </pre>
 
 1. Verify 
-   
+
    ### Script B : Add in server.rb and create new Docker image
 
    This is so the Docker image can be used for scaling.
@@ -437,9 +437,8 @@ sudo docker exec -i -t "$CONTAINER_ID" /bin/bash
 1. Get license from newrelic.com
 1. Insert license into script
 
-NOTE: https://github.com/ThyWoof/geek-movie-shop
+   NOTE: <a target="_blank" href="https://github.com/ThyWoof/geek-movie-shop">https://github.com/ThyWoof/geek-movie-shop</a>
 
-   ### Script B : Create Docker image / AMI ?
 
    ### Script C : Save instrumented Docker image to DockerHub for reuse
 
