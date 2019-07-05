@@ -1,8 +1,10 @@
 ---
 layout: post
-title: "AWS Lightsail"
-excerpt: "Create and use EC2 instances at fixed prices per month"
+title: "AWS Lightsail (and other VPS)"
+excerpt: "Create and use EC2 instances at fixed prices per month, vs. other Virtual Private Servers"
 tags: [AWS, EC2, cloud, automation]
+date: "2019-03-01"
+file: "lightsail.md"
 image:
 # feature: pic data center slice 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
@@ -50,6 +52,7 @@ Among those offering the fastest load times (paid by the year):
 * $19/month for 2GB RAM, 30GB SSD, 1TB data transfer at <a target="_blank" href="https://www.bluehost.com/hosting/vps/">Bluehost.com</a>
 * $30/month for 2GB RAM, 120GB disk, 1.5TB data transfer at <a target="_blank" href="https://www.hostgator.com/vps-hosting">hostgator.com</a>
 * $80/month for 4GB RAM, 40GB SSD, 5 TB data transfer at <a target="_blank" href="https://www.siteground.com/cloud-hosting.htm">SiteGround.com</a>
+* $22/month for 4GB RAM, 7GB SSD, 4 TB data transfer, 3 IP addressses at <a target="_blank" href="https://www.inmotionhosting.com/vps-hosting">inmotionhosting.com</a>
 <br /><br />
 
 For the same $20, Lightsail provides twice as much disk space, but puts a cap on the free data Transfer out.
