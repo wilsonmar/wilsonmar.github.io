@@ -25,19 +25,20 @@ Many are familiar with this website: <a target="_blank" href="https://the-intern
 
 Dave's tutorial websites include <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a>.
 
-Selenium makes use of older <strong>"Web Driver"</strong> technology that controls browsers. 
+Selenium makes use of older <strong>"Web Driver"</strong> APIs that control browsers from a variety of programming languages. <<<
 
-But Google has added what it calls <strong>"Pupeteer"</strong> technology to both diagnose and control its browser, which is now much more complex than when Web Driver was created, including capture of precise <strong>timings</strong> of response time for each manual action.
+We have also been using the Google <strong>Chrome Developer Tools</strong> to figure out the classes and identifiers we code into scripts. <strong>Audits</strong> is part of what Google calls Lighthouse technology capture a comprehensive set of metrics that include <strong>performance</strong> timings for each manual action. <<<
 
-Pupeteer is used in Chrome's Lighthouse Developer Tools which provides the precise diagnostics needed to <strong>script</strong> manual actions in <strong>Typescript</strong> code instead of Selenium.
-Typescript is a superset of the JavaScript programming language that is the default language controlling browsers.
+<!-- https://developers.google.com/web/tools/lighthouse/ -->
 
-Typescript is <strong>run</strong> to automate actions in the Chrome browser by the <strong>Flood Element</strong> program <strong>installed locally using a shell script</strong>.
+But the diagnostics are captured only for manual actions, which can be tedious to repeat for testing. So Google created their <strong>"Pupeteer"</strong> API for <strong>Typescript</strong> code which are <strong>run</strong> to automate actions in the Chrome browser by the <strong>Flood Element program</strong> <a href="#FloodLocal">installed locally using a shell script</a>. <<<
+
+Typescript is a superset of the JavaScript programming language that is the default language controlling browsers. <<<
 
 <!-- There is currently no Docker image containing Flood Element. So it needs to be installed. The npx command installs temporarily.
 -->
 
-When the scripts are <strong>git pushed</strong> to a remote <a href="#ScriptsInGitHub">GitHub</a> repository, others can <strong>git clone</strong> onto their machine to run.
+After scripts are <strong>git pushed</strong> to a remote <a href="#ScriptsInGitHub">GitHub</a> repository, others can <strong>git clone</strong> onto their machine to run.
 
 Both Element Typescript and Selenium control a <strong>single user</strong> GUI at a time. But we also want to see what happens when <strong>many users on many browser instances</strong> run at the same time exercising the website. We want to see how much a challenging JavaScript control can impact the server environment's <strong>memory, CPU, and other resources</strong>.
 
@@ -84,8 +85,13 @@ Recap <em>(click for full screen pop up)</em>:
 
 ## Scripting the-internet with Selenium
 
-T.J. Myer wrote in his website <a target="_blank" href="http://www.tjmaher.com/p/programming-projects.html">
-http://www.tjmaher.com/p/programming-projects.html</a> June - July 2015 a series describing his adventures coding Selenium on Dave's website:
+Ruby code to create "the-internet" is at <a target="_blank" href="https://github.com/tourdedave/the-internet">https://github.com/tourdedave/the-internet</a>
+
+<ul> "An example application that captures prominent and ugly functionality found on the web. Perfect for writing automated acceptance tests against."</ul>
+
+Dave Haeffner spoke about his "the-internet" in 2015 <a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=19m14s">part 1</a> and <a target="_blank" href="https://www.youtube.com/watch?v=w0pYTX2t0pg">part 2</a> of "Selenium Test Automation: Practical Tips & Tricks" presentation recorded in Israel. His May 2016 <a target="_blank" href="https://www.youtube.com/watch?v=Zf_qsXK6YdM">"How to use Selenium successfully"</a> <a target="_blank" href="http://se.tips/sf-se-meetup-2016">slidedeck</a>.
+
+T.J. Myer wrote in his <a target="_blank" href="http://www.tjmaher.com/p/programming-projects.html">his website</a> June - July 2015 a series describing his adventures coding Selenium on Dave's website:
 
 1. <a target="_blank" href="http://www.tjmaher.com/2015/06/simple-manipulation-of-login-page.html">
 Sketch out the simple manipulation of a Login page</a>
