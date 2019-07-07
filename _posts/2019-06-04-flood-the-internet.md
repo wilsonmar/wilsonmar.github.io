@@ -27,11 +27,9 @@ Dave's tutorial websites include <a target="_blank" href="https://ElementalSelen
 
 Selenium makes use of older <strong>"Web Driver"</strong> APIs that control browsers from a variety of programming languages. <<<
 
-We have also been using the Google <strong>Chrome Developer Tools</strong> to figure out the classes and identifiers we code into scripts. <strong>Audits</strong> is part of what Google calls Lighthouse technology capture a comprehensive set of metrics that include <strong>performance</strong> timings for each manual action. <<<
+But the new <strong>"Pupeteer"</strong> API exposes a comprehensive set of metrics that include performance <strong>timings</strong> for every manual action. They've been added to the "Audits" section of <strong>Chrome Developer Tools</strong> UI we've been using to figure out the classes and identifiers we code into Selenium scripts.
 
-<!-- https://developers.google.com/web/tools/lighthouse/ -->
-
-But the diagnostics are captured only for manual actions, which can be tedious to repeat for testing. So Google created their <strong>"Pupeteer"</strong> API for <strong>Typescript</strong> code which are <strong>run</strong> to automate actions in the Chrome browser by the <strong>Flood Element program</strong> <a href="#FloodLocal">installed locally using a shell script</a>. <<<
+But since these <a target="_blank" href="https://developers.google.com/web/tools/lighthouse/">"Lighthouse" diagnostics</a> require manual typing each time, it can be tedious to keep repeating manual actions during each regression test. So we create <strong>scripts</strong> to automate manual actions in the <strong>Typescript</strong> programming language <strong>run</strong> by the <strong>Flood Element program</strong>. The program is <a href="#FloodLocal">installed locally using a shell script</a>. <<<
 
 Typescript is a superset of the JavaScript programming language that is the default language controlling browsers. <<<
 
