@@ -16,7 +16,11 @@ comments: true
 
 {% include _toc.html %}
 
+
 <a name="IntroVideo"></a>
+
+## Video introduction
+
 <amp-youtube data-videoid="ps--j4ePPbA" layout="responsive" width="480" height="270"></amp-youtube><br />
 
 <em>Below is the narration (transcript) of the video above.</em>
@@ -89,7 +93,7 @@ Ruby code to create "the-internet" is at <a target="_blank" href="https://github
 
 Dave Haeffner spoke about his "the-internet" in 2015 <a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=19m14s">part 1</a> and <a target="_blank" href="https://www.youtube.com/watch?v=w0pYTX2t0pg">part 2</a> of "Selenium Test Automation: Practical Tips & Tricks" presentation recorded in Israel. His May 2016 <a target="_blank" href="https://www.youtube.com/watch?v=Zf_qsXK6YdM">"How to use Selenium successfully"</a> <a target="_blank" href="http://se.tips/sf-se-meetup-2016">slidedeck</a>.
 
-T.J. Myer wrote in his <a target="_blank" href="http://www.tjmaher.com/p/programming-projects.html">his website</a> June - July 2015 a series describing his adventures coding Selenium on Dave's website:
+T.J. Myer wrote in <a target="_blank" href="http://www.tjmaher.com/p/programming-projects.html">his website</a> June - July 2015 a series describing his adventures coding Selenium on Dave's website:
 
 1. <a target="_blank" href="http://www.tjmaher.com/2015/06/simple-manipulation-of-login-page.html">
 Sketch out the simple manipulation of a Login page</a>
