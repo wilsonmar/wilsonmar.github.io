@@ -25,24 +25,26 @@ comments: true
 
 <em>Below is the narration (transcript) of the video above.</em>
 
-Many are familiar with this website: <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a> "the-internet" running on herokuapp.com. The website was created by Dave Hoeffner to present <a href="#Controls">43 controls</a> which provide challenges to those learning to code <a href="#CodeSelenium">Selenium scripts</a> that automate <a href="#ManualActions">manual actions</a> real users perform on a <strong>internet browser</strong> such as Google Chrome.
+Many are familiar with this website: "the-internet" running on herokuapp.com<br />
+  <ul>
+  <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a>
+  </ul>
+The website was created by Dave Hoeffner to present <a href="#Controls">43 controls</a> which provide challenges to those learning to code <a href="#CodeSelenium">Selenium scripts</a> that automate <a href="#ManualActions">manual actions</a> real users perform on an <strong>internet browser</strong> (such as Google Chrome). Dave created the site as the basis for his tutorials at <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a>.
 
-Dave's tutorial websites include <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a>.
-
-Selenium makes use of older <strong>"Web Driver"</strong> APIs that control browsers from a variety of programming languages. <<<
+Selenium makes use of older <strong>"Web Driver"</strong> APIs that control browsers from code written in a variety of programming languages.
 
 But the new <strong>"Pupeteer"</strong> API exposes a comprehensive set of metrics that include performance <strong>timings</strong> for every manual action. They've been added to the "Audits" section of <strong>Chrome Developer Tools</strong> UI we've been using to figure out the classes and identifiers we code into Selenium scripts.
 
-But since these <a target="_blank" href="https://developers.google.com/web/tools/lighthouse/">"Lighthouse" diagnostics</a> require manual typing each time, it can be tedious to keep repeating manual actions during each regression test. So we create <strong>scripts</strong> to automate manual actions in the <strong>Typescript</strong> programming language <strong>run</strong> by the <strong>Flood Element program</strong>. The program is <a href="#FloodLocal">installed locally using a shell script</a>. <<<
+But since these <a target="_blank" href="https://developers.google.com/web/tools/lighthouse/">"Lighthouse" diagnostics</a> require manual effort each time, it can be tedious to keep repeating manual actions during each regression test. So we create <strong>scripts</strong> to automate manual actions in the <strong>Typescript</strong> programming language <strong>run</strong> by the <strong>Flood Element program</strong>. The program is <a href="#FloodLocal">installed locally using a shell script</a>.
 
-Typescript is a superset of the JavaScript programming language that is the default language controlling browsers. <<<
+Typescript is a superset of the JavaScript programming language that is the default language controlling browsers.
 
 <!-- There is currently no Docker image containing Flood Element. So it needs to be installed. The npx command installs temporarily.
 -->
 
 After scripts are <strong>git pushed</strong> to a remote <a href="#ScriptsInGitHub">GitHub</a> repository, others can <strong>git clone</strong> onto their machine to run.
 
-Both Element Typescript and Selenium control a <strong>single user</strong> GUI at a time. But we also want to see what happens when <strong>many users on many browser instances</strong> run at the same time exercising the website. We want to see how much a challenging JavaScript control can impact the server environment's <strong>memory, CPU, and other resources</strong>.
+Both Element CLI and Selenium control a <strong>single user</strong> GUI at a time. But we also want to see what happens when <strong>many users on many browser instances</strong> run at the same time exercising the website. We want to see how much each JavaScript control can impact both the client and server environment's <strong>memory, CPU, and other resources</strong>. <<<
 
 ### App Build
 
@@ -113,7 +115,7 @@ The same issues addressed above also need to be addressed by any app automation 
 
 <a name="ManualActions"></a>
 
-## Challenges on The-Internet
+## Challenges on The-Internet app
 
 Click on <a target="_blank" href="https://the-internet.herokuapp.com/"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a> to see the sample app's UI on-line at<br /><a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a><br />
 Click on <a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=19m14s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> to view a video about manual actions and analysis of the UI page source code as the basis for Flood Element TypeScript creation.<br />
@@ -164,8 +166,12 @@ Click on <a target="_blank" href="https://github.com/daeep/Flood_Element/tree/ma
 42. <a target="_blank" href="https://the-internet.herokuapp.com/typos"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/38-Typos.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Typos
 43. <a target="_blank" href="https://the-internet.herokuapp.com/tinymce"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/39-WYSIWYG_Editor.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> WYSIWYG Editor
 
-Additional columns of icons will be added to show a discussion of how the script was built, plus 
-another set of icons to reach run results for each test item.
+Additional columns of icons will be added to show sample run results for each test item.
+
+## Scenarios
+
+Shell scripts to run these
+
 
 <hr />
 
