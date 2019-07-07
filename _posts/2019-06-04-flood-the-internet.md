@@ -82,7 +82,7 @@ When we also add the <strong>cost</strong> of each run, we would be able to iden
 
 Recap <em>(click for full screen pop up)</em>:
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/60542595-85e53600-9cd1-11e9-9e1e-d8b3dca5e1e9.jpg"><img alt="flood-the-internet-v11b-1168x580.jpg" width="1148" src="https://user-images.githubusercontent.com/300046/60542595-85e53600-9cd1-11e9-9e1e-d8b3dca5e1e9.jpg"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/60763986-3be7b180-a03d-11e9-9002-2e9f3512c589.jpg"><img alt="flood-the-internet-v12-1900x959.jpg" width="1900" src="https://user-images.githubusercontent.com/300046/60763986-3be7b180-a03d-11e9-9002-2e9f3512c589.jpg"></a>
 
 
 <a name="CodeSelenium"></a>
