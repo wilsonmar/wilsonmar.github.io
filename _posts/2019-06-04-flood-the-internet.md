@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Measure performance impact of JavaScript in Dave Hoeffner's the-internet website"
-excerpt: "Using Flood.io Element scripts to measure impact of challenging JavaScript in websites stood up using Docker within AWS cloud, as measured by NewRelic"
+title: "Measure impact of controls in Dave Hoeffner's the-internet website"
+excerpt: "Using Flood.io Element TypeScript to measure performance of challenging GUI accessing website stood up in AWS cloud using Docker, as measured by NewRelic"
 tags: [flood, perftest, selenium, testing]
 file: flood-element-the-internet-docker-aws-newrelic.md
 image:
@@ -12,8 +12,16 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+<p align="right"><a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2Fflood-the-internet%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2Fflood-the-internet%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2Fflood-the-internet%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2Fflood-the-internet%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2Fflood-the-internet%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2Fflood-the-internet%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2Fflood-the-internet%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2Fflood-the-internet%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2Fflood-the-internet%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
+</p>
 {% include _toc.html %}
 
 
@@ -94,12 +102,12 @@ While learning on a local machine such as a Mac, Linux laptop, or Windows PC:
 
 The system under test (SUT) instantiates (using Docker):
 
-   1. The "the-internet" web app
+   1. The "the-internet" web app from a Docker image
    2. The monitoring process, which can be in another container or as another pod within the same container as the web app.
 
 Additionally, the GUI of two cloud services:
 
-   1. <a target="_blank" href="https://www.flood.io/">https://flood.io</a> run TypeScript to  emulate the browsers for multiple users, which imposes an artificial load.
+   1. <a target="_blank" href="https://www.flood.io/">https://flood.io</a> which runs TypeScript to  emulate the browsers for multiple users, which imposes an artificial load.
    2. A New Relic dashboard provides visualization (line graphs) of monitoring during runs over time and under various configurations.
 
 
@@ -201,10 +209,6 @@ Click on <a target="_blank" href="https://github.com/daeep/Flood_Element/tree/ma
 Click on <a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=19m14s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> to view a video about manual actions and analysis of the UI page source code as the basis for Flood Element TypeScript creation.<br />
 Additional columns of icons may be added to show <strong>sample run results</strong> for each test item.
 
-
-* <a target="_blank" href="https://the-internet.herokuapp.com/login"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/01-AB%20Testing.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a><a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=19m14s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> Login
-* <a target="_blank" href="https://the-internet.herokuapp.com/secure"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/01-AB%20Testing.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a><a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=20m38s"><img alt="assertion on message" width="21" height="21" src="../images/youtube-21x21.png"></a> Logout
-
 1. <a target="_blank" href="https://the-internet.herokuapp.com/abtest"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/01-AB%20Testing.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a><a target="_blank" href="https://www.youtube.com/watch?v=w0pYTX2t0pg&t=31m52s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> A/B Test Control (also known as split testing)
 2. <a target="_blank" href="https://the-internet.herokuapp.com/add_remove_elements/"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a> Add/Remove Elements
 3. <a target="_blank" href="https://the-internet.herokuapp.com/basic_auth"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/02-Basic%20Auth.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Basic Auth (Sign in Username and Password: admin)
@@ -225,7 +229,10 @@ Additional columns of icons may be added to show <strong>sample run results</str
 18. <a target="_blank" href="https://the-internet.herokuapp.com/upload"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/15-File_Upload.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> File Upload (issue in Element handling Windows vs Linux, also in Selenium)
 19. <a target="_blank" href="https://the-internet.herokuapp.com/floating_menu"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/16-Floating_Menu.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Floating Menu
 20. <a target="_blank" href="https://the-internet.herokuapp.com/forgot_password"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/17-Forgot_Password.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a><a target="_blank" href="https://www.youtube.com/watch?v=w0pYTX2t0pg&t=30m16s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> Forgot Password
-21. <a target="_blank" href="https://the-internet.herokuapp.com/login"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/18-Form_Authentication.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Form Authentication
+
+21. <a target="_blank" href="https://the-internet.herokuapp.com/login"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/18-Form_Authentication.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a><a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=19m14s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> Form Authentication (Login)
+<br /><a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=20m38s"><img alt="assertion on message" width="21" height="21" src="../images/youtube-21x21.png"></a> Logout (appears after login, not listed in the app's menu)
+
 22. <a target="_blank" href="https://the-internet.herokuapp.com/frames"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/19-Frames-Nested_Frames.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Frames (Nested)
 22. <a target="_blank" href="https://the-internet.herokuapp.com/frames"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/19-Frames-iFrames.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Frames (iFrames)
 23. <a target="_blank" href="https://the-internet.herokuapp.com/geolocation"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/20-Geolocation.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Geolocation
