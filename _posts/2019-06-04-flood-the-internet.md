@@ -239,8 +239,7 @@ Additional columns of icons may be added to show <strong>sample run results</str
 21. <a target="_blank" href="https://the-internet.herokuapp.com/login"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/18-Form_Authentication.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a><a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=19m14s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> Form Authentication (Login)
 <br /><a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=20m38s"><img alt="assertion on message" width="21" height="21" src="../images/youtube-21x21.png"></a> Logout (appears after login, not listed in the app's menu)
 
-22. <a target="_blank" href="https://the-internet.herokuapp.com/frames"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/19-Frames-Nested_Frames.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Frames (Nested)
-22. <a target="_blank" href="https://the-internet.herokuapp.com/frames"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/19-Frames-iFrames.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Frames (iFrames)
+22. <a target="_blank" href="https://the-internet.herokuapp.com/frames"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/19-Frames-Nested_Frames.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Frames (Nested)<br /><a target="_blank" href="https://the-internet.herokuapp.com/frames"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/19-Frames-iFrames.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Frames (iFrames)
 23. <a target="_blank" href="https://the-internet.herokuapp.com/geolocation"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/20-Geolocation.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Geolocation
 24. <a target="_blank" href="https://the-internet.herokuapp.com/horizontal_slider"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/21-Horizontal_Slider.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Horizontal Slider
 25. <a target="_blank" href="https://the-internet.herokuapp.com/hovers"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/22-Hovers.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Hovers
@@ -549,9 +548,9 @@ sudo docker exec -i -t "$CONTAINER_ID" /bin/bash
 1. Docker save
 
 
-   <a name="PrepFlood"></a>
+<a name="PrepFlood"></a>
 
-   ### Perpare for Flood
+## Perpare for Flood
 
 1. If you don't have a <a target="_blank" href="https://www.flood.io/">flood.io</a> account, get one (manually).
 1. Confirm your account via email.
@@ -561,7 +560,7 @@ sudo docker exec -i -t "$CONTAINER_ID" /bin/bash
 
 <a name="flood-run-e2e"></a>
 
-### Run flood against app in AWS under instrumentation
+## Run flood against app in AWS under instrumentation
 
 This step runs a shell script file at<br />
 <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/master/flood-io/flood-run-e2e.sh">https://github.com/wilsonmar/DevSecOps/master/flood-io/flood-run-e2e.sh</a>
