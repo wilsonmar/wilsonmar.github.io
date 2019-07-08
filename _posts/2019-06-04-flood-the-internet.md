@@ -83,67 +83,82 @@ When we also add the <strong>cost</strong> of each run, we would be able to iden
 
 <a name="Architecture"></a>
 
-## Architecture of the SUT
+## Recap: Architectural components
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/60763986-3be7b180-a03d-11e9-9002-2e9f3512c589.jpg"><img alt="flood-the-internet-v12-1900x959.jpg" width="1900" src="https://user-images.githubusercontent.com/300046/60763986-3be7b180-a03d-11e9-9002-2e9f3512c589.jpg"></a>
 
-To recap, the system under test (SUT) instantiates two server instances (using Docker):
+While learning on a local machine such as a Mac, Linux laptop, or Windows PC:
+
+   1. Use Chrome Developer Tools to identify how to code scripts to recognize controls in HTML and CSS.
+   2. Install the Flood Element CLI to run Element TypeScript which automate a single user's manual actions on a Google's Chrome browser reaching the-internet-herokuapp.com. 
+
+The system under test (SUT) instantiates (using Docker):
 
    1. The "the-internet" web app
    2. The monitoring process, which can be in another container or as another pod within the same container as the web app.
 
-1. If you're working on a local machine such as a Mac, Linux laptop, or Windows PC:
+Additionally, the GUI of two cloud services:
 
-   <a href="#FlooLocalInstall">flood-local</a>
-
-Additionally, two cloud GUI 
-
-   1. A New Relic dashboard provides visualization (charts and graphs) of monitoring results
-   2. <a target="_blank" href="https://www.flood.io/">https://flood.io</a> is invoked to conduct multi-user performance emulation runs imposing artificial loads.
+   1. <a target="_blank" href="https://www.flood.io/">https://flood.io</a> run TypeScript to  emulate the browsers for multiple users, which imposes an artificial load.
+   2. A New Relic dashboard provides visualization (line graphs) of monitoring during runs over time and under various configurations.
 
 
 <a name="HowTo"></a>
 
-## How To
+## How To Manual Steps
 
-Here is how this tutorial leads you in the sections below:
+Here are the manual steps to make use of instructions in this tutorial:
 
-1. Study the <a href="#CodeSelenium">app under test</a> and <a href="#ManualActions">manual actions</a> captured into <a href="#CodeSelenium">Selenium</a> and <a href="#ManualActions">Flood Element test automation script code</a>
-2. Run Flood Element CLI install locally to test Flood Element test script coding.
-3. Get AWS service account credentails linked to role with permissions from groups.
+1. Study the <a href="#CodeSelenium">app under test</a> and <a href="#ManualActions">manual actions</a> captured into <a href="#CodeSelenium">Selenium</a> and <a href="#ManualActions">Flood Element test automation script code (below)</a>.
+2. Run Flood Element CLI install locally using the Flood Element TypeScript code provided, which calls on Google's Pupetter technology to control client browsers.
+
+3. Get AWS service account credentails linked to AWS Roles assigned to Groups with Permissions.
    See <a target="_blank" href="https://wilsonmar.github.io/aws-onboarding">https://wilsonmar.github.io/aws-onboarding</a>
 
 4. Install within AWS "the-internet" app under test from DockerHub
    <a href="#FloodScriptUpdate">Flood Script Update-aws-ec2</a>
 
+   NOTE: Automation for installation within the Azure cloud is on our Roadmap.
+
 5. Install <strong>NewRelic's monitoring process</strong> 
    (<a href="#NewRelicAgentInstall">NewRelicAgentInstall-aws-ec2</a>)
 
-6. Identify fastest ramp-up
-7. Run <strong>scenarios</strong> to isolate load:
-   1. Registration (to establish new users)
+6. Specify <strong>initial run parameters</strong> to control runs of flood.io in the cloud.
+7. Launch runs at scheduled times to take advantage of AWS Spot Rates.
+
+   PROTIP: Automation (shell or Python) scripts to bring up servers and conduct runs are designed to minimize spend (not waste money on idle resources). Services are deleted after each run.
+
+8. Review warning and error messages. Analyze statistics collected by the Chrome Browser's Lighthouse and sent to NewRelic's dashboard in the cloud.
+9. Identify the <strong>fastest realistic ramp-up</strong> time (without causing errors) by re-running with different rates which running users are added.
+
+9. Experiment with changes to JavaScript, HTML, and CSS in client application code in attempts to reduce timings and resource usage on browsers.
+9. Modify TypeScript accordingly to identify the <strong>impact</strong> of changes made to the application before reruns.
+
+   NOTE: Concern about metrics is more about what is happening in client browsers than in the application server. The application under test here ("the-internet") does not make use of separate <strong>authentication servers</strong>, a <strong>database</strong>, nor other back-end services. 
+
+9. Run separate <strong>isolated scenarios</strong> to isolate transactions to study:
+
+   1. <strike>Registration (to establish new users)</strike>
    2. Login (to load authentication)
-   3. Menus (when users are exploring)
-   4. User data entry
-   5. On-line performance during batch reporting
-   6. Performance during Mass Backup
-   7. Performance during Mass Restore
+   3. Menus and static pages (when users are exploring)
+   4. User data entry filling out forms (editing <strike>and saving form data into a database</strike>)
+   5. <strike>Client-side performance during batch reporting, backup, restore, or other back-end processing</strike>
+   <br />
 
-8. Identify the mix of transactions in a standardized run
+9. Identify the <strong>mix of transactions</strong> in a standardized run of different transactions at a time.
 
-   PROTIP: This exercise stands up <strong>only one instance</strong> each and not multiple instances in a cluster for High Availability (HA). However, we recommend that 
-   TODO: Autoscaling be done so that developers habitually use workflows needed for production usage.
-
+   PROTIP: This exercise stands up <strong>only one instance</strong> each and not multiple instances in a cluster for High Availability (HA). 
    <!-- These shell scripts install and call <a target="_blank" href="https://wilsonmar.github.io/terraform">Terraform</a> to instantiate, and Ansible to configure. Python is used to customize.
+   TODO: Autoscaling be done so that developers habitually use workflows needed for production usage.
    -->
 
 9. <strike>Identify optimal scale-up and scale-down (instance type) configurations</strike>
-10. <strike>Identify optimal scale-out and scale-in configurations</strike>
+9. <strike>Identify optimal scale-out and scale-in configurations</strike>
 
 
 <a name="CodeSelenium"></a>
 
-## Scripting the-internet with Selenium
+## Automating the-internet using Selenium
 
 Dave Haeffner spoke about his "the-internet" in 2015 <a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=19m14s">part 1</a> and <a target="_blank" href="https://www.youtube.com/watch?v=w0pYTX2t0pg">part 2</a> of "Selenium Test Automation: Practical Tips & Tricks" presentation recorded in Israel. In his May 2016 <a target="_blank" href="https://www.youtube.com/watch?v=Zf_qsXK6YdM">"How to use Selenium successfully"</a> <a target="_blank" href="http://se.tips/sf-se-meetup-2016">slidedeck</a> he said:
 
@@ -180,9 +195,9 @@ Many of the issues addressed above also need to be addressed by any app automati
 ## Challenges on The-Internet app
 
 Click on <a target="_blank" href="https://the-internet.herokuapp.com/"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a> to see the sample app's UI on-line at<br /><a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a><br />
-Click on <a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=19m14s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> to view a video about manual actions and analysis of the UI page source code as the basis for Flood Element TypeScript creation.<br />
 Click on <a target="_blank" href="https://github.com/daeep/Flood_Element/tree/master/The%20Internet%20Herokuapp"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"> to view the Flood Element TypeScript at<br />https://github.com/daeep/Flood_Element/tree/master/The%20Internet%20Herokuapp</a><br />
-An additional columns of icons may be added to show <strong>sample run results</strong> for each test item.
+Click on <a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=19m14s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> to view a video about manual actions and analysis of the UI page source code as the basis for Flood Element TypeScript creation.<br />
+Additional columns of icons may be added to show <strong>sample run results</strong> for each test item.
 
 
 * <a target="_blank" href="https://the-internet.herokuapp.com/login"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/01-AB%20Testing.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a><a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=19m14s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> Login
