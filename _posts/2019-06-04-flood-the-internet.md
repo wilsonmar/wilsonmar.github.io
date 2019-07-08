@@ -98,9 +98,9 @@ When we also add the <strong>cost</strong> of each run, we would be able to iden
 
 While learning on a local machine such as a Mac, Linux laptop, or Windows PC:
 
-   1. Use Chrome Developer Tools to extract identifiers, classess, and selectors in HTML and CSS to programmatically reach each GUI control used in each TypeScript.
+   1. Chrome Developer Tools is used to extract identifiers, classess, and selectors in HTML and CSS to programmatically reach each GUI control used in each TypeScript.
 
-   2. Install the Flood Element CLI to run Element TypeScript which automate a <strong>single user</strong>'s manual actions on a Google's Chrome browser reaching the-internet-herokuapp.com. 
+   2. The Flood Element CLI is installed to run Element TypeScript to emulate a <strong>single user</strong>'s manual actions on a Google's Chrome browser.
 
 The system under (load) test (SUT) instantiated using Docker:
 
