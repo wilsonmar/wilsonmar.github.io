@@ -3,7 +3,8 @@ layout: post
 title: "Measure impact of controls in Dave Hoeffner's the-internet website"
 excerpt: "Using Flood.io Element TypeScript to measure performance of challenging GUI accessing website stood up in AWS cloud using Docker, as measured by NewRelic"
 tags: [flood, perftest, selenium, testing]
-file: flood-element-the-internet-docker-aws-newrelic.md
+date: "2019-06-04"
+file: "flood-the-internet"
 image:
 # flood-the-internet-wall-1900x500-105703.jpg
   feature: https://user-images.githubusercontent.com/300046/59104048-b4980880-88ed-11e9-9a93-c19baaef18ab.jpg
@@ -97,18 +98,20 @@ When we also add the <strong>cost</strong> of each run, we would be able to iden
 
 While learning on a local machine such as a Mac, Linux laptop, or Windows PC:
 
-   1. Use Chrome Developer Tools to identify how to code scripts to recognize controls in HTML and CSS.
-   2. Install the Flood Element CLI to run Element TypeScript which automate a single user's manual actions on a Google's Chrome browser reaching the-internet-herokuapp.com. 
+   1. Use Chrome Developer Tools to extract identifiers, classess, and selectors in HTML and CSS to programmatically reach each GUI control used in each TypeScript.
 
-The system under test (SUT) instantiates (using Docker):
+   2. Install the Flood Element CLI to run Element TypeScript which automate a <strong>single user</strong>'s manual actions on a Google's Chrome browser reaching the-internet-herokuapp.com. 
+
+The system under (load) test (SUT) instantiated using Docker:
 
    1. The "the-internet" web app from a Docker image
-   2. The monitoring process, which can be in another container or as another pod within the same container as the web app.
+   2. The <strong>monitoring process</strong>, which can be in another container or as another pod within the same container as the web app.
 
 Additionally, the GUI of two cloud services:
 
    1. <a target="_blank" href="https://www.flood.io/">https://flood.io</a> which runs TypeScript to  emulate the browsers for multiple users, which imposes an artificial load.
-   2. A New Relic dashboard provides visualization (line graphs) of monitoring during runs over time and under various configurations.
+   
+   2. <a target="_blank" href="https://blog.newrelic.com/product-news/steal-this-dashboard/">A New Relic dashboard</a> which provides visualization (line graphs) of metrics collected during runs over time and under various configurations.
 
 
 <a name="HowTo"></a>
@@ -130,15 +133,18 @@ NOTE: This assumes that you know how to open and use a <a target="_blank" href="
 
    NOTE: Automation for installation within the Azure cloud is on our Roadmap.
 
+5. Obtain logins to accounts for <a target="_blank" href="https://newrelic.com/products/application-monitoring">New Relic APM</a>, <a target="_blank" href="https://newrelic.com/products/browser-monitoring">New Relic Browser</a>, and <a target="_blank" href="https://newrelic.com/products/infrastructure">New Relic Infrastructure</a>.
 5. Install <strong>NewRelic's monitoring process</strong> 
-   (<a href="#NewRelicAgentInstall">NewRelicAgentInstall-aws-ec2</a>)
+   
+   <a href="#NewRelicAgentInstall">NewRelicAgentInstall-aws-ec2.sh</a>
 
 6. Specify <strong>initial run parameters</strong> to control runs of flood.io in the cloud.
 7. Launch runs at scheduled times to take advantage of AWS Spot Rates.
 
    PROTIP: Automation (shell or Python) scripts to bring up servers and conduct runs are designed to minimize spend (not waste money on idle resources). Services are deleted after each run.
 
-8. Review warning and error messages. Analyze statistics collected by the Chrome Browser's Lighthouse and sent to NewRelic's dashboard in the cloud.
+8. <a href="#ConfigNewRelic">Configure New Relic dashboard</a>
+9. Review warning and error messages. Analyze statistics collected by the Chrome Browser's Lighthouse and sent to NewRelic's dashboard in the cloud.
 9. Identify the <strong>fastest realistic ramp-up</strong> time (without causing errors) by re-running with different rates which running users are added.
 
 9. Experiment with changes to JavaScript, HTML, and CSS in client application code in attempts to reduce timings and resource usage on browsers.
@@ -567,7 +573,26 @@ sudo docker exec -i -t "$CONTAINER_ID" /bin/bash
 1. Analyze run results / Generate visualizations.
 1. Display summary statistics.
 
-   
+
+<a name="ConfigNewRelic"></a>
+
+## Config New Relic Dashboard
+
+Questions about several other dimensions, such as:
+
+   * What is the impact on the cloud bill (costs) of that cool JavaScript UI code? 
+   * What is the capacity of a chosen instance type (such as the free tier t2.micro)?
+   * How much more is needed to run the anticipated peak load?
+   * What happens when that peak load is exceeded?
+   <br /><br />
+
+https://docs.newrelic.com/docs/insights/use-insights-ui/manage-dashboards
+https://learn.newrelic.com/get-started-with-apm
+https://learn.newrelic.com/dashboards-and-data-apps
+https://docs.newrelic.com/docs/plugins/plugins-new-relic/custom-dashboards-custom-views
+https://blog.newrelic.com/product-news/steal-this-dashboard/
+
+
 ## Other APM
 
 A full list of APM tools:
@@ -618,23 +643,10 @@ The Linux Audit Framework is used to identify potential security weaknesses or p
 
    <pre>sudo aureport</pre>
 
-
 <a target="_blank" href="https://app.pluralsight.com/library/courses/securing-docker-platform/table-of-contents">Securing the Docker Platform</a>
 by Nigel Brown Released 21 Jun 2018
 
 <hr />
-
-
-Questions about several other dimensions, such as:
-
-   * What is the impact on the cloud bill (costs) of that cool JavaScript UI code? 
-   * What is the capacity of a chosen instance type (such as the free tier t2.micro)?
-   * How much more is needed to run the anticipated peak load?
-   * What happens when that peak load is exceeded?
-   <br /><br />
-
-https://www.youtube.com/watch?v=rb5OL-QQPw4
-Selenium + Jenkins + GIT Integration : Run your Test Cases from GIT Hub using Jenkins
 
 ## Resources
 
