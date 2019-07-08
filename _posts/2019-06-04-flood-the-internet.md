@@ -109,11 +109,13 @@ Additionally, the GUI of two cloud services:
 
 Here are the manual steps to make use of instructions in this tutorial:
 
-1. Study the <a href="#CodeSelenium">app under test</a> and <a href="#ManualActions">manual actions</a> captured into <a href="#CodeSelenium">Selenium</a> and <a href="#ManualActions">Flood Element test automation script code (below)</a>.
-2. Run Flood Element CLI install locally using the Flood Element TypeScript code provided, which calls on Google's Pupetter technology to control client browsers.
+NOTE: This assumes that you know how to open and use a <a target="_blank" href="https://wilsonmar.github.io/mac-finder/">Terminal program on a Mac</a> or a Git Bash on Windows.
 
-3. Get AWS service account credentails linked to AWS Roles assigned to Groups with Permissions.
-   See <a target="_blank" href="https://wilsonmar.github.io/aws-onboarding">https://wilsonmar.github.io/aws-onboarding</a>
+1. Study the <a href="#CodeSelenium">app under test</a> and <a href="#ManualActions">manual actions</a> captured into <a href="#CodeSelenium">Selenium</a> and <a href="#ManualActions">Flood Element test automation script code (below)</a>.
+2. Invoke the Flood Element CLI install locally using the Flood Element TypeScript code provided, which calls on Google's Pupetter technology to control client browsers.
+
+3. Get an AWS service account linked to AWS Roles assigned to Groups with Permissions.
+   See <a target="_blank" href="https://wilsonmar.github.io/aws-onboarding">https://wilsonmar.github.io/aws-onboarding</a>, which describes editing files which store credentails (UserName and Password) in environment files which are invoked during runs to populate environment variables referenced by automation scripts.
 
 4. Install within AWS "the-internet" app under test from DockerHub
    <a href="#FloodScriptUpdate">Flood Script Update-aws-ec2</a>
