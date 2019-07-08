@@ -35,9 +35,10 @@ Selenium makes use of older <strong>"Web Driver"</strong> APIs that control brow
 
 But the new <strong>"Pupeteer"</strong> API exposes a comprehensive set of metrics that include performance <strong>timings</strong> for every manual action. They've been added to the "Audits" section of <strong>Chrome Developer Tools</strong> UI we've been using to figure out the classes and identifiers we code into Selenium scripts.
 
-But since these <a target="_blank" href="https://developers.google.com/web/tools/lighthouse/">"Lighthouse" diagnostics</a> require manual effort each time, it can be tedious to keep repeating manual actions during each regression test. So we create <strong>scripts</strong> to automate manual actions in the <strong>Typescript</strong> programming language <strong>run</strong> by the <strong>Flood Element program</strong>. The program is <a href="#FloodLocal">installed locally using a shell script</a>.
+But since these <a target="_blank" href="https://developers.google.com/web/tools/lighthouse/">"Lighthouse" diagnostics</a> require manual effort each time, it can be tedious to keep repeating manual actions during each regression test. So we create <strong>scripts</strong> to automate manual actions in the <a target="_blank" href="https://www.geeksforgeeks.org/difference-between-typescript-and-javascript/">Typescript</a> programming language <strong>run</strong> by the <strong>Flood Element program</strong>. The program is <a href="#FloodLocalInstall">installed locally using a shell script</a>.
 
-Typescript is a superset of the JavaScript programming language that is the default language controlling browsers.
+Typescript is a superset of the JavaScript programming language that control browsers.
+Typescript is used because its <a href="#ElementCoding">transpiler</a> checks for errors sooner than JavaScript.
 
 <!-- There is currently no Docker image containing Flood Element. So it needs to be installed. The npx command installs temporarily.
 -->
@@ -80,20 +81,75 @@ When we also add the <strong>cost</strong> of each run, we would be able to iden
 <!-- We don't create an <strong>instrumented Docker image</strong> that has the agent already installed because the license differs for each installation. 
 -->
 
-Recap <em>(click for full screen pop up)</em>:
+<a name="Architecture"></a>
+
+## Architecture of the SUT
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/60763986-3be7b180-a03d-11e9-9002-2e9f3512c589.jpg"><img alt="flood-the-internet-v12-1900x959.jpg" width="1900" src="https://user-images.githubusercontent.com/300046/60763986-3be7b180-a03d-11e9-9002-2e9f3512c589.jpg"></a>
+
+To recap, the system under test (SUT) instantiates two server instances (using Docker):
+
+   1. The "the-internet" web app
+   2. The monitoring process, which can be in another container or as another pod within the same container as the web app.
+
+1. If you're working on a local machine such as a Mac, Linux laptop, or Windows PC:
+
+   <a href="#FlooLocalInstall">flood-local</a>
+
+Additionally, two cloud GUI 
+
+   1. A New Relic dashboard provides visualization (charts and graphs) of monitoring results
+   2. <a target="_blank" href="https://www.flood.io/">https://flood.io</a> is invoked to conduct multi-user performance emulation runs imposing artificial loads.
+
+
+<a name="HowTo"></a>
+
+## How To
+
+Here is how this tutorial leads you in the sections below:
+
+1. Study the <a href="#CodeSelenium">app under test</a> and <a href="#ManualActions">manual actions</a> captured into <a href="#CodeSelenium">Selenium</a> and <a href="#ManualActions">Flood Element test automation script code</a>
+2. Run Flood Element CLI install locally to test Flood Element test script coding.
+3. Get AWS service account credentails linked to role with permissions from groups.
+   See <a target="_blank" href="https://wilsonmar.github.io/aws-onboarding">https://wilsonmar.github.io/aws-onboarding</a>
+
+4. Install within AWS "the-internet" app under test from DockerHub
+   <a href="#FloodScriptUpdate">Flood Script Update-aws-ec2</a>
+
+5. Install <strong>NewRelic's monitoring process</strong> 
+   (<a href="#NewRelicAgentInstall">NewRelicAgentInstall-aws-ec2</a>)
+
+6. Identify fastest ramp-up
+7. Run <strong>scenarios</strong> to isolate load:
+   1. Registration (to establish new users)
+   2. Login (to load authentication)
+   3. Menus (when users are exploring)
+   4. User data entry
+   5. On-line performance during batch reporting
+   6. Performance during Mass Backup
+   7. Performance during Mass Restore
+
+8. Identify the mix of transactions in a standardized run
+
+   PROTIP: This exercise stands up <strong>only one instance</strong> each and not multiple instances in a cluster for High Availability (HA). However, we recommend that 
+   TODO: Autoscaling be done so that developers habitually use workflows needed for production usage.
+
+   <!-- These shell scripts install and call <a target="_blank" href="https://wilsonmar.github.io/terraform">Terraform</a> to instantiate, and Ansible to configure. Python is used to customize.
+   -->
+
+9. <strike>Identify optimal scale-up and scale-down (instance type) configurations</strike>
+10. <strike>Identify optimal scale-out and scale-in configurations</strike>
 
 
 <a name="CodeSelenium"></a>
 
 ## Scripting the-internet with Selenium
 
-Ruby code to create "the-internet" is at <a target="_blank" href="https://github.com/tourdedave/the-internet">https://github.com/tourdedave/the-internet</a>
+Dave Haeffner spoke about his "the-internet" in 2015 <a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=19m14s">part 1</a> and <a target="_blank" href="https://www.youtube.com/watch?v=w0pYTX2t0pg">part 2</a> of "Selenium Test Automation: Practical Tips & Tricks" presentation recorded in Israel. In his May 2016 <a target="_blank" href="https://www.youtube.com/watch?v=Zf_qsXK6YdM">"How to use Selenium successfully"</a> <a target="_blank" href="http://se.tips/sf-se-meetup-2016">slidedeck</a> he said:
 
 <ul> "An example application that captures prominent and ugly functionality found on the web. Perfect for writing automated acceptance tests against."</ul>
 
-Dave Haeffner spoke about his "the-internet" in 2015 <a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=19m14s">part 1</a> and <a target="_blank" href="https://www.youtube.com/watch?v=w0pYTX2t0pg">part 2</a> of "Selenium Test Automation: Practical Tips & Tricks" presentation recorded in Israel. His May 2016 <a target="_blank" href="https://www.youtube.com/watch?v=Zf_qsXK6YdM">"How to use Selenium successfully"</a> <a target="_blank" href="http://se.tips/sf-se-meetup-2016">slidedeck</a>.
+Ruby code to create "the-internet" is at <a target="_blank" href="https://github.com/tourdedave/the-internet">https://github.com/tourdedave/the-internet</a>
 
 T.J. Myer wrote in <a target="_blank" href="http://www.tjmaher.com/p/programming-projects.html">his website</a> June - July 2015 a series describing his adventures coding Selenium on Dave's website:
 
@@ -110,7 +166,13 @@ The Page Object Model</a>
 6. <a target="_blank" href="http://www.tjmaher.com/2015/07/the-internet-writing-automated-test.html">
 Writing the Automated Test</a>
 
-The same issues addressed above also need to be addressed by any app automation tool.
+References:
+
+* <a target="_blank" href="http://bit.ly/se-exceptions-java">http://bit.ly/se-exceptions-java</a> list of exceptions in Selenium (2015)
+* <a target="_blank" href="http://bit.ly/se-exceptions-howto">http://bit.ly/se-exceptions-howto</a> exception handling in Selenium (2015)
+
+
+Many of the issues addressed above also need to be addressed by any app automation tool.
 
 
 <a name="ManualActions"></a>
@@ -119,11 +181,16 @@ The same issues addressed above also need to be addressed by any app automation 
 
 Click on <a target="_blank" href="https://the-internet.herokuapp.com/"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a> to see the sample app's UI on-line at<br /><a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a><br />
 Click on <a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=19m14s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> to view a video about manual actions and analysis of the UI page source code as the basis for Flood Element TypeScript creation.<br />
-Click on <a target="_blank" href="https://github.com/daeep/Flood_Element/tree/master/The%20Internet%20Herokuapp"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"> to view the Flood Element TypeScript at<br />https://github.com/daeep/Flood_Element/tree/master/The%20Internet%20Herokuapp</a>
+Click on <a target="_blank" href="https://github.com/daeep/Flood_Element/tree/master/The%20Internet%20Herokuapp"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"> to view the Flood Element TypeScript at<br />https://github.com/daeep/Flood_Element/tree/master/The%20Internet%20Herokuapp</a><br />
+An additional columns of icons may be added to show <strong>sample run results</strong> for each test item.
 
-1. <a target="_blank" href="https://the-internet.herokuapp.com/abtest"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/01-AB%20Testing.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> A/B Test Control (also known as split testing)
+
+* <a target="_blank" href="https://the-internet.herokuapp.com/login"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/01-AB%20Testing.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a><a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=19m14s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> Login
+* <a target="_blank" href="https://the-internet.herokuapp.com/secure"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/01-AB%20Testing.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a><a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=20m38s"><img alt="assertion on message" width="21" height="21" src="../images/youtube-21x21.png"></a> Logout
+
+1. <a target="_blank" href="https://the-internet.herokuapp.com/abtest"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/01-AB%20Testing.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a><a target="_blank" href="https://www.youtube.com/watch?v=w0pYTX2t0pg&t=31m52s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> A/B Test Control (also known as split testing)
 2. <a target="_blank" href="https://the-internet.herokuapp.com/add_remove_elements/"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a> Add/Remove Elements
-3. <a target="_blank" href="https://the-internet.herokuapp.com/basic_auth"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/02-Basic%20Auth.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a><a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=19m14s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> Basic Auth (Sign in Username and Password: admin)
+3. <a target="_blank" href="https://the-internet.herokuapp.com/basic_auth"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/02-Basic%20Auth.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Basic Auth (Sign in Username and Password: admin)
 4. <a target="_blank" href="https://the-internet.herokuapp.com/broken_images"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/03-Broken%20Images.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Broken Images
 5. <a target="_blank" href="https://the-internet.herokuapp.com/challenging_dom"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/04-Challenging_DOM.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Challenging DOM - this is the one impacting server resource
 6. <a target="_blank" href="https://the-internet.herokuapp.com/checkboxes"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/05-Checkboxes.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Checkboxes
@@ -134,13 +201,13 @@ Click on <a target="_blank" href="https://github.com/daeep/Flood_Element/tree/ma
 11. <a target="_blank" href="https://the-internet.herokuapp.com/dropdown"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/09-Dropdown.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Dropdown
 12. <a target="_blank" href="https://the-internet.herokuapp.com/dynamic_content"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/10-Dynamic_Content.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Dynamic Content
 13. <a target="_blank" href="https://the-internet.herokuapp.com/dynamic_controls"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/11-Dynamic_Controls.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Dynamic Controls
-14. <a target="_blank" href="https://the-internet.herokuapp.com/dynamic_loading "><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/12-Dynamic_Loading.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Dynamic Loading
+14. <a target="_blank" href="https://the-internet.herokuapp.com/dynamic_loading "><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/12-Dynamic_Loading.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a><a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=29m30s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> Dynamic Loading (using explicit wait for resilency)
 15. <a target="_blank" href="https://the-internet.herokuapp.com/entry_ad"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a> Entry Ad
 16. <a target="_blank" href="https://the-internet.herokuapp.com/exit_intent"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a> Exit Intent
-17. <a target="_blank" href="https://the-internet.herokuapp.com/download"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/14-File_Download.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> File Download
+17. <a target="_blank" href="https://the-internet.herokuapp.com/download"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/14-File_Download.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a><a target="_blank" href="https://www.youtube.com/watch?v=w0pYTX2t0pg&t=34m16s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> File Download (query HTTP HEADER first to make sure file contains something)
 18. <a target="_blank" href="https://the-internet.herokuapp.com/upload"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/15-File_Upload.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> File Upload (issue in Element handling Windows vs Linux, also in Selenium)
 19. <a target="_blank" href="https://the-internet.herokuapp.com/floating_menu"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/16-Floating_Menu.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Floating Menu
-20. <a target="_blank" href="https://the-internet.herokuapp.com/forgot_password"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/17-Forgot_Password.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Forgot Password
+20. <a target="_blank" href="https://the-internet.herokuapp.com/forgot_password"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/17-Forgot_Password.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a><a target="_blank" href="https://www.youtube.com/watch?v=w0pYTX2t0pg&t=30m16s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> Forgot Password
 21. <a target="_blank" href="https://the-internet.herokuapp.com/login"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/18-Form_Authentication.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Form Authentication
 22. <a target="_blank" href="https://the-internet.herokuapp.com/frames"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/19-Frames-Nested_Frames.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Frames (Nested)
 22. <a target="_blank" href="https://the-internet.herokuapp.com/frames"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/19-Frames-iFrames.ts"><img width="21" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Frames (iFrames)
@@ -153,64 +220,21 @@ Click on <a target="_blank" href="https://github.com/daeep/Flood_Element/tree/ma
 29. <a target="_blank" href="https://the-internet.herokuapp.com/javascript_alerts"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a> JavaScript Alerts
 30. <a target="_blank" href="https://the-internet.herokuapp.com/javascript_error"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a> JavaScript onload event error
 31. <a target="_blank" href="https://the-internet.herokuapp.com/key_presses"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/27-Key_Presses.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Key Presses
-32. <a target="_blank" href="https://the-internet.herokuapp.com/large"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/28-Large_DOM.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Large &amp; Deep DOM
+32. <a target="_blank" href="https://the-internet.herokuapp.com/large"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/28-Large_DOM.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a><a target="_blank" href="https://www.youtube.com/watch?v=w0pYTX2t0pg&t=37m57s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> Large &amp; Deep DOM
 33. <a target="_blank" href="https://the-internet.herokuapp.com/windows"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/29-Multiple_Windows.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Multiple Windows
 34. <a target="_blank" href="https://the-internet.herokuapp.com/nested_frames"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/30-Nested_Frames.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Nested Frames
-35. <a target="_blank" href="https://the-internet.herokuapp.com/notification_message"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/31-Notification_Message.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Notification Messages
+35. <a target="_blank" href="https://the-internet.herokuapp.com/notification_message"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/31-Notification_Message.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a><a target="_blank" href="https://www.youtube.com/watch?v=w0pYTX2t0pg&t=37m43s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> Notification Messages (Growl listener)
 36. <a target="_blank" href="https://the-internet.herokuapp.com/redirector"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/32-Redirect_Link.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Redirect Link
 37. <a target="_blank" href="https://the-internet.herokuapp.com/download_secure"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/33-Secure_File_Download.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Secure File Download
 38. <a target="_blank" href="https://the-internet.herokuapp.com/shifting_content"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/34-Shifting_Content.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Shifting Content
-39. <a target="_blank" href="https://the-internet.herokuapp.com/slow"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/35-Slow_Resources.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Slow Resources
+39. <a target="_blank" href="https://the-internet.herokuapp.com/slow"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/35-Slow_Resources.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a><a target="_blank" href="https://www.youtube.com/watch?v=w0pYTX2t0pg&t=25m40s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> Slow Resources (blacklist slow resource with proxy server)
 40. <a target="_blank" href="https://the-internet.herokuapp.com/tables"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/36-Data_Tables.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> (Sortable) Data Tables
 41. <a target="_blank" href="https://the-internet.herokuapp.com/status_codes"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/37-Status_Codes.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Status Codes
 42. <a target="_blank" href="https://the-internet.herokuapp.com/typos"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/38-Typos.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> Typos
 43. <a target="_blank" href="https://the-internet.herokuapp.com/tinymce"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a><a target="_blank" href="https://raw.githubusercontent.com/daeep/Flood_Element/master/The%20Internet%20Herokuapp/39-WYSIWYG_Editor.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> WYSIWYG Editor
 
-Additional columns of icons will be added to show sample run results for each test item.
-
-## Scenarios
-
-Shell scripts to run these
-
 
 <hr />
-
-<a name="Steps"></a>
-
-## Steps: Manual and automated scripts
-
-The remainder of this tutorial describes the <strong>manual</strong> steps invoking automated scripts described in the <a href="#IntroVideo">introductory video above</a>.
-
-The scripts instantiate two server instances using Docker:
-
-1. If you're working on a local machine such as a Mac, Linux laptop, or Windows PC:
-
-   <a href="#FlooLocalInstall">flood-local</a>
-
-1. A <strong>monitoring process</strong> containing NewRelic software
-
-   <a href="#NewRelicAgentInstall">NewRelicAgentInstall-aws-ec2</a>
-
-2. A "the-internet" app under test (written in Ruby), with a monitoring agent;
-
-   <a href="#FloodScriptUpdate">Flood Script Update-aws-ec2</a>
-
-   <!-- These shell scripts install and call <a target="_blank" href="https://wilsonmar.github.io/terraform">Terraform</a> to instantiate, and Ansible to configure. Python is used to customize.
-   -->
-
-   PROTIP: This exercise stands up <strong>only one instance</strong> each and not multiple instances in a cluster for High Availability (HA). However, we recommend that 
-   TODO: Autoscaling be done so that developers habitually use workflows needed for production usage.
-
-Additionally, two cloud GUI 
-
-   1. A New Relic dashboard provides visualization (charts and graphs) of monitoring results
-   2. <a target="_blank" href="https://www.flood.io/">https://flood.io</a> is invoked to conduct multi-user performance emulation runs imposing artificial loads.
-
-Each step in shell and Python automation scripts is documented in the script.
-
-
-## Scripts
-
 
 <a name="ScriptsInGitHub"></a>
 
@@ -232,8 +256,25 @@ These steps are done manually on your local machine.
 
 See:
    * https://github.com/flood-io/load-testing-playground/tree/master/element
-   * <a target="_blank" href="https://element.flood.io/docs/1.0/get-started">https://element.flood.io/docs/1.0/get-started</a>
-   * https://github.com/flood-io/element
+
+
+
+<a name="ElementCoding"></a>
+
+## Coding Flood Element Typescript 
+
+Typescript is a superset of the JavaScript programming language that control browsers.
+Flood Element makes use of the Typescript language, which transpiles to JavaScript.
+Typescript is used because its <a href="#ElementCoding">transpiler</a> checks for errors sooner than with JavaScript.
+
+QUESTION: <a target="_blank" href="https://www.geeksforgeeks.org/difference-between-typescript-and-javascript/">Typescript</a>
+
+* Typescript variables are statically typed (not dynamic as in JavaSript)
+* Typescript can be coded using object-oriented constructs
+
+Rather than directly referencing application control IDs, 
+so that when an app changes, just one change is needed to make all tests pass again.
+This is like Selenium <a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=23m41s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> <strong>page object helpers</strong> from http://bit.ly/po-html-elements Yandex and http://bit.ly/po-page-factory built into Selenium. <a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=28m05s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> Similarly, Base Page Object library to migrate commands from one version to another.
 
 
 <a name="SetupAWS"></a>
@@ -568,3 +609,9 @@ Questions about several other dimensions, such as:
    * What happens when that peak load is exceeded?
    <br /><br />
 
+https://www.youtube.com/watch?v=rb5OL-QQPw4
+Selenium + Jenkins + GIT Integration : Run your Test Cases from GIT Hub using Jenkins
+
+## Resources
+
+   * <a target="_blank" href="https://element.flood.io/docs/1.0/get-started">https://element.flood.io/docs/1.0/get-started</a>
