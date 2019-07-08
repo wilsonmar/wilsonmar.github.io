@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Flood perftest"
-excerpt: "Imposing precise loads using Flood.io Element, JMeter, and Gatlin scripts under monitoring to engineer performance and cloud spend"
+title: "Flood local setup"
+excerpt: "Install Flood Element CLI to run TypeScript which (like Selenium) emulates manual actions in Google Chrome browsers"
 tags: [flood, perftest, selenium, testing]
-file: flood-perftest.md
+file: flood-local-setup.md
 image:
 # flood-the-internet-wall-1900x500-105703.jpg
   feature: https://user-images.githubusercontent.com/300046/59104048-b4980880-88ed-11e9-9a93-c19baaef18ab.jpg
@@ -12,17 +12,24 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+<p align="right"><a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2Fflood-the-local-setup%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2Fflood-the-local-setup%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2Fflood-the-local-setup%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2Fflood-the-local-setup%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2Fflood-the-local-setup%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2Fflood-the-local-setup%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2Fflood-the-local-setup%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2Fflood-the-local-setup%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2Fflood-the-local-setup%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
+</p>
 {% include _toc.html %}
 
-This is a hands-on step-by-step introduction to installing and using <a target="_blank" href="https://www.flood.io/"><strong>flood.io</strwong></a> Element scripts to performance test public sample apps.
+This is a hands-on step-by-step introduction to automate installation of the <a target="_blank" href="https://flood.io/"><strong>flood.io</strong></a> Element CLI which validates TypeScript locally. After validation, the scripts are used on flood.io in the cloud to performance test public websites.
+
+This is a component illustrated as the upper-right corner of the video and flowchart at <a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/">https://wilsonmar.github.io/flood-the-internet</a>, reiterated here:
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/60763986-3be7b180-a03d-11e9-9002-2e9f3512c589.jpg"><img alt="flood-the-internet-v12-1900x959.jpg" width="1900" src="https://user-images.githubusercontent.com/300046/60763986-3be7b180-a03d-11e9-9002-2e9f3512c589.jpg"></a>
 
 PROTIPs here provide additional commentary based on experience and foresight not available elsewhere.
-
-For a basic understanding of how components are related to each other, first, view the video with narration:
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/60542595-85e53600-9cd1-11e9-9e1e-d8b3dca5e1e9.jpg"><img alt="flood-the-internet-v11b-1168x580.jpg" width="1148" src="https://user-images.githubusercontent.com/300046/60542595-85e53600-9cd1-11e9-9e1e-d8b3dca5e1e9.jpg"></a>
 
 
 <a name="CLIinstall"></a>
@@ -33,17 +40,21 @@ To run a Flood Element script against a sample app on the web, use Flood's `elem
 
 To make that easy for you, a shell script was developed and made available in a GitHub.com repository.
 
-1. Use an internet browser (Google Chrome) to view 
+   PROTIP: Security conscious people would be wise to first copy the file, vet it with Security experts, then save the certified file within a corporate-sponsored vault, perhaps using Nexus or Artifactory.
+
+1. Use an internet browser (Google Chrome) to view the raws script at my public GitHub repository:
 
    <a target="_blank" href="https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/flood-io/flood-local-setup.sh">flood-local-setup.sh</a>
 
-   The script has the following steps:
+   (The script is based in part on the <a target="_blank" href="https://docs.flood.io/#end-to-end-example">"End to End Example" shell script at Flood.io README</a>)
+
+   Our script has the following steps:
 
    1. Collect parameters controlling this run:
    2. Context: Starting time stamp, OS versions, command attributes:
    3. Shell utility functions:
    4. Delete local repository if it's there (for idempotency):
-   5. Pre-requisites installation
+   5. Pre-requisites installation (jq to handle JSON)
    6. install cli
    7. Clone script from GitHub
    8. Run the script
@@ -54,11 +65,13 @@ To make that easy for you, a shell script was developed and made available in a 
 
    The script has are several run control parameters (feature flags) in the script.
 
-1. To run the script with default settings on your Mac or Linux laptop, <a target="_blank" href="https://wilsonmar.github.io/mac-osx-terminal/">open a Terminal</a> and triple-click this URL and paste it in your Terminal:
+1. If you are installing on a new Linux instance in the cloud, first instantiate the machine image.
+
+1. <a target="_blank" href="https://wilsonmar.github.io/mac-osx-terminal/">Open a Terminal</a> 
+
+1. To run the script with default settings on your Mac or Linux laptop,triple-click this URL and paste it in your Terminal:
 
    <pre><strong>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/flood-io/flood-local-setup.sh)"</strong></pre>
-
-   PROTIP: Security conscious people would be wise to first copy the file, vet it with Security experts, then save the certified file within a corporate-sponsored vault, perhaps using Nexus or Artifactory.
 
 
 Below examines what the script does, which is summarized in the flood.io documentation page at:
@@ -157,10 +170,12 @@ added 626 packages from 436 contributors in 180.277s
 
    Under construction:
 
-   * <a target="_blank" href="https://wilsonmar.github.io/jpetstore">JPetstore</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/jpetstore">JPetstore</a> used as a sample app because it was written in Java. But it's front-end technology is now considered obsolete.
    
-   * <a target="_blank" href="https://wilsonmar.github.io/easytravel">EasyTravel</a> from Dynatrace
+   * <a target="_blank" href="https://wilsonmar.github.io/easytravel">EasyTravel</a> from Dynatrace has both Java and .NET components.
 
+   * "microtrader" websockets application maintained as the sample app for a video tutorial on Pluralsight.
+   
    * <a target="_blank" href="https://azure.microsoft.com/en-us/resources/samples/?sort=0">
    769+ code samples for Azure Cloud from Microsoft</a>
    <br /><br />
@@ -296,28 +311,6 @@ process exited
         |-- results
         |-- screenshots
         `-- traces</pre>
-
-
-### Run several users in the cloud
-
-Docker
-
-   <pre>sudo apt-get install docker -y</pre>
-
-Docker compose on Debian:
-
-   <pre>sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-   sudo chmod +x /usr/local/bin/docker-compose
-   sudo usermod -aG docker $USER</pre>
-
-   Reboot, then:
-
-   <pre>cd Downloads/
-   sudo dpkg -i docstation*.deb
-   sudo apt-get install -f
-   </pre>
-
-AWS
 
 
 https://app.flood.io/login

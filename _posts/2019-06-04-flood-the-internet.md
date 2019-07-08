@@ -138,8 +138,8 @@ NOTE: This assumes that you know how to open and use a <a target="_blank" href="
    
    <a href="#NewRelicAgentInstall">NewRelicAgentInstall-aws-ec2.sh</a>
 
-6. Specify <strong>initial run parameters</strong> to control runs of flood.io in the cloud.
-7. Launch runs at scheduled times to take advantage of AWS Spot Rates.
+6. Define <strong>initial run parameters</strong> to control runs of flood.io in the cloud (Flood.io account, etc.) in <a href="#flood-run-e2e">flood-run-e2e.sh</a>.
+7. <a href="#flood-run-e2e">Run "flood-run-e2e" to launch runs in flood.io</a> at scheduled times to take advantage of AWS Spot Rates.
 
    PROTIP: Automation (shell or Python) scripts to bring up servers and conduct runs are designed to minimize spend (not waste money on idle resources). Services are deleted after each run.
 
@@ -536,8 +536,6 @@ sudo docker exec -i -t "$CONTAINER_ID" /bin/bash
 
    <pre>await browser.visit('http://18.208.170.2:7080/')</pre>
 
-   ### Create the-internet Docker image
-
    ### Instrument script for NewRelic 
 
 1. Get license from newrelic.com
@@ -550,28 +548,69 @@ sudo docker exec -i -t "$CONTAINER_ID" /bin/bash
 
 1. Docker save
 
-   ### Flood
 
-1. Create account (manually).
-1. Get license token.
-1. Insert license token in script.
-1. Specify script in GitHub.
-1. Run
+   <a name="PrepFlood"></a>
 
-   ### Script D : Run the-internet in AWS Docker process under instrumentation
+   ### Perpare for Flood
 
-1. If you don't have a <a target="_blank" href="https://www.flood.io/">flood.io</a> account, get one.
+1. If you don't have a <a target="_blank" href="https://www.flood.io/">flood.io</a> account, get one (manually).
 1. Confirm your account via email.
 1. Log into Flood.io.
-1. Specify script.
-1. Specify run conditions.
+1. Get license token.
 
+
+<a name="flood-run-e2e"></a>
+
+### Run flood against app in AWS under instrumentation
+
+This step runs a shell script file at<br />
+<a target="_blank" href="https://github.com/wilsonmar/DevSecOps/master/flood-io/flood-run-e2e.sh">https://github.com/wilsonmar/DevSecOps/master/flood-io/flood-run-e2e.sh</a>
+
+It is customized from an example in <a target="_blank" href="https://docs.flood.io/#end-to-end-example">Flood docs</a>.
+
+1. If you don't have a GitHub account, get one.
+1. Use an internet browser to view:
+
+   <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/">
+   https://github.com/wilsonmar/DevSecOps/</a>
+
+1. Click "Fork" button to copy the repository under your own account.
+
+1. Open a Terminal.
+1. Navigate to the containing folder where GitHub creates folders.
+   Make a folders as necessary.
+
+1. Clone the whole DevSecOps repo:
+
+   <pre>git clone <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/">https://github.com/wilsonmar/DevSecOps/</a> </pre>
+
+1. Navigate into the folder:
+
+   <pre>cd DevSecOps
+   cd flood-io</pre>
+
+1. Edit the environment file using your favorite editor, such as:
+
+   <pre>nano flood-env.sh</pre>
+
+1. Insert the license token from flood.io.
+1. Save the file
+1. Run the environment file to load variables into memory.
+
+1. Edit the script using your favorite editor, such as:
+
+   <pre>nano flood-run-e2e.sh</pre>
+
+1. Define other parameters: run conditions.
 1. Validate run pre-conditions.
+
 1. Initiate run.
 1. Stop run.
 1. Collect run results.
 1. Analyze run results / Generate visualizations.
 1. Display summary statistics.
+
+1. Git add, commit, and push the changed script to GitHub.
 
 
 <a name="ConfigNewRelic"></a>
