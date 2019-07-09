@@ -1,9 +1,11 @@
 ---
 layout: post
 title: "Node.js Installation on MacOS"
-excerpt: "JavaScript for the win"
+excerpt: "JavaScript packaged by npm for the win!"
 tags: [node, javascript, apple, mac, setup]
 shorturl: "https://goo.gl/92YU4k"
+date: "2016-06-11"
+file: "node-osx-install"
 image:
 # feature: pic orange wm_mcnaughton_sunset_runner_1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622121/097d7550-0585-11e6-9543-27d45c2487c2.jpg
@@ -12,8 +14,16 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+<p align="right"><a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2Fnode-osx-install%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2Fnode-osx-install%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2Fnode-osx-install%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2Fnode-osx-install%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2Fnode-osx-install%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2Fnode-osx-install%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2Fnode-osx-install%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2Fnode-osx-install%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2Fnode-osx-install%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
+</p>
 {% include _toc.html %}
 
 The objective of this tutorial is to spare you the pain and confusion
@@ -65,7 +75,7 @@ then maintained for a further 12 months.
 This means a particular LTS release stays in production for 30 months
 with bug and security fixes.
 
-![node-install-ver-742x371](https://user-images.githubusercontent.com/300046/38767344-94004a42-3f9c-11e8-93c1-2d15e3c92993.jpg)
+![https://github.com/nodejs/Release](https://github.com/nodejs/Release/raw/master/schedule.svg?sanitize=true)
 
 PROTIP: Odd numbered versions are not destined for active status, unstable development versions.
 
@@ -1622,6 +1632,7 @@ Several blogs addresses issues related to this topic:
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/nodejs-express-web-applications-update/table-of-contents">
 Building Web Applications with Node.js and Express 4.0 (UPDATE)</a>
 released 23 Mar 2018 by Jonathan Mills
+
 
 
 ## More on MacOS #
