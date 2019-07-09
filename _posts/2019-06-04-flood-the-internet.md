@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Measure impact of controls in Dave Hoeffner's the-internet website"
-excerpt: "Using Flood.io Element TypeScript to measure performance of challenging GUI accessing website stood up in AWS cloud using Docker, as measured by NewRelic"
+excerpt: "Use Flood.io Element TypeScript to measure GUI performance accessing website stood up in AWS cloud using Docker, as measured by NewRelic"
 tags: [flood, perftest, selenium, testing]
 date: "2019-06-04"
 file: "flood-the-internet"
