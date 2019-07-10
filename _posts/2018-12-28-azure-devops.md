@@ -3,6 +3,8 @@ layout: post
 title: "Azure DevOps (DevSecOps)"
 excerpt: "DevSecOps in Microsoft's cloud transitioned from TFS and VSTS"
 tags: [devops, devsecops]
+date: "2018-12-28"
+file: "azure-devops"
 image:
 # azure-devops-products-1900x400-21605.jpg
   feature: https://user-images.githubusercontent.com/300046/56040192-132c7600-5cf3-11e9-93cb-99490c5ae7b8.jpg
@@ -11,8 +13,16 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+<p align="right"><a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2Fazure-devops%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2Fazure-devops%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2Fazure-devops%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2Fazure-devops%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2Fazure-devops%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2Fazure-devops%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2Fazure-devops%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2Fazure-devops%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2Fazure-devops%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
+</p>
 {% include _toc.html %}
 
 <a target="_blank" href="https://wilsonmar.github.io/azure-devops/">This page</a> contains succinct "deep dive" notes about learning and using Microsoft's Azure DevOps services, without the generalized sales hype. This page is more than just links to tutorials. I have worked hard to provide you logical sequence of hands-on steps culled from among the dizzying volume of web pages and videos about this topic, many repeating others have said already.
@@ -31,52 +41,210 @@ Buck Hodges (<a target="_blank" href="https://twitter.com/tfsbuck">@tfsbuck</a>)
 
 @demovisa keynote #GDBC
 
+<a name="CertsOnDevOps"></a>
+
+## Certifications 
+
+Those who create certification exams have taken the time to think through skills needed with tools.
+
+<img align="right" alt="azure-devopsexpert-230x258-7173.jpg" width="230" src="https://user-images.githubusercontent.com/300046/56392303-56548080-61ee-11e9-8c6c-016ec8c3625a.jpg">
+<a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-AZ-400.aspx">Implementing Azure DevOps Solutions exam AZ-400</a> ($160) fuilfills the requirement to become a <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">Microsoft Certified: Azure DevOps Engineer Expert</a>. 
+It measures these skills:
+
+1. Design a DevOps strategy (20-25%)
+1. Implement DevOps development processes (20-25%)
+1. Implement continuous integration (10-15%)
+1. Implement continuous delivery (10-15%)
+1. Implement dependency management (5-10%)
+1. Implement application infrastructure (15-20%)
+1. Implement continuous feedback (10-15%)
+<br /><br />
+
+Microsoft's DevOps Expert exam is the culumination of other exams ($99 each):
+ * <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-az-900.aspx">AZ-900: Azure Fundamentals</a>
+ * AZ-100: Azure Infrastructure and Deployment Exam (<a target="_blank" title="by Chad Crowell" href="https://linuxacademy.com/azure/training/course/name/microsoft-azure-infrastructure-and-deployment-exam-az-100">videos</a>)
+* AZ-203: Developing Solutions for Microsoft Azure  (<a target="_blank" href="https://linuxacademy.com/azure/training/course/name/microsoft-certified-azure-developer-exam-203-prep">videos</a>)
+* AZ-300: Architecting Solutions for Microsoft Azure  (<a target="_blank" href="https://linuxacademy.com/azure/training/course/name/microsoft-azure-infrastructure-and-deployment-exam-az-100">videos</a>)
+* <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-az-301.aspx">AZ-301: Microsoft Azure Architect Design</a> 120 minute $165
+
+QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a> "coming soon"?
+
+
+<a name="CoursesOnDevOps"></a>
+
+## 9 Course Program
+
+<a target="_blank" href="https://academy.microsoft.com/en-us/professional-program/tracks/devops/">
+Microsoft Professional Program for DevOps</a> consists of 9 video courses (of 8-16 hours each) 
+January—March, April—June, July—September, and October —December
+The courses are conducted as <a target="_blank" href="https://www.edx.org/microsoft-professional-program-devops">Microsoft Professional Program (MPP) in DevOps on Edx.org</a>, which provides a <a target="_blank" href="https://academy.microsoft.com/en-us/dashboard/">dashboard</a> of course progress.
+
+1. <a href="#[1]">Introduction to DevOps Practices</a>
+2. <a href="#[2]">Infrastructure as Code</a>
+3. <a href="#[3]">Continuous Integration and Continuous Deployment</a>
+4. <a href="#[4]">Configuration Management for Containerized Delivery</a>
+5. <a href="#[5]">DevOps Testing</a>
+6. <a href="#[6]">DevOps for Databases</a>
+7. <a href="#[7]">Application Monitoring and Feedback Loops</a>
+
+   Choose either 8 or 9:
+8. <a href="#[8]">DevOps for Mobile Apps
+9. <a href="#[9]">Architecting Distributed Cloud Applications
+
+10. <a href="#[10]">Microsoft Professional Capstone : DevOps
+
+Another perspective is that the courses are segmented loosly around these <a target="_blank" href="https://www.youtube.com/watch?v=QrwTD5eCkd4">7 DevOps practices</a>:
+
+   1. Configuration management <a href="#[4]">[Course 4]</a>
+   1. Release management
+   1. Continuous integration <a href="#[3]">[Course 3]</a>
+   1. Continuous deployment <a href="#[3]">[Course 3]</a>
+   1. Infrastructure as Code <a href="#[2]">[Course 2]</a>
+   1. Test automation <a href="#[5]">[Course 5]</a>
+   1. Application performance monitoring <a href="#[7]">[Course 7]</a>
+   <br /><br />
+
+
+<a name="CourseProducts"></a>
+
+## Products and Services
+
+The course catalog says they cover 6 technologies:
+
+   1. VSTS (Visual Studio Team System)
+   2. "Visual Studio"
+   3. <a href="#ACS">Azure Container Service (ACS)</a>
+   4. <a href="#AppInsights">Application Insights</a>
+   5. Selenium
+   6. Operations Management Suite (OMS)
+   <br /><br />
+
+But Azure DevOps also makes use of other Azure services and client executables:
+
+* <strong>IAM</strong> access manager
+
+* <a target="_blank" href="https://app.vssps.visualstudio.com/_signedin">https://app.vssps.visualstudio.com/</a>
+   Visual Studio is <a target="_blank" href="https://aex.dev.azure.com/me?mkt=en-US">AEX.dev.azure.com</a>
+
+* Azure CLI (az command) <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest">docs</a>
+
+   <a name="ARM"></a>
+
+* <a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/"><strong>Azure Resource Manager (ARM)</strong></a> carries out specifications entered in the Azure Dashboard. It deploys, updates, or deletes cloud resources in a single, coordinated operation. Resources can include virtual machines, storage accounts, virtual networks, services, or any component that you are managing.
+   NOTE: <a target="_blank" href="https://www.youtube.com/watch?v=s7bQu4Y1oHU">VIDEO</a>: ARM vs. Classic Azure Service Management
+
+
+   <a name="ACS"></a>
+
+* <strong>Azure Container Service (ACS)</strong> is like Docker and rkct (from Red Hat).
+
+* There is a separate brew amazon-ecs-cli.
+
+* <a target="_blank" href="https://docs.microsoft.com/en-us/azure/key-vault/key-vault-whatis"><strong>Azure Key Vault</strong></a> provides an HSM. (<a target="_blank" href="https://www.vaultproject.io/docs/vs/kms.html">vs. Hashicorp Vault</a>, which enforces automatic revocation of leases with key usage audit and key rolling). KMS is focused on securely storing encryption keys and supporting cryptographic operations (encrypt and decrypt) using those keys. It supports access controls and auditing as well.
+
+* <a target="_blank" href="https://wilsonmar.github.io/azure-cloud/#azure-service-fabric">Azure Service Fabric</a>
+
+   <a name="AKS"></a>
+
+* <a target="_blank" href="https://azure.microsoft.com/en-us/services/kubernetes-service/"><strong>Azure Container Service (AKS)</strong></a> - uses Docker to make dynamic scaling easy on Kubernetes, Docker Swarm, or Mesos DC/OS.
+   AKS handles auto upgrades, patching, and self-healing of Kubernetes clusters.
+
+   https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes
+   Introduction to Azure Container Service (AKS)
+
+   https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough
+   Deploy an Azure Container Service (AKS) cluster
+
+   https://azure.microsoft.com/en-us/resources/videos/episode-198-azure-container-service-with-ross-gardler/
+   Cloud Cover Episode 198: Azure Container Service with Ross Gardler
+
+
+* <a target="_blank" href="https://azure.microsoft.com/en-us/services/container-registry/"><strong>Azure Container Registry (ACR)</strong></a> stores images for different types of container deployments (Swarm, DC/OS and Kubernetes, etc.) as well as Azure services such as App Service, Batch, and Service Fabric. 
+
+   Unlike Docker Hub, ACR provides more control over who can see and use images, which ACR can sign cryptographically (to detect corruption) and encrypt at rest. The Premium SKU of Container Registry includes 500 GiB of storage that is geo-replicated.
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tasks-overview#automate-os-and-framework-patching">ACR Tasks</a> dynamically discovers base image dependencies when it <a target="_blank" href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-base-image-update#create-a-task">builds a container image</a>, so when changes are detected, automatically rebuilds application images.
+
+   <a name="DevOpsAnalytics"></a>
+
+* <strong>Log Analytics</strong> (<a target="_blank" href="https://devblogs.microsoft.com/devops/analytics-for-azure-devops-services-is-now-generally-available/">generally available</a>)
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg"><img alt="azure-log-analytics-711x306-35708.jpg" width="711" src="https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg"></a>
+
+
+   <a name="AppInsights"></a>
+
+* <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview"><img align="right" alt="azure-app-insights-icon-51x50.png" width="51" src="https://user-images.githubusercontent.com/300046/56264992-82b0b580-60a5-11e9-9757-8b59981aacb1.png"><strong>Application Insights</strong></a> - the APM service works with <strong>Azure Service Profiler</strong> for ASP.NET code. Its API and SDKs (in .NET, Java, node.js) and <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.applicationinsights.telemetryclient?view=azure-dotnet">TelemetryClient</a> obtain metrics about requests, pages views, dependency calls, trace (log) messages, exceptions, and more. (Add <a target="_blank" href="https://stackify.com/application-insights-things-to-know/">Retrace to collect first chance exceptions</a>)
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=WJKefPAdPpg">Monitor Web Apps using Azure Application Insights</a> Nov 18, 2016
+
+* Other <a target="_blank" href="https://azure.microsoft.com/en-us/products/devops-tool-integrations/">Azure DevOps tool integrations</a>
+
+
+<hr />
+
 <a name="QuickStart"></a>
 
-## &nbsp; &nbsp; &nbsp; Account Signups
+## Account Signups
 
-1. Get signed up with Azure and Microsoft Learn accounts. See:
-
+1. Get signed up with Azure and Microsoft Learn accounts. Use of <br />
+   <a target="_blank" href="https://aka.ms/aft-iot"><strong>https://aka.ms/aft-iot</strong></a> to Create your Azure free is described at<br />
    <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">https://wilsonmar.github.io/azure-cloud-onramp</a> 
-
-   <a target="_blank" href="https://aka.ms/aft-iot">https://aka.ms/aft-iot</a>
 
    ### Organization
 
-2. Get your own <strong>organization</strong>:
+2. Within Azure, get your own <strong>organization</strong>:
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/?view=azure-devops">DOCS:Start using Azure DevOps</a>
 
-   ### Azure DevOps Demo Generator
 
-3. Open the sample application web page from the Microsoft Azure Marketing team (based on <a target="_blank" href="https://www.azuredevopslabs.com/">Azure Devops hands-on-labs at<br />https://www.azuredevopslabs.com</a>)
+   <a name="SampleAppRepos"></a>
 
-   <a target="_blank" href="https://azuredevopsdemogenerator.azurewebsites.net/">Azure DevOps Demo Generator at<br/>https://azuredevopsdemogenerator.azurewebsites.net</a> 
+   ### Parts Unlimited demo apps
+
+   <a target="_blank" title="2m52s" href="https://www.youtube.com/watch?v=wiCRVp6QgA0">VIDEO</a>: Microsoft has created several sample apps (with source code) implements the eCommerce website described as "Project Unicorn" in chapters 31-35 of <a target="_blank" href="http://www.amazon.com/The-Phoenix-Project-Helping-Business/dp/0988262592">The Phoenix Project</a> by Gene Kim, Kevin Behr, and George Spafford, © 2013.
+
+   <strong>"PartsUnlimited"</strong> (PU) is an ASP.NET app with customized CI/CD pipelines which also creates a SQL database back-end. 
+
+   * <a target="_blank" href="http://microsoft.github.io/PartsUnlimited/">http://microsoft.github.io/PartsUnlimited</a> describes the app.
    
-   The website creates within your Azure DevOps organization demo projects with pre-populated sample content (source code, work items, iterations, service endpoints, build and release definitions based on a chosen template.
-
-   (Code is at <a target="_blank" href="https://github.com/CanarysAutomations/AppCenterDemoGenerator">https://github.com/CanarysAutomations/AppCenterDemoGenerator</a>)
-
-1. Click "Choose template":
-
-   * <a href="#PartsUnlimited">#PartsUnlimited (below)</a> defines an ASP.NET app with customized CI/CD pipelines to create a SQL database back-end.
-
-   https://github.com/Microsoft/PartsUnlimited
+   * <a target="_blank" href="https://github.com/Microsoft/PartsUnlimited">https://github.com/Microsoft/PartsUnlimited</a> contains the source code. David Tesar (<a target="_blank" href="https://twitter.com/dtzar">@dtzar</a>, host of <a target="_blank" href="https://channel9.msdn.com/Shows/DevOps-Dimension/">DevOps-Dimension on channel9.msdn</a>) wrote the two branches which visually display the same front-end website content with a SQL Azure back-end (all PaaS):<br /> 
    
-   * SmartHotel360 <a target="_blank" href="https://github.com/Microsoft/SmartHotel360-IoT">(open sourced)</a> is an ASP.NET 2 desktop and Xamarin web-mobile app for a hotel, all deployed using Docker containers within AKS.
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/56323530-68b8b680-6129-11e9-9baf-81a79a04557e.jpg"><img alt="azure-devops-smarthotel-home-1896x853.jpg" width="1896" src="https://user-images.githubusercontent.com/300046/56323530-68b8b680-6129-11e9-9baf-81a79a04557e.jpg"></a>
-
-   <a target="_blank" title="shown at Connect() 2017" href="https://www.youtube.com/watch?v=urcmaFVQnF4">VIDEO: IoT demo</a> shows the app powered by Azure <a target="_blank" href="https://aka.ms/azure-digital-twins">Digital Twins</a> to control lights and temperature of the hotel rooms, Dynamics 365, mobile Hololens for wayfinding. <a target="_blank" title="December 13th, 2017"  href="https://devblogs.microsoft.com/visualstudio/connect-2017-smarthotel360-demo-apps-and-architecture/">Demo Apps and Architecture</a>. See the <a target="_blank" href="https://aka.ms/smarthotel360-FacilityManagement">Facilities Management website running live here</a> (admin/admin).
-
-   Azure superfan Gregor Suttie <a target="_blank" href="https://gregorsuttie.com/2018/10/31/how-to-get-started-with-azure-devops/">How to get started with Azure DevOps</a> describes the steps using SmartHotel360.
-
-   * MyHealthClinic defines an ASP.NET Core app that deploys to Azure App Service.
-
-   * MyShuttle defines a <strong>Java</strong> app and Azure App service deployment.
-   
-   * QUESTION: How to get "Mercury Health Group" sample app?
+      * The master branch contains code for ASP.NET Core used within Containers.
+      * The aspnet45 branch contains code for ASP.NET 4.5 used on "bare metal" machines.
    <br /><br />
 
+   <strong>PartsUnlimitedMRP</strong> (PUMRP) is a fictional outsourced Manufacturing Resource Planning (MRP) app  
+
+   * <a target="_blank" href="http://microsoft.github.io/PartsUnlimitedMRP/">http://microsoft.github.io/PartsUnlimitedMRP</a> describes the app.
+
+   * <a target="_blank" href="https://github.com/Microsoft/PartsUnlimitedMRP">https://github.com/Microsoft/PartsUnlimitedMRP</a> contains the source code, which uses entirely open source software including Linux, Java, Apache, and MongoDB which creates a web front end, an order service, and an integration service.
+
+   ### Azure DevOps Demo Generator
+
+3. Open the sample application web page from the Microsoft Azure Marketing team (based on <a target="_blank" href="https://www.azuredevopslabs.com/">https://www.azuredevopslabs.com</a>):
+
+   <a target="_blank" href="https://azuredevopsdemogenerator.azurewebsites.net/"><strong>Azure DevOps Demo Generator</strong> at<br/>https://azuredevopsdemogenerator.azurewebsites.net</a> 
+   
+   The website creates within your Azure DevOps organization demo projects with pre-populated sample content (source code, work items, iterations, service endpoints, build and release definitions based on a chosen template from code at <a target="_blank" href="https://github.com/CanarysAutomations/AppCenterDemoGenerator">https://github.com/CanarysAutomations/AppCenterDemoGenerator</a>)
+
+1. Click "Choose template" to select one of these:
+
+   * Select <a href="#PartsUnlimited">PartsUnlimited (described above)</a>
+
+   * SmartHotel360 <a target="_blank" href="https://github.com/Microsoft/SmartHotel360-IoT">(open sourced)</a> is an ASP.NET 2 desktop and <a target="_blank" href="https://wilsonmar.github.io/xamarin">Xamarin</a> web-mobile app for a hotel, all deployed using Docker containers within AKS (Azure Kubernetes Service):
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/56323530-68b8b680-6129-11e9-9baf-81a79a04557e.jpg"><img alt="azure-devops-smarthotel-home-1896x853.jpg" width="1896" src="https://user-images.githubusercontent.com/300046/56323530-68b8b680-6129-11e9-9baf-81a79a04557e.jpg"></a>
+   <br /><br />
+   <a target="_blank" title="shown at Connect() 2017" href="https://www.youtube.com/watch?v=urcmaFVQnF4">VIDEO: IoT demo</a> shows the app powered by Azure <a target="_blank" href="https://aka.ms/azure-digital-twins">Digital Twins</a> to control lights and temperature of the hotel rooms, Dynamics 365, mobile Hololens for wayfinding. <a target="_blank" title="December 13th, 2017"  href="https://devblogs.microsoft.com/visualstudio/connect-2017-smarthotel360-demo-apps-and-architecture/">Demo Apps and Architecture</a>. See the <a target="_blank" href="https://aka.ms/smarthotel360-FacilityManagement">Facilities Management website running live here</a> (admin/admin).
+   <br /><br />
+   Azure superfan Gregor Suttie <a target="_blank" href="https://gregorsuttie.com/2018/10/31/how-to-get-started-with-azure-devops/">How to get started with Azure DevOps</a> describes the steps using SmartHotel360.
+
+      * MyHealthClinic defines an ASP.NET Core app that deploys to Azure App Service.
+
+      * MyShuttle defines a <strong>Java</strong> app and Azure App service deployment.
+   
+      * QUESTION: How to get "Mercury Health Group" sample app?
+   <br /><br />
    QUESTION: Others (Tailwind Traders, ContosoAir) setup for Azure DevOps?
 
 1. Type a project name.
@@ -89,13 +257,8 @@ Buck Hodges (<a target="_blank" href="https://twitter.com/tfsbuck">@tfsbuck</a>)
 
 #### PartsUnlimited Sample Apps
 
-1. Clone or download <a target="_blank" href="https://microsoft.github.io/PartsUnlimited/">http://aka.ms/pulabs = https://microsoft.github.io/PartsUnlimited</a> (PU) is the implementation of the eCommerce website described as "Project Unicorn" in chapters 31-35 of <a target="_blank" href="http://www.amazon.com/The-Phoenix-Project-Helping-Business/dp/0988262592">The Phoenix Project</a> by Gene Kim, Kevin Behr and George Spafford, © 2013.
 
-   David Tesar	(<a target="_blank" href="https://twitter.com/dtzar">@dtzar</a>, host of <a target="_blank" href="https://channel9.msdn.com/Shows/DevOps-Dimension/">DevOps-Dimension on channel9.msdn</a>) wrote the two branches which visually display the same front-end website content with a SQL Azure back-end (all PaaS):<br /> 
-   The master branch contains code for ASP.NET Core.<br />
-   The aspnet45 branch contains code for ASP.NET 4.5.
-
-   1. Install Visual Studio 2017 within a Windows machine. 
+   1. Install Visual Studio 2017 or 2019 within a Windows machine. 
    1. In Tools, Get Tools and Features, select "ASP.NET and web development" and "Azure development".
    These two should be check in "Workloads"
    1. Install PowerShell. The scripts folder contains .ps1 PowerShell scripts
@@ -171,8 +334,9 @@ Each widget on the Dashboard can be <a target="_blank" href="https://docs.micros
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/marketplace/install-extension?view=azure-devops">Quick Start: Install free extensions for Azure DevOps Services</a> 
 
+<hr />
 
-## Product components
+## Azure DevOps Product components
 
 <a target="_blank" href="https://status.dev.azure.com/_history">https://status.dev.azure.com/_history lists events</a> and <a target="_blank" href="https://status.dev.azure.com/">status</a> in each geographical area (region) by product:
 
@@ -372,38 +536,7 @@ Websites: <a target="_blank" href="https://azure.microsoft.com/en-us/services/de
 
 <hr />
 
-<a name="CoursesOnDevOps"></a>
-
-## Other products & services used by Azure DevOps
-
-<a target="_blank" href="https://academy.microsoft.com/en-us/professional-program/tracks/devops/">
-Microsoft Professional Program for DevOps</a> consists of 9 video courses (of 8-16 hours each) 
-January—March, April—June, July—September, and October —December
-
-The course catalog says they cover 6 skills/technologies:
-
-   1. VSTS (Visual Studio Team System)
-   2. "Visual Studio"
-   3. <a href="#ACS">Azure Container Service (ACS)</a>
-   4. <a href="#AppInsights">Application Insights</a>
-   5. Selenium
-   6. Operations Management Suite (OMS)
-   <br /><br />
-
-   But Azure DevOps also makes use of other Azure services and client executables:
-
-   * <strong>IAM</strong>
-
-   * <a target="_blank" href="https://app.vssps.visualstudio.com/_signedin">https://app.vssps.visualstudio.com/</a>
-   Visual Studio is <a target="_blank" href="https://aex.dev.azure.com/me?mkt=en-US">AEX.dev.azure.com</a>
-
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest">Azure CLI (az command) docs</a>
-
-   <a name="ARM"></a>
-
-   * <a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/"><strong>Azure Resource Manager (ARM)</strong></a> carries out specifications entered in the Azure Dashboard. It deploys, updates, or deletes cloud resources in a single, coordinated operation. Resources can include virtual machines, storage accounts, virtual networks, services, or any component that you are managing.
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=s7bQu4Y1oHU">VIDEO</a>: ARM vs. Classic Azure Service Management
+## Resource Groups
 
    Factors to consider when defining resource groups (containers):
 
@@ -426,96 +559,11 @@ The course catalog says they cover 6 skills/technologies:
 
    QUESTION: How are ARM Templates version controlled?
 
-   <a name="ACS"></a>
+<hr />
 
-   * <strong>Azure Container Service (ACS)</strong> is like Docker and rkct (from Red Hat).
+## Course
 
-   There is a separate brew amazon-ecs-cli.
-
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/key-vault/key-vault-whatis"><strong>Azure Key Vault</strong></a> provides an HSM. (<a target="_blank" href="https://www.vaultproject.io/docs/vs/kms.html">vs. Hashicorp Vault</a>, which enforces automatic revocation of leases with key usage audit and key rolling). KMS is focused on securely storing encryption keys and supporting cryptographic operations (encrypt and decrypt) using those keys. It supports access controls and auditing as well.
-
-   * <a target="_blank" href="https://wilsonmar.github.io/azure-cloud/#azure-service-fabric">Azure Service Fabric</a>
-
-   <a name="AKS"></a>
-
-   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/kubernetes-service/"><strong>Azure Container Service (AKS)</strong></a> - uses Docker to make dynamic scaling easy on Kubernetes, Docker Swarm, or Mesos DC/OS.
-   AKS handles auto upgrades, patching, and self-healing of Kubernetes clusters.
-
-   https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes
-   Introduction to Azure Container Service (AKS)
-
-   https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough
-   Deploy an Azure Container Service (AKS) cluster
-
-   https://azure.microsoft.com/en-us/resources/videos/episode-198-azure-container-service-with-ross-gardler/
-   Cloud Cover Episode 198: Azure Container Service with Ross Gardler
-
-
-   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/container-registry/"><strong>Azure Container Registry (ACR)</strong></a> stores images for different types of container deployments (Swarm, DC/OS and Kubernetes, etc.) as well as Azure services such as App Service, Batch, and Service Fabric. 
-   Unlike Docker Hub, ACR provides more control over who can see and use images, which ACR can sign cryptographically (to detect corruption) and encrypt at rest. The Premium SKU of Container Registry includes 500 GiB of storage that is geo-replicated.
-
-      <a target="_blank" href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tasks-overview#automate-os-and-framework-patching">ACR Tasks</a> dynamically discovers base image dependencies when it <a target="_blank" href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-base-image-update#create-a-task">builds a container image</a>, so when changes are detected, automatically rebuilds application images.
-
-   <a name="DevOpsAnalytics"></a>
-
-   * <strong>Log Analytics</strong> (<a target="_blank" href="https://devblogs.microsoft.com/devops/analytics-for-azure-devops-services-is-now-generally-available/">generally available</a>)
-
-      <a target="_blank" href="https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg"><img alt="azure-log-analytics-711x306-35708.jpg" width="711" src="https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg"></a>
-
-
-   <a name="AppInsights"></a>
-
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview"><img align="right" alt="azure-app-insights-icon-51x50.png" width="51" src="https://user-images.githubusercontent.com/300046/56264992-82b0b580-60a5-11e9-9757-8b59981aacb1.png"><strong>Application Insights</strong></a> - the APM service works with <strong>Azure Service Profiler</strong> for ASP.NET code. Its API and SDKs (in .NET, Java, node.js) and <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.applicationinsights.telemetryclient?view=azure-dotnet">TelemetryClient</a> obtain metrics about requests, pages views, dependency calls, trace (log) messages, exceptions, and more. (Add <a target="_blank" href="https://stackify.com/application-insights-things-to-know/">Retrace to collect first chance exceptions</a>)
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=WJKefPAdPpg">Monitor Web Apps using Azure Application Insights</a> Nov 18, 2016
-
-   * Other <a target="_blank" href="https://azure.microsoft.com/en-us/products/devops-tool-integrations/">Azure DevOps tool integrations</a>
-
-
-<a name="SampleAppRepos"></a>
-
-### Sample Apps in pro certs
-
-<img align="right" alt="azure-devopsexpert-230x258-7173.jpg" width="230" src="https://user-images.githubusercontent.com/300046/56392303-56548080-61ee-11e9-8c6c-016ec8c3625a.jpg">
-<a target="_blank" href="https://www.youtube.com/watch?v=wiCRVp6QgA0">VIDEO</a>: There are two repos used in course labs and also during the<br />
-<a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-AZ-400.aspx">Implementing Azure DevOps Solutions exam AZ-400</a> ($160) which fuilfills the requirement to become a <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">Microsoft Certified: Azure DevOps Engineer Expert</a>. Expand All to see skills measured:
-
-1. Design a DevOps strategy (20-25%)
-1. Implement DevOps development processes (20-25%)
-1. Implement continuous integration (10-15%)
-1. Implement continuous delivery (10-15%)
-1. Implement dependency management (5-10%)
-1. Implement application infrastructure (15-20%)
-1. Implement continuous feedback (10-15%)
-<br /><br />
-
-Microsoft's DevOps Expert exam is the culumination of other exams ($99 each):
- * <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-az-900.aspx">AZ-900: Azure Fundamentals</a>
- * AZ-100: Azure Infrastructure and Deployment Exam (<a target="_blank" title="by Chad Crowell" href="https://linuxacademy.com/azure/training/course/name/microsoft-azure-infrastructure-and-deployment-exam-az-100">videos</a>)
-* AZ-203: Developing Solutions for Microsoft Azure  (<a target="_blank" href="https://linuxacademy.com/azure/training/course/name/microsoft-certified-azure-developer-exam-203-prep">videos</a>)
-* AZ-300: Architecting Solutions for Microsoft Azure  (<a target="_blank" href="https://linuxacademy.com/azure/training/course/name/microsoft-azure-infrastructure-and-deployment-exam-az-100">videos</a>)
-* <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-az-301.aspx">AZ-301: Microsoft Azure Architect Design</a> 120 minute $165
-
-QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a> "coming soon"?
-
-### Faculty
-
-Eamonn Kelly, Samantha Lindsey Ahmed, Steve Borg (<a target="_blank" href="https://twitter.com/stevenborg">@stevenborg</a>, steven.borg@nwcadence.com), Sachi Williamson
-
-### Individual courses
-
-The courses are segmented loosly around the <a target="_blank" href="https://www.youtube.com/watch?v=QrwTD5eCkd4">7 DevOps practices</a>:
-
-   1. Configuration management <a href="#[4]">[Course 4]</a>
-   1. Release management
-   1. Continuous integration <a href="#[3]">[Course 3]</a>
-   1. Continuous deployment <a href="#[3]">[Course 3]</a>
-   1. Infrastructure as Code <a href="#[2]">[Course 2]</a>
-   1. Test automation <a href="#[5]">[Course 5]</a>
-   1. Application performance monitoring <a href="#[7]">[Course 7]</a>
-   <br /><br />
-
-The courses are conducted as <a target="_blank" href="https://www.edx.org/microsoft-professional-program-devops">Microsoft Professional Program (MPP) in DevOps on Edx.org</a>, which provides a <a target="_blank" href="https://academy.microsoft.com/en-us/dashboard/">dashboard</a> of course progress.
+Faculty: Eamonn Kelly, Samantha Lindsey Ahmed, Steve Borg (<a target="_blank" href="https://twitter.com/stevenborg">@stevenborg</a>, steven.borg@nwcadence.com), Sachi Williamson
 
    <a name="[1]"></a>
 
@@ -693,6 +741,8 @@ DEVOPS200.10x
 
    50% of the grade is to pass (by 70%) in five chances two Validated labs within 120 minutes each:
 
+   <a target="_blank" href="https://www.edx.org/microsoft-professional-program-devops">Microsoft Professional Program (MPP) in DevOps</a> provides only <strong>two attempts</strong> to complete <a href="#SampleAppRepos">PartsUnlimited labs</a>.
+
    1: Continuous Integration with Azure DevOps
 
    * At https://visualstudio.microsoft.com/ Create a Azure DevOps account, a new Azure DevOps team project, and a personal access token
@@ -709,9 +759,8 @@ DEVOPS200.10x
    * Verify release Definition Deployment
 
 
-    <a target="_blank" href="https://www.edx.org/microsoft-professional-program-devops">Microsoft Professional Program (MPP) in DevOps</a> two attempts to complete <a href="#SampleAppRepos">PartsUnlimited/ labs</a>.
 
-
+<hr />
 
 ### RBAC (Role-based Access Control)
 
@@ -756,13 +805,13 @@ https://docs.microsoft.com/en-us/azure/active-directory/role-based-access-contro
 
 ## Ansible
 
-https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ansible-create-vm
-    Create a basic virtual machine in Azure with Ansible
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ansible-create-vm">
+    Create a basic virtual machine in Azure with Ansible</a>
 
-https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ansible-install-configure
-    Install and configure Ansible to manage virtual machines in Azure
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ansible-install-configure">
+    Install and configure Ansible to manage virtual machines in Azure</a>
 
-Below is an example of a playbook that creates an Azure VM and configures SSH credentials.
+Below is an sample playbook that creates an Azure VM and configures SSH credentials.
 
 <pre>
 - name: Create Azure VM
@@ -788,15 +837,13 @@ Below is an example of a playbook that creates an Azure VM and configures SSH cr
 
 ## Terraform
 
-https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure
-    Install and configure Terraform to provision VMs and other infrastructure into Azure
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure">Install and configure Terraform to provision VMs and other infrastructure into Azure</a>
 
-https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-create-complete-vm
-    Create a complete Linux virtual machine infrastructure in Azure with Terraform
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-create-complete-vm">Create a complete Linux virtual machine infrastructure in Azure with Terraform</a>
 
 ## GitHub repositories
 
-https://github.com/Microsoft/DevOps-Architecture
+<a target="_blank" href="https://github.com/Microsoft/DevOps-Architecture">https://github.com/Microsoft/DevOps-Architecture</a>
 A (hands-on) guide on building a robust professional devops environment for ASP.NET Core using Azure DevOps by Jeff Palermo identifies these for a "professional-grade DevOps environment":
 
    * Private build
@@ -809,34 +856,34 @@ A (hands-on) guide on building a robust professional devops environment for ASP.
    * Insanely short cycle time through the previous steps
 
 
-https://github.com/wpschaub/quick-reference-posters
-Architecting, Getting Started, Habits, Practices, Technology
+<a target="_blank" href="https://github.com/wpschaub/quick-reference-posters">
+Architecting, Getting Started, Habits, Practices, Technology</a>
 
-https://github.com/mpeder/azdevopssecurity
+<a target="_blank" href="https://github.com/mpeder/azdevopssecurity">https://github.com/mpeder/azdevopssecurity</a>
 
-https://github.com/Microsoft/azure-devops-dotnet-samples
+<a target="_blank" href="https://github.com/Microsoft/azure-devops-dotnet-samples">https://github.com/Microsoft/azure-devops-dotnet-samples</a>
 
-https://github.com/Microsoft/devops-project-samples
-https://github.com/Azure/azure-cli
-https://github.com/Microsoft/azure-devops-auth-samples
-https://github.com/Azure/azure-devops-cli-extension
-https://github.com/Azure/azure-devops-utils
+<a target="_blank" href="https://github.com/Microsoft/devops-project-samples">https://github.com/Microsoft/devops-project-samples</a>
+<a target="_blank" href="https://github.com/Azure/azure-cli">https://github.com/Azure/azure-cli</a>
+<a target="_blank" href="https://github.com/Microsoft/azure-devops-auth-samples">https://github.com/Microsoft/azure-devops-auth-samples</a>
+<a target="_blank" href="https://github.com/Azure/azure-devops-cli-extension">https://github.com/Azure/azure-devops-cli-extension</a>
+<a target="_blank" href="https://github.com/Azure/azure-devops-utils">https://github.com/Azure/azure-devops-utils</a>
 
-https://github.com/Microsoft/azure-devops-node-api
-https://github.com/Microsoft/azure-devops-python-api
-https://github.com/benmatselby/go-azuredevops
-https://github.com/Dinomite-Studios/unity-azure-pipelines-tasks
+<a target="_blank" href="https://github.com/Microsoft/azure-devops-node-api">https://github.com/Microsoft/azure-devops-node-api</a>
+<a target="_blank" href="https://github.com/Microsoft/azure-devops-python-api">https://github.com/Microsoft/azure-devops-python-api</a>
+<a target="_blank" href="https://github.com/benmatselby/go-azuredevops">https://github.com/benmatselby/go-azuredevops</a>
+<a target="_blank" href="https://github.com/Dinomite-Studios/unity-azure-pipelines-tasks">https://github.com/Dinomite-Studios/unity-azure-pipelines-tasks</a>
 
-https://github.com/Azure/azure-api-management-devops-resource-kit
+<a target="_blank" href="https://github.com/Azure/azure-api-management-devops-resource-kit">https://github.com/Azure/azure-api-management-devops-resource-kit</a>
 
-From London http://www.dwyl.io/:
-https://github.com/dwyl/learn-devops
-https://github.com/dwyl/learn-microsoft-azure
+From London <a target="_blank" href="http://www.dwyl.io/">http://www.dwyl.io/</a>
+<a target="_blank" href="https://github.com/dwyl/learn-devops">https://github.com/dwyl/learn-devops</a>
+<a target="_blank" href="https://github.com/dwyl/learn-microsoft-azure">https://github.com/dwyl/learn-microsoft-azure</a>
 
-https://github.com/igoravl/tfscmdlets
-PowerShell Cmdlets for Azure DevOps and Team Foundation Server
+<a target="_blank" href="https://github.com/igoravl/tfscmdlets">
+PowerShell Cmdlets for Azure DevOps and Team Foundation Server</a>
 
-https://github.com/Azure/DevOps-For-AI-Apps
+<a target="_blank" href="https://github.com/Azure/DevOps-For-AI-Apps">https://github.com/Azure/DevOps-For-AI-Apps</a>
 
 ## Live Events
 
@@ -877,14 +924,13 @@ Abel Wang (<a target="_blank" href="https://twitter.com/AbelSquidHead">@AbelSqui
 
 ### Others in Microsoft
 
-YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=jRgLSMlp28U">Continuous Integration, Continuous Deployment (CI-CD) with Azure DevOps</a> Nov 1, 2018 by 
-Frank Boucher in Montreal
+YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=jRgLSMlp28U">Continuous Integration, Continuous Deployment (CI-CD) with Azure DevOps</a> Nov 1, 2018 by Frank Boucher in Montreal
 
 Microsoft Developer Advocate and AI enthusiast Aaron (Ari) Bornstein (<a target="_blank" href="https://twitter.com/pythiccoder">@pythiccoder</a>, <a target="_blank" href="https://medium.com/@aribornstein">on Medium</a>)
 
-https://docs.microsoft.com/en-us/learn/
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/">https://docs.microsoft.com/en-us/learn</a>
 
-https://docs.microsoft.com/en-us/azure/devops/learn/
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/learn/">https://docs.microsoft.com/en-us/azure/devops/learn/</a>
 
 
 ## Videos
@@ -983,6 +1029,11 @@ See https://www.microsoft.com/developerblog/2017/05/09/provision-configure-infra
 https://devops.com/devops-help-hinder-compliance/
 
 https://www.youtube.com/watch?v=Bo_84yKsxuc
+
+<a target="_blank" href="https://openedx.microsoft.com/courses/course-v1:Microsoft+INF240x+2019_T2/about">Configuring and Operating Microsoft Azure Stack (INF240x)</a> 25-30 hour enrollment closed on 6/25/19.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/devops-alm-overview?toc=/azure/devops/user-guide/toc.json&view=azure-devops">
+DevOps tools overview for Azure DevOps</a>
 
 
 ## Testing
