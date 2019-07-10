@@ -399,14 +399,13 @@ Werkzeug==0.12.2
    <li> <code>employees</code> table stores employees data such as employee id, last name, first name, etc. It also has a field named <code>ReportsTo</code> to specify who reports to whom.</li>
    <li> <code>customers</code> table stores customers data.</li>
    <li> <code>invoices</code> &amp; <code>invoice_items</code> tables: these two tables store invoice data. The <code>invoices</code> table stores invoice header data and the <code>invoice_items</code> table stores the invoice line items data.</li>
-   <li> <code>artists</code> table stores artists data. It is a simple table that contains only artist id and name.
-   <li> <code>albums</code> table stores data about a list of tracks. Each album belongs to one artist. However, one artist may have multiple albums.
-   <li> <code>media_types</code> table stores media types such as MPEG audio file, ACC audio file, etc.
+   <li> <code>artists</code> table stores artists data. It is a simple table that contains only artist id and name.</li>
+   <li> <code>albums</code> table stores data about a list of tracks. Each album belongs to one artist. However, one artist may have multiple albums.</li>
+   <li> <code>media_types</code> table stores media types such as MPEG audio file, ACC audio file, etc.</li>
    <li> <code>genres</code> table stores music types such as rock, jazz, metal, etc.</li>
-   <li> <code>tracks</code> table store the data of songs. Each track belongs to one album.
+   <li> <code>tracks</code> table store the data of songs. Each track belongs to one album.</li>
    <li> <code>playlists</code> &amp; <code>playlist_track</code> tables: <code>playlists</code> table store data about playlists. Each playlist contains a list of tracks. Each track may belong to multiple playlists. The relationship between the <code>playlists</code> table and <code>tracks</code> table is many-to-many. The <code>playlist_track</code> table is used to reflect this relationship.</li>
    </ul>
-
 
    ### invoke
 
