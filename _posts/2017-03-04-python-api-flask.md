@@ -39,7 +39,7 @@ This is a hands-on tutorial showing how to quickly create a simple Python blog s
 
    The example here is a user account name on GitHub.com. The repository of interest is at:
 
-   <a target="_blank" https://github.com/wilsonmar/python-api-flask">
+   <a target="_blank" href="https://github.com/wilsonmar/python-api-flask">
    https://github.com/wilsonmar/python-api-flask</a>
 
    You can download a Zip file containing it and unzip it locally. 
@@ -51,8 +51,7 @@ This is a hands-on tutorial showing how to quickly create a simple Python blog s
 0. Have Git create a folder and download code from GitHub:
 
    <tt><strong>
-   git clone <a target="_blank" https://github.com/wilsonmar/python-api-flask">
-   https://github.com/wilsonmar/python-api-flask</a>
+   git clone <a target="_blank" href="https://github.com/wilsonmar/python-api-flask">https://github.com/wilsonmar/python-api-flask</a>
    </strong></tt>
 
    Alternately, you can Fork to your own account and change the URL accordingly.
@@ -60,18 +59,18 @@ This is a hands-on tutorial showing how to quickly create a simple Python blog s
 
    ### View code
 
-0. In a text editor open a file `server.py` 
+1. In a text editor open a file `server.py` 
 
    `#!/usr/bin/python3`
 
    means that we need to install the <a href="#PythonEnv">Python interpreter and environment</a>. At version 3, `print()` functions are used.
 
-   ```
+      <pre>    
    from flask import Flask, request, jsonify
    from flask_restful import Resource, Api
    from sqlalchemy import create_engine
    from json import dumps
-   ```
+      </pre>
 
    The above specifies install of libraries to provide utility functions used in the program.
 
@@ -99,10 +98,10 @@ This is a hands-on tutorial showing how to quickly create a simple Python blog s
 
    The response:
 
-   ```
+   <pre>
    New python executable in /Users/wilsonmar/gits/wilsonmar/python-api-flask/venv/bin/python
    Installing setuptools, pip, wheel...done.
-   ```
+   </pre>
 
    PROTIP</a>: The virtualenv program executes commands in the `.env` file every time we cd into the directory. An <a target="_blank" href="https://scotch.io/tutorials/build-a-restful-api-with-flask-the-tdd-way">example</a>:
 
@@ -123,9 +122,9 @@ export DATABASE_URL="postgresql://localhost/flask_api"
 
    The response is a different prompt, such as:
 
-   ```
-   Wilsons-MacBook-Pro:python-api-flask wilsonmar$ source venv/bin/activate
-   ```
+   <pre>
+   Wilsons-MacBook-Pro:python-api-flask wilsonmar$
+   </pre>
 
    PROTIP: The prompt now changed to:
 
@@ -153,7 +152,7 @@ export DATABASE_URL="postgresql://localhost/flask_api"
 
    The response:
 
-   ```
+   <pre>
 Collecting flask
   Downloading Flask-0.12.2-py2.py3-none-any.whl (83kB)
     100% |████████████████████████████████| 92kB 1.4MB/s 
@@ -205,17 +204,17 @@ Building wheels for collected packages: flask-jsonpify, itsdangerous, SQLAlchemy
 Successfully built flask-jsonpify itsdangerous SQLAlchemy aniso8601 MarkupSafe
 Installing collected packages: itsdangerous, Werkzeug, MarkupSafe, Jinja2, click, flask, flask-jsonpify, SQLAlchemy, flask-sqlalchemy, six, pytz, python-dateutil, aniso8601, flask-restful
 Successfully installed Jinja2-2.9.6 MarkupSafe-1.0 SQLAlchemy-1.1.14 Werkzeug-0.12.2 aniso8601-1.3.0 click-6.7 flask-0.12.2 flask-jsonpify-1.5.0 flask-restful-0.3.6 flask-sqlalchemy-2.3.0 itsdangerous-0.24 python-dateutil-2.6.1 pytz-2017.2 six-1.11.0
-   ```
+   </pre>
 
 0. Generate dependencies into a `requirements.txt` file:
 
    <tt><strong>
    pip freeze
-   </pre>
+   </strong></tt>
 
    The response:
 
-   ```
+   <pre>
 aniso8601==1.3.0
 click==6.7
 Flask==0.12.2
@@ -230,7 +229,7 @@ pytz==2017.2
 six==1.11.0
 SQLAlchemy==1.1.14
 Werkzeug==0.12.2
-   ```
+   </pre>
 
    A description the Flask Framework is at <a target="_blank" href="http://flask.pocoo.org/">http://flask.pocoo.org</a> 
 
@@ -279,7 +278,8 @@ Werkzeug==0.12.2
 
    0. Unzip file to obtain file "chinook.db" which contains the database.
    0. Move the chinook.db file to the `python_rest` folder.
-
+   <br /><br />
+   
 0. Open the database using SQLite:
 
    <tt><strong>sqlite3 chinook.db
@@ -287,11 +287,11 @@ Werkzeug==0.12.2
 
    The response contains the date of the SQLite3 version being used:
 
-   ```
+   <pre>
    SQLite version 3.16.0 2016-11-04 19:09:39
    Enter ".help" for usage hints.
    sqlite> 
-   ```
+   </pre>
 
 0. List commands 
 
@@ -379,11 +379,11 @@ Werkzeug==0.12.2
 
    The response:
 
-   ```
+   <pre>
    albums          employees       invoices        playlists
    artists         genres          media_types     tracks
    customers       invoice_items   playlist_track
-   ```
+   </pre>
 
    PROTIP: These tables are a rather strang assortment that normally do not belong together. But it's there as technical samples.
 
@@ -487,14 +487,14 @@ if __name__ == '__main__':
 
    This output is from a database query to obtain a result returned.
 
-   ```
+   <pre>
 class Tracks(Resource):
     def get(self):
         conn = db_connect.connect()
         query = conn.execute("select trackid, name, composer, unitprice from tracks;")
         result = {'data': [dict(zip(tuple (query.keys()) ,i)) for i in query.cursor]}
         return jsonify(result)
-   ```
+   </pre>
 
    Note each class is self-contained.
 
@@ -577,13 +577,13 @@ class Tracks(Resource):
 
    The output output is from this code which makes a database query:
 
-   ```
+   <pre>
 class Employees(Resource):
     def get(self):
         conn = db_connect.connect() # connect to database
         query = conn.execute("select * from employees") # This line performs query and returns json result
         return {'employees': [i[0] for i in query.cursor.fetchall()]} # Fetches first column that is Employee ID
-   ```
+   </pre>
 
 0. Instead of "8", use annother number to obtain data for another employee.
 
