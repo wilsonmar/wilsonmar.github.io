@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Azure DevOps (DevSecOps)"
-excerpt: "DevSecOps in Microsoft's cloud transitioned from TFS and VSTS"
+title: "Azure DevOps"
+excerpt: "Microsoft's transitions TFS and VSTS to DevSecOps in the cloud"
 tags: [devops, devsecops]
 date: "2018-12-28"
 file: "azure-devops"
@@ -45,10 +45,10 @@ Buck Hodges (<a target="_blank" href="https://twitter.com/tfsbuck">@tfsbuck</a>)
 
 ## Certifications 
 
-Those who create certification exams have taken the time to think through skills needed with tools.
+Those who create certification exams have taken the time to think through what skills are needed with tools.
 
 <img align="right" alt="azure-devopsexpert-230x258-7173.jpg" width="230" src="https://user-images.githubusercontent.com/300046/56392303-56548080-61ee-11e9-8c6c-016ec8c3625a.jpg">
-<a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-AZ-400.aspx">Implementing Azure DevOps Solutions exam AZ-400</a> ($160) fuilfills the requirement to become a <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">Microsoft Certified: Azure DevOps Engineer Expert</a>. 
+<a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">"Microsoft Certified: Azure DevOps Engineer Expert"</a> is earned by passing the ($160) <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-AZ-400.aspx">exam AZ-400 "Implementing Azure DevOps Solutions"</a>.
 It measures these skills:
 
 1. Design a DevOps strategy (20-25%)
@@ -60,14 +60,14 @@ It measures these skills:
 1. Implement continuous feedback (10-15%)
 <br /><br />
 
-Microsoft's DevOps Expert exam is the culumination of other exams ($99 each):
+QUESTION: How is AZ-400 different from exam: <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a> "coming soon"?
+
+Other exams ($99 each):
  * <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-az-900.aspx">AZ-900: Azure Fundamentals</a>
  * AZ-100: Azure Infrastructure and Deployment Exam (<a target="_blank" title="by Chad Crowell" href="https://linuxacademy.com/azure/training/course/name/microsoft-azure-infrastructure-and-deployment-exam-az-100">videos</a>)
 * AZ-203: Developing Solutions for Microsoft Azure  (<a target="_blank" href="https://linuxacademy.com/azure/training/course/name/microsoft-certified-azure-developer-exam-203-prep">videos</a>)
 * AZ-300: Architecting Solutions for Microsoft Azure  (<a target="_blank" href="https://linuxacademy.com/azure/training/course/name/microsoft-azure-infrastructure-and-deployment-exam-az-100">videos</a>)
 * <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-az-301.aspx">AZ-301: Microsoft Azure Architect Design</a> 120 minute $165
-
-QUESTION: Is AZ-400 the same as exam: <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a> "coming soon"?
 
 
 <a name="CoursesOnDevOps"></a>
@@ -112,7 +112,7 @@ Another perspective is that the courses are segmented loosly around <a target="_
 
 The course catalog says it covers 6 technologies:
 
-   1. VSTS (Visual Studio Team System), which has been deprecated.
+   1. VSTS (Visual Studio Team System)
    2. "Visual Studio" 2017/2019
    3. <strong>Azure Container Service (ACS)</strong> is like Docker and rkct (from Red Hat, pronounced like "rocket").
    4. <a href="#AppInsights">Application Insights</a>
@@ -127,14 +127,10 @@ PROTIP: Azure DevOps also makes use of other Azure services and client executabl
 * <a target="_blank" href="https://app.vssps.visualstudio.com/_signedin">https://app.vssps.visualstudio.com/</a>
    Visual Studio is <a target="_blank" href="https://aex.dev.azure.com/me?mkt=en-US">AEX.dev.azure.com</a>
 
-* Azure CLI (az command) <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest">docs</a>
-
    <a name="ARM"></a>
 
 * <a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/"><strong>Azure Resource Manager (ARM)</strong></a> carries out specifications entered in the Azure Dashboard. It deploys, updates, or deletes cloud resources in a single, coordinated operation. Resources can include virtual machines, storage accounts, virtual networks, services, or any component that you are managing.
    NOTE: <a target="_blank" href="https://www.youtube.com/watch?v=s7bQu4Y1oHU">VIDEO</a>: ARM vs. Classic Azure Service Management
-
-* There is a separate brew amazon-ecs-cli.
 
 * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/key-vault/key-vault-whatis"><strong>Azure Key Vault</strong></a> provides an HSM (<a target="_blank" href="https://www.vaultproject.io/docs/vs/kms.html">vs. Hashicorp Vault</a>, which enforces automatic revocation of leases with key usage audit and key rolling). KMS is focused on securely storing encryption keys and supporting cryptographic operations (encrypt and decrypt) using those keys. It supports access controls and auditing as well.
 
@@ -179,8 +175,97 @@ PROTIP: Azure DevOps also makes use of other Azure services and client executabl
 Summary: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/devops-alm-overview?toc=/azure/devops/user-guide/toc.json&view=azure-devops">
 DevOps tools overview for Azure DevOps</a>
 
-<hr />
+### Local client utilities
 
+Get prepared by installing CLI command programs for use in your Terminal sessions:
+
+1. .NET:
+
+   dotnet --info
+
+   dotnet --version
+
+1. Node and NPM:
+
+   node 
+
+   npm install bower -g
+   v9.11.1
+   npm install grunt-cli -g
+
+1. Verify your machine can get to the bottle resources from Homebrew:
+
+   <pre>curl -O https://formulae.brew.sh
+   curl -O https://homebrew.bintray.com</pre>
+
+1. To enable <strong>az</strong> CLI commands:
+
+   <pre><strong>brew install azure-cli
+   az --version</strong></pre>
+
+   Alternately, if you already have it installed and want to <strong>upgrade</strong> to the latest version:
+
+   <pre>brew upgrade azure-cli</pre>
+
+   Analyze and act on caveats in response such as:
+
+   <pre>
+==> python
+Python has been installed as
+  /usr/local/bin/python3
+&nbsp;
+Unversioned symlinks `python`, `python-config`, `pip` etc. pointing to
+`python3`, `python3-config`, `pip3` etc., respectively, have been installed into
+  /usr/local/opt/python/libexec/bin
+&nbsp;
+If you need Homebrew's Python 2.7 run
+  brew install python@2
+&nbsp;
+You can install Python packages with
+  pip3 install <package>
+They will install into the site-package directory
+  /usr/local/lib/python3.7/site-packages
+&nbsp;
+See: https://docs.brew.sh/Homebrew-and-Python
+==> azure-cli
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+   </pre>
+
+   PROTIP: The CLI doesn't use a Python virtual environment, so it relies on finding the installed Python version.
+
+1. Confirm:
+
+   <pre><strong>az --version</strong></pre>
+
+   The response:
+
+   <pre>
+azure-cli                         2.0.68
+&nbsp;
+command-modules-nspkg               2.0.3
+core                              2.0.68
+nspkg                              3.0.4
+telemetry                          1.0.3
+&nbsp;
+Python location '/usr/local/Cellar/azure-cli/2.0.68/libexec/bin/python'
+Extensions directory '/Users/wilsonmar/.azure/cliextensions'
+&nbsp;
+Python (Darwin) 3.7.4 (default, Jul  9 2019, 18:13:23) 
+[Clang 10.0.1 (clang-1001.0.46.4)]
+&nbsp;
+Legal docs and information: aka.ms/AzureCliLegal
+&nbsp;
+Your CLI is up-to-date.
+   </pre>
+
+(<a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest">based on docs for macOS, Ubuntu, Windows 10, Azure Cloud Shell</a>)
+
+https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest
+Get started with Azure CLI
+
+
+<hr />
 
 ### Azure DevOps Demo Generator
 
@@ -212,11 +297,9 @@ DevOps tools overview for Azure DevOps</a>
 
 <a name="QuickStart"></a>
 
-## Get Started - Prerequisites
+## Azure account and project
 
 Below are steps based on <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/?view=azure-devops">Start using Azure DevOps</a> but with my additional commentary:
-
-### Account
 
 1. Get signed up with Azure and Microsoft Learn accounts. Use of <br />
    <a target="_blank" href="https://aka.ms/aft-iot"><strong>https://aka.ms/aft-iot</strong></a> to Create your Azure free is described at<br />
@@ -226,26 +309,27 @@ Below are steps based on <a target="_blank" href="https://docs.microsoft.com/en-
 
    See: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=vsts">Quick Start: Create an Azure DevOps organization</a>
 
+
+## VisualStudio.com
+
+1. <a target="_blank" href="http://www.visualstudio.com/">http://www.visualstudio.com</a>
+
+   Back in Sept 2018 there was a name upgrade from Visual Studio Online (VSO) which included capabilities in Visual Studio Team Services (VSTS), which began as a performance testing server and on-premise Team Foundation Server (TFS), now called "Visual Studio Server" on-premises.
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/60979290-aa539a80-a2ef-11e9-8b96-d3ababade726.jpg"><img alt="visualstudio com-1185x178-20653.jpg" width="1185" src="https://user-images.githubusercontent.com/300046/60979290-aa539a80-a2ef-11e9-8b96-d3ababade726.jpg"></a>
+
+   <a target="_blank" href="https://visualstudio.microsoft.com/app-center/">"Visual Studio App Center"</a> is for mobile iPhone/Android app development and integration (using <a target="_blank" href="https://wilsonmar.github.io/xamarin">Xamarin</a>) so not in scope for this topic here. (<a target="_blank" href="https://twitter.com/vsappcenter?lang=en">@vsappcenter</a>)
+
+1. Sign in using the same account you use for Azure billing.
+
+   ### Account
+
 1. Click on the icon at the upper-right corner for the account menu:
 
    <img alt="azure-devops-acct-menu-242x382-7242.jpg" width="242" src="https://user-images.githubusercontent.com/300046/56077392-edf24300-5d98-11e9-8dc7-f8d613510abe.jpg">
 
-1. Configure profile, Security, Usage, Notification settings, Theme, etc.
-
-   Find what permissions you or a team member have, including project-level, collection-level, and object-level…docs.microsoft.com in 
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/view-permissions?view=azure-devops">Quick Start: View permissions for yourself or others - Azure DevOps & TFS</a>
-
-
    ### Organization
 
-1. <a target="_blank" href="http://www.visualstudio.com/">http://www.visualstudio.com</a>
-
-   HISTORY: In Sept 2018 there was a name upgrade from Visual Studio Online (VSO) which include capabilities in Visual Studio Team Services (VSTS) that began as a performance testing server and Team Foundation Server (TFS) on-premises, now called "Visual Studio Server".
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/56325322-0e225900-612f-11e9-8e80-8bc7349abebc.jpg"><img alt="azure-devops-dashboard-abel-1920x552-76907.jpg" width="1920" src="https://user-images.githubusercontent.com/300046/56325322-0e225900-612f-11e9-8e80-8bc7349abebc.jpg"></a>
-
-
-1. Sign in using the same account you use for Azure billing.
 1. Click "Create new organization".
 
    PROTIP: Several organizations can be created under an account.
@@ -254,11 +338,33 @@ Below are steps based on <a target="_blank" href="https://docs.microsoft.com/en-
 1. Name your Azure DevOps organization, such as "dev.azure.com/wilsonmar0014".
 1. Select your region (from "West Europe, East Asia, Central US, Brazil South, Canada Central, Australia East, UK South, South India") and click "Continue".
 
+1. PROTIP: To get to the list of organizations, click "Azure DevOps" at the upper-right corner.
+
+   <img alt="azure-devops-org-menu-241x770-16780.jpg" width="241" src="https://user-images.githubusercontent.com/300046/56077361-81774400-5d98-11e9-95b5-bfc434b237ce.jpg">
+
+1. Click on "Organization Settings" at the lower-left corner for the Organization's menu.
+
+   <img alt="azure-devops-dashboard-ll-184x208-4860.jpg" width="184" src="https://user-images.githubusercontent.com/300046/56077477-e41d0f80-5d99-11e9-929b-d4310fe1ef06.jpg">
+
+   In the <a target="_blank" href="https://itworks-tfs.visualstudio.com/_settings/organizationOverview">Overview page</a> is where the default Region is specified for all projects.
+
+1. Configure profile, Security, Usage, Notification settings, Theme, etc.
+
+   Find what permissions you or a team member have, including project-level, collection-level, and object-level…docs.microsoft.com in 
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/view-permissions?view=azure-devops">Quick Start: View permissions for yourself or others - Azure DevOps & TFS</a>
+
+
+1. Learn how to structure a project, manage users, and more to support your software development teams.
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/project-admin-tutorial?view=vsts">Quick Start: Get started as a project admin or organization owner in Azure DevOps</a>
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/sign-up-invite-teammates?view=vsts">Sign up for Azure DevOps and invite teammates - Azure DevOps</a> Quickstart guide to signing up and inviting others to join a project in Azure DevOpsdocs.microsoft.com
+
    ### Work Items
 
 1. Notice that "My work items" and "My pull requests" are at the Organization level.
 
-   ### Project
+   ### Azure DevOps Project
 
 1. Type a project name, such as "PU".
 1. Leave Visibility as the default "Private".
@@ -273,24 +379,8 @@ Below are steps based on <a target="_blank" href="https://docs.microsoft.com/en-
 1. PROTIP: Bookmark the URL on the page for use in the future, such as:<br />
    https://dev.azure.com/wilsonmar0014/PU
 
-   ![azure-devops-proj-menu-267x512](https://user-images.githubusercontent.com/300046/60947489-e5cd7500-a2ad-11e9-9e35-b9b5fd8a322c.png)
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/56325322-0e225900-612f-11e9-8e80-8bc7349abebc.jpg">To view this sample project populated, click it for a full-screen:<br /><img alt="azure-devops-dashboard-abel-1920x552-76907.jpg" width="1920" src="https://user-images.githubusercontent.com/300046/56325322-0e225900-612f-11e9-8e80-8bc7349abebc.jpg"></a>
 
-1. PROTIP: To get to the list of organizations, click "Azure DevOps" at the upper-right corner.
-
-1. Click on "Organization Settings" at the lower-left corner for the Organization's menu.
-
-   <img alt="azure-devops-dashboard-ll-184x208-4860.jpg" width="184" src="https://user-images.githubusercontent.com/300046/56077477-e41d0f80-5d99-11e9-929b-d4310fe1ef06.jpg">
-
-   In the <a target="_blank" href="https://itworks-tfs.visualstudio.com/_settings/organizationOverview">Overview page</a> is where the default Region is specified for all projects.
-
-1. Configure the organization:
-
-   <img alt="azure-devops-org-menu-241x770-16780.jpg" width="241" src="https://user-images.githubusercontent.com/300046/56077361-81774400-5d98-11e9-95b5-bfc434b237ce.jpg">
-
-   Learn how to structure a project, manage users, and more to support your software development teams in Azure DevOpsdocs.microsoft.com:
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/project-admin-tutorial?view=vsts">Quick Start: Get started as a project admin or organization owner in Azure DevOps</a>
-
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/sign-up-invite-teammates?view=vsts">Sign up for Azure DevOps and invite teammates - Azure DevOps</a> Quickstart guide to signing up and inviting others to join a project in Azure DevOpsdocs.microsoft.com
 
 1. [_] TASK: Add text in "About this project".
 
@@ -300,68 +390,132 @@ Below are steps based on <a target="_blank" href="https://docs.microsoft.com/en-
 
 1. Click on <a href="#AzureRepos">Repos</a>. <a target="_blank" title="azure-devops-repos-dialog-1028x592.png" href="https://user-images.githubusercontent.com/300046/60948888-34304300-a2b1-11e9-872b-605eaafdcd7d.png">Several options are shown</a>.
 1. Click "Import".
-1. Paste the URL to where the repository is located, such as:
-  
-   https://github.com/Microsoft/PartsUnlimited
+1. Paste the URL to where the repository is located. For this tutorial you have two choices which <a target="_blank" title="2m52s" href="https://www.youtube.com/watch?v=wiCRVp6QgA0">VIDEO</a>: Microsoft has created several sample apps (with source code) implements the eCommerce website described as "Project Unicorn" in chapters 31-35 of <a target="_blank" href="http://www.amazon.com/The-Phoenix-Project-Helping-Business/dp/0988262592">The Phoenix Project</a> by Gene Kim, Kevin Behr, and George Spafford, © 2013.
 
-   https://github.com/Microsoft/PartsUnlimitedMRP
+   <a name="PartsUnlimited"></a>
+   
+   ### Parts Unlimited demo apps
 
+   <tt><strong>https://github.com/Microsoft/PartsUnlimited</strong></tt>
 
-   <a name="SampleAppRepos"></a>
-
-## Parts Unlimited demo apps
-
-<a target="_blank" title="2m52s" href="https://www.youtube.com/watch?v=wiCRVp6QgA0">VIDEO</a>: Microsoft has created several sample apps (with source code) implements the eCommerce website described as "Project Unicorn" in chapters 31-35 of <a target="_blank" href="http://www.amazon.com/The-Phoenix-Project-Helping-Business/dp/0988262592">The Phoenix Project</a> by Gene Kim, Kevin Behr, and George Spafford, © 2013.
-
-<strong>"PartsUnlimited"</strong> (PU) is an ASP.NET app with customized CI/CD pipelines which also creates a SQL database back-end. 
+   <strong>(PU)</strong> is an ASP.NET app with customized CI/CD pipelines which also creates a SQL database back-end. 
 
    * <a target="_blank" href="http://microsoft.github.io/PartsUnlimited/">http://microsoft.github.io/PartsUnlimited</a> (http://aka.ms/pumrplabs)  describes the app.
-   
-   * <a target="_blank" href="https://github.com/Microsoft/PartsUnlimited">https://github.com/Microsoft/PartsUnlimited</a> contains the source code. David Tesar (<a target="_blank" href="https://twitter.com/dtzar">@dtzar</a>, host of <a target="_blank" href="https://channel9.msdn.com/Shows/DevOps-Dimension/">DevOps-Dimension on channel9.msdn</a>) wrote the two branches which visually display the same front-end website content with a SQL Azure back-end (all PaaS):<br /> 
-   
-      * The master branch contains code for ASP.NET Core used within Containers.
-      * The aspnet45 branch contains code for ASP.NET 4.5 used on "bare metal" machines.
-   <br /><br />
-
-   * <a target="_blank" href="https://microsoft.github.io/PartsUnlimited/pandp/200.1x-PandP-CICDQuickstartwithVSTS.html">PartsUnlimited Setup with Visual Studio (PartsUnlimited)</a>
-   to standardizing environments [80 minutes]
-
-   * <a target="_blank" href="https://microsoft.github.io/PartsUnlimited/pandp/200.1x-PandP-ManualdeploywithVS2017toAzure.html">PartsUnlimited Manual Deployment to Azure App Services with Visual Studio and ARM Templates (PartsUnlimited)</a>
-   to standardizing environments
-
-   * <a target="_blank" href="https://microsoft.github.io/PartsUnlimited/pandp/200.1x-PandP-CICDQuickstartwithVSTS.html">CI and CD with VSTS - Quickstart (PartsUnlimited)</a>
-   to build and deploy to production [80 minutes]
-
-   Description:
-
    * Front end service runs Apache Tomcat and talks to order service
    * Order and Integration service runs Java and calls MongoDB
    * Integration service integrates with Parts Unlimited Website
    * Includes a Dockerfile and sample publishing profile to publish to a Docker container
    * Includes ARM JSON templates and PowerShell automation scripts to easily build and provision your environment
    <br /><br />
+   
+   <tt><strong>https://github.com/Microsoft/PartsUnlimitedMRP</strong></tt><br />
 
-
-
-<strong>PartsUnlimitedMRP</strong> (PUMRP) is a fictional outsourced Manufacturing Resource Planning (MRP) app  
+   <strong>(PUMRP)</strong> is a fictional outsourced Manufacturing Resource Planning (MRP) app built entirely using open source software: Linux, Java, Apache, and MongoDB which creates a web front end, an order service, and an integration service.
 
    * <a target="_blank" href="http://microsoft.github.io/PartsUnlimitedMRP/">http://microsoft.github.io/PartsUnlimitedMRP</a> describes the app.
+   <br /><br />
 
-   * <a target="_blank" href="https://github.com/Microsoft/PartsUnlimitedMRP">https://github.com/Microsoft/PartsUnlimitedMRP</a> contains the source code, which uses entirely open source software including Linux, Java, Apache, and MongoDB which creates a web front end, an order service, and an integration service.
+1. When successful, you'll get an email.
 
-   * <a target="_blank" href="https://microsoft.github.io/PartsUnlimitedMRP/pandp/200.1x-PandP-PythonCI.html">Create CI infratructure using Python, GitHub and Travis CI (PartsUnlimitedMRP)</a>
-   to build and deploy to production
+   ### Git branches
+   
+1. PROTIP: Make sure you have the correct branch selected.
 
-   * <a target="_blank" href="https://microsoft.github.io/PartsUnlimitedMRP/pandp/200.1x-PandP-PUMRPSetupVSTS.html">Set up Parts Unlimited MRP with VSTS (PartsUnlimitedMRP)</a>
+   David Tesar (<a target="_blank" href="https://twitter.com/dtzar">@dtzar</a>, host of <a target="_blank" href="https://channel9.msdn.com/Shows/DevOps-Dimension/">DevOps-Dimension on channel9.msdn</a>) wrote the two branches which visually display the same front-end website content with a SQL Azure back-end (all PaaS):<br /> 
+   
+      * Branch <strong>master</strong> contains code for ASP.NET Core used within Containers.
+      * Branch <strong>aspnet45</strong> contains code for ASP.NET 4.5 used on older "bare metal" machines.
 
-   * <a target="_blank" href="https://microsoft.github.io/PartsUnlimitedMRP/pandp/200.1x-PandP-LocustTest.html">Create a simple REST API and perform Load Tests using Locust (PartsUnlimitedMRP)</a> to test automatically.
+## Workflows (Reference Architectures)
+
+The work above kickstarts the first two steps in this sequence of work (from <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/cicd-for-azure-vms/">CI/CD for Azure VMs</a>) described in this flowchart: 
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/56077081-09f3e580-5d95-11e9-9093-0a0c8af48149.png"><em>Click on diagram for full-screen pop-up</em>
+<br /><img alt="azure-devops-ref-arch-cicd-avm-1176x746.png" width="1176" src="https://user-images.githubusercontent.com/300046/56077081-09f3e580-5d95-11e9-9093-0a0c8af48149.png"></a>
+
+   1. Engineer uses Visual Studio to Git Commit changes into <a href="#AzureRepos">Azure Repos</a>.
+   2. Commit application code and Azure Resource Manager template into <a href="#AzureRepos">Azure Repos</a>.
+
+      <a target="_blank" href="https://microsoft.github.io/PartsUnlimited/pandp/200.1x-PandP-ManualdeploywithVS2017toAzure.html">PartsUnlimited Manual Deployment to Azure App Services with Visual Studio and ARM Templates (PartsUnlimited)</a> provides a hands-on, step-by-step instructions:
+
+      1. Setup Local Visual Studio 2017 environment
+      1. Create Azure App Service Infrastructure from Visual Studio uing ARM Templates
+      1. Publish the website to Azure App Service Production URL
+      1. Publish the website to Azure App Service dev and staging sites
+      1. Swap dev and staging site content
+      <br /><br />
+
+   3. Continuous integration triggers application build and unit tests in <a href="#AzurePipelines">Azure DevOps Pipelines</a>.
+   4. Continuous Deployment trigger orchestrates deployment of application artifacts with environment-specific parameters.
+   5. Deployment to QA environment using <a href="#AzureDevTestLabs">Azure DevTest Labs</a>
+   6. Deployment to Staging environment using Azure Virtual Machines.
+   7. Deployment to production environment using Azure Virtual Machines.
+   8. <a href="#AppInsights">Azure Application Insights</a> collects and analyzes health, performance, and usage data.
+   9. Engineer reviews health, performance, and usage information.
+   10. Update backlog item as complete in <a href="#AzureBoards">Azure DevOps Boards</a>.
+   <br /><br />
+
+Other "Reference Architectures" with workflows:   
+
+   * <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/cicd-for-containers/">CI/CD for Containers</a>
+   * <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/azure-devops-continuous-integration-and-continuous-deployment-for-azure-web-apps/">CI/CD for Azure Web Apps</a>
+   * <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/java-cicd-using-jenkins-and-azure-web-apps/">Java CI/CD using Jenkins and Azure Web Apps</a>
+   * <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/immutable-infrastructure-cicd-using-jenkins-and-terraform-on-azure-virtual-architecture-overview/">Immutable Infrastructure CI/CD using Jenkins and Terraform</a>
+
+PROTIP: Notice that all of them have Visual Studio thick client (at the lower-left corner) as the interface for engineers rather than Visual Studio Code (VSCode).
+
+## You must install Visual Studio thick client
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=pDwnfyD7Xe0">VIDEO</a>: Tutorial:
+   <a target="_blank" href="https://microsoft.github.io/PartsUnlimited/pandp/200.1x-PandP-PUsetupwithVS2017.html">
+   PartsUnlimited Setup with Visual Studio 2017</a> is obsolete because it uses VSTS. QUESTION: Difference with Visual Studio 2109 for Mac?
+
+   Enable "ASP. NET and web development" and "Azure development" during installation or Tools > Get Tools and Features, Modify.
+
+   * <a target="_blank" href="https://microsoft.github.io/PartsUnlimited/pandp/200.1x-PandP-CICDQuickstartwithVSTS.html">PartsUnlimited Setup with Visual Studio (PartsUnlimited)</a>
+   to standardizing environments [80 minutes]
+
+      1. Import Source Code into your Azure DevOps Account with Git.
+      1. Create local Git repo from your Azure DevOps Git repo.
+      1. Set up <a href="#Endpoints">Service Endpoint</a> in Azure DevOps.
+      1. Import Continuous Integration Build pipeline into Azure DevOps and kick off a build.
+      1. Import Continuous Deployment Release pipeline into Azure DevOps.
+      1. Export Build and Release pipelines from Azure DevOps and commit changes to Azure DevOps repo to kick off CI and CD.
+      1. Confirm successful deployment to Azure.
+      <br /><br />
+
+   * <a target="_blank" href="https://microsoft.github.io/PartsUnlimitedMRP/pandp/200.1x-PandP-PUMRPSetupVSTS.html"><strike>Set up Parts Unlimited MRP with VSTS (PartsUnlimitedMRP)</strike></a>
+   is <strong>obsolete</strong> because VSTS is no longer available.
 
 
-1. Find and install free extensions for Azure DevOps Services from the Visual Studio Marketplacedocs.microsoft.com
 
+   * <a target="_blank" href="https://microsoft.github.io/PartsUnlimitedMRP/pandp/200.1x-PandP-PythonCI.html">Create CI infratructure using PartsUnlimitedMRP from GitHub, Python 3.5 within venv, and Travis CI </a> to build and deploy to production. <a target="_blank" href="https://www.youtube.com/watch?v=M39zW9QF_FY">VIDEO</a>
+
+      1. Create an application using Python using Virtualenv for the environment isolation
+      1. Create Unit Tests
+      1. Declare Depenendcies
+      1. Define the continuous build and test in our travis.yml file.
+      1. Create a Github repository for this application and link it to our Travis CI account.
+      1. Setup Travis CI
+      1. Managing Pull Requests
+      <br /><br />
+
+   * <a target="_blank" href="https://microsoft.github.io/PartsUnlimitedMRP/pandp/200.1x-PandP-LocustTest.html">Create a simple REST API and perform Load Tests using Locust (PartsUnlimitedMRP)</a> on a minimal RESTful API using the Python 3.5 Flask framework.
+
+   * <a target="_blank" href="???">CI and CD with VSTS - Quickstart (PartsUnlimited)</a>
+   to build and deploy to production [80 minutes]
+
+
+<a name="Endpoints"></a>
+
+## Azure Service Endpoints
+
+
+
+## Extensions to Azure DevOps Services 
+
+1. Find and install free extensions for Azure DevOps Services on <a target="_blank" href="https://marketplace.visualstudio.com/azuredevops">https://marketplace.visualstudio.com/azuredevops</a> based on 
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/marketplace/install-extension?view=azure-devops">Quick Start: Install free extensions for Azure DevOps Services</a> 
 
-   ## Visual Studio required?
 
 1. If you click "Visual Studio", the browser issues a URL such as:
 
@@ -426,41 +580,6 @@ The <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/relea
 Sign into <a target="_blank" href="https://aka.ms/AzureDevOpsForum/">aka.ms/AzureDevOpsForum</a> = Developer Community Problems and Features (Active | Newest | Votes)
 
 NOTE: Azure DevOps works with more languages than just C# (Java, etc.).
-
-<hr />
-
-## Workflows (Reference Architectures)
-
-The sequence of product usage depends on the hosting technology:
-
-<a target="_blank" href="https://azure.microsoft.com/solutions/architecture/cicd-for-azure-vms/">CI/CD for Azure VMs</a>
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/56077081-09f3e580-5d95-11e9-9093-0a0c8af48149.png"><img alt="azure-devops-ref-arch-cicd-avm-1176x746.png" width="1176" src="https://user-images.githubusercontent.com/300046/56077081-09f3e580-5d95-11e9-9093-0a0c8af48149.png"></a>
-<em>Click on diagram for full-screen pop-up</em>
-
-   1. Commit application code (in Visual Studio).
-   2. Commit application code and Azure Resource Manager template into Azure Repos.
-   3. Continuous integration triggers application build and unit tests in Azure DevOps Pipelines.
-   4. Continuous Deployment trigger orchestrates deployment of application artifacts with environment-specific parameters.
-   5. Deployment to QA environment using Azure DevTest Labs
-   6. Deployment to Staging environment using Azure Virtual Machines.
-   7. Deployment to production environment using Azure Virtual Machines.
-   8. <a href="#AppInsights">Azure Application Insights</a> collects and analyzes health, performance, and usage data.
-   9. Engineer reviews health, performance, and usage information.
-   10. Update backlog item in Azure DevOps Boards.
-   <br /><br />
-
-Other "Reference Architectures" with workflows:   
-
-* <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/cicd-for-containers/">CI/CD for Containers</a>
-* <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/azure-devops-continuous-integration-and-continuous-deployment-for-azure-web-apps/">CI/CD for Azure Web Apps</a>
-* <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/java-cicd-using-jenkins-and-azure-web-apps/">Java CI/CD using Jenkins and Azure Web Apps</a>
-* <a target="_blank" href="https://azure.microsoft.com/solutions/architecture/immutable-infrastructure-cicd-using-jenkins-and-terraform-on-azure-virtual-architecture-overview/">Immutable Infrastructure CI/CD using Jenkins and Terraform</a>
-
-## Bash Scripts
-
-Bash scripts such as <strong>azure-node-setup.sh</strong> are run from within <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/tree/master/azure-node/">https://github.com/wilsonmar/DevSecOps/tree/master/azure-node/</a>
-
 
 <hr />
 
@@ -610,6 +729,9 @@ Websites: <a target="_blank" href="https://azure.microsoft.com/en-us/services/de
 
    Up to 15 tags per ARM resource to logically organize resources for cost accounting.
    Tag names are limited to 512 characters. Tag values are limited to 256 characters. 
+
+   https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-authoring-templates
+   Understand the structure and syntax of Azure Resource Manager templates
 
    See https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags
 
@@ -803,7 +925,7 @@ DEVOPS200.10x
 
    50% of the grade is to pass (by 70%) in five chances two Validated labs within 120 minutes each:
 
-   <a target="_blank" href="https://www.edx.org/microsoft-professional-program-devops">Microsoft Professional Program (MPP) in DevOps</a> provides only <strong>two attempts</strong> to complete <a href="#SampleAppRepos">PartsUnlimited labs</a>.
+   <a target="_blank" href="https://www.edx.org/microsoft-professional-program-devops">Microsoft Professional Program (MPP) in DevOps</a> provides only <strong>two attempts</strong> to complete labs using <a href="#PartsUnlimited">PartsUnlimited sample reposistories</a>.
 
    1: Continuous Integration with Azure DevOps
 
