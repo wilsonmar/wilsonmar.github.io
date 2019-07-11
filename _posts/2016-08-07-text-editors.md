@@ -740,7 +740,6 @@ But its windowing is much more configurable, which has enabled many add-ons that
 
 Its <a target="_blank" href="https://www.hanselman.com/blog/VisualStudioCodeRemoteDevelopmentMayChangeEverything.aspx">Remote Development mode</a> means that rather than RDP or SSH into a remote machine, there is a client part on your machine and a "VS Code Server" basically running anywhere else. VSCode knows to enable that when it sees a "dev container configuration file" in a GitHub repository. All that's enabled by installing the <a target="_blank" href="https://aka.ms/vscode-remote/download/extension">extension pack</a>. 
 
-
 On Mac: 
 
 1. Install the GUI program using Homebrew:
@@ -781,8 +780,13 @@ On Mac:
 
 1. Click "Restart Now" for it to take.
  
-   https://www.monodevelop.com/download/
+   <a target="_blank" href="https://www.monodevelop.com/download/">https://www.monodevelop.com/download/</a>
 
+   ### PowerShell extension for VSCode
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=LJNdK0QrIo8">
+   Setting up Visual Studio Code for PowerShell Development</a>
+   <a target="_blank" href="https://github.com/PowerShell/vscode-powershell">https://github.com/PowerShell/vscode-powershell</a>
 
    ### TypeScript settings.json
 
