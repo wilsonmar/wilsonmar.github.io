@@ -3,7 +3,8 @@ layout: post
 title: "Flood local setup"
 excerpt: "Install Flood Element CLI to run TypeScript which (like Selenium) emulates manual actions in Google Chrome browsers"
 tags: [flood, perftest, selenium, testing]
-file: flood-local-setup.md
+date: "2019-12-28"
+file: "flood-local-setup"
 image:
 # flood-the-internet-wall-1900x500-105703.jpg
   feature: https://user-images.githubusercontent.com/300046/59104048-b4980880-88ed-11e9-9a93-c19baaef18ab.jpg

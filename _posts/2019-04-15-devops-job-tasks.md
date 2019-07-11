@@ -5,7 +5,7 @@ excerpt: "Get DevOps done using job tasks and projects based on job tasks define
 tags: [devops, certs]
 idate: "2019-04-15"
 file: "devops-job-tasks"
-mage:
+image:
 # cert-corporateoasis-1900x500-28621
 
 # cert-corporateoasis-1900x500-28088.jpg

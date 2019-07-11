@@ -3,7 +3,6 @@ layout: post
 title: "Node.js Installation on MacOS"
 excerpt: "JavaScript packaged by npm for the win!"
 tags: [node, javascript, apple, mac, setup]
-shorturl: "https://goo.gl/92YU4k"
 date: "2016-06-11"
 file: "node-osx-install"
 image:
