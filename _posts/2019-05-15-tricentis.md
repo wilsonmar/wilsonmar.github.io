@@ -3,6 +3,8 @@ layout: post
 title: "Tricentis Tosca"
 excerpt: "Model-based functional testing through the lifecycle"
 tags: [testing]
+date: "2019-05-15"
+file: "tricentis"
 image:
 # ![tricentis-denys-1900x500-135601.jpg
   feature: https://user-images.githubusercontent.com/300046/57971743-26b0a980-794f-11e9-855f-f6bedf8a5e52.jpg
@@ -11,7 +13,16 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
+<p align="right"><a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2Ftricentis%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2Ftricentis%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2Ftricentis%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2Ftricentis%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2Ftricentis%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2Ftricentis%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2Ftricentis%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2Ftricentis%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2Ftricentis%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
+</p>
 {% include _toc.html %}
 
 <a target="_blank" href="https://wilsonmar.github.io/tricentis/">This article</a> contains my notes about learning and using <a target="_blank" href="https://www.tricentis.com/">Tricentis</a> Tosca for continuous functional testing.
