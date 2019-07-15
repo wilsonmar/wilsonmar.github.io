@@ -3,6 +3,8 @@ layout: post
 title: "Java Install on Mac OSX"
 excerpt: "Because programmers can't get enough caffeine"
 tags: [apple, mac, setup]
+date: "2016-08-10"
+file: "java-on-apple-mac-osx"
 image:
 # feature: pic brown java beans 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622024/6a77b5b0-0584-11e6-93ea-ed1ca2c4bbc6.jpg
@@ -11,8 +13,16 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+<p align="right"><a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
+</p>
 {% include _toc.html %}
 
 <a id="JDKSetupz"></a>
@@ -444,6 +454,28 @@ Mac OSX Setup Guide</a>, developed and distributed as a
 
 Kotlin is a language that makes use of the JVM.
 Invented by JetBrains (IntelliJ).
+
+## Social
+
+Top 20 #Java Blogs/bloggers to follow on Twitter:
+@InfoQ <br />
+@baeldung <br />
+@javarevisited <br />
+@AdamBien <br />
+@vlad_mihalcea <br />
+@JavaOOQ <br />
+@thjanssen123 <br />
+@The_Java_Dev <br />
+@JournalDev <br />
+@nicolas_frankel<br /> 
+@starbuxman <br />
+@DZone <br />
+@GuidesJava <br />
+@SaralSaxena <br />
+@rafaelcodes <br />
+@arungupta <br />
+@javinpaul<br />
+@JavaWorldCom<br />
 
 
 ## More on OSX
