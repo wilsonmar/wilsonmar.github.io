@@ -1829,7 +1829,7 @@ PROTIP: Delete Conda one folder at a time (without the --yes parameter).
 
    <a name="PythonPackages"></a>
 
-   ### Install Python packages #
+### Install Python packages #
 
    From inside a conda environment:
 
@@ -2175,7 +2175,7 @@ When Python is installed using pip, see where it's installed:
 
    The response on my system:
 
-   <pre>/Users/[myusername]/Library/Python/3.6</pre>
+   <pre>/Users/[myusername]/Library/Python/3.7</pre>
 
 
 <hr />

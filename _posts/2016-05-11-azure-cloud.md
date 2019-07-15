@@ -126,13 +126,38 @@ H. Modernize the business
 
 After <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp">getting a Learning account</a>:
 
-1. PROTIP: Take this sequence:
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/">Microsoft's Azure fundamentals class</a> provides a learning path of 12 modules prepares you to pass the <a target="_blank" href="https://www.microsoft.com/learning/exam-AZ-900.aspx">$99 for 50 questions over 60-minute AZ900 Microsoft Azure Fundamentals Exam</a> taken at a <a target="_blank" href="https://bit.ly/2B9iS9e">testing center</a> or at home with a video camera. (see <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/330?redirect_uri=https://app.linuxacademy.com/search?query=az-900">LinuxAcademy video course</a> released May 2019, include the <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/azurebookofbasics1.html">"Book of Basics" interactive diagrams</a> with tabs associated with major sections of the exam:
 
-   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/">Azure fundamentals</a> learning path of 12 modules prepares you to pass the <a target="_blank" href="https://www.microsoft.com/learning/exam-AZ-900.aspx">$99 AZ900 Microsoft Azure Fundamentals Exam</a>.
+*  cloud concepts (15-20%)
+   * Cloud Services: Benefits and Considerations
+   * Infrastructure as a Service (IaaS), 
+   * Platform as a Service (PaaS), 
+   * Software as a Service (SaaS) - Salesforce & Office 365
+   * Cloud Models: Public, Private, and Hybrid
+*  core Azure services (30-35%)
+   * Azure Architecture
+   * Azure Products and Services
+   * Azure Solutions
+   * Azure Management Tools
+*  security, privacy, compliance, and trust (20-35%)
+   * Network Security in Azure
+   * Azure Identity Services
+   * Azure Security Tools and Features
+   * Azure Governance
+   * Monitoring and Reporting in Azure
+   * Azure Privacy, Compliance, and Data Protection Standards
+*  Azure pricing and support (20-35%)
+   * Subscriptions
+   * Planning and Managing Azure Costs
+   * Support Options
+   * Service Level Agreements (SLAs)
+   * The Azure Service Lifecycle
+<br /><br />
 
-   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/learn-business-value-of-azure/">Learn the business value of Microsoft Azure</a> learning path
 
-   <strong>Azure Security Center</strong> is available in free and paid tiers.
+ <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/learn-business-value-of-azure/">Learn the business value of Microsoft Azure</a> learning path
+
+<strong>Azure Security Center</strong> is available in free and paid tiers.
    The Free subscription assesses Azure resources only. The "Standard" tier provides a full suite of security-related services including continuous monitoring, threat detection, just-in-time access control for ports, and more. After a free 60-day free trial, it's $15 per node per month.
 
 
@@ -764,9 +789,12 @@ by Yacine Khammal Intermediate Feb 14, 2012  2h 37m
 * https://www.microsoft.com/en-us/store/apps/posterpedia/9wzdncrdcsr8
    Get the Posterpedia Windows 8 app used to zoom into electronic posters.
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=3WWpx4W-oK8">
-   YOUTUBE: Microsoft's DevOps Vision</a>
 
+<table border="1" cellpadding="4" cellspacing="0">
+<tr valign="bottom"><th>ACTUAL MONTHLY UPTIME %</th><th> SERVICE CREDIT PERCENTAGE </th></tr>
+<tr valign="top"><td> < 99.9 </td><td> 10 </td></tr>
+< 99	25 </td></tr
+< 95	100 </td></tr
 
 ## More on DevOps #
 

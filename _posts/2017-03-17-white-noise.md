@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "White Noise"
-excerpt: "See if listening to this helps you concentrate and be a better person"
+excerpt: "See if listening to this music helps you concentrate to study by inducing alpha brain waves"
 tags: [Clouds, IoT]
-shorturl: "https://goo.gl/fTYYZF"
+date: "2017-03-17"
+file: "white-noise"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -12,16 +13,56 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
-[![Gitter](https://badges.gitter.im/wilsonmar/wilsonmar.github.io.svg)](https://gitter.im/wilsonmar/wilsonmar.github.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
+<p align="right"><a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
+</p>
 {% include _toc.html %}
 
 This page provides ways to make you feel like you're somewhere else:
 such as sleeping in a tropical rainstorm.
 
-PROTIP: Download sound files and play it in a loop. 
-Then you won't be sucking network from others on the internet.
+There are two types of sounds:
+
+a). Ambient sounds such as what you hear in a cafeteria.
+
+b). Music without lyrics (electronic or orchestral)
+
+PROTIP: I combine the two together -- played through and over-the-ear headphones -- to drown out the music at Starbucks or other places which play music with lyrics that put an "ear worm" in my head.
+
+> According to a peer-reviewed study out of the University of Chicago, "A moderate level of ambient noise is conducive to creative cognition." In a nutshell, this means being a tiny bit distracted helps you be more creative. 
+
+That's a quote at the <a target="_blank" href="https://coffitivity.com/">
+https://coffitivity.com</a> website
+which offers ambient sounds such as "Morning Murmur", "Lunchtime Lounge", and "University Undertones" so you can pretend you're ignoring other people talking, but not to you.
+
+## Downloaded to play locally
+
+Save the money it takes to fly to Paris, Brazil, and Texas to hear what ambient sounds like there.
+
+Source code for Coffitivity.com is  <a target="_blank" href="https://github.com/siwalikm/coffitivity-offline">on GitHub</a> to download then run offline on your mac:
+
+<pre>
+# If Git, NodeJs, and electron-forge are not installed, install them:
+https://github.com/siwalikm/coffitivity-offline.git --depth=1
+cd coffitivity-offline
+npm install
+npm i -g @electron-forge/cli
+electron-forge make
+du -sh -- * .*   # 1.4G space used
+cd out/Coffitivity Offline-darwin-x64/make
+run Coffitivity Offline-1.0.2.dmg  # (drag into Applications folder)
+# Pinch 4 fingers together to select app.
+# Drag the icon and drop it on your Mac's Dock for quick access.
+# Delete build folder ~/gits/coffitivity-offline
+</pre>
+
 
 ## Web pages to bookmark
 
@@ -40,14 +81,6 @@ provides 3 different white noises and enables you to combine several sounds for 
 rain, storm, birds, leaves russeling, mountain stream, seashore, dripping water, fireplace, crickets, 
 coffee shop, fan, and coffee house.
 
-<a target="_blank" href="https://coffitivity.com/">
-https://coffitivity.com</a>
-has ambient sounds "Morning Murmur", "Lunchtime Lounge", and "University Undertones"
-so you can pretend you're among people.
-Optionally, save the money it takes to fly to Paris, Brazil, and Texas to hear what ambient sounds like there.
-The site quotes:
-
-> According to a peer-reviewed study out of the University of Chicago, "A moderate level of ambient noise is conducive to creative cognition." In a nutshell, this means being a tiny bit distracted helps you be more creative. 
 
 <a target="_blank" href="https://mynoise.net/NoiseMachines/binauralBrainwaveGenerator.php">
 https://mynoise.net/NoiseMachines/binauralBrainwaveGenerator.php</a>
@@ -63,7 +96,13 @@ has wonderful descriptions of many sounds (after you scroll down the pleading fo
    * My personal favorite: <a target="_blank" href="https://mynoise.net/NoiseMachines/catPurrNoiseGenerator.php">
    Furry Friend</a> - that's cat purr, without the allergy.
 
+## Youtube
 
+PROTIP: Download sound files so you can play it in a loop, and then you won't be sucking network from others on the internet or using data minutes on your mobile plan.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=GlFEBkoMObM">
+Productive Music Playlist | 2 Hour Mix | May 2019 | #EntVibes</a>
+has all electronics.
 
 ## Amazon Prime Video
 
@@ -72,12 +111,10 @@ You'll be using network bandwidth with this technique.
 On Amazon.com, search for "ambient sounds" to choose videos that run for 8 hours:
 
 
-## Movies on location with visuals:
+### Movies on location with visuals:
 
-https://www.amazon.com/dp/B01LWN5HLJ/ref=pd_cbs_318_1
-Color Therapy - 20 Minute Full Spectrum Color Cycle Meditation CC
-
-https://www.amazon.com/Countryside-Ambience-Adonis-Mooney/dp/B01J8JIZ0K/
+<a target="_blank" href="https://www.amazon.com/dp/B01LWN5HLJ/ref=pd_cbs_318_1">
+Color Therapy - 20 Minute Full Spectrum Color Cycle Meditation CC</a>
 
 https://www.amazon.com/Jungle-Waterfalls-relaxation-meditation-hours/dp/B01LW1MPWI/
 
@@ -209,11 +246,6 @@ https://www.amazon.com/Fireplace-Rain-Thunder-Sounds-Helsloot/dp/B01AKQOLOY/r
 https://www.amazon.com/purring-hours-Sleep-Meditation-screen/dp/B01MS1LX01/
 
 https://www.amazon.com/Cicadas-night-hours-Meditation-screen/dp/B01N9V8ONZ/
-
-
-### Animals
-
-https://www.amazon.com/Sea-Otters-Relaxing-Ambient-Nature/dp/B01CYROQJM/r
 
 
 ### Instrumental Music Soundtracks

@@ -27,6 +27,9 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/azure-devops/">This page</a> contains succinct "deep dive" notes about learning and using Microsoft's Azure DevOps services, without the generalized sales hype. This page is more than just links to tutorials. I have worked hard to provide you logical sequence of hands-on steps culled from among the dizzying volume of web pages and videos about this topic, many repeating others have said already.
 
+* <a target="_blank" href="https://www.youtube.com/watch?v=3WWpx4W-oK8">
+   YOUTUBE: Microsoft's DevOps Vision</a>
+
 ## Why?
 
 <a target="_blank" href="https://www.forbes.com/sites/janakirammsv/2018/09/16/azure-devops-why-its-a-big-deal-for-microsoft-and-the-community/#353e0a8c6780">
@@ -63,12 +66,21 @@ It measures these skills:
 QUESTION: How is AZ-400 different from exam: <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a> "coming soon"?
 
 Other exams ($99 each):
- * <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-az-900.aspx">AZ-900: Azure Fundamentals</a>
- * AZ-100: Azure Infrastructure and Deployment Exam (<a target="_blank" title="by Chad Crowell" href="https://linuxacademy.com/azure/training/course/name/microsoft-azure-infrastructure-and-deployment-exam-az-100">videos</a>)
-* AZ-203: Developing Solutions for Microsoft Azure  (<a target="_blank" href="https://linuxacademy.com/azure/training/course/name/microsoft-certified-azure-developer-exam-203-prep">videos</a>)
+* <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-az-900.aspx">AZ-900: Microsoft Certified Azure Fundamentals</a> (see <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/330?redirect_uri=https://app.linuxacademy.com/search?query=az-900">LinuxAcademy video course</a> released May 2019, include the <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/azurebookofbasics1.html">"Book of Basics" interactive diagrams</a>
+
+Retiring May 2019:
+* AZ-100: Azure Infrastructure and Deployment Exam (<a target="_blank" title="by Chad Crowell" href="https://linuxacademy.com/azure/training/course/name/microsoft-azure-infrastructure-and-deployment-exam-az-100">videos</a>)
+* AZ-103 Microsoft Azure Administrator
+
+* <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-az-203.aspx">AZ-203: Developing Solutions for Microsoft Azure</a> (see <a target="_blank" href="https://linuxacademy.com/azure/training/course/name/microsoft-certified-azure-developer-exam-203-prep">LinuxAcademy video course</a> released January 2019)
+
 * AZ-300: Architecting Solutions for Microsoft Azure  (<a target="_blank" href="https://linuxacademy.com/azure/training/course/name/microsoft-azure-infrastructure-and-deployment-exam-az-100">videos</a>)
 * <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-az-301.aspx">AZ-301: Microsoft Azure Architect Design</a> 120 minute $165
 
+Upcoming:
+* $165 <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-ai-100.aspx">AI-100 Microsoft Certified Azure AI Engineer Associate</a> (LinuxAcademy is working on a video course)
+
+See https://linuxacademy.com/blog/azure/azure-certifications-and-roadmap/
 
 <a name="CoursesOnDevOps"></a>
 
@@ -179,11 +191,30 @@ DevOps tools overview for Azure DevOps</a>
 
 Get prepared by installing CLI command programs for use in your Terminal sessions:
 
-1. .NET:
+1. To obtain the <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/core/tools/?tabs=netcore2x">.NET Core command-line interface (CLI) tool</a> on a Mac, <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script">download</a> file <tt>dotnet-install.sh</tt> stored in <a target="_blank" href="https://github.com/dotnet/cli/">https://github.com/dotnet/cli</a>, then run it.
 
-   dotnet --info
+   <pre><strong>chmod +x dotnet-install.sh
+   ./dotnet-install.sh</strong></pre>
+
+   PROTIP: This is a very well-written bash script.
+   
+   The response:
+
+   <pre>
+dotnet-install: Downloading link: https://dotnetcli.azureedge.net/dotnet/Sdk/2.1.701/dotnet-sdk-2.1.701-osx-x64.tar.gz
+dotnet-install: Extracting zip from https://dotnetcli.azureedge.net/dotnet/Sdk/2.1.701/dotnet-sdk-2.1.701-osx-x64.tar.gz
+dotnet-install: Adding to current process PATH: `/Users/wilsonmar/.dotnet`. Note: This change will be visible only when sourcing script.
+dotnet-install: Installation finished successfully.
+   </pre>
+
+1. Verify:
 
    dotnet --version
+   was 2.1.505
+
+1. For more verbose:
+
+   dotnet --info
 
 1. Node and NPM:
 
@@ -202,6 +233,9 @@ Get prepared by installing CLI command programs for use in your Terminal session
 
    <pre><strong>brew install azure-cli
    az --version</strong></pre>
+
+   The response:
+   <pre>azure-cli                         2.0.68</pre>
 
    Alternately, if you already have it installed and want to <strong>upgrade</strong> to the latest version:
 
