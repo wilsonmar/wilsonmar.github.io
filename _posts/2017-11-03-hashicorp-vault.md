@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hashicorp Vault and Consul"
-excerpt: "How to keep secrets on servers using"
+excerpt: "How to keep secrets on servers secret."
 tags: [vault, hashicorp, security]
 filename: vault.md
 image:
@@ -18,7 +18,7 @@ comments: true
 
 Here is a hands-on tutorial on how to install and use Hashicorp <strong>Vault</strong> to securely access secret keys and Hashicorp <strong>Consul</strong> to store key/value pairs. Installation is from scrath on a cloud environment using Docker. Use of Jenkins is also covered.
 
-This course assumes participants bring a Mac of Windows laptop and have prior experience with Linux CLI commands.
+This course assumes participants bring a Mac or Windows laptop and have prior experience with Linux CLI commands.
 
 At the end of this tutorial, you should be able to:
 
