@@ -1,7 +1,7 @@
 ---
 layout: post 
-title: "Microtrader (with automated tests and builds into Docker AWS production)"
-excerpt: "How to integrate async http/2 app (written in Java with Vert.X) using Shell scripts, Boto3 Python, Ansible, Packer, IAM, KMS, CloudFormation, EC2 Container Service (ECS) with lifecyle hooks for Auto Scaling, Lambda, CloudWatch" 
+title: "Microtrader (sample microservices CI/CD running in production Docker within AWS)"
+excerpt: "How to build, test, and integrate async http/2 app (written in Java with Vert.X) using Shell scripts, Boto3 Python, Ansible, Packer, IAM, KMS, CloudFormation, EC2 Container Service (ECS) with lifecyle hooks for Auto Scaling, Lambda, CloudWatch" 
 tags: [aws, docker, ansible, cfn]
 date: "2019-07-13"
 file: "microtrader"
@@ -25,19 +25,21 @@ comments: true
 </p>
 {% include _toc.html %}
 
-This article describes the automation used to install and run a "non-trivial" system under test created by <a target="_blank" href="https://www.linkedin.com/in/jmenga/">Justin Menga</a> (<a target="_blank" href="https://github.com/mixja">mixja on GitHub</a>) in his video course <a target="_blank" href="https://app.pluralsight.com/library/courses/docker-production-using-amazon-web-services/table-of-contents">"Docker in Production Using Amazon Web Services</a>. His course was released by Pluralsight. And I think it would be difficult to follow along here unless you get a subscription at Pluralsight.com (less than $300 USD per year). His videos are rated as 10 hours, but it took me more like 70+ hours of repeated viewing, study, and scripting because Menga's <em>tour de force</em> covers most of the intricacies one needs to know and be able to actually do in a real job as an AWS Cloud Engineer.
+This article describes the automation used to install and run a "non-trivial" sample system for use in analyzing <a href="#PartsList">cloud-based build and auto-scaling tools</a> plus <a target="_blank" href="https://www.azul.com/">Azul</a> java compiler diagnostics and container-level tracing such as <a target="_blank" href="https://wilsonmar.github.io/xray">Amazon X-Ray</a>, etc.
+
+The sample app was created by <a target="_blank" href="https://www.linkedin.com/in/jmenga/">Justin Menga</a> (<a target="_blank" href="https://github.com/mixja">mixja</a> on GitHub) for use in his video course "<a target="_blank" href="https://app.pluralsight.com/library/courses/docker-production-using-amazon-web-services/table-of-contents">Docker in Production Using Amazon Web Services</a>" released by Pluralsight on 1 Dec 2017. This article assumes that you have a paid subscription to Pluralsight.com (less than $300 USD per year). His course is rated as 10 hours, but it took me more like 40+ hours of repeated viewing, study, and scripting because Menga's <em>tour de force</em> covers most of the intricacies one needs to know to be effective in a real job as an AWS Cloud Engineer.
 
 
-## The Microtrader sample app under test
+## Microtrader sample app microservices
 
 The Microtrader app consists of four app processes shown in purple boxes (after install):
 
-   <a name="microtrader4"></a>
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/59731992-b4f5a500-9205-11e9-82ba-c34b3df42841.jpg">
-   <img alt="microtrader-925x522-50356.jpg" width="925" src="https://user-images.githubusercontent.com/300046/59731992-b4f5a500-9205-11e9-82ba-c34b3df42841.jpg"></a>
+<a name="microtrader4"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/59731992-b4f5a500-9205-11e9-82ba-c34b3df42841.jpg">
+<img alt="microtrader-925x522-50356.jpg" width="925" src="https://user-images.githubusercontent.com/300046/59731992-b4f5a500-9205-11e9-82ba-c34b3df42841.jpg"></a>
 
    * Quote Generator at <a href="http://localhost:32770/quote/">http://localhost:32770/quote/</a> 
-      - periodically generates stock market quotes for three fictitious companies: "Black Coat", "D'Oh", "Divinator", "MacroHard".
+      - periodically generates stock market quotes for three fictitious companies (named "Black Coat", "D'Oh", "Divinator", "MacroHard")
       - single instance
       <br /><br />
    * Portfolio Service 
@@ -46,8 +48,9 @@ The Microtrader app consists of four app processes shown in purple boxes (after 
       <br /><br />
 
    * Trader Dashboard at <a href="http://localhost:32771">http://localhost:32771</a> 
-      - provides a web dashboard displaying stock market quote activity, recent stock trades and the current state of the portfolio. The dashboard also provides an operational view of the status and service discovery inforamtion for each service.
+      - provides a web dashboard displaying stock market quote activity, recent stock trades and the current state of the portfolio. The dashboard also provides an operational view of the status and service discovery information for each service.
       - <strong>multiple instances</strong> for High Availability
+      - makes use of http/2 <strong>web sockets</strong> for efficient async communication with clients browsers
       <br /><br />
 
    * Audit Service at <a href="http://localhost:32768/audit/">http://localhost:32768/audit/</a> 
@@ -55,10 +58,42 @@ The Microtrader app consists of four app processes shown in purple boxes (after 
       - single instance
       <br /><br />
 
+Each "microtrader" app process is built to run as a "Fat JAR" as a single deployable and runnable artifact within Docker containers. 
+
+
+<a name="Vert.x"></a>
+
+### Vert.x event bus
+
+Dotted lines between microservices represent modern <strong>asynchronous</strong> communications through an  <strong>event bus</strong> built following the <strong>reactive</strong> design pattern. Callbacks within each app component use the <a target="_blank" href="https://vertx.io/">vertx.io</a> library open-sourced at <a target="_blank" href="https://en.wikipedia.org/wiki/Vert.x">https://en.wikipedia.org/wiki/Vert.x</a>. It was programmed in Java by Tim Fox in 2011 while he was employed by VMware. In January 2013, VMware moved the project and associated IP to the Eclipse Foundation, a neutral legal entity.
+
+Repeated functionality in Vert.x is encapsulated in a "Verticle". Thus its name.
+Vert.x assumes <strong>single-threaded</strong> scalable non-blocking app design, which Justin has modified for Microtraders.
+Real-time messages are received using the sockJs library described in "<a target="_blank" href="https://github.com/cescoffier/vertx-microservices-workshop">Vert.x Microservices Workshop</a>" by Clement Escoffier, who authored <a target="_blank" href="https://developers.redhat.com/promotions/building-reactive-microservices-in-java/">this 83-page free pdf book "Building Reactive Microservices in Java"</a> May 2017.
+
+Eclipse Vert.x is a polyglot event-driven application framework that runs on Java. "Polyglot" refers to Vert.x exposing its idiomatic API in Java, JavaScript, Groovy, Ruby Python, Scala, Kotlin, Clojure, and Ceylon. 
+
+See <a target="_blank" href="https://www.manning.com/books/vertx-in-action">Manning Book: "Vert.x in Action"</a> by Julien Ponge from Manning.
+
+### Configuration
 
 There are dozens of little settings one has to get right to get it all working in production. So here are notes on how to do it by <strong>automating</strong> commands suggested by <a href="#Resources">several resources</a>.
 
-Dockerizing apps and running them as containers are standard DevOps practice. But there are many options to run  Docker workloads. Which cloud? And what technologies within the chosen cloud? This covers uee of AWS cloud and its IAM and ECR image repo service, but using ECS rather than Fargate or Amazon's Elastic Kubernetes (EKS).
+Dockerizing apps and running them as containers are standard DevOps practice. But there are many options to run  Docker workloads. This article currently covers uee of AWS cloud and its IAM and ECR image repo service, but using ECS rather Amazon's multi-zone Elastic Kubernetes (EKS) or Fargate (Kubernetes as a Service).
+
+
+## Custom Shell Scripts
+
+   PROTIP: To simplify, I've created several shell scripts (in GitHub) that gets it all done instead of manually typing after stopping and rewinding videos to specific spots.
+   
+A. <a href="#microtrader-setup">microtrader-setup.sh</a> installs on MacOs the <a href="#microtrader4">4 microtrader processes<a> after building them from source and testing them using mocha.
+
+B. <a href="#docker-setup">ecr-setup.sh</a> creates within AWS Docker images in a private Elastic Repository (ECR) and configures Dockerfiles for use in ECS (Elastic Container Service).
+
+PROTIP: Since there is a flood of responses, there is a provision in the script to output to a logfile.
+
+
+<a name="PartsList"></a>
 
 ## Parts list (ingredients for integration)
 
@@ -85,8 +120,8 @@ Dockerizing apps and running them as containers are standard DevOps practice. Bu
    * Git client
    * GitHub account
    * Gradle (multi-project Java build tool replacing ant and maven)
-   * IAM
-   * Java (the language )
+   * IAM on AWS
+   * Java (SDK)
    * KMS (Key Management Service) in AWS
    * Lambda from AWS
    * MacOS keyboarding - Sierra version
@@ -95,10 +130,10 @@ Dockerizing apps and running them as containers are standard DevOps practice. Bu
    * Python programming language 2.7.14
    * <a target="_blank" href="https://packer.io/docs/installation.htm">Packer from Hashicorp</a> 
    * <a target="_blank" href="https://wilsonmar.github.io/text-editors">Text editor</a> Sublime Text 3 with (darker) Material Theme.
-   * iTerm2 for Mac
+   * iTerm2 Terminal app for Mac
    * brew install tree - 1.7.0
-   * STS (AWS )
-   * <a target="_blank" href="https://vertx.io/">Vertx</a> for microservices (https://escoffier.me/vertx-hol) event bus
+   * STS (on AWS)
+   * <a target="_blank" href="https://vertx.io/">Vertx</a> for microservices (<a target="_blank" href="https://escoffier.me/vertx-hol">https://escoffier.me/vertx-hol</a>) event bus
    <br /><br />
 
 <hr />
@@ -122,31 +157,6 @@ Menga's course from 2017 identified <a targe="_blank" title="1:17 into" href="ht
 <hr />
 
 
-### Vert.x event bus Java library
-
-   To enable  modern <strong>asynchronous</strong> communications through an <strong>event bus</strong> among processes, callbacks within each app component makes use of the <a target="_blank" href="https://vertx.io/">https://vertx.io/</a> library open-sourced at <a target="_blank" href="https://en.wikipedia.org/wiki/Vert.x">https://en.wikipedia.org/wiki/Vert.x</a>. It was programmed in Java by Tim Fox in 2011 while he was employed by VMware. After much discussion with other parties, in January 2013, VMware moved the project and associated IP to the Eclipse Foundation, a neutral legal entity.   
-	Eclipse Vert.x is a polyglot event-driven application framework that runs on Java "Polyglot" refers to Vert.x exposing its idiomatic API in Java, JavaScript, Groovy, Ruby Python, Scala, Kotlin, Clojure, and Ceylon. 
-   Repeated functionality in Vert.x is encapsulated in a "Verticle". Thus its name.
-   Vert.x assumes <strong>single-threaded</strong> scalable non-blocking app design.
-   Real-time messages are received using the sockJs library
-   [Vert.x Microservices Workshop](https://github.com/cescoffier/vertx-microservices-workshop),(which Justin has modified):
-
-   Each "microtrader" app process is built to run as a "Fat JAR" as a single deployable and runnable artifact within Docker containers. 
-
-
-## Custom Shell Scripts
-
-   PROTIP: To simplify, I've created several shell scripts (in GitHub) that gets it all done instead of manually typing after stopping and rewinding videos to specific spots.
-   
-A. <a href="#microtrader-setup">microtrader-setup.sh</a> installs the <a href="#microtrader4">4 microtrader processes<a> after building them from source and testing them using mocha.
-
-B. <a href="#docker-setup">ecr-setup.sh</a> creates Docker images in a private Elastic Repository (ECR) and configures Dockerfiles for use in ECS (Elastic Container Service).
-
-PROTIP: Since there is a flood of responses, there is a provision in the script to output to a logfile.
-
-<!-- 02 - course-introduction-slides
--->
-
 <hr />
 
 <a name="microtrader-setup"></a>
@@ -155,7 +165,7 @@ PROTIP: Since there is a flood of responses, there is a provision in the script 
 
 1. PROTIP: I've created a shell script (in GitHub) to install the <a href="#microtrader4">4 microtrader processes<a>. View it within an internet browser at:
 
-   <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/blob/master/docker-production-aws/microtrader-setup.sh">https://github.com/wilsonmar/DevSecOps/blob/master/docker-production-aws/microtrader-setup.sh</a>
+   <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/blob/master/microtrader/microtrader-setup.sh">https://github.com/wilsonmar/DevSecOps/blob/master/microtrader/microtrader-setup.sh</a>
 
    * The default is "yes" to install pre-requsites needed. If you're running it multiple times, save time by setting it to "no".
 
@@ -163,7 +173,7 @@ PROTIP: Since there is a flood of responses, there is a provision in the script 
 
 1. To use the script on your own MacOS laptop Terminal, triple-click this command to highlight the whole line:
 
-   <pre>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/docker-production-aws/microtrader-setup.sh)"</pre>
+   <pre>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/microtrader/microtrader-setup.sh)"</pre>
 
    ... then copy it for pasting in your Terminal CLI to run it automatically.
 
@@ -171,7 +181,7 @@ PROTIP: Since there is a flood of responses, there is a provision in the script 
    
    Documentation is in the script. But here are highlights:
 
-   * Create a folder "docker-production-aws" under your "projects" or folder. For idempotency, and to ensure that changes in GitHub are reflected: if the folder is already there, delete it.
+   * Create a folder "microtrader" under your "projects" or folder. For idempotency, and to ensure that changes in GitHub are reflected: if the folder is already there, delete it.
    That's also why we don't clone the folders into our own account.
 
    * Checkout the "final" branch because that is what the files should look like after course exercises are completed successfully. In the above repositories, the "master" branch is the starting point for exercises.
@@ -294,11 +304,11 @@ So I've named chapter names and put them all in one folder:
 
    PROTIP: TODO: I'm in the process of creating a script that automates the <strong>manual steps</strong> shown in <a target="_blank" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m5&clip=0&mode=live">Justin's videos</a>:
 
-   <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/blob/master/docker-production-aws/ecs-setup.sh">https://github.com/wilsonmar/DevSecOps/blob/master/docker-production-aws/ecs-setup.sh</a>
+   <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/blob/master/microtrader/ecs-setup.sh">https://github.com/wilsonmar/DevSecOps/blob/master/microtrader/ecs-setup.sh</a>
 
    Triple-click the following command to highlight the whole line:
 
-   <pre>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/docker-production-aws/ecr-setup.sh)"</pre>
+   <pre>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/microtrader/ecr-setup.sh)"</pre>
 
    ... then copy it for pasting in your Terminal CLI to run it automatically.
 
@@ -327,7 +337,7 @@ So I've named chapter names and put them all in one folder:
    1. Make use of VPC, Subnet, and Security Group created earlier.
    1. Verify CloudFormation used under the hood.
    1. Get public and private IP addresses in Cluster dashboard.
-   1. Use the public IP to SSH into the instance `ssh -i ~/.ssh/docker-production-aws.pem ec2-user@34.214.122.6`
+   1. Use the public IP to SSH into the instance `ssh -i ~/.ssh/microtrader.pem ec2-user@34.214.122.6`
    1. Verify with `docker info | more` and `docker ps`
    1. `sudo yum install jq -y`
    1. `docker inspect -f '{{json .HostConfig.Binds}}' ecs-agent | jq`
@@ -353,7 +363,7 @@ To create a custom AMI based on ECS-optimized AMIs:
 
 1. Triple-click the following command to highlight the whole line:
 
-   <pre>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/docker-production-aws/microtrader-setup.sh)"</pre>
+   <pre>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/microtrader/microtrader-setup.sh)"</pre>
 
    ... then copy it for pasting in your Terminal CLI to run it automatically.
 
