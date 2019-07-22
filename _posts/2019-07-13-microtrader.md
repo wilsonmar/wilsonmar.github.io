@@ -1,10 +1,10 @@
 ---
-layout: post
-title: "Docker production AWS (with automated tests)"
-excerpt: "How to integrate Dockerized multi-process app (written in Java with Vert.X) using Shell scripts, Boto3 Python, Ansible, Packer, IAM, KMS, CloudFormation, EC2 Container Service (ECS) with lifecyle hooks for Auto Scaling, Lambda, CloudWatch"
+layout: post 
+title: "Microtrader (with automated tests and builds into Docker AWS production)"
+excerpt: "How to integrate async http/2 app (written in Java with Vert.X) using Shell scripts, Boto3 Python, Ansible, Packer, IAM, KMS, CloudFormation, EC2 Container Service (ECS) with lifecyle hooks for Auto Scaling, Lambda, CloudWatch" 
 tags: [aws, docker, ansible, cfn]
-date: "2017-12-23"
-file: "docker-production-aws"
+date: "2019-07-13"
+file: "microtrader"
 image:
 # flood-the-internet-wall-1900x500-105703.jpg
   feature: https://user-images.githubusercontent.com/300046/59104048-b4980880-88ed-11e9-9a93-c19baaef18ab.jpg
@@ -13,17 +13,48 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<p align="right"><a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2Fdocker-production-aws%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2Fdocker-production-aws%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2Fdocker-production-aws%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2Fdocker-production-aws%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2Fdocker-production-aws%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2Fdocker-production-aws%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2Fdocker-production-aws%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2Fdocker-production-aws%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2Fdocker-production-aws%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
+<p align="right"><a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
 </p>
 {% include _toc.html %}
+
+This article describes the automation used to install and run a "non-trivial" system under test created by <a target="_blank" href="https://www.linkedin.com/in/jmenga/">Justin Menga</a> (<a target="_blank" href="https://github.com/mixja">mixja on GitHub</a>) in his video course <a target="_blank" href="https://app.pluralsight.com/library/courses/docker-production-using-amazon-web-services/table-of-contents">"Docker in Production Using Amazon Web Services</a>. His course was released by Pluralsight. And I think it would be difficult to follow along here unless you get a subscription at Pluralsight.com (less than $300 USD per year). His videos are rated as 10 hours, but it took me more like 70+ hours of repeated viewing, study, and scripting because Menga's <em>tour de force</em> covers most of the intricacies one needs to know and be able to actually do in a real job as an AWS Cloud Engineer.
+
+
+## The Microtrader sample app under test
+
+The Microtrader app consists of four app processes shown in purple boxes (after install):
+
+   <a name="microtrader4"></a>
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/59731992-b4f5a500-9205-11e9-82ba-c34b3df42841.jpg">
+   <img alt="microtrader-925x522-50356.jpg" width="925" src="https://user-images.githubusercontent.com/300046/59731992-b4f5a500-9205-11e9-82ba-c34b3df42841.jpg"></a>
+
+   * Quote Generator at <a href="http://localhost:32770/quote/">http://localhost:32770/quote/</a> 
+      - periodically generates stock market quotes for three fictitious companies: "Black Coat", "D'Oh", "Divinator", "MacroHard".
+      - single instance
+      <br /><br />
+   * Portfolio Service 
+      - trades stocks starting from an initial portfolio of $10000 cash on hand. The trading logic is completely random and non-sensical
+      - single instance
+      <br /><br />
+
+   * Trader Dashboard at <a href="http://localhost:32771">http://localhost:32771</a> 
+      - provides a web dashboard displaying stock market quote activity, recent stock trades and the current state of the portfolio. The dashboard also provides an operational view of the status and service discovery inforamtion for each service.
+      - <strong>multiple instances</strong> for High Availability
+      <br /><br />
+
+   * Audit Service at <a href="http://localhost:32768/audit/">http://localhost:32768/audit/</a> 
+      - audits all stock trading activity, persisting each stock trade to an internal MySQL database
+      - single instance
+      <br /><br />
+
 
 There are dozens of little settings one has to get right to get it all working in production. So here are notes on how to do it by <strong>automating</strong> commands suggested by <a href="#Resources">several resources</a>.
 
@@ -90,34 +121,6 @@ Menga's course from 2017 identified <a targe="_blank" title="1:17 into" href="ht
 
 <hr />
 
-### Microtrader sample app under test
-
-The "non-trivial" system under test consists of four app processes:
-<!-- 03 - creating-the-sample-application-slides  -->
-
-   <a name="microtrader4"></a>
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/59731992-b4f5a500-9205-11e9-82ba-c34b3df42841.jpg">
-   <img alt="microtrader-925x522-50356.jpg" width="925" src="https://user-images.githubusercontent.com/300046/59731992-b4f5a500-9205-11e9-82ba-c34b3df42841.jpg"></a>
-
-   * Quote Generator at <a href="http://localhost:32770/quote/">http://localhost:32770/quote/</a> 
-      - periodically generates stock market quotes for three fictitious companies: "Black Coat", "D'Oh", "Divinator", "MacroHard".
-      - single instance
-      <br /><br />
-   * Portfolio Service 
-      - trades stocks starting from an initial portfolio of $10000 cash on hand. The trading logic is completely random and non-sensical
-      - single instance
-      <br /><br />
-
-   * Trader Dashboard at <a href="http://localhost:32771">http://localhost:32771</a> 
-      - provides a web dashboard displaying stock market quote activity, recent stock trades and the current state of the portfolio. The dashboard also provides an operational view of the status and service discovery inforamtion for each service.
-      - <strong>multiple instances</strong> for High Availability
-      <br /><br />
-
-   * Audit Service at <a href="http://localhost:32768/audit/">http://localhost:32768/audit/</a> 
-      - audits all stock trading activity, persisting each stock trade to an internal MySQL database
-      - single instance
-      <br /><br />
 
 ### Vert.x event bus Java library
 
