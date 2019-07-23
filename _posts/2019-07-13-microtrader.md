@@ -25,12 +25,18 @@ comments: true
 </p>
 {% include _toc.html %}
 
-This article describes the automation used to install and run a "non-trivial" sample system for use in analyzing <a href="#PartsList">cloud-based build and auto-scaling tools</a> plus <a target="_blank" href="https://www.azul.com/">Azul</a> java compiler diagnostics and container-level tracing such as <a target="_blank" href="https://wilsonmar.github.io/xray">Amazon X-Ray</a>, etc.
+This article describes the automation used to install and run a "non-trivial" sample system for use in analyzing <a href="#PartsList">cloud-based build and auto-scaling tools</a> plus <a target="_blank" href="https://www.azul.com/">Azul</a> java compiler diagnostics and container-level tracing such as <a target="_blank" href="https://wilsonmar.github.io/xray">Amazon X-Ray</a>, etc. that measure the extent of elasticity and resilency promised by the design pattern defined by the <a target="_blank" href="http://reactivemanifesto.org/">reactive manifesto</a> for more tolerance to failure. 
 
 The sample app was created by <a target="_blank" href="https://www.linkedin.com/in/jmenga/">Justin Menga</a> (<a target="_blank" href="https://github.com/mixja">mixja</a> on GitHub) for use in his video course "<a target="_blank" href="https://app.pluralsight.com/library/courses/docker-production-using-amazon-web-services/table-of-contents">Docker in Production Using Amazon Web Services</a>" released by Pluralsight on 1 Dec 2017. This article assumes that you have a paid subscription to Pluralsight.com (less than $300 USD per year). His course is rated as 10 hours, but it took me more like 40+ hours of repeated viewing, study, and scripting because Menga's <em>tour de force</em> covers most of the intricacies one needs to know to be effective in a real job as an AWS Cloud Engineer.
 
+The Microtrader app simulates a stock-trading application. Its UI is not very complex:
 
-## Microtrader sample app microservices
+![microtrader-scr-1135x830](https://user-images.githubusercontent.com/300046/61713991-a7ed3980-ad0e-11e9-8b3d-eafa7f8d9943.png)
+
+
+<a name="microservices"></a>
+
+## Microtrader microservices
 
 The Microtrader app consists of four app processes shown in purple boxes (after install):
 
@@ -65,7 +71,7 @@ Each "microtrader" app process is built to run as a "Fat JAR" as a single deploy
 
 ### Vert.x event bus
 
-Dotted lines between microservices represent modern <strong>asynchronous</strong> communications through an  <strong>event bus</strong> built following the <strong>reactive</strong> design pattern. Callbacks within each app component use the <a target="_blank" href="https://vertx.io/">vertx.io</a> library open-sourced at <a target="_blank" href="https://en.wikipedia.org/wiki/Vert.x">https://en.wikipedia.org/wiki/Vert.x</a>. It was programmed in Java by Tim Fox in 2011 while he was employed by VMware. In January 2013, VMware moved the project and associated IP to the Eclipse Foundation, a neutral legal entity.
+Dotted lines between microservices in the <a href="#microservices">diagram above</a> represent modern <strong>asynchronous</strong> message-driven communications through an  <strong>event bus</strong> provided by Vert.x. Callbacks within each app component use the Eclipse <a target="_blank" href="https://vertx.io/">vertx.io</a> that is <a target="_blank" href="https://github.com/vert-x3/vertx-examples">open-sourced at github.com/vert-x3</a> [<a target="_blank" href="https://en.wikipedia.org/wiki/Vert.x">wikipedia</a>]. It was programmed in Java by Tim Fox in 2011 while he was employed by VMware. In January 2013, VMware moved the project and associated IP to the Eclipse Foundation, a neutral legal entity.
 
 Repeated functionality in Vert.x is encapsulated in a "Verticle". Thus its name.
 Vert.x assumes <strong>single-threaded</strong> scalable non-blocking app design, which Justin has modified for Microtraders.
