@@ -136,6 +136,7 @@ Although the word "kubernetes" is a Greek word meaning "captain", it has become 
 ### Certification in Kubernetes
 
 On November 8, 2016 CNCF announced their <a target="_blank" href="https://www.cncf.io/certification/expert/">3-hour task-based Certified Kubernetes Administrator (CKA)</a> and <a target="_blank" href="https://www.cncf.io/certification/ckad/">2-hour Kubernetes Application Developer (CKAD)</a> exams. Each is $300, which includes one free retake. 
+
 To compare the domain focus for each exam:
 
 <table border="1" cellspacing="0" cellpadding="4">
@@ -156,13 +157,15 @@ To compare the domain focus for each exam:
     18% Configuration<br />
     20% Pod Design<br />
     18% Observability<br />
-    13% Services & Networking<br />
+    13% Services &amp; Networking<br />
     10% Multi-Container Pods<br />
     08% State Persistence
 </td></tr>
 </table>
 
-The exam has no multiple choice questions.
+The exam has no multiple choice questions,
+
+   PROTIP: The Linux Foundation exam focuses only on "pure" Kubernetes commands and excludes add-ons such as OpenStack.
 
 CNCF is part of the Linux Foundation, so... 
 
@@ -186,13 +189,13 @@ CNCF is part of the Linux Foundation, so...
 9. Setup your home computer to take the exam <a target="_blank" href="http://www.examslocal.com/linuxfoundation/"> at home</a> using the Chrome extension from "Innovative Exams", which uses your laptop camera and microphone watching you use a virtual Ubuntu machine. 
 10. Take the 180 minute (2 hour) exam.
 
-   PROTIP: The Linux Foundation exam focuses on "pure" Kubernetes commands only and excludes add-ons such as OpenStack.
-
 Resources:
 
 * <a target="_blank" href="https://medium.com/@krystiannowaczyk/how-i-passed-the-cka-certified-kubernetes-administrator-exam-f94b11566528">"How I passed the CKA (Certified Kubernetes Administrator) Exam"</a> by Krystian Nowaczyk (who maintains <a target="_blank" href="https://github.com/ramitsurana/awesome-kubernetes">github.com/ramitsurana/awesome-kubernetes</a>) provides a list of resources he used.
 
 * <a target="_blank" href="https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days-e4603ac40746">"How to ace the CKA exam in 7 days</a> is click-bait?
+
+* <a target="_blank" href="https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days-e4603ac40746">how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days</a>
 
 
 ## Multi-cloud
@@ -1754,7 +1757,29 @@ Kubstack
 
 <a target="_blank" href="https://www.gcppodcast.com/post/">GCP PODCAST</a>: <a target="_blank" href="https://www.gcppodcast.com/post/episode-3-kubernetes-and-google-container-engine/">Kubernetes and Google Container Engine</a> hosts Francesc Campoy Flores and Mark Mandel interview Brian Dorsey, Developer Advocate, Google Cloud Platform. Comments at <a target="_blank" href="https://www.reddit.com/r/gcppodcast/comments/3sf3yr/episode_3_kubernetes_and_google_container_engine/">r/gcppodcast</a>
 
-https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days-e4603ac40746
+Microsoft's "<a target="_blank" href="https://azure.microsoft.com/mediahandler/files/resourcefiles/kubernetes-learning-path/Kubernetes%20Learning%20Path%20version%201.0.pdf?utm_campaign=ossonazure">PDF: 50 days from zero to hero with Kubernetes</a>" includes:
+
+1. <a target="_blank" href="https://azure.microsoft.com/mediahandler/files/resourcefiles/phippy-goes-to-the-zoo/Phippy%20Goes%20To%20The%20Zoo_MSFTonline.pdf">Phippy Goes to the Zoo</a> is a children's book character Phippy (from Docker) introduct pods, replica sets, deployments, ingress.
+
+2. <a target="_blank" href="https://www.youtube.com/watch?v=EUitQ8DaZW8&list=PLLasX02E8BPCrIhFrc_ZiINhbRkYMKdPT&index=1&t=0s">The 6-part YouTube videos</a> by Brendan Burns drawing behind glass.
+
+3. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/aks/concepts-clusters-workloads">Kubernetes core concepts for Azure Kubernetes Service (AKS)</a> explore basic concepts like YAML definitions, networking, secrets, and application deployments from source code.
+
+4. <a target="_blank" href="https://www.katacoda.com/courses/kubernetes/launch-single-node-cluster">Katacoda</a> provides a Bash terminal as if you are running Minikube and kubectl locally just by clicking the code on the left pane rather than typing. 
+
+5. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/microservices/aks">Microservices architecture on Azure Kubernetes Service (AKS)</a> describes a reference implementation at https://github.com/mspnp/microservices-reference-implementation
+
+6. <a target="_blank" href="https://aksworkshop.io/">https://aksworkshop.io/</a> is a hands-on workshop to create a Kubernetes cluster, deploy a microservices-based application, and set up a CI/CD pipeline.
+
+   * Kubernetes deployments, services and ingress
+   * Deploying MongoDB using Helm
+   * Azure Monitor for Containers, Horizontal Pod Autoscaler and the Cluster Autoscaler
+   * Building CI/CD pipelines using Azure DevOps and Azure Container Registry
+   * Scaling using Virtual Nodes, setting up SSL/TLS for your deployments, using Azure Key Vault for secrets
+
+7. <a target="_blank" href="https://azure.microsoft.com/en-us/topic/what-is-kubernetes/">https://azure.microsoft.com/en-us/topic/what-is-kubernetes</a>
+
+https://aka.ms/k8slearning
 
 
 ## Free Playpen
