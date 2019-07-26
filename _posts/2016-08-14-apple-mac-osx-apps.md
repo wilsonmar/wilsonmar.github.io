@@ -3,6 +3,8 @@ layout: post
 title: "MacOS Apps"
 excerpt: "OSX Applications for a long, prosperous, happy life"
 tags: [apple, mac, setup]
+date: "2016-08-14"
+file: "apple-mac-osx-apps"
 image:
 # feature: pic rainbow black apple logo 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622136/1c1cec72-0585-11e6-8a62-060c26928878.jpg
@@ -11,10 +13,30 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
+<p align="right">
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
+</p>
 {% include _toc.html %}
 
 PROTIP: After installation, in the Finder, right-click on the installer to free up disk space.
+
+## Installer managers
+
+<a target="_blank" href="http://disney.github.io/">
+Disney has open-sourced</a> a repo,
+https://github.com/munki/munki,
+manages software installation for OS X.
+Munki can install software packaged in the Apple package format, and also supports Adobe CS3/CS4/CS5/CS6 Enterprise Deployment "packages", and drag-and-drop disk images as installer sources - 
+webserver-based repository of packages and package metadata.
+
 
 <a id="VNC"></a>
 
@@ -47,10 +69,6 @@ PROTIP: After installation, in the Finder, right-click on the installer to free 
 
 
 ### VNC from Finder
-
-0. 
-
-
 
 
 <a id="BrowserPlugins"></a>
@@ -139,6 +157,13 @@ Apps offered by Apple itself:
 * iMove
 * Keynote
 * iPhoto
+
+
+### Amazon Kindle
+
+PROTIP: You can't copy and paste text from Kindle's app. But if you read your Kindle purchase on website <a target="_blank" href="https://read.amazon.com/">https://read.amazon.com</a> you can highlight the text and select Highlight pop-up, Kindle saves the text under your Amazon account at <a target="_blank" href="https://read.amazon.com/notebook">https://read.amazon.com/notebook</a>.
+
+
 
 <a id="FileTransferz"></a>
 
@@ -391,15 +416,6 @@ Chmox goes back to 2005.
 Archmox and Chamox go back to 2006.
 QuickCHM goes back to 2008.
 
-
-## Other alternatives #
-
-<a target="_blank" href="http://disney.github.io/">
-Disney has open-sourced</a> a repo,
-https://github.com/munki/munki,
-manages software installation for OS X.
-Munki can install software packaged in the Apple package format, and also supports Adobe CS3/CS4/CS5/CS6 Enterprise Deployment "packages", and drag-and-drop disk images as installer sources - 
-webserver-based repository of packages and package metadata.
 
 ## More on OSX
 
