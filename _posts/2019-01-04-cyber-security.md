@@ -1,15 +1,15 @@
 ---
 layout: post
 title: "Cyber Security"
-excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them"
+excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
 tags: [security]
 date: "2019-01-04"
 file: "cyber-security"
 image:
-# cyber-security-unsplash-denys-1900x500-83483.jpg 
-  feature: https://user-images.githubusercontent.com/300046/57971498-3f6b9000-794c-11e9-9b37-1e9ed4af195b.jpg
-  credit: Denys Nevozhai
-  creditlink: https://unsplash.com/photos/6OAWj_ZvScc
+# cyber-security-hero-1900x500-22924.jpb/.png 
+  feature: https://user-images.githubusercontent.com/300046/61989793-9eefb700-aff1-11e9-8be9-8fcd26b30774.jpg
+  credit: Addie Wagenknecht
+  creditlink: http://www.placesiveneverbeen.com/details/asymmetric-love
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
