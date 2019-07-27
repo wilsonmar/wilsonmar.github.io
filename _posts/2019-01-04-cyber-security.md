@@ -7,7 +7,7 @@ date: "2019-01-04"
 file: "cyber-security"
 image:
 # cyber-security-hero-1900x500-22924.jpb/.png 
-  feature: https://user-images.githubusercontent.com/300046/61989793-9eefb700-aff1-11e9-8be9-8fcd26b30774.jpg
+  feature: https://user-images.githubusercontent.com/300046/61989997-46bab400-aff5-11e9-9045-8075ede3d5a3.jpg
   credit: Addie Wagenknecht
   creditlink: http://www.placesiveneverbeen.com/details/asymmetric-love
 comments: true
