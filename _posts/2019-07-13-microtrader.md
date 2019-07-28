@@ -29,7 +29,7 @@ This article describes the automation used to install and run a "non-trivial" sa
 
 The sample app was created by <a target="_blank" href="https://www.linkedin.com/in/jmenga/">Justin Menga</a> (<a target="_blank" href="https://github.com/mixja">mixja</a> on GitHub) for use in his video course "<a target="_blank" href="https://app.pluralsight.com/library/courses/docker-production-using-amazon-web-services/table-of-contents">Docker in Production Using Amazon Web Services</a>" released by Pluralsight on 1 Dec 2017. This article assumes that you have a paid subscription to Pluralsight.com (less than $300 USD per year). His course is rated as 10 hours, but it took me more like 40+ hours of repeated viewing, study, and scripting because Menga's <em>tour de force</em> covers most of the intricacies one needs to know to be effective in a real job as an AWS Cloud Engineer.
 
-The Microtrader app simulates a stock-trading application like at <a target="_blank" href="https://www.tdameritrade.com/tools-and-platforms/thinkorswim/features.page">TD Ameritrade</a>, <a target="_blank" href="https://robinhood.com/">(commission-free) Robin Hood</a>, Schwab, <a target="_blank" href="https://us.etrade.com/trade/">ETrade</a> <a target="_blank" href="https://www.investopedia.com/best-stock-trading-apps-4587996">etc</a>:
+The Microtrader app simulates a stock-trading application (like at <a target="_blank" href="https://www.tdameritrade.com/tools-and-platforms/thinkorswim/features.page">TD Ameritrade</a>, <a target="_blank" href="https://robinhood.com/">(commission-free) Robin Hood</a>, Schwab, <a target="_blank" href="https://us.etrade.com/trade/">ETrade</a> <a target="_blank" href="https://www.investopedia.com/best-stock-trading-apps-4587996">etc</a>):
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/61713991-a7ed3980-ad0e-11e9-8b3d-eafa7f8d9943.png"><img alt="microtrader-scr-1135x830.png" width="1135" src="https://user-images.githubusercontent.com/300046/61713991-a7ed3980-ad0e-11e9-8b3d-eafa7f8d9943.png"></a>
 
@@ -46,8 +46,8 @@ The Microtrader app consists of four app processes shown in purple boxes (after 
 <img alt="microtrader-925x522-50356.jpg" width="925" src="https://user-images.githubusercontent.com/300046/59731992-b4f5a500-9205-11e9-82ba-c34b3df42841.jpg"></a>
 
    * Quote Generator at <a href="http://localhost:32770/quote/">http://localhost:32770/quote/</a> 
-      - periodically generates stock market quotes for three fictitious companies (named "Black Coat", "D'Oh", "Divinator", "MacroHard")
-      - single instance
+      - periodically generates stock market quotes for fictitious companies (named "Black Coat", "Divinator", "MacroHard")
+      - single instance that continues running until the process is stopped
       <br /><br />
 
    * Portfolio Service 
@@ -84,6 +84,11 @@ Eclipse Vert.x is a polyglot event-driven application framework that runs on Jav
 
 See <a target="_blank" href="https://www.manning.com/books/vertx-in-action">Manning Book: "Vert.x in Action"</a> by Julien Ponge from Manning.
 
+WARNING: <a target="_blank" href="https://www.infoq.com/articles/java-jvm-trends-2019/">InfoQ's JVM Trends for 2019</a>, the editorial team predicts "vert.x will not progress past the EA (Early Adopter) phase, due to it’s relatively niche appeal".
+
+An alternative is Micronaut, a JVM framework for building fast, lightweight, scalable microservices applications in Java, Groovy or Kotlin. It is inspired by Spring and Grails.
+
+
 ## Integration Configuration
 
 There are dozens of little settings one has to get right to get it all working in production. So here are notes on how to do it by <strong>automating</strong> commands suggested by <a href="#Resources">several resources</a>.
@@ -116,6 +121,7 @@ PROTIP: Since there is a flood of responses, there is a provision in the script 
    * Bower (npm install -g bower)
    * Brew package manager for Mac 2.14.2
    * <tt>brew install jq</tt> 1.5.2 to enable shells to handle JSON
+   * Chai Mocha test (within microtrader-specs repo)
    * CodeBuild
    * CodePipeline
    * CloudFormation (CFN) templates (vs Terraform)
