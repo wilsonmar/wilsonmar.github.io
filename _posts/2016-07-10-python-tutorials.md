@@ -107,11 +107,10 @@ http://sthurlow.com/python/</a>
 
 ### EDX.org
 
-https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-9
-MIT's Introduction to Computer Science using Python
+<a target="_blank" href="https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-9">
+MIT's Introduction to Computer Science using Python</a>
 
-
-https://learnpythonthehardway.org/book/
+<a target="_blank" href="https://learnpythonthehardway.org/book/">https://learnpythonthehardway.org/book</a>
 
 
 
