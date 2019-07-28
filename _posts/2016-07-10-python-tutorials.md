@@ -3,7 +3,8 @@ layout: post
 title: "Python Tutorials"
 excerpt: "Learn to play with python"
 tags: [python, apple, mac, setup]
-shorturl: "https://goo.gl/PGg9B8"
+date: "2016-07-10"
+file: "python-tutorials"
 image:
 # pic white python logo 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622164/4230c848-0585-11e6-957b-be11147346e6.jpg
@@ -12,16 +13,44 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+<p align="right">
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
+</p>
 {% include _toc.html %}
 
 Here are the classes I've seen that teach Python programming.
 
 
-## Free Tutorials on Python
+## Free Tutorials about Python
 
+May 2019 Python for Everybody - Free Python 3 course from <a target="_blank" href="https://www.freecodecamp.org/">FreeCodeCamp.org</a> in <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI">a single YouTube video</a>,
+from Dr. Chuck (Severance) at the University of Michigan School of Information.
 
+* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=12m21s">Installing Python</a>
+* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=56m55s">Why Program?</a>
+* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=12m21s">Variables, expressions, and statements</a>
+* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=1h26m0s">Conditional Execution</a>
+* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=1h12m21s">Functions</a>
+* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=2h15m21s">Loops and Iterations</a>
+* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=2h58m39s">Strings</a>
+* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=3h27m33s">Files</a>
+* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=3h48m42s">Lists</a>
+* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=4h28m4s">Dictionaries</a>
+* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=5h22m46s">Tuples</a>
+* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=5h54m56s">Regular Expressions</a>
+* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=6h22m17s">Network Programming</a>
+* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=7h23m43s">Using Web Services</a>
+* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=8h48m01s">Object-Oriented Programming</a>
+* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=9h20m44s">Databases</a>
+* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=11h20m40s">Data Visualization</a>
 
 ### Google
 
@@ -54,36 +83,27 @@ http://sthurlow.com/python/</a>
 
 0. <a target="_blank" href="http://sthurlow.com/python/lesson01/">
    Installing Python</a>
-
 0. <a target="_blank" href="http://sthurlow.com/python/lesson01/">
    Very Simple Programs</a>
-
 0. <a target="_blank" href="http://sthurlow.com/python/lesson01/">
    Variables, and Programs in a Script</a>
-
 0. <a target="_blank" href="http://sthurlow.com/python/lesson01/">
    Loops and Conditionals</a>
-
 0. <a target="_blank" href="http://sthurlow.com/python/lesson01/">
    Functions</a>
-
 0. <a target="_blank" href="http://sthurlow.com/python/lesson01/">
    Tuples, Lists, and Dictionaries</a>
-
 0. <a target="_blank" href="http://sthurlow.com/python/lesson01/">
    The for loop</a>
-
 0. <a target="_blank" href="http://sthurlow.com/python/lesson01/">
    Classes</a>
-
 0. <a target="_blank" href="http://sthurlow.com/python/lesson01/">
    Importing Modules</a>
-
 0. <a target="_blank" href="http://sthurlow.com/python/lesson01/">
    File I/O</a>
-
 0. <a target="_blank" href="http://sthurlow.com/python/lesson01/">
    Error Handling</a>
+
 
 ### EDX.org
 
@@ -217,9 +237,9 @@ by Filip Ekberg
 realpython.com</a> has a $60 course package.
 
 
-## More on OSX
+## More on Python
 
-This is one of a series on Mac OSX:
+This is one of a series about Python:
 
-{% include mac_links.html %}
+{% include python.html %}
 
