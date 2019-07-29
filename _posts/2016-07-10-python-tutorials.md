@@ -28,8 +28,17 @@ comments: true
 
 Here are the classes I've seen that teach Python programming.
 
+## Official documentation
+
+<a target="_blank" href="https://docs.python.org/3/tutorial/">https://docs.python.org/3/tutorial</a> 
+is the official tutorial.
+
+<a target="_blank" href="https://docs.python.org/3/library/index.html">https://docs.python.org/3/library/index.html</a> is the official documentation.
+
 
 ## Free Tutorials about Python
+
+### Python for Everyone
 
 May 2019 <a target="_blank" href="https://www.py4e.com/">Python for Everybody (py4e.com)</a> free Python 3 <a target="_blank" href="https://www.py4e.com/book.php">book</a>, <a target="_blank" href="https://www.py4e.com/lectures3/">PowerPoint slides</a> and code in <a target="_blank" href="https://github.com/wilsonmar/py4e.git">GitHub</a> or in <a target="_blank" href="https://www.py4e.com/code3.zip">one zip file</a> from <a target="_blank" href="https://www.freecodecamp.org/">FreeCodeCamp.org</a> in <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI">a single YouTube video</a>, from <a target="_blank" href="https://www.dr-chuck.com">Dr. Chuck (Severance)</a> at the <a target="_blank" href="https://open.umich.edu/">University of Michigan School of Information</a>.
 
@@ -69,7 +78,8 @@ Support materials at<br />
 <a target="_blank" href="https://developers.google.com/edu/python/">
 https://developers.google.com/edu/python</a>
 
-### Udacity
+
+### Udacity video courses
 
 <a target="_blank" href="https://www.udacity.com/course/programming-foundations-with-python--ud036">
 Programming Foundations</a>
@@ -109,13 +119,30 @@ http://sthurlow.com/python/</a>
 ### EDX.org
 
 <a target="_blank" href="https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-9">
-MIT's Introduction to Computer Science using Python</a>
+MIT's Introduction to Computer Science using Python course 600.1.X</a> Aug 10, 2016 (free or $75 certificate) makes use of Windows and MacOS/Linux. Its major topics:
 
-<a target="_blank" href="https://learnpythonthehardway.org/book/">https://learnpythonthehardway.org/book</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Xwf4DkNlIPA">Welcome</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=4MbDZho3pIY">Knowledge</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=gJKQ3eNAxG8">Machine Architecture</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=9oYFH4OmYDY">Aspects of Languages</a>
+   * A Notion of computation
+   * The Python programming language
+   * Some simple algorithms
+   * Testing and debugging
+   * An informal introduction to algorithmic complexity
+   * Data structures
+   <br /><br />
+
 
 
 
 ## Paid Tutorials on Python
+
+<a target="_blank" href="https://learnpythonthehardway.org/book/">Learn Python the Hard Way</a> is $29 from ZED.
+
+<a target="_blank" href="https://realpython.com/#course-packages">
+realpython.com</a> has a $60 course package.
+
 
 ### Datacamp
 
@@ -127,7 +154,7 @@ with intermediate classes at $29 a month.
 
 
 
-### Pluralsight #
+### Pluralsight video courses
 
 Robert Smallshire (@robsmallshire, rob@ixty-north.com)
 and 
@@ -230,11 +257,53 @@ Game Programming with Python and PyGame
 Dec 17, 2013 4h 18m</a>
 by Filip Ekberg
 
+## Tutorials
 
-## Other Resources #
+* <a target="_blank" href="https://www.cmi.ac.in/~madhavan/courses/prog2-2012/docs/diveintopython3/index.html">Dive Into Python</a> - a survey of Python syntax, datatypes, etc.
 
-<a target="_blank" href="https://realpython.com/#course-packages">
-realpython.com</a> has a $60 course package.
+* <a target="_blank" href="http://greenteapress.com/wp/think-python-2e/">Think Python</a> by Allen Downey - a good general overview of the Python language. Includes exercises.
+
+* <a target="_blank" href="https://docs.python.org/3.0/reference/lexical_analysis.html#id8">Reserved Keywords</a> in Python - don't use these as variable names
+
+* <a target="_blank" href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a> - Style Guide for Python Code - learn what is good and bad style in Python
+
+* <a target="_blank" href="https://checkio.org/">CheckIO</a> - learn Python by exploring a game world
+
+* <a target="_blank" href="https://realpython.com/">Real Python</a> by Dan Bader
+
+* <a target="_blank" href="https://inventwithpython.com/">Invent with Python</a> - develop your Python skills by making games or hacking ciphers
+
+
+* <a target="_blank" href="https://www.codecademy.com/learn/python">Codecademy.com</a> - (note: for Python 2) learn Python by building web apps and manipulating data; interactive tutorial sequence
+
+* <a target="_blank" href="http://www.pythontutor.com/">Python Tutor - interactive tutorial sequence of exercises
+
+
+* <a target="_blank" href="http://mitxcsjourney.blogspot.com/">Blog with tutorials - created by a TA of the EdX community
+
+* <a target="_blank" href="http://shop.oreilly.com/product/0636920032519.do">Fluent Python</a> book  published by O'Reilly August 2015. By Luciano Ramalho.
+
+
+## Challenges 
+
+* <a target="_blank" href="https://www.hackerrank.com/domains/python">Hackerrank.com practice domain for Python</a>
+
+* <a target="_blank" href="https://projecteuler.net/">Project Euler</a> - programming challenges sorted by increasing difficulty
+
+* <a target="_blank" href="https://codecombat.com/">CodeCombat.com</a> - "The most engaging way to learn computer science"
+
+* <a target="_blank" href="http://www.pythonchallenge.com/">Python Challenge</a> - a series of puzzles you can try to test your Python abilities
+
+* <a target="_blank" href="http://codingbat.com/python">Coding Bat</a> - problems you can solve within an online interpreter (Python and Java)
+
+* <a target="_blank" href="https://www.codewars.com/?language=python">Codewars</a> presents code (katas) that does not execute, to which you fix to run. This improves your skills by training on real code challenges.
+
+
+## Community
+
+* <a target="_blank" href="https://www.reddit.com/r/learnpython/">LearPython SubReddit</a>
+
+* <a target="_blank" href="https://stackoverflow.com/questions/tagged/python">Stack Overflow questions and answers tagged "Python"</a>
 
 
 ## More on Python

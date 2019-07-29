@@ -12,15 +12,16 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<p align="right"><a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2Freact-testing%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2Freact-testing%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2Freact-testing%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2Freact-testing%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2Freact-testing%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2Freact-testing%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2Freact-testing%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2Freact-testing%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2Freact-testing%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
+<p align="right">
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
 </p>
 {% include _toc.html %}
 
@@ -38,11 +39,11 @@ Isomorphic React (Universal)
 ## Scaffold tests using mocks
 Jest is a test runner built on top of Jasmine and Mocha to add "spies" (a superior assertion library to verify side effects), plus <a href="#SnapShotTesting">snapshot testing</a>, and module mocking. Even though Jest was built by Facebook's React team (and share the MIT open-source licensing), Jest can also test apps not built with React (except for jQuery).
 
-   https://github.com/facebook/jest
+   <a target="_blank" href="https://github.com/facebook/jest">https://github.com/facebook/jest</a>
 
-   https://facebook.github.io/jest/
+   <a target="_blank" href="https://facebook.github.io/jest/">https://facebook.github.io/jest</a>
    forwards to<br />
-   https://jestjs.io/
+   <a target="_blank" href="https://jestjs.io/">https://jestjs.io</a>
 
 Ezyme is a "test renderer" to express component output as HTML.
 It was built by AirBnB specifically for React apps.
@@ -74,9 +75,9 @@ function test2() {
 }
 </pre>
 
-   https://facebook.github.io/jest/
+   <a target="_blank" href="https://facebook.github.io/jest/">https://facebook.github.io/jest</a>
    from
-   https://facebook.github.io/jest/docs/en/expect.html
+   <a target="_blank" href="https://facebook.github.io/jest/docs/en/expect.html">https://facebook.github.io/jest/docs/en/expect.html</a>
 
 
 Avoid side-effects –any AJAX calls, UI changes or other side effects are handled by sagas, thunks, etc., but not by components
@@ -99,17 +100,17 @@ multiple kinds of tests
 React: Testing and Debugging July 5, 2017</a> [1h 17m]
 by: Emmanuel Henri, <a target="_blank" href="https://www.linkedin.com/in/mannyhenri/">
 
-https://app.pluralsight.com/paths/skills/react
+<a target="_blank" href="https://app.pluralsight.com/paths/skills/react
 React Path of courses that take over 50 hours in total
 
-https://app.pluralsight.com/library/courses/testing-react-applications-jest/table-of-contents
-Testing React Applications with Jest</a> 11 May 2018 [3h 36m]
+<a target="_blank" href="https://app.pluralsight.com/library/courses/testing-react-applications-jest/table-of-contents">Testing React Applications with Jest</a> 11 May 2018 [3h 36m]
 by Daniel Stern (@danielJackstern)
 
-https://github.com/DanielStern/Isomorphic-React
+<a target="_blank" href="https://github.com/DanielStern/Isomorphic-React">https://github.com/DanielStern/Isomorphic-React</a>
 This application is a basic API client which gathers data from an outside API (in this case, Stackoverflow) and generates an isomorphic, single-page application (SPA).
 
 
+Testing
 
 ## More on front-end styling #
 
