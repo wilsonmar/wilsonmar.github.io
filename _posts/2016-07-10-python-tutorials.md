@@ -31,26 +31,27 @@ Here are the classes I've seen that teach Python programming.
 
 ## Free Tutorials about Python
 
-May 2019 Python for Everybody - Free Python 3 course from <a target="_blank" href="https://www.freecodecamp.org/">FreeCodeCamp.org</a> in <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI">a single YouTube video</a>,
-from Dr. Chuck (Severance) at the University of Michigan School of Information.
+May 2019 <a target="_blank" href="https://www.py4e.com/">Python for Everybody (py4e.com)</a> free Python 3 <a target="_blank" href="https://www.py4e.com/book.php">book</a>, <a target="_blank" href="https://www.py4e.com/lectures3/">PowerPoint slides</a> and code in <a target="_blank" href="https://github.com/wilsonmar/py4e.git">GitHub</a> or in <a target="_blank" href="https://www.py4e.com/code3.zip">one zip file</a> from <a target="_blank" href="https://www.freecodecamp.org/">FreeCodeCamp.org</a> in <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI">a single YouTube video</a>, from <a target="_blank" href="https://www.dr-chuck.com">Dr. Chuck (Severance)</a> at the <a target="_blank" href="https://open.umich.edu/">University of Michigan School of Information</a>.
 
-* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=12m21s">Installing Python</a>
-* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=56m55s">Why Program?</a>
-* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=12m21s">Variables, expressions, and statements</a>
-* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=1h26m0s">Conditional Execution</a>
-* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=1h12m21s">Functions</a>
-* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=2h15m21s">Loops and Iterations</a>
-* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=2h58m39s">Strings</a>
-* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=3h27m33s">Files</a>
-* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=3h48m42s">Lists</a>
-* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=4h28m4s">Dictionaries</a>
-* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=5h22m46s">Tuples</a>
-* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=5h54m56s">Regular Expressions</a>
-* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=6h22m17s">Network Programming</a>
-* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=7h23m43s">Using Web Services</a>
-* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=8h48m01s">Object-Oriented Programming</a>
-* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=9h20m44s">Databases</a>
-* <a target="_blank" href="<a target="_blank" href="https://www.youtube.com/watch?v=8dvywowv6fi&time=11h20m40s">Data Visualization</a>
+* <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI">Introduction</a>
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI&t=12m21s">Why Program?</a>
+1. <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI&t=56m56s">Variables, expressions, and statements</a>
+1. <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI&t=1h26m07s">Conditional Execution</a>
+1. <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI&t=1h53m00s">Functions</a>
+1. <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI&t=2h15m32s">Loops and Iterations</a>
+1. <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI&t=2h58m51s">Strings</a>
+1. <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI&t=3h27m33s">Files</a>
+1. <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI&t=3h48m42s">Lists</a> (Data)
+1. <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI&t=4h29m02s">Dictionaries</a>
+1. <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI&t=5h23m07s">Tuples</a>
+1. <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI&t=5h55m19s">Regular Expressions</a>
+1. <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI&t=6h22m41s">Network Programming</a> (Networked Programs)
+1. <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI&t=7h24m11s">Using Web Services</a>
+1. <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI&t=8h48m33s">Object-Oriented Programming</a>
+1. <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI&t=9h21m22s">Databases</a>
+1. <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI&t=11h42m35s">Data Visualization?</a> (using D3.js)
+
 
 ### Google
 
@@ -240,5 +241,5 @@ realpython.com</a> has a $60 course package.
 
 This is one of a series about Python:
 
-{% include python.html %}
+{% include python_links.html %}
 
