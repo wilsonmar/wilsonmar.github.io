@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Java Install on Mac OSX"
+title: "Java Install on macOS"
 excerpt: "Because programmers can't get enough caffeine"
 tags: [apple, mac, setup]
 date: "2016-08-10"
@@ -13,50 +13,74 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<p align="right"><a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2Fscreen-capture-apple-mac-osx%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
+<p align="right">
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
 </p>
 {% include _toc.html %}
 
 <a id="JDKSetupz"></a>
 
 There are several ways to install Java.
-This is the one that worked for me.
-
-<a name="DifferentJavas"></a>
-
-## Different Javas
-   
-Several organizations work on OpenSDK specs from <a target="_blank" href="https://adoptopenjdk.net/">AdoptOpenJDK</a> and certified for Java SE TCK compliance on x64 reference architecture systems
-
-   * <a target="_blank" href="https://www.azul.com/downloads/zulu">Azul Zulu</a> <a target="_blank" href="https://www.azul.com/downloads/zulu/zulu-mac/">downloads for macOS</a>, from a company that also sells Java optimization products
-
-   Its zulu8.30.0.1-jdk8.0.172-macosx_x64 from zip April 18, 2018 is 179.2 MB expanded
-
-   * <a target="_blank" href="https://www.oracle.com/technetwork/java/eol-135779.html">Oracle</a> and http://jdk.java.net/
-
-   * <a target="_blank" href="https://www.ibm.com/us-en/marketplace/support-for-runtimes">IBM</a> OpenJDK with Eclipse OpenJ9 
-
-   * <a target="_blank" href="https://access.redhat.com/articles/1299013">Red Hat</a>
-
-  * https://en.wikipedia.org/wiki/List_of_Java_virtual_machines
-   <br /><br />
-
+This is a deep dive into the various editions to equip you to debug JVM installation issues.
 
 <a name="WhichJava"></a>
 
 ## Which Java You Got?
 
-On a Terminal open to any folder:
+1. Open a Terminal session.
 
-0. The $JAVA_HOME environment variable is used by Groovy, Grails, Spring Boot, and others:
+
+5. Shell scripts check if Java is available by:
+
+   <pre><strong>command -v java</strong></pre>
+
+   Alternately, the older form is:
+
+   <pre><strong>which java</strong></pre>
+
+   Either way, the response:
+
+   <pre>/usr/bin/java</pre>
+
+   PROTIP: File "java" in the above path is a binary file.
+
+6. To see what Java VM you have already installed:
+
+   <pre><strong>/usr/bin/java -version
+   </strong></pre>
+
+   PROTIP: <tt>-version</tt> is a non-standard parameter. Most other programs use either the <tt>-v</tt> flag or <tt>\-\-version</tt> parameter.
+
+   A sample response:
+
+   <pre>java version "1.8.0_162"
+Java(TM) SE Runtime Environment (build 1.8.0_162-b12)
+Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
+   </pre>
+
+0. PROTIP: Developers use the JDK rather than the JRE (Runtime Environment),
+   see what version of the <strong>Java Compiler</strong> is installed:
+
+   <pre><strong>javac -version
+   </strong></pre>
+
+   A sample response:
+
+   <pre>
+   javac 1.8.0_162
+   </pre>
+
+
+
+2. PROTIP: The Java program looks for the <tt><strong>$JAVA_HOME</strong></tt> environment variable to obtain files:
 
    <tt><strong>
    echo $JAVA_HOME
@@ -69,57 +93,36 @@ On a Terminal open to any folder:
    </pre>
 
    PROTIP: This command is my preferred way to see what a machine has because
-   if you invoke java or javac, if it's not installed, MacOS prompts you to install the JDK. Clever. But don't do it if you want <a href="#DifferentJavas">
-   other version of Java</a>.
+   if you invoke java or javac, if it's not installed, MacOS prompts you to install the JDK. Clever. But don't do it if you want <a href="#DifferentJavas">other version of Java</a>.
 
-   <a name="AppleJavaC"></a>
+   Java is used by Groovy, Grails, Spring Boot, and others.
 
-   ### Apple Java
 
-   PROTIP: The version that comes installed on Apple Macs is obsolete and thus not have the latest security patches. But do not delete the default version.
+3. List which versions are installed on your machine:
+
+   <pre>ls /Library/Java/JavaVirtualMachines/
+   </pre>
+
+   PROTIP: On Macs, all known JVM's are located at: <br />
+   <tt><strong>/Library/Java/JavaVirtualMachines/</strong></tt>
+
+   NOTE: This directory is at the root for the whole machine, not a particular user's home folder.
+
+   The response on my machine: 
    
-   But if you did, to re-install <strong>Java 6</strong> for OS X 2014-001,
-   it can be obtained from
-   <a target="_blank" href="https://support.apple.com/kb/DL1572?locale=en_US">
-   https://support.apple.com/kb/DL1572?locale=en_US</a>
-
-
-0. To see what Java VM you have already installed:
-
-   <pre><strong>
-   java -version
-   </strong></pre>
-
-   A sample response:
-
-   <pre>
-java version "1.8.0_162"
-Java(TM) SE Runtime Environment (build 1.8.0_162-b12)
-Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
+   <pre>jdk1.8.0_162.jdk
+   jdk1.8.0_202.jdk
+   zulu8.30.0.1-jdk8.0.172-macosx_x64
    </pre>
 
-0. PROTIP: Developers use the JDK rather than the JRE (Runtime Environment),
-   see what version of the <strong>Java Compiler</strong> is installed:
+4. Additional details are provided with this command:
 
-   <pre><strong>
-   javac -version
+   <pre><strong>/usr/libexec/java_home -V
    </strong></pre>
 
-   A sample response:
+   That's a capital <tt>-V</tt>.
 
-   <pre>
-   javac 1.8.0_162
-   </pre>
-
-0. If you do see the MacOS prompt to install Java, click <strong>More Info...</strong>.
-
-   <pre><strong>
-   /usr/libexec/java_home -V
-   </strong></pre>
-
-   That's a capital V.
-
-   The response on my machine on Sierra:
+   The response on my machine:
 
    <pre>
 Matching Java Virtual Machines (4):
@@ -130,46 +133,34 @@ Matching Java Virtual Machines (4):
 /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
    </pre>
 
-   PROTIP: In OSX, all known JVM's are located at:
+   <a name="AppleJavaC"></a>
 
-   <pre>
-   /Library/Java/JavaVirtualMachines/
-   </pre>
+   ### Apple Java
 
-   NOTE: This directory is at the root for the machine, not a particular user home folder.
+   PROTIP: The version that comes installed on Apple Macs is <strong>obsolete</strong> and thus does not have the latest security patches. But do NOT delete the default version.
+   
+   But if you did uninstall it, to re-install <strong>Java 6</strong> for OS X 2014-001,
+   it can be obtained from
+   <a target="_blank" href="https://support.apple.com/kb/DL1572?locale=en_US">
+   https://support.apple.com/kb/DL1572?locale=en_US</a>
 
-   ### Maven
 
-0. See what derivative program such as Maven uses:
+   <a name="DifferentJavas"></a>
 
-   <tt><strong>
-   mvn -version
-   </strong></tt>
+   ## Different Javas
+   
+   <a target="_blank" href="https://en.wikipedia.org/wiki/List_of_Java_virtual_machines">https://en.wikipedia.org/wiki/List_of_Java_virtual_machines</a> lists all the known Java compilers.
+   Several organizations work on OpenSDK specs from <a target="_blank" href="https://adoptopenjdk.net/">AdoptOpenJDK</a> and certified for Java SE TCK compliance on x64 reference architecture systems
 
-   The sample response:
+   * When <a target="_blank" href="https://www.oracle.com/technetwork/java/eol-135779.html">Oracle</a> acquired Sun, the <strong>jdk</strong> (Java Development Kit) was one of the products obtained. Versions are downloaded directly from Oracle from <a target="_blank" href="http://jdk.java.net/">http://jdk.java.net</a>.
 
-   <pre>
-Apache Maven 3.5.3 (3383c37e1f9e9b3bc3df5050c29c8aff9f295297; 2018-02-24T12:49:05-07:00)
-Maven home: /usr/local/Cellar/maven/3.5.3/libexec
-Java version: 1.8.0_162, vendor: Oracle Corporation
-Java home: /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre
-Default locale: en_US, platform encoding: utf-8
-OS name: "mac os x", version: "10.13.6", arch: "x86_64", family: "mac"
-   </pre>
 
-0. Where is the Java executable?
 
-   <tt><strong>
-   command -v java
-   </strong></tt>
+   * <a target="_blank" href="https://www.azul.com/downloads/zulu">Azul Zulu</a> <a target="_blank" href="https://www.azul.com/downloads/zulu/zulu-mac/">downloads for macOS</a>, from a company that also sells Java optimization products. Its zulu8.30.0.1-jdk8.0.172-macosx_x64 from zip April 18, 2018 is 179.2 MB expanded
 
-   You should see this:
+   * <a target="_blank" href="https://www.ibm.com/us-en/marketplace/support-for-runtimes">IBM</a> OpenJDK with Eclipse OpenJ9 
 
-   <pre>
-   /usr/bin/java
-   </pre>
-
-   PROTIP: java in the above path is a binary file.
+   * <a target="_blank" href="https://access.redhat.com/articles/1299013">Red Hat</a>
 
 
    <a name="OracleJavaC"></a>
@@ -196,9 +187,9 @@ OS name: "mac os x", version: "10.13.6", arch: "x86_64", family: "mac"
    NOTE: Downloads of the JDK contains the JRE.
 
 
-   <a name="JenvInstall"></a>
+<a name="JenvInstall"></a>
 
-   ### Install Jenv to manage multiple Versions of Java #
+## Install Jenv to manage multiple Versions of Java #
 
    PROTIP: If you're a developer, 
    you'll likely need to manage different versions of Java needed by different apps.
@@ -390,7 +381,7 @@ yum (for Red Hat, CentOS, Oracle Linus, Fedora).
    * http://hanxue-it.blogspot.com/2014/05/installing-java-8-managing-multiple.html
 
 <a target="_blank" href="http://gvsmirnov.ru/blog/tech/2014/02/07/building-openjdk-8-on-osx-maverick.html#tldr">
-For OSX, this page recommends using Make to compile from source</a>.
+For macOS, this page recommends using Make to compile from source</a>.
 
 0. Download source using Mercurial to a new folder "openjdk9":
 
@@ -403,7 +394,7 @@ For OSX, this page recommends using Make to compile from source</a>.
 
    http://hg.openjdk.java.net/jdk8/jdk8 work stopped at 2014-03-04.
 
-0. Install <a target="_blank" href="https://www.xquartz.org/"> XQuartz</a> for X Window System that runs on OSX:
+0. Install <a target="_blank" href="https://www.xquartz.org/"> XQuartz</a> for X Window System that runs on Macs:
 
    <tt><strong>
    brew install Caskroom/cask/xquartz<br />
@@ -450,6 +441,31 @@ listed in Sourabh Bajaj's venerable
 Mac OSX Setup Guide</a>, developed and distributed as a
 <a target="_blank" href="http://gitbook.com/">GitBook</a>.
 
+
+
+   ### Maven (mvn)
+
+0. See what derivative program such as Maven use:
+
+   <tt><strong>
+   mvn -version
+   </strong></tt>
+
+   If it's installed, the sample response:
+
+   <pre>
+Apache Maven 3.6.1 (d66c9c0b3152b2e69ee9bac180bb8fcc8e6af555; 2019-04-04T13:00:29-06:00)
+Maven home: /usr/local/Cellar/maven/3.6.1/libexec
+Java version: 1.8.0_162, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre
+Default locale: en_US, platform encoding: utf-8
+OS name: "mac os x", version: "10.14.6", arch: "x86_64", family: "mac"
+   </pre>
+
+   PROTIP: Many have switched to using Gradle instead of Maven or Ant.
+
+
+
+
 ## Kotlin
 
 Kotlin is a language that makes use of the JVM.
@@ -457,29 +473,29 @@ Invented by JetBrains (IntelliJ).
 
 ## Social
 
-Top 20 #Java Blogs/bloggers to follow on Twitter:
-@InfoQ <br />
-@baeldung <br />
-@javarevisited <br />
-@AdamBien <br />
-@vlad_mihalcea <br />
-@JavaOOQ <br />
-@thjanssen123 <br />
-@The_Java_Dev <br />
-@JournalDev <br />
-@nicolas_frankel<br /> 
-@starbuxman <br />
-@DZone <br />
-@GuidesJava <br />
-@SaralSaxena <br />
-@rafaelcodes <br />
-@arungupta <br />
-@javinpaul<br />
-@JavaWorldCom<br />
+Top Java Blogs/bloggers to follow on Twitter:
+* <a target="_blank" href="https://twitter.com/InfoQ">@InfoQ</a>
+* <a target="_blank" href="https://twitter.com/baeldung">@baeldung</a>
+* <a target="_blank" href="https://twitter.com/javarevisited">@javarevisited</a>
+* <a target="_blank" href="https://twitter.com/AdamBien">@AdamBien</a>
+* <a target="_blank" href="https://twitter.com/vlad_mihalcea">@vlad_mihalcea</a>
+* <a target="_blank" href="https://twitter.com/JavaOOQ">@JavaOOQ</a>
+* <a target="_blank" href="https://twitter.com/thjanssen123">@thjanssen123</a>
+* <a target="_blank" href="https://twitter.com/The_Java_Dev">@The_Java_Dev</a>
+* <a target="_blank" href="https://twitter.com/JournalDev">@JournalDev</a>
+* <a target="_blank" href="https://twitter.com/nicolas_frankel">@nicolas_frankel</a>
+* <a target="_blank" href="https://twitter.com/starbuxman">@starbuxman</a>
+* <a target="_blank" href="https://twitter.com/DZone">@DZone</a>
+* <a target="_blank" href="https://twitter.com/GuidesJava">@GuidesJava</a>
+* <a target="_blank" href="https://twitter.com/SaralSaxena">@SaralSaxena</a>
+* <a target="_blank" href="https://twitter.com/rafaelcodes">@rafaelcodes</a>
+* <a target="_blank" href="https://twitter.com/arungupta">@arungupta</a>
+* <a target="_blank" href="https://twitter.com/javinpaul">@javinpaul</a>
+* <a target="_blank" href="https://twitter.com/JavaWorldCom">@JavaWorldCom</a>
 
 
-## More on OSX
+## More on macOS
 
-This is one of a series on Mac OSX:
+This is one of a series about macOS (previously Mac OSX):
 
 {% include mac_links.html %}
