@@ -58,6 +58,12 @@ There are several editions of this class, of different length:
 
 ## Course Outline
 
+<a target="_blank" href="https://roadmap.sh/devops">https://roadmap.sh/devops</a>
+
+![devops-roadmap sh](https://user-images.githubusercontent.com/300046/62124296-1db15200-b287-11e9-89ea-9aee2e133cc4.png)
+
+
+
 ### Overview
 Toolchain components<br />
 Alternatives<br />
