@@ -126,6 +126,23 @@ Below are discussion of specific attributes versus trade-offs:
    <a target="_blank" href="https://www.indiegogo.com/projects/bobby-the-best-anti-theft-backpack-by-xd-design#/">
    Indiegogo</a>.
 
+### Bulletproof inserts
+
+   30 sheets of DuPont Kevlar fabric weighing 8 ounces have been rated "Level 3A" by the National Institute of Justice (NIJ, a wing of the U.S. Justice Department) to "resist" handgun bullets of .357/.44/.45 or 9mm caliber. 
+
+   If you want an inserts, you might as well get the <a target="_blank" href="https://kincorner.com/collections/bulletproof-accessories/products/bulletproof-defender-notebook-folio">$190 bulletproof writing+tablet folio</a> of 3 lbs. at 10 x 13.75 x 1" wide.
+
+   <a target="_blank" href="https://www.leatherbackgear.com/pages/civilian-one">
+   This $330 backpack separates to form a bulletproof vest:<br />
+   <img alt="shop-bulletproof-vest-347891.png" src="https://user-images.githubusercontent.com/300046/62169681-1a00e800-b2e6-11e9-8311-529e98862dda.png"></a>
+
+   PROTIP: It won't protect against shots to the head or from the side. They also don't stop high-powered rifles like the AR-15 used by shooters. And protection expire after 5 years, less if exposed to high heat. So don't buy used ones. 
+
+   There is <a target="_blank" href="https://www.bulletblocker.com/bunijiibuarw.html">$7,400 Armani suit</a> or 
+   <a target="_blank" href="https://www.bulletblocker.com/bulletblocker-nij-iiia-bulletproof-fleece-vest.html">$850 vest</a> with bulletproof lining.
+
+### Additional features
+
    A smaller Anti-theft alternative is the 17 inch <a target="_blank" href="https://www.amazon.com/Shockproof-Lightweight-ScanSmart-Friendly-Resistant/dp/B01FJJUFEM/">
    $42 On Amazon: Kopack</a> (Laptop Shockproof Lightweight Daypack ScanSmart Waterproof)
 

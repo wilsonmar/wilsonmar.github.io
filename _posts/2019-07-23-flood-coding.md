@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Flood coding"
+title: "Flood (vs. Selenium autonmation) coding"
 excerpt: "Coding Flood Element TypeScript which (like Selenium) emulates manual actions in Google Chrome browsers"
 tags: [flood, perftest, selenium, testing]
 date: "2019-07-23"
@@ -32,22 +32,30 @@ After validation, the scripts are used on flood.io in the cloud to performance t
 NOTE: This page is still under construction as of July 30, 2019.
 
 This is a component illustrated as the upper-right corner of the video and flowchart at <a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/">https://wilsonmar.github.io/flood-the-internet</a>, reiterated here:
+
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/60763986-3be7b180-a03d-11e9-9002-2e9f3512c589.jpg"><img alt="flood-the-internet-v12-1900x959.jpg" width="1900" src="https://user-images.githubusercontent.com/300046/60763986-3be7b180-a03d-11e9-9002-2e9f3512c589.jpg"></a>
 
 PROTIPs here provide additional commentary based on experience and foresight not available elsewhere.
 
 1. If you don't have a <strong>Google Chrome Browser</strong> app installed, please install it now so that we can make use of the Google Chrome browser's Developer Tools to analyze web pages interacting with the server.
 
-2. Since you'll be using it a lot, drag the app icon to your Mac's Launchbar or Windows dock bar.
+2. Since you'll be using it a lot, drag the app icon to whatever edge of the screen your Mac's Launchbar or Windows dock bar uses.
+   This is usually the bottom edge.
 
 3. Open Google Chrome.
 
 4. If you are not using Chrome to view this page, triple-click the URL below to copy the URL, then switch to the Chrome browser and paste this page's address in the address field:
 
-   <a target="_blank" href="https://wilsonmar.github.io/sap-fiori">https://wilsonmar.github.io/sap-fiori</a>
+   ### URLs to sample apps
    
-   Click the link to the app to be automated.
-   
+   Be at a list of sample apps:
+
+   * <a target="_blank" href="https://wilsonmar.github.io/flood-the-internet">the-internet</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/sap-fiori">sap-fiori</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/jpetstore">JPetstore</a>
+   <br /><br />
+
+5. Click the link to the app to be automated.<br />
    Alternately, go directly to an app we want to automate, such as:
 
    <a target="_blank" href="https://sapui5.hana.ondemand.com/#/demoapps">https://sapui5.hana.ondemand.com/#/demoapps</a>
@@ -62,7 +70,7 @@ PROTIPs here provide additional commentary based on experience and foresight not
 
    To get a formatted view of HTML:
 
-   ### More Tools - Developer Tools
+   ### Chrome Developer Tools
 
    There are several ways to bring up Developer Tools. 
 
