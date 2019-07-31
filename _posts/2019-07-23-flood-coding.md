@@ -63,7 +63,7 @@ PROTIPs here provide additional commentary based on experience and foresight not
 
    ### View Source
 
-   In order for a script to manipulate a control such as a checkbox, the script needs to have a <strong>handle</strong> which the browser uses internally. To do that we need to <strong>view Source</strong>. There are several ways to do that.
+   In order for a script to manipulate a control such as a checkbox, the script needs to have a <strong>handle</strong> which the browser uses internally. One way to do that we need to <strong>view Source</strong>. There are several ways to do that.
   
 5. Cursor anywhere on a <strong>background area</strong> of the web page where the cursor is an arrow, then <strong>right-click</strong> to select "View Source" in the context menu.
 
