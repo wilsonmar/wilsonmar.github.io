@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Flood (vs. Selenium autonmation) coding"
+title: "Flood (vs. Selenium automation) coding"
 excerpt: "Coding Flood Element TypeScript which (like Selenium) emulates manual actions in Google Chrome browsers"
 tags: [flood, perftest, selenium, testing]
 date: "2019-07-23"
@@ -48,11 +48,12 @@ PROTIPs here provide additional commentary based on experience and foresight not
 
    ### URLs to sample apps
    
-   Be at a list of sample apps:
+   Below are my articles about sample apps available:
 
-   * <a target="_blank" href="https://wilsonmar.github.io/flood-the-internet">the-internet</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/flood-the-internet">the-internet</a> badly coded UI that challenge test automation
    * <a target="_blank" href="https://wilsonmar.github.io/sap-fiori">sap-fiori</a>
-   * <a target="_blank" href="https://wilsonmar.github.io/jpetstore">JPetstore</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/jpetstore">JPetstore</a> Java
+   * <a target="_blank" href="https://wilsonmar.github.io/microtrader">Microtrader</a> async http/2 app
    <br /><br />
 
 5. Click the link to the app to be automated.<br />
