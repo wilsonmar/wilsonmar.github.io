@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mac OSX Terminal (command-line tips and tricks)"
-excerpt: "Make anything happen quickly without touching the mouse"
+excerpt: "Make things happen quickly without touching the mouse"
 tags: [apple, mac, setup]
 date: "2016-08-22"
 file: "mac-osx-terminal"
@@ -13,35 +13,37 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<p align="right"><a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2Fmac-osx-terminal%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2Fmac-osx-terminal%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2Fmac-osx-terminal%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2Fmac-osx-terminal%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2Fmac-osx-terminal%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2Fmac-osx-terminal%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2Fmac-osx-terminal%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2Fmac-osx-terminal%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2Fmac-osx-terminal%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
+<p align="right">
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
 </p>
 {% include _toc.html %}
 
-<a href="https://wilsonmar.github.io/mac-osx-terminal">This tutorial</a> describes how to make use of Terminal to make your life easier and less frustrating.
+<a href="https://wilsonmar.github.io/mac-osx-terminal">This tutorial</a> describes how to make use of the macOS Terminal to make your life easier and less frustrating.
 
-What Apple calls the Terminal is what Linux people call a Bash shell.
+What Apple calls the Terminal is what Linux people call the shell 
+(more specifically, the Bash shell). It's also called a command-line terminal, abbreviated as CLI.
 
-This information is often used as interview questions.
+Information here is often used in interview questions.
 
 <a id="Terminalz"></a>
 
-## Open Terminal from Finder Folder #
+## Open Terminal (several ways) #
 
-If you're using a MacOS just for social media, you won't need a Terminal. 
-Perhaps that's why Terminal is kinda buried.
-But if you're a developer, it's hard to get away from using a command-line terminal. 
+Terminal is kinda buried perhaps because those who use a MacOS laptop just for social media probably won't need a Terminal. 
+
+But if you're a developer, it's hard to get away from using a CLI. 
 
 There are different ways to open a Terminal command line.
 
-My preferred way to open Terminal (or any action) doesn't require reaching for a mouse and uses the least number of keystrokes:
+My preferrence is a way that doesn't require reaching for a mouse and using the least number of keystrokes:
 
    1. Press <strong>command+space</strong> keys (at the same time) to bring up Apple's Spotlight universial search, then 
    2. Type "termin" so "Terminal.app" appears.
@@ -68,11 +70,76 @@ To enable that:
 <li> Close the dialog by clicking the red dot at the upper left corner.</li>
 </ol>
 
-## Switch among program
 
-To switch among programs running:
+## Switch among programs
 
-* Hold down the <strong>command</strong> key while pressing <strong>tab</strong> multiple times until the program you want is highlighted (with its name) in the pop-up list.
+To switch among programs already running:
+
+* Hold down the <strong>command</strong> key while pressing <strong>tab</strong> multiple times until the program you want is highlighted (with its name) in the pop-up list. This is equivalent to the Windows control+Esc key combo.
+
+
+
+<a id="Terminalz"></a>
+
+## Terminal Usage #
+
+This page contains notes for system administrators and developers,
+who need to control Macs below the UI level, which require
+typing commands into a command-line terminal screen.
+
+1. To avoid text wrapping, pull the right edge to expand the screen width.
+
+2. To list process id's and port (such as 8080), use the "list open files" command:
+
+   <pre><strong>sudo lsof -i -P | grep 8080
+   </strong></pre>
+
+   PROTIP: Use grep to filter because the response is usually too many lines.
+
+   (You'll need to provide your password).
+
+   <pre>
+   COMMAND     PID           USER   FD   TYPE            DEVICE SIZE/OFF   NODE NAME
+   launchd       1           root   23u  IPv4 0x1b333861483d431      0t0    UDP *:137
+   </pre>
+
+   The right-most column heading &quot;NAME&quot; shows the port
+   (either TCP or UDP).
+
+1. The second column, PID, lists the process identifier. 
+   Copy a PID number for use in the kill command, such as:
+
+   <pre><strong>sudo kill 289
+   </strong></pre>
+
+
+<a id="DevFolderz"></a>
+
+## Folders accessed by developers
+
+1. In Finder, select from the left panel the first item under the 
+<strong>Devices</strong> list.
+
+1. Click on <strong>Macintosh HD</strong>.
+
+   <ul>
+   <li><strong>Applications</strong> hold apps installed.</li>
+   <li><strong>Incompatible Software</strong> hold apps which cannot be installed,
+   such as Amazon Kindle, which competes with Apple's iBooks.
+   This occured during upgrade to Yosemite.</li>
+   <li><strong>Library/Library</strong> holds Apple internal apps.</li>
+   <li><strong>System</strong> hold apps installed.</li>
+   <li><strong>Users</strong> hold data for each user defined,
+   as well as a Shared folder accessible by all users.</li>
+   </ul>
+
+1. Click on your username (wilsonmar in my case).
+
+   This action is the same as clicking on the last default item under the
+   Favorites list.
+
+   Many WordPress developers prefer to add a folder named <strong>Sites</strong>
+   which holds the wordpress folder expanded from download.
 
 
 <a id="Keyboard"></a>
@@ -96,7 +163,7 @@ These come from the bash terminal on Linux machines:
 <li> control + H = Backspace left of cursor</li>
 <li> control + D = Delete right of cursor<br /></li>
 <p></p>
-<li> control + U = Clean entire line<br /></li>
+<li> <strong>control + U = Clean entire line</strong><br /></li>
 <li> control + K = Kill line from under the cursor to the end of the line.</li>
 <li> control + Y = Retrieve line<br /></li>
 <p></p>
@@ -104,14 +171,44 @@ These come from the bash terminal on Linux machines:
 <li> control + N = Next line </li>
 <p></p>
 <li> control + R = Record a shortcut between quotes<br /></li>
+<p></p>
+<li> control + X + E = Open a <a target="_blank" href="https://wilsonmar.github.io/text-editors">text editor (TextMate)</a><br /></li>
 </ul>
 
 From <a target="_blank" href="https://linuxacademy.com/blog/linux/ten-things-i-wish-i-knew-earlier-about-the-linux-command-line-2/">here</a>
 
 
-## Commands list alphabetically
+## Command history
+
+1. Place last command in a text editor so it's easier to edit.
+
+   <pre><strong>fc
+   </strong></pre>
+
+1. Exit with save modified buffer.
+
+1. List previous command history:
+
+   <pre><strong>history
+   </strong></pre>
+
+   PROTIP: History does not display commands entered with a leading space.
+
+1. Cursor up and press Enter to re-execute:
+
+1. Clear history:
+
+   <pre><strong>history -c
+   <strong></pre>
+
+   The clear command does not clear history.
+
+   See <a target="_blank" href="https://ss64.com/osx/history.html">history at sstr.com</a>
+
+## Alphabetical Commands list 
 
 A list of all commands native to macOS is listed <a target="_blank" href="https://ss64.com/osx/">alphabetically at https://ss64.com/osx</a>.
+
 
 
 <a id="Terminal_file_listing"></a>
@@ -178,7 +275,6 @@ By default, the Terminal shows the hard drive and lowest level file folder name,
    <tt>ls is hashed (/bin/ls)
    </tt>
 
-
 0. Dive into a folder type:
 
    <pre><strong>cd mu
@@ -199,6 +295,21 @@ By default, the Terminal shows the hard drive and lowest level file folder name,
 
    <pre><strong>cd ..
    </strong></pre>
+
+0. Create a Projects folder to hold projects downloaded from 
+   <a href="#Setup_Github">Github</a>:
+
+   <pre><strong>mkdir -p Projects
+   </strong></pre>
+
+   <tt>-p</tt> specifies creating the parent folder if it doesn't exist.
+
+   This only needs to be done once.
+
+
+
+
+   ### List files and folders
 
 0. List all files with their permission settings:
 
@@ -225,9 +336,9 @@ By default, the Terminal shows the hard drive and lowest level file folder name,
 
    (It's for the <a href="#BashShell">Bash Shell</a>.)
 
-0. If it's not listed, create it with:
+0. If a file is not listed, create it with:
 
-   <pre><strong>vi ~/.bashrc
+   <pre><strong>touch ~/.bashrc
    </strong></pre>
 
 0. To make it rw r r:
@@ -240,14 +351,6 @@ By default, the Terminal shows the hard drive and lowest level file folder name,
    <pre><strong>ls -ld .??*
    </strong></pre>
 
-0. Create a Projects folder to hold projects downloaded from 
-   <a href="#Setup_Github">Github</a>:
-
-   <pre><strong>mkdir Projects
-   </strong></pre>
-
-   This only needs to be done once.
-
 
 
 <a id="ShowHiddenInFinderz"></a>
@@ -256,7 +359,7 @@ By default, the Terminal shows the hard drive and lowest level file folder name,
 
 By default, the Mac's Finder does not show hidden files.
 
-0. Close all Finder folders. 
+0. Close all Finder folders.
 
 0. Enter this in Terminal before typing Return:
 
@@ -288,7 +391,61 @@ By default, the Mac's Finder does not show hidden files.
 
    **Finder** - specifies the process or application to close.
 
-For more on this, see http://www.westwind.com/reference/OS-X/invisibles.html
+For more on this, see <a target="_blank" href="http://www.westwind.com/reference/OS-X/invisibles.html">this</a>.
+
+
+## Create Terminal Aliases #
+
+<a id="Wireless"></a>
+
+### Wireless up and down
+
+Most developers leave files un-hidden.
+
+1. To set wireless (device `en0`) up or down without clicking on the icon at the top:
+
+   <tt>ifconfig en0 down</tt>
+   
+   This command requires sudo permissions.
+
+1. Set alias command to just type <strong>showFiles</strong> and
+   <strong>hideFiles</strong> 
+   to show and hide Mac OS X’s hidden files, consider
+   <a target="_blank" rel="amphtml" href="http://ianlunn.co.uk/articles/quickly-showhide-hidden-files-mac-os-x-mavericks/">
+   this article</a> to create such terminal aliases
+   in the ~/.bash_profile script.
+
+
+### tree alias or brew install #
+
+OSX does not come with the tree command that many other Linux distributions provide. So add it using:
+
+   ### Tree alias
+
+   Alias for the tree command by adding this in the ~/.bash_profile script:
+
+   <pre>
+   alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+   </pre>
+
+   Alternately, add it by installing a command using brew:
+
+   <pre><strong>brew install tree
+   </strong></pre>
+
+   Active Terminal sessions need to be closed so new Terminal | Shell | New Window | Shell has this activated.
+
+   See list of parameters:
+
+   <pre><strong>tree \-\-help
+   </strong></pre>
+
+   List only 2 levels deep with human-readable file size kilobytes and sort by last modified date:
+
+   <pre><strong>tree -L 2 -s -h -p -D -t
+   </strong></pre>
+
+<hr />
 
 
 <a id="HotCornerz"></a>
@@ -340,27 +497,10 @@ stuff happens. It can be annoying.
    PROTIP: This command is useful to see the lastest entries appended to the end of a 
    large log file.
 
-0. Expose spaces at end of lines
-   by showing $ end-of-line characters that are otherwise not shown:
+0. Expose spaces at end of lines by showing at end of every line <tt>$</tt> end-of-line characters that are otherwise not shown. For example, in a file on every macOS:
 
    <pre><strong>cat -vet /etc/hosts
    </strong></pre>
-
-
-<a id="TerminalPingHostz"></a>
-
-## Terminal Ping Host #
-
-Find the IP address of a website host name:
-
-<pre><strong>host microsoft.com</strong></pre>
-
-<pre>
-microsoft.com has address 134.170.185.46
-microsoft.com has address 134.170.188.221
-microsoft.com mail is handled by 10 microsoft-com.mail.protection.outlook.com.
-</pre>
-
 
 
 <a id="Hosts"></a>
@@ -398,6 +538,35 @@ fe80::1%lo0 localhost
 127.94.0.1  client.openvpn.net
 # END section for OpenVPN Client SSL sites
    </pre>   
+
+
+<a id="TerminalPingHostz"></a>
+
+## Terminal Ping Host #
+
+Find the IP address of a website host name:
+
+<pre><strong>host microsoft.com</strong></pre>
+
+<pre>
+microsoft.com has address 134.170.185.46
+microsoft.com has address 134.170.188.221
+microsoft.com mail is handled by 10 microsoft-com.mail.protection.outlook.com.
+</pre>
+
+
+## SSH tunnel
+
+To access a remote server through a port that is not open to the public:
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=Zuwa8zlfXSY&t=3m45s">VIDEO</a>: Bind local port 3337 to remote host 127.0.0.1 port 6379 using user root in emkc.org 
+
+   <pre><strong>ssh -L 3337:127.0.0.1:6379 root@emkc.org -N
+   bg
+   </strong></pre>
+
+   BTW 6379 is the default port for a Redis instance.
+
 
 
 <a id="DNSConfigz"></a>
@@ -465,42 +634,7 @@ built-in discoveryutil:
 
    <tt>sudo discoveryutil udnsflushcaches</tt>
 
-
-### Create Terminal Aliases #
-
-Most developers leave files un-hidden.
-But if you want to just type <strong>showFiles</strong> and <strong>hideFiles</strong> 
-to show and hide Mac OS X’s hidden files, consider
-<a target="_blank" rel="amphtml" href="http://ianlunn.co.uk/articles/quickly-showhide-hidden-files-mac-os-x-mavericks/">
-this article</a> to create such terminal aliases.
-
-An example is an alias for the tree command by adding
-this in the ~/.bash_profile script:
-
-   <pre>
-   alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
-   </pre>
-
-
-### Brew install tree #
-
-OSX does not come with the tree command that many other Linux distributions provide.
-So add it using brew:
-
-   <pre><strong>brew install tree
-   </strong></pre>
-
-Active Terminal sessions need to be closed so new Terminal | Shell | New Window | Shell has this activated.
-
-See list of parameters:
-
-   <pre><strong>tree \-\-help
-   </strong></pre>
-
-List only 2 levels deep with human-readable file size kilobytes and sort by last modified date:
-
-   <pre><strong>tree -L 2 -s -h -p -D -t
-   </strong></pre>
+<hr />
 
 
 <a id="BashConfigz"></a>
@@ -586,40 +720,6 @@ https://github.com/gcuisinier/jenv/blob/master/README.md
 
    <tt><strong>set \-\- -f; source bootstrap.sh
    </strong></tt>
-
-
-<a id="Terminalz"></a>
-
-## Terminal Usage #
-
-This page contains notes for system administrators and developers,
-who need to control Macs below the UI level, which require
-typing commands into a command-line terminal screen.
-
-1. To avoid text wrapping, pull the right edge to expand the screen width.
-
-2. To list process id's and port (such as 8080), use the "list open files" command:
-
-   <pre><strong>sudo lsof -i -P | grep 8080
-   </strong></pre>
-
-   PROTIP: Use grep to filter because the response is usually too many lines.
-
-   (You'll need to provide your password).
-
-   <pre>
-   COMMAND     PID           USER   FD   TYPE            DEVICE SIZE/OFF   NODE NAME
-   launchd       1           root   23u  IPv4 0x1b333861483d431      0t0    UDP *:137
-   </pre>
-
-   The right-most column heading &quot;NAME&quot; shows the port
-   (either TCP or UDP).
-
-1. The second column, PID, lists the process identifier. 
-   Copy a PID number for use in the kill command, such as:
-
-   <pre><strong>sudo kill 289
-   </strong></pre>
 
 
 
@@ -791,16 +891,6 @@ where the operating system should look to find a particular program to execute.
    </tt>
 
 
-<a id="Wireless"></a>
-
-## Wireless up and down
-
-1. To set wireless (device `en0`) up or down without clicking on the icon at the top:
-
-   <tt>ifconfig en0 down</tt>
-   
-   This command requires sudo permissions.
-
 
 <a id="RootSudoz"></a>
 
@@ -942,34 +1032,6 @@ URL=</tt>
    <pre><strong>hdiutil mount sample.iso
    </strong></pre>
 
-
-<a id="DevFolderz"></a>
-
-## Folders accessed by developers
-
-1. In Finder, select from the left panel the first item under the 
-<strong>Devices</strong> list.
-
-1. Click on <strong>Macintosh HD</strong>.
-
-   <ul>
-   <li><strong>Applications</strong> hold apps installed.</li>
-   <li><strong>Incompatible Software</strong> hold apps which cannot be installed,
-   such as Amazon Kindle, which competes with Apple's iBooks.
-   This occured during upgrade to Yosemite.</li>
-   <li><strong>Library/Library</strong> holds Apple internal apps.</li>
-   <li><strong>System</strong> hold apps installed.</li>
-   <li><strong>Users</strong> hold data for each user defined,
-   as well as a Shared folder accessible by all users.</li>
-   </ul>
-
-1. Click on your username (wilsonmar in my case).
-
-   This action is the same as clicking on the last default item under the
-   Favorites list.
-
-   Many WordPress developers prefer to add a folder named <strong>Sites</strong>
-   which holds the wordpress folder expanded from download.
 
 <a id="Curlz"></a>
 
@@ -1224,6 +1286,7 @@ To kill all apps and shutdown a Mac right wasy (with no warning and no dialog):
 
 * https://www.hamsterpad.com/chat/typescriptpdx
    Typescript Slack group
+
 
 ## More on OSX
 
