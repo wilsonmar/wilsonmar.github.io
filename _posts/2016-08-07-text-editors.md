@@ -177,7 +177,7 @@ However, it lacks the advanced features of vim and emacs.
 
 ## Vim
 
-The original vi (visual editor) was developed in 1976 as part of BSD Unix system by Bill Joy, who went on to be one of the co-founders of Sun Microsystems (which Oracle later purchased). 
+The original vi (visual editor) was developed in 1976 as part of the BSD Unix system (by Bill Joy, who went on to be one of the co-founders of Sun Microsystems which Oracle later purchased). 
 
 vi is still the standard text editor available on many Unix system distributions. 
 A good reason to become proficient with vi is that vi may be the only editor available on some industrial systems where no extra software can be installed.
@@ -202,6 +202,15 @@ The newer vim and graphical gvim adds many productivity features to vi.
    <br /><br />
 
    See <a target="_blank" href="https://www.vimawesome.com/">vimawesome.com</a>
+
+In vim, use <tt>:set ff=unix</tt> to convert to Unix and
+and <tt>:set ff=dos</tt> to convert to Windows.
+
+Nevertheless, some use "old-school" vi because Vim ignores control characters in headers and formatting, which can break scripts - especially files from Windows computers. Using vi provides full control of the exact contents of files being edited.
+
+*nix operating sytems end each line with a line-feed (LF) character.
+Windows end each line with a carriage-return and line-feed character.
+
 
 1. In a Terminal, type command:
 
