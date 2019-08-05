@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Docker setup"
-excerpt: "Get little bits working in containers"
+excerpt: "Get bits working in lightweight containers"
 tags: [Docker, devops, ci, setup]
 date: "2016-07-28"
 file: "docker-setup"
@@ -13,15 +13,16 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<p align="right"><a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2Fdocker-setup%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2Fdocker-setup%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2Fdocker-setup%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2Fdocker-setup%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2Fdocker-setup%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2Fdocker-setup%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2Fdocker-setup%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2Fdocker-setup%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2Fdocker-setup%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
+<p align="right">
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
+<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
 </p>
 {% include _toc.html %}
 
@@ -203,6 +204,73 @@ is intended to address the lack of pooling, snapshots, checksums, and integral m
 
 Docker Engine-Community only target Docker for AWS and Docker for Azure.
 Docker Enterprise uses Docker certified infrastructure tooling, using <strong>Terraform and Ansible</strong> to target VMware, Azure, and AWS implementations.
+
+
+## Shell script
+
+I wrote for you a bash script that contains
+
+1. Define
+
+1. Define cleanup: Remove previous folders, stop running Docker processes, for idempotent running.
+1. Remove images downloaded if flag is set to do it.
+
+1. 
+
+   At end:
+
+1. Remove temporary folders, Docker running processes and images, for idempotent running to save disk space, if flag is set to do it.
+
+### GPG SecureApt
+
+Some scripts, especially those to install unvetted packages, public key it associates with the cryptographic signature it generates for each file so that you can verify whether files have been tampered with or bits lost during transit. Use of GPG (GNU Privacy Guard) or PGP (Pretty Good Privacy) is stronger than MD5 hashes.
+
+With Ansible, see <a target="_blank" href="https://docs.ansible.com/ansible/latest/modules/apt_key_module.html">this</a>.
+
+1. Download Docker's signature into your Debian local key vault:
+
+   <pre><strong># Add Docker's public GPG key :
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    # OK is the expected response.
+   </pre>
+
+   The script captures the fingerprint in the response.
+
+2. To verify the key downloaded, search for the last 8 characters of the signature's fingerprint (such as "0EBFCD88" below) to ensure it's same as what the publisher generated:
+
+   <pre><strong>sudo apt-key fingerprint 0EBFCD88
+   </strong></pre>
+
+3. Add the stable repository:
+
+   <pre><strong>sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+   </strong></pre>
+
+4. Update the apt package index again according to official site.
+
+   <pre><strong>sudo apt-get update
+   </strong></pre>
+
+5. Install the latest version of Docker CE
+
+   <pre><strong>sudo apt-get install docker-ce
+   </strong></pre>
+
+   If a packager does not offer one, skip validation of the signature by specifying RedHat’s yum has <tt>--nogpgcheck</tt> or <a target="_blank" href="   https://wiki.debian.org/SecureApt"> Debian’s dpkg</a>  <tt>--no-debsig</tt>. Alternately, edit <tt>GPGCHECK=1</tt> to <tt>0</tt>. <a target="_blank" href="https://dev.mysql.com/doc/refman/8.0/en/checking-gpg-signature.html">rpm (for MySQL)</a>
+
+6. We can check the version of the Docker:
+
+   <pre><strong>sudo docker -v
+   </strong></pre>
+
+7. Run the hello world image to see whether it is installed successfully:
+
+   <pre><strong>sudo docker run hello-world
+   </strong></pre>
+
+   The response should be "Hello from Docker!".
+
+https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
 
 <a name="Docker4Mac"></a>
@@ -1281,7 +1349,7 @@ MacOS with Docker Toolbox:
 
 <a name="DockerUCP"></a>
 
-#### Docker UCP (Universal Control Plane) #
+## Docker UCP (Universal Control Plane) #
 
    UCP enables you to control Docker environments through a 
    <strong>web interface</strong>.
@@ -1527,9 +1595,9 @@ Options:
 
    <a name="CanDockerRun"></a>
 
-   ### Can Docker Run? #
+   ### Docker terminal inside the container #
 
-0. Make sure the Docker process can run:
+0. Make sure the Docker process can run by getting a Terminal inside the container:
 
    <tt><strong>
    docker exec -it test ps aux

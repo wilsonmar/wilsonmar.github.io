@@ -25,12 +25,10 @@ comments: true
 </p>
 {% include _toc.html %}
 
-While many organizations are still working toward a <strong>"mobile-first"</strong>
-approach to design (rather than "desktop-first" or "mainframe-first" design),
-some companies at the "bleeding edge" are moving to
+Some companies at the "bleeding edge" are moving to
 <strong>"AI first"</strong> design.
 
-For example, Foxconn, is now assemblying iPhones using most mechanical robots rather than human robots.
+For example, Foxconn is now assemblying iPhones using mostly mechanical robots rather than human robots.
 Tesla, BMW, and other auto manufacturers make heavy use of mechanical robots.
 
 Simerlerly, Uber drivers are human until they are replaced by driverless cars.
