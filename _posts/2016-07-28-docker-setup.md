@@ -208,18 +208,16 @@ Docker Enterprise uses Docker certified infrastructure tooling, using <strong>Te
 
 ## Shell script
 
-I wrote for you a bash script that contains
+The contribution of this article is a shell script that automates the install of Wordpress by following the manual steps described below:
 
-1. Define
+   <ul>
+   https://github.com/wilsonmar/DevSecOps/blob/master/Docker/docker-setup.sh
+   </ul>
 
-1. Define cleanup: Remove previous folders, stop running Docker processes, for idempotent running.
-1. Remove images downloaded if flag is set to do it.
+   That is now under construction.
 
-1. 
+The "boilerplate" sections in the script is based on <a target="_blank" href="https://wilsonmar.github.io/bash-coding">my bash coding tutorial</a>
 
-   At end:
-
-1. Remove temporary folders, Docker running processes and images, for idempotent running to save disk space, if flag is set to do it.
 
 ### GPG SecureApt
 
