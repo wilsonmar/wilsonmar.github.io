@@ -12,16 +12,7 @@ image: # pic-black-bkg-white-cloud_1920x1200
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<p align="right"><a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2Fcloud-services-comparisons%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2Fcloud-services-comparisons%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2Fcloud-services-comparisons%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2Fcloud-services-comparisons%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2Fcloud-services-comparisons%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2Fcloud-services-comparisons%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2Fcloud-services-comparisons%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2Fcloud-services-comparisons%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2Fcloud-services-comparisons%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
-</p>
+{% include l18n.html %}
 {% include _toc.html %}
 
 
@@ -169,27 +160,35 @@ layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/15745
 
 ## Market share #
 
-   Amazon had an early lead in 2006 and has maintaing its lead even though Microsoft and Google are growing fast as well with 50%+ annual growth<a target="_blank" href="http://www.kpcb.com/internet-trends" title="slide 185/294 from Mary Meeker's May 30, 2018">*</a>
+   Amazon had an early lead in 2006 and has been maintaing its lead even though Microsoft and Google are growing fast as well with 50%+ annual growth<a target="_blank" href="http://www.kpcb.com/internet-trends" title="slide 185/294 from Mary Meeker's May 30, 2018">*</a>
    <img alt="aws-onboarding-cloud-growth-441x272.jpg" width="441" src="https://user-images.githubusercontent.com/300046/40881057-5dc36fd6-667a-11e8-9166-cd5803dde7c3.jpg">
 
    At the end of 2018, corporate filings reavealed this:<br />
    <a target="_blank" href="https://www.zdnet.com/article/top-cloud-providers-2018-how-aws-microsoft-google-ibm-oracle-alibaba-stack-up/"><img alt="cloud-run-rate-2018.png" src="https://user-images.githubusercontent.com/300046/50023160-9c2cde00-ff9b-11e8-8a67-92331c509ef4.png"></a>
 
-Earlier:
+Earlier in 2015:
 
    <amp-img layout="responsive" alt="cloud chart iaas market share 2015-529x488-c22.jpg" width="529" height="488" 
    src="https://cloud.githubusercontent.com/assets/300046/16921114/778410d8-4ccd-11e6-9bb8-faf3cd75a449.jpg">
    </amp-img>
 
 
-## Operating Systems in the cloud #
+## Operating Systems aliances #
 
-As of May 2016, Microsoft Azure works with SUSE and Oracle Java,
-but NOT Red Hat Enterprise Linux (RHEL).
+As of May 2016, Microsoft Azure works with <strong>SUSE</strong> and Oracle Java,
+but <strong>NOT Red Hat</strong> Enterprise Linux (RHEL).
 
 Amazon provides software to host whatever OS is put into images.
-But its free server images are based on CentOS, derived from Red Hat as both use the yum package manager.
+But its free server images are based on CentOS, derived from <strong>Red Hat</strong> as both use the yum package manager.
 Amazon is working on "Linux2" based on Red Hat.
+
+## Network infrastructure
+
+Google has laid its own fiber-optic wires around the world:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/62699138-1af7e080-b99c-11e9-859f-f3d4a4c88105.png"><img alt="google-cables-1533x861.png" width="1533" src="https://user-images.githubusercontent.com/300046/62699138-1af7e080-b99c-11e9-859f-f3d4a4c88105.png"></a>
+
+PROTIP: If you only operate out of just one region, use a <strong>Central US</strong> region, which reaches West to Asia and East to Europe. 
 
 ## Network speed
 
