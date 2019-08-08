@@ -70,11 +70,12 @@ for $19.99 Paragon software</a> enables your Mac to write and delete files on NT
 ## Remove Unneeded Language
 
 One quick and simple way of recovering disk space is
-https://ingmarstein.github.io/Monolingual/index.html
+<a target="_blank" href="https://ingmarstein.github.io/Monolingual/index.html">
+this</a>:
 
 <pre>brew install monolingual</pre> 
 
-Since I'm in the US, I selected for removal all languages except US(en), US(gb).
+Since I'm in the imperious US, I selected for removal all languages except US(en), US(gb).
 
 ## GitHub
 
@@ -82,9 +83,45 @@ Delete your copy of repos on your local hard disk when you are not actively edit
 
 Write bash scripts so that files are deleted on exit.
 
+The <tt>/opt</tt> folder is where many Linux users put various custom software they develop.
+
+
+## /dev (devices) folder
+
+<a target="_blank" href="https://www.youtube.com/watch?v=UFIoRLqhFpo&list=PLlcnQQJK8SUjfkCph45fz6rC0de60LVZR&index=6&t=2m35s">VIDEO</a>:
+On Linux, everything is a file.
+
+<pre><strong>cd /dev && ls -al</strong></pre>
+
+The <tt>/dev</tt> folder on Macs and Linux contain files which point to both physical and pseudo devices.
+
+<tt>b</tt> in the first character of the listing describes a <strong>block</strong> device.
+
+<tt>sda</tt> is the default drive. Additional drives are <tt>sdb</tt>, etc.<br />
+<tt>sda1</tt> is the first partition (no zero here).
+
+## Other folders
+
+<tt>/tmp</tt> (temporary) folder should be empty on boot-up because reboot wipes out its contents.
+
+<tt>/usr</tt> (user) level files which the PATH configures to <strong>override</strong> files of the same name  in the system folder (a program in <tt>/usr/bin</tt> is used instead of one with the same name in <tt>/bin</tt>)
+
+   <ul><pre>X11        bin        lib        libexec    local      sbin       share      standalone
+   </pre>
+   </ul>
+
+<tt>/var</tt> (various) files go in this folder, particularly log files in <tt>/var/log</tt>.
+
+
+BTW Unlike Linux, MacOS does not have folders 
+* <tt>/boot</tt>
+* <tt>/lib</tt>
+* <tt>/proc</tt> folder virtual filesystem, containing a folder for each process.
+* <tt>/root</tt> folder for use by the root user
+
 ## Benchmark disk write speed
 
-<a target="_blank" href="https://www.youtube.com/watch?v=Zuwa8zlfXSY&t=1m21s">VIDEO</a:>
+<a target="_blank" href="https://www.youtube.com/watch?v=Zuwa8zlfXSY&t=1m21s">VIDEO</a>:
 
    <pre>mkdir ram
    cd ram/
@@ -122,11 +159,18 @@ mount -t tmpfs tmpfs /mnt/ram -o size-8192M
 
 * <a target="_blank" href="https://support.apple.com/en-us/HT201238">Apple iCloud</a>
 in the US charges per month 50GB: $0.99, 200GB: $2.99, 2TB: $9.99
-* Box
-* Dropbox
-* <a target="_blank" href="https://cloud.google.com/storage/pricing">Google Cloud</a> charges for egress.
-* Amazon Drive (for Prime members to store an unlimited number of photo files)
-* Microsoft OneDrive, etc.
+* <a target="_blank" href="https://drive.google.com/">drive.google.com</a> 
+goes straight to a 2TB plan for $10 per month.
+* <a target="_blank" href="https://cloud.google.com/storage/pricing">Google Cloud</a> 
+charges for egress.
+* Box.com
+* Dropbox.com
+* Amazon's Drive (for Prime members to store an unlimited number of photo files)
+* Microsoft's OneDrive, etc.
 <br /><br />
+
+PROTIP: The problem with cloud drives is that it takes time to drag each file from Finder to the web page.
+
+Cloud vendors have programs, but they take up disk space, which defeats much of the purpose of using cloud storage.
 
 https://derflounder.wordpress.com/2016/09/23/icloud-desktop-and-documents-in-macos-sierra-the-good-the-bad-and-the-ugly/

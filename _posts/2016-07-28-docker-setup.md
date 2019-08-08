@@ -230,7 +230,7 @@ With Ansible, see <a target="_blank" href="https://docs.ansible.com/ansible/late
    <pre><strong># Add Docker's public GPG key :
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
     # OK is the expected response.
-   </pre>
+   </strong></pre>
 
    The script captures the fingerprint in the response.
 

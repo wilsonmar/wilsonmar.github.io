@@ -6,10 +6,10 @@ tags: [apple, mac, setup]
 date: "2014-07-30"
 file: "apple-macbook-hardware"
 image:
-# feature: pic gray apple logo 1900x500.jpg
-  feature: https://cloud.githubusercontent.com/assets/300046/14622417/0edc21ac-0587-11e6-9f30-ccf9560ce462.jpg
-  credit: Wonderful Engineering
-  creditlink: http://cdn.wonderfulengineering.com/wp-content/uploads/2013/11/apple-wallpaper-3.jpg
+# ![apple-store-fisheye-1900x500-42783.jpg
+  feature: https://user-images.githubusercontent.com/300046/62640513-ff8ac800-b8fe-11e9-842b-e83ec4fdabb2.jpg
+  credit: 
+  creditlink: 
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -237,30 +237,31 @@ Plug it into a battery pack and you can charge the laptop.
 
 If I installed a QR reader on my iPhone, I can read a QR code to take me to the URL represented by the code.
 
-You can read a printed QR code by holding up to your Mac's Facetime camera using app "QuickMark".<a target="_blank" href="https://www.youtube.com/watch?v=6JAAKm5ZQRE">*</a>
-
-BTW there used to be a <a target="_blank" href="http://itunes.apple.com/us/app/qr-right/id496947232?mt=12">$2.99 QR Right app</a>.
+You can read a printed QR code by holding up to your Mac's Facetime camera using app "QuickMark" <a target="_blank" href="https://www.youtube.com/watch?v=6JAAKm5ZQRE">VIDEO</a>. BTW there used to be a <a target="_blank" href="http://itunes.apple.com/us/app/qr-right/id496947232?mt=12">$2.99 QR Right app</a>.
 
 MacOS apps <a target="_blank" href="http://dansl.net/qrreader/">QReader</a> and <a target="_blank" href="https://itunes.apple.com/us/app/qr-journal/id483820530?mt=12">"QR Journal"</a> for those with the Apple iSight A1023 USB external camera from <a target="_blank" href="https://www.macworld.com/article/3018431/macs/in-praise-of-the-glorious-wildly-over-engineered-isight-webcam.html">2003</a> (or iSight compatible). It connects to the Firewire port on older Macs.
 And some reviewers report crashes.
 
-<a target="_blank" href="http://www.madrau.com/index.html">The $16 SwitchResX app</a> is advertised as a screen size formatter for Mac Retina-friendly HiDP screens and for making Macs into teleprompters.
+<a target="_blank" href="http://www.madrau.com/index.html">The $16 SwitchResX app</a> is advertised as a screen size formatter for Mac Retina-friendly HiDP screens and for making Macs into teleprompters (where a pane of transparent glass reflects a screen so that only the speaker can read).
 
 How can one read a QR code appearing on a Mac screen? 
 
 After you create a QR code using qrstuff.com and download the png file, or use an image editor to create an image file containing a QR code, upload the file to:
 
-   https://zxing.org/w/decode.jspx
+   <ul><a target="_blank" href="https://zxing.org/w/decode.jspx">https://zxing.org/w/decode.jspx</a>
+   </ul >
 
 Alternately, install imagemagick as a dependency to this app using Homebrew:
 
-   <pre><strong>brew install zbar</strong></pre>
+   <ul><pre><strong>brew install zbar</strong></pre>
+   </ul>
 
 Then specify the file:
 
-   <pre><strong>cd ~/Downloads & zbarimg qrcode_file.png</strong></pre>
+   <ul><pre><strong>cd ~/Downloads & zbarimg qrcode_file.png</strong></pre>
 
    The response should be the text (URL) embedded in the QR code image.
+   </ul>
 
  
 <a id="Trackpad"></a>
@@ -269,22 +270,19 @@ Then specify the file:
 
 1. In a Terminal window, get the current setting:
 
-   <pre><strong>
-   defaults read -g com.apple.trackpad.scaling
+   <pre><strong>defaults read -g com.apple.trackpad.scaling
    </strong></pre>
 
    In System Preferences, Mouse, if you max out the slider to the right, the value is <strong>3</strong>.
 
 2. To set the maximum speed up for Touchpad in a bash shell script:
 
-   <pre><strong>
-   defaults write -g com.apple.touchpad.scaling  3.0
+   <pre><strong>defaults write -g com.apple.touchpad.scaling  3.0
    </strong></pre>
 
 3. <a target="_blank" href="https://www.tylernichols.com/apple/speed-up-mouse-tracking-on-mac-os-x">PROTIP:</a> If you use an external mouse a 24 inch iMac, use the command to set a faster speed than what can be set in the GUI:
 
-   <pre><strong>
-   defaults write -g com.apple.mouse.scaling  5.0
+   <pre><strong>defaults write -g com.apple.mouse.scaling  5.0
    </strong></pre>
 
 If you drag and drop didn't work on the Trackpad, relaunch Force Quit the Finder.

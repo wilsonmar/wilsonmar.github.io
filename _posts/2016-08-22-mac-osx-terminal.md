@@ -78,7 +78,6 @@ To switch among programs already running:
 * Hold down the <strong>command</strong> key while pressing <strong>tab</strong> multiple times until the program you want is highlighted (with its name) in the pop-up list. This is equivalent to the Windows control+Esc key combo.
 
 
-
 <a id="Terminalz"></a>
 
 ## Terminal Usage #
@@ -88,6 +87,101 @@ who need to control Macs below the UI level, which require
 typing commands into a command-line terminal screen.
 
 1. To avoid text wrapping, pull the right edge to expand the screen width.
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=TJzltwv7jJs&list=PLlcnQQJK8SUjfkCph45fz6rC0de60LVZR&index=5">VIDEO</a>: Diving right into the deep end ...  
+
+   ### Foreground processes
+
+4. List the first process (with Parent process ID of 0) launched (into user space) at boot by the system kernel:
+
+   <pre><strong>ps -f 1</strong></pre>
+
+   <tt>f</tt> adds columns for status of the command (CMD) to invoke the process:
+
+   <pre>UID   PID  PPID   C STIME   TTY           TIME CMD
+    0     1     0   0  5:17PM ??         4:38.73 /sbin/launchd
+   </pre>
+
+   By contrast, on Linux system, the first CMD is <tt>/lib/systemd/systemd</tt>.
+
+   To list all processes, don't provide the PID 1.
+
+3. To emulate a long-running process in the foreground:
+
+   <pre><strong>sleep 360
+   </strong></pre>
+
+   No additional commands can be accepted.
+
+4. To kill the current process, press <strong>control + C</strong>.
+
+   ### background jobs
+
+2. Run a program in the background with the <tt>&</tt>:
+
+   <pre><strong>sleep 360 &
+   </strong></pre>
+
+3. List jobs (processes) running in the background:
+
+   <pre><strong>jobs
+   </strong></pre>
+
+   ### Suspend control+Z
+
+3. Do it again:
+
+   <pre><strong>sleep 360
+   </strong></pre>
+
+
+
+
+6. To <strong>suspend</strong> the process, press <strong>control + Z</strong>. The response is like:
+
+   <pre>[1]+  Stopped     sleep 360</pre>
+
+   <tt>[1]</tt> shows the PID.
+
+   Internally, this sends a "20) SIGTSTP" signal to the process.
+
+7. To have the process continue (internally sending a "18) SIGCONT":
+
+   <pre><strong>bg</strong></pre>
+
+1. List processes
+
+   <pre><strong>ps f
+   </strong></pre>
+
+1. Copy the PID (Process Identifier) number for use in the kill command, such as:
+
+
+
+
+1. There are many ways to kill a process:
+
+   <pre><strong>kill -l
+   </strong></pre>
+
+1. To kill a specific process, ee need to specify its PID (Process Identifier):
+
+   <pre><strong>sudo kill 289
+   </strong></pre>
+
+   Some applications are written to receive a sigterm so that it can take steps to gracefully cleanup and exit.
+
+   The key ones, in order of aggressiveness:
+
+   <tt>kill     289<tt> # sends sigterm<br />
+   <tt>kill -15 289<tt> # sends sigterm<br />
+   <tt>kill -2  289<tt> # sends sigint<br />
+   <tt>kill -1  289<tt> # sends sighup<br />
+   <tt>kill -9  289<tt> # sends sigkill signal to the kernel without notifying the app, a "dirty shutdown" used when the app is misbehaving.<br />
+
+ 
+
+   ### List open files
 
 2. To list process id's and port (such as 8080), use the "list open files" command:
 
@@ -106,11 +200,15 @@ typing commands into a command-line terminal screen.
    The right-most column heading &quot;NAME&quot; shows the port
    (either TCP or UDP).
 
-1. The second column, PID, lists the process identifier. 
-   Copy a PID number for use in the kill command, such as:
 
-   <pre><strong>sudo kill 289
-   </strong></pre>
+## Shutdown
+
+To kill all apps and shutdown a Mac right away (with no warning and no dialog):
+
+   <tt><strong>sudo shutdown -h now
+   </strong></tt>
+
+
 
 
 <a id="DevFolderz"></a>
@@ -132,6 +230,7 @@ typing commands into a command-line terminal screen.
    <li><strong>Users</strong> hold data for each user defined,
    as well as a Shared folder accessible by all users.</li>
    </ul>
+   <br /><br />
 
 1. Click on your username (wilsonmar in my case).
 
@@ -147,15 +246,18 @@ typing commands into a command-line terminal screen.
 
 ## Text Command Line Bash Shortcuts #
 
-These come from the bash terminal on Linux machines:
+These come from the bash terminal on Linux machines<a target="_blank" href="https://linuxacademy.com/blog/linux/ten-things-i-wish-i-knew-earlier-about-the-linux-command-line-2/">*here*</a>
 
 <ul>
 <li> control + ` = cycle through session windows</li>
 <li> control + left = previous session</li>
 <li> control + right = previous session</li>
 <p></p>
+<li> control + P = Previous line<br /></li>
+<li> control + N = Next line </li>
+<p></p>
+<li> <strong>control + A = Go to Beginning of line (as in A to Z)</strong></li>
 <li> control + E = Go to End of line<br /></li>
-<li> control + A = Go to Beginning of line (as in A to Z)</li>
 <p></p>
 <li> control + F = Forward cursor</li>
 <li> control + B = Backward<br /></li>
@@ -163,20 +265,14 @@ These come from the bash terminal on Linux machines:
 <li> control + H = Backspace left of cursor</li>
 <li> control + D = Delete right of cursor<br /></li>
 <p></p>
-<li> <strong>control + U = Clean entire line</strong><br /></li>
+<li> <strong>control + U = "U get out of here" - Clear entire line</strong><br /></li>
 <li> control + K = Kill line from under the cursor to the end of the line.</li>
 <li> control + Y = Retrieve line<br /></li>
 <p></p>
-<li> control + P = Previous line<br /></li>
-<li> control + N = Next line </li>
-<p></p>
-<li> control + R = Record a shortcut between quotes<br /></li>
-<p></p>
 <li> control + X + E = Open a <a target="_blank" href="https://wilsonmar.github.io/text-editors">text editor (TextMate)</a><br /></li>
+<p></p>
+<li> control + R = Record a shortcut between quotes</li>
 </ul>
-
-From <a target="_blank" href="https://linuxacademy.com/blog/linux/ten-things-i-wish-i-knew-earlier-about-the-linux-command-line-2/">here</a>
-
 
 ## Command history
 
@@ -199,7 +295,7 @@ From <a target="_blank" href="https://linuxacademy.com/blog/linux/ten-things-i-w
 1. Clear history:
 
    <pre><strong>history -c
-   <strong></pre>
+   </strong></pre>
 
    The clear command does not clear history.
 
@@ -420,9 +516,7 @@ Most developers leave files un-hidden.
 
 OSX does not come with the tree command that many other Linux distributions provide. So add it using:
 
-   ### Tree alias
-
-   Alias for the tree command by adding this in the ~/.bash_profile script:
+If you don't want to install a program, add an alias for a tree command by adding this in the <tt>~/.bash_profile</tt> script:
 
    <pre>
    alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
@@ -433,7 +527,8 @@ OSX does not come with the tree command that many other Linux distributions prov
    <pre><strong>brew install tree
    </strong></pre>
 
-   Active Terminal sessions need to be closed so new Terminal | Shell | New Window | Shell has this activated.
+   Active Terminal sessions need to be closed so new 
+   <tt>Terminal | Shell | New Window | Shell</tt> has this activated.
 
    See list of parameters:
 
@@ -471,6 +566,17 @@ stuff happens. It can be annoying.
 0. Press Esc to bring the screen back.
 
    PROTIP: NOT having a quick way to "Put display to sleep" is considered a security vulnerability by CIS. The lower-left corner is less popular location on Mac than Windows.
+
+
+## /etc
+
+<a target="_blank" href="https://www.youtube.com/watch?v=UFIoRLqhFpo&t=3m58s">VIDEO</a>:
+On both Mac and Linux, the "et-see" folder contains system and program configuration files,
+for both default system and programs you install (such as "teamviewer", etc.)
+
+<tt>/bin</tt> contains system 
+
+<tt>/sbin</tt> are for system administrators such as ping, fdisk, mount, umount, etc.
 
 
 <a name="Cat"></a>
@@ -1272,14 +1378,6 @@ Apple Certified Support Professional (ACSP)
 ## Daemons and Agents #
 
 * https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html
-
-
-## Shutdown
-
-To kill all apps and shutdown a Mac right wasy (with no warning and no dialog):
-
-   <tt><strong>sudo shutdown -h now
-   </strong></tt>
 
 
 ## Resources:
