@@ -3,7 +3,8 @@ layout: post
 title: "Spring Petclinic"
 excerpt: "Sample Java Spring app for your abuse and amusement"
 tags: [Clouds, IoT]
-shorturl: "https://goo.gl/"
+date: "2016-12-06"
+file: "spring-petclinic"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -12,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This page describes the various ways to 
@@ -23,44 +24,6 @@ SpringSource (now a division of VMWare)
 to explore the operation of utilities such as Jenkins and JVM tools.
 
 See [my tutorial on Spring server suite](/spring-servers/)
-
-
-## Different versions
-
-The canonical, most up-to-date version of the app is at<br />
-<a target="_blank" href="https://github.com/spring-projects/spring-petclinic">
-https://github.com/spring-projects/spring-petclinic</a>
-
-Its main contributor is  <a target="_blank" href="http://javaetmoi.com/">
-paresian</a>  <a target="_blank" href="https://github.com/arey">
-Antoine Rey (arey)</a> of
-<a target="_blank" href="https://javaetmoi.com/">
-javaetmoi.com</a>.
-
-0. Get it working:
-
-   <pre><strong>git clone https://github.com/spring-projects/spring-petclinic.git --depth=1
-   cd spring-petclinic
-   ./mvnw spring-boot:run -e
-   </strong></pre>
-
-   BLAH: When I ran it on 2017-07-28 I got:
-
-   <pre>
-[ERROR] Failed to execute goal pl.project13.maven:git-commit-id-plugin:2.2.2:revision (default) on project spring-petclinic: Could not complete Mojo execution... Unable to find commits until some tag: Walk failure. Missing commit ffa967c94b65a70ea6d3b44275632821838d9fd3 -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
-   </pre>
-
-
-
-   Alternately, there are forks at<br /><a target="_blank" href="https://github.com/spring-petclinic"> 
-   https://github.com/spring-petclinic</a> using Angular and<br />
-   https://github.com/spring-petclinic/spring-petclinic-microservices
 
    In the introduction of Spring PetClinic Spring Framework 2.5 at<br />
    <a target="_blank" href="http://docs.spring.io/docs/petclinic.html">
@@ -77,6 +40,38 @@ javaetmoi.com</a>.
    <a target="_blank" href="http://spring-petclinic.cloudfoundry.com/">
    http://spring-petclinic.cloudfoundry.com</a>
    which is no longer active.
+
+
+## Different versions
+
+The canonical, most up-to-date version of the app is at<br />
+<a target="_blank" href="https://github.com/spring-projects/spring-petclinic">
+https://github.com/spring-projects/spring-petclinic</a>
+
+Its main contributor is  <a target="_blank" href="http://javaetmoi.com/">
+paresian</a>  <a target="_blank" href="https://github.com/arey">
+Antoine Rey (arey)</a> of
+<a target="_blank" href="https://javaetmoi.com/">
+javaetmoi.com</a>.
+
+   Alternately, there are forks at<br /><a target="_blank" href="https://github.com/spring-petclinic"> 
+   https://github.com/spring-petclinic</a> using Angular and<br />
+   https://github.com/spring-petclinic/spring-petclinic-microservices
+
+0. Get it downloaded and installed:
+
+   <pre><strong>git clone https://github.com/spring-projects/spring-petclinic.git
+   cd spring-petclinic
+   ./mvnw spring-boot:run -e
+   </strong></pre>
+
+   <tt>\-\-depth=1</tt> cannot be specified with git clone because different branches are used.
+
+   A whole lot of message should flow by until these last messages:
+
+   <pre>
+
+   </pre>
 
    PROTIP: The version of the app you use should be of a static instance
    (in a your own fork) so that you have a consistent version to work and debug.
@@ -109,8 +104,8 @@ javaetmoi.com</a>.
 * Memory Allocation
 * Garbage Collection - time spent in GC
 
-Online Solution
-http://demo.kieker-monitoring.net/
+Online Solution:
+<a target="_blank" href="http://demo.kieker-monitoring.net/">http://demo.kieker-monitoring.net</a>
 
 
 <a name="AllFunctionality"></a>
