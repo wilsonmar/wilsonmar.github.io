@@ -67,25 +67,68 @@ javaetmoi.com</a>.
 
    <tt>\-\-depth=1</tt> cannot be specified with git clone because different branches are used.
 
-   A whole lot of message should flow by until these last messages:
+   A whole lot of message should flow by until the last message like this:
 
    <pre>
-
+              |\      _,,,--,,_
+             /,`.-'`'   ._  \-;;,_
+  _______ __|,4-  ) )_   .;.(__`'-'__     ___ __    _ ___ _______
+ |       | '---''(_/._)-'(_\_)   |   |   |   |  |  | |   |       |
+ |    _  |    ___|_     _|       |   |   |   |   |_| |   |       | __ _ _
+ |   |_| |   |___  |   | |       |   |   |   |       |   |       | \ \ \ \
+ |    ___|    ___| |   | |      _|   |___|   |  _    |   |      _|  \ \ \ \
+ |   |   |   |___  |   | |     |_|       |   | | |   |   |     |_    ) ) ) )
+ |___|   |_______| |___| |_______|_______|___|_|  |__|___|_______|  / / / /
+ ==================================================================/_/_/_/
+&nbsp;
+:: Built with Spring Boot :: 2.1.6.RELEASE
+&nbsp;
+INFO 16859 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+INFO 16859 --- [  restartedMain] o.s.s.petclinic.PetClinicApplication     : Started PetClinicApplication in 7.809 seconds (JVM running for 8.257)
    </pre>
+
+   <a name="Landing"></a>
+
+0. Switch to a Chrome browser to see the <strong>"Landing"</strong> page:
+
+   <pre><strong>http://localhost:8080
+   </strong></pre>
+
+   ![spring-jpetstore-776x482-11626](https://user-images.githubusercontent.com/300046/62746349-42869180-ba0c-11e9-95f8-e9a2c16002c7.jpg)
+
+   A version previous to 2.1.6.RELEASE looked like this:
+
+   ![jpetclinic-landing-591x361](https://user-images.githubusercontent.com/300046/28250757-942b405a-6a3e-11e7-89f0-2b8fd8e7fa6a.png)
+
+   "Home" highlighted among tabs means this page is also reached by clicking "Home".
+
+   The PetClinic app is for a group of known vets who take care of 
+   pets owned by owners.
 
    PROTIP: The version of the app you use should be of a static instance
    (in a your own fork) so that you have a consistent version to work and debug.
 
-   * <a target="_blank" href="https://github.com/jdubois/spring-petclinic/commit/69e55e406db37a386ff8348a5a84343801169f85">
-   JMeter test file</a>
+   <a target="_blank" href="https://github.com/jdubois/spring-petclinic/commit/69e55e406db37a386ff8348a5a84343801169f85">
+   JMeter test file</a>?
 
+1. Click "Error".
 
-### Start app
+   <pre>
+ [] threw exception [Request processing failed; nested exception is java.lang.RuntimeException: Expected: controller used to showcase what happens when an exception is thrown] with root cause
+&nbsp;
+java.lang.RuntimeException: Expected: controller used to showcase what happens when an exception is thrown
+	at org.springframework.samples.petclinic.system.CrashController.triggerException(CrashController.java:33) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_162]
+   </pre>
 
-   <pre><strong>mvn clean tomcat7;run
+1. Stop the app by pressing control+C.
+
+<!--   
+   ### Start app again
+
+   <pre><strong>mvn clean tomcat9;run
    </strong></pre>
-
-
+-->
 
 <a name="Monitoring"></a>
 
@@ -144,20 +187,6 @@ Keywords in quotes define the various run types.
 | <a href="#All">All</a> | - |
 
 <hr />
-
-
-   <a name="Landing"></a>
-
-1. <strong>"Landing"</strong> lands on the URL of the site.
-
-   <pre><a target="_blank" href="http://127.0.0.1/petclinic">http://127.0.0.1/petclinic</a></pre>
-
-   This page is also reached by clicking "Home".
-
-   ![jpetclinic-landing-591x361](https://user-images.githubusercontent.com/300046/28250757-942b405a-6a3e-11e7-89f0-2b8fd8e7fa6a.png)
-
-   The PetClinic app is for a group of known vets who take care of 
-   pets owned by owners.
 
 
    ### Network viability
