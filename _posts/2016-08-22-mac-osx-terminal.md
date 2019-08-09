@@ -96,13 +96,24 @@ typing commands into a command-line terminal screen.
 
    To list all processes, don't provide the PID 1.
 
-   ### pidof instead of ps
 
-1. Linux has a command which returns the PID associated with a process name.
-   But it's not avaiable on macOS, so <a target="_blank" href="http://macappstore.org/pidof/">install it using Homebrew</a>:
+   ### PID given process name
+
+1. To list the process ID given a process name such as "firefox":
+
+   <pre><strong>ps -A | grep -m1 firefox | awk '{print $1}'</strong></pre>
+
+   This can be <a target="_blank" href="https://hints.macworld.com/article.php?story=20030618114543169">generalized</a> in a shell program containing:
+
+   <pre>#!/bin/sh
+ps axc|awk "{if (\$5==\"$1\") print \$1}";
+   </pre>
+
+   Alternately, Linux has a command which returns the PID associated with a process name. But it's not avaiable on macOS, so:
+
+1. <a target="_blank" href="http://macappstore.org/pidof/">install it using Homebrew</a>:
 
    <pre><strong>brew install pidof</strong></pre>
-
 
 3. To emulate a long-running process in the foreground:
 

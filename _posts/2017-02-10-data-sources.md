@@ -3,6 +3,8 @@ layout: post
 title: "Data Sources"
 excerpt: "Jump in and drown in all the data"
 tags: [Python, Machine Learning]
+date: "2017-02-10"
+file: "data-sources"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -11,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 Here is a list of data avaiable.
@@ -25,6 +27,8 @@ I'd like to see how different people work on the same set of data:
 
 
 ## Images
+
+unsplash.com
 
 ### Microsoft's COCO 
 

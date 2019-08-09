@@ -2,13 +2,16 @@
 layout: post
 title: "Microsoft Data Science"
 excerpt: "Here's how to earn a legitimate micro-degree"
-tags: [perftest]
-shorturl: "https://goo.gl/4sjZh4"
+tags: [ai]
+image:
+# feature: pic green matrix hallway 1900x500.jpg
+  feature: https://cloud.githubusercontent.com/assets/300046/14623876/07afd066-0593-11e6-933a-2e596511ac67.jpg
+  credit: 
+  creditlink: 
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This page contains my notes about both the <strong>Microsoft Professional Program</strong> (MPP) for <strong>Data Science</strong> track and <strong>Artificial Intelligence</strong> track.
@@ -239,3 +242,8 @@ PROTIP: I constructed the spreadsheet during the course such that I can re-use i
 for analyzing other data than the "lemonade stand" data used in the class
 
 
+## More
+
+This is one of a series on AI, Machine Learning, Deep Learning, Robotics, and Analytics:
+
+{% include ai_links.html %}

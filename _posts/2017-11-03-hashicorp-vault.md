@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Hashicorp Vault and Consul"
-excerpt: "How to keep secrets on servers secret."
+title: "Hashicorp Vault (with Consul and Nomad)"
+excerpt: "How to keep secrets secret, but still shared."
 tags: [vault, hashicorp, security]
-filename: vault.md
+date: "2017-11-03"
+file: "hashicorp-vault"
 image:
 # pic secret finger over mouth 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15807549/645e9404-2b1e-11e6-8e19-2368c5578015.jpg
@@ -12,13 +13,16 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
-Here is a hands-on tutorial on how to install and use Hashicorp <strong>Vault</strong> to securely access secret keys and Hashicorp <strong>Consul</strong> to store key/value pairs. Installation is from scrath on a cloud environment using Docker. Use of Jenkins is also covered.
+Here is a hands-on tutorial with automation about how to install and use Hashicorp <strong>Vault</strong> to securely access secret keys and Hashicorp <strong>Consul</strong> to store key/value pairs. Installation is from scratch on a cloud environment using Docker and docker-compose.
 
+The unique contribution of this article is an attempt to provide a deep yet concise approach, done by using automation which are then explained.
 This course assumes participants bring a Mac or Windows laptop and have prior experience with Linux CLI commands.
+
+PROTIP: Where we want to end up is having the system handle secrets.
+For example, on my desktop I have 1Password, which can I either click "fill" or copy and paste a password without knowing what it is. Great to have when I'm sharing my screen.
 
 At the end of this tutorial, you should be able to:
 
@@ -26,23 +30,25 @@ At the end of this tutorial, you should be able to:
 * <a href="#Config">Initialize and Configure Vault</a>
 * <a href="#SecretsCLI">Store and access secrets in Vault from a CLI</a>
 * <a href="#AppProgramming">Store and access secrets in Vault within a program</a>
-* Jenkins
+* Hashicorp Nomad passes secrets as files. It polls for changed values.
+	Tasks get tokens so they can retrieve values.
 
-## What is it?
+## What are secrets?
 
-A secret is anything that you want to tightly control access to, such as API keys, passwords, certificates, and more. Vault provides a unified interface to any secret, while providing tight access control and recording a detailed audit log.
+A secret is anything that you want to tightly control access to, such as API keys, passwords, certificates, and more. 
 
-Among devops tools from HashiCorp is <br />
+Vault from Hashicorp provides a unified interface to secrets while providing tight access control plus recording a detailed audit log.
+
+Vault is open-sourced at ? with a marketing home page at
 <a target="_blank" href="https://vaultproject.io/">
-https://vaultproject.io</a>, 
-an open source tool that can be deployed to any environment, and does not require any special hardware. 
+https://vaultproject.io</a>.
+It can be deployed to practically any environment, and does not require any special hardware (such as physical HSMs (Hardware Security Modules).
 
 <a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM">
-Introduction to HashiCorp Vault</a> Mar 23, 2018
+VIDEO: Introduction to HashiCorp Vault</a> Mar 23, 2018
 by Armon Dadgar, Hashicorp's CTO,
 is a whiteboard talk about avoiding "secret sprawl" living in clear text with
-empheral (temporary) passwords and cryptographic offload to a central service.
-
+empheral (temporary) passwords and cryptographic offload to a central service:
 <a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM"><img alt="hashicorp-vault-dadgar-927x522-94211" src="https://user-images.githubusercontent.com/300046/38281567-67193598-3768-11e8-9061-ebc6abbeb1e9.jpg"></a>
 
 
@@ -50,9 +56,53 @@ empheral (temporary) passwords and cryptographic offload to a central service.
 
 Alternatives to secret management include:
 
-* variables in a clear-text file loaded into <strong>operating system variables</strong>.
-* physical HSMs (Hardware Security Modules)
-* cloud-base KMS (Key Management Service) such as from Amazon
+* variables in a clear-text file loaded into <strong>operating system variables</strong>, such as:
+
+   <pre>docker run -e VARNAME=mysecret ...</pre>
+
+   This is not cool because the value of variables (secrets) can end up in logs.
+  
+   And this mechanism makes periodic key rotation manually cumbersome.
+
+* Docker Secrets is only for licensed (paid) Docker Swarm services, not for unlicensed (free) standalone containers. It passes secrets within encrypted file contents in its "Raft" logging mechanism shared with Swarm managers. So encryption needs to be locked in Swarm.
+
+   Key rotation requires container restart.
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=j3QJRdiTr1I&t=19m25s">Kubernetes secrets</a> are stored in its etcd process.
+
+   <pre>--experimental-encryption-provider-config</pre>
+
+   <a target="_blank" href="https://github.com/Boostport/kubernetes-vault">https://github.com/Boostport/kubernetes-vault</a>
+
+* Cloud-base KMS (Key Management Service) such as from Amazon
+
+* The Aqua utility provides secrets management to orchestrators so that:
+
+   <pre>docker run -it --rm -e SECRET={dev-vault.secret/password} \
+   --name ubuntu ubuntu /bin/bash</pre>
+
+   <pre>docker inspect ubuntu -f "{{json .Config.Env}}"</pre>
+   returns:
+
+   <pre>["SECRET={dev.vault-secret/password}","PATH=/usr/local/sbin:..."]</pre>
+
+
+## Requirements for secret keeping
+
+Coverage of what features a secrets service should have:
+
+* RBAC (Role-based Access Control) so each user has only the rights for his/her specific role. This has to be enabled in Kubernetes:
+
+   <pre>--authorization-mode=RBAC</pre>
+
+* Limit access to designated containers
+
+* Encrypted transmission with Mutual authentication (MTLS)
+* Audit logging
+
+* Change value of an existing secret (key rotation) without rebooting.
+   This is the strong point with Vault.
+
 
 ## Advantages
 

@@ -3,6 +3,8 @@ layout: post
 title: "Azure Machine Learning certification"
 excerpt: "Exams 70-773 and 70-774 toward an MCSA"
 tags: [microsoft, Azure, machine learning, AI, cloud, certification]
+date: "2018-05-12"
+file: "azure-ml-cert"
 image:
 # feature: pic green matrix hallway 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14623876/07afd066-0593-11e6-933a-2e596511ac67.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 Here are links to materials I've come across for learning enough to pass Microsoft's 

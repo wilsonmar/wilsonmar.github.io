@@ -12,17 +12,7 @@ image: # pic-black-bkg-white-cloud_1920x1200
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<p align="right">
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
-</p>
+{% include l18n.html %}
 {% include _toc.html %}
 
 
@@ -198,9 +188,15 @@ Google has laid its own fiber-optic wires around the world:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/62699138-1af7e080-b99c-11e9-859f-f3d4a4c88105.png"><img alt="google-cables-1533x861.png" width="1533" src="https://user-images.githubusercontent.com/300046/62699138-1af7e080-b99c-11e9-859f-f3d4a4c88105.png"></a>
 
-PROTIP: If you only operate out of just one region, use a <strong>Central US</strong> region, which reaches West to Asia and East to Europe. 
+As of this writing, latency between the EU and Asia locations is very high because Google Compute Engine does not have a direct link between them.
+
+PROTIP: If you only operate out of just one region in the world, use a <strong>Central US</strong> region, which reaches West to Asia and East to Europe. 
 
 ## Network speed
+
+Under ideal conditions, latency over networks are limited by speed of light traveling within fiber-optic cables, which is roughly 202562 km/s or or 125866 miles/s. (Actual reachable speed is still a bit lower than that).
+
+To estimate distance between terrestial locations, use <a target="_blank" href="https://www.daftlogic.com/projects-google-maps-distance-calculator.htm">Distance Calculator website</a>
 
 To compare network speeds:
 
@@ -216,9 +212,13 @@ To compare network speeds:
 
    ![cloud-service-azure-checks-603x261-56530](https://user-images.githubusercontent.com/300046/40890517-a7bc4b02-6734-11e8-9c1f-88e6a686de0d.jpg)
 
-* <a target="_blank" href="http://www.gcping.com/">http://www.gcping.com</a> measures current ping speed to various regions on Google's cloud. To stop collection, press the dot with the arrow.
+* <a target="_blank" href="http://www.gcping.com/">http://www.gcping.com</a> measures current ping speed to <a target="_blank" href="https://cloud.google.com/compute/docs/regions-zones/#available">regions on Google's cloud</a>. 
 
    ![cloud-services-gcping-507x224-14208](https://user-images.githubusercontent.com/300046/40890488-10f2b1de-6734-11e8-8aea-6ebfb3edfa3c.jpg)
+
+   To stop collection, press the dot with the arrow.
+
+   Qwiklabs <a target="_blank" href="https://www.qwiklabs.com/focuses/1282">Network Performance Testing</a> provides step-by-step instructions for obtaining timings between regions. It sets up one network with five subnetworks in different regions and five VMs in those subnetworks. Utilities ping, <a target="_blank" href="hhttps://en.wikipedia.org/wiki/Iperf">iperf</a>, or mtr (Matt's traceroute) can be used.
 
 
 ## Outage tracking #

@@ -13,6 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
+{% include l18n.html %}
 {% include _toc.html %}
 
 The object of this tutorial is to succintly present 
