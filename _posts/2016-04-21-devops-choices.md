@@ -15,7 +15,7 @@ comments: true
 
 {% include _toc.html %}
 
-This page is one of a [series on DevOps](/devops-series.md).
+This page is one of a [series on DevOps](/devops-series/).
 
 There are many choices of specific technologies within
 each category:

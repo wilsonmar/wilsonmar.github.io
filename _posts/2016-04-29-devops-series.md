@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "About DevOps"
-excerpt: "You gotta do it."
+excerpt: "You gotta do it for competitive speed"
 tags: [devops]
 date: "2016-04-29"
 file: "devops-series"
@@ -26,11 +26,6 @@ This page is about the series on DevOps.
 Rather than repeating others, let me link to the most influencial pieces about DevOps:
 
 * <a target="_blank" href="http://continuousdelivery.com/">http://continuousdelivery.com</a>
-
 * <a target="_blank" href="https://12factorapp.net">12factorapp.net</a>
-
 * <a target="_blank" href="http://www.clearlytech.com/2014/01/04/12-factor-apps-plain-english/">12 Factor App in plain english</a>
-
 * Gene Kim
-
-## Categories of choice

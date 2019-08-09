@@ -13,7 +13,6 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-{% include l18n.html %}
 {% include _toc.html %}
 
 The object of this tutorial is to succintly present 
@@ -2542,6 +2541,8 @@ bash: print: command not found
 
 See https://docs.docker.com/compose/install/.
 
+<a target="_blank" href="https://docs.docker.com/compose/compose-file/#secrets">
+Compose file version 3 reference</a> lists the correspondance between Compose file format and Docker Engine release.
 
 1. Describe you stack in a <strong>docker-compose.yml</strong>.
    Example:
@@ -2622,14 +2623,19 @@ Commands:
   version            Show the Docker-Compose version information
      </pre>
 
+   <a target="_blank" href="https://docs.docker.com/compose/reference/">https://docs.docker.com/compose/reference</a> provides more detail.
 
 1. Docker compose creates multiple containers with a single command:
 
-   <tt><strong>docker-compose up \-\-x-smart-recreate
-   </strong></tt>
+   <pre><strong>docker-compose up --x-smart-recreate
+   </strong></pre>
 
    The above command refers to Dockerfile and compose.yml files.
 
+   To start containers in the background and leaves them running:
+   <pre>docker-compose up -d</pre> 
+   
+   The above aggregates the output of each container (essentially running docker-compose logs -f).
 
 ## Kubernetes
 
@@ -2768,134 +2774,6 @@ See <a target="_blank" href="http://autopilotpattern.io/">http://autopilotpatter
    `myContainer` is the Docker Container ID listed by `docker ps`
 
 <hr />
-
-## Resources
-
-### Articles
-
-http://jdlm.info/articles/2016/03/06/lessons-building-node-app-docker.html
-   March 6, 2016
-   by Dr John Lees-Miller (@jdleesmiller)
-
-http://jdlm.info/ds-docker-demo
-
-https://github.com/jdleesmiller/ds-docker-demo
-
-* <a target="_blank" href="https://jpetazzo.github.io/2014/06/23/docker-ssh-considered-evil/">
-   Docker is not designed for SSH</a>
-   to "get inside" a running image.
-   You don't need SSH to
-   restart the process, tweak configurations, debug with gdb, strace, etc.
-
-<a target="_blank" href="https://google-run.qwiklab.com/focuses/7010">
-Google's Intro to Docker Qwiklab</a>
-include 40 minutes of FREE cloud instance time after you click "Start Lab".
-And you get a certificate for your resume.
-
-
-### Pluralsight video courses #
-
-Pluralsight's
-<a target="_blank" href="https://app.pluralsight.com/paths/skills/docker">
-Container Management using Docker skill path</a> of 
-video tutorials by Nigel Poulton
-(<a target="_blank" href="https://www.twitter.com/NigelPoulton/">@NigelPoulton</a>)
-
-
-0. <a target="_blank" href="https://app.pluralsight.com/library/courses/docker-containers-big-picture/table-of-contents">
-   Docker and Containers: The Big Picture</a>
-   Dec 22, 2015 / 1h 47m
-
-0. <a target="_blank" href="https://app.pluralsight.com/library/courses/docker-deep-dive/table-of-contents">
-   Docker Deep Dive</a>
-   Jan 28, 2015 / 5h 38m 2s
-
-0. <a target="_blank" href="https://app.pluralsight.com/library/courses/docker-swarm-native-docker-clustering/table-of-contents">
-   Docker Swarm: Native Docker Clustering</a>
-   Mar 30, 2016 / 2h 22m 28s
-
-0. <a target="_blank" href="https://app.pluralsight.com/library/courses/integrating-docker-with-devops-automated-workflows/table-of-contents">
-   Integrating Docker with DevOps Automated Workflows</a>
-   Sept 21, 2015 / 1h 1m 50s
-
-Dan Wahlin
-
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/docker-web-development/table-of-contents">
-   Docker for Web Developers</a>
-   28 Mar 2016 / 5h 19m
-   
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/play-by-play-docker-web-developers-john-papa-dan-wahlin/table-of-contents">
-   Play by Play: Docker for Web Developers</a>
-   (conversation between) John Papa and 
-   Dan Wahlin (talking about Docker Toolbox)
-   12 Jul 2016 / 1h 34m
-
-
-### YouTube videos #
-
-0. <a target="_blank" href="https://www.youtube.com/watch?v=vQSpztWcGmw">
-   Continuous Delivery with Jenkins Workflow and Docker Explained</a>
-   by Cloudbees at DevOpsTV channel
-
-0. <a target="_blank" href="https://www.youtube.com/watch?v=is1o0Ol8LMc">
-   Continuous Integration Using Docker</a>
-   by DevOpsTV
-
-0. <a target="_blank" href="https://www.youtube.com/watch?v=B6UvIL2WyTg">
-   Moving from Jenkins to Docker for build pipelines from Matt Bostock</a>
-
-0. <a target="_blank" href="https://www.youtube.com/watch?v=uLp9_MMnkUo">
-   Continuous Delivery Pipeline with Docker and Jenkins</a>
-   Javaforum Göteborg
-
-0. <a target="_blank" href="https://www.youtube.com/watch?v=Q5POuMHxW-0">
-   Introduction to Docker</a>
-   by Twitter University
-   47:14
-
-0. <a target="_blank" href="https://www.youtube.com/watch?v=dCsGzEGW2BY">
-   Jenkins 2 and Beyond</a>
-   DevOpsTV
-
-0. <a target="_blank" href="https://www.youtube.com/watch?v=M-rxJBdYIrw">
-   Jenkins 2.0. What? When? What is in it for me?</a>
-   on Praqma Channel
-
-0. <a target="_blank" href="https://www.digitalocean.com/community/tutorials/">
-   how-to-provision-and-manage-remote-docker-hosts-with-docker-machine-on-centos-7</a>
-
-0. <a target="_blank" href="http://blog.serverbooter.com/blog/2014/03/07/docker-first-impressions/">
-   Docker First Impressions on Ubuntu</a>
-
-## Notes
-
-Moby Project includes all of Docker’s open-source efforts under one umbrella project.
-
-https://github.com/StefanScherer/windows-docker-machine
- Erlangen, Germany 
-scherer_stefan@icloud.com 
-https://stefanscherer.github.io/
-
-https://github.com/StefanScherer/packer-windows
-
-https://github.com/StefanScherer/dockerfiles-windows
-You can do this on Windows as well today with the Windows 10 1607 or Windows Server 2016 using Windows Containers.
-
-
-<a target="_blank" href="https://semaphoreci.com/blog/2016/12/13/lightweight-docker-images-in-5-steps.html">
-Lightweight Docker Images in 5 Steps</a> · 13 Dec 2016 · Semaphore Engineering Blog
-by Igor Šarčević
-
-
-## Docker support websites
-
-* <a target="_blank" href="https://forums.docker.com">https://forums.docker.com</a>
-   
-* Register at <a target="_blank" href="http://dockr.ly/community">http://dockr.ly/community</a> for the <a target="_blank" href="https://community.docker.com/registrations/groups/4316
-">Docker community" Slack channel</a> at https://blog.docker.com/2016/11/introducing-docker-community-directory-docker-community-slack/
-
-* <a target="_blank" href="https://stackoverflow.com/questions/tagged/docker">https://stackoverflow.com/questions/tagged/docker</a>
-
 
 ## More on DevOps #
 
