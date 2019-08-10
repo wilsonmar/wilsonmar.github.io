@@ -3,16 +3,20 @@ layout: page
 title: Please send me an appointment
 tags: [calendar, contact, Jekyll]
 comments: true
+date: "2019-08-03"
+file: "calendar"
 image:
 # pic white calendar 1900x500-c28.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/16904663/5adbca78-4c57-11e6-9fa7-973731b8927a.jpg
   credit:
   creditlink:
 ---
+<i>{{ page.excerpt }}</i>
+{% include l18n.html %}
 {% include _toc.html %}
 
-Pick a time from my <a target="_blank" href="https://www.google.com/calendar/embed?src=wilsonmar%40gmail.com">
-<strong>public Google calendar</strong> at<br />
+Pick a time from <a target="_blank" href="https://calendly.com/wilsonmar">https://calendly.com/wilsonmar</a> or <a target="_blank" href="https://www.google.com/calendar/embed?src=wilsonmar%40gmail.com">
+<strong>my public Google calendar</strong> at<br />
 <a target="_blank" href="https://www.google.com/calendar/embed?src=wilsonmar%40gmail.com">
 https://www.google.com/calendar/embed?src=wilsonmar%40gmail.com</a>
 
@@ -32,26 +36,8 @@ NOTE: In this calendar I keep only the times I cannot move.
 I have a separate calendar I use to plan my day.
 
 
-## Events #
-
-Next May, I'll be in Orlando, Florida for 
-<strong><a target="_blank" href="https://stareast.techwell.com/">
-StarEast</a></strong>. It's one of a <a target="_blank" href="https://www.techwell.com/software-conferences/star-software-testing-conferences">
-series</a>.
-
-   * <strong><a target="_blank" href="https://starwest.techwell.com/program/tutorial/how-testers-master-git-and-github/">
-   Git and GitHub full-day Tuesday</a></strong>.
-   You'll leave with a new free blog website!
-
-   * <strong><a target="_blank" href="https://starwest.techwell.com/program/preconference-training/mastering-hp-loadrunner-performance-testing-starwest-2016">
-   Performance Testing 2-days Sunday & Monday</a></strong>.
-
-<a target="_blank" href="https://blog.hubspot.com/marketing/google-calendar-invites-in-email-marketing">
-NOTE</a>: "Add this to your Google Calendar" links are constructed manually:
-   ![calendar-url-709x85](https://user-images.githubusercontent.com/300046/29994825-65e696ea-8f96-11e7-8620-226fe9b8f45c.jpg)
-
-
 ## Update Jekyll Theme with Calendar
+
 The author pane at the left of this theme was updated to add Calendar under the email link.
 
 0. First, I searched for the Calendar icon in FontAwesome (it's "fa-calendar" at http://fontawesome.io/icon/calendar/).
@@ -125,6 +111,8 @@ book Daily Rituals</a> by Mason Currey:
 
 <a target="_blank" href="https://podio.com/site/creative-routines">
 <img alt="fig rainbow creative_routines partial" src="https://cloud.githubusercontent.com/assets/300046/14229206/bd6c04d4-f8ea-11e5-900a-b2cde317237b.jpg" width="465" height="201"></a><!-- full 976x532 -->
+
+Benjamin Franklin is credited with the quote "Early to bed and early to rise makes a man healthy, wealthy, and wise." But him getting up at 5am is actually later than others.<a target="_blank" href="https://www.entrepreneur.com/article/289823">*</a>
 
 Which circadian (daily) pattern do you prefer?
 
