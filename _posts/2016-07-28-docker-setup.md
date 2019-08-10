@@ -1334,27 +1334,6 @@ MacOS with Docker Toolbox:
    </strong></tt>
 
 
-
-<a name="DockerUCP"></a>
-
-## Docker UCP (Universal Control Plane) #
-
-   UCP enables you to control Docker environments through a 
-   <strong>web interface</strong>.
-
-   It's part of Docker's Enterprise offering.
-
-   Docker UCP is used to deploy to various cloud solutions, 
-   tie into your existing authentication infrastructure, 
-   and in turn control user access.
-
-   Dockur UCP also provides specialized monitoring.
-
-   See <a target="_blank" href="https://docs.docker.com/ucp/">
-   https://docs.docker.com/ucp</a>
-
-
-
 ## Run from Docker Hub
 
    PROTIP: Similar to Python, most people run commands within a Docker machine
@@ -1688,7 +1667,7 @@ See the Officially supported repositories at:<br />
    <br /><br />
 
 
-   ### Windows Insider Images
+### Windows Insider Images
 
    Before pulling Microsoft's images from https://hub.docker.com/u/microsoft/
    note they are designed to be used from "Windows Insider program" Windows Server or Windows 10 Container hosts.
@@ -1696,8 +1675,7 @@ See the Officially supported repositories at:<br />
 
    docker pull microsoft/windowsservercore-insider
 
-
-   ### Ubuntu search
+### Ubuntu search
 
 0. Search for Ubuntu images on the free and public repository at <br />
    <a target="_blank" href="https://hub.docker.com/">
@@ -1777,22 +1755,6 @@ smartentry/centos             CentOS with smartentry                          0 
 repositoryjp/centos           Docker Image for CentOS.                        0                    [OK]
    </pre>
 
-
-   ### Docker Trusted Registry
-
-   If you want security and have money for the license,
-   a more secure commercial (paid) repository is at<br /> 
-   <a target="_blank" href="https://www.docker.com/products/docker-trusted-registry">
-   https://www.docker.com/products/docker-trusted-registry</a>
-
-   A third alternative is<br >
-   <a target="_blank" href="https://docs.docker.com/registry">
-   https://docs.docker.com/registry</a>
-
-   Although we don't have a license, an example to pull down an image from it:
-
-   <tt><strong>docker pull my-registry.net:5000/activemq
-   </strong></tt>
 
 
    #### Quay.io private Dockerfiles

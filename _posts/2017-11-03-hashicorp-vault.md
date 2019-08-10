@@ -56,17 +56,41 @@ empheral (temporary) passwords and cryptographic offload to a central service:
 
 Alternatives to secret management include:
 
-* variables in a clear-text file loaded into <strong>operating system variables</strong>, such as:
+* Environment variables in a clear-text file loaded into <strong>operating system variables</strong>, such as:
 
    <pre>docker run -e VARNAME=mysecret ...</pre>
 
-   This is not cool because the value of variables (secrets) can end up in logs.
+   <a target="_blank" href="https://12factor.net/config">"The twelve-factor app stores config in environment variables"</a>. 
+
+   However, this is NOT cool because the value of variables (secrets) can end up in logs. All processes have access to secrets (no RBAC). 
   
-   And this mechanism makes periodic key rotation manually cumbersome.
+   And this mechanism makes <a target="_blank" href="https://wilsonmar.github.io/cyber-security/#credential-rotation-lifecycle">periodic key rotation</a> manually cumbersome.
 
-* Docker Secrets is only for licensed (paid) Docker Swarm services, not for unlicensed (free) standalone containers. It passes secrets within encrypted file contents in its "Raft" logging mechanism shared with Swarm managers. So encryption needs to be locked in Swarm.
+* <a target="_blank" href="https://docs.docker.com/engine/swarm/secrets/">Docker Secrets</a> was NOT designed for unlicensed (free) standalone containers<a target="_blank" href="https://medium.com/lucjuggery/from-env-variables-to-docker-secrets-bc8802cacdfd">*</a>, but for Enterprise licensed (paid) Docker Swarm services in commands such as:
 
-   Key rotation requires container restart.
+   <pre>docker service create --secret db_pass --name secret-test alpine bash</pre>
+
+   <tt>db_pass</tt> is a file (with .txt extension) encrypted by a command such as:
+
+   <pre>echo "mysecret" | docker secret create db_pass -
+   docker secret ls</pre>
+
+   Secrets are stored in Docker's logging infra within its <a target="_blank" href="https://medium.com/lucjuggery/raft-logs-on-swarm-mode-1351eff1e690">"Raft"</a> distributed leader consensus mechanism shared with Swarm managers. So encryption needs to be locked in Swarm. 
+
+   Secrets can be added to a running service, but key rotation requires container restart.
+
+   When the service is created (or updated), the secret is mounted onto the container in the <tt>/run/secrets</tt> directory which custom program can retrieve<a target="_blank" href="https://howchoo.com/g/zwzkzduwmjy/getting-started-with-docker-secrets">*</a>
+
+   <pre>
+def get_secret(secret_name):
+    try:
+        with open('/run/secrets/{0}'.format(secret_name), 'r') as secret_file:
+            return secret_file.read()
+    except IOError:
+        return None
+&nbsp;
+database_password = get_secret('db_pass')
+   </pre>
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=j3QJRdiTr1I&t=19m25s">Kubernetes secrets</a> are stored in its etcd process.
 
@@ -674,7 +698,6 @@ Use libraries for:
 * Node JavaScript
 
 
-
 ## References
 
 https://www.codementor.io/slavko/how-to-install-vault-hashicorp-secure-deployment-secrets-du107xlqd
@@ -689,8 +712,20 @@ by Tristan Colgate-McFarlane
 ![vault-qubit-895x759-56525](https://user-images.githubusercontent.com/300046/33553286-55801548-d8b5-11e7-878c-f085cc42532d.png)
 
 
-https://www.joyent.com/blog/secrets-management-in-the-autopilotpattern
+<a target="_blank" href="https://www.joyent.com/blog/secrets-management-in-the-autopilotpattern">https://www.joyent.com/blog/secrets-management-in-the-autopilotpattern</a>
 Vault provides encryption at rest for secrets, encrypted communication of those secrets to clients, and role-based access control and auditability for secrets. And it does so while allowing for high-availability configuration with a straightforward single-binary deployment. See the Vault documentation for details on their security and threat model.
 https://www.vaultproject.io/docs/internals/security.html
 
 Vault uses Shamir's Secret Sharing to control access to the "first secret" that we use as the root of all other secrets. A master key is generated automatically and broken into multiple shards. A configurable threshold of k shards is required to unseal a Vault with n shards in total.
+
+
+<a target="_blank" href="https://www.katacoda.com/courses/docker-production/vault-secrets">https://www.katacoda.com/courses/docker-production/vault-secrets</a>
+screnario to Store Secrets using Hashicorp Vault
+
+<hr />
+
+## More on DevOps #
+
+This is one of a series on DevOps:
+
+{% include devops_links.html %}
