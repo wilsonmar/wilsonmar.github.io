@@ -1767,10 +1767,8 @@ repositoryjp/centos           Docker Image for CentOS.                        0 
 
    BTW, a "quay" (pronounced "kee") is a wharf where boats dock.
 
-0. Sign in at https://quay.io/signin/
-   using your GitHub or Google credentials.
-
-   https://quay.io/plans/
+0. Sign in at <a target="_blank" href="https://quay.io/signin/">https://quay.io/signin</a> using your GitHub or Google credentials.
+   <a target="_blank" href="https://quay.io/plans/">pricing</a>
    begin from $12/month
    for security scanning and geo-replication redundancy.
 
@@ -1861,8 +1859,7 @@ repositoryjp/centos           Docker Image for CentOS.                        0 
 
    The correct response is a hash, the container's ID, such as:
 
-   <pre>
-   254d5641eee4ef4882fe2d803068c9b6dd4477836406833a3cc71a0f7a31d36c
+   <pre>254d5641eee4ef4882fe2d803068c9b6dd4477836406833a3cc71a0f7a31d36c
    </pre>
 
 0. To see if that machine responds:
@@ -1940,9 +1937,10 @@ dad20a229af5
    To prevent attacks using default passwords,
    MySQL now requires its password to be changed when instantiated:
 
-   <pre>
-   docker run --name db -d -e MYSQL_ROOT_PASSWORD=123 -p 3306:3306 mysql:latest
-   </pre>
+   <pre><strong>docker run --name db -d \
+   -e MYSQL_ROOT_PASSWORD=123 \
+   -p 3306:3306 mysql:latest
+   </strong></pre>
 
 0. Connect to the image:
 
@@ -2029,10 +2027,9 @@ https://blog.docker.com/2013/08/containers-docker-how-secure-are-they/
 0. <a target="_blank" href="https://www.nginx.com/blog/deploying-nginx-nginx-plus-docker/">
    This blog</a> shows this command to run image named "mynginx1":
    
-   <tt><strong>
-   docker run \-\-name mynginx1 -P -d nginx \
+   <pre><strong>docker run \-\-name mynginx1 -P -d nginx \
    fcd1fb01b14557c7c9d991238f2558ae2704d129cf9fb97bb4fadf673a58580d
-   </strong></tt>
+   </strong></pre>
 
    "-P" (capital P) tells Docker to map the Ports exposed by the NGINX image – ports 80 and 443 – to ports on the Docker host <strong>randomly selected</strong> 
    from the range between 49153 and 65535
@@ -2049,8 +2046,7 @@ https://blog.docker.com/2013/08/containers-docker-how-secure-are-they/
 
 0. To run the latest Ubuntu box inside your Mac:
 
-   <pre><strong>
-   docker run -it --rm --publish 3000:3000 ubuntu bash
+   <pre><strong>docker run -it --rm --publish 3000:3000 ubuntu bash
    </strong></pre>
 
    "--publish" forwards port 3000 on the host from port 3000 in the container.
@@ -2060,8 +2056,8 @@ https://blog.docker.com/2013/08/containers-docker-how-secure-are-they/
 
    Alternately, run version 14.04 of Ubuntu:
 
-   <pre><strong>
-   docker run \-\-net=host -ti ubuntu:14.04 bash
+   <pre><strong>docker run --net=host \
+   -ti ubuntu:14.04 bash
    </strong></pre>
 
    After downloads, you should see a bash prompt such as:
@@ -2122,8 +2118,8 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 \nID\t\{\{.ID}}\nIMAGE\t\{\{.Image}}\nCOMMAND\t\{\{.Command}}\nCREATED\t\{\{.RunningFor\}\}\nSTATUS\t\{\{.Status}}\n
    </pre>
 
-   <tt><strong>docker ps -a \-\-format $FORMAT
-   </strong></tt>
+   <pre><strong>docker ps -a --format $FORMAT
+   </strong></pre>
 
 
    ### Manage Images Downloaded
@@ -2287,8 +2283,7 @@ Error response from daemon: You cannot remove a running container aa2ccdb153cc54
 
 0. Disable this reporting by creating an empty file called no-error-report under your installations .docker/machine directory:
 
-   <tt><strong>
-   touch ~/.docker/machine/no-error-report
+   <tt><strong>touch ~/.docker/machine/no-error-report
    </strong></tt>
 
 
@@ -2359,8 +2354,7 @@ remotely from your personal computer.
 
 0. Type the command by itself for a list of sub-commands:
 
-   <tt><strong>
-   docker-machine
+   <tt><strong>docker-machine
    </strong></tt>
 
    The response shows the sub-commands and options available:
@@ -2418,9 +2412,9 @@ Run 'docker-machine COMMAND --help' for more information on a command.
 
 0. Create a Docker machine on the Digital Ocean cloud:
 
-   <tt><strong>
-   docker-machine create -d digitialocean \-\-digitalocean-access-token=secret
-   </strong></tt>
+   <pre><strong>docker-machine create -d digitialocean \
+   --digitalocean-access-token=secret
+   </strong></pre>
 
 0. List Docker machine instances:
 
@@ -2429,8 +2423,7 @@ Run 'docker-machine COMMAND --help' for more information on a command.
 
    The response is a heading above lines, if any:
 
-   <pre>
-   NAME   ACTIVE   DRIVER   STATE   URL   SWARM   DOCKER   ERRORS
+   <pre>NAME   ACTIVE   DRIVER   STATE   URL   SWARM   DOCKER   ERRORS
    </pre>
 
 0. List Docker machine Internet Protocol addresses:
@@ -2440,8 +2433,7 @@ Run 'docker-machine COMMAND --help' for more information on a command.
 
    The response:
 
-   <pre>
-192.168.99.100
+   <pre>192.168.99.100
    </pre>
 
    ### Create Docker machine
@@ -2486,14 +2478,12 @@ bash: print: command not found
 
 0. Create a Docker machine named node1 in the local Virtualbox, in debug mode:
 
-   <tt><strong>
-   docker-machine create -d virtualbox node1
+   <tt><strong>docker-machine create -d virtualbox node1
    </strong></tt>
 
    Alternately, if you are running docker-machine on windows, you should use Hyper-V :
 
-   <tt><strong>
-   docker-machine create \-\-driver hyperv vm
+   <tt><strong>docker-machine create \-\-driver hyperv vm
    </strong></tt>
 
 
