@@ -177,14 +177,14 @@ Create a folder to use as a mount point for your RAM disk (mkdir /mnt/ramdisk):
 mkdir -p /mnt/ramdisk1
    </pre>
 
-Create a RAM disk:
+Create a RAM disk using FSTYPE tempfs, which replaced ramfs<a target="_blank" href="https://www.jamescoyle.net/knowledge/951-the-difference-between-a-tmpfs-and-ramfs-ram-disk">*</a>
    
    <pre>
 mkdir -p /mnt/ramdisk1
 mount -t tmpfs tmpfs /mnt/ramdisk1 -o size=512m
    </pre>
 
-   tmpfs or ramfs are FSTYPE. See https://www.jamescoyle.net/knowledge/951-the-difference-between-a-tmpfs-and-ramfs-ram-disk
+   tmpfs or ramfs are FSTYPE. See 
 
 The RAM disk can persist over reboots if specified in file <tt>/etc/fstab</tt>,
 

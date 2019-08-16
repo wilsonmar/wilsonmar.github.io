@@ -857,6 +857,63 @@ Use libraries for:
 * Node JavaScript
 
 
+## Store Secrets using Hashicorp Vault
+
+The hands-on Katakoda lab <a target="_blank" href="https://katacoda.com/courses/docker-security/vault-secrets">Store Secrets using Hashicorp Vault</a>  makes use of a <tt>vault.hcl</tt> file:
+
+<pre>backend "consul" {
+  address = "consul:8500"
+  advertise_addr = "consul:8300"
+  scheme = "http"
+}
+listener "tcp" {
+  address = "0.0.0.0:8200"
+  tls_disable = 1
+}
+disable_mlock = true
+</pre>
+
+It specifies Consul as the backend to store secrets. Consul runs in HA mode. <tt>scheme = "http"</tt> should be set to <tt>scheme = "https"</tt> (use TLS) in production.
+<tt>0.0.0.0</tt> binds Vault to listen on all IP addresses.
+
+1. The vault.hcl file is processed by:
+
+   <pre>docker create -v /config --name config busybox; docker cp vault.hcl config:/config/;bc973810b4bb77788b37d269b669ba9559a001c5dab7da557c887f7de024d2f0</pre>
+
+1. Launch a single Consul agent: 
+
+   <pre>docker run -d --name consul \
+     -p 8500:8500 \
+     consul:v0.6.4 \
+     agent -dev -client=0.0.0.0 \
+     9b21b47f350931081232d4730341c1221bc086d5bb581bdf06992a334a0c51bf
+   </pre>
+
+   In production, we'd want to have a cluster of 3 or 5 agents as a single node can lead to data loss.
+
+1. Launch a single vault-dev container: 
+
+   <pre>docker run -d --name vault-dev \
+   --link consul:consul \
+   -p 8200:8200 \
+   --volumes-from config \
+   cgswong/vault:0.5.3 server -config=/config/vault.hcl
+71f518bb3165313a1e8e8d809e44b0a251dd7c138c5f045d634bae34439d1af7
+   </pre>
+
+   PROTIP: Volumes are used to hold data.
+
+1. Create an alias "vault" to proxy commands to vault to the Docker container.
+
+   <pre>alias vault='docker exec -it vault-dev vault "$@"'
+   export VAULT_ADDR=http://127.0.0.1:8200
+   </pre>
+
+1. Initialise the vault so keys go into file keys.txt:
+
+   <pre>vault init -address=${VAULT_ADDR} > keys.txt
+   cat keys.txt
+   </pre>
 
 ## References
 

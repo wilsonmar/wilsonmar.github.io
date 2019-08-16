@@ -38,7 +38,7 @@ There are several organizations providing certification exams and training based
 
    DASA speaks of 7 exams in their <a target="_blank" href="https://www.devopsagileskills.org/certifications/">DASA certification scheme</a> implemented by <a target="_blank" href="https://isqi.org/us/en/">iSQLI</a> (which also handles ISQTB QA, Lean Six Sigma, and other certifications).
 
-   The elegant <a target="_blank" href="https://www.linkedin.com/in/deborahburton/">Deborah Burton in the Netherlands</a> is the Executive Director.
+   The elegant <a target="_blank" href="https://www.linkedin.com/in/deborahburton/">Deborah Burton in the Netherlands</a> is the Executive Director. [<a target="_blank" href="https://www.slideshare.net/IevgeniiKatsan/1-deborah-burton-why-the-testing-community-should-care-about-dev-ops">SlideShare</a>]
 
 * <a target="_blank" href="https://www.devops-certification.org/Register_DevOps_Certification_Program.php">devops-certification.org</a> (non-profit International DevOps Certification Academy) provides up to 10 free retakes and a <a target="_blank" href="https://www.devops-certification.org/International_DevOps_Certification_Academy_Certificate_Validation_Tool.php">verification portal</a> for those to prove that they passed online exams of 50 multiple-choice over 60 minutes. The cost of $99 - $249 which include access to a 43-page PDF and training videos. Their certs:
 
@@ -60,7 +60,7 @@ There are several organizations providing certification exams and training based
 
    <a target="_blank" href="https://www.quora.com/Whats-your-opinion-on-devops-certification-org-Is-it-worth-the-money">Comments on Quora</a>
    are positive. But all of them were posted the same day (August 24, 2018), so I'm very suspect of
-   <a target="_blank" href="https://www.linkedin.com/in/yeliz-obergfell/">Yeliz Obergfell in Switzerland</a>.
+   <a target="_blank" href="https://www.linkedin.com/in/yeliz-obergfell/">Yeliz Obergfell in Switzerland</a>. E. Sutculer
 
 * <a target="_blank" href="https://devopsinstitute.com/certifications/">devopsinstitute.com</a>  (for-profit) offers <a target="_blank" href="https://devopsinstitute.com/certifications/devops-foundation/">7  certifications</a>.
 

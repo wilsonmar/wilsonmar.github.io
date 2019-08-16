@@ -255,7 +255,7 @@ To kill all apps and shutdown a Mac right away (with no warning and no dialog):
 
 ## Text Command Line Bash Shortcuts #
 
-These come from the bash terminal on Linux machines<a target="_blank" href="https://linuxacademy.com/blog/linux/ten-things-i-wish-i-knew-earlier-about-the-linux-command-line-2/">*here*</a>
+These come from the bash terminal on Linux machines <a target="_blank" href="https://linuxacademy.com/blog/linux/ten-things-i-wish-i-knew-earlier-about-the-linux-command-line-2/">*here*</a>: Press control with your pinkie, then ...
 
 <ul>
 <li> control + ` = cycle through session windows</li>
@@ -265,8 +265,8 @@ These come from the bash terminal on Linux machines<a target="_blank" href="http
 <li> control + P = Previous line<br /></li>
 <li> control + N = Next line </li>
 <p></p>
-<li> <strong>control + A = Go to Beginning of line (as in A to Z)</strong></li>
-<li> control + E = Go to End of line<br /></li>
+<li> <strong>control + A = Go to Beginning of line (as in A to Z)</strong> </li>
+<li> control + E = Go to End of line (hit E using longest finger)</li>
 <p></p>
 <li> control + F = Forward cursor</li>
 <li> control + B = Backward<br /></li>
