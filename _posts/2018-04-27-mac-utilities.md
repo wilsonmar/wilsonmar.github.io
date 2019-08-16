@@ -172,7 +172,7 @@ Instead of "basic", there is also "mini" and "full" scope of output. When provid
 
 ## Memory Statistics
 
-To obtain a new reading every 5 seconds, the command on macOS is:
+1. To obtain a new reading every 5 seconds, the command on macOS is:
 
    <pre><strong>vm_stat 5
    </strong></pre>
@@ -188,10 +188,11 @@ Mach Virtual Memory Statistics: (page size of 4096 bytes)
 
    On Linux systems, the "vmstat" command is similar but not identical.
 
-To cancel the display, press <strong>control+C</strong>.
+1. To cancel the display, press <strong>control+C</strong>.
 
-NOTE: The memory page size is obtained using <tt>getconf PAGESIZE</tt>, which is "4096".
+1. PROTIP: The memory page size is obtained using <tt>getconf PAGESIZE</tt>, which is "4096".
 
+See mac-diskspace
 
 ## Top processes
 
@@ -305,6 +306,26 @@ More on this:
    * XCode version: https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/pkgutil.1.html
    * https://gist.github.com/tylergets/90f7e61314821864951e58d57dfc9acd
    * pkgutil --pkg-info=com.apple.pkg.CLTools_Executables | grep version
+
+<a name="USBinfo"></a>
+
+## USB info
+
+1. Install the equivalent of Linux <strong>usbutils</stong></pre>
+
+   <pre><strong>brew install mikhailai/misc/usbutils
+   usbutils</strong></pre>
+
+1. Get the state of kernel objects that the kernel has matched to devices:
+
+   <pre><strong>system_profiler SPUSBDataType</strong></pre>
+
+   This has the same problem as Linux ioreg - it reflects the state of kernel objects that the kernel has matched to devices, not the devices themselves.<a target="_blank" href="https://stackoverflow.com/questions/17058134/is-there-an-equivalent-of-lsusb-for-os-x">*</a>
+
+1. Alternately, to work same problem as ioreg 
+
+   <pre>ioreg -p IOUSB -l -w 0</pre>
+
 
 <a name="CoreUtils"></a>
 

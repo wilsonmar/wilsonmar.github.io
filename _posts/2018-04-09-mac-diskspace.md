@@ -136,13 +136,29 @@ is much faster (5 - 100 times faster).
 
    <img width="513" alt="mac-diskspace-1026x192" src="https://user-images.githubusercontent.com/300046/63186866-b6cbc100-c01a-11e9-855a-0d2a1cee0dd8.png">
 
-   Alternately, <a target="_blank" href="https://apple.stackexchange.com/questions/4286/is-there-a-mac-os-x-terminal-version-of-the-free-command-in-linux-systems">*</a>
-
-
    In the example above, 16 - 13 used means 3 GB is available. Subtract 2GB for system use
-   leaves you 1GB for use as RAM disk.
+   leaves you 1GB for use as RAM disk. Summarizing <a target="_blank" href="https://developer.apple.com/library/archive/documentation/Performance/Conceptual/ManagingMemory/Articles/AboutMemory.html">Apple's About Memory</a>:
 
-1. Before proceeding further, do a full backup of your whole machine to a USB drive 
+   * Wired memory: (also called resident memory) can't be moved to the hard disk, so it must stay in RAM. The amount of Wired memory depends on the applications you are using. "Wired" memory is used for core functions of the operating system, space for like a card catalog.
+   * Active memory: is currently in memory, and has been recently used.
+   * Inactive memory: is not actively being used, but was recently used.
+   * Used: is the total amount of memory used.
+   * Free memory: is RAM that's not being used.
+   <br /><br />
+
+   Alternately,<a target="_blank" href="https://apple.stackexchange.com/questions/4286/is-there-a-mac-os-x-terminal-version-of-the-free-command-in-linux-systems">*</a>, use a macOS command:
+
+   <pre><strong>alias ramfree="top -l 1 -s 0 | grep PhysMem"</strong></pre>
+
+   which responds with something like:
+
+   <pre>PhysMem: 16G used (3060M wired)n         383M unused.</pre>
+
+   There is also <tt>vm_stat</tt> which provides a lot more detail, but requires some math calculation since it reports the number of 4096-byte blocks rather than "383M".
+
+   ### RAM Disk on macOS
+
+1. Before proceeding further, do a full backup of your whole machine to a USB drive.
 
 1. Consider third-party utilities for creating a RAM disk.
 
@@ -168,13 +184,15 @@ is much faster (5 - 100 times faster).
 
    Notice the use of back tick enclosing characters.
 
-See https://blog.macsales.com/46348-how-to-create-and-use-a-ram-disk-with-your-mac-warnings-included/
+   See https://blog.macsales.com/46348-how-to-create-and-use-a-ram-disk-with-your-mac-warnings-included/
+
+   ### RAM Disk on Linux
 
 By contrast, in Linux, see the amount of RAM:
 
    <pre>free -g</pre>
 
-Create a folder to use as a mount point for your RAM disk (mkdir /mnt/ramdisk):
+Use the <a target="_blank" href="https://manpages.ubuntu.com/manpages/trusty/man2/mkdir.2.html">mkdir command</a> to create a folder to use as a mount point for your RAM disk (mkdir /mnt/ramdisk):
 
    <pre>
 mkdir -p /mnt/ramdisk1
@@ -183,11 +201,10 @@ mkdir -p /mnt/ramdisk1
 Create a RAM disk using FSTYPE tempfs, which replaced ramfs<a target="_blank" href="https://www.jamescoyle.net/knowledge/951-the-difference-between-a-tmpfs-and-ramfs-ram-disk">*</a>
    
    <pre>
-mkdir -p /mnt/ramdisk1
 mount -t tmpfs tmpfs /mnt/ramdisk1 -o size=512m
    </pre>
 
-   tmpfs or ramfs are FSTYPE. See 
+   
 
 The RAM disk can persist over reboots if specified in file <tt>/etc/fstab</tt>,
 
@@ -209,6 +226,7 @@ charges for egress.
 * Dropbox.com
 * Amazon's Drive (for Prime members to store an unlimited number of photo files)
 * Microsoft's OneDrive, etc.
+* Verizon charges $5 per month for 50GB (to store images and such from mobile phones).
 <br /><br />
 
 PROTIP: The problem with cloud drives is that it takes time to drag each file from Finder to the web page.
