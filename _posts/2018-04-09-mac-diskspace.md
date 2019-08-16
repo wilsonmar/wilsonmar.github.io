@@ -136,6 +136,9 @@ is much faster (5 - 100 times faster).
 
    <img width="513" alt="mac-diskspace-1026x192" src="https://user-images.githubusercontent.com/300046/63186866-b6cbc100-c01a-11e9-855a-0d2a1cee0dd8.png">
 
+   Alternately, <a target="_blank" href="https://apple.stackexchange.com/questions/4286/is-there-a-mac-os-x-terminal-version-of-the-free-command-in-linux-systems">*</a>
+
+
    In the example above, 16 - 13 used means 3 GB is available. Subtract 2GB for system use
    leaves you 1GB for use as RAM disk.
 
