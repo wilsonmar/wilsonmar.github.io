@@ -13,23 +13,11 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<p align="right">
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
-</p>
+{% include l18n.html %}
 {% include _toc.html %}
 
 
-* [Manage Disk Space on MacOS](/mac-diskspace/)
-
-This article describes how you can manage and minimize disk space usage.
+This article describes how you can manage and minimize disk space usage on macOS (compared vs. Linux).
 
 ## Why?
 
@@ -142,17 +130,68 @@ TODO: Test vs. USB 3 drive.
 A drive running in your RAM rather than on your hard drive
 is much faster (5 - 100 times faster).
 
-1. Create a drive in your RAM rather than on your hard drive.
-   
+1. Find out how much RAM you have used and available: launch <strong>Activity Monitor</strong>.
+   Find it in the Launcher or in Finder, navigate to <tt>/Applications/Utilities/</tt>.
+   Click its <strong>Memory tab/button</strong>.
+
+   <img width="513" alt="mac-diskspace-1026x192" src="https://user-images.githubusercontent.com/300046/63186866-b6cbc100-c01a-11e9-855a-0d2a1cee0dd8.png">
+
+   In the example above, 16 - 13 used means 3 GB is available. Subtract 2GB for system use
+   leaves you 1GB for use as RAM disk.
+
+1. Before proceeding further, do a full backup of your whole machine to a USB drive 
+
+1. Consider third-party utilities for creating a RAM disk.
+
+   Open-source (free) <a target="_blank" href="https://github.com/imothee/tmpdisk">https://github.com/imothee/tmpdisk </a> installs as a menu bar item to create RAM disks by GUI or automatically at startup.
+
+   NOTE: <a target="_blank" href="https://apps.apple.com/us/app/ramdisk/id429745495?mt=12">
+   RAMDisk by Claus Gerhardt</a> is $9.99 from the Mac App Store has 3 ratings of 1. (Bad)
+   And there was a <a target="_blank" href="https://itunes.apple.com/us/app/ultra-ram-disk/id503480494?mt=12">Ultra RAM Disk</a> which installs as a menu bar item. But it's not avaialbe in the US.
+
+1. Construct the RAM disk creation command: If you have a HFS+ drive:
+
+   <pre><strong>diskutil erasevolume HFS+ "RAMDisk" `hdiutil attach -nomount ram://1048576`
+   </strong></pre>
+
+   PROTIP: Allocate the smallest amount, then add as you need.
+
+   * <tt>ram://2048</tt> (multiply by 2048 for a 1 MB RAM disk)
+   * <tt>ram://524288</tt> (multiply by 2048 for a 256 MB RAM disk)
+   * <tt>ram://1048576</tt> (multiply by 2048 for a 512 GB RAM disk)
+   * <tt>ram://2097152</tt> (multiply by 2048 for a 1 GB RAM disk)
+   * <tt>ram://4194304</tt> (multiply by 2048 for a 2 GB RAM disk)
+   <br /><br />
+
+   Notice the use of back tick enclosing characters.
+
+See https://blog.macsales.com/46348-how-to-create-and-use-a-ram-disk-with-your-mac-warnings-included/
+
+By contrast, in Linux, see the amount of RAM:
+
+   <pre>free -g</pre>
+
+Create a folder to use as a mount point for your RAM disk (mkdir /mnt/ramdisk):
+
    <pre>
-mkdir -p /mnt/ram
-mount -t tmpfs tmpfs /mnt/ram -o size-8192M
+mkdir -p /mnt/ramdisk1
    </pre>
 
-   This is temporary.
+Create a RAM disk:
+   
+   <pre>
+mkdir -p /mnt/ramdisk1
+mount -t tmpfs tmpfs /mnt/ramdisk1 -o size=512m
+   </pre>
 
-2. Unmount RAM drive:
+   tmpfs or ramfs are FSTYPE. See https://www.jamescoyle.net/knowledge/951-the-difference-between-a-tmpfs-and-ramfs-ram-disk
 
+The RAM disk can persist over reboots if specified in file <tt>/etc/fstab</tt>,
+
+   <pre>tmpfs       /mnt/ramdisk tmpfs   nodev,nosuid,noexec,nodiratime,size=512M   0 0
+   </pre>
+
+PROTIP: Remember that data in RAM drives disappear each time the machine is restarted.
 
 
 ## Cloud Disks
@@ -174,3 +213,13 @@ PROTIP: The problem with cloud drives is that it takes time to drag each file fr
 Cloud vendors have programs, but they take up disk space, which defeats much of the purpose of using cloud storage.
 
 https://derflounder.wordpress.com/2016/09/23/icloud-desktop-and-documents-in-macos-sierra-the-good-the-bad-and-the-ugly/
+
+
+
+<hr />
+
+## More on macOS
+
+This is one of a series on macOS (Mac OSX):
+
+{% include mac_links.html %}
