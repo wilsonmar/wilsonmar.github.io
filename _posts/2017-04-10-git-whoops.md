@@ -237,7 +237,35 @@ If you didn't mean to fork a repository, but you did anyway,
    You lose the ability to fall-back to previous versions.
    So use it only to fix minor typos.
 
-   [<a target="_blank" href="https://git-scm.com/docs/git-commit/">SCM</a>],
+   See [<a target="_blank" href="https://git-scm.com/docs/git-commit/">docs/git-commit</a>]
+
+   <a name="ShouldHaveBranched"></a>
+
+   ### Commit - Should Have Branched
+
+   If you made a commit to master and then realized (before pushing) that you would like to put changes in the lastest commit under a new branch:
+
+1. Checkout a new branch named "my-new-branch", which you change:
+   
+   <pre><strong>git checkout -b <em>my-new-branch</em></strong></pre>
+
+1. Identify the SHA of the previous commit:
+   
+   <pre><strong>git log --oneline</strong></pre>
+
+   In the example below, it would be "ee1a5c98":
+
+   <pre>b10405ec (HEAD -> master, origin/master, origin/HEAD) whatever
+ee1a5c98 Update</pre>
+
+1. Position the branch to the SHA found:<a target="_blank" href="https://stackoverflow.com/questions/44728962/forgot-to-create-new-branch-how-to-transfer-changes-to-new-branch/44728984">*</a>, for example:
+   
+   <pre><strong>git branch -f master <em>ee1a5c98</em></strong></pre>
+
+1. Confirm:
+   
+   <pre><strong>git log --oneline</strong></pre>
+
 
    <a name="Revert"></a>
 
