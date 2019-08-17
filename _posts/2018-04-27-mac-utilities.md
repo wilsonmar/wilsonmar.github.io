@@ -307,11 +307,12 @@ More on this:
    * https://gist.github.com/tylergets/90f7e61314821864951e58d57dfc9acd
    * pkgutil --pkg-info=com.apple.pkg.CLTools_Executables | grep version
 
+
 <a name="USBinfo"></a>
 
 ## USB info
 
-1. Install the equivalent of Linux <strong>usbutils</stong></pre>
+1. Install the equivalent of Linux <strong>usbutils</stong>:
 
    <pre><strong>brew install mikhailai/misc/usbutils
    usbutils</strong></pre>
@@ -325,6 +326,25 @@ More on this:
 1. Alternately, to work same problem as ioreg 
 
    <pre>ioreg -p IOUSB -l -w 0</pre>
+
+
+
+<a name="lsmod"></a>
+
+## lsmod (modules) vs. Apple Kernel Extensions
+
+macOS has Kernel <strong>Extensions (kexts)</strong> to handle hardware<a target="_blank" href="https://developer.apple.com/library/archive/documentation/Porting/Conceptual/PortingUnix/compiling/compiling.html">*</a>. Developers and software use the low-level kextload utility to load, kextunload to unload kexts, and kextstat to diagnose problems. There is also the kextutil command.
+
+Although there are no direct equivalent in Linux, the Linux <tt>lsmod</tt> command lists operating system kernel <strong>modules</strong> defined in a folder containing ".ko" files:
+
+   <tt>ls /lib/modules/$(uname -r) -type -f -iname "*.ko"</tt>
+
+   Such udev rules are loaded in this sequence:
+
+   * /etc/udev/rules.d
+   * /run/udev/rules.d
+   * /usr/lib/udev/rules.d
+   <br /><br />
 
 
 <a name="CoreUtils"></a>
