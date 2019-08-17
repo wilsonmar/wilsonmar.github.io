@@ -24,13 +24,76 @@ This page is about the series on DevOps.
 
 PROTIP: My personal opinion is to spend time and money getting certified in technical tools from (such as RedHat, Cloudbees). That's unless your employer requests it.
 
-There are several organizations providing certification exams and training based on them:
+There are several organizations providing certification exams and training based on DevOps:
+
+### DASA
 
 * The DASA (DevOps Compentence Association) defined its  <a target="_blank" href="https://www.devopsagileskills.org/dasa-devops-principles/">6 principles of DevOps</a> and has a <a target="_blank" href="https://scan.devopsagileskills.org/">24 question QuickScan</a> for you to self-assess your own level in each of the <a target="_blank" href="https://www.devopsagileskills.org/dasa-competence-model/">12 (4 skill areas and 8 knowledge) areas of their DevOps Compentence Model</a> :
 
    ![devops-dasa-results-541x537](https://user-images.githubusercontent.com/300046/63097332-5f9bf280-bf2d-11e9-977b-22cb1cde1da7.png)
 
-   PROTIP: Questions in the QuickScan contain statements about what each person can do to obtain higher levels in each area (such as being proactive vs. reactive, on a daily basis, inside and outside the organization, etc.). Almost like "affirmations".
+   PROTIP: Questions in the QuickScan contain statements about what each person can actually do to reach the highest levels in each area (such as being proactive vs. reactive, on a daily basis, inside and outside the organization, etc.). These statements are gold because they make the DevOps journey real. Make an appointment with yourself to review these statements once a week to document <strong>proof</strong> of how you personally are achieving them.
+
+   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Business Value Optimization:
+   
+   1. I am aware of the organizational goals and objectives and I constantly ensure that  requested features align with goals and objectives.
+   2. I have intimate knowledge. I have proven experience with (supporting) the business process.
+
+      Business Analysis:
+
+   3. I have proven experience of structuring and organizing requirements, using techniques to specify and model requirements and facilitating refinement meetings.
+   4. I proactively collect feedback and communicate it with the team through a structured method. I have well developed communication, facilitation, and negotiation skills.
+
+      Architecture and Design:
+
+   5. Extensive Knowledge - Within the team, I ensure that architecture guidelines and rules are followed and that feedback is proactively given to Enterprise Architectural guidelines and rules.
+   6. Extensive knowledge - I extensively understand the Current State Architecture and the team maintains the Current State Architecture.
+
+      Test specification:
+
+   7. I have proven experience with all listed types of testing.
+   8. I have proven experience with setting up, using, and maintaining automated testing.
+
+      Programming:
+
+   9. I have considerable experience in developing software and I can apply best practices to the software I develop.
+   9. (I have) 6 or more years of experience (writing code from scratch, using: i.e. common architectural patterns (MVC, SOA, etc.); software design patterns (i.e. Facade, Abstract factory, etc.); common frameworks (Spring, Hibernate, etc.)
+
+      Continuous Delivery:
+
+   9. I have extensive knowledge and experience (of version control).
+   9. I have proven expertise (of the continuous delivery process and setting up an automated pipeline for deployments)
+
+      Infrastructure engineering:
+
+   9. I have proven experience and I am able to guide others (with technical monitoring of infrastructure components).
+   9. I have proven experience with availability and capacity management.
+
+      Security, Risk, and Compliance
+
+   9. I apply secure coding standards and practices in my work and educate my colleagues on alternatives in case insecure coding practices are identified.
+   9. I take responsibility for security, risk & compliance within my team. Security, risk & compliance are fully integrated in the way we deliver services.
+
+      Courage:
+
+   9. I take actions in most situations because I am trusted to do so based on my knowledge and experience.
+   9. I encounter the unexpected situations with full confidence and work to fix them in a structured way. Also, I coach others in becoming more aware of unexpected situations.
+
+      Team Building:
+
+   9. I actively seek cooperation to share knowledge and experience and I help others to do the same.
+   9. No problem (taking over the role of others in the team). I have experience in multiple roles and I help my team members to achieve the same.
+
+      DevOps Leadership:
+
+   9. I structurally stimulate others inside and outside the team to reflect and take ownership for the results.
+   9. I involve my team members when I need to take a decision and I stimulate others in my team to act in the same way.
+
+      Continuous Improvement:
+
+   9. I actively look for problems/impediments, discuss them in the team and take action to solve them with a structured problem-solving method on a daily basis.
+   9. Yes, I reserve explicit time and structurally plan for improvement activities regardless of the situation.
+
 
    The results is rotated and mixed up from their model diagram:
 
@@ -39,6 +102,8 @@ There are several organizations providing certification exams and training based
    DASA speaks of 7 exams in their <a target="_blank" href="https://www.devopsagileskills.org/certifications/">DASA certification scheme</a> implemented by <a target="_blank" href="https://isqi.org/us/en/">iSQLI</a> (which also handles ISQTB QA, Lean Six Sigma, and other certifications).
 
    The elegant <a target="_blank" href="https://www.linkedin.com/in/deborahburton/">Deborah Burton in the Netherlands</a> is the Executive Director. [<a target="_blank" href="https://www.slideshare.net/IevgeniiKatsan/1-deborah-burton-why-the-testing-community-should-care-about-dev-ops">SlideShare</a>]
+
+### International DevOps Certification Academy
 
 * <a target="_blank" href="https://www.devops-certification.org/Register_DevOps_Certification_Program.php">devops-certification.org</a> (non-profit International DevOps Certification Academy) provides up to 10 free retakes and a <a target="_blank" href="https://www.devops-certification.org/International_DevOps_Certification_Academy_Certificate_Validation_Tool.php">verification portal</a> for those to prove that they passed online exams of 50 multiple-choice over 60 minutes. The cost of $99 - $249 which include access to a 43-page PDF and training videos. Their certs:
 
@@ -61,6 +126,8 @@ There are several organizations providing certification exams and training based
    <a target="_blank" href="https://www.quora.com/Whats-your-opinion-on-devops-certification-org-Is-it-worth-the-money">Comments on Quora</a>
    are positive. But all of them were posted the same day (August 24, 2018), so I'm very suspect of
    <a target="_blank" href="https://www.linkedin.com/in/yeliz-obergfell/">Yeliz Obergfell in Switzerland</a>. E. Sutculer
+
+### Devops Institute
 
 * <a target="_blank" href="https://devopsinstitute.com/certifications/">devopsinstitute.com</a>  (for-profit) offers <a target="_blank" href="https://devopsinstitute.com/certifications/devops-foundation/">7  certifications</a>.
 
