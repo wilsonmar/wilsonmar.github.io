@@ -34,68 +34,68 @@ There are several organizations providing certification exams and training based
 
    PROTIP: Questions in the QuickScan contain statements about what each person can actually do to reach the highest levels in each area (such as being proactive vs. reactive, on a daily basis, inside and outside the organization, etc.). These statements are gold because they make the DevOps journey real. Make an appointment with yourself to review these statements once a week to document <strong>proof</strong> of how you personally are achieving them.
 
-   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Business Value Optimization:
+   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Business Value Optimization: Use of the IT service in real life, including direct feedback loop of user comments to team, service level management, definition of done, business activity/performance monitoring, business case management:
    
    1. I am aware of the organizational goals and objectives and I constantly ensure that  requested features align with goals and objectives.
    2. I have intimate knowledge. I have proven experience with (supporting) the business process.
 
-      Business Analysis:
+      Business Analysis: Evangelism, coaching, self-confidence, proactivity, reflection, trust, open discussions, experimentation, fail fast, courage to change:
 
    3. I have proven experience of structuring and organizing requirements, using techniques to specify and model requirements and facilitating refinement meetings.
    4. I proactively collect feedback and communicate it with the team through a structured method. I have well developed communication, facilitation, and negotiation skills.
 
-      Architecture and Design:
+      Architecture and Design: Ensuring fit between developments and current situation, overall service design, patterns & styles:
 
    5. Extensive Knowledge - Within the team, I ensure that architecture guidelines and rules are followed and that feedback is proactively given to Enterprise Architectural guidelines and rules.
    6. Extensive knowledge - I extensively understand the Current State Architecture and the team maintains the Current State Architecture.
 
-      Test specification:
+      Test specification: Design of test cases, test concepts:
 
    7. I have proven experience with all listed types of testing.
    8. I have proven experience with setting up, using, and maintaining automated testing.
 
-      Programming:
+      Programming: Software engineering mastery, everything as code, data management:
 
    9. I have considerable experience in developing software and I can apply best practices to the software I develop.
    9. (I have) 6 or more years of experience (writing code from scratch, using: i.e. common architectural patterns (MVC, SOA, etc.); software design patterns (i.e. Facade, Abstract factory, etc.); common frameworks (Spring, Hibernate, etc.)
 
-      Continuous Delivery:
+      Continuous Delivery: Automated testing, deployment and release management, configuration management, version control, cloud, containerization, featuredriven delivery:
 
    9. I have extensive knowledge and experience (of version control).
    9. I have proven expertise (of the continuous delivery process and setting up an automated pipeline for deployments)
 
-      Infrastructure engineering:
+      Infrastructure engineering: Technical monitoring, performance management (e.g. load balancing etc.), capacity and availability management, reliability engineering, cloud, containerization:
 
    9. I have proven experience and I am able to guide others (with technical monitoring of infrastructure components).
    9. I have proven experience with availability and capacity management.
 
-      Security, Risk, and Compliance
+      Security, Risk, and Compliance: Security, service continuity planning:
 
    9. I apply secure coding standards and practices in my work and educate my colleagues on alternatives in case insecure coding practices are identified.
    9. I take responsibility for security, risk & compliance within my team. Security, risk & compliance are fully integrated in the way we deliver services.
 
-      Courage:
+      Courage: Evangelism, coaching, self-confidence, proactivity, reflection, trust, open discussions, experimentation, fail fast, courage to change:
 
    9. I take actions in most situations because I am trusted to do so based on my knowledge and experience.
    9. I encounter the unexpected situations with full confidence and work to fix them in a structured way. Also, I coach others in becoming more aware of unexpected situations.
 
-      Team Building:
+      Team Building: Understand the other’s point of view, collaboration, mutual accountability, common purpose, ability to integrally support the service/product:
 
    9. I actively seek cooperation to share knowledge and experience and I help others to do the same.
    9. No problem (taking over the role of others in the team). I have experience in multiple roles and I help my team members to achieve the same.
 
-      DevOps Leadership:
+      DevOps Leadership: Facilitating teams to high performance, humility, transparency, Service lifecycle mindset, Stakeholder management:
 
    9. I structurally stimulate others inside and outside the team to reflect and take ownership for the results.
    9. I involve my team members when I need to take a decision and I stimulate others in my team to act in the same way.
 
-      Continuous Improvement:
+      Continuous Improvement: Today we do our work better than yesterday, kaizen mindset, quality at the source, first time right, knowledge-sharing, ability to adapt:
 
    9. I actively look for problems/impediments, discuss them in the team and take action to solve them with a structured problem-solving method on a daily basis.
    9. Yes, I reserve explicit time and structurally plan for improvement activities regardless of the situation.
 
 
-   The results is rotated and mixed up from their model diagram:
+   The results are rotated and mixed up from their model diagram:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/63094616-2f9d2100-bf26-11e9-9c67-c61977f31620.png"><img alt="devops-dasa-model-800x800" width="800" height="800" src="https://user-images.githubusercontent.com/300046/63094616-2f9d2100-bf26-11e9-9c67-c61977f31620.png"></a>
 
