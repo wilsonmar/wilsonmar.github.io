@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Mac OSX Command-Line Utilities kill, grep, sed, regex, cron"
-excerpt: "The Swiss Army Knife for almost every need"
+title: "MacOS (Command-Line) Utilities"
+excerpt: "kill, grep, sed, regex, cron, etc. vs. Linux commands"
 tags: [apple, mac, utilities]
 date: "2018-04-27"
 file: "mac-utilities"
@@ -15,6 +15,8 @@ comments: true
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
+
+This article compares and contrasts macOS utilites vs. Linux utilities -- the Swiss Army Knife for almost every need.
 
 ## Uname = Darwin (BSD)
 
