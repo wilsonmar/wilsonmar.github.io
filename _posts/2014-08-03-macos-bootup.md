@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MacOS Bootup"
-excerpt: "Getting started"
+excerpt: "To diagnose and troubleshoot getting started (vs. Linux)"
 tags: [apple, mac, setup, USB]
 date: "2014-08-03"
 file: "macos-bootup"
@@ -12,27 +12,25 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<p align="right"><a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2Fmacos-bootup%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2Fmacos-bootup%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2Fmacos-bootup%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2Fmacos-bootup%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2Fmacos-bootup%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2Fmacos-bootup%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2Fmacos-bootup%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2Fmacos-bootup%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2Fmacos-bootup%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
-</p>
+{% include l18n.html %}
 {% include _toc.html %}
+
+This article describes the boot-up process on MacOS vs. Linux
+so you can better diagnose and troubleshoot issues.
 
 <a id="Bootupz"></a>
 
 ## Boot-up
 
-During boot-up (Apple logo):
+Immediately after pressing the power button on your Mac:
 
 <ul>
-<li> Hold down the start button for a hard reset when the keyboard and mouse are not responsive.</li>
-<li> Hold down <strong>C</strong> to boot from CD.</li>
+<li> Hold down the start (power) button for a hard reset when the keyboard and mouse are not responsive.</li>
+</ul>
+While pressing the power/start:
+
+<ul>
+<li> Hold down <strong>C</strong> to <a href="#BootFromCD">boot from CD</a>.</li>
 <li> Hold down <strong>N</strong> to boot from network (do a NetBoot from a network server).</li>
 <li> Hold down <strong>option</strong> (alt) key for the Mac's Startup Manager to select a (USB) startup disk.</li>
 
@@ -41,7 +39,9 @@ During boot-up (Apple logo):
 <li> Hold down &#8984; (command) + option + P + R to reset Parameter RAM (PRAM).</li>
 </ul>
 
-After powering up the computer, 
+By contrast, to get the GRUB menu on Linux machines, hold down the power button for 5 seconds or repeatedly pressing the Shift key during bootup.
+
+After powering up your Mac, 
 a folder with a question mark means that a <a href="#MacBoot">boot folder (described below)</a> 
 was not found on the hard disk.
 
@@ -86,34 +86,47 @@ Also, <strong>OS X Internet Recovery</strong> loads the recovery information dir
 
 ### Boot loader on Mac
 
-MacOS does not use the boot loader other Linux machines store in the /boot folder.
+MacOS does not use the GRUB boot loader other Linux machines store in the /boot folder.
 
-MacOS machines boots from the <strong>boot.efi</strong> binary file within 
-cd /System/Library/CoreServices.
-This is for Intel Macs. Older PowerPC Macs (and an old enough version of OS X) boots from file BootX.
+MacOS machines boots from the <strong>boot.efi</strong> binary file within folder<br />
+`/System/Library/CoreServices`
+on Intel Macs. Older PowerPC Macs (and an old enough version of OS X) boots from file BootX.
 
 The MacOS kernel, as of Yosemite (version 10.10), is at<br />
-`/System/Library/Kernels/kernel`,
-   but was just /mach_kernel in older versions.
+`/System/Library/Kernels/kernel`
+but was just `/mach_kernel` in older versions.
 
 Apple-supplied loadable kernel modules (known as kernel extensions or kexts) are found in<br />
 `/System/Library/Extensions/`
 
 Third-party extensions are in<br />
-`/Library/Extensions/`.
+`/Library/Extensions/`
 
 See <a target="_blank" href="https://developer.apple.com/library/content/documentation/Darwin/Conceptual/KernelProgramming/booting/booting.html">
-this Apple article</a>.
+Apple's "The Early Boot Process"</a>.
 
-## Bootable Installer
 
+<a name="BootFromCD"></a>
+
+## Bootable from CD
+
+You'll be glad you have a bootable CD or USB drive when you are installing macOS Mojave onto multiple Macs and would rather not wait to download the installer on a secondary machine (which you may not have).
+
+So be prepared and do what this says:
 <a target="_blank" href="
 https://support.apple.com/en-us/HT201372">
 https://support.apple.com/en-us/HT201372<br />
 Create a bootable installer for macOS</a>
+for each version of MacOS.
 
-Boot up with the installer Disc.
+The macOS Mojave installer software is just over 6GB,
+For Mojave, the link is https://apps.apple.com/us/app/macos-mojave/id1398502828?mt=12
 
+The macOS Mojave installer software is just over 6GB,
+
+The download goes into the `/Applications` folder.
+
+See articles about this at <a target="_blank" href="https://www.macworld.com/article/3284378/how-to-create-a-bootable-macos-mojave-installer-drive.html">MacWorld</a>, <a target="_blank" href="https://9to5mac.com/2018/06/18/how-to-create-a-bootable-macos-mojave-10-14-usb-install-drive-video/">9to5mac</a>, and <a target="_blank" href="http://osxdaily.com/2018/09/26/make-macos-mojave-boot-usb-installer/">osxdaily</a>.
 
 ## Start-up items
 
@@ -169,6 +182,10 @@ which controls the services that start up on boot.
    ### Plists
 
    Plist files are how Macs define services.
+
+Linux launches a root shell session with this line:
+
+   <pre>rw init=/bin/bash</pre>
 
 
 ## More on OSX

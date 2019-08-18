@@ -13,21 +13,23 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<p align="right"><a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2Fmacos-homebrew%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2Fmacos-homebrew%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2Fmacos-homebrew%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2Fmacos-homebrew%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2Fmacos-homebrew%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2Fmacos-homebrew%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2Fmacos-homebrew%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2Fmacos-homebrew%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2Fmacos-homebrew%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
-</p>
+{% include l18n.html %}
 {% include _toc.html %}
 
 This tutorial provides a deep dive of Homebrew,
 a package manager for Mac OSX (MacOS)
-like Chocolatey for Windows, apt-get for dpkg, or yum for RPM.
+that's like other package mangers for Linux:
+
+<table border="1" cellpadding="4" celspacing="0">
+<tr valign="bottom"><th>Distribution</th><th>Package Manager</th><th> Format</th><th>GUI tools</th></tr>
+<tr valign="top"><td>Darwin (macOS)</td><td>Homebrew</td><td>-</td><td>brew</td></tr>
+<tr valign="top"><td>Debian, Ubuntu</td><td>dpkg</td><td>.deb</td><td>APT (Advanced Packaging Tool)</td></tr>
+<tr valign="top"><td>RedHat, Fedora, openSUSE</td><td>RPM</td><td>.rpm</td><td>Yum, apt4rpm, up2date, urpmi, ZYpp, poldek</td></tr>
+<tr valign="top"><td>Slackware</td><td>tgz</td><td>-</td><td>-</td></tr>
+<tr valign="top"><td>Arch Linux, Frugalware, DeLi Linux</td><td>Pacman</td><td>-</td><td>-</td></tr>
+<tr valign="top"><td>Puppy Linux</td><td>PETget</td><td>-</td><td>-</td></tr>
+<tr valign="top"><td>Windows</td><td>Chocolatey</td><td>-</td><td>choco</td></tr>
+</table>
 
 Step-by-step instructions are provided here to install Homebrew itself
 and then install Homebrew packages based on the name of 

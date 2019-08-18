@@ -16,7 +16,6 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-
 This article describes how you can manage and minimize disk space usage on macOS (compared vs. Linux).
 
 ## Why?
@@ -37,6 +36,10 @@ Not having enough free disk space may cause your fan to come on, which is an ind
 Visualize the largest files using your disk space using the free GPL app
 Disk Inventory X from <a target="_blank" href="http://www.derlien.com/">http://www.derlien.com</a>
 which presents the sizes of files and folders in graphical "treemaps". 
+
+   PROTIP: Log files can fill out a drive gradually over time.
+   So monitor its size regularly.
+
 
 ## Macs Read, Not Write NTFS
 
@@ -63,16 +66,40 @@ this</a>:
 
 <pre>brew install monolingual</pre> 
 
+Then invoke the program.
+
 Since I'm in the imperious US, I selected for removal all languages except US(en), US(gb).
 
-## GitHub
+## GitHub repos
 
 Delete your copy of repos on your local hard disk when you are not actively editing a particular repo.
 
-Write bash scripts so that files are deleted on exit.
-
 The <tt>/opt</tt> folder is where many Linux users put various custom software they develop.
 
+PROTIP: Write bash scripts so that files are deleted on exit.
+
+## Use trash utility, not rm command
+
+When the built-in `rm` command is used to remove a file or folder, they are gone because it calls the System API rather than moving the file to the macOS Trash folder:
+
+   <pre><strong>rm -rf folder1
+   </strong></pre>
+
+   <tt>-r</tt> (recursive) specifies deleting all sub-folders.
+
+PROTIP: Install the `trash` utility (from <a target="_blank" href="https://sindresorhus.com/">sindresorhus.com</a>)
+to delete files such that they can be un-trashed:
+
+   <pre><strong>brew install trash
+   touch checkitout
+   remove checkitout
+   </strong></pre>
+
+   The program conflicts with <a target="_blank" href="https://github.com/sindresorhus/trash-cli">trash-cli</a> at <a target="_blank" href="https://github.com/sindresorhus/trash">https://github.com/sindresorhus/trash</a>, along with companion commands <a target="_blank" href="https://github.com/sindresorhus/macos-trash">macos-trash</a>, <a target="_blank" href="https://github.com/sindresorhus/empty-trash">empty-trash</a>, and <a target="_blank" href="https://github.com/sindresorhus/del">del</a>
+   which use the same Trash in FreeDesktop.org of KDE, GNOME, and XFCE.
+
+
+See https://www.wikihow.com/Recover-Accidentally-Deleted-Files-in-OS-X
 
 ## /dev (devices) folder
 
@@ -98,14 +125,17 @@ The <tt>/dev</tt> folder on Macs and Linux contain files which point to both phy
    </pre>
    </ul>
 
-<tt>/var</tt> (various) files go in this folder, particularly log files in <tt>/var/log</tt>.
+<tt>/var</tt> (various) files go in this folder, particularly log files in <tt>/var/log</tt>. 
 
+   PROTIP: Admins of production servers allocate this /var/log folder in its own drive partition so that if logs fill up, it won't consume all the space and crash the server.
+   
 
-BTW Unlike Linux, MacOS does not have folders 
+BTW Unlike Linux, MacOS does not have these folders: 
 * <tt>/boot</tt>
-* <tt>/lib</tt>
+* <tt>/lib</tt> libraries of dynamic (.so) and static (.a)
 * <tt>/proc</tt> folder virtual filesystem, containing a folder for each process.
 * <tt>/root</tt> folder for use by the root user
+* <tt>/etc</tt> holds system utilites such as dpkg, which contains a dpkg.cfg configuration file.
 
 ## Benchmark disk write speed
 
@@ -125,10 +155,8 @@ BTW Unlike Linux, MacOS does not have folders
 
 TODO: Test vs. USB 3 drive.
 
-## RAM Disk
+## Disk space uses & available
 
-A drive running in your RAM rather than on your hard drive
-is much faster (5 - 100 times faster).
 
 1. Find out how much RAM you have used and available: launch <strong>Activity Monitor</strong>.
    Find it in the Launcher or in Finder, navigate to <tt>/Applications/Utilities/</tt>.
@@ -146,9 +174,9 @@ is much faster (5 - 100 times faster).
    * Free memory: is RAM that's not being used.
    <br /><br />
 
-   Alternately,<a target="_blank" href="https://apple.stackexchange.com/questions/4286/is-there-a-mac-os-x-terminal-version-of-the-free-command-in-linux-systems">*</a>, use a macOS command:
+   Alternately,<a target="_blank" href="https://apple.stackexchange.com/questions/4286/is-there-a-mac-os-x-terminal-version-of-the-free-command-in-linux-systems">*</a>, define an alias in <tt>aliases.sh</tt> macOS command:
 
-   <pre><strong>alias ramfree="top -l 1 -s 0 | grep PhysMem"</strong></pre>
+   <pre><strong>alias free="top -l 1 -s 0 | grep PhysMem"</strong></pre>
 
    which responds with something like:
 
@@ -156,7 +184,13 @@ is much faster (5 - 100 times faster).
 
    There is also <tt>vm_stat</tt> which provides a lot more detail, but requires some math calculation since it reports the number of 4096-byte blocks rather than "383M".
 
-   ### RAM Disk on macOS
+
+## RAM Disk
+
+A drive running in your RAM rather than on your hard drive
+is much faster (5 - 100 times faster).
+
+### RAM Disk on macOS
 
 1. Before proceeding further, do a full backup of your whole machine to a USB drive.
 
@@ -218,8 +252,7 @@ PROTIP: Remember that data in RAM drives disappear each time the machine is rest
 
 * <a target="_blank" href="https://support.apple.com/en-us/HT201238">Apple iCloud</a>
 in the US charges per month 50GB: $0.99, 200GB: $2.99, 2TB: $9.99
-* <a target="_blank" href="https://drive.google.com/">drive.google.com</a> 
-goes straight to a 2TB plan for $10 per month.
+* <a target="_blank" href="https://drive.google.com/">drive.google.com</a> goes straight to a 2TB plan for $10 per month.
 * <a target="_blank" href="https://cloud.google.com/storage/pricing">Google Cloud</a> 
 charges for egress.
 * Box.com
