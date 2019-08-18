@@ -60,6 +60,27 @@ To enable that:
 <li> Close the dialog by clicking the red dot at the upper left corner.</li>
 </ol>
 
+### iTerm2 for split pane
+
+Many prefer to install iTerm2 and use that instead of the built-in Terminal program.
+
+<pre><strong>brew cask install iterm2
+</strong></pre>
+
+Terminal does not support but iTerm2 does support dividing the CLI into several rectangular "panes", each of which is a different terminal session:
+* split window vertically with Command+D 
+* split window horizontally with Command+Shift+D 
+* Navigate among panes with command-opt-arrow or cmd+[ and cmd+]
+* Temporarily toggle maximize the current pane (hiding all others) with command-shift-enter
+* Exit out a pane by typing exit in that pane
+<br /><br />
+
+Pressing the shortcut again restores the hidden panes.
+
+This is similar to the Linux `screen` command.
+
+See <a target="_blank" href="https://iterm2.com/features.html">https://iterm2.com/features.html</a>
+
 
 ## Switch among programs
 
