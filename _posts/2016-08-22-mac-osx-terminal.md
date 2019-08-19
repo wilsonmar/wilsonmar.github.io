@@ -77,9 +77,10 @@ Terminal does not support but iTerm2 does support dividing the CLI into several 
 
 Pressing the shortcut again restores the hidden panes.
 
-This is similar to the Linux `screen` command.
+On Linux, there is the `screen` command.
 
-See <a target="_blank" href="https://iterm2.com/features.html">https://iterm2.com/features.html</a>
+See <a target="_blank" href="https://gist.github.com/wilsonmar/d2d00c3d54ffc36a05e29d2a695f5b3a">Iterm2 Cheat Sheet</a> of iTerm2 keyboard shortcuts. https://github.com/nobitagit/iterm-cheat-sheet/blob/master/README.md
+
 
 
 ## Switch among programs
