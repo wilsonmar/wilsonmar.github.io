@@ -196,18 +196,21 @@ Docker Engine-Community only target Docker for AWS and Docker for Azure.
 Docker Enterprise uses Docker certified infrastructure tooling, using <strong>Terraform and Ansible</strong> to target VMware, Azure, and AWS implementations.
 
 
-## Shell script
+## Setup Shell Script
 
 The contribution of this article is a shell script that automates the install of Wordpress by following the manual steps described below:
 
    <ul>
-   https://github.com/wilsonmar/DevSecOps/blob/master/Docker/docker-setup.sh
+   <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/blob/master/Docker/docker-setup.sh">https://github.com/wilsonmar/DevSecOps/blob/master/Docker/docker-setup.sh</a>
    </ul>
 
-   That is now under construction.
+The "boilerplate" sections at the top of the script is based on <a target="_blank" href="https://wilsonmar.github.io/bash-coding">my bash coding tutorial</a>.
 
-The "boilerplate" sections in the script is based on <a target="_blank" href="https://wilsonmar.github.io/bash-coding">my bash coding tutorial</a>
+The script has the following:
 
+1. To remove all:
+   sudo docker container prune
+1. sudo docker rm 
 
 ### GPG SecureApt
 
@@ -263,15 +266,16 @@ https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
 <a name="Docker4Mac"></a>
 
-## Install Docker on Mac OSX #
+## Install Docker on MacOS #
 
    PROTIP: The version of Linux that comes with Mac isn't completely compatible with Linux.
    So an extra layer is needed to emulate a Docker host.
    That’s <a target="_blank" href="https://github.com/boot2docker/osx-installer/releases/tag/v1.6.0">
    Boot2Docker</a>.
 
-0. If you've previously installed Boot2Docker or Docker for Mac, uninstall it
-   by deleting it within your Applications folder.
+0. If you've previously installed Boot2Docker or Docker for Mac, uninstall it by deleting it within your Applications folder.
+
+   <a target="_blank" href="https://docs.docker.com/docker-for-mac/">https://docs.docker.com/docker-for-mac</a> is the official docs.
 
    Versions of Mac before Yosemite would need to use the now deprecated
    Docker Toolbox, which is no longer used. It depended on Virtualbox.
@@ -398,6 +402,9 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
 <a name="Docker4Windows"></a>
 
 ## Install Docker on Windows 10 #
+
+<a target="_blank" href="https://docs.docker.com/docker-for-windows/">
+https://docs.docker.com/docker-for-windows</a> is the official docs.
 
 <a name="DockerAWS"></a>
 
@@ -697,15 +704,9 @@ Jul 27 22:37:40 centos-512mb-sfo2-01 systemd[1]: Started Docker Application Cont
 
 0. Skip to <a href="#VerifyInstall">verify Docker install</a> below.
 
-<hr />
-
-<a name="Docker4Win10"></a>
-
-### Install Docker on Windows 10
-
 1. Spin up a standard AWS Linux 2 EC2 instance.
 
-1, Login the instance and run:
+1. Login the instance and run:
 
    <pre><strong>
    sudo yum update -y

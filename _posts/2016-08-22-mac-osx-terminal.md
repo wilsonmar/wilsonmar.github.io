@@ -60,12 +60,21 @@ To enable that:
 <li> Close the dialog by clicking the red dot at the upper left corner.</li>
 </ol>
 
+## Text wrapping 
+
+This page contains notes for system administrators and developers,
+who need to control Macs below the UI level, which require
+typing commands into a command-line terminal screen.
+
+1. To avoid text wrapping, cursor on the right edge to expand the screen width.
+
 ### iTerm2 for split pane
 
-Many prefer to install iTerm2 and use that instead of the built-in Terminal program.
+Many prefer to install and use <strong>iTerm2</strong> instead of the built-in Terminal program.
+Install iTerm2 using Homebrew:
 
-<pre><strong>brew cask install iterm2
-</strong></pre>
+   <pre><strong>brew cask install iterm2
+   </strong></pre>
 
 Terminal does not support but iTerm2 does support dividing the CLI into several rectangular "panes", each of which is a different terminal session:
 * split window vertically with Command+D 
@@ -82,27 +91,164 @@ On Linux, there is the `screen` command.
 See <a target="_blank" href="https://gist.github.com/wilsonmar/d2d00c3d54ffc36a05e29d2a695f5b3a">Iterm2 Cheat Sheet</a> of iTerm2 keyboard shortcuts. https://github.com/nobitagit/iterm-cheat-sheet/blob/master/README.md
 
 
+## Alphabetical Commands list 
 
-## Switch among programs
+A list of all commands native to macOS is listed <a target="_blank" href="https://ss64.com/osx/">alphabetically at https://ss64.com/osx</a>.
 
-To switch among programs already running:
+## Exit
 
-* Hold down the <strong>command</strong> key while pressing <strong>tab</strong> multiple times until the program you want is highlighted (with its name) in the pop-up list. This is equivalent to the Windows control+Esc key combo.
+To exit from the Terminal shell:
+
+   <tt><strong>exit</strong></tt>
+
+Get back in for the remainder of this tutorial.
+
+## Shutdown
+
+CAUTION: To kill all apps and shutdown a Mac right away (with no warning and no dialog):
+
+   <tt><strong>sudo shutdown -h now
+   </strong></tt>
 
 
-<a id="Terminalz"></a>
+<a id="Keyboard"></a>
+<a id="ShortKeys"></a>
 
-## Terminal Usage #
+## Text Command Line Bash Shortcuts #
 
-This page contains notes for system administrators and developers,
-who need to control Macs below the UI level, which require
-typing commands into a command-line terminal screen.
+These come from the bash terminal on Linux machines <a target="_blank" href="https://linuxacademy.com/blog/linux/ten-things-i-wish-i-knew-earlier-about-the-linux-command-line-2/">*here*</a>: Press control with your pinkie, then ...
 
-1. To avoid text wrapping, pull the right edge to expand the screen width.
+<ul>
+<li> <strong>control + A = Go to Beginning of line (as in A to Z)</strong> </li>
+<li> control + E = Go to End of line (hit E using longest finger)</li>
+<p></p>
+<li> control + F = Forward cursor</li>
+<li> control + B = Backward<br /></li>
+<p></p>
+<li> control + H = Backspace left of cursor</li>
+<li> control + D = Delete right of cursor<br /></li>
+<p></p>
+<li> control + K = Kill line from under the cursor to the end of the line.</li>
+<li> <strong>control + U = "U get out of here" - Clear entire line</strong><br /></li>
+<p></p>
+<li> control + P = Previous line<br /></li>
+<li> control + N = Next line </li>
+<p></p>
+<li> control + Y = Retrieve line<br /></li>
+<li> control + ` = cycle through session windows</li>
+<li> control + left = previous session</li>
+<li> control + right = previous session</li>
+</ul>
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=TJzltwv7jJs&list=PLlcnQQJK8SUjfkCph45fz6rC0de60LVZR&index=5">VIDEO</a>: Diving right into the deep end ...  
 
-   ### Foreground processes
+
+
+<a id="EnvVarz"></a>
+
+## Environment Variables
+
+A big reason to use a command-line terminal is to set environment variables.
+
+Like on PCs, the <strong>PATH</strong> system environment variable stores
+where the operating system should look to find a particular program to execute.
+
+1. To see what is already defined:
+
+   <pre><strong>export
+   </strong></pre>
+
+   The listing such as this, which declares the "XPC_FLAGS" system variable:
+
+   <tt>declare -x XPC_FLAGS="0x0"</tt>
+
+   
+
+   <a target="_blank" href="http://stackoverflow.com/questions/135688/setting-environment-variables-in-os-x">This</a> 
+   talks about setting <strong>launchd.conf</strong> and rebooting.
+   This applies to all users.
+
+1. To see what is defined:
+
+   <pre><strong>echo $PATH
+   </strong></pre>
+
+   PROTIP: $PATH must be upper case.
+
+   The response I'm getting includes:
+
+   <tt>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+   </tt>
+
+   Notice colon (:) separator used in Mac and Linux vs. semicolons used in Windows PATH.
+
+## Default editor
+
+1. The command to invoke the default editor is defined by a variable:
+
+   <pre><strong>echo $EDITOR</strong></pre>
+   
+   By default, it's TextMate:
+
+   <pre>/usr/local/bin/mate -w</pre>
+
+   If you want to change it to nano or other editor, see <a target="_blank" href="https://wilsonmar.github.io/text-editors">My tutorial on text editors</a>.
+
+2. On Terminal session, copy what has been typed and open the default text editor so you can edit the command:
+
+   <pre><strong>fc
+   </strong></pre>
+
+   Alternately, (which also works in Linux) while holding down the control key, press X and E together:
+
+   <tt><strong>control + X + E</strong></tt>
+
+3. Make changes, then copy all, switch or exit to the Terminal, then paste.
+
+   ### Switch among programs
+
+4. To switch among programs already running in macOS, hold down the <strong>command</strong> key while pressing <strong>tab</strong> multiple times until the program you want is highlighted (with its name) in the pop-up list. This is equivalent to the Windows control+Esc key combo.
+
+
+
+## Command history
+
+1. List previous command history:
+
+   <pre><strong>history
+   </strong></pre>
+
+   This is the same as:
+   
+   <pre><strong>cat $HISTFILE</strong></pre>
+
+   PROTIP: History does not display commands entered with a leading space.
+
+1. Cursor up and press Enter to re-execute.
+
+1. Press <tt>control + R</tt> to begins a “reverse incremental search” through your command history,
+   then type, it retrieves the most recent command that contains all the text you enter. Much better than something like:
+
+1. Press <tt>control + S</tt> to reverse the mode.
+
+1. Clear history:
+
+   <pre><strong>history -c
+   </strong></pre>
+
+   The clear command does not clear history.
+
+   See <a target="_blank" href="https://ss64.com/osx/history.html">history at sstr.com</a>
+
+1. Clear the terminal history:
+
+   <strong>clear</strong>
+
+
+
+
+
+
+## Foreground processes and background jobs
 
 4. List the first process (with Parent process ID of 0) launched (into user space) at boot by the system kernel:
 
@@ -116,7 +262,9 @@ typing commands into a command-line terminal screen.
 
    By contrast, on Linux system, the first CMD is <tt>/lib/systemd/systemd</tt>.
 
-   To list all processes, don't provide the PID 1.
+4. To list all processes, don't specify 1
+
+   <pre><strong>ps -f</strong></pre>
 
 
    ### PID given process name
@@ -232,15 +380,6 @@ ps axc|awk "{if (\$5==\"$1\") print \$1}";
    (either TCP or UDP).
 
 
-## Shutdown
-
-To kill all apps and shutdown a Mac right away (with no warning and no dialog):
-
-   <tt><strong>sudo shutdown -h now
-   </strong></tt>
-
-
-
 
 <a id="DevFolderz"></a>
 
@@ -263,6 +402,7 @@ To kill all apps and shutdown a Mac right away (with no warning and no dialog):
    </ul>
    <br /><br />
 
+
 1. Click on your username (wilsonmar in my case).
 
    This action is the same as clicking on the last default item under the
@@ -271,70 +411,15 @@ To kill all apps and shutdown a Mac right away (with no warning and no dialog):
    Many WordPress developers prefer to add a folder named <strong>Sites</strong>
    which holds the wordpress folder expanded from download.
 
+   ### vs. /etc in Linux
 
-<a id="Keyboard"></a>
-<a id="ShortKeys"></a>
+   <a target="_blank" href="https://www.youtube.com/watch?v=UFIoRLqhFpo&t=3m58s">VIDEO</a>:
+   On both Mac and Linux, the "et-see" folder contains system and program configuration files,
+   for both default system and programs you install (such as "teamviewer", etc.)
 
-## Text Command Line Bash Shortcuts #
+   <tt>/bin</tt> contains system 
 
-These come from the bash terminal on Linux machines <a target="_blank" href="https://linuxacademy.com/blog/linux/ten-things-i-wish-i-knew-earlier-about-the-linux-command-line-2/">*here*</a>: Press control with your pinkie, then ...
-
-<ul>
-<li> control + ` = cycle through session windows</li>
-<li> control + left = previous session</li>
-<li> control + right = previous session</li>
-<p></p>
-<li> control + P = Previous line<br /></li>
-<li> control + N = Next line </li>
-<p></p>
-<li> <strong>control + A = Go to Beginning of line (as in A to Z)</strong> </li>
-<li> control + E = Go to End of line (hit E using longest finger)</li>
-<p></p>
-<li> control + F = Forward cursor</li>
-<li> control + B = Backward<br /></li>
-<p></p>
-<li> control + H = Backspace left of cursor</li>
-<li> control + D = Delete right of cursor<br /></li>
-<p></p>
-<li> <strong>control + U = "U get out of here" - Clear entire line</strong><br /></li>
-<li> control + K = Kill line from under the cursor to the end of the line.</li>
-<li> control + Y = Retrieve line<br /></li>
-<p></p>
-<li> control + X + E = Open a <a target="_blank" href="https://wilsonmar.github.io/text-editors">text editor (TextMate)</a><br /></li>
-<p></p>
-<li> control + R = Record a shortcut between quotes</li>
-</ul>
-
-## Command history
-
-1. Place last command in a text editor so it's easier to edit.
-
-   <pre><strong>fc
-   </strong></pre>
-
-1. Exit with save modified buffer.
-
-1. List previous command history:
-
-   <pre><strong>history
-   </strong></pre>
-
-   PROTIP: History does not display commands entered with a leading space.
-
-1. Cursor up and press Enter to re-execute:
-
-1. Clear history:
-
-   <pre><strong>history -c
-   </strong></pre>
-
-   The clear command does not clear history.
-
-   See <a target="_blank" href="https://ss64.com/osx/history.html">history at sstr.com</a>
-
-## Alphabetical Commands list 
-
-A list of all commands native to macOS is listed <a target="_blank" href="https://ss64.com/osx/">alphabetically at https://ss64.com/osx</a>.
+   <tt>/sbin</tt> are for system administrators such as ping, fdisk, mount, umount, etc.
 
 
 
@@ -599,47 +684,6 @@ stuff happens. It can be annoying.
    PROTIP: NOT having a quick way to "Put display to sleep" is considered a security vulnerability by CIS. The lower-left corner is less popular location on Mac than Windows.
 
 
-## /etc
-
-<a target="_blank" href="https://www.youtube.com/watch?v=UFIoRLqhFpo&t=3m58s">VIDEO</a>:
-On both Mac and Linux, the "et-see" folder contains system and program configuration files,
-for both default system and programs you install (such as "teamviewer", etc.)
-
-<tt>/bin</tt> contains system 
-
-<tt>/sbin</tt> are for system administrators such as ping, fdisk, mount, umount, etc.
-
-
-<a name="Cat"></a>
-
-## Cat, tac, tail
-
-0. Show text file contents to the Terminal console:
-
-   <pre><strong>cat /etc/hosts
-   </strong></pre>
-
-   BLAH: The Linux tac command to list backward is not in Mac:
-
-   <pre><strong>tac /etc/hosts
-   </strong></pre>
-
-0. Show a file in -reverse (bottom-up):
-
-   <pre><strong>tail -r -n2 /etc/hosts
-   </strong></pre>
-
-   Change n2 to a different number of lines to show.
-
-   PROTIP: This command is useful to see the lastest entries appended to the end of a 
-   large log file.
-
-0. Expose spaces at end of lines by showing at end of every line <tt>$</tt> end-of-line characters that are otherwise not shown. For example, in a file on every macOS:
-
-   <pre><strong>cat -vet /etc/hosts
-   </strong></pre>
-
-
 <a id="Hosts"></a>
 
 ## Hosts file
@@ -647,9 +691,11 @@ for both default system and programs you install (such as "teamviewer", etc.)
 Mac, Windows, and Linux systems have a hosts file that locally does the work of the public DNS
 -- translating host names (typed on browser address field) to IP address numbers.
 
-0. Edit the hosts file on a Mac:
+<a name="Cat"></a>
 
-   <pre><strong>atom /etc/hosts
+0. Show text file contents to the Terminal console:
+
+   <pre><strong>cat /etc/hosts
    </strong></pre>
 
    The default contents:
@@ -675,6 +721,35 @@ fe80::1%lo0 localhost
 127.94.0.1  client.openvpn.net
 # END section for OpenVPN Client SSL sites
    </pre>   
+
+
+   BLAH: The Linux tac command to list backward is not in Mac:
+
+   <pre><strong>tac /etc/hosts
+   </strong></pre>
+
+0. Show a file in -reverse (bottom-up):
+
+   <pre><strong>tail -r -n2 /etc/hosts
+   </strong></pre>
+
+   Change n2 to a different number of lines to show.
+
+   PROTIP: This command is useful to see the lastest entries appended to the end of a 
+   large log file.
+
+0. Expose spaces at end of lines by showing at end of every line <tt>$</tt> end-of-line characters that are otherwise not shown. For example, in a file on every macOS:
+
+   <pre><strong>cat -vet /etc/hosts
+   </strong></pre>
+
+
+1. Edit the hosts file on a Mac using the Atom text editor:
+
+   <pre><strong>atom /etc/hosts
+   </strong></pre>
+
+<hr />
 
 
 <a id="TerminalPingHostz"></a>
@@ -991,43 +1066,6 @@ The command above uses global parameters $USER and $PWD,
 plus <a target="_blank" rel="amphtml" href="https://wiki.archlinux.org/index.php/Color_Bash_Prompt#List_of_colors_for_prompt_and_Bash">
 colors from this list</a>.
 
-1. Exit from the Terminal shell:
-
-   <tt>exit</tt>
-
-
-<a id="EnvVarz"></a>
-
-## Environment Variables
-
-A big reason to use a command-line terminal is to set environment variables.
-
-Like on PCs, the <strong>PATH</strong> system environment variable stores
-where the operating system should look to find a particular program to execute.
-
-1. To see what is already defined:
-
-   <pre><strong>export
-   </strong></pre>
-
-   <a target="_blank" href="http://stackoverflow.com/questions/135688/setting-environment-variables-in-os-x">This</a> 
-   talks about setting <strong>launchd.conf</strong> and rebooting.
-   This applies to all users.
-
-1. To see what is defined:
-
-   <pre><strong>echo $PATH
-   </strong></pre>
-
-   PROTIP: $PATH must be upper case.
-
-   The response I'm getting includes:
-
-   <tt>
-   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-   </tt>
-
-
 
 <a id="RootSudoz"></a>
 
@@ -1102,10 +1140,6 @@ Depending on how you're setup, file ~/.profile or ~/.bash_profile or ~/.bash_log
 contains the path echo'd.
 
 Or your PATH may be set in /etc/profile for all users
-
-1. Clear the terminal history:
-
-   <strong>clear</strong>
 
 
 <a id="Browserz"></a>
@@ -1413,8 +1447,20 @@ Apple Certified Support Professional (ACSP)
 
 ## Resources:
 
-* https://www.hamsterpad.com/chat/typescriptpdx
-   Typescript Slack group
+[2] <a target="_blank" href="https://www.youtube.com/watch?v=TJzltwv7jJs&list=PLlcnQQJK8SUjfkCph45fz6rC0de60LVZR&index=5">VIDEO</a>
+
+[3] <a target="_blank" href="http://tldp.org/LDP/abs/html/abs-guide.html">
+Advanced Bash-Scripting Guide by Mendel Cooper 2012</a>
+
+[4] <a target="_blank" href="https://www.commandlinefu.com/commands/browse"> CommandLineFu.com</a>
+
+https://zwischenzugs.com/2018/01/06/ten-things-i-wish-id-known-about-bash/
+https://leanpub.com/learnbashthehardway
+
+https://blog.flowblok.id.au/2013-02/shell-startup-scripts.html
+https://bitbucket.org/flowblok/shell-startup/src/default/
+
+https://linuxaria.com/howto/7-hidden-features-of-bash
 
 
 ## More on OSX

@@ -74,6 +74,14 @@ macOS provides a GUI to display detailed information about system Hardware, Soft
 
 Instead of examining various Linux config files (/etc/\*elease, /proc/meminfo for memory, /proc/cpuinfo for number of cores), macOS has a "system_profiler" utility presenting many data types.
 
+## You hot?
+
+1. Get CPU thermal data on MacOS
+
+   <pre><strong>sysctl machdep.xcpm.cpu_thermal_level</strong></pre>
+
+   PROTIP: Add this among your keyboard shortcuts in aliases.sh.
+
 ### system_profiler
 
 Internally, the display can be output as text using this command:
