@@ -2,9 +2,10 @@
 layout: post
 title: "Git Whoops"
 excerpt: "Don't panic. Here's how to un-do mistakes in Git"
-shorturl: "https://goo.gl/4vQ2Yl"
 modified:
 tags: []
+date: "2017-04-10"
+file: "git-whoops"
 image:
 # feature: pic blue black stars spin 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14621973/fe6e21a6-0583-11e6-9a94-a969a51759b6.jpg
@@ -256,6 +257,16 @@ If you didn't mean to fork a repository, but you did anyway,
 
    <pre>b10405ec (HEAD -> master, origin/master, origin/HEAD) whatever
 ee1a5c98 Update</pre>
+
+1. Identify the specific date and time of a commit:
+   
+   <pre><strong>git show --no-patch --no-notes --pretty='%ci' ee1a5c98</strong></pre>
+
+   The response is a sortable international date format such as this:
+
+   <pre>2019-08-29 10:36:37 -0400</pre>
+
+   <tt>-0400</tt> is the time zone offset for the local time in New York City, West of Greenwich, England (UTC 0).
 
 1. Position the branch to the SHA found:<a target="_blank" href="https://stackoverflow.com/questions/44728962/forgot-to-create-new-branch-how-to-transfer-changes-to-new-branch/44728984">*</a>, for example:
    
