@@ -295,6 +295,15 @@ so that when an app changes, just one change is needed to make all tests pass ag
 This is like Selenium <a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=23m41s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> <strong>page object helpers</strong> from http://bit.ly/po-html-elements Yandex and http://bit.ly/po-page-factory built into Selenium. <a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=28m05s"><img alt="YouTube" width="21" height="21" src="../images/youtube-21x21.png"></a> Similarly, Base Page Object library to migrate commands from one version to another.
 
 
+## Run Element script from client CLI
+
+
+
+An example summary report:
+
+<tt>This flood simulated up to 1 users across 1 grid in us-east-1 for 7 minutes. The mean response time was 916ms with a standard deviation of 1,285 ms. The median was 169 ms and the 90th percentile was 3,010 ms. The maximum was 3,014 ms. A maximum of 12 rpm with a mean of 4 rpm was observed. 101 transactions passed with 0 failed.
+</tt>
+
 <a name="SetupAWS"></a>
 
 ### Setup AWS manually

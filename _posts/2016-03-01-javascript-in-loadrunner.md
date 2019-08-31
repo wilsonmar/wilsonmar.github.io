@@ -3,6 +3,8 @@ layout: post
 title: "JavaScript in LoadRunner"
 excerpt: "Sample code and tutorial here"
 tags: [JavaScript, Load Testing, LoadRunner]
+date: "2016-03-01"
+file: "javascript-in-loadrunner"
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/14580754/41633d98-0395-11e6-87e1-065800a95775.jpg
   credit: Steve Mckinzie
@@ -10,11 +12,8 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
-[![Gitter](https://badges.gitter.im/wilsonmar/wilsonmar.github.io.svg)](https://gitter.im/wilsonmar/wilsonmar.github.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
+{% include l18n.html %}
 {% include _toc.html %}
-
 
 JavaScript is popular now.
 

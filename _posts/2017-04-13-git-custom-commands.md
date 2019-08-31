@@ -3,7 +3,8 @@ layout: post
 title: "Git Custom Commands"
 excerpt: "Less typing means less mistakes, and more time on social media"
 tags: [git, commands, utilities]
-shorturl: "https://goo.gl/kJvDoy"
+date: "2017-04-13"
+file: "git-custom-commands"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -12,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 Here is a deep dive into how you can define custom commands for Git to use.
