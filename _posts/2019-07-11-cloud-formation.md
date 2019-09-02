@@ -143,25 +143,27 @@ is multi-vendor.
 
 ### Sections of a Template
 
-* Description
-* <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html">Metadata</a>
-* <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html">Parameters</a>
-* <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html">Mappings</a>
-* <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/conditions-section-structure.html">Conditions</a>
-* Transform
 * <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html">Resources</a>
-* <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html">Outputs</a>
 
-<a target="_blank" href="https://github.com/natonic/DevOpsPro/blob/master/lamp-stack-1478287817_1530269327%20(3).json">from here</a> 
+![cf-template-sections-483x49](https://user-images.githubusercontent.com/300046/63377124-979b9f00-c34c-11e9-9fb5-8fac263954a6.jpg)
+
+* Description
+* <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html">Parameters</a> [<a href="#ParametersSample">In sample</a>]
+* <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html">Mappings</a> [<a href="#MappingssSample">In sample</a>]
+* <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html">Metadata (Properties)</a> [<a href="#MetadataSample">In sample</a>]
+* <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/conditions-section-structure.html">Conditions</a> [<a href="#ConditionsSample">In sample???</a>]
+* Transform ???
+* <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html">Outputs</a> [<a href="#OutputsSample">In sample</a>]
+
+Below is a rather full (production-worthy?) sample template <a target="_blank" href="https://github.com/natonic/DevOpsPro/blob/master/lamp-stack-1478287817_1530269327%20(3).json">from here</a> 
 
 <pre>
 {
   "AWSTemplateFormatVersion" : "2010-09-09",
 &nbsp;
   "Description" : "Create a LAMP stack using a single EC2 instance and a local MySQL database for storage. This template demonstrates using the AWS CloudFormation bootstrap scripts to install the packages and files necessary to deploy the Apache web server, PHP and MySQL at instance launch time.",
-&nbsp;
+<a name="ParametersSample"></a>
   "Parameters" : {
-&nbsp;
     "KeyName": {
       "Description" : "Name of an EC2 KeyPair to enable SSH access to the instance",
       "Type": "AWS::EC2::KeyPair::KeyName",
@@ -220,6 +222,7 @@ is multi-vendor.
       "ConstraintDescription": "must be a valid IP CIDR range of the form x.x.x.x/x."
     } 
   },
+<a name="MappingsSample"></a>
   "Mappings" : {
     "AWSInstanceType2Arch" : {
       "t2.nano"     : { "Arch" : "HVM64"  },
@@ -236,7 +239,7 @@ is multi-vendor.
       "Public"  : { "CIDR" : "10.0.0.0/24" }
     }
   },
-&nbsp;
+<a name="ResourcesSample"></a>
   "Resources" : {
 &nbsp;
     "WebServerInstance": {  
@@ -269,15 +272,15 @@ is multi-vendor.
                   "    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">\n",
                   "  </head>\n",
                   "  <body>\n",
-                  "    <h1>Welcome to the AWS CloudFormation PHP Sample</h1>\n",
-                  "    <p/>\n",
-                  "    <?php\n",
+                  "    &LT;h1>Welcome to the AWS CloudFormation PHP Sample&LT;/h1>\n",
+                  "    &LT;p/>\n",
+                  "    &LT;?php\n",
                   "      // Print out the current data and time\n",
-                  "      print \"The Current Date and Time is: <br/>\";\n",
+                  "      print \"The Current Date and Time is: &LT;br/>\";\n",
                   "      print date(\"g:i A l, F j Y.\");\n",
                   "    ?>\n",
-                  "    <p/>\n",
-                  "    <?php\n",
+                  "    &LT;p/>\n",
+                  "    &LT;?php\n",
                   "      $Database   = \"localhost\";\n",
                   "      $DBUser     = \"", {"Ref" : "DBUser"}, "\";\n",
                   "      $DBPassword = \"", {"Ref" : "DBPassword"}, "\";\n",
@@ -337,7 +340,7 @@ is multi-vendor.
               }
             }
           },
-          "Configure" : {
+           "Configure" : {
             "commands" : {
               "01_set_mysql_root_password" : {
                 "command" : { "Fn::Join" : ["", ["mysqladmin -u root password '", { "Ref" : "DBRootPassword" }, "'"]]},
@@ -351,7 +354,8 @@ is multi-vendor.
           }
         }
       },
-      "Properties": {
+<a name="MetadataSample"></a>
+       "Properties": {
         "ImageId" : { "Fn::FindInMap" : [ "AWSRegionArch2AMI", { "Ref" : "AWS::Region" },
                           { "Fn::FindInMap" : [ "AWSInstanceType2Arch", { "Ref" : "InstanceType" }, "Arch" ] } ] },
         "InstanceType"   : { "Ref" : "InstanceType" },
@@ -570,7 +574,7 @@ is multi-vendor.
       }
     }          
   },
-&nbsp;  
+[<a name="OutputsSample"></a>
   "Outputs" : {
     "WebsiteURL" : {
       "Description" : "URL for newly created LAMP stack",
@@ -599,7 +603,7 @@ Components view
 stacker</a> is a tool and library used to create & update multiple CloudFormation stacks. It was originally written at Remind and released to the open source community.
 
 
-1. Install AWS CLI under ~/.aw
+1. Install AWS CLI under <tt>~/.aw</tt>
    </pre>
 
    <a target="_blank" href="http://docs.aws.amazon.com/cli/latest/userguide/installing.html">
