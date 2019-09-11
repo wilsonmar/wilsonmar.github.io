@@ -16,7 +16,6 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-
 Artifactory is a <a target="_blank" href="https://www.wikiwand.com/en/List_of_software_package_management_systems">software package management system</a> 
 which stores <strong>binary</strong> format assets such as executable files from builds, virtual memory (container) images, graphic image files, etc. (rather than textual source code).
 
@@ -43,15 +42,18 @@ See <a target="_blank" href="https://jfrog.com/open-source/">https://jfrog.com/o
 
 Free OSS Artifactory editions fetch only for transitive package managers 
 Maven, <a target="_blank" href="https://docs.gradle.org/current/userguide/introduction_dependency_management.html">Gradle</a>, and <a target="_blank" href="https://en.wikipedia.org/wiki/Apache_Ivy">Apache Ivy</a>.
-But paid editions provide "universal support" for all major package formats:
+But paid editions provide "universal support" for all major binary package formats:
 
 <img width="704" alt="artifactory-filetypes-1408x470" src="https://user-images.githubusercontent.com/300046/64656672-2062a380-d3fe-11e9-9a33-0728f4891a4e.png">
 
-For source version control utilities:
-   * Git LFS (Large File Service) instead of GitHub, GitLab, etc.
-   * VCS
+For Git provider source <a target="_blank" href="https://www.jfrog.com/confluence/display/RTF/VCS+Repositories">API to VCS (Version Control System) repositories</a>:
+   * Git LFS (Large File Service) on <a target="_blank" href="https://www.github.com/">GitHub</a>
+   * <a target="_blank" href="https://www.gitlab.com/">GitLab</a>
+   * <a target="_blank" href="https://bitbucket.org/">Bitbucket</a>
+   * Stash
+   <br /><br />
 
-For CI server:
+For IaC (Infrastructure as Code) and virtualized images:
    * <a target="_blank" href="https://jfrog.com/integration/kubernetes-docker-registry/
 ">Docker</a> (instead of DockerHub & Quay.io)
    * Vagrant
@@ -59,12 +61,14 @@ For CI server:
    * Puppet
    * <a target="_blank" href="https://www.jfrog.com/confluence/display/RTF/Bower+Repositories">Bower</a>
    * <a target="_blank" href="https://www.jfrog.com/confluence/display/RTF/P2+Repositories">P2</a> for Apache Karaf and other OSGi-based components (by bndtools) in the <a target="_blank" href="https://www.eclipse.org/equinox/p2/">Eclipse/Equinox provisioning platform</a>
+   <br /><br />
 
 For operating systems:
    * <a target="_blank" href="https://www.nuget.org/">NuGet</a> for Windows (Chocolatey client) as well as .NET components (DLL and EXE) and <a target="_blank" href="https://www.powershellgallery.com/">PowerShell Gallery</a> instead of <a target="_blank" href="https://github.com/OneGet/oneget">OneGet</a>
    * Debian
-   * CocoaPods for Macs
+   * <a target="_blank" href="https://cocoapods.org/">CocoaPods</a> dependency manager (Ruby gem) for Swift and Objective-C code running on iOS mobile devices
    * <a target="_blank" href="https://www.wikiwand.com/en/Ipkg">ipk</a> packages (resembling Debian's dpkg) by <a target="_blank" href="https://www.jfrog.com/confluence/display/RTF/Opkg+Repositories">Opkg client</a> instead of the <a target="_blank" href="https://openwrt.org/packages/start">OpenWRT.org repository</a> of <a target="_blank" href="https://www.lifewire.com/what-is-openwrt-4177823">Linux distributions for network routers</a> (embedded devices).
+   <br /><br />
 
 For languages:
    * Maven instead of <a target="_blank" href="https://search.maven.org/">MavenCentral</a> for Java jar, ear, war dependencies
@@ -74,11 +78,14 @@ For languages:
    * RPM and RubyGems for Ruby
    * PHP Composer instead of <a target="_blank" href="https://packagist.org/">Packagist.org</a>
    * <a target="_blank" href="https://www.jfrog.com/confluence/display/RTF/Conan+Repositories/">Conan</a> for C/C++
+   <br /><br />
 
 File formats:
    * zip
    * tar.gz from Linux machines
    * 7up???
+   <br /><br />
+
 
 ### HA
 
@@ -211,8 +218,21 @@ VIDEO: Installing JFrog Artifactory 5 High Availability Cluster - The Complete W
 🍺  /usr/local/Cellar/jfrog-cli-go/1.28.0: 5 files, 18MB
    </pre>
 
-   See <a target="_blank" href="https://www.jfrog.com/confluence/display/CLI/JFrog+CLI">https://www.jfrog.com/confluence/display/CLI/JFrog+CLI</a>
+   See <a target="_blank" href="https://www.jfrog.com/confluence/display/CLI/JFrog+CLI">https://www.jfrog.com/confluence/display/CLI/JFrog+CLI</a> 
+   for different authentication mechanisms that can be used.
 
+1. Verify:
+
+   <pre><strong>jfrog --version</strong></pre>
+
+   <pre>jfrog version 1.28.0</pre>
+
+   <a target="_blank" href="https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Artifactory">
+   Command syntax</a>, such as:
+
+   <pre><strong>jfrog rt ping --url=http://my-rt-server.com/artifactory</strong></pre>
+
+<hr />
 
 <a name="RegularStartup"></a>
 
@@ -241,7 +261,7 @@ Alternately, <a target="_blank" href="https://computingforgeeks.com/how-to-insta
 
 <a name="CloudInstall"></a>
 
-## Cloud install
+## AWS Cloud 
 
 <a target="_blank" href="https://aws.amazon.com/blogs/devops/integrating-jfrog-artifactory-with-aws-codepipeline/">
 Integrating JFrog Artifactory with AWS CodePipeline</a>
@@ -250,6 +270,9 @@ by Erin McGill | on 24 MAY 2018
 ![artifactory-aws-746x414](https://user-images.githubusercontent.com/300046/64734291-53676e80-d4b4-11e9-85f8-220ec1870ce7.png)
 
 
+## Google Cloud
+
+Artifactory can be used to create a hybrid solution by being a repository to <a target="_blank" href="https://jfrog.com/partner/google-cloud-platform/">bridge</a> between Google Cloud Platform (GCP) and Google Kubernetes Engine (GKE)CI/CD pipeline on-prem, called <a target="_blank" href="https://console.cloud.google.com/marketplace/details/jfrog/jfrog-isaas?pli=1">Cloud Pro X</a>.
 
 <a target="_blank" href="https://cloud.google.com/blog/products/gcp/deploying-jfrog-artifactory-saas-on-google-cloud-platform">
 Deploying JFrog Artifactory SaaS on Google Cloud Platform</a>
@@ -311,6 +334,9 @@ Paid editions of Artifactory can extend Artifactory with Groovy-based User Plugi
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=aa4YBDUDWy0">
 2:31 Artifactory - Sharing Binaries the Smart Way!</a>
+
+https://jfrog.com/blog/control-your-kubernetes-voyage-with-artifactory/
+artifactory-flow-k8s.png
 
 * Glassdoor
 
