@@ -699,9 +699,8 @@ AWS CloudFormation Master Class on Udemy</a>
 by Stephane Maarek
 [March 2019 Update]: Added Drift and Nested Stacks
 
+## More on DevOps #
 
-## More on OSX
+This is one of a series on DevOps:
 
-This is one of a series on Mac OSX:
-
-{% include mac_links.html %}
+{% include devops_links.html %}
