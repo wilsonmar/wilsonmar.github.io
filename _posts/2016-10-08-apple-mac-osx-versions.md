@@ -37,8 +37,8 @@ comments: true
 </td><td align="right"><a target="_blank" href="https://www.apple.com/macos/mojave-preview/">Mojave</a>
 </td><td align="right"> Sep 24, 2018
 </td><td align="right"> 7.1.23
-</td><td align="right"> 2.7.10 ?
-</td><td align="right"> 2.4.2p198 ?
+</td><td align="right"> 2.7.10
+</td><td align="right"> 2.6.1p33
 </td><td align="left"> Dark Mode, <a target="_blank" href="https://support.apple.com/en-us/HT201361">Shift-Command-5 to capture screen with video</a>, Dynamic Desktop, Group FaceTime, New Mac App Store, News, Stocks, Voice Memos, HomeKit
 </td></tr>
 <tr valign="top"><td> 10.13<br />MacOS
