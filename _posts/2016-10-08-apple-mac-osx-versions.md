@@ -13,23 +13,14 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<p align="right"><a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2Fapple-mac-osx-versions%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2Fapple-mac-osx-versions%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2Fapple-mac-osx-versions%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2Fapple-mac-osx-versions%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2Fapple-mac-osx-versions%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2Fapple-mac-osx-versions%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2Fapple-mac-osx-versions%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2Fapple-mac-osx-versions%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2Fapple-mac-osx-versions%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
-</p>
+{% include l18n.html %}
 {% include _toc.html %}
 
 <a id="Versionz"></a>
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Ver. </th><th> Code Name </th><th> Avail. Date
-</th><th><a href="/php-on-apple-mac-osx/">PHP</a>
+</th><th><a href="/php-on-apple-mac-osx/">PHP<br />CLI</a>
 </th><th><a href="/python-install/">Python</a>
 </th><th><a href="/ruby-on-apple-mac-osx/">Ruby</a>
 </th><th> Features introduced
@@ -43,40 +34,40 @@ comments: true
 </td><td align="left"> XCode 11 <a target="_blank" href="https://www.apple.com/macos/catalina-preview/">Voice Control, Jira, Apple TV, podcasts, Sidecar iPad with pencil</a>
 </td></tr>
 <tr valign="top"><td> 10.14<br />MacOS
-</td><td align="right"><a target="_blank" href="https://www.apple.com/macos/mojave-preview/">Mojave preview</a>
-</td><td align="right"> June 2018
-</td><td align="right"> 2.6.0 ?
+</td><td align="right"><a target="_blank" href="https://www.apple.com/macos/mojave-preview/">Mojave</a>
+</td><td align="right"> Sep 24, 2018
+</td><td align="right"> 7.1.23
 </td><td align="right"> 2.7.10 ?
 </td><td align="right"> 2.4.2p198 ?
 </td><td align="left"> Dark Mode, <a target="_blank" href="https://support.apple.com/en-us/HT201361">Shift-Command-5 to capture screen with video</a>, Dynamic Desktop, Group FaceTime, New Mac App Store, News, Stocks, Voice Memos, HomeKit
 </td></tr>
 <tr valign="top"><td> 10.13<br />MacOS
 </td><td align="right"><a target="_blank" href="https://www.apple.com/macos/high-sierra/">High Sierra</a>
-</td><td align="right"> Oct. 2017
-</td><td align="right"> 2.6.0
+</td><td align="right"> Sep. 25, 2017
+</td><td align="right"> 5.6.28
 </td><td align="right"> 2.7.10
 </td><td align="right"> 2.4.2p198
 </td><td align="left"> ADFS, H.265 video, Metal 2
 </td></tr>
 <tr valign="top"><td> 10.12<br />MacOS
 </td><td align="right"><a target="_blank" href="https://www.apple.com/macos/sierra/">Sierra</a>
-</td><td align="right"> Oct. 2016
-</td><td align="right"> 2.6.0
+</td><td align="right"> Sep. 20, 2016
+</td><td align="right"> 5.6.28
 </td><td align="right"> 2.7.10
 </td><td align="right"> -
 </td><td align="left"> Auto unlock, universal clipboard, Siri, Watch login
 </td></tr>
 <tr valign="top"><td> 10.11<br />Mac OSX
 </td><td align="right"> El Capitan (Gala)
-</td><td align="right"> July 2015
-</td><td align="right"> -
+</td><td align="right"> Sep. 30, 2015
+</td><td align="right"> 5.5.14?
 </td><td align="right"> 2.7.10
 </td><td align="right"> -
 </td><td align="left"> <a href="#ElCapitanSIP">Disable System Integrity Production</a>
 </td></tr>
 <tr valign="top"><td> 10.10
 </td><td align="right"><a target="_blank" rel="amphtml" href="http://www.wikiwand.com/en/OS_X_Yosemite">Yosemite</a> (Syrah)
-</td><td align="right"> Fall 2014
+</td><td align="right"> Oct. 16, 2014
 </td><td align="right"> 5.5.14
 </td><td align="right"> 2.7.6
 </td><td align="right"> -
@@ -101,7 +92,7 @@ comments: true
 </td><td align="right"> -
 </td><td align="left"> - </td></tr>
 <tr valign="top"><td> 10.6 </td><td align="right"> Snow Leopard
-</td><td align="right"> June 9, 2008
+</td><td align="right"> Aug. 28, 2008
 </td><td align="right"> 5.3
 </td><td align="right"> -
 </td><td align="right"> -
@@ -332,6 +323,8 @@ https://support.apple.com/downloads/combo</a><br />
 <a id="Wallpaperz"></a>
 
 ## Desktop Wallpaper Pictures #
+
+The default desktop image on High Sierra is of Maroon Bells, Colorado. It's one of the most photographed destinations in America, located just outside Aspen in the Rocky Mountains.
 
 Wallpaper images that come with OS X are of Retina resolution: 
 <strong>5120x2880</strong>. Really big.
