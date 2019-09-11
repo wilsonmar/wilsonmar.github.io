@@ -41,7 +41,8 @@ The money goes to support secure, clustered, High Availability registries.
 
 See <a target="_blank" href="https://jfrog.com/open-source/">https://jfrog.com/open-source</a>
 
-Free OSS editions fetch only for Maven, Gradle, and Ivy.
+Free OSS Artifactory editions fetch only for transitive package managers 
+Maven, <a target="_blank" href="https://docs.gradle.org/current/userguide/introduction_dependency_management.html">Gradle</a>, and <a target="_blank" href="https://en.wikipedia.org/wiki/Apache_Ivy">Apache Ivy</a>.
 But paid editions provide "universal support" for all major package formats:
 
 <img width="704" alt="artifactory-filetypes-1408x470" src="https://user-images.githubusercontent.com/300046/64656672-2062a380-d3fe-11e9-9a33-0728f4891a4e.png">
@@ -67,13 +68,17 @@ For operating systems:
 
 For languages:
    * Maven instead of <a target="_blank" href="https://search.maven.org/">MavenCentral</a> for Java jar, ear, war dependencies
-   * PyPI for Python
+   * PyPI for Python by pip and conda
    * SBT (Scala Built Tool) can be used for Java
    * NPM (Node Package Manager) for JavaScript
    * RPM and RubyGems for Ruby
-   * PHP Composer
+   * PHP Composer instead of <a target="_blank" href="https://packagist.org/">Packagist.org</a>
    * <a target="_blank" href="https://www.jfrog.com/confluence/display/RTF/Conan+Repositories/">Conan</a> for C/C++
 
+File formats:
+   * zip
+   * tar.gz from Linux machines
+   * 7up???
 
 ### HA
 
@@ -114,7 +119,7 @@ Many enterprise users of Artifactory create full backups which are physically sh
    Internally, each artifact is stored using a unique hash generated from the data in the file.
 
 1. Assign access privileges according to projects or development teams.
-
+1. Corporate policy on signing.
 
 
 ## Installation
@@ -122,7 +127,6 @@ Many enterprise users of Artifactory create full backups which are physically sh
 <a target="_blank" href="https://www.youtube.com/watch?v=UcCmT4eu93I" title="Feb 11, 2018"> 
 VIDEO: Installing JFrog Artifactory 5 High Availability Cluster - The Complete Walk through [9:23]</a>
 
-* JFrog Bintray is JFrong's Software Distribution as a Service.
 * JFrong Mission Control
 
 1. Download the bootstrap bundle tar.gz file or jfrog-artifactory-pro-5.1.0.zip.
@@ -183,17 +187,40 @@ VIDEO: Installing JFrog Artifactory 5 High Availability Cluster - The Complete W
 1. Do "chaos engineering" by brining down a node to verify recovery.
 1. Practice recovery from backup.
 
+   ### Enable GPG Signing
+
+   1. GPG Signing of components
+   See https://www.jfrog.com/confluence/display/RTF/GPG+Signing
+
+
    ### JFrong CLI
 
    <a target="_blank" href="https://www.jfrog.com/confluence/display/CLI/JFrog+CLI">JFrog CLI</a>
    optimizes both upload and download operations by skipping artifacts that already exist in their target location. 
 
+1. Obtain installer from https://jfrog.com/getcli/ or:
+
+   <pre><strong>brew install jfrog-cli-go</strong></pre>
+
+   The response reflects use of Artifactory's bintray.com, JFrog's Software Distribution as a Service (instead of acakamai, etc.):
+
+   <pre>==> Downloading https://homebrew.bintray.com/bottles/jfrog-cli-go-1.28.0.mojave.bottle.1.tar.gz
+==> Downloading from https://akamai.bintray.com/29/2923b39b46f3a3d3ab994ddb5303c944cab3e27fd51f7cd41dfcd35b908af5aa?__gda__=exp=1568231851
+######################################################################## 100.0%
+==> Pouring jfrog-cli-go-1.28.0.mojave.bottle.1.tar.gz
+🍺  /usr/local/Cellar/jfrog-cli-go/1.28.0: 5 files, 18MB
+   </pre>
+
+   See <a target="_blank" href="https://www.jfrog.com/confluence/display/CLI/JFrog+CLI">https://www.jfrog.com/confluence/display/CLI/JFrog+CLI</a>
+
+
 <a name="RegularStartup"></a>
 
 ## Regular server start-up
 
-1. artifactory.sh starts the server on Linux machines.<br />
-   artifactory.bat starts the server on Windows machines.
+1. <tt>artifactory.sh</tt> starts the server on Linux machines.<br />
+   <tt>artifactory.bat</tt> starts the server on Windows machines.
+
 
    ### Access and Authentication
 
@@ -209,6 +236,26 @@ VIDEO: Installing JFrog Artifactory 5 High Availability Cluster - The Complete W
 
 
 Alternately, <a target="_blank" href="https://computingforgeeks.com/how-to-install-jfrog-artifactory-on-centos/">install using Docker on CentOS</a>
+
+<hr />
+
+<a name="CloudInstall"></a>
+
+## Cloud install
+
+<a target="_blank" href="https://aws.amazon.com/blogs/devops/integrating-jfrog-artifactory-with-aws-codepipeline/">
+Integrating JFrog Artifactory with AWS CodePipeline</a>
+by Erin McGill | on 24 MAY 2018 
+
+![artifactory-aws-746x414](https://user-images.githubusercontent.com/300046/64734291-53676e80-d4b4-11e9-85f8-220ec1870ce7.png)
+
+
+
+<a target="_blank" href="https://cloud.google.com/blog/products/gcp/deploying-jfrog-artifactory-saas-on-google-cloud-platform">
+Deploying JFrog Artifactory SaaS on Google Cloud Platform</a>
+by JFrog Solutions Engineers Doron Meirfeld and Mansirman Singh
+
+![JFrog-artifactory-700x700](https://user-images.githubusercontent.com/300046/64734186-261ac080-d4b4-11e9-8853-04027d8822b4.png)
 
 
 <hr />
