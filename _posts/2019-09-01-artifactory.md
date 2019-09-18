@@ -66,7 +66,7 @@ For IaC (Infrastructure as Code) and virtualized images:
 For operating systems:
    * <a target="_blank" href="https://www.nuget.org/">NuGet</a> for Windows (Chocolatey client) as well as .NET components (DLL and EXE) and <a target="_blank" href="https://www.powershellgallery.com/">PowerShell Gallery</a> instead of <a target="_blank" href="https://github.com/OneGet/oneget">OneGet</a>
    * Debian
-   * <a target="_blank" href="https://cocoapods.org/">CocoaPods</a> dependency manager (Ruby gem) for Swift and Objective-C code running on iOS mobile devices
+   * <a target="_blank" href="https://cocoapods.org/">CocoaPods</a> package metadata (dependency) manager (Ruby gem) for Swift and Objective-C code running on iOS mobile devices, (instead of .podspec or .podspec.json files in GitHub)
    * <a target="_blank" href="https://www.wikiwand.com/en/Ipkg">ipk</a> packages (resembling Debian's dpkg) by <a target="_blank" href="https://www.jfrog.com/confluence/display/RTF/Opkg+Repositories">Opkg client</a> instead of the <a target="_blank" href="https://openwrt.org/packages/start">OpenWRT.org repository</a> of <a target="_blank" href="https://www.lifewire.com/what-is-openwrt-4177823">Linux distributions for network routers</a> (embedded devices).
    <br /><br />
 
@@ -75,7 +75,7 @@ For languages:
    * PyPI for Python by pip and conda
    * SBT (Scala Built Tool) can be used for Java
    * NPM (Node Package Manager) for JavaScript
-   * RPM and RubyGems for Ruby
+   * yum RPM and RubyGems for Ruby <a target="_blank" href="https://www.youtube.com/watch?v=HZvwamCJR-Q">VIDEO</a>
    * PHP Composer instead of <a target="_blank" href="https://packagist.org/">Packagist.org</a>
    * <a target="_blank" href="https://www.jfrog.com/confluence/display/RTF/Conan+Repositories/">Conan</a> for C/C++
    <br /><br />
@@ -209,7 +209,7 @@ VIDEO: Installing JFrog Artifactory 5 High Availability Cluster - The Complete W
 
    <pre><strong>brew install jfrog-cli-go</strong></pre>
 
-   The response reflects use of Artifactory's bintray.com, JFrog's Software Distribution as a Service (instead of acakamai, etc.):
+   The response reflects use of Artifactory's bintray.com, JFrog's Software Distribution as a Service (instead of Acakamai CDN, etc.):
 
    <pre>==> Downloading https://homebrew.bintray.com/bottles/jfrog-cli-go-1.28.0.mojave.bottle.1.tar.gz
 ==> Downloading from https://akamai.bintray.com/29/2923b39b46f3a3d3ab994ddb5303c944cab3e27fd51f7cd41dfcd35b908af5aa?__gda__=exp=1568231851
@@ -349,6 +349,7 @@ Questions and Answers on StackOverflow tagged "Artifactory"</a>
 * Facebook
 * Instagram
 
+https://flink.apache.org/
 
 <hr />
 

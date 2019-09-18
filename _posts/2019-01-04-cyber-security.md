@@ -13,24 +13,14 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<p align="right">
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2F{{ page.file }}%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
-</p>
+{% include l18n.html %}
 {% include _toc.html %}
 
 <a target="_blank" href="https://wilsonmar.github.io/cyber-security/">This page</a> contains my notes on resources for Cyber Security, which is a vast field. This single page is just for reference.
 
 ## Adobe Common Control Framework
 
-Adobe <a target="_blank" href="https://adobe.allegiancetech.com/cgi-bin/qwebcorporate.dll?idx=VM6HD7">open-sourced</a> its <a target="_blank" href="https://blogs.adobe.com/security/2017/05/open-source-ccf.html">Common Contral Framework</a> which encompasses several frameworks. Adobe's CCF covers ISO 27001, SOC, FedRAMP, PCI DSS, GLBA, FERPA. <a target="_blank" href="https://www.adobe.com/security/compliance/ccf-download.html">Download</a> the <a target="_blank" href="https://www.adobe.com/pdf/Open_Source_CCF.pdf">pdf</a>. Adobe's control families is most comprehensive:
+Adobe <a target="_blank" href="https://adobe.allegiancetech.com/cgi-bin/qwebcorporate.dll?idx=VM6HD7">open-sourced</a> its <a target="_blank" href="https://blogs.adobe.com/security/2017/05/open-source-ccf.html">Common Control Framework</a> which encompasses several security frameworks. Adobe's CCF covers ISO 27001, SOC, FedRAMP, PCI DSS, GLBA, FERPA, and others. <a target="_blank" href="https://www.adobe.com/security/compliance/ccf-download.html">Download</a> the <a target="_blank" href="https://www.adobe.com/pdf/Open_Source_CCF.pdf">pdf</a>. Adobe's control families is most comprehensive:
 
    * Asset management
    * Business Continuity
@@ -54,9 +44,14 @@ Adobe <a target="_blank" href="https://adobe.allegiancetech.com/cgi-bin/qwebcorp
    * Vulnerability Management
    <br /><br />
 
-Amazon's Compliance:
+## Amazon's Compliance:
 
-<img width="926" alt="aws-compliance" src="https://user-images.githubusercontent.com/300046/56856297-c8c31000-6914-11e9-874e-c0417d380dfd.png">
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/56856297-c8c31000-6914-11e9-874e-c0417d380dfd.png"><img width="926" alt="aws-compliance" src="https://user-images.githubusercontent.com/300046/56856297-c8c31000-6914-11e9-874e-c0417d380dfd.png"></a>
+
+<a target="_blank" href="https://aws.amazon.com/compliance/programs/">Compliance Programs at<br />https://aws.amazon.com/compliance/programs</a> covers security requirements in Canada, Asia Pacific, and Europe.
+
+<a target="_blank" href="https://aws.amazon.com/compliance/">Amazon Compliance at<br /></a>https://aws.amazon.com/compliance</a>
+
 
 <a name="CIS"></a>
 
