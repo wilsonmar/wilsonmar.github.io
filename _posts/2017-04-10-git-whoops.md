@@ -220,9 +220,9 @@ If you didn't mean to fork a repository, but you did anyway,
    in GitHub. The following applies to such commits.
 
    If the message text is all you want to undo, repeat the command with 
-   `--amend` added.
+   `--amend` added:
 
-   <pre><strong>git commit -m"Update again for show" --amend
+   <pre><strong>git commit -m"#DAC-123 Update again for show" --amend
    </strong></pre>
 
    The above creates a new commit in place of the previous commit.
