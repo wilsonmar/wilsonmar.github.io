@@ -143,9 +143,10 @@ It makes use of the <a target="_blank" href="https://na31.lightning.force.com/pa
 ## Projects
 
    At last count, there are 81 <a target="_blank" href="https://trailhead.salesforce.com/en/projects">Salesforce Trailhead projects</a> for developers.
-   43 are for Admins
-   34 are intermediate projects.
-   13 are advanced projects.
+   
+   * 43 are for Admins.
+   * 34 are intermediate projects.
+   * 13 are advanced projects.
 
 PROTIP: Many of the projects introduce techniques for connecting Salesforce with external systems.
 
@@ -158,40 +159,70 @@ PROTIP: Many of the projects introduce techniques for connecting Salesforce with
 
 ### Build a Battlestation
 
-Project: <a target="_blank" href="https://trailhead.salesforce.com/en/projects/workshop-battle-station">Build a Battle Station App</a> [2 hrs 30 mins] 
+<!-- <img align="right" alt="battlestation-badge-200x200.png" width="200" height=200" src="https://user-images.githubusercontent.com/300046/65752446-73409880-e12a-11e9-9412-f5744324119d.png">
+-->
+
+Trailhead workshop <a target="_blank" href="https://trailhead.salesforce.com/en/projects/workshop-battle-station">
+Build a Battle Station App</a> [2 hrs 30 mins] 
+is used during one-day introductory "boot camps" for adults and children.
+
 NOTE: Instead of one long page, the UI has since changed to a menu to <strong>text and screen shots</strong>:
 
    1. <a target="_blank" href="https://trailhead.salesforce.com/en/content/learn/projects/workshop-battle-station/battle-station-1">Create the Battle Station App</a>
-   2. <a target="_blank" href="https://trailhead.salesforce.com/en/content/learn/projects/workshop-battle-station/battle-station-2">Build the Object Model</a
-   3.  <a target="_blank" href="https://trailhead.salesforce.com/en/content/learn/projects/workshop-battle-station/battle-station-3">Modify the User Experience</a
-   4.  <a target="_blank" href="https://trailhead.salesforce.com/en/content/learn/projects/workshop-battle-station/battle-station-4">Add Business Logic</a
-   5.  <a target="_blank" href="https://trailhead.salesforce.com/en/content/learn/projects/workshop-battle-station/battle-station-5">Create Reports and Dashboards</a
-   6.  <a target="_blank" href="https://trailhead.salesforce.com/en/content/learn/projects/workshop-battle-station/battle-station-6">Make the App Mobile</a
+   2. <a target="_blank" href="https://trailhead.salesforce.com/en/content/learn/projects/workshop-battle-station/battle-station-2">Build the Object Model</a>
+   3.  <a target="_blank" href="https://trailhead.salesforce.com/en/content/learn/projects/workshop-battle-station/battle-station-3">Modify the User Experience</a>
+   4.  <a target="_blank" href="https://trailhead.salesforce.com/en/content/learn/projects/workshop-battle-station/battle-station-4">Add Business Logic</a>
+   5.  <a target="_blank" href="https://trailhead.salesforce.com/en/content/learn/projects/workshop-battle-station/battle-station-5">Create Reports and Dashboards</a>
+   6.  <a target="_blank" href="https://trailhead.salesforce.com/en/content/learn/projects/workshop-battle-station/battle-station-6">Make the App Mobile</a>
    <br /><br />
 
-First, login to your instance of Salesforce.
+These blogs provide an overview of how to complete the project:
 
-This series of videos has no sound, so it may seem like you're watching someone seemingly clicking around randomly, all dated May 17, 2018:
+   * <a target="_blank" href="https://blog.jeffdouglas.com/2015/12/21/how-we-built-the-build-a-battle-station-project/">How we built the "Build a Battle Station App"</a> by Jeff Douglas — 21 Dec 2015 
 
-   1. <a target="_blank" href="https://www.youtube.com/watch?v=sIU0zKNYPyE">7:04</a> scrolls through the description of the project at <a target="_blank" href="https://trailhead.salesforce.com/en/projects/workshop-battle-station">https://trailhead.salesforce.com/en/projects/workshop-battle-station</a>.
+   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=dQKvqmXqZrg">How to Nov 10, 2017</a> [1:48] using <a target="_blank" href="https://guideme.io">GuideMe.io</a> EdCast
+
+   * <a target="_blank" href="https://twitter.com/search?q=trailhead%20battle%20station&src=typd">Tweets about "trailhead battle station" app
+
+
+This series of videos (all dated May 17, 2018)) has no sound, so it may seem like you're watching someone seemingly clicking around randomly, but it's quite comporehensive:
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=sIU0zKNYPyE">7:04</a> scrolls through the description of the project at <a target="_blank" href="https://trailhead.salesforce.com/en/projects/workshop-battle-station">https://trailhead.salesforce.com/en/projects/workshop-battle-station</a>.
    In the video it's one long page, but it's now a menu.
 
-   1. <a target="_blank" href="https://www.youtube.com/watch?v=JLu0nNXZFVE">17:14 Build the Object Model</a>
+   1. Create a Trailhead account if you haven't already.
+   
+   1. Click the Gear icon and select Setup
+   2. Click Object Manager tab next to the Home tab.
+   3. Click on Create drop-down at the right side and then select Custom Object.
+   4. Label "Battle Station".
+   5. Plural Label "Battle Stations".
+   6. Check the Allow Reports checkbox 
+   7. Check the Allow Search checkbox.
+   8. Click on Save
+   9. Now create a custom tab: Click the Home tab 
+   10. Enter Tabs in Quick Find and select Tabs.
+   11. Under Custom Object Tabs, click New.
+   12. For Object, select Battle Station.
+   13. For Tab Style, select any icon.
+   14. Click on Next
+   15. Leave all defaults as is. Click Next
+   16. Hit Save.
+   17. Now we need to enable Feed Tracking for the Battle Station object. Enter Feed in the Quick Find and select Feed Tracking  
+   18. Click on Battle Station, and check the Enable Feed Tracking checkbox.
+   19.  Check the Battle Station Name and Owner checkboxes. Click Save.
+   20. Your changes have been saved.
+   <br /><br />
 
-   1. <a target="_blank" href="https://www.youtube.com/watch?v=QUIs-T32Op8">21:05 Modify the Experience</a>
+2. <a target="_blank" href="https://www.youtube.com/watch?v=JLu0nNXZFVE">17:14 Build the Object Model</a>
 
-   1. <a target="_blank" href="https://www.youtube.com/watch?v=n7_2XUFKvCY">11:52 Add Business Logic</a>
+3. <a target="_blank" href="https://www.youtube.com/watch?v=QUIs-T32Op8">21:05 Modify the Experience</a>
 
-   1. <a target="_blank" href="https://www.youtube.com/watch?v=Fwwqe48dhgU">28:46 Create the Battle Station App</a>
+4. <a target="_blank" href="https://www.youtube.com/watch?v=n7_2XUFKvCY">11:52 Add Business Logic</a>
 
-   1. <a target="_blank" href="https://www.youtube.com/watch?v=sRKxydxRkDg">3:29 Make the App Mobile</a>
+5. <a target="_blank" href="https://www.youtube.com/watch?v=Fwwqe48dhgU">28:46 Create the Battle Station App</a>
 
-Other resources showing how to complete the project is described at:
-
-   * <a target="_blank" href="https://blog.jeffdouglas.com/2015/12/21/how-we-built-the-build-a-battle-station-project/">How we built the "Build a Battle Station App"</a> by Jeff Douglas — 21 Dec 2015
-
-   * <a target="_blank" href="https://www.youtube.com/watch?v=dQKvqmXqZrg">How to Nov 10, 2017</a> [1:48] using <a target="_blank" href="https://guideme.io">GuideMe.io</a> EdCast
-
+5. <a target="_blank" href="https://www.youtube.com/watch?v=sRKxydxRkDg">3:29 Make the App Mobile</a>
 
 
 ## Trailhead apps
