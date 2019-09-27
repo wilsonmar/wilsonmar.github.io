@@ -155,18 +155,43 @@ PROTIP: Many of the projects introduce techniques for connecting Salesforce with
    * <a target="_blank" href="https://www.youtube.com/watch?v=J6TvtIqgbjA">Docker</a>
 
 <a name="BattleStation"></a>
+
+### Build a Battlestation
+
 Project: <a target="_blank" href="https://trailhead.salesforce.com/en/projects/workshop-battle-station">Build a Battle Station App</a> [2 hrs 30 mins] 
+NOTE: Instead of one long page, the UI has since changed to a menu to <strong>text and screen shots</strong>:
+
+   1. <a target="_blank" href="https://trailhead.salesforce.com/en/content/learn/projects/workshop-battle-station/battle-station-1">Create the Battle Station App</a>
+   2. <a target="_blank" href="https://trailhead.salesforce.com/en/content/learn/projects/workshop-battle-station/battle-station-2">Build the Object Model</a
+   3.  <a target="_blank" href="https://trailhead.salesforce.com/en/content/learn/projects/workshop-battle-station/battle-station-3">Modify the User Experience</a
+   4.  <a target="_blank" href="https://trailhead.salesforce.com/en/content/learn/projects/workshop-battle-station/battle-station-4">Add Business Logic</a
+   5.  <a target="_blank" href="https://trailhead.salesforce.com/en/content/learn/projects/workshop-battle-station/battle-station-5">Create Reports and Dashboards</a
+   6.  <a target="_blank" href="https://trailhead.salesforce.com/en/content/learn/projects/workshop-battle-station/battle-station-6">Make the App Mobile</a
+   <br /><br />
+
+First, login to your instance of Salesforce.
+
+This series of videos has no sound, so it may seem like you're watching someone seemingly clicking around randomly, all dated May 17, 2018:
+
+   1. <a target="_blank" href="https://www.youtube.com/watch?v=sIU0zKNYPyE">7:04</a> scrolls through the description of the project at <a target="_blank" href="https://trailhead.salesforce.com/en/projects/workshop-battle-station">https://trailhead.salesforce.com/en/projects/workshop-battle-station</a>.
+   In the video it's one long page, but it's now a menu.
+
+   1. <a target="_blank" href="https://www.youtube.com/watch?v=JLu0nNXZFVE">17:14 Build the Object Model</a>
+
+   1. <a target="_blank" href="https://www.youtube.com/watch?v=QUIs-T32Op8">21:05 Modify the Experience</a>
+
+   1. <a target="_blank" href="https://www.youtube.com/watch?v=n7_2XUFKvCY">11:52 Add Business Logic</a>
+
+   1. <a target="_blank" href="https://www.youtube.com/watch?v=Fwwqe48dhgU">28:46 Create the Battle Station App</a>
+
+   1. <a target="_blank" href="https://www.youtube.com/watch?v=sRKxydxRkDg">3:29 Make the App Mobile</a>
+
+Other resources showing how to complete the project is described at:
+
    * <a target="_blank" href="https://blog.jeffdouglas.com/2015/12/21/how-we-built-the-build-a-battle-station-project/">How we built the "Build a Battle Station App"</a> by Jeff Douglas — 21 Dec 2015
+
    * <a target="_blank" href="https://www.youtube.com/watch?v=dQKvqmXqZrg">How to Nov 10, 2017</a> [1:48] using <a target="_blank" href="https://guideme.io">GuideMe.io</a> EdCast
 
-   No sound, watching someone seemingly clicking around randomly:
-
-   1. <a target="_blank" href="https://www.youtube.com/watch?v=sIU0zKNYPyE">7:04</a> May 17, 2018
-   1. <a target="_blank" href="https://www.youtube.com/watch?v=JLu0nNXZFVE">17:14</a> May 17, 2018
-   1. <a target="_blank" href="https://www.youtube.com/watch?v=QUIs-T32Op8">21:05</a> May 17, 2018
-   1. <a target="_blank" href="https://www.youtube.com/watch?v=n7_2XUFKvCY">11:52</a> May 17, 2018
-   1. <a target="_blank" href="https://www.youtube.com/watch?v=Fwwqe48dhgU">28:46</a> May 17, 2018
-   1. <a target="_blank" href="https://www.youtube.com/watch?v=sRKxydxRkDg">3:29</a> May 17, 2018
 
 
 ## Trailhead apps
