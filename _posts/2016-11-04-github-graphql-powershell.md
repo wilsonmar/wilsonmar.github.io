@@ -3,6 +3,8 @@ layout: post
 title: "GitHub GraphQL PowerShell Module"
 excerpt: "How I got in front of the GraphQL and PowerShell parade."
 tags: [GitHub, API, GraphQL, PowerShell]
+date: "2016-11-04"
+file: "github-graphql-powershell"
 image:
 # banner parade graphql 1900x500-889kb
   feature: https://cloud.githubusercontent.com/assets/14143059/20024011/3339d872-a2a9-11e6-934d-4117df9c643c.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 [GraphQL](/graphql/) is eating REST API, and

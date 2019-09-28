@@ -3,6 +3,8 @@ layout: post
 title: "AWS server deployment options"
 excerpt: "Pick which crew of robots to build your servers"
 tags: [AWS, EC2, cloud, automation]
+date: "2016-06-22"
+file: "aws-server-deploy-options"
 image:
 # feature: pic data center slice 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
@@ -10,14 +12,12 @@ image:
   creditlink:
 comments: true
 ---
-<a href="https://wilsonmar.github.io/aws-server-deploy-options/">https://wilsonmar.github.io/aws-server-deploy-options</a>
-
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
-This tutorial describes the options AWS provides to automate setup of multi-stage (dev+QA+prod) enterprise environments within EC2.
+<a href="https://wilsonmar.github.io/aws-server-deploy-options/">
+This tutorial</a> describes the options AWS provides to automate setup of multi-stage (dev+QA+prod) enterprise environments within EC2.
 
 The options:
 

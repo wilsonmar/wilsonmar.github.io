@@ -3,7 +3,8 @@ layout: post
 title: "Elastic Kibana setup"
 excerpt: "Show all the numbers in a dashboard"
 tags: [apple, mac, setup]
-shorturl: "https://goo.gl/8mGgPF"
+date: "2017-09-05"
+file: "elastic-kibana"
 image:
 # elk-beat-arch-1900x500-102084.jpg
   feature: https://user-images.githubusercontent.com/300046/30410257-2d3fa8b0-98c7-11e7-9467-d35837b592a2.jpg
@@ -12,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 Kibana presents visualizations in a dashboard containing data from Elasticsearch databases.

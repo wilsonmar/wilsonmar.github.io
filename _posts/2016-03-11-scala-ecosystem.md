@@ -3,6 +3,8 @@ layout: post
 title: "Scala ecosystem"
 excerpt: "The language, not the opera house in Milan"
 tags: [scala, programming, ecosystem]
+date: "2016-03-11"
+file: "scala-ecosystem"
 image:
 #  feature: pic red curtains la scala 1900x500.jpg
    feature: https://cloud.githubusercontent.com/assets/300046/14580771/13ab344a-0396-11e6-8e2d-442f861417b0.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 Here is my hands-on approach to introduce the **ecosystem** around the Scala programming language.

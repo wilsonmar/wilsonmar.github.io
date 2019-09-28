@@ -3,6 +3,8 @@ layout: page
 title: Social media for evangelism
 excerpt: "Tell them good"
 tags: [social media, evangelism, jekyll]
+date: "2016-03-13"
+file: "social-media-for-evangelism"
 image:
 # pic blue networkers social 1900x500-c21.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/16904951/0e5ebb1a-4c5c-11e6-8741-778edab0dd85.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 (All sites are .com unless noted otherwise)
@@ -26,6 +27,7 @@ comments: true
 * <a target="_blank" href="https://www.pinterest.com/">Pinerest</a> photos
 * <a target="_blank" href="https://www.instagram.com/">Instagram</a> photos
 * <a target="_blank" href="https://www.flickr.com/">Flickr</a> photos (Yahoo)
+* <a target="_blank" href="https://www.tiktok.com/">TikTok</a> videos are popular among teenagers all over.
 
 * <a target="_blank" href="https://www.about.me/">About.me</a> one page vanity websites
 * <a target="_blank" href="https://www.medium.com/">Medium</a> blogs

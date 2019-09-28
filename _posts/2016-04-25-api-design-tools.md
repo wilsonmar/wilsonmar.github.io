@@ -3,6 +3,8 @@ layout: post
 title: "API design tools"
 excerpt: "Save time and hassle"
 tags: [API, text to speech, JavaScript, programming]
+date: "2016-04-25"
+file: "api-design-tools"
 image:
 # feature: pic easter island clenched-fist-1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15212221/c77ab1ba-17fc-11e6-924d-0c5d01e53522.jpg
@@ -11,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
+{% include l18n.html %}
 {% include _toc.html %}
 
 ## REST API Clients

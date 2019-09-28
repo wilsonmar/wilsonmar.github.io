@@ -3,6 +3,8 @@ layout: post
 title: "Generate REST API Test Code"
 excerpt: "No waiting for test automation"
 tags: [text to speech, JavaScript, programming]
+date: "2016-04-04"
+file: "generate-test-code-for-rest-api"
 image:
 # feature: pic white robots woman 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622167/45abd918-0585-11e6-8537-a58e0b55e3ec.jpg
@@ -11,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
+{% include l18n.html %}
 {% include _toc.html %}
 
 I have a dream ...

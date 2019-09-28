@@ -3,6 +3,8 @@ layout: post
 title: "Image processing"
 excerpt: "Processing of image files using Artificial Intelligence and Machine Learning"
 tags: [HTML, personalization, machine learning, ML]
+date: "2107-03-17"
+file: "image-processing"
 image:
 # feature: pic green matrix hallway 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14623876/07afd066-0593-11e6-933a-2e596511ac67.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include ai_links.html %}
 
 

@@ -3,6 +3,8 @@ layout: post
 title: "DevOps Choices (a Plethora)"
 excerpt: "You gotta have one of each. Or several."
 tags: [devops]
+date: "2016-04-21"
+file: "devops-choices"
 image:
 # feature: pic-brown-horses-running-forward-1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14724047/445df2f0-07d1-11e6-9c26-782291fe2b47.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This page is one of a [series on DevOps](/devops-series/).

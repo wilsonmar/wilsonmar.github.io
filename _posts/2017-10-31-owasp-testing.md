@@ -3,7 +3,8 @@ layout: post
 title: "Test for OWASP using ZAP on the Broken Web App"
 excerpt: "Practice penetration testing identifying security vulnerabilities in sample BWA app"
 tags: [API, devsecops]
-filename: owasp-testing.md
+date: "2018-07-18"
+file: "owasp-testing"
 image:
 # devsecops-diagram-784x232.png
   feature: https://user-images.githubusercontent.com/300046/32320696-dd1e8f82-bf7b-11e7-891b-6b248fba5a0a.png
@@ -12,6 +13,8 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
+{% include l18n.html %}
+{% include _toc.html %}
 
 
 ## Penetration (Pen) Testing Tools

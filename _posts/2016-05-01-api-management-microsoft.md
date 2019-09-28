@@ -11,8 +11,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 Microsoft on Azure is one of several [API management/governance vendors I evaluated](/api-management-evaluation/).

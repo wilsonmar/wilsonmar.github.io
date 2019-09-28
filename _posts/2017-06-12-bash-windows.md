@@ -3,7 +3,8 @@ layout: post
 title: "Bash shell running within Windows using Microsoft's WSL (Windows Subystem for Linux)"
 excerpt: "It's less like Power Rangers clicking rings, more like living in a foreign country"
 tags: [Bash, Windows, IoT]
-file: 2017-06-12-bash-windows.md
+date: "2107-06-17"
+file: "bash-windows"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -12,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 As of this writing (June 2017), this was as its first "beta" release.

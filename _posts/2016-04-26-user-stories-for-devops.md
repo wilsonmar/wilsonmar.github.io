@@ -3,6 +3,8 @@ layout: post
 title: "DevOps User Stories by Persona"
 excerpt: "Value from autonomous speed"
 tags: [text to speech, JavaScript, programming]
+date: "2016-04-26"
+file: "user-stories-for-devops"
 image:
 # feature: pic waiting window
   feature: https://cloud.githubusercontent.com/assets/300046/14885988/a5994c60-0d0b-11e6-9f4e-e593d248248f.jpg

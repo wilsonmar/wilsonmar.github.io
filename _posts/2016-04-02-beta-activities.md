@@ -3,6 +3,8 @@ layout: post
 title: "Beta Activities"
 excerpt: "7+ strategies to make betas more useful"
 tags: [beta, guava, java, programming]
+date: "2016-04-02"
+file: "beta-activities"
 image:
 # feature: pic jump into tiny pool 1900x500.jpg 
   feature: https://cloud.githubusercontent.com/assets/300046/14622099/ef090f36-0584-11e6-8ca8-a2f2bde38026.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 <!-- {% include tts1.html %} -->

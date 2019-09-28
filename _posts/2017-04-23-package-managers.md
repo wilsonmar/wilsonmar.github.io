@@ -3,7 +3,8 @@ layout: post
 title: "Package Managers"
 excerpt: "Download and install dependencies and keep them updated"
 tags: [Linux,DevOps]
-shorturl: "https://"
+date: "2107-04-23"
+file: "package-managers"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -12,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This repo is about making use of utilities that install software on various operating systems.

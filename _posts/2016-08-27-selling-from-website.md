@@ -3,6 +3,8 @@ layout: post
 title: "Selling from Static Jekyll sites"
 excerpt: "Make it easy to get"
 tags: [Email, project]
+date: "2016-08-27"
+file: "selling-from-website"
 image:
 # feature: pic data center slice 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 One aspect of the "A" of the JAM stack (JavaScript, APIs, Microservices ) - APIs called by JavaScript from within static sites -

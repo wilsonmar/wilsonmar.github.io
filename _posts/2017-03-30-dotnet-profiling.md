@@ -3,12 +3,12 @@ layout: post
 title: ".NET profiling"
 excerpt: "Here's how to use Redgate ANTS to make C# really sing on NerdDinner"
 tags: [perftest]
-shorturl: "https://goo.gl/4sjZh4"
+date: "2107-03-30"
+file: "dotnet-profiling"
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This article currently contains notes on using the ANTS profiler for Visual Studio on Windows.

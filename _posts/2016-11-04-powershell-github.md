@@ -3,8 +3,9 @@ layout: post
 title: "PowerShell GitHub API Programming"
 excerpt: "GitHub reaching to web servies on the web gives scripts data power"
 tags: [cloud, powershell, microsoft]
-shorturl: "https://git.io/v1lLj"
-image:
+Zdate: "2016-11-04"
+file: "powershell-github"
+mage:
 # fig blue powershell icon-1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15307772/b335270e-1b93-11e6-9552-d3022de2b9ce.jpg
   credit: PowerShell Magazine
@@ -12,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
+{% include l18n.html %}
 {% include _toc.html %}
 
 I wanted to make calls to GitHub's API from a PowerShell script.

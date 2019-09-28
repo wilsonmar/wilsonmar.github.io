@@ -3,6 +3,8 @@ layout: post
 title: "Cloud-Foundry"
 excerpt: "From Pivotal, the Java Spring Boot web services people."
 tags: []
+date: "2107-08-22"
+file: "cloud-foundry"
 image:
 # feature: pic blue black stars spin 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14621973/fe6e21a6-0583-11e6-9a94-a969a51759b6.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 Here is a <strong>hands-on</strong> introduction to Cloud Foundry.

@@ -4,7 +4,8 @@ title: "Elastic Beats"
 excerpt: "Minions to collect data from each server"
 tags: [ELK, ecosystem]
 filename: "elastic-beats.md"
-shorturl: "https://goo.gl/"
+date: "2017-09-07"
+file: "elastic-beats"
 image:
 # elk-beat-arch-1900x500-102084.jpg
   feature: https://user-images.githubusercontent.com/300046/30410257-2d3fa8b0-98c7-11e7-9467-d35837b592a2.jpg
@@ -13,8 +14,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This section describes how to install, configure, and use the Beats component within the Elastic Stack, previously called ELK stack before Beats was added in 2016.

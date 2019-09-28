@@ -3,6 +3,8 @@ layout: post
 title: "Scala programming"
 excerpt: "The language, not the opera house in Milan"
 tags: [scala, programming, test]
+date: "2016-03-11"
+file: "scala-programming"
 image:
    feature: pic red curtains la scala 1900x500.jpg
    credit: Teatro alla Scala
@@ -10,9 +12,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
-[![Gitter](https://badges.gitter.im/wilsonmar/wilsonmar.github.io.svg)](https://gitter.im/wilsonmar/wilsonmar.github.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 I don't want to repeat here what others have already written.

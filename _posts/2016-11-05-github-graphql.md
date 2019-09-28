@@ -3,6 +3,8 @@ layout: post
 title: "GitHub GraphQL API"
 excerpt: "GitHub's REST API was perfect. Now THIS is more perfect."
 tags: [GitHub, API, GraphQL]
+date: "2016-11-05"
+file: "github-graphql"
 image:
 # pic green easter island 2 hillside 1920x1080
   feature: https://cloud.githubusercontent.com/assets/300046/15217452/d8d04062-1818-11e6-9a57-215db66655d2.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 GitHub provides a well-known API that accepts a lot of traffic.

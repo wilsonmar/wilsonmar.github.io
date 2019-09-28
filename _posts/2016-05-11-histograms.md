@@ -3,7 +3,8 @@ layout: post
 title: "Histograms (and Frequency Diagrams in Excel)"
 excerpt: "See your data"
 tags: [apple, mac, setup]
-shorturl: "https://goo.gl/wZBZNo"
+date: "2016-05-11"
+file: "histograms"
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/14583248/4b20c578-03d9-11e6-8f7a-c860b666bc73.jpg
   credit: Wall Street Journal
@@ -11,8 +12,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 

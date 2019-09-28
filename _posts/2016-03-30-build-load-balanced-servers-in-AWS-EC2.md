@@ -3,6 +3,8 @@ layout: post
 title: "Build load-balanced servers in AWS EC2 using CloudFormation"
 excerpt: "Automate High Availability in the cloud"
 tags: [AWS, EC2, cloud]
+date: "2016-03-30"
+file: "build-load-balanced-servers-in-AWS-EC2"
 image:
 # feature: pic data center slice 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
@@ -12,8 +14,7 @@ comments: true
 ---
 
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 <a href="https://wilsonmar.github.io/build-load-balanced-servers-in-AWS-EC2/">

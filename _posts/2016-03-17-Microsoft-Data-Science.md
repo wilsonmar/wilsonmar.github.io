@@ -3,6 +3,8 @@ layout: post
 title: "Microsoft Data Science"
 excerpt: "Here's how to earn a legitimate micro-degree"
 tags: [ai]
+date: "2016-03-17"
+file: "Microsoft-Data-Science"
 image:
 # feature: pic green matrix hallway 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14623876/07afd066-0593-11e6-933a-2e596511ac67.jpg

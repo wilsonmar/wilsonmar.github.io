@@ -3,7 +3,8 @@ layout: post
 title: "Selenium NeoLoad"
 excerpt: "Load test sooner by updating NeoLoad scripts from Selenium"
 tags: [Mac, Perftest]
-shorturl: "https://goo.gl/"
+date: "2016-11-22"
+file: "selenium-neoload"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -12,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This article provides "newbies" a <strong>hands-on</strong> way to (on Macs and Windows machines)

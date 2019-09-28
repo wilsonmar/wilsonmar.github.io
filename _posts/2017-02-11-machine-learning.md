@@ -3,7 +3,8 @@ layout: post
 title: "Machine Learning"
 excerpt: "It can do it for you ... before it does you in"
 tags: [Python, Machine Learning]
-shorturl: "https://goo.gl/iR7sMJ"
+date: "2107-02-11"
+file: "machine-learning"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -12,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 To give you an idea of the pervasiveness of AI and Machine Learning, Google CEO Sundar Pichai said in 2016:

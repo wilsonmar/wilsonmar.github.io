@@ -3,6 +3,8 @@ layout: post
 title: "Email from Static Jekyll sites"
 excerpt: "I won't sell it, I promise"
 tags: [Email, project]
+date: "2016-06-07"
+file: "email-from-website"
 image:
 # feature: pic data center slice 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This discusses the "A" of the JAM stack - the API called by JavaScript.

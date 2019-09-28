@@ -3,7 +3,8 @@ layout: post
 title: "Code Generation"
 excerpt: "It does your job better and faster than you can imagine"
 tags: [Mac, Robots]
-shorturl: "https://goo.gl/"
+date: "2016-12-26"
+file: "code-generation"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -12,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 The generation of programming code is not new, 

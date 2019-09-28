@@ -3,6 +3,8 @@ layout: post
 title: "IoT Camera"
 excerpt: "How to setup a camera on the Raspberry Pi 3B and other boards"
 tags: [IoT, Raspberry, Mono, Mac]
+date: "2016-10-29"
+file: "iot-camera"
 image:
 # feature: pic white robots woman 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622167/45abd918-0585-11e6-8537-a58e0b55e3ec.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 

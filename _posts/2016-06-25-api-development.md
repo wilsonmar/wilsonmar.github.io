@@ -4,6 +4,8 @@ filename: swagger
 title: "API Development Ecosystem with Swagger"
 excerpt: "It does your job. And helps others to do your job."
 tags: [API, swagger, generation]
+date: "2016-06-25"
+file: "api-development"
 image:
 # pic-blue-city-abu-dhabi-skyscrapers-1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15269473/c8311bfa-19bc-11e6-890c-06abc511ef39.jpg
@@ -13,9 +15,7 @@ comments: true
 shorturl: https://goo.gl/wojj1R
 ---
 <i>{{ page.excerpt }}</i>
-
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 ## What is Swagger? #

@@ -3,6 +3,8 @@ layout: post
 title: "Java Spring REST API Sample"
 excerpt: "Spring for some Java web service client"
 tags: []
+date: "2107-07-30"
+file: "java-spring-rest-api-sample"
 image:
 # feature: pic brown java beans 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622024/6a77b5b0-0584-11e6-93ea-ed1ca2c4bbc6.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This article introduces how Spring programs works by examining a simple 

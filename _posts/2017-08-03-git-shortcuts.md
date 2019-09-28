@@ -3,7 +3,8 @@ layout: post
 title: "Git shortcuts (in a CLI Terminal)"
 excerpt: "A few swipes of your hand and it's done for you"
 tags: [git, commands, utilities]
-shorturl: "https://git.io/"
+date: "2107-08-03"
+file: "git-shortcuts"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -12,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This is a hands-on tutorial on how you can configure and use Terminal and macros to save time working with Git and GitHub. The steps are intended for "newbies" new to the operating system.

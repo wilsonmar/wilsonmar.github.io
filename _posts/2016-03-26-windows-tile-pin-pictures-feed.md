@@ -3,6 +3,8 @@ layout: post
 title: "Windows Tile Pin Picture to Website Feed"
 excerpt: "So your picture can be on everyone's desktop all the time"
 tags: [windows, mac, setup, testing]
+date: "2016-03-26"
+file: "windows-tile-pin-pictures-feed"
 image:
 # feature: pic green grass windows 1900x475.png
   feature: https://cloud.githubusercontent.com/assets/300046/14622091/e1d86618-0584-11e6-8d00-2af2c1950275.png
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 

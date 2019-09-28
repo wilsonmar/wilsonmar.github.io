@@ -3,6 +3,8 @@ layout: post
 title: "Play Framework"
 excerpt: "For easier, faster play for all"
 tags: [scala, framework, javascript]
+date: "2016-04-23"
+file: "play-framework"
 image:
 # feature: # pic-gray-players
   feature: https://cloud.githubusercontent.com/assets/300046/14763950/bd44455a-0963-11e6-85e7-11b2d8e5740b.jpg
@@ -11,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
+{% include l18n.html %}
 {% include _toc.html %}
 
 <a target="_blank" href="https://www.quora.com/Which-is-better-Play-Framework-or-Spring-MVC-How-should-I-decide-what-to-use

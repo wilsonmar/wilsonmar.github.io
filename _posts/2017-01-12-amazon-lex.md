@@ -3,7 +3,8 @@ layout: post
 title: "Amazon Lex (AI Chatbots)"
 excerpt: "Make a robot talk to you"
 tags: [apple, mac, setup]
-shorturl: "https://goo.gl/fQ1Kl0"
+date: "2107-01-12"
+file: "amazon-lex"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -12,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 Amazon Lex is used by developers to make chatbot programs that 

@@ -3,6 +3,8 @@ layout: post
 title: "API Design"
 excerpt: "Make it work"
 tags: [API, design]
+date: "2016-04-05"
+file: "api-design"
 image:
 # pic beach easter_island_statues-wallpaper-1900x500 
   feature: https://cloud.githubusercontent.com/assets/300046/15217295/1da4a576-1818-11e6-9a2c-527ae637d5c5.jpg
@@ -11,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
+{% include l18n.html %}
 {% include _toc.html %}
 
 The less coupling, the better to evolve.

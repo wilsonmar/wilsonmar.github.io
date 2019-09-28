@@ -3,6 +3,8 @@ layout: post
 title: "Evangelism Cost-Benefit Analysis"
 excerpt: "Best bang for the buck"
 tags: [evangelism, strategy]
+date: "2016-07-27"
+file: "evangelism-cost-benefit"
 image:
 # feature: pic green field cows 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622085/d7213efc-0584-11e6-9f42-8f3efb09490d.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 There are more ideas than money to do them.

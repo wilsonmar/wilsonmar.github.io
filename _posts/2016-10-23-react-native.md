@@ -3,6 +3,8 @@ layout: post
 title: "React Native"
 excerpt: "Yes, it's getting ripe for production"
 tags: [mobile, dev]
+date: "2016-10-23"
+file: "react-native"
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/14624073/7b96364a-0594-11e6-9643-06decef9dbfd.jpg
   credit: 
@@ -10,8 +12,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This post contains my random notes on how to create cross-platform mobile apps 

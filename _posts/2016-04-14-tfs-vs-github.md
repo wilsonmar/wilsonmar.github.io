@@ -3,6 +3,8 @@ layout: post
 title: "Microsoft TFS vs. Git and GitHub"
 excerpt: "Check out Git, then commit to it"
 tags: [devops, git, TFS]
+date: "2016-04-14"
+file: "tfs-vs-github"
 image:
 # feature: fig-white-black-malika-favre-vertical-bars
   feature: https://cloud.githubusercontent.com/assets/300046/14751598/d1bcc4c6-0887-11e6-8c3e-9714f871101a.jpg
@@ -10,13 +12,12 @@ image:
   creditlink: http://create.adobe.com/2016/4/1/the_bold_cheeky_and_frequently_nsfw_art_of_malika_favre.html
 comments: true
 ---
+<i>{{ page.excerpt }}</i>
+{% include l18n.html %}
+{% include _toc.html %}
+
 <a target="_blank" href="https://goo.gl/aFyhJa">
 https://wilsonmar.github.io/tfs-vs-github</a>
-
-<i>{{ page.excerpt }}</i>
-<hr />
-
-{% include _toc.html %}
 
 ## What is TFS?
 

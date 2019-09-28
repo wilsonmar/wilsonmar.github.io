@@ -4,6 +4,8 @@ title: "508 Accessibility - for blind and visually impaired"
 excerpt: "Information to help tools work for all users"
 tags: [HTML, personalization, jekyll]
 author: cindy_garlick
+date: "2016-05-16"
+file: "508-accessibility"
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/14624073/7b96364a-0594-11e6-9643-06decef9dbfd.jpg
   credit: 
@@ -11,9 +13,9 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
+
 <h2>HTML 508 Accessibility, importance, tools, videos and basic code suggestions.</h2>
 
 This post explains how to verify whether websites are "508 Compliant". 

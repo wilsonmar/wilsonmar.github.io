@@ -3,6 +3,8 @@ layout: post
 title: "GitHub Data Security"
 excerpt: "How to keep secrets out of GitHub"
 tags: [github, security]
+date: "2016-06-06"
+file: "github-data-security"
 image:
 # pic secret finger over mouth 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15807549/645e9404-2b1e-11e6-8e19-2368c5578015.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 <amp-img width="714" height="466" alt="github-secrets-v02-714x466"

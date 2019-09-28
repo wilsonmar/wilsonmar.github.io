@@ -2,8 +2,9 @@
 layout: post
 title: "Eclipse IDE (STS and for Selenium)"
 excerpt: "Open source and free since the 90's."
-shorturl: "https://goo.gl/Pi9qAE"
 tags: [ML, GE]
+date: "2017-05-08"
+file: "eclipse-ide"
 image:
 # feature: banner-eclipse-1900x500-321k.png
   feature: https://user-images.githubusercontent.com/300046/28752993-0d1437a4-74fa-11e7-99cc-ed04f625174c.png
@@ -12,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This article contains notes on my personal experience installing and using Eclipse IDE.

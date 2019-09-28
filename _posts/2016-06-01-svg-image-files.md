@@ -3,6 +3,8 @@ layout: post
 title: "SVG Image Files"
 excerpt: "Sharp corners on every screen"
 tags: [Graphics]
+date: "2016-06-01"
+file: "svg-image-files"
 image:
 # fig multicolor boxes 1900x500-48
   feature: https://cloud.githubusercontent.com/assets/300046/15722987/9e7c93b2-27fd-11e6-9549-3a90a081a710.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This tutorial describes how to work with SVG (Scaled Vector Graphics) image files.

@@ -4,6 +4,8 @@ name: jekyll-with-search
 title: "Search within Hyde format Jekyll websites"
 excerpt: "Add a feature-rich search box in your JAM stack website"
 tags: [Jekyll, Algolia, Search, JavaScript, website]
+date: "2016-05-18"
+file: "jekyll-with-search"
 image:
 # feature: pic blue lake searching 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14621985/1cdb6086-0584-11e6-9570-5cedb9f2385f.jpg
@@ -11,20 +13,17 @@ image:
   creditlink: http://www.braintreebooks.com/search.htm
 comments: true
 ---
-<a href="https://wilsonmar.github.io/jekyll-with-algolia-search/">
-https://wilsonmar.github.io/jekyll-with-algolia-search</a> =
-<a href="https://goo.gl/UWKgTu">
-https://goo.gl/UWKgTu</a>
-
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 The objective of this article is for you to implement these use cases
 (click on the underlined items to go straight there):
 
-{% include _intro.html %}
+<a href="https://wilsonmar.github.io/jekyll-with-algolia-search/">
+https://wilsonmar.github.io/jekyll-with-algolia-search</a> =
+<a href="https://goo.gl/UWKgTu">
+https://goo.gl/UWKgTu</a>
 
 <hr />
 

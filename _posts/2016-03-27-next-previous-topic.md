@@ -3,16 +3,17 @@ layout: post
 title: "Next-Previous Topic Navigation"
 excerpt: "Go through the site in sequence"
 tags: [authentication, personalization, jekyll]
+date: "2016-03-27"
+file: "next-previous-topic"
 image:
-# feature: fig ms edge flip ahead 1900x500.jpg
-  feature: ![fig ms edge flip ahead 1900x500](https://cloud.githubusercontent.com/assets/300046/14624393/915bef12-0597-11e6-9817-a7c3e51b09a5.jpg)
+# feature: ![fig ms edge flip ahead 1900x500](
+  feature: https://cloud.githubusercontent.com/assets/300046/14624393/915bef12-0597-11e6-9817-a7c3e51b09a5.jpg
   credit: Microsoft
   creditlink: https://msdn.microsoft.com/library/jj883726%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 ## In Jekyll sites

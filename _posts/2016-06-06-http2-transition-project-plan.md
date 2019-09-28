@@ -3,6 +3,8 @@ layout: post
 title: "HTTP/2 Transition Project Plan"
 excerpt: "for Project Management to make adoption real"
 tags: [HTTP2, project]
+date: "2016-06-06"
+file: "http2-transition-project-plan"
 image:
 # feature: pic data center slice 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 

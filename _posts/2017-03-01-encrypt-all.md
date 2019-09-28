@@ -3,7 +3,8 @@ layout: post
 title: "Encrypt all the things"
 excerpt: "How to store and send files securely using XMPP over the hostile internet"
 tags: [XMPP, Security]
-shorturl: "https://goo.gl/eToZh7"
+date: "2107-03-01"
+file: "encrypt-all"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -12,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 There is now a way to safely store files in encrypted format and 

@@ -3,6 +3,8 @@ layout: post
 title: "API Portals"
 excerpt: "Oh the places we go"
 tags: [API, portals]
+date: "2016-04-07"
+file: "api-portals"
 image:
 # pic orange easter-island 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15214909/071e94fc-180d-11e6-99c6-45034f907e42.jpg
@@ -11,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
+{% include l18n.html %}
 {% include _toc.html %}
 
 An inventory of APIs is available from:

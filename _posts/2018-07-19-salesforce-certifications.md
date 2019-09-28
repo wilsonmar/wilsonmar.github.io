@@ -3,7 +3,8 @@ layout: post
 title: "Salesforce certifications (training and exams)"
 excerpt: "To get recognized for your knowledge, skills, and persistance"
 tags: [salesforce]
-file: 2018-07-19-salesforce-certifications.md
+date: "2018-07-19"
+file: "salesforce-certifications"
 image:
   feature: https://user-images.githubusercontent.com/300046/43513032-f7cb0bd2-9539-11e8-88db-f3bff1cbfe17.jpg
   credit: Salesforce
@@ -11,8 +12,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 <!-- # sf-appy-1900x500-102438

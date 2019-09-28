@@ -3,6 +3,8 @@ layout: post
 title: "MySQL to MariaDB (and Aurora)"
 excerpt: "It worked for your dad. Embrace it."
 tags: [mysql, database]
+date: "2016-08-18"
+file: "myself-setup"
 image:
 # feature: fig orange mysql php 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622311/4f41e84a-0586-11e6-8164-6363861642fd.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This tutorial covers the basics for getting started with MySQL on Mac OSX,

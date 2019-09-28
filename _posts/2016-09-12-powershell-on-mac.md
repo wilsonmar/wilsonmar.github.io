@@ -4,6 +4,8 @@ title: "PowerShell on MacOS"
 excerpt: "Love Child or Demon Spawn?"
 tags: [mac, cloud, powershell, microsoft]
 shorturl: "https://git.io/v1wOP"
+date: "2016-09-12"
+file: "powershell-on-mac"
 image:
 # powershell blue banner-1900x500-296kb.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/18789323/d2ff6614-8167-11e6-94b5-f37637e01d9c.jpg
@@ -12,7 +14,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
+{% include l18n.html %}
 {% include _toc.html %}
 
 This article describes the use of PowerShell scripting on Mac and Linux.

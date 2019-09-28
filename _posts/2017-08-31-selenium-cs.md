@@ -3,8 +3,8 @@ layout: post
 title: "Selenium-cs (C# or C Sharp, using Visual Studio)"
 excerpt: "Enable C# Microsoft developers to use Selenium test infrastructures on Alt-macOS"
 tags: [apple, mac, setup, VMWare, Fusion]
-filename: "selenium-cs.md"
-shorturl: "https://goo.gl/z12UuS"
+date: "2017-08-31"
+file: "selenium-cs"
 image:
 # feature: pic white robots woman 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622167/45abd918-0585-11e6-8537-a58e0b55e3ec.jpg
@@ -13,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 Here is a hands-on tutorial to learn Selenium using the C# language edited in Visual Studio on MacOS. This an "immersion" approach as if you just got hired and are looking at a fully developed set of code to modify.

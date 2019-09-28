@@ -3,7 +3,8 @@ layout: post
 title: "Salesforce DX (Developer eXperience) deep dive"
 excerpt: "Begin to use Git and GitHub (DevHub) for software-driven (modular) continuous development"
 tags: [salesforce, git]
-file: sfdx.md
+date: "2018-08-08"
+file: "salesforce-dx"
 image:
 # feature: pic orange wm_mcnaughton_sunset_runner_1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622121/097d7550-0585-11e6-9543-27d45c2487c2.jpg
@@ -12,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 

@@ -3,7 +3,8 @@ layout: post
 title: "AWS Lambda Basics"
 excerpt: "Kinda like Java Lambdas, but not really"
 tags: [programming, AWS, EC2, lambda, cloud]
-shorturl: "https://goo.gl/q9cN7O"
+date: "2016-06-03"
+file: "aws-lambda"
 image:
 # pic friends white shirts 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/16040708/8f5b3cc6-31ee-11e6-9043-15d6ba1326c7.jpg
@@ -11,15 +12,12 @@ image:
   creditlink: http://geniusquotes.org/best-friends-forever-quotes-images-and-friends-wallpapers/
 comments: true
 ---
-<a target="_blank" href="https://wilsonmar.github.io/aws-lambda/">
-https://wilsonmar.github.io/aws-lambda</a>
-
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
-This tutorial provides a deep dive into the basics of creating and using functions within AWS Lambda.
+<a target="_blank" href="https://wilsonmar.github.io/aws-lambda/">
+This tutorial</a> provides a deep dive into the basics of creating and using functions within AWS Lambda.
 This is a hands-on guided tour.
 Take one step at a time and we point out PROTIPs and notes along the way.
 

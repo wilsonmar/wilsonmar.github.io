@@ -3,6 +3,8 @@ layout: page
 title: Evangelism dependencies
 modified: 2016-07-13
 excerpt: "Sequence of deliverables"
+date: "2016-07-13"
+file: "evangelism-dependencies"
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/14625241/9a22d514-059e-11e6-8aa4-7a387673a418.jpg
   credit: 
@@ -10,8 +12,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This diagram is an example of the <strong>deliverables</strong> necessary for evangelism:

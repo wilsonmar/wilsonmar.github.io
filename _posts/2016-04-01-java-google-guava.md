@@ -3,6 +3,8 @@ layout: post
 title: "Java Google Guava Ecosystem"
 excerpt: "End of any doubt Googlers are our boss."
 tags: [google, guava, java, programming]
+date: "2016-04-01"
+file: "java-google-guava"
 image:
 # pic green guava basket 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15744015/985aac60-2886-11e6-9ce0-71fb50c6720d.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 Among the thousands of libraries imported by Java programs on GitHub,

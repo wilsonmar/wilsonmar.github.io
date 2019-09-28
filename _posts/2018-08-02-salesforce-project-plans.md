@@ -3,7 +3,8 @@ layout: post
 title: "Salesforce Project Plans"
 excerpt: "Strategies for getting going quickly yet sanely"
 tags: [salesforce]
-file: salesforce-project-plans.md
+date: "2018-08-02"
+file: "salesforce-project-plans"
 image:
 # feature: sf-ohana-1900x500-178173.jpg
   feature: https://user-images.githubusercontent.com/300046/43407734-bd6303fe-93dc-11e8-87df-302ddbc274ff.jpg
@@ -12,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 

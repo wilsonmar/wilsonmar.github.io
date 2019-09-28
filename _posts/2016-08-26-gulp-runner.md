@@ -3,6 +3,8 @@ layout: post
 title: "Gulp Task Runner"
 excerpt: "Let me do that for you"
 tags: [Email, project]
+date: "2016-08-26"
+file: "gulp-runner"
 image:
 # feature: pic data center slice 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 ## Install #

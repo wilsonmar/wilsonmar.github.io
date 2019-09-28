@@ -3,6 +3,8 @@ layout: post
 title: "Salesforce Glossary of Acronyms"
 excerpt: "Know the lingo"
 tags: [salesforce]
+date: "2018-07-15"
+file: "salesforce-glossary"
 image:
 # feature: sf-ohana-1900x500-178173.jpg
   feature: https://user-images.githubusercontent.com/300046/43407734-bd6303fe-93dc-11e8-87df-302ddbc274ff.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 <a target="_blank" href="https://help.salesforce.com/apex/HTViewHelpDoc?id=glossary.htm">Salesforce's Glossary</a> of terms doesn't define acronyms, such as:

@@ -3,6 +3,8 @@ layout: post
 title: "Salesforce Users"
 excerpt: "Roles, Personas"
 tags: [salesforce]
+date: "2018-07-15"
+file: "salesforce-users"
 image:
 # feature: sf-ohana-1900x500-178173.jpg
   feature: https://user-images.githubusercontent.com/300046/43407734-bd6303fe-93dc-11e8-87df-302ddbc274ff.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 There are differant ways Salesforce, project managers, and developers categorize users.

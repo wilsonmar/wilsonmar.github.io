@@ -3,6 +3,8 @@ layout: post
 title: "AI Ecosystems APIs"
 excerpt: "Brand names for how corporate overlords are making humans into robots"
 tags: [machine learning, AI]
+date: "2016-03-16"
+file: "ai-ecosystem"
 image:
 # feature: pic green matrix hallway 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14623876/07afd066-0593-11e6-933a-2e596511ac67.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 ## Leading AI Companies #

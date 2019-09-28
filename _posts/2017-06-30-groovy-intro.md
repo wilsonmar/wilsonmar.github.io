@@ -3,7 +3,8 @@ layout: post
 title: "Groovy (Language) introduction"
 excerpt: "A groovy way to use the Java Virtual Machine"
 tags: [apple, mac, setup, Go]
-shorturl: "https://goo.gl/JoaWV4"
+date: "2107-06-30"
+file: "goovy-intro"
 image:
 # feature: groovy-intro-1900x254-180k
   feature: https://user-images.githubusercontent.com/300046/27741686-efc74390-5d83-11e7-9f3f-ba4bb43bfbac.png
@@ -12,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 

@@ -3,6 +3,8 @@ layout: post
 title: "API Management by Amazon API Gateway"
 excerpt: "Microservices"
 tags: [API, devops, evaluation, Amazon]
+date: "2016-05-01"
+file: "api-management-amazon"
 image:
 # pic easter island single statue 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15209671/b796b60c-17ef-11e6-8561-07a7b012ebb8.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 To see for yourself, go through the 35-minute self-paced lab <a target="_blank" href="https://qwiklabs.com/focuses/preview/2380">

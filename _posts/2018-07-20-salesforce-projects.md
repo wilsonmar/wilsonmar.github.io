@@ -3,6 +3,8 @@ layout: post
 title: "Salesforce projects, superbadges, and sample apps"
 excerpt: "Build a portfolio of apps you built yourself"
 tags: [salesforce]
+date: "2018-07-20"
+file: "salesforce-projects"
 image:
   feature: https://user-images.githubusercontent.com/300046/43513032-f7cb0bd2-9539-11e8-88db-f3bff1cbfe17.jpg
   credit: Salesforce
@@ -10,8 +12,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 Increasingly, Salesforce job descriptions require job candidate to have completed <a target="_blank" href="https://trailhead.salesforce.com/en/projects">Salesforce Trailhead projects</a> and <a target="_blank" href="https://trailhead.salesforce.com/en/superbadges">SuperBadges</a> to prove what they can do.

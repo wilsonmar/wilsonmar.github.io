@@ -3,6 +3,8 @@ layout: post
 title: "Digital Ocean Cloud Ops"
 excerpt: "Platform as a Service (PaaS)"
 tags: [cloud, regions]
+date: "2016-07-30"
+file: "digital-ocean"
 image:
 # pic-black-bkg-white-cloud_1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15269257/8104a824-19b6-11e6-9c42-014bf608009a.jpg
@@ -10,13 +12,12 @@ image:
   creditlink: http://www.themebin.com/hd-wallpapers/wandering-clouds-hd-wallpaper/
 comments: true
 ---
-<a href="https://wilsonmar.github.io/digital-ocean/">https://wilsonmar.github.io/digital-ocean</a>
-
 <i>{{ page.excerpt }}</i>
-<hr />
+{% include l18n.html %}
 {% include _toc.html %}
 
-This article describes how to bring up 
+<a href="https://wilsonmar.github.io/digital-ocean/">
+This article</a> describes how to bring up 
 servers within Digital Ocean a
 cloud-based virtual private server (VPS) to host a server (Jenkins).
 

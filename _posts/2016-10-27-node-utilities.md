@@ -3,6 +3,8 @@ layout: post
 title: "Node API Starter"
 excerpt: "Add routes to basic features included"
 tags: [Node, API]
+date: "2016-10-27"
+file: "node-utilities"
 image:
 # feature: pic white robots woman 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622167/45abd918-0585-11e6-8537-a58e0b55e3ec.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 Here are my notes on building Node.Js by JavaScript programming.

@@ -3,6 +3,8 @@ layout: post
 title: "Markdown text for GitHub from HTML"
 excerpt: "Yes, it's a round-trip ticket"
 tags: [HTML, personalization, jekyll]
+date: "2016-03-16"
+file: "markdown-text-for-github-from-html"
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/14624073/7b96364a-0594-11e6-9643-06decef9dbfd.jpg
   credit: 
@@ -10,8 +12,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This post is about converting existing HTML into markdown text in a file like README.md.

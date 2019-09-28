@@ -3,6 +3,8 @@ layout: post
 title: "Windows 10 client config (Server 2012+)"
 excerpt: "How I setup my Windows UI look and feel"
 tags: [windows, mac, setup]
+date: "2016-05-16"
+file: "windows-10-client-config"
 image:
 # face blue windows cortana-1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15312673/76026ae2-1bc3-11e6-9cf0-ca09a839ba7f.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 Here is how to setup a Windows 10 client.

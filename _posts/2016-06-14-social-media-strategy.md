@@ -3,6 +3,8 @@ layout: page
 title: Social media strategy
 excerpt: "Tell them well"
 tags: [social media, evangelism]
+date: "2016-06-14"
+file: "social-media-strategy"
 image:
 # pic blue networkers social 1900x500-c21.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/16904951/0e5ebb1a-4c5c-11e6-8741-778edab0dd85.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 What is the purpose of social media?

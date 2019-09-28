@@ -4,6 +4,8 @@ title: "Selenium Setup"
 excerpt: "How to emulate real users with robots touching your web apps"
 shorturl: "https://goo.gl/"
 tags: [ML, GE]
+date: "2107-05-09"
+file: "selenium-setup"
 image:
 # feature: banner-eclipse-1900x500-321k.png
   feature: https://user-images.githubusercontent.com/300046/28752993-0d1437a4-74fa-11e7-99cc-ed04f625174c.png
@@ -12,8 +14,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This article contains notes on installing, coding, and running Selenium.

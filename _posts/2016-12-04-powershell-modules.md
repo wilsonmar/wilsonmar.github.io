@@ -3,7 +3,8 @@ layout: post
 title: "PowerShell Modules"
 excerpt: "Share scripting functions with others"
 tags: [cloud, powershell, microsoft]
-shorturl: "https://git.io/v1lLj"
+date: "2016-12-04"
+file: "powershell-modules"
 image:
 # fig blue powershell icon-1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15307772/b335270e-1b93-11e6-9552-d3022de2b9ce.jpg
@@ -12,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
+{% include l18n.html %}
 {% include _toc.html %}
 
 

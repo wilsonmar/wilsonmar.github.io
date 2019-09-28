@@ -3,6 +3,8 @@ layout: post
 title: "API Programming"
 excerpt: "My computer talks with your computers"
 tags: [API, programming]
+date: "2016-04-06"
+file: "api-programming"
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/14612210/373cb4e2-0553-11e6-8a1a-4b5e1dabe181.jpg
   credit: And Beyond
@@ -10,7 +12,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
+{% include l18n.html %}
 {% include _toc.html %}
 
 <a target="_blank" href="https://en.wikipedia.org/wiki/Application_programming_interface"> 

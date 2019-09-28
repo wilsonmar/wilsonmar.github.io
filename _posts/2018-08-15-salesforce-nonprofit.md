@@ -3,6 +3,8 @@ layout: post
 title: "Salesforce Non-profit (NPSP)"
 excerpt: "How the Salesforce Benefit corp benefits non-profits, technically"
 tags: [salesforce]
+date: "2018-08-15"
+file: "salesforce-nonprofit"
 image:
 # feature: sf-ohana-1900x500-178173.jpg
   feature: https://user-images.githubusercontent.com/300046/43407734-bd6303fe-93dc-11e8-87df-302ddbc274ff.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This article are my  notes about the NPSP (Non-Profit Success Pack) from the Salesforce Foundation and friends.

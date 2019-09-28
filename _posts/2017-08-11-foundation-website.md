@@ -3,6 +3,8 @@ layout: post
 title: "Foundation website generation on MacOS"
 excerpt: "Install a complete development environment for generating a website using the flexible UI Foundation Framework top UI pros use"
 tags: [UI, MacOS, setup, Foundation]
+date: "2107-08-11"
+file: "foundation-website"
 image:
 # foundation-yeti-point-1900x500-26464.jpg
   feature: https://user-images.githubusercontent.com/300046/30966202-5e660962-a415-11e7-9347-4af25029af26.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This is a hands-on step-by-step tutorial on the quickest way for "newbies" to install Foundation Framework on a MacOS machine, using my Bash script or manually.

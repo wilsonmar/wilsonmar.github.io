@@ -3,7 +3,8 @@ layout: post
 title: "Dynatrace (APM)"
 excerpt: "He sees you when you're sleeping. He knows when you're awake ..."
 tags: [Clouds, Monitoring, Analytics]
-shorturl: "https://goo.gl/wer9DB"
+date: "2016-08-31"
+file: "dynatrace"
 image:
 # ![dynatrace-per-minute-1900x500-162499.jpg
   feature: https://user-images.githubusercontent.com/300046/41830955-5de633b6-7801-11e8-9f92-c052dd9c2eba.jpg
@@ -12,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This describes a) automation script installed from GitHub that installs b) Docker images c) within AWS EC2, Azure, and Google Cloud d) a sample app e) put under stress by JMeter/Gatling while being analyzed by f) Dynatrace.

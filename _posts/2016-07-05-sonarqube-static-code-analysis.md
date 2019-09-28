@@ -4,6 +4,8 @@ filename: static-code-analysis
 title: "Static Code Analysis"
 excerpt: "It has your back ... by riding your back"
 tags: [Sonarqube, quality, generation]
+date: "2016-07-05"
+file: "sonarqube-static-code-analysis"
 image:
 # pic-blue-city-abu-dhabi-skyscrapers-1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15269473/c8311bfa-19bc-11e6-890c-06abc511ef39.jpg
@@ -13,9 +15,7 @@ comments: true
 shorturl: https://goo.gl/wojj1R
 ---
 <i>{{ page.excerpt }}</i>
-
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This article contains my notes on Static Analysis of code.

@@ -3,6 +3,8 @@ layout: page
 title: Notifications
 excerpt: "How the computer gets you to do what you should be doing now"
 tags: [social media, DevOps]
+date: "2016-07-29"
+file: "notifications"
 image:
 # pic blue networkers social 1900x500-c21.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/16904951/0e5ebb1a-4c5c-11e6-8741-778edab0dd85.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 The objective of this page is to describe how to setup a way for

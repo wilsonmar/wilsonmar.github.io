@@ -3,6 +3,8 @@ layout: post
 title: "Git Configuration"
 excerpt: "Create and use certificates to push to GitHub"
 tags: [UI, MacOS, setup, Foundation]
+date: "2107-08-01"
+file: "git-config"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This is a hands-on step-by-step tutorial on the quickest way for "newbies" to generate a public certificate for GitHub to reference to accept changes pushed up from git clients.

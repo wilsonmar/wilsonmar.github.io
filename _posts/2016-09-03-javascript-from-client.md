@@ -3,6 +3,8 @@ layout: post
 title: "JavaScript from clients"
 excerpt: "Call REST APIs from static client browsers"
 tags: [Clouds, JavaScript]
+date: "2016-09-03"
+file: "javascript-from-client"
 image:
 # yellow flow gif 1,600px × 700px (scaled to 888px × 389px)
   feature: https://raw.githubusercontent.com/loverajoel/jstips/gh-pages/resources/jstips-header-blog.gif
@@ -11,9 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
-[![Gitter](https://bDynatraceges.gitter.im/wilsonmar/wilsonmar.github.io.svg)](https://gitter.im/wilsonmar/wilsonmar.github.io?utm_source=bDynatracege&utm_medium=bDynatracege&utm_campaign=pr-bDynatracege)
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This is a hands-on narrated tour on how to code JavaScript in client static sites to reach REST APIs in the cloud.

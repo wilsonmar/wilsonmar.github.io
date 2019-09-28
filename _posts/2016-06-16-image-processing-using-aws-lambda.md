@@ -3,6 +3,8 @@ layout: post
 title: "Image processing using AWS Lamba actors"
 excerpt: "Run one after another, independently"
 tags: [AWS, EC2, lambda, cloud]
+date: "2016-06-16"
+file: "image-processing-using-aws-lambda"
 image:
 # pic friends white shirts 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/16040708/8f5b3cc6-31ee-11e6-9043-15d6ba1326c7.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 

@@ -3,6 +3,8 @@ layout: post
 title: "Fonts on Mac OSX"
 excerpt: "You are what font you use"
 tags: [apple, mac, setup]
+date: "2016-10-20"
+file: "fonts-on-mac-os"
 image:
 # feature: pic brown wood apple logo 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622035/740efa5c-0584-11e6-9a41-db5b03eaff85.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 I had to install several fonts and throught you'd want to benefit from my experience.

@@ -3,7 +3,8 @@ layout: post
 title: "Dockerize apps"
 excerpt: "Define how little bits work together"
 tags: [Docker, devops, ci, setup]
-date:   2017-12-09 10:55:53 -0700
+date: "2016-07-31"
+file: "dockerize"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -12,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This is a hands-on tutorial on how to create Dockerfile and docker-compose files

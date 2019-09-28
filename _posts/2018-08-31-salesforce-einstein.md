@@ -3,7 +3,8 @@ layout: post
 title: "Salesforce Einstein"
 excerpt: "Artificial Intelligence built into the Saleforce you already have"
 tags: [salesforce]
-file: salesforce-einstein.md
+date: "2018-08-31"
+file: "salesforce-einstein"
 image:
 # feature: sf-ohana-1900x500-178173.jpg
   feature: https://user-images.githubusercontent.com/300046/43407734-bd6303fe-93dc-11e8-87df-302ddbc274ff.jpg
@@ -12,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 <img align="right" src="https://cdnjs.cloudflare.com/ajax/libs/design-system/2.6.2/icons/utility/einstein_120.png">

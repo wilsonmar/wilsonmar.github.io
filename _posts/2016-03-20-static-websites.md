@@ -3,6 +3,8 @@ layout: post
 title: "Static websites (Jekyll)"
 excerpt: "Version controlled simplicity"
 tags: [website, builder, simplicity, jekyll]
+date: "2016-03-20"
+file: "static-websites"
 image:
 # feature: pic white hand key ownership 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622160/3b59e1b2-0585-11e6-9157-cc003fc0f90b.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 ## Static is Cool Now #

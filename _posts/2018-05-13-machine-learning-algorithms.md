@@ -3,6 +3,8 @@ layout: post
 title: "Machine Learning Algorithms"
 excerpt: "Tools for data science"
 tags: [microsoft, Azure, machine learning, AI, cloud]
+date: "2018-05-13"
+file: "machine-learning-algorithms"
 image:
 # feature: pic green matrix hallway 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14623876/07afd066-0593-11e6-933a-2e596511ac67.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 Here is a catalog of what AI and Machine Learning algorithms and Modules offered by Microsoft Azure, Amazon, Google, SAS, MatLab, etc.

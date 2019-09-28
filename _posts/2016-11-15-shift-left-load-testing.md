@@ -3,6 +3,8 @@ layout: post
 title: "Shift-Left Load Testing"
 excerpt: "How to achieve earlier feedback"
 tags: [PerfTest]
+date: "2016-11-15"
+file: "shift-left-load-testing"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -11,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 ## Monolitic History

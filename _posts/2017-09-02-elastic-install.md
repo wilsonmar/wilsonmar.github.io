@@ -3,8 +3,8 @@ layout: post
 title: "Elastic Stack Installation"
 excerpt: "Here are several ways to get it up and running quickly"
 tags: [ELK, ecosystem]
-shorturl: "https://goo.gl/"
-filename: "elk-install.md"
+date: "2017-09-07"
+file: "elastic-install"
 image:
 # elk-beat-arch-1900x500-102084.jpg
   feature: https://user-images.githubusercontent.com/300046/30410257-2d3fa8b0-98c7-11e7-9467-d35837b592a2.jpg
@@ -13,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This page describes the different options to get going with an Elastic Stack of your own.

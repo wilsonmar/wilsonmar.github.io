@@ -3,7 +3,8 @@ layout: post
 title: "DevOps Dashboards with Hygieia"
 excerpt: "All the stats that fits on a dashboard"
 tags: [Clouds, IoT, Metrics]
-shorturl: "https://goo.gl/rmZ9PX"
+date: "2107-03-18"
+file: "devops-dashboards"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -12,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 There are several approaches to providing visibility of workflow to DevSecOps, to

@@ -3,6 +3,8 @@ layout: post
 title: "Selenium Flex"
 excerpt: "Make it work before it becomes totally obsolete"
 tags: [Mac, Security]
+date: "2016-11-21"
+file: "selenium-flex"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -11,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 Although Selenium was created for functional testing on browsers,

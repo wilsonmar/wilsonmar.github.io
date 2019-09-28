@@ -3,6 +3,8 @@ layout: post
 title: "Anomaly Detection"
 excerpt: "Here's a way to achieve WTF (What the Face) - the unexpected"
 tags: [Anomaly, TSDB]
+date: "2018-05-18"
+file: "anomaly-detection"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -11,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 Here are notes from my research on detecting anomalies.

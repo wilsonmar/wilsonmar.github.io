@@ -3,6 +3,8 @@ layout: post
 title: "SAP HANA Express on Mac"
 excerpt: "The biggest server, on your laptop"
 tags: [sap, cloud, install, mac]
+date: "2016-09-26"
+file: "sap-hana-express"
 image:
 # powershell blue banner-1900x500-296kb.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/18789323/d2ff6614-8167-11e6-94b5-f37637e01d9c.jpg
@@ -11,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
+{% include l18n.html %}
 {% include _toc.html %}
 
 This is a hands-on tutorial on installing SAP HANA Express 

@@ -3,6 +3,8 @@ layout: post
 title: "Lithium Klout API"
 excerpt: "Social management"
 tags: [website, builder, simplicity, jekyll]
+date: "2016-07-06"
+file: "api-lithium-klout"
 image:
 # pic white salt flats lithium 1900x500-c76
   feature: https://cloud.githubusercontent.com/assets/300046/16651063/d5f8af66-43fe-11e6-8805-5c43442cd3c5.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This contains my notes on examining the API and SDK to

@@ -3,6 +3,8 @@ layout: post
 title: "Cloud Regions"
 excerpt: "Who is where"
 tags: [cloud, regions]
+date: "2016-05-11"
+file: "cloud-regions"
 image:
 # pic-black-bkg-white-cloud_1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15269257/8104a824-19b6-11e6-9c42-014bf608009a.jpg
@@ -10,14 +12,13 @@ image:
   creditlink: http://www.themebin.com/hd-wallpapers/wandering-clouds-hd-wallpaper/
 comments: true
 ---
-<a href="https://wilsonmar.github.io/cloud-regions/">https://wilsonmar.github.io/cloud-regions</a>
-
 <i>{{ page.excerpt }}</i>
-<hr />
+{% include l18n.html %}
 {% include _toc.html %}
 
-Unlike other tutorials which focus on specific vendors,
-here's a multi-vendor comparison of regions.
+<a href="https://wilsonmar.github.io/cloud-regions/">
+This tutorial</a>, unlike other tutorials which focus on specific vendors,
+is a multi-vendor comparison of regions.
 
    * <a href="#AWSRegions">AWS regions</a>
    * <a href="#AzureRegions">Azure</a>

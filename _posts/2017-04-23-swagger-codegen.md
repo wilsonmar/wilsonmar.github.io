@@ -3,7 +3,8 @@ layout: post
 title: "Swagger-codegen"
 excerpt: "Install a generator of mock servers and client programs of the PetStore sample app"
 tags: [perftest, Swagger]
-shorturl: "https://"
+date: "2107-04-23"
+file: "swagger-codegen"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -12,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This is a step-by-step tutorial on how you can install a generator of mock servers and client programs. The sample is the PetStore sample app.

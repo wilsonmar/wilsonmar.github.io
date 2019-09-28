@@ -3,7 +3,8 @@ layout: post
 title: "Salesforce Apps"
 excerpt: "Apps and Components to add from AppExchange"
 tags: [salesforce]
-file: saleforce-apps.md
+date: "2018-08-04"
+file: "salesforce-apps"
 image:
 # feature: sf-get-started-1900x500-166833.jpg
   feature: https://user-images.githubusercontent.com/300046/43513032-f7cb0bd2-9539-11e8-88db-f3bff1cbfe17.jpg
@@ -12,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This is a step-by-step hands-on tutorial to Apps and AppExchange, with technical commentary along the way.

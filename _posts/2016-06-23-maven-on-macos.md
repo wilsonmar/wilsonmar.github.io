@@ -4,6 +4,8 @@ title: "Maven on MacOS (OSX)"
 excerpt: "for Java, Jenkins, etc."
 tags: [homebrew, apple, mac, setup]
 shorturl: "https://git.io/v1wOy"
+date: "2016-06-23"
+file: "maven-on-macos"
 image:
 # feature: maven-414x297.gif
   feature: https://user-images.githubusercontent.com/300046/38535311-1d861d2e-3c40-11e8-88e1-efad8b72f771.gif
@@ -12,8 +14,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This describes how to install Maven using Homebrew, the configure and use it.

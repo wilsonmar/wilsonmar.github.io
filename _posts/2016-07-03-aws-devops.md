@@ -3,6 +3,8 @@ layout: post
 title: "AWS DevOps (CodeCommit, CodeBuild, CodePipeline, CodeDeploy)"
 excerpt: "Get certified in Developer Operations on AWS"
 tags: [AWS, EC2, cloud, on-boarding]
+date: "2016-07-03"
+file: "aws-devops"
 image:
 # feature: pic data center slice 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 <a target="_blank" href="https://wilsonmar.github.io/aws-devops/">This tutorial</a> contains my notes on getting certified as a <a target="_blank" href="https://aws.amazon.com/certification/certified-devops-engineer-professional/">

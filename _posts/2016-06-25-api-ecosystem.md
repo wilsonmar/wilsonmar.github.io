@@ -4,16 +4,17 @@ filename: api-ecosystem
 title: "API Development Ecosystem"
 excerpt: "It does your job. And helps others to do your job."
 tags: [API, ecosystem, swagger, generation]
+date: "2016-06-25"
+file: "api-ecosystem"
 image:
 # pic-blue-city-abu-dhabi-skyscrapers-1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15269473/c8311bfa-19bc-11e6-890c-06abc511ef39.jpg
   credit: Tian Xinqi
   creditlink: http://www.tianxinqi.com/news/Above80swgpuwnk
 comments: true
-shorturl: https://goo.gl/wojj1R
 ---
 <i>{{ page.excerpt }}</i>
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 [![Gitter](https://badges.gitter.im/wilsonmar/wilsonmar.github.io.svg)](https://gitter.im/wilsonmar/wilsonmar.github.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)

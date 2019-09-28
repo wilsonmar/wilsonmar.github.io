@@ -3,7 +3,8 @@ layout: post
 title: "Virtual Meetups"
 excerpt: "Attend meetups naked, but nobody will point and laugh."
 tags: [Clouds, IoT]
-shorturl: "https://goo.gl/8E7ko2"
+date: "2017-12-30"
+file: "virtual-meetups"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -12,9 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
-[![Gitter](https://badges.gitter.im/wilsonmar/wilsonmar.github.io.svg)](https://gitter.im/wilsonmar/wilsonmar.github.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 Meetup.com was formed to encourage physical attendance at local events.

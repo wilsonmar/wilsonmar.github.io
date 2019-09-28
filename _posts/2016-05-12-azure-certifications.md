@@ -3,7 +3,8 @@ layout: post
 title: "Azure (cloud) certifications"
 excerpt: "Study. Take a test. Put a badge on your uniform."
 tags: [cloud]
-shorturl: "https://goo.gl/88A12C"
+date: "2016-05-12"
+file: "azure-certifications"
 image:
 # azure ms logo wait 1900x500-39kb.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/18188069/153fbcca-706c-11e6-983d-0783da57f75c.jpg
@@ -12,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
+{% include l18n.html %}
 {% include _toc.html %}
 
 

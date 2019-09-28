@@ -3,6 +3,8 @@ layout: post
 title: "API Management Evaluation"
 excerpt: "Which to choose?"
 tags: [API, devops, evaluation]
+date: "2016-04-29"
+file: "api-management-evaluation"
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/14612210/373cb4e2-0553-11e6-8a1a-4b5e1dabe181.jpg
   credit: And Beyond
@@ -10,8 +12,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This page provides you a way to apply my research on managing APIs.

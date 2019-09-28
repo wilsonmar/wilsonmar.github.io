@@ -5,6 +5,8 @@ excerpt: "Make it appear that you only made one edit before pushing to the team 
 shorturl: "https://goo.gl/CmSBbA"
 modified:
 tags: []
+date: "2107-04-25"
+file: "git-rebase"
 image:
 # feature: pic blue black stars spin 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14621973/fe6e21a6-0583-11e6-9a94-a969a51759b6.jpg
@@ -13,8 +15,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This is a hands-on tutorial on how to use Git rebase from the command line.

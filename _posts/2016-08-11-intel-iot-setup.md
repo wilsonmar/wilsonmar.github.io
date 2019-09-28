@@ -3,6 +3,8 @@ layout: post
 title: "Intel IoT setup"
 excerpt: "It will do what you want if ask correctly, in the proper sequence"
 tags: [DevOps, IoT]
+date: "2016-08-11"
+file: "intel-iot-setup"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -11,9 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
-[![Gitter](https://badges.gitter.im/wilsonmar/wilsonmar.github.io.svg)](https://gitter.im/wilsonmar/wilsonmar.github.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This article shows those new to electronics how to install, configure, and use

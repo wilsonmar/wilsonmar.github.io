@@ -3,6 +3,8 @@ layout: post
 title: "Website Styles"
 excerpt: "What do you mean by clean, pretty, easy, fun?"
 tags: [website, CSS]
+date: "2016-08-20"
+file: "website-styles"
 image:
 # banner watercolor bright sunset boad lake 1900x500-i12
   feature: https://cloud.githubusercontent.com/assets/14143059/17739739/4dfd0696-6453-11e6-9296-80a72384b6d8.jpg
@@ -11,9 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
-[![Gitter](https://badges.gitter.im/wilsonmar/wilsonmar.github.io.svg)](https://gitter.im/wilsonmar/wilsonmar.github.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 Here are examples of what some websites can do to achieve a look that is clean, easy, fun, etc.

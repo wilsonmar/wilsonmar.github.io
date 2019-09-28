@@ -3,6 +3,8 @@ layout: post
 title: "Code Signing on Windows"
 excerpt: "I am who I say I am because my CA says so"
 tags: [mac, cloud, powershell, microsoft]
+date: "2016-09-19"
+file: "code-signing-on-windows"
 image:
 # fig blue powershell icon-1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15307772/b335270e-1b93-11e6-9552-d3022de2b9ce.jpg
@@ -11,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
+{% include l18n.html %}
 {% include _toc.html %}
 
 This article describes the use of self-signed code signing certificates on 

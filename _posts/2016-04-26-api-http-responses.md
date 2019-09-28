@@ -3,6 +3,8 @@ layout: post
 title: "API HTTP Responses"
 excerpt: "Here's what I think of your request"
 tags: [API, JavaScript, programming]
+date: "2016-04-26"
+file: "api-http-responses"
 image:
 # feature: pic bw easter island moai 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/15213184/cbe4bf88-1802-11e6-8f07-5b06236ac771.jpg
@@ -11,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
+{% include l18n.html %}
 {% include _toc.html %}
 
 ## Response code & Location in HTTP header

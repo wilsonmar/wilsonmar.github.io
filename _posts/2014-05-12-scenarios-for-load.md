@@ -3,6 +3,8 @@ layout: post
 title: "Scenarios for load"
 excerpt: "Artificial"
 tags: [scenarios, load, testing, artificial]
+date: "2014-05-12"
+file: "scenarios-for-load"
 image:
 # feature: pic brown blowholes sunset 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622013/564257e4-0584-11e6-8b3f-b2a14eea98a4.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 <a target="_blank" href="http://wilsonmar.github.io/scenarios-for-load">This</a> 

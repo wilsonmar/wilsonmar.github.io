@@ -3,7 +3,8 @@ layout: post
 title: "Python Robot testing"
 excerpt: "A robot python mimics what human testers do manually (to entertain real developers)"
 tags: [Clouds, testing]
-shorturl: "https://goo.gl/qOoEVx"
+date: "2107-02-07"
+file: "python-robot"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -12,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This article talks about the Robot Framework (RF) open-sourced at <a target="_blank" href="https://github.com/robotframework/">https://github.com/robotframework</a>

@@ -3,6 +3,8 @@ layout: post
 title: "Task runners"
 excerpt: "Gulp, Grunt, and other noises as it works automatically"
 tags: [Node, Mac]
+date: "2016-10-28"
+file: "task-runners"
 image:
 # feature: pic Giant-Swiss-Army-Knife-1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622061/afe5f5da-0584-11e6-8140-3278289baef4.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 Task runners such as Gulp and Grunt are crucial to create websites that are quick
