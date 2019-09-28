@@ -3,6 +3,8 @@ layout: post
 title: "SMACK Mesos stack (based on Mesosphere/Marathon DC/OS)"
 excerpt: "SMACK = Spark, Mesos, Akka, Cassandra, Kafka, etc."
 tags: [smack]
+date: "2018-10-14"
+file: "smack-mesos"
 image:
 # feature: sf-ohana-1900x500-178173.jpg
   feature: https://user-images.githubusercontent.com/300046/43407734-bd6303fe-93dc-11e8-87df-302ddbc274ff.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 Here are my succinct notes about using Mesosphere DC/OS (Data Center Operating System) and Marathon within its "SMACK stack" to create a Software Defined Data Centers: Composable Infrastructure -- managing bare metal resources just like the cloud.

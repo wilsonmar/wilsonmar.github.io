@@ -4,6 +4,8 @@ title: "Git configuration"
 excerpt: "How to setup Git clients like a pro"
 modified:
 tags: [git]
+date: "2018-09-07"
+file: "git-config"
 image:
 # git-basics-1900x500-247310.jpg from png
   feature: https://user-images.githubusercontent.com/300046/44609628-b60ca000-a7b5-11e8-95c9-bfc5d1871487.jpg
@@ -12,8 +14,7 @@ image:
 comments: true
 ---
 <em>{{ page.excerpt }}</em>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This is a hands-on deep dive immersive course to get those new to Git productive for professional usage using a local Git client. 

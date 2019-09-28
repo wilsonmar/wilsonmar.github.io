@@ -4,6 +4,8 @@ title: "Git basics (client-based workflow)"
 excerpt: "Here is a quick way to learn Git version control for contributing to open source"
 modified:
 tags: [git]
+date: "2018-09-06"
+file: "git-basics"
 image:
 # git-basics-1900x500-247310.jpg from png
   feature: https://user-images.githubusercontent.com/300046/44609628-b60ca000-a7b5-11e8-95c9-bfc5d1871487.jpg
@@ -12,8 +14,7 @@ image:
 comments: true
 ---
 <em>{{ page.excerpt }}</em>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 <amp-youtube data-videoid="uSh-yN2E0rU" layout="responsive" width="480" height="270"></amp-youtube>

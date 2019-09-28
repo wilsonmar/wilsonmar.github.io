@@ -3,6 +3,8 @@ layout: post
 title: "Salesforce Alexa for Business skills for custom voice UI"
 excerpt: "Voice commands via shared Echo devices in common rooms"
 tags: [salesforce]
+date: "2018-09-24"
+file: "salesforce-alexa"
 image:
 # feature: sf-ohana-1900x500-178173.jpg
   feature: https://user-images.githubusercontent.com/300046/43407734-bd6303fe-93dc-11e8-87df-302ddbc274ff.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This article focuses specifically on use of Alexa by <strong>Salesforce</strong> users.

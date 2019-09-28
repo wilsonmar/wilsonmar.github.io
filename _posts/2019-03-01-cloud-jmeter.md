@@ -3,14 +3,16 @@ layout: post
 title: "JMeter in the cloud for distributed performance testing"
 excerpt: "Impose load remotely from Docker instances in the AWS cloud"
 tags: [Docker]
-comments: true
+date: "2019-03-01"
+file: "cloud-jmeter"
 image: # docker-jmeter-1900x500-75034
   feature: https://user-images.githubusercontent.com/300046/54164857-ae040d00-4434-11e9-9480-35a8f9e9a2b1.jpg
   credit: 
   creditlink:
+comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 The diagram here describes progress toward distributing runs of JMeter within EC2 and/or Docker, and scaling those instances to increase load on app servers. Each step is a deliverable within the sequence of MVP (Minimim Viable Product) stages.

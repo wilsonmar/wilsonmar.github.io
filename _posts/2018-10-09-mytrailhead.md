@@ -3,7 +3,8 @@ layout: post
 title: "Salesforce myTrailhead"
 excerpt: "Create custom content on Salesforce's Trailhead website"
 tags: [salesforce]
-file: mytrailhead.md
+date: "2018-10-09"
+file: "mytrailhead"
 image:
 # feature: sf-ohana-1900x500-178173.jpg
   feature: https://user-images.githubusercontent.com/300046/43407734-bd6303fe-93dc-11e8-87df-302ddbc274ff.jpg
@@ -12,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 

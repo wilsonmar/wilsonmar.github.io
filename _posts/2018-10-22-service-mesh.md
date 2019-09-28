@@ -4,6 +4,8 @@ title: "Service Mesh (Envoy, Istio, Linkerd)"
 excerpt: "The sidecar proxy separates cross-cutting operational concerns from business logic, handing off to a control pane to do the rest"
 modified:
 tags: [git]
+date: "2018-10-22"
+file: "service-mesh"
 image:
 # svcmesh-istio-api-egress-metrics-1900x500-73342.jpg
   feature: https://user-images.githubusercontent.com/300046/47396182-01282e00-d6e7-11e8-8038-149ab2c7bc8b.jpg
@@ -12,8 +14,7 @@ image:
 comments: true
 ---
 <em>{{ page.excerpt }}</em>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 "Service mesh" architecture is about microservices applications working within a "data plane" a standard way to hand-off  service-to-service access control authentication, encrypted communications, monitoring, logging, timeout handling, load balancing, health checks, and other operational cross-cutting concerns to a sidecar proxy within its pod, which works with a <strong>control plane</strong> common to all services. 

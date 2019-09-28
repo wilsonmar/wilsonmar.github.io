@@ -3,6 +3,8 @@ layout: post
 title: "How to contribute to a Non-profit using Salesforce"
 excerpt: "An example of a document for volunteers of technical talent"
 tags: [salesforce]
+date: "2018-10-02"
+file: "contribute"
 image:
 # feature: hands-up-1900x500-56276.jpg
   feature: https://user-images.githubusercontent.com/300046/54075520-819e9400-426e-11e9-958c-62abf07d34a6.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This document is under constant draft change at the moment.

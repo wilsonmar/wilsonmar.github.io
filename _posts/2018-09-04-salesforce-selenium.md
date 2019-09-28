@@ -4,6 +4,8 @@ title: "Salesforce Selenium (Protractor Gerkhin)"
 excerpt: "Automate not just testing but also explanations about user state"
 tags: [salesforce]
 file: salesforce-selenium.md
+date: "2018-09-04"
+file: "salesforce-selenium"
 image:
 # feature: sf-ohana-1900x500-178173.jpg
   feature: https://user-images.githubusercontent.com/300046/43407734-bd6303fe-93dc-11e8-87df-302ddbc274ff.jpg
@@ -12,8 +14,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 This article is about the easiest way to automate user clicks and typing on Salesforce Visualforce and Lightning UI. This is for functional testing and for automating work.

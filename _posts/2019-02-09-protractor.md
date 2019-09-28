@@ -4,7 +4,8 @@ title: "Protractor (automated functional testing)"
 excerpt: "Using Jasmine to verify AngularJs web app UI based on Selenium (behavior) driven by Gherkin specs run by Cucumber"
 modified:
 tags: [testing]
-file: 2019-02-09-protractor.md
+date: "2019-02-09"
+file: "protractor"
 image:
 # protractor-report-1900x500.jpb
   feature: https://user-images.githubusercontent.com/300046/52524586-84589a00-2c6c-11e9-989d-d62cef3c3348.jpg
@@ -13,8 +14,7 @@ image:
 comments: true
 ---
 <em>{{ page.excerpt }}</em>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 ## TL;DR Summary

@@ -3,6 +3,8 @@ layout: post
 title: "Salesforce exhibitors (partners)"
 excerpt: "Answers to the same questions"
 tags: [salesforce]
+date: "2018-09-05"
+file: "git-basic"
 image:
 # sf-showfloor-1900x500-172633.jpg 
   feature: https://user-images.githubusercontent.com/300046/45259787-3e806880-b392-11e8-841f-1c5c557375e2.jpg
@@ -11,8 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-<hr />
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 ## Exhibitor Sheet
