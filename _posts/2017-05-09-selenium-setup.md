@@ -4,7 +4,7 @@ title: "Selenium Setup"
 excerpt: "How to emulate real users with robots touching your web apps"
 shorturl: "https://goo.gl/"
 tags: [ML, GE]
-date: "2107-05-09"
+date: "2017-05-09"
 file: "selenium-setup"
 image:
 # feature: banner-eclipse-1900x500-321k.png

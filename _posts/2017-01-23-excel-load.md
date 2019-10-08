@@ -3,7 +3,7 @@ layout: post
 title: "Excel Load automation"
 excerpt: "Load data into Excel automatically using a script"
 tags: [IoT, Microsoft, Xamarin]
-date: "2107-01-23"
+date: "2017-01-23"
 file: "excel-load"
 image:
 # pic silver robot white skin handshake 1900x500
