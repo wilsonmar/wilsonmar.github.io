@@ -5,7 +5,7 @@ excerpt: "Make it appear that you only made one edit before pushing to the team 
 shorturl: "https://goo.gl/CmSBbA"
 modified:
 tags: []
-date: "2107-04-25"
+date: "2017-04-25"
 file: "git-rebase"
 image:
 # feature: pic blue black stars spin 1900x500.jpg

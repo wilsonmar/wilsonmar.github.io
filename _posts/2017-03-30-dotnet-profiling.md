@@ -3,7 +3,7 @@ layout: post
 title: ".NET profiling"
 excerpt: "Here's how to use Redgate ANTS to make C# really sing on NerdDinner"
 tags: [perftest]
-date: "2107-03-30"
+date: "2017-03-30"
 file: "dotnet-profiling"
 comments: true
 ---

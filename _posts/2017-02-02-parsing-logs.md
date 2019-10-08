@@ -3,7 +3,7 @@ layout: post
 title: "Parsing logs"
 excerpt: "Making sense of semi-structured data"
 tags: [Python, Machine Learning]
-date: "2107-02-02"
+date: "2017-02-02"
 file: "parsing-logs"
 image:
 # pic silver robot white skin handshake 1900x500

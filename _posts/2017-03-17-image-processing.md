@@ -3,7 +3,7 @@ layout: post
 title: "Image processing"
 excerpt: "Processing of image files using Artificial Intelligence and Machine Learning"
 tags: [HTML, personalization, machine learning, ML]
-date: "2107-03-17"
+date: "2017-03-17"
 file: "image-processing"
 image:
 # feature: pic green matrix hallway 1900x500.jpg

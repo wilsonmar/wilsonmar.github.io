@@ -3,7 +3,7 @@ layout: post
 title: "Java Spring REST API Sample"
 excerpt: "Spring for some Java web service client"
 tags: []
-date: "2107-07-30"
+date: "2017-07-30"
 file: "java-spring-rest-api-sample"
 image:
 # feature: pic brown java beans 1900x500.jpg

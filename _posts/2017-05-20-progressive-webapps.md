@@ -3,7 +3,7 @@ layout: post
 title: "Progressive Webapps (PWA)"
 excerpt: "Responsive desktop and mobile hybrid apps that manage data offline too"
 tags: [Mac, Security]
-date: "2107-05-20"
+date: "2017-05-20"
 file: "progressive-webapps"
 image:
 # pic silver robot white skin handshake 1900x500

@@ -3,7 +3,7 @@ layout: post
 title: "Git shortcuts (in a CLI Terminal)"
 excerpt: "A few swipes of your hand and it's done for you"
 tags: [git, commands, utilities]
-date: "2107-08-03"
+date: "2017-08-03"
 file: "git-shortcuts"
 image:
 # pic silver robot white skin handshake 1900x500

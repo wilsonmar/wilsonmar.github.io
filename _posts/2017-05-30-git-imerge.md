@@ -5,7 +5,7 @@ excerpt: "This is the way to merge. It needs to be setup, but you'll love it."
 shorturl: "https://goo.gl/QpfAia"
 modified:
 tags: []
-date: "2107-05-30"
+date: "2017-05-30"
 file: "git-imerge"
 image:
 # feature: pic blue black stars spin 1900x500.jpg

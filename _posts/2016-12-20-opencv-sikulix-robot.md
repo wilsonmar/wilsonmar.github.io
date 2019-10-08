@@ -3,7 +3,7 @@ layout: post
 title: "OpenCV SikuliX robot"
 excerpt: "A robot sees what's on your screen and clicks on it"
 tags: [Clouds, IoT]
-date: "2106-12-20"
+date: "2016-12-20"
 file: "opencv-sikulix-robot"
 image:
 # pic silver robot white skin handshake 1900x500

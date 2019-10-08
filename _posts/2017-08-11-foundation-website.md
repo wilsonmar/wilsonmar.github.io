@@ -3,7 +3,7 @@ layout: post
 title: "Foundation website generation on MacOS"
 excerpt: "Install a complete development environment for generating a website using the flexible UI Foundation Framework top UI pros use"
 tags: [UI, MacOS, setup, Foundation]
-date: "2107-08-11"
+date: "2017-08-11"
 file: "foundation-website"
 image:
 # foundation-yeti-point-1900x500-26464.jpg

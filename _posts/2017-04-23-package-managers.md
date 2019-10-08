@@ -3,7 +3,7 @@ layout: post
 title: "Package Managers"
 excerpt: "Download and install dependencies and keep them updated"
 tags: [Linux,DevOps]
-date: "2107-04-23"
+date: "2017-04-23"
 file: "package-managers"
 image:
 # pic silver robot white skin handshake 1900x500

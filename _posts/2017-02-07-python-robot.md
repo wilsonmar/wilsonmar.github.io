@@ -3,7 +3,7 @@ layout: post
 title: "Python Robot testing"
 excerpt: "A robot python mimics what human testers do manually (to entertain real developers)"
 tags: [Clouds, testing]
-date: "2107-02-07"
+date: "2017-02-07"
 file: "python-robot"
 image:
 # pic silver robot white skin handshake 1900x500

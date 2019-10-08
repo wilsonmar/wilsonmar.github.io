@@ -3,7 +3,7 @@ layout: post
 title: "Swagger-codegen"
 excerpt: "Install a generator of mock servers and client programs of the PetStore sample app"
 tags: [perftest, Swagger]
-date: "2107-04-23"
+date: "2017-04-23"
 file: "swagger-codegen"
 image:
 # pic silver robot white skin handshake 1900x500

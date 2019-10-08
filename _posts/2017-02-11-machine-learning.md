@@ -3,7 +3,7 @@ layout: post
 title: "Machine Learning"
 excerpt: "It can do it for you ... before it does you in"
 tags: [Python, Machine Learning]
-date: "2107-02-11"
+date: "2017-02-11"
 file: "machine-learning"
 image:
 # pic silver robot white skin handshake 1900x500

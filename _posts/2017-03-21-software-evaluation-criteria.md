@@ -3,7 +3,7 @@ layout: post
 title: "Software Evaluation Criteria"
 excerpt: "Example of a comparison of competing tools"
 tags: [Software]
-date: "2107-03-21"
+date: "2017-03-21"
 file: "software-evaluation-criteria"
 image:
 # pic silver robot white skin handshake 1900x500

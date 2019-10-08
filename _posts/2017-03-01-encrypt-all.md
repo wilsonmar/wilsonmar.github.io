@@ -3,7 +3,7 @@ layout: post
 title: "Encrypt all the things"
 excerpt: "How to store and send files securely using XMPP over the hostile internet"
 tags: [XMPP, Security]
-date: "2107-03-01"
+date: "2017-03-01"
 file: "encrypt-all"
 image:
 # pic silver robot white skin handshake 1900x500

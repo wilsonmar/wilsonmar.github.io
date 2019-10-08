@@ -3,7 +3,7 @@ layout: post
 title: "Amazon Lex (AI Chatbots)"
 excerpt: "Make a robot talk to you"
 tags: [apple, mac, setup]
-date: "2107-01-12"
+date: "2017-01-12"
 file: "amazon-lex"
 image:
 # pic silver robot white skin handshake 1900x500

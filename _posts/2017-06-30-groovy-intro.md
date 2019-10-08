@@ -3,7 +3,7 @@ layout: post
 title: "Groovy (Language) introduction"
 excerpt: "A groovy way to use the Java Virtual Machine"
 tags: [apple, mac, setup, Go]
-date: "2107-06-30"
+date: "2017-06-30"
 file: "goovy-intro"
 image:
 # feature: groovy-intro-1900x254-180k
