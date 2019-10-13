@@ -660,7 +660,7 @@ upstream git://github.com/hotwilson/some-repo.git (push)
    <pre><strong>git remote -v
    </strong></pre>
 
-   This information is also presented by the git branch command.
+   This information is also presented by the <tt>git branch</tt> command.
 
    <a name="BranchList"></a>
 
