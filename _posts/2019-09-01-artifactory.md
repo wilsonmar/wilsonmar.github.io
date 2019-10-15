@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Artifactory"
-excerpt: "Store security-vetted binary artifacts and retrieve them here privately, instead of public DockerHub, PiPI, etc."
+title: "Artifactory (with X-Ray)"
+excerpt: "Store security-vetted binary artifacts and retrieve them privately, instead of public DockerHub, PiPI, etc."
 tags: [devops]
 date: "2019-09-02"
 file: "artifactory"
@@ -18,6 +18,8 @@ comments: true
 
 Artifactory is a <a target="_blank" href="https://www.wikiwand.com/en/List_of_software_package_management_systems">software package management system</a> 
 which stores <strong>binary</strong> format assets such as executable files from builds, virtual memory (container) images, graphic image files, etc. (rather than textual source code).
+
+Also from JFrog is X-Ray which identifies vulnerabilities in transitive dependencies calling 3rd-party open-source libraries.
 
 
 ## Workflow by edition and license
