@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Artifactory (with X-Ray)"
-excerpt: "Store security-vetted binary artifacts and retrieve them privately, instead of public DockerHub, PiPI, etc."
+title: "Artifactory (with X-Ray security scan)"
+excerpt: "Privately store and retrieve binary artifacts vetted of vulnerabilities, instead of public DockerHub, PiPI, etc."
 tags: [devops]
 date: "2019-09-02"
 file: "artifactory"
