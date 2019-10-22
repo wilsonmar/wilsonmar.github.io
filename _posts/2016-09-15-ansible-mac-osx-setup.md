@@ -18,10 +18,14 @@ comments: true
 
 <a id="AutoInstall"></a>
 
-This is the fastest way to configure everything on a Mac for software developement,
-specific to what you want installed.
+This is a hands-on tutorial for the fastest way to configure everything on your Mac for software developement, specific to what you want installed.
 
-## Manual way
+There are several categories:
+
+   * GUI desktop and apps
+   * Command-line profile and apps
+
+## GUI Manual config
 
 <a target="_blank" href="https://www.youtube.com/watch?v=bjgZ93oEZF0">
 VIDEO: Set Up OS X For Web Development in 10 Minutes [10:56]</a> used these steps to customize a new Mac based on his <a target="_blank" href="https://github.com/robbyrussell/oh-my-zsh">notes on GitHub</a>:
@@ -44,6 +48,20 @@ VIDEO: Set Up OS X For Web Development in 10 Minutes [10:56]</a> used these step
    * etc.
 
 To practice, use a virtual machine (VMWare Fusion, Vagrant, or Virtualbox).
+
+## CLI for development config
+
+1. Homebrew
+1. brew install git
+1. ~/.bash_profile
+1. ~/.zsh 
+
+1. brew cask install visual-studio-code
+1. code [editor to bring up folder and edit files]
+
+1. brew install curl jq
+
+1. cd / mkdir .ssh / cd .ssh / ssh-keygen
 
 ## Automate much?
 

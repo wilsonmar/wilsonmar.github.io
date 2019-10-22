@@ -89,6 +89,41 @@ Add to the previous command piping to jq:
 curl 'https://registry.hub.docker.com/v2/repositories/library/debian/tags/'|jq '."results"[]["name"]'
    </tt>
 
+   Sample result (for Debian):
+
+   <pre>
+"unstable-slim"
+"unstable-20191014-slim"
+"unstable-20191014"
+"unstable"
+"testing-slim"
+"testing-backports"
+"testing-20191014-slim"
+"testing-20191014"
+"testing"
+"stretch-slim"
+   </pre>
+
+
+### Private Docker Hub Install
+
+As one would expect, Docker Registry is installed within a Docker container. 
+For install instructions, see https://docs.docker.com/registry/deploying/
+
+To start the Registry:
+
+   <pre>
+docker run -d \
+  --restart=always \
+  --name registry \
+  -v "$(pwd)"/certs:/certs \
+  -e REGISTRY_HTTP_ADDR=0.0.0.0:443 \
+  -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \
+  -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
+  -p 443:443 \
+  registry:2
+   </pre>
+
 ## Private Registry
 
 Privatized Docker registries, by definition, need authentication.
@@ -140,6 +175,10 @@ But ideally, removal would occur only after whatever latest replacing it is know
 No archival is needed if the image can be easily rebuilt.
 
 Removing an image does not release hard disk space until a <strong>garbage collection</strong> operation occurs.
+
+There is a Python script that deletes docker images: 
+https://github.com/andrey-pohilko/registry-cli
+
 
 https://stackoverflow.com/questions/25436742/how-to-delete-images-from-a-private-docker-registry
 

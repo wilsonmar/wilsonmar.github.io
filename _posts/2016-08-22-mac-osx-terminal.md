@@ -1071,10 +1071,8 @@ colors from this list</a>.
 
 ## Root user for sudo commands
 
-1. PROTIP: If you try a command that responds about "permissions denied", execute the command again with sudo but without retyping that command by retrieving history :
+If you try a command that responds about "permissions denied", you need to execute as a root user.
 
-   <tt>sudo !!</tt>
-   
    The root user has the ability to relocate or remove required system files and to introduce new files in locations that are protected from other users.
    A root user has the ability to access other users' files.
 
@@ -1087,23 +1085,58 @@ colors from this list</a>.
    once enabled, if forgetten, you'll have to 
    <a target="_blank" rel="amphtml" href="http://danfrakes.com/2014/10/16/how-to-make-a-bootable-yosemite-installer-drive/">reboot from the installer drive</a> (a hassle).
 
-1. It is safer and easier to use the sudo command to gain temporary root access to the system. In a Terminal window invoke:
 
-   <tt>sudo -s</tt>
+1. The easiest way it to have the last command (in history) automatically retrieved so you don't have to retype it to  
+execute again under root:
+
+   <tt><strong>sudo !!</strong></tt>
+
+   It is safer and easier to use the sudo command to gain temporary root access to the system rather than logging out and logging in using root credentials.
+
+1. Alternately, this command only reads the $SHELL variable and executes the content:
+
+   <tt><strong>sudo -s</strong></tt>
    
-   After I type in my password, the response for me is the version of bash:
+   You would be prompted for a password.
+   
+   * To determine whether you're in sudo:
 
-   <tt>bash-3.2# </tt>
+   <tt><strong>whoami</strong></tt>
 
-   to demote out of root:
+   The response "root" says you're still in sudo rather than your user name.
 
-   <tt>exit</tt>
+   * To demote out of root:
 
-The folders that bash looks into are:
+   <tt><strong>exit</strong></tt>
+
+PROTIP: There are <strong>several ways to invoke sudo</strong> <a target="_blank" href="https://www.techrepublic.com/article/the-different-shades-of-sudo">*</a>
+
+1. This command is my preferred way to get into root for awhile because it keeps the environment variables intact:
+
+   <tt><strong>sudo /bin/bash</strong></tt>
+
+   The command above uses a non-login shell, and reads just the .bashrc of the calling user. Not all dot-files are executed.
+
+1. If you want environment variables specific to root and be in the root home directory (rather than your user's $HOME directory), this command executes \/etc/profile, .profile, and .bashrc which defines them:
+
+   <tt><strong>sudo su -s</strong></tt>
+
+1. If you switch between Zsh and Bash, this command runs the shell specified by the password database entry of the target user as a login shell:
+   
+   <tt><strong>sudo -i</strong></tt>
+
+1. If you switch between Zsh and Bash, this command runs the shell specified by the password database entry of the target user as the login shell, then executes login-specific resource files .profile, .bashrc (or .login):
+   
+   <tt><strong>sudo -s</strong></tt>
+   
+ 
+### PATH
+
+NOTE: The folders that bash looks into are in bin:
 
    <tt>/bin/echo $PATH</tt>
 
-On a fresh Yosemite, its:
+   On a fresh Yosemite, that would contain:
 
    <tt>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</tt>
  
