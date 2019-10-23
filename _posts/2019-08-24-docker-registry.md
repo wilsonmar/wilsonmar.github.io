@@ -15,6 +15,10 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+<a name="DockerHub"></a>
+
+## Docker Hub
+
 Docker Inc's Docker Hub (<a target="_blank" href="https://hub.docker.com/">https://hub.docker.com</a>) houses many public Docker images, free to pull.
 
 ## CLI client
@@ -49,9 +53,9 @@ Several other organizations provide a service for "deep scanning" of Docker imag
 * WhiteSource
 
 
-<a name="DockerHub"></a>
+<a name="DockerRegistry"></a>
 
-## Docker Hub
+## Docker Registry
 
 Docker Inc. has open-sourced their Docker Hub server software at <a target="_blank" href="https://github.com/docker/distribution/tree/master/registry">https://github.com/docker/distribution/tree/master/registry</a>.
 
@@ -104,13 +108,14 @@ curl 'https://registry.hub.docker.com/v2/repositories/library/debian/tags/'|jq '
 "stretch-slim"
    </pre>
 
+   Tutorial on the jq utility is at ???
 
 ### Private Docker Hub Install
 
 As one would expect, Docker Registry is installed within a Docker container. 
 For install instructions, see https://docs.docker.com/registry/deploying/
 
-To start the Registry:
+This command is not used to start the Registry as a single container:
 
    <pre>
 docker run -d \
@@ -123,6 +128,14 @@ docker run -d \
   -p 443:443 \
   registry:2
    </pre>
+
+We start the Docker Registry as several containers under the same <strong>docker-compose</strong> file. 
+The other container is to handle Authentication using the OAuth protocol.
+
+
+The Docker Registry 
+
+
 
 ## Private Registry
 
@@ -214,5 +227,3 @@ There are several other Docker Registry services:
 This is one of a series on DevOps:
 
 {% include devops_links.html %}
-
-
