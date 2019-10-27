@@ -63,6 +63,9 @@ To practice, use a virtual machine (VMWare Fusion, Vagrant, or Virtualbox).
 
 1. cd / mkdir .ssh / cd .ssh / ssh-keygen
 
+1. Collaboration (Zoom, WebEx, etc.)
+1. Social media ()
+
 ## Automate much?
 
 If you've already run this, <a href="#SelectApps">click here to skip to view and edit the install specifications further down this tutorial</a>.
