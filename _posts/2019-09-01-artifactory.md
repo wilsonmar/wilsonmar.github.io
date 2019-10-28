@@ -21,6 +21,7 @@ which stores <strong>binary</strong> format assets such as executable files from
 
 Also from JFrog is X-Ray which identifies vulnerabilities in transitive dependencies calling 3rd-party open-source libraries.
 
+<a target="_blank" href="https://www.jfrog.com/confluence/display/RTF/Welcome+to+Artifactory">User Guide: https://www.jfrog.com/confluence/display/RTF/Welcome+to+Artifactory</a>
 
 ## Workflow by edition and license
 
@@ -328,6 +329,8 @@ On Demand Jar Signing are available to paid editions of Artifactory.
 Paid editions of Artifactory can extend Artifactory with Groovy-based User Plugins.
 
 ## Resources
+
+https://www.vogella.com/tutorials/Artifactory/article.html
 
 <a target="_blank" href="https://www.youtube.com/channel/UCh2hNg76zo3d1qQqTWIQxDg">YouTube channel</a> of videos include:
 
