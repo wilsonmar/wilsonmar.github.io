@@ -21,6 +21,17 @@ comments: true
 1. Click the Apple icon at the upper left corner and select
 <strong>About this Mac</strong>.
 
+   MacOS Catalina 10.15 or later, to run Sidecar on iPads, requires one of the :<a target="_blank" href="http://osxdaily.com/2019/10/11/sidecar-compatible-mac-ipad-list/">following hardware models</a>:
+
+   * MacBook Pro (2016) or newer
+   * MacBook Air (2018) or newer
+   * MacBook (Early 2016) or newer
+   * Mac Mini (2018) or newer
+   * Mac Pro (2019)
+   * iMac Pro (2017) or newer
+   * iMac (Late 2015) or newer
+   <br /><br />
+
    macOS Mojave 10.14 can run using these hardware models: 
 
    * MacBook Pro (mid 2012 and newer)
@@ -45,7 +56,9 @@ comments: true
    <li><a href="//www.macrumors.com/roundup/mac-mini/">Mac mini</a> (2010 or newer)</li>
    </ul><br /><br />
 
-   See <a href="https://wilsonmar.github.io/apple-mac-osx-versions/">my hands-on tutorial about MacOS Versions</a>
+   See 
+   * <a href="https://wilsonmar.github.io/apple-mac-osx-versions/">my hands-on tutorial about MacOS Versions</a>
+   * <a href="https://eshop.macsales.com/guides/Mac_OS_X_Compatibility">Matrix of hardware vs. software versions</a>
 
    ### Performance rankings
 
