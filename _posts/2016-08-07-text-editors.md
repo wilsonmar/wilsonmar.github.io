@@ -28,7 +28,7 @@ Built-in to (comes with) macOS:
 
 Free to download and use:
 
-   * <a href="#Code">Visual Studio Code</a> from Microsoft (free, built using GitHub's Electron)
+   * <a href="#Code">Visual Studio Code</a> from Microsoft
    * <a href="#atom">Atom</a> from GitHub (free, built using GitHub's Electron)
    * <a target="_blank" href="http://brackets.io/">
    Adobe Brackets</a> is on Windows too
@@ -40,13 +40,6 @@ Free to download and use:
 
    * <a href="#McVIM">mcvim</a> for Mac
 
-Licensed nagware:
-
-   * $89 <a href="#SublimeTextz">Sublime Text</a>
-   * Texttastic
-   * Byword 
-   * (There is no equivalent of Windows Notepad++ on MacOS)
-
 Free IDEs:
 
    * <a href="#Eclipse">Eclipse</a> for Java
@@ -56,14 +49,21 @@ Free IDEs:
    an IDE for Go from Jetbrains (makers of IntelliJ, PyCharm, etc.)
    * Aptana Studio
    * NetBeans
-   * <a href="#VisualStudioForMac">Visual Studio 2019 for Mac from Microsoft</a> (ported from Visual Studio, which is licensed) for developing <a target="_blank" href="https://wilsonmar.github.io/xamarion/">Xamarin</a> and Unity apps in the C# language
+
+Nagware (free to start, then pop-ups asking for money):
+
+   * $89 <a href="#SublimeTextz">Sublime Text</a>
+   * Texttastic
+   * Byword 
+   * (There is no equivalent of Windows Notepad++ on MacOS)
 
 Licensed IDEs:
 
-   * IntelliJ and WebStorm and PhpStorm from JetBrains
+   * IntelliJ for Java, WebStorm and PhpStorm, $200 PyCharm for Python. All from JetBrains
+   * <a href="#VisualStudioForMac">Visual Studio 2019 for Mac from Microsoft</a> (ported from Visual Studio, which is licensed) for developing <a target="_blank" href="https://wilsonmar.github.io/xamarion/">Xamarin</a> and Unity apps in the C# language
    * $49.99 <a target="_blank" href="https://www.barebones.com/products/bbedit/">BBEdit</a> has a 30-day evaluation period.
 
-On-line browser-based (SaaS) avoids need for setup and makes collaboration easier:
+On-line (SaaS) browser-based subscriptions avoids need for setup and makes collaboration easier:
 
    * <a target="_blank" href="https://www.gitpod.io/">gitpod.io</a> is a Chrome add-on which replaces the green "Clone or download" button with their "Gitpod" button to an on-line IDE in the cloud and automation.
 
@@ -77,12 +77,13 @@ On-line browser-based (SaaS) avoids need for setup and makes collaboration easie
 
 ## Features #
 
-* Full project navigation
+* Full project navigation from buttons, menus,
 
-* Markdown display
-* syntax coloring for numerous source code languages; 
-* Code completion
-* code folding
+Intelligent adaptation depending on type of format (Markdown, Java, Bash, etc.):
+   * Display 
+   * syntax coloring for numerous source code languages
+   * Code completion
+   * Code folding
 
 * search and replace across multiple files
 * grep pattern matching
@@ -91,10 +92,215 @@ On-line browser-based (SaaS) avoids need for setup and makes collaboration easie
 
 * Pre-compile on the fly
 * Static code scan on the fly
-* Debugging with breakpoints, step into
+* Debugging with breakpoints, step into, etc.
 
+* The "Shades of Purple" theme in VSCode presents markdown commands in a less visible color than main Moutext.
+
+* <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=enkia.tokyo-night">Tokyo Night theme</a>
+
+* Sublime Text Keymap if you're used to Sublime's keys.
+
+* <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ms-vsts.team">Azure Repos</a> to connect to Azure DevOps Services and Team Foundation Server supportkng Team Foundation Version Control (TFVC). 
 
 <hr />
+
+
+<a name="Code"></a>
+
+## Visual Studio Code #
+
+Microsoft's Visual Studio Code is slower to startup than Sublime Text.
+It's core engine is built using GitHub's Electron for multi-plantform (Mac, Windows, etc.) as open-source Monacle Editor at https://microsoft.github.io/monaco-editor. 
+
+But VSCode's windowing is much more configurable, which has enabled many add-ons that has made it the most feature-rich and thus most preferred editor today. 
+
+1. Open a Mac Terminal: 
+
+1. Install the GUI program using Homebrew:
+
+   <tt><strong>brew cask install visual-studio-code
+   </strong></tt>
+
+1. Navigate to a folder.
+1. To open VSCode with a list of files in the folder, type code and a dot:
+
+   <tt><strong>code .
+   </strong></tt>
+
+   Alternately, to open Code from the Mac Finder, <strong>right-click</strong> on a folder
+   and select <strong>Open with</strong> Visual Studio Code, <a target="_blank" href="http://stackoverflow.com/questions/30159158/how-do-i-set-up-a-link-to-open-up-visual-studio-code-from-terminal-on-osx">
+   per these instructions</a>
+
+0. Exit the Code program.
+
+0. In a new Terminal shell window, use the code command to open a specific file:
+
+   <tt><strong>code hello
+   </strong></tt>
+
+   BTW, "hello" in the example above can be any file.
+
+   ### Basic UI
+
+1. Uncheck "Show welcome page on startup".
+
+1. To toggle sidebar visibility, press command+B.
+
+1. To see keyboard shortcuts, click command+K then command+S.
+
+1. Click inside the Search box on the upper-right.
+
+
+
+   ### Search Extension on website
+
+Examples of advanced features:
+   * moving the default sidebar to the right side of the editor.
+   * auto-indenting and execution of snippets work naturally.
+   * Syntax Highlighting
+   * IntelliSense
+   * Go to Definition
+   * Find All References
+   * Multi-Refactoring
+   <br /><br />
+
+Its <a target="_blank" href="https://www.hanselman.com/blog/VisualStudioCodeRemoteDevelopmentMayChangeEverything.aspx">Remote Development mode</a> means that rather than RDP or SSH into a remote machine, there is a client part on your machine and a "VS Code Server" basically running anywhere else. VSCode knows to enable that when it sees a "dev container configuration file" in a GitHub repository. All that's enabled by installing the <a target="_blank" href="https://aka.ms/vscode-remote/download/extension">extension pack</a>. 
+
+1. <a target="_blank" href="https://channel9.msdn.com/Blogs/dotnet/Get-started-VSCode-Csharp-NET-Core-Windows">VIDEO:</a> Search for VSCode extensions at <a target="_blank" href="https://marketplace.visualstudio.com/vscode">https://marketplace.visualstudio.com/vscode</a>by opening its Extension panel (CTRL + Shift + X). See <a target="_blank" href="https://nickjanetakis.com/blog/switching-to-vscode-from-sublime-text">Nick's list</a>.
+
+1. Select "Sort by: Downloads" to see that C# is the most downloaded.
+
+   https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp
+
+1. If you click on a logo, then "Install" on the next page.
+
+   ### Extensions in VSCode
+
+1. Open Visual Studio Code.
+1. Press Command-P for the Command Pallette.
+1. Enter "ext install csharp" on top of "Type '?' to get help on the actions you can take from here" if you want to install C# editor helpers.
+
+   Notice you're brought to the list of extensions as if you clicked the square icon on the left menu. Extensions installed have a gear icon rather than "install".
+
+1. Click the top editor icon on the left menu.
+
+1. Click "Restart Now" for it to take.
+ 
+   <a target="_blank" href="https://www.monodevelop.com/download/">https://www.monodevelop.com/download/</a>
+
+
+   ### PowerShell extension for VSCode
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=LJNdK0QrIo8">
+   Setting up Visual Studio Code for PowerShell Development</a>
+   <a target="_blank" href="https://github.com/PowerShell/vscode-powershell">https://github.com/PowerShell/vscode-powershell</a>
+
+   ### TypeScript settings.json
+
+   PROTIP: Microsoft wrote Visual Studio Code using the TypeScript programming language, which released as an open-source project in 2012. See <a target="_blank" href="https://www.typescriptlang.org/play/index.html">typescriptlang.org/play/</a>. TypeScript syntax is a "superset" of JavaScript. So valid JavaScript is also valid TypeScript. TypeScript transpiles (compiles) to JavaScript (by the tsc program).
+
+   VSCode is configured by specifications in file <tt>settings.json</tt>. On a Mac, it's in folder 
+   <tt>/Users/.../Library/Application Support/Code/User/settings.json</tt> (where the ... is your user name).
+
+   On Windows, "typescriot.tsdk" "/Users/.../AppData/Roaming/npm/node_modules/types".
+
+   For Git users:
+
+   <tt>"git.enableSmartCommit": true,</tt>
+
+   <tt>"git.confirmSync": false,</tt>
+
+
+   ### JavaScript Extension
+
+1. If you're working with JavaScript, install it from the Welcome screen, reached from Help, Welcome.
+
+0. Under the "Customize" heading on the right, click the "JavaScript" link, then OK at the pop-up.
+0. Click "Typescript" as well.
+0. If you're using Protractor, search for that and install what appears:
+
+   <img alt="text-edit-protractor-258x236-23265.jpg" width="258" src="https://user-images.githubusercontent.com/300046/43851048-e0453164-9af6-11e8-981b-f75e6e78b2d8.jpg">
+
+
+0. Press shift+command+P or select Code's menu View, Command Palette at the top of the screen.
+
+0. Begin typing this until the full command is recognized in the list:
+
+   <tt><strong>
+   Install 'Code' command in PATH
+   </strong></tt>
+
+0. Select the full command that appears in the drop-down.
+
+### Tutorials on VSCode
+
+Perhaps the most intensive tutorial is <a target="_blank" href="https://realpython.com/courses/python-development-visual-studio-code-setup-guide/">the Setup Guid from RealPython</a>
+
+<a target="_blank" href="http://michaelcrump.net/using-github-with-visualstudio-code/">Using GitHub, by Michael Crump</a>
+
+<a target="_blank" href="https://code.visualstudio.com/docs/editor/versioncontrol">Version Control in VS Code</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=UcW1FHNvy8M">VIDEO: Supercharge Your JavaScript Debugging Workflow With VS Code</a>
+
+<a target="_blank" href="https://scotch.io/courses/make-visual-studio-code-your-editor/">
+Make Visual Studio Code Your Editor video course at Scotch.io</a> by  Chris Sevilleja (@chrisoncode), with code from 2017 by @sevilayha at <a target="_blank" href="https://github.com/scotch-io/vscode-course">https://github.com/scotch-io/vscode-course</a>
+
+   Getting Started:
+
+   1. Introduction 7:55
+   2. VS Code Basics 8:01
+   3. Command Palette and Shortcuts 6:18
+   4. Settings 8:04
+   5. Extensions, 8:00
+   6. Search and Multi-Cursor 7:38
+   
+      Main Features:
+
+   7. Git 10:46
+   8. Intellisense 10:22
+   9. Terminal 4:40
+   
+      Language Specific:
+
+   10. HTML 7:03
+   11. CSS and Sass 6:56
+   12. JavaScript 9:35
+   13. Angular 6:09
+   14. Node and npm 6:38
+   15. PHP and Laravel 7:40
+
+       Important Extensions:
+
+   16. Project Manager 7:26
+   17. Settings Sync 6:40
+   
+       More Features:
+
+   18. Tasks 12:44
+   19. Debugging 8:36
+   20. VS Code 1.10 Features 5:28
+   21. Custom Status and Activity Bar 7:26
+   <br /><br />
+
+<a target="_blank" href="https://tutorialzine.com/2017/06/15-essential-plugins-for-visual-studio-code">
+15 Essential Plugins for Visual Studio Code</a> June 27, 2017
+
+* https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces
+
+* https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+Integrates ESLint JavaScript into VS Code.
+
+* https://marketplace.visualstudio.com/items?itemName=chuckjonas.apex-pmd
+PMD static analysis for Salesforce Apex
+
+* https://marketplace.visualstudio.com/items?itemName=salesforce.salesforcedx-vscode
+Extensions for developing on the Salesforce Platform
+
+* https://gitlab.com/terja/sfdx-git
+
+<hr />
+
+
 
 <a name="Cloud9"></a>
 
@@ -733,184 +939,6 @@ complete
    </pre>
 
 
-<a name="Code"></a>
-
-## Visual Studio Code #
-
-Microsoft's Visual Studio Code is slower to startup than Sublime Text.
-
-But its windowing is much more configurable, which has enabled many add-ons that has made it the most feature-rich and thus most preferred editor today. Examples of advanced features:
-   * moving the default sidebar to the right side of the editor.
-   * auto-indenting and execution of snippets work naturally.
-   * Syntax Highlighting
-   * IntelliSense
-   * Go to Definition
-   * Find All References
-   <br /><br />
-
-Its <a target="_blank" href="https://www.hanselman.com/blog/VisualStudioCodeRemoteDevelopmentMayChangeEverything.aspx">Remote Development mode</a> means that rather than RDP or SSH into a remote machine, there is a client part on your machine and a "VS Code Server" basically running anywhere else. VSCode knows to enable that when it sees a "dev container configuration file" in a GitHub repository. All that's enabled by installing the <a target="_blank" href="https://aka.ms/vscode-remote/download/extension">extension pack</a>. 
-
-On Mac: 
-
-1. Install the GUI program using Homebrew:
-
-   <tt><strong>brew cask install visual-studio-code
-   </strong></tt>
-
-1. To open a folder in VSCode from a Terminal, type code and a dot:
-
-   <tt><strong>code .
-   </strong></tt>
-
-   Alternately, to open Code from the Mac Finder, <strong>right-click</strong> on a folder
-   and select <strong>Open with</strong> Visual Studio Code, <a target="_blank" href="http://stackoverflow.com/questions/30159158/how-do-i-set-up-a-link-to-open-up-visual-studio-code-from-terminal-on-osx">
-   per these instructions</a>
-
-   ### Search Extension on website
-
-   <a target="_blank" href="https://channel9.msdn.com/Blogs/dotnet/Get-started-VSCode-Csharp-NET-Core-Windows">VIDEO:</a>
-
-1. Search for extensions at <a target="_blank" href="https://marketplace.visualstudio.com/vscode">https://marketplace.visualstudio.com/vscode</a>by opening its Extension panel (CTRL + Shift + X). See <a target="_blank" href="https://nickjanetakis.com/blog/switching-to-vscode-from-sublime-text">Nick's list</a>.
-
-1. Select "Sort by: Downloads" to see that C# is the most downloaded.
-
-   https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp
-
-1. If you click on a logo, then "Install" on the next page.
-
-   ### Extensions in Code
-
-1. Open Visual Studio Code.
-1. Press Command-P for the Command Pallette.
-1. Enter "ext install csharp" on top of "Type '?' to get help on the actions you can take from here" if you want to install C# editor helpers.
-
-   Notice you're brought to the list of extensions as if you clicked the square icon on the left menu. Extensions installed have a gear icon rather than "install".
-
-1. Click the top editor icon on the left menu.
-
-1. Click "Restart Now" for it to take.
- 
-   <a target="_blank" href="https://www.monodevelop.com/download/">https://www.monodevelop.com/download/</a>
-
-   ### PowerShell extension for VSCode
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=LJNdK0QrIo8">
-   Setting up Visual Studio Code for PowerShell Development</a>
-   <a target="_blank" href="https://github.com/PowerShell/vscode-powershell">https://github.com/PowerShell/vscode-powershell</a>
-
-   ### TypeScript settings.json
-
-   PROTIP: Microsoft wrote Visual Studio Code using the TypeScript programming language, which released as an open-source project in 2012. See <a target="_blank" href="https://www.typescriptlang.org/play/index.html">typescriptlang.org/play/</a>. TypeScript syntax is a "superset" of JavaScript. So valid JavaScript is also valid TypeScript. TypeScript transpiles (compiles) to JavaScript (by the tsc program).
-
-   VSCode is configured by specifications in file <tt>settings.json</tt>. On a Mac, it's in folder 
-   <tt>/Users/.../Library/Application Support/Code/User/settings.json</tt> (where the ... is your user name).
-
-   On Windows, "typescriot.tsdk" "/Users/.../AppData/Roaming/npm/node_modules/types".
-
-   For Git users:
-
-   <tt>"git.enableSmartCommit": true,</tt>
-
-   <tt>"git.confirmSync": false,</tt>
-
-
-   ### JavaScript Extension
-
-1. If you're working with JavaScript, install it from the Welcome screen, reached from Help, Welcome.
-
-0. Under the "Customize" heading on the right, click the "JavaScript" link, then OK at the pop-up.
-0. Click "Typescript" as well.
-0. If you're using Protractor, search for that and install what appears:
-
-   <img alt="text-edit-protractor-258x236-23265.jpg" width="258" src="https://user-images.githubusercontent.com/300046/43851048-e0453164-9af6-11e8-981b-f75e6e78b2d8.jpg">
-
-
-0. Press shift+command+P or select Code's menu View, Command Palette at the top of the screen.
-
-0. Begin typing this until the full command is recognized in the list:
-
-   <tt><strong>
-   Install 'Code' command in PATH
-   </strong></tt>
-
-0. Select the full command that appears in the drop-down.
-
-0. Exit the Code program.
-
-0. You can now, in a new Terminal shell window, use the code command to open a file:
-
-   <tt><strong>code hello
-   </strong></tt>
-
-   BTW, "hello" in the example above can be any file.
-
-### Tutorials on VSCode
-
-Perhaps the most intensive tutorial is <a target="_blank" href="https://realpython.com/courses/python-development-visual-studio-code-setup-guide/">the Setup Guid from RealPython</a>
-
-<a target="_blank" href="http://michaelcrump.net/using-github-with-visualstudio-code/">Using GitHub, by Michael Crump</a>
-
-<a target="_blank" href="https://code.visualstudio.com/docs/editor/versioncontrol">Version Control in VS Code</a>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=UcW1FHNvy8M">VIDEO: Supercharge Your JavaScript Debugging Workflow With VS Code</a>
-
-<a target="_blank" href="https://scotch.io/courses/make-visual-studio-code-your-editor/">
-Make Visual Studio Code Your Editor video course at Scotch.io</a> by  Chris Sevilleja (@chrisoncode), with code from 2017 by @sevilayha at <a target="_blank" href="https://github.com/scotch-io/vscode-course">https://github.com/scotch-io/vscode-course</a>
-
-   Getting Started:
-
-   1. Introduction 7:55
-   2. VS Code Basics 8:01
-   3. Command Palette and Shortcuts 6:18
-   4. Settings 8:04
-   5. Extensions, 8:00
-   6. Search and Multi-Cursor 7:38
-   
-      Main Features:
-
-   7. Git 10:46
-   8. Intellisense 10:22
-   9. Terminal 4:40
-   
-      Language Specific:
-
-   10. HTML 7:03
-   11. CSS and Sass 6:56
-   12. JavaScript 9:35
-   13. Angular 6:09
-   14. Node and npm 6:38
-   15. PHP and Laravel 7:40
-
-       Important Extensions:
-
-   16. Project Manager 7:26
-   17. Settings Sync 6:40
-   
-       More Features:
-
-   18. Tasks 12:44
-   19. Debugging 8:36
-   20. VS Code 1.10 Features 5:28
-   21. Custom Status and Activity Bar 7:26
-   <br /><br />
-
-<a target="_blank" href="https://tutorialzine.com/2017/06/15-essential-plugins-for-visual-studio-code">
-15 Essential Plugins for Visual Studio Code</a> June 27, 2017
-
-* https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces
-
-* https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
-Integrates ESLint JavaScript into VS Code.
-
-* https://marketplace.visualstudio.com/items?itemName=chuckjonas.apex-pmd
-PMD static analysis for Salesforce Apex
-
-* https://marketplace.visualstudio.com/items?itemName=salesforce.salesforcedx-vscode
-Extensions for developing on the Salesforce Platform
-
-* https://gitlab.com/terja/sfdx-git
-
-<hr />
 
 <a name="VisualStudioForMac"></a>
 
