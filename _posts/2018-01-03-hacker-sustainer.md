@@ -101,7 +101,7 @@ Some of the conditions:
    Here again, use of templates would enable developers in a rush to do what they need, but faster yet more securely.
 
 
-## 6. Counts of folders and files processed
+## 6. Counts and ratio of folders and files processed
 
    "Hackers" tend to focus more on features than specifics of data. So they often define sample files containing only enough data to provide the conditions developers and testers want to consider.
    
@@ -110,10 +110,10 @@ Some of the conditions:
 
    Ratios of the number of files per folder calculated over time and counts of certain keywords inside files can provide a warning mechanism of something wrong.
 
-   Batch jobs running overnight in production have a window of time in which to run. They need to be carefully sequenced. So a job that runs too long would block other jobs from running and keep users from using the system the next day.
+   Batch jobs running overnight in production have a window of time in which to run. They need to be carefully sequenced. So a job that runs too long would block other jobs from running and may keep users from using the system the next day.
    
 
-## 7. Manual checks vs. automated 
+## 7. Manual vs. automated work
 
    Hackers tend to assume that the services, folders, and files they need are there. After all, they created them. They can see that file in a folder displayed on another screen.
    
@@ -121,6 +121,8 @@ Some of the conditions:
    Automated scripts need to actually ping a host name to make sure they are active.
    Automated scripts need to check whether a folder exists before taking action.
    Automated scripts need to check after each component is installed to ensure that it was actually installed. There could have been a typo in the installation command.
+
+   Manually typing command is more flexible than having them as automated scripts. But the lack of repeatability and potential typos makes them fragile and error-prone.
 
 
 ## 8. Display last key value processed
