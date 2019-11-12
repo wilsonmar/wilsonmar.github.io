@@ -22,26 +22,26 @@ comments: true
 
 Adobe <a target="_blank" href="https://adobe.allegiancetech.com/cgi-bin/qwebcorporate.dll?idx=VM6HD7">open-sourced</a> its <a target="_blank" href="https://blogs.adobe.com/security/2017/05/open-source-ccf.html">Common Control Framework</a> which encompasses several security frameworks. Adobe's CCF covers ISO 27001, SOC, FedRAMP, PCI DSS, GLBA, FERPA, and others. <a target="_blank" href="https://www.adobe.com/security/compliance/ccf-download.html">Download</a> the <a target="_blank" href="https://www.adobe.com/pdf/Open_Source_CCF.pdf">pdf</a>. Adobe's control families is most comprehensive:
 
-   * Asset management
-   * Business Continuity
-   * Backup Management
-   * Configuration Management
-   * Change Management
-   * Data Management
-   * Identity and Acccess Management
-   * Incident Response
-   * Mobile Device Management
-   * Network Operations
-   * People Resources
-   * Risk Management
-   * System Design Documentation
-   * Security Governance
-   * Service Lifecycle
-   * Systems Monitoring
-   * Site Operations
-   * Training and Awareness
-   * Third Party Management
-   * Vulnerability Management
+   1. Asset management
+   2. Business Continuity
+   3. Backup Management
+   4. Configuration Management
+   5. Change Management
+   6. Data Management
+   7. Identity and Acccess Management
+   8. Incident Response
+   9. Mobile Device Management
+   10. Network Operations
+   11. People Resources
+   12. Risk Management
+   13. System Design Documentation
+   14. Security Governance
+   15. Service Lifecycle
+   16. Systems Monitoring
+   17. Site Operations
+   18. Training and Awareness
+   19. Third Party Management
+   20. Vulnerability Management
    <br /><br />
 
 ## Amazon's Compliance:
