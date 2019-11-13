@@ -1,12 +1,11 @@
 ---
 layout: post
 title: "Hacker vs Sustainer (Culture)"
-excerpt: "The dichotomy teams must resolve for DevOps"
+excerpt: "How to succeed in production by resolving the singular source of conflict teams must resolve for DevOps"
 tags: [DevOps]
 date: "2018-01-03"
 file: "hacker-sustainer"
 image: 
-# Title: How Hackers and Production Sustainers Can Work Together
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
   credit: 
@@ -18,7 +17,7 @@ comments: true
 {% include _toc.html %}
 
 To adopt DevOps with less stress and conflict,
-I believe teams need to recognize and reconcile the distinctions between
+I believe teams need to recognize and reconcile the dichotomy between
 how coding with a "Hacker mentality" is different than coding with a "Sustainer mentality".
 
 Note that in this article, I refer to the "white hat" type of "Hackers" with reverance. To me, the "Hacker" designation means that the person seeks to do good. By contrast, "Crackers" intend to damage.<a target="_blank" href="https://www.quora.com/What-is-the-difference-between-hacker-and-cracker">*</a>
