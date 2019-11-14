@@ -100,15 +100,14 @@ Some of the conditions:
    Batch jobs running overnight in production have a window of time in which to run. They need to be carefully sequenced. So a job that runs too long would block other jobs from running and may keep users from using the system the next day.
    
 
-
-## 3. Short names vs. complex file names
+## 5. Short names vs. complex file names
 
    When Hackers create files and folders, few others refer to them, so they use short names which are quicker to type, and thus saves time.
    
-   But Sustainers name files with metadata such as "PRD" for whether the file contains data from production. In production, the context of work usually include an integrated system with perhaps dozens of components. Including dates in folders and files outputted enable them to be sorted. As importantly, date stamps in names ensure that they are unique rather than being overidden every run.
+   But Sustainers name files with the system name plus metadata such as "PRD" for whether the file contains data from production. In production, the context of work usually include an integrated system with perhaps dozens of components. Including dates in folders and files outputted enable them to be sorted. As importantly, date stamps in names ensure that they are unique rather than being overidden every run.
 
 
-## 4. All operations vs. customer-specific filters
+## 6. All operations vs. customer-specific filters
 
    The "hacker" approach is to write programs that work on all items within a file. That is faster to "MVP" (Minimum Viable Product) than taking the time to add sorting and filters, which can be done later.
    
@@ -117,7 +116,7 @@ Some of the conditions:
    Here again, use of templates would enable developers in a rush to do what they need, but faster yet more securely.
 
 
-## 6. Idempotence during reruns
+## 7. Idempotence during reruns
 
    "Idempotence" means that the same command executed again should yield the same result. For example, a program that adds items would not add duplicates when invoked multiple times.
 
