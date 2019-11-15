@@ -62,7 +62,14 @@ Some of the conditions:
    Sustainers hunt for passwords already in files by periodically running a utility program to scan through the whole code base.
 
 
-## 2. Hard-coded host names vs. variables
+## 2. Different logins and passwords
+
+   This is perhaps the most inconvenient of requests to Hacker developers.
+
+   Sustainers operate in production using different credentials than when operating in test systems. In order to restrict the damage that can be done if a particular password or certificate is compromised, each secret is limited in scope.
+
+
+## 3. Hard-coded host names vs. variables
    
    Coding during efforts begin in a single environment ("Dev"). To save time, they work only on the production instance.
 
@@ -74,7 +81,7 @@ Some of the conditions:
 
    I wrote a sample template Bash Shell script which contains the precautions described below.
 
-## 3. Default destruction vs. Dry run flags
+## 4. Default destruction vs. Dry run flags
 
    The "hacker" approach is to try something because it's often easier to fix  later. "We're that good."
 
@@ -87,7 +94,7 @@ Some of the conditions:
 
    My template is designed so that running it without any parameters would result in no files being processed. Adding "-a" would trigger work on actual data rather than the default "dry-run", which only performs the preliminaries but does not actually update or delete.
    
-## 4. Counts and ratios of folders and files processed
+## 5. Counts and ratios of folders and files processed
 
    Hackers tend to focus more on features than specifics of data. So they tend to define sample files containing only enough data to provide the conditions developers and testers want to consider.
    
@@ -100,14 +107,14 @@ Some of the conditions:
    Batch jobs running overnight in production have a window of time in which to run. They need to be carefully sequenced. So a job that runs too long would block other jobs from running and may keep users from using the system the next day.
    
 
-## 5. Short names vs. complex file names
+## 6. Short names vs. complex file names
 
    When Hackers create files and folders, few others refer to them, so they use short names which are quicker to type, and thus saves time.
    
    But Sustainers name files with the system name plus metadata such as "PRD" for whether the file contains data from production. In production, the context of work usually include an integrated system with perhaps dozens of components. Including dates in folders and files outputted enable them to be sorted. As importantly, date stamps in names ensure that they are unique rather than being overidden every run.
 
 
-## 6. All operations vs. customer-specific filters
+## 7. All operations vs. customer-specific filters
 
    The "hacker" approach is to write programs that work on all items within a file. That is faster to "MVP" (Minimum Viable Product) than taking the time to add sorting and filters, which can be done later.
    
@@ -116,7 +123,7 @@ Some of the conditions:
    Here again, use of templates would enable developers in a rush to do what they need, but faster yet more securely.
 
 
-## 7. Idempotence during reruns
+## 8. Idempotence during reruns
 
    "Idempotence" means that the same command executed again should yield the same result. For example, a program that adds items would not add duplicates when invoked multiple times.
 
@@ -125,7 +132,7 @@ Some of the conditions:
    Consider whether deleting data for the sake of idempotency is worth the risk in a Production setting where data usually needs to be long-lived.
 
 
-## 8. Manual vs. automated work
+## 9. Manual vs. automated work
 
    Hackers tend to assume that the services, folders, and files they need are there. After all, they created them. They can see that file in a folder displayed on another screen.
    
@@ -137,26 +144,13 @@ Some of the conditions:
    Manually typing command is more flexible than having them as automated scripts. But the lack of repeatability and potential typos makes them fragile and error-prone. ???
 
 
-## 9. Display last key value processed
+## 10. Front-end vs. back-end processing
 
-   "Hackers" are interested in general features, and more often, UI features.
+   The Hacker mindset is usually more interested in user-facing UI/UX features.
    
-   Some Sustainers add a step in the automated script to print off the value of the last key processed because there was an incident with a file missing an invisible character that marks the end of each line, something that caused the last line to not be processed.
-   
-   This happens more frequently than one would think. Looking at a flat file in a text editor, unless the cursor appears at the first position below the last line containing text, one really tell if that invisible character is in the file.
+   The Sustainer mindset needs to focus on internal ("back-end") data processing. So some Sustainers add to their automated script spot checks such printing off the key value from the last row of files processed, which may miss being processed. This happens more frequently than one would think. Looking at a flat file in a text editor, unless the cursor appears at the first position below the last line, one really tell if that invisible character is in the file.
 
-   "spot checking" ???
-   
-   The compromise may perhaps be to allow sections of code to be maintained by Sustainers which Hacker types try to ignore.
-
-
-## 10. Different logins and passwords
-
-   This is perhaps the most inconvenient of requests to Hacker developers.
-
-   Sustainers operate in production using different credentials than when operating in test systems. In order to restrict the damage that can be done if a particular password or certificate is compromised, each secret is limited in scope.
-
-   Password managers may help, but pose a vulnerability of its own.
+   Such differences in focus is what leads to specialization of concerns. But the "DevOps" movement is about having Dev (Developers) and Ops (production Operations) better understanding each other, and even doing each other's job. People doing so makes for more autonomous, self-sustaining teams to be formed in order to be more scalable.
 
 
 ## Conclusion
