@@ -174,8 +174,7 @@ This article provides examples of how each group can benefit from the other.
 Here you have it. These are the major disagreements where "Hacker" and "Sustainer" types may differ. 
 To recap, those who work in production tend to:
 
-
-   1. Use facilitator to balance assessment of efficiency vs. risks.
+   1. Use facilitator to balance assessment of efficiency and risks.
    2. Use variables in templates to build in quality from the beginning.
    3. Automate setup.
    4. Store code in repositories and secrets in vaults.

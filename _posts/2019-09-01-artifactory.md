@@ -3,7 +3,7 @@ layout: post
 title: "Artifactory (with X-Ray security scan)"
 excerpt: "Privately store and retrieve binary artifacts vetted of vulnerabilities, instead of public DockerHub, PiPI, etc."
 tags: [devops]
-date: "2019-09-02"
+date: "2019-09-01"
 file: "artifactory"
 image:
 # artifactory-flow-1900x500
@@ -16,12 +16,14 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Artifactory is a <a target="_blank" href="https://www.wikiwand.com/en/List_of_software_package_management_systems">software package management system</a> 
-which stores <strong>binary</strong> format assets such as executable files from builds, virtual memory (container) images, graphic image files, etc. (rather than textual source code).
+Artifactory stores <strong>binary</strong> format assets such as executable files from builds, virtual memory (container) images, graphic image files, etc. (rather than textual source code). It caches local binary files as a proxy to public repositories, which make them quicker to obtain and provides a way to provide security-vetted (whitelisted) versions.
 
-Also from JFrog is X-Ray which identifies vulnerabilities in transitive dependencies calling 3rd-party open-source libraries.
+Wikipedia categorizes it as a <a target="_blank" href="https://www.wikiwand.com/en/List_of_software_package_management_systems">"software package management system"</a>.
+
+Artifactory works with another JFrog product: X-Ray, which identifies vulnerabilities in transitive dependencies calling 3rd-party open-source libraries.
 
 <a target="_blank" href="https://www.jfrog.com/confluence/display/RTF/Welcome+to+Artifactory">User Guide: https://www.jfrog.com/confluence/display/RTF/Welcome+to+Artifactory</a>
+
 
 ## Workflow by edition and license
 
@@ -89,31 +91,57 @@ File formats:
    * 7up???
    <br /><br />
 
+https://github.com/jfrog/project-examples
+Sample projects for training and testing CI setup with Artifactory
 
-### HA
+https://github.com/jfrog/jfrog-data-generator
+Tools for generating and preloading JFrog products with data
 
-Artifactory Enterprise deliver "Five-nines Availability" and
-Near-zero Maintenance Downtime from
+https://github.com/jfrog/jfrog-idea-plugin
+https://jfrog.github.io/jfrog-idea-plugin/
+
+
+
+### HA (High Availability)
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Rybq0n8e8qI">VIDEO</a>
+Get Ahead of the Curve with JFrog Artifactory Enterprise
+
+Artifactory Enterprise claims an SLA of "Five-nines Availability" and
+"Near-zero Maintenance Downtime" from
 Unlimited Server Scalability due to 
-Redundant Cluster of Servers.
 
-Hight Availability (HA) Artifactory configuration consists of a cluster of several (Docker) active/active nodes behind a load balancer. All nodes reference a single MySQL database.
+High Availability (HA) Artifactory configuration consists of a cluster of several (Docker) active/active nodes behind a load balancer. 
+All nodes reference a single MySQL/PostgreSQL database.
+
+The Helm chart (using K8s 1.8+) is at <a target="_blank" href="https://hub.helm.sh/charts/jfrog/artifactory-ha">https://hub.helm.sh/charts/jfrog/artifactory-ha</a>
 
 Storage configuration settings are defined in the <tt>binarystore.xml</tt> file.
 
+Parameter <tt>artifactory.service.pool</tt> defines a single primary node handles jobs and tasks and not interrupted by inbound traffic.
+Inbound traffic is received by 2 member nodes which are load balanced.
 
-## Disaster Recovery
 
-Many enterprise users of Artifactory create full backups which are physically shipped to an offsite location or uploaded to a vendor's cloud service.
+
+## Disaster Recovery Testing
+
+To prepare for the ability to recover from a disaster, enterprise admins of Artifactory use <a target="_blank" href="https://www.jfrog.com/confluence/display/RTF/Replicator">Replicator</a> to synchronize repositories between remote Artifactory instances. 
+
+Test DR.
 
 
 <hr />
 
 ## Preparations
 
-1. Get a license key (perhaps for a ___ day trail)
+Based on <a target="_blank" href="https://jfrog.com/screencast/artifactory-5-one-minute-setup-docker-registry-as-container-install/">VIDEO: Setup a Docker Registry in 5 minutes</a>
 
-1. Obtain DNS IP addresses for primary, second, and third nodes.
+1. Get and install license keys (perhaps for a ___ day trail).
+
+   Artifactory HA license?
+
+1. Obtain DNS IP addresses for primary, second, and third nodes, plus load balancer.
+
 1. Identify a place to store bootstrap files used to create Artifactory server instances.
 
 1. Define and socialize <a target="_blank" href="https://jfrog.com/whitepaper/best-practices-structuring-naming-artifactory-repositories/">artifact structure and naming conventions</a>, such as this common four-part naming structure:
@@ -137,7 +165,7 @@ Many enterprise users of Artifactory create full backups which are physically sh
 <a target="_blank" href="https://www.youtube.com/watch?v=UcCmT4eu93I" title="Feb 11, 2018"> 
 VIDEO: Installing JFrog Artifactory 5 High Availability Cluster - The Complete Walk through [9:23]</a>
 
-* JFrong Mission Control
+* JFrog Mission Control (JFMC) is used to manage deployments
 
 1. Download the bootstrap bundle tar.gz file or jfrog-artifactory-pro-5.1.0.zip.
 1. Unzip the file.
@@ -203,22 +231,40 @@ VIDEO: Installing JFrog Artifactory 5 High Availability Cluster - The Complete W
    See https://www.jfrog.com/confluence/display/RTF/GPG+Signing
 
 
-   ### JFrong CLI
+## CI/CD Pipeline
+
+<a target="_blank" href="https://www.youtube.com/watch?v=f3O_C8q-vrI">
+[Webinar] JFrog Artifactory - The Easy One</a> Sep 13, 2018
+Artifactory Query Language (AQL)
+
+Artifactory stores metadata in a relational database.
+
+
+## Jfrog API
+
+<a target="_blank" href="https://www.jfrog.com/confluence/display/RTF/Artifactory+REST+API">https://www.jfrog.com/confluence/display/RTF/Artifactory+REST+API</a> https://github.com/jfrog/artifactory-scripts/tree/master/REST-API-Examples
+
+https://github.com/jfrog/artifactory-scripts
+Scripts for Artifactory (Usually, for REST API), community driven.
+
+
+
+## JFrog CLI on client
 
    <a target="_blank" href="https://www.jfrog.com/confluence/display/CLI/JFrog+CLI">JFrog CLI</a>
    optimizes both upload and download operations by skipping artifacts that already exist in their target location. 
 
-1. Obtain installer from https://jfrog.com/getcli/ or:
+1. Instead of using installer from https://jfrog.com/getcli/ 
 
    <pre><strong>brew install jfrog-cli-go</strong></pre>
 
    The response reflects use of Artifactory's bintray.com, JFrog's Software Distribution as a Service (instead of Acakamai CDN, etc.):
 
-   <pre>==> Downloading https://homebrew.bintray.com/bottles/jfrog-cli-go-1.28.0.mojave.bottle.1.tar.gz
-==> Downloading from https://akamai.bintray.com/29/2923b39b46f3a3d3ab994ddb5303c944cab3e27fd51f7cd41dfcd35b908af5aa?__gda__=exp=1568231851
+   <pre>==> Downloading https://homebrew.bintray.com/bottles/jfrog-cli-go-1.30.4.mojave.
+==> Downloading from https://akamai.bintray.com/0f/0f348458539931885a3e0e6e90553
 ######################################################################## 100.0%
-==> Pouring jfrog-cli-go-1.28.0.mojave.bottle.1.tar.gz
-🍺  /usr/local/Cellar/jfrog-cli-go/1.28.0: 5 files, 18MB
+==> Pouring jfrog-cli-go-1.30.4.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/jfrog-cli-go/1.30.4: 5 files, 18.2MB
    </pre>
 
    See <a target="_blank" href="https://www.jfrog.com/confluence/display/CLI/JFrog+CLI">https://www.jfrog.com/confluence/display/CLI/JFrog+CLI</a> 
@@ -228,14 +274,103 @@ VIDEO: Installing JFrog Artifactory 5 High Availability Cluster - The Complete W
 
    <pre><strong>jfrog --version</strong></pre>
 
-   <pre>jfrog version 1.28.0</pre>
+   <pre>jfrog version 1.30.4</pre>
 
    <a target="_blank" href="https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Artifactory">
    Command syntax</a>, such as:
 
+1. View command help by the CLI alone:
+
+   <pre><strong>jfrog</strong></pre>
+
+   <pre>NAME:
+   jfrog - See https://github.com/jfrog/jfrog-cli-go for usage instructions.
+&nbsp;
+USAGE:
+   jfrog [global options] command [command options] [arguments...]
+&nbsp;
+VERSION:
+   1.30.4
+&nbsp;   
+COMMANDS:
+   rt          Artifactory commands
+   bt          Bintray commands
+   mc          Mission Control commands
+   xr          Xray commands
+   completion  Generate autocomplete scripts
+   help, h     Shows a list of commands or help for one command
+&nbsp;   
+GLOBAL OPTIONS:
+   --help, -h     show help
+   --version, -v  print the version
+&nbsp;   
+Environment Variables:
+  JFROG_CLI_LOG_LEVEL
+    [Default: INFO]
+    This variable determines the log level of the JFrog CLI.
+    Possible values are: INFO, ERROR, and DEBUG.
+    If set to ERROR, JFrog CLI logs error messages only.
+    It is useful when you wish to read or parse the JFrog CLI output and do not want any other information logged.
+&nbsp;
+  JFROG_CLI_OFFER_CONFIG
+    [Default: true]
+    If true, JFrog CLI prompts for product server details and saves them in its config file.
+    To avoid having automation scripts interrupted, set this value to false, and instead,
+    provide product server details using the config command.
+&nbsp;
+  JFROG_CLI_HOME_DIR
+    [Default: ~/.jfrog]
+    Defines the JFrog CLI home directory path.
+&nbsp;
+  JFROG_CLI_TEMP_DIR
+    [Default: The operating system's temp directory]
+    Defines the temp directory used by JFrog CLI.
+&nbsp;
+  JFROG_CLI_BUILD_NAME
+    Build name to be used by commands which expect a build name, unless sent as a command argument or option.
+&nbsp;  
+  JFROG_CLI_BUILD_NUMBER
+    Build number to be used by commands which expect a build number, unless sent as a command argument or option.
+&nbsp;
+  JFROG_CLI_BUILD_URL
+    Sets the CI server build URL in the build-info. The "jfrog rt build-publish" command uses the value of this environment variable, unless the --build-url command option is sent.
+&nbsp;  
+  JFROG_CLI_ENV_EXCLUDE
+    [Default: *password*;*secret*;*key*;*token*] 
+    List of case insensitive patterns in the form of "value1;value2;...". Environment variables match those patterns will be excluded. This environment variable is used by the "jfrog rt build-publish" command, in case the --env-exclude command option is not sent.
+&nbsp;
+  CI
+    [Default: false]
+    If true, disables progress bar on the supporting commands.
+   </pre>
+
+1. Edit your <tt>~/.bash_profile</tt> to define environment variables to configure.
+
+   Alternately, be prompted:
+
    <pre><strong>jfrog rt ping --url=http://my-rt-server.com/artifactory</strong></pre>
 
+   <pre>To avoid this message in the future, set the JFROG_CLI_OFFER_CONFIG environment variable to false.
+The CLI commands require the Artifactory URL and authentication details
+Configuring JFrog CLI with these parameters now will save you having to include them as command options.
+You can also configure these parameters later using the 'config' command.
+Configure now? (y/n): 
+   </pre>
+
 <hr />
+
+## Helm charts
+
+https://hub.helm.sh/charts/jfrog/artifactory-ha
+
+Add jfrog repository:
+
+   helm repo add jfrog https://charts.jfrog.io
+   
+Install helm chart:
+
+   helm install jfrog/artifactory-ha --version 1.1.9
+ 
 
 <a name="RegularStartup"></a>
 
@@ -286,6 +421,18 @@ by JFrog Solutions Engineers Doron Meirfeld and Mansirman Singh
 
 <hr />
 
+## Migration
+
+https://github.com/jfrog/docker2artifactory
+to transition from V2 Docker registries to JFrog Artifactory.
+by Arturo Aparicio in San Jose, California.
+
+
+## Git LFS
+
+https://github.com/jfrog-aparicio/git-lfs
+
+
 
 ## User actions on sample repositories
 
@@ -328,16 +475,33 @@ On Demand Jar Signing are available to paid editions of Artifactory.
 
 Paid editions of Artifactory can extend Artifactory with Groovy-based User Plugins.
 
+## JFrog X-Ray
+
+JFrog's Xray (2.X up) and scans binaries in Artifactory. Scanning references a vulnerability database that the local server downloads from JFrog.
+The database is about 16 GB and needs to be monitored for growth over time.
+
+https://www.jfrog.com/confluence/display/XRAY/Installing+Xray
+
+To scan packages, Xray downloads the entire artifact to its local disk
+So the Xray server needs a lot of disk space. At least 100 GB, or 200 GB to start.
+
+The recommend Xray server minimum hardware is 8 cores CPU and 16 GB RAM.
+
+https://support.jfrog.com/jFrogKnowledgePage#id=kA01r000000LwtmCAC
+Basic troubleshooting section at the end for the most commonly seen errors.
+
+The <a target="_blank" href="https://github.com/jfrog/jfrog-vscode-extension">JFrog VS Code Extension</a> adds JFrog Xray scanning of npm project dependencies to your VS Code IDE. 
+
 ## Resources
 
 https://www.vogella.com/tutorials/Artifactory/article.html
 
 <a target="_blank" href="https://www.youtube.com/channel/UCh2hNg76zo3d1qQqTWIQxDg">YouTube channel</a> of videos include:
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=Zbwom40sXgE">
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Zbwom40sXgE">
    Introduction to Artifactory</a> Feb 6, 2019 by Oren Ezer
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=aa4YBDUDWy0">
+   * <a target="_blank" href="https://www.youtube.com/watch?v=aa4YBDUDWy0">
 2:31 Artifactory - Sharing Binaries the Smart Way!</a>
 
 https://jfrog.com/blog/control-your-kubernetes-voyage-with-artifactory/

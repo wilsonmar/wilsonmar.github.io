@@ -44,7 +44,7 @@ Adobe <a target="_blank" href="https://adobe.allegiancetech.com/cgi-bin/qwebcorp
    20. Vulnerability Management
    <br /><br />
 
-## Amazon's Compliance:
+## Amazon's Compliance
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/56856297-c8c31000-6914-11e9-874e-c0417d380dfd.png"><img width="926" alt="aws-compliance" src="https://user-images.githubusercontent.com/300046/56856297-c8c31000-6914-11e9-874e-c0417d380dfd.png"></a>
 
@@ -562,7 +562,7 @@ RESPONSE: /System/Library/LaunchDaemons/com.apple.auditd.plist: service already 
 
 #### 3.5 Retain install.log for 365 or more days
 
-subl /etc/asl/com.apple.install
+<pre>subl /etc/asl/com.apple.install</pre>
 
 Replace:
 <pre>* file /var/log/install.log format='$((Time)(JZ)) $Host $(Sender)[$(PID)]: $Message'</pre>
@@ -598,6 +598,7 @@ https://github.com/dev-sec/cis-docker-benchmark
 https://nvd.nist.gov/ncp/checklist/740
 
 ![cybersecurity-NIST-Functions-382x390-19166](https://user-images.githubusercontent.com/300046/55505840-3f6c3680-5611-11e9-811d-4411e01c5afd.jpg)
+800-53
 
 ## FedRAMP/FISMA compliance
 
@@ -630,9 +631,11 @@ See https://www.open-scap.org/
 for tools.
 
 
-## Other standards
+## Source of vulnerabilities
 
 <a target="_blank" href="https://www.cvedetails.com/top-50-products.php?year=0">Top 50 Products By Total Number Of "Distinct" Vulnerabilities - for all time</a> <a target="_blank" href="https://www.stigviewer.com/stigs">include</a> product versions now obsolete.
+
+## Other standards
 
 https://quizlet.com/222277746/devsecops-acronyms-and-buzzwords-flash-cards/
 
