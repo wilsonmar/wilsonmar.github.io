@@ -74,6 +74,8 @@ This article provides examples of how each group can benefit from the other.
 
    Some have found a compromise in <strong>automation of environment setup</strong> so that developers can focus on coding yet be able to experiment more boldly in test environments that are quick and easy to obtain.
 
+   Console and log messages are helpful for debugging.
+   But to avoid outputting too many when a large amount of data in production, add logic to only output for debugging when a flag ("-v" for verbose) is added.
 
 
 ## 4. Temporary vs. long-running assets
@@ -162,16 +164,21 @@ This article provides examples of how each group can benefit from the other.
 
 ## 11. Front-end vs. back-end processing
 
-   The Hacker mindset is usually more interested in user-facing UI/UX features.
+   The front-end is where the glory and visibility are during demos.
+   Even with back-end, visulizations are what gets executive attention
+   while bullet-proof coding gets little praise.
+
+   Sustainer who obcess with ("back-end") data processing code need to be self-motivated.
    
-   The Sustainer mindset needs to focus on internal ("back-end") data processing. So some Sustainers add to their automated script spot checks such printing off the key value from the last row of files processed, which may miss being processed. This happens more frequently than one would think. Looking at a flat file in a text editor, unless the cursor appears at the first position below the last line, one really tell if that invisible character is in the file.
-
-   Such differences in focus is what leads to specialization of concerns. But the "DevOps" movement is about having Dev (Developers) and Ops (production Operations) better understanding each other, and even doing each other's job. People doing so makes for more autonomous, self-sustaining teams to be formed in order to be more scalable.
-
+   For example, some Sustainers add to their automated script spot checks such as printing off the key value from the last row of files processed, which may miss being processed. This happens more frequently than one would think. Looking at a flat file in a text editor, unless the cursor appears at the first position below the last line, one really tell if that invisible character is in the file.
 
 ## Conclusion
 
-Here you have it. These are the major disagreements where "Hacker" and "Sustainer" types may differ. 
+Differences in focus is what leads to specialization of concerns. 
+There can be disagreements where "Hacker" and "Sustainer" types differ. 
+
+But the "DevOps" movement is about a wedding of Dev (Developers) and Ops (production Operations). better understanding each other, and even doing each other's job. People doing so makes for more autonomous, self-sustaining teams to be formed in order to be more scalable.
+
 To recap, those who work in production tend to:
 
    1. Use facilitator to balance assessment of efficiency and risks.
@@ -179,17 +186,17 @@ To recap, those who work in production tend to:
    3. Automate setup.
    4. Store code in repositories and secrets in vaults.
    5. Write for re-usability by coding variables.
-   6. Use feature flags to specify destructive operations to ensure actual intent
-   7. Output counts of what was processed
-   8. Measure how long processes take - output folders and files with date/time stamps
+   6. Use feature flags to specify destructive operations to ensure actual intent.
+   7. Output counts of what was processed.
+   8. Measure how long processes take - output folders and files with date/time stamps.
    9. Spot check file contents and Keep data of each customer separate.
-   10. Use different credentials in different environments
-   11. Build in backups, log rotation, and data archival/deletion
+   10. Use different credentials in different environments.
+   11. Build in backups, log rotation, and data archival/deletion.
    <br /><br />
    
-I hope that conversation occurs sooner than later when personal insults are traded and relationships damaged, causing disruptive turnover that could have been avoided.
+I hope that at where you work, conversations occur sooner than later before personal insults are traded and relationships damaged, causing disruptive turnover that could have been avoided.
 
-My advice is to have a conversation about how to ensure that both cultures can co-exist by having mechanisms in place that can balance going too far either way.
+My advice is to plan those conversations about how to ensure that both cultures can co-exist by having mechanisms in place that can balance going too far either way.
 
 This means that when picking an estimate number, consider the time needed to address potential risks and the impact they can have.
 That's the contribution of Sustainers with experience.
