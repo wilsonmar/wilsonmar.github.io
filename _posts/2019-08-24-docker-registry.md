@@ -30,16 +30,12 @@ Docker Inc. also open-sourced its <a href="On-prem">on-premise Docker Registry s
 
 Docker Hub has a public API which doesn't require authentication.
 
-"The Docker Registry HTTP API is the protocol to facilitate distribution of images to the docker engine. It interacts with instances of the docker registry, which is a service to manage information about docker images and enable their distribution."
+> "The Docker Registry HTTP API is the protocol to facilitate distribution of images to the docker engine. It interacts with instances of the docker registry, which is a service to manage information about docker images and enable their distribution."<a target="_blank" href="https://hackernoon.com/inspecting-docker-images-without-pulling-them-4de53d34a604">*</a>
 
-See https://hackernoon.com/inspecting-docker-images-without-pulling-them-4de53d34a604
+1. List the first 10 tags in the image for Debian (the operating system):
 
-This command lists the first 10 tags in the image for Debian 
-(the operating system):
-
-   <tt>
-curl 'https://registry.hub.docker.com/v2/repositories/library/debian/tags/'
-   </tt>
+   <pre><strong>curl 'https://registry.hub.docker.com/v2/repositories/library/debian/tags/'
+   </strong></pre>
 
    The response starts with:
 
@@ -47,14 +43,13 @@ curl 'https://registry.hub.docker.com/v2/repositories/library/debian/tags/'
 {"count": 511, "next": "https://registry.hub.docker.com/v2/repositories/library/debian/tags/?page=2", "previous": null, "results": [{"name": "unstable-slim", "full_size": 27750048, "images": [{"size": 31296808, "architecture": "ppc64le", "variant": null, "features": null, "os": "linux", "os_version": null, "os_features": null}, {"size": 26435103, "architecture": "s390x", "variant": null, "features": null, "os": "linux", "os_version": null, "os_features": null}, {"size": 25698949, "architecture": "arm", "variant": "v5", "features": null ....
    </tt>
 
-If we install the jq utility to format. On a Mac:
+1. If we install the jq utility to format. On a Mac:
 
    <pre><strong>brew install jq</strong></pre>
 
-Add to the previous command piping to jq:
+1. Add to the previous command piping to jq:
 
-   <tt>
-curl 'https://registry.hub.docker.com/v2/repositories/library/debian/tags/'|jq '."results"[]["name"]'
+   <tt>curl 'https://registry.hub.docker.com/v2/repositories/library/debian/tags/'|jq '."results"[]["name"]'
    </tt>
 
    Sample result (for Debian):
@@ -72,7 +67,6 @@ curl 'https://registry.hub.docker.com/v2/repositories/library/debian/tags/'|jq '
 "stretch-slim"
    </pre>
 
-   Tutorial on the jq utility is at ???
 
 
 ## Vulnerability Identification Services
@@ -83,33 +77,40 @@ Although many images are "Docker Certified", what does that mean?
 
 Several other organizations provide a service for "deep scanning" of Docker images:
 
-* X-Ray from JFrog (which also makes the binary repository Artifactory)
+   * X-Ray from JFrog (which also makes the binary repository Artifactory)
 
-* Sonatype from Nexus which also makes a binary repository of the same name
+   * Sonatype from Nexus which also makes a binary repository of the same name
 
-* Black Hat
+   * Black Hat
 
-* WhiteSource
+   * WhiteSource
 
 
-### Artifactory X-Ray
+### Private Online
 
-But if you want to keep your Docker image private or want security vetting of images for vulnerabilities, you would have to pay (see <a target="_blank" href="https://hub.docker.com/pricing">Enterprise Docker</a>).
+If you want to keep your Docker image private or want security vetting of images for vulnerabilities, you would have to pay (see <a target="_blank" href="https://hub.docker.com/pricing">Enterprise Docker</a>).
 
 There are several other Docker Registry services:
 
    * <a target="_blank" href="https://quary.io">Quay.io</a> (pronounced "key") which RedHat provides.
 
    * Artifactory licensed
-   <br /><br />
 
-
-<hr />
 
 <a name="On-prem"></a>
 
-## On-premises Docker Registry
+### Private On-premises Docker Registry
 
+
+
+
+<a name="DockerRegistry"></a>
+
+## Docker Registry
+
+Docker Inc. has open-sourced their Docker Hub server software at <a target="_blank" href="https://github.com/docker/distribution/tree/master/registry">https://github.com/docker/distribution/tree/master/registry</a>.
+
+Looking among the files in the root of the repo, notice the server is written in the Go language.
 
 ### Docker CLI client install
 
@@ -129,21 +130,12 @@ There are several other Docker Registry services:
    </strong></pre>
 
 
-<a name="DockerRegistry"></a>
-
-## Docker Registry
-
-Docker Inc. has open-sourced their Docker Hub server software at <a target="_blank" href="https://github.com/docker/distribution/tree/master/registry">https://github.com/docker/distribution/tree/master/registry</a>.
-
-Looking among the files in the root of the repo, notice the server is written in the Go language.
-
-
 ### Private Docker Registry Install
 
 As one would expect, Docker Registry is installed within a Docker container. 
 For install instructions, see <a target="_blank" href="https://docs.docker.com/registry/deploying/">https://docs.docker.com/registry/deploying</a>
 
-This command is not used to start the Registry as a single container:
+1. This command can be used to start the Registry as a single container:
 
    <pre>
 docker run -d \
@@ -157,8 +149,11 @@ docker run -d \
   registry:2
    </pre>
 
-We start the Docker Registry as several containers under the same <strong>docker-compose</strong> file. 
-The other container is to handle Authentication using the OAuth protocol.
+However, you'll likely start the on-prem. Docker Registry using a <strong>docker compose</strong> command so that several containers can be brought up as a Registry service for use by Kubernetes.
+
+   The other container handles Authentication using the OAuth protocol.
+
+   PROTIP: Docker Registry from Docker Inc. does not have a UI. It is not designed to operate in a cluster (for High Availability).
 
 
 ### Internal data structure
