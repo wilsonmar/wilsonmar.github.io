@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Docker Registry"
-excerpt: "The different repositories (Artifactory)"
+excerpt: "Where Docker images are stored for Kubernetes to run"
 tags: [Docker]
 date: "2019-08-24"
 file: "docker-registry"
@@ -15,51 +15,15 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+A registry of Docker images is crucial for Kubernetes because a Docker Registry supplies Kubernetes with images it uses to instantiate each Docker container. When the Docker Registry goes down, so does Kubernetes.
+
+
 <a name="DockerHub"></a>
 
-## Docker Hub
+## Docker Hub vs. On-premises
 
-Docker Inc's Docker Hub (<a target="_blank" href="https://hub.docker.com/">https://hub.docker.com</a>) houses many public Docker images, free to pull.
-
-## CLI client
-
-1. List the Docker packages available for your Mac:
-
-   <ul>brew search docker</ul>
-
-1. Get the Docker client on your Mac:
-
-   <ul>brew info docker</ul>
-
-1. Get the Docker GUI client on your Mac:
-
-   <ul>brew cask install docker</ul>
-
-
-## Vulnerability Identification Services
-
-Look among the Docker images.
-
-Although many images are "Docker Certified", what does that mean?
-
-Several other organizations provide a service for "deep scanning" of Docker images:
-
-* X-Ray from JFrog (which also makes the binary repository Artifactory)
-
-* Sonatype from Nexus which also makes a binary repository of the same name
-
-* Black Hat
-
-* WhiteSource
-
-
-<a name="DockerRegistry"></a>
-
-## Docker Registry
-
-Docker Inc. has open-sourced their Docker Hub server software at <a target="_blank" href="https://github.com/docker/distribution/tree/master/registry">https://github.com/docker/distribution/tree/master/registry</a>.
-
-Looking among the files in the root of the repo, notice the server is written in the Go language.
+Docker Inc's on-line Docker Hub (<a target="_blank" href="https://hub.docker.com/">https://hub.docker.com</a>) houses many public Docker images, free to pull.
+Docker Inc. also open-sourced its <a href="On-prem">on-premise Docker Registry server even though Docker Inc. also earns money for its on-premise Trusted Docker Registry product.
 
 
 ### Public Docker Hub API
@@ -110,10 +74,74 @@ curl 'https://registry.hub.docker.com/v2/repositories/library/debian/tags/'|jq '
 
    Tutorial on the jq utility is at ???
 
-### Private Docker Hub Install
+
+## Vulnerability Identification Services
+
+Look among the Docker images.
+
+Although many images are "Docker Certified", what does that mean?
+
+Several other organizations provide a service for "deep scanning" of Docker images:
+
+* X-Ray from JFrog (which also makes the binary repository Artifactory)
+
+* Sonatype from Nexus which also makes a binary repository of the same name
+
+* Black Hat
+
+* WhiteSource
+
+
+### Artifactory X-Ray
+
+But if you want to keep your Docker image private or want security vetting of images for vulnerabilities, you would have to pay (see <a target="_blank" href="https://hub.docker.com/pricing">Enterprise Docker</a>).
+
+There are several other Docker Registry services:
+
+   * <a target="_blank" href="https://quary.io">Quay.io</a> (pronounced "key") which RedHat provides.
+
+   * Artifactory licensed
+   <br /><br />
+
+
+<hr />
+
+<a name="On-prem"></a>
+
+## On-premises Docker Registry
+
+
+### Docker CLI client install
+
+1. List the Docker packages available for your Mac:
+
+   <pre><strong>brew search docker
+   </pre>
+
+1. Get the Docker client on your Mac:
+
+   <pre><strong>brew info docker
+   </strong></pre>
+
+1. Get the Docker GUI client on your Mac:
+
+   <pre><strong>brew cask install docker
+   </strong></pre>
+
+
+<a name="DockerRegistry"></a>
+
+## Docker Registry
+
+Docker Inc. has open-sourced their Docker Hub server software at <a target="_blank" href="https://github.com/docker/distribution/tree/master/registry">https://github.com/docker/distribution/tree/master/registry</a>.
+
+Looking among the files in the root of the repo, notice the server is written in the Go language.
+
+
+### Private Docker Registry Install
 
 As one would expect, Docker Registry is installed within a Docker container. 
-For install instructions, see https://docs.docker.com/registry/deploying/
+For install instructions, see <a target="_blank" href="https://docs.docker.com/registry/deploying/">https://docs.docker.com/registry/deploying</a>
 
 This command is not used to start the Registry as a single container:
 
@@ -133,11 +161,65 @@ We start the Docker Registry as several containers under the same <strong>docker
 The other container is to handle Authentication using the OAuth protocol.
 
 
-The Docker Registry 
+### Internal data structure
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/69489484-8039e980-0e46-11ea-87a4-0b9ed389c372.png"><img alt="dockerreg-structure-v03-1727x947.png" src="https://user-images.githubusercontent.com/300046/69489484-8039e980-0e46-11ea-87a4-0b9ed389c372.png"></a>
+
+The local Docker Registry is usually installed as a registry folder under <strpong>/var/lib</strong>.
+
+The name of each Docker image is stored in the registry is defined in a folder under the 
+<strong>repositories</strong> side of the folder tree. Some images are ground under an account name.
+
+All <strong>content</strong> in repositories are stored as <strong>blobs</strong> under the "blobs" path under a <strong>sha256</strong> (pronounced "shaw 256") folder. 
+S-H-A is an acronymn for the "Secure Hash Algorithm" defined by the US National Security Agency.
+Hashing creates a sort of summary of a file's content.
+That's why hashes are also called a "digests".
+Digests are always a fixed number of digits. 
+In the case of 256, 46 characters of hex pairs.
+The first two characters are used to create a <strong>folder</strong> under where that file is stored, so that there are not too many files in a single folder.
+
+The first 7 digests of each digest are used as a short <strong>tag</strong> becuase 7 is usually unique enough to differentiate among the various hashes.
+
+The blobs for each tag is referenced by <strong>link</strong> files containing addresses to individual <strong>data</strong> files storing the content. 
+Each <strong>revision</strong> of an image pushed in the registry has a different SHA and therefore a different tab name.
+
+The <strong>current</strong> link defines the most recent blob at the head of the chain.
+
+These are all under a <strong>manifest</strong> folder. 
+A manifest API call returns a manifest listing the different <strong>layers</strong> containing changes stored as data blobs. Each layer of data within an image can be referenced by several commits into the registry. Just as with Git, this data architecture is how one can fall back to the complete set of files that existed when each push is made into an image repository.
+
+There is nothing under the layers and uploads folders.
+
+In each link file, the SHA defined for each layer is the address of a blob.
+This is how changes do not bloat the repository disk space like full copies of files with minor revisions.
+
+Any blob can be accessed by any Docker image.
+
+
+### What's wrong with this picture?
+
+Thus, images remain in the Docker Registry. So that's not sustainable.
+
+When a particular tag is removed from the data volume, that may not directly result in disk space being freed up as deleting a regular file might do.
+
+Removing an image does not release hard disk space until a <strong>garbage collection</strong> operation occurs. A Docker Garbage Collection program needs to first mark every blob referenced in a link, then go back and remove blobs with no reference to it.
+
+Even after that, if disk space were physically allocated incrementally over time, blob files may still populate each extent. That means to recover physical disk space would require copying all extents to another instance with continguous allocation of disk space?
+
+One impediment is that removal of obsolete files would occur only after whatever latest replacing it is known good.
+
+No archival is needed if the image can be easily rebuilt.
+
+
+### Content addressable files
+
+The "content addressable" data architecture of the Docker Registry is borrowed from the Git repository structure. 
+
+Although it's convenient for Git users to fall back on various versions, that feature can actually be a security flaw for Docker images. If someone falls back to a previoius version, it may contain vulnerabilities which have been fixed in the latest version. So falling back can re-introduce an exploit.
 
 
 
-## Private Registry
+### Private Registry
 
 Privatized Docker registries, by definition, need authentication.
 
@@ -177,17 +259,11 @@ Using the Bearer token
 1. Registry authorizes the client by validating the Bearer token and the claim set embedded within it and begins the push/pull session as usual.
 
 
-## Remove images
+<hr />
 
-Images remain in the Docker Registry. So that's not sustainable.
 
-So tags obsoleted by the latest should be removed.
+## Remove image programs
 
-But ideally, removal would occur only after whatever latest replacing it is known good.
-
-No archival is needed if the image can be easily rebuilt.
-
-Removing an image does not release hard disk space until a <strong>garbage collection</strong> operation occurs.
 
 There is a Python script that deletes docker images: 
 https://github.com/andrey-pohilko/registry-cli
@@ -206,18 +282,6 @@ https://www.server-world.info/en/note?os=CentOS_7&p=docker&f=6
 
 
 Tags for images can also be obsoleted over time when vulnerabilities are found and patched.
-
-## Artifactory X-Ray
-
-
-But if you want to keep your Docker image private or want security vetting of images for vulnerabilities, you would have to pay (see <a target="_blank" href="https://hub.docker.com/pricing">Enterprise Docker</a>).
-
-There are several other Docker Registry services:
-
-   * <a target="_blank" href="https://quary.io">Quay.io</a> (pronounced "key") which RedHat provides.
-
-   * Artifactory licensed
-   <br /><br />
 
 
 <hr />
