@@ -88,7 +88,7 @@ Several other organizations provide a service for "deep scanning" of Docker imag
    * WhiteSource
 
 
-### Private Online
+## Private Online Registry
 
 If you want to keep your Docker image private or want security vetting of images for vulnerabilities, you would have to pay (see <a target="_blank" href="https://hub.docker.com/pricing">Enterprise Docker</a>).
 
@@ -100,15 +100,9 @@ There are several other Docker Registry services:
 
 
 <a name="On-prem"></a>
-
-### Private On-premises Docker Registry
-
-
-
-
 <a name="DockerRegistry"></a>
 
-## Docker Registry
+## Private On-premises Docker Registry
 
 Docker Inc. has open-sourced their Docker Hub server software at <a target="_blank" href="https://github.com/docker/distribution/tree/master/registry">https://github.com/docker/distribution/tree/master/registry</a>.
 
@@ -119,7 +113,7 @@ Looking among the files in the root of the repo, notice the server is written in
 1. List the Docker packages available for your Mac:
 
    <pre><strong>brew search docker
-   </pre>
+   </strong></pre>
 
 1. Get the Docker client on your Mac:
 
@@ -161,13 +155,14 @@ However, you'll likely start the on-prem. Docker Registry using a <strong>docker
 ### Internal data structure
 
 <amp-youtube data-videoid="jDhLEfY4Apo" layout="responsive" width="480" height="270"></amp-youtube>
+<br />
 
 The local Docker Registry is usually installed as a registry folder under <strong>/var/lib</strong>.
 
 The name of each Docker image is stored in the registry is defined in a folder under the 
 <strong>repositories</strong> side of the folder tree. Some images are ground under an account name.
 
-All <strong>content</strong> in repositories are stored as <strong>blobs</strong> under the "blobs" path under a <strong>sha256</strong> (pronounced "shaw 256") folder. 
+All <strong>content</strong> in repositories are stored as <strong>blobs</strong> under the "blobs" path. Under that is a <strong>sha256</strong> (pronounced "shaw 256") folder. 
 S-H-A is an acronymn for the "Secure Hash Algorithm" defined by the US National Security Agency.
 Hashing creates a sort of summary of a file's content.
 That's why hashes are also called a "digests".
@@ -260,11 +255,9 @@ Using the Bearer token
 1. Registry authorizes the client by validating the Bearer token and the claim set embedded within it and begins the push/pull session as usual.
 
 
-<hr />
-
 <a name="RemoveImagePrograms"></a>
 
-## Remove image programs
+### Remove image programs
 
 Tags for images can also be obsoleted over time when vulnerabilities are found and patched.
 
