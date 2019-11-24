@@ -165,7 +165,7 @@ The other container is to handle Authentication using the OAuth protocol.
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/69489484-8039e980-0e46-11ea-87a4-0b9ed389c372.png"><img alt="dockerreg-structure-v03-1727x947.png" src="https://user-images.githubusercontent.com/300046/69489484-8039e980-0e46-11ea-87a4-0b9ed389c372.png"></a>
 
-The local Docker Registry is usually installed as a registry folder under <strpong>/var/lib</strong>.
+The local Docker Registry is usually installed as a registry folder under <strong>/var/lib</strong>.
 
 The name of each Docker image is stored in the registry is defined in a folder under the 
 <strong>repositories</strong> side of the folder tree. Some images are ground under an account name.
@@ -201,6 +201,8 @@ Any blob can be accessed by any Docker image.
 Thus, images remain in the Docker Registry. So that's not sustainable.
 
 When a particular tag is removed from the data volume, that may not directly result in disk space being freed up as deleting a regular file might do.
+
+PROTIP: The <a target="_blank" href="https://docs.docker.com/engine/reference/commandline/image_rm/">docker image rm</a> command removes entire images, not individual tags.
 
 Removing an image does not release hard disk space until a <strong>garbage collection</strong> operation occurs. A Docker Garbage Collection program needs to first mark every blob referenced in a link, then go back and remove blobs with no reference to it.
 
@@ -264,6 +266,7 @@ Using the Bearer token
 
 ## Remove image programs
 
+Tags for images can also be obsoleted over time when vulnerabilities are found and patched.
 
 There is a Python script that deletes docker images: 
 https://github.com/andrey-pohilko/registry-cli
@@ -279,9 +282,6 @@ docker registry rmi REPOSITORY:TAG [OPTIONS]
 https://www.linuxtechi.com/setup-docker-private-registry-centos-7-rhel-7/
 https://www.server-world.info/en/note?os=CentOS_7&p=docker&f=6
 
-
-
-Tags for images can also be obsoleted over time when vulnerabilities are found and patched.
 
 
 <hr />
