@@ -154,8 +154,9 @@ However, you'll likely start the on-prem. Docker Registry using a <strong>docker
 
 ### Internal data structure
 
-<amp-youtube data-videoid="jDhLEfY4Apo" layout="responsive" width="480" height="270"></amp-youtube>
-<br />
+<em>No audio in this animated diagram video:</em>
+
+<amp-youtube data-videoid="jDhLEfY4Apo" layout="responsive" width="480" height="270"></amp-youtube><br />
 
 The local Docker Registry is usually installed as a registry folder under <strong>/var/lib</strong>.
 
