@@ -23,6 +23,7 @@ A registry of Docker images is crucial for Kubernetes because a Docker Registry 
 ## Docker Hub vs. On-premises
 
 Docker Inc's on-line Docker Hub (<a target="_blank" href="https://hub.docker.com/">https://hub.docker.com</a>) houses many public Docker images, free to pull.
+
 Docker Inc. also open-sourced its <a href="On-prem">on-premise Docker Registry server even though Docker Inc. also earns money for its on-premise Trusted Docker Registry product.
 
 
@@ -39,20 +40,21 @@ Docker Hub has a public API which doesn't require authentication.
 
    The response starts with:
 
-   <tt>
-{"count": 511, "next": "https://registry.hub.docker.com/v2/repositories/library/debian/tags/?page=2", "previous": null, "results": [{"name": "unstable-slim", "full_size": 27750048, "images": [{"size": 31296808, "architecture": "ppc64le", "variant": null, "features": null, "os": "linux", "os_version": null, "os_features": null}, {"size": 26435103, "architecture": "s390x", "variant": null, "features": null, "os": "linux", "os_version": null, "os_features": null}, {"size": 25698949, "architecture": "arm", "variant": "v5", "features": null ....
-   </tt>
+   <pre>{"count": 511, "next": "https://registry.hub.docker.com/v2/repositories/library/debian/tags/?page=2", "previous": null, "results": [{"name": "unstable-slim", "full_size": 27750048, "images": [{"size": 31296808, "architecture": "ppc64le", "variant": null, "features": null, "os": "linux", "os_version": null, "os_features": null}, {"size": 26435103, "architecture": "s390x", "variant": null, "features": null, "os": "linux", "os_version": null, "os_features": null}, {"size": 25698949, "architecture": "arm", "variant": "v5", "features": null ....
+   </pre>
 
-1. If we install the jq utility to format. On a Mac:
+1. If we install the jq JSON query utility that formats JSON reponses on a Mac:
 
    <pre><strong>brew install jq</strong></pre>
 
 1. Add to the previous command piping to jq:
 
-   <tt>curl 'https://registry.hub.docker.com/v2/repositories/library/debian/tags/'|jq '."results"[]["name"]'
-   </tt>
+   <pre><strong>curl -s 'https://registry.hub.docker.com/v2/repositories/library/debian/tags/'|jq '."results"[]["name"]'
+   </strong></pre>
 
-   Sample result (for Debian):
+   <tt>-s</tt> silences downloading statistics.
+
+   Sample result (for Debian) puts in line breaks:
 
    <pre>
 "unstable-slim"
@@ -158,7 +160,7 @@ However, you'll likely start the on-prem. Docker Registry using a <strong>docker
 
 ### Internal data structure
 
-<amp-youtube data-videoid="8y36r_vZ_5k" layout="responsive" width="480" height="270"></amp-youtube>
+<amp-youtube data-videoid="jDhLEfY4Apo" layout="responsive" width="480" height="270"></amp-youtube>
 
 The local Docker Registry is usually installed as a registry folder under <strong>/var/lib</strong>.
 
