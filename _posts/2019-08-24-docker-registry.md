@@ -158,7 +158,7 @@ However, you'll likely start the on-prem. Docker Registry using a <strong>docker
 
 ### Internal data structure
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/69489484-8039e980-0e46-11ea-87a4-0b9ed389c372.png"><img alt="dockerreg-structure-v03-1727x947.png" src="https://user-images.githubusercontent.com/300046/69489484-8039e980-0e46-11ea-87a4-0b9ed389c372.png"></a>
+<amp-youtube data-videoid="8y36r_vZ_5k" layout="responsive" width="480" height="270"></amp-youtube>
 
 The local Docker Registry is usually installed as a registry folder under <strong>/var/lib</strong>.
 
@@ -190,14 +190,16 @@ This is how changes do not bloat the repository disk space like full copies of f
 
 Any blob can be accessed by any Docker image.
 
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/69489484-8039e980-0e46-11ea-87a4-0b9ed389c372.png"><img alt="dockerreg-structure-v03-1727x947.png" src="https://user-images.githubusercontent.com/300046/69489484-8039e980-0e46-11ea-87a4-0b9ed389c372.png"></a>
+
 
 ### What's wrong with this picture?
 
 Thus, images remain in the Docker Registry. So that's not sustainable.
 
-When a particular tag is removed from the data volume, that may not directly result in disk space being freed up as deleting a regular file might do.
-
 PROTIP: The <a target="_blank" href="https://docs.docker.com/engine/reference/commandline/image_rm/">docker image rm</a> command removes entire images, not individual tags.
+
+PROTIP: When a particular tag is <a href="#RemoveImagePrograms">removed using the API or directly</a>, that does not directly result in much disk space being freed up as deleting a regular file might do.
 
 Removing an image does not release hard disk space until a <strong>garbage collection</strong> operation occurs. A Docker Garbage Collection program needs to first mark every blob referenced in a link, then go back and remove blobs with no reference to it.
 
@@ -258,6 +260,7 @@ Using the Bearer token
 
 <hr />
 
+<a name="RemoveImagePrograms"></a>
 
 ## Remove image programs
 
@@ -266,15 +269,16 @@ Tags for images can also be obsoleted over time when vulnerabilities are found a
 There is a Python script that deletes docker images: 
 https://github.com/andrey-pohilko/registry-cli
 
-
 https://stackoverflow.com/questions/25436742/how-to-delete-images-from-a-private-docker-registry
 
 https://github.com/vivekjuneja/docker_registry_cli
 python
+
 https://beta.docs.docker.com/engine/reference/commandline/registry_rmi/
 docker registry rmi REPOSITORY:TAG [OPTIONS]
 
 https://www.linuxtechi.com/setup-docker-private-registry-centos-7-rhel-7/
+
 https://www.server-world.info/en/note?os=CentOS_7&p=docker&f=6
 
 
