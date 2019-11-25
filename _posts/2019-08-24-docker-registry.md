@@ -193,11 +193,19 @@ Any blob can be accessed by any Docker image.
 
 ### What's wrong with this picture?
 
-Thus, images remain in the Docker Registry. So that's not sustainable.
+Some tags for images are obsoleted over time when vulnerabilities are found and patched.
 
-PROTIP: The <a target="_blank" href="https://docs.docker.com/engine/reference/commandline/image_rm/">docker image rm</a> command removes entire images, not individual tags.
+The "content addressable" data architecture of the Docker Registry is borrowed from the Git repository structure. That design is for keeping even obsoleted source code forever.
+
+PROTIP: Although it's convenient for Git users to fall back on various versions, that feature can actually be a security flaw for Docker images. If someone falls back to a previoius version, it may contain vulnerabilities which have been fixed in the latest version. So falling back can re-introduce an exploit.
+
+Also, obsolete data remaining in the Docker Registry means it will grow and grow in an unsustainable way.
+
+### Removal is complicated
 
 PROTIP: When a particular tag is <a href="#RemoveImagePrograms">removed using the API or directly</a>, that does not directly result in much disk space being freed up as deleting a regular file might do.
+
+PROTIP: The <a target="_blank" href="https://docs.docker.com/engine/reference/commandline/image_rm/">docker image rm</a> command removes entire images, not individual tags.
 
 Removing an image does not release hard disk space until a <strong>garbage collection</strong> operation occurs. A Docker Garbage Collection program needs to first mark every blob referenced in a link, then go back and remove blobs with no reference to it.
 
@@ -208,12 +216,7 @@ One impediment is that removal of obsolete files would occur only after whatever
 No archival is needed if the image can be easily rebuilt.
 
 
-### Content addressable files
-
-The "content addressable" data architecture of the Docker Registry is borrowed from the Git repository structure. 
-
-Although it's convenient for Git users to fall back on various versions, that feature can actually be a security flaw for Docker images. If someone falls back to a previoius version, it may contain vulnerabilities which have been fixed in the latest version. So falling back can re-introduce an exploit.
-
+<hr />
 
 
 ### Private Registry
@@ -258,24 +261,42 @@ Using the Bearer token
 
 <a name="RemoveImagePrograms"></a>
 
+## References:
+
 ### Remove image programs
 
-Tags for images can also be obsoleted over time when vulnerabilities are found and patched.
+There are several approaches to remove
 
-There is a Python script that deletes docker images: 
-https://github.com/andrey-pohilko/registry-cli
+   * Make API call
 
-https://stackoverflow.com/questions/25436742/how-to-delete-images-from-a-private-docker-registry
+   <pre>curl -v -X DELETE http://registryhost:reigstryport/v2/${docker_image_name}/manifests/${digest}</pre>
 
-https://github.com/vivekjuneja/docker_registry_cli
-python
+   * Physically remove links pointing to blobs
 
-https://beta.docs.docker.com/engine/reference/commandline/registry_rmi/
-docker registry rmi REPOSITORY:TAG [OPTIONS]
+Either way, garbage collection is necessary to remove blobs.
 
-https://www.linuxtechi.com/setup-docker-private-registry-centos-7-rhel-7/
+Registry garbage-collect does not clean up old blobs if a tag has been overwritten but has not been deleted - https://github.com/docker/distribution/issues/2212
 
-https://www.server-world.info/en/note?os=CentOS_7&p=docker&f=6
+Discussions on StackOverflow:
+
+   * https://stackoverflow.com/questions/45046752/docker-registry-garbage-collection/45047696
+   
+   * https://stackoverflow.com/questions/25436742/how-to-delete-images-from-a-private-docker-registry
+
+Python scripts:
+
+   * https://github.com/andrey-pohilko/registry-cli
+   A Python script that deletes docker images: 
+
+   * https://github.com/ricardobranco777/clean_registry
+   ricardobranco777's registry clean up python script
+
+   * https://beta.docs.docker.com/engine/reference/commandline/registry_rmi/
+   docker registry rmi REPOSITORY:TAG [OPTIONS]
+
+   * https://www.linuxtechi.com/setup-docker-private-registry-centos-7-rhel-7/
+
+   * https://www.server-world.info/en/note?os=CentOS_7&p=docker&f=6
 
 
 
