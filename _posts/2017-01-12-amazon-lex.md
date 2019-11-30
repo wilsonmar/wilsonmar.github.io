@@ -38,8 +38,8 @@ running Amazon Lamba (serverless) programs.
 
    Lex provides developers pre-integration with Amazon's other services:
 
+   * Security (IAM) for authentication and authorization
    * Authentication Cognito
-   * Security (IAM)
    * Mobile Hub connectors to business applications
 
    <a target="_blank" title="aws-lex-flow-1581x841" href="https://cloud.githubusercontent.com/assets/300046/25696243/6d3d1b24-3084-11e7-9f2e-1337912bf789.png">
@@ -74,6 +74,8 @@ running Amazon Lamba (serverless) programs.
 
 Systems similar to Amazon lex include:
 
+  * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-bot-framework-building-bots-getting-started-2019/table-of-contents">Microsoft Bot Framework</a>
+  * <a target="_blank" href="https://app.pluralsight.com/library/courses/google-dialogflow-chatbots/table-of-contents">Google Dialogflow</a>
   * <a target="_blank" href="https://www.youtube.com/watch?v=MTCc4d-RXP0">
   IBM Watson Conversation</a>
 
@@ -87,7 +89,7 @@ COOL:
    * Rovi, How big is Mars?
    * Rovi, drive forwards
 
-   ![aws-lex-rovi-arch-535x358](https://cloud.githubusercontent.com/assets/300046/25695652/fe420844-3081-11e7-88ad-b63008e5d8e6.png)
+   <a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/25695652/fe420844-3081-11e7-88ad-b63008e5d8e6.png"><img alt="aws-lex-rovi-arch-535x358" src="https://cloud.githubusercontent.com/assets/300046/25695652/fe420844-3081-11e7-88ad-b63008e5d8e6.png"></a>
 
    Other ways:
 
@@ -288,7 +290,12 @@ It has built-in archival of communications.
 
 ### Facebook 
 
-This is free.
+Facebook doesn't charge for this.
+
+<a target="_blank" href="https://app.pluralsight.com/library/courses/build-chatbot-with-amazon-lex-for-facebook/table-of-contents">"Build a Chatbot with Amazon Lex for Facebook"</a> 1 Dec 2017 by Craig Golightly (@seethatgo, seethatgo.com)
+teaches how to setup Amazon Lex to build a custom customer service chatbot in Facebook Messenger.
+The sample bot answers questions about shipping address and hours.
+
 
 ### Twilio to send SMS or email
 
