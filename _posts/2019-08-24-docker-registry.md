@@ -24,7 +24,7 @@ A registry of Docker images is crucial for Kubernetes because a Docker Registry 
 
 Docker Inc's on-line Docker Hub (<a target="_blank" href="https://hub.docker.com/">https://hub.docker.com</a>) houses many public Docker images, free to pull.
 
-Docker Inc. also open-sourced its <a href="On-prem">on-premise Docker Registry server even though Docker Inc. also earns money for its on-premise Trusted Docker Registry product.
+Docker Inc. also open-sourced its <a href="On-prem">on-premise Docker Registry server</a> even though Docker Inc. also earns money for its on-premise Trusted Docker Registry product.
 
 
 ### Public Docker Hub API
@@ -108,7 +108,45 @@ Docker Inc. has open-sourced their Docker Hub server software at <a target="_bla
 
 Looking among the files in the root of the repo, notice the server is written in the Go language.
 
+
+### Private Docker Registry Server Install
+
+As one would expect, Docker Registry is installed within a Docker container. 
+For install instructions, see <a target="_blank" href="https://docs.docker.com/registry/deploying/">https://docs.docker.com/registry/deploying</a>
+
+1. This command can be used to start the Registry as a single container:
+
+   <pre>
+docker run -d \
+  --restart=always \
+  --name ...-registry \
+  -v "$(pwd)"/certs:/certs \
+  -e REGISTRY_HTTP_ADDR=0.0.0.0:443 \
+  -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \
+  -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
+  -p 443:443 \
+  registry:2
+   </pre>
+
+1. Generate TLS certificates and place them in the path described in the command.
+
+
+However, you'll likely start the on-prem. Docker Registry using a <strong>docker compose</strong> command so that several containers can be brought up as a Registry service for use by Kubernetes.
+
+   The other container handles Authentication using the OAuth protocol.
+
+   PROTIP: Docker Registry from Docker Inc. does not have a UI. It is not designed to operate in a cluster (for High Availability). It has no built-in authentication.
+
+About server install:
+
+  * <a target="_blank" href="https://www.youtube.com/watch?v=SEpR35HZ_hQ">from Learnitguide.net Aug 8, 2018 [17:32]</a>
+
+QUESTION: How to automatically pull images from Docker Hub if not in the private registry?
+
+
 ### Docker CLI client install
+
+For install instructions, see <a target="_blank" href="https://docs.docker.com/registry/deploying/">https://docs.docker.com/registry/deploying</a>
 
 1. List the Docker packages available for your Mac:
 
@@ -125,31 +163,42 @@ Looking among the files in the root of the repo, notice the server is written in
    <pre><strong>brew cask install docker
    </strong></pre>
 
+### Private Registry
 
-### Private Docker Registry Install
+https://github.com/docker/distribution/blob/master/docs/spec/auth/token.md
 
-As one would expect, Docker Registry is installed within a Docker container. 
-For install instructions, see <a target="_blank" href="https://docs.docker.com/registry/deploying/">https://docs.docker.com/registry/deploying</a>
+Version 2 uses an <a target="_blank" href="https://tools.ietf.org/html/rfc6750#section-3">industry-standard OAuth2 process</a>. The example below is for an account/image "samalba/my-app".
 
-1. This command can be used to start the Registry as a single container:
+In a Bash script at https://gist.github.com/alexanderilyin/8cf68f85b922a7f1757ae3a74640d48a
 
-   <pre>
-docker run -d \
-  --restart=always \
-  --name registry \
-  -v "$(pwd)"/certs:/certs \
-  -e REGISTRY_HTTP_ADDR=0.0.0.0:443 \
-  -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \
-  -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
-  -p 443:443 \
-  registry:2
+   <ul><tt>token="$(curl https://auth.docker.io/token?service=registry.docker.io&scope=repository:library/ubuntu:pull | jq -r '.token')"
+   </tt></ul>
+
+A more detailed explanation:
+
+1. Registry client issues a GET request to the authorization service for a Bearer token.
+
+  <tt>https://auth.docker.io/token?service=registry.docker.io&scope=repository:samalba/my-app:pull,push</tt>
+
+1. Authorization service returns an opaque Bearer token representing the client's authorized access. Example:
+
+   <tt>www-Authenticate: Bearer realm="https://auth.docker.io/token",service="registry.docker.io",scope="repository:samalba/my-app:pull,push"
+   </tt>
+
+1. Client captures the token returned:
+
+   <pre>HTTP/1.1 200 OK
+Content-Type: application/json
+{"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IlBZWU86VEVXVTpWN0pIOjI2SlY6QVFUWjpMSkMzOlNYVko6WEdIQTozNEYyOjJMQVE6WlJNSzpaN1E2In0.eyJpc3MiOiJhdXRoLmRvY2tlci5jb20iLCJzdWIiOiJqbGhhd24iLCJhdWQiOiJyZWdpc3RyeS5kb2NrZXIuY29tIiwiZXhwIjoxNDE1Mzg3MzE1LCJuYmYiOjE0MTUzODcwMTUsImlhdCI6MTQxNTM4NzAxNSwianRpIjoidFlKQ08xYzZjbnl5N2tBbjBjN3JLUGdiVjFIMWJGd3MiLCJhY2Nlc3MiOlt7InR5cGUiOiJyZXBvc2l0b3J5IiwibmFtZSI6InNhbWFsYmEvbXktYXBwIiwiYWN0aW9ucyI6WyJwdXNoIl19XX0.QhflHPfbd6eVF4lM9bwYpFZIV0PfikbyXuLx959ykRTBpe3CYnzs6YBK8FToVb5R47920PVLrh8zuLzdCr9t3w", "expires_in": 3600,"issued_at": "2009-11-10T23:00:00Z"}
+Using the Bearer token
    </pre>
 
-However, you'll likely start the on-prem. Docker Registry using a <strong>docker compose</strong> command so that several containers can be brought up as a Registry service for use by Kubernetes.
+1. Client retries the original request with the Bearer token embedded in the request's Authorization HTTP header.
 
-   The other container handles Authentication using the OAuth protocol.
+   <pre>Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IkJWM0Q6MkFWWjpVQjVaOktJQVA6SU5QTDo1RU42Ok40SjQ6Nk1XTzpEUktFOkJWUUs6M0ZKTDpQT1RMIn0.eyJpc3MiOiJhdXRoLmRvY2tlci5jb20iLCJzdWIiOiJCQ0NZOk9VNlo6UUVKNTpXTjJDOjJBVkM6WTdZRDpBM0xZOjQ1VVc6NE9HRDpLQUxMOkNOSjU6NUlVTCIsImF1ZCI6InJlZ2lzdHJ5LmRvY2tlci5jb20iLCJleHAiOjE0MTUzODczMTUsIm5iZiI6MTQxNTM4NzAxNSwiaWF0IjoxNDE1Mzg3MDE1LCJqdGkiOiJ0WUpDTzFjNmNueXk3a0FuMGM3cktQZ2JWMUgxYkZ3cyIsInNjb3BlIjoiamxoYXduOnJlcG9zaXRvcnk6c2FtYWxiYS9teS1hcHA6cHVzaCxwdWxsIGpsaGF3bjpuYW1lc3BhY2U6c2FtYWxiYTpwdWxsIn0.Y3zZSwaZPqy4y9oRBVRImZyv3m_S9XDHF1tWwN7mL52C_IiA73SJkWVNsvNqpJIn5h7A2F8biv_S2ppQ1lgkbw
+   </pre>
 
-   PROTIP: Docker Registry from Docker Inc. does not have a UI. It is not designed to operate in a cluster (for High Availability).
+1. Registry authorizes the client by validating the Bearer token and the claim set embedded within it and begins the push/pull session as usual.
 
 
 ### Internal data structure
@@ -219,59 +268,26 @@ No archival is needed if the image can be easily rebuilt.
 <hr />
 
 
-### Private Registry
 
-Privatized Docker registries, by definition, need authentication.
-
-https://github.com/docker/distribution/blob/master/docs/spec/auth/token.md
-
-Version 2 uses an <a target="_blank" href="https://tools.ietf.org/html/rfc6750#section-3">industry-standard OAuth2 process</a>. The example below is for an account/image "samalba/my-app".
-
-In a Bash script at https://gist.github.com/alexanderilyin/8cf68f85b922a7f1757ae3a74640d48a
-
-   <ul><tt>token="$(curl https://auth.docker.io/token?service=registry.docker.io&scope=repository:library/ubuntu:pull | jq -r '.token')"
-   </tt></ul>
-
-A more detailed explanation:
-
-1. Registry client issues a GET request to the authorization service for a Bearer token.
-
-  <tt>https://auth.docker.io/token?service=registry.docker.io&scope=repository:samalba/my-app:pull,push</tt>
-
-1. Authorization service returns an opaque Bearer token representing the client's authorized access. Example:
-
-   <tt>www-Authenticate: Bearer realm="https://auth.docker.io/token",service="registry.docker.io",scope="repository:samalba/my-app:pull,push"
-   </tt>
-
-1. Client captures the token returned:
-
-   <pre>HTTP/1.1 200 OK
-Content-Type: application/json
-{"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IlBZWU86VEVXVTpWN0pIOjI2SlY6QVFUWjpMSkMzOlNYVko6WEdIQTozNEYyOjJMQVE6WlJNSzpaN1E2In0.eyJpc3MiOiJhdXRoLmRvY2tlci5jb20iLCJzdWIiOiJqbGhhd24iLCJhdWQiOiJyZWdpc3RyeS5kb2NrZXIuY29tIiwiZXhwIjoxNDE1Mzg3MzE1LCJuYmYiOjE0MTUzODcwMTUsImlhdCI6MTQxNTM4NzAxNSwianRpIjoidFlKQ08xYzZjbnl5N2tBbjBjN3JLUGdiVjFIMWJGd3MiLCJhY2Nlc3MiOlt7InR5cGUiOiJyZXBvc2l0b3J5IiwibmFtZSI6InNhbWFsYmEvbXktYXBwIiwiYWN0aW9ucyI6WyJwdXNoIl19XX0.QhflHPfbd6eVF4lM9bwYpFZIV0PfikbyXuLx959ykRTBpe3CYnzs6YBK8FToVb5R47920PVLrh8zuLzdCr9t3w", "expires_in": 3600,"issued_at": "2009-11-10T23:00:00Z"}
-Using the Bearer token
-   </pre>
-
-1. Client retries the original request with the Bearer token embedded in the request's Authorization HTTP header.
-
-   <pre>Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IkJWM0Q6MkFWWjpVQjVaOktJQVA6SU5QTDo1RU42Ok40SjQ6Nk1XTzpEUktFOkJWUUs6M0ZKTDpQT1RMIn0.eyJpc3MiOiJhdXRoLmRvY2tlci5jb20iLCJzdWIiOiJCQ0NZOk9VNlo6UUVKNTpXTjJDOjJBVkM6WTdZRDpBM0xZOjQ1VVc6NE9HRDpLQUxMOkNOSjU6NUlVTCIsImF1ZCI6InJlZ2lzdHJ5LmRvY2tlci5jb20iLCJleHAiOjE0MTUzODczMTUsIm5iZiI6MTQxNTM4NzAxNSwiaWF0IjoxNDE1Mzg3MDE1LCJqdGkiOiJ0WUpDTzFjNmNueXk3a0FuMGM3cktQZ2JWMUgxYkZ3cyIsInNjb3BlIjoiamxoYXduOnJlcG9zaXRvcnk6c2FtYWxiYS9teS1hcHA6cHVzaCxwdWxsIGpsaGF3bjpuYW1lc3BhY2U6c2FtYWxiYTpwdWxsIn0.Y3zZSwaZPqy4y9oRBVRImZyv3m_S9XDHF1tWwN7mL52C_IiA73SJkWVNsvNqpJIn5h7A2F8biv_S2ppQ1lgkbw
-   </pre>
-
-1. Registry authorizes the client by validating the Bearer token and the claim set embedded within it and begins the push/pull session as usual.
-
+<hr />
 
 <a name="RemoveImagePrograms"></a>
 
-## References:
-
 ### Remove image programs
 
-There are several approaches to remove
+There are several approaches to remove tags:
 
-   * Make API call
+   A. Use the "docker image rm " call to remove all tags in an image using a single call.
+
+   This needs to be done as "docker exec -it ...".
+   
+   B. Make API DELETE call:
 
    <pre>curl -v -X DELETE http://registryhost:reigstryport/v2/${docker_image_name}/manifests/${digest}</pre>
 
-   * Physically remove links pointing to blobs
+   PROTIP: The DELETE API does not remove revisions.
+
+   C. Physically remove links pointing to blobs using Bash rm commands to remove revisions along with tags.
 
 Either way, garbage collection is necessary to remove blobs.
 
@@ -297,6 +313,18 @@ Python scripts:
    * https://www.linuxtechi.com/setup-docker-private-registry-centos-7-rhel-7/
 
    * https://www.server-world.info/en/note?os=CentOS_7&p=docker&f=6
+
+   * https://gist.github.com/qoomon/7c7f16939630cafafceeb83d254194e4
+
+
+## Client
+
+If you have a lot of images, avoid timeouts by configuring your terminal:
+
+<pre>Host *
+   ServerAliveInterval 300
+   ServerAliveCountMax 2
+   </pre>
 
 
 

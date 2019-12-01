@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Python Install (Conda Anaconda Miniconda Pip) on MacOS"
-excerpt: "Confusion and errors from many alternatives and options"
+excerpt: "Confusion and errors from too many alternatives and options"
 tags: [python, apple, mac, setup]
 date: "2017-03-03"
 file: "python-install"
@@ -34,17 +34,16 @@ and put them here in context.
 There are two separate versions of Python: 2 and 3. 
 <a href="#CommandVersions"> some Python functions in one version do not work with commands in another version</a>.
 
-This has given rise to several versions of Python frameworks being maintained in parallel. For example, the web application development framework exists as Django 1.3 and Django 1.0.
+This has given rise to several versions of Python frameworks being maintained in parallel. For example, the web application development framework for Python exists as both Django 1.3 and Django 1.0.
 
 Adding to the confusion is that <a href="#Packaging">various methods of installing Python</a> are incompatible with each other.
 This has given rise to the need for <strong>package managers</strong> such as pip (Python Installation Packager) that enable one to switch among different versions of Python installed.
 
-<a href="#PIPz">pip</a> (Python Installation Packager) is built on top of <strong>setuptools</strong> which
-is what downloads and installs Python packages from the <strong>PyPI (Python Package Index)</strong> library online at <a target="_blank" href="https://pypi.org/">https://pypi.org</a>. 
+MacOS does not come installed with a package manager for Python.
+
+<a href="#PIPz">pip</a> (Python Installation Packager) is built on top of <strong>setuptools</strong> which is what downloads and installs Python packages from the <strong>PyPI (Python Package Index)</strong> library online at <a target="_blank" href="https://pypi.org/">https://pypi.org</a>. 
 
 Setuptools itself is installed using <a href="#easy_install">easy_install</a>.
-
-MacOS does not come installed with a package manager for Python.
 
 
 This complexity necessitates the packaging of whole <a href="virtualenv">virtual environments</a> to <strong>isolate</strong>

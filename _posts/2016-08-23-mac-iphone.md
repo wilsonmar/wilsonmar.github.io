@@ -71,6 +71,25 @@ PROTIP: AirDrop transfers only specific types of files: photos, videos, and loca
 3. Activate and pay for a license.
 
 
+## HEIP to png/jpj formats
+
+Since iOS 11 in 2017, iPhones store photos in the HEIC containers of files formatted in
+HEIF (High Efficiency Image Format). It is a more streamlined way of storing image files.
+It has a smaller files size, while retaining higher image quality than the JPEG format.
+
+HEIF is based on the H.265 or HEVC (High Efficiency Video Compression) video format used on newer iPhones. It was developed by the MPEG group that was also responsible for the AAC format used in iTunes. PROTIP: Apple stores still images encoded with the HVEC (H.265) video format, allowing for its "Live Photos" with multiple images saved in the HEIC container. This also enables dual camera images captured on iPhone X, iPhone XS, and other dual-cam iPhones.
+
+1. To save a HEIC image in JPEG or PNG format for use on other apps, open the file in Apple's Preview program. Export.
+
+You can set your iOS device to save photos in JPG rather than HEIC. Go to Settings > Camera > Formats and then select "Most Compatible". 
+
+Share JPGs instead of HEICs, via Settings > Photos and select Automatic in the bottom option.
+While continuing to keep the benefits of shooting and storing in HEIC yourself.
+Utilities:
+
+   * <a target="_blank" href="https://imazing.com/">https://imazing.com</a>
+
+   * <a target="_blank" href="https://www.apowersoft.com/heic-to-jpg">https://www.apowersoft.com/heic-to-jpg</a>
 
 <hr />
 
