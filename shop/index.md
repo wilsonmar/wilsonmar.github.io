@@ -206,7 +206,7 @@ Glasses are one of the essentials. So I keep an extra set in the suitcase.
 
 [_] <strong>Sunglasses</strong> (in a hard case). For me, polarized lenses is a must-have. Maui Jim's gave free repairs if I pay to ship mine to Hawaii. But after losing too many, I've gone to Ray Bans, which are a great value. $30 from Costco.
 
-[_] <strong>Reading glasses</strong> (in a hard case) which have a yellow tint to block blue light helps me sleep better. $12 from Amazon.
+[_] <strong>Reading glasses</strong> (in a hard case) which have a yellow tint to block blue light helps me sleep better. $12 from Amazon. Newer ones have a less noticeable tint.
 
 [_] Reading glasses that turn dark for use in the sun. $15 from Walmart.
 
@@ -247,6 +247,19 @@ BTW Not on this list are locator beacons. I got a few Tile chips (for about $20 
 [_] Micro SD cards and USB sticks for smartphones and cameras.
 
 
+<a name="SleepAids"></a>
+
+## Sleep Aids
+
+[ ] A good set of <strong>eye shades</strong> is 
+
+[ ] Neck pillow. The squeeshy ones sold in airport stores are bulky and unsanitary to carry. My favorite is the Trtl Pillow, $30 from Amazon. It's a neck wrap with a metal support on one side.
+
+[ ] Ear plugs.
+
+[ ] Over-the-ear noise-cancelling headphones (below)
+
+
 <a name="Headphones"></a>
 
 ## Headphones
@@ -255,7 +268,7 @@ I've had several headphones over the years. That's not to be fashionable, but be
 
 Difficulties with alternative designs:
 
-   * Earplugs like Apple's AirPods do block ambient sound, but hurt my ear.
+   * In-ear plugs like Apple's AirPods Pro hurt my ear.
 
    * When I want to seem more approachable, I wear a <strong>bone-conducting headphone</strong>.  I wear them in the car so I don't get a ticket when I listen to my iPhone while driving a noisy van. But I found others can hear the sound from them.
    And they co-exist better when wearing glasses.
@@ -554,21 +567,27 @@ This is where electric vehicles like a Tesla come in handy.
 
 [_] A tent (with stakes) is the item which separates a city pack and wilderness backpacking.
 
-I think it's wise to be experienced and prepared to sleep in the "cuts" (hideaway spots like bushes and alleys). It's not just in case you're homeless. I've been in a city where I can't find any hotel room available.
-I've slept on a sidewalk in front of a store waiting for it to open so I am among the first to buy a hot item.
-I've slept on a sidewalk to squat a spot to watch a parade the next morning.
+   I think it's wise to be experienced and prepared to sleep in the "cuts" (hideaway spots like bushes and alleys). It's not just in case you're homeless. I've been in a city where I can't find any hotel room available.
+   I've slept on a sidewalk in front of a store waiting for it to open so I am among the first to buy a hot item.
+   I've slept on a sidewalk to squat a spot to watch a parade the next morning.
+   I've slept in airports waiting for an early morning flight.
 
-So I'm not so quick to judge people sleeping in the city.
-Public Shelters can be dangerous places. I can't keep my fancy backpack from being stolen there while I sleep.
+   So I'm not so quick to judge people rough sleeping in the city.
+   Public Shelters can be dangerous places. It's difficult to keep my fancy backpack and its thousands of dollars of contents from being stolen there while I sleep.
 
-PROTIP: Many cities and towns have a thing against people sleeping on the street. 
-Their solution is usually have the police annoy the homeless (waking them up in the middle of the night) so they move to another city. 
-So I try to boycott <a target="_blank" href="https://www.nlchp.org/documents/Housing-Not-Handcuffs">towns that practice that</a>, primarily Boise, Dallas, Denver. 
+   PROTIP: Many cities and towns have a thing against people sleeping on the street. 
+   Their solution is usually have the police annoy the homeless (waking them up in the middle of the night) so they move to another city. 
 
-I think that's unconstitutional "cruel and unusual punishment" under the Eighth Amendment. The Ninth U.S. Circuit Court of Appeals on <a target="_blank" href="http://www.governing.com/topics/public-justice-safety/tns-homelessness-cities-cannot-prosecute-when-no-shelters-available.html">September 2018</a> ruled against "criminal penalties for sitting, sleeping, or lying outside on public property for homeless individuals who cannot obtain shelter."<a target="_blank" href="https://www.nytimes.com/2018/09/05/us/-homeless-sleeping-on-street-ruling.html">*</a>
-The state, the court said, "may not criminalize conduct that is an unavoidable consequence of being homeless." The suit was brough by Eric Tars of the <a target="_blank" href="https://www.nlchp.org/">National Law Center on Homelessness & Poverty</a>.
+   I think that's unconstitutional "cruel and unusual punishment" under the Eighth Amendment. The Ninth U.S. Circuit Court of Appeals on <a target="_blank" href="http://www.governing.com/topics/public-justice-safety/tns-homelessness-cities-cannot-prosecute-when-no-shelters-available.html">September 2018</a> ruled against "criminal penalties for sitting, sleeping, or lying outside on public property for homeless individuals who cannot obtain shelter."<a target="_blank" href="https://www.nytimes.com/2018/09/05/us/-homeless-sleeping-on-street-ruling.html">*</a>
+   The state, the court said, "may not criminalize conduct that is an unavoidable consequence of being homeless." The suit was brough by Eric Tars of the <a target="_blank" href="https://www.nlchp.org/">National Law Center on Homelessness & Poverty</a>.
 
-I applaud Saleforce billionaire Mark Benioff for leadership in this. Meanwhile, Amazon is doing what?
+   So I try to boycott <a target="_blank" href="https://www.nlchp.org/documents/Housing-Not-Handcuffs">US towns that practice that</a>, such as Boise, Dallas, Denver. 
+
+   I applaud Saleforce billionaire Mark Benioff for leadership in this. 
+   Meanwhile, Amazon is doing what?
+
+   Nordic countries <a target="_blank" href="https://getpocket.com/explore/item/it-s-a-miracle-helsinki-s-radical-solution-to-homelessness?utm_source=pocket-newtab">Finland have substantially cut both their homeless and saved social support costs</a>.
+
 
 [_] <strong>Please donate</strong> to the <a target="_blank" href="http://hsh.sfgov.org/services/emergencyshelter/navigation-centers/">Navigation Centers in San Francisco</a>. They provide a viable shelter by proving storage, eliminating curfews (for those who work odd hours), not requiring resident to exit the premises each morning, allowing pets, and permits mixed gender sleeping arrangements rather than separating families and couples. But one has to <a target="_blank" href="https://sf311.org/web/guest/shelter-reservation-waitlist">dial 311</a> (415-701-2311) to get on their waiting list.
 More than a dozen cities from Santa Rosa to Seattle and Austin, Texas, are copying the model<a target="_blank" href="https://www.sfchronicle.com/bayarea/article/SF-s-homeless-navigation-centers-seem-to-be-13025012.php">*</a>
