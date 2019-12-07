@@ -326,7 +326,9 @@ If you have a lot of images, avoid timeouts by configuring your terminal:
    ServerAliveCountMax 2
    </pre>
 
+## JFrog Artifactory as Docker Registry
 
+https://jfrog.com/screencast/artifactory-5-one-minute-setup-docker-registry-as-container-install/
 
 <hr />
 

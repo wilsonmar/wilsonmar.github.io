@@ -27,7 +27,7 @@ Artifactory works with another JFrog product: X-Ray, which identifies vulnerabil
 
 ## Workflow by edition and license
 
-Artifactory provides traceability of dependencies within components and images built as artifacts are promoted by Helm for use by Kubernetes.
+Artifactory provides <strong>traceability</strong> of dependencies within components and images built as artifacts are promoted by Helm for use by Kubernetes.
 
 Licensed editions integrates with <a target="_blank" href="https://jfrog.com/xray/">JFrog Xray</a> which performs "continuous" Security scans and Artifact impact analysis based on JFrog's database of vulnerabilities. <a target="_blank" href="https://www.youtube.com/watch?v=4JMOgImrQ_I">VIDEO</a>
 
@@ -39,14 +39,12 @@ A Virtual Repository</a> can be defined in Artifactory to access multiple Bower 
 Both on-prem and cloud SaSS deployments are available.
 
 Artifactory is <a target="_blank" href="https://jfrog.com/pricing/">licensed</a>
-from JFrog
-at $14,400 per year for a single site and $29,500 for multiple (enterprise) sites.
+from JFrog at $14,400 per year for a single site and $29,500 for multiple (enterprise) sites.
 The money goes to support secure, clustered, High Availability registries.
 
 See <a target="_blank" href="https://jfrog.com/open-source/">https://jfrog.com/open-source</a>
 
-Free OSS Artifactory editions fetch only for transitive package managers 
-Maven, <a target="_blank" href="https://docs.gradle.org/current/userguide/introduction_dependency_management.html">Gradle</a>, and <a target="_blank" href="https://en.wikipedia.org/wiki/Apache_Ivy">Apache Ivy</a>.
+Free OSS Artifactory editions fetch ONLY for transitive package managers (Java) Maven, <a target="_blank" href="https://docs.gradle.org/current/userguide/introduction_dependency_management.html">Gradle</a>, and <a target="_blank" href="https://en.wikipedia.org/wiki/Apache_Ivy">Apache Ivy</a>.
 But paid editions provide "universal support" for all major binary package formats:
 
 <img width="704" alt="artifactory-filetypes-1408x470" src="https://user-images.githubusercontent.com/300046/64656672-2062a380-d3fe-11e9-9a33-0728f4891a4e.png">
@@ -491,6 +489,19 @@ https://support.jfrog.com/jFrogKnowledgePage#id=kA01r000000LwtmCAC
 Basic troubleshooting section at the end for the most commonly seen errors.
 
 The <a target="_blank" href="https://github.com/jfrog/jfrog-vscode-extension">JFrog VS Code Extension</a> adds JFrog Xray scanning of npm project dependencies to your VS Code IDE. 
+
+## Competition in vulnerability scanners
+
+Software Composition Analysis:
+
+   * <a target="_blank" href="https://sonatype.com/">Sonatype.com (which offers Artifactory competitor Nexus and scanner)
+   * Aqua MicroScanner https://github.com/aquasecurity/microscanner
+   * <a target="_blank" href="https://snyk.io/">SNYK.io</a>
+   * <a target="_blank" href="https://www.blackducksoftware.com/">Black Duck</a> by Synopsys
+   * <a target="_blank" href="https://www.twistlock.com/">Twistlock.com</a> container and serverless security scanner
+   * <a target="_blank" href="https://www.veracode.com/security/vulnerability-scanning-tools">Veracode.com</a>
+   * <a target="_blank" href="https://www.whitesourcesoftware.com/">Whitesource</a>
+
 
 ## Resources
 

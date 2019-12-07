@@ -1794,6 +1794,8 @@ Microsoft's "<a target="_blank" href="https://azure.microsoft.com/mediahandler/f
 
 https://aka.ms/k8slearning
 
+https://learnk8s.io/troubleshooting-deployments
+A visual guide on troubleshooting Kubernetes deployments DECEMBER 2019
 
 ## Free Playpen
 
