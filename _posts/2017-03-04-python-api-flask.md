@@ -17,7 +17,7 @@ comments: true
 {% include _toc.html %}
 
 
-This is a hands-on tutorial showing how to quickly create a simple Python blog server program which processes REST API calls from a user's browser. By hands-on I mean explanations are provided after you do each action.
+This is a hands-on tutorial showing how to quickly create a simple Python blog server program to process sample REST API calls from a user's browser. By hands-on I mean explanations are provided after you do each action. Actions include folder navigation and creation, virtualenv, etc.
 
 <hr />
 
@@ -86,7 +86,7 @@ This is a hands-on tutorial showing how to quickly create a simple Python blog s
    PROTIP: The `standup.sh` file in the repo from GitHub performs the steps below automatically. The script can be run repeatedly.
 
 0. Install virtualenv.
-0. Create a simple virtual environment folder venv:
+0. Create a simple virtual environment folder named "venv":
 
    <tt><strong>virtualenv venv
    cd venv
@@ -114,17 +114,27 @@ export DATABASE_URL="postgresql://localhost/flask_api"
 
 0. Manually activate if you do not use the .env file:
 
-   <tt><strong>source bin/activate
+   <tt><strong>source env/bin/activate
    </strong></tt>
 
    The response adds an additional prompt:
    <pre>(venv)
    </pre>
 
+0. When the virtual environment is active:
+
+   <pre><strong>python --version</strong></pre>
+
+   The python interpreter responds that it automatically recognizes python as using Python3, such as:
+
+   <pre>Python 3.7.5</pre>
+
 0. BTW, to get out of a virtualenv environment:
 
    <tt><strong>deactivate
    </strong></tt>
+
+   "(env)" should disappear after this.
 
    Alternately, to get out of an Anaconda enviornment:
 
@@ -136,12 +146,7 @@ export DATABASE_URL="postgresql://localhost/flask_api"
    <tt><strong>pip install flask flask-jsonpify flask-sqlalchemy flask-restful
    </strong></tt>
 
-   CAUTION: You did not cd into venv if the response begins with:
-
-   <pre>Collecting flask
-   </pre>
-
-   The expected response:
+   CAUTION: You did not cd into venv if the response begins with anything other than:
 
    <pre>Collecting flask
   Using cached https://files.pythonhosted.org/packages/9b/93/628509b8d5dc749656a9641f4caf13540e2cdec85276964ff8f43bbb1d3b/Flask-1.1.1-py2.py3-none-any.whl
@@ -175,13 +180,14 @@ SQLAlchemy==1.1.14
 Werkzeug==0.12.2
    </pre>
 
+   NOTE: "Werkzeug" is a German word for "tool" (for HTTP and routing).
+
 0. Download and install Python dependencies specified:
 
    <tt><strong>pip install -r requirements.txt
    </strong></tt>
 
-   <pre>DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 won't be maintained after that date. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
-Collecting aniso8601==1.2.0
+   <pre>Collecting aniso8601==1.2.0
   Downloading https://files.pythonhosted.org/packages/5b/fb/251a0dd2f4710e60664ddd8bd3485bd8362530f47af9e88f4061fe589ebf/aniso8601-1.2.0.tar.gz (59kB)
      |████████████████████████████████| 61kB 440kB/s
 Collecting appdirs==1.4.0
@@ -438,7 +444,7 @@ Enter ".help" for usage hints.
    <tt><strong>chmod a+x server.py
    </strong></tt>
 
-0. Initiate the Python version 2.7 web service:
+0. Initiate the Python web service:
 
    <tt><strong>python server.py
    </strong></tt>
@@ -448,7 +454,7 @@ Enter ".help" for usage hints.
    <tt><strong>./server.py
    </strong></tt>
 
-   If you get this response, run requirements.txt:
+   If you get this response, you propably forgot to run requirements.txt:
 
    <pre>Traceback (most recent call last):
   File "server.py", line 2, in <module>
@@ -465,7 +471,11 @@ ImportError: No module named flask</pre>
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
    </pre>
 
-   TODO: Add HATEOS to respond to URL with no resource (folder) specified.
+   Alternately, define the environment variable recognized by Flask and run flask:
+
+   <pre><strong>export FLASK_APP=server.py
+   flask run
+   </strong></pre>
 
 
    ## Routes Walkthough
@@ -508,6 +518,23 @@ ImportError: No module named flask</pre>
     }, 
    </pre>
 
+0. In the Terminal/Console, notice the detailed logging:
+
+   <pre>127.0.0.1 - - [09/Dec/2019 21:10:32] "GET / HTTP/1.1" 404 -
+127.0.0.1 - - [09/Dec/2019 21:10:32] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [09/Dec/2019 21:12:20] "GET /tracks HTTP/1.1" 200 -
+   </pre>
+
+## Unit testing
+
+1. Flask comes with unit testing support. To run tests defined in file `test_module1.py` within the `tests` folder:
+
+    <pre><strong>pytest -k module1</strong></pre>
+
+
+
+
+## Review outputs
 
 0. Review this output from a database query to obtain a result returned:
 
@@ -674,6 +701,12 @@ class Tracks(Resource):
    TODO: GraphQL - https://github.com/graphql-python/flask-graphql or 
    after buiding schemas using http://graphene-python.org/
 
+   TODO: Add HATEOS to respond to URL with no resource (folder) specified.
+
+Flask provides "blueprints" to organize code into packages for a more modular architecture.
+A Flask Blueprint is like an application component -- not an application itself, but can be registered in an application. 
+Each Blueprint lives in its own folder.
+
 
 ## f5-sdk for Python
 
@@ -695,19 +728,34 @@ Jason Rahm's Getting started with F5 Networks® BIG-IP® iControl® REST interfa
 
 ## Resources
 
-This tutorial was originally described at 
+This tutorial was described at 
 https://www.codementor.io/sagaragarwal94/building-a-basic-restful-api-in-python-58k02xsiq
 
 https://scotch.io/tutorials/build-a-restful-api-with-flask-the-tdd-way
 
 http://python.apichecklist.com/ from Dan Bader.   
 
-<a target="_blank" href="https://realpython.com/flask-google-login/">
-How to build a web app using Python’s Flask and Google App Engine"</a> 5 Nov 2018.
-It uses the OpenWeather API.
+https://www.patricksoftwareblog.com/steps-for-starting-a-new-flask-project-using-python3/
+FEBRUARY 19, 2018
 
 <a target="_blank" href="https://app.pluralsight.com/search/?q=flask&m_sort=relevance&page=1&query_id=aa6a9dbd-3cc7-49ef-bb5b-2aefe699ce56">Pluralsight has several video tutorials on Flask</a>:
 
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/flask-micro-framework-introduction/table-of-contents">"Introduction to the Flask Microframework" 26 Dec 2014</a> 3h 57m by Reindert-Jan Ekker (@rjekker)
 
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/flask-micro-framework-introduction/table-of-contents">
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/python-flask-rest-api/table-of-contents">"Building a REST API Using Python and Flask" 2 Jul 2018</a> 1h 57m by Sanjay Rai
+   covers getting, posting, updating, storing data. It also covers adding authentication to the API.
+
+Tom Bell's projects:
+
+   * <a target="_blank" href="https://app.pluralsight.com/projects/add-authentication-to-a-flask-cms">"Add Authentication to a Flask CMS"</a> checks on whether you've forked from https://github.com/pluralsight-projects/PythonFlask-CMSAuthentication, etc. The project involves managing session variables, clear and get session data, custom route decorators. Initially, all the tests fail. The course covers fixing the tests. The solution is at another branch:
+   https://github.com/wilsonmar/PythonFlask-CMSAuthentication/tree/module1-solution
+
+   * <a target="_blank" href="https://app.pluralsight.com/projects/add-authentication-to-a-flask-cms">"Refactor a Flask CMS"</a> 1hr Oct 28, 2019 shows use of an Admin Blueprint by creating and editing a route.
+   https://github.com/pluralsight-projects/PythonFlask-CMSBlueprints
+
+   * <a target="_blank" href="https://app.pluralsight.com/projects/build-a-job-board-with-python-flask">Build a Job Board with Python & Flask</a>  2h 35m on Sep 26, 2018 forks from https://github.com/pluralsight-projects/PythonFlask-JobBoard
+
+<a target="_blank" href="https://realpython.com/flask-google-login/">
+How to build a web app using Python’s Flask and Google App Engine"</a> 5 Nov 2018.
+It uses the OpenWeather API.
+
