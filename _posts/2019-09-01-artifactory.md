@@ -419,11 +419,14 @@ by JFrog Solutions Engineers Doron Meirfeld and Mansirman Singh
 
 <hr />
 
-## Migration
+## Migration from Docker Registry
 
-https://github.com/jfrog/docker2artifactory
+<a target="_blank" href="https://github.com/jfrog/docker2artifactory
+">https://github.com/jfrog/docker2artifactory</a>
 to transition from V2 Docker registries to JFrog Artifactory.
 by Arturo Aparicio in San Jose, California.
+
+
 
 
 ## Git LFS
@@ -442,6 +445,8 @@ Annotate Artifacts with Searchable Properties
 Aggregate and Run Bulk Operations on Search Results
 
 Move/copy/delete artifacts through the UI
+
+https://github.com/jfrog/artifactory-user-plugins/tree/master/cleanup
 
 
 ## Repository Replication

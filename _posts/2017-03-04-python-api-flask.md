@@ -457,7 +457,7 @@ Enter ".help" for usage hints.
    If you get this response, you propably forgot to run requirements.txt:
 
    <pre>Traceback (most recent call last):
-  File "server.py", line 2, in <module>
+  File "server.py", line 2, in &LT;module>
     from flask import Flask, request, jsonify
 ImportError: No module named flask</pre>
 
