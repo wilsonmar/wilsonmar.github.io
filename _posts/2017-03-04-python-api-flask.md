@@ -24,16 +24,14 @@ This is a hands-on tutorial showing how to quickly create a simple Python blog s
 1. [Open a Terminal shell window on Mac or cmd window on Windows](/terminal/).
 0. Create a folder where you hold various projects under your user home folder. On a Mac:
 
-   <tt><strong>
-   cd ~ && mkdir gits
+   <tt><strong>cd ~ && mkdir gits
    </strong></tt>
 
    Alternately, use the workspace you use with the Eclipse IDE.
 
 0. Create and/or navigate into a folder holding where git will create repositories:
 
-   <tt><strong>
-   mkdir wilsonmar && cd wilsonmar 
+   <tt><strong>mkdir wilsonmar && cd wilsonmar 
    </strong></tt>
 
    The example here is a user account name on GitHub.com. The repository of interest is at:
@@ -49,8 +47,8 @@ This is a hands-on tutorial showing how to quickly create a simple Python blog s
 
 0. Have Git create a folder and download code from GitHub:
 
-   <tt><strong>
-   git clone <a target="_blank" href="https://github.com/wilsonmar/python-api-flask">https://github.com/wilsonmar/python-api-flask</a>
+   <tt><strong>git clone <a target="_blank" href="https://github.com/wilsonmar/python-api-flask">https://github.com/wilsonmar/python-api-flask</a>
+   cd python-api-flask
    </strong></tt>
 
    Alternately, you can Fork to your own account and change the URL accordingly.
@@ -58,14 +56,13 @@ This is a hands-on tutorial showing how to quickly create a simple Python blog s
 
    ### View code
 
-1. In a text editor open a file `server.py` 
+1. In a text editor open file `server.py` 
 
    `#!/usr/bin/python3`
 
    means that we need to install the <a href="#PythonEnv">Python interpreter and environment</a>. At version 3, `print()` functions are used.
 
-      <pre>    
-   from flask import Flask, request, jsonify
+      <pre>from flask import Flask, request, jsonify
    from flask_restful import Resource, Api
    from sqlalchemy import create_engine
    from json import dumps
@@ -79,7 +76,7 @@ This is a hands-on tutorial showing how to quickly create a simple Python blog s
 
    `class Employees(Resource):`
 
-   means that we need to use the sample database file `chinook.db` which contains an employee table.
+   means that we need to use the sample database file `chinook.db`, which contains an employee table.
 
 
    <a name="PythonEnv"></a>
@@ -91,18 +88,20 @@ This is a hands-on tutorial showing how to quickly create a simple Python blog s
 0. Install virtualenv.
 0. Create a simple virtual environment folder venv:
 
-   <tt><strong>
-   virtualenv venv
+   <tt><strong>virtualenv venv
+   cd venv
    </strong></tt>
 
    The response:
 
-   <pre>
-   New python executable in /Users/wilsonmar/gits/wilsonmar/python-api-flask/venv/bin/python
-   Installing setuptools, pip, wheel...done.
+   <pre>Using base prefix '/usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7'
+New python executable in /Users/wilson_mar/gits/wilsonmar/python-api-flask/venv/bin/python3.7
+Also creating executable in /Users/wilson_mar/gits/wilsonmar/python-api-flask/venv/bin/python
+Installing setuptools, pip, wheel...
+done.
    </pre>
 
-   PROTIP</a>: The virtualenv program executes commands in the `.env` file every time we cd into the directory. An <a target="_blank" href="https://scotch.io/tutorials/build-a-restful-api-with-flask-the-tdd-way">example</a>:
+   PROTIP: The virtualenv program executes commands in the `.env` file every time we cd into the directory. An <a target="_blank" href="https://scotch.io/tutorials/build-a-restful-api-with-flask-the-tdd-way">example</a>:
 
    <pre>
 source env/bin/activate
@@ -115,106 +114,52 @@ export DATABASE_URL="postgresql://localhost/flask_api"
 
 0. Manually activate if you do not use the .env file:
 
-   <tt><strong>
-   source venv/bin/activate
+   <tt><strong>source bin/activate
    </strong></tt>
 
-   The response is a different prompt, such as:
-
-   <pre>
-   Wilsons-MacBook-Pro:python-api-flask wilsonmar$
-   </pre>
-
-   PROTIP: The prompt now changed to:
-
-   <pre>
-   (venv) Wilsons-MacBook-Pro:python-api-flask wilsonmar$ 
+   The response adds an additional prompt:
+   <pre>(venv)
    </pre>
 
 0. BTW, to get out of a virtualenv environment:
 
-   <tt><strong>
-   deactivate
+   <tt><strong>deactivate
    </strong></tt>
 
    Alternately, to get out of an Anaconda enviornment:
 
-   <tt><strong>
-   source deactivate
+   <tt><strong>source deactivate
    </strong></tt>
 
 0. Install dependencies within venv: 
 
-   <tt><strong>
-   pip install flask flask-jsonpify flask-sqlalchemy flask-restful
+   <tt><strong>pip install flask flask-jsonpify flask-sqlalchemy flask-restful
    </strong></tt>
 
-   The response:
+   CAUTION: You did not cd into venv if the response begins with:
 
-   <pre>
-Collecting flask
-  Downloading Flask-0.12.2-py2.py3-none-any.whl (83kB)
-    100% |████████████████████████████████| 92kB 1.4MB/s 
-Collecting flask-jsonpify
-  Downloading Flask-Jsonpify-1.5.0.tar.gz
-Collecting flask-sqlalchemy
-  Downloading Flask_SQLAlchemy-2.3.0-py2.py3-none-any.whl
-Collecting flask-restful
-  Downloading Flask_RESTful-0.3.6-py2.py3-none-any.whl
-Collecting itsdangerous>=0.21 (from flask)
-  Downloading itsdangerous-0.24.tar.gz (46kB)
-    100% |████████████████████████████████| 51kB 1.2MB/s 
-Collecting Werkzeug>=0.7 (from flask)
-  Downloading Werkzeug-0.12.2-py2.py3-none-any.whl (312kB)
-    100% |████████████████████████████████| 317kB 1.1MB/s 
-Collecting Jinja2>=2.4 (from flask)
-  Downloading Jinja2-2.9.6-py2.py3-none-any.whl (340kB)
-    100% |████████████████████████████████| 348kB 1.2MB/s 
-Collecting click>=2.0 (from flask)
-  Downloading click-6.7-py2.py3-none-any.whl (71kB)
-    100% |████████████████████████████████| 71kB 1.3MB/s 
-Collecting SQLAlchemy>=0.8.0 (from flask-sqlalchemy)
-  Downloading SQLAlchemy-1.1.14.tar.gz (5.2MB)
-    100% |████████████████████████████████| 5.2MB 228kB/s 
-Collecting six>=1.3.0 (from flask-restful)
-  Downloading six-1.11.0-py2.py3-none-any.whl
-Collecting pytz (from flask-restful)
-  Downloading pytz-2017.2-py2.py3-none-any.whl (484kB)
-    100% |████████████████████████████████| 491kB 514kB/s 
-Collecting aniso8601>=0.82 (from flask-restful)
-  Downloading aniso8601-1.3.0.tar.gz (57kB)
-    100% |████████████████████████████████| 61kB 791kB/s 
-Collecting MarkupSafe>=0.23 (from Jinja2>=2.4->flask)
-  Downloading MarkupSafe-1.0.tar.gz
-Collecting python-dateutil (from aniso8601>=0.82->flask-restful)
-  Downloading python_dateutil-2.6.1-py2.py3-none-any.whl (194kB)
-    100% |████████████████████████████████| 194kB 3.9MB/s 
-Building wheels for collected packages: flask-jsonpify, itsdangerous, SQLAlchemy, aniso8601, MarkupSafe
-  Running setup.py bdist_wheel for flask-jsonpify ... done
-  Stored in directory: /Users/wilsonmar/Library/Caches/pip/wheels/94/49/b1/376d04c3136a18e59dbda03d7c5dd5d242e1035372b6703076
-  Running setup.py bdist_wheel for itsdangerous ... done
-  Stored in directory: /Users/wilsonmar/Library/Caches/pip/wheels/fc/a8/66/24d655233c757e178d45dea2de22a04c6d92766abfb741129a
-  Running setup.py bdist_wheel for SQLAlchemy ... done
-  Stored in directory: /Users/wilsonmar/Library/Caches/pip/wheels/9f/cc/4b/d2645b72ec1ba3dd72d7ae384c431cf56bae03918f38c4e5e5
-  Running setup.py bdist_wheel for aniso8601 ... done
-  Stored in directory: /Users/wilsonmar/Library/Caches/pip/wheels/e3/6a/48/e4f2d89ff4146557cae20b77a9af7b4d09dd47b2004133cd7e
-  Running setup.py bdist_wheel for MarkupSafe ... done
-  Stored in directory: /Users/wilsonmar/Library/Caches/pip/wheels/88/a7/30/e39a54a87bcbe25308fa3ca64e8ddc75d9b3e5afa21ee32d57
-Successfully built flask-jsonpify itsdangerous SQLAlchemy aniso8601 MarkupSafe
-Installing collected packages: itsdangerous, Werkzeug, MarkupSafe, Jinja2, click, flask, flask-jsonpify, SQLAlchemy, flask-sqlalchemy, six, pytz, python-dateutil, aniso8601, flask-restful
-Successfully installed Jinja2-2.9.6 MarkupSafe-1.0 SQLAlchemy-1.1.14 Werkzeug-0.12.2 aniso8601-1.3.0 click-6.7 flask-0.12.2 flask-jsonpify-1.5.0 flask-restful-0.3.6 flask-sqlalchemy-2.3.0 itsdangerous-0.24 python-dateutil-2.6.1 pytz-2017.2 six-1.11.0
+   <pre>Collecting flask
    </pre>
 
-0. Generate dependencies into a `requirements.txt` file:
+   The expected response:
 
-   <tt><strong>
-   pip freeze
+   <pre>Collecting flask
+  Using cached https://files.pythonhosted.org/packages/9b/93/628509b8d5dc749656a9641f4caf13540e2cdec85276964ff8f43bbb1d3b/Flask-1.1.1-py2.py3-none-any.whl
+Processing /Users/wilson_mar/Library/Caches/pip/wheels/ea/a9/40/ac47ad604861c1a40499042d30c22cdb7d1fa1abf426597788/Flask_Jsonpify-1.5.0-cp37-none-any.whl
+Collecting flask-sqlalchemy
+  Using cached https://files.pythonhosted.org/packages/1e/65/226d95466c75e34e291a76890ed0e27af2e46ab913002847856f11d4d59d/Flask_SQLAlchemy-2.4.1-py2.py3-none-any.whl
+Collecting flask-restful
+  Using cached https://files.pythonhosted.org/packages/17/44/6e490150ee443ca81d5f88b61bb4bbb133d44d75b0b716ebe92489508da4/Flask_RESTful-0.3.7-py2.py3-none-any.whl
+   </pre>
+
+0. BTW The repository contains a `requirements.txt` file listing dependencies which was generated by:
+
+   <tt><strong>pip freeze > requirements.txt
    </strong></tt>
 
-   The response:
+   The file contains:
 
-   <pre>
-aniso8601==1.3.0
+   <pre>aniso8601==1.3.0
 click==6.7
 Flask==0.12.2
 Flask-Jsonpify==1.5.0
@@ -230,7 +175,85 @@ SQLAlchemy==1.1.14
 Werkzeug==0.12.2
    </pre>
 
-   A description the Flask Framework is at <a target="_blank" href="http://flask.pocoo.org/">http://flask.pocoo.org</a> 
+0. Download and install Python dependencies specified:
+
+   <tt><strong>pip install -r requirements.txt
+   </strong></tt>
+
+   <pre>DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 won't be maintained after that date. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+Collecting aniso8601==1.2.0
+  Downloading https://files.pythonhosted.org/packages/5b/fb/251a0dd2f4710e60664ddd8bd3485bd8362530f47af9e88f4061fe589ebf/aniso8601-1.2.0.tar.gz (59kB)
+     |████████████████████████████████| 61kB 440kB/s
+Collecting appdirs==1.4.0
+  Downloading https://files.pythonhosted.org/packages/7b/8b/eebc6e2002a1e0383f1c7108d0111d4d33ea93bf417d7e19e43ec9b87b2b/appdirs-1.4.0-py2.py3-none-any.whl
+Collecting click==6.7
+  Downloading https://files.pythonhosted.org/packages/34/c1/8806f99713ddb993c5366c362b2f908f18269f8d792aff1abfd700775a77/click-6.7-py2.py3-none-any.whl (71kB)
+     |████████████████████████████████| 71kB 920kB/s
+Collecting Flask==0.12
+  Downloading https://files.pythonhosted.org/packages/0e/e9/37ee66dde483dceefe45bb5e92b387f990d4f097df40c400cf816dcebaa4/Flask-0.12-py2.py3-none-any.whl (82kB)
+     |████████████████████████████████| 92kB 971kB/s
+Collecting Flask-Jsonpify==1.5.0
+  Using cached https://files.pythonhosted.org/packages/60/0f/c389dea3988bffbe32c1a667989914b1cc0bce31b338c8da844d5e42b503/Flask-Jsonpify-1.5.0.tar.gz
+Collecting Flask-RESTful==0.3.5
+  Downloading https://files.pythonhosted.org/packages/15/2e/41485f3d74103412266f3ce07675adf4bd5b4da16f5f3599b2d114374631/Flask_RESTful-0.3.5-py2.py3-none-any.whl
+Collecting Flask-SQLAlchemy==2.1
+  Downloading https://files.pythonhosted.org/packages/b3/52/227aaf4e8cebb153e239c518a9e916590b2fe0e4350e6b02d92b546b69b7/Flask-SQLAlchemy-2.1.tar.gz (95kB)
+     |████████████████████████████████| 102kB 1.1MB/s
+Collecting itsdangerous==0.24
+  Downloading https://files.pythonhosted.org/packages/dc/b4/a60bcdba945c00f6d608d8975131ab3f25b22f2bcfe1dab221165194b2d4/itsdangerous-0.24.tar.gz (46kB)
+     |████████████████████████████████| 51kB 762kB/s
+Collecting Jinja2==2.9.5
+  Downloading https://files.pythonhosted.org/packages/3c/d1/49d69bc23d0e0c7612248dd8f5391bd043648865132309616c280ca1c837/Jinja2-2.9.5-py2.py3-none-any.whl (340kB)
+     |████████████████████████████████| 348kB 942kB/s
+Collecting MarkupSafe==0.23
+  Downloading https://files.pythonhosted.org/packages/c0/41/bae1254e0396c0cc8cf1751cb7d9afc90a602353695af5952530482c963f/MarkupSafe-0.23.tar.gz
+Collecting packaging==16.8
+  Downloading https://files.pythonhosted.org/packages/87/1b/c39b7c65b5612812b83d6cab7ef2885eac9f6beb0b7b8a7071a186aea3b1/packaging-16.8-py2.py3-none-any.whl
+Collecting pyparsing==2.1.10
+  Downloading https://files.pythonhosted.org/packages/2b/f7/e5a178fc3ea4118a0edce2a8d51fc14e680c745cf4162e4285b437c43c94/pyparsing-2.1.10-py2.py3-none-any.whl (56kB)
+     |████████████████████████████████| 61kB 2.3MB/s
+Collecting python-dateutil==2.6.0
+  Downloading https://files.pythonhosted.org/packages/40/8b/275015d7a9ec293cf1bbf55433258fbc9d0711890a7f6dc538bac7b86bce/python_dateutil-2.6.0-py2.py3-none-any.whl (194kB)
+     |████████████████████████████████| 194kB 636kB/s
+Collecting pytz==2016.10
+  Downloading https://files.pythonhosted.org/packages/f5/fa/4a9aefc206aa49a4b5e0a72f013df1f471b4714cdbe6d78f0134feeeecdb/pytz-2016.10-py2.py3-none-any.whl (483kB)
+     |████████████████████████████████| 491kB 977kB/s
+Collecting six==1.10.0
+  Downloading https://files.pythonhosted.org/packages/c8/0a/b6723e1bc4c516cb687841499455a8505b44607ab535be01091c0f24f079/six-1.10.0-py2.py3-none-any.whl
+Collecting SQLAlchemy==1.1.5
+  Downloading https://files.pythonhosted.org/packages/da/04/8048a5075d6e29235bbd6f1ea092a38dbe2630c670e73d4aa923a4e5521c/SQLAlchemy-1.1.5.tar.gz (5.1MB)
+     |████████████████████████████████| 5.1MB 551kB/s
+Collecting Werkzeug==0.11.15
+  Downloading https://files.pythonhosted.org/packages/ef/c6/3c431fea5f93c8bc869ec9c7bdad9ffef4ff9c81bfe1d294217447206c46/Werkzeug-0.11.15-py2.py3-none-any.whl (307kB)
+     |████████████████████████████████| 317kB 676kB/s
+Building wheels for collected packages: aniso8601, Flask-Jsonpify, Flask-SQLAlchemy, itsdangerous, MarkupSafe, SQLAlchemy
+  Building wheel for aniso8601 (setup.py) ... done
+  Created wheel for aniso8601: filename=aniso8601-1.2.0-cp27-none-any.whl size=16351 sha256=7277a9c4da02bd09635775afa67967dcf1e5352ad441fb425def7a5930337548
+  Stored in directory: /Users/wilson_mar/Library/Caches/pip/wheels/03/22/40/9b2f558eaa39d530e792583795d55365b67efb4299d0dbd5c7
+  Building wheel for Flask-Jsonpify (setup.py) ... done
+  Created wheel for Flask-Jsonpify: filename=Flask_Jsonpify-1.5.0-cp27-none-any.whl size=3080 sha256=108c18d63b5c289212bb733f9a0d1681dc14460276ecf99260aba3da22e40553
+  Stored in directory: /Users/wilson_mar/Library/Caches/pip/wheels/ea/a9/40/ac47ad604861c1a40499042d30c22cdb7d1fa1abf426597788
+  Building wheel for Flask-SQLAlchemy (setup.py) ... done
+  Created wheel for Flask-SQLAlchemy: filename=Flask_SQLAlchemy-2.1-cp27-none-any.whl size=13440 sha256=f1c2a2a9755f6e28ce2fec9bcb9ebc1a85751850cbe8500a8637684454f4bcfe
+  Stored in directory: /Users/wilson_mar/Library/Caches/pip/wheels/bd/18/c4/5b1ebaec15e2bb933089576ebf905ea29976b2f37ed629e1c3
+  Building wheel for itsdangerous (setup.py) ... done
+  Created wheel for itsdangerous: filename=itsdangerous-0.24-cp27-none-any.whl size=10623 sha256=ac156c8d22f46e9c01e6ec15e141d34565f256805bd50f09b5120c72be73f498
+  Stored in directory: /Users/wilson_mar/Library/Caches/pip/wheels/2c/4a/61/5599631c1554768c6290b08c02c72d7317910374ca602ff1e5
+  Building wheel for MarkupSafe (setup.py) ... done
+  Created wheel for MarkupSafe: filename=MarkupSafe-0.23-cp27-cp27m-macosx_10_14_intel.whl size=17219 sha256=5356a8af98f85fbb6e48c28b84ce37062fe04b2161b369450ff6b9baa52b5ffe
+  Stored in directory: /Users/wilson_mar/Library/Caches/pip/wheels/28/de/65/f28b426d990edb591113e1549c8a0f09034e5958e440629306
+  Building wheel for SQLAlchemy (setup.py) ... done
+  Created wheel for SQLAlchemy: filename=SQLAlchemy-1.1.5-cp27-cp27m-macosx_10_14_intel.whl size=1037499 sha256=2d7a333a5d66c004a607bb5a605f0aa3b706831af82161eca1eb236d18314b32
+  Stored in directory: /Users/wilson_mar/Library/Caches/pip/wheels/9b/a4/89/5faed97aa81a384fd97c900b51c964ee28ba4bccd569e51607
+Successfully built aniso8601 Flask-Jsonpify Flask-SQLAlchemy itsdangerous MarkupSafe SQLAlchemy
+ERROR: matplotlib 1.3.1 requires nose, which is not installed.
+ERROR: matplotlib 1.3.1 requires tornado, which is not installed.
+Installing collected packages: six, python-dateutil, aniso8601, appdirs, click, itsdangerous, Werkzeug, MarkupSafe, Jinja2, Flask, Flask-Jsonpify, pytz, Flask-RESTful, SQLAlchemy, Flask-SQLAlchemy, pyparsing, packaging
+  Found existing installation: six 1.4.1
+ERROR: Cannot uninstall 'six'. It is a distutils installed project and thus we cannot accurately determine which files belong to it which would lead to only a partial uninstall.
+   </pre>
+
+0. Read the description the Flask Framework at <a target="_blank" href="http://flask.pocoo.org/">http://flask.pocoo.org</a> 
 
    Additional information about the Flask framework is at:
 
@@ -264,8 +287,7 @@ Werkzeug==0.12.2
 
 0. Install SQLite3 on MacOS from the internet:
 
-   <tt><strong>
-   brew install sqlite3 -g
+   <tt><strong>brew install sqlite3 -g
    </strong></tt>
 
    This installs in another folder (not the pwd).
@@ -286,9 +308,8 @@ Werkzeug==0.12.2
 
    The response contains the date of the SQLite3 version being used:
 
-   <pre>
-   SQLite version 3.16.0 2016-11-04 19:09:39
-   Enter ".help" for usage hints.
+   <pre>SQLite version 3.24.0 2018-06-04 14:10:15
+Enter ".help" for usage hints.
    sqlite> 
    </pre>
 
@@ -378,19 +399,17 @@ Werkzeug==0.12.2
 
    The response:
 
-   <pre>
-   albums          employees       invoices        playlists
+   <pre>albums          employees       invoices        playlists
    artists         genres          media_types     tracks
    customers       invoice_items   playlist_track
    </pre>
 
-   PROTIP: These tables are a rather strang assortment that normally do not belong together. But it's there as technical samples.
+   PROTIP: These tables are a rather strange assortment that normally do not belong together. But it's there as <a target="_blank" href="http://www.sqlitetutorial.net/download/sqlite-sample-database-diagram/?wpdmdl=96">technical samples</a>.
 
 
    <a name="DBschema"></a>
 
-   <a target="_blan" href="http://www.sqlitetutorial.net/download/sqlite-sample-database-diagram/?wpdmdl=96">
-   <img alt="sqlite-sample-database-color-650x327-82797" width="650" heigh="327" src="https://user-images.githubusercontent.com/300046/31187951-48433100-a8e8-11e7-8cfb-6298fc1db760.jpg"></a>
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/31187951-48433100-a8e8-11e7-8cfb-6298fc1db760.jpg"><img alt="sqlite-sample-database-color-650x327-82797" width="650" heigh="327" src="https://user-images.githubusercontent.com/300046/31187951-48433100-a8e8-11e7-8cfb-6298fc1db760.jpg"></a>
 
 0. For more information from the <a target="_blank" href="http://www.sqlitetutorial.net/sqlite-sample-database/">SQLite Tutorial website</a>.
 
@@ -408,35 +427,42 @@ Werkzeug==0.12.2
 
    ### invoke
 
-0. Open another Terminal shell window so that the database remains running.
-0. Change to the directory you are using:
+0. <strong>Open another Terminal</strong> shell window so that the database remains running.
+0. Navigate to the directory you are using:
 
-   <tt><strong>
-   cd ~/gits/wilsonmar/python-api-flask
+   <tt><strong>cd ~/gits/wilsonmar/python-api-flask
    </strong></tt>
 
 0. Ensure permissions: On a Mac:
 
-   <tt><strong>
-   chmod a+x server.py
+   <tt><strong>chmod a+x server.py
    </strong></tt>
 
-0. Initiate the Python web service:
+0. Initiate the Python version 2.7 web service:
 
-   <tt><strong>
-   python server.py
+   <tt><strong>python server.py
    </strong></tt>
 
    Alternately:
 
-   <tt><strong>
-   ./server.py
+   <tt><strong>./server.py
    </strong></tt>
 
-   The response:
+   If you get this response, run requirements.txt:
 
-   <pre>
-   * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+   <pre>Traceback (most recent call last):
+  File "server.py", line 2, in <module>
+    from flask import Flask, request, jsonify
+ImportError: No module named flask</pre>
+
+   The response expected:
+
+   <pre> * Serving Flask app "server" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
    </pre>
 
    TODO: Add HATEOS to respond to URL with no resource (folder) specified.
@@ -444,10 +470,10 @@ Werkzeug==0.12.2
 
    ## Routes Walkthough
 
+0. Open `server.py` in a text editor.
 0. View the bottom of the program where code to invoke it is defined:
 
-   <pre>
-if __name__ == '__main__':
+   <pre>if __name__ == '__main__':
      app.run
    </pre>
 
@@ -460,17 +486,16 @@ if __name__ == '__main__':
 
    ### Get Tracks
 
-0. In your browser, go to the first URL:
+0. In your browser, go to the URL with "tracks":
 
    <a target="_blank" href="http://127.0.0.1:5000/tracks">http://127.0.0.1:5000/tracks</a>
 
    Alternately, on the command line:
 
-   <tt><strong>
-   curl -i http://127.0.0.1:5000/tracks
+   <tt><strong>curl -i http://127.0.0.1:5000/tracks
    </strong></tt>
 
-   The response shows details for each media track:
+   The response (JSON file) shows details for each media track:
 
    <pre>
 {
@@ -483,7 +508,8 @@ if __name__ == '__main__':
     }, 
    </pre>
 
-   This output is from a database query to obtain a result returned.
+
+0. Review this output from a database query to obtain a result returned:
 
    <pre>
 class Tracks(Resource):
@@ -522,14 +548,12 @@ class Tracks(Resource):
 
    Alternately, on the command line:
 
-   <tt><strong>
-   curl -i http://127.0.0.1:5000/employees
+   <tt><strong>curl -i http://127.0.0.1:5000/employees
    </strong></tt>
 
    The response shows ids of all the employees in the pre-populated database. All 8 in the sample database:
 
-   <pre>
-   {"employees": [1, 2, 3, 4, 5, 6, 7, 8]}
+   <pre>{"employees": [1, 2, 3, 4, 5, 6, 7, 8]}
    </pre>
 
    TODO: Now we change the code to list employee names instead of just their numbers.
@@ -539,18 +563,16 @@ class Tracks(Resource):
 
 0. In your browser, go to the URL accessing the employees/item route:
 
-   * <a target="_blank" href="http://127.0.0.1:5000/employees/8">http://127.0.0.1:5000/employees/8</a> 
+   <a target="_blank" href="http://127.0.0.1:5000/employees/8">http://127.0.0.1:5000/employees/8</a> 
 
    Alternately, on the command line:
 
-   <tt><strong>
-   curl -i http://127.0.0.1:5000/employees/8
+   <tt><strong>curl -i http://127.0.0.1:5000/employees/8
    </strong></tt>
 
-   The response shows details of employee whose employeeid is 8:
+   Either way, this response shows details of employee whose employeeid is 8:
 
-   <pre>
-{
+   <pre>{
   "data": [
     {
       "Address": "923 7 ST NW", 
@@ -575,8 +597,7 @@ class Tracks(Resource):
 
    The output output is from this code which makes a database query:
 
-   <pre>
-class Employees(Resource):
+   <pre>class Employees(Resource):
     def get(self):
         conn = db_connect.connect() # connect to database
         query = conn.execute("select * from employees") # This line performs query and returns json result
@@ -594,8 +615,7 @@ class Employees(Resource):
 
    The code to post a new entry is this:
 
-   <pre>
-   def post(self):
+   <pre>def post(self):
         conn = db_connect.connect()
         print(request.json)  # used during testing.
         LastName = request.json['LastName']
@@ -631,8 +651,7 @@ class Employees(Resource):
 
    If a curl utility program is used as the client, it would look like this:
 
-   <tt><strong>
-   curl -X POST http://127.0.0.1:5000/employees/9 -d '{"LastName":"Wayne", "FirstName":"Bruce"}' -H "Content-Type: application/json"
+   <tt><strong>curl -X POST http://127.0.0.1:5000/employees/9 -d '{"LastName":"Wayne", "FirstName":"Bruce"}' -H "Content-Type: application/json"
    </strong></tt>
 
    PROTIP: The simple sample code contains no editing of inputs which all "production worthy" code should have. Examples of edits include whether all required fields are supplied and that content are valid. Such edits would be in client software as well.
@@ -644,7 +663,6 @@ class Employees(Resource):
    The `application/json` specifes the format expected back from the server.
 
    PROTIP: This starter program does not have logic to prevent duplicates from being added.
-
 
 
 ## Next
@@ -682,6 +700,14 @@ https://www.codementor.io/sagaragarwal94/building-a-basic-restful-api-in-python-
 
 https://scotch.io/tutorials/build-a-restful-api-with-flask-the-tdd-way
 
-http://python.apichecklist.com/  from Dan Bader.   
+http://python.apichecklist.com/ from Dan Bader.   
 
+<a target="_blank" href="https://realpython.com/flask-google-login/">
+How to build a web app using Python’s Flask and Google App Engine"</a> 5 Nov 2018.
+It uses the OpenWeather API.
 
+<a target="_blank" href="https://app.pluralsight.com/search/?q=flask&m_sort=relevance&page=1&query_id=aa6a9dbd-3cc7-49ef-bb5b-2aefe699ce56">Pluralsight has several video tutorials on Flask</a>:
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/flask-micro-framework-introduction/table-of-contents">"Introduction to the Flask Microframework" 26 Dec 2014</a> 3h 57m by Reindert-Jan Ekker (@rjekker)
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/flask-micro-framework-introduction/table-of-contents">
