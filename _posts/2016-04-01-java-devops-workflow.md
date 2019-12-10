@@ -22,11 +22,12 @@ We begin with a manual walkthrough, which we then automate.
 
 ## Establish Environment
 
-1. Decide what architecture you want to use, which determines installation:
+1. Identify the platform you want to install Java into, which determines installation software:
 
    * local machine (laptop running macOS, Windows, Linux)
    * Docker image
    * Vagrant or VMWare image that includes an operating system
+   <br /><br />
 
 2. If Docker or Vagrant, Download and install the virtualization utility on your laptop or a virtual instance.
 
@@ -34,13 +35,14 @@ We begin with a manual walkthrough, which we then automate.
 
 3. Run a script to download and install package manager for your operating system:
 
-   * On Mac, Homebrew.
-   * On Windows, Chocolatey.
-   * On Ubuntu Linux, apt-get
-   * On Red Hat, yum 
+   * On Mac: Homebrew
+   * On Windows: Chocolatey
+   * On Ubuntu Linux: apt-get
+   * On Red Hat: yum 
    * etc.
+   <br /><br />
 
-4. Download and install language (VM) support utilities:
+4. The choice of language (VM) support utilities you use and the license you want to pay are:
 
    * <a target="_blank" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">
    Java SDK download from Oracle</a>
@@ -86,6 +88,7 @@ We begin with a manual walkthrough, which we then automate.
    * https://github.com/google/guava
    * https://en.wikipedia.org/wiki/Google_Guava
    * http://www.tutorialspoint.com/guava/
+   <br /><br />
 
    It provides utility methods that makes use of functional programming for:
 
@@ -97,10 +100,16 @@ We begin with a manual walkthrough, which we then automate.
    * caching
    * concurrency
    * common annotations
+   <br /><br />
 
-1. <strong>Log4J</strong>
+1. <strong>Logging framework</strong>
 
    * Log4J
+
+1. <strong>Metric extraction framework</strong>
+
+   * ElasticCache
+   * Prometheus (open source)
 
 
 ## Compile OK?
@@ -117,7 +126,7 @@ By "known good" we mean more than what is needed to compile:
    javac HelloWorld.java
    ```
 
-   NOTE: Case is sensitive, so you'll have to press Shift key for those upper case letters.
+   NOTE: Case is sensitive here, so you'll have to press Shift key for those upper case letters.
 
    NOTE: Compilation means taking the source code in the file HelloWorld.java 
    and creating a file named "HelloWorld.class" containing Java ByteCode (classes, thus the name).
@@ -163,14 +172,6 @@ By "known good" we mean more than what is needed to compile:
 
 ## .gitignore file
 
-8\. Remove the .class files created above by manual run of javac:
-
-   ```
-   rm -rf *.class
-   ```
-
-   Instead we'll be using Maven to run the compiler.
-
 9\. Use a text editor to review the .gitignore file.
 
    The <strong>.gitignore</strong> file among the files specify what should not be sent back up to the repository.
@@ -178,6 +179,15 @@ By "known good" we mean more than what is needed to compile:
    The <strong>.project</strong> folder is ???
 
    Notice the <strong>target</strong> folder which Maven sends its output is not uploaded back to GitHub.
+
+
+   Alternately (less popular and easy to forget approach) remove the .class files created above by manual run of javac:
+
+   ```
+   rm -rf *.class
+   ```
+
+   Instead we'll be using Maven to run the compiler.
 
 ## Install Maven
 
@@ -237,11 +247,12 @@ By "known good" we mean more than what is needed to compile:
    * package
    * install (locally)
    * deploy (to a remote location)
+   <br /><br />
 
    It specifies the Qulice Maven plug-in, which contains several checkers
-   http://www.qulice.com/index.html
+   <a target="_blank" href="http://www.qulice.com/index.html">http://www.qulice.com/index.html</a>
 
-   http://www.qulice.com/quality.html provides links to the quality rules used by checkers packaged into Qulice.
+   <a target="_blank" href="http://www.qulice.com/quality.html">http://www.qulice.com/quality.html</a> provides links to the quality rules used by checkers packaged into Qulice.
 
    `<goal>instrument</goal>` in the pom.xml file invokes Cobertura, which complains when test coverage is not sufficient.
 
