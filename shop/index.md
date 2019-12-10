@@ -247,11 +247,24 @@ BTW Not on this list are locator beacons. I got a few Tile chips (for about $20 
 [_] Micro SD cards and USB sticks for smartphones and cameras.
 
 
+
+<a name="Webcam"></a>
+
+## Webcam
+
+The camera built-in at the top of my laptop is still too low. When I have an additional screen to record in 1900 x 1820 (HD) 16:9 aspect ratio for YouTube, etc. I show everyone my nose hairs.
+
+[_] <a target="_blank" href="https://www.logitech.com/en-us/video/webcams">Logitech offers a range of webcams</a>. I got the $70 <a target="_blank" href="https://www.logitech.com/en-us/product/hd-pro-webcam-c920s?crid=34#specification-tabular">920s</a> with an ingenous clip. Unfortunately, on my Mac it "Works in USB Video Device Class (UVC) mode with supported video-calling clients:".
+
+
+<a target="_blank" href="https://support.logi.com/hc/en-us/articles/360024695174--Downloads-C920s-HD-Pro-Webcam">Logitech's RightSight software (LogiCameraSettings_2.6.2.pkg)</a> automatically moves the camera and adjusts the zoom to comfortably frame meeting participants using 
+Meetup, Rally, or Rally Camera firmware.
+
 <a name="SleepAids"></a>
 
 ## Sleep Aids
 
-[ ] A good set of <strong>eye shades</strong> is 
+[ ] A comfortable set of <strong>eye shades</strong> that block out light from our peripheral vision is important for sleep.
 
 [ ] Neck pillow. The squeeshy ones sold in airport stores are bulky and unsanitary to carry. My favorite is the Trtl Pillow, $30 from Amazon. It's a neck wrap with a metal support on one side.
 
