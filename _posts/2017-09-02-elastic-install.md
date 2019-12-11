@@ -160,9 +160,9 @@ Below are the steps I took to create a public instance within AWS.
 
 0. Scroll down to the bottom of the Analytics section to click on the Elasticsearch Service link. 
 
-  ```
-https://us-west-2.console.aws.amazon.com/es/home?region=us-west-2#
-  ```
+   ```
+   https://us-west-2.console.aws.amazon.com/es/home?region=us-west-2#
+   ```
 
 0. If you want to use a different region, click on "Oregon" (or another) at the upper right corner.
   
@@ -174,9 +174,9 @@ https://us-west-2.console.aws.amazon.com/es/home?region=us-west-2#
 0. PROTIP: When specifying **domain**, keep to lower case characters and perhaps a number at the end for versioning.
    For example:
  
-  ```
-  test1
-  ```
+   ```
+   test1
+   ```
 
 0. For **Instance type**, since I don't have much data yet during experimentation, 
   I use Free Tier eligible **t2.micro.elasticsearch**.
@@ -184,24 +184,24 @@ https://us-west-2.console.aws.amazon.com/es/home?region=us-west-2#
 0. Hover over the (i) icon to the right of **Enable dedicated master**. It says:
    "We recommend that you allocate at least three dedicated master nodes for each production Elastisearch domain."
 
-  I leave blank anyways during experimentation.
+   I leave blank anyways during experimentation.
 
 0. Hover over the (i) icon to the right of **Enable zone awareness**. It says:
    "Distributes nodes across two Availability Zones..."
 
 0. For Storage, I select EBS with 10 GB of General Purpose (SSD) drives.
 
-  PROTIP: Free tier users gets up to 10 gigabytes of Magnetic or SSD-Backed EBS storage at no charge
-  for up to 750 hours per month.
+   PROTIP: Free tier users gets up to 10 gigabytes of Magnetic or SSD-Backed EBS storage at no charge
+   for up to 750 hours per month.
 
 0. After clicking Next, for access policy I select "Allow open access to the domain"
    so anyone can upload documents.
 
-  The version in the file is of AWS access code API version:
+   The version in the file is of AWS access code API version:
   
-  ```
-  "Version": "2012-10-17",
-  ```
+   ```
+   "Version": "2012-10-17",
+   ```
   
 0. Click Next.
 0. Confirm and create. It takes several minutes for Domain status to go from Loading to Ready.
@@ -235,17 +235,17 @@ https://us-west-2.console.aws.amazon.com/es/home?region=us-west-2#
   
 0. Click on the Kibana link, such as:
  
-  ```
-  https://search-test1-da54anmy3esch22sskcuukwf6i.us-west-2.es.amazonaws.com/_plugin/kibana/
-  ```
+   ```
+   https://search-test1-da54anmy3esch22sskcuukwf6i.us-west-2.es.amazonaws.com/_plugin/kibana/
+   ```
   
   <img alt="screen shot 2015-10-13 at 9 42 48 am" src="https://cloud.githubusercontent.com/assets/300046/10461630/12096628-718f-11e5-808b-5b3e2eee0751.png">
   
 0. To make use of the instance using Python in my Mac terminal window:
  
-  ```
-  pip install elasticsearch
-  ```
+   ```
+   pip install elasticsearch
+   ```
   
 0. For more about using Python for Elastisearch, this article (from November 2014):
   
@@ -270,8 +270,8 @@ WARNING: Prior Docker images for Elastic servers on Docker hub (https://hub.dock
 
 0. Retrieve the official Docker image for Elastic server <strong>for a specific release</strong>:
 
-   <tt><strong>docker pull docker.elastic.co/elasticsearch/elasticsearch:5.6.0
-   </strong></tt>
+   <pre><strong>docker pull docker.elastic.co/elasticsearch/elasticsearch:5.6.0
+   </strong></pre>
 
    NOTE: Source code for it can be found on GitHub at<br />
    https://github.com/elastic/elasticsearch-docker/tree/5.6
@@ -288,13 +288,13 @@ WARNING: Prior Docker images for Elastic servers on Docker hub (https://hub.dock
 
 0. Run in development mode (on a different port if you prefer):
 
-   <tt><strong>docker run -p 9200:9200 -e "http.host=0.0.0.0" -e "transport.host=127.0.0.1" docker.elastic.co/elasticsearch/elasticsearch:5.6.0
-   </strong></tt>
+   <pre><strong>docker run -p 9200:9200 -e "http.host=0.0.0.0" -e "transport.host=127.0.0.1" docker.elastic.co/elasticsearch/elasticsearch:5.6.0
+   </strong></pre>
 
    Alternately, bring up a cluster of several Elasticsearch nodes based on specifications in the `docker-compose.yml` file:
 
-   <tt><strong>docker-compose up
-   </strong></tt>
+   <pre><strong>docker-compose up
+   </strong></pre>
    
    NOTE: The image is built with X-Pack and uses centos:7 as the base image. 
 
@@ -311,19 +311,19 @@ WARNING: Prior Docker images for Elastic servers on Docker hub (https://hub.dock
 
 0. Verify the Linux operating system:
 
-   <tt><strong>cat /etc/issue.net; ifconfig
-   </strong></tt>
+   <pre><strong>cat /etc/issue.net; ifconfig
+   </strong></pre>
 
 0. Get IP address assigned, to later put in the elasticsearch.yml file:
 
-   <tt><strong>ifconfig
-   </strong></tt>
+   <pre><strong>ifconfig
+   </strong></pre>
 
 0. Install the Java runtime:
 
-   <tt><strong>apt-get install openjdk-8-jre-headless && 
+   <pre><strong>apt-get install openjdk-8-jre-headless && 
    java -version
-   </strong></tt>
+   </strong></pre>
 
 0. Get curl:
 
@@ -334,24 +334,23 @@ WARNING: Prior Docker images for Elastic servers on Docker hub (https://hub.dock
 
 0. Make a folder:
 
-   <tt><strong>mkdir pkg
-   </strong></tt>
+   <pre><strong>mkdir pkg
+   </strong></pre>
 
 0. QUESTION: Identify the version you want to use.
 
 0. Download Debian package from Elastic:
 
-   <tt><strong>wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.0.deb
-   </strong></tt>
+   <pre><strong>wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.0.deb
+   </strong></pre>
 
    PROTIP: RPM and Debian packages are available. Satellite versions from the OS
    ES.co does not recommend apt-get which may be older than those directly from Elastic.co.
 
 0. De-package:
 
-   <tt><strong>dpkg -i elasticsearch-5.6.0.deb
-   </strong></tt>
-
+   <pre><strong>dpkg -i elasticsearch-5.6.0.deb
+   </strong></pre>
 
 
    <a name="elasticsearch.yml"></a>
@@ -406,11 +405,11 @@ WARNING: Prior Docker images for Elastic servers on Docker hub (https://hub.dock
 
    The response should be JSON reflecting its most recent build metadata.
 
-   Alternately, invoke
+   Alternately, invoke:
 
-  ```
+   ```
 bin/elasticsearch --cluster.name=my-application --node.name=node-1 --path.repo=/
-  ```
+   ```
 
 0. Make it come up after a reboot. On Linux:
 
@@ -430,7 +429,8 @@ which details how to setup Elasticsearch.
 * <a target="_blank" href="http://jakege.blogspot.sg/2014/03/how-to-install-elasticsearch.html">
 How to Install and Configure Elasticsearch</a>
 
-
+* ObjectRocker has a KnowledgeBase of articles at 
+https://kb.objectrocket.com/category/elasticsearch
 
 ## More #
 
