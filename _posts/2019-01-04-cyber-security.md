@@ -63,6 +63,8 @@ The Center for Internet Security (CIS) is a community of users, vendors and subj
 
    <a target="_blank" href="https://www.cisecurity.org/white-papers/cis-controls-v7-poster/">https://www.cisecurity.org/white-papers/cis-controls-v7-poster</a>
 
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/70711044-c5ab4300-1c9d-11ea-895c-de0987e933a7.png"><img alt="cybersecurity-CIS-Center-for-Internet-Security-CIS-Controls.png" src="https://user-images.githubusercontent.com/300046/70711044-c5ab4300-1c9d-11ea-895c-de0987e933a7.png"></a>
+
 1. Download CIS Benchmark pdf files for each product (Amazon Linux, MongoDB, etc.) from:
 
    <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks/">
