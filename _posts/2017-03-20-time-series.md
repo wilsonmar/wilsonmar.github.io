@@ -42,11 +42,11 @@ Below are vizualizations that have the following traits:
 
 ## Fortune 500 in the US
 
-<a target="_blank" href="http://beta.fortune.com/fortune500/visualizations/">
-http://beta.fortune.com/fortune500/visualizations<br />
-<img width="1015" alt="dataviz time-series 2030x984" src="https://cloud.githubusercontent.com/assets/300046/24097787/cdd3b2f0-0d3d-11e7-889e-a99b161e1f55.png"></a>
+View <a target="_blank" href="https://fortune.com/fortune500/visualizations/">https://fortune.com/fortune500/visualizations/<br />
+to select an industry and mouse over a line to see each company's ranking change over the last 20 years.
 
-Select an industry and mouse over a line to see each company's ranking change over the last 20 years.
+<a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/24097787/cdd3b2f0-0d3d-11e7-889e-a99b161e1f55.png"><img width="1015" alt="dataviz time-series 2030x984" src="https://cloud.githubusercontent.com/assets/300046/24097787/cdd3b2f0-0d3d-11e7-889e-a99b161e1f55.png"></a>
+
 The higher each line appears, the higher the company is on Fortune magazine's 500 largest public companies. 
 
 Companies that have a rising trajectory include:
@@ -66,12 +66,7 @@ Companies that have a rising trajectory include:
    * Cognizant
    * Oracle
 
-<a target="_blank" href="http://beta.fortune.com/global500/visualizations/">
-http://beta.fortune.com/global500/visualizations</a>
-
-Illustrates the fast growth across industries in China.
-
-Plus:
+Plus, globally:
 
    * Softbank
 
@@ -84,8 +79,6 @@ Nicolas Rapp</a> also created for Fortune 500 this graphic:
 
 <a target="_blank" href="http://nicolasrapp.com/portfolio/fortune-500-profits-run-gas/">
 <img alt="dataviz-fortune500-oil-1120x772" src="https://cloud.githubusercontent.com/assets/300046/24098047/04c3dc1c-0d3f-11e7-9ec7-bc6d18022e8e.png"></a>
-
-
 
 
 ## Hans Roling
@@ -145,6 +138,13 @@ Metrics include:
 * Percent of value-add time vs. total time.
    For example: In the case of physician visits, time interacting with physician vs. waiting and other activities.
 
+
+## H20.ai
+
+<a target="_blank" href="https://www.h2o.ai/">h20.ai</a>
+provides a web-based (SaaS and on-premise) "driverless" tool that automatically visualizes a time series dataset:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/70820904-fae78c00-1d96-11ea-9387-ed44141b0bdf.png"><img alt="time-series-groups-h20-1277x495" href="https://user-images.githubusercontent.com/300046/70820904-fae78c00-1d96-11ea-9387-ed44141b0bdf.png"></a>
 
 
 ## Time Series databases
