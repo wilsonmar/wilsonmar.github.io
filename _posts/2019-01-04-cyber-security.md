@@ -129,8 +129,7 @@ Compliance scores go to 100.
 "CIS Controls Measures and Metrics for Version 7" Excel spreadsheet (file CIS-Controls-Version-7-cc.xlsx) contains 170 sub-controls applicable to these <strong>20 controls</strong> ("best practices") described by the CIS Controls Companion Guide:
 
 file CIS-Controls-Version-7-cc.pdf
-
-https://learn.cisecurity.org/20-controls-download
+from <a target="_blank" href="https://learn.cisecurity.org/20-controls-download">https://learn.cisecurity.org/20-controls-download</a>
 
 #### &nbsp; &nbsp; &nbsp; Basic:
 

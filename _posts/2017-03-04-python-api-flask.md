@@ -17,9 +17,13 @@ comments: true
 {% include _toc.html %}
 
 
-This is a hands-on tutorial showing how to quickly create a simple Python blog server program to process sample REST API calls from a user's browser. By hands-on I mean explanations are provided after you do each action. Actions include folder navigation and creation, virtualenv, etc.
+Flask is called a "micro-framework" because, unlike Django and other analogues like Ruby on Rails, it provides only what is necessary to do core web development, leaving you to add plug-ins beyond that minimal subset.
+
+Flask's approach keeps your code and workflow simple, particularly on smaller projects. 
 
 <hr />
+
+This is a hands-on tutorial showing how to quickly create a simple Python blog server program to process sample REST API calls from a user's browser. By hands-on I mean explanations are provided after you do each action. Actions include folder navigation and creation, virtualenv, etc.
 
 1. [Open a Terminal shell window on Mac or cmd window on Windows](/terminal/).
 0. Create a folder where you hold various projects under your user home folder. On a Mac:
@@ -471,12 +475,46 @@ ImportError: No module named flask</pre>
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
    </pre>
 
-   Alternately, define the environment variable recognized by Flask and run flask:
+
+   ### Run Flask Compile and Prewiew 
+
+0. Define the environment variable recognized by Flask and run flask:
 
    <pre><strong>export FLASK_APP=server.py
-   flask run
    </strong></pre>
 
+0. Compile using Flask
+
+   <pre><strong>flask run
+   </strong></pre>
+
+   Alternately:
+
+   <pre><strong>python -m flask run
+   </strong></pre>
+
+0. In a browser visit the web page on the designated port:
+
+   <pre><strong>open https://localhost:5000
+   </strong></pre>
+
+0. If you are following along <a href="#TomBellProjects">Tom Bell's projects on Pluralsight</a>, see his preview at:
+
+   <a target="_blank" href="https://pfjb.thomasbell.org">https://pfjb.thomasbell.org</a>
+
+   <a target="_blank" href="https://app.pluralsight.com/projects/build-a-job-board-with-python-flask/discussion">Discussions with Tom Bell</a>
+
+
+   ## Tests Walkthough
+
+   Tests are coded first in a BDD (Behavior Driven Design):
+
+0. Open `tests.py` in a text editor.
+0. View the bottom of the program where code to invoke it is defined:
+
+   <pre>if __name__ == '__main__':
+     app.run
+   </pre>
 
    ## Routes Walkthough
 
@@ -745,7 +783,10 @@ FEBRUARY 19, 2018
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/python-flask-rest-api/table-of-contents">"Building a REST API Using Python and Flask" 2 Jul 2018</a> 1h 57m by Sanjay Rai
    covers getting, posting, updating, storing data. It also covers adding authentication to the API.
 
-Tom Bell's projects:
+
+<a name="TomBellProjects"></a>
+
+Tom Bell's projects at Pluralsight.com (<a target="_blank" href="https://twitter.com/search?q=%23pluralsight-projects&src=typed_query">pluralsight-projects</a>) have videos along with step-by-step instructions and checking of work your in GitHub (like Code School before purchase by Pluralsight):
 
    * <a target="_blank" href="https://app.pluralsight.com/projects/add-authentication-to-a-flask-cms">"Add Authentication to a Flask CMS"</a> checks on whether you've forked from https://github.com/pluralsight-projects/PythonFlask-CMSAuthentication, etc. The project involves managing session variables, clear and get session data, custom route decorators. Initially, all the tests fail. The course covers fixing the tests. The solution is at another branch:
    https://github.com/wilsonmar/PythonFlask-CMSAuthentication/tree/module1-solution
@@ -759,3 +800,26 @@ Tom Bell's projects:
 How to build a web app using Python’s Flask and Google App Engine"</a> 5 Nov 2018.
 It uses the OpenWeather API.
 
+   * https://www.codeastar.com/easy-python-weather-forecast-tool/ uses the  geopy python module and https://darksky.net/dev API in https://github.com/codeastar/weather_on_trip from 2017
+   
+   * https://www.codeastar.com/easy-accuweather-forecast-in-python/ using tinydb by
+   https://github.com/codeastar/ez_accuweather_python
+
+## Sample front-end projects
+
+https://www.youtube.com/watch?v=YW8VG_U-m48
+Serving React with a Flask Backend (using PyCharm, Yarn)
+
+   * https://subscription.packtpub.com/book/web_development/9781785881114/8/ch08lvl1sec45/reactjs-and-flask  book on Packt By Tarek Ziadé July 2017
+
+   * https://medium.com/@neilvodoor/using-react-w-flask-82d8341876e4
+
+   * https://www.codeastar.com/react-frontend-weather-forecast-2/
+
+   * https://developer.okta.com/blog/2018/12/20/crud-app-with-python-flask-react
+
+https://testdriven.io/blog/developing-a-single-page-app-with-flask-and-vuejs/
+
+https://github.com/alexdebrie/serverless-flask
+
+https://stackabuse.com/serving-static-files-with-flask/

@@ -142,9 +142,15 @@ Metrics include:
 ## H20.ai
 
 <a target="_blank" href="https://www.h2o.ai/">h20.ai</a>
-provides a web-based (SaaS and on-premise) "driverless" tool that automatically visualizes a time series dataset:
-
+provides a web-based (SaaS and on-premise) tool that automatically visualizes a time series dataset: 
+<a target="_blank" href="https://www.youtube.com/watch?v=fxKF616nC1I&time=7m3s">VIDEO:</a>
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/70820904-fae78c00-1d96-11ea-9387-ed44141b0bdf.png"><img alt="time-series-groups-h20-1277x495" href="https://user-images.githubusercontent.com/300046/70820904-fae78c00-1d96-11ea-9387-ed44141b0bdf.png"></a>
+
+H2o's software is called "driverless" because it automatically recognizes multiple groups (annual, monthly, weekly, daily, hourly, etc.) by analyzing calculated lags, standard deviations, and other descriptive statistics. It also looks at interactions between trends.
+
+Visit the <a target="_blank" href="http://aquarium.h2o.ai/lab/dai-testdrive">h2o Aquarium: "Introduction to Driverless AI" Lab</a>
+
+https://www.h2o.ai/try-driverless-ai/
 
 
 ## Time Series databases

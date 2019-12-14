@@ -27,8 +27,7 @@ This is a deep dive into the various editions to equip you to debug JVM installa
 
 1. Open a Terminal session.
 
-
-5. Shell scripts check if Java is available by:
+1. Shell scripts check if Java is available by:
 
    <pre><strong>command -v java</strong></pre>
 
@@ -47,7 +46,7 @@ This is a deep dive into the various editions to equip you to debug JVM installa
    <pre><strong>/usr/bin/java -version
    </strong></pre>
 
-   PROTIP: <tt>-version</tt> is a non-standard parameter. Most other programs use either the <tt>-v</tt> flag or <tt>\-\-version</tt> parameter.
+   PROTIP: <tt>\-version</tt> is a non-standard parameter. Most other programs use either the <tt>\-v</tt> flag or two-dash <tt>\-\-version</tt> with the longer-form parameter name.
 
    A sample response:
 
@@ -56,18 +55,24 @@ Java(TM) SE Runtime Environment (build 1.8.0_162-b12)
 Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    </pre>
 
-0. PROTIP: Developers use the JDK rather than the JRE (Runtime Environment),
-   see what version of the <strong>Java Compiler</strong> is installed:
 
-   <pre><strong>javac -version
-   </strong></pre>
+3. List which versions are installed on your machine:
 
-   A sample response:
-
-   <pre>
-   javac 1.8.0_162
+   <pre>ls /Library/Java/JavaVirtualMachines/
    </pre>
 
+   PROTIP: On Macs, all known JVM's are located at: <br />
+   <tt><strong>/Library/Java/JavaVirtualMachines/</strong></tt>
+
+   NOTE: This directory is at the root for the whole machine, not a particular user's home folder.
+
+   The response on my machine: 
+   
+   <pre>adoptopenjdk-8.jdk
+   jdk1.8.0_162.jdk
+   jdk1.8.0_202.jdk
+   zulu8.30.0.1-jdk8.0.172-macosx_x64
+   </pre>
 
 
 2. PROTIP: The Java program looks for the <tt><strong>$JAVA_HOME</strong></tt> environment variable to obtain files:
@@ -87,23 +92,16 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 
    Java is used by Groovy, Grails, Spring Boot, and others.
 
+0. PROTIP: Developers use the JDK rather than the JRE (Runtime Environment) in order to get the <strong>javac</strong> compiler. See what version of the <strong>Java Compiler</strong> is installed:
 
-3. List which versions are installed on your machine:
+   <pre><strong>javac -version
+   </strong></pre>
 
-   <pre>ls /Library/Java/JavaVirtualMachines/
+   A sample response:
+
+   <pre>javac 1.8.0_162
    </pre>
 
-   PROTIP: On Macs, all known JVM's are located at: <br />
-   <tt><strong>/Library/Java/JavaVirtualMachines/</strong></tt>
-
-   NOTE: This directory is at the root for the whole machine, not a particular user's home folder.
-
-   The response on my machine: 
-   
-   <pre>jdk1.8.0_162.jdk
-   jdk1.8.0_202.jdk
-   zulu8.30.0.1-jdk8.0.172-macosx_x64
-   </pre>
 
 4. Additional details are provided with this command:
 
@@ -114,12 +112,20 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 
    The response on my machine:
 
-   <pre>
-Matching Java Virtual Machines (4):
+   <pre>Matching Java Virtual Machines (1):
+    1.8.0_232, x86_64:	"AdoptOpenJDK 8"	/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+&nbsp;
+/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+   </pre>
+
+   Alternately:
+
+   <pre>Matching Java Virtual Machines (4):
 1.8.0_45, x86_64:	"Java SE 8"	/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
 1.7.0_65, x86_64:	"Java SE 7"	/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home
 1.6.0_65-b14-466.1, x86_64:	"Java SE 6"	/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
 1.6.0_65-b14-466.1, i386:	"Java SE 6"	/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+&nbsp;
 /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
    </pre>
 
@@ -144,7 +150,9 @@ Matching Java Virtual Machines (4):
 
    * When <a target="_blank" href="https://www.oracle.com/technetwork/java/eol-135779.html">Oracle</a> acquired Sun, the <strong>jdk</strong> (Java Development Kit) was one of the products obtained. Versions are downloaded directly from Oracle from <a target="_blank" href="http://jdk.java.net/">http://jdk.java.net</a>.
 
+   * <a target="_blank" href="https://adoptopenjdk.net/">https://adoptopenjdk.net/</a> has both 8, 11, and 13 running the tradition "HotSpot" JVM and the more recent and faster "OpenJ9" JVM. To install the latest (v13):
 
+   <pre><strong>brew install adoptopenjdk</strong></pre>
 
    * <a target="_blank" href="https://www.azul.com/downloads/zulu">Azul Zulu</a> <a target="_blank" href="https://www.azul.com/downloads/zulu/zulu-mac/">downloads for macOS</a>, from a company that also sells Java optimization products. Its zulu8.30.0.1-jdk8.0.172-macosx_x64 from zip April 18, 2018 is 179.2 MB expanded
 
@@ -257,7 +265,7 @@ For full documentation, see: https://github.com/hikage/jenv#readme
    if which jenv > /dev/null; then eval "$(jenv init -)"; fi
    </strong></pre>
 
-   ## Jenv for several Java versions
+   ### Jenv for several Java versions
 
 0. Get info:
 
@@ -356,7 +364,7 @@ drwxr-xr-x  3 root  wheel   96 Mar 30  2018 jdk1.8.0_162.jdk
 Open JDK is the open-sourced implementation of the JRE spec, at
 <a target="_blank" href="http://openjdk.java.net/">http://openjdk.java.net</a>
 
-But some say it is not ready for "prime time" on MacOS because its installation is a dirty affair:
+But some say it is not ready for "prime time" on MacOS because its installation is a dirty affair from 2013 when going from v6 to v7:
 
    * https://wiki.openjdk.java.net/display/MacOSXPort/Mac+OS+X+Port+Project+Status
 
@@ -433,21 +441,24 @@ Mac OSX Setup Guide</a>, developed and distributed as a
 
 
 
-   ### Maven (mvn)
+### Maven (mvn)
 
-0. See what derivative program such as Maven use:
+0. Install using Homebrew:
 
-   <tt><strong>
-   mvn -version
-   </strong></tt>
+   <pre><strong>brew install maven
+   </strong></pre>
+
+0. See its metadata and what java version Maven is based on:
+
+   <pre><strong>mvn -version
+   </strong></pre>
 
    If it's installed, the sample response:
 
-   <pre>
-Apache Maven 3.6.1 (d66c9c0b3152b2e69ee9bac180bb8fcc8e6af555; 2019-04-04T13:00:29-06:00)
-Maven home: /usr/local/Cellar/maven/3.6.1/libexec
-Java version: 1.8.0_162, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre
-Default locale: en_US, platform encoding: utf-8
+   <pre>Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
+Maven home: /usr/local/Cellar/maven/3.6.3/libexec
+Java version: 1.8.0_232, vendor: AdoptOpenJDK, runtime: /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre
+Default locale: en_US, platform encoding: UTF-8
 OS name: "mac os x", version: "10.14.6", arch: "x86_64", family: "mac"
    </pre>
 

@@ -1,16 +1,15 @@
 ---
 layout: post
 title: "Selenium Setup"
-excerpt: "How to emulate real users with robots touching your web apps"
-shorturl: "https://goo.gl/"
+excerpt: "How to emulate real users touching your web apps using Python controlling Selenium and Beautiful Soup"
 tags: [ML, GE]
 date: "2017-05-09"
 file: "selenium-setup"
 image:
-# feature: banner-eclipse-1900x500-321k.png
-  feature: https://user-images.githubusercontent.com/300046/28752993-0d1437a4-74fa-11e7-99cc-ed04f625174c.png
-  credit: Software Testing Help
-  creditlink: http://www.softwaretestinghelp.com/how-to-use-different-browsers-drivers-for-your-selenium-script/
+# selenium-setup-typing-1900x500.jpg 
+  feature: https://user-images.githubusercontent.com/300046/70838274-b8d53f00-1dc4-11ea-8837-0435d7994c52.jpg
+  credit:
+  creditlink:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -688,23 +687,37 @@ Usage: safaridriver [options]
    A <strong>Referenced Libraries</strong> item should appear under Package Explorer.
 
 
-   ### Use Chrome driver
+   <a name="ChromeDriver"></a>
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=-stXyMIrsck&t=11s">
-   VIDEO</a>:
+   ### Download Chrome driver
 
-0. Navigate to<br />
-   <a target="_blank" href="http://chromedriver.storage.googleapis.com/index.html">
-   http://chromedriver.storage.googleapis.com/index.html</a>
+   <a target="_blank" href="https://www.youtube.com/watch?v=-stXyMIrsck&t=11s">VIDEO</a>:
 
-0. Scroll down to click the LATEST_RELEASE so it downloads.
-0. Open the file to see the version number (2.31 at time of writing).
-0. Scroll down to that largest version number and click on it.
-0. Click the file for your operating system, such as<br />
-   chromedriver_mac64.zip.
-0. Unzip it to file <strong>chromedriver</strong> Unix executable.
-0. Copy the chromedriver file to <strong>/usr/local/bin</strong> folder.
-0. Restart your Chrome
+0. Open Chrome browser, finish work on all windows as you'll need to relaunch by the time this is done.
+
+   <a target="_blank" href="http://sites.google.com/a/chromium.org/chromedriver/downloads">http://sites.google.com/a/chromium.org/chromedriver/downloads</a>
+   
+0. Identify your version by clicking the three-dot icon at the upper-right, select Help, About Chrome. This would automatically update the browser to the latest version. Take a break becuase this takes several minutes.
+0. Click "Relaunch" and wait until you see "Google Chrome is up to date".
+0. Notice "Version 79.0.3945.79" or whatever it is what you do this.
+
+0. Navigate to:
+
+   <a target="_blank" href="http://chromedriver.storage.googleapis.com/index.html">http://chromedriver.storage.googleapis.com/index.html</a>
+
+0. Scroll down to the bottom of the page to click the highest number folder (above the LATEST_RELEASE links).
+0. Right-Click the file for your operating system, such as:
+   
+   <pre>chromedriver_mac64.zip</pre>
+
+0. Select "Save Save Link As..." in the pop-up.
+0. Click "Save" and wait for the download to finish.
+
+0. Click on the file to unzip it to file <strong>chromedriver</strong>.
+0. Open another a new Finder window to <strong>/usr/local/bin</strong>.
+0. Use your mouse to drag to move the chromedriver file to that folder.
+
+0. Restart your Chrome.
 0. Try your Selenium WebDriver code.
    
 
@@ -950,6 +963,66 @@ DevTest
 
 NAME BUILD
 
+
+## Python Web scraping
+
+Pluralsight's 1h 7m video course <a target="_blank" href="https://app.pluralsight.com/library/courses/scraping-dynamic-web-pages-python-selenium/table-of-contents" title="6 Jun 2019">"Scraping Dynamic Web Pages with Python and Selenium"</a>
+by <a target="_blank" href="https://www.linkedin.com/in/pratheerthpadman/">Pratheerth Padman</a> covers use of Python invoked by Jupyter Notebook. Python has library Beautiful Soup (to scrape web pages) and Selenium 2.0 WebDriver (to emulate keyboard and mouse movements based on JSON commands).
+
+1. Install Python with virtualvenv and Anaconda.
+1. Install Selenium for Python3
+
+   <pre>pip3 install selenium</pre>
+
+   Sample response:
+
+   <pre>Collecting selenium
+  Downloading https://files.pythonhosted.org/packages/80/d6/4294f0b4bce4de0abf13e17190289f9d0613b0a44e5dd6a7f5ca98459853/selenium-3.141.0-py2.py3-none-any.whl (904kB)
+     |████████████████████████████████| 911kB 507kB/s
+Requirement already satisfied: urllib3 in /Users/wilson_mar/Library/Python/3.7/lib/python/site-packages (from selenium) (1.25.6)
+Installing collected packages: selenium
+Successfully installed selenium-3.141.0
+   </pre>   
+
+1. <a href="#ChromeDriver">Download Chrome driver</a>.
+1. Download <a target="_blank" href="https://pypi.org/project/beautifulsoup4/">Beautiful Soup 4 for Python</a>
+
+   <pre>pip3 install beautifulsoup4</pre>
+
+   Sample response:
+
+   <pre>Collecting beautifulsoup4
+  Downloading https://files.pythonhosted.org/packages/3b/c8/a55eb6ea11cd7e5ac4bacdf92bac4693b90d3ba79268be16527555e186f0/beautifulsoup4-4.8.1-py3-none-any.whl (101kB)
+     |████████████████████████████████| 102kB 528kB/s
+Collecting soupsieve>=1.2
+  Using cached https://files.pythonhosted.org/packages/81/94/03c0f04471fc245d08d0a99f7946ac228ca98da4fa75796c507f61e688c2/soupsieve-1.9.5-py2.py3-none-any.whl
+Installing collected packages: soupsieve, beautifulsoup4
+Successfully installed beautifulsoup4-4.8.1 soupsieve-1.9.5
+   </pre>
+
+0. Download my repository containing
+
+0. In Jupyter Notebook, open file <strong>demo_mod2.ipynb</strong> file which opens a hard-coded web page, then quit. 
+
+   <pre>from selenium import webdriver
+   driver = webdriver.Chrome()
+   driver.get("https://www.pluralsight.com/")
+   driver.quit  # close window
+   </pre>
+
+0. To open browser options and set arguments (as if manually in Settings") before opening:
+
+   <pre>options = webdriver.ChromeOptions()
+   options.add_argument("--ignore-certificate-errors")
+   options.add_argument("--incognito")
+   options.add_argument("--headless")
+   # window at position 0.0, in full screen.
+   driver = webdriver.Chrome(options=options)
+   </pre>
+
+Additional information:
+
+   https://www.pythonforbeginners.com/beautifulsoup/beautifulsoup-4-python
 
 ## Other info
 
