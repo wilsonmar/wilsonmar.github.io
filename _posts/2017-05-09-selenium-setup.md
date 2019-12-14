@@ -966,11 +966,11 @@ NAME BUILD
 
 ## Python Web scraping
 
-Pluralsight's 1h 7m video course <a target="_blank" href="https://app.pluralsight.com/library/courses/scraping-dynamic-web-pages-python-selenium/table-of-contents" title="6 Jun 2019">"Scraping Dynamic Web Pages with Python and Selenium"</a>
-by <a target="_blank" href="https://www.linkedin.com/in/pratheerthpadman/">Pratheerth Padman</a> covers use of Python invoked by Jupyter Notebook. Python has library Beautiful Soup (to scrape web pages) and Selenium 2.0 WebDriver (to emulate keyboard and mouse movements based on JSON commands).
+This is based on Pluralsight's 1h 7m video course <a target="_blank" href="https://app.pluralsight.com/library/courses/scraping-dynamic-web-pages-python-selenium/table-of-contents" title="6 Jun 2019">"Scraping Dynamic Web Pages with Python and Selenium"</a>
+by <a target="_blank" href="https://www.linkedin.com/in/pratheerthpadman/">Pratheerth Padman</a> covers use of Python invoked by Jupyter Notebook. Python has library Beautiful Soup (to scrape HTML and XML from web pages) and Selenium 2.0 WebDriver (to emulate keyboard and mouse movements based on JSON commands).
 
+1. Install Selenium for Python3 (covered above)
 1. Install Python with virtualvenv and Anaconda.
-1. Install Selenium for Python3
 
    <pre>pip3 install selenium</pre>
 
@@ -1002,7 +1002,11 @@ Successfully installed beautifulsoup4-4.8.1 soupsieve-1.9.5
 
 0. Download my repository containing
 
-0. In Jupyter Notebook, open file <strong>demo_mod2.ipynb</strong> file which opens a hard-coded web page, then quit. 
+0. Get in Jupyter Notebook.
+
+   ### Call Selenium from Python
+
+0. In Jupyter Notebook, run file <strong>demo_mod2.ipynb</strong> file which opens a hard-coded web page, then quit. 
 
    <pre>from selenium import webdriver
    driver = webdriver.Chrome()
@@ -1010,7 +1014,7 @@ Successfully installed beautifulsoup4-4.8.1 soupsieve-1.9.5
    driver.quit  # close window
    </pre>
 
-0. To open browser options and set arguments (as if manually in Settings") before opening:
+   To open browser options and set arguments (as if manually in Settings") before opening:
 
    <pre>options = webdriver.ChromeOptions()
    options.add_argument("--ignore-certificate-errors")
@@ -1019,6 +1023,11 @@ Successfully installed beautifulsoup4-4.8.1 soupsieve-1.9.5
    # window at position 0.0, in full screen.
    driver = webdriver.Chrome(options=options)
    </pre>
+
+0. Run file <tt>demo_mod4.ipynb</tt> in Jupyter to use the soup class to scrape quotes attributed to Soccer player Wayne Rooney from premierleague.com.
+
+0. Additional Python code in Jupyter for other work can include Machine Learning such as sentiment analysis.
+
 
 Additional information:
 
