@@ -3,8 +3,7 @@ layout: post
 title: "Maven on MacOS (OSX)"
 excerpt: "for Java, Jenkins, etc."
 tags: [homebrew, apple, mac, setup]
-shorturl: "https://git.io/v1wOy"
-date: "2016-06-23"
+date: "2019-12-14"
 file: "maven-on-macos"
 image:
 # feature: maven-414x297.gif
@@ -21,14 +20,13 @@ This describes how to install Maven using Homebrew, the configure and use it.
 
 Maven is a [task runnner, like Ant, Gradle, Grunt](/task-runners/).
 
+Ant was originally created (using Java) to replace the make utility for cross-platform use. With Ant, everything needs to be coded explictly in XML. Its files are difficult to reuse.
+
 Unlike Ant, Maven also provides 
 dependency management, 
 standard project layout, and 
 project management.
 
-## Default in Jenkins
-
-Maven is the default build tool in the Jenkins continuous integration tool which triggers a Maven build whenever code is committed.
 
 ## Mated with Java
 
@@ -36,11 +34,15 @@ Maven is written in Java, and grew up supporting Java builds
 by creating from Java source and resources for deployment
 deliverables like JAR file or WAR files.
 
-So Maven is the default for the Jenkins continuous integration tool which
-triggers a Maven build whenever developer commit code.
+## Default in Jenkins
+
+Maven is the default build tool in the <strong>Jenkins</strong> continuous integration tool to perform builds when code is committed.
+
+> Unlike shell script procedural code, Maven files enable declarative statements.
 
 Maven adopts the principle of "Convention over configuration", 
-which means less coding work.
+which means less coding work. However, it operates as a "black box".
+
 
 Read more: <a target="_blank" href="http://javarevisited.blogspot.com/2015/01/difference-between-maven-ant-jenkins-and-hudson.html#ixzz4CQKSY3oF">
 http://javarevisited.blogspot.com/2015/01/difference-between-maven-ant-jenkins-and-hudson.html#ixzz4CQKSY3oF</a>
@@ -50,12 +52,12 @@ http://javarevisited.blogspot.com/2015/01/difference-between-maven-ant-jenkins-a
 
 ## Install latest #
 
-0. To install the latest version:
+PROTIP: Rather than downloading directly from https://maven.apache.org/download.cgi, use a package manager.
 
-   <tt><strong>
-   brew update<br />
-   brew install maven
-   </strong></tt>
+0. To install the latest version on MacOS:
+
+   <pre><strong>brew install maven
+   </strong></pre>
 
    the response I got on Dec 29, 2017:
 
@@ -66,33 +68,28 @@ http://javarevisited.blogspot.com/2015/01/difference-between-maven-ant-jenkins-a
 🍺  /usr/local/Cellar/maven/3.5.2: 104 files, 10.1MB, built in 21 seconds
    </pre>
 
-   Alternately:
-
    ### Install previous version #
 
-   Alternately, to
-   <a target="_blank" href="http://stackoverflow.com/questions/3987683/homebrew-install-specific-version-of-formula">
+   Alternately, to <a target="_blank" href="http://stackoverflow.com/questions/3987683/homebrew-install-specific-version-of-formula">
    install a previous version</a>:
 
-   <tt><strong>
-   brew install homebrew/versions/maven30
-   </strong></tt>
+   <pre><strong>brew install homebrew/versions/maven30
+   </strong></pre>
 
    Then, to switch among versions:
 
-   <tt><strong>
-   brew unlink maven30 && brew link maven<br />
+   <pre><strong>brew unlink maven30 && brew link maven
    brew unlink maven && brew link maven30
-   </strong></tt>
+   </strong></pre>
 
 
    ## Configure Path #
 
 0. Verify install:
 
-   <tt><strong>
+   <pre><strong>
    mvn -version
-   </strong></tt>
+   </strong></pre>
 
    I got this response:
 
@@ -108,14 +105,12 @@ OS name: "mac os x", version: "10.11.6", arch: "x86_64", family: "mac"
 
 0. Confirm the path:
 
-   <tt><strong>
-   which mvn
-   </strong></tt>
+   <pre><strong>which mvn
+   </strong></pre>
 
    response:
 
-   <pre>
-   /usr/local/bin/mvn
+   <pre>/usr/local/bin/mvn
    </pre>
 
    NOTE: Before OSX Mavericks,
@@ -126,11 +121,10 @@ OS name: "mac os x", version: "10.11.6", arch: "x86_64", family: "mac"
 0. Confirm the path. Substitute the version (3.5.2) with the version
    you just installed:
 
-   <tt><strong>
-   cd /usr/local/Cellar/maven/3.5.2/libexec<br />
-   cd bin<br />
+   <pre><strong>cd /usr/local/Cellar/maven/3.5.2/libexec
+   cd bin
    ls
-   </strong></tt>
+   </strong></pre>
 
    mvn files should be listed:
 
@@ -139,18 +133,17 @@ OS name: "mac os x", version: "10.11.6", arch: "x86_64", family: "mac"
 
 0. Open using a text editor, substituting subl (for Sublime) with atom or vim:
 
-   <tt><strong>
-   cd $HOME<br />
+   <pre><strong>cd $HOME
    subl .bash_profile
-   </strong></tt>
+   </strong></pre>
 
 0. Add the following to under export PATH=, changing the version (3.5.2) to whatever appears above:
 
-   <tt><strong>
-   export M2_HOME=/usr/local/Cellar/maven/3.5.2/libexec<br />
-   export M2=$M2_HOME/bin<br />
+   <pre><strong>
+   export M2_HOME=/usr/local/Cellar/maven/3.5.2/libexec
+   export M2=$M2_HOME/bin
    export PATH=$PATH:$M2_HOME/bin
-   </strong></tt>
+   </strong></pre>
 
    On Windows, define enviornment variable `M2_HOME` with a path such as:
 
@@ -164,38 +157,36 @@ OS name: "mac os x", version: "10.11.6", arch: "x86_64", family: "mac"
 
 0. View changed environment variables. On a Mac:
 
-   <tt><strong>echo $M2_HOME
-   </strong></tt>
+   <pre><strong>echo $M2_HOME
+   </strong></pre>
 
    The response if installed by Homebrew on Mac:<br />
    `/usr/local/Cellar/maven/3.5.2/libexec`
 
-   <tt><strong>echo $M2
-   </strong></tt>
+   <pre><strong>echo $M2
+   </strong></pre>
 
    The response if installed by Homebrew on Mac:<br />
    `/usr/local/Cellar/maven/3.5.2/libexec/bin`
 
-   <tt><strong>echo $PATH
-   </strong></tt>
+   <pre><strong>echo $PATH
+   </strong></pre>
 
    On Windows:
 
-   <pre><strong>
-   echo $M2_HOME
+   <pre><strong>echo $M2_HOME
    echo $M2
    echo $PATH
    </strong></pre>
 
 0. In a Terminal, verify changes:
 
-   <tt><strong>echo $JAVA_HOME
-   </strong></tt>
+   <pre><strong>echo $JAVA_HOME
+   </strong></pre>
 
    The reply is, for example:
 
-   <pre>
-   /Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home
+   <pre>/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home
    </pre>
 
 
@@ -206,9 +197,8 @@ OS name: "mac os x", version: "10.11.6", arch: "x86_64", family: "mac"
 0. Navigate to the hidden folder Maven installed
    to house packages installed (junit, commons-cli, commons-lang, etc).
 
-   <tt><strong>
-   cd ~/.m2/repository
-   </tt></strong>
+   <pre><strong>cd ~/.m2/repository
+   </strong></pre>
 
    Some prefer to change Maven's local repository to another location.
 
@@ -217,8 +207,7 @@ OS name: "mac os x", version: "10.11.6", arch: "x86_64", family: "mac"
 
    There is a settings.xml file containing:
 
-   <pre>
-   &LT;localRepository>~//maven/repo/&LT;/localRepository>
+   <pre>&LT;localRepository>~//maven/repo/&LT;/localRepository>
    </pre>
 
 
@@ -237,16 +226,14 @@ OS name: "mac os x", version: "10.11.6", arch: "x86_64", family: "mac"
 
 0. The vast majority of Maven-built projects can be built with this command:
 
-   <tt><strong>
-   mvn clean install
-   </strong></tt>
+   <pre><strong>mvn clean install
+   </strong></pre>
 
    The "clean" cleans out results from the prior build before starting with install.
 
    During the first full run, testing jars are installed in your local maven repository. 
 
-   <pre>
-[INFO] ------------------------------------------------------------------------
+   <pre>[INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
 [INFO] Total time: 26.549 s
@@ -265,9 +252,9 @@ OS name: "mac os x", version: "10.11.6", arch: "x86_64", family: "mac"
 
 0. After the first run, builds can skip tests with this additional parameter:
 
-   <tt><strong>
+   <pre><strong>
    mvn clean install -Dmaven.test.skip=true
-   </strong></tt>
+   </strong></pre>
 
 
 
@@ -349,6 +336,8 @@ Maven C/C++ Plugin http://duns.github.io/maven-nar-plugin/
 <img width="374" height="479" alt="fig maven lifecycle plugin-374x479-60"
 src="https://cloud.githubusercontent.com/assets/300046/16313780/06fbabbc-3938-11e6-99fd-d3cb0acf5170.png">
 </a>
+
+The graphic at <a target="_blank" href="http://blog.empeccableweb.com/wp/deployments/maven/">Empeccableweb</a> includes "Archetype":
 
 ![maven2-100156414-orig](https://user-images.githubusercontent.com/300046/28752955-f8c5da38-74f8-11e7-85c2-8eedcc3ae41f.gif)
 
