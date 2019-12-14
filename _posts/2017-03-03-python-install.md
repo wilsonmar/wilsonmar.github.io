@@ -82,6 +82,8 @@ There is what can be a confusing conflict of choice here for installing Python a
 
    * Not recommended is the manual approach of <a href="#PackagInstallerz">download Python installer from python.org</a>, even though that's the method described in various websites and books. 
 
+   <a target="_blank" href="https://www.python.org/downloads/mac-osx/">https://www.python.org/downloads/mac-osx</a>
+
    * <a href="#easy_install">easy_install</a> is an environment manager.
    <br /><br />
 
@@ -105,21 +107,21 @@ Alternatively, use a package manager. CAUTION: <a target="_blank" href="http://s
 
 1. From Dockerhub account "python" get a Docker image on your machine containing Python3 running within Alpine Linux OS:
 
-   <pre><strong>docker pull python:3-alpine</strong></strong>
+   <pre><strong>docker pull python:3-alpine</strong></pre>
 
 1. Container:
 
-   <pre><strong>docker container run -d --memory=20m --memory-swap=20m -name myPython python:3-alpine sleep 3600</strong></strong>
+   <pre><strong>docker container run -d --memory=20m --memory-swap=20m -name myPython python:3-alpine sleep 3600</strong></pre>
 
 1. Execute the container:
 
-   <pre><strong>docker exec -it myPython /bin/sh</strong></strong>
+   <pre><strong>docker exec -it myPython /bin/sh</strong></pre>
 
 1. Use the container
 
 1. Stop the Docker instance:
 
-   <pre><strong>docker pull python:3-alpine</strong></strong>
+   <pre><strong>docker pull python:3-alpine</strong></pre>
 
 <a name="PythonMacVersion"></a>
 
@@ -136,8 +138,7 @@ Python 2 comes installed on MacOS machines.
 
    The response, for example:
 
-   <pre>
-   Python 2.7.19
+   <pre>Python 2.7.19
    </pre>
 
    CAUTION: The sub-version of Python that comes installed with MacOS may be obsolete
@@ -146,9 +147,8 @@ Python 2 comes installed on MacOS machines.
 
 0. Find where Python2 is installed:
 
-   <pre>
-   type -a python
-   </pre>
+   <pre><strong>type -a python
+   </strong></pre>
 
    The response:
 
@@ -227,17 +227,15 @@ Type "help", "copyright", "credits" or "license" for more information.
 
    The response is your home folder (substitue "mac" with your user name):
 
-   <tt>
-   '/Users/mac'
-   </tt>
+   <pre>'/Users/mac'
+   </pre>
 
    ### Exit Python
 
-0. Exit the Python interpreter by typing the exit function (with the parentheses symbols) :
+0. Exit the Python interpreter by typing the exit function (with the parentheses symbols):
 
-   <tt><strong>
-   exit()
-   </strong></tt>
+   <pre><strong>>>> exit()
+   </strong></pre>
 
    The exit() commmand works the same for both Python 2 and Python 3.
 
@@ -252,10 +250,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 
    The response I got:
 
-   <pre>
-Python 3.4.2 (v3.4.2:ab2c023a9432, Oct  5 2014, 20:42:22)
-[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+   <pre>Python 3.7.5 (default, Nov  1 2019, 02:16:32) 
+[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
+>>> 
    </pre>
 
 
@@ -294,6 +292,15 @@ Most new features introduced with Python 3 are not backwards compatible with ver
    <br /><br />
    If you get <tt>/Users/<em>user</em>/.pyenv/shims/python3</tt>
 
+1. Let's see what's there:
+
+   <pre><strong>ls -al /usr/local/bin/python3 </strong></pre>
+
+   The result shows a link to where Homebrew stores:
+
+   <pre>lrwxr-xr-x  1 wilson_mar  admin  34 Nov 30 16:27 /usr/local/bin/python3 -> ../Cellar/python/3.7.5/bin/python3
+   </pre>
+
 
    ### Python command for Python3
 
@@ -302,10 +309,10 @@ Most new features introduced with Python 3 are not backwards compatible with ver
    If you tried to commit suicide like the above, the work-around is an alias,
    which the operating system resolves before going down PATH.
 
-1. To use Python3 as the default version for the python command, set in you Mac's ~/.bash_profile
+1. To use Python3 as the default version for the python command, set in you Mac's <tt>~/.bash_profile</tt>:
 
-   <pre>alias python=python3</pre>
-
+   <pre><strong>alias python=python3
+   alias pip=pip3</strong></pre>
 
 
 ### Print is different
@@ -571,6 +578,16 @@ If you must do it the hard way, bareback, etc:
 
 ## Upgrade pip and setuptools #
 
+Many disagree with https://techworm.net/programming/install-pip-python-mac-windows-linux/ which recommends use of easy_install
+
+https://packaging.python.org/discussions/pip-vs-easy-install/
+which is part of setuptools.
+
+https://en.wikipedia.org/wiki/Setuptools#EasyInstall
+easy_install in not a full fledged package installer like pip is.
+
+<em>kinda like a disgraced parent</em>.
+
 
 <a name="BrewPip"></a>
 
@@ -592,15 +609,15 @@ this</a> with:
    to install pip (as <a target="_blank" href="http://penandpants.com/2012/02/24/install-python/">recommended by this site</a>
    and <a target="_blank" href="https://pip.readthedocs.io/en/stable/installing/">https://pip.readthedocs.io/en/stable/installing</a>):
 
-   <tt><strong>brew install pip
-   </strong></tt>
+   <pre><strong>brew install pip
+   </strong></pre>
 
    Conda installs outside the standard structure, so 
 
 0. Run:
 
-   <tt><strong>brew doctor
-   </strong></tt>
+   <pre><strong>brew doctor
+   </strong></pre>
 
    this warning appears (which can be safely ignored):
 
@@ -691,6 +708,9 @@ You must give at least one requirement to install (see "pip help install")
    <pre>alias python=/usr/local/bin/python2.7
    </pre>
 
+   <pre>alias pip=pip3
+   </pre>
+
 0. Close and open another Terminal.
 0. Verify the version.
 
@@ -724,14 +744,12 @@ You must give at least one requirement to install (see "pip help install")
    Automatically download the packages listed
    (after you manually change the /path/to)
 
-   <tt><source>source bin/activate<br />
+   <pre><source>source bin/activate
    pip install -r /path/to/requirements.txt  
-   </strong></tt>
+   </strong></pre>
 
    This downloads dependencies from PyPI (the Python Package Index),
-   a public repository of software for the Python programming language at
-   <a target="_blank" href="https://pypi.python.org/pypi">
-   https://pypi.python.org/pypi</a>.
+   a public repository of software for the Python programming language at <a target="_blank" href="https://pypi.python.org/pypi">https://pypi.python.org/pypi</a>.
 
    However, adding the "\-\-no-index" option would not use it.
 
@@ -776,7 +794,7 @@ You must give at least one requirement to install (see "pip help install")
 <a target="_blank" href="https://hynek.me/articles/virtualenv-lives/">
 Hynek Schlawack recommends</a>
 
-   * Don’t pip-install anything beyond virtualenv into its global site-packages.
+   * PROTIP: Don’t <tt>pip install</tt> anything beyond virtualenv into its <strong>global site-packages</strong> outside of virtualenv.
 
    * Install <strong>both</strong> virtualenv and system isolation (they are not mutually exclusive):
 
@@ -907,7 +925,7 @@ ImportError: dlopen(/Users/mac/gits/wilsonmar/shippable/one/lib/python2.7/lib-dy
 ----------------------------------------
 ...Installing setuptools, pip, wheel...done.
 Traceback (most recent call last):
-  File "/Users/mac/miniconda2/bin/virtualenv", line 11, in <module>
+  File "/Users/mac/miniconda2/bin/virtualenv", line 11, in &LT;module>
     sys.exit(main())
   File "/Users/mac/miniconda2/lib/python2.7/site-packages/virtualenv.py", line 711, in main
     symlink=options.symlink)
@@ -945,7 +963,7 @@ OSError: Command /Users/mac/gits/wils...pable/one/bin/python - setuptools pip wh
 
    ### autoenv
 
-0. To automatically activate an vironment when you cd into it:
+0. To automatically activate an environment when you cd into it:
 
    <tt>brew install autoenv
    </tt>
