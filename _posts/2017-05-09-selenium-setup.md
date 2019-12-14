@@ -1000,9 +1000,12 @@ Installing collected packages: soupsieve, beautifulsoup4
 Successfully installed beautifulsoup4-4.8.1 soupsieve-1.9.5
    </pre>
 
-0. Download my repository containing
+0. Download my repository containing Juypter Notebooks:
 
-0. Get in Jupyter Notebook.
+   <pre><strong>git clone https://github.com/wilsonmar/DevSecOps/master/Selenium</strong></pre>
+
+0. Open a Terminal and navigate to that folder. See <a target="_blank" href="https://wilsonmar.github.io/juypter/">https://wilsonmar.github.io/juypter</a>
+
 
    ### Call Selenium from Python
 
@@ -1024,9 +1027,20 @@ Successfully installed beautifulsoup4-4.8.1 soupsieve-1.9.5
    driver = webdriver.Chrome(options=options)
    </pre>
 
+0. Run file <strong>demo_mod3 -2.ipynb</strong> file which manipulates iframes:
+
+   <pre>driver.switch_to_frame("<em>frame name</em>)
+   # Switch back:
+   driver.switch_to_default_content()
+   </pre>
+
+   To handle popups:
+
+   <pre>driver.switch_to_alert()</pre>
+
 0. Run file <tt>demo_mod4.ipynb</tt> in Jupyter to use the soup class to scrape quotes attributed to Soccer player Wayne Rooney from premierleague.com.
 
-0. Additional Python code in Jupyter for other work can include Machine Learning such as sentiment analysis.
+0. Additional Python code in Jupyter for other work can include Machine Learning such as sentiment analysis. The course author's <a target="_blank" href="https://github.com/pratheerth">personal GitHub</a>
 
 
 Additional information:
