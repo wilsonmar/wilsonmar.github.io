@@ -191,25 +191,34 @@ Here's what I think is a great example of associating authoritative and inspirat
 
    <amp-img alt="social twitter nike justdoit 20160725 478x120-10kb.png" width="478" height="120" src="https://cloud.githubusercontent.com/assets/14143059/17757101/b8d23970-64a1-11e6-90f1-17af4d1a0d58.png"></amp-img>
 
-The ultimate aim of messaging is to be associated with <a target="_blank" href="https://www.wikiwand.com/en/Emotion">POSITIVE EMOTIONS</a>: #happy, #fulfilled, #satisfied, #relaxed, #committed, #sassy, etc. This Plutchik diagram provides English words to describes different strengths of emotions:
+When an organization makes a media splash,
+competitors may hijack the hashtags being promoted
+by tweeting the competitor's tag along with their own, which associates the communications together.
+
+PROTIP: Copy the tags in others' posts and paste the hashtags you want to use in a file. This not only helps you focus, it'll also be quicker to copy and paste into your posts.
+
+
+The ultimate aim of messaging is to be associated with <a target="_blank" href="https://www.wikiwand.com/en/Emotion">POSITIVE EMOTIONS</a>: #happy, #fulfilled, #satisfied, #relaxed, #committed, #sassy, etc. 
+
+   ![social-media-emotion-wheel](https://user-images.githubusercontent.com/300046/70864884-39568580-1f14-11ea-81f1-df1af3b81f3b.png)
+
+PROTIP: Write the word after each emoji.
+
+This Plutchik diagram provides English words to describes different strengths of emotions: Anger. Excitement. Frustration. Pride. Hurt, etc.
 
    ![social-media-Plutchik-wheel](https://user-images.githubusercontent.com/300046/70863827-6a7d8880-1f09-11ea-86c6-77376640b4bd.png)
 
 But avoid <strong>NEGATIVE EMOTIONS</strong>: #sad, #weary, #scared, #afraid, #disgusted, #disgruntled, etc.
 
-   ![social-media-emotion-wheel](https://user-images.githubusercontent.com/300046/70864884-39568580-1f14-11ea-81f1-df1af3b81f3b.png)
-
-Differen cultures associate emotions with <strong>COLORS</strong>: #sunshine.
-
-PROTIP: Write the word after each emoji.
+Different cultures associate different emotions with <strong>COLORS</strong>.
 
 PROTIP: The (current) Instagram caption limit is 750 characters.
 
-According to <a target="_blank" href="https://trackmaven.com/resources/hashtag-best-practices/">Track Maven</a>, Instagram posts that use hashtags get more likes and comments, with posts containing 9 hashtags performing 2.5x as well as posts using just 1 hashtag. Here is a histogram of tags among all posts on Instagram (from the 2018 <a target="_blank" href="https://trackmaven.com/resources/social-media-benchmarks/">Social Medial Benchmarks</a>):
+According to <a target="_blank" href="https://trackmaven.com/resources/hashtag-best-practices/">Track Maven</a>, Instagram posts containing <strong>9 hashtags</strong> perform 2.5x better than posts using just 1 hashtag. Here is a histogram of tags among all posts on Instagram (from the 2018 <a target="_blank" href="https://trackmaven.com/resources/social-media-benchmarks/">Social Medial Benchmarks</a>):
 
    ![social-media-tags-histo](https://user-images.githubusercontent.com/300046/70862609-b75a6280-1efb-11ea-90e0-7832e2122c7d.jpg)
 
-Tailwind says the the optimal number of hashtags is 9, from niche targeting vs. broad hashtags:
+PROTIP: Post a combination of niche targeting to broad hashtags:
 
    <a target="_blank" href="https://blog.tailwindapp.com/instagram-hashtag-research-find-great-hashtags-fast/"><img alt="social-media-tagging.png" src="https://user-images.githubusercontent.com/300046/70862522-b8d75b00-1efa-11ea-9a35-57b8414a27e4.png"></a>
 
@@ -227,23 +236,13 @@ Also consider these broad hastags:
 
 <strong>SKILLS</strong>: #mastery, #overcome, etc.
 
-<strong>EVENTS</strong>: #happybirthday, #anniversary, etc.
-
-<strong>LOCATION</strong>: #USA, #Africa, etc.
+<strong>EVENTS</strong>: #happybirthday, #anniversary, #NewYears, #ValentinesDay, #Easter, #SinglesDay, #Halloween, #holidays, #Xmas, etc.
 
 <strong>WEATHER</strong>: #sunshine, #raining, #snowing, #snowy, #blustery, etc.
 
 <strong>TIME OF DAY</strong>: #dawn, #dusk, #midnight, #midday, etc.
 
-### Competitive Association #
-
-When an organization makes a media splash,
-competitors may hijack the hashtags being promoted
-by tweeting the competitor's tag along with their own, which associates the communications together.
-
-PROTIP: Copy the tags in others' posts and paste the hashtags you want to use in a file. This not only helps you focus, it'll also be quicker to copy and paste into your posts.
-
-
+<strong>LOCATION</strong>: #USA, #Africa, etc.
 
 
 ## More on evangelism #
