@@ -191,6 +191,18 @@ Here's what I think is a great example of associating authoritative and inspirat
 
    <amp-img alt="social twitter nike justdoit 20160725 478x120-10kb.png" width="478" height="120" src="https://cloud.githubusercontent.com/assets/14143059/17757101/b8d23970-64a1-11e6-90f1-17af4d1a0d58.png"></amp-img>
 
+The ultimate aim of messaging is to be associated with <a target="_blank" href="https://www.wikiwand.com/en/Emotion">POSITIVE EMOTIONS</a>: #happy, #fulfilled, #satisfied, #relaxed, #committed, #sassy, etc. This Plutchik diagram provides English words to describes different strengths of emotions:
+
+   ![social-media-Plutchik-wheel](https://user-images.githubusercontent.com/300046/70863827-6a7d8880-1f09-11ea-86c6-77376640b4bd.png)
+
+But avoid <strong>NEGATIVE EMOTIONS</strong>: #sad, #weary, #scared, #afraid, #disgusted, #disgruntled, etc.
+
+   ![social-media-emotion-wheel](https://user-images.githubusercontent.com/300046/70864884-39568580-1f14-11ea-81f1-df1af3b81f3b.png)
+
+Differen cultures associate emotions with <strong>COLORS</strong>: #sunshine.
+
+PROTIP: Write the word after each emoji.
+
 PROTIP: The (current) Instagram caption limit is 750 characters.
 
 According to <a target="_blank" href="https://trackmaven.com/resources/hashtag-best-practices/">Track Maven</a>, Instagram posts that use hashtags get more likes and comments, with posts containing 9 hashtags performing 2.5x as well as posts using just 1 hashtag. Here is a histogram of tags among all posts on Instagram (from the 2018 <a target="_blank" href="https://trackmaven.com/resources/social-media-benchmarks/">Social Medial Benchmarks</a>):
@@ -203,13 +215,19 @@ Tailwind says the the optimal number of hashtags is 9, from niche targeting vs. 
 
 Also consider these broad hastags:
 
-<strong>POSITIVE EMOTIONS</strong>: #happy, #fulfilled, #satisfied, #relaxed, #committed, etc.
+<strong>POSITIVE ADVERBS</strong>: #mastering, #achieving, etc.
 
-<strong>NEGATIVE EMOTIONS</strong>: #sad, #weary, #scared, #afraid, #disgusted, etc.
+<strong>POSITIVE ADJECTIVES</strong>: #competent, #capable, #accomplished, #dope, etc.
 
-PROTIP: Write the word after each emoji.
+   * <a target="_blank" href="https://www.clarkandmiller.com/positive-personality-adjectives/">Clark and Miller's English Pronounciations</a>
+   * <a target="_blank" href="https://www.vocabulary.com/lists/238935">Positive Adjectives to Describe People</a>
+   <br /><br />
 
-<strong>COLORS</strong>: #sunshine
+<strong>ATTRIBUTION</strong>: #master, #lord, #respect, etc.
+
+<strong>SKILLS</strong>: #mastery, #overcome, etc.
+
+<strong>EVENTS</strong>: #happybirthday, #anniversary, etc.
 
 <strong>LOCATION</strong>: #USA, #Africa, etc.
 
