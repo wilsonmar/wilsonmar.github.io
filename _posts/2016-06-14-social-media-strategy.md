@@ -16,33 +16,6 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-What is the purpose of social media?
-
-## <a name="Influence">Influence</a> #
-
-It's not enough just to have an account with some words and pictures.
-
-Influencers are "effective" to the extent they can <strong>get others to take action</strong> such as:
-
-   * Buy something (generate revenue)
-
-   * Retweet to expand <strong>reach</strong> through their follower's contacts
-
-   * Forward a resource to specific individuals (by providing emails of someone else)
-
-   * Link to your site from their website
-
-   * Download a white paper (pdf)
-
-   * Friend you on Facebook or Connect with you on LinkedIn
-
-   * Follow you on Instagram, LinkedIn, GitHub, etc.
-
-   * Like/Star your post on Facebook, Twitter, GitHub, etc.
-
-   etc.
-
-Some websites "gamify" their site with reward points for visitors to do the above.
 
 
 ## Measurements #
@@ -93,24 +66,50 @@ refers to the number of times some visitor clicks on an ad banner.
 <strong>CPR (Cost Per Registration)</strong>
 is based on a count of how many finish filling up a registration form (and confirmation email).
 
-<strong>CPS (Cost Per Sale)</strong> is the most desirable measure to sites because that's the ultimate
-action for real revenue on ecommerce sites.
-
 <strong>CPA (Cost Per Action)</strong>
 is an inclusive metrice that can include 
 ad click, ad click, video view, registration, sale, or other activity.
 
+<strong>CPS (Cost Per Sale)</strong> is the most desirable measure to sites because that's the ultimate action for real revenue on ecommerce sites.
 
 
+## <a name="Influence">Influence</a> #
 
-## Helping association #
+What is the purpose of social media?
+
+It's not enough just to have an account with some words and pictures.
+
+Influencers are "effective" to the extent they can <strong>get others to take action</strong> such as:
+
+   * Buy something (generate revenue)
+
+   * Retweet to expand <strong>reach</strong> through their follower's contacts
+
+   * Forward a resource to specific individuals (by providing emails of someone else)
+
+   * Link to your site from their website
+
+   * Download a white paper (pdf)
+
+   * Friend you on Facebook or Connect with you on LinkedIn
+
+   * Follow you on Instagram, LinkedIn, GitHub, etc.
+
+   * Like/Star your post on Facebook, Twitter, GitHub, etc.
+
+   etc.
+
+Some websites "gamify" their site with reward points for visitors to do the above.
+
+
+### Helping association #
 
 An IT education school makes 
 <a target="_blank" href="https://www.youtube.com/watch?v=0slsoyEhz40">
 videos</a> from useful blog articles.
 
-   Is the effort of creating a video worth the number of views?
-
+   * Is the effort of creating a video worth the number of views?
+   <br /><br />
 
 PROTIP: It is rare to get more than 5% on messages delivered.
 This means most tweets are never read by anyone.
@@ -178,28 +177,53 @@ PROTIP: If your website is .io or some other TLD,
 include that in your company hashtag name to avoid confusion.
 
 
-
 ## Best times to tweet #
 
-Popular evangelists note that they tweet the same message <strong>several times a day</strong>
+Some evangelists say that they tweet the same message <strong>several times a day</strong>
 to catch the attention of people in different time zones around the world.
 
-Services such as HootSuite
-enable messages to be stored for future delivery at specific times.
+Services such as HootSuite and Tailwind (for Instagram)
+enable messages to be stored for automated posting at specific times in the future.
 
+## Tags for Association #
 
-## Association #
-
-Here's a great example of associating authoritative and inspirational messaging to a brand:
+Here's what I think is a great example of associating authoritative and inspirational messaging to a brand:
 
    <amp-img alt="social twitter nike justdoit 20160725 478x120-10kb.png" width="478" height="120" src="https://cloud.githubusercontent.com/assets/14143059/17757101/b8d23970-64a1-11e6-90f1-17af4d1a0d58.png"></amp-img>
 
+PROTIP: The (current) Instagram caption limit is 750 characters.
 
-## Competitive Association #
+According to <a target="_blank" href="https://trackmaven.com/resources/hashtag-best-practices/">Track Maven</a>, Instagram posts that use hashtags get more likes and comments, with posts containing 9 hashtags performing 2.5x as well as posts using just 1 hashtag. Here is a histogram of tags among all posts on Instagram (from the 2018 <a target="_blank" href="https://trackmaven.com/resources/social-media-benchmarks/">Social Medial Benchmarks</a>):
+
+   ![social-media-tags-histo](https://user-images.githubusercontent.com/300046/70862609-b75a6280-1efb-11ea-90e0-7832e2122c7d.jpg)
+
+Tailwind says the the optimal number of hashtags is 9, from niche targeting vs. broad hashtags:
+
+   <a target="_blank" href="https://blog.tailwindapp.com/instagram-hashtag-research-find-great-hashtags-fast/"><img alt="social-media-tagging.png" src="https://user-images.githubusercontent.com/300046/70862522-b8d75b00-1efa-11ea-9a35-57b8414a27e4.png"></a>
+
+Also consider these broad hastags:
+
+<strong>POSITIVE EMOTIONS</strong>: #happy, #fulfilled, #satisfied, #relaxed, #committed, etc.
+
+<strong>NEGATIVE EMOTIONS</strong>: #sad, #weary, #scared, #afraid, #disgusted, etc.
+
+PROTIP: Write the word after each emoji.
+
+<strong>COLORS</strong>: #sunshine
+
+<strong>LOCATION</strong>: #USA, #Africa, etc.
+
+<strong>WEATHER</strong>: #sunshine, #raining, #snowing, #snowy, #blustery, etc.
+
+<strong>TIME OF DAY</strong>: #dawn, #dusk, #midnight, #midday, etc.
+
+### Competitive Association #
 
 When an organization makes a media splash,
 competitors may hijack the hashtags being promoted
 by tweeting the competitor's tag along with their own, which associates the communications together.
+
+PROTIP: Copy the tags in others' posts and paste the hashtags you want to use in a file. This not only helps you focus, it'll also be quicker to copy and paste into your posts.
 
 
 
