@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Tesseract (OCR after Imagemagic)"
-excerpt: "Recognizes text in picture files for various languages (using LTSM machine-learning)"
-tags: [AI, Machine Learning]
+title: "Tesseract (OCR)"
+excerpt: "Recognizes text and special characters in image files (after Imagemagic), for 60+ languages (using LTSM machine-learning). Used by Selenium"
+tags: [Selenium, AI, Machine Learning]
 date: "2019-12-14"
 file: "tesseract"
 image:
@@ -16,16 +16,17 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-The word "tesseract" in science means a representaton of a 4-dimensional cube <a target="_blank" href="https://www.wikiwand.com/en/Tesseract">*</a>. It is also used in the Marvel Cinematic Universe. 
+<img align="right" width="310" height="310" src="https://user-images.githubusercontent.com/300046/70925020-c9193400-1fe7-11ea-91b9-86126388544f.gif"></a>
+The <a target="_blank" href="https://marvelcinematicuniverse.fandom.com/wiki/Tesseract">Tesseract shown in the Marvel Cinematic Universe</a> is a (3 dimensional) physical cube. But the object has a 4th dimension of time, thus enabling time travel in the MCU and in Madeleine L'Engle's novel/movie "A Wrinkle in Time".
 
-The word is used for the name of the of the <a target="_blank" href="https://github.com/tesseract-ocr/tesseract">Tesseract OCR (Optical Character Recognition) engine</a> program because it is able to recognize multiple-directional 3D lines.
+<a target="_blank" href="https://www.youtube.com/watch?v=iGO12Z5Lw8s">VIDEO</a>: But a Tesseract in <a target="_blank" href="http://mathworld.wolfram.com/Tesseract.html">science (real life)</a> is <strong>conceptual</strong> "w" <strong>4th dimensional axis</strong> shown as a shadow.<a target="_blank" href="https://www.wikiwand.com/en/Tesseract">*</a> 
+
+<img align="right" alt="TesseractProjection_700" width="206" height="223" src="https://user-images.githubusercontent.com/300046/70925020-c9193400-1fe7-11ea-91b9-86126388544f.gif"></a>
+Anyway, the word Tesseract was adopted as the name of the <a target="_blank" href="https://github.com/tesseract-ocr/tesseract"> OCR (Optical Character Recognition) engine</a> program because it is able to recognize multiple-directional 3D lines.
 
    * https://github.com/gulakov/tesseract-ocr-sample
    * http://blog.ayoungprogrammer.com/2012/11/tutorial-installing-tesseract-ocr-30202.html/
    <br /><br />
-
-<img width="192" alt="opencv-sikulix-v01-192x133.png" src="https://cloud.githubusercontent.com/assets/300046/24071304/2de19d0a-0ba5-11e7-9cdc-c7903b2b3bcf.png" align="right">
-
 
 ## Installation
 
@@ -47,7 +48,7 @@ The word is used for the name of the of the <a target="_blank" href="https://git
  Found AVX
  Found SSE</pre>
 
-   <a target="_blank" href="http://www.leptonica.org/">http://www.leptonica.org</a> provides software broadly useful for image processing and image analysis.
+   The <a target="_blank" href="http://www.leptonica.org/">http://www.leptonica.org</a> dependency provides utilities for image processing and image analysis.
 
 1. PROTIP: Navigate to the folder where where other image files are captured to, usually: 
 
@@ -58,16 +59,17 @@ The word is used for the name of the of the <a target="_blank" href="https://git
 
    ### Sample file
 
-1. Download the <a target="_blank" href="https://github.com/tesseract-ocr/tesseract/wiki/Command-Line-Usage">sample image file from the Tesseract web page</a> to turn into text.
+   <img alt="from GitHub" src="https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/Tesseract/tesseract-quick-brown-fox.png">
 
-   <img src="https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/Tesseract/tesseract-quick-brown-fox.png">
+1. Download the <a target="_blank" href="https://github.com/tesseract-ocr/tesseract/wiki/Command-Line-Usage">sample image file (above) from the Tesseract web page</a> we will turn into text:
 
    <pre><strong>wget https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/Tesseract/tesseract-quick-brown-fox.png
    </strong></pre>
 
 1. Run Tesseract from that folder (the sample .png can also be .tiff, .jpg, .gif, .bmp, etc.)
 
-   <pre><strong>tesseract tesseract-quick-brown-fox.png  out
+   <pre><strong>IN_FILE="tesseract-quick-brown-fox.png"
+   tesseract "${IN_FILE}"  out
    </strong></pre>
 
    Response:
@@ -151,17 +153,19 @@ salta sobre o céo preguicoso.
 
    Except it did not recognize European language accents such the <em>umlaut</em> above Uber. "marron rapido" is supposed to be capped. "preguicoso" a Portugese word meaning lazy, does not have the diacritical tail appendage <a target="_blank" href="https://www.wikiwand.com/en/Cedilla">c-cedilla (cedilha in Portugese)</a>.
 
-   But Tesseract is supposed to recognize characters from over 100 languages now. Originally from HP, <a target="_blank" href="https://twitter.com/theRaySmith">@theRaySmith</a> at Google <a target="_blank" href="https://github.com/tesseract-ocr/docs/blob/master/das_tutorial2016/1Intro-history.pdf">says in 2016 Tesseract includes LSTM</a> (Long Short Timer Memory) machine learning algorithm with convolutional and deep belief networks.
+   But Tesseract is supposed to recognize characters from over 100 languages now. Originally from HP, <a target="_blank" href="https://twitter.com/theRaySmith">@theRaySmith</a> at Google <a target="_blank" href="https://github.com/tesseract-ocr/docs/blob/master/das_tutorial2016/1Intro-history.pdf">says in 2016 Tesseract includes LSTM</a> (Long Short Term Memory) machine learning algorithm with convolutional and deep belief networks.
 
-1. To get Tesseract to recognize the full set of language characters, run with additional parameter for "deutch (German)", look for language codes in <a target="_blank" href="https://github.com/tesseract-ocr/tesseract/wiki/Data-Files">the wiki site</a> ("por").
+1. To get Tesseract to recognize the full set of language characters, run with additional parameters specifying more language codes from <a target="_blank" href="https://github.com/tesseract-ocr/tesseract/wiki/Data-Files">the wiki site</a>: 
 
    <a name="RunDeuToo"></a>
 
    <pre><strong>tesseract  tesseract-quick-brown-fox.png  out  -l eng+deu+fra+ita+spa+por
    </strong></pre>
 
-   Expected error response:
+   Sequence of -language codes matter:
+   deu = deutch (German) + fra = french + ita = italian + spa = spanish + por = portugese.
 
+   Error messages are expected if additional configuration was not done:
    <pre>Error opening data file /usr/local/Cellar/tesseract/4.1.0/share/tessdata/deu.traineddata
 Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory.
 Failed loading language 'deu'
@@ -235,6 +239,8 @@ marrön räpido salta sobre el perro
 perezoso. A raposa marrom räpida
 salta sobre o cão preguiçoso.
    </pre>
+
+1. To output to a pdf file instead of txt file, add "pdf" to the end of the command.
 
 
 <a name="ImagePreparation"></a>
