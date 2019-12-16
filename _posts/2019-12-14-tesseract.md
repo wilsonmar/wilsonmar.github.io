@@ -24,10 +24,6 @@ But a Tesseract in <a target="_blank" href="http://mathworld.wolfram.com/Tessera
 
 Anyway, the word Tesseract was adopted as the name of the <a target="_blank" href="https://github.com/tesseract-ocr/tesseract"> OCR (Optical Character Recognition) engine</a> program because it is able to recognize multiple-directional 3D lines.
 
-   * https://github.com/gulakov/tesseract-ocr-sample
-   * http://blog.ayoungprogrammer.com/2012/11/tutorial-installing-tesseract-ocr-30202.html/
-   <br /><br />
-
 ## Installation
 
 1. Install a pre-built executable binary at <a target="_blank" href="https://github.com/tesseract-ocr/tesseract/wiki">https://github.com/tesseract-ocr/tesseract/wiki</a> for various operating systems.
@@ -304,6 +300,11 @@ by adding to pom.xml file add it as a dependency, such as:
 Tess4j is actually written in C#. However, those who code C# can use the <a target="_blank" href="http://www.emgu.com/wiki/index.php/Emgu_CV"Emgu</a> .Net wrapper library.
 
 
+## Resources/References
+
+   * https://github.com/gulakov/tesseract-ocr-sample (Visual Studio C++ Project)
+   * http://blog.ayoungprogrammer.com/2012/11/tutorial-installing-tesseract-ocr-30202.html/
+   <br /><br />
 
 ## More
 
