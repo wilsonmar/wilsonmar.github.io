@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "OpenCV SikuliX robot"
-excerpt: "A robot sees what's on your screen and clicks on it"
+excerpt: "Use the OpenCV to recognize a portion of your screen and have Selenuium Python click on a portion of it"
 tags: [Clouds, IoT]
-date: "2016-12-20"
+date: "2019-12-135"
 file: "opencv-sikulix-robot"
 image:
 # pic silver robot white skin handshake 1900x500
@@ -17,7 +17,6 @@ comments: true
 {% include _toc.html %}
 
 <img width="192" alt="opencv-sikulix-v01-192x133.png" src="https://cloud.githubusercontent.com/assets/300046/24071304/2de19d0a-0ba5-11e7-9cdc-c7903b2b3bcf.png" align="right">
-
 
 This is a deep dive from the innnards up:
 
@@ -50,94 +49,34 @@ The benefit of repeating some action repeatedly (and not get bored or distracted
    * Developers and testers going through a sequence of actions to reach a particular point in the UI needing debugging.
 
 Here's how it works:
-A picture is taken of your screen(s).
-and the text and location of objects recognized in the picture is fed
-to your program to click or type.
-Your program then takes another round of picture taking
-and visual object recognition to ensure the results are what are intended.
+1. A picture is taken of your screen(s).
+2. The text and location of objects recognized in the picture is fed to your program to click or type.
+3. Your program then takes another round of picture taking 
+4. visual object recognition to ensure the results are what are intended.
 
 This uses a different, more generalized, approach than packages such as HP UFT which depended on
 finding identifiers in the DOM (Document Object Model) behind each internet browser web page.
-
-
-
-## Social
-
-<a target="_blank" href="https://gitter.im/RaiMan/SikuliX-2014">
-Gitter channel at<br/>
-https://gitter.im/RaiMan/SikuliX-2014</a>
-
-<a target="_blank" href="https://answers.launchpad.net/sikuli">
-https://answers.launchpad.net/sikuli</a>
-
-
-## Websites 
-
-<a target="_blank" href="http://sikulix.com">
-http://sikulix.com</a> is the new web page.
-
-Detailed docs are at<br />
-<a target="_blank" href="http://sikulix-2014.readthedocs.io/en/latest/basicinfo.html#sikulix-system-specifics">
-http://sikulix-2014.readthedocs.io/en/latest/basicinfo.html#sikulix-system-specifics</a
-(with source at https://github.com/RaiMan/SikuliX-2014-Docs)
-
-(Ignore abandoned sites:<br />
-http://sikulix.weebly.com/quickstart.html and <br />
-https://sikulix.wordpress.com)
-
-<a target="_blank" href="http://sikulix-2014.readthedocs.io/en/latest/">
-http://sikulix-2014.readthedocs.io/en/latest/<br />
-has the most detail, which are repeated several places:
-
-Installer bits are obtained from Ubuntu <br />
-<a target="_blank" href="https://launchpad.net/sikuli">
-https://launchpad.net/sikuli</a>
-
-<a target="_blank" href="https://github.com/wilsonmar/sikuli-scripts/">
-https://github.com/wilsonmar/sikuli-scripts</a> 
 
 
 ## Versions
 
 Sikuli was started somewhen in 2009 as an open-source research project at the User Interface Design Group at MIT by Tsung-Hsiang Chang and Tom Yeh.
 
-There are three versions:
-
-* 1.1.0 final (available since 2015-10-07)
-
-   I've had installation errors with this version on my Mac.
-
-   There is an entry on 2015-10-07 in Maven Central:<br />
-   <a target="_blank" href="http://search.maven.org/#search%7Cga%7C1%7Ccom.sikulix">
-   http://search.maven.org/#search%7Cga%7C1%7Ccom.sikulix</a><br />
-   but I haven't tried to install it.
-
-* SikuliX-2014 (version 1.1.x) from<br />
-   <a target="_blank" href="http://nightly.sikuli.de/">
-   http://nightly.sikuli.de</a>
-
-   This is the one that worked for me.
-
-   Install instructions below.
-
-   NOTE: Code is at <a target="_blank" href="https://github.com/RaiMan/SikuliX-2014">
-   https://github.com/RaiMan/SikuliX-2014</a>
-
-* SikuliX2 in 2017 at<br />
+RaiMan created an IDE (using Java) and got APIs for Java, Python, and Ruby.
+His SikuliX2 (version 2.0.1 as of ) at<br />
    <a target="_blank" href="https://github.com/RaiMan/SikuliX2">
    https://github.com/RaiMan/SikuliX2</a>
 
-   This is supposed to exist side-by-side with previous versions.
-
    https://github.com/RaiMan/Sikulix2opencv
 
+   * https://github.com/RaiMan/SikuliX1/releases
+
+   * https://github.com/RaiMan/SikuliX1/wiki/ZZZ-Bug-Fixes
+
+   * https://github.com/RaiMan/SikuliX1/wiki/macOS-Linux:-Support-Libraries-for-OpenCV-4
 
 
-<a name="SikuliXInstall"></a> 
-
-## Installation
-
-### Automated installers
+Others have created installers:
 
 A) <a target="_blank" href="https://github.com/wernight/docker-sikulix">
 https://github.com/wernight/docker-sikulix</a>
@@ -149,28 +88,162 @@ C) Download and compile it locally<a target="_blank" href="https://github.com/Ca
 
    exec java -Xmx512M -Dfile.encoding=UTF-8 -Dsikuli.FromCommandLine -jar /usr/share/sikulix/sikulix.jar "$@"
 
-D) Manual install (see below)
+Instructions below are based on Mac 10.14 (Sierra) referencing <a target="_blank" href="http://sikulix.com/quickstart/">http://sikulix.com/quickstart</a>.
+
+All in a Terminal:
+
+   ### Pre-requisites
+
+0. Install JRE 8.
+0. Install the Java language IDE you want to use (Eclipse or IntelliJ).
+0. Install Eclipse or Robot Framework (which uses Python).
+0. Install Python 3.7. 
+
+   ### OpenCV install
+
+1. Get the latest version of OpenCV:
+
+   <pre>brew install opencv</pre>
+
+   <pre>==> Pouring opencv-4.1.2.mojave.bottle.1.tar.gz
+Warning: opencv dependency gcc was built with a different C++ standard
+library (libstdc++ from clang). This may cause problems at runtime.
+🍺  /usr/local/Cellar/opencv/4.1.2: 753 files, 228MB
+   </pre>
+
+   ### Tesseract install
 
 
-### Manual install
+   ### Sikuli IDE from Raiman
 
-Pre-requisites:
+1. To avert <a target="_blank" href="https://github.com/RaiMan/SikuliX1/issues/246">Issues in GitHub</a>, disable ClearType in Windows Settings.
 
-0. Install JRE 8 or 9
-0. Install the Java language IDE you want to use (Eclipse or IntelliJ)
-0. Install Eclipse or Robot Framework (which uses Python)
-0. <a href="#SikuliXinstall">Download SikuliX</a> 
+1. Navigate to a folder:
+
+1. Download the ready-to-use jar (Java Archive):
+
+   <pre>curl -O https://launchpad.net/sikuli/sikulix/2.0.1/+download/sikulix-2.0.1.jar</pre>
+   
+0. Invoke the Sikuli IDE:
+
+   <path><strong>java -jar sikulix-2.0.1.jar</strong></pre>
+
+   The IDE should appear:
+
+   <img width="872" alt="sikuli-2 0 1-ide-menu" src="https://user-images.githubusercontent.com/300046/70865928-2053d180-1f20-11ea-9010-3ee4a81c0606.png">
+
+   <a target="_blank" href="http://sikulix.com/quickstart/#qs6">Alternate command line parameters</a>.
+
+   <tt>-v</tt> or <tt>-d 3</tt> sets the debug level.
+
+   <tt>-c</tt> redirects output from IDE message area to the command line.
+
+   The IDE running redirect all debug output to a file named SikulixDebug.txt in your home folder.
+   
+   <a name="TakePicture"></a>
+
+   ### Take a picture
+
+   Create a small picture where you want Sikuli to click or type:
+
+0. In the IDE, Click "Take a picture" or press a hot-key (Command + Shift + 2).
+0. Drag the upper-left to the lower-right, then release the mouse.
+
+   QUESTION: If a dialog disappears with mouse motions, 
+   press the keystroke to take a picture of the screen,
+   then use a photo editing program to cut out an area,
+   and paste the little picture into the IDE.
+
+
+   ### Script
+
+0. Type the debug level inline:
+
+   <pre>Debug.on(3) # switch debugging on with level 3
+   ...
+   Debug.off() # switch debugging off
+   </pre>
+
+   <tt>#</tt> inserts a comment.
+
+0. Press Ctrl+S to save the file as a ".sikuli" file.
+
+   PROTIP: A keyboard press is quicker than moving the mouse.
+
+
+   <a name="SikuliXActions"></a>
+
+   ### SikuliX Actions and Methods
+
+0. <a target="_blank" href="http://doc.sikuli.org/globals.html#App">Open an app</a>:
+
+   <pre>PathFirefox = r"C:\Program Files (x86)\Mozilla Firefox\firefox.exe"
+App.open(PathFirefox)
+   </pre>
+
+   PROTIP: Instead of the hassle of using double slashes to specify special characters,
+   put a 4 in front of calls to take the backslash and quotes as part of the word/sentence.
+
+0. Define variables:
+
+   <pre>imageExpected1=3;
+   </pre>
+
+0. Define action:
+
+   <pre>click(SearchImageButton)
+   wait(imageExpected1)
+   type("hello")
+   </pre>
+
+0. Type the verification actions.
+
+0. Save a sample script with comments after \# character:
+
+   On a Mac:
+
+   <a target="_blank" href="http://doc.sikuli.org/tutorials/helloworld/helloworld-mac.html">
+   http://doc.sikuli.org/tutorials/helloworld/helloworld-mac.html</a>
+
+   On Windows:
+
+   <a target="_blank" href="http://doc.sikuli.org/tutorials/helloworld/helloworld-win.html">
+   http://doc.sikuli.org/tutorials/helloworld/helloworld-win.html</a>
+
+0. Run the file.
+
+   ### More actions
+
+   <a target="_blank" href="http://doc.sikuli.org/genindex.html">
+   http://doc.sikuli.org/genindex.html</a> is an alphabetical index of all methods and command options.
+
+   JavaDocs of classes are at<br />
+   http://nightly.sikuli.de/docs/index.html
+
+   <a target="_blank" href="https://github.com/RaiMan/SikuliX-2014/tree/master/StuffContainer/testScripts">
+   https://github.com/RaiMan/SikuliX-2014/tree/master/StuffContainer/testScripts</a><br />
+   has several sikulix scripts.
+
+
+<hr />
+
+
+0. Type S and double-click the SikuliX IDE app to open it.
+
+   ![sikulix starting popup 198x154](https://cloud.githubusercontent.com/assets/300046/24074982/a021e3cc-0be9-11e7-84cc-c0d2b8a95bc7.png)
+
+   The IDE should appear:
+
+   <a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/24073600/0a0f4230-0bd0-11e7-88b5-50c23c0d3d9f.png">
+   <img width="300" alt="sikulix-1 1 1-ide-landing-1022x699" src="https://cloud.githubusercontent.com/assets/300046/24073600/0a0f4230-0bd0-11e7-88b5-50c23c0d3d9f.png"><br />(Click to open image in full new screen)</a>
+
+
+
+
+
 
 The installer installs its own version of Python.
 
-
-
-<a name="Install-1.1.2"></a>
-
-### Install-1.1.2 Dev build
-
-1. Instructions below are based on run on Mac 10.12 (Sierra)
-referencing http://sikulix.com/quickstart/
 
 1. On a Mac, create a version-specific installer folder on your $HOME folder:
 
@@ -323,21 +396,18 @@ referencing http://sikulix.com/quickstart/
 
 0. Create a folder to hold repositories from lowkorn:
 
-   <pre><strong>
-   mkdir lowkorn
+   <pre><strong>mkdir lowkorn
    cd lowkorn
    </strong></pre>
 
 0. Clone one I've found:
 
-   <pre><strong>
-   git clone https://github.com/lowkorn/SikuliX
+   <pre><strong>git clone https://github.com/lowkorn/SikuliX
    </strong></pre>
 
    Response:
 
-   <pre>
-Cloning into 'SikuliX'...
+   <pre>Cloning into 'SikuliX'...
 remote: Counting objects: 34, done.
 remote: Total 34 (delta 0), reused 0 (delta 0), pack-reused 34
 Unpacking objects: 100% (34/34), done.
@@ -345,16 +415,14 @@ Unpacking objects: 100% (34/34), done.
 
    Repositories cloned locally you can later update with changes made, using commands such as:
 
-   <pre><strong>
-   git remote add upstream https://github.com/lowkorn/SikuliX
+   <pre><strong>git remote add upstream https://github.com/lowkorn/SikuliX
    git remote -v
    git pull upstream master
    </strong></pre>
 
    Response:
 
-   <pre>
-remote: Counting objects: 34, done.
+   <pre>remote: Counting objects: 34, done.
 remote: Total 34 (delta 0), reused 0 (delta 0), pack-reused 34
 Unpacking objects: 100% (34/34), done.
 From https://github.com/lowkorn/SikuliX
@@ -364,8 +432,7 @@ From https://github.com/lowkorn/SikuliX
 
    Alternately, to do a two-stage sync per https://help.github.com/articles/syncing-a-fork/
 
-   <pre>
-git fetch upstream
+   <pre>git fetch upstream
 git checkout master
 git merge upstream/master
    </pre>
@@ -408,108 +475,6 @@ SikuliX recognize both one-character flags and longer options:
    -s or --stderr
 
 
-
-<a name="SikulixIDE"></a>
-
-## Use IDE for SikuliX Scripting
-
-0. In your Mac's Finder, get to Applications folder by pressing <strong>shift+command+A</strong>.
-
-
-0. Type S and double-click the SikuliX IDE app to open it.
-
-   ![sikulix starting popup 198x154](https://cloud.githubusercontent.com/assets/300046/24074982/a021e3cc-0be9-11e7-84cc-c0d2b8a95bc7.png)
-
-   The IDE should appear:
-
-   <a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/24073600/0a0f4230-0bd0-11e7-88b5-50c23c0d3d9f.png">
-   <img width="300" alt="sikulix-1 1 1-ide-landing-1022x699" src="https://cloud.githubusercontent.com/assets/300046/24073600/0a0f4230-0bd0-11e7-88b5-50c23c0d3d9f.png"><br />(Click to open image in full new screen)</a>
-
-Next, let's get some sample files the program can work with.
-
-
-
-SikulixAppData folder
-
-
-0. Press # to insert a comment.
-
-0. Press Ctrl+S to save the file as a ".sikuli" file.
-
-   PROTIP: A keyboard press is quicker than moving the mouse.
-
-
-   <a name="TakePicture"></a>
-
-   ### Take a picture
-
-0. Create a small picture where you want Sikuli to click or type.
-
-   This can be done by clicking the "Take screenshot" icon, positioning the mouse to the top-left corner,
-   drag to the lower-right corner, then release the mouse.
-
-   Or press a hot-key (Command + Shift + 2). 
-
-   QUESTION: If a dialog disappears with mouse motions, 
-   press the keystroke to take a picture of the screen,
-   then use a photo editing program to cut out an area,
-   and paste the little picture into the IDE.
-
-   <a name="SikuliXActions"></a>
-
-   ### SikuliX Actions and Methods
-
-0. <a target="_blank" href="http://doc.sikuli.org/globals.html#App">Open an app</a>:
-
-   <pre>
-PathFirefox = r"C:\Program Files (x86)\Mozilla Firefox\firefox.exe"
-App.open(PathFirefox)
-   </pre>
-
-   PROTIP: Instead of the hassle of using double slashes to specify special characters,
-   put an 4 in front of calls to take the backslash and quotes as part of the word/sentence.
-
-0. Define variables:
-
-   <pre>
-   imageExpected1=3;
-   </pre>
-
-0. Define action:
-
-   <pre>
-   click(SearchImageButton)
-   wait(imageExpected1)
-   type("hello")
-   </pre>
-
-0. Type the verification actions.
-
-0. Save a sample script with comments after \# character:
-
-   On a Mac:
-
-   <a target="_blank" href="http://doc.sikuli.org/tutorials/helloworld/helloworld-mac.html">
-   http://doc.sikuli.org/tutorials/helloworld/helloworld-mac.html</a>
-
-   On Windows:
-
-   <a target="_blank" href="http://doc.sikuli.org/tutorials/helloworld/helloworld-win.html">
-   http://doc.sikuli.org/tutorials/helloworld/helloworld-win.html</a>
-
-0. Run the file.
-
-   ### More actions
-
-   <a target="_blank" href="http://doc.sikuli.org/genindex.html">
-   http://doc.sikuli.org/genindex.html</a> is an alphabetical index of all methods and command options.
-
-   JavaDocs of classes are at<br />
-   http://nightly.sikuli.de/docs/index.html
-
-   <a target="_blank" href="https://github.com/RaiMan/SikuliX-2014/tree/master/StuffContainer/testScripts">
-   https://github.com/RaiMan/SikuliX-2014/tree/master/StuffContainer/testScripts</a><br />
-   has several sikulix scripts.
 
 
 ## Videos
@@ -648,6 +613,47 @@ https://github.com/rssdev10/sikulix-ide-templates
 ## Resources
 
 http://www.praqma.com/stories/automating-gui-tasks-with-sikuli-and-jenkins/
+
+
+
+
+## Social
+
+<a target="_blank" href="https://gitter.im/RaiMan/SikuliX-2014">
+Gitter channel at<br/>
+https://gitter.im/RaiMan/SikuliX-2014</a>
+
+<a target="_blank" href="https://answers.launchpad.net/sikuli">
+https://answers.launchpad.net/sikuli</a>
+
+
+## Websites 
+
+<a target="_blank" href="http://sikulix.com">
+http://sikulix.com</a> is the new web page.
+
+Detailed docs are at<br />
+<a target="_blank" href="http://sikulix-2014.readthedocs.io/en/latest/basicinfo.html#sikulix-system-specifics">
+http://sikulix-2014.readthedocs.io/en/latest/basicinfo.html#sikulix-system-specifics</a
+(with source at https://github.com/RaiMan/SikuliX-2014-Docs)
+
+(Ignore abandoned sites:<br />
+http://sikulix.weebly.com/quickstart.html and <br />
+https://sikulix.wordpress.com)
+
+<a target="_blank" href="http://sikulix-2014.readthedocs.io/en/latest/">
+http://sikulix-2014.readthedocs.io/en/latest/<br />
+has the most detail, which are repeated several places:
+
+Installer bits are obtained from Ubuntu <br />
+<a target="_blank" href="https://launchpad.net/sikuli">
+https://launchpad.net/sikuli</a>
+
+<a target="_blank" href="https://github.com/wilsonmar/sikuli-scripts/">
+https://github.com/wilsonmar/sikuli-scripts</a> 
+
+0. In your Mac's Finder, get to Applications folder by pressing <strong>shift+command+A</strong>.
+
 
 
 ## More on IoT #

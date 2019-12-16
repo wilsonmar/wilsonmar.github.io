@@ -3,7 +3,7 @@ layout: post
 title: "AI Ecosystems APIs"
 excerpt: "Brand names for how corporate overlords are making humans into robots"
 tags: [machine learning, AI]
-date: "2016-03-16"
+date: "2019-12-14"
 file: "ai-ecosystem"
 image:
 # feature: pic green matrix hallway 1900x500.jpg

@@ -32,8 +32,8 @@ This article contains notes on installing, coding, and running Selenium.
 9. Update of results to SonarQube.
 10. <a href="#ReadCSV">Add CSV data processing</a>
 11. <a href="#Excel">Add Excel data processing</a>
-12. Add OpenCV (via SikuliX2)
-13. Add Tesseract
+12. <a target="_blank" href="https://wilsonmar.github.io/opencv-sikulix-robot/">Add OpenCV (via SikuliX2)</a> to recognize portions of pictures
+13. Add Tesseract to extract text from pictures (OCR = Optical Character Recognition)
 
 14. Run by CA DevTest
 15. Run in SauceLab Cloud
@@ -95,11 +95,12 @@ Ansible task files to establish Selenium server:
    cd Selenium-samples
    </strong></tt>
 
-0. Look at the root layer of the repository.
+0. Select a folder:
 
-   <tt><strong>cd Selenium-samples
+   <tt><strong>cd Python-soup
    </strong></tt>
 
+   Look at the root layer of the repository.
    These files are there for use with Eclipse IDE:
 
    * .classpath
@@ -317,18 +318,29 @@ import org.openqa.selenium.Dimension;
    manipulate the DOM directly,
    nor create objects (using the "new" constructor keyword).
 
+   ### Webdriver Install
+
+   There are Web Driver programs for each combination of operating system (macOS, Windows, Linux, etc.), internet browser (Chrome, Firefox, etc.) and
+   each version (78, 79, etc.). This means the Web Driver you install today would likely be obsolete when a new version of the browser is automatically installed on your machine.
+   
+   PROTIP: There are two ways to install Selenium Web Driver. One is to manually install for whatever is your current version. The other is to use a Webdriver package manager.
+
+   <a name="WebdriverManager"></a>
 
    ### Webdriver Manager
 
-   https://github.com/bonigarcia/webdrivermanager
+   <a target="_blank" href="http://bonigarcia.github.io/">Professor Boni Garcia</a> (in Madrid, Spain) took the initiative to create and maintain <a target="_blank" href="https://github.com/bonigarcia/webdrivermanager">https://github.com/bonigarcia/webdrivermanager</a>
 
-    It checks for the latest version of the WebDriver binary
-    It downloads the WebDriver binary if it's not present on your system
-    It exports the required WebDriver Java environment variables needed by Selenium
+   * Checks for the latest version of the WebDriver binary
+   * Downloads the WebDriver binary if it's not present on your system
+   * Exports the required WebDriver Java environment variables needed by Selenium
+   <br /><br />
+   
+   Its automation makes use of Maven utility commonly used by Java.
 
-    The WebDriver can download files from an open source repository:
+   The WebDriver can download files from an open source repository:
 
-    http://npm.taobao.org/mirrors/
+   <a target="_blank" href="http://npm.taobao.org/mirrors/">http://npm.taobao.org/mirrors</a>
 
 
 <a name="Selenium3Hello1"></a>
@@ -1040,7 +1052,9 @@ Successfully installed beautifulsoup4-4.8.1 soupsieve-1.9.5
 
 0. Run file <tt>demo_mod4.ipynb</tt> in Jupyter to use the soup class to scrape quotes attributed to Soccer player Wayne Rooney from premierleague.com.
 
-0. Additional Python code in Jupyter for other work can include Machine Learning such as sentiment analysis. The course author's <a target="_blank" href="https://github.com/pratheerth">personal GitHub</a>
+   NOTE: There is an error in this script.
+
+0. Additional Python code that can be added in Jupyter for other work can include Machine Learning such as sentiment analysis. The course author's <a target="_blank" href="https://github.com/pratheerth">personal GitHub</a>
 
 
 Additional information:
@@ -1056,3 +1070,5 @@ Additional information:
 
 
 https://www.gridlastic.com/java-code-example.html
+
+macos-install-all/tests/firefox_pycon_search.py

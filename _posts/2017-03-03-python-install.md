@@ -70,9 +70,10 @@ The heavy use of math in AI and ML by TensorFlow means it's best to
 <a target="_blank" href="http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html">
    IPython (Jupyter) Notebook</a> 
    enables a "notebook" interface to re-run commands.
-See http://sjbyrnes.com/python/ 
+See <a target="_blank" href="http://sjbyrnes.com/python/">http://sjbyrnes.com/python</a>
 
-PIP install is troublesome, often because they are more recent than those in Conda.
+PROTIP: PIP install is troublesome, often because they are more recent than those in Conda.
+
 
 <a name="Packaging"></a>
 
@@ -80,7 +81,7 @@ PIP install is troublesome, often because they are more recent than those in Con
 
 There is what can be a confusing conflict of choice here for installing Python and its package manager.
 
-   * Not recommended is the manual approach of <a href="#PackagInstallerz">download Python installer from python.org</a>, even though that's the method described in various websites and books. 
+   * NOT recommended is the manual approach of <a href="#PackagInstallerz">download Python installer from python.org</a>, even though that's the method described in various (obsolete) websites and books.
 
    <a target="_blank" href="https://www.python.org/downloads/mac-osx/">https://www.python.org/downloads/mac-osx</a>
 
@@ -89,8 +90,9 @@ There is what can be a confusing conflict of choice here for installing Python a
 
    <a target="_blank" href="http://stackoverflow.com/questions/1213690/what-is-the-most-compatible-way-to-install-python-modules-on-a-mac">
    One writes</a>:
-   "Avoid easy_install or pip to install a Python package that needs a library used by non Python programs,
-   such as Qt bindings (PySide)".
+   "Avoid easy_install or pip to install a Python package that needs a library used by non Python programs, such as Qt bindings (PySide)" or django<a target="_blank" href="https://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/">*</a>.
+
+   PROTIP: So if you must use easy_install, delete it after.
 
 Alternatively, use a package manager. CAUTION: <a target="_blank" href="http://stackoverflow.com/questions/33874084/how-can-i-resolve-a-conflict-between-homebrew-and-macports-or-fink">MacPorts, Fink, and Homebrew do not coexist well on the same machine</a>.
 
@@ -2105,3 +2107,43 @@ This is one of a series on Mac OSX:
 
 {% include mac_links.html %}
 
+
+
+
+
+
+## Sikuli Python
+
+1. To use SikuliX from real Python via py4j 
+
+   <pre>cd /usr/local/
+   git clone https://github.com/RaiMan/sikulix4python
+   cd sikulix4python
+   </pre>
+
+   
+
+
+1. Get support on the Python:
+
+   <pre>pip install py4j</pre>
+
+   <pre>Collecting py4j
+  Downloading https://files.pythonhosted.org/packages/04/de/2d314a921ef4c20b283e1de94e0780273678caac901564df06b948e4ba9b/py4j-0.10.8.1-py2.py3-none-any.whl (196kB)
+     |████████████████████████████████| 204kB 402kB/s 
+Installing collected packages: py4j
+Successfully installed py4j-0.10.8.1
+   </pre>
+
+1. Download the Jython interpreter for Python scripting (the default)
+   jython-standalone-2.7.1.jar
+
+   curl -O https://repo1.maven.org/maven2/org/python/jython-standalone/2.7.1/jython-standalone-2.7.1.jar
+
+1. Download the sikulixapi for use by Maven:
+
+   https://launchpad.net/sikuli/sikulix/2.0.1/+download/sikulixapi-2.0.1.jar
+
+
+
+macos-install-all/tests/firefox_pycon_search.py
