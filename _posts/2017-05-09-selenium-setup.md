@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Selenium Setup"
-excerpt: "How to emulate real users touching your web apps using Python controlling Selenium and Beautiful Soup"
+excerpt: "How to emulate real users touching your web apps using Python controlling Selenium and Beautiful Soup for reading HTML"
 tags: [ML, GE]
-date: "2017-05-09"
+date: "2019-12-11"
 file: "selenium-setup"
 image:
 # selenium-setup-typing-1900x500.jpg 
@@ -32,8 +32,8 @@ This article contains notes on installing, coding, and running Selenium.
 9. Update of results to SonarQube.
 10. <a href="#ReadCSV">Add CSV data processing</a>
 11. <a href="#Excel">Add Excel data processing</a>
-12. <a target="_blank" href="https://wilsonmar.github.io/opencv-sikulix-robot/">Add OpenCV (via SikuliX2)</a> to recognize portions of pictures
-13. Add Tesseract to extract text from pictures (OCR = Optical Character Recognition)
+12. Add <a target="_blank" href="https://wilsonmar.github.io/opencv-sikulix-robot/">OpenCV (via SikuliX2)</a> to recognize portions of pictures
+13. Add <a target="_blank" href="https://wilsonmar.github.io/tesseract/">Tesseract</a> to extract text from pictures (OCR = Optical Character Recognition)
 
 14. Run by CA DevTest
 15. Run in SauceLab Cloud
