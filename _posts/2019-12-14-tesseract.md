@@ -54,6 +54,10 @@ The word is used for the name of the of the <a target="_blank" href="https://git
    <pre><strong>cd ~/Desktop
    </strong></pre>
 
+   <a name="SampleFile"></a>
+
+   ### Sample file
+
 1. Download the <a target="_blank" href="https://github.com/tesseract-ocr/tesseract/wiki/Command-Line-Usage">sample image file from the Tesseract web page</a> to turn into text.
 
    <img src="https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/Tesseract/tesseract-quick-brown-fox.png">
@@ -125,10 +129,7 @@ Single options:
   --print-parameters    Print tesseract parameters.
    </pre>
 
-1. Use a text editor to view the contents of output file created by Tesseract:
-
-   <pre><strong>code out.txt
-   </strong></pre>
+1. Use a text editor to view the contents of output file <tt>out.txt</tt> created by Tesseract based on the <a href="#SampleFile">sample image file</a>:
 
    <pre>The (quick) [brown] {fox} jumps!
 Over the $43,456.78 &LT;lazy> #90 dog
