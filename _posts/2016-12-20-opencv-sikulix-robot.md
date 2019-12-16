@@ -2,8 +2,8 @@
 layout: post
 title: "OpenCV SikuliX robot"
 excerpt: "Use the OpenCV to recognize a portion of your screen and have Selenuium Python click on a portion of it"
-tags: [Clouds, IoT]
-date: "2019-12-135"
+tags: [Testing, Selenium]
+date: "2019-12-13"
 file: "opencv-sikulix-robot"
 image:
 # pic silver robot white skin handshake 1900x500

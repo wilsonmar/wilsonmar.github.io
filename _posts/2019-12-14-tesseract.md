@@ -13,7 +13,7 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-
+{% include l18n.html %}
 {% include _toc.html %}
 
 <img width="192" alt="opencv-sikulix-v01-192x133.png" src="https://cloud.githubusercontent.com/assets/300046/24071304/2de19d0a-0ba5-11e7-9cdc-c7903b2b3bcf.png" align="right">
