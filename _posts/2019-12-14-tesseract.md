@@ -1,8 +1,10 @@
 ---
 layout: post
-title: "Tesseract OCR"
-excerpt: "AI computer vision recognizes what's on your screen and clicks on it"
-tags: [Clouds, IoT]
+title: "Tessaract OCR"
+excerpt: "Recognizes text in picture (png) files based on LTSM machine-learning"
+tags: [AI, ML]
+date: "2019-12-14"
+file: "tesseract"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
