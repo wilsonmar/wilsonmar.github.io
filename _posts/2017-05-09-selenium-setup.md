@@ -2,7 +2,7 @@
 layout: post
 title: "Selenium Setup"
 excerpt: "How to emulate real users touching your web apps using Python controlling Selenium and Beautiful Soup for reading HTML"
-tags: [ML, GE]
+tags: [Selenium, Testing, Python]
 date: "2019-12-11"
 file: "selenium-setup"
 image:
