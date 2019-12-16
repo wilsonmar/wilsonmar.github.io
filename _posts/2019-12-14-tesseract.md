@@ -16,10 +16,11 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<img align="right" width="310" height="310" src="https://user-images.githubusercontent.com/300046/70925020-c9193400-1fe7-11ea-91b9-86126388544f.gif"></a>
+<img align="right" alt="tesseract-mcu2012-310x310.png" width="310" height="310" src="https://user-images.githubusercontent.com/300046/70930552-b6f0c300-1ff2-11ea-8326-641532761f51.png"></a>
 The <a target="_blank" href="https://marvelcinematicuniverse.fandom.com/wiki/Tesseract">Tesseract shown in the Marvel Cinematic Universe</a> is a (3 dimensional) physical cube. But the object has a 4th dimension of time, thus enabling time travel in the MCU and in Madeleine L'Engle's novel/movie "A Wrinkle in Time".
 
-<a target="_blank" href="https://www.youtube.com/watch?v=iGO12Z5Lw8s">VIDEO</a>: But a Tesseract in <a target="_blank" href="http://mathworld.wolfram.com/Tesseract.html">science (real life)</a> is <strong>conceptual</strong> "w" <strong>4th dimensional axis</strong> shown as a shadow.<a target="_blank" href="https://www.wikiwand.com/en/Tesseract">*</a> 
+<a target="_blank" href="https://www.youtube.com/watch?v=iGO12Z5Lw8s">VIDEO: <img align="right" alt="tesseract-4d-proj-275x203.png" width="275" height="203" src="https://user-images.githubusercontent.com/300046/70930317-1f8b7000-1ff2-11ea-9a7c-2c62b3b3b00c.png"></a> 
+But a Tesseract in <a target="_blank" href="http://mathworld.wolfram.com/Tesseract.html">science (real life)</a> is <strong>conceptual</strong> "w" <strong>4th dimensional axis</strong> shown as a shadow.<a target="_blank" href="https://www.wikiwand.com/en/Tesseract">*</a> 
 
 <img align="right" alt="TesseractProjection_700" width="206" height="223" src="https://user-images.githubusercontent.com/300046/70925020-c9193400-1fe7-11ea-91b9-86126388544f.gif"></a>
 Anyway, the word Tesseract was adopted as the name of the <a target="_blank" href="https://github.com/tesseract-ocr/tesseract"> OCR (Optical Character Recognition) engine</a> program because it is able to recognize multiple-directional 3D lines.
