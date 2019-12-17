@@ -106,8 +106,7 @@ done.
 
    PROTIP: The virtualenv program executes commands in the `.env` file every time we cd into the directory. An <a target="_blank" href="https://scotch.io/tutorials/build-a-restful-api-with-flask-the-tdd-way">example</a>:
 
-   <pre>
-source venv/bin/activate
+   <pre>source venv/bin/activate
 export FLASK_APP="server.py"
 export APP_SETTINGS="development"
 export DATABASE_URL="postgresql://localhost/flask_api"
@@ -137,12 +136,12 @@ export DATABASE_URL="postgresql://localhost/flask_api"
    <pre><strong>deactivate
    </strong></pre>
 
-   "(env)" should disappear after this.
-
    Alternately, to get out of an Anaconda enviornment:
 
    <pre><strong>source deactivate
    </strong></pre>
+
+   "(env)" should disappear after this.
 
 0. Install dependencies within venv: 
 
@@ -312,7 +311,7 @@ ERROR: Cannot uninstall 'six'. It is a distutils installed project and thus we c
    
 0. Open the database using SQLite:
 
-   <pre><strong>sqlite3 chinook.db
+   <pre><strong>sqlite3  chinook.db  &
    </strong></pre>
 
    The response contains the date of the SQLite3 version being used:
@@ -465,7 +464,7 @@ ImportError: No module named flask</pre>
 
    The response expected:
 
-   <pre> * Serving Flask app "server" (lazy loading)
+   <pre>* Serving Flask app "server" (lazy loading)
  * Environment: production
    WARNING: This is a development server. Do not use it in a production deployment.
    Use a production WSGI server instead.
@@ -493,7 +492,7 @@ ImportError: No module named flask</pre>
 
 0. In a browser visit the web page on the designated port:
 
-   <pre><strong>open https://localhost:5000
+   <pre><strong>open https://localhost:5000/tracks
    </strong></pre>
 
 0. If you are following along <a href="#TomBellProjects">Tom Bell's projects on Pluralsight</a>, see his preview at:
