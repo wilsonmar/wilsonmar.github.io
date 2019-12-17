@@ -307,6 +307,9 @@ includes a practice exam.
 
 * <a target="_blank" href="https://www.codewars.com/?language=python">Codewars</a> presents code (katas) that does not execute, to which you fix to run. This improves your skills by training on real code challenges.
 
+* <a target="_blank" href="https://github.com/abhat222/Data-Science--Cheat-Sheet/tree/master/Python">
+Cheat Sheets on Python</a>
+
 
 ## Community
 

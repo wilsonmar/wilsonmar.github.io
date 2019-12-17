@@ -223,7 +223,7 @@ default languages</a>, so copy them in:
 
    ### Tessocr for Python
 
-   To list the languages again to see a long list, this time do it using a Python program using the <strong>tesserocr</strong> wrapper for Python open sourced at https://github.com/simonflueckiger/tesserocr-windows_build/releases
+   To list the languages again to see a long list, this time do it using a Python program using the <strong>tesserocr</strong> wrapper for Python.
 
 1. Install using pip:
 
