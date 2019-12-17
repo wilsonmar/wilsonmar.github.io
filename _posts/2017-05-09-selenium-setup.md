@@ -1012,11 +1012,11 @@ Installing collected packages: soupsieve, beautifulsoup4
 Successfully installed beautifulsoup4-4.8.1 soupsieve-1.9.5
    </pre>
 
-0. Download my repository containing Juypter Notebooks:
+0. Download my repository containing Jupyter Notebooks:
 
    <pre><strong>git clone https://github.com/wilsonmar/DevSecOps/master/Selenium</strong></pre>
 
-0. Open a Terminal and navigate to that folder. See <a target="_blank" href="https://wilsonmar.github.io/juypter/">https://wilsonmar.github.io/juypter</a>
+0. Open a Terminal and navigate to that folder. See <a target="_blank" href="https://wilsonmar.github.io/jupyter/">https://wilsonmar.github.io/jupyter</a>
 
 
    ### Call Selenium from Python

@@ -18,18 +18,20 @@ comments: true
 
 ## Certifications in Python 
 
-PythonInstitute.org has several certification exams.
+<a target="_blank" href="https://www.PythonInstitute.org">PythonInstitute.org</a> has several certification exams taken online at https://ums.edube.org/store or at a Pearson VUE center. 
 
-Each requires 70% correct of 40 questions over 40 minutes on-line for $59 at https://ums.edube.org/store or $295 at a Pearson VUE center. 
 
-### Beginner cert
+Each requires 70% correct of 40 questions over 40 minutes on-line.
 
-<a target="_blank" href="https://pythoninstitute.org/certification/pcep-certification-entry-level/pcep-exam-syllabus/">"Certified Entry-Level Python Programmer Certification" (PCAP-31-01)</a> covers these exam blocks:
+### Entry-level cert
 
-1. Basic Concepts (17%)
+<a target="_blank" href="https://pythoninstitute.org/certification/pcep-certification-entry-level/pcep-exam-syllabus/">"Certified Entry-Level Python Programmer Certification" (PCAP-31-01)</a> covers these exam blocks for $59.
 
-   * comments
-   * fundamental concepts: interpreting and the interpreter, compilation and the compiler, language elements, lexis, syntax and semantics, Python keywords, instructions, indenting
+1: Basic Concepts (17%)
+
+   * fundamental concepts: interpreting and the interpreter, compilation and the compiler, language elements, lexis, syntax analysis (parsing), semantics (applying language rules such as type mismatch), Python keywords, instructions, indenting
+   * REPL
+   * # comments. PROTIP: Text between triple-doublespace are actually string objects in the byte code
    * literals: Boolean, integer, floating-point numbers, scientific notation, strings
    * the print() function
    * the input() function
@@ -39,7 +41,7 @@ Each requires 70% correct of 40 questions over 40 minutes on-line for $59 at htt
    * assignments and shortcut operators
    <br /><br />
 
-2. Data Types, Evaluations, and Basic I/O Operations (20%)
+2: Data Types, Evaluations, and Basic I/O Operations (20%)
 
    * operators: unary and binary, priorities and binding
    * bitwise operators: ~ & ^ | << >>
@@ -54,7 +56,7 @@ Each requires 70% correct of 40 questions over 40 minutes on-line for $59 at htt
    * simple strings: constructing, assigning, indexing, slicing comparing, immutability
    <br /><br />
 
-3. Flow Control – loops and conditional blocks (20%)
+3: Flow Control – loops and conditional blocks (20%)
 
    * conditional statements: if, if-else, if-elif, if-elif-else
    * multiple conditional statements
@@ -66,7 +68,7 @@ Each requires 70% correct of 40 questions over 40 minutes on-line for $59 at htt
    * controlling loop execution: break, continue
    <br /><br />
 
-4. Data Collections – Lists, Tuples, and Dictionaries (23%)
+4: Data Collections – Lists, Tuples, and Dictionaries (23%)
 
    * simple lists: constructing vectors, indexing and slicing, the len() function
    * lists in detail: indexing, slicing, basic methods (append(), insert(), index()) and functions (len(), sorted(), etc.), del instruction, iterating lists with the for loop, initializing, in and not in operators, list comprehension, copying and cloning
@@ -77,7 +79,7 @@ Each requires 70% correct of 40 questions over 40 minutes on-line for $59 at htt
    * strings in detail: ASCII, UNICODE, UTF-8, immutability, escaping using the \ character, quotes and apostrophes inside strings, multiline strings, copying vs. cloning, advanced slicing, string vs. string, string vs. non-string, basic string methods (upper(), lowe
    <br /><br />
 
-5. Functions (20%)
+5: Functions (20%)
 
    * defining and invoking your own functions and generators
    * return and yield keywords, returning results,
@@ -92,9 +94,9 @@ Each requires 70% correct of 40 questions over 40 minutes on-line for $59 at htt
 
 ### Intermediate cert
 
-There is also a <a target="_blank" href="https://pythoninstitute.org/certification/pcap-certification-associate/pcap-exam-syllabus/">(PCAP-31-02) Associate level exam</a> that cover these exam blocks:
+The <a target="_blank" href="https://pythoninstitute.org/certification/pcap-certification-associate/pcap-exam-syllabus/">(PCAP-31-02) Associate level exam</a> for $295 covers these exam blocks:
 
-1. Control and Evaluations (25%)
+1: Control and Evaluations (25%)
 
    * <strike>basic concepts: interpreting and the interpreter, compilation and the compiler, language elements, lexis, syntax and semantics, Python keywords, instructions, indenting</strike>
    * <strike>literals: Boolean, integer, floating-point numbers, scientific notation, strings</strike>
@@ -117,7 +119,7 @@ There is also a <a target="_blank" href="https://pythoninstitute.org/certificati
    * controlling loop execution: break, continue
    <br /><br />
 
-2. Data Aggregates (25%)
+2: Data Aggregates (25%)
 
    * strings in detail: ASCII, UNICODE, UTF-8, immutability, escaping using the \ character, quotes and apostrophes inside strings, multiline strings, copying vs. cloning, advanced slicing, string vs. string, string vs. non-string, basic string methods (upper(), lower(), isxxx(), capitalize(), split(), join(), etc.) and functions (len(), chr(), ord()), escape characters
    * lists in detail: indexing, slicing, basic methods (append(), insert(), index()) and functions (len(), sorted(), etc.), del instruction, iterating lists with the for loop, initializing, in and not in operators, list comprehension, copying and cloning
@@ -127,7 +129,7 @@ There is also a <a target="_blank" href="https://pythoninstitute.org/certificati
    * dictionaries: building, indexing, adding and removing keys, iterating through dictionaries as well as their keys and values, checking key existence, keys(), items() and values() methods
    <br /><br />
 
-3. Functions and Modules (25%)
+3: Functions and Modules (25%)
 
    * defining and invoking your own functions and generators
    * return and yield keywords, returning results, the None keyword, recursion
@@ -145,7 +147,7 @@ There is also a <a target="_blank" href="https://pythoninstitute.org/certificati
    * Python hashbangs, using multiline strings as module documentation
    <br /><br />
 
-4. Classes, Objects, and Exceptions (25%)
+4: Classes, Objects, and Exceptions (25%)
 
    * defining your own classes, superclasses, subclasses, inheritance, searching for missing class components, creating objects
    * class attributes: class variables and instance variables, defining, adding and removing attributes, explicit constructor invocation

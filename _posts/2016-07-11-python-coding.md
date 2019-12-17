@@ -18,27 +18,46 @@ comments: true
 
 Here are various coding tips I've seen while going through [Python programming classes](/python-tutorials/) after [installing Python](/python-install/) and [Jupyter](/jupyter/).
 
-## Pluralsight
+## Reserved Keywords
 
-<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/413">
-The video course at LinuxAcademy</a> by Keith Thompson references 
-includes a practice exam.
+Here are words that Python's reserved for itself, so you can't use them as custom variables:
 
-## Dan Bader
-
-Dan Bader has emails and courses on Python:
-<a target="_blank" href="https://www.youtube.com/watch?v=p-89r5QvQvQ">VIDEO
-What Python Projects Should I Build to Get a Job?</a>
-Aug 23, 2017
-
-   1. tensorflow (for machine learning) 
-   2. crawling (spider based projects) 
-   3. database handling (firebase, Mysql etc.)
-   <br /><br />
-
-* Object-oriented programming with classes and their methods
-* <a href="#Cloud">Cloud Python</a>
-
+*	and 
+*	as
+*	assert
+*	async
+*	await
+*	break
+*	class
+*	continue
+*	def
+*	del
+*	elif
+*	else
+*	except
+*	False
+*	finally
+*	for
+*	from
+*	global
+*	if
+*	import
+*	in
+*	is
+*	lambda
+*	None
+*	nonlocal
+*	not
+*	or
+*	pass
+*	raise
+*	return
+*	True
+*	try
+*	while
+*	with
+*	yield
+<br /><br />
 
 ## Command generator
 

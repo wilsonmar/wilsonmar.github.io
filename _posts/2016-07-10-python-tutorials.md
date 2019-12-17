@@ -247,6 +247,27 @@ Game Programming with Python and PyGame
 Dec 17, 2013 4h 18m</a>
 by Filip Ekberg
 
+Dan Bader:
+
+   * <a target="_blank" href="https://realpython.com/">Real Python</a>
+
+   * Dan Bader has emails and courses on Python: <a target="_blank" href="https://www.youtube.com/watch?v=p-89r5QvQvQ" title="Aug 23, 2017">VIDEO: What Python Projects Should I Build to Get a Job?</a>
+   
+   1. Tensorflow (for machine learning) 
+   2. Crawling (spider based projects, using Beautiful Soup) 
+   3. Database handling (firebase, Mysql, Neo4j etc.)
+   <br /><br />
+
+   * Object-oriented programming with classes and their methods
+   * <a href="#Cloud">Cloud Python</a>
+
+## Linux Academy
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/413">
+The video course at LinuxAcademy</a> by Keith Thompson references 
+includes a practice exam.
+
+
 ## Tutorials
 
 * <a target="_blank" href="https://www.cmi.ac.in/~madhavan/courses/prog2-2012/docs/diveintopython3/index.html">Dive Into Python</a> - a survey of Python syntax, datatypes, etc.
@@ -258,8 +279,6 @@ by Filip Ekberg
 * <a target="_blank" href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a> - Style Guide for Python Code - learn what is good and bad style in Python
 
 * <a target="_blank" href="https://checkio.org/">CheckIO</a> - learn Python by exploring a game world
-
-* <a target="_blank" href="https://realpython.com/">Real Python</a> by Dan Bader
 
 * <a target="_blank" href="https://inventwithpython.com/">Invent with Python</a> - develop your Python skills by making games or hacking ciphers
 
