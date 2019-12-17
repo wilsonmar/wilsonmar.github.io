@@ -145,9 +145,10 @@ salta sobre o céo preguicoso.
 
    Even though the image is slightly crooked, Tesseract should recogize all the various special characters such as curly braces, angle brackets, !, $, #, %, slash, and @ signs, etc.
    
+
    ### Language recognition
 
-   Except it did not recognize European language accents such the <em>umlaut</em> above Uber. "marron rapido" is supposed to be capped. "preguicoso" a Portugese word meaning lazy, does not have the diacritical tail appendage <a target="_blank" href="https://www.wikiwand.com/en/Cedilla">c-cedilla (cedilha in Portugese)</a>.
+   <strong>It did not recognize European language accents</strong> such the <em>umlaut</em> above Uber. "marron rapido" is supposed to be capped. "preguicoso" a Portugese word meaning lazy, does not have the diacritical tail appendage <a target="_blank" href="https://www.wikiwand.com/en/Cedilla">c-cedilla (cedilha in Portugese)</a>.
 
    But Tesseract is supposed to recognize characters from over 100 languages now. Originally from HP, <a target="_blank" href="https://twitter.com/theRaySmith">@theRaySmith</a> at Google <a target="_blank" href="https://github.com/tesseract-ocr/docs/blob/master/das_tutorial2016/1Intro-history.pdf">says in 2016 Tesseract includes LSTM</a> (Long Short Term Memory) machine learning algorithm with convolutional and deep belief networks.
 
@@ -219,12 +220,44 @@ default languages</a>, so copy them in:
 
    <pre>Uninstalling /usr/local/Cellar/tesseract-lang/4.0.0... (163 files, 651.8MB)</pre>
 
-1. List the languages again to see a long list:
 
-   <pre><strong>tesseract --list-langs
+   ### Tessocr for Python
+
+   To list the languages again to see a long list, this time do it using a Python program using the <strong>tesserocr</strong> wrapper for Python open sourced at https://github.com/simonflueckiger/tesserocr-windows_build/releases
+
+1. Install using pip:
+
+   <pre><strong>pip install tesserocr
+   pip install Pillow
    </strong></pre>
 
-1. <a href="#RunDeuToo">Run again</a>, then edit the out.txt file again. You should now see accent characters now:
+   The response at time of writing:
+
+   <pre>Collecting tesserocr
+  Downloading https://files.pythonhosted.org/packages/e3/77/fb26b321c3b9ce4a47af12b19e85ddbf4d0629adb6552d85276e824e6e51/tesserocr-2.5.0.tar.gz (54kB)
+     |████████████████████████████████| 61kB 156kB/s 
+Building wheels for collected packages: tesserocr
+  Building wheel for tesserocr (setup.py) ... done
+  Created wheel for tesserocr: filename=tesserocr-2.5.0-cp37-cp37m-macosx_10_14_x86_64.whl size=169578 sha256=0ea0c430f6649a974c43805e9d8662fe0f14ef85f305e3fba6ded924cf4eb1a5
+  Stored in directory: /Users/wilson_mar/Library/Caches/pip/wheels/c0/32/13/70d610c079b65b21a5fb84af4fe7593cbf06da35f69cf10209
+Successfully built tesserocr
+Installing collected packages: tesserocr
+Successfully installed tesserocr-2.5.0
+   </pre>
+
+1. Run the Python program:
+
+   <pre><strong>python3 GetAvailableLanguages.py
+   </strong></pre>
+
+   The response is a JSON file:
+
+   <tt>['afr', 'amh', 'ara', 'asm', 'aze', 'aze_cyrl', 'bel', 'ben', 'bod', 'bos', 'bre', 'bul', 'cat', 'ceb', 'ces', 'chi_sim', 'chi_sim_vert', 'chi_tra', 'chi_tra_vert', 'chr', 'cos', 'cym', 'dan', 'deu', 'div', 'dzo', 'ell', 'eng', 'enm', 'epo', 'est', 'eus', 'fao', 'fas', 'fil', 'fin', 'fra', 'frk', 'frm', 'fry', 'gla', 'gle', 'glg', 'grc', 'guj', 'hat', 'heb', 'hin', 'hrv', 'hun', 'hye', 'iku', 'ind', 'isl', 'ita', 'ita_old', 'jav', 'jpn', 'jpn_vert', 'kan', 'kat', 'kat_old', 'kaz', 'khm', 'kir', 'kmr', 'kor', 'kor_vert', 'lao', 'lat', 'lav', 'lit', 'ltz', 'mal', 'mar', 'mkd', 'mlt', 'mon', 'mri', 'msa', 'mya', 'nep', 'nld', 'nor', 'oci', 'ori', 'osd', 'pan', 'pol', 'por', 'pus', 'que', 'ron', 'rus', 'san', 'script/Arabic', 'script/Armenian', 'script/Bengali', 'script/Canadian_Aboriginal', 'script/Cherokee', 'script/Cyrillic', 'script/Devanagari', 'script/Ethiopic', 'script/Fraktur', 'script/Georgian', 'script/Greek', 'script/Gujarati', 'script/Gurmukhi', 'script/HanS', 'script/HanS_vert', 'script/HanT', 'script/HanT_vert', 'script/Hangul', 'script/Hangul_vert', 'script/Hebrew', 'script/Japanese', 'script/Japanese_vert', 'script/Kannada', 'script/Khmer', 'script/Lao', 'script/Latin', 'script/Malayalam', 'script/Myanmar', 'script/Oriya', 'script/Sinhala', 'script/Syriac', 'script/Tamil', 'script/Telugu', 'script/Thaana', 'script/Thai', 'script/Tibetan', 'script/Vietnamese', 'sin', 'slk', 'slv', 'snd', 'snum', 'spa', 'spa_old', 'sqi', 'srp', 'srp_latn', 'sun', 'swa', 'swe', 'syr', 'tam', 'tat', 'tel', 'tessconfigs/afr', 'tessconfigs/amh', 'tessconfigs/ara', 'tessconfigs/asm', 'tessconfigs/aze', 'tessconfigs/aze_cyrl', 'tessconfigs/bel', 'tessconfigs/ben', 'tessconfigs/bod', 'tessconfigs/bos', 'tessconfigs/bre', 'tessconfigs/bul', 'tessconfigs/cat', 'tessconfigs/ceb', 'tessconfigs/ces', 'tessconfigs/chi_sim', 'tessconfigs/chi_sim_vert', 'tessconfigs/chi_tra', 'tessconfigs/chi_tra_vert', 'tessconfigs/chr', 'tessconfigs/cos', 'tessconfigs/cym', 'tessconfigs/dan', 'tessconfigs/deu', 'tessconfigs/div', 'tessconfigs/dzo', 'tessconfigs/ell', 'tessconfigs/eng', 'tessconfigs/enm', 'tessconfigs/epo', 'tessconfigs/est', 'tessconfigs/eus', 'tessconfigs/fao', 'tessconfigs/fas', 'tessconfigs/fil', 'tessconfigs/fin', 'tessconfigs/fra', 'tessconfigs/frk', 'tessconfigs/frm', 'tessconfigs/fry', 'tessconfigs/gla', 'tessconfigs/gle', 'tessconfigs/glg', 'tessconfigs/grc', 'tessconfigs/guj', 'tessconfigs/hat', 'tessconfigs/heb', 'tessconfigs/hin', 'tessconfigs/hrv', 'tessconfigs/hun', 'tessconfigs/hye', 'tessconfigs/iku', 'tessconfigs/ind', 'tessconfigs/isl', 'tessconfigs/ita', 'tessconfigs/ita_old', 'tessconfigs/jav', 'tessconfigs/jpn', 'tessconfigs/jpn_vert', 'tessconfigs/kan', 'tessconfigs/kat', 'tessconfigs/kat_old', 'tessconfigs/kaz', 'tessconfigs/khm', 'tessconfigs/kir', 'tessconfigs/kmr', 'tessconfigs/kor', 'tessconfigs/kor_vert', 'tessconfigs/lao', 'tessconfigs/lat', 'tessconfigs/lav', 'tessconfigs/lit', 'tessconfigs/ltz', 'tessconfigs/mal', 'tessconfigs/mar', 'tessconfigs/mkd', 'tessconfigs/mlt', 'tessconfigs/mon', 'tessconfigs/mri', 'tessconfigs/msa', 'tessconfigs/mya', 'tessconfigs/nep', 'tessconfigs/nld', 'tessconfigs/nor', 'tessconfigs/oci', 'tessconfigs/ori', 'tessconfigs/osd', 'tessconfigs/pan', 'tessconfigs/pol', 'tessconfigs/por', 'tessconfigs/pus', 'tessconfigs/que', 'tessconfigs/ron', 'tessconfigs/rus', 'tessconfigs/san', 'tessconfigs/sin', 'tessconfigs/slk', 'tessconfigs/slv', 'tessconfigs/snd', 'tessconfigs/snum', 'tessconfigs/spa', 'tessconfigs/spa_old', 'tessconfigs/sqi', 'tessconfigs/srp', 'tessconfigs/srp_latn', 'tessconfigs/sun', 'tessconfigs/swa', 'tessconfigs/swe', 'tessconfigs/syr', 'tessconfigs/tam', 'tessconfigs/tat', 'tessconfigs/tel', 'tessconfigs/tgk', 'tessconfigs/tha', 'tessconfigs/tir', 'tessconfigs/ton', 'tessconfigs/tur', 'tessconfigs/uig', 'tessconfigs/ukr', 'tessconfigs/urd', 'tessconfigs/uzb', 'tessconfigs/uzb_cyrl', 'tessconfigs/vie', 'tessconfigs/yid', 'tessconfigs/yor', 'tgk', 'tha', 'tir', 'ton', 'tur', 'uig', 'ukr', 'urd', 'uzb', 'uzb_cyrl', 'vie', 'yid', 'yor']</tt>
+
+
+   ### Run to see accents
+
+1. <a href="#RunDeuToo">Run again</a>, then edit the out.txt file again. You should now see accent characters:
 
    <pre>Der „schnelle” braune Fuchs springt
 über den faulen Hund. Le renard brun
@@ -237,6 +270,16 @@ salta sobre o cão preguiçoso.
    </pre>
 
 1. To output to a pdf file instead of txt file, add "pdf" to the end of the command.
+
+
+   ### Asian characters
+
+   When specifying the language code for Chinese, note there are:
+   <tt>chi_sim</tt> and <tt>chi_tra</tt> for left-to-right and
+   <tt>chi_sim_vert</tt> and <tt>chi_tra_vert</tt> for vertical.
+
+   Japanes and Korean language coded behave the same way.
+
 
 
 <a name="ImagePreparation"></a>
@@ -267,6 +310,42 @@ If you need to convert images, use the popular open-source <a target="_blank" hr
 Resources for this section include:
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=QhJiOCwz-_I&time=2m51s" title="Apr 14, 2017">Using Tesseract-OCR to extract text from images</a>
+
+<hr />
+
+## Usage within Python
+
+Within venv
+
+https://github.com/sirfz/tesserocr
+
+
+1. Install Pillow, a module for image processing in Python:
+
+   pip install Pillow
+
+* Code for Python:
+
+   https://medium.com/better-programming/beginners-guide-to-tesseract-ocr-using-python-10ecbb426c3d
+   offers this snippet:
+
+   <pre>from PIL import Image  # PIL = old version of Pillow utility
+column = Image.open('code.jpg')
+gray = column.convert('L')    # convert to gray scale vs. RGB or CMYK.
+blackwhite = gray.point(lambda x: 0 if x < 200 else 255, '1')
+blackwhite.save("code_bw.jpg") # TODO: change to use program invocation parameter
+   </pre>
+
+* Code for Shell script:
+
+   <pre>from PIL import Image
+import sys
+column = Image.open(sys.argv[1])
+gray = column.convert('L')
+blackwhite = gray.point(lambda x: 0 if x < 200 else 255, '1')
+blackwhite.save("code_bw.jpg")
+   </pre>
+
 
 
 <hr />
