@@ -322,15 +322,14 @@ Enter ".help" for usage hints.
    sqlite> 
    </pre>
 
-0. List commands 
+0. Open another Terminal to list commands:
 
    <pre><strong> sqlite> .help
    </strong></pre>
 
    The response is as shown on https://www.sqlite.org/cli.html
 
-   <pre>
-.auth ON|OFF           Show authorizer callbacks
+   <pre>.auth ON|OFF           Show authorizer callbacks
 .backup ?DB? FILE      Backup DB (default "main") to FILE
 .bail on|off           Stop after hitting an error.  Default OFF
 .binary on|off         Turn binary output on or off.  Default OFF
