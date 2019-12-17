@@ -495,6 +495,11 @@ ImportError: No module named flask</pre>
    <pre><strong>open https://localhost:5000/tracks
    </strong></pre>
 
+   What you see depends on the JSON handler on your internet browser.
+
+   ![python-flask-response-687x272](https://user-images.githubusercontent.com/300046/71012315-2d053080-20ac-11ea-927f-c231476a8b56.png)
+
+
 0. If you are following along <a href="#TomBellProjects">Tom Bell's projects on Pluralsight</a>, see his preview at:
 
    <a target="_blank" href="https://pfjb.thomasbell.org">https://pfjb.thomasbell.org</a>
