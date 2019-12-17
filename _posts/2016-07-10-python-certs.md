@@ -31,7 +31,7 @@ Each requires 70% correct of 40 questions over 40 minutes on-line.
 
    * fundamental concepts: interpreting and the interpreter, compilation and the compiler, language elements, lexis, syntax analysis (parsing), semantics (applying language rules such as type mismatch), Python keywords, instructions, indenting
    * REPL
-   * # comments. PROTIP: Text between triple-doublespace are actually string objects in the byte code
+   * comments. PROTIP: Text between triple-doublespace are actually string objects in the byte code
    * literals: Boolean, integer, floating-point numbers, scientific notation, strings
    * the print() function
    * the input() function
