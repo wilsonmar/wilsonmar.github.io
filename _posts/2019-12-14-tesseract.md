@@ -26,6 +26,8 @@ Anyway, the word Tesseract was adopted as the name of the <a target="_blank" hre
 
 ## Installation
 
+Tesseract 4 is included with Ubuntu 18.04+.
+
 1. Install a pre-built executable binary at <a target="_blank" href="https://github.com/tesseract-ocr/tesseract/wiki">https://github.com/tesseract-ocr/tesseract/wiki</a> for various operating systems.
 
    On macOS:
@@ -150,7 +152,9 @@ salta sobre o céo preguicoso.
 
    <strong>It did not recognize European language accents</strong> such the <em>umlaut</em> above Uber. "marron rapido" is supposed to be capped. "preguicoso" a Portugese word meaning lazy, does not have the diacritical tail appendage <a target="_blank" href="https://www.wikiwand.com/en/Cedilla">c-cedilla (cedilha in Portugese)</a>.
 
-   But Tesseract is supposed to recognize characters from over 100 languages now. Originally from HP, <a target="_blank" href="https://twitter.com/theRaySmith">@theRaySmith</a> at Google <a target="_blank" href="https://github.com/tesseract-ocr/docs/blob/master/das_tutorial2016/1Intro-history.pdf">says in 2016 Tesseract includes LSTM</a> (Long Short Term Memory) machine learning algorithm with convolutional and deep belief networks.
+   But Tesseract is supposed to recognize characters from over 100 languages now. Originally from HP, <a target="_blank" href="https://twitter.com/theRaySmith">@theRaySmith</a> at Google <a target="_blank" href="https://github.com/tesseract-ocr/docs/blob/master/das_tutorial2016/1Intro-history.pdf">says in 2016 Tesseract includes LSTM</a> (Long Short Term Memory) machine learning algorithm with deep belief networks.
+
+   NOTE: LSTM is a form of RNN (Recurrent Neural Network) algorithm to recognize a sequence of characters rather than single chacters (which is better handled by CNN (Convolutional Neural Networks).
 
 1. To get Tesseract to recognize the full set of language characters, run with additional parameters specifying more language codes from <a target="_blank" href="https://github.com/tesseract-ocr/tesseract/wiki/Data-Files">the wiki site</a>: 
 
