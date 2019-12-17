@@ -16,7 +16,6 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-
 Flask is called a "micro-framework" because, unlike Django and other analogues like Ruby on Rails, it provides only what is necessary to do core web development, leaving you to add plug-ins beyond that minimal subset.
 
 Flask's approach keeps your code and workflow simple, particularly on smaller projects. 
@@ -823,3 +822,10 @@ https://testdriven.io/blog/developing-a-single-page-app-with-flask-and-vuejs/
 https://github.com/alexdebrie/serverless-flask
 
 https://stackabuse.com/serving-static-files-with-flask/
+
+
+## More about Python
+
+This is one of a series about Python:
+
+{% include python_links.html %}

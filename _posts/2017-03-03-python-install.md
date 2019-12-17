@@ -2147,3 +2147,11 @@ Successfully installed py4j-0.10.8.1
 
 
 macos-install-all/tests/firefox_pycon_search.py
+
+
+
+## More on Python
+
+This is one of a series about Python:
+
+{% include python_links.html %}

@@ -2465,3 +2465,10 @@ https://medium.freecodecamp.org/the-easy-way-to-set-up-docker-on-a-raspberry-pi-
 This is one of a series on IoT:
 
 {% include iot_links.html %}
+
+
+## More on Python
+
+This is one of a series about Python:
+
+{% include python_links.html %}

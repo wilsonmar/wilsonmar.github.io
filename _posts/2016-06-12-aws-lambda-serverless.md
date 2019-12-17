@@ -150,3 +150,9 @@ This is one of a series on Serverless computing
 This is one of a series on Cloud computing
 
 {% include cloud_links.html %}
+
+## More about Python
+
+This is one of a series about Python:
+
+{% include python_links.html %}

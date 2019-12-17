@@ -240,3 +240,10 @@ https://medium.com/@jaredpolivka/machine-learning-with-humans-in-the-loop-lesson
 https://www.youtube.com/watch?v=zwm2C3V35Fw
 Artificial Intelligence - The Apex Technology of the Information Age: Goldman Sachs' Heath Terry
 2:41 general talk
+
+
+## More about Python
+
+This is one of a series about Python:
+
+{% include python_links.html %}

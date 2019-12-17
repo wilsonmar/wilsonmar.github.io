@@ -1,0 +1,319 @@
+---
+layout: post
+title: "Python Certs"
+excerpt: "Certification topics"
+tags: [python, coding]
+date: "2016-07-10"
+file: "python-certs"
+image:
+# pic white python logo 1900x500.jpg
+  feature: https://cloud.githubusercontent.com/assets/300046/14622164/4230c848-0585-11e6-957b-be11147346e6.jpg
+  credit: 
+  creditlink: 
+comments: true
+---
+<i>{{ page.excerpt }}</i>
+{% include l18n.html %}
+{% include _toc.html %}
+
+## Certifications in Python 
+
+PythonInstitute.org has several certification exams.
+
+Each requires 70% correct of 40 questions over 40 minutes on-line for $59 at https://ums.edube.org/store or $295 at a Pearson VUE center. 
+
+### Beginner cert
+
+<a target="_blank" href="https://pythoninstitute.org/certification/pcep-certification-entry-level/pcep-exam-syllabus/">"Certified Entry-Level Python Programmer Certification" (PCAP-31-01)</a> covers these exam blocks:
+
+1. Basic Concepts (17%)
+
+   * comments
+   * fundamental concepts: interpreting and the interpreter, compilation and the compiler, language elements, lexis, syntax and semantics, Python keywords, instructions, indenting
+   * literals: Boolean, integer, floating-point numbers, scientific notation, strings
+   * the print() function
+   * the input() function
+   * numeral systems (binary, octal, decimal, hexadecimal)
+   * numeric operators: ** * / % // + –
+   * string operators: * +
+   * assignments and shortcut operators
+   <br /><br />
+
+2. Data Types, Evaluations, and Basic I/O Operations (20%)
+
+   * operators: unary and binary, priorities and binding
+   * bitwise operators: ~ & ^ | << >>
+   * Boolean operators: not and or
+   * Boolean expressions
+   * relational operators ( == != > >= < <= ), building complex Boolean expressions
+   * accuracy of floating-point numbers
+   * basic input and output operations using the input(), print(), int(), float(), str(), len() functions
+   * formatting print() output with end= and sep= arguments
+   * type casting
+   * basic calculations
+   * simple strings: constructing, assigning, indexing, slicing comparing, immutability
+   <br /><br />
+
+3. Flow Control – loops and conditional blocks (20%)
+
+   * conditional statements: if, if-else, if-elif, if-elif-else
+   * multiple conditional statements
+   * the pass instruction
+   * building loops: while, for, range(), in
+   * iterating through sequences
+   * expanding loops: while-else, for-else
+   * nesting loops and conditional statements
+   * controlling loop execution: break, continue
+   <br /><br />
+
+4. Data Collections – Lists, Tuples, and Dictionaries (23%)
+
+   * simple lists: constructing vectors, indexing and slicing, the len() function
+   * lists in detail: indexing, slicing, basic methods (append(), insert(), index()) and functions (len(), sorted(), etc.), del instruction, iterating lists with the for loop, initializing, in and not in operators, list comprehension, copying and cloning
+   * lists in lists: matrices and cubes
+   * tuples: indexing, slicing, building, immutability
+   * tuples vs. lists: similarities and differences, lists inside tuples and tuples inside lists
+   * dictionaries: building, indexing, adding and removing keys, iterating through dictionaries as well as their keys and values, checking key existence, keys(), items() and values() methods
+   * strings in detail: ASCII, UNICODE, UTF-8, immutability, escaping using the \ character, quotes and apostrophes inside strings, multiline strings, copying vs. cloning, advanced slicing, string vs. string, string vs. non-string, basic string methods (upper(), lowe
+   <br /><br />
+
+5. Functions (20%)
+
+   * defining and invoking your own functions and generators
+   * return and yield keywords, returning results,
+   * the None keyword,
+   * recursion
+   * parameters vs. arguments,
+   * positional keyword and mixed argument passing,
+   * default parameter values
+   * converting generator objects into lists using the list() function
+   * name scopes, name hiding (shadowing), the global keyword
+   <br /><br />
+
+### Intermediate cert
+
+There is also a <a target="_blank" href="https://pythoninstitute.org/certification/pcap-certification-associate/pcap-exam-syllabus/">(PCAP-31-02) Associate level exam</a> that cover these exam blocks:
+
+1. Control and Evaluations (25%)
+
+   * <strike>basic concepts: interpreting and the interpreter, compilation and the compiler, language elements, lexis, syntax and semantics, Python keywords, instructions, indenting</strike>
+   * <strike>literals: Boolean, integer, floating-point numbers, scientific notation, strings</strike>
+   * operators: unary and binary, priorities and binding
+   * numeric operators: ** * / % // + –
+   * bitwise operators: ~ & ^ | << >>
+   * string operators: * +
+   * Boolean operators: not and or
+   * relational operators ( == != > >= < <= ), building complex Boolean expressions
+   * assignments and shortcut operators
+   * accuracy of floating-point numbers
+   * basic input and output: input(), print(), int(), float(), str() functions
+   * formatting print() output with end= and sep= arguments
+   * conditional statements: if, if-else, if-elif, if-elif-else
+   * the pass instruction
+   * simple lists: constructing vectors, indexing and slicing, the len() function
+   * simple strings: constructing, assigning, indexing, slicing comparing, immutability
+   * building loops: while, for, range(), in, iterating through sequences
+   * expanding loops: while-else, for-else, nesting loops and conditional statements
+   * controlling loop execution: break, continue
+   <br /><br />
+
+2. Data Aggregates (25%)
+
+   * strings in detail: ASCII, UNICODE, UTF-8, immutability, escaping using the \ character, quotes and apostrophes inside strings, multiline strings, copying vs. cloning, advanced slicing, string vs. string, string vs. non-string, basic string methods (upper(), lower(), isxxx(), capitalize(), split(), join(), etc.) and functions (len(), chr(), ord()), escape characters
+   * lists in detail: indexing, slicing, basic methods (append(), insert(), index()) and functions (len(), sorted(), etc.), del instruction, iterating lists with the for loop, initializing, in and not in operators, list comprehension, copying and cloning
+   * lists in lists: matrices and cubes
+   * tuples: indexing, slicing, building, immutability
+   * tuples vs. lists: similarities and differences, lists inside tuples and tuples inside lists
+   * dictionaries: building, indexing, adding and removing keys, iterating through dictionaries as well as their keys and values, checking key existence, keys(), items() and values() methods
+   <br /><br />
+
+3. Functions and Modules (25%)
+
+   * defining and invoking your own functions and generators
+   * return and yield keywords, returning results, the None keyword, recursion
+   * parameters vs. arguments, positional keyword and mixed argument passing, default parameter values
+   * converting generator objects into lists using the list() function
+   * name scopes, name hiding (shadowing), the global keyword
+   * lambda functions, defining and using
+   * map(), filter(), reduce(), reversed(), sorted() functions and the sort() method
+   * the if operator
+   * import directives, qualifying entities with module names, initializing modules
+   * writing and using modules, the __name__ variable
+   * pyc file creation and usage
+   * constructing and distributing packages, packages vs. directories, the role of the __init__.py file
+   * hiding module entities
+   * Python hashbangs, using multiline strings as module documentation
+   <br /><br />
+
+4. Classes, Objects, and Exceptions (25%)
+
+   * defining your own classes, superclasses, subclasses, inheritance, searching for missing class components, creating objects
+   * class attributes: class variables and instance variables, defining, adding and removing attributes, explicit constructor invocation
+   * class methods: defining and using, the self parameter meaning and usage
+   * inheritance and overriding, finding class/object components
+   * single inheritance vs. multiple inheritance
+   * name mangling
+   * invoking methods, passing and using the self argument/parameter
+   * the __init__ method
+   * the role of the __str__ method
+   * introspection: __dict__, __name__, __module__, __bases__ properties, examining class/object structure
+   * writing and using constructors
+   * hasattr(), type(), issubclass(), isinstance(), super() functions
+   * using predefined exceptions and defining your own ones
+   * the try-except-else-finally block, the raise statement, the except-as variant
+   * exceptions hierarchy, assigning more than one exception to one except branch
+   * adding your own exceptions to an existing hierarchy
+   * assertions
+   * the anatomy of an exception object
+   * input/output basics: opening files with the open() function, stream objects, binary vs. text files, newline character translation, reading and writing files, bytearray objects
+   * read(), readinto(), readline(), write(), close() methods
+   <br /><br />
+
+### Professional 1
+
+<a target="_blank" href="https://pythoninstitute.org/certification/pcpp-certification-professional/pcpp-32-1-exam-syllabus/">The first of two Professional-level exams (PCPP-32-101)</a>
+
+1: File Processing and Communicating with a Program’s Environment (20%)
+
+   * Processing different kinds of files
+      - sqlite3 – interacting with SQLite databases
+      - xml – creating and processing XML files
+      - csv – CSV file reading and writing
+      - logging – basics logging facility for Python
+      - configparser – configuration file parser
+
+   * Communicating with a program’s environment:
+      - os – interacting with the operating system,
+      - datetime – manipulating with dates and time
+      - io – working with streams,
+      - time – time access and conversions
+   <br /><br />
+
+2: Math, Science, and Engineering Tools (20%)
+
+   * math – a basic tool for elementary evaluations
+   * NumPy – fundamental package for scientific computing
+   * SciPy – an ecosystem for mathematics, science, and engineering
+   * Matplotlib – 2D plotting library producing publication quality figures
+   * Pandas – a library providing high-performance and data analysis tools
+   * SciKit-image – a collection of algorithms for image processing
+   <br /><br />
+
+3: GUI Programming (20%)
+
+   * What is GUI and where it comes from
+   * Constructing a GUI – basic blocks and conventions
+   * Event-driven programming
+   * Currently used GUI environments and toolkits
+   * tkinter — Python interface to Tcl/Tk
+      - tkinter’s application life cycle
+      - Widgets, windows and events
+      - Sample applications
+   * pygame – a simple way of developing multimedia applications
+   <br /><br />
+
+4: Python Enhancement Proposals (15%)
+
+   * What is PEP?
+   * Coding conventions – not only style and naming
+   * PEP 20 – The Zen of Python: a collection of principles that influences the design of Python code
+   * PEP 8 – Style Guide for Python Code: coding conventions for code comprising the standard library in the main Python distribution
+   * PEP 257 – Docstring Conventions: what is docstring and some semantics as well as conventions associated with them
+   * A tour of important PEPs
+   <br /><br />
+
+5: Advanced Perspective of Classes and Object-Oriented Programming in Python (25%)
+
+   * Classes, Instances, Attributes, Methods
+   * Working with class and instance data
+   * Copying object data using shallow and deep operations
+   * Inheritance and Polymorphism
+   * Different faces of Python methods: static and class methods
+   * Abstract classes vs. method overloading
+   * Composition vs. Inheritance – two ways to the same destination
+   * Implementing Core Syntax
+   * Subclassing built-ins
+   * Attribute Encapsulation
+   * Advanced techniques of creating and serving exceptions
+   * Serialization of Python objects using the pickle module
+   * Making Python object persistent using the shelve module
+   * Metaprograming
+      - Function decorators
+      - Class decorators
+      - Metaclasses
+   <br /><br />
+
+### Professional 2
+
+<a target="_blank" href="https://pythoninstitute.org/certification/pcpp-certification-professional/pcpp-32-2-exam-syllabus/">The second of two Professional-level exams (PCPP-32-102)</a>
+
+1: Creating and Distributing Packages (20%)
+
+   * Using pip
+   * Basic directory structure
+   * The setup.py file
+   * Sharing, storing, and installing packages
+   * Documentation
+   * License
+   * Testing principles and techniques
+      - unittest – Unit testing framework
+      - Pytest – framework to write tests
+
+2: Design Patterns (20%)
+
+   * Object-oriented design principles and the concept of design patterns
+   * The Singleton Design Pattern
+   * The Factory Pattern
+   * The Façade Pattern
+   * The Proxy Pattern
+   * The Observer Pattern
+   * The Command Pattern
+   * The Template Method Pattern
+   * Model-View-Controller
+   * The State Design Pattern
+
+3: Interprocess Communication (20%)
+
+   * multiprocessing — Process-based parallelism
+   * threading — Thread-based parallelism
+   * subprocess — Subprocess management
+   * Multiprocess synchronisation
+      - queue — A synchronized queue class
+      - socket — Low-level networking interface
+      - mmap — Memory-mapped file support
+
+4: Python Network Programming (20%)
+
+   * Python Socket Module
+      - Introduction to sockets
+      - Server Socket Methods
+      - Client socket methods
+      - General socket methods
+      - Client-Server vs. Peer-to-peer
+      - Other Internet nodules
+
+5: Python-MySQL Database Access (20%)
+
+   * Relational databases – fundamental principles and how to work with them
+   * MySQL vs. rest of the world
+   * CRUD Application
+      - db connection
+      - db create
+      - db insert
+      - db read
+      - db update
+      - db delete
+
+   <br /><br />
+
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/413">
+The video course at LinuxAcademy</a> by Keith Thompson references 
+includes a practice exam.
+
+
+## More about Python
+
+This is one of a series about Python:
+
+{% include python_links.html %}

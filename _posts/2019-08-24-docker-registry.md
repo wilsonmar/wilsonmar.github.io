@@ -208,9 +208,13 @@ Using the Bearer token
 <amp-youtube data-videoid="jDhLEfY4Apo" layout="responsive" width="480" height="270"></amp-youtube><br />
 
 The local Docker Registry is usually installed as a registry folder under <strong>/var/lib</strong>.
+But administrators mount "/data" on a separate device so that if it fills up it won't down the server.
 
-The name of each Docker image is stored in the registry is defined in a folder under the 
-<strong>repositories</strong> side of the folder tree. Some images are ground under an account name.
+That's the folder taking up disk space, as measured by the <strong>du -s</strong> command.
+
+The full path to the name of each Docker image is under a version 2, when removal was first enabled.
+
+stored in the registry is defined in a folder under the <strong>repositories</strong> side of the folder tree. Some images are ground under an account name.
 
 All <strong>content</strong> in repositories are stored as <strong>blobs</strong> under the "blobs" path. Under that is a <strong>sha256</strong> (pronounced "shaw 256") folder. 
 S-H-A is an acronymn for the "Secure Hash Algorithm" defined by the US National Security Agency.

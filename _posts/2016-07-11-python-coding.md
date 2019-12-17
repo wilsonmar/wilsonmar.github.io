@@ -16,8 +16,15 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Here are various coding tips I've seen while going through [Python programming classes](/python-tutorials/) after [installing Python](/python-install/) and [Juypter](/juypter/).
+Here are various coding tips I've seen while going through [Python programming classes](/python-tutorials/) after [installing Python](/python-install/) and [Jupyter](/jupyter/).
 
+## Pluralsight
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/413">
+The video course at LinuxAcademy</a> by Keith Thompson references 
+includes a practice exam.
+
+## Dan Bader
 
 Dan Bader has emails and courses on Python:
 <a target="_blank" href="https://www.youtube.com/watch?v=p-89r5QvQvQ">VIDEO
@@ -164,9 +171,9 @@ On Azure:
    * https://azure.microsoft.com/en-us/support/community/
    <br /><br />
 
+
 ## More about Python
 
-Also see [Python REST API programming](/python-api-flask/).
-[Python Robot testing](/python-robot/).
-[Running Python on Raspberry Pi IoT devices](/iot-raspberry-install/).
+This is one of a series about Python:
 
+{% include python_links.html %}

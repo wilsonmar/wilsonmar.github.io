@@ -301,4 +301,3 @@ by Filip Ekberg
 This is one of a series about Python:
 
 {% include python_links.html %}
-
