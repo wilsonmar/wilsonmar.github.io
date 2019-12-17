@@ -289,9 +289,9 @@ ERROR: Cannot uninstall 'six'. It is a distutils installed project and thus we c
    <br /><br />
 
 
-      <a name="EstDB"></a>
+   <a name="EstDB"></a>
 
-      ### Establish Database
+   ### Establish Database
 
 0. Install SQLite3 on MacOS from the internet:
 
