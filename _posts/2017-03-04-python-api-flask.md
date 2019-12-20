@@ -810,6 +810,7 @@ It uses the OpenWeather API.
 ## API projects
 
 https://dev.to/aligoren/using-elasticsearch-with-python-and-flask-2i0e
+for Debian
 
 ## Sample front-end projects
 
