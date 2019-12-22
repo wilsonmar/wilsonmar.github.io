@@ -95,62 +95,95 @@ which was still in Alpha 0.1.0 release as of November 2016?
 
 <hr />
 
-## Brew install curl #
+## Command-line queries
 
-The cURL utility is used by many documents when describing REST API.
+1. In a Terminal on a Mac:
+
+   ### Brew install curl #
+
+   The cURL utility is used by many documents when describing REST API.
 
 0. On a Mac, instead of downloading cURL from 
    `http://curl.haxx.se/download.html`
    and using `tar -zxf` on the downloaded file, 
    use Homebrew from a Terminal:
 
-   <tt><strong>
-   brew install curl
+   <tt><strong>brew install curl
    </strong></tt>
 
    NOTE: Play with curl options on-line using
    <a target="_blank" href="http://hurl.it">http://hurl.it</a>
 
-0. Get information about user or organization,
-   including HTTP headers:
+   ### Account curl request
 
-   <tt><strong>
-   curl --include https://api.github.com/users/wilsonmar
-   </strong></tt>
+0. Get information about a public (not enterprise) user or organization,
+   --including HTTP headers, type this (but substitute "wilsonmar" with your GitHub account name):
+
+   <pre><strong>curl --include https://api.github.com/users/wilsonmar \
+   -H "Accept: application/vnd.github.v4.full+json"
+   </strong></pre>
+
+   The above requests version 4 of GitHub's API, new as of November 2019.
+   Without the HTML header specification, the default is version 3, which is being deprecated.
+
+   ### Rate limitations
+
+   Among the headers notice rates per hour for unauthenticated calls:
+
+   <pre>X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 59</pre>
+
+   <a href="#5000">Authenticated calls have a limit of 5000 per hour. See below</a> and <a target="_blank" href="https://developer.github.com/v3/#rate-limiting">https://developer.github.com/v4/#rate-limiting</a>
+
+   ### Versions
 
    Among response headers, notice the version:
 
-   <pre>
-   X-GitHub-Media-Type: github.v3
+   <pre>X-GitHub-Media-Type: github.v4; format=json
    </pre>
 
-   Switch to an internet browser (Chrome) to view the API documentation at<br />
+1. Switch to an internet browser (Chrome) to view the API documentation at<br />
+   <a target="blank" href="https://developer.github.com/v3/">
+   https://developer.github.com</a>
+
+   <a target="_blank" href="https://github.community/t5/GitHub-API-Development-and/bd-p/api">https://github.community/t5/GitHub-API-Development-and/bd-p/api</a>
+
+   https://support.github.com/
+
+   Alternately, go directly to the version by clicking "Learn more about v4 of the GitHub API") or specify the version:
+
    <a target="blank" href="https://developer.github.com/v3/">
    https://developer.github.com/v3</a>
 
+   To use GraphQL queries in version 4:
+   
+   <a target="blank" href="https://developer.github.com/v4/">
+   https://developer.github.com/v4</a>
 
    Near the bottom of the response includes contact and stats:
 
-   <pre>
+   <pre>"type": "User",
+  "site_admin": false,
   "name": "Wilson Mar",
   "company": "JetBloom",
-  "blog": "wilsonmar.github.io",
-  "location": null,
+  "blog": "https://wilsonmar.github.io",
+  "location": "In an off-grid driverless van",
   "email": "wilsonmar@gmail.com",
   "hireable": true,
-  "bio": null,
-  "public_repos": 103,
-  "public_gists": 9,
-  "followers": 24,
-  "following": 48,
-}
+  "bio": "https://twitter.com/wilsonmar",
+  "public_repos": 284,
+  "public_gists": 17,
+  "followers": 301,
+  "following": 152,
+  "created_at": "2010-06-08T16:42:06Z",
+  "updated_at": "2019-12-22T07:10:02Z"
    </pre>
 
    <a name="HATEOS"></a>
 
-   In the middle of the response are 
-   HATEOAS (Hypermedia as the Engine of Application State) responses
-   <strong>specific to the user</strong>:
+   ### HATEOS links
+
+   In the middle of the response are URLs which the user can run next, such as:
 
    <pre>
   "url": "https://api.github.com/users/wilsonmar",
@@ -167,6 +200,9 @@ The cURL utility is used by many documents when describing REST API.
 }
    </pre>
 
+   Including links in responses is part of the design pattern called
+   <strong>HATEOAS</strong> (Hypermedia as the Engine of Application State).
+
    PROTIP: As <a target="_blank" href="https://spring.io/understanding/HATEOAS">
    this notes</a>, including hypermedia links with the responses
    means programs are not dependent on a fixed specification 
@@ -174,22 +210,21 @@ The cURL utility is used by many documents when describing REST API.
    The list of links dynamically provide guidance on what calls can be made.
    So less errors.
 
-## Brew install jq JSON processor #
+   ### Brew install jq JSON processor #
 
-PROTIP: In order for scripts to be "idempotent" 
-(create the same conditions no matter how many times it's run),
-scripts need to know the data of a specific key within
-the JSON returned from API calls.
+   PROTIP: In order for scripts to be "idempotent" 
+   (create the same conditions no matter how many times it's run),
+   scripts need to know the data of a specific key within
+   the JSON returned from API calls.
 
 0. A sample call to obtain data values from JSON returned
    into an environment variable:
 
-   <pre>
-   HASH=$(curl https://api.github.com/users/wilsonmar | jq ".starred_url")
+   <pre>HASH=$(curl https://api.github.com/users/wilsonmar | jq ".starred_url")
    echo "HASH=$HASH"
    </pre>
 
-   "jq" is a JSON processor jq for Mac OSX, Windows, and Linux.
+   "jq" is a JSON processor jq for macOS, Windows, and Linux.
 
 0. Install it using Homebrew from any folder:
 
@@ -253,161 +288,98 @@ the JSON returned from API calls.
 * Connection #0 to host api.github.com left intact
    </pre>
 
+<hr />
 
-## Verify Token #
+<a name="PersonalTokens"></a>
 
-0. Verify the TOKEN:
+### Personal Token
 
-   A bad response:
+To generate a personal access token for the command line:
 
-   <pre>
-&LT; Authorization: token meh
-&LT; Status: 401 Unauthorized
-...
-{
-  "message": "Bad credentials",
-  "documentation_url": "https://developer.github.com/v3"
-}
-   </pre>
+1. Identify what scopes you need at:
+   https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/
 
-   A sample good response:
+   PROTIP: Be restrictive. You can always generate another token with new scopes.
 
-   <pre>
-&LT; Status: 200 OK
-&LT; X-OAuth-Scopes: delete_repo
-{
-  "current_user_url": "https://api.github.com/user",
-  "current_user_authorizations_html_url": "https://github.com/settings/connections/applications{/client_id}",
-  "authorizations_url": "https://api.github.com/authorizations",
-  "code_search_url": "https://api.github.com/search/code?q={query}{&page,per_page,sort,order}",
-  "emails_url": "https://api.github.com/user/emails",
-  "emojis_url": "https://api.github.com/emojis",
-  "events_url": "https://api.github.com/events",
-  "feeds_url": "https://api.github.com/feeds",
-  "followers_url": "https://api.github.com/user/followers",
-  "following_url": "https://api.github.com/user/following{/target}",
-  "gists_url": "https://api.github.com/gists{/gist_id}",
-  "hub_url": "https://api.github.com/hub",
-  "issue_search_url": "https://api.github.com/search/issues?q={query}{&page,per_page,sort,order}",
-  "issues_url": "https://api.github.com/issues",
-  "keys_url": "https://api.github.com/user/keys",
-  "notifications_url": "https://api.github.com/notifications",
-  "organization_repositories_url": "https://api.github.com/orgs/{org}/repos{?type,page,per_page,sort}",
-  "organization_url": "https://api.github.com/orgs/{org}",
-  "public_gists_url": "https://api.github.com/gists/public",
-  "rate_limit_url": "https://api.github.com/rate_limit",
-  "repository_url": "https://api.github.com/repos/{owner}/{repo}",
-  "repository_search_url": "https://api.github.com/search/repositories?q={query}{&page,per_page,sort,order}",
-  "current_user_repositories_url": "https://api.github.com/user/repos{?type,page,per_page,sort}",
-  "starred_url": "https://api.github.com/user/starred{/owner}{/repo}",
-  "starred_gists_url": "https://api.github.com/gists/starred",
-  "team_url": "https://api.github.com/teams",
-  "user_url": "https://api.github.com/users/{user}",
-  "user_organizations_url": "https://api.github.com/user/orgs",
-  "user_repositories_url": "https://api.github.com/users/{user}/repos{?type,page,per_page,sort}",
-  "user_search_url": "https://api.github.com/search/users?q={query}{&page,per_page,sort,order}"
-}
-   </pre>
+1. Visit <a target="_blank" href="https://github.com/settings/tokens">https://github.com/settings/tokens</a> (Settings > Developer Settings > Tokens)
 
-## Create repo #
+   See <a target="_blank" href="https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line">this</a> 
 
-   <pre>
-   </pre>
+1. In the Note field, type "CLI" and a summary of the scope.
 
-## Status of repo #
+1. Specify the scopes.
 
-   <pre>
-{
-  "id": 68240593,
-  "name": "git-sample-repo",
-  "full_name": "wilsonmar/git-sample-repo",
-  "owner": {
-    "login": "wilsonmar",
-    "id": 300046,
-    "avatar_url": "https://avatars.githubusercontent.com/u/300046?v=3",
-    "gravatar_id": "",
-    "url": "https://api.github.com/users/wilsonmar",
-    "html_url": "https://github.com/wilsonmar",
-    "followers_url": "https://api.github.com/users/wilsonmar/followers",
-    "following_url": "https://api.github.com/users/wilsonmar/following{/other_user}",
-    "gists_url": "https://api.github.com/users/wilsonmar/gists{/gist_id}",
-    "starred_url": "https://api.github.com/users/wilsonmar/starred{/owner}{/repo}",
-    "subscriptions_url": "https://api.github.com/users/wilsonmar/subscriptions",
-    "organizations_url": "https://api.github.com/users/wilsonmar/orgs",
-    "repos_url": "https://api.github.com/users/wilsonmar/repos",
-    "events_url": "https://api.github.com/users/wilsonmar/events{/privacy}",
-    "received_events_url": "https://api.github.com/users/wilsonmar/received_events",
-    "type": "User",
-    "site_admin": false
-  },
-  "private": false,
-  "html_url": "https://github.com/wilsonmar/git-sample-repo",
-  "description": "Automated Git repo from run using git-sample-repo in https://github.com/wilsonmar/git-utilities.",
-  "fork": false,
-  "url": "https://api.github.com/repos/wilsonmar/git-sample-repo",
-  "forks_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/forks",
-  "keys_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/keys{/key_id}",
-  "collaborators_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/collaborators{/collaborator}",
-  "teams_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/teams",
-  "hooks_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/hooks",
-  "issue_events_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/issues/events{/number}",
-  "events_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/events",
-  "assignees_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/assignees{/user}",
-  "branches_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/branches{/branch}",
-  "tags_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/tags",
-  "blobs_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/git/blobs{/sha}",
-  "git_tags_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/git/tags{/sha}",
-  "git_refs_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/git/refs{/sha}",
-  "trees_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/git/trees{/sha}",
-  "statuses_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/statuses/{sha}",
-  "languages_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/languages",
-  "stargazers_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/stargazers",
-  "contributors_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/contributors",
-  "subscribers_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/subscribers",
-  "subscription_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/subscription",
-  "commits_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/commits{/sha}",
-  "git_commits_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/git/commits{/sha}",
-  "comments_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/comments{/number}",
-  "issue_comment_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/issues/comments{/number}",
-  "contents_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/contents/{+path}",
-  "compare_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/compare/{base}...{head}",
-  "merges_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/merges",
-  "archive_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/{archive_format}{/ref}",
-  "downloads_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/downloads",
-  "issues_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/issues{/number}",
-  "pulls_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/pulls{/number}",
-  "milestones_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/milestones{/number}",
-  "notifications_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/notifications{?since,all,participating}",
-  "labels_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/labels{/name}",
-  "releases_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/releases{/id}",
-  "deployments_url": "https://api.github.com/repos/wilsonmar/git-sample-repo/deployments",
-  "created_at": "2016-09-14T20:27:01Z",
-  "updated_at": "2016-09-14T20:27:01Z",
-  "pushed_at": "2016-09-14T21:09:18Z",
-  "git_url": "git://github.com/wilsonmar/git-sample-repo.git",
-  "ssh_url": "git@github.com:wilsonmar/git-sample-repo.git",
-  "clone_url": "https://github.com/wilsonmar/git-sample-repo.git",
-  "svn_url": "https://github.com/wilsonmar/git-sample-repo",
-  "homepage": null,
-  "size": 1,
-  "stargazers_count": 0,
-  "watchers_count": 0,
-  "language": null,
-  "has_issues": true,
-  "has_downloads": true,
-  "has_wiki": false,
-  "has_pages": false,
-  "forks_count": 0,
-  "mirror_url": null,
-  "open_issues_count": 0,
-  "forks": 0,
-  "open_issues": 0,
-  "watchers": 0,
-  "default_branch": "develop",
-  "network_count": 0,
-  "subscribers_count": 1
-}
-   </pre>   
+1. Copy the token generated and save it in a <strong>.github_secrets.sh</strong> shell script defining secrets, then save that to a private repository. Sample contents:
+
+   <pre>GITHUB_USER="wilsonmar"
+   GITHUB_TOKEN_CLI="10c169c2285c233c6df22366511648cac6e0f91f"</pre>
+   
+1. In a SAML organization, https://help.github.com/en/github/authenticating-to-github/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on
+
+   https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-scim
+
+1. In the shell script doing work, read the token:
+
+   <pre>source ~/.github_secrets.sh
+   curl -u "$GITHUB_USERNAME:$GITHUB_TOKEN_CLI" https://api.github.com/user --include</pre>
+
+   CAUTION: Don't echo secrets to the Terminal console.
+
+   <a name="5000"></a>
+
+   Notice in the response <tt>X-RateLimit-Limit: 5000</tt>.
+
+
+<hr />
+
+## New Authentication Preview
+
+In <a target="_blank" href="https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api/">https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api</a>
+
+https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/
+
+   "web applications flow"
+
+1. Establish a GitHub account for login use (if you don't already have one).
+
+1. Check if your app idea is already in the https://github.com/marketplace
+
+1. Build your app with endpoints:
+
+   * <strong>redirect_url</strong>.
+   * https://wilsonmar.github.io/githubcallback
+   * https://wilsonmar.github.io/webhook
+   <br /><br />
+
+1. Pick a name
+
+   Each GitHub App Names needs to be unique among all apps, and not contain underlines.
+   But dashes are accepted. Add a number to the name for versioning.
+
+   <pre>Explore-graphql1</pre>
+
+1. Create a logo and drop it on the page.
+
+1. Copy the App ID, Client ID, and Client secret and save it somewhere.
+
+1. Visit it at https://github.com/apps/explore-graphql to Install it to your GitHub account.
+
+1. Get <strong>client_id</strong> and client_secret for GitHub App at:
+
+   https://github.com/settings/apps
+
+1. Exchange code for an access token:
+
+   POST https://github.com/login/oauth/access_token
+
+1. Request a user's GitHub identity
+
+   GET https://github.com/login/oauth/authorize
+
+   -H application/vnd.github.machine-man-preview+json
+
+1. Check for "401 Bad Credentials" when the app's authorization has been revoked.
+
 
 ## Resources
 

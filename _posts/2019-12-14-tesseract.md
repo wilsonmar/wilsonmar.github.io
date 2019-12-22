@@ -382,12 +382,18 @@ by adding to pom.xml file add it as a dependency, such as:
 
 Tess4j is actually written in C#. However, those who code C# can use the <a target="_blank" href="http://www.emgu.com/wiki/index.php/Emgu_CV"Emgu</a> .Net wrapper library.
 
+## Usage within JavaScript
+
+Pure Javascript can be enabled with Tesseract OCR using <a target="_blank" href="http://tesseract.projectnaptha.com/">Project Naptha</a> (open sourced at 
+<a target="_blank" href="https://github.com/naptha/tesseract.js">https://github.com/naptha/tesseract.js</a>).
+
 
 ## Resources/References
 
    * https://github.com/gulakov/tesseract-ocr-sample (Visual Studio C++ Project)
    * http://blog.ayoungprogrammer.com/2012/11/tutorial-installing-tesseract-ocr-30202.html/
    <br /><br />
+
 
 ## More
 
