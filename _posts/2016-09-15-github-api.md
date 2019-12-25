@@ -329,6 +329,10 @@ To generate a personal access token for the command line:
 
    Notice in the response <tt>X-RateLimit-Limit: 5000</tt>.
 
+https://gist.github.com/gbaman/b3137e18c739e0cf98539bf4ec4366ad
+# An example to get the remaining rate limit using the Github GraphQL API.
+
+https://blog.codeship.com/an-introduction-to-graphql-via-the-github-api/
 
 <hr />
 

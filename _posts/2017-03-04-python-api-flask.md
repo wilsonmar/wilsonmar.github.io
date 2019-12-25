@@ -22,17 +22,20 @@ Flask's approach keeps your code and workflow simple, particularly on smaller pr
 
 <hr />
 
-This is a hands-on tutorial showing how to quickly create a simple Python blog server program to process sample REST API calls from a user's browser. By hands-on I mean explanations are provided after you do each action. Actions include folder navigation and creation, virtualenv, etc.
+## Installation
 
-1. [Open a Terminal shell window on Mac or cmd window on Windows](/terminal/).
+This is a hands-on walkthrough of the intricacies of creating a sample Python server program to process REST API calls from a user's browser. By hands-on I mean explanations are provided after you do each action. Actions include folder navigation and creation, virtualenv, etc.
+
+0. <a target="_blank" href="https://wilsonmar.github.io/terminal">Open a Terminal shell window on Mac</a> or cmd window on Windows.
+
 0. Create a folder where you hold various projects under your user home folder. On a Mac:
 
-   <pre><strong>cd ~ && mkdir gits
+   <pre><strong>cd ~ && mkdir -p gits
    </strong></pre>
 
-   Alternately, use the workspace you use with the Eclipse IDE.
+   Alternately, use the workspace you use with a text editor or IDE.
 
-0. Create and/or navigate into a folder holding where git will create repositories (substituting wilsonmar with your GitHub account name):
+0. Create and/or navigate into a folder holding where git will create repositories (substituting "wilsonmar" below with your GitHub account name):
 
    <pre><strong>mkdir wilsonmar && cd wilsonmar 
    </strong></pre>
@@ -830,6 +833,93 @@ https://testdriven.io/blog/developing-a-single-page-app-with-flask-and-vuejs/
 https://github.com/alexdebrie/serverless-flask
 
 https://stackabuse.com/serving-static-files-with-flask/
+
+## Web Crawling
+
+PROTIP: If an API is not available, scrape (extract/mine) specific information by parsing HTML from websites using the <a target="_blank" href="http://docs.scrapy.org/en/latest/intro/overview.html">Scrapy</a> web scraping (Spider) framework. See <a target="_blank" href="https://app.pluralsight.com/library/courses/crawling-web-python-scrapy/table-of-contents">this video tutorial</a> and <a target="_blank" href="https://www.inkoop.io/blog/web-scraping-using-python-and-scrapy/">blog</a>.
+
+The Pluralsight 
+
+1. inside a virtual environment
+1. Install by <tt>pip install Scrapy</tt> 
+
+1. Manually verify that the websites provided by Scrapy framework developers still operate:
+
+   <a target="_blank" href="https://quotes.toscrape.com">https://quotes.toscrape.com</a>
+   
+   <a target="_blank" href="https://books.toscrape.com">https://books.toscrape.com</a>
+   
+1. Download a sample project using Spyder:
+
+   <pre>git clone https://github.com/wilsonmar/scrapy.git
+   cd scrapy</pre>
+ 
+1. Running the crawl script defined in the spiders folder:
+
+   <pre><strong>scrapy crawl QuoteCrawler
+   </strong></pre>
+
+   Its output are console messages ending with something like this:
+
+   <pre>2019-12-25 04:09:38 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 34936,
+ 'downloader/request_count': 122,
+ 'downloader/request_method_count/GET': 122,
+ 'downloader/response_bytes': 176221,
+ 'downloader/response_count': 122,
+ 'downloader/response_status_count/200': 121,
+ 'downloader/response_status_count/404': 1,
+ 'dupefilter/filtered': 1897,
+ 'elapsed_time_seconds': 6.066887,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 12, 25, 11, 9, 38, 225122),
+ 'log_count/DEBUG': 123,
+ 'log_count/INFO': 10,
+ 'memusage/max': 52887552,
+ 'memusage/startup': 52887552,
+ 'request_depth_max': 4,
+ 'response_received_count': 122,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 121,
+ 'scheduler/dequeued/memory': 121,
+ 'scheduler/enqueued': 121,
+ 'scheduler/enqueued/memory': 121,
+ 'start_time': datetime.datetime(2019, 12, 25, 11, 9, 32, 158235)}
+2019-12-25 04:09:38 [scrapy.core.engine] INFO: Spider closed (finished)
+   </pre>
+
+1. Switch to a text editor to view the file created: "quotes.toscrape.txt"    
+
+   Running the above avoids using these commands to generate the project:
+
+   <pre><strong>scrapy startproject quotes
+   cd quotes
+   scrapy genspider QuoteSpider quotes.toscrape.com
+   </strong></pre>
+
+   The response:
+
+   <pre> Created spider 'QuoteSpider' using template 'basic' in module:
+  quotes.spiders.QuoteSpider</pre>
+
+   ... and then edit the generated code.
+
+### Scrapy Python coding
+
+* Scrapy uses the <a target="_blank" href="https://twistedmatrix.com/trac/">twisted Python networking engine</a> to visit multiple urls Asynchronously (processing each request in a non-blocking way, without waiting for one request to finish before sending another request).
+
+* Scrapy can set and rotate proxy, User Agent, and other HTTP headers dynamically.
+
+* Scrapy automatically handles cookies passed between browser and server.
+
+* Scrapy's Spider extract a pipeline of "items" (attributes of a website) to process, such as pushing data to a Neo4j or mysql database.
+
+* <a target="_blank" href="https://scrapy.readthedocs.io/en/latest/topics/selectors.html">Scrapy electors</a> uses lxml, which is much faster than the Python <a target="_blank" href="https://www.crummy.com/software/BeautifulSoup">Beautiful Soup (BS4) library</a> to <strong>parse</strong> data from inside HTML and XML markup scraped from websites. 
+
+* Scrapy can export data in various formats (CSV, JSON, jsonlines, XML).
+
 
 
 ## More about Python
