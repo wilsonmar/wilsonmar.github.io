@@ -836,9 +836,7 @@ https://stackabuse.com/serving-static-files-with-flask/
 
 ## Web Crawling
 
-PROTIP: If an API is not available, scrape (extract/mine) specific information by parsing HTML from websites using the <a target="_blank" href="http://docs.scrapy.org/en/latest/intro/overview.html">Scrapy</a> web scraping (Spider) framework. See <a target="_blank" href="https://app.pluralsight.com/library/courses/crawling-web-python-scrapy/table-of-contents">this video tutorial</a> and <a target="_blank" href="https://www.inkoop.io/blog/web-scraping-using-python-and-scrapy/">blog</a>.
-
-The Pluralsight 
+PROTIP: If an API is not available, scrape (extract/mine) specific information by parsing HTML from websites using the <a target="_blank" href="http://docs.scrapy.org/en/latest/intro/overview.html">Scrapy</a> web scraping (Spider) framework. See <a target="_blank" href="https://www.inkoop.io/blog/web-scraping-using-python-and-scrapy/">blog</a>.
 
 1. inside a virtual environment
 1. Install by <tt>pip install Scrapy</tt> 
@@ -847,16 +845,21 @@ The Pluralsight
 
    <a target="_blank" href="https://quotes.toscrape.com">https://quotes.toscrape.com</a>
    
+   <img width="776" alt="python-api-quotes" src="https://user-images.githubusercontent.com/300046/71451823-88818f00-273a-11ea-9e4f-22c7cd988cdd.png">
+
    <a target="_blank" href="https://books.toscrape.com">https://books.toscrape.com</a>
    
-1. Download a sample project using Spyder:
+   <img width="1242" alt="python-api-books" src="https://user-images.githubusercontent.com/300046/71451821-76075580-273a-11ea-8ef3-0e09270a5f4a.png">
+
+1. Download a sample project using Spyder, from <a target="_blank" href="https://app.pluralsight.com/library/courses/crawling-web-python-scrapy/table-of-contents">a video tutorial from Pluralsight</a>:
 
    <pre>git clone https://github.com/wilsonmar/scrapy.git
    cd scrapy</pre>
  
 1. Running the crawl script defined in the spiders folder:
 
-   <pre><strong>scrapy crawl QuoteCrawler
+   <pre><strong>cd books-export
+   scrapy crawl QuoteCrawler
    </strong></pre>
 
    Its output are console messages ending with something like this:
@@ -892,6 +895,8 @@ The Pluralsight
 
 1. Switch to a text editor to view the file created: "quotes.toscrape.txt"    
 
+   ### Generate scrape
+
    Running the above avoids using these commands to generate the project:
 
    <pre><strong>scrapy startproject quotes
@@ -906,7 +911,53 @@ The Pluralsight
 
    ... and then edit the generated code.
 
+   ### Run Scrapy with exports
+
+1. Run py in books-export/books/spiders:
+
+   <pre><strong>cd books-export
+   scrapy crawl BookCrawler
+   </strong></pre>
+
+   <pre>2019-12-25 14:22:53 [scrapy.extensions.feedexport] INFO: Stored json feed (1807 items) in: books.json
+2019-12-25 14:22:53 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 47252,
+ 'downloader/request_count': 145,
+ 'downloader/request_method_count/GET': 145,
+ 'downloader/response_bytes': 786302,
+ 'downloader/response_count': 145,
+ 'downloader/response_status_count/200': 144,
+ 'downloader/response_status_count/404': 1,
+ 'dupefilter/filtered': 7372,
+ 'elapsed_time_seconds': 23.466027,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 12, 25, 21, 22, 53, 201722),
+ 'item_dropped_count': 453,
+ 'item_dropped_reasons_count/DropItem': 453,
+ 'item_scraped_count': 1807,
+ 'log_count/DEBUG': 1953,
+ 'log_count/INFO': 11,
+ 'log_count/WARNING': 453,
+ 'memusage/max': 52436992,
+ 'memusage/startup': 52436992,
+ 'request_depth_max': 51,
+ 'response_received_count': 145,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 144,
+ 'scheduler/dequeued/memory': 144,
+ 'scheduler/enqueued': 144,
+ 'scheduler/enqueued/memory': 144,
+ 'start_time': datetime.datetime(2019, 12, 25, 21, 22, 29, 735695)}
+2019-12-25 14:22:53 [scrapy.core.engine] INFO: Spider closed (finished)</pre>
+
+1. Switch to a text editor to see <strong>books.json</strong>.
+
 ### Scrapy Python coding
+
+Now let's examine the Python code.
+
 
 * Scrapy uses the <a target="_blank" href="https://twistedmatrix.com/trac/">twisted Python networking engine</a> to visit multiple urls Asynchronously (processing each request in a non-blocking way, without waiting for one request to finish before sending another request).
 
