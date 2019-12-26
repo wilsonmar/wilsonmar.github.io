@@ -841,6 +841,33 @@ PROTIP: If an API is not available, scrape (extract/mine) specific information b
 1. inside a virtual environment
 1. Install by <tt>pip install Scrapy</tt> 
 
+   <a name="ScrapyCommands"></a>
+
+1. Verify by <tt>scrape</tt> with parameters. The response:
+
+   <pre>Scrapy 1.8.0 - no active project
+&nbsp;
+Usage:
+  scrapy &LT;command> [options] [args]
+&nbsp;
+Available commands:
+  bench         Run quick benchmark test
+  fetch         Fetch a URL using the Scrapy downloader
+  genspider     Generate new spider using pre-defined templates
+  runspider     Run a self-contained spider (without creating a project)
+  settings      Get settings values
+  shell         Interactive scraping console
+  startproject  Create new project
+  version       Print Scrapy version
+  view          Open URL in browser, as seen by Scrapy
+&nbsp;
+  [ more ]      More commands available when run from project directory
+&nbsp;
+Use "scrapy &LT;command> -h" to see more info about a command
+   </pre>
+
+   Notice that there are more commands when the command is run inside a Scrapy folder.
+
 1. Manually verify that the websites provided by Scrapy framework developers still operate:
 
    <a target="_blank" href="https://quotes.toscrape.com">https://quotes.toscrape.com</a>
@@ -851,73 +878,51 @@ PROTIP: If an API is not available, scrape (extract/mine) specific information b
    
    <img width="1242" alt="python-api-books" src="https://user-images.githubusercontent.com/300046/71451821-76075580-273a-11ea-8ef3-0e09270a5f4a.png">
 
-1. Download a sample project using Spyder, from <a target="_blank" href="https://app.pluralsight.com/library/courses/crawling-web-python-scrapy/table-of-contents">a video tutorial from Pluralsight</a>:
+1. Download a sample project using Spyder, assembled from <a target="_blank" href="https://app.pluralsight.com/library/courses/crawling-web-python-scrapy/table-of-contents">a video tutorial from Pluralsight</a>:
 
    <pre>git clone https://github.com/wilsonmar/scrapy.git
-   cd scrapy</pre>
+   cd scrapy
+   ls</pre>
  
-1. Running the crawl script defined in the spiders folder:
+   The repo contains several projects (books-export, quoting).
+
+   <a target="_blank" href="https://docs.python.org/3/tutorial/modules.html#compiled-python-files">PROTIP</a>: The <tt>__pycache__</tt> (cache) are created by the Python3 compiler to make subsequent executions a little faster in production code. In that folder, a <tt>.pyc</tt> file contains bytecode associated with each <tt>import</tt> statement in the code. They are specified in <tt>.gitignore</tt> for the repo so they don't get stored in GitHub.
+
+   PROTIP: On a Mac, hide all such folders with this command:
+   
+   <pre>find . -name '__pycache__' -exec chflags hidden {} \;</pre>
+
+   On Windows:
+
+   <pre>dir * /s/b | findstr __pycache__ | attrib +h +s +r</pre>
+
+1. See what commands when in an active project folder:
 
    <pre><strong>cd books-export
-   scrapy crawl QuoteCrawler
+   scrapy
    </strong></pre>
 
-   Its output are console messages ending with something like this:
+   Additional commands are:
 
-   <pre>2019-12-25 04:09:38 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
-{'downloader/request_bytes': 34936,
- 'downloader/request_count': 122,
- 'downloader/request_method_count/GET': 122,
- 'downloader/response_bytes': 176221,
- 'downloader/response_count': 122,
- 'downloader/response_status_count/200': 121,
- 'downloader/response_status_count/404': 1,
- 'dupefilter/filtered': 1897,
- 'elapsed_time_seconds': 6.066887,
- 'finish_reason': 'finished',
- 'finish_time': datetime.datetime(2019, 12, 25, 11, 9, 38, 225122),
- 'log_count/DEBUG': 123,
- 'log_count/INFO': 10,
- 'memusage/max': 52887552,
- 'memusage/startup': 52887552,
- 'request_depth_max': 4,
- 'response_received_count': 122,
- 'robotstxt/request_count': 1,
- 'robotstxt/response_count': 1,
- 'robotstxt/response_status_count/404': 1,
- 'scheduler/dequeued': 121,
- 'scheduler/dequeued/memory': 121,
- 'scheduler/enqueued': 121,
- 'scheduler/enqueued/memory': 121,
- 'start_time': datetime.datetime(2019, 12, 25, 11, 9, 32, 158235)}
-2019-12-25 04:09:38 [scrapy.core.engine] INFO: Spider closed (finished)
+   <pre>check         Check spider contracts
+  crawl         Run a spider
+  edit          Edit spider
+  list          List available spiders
+  parse         Parse URL (using its spider) and print the results
    </pre>
 
-1. Switch to a text editor to view the file created: "quotes.toscrape.txt"    
+1. List what crawlers Scrapy recognizes:
 
-   ### Generate scrape
-
-   Running the above avoids using these commands to generate the project:
-
-   <pre><strong>scrapy startproject quotes
-   cd quotes
-   scrapy genspider QuoteSpider quotes.toscrape.com
+   <pre><strong>scrapy list
    </strong></pre>
 
-   The response:
+1. Still in folder <tt>books-export</tt>, run the crawl script defined in the lower folder <tt>spiders</tt>:
 
-   <pre> Created spider 'QuoteSpider' using template 'basic' in module:
-  quotes.spiders.QuoteSpider</pre>
-
-   ... and then edit the generated code.
-
-   ### Run Scrapy with exports
-
-1. Run py in books-export/books/spiders:
-
-   <pre><strong>cd books-export
-   scrapy crawl BookCrawler
+   <pre><strong>scrapy crawl BookCrawler
    </strong></pre>
+
+   The output from the command are console messages ending with something like this:
+
 
    <pre>2019-12-25 14:22:53 [scrapy.extensions.feedexport] INFO: Stored json feed (1807 items) in: books.json
 2019-12-25 14:22:53 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
@@ -953,6 +958,71 @@ PROTIP: If an API is not available, scrape (extract/mine) specific information b
 2019-12-25 14:22:53 [scrapy.core.engine] INFO: Spider closed (finished)</pre>
 
 1. Switch to a text editor to see <strong>books.json</strong>.
+
+   This contains each book's title, price, imageurl, bookurl.
+
+1. View the file BookCrawler.py file in the spiders folder.
+
+   Functions (from the bottom up) are: parsepage, extractData, writeTxt.
+
+   These are the result of edits after a template was generated.
+
+   ### Scrape Quotes with exports
+
+1. Run:
+
+   <pre><strong>cd quoting
+   scrapy crawl QuoteCrawler
+   </strong></pre>
+
+   <pre>2019-12-25 04:09:38 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 34936,
+ 'downloader/request_count': 122,
+ 'downloader/request_method_count/GET': 122,
+ 'downloader/response_bytes': 176221,
+ 'downloader/response_count': 122,
+ 'downloader/response_status_count/200': 121,
+ 'downloader/response_status_count/404': 1,
+ 'dupefilter/filtered': 1897,
+ 'elapsed_time_seconds': 6.066887,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 12, 25, 11, 9, 38, 225122),
+ 'log_count/DEBUG': 123,
+ 'log_count/INFO': 10,
+ 'memusage/max': 52887552,
+ 'memusage/startup': 52887552,
+ 'request_depth_max': 4,
+ 'response_received_count': 122,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 121,
+ 'scheduler/dequeued/memory': 121,
+ 'scheduler/enqueued': 121,
+ 'scheduler/enqueued/memory': 121,
+ 'start_time': datetime.datetime(2019, 12, 25, 11, 9, 32, 158235)}
+2019-12-25 04:09:38 [scrapy.core.engine] INFO: Spider closed (finished)
+   </pre>
+
+1. Switch to a text editor to view the file created: "quotes.toscrape.txt".
+
+
+   ### Generate scrape
+
+   Running the above avoids using these commands to generate the project:
+
+   <pre><strong>scrapy startproject quotes
+   cd quotes
+   scrapy genspider QuoteSpider quotes.toscrape.com
+   </strong></pre>
+
+   The response:
+
+   <pre> Created spider 'QuoteSpider' using template 'basic' in module:
+  quotes.spiders.QuoteSpider</pre>
+
+   ... and then edit the generated code.
+
 
 ### Scrapy Python coding
 
