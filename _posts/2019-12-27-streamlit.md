@@ -27,6 +27,8 @@ Streamlit's marketing page at <a target="_blank" href="https://streamlit.io/">st
 
    <pre>Streamlit, version 0.52.2</pre>
 
+   ### Run it live
+
 1. Create a containing folder and cd to it.
 
 1. See a visualization of Uber driver pickup points at each hour of the day pop-up on your default browser with one command:
@@ -49,11 +51,20 @@ Streamlit's marketing page at <a target="_blank" href="https://streamlit.io/">st
 
    The app uses <a target="_blank" href="https://pjreddie.com/darknet/yolo/">YOLO (You Only Look Once) real-time object detection</a> which recognizes dozens of objects at a time in videos. The app downloads files yolov3.cfg and yolov3.weights.
 
-1. To run Streamlit visualizations of your own within <strong>Docker</strong> locally, start with a "hello world" by running my <strong>streamlit-docker.sh</strong> Shell file at:
+1. Run Streamlit visualizations of your own within <strong>Docker</strong> locally. Start with a "hello world" by running my <strong>streamlit-docker.sh</strong> Shell file at:
 
    <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/tree/master/Streamlit">https://github.com/wilsonmar/DevSecOps/tree/master/Streamlit</a>
 
    The script runs Dockerfiles to display "hello-world" as described in <a target="_blank" href="https://medium.com/swlh/part-1-will-streamlit-kill-off-flask-5ecd75f879c8">this blog</a> and its repo.
+
+   The script installs what it needs (Streamlit, Docker, etc.).
+
+1. View JMeter results, by NaveenKumar Namachivayam:
+
+   https://qainsights.com/apache-jmeter-with-streamlit-for-machine-learning/
+
+
+   ### Build your own app
 
 1. See the various specifications in Streamlit's declarative language:
 
