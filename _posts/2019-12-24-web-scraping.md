@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Web Scraping"
-excerpt: "How to use the Python crawler framework with Beautiful Soup parser on a Mac"
+excerpt: "How to use the Scrapy Python crawler framework with Beautiful Soup parser on a Mac for Machine Learning visualizations"
 tags: [python, coding]
 date: "2019-12-24"
 file: "web-scraping"
@@ -48,7 +48,7 @@ Available commands:
 Use "scrapy &LT;command> -h" to see more info about a command
    </pre>
 
-   Notice that there are more commands when the command is run inside a Scrapy folder.
+   Notice that there are <a href="#AddlCommands">more commands</a> when the command is run inside a Scrapy folder.
 
 1. Manually verify that the websites provided by Scrapy framework developers still operate:
 
@@ -84,9 +84,11 @@ Use "scrapy &LT;command> -h" to see more info about a command
    scrapy
    </strong></pre>
 
+   <a name="AddlCommands"></a>
+
    Additional commands are:
 
-   <pre>check         Check spider contracts
+   <pre>   check         Check spider contracts
   crawl         Run a spider
   edit          Edit spider
   list          List available spiders
@@ -219,7 +221,7 @@ Now let's examine the Python code.
 
 * Scrapy's Spider extract a pipeline of "items" (attributes of a website) to process, such as pushing data to a Neo4j or mysql database.
 
-* <a target="_blank" href="https://scrapy.readthedocs.io/en/latest/topics/selectors.html">Scrapy electors</a> uses lxml, which is much faster than the Python <a target="_blank" href="https://www.crummy.com/software/BeautifulSoup">Beautiful Soup (BS4) library</a> to <strong>parse</strong> data from inside HTML and XML markup scraped from websites. 
+* <a target="_blank" href="https://scrapy.readthedocs.io/en/latest/topics/selectors.html">Scrapy electors</a> uses <a target="_blank" href="https://lxml.de/parsing.html">lxml</a>, which is faster than the Python <a target="_blank" href="https://www.crummy.com/software/BeautifulSoup">Beautiful Soup (BS4) library</a> to <strong>parse</strong> data from inside HTML and XML markup scraped from websites. 
 
 * Scrapy can export data in various formats (CSV, JSON, jsonlines, XML).
 
