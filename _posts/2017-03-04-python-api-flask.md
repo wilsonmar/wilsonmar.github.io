@@ -21,33 +21,7 @@ Flask is called a "micro-framework" because, unlike Django and other analogues l
 Flask's approach keeps your code and workflow simple, particularly on smaller projects. 
 
 
-## Streamlit
-
-Streamlit (open sourced at <a target="_blank" href="https://github.com/streamlit/streamlit">https://github.com/streamlit/streamlit</a>
-
-Its marketing page at <a target="_blank" href="https://streamlit.io/">streamlit.io</a> describes itself as "the first app framework specifically for Machine Learning and Data Science teams."
-
-I wrote shell file <strong>streamlit-sample1.sh</strong> at:
-
-   <ul><a target="_blank" href="https://github.com/wilsonmar/DevSecOps/tree/master/Streamlit">https://github.com/wilsonmar/DevSecOps/tree/master/Streamlit</a></ul>
-
-The script runs Dockerfiles to display "hello-world" as described in <a target="_blank" href="https://medium.com/swlh/part-1-will-streamlit-kill-off-flask-5ecd75f879c8">this blog</a> and its repo:
-
-   https://github.com/streamlit/streamlit
-
-My Streamlit repo adds Python programs from other repos:
-
-   From https://github.com/streamlit/demo-self-driving:
-
-   <pre>streamlit run https://raw.githubusercontent.com/streamlit/demo-self-driving/master/app.py</pre>
-
-   From https://github.com/streamlit/demo-uber-nyc-pickups:   
-   
-   <pre>streamlit run https://raw.githubusercontent.com/streamlit/demo-uber-nyc-pickups/master/app.py</pre>
-
-<hr />
-
-## Installation
+## Install Flask
 
 This is a hands-on walkthrough of the intricacies of creating a sample Python server program to process REST API calls from a user's browser. By hands-on I mean explanations are provided after you do each action. Actions include folder navigation and creation, virtualenv, etc.
 
