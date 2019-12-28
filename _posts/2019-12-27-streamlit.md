@@ -55,7 +55,7 @@ Streamlit's marketing page at <a target="_blank" href="https://streamlit.io/">st
 
    <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/tree/master/Streamlit">https://github.com/wilsonmar/DevSecOps/tree/master/Streamlit</a>
 
-   The script runs Dockerfiles to display "hello-world" as described in <a target="_blank" href="https://medium.com/swlh/part-1-will-streamlit-kill-off-flask-5ecd75f879c8">this blog</a> and its repo.
+   The script builds and runs the Dockerfile to display "hello-world" as described in <a target="_blank" href="https://medium.com/swlh/part-1-will-streamlit-kill-off-flask-5ecd75f879c8">this blog</a> and its repo. It stops the container if it's already running.
 
    The script installs what it needs (Streamlit, Docker, etc.).
 

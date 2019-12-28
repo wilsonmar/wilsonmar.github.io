@@ -225,6 +225,7 @@ Now let's examine the Python code.
 
 * Scrapy can export data in various formats (CSV, JSON, jsonlines, XML).
 
+https://www.digitalocean.com/community/tutorials/how-to-crawl-a-web-page-with-scrapy-and-python-3
 
 ## More about Python
 
