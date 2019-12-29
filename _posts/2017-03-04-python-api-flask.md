@@ -833,6 +833,12 @@ https://github.com/alexdebrie/serverless-flask
 
 https://stackabuse.com/serving-static-files-with-flask/
 
+## API
+
+<a target="_blank" href="https://www.youtube.com/watch?v=r1wL0FVeLmA">VIDEO</a>: John Dupuy on ashcrow's <a target="_blank" href="https://github.com/ashcrow/flask-track-usage">flask-track-usage</a> and flash-analytics Flask extensions:<a target="_blank" href="https://stevemilner.org/2018/06/04/flask-track-usage-2-0-0-tutorial/">*</a>
+provides flexibility by having the app control logs
+using <a target="_blank" href="https://www.youtube.com/watch?v=iW6_EXcCU5k&list=PL6RpFCvmb5SGUCLmzTc_wS6gvG0c3GIrS">MongoEngine</a> (MongoDB) and PostgreSQL for storage.
+(read <a target="_blank" href="https://pythonhosted.org/Flask-Track-Usage/">documentation</a>)
 
 ## More about Python
 

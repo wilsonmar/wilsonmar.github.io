@@ -68,7 +68,7 @@ BLAH: Wish they would offer a free edition.
 ### Flagon
 
 <a target="_blank" href="https://github.com/ashcrow/flagon">https://github.com/ashcrow/flagon</a>
-was last updated May 20, 2017 by <a target="_blank" href="https://stevemilner.org/">Stephen Milner</a> (@ashcrow), now CoreOS boss at Red Hat.
+was last updated May 20, 2017 by <a target="_blank" href="https://stevemilner.org/">Stephen Milner</a> (@ashcrow), now <a target="_blank" href="https://www.linkedin.com/in/stevemilner/">CoreOS boss at Red Hat</a>.
 
 It's based on <a target="_blank" href="http://www.togglz.org/">Java's Togglz</a>
 and makes use of http://werkzeug.pocoo.org/ WGI, from the same folks.
