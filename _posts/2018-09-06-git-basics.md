@@ -1848,6 +1848,9 @@ blog</a> from 2013 by @KBasarab and at:
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=a0wO87gel60&index=38&list=PLRsbF2sD7JVq8QYW0vlbOS2JuXUWaWMnT">Git Workflow Strategies for Technical Debt Management</a> May 17, 2017 by Raquel Pau Fernández
 
+* <a target="_blank" href="https://docs.google.com/presentation/d/1IQCRPHEIX-qKo7QFxsD3V62yhyGA9_5YsYXFOiBpgkk/edit#slide=id.g4d6b1121f4_2_60">Git Concepts and Workflows</a>
+(for Googlers: go/git-explained) by Edwin Kempin
+
 
 ## More #
 

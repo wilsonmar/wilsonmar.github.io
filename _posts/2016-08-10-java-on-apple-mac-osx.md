@@ -152,9 +152,11 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 
    * <a target="_blank" href="https://adoptopenjdk.net/">https://adoptopenjdk.net/</a> has both 8, 11, and 13 running the tradition "HotSpot" JVM and the more recent and faster "OpenJ9" JVM. To install the latest (v13):
 
-   <pre><strong>brew install adoptopenjdk</strong></pre>
+    <pre><strong>brew cask install adoptopenjdk</strong></pre>
 
    * <a target="_blank" href="https://www.azul.com/downloads/zulu">Azul Zulu</a> <a target="_blank" href="https://www.azul.com/downloads/zulu/zulu-mac/">downloads for macOS</a>, from a company that also sells Java optimization products. Its zulu8.30.0.1-jdk8.0.172-macosx_x64 from zip April 18, 2018 is 179.2 MB expanded
+
+    <pre><strong>brew cask search zulu</strong></pre>
 
    * <a target="_blank" href="https://www.ibm.com/us-en/marketplace/support-for-runtimes">IBM</a> OpenJDK with Eclipse OpenJ9 
 

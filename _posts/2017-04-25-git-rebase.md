@@ -2,8 +2,6 @@
 layout: post
 title: "Git Rebase"
 excerpt: "Make it appear that you only made one edit before pushing to the team repo"
-shorturl: "https://goo.gl/CmSBbA"
-modified:
 tags: []
 date: "2017-04-25"
 file: "git-rebase"
@@ -435,6 +433,8 @@ Within a <a target="_blank" href="https://www.youtube.com/watch?v=xellB6JaMV0&li
 https://www.youtube.com/watch?v=fbHs-yWoILs
 Merge/Rebase branches in GIT using visual Studio
 7 Feb 2017
+
+<a target="_blank" href="https://www.youtube.com/watch?v=myD1zPfdjRs&list=PLQwEegbFUjHF0TGM_HigwCHOXMJGXvcwe" title="Oct 13, 2014 [2:37]">VIDEO: Git and GitHub Workshop: Introducing Rebasing</a>
 
 ## More #
 
