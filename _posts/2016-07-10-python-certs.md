@@ -6,10 +6,10 @@ tags: [python, coding]
 date: "2016-07-10"
 file: "python-certs"
 image:
-# pic white python logo 1900x500.jpg
-  feature: https://cloud.githubusercontent.com/assets/300046/14622164/4230c848-0585-11e6-957b-be11147346e6.jpg
-  credit: 
-  creditlink: 
+# python-badge-adafruit-205x206.png
+  feature: https://user-images.githubusercontent.com/300046/71582129-f07eff00-2ac5-11ea-8f88-e4821d85d0dc.png
+  credit: adafruit
+  creditlink: https://www.adafruit.com/product/750
 comments: true
 ---
 <i>{{ page.excerpt }}</i>

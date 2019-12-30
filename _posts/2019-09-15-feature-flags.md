@@ -20,6 +20,16 @@ comments: true
 
 Easier said than done.
 
+
+## argparse command argument parser
+
+argparse is a built-in module of Python to enable user-friendly command-line interfaces.
+
+See https://docs.python.org/3/library/argparse.html
+
+
+## Run-time feature flags
+
 https://dzone.com/articles/feature-flags-are-the-answer-to-retailers-holiday
 
 Martin Fowler calls <a target="_blank" href="https://martinfowler.com/articles/feature-toggles.html">Feature Toggles</a> a <a target="_blank" href="https://martinfowler.com/bliki/FeatureToggle.html">design pattern</a>:

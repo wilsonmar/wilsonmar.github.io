@@ -1325,6 +1325,17 @@ Some of them:
 0. <a target="_blank" href="https://www.youtube.com/watch?v=QtXj9tt-RUE">
    How to Create and Apply Git Patches</a>
 
+### LiveLessons (Pearson)
+
+Git and GitHub Workshop: 
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=myD1zPfdjRs&list=PLQwEegbFUjHF0TGM_HigwCHOXMJGXvcwe&index=1">Introducing Rebasing</a>
+2. <a target="_blank" href="https://www.youtube.com/watch?v=sDwAgus9hHo&list=PLQwEegbFUjHF0TGM_HigwCHOXMJGXvcwe&index=2">Resolving Merge Conflicts
+3. <a target="_blank" href="https://www.youtube.com/watch?v=pMk99l17SC4&list=PLQwEegbFUjHF0TGM_HigwCHOXMJGXvcwe&index=3">Merging in a Pull Request</a>
+
+
+
+
 <hr />
 
 <a name="FromIndividuals"></a>
