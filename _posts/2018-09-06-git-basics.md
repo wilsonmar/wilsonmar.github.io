@@ -1851,6 +1851,15 @@ blog</a> from 2013 by @KBasarab and at:
 * <a target="_blank" href="https://docs.google.com/presentation/d/1IQCRPHEIX-qKo7QFxsD3V62yhyGA9_5YsYXFOiBpgkk/edit#slide=id.g4d6b1121f4_2_60">Git Concepts and Workflows</a>
 (for Googlers: go/git-explained) by Edwin Kempin
 
+<a target="_blank" href="https://app.pluralsight.com/library/courses/contributing-open-source-project-github/exercise-files">Video tutorial: Contributing to an Open Source Project on GitHub</a> 31 Dec 2019
+by <a target="_blank" href="https://www.linkedin.com/in/subkamran/">Kamran Ayub</a> (@kamranayub, kamaranicus.com)
+
+   1. Course Overview
+   2. Getting Involved in an Open Source Project
+   3. Preparing to Make a Contribution
+   4. Collaborating Effectively on Pull Requests
+   5. Staying Updated With Social Features
+
 
 ## More #
 

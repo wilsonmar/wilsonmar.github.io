@@ -20,7 +20,7 @@ Here are various coding tips I've seen while going through [Python programming c
 
 ## Reserved Keywords
 
-Here are words that Python's reserved for itself, so you can't use them as custom variables:
+Listed alphabetically below are words that Python's reserved for itself, so you can't use them as custom variables:
 
 *	and 
 *	as
@@ -58,6 +58,7 @@ Here are words that Python's reserved for itself, so you can't use them as custo
 *	with
 *	yield
 <br /><br />
+
 
 ## Command generator
 

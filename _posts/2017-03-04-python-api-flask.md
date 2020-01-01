@@ -840,6 +840,11 @@ provides flexibility by having the app control logs
 using <a target="_blank" href="https://www.youtube.com/watch?v=iW6_EXcCU5k&list=PL6RpFCvmb5SGUCLmzTc_wS6gvG0c3GIrS">MongoEngine</a> (MongoDB) and PostgreSQL for storage.
 (read <a target="_blank" href="https://pythonhosted.org/Flask-Track-Usage/">documentation</a>)
 
+## References
+
+<a target="_blank" href="https://www.youtube.com/watch?v=1ByQhAM5c1I" title="PyBay2016">"Flask for Fun and Profit"</a>
+by Armin Ronacher
+
 ## More about Python
 
 This is one of a series about Python:

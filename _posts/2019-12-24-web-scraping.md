@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Web Scraping"
-excerpt: "How to use the Scrapy Python crawler framework with Beautiful Soup parser on a Mac for Machine Learning visualizations"
+excerpt: "How to use the Scrapy Python crawler framework to fetch HTML which Beautiful Soup parsers, on a Mac for Machine Learning visualizations"
 tags: [python, coding]
 date: "2019-12-24"
 file: "web-scraping"
@@ -207,11 +207,11 @@ Use "scrapy &LT;command> -h" to see more info about a command
 
    ... and then edit the generated code.
 
+<hr />
 
 ### Scrapy Python coding
 
 Now let's examine the Python code.
-
 
 * Scrapy uses the <a target="_blank" href="https://twistedmatrix.com/trac/">twisted Python networking engine</a> to visit multiple urls Asynchronously (processing each request in a non-blocking way, without waiting for one request to finish before sending another request).
 
@@ -225,7 +225,14 @@ Now let's examine the Python code.
 
 * Scrapy can export data in various formats (CSV, JSON, jsonlines, XML).
 
+
+## References
+
 https://www.digitalocean.com/community/tutorials/how-to-crawl-a-web-page-with-scrapy-and-python-3
+
+<a target="_blank" href="https://automatetheboringstuff.com/">"Automate the Boring Stuff"</a> (free at <a target="_blank" href="https://inventwithpython.com/">https://inventwithpython.com</a>) was among the most popular of all tech books. Its author Al Sweigart (@AlSweigart), in 
+<a target="_blank" href-"https://www.youtube.com/watch?v=dZLyfbSQPXI" title="Sep 17, 2016 at PyBay2016">VIDEO: "Automating Your Browser and Desktop Apps"</a> [<a target="_blank" href="https://speakerdeck.com/pybay/2016-al-sweigart-automating-your-browser-and-desktop-apps">deck</a>]
+shows Selenium for web browsers. He also shows his <a target="_blank" href-"https://www.youtube.com/watch?v=dZLyfbSQPXI&time=11m36s" title="Sep 17, 2016 at PyBay2016">VIDEO:</a> <a target="_blank" href="https://pyautogui.readthedocs.org">pyautogui</a> (pip install pyautogui) <a target="_blank" href="https://github.com/asweigart/pyautogui">open-sourced in GitHub</a> automates MS Paint and Calc on Windows, and Flash apps (non-browser apps). Moving the mouse to the top left corner (0,0) raises the FailSafeException to stop the script running. That's since there is no hotkey recognition yet.
 
 ## More about Python
 
