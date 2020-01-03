@@ -16,15 +16,12 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<img width="192" alt="opencv-sikulix-v01-192x133.png" src="https://cloud.githubusercontent.com/assets/300046/24071304/2de19d0a-0ba5-11e7-9cdc-c7903b2b3bcf.png" align="right">
-
 This is a deep dive from the innnards up:
 
 <a target="_blank" href="https://www.wikiwand.com/en/OpenCV">
-OpenCV (Open Computer Vision)</a> is a utility used by many Artificial Intelligence packages
-such as self-driving cars to understand images.
-It is used to take pictures, recognize objects in the pictures, and the coordinates of objects
-it recognizes in pictures.
+OpenCV (Open Computer Vision)</a> is a utility used to recognize objects in the pictures, and the coordinates of objects
+it recognizes in pictures. Its recent adoption of Machine Learning has increased its accuracy.
+It's used by many Artificial Intelligence apps such as self-driving cars to understand images.
 
 ## Why?
 
