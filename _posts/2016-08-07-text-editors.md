@@ -38,7 +38,7 @@ Free to download and use:
    * <a target="_blank" href="http://www.annedawson.net/Python_Editor_IDLE.htm">
    Python IDLE Editor</a>
 
-   * <a href="#McVIM">mcvim</a> for Mac
+   * <a href="#MacVim">MacVim</a> for Mac
 
 Free IDEs:
 
@@ -149,8 +149,6 @@ But VSCode's windowing is much more configurable, which has enabled many add-ons
 1. To see keyboard shortcuts, click command+K then command+S.
 
 1. Click inside the Search box on the upper-right.
-
-
 
    ### Search Extension on website
 
@@ -298,6 +296,9 @@ Extensions for developing on the Salesforce Platform
 
 * https://gitlab.com/terja/sfdx-git
 
+* https://medium.com/productivedev/toward-a-mouse-free-developer-experience-in-vscode-97e621d5136e
+   covers Install Vim extension for VSCode.
+
 <hr />
 
 
@@ -428,6 +429,8 @@ Windows end each line with a carriage-return and line-feed character.
 
 ### vi/vim cheatsheet
 
+Keep handy this cheatsheet of Vim keybindings: <a target="_blank" href="http://vimsheet.com/">http://vimsheet.com</a>
+
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/41471886-08e73d56-7072-11e8-8294-8dccce320337.gif">
 <img alt="editors-vi-vim-cheat-sheet-1024x724.gif" width="1024" src="https://user-images.githubusercontent.com/300046/41471886-08e73d56-7072-11e8-8294-8dccce320337.gif"></a>
 
@@ -519,7 +522,83 @@ VIDEO: <a target="_blank" href="https://egghead.io/courses/learn-to-use-vim">Lea
 
 MacVim is a GUI app for macOS modeled after the <a href="#vim">vim text editor</a>.
 
-Install using the manual approach: 
+<pre>brew install macvim</pre>
+
+<pre>
+==> Installing dependencies for macvim: cscope, lua and ruby
+==> Installing macvim dependency: cscope
+==> Downloading https://homebrew.bintray.com/bottles/cscope-15.9.mojave.bottle.t
+######################################################################## 100.0%
+==> Pouring cscope-15.9.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/cscope/15.9: 11 files, 711.6KB
+==> Installing macvim dependency: lua
+==> Downloading https://homebrew.bintray.com/bottles/lua-5.3.5_1.mojave.bottle.t
+######################################################################## 100.0%
+==> Pouring lua-5.3.5_1.mojave.bottle.tar.gz
+==> Caveats
+You may also want luarocks:
+  brew install luarocks
+==> Summary
+🍺  /usr/local/Cellar/lua/5.3.5_1: 28 files, 274.5KB
+==> Installing macvim dependency: ruby
+==> Downloading https://homebrew.bintray.com/bottles/ruby-2.6.5.mojave.bottle.1.
+==> Downloading from https://akamai.bintray.com/da/da318a12d35502d95a8bea49f735b
+######################################################################## 100.0%
+==> Pouring ruby-2.6.5.mojave.bottle.1.tar.gz
+==> Caveats
+By default, binaries installed by gem will be placed into:
+  /usr/local/lib/ruby/gems/2.6.0/bin
+&nbsp;
+You may want to add this to your PATH.
+&nbsp;
+ruby is keg-only, which means it was not symlinked into /usr/local,
+because macOS already provides this software and installing another version in
+parallel can cause all kinds of trouble.
+&nbsp;
+If you need to have ruby first in your PATH run:
+  echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.bash_profile
+&nbsp;
+For compilers to find ruby you may need to set:
+  export LDFLAGS="-L/usr/local/opt/ruby/lib"
+  export CPPFLAGS="-I/usr/local/opt/ruby/include"
+&nbsp;
+For pkg-config to find ruby you may need to set:
+  export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
+&nbsp;
+==> Summary
+🍺  /usr/local/Cellar/ruby/2.6.5: 19,390 files, 31.1MB
+==> Installing macvim
+==> Downloading https://homebrew.bintray.com/bottles/macvim-8.1-161.mojave.bottl
+==> Downloading from https://akamai.bintray.com/8b/8b49227432024454492a07e6259f6
+######################################################################## 100.0%
+==> Pouring macvim-8.1-161.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/macvim/8.1-161: 2,251 files, 38.0MB
+==> Caveats
+==> lua
+You may also want luarocks:
+  brew install luarocks
+==> ruby
+By default, binaries installed by gem will be placed into:
+  /usr/local/lib/ruby/gems/2.6.0/bin
+&nbsp;
+You may want to add this to your PATH.
+&nbsp;
+ruby is keg-only, which means it was not symlinked into /usr/local,
+because macOS already provides this software and installing another version in
+parallel can cause all kinds of trouble.
+&nbsp;
+If you need to have ruby first in your PATH run:
+  echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.bash_profile
+&nbsp;
+For compilers to find ruby you may need to set:
+  export LDFLAGS="-L/usr/local/opt/ruby/lib"
+  export CPPFLAGS="-I/usr/local/opt/ruby/include"
+&nbsp;
+For pkg-config to find ruby you may need to set:
+  export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
+   </pre>
+
+Alternately, install using the manual approach: 
 
 1. Download the binary release from:
 
@@ -530,8 +609,9 @@ Install using the manual approach:
 
 Alternately, use Homebrew:
 
-1. Run <pre>brew install vim && brew install macvim</pre>
-2. Run <pre>brew link macvim</pre>
+1. Run <pre>brew install vim</pre>
+2. Run <pre>brew install macvim</pre>
+3. Run <pre>brew link macvim</pre>
 
 
 <a name="Emacs"></a>
@@ -545,6 +625,11 @@ Emacs has, perhaps, more manual editing commands than other editors, numbering o
 Some jokingly referred to emacs as the "Carpal Tunnel editor", since most of the commands in emacs are accesses by typing multiple keys on the keyboard at the same time.
 
 But Emacs users can define macros that combine commands. 
+
+https://vim-adventures.com/
+
+
+Spacemacs, a community driven distro of Emacs, attempts to address some of Emacs more complex keybindings by adopting much of Vim’s keyboard layout and editing modes.
 
 
 <a id="SublimeTextz"></a>

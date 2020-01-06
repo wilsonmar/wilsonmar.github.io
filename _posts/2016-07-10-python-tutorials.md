@@ -28,6 +28,9 @@ is the official tutorial.
 
 ## Free Tutorials about Python
 
+<a target="_blank" href="https://data-flair.training/blogs/python-tutorials-home/">
+Data-Flair</a> offers <a target="_blank" href="https://data-flair.training/blogs/python-projects-with-source-code/">projects</a>
+
 ### Python for Everyone
 
 May 2019 <a target="_blank" href="https://www.py4e.com/">Python for Everybody (py4e.com)</a> free Python 3 <a target="_blank" href="https://www.py4e.com/book.php">book</a>, <a target="_blank" href="https://www.py4e.com/lectures3/">PowerPoint slides</a> and code in <a target="_blank" href="https://github.com/wilsonmar/py4e.git">GitHub</a> or in <a target="_blank" href="https://www.py4e.com/code3.zip">one zip file</a> from <a target="_blank" href="https://www.freecodecamp.org/">FreeCodeCamp.org</a> in <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI">a single YouTube video</a>, from <a target="_blank" href="https://www.dr-chuck.com">Dr. Chuck (Severance)</a> at the <a target="_blank" href="https://open.umich.edu/">University of Michigan School of Information</a>.
@@ -141,7 +144,6 @@ https://www.datacamp.com/courses</a>
 provides an interactive playground with videos.
 The beginner class is free,
 with intermediate classes at $29 a month.
-
 
 
 ### Pluralsight video courses

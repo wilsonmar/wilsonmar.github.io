@@ -29,14 +29,16 @@ Each requires 70% correct of 40 questions over 40 minutes on-line.
 
 1: Basic Concepts (17%)
 
-   * fundamental concepts: interpreting and the interpreter, compilation and the compiler, language elements, lexis, syntax analysis (parsing), semantics (applying language rules such as type mismatch), Python keywords, instructions, indenting
-   * REPL
+   * fundamental concepts: interpreting and the interpreter, compilation and the compiler, language elements, lexis, syntax analysis (parsing), semantics (applying language rules such as type mismatch), 
+   * Python keywords, instructions, 
+   * indenting
+   * REPL (<a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/5262/lesson/4/module/413">Read Evaluate Print Loop interactive</a>), control-D to exit()
    * comments. PROTIP: Text between triple-doublespace are actually string objects in the byte code
    * literals: Boolean, integer, floating-point numbers, scientific notation, strings
    * the print() function
    * the input() function
-   * numeral systems (binary, octal, decimal, hexadecimal)
-   * numeric operators: ** * / % // + –
+   * numeral systems (<a target="_blank" href="https://en.wikipedia.org/wiki/Bit_numbering">W</a>: binary, octal, decimal, hexadecimal) <a target="_blank" href="https://en.wikipedia.org/wiki/Numeral_system">W</a>, <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/5264/lesson/2/module/413">*</a>
+   * numeric operators: ** * / % // + –  <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/5264/lesson/1/module/413">// is floor division. Py3: Division always returns a float. Num (mod) % 2 is 0 for odd, 1 for even</a>
    * string operators: * +
    * assignments and shortcut operators
    <br /><br />
@@ -46,9 +48,10 @@ Each requires 70% correct of 40 questions over 40 minutes on-line.
    * operators: unary and binary, priorities and binding
    * bitwise operators: ~ & ^ | << >>
    * Boolean operators: not and or
-   * Boolean expressions
+   * Boolean expressions <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/5263/lesson/4/module/413">(True/False)</a>
    * relational operators ( == != > >= < <= ), building complex Boolean expressions
-   * accuracy of floating-point numbers
+   * accuracy of floating-point numbers <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/5263/lesson/5/module/413">4.5e9 == 4.5 * (10 ** 9) == 4.5E9 == 4.5E+9</a>
+
    * basic input and output operations using the input(), print(), int(), float(), str(), len() functions
    * formatting print() output with end= and sep= arguments
    * type casting
@@ -98,25 +101,30 @@ The <a target="_blank" href="https://pythoninstitute.org/certification/pcap-cert
 
 1: Control and Evaluations (25%)
 
-   * <strike>basic concepts: interpreting and the interpreter, compilation and the compiler, language elements, lexis, syntax and semantics, Python keywords, instructions, indenting</strike>
+   * <strike>basic concepts: interpreting and the interpreter, compilation and the compiler, language elements, </strike>
+   * compilation Lexical analysis (<a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/5262/lesson/2/module/413">into tokens</a>), 
+   * Syntactic analysis (parsing), Semantic analysis (type & parameter mismatch)
+   * <a target="_blank" href="https://wilsonmar.github.io/python-keywords">Python keywords</a>
+   * bytecode instructions
+   * indenting</strike>
    * <strike>literals: Boolean, integer, floating-point numbers, scientific notation, strings</strike>
    * operators: unary and binary, priorities and binding
    * numeric operators: ** * / % // + –
    * bitwise operators: ~ & ^ | << >>
    * string operators: * +
-   * Boolean operators: not and or
-   * relational operators ( == != > >= < <= ), building complex Boolean expressions
+   * <strike>Boolean operators: not and or</strike>
+   * <strike>relational operators ( == != > >= < <= ), building complex Boolean expressions</strike>
    * assignments and shortcut operators
-   * accuracy of floating-point numbers
+   * <strike>accuracy of floating-point numbers</strike>
    * basic input and output: input(), print(), int(), float(), str() functions
-   * formatting print() output with end= and sep= arguments
+   * <strike>formatting print() output with end= and sep= arguments</strike>
    * conditional statements: if, if-else, if-elif, if-elif-else
    * the pass instruction
    * simple lists: constructing vectors, indexing and slicing, the len() function
-   * simple strings: constructing, assigning, indexing, slicing comparing, immutability
+   * <strike>simple strings: constructing, assigning, indexing, slicing comparing, immutability</strike>
    * building loops: while, for, range(), in, iterating through sequences
    * expanding loops: while-else, for-else, nesting loops and conditional statements
-   * controlling loop execution: break, continue
+   * <strike>controlling loop execution: break, continue</strike>
    <br /><br />
 
 2: Data Aggregates (25%)
@@ -131,20 +139,24 @@ The <a target="_blank" href="https://pythoninstitute.org/certification/pcap-cert
 
 3: Functions and Modules (25%)
 
-   * defining and invoking your own functions and generators
+   * <strike>defining and invoking your own functions and generators
    * return and yield keywords, returning results, the None keyword, recursion
    * parameters vs. arguments, positional keyword and mixed argument passing, default parameter values
    * converting generator objects into lists using the list() function
-   * name scopes, name hiding (shadowing), the global keyword
-   * lambda functions, defining and using
-   * map(), filter(), reduce(), reversed(), sorted() functions and the sort() method
+   * name scopes, name hiding (shadowing), the global keyword</strike>
+   * lambda functions
+   * defining and using map(), filter(), reduce(), reversed(), sorted() functions and the sort() method
    * the if operator
-   * import directives, qualifying entities with module names, initializing modules
-   * writing and using modules, the __name__ variable
+   * import directives, qualifying entities with module names
+   * initializing modules
+   * writing and using modules, 
+   * the __name__ variable
    * pyc file creation and usage
-   * constructing and distributing packages, packages vs. directories, the role of the __init__.py file
+   * constructing and distributing packages, packages vs. directories
+   * the role of the __init__.py file
    * hiding module entities
-   * Python hashbangs, using multiline strings as module documentation
+   * Python hashbangs
+   * using multiline strings as module documentation
    <br /><br />
 
 4: Classes, Objects, and Exceptions (25%)
@@ -286,13 +298,14 @@ The <a target="_blank" href="https://pythoninstitute.org/certification/pcap-cert
 
 4: Python Network Programming (20%)
 
-   * Python Socket Module
-      - Introduction to sockets
-      - Server Socket Methods
-      - Client socket methods
-      - General socket methods
-      - Client-Server vs. Peer-to-peer
-      - Other Internet nodules
+   Python Socket Module:
+
+   * Introduction to sockets
+   * Server Socket Methods
+   * Client socket methods
+   * General socket methods
+   * Client-Server vs. Peer-to-peer
+   * Other Internet nodules
 
 5: Python-MySQL Database Access (20%)
 
