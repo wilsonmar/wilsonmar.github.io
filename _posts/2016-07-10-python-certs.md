@@ -34,7 +34,7 @@ Each requires 70% correct of 40 questions over 40 minutes on-line.
    * indenting
    * REPL (<a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/5262/lesson/4/module/413">Read Evaluate Print Loop interactive</a>), control-D to exit()
    * comments. PROTIP: Text between triple-doublespace are actually string objects in the byte code
-   * literals: Boolean, integer, floating-point numbers, scientific notation, strings
+   * literals: Boolean, integer, floating-point numbers, scientific notation, strings. <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=891782ac-798e-4745-80a0-6f142520d168">b'data'</a> literals can be split().
    * the print() function
    * the input() function
    * numeral systems (<a target="_blank" href="https://en.wikipedia.org/wiki/Bit_numbering">W</a>: binary, octal, decimal, hexadecimal) <a target="_blank" href="https://en.wikipedia.org/wiki/Numeral_system">W</a>, <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/5264/lesson/2/module/413">*</a>
@@ -79,7 +79,8 @@ Each requires 70% correct of 40 questions over 40 minutes on-line.
    * tuples: indexing, slicing, building, immutability
    * tuples vs. lists: similarities and differences, lists inside tuples and tuples inside lists
    * dictionaries: building, indexing, adding and removing keys, iterating through dictionaries as well as their keys and values, checking key existence, keys(), items() and values() methods
-   * strings in detail: ASCII, UNICODE, UTF-8, immutability, escaping using the \ character, quotes and apostrophes inside strings, multiline strings, copying vs. cloning, advanced slicing, string vs. string, string vs. non-string, basic string methods (upper(), lowe
+   * strings in detail: ASCII, UNICODE, UTF-8 (rendered/transmitted as pairs of bytes in norsk.encode("utf-8")
+   * immutability, escaping using the \ character, quotes and apostrophes inside strings, multiline strings, copying vs. cloning, advanced slicing, string vs. string, string vs. non-string, basic string methods (upper(), lowe
    <br /><br />
 
 5: Functions (20%)

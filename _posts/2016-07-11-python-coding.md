@@ -64,7 +64,7 @@ Listed alphabetically below are words that Python's reserved for itself, so you 
 
 <a name="CopyFile"></a>
 
-## Copy File
+## File Copy commands
 
 The shutil package provides fine-grained control for copying files<a target="_blank" href="https://stackoverflow.com/questions/123198/how-do-i-copy-a-file-in-python#comment52101363_123238">:</a>
 
@@ -73,11 +73,11 @@ The shutil package provides fine-grained control for copying files<a target="_bl
 This table summarizes the differences among shutil commands:
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr><th>&nbsp;</th><th>Dest. dir.</th><th>Copies metadata</th><th>Preserve permissions</th><th>Accepts file object</th></td>
-<tr valign="top" align="center"><td><a href="#shutil.copyfile">shutil.copyfile</a></td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
-<tr valign="top" align="center"><td>shutil.copyfileobj</td><td>No</td><td>No</td><td>No</td><td><strong>Yes</strong></td></tr>
-<tr valign="top" align="center"><td>shutil.copy</td><td>Yes</td><td>No</td><td><strong>Yes</strong></td><td>No</td></tr>
-<tr valign="top" align="center"><td>shutil.copy2</td><td>Yes</td><td><strong>Yes</strong></td><td>Yes</td><td>No</td></tr>
+<tr valign="bottom"><th>&nbsp;</th><th>Dest. dir.</th><th>Copies metadata</th><th>Preserve permissions</th><th>Accepts file object</th></tr>
+<tr valign="top" align="center"><td align="left"><a href="#shutil.copyfile">shutil.copyfile</a></td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
+<tr valign="top" align="center"><td align="left">shutil.copyfileobj</td><td>No</td><td>No</td><td>No</td><td><strong>Yes</strong></td></tr>
+<tr valign="top" align="center"><td align="left">shutil.copy</td><td>Yes</td><td>No</td><td><strong>Yes</strong></td><td>No</td></tr>
+<tr valign="top" align="center"><td align="left">shutil.copy2</td><td>Yes</td><td><strong>Yes</strong></td><td>Yes</td><td>No</td></tr>
 </table>
 
 See https://docs.python.org/3/library/filesys.html
@@ -124,51 +124,68 @@ shutil.copyfileobj(f_src, f_dest)
 * You can use the operating system shell copy command, but there is the overhead of opening a pipe, system shell, or subprocess, plus poses a potential security risk.
 
    <pre><strong># In Unix/Linux
-os.system('cp source.txt destination.txt')  # https://docs.python.org/3/library/os.html#os.system
+os.system('cp source.txt destination.txt')  \# https://docs.python.org/3/library/os.html#os.system
 status = subprocess.call('cp source.txt destination.txt', shell=True) 
 &nbsp;
 # In Windows
 os.system('copy source.txt destination.txt')
-status = subprocess.call('copy source.txt destination.txt', shell=True)  # https://docs.python.org/3/library/subprocess.html
+status = subprocess.call('copy source.txt destination.txt', shell=True)  \# https://docs.python.org/3/library/subprocess.html
 </strong></pre>
 
 * Pipe open has been deprecated. https://docs.python.org/3/library/os.html#os.popen 
 
    <pre><strong># In Unix/Linux
-os.popen('cp source.txt destination.txt')   # 
+os.popen('cp source.txt destination.txt')
 &nbsp;
 # In Windows
 os.popen('copy source.txt destination.txt')
 </strong></pre>
 
 
+## Error Exception handling
 
-# In Linux/Unix
-os.system('cp source.txt destination.txt')  
+Handle file not found exception<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=42650a6d-6632-4ae7-8b4f-88fa80ce6633">:</a><a target="_blank" href="https://app.pluralsight.com/course-player?clipId=23a27b06-78be-41d9-82d7-eb73fb4f414f">:</a>
 
-# In Windows
-os.system('copy source.txt destination.txt')
-3) Copying files using subprocess module
-subprocess.call signature
+<pre># if file doesn't exist in folder, create it:
+import os
+import sys
+&nbsp;
+def make_at(path p, dir_name)
+    original_path = os.getcwd()
+    try:
+        os.chdir(path)
+        os.makedir(dir_name)
+    except OSError as e:
+        print(e, file=sys.stderr)
+        raise
+    finally:  #clean-up no matter what:
+        os.chdir(original_path)</pre>
 
-subprocess.call(args, *, stdin=None, stdout=None, stderr=None, shell=False)
+## Operating system
 
-# example (WARNING: setting `shell=True` might be a security-risk)
-# In Linux/Unix
-status = subprocess.call('cp source.txt destination.txt', shell=True) 
+There are platform-specific modules<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=a2b5fcba-79c7-4602-9de2-dd84a46033d">:</a>
 
-# In Windows
-status = subprocess.call('copy source.txt destination.txt', shell=True)
-subprocess.check_output signature
+   * Windows msvcrt (Visual C run-time)
+   * MacOS sys, tty, termios, etc.
+   <br /><br />
 
-subprocess.check_output(args, *, stdin=None, stderr=None, shell=False, universal_newlines=False)
+To determine what operating system to wait for a keypress,
+use <a target="_blank" href="https://docs.python.org/3/library/platform.html#platform.system">sys.platform</a>, which has finer granularity than sys.name because it uses uname<a target="_blank" href="https://docs.python.org/library/sys.html#sys.platform">:</a>
 
-# example (WARNING: setting `shell=True` might be a security-risk)
-# In Linux/Unix
-status = subprocess.check_output('cp source.txt destination.txt', shell=True)
+   <pre># https://docs.python.org/library/sys.html#sys.platform
+from sys import platform
+if platform == "linux" or platform == "linux2":
+    # linux
+elif platform == "darwin":
+    # OS X
+elif platform == "win32":
+    # Windows
+elif platform == "cygwin":
+    # Windows running cygwin Linux emulator
+   </pre>
 
-# In Windows
-status = subprocess.check_output('copy source.txt destination.txt', shell=True)
+http://code.google.com/p/psutil/
+to do more in-depth research.
 
 
 ## Command generator
