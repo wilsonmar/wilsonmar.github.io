@@ -18,6 +18,8 @@ comments: true
 
 Here are various coding tips I've seen while going through [Python programming classes](/python-tutorials/) after [installing Python](/python-install/) and [Jupyter](/jupyter/).
 
+<a name="ReservedKeywords"></a>
+
 ## Reserved Keywords
 
 Listed alphabetically below are words that Python's reserved for itself, so you can't use them as custom variables:
@@ -58,6 +60,115 @@ Listed alphabetically below are words that Python's reserved for itself, so you 
 *	with
 *	yield
 <br /><br />
+
+
+<a name="CopyFile"></a>
+
+## Copy File
+
+The shutil package provides fine-grained control for copying files<a target="_blank" href="https://stackoverflow.com/questions/123198/how-do-i-copy-a-file-in-python#comment52101363_123238">:</a>
+
+   <ul><pre><strong>import shutil</strong></pre></ul>
+
+This table summarizes the differences among shutil commands:
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th>&nbsp;</th><th>Dest. dir.</th><th>Copies metadata</th><th>Preserve permissions</th><th>Accepts file object</th></td>
+<tr valign="top" align="center"><td><a href="#shutil.copyfile">shutil.copyfile</a></td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
+<tr valign="top" align="center"><td>shutil.copyfileobj</td><td>No</td><td>No</td><td>No</td><td><strong>Yes</strong></td></tr>
+<tr valign="top" align="center"><td>shutil.copy</td><td>Yes</td><td>No</td><td><strong>Yes</strong></td><td>No</td></tr>
+<tr valign="top" align="center"><td>shutil.copy2</td><td>Yes</td><td><strong>Yes</strong></td><td>Yes</td><td>No</td></tr>
+</table>
+
+See https://docs.python.org/3/library/filesys.html
+
+<a  name="FileMetadata"></a>
+
+Metadata includes Last modified and Last accessed info (mtime and atime). 
+Such information is maintained at the folder level.
+
+For all commands, if the destination location is not writable, an IOError exception is raised. 
+
+<a name="shutil.copyfile"></a>
+
+* To copy a file <strong>within the same folder</strong> as the source file:
+
+   <pre><strong>shutil.copyfile(src, dst)</strong></pre>
+
+   buffer cannot be when copying to another folder.
+
+* To copy a file within the same folder and <strong>buffer</strong> file-like objects (with a read or write method, such as StringIO):
+
+   <pre><strong>shutil.copyfileobj(src, dst)</strong></pre>
+
+Notice both individual file copy commands do not copy over permissions from the source file.
+Both folder-level copy commands below carry over permissions.
+
+But note that folder-level copy commands do not buffer.
+
+* To copy a file to another folder and <strong>retain metadata</strong>:
+
+   <pre><strong>file_src = 'source.txt'  
+f_src = open(file_src, 'rb')
+file_dest = 'destination.txt'  
+f_dest = open(file_dest, 'wb')
+shutil.copyfileobj(f_src, f_dest)  
+   </strong></pre>
+
+   The destination needs to specify a <strong>full path</strong>.
+
+* To copy a file to another folder and <strong>NOT retain <a href="#FileMetadata">metadata</a></strong>:
+
+   <pre><strong>shutil.copy2(src, "/usr", *, follow_symlinks=True)</strong></pre>
+
+* You can use the operating system shell copy command, but there is the overhead of opening a pipe, system shell, or subprocess, plus poses a potential security risk.
+
+   <pre><strong># In Unix/Linux
+os.system('cp source.txt destination.txt')  # https://docs.python.org/3/library/os.html#os.system
+status = subprocess.call('cp source.txt destination.txt', shell=True) 
+&nbsp;
+# In Windows
+os.system('copy source.txt destination.txt')
+status = subprocess.call('copy source.txt destination.txt', shell=True)  # https://docs.python.org/3/library/subprocess.html
+</strong></pre>
+
+* Pipe open has been deprecated. https://docs.python.org/3/library/os.html#os.popen 
+
+   <pre><strong># In Unix/Linux
+os.popen('cp source.txt destination.txt')   # 
+&nbsp;
+# In Windows
+os.popen('copy source.txt destination.txt')
+</strong></pre>
+
+
+
+# In Linux/Unix
+os.system('cp source.txt destination.txt')  
+
+# In Windows
+os.system('copy source.txt destination.txt')
+3) Copying files using subprocess module
+subprocess.call signature
+
+subprocess.call(args, *, stdin=None, stdout=None, stderr=None, shell=False)
+
+# example (WARNING: setting `shell=True` might be a security-risk)
+# In Linux/Unix
+status = subprocess.call('cp source.txt destination.txt', shell=True) 
+
+# In Windows
+status = subprocess.call('copy source.txt destination.txt', shell=True)
+subprocess.check_output signature
+
+subprocess.check_output(args, *, stdin=None, stderr=None, shell=False, universal_newlines=False)
+
+# example (WARNING: setting `shell=True` might be a security-risk)
+# In Linux/Unix
+status = subprocess.check_output('cp source.txt destination.txt', shell=True)
+
+# In Windows
+status = subprocess.check_output('copy source.txt destination.txt', shell=True)
 
 
 ## Command generator

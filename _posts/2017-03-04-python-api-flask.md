@@ -16,9 +16,11 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Flask is called a "micro-framework" because, unlike Django and other analogues like Ruby on Rails, it provides only what is necessary to do core web development, leaving you to add plug-ins beyond that minimal subset.
-
+Flask is called a "micro-framework" because, unlike Django and its analogue Ruby on Rails, 
+it provides only what is necessary to do core web development, leaving you to add plug-ins beyond its minimal subset.
 Flask's approach keeps your code and workflow simple, particularly on smaller projects. 
+
+Extensions are added to enable database access, web form, and user authentication.
 
 
 ## Install Flask
@@ -145,6 +147,9 @@ export DATABASE_URL="postgresql://localhost/flask_api"
 
    "(env)" should disappear after this.
 
+
+   ### Dependencies in Requirements.txt
+
 0. Install dependencies within venv: 
 
    <pre><strong>pip install flask flask-jsonpify flask-sqlalchemy flask-restful
@@ -184,7 +189,14 @@ SQLAlchemy==1.1.14
 Werkzeug==0.12.2
    </pre>
 
-   NOTE: "Werkzeug" is a German word for "tool" (for HTTP and routing).
+   Flask is like a glue that sticks together two popular frameworks:
+
+   "Werkzeug" is a German word for "tool" (for HTTP and routing).
+   At http://werkzeug.pocoo.org/ Werkzeug is a WSGI (Web Server Gateway Interface) library for Python, which includes a URL routing system, fully featured request and response objects and a powerful debugger. (WSGI is a specification for simple and universal interface between web servers and Python web applications.)
+
+   Jinja2 (@ http://jinja.pocoo.org/) is a full-feature template engine for Python, used for replace templating variables code with actual text values at run-time.
+
+   Within the scope of MVC (Model-View-Controller) architecture, Werkzeug covers the Controller (C) and Jinja2 covers the View (V). Flask does not provide an integrated Model (M) layer, and lets you pick your database solution. A popular choice is Flask-SQLAlchemy with a ORM (Object-Relational Mapper) over a relational database such as MySQL or PostgreSQL.
 
 0. Download and install Python dependencies specified:
 
@@ -263,6 +275,9 @@ Installing collected packages: six, python-dateutil, aniso8601, appdirs, click, 
 ERROR: Cannot uninstall 'six'. It is a distutils installed project and thus we cannot accurately determine which files belong to it which would lead to only a partial uninstall.
    </pre>
 
+
+   ### Flask home page
+
 0. Read the description the Flask Framework at <a target="_blank" href="http://flask.pocoo.org/">http://flask.pocoo.org</a> 
 
    Additional information about the Flask framework is at:
@@ -297,7 +312,7 @@ ERROR: Cannot uninstall 'six'. It is a distutils installed project and thus we c
 
 0. Install SQLite3 on MacOS from the internet:
 
-   <pre><strong>brew install sqlite3 -g
+   <pre><strong>brew install sqlite3
    </strong></pre>
 
    This installs in another folder (not the pwd).
