@@ -304,16 +304,6 @@ https://www.youtube.com/watch?v=5b8OiqQ6NuY
 
 <a name="InstallFlask"></a>
 
-<!-- Armin Ronacher
--->
-
-## Flask in Docker
-
-
-<hr />
-
-<a name="InstallFlask"></a>
-
 ## Install Flask
 
 This is a hands-on walkthrough of the intricacies of creating a sample Python server program to process REST API calls from a user's browser. By hands-on I mean explanations are provided after you do each action. Actions include folder navigation and creation, virtualenv, etc.
