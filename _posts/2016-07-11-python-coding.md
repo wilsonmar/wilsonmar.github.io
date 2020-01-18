@@ -61,6 +61,29 @@ Listed alphabetically below are words that Python's reserved for itself, so you 
 *	yield
 <br /><br />
 
+## File open() modes
+
+PROTIP: Be explicit about using text (vs. binary) mode.
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr valign="bottom"><th>&nbsp;</th><th>Character</th><th>Meaning</th></tr>
+<tr valign="top"><td>b</td><td>binary (text mode is default)</td></tr>
+<tr valign="top"><td>t</td><td>text mode (default)</td></tr>
+<tr valign="top"><td>r</td><td>read-only (the default)</td></tr>
+<tr valign="top"><td>+</td><td>open for updating (read and write)</td></tr>
+<tr valign="top"><td>w</td><td>write-only after truncating the file</td></tr>
+<tr valign="top"><td>a</td><td>append</td></tr>
+<tr valign="top"><td>x</td><td>open for exclusive creation, failing if file already exists</td></tr>
+<tr valign="top"><td>U</td><td>universal newlines mode (used to upgrade older code)</td></tr>
+</table>
+
+write() returns the count of codepoints (characters in the string), not the number of bytes. 
+So don't use it's count.
+
+read() returns line endings (\n) in string lines.
+
+readlines() shows the whole file.
+
 
 <a name="CopyFile"></a>
 
@@ -74,10 +97,10 @@ This table summarizes the differences among shutil commands:
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th>&nbsp;</th><th>Dest. dir.</th><th>Copies metadata</th><th>Preserve permissions</th><th>Accepts file object</th></tr>
-<tr valign="top" align="center"><td align="left"><a href="#shutil.copyfile">shutil.copyfile</a></td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
-<tr valign="top" align="center"><td align="left">shutil.copyfileobj</td><td>No</td><td>No</td><td>No</td><td><strong>Yes</strong></td></tr>
-<tr valign="top" align="center"><td align="left">shutil.copy</td><td>Yes</td><td>No</td><td><strong>Yes</strong></td><td>No</td></tr>
-<tr valign="top" align="center"><td align="left">shutil.copy2</td><td>Yes</td><td><strong>Yes</strong></td><td>Yes</td><td>No</td></tr>
+<tr valign="top" align="center"><td align="left"><a href="#shutil.copyfile"><tt>shutil.copyfile</tt></a></td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
+<tr valign="top" align="center"><td align="left"><tt>shutil.copyfileobj</tt></td><td>No</td><td>No</td><td>No</td><td><strong>Yes</strong></td></tr>
+<tr valign="top" align="center"><td align="left"><tt>shutil.copy</tt></td><td>Yes</td><td>No</td><td><strong>Yes</strong></td><td>No</td></tr>
+<tr valign="top" align="center"><td align="left"><tt>shutil.copy2</tt></td><td>Yes</td><td><strong>Yes</strong></td><td>Yes</td><td>No</td></tr>
 </table>
 
 See https://docs.python.org/3/library/filesys.html

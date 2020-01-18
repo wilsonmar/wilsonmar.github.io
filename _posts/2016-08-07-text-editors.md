@@ -375,20 +375,16 @@ However, it lacks the advanced features of vim and emacs.
 
 ## Vim
 
-The original vi (visual editor) was developed in 1976 as part of the BSD Unix system (by Bill Joy, who went on to be one of the co-founders of Sun Microsystems which Oracle later purchased). 
+Vim is the most commonly available text editor in Linux.
 
+vim is vi plus the m from the word improved because Vim is functionally a superset of vi.
+
+The original vi (visual editor) was developed in 1976 as part of the BSD Unix system (by Bill Joy, who went on to be one of the co-founders of Sun Microsystems which Oracle later purchased). 
 vi is still the standard text editor available on many Unix system distributions. 
 A good reason to become proficient with vi is that vi may be the only editor available on some industrial systems where no extra software can be installed.
 vi became popular within the Unix community for its full screen visual editing not available before. 
 
-`vim` starts as an alias of `vi`. 
-vim is vi plus the m from the word improved.
-Vim is functionally a superset of vi.
-Vim is the most commonly available text editor in Linux.
-
-gvim is the graphical (XWindows) vim.
-
-The newer vim and graphical gvim adds many productivity features to vi.
+The newer vim and graphical gvim, the graphical (XWindows) vim, adds many productivity features to vi:
 
    * .vimrc file defines
    * multi-level undo (J command) and redo
@@ -399,23 +395,69 @@ The newer vim and graphical gvim adds many productivity features to vi.
    * edit through SSH
    <br /><br />
 
-   See <a target="_blank" href="https://www.vimawesome.com/">vimawesome.com</a>
-
-In vim, use <tt>:set ff=unix</tt> to convert to Unix and
-and <tt>:set ff=dos</tt> to convert to Windows.
-
-Nevertheless, some use "old-school" vi because Vim ignores control characters in headers and formatting, which can break scripts - especially files from Windows computers. Using vi provides full control of the exact contents of files being edited.
+Nevertheless, some still use "old-school" vi because Vim ignores control characters in headers and formatting, which can break scripts - especially files from Windows computers. Using vi provides full control of the exact contents of files being edited.
 
 *nix operating sytems end each line with a line-feed (LF) character.
 Windows end each line with a carriage-return and line-feed character.
 
+In vim, use <tt>:set ff=unix</tt> to convert to Unix and
+and <tt>:set ff=dos</tt> to convert to Windows.
 
-1. In a Terminal, type command:
+   <a target="_blank" href="http://vimdoc.sourceforge.net/htmldoc/">Vim documentation is at http://vimdoc.sourceforge.net/htmldoc</a>
+
+   See <a target="_blank" href="https://www.vimawesome.com/">vimawesome.com</a>
+
+
+### Opening moves
+
+0. To open to the first occurance of "x" in the file executed automatically when opening a command-line Terminal:
+
+   <pre><strong>vim +/alias ~/.bash_profile
+   </strong></pre>
+
+0. To open file and put cursor at line 5:
+
+   <pre><strong>vim +5 ~/.bash_profile
+   </strong></pre>
+
+   ### Modes
+
+   Instead of mouse and cursor operating separately, in vim you toggle among <strong>modes</strong>:
+
+   * Press i for <strong>insert mode</strong> to edit the file (automatically making room by moving the remainder of the line over as you type)
+   * Press Esc for <strong>line (normal) mode</strong> to navigate within the file and manipulate text
+   * visual mode to highlight portions of text to manipulate with single commands
+   * <a href="#CommandMode">ex (command) mode</a>
+   <br /><br />
+
+   ### Esc = caps lock
+
+   Press "Esc" key to exit command mode.
+   Many configure the "caps lock" key to act as the less easy to reach Esc key.
+
+   ### vi/vim cheatsheets
+
+   PROTIP: People use vim so that they can keep their eyes on the screen and hands on the keyboard rather than reaching for the mouse. This means memorizing the meaning of many keystrokes.
+
+   Keep handy this cheatsheet of Vim keybindings: <a target="_blank" href="http://vimsheet.com/">http://vimsheet.com</a>
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/41471886-08e73d56-7072-11e8-8294-8dccce320337.gif"><img alt="editors-vi-vim-cheat-sheet-1024x724.gif" width="1024" src="https://user-images.githubusercontent.com/300046/41471886-08e73d56-7072-11e8-8294-8dccce320337.gif"></a>
+
+   A Cheat Sheet sorted by operation at <a target="_blank" href="https://devhints.io/vim">https://devhints.io/vim</a>
+
+
+   ### Openvim simulator
+
+   <a target="_blank" href="https://openvim.com/">openvim.com</a> is a web-based hands-on vim simulator that provides a step-by-step guided tour.
+
+   ### Vimtutor
+
+1. In a Terminal, for an interactive tutorial, type command:
 
    <pre><strong>vimtutor
    </strong></pre>
 
-   This is an interactive tutorial.
+   The response is "Press ENTER or type command to continue"
 
 0. Press Enter as requested.
 
@@ -427,31 +469,8 @@ Windows end each line with a carriage-return and line-feed character.
 0. Press q to quit out.
 
 
-### vi/vim cheatsheet
-
-Keep handy this cheatsheet of Vim keybindings: <a target="_blank" href="http://vimsheet.com/">http://vimsheet.com</a>
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/41471886-08e73d56-7072-11e8-8294-8dccce320337.gif">
-<img alt="editors-vi-vim-cheat-sheet-1024x724.gif" width="1024" src="https://user-images.githubusercontent.com/300046/41471886-08e73d56-7072-11e8-8294-8dccce320337.gif"></a>
-
-
-### Open
-
-0. To open to the first occurance of "x" in the file executed automatically when opening a command-line Terminal:
-
-   <pre><strong>vim +/alias ~/.bash_profile
-   </strong></pre>
-
-   There are three <strong>modes</strong>:
-
-   * command mode
-   * insert mode
-   * line mode
-   <br /><br />
-
-   Another Cheat Sheet is at <a target="_blank" href="https://devhints.io/vim">
-   https://devhints.io/vim</a>
-
+   <a name="CommandMode"></a>
+   
    ### Command mode keys
    
    While in command mode, cursor to a position in the document:
@@ -465,9 +484,14 @@ Keep handy this cheatsheet of Vim keybindings: <a target="_blank" href="http://v
    * type o to insert new line below current position.
    * type O to insert new line above current position.
 
+   * type v to visually select
+
    * type G to go to end of file.
    * type 55G to go to line 55.
 
+   * type v to visually select.
+   * type d to delete (cut) single character.
+   * type c to change (delete, then place in insert mode)
    * type dd to delete line.
 
    * type ZZ to save and exit
@@ -489,21 +513,19 @@ Keep handy this cheatsheet of Vim keybindings: <a target="_blank" href="http://v
    * :wq to write and quit (in other words, save and exit)
    * :x  to exit (shorter than :wq)
    * :e  to revert to last saved version
+   <br /><br />
 
-0. To open at line 55 of the file executed automatically when opening a command-line Terminal:
-
-   <pre><strong>vim +55 ~/.bash_profile
-   </strong></pre>
-
-0. To save a file in Vim that you’ve already edited, yet need escalated privileges to save, use <tt>:w !sudo tee %</tt>
+   To save a file in Vim that you’ve already edited, yet need escalated privileges to save, use <tt>:w !sudo tee %</tt>
 
    `:w` writes the file; specifically, it writes it to sudo tee %, wherein tee directs the output of our file write to %. `%` stands for the current file. Of course, the sudo provides the privilege escalation we need.
 
    <em>(from <a target="_blank" href="https://linuxacademy.com/blog/linux-academy/employee-spotlight-elle-krout-course-author/">Elle Krout at LinuxAcademy.com</a>)</em>
 
-VIDEO: <a target="_blank" href="https://egghead.io/courses/learn-to-use-vim">Learn to use Vim</a>:
+### Video Tutorials
 
-* <a target="_blank" href="https://egghead.io/lessons/misc-intro-to-vim">Intro to Vim</a> by Mike Hartington:
+<a target="_blank" href="https://egghead.io/courses/learn-to-use-vim">Learn to use Vim</a>
+
+<a target="_blank" href="https://egghead.io/lessons/misc-intro-to-vim">Intro to Vim</a> by Mike Hartington:
 
    * <a target="_blank" href="https://egghead.io/lessons/misc-moving-around-in-vim">Moving around in Vim</a>
    * <a target="_blank" href="https://egghead.io/lessons/misc-vim-s-built-in-commands">Vim's different modes</a>
@@ -514,7 +536,7 @@ VIDEO: <a target="_blank" href="https://egghead.io/courses/learn-to-use-vim">Lea
    * <a target="_blank" href="https://egghead.io/lessons/misc-configure-vim">Configure Vim</a>
    * <a target="_blank" href="https://egghead.io/lessons/misc-the-vim-config-file">The Vim Config file</a>
    * <a target="_blank" href="https://egghead.io/lessons/misc-introduction-to-vim-plugins">Introduction to Vim Plugins</a>
-
+   <br /><br />
 
 <a name="MacVim"></a>
 
@@ -522,7 +544,8 @@ VIDEO: <a target="_blank" href="https://egghead.io/courses/learn-to-use-vim">Lea
 
 MacVim is a GUI app for macOS modeled after the <a href="#vim">vim text editor</a>.
 
-<pre>brew install macvim</pre>
+   <pre><strong>brew install macvim
+   </strong></pre>
 
 <pre>
 ==> Installing dependencies for macvim: cscope, lua and ruby

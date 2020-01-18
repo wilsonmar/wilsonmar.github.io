@@ -46,7 +46,7 @@ Each requires 70% correct of 40 questions over 40 minutes on-line.
 2: Data Types, Evaluations, and Basic I/O Operations (20%)
 
    * operators: unary and binary, priorities and binding
-   * bitwise operators: ~ & ^ | << >>
+   * bitwise operators<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=3db7f679-98dd-4cd4-9404-bd800eb22184">:</a> ~ & ^ | << >> (<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=b2e861ef-170d-4f7b-bc53-344781bf0fa0">Mandelbrot</a>)
    * Boolean operators: not and or
    * Boolean expressions <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/5263/lesson/4/module/413">(True/False)</a>
    * relational operators ( == != > >= < <= ), building complex Boolean expressions
@@ -180,8 +180,10 @@ The <a target="_blank" href="https://pythoninstitute.org/certification/pcap-cert
    * adding your own exceptions to an existing hierarchy
    * assertions
    * the anatomy of an exception object
-   * input/output basics: opening files with the open() function, stream objects, binary vs. text files, newline character translation, reading and writing files, bytearray objects
-   * read(), readinto(), readline(), write(), close() methods
+   * input/output basics: opening files with the open() function, stream objects, <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=f28757e1-2ee7-47b7-bdee-164843ee077e">writing binary (bmp file)</a> vs. text files, newline character translation, reading and writing files,
+   * bytearray objects
+   * <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=92d07a6a-3c07-4515-bbb5-6bd65a893b47">read()</a>, readinto(), readline(), write(), 
+   * close() methods (vs. with)
    <br /><br />
 
 ### Professional 1
