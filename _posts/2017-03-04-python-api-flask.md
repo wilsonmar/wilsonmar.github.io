@@ -76,96 +76,126 @@ TODO:
 1. Open another Terminal to run <tt>tree</tt> to see all the folders and files to the finished app, presented here because the font is too small to see clearly in the course videos. "__init__.py" are also removed for easier reading.
 
    <pre>
-\├-- Dockerfile
-\├-- LICENSE
-\├-- README.md
-\├-- SnakeEyes_CLI.egg-info
-│   \├-- PKG-INFO
-│   \├-- SOURCES.txt
-│   \├-- dependency_links.txt
-│   \├-- entry_points.txt
-│   \├-- requires.txt
-│   └-- top_level.txt
-\├-- assets
-│   \├-- app
-│   │   \├-- app.js
-│   │   \├-- app.scss
-│   │   \├-- modules
-│   │   │   └-- bootstrap.js
-│   │   └-- scss
-│   │       \├-- _forms.scss
-│   │       \├-- _nav.scss
-│   │       \├-- _sticky-footer.scss
-│   │       \├-- _typography.scss
-│   │       \├-- _variables-bootstrap.scss
-│   │       \├-- _variables.scss
-│   │       └-- all.scss
-│   \├-- package.json
-│   \├-- postcss.config.js
-│   \├-- static
-│   │   \├-- 502.html
-│   │   \├-- images
-│   │   │   └-- snake-eyes.jpg
-│   │   \├-- maintenance.html
-│   │   └-- robots.txt
-│   \├-- webpack.config.js
-│   └-- yarn.lock
-\├-- cli
-│   \├-- cli.py
-│   └-- commands
-│       \├-- __init__.py
-│       \├-- cmd_cov.py
-│       \├-- cmd_flake8.py
-│       └-- cmd_test.py
-\├-- config
-│   \├-- gunicorn.py
-│   └-- settings.py
-\├-- docker-compose.override.example.yml
-\├-- docker-compose.override.yml
-\├-- docker-compose.yml
-\├-- docker-entrypoint.sh
-\├-- lib
-│   \├-- flask_mailplus.py
-│   └-- tests.py
-\├-- requirements.txt
-\├-- setup.py
-└-- snakeeyes
-    \├-- __init__.py
-    \├-- app.py
-    \├-- blueprints
-        │   \├-- contact
-    │       │   │   \├-- forms.py
-    │   │   \├-- tasks.py
-    │   │   \├-- templates
-    │   │   │   └-- contact
-    │   │   │       \├-- index.html
-    │   │   │       └-- mail
-    │   │   │           └-- index.txt
-    │   │   └-- views.py
-    │   └-- page
-    │       \├-- __init__.py
-    │       \├-- templates
-    │       │   └-- page
-    │       │       \├-- home.html
-    │       │       \├-- privacy.html
-    │       │       └-- terms.html
-    │       └-- views.py
-    \├-- extensions.py
-    \├-- templates
-    │   \├-- layouts
-    │   │   └-- base.html
-    │   └-- macros
-    │       \├-- flash.html
-    │       └-- form.html
-    └-- tests
-        \├-- __init__.py
-        \├-- conftest.py
-        \├-- contact
-                │   \├-- test_tasks.py
-        │   └-- test_views.py
-        └-- page
-            \├-- __init__.py
-            └-- test_views.py
+├── Dockerfile
+├── LICENSE
+├── README.md
+├── SnakeEyes_CLI.egg-info
+│   ├── PKG-INFO
+│   ├── SOURCES.txt
+│   ├── dependency_links.txt
+│   ├── entry_points.txt
+│   ├── requires.txt
+│   └── top_level.txt
+├── assets
+│   ├── app
+│   │   ├── app.js
+│   │   ├── app.scss
+│   │   ├── modules
+│   │   │   └── bootstrap.js
+│   │   └── scss
+│   │       ├── _forms.scss
+│   │       ├── _nav.scss
+│   │       ├── _sticky-footer.scss
+│   │       ├── _typography.scss
+│   │       ├── _variables-bootstrap.scss
+│   │       ├── _variables.scss
+│   │       └── all.scss
+│   ├── package.json
+│   ├── postcss.config.js
+│   ├── static
+│   │   ├── 502.html
+│   │   ├── images
+│   │   │   └── snake-eyes.jpg
+│   │   ├── maintenance.html
+│   │   └── robots.txt
+│   ├── webpack.config.js
+│   └── yarn.lock
+├── baswf.md
+├── celerybeat-schedule
+├── cli
+│   ├── __init__.py
+│   ├── cli.py
+│   └── commands
+│       ├── __init__.py
+│       ├── cmd_cov.py
+│       ├── cmd_flake8.py
+│       └── cmd_test.py
+├── config
+│   ├── __init__.py
+│   ├── gunicorn.py
+│   └── settings.py
+├── docker-compose.override.example.yml
+├── docker-compose.override.yml
+├── docker-compose.yml
+├── docker-entrypoint.sh
+├── install-bsawf.sh
+├── lib
+│   ├── __init__.py
+│   ├── flask_mailplus.py
+│   └── tests.py
+├── public
+│   ├── 502.html
+│   ├── css
+│   │   └── app.css
+│   ├── fonts
+│   │   ├── fa-regular-400.eot
+│   │   ├── fa-regular-400.svg
+│   │   ├── fa-regular-400.ttf
+│   │   ├── fa-regular-400.woff
+│   │   ├── fa-regular-400.woff2
+│   │   ├── fa-solid-900.eot
+│   │   ├── fa-solid-900.svg
+│   │   ├── fa-solid-900.ttf
+│   │   ├── fa-solid-900.woff
+│   │   └── fa-solid-900.woff2
+│   ├── images
+│   │   └── snake-eyes.jpg
+│   ├── js
+│   │   └── app.js
+│   ├── maintenance.html
+│   └── robots.txt
+├── requirements.txt
+├── setup.py
+└── snakeeyes
+    ├── __init__.py
+    ├── app.py
+    ├── blueprints
+    │   ├── __init__.py
+    │   ├── contact
+    │   │   ├── __init__.py
+    │   │   ├── forms.py
+    │   │   ├── tasks.py
+    │   │   ├── templates
+    │   │   │   └── contact
+    │   │   │       ├── index.html
+    │   │   │       └── mail
+    │   │   │           └── index.txt
+    │   │   └── views.py
+    │   └── page
+    │       ├── __init__.py
+    │       ├── templates
+    │       │   └── page
+    │       │       ├── home.html
+    │       │       ├── privacy.html
+    │       │       └── terms.html
+    │       └── views.py
+    ├── extensions.py
+    ├── templates
+    │   ├── layouts
+    │   │   └── base.html
+    │   └── macros
+    │       ├── flash.html
+    │       └── form.html
+    └── tests
+        ├── __init__.py
+        ├── conftest.py
+        ├── contact
+        │   ├── __init__.py
+        │   ├── test_tasks.py
+        │   └── test_views.py
+        └── page
+            ├── __init__.py
+            └── test_views.py
 &nbsp;
 26 directories, 70 files
    </pre>
