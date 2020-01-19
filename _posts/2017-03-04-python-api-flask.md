@@ -28,9 +28,9 @@ This is a hands-on walkthrough of the intricacies of creating a sample Python se
 
 You can <a name="InstallFlask">install Flask on your local Mac laptop (covered below)</a>. 
 
-But full-stack developer <a target="_blank" href="https://www.NickJanetakis.com/uses">Nick Janetakis</a> (<a target="_blank" href="htttps://twitter.com/nickjanetakis">@nickjanetakis</a>), who also created <a target="_blank" href="https://www.youtube.com/watch?v=XeSD17YRijk&list=PL-v3vdeWVEsXT-u0JDQZnM90feU3NE3v8">a course on Docker</a>, presents his Docker Compose image containing 4,000+ lines of "production-quality bullet-proof" source code to a sample (dice-rolling betting game) application. Nick explains how you can build it yourself in his 22-hour video course "Build a SaaS (web) Applications with Flask" (bsawf) at <a target="_blank" href="https://www.udemy.com/courses/search/?src=ukw&q=Build%20a%20SaaS%20%28web%29%20Applications%20with%20Flask">Udemy.com</a> and <a target="_blank" href="https://buildasaasappwithflask.com/">marketed (for $59) at buildasaasappwithflask.com</a>. BTW Nick also produces the podcast <a target="_blank" href="https://runninginproduction.com">Running in Production</a>.
+But full-stack developer <a target="_blank" href="https://www.NickJanetakis.com/uses">Nick Janetakis</a> (<a target="_blank" href="htttps://twitter.com/nickjanetakis">@nickjanetakis</a>), who also created <a target="_blank" href="https://www.youtube.com/watch?v=XeSD17YRijk&list=PL-v3vdeWVEsXT-u0JDQZnM90feU3NE3v8">a course on Docker</a>, presents his Docker Compose image containing 4,000+ lines of "production-quality bullet-proof" source code to a sample (dice-rolling betting game) application. Nick explains how you can build it yourself in his 22-hour video course "Build a SaaS (web) Applications with Flask" (bsawf) at <a target="_blank" href="https://www.udemy.com/courses/search/?src=ukw&q=Build%20a%20SaaS%20%28web%29%20Applications%20with%20Flask">$11.99 Udemy.com</a> and <a target="_blank" href="https://buildasaasappwithflask.com/">marketed (for $59) at buildasaasappwithflask.com</a>. BTW Nick also produces the podcast <a target="_blank" href="https://runninginproduction.com">Running in Production</a>.
 
-The latest version of the completed app is at <br />
+The latest version of the completed app is periodically updated by the author at <br />
 <a target="_blank" href="https://github.com/nickjj/build-a-saas-app-with-flask.git">
 https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 
@@ -43,7 +43,7 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 
    Each feature of the script is <a target="_blank" href="https://wilsonmar.github.io/install-scripts">explained in my blog article on install scripts</a>. My scripts makes use of "feature flags" specified in calling parameters.
 
-1. To execute the script yourself, first put it in your Clipboard by <strong>triple-clicking</strong> this command then select copy:
+1. To execute the script yourself, first put it in your Clipboard by <strong>triple-clicking</strong> "bash" in this command, then select copy:
 
    <pre><strong>bash -c "$(curl -fsSL https://raw.GitHubusercontent.com/wilsonmar/snakeeyes/master/install-bsawf.sh)" -v -U -D -a -o
    </strong></pre>
@@ -60,15 +60,16 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/72588109-3e1ca980-38c5-11ea-965e-a935b8e69498.jpg"><img alt="snakeeyes-landing-899x355.jpg" src="https://user-images.githubusercontent.com/300046/72588109-3e1ca980-38c5-11ea-965e-a935b8e69498.jpg"></a>
 
 
-   ### Technologies used
+   ### Technologies used in SnakeEyes
 
-   The app makes use of several <strong>(free) open source</strong> packages and code libraries, listed below in <strong>alphabetical order</strong>:
+   To be "awesome", the app makes use of several <strong>(free) open source</strong> packages and code libraries, listed below in <strong>alphabetical order</strong>:
 
 1. Ajax requests
 1. Babel
 1. Bash script<a target="_blank" href="https://nickjanetakis.com/blog/organize-your-text-based-notes-from-the-command-line-with-this-script">*</a>
 1. Bootstrap vendor JavaScript downloaded
-1. Celery
+1. Celery - a background worker for Python to manage UI for long-running work, including scheduled work.
+   Celery uses Redis in-memory datastore to use as a data cache, message broker.
 1. CSRF Protection
 1. distutils.util (in config/settings.py)
 1. Docker Compose
@@ -88,25 +89,83 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 1. Pytest package
 1. Redis cache
 1. Scss
-1. SQLAlchemy 
+1. SQLAlchemy - an ORM to query data in PostgreSQL database
 1. Stripe microtransaction payments for subscriptions and coupon detection. It uses RESTFUL APIs.
 1. Yarn task runner
 1. Webpack (assets/webpack.config.js)
    <br /><br />
+
+   Additionally, Core Flask reference these Python libraries:
+   
+   * aniso8601
+   * click (for CLI)
+   * Markupsafe
+   * flask-restful
+   * flask-jsonpify
+   * Werkzeug
+   <br /><br />
+
+   Flask is like a glue that sticks together two popular frameworks.
+   Within the scope of MVC (Model-View-Controller) architecture, 
+   Werkzeug covers the Controller (C) and Jinja2 covers the View (V).    
+
+   <a target="_blank" href="http://werkzeug.pocoo.org/">Werkzeug at werkzeug.pocoo.org</a> is from a German word for "tool" (for HTTP and routing).
+    Werkzeug is an abstraction of WSGI (Web Server Gateway Interface) for simple and universal interface between web servers and Python web applications. It includes a URL routing system, fully featured request and response objects and a powerful debugger. Also a PEP standard. It's alternative (used by Instagram) is gunicorn.
+
+   <a target="_blank" href="http://jinja.pocoo.org/">Jinja2 at jinja.pocoo.org</a> is a full-feature template engine for Python, used for replace templating variables code with actual text values at run-time.
+
+   Flask does not provide an integrated Model (M) layer, and lets you pick your database solution. 
+   A popular choice is Flask-SQLAlchemy with a ORM (Object-Relational Mapper) over a relational database such as MySQL or PostgreSQL.
+
+   Other Python apps also reference other libraries in their requirements.txt:
+   
 
 
    ### Not Features
 
    The sample app lags behind bleeding edge technologies in several areas:
 
-   * Multi-tenancy
+   * Multi-tenancy in cloud for high-volume usage
+
    * RESTful APIs. However, Nick created a separate <a target="_blank" href="https://www.youtube.com/watch?v=s1xYgp9WHbU&list=PL-v3vdeWVEsUDDWYgZ8ImfSORIHyrsBJy&index=9" title="Mar 28, 2018"> VIDEO</a> about building RESTful APIs.
    * GraphQL
    * OpenAPI (Swagger)
    
    * ReactJs (instead of jQuery) front-end UI coding
+
+   * End-to-end (Selenium) UI tests of the app
+
+
+   ### Taking the video course 
+
+   The course's marketing materials promises to show "the real (battle-hardened production) way (to create the Snakeeyes app), without tedious research". That means the videos walks through the app in various stages of development.
+
+1. Once you have paid, visit <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/downloads/2295059-downloading-the-course-s-material">Downloading the course materials</a>.
+1. Unzip
+1. In Finder view the folders unzipped:
+
+   {% highlight text %}
+06-creating-a-base-flask-app
+07-blueprints-and-jinja-2-templates
+08-testing-and-code-quality
+09-creating-a-cli-script
+10-using-our-first-flask-extension
+11-creating-a-contact-form
+12-creating-a-complete-user-system
+13-creating-a-custom-admin-dashboard
+14-logging-middleware-and-error-handling
+15-quality-of-life-cli-improvements
+16-accepting-recurring-payments
+17-building-the-snake-eyes-game
+18-processing-microtransactions
+19-database-migrations
+20-internationalization-i18n
+   {% endhighlight %}
+
+   Each folder contains a more finished set of files than the previous one.
    
-   * End-to-end (Selenium) tests on the app
+   The video tutorials describe the changes you make to each folder.
+
 
    <a name="AppTree"></a>
    
@@ -149,7 +208,6 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 │   │   └── robots.txt
 │   ├── webpack.config.js
 │   └── yarn.lock
-├── baswf.md
 ├── celerybeat-schedule
 ├── cli
 │   ├── __init__.py
@@ -167,7 +225,6 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 ├── docker-compose.override.yml
 ├── docker-compose.yml
 ├── docker-entrypoint.sh
-├── install-bsawf.sh
 ├── lib
 │   ├── __init__.py
 │   ├── flask_mailplus.py
@@ -241,38 +298,6 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 
    "__init__.py" are also removed for easier reading.
 
-   ### Taking the video course 
-
-   The course's materials promises to show "the real (battle-hardened production) way (to create the Snakeeyes app), without tedious research".
-
-1. Once you have paid, visit <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/downloads/2295059-downloading-the-course-s-material">Downloading the course materials</a>
-1. Unzip
-1. In Finder view the folders unzipped:
-
-   {% highlight text %}
-06-creating-a-base-flask-app
-07-blueprints-and-jinja-2-templates
-08-testing-and-code-quality
-09-creating-a-cli-script
-10-using-our-first-flask-extension
-11-creating-a-contact-form
-12-creating-a-complete-user-system
-13-creating-a-custom-admin-dashboard
-14-logging-middleware-and-error-handling
-15-quality-of-life-cli-improvements
-16-accepting-recurring-payments
-17-building-the-snake-eyes-game
-18-processing-microtransactions
-19-database-migrations
-20-internationalization-i18n
-   {% endhighlight %}
-
-   Each folder contains a more finished set of files than the previous one.
-   
-   The video tutorials describe the changes you make to each folder.
-
-   The zip file has been downloaded at various points in time (in violation of terms of service) by  https://github.com/JohnBobo/bsawf and https://github.com/jademount/bsawf and https://github.com/OprekAbleCom/bsawf-course-material
-
 
 1. View the updates video: <a target="_blank" href="https://www.youtube.com/watch?v=Kq_khHWovl4&list=PL-v3vdeWVEsUDDWYgZ8ImfSORIHyrsBJy&index=12">3 Upgrading a Dockerized Flask App from Python 2.7 to Python 3.7.4</a> August 2019. 30:06
 
@@ -315,7 +340,7 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 
 <a name="InstallFlask"></a>
 
-## Install Flask on MacOS
+## Manually install Flask on MacOS
 
 Actions include folder navigation and creation, virtualenv, etc.
 
@@ -380,7 +405,7 @@ Actions include folder navigation and creation, virtualenv, etc.
 
    <a name="PythonEnv"></a>
 
-   ## Python Environment
+   ## Viraual Environment
 
    PROTIP: The `standup.sh` file in the repo from GitHub performs the steps below automatically. The script can be run repeatedly.
 
@@ -480,24 +505,6 @@ six==1.11.0
 SQLAlchemy==1.1.14
 Werkzeug==0.12.2
    </pre>
-
-   Flask is like a glue that sticks together two popular frameworks:
-
-   "Werkzeug" is a German word for "tool" (for HTTP and routing).
-   At http://werkzeug.pocoo.org/ Werkzeug is an abstraction of WSGI (Web Server Gateway Interface) for simple and universal interface between web servers and Python web applications. It includes a URL routing system, fully featured request and response objects and a powerful debugger. Also a PEP standard. It's alternative (used by Instagram) is gunicorn.
-
-   <a target="_blank" href="http://jinja.pocoo.org/">Jinja2 http://jinja.pocoo.org</a> is a full-feature template engine for Python, used for replace templating variables code with actual text values at run-time.
-
-   Within the scope of MVC (Model-View-Controller) architecture, Werkzeug covers the Controller (C) and Jinja2 covers the View (V). Flask does not provide an integrated Model (M) layer, and lets you pick your database solution. A popular choice is Flask-SQLAlchemy with a ORM (Object-Relational Mapper) over a relational database such as MySQL or PostgreSQL.
-
-   Celery is a backgroun worker for Python to manage UI for long-running work, including scheduled work.
-
-   Celery uses Redis in-memory datastore to use as a data cache, message broker.
-
-   SQLAlchemy is an ORM to query data in PostgreSQL database.
-
-   Click(CLI).
-
 
 0. Download and install Python dependencies specified:
 
@@ -601,8 +608,8 @@ ERROR: Cannot uninstall 'six'. It is a distutils installed project and thus we c
    <br /><br />
 
    Alternately, a more robust database is to run (on default port 5432):
-   * <strong><a target="_blank" href="https://www.postgresql.org/download/">PostgreSQL</a></strong> – Postgres database offers many <a href="https://www.postgresql.org/about/advantages/">advantages</a> over others.</li>
-   * <strong><a target="_blank" href="http://initd.org/psycopg/">Psycopg2</a></strong> – A Python adapter for Postgres.</li>
+   * <strong><a target="_blank" href="https://www.postgresql.org/download/">PostgreSQL</a></strong> – Postgres database offers many <a href="https://www.postgresql.org/about/advantages/">advantages</a> over others.
+   * <strong><a target="_blank" href="http://initd.org/psycopg/">Psycopg2</a></strong> – A Python adapter for Postgres.
    * <a target="_blank" href="https://flask-migrate.readthedocs.io/en/latest/">Flask-Migrate</a> – Offers SQLAlchemy database migrations for Flask apps using <a target="_blank" href="https://pypi.python.org/pypi/alembic">Alembic</a>
    <br /><br />
 
