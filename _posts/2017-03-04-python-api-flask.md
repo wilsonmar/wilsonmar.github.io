@@ -22,58 +22,47 @@ Flask's approach keeps your code and workflow simple, particularly on smaller pr
 
 Extensions are added to enable database access, web form, user authentication, payments, etc.
 
+This is a hands-on walkthrough of the intricacies of creating a sample Python server program to process REST API calls from a user's browser. By hands-on I mean explanations are provided after you do each action. 
+
 ## Installation
 
 You can <a name="InstallFlask">install Flask on your local Mac laptop (covered below)</a>. 
 
-But full-stack developer <a target="_blank" href="https://www.NickJanetakis.com/uses">Nick Janetakis</a> (<a target="_blank" href="htttps://twitter.com/nickjanetakis">@nickjanetakis</a>), who also created <a target="_blank" href="https://www.youtube.com/watch?v=XeSD17YRijk&list=PL-v3vdeWVEsXT-u0JDQZnM90feU3NE3v8">a course on Docker</a>, has created a Docker Compose image containing 4,000+ lines of "production-quality bullet-proof" source code to a sample (dice-rolling betting game) application. Nick explains how you can build it yourself in his 22-hour video course "Build a SaaS (web) Applications with Flask"</a> (bsawf) at Udemy.com and <a target="_blank" href="https://buildasaasappwithflask.com/">marketed at buildasaasappwithflask.com</a>. BTW Nick also produces the podcast <a target="_blank" href="https://runninginproduction.com">Running in Production</a>.
-
+But full-stack developer <a target="_blank" href="https://www.NickJanetakis.com/uses">Nick Janetakis</a> (<a target="_blank" href="htttps://twitter.com/nickjanetakis">@nickjanetakis</a>), who also created <a target="_blank" href="https://www.youtube.com/watch?v=XeSD17YRijk&list=PL-v3vdeWVEsXT-u0JDQZnM90feU3NE3v8">a course on Docker</a>, presents his Docker Compose image containing 4,000+ lines of "production-quality bullet-proof" source code to a sample (dice-rolling betting game) application. Nick explains how you can build it yourself in his 22-hour video course "Build a SaaS (web) Applications with Flask" (bsawf) at <a target="_blank" href="https://www.udemy.com/courses/search/?src=ukw&q=Build%20a%20SaaS%20%28web%29%20Applications%20with%20Flask">Udemy.com</a> and <a target="_blank" href="https://buildasaasappwithflask.com/">marketed (for $59) at buildasaasappwithflask.com</a>. BTW Nick also produces the podcast <a target="_blank" href="https://runninginproduction.com">Running in Production</a>.
 
 The latest version of the completed app is at <br />
 <a target="_blank" href="https://github.com/nickjj/build-a-saas-app-with-flask.git">
 https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 
-Unique to this website is a bash shell script I've written that enables you to run it on your MacOS laptop with one command.
+Unique to this website is a bash shell script I've written that enables you to install and run it on your MacOS laptop with a single command.
 
 1. View my script at:
 
    <pre><strong><a target="_blank" href="https://github.com/wilsonmar/snakeeyes/blob/master/install-bsawf.sh">https://github.com/wilsonmar/snakeeyes/blob/master/install-bsawf.sh</a>
    </strong></pre>
 
-   This script is explained in the <a href="#ScriptExplained">section below</a>. 
+   Each feature of the script is <a target="_blank" href="https://wilsonmar.github.io/install-scripts">explained in my blog article on install scripts</a>. My scripts makes use of "feature flags" specified in calling parameters.
 
-1. Execute the script yourself by <strong>triple-clicking</strong> this command below:
+1. To execute the script yourself, first <strong>triple-click</strong> this command to put it in your Clipboard:
 
    <pre><strong>bash -c "$(curl -fsSL https://raw.GitHubusercontent.com/wilsonmar/snakeeyes/master/install-bsawf.sh)" -v -U -D -a -o
    </strong></pre>
 
-1. Open a Terminal on your mac, click on it, and keypress command+V to paste.
+1. Open a Terminal on your terminal, click on the cursor, and keypress <strong>command+V</strong> to paste from Clipboard:
 
-   The script should install everything needed. It ends with messages like these:
+   The script should install everything needed. It ends with a message like these:
 
-   <pre>worker_1   | [2020-01-17 04:59:42,036: INFO/Beat] beat: Starting...
+   <pre>worker_1   | [202X-mm-dd 04:59:42,036: INFO/Beat] beat: Starting...
    </pre>
 
-   If you added "-o" parameter to the command, the script opens the app in your default browser.
+   `-o` in parameters to the command asks the script to open the app in your default browser (Safari usually on a Mac):
 
    ![snakeeyes-landing-899x355](https://user-images.githubusercontent.com/300046/72588109-3e1ca980-38c5-11ea-965e-a935b8e69498.jpg)
 
 
-<hr />
-
-<a name="ScriptExplained"></a>
-
-### Install Script Explained
-
-In the script are comments of what responses looked like.
-
-
-TODO: 
-
-
 ### The app
 
-1. Open another Terminal to run <tt>tree</tt> to see all the folders and files to the finished app, presented here because the font is too small to see clearly in the course videos. "__init__.py" are also removed for easier reading.
+1. Open another Terminal to run <tt>tree</tt> to see all the folders and files to the finished app, presented here because in the course videos fonts are too small to see clearly.
 
    <pre>
 ├── Dockerfile
@@ -200,10 +189,11 @@ TODO:
 26 directories, 70 files
    </pre>
 
+ "__init__.py" are also removed for easier reading.
 
 ## Technologies used
 
-Different packages and libraries are mentioned in various files (assets folder), but they are listed below in <strong>alphabetical order</strong>:
+Several <strong>(free) open source</strong> packages and libraries are mentioned in various files (assets folder), listed below in <strong>alphabetical order</strong>:
 
 1. Ajax requests
 1. Babel
@@ -220,7 +210,7 @@ Different packages and libraries are mentioned in various files (assets folder),
 1. Flask-Mail to send emails
 1. Flask-webpack at https://github.com/nickjj/flask-webpack/blob/master/flask_webpack/__init__.py
 1. Fontawesome
-1. Gunicorn
+1. Gunicorn (instead)
 1. Jinga2
 1. JQuery (not ReactJs) used by Bootstrap
 1. JSON format files
@@ -235,6 +225,87 @@ Different packages and libraries are mentioned in various files (assets folder),
 1. Webpack (assets/webpack.config.js)
 <br /><br />
 
+### Taking the video course 
+
+The course's materials promises to show "the real (battle-hardened production) way (to create the Snakeeyes app), without tedious research".
+
+1. Once you have paid, visit <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/downloads/2295059-downloading-the-course-s-material">Downloading the course materials</a>
+1. Unzip
+1. In Finder view the folders unzipped:
+
+   {% highlight text %}
+   06-creating-a-base-flask-app
+07-blueprints-and-jinja-2-templates
+08-testing-and-code-quality
+09-creating-a-cli-script
+10-using-our-first-flask-extension
+11-creating-a-contact-form
+12-creating-a-complete-user-system
+13-creating-a-custom-admin-dashboard
+14-logging-middleware-and-error-handling
+15-quality-of-life-cli-improvements
+16-accepting-recurring-payments
+17-building-the-snake-eyes-game
+18-processing-microtransactions
+19-database-migrations
+20-internationalization-i18n
+   {% endhighlight %}
+
+   Each folder contains a more finished set of files than the previous one.
+   
+   The video tutorials describe the changes you make to each folder.
+
+   The zip file has been downloaded at various points in time (in violation of terms of service) by  https://github.com/JohnBobo/bsawf and https://github.com/jademount/bsawf and https://github.com/OprekAbleCom/bsawf-course-material
+
+
+1. View the updates video: <a target="_blank" href="https://www.youtube.com/watch?v=Kq_khHWovl4&list=PL-v3vdeWVEsUDDWYgZ8ImfSORIHyrsBJy&index=12">3 Upgrading a Dockerized Flask App from Python 2.7 to Python 3.7.4</a> August 2019. 30:06
+
+   originally python:2.7-slim from DockerHub
+
+1. Unit Testing (using Pytest)
+
+   QUESTION: Are there end-to-end tests on the app?
+
+1. CLI Script to "help manage your project" in cli/cli.py
+
+1. Web Sockets<a target="_blank" href="https://www.youtube.com/watch?v=5QUv14SQyjw&list=PL-v3vdeWVEsUDDWYgZ8ImfSORIHyrsBJy&index=11">*</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=agXtLglF5Lw&list=PL-v3vdeWVEsUDDWYgZ8ImfSORIHyrsBJy&index=10">
+VIDEO: Building RESTful APIs with Flask: Visualizing the Application and Library Choices</a>
+
+
+
+
+### Snakeeyes App Features
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Q3arEfQ-pno&list=PL-v3vdeWVEsUDDWYgZ8ImfSORIHyrsBJy">VIDEO playlist:  What Does This Course Cover?</a> 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=qfXRpkLDZho">VIDEO:
+Build a SAAS App with Flask: Going over the Demo App That We'll Build</a>
+
+* HTML5 reactive layout (reduce window size to see smaller screen layout)<a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291597-creating-the-home-page">*</a>
+
+* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291599-adding-a-few-additional-pages">Privacy and Terms of Service</a>
+* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/texts/2291994-coding-challenge">Add a FAQ page</a>
+* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291603-going-over-the-requirements-txt-changes">Pytest in requirements.txt file</a>
+* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291687-debug-toolbar">Debug toolbar</a>
+* Coupon code
+* Subscriptions
+* Billing history
+* Contact form
+* Admin dashboard
+* Search through a list of users
+* [3:55] Edit details about each user
+* Internationalization (i18n) 
+
+### Not Features
+
+* multi-tenancy
+* RESTful APIs. However, Nick created a separate <a target="_blank" href="https://www.youtube.com/watch?v=s1xYgp9WHbU&list=PL-v3vdeWVEsUDDWYgZ8ImfSORIHyrsBJy&index=9" title="Mar 28, 2018"> VIDEO</a> about building RESTful APIs.
+* GraphQL
+* Swagger/OpenAPI
+
+* ReactJs (instead of jQuery)
 
 
 <hr />
@@ -243,7 +314,7 @@ Different packages and libraries are mentioned in various files (assets folder),
 
 ## Install Flask
 
-This is a hands-on walkthrough of the intricacies of creating a sample Python server program to process REST API calls from a user's browser. By hands-on I mean explanations are provided after you do each action. Actions include folder navigation and creation, virtualenv, etc.
+Actions include folder navigation and creation, virtualenv, etc.
 
 0. <a target="_blank" href="https://wilsonmar.github.io/terminal">Open a Terminal shell window on Mac</a> or cmd window on Windows.
 
