@@ -34,16 +34,16 @@ The latest version of the completed app is at <br />
 <a target="_blank" href="https://github.com/nickjj/build-a-saas-app-with-flask.git">
 https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 
-Unique to this website is a bash shell script I've written that enables you to install and run it on your MacOS laptop with a single command.
+> Unique to this website is a bash shell script I've written that enables you to install and run it on your MacOS laptop with a single command.
 
-1. View my script at:
+1. View my install script at:
 
    <pre><strong><a target="_blank" href="https://github.com/wilsonmar/snakeeyes/blob/master/install-bsawf.sh">https://github.com/wilsonmar/snakeeyes/blob/master/install-bsawf.sh</a>
    </strong></pre>
 
    Each feature of the script is <a target="_blank" href="https://wilsonmar.github.io/install-scripts">explained in my blog article on install scripts</a>. My scripts makes use of "feature flags" specified in calling parameters.
 
-1. To execute the script yourself, first <strong>triple-click</strong> this command to put it in your Clipboard:
+1. To execute the script yourself, first put it in your Clipboard by <strong>triple-clicking</strong> this command then select copy:
 
    <pre><strong>bash -c "$(curl -fsSL https://raw.GitHubusercontent.com/wilsonmar/snakeeyes/master/install-bsawf.sh)" -v -U -D -a -o
    </strong></pre>
@@ -57,10 +57,57 @@ Unique to this website is a bash shell script I've written that enables you to i
 
    `-o` in parameters to the command asks the script to open the app in your default browser (Safari usually on a Mac):
 
-   ![snakeeyes-landing-899x355](https://user-images.githubusercontent.com/300046/72588109-3e1ca980-38c5-11ea-965e-a935b8e69498.jpg)
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/72588109-3e1ca980-38c5-11ea-965e-a935b8e69498.jpg"><img alt="snakeeyes-landing-899x355.jpg" src="https://user-images.githubusercontent.com/300046/72588109-3e1ca980-38c5-11ea-965e-a935b8e69498.jpg"></a>
 
 
-### The app
+   ### Technologies used
+
+   The app makes use of several <strong>(free) open source</strong> packages and code libraries, listed below in <strong>alphabetical order</strong>:
+
+1. Ajax requests
+1. Babel
+1. Bash script<a target="_blank" href="https://nickjanetakis.com/blog/organize-your-text-based-notes-from-the-command-line-with-this-script">*</a>
+1. Bootstrap vendor JavaScript downloaded
+1. Celery
+1. CSRF Protection
+1. distutils.util (in config/settings.py)
+1. Docker Compose
+1. ES6 JS
+1. Flake8 to analyze Python code (in cli/commands/cmd_flake8.py)
+1. Flask
+1. Flask extensions http://flask.pocoo.org/docs/0.12/extensiondev/
+1. Flask-Mail to send emails
+1. Flask-webpack at https://github.com/nickjj/flask-webpack/blob/master/flask_webpack/__init__.py
+1. Fontawesome
+1. Gunicorn (instead)
+1. Jinga2
+1. JQuery (not ReactJs) used by Bootstrap
+1. JSON format files
+1. NodeJs
+1. PostgreSQL persistant store
+1. Pytest package
+1. Redis cache
+1. Scss
+1. SQLAlchemy 
+1. Stripe microtransaction payments for subscriptions and coupon detection. It uses RESTFUL APIs.
+1. Yarn task runner
+1. Webpack (assets/webpack.config.js)
+   <br /><br />
+
+
+   ### Not Features
+
+* multi-tenancy
+* RESTful APIs. However, Nick created a separate <a target="_blank" href="https://www.youtube.com/watch?v=s1xYgp9WHbU&list=PL-v3vdeWVEsUDDWYgZ8ImfSORIHyrsBJy&index=9" title="Mar 28, 2018"> VIDEO</a> about building RESTful APIs.
+* GraphQL
+* Swagger/OpenAPI
+* ReactJs (instead of jQuery)
+
+* End-to-end (Selenium) tests on the app
+
+   <a name="AppTree"></a>
+   
+   ### App file tree
 
 1. Open another Terminal to run <tt>tree</tt> to see all the folders and files to the finished app, presented here because in the course videos fonts are too small to see clearly.
 
@@ -189,52 +236,18 @@ Unique to this website is a bash shell script I've written that enables you to i
 26 directories, 70 files
    </pre>
 
- "__init__.py" are also removed for easier reading.
+   "__init__.py" are also removed for easier reading.
 
-## Technologies used
+   ### Taking the video course 
 
-Several <strong>(free) open source</strong> packages and libraries are mentioned in various files (assets folder), listed below in <strong>alphabetical order</strong>:
-
-1. Ajax requests
-1. Babel
-1. Bash script<a target="_blank" href="https://nickjanetakis.com/blog/organize-your-text-based-notes-from-the-command-line-with-this-script">*</a>
-1. Bootstrap vendor JavaScript downloaded
-1. Celery
-1. CSRF Protection
-1. distutils.util (in config/settings.py)
-1. Docker Compose
-1. ES6 JS
-1. Flake8 to analyze Python code (in cli/commands/cmd_flake8.py)
-1. Flask
-1. Flask extensions http://flask.pocoo.org/docs/0.12/extensiondev/
-1. Flask-Mail to send emails
-1. Flask-webpack at https://github.com/nickjj/flask-webpack/blob/master/flask_webpack/__init__.py
-1. Fontawesome
-1. Gunicorn (instead)
-1. Jinga2
-1. JQuery (not ReactJs) used by Bootstrap
-1. JSON format files
-1. NodeJs
-1. PostgreSQL persistant store
-1. Pytest package
-1. Redis cache
-1. Scss
-1. SQLAlchemy 
-1. Stripe microtransaction payments for subscriptions and coupon detection. It uses RESTFUL APIs.
-1. Yarn task runner
-1. Webpack (assets/webpack.config.js)
-<br /><br />
-
-### Taking the video course 
-
-The course's materials promises to show "the real (battle-hardened production) way (to create the Snakeeyes app), without tedious research".
+   The course's materials promises to show "the real (battle-hardened production) way (to create the Snakeeyes app), without tedious research".
 
 1. Once you have paid, visit <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/downloads/2295059-downloading-the-course-s-material">Downloading the course materials</a>
 1. Unzip
 1. In Finder view the folders unzipped:
 
    {% highlight text %}
-   06-creating-a-base-flask-app
+06-creating-a-base-flask-app
 07-blueprints-and-jinja-2-templates
 08-testing-and-code-quality
 09-creating-a-cli-script
@@ -264,24 +277,20 @@ The course's materials promises to show "the real (battle-hardened production) w
 
 1. Unit Testing (using Pytest)
 
-   QUESTION: Are there end-to-end tests on the app?
-
 1. CLI Script to "help manage your project" in cli/cli.py
 
 1. Web Sockets<a target="_blank" href="https://www.youtube.com/watch?v=5QUv14SQyjw&list=PL-v3vdeWVEsUDDWYgZ8ImfSORIHyrsBJy&index=11">*</a>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=agXtLglF5Lw&list=PL-v3vdeWVEsUDDWYgZ8ImfSORIHyrsBJy&index=10">
-VIDEO: Building RESTful APIs with Flask: Visualizing the Application and Library Choices</a>
+   <a target="_blank" href="https://www.youtube.com/watch?v=agXtLglF5Lw&list=PL-v3vdeWVEsUDDWYgZ8ImfSORIHyrsBJy&index=10">
+   VIDEO: Building RESTful APIs with Flask: Visualizing the Application and Library Choices</a>
 
 
+   ### Snakeeyes App Features
 
+   <a target="_blank" href="https://www.youtube.com/watch?v=Q3arEfQ-pno&list=PL-v3vdeWVEsUDDWYgZ8ImfSORIHyrsBJy">VIDEO playlist:  What Does This Course Cover?</a> 
 
-### Snakeeyes App Features
-
-<a target="_blank" href="https://www.youtube.com/watch?v=Q3arEfQ-pno&list=PL-v3vdeWVEsUDDWYgZ8ImfSORIHyrsBJy">VIDEO playlist:  What Does This Course Cover?</a> 
-
-<a target="_blank" href="https://www.youtube.com/watch?v=qfXRpkLDZho">VIDEO:
-Build a SAAS App with Flask: Going over the Demo App That We'll Build</a>
+   <a target="_blank" href="https://www.youtube.com/watch?v=qfXRpkLDZho">VIDEO:
+   Build a SAAS App with Flask: Going over the Demo App That We'll Build</a>
 
 * HTML5 reactive layout (reduce window size to see smaller screen layout)<a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291597-creating-the-home-page">*</a>
 
@@ -297,15 +306,6 @@ Build a SAAS App with Flask: Going over the Demo App That We'll Build</a>
 * Search through a list of users
 * [3:55] Edit details about each user
 * Internationalization (i18n) 
-
-### Not Features
-
-* multi-tenancy
-* RESTful APIs. However, Nick created a separate <a target="_blank" href="https://www.youtube.com/watch?v=s1xYgp9WHbU&list=PL-v3vdeWVEsUDDWYgZ8ImfSORIHyrsBJy&index=9" title="Mar 28, 2018"> VIDEO</a> about building RESTful APIs.
-* GraphQL
-* Swagger/OpenAPI
-
-* ReactJs (instead of jQuery)
 
 
 <hr />
