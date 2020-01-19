@@ -97,13 +97,16 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 
    ### Not Features
 
-* multi-tenancy
-* RESTful APIs. However, Nick created a separate <a target="_blank" href="https://www.youtube.com/watch?v=s1xYgp9WHbU&list=PL-v3vdeWVEsUDDWYgZ8ImfSORIHyrsBJy&index=9" title="Mar 28, 2018"> VIDEO</a> about building RESTful APIs.
-* GraphQL
-* Swagger/OpenAPI
-* ReactJs (instead of jQuery)
+   The sample app lags behind bleeding edge technologies in several areas:
 
-* End-to-end (Selenium) tests on the app
+   * Multi-tenancy
+   * RESTful APIs. However, Nick created a separate <a target="_blank" href="https://www.youtube.com/watch?v=s1xYgp9WHbU&list=PL-v3vdeWVEsUDDWYgZ8ImfSORIHyrsBJy&index=9" title="Mar 28, 2018"> VIDEO</a> about building RESTful APIs.
+   * GraphQL
+   * OpenAPI (Swagger)
+   
+   * ReactJs (instead of jQuery) front-end UI coding
+   
+   * End-to-end (Selenium) tests on the app
 
    <a name="AppTree"></a>
    
@@ -312,7 +315,7 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 
 <a name="InstallFlask"></a>
 
-## Install Flask
+## Install Flask on MacOS
 
 Actions include folder navigation and creation, virtualenv, etc.
 
