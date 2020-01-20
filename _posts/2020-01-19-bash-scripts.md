@@ -67,18 +67,21 @@ There is NO WARRANTY, to the extent permitted by law.
 
 1. To execute the script yourself, first put it in your Clipboard by <strong>triple-clicking</strong> "bash" to turn this command line gray, then press command+C to copy:
 
-   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh)" -v -U -D -a -o
+   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh)" -h -v -I -U -c -s -r -a -o
    </strong></pre>
+
+   Hidden at the end of the line contains <a href="#Args">parameters <strong>-h -v -I -U -c -s -r -a -o</strong></a>.
 
 1. Open a Terminal on your mac, click on it, and keypress command+V to paste.
 
-   The script should install everything needed. It ends with messages like these:
+   The script runs and installs what is specified by <a href="#Args">parameters</a>. 
+   
+   It ends with messages like these:
 
    <pre>worker_1   | [2020-01-17 04:59:42,036: INFO/Beat] beat: Starting...
    </pre>
 
    If you added "-o" parameter to the command, the script opens the app in your default browser.
-
 
 1. View my sample install script at:
 
@@ -200,7 +203,7 @@ PROTIP: Values stored in variables during a run do not persist.
 
 The <tt>args_prompt()</tt> function defines text that is echoed to the console if the script is invoked with no arguments, such as:
 
-<pre><strong>./sample.sh</strong></pre>
+<pre><strong>./sample.sh -h -v -I -U -c -s -r -a -o</strong></pre>
 
 Checking for whether parameters were added is done by this code:
 
@@ -209,6 +212,8 @@ Checking for whether parameters were added is done by this code:
 fi</pre>
 
 A sample response:
+
+<a name="Args"></a>
 
 <pre>   USAGE EXAMPLE during testing:
    ./sample.sh -h -v -I -U -c -s -r -a -o
