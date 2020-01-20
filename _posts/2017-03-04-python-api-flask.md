@@ -28,7 +28,7 @@ This is a hands-on walkthrough of the intricacies of creating a sample Python se
 
 You can <a name="InstallFlask">install Flask on your local Mac laptop (covered below)</a>. 
 
-But full-stack developer <a target="_blank" href="https://www.NickJanetakis.com/uses">Nick Janetakis</a> (<a target="_blank" href="htttps://twitter.com/nickjanetakis">@nickjanetakis</a>), who also created <a target="_blank" href="https://www.youtube.com/watch?v=XeSD17YRijk&list=PL-v3vdeWVEsXT-u0JDQZnM90feU3NE3v8">a course on Docker</a>, presents his Docker Compose image containing 4,000+ lines of "production-quality bullet-proof" source code to a sample (dice-rolling betting game) application. Nick explains how you can build it yourself in his 22-hour video course "Build a SaaS (web) Applications with Flask" (bsawf) at <a target="_blank" href="https://www.udemy.com/courses/search/?src=ukw&q=Build%20a%20SaaS%20%28web%29%20Applications%20with%20Flask">$11.99 Udemy.com</a> and <a target="_blank" href="https://buildasaasappwithflask.com/">marketed (for $59) at buildasaasappwithflask.com</a>. BTW Nick also produces the podcast <a target="_blank" href="https://runninginproduction.com">Running in Production</a>.
+But full-stack developer <a target="_blank" href="https://www.NickJanetakis.com/uses">Nick Janetakis</a> (<a target="_blank" href="htttps://twitter.com/nickjanetakis">@nickjanetakis</a>), who also created <a target="_blank" href="https://www.youtube.com/watch?v=XeSD17YRijk&list=PL-v3vdeWVEsXT-u0JDQZnM90feU3NE3v8">a course on Docker</a>, presents his Docker Compose image of a sample (dice-rolling betting game) application. Nick explains how you can build the 4,000+ lines of "production-quality bullet-proof" source code yourself in his 22-hour video course "Build a SaaS (web) Application with Flask" (bsawf) at <a target="_blank" href="https://www.udemy.com/course/the-build-a-saas-app-with-flask-course/">$11.99 Udemy.com</a> and <a target="_blank" href="https://buildasaasappwithflask.com/">marketed (for $59) at buildasaasappwithflask.com</a> and <a target="_blank" href="https://www.reddit.com/r/flask/comments/emoz7s/can_you_recommend_a_good_tutorial_on_how_to_use_a/">Reddit</a>. BTW Nick also produces the podcast <a target="_blank" href="https://runninginproduction.com">Running in Production</a>.
 
 The latest version of the completed app is periodically updated by the author at <br />
 <a target="_blank" href="https://github.com/nickjj/build-a-saas-app-with-flask.git">
@@ -38,19 +38,27 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 
 1. View my install script at:
 
-   <pre><strong><a target="_blank" href="https://github.com/wilsonmar/snakeeyes/blob/master/install-bsawf.sh">https://github.com/wilsonmar/snakeeyes/blob/master/install-bsawf.sh</a>
+   <pre><strong><a target="_blank" href="https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/install-bsawf.sh">https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/install-bsawf.sh</a>
    </strong></pre>
 
-   Each feature of the script is <a target="_blank" href="https://wilsonmar.github.io/install-scripts">explained in my blog article on install scripts</a>. My scripts makes use of "feature flags" specified in calling parameters.
+   Each feature of the script is <a target="_blank" href="https://wilsonmar.github.io/bash-scripts">explained in my blog article on bash install scripts</a>. My scripts makes use of "feature flags" specified in calling parameters.
 
 1. To execute the script yourself, first put it in your Clipboard by <strong>triple-clicking</strong> "bash" in this command, then select copy:
 
-   <pre><strong>bash -c "$(curl -fsSL https://raw.GitHubusercontent.com/wilsonmar/snakeeyes/master/install-bsawf.sh)" -v -U -D -a -o
+   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/install-bsawf.sh)" -v -U -D -a -o
    </strong></pre>
 
 1. Open a Terminal on your terminal, click on the cursor, and keypress <strong>command+V</strong> to paste from Clipboard:
 
-   The script should install everything needed. It ends with a message like these:
+   docker-compose installs these instances:
+   
+   * worker_1
+   * celery_1
+   * redis_1
+   * progres_1
+   <br /><br />
+
+   The script ends with a message like these:
 
    <pre>worker_1   | [202X-mm-dd 04:59:42,036: INFO/Beat] beat: Starting...
    </pre>
@@ -62,6 +70,7 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 
    ### Technologies used in SnakeEyes
 
+   PROTIP: Nick's class presents not a deep dive of Flask, but the technologies around Flask.
    To be "awesome", the app makes use of several <strong>(free) open source</strong> packages and code libraries, listed below in <strong>alphabetical order</strong>:
 
 1. Ajax requests
@@ -70,39 +79,36 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 1. Bootstrap vendor JavaScript downloaded
 1. Celery - a background worker for Python to manage UI for long-running work, including scheduled work.
    Celery uses Redis in-memory datastore to use as a data cache, message broker.
-1. CSRF Protection
+1. Click - CLI 
+1. CSRF (Cross-Site Request Forgery) Protection (see <a target="_blank" href="https://owasp.org/www-project-cheat-sheets/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html">OWASP</a>)
 1. distutils.util (in config/settings.py)
 1. Docker Compose
 1. ES6 JS
 1. Flake8 to analyze Python code (in cli/commands/cmd_flake8.py)
 1. Flask
+1. Flask-debugtoolbar
 1. Flask extensions http://flask.pocoo.org/docs/0.12/extensiondev/
-1. Flask-Mail to send emails
+1. Flask-Mail to send templated emails (in lib/flask_mailplus.py <a target="_blank" href="https://pythonhosted.org/Flas-Mail">written by Nick</a>)
+1. Flask-Static-Digest
 1. Flask-webpack at https://github.com/nickjj/flask-webpack/blob/master/flask_webpack/__init__.py
+1. Flask-WTF - Web Forms
+1. WTForms-Components
 1. Fontawesome
-1. Gunicorn (instead)
+1. Gunicorn - application server for both development and production 
 1. Jinga2
 1. JQuery (not ReactJs) used by Bootstrap
 1. JSON format files
 1. NodeJs
 1. PostgreSQL persistant store
-1. Pytest package
-1. Redis cache
+1. Pytest  - package
+1. pytest-cov - code coverage
+1. Redis - cache database
 1. Scss
 1. SQLAlchemy - an ORM to query data in PostgreSQL database
 1. Stripe microtransaction payments for subscriptions and coupon detection. It uses RESTFUL APIs.
 1. Yarn task runner
 1. Webpack (assets/webpack.config.js)
-   <br /><br />
-
-   Additionally, Core Flask reference these Python libraries:
-   
-   * aniso8601
-   * click (for CLI)
-   * Markupsafe
-   * flask-restful
-   * flask-jsonpify
-   * Werkzeug
+1. Werkzeug
    <br /><br />
 
    Flask is like a glue that sticks together two popular frameworks.
@@ -117,54 +123,87 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
    Flask does not provide an integrated Model (M) layer, and lets you pick your database solution. 
    A popular choice is Flask-SQLAlchemy with a ORM (Object-Relational Mapper) over a relational database such as MySQL or PostgreSQL.
 
-   Other Python apps also reference other libraries in their requirements.txt:
+   Additionally, Core Flask itself references these Python libraries:
    
+   * aniso8601
+   * click (for CLI)
+   * Markupsafe
+   * flask-restful
+   * flask-jsonpify
+   <br /><br />
 
+   Other Python apps <a target="_blank" href="https://www.udemy.com/courses/search/?src=ukw&q=Build%20a%20SaaS%20%28web%29%20Applications%20with%20Flask">in other Udemy Flask classes</a> also reference other libraries in their requirements.txt.
+   
 
    ### Not Features
 
    The sample app lags behind bleeding edge technologies in several areas:
 
+   * ReactJs (instead of jQuery) front-end UI coding
+   * End-to-end (Selenium) UI tests of the app
+
    * Multi-tenancy in cloud for high-volume usage
+   * Paypal payments
+   * SSO (Single Sign On) via Facebook, GitHub, Twitter, etc.
 
    * RESTful APIs. However, Nick created a separate <a target="_blank" href="https://www.youtube.com/watch?v=s1xYgp9WHbU&list=PL-v3vdeWVEsUDDWYgZ8ImfSORIHyrsBJy&index=9" title="Mar 28, 2018"> VIDEO</a> about building RESTful APIs.
    * GraphQL
    * OpenAPI (Swagger)
    
-   * ReactJs (instead of jQuery) front-end UI coding
+   * Ads
 
-   * End-to-end (Selenium) UI tests of the app
-
+   * JAM static websites
 
    ### Taking the video course 
 
    The course's marketing materials promises to show "the real (battle-hardened production) way (to create the Snakeeyes app), without tedious research". That means the videos walks through the app in various stages of development.
 
-1. Once you have paid, visit <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/downloads/2295059-downloading-the-course-s-material">Downloading the course materials</a>.
+1. Once you have paid and <a target="_blank" href="https://courses.nickjanetakis.com/users/sign_in">view the course videos</a>, the <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/downloads/2295059-downloading-the-course-s-material">Downloading the course materials</a> provides the download link.
 1. Unzip
-1. In Finder view the folders unzipped:
+1. In Finder view the folders:
 
    {% highlight text %}
-06-creating-a-base-flask-app
-07-blueprints-and-jinja-2-templates
-08-testing-and-code-quality
-09-creating-a-cli-script
-10-using-our-first-flask-extension
-11-creating-a-contact-form
-12-creating-a-complete-user-system
-13-creating-a-custom-admin-dashboard
-14-logging-middleware-and-error-handling
-15-quality-of-life-cli-improvements
-16-accepting-recurring-payments
-17-building-the-snake-eyes-game
-18-processing-microtransactions
-19-database-migrations
-20-internationalization-i18n
+* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291554-introduction">06-creating-a-base-flask-app</a>
+* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291593-introduction">07-blueprints-and-jinja-2-templates</a>
+* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291601-introduction">08-testing-and-code-quality</a>
+* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291624-introduction">09-creating-a-cli-script</a>
+* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291685-introduction">10-using-our-first-flask-extension</a>
+* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291698-introduction">11-creating-a-contact-form</a>
+* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291745-introduction">12-creating-a-complete-user-system</a>
+* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291762-introduction">13-creating-a-custom-admin-dashboard</a>
+* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291775-introduction">14-logging-middleware-and-error-handling</a>
+* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291784-introduction">15-quality-of-life-cli-improvements</a>
+* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291788-introduction">16-accepting-recurring-payments</a>
+* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291817-going-over-the-requirements-txt-changes">17-building-the-snake-eyes-game</a>
+* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291832-configuring-the-app-for-purchases">18-processing-microtransactions</a>
+* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291840-what-is-a-database-migration">19-database-migrations</a>
+* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291851-introduction">20-internationalization-i18n</a>
    {% endhighlight %}
 
    Each folder contains a more finished set of files than the previous one.
+   Coding challenges at the end of each lesson describe the changes you make to each folder.
    
-   The video tutorials describe the changes you make to each folder.
+   Videos for each lesson provide a walk-through of the code above. 
+
+   PROTIP: The version in the course was the way things were several versions back.
+   Since then, Nick has created several updates (May 2018, April, August, Oct, Dec of 2019).
+   That is why the author counts so many videos.
+
+1. Each lesson is activated by building Docker
+
+   <pre><strong>docker-compose up --build</strong></pre>
+
+1. Install Sublime Text to follow the videos because that's the text editor (command subl) used.
+   <a target="_blank" href="https://www.youtube.com/watch?v=5gu8wWX3Ob4">A Productive Linux Development Environment (WSL) on Windows with WSL, Docker, tmux, VSCode and More Dec 21, 2018 [19:32]
+   <a target="_blank" href="https://www.youtube.com/watch?v=A0eqZujVfYU">Developing on Windows with WSL2 (Subsystem for Linux), VS Code, Docker, and the Terminal</a> by Scott Hanselman
+
+1. Click the wheel icon to ensure that each video is presented in "1080p".
+
+   ![snakeeyes-config-148x254](https://user-images.githubusercontent.com/300046/72680515-b2ec1100-3a88-11ea-9636-60da3623173f.png)
+
+1. At time of this writing, the "06-creating-a-base-flask-app"
+
+   <img width="733" alt="snakeeyes-obsolete" src="https://user-images.githubusercontent.com/300046/72680888-db760a00-3a8c-11ea-8aca-e7c00d27819a.png">
 
 
    <a name="AppTree"></a>
@@ -227,7 +266,7 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 ├── docker-entrypoint.sh
 ├── lib
 │   ├── __init__.py
-│   ├── flask_mailplus.py
+│   ├── <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291701-configuring-the-app-to-send-e-mail">flask_mailplus.py</a>
 │   └── tests.py
 ├── public
 │   ├── 502.html
@@ -254,9 +293,12 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 ├── setup.py
 └── snakeeyes
     ├── __init__.py
-    ├── app.py
+    ├── <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291702-adding-the-contact-blueprint">app.py</a>
     ├── blueprints
     │   ├── __init__.py
+    │   ├── <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291837-adding-to-and-modifying-the-custom-admin">admin</a> 4000 ???
+    │   ├── billing ???
+    │   ├── user ???
     │   ├── contact
     │   │   ├── __init__.py
     │   │   ├── forms.py
@@ -266,7 +308,7 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
     │   │   │       ├── index.html
     │   │   │       └── mail
     │   │   │           └── index.txt
-    │   │   └── views.py
+    │   │   └── <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291704-reviewing-the-views">views.py</a>
     │   └── page
     │       ├── __init__.py
     │       ├── templates
@@ -295,6 +337,8 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 &nbsp;
 26 directories, 70 files
    </pre>
+
+   There is no <tt>instance</tt> folder containing <tt>settings.py</tt> used to set MAIL_USEARNAME and MAIL_PASSWORD.
 
    "__init__.py" are also removed for easier reading.
 
@@ -326,9 +370,15 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/texts/2291994-coding-challenge">Add a FAQ page</a>
 * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291603-going-over-the-requirements-txt-changes">Pytest in requirements.txt file</a>
 * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291687-debug-toolbar">Debug toolbar</a>
+* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291701-configuring-the-app-to-send-e-mail">config/settings.py</a> secrets for server, email, celery.
+
+   CAUTION: If you're putting the password in a file, use an email account that won't matter if it's compromised.
+
+   `DEBUG=true` is not in the sample files but shown in the videos.
+
 * Coupon code
 * Subscriptions
-* Billing history
+* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291836-viewing-the-new-invoice-history">Billing history</a>
 * Contact form
 * Admin dashboard
 * Search through a list of users
@@ -1187,15 +1237,6 @@ To internationalize the app, add <tt>Flask-Babel==0.9</tt> to the requirements.t
 It was created by the same author as Flask itself.
 
 ## References
-
-<a target="_blank" href="https://buildasaasappwithflask.com/">$59 "Build a SAAS App with Flask" video course</a> 
-by Nick Janetakis has <a target="_blank" href="https://courses.nickjanetakis.com/users/sign_in">211 modules</a> (including Web Sockets). Videos are based on Python 2.7, Docker 1.11.1, flask=0.10.1, gunicorn==19.4.5, which need to be updated to 3.7.
-
-   * https://www.reddit.com/r/flask/comments/emoz7s/can_you_recommend_a_good_tutorial_on_how_to_use_a/
-   * https://github.com/26huitailang/bsawf
-
-
-
 
 <a target="_blank" href="https://www.youtube.com/watch?v=1ByQhAM5c1I" title="PyBay2016">VIDEO: "Flask for Fun and Profit"</a>
 by Armin Ronacher

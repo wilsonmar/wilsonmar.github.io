@@ -2,7 +2,7 @@
 layout: post
 title: "Bash (script) coding"
 excerpt: "Walk though the tricks (Bashisms) used in a script to install, configure, and run many programs on macOS and Linux"
-tags: [API, devops, evaluation]
+tags: [devops, bash, programming]
 Categories: Devops
 date: "2018-04-06"
 file: "bash-coding"
@@ -16,366 +16,14 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/bash-coding">This page</a> is a deep dive into the <strong>technical ideosycracies</strong> of shell script files.
+This page is a deep dive into the <strong>technical ideosycracies</strong> of shell script files.
 
 This tutorial picks up from <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/README.md">this README</a> which provides someone new to Macs specific steps to configure and run scripts to install apps on Macs. So first finish reading that about "shbangs" and grep for Bash shell versions.
 
-NOTE: This page is still actively under construction (as of June, 2019).
+NOTE: This page is still actively under construction.
 
-
-<a name="Style"></a>
-
-## A Question of Style
-
-> The best professionals I know who work as a team try to be more clear rather than be more clever.
-
-The more people who can understand the code and make changes without error,
-the more valuable that script is. Elegance is as elegance does.
-
-What I try to <strong>avoid</strong> is:
-
-   * Squeezing several commands into a single line when several lines is more clear. I think it's OK to use more lines.
-   * Using complex commands when simple ones do the same
-   * Using syntax not recognized by <strong>multiple platforms</strong> (recognized by both Bourne and Bash shells on Mac and Linux)
-   <br /><br />
-
-
-<a name="ShellCheck"></a>
-
-### Lint Shellcheck
-
-Coding in this script is linted using ShellCheck online at
-<a target="_blank" href="https://shellcheck.com">shellcheck.com</a> or installed from 
-<a target="_blank" href="https://github.com/koalaman/shellcheck">https://github.com/koalaman/shellcheck</a>
-
-To override the triggering of one of its particular rules so that it does not appear as an error, add a comment line like this referencing the rule to ignore:
-
-<pre># shellcheck disable=SC2059</pre>
 
 <hr />
-
-
-## Shebang and comments
-   
-   Unlike the Windows operating system, which decides what program is used to open a file based on the file name "extension" behind the dot, Linux systems ignores the file name and looks into the file to see the first line, typically:
-
-   <pre><strong>#!/bin/bash</strong></pre>
-
-   `#` is a comment in Bash scripts.
-
-   `#!` is called the "Shebang". 
-   
-   `/` means the folder is at <strong>root</strong> level, above where the operating system stores files for specific users.
-
-   `/bin` is the name of the folder that holds the executable program `bash`.
-   
-   The above specifies that the script be processed by the bash program in the 
-   folder. That's where macOS put its default Bash v3.
-   
-   Alternately, if you installed a newer version, such as Bash v4, it would be stored in the folder on this Shebang line:
-   
-   <pre><strong>#!/usr/local/bin/bash</strong></pre>
-
-   <a target="_blank" href="https://www.admon.org/scripts/new-features-in-bash-4-0/">this blog describes what is improved by version 4</a>.
-
-
-   <a name="VersionWithGap"></a>
-
-   ### Version with Grep
-
-1. Test what version of Bash is installed on your Mac by typing this:
-
-   <pre><strong>bash --version | grep 'bash'
-   </strong></pre>
-
-   Hold the Shift key to press the | (called pipe) key at the upper-right of the keyboard.
-
-   The <tt>grep 'bash'</tt> is needed to filter out lines that do not contain the word "bash" in the response:
-
-   <pre>GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin16)</pre>
-
-   Apple still ships version 3.x, which first released in 2007. Bash 4.0 was released in 2009.
-   So you have a more recent version of Bash if you see:
-
-   <pre>GNU bash, version 4.4.19(1)-release (x86_64-apple-darwin17.3.0)</pre>
-
-## Bash Traps
-
-The Bash trap command catches signals so it can execute some commands when appropriate,
-such as <a target="_blank" href="https://www.shellscript.sh/trap.html">
-cleaning up temp files before the script finishes</a>, called an
-<a target="_blank" href="http://redsymbol.net/articles/bash-exit-traps/">exit trap</a>.
-
-   <pre>
-cleanup() {
-    err=$?
-    echo "Cleaning stuff up..."
-    trap '' EXIT INT TERM
-    exit $err 
-}
-sig_cleanup() {
-    trap '' EXIT # some shells will call EXIT after the INT handler
-    false # sets $?
-    cleanup
-}
-   </pre>
-
-<a target="_blank" href="https://unix.stackexchange.com/questions/57940/trap-int-term-exit-really-necessary">
-The above cleanup function</a> is invoked when INT TERM occurs to trigger the function,
-at the bottom of the script:
-
-   <pre>
-trap cleanup EXIT
-trap sig_cleanup INT QUIT TERM
-   </pre>
-
-This statement in the script...
-
-<pre><strong>
-trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
-</strong></pre>
-
-
-### Set "Strict Mode"
-
-<pre>set -o nounset -o pipefail -o errexit  # "strict mode"</pre>
-
- <tt>pipefail</tt> means that when the program encounters an exit code != 0, the exit code for the pipeline (Bash script) becomes != 0.
-<a target="_blank" href="https://news.ycombinator.com/item?id=10736584">
-E.g.</a> pipefail can be useful to ensure `curl does-not-exist-aaaaaaa.com | wc -c` doesn't exit with exit code 0..!>
-
-
-### Indent 3 spaces
-
-It's an asthetic choice.
-
-<a target="_blank" href="https://google.github.io/styleguide/shell.xml?showone=Use_Local_Variables#Use_Local_Variables">Google's Style Guide</a>
-calls for two spaces.
-
-But <strong>three spaces</strong> make the line indent under if align better.
-And the if statement is the most common in the script. 
-
-
-<a name="Homebrew"></a>
-
-### Homebrew
-
-## Utility functions
-
-Shell functions are defined near the beginning of the script for use later in the script.
-
-<a target="_blank" href="https://stackoverflow.com/questions/11369522/bash-utility-script-library">
-QUESTION</a>: What are good Bash libraries with common functions?
-Libraries for bash are not common. 
-One is /etc/rc.d/functions on RedHat-based systems.
-The file contains functions commonly used in sysV init script.
-
-<a target="_blank" href="https://mywiki.wooledge.org/BashGuide">
-NOTE</a>: Bash libraries are scarce is due to limitation of Bash functions. 
-
-<a target="_blank" href="http://mywiki.wooledge.org/BashWeaknesses">
-NOTE</a>: Bash's "functions" have several issues:
-
-Code reusability: Bash functions don't return anything; they only produce output streams. Every reasonable method of capturing that stream and either assigning it to a variable or passing it as an argument requires a SubShell, which breaks all assignments to outer scopes. (See also <a target="_blank" href="https://mywiki.wooledge.org/BashFAQ/084">BashFAQ/084</a> for tricks to retrieve results from a function.) Thus, libraries of reusable functions are not feasible, as you can't ask a function to store its results in a variable whose name is passed as an argument (except by performing eval backflips).
-
-Scope: Bash has a simple system of local scope which roughly resembles "dynamic scope" (e.g. Javascript, elisp). Functions see the locals of their callers (like Python's "nonlocal" keyword), but can't access a caller's positional parameters (except through BASH_ARGV if extdebug is enabled). Reusable functions can't be guaranteed free of namespace collisions unless you resort to weird naming rules to make conflicts sufficiently unlikely. This is particularly a problem if implementing functions that expect to be acting upon variable names from frame n-3 which may have been overwritten by your reusable function at n-2. Ksh93 can use the more common lexical scope rules by declaring functions with the "function name { ... }" syntax (Bash can't, but supports this syntax anyway).
-
-### Time start and elapsed
-
-To determine elapsed time, time stamps are captured and the start and end of the script:
-
-Near the script's beginning, the MacOS <tt>date</tt> command is used to obtain a starting time stamp:
-
-<pre>TIME_START="$(date -u +%s)"</pre>
-
-This yields a number counting the number of seconds since the Jan 1, 1970 epoch point in time.
-
-The output is like "1524256274", which is the number of seconds since the "epoch" of January 1, 1970.
-
-At the end of the script, the END timestamp is obtained for use in calculating the 
-time elapsed during the script run.
-
-Since there may be relationships among several files, all files changed in the same run have the same timestamp.
-
-The file name of the backup contains a date and time stamp in ISO 8601 format such as:
-
-   <tt>mac-setup-all.sh.2018-04-22T19:26:20-0600-18.log</tt>
-
-The coding uses the bash date and RANDOM commands (for microseconds):
-
-   <pre>
-LOG_DATETIME=$(date +%Y-%m-%dT%H:%M:%S%z)-$((1 + RANDOM % 1000))
-LOGFILE="$HOME/$THISPGM.$LOG_DATETIME.log"
-   </pre>
-
-### Disk Space Free and Used
-
-Near the script's beginning, the MacOS <tt>df</tt> command is used to obtain the number of blocks available at the start of run:
-
-   <pre>FREE_DISKBLOCKS_START="$(df | sed -n -e '2{p;q}' | cut -d' ' -f 6)"
-   </pre>
-
-The command pipes using standard Linux utilities:
-
-   * <a target="_blank" href="https://ss64.com/bash/df.html">`df`</a> (disk free)
-   
-   * <a target="_blank" href="https://ss64.com/bash/sed.html">`sed`</a> <a target="_blank" href="https://likegeeks.com/sed-linux/">(string editor)</a>
-
-   * <a target="_blank" href="https://ss64.com/bash/cut.html">`cut`</a> uses a space to -demarkate the 6th column.
-
-The variable is referenced at the end of the script, when the END variable is obtained for use in calculating the 
-time and disk space used during the script run.
-
-The avaiable value is captured from the response: 
-2nd line, 6th item: 190920080 of the response:
-
-<pre>
-Filesystem   1024-blocks      Used Available Capacity iused               ifree %iused  Mounted on
-/dev/disk1s1   488245284 294551984 190920080    61% 2470677 9223372036852305130    0%   /
-</pre>
-
-The number of blocks needs to be converted to MB (megabytes).
-
-
-### Disk Space of folder
-
-For the script to remove a folder (as in git-patch), we want to provide a feature flag so that is controllable during a particular run, with variable <tt>REMOVE_REPO_FROM_WHEN_DONE</tt>.
-
-After the folder is supposed to be removed, we want to verify whether it has. There could have been a typo in the command.
-
-If we don't want it removed, we want to know how much disk space is taken. For that we use the command `du -hs` which returns something like  <tt>319M    .</tt> which we pipe thru this:
-
-<pre>FOLDER_DISK_SPACE="$(du -hs | tr -d '\040\011\012\015\056')"</pre>
-
-The <tt>tr -d</tt> command gets rid of special characters, specifed in <a target="_blank" href="http://donsnotes.com/tech/charsets/ascii.html">ASCII</a> such as \040 for space, \011 for tabs, \012\015 for Line Feed Carriage return, and \056 for period.
-
-The full logic:
-
-<pre>
-   if [ "$REMOVE_REPO_FROM_WHEN_DONE" -eq "1" ]; then  # 0=No (default), "1"=Yes
-      echo_f "Removing $URL_FROM/$PATCH_FILE as REMOVE_REPO_FROM_WHEN_DONE=$REMOVE_REPO_FROM_WHEN_DONE"
-      rm -rf  "$REPO_TO_CONTAINER/$REPO_NAME_FROM"
-      if [ -d "$REPO_FROM_CONTAINER/$REPO_NAME_FROM" ]; then
-         FOLDER_DISK_SPACE="$(du -hs | tr -d '\040\011\012\015\056')"
-         echo_f "WARNING: $FOLDER_DISK_SPACE folder still at $REPO_FROM_CONTAINER/$REPO_NAME_FROM."
-         ls -al
-      fi
-   else
-      if [ -d "$REPO_FROM_CONTAINER/$REPO_NAME_FROM" ]; then
-         FOLDER_DISK_SPACE="$(du -hs | tr -d '\040\011\012\015\056')"
-         echo_f "WARNING: $FOLDER_DISK_SPACE folder remains at $REPO_FROM_CONTAINER/$REPO_NAME_FROM."
-      else
-         echo_f "Folder no longer at $REPO_FROM_CONTAINER/$REPO_NAME_FROM."
-      fi
-   fi
-</pre>
-
-
-
-### Text attributes
-
-Code in shell scripts first defines what is referenced in code below it.
-
-The Unix operating system (on which today's Linux distributions are based) "streams" text to the Console. Colors (colours) and other effects are specified by inserting "<strong>toggles</strong>" (attributes) that change the appearing of text following it. A <strong>reset</strong> sets all text to display in the default appearance.
-
-   <pre>
-# Set less cryptic color attributes names using tput common to all Linux distributions: 
-   blink=$(tput blink)         # 5 as in ANSI 5 in "\e[5m"
-   bold=$(tput bold)           # 1
-   dim=$(tput dim)             # 2 (faint)
-   underline=$(tput smul)      # 4
-   end_underline=$(tput rmul)
-   reverse=$(tput rev)         # 7
-# Foreground colors:
-   red=$(tput setaf 1)         # 31
-   green=$(tput setaf 2)       # 32
-   yellow=$(tput setaf 3)      # 33
-   blue=$(tput setaf 4)        # 34
-   purple=$(tput setaf 5)      # 35
-   cyan=$(tput setaf 6)        # 36
-   white=$(tput setaf 7)       # 37
-   reset=$(tput setaf 0)       # 39 default
-# Background colors:
-   b_red=$(tput setb 1)        # 41
-   b_green=$(tput setb 2)      # 42
-   b_yellow=$(tput setb 3)     # 43
-   b_blue=$(tput setb 4)       # 44
-   b_purple=$(tput setb 5)     # 45
-   b_cyan=$(tput setb 6)       # 46
-   b_white=$(tput setb 7)      # 47
-   b_reset=$(tput setb 0)      # 49 default
-# Reset all to defaults:
-   reset=$(tput sgr0)
-   </pre>
-
-   BTW To test how the codes, put this in a script:
-
-   <pre>
-echo "${green}Success! ${dim}dimmed${reset} "
-echo "${red}Failure ${bold}bolded${reset}"
-echo "${blink}${f_yellow}Caution ${bold}bolded${reset} bad"
-echo "${blue}Note${reset} blue on black is annoying"
-echo "${underline}${purple}Alert${reset} magenta underlined"
-echo "${reverse}${cyan}Info${reset} cyan reversed"
-echo "${white}Whatever white${reset} this is"
-   </pre>
-
-   The above approach is recommended because it uses the <a target="_blank" href="https://en.wikipedia.org/wiki/Tput">tput</a> utility which <a target="_blank" href="http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x405.html">works</a> on all *nix systems. Different Linux distributions and platforms recognize different toggle codes. On some platforms the <a target="_blank" href="https://stackoverflow.com/questions/17439482/how-to-make-a-text-blink-in-shell-script">alternative</a> is to define variables containing <a target="_blank" href="http://www.isthe.com/chongo/tech/comp/ansi_escapes.html">ANSI escape</a> numbers referenced in the comments above:
-
-   <pre>
-blink="\e[5m"
-blue="\e[34m"
-bold="\e[1m"
-dim="\e[2m"
-green="\e[32m"
-red="\e[31m"
-reset="\e[0m"
-underline="\e[4m"
-   </pre>
-
-   <pre>
-function echo_ok { echo -e '\033[1;32m'"$1"'\033[0m'; }
-function echo_warn { echo -e '\033[1;33m'"$1"'\033[0m'; }
-function echo_error  { echo -e '\033[1;31mERROR: '"$1"'\033[0m'; }
-   </pre>
-
-
-### Echo/print messages
-
-The color and other text attributes described above are specified within functions called to display message text to the console:
-
-   <pre>
-h1() {
-  printf "\n${bold}${underline}%s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-h2() {
-  printf "\n${bold}%s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-info() {
-  printf "${dim}➜ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-success() {
-  printf "${green}✔ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-error() {
-  printf "${red}${bold}✖ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-warnError() {
-  printf "${red}✖ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-warnNotice() {
-  printf "${blue}✖ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-note() {
-  printf "\n${bold}${blue}Note:${reset} ${blue}%s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-   </pre>
-
-The `printf` command is used instead of `echo`.
-
-"h2" is a homage to HTML heading names.
-The other functions correspond to the different levels of verbosity used by the log4j library
-(from <a target="_blank" href="https://www.npmjs.com/package/aws-code-deploy">here</a>).
 
 
 ### Logging to file
@@ -385,8 +33,7 @@ This is so you can easily <strong>scroll and search</strong> through the documen
 
 What sends statements to a file is this:
 
-   <pre>
-echo "something" >>$LOGFILE
+   <pre>echo "something" >>$LOGFILE
    </pre>
 
 The file name of the log file contains a date in ISO 8601 format,
@@ -426,8 +73,7 @@ NOTE</a>: An XML file can be used to specify inputs.
 <a target="_blank" href="https://unix.stackexchange.com/questions/146942/how-can-i-test-if-a-variable-is-empty-or-contains-only-spaces">
 NOTE</a> on testing if a variable is blank.
 
-   <pre>
-   if [[ ! -z "${newdir// }" ]]; then  #it's not blank
+   <pre>if [[ ! -z "${newdir// }" ]]; then  #it's not blank
    </pre>
 
 
@@ -679,14 +325,12 @@ kill $PID
 
 0. Define a variable:
 
-   <pre>
-   MY_VARIABLE="x"
+   <pre>MY_VARIABLE="x"
    </pre>
 
 0. Clear out a variable as if it was not defined:
 
-   <pre>
-   unset MY_VARIABLE
+   <pre>unset MY_VARIABLE
    </pre>
 
 0. Test a variable:
@@ -701,15 +345,13 @@ echo "**** MY_ZONE=\"$MY_ZONE\""
 
 0. If Xcode is not installed, exit the program (quit):
 
-   <pre>
-# Require xcode or quit out:
+   <pre># Require xcode or quit out:
 xcode-select -p || exit "XCode must be installed! (use the app store)"
    </pre>
 
 0. Set permissions
 
-   <pre>
-cd ~
+   <pre>cd ~
 mkdir -p tmp
 echo_ok "Setting permissions..."
 for dir in "/usr/local /usr/local/bin /usr/local/include /usr/local/lib /usr/local/share"; do
@@ -720,8 +362,7 @@ done
 
 0. Make sure Homebrew is installed:
 
-   <pre>
-# homebrew
+   <pre># homebrew
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 if hash brew &> /dev/null; then
    echo_ok "Homebrew already installed"
@@ -764,8 +405,7 @@ The options to do that depend on the operating system.
 
 On Mac, the "open" command is unique to Macs.
 
-   <pre>
-   open -a Terminal.app crazy.sh
+   <pre>open -a Terminal.app crazy.sh
    </pre>
 
    * See https://stackoverflow.com/questions/19440007/mac-gnome-terminal-equivalent-for-shell-script
