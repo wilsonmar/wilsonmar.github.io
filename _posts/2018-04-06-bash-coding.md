@@ -25,6 +25,39 @@ NOTE: This page is still actively under construction.
 
 <hr />
 
+### Disk Space of folder
+
+For the script to remove a folder (as in git-patch), we want to provide a feature flag so that is controllable during a particular run, with variable <tt>REMOVE_REPO_FROM_WHEN_DONE</tt>.
+
+After the folder is supposed to be removed, we want to verify whether it has. There could have been a typo in the command.
+
+If we don't want it removed, we want to know how much disk space is taken. For that we use the command `du -hs` which returns something like  <tt>319M    .</tt> which we pipe thru this:
+
+<pre>FOLDER_DISK_SPACE="$( du -hs | tr -d '\040\011\012\015\056' )"</pre>
+
+The <tt>tr -d</tt> command gets rid of special characters, specifed in <a target="_blank" href="http://donsnotes.com/tech/charsets/ascii.html">ASCII</a> such as \040 for space, \011 for tabs, \012\015 for Line Feed Carriage return, and \056 for period.
+
+The full logic:
+
+<pre>
+   if [ "$REMOVE_REPO_FROM_WHEN_DONE" -eq "1" ]; then  # 0=No (default), "1"=Yes
+      echo_f "Removing $URL_FROM/$PATCH_FILE as REMOVE_REPO_FROM_WHEN_DONE=$REMOVE_REPO_FROM_WHEN_DONE"
+      rm -rf  "$REPO_TO_CONTAINER/$REPO_NAME_FROM"
+      if [ -d "$REPO_FROM_CONTAINER/$REPO_NAME_FROM" ]; then
+         FOLDER_DISK_SPACE="$(du -hs | tr -d '\040\011\012\015\056')"
+         echo_f "WARNING: $FOLDER_DISK_SPACE folder still at $REPO_FROM_CONTAINER/$REPO_NAME_FROM."
+         ls -al
+      fi
+   else
+      if [ -d "$REPO_FROM_CONTAINER/$REPO_NAME_FROM" ]; then
+         FOLDER_DISK_SPACE="$(du -hs | tr -d '\040\011\012\015\056')"
+         echo_f "WARNING: $FOLDER_DISK_SPACE folder remains at $REPO_FROM_CONTAINER/$REPO_NAME_FROM."
+      else
+         echo_f "Folder no longer at $REPO_FROM_CONTAINER/$REPO_NAME_FROM."
+      fi
+   fi
+</pre>
+
 
 ### Logging to file
 

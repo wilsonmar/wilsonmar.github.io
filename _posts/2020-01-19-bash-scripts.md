@@ -24,6 +24,8 @@ NOTE: This page is still actively under construction.
 
 <hr />
 
+<a name="BashVersions"></a>
+
 ## Version of Bash installed
    
 1. Be at a macOS Terminal.
@@ -171,14 +173,14 @@ After ShellCheck version 0.4.6, the line can be added anywhere for the next line
    ShellCheck issues no response message is issued if no errors were found.
 
 
-## Clear
+## Clear screen
 
 To show responses at the top of the terminal, delete the comment # to enable `clear`  # screen (but not history).
 
 However, a lot of output would scroll past, it is rather useless.
 Better to print a long string as a visual marker to differentiate between different runs.
 
-### Set "Strict Mode"
+## Set "Strict Mode"
 
 <pre>set -eu pipefail  # pipefail counts as a parameter
 # set -x to show commands for specific issues.
@@ -193,90 +195,259 @@ Some put them all in one line:
 E.g.</a> pipefail can be useful to ensure `curl does-not-exist-aaaaaaa.com | wc -c` doesn't exit with exit code 0..!>
 
 
-### Time start and elapsed
+## Time start - end = elapsed
 
-To determine elapsed time, time stamps are captured and the start and end of the script.
+To determine elapsed time, START time stamps are captured as soon as the script starts.
 
-Near the script's beginning, the MacOS <tt>date</tt> command is used to obtain a starting time stamp:
+When the script ends, END time stamps are captured to calculate the <strong>elapsed</strong> time.
 
-<pre>TIME_START="$(date -u +%s)"</pre>
+There are two time stamp formats.
 
-This yields a number counting the number of seconds since the Jan 1, 1970 epoch point in time.
+<pre>EPOCH_START="$(date -u +%s)"  # such as 1572634619</pre>
 
-The output is like "1524256274", which is the number of seconds since the "epoch" of January 1, 1970.
+captures the number of minutes since the Jan 1, 1970 epoch point in time.
 
-PROTIP: Values stored in variables during a run do not persist.
+<pre>LOG_DATETIME=$(date +%Y-%m-%dT%H:%M:%S%z)-$((1 + RANDOM % 1000))</pre>
 
-At the end of the script, the END timestamp is obtained for use in calculating the 
-time elapsed during the script run.
-
-Since there may be relationships among several files, all files changed in the same run have the same timestamp.
-
-The file name of the backup contains a date and time stamp in ISO 8601 format such as:
+captures the date in a human-readable year-month-day-hour-minutes "ISO 8601" format which also includes the hours and minutes from UTC/GMT, such as "-600" in this sample:
 
    <tt>sample.sh.2018-04-22T19:26:20-0600-18.log</tt>
 
-The coding uses the bash date and RANDOM commands (for microseconds):
+An additional RANDOM number is added to ensure uniqueness.
 
-   <pre>LOG_DATETIME=$(date +%Y-%m-%dT%H:%M:%S%z)-$((1 + RANDOM % 1000))
-LOGFILE="$HOME/$THISPGM.$LOG_DATETIME.log"
+PROTIP: Values stored in variables during a run do not persist.
+
+
+## Arguments into script
+
+The <tt>args_prompt()</tt> function defines text that is echoed to the console if the script is invoked with no arguments, such as:
+
+<pre><strong>./sample.sh</strong></pre>
+
+Checking for whether parameters were added is done by this code:
+
+<pre>if [ $# -eq 0 ]; then  # display if no parameters are provided:
+   args_prompt
+fi</pre>
+
+A sample response:
+
+<pre>USAGE EXAMPLE during testing:
+   ./sample.sh -h -v -D -U -a -o -d
+OPTIONS:
+   -h           to display this -help list
+   -v           to run -verbose (list space use and each image to console)
+   -D           -Download installers
+   -U           -Upgrade packages
+   -n "John Doe"         GitHub user -name
+   -e "john_doe@a.com"   GitHub user -email
+   -p ""     Project folder -path
+   -R           -Reboot Docker before run
+   -a           to -actually run docker-compose
+   -o           to -open web page in default browser
+   -d           to -delete files after run (to save disk space)
+   </pre>
+
+The USAGE example shows the various parameters that need to be added to specific actions taken by the script.
+
+This design ensures the flexibility of the script.
+
+Flags not associated with a text string specification (such as Verbose) default to false and get switched to true when specified.
+
+Text variables are defined first, then exported in a separate step as recommended by Shellcheck.
+
+### Echo/print messages
+
+To format output, this code is used:
+
+   <pre>
+h2() {     # heading
+   printf "\n${bold}>>> %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+}
+info() {   # output on every run
+   printf "${dim}\n➜ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+}
+note() { if [ "${RUN_VERBOSE}" = true ]; then
+   printf "${bold}${cyan} ${reset} ${cyan}%s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+   fi
+}
+success() {
+   printf "${green}✔ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+}
+error() {
+   printf "${red}${bold}✖ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+}
+warnNotice() {
+   printf "${cyan}✖ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+}
+warnError() {
+   printf "${red}✖ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+}
+   </pre>
+
+"h2" is a homage to HTML heading names. 
+The other functions correspond to the different levels of verbosity used by the log4j library
+(<a target="_blank" href="https://www.npmjs.com/package/aws-code-deploy">in the npm aws-code-deploy repo</a>).
+
+The `printf` command is used instead of `echo` for compatibility with all versions of Bash.
+
+PROTIP: Notice there are icons within text, so the file must be stored in UTF-8 format.
+
+### Text color and other attributes
+
+The Unix operating system (on which today's Linux distributions are based) "streams" text to the Console. Colors (colours) and other effects are specified by inserting "<strong>toggles</strong>" (attributes) that change the appearing of text following it. A <strong>reset</strong> sets all text to display in the default appearance.
+
+The color and other text attributes described above are specified within functions called to display message text to the console.
+
+   On macOS the <a target="_blank" href="https://stackoverflow.com/questions/17439482/how-to-make-a-text-blink-in-shell-script">approach</a> is to define variables containing <a target="_blank" href="http://www.isthe.com/chongo/tech/comp/ansi_escapes.html">ANSI escape</a> numbers:
+
+   <pre>
+blink="\e[5m"
+blue="\e[34m"
+bold="\e[1m"
+dim="\e[2m"
+green="\e[32m"
+red="\e[31m"
+reset="\e[0m"
+underline="\e[4m"
+   </pre>
+
+### Alternative tput coding
+
+   Different Linux distributions and platforms recognize different toggle codes. So use the alternate approach using the <a target="_blank" href="https://en.wikipedia.org/wiki/Tput">tput</a> utility which <a target="_blank" href="http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x405.html">works</a> on all *nix systems to display attribute variables.
+   
+   <pre>
+# Set less cryptic color attributes names using tput common to all Linux distributions: 
+   blink=$(tput blink)         # 5 as in ANSI 5 in "\e[5m"
+   bold=$(tput bold)           # 1
+   dim=$(tput dim)             # 2 (faint)
+   underline=$(tput smul)      # 4
+   end_underline=$(tput rmul)
+   reverse=$(tput rev)         # 7
+# Foreground colors:
+   red=$(tput setaf 1)         # 31
+   green=$(tput setaf 2)       # 32
+   yellow=$(tput setaf 3)      # 33
+   blue=$(tput setaf 4)        # 34
+   purple=$(tput setaf 5)      # 35
+   cyan=$(tput setaf 6)        # 36
+   white=$(tput setaf 7)       # 37
+   reset=$(tput setaf 0)       # 39 default
+# Background colors:
+   b_red=$(tput setb 1)        # 41
+   b_green=$(tput setb 2)      # 42
+   b_yellow=$(tput setb 3)     # 43
+   b_blue=$(tput setb 4)       # 44
+   b_purple=$(tput setb 5)     # 45
+   b_cyan=$(tput setb 6)       # 46
+   b_white=$(tput setb 7)      # 47
+   b_reset=$(tput setb 0)      # 49 default
+# Reset all to defaults:
+   reset=$(tput sgr0)
+   </pre>
+
+   BTW To test how the codes, put this in a script:
+
+   <pre>echo "${green}Success! ${dim}dimmed${reset} "
+echo "${red}Failure ${bold}bolded${reset}"
+echo "${blink}${f_yellow}Caution ${bold}bolded${reset} bad"
+echo "${blue}Note${reset} blue on black is annoying"
+echo "${underline}${purple}Alert${reset} magenta underlined"
+echo "${reverse}${cyan}Info${reset} cyan reversed"
+echo "${white}Whatever white${reset} this is"
    </pre>
 
 
-## Disk space usage
+
+## Operating System Detection
+
+We code shell scripts to operate in macOS and various distributions of Linux
+so that developers can focus on processing sequence which are similar on all platforms.
+
+`uname` is supposed to be available on all versions of Linux and macOS.
+
+`Darwin` is the internal name of the current macOS operating system. It is based on the NeXTSTEP operating system Steve Jobs brought into Apple upon his return to Apple in 1998. [<a target="_blank" href="https://en.wikipedia.org/wiki/Darwin_%28operating_system%29">Wikipedia explains its roots in BSD</a>]
+
+`brew` is the command used by the <a href="#Homebrew">Homebrew package manager</a> used by macOS.
+
+Different Linux distributions use different file names to store its version information.
+And different Linux distributions have their own package manager. 
+Thus we need to obtain the PACKAGE_MANAGER used by the script.
+
+<pre># Check what operating system is in use:
+   OS_TYPE="$( uname )"
+   OS_DETAILS=""  # default blank.
+if [ "$(uname)" == "Darwin" ]; then  # it's on a Mac:
+      OS_TYPE="macOS"
+      PACKAGE_MANAGER="brew"
+elif [ "$(uname)" == "Linux" ]; then  # it's on a Mac:
+   if command -v lsb_release ; then
+      lsb_release -a
+      OS_TYPE="Ubuntu"
+      PACKAGE_MANAGER="apt-get"
+   elif [ -f "/etc/os-release" ]; then
+      OS_DETAILS=$( cat "/etc/os-release" )  # ID_LIKE="rhel fedora"
+      OS_TYPE="Fedora"
+      PACKAGE_MANAGER="yum"
+   elif [ -f "/etc/redhat-release" ]; then
+      OS_DETAILS=$( cat "/etc/redhat-release" )
+      OS_TYPE="RedHat"
+      PACKAGE_MANAGER="yum"
+   elif [ -f "/etc/centos-release" ]; then
+      OS_TYPE="CentOS"
+      PACKAGE_MANAGER="yum"
+   else
+      error "Linux distribution not anticipated. Please update script. Aborting."
+      exit 0
+   fi
+else 
+   error "Operating system not anticipated. Please update script. Aborting."
+   exit 0
+fi
+</pre>
+
+
+## Disk space free capacity
+
+We want to know how much disk space is available at the beginning of the run, and the amount of space taken during the run.
+
+On macOS and other BSD operating systems, the "disk free" command <tt>df -P /</tt> outputs a "standardized" number of 512 byte blocks in the "/" mount:
+
+<pre>Filesystem   512-blocks      Used  Available Capacity  Mounted on
+/dev/disk1s1 1953595632 521869880 1417651624    27%    /
+</pre>
+
+We use <a target="_blank" href="http://mywiki.wooledge.org/BashFAQ/094">this methodology</a> to obtain the percentage of disk free, which obtains the 12th text item -delimited by a space (which include heading items):
+
+   <pre>DISK_PCT_FREE=$(read -d '' -ra df_arr < <(LC_ALL=C df -P /); echo "${df_arr[11]}" )</pre>
+
+The blocks Available is the 10th text item.
+
+   <pre>FREE_DISKBLOCKS_START=$(read -d '' -ra df_arr < <(LC_ALL=C df -P /); echo "${df_arr[10]}" )</pre>
+
+This uses bash arrays which became available since <a href="#BashVersions">Bash version 4</a>.
+
+NOTE: We don't use "-m" for megabytes or "-k" for kilobytes which result in mesuring small amounts of space used as zero.
 
 This captures the starting count:
 
-   <pre>FREE_DISKBLOCKS_START="$( df -m . | cut -d' ' -f 6 )"   # e.g. 254781 MB Used
+   <pre>FREE_DISKBLOCKS_START="$( df . | cut -d' ' -f 6 )"   # e.g. 254781 MB Used
    </pre>
 
 TODO: Within cloud environments such as Amazon AWS EC2 or Azure, this may still be relevant.
 
 `df` is the <a target="_blank" href="https://ss64.com/bash/df.html">disk free</a> command used to obtain the number of <strong>blocks</strong> Used and Available for each storage device mounted.
 
-`-m .` specifies calculation of 1M (megabyte) blocks in the current device:
+`.` specifies calculation of the number of 512 byte blocks in the current device:
 
-<pre>Filesystem   1M-blocks   Used Available Capacity iused               ifree %iused  Mounted on
-/dev/disk1s1    953904 254781    692250    27% 1479519 9223372036853296288    0%   /
+<pre>Filesystem   512-blocks      Used  Available Capacity iused               ifree %iused  Mounted on
+/dev/disk1s1 1953595632 521825264 1417696240    27% 1480293 9223372036853295514    0%   /
 </pre>
 
 `| cut -d' ' -f 6` pipes to <a target="_blank" href="https://ss64.com/bash/cut.html">`cut`</a> using a space to -demarkate the 6th column. The response is an integer such as "254781". Divided by 1024 means 248 Gigabytes.
 
 At the end of the script, another variable is obtained when the END variable is obtained for use in calculating the 
 time and disk space used during the script run.
-
-### Disk Space of folder
-
-For the script to remove a folder (as in git-patch), we want to provide a feature flag so that is controllable during a particular run, with variable <tt>REMOVE_REPO_FROM_WHEN_DONE</tt>.
-
-After the folder is supposed to be removed, we want to verify whether it has. There could have been a typo in the command.
-
-If we don't want it removed, we want to know how much disk space is taken. For that we use the command `du -hs` which returns something like  <tt>319M    .</tt> which we pipe thru this:
-
-<pre>FOLDER_DISK_SPACE="$( du -hs | tr -d '\040\011\012\015\056' )"</pre>
-
-The <tt>tr -d</tt> command gets rid of special characters, specifed in <a target="_blank" href="http://donsnotes.com/tech/charsets/ascii.html">ASCII</a> such as \040 for space, \011 for tabs, \012\015 for Line Feed Carriage return, and \056 for period.
-
-The full logic:
-
-<pre>
-   if [ "$REMOVE_REPO_FROM_WHEN_DONE" -eq "1" ]; then  # 0=No (default), "1"=Yes
-      echo_f "Removing $URL_FROM/$PATCH_FILE as REMOVE_REPO_FROM_WHEN_DONE=$REMOVE_REPO_FROM_WHEN_DONE"
-      rm -rf  "$REPO_TO_CONTAINER/$REPO_NAME_FROM"
-      if [ -d "$REPO_FROM_CONTAINER/$REPO_NAME_FROM" ]; then
-         FOLDER_DISK_SPACE="$(du -hs | tr -d '\040\011\012\015\056')"
-         echo_f "WARNING: $FOLDER_DISK_SPACE folder still at $REPO_FROM_CONTAINER/$REPO_NAME_FROM."
-         ls -al
-      fi
-   else
-      if [ -d "$REPO_FROM_CONTAINER/$REPO_NAME_FROM" ]; then
-         FOLDER_DISK_SPACE="$(du -hs | tr -d '\040\011\012\015\056')"
-         echo_f "WARNING: $FOLDER_DISK_SPACE folder remains at $REPO_FROM_CONTAINER/$REPO_NAME_FROM."
-      else
-         echo_f "Folder no longer at $REPO_FROM_CONTAINER/$REPO_NAME_FROM."
-      fi
-   fi
-</pre>
 
 
 ## Bash Traps
@@ -345,188 +516,49 @@ But <strong>three spaces</strong> make the line indent under if align better.
 And the if statement is the most common in the script. 
 
 
+## Script run enviornment 
 
-### Text attributes
-
-PROTIP: Code in shell scripts first defines what is referenced in code below it.
-
-The Unix operating system (on which today's Linux distributions are based) "streams" text to the Console. Colors (colours) and other effects are specified by inserting "<strong>toggles</strong>" (attributes) that change the appearing of text following it. A <strong>reset</strong> sets all text to display in the default appearance.
-
-   <pre>
-# Set less cryptic color attributes names using tput common to all Linux distributions: 
-   blink=$(tput blink)         # 5 as in ANSI 5 in "\e[5m"
-   bold=$(tput bold)           # 1
-   dim=$(tput dim)             # 2 (faint)
-   underline=$(tput smul)      # 4
-   end_underline=$(tput rmul)
-   reverse=$(tput rev)         # 7
-# Foreground colors:
-   red=$(tput setaf 1)         # 31
-   green=$(tput setaf 2)       # 32
-   yellow=$(tput setaf 3)      # 33
-   blue=$(tput setaf 4)        # 34
-   purple=$(tput setaf 5)      # 35
-   cyan=$(tput setaf 6)        # 36
-   white=$(tput setaf 7)       # 37
-   reset=$(tput setaf 0)       # 39 default
-# Background colors:
-   b_red=$(tput setb 1)        # 41
-   b_green=$(tput setb 2)      # 42
-   b_yellow=$(tput setb 3)     # 43
-   b_blue=$(tput setb 4)       # 44
-   b_purple=$(tput setb 5)     # 45
-   b_cyan=$(tput setb 6)       # 46
-   b_white=$(tput setb 7)      # 47
-   b_reset=$(tput setb 0)      # 49 default
-# Reset all to defaults:
-   reset=$(tput sgr0)
-   </pre>
-
-   BTW To test how the codes, put this in a script:
-
-   <pre>echo "${green}Success! ${dim}dimmed${reset} "
-echo "${red}Failure ${bold}bolded${reset}"
-echo "${blink}${f_yellow}Caution ${bold}bolded${reset} bad"
-echo "${blue}Note${reset} blue on black is annoying"
-echo "${underline}${purple}Alert${reset} magenta underlined"
-echo "${reverse}${cyan}Info${reset} cyan reversed"
-echo "${white}Whatever white${reset} this is"
-   </pre>
-
-   The above approach is recommended because it uses the <a target="_blank" href="https://en.wikipedia.org/wiki/Tput">tput</a> utility which <a target="_blank" href="http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x405.html">works</a> on all *nix systems. Different Linux distributions and platforms recognize different toggle codes. On some platforms the <a target="_blank" href="https://stackoverflow.com/questions/17439482/how-to-make-a-text-blink-in-shell-script">alternative</a> is to define variables containing <a target="_blank" href="http://www.isthe.com/chongo/tech/comp/ansi_escapes.html">ANSI escape</a> numbers referenced in the comments above:
-
-   <pre>
-blink="\e[5m"
-blue="\e[34m"
-bold="\e[1m"
-dim="\e[2m"
-green="\e[32m"
-red="\e[31m"
-reset="\e[0m"
-underline="\e[4m"
-   </pre>
-
-   <pre>
-function echo_ok { echo -e '\033[1;32m'"$1"'\033[0m'; }
-function echo_warn { echo -e '\033[1;33m'"$1"'\033[0m'; }
-function echo_error  { echo -e '\033[1;31mERROR: '"$1"'\033[0m'; }
-   </pre>
-
-
-### Echo/print messages
-
-The color and other text attributes described above are specified within functions called to display message text to the console:
-
-   <pre>
-h1() {
-  printf "\n${bold}${underline}%s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-h2() {
-  printf "\n${bold}%s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-info() {
-  printf "${dim}➜ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-success() {
-  printf "${green}✔ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-error() {
-  printf "${red}${bold}✖ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-warnError() {
-  printf "${red}✖ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-warnNotice() {
-  printf "${blue}✖ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-note() {
-  printf "\n${bold}${blue}Note:${reset} ${blue}%s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-   </pre>
-
-"h2" is a homage to HTML heading names.
-The other functions correspond to the different levels of verbosity used by the log4j library
-(from <a target="_blank" href="https://www.npmjs.com/package/aws-code-deploy">here</a>).
-
-The `printf` command is used instead of `echo` for compatibility with all versions of Bash.
-
-
-## Operating System
-
-We code shell scripts to operate in macOS and various distributions of Linux
-so that developers can focus on processing sequence which are similar on all platforms.
-
-`uname` is supposed to be available on all versions of Linux and macOS.
-
-`Darwin` is the internal name of the current macOS operating system. It is based on the NeXTSTEP operating system Steve Jobs brought into Apple upon his return to Apple in 1998. [<a target="_blank" href="https://en.wikipedia.org/wiki/Darwin_%28operating_system%29">Wikipedia explains its roots in BSD</a>]
-
-`brew` is the command used by the <a href="#Homebrew">Homebrew package manager</a> used by macOS.
-
-But different Linux distributions have their own package manager. 
-Thus we need to obtain the PACKAGE_MANAGER used by the script.
-
-<pre># Check what operating system is in use:
-   OS_TYPE="$( uname )"
-   OS_DETAILS=""  # default blank.
-if [ "$(uname)" == "Darwin" ]; then  # it's on a Mac:
-      OS_TYPE="macOS"
-      PACKAGE_MANAGER="brew"
-elif [ "$(uname)" == "Linux" ]; then  # it's on a Mac:
-   if command -v lsb_release ; then
-      lsb_release -a
-      OS_TYPE="Ubuntu"  # for apt-get
-      PACKAGE_MANAGER="apt-get"
-   elif [ -f "/etc/os-release" ]; then
-      OS_DETAILS=$( cat "/etc/os-release" )  # ID_LIKE="rhel fedora"
-      OS_TYPE="Fedora"  # for yum 
-      PACKAGE_MANAGER="yum"
-   elif [ -f "/etc/redhat-release" ]; then
-      OS_DETAILS=$( cat "/etc/redhat-release" )  # ID_LIKE="rhel fedora"
-      OS_TYPE="RedHat"  # for yum 
-      PACKAGE_MANAGER="yum"
-   elif [ -f "/etc/centos-release" ]; then
-      OS_TYPE="CentOS"  # for yum
-      PACKAGE_MANAGER="yum"
-   else
-      error "Linux distribution not anticipated. Please update script. Aborting."
-      exit 0
-   fi
-else 
-   error "Operating system not anticipated. Please update script. Aborting."
-   exit 0
-fi
-</pre>
-
-## Homebrew
-
-
-
-## Operating enviornment information:
-
-Some commands are common 
+These commands obtain information about the script's environment:
 
 <pre>HOSTNAME=$( hostname )
 PUBLIC_IP=$( curl -s ifconfig.me )
 </pre>
 
-The alternative to curl is wget, which follows redirects.
+PROTIP: The alternative to curl is wget, which follows redirects.
 
-## Print run headings
+This script code prints information about the script's running environment:
 
-PROTIP: "$0" within Bash scripts returns the script file name.
-
-Thus this code:
-
-   <pre>      note "From $0 in $PWD"
+   <pre>      note "Running $0 in $PWD"  # $0 = script being run in Present Wording Directory.
       note "Bash $BASH_VERSION at $LOG_DATETIME"  # built-in variable.
-      note "OS_TYPE=$OS_TYPE on hostname=$HOSTNAME at PUBLIC_IP=$PUBLIC_IP."
+      note "OS_TYPE=$OS_TYPE using $PACKAGE_MANAGER from $DISK_PCT_FREE disk free"
+      note "on hostname=$HOSTNAME at PUBLIC_IP=$PUBLIC_IP"
    if [ -f "$OS_DETAILS" ]; then
       note "$OS_DETAILS"
    fi
    </pre>
 
+PROTIP: "$0" within Bash scripts returns the script file name.
+
+PROTIP: "$PWD" returns the "Present Working Directory" (current folder path).
+
+Sample response:
+
+  <pre>Running ./sample.sh in /Users/wilson_mar/gits/wilsonmar/DevSecOps/bash
+  Bash 5.0.11(1)-release at 2020-01-20T00:23:03-0700-1000
+  OS_TYPE=macOS using brew from 27% disk free
+  on hostname=12345 at PUBLIC_IP=162.142.245.98
+  </pre>
+
+`wilson_mar` is my user name on my macOS laptop.
+
 
 ## Configure location to create new files
+
+Because the script command can be pasted onto any folder, files
+
+## Homebrew using Ruby
+
+brew requires HomeBrew to be installed.
 
 
 ## More on DevOps #

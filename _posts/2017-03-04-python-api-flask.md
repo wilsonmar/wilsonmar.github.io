@@ -139,7 +139,11 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 
    The sample app lags behind bleeding edge technologies in several areas:
 
+   * Django
    * ReactJs (instead of jQuery) front-end UI coding
+   * CSS Flexbox
+   * Offline-first UI (with Web Workers)
+
    * End-to-end (Selenium) UI tests of the app
 
    * Multi-tenancy in cloud for high-volume usage
