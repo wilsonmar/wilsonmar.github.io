@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bash script (coding)"
-excerpt: "Walk though the tricks (Bashisms) used in a shell script to install, configure, and run many programs on macOS and Linux"
+excerpt: "Here is how you can install, configure, and run (then remove) a web app within Docker on macOS and Linux, with one copy/paste"
 tags: [devops, bash, programming]
 Categories: Devops
 date: "2020-01-19"
@@ -16,13 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This page is a deep dive into the <strong>technical ideosycracies</strong> of shell script files.
-
-This tutorial picks up from <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/README.md">this README</a> which provides someone new to Macs specific steps to configure and run scripts to install apps on Macs. So first finish reading that about "shbangs" and grep for Bash shell versions.
-
 NOTE: This page is still actively under construction.
-
-<hr />
 
 <a name="BashVersions"></a>
 
@@ -62,16 +56,16 @@ There is NO WARRANTY, to the extent permitted by law.
    <pre><strong>bash --version | grep 'bash'
    </strong></pre>
 
-   Hold the Shift key to press the | (called pipe) key at the upper-right of the keyboard.
+   Hold down the left Shift key to press the \| (called pipe) key at the upper-right of the keyboard.
 
    <tt>grep 'bash'</tt> filters out lines that do not contain the word "bash" in the response.
 
 
-## Copy and paste invocation
+   ## Copy and paste invocation
 
-I got sick of manually typing commands on each new instance, so I've written bash shell scripts that installs all that is needed to run on new MacOS or Linux terminal with a <strong>single command</strong>.
+   I got sick of manually typing commands on each new instance, so I've written bash shell scripts that installs all that is needed to run on new MacOS or Linux terminal with a <strong>single command</strong>.
 
-1. To execute the script yourself, first put it in your Clipboard by <strong>triple-clicking</strong> "bash" in this command, then select copy:
+1. To execute the script yourself, first put it in your Clipboard by <strong>triple-clicking</strong> "bash" to turn this command line gray, then press command+C to copy:
 
    <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh)" -v -U -D -a -o
    </strong></pre>
@@ -91,25 +85,9 @@ I got sick of manually typing commands on each new instance, so I've written bas
    <pre><strong><a target="_blank" href="https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh">https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh</a>
    </strong></pre>
 
-   Each feature of the script is explained in my blog article here about bash scripting.
+Each feature of the script is explained in my blog article here about bash scripting.
    
-
-<a name="Style"></a>
-
-## A Question of Style
-
-> The best professionals I know who work as a team try to be more clear rather than be more clever.
-
-The more people who can understand the code and make changes without error,
-the more valuable that script is. Elegance is as elegance does.
-
-What I try to <strong>avoid</strong> is:
-
-   * Squeezing several commands into a single line when several lines is more clear. I think it's OK to use more lines.
-   * Using complex commands when simple ones do the same
-   * Using syntax not recognized by <strong>multiple platforms</strong> (recognized by both Bourne and Bash shells on Mac and Linux)
-   <br /><br />
-
+<hr />
 
 ## Shebang and comments
    
@@ -131,7 +109,7 @@ What I try to <strong>avoid</strong> is:
    
    <pre>#!/usr/local/bin/bash</pre>
 
-   <a target="_blank" href="https://www.admon.org/scripts/new-features-in-bash-4-0/">this blog describes what is improved by version 4</a>, such as <a href="#BashArrays">"associative arrays"</a>.
+   <a target="_blank" href="https://www.admon.org/scripts/new-features-in-bash-4-0/">This blog describes what is improved by version 4</a>, such as <a href="#BashArrays">"associative arrays"</a>.
 
    PROTIP: The recommended shebag now is to use the "env" program to select the appropriate version:
 
@@ -232,20 +210,24 @@ fi</pre>
 
 A sample response:
 
-<pre>USAGE EXAMPLE during testing:
-   ./sample.sh -h -v -D -U -a -o -d
+<pre>   USAGE EXAMPLE during testing:
+   ./sample.sh -h -v -I -U -c -s -r -a -o
+When you're done: ./sample.sh -D -R
 OPTIONS:
    -h           to display this -help list
    -v           to run -verbose (list space use and each image to console)
-   -D           -Download installers
+   -I           -Install brew, docker, docker-compose
    -U           -Upgrade packages
+   -c           -clone from GitHub
+   -s           Use -secrets file in your user home folder
    -n "John Doe"         GitHub user -name
    -e "john_doe@a.com"   GitHub user -email
-   -p ""     Project folder -path
-   -R           -Reboot Docker before run
+   -p " "    Project folder -path 
+   -r           -restart Docker before run
    -a           to -actually run docker-compose
    -o           to -open web page in default browser
-   -d           to -delete files after run (to save disk space)
+   -D           to -delete files after run (to save disk space)
+   -R           to -Remove cloned files after run (to save disk space)
    </pre>
 
 The USAGE example shows the various parameters that need to be added to specific actions taken by the script.
@@ -359,10 +341,9 @@ The `printf` command is used instead of `echo` for compatibility with all versio
 PROTIP: Notice there are HTML/CSS icons within text, so the file must be stored in UTF-8 format.
 
 <img align="right" alt="bash-scripts-171x139.png" src="https://user-images.githubusercontent.com/300046/72717345-129df700-3b31-11ea-877d-dc73677ee8d9.png">
-BTW To test how the codes, put this in a script:
+BTW To test <a target="_blank" href="https://www.toptal.com/designers/htmlarrows/symbols/">how the codes look</a>, put this in a script:
 
    <pre>h2 "Header here"
-h2 "Header here"
 info "info"
 note "note"
 success "success!"
@@ -370,7 +351,6 @@ error "error"
 warning "warning (warnNotice)"
 fatal "fatal (warnError)"
    </pre>
-
 
 
 ## Operating System Detection
@@ -557,7 +537,7 @@ PROTIP: "$PWD" returns the "Present Working Directory" (current folder path).
 
 Sample response:
 
-  <pre>Running ./sample.sh in /Users/wilson_mar/gits/wilsonmar/DevSecOps/bash
+  <pre>   Running ./sample.sh in /Users/wilson_mar/gits/wilsonmar/DevSecOps/bash
   Bash 5.0.11(1)-release at 2020-01-20T00:23:03-0700-1000
   OS_TYPE=macOS using brew from 27% disk free
   on hostname=12345 at PUBLIC_IP=162.142.245.98
@@ -566,14 +546,38 @@ Sample response:
 `wilson_mar` is my user name on my macOS laptop.
 
 
-## Configure location to create new files
+<a name="KeepingSecrets"></a>
 
-Because the script command can be pasted onto any folder, files
+## Keeping Secrets
 
-## Homebrew using Ruby
+Keeping secrets from being exposed is the bane of developers' existance.
 
-brew requires HomeBrew to be installed.
+Some think that specifying `.gitignore` or keeping a repo as private is enough to keep secrets safe.
+But anytime something is on the internet, it can be exposed.
+So my preferred solution is to re-enter the data each time or save a <tt>.secrets</tt> file in your user $HOME folder.
+Edit the file to contain something like:
 
+<pre># Used by https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh
+# Explained in https://wilsonmar.github.io/bash-scripts/#KeepingSecrets
+GitHub_USER_NAME="John Doe"
+GitHub_USER_EMAIL="john_doe@a.com"
+</pre>
+
+Specify `-s` in run parameters for the script to make use of this file.
+
+If the file is not found or variable not found, the script falls back to asking for manual input of the variables.
+
+In a forthcoming refactoring, we may add use of Hashicorp Vault, which puts another secret in place of the real secret.
+
+
+## Package Manager install
+
+This script installs the packages managers needed for the operating system under use.
+brew also requires HomeBrew to be installed (using Ruby).
+
+`-U` updates all utilities installed.
+
+Read <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/README.md">this README</a> which provides someone new to Macs specific steps to configure and run scripts to install apps on Macs. So first finish reading that about "shbangs" and grep for Bash shell versions.
 
 ## More on DevOps #
 

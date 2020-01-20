@@ -25,6 +25,25 @@ NOTE: This page is still actively under construction.
 
 <hr />
 
+
+<a name="Style"></a>
+
+## A Question of Style
+
+> The best professionals I know who work as a team try to be more clear rather than be more clever.
+
+The more people who can understand the code and make changes without error,
+the more valuable that script is. Elegance is as elegance does.
+
+What I try to <strong>avoid</strong> is:
+
+   * Squeezing several commands into a single line when several lines is more clear. I think it's OK to use more lines.
+   * Using complex commands when simple ones do the same
+   * Using syntax not recognized by <strong>multiple platforms</strong> (recognized by both Bourne and Bash shells on Mac and Linux)
+   <br /><br />
+
+
+
 ### Disk Space of folder
 
 For the script to remove a folder (as in git-patch), we want to provide a feature flag so that is controllable during a particular run, with variable <tt>REMOVE_REPO_FROM_WHEN_DONE</tt>.
@@ -921,6 +940,10 @@ chkconfig httpd on
 At the bottom of the script is a MacOS command that translates text into voice through the spearker:
 
 say "script ended."  # through speaker
+
+## Configure location to create new files
+
+Because the script command can be pasted onto any folder, files
 
 
 ## References
