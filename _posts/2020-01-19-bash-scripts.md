@@ -209,9 +209,9 @@ captures the number of minutes since the Jan 1, 1970 epoch point in time.
 
 <pre>LOG_DATETIME=$(date +%Y-%m-%dT%H:%M:%S%z)-$((1 + RANDOM % 1000))</pre>
 
-captures the date in a human-readable year-month-day-hour-minutes "ISO 8601" format which also includes the hours and minutes from UTC/GMT, such as "-600" in this sample:
+captures the date in a human-readable year-month-day-hour-minutes "ISO 8601" format which also includes the hours and minutes from UTC/GMT, such as "-600" (for US Central Time) in this sample output:
 
-   <tt>sample.sh.2018-04-22T19:26:20-0600-18.log</tt>
+   <tt>sample.sh.2018-04-22T19:26:20-0600-18</tt>
 
 An additional RANDOM number is added to ensure uniqueness.
 
@@ -256,44 +256,7 @@ Flags not associated with a text string specification (such as Verbose) default 
 
 Text variables are defined first, then exported in a separate step as recommended by Shellcheck.
 
-### Echo/print messages
-
-To format output, this code is used:
-
-   <pre>
-h2() {     # heading
-   printf "\n${bold}>>> %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-info() {   # output on every run
-   printf "${dim}\n➜ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-note() { if [ "${RUN_VERBOSE}" = true ]; then
-   printf "${bold}${cyan} ${reset} ${cyan}%s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-   fi
-}
-success() {
-   printf "${green}✔ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-error() {
-   printf "${red}${bold}✖ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-warnNotice() {
-   printf "${cyan}✖ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-warnError() {
-   printf "${red}✖ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
-}
-   </pre>
-
-"h2" is a homage to HTML heading names. 
-The other functions correspond to the different levels of verbosity used by the log4j library
-(<a target="_blank" href="https://www.npmjs.com/package/aws-code-deploy">in the npm aws-code-deploy repo</a>).
-
-The `printf` command is used instead of `echo` for compatibility with all versions of Bash.
-
-PROTIP: Notice there are icons within text, so the file must be stored in UTF-8 format.
-
-### Text color and other attributes
+## Text colors in messages
 
 The Unix operating system (on which today's Linux distributions are based) "streams" text to the Console. Colors (colours) and other effects are specified by inserting "<strong>toggles</strong>" (attributes) that change the appearing of text following it. A <strong>reset</strong> sets all text to display in the default appearance.
 
@@ -355,6 +318,57 @@ echo "${blue}Note${reset} blue on black is annoying"
 echo "${underline}${purple}Alert${reset} magenta underlined"
 echo "${reverse}${cyan}Info${reset} cyan reversed"
 echo "${white}Whatever white${reset} this is"
+   </pre>
+
+
+## Echo/print messages
+
+To format output, this code is used:
+
+   <pre>
+h2() {     # heading
+   printf "\n${bold}>>> %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+}
+info() {   # output on every run
+   printf "${dim}\n➜ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+}
+note() { if [ "${RUN_VERBOSE}" = true ]; then
+   printf "${bold}${cyan} ${reset} ${cyan}%s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+   fi
+}
+success() {
+   printf "${green}✔ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+}
+error() {       # &#9747;
+   printf "${red}${bold}✖ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+}
+warnNotice() {  # &#9755;
+   printf "${cyan}☛ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+}
+warnError() {   # Skull: &#9760;  # Star: &starf; &#9733; U+02606  # Toxic: &#9762;
+   printf "${red}☢ %s${reset}\n" "$(echo "$@" | sed '/./,$!d')"
+}
+   </pre>
+
+"h2" is a homage to HTML heading names. 
+The other functions correspond to the different levels of verbosity used by the log4j library
+(<a target="_blank" href="https://www.npmjs.com/package/aws-code-deploy">in the npm aws-code-deploy repo</a>).
+
+The `printf` command is used instead of `echo` for compatibility with all versions of Bash.
+
+PROTIP: Notice there are HTML/CSS icons within text, so the file must be stored in UTF-8 format.
+
+<img align="right" alt="bash-scripts-171x139.png" src="https://user-images.githubusercontent.com/300046/72717345-129df700-3b31-11ea-877d-dc73677ee8d9.png">
+BTW To test how the codes, put this in a script:
+
+   <pre>h2 "Header here"
+h2 "Header here"
+info "info"
+note "note"
+success "success!"
+error "error"
+warning "warning (warnNotice)"
+fatal "fatal (warnError)"
    </pre>
 
 
