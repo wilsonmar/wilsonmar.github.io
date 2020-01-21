@@ -74,11 +74,19 @@ There is NO WARRANTY, to the extent permitted by law.
 
 1. Open a Terminal on your mac, click on it, and keypress command+V to paste.
 
-   The script runs and installs what is specified by <a href="#Args">parameters</a>. 
-   
+   The script runs and installs based on what is specified by <a href="#Args">parameters</a>. 
+
+   Your environment may need more disk space:
+
+   <pre>Need to get 260 MB of archives.
+After this operation, 308 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+   </pre>
+
    It ends with messages like these:
 
    <pre>worker_1   | [2020-01-17 04:59:42,036: INFO/Beat] beat: Starting...
+   ✔ End of script after 1883 minutes and 677960 512-byte disk blocks consumed.
    </pre>
 
    If you added "-o" parameter to the command, the script opens the app in your default browser.
