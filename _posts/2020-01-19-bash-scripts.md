@@ -83,6 +83,8 @@ There is NO WARRANTY, to the extent permitted by law.
 
    If you added "-o" parameter to the command, the script opens the app in your default browser.
 
+   ![bash-scripts-landing-899x355](https://user-images.githubusercontent.com/300046/72588109-3e1ca980-38c5-11ea-965e-a935b8e69498.jpg)
+
 1. View my sample install script at:
 
    <pre><strong><a target="_blank" href="https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh">https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh</a>

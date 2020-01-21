@@ -45,7 +45,6 @@ Here is the diagram for WSL1:
 
 WSL provides no GPU support, so it can’t run Linux GUI programs such as Gnome, KDE, etc.
 
-
 ## Got 64-bit?
 
    Verify your PC's CPU architecture and Windows version/build number:
@@ -347,6 +346,8 @@ WSL provides no GPU support, so it can’t run Linux GUI programs such as Gnome,
 
 1. TODO: Use brew to install Docker Desktop Edge, in Technical Preview as of this writing.
 
+   <img width="320" alt="bash-windows-docker" src="https://user-images.githubusercontent.com/300046/72780943-5817fe00-3bdd-11ea-98cc-d42b3094a235.png">
+
    See https://docs.docker.com/docker-for-windows/edge-release-notes/
 
    Sean Dearnaley <a target="_blank" href="https://medium.com/swlh/wsl-2-docker-edge-tech-preview-native-linux-containers-w-o-emulation-b41667e6dbef">provides pointers</a>.
@@ -376,6 +377,51 @@ WSL provides no GPU support, so it can’t run Linux GUI programs such as Gnome,
    <a target="_blank" href="https://blog.henrypoon.com/blog/2017/06/18/running-selenium-webdriver-on-bash-for-windows/">
    NOTE</a>: To run Python for Selenium controlling Firefox, install Xming with gekoDriver.
 
+   ## VHD size adjustment
+
+   WSL 2 stores Linux files inside of a VHD (Virtual Hard Disk) using the ext4 file system. VHD has an initial max size of 256GB. If your distro grows beyond that you will see errors stating that you've run out of disk space. <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/wsl2-ux-changes">To expand VHD size</a>:
+
+1. Terminate all WSL instances:
+
+   <pre><strong>wsl --shutdown</strong></pre>
+
+1. Find your distro installation package name 'PackageFamilyName'.
+
+1. In a powershell prompt (where 'distro' is your distribution name) construct:
+
+   <pre><strong>Get-AppxPackage -Name "*<em>distro</em>*" | Select PackageFamilyName</strong></pre>
+
+1. Locate the VHD file fullpath used by your WSL 2 installation, this will be your 'pathToVHD':
+
+   <pre><strong>%LOCALAPPDATA%\Packages\<em>PackageFamilyName</em>\LocalState\<em>disk</em>.vhdx</strong></pre>
+
+   ### Resize your WSL 2 VHD:
+
+1. Open a command prompt Window with admin privileges and run the following commands:
+   
+   <pre><strong>diskpart</strong></pre>
+
+   In the dialog:
+
+   Select vdisk file="<em>pathToVHD</em>"
+   
+   expand vdisk maximum="<em>sizeInMegaBytes</em>"
+   
+1. Launch your WSL distro.
+
+1. Make WSL is aware that it can expand its file system's size by running these commands in your WSL distro:
+
+   <pre><strong>sudo mount -t devtmpfs none /dev
+   mount | grep ext4</strong></pre>
+
+1. Copy the name of this entry, which will look like: /dev/sdXX (with the X representing any other character),
+   making sure to use the value you copied earlier.
+
+   <pre><strong>sudo resize2fs /dev/sdXX</strong></pre>  
+
+1. You may need to use: 
+
+   <pre><strong>apt install resize2fs</strong></pre>
 
 ## References
 
