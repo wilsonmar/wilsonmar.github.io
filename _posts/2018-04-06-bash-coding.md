@@ -43,7 +43,6 @@ What I try to <strong>avoid</strong> is:
    <br /><br />
 
 
-
 ### Disk Space of folder
 
 For the script to remove a folder (as in git-patch), we want to provide a feature flag so that is controllable during a particular run, with variable <tt>REMOVE_REPO_FROM_WHEN_DONE</tt>.
