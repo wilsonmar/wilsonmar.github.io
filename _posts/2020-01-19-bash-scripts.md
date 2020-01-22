@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Bash script (coding)"
+title: "Bash scripts (coding)"
 excerpt: "Here is how you can install, configure, and run (then remove) a web app within Docker on macOS and Linux, with one copy/paste"
 tags: [devops, bash, programming]
 Categories: Devops
