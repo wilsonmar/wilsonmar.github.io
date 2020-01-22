@@ -17,10 +17,13 @@ comments: true
 
 A registry of Docker images is crucial for Kubernetes because a Docker Registry supplies Kubernetes with images it uses to instantiate each Docker container. When the Docker Registry goes down, so does Kubernetes.
 
+> Selecting a container registry for your Docker environment can sometimes feel like choosing what to eat at a Chinese restaurant that features a hundred items on its menu—The number of choices can be overwhelming, and you may not understand exactly what each option entails.
+As a result, you end up ordering General Tso’s chicken because it’s the only thing you really recognize. Then you spend the rest of the evening questioning whether you made the right choice and ate an authentic Chinese meal.<a target="_blank" href="https://sweetcode.io/docker-hub-quay-beyond-container-registry/">Chrus Tozzi</a>
+
 
 <a name="DockerHub"></a>
 
-## Docker Hub vs. On-premises
+## Docker Hub
 
 Docker Inc's on-line Docker Hub (<a target="_blank" href="https://hub.docker.com/">https://hub.docker.com</a>) houses many public Docker images, free to pull.
 
@@ -85,10 +88,10 @@ Several other organizations provide a service for "deep scanning" of Docker imag
 
    * Black Hat
 
-   * WhiteSource
+   * <a target="_blank" href="https://www.whitesource.com/">WhiteSource</a>
 
 
-## Private Online Registry
+## Private Online Registries
 
 If you want to keep your Docker image private or want security vetting of images for vulnerabilities, you would have to pay (see <a target="_blank" href="https://hub.docker.com/pricing">Enterprise Docker</a>).
 
@@ -334,7 +337,12 @@ If you have a lot of images, avoid timeouts by configuring your terminal:
 
 https://jfrog.com/screencast/artifactory-5-one-minute-setup-docker-registry-as-container-install/
 
+
+
 <hr />
+
+## References
+
 
 ## More on DevOps #
 

@@ -86,7 +86,7 @@ Do you want to continue? [Y/n] Y
    It ends with messages like these:
 
    <pre>worker_1   | [2020-01-17 04:59:42,036: INFO/Beat] beat: Starting...
-   ✔ End of script after 1883 minutes and 677960 512-byte disk blocks consumed.
+   ✔ End of script after 1883 seconds and 677960 bytes of disk space.
    </pre>
 
    If you added "-o" parameter to the command, the script opens the app in your default browser.
@@ -173,11 +173,23 @@ Better to print a long string as a visual marker to differentiate between differ
 
 ## Set "Strict Mode"
 
-<pre>set -eu pipefail  # pipefail counts as a parameter
+Several set statements are at the beginning of the script file for convenience.
+
+<pre>set -e  # exits script when a command fails
+# set -eu pipefail  # pipefail counts as a parameter
 # set -x to show commands for specific issues.
-# set -e  # to end as soon as a command fails
 # set -o nounset
 </pre>
+
+`set -x  # to show commands for specific issues` 
+remains commented until needed for debugging, when it's copied and pasted to specific points in the script.
+
+<a target="_blank" href="https://medium.com/expedia-group-tech/using-bash-for-devops-7046eed1aa63">Some</a> toggle tracing on and off by defining <tt>export DEBUG=TRUE</tt> and add in the code:
+
+<pre>if [[ "${DEBUG:-FALSE}" != "FALSE" ]]; then
+  set -o xtrace
+fi</pre>
+
 
 Some put them all in one line:
 <pre>set -o nounset -o pipefail -o errexit  # "strict mode"</pre>
@@ -584,15 +596,46 @@ If the file is not found or variable not found, the script falls back to asking 
 
 In a forthcoming refactoring, we may add use of Hashicorp Vault, which puts another secret in place of the real secret.
 
+## Copy Sample files
+
+The particular application has sample files which should be copied, then <strong>edited</strong> for use.
+
+   * .env.example to .env
+   * docker-compose.override.example.yml to docker-compose.override.yml
+   <br /><br />
+
+The script looks for the file name copied by a previous run.
+
+File names on the local machine are specified in the repo's .gitignore file so they don't get pushed into GitHub.
 
 ## Package Manager install
 
-This script installs the packages managers needed for the operating system under use.
-brew also requires HomeBrew to be installed (using Ruby).
+`-I` triggers installation of utilities and packages that the app requires.
 
-`-U` updates all utilities installed.
+This script installs the packages managers needed for the operating system under use.
+brew first requires HomeBrew to be installed (using Ruby).
+
+`-U` updates all utilities already installed.
 
 Read <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/README.md">this README</a> which provides someone new to Macs specific steps to configure and run scripts to install apps on Macs. So first finish reading that about "shbangs" and grep for Bash shell versions.
+
+<a target="_blank" href="https://wilsonmar.github.io/wsl">Windows on Linux</a> can use either a fork of Homebrew (Linuxbrew) or apt-get/yum.
+But Linuxbrew installs packages to a unique folder, so that path needs to be added to the search PATH in <strong>~/.bash_profile</strong>.
+
+"brew --prefix" yields "/usr/local".
+
+## Docker and docker-compose
+
+`-R` restarts the Docker daemon if it's already running.
+Either way, the Docker daemon is started.
+
+## Clean-up
+
+`-D` stops and removes Docker containers still running.
+
+`-M` removes the images pulled from DockerHub.
+
+`-R` removes the cloned app repository.
 
 ## More on DevOps #
 
