@@ -19,10 +19,11 @@ comments: true
 
 NOTE: This page is still actively under construction.
 
-The contribution of this article is the logical ordering of concepts presented in a suscint way, as a hands-on narrated scenic tour.
+The contribution of this article is the logical ordering of concepts presented in a succint way, as a hands-on narrated scenic tour.
 
 A Makefile contains a set of <strong>directives</strong> which the <strong>"make"</strong> program reads to automate compilation of source code (such as C and java) into binary files (such as class and jar object files).
 
+There is an "mk" program that offers a light version of make.
 
 ## Install locally on macOS
 
@@ -139,6 +140,9 @@ This program built for i386-apple-darwin11.3.0
 
    <pre><strong>bash --version</strong></pre>
 
+   ## Context consistent
+
+   PROTIP: The big difference between how Makefiles run vs. a Bash script is that in a Makefile, each action is evaluated from the same folder. When a cd is issued within an action, the next action does not operate from the changed directory. So put commands for another directory behind a semi-colon on the same line after the cd.
 
    ## Docker example
 
@@ -189,6 +193,8 @@ TAGS := $(shell ls $(BUILD_BASE))
 
    But it is not necessary for the target to be a file; it could be just a name for the recipe, as in our example. We call them "phony targets."
 
+   A phony target is one that is not really the name of a file; rather it is just a name for a recipe to be executed when you make an explicit request. There are two reasons to use a phony target: to avoid a conflict with a file of the same name, and to improve performance.<a href="#[10]">[10]</a>
+
    Make requires Phony targets to be defined by a line such as:
 
    <pre>.PHONY: login logout scan $(TAGS) $(addsuffix .scan, $(TAGS)) $(addsuffix .push, $(TAGS))
@@ -233,7 +239,7 @@ TAGS := $(shell ls $(BUILD_BASE))
 
    Each target rule has two parts: 
 
-   <tt>RULE:	DEPENDENCY LINE</br>
+   <tt>RULE:	DEPENDENCY LINE<br />
 	[tab]ACTION LINE(S)</tt>
 
    The first line is called a <strong>"dependency line"</strong>.
@@ -280,6 +286,8 @@ TAGS := $(shell ls $(BUILD_BASE))
 VIDEO: Makefile Tutorials</a> Mar 7 2017
 
 <a name="[9]">[9]</a> <a target="_blank" href="https://www.youtube.com/watch?v=Lyp36ku7D0A&list=PLO2HJg02JezdHg7pFoQT_eG4qnKsERazL">Makefile Youtube playlist</a>
+
+<a name="[10]">[10]</a> <a target="_blank" href="https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html">Gnu make documentation</a>
 
 
 POSIX standard?
