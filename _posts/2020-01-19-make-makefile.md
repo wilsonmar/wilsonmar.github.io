@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Make (from) makefile"
+title: "Make (from) Makefile"
 excerpt: "How the venerable utility is used in Jenkins and GoCD to invoke shell commands around building Docker images for Kubernetes"
 tags: [devops, Docker, bash, programming]
 Categories: Devops
@@ -21,7 +21,7 @@ NOTE: This page is still actively under construction.
 
 The contribution of this article is the logical ordering of concepts presented in a suscint way, as a hands-on narrated scenic tour.
 
-A makefile contains a set of <strong>directives</strong> which the <strong>"make"</strong> program reads to automate compilation of source code (such as C and java) into binary files (such as class and jar object files).
+A Makefile contains a set of <strong>directives</strong> which the <strong>"make"</strong> program reads to automate compilation of source code (such as C and java) into binary files (such as class and jar object files).
 
 
 ## Install locally on macOS
@@ -68,27 +68,27 @@ This program built for i386-apple-darwin11.3.0
 
    ## Executing make
 
-1. Navigate to a folder that doesn't contain a makefile.
+1. Navigate to a folder that doesn't contain a Makefile.
 
    <pre><strong>make</strong></pre>
 
    The message:
 
-   <pre>make: *** No targets specified and no makefile found.  Stop.</pre>
+   <pre>make: *** No targets specified and no Makefile found.  Stop.</pre>
 
    "targets" are executable or object files to be made by the program.
 
-1. Navigate to a folder containing a makefile. 
+1. Navigate to a folder containing a Makefile. 
 
-1. Executing the make program without a parameter causes the program to process a file specifically named "makefile" in the same directory folder where the program is invoked.
+1. Executing the make program without a parameter causes the program to process a file specifically named "Makefile" (usually with the capital M) in the same directory folder where the program is invoked.
 
    <pre><strong>make</strong></pre>
 
    ### Multiple make files
 
-1. If you create more than one makefile, create a different directory to store each or specify the specific makefile name:<a href="#[5]">[5]</a>
+1. If you create more than one Makefile, create a different directory to store each or specify the specific Makefile name:<a href="#[5]">[5]</a>
 
-   <pre><strong>make -f makefile1</strong></pre>
+   <pre><strong>make -f Makefile1</strong></pre>
 
 1. For a full list of options:
 
@@ -100,7 +100,7 @@ This program built for i386-apple-darwin11.3.0
 
    ## Comments about usage
 
-   <strong>#</strong> (pound characters) mark the beginning of comments, such as these comments about options to invoke make to process a particular makefile:
+   <strong>#</strong> (pound characters) mark the beginning of comments, such as these comments about options to invoke make to process a particular Makefile:
 
    <pre>\# Usage:
 \# make        # compile all binary
@@ -113,7 +113,7 @@ This program built for i386-apple-darwin11.3.0
 
    ## Rules, recipies, actions, variables
 
-   In the above comment, "clean" refers to a set of <strong>rules</strong> located at the bottom of the makefile:
+   In the above comment, "clean" refers to a set of <strong>rules</strong> located at the bottom of the Makefile:
 
    <pre>clean:
         @echo "Cleaning up..."
@@ -133,9 +133,9 @@ This program built for i386-apple-darwin11.3.0
 
    Action lines are typically shell script commands such as echo, rm (remove), etc.
 
-   PROTIP: Some shell commands are specific to specific versions of the shell program (such as Bash version 4). A makefile that works well in one shell may not execute properly in another shell. So it helps if the shell assumed being used is part of the comments at the top of the file.
+   PROTIP: Some shell commands are specific to specific versions of the shell program (such as Bash version 4). A Makefile that works well in one shell may not execute properly in another shell. So it helps if the shell assumed being used is part of the comments at the top of the file.
 
-1. Get the version of Bash to paste as your makefile's comment line:
+1. Get the version of Bash to paste as your Makefile's comment line:
 
    <pre><strong>bash --version</strong></pre>
 
@@ -149,14 +149,14 @@ logout:
 	docker logout $(REGISTRY)
    </pre>
 
-   The "BINS" and "USERNAME" here between <strong>curly braces</strong> ???
+   Variables between <strong>curly braces</strong>, such as "USERNAME" and "PASSWORD" above, are <strong>environment</strong> variables.
 
    Replacement operations "$(REGISTRY)" with <strong>parentheses</strong> are defined instead of hard-coded text to avoid typos - to ensure that values are the same when referenced different times.
 
 
    ## Simply expanded variable
 
-   The Make program begins by parsing through the makefile to create an internal <strong>dependency tree</strong> before taking whatever action is necessary.
+   The Make program begins by parsing through the Makefile to create an internal <strong>dependency tree</strong> before taking whatever action is necessary.
 
    Variable assignment code near the top of the Makefile use the <strong>:=</strong> operator to define what are called "simply expanded variables" to associate with the text indicated. The operator is used to avoid infinite loops when referenced <a href="#[2]">[2]</a>.
 
@@ -174,10 +174,9 @@ TAGS := $(shell ls $(BUILD_BASE))
 	docker build -t $(REGISTRY)/$(DOCKER_IMAGE):$(@) -f $(BUILD_BASE)$(@)/Dockerfile --build-arg OWNER=$(OWNER) .
    </pre>
 
-
    ## Include another file
 
-   The lines in another file can be inserted by this command:
+   The variable <tt>OWNER</tt> above is defined in the file included, by this command, which enable lines in another file to be inserted.
 
    <pre>include metadata.make</pre>
 
@@ -250,10 +249,10 @@ TAGS := $(shell ls $(BUILD_BASE))
 
    ## Processing dependencies
 
-   Makes does not necessarily process all rules in the makefile as all dependencies may not need updating. Make rebuilds only target files which are missing or older than dependency files.
+   Makes does not necessarily process all rules in the Makefile as all dependencies may not need updating. Make rebuilds only target files which are missing or older than dependency files.
    It can do that because it keeps track of the last time files (normally object files) were updated. 
 
-   ??? If you have a large program with many source and/or header files, when you change a file on which others depend, you must recompile all the dependent files. Without a makefile, this is a very time-consuming task.
+   ??? If you have a large program with many source and/or header files, when you change a file on which others depend, you must recompile all the dependent files. Without a Makefile, this is a very time-consuming task.
 
 
 
