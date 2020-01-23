@@ -205,12 +205,14 @@ TAGS := $(shell ls $(BUILD_BASE))
 	docker push $(REGISTRY)/$(DOCKER_IMAGE):$(basename $(@))
    </pre>
 
-   However, that is not done if any rules above that fails, such as because vulnerabilities are found while processing this rule:
+   However, that is not invoked if any rules above that fails, such as when vulnerabilities are found while processing this rule:
 
    <pre>$(addsuffix .scantrivy, $(TAGS)):
 	docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \
     	-v trivy_db:/root/.cache/ $(TRIVY_SCANNER) $(REGISTRY)/$(DOCKER_IMAGE):$(basename $(@))
    </pre>
+
+   BTW "$(@)" refers to the target above the action line using it.
 
    The docker run command references the Dockerfile in the same folder.
 
