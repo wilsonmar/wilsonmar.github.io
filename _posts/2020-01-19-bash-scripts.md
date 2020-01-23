@@ -637,6 +637,8 @@ Either way, the Docker daemon is started.
 
 `-R` removes the cloned app repository.
 
+<hr />
+
 ## More on DevOps #
 
 This is one of a series on DevOps:
