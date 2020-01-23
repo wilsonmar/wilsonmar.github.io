@@ -184,7 +184,9 @@ It is well suited for cloud environments where HSMs are either not available or 
 
    A sample command to create a Google Cloud instance:
 
-   <pre>
+   <pre>THIS_PROJECT_NAME="woohoo1"
+   THIS_INSTANCE_NAME="wildone"
+   GCP_ACCT="mememe"
    gcloud beta compute --project "${THIS_PROJECT_NAME}" instances create "${THIS_INSTANCE_NAME}" --zone "us-central1-f" --machine-type "n1-standard-1" --subnet "default" --maintenance-policy "MIGRATE" --service-account "{$GCP_ACCT}@developer.gserviceaccount.com" --scopes "https://www.googleapis.com/auth/devstorage.read_only","https://www.googleapis.com/auth/logging.write","https://www.googleapis.com/auth/monitoring.write","https://www.googleapis.com/auth/servicecontrol","https://www.googleapis.com/auth/service.management.readonly","https://www.googleapis.com/auth/trace.append" --min-cpu-platform "Automatic" --tags "http","https","web","http-server","https-server" --image "ubuntu-1604-xenial-v20171026a" --image-project "ubuntu-os-cloud" --boot-disk-size "10" --boot-disk-type "pd-standard" --boot-disk-device-name "${THIS_INSTANCE_NAME}"
    </pre>
 
@@ -200,10 +202,11 @@ It is well suited for cloud environments where HSMs are either not available or 
 
    <pre>
 ==> Formulae
-ssh-vault   vault   vault-cli   vaulted
-&nbsp;
+infosec/core/govaultenv ✔   ssh-vault  vault ✔ vault-cli  vaulted
 ==> Casks
-aws-vault   gmvault
+aws-vault                                                            btcpayserver-vault                                                   gmvault
+If you meant "vault" specifically:
+It was migrated from homebrew/cask to homebrew/core.
    </pre>
 
 2. Verify the source:
@@ -212,47 +215,132 @@ aws-vault   gmvault
 
    You should see:
 
-   <pre>vault: stable 1.2.1 (bottled), HEAD
+   <pre>vault: stable 1.3.2 (bottled), HEAD
 Secures, stores, and tightly controls access to secrets
 https://vaultproject.io/
-Not installed
+/usr/local/Cellar/vault/1.3.0 (6 files, 124.2MB) *
+  Built from source on 2019-11-18 at 05:05:44
 From: https://github.com/Homebrew/homebrew-core/blob/master/Formula/vault.rb
+==> Dependencies
+Build: go@1.12 ✘, gox ✔
+==> Options
+--HEAD
+	Install HEAD version
+==> Analytics
+install: 7,836 (30 days), 24,016 (90 days), 90,804 (365 days)
+install-on-request: 7,461 (30 days), 22,993 (90 days), 86,629 (365 days)
+build-error: 0 (30 days)
    </pre>
+
+2. Install pre-requisite Go language:xxx
+
+   <pre><strong>brew install vault</strong></pre>
 
 2. Install:
 
    <pre><strong>brew install vault</strong></pre>
 
-   <pre>
-==> Downloading https://homebrew.bintray.com/bottles/vault-1.2.1.mojave.bottle.t
-==> Downloading from https://akamai.bintray.com/4a/4afd77a02f34fbfc3f910d99bbb09
-######################################################################## 100.0%
-==> Pouring vault-1.2.1.mojave.bottle.tar.gz
-🍺  /usr/local/Cellar/vault/1.2.1: 6 files, 117.2MB
+   <pre>=> Downloading https://homebrew.bintray.com/bottles/vault-1.3.2.mojave.bottle.tar.gz
+==> Pouring vault-1.3.2.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/vault/1.3.2: 6 files, 124.2MB
    </pre>
 
-The great thing with Homebrew is you can upgrane and uninstall easily.
+1. The great thing with Homebrew is you can upgrade and uninstall easily.
+
+   <pre><strong>brew upgrade vault
+   </strong></pre>
+
+1. Verify version
+
+   <pre><strong>vault --version
+   </strong></pre>
+
+   `Vault v1.3.2` was the response at time of writing.
+
+1. Define the version for use in commands within ~/.bash_profile:
+
+   <pre><strong>export VAULT_VERSION="1.3.2"
+   </strong></pre>
+
+1. See menu of commands by running the command without parameters:
+
+   <pre><strong>vault
+   </strong></pre>
+
+   <pre>Usage: vault &LT;command> [args]
+&nbsp;
+Common commands:
+    read        Read data and retrieves secrets
+    write       Write data, configuration, and secrets
+    delete      Delete secrets and configuration
+    list        List data or secrets
+    login       Authenticate locally
+    agent       Start a Vault agent
+    server      Start a Vault server
+    status      Print seal and HA status
+    unwrap      Unwrap a wrapped secret
+&nbsp;
+Other commands:
+    audit          Interact with audit devices
+    auth           Interact with auth methods
+    debug          Runs the debug command
+    kv             Interact with Vault's Key-Value storage
+    lease          Interact with leases
+    namespace      Interact with namespaces
+    operator       Perform operator-specific tasks
+    path-help      Retrieve API help for paths
+    plugin         Interact with Vault plugins and catalog
+    policy         Interact with policies
+    print          Prints runtime configurations
+    secrets        Interact with secrets engines
+    ssh            Initiate an SSH session
+    token          Interact with tokens
+   </pre>
+
+   Vault commands are described <a target="_blank" href="https://www.vaultproject.io/docs/commands/">here online</a>.
+
+1. Install auto completions: https://www.vaultproject.io/docs/commands/#autocompletion
+
+   <pre><strong>vault -autocomplete-install
+   </strong></pre>
+
+   No message is returned, but it adds to the bottom of your ~/.bash_profile file:
+
+   <pre>complete -C /usr/local/bin/vault vault</pre>
+
+1. Restart your terminal
+
+   <pre><strong>exec $SHELL
+   </strong></pre>
+
+1. Use autocomplete by typing `vault k` then press tab to complete.
+
+   <pre><strong>vault kv
+   </strong></pre>
+
+Precompiled Vault binaries are available at https://releases.hashicorp.com/vault/
+
 
 <hr />
 
 
 <a name="Dockerfile"></a>
 
-### Build image using Dockerfile
+### Build Docker image using Dockerfile
 
 Create Vault within a Docker image from scratch:
 
-0. Install Git 
+https://computingforgeeks.com/install-and-configure-vault-server-linux/
 
-   <pre><strong>
-apt-get update && apt-get install -y \
+0. Install Git in the Linux server:
+
+   <pre><strong>apt-get update && apt-get install -y \
   git
    </strong></pre>
 
 0. Use Git to obtain the Dockerfile :
 
-   <pre><strong>
-   git clone https://github.com/wilsonmar/vault.git --depth=1 
+   <pre><strong>git clone https://github.com/wilsonmar/vault.git --depth=1 
    cd vault
    </strong></pre>
 
@@ -263,6 +351,8 @@ apt-get update && apt-get install -y \
 
    This would run Maven, and a test job.
 
+   If you get a message: "unable to prepare context: unable to evaluate symlinks in Dockerfile path: lstat /Users/.../projects/vault/Dockerfile: no such file or directory
+
 2. Run the Dockerfile at:
 
    <a target="_blank" href="
@@ -271,8 +361,7 @@ apt-get update && apt-get install -y \
 
    Its contains:
 
-   <pre>
-FROM ubuntu:16.04
+   <pre>FROM ubuntu:16.04
 RUN apt-get update
 RUN apt-get update && apt-get install -y \
   default-jre \
@@ -299,16 +388,14 @@ On a Linux server instance's Terminal CLI:
 
 1. Add Docker's public GPG key :
 
-   <pre><strong>
-   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+   <pre><strong>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
    </strong></pre>
 
    OK is the expected response.
 
 0. View the Linux version code referenced in a later command:
 
-   <pre><strong>
-   lsb_release -cs
+   <pre><strong>lsb_release -cs
    </strong></pre>
 
    This returns stretch for Debinan and xenial for Ubuntu.
