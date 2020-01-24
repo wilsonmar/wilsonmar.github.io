@@ -295,17 +295,15 @@ Exec: $(OBJ)
 
 <a name="[2]">[2]</a> <a target="_blank" href="https://opensource.com/article/18/8/what-how-makefile" title="22 Aug 2018">"What is a Makefile and how does it work?"</a> by Sachin Patil (Red Hat)
 
-<a name="[3]">[3]</a> <a target="_blank" href="https://en.wikipedia.org/wiki/Makefile">Wikipedia: Makefile</a>
+<a name="[3]">[3]</a> <a target="_blank" href="https://www.slideshare.net/zakariaelktaoui/how-to-make-a-simple-make-file">https://www.slideshare.net/zakariaelktaoui/how-to-make-a-simple-make-file<br />Introduction to Makefile</a> by <a target="_blank" href="https://about.me/ZakariaElktaoui">Zakaria El ktaoui</a>, Consultant SAP SuccessFactors chez Value Pass Consulting
 
 <a name="[4]">[4]</a> <a target="_blank" href="https://medium.com/better-programming/about-var-run-docker-sock-3bfd276e12fd">https://medium.com/better-programming/about-var-run-docker-sock-3bfd276e12fd<br />Docker Tips : about /var/run/docker.sock</a>
 
 <a name="[5]">[5]</a> <a target="_blank" href="https://getintodevops.com/blog/the-simple-way-to-run-docker-in-docker-for-ci">https://getintodevops.com/blog/the-simple-way-to-run-docker-in-docker-for-ci<br />The simple way to run Docker-in-Docker for CI</a>
 
-<a name="[6]">[6]</a> <a target="_blank" href="https://www.slideshare.net/zakariaelktaoui/how-to-make-a-simple-make-file">https://www.slideshare.net/zakariaelktaoui/how-to-make-a-simple-make-file<br />Introduction to Makefile</a> by <a target="_blank" href="https://about.me/ZakariaElktaoui">Zakaria El ktaoui</a>, Consultant SAP SuccessFactors chez Value Pass Consulting
+<a name="[6]">[6]</a> http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/
 
-[6] http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/
-
-[7] https://scene-si.org/2019/12/04/make-dynamic-makefile-targets/
+<a name="[7]">[7]</a> https://scene-si.org/2019/12/04/make-dynamic-makefile-targets/
 
 <a name="[8]">[8]</a> <a target="_blank" href="https://www.youtube.com/watch?v=ph0k7nOS52g&list=PLNmACol6lYY7Dzvg7jKgvMdDaDEDFnNqD">
 VIDEO: Makefile Tutorials</a> Mar 7 2017
@@ -315,6 +313,8 @@ VIDEO: Makefile Tutorials</a> Mar 7 2017
 <a name="[10]">[10]</a> <a target="_blank" href="https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html">Gnu make documentation</a>
 
 <a name="[11]">[11]</a> <a target="_blank" href="https://www.youtube.com/watch?v=dqflr7_TqQ8&time=1m40s">"Intermediate Project Management with GNU Make"</a>
+
+<a name="[12]">[12]</a> <a target="_blank" href="https://en.wikipedia.org/wiki/Makefile">Wikipedia: Makefile</a>
 
 POSIX standard?
 
