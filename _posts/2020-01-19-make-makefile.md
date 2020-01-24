@@ -196,7 +196,7 @@ TAGS := $(shell ls $(BUILD_BASE))
 
    A phony target is one that is not really the name of a file; rather it is just a name for a recipe to be executed when you make an explicit request. There are two reasons to use a phony target: to avoid a conflict with a file of the same name, and to improve performance.<a href="#[10]">[10]</a>
 
-   Make requires Phony targets to be defined by a line such as:
+   Declare Phony targets by a line such as:
 
    <pre>.PHONY: login logout scan $(TAGS) $(addsuffix .scan, $(TAGS)) $(addsuffix .push, $(TAGS))
    </pre>
@@ -256,8 +256,6 @@ Exec: $(OBJ)
    </pre>
 
    PROTIP: Note: Bind mounting the Docker daemon socket gives a lot of power to a container as it can control the daemon. It must be used with caution, and only with containers we can trust.
-
-   
 
 
    ## Target Dependencies

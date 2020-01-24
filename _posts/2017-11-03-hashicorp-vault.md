@@ -157,7 +157,7 @@ for security vulnerabilities.
 
 A. <a href="#CloudService">Vault cloud service</a>
 
-   * Azure Vault
+   * Azure Vault (https://jpvelasco.com/test-driving-the-azure-key-vault-client-samples/)
    <br /><br />
 
 B. <a href="Homebrew">Use Homebrew to install Vault natively on you Mac</a>.
@@ -338,9 +338,9 @@ https://computingforgeeks.com/install-and-configure-vault-server-linux/
   git
    </strong></pre>
 
-0. Use Git to obtain the Dockerfile :
+0. Use Git to obtain the Dockerfile <a target="_blank" href="https://cloud.spring.io/spring-cloud-vault/reference/html/">based on</a> the <a target="_blank" href="https://github.com/spring-cloud/spring-cloud-vault">Spring Cloud Vault sample app</a>
 
-   <pre><strong>git clone https://github.com/wilsonmar/vault.git --depth=1 
+   <pre><strong>git clone https://github.com/???/vault.git --depth=1 
    cd vault
    </strong></pre>
 
@@ -356,8 +356,8 @@ https://computingforgeeks.com/install-and-configure-vault-server-linux/
 2. Run the Dockerfile at:
 
    <a target="_blank" href="
-   https://raw.githubusercontent.com/wilsonmar/Vault/master/Dockerfile">
-   https://raw.githubusercontent.com/wilsonmar/Vault/master/Dockerfile</a>
+   https://raw.githubusercontent.com/???/Vault/master/Dockerfile">
+   https://raw.githubusercontent.com/???/Vault/master/Dockerfile</a>
 
    Its contains:
 
