@@ -62,7 +62,7 @@ PARTICULAR PURPOSE.
 This program built for i386-apple-darwin11.3.0
    </pre>
 
-   The history of versions is at <a target="_blank" href="http://git.savannah.gnu.org/cgit/make.git">http://git.savannah.gnu.org/cgit/make.git/refs/tags</a>. The first version was over 32 years ago (in the 1970's), used to build the Linux kernel.
+   The history of versions is at <a target="_blank" href="http://git.savannah.gnu.org/cgit/make.git">http://git.savannah.gnu.org/cgit/make.git/refs/tags</a>. The first version was over 32 years ago (in the 1970's), used to build C and the Linux kernel.
 
    Bugs in make source are reported and managed at <a target="_blank" href="http://savannah.gnu.org/projects/make/">http://savannah.gnu.org/projects/make</a>
    
@@ -77,7 +77,7 @@ This program built for i386-apple-darwin11.3.0
 
    <pre>make: *** No targets specified and no Makefile found.  Stop.</pre>
 
-   "targets" are executable or object files to be made by the program.
+   "targets" are executable or object <strong>files</strong> to be made by the program. 
 
 1. Navigate to a folder containing a Makefile. 
 
@@ -103,7 +103,7 @@ This program built for i386-apple-darwin11.3.0
 
    <strong>#</strong> (pound characters) mark the beginning of comments, such as these comments about options to invoke make to process a particular Makefile:
 
-   <pre>\# Usage:
+   <pre># Usage:
 \# make        # compile all binary
 \# make clean  # remove ALL binaries and objects
 \# Run on GNU bash, version 5.0.11(1)-release (x86_64-apple-darwin18.6.0)
@@ -118,7 +118,7 @@ This program built for i386-apple-darwin11.3.0
 
    <pre>clean:
         @echo "Cleaning up..."
-        rm -rvf *.o ${BINS}
+        rm -rvf *.o $\{BINS}
    </pre>
 
    The colon (:) and the positioning in column 1 on the line defines what is called a <strong>"target"</strong> under where coding for it is defined.
@@ -131,6 +131,8 @@ This program built for i386-apple-darwin11.3.0
 
 
    ## Shell version
+
+   Some call Make a kinda shell extension.
 
    Action lines are typically shell script commands such as echo, rm (remove), etc.
 
@@ -162,7 +164,7 @@ logout:
 
    The Make program begins by parsing through the Makefile to create an internal <strong>dependency tree</strong> before taking whatever action is necessary.
 
-   Variable assignment code near the top of the Makefile use the <strong>:=</strong> operator to define what are called "simply expanded variables" to associate with the text indicated. The operator is used to avoid infinite loops when referenced <a href="#[2]">[2]</a>.
+   Variable assignment code near the top of the Makefile use the <strong>:=</strong> operator to define what are called "simply expanded variables" to associate with the text indicated. The operator is used to avoid infinite loops when referenced <a href="#[2]">[2]</a>. This is in contrast to the "==" recursive expansion which first expands variables inside<a href="#[11]">[11]</a>
 
    So this code:
 
@@ -186,7 +188,6 @@ TAGS := $(shell ls $(BUILD_BASE))
 
    The file is located where the agent processing the file is located. ???
 
-
    ## Phony targets
 
    Historically, the make program was created to automate compilation of source code (such as C and java) into executables (such as class and jar files). So rules handle files.
@@ -199,6 +200,31 @@ TAGS := $(shell ls $(BUILD_BASE))
 
    <pre>.PHONY: login logout scan $(TAGS) $(addsuffix .scan, $(TAGS)) $(addsuffix .push, $(TAGS))
    </pre>
+
+   ## File Globbing
+
+   A big reason for needing to use a Makefile is to iterate through several similar files specified by wildcard symbols. In this sample:<a href="#[6]">[6]</a>
+
+   <pre>CC=gcc
+WFLAGS=-Wall
+OBJ=project.o test.o
+Exec: $(OBJ)
+       $(CC) -o $@  $^ $(WFLAGS)
+%.o: %.c
+       $(CC) -o $@  -c $< $(WFLAGS)
+   </pre>
+
+   `$^` refers to the filenames of all dependencies. It is one of the "automatic variables" defined with a dollar sign.
+
+   The .o files depend on the .c files. So, to generate the .o file, represented by the `$@` automatic variable which stands in for the filename of the target, Make needs to first -compile the first dependency (prerequisite) file, represented by `$<`.
+
+   Ohter Automatic variables:
+
+   `$(@)` refers to the target file above the action line using it.
+
+   `$*` refers to the target filename without suffix.
+
+   `$?` refers to the prerequisite files with changes.
 
 
    ## Stops on error 
@@ -218,8 +244,6 @@ TAGS := $(shell ls $(BUILD_BASE))
     	-v trivy_db:/root/.cache/ $(TRIVY_SCANNER) $(REGISTRY)/$(DOCKER_IMAGE):$(basename $(@))
    </pre>
 
-   BTW "$(@)" refers to the target above the action line using it.
-
    The docker run command references the Dockerfile in the same folder.
 
    PROTIP: <strong>/var/run/docker.sock</strong> is the Unix socket file the Docker daemon listens on by default. It is used to communicate with the Docker container by commands such as this to start a container inside Docker:<a href="#[4]">[4]</a>
@@ -231,8 +255,7 @@ TAGS := $(shell ls $(BUILD_BASE))
 
    PROTIP: Note: Bind mounting the Docker daemon socket gives a lot of power to a container as it can control the daemon. It must be used with caution, and only with containers we can trust.
 
-   `basename $(@)` means ???
-
+   
 
 
    ## Target Dependencies
@@ -250,6 +273,8 @@ TAGS := $(shell ls $(BUILD_BASE))
 
    The first part (before the colon) are target files and the second part (after the colon) are called source files. It is called a dependency line because the first part depends on the second part. 
 
+   Make uses spaces as delimiters between items.
+
    Multiple target files must be separated by a space. 
 
    Multiple source files must also be separated by a space.
@@ -261,8 +286,6 @@ TAGS := $(shell ls $(BUILD_BASE))
    It can do that because it keeps track of the last time files (normally object files) were updated. 
 
    ??? If you have a large program with many source and/or header files, when you change a file on which others depend, you must recompile all the dependent files. Without a Makefile, this is a very time-consuming task.
-
-
 
 ## References
 
@@ -276,7 +299,7 @@ TAGS := $(shell ls $(BUILD_BASE))
 
 <a name="[5]">[5]</a> <a target="_blank" href="https://getintodevops.com/blog/the-simple-way-to-run-docker-in-docker-for-ci">https://getintodevops.com/blog/the-simple-way-to-run-docker-in-docker-for-ci<br />The simple way to run Docker-in-Docker for CI</a>
 
-<a name="[6]">[6]</a> <a target="_blank" href="https://www.slideshare.net/zakariaelktaoui/how-to-make-a-simple-make-file">https://www.slideshare.net/zakariaelktaoui/how-to-make-a-simple-make-file<br />Introduction to Makefile</a> by Zakaria El ktaoui, Consultant SAP SuccessFactors chez Value Pass Consulting
+<a name="[6]">[6]</a> <a target="_blank" href="https://www.slideshare.net/zakariaelktaoui/how-to-make-a-simple-make-file">https://www.slideshare.net/zakariaelktaoui/how-to-make-a-simple-make-file<br />Introduction to Makefile</a> by <a target="_blank" href="https://about.me/ZakariaElktaoui">Zakaria El ktaoui</a>, Consultant SAP SuccessFactors chez Value Pass Consulting
 
 [6] http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/
 
@@ -289,6 +312,7 @@ VIDEO: Makefile Tutorials</a> Mar 7 2017
 
 <a name="[10]">[10]</a> <a target="_blank" href="https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html">Gnu make documentation</a>
 
+<a name="[11]">[11]</a> <a target="_blank" href="https://www.youtube.com/watch?v=dqflr7_TqQ8&time=1m40s">"Intermediate Project Management with GNU Make"</a>
 
 POSIX standard?
 

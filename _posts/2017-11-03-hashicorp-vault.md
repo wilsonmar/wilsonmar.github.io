@@ -1025,6 +1025,9 @@ https://www.vaultproject.io/docs/internals/security.html
 Vault uses Shamir's Secret Sharing to control access to the "first secret" that we use as the root of all other secrets. A master key is generated automatically and broken into multiple shards. A configurable threshold of k shards is required to unseal a Vault with n shards in total.
 
 
+https://devopstales.github.io/linux/hashicorp-vault/
+install
+
 <hr />
 
 ## More on DevOps #
