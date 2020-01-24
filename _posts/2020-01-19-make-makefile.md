@@ -237,6 +237,8 @@ Exec: $(OBJ)
 	docker push $(REGISTRY)/$(DOCKER_IMAGE):$(basename $(@))
    </pre>
 
+   BTW `basename` is a built-in Linux command that returns the path without but not the filename after the last slash in the path.
+
    However, that is not invoked if any rules above that fails, such as when vulnerabilities are found while processing this rule:
 
    <pre>$(addsuffix .scantrivy, $(TAGS)):
