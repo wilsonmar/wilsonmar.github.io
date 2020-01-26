@@ -60,10 +60,17 @@ There is NO WARRANTY, to the extent permitted by law.
 
    <tt>grep 'bash'</tt> filters out lines that do not contain the word "bash" in the response.
 
+   ## Input password
+
+1. To avoid being asked to enter your password on every run, add yourself to the <tt>sudoers</tt> file. I do not encourage the disabling of password requests by adding this line to sudoers before executing scripts:
+
+   <pre><strong>echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
+   </strong></pre>
+
 
    ## Copy and paste invocation
 
-   I got sick of manually typing commands on each new instance, so I've written bash shell scripts that installs all that is needed to run on new MacOS or Linux terminal with a <strong>single command</strong>.
+   To avoid the toil and human error of manually typing commands on each new instance, I've written bash shell scripts that installs all that is needed to run on new MacOS or Linux terminal with a <strong>single command</strong>.
 
 1. To execute the script yourself, first put it in your Clipboard by <strong>triple-clicking</strong> "bash" to turn this command line gray, then press command+C to copy:
 
@@ -75,13 +82,6 @@ There is NO WARRANTY, to the extent permitted by law.
 1. Open a Terminal on your mac, click on it, and keypress command+V to paste.
 
    The script runs and installs based on what is specified by <a href="#Args">parameters</a>. 
-
-   Your environment may need more disk space:
-
-   <pre>Need to get 260 MB of archives.
-After this operation, 308 MB of additional disk space will be used.
-Do you want to continue? [Y/n] Y
-   </pre>
 
    It ends with messages like these:
 
@@ -166,38 +166,16 @@ After ShellCheck version 0.4.6, the line can be added anywhere for the next line
    ShellCheck issues no response message is issued if no errors were found.
 
 
-## Clear screen
+## Clear screen echo
 
 To show responses at the top of the terminal, delete the comment # to enable `clear`  # screen (but not history).
 
-However, a lot of output would scroll past, it is rather useless.
-Better to print a long string as a visual marker to differentiate between different runs.
+However, a lot of output would scroll past, so it is rather useless.
+Better to print a long string as a visual marker to differentiate between different runs:
 
-## Set "Strict Mode"
+<pre>echo "========================= $SCRIPT_VERSION"</pre>
 
-Several set statements are at the beginning of the script file for convenience.
-
-<pre>set -e  # exits script when a command fails
-# set -eu pipefail  # pipefail counts as a parameter
-# set -x to show commands for specific issues.
-# set -o nounset
-</pre>
-
-`set -x  # to show commands for specific issues` 
-remains commented until needed for debugging, when it's copied and pasted to specific points in the script.
-
-<a target="_blank" href="https://medium.com/expedia-group-tech/using-bash-for-devops-7046eed1aa63">Some</a> toggle tracing on and off by defining <tt>export DEBUG=TRUE</tt> and add in the code:
-
-<pre>if [[ "${DEBUG:-FALSE}" != "FALSE" ]]; then
-  set -o xtrace
-fi</pre>
-
-
-Some put them all in one line:
-<pre>set -o nounset -o pipefail -o errexit  # "strict mode"</pre>
-
-<tt>pipefail</tt> means that when the program encounters an exit code != 0, the exit code for the pipeline (Bash script) becomes != 0. <a target="_blank" href="https://news.ycombinator.com/item?id=10736584">
-E.g.</a> pipefail can be useful to ensure `curl does-not-exist-aaaaaaa.com | wc -c` doesn't exit with exit code 0..!>
+The <tt>SCRIPT_VERSION</tt> is shown at the beginning and the end to detect whether a cached version of the script was used. That happens.
 
 
 ## Time start - end = elapsed
@@ -221,6 +199,37 @@ captures the date in a human-readable year-month-day-hour-minutes "ISO 8601" for
 An additional RANDOM number is added to ensure uniqueness.
 
 PROTIP: Values stored in variables during a run do not persist.
+
+The number of seconds is rounded DOWN, so a run that takes less than a second is measured as <strong>0</strong> seconds.
+
+
+
+## Set "Strict Mode"
+
+At the beginning of the script file is:
+
+<pre>set -e  # exits script when a command fails
+# set -eu pipefail  # pipefail counts as a parameter
+</pre>
+
+Others are there for convenience, to copy and paste to a specific point in the script where commands need to be visible for debugging:
+
+<pre># set -x to show commands for specific issues.
+# set -o nounset
+</pre>
+
+Some put them all in one line:
+<pre>set -o nounset -o pipefail -o errexit  # "strict mode"</pre>
+
+<tt>pipefail</tt> means that when the program encounters an exit code != 0, the exit code for the pipeline (Bash script) becomes != 0. <a target="_blank" href="https://news.ycombinator.com/item?id=10736584"> E.g.</a> pipefail can be useful to ensure `curl does-not-exist-aaaaaaa.com | wc -c` doesn't exit with exit code 0..!>
+
+<a target="_blank" href="https://medium.com/expedia-group-tech/using-bash-for-devops-7046eed1aa63">Some</a> toggle tracing on and off by defining <tt>export DEBUG=TRUE</tt> and add in the code:
+
+<pre>DEBUG="TRUE"
+...
+if [[ "${DEBUG:-FALSE}" != "FALSE" ]]; then
+  set -o xtrace
+fi</pre>
 
 
 ## Arguments into script
@@ -408,6 +417,10 @@ elif [ "$(uname)" == "Linux" ]; then  # it's on a Mac:
       lsb_release -a
       OS_TYPE="Ubuntu"
       PACKAGE_MANAGER="apt-get"
+
+      silent-apt-get(){  # "$1" refers to parameter of package to install:
+         sudo DEBIAN_FRONTEND=noninteractive apt-get install -qq "$1" < /dev/null > /dev/null
+      }
    elif [ -f "/etc/os-release" ]; then
       OS_DETAILS=$( cat "/etc/os-release" )  # ID_LIKE="rhel fedora"
       OS_TYPE="Fedora"
@@ -428,6 +441,34 @@ else
    exit 0
 fi
 </pre>
+
+
+## apt-get install function
+
+<tt>apt-get install</tt> commands are used within a function encased in this elaborate format:
+
+   <pre><strong>silent-apt-get(){  # "$1" refers to parameter of package to install:
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -qq git htop < /dev/null > /dev/null</strong></pre>
+
+<tt>DEBIAN_FRONTEND=noninteractive</tt> gets rid of "(Reading database ... 5%" output.
+
+<tt>-qq</tt> is there to not request manual confirmation messages such as:
+
+   <pre>Need to get 260 MB of archives.
+After this operation, 308 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+   </pre>
+
+The <tt>-qq</tt> parameter combines the effect of the <tt>-y</tt> (yes) and <tt>-q</tt> (quiet) parameter, plus more suppression. 
+
+The output that remains is from <tt>dpkg</tt> which was forked by apt-get. So 
+<tt>> /dev/null</tt> pipes the standard output (stdout) to nothing so you don't see them.
+However, you'll still see error messages, which go out thru stderr.
+
+<tt>< /dev/null</tt> pipes stdin standard output to nothing.
+
+<a target="_blank" href="https://peteris.rocks/blog/quiet-and-unattended-installation-with-apt-get/"><em>Explained here</em></a>.
+
 
 
 ## Disk space free capacity
@@ -598,6 +639,7 @@ If the file is not found or variable not found, the script falls back to asking 
 
 In a forthcoming refactoring, we may add use of Hashicorp Vault, which puts another secret in place of the real secret.
 
+
 ## Copy Sample files
 
 The particular application has sample files which should be copied, then <strong>edited</strong> for use.
@@ -625,6 +667,7 @@ Read <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master
 But Linuxbrew installs packages to a unique folder, so that path needs to be added to the search PATH in <strong>~/.bash_profile</strong>.
 
 "brew --prefix" yields "/usr/local".
+
 
 ## Docker and docker-compose
 
