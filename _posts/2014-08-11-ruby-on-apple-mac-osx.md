@@ -29,55 +29,54 @@ The major commands around Ruby:
 PROTIP: There is a war going on within the Ruby community between rvm and rbenv. See http://jonathan-jackson.net/rvm-and-rbenv
 and <a target="_blank" href="http://ryan.mcgeary.org/2011/02/09/vendor-everything-still-applies/">Ryan McGeary</a> who switched to rbenv.
 
+<a name="Versions"></a>
+
 ### Versions #
 
-### View Ruby version #
+1. Look at the list of Ruby versions at 
 
-A Ruby language compiler is included in Mac OSX.
-So we can jump straight to view version information.
+   <a target="_blank" href="https://www.ruby-lang.org/en/downloads/">https://www.ruby-lang.org/en/downloads</a>
 
-CAUTION: Don't touch the system Ruby that comes with your Mac.
+1. Remember the lastest version number (such as "2.7.1").
+   
+
+   ### What Ruby version is installed? #
+
+   A Ruby language compiler is included in Mac OSX.
+   So we can jump straight to view version information.
+
+   CAUTION: Don't touch the system Ruby that comes with your Mac.
 
 0. Open a Terminal Shell Window and type:
  
-   <tt><strong>
-   ruby \-\-version
-   </strong></tt>
+   <pre><strong>ruby --version
+   </strong></pre>
 
    Alternately:
 
-   <pre><strong>
-   ruby --version
+   <pre><strong>ruby --version
    </strong></pre>
 
    The response for the High Sierra default:
 
-   <tt>
-   ruby 2.3.7p456 (2018-03-28 revision 63024) [universal.x86_64-darwin17]
-
-
-
+   <tt>ruby 2.3.7p456 (2018-03-28 revision 63024) [universal.x86_64-darwin17]</tt>
 ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-darwin17]
    </tt>
 
    The response for the Sierra default:
 
-   <tt>
-   ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-darwin15]
+   <tt>ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-darwin15]
    </tt>
 
    The response for the Yosemite default:
 
-   <tt>
-   ruby 2.0.0p481 (2014-05-08 revision 45883) [universal.x86_64-darwin14]
+   <tt>ruby 2.0.0p481 (2014-05-08 revision 45883) [universal.x86_64-darwin14]
    </tt>
 
    The response after updating on 2016-06-16:
 
-   <tt>
-   ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-darwin15]
+   <tt>ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-darwin15]
    </tt>
-
 
    CAUTION: The Apple Mac operating system makes use of Ruby, so don't delete the .rvm folder.
 
@@ -95,14 +94,12 @@ ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-darwin17]
 
 0. You don't really need to do the above because this more detailed command provides it as well:
 
-   <tt><strong>
-   gem env
-   </strong></tt>
+   <pre><strong>gem env
+   </strong></pre>
 
    The response on 2016-06-16:
 
-   <pre>
-RubyGems Environment:
+   <pre>RubyGems Environment:
   - RUBYGEMS VERSION: 2.6.4
   - RUBY VERSION: 2.3.1 (2016-04-26 patchlevel 112) [x86_64-darwin15]
   - INSTALLATION DIRECTORY: /Users/mac/.rvm/gems/ruby-2.3.1
@@ -146,33 +143,24 @@ RubyGems Environment:
 
 0. To view each component individually:
 
-   <tt><strong>
-   gem \-\-version
-   </strong></tt>
+   <pre><strong>gem --version
+   </strong></pre>
 
    The response for the High Sierra default:
 
-   <tt>
-   2.7.6
-   </tt>
+   <tt>2.7.6</tt>
 
    The response for the Sierra default:
 
-   <tt>
-   2.0.14
-   </tt>
+   <tt>2.0.14</tt>
 
    The response for the Yosemite default:
 
-   <tt>
-   2.0.14
-   </tt>
+   <tt>2.0.14</tt>
 
    After updating on 2017-02-16:
 
-   <tt>
-   2.6.10
-   </tt>
+   <tt>2.6.10</tt>
 
    QUESTION: List of versions?
 
@@ -187,8 +175,7 @@ RubyGems Environment:
 
    The response on 2016-06-16:
 
-   <pre>
-Password:
+   <pre>Password:
 Updating rubygems-update
 Fetching: rubygems-update-2.6.4.gem (100%)
 Successfully installed rubygems-update-2.6.4
@@ -227,14 +214,12 @@ RubyGems system software updated
 
 0. List local gems:
 
-   <tt><strong>
-   gem list b
-   </strong></tt>
+   <pre><strong>gem list b
+   </strong></pre>
 
    A sample example (on 2016-06-16):
 
-   <pre>
-bigdecimal (1.3.1, 1.2.7, default: 1.2.0)
+   <pre>bigdecimal (1.3.1, 1.2.7, default: 1.2.0)
 libxml-ruby (3.0.0, 2.8.0, 2.6.0)
 rainbow (2.2.1, 2.1.0)
 rubocop (0.47.1, 0.40.0)
@@ -251,14 +236,12 @@ rubygems-update (2.6.10, 2.6.9, 2.6.1)
 
 0. If bundler is not on the list above:
 
-   <tt><strong>
-   gem install bundler
-   </strong></tt>
+   <pre><strong>gem install bundler
+   </strong></pre>
 
    A sample response:
 
-   <pre>
-Fetching: bundler-1.12.5.gem (100%)
+   <pre>Fetching: bundler-1.12.5.gem (100%)
 Successfully installed bundler-1.12.5
 Parsing documentation for bundler-1.12.5
 Installing ri documentation for bundler-1.12.5
@@ -268,14 +251,12 @@ Done installing documentation for bundler after 5 seconds
 
 0. Navigate to a folder containing <strong></strong>:
 
-   <tt><strong>
-   bundle install
-   </strong></tt>
+   <pre><strong>bundle install
+   </strong></pre>
 
    A sample response:
 
-   <pre>
-Fetching gem metadata from https://rubygems.org/
+   <pre>Fetching gem metadata from https://rubygems.org/
 Fetching version metadata from https://rubygems.org/
 Fetching dependency metadata from https://rubygems.org/
 Installing rake 11.1.2
@@ -287,28 +268,24 @@ Use `bundle show [gemname]` to see where a bundled gem is installed.
 
 0. Run
 
-   <tt><strong>
-   sudo gem install \-\-no-rdoc \-\-no-ri bundler
+   <tt><strong>sudo gem install \-\-no-rdoc \-\-no-ri bundler
    </strong></tt>
 
    The response:
 
-   <pre>
-Fetching: bundler-1.9.4.gem (100%)
+   <pre>Fetching: bundler-1.9.4.gem (100%)
 Successfully installed bundler-1.9.4
 1 gem installed
    </pre>
 
 0. Update latest version of gem:
 
-   <tt><strong>
-   sudo gem update
-   </strong></tt>
+   <pre><strong>sudo gem update
+   </strong></pre>
 
    The response takes several minutes becuase it touches every gem:
 
-   <pre>
-   Updating installed gems
+   <pre>   Updating installed gems
    Updating CFPropertyList
 ...
 RubyGems installed the following executables:
@@ -329,28 +306,25 @@ RubyGems system software updated
 
 0. Press y and Enter if you see:
 
-   <pre>
-rake's executable "rake" conflicts with /usr/bin/rake
+   <pre>rake's executable "rake" conflicts with /usr/bin/rake
 rdoc's executable "rdoc" conflicts with /usr/bin/rdoc
 rdoc's executable "ri" conflicts with /usr/bin/ri
    </pre>
 
 0. To rebuild any gems using native extensions:
 
-   <tt><strong>sudo gem pristine \-\-all 
-   </strong></tt>
+   <pre><strong>sudo gem pristine \-\-all 
+   </strong></pre>
 
 
 0. To uninstall gems not used:
 
-   <tt><strong>
-   sudo gem cleanup
-   </strong></tt>
+   <pre><strong>sudo gem cleanup
+   </strong></pre>
 
    The response:
 
-   <pre>
-   Cleaning up installed gems...
+   <pre>Cleaning up installed gems...
    Clean Up Complete
    </pre>
 
@@ -362,15 +336,13 @@ rdoc's executable "ri" conflicts with /usr/bin/ri
 CAUTION: To install rbenv, one must first <a href="#RemoveRVM">remove RVM</a> 
 because it's incompatible with rbenv.
  
-   <pre><strong>
-   brew update
+   <pre><strong>brew update
    brew install rbenv ruby-build
    </strong></pre>
 
    The response:
 
-   <pre>
-==> Installing dependencies for rbenv: openssl, ruby-build
+   <pre>==> Installing dependencies for rbenv: openssl, ruby-build
 ==> Installing rbenv dependency: openssl
 ==> Downloading https://homebrew.bintray.com/bottles/openssl-1.0.2k.sierra.bottl
 ######################################################################## 100.0%
@@ -416,16 +388,14 @@ For pkg-config to find this software you may need to set:
 0. What versions of Ruby are available?
    See <a target="_blank" href="https://www.ruby-lang.org/en/downloads/releases/">https://www.ruby-lang.org/en/downloads/releases/</a>
 
-0. To upgrade Ruby using rbenv:
+0. To upgrade Ruby using rbenv, first get the <a href="#Versions">semantic version from the Ruby site</a>, then:
 
-   <pre><strong>
-   rbenv install 2.6.1
+   <pre><strong>rbenv install 2.6.1
    </strong></pre>
 
    The response when 2.6.1 was all the rage:
 
-   <pre>
-ruby-build: use openssl from homebrew
+   <pre>ruby-build: use openssl from homebrew
 Downloading ruby-2.6.1.tar.bz2...
 -> https://cache.ruby-lang.org/pub/ruby/2.6/ruby-2.6.1.tar.bz2
 Installing ruby-2.6.1...
@@ -435,23 +405,20 @@ Installed ruby-2.6.1 to /Users/wilsonmar/.rbenv/versions/2.6.1
 
 0. Make that version the default globally:
 
-   <pre><strong>
-   rbenv global 2.6.1
+   <pre><strong>rbenv global 2.6.1
    ruby -v
    </strong></pre>
 
    The response I got:
 
-   <pre>
-ruby 2.6.1p33 (2019-01-30 revision 66950) [x86_64-darwin18]   </pre>
+   <pre>ruby 2.6.1p33 (2019-01-30 revision 66950) [x86_64-darwin18]</pre>
 
 
    ### Uninstall rbenv
 
 0. To uninstall, remember rbenv was installed using brew, so:
 
-   <pre><strong>
-   brew uninstall rbenv ruby-build
+   <pre><strong>brew uninstall rbenv ruby-build
    </strong></pre>
 
 
@@ -464,16 +431,26 @@ This is why Homebrew installs into the `/usr/local/bin` folder.
 
 To specify that folder when installing gems, for example:
 
-   gem install cocoapods -n /usr/local/bin
+   <pre>gem install cocoapods -n /usr/local/bin</pre>
 
-To automatically specify `-n /usr/local/bin`, save create file 
+PROTIP: To automatically specify `-n /usr/local/bin`, save create file 
 `~/.gemrc` containing:
 
-   <pre>
-:gemdir:
+   <pre>:gemdir:
    - ~/.gem/ruby
 install: -n /usr/local/bin
    </pre>
+
+<hr />
+
+## rbenv vs rvm
+
+Before rbenv, there was rvm.
+
+<a target="_blank" href="https://metova.com/choosing-a-ruby-version-management-tool-rbenv-vs-rvm/">This article</a>
+describes the differences.
+
+PROTIP: Personally, the requirement for gpg to install was a turn-off for RVM as it was difficult to get working. 
 
 
 <a name="ruby-rvm"></a>
@@ -524,29 +501,23 @@ Upgrade of RVM in /Users/wilsonmar/.rvm/ is complete.
 
    ### View rvm version number #
 
-   <tt><strong>
-   rvm info
-   </strong></tt>
+   <pre><strong>rvm info
+   </strong></pre>
 
 0. For a smaller response:
    
-   <pre><strong>
-   rvm --version
+   <pre><strong>rvm --version
    </strong></pre>
 
    The response on 2018-10-26:
 
-   <pre>
-   rvm 1.29.4 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+   <pre>rvm 1.29.4 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
    </pre>
 
    The response on 2016-06-16 had an email:
 
-   <pre>
-   rvm 1.27.0 (master) by Wayne E. Seguin &LT;wayneeseguin@gmail.com>, Michal Papis &LT;mpapis@gmail.com> [https://rvm.io/]
+   <pre>rvm 1.27.0 (master) by Wayne E. Seguin &LT;wayneeseguin@gmail.com>, Michal Papis &LT;mpapis@gmail.com> [https://rvm.io/]
    </pre>
-
-
 
 
 ### Secure route:
@@ -555,7 +526,7 @@ See https://rvm.io/rvm/security
 
 1. First try:
 
-   <pre><strong>$ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+   <pre><strong>gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
    </strong></pre>
 
    The response I got:
@@ -563,7 +534,7 @@ See https://rvm.io/rvm/security
    <pre>gpg: keyserver receive failed: Server indicated a failure
    </pre>
 
-2. Since that didn't work:
+2. Alternatively, Since that doesn't work:
 
    <pre><strong>curl -sSL https://rvm.io/mpapis.asc | gpg --import -
    </strong></pre>

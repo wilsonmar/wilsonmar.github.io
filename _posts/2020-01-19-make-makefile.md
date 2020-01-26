@@ -314,6 +314,8 @@ VIDEO: Makefile Tutorials</a> Mar 7 2017
 
 <a name="[12]">[12]</a> <a target="_blank" href="https://en.wikipedia.org/wiki/Makefile">Wikipedia: Makefile</a>
 
+<a name="[13]">[13]</a> <a target="_blank" href="https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_makefiles.html">Using make and writing Makefiles</a>
+
 POSIX standard?
 
 

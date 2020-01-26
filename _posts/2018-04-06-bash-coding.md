@@ -944,6 +944,9 @@ say "script ended."  # through speaker
 
 Because the script command can be pasted onto any folder, files
 
+## Expect for managing manual input
+
+https://www.linuxcloudvps.com/blog/how-to-automate-shell-scripts-with-expect-command/
 
 ## References
 

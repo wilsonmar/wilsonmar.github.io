@@ -99,6 +99,8 @@ Do you want to continue? [Y/n] Y
    </strong></pre>
 
 Each feature of the script is explained in my blog article here about bash scripting.
+
+We could instead have these steps in the Dockerfile, but a bash script provides flexibility of enviornments.
    
 <hr />
 
