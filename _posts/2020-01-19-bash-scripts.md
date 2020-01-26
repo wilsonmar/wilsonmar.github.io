@@ -418,7 +418,7 @@ elif [ "$(uname)" == "Linux" ]; then  # it's on a Mac:
       OS_TYPE="Ubuntu"
       PACKAGE_MANAGER="apt-get"
 
-      silent-apt-get(){  # "$1" refers to parameter of package to install:
+      silent-apt-get-install(){  # "$1" refers to parameter of package to install:
          sudo DEBIAN_FRONTEND=noninteractive apt-get install -qq "$1" < /dev/null > /dev/null
       }
    elif [ -f "/etc/os-release" ]; then
@@ -442,12 +442,17 @@ else
 fi
 </pre>
 
+<a name="silent-apt-get-install"></a>
 
 ## apt-get install function
 
-<tt>apt-get install</tt> commands are used within a function encased in this elaborate format:
+<tt>apt-get install</tt> commands in this script use a custom function which feeds in the package name to be installed:
 
-   <pre><strong>silent-apt-get(){  # "$1" refers to parameter of package to install:
+   <pre><strong>silent-apt-get-install "git"</strong></pre>
+
+The function is defined where the operating system and package manager is recognized:
+
+   <pre><strong>silent-apt-get-install(){  # "$1" refers to parameter of package to install:
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -qq git htop < /dev/null > /dev/null</strong></pre>
 
 <tt>DEBIAN_FRONTEND=noninteractive</tt> gets rid of "(Reading database ... 5%" output.
