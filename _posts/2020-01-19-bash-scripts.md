@@ -18,78 +18,44 @@ comments: true
 
 NOTE: This page is still actively under construction.
 
-<a name="BashVersions"></a>
-
-## Version of Bash installed
-   
-1. Be at a macOS Terminal.
-1. Test what version of Bash is installed on your Mac by typing this:
-
-   <pre><strong>bash --version
-   </strong></pre>
-
-   If you see this, you are using Bash version 3.x, which first released in 2007.
-
-   <pre>GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin16)</pre>
-
-   In its Mojave version Apple still ships macOS due to licensing issues.
-
-1. Install the latest version of the Bash shell, using Homebrew:
-
-   <pre><strong>brew install bash
-   </strong></pre>
-
-   Bash 4.0 was released in 2009.
-
-   As of this writing, the response is:
-
-   <pre>GNU bash, version 5.0.11(1)-release (x86_64-apple-darwin18.6.0)
-Copyright (C) 2019 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-&nbsp;
-This is free software; you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
-   </pre>
-
-1. If you want to see just the version line, pipe the response to the grep utility built into macOS:
-
-   <pre><strong>bash --version | grep 'bash'
-   </strong></pre>
-
-   Hold down the left Shift key to press the \| (called pipe) key at the upper-right of the keyboard.
-
-   <tt>grep 'bash'</tt> filters out lines that do not contain the word "bash" in the response.
+   To avoid the toil and human error of manually typing commands on each new instance, I've written bash shell scripts that install all that is needed to run on new MacOS or Linux terminal with a <strong>single command</strong>.
 
    ## Input password
 
-1. To avoid being asked to enter your password on every run, add yourself to the <tt>sudoers</tt> file. I do not encourage the disabling of password requests by adding this line to sudoers before executing scripts:
+1. First, be at a Terminal console on macOS or after instantiating a Linux machine.
+
+   The script was tested on Ubuntu, but has untested code for CentOS and Red Hat.
+
+1. To avoid being asked to enter your password on every run, add yourself to the <tt>sudoers</tt> file. 
+
+   I do not encourage the disabling of password requests by adding this line to sudoers before executing scripts:
 
    <pre><strong>echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
    </strong></pre>
 
-
    ## Copy and paste invocation
 
-   To avoid the toil and human error of manually typing commands on each new instance, I've written bash shell scripts that installs all that is needed to run on new MacOS or Linux terminal with a <strong>single command</strong>.
+1. To execute the script just to get a short description of the parameters controlling what features are invoked, copy this command into your Clipboard by <strong>triple-clicking</strong> "bash" to turn this command line gray, then press command+C to copy:
 
-1. To execute the script yourself, first put it in your Clipboard by <strong>triple-clicking</strong> "bash" to turn this command line gray, then press command+C to copy:
-
-   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh)" -h -v -I -U -c -s -r -a -o
+   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh)"
    </strong></pre>
 
-   Hidden at the end of the line contains <a href="#Args">parameters <strong>-h -v -I -U -c -s -r -a -o</strong></a>.
+1. To execute the script to do stuff, copy this command which has 
+   <strong>-v -I -U -c -s -r -a -o</strong> at the end of the line to specify <a href="#Args">parameters</a> controlling what features are invoked each run:
+
+   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh)" -v -I -U -c -s -r -a -o
+   </strong></pre>
 
 1. Open a Terminal on your mac, click on it, and keypress command+V to paste.
 
-   The script runs and installs based on what is specified by <a href="#Args">parameters</a>. 
+1. Edit the <a href="#Args">parameters</a> controlling features invoked in the run.
 
-   It ends with messages like these:
+   The script ends with a message like this:
 
-   <pre>worker_1   | [2020-01-17 04:59:42,036: INFO/Beat] beat: Starting...
-   ✔ End of script after 1883 seconds and 677960 bytes of disk space.
+   <pre>✔ End of script after 1883 seconds and 677960 bytes of disk space.
    </pre>
 
-   If you added "-o" parameter to the command, the script opens the app in your default browser.
+   If you added the `-o` parameter to the command, the script opens the app in your default browser.
 
    ![bash-scripts-landing-899x355](https://user-images.githubusercontent.com/300046/72588109-3e1ca980-38c5-11ea-965e-a935b8e69498.jpg)
 
@@ -98,11 +64,12 @@ There is NO WARRANTY, to the extent permitted by law.
    <pre><strong><a target="_blank" href="https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh">https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh</a>
    </strong></pre>
 
-Each feature of the script is explained in my blog article here about bash scripting.
-
-We could instead have these steps in the Dockerfile, but a bash script provides flexibility of enviornments.
-   
 <hr />
+
+Each feature of the script is explained below:
+
+TODO: We could instead have install steps in the Dockerfile, but a bash script provides flexibility of enviornments.
+   
 
 ## Shebang and comments
    
@@ -475,6 +442,51 @@ However, you'll still see error messages, which go out thru stderr.
 <a target="_blank" href="https://peteris.rocks/blog/quiet-and-unattended-installation-with-apt-get/"><em>Explained here</em></a>.
 
 
+<a name="BashVersions"></a>
+
+## Version of Bash installed
+
+Some commands make use of a more recent version of Bash than the operating system may have by default. So the script updates the bash processor if the `-U` flag is specified.
+Follow along manually:
+
+1. Be at a macOS Terminal.
+1. Test what version of Bash is installed on your Mac by typing this:
+
+   <pre><strong>bash --version
+   </strong></pre>
+
+   If you see the below, you are using Bash version 3.x, which macOS first released in 2007.
+
+   <pre>GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin16)</pre>
+
+   In macOS Mojave version, Apple still ships that old thing due to licensing issues.
+
+1. Install the latest version of the Bash shell, using Homebrew:
+
+   <pre><strong>brew install bash
+   </strong></pre>
+
+   Bash 4.0 was released in 2009.
+
+   As of this writing, the response is:
+
+   <pre>GNU bash, version 5.0.11(1)-release (x86_64-apple-darwin18.6.0)
+Copyright (C) 2019 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+&nbsp;
+This is free software; you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+   </pre>
+
+1. If you want to see just the version line, pipe the response to the grep utility built into macOS:
+
+   <pre><strong>bash --version | grep 'bash'
+   </strong></pre>
+
+   Hold down the left Shift key to press the \| (called pipe) key at the upper-right of the keyboard.
+
+   <tt>grep 'bash'</tt> filters out lines that do not contain the word "bash" in the response.
+
 
 ## Disk space free capacity
 
@@ -517,6 +529,7 @@ TODO: Within cloud environments such as Amazon AWS EC2 or Azure, this may still 
 
 At the end of the script, another variable is obtained when the END variable is obtained for use in calculating the 
 time and disk space used during the script run.
+
 
 
 ## Bash Traps
@@ -673,6 +686,11 @@ But Linuxbrew installs packages to a unique folder, so that path needs to be add
 
 "brew --prefix" yields "/usr/local".
 
+## Ruby Gemfile of versions
+
+The Ruby <strong>Gemfile</strong> specifies the packages mentioned in the import statement within Ruby programs. The latest <strong>version</strong> of each package is specified by default. Or a specific version can be specified.
+
+The <strong>Gemfile.lock</strong> file reflects what Bundler records as the exact versions installed. This way, when the same library/project is loaded on another machine, running bundle install will look at the Gemfile.lock and sinstall the exact same versions, rather than just using the Gemfile and installing the most recent versions. (Running different versions on different machines could lead to broken tests, etc.)
 
 ## Docker and docker-compose
 
@@ -688,6 +706,10 @@ Either way, the Docker daemon is started.
 `-R` removes the cloned app repository.
 
 <hr />
+
+## References
+
+https://www.tutorialspoint.com/unix/unix-file-operators.htm
 
 ## More on DevOps #
 
