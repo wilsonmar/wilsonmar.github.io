@@ -973,6 +973,10 @@ https://gorails.com/setup/osx/10.14-mojave#ruby
 
 http://www.createdbypete.com/articles/ruby-on-rails-development-setup-for-mac-osx/
 
+https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-16-04
+
+http://devopspy.com/linux/install-latest-ruby-using-rbenv/
+
 
 ## More on OSX
 

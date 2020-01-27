@@ -1252,6 +1252,17 @@ Matt Wood, @mza, Product Strategy @ Amazon Web Services
 AWS re:Invent 2016: Become an AWS IAM Policy Ninja in 60 Minutes or Less (SAC303)</a>
    by Jeff W
 
+* <a target="_blank" href="https://peteris.rocks/blog/script-to-launch-amazon-ec2-spot-instances/" title="October 10, 2016">
+Script to launch Amazon EC2 Spot instances</a> with a simple Python script
+
+   - create a new key pair if one doesn't exist
+   - create a security group if one doesn't exist
+   - request a new spot instance
+   - wait for the spot request to be fulfilled
+   - wait for the instance to boot
+   - connect to it via SSH and run a script of your choice
+
+
 ## More on Amazon #
 
 This is one of a series on Amazon:

@@ -16,15 +16,17 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+   To avoid the toil and human error of manually typing commands on each new instance, I've written bash shell scripts that install what is needed on a MacOS or Linux terminal. A <strong>single command</strong> installs all that is needed:
+   XCode, Bash, git, Ruby, docker, docker-compose.
+
 NOTE: This page is still actively under construction.
 
-   To avoid the toil and human error of manually typing commands on each new instance, I've written bash shell scripts that install all that is needed to run on new MacOS or Linux terminal with a <strong>single command</strong>.
+## Input password
 
-   ## Input password
+1. First, be at a Terminal on macOS or console after instantiating a Linux machine on VMWare, EC2, or other cloud.
 
-1. First, be at a Terminal console on macOS or after instantiating a Linux machine.
-
-   The script was tested on Ubuntu, but has untested code for CentOS and Red Hat.
+   The script was tested on Ubuntu as well (running within VMWare Fusion on macOS), 
+   but has untested code for CentOS and Red Hat (running within EC2).
 
 1. To avoid being asked to enter your password on every run, add yourself to the <tt>sudoers</tt> file. 
 
@@ -59,19 +61,21 @@ NOTE: This page is still actively under construction.
 
    ![bash-scripts-landing-899x355](https://user-images.githubusercontent.com/300046/72588109-3e1ca980-38c5-11ea-965e-a935b8e69498.jpg)
 
-1. View my sample install script at:
-
-   <pre><strong><a target="_blank" href="https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh">https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh</a>
-   </strong></pre>
-
 <hr />
 
 Each feature of the script is explained below:
 
 TODO: We could instead have install steps in the Dockerfile, but a bash script provides flexibility of enviornments.
-   
 
-## Shebang and comments
+> This article presents a logical ordering of concepts presented in a succint way, as a hands-on narrated scenic tour.
+
+1. View the install script at:
+
+   <pre><strong><a target="_blank" href="https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh">https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh</a>
+   </strong></pre>
+
+
+   ## Shebang and comments
    
    Unlike the Windows operating system, which decides what program is used to open a file based on the file name "extension" behind the dot, Linux systems ignores the file name and looks into the file to see the first line.
    
