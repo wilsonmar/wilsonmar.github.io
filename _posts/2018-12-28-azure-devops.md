@@ -1111,7 +1111,7 @@ Sam Guckenheimer, Product Owner, Visual Studio Cloud Services
 
 ### DevOps Cloud Developer Advocates
 
-League of Extradinary DevOps Advocates: <a target="_blank" href="https://twitter.com/search?q=%23LoECDA&src=typd">#LoECDA</a>, <a target="_blank" href="https://twitter.com/LoECDA">@LoECDA</a>
+League of Extraordinary DevOps Advocates: <a target="_blank" href="https://twitter.com/LoECDA">@LoECDA</a>
 
 Donovan Brown (<a target="_blank" href="https://twitter.com/DonovanBrown">@DonovanBrown</a>, <a target="_blank" href="http://donovanbrown.com/">http://donovanbrown.com</a>: <a target="_blank" href="http://donovanbrown.com/page/slide-decks">slide-decks</a>.
    * <a target="_blank" href="http://www.donovanbrown.com/post/2015/09/01/what-is-devops">DevOps interviews</a>

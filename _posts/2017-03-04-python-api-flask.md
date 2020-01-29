@@ -166,22 +166,21 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 1. Unzip
 1. In Finder view the folders:
 
-   {% highlight text %}
-* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291554-introduction">06-creating-a-base-flask-app</a>
-* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291593-introduction">07-blueprints-and-jinja-2-templates</a>
-* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291601-introduction">08-testing-and-code-quality</a>
-* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291624-introduction">09-creating-a-cli-script</a>
-* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291685-introduction">10-using-our-first-flask-extension</a>
-* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291698-introduction">11-creating-a-contact-form</a>
-* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291745-introduction">12-creating-a-complete-user-system</a>
-* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291762-introduction">13-creating-a-custom-admin-dashboard</a>
-* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291775-introduction">14-logging-middleware-and-error-handling</a>
-* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291784-introduction">15-quality-of-life-cli-improvements</a>
-* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291788-introduction">16-accepting-recurring-payments</a>
-* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291817-going-over-the-requirements-txt-changes">17-building-the-snake-eyes-game</a>
-* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291832-configuring-the-app-for-purchases">18-processing-microtransactions</a>
-* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291840-what-is-a-database-migration">19-database-migrations</a>
-* <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291851-introduction">20-internationalization-i18n</a>
+   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291554-introduction">06-creating-a-base-flask-app</a>
+   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291593-introduction">07-blueprints-and-jinja-2-templates</a>
+   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291601-introduction">08-testing-and-code-quality</a>
+   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291624-introduction">09-creating-a-cli-script</a>
+   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291685-introduction">10-using-our-first-flask-extension</a>
+   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291698-introduction">11-creating-a-contact-form</a>
+   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291745-introduction">12-creating-a-complete-user-system</a>
+   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291762-introduction">13-creating-a-custom-admin-dashboard</a>
+   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291775-introduction">14-logging-middleware-and-error-handling</a>
+   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291784-introduction">15-quality-of-life-cli-improvements</a>
+   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291788-introduction">16-accepting-recurring-payments</a>
+   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291817-going-over-the-requirements-txt-changes">17-building-the-snake-eyes-game</a>
+   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291832-configuring-the-app-for-purchases">18-processing-microtransactions</a>
+   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291840-what-is-a-database-migration">19-database-migrations</a>
+   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291851-introduction">20-internationalization-i18n</a>
    {% endhighlight %}
 
    Each folder contains a more finished set of files than the previous one.
