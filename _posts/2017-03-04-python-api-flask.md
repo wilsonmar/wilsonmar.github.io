@@ -181,7 +181,6 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
    * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291832-configuring-the-app-for-purchases">18-processing-microtransactions</a>
    * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291840-what-is-a-database-migration">19-database-migrations</a>
    * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291851-introduction">20-internationalization-i18n</a>
-   {% endhighlight %}
 
    Each folder contains a more finished set of files than the previous one.
    Coding challenges at the end of each lesson describe the changes you make to each folder.
