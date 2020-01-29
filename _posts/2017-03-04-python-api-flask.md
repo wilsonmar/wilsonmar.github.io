@@ -68,7 +68,7 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/72588109-3e1ca980-38c5-11ea-965e-a935b8e69498.jpg"><img alt="snakeeyes-landing-899x355.jpg" src="https://user-images.githubusercontent.com/300046/72588109-3e1ca980-38c5-11ea-965e-a935b8e69498.jpg"></a>
 
 
-   ### Technologies used in SnakeEyes
+   ### Technologies used in the app
 
    PROTIP: Nick's class presents not a deep dive of Flask, but the technologies around Flask.
    To be "awesome", the app makes use of several <strong>(free) open source</strong> packages and code libraries, listed below in <strong>alphabetical order</strong>:
@@ -160,7 +160,7 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 
    ### Taking the video course 
 
-   The course's marketing materials promises to show "the real (battle-hardened production) way (to create the Snakeeyes app), without tedious research". That means the videos walks through the app in various stages of development.
+   The course's marketing materials promises to show "the real (battle-hardened production) way (to create the app), without tedious research". That means the videos walks through the app in various stages of development.
 
 1. Once you have paid and <a target="_blank" href="https://courses.nickjanetakis.com/users/sign_in">view the course videos</a>, the <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/downloads/2295059-downloading-the-course-s-material">Downloading the course materials</a> provides the download link.
 1. Unzip
@@ -359,7 +359,7 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
    VIDEO: Building RESTful APIs with Flask: Visualizing the Application and Library Choices</a>
 
 
-   ### Snakeeyes App Features
+   ### App Features
 
    <a target="_blank" href="https://www.youtube.com/watch?v=Q3arEfQ-pno&list=PL-v3vdeWVEsUDDWYgZ8ImfSORIHyrsBJy">VIDEO playlist:  What Does This Course Cover?</a> 
 
