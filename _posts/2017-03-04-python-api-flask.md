@@ -68,9 +68,9 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/72588109-3e1ca980-38c5-11ea-965e-a935b8e69498.jpg"><img alt="snakeeyes-landing-899x355.jpg" src="https://user-images.githubusercontent.com/300046/72588109-3e1ca980-38c5-11ea-965e-a935b8e69498.jpg"></a>
 
 
-   ### Technologies used in the app
+### Technologies used in the app
 
-   PROTIP: Nick's class presents not a deep dive of Flask, but the technologies around Flask.
+   PROTIP: Nick's videos present not a deep dive of Flask, but the technologies around Flask.
    To be "awesome", the app makes use of several <strong>(free) open source</strong> packages and code libraries, listed below in <strong>alphabetical order</strong>:
 
 1. Ajax requests
