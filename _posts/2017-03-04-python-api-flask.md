@@ -164,34 +164,38 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 
 1. Once you have paid and <a target="_blank" href="https://courses.nickjanetakis.com/users/sign_in">view the course videos</a>, the <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/downloads/2295059-downloading-the-course-s-material">Downloading the course materials</a> provides the download link.
 1. Unzip
-1. In Finder view the folders:
+1. In Finder view the folders containing app code in various stages of completion:
 
-   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291554-introduction">06-creating-a-base-flask-app</a>
-   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291593-introduction">07-blueprints-and-jinja-2-templates</a>
-   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291601-introduction">08-testing-and-code-quality</a>
-   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291624-introduction">09-creating-a-cli-script</a>
-   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291685-introduction">10-using-our-first-flask-extension</a>
-   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291698-introduction">11-creating-a-contact-form</a>
-   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291745-introduction">12-creating-a-complete-user-system</a>
-   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291762-introduction">13-creating-a-custom-admin-dashboard</a>
-   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291775-introduction">14-logging-middleware-and-error-handling</a>
-   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291784-introduction">15-quality-of-life-cli-improvements</a>
-   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291788-introduction">16-accepting-recurring-payments</a>
-   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291817-going-over-the-requirements-txt-changes">17-building-the-snake-eyes-game</a>
-   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291832-configuring-the-app-for-purchases">18-processing-microtransactions</a>
-   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291840-what-is-a-database-migration">19-database-migrations</a>
-   * <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291851-introduction">20-internationalization-i18n</a>
-
-   Each folder contains a more finished set of files than the previous one.
-   Coding challenges at the end of each lesson describe the changes you make to each folder.
+   1. <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291554-introduction">06-creating-a-base-flask-app</a>
+   1.  <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291593-introduction">07-blueprints-and-jinja-2-templates</a>
+   1. <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291601-introduction">08-testing-and-code-quality</a>
+   1. <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291624-introduction">09-creating-a-cli-script</a>
+   1. <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291685-introduction">10-using-our-first-flask-extension</a>
+   1. <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291698-introduction">11-creating-a-contact-form</a>
    
+   1. <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291745-introduction">12-creating-a-complete-user-system</a>
+   1. <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291762-introduction">13-creating-a-custom-admin-dashboard</a>
+   1. <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291775-introduction">14-logging-middleware-and-error-handling</a>
+   1. <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291784-introduction">15-quality-of-life-cli-improvements</a>
+   1. <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291788-introduction">16-accepting-recurring-payments</a>
+   1. <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291817-going-over-the-requirements-txt-changes">17-building-the-snake-eyes-game</a>
+   1. <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291832-configuring-the-app-for-purchases">18-processing-microtransactions</a>
+   1. <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291840-what-is-a-database-migration">19-database-migrations</a>
+   1. <a target="_blank" href="https://courses.nickjanetakis.com/courses/take/build-a-saas-app-with-flask/lessons/2291851-introduction">20-internationalization-i18n</a>
+   <br /><br />
+
+   Each folder contains a more finished set of files than the previous folder.
+
    Videos for each lesson provide a walk-through of the code above. 
 
+   Coding challenges at the end of each lesson describe the changes you make to each folder.
+   
    PROTIP: The version in the course was the way things were several versions back.
    Since then, Nick has created several updates (May 2018, April, August, Oct, Dec of 2019).
-   That is why the author counts so many videos.
+   Update videos are included in the total count of videos for the course.
+   This is a very valuable approach as you can see the progression of underlying library changes affecting app code over time.
 
-1. Each lesson is activated by building Docker
+1. Activate each lesson (to see the UI) by navigating to the folder to build Docker:
 
    <pre><strong>docker-compose up --build</strong></pre>
 
