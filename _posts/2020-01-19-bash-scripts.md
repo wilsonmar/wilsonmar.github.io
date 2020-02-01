@@ -63,16 +63,16 @@ NOTE: This page is still actively under construction.
 
 <hr />
 
-Each feature of the script is explained below:
-
-TODO: We could instead have install steps in the Dockerfile, but a bash script provides flexibility of enviornments.
-
 > This article presents a logical ordering of concepts presented in a succint way, as a hands-on narrated scenic tour.
+
+   Each feature of the script is explained below:
 
 1. View the install script at:
 
-   <pre><strong><a target="_blank" href="https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh">https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh</a>
+   <pre><strong><a target="_blank" href="https://github.com/wilsonmar/DevSecOps/blob/master/bash/sample.sh">https://github.com/wilsonmar/DevSecOps/blob/master/bash/sample.sh</a>
    </strong></pre>
+
+   TODO: The script creates the app locally, the builds a Docker image based on a Dockerfile, runs the app, and if it passes tests, stores it in Dockerhub.
 
 
    ## Shebang and comments
@@ -219,24 +219,30 @@ A sample response:
 
 <a name="Args"></a>
 
-<pre>   USAGE EXAMPLE during testing:
-   ./sample.sh -h -v -I -U -c -s -r -a -o
-When you're done: ./sample.sh -D -R
+<pre>================================================ v0.52
+USAGE EXAMPLE during testing:
+./sample.sh -v -E -i -o  # Ruby app
+./sample.sh -v -E -I -U -c -s -r -a -w  # Python app
+USAGE EXAMPLE after testing:
+./sample.sh -v -D -M -C
 OPTIONS:
-   -h           to display this -help list
+   -E           to set -e to stop on error
+   -x           to set sudoers -e to stop on error
    -v           to run -verbose (list space use and each image to console)
+   -i           -install Ruby and Refinery
    -I           -Install brew, docker, docker-compose
    -U           -Upgrade packages
    -c           -clone from GitHub
-   -s           Use -secrets file in your user home folder
-   -n "John Doe"         GitHub user -name
-   -e "john_doe@a.com"   GitHub user -email
-   -p " "    Project folder -path 
-   -r           -restart Docker before run
+   -s           -set GitHub user info from ~/.secrets.sh in your user home folder
+   -n "John Doe"            GitHub user -name
+   -e "john_doe@gmail.com"  GitHub user -email
+   -P " "    Project folder -path
+   -r           start Docker before -run
    -a           to -actually run docker-compose
-   -o           to -open web page in default browser
-   -D           to -delete files after run (to save disk space)
-   -R           to -Remove cloned files after run (to save disk space)
+   -w           to open/view -web page in default browser
+   -D           to -Delete files after run (to save disk space)
+   -M           to remove Docker iMages pulled from DockerHub
+   -C           to remove -Cloned files after run (to save disk space)
    </pre>
 
 The USAGE example shows the various parameters that need to be added to specific actions taken by the script.
