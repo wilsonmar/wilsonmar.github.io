@@ -57,9 +57,11 @@ NOTE: This page is still actively under construction.
    <pre>✔ End of script after 1883 seconds and 677960 bytes of disk space.
    </pre>
 
-   If you added the `-o` parameter to the command, the script opens the app in your default browser.
+   If you added the `-o` parameter to the command, the script opens the sample app in your default browser. It doesn't matter what the app is, but for now, the sample app looks like this:
 
    ![bash-scripts-landing-899x355](https://user-images.githubusercontent.com/300046/72588109-3e1ca980-38c5-11ea-965e-a935b8e69498.jpg)
+
+   The internals of the above sample app is described <a target="_blank" href="https://wilsonmar.github.io/python-api-flask">here</a>.
 
 <hr />
 
