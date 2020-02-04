@@ -454,6 +454,14 @@ Paid pre-designed websites :
    like <a target="_blank" href="http://webdesign.tutsplus.com/articles/a-web-designers-site-launch-checklist-including-portable-formats--webdesign-11107">
    this</a>.
 
+<a target="_blank" href="hhttps://jamstack.training/">https://jamstack.training</a>
+Tamas Piros offers free
+
+   * Introduction to the JAMstack - Learn the fundamentals of the JAMstack.
+   * Create a Blog Using the JAMstack - Create, manage and publish your own blog using 11ty and NetlifyCMS.
+   * Create an E-Commerce App with Gatsby - How to utilise the JAMstack when building e-commerce websites
+
+
 
 ## More on front-end software development #
 

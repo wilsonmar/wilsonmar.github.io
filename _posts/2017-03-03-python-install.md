@@ -39,7 +39,8 @@ This has given rise to several versions of Python frameworks being maintained in
 Adding to the confusion is that <a href="#Packaging">various methods of installing Python</a> are incompatible with each other.
 This has given rise to the need for <strong>package managers</strong> such as pip (Python Installation Packager) that enable one to switch among different versions of Python installed.
 
-MacOS does not come installed with a package manager for Python.
+MacOS does not come installed with a package manager for Python
+until pip.
 
 <a href="#PIPz">pip</a> (Python Installation Packager) is built on top of <strong>setuptools</strong> which is what downloads and installs Python packages from the <strong>PyPI (Python Package Index)</strong> library online at <a target="_blank" href="https://pypi.org/">https://pypi.org</a>. 
 

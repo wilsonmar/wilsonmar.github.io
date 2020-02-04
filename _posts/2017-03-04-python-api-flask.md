@@ -1252,6 +1252,12 @@ It was created by the same author as Flask itself.
 <a target="_blank" href="https://www.youtube.com/watch?v=1ByQhAM5c1I" title="PyBay2016">VIDEO: "Flask for Fun and Profit"</a>
 by Armin Ronacher
 
+<a target="_blank" href="https://learning.oreilly.com/videos/building-rest-apis/9781788293143/9781788293143-video1_1">Building REST APIs with Python</a> by Wayne Mary is based on PostgreSQL and Django (not Flask).
+
+Continuous API Management
+Copyright © 2019 Mehdi Medjaoui, Erik Wilde, Mitra Pandey Consulting, Ltd., and Amundsen.com
+
+
 ## More about Python
 
 This is one of a series about Python:
