@@ -166,6 +166,10 @@ Introduction to Time Series</a>
 
 * Promethius for DevOps (highly available with scaleout?)
 
+* <a target="_blank" href="https://github.com/cortexproject/cortex">Cortex</a>
+   is a time-series built on Prometheus to be horizontally scalable, highly available,
+   multi-tenant, long-term storage.
+
 * OpenTSDB is a layer on top of HBase.
 
 * TimescaleDB, an open source time-series database engineered from PostgreSQL, 

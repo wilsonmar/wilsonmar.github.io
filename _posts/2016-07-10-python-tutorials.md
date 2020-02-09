@@ -249,9 +249,11 @@ Game Programming with Python and PyGame
 Dec 17, 2013 4h 18m</a>
 by Filip Ekberg
 
-Dan Bader:
+### Dan Bader:
 
    * <a target="_blank" href="https://realpython.com/">Real Python</a>
+
+   * <a target="_blank" href="https://www.amazon.com/Python-Tricks-Buffet-Awesome-Features-ebook/dp/B0785Q7GSY/">BOOK</a> Python Tricks:  A Buffet of Awesome Python Features
 
    * Dan Bader has emails and courses on Python: <a target="_blank" href="https://www.youtube.com/watch?v=p-89r5QvQvQ" title="Aug 23, 2017">VIDEO: What Python Projects Should I Build to Get a Job?</a>
    
@@ -262,6 +264,15 @@ Dan Bader:
 
    * Object-oriented programming with classes and their methods
    * <a href="#Cloud">Cloud Python</a>
+
+## O'Reilly
+
+<a target="_blank" href="https://www.amazon.com/Python-DevOps-Ruthlessly-Effective-Automation-dp-149205769X/dp/149205769X/">
+Python for DevOps: Learn Ruthlessly Effective Automation 1st Edition</a>
+(by Noah Gift, Kennedy Behrman, Alfredo Deza, Grig Gheorghiu)
+shows you how to use Python for everyday Linux systems administration tasks with today’s most useful DevOps tools, including Docker, Kubernetes, and Terraform.
+
+
 
 ## Linux Academy
 

@@ -60,6 +60,10 @@ To enable that:
 <li> Close the dialog by clicking the red dot at the upper left corner.</li>
 </ol>
 
+## Within Text Editors/IDEs
+
+Many prefer the terminals built into VS Code and other editors/IDEs.
+
 ## Text wrapping 
 
 This page contains notes for system administrators and developers,
@@ -67,6 +71,15 @@ who need to control Macs below the UI level, which require
 typing commands into a command-line terminal screen.
 
 1. To avoid text wrapping, cursor on the right edge to expand the screen width.
+
+### Hyper terminal
+
+Get the .dmg installer from the website
+<a target="_blank" href="https://hyper.is/">https://hyper.is</a>. It's <a target="_blank" href="https://wesbos.com/uses/">used by</a> tutorials author Wes Bos.
+
+Unlike Apple's Terminal, which is closed-source, Hyper is an open-source and extensible terminal emulator. It is available on MacOS, Windows, and Linux because it’s built using Electron (the same platform that powers Atom, Slack, and Brave). So it can be slow.
+
+To customize Hyper, add the name of <a target="_blank" href="https://github.com/bnb/awesome-hyper">many packages</a> to its config file <tt>~/.hyper.js</tt>. Build an extension based on <a target="_blank" href="https://hyper.is/#extensions-api">hyper.is/#extensions-api</a>.
 
 ### iTerm2 for split pane
 

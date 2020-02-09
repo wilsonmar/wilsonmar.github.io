@@ -997,6 +997,9 @@ https://medium.freecodecamp.org/sh-silence-your-bash-scripts-by-coding-your-own-
 https://www.udemy.com/git-bash/
 paid course
 
+Learning the bash Shell, 3rd Edition, by Cameron Newham (O’Reilly)
+
+
 ## More on DevOps #
 
 This is one of a series on DevOps:

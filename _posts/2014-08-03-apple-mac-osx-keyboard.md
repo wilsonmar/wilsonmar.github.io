@@ -816,10 +816,24 @@ enables you to use a single keyboard and mouse on Mac, Windows, and Linux.
 ## Resources #
 
 * <a target="_blank" href="https://support.apple.com/en-us/HT201236">
-   Apple's Mac keyboard shortcuts</a>
+   Apple's default Mac keyboard shortcuts</a>
 
 * <a target="_blank" href="http://pc.net/resources/shortcuts/mac_os_x#startup">
    Mac OS X Keyboard Shortcuts</a>
+
+Instead of the built-in command+Tab to switch among active programs, follow <a target="_blank" href="https://blog.craftlab.hu/how-to-become-a-modern-magician-productivity-tips-for-devs-on-macos-7a886c43d870">Daniel Szpisjak's How to become a modern magician? - productivity tips for devs on macOS</a>
+describes setup and use of <a target="_blank" href="http://www.hammerspoon.org/go/#setup">Hammerspoon</a> Lua language which uses a complex combination such as Shift+Control+Option to be a "Hyper" key such as the CapsLock. <a target="_blank" href="https://pqrs.org/osx/karabiner/">Karabiner+Elements</a>
+
+Assign Hyper+X to a specific program, and the pop-up shown by command+Tab will not come up.
+
+## Tmux
+
+Multiplexer
+
+## Bash-it
+
+https://github.com/Bash-it/bash-it
+community Bash framework of autocompletion, themes, aliases, custom functions that rips off https://github.com/robbyrussell/oh-my-zsh 
 
 ## More on OSX #
 

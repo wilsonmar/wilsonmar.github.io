@@ -61,7 +61,9 @@ NOTE: This page is still actively under construction.
 
    ![bash-scripts-landing-899x355](https://user-images.githubusercontent.com/300046/72588109-3e1ca980-38c5-11ea-965e-a935b8e69498.jpg)
 
-   The internals of the above sample app is described <a target="_blank" href="https://wilsonmar.github.io/python-api-flask">here</a>.
+   The internals of the above sample Python app is described <a target="_blank" href="https://wilsonmar.github.io/python-api-flask">here</a>.
+
+   TODO: Load a sample NodeJs (JavaScript) app from <a target="_blank" href="https://github.com/wesbos/Learn-Node/tree/master/starter-files">https://github.com/wesbos/Learn-Node/tree/master/starter-files</a>
 
 <hr />
 

@@ -100,7 +100,7 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 1. WTForms-Components
 1. Fontawesome
 1. Gunicorn - application server for both development and production 
-1. Jinga2
+1. <a target="_blank" href="https://jinja.palletsprojects.com/en/">Jinga2</a> templating language for Python
 1. JQuery (not ReactJs) used by Bootstrap
 1. JSON format files
 1. NodeJs
@@ -1254,8 +1254,8 @@ by Armin Ronacher
 
 <a target="_blank" href="https://learning.oreilly.com/videos/building-rest-apis/9781788293143/9781788293143-video1_1">Building REST APIs with Python</a> by Wayne Mary is based on PostgreSQL and Django (not Flask).
 
-Continuous API Management
-Copyright © 2019 Mehdi Medjaoui, Erik Wilde, Mitra Pandey Consulting, Ltd., and Amundsen.com
+<a target="_blank" href="https://learning.oreilly.com/library/view/continuous-api-management/9781492043546/">Continuous API Management</a>
+Copyright O'Reilly 2019 by Mehdi Medjaoui, Erik Wilde, Mitra Pandey Consulting, Ltd., and Amundsen.com
 
 
 ## More about Python
