@@ -42,6 +42,41 @@ NOTE: This page is still actively under construction.
    <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh)"
    </strong></pre>
 
+   <a name="Args"></a>
+
+   <pre>================================================ v0.59
+USAGE EXAMPLE during testing:
+./sample.sh -v -j -a  # NodeJs app
+./sample.sh -v -i -o  # Ruby app
+./sample.sh -v -I -U -c -s -r -a -w  # Python app
+USAGE EXAMPLE after testing:
+./sample.sh -v -D -M -C
+OPTIONS:
+   -E           to set -e to NOT stop on error
+   -X           to set -x to trace command lines
+   -v           to run -verbose (list space use and each image to console)
+   -g           -google cloud
+   -i           -install Ruby and Refinery
+   -j           -install JavaScript (NodeJs) app with MongoDB
+   -y           -install Python in Virtualenv
+   -I           -Install brew, docker, docker-compose
+   -U           -Upgrade packages
+   -c           -clone from GitHub
+   -s           -set GitHub user info from ~/.secrets.sh in your user home folder
+   -n "John Doe"            GitHub user -name
+   -e "john_doe@gmail.com"  GitHub user -email
+   -P " "    Project folder -path
+   -r           start Docker before -run
+   -b           to -build Docker image
+   -a           to -actually run docker-compose
+   -o           to open/view -web page in default browser
+   -w           to open/view -web page in default browser
+   -D           to -Delete files after run (to save disk space)
+   -M           to remove Docker iMages pulled from DockerHub
+   -C           to remove -Cloned files after run (to save disk space)
+   -K           to stop processes at end of run (to save CPU)
+   </pre>
+
 1. To execute the script to do stuff, copy this command which has 
    <strong>-v -I -U -c -s -r -a -o</strong> at the end of the line to specify <a href="#Args">parameters</a> controlling what features are invoked each run:
 
@@ -219,35 +254,7 @@ Checking for whether parameters were added is done by this code:
    args_prompt
 fi</pre>
 
-A sample response:
-
-<a name="Args"></a>
-
-<pre>================================================ v0.52
-USAGE EXAMPLE during testing:
-./sample.sh -v -E -i -o  # Ruby app
-./sample.sh -v -E -I -U -c -s -r -a -w  # Python app
-USAGE EXAMPLE after testing:
-./sample.sh -v -D -M -C
-OPTIONS:
-   -E           to set -e to stop on error
-   -x           to set sudoers -e to stop on error
-   -v           to run -verbose (list space use and each image to console)
-   -i           -install Ruby and Refinery
-   -I           -Install brew, docker, docker-compose
-   -U           -Upgrade packages
-   -c           -clone from GitHub
-   -s           -set GitHub user info from ~/.secrets.sh in your user home folder
-   -n "John Doe"            GitHub user -name
-   -e "john_doe@gmail.com"  GitHub user -email
-   -P " "    Project folder -path
-   -r           start Docker before -run
-   -a           to -actually run docker-compose
-   -w           to open/view -web page in default browser
-   -D           to -Delete files after run (to save disk space)
-   -M           to remove Docker iMages pulled from DockerHub
-   -C           to remove -Cloned files after run (to save disk space)
-   </pre>
+<a href="#args">A sample response was shown above</a>.
 
 The USAGE example shows the various parameters that need to be added to specific actions taken by the script.
 

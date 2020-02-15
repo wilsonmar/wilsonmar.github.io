@@ -22,6 +22,11 @@ This tutorial picks up from <a target="_blank" href="https://github.com/wilsonma
 
 NOTE: This page is still actively under construction.
 
+A prime example of a production shell script is
+<a target="_blank" href="https://github.com/toniblyx/prowler">
+Prowler: AWS CIS Benchmark Tool at https://github.com/toniblyx/prowler</a> for AWS Security Best Practices Assessment, Auditing, Hardening and Forensics Readiness.
+
+
 
 <hr />
 
