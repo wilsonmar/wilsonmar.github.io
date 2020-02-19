@@ -1257,6 +1257,9 @@ by Armin Ronacher
 <a target="_blank" href="https://learning.oreilly.com/library/view/continuous-api-management/9781492043546/">Continuous API Management</a>
 Copyright O'Reilly 2019 by Mehdi Medjaoui, Erik Wilde, Mitra Pandey Consulting, Ltd., and Amundsen.com
 
+<a target="_blank" href="https://www.codementor.io/@jqn/deploy-a-flask-app-on-aws-ec2-13hp1ilqy2">
+Deploy a Flask app on AWS EC2</a>
+
 
 ## More about Python
 
