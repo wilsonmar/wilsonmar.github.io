@@ -3,7 +3,7 @@ layout: post
 title: "GitHub GraphQL API"
 excerpt: "GitHub's REST API was perfect. Now THIS is more perfect."
 tags: [GitHub, API, GraphQL]
-date: "2016-11-05"
+date: "2020-02-15"
 file: "github-graphql"
 image:
 # pic green easter island 2 hillside 1920x1080
@@ -18,18 +18,77 @@ comments: true
 
 GitHub provides a well-known API that accepts a lot of traffic.
 
-GitHub's API is considered an industry-standard we would do well to emulate:
+GitHub's was among the first to use leading-edge API techniques, so 
+their APIs are considered an industry-standard we would do well to emulate:
 
    * [HATEOS-based REST API, (my BFF last year)](/github-api/) such as 
   [PowerShellforGitHub](/powershell-github/)
 
-   * GraphQL (this article)
+   * Facebook's GraphQL (described by <a target="_blank" href="https://wilsonmar.github.io/graphql/">my article on GraphQL</a>)
+
+Those who write custom servers communicating in GraphQL would use bindings for 
+
+   * Facebook's Relay
+   * Flask at https://github.com/graphql-python/flask-graphql
+   * Django at https://docs.graphene-python.org/projects/django/en/latest/
+   * MongoDB at https://github.com/graphql-python/graphene-mongo
+   * SQLAlchemy at https://docs.graphene-python.org/projects/sqlalchemy/en/latest/
+   * Google App Engine (GAE) at https://docs.graphene-python.org/projects/gae/en/latest/
+
 
 ## GitHub's GraphQL
 
-See https://developer.github.com/early-access/graphql/
+I first looked at GitHub's GraphQL API in 2016 during their <strike>https://developer.github.com/early-access/graphql/</strike> which included the <strike>https://developer.github.com/early-access/graphql/explorer/</strike>
 
-Use the https://developer.github.com/early-access/graphql/explorer/
+GraphQL communicates in a Schema Definition Language (SDL) defined at 
+https://graphql.org/learn/schema/
+
+
+### Okta SSO authentication
+
+First of all, if you're using GitHub Enterprise behind Okta SSO, you first need code to authenticate.
+
+## Code first?
+
+https://ariadne.readthedocs.io/
+
+
+### Sample Python calls
+
+https://github.com/graphql-python/gql
+is a GraphQL client for Python. Plays nicely with graphene, graphql-core, graphql-js and any other GraphQL implementation compatible with the spec.
+
+The canonical websitwe on GraphQL has sample Python code: https://graphql.org/code/#python
+
+## Graphene for Python
+
+1. Visit <a target="_blank" href="https://graphene-python.org/">https://graphene-python.org</a>, 
+   the front page for the Python library to build GraphQL APIs.
+
+1. I have that "hello world" code in my repo at:
+
+   <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/graphql-hello.py">
+   https://github.com/wilsonmar/python-samples/blob/master/graphql-hello.py</a>
+
+1. I have that setup to run within a Virtual Environment after invoking <tt>pip install graphene</tt>
+
+   ???
+
+1. When executed, the response from <tt>graphql-hello.py</tt> is simply:
+
+   <pre>Hello world</pre>
+
+1. Look at
+
+   https://docs.graphene-python.org/en/stable/quickstart/#an-example-in-graphene
+
+
+https://docs.graphene-python.org/en/stable/
+
+https://github.com/graphql-python/graphene
+
+
+## Bindings
 
 Perform an <a target="_blank" href="http://graphql.org/learn/introspection/">
 introspection query</a>.
