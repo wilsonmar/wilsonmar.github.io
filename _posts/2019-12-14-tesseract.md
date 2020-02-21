@@ -16,21 +16,21 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+The word "Tesseract" was adopted as the name of the <a target="_blank" href="https://github.com/tesseract-ocr/tesseract"> OCR (Optical Character Recognition) engine</a> program because it is able to recognize multiple-directional 3D lines.
+
 <a target="_blank" href="https://marvelcinematicuniverse.fandom.com/wiki/Tesseract"><img align="right" alt="tesseract-mcu2012-310x310.png" width="100" height="100" src="https://user-images.githubusercontent.com/300046/70930552-b6f0c300-1ff2-11ea-8326-641532761f51.png">
 The Tesseract shown in the Marvel Cinematic Universe</a> is a (3 dimensional) physical cube. But the object has a 4th dimension of time, thus enabling time travel in the MCU and in Madeleine L'Engle's novel/movie "A Wrinkle in Time".
 
 <a target="_blank" href="https://www.youtube.com/watch?v=iGO12Z5Lw8s">VIDEO: <img align="right" alt="tesseract-4d-proj-275x203.png" width="100" src="https://user-images.githubusercontent.com/300046/70930317-1f8b7000-1ff2-11ea-9a7c-2c62b3b3b00c.png"></a> 
 But a Tesseract in <a target="_blank" href="http://mathworld.wolfram.com/Tesseract.html">science (real life)</a> is <strong>conceptual</strong> "w" <strong>4th dimensional axis</strong> shown as a shadow.<a target="_blank" href="https://www.wikiwand.com/en/Tesseract">*</a> 
 
-Anyway, the word Tesseract was adopted as the name of the <a target="_blank" href="https://github.com/tesseract-ocr/tesseract"> OCR (Optical Character Recognition) engine</a> program because it is able to recognize multiple-directional 3D lines.
-
 ## Installation
 
 Tesseract 4 is included with Ubuntu 18.04+.
 
-1. Install a pre-built executable binary at <a target="_blank" href="https://github.com/tesseract-ocr/tesseract/wiki">https://github.com/tesseract-ocr/tesseract/wiki</a> for various operating systems.
+1. for various operating systems, install a pre-built executable binary at <a target="_blank" href="https://github.com/tesseract-ocr/tesseract/wiki">https://github.com/tesseract-ocr/tesseract/wiki</a>. 
 
-   On macOS:
+   On macOS: 
 
    <pre><strong>brew install tesseract --HEAD
    pip install pytesseract</strong></pre>

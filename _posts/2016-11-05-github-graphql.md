@@ -26,27 +26,73 @@ their APIs are considered an industry-standard we would do well to emulate:
 
    * Facebook's GraphQL (described by <a target="_blank" href="https://wilsonmar.github.io/graphql/">my article on GraphQL</a>)
 
-Those who write custom servers communicating in GraphQL would use bindings for 
+My focus here is more about a client program.
 
-   * Facebook's Relay
-   * Flask at https://github.com/graphql-python/flask-graphql
-   * Django at https://docs.graphene-python.org/projects/django/en/latest/
-   * MongoDB at https://github.com/graphql-python/graphene-mongo
-   * SQLAlchemy at https://docs.graphene-python.org/projects/sqlalchemy/en/latest/
-   * Google App Engine (GAE) at https://docs.graphene-python.org/projects/gae/en/latest/
+Internally, GitHub is a big user of the Ruby language. Thus:
+https://developer.github.com/enterprise/2.20/apps/quickstart-guides/using-the-github-api-in-your-app/
+
+https://github.com/probot/probot
+written in TypeScript language for NodeJs, is a framework to extend the functionality of GitHub, such as <a target="_blank" href="https://github.com/search?q=topic%3Aprobot-app&type=Repositories">these, listed by number of stars</a>.
 
 
 ## GitHub's GraphQL
 
 I first looked at GitHub's GraphQL API in 2016 during their <strike>https://developer.github.com/early-access/graphql/</strike> which included the <strike>https://developer.github.com/early-access/graphql/explorer/</strike>
 
-GraphQL communicates in a Schema Definition Language (SDL) defined at 
-https://graphql.org/learn/schema/
+GitHub's guides provide sample API calls using the curl command-line utility.
+
+   * https://developer.github.com/v3/guides/getting-started/<br />
+   (Developer Guide)
+   * https://docs.graphene-python.org/en/stable/quickstart
+   * https://developer.github.com/enterprise/2.20/
+   * https://developer.github.com/enterprise/2.20/apps/<br />
+   Building apps
+   <br /><br />
+
+But I prefer using Python example client code for better handling of results (looping through a list, saving to a database, etc.)
+
+<a name="PyGitHub"></a>
+
+## PyGitHub
+
+1. Visit <a target="_blank" href="https://github.com/PyGithub/PyGithub">
+https://github.com/PyGithub/PyGithub</a>, which is now being maintained by Steve Kowalik, who works at SUSE in Syndey, Australia.
+
+1. <a target="_blank" href="https://pygithub.readthedocs.io/en/latest/introduction.html">Docs on PyGitHub</a> shows sample Python code.
+   I modified it (with added notes) in my repo at:
+
+   <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/pygithub-hello.py">
+   https://github.com/wilsonmar/python-samples/blob/master/pygithub-hello.py</a>
+
+   My version of the code references system variables so that secrets are not stored in code on public GitHub.
+
+1. Before execution, in your home user folder create a file named ".pygithub-secrets.env" containing your information instead of mine:
+
+   <pre>MY_GIT_USER_NAME="JohnDoe"
+MY_GIT_USER_EMAIL="johndoe@gmail.com"
+MY_GITHUB_USER_NAME="JohnDoe"
+MY_GITHUB_PASSWORD="Pa$$w0rdisnotsecure"
+MY_GITHUB_TOKEN="23441234f13b1134c36667a"
+   </pre>
+
+1. Looking at the code, the program looks for that default file name holding secrets if there is no override file specified with the program execution call. If neither is found, the program falls back to reading individual environment variables.
+
+1. When executed, the response from <tt>pygithub-hello.py</tt> is simply:
+
+   <pre>??? </pre>
+
+   <tt>pip install pygithub</tt> is based on code:
 
 
-### Okta SSO authentication
 
-First of all, if you're using GitHub Enterprise behind Okta SSO, you first need code to authenticate.
+### Okta/SAML SSO authentication
+
+First of all, if you're using GitHub Enterprise behind the Okta identity provider (IdP) for SSO (Single Sign On), you first need code to authenticate.
+
+https://help.github.com/en/github/authenticating-to-github/about-authentication-with-saml-single-sign-on
+
+https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-identity-and-access-management-with-saml-single-sign-on
+
 
 ## Code first?
 
@@ -55,63 +101,10 @@ https://ariadne.readthedocs.io/
 
 ### Sample Python calls
 
-https://github.com/graphql-python/gql
+<a target="_blank" href="https://github.com/graphql-python/gql">https://github.com/graphql-python/gql</a>
 is a GraphQL client for Python. Plays nicely with graphene, graphql-core, graphql-js and any other GraphQL implementation compatible with the spec.
 
-The canonical websitwe on GraphQL has sample Python code: https://graphql.org/code/#python
-
-## Graphene for Python
-
-1. Visit <a target="_blank" href="https://graphene-python.org/">https://graphene-python.org</a>, 
-   the front page for the Python library to build GraphQL APIs.
-
-1. I have that "hello world" code in my repo at:
-
-   <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/graphql-hello.py">
-   https://github.com/wilsonmar/python-samples/blob/master/graphql-hello.py</a>
-
-1. I have that setup to run within a Virtual Environment after invoking <tt>pip install graphene</tt>
-
-   ???
-
-1. When executed, the response from <tt>graphql-hello.py</tt> is simply:
-
-   <pre>Hello world</pre>
-
-1. Look at
-
-   https://docs.graphene-python.org/en/stable/quickstart/#an-example-in-graphene
-
-
-https://docs.graphene-python.org/en/stable/
-
-https://github.com/graphql-python/graphene
-
-
-## Bindings
-
-Perform an <a target="_blank" href="http://graphql.org/learn/introspection/">
-introspection query</a>.
-As the GraphQL schema matures, new data types appear.
-
-Make a single call to retrieve (rather than many REST API calls).
-
-Response is structured using the same JSON hierarchy as the call.
-
-Changes can occur with less fuss than REST API.
-
-
-## PowerShellforGitHubGraphQL module
-
-I couldn't find a PSGallery module for referencing GitHub's GraphQL,
-so I set out to create one when that's what Karol Kaczmarek
-suggested I do.
-
-http://www.systemcentercentral.com/day-19-creating-online-powershellget-repository/
-
-  [PowerShellforGitHub](/powershell-github/)
-
-The Functions folder contains Private and Public folders.
+The canonical websit on GraphQL has sample Python code: <a target="_blank" href="https://graphql.org/code/#python">https://graphql.org/code/#python</a>
 
 
 
