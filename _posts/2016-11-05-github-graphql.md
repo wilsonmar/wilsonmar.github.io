@@ -109,9 +109,9 @@ The canonical websit on GraphQL has sample Python code: <a target="_blank" href=
 
 ## Flask app
 
-<a target="_blank" href="https://cz.linkedin.com/in/pavel-prudk%C3%BD-4711ab88">Pavel Prudký</a> shared his <a target="_blank" href="https://datahappy.wordpress.com/2019/07/05/flask-mvc-github-integration-boilerplate-project-finished/">Flask mvc apps to access GitHub</a> on <a target="_blank" href="https://github.com/datahappy1/flask_mvc_github_example_project">his GitHub</a>:
+<a target="_blank" href="https://cz.linkedin.com/in/pavel-prudk%C3%BD-4711ab88">Pavel Prudký (from Prague)</a> shared his <a target="_blank" href="https://datahappy.wordpress.com/2019/07/05/flask-mvc-github-integration-boilerplate-project-finished/">Python Flask mvc app to access GitHub</a> on <a target="_blank" href="https://github.com/datahappy1/flask_mvc_github_example_project">his GitHub</a>:
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/75112389-59d84580-5611-11ea-8c0c-decf2b595a05.png"><img alt="github-flask-app-665x409.png" src="https://user-images.githubusercontent.com/300046/75112389-59d84580-5611-11ea-8c0c-decf2b595a05.png"></a>
+<a target="_blank" title="github-flask-app-749x461.png" href="https://user-images.githubusercontent.com/300046/75112636-aae93900-5613-11ea-8189-d7777af60e0a.png"><img alt="github-flask-app-665x409.png" src="https://user-images.githubusercontent.com/300046/75112389-59d84580-5611-11ea-8c0c-decf2b595a05.png"></a>
 
 
 ## More on API Microservices #
