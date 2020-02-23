@@ -77,9 +77,9 @@ MY_GITHUB_TOKEN="23441234f13b1134c36667a"
 
 1. Looking at the code, the program looks for that default file name holding secrets if there is no override file specified with the program execution call. If neither is found, the program falls back to reading individual environment variables.
 
-1. When executed, the response from <tt>pygithub-hello.py</tt> is simply:
+   pygithub.sh
 
-   <pre>??? </pre>
+1. When executed, the response from <tt>pygithub-hello.py</tt> is simply:
 
    <tt>pip install pygithub</tt> is based on code:
 
@@ -111,7 +111,7 @@ The canonical websit on GraphQL has sample Python code: <a target="_blank" href=
 
 <a target="_blank" href="https://cz.linkedin.com/in/pavel-prudk%C3%BD-4711ab88">Pavel Prudký</a> shared his <a target="_blank" href="https://datahappy.wordpress.com/2019/07/05/flask-mvc-github-integration-boilerplate-project-finished/">Flask mvc apps to access GitHub</a> on <a target="_blank" href="https://github.com/datahappy1/flask_mvc_github_example_project">his GitHub</a>:
 
-![github-flask-app-665x409](https://user-images.githubusercontent.com/300046/75112389-59d84580-5611-11ea-8c0c-decf2b595a05.png)
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/75112389-59d84580-5611-11ea-8c0c-decf2b595a05.png"><img alt="github-flask-app-665x409.png" src="https://user-images.githubusercontent.com/300046/75112389-59d84580-5611-11ea-8c0c-decf2b595a05.png"></a>
 
 
 ## More on API Microservices #
