@@ -151,7 +151,6 @@ There are several organizations providing certification exams and training based
    VIDEO</a>: <a target="_blank" title="Jul 9, 2018" href="https://devopsinstitute.com/certifications/devops-foundation/">16-hour prep class</a> are taught at Cloudbees conferences for $1,500.
 
 
-
 ## References
 
 Rather than repeating others, let me link to the most influencial pieces about DevOps:
@@ -160,3 +159,10 @@ Rather than repeating others, let me link to the most influencial pieces about D
 * <a target="_blank" href="https://12factor.net">12factor.net</a> (The Twelve Factor App)
 * <a target="_blank" href="http://www.clearlytech.com/2014/01/04/12-factor-apps-plain-english/">12 Factor App in plain english</a>
 * The acronym CAMS (Culture, Automation, Measurement, Sharing) was coined by Damon Edwards (@damonedwards) and John Willis (@botchagalupe), authors of DevOps Cafe, in the early 2010s. <a target="_blank" href="https://squadex.com/insights/how-to-implement-devops-with-cams/">*</a>
+* <a href="https://landing.google.com/sre/interview/ben-treynor/">Google's what is Site Reliability Engineering?</a>
+* <a href="https://content.pivotal.io/intersect/sre-in-15-minutes">SRE and the Value of Treating Operations as a Software Problem</a>
+* <a href="https://learning.oreilly.com/library/view/the-site-reliability/9781492029496/">The Site Reliability Workbook</a>
+* <a href="https://web.devopstopologies.com/images/2019-07-30--DOTs-types-thumb.png">DevOps Team Types</a>
+* <a href="https://web.devopstopologies.com/images/2019-07-30--DOTs-anti-thumb.png">DevOps Anti-Types</a>
+* <a href="https://www.amazon.com/Team-Topologies-Organizing-Business-Technology/dp/1942788819">BOOK: Team Topologies: Organizing Business and Technology Teams for Fast Flow</a>
+* <a href="https://www.amazon.com/Practice-Cloud-System-Administration-Practices/dp/032194318X">Practice of Cloud System Administration: Designing and Operating Large Distributed Systems</a>

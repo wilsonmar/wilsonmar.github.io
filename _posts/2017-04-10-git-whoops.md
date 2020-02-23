@@ -287,7 +287,7 @@ ee1a5c98 Update</pre>
 
    First figure out the specific commit id using the git log command (such as "5a34def")
 
-   <pre><strong>git log</em>
+   <pre><strong>git log
    </strong></pre>
 
    Then supply that commit id in the command:
