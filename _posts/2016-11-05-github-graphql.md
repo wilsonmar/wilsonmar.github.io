@@ -107,6 +107,12 @@ is a GraphQL client for Python. Plays nicely with graphene, graphql-core, graphq
 The canonical websit on GraphQL has sample Python code: <a target="_blank" href="https://graphql.org/code/#python">https://graphql.org/code/#python</a>
 
 
+## Flask app
+
+<a target="_blank" href="https://cz.linkedin.com/in/pavel-prudk%C3%BD-4711ab88">Pavel Prudký</a> shared his <a target="_blank" href="https://datahappy.wordpress.com/2019/07/05/flask-mvc-github-integration-boilerplate-project-finished/">Flask mvc apps to access GitHub</a> on <a target="_blank" href="https://github.com/datahappy1/flask_mvc_github_example_project">his GitHub</a>:
+
+![github-flask-app-665x409](https://user-images.githubusercontent.com/300046/75112389-59d84580-5611-11ea-8c0c-decf2b595a05.png)
+
 
 ## More on API Microservices #
 
