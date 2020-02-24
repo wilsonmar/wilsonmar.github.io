@@ -166,3 +166,5 @@ Rather than repeating others, let me link to the most influencial pieces about D
 * <a href="https://web.devopstopologies.com/images/2019-07-30--DOTs-anti-thumb.png">DevOps Anti-Types</a>
 * <a href="https://www.amazon.com/Team-Topologies-Organizing-Business-Technology/dp/1942788819">BOOK: Team Topologies: Organizing Business and Technology Teams for Fast Flow</a>
 * <a href="https://www.amazon.com/Practice-Cloud-System-Administration-Practices/dp/032194318X">Practice of Cloud System Administration: Designing and Operating Large Distributed Systems</a>
+* <a target="_blank" href="http://download.microsoft.com/download/C/4/A/C4A14099-FEA4-4CB3-8A8F-A0C2BE5A1219/The%20Release%20Pipeline%20Model.pdf">Microsoft's Release Pipeline Model - Download PDF</a> is a high-level description before Azure DevOps appeared.
+* https://continuousdelivery.com/implementing/patterns/
