@@ -26,9 +26,7 @@ In one survey of developers, social review of code was voted as yielding more be
 
 "Pair Programming" is more than just sharing a keyboard.
 
-The sterotype of a programmer is not a "chatty social butterfly".
-
-It takes effort to get everyone to take the time to consistently collaborate with others.
+It takes effort over time to get everyone to be ready, willing, and able to consistently collaborate with others.
 
 So what do we do? I have these suggestions:
 
