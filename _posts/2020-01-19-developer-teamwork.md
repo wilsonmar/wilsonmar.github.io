@@ -35,7 +35,7 @@ So what do we do? I have these suggestions:
    3. <a href="#Terms">Agree on the vocabulary</a>
    4. <a href="#CodeStructure">Structure code for testing</a>
    5. <a href="#Rules">Specify linter rules included and excluded</a>
-   6. <a href="#Track">Track results over time</a>
+   6. <a href="#Track">Track outcomes over time</a>
    7. <a href="#Commits">Run checks as part of git commit/push</a>
    <br /><br />
 
@@ -219,7 +219,16 @@ So what do we do? I have these suggestions:
 
    <a name="Track"></a>
 
-## 6. Track results over time
+## 6. Track outcomes over time
+
+   Accumulation of "Technical debt" is like financial debt, which robs <strong>flexibility in the future</strong>,
+   when changes can't be made until blocking issues are fixed.
+
+   So shifting focus to longer-term objectives is often the key to shift the mindset of those who are comfortable with garbage all around them. It takes a certain amount of discipline to keep work areas (repositories) clean now to avoid misunderstandings by many others in the future.
+
+   This can be a constant source of stress within a team.
+
+   But an automated linter can help find where technical debt exists.
 
    SonarLint on the client and <a target="_blank" href="http://www.sonarqube.org/">SonarQube</a> on a server can reference the same static source code analyzers ("quality profiles") written using <a target="_blank" href="https://rules.sonarsource.com/">SonarSource"</a> technology. 
 
@@ -260,7 +269,7 @@ There you have it. Seven steps to encouraging code reviews to achieve great qual
    3. <a href="#Terms">Agree on the vocabulary</a>
    4. <a href="#CodeStructure">Structure code for testing</a>
    5. <a href="#Rules">Specify linter rules included and excluded</a>
-   6. <a href="#Track">Track results over time</a>
+   6. <a href="#Track">Track outcomes over time</a>
    7. <a href="#Commits">Run checks as part of git commit/push</a>
    <br /><br />
 

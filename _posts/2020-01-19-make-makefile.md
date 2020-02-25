@@ -287,6 +287,37 @@ Exec: $(OBJ)
 
    ??? If you have a large program with many source and/or header files, when you change a file on which others depend, you must recompile all the dependent files. Without a Makefile, this is a very time-consuming task.
 
+
+## Make file Linting
+
+There is an "experimental" linter for Makefiles at https://github.com/mrtazz/checkmake
+
+1. Install the linter's dependency:
+
+   <pre><strong>brew install pandoc
+   brew install go</strong></pre>
+
+1. Use Golang to clone the repo in the $GOPATH ($/gopkgs):
+
+   <pre><strong>go get github.com/mrtazz/checkmake
+   cd $GOPATH/src/github.com/mrtazz/checkmake
+   </strong></pre>
+
+1. build the binary and man page yourself:
+
+   <pre><strong>make
+   </strong></pre>
+
+   WARNING: This is not working for me.
+
+1. Perform linting
+
+   <pre><strong>cd <em>location of Makefile</em>
+   checkmake Makefile
+   </strong></pre>
+
+1. TODO: Add linting to kick off on Git commit.
+
 ## References
 
 <a name="[1]">[1]</a> <a target="_blank" href="https://www.gnu.org/software/make/manual/make.pdf">https://www.gnu.org/software/make/manual/make.pdf</a> is the canonical definition, make version 4.3 as of January 2020.
