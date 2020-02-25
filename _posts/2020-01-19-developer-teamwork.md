@@ -8,7 +8,7 @@ file: "team-reviews"
 image:
 # pair-1900x500
   feature: https://user-images.githubusercontent.com/300046/75252984-b4a5a480-57ab-11ea-9e5e-06340b1b9d81.png
-  credit: Montessori
+  credit: Montessori shutterstock_186382070
   creditlink: https://montessori-school.ca/blog/sharing-or-surrendering
 comments: true
 ---
@@ -92,6 +92,8 @@ So what do we do? I have these suggestions:
    Common Language Protocol
 
    There are many other similar tools, but these are the most popular and supported.
+
+   For Makefile templates to Bash scripts, install and run Daniel Schauenberg's <a target="_blank" href="https://github.com/mrtazz/checkmake">CheckMake</a>
 
    For Python programs, install and run Flake8.
 
