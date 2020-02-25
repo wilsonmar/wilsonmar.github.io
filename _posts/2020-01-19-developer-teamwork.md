@@ -24,9 +24,9 @@ In one survey of developers, social review of code was voted as yielding more be
 
 
 
-"Pair Programming" is more than just sharing a keyboard.
+But "code reviews" and "Pair Programming" are more than just sharing a keyboard.
 
-It takes effort over time to get everyone to be ready, willing, and able to consistently collaborate with others.
+It takes effort over time to get everyone ready, willing, and able to consistently collaborate with others.
 
 So what do we do? I have these suggestions:
 
