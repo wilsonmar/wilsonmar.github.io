@@ -94,16 +94,20 @@ So what do we do? I have these suggestions:
 
    For Python programs, <a target="_blank" href="https://wilsonmar.github.io/git-hooks/#flake8-linter-for-python">install and run Flake8</a>.
 
-   For Java programs, install and run these 3rd-party linters:
+   For Java programs, install and run several 3rd-party static code scanners:<a target="_blank" href="https://blog.idrsolutions.com/2018/03/how-to-run-checkstyle-pmd-and-findbugs-from-maven/">*</a>:
 
    * <a target="_blank" href="http://findbugs.sourceforge.net/">Findbugs</a> finds existing bugs.
 
-   * <a target="_blank" href="http://pmd.sourceforge.net/"> PMD</a> finds patterns that can lead to bugs (e.g. unused variables)
+   * <a target="_blank" href="https://pmd.github.io/"> PMD</a> finds patterns that can lead to bugs (such as unused variables)
    
    * <a target="_blank" href="http://checkstyle.sourceforge.net/"> Checkstyle</a> enforces coding standards and conventions (e.g. whitespace, Javadoc)
    
    * <a target="_blank" href="http://errorprone.info/"> Error Prone</a> hooks into application compile step
 
+   <a target="_blank" href="https://www.youtube.com/watch?v=o4pdkgHfQS4">
+   VIDEO: Using FindBugs, CheckStyle, and PMD from IntelliJ with QAplug</a>
+
+   Note that new rules are added over time.
 
 
    <a name="Collaborative"></a>
