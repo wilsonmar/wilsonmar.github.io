@@ -24,9 +24,11 @@ In one survey of developers, social review of code was voted as yielding more be
 
 
 
-But it's more than just sharing a keyboard.
-to getting everyone to take the time to consistently work with each other.
+"Pair Programming" is more than just sharing a keyboard.
+
 The sterotype of a programmer is not a "chatty social butterfly".
+
+It takes effort to get everyone to take the time to consistently collaborate with others.
 
 So what do we do? I have these suggestions:
 
@@ -95,7 +97,7 @@ So what do we do? I have these suggestions:
 
    For Makefile templates to Bash scripts, install and run Daniel Schauenberg's <a target="_blank" href="https://github.com/mrtazz/checkmake">CheckMake</a>
 
-   For Python programs, install and run Flake8.
+   For Python programs, <a target="_blank" href="https://wilsonmar.github.io/git-hooks/#flake8-linter-for-python">install and run Flake8</a>.
 
    For Java programs, install and run these 3rd-party linters:
 
