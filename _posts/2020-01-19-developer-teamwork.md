@@ -86,10 +86,7 @@ So what do we do? I have these suggestions:
    SonarLint is <a target="_blank" href="https://plugins.jetbrains.com/plugin/7973-sonarlint">installed on JetBrains IntelliJ</a> IDEA Plugin Repository.
 
    If you're using Microsoft Visual Studio code, install <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode">SonarLint</a> and
-   <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=faustinoaq.javac-linter">Java Linter</a>.
-
-   https://code.visualstudio.com/blogs/2016/06/27/common-language-protocol
-   Common Language Protocol
+   <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=faustinoaq.javac-linter">Java Linter</a>. Microsoft has a <a target="_blank" href="https://code.visualstudio.com/blogs/2016/06/27/common-language-protocol">Common Language Protocol</a> to standardize tool use among languages.
 
    There are many other similar tools, but these are the most popular and supported.
 
