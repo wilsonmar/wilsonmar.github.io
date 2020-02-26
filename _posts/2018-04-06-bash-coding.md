@@ -1005,6 +1005,9 @@ paid course
 Learning the bash Shell, 3rd Edition, by Cameron Newham (O’Reilly)
 
 
+If you have an O'Reilly subscription: <a target="_blank" href="https://learning.oreilly.com/live-training/courses/bash-shell-scripting-in-4-hours/0636920366386/">Bash Shel Scripting in 4 hours</a> by 
+
+
 ## More on DevOps #
 
 This is one of a series on DevOps:

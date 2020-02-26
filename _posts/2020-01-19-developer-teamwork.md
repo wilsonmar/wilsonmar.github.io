@@ -52,14 +52,16 @@ So what do we do? I have these suggestions:
    Sharing keyboards requires agreement and understanding of the specific tools and way of working.
    Without that, it would be a violation of each other's "space".
 
-   Some programmers are protective of their Ninja techniques while others open share their keyboard aliases and "dotfiles" that define configurations and utility programs.
+   PROTIP: A shared interest in <strong>mutual</strong> continuous improvement is key to sustained adoption.
 
-   So a shared interest in <strong>mutual</strong> continuous improvement is key to sustained adoption.
+   Sharon may feel <strong>distain</strong> for others who don't, but should know the techniques she uses.
+
+   Yet, some programmers are <strong>protective</strong> of their hard-earned Ninja techniques while others open share their keyboard aliases and "dotfiles" that define configurations and utility programs.
+
+   Within an organization that encourages competition, people will naturally protect what they know to maintain a competitive advantage.
 
    If team members passively or actively undermine each other by withholding information or
    other game-playing, then enlightened people management and courageous facilitation is necessary.
-
-   Within an organization that encourages competition, people will naturally protect what they know to maintain a competitive advantage.
 
 
 
@@ -68,27 +70,18 @@ So what do we do? I have these suggestions:
    It "shifts left" quality considerations earlier in the development lifecycle,
    detecting (and fixing) quality issues as code is writing, like a spell checker.
 
-   Install <a target="_blank" href="https://marketplace.eclipse.org/content/sonarlint">SonarLint from the Eclipse Marketplace</a>:
-
-   1. Go to Help → Eclipse Marketplace
-   2. Search for "SonarLint"
-   3. Click Install
-   4. Accept the License Agreement  
-   5. Restart Eclipse
-   <br /><br />
-
+   Install <a target="_blank" href="https://marketplace.eclipse.org/content/sonarlint">SonarLint from the Eclipse Marketplace</a>.
    On a Mac, configure in the: Eclipse → Preferences, Windows: Window → Preferences
-
    On Windows: Preferences → General → Editors → Text Editors→ Annotation
-
    PROTIP: Check "Vertical ruler" to make it easier to spot lines that need attention.
+   SonarLint can also be <a target="_blank" href="https://plugins.jetbrains.com/plugin/7973-sonarlint">installed on JetBrains IntelliJ</a> from the IDEA Plugin Repository.
 
-   SonarLint is <a target="_blank" href="https://plugins.jetbrains.com/plugin/7973-sonarlint">installed on JetBrains IntelliJ</a> IDEA Plugin Repository.
-
-   If you're using Microsoft Visual Studio code, install <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode">SonarLint</a> and
+   If you're using Microsoft Visual Studio Code, install <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode">SonarLint</a> and
    <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=faustinoaq.javac-linter">Java Linter</a>. Microsoft has a <a target="_blank" href="https://code.visualstudio.com/blogs/2016/06/27/common-language-protocol">Common Language Protocol</a> to standardize tool use among languages.
 
-   There are many other similar tools, but these are the most popular and supported.
+   Some static code scanners identify dead code (sections of the codebase that is never used because the flow of execution goes around it).
+   
+   There is a scanner for each format of file.
 
    For Makefile templates to Bash scripts, install and run Daniel Schauenberg's <a target="_blank" href="https://github.com/mrtazz/checkmake">CheckMake</a>
 
@@ -137,6 +130,8 @@ So what do we do? I have these suggestions:
 
    Within the team, have a mechanism to ensure that all team members are included when appropriate.
    Clearly define what's appropriate, in writing.
+
+   Closer relationships with others can encourage people to try harder and take more proactive steps to avoid hassle for others they know. 
 
 
    <a name="Terms"></a>
@@ -225,7 +220,7 @@ So what do we do? I have these suggestions:
    Accumulation of "Technical debt" is like financial debt, which robs <strong>flexibility in the future</strong>,
    when changes can't be made until blocking issues are fixed.
 
-   So shifting focus to longer-term objectives is often the key to shift the mindset of those who are comfortable with garbage all around them. It takes a certain amount of discipline to keep work areas (repositories) clean now to avoid misunderstandings by many others in the future.
+   So shifting focus to longer-term objectives is often the key to shift the mindset of those who are comfortable with working around garbage all around them. It takes a certain amount of discipline to keep work areas (repositories) clean now to avoid misunderstandings by several others in the future.
 
    This can be a constant source of stress within a team.
 

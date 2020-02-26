@@ -21,6 +21,18 @@ PROTIPs and NOTEs are provided as instructions are presented in a hands-on way.
 
 Content here was developed based on advice from <a href="#Resources">several websites</a>.
 
+## S
+
+MySQL and MariaDB are "Relational databases" to store information for applications.
+
+* Within each database, data is organized in a set of <strong>tables</strong>, each organizing data for a particular class of data.
+* Each table organizes data in "rows" representing a <strong>record</strong>.
+* Each row contains <strong>fields</strong>.
+* Each field has a type of information, such as text, a number, or boolean (True/False).
+* The record is the specific dataset; the values of the records make up its contents
+* Several tables can be joined together to obtain information out of the database.
+
+
 ## Timeline #
 
 MySQL was first proposed by Edgar Cord in 1970 with co-founder Michael "Monty" Widenius.
@@ -50,10 +62,9 @@ which means it's really not fully open source.
 
 ## MySQL Still Kicking #
 
-MySQL is thriving.
+MySQL is still being used.
 
-Uber in 
-<a target="_blank" href="https://eng.uber.com/mysql-migration/">
+Uber in <a target="_blank" href="https://eng.uber.com/mysql-migration/">
 2016 switched from Postgres to MySQL</a> under 
 <a target="_blank" href="https://eng.uber.com/schemaless-part-one/">
 Schemaless</a>. <a target="_blank" href="https://eng.uber.com/mysql-migration/">
@@ -161,9 +172,19 @@ Cloud SQL announced, a hosted version of MySQL 5.7 for the Google Cloud Platform
 
 <a name="InstallMySQL"></a>
 
-## MySQL via Homebrew on Mac OSX #
+## Install MySQL 
 
-### Install MySQL
+### Install MySQL on RedHat
+
+1. yum install –y mariadb mariadb-server
+1. systemctl start mariadb; systemctl enable mariadb
+1. ss –tua | grep mysql to verify it is listening
+1. run mysql_secure_installation and make sure the password is set to password
+1. type mysql -u root –p to log in
+1. type show databases; to verify the availability of the administrative databases
+1. type exit; to quit
+
+### Install MySQL on MacOS via Homebrew
 
 PROTP: Use Homebrew instead of downloading from
    <a target="_blank" href="http://dev.mysql.com/downloads/">
