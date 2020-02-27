@@ -1346,16 +1346,16 @@ Several people, on their personal time, created videos for others to enjoy, for 
 
 <a target="_blank" href="https://www.youtube.com/watch?v=ProeHDBVDtY">
 GitHub: Navigating and Employing in Software Development and Deployment</a>
-Nov 19, 2019 [55:37]
-* To create and use a repository
-* To start and manage a new branch
-* To make changes to a file and push them to GitHub as commits
-* To open and merge a pull request
-* To communicate in issues
-* To manage notifications
-* To create branches
-* To make commits
-* To introduce changes with pull request
+Nov 19, 2019 [55:37] by Rod Davison
+* [13:55] Create and use a repository
+* Start and manage a new branch
+* Make changes to a file and push them to GitHub as commits
+* Open and merge a pull request
+* Communicate in issues
+* Manage notifications
+* Create branches
+* Make commits
+* Introduce changes with pull request
 
 
 ### Madness Labs
