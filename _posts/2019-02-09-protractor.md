@@ -387,10 +387,9 @@ https://www.npmjs.com/package/protractor-html-reporter-2</a>
 
 1. Add to the conf.js file:
 
-   <pre>
-//HTMLReport called once tests are finished:
+   <pre>//HTMLReport called once tests are finished:
 // https://www.npmjs.com/package/protractor-html-reporter-2
-
+&nbsp;
 onComplete: function() {
      var browserName, browserVersion;
      var capsPromise = browser.getCapabilities();
@@ -419,7 +418,6 @@ onComplete: function() {
     </pre>
 
 TODO: https://www.npmjs.com/package/jasmine-reporters
-
 
 
 ### Start WebDriver

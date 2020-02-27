@@ -268,7 +268,17 @@ Amazon ECS (Elastic Container Service for Kubernetes)</a> is "supercharged" by t
 * https://github.com/kubernetes-sigs/kubespray
 
 
-## Alternatives / Competitors 
+## Orchestration systems managing Docker containers:
+
+   * OpenShift
+   * Kubernetes by Google
+   * Centos
+   * Atomic
+   * Consul, Terraform
+   * Serf
+   * Cloudify
+   * Helios
+   <br /><br />
 
 * Docker Swarm incorporated <a href="#Rancher">Rancher</a> from Rancher Labs (#RancherK8s).
 
@@ -284,24 +294,14 @@ Amazon ECS (Elastic Container Service for Kubernetes)</a> is "supercharged" by t
 
 * Hashicorp <a target="_blank" href="https://www.nomadproject.io/intro/index.html">Nomad</a>.
 
-* Red Hat (which IBM bought in 2018) offers its <strong>OpenShift</strong> to enable Docker and Kubernetes for the enterprise by adding external host names (projects) that add role-based security around <a href="#Namespaces">namespaces</a>. See:
+* Red Hat (which IBM bought in 2018) offers its <strong>OpenShift</strong> to enable Docker and Kubernetes for the enterprise by adding external host names (projects) that add role-based security around <a href="#Namespaces">namespaces</a>. OpenStack enables running of k8s containers in other clouds or within private data centers.
 
-   <a target="_blank" href="https://www.redhat.com/en/technologies/cloud-computing/openshift">https://www.redhat.com/en/technologies/cloud-computing/openshift</a>,
+   OpenShift runs under OKD (Origin Kubernetes Distribution) which include a container and Istio mesh. NOTE: IBM is pushing its "<strong>containerd</strong>", its replacement for Docker.
 
-   One can run k8s containers in other clouds or within private data centers using OpenStack from RedHat.
-
-   * Note that IBM (which bought Red Hat in 2018) has been pushing "containerd", its replacement for Docker.
-   <br /><br />
-
-Other orchestration systems managing Docker containers:
-
-   * Kubernetes by Google
-   * Centos
-   * Atomic
-   * Consul, Terraform
-   * Serf
-   * Cloudify
-   * Helios
+   See <a target="_blank" href="https://www.redhat.com/en/technologies/cloud-computing/openshift">https://www.redhat.com/en/technologies/cloud-computing/openshift</a>,
+  
+   * <a target="_blank" href="https://www.youtube.com/watch?v=KTN_QBuDplo">What is OpenShift?</a> Aug 1, 2019
+   * <a target="_blank" href="https://www.youtube.com/watch?v=cTPFwXsM2po">Kubernetes vs. OpenShift</a>: is not open-source. OpenShift is opinionated about a Docker Registry and CI/CD.
    <br /><br />
 
 ## Add-ons to Kubernetes

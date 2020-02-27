@@ -1334,8 +1334,6 @@ Git and GitHub Workshop:
 3. <a target="_blank" href="https://www.youtube.com/watch?v=pMk99l17SC4&list=PLQwEegbFUjHF0TGM_HigwCHOXMJGXvcwe&index=3">Merging in a Pull Request</a>
 
 
-
-
 <hr />
 
 <a name="FromIndividuals"></a>
@@ -1343,6 +1341,22 @@ Git and GitHub Workshop:
 ## Free from Individuals
 
 Several people, on their personal time, created videos for others to enjoy, for free:
+
+### Rod Davison
+
+<a target="_blank" href="https://www.youtube.com/watch?v=ProeHDBVDtY">
+GitHub: Navigating and Employing in Software Development and Deployment</a>
+Nov 19, 2019 [55:37]
+* To create and use a repository
+* To start and manage a new branch
+* To make changes to a file and push them to GitHub as commits
+* To open and merge a pull request
+* To communicate in issues
+* To manage notifications
+* To create branches
+* To make commits
+* To introduce changes with pull request
+
 
 ### Madness Labs
 

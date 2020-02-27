@@ -4,7 +4,7 @@ title: "MySQL to MariaDB (and Aurora)"
 excerpt: "It worked for your dad. Embrace it."
 tags: [mysql, database]
 date: "2016-08-18"
-file: "myself-setup"
+file: "mysql-setup"
 image:
 # feature: fig orange mysql php 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622311/4f41e84a-0586-11e6-8164-6363861642fd.jpg
@@ -21,7 +21,7 @@ PROTIPs and NOTEs are provided as instructions are presented in a hands-on way.
 
 Content here was developed based on advice from <a href="#Resources">several websites</a>.
 
-## S
+## Relational databases
 
 MySQL and MariaDB are "Relational databases" to store information for applications.
 
@@ -793,7 +793,7 @@ Or, if you don't want/need a background service you can just run:
 
 <a name="MySQLAdmin"></a>
 
-## MySQLAdmin #
+### MySQLAdmin #
 
 mysqladmin is a command-line interface for administrators to perform server administration tasks.
 
@@ -1077,8 +1077,6 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
    </pre>
 
 
-
-
 <a name="VerifyDB"></a>
 
 ## List databases #
@@ -1106,6 +1104,13 @@ There are two ways to get a list of databases:
 +--------------------+
 3 rows in set (0.00 sec)
    </pre>
+
+
+### mycli GUI
+
+<a target="_blank" href="https://www.mycli.net/">mycli.net</a> is an <a target="_blank" href="https://github.com/dbcli/mycli">open-source</a> Python program with a GUI for selecting SQL queries:
+
+<a target="_blank" href="https://www.mycli.net/"><img alt="ysql-cli.png" src="https://user-images.githubusercontent.com/300046/75404204-d7cd7280-58d7-11ea-8bb7-b41c573570fb.gif"></a>
 
 
 

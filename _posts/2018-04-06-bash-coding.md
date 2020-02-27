@@ -1005,7 +1005,13 @@ paid course
 Learning the bash Shell, 3rd Edition, by Cameron Newham (O’Reilly)
 
 
-If you have an O'Reilly subscription: <a target="_blank" href="https://learning.oreilly.com/live-training/courses/bash-shell-scripting-in-4-hours/0636920366386/">Bash Shel Scripting in 4 hours</a> by 
+If you have an O'Reilly subscription: <a target="_blank" href="https://learning.oreilly.com/live-training/courses/bash-shell-scripting-in-4-hours/0636920366386/">Bash Shel Scripting in 4 hours</a> by <a target="_blank" href="https://www.linkedin.com/company/sander-van-vugt/">Sander van Vugt</a>, who has been teaching Linux since 1995 and has written more than 60 books about different Linux related topics. Sander is the author of the best-selling previous editions of the RHCSA Complete Video Course, as well as many other Red Hat related video courses. He is also a regular speaker on major Linux conferences all over the world. 
+
+   1. Writing a shell script with all basic elements (30 minutes), including best practices for writing readable shell scripts.
+   2. Working with Variables (40 minutes)
+   3. Using Positional Parameters (35 minutes) and how to process their values within the scripts.
+   4. Applying Pattern Matching substituion (35 minutes), to shape them exactly as required for specific tasks.
+   5. Using looping structures (70 minutes) with common looping structures, such as if, case, for and while.
 
 
 ## More on DevOps #
