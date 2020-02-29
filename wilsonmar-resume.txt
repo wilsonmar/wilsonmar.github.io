@@ -25,7 +25,7 @@ ATT IoT Hackathon at CES 2016, 2015, 2014 winner.
 
 ### 8/19 - Systems Architect (DevSecOps SRE) at McKinsey&Co
 
-Averted production disasters by taking a deep dive into Docker Registry, coded scripts to pare back a 12TB database, upgraded OS and utilities to latest versions, installed regular scans for dependency vulnerabilities (using JFrog XRay, Trivy, Anchore, Black Duck). Introduced use of vulnerability scans and Makefiles in CI/CD pipelines building Java, Python, PHP, Ruby, Go. Automated upgrade of infrastructure pipelines to include metrics into ElasticStack, Prometheus, Nagios, and Splunk. Designed custom self-serve portals through Okta security and APIs of Enterprise GitHub, Jira, Confluence Artifactory, and other SaaS developer tools. All while leading integration of US operations with India teams.
+Averted production disasters by taking a deep dive into Docker Registry, coded scripts to pare back a 12TB database, upgraded OS and utilities to latest versions, installed regular scans for dependency vulnerabilities (using JFrog XRay, Trivy, Anchore, Black Duck). Introduced use of vulnerability scans and Makefiles in CI/CD pipelines building Java, Python, PHP, Ruby, Go. Automated upgrade of infrastructure pipelines to include metrics into ElasticStack, Prometheus, Nagios, and Splunk. Designed custom self-serve portals through Okta security and APIs of Enterprise GitHub, Jira, Confluence, Artifactory, and other developer utilities. Reduced toil as GitHub Enterprise admin by automation and suggesting enhancements with vendor. All while integrating US and India teams using several developer teamwork techniques (code reviews, pair programming, linters, git hooks, etc.).
 
 ### 8/14-8/19 - Principal DevOps Performance Evangelist at JetBloom
 

@@ -194,12 +194,14 @@ TAGS := $(shell ls $(BUILD_BASE))
 
    But it is not necessary for the target to be a file; it could be just a name for the recipe, as in our example. We call them "phony targets."
 
-   A phony target is one that is not really the name of a file; rather it is just a name for a recipe to be executed when you make an explicit request. There are two reasons to use a phony target: to avoid a conflict with a file of the same name, and to improve performance.<a href="#[10]">[10]</a>
+   <strong>A phony target is one that is not really the name of a file</strong>. Rather, it is just a name for a <strong>recipe</strong> to be executed when you make an explicit request. There are two reasons to use a phony target: to avoid a conflict with a file of the same name, and to improve performance.<a href="#[10]">[10]</a>
 
    Declare Phony targets by a line such as:
 
    <pre>.PHONY: login logout scan $(TAGS) $(addsuffix .scan, $(TAGS)) $(addsuffix .push, $(TAGS))
    </pre>
+
+   PROTIP: Not all targets are actually executed. Individual targets (such as .push) can be invoked or not.
 
    ## File Globbing
 
