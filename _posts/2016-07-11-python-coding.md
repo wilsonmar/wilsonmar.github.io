@@ -61,6 +61,13 @@ Listed alphabetically below are words that Python's reserved for itself, so you 
 *	yield
 <br /><br />
 
+A list can be retrieved by this code:
+
+<pre>import keyword
+print(keyword.kwlist)
+</pre>
+
+
 ## File open() modes
 
 PROTIP: Be explicit about using text (vs. binary) mode.
@@ -341,6 +348,29 @@ On Azure:
    * https://github.com/Azure/azure-sdk-for-python/wiki/Contributing-to-the-tests
    * https://azure.microsoft.com/en-us/support/community/
    <br /><br />
+
+<a name="Sets"></a>
+
+## Sets
+
+### Day of week Set handling
+
+<pre>
+day_of_week_en = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+day_of_week_en.append("Luv")
+days_in_week=len(day_of_week_en)
+print(f"{days_in_week} days a week" )
+print(day_of_week_en)
+&nbsp;
+x=0
+for index in range(8):
+    print("{0}={1}".format(day_of_week_en[x],x))
+    x += 1
+</pre>
+
+
+set([3,2,3,1,5]) # auto-renumbers with duplicates removed
+
 
 
 ## More about Python
