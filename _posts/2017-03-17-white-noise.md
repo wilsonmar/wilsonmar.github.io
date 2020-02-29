@@ -16,15 +16,10 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-## Downloaded to play locally
-
-Save the money it takes to fly to Paris, Brazil, and Texas to hear what ambient sounds like in coffee shops there, at <a target="_blank" href="https://coffitivity.com/">coffitivity.com</a>. They offer an <a target="_blank" href="https://siwalik.in/coffitivityOffline/">offline iOS app</a>.
-
-## Web pages to bookmark
+Save the money it takes to fly to Paris, Brazil, and Texas to hear what ambient sounds like in coffee shops there, at <a target="_blank" href="https://coffitivity.com/">coffitivity.com</a>. I have it in my bookmarks. But its functionality is also in an <a target="_blank" href="https://siwalik.in/coffitivityOffline/">offline iOS app</a>.
 
 <a target="_blank" href="https://rainymood.com/">
-https://rainymood.com</a>
-is simple. You hear a rain shower with distant thunder immediately upon entering the site.
+https://rainymood.com</a> is simple. You hear a <strong>rain shower with distant thunder</strong> immediately upon entering the site.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=wzjWIxXBs_s">
 10 hours on YouTube video</a>
