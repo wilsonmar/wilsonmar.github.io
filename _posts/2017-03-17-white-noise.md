@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Save the money it takes to fly to Paris, Brazil, and Texas to hear what ambient sounds like in coffee shops there, at <a target="_blank" href="https://coffitivity.com/">coffitivity.com</a>. I have it in my bookmarks. But its functionality is also in an <a target="_blank" href="https://siwalik.in/coffitivityOffline/">offline iOS app</a>.
+Save the time and money for a flight to be at a Paris bistro, Brazillian coffee house, or Texas Teahouse. For $9, you can to hear the ambient sounds there, at <a target="_blank" href="https://coffitivity.com/">coffitivity.com</a>. I have it bookmarked. But its functionality is also in an <a target="_blank" href="https://siwalik.in/coffitivityOffline/">offline iOS app</a>.
 
 <a target="_blank" href="https://rainymood.com/">
 https://rainymood.com</a> is simple. You hear a <strong>rain shower with distant thunder</strong> immediately upon entering the site.
@@ -32,12 +32,11 @@ provides 3 different white noises and enables you to combine several sounds for 
 rain, storm, birds, leaves russeling, mountain stream, seashore, dripping water, fireplace, crickets, 
 coffee shop, fan, and coffee house.
 
-
-<a target="_blank" href="https://mynoise.net/NoiseMachines/binauralBrainwaveGenerator.php">
+The most full-featured is <a target="_blank" href="https://mynoise.net/NoiseMachines/binauralBrainwaveGenerator.php">
 https://mynoise.net/NoiseMachines/binauralBrainwaveGenerator.php</a>
-has wonderful descriptions of many sounds (after you scroll down the pleading for money).
+with wonderful descriptions of many sounds (after you scroll down the pleading for money).
 
-   * Sounds take several seconds to load.
+   * Sound files take several seconds to load.
 
    * The site also shows photos of the site where the sound recording was taken,
    along with a travelogue by the recording engineer.
@@ -45,9 +44,8 @@ has wonderful descriptions of many sounds (after you scroll down the pleading fo
    * Listeners post their revervie about each soundscape.
 
    * My personal favorite: <a target="_blank" href="https://mynoise.net/NoiseMachines/catPurrNoiseGenerator.php">
-   Furry Friend</a> - that's cat purr, without the allergy.
+   Furry Friend</a> - that's cat purr, without the allergies.
 
-## Youtube
 
 ## Amazon Prime Video
 
