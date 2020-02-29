@@ -16,11 +16,9 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-
 ## Downloaded to play locally
 
-Save the money it takes to fly to Paris, Brazil, and Texas to hear what ambient sounds like there.
-
+Save the money it takes to fly to Paris, Brazil, and Texas to hear what ambient sounds like in coffee shops there, at <a target="_blank" href="https://coffitivity.com/">coffitivity.com</a>. They offer an <a target="_blank" href="https://siwalik.in/coffitivityOffline/">offline iOS app</a>.
 
 ## Web pages to bookmark
 
