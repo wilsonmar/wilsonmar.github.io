@@ -59,6 +59,8 @@ NOTE: This page is still actively under construction.
 
    <pre><strong>brew info gpg2</strong></pre>
 
+   The response at time of writing:
+
    <pre>
 gnupg: stable 2.2.19 (bottled)
 GNU Pretty Good Privacy (PGP) package
@@ -75,6 +77,7 @@ install-on-request: 28,189 (30 days), 111,655 (90 days), 439,134 (365 days)
 build-error: 0 (30 days)
    </pre>   
 
+
 1. Switch to GitHub to identify your "no-reply" email address, such as 
    "john_doe+github@gmail.com".
 
@@ -90,6 +93,10 @@ build-error: 0 (30 days)
    <tt>\-\-keyid-format LONG</tt> requests showing only those keys where both public and private key pair exists. This is becuase both are required to sign tags.
    If nothing is returned, there are no keys usable for signing.
    
+   PROTIP: This gpg command was added as Bash shell alias (keyboard shortcut) in <a target="_blank" href="https://github.com/wilsonmar/git-utilities/blob/master/aliases.sh">https://github.com/wilsonmar/git-utilities/blob/master/aliases.sh</a> so that you just type:
+
+   <pre><strong>gsk</strong></pre>
+
    The first line in the response lists the location where keys are stored:
 
    <pre>/Users/wilson_mar/.gnupg/pubring.kbx
@@ -253,12 +260,14 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 	program = gpg2
    </pre>
 
-1. If you are not using zsh, edit you ~/.bash_profile to avoid error messages:
+1. If you are not using zsh, edit you ~/.bash_profile to avoid these error messages:
 
    <pre>
 error: gpg failed to sign the data
 fatal: failed to write commit object
    </pre>
+
+   Paste in:
 
    <pre><strong>test -r ~/.bash_profile && echo 'export GPG_TTY=$(tty)' >> ~/.bash_profile
 echo 'export GPG_TTY=$(tty)' >> ~/.profile
@@ -274,38 +283,62 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
 
    ## Sign Git Tags
    
-1. Construct that command to sign a Git tag (such as "v1.5.2"):
+1. Construct that command to sign a Git tag (such as "v1.5.2") and paste the Passphrase when prompted:
 
-   <pre><strong>git tag -a -s v1.5.2 -m 'Signed tag 1.5.2'</strong></pre>
+   <pre><strong>GIT_TRACE=1 git tag -a -s v1.5.2 -m 'Signed tag 1.5.2'</strong></pre>
 
    <tt>-a</tt> puts the tag in the repository when pushed to GitHub.
 
    PROTIP: Git tags are a single word, in Semantic Versionioning format. See semver.com.
 
-   PROTIP: Sign Git tags, not commits and merges (by including <tt>-S</tt>).
+   <tt>GIT_TRACE=1</tt> enables tracing, such as:
+   
+   <pre>
+03:45:46.646487 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/bin/git
+03:45:46.647227 exec-cmd.c:236          trace: resolved executable dir: /Library/Developer/CommandLineTools/usr/bin
+03:45:46.647782 git.c:418               trace: built-in: git tag -a -s v1.5.2 -m 'Signed tag 1.5.2'
+03:45:46.650392 run-command.c:643       trace: run_command: gpg2 --status-fd=2 -bsau 62C414BA89BFBE52
+   </pre>
 
 1. To verify whether your tag was signed:
 
    <pre><strong>git tag -v 1.5.2</strong></pre>
 
-1. See a verified badge next to your commits on git log:
+1. See signing info with your latest commit in the git log:
 
    <pre><strong>git log --show-signature -1</strong></pre>
 
-   The response would include:
+   The response would include, for example:
 
-   <pre>gpg: Signature made Mon Jun 11 11:02:05 2020 EDT
+   <pre>commit 71ad7059817e609b52b29469e1214a56799b33ef (HEAD -> master)
+gpg: Signature made Mon Jun 11 11:02:05 2020 EDT
 gpg:                using RSA key 62C414BA89BFBE52
+gpg: Good signature from "John Doe <john_doe+github@gmail.com>" [ultimate]
    </pre>
 
 1. After push, switch to an internet browser to see a verified badge next to your commits on GitHub online.
 
 
-   ## Sign Git Commits
+   ## Sign Git Commits & merges
 
 1. To sign a commit, add capital <tt>-S</tt>, such as:
 
-   <pre><strong>git commit -a -S -m "Some message"</strong></pre>
+   <pre><strong>GIT_TRACE=1 git commit -a -S -m "Some message"</strong></pre>
+
+   The response, at time of writing:
+
+   <pre>
+03:48:07.999728 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/bin/git
+03:48:08.000435 exec-cmd.c:236          trace: resolved executable dir: /Library/Developer/CommandLineTools/usr/bin
+03:48:08.001587 git.c:418               trace: built-in: git commit -a -S -m 'Some message'
+03:48:08.017126 run-command.c:643       trace: run_command: gpg2 --status-fd=2 -bsau 62C414BA89BFBE52
+03:48:08.153175 run-command.c:643       trace: run_command: git gc --auto
+03:48:08.156446 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/libexec/git-core/git
+03:48:08.157243 exec-cmd.c:236          trace: resolved executable dir: /Library/Developer/CommandLineTools/usr/libexec/git-core
+03:48:08.158689 git.c:418               trace: built-in: git gc --auto
+[master 71ad705] Some message
+ 1 file changed, 1 insertion(+)
+   </pre>
 
 
 ## Encrypting whole files
