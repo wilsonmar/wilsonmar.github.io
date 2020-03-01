@@ -78,10 +78,12 @@ build-error: 0 (30 days)
    </pre>   
 
 
-1. Switch to GitHub to identify your "no-reply" email address, such as 
+1. Switch to GitHub to identify your "no-reply" public email address, such as 
    "john_doe+github@gmail.com".
 
    <a target="_blank" href="https://github.com/settings/profile">https://github.com/settings/profile</a>
+
+   IMPORTANT: The email specified to GPG should match the email in GitHub.
 
 
    <a name="ListKeys"></a>
@@ -213,7 +215,7 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
    ## Paste in GitHub
 
-1. Prepare pasting of the key generated in this next step by switching to an internet browser of the GitHub page that will receive the public key. After signing in, click your icon at the upper-right, select Settings, SSH and GPG keys:
+1. Prepare for pasting of the key generated in this next step by switching to an internet browser of the GitHub page that will receive the public key. After signing in, click your icon at the upper-right, select Settings, SSH and GPG keys:
 
    <a target="_blank" href="https://github.com/settings/keys">
    https://github.com/settings/keys</a>
@@ -236,6 +238,9 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
    The public key contents includes the "-----BEGIN PGP PUBLIC KEY BLOCK-----" and "-----END PGP PUBLIC KEY BLOCK-----" markers.
 
 1. Switch to the GitHub page opened and click on the input field (so the field border turns blue), then press command+V to paste. Click "Add GPG key".
+
+   PROTIP: IMPORTANT: If you lost your laptop, immediately remove the SSH and GPG keys associated with that laptop.
+   
 
    ## Signing Key as Environment Variable
 
@@ -282,6 +287,9 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
 
 
    ## Sign Git Tags
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=3SQhq12nEZI">VIDEO</a>:
+   CI-CD Using Git-Tags (on Jenkins) Apr 21, 2019
    
 1. Construct that command to sign a Git tag (such as "v1.5.2") and paste the Passphrase when prompted:
 
@@ -291,7 +299,7 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
 
    PROTIP: Git tags are a single word, in Semantic Versionioning format. See semver.com.
 
-   <tt>GIT_TRACE=1</tt> enables tracing, such as:
+   <tt>GIT_TRACE=1</tt> enables tracing. Example output on macOS:
    
    <pre>
 03:45:46.646487 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/bin/git
@@ -385,10 +393,13 @@ https://help.github.com/en/github/authenticating-to-github/telling-git-about-you
 https://confluence.atlassian.com/bitbucketserver/using-gpg-keys-913477014.html
 
 <a target="_blank" href="https://www.youtube.com/watch?v=KhROpuxHyH8">
-VIDEO: [Git/GitHub] Signing your commits in GitHub -- Getting the verified badge on your commits</a>
-Jul 8, 2018 by Raveesh Agarwal
+VIDEO: [Git/GitHub] Signing your commits in GitHub -- Getting the verified badge on your commits</a> Jul 8, 2018 by Raveesh Agarwal
 
-https://www.youtube.com/watch?v=3SQhq12nEZI
+https://stackoverflow.com/questions/39494631/gpg-failed-to-sign-the-data-fatal-failed-to-write-commit-object-git-2-10-0
+
+https://juliansimioni.com/blog/troubleshooting-gpg-git-commit-signing/
+quotes
+https://wiki.gentoo.org/wiki/GnuPG#Changing_pinentry_for_SSH_logins
 
 
 ## More on DevOps #
