@@ -29,31 +29,9 @@ NOTE: This page is still actively under construction.
 
    <a target="_blank" href="https://wilsonmar.github.io/homebrew/">brew (Homebrew)</a>
    
-   <a target="_blank" href="https://wilsonmar.github.io/git-install/">brew git</a>
+1. Install a Git client:
 
-   In the script, if each utility is found, it is re-installed if the REINSTALL flag is set on, which it is by default.
-
-1. Install GPG.
-
-   <pre>
-   MY_RUNTYPE="upgrade"
-   &nbsp;
-   if ! command -v gpg >/dev/null; then
-      echo "Installing GPG2 for commit signing..."
-      brew install gpg2
-      # See https://www.gnupg.org/faq/whats-new-in-2.1.html
-   else
-      if [[ "${MY_RUNTYPE,,}" == *"upgrade"* ]]; then
-         echo "GPG2 upgrading ..."
-         gpg --version | grep gpg  # outputs many lines!
-         # To avoid response "Error: git not installed" to brew upgrade git
-         brew uninstall gpg2
-         # NOTE: This does not remove .gitconfig file entry.
-         brew install gpg2 
-      fi
-   fi
-   echo -e "\n$(gpg --version | grep gpg)"    # gpg (GnuPG) 2.2.19
-   </pre>
+   brew install git
 
 1. For information about the brew gpg2 install:
 
@@ -75,8 +53,37 @@ Required: adns ✔, gettext ✔, gnutls ✔, libassuan ✔, libgcrypt ✔, libgp
 install: 32,457 (30 days), 132,214 (90 days), 533,317 (365 days)
 install-on-request: 28,189 (30 days), 111,655 (90 days), 439,134 (365 days)
 build-error: 0 (30 days)
-   </pre>   
+   </pre>
 
+   On Linux, the package name is gnupg2.
+
+
+   In the script, if each utility is found, it is re-installed if the REINSTALL flag is set on, which it is by default.
+
+1. Install <a target="_blank" href="https://superuser.com/questions/655246/are-gnupg-1-and-gnupg-2-compatible-with-each-other">gnupg2</a> for the gpg program:
+
+   <pre>
+   MY_RUNTYPE="upgrade"
+   &nbsp;
+   if ! command -v gpg >/dev/null; then
+      echo "Installing GPG2 for commit signing..."
+      brew install gpg2
+      # See https://www.gnupg.org/faq/whats-new-in-2.1.html
+   else
+      if [[ "${MY_RUNTYPE,,}" == *"upgrade"* ]]; then
+         echo "GPG2 upgrading ..."
+         gpg --version | grep gpg  # outputs many lines!
+         # To avoid response "Error: git not installed" to brew upgrade git
+         brew uninstall gpg2
+         # NOTE: This does not remove .gitconfig file entry.
+         brew install gpg2 
+      fi
+   fi
+   echo -e "\n$(gpg --version | grep gpg)"    # gpg (GnuPG) 2.2.19
+   </pre>
+
+
+   ## Email address
 
 1. Switch to GitHub to identify your "no-reply" public email address, such as 
    "john_doe+github@gmail.com".
@@ -85,10 +92,19 @@ build-error: 0 (30 days)
 
    IMPORTANT: The email specified to GPG should match the email in GitHub.
 
+1. While in a Terminal with the present working directory at your local repository, configure you valid GitHub user name and email (if you haven't already):
+
+   <pre><strong>
+   git config user.name <em>your user name</em>
+   git config user.email <em>your email address or no-reply address</em>
+   </strong></pre>
+
 
    <a name="ListKeys"></a>
 
-1. List what keys have been signed:
+   ## List GPG keys
+
+1. List what keys have been signed, meaning secret keys:
 
    <pre><strong>gpg --list-secret-keys --keyid-format LONG</strong></pre>
 
@@ -108,6 +124,13 @@ build-error: 0 (30 days)
    (You would see your own user name instead of "wilson_mar" above.)
 
    The pubring.kbx file is the "Key Ring" file. See <a target="_blank" href="https://kb.iu.edu/d/awiu">https://kb.iu.edu/d/awiu</a> about keyring management commands.
+
+
+   ## Generate GPG key pairs
+
+   Git UI clients such as <a target="_blank" href="https://support.gitkraken.com/git-workflows-and-extensions/commit-signing-with-gpg/">GitKraken can generate GPG keys with its UI</a>.
+
+   Here are instructions for doing it on a macOS Terminal:
 
 1. Generate another key:
 
@@ -242,6 +265,8 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
    PROTIP: IMPORTANT: If you lost your laptop, immediately remove the SSH and GPG keys associated with that laptop.
    
+   Security-concious people <a target="_blank" href="https://medium.com/@ahawkins/securing-my-digital-life-gpg-yubikey-ssh-on-macos-5f115cb01266">store their private keys in a Yubikey</a>.
+
 
    ## Signing Key as Environment Variable
 
@@ -533,6 +558,8 @@ https://juliansimioni.com/blog/troubleshooting-gpg-git-commit-signing/
 quotes
 https://wiki.gentoo.org/wiki/GnuPG#Changing_pinentry_for_SSH_logins
 
+
+https://ice-blog.readthedocs.io/en/latest/tutorial/encrypt/gpg/
 
 
 ## More on DevOps #
