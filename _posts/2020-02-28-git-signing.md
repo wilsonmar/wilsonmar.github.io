@@ -74,20 +74,30 @@ build-error: 0 (30 days)
    &nbsp;
    if ! command -v gpg >/dev/null; then
       echo "Installing GPG2 for commit signing..."
-      brew install gpg2
+      brew install gnupg2
       # See https://www.gnupg.org/faq/whats-new-in-2.1.html
    else
       if [[ "${MY_RUNTYPE,,}" == *"upgrade"* ]]; then
          echo "GPG2 upgrading ..."
          gpg --version | grep gpg  # outputs many lines!
          # To avoid response "Error: git not installed" to brew upgrade git
-         brew uninstall gpg2
+         brew uninstall --ignore-dependencies gpg2
+         brew uninstall gnupg2
          # NOTE: This does not remove .gitconfig file entry.
-         brew install gpg2 
+         brew install gnupg2
       fi
    fi
+   </pre>
+
+1. Ensure that commands for "gpg" are routed to gpg2:
+
+   <pre>alias gpg="gpg2"
    echo -e "\n$(gpg --version | grep gpg)"    # gpg (GnuPG) 2.2.19
    </pre>
+
+   PROTIP: The response shows that the installation is specific to each version of macOS:<br />
+   <pre>==> Downloading https://homebrew.bintray.com/bottles/gmp-6.2.0.mojave.bottle.tar.gz</pre>
+
 
 
    ## Email address
@@ -135,13 +145,18 @@ build-error: 0 (30 days)
    The pubring.kbx file is the "Key Ring" file. See <a target="_blank" href="https://kb.iu.edu/d/awiu">https://kb.iu.edu/d/awiu</a> about keyring management commands.
 
 
-
    ## Optional Yubiky using GPGTools Suite 
+
+   If your laptop's USB has been locked down, skip this and move on to <a href="#GenerateKey">generate a key</a>.
 
    <a target="_blank" href="https://www.yubico.com/product/yubikey-5-nfc/"><img align="right" alt="git-siging-yubikey-100x100.jpg" width="100" src="https://user-images.githubusercontent.com/300046/75632026-faa4a300-5bc5-11ea-8471-60b6ef9981f6.jpg"></a>
    Instead of storing private keys on a laptop's hard drive (where they can be hacked by any program running on the computer), <a target="_blank" href="https://medium.com/@ahawkins/securing-my-digital-life-gpg-yubikey-ssh-on-macos-5f115cb01266">security-concious people</a> store their private keys in a separate physical <a target="_blank" href="https://en.wikipedia.org/wiki/OpenPGP_card">smartcard (OpenGPG card)</a> such as a <a target="_blank" href="https://www.yubico.com/quiz/">Yubikey device (one of several)</a>.
 
    PROTIP: If you lose your physical dongle, you'll need to re-generate all keys.
+
+   Keys written to a card can only be used in combination with a PIN code, so even if a YubiKey is stolen, a thief would not be able to authenticate directly.
+
+   Each YubiKey has its own unique cardno.
 
 1. Install the <a target="_blank" href="https://gpgtools.org/">GPG Suite</a> (UI app) as a <a target="_blank" href="https://formulae.brew.sh/cask/gpg-suite">Homebrew formula</a>:
 
@@ -161,7 +176,18 @@ build-error: 0 (30 days)
 
    https://gist.github.com/danieleggert/b029d44d4a54b328c0bac65d46ba4c65
 
-1. Use a text editor to add inside file <tt>~/.gnupg/gpg-agent.conf</tt> this line:
+1. Install
+
+   <pre>brew install pinentry-mac
+   brew install ykman
+   brew install yubikey-personalization
+   </pre>
+
+   Warning: ykpers 1.20.0 is already installed and up-to-date
+
+   QUESTION: How to check for vulnerabilities in the above utilities?
+
+1. Use a text editor to add inside file <tt>~/.gnupg/gpg-agent.conf</tt> this line that executes the "pinentry-mac" binary executable:
 
    <pre>pinentry-program /usr/local/MacGPG2/libexec/pinentry-mac.app/Contents/MacOS/pinentry-mac</pre>
 
@@ -176,8 +202,6 @@ max-cache-ttl 7200
 no-emit-version
 no-tty
    </pre>
-
-
 
 1. Insert your YubiKey and run:
 
@@ -211,15 +235,15 @@ Login data .......: [not set]
 Signature PIN ....: not forced
    </pre>
 
-   https://www.isi.edu/~calvin/yubikeyssh.htm
+   References on Yubikey on macOS Git:
 
-   https://hugotunius.se/2018/07/13/yubikey-ssh-authentication.html
-   13 Jul 2018
+   * https://www.isi.edu/~calvin/yubikeyssh.htm
+   * https://hugotunius.se/2018/07/13/yubikey-ssh-authentication.html - 13 Jul 2018
+   * https://raymondcheng.net/projects/2018/11/25/git-yubikey.html
+   * https://evilmartians.com/chronicles/stick-with-security-yubikey-ssh-gnupg-macos
 
-   https://raymondcheng.net/projects/2018/11/25/git-yubikey.html
 
-
-
+   <a name="GenerateKey"></a>
 
    ## Generate GPG key pairs
 
