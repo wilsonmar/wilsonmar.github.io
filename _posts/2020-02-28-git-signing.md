@@ -16,9 +16,9 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This article is a step-by-step tutorial on how to setup and use GPG for Git to use for signing Git Tags, for non-repudiation. Also covered are releases associated with Tags.
+This article is a step-by-step tutorial on how to setup and use GPG for Git to use for signing Git Tags, for non-repudiation. Also covered are releases associated with Tags. Since we're using GPG, we have bonus notes about signing of whole files using GPG.
 
-The contribution of this article is the logical ordering of deep-dive concepts presented in a succint way, as a hands-on narrated scenic tour. "PROTIP" flags advice from hard-won experience such as relevant keyboard shortcuts and things to remember, available only here for you.
+The contribution of this article is the logical ordering of <strong>deep-dive</strong> concepts presented in a succint way, as a hands-on narrated scenic tour. "PROTIP" flags advice from hard-won experience such as relevant keyboard shortcuts and things to remember, available only here for you.
 
 NOTE: This page is still actively under construction.
 
@@ -126,7 +126,7 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
 1. In response to "Please enter the passphrase to protect your new key":
             
-   PROTIP: Save you <strong>Passphrase</strong> in a secure place (such as Vault), then copy it to paste in the prompt. This is to ensure that you really can retrieve it every time you use the key.
+   PROTIP: Save you <strong>Passphrase</strong> in a secure place (such as in <a target="_blank" href="https://wilsonmar.github.io/hashicorp-vault/">Hashicorp Vault</a>), <strong>then</strong> copy it to paste in the prompt. This tactic is to ensure that you really can retrieve it when you use the key in a future command.
 
 1. Re-enter the key.
 
@@ -153,7 +153,7 @@ sub   rsa2048 2020-03-01 [E] [expires: 2022-03-01]
 
    Notice the default expiry period is <strong>two years</strong>.
 
-   "rsa2048" is the strength of the encryption algorithm applied.
+   "rsa2048" is the encryption algorithm used.
 
 1. <a href="#ListKeys">List keys</a> again.
 
@@ -169,7 +169,8 @@ uid                 [ultimate] John Doe <john_doe+github@gmail.com>
 ssb   rsa2048/7F2026C2A22F2B37 2020-03-01 [E] [expires: 2022-03-01]
    </pre>
 
-1. Manually highlight and copy the GPG key ID, which is 62C414BA89BFBE52 in the sample above.
+
+   1. Manually highlight and copy the GPG key ID, which is after "rsa2048/" in the sec section, <tt>62C414BA89BFBE52</tt> in the sample above.
 
    TODO: A way to obtain the key automatically in a Bash script 
 
@@ -213,7 +214,7 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 1. Type "O" (capital or lowercase O) to save the entry.
 
 
-   ## Paste in GitHub
+   ## Copy and Paste in GitHub
 
 1. Prepare for pasting of the key generated in this next step by switching to an internet browser of the GitHub page that will receive the public key. After signing in, click your icon at the upper-right, select Settings, SSH and GPG keys:
 
@@ -311,14 +312,9 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
 
    You are prompted for the GPG key Passphrase.
 
-   Alternately, construct a command to create a Git tag (such as "v1.5.2") to a <strong>previous commit</strong>:
+   Alternately, construct a command to create a Git tag (such as "v1.5.2") to a <strong>previous commit</strong> (such as "f3c9f3a"):
 
    <pre><strong>GIT_TRACE-1 git tag v1.5.2 f3c9f3a</strong></pre>
-
-
-1. To verify whether your tag was signed:
-
-   <pre><strong>git tag -v 1.5.2</strong></pre>
 
 1. For a list of all version 1 tags:
 
@@ -341,17 +337,28 @@ gpg: Good signature from "John Doe <john_doe+github@gmail.com>" [ultimate]
 
    PROTIP: REMEMBER: Tags are push of tags are in addition to content commits.
 
-1. When pushing, specify the new Tag like a branch:
-
-   <pre><strong>git push origin v1.5.2</strong></pre>
-
-1. For convenience (in scripts), push all tags:
+1. For convenience (in scripts), push all tags to GitHub:
 
    <pre><strong>git push --tags</strong></pre>
 
-1. In GitHub, click the releases tab to see Tags:
+   Alternately, specify the new Tag like a branch:
 
-   <tt>https://github.com/.../.../releases</tt>
+   <pre><strong>git push origin v1.5.2</strong></pre>
+
+   A sample response:
+
+   <pre>
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 540 bytes | 540.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0)
+To github.com:wilsonmar/git-utilities
+ * [new tag]         v1.5.2 -> v1.5.2
+   </pre>
+
+1. See Tags in GitHub under the <strong>Code</strong> tab, after clicking the <strong>release</strong> link above GitHub's colorful line:
+
+   <tt>https://github.com/wilsonmar/git-utilities/releases</tt>
 
 
    ## Delete Tags
@@ -441,9 +448,39 @@ gpg: Good signature from "John Doe <john_doe+github@gmail.com>" [ultimate]
 1. After push, switch to an internet browser to see a verified badge next to your commits on GitHub online.
 
 
-## Encrypting whole files
+## Encrypting whole files using GPG
 
-GPG can also be used for encryption and decryption of whole files for transmission over email, etc (not related to Git):
+GPG can also be used for encryption and decryption of whole files, such as an executable (.exe) file for transmission over email, etc (not related to Git).
+
+There are several ways to verify both the integrity of a file during transmission (as hashing can do) but also provide a way for users to trace authorship.
+
+The steps below describes work with a <strong>detached signature</strong> where a signature is created in a separate file. We can then provide both the package and the signature file from a trusted source. The user can then verify the package against it. This is like with a hash, but instead of a cleartext signature, the signature is in a ".sig" file which has been encrypted using a private key known only to the file's owner.
+
+<a target="_blank" href="https://davidboland.site/blog/signing-you-work-as-a-developer">BLOG</a>:
+Users may want this level of verification for security reasons. Especially if the package handles sensitive information.
+
+1. To create a signed file:
+
+   <pre><strong>
+   gpg --detach-sign --sign-with 62C414BA89BFBE52 -o package.sig package.exe
+   </strong></pre>
+
+   <tt>/-/-detach-sign</tt> requests a detached signature to be generated.
+
+   <tt>/-/-sign-with</tt> precedes the GPG key id to be used to perform signing.
+
+   <tt>-o</tt> specifies the output file. Traditionally we use either a <tt>.sig</tt> or a <tt>.gpg</tt> extension.
+
+1. For a user to verify integrity of the file:
+
+   <pre><strong>
+   gpg --verify package.sig package.exe
+   </strong></pre>
+
+
+### Standard signing
+
+Standard signing and clear signing both affects the cleartext file itself. Standard signing is used with encryption. Clear signing wraps the input with plaintext signature. 
 
 1. To sign a plaintext file with your secret key:
 
@@ -464,6 +501,9 @@ GPG can also be used for encryption and decryption of whole files for transmissi
 1. To decrypt a ciphertext file to a clear text outputfile, also checking the signature integrity of a signed file:
 
    <pre><strong>gpg -o outputfile ciphertextfile</strong></pre>
+
+
+
 
 ## Resources
 
@@ -492,6 +532,7 @@ https://stackoverflow.com/questions/39494631/gpg-failed-to-sign-the-data-fatal-f
 https://juliansimioni.com/blog/troubleshooting-gpg-git-commit-signing/
 quotes
 https://wiki.gentoo.org/wiki/GnuPG#Changing_pinentry_for_SSH_logins
+
 
 
 ## More on DevOps #
