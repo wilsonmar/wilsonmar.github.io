@@ -18,7 +18,7 @@ comments: true
 
 This article is a step-by-step tutorial on how to setup and use GPG for Git to use for signing tags, for non-repudiation.
 
-The contribution of this article is the logical ordering of concepts presented in a succint way, as a hands-on narrated scenic tour. "PROTIP" flags advice from hard-won experience, available only here for you.
+The contribution of this article is the logical ordering of deep-dive concepts presented in a succint way, as a hands-on narrated scenic tour. "PROTIP" flags advice from hard-won experience, available only here for you.
 
 NOTE: This page is still actively under construction.
 
@@ -27,13 +27,53 @@ NOTE: This page is still actively under construction.
 1. TODO: Execute a Bash script to do the following:
    Until then, manuall install:
 
-   brew (Homebrew)
+   <a target="_blank" href="https://wilsonmar.github.io/homebrew/">brew (Homebrew)</a>
    
-   git client
-
-   gpg2
+   <a target="_blank" href="https://wilsonmar.github.io/git-install/">brew git</a>
 
    In the script, if each utility is found, it is re-installed if the REINSTALL flag is set on, which it is by default.
+
+1. Install GPG.
+
+   <pre>
+   MY_RUNTYPE="upgrade"
+   &nbsp;
+   if ! command -v gpg >/dev/null; then
+      echo "Installing GPG2 for commit signing..."
+      brew install gpg2
+      # See https://www.gnupg.org/faq/whats-new-in-2.1.html
+   else
+      if [[ "${MY_RUNTYPE,,}" == *"upgrade"* ]]; then
+         echo "GPG2 upgrading ..."
+         gpg --version | grep gpg  # outputs many lines!
+         # To avoid response "Error: git not installed" to brew upgrade git
+         brew uninstall gpg2
+         # NOTE: This does not remove .gitconfig file entry.
+         brew install gpg2 
+      fi
+   fi
+   echo -e "\n$(gpg --version | grep gpg)"    # gpg (GnuPG) 2.2.19
+   </pre>
+
+1. For information about the brew gpg2 install:
+
+   <pre><strong>brew info gpg2</strong></pre>
+
+   <pre>
+gnupg: stable 2.2.19 (bottled)
+GNU Pretty Good Privacy (PGP) package
+https://gnupg.org/
+/usr/local/Cellar/gnupg/2.2.19 (134 files, 11MB) *
+  Poured from bottle on 2020-01-23 at 19:10:32
+From: https://github.com/Homebrew/homebrew-core/blob/master/Formula/gnupg.rb
+==> Dependencies
+Build: pkg-config ✔
+Required: adns ✔, gettext ✔, gnutls ✔, libassuan ✔, libgcrypt ✔, libgpg-error ✔, libksba ✔, libusb ✔, npth ✔, pinentry ✔
+==> Analytics
+install: 32,457 (30 days), 132,214 (90 days), 533,317 (365 days)
+install-on-request: 28,189 (30 days), 111,655 (90 days), 439,134 (365 days)
+build-error: 0 (30 days)
+   </pre>   
 
 1. Switch to GitHub to identify your "no-reply" email address, such as 
    "john_doe+github@gmail.com".
@@ -198,7 +238,7 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
    git config --global gpg.program gpg2
    </strong></pre>
 
-1. Configure Git to auto-sign git commits (not recommended):
+1. Configure Git to auto-sign git ALL commits on ALL repos (not recommended):
 
    <pre><strong>git config --global commit.gpgsign true
    </strong></pre>
@@ -209,9 +249,16 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 	name = John Doe
 	email = john_doe+github@gmail.com
 	signingkey = 62C414BA89BFBE52
+[gpg]
+	program = gpg2
    </pre>
 
 1. If you are not using zsh, edit you ~/.bash_profile to avoid error messages:
+
+   <pre>
+error: gpg failed to sign the data
+fatal: failed to write commit object
+   </pre>
 
    <pre><strong>test -r ~/.bash_profile && echo 'export GPG_TTY=$(tty)' >> ~/.bash_profile
 echo 'export GPG_TTY=$(tty)' >> ~/.profile
