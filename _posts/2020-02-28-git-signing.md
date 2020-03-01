@@ -99,12 +99,14 @@ build-error: 0 (30 days)
 
    IMPORTANT: The email specified to GPG should match the email in GitHub.
 
-1. While in a Terminal with the present working directory at your local repository, configure you valid GitHub user name and email (if you haven't already):
+1. While in a Terminal with the present working directory at your local repository, configure you valid GitHub user name and email (if you haven't already). For example:
 
    <pre><strong>
-   git config user.name <em>your user name</em>
-   git config user.email <em>your email address or no-reply address</em>
+   git config user.name "John Doe"
+   git config user.email "john_doe@gmail.com"
    </strong></pre>
+
+   PROTIP: A big reason organizations ask for encrypted signing is that any name and email can be specified in Git.
 
 
    <a name="ListKeys"></a>
@@ -131,6 +133,92 @@ build-error: 0 (30 days)
    (You would see your own user name instead of "wilson_mar" above.)
 
    The pubring.kbx file is the "Key Ring" file. See <a target="_blank" href="https://kb.iu.edu/d/awiu">https://kb.iu.edu/d/awiu</a> about keyring management commands.
+
+
+
+   ## Optional Yubiky using GPGTools Suite 
+
+   <a target="_blank" href="https://www.yubico.com/product/yubikey-5-nfc/"><img align="right" alt="git-siging-yubikey-100x100.jpg" width="100" src="https://user-images.githubusercontent.com/300046/75632026-faa4a300-5bc5-11ea-8471-60b6ef9981f6.jpg"></a>
+   Instead of storing private keys on a laptop's hard drive (where they can be hacked by any program running on the computer), <a target="_blank" href="https://medium.com/@ahawkins/securing-my-digital-life-gpg-yubikey-ssh-on-macos-5f115cb01266">security-concious people</a> store their private keys in a separate physical <a target="_blank" href="https://en.wikipedia.org/wiki/OpenPGP_card">smartcard (OpenGPG card)</a> such as a <a target="_blank" href="https://www.yubico.com/quiz/">Yubikey device (one of several)</a>.
+
+   PROTIP: If you lose your physical dongle, you'll need to re-generate all keys.
+
+1. Install the <a target="_blank" href="https://gpgtools.org/">GPG Suite</a> (UI app) as a <a target="_blank" href="https://formulae.brew.sh/cask/gpg-suite">Homebrew formula</a>:
+
+   <pre><strong>brew cask install gpg-suite</strong></pre>
+
+   (brew cask install gpgtools no longer exists)
+
+1. Invoke the GUI app installed:
+
+   <pre><strong>open "/Applications/GPG Keychain.app"</strong></pre>
+
+   The first time it runs, this pop-up appears:
+
+   <a target="_blank" href="git-signing-gpgtools-upload-828x498.png"><img width="414" alt="git-signing-gpgtools-upload-828x498.png" src="https://user-images.githubusercontent.com/300046/75632532-ef07ab00-5bca-11ea-8c4a-36000f5ed099.png"></a>
+
+   Read about it at <a target="_blank" href="https://gpgtools.org/">GPGTools.org</a>.
+
+   https://gist.github.com/danieleggert/b029d44d4a54b328c0bac65d46ba4c65
+
+1. Use a text editor to add inside file <tt>~/.gnupg/gpg-agent.conf</tt> this line:
+
+   <pre>pinentry-program /usr/local/MacGPG2/libexec/pinentry-mac.app/Contents/MacOS/pinentry-mac</pre>
+
+   under:
+   <pre>default-cache-ttl 600
+max-cache-ttl 7200
+   </pre>
+
+1. Use a text editor to add inside file <tt>~/.gnupg/gpg.conf</tt> "no-tty" so it contains:
+
+   <pre>auto-key-retrieve
+no-emit-version
+no-tty
+   </pre>
+
+
+
+1. Insert your YubiKey and run:
+
+   <pre><strong>gpgp --card-status</strong></pre>
+   
+   If you see these messages:
+   <pre>gpg: selecting openpgp failed: Operation not supported by device
+gpg: OpenPGP card not available: Operation not supported by device   
+gpg/card>
+   </pre>
+
+   <a target="_blank" href="https://github.com/jeffmaher/yubikey-macos-setup">BLOG</a>: continue ...
+
+   <pre>admin
+   generate
+   </pre>
+
+   The response is like this:
+
+   <pre>
+Reader ...........: Yubico Yubikey NEO OTP U2F CCID
+Application ID ...: <ID>
+Version ..........: 2.0
+Manufacturer .....: Yubico
+Serial number ....: <serial>
+Name of cardholder: [not set]
+Language prefs ...: [not set]
+Sex ..............: unspecified
+URL of public key : [not set]
+Login data .......: [not set]
+Signature PIN ....: not forced
+   </pre>
+
+   https://www.isi.edu/~calvin/yubikeyssh.htm
+
+   https://hugotunius.se/2018/07/13/yubikey-ssh-authentication.html
+   13 Jul 2018
+
+   https://raymondcheng.net/projects/2018/11/25/git-yubikey.html
+
+
 
 
    ## Generate GPG key pairs
@@ -187,6 +275,10 @@ sub   rsa2048 2020-03-01 [E] [expires: 2022-03-01]
 
 1. <a href="#ListKeys">List keys</a> again.
 
+   <pre>RESPONSE=$( gpg --list-secret-keys --keyid-format LONG )</pre>
+
+   Parse the RESPONSE:
+
    <pre>gpg: checking the trustdb
 gpg: marginals needed: 3  completes needed: 1  trust model: pgp
 gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
@@ -200,13 +292,19 @@ ssb   rsa2048/7F2026C2A22F2B37 2020-03-01 [E] [expires: 2022-03-01]
    </pre>
 
 
-   1. Manually highlight and copy the GPG key ID, which is after "rsa2048/" in the sec section, <tt>62C414BA89BFBE52</tt> in the sample above.
+1. Manually highlight and copy the GPG key ID, which is after "rsa2048/" in the sec section, <tt>62C414BA89BFBE52</tt> in the sample above.
 
-   TODO: A way to obtain the key automatically in a Bash script 
+   Alternately, the Bash script to parse the key automatically:
 
-1. To set your GPG signing key in Git, substitute the GPG key ID you'd like to use. 
+   <pre>RESPONSE=$( gpg --list-secret-keys --keyid-format LONG | grep sec )
+# secLine="sec rsa2048/62C414BA89BFBE52 2020-03-01 [SC] [expires: 2022-03-01]"
+GPGKeyID=$( echo ${RESPONSE##*/} | cut -d " " -f 1 )
+echo $GPGKeyID
+   </pre>
 
-   <pre><strong>git config --global user.signingkey 62C414BA89BFBE52</strong></pre>
+1. To set your GPG signing key in Git, substitute the GPG key ID you'd like to use with the value of $GPGKeyID:
+
+   <pre><strong>git config --global user.signingkey 62C414BA89BFBE52  #</strong></pre>
 
    No response is expected from the command.
 
@@ -217,7 +315,7 @@ ssb   rsa2048/7F2026C2A22F2B37 2020-03-01 [E] [expires: 2022-03-01]
 
 1. Associate an email (value for field uid) with your GPG key, which Git requires by entering the <strong>edit-key</strong> mode:
 
-   <pre><strlng>gpg --edit-key 62C414BA89BFBE52</strong></pre>
+   <pre><strlng>gpg --edit-key "${GPGKeyID}"</strong></pre>
 
    This results in this prompt:
 
@@ -256,7 +354,7 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
 1. Print the public GPG key, in <strong>ASCII armor</strong> format so that they can be sent in a standard messaging format such as email. (Otherwise, the output is in binary format). 
 
-   <pre><strong>gpg --armor --export 62C414BA89BFBE52 >$HOME/mygitsigning.pub</strong></pre>
+   <pre><strong>gpg --armor --export "$GPGKeyID}" >$HOME/mygitsigning.pub</strong></pre>
 
    PROTIP: Redirecting the command output to a file makes it easier and less error-prone than manually highlighting and copying.
 
@@ -272,18 +370,25 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
    PROTIP: IMPORTANT: If you lost your laptop, immediately remove the SSH and GPG keys associated with that laptop.
    
-   Security-concious people <a target="_blank" href="https://medium.com/@ahawkins/securing-my-digital-life-gpg-yubikey-ssh-on-macos-5f115cb01266">store their private keys in a Yubikey</a>.
 
+   ## Signing Key 
 
-   ## Signing Key as Environment Variable
+1. Configure Git to use the program for signing:
+
+   <pre><strong>git config --global gpg.program /usr/local/MacGPG2/bin/gpg2
+   </strong></pre>
 
 1. Configure Git to use your chosen key for signing ("0A46826A" in the example here):
 
    <pre><strong>git config --global user.signingkey 62C414BA89BFBE52
-   git config --global gpg.program gpg2
    </strong></pre>
 
-1. Configure Git to auto-sign git ALL commits on ALL repos (not recommended):
+1. Configure Git to auto-sign ALL Git Tags (called annotations by Git):
+
+   <pre><strong>git config --global tag.forceSignAnnotated true
+   </strong></pre>
+
+1. Configure Git to auto-sign ALL commits on ALL repos (not recommended):
 
    <pre><strong>git config --global commit.gpgsign true
    </strong></pre>
