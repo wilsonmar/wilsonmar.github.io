@@ -18,7 +18,7 @@ comments: true
 
 This article is a step-by-step tutorial on how to setup and use GPG for Git to use for signing tags, for non-repudiation.
 
-The contribution of this article is the logical ordering of concepts presented in a succint way, as a hands-on narrated scenic tour.
+The contribution of this article is the logical ordering of concepts presented in a succint way, as a hands-on narrated scenic tour. "PROTIP" flags advice from hard-won experience, available only here for you.
 
 NOTE: This page is still actively under construction.
 
@@ -35,7 +35,11 @@ NOTE: This page is still actively under construction.
 
    In the script, if each utility is found, it is re-installed if the REINSTALL flag is set on, which it is by default.
 
-1. Switch to GitHub to identify your "no-reply" email address, such as "octocat+github@github.com"
+1. Switch to GitHub to identify your "no-reply" email address, such as 
+   "john_doe+github@gmail.com".
+
+   <a target="_blank" href="https://github.com/settings/profile">https://github.com/settings/profile</a>
+
 
    <a name="ListKeys"></a>
 
@@ -43,7 +47,7 @@ NOTE: This page is still actively under construction.
 
    <pre><strong>gpg --list-secret-keys --keyid-format LONG</strong></pre>
 
-   <tt>\-\- keyid-format LONG</tt> requests showing only those keys where both public and private key pair exists. This is becuase both are required to sign tags.
+   <tt>\-\-keyid-format LONG</tt> requests showing only those keys where both public and private key pair exists. This is becuase both are required to sign tags.
    If nothing is returned, there are no keys usable for signing.
    
    The first line in the response lists the location where keys are stored:
@@ -52,13 +56,15 @@ NOTE: This page is still actively under construction.
 ------------------------------------
    </pre>
 
+   (You would see your own user name instead of "wilson_mar" above.)
+
    The pubring.kbx file is the "Key Ring" file. See <a target="_blank" href="https://kb.iu.edu/d/awiu">https://kb.iu.edu/d/awiu</a> about keyring management commands.
 
 1. Generate another key:
 
    <pre><strong>gpg --gen-key</strong></pre>
 
-   <tt>--generate-key</tt> is the long form of the parameter.
+   <tt>\-\-generate-key</tt> is the long form of the parameter.
 
 1. Enter in the series of prompts:
 
@@ -71,7 +77,7 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
 1. In response to "Please enter the passphrase to protect your new key":
             
-   PROTIP: Save you <strong>Passphrase</strong> in a secure place (such as Vault), then copy it to paste in the prompt. This is to ensure that you can retrieve it every time you use the key.
+   PROTIP: Save you <strong>Passphrase</strong> in a secure place (such as Vault), then copy it to paste in the prompt. This is to ensure that you really can retrieve it every time you use the key.
 
 1. Re-enter the key.
 
@@ -100,7 +106,6 @@ sub   rsa2048 2020-03-01 [E] [expires: 2022-03-01]
 
    "rsa2048" is the strength of the encryption algorithm applied.
 
-
 1. <a href="#ListKeys">List keys</a> again.
 
    <pre>gpg: checking the trustdb
@@ -115,7 +120,9 @@ uid                 [ultimate] John Doe <john_doe+github@gmail.com>
 ssb   rsa2048/7F2026C2A22F2B37 2020-03-01 [E] [expires: 2022-03-01]
    </pre>
 
-   In the above example, the GPG key ID is 62C414BA89BFBE52.
+1. Manually highlight and copy the GPG key ID, which is 62C414BA89BFBE52 in the sample above.
+
+   TODO: A way to obtain the key automatically in a Bash script 
 
 1. To set your GPG signing key in Git, substitute the GPG key ID you'd like to use. 
 
@@ -124,7 +131,7 @@ ssb   rsa2048/7F2026C2A22F2B37 2020-03-01 [E] [expires: 2022-03-01]
    No response is expected from the command.
 
 
-   ## To edit your key
+   ## OPTIONAL: Edit GPG key
 
    In case you want to fix a typo:
 
@@ -156,6 +163,9 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
 1. Type "O" (capital or lowercase O) to save the entry.
 
+
+   ## Paste in GitHub
+
 1. Prepare pasting of the key generated in this next step by switching to an internet browser of the GitHub page that will receive the public key. After signing in, click your icon at the upper-right, select Settings, SSH and GPG keys:
 
    <a target="_blank" href="https://github.com/settings/keys">
@@ -184,24 +194,44 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
 1. Configure Git to use your chosen key for signing ("0A46826A" in the example here):
 
-   <pre><strong>git config --global user.signingkey 62C414BA89BFBE52</strong></pre>
+   <pre><strong>git config --global user.signingkey 62C414BA89BFBE52
+   git config --global gpg.program gpg2
+   </strong></pre>
 
-   The command adds an entry in file <tt>$HOME/.gitconfig</tt> created by the Git client:
+1. Configure Git to auto-sign git commits (not recommended):
+
+   <pre><strong>git config --global commit.gpgsign true
+   </strong></pre>
+
+1. Each command above add an entry in file <tt>$HOME/.gitconfig</tt> created by the Git client:
 
    <pre>[user]
 	name = John Doe
-	email = john_doe@gmail.com
+	email = john_doe+github@gmail.com
 	signingkey = 62C414BA89BFBE52
    </pre>
+
+1. If you are not using zsh, edit you ~/.bash_profile to avoid error messages:
+
+   <pre><strong>test -r ~/.bash_profile && echo 'export GPG_TTY=$(tty)' >> ~/.bash_profile
+echo 'export GPG_TTY=$(tty)' >> ~/.profile
+   </strong></pre>
+
+1. Activate the setting by restarting your Terminal session:
+
+   <pre><strong>source ~/.bash_profile
+   </strong></pre>
 
 1. Viewing the GPG key in GitHub's online UI, a key is flagged as "Unverified" until the email sent by GitHub is acknowledged.
 
 
    ## Sign Git Tags
    
-1. Construct that command to sign a Git tag (such as "v1.5.1"):
+1. Construct that command to sign a Git tag (such as "v1.5.2"):
 
-   <pre><strong>git tag -s v1.5.1 -m 'my signed 1.5 tag'</strong></pre>
+   <pre><strong>git tag -a -s v1.5.2 -m 'Signed tag 1.5.2'</strong></pre>
+
+   <tt>-a</tt> puts the tag in the repository when pushed to GitHub.
 
    PROTIP: Git tags are a single word, in Semantic Versionioning format. See semver.com.
 
@@ -209,15 +239,31 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
 1. To verify whether your tag was signed:
 
-   <pre><strong>git tag -v 1.5.1</strong></pre>
+   <pre><strong>git tag -v 1.5.2</strong></pre>
 
 1. See a verified badge next to your commits on git log:
 
-   <pre><strong>git log</strong></pre>
+   <pre><strong>git log --show-signature -1</strong></pre>
 
-## Encrypting files
+   The response would include:
 
-GPG can also be used for encryption and decryption of whole files:
+   <pre>gpg: Signature made Mon Jun 11 11:02:05 2020 EDT
+gpg:                using RSA key 62C414BA89BFBE52
+   </pre>
+
+1. After push, switch to an internet browser to see a verified badge next to your commits on GitHub online.
+
+
+   ## Sign Git Commits
+
+1. To sign a commit, add capital <tt>-S</tt>, such as:
+
+   <pre><strong>git commit -a -S -m "Some message"</strong></pre>
+
+
+## Encrypting whole files
+
+GPG can also be used for encryption and decryption of whole files for transmission over email, etc (not related to Git):
 
 1. To sign a plaintext file with your secret key:
 
@@ -240,6 +286,8 @@ GPG can also be used for encryption and decryption of whole files:
    <pre><strong>gpg -o outputfile ciphertextfile</strong></pre>
 
 ## Resources
+
+This article was the result of consulting several sources of information.
 
 Explanation of gpg program parameters are at:
 https://www.gnupg.org/documentation/manuals/gnupg/GPG-Input-and-Output.html
