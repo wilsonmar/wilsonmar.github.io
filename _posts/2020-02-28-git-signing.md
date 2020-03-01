@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This article is a step-by-step tutorial on how to setup and use GPG for Git to use for signing tags, for non-repudiation.
+This article is a step-by-step tutorial on how to setup and use GPG for Git to use for signing Git Tags, for non-repudiation. Also covered are releases associated with Tags.
 
 The contribution of this article is the logical ordering of deep-dive concepts presented in a succint way, as a hands-on narrated scenic tour. "PROTIP" flags advice from hard-won experience such as relevant keyboard shortcuts and things to remember, available only here for you.
 
@@ -300,7 +300,7 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
 
    PROTIP: Git tags are like a branch name. in Semantic Versionioning format. See semver.com.
 
-       <tt>GIT_TRACE=1</tt> enables tracing. Example output on macOS:
+   <tt>GIT_TRACE=1</tt> enables tracing. Example output on macOS:
    
    <pre>
 03:45:46.646487 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/bin/git
@@ -338,6 +338,8 @@ gpg: Good signature from "John Doe <john_doe+github@gmail.com>" [ultimate]
 
 
    ## Push by Tag
+
+   PROTIP: REMEMBER: Tags are push of tags are in addition to content commits.
 
 1. When pushing, specify the new Tag like a branch:
 
@@ -421,7 +423,7 @@ gpg: Good signature from "John Doe <john_doe+github@gmail.com>" [ultimate]
 
    <pre><strong>GIT_TRACE=1 git commit -a -S -m "Some message"</strong></pre>
 
-   The response, at time of writing:
+   A sample response at time of writing:
 
    <pre>
 03:48:07.999728 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/bin/git
