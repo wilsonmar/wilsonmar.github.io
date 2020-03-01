@@ -55,12 +55,19 @@ install-on-request: 28,189 (30 days), 111,655 (90 days), 439,134 (365 days)
 build-error: 0 (30 days)
    </pre>
 
-   On Linux, the package name is gnupg2.
+   Linux installers have other package names:
 
+   * <tt>yum install gnupg2</tt> on CentOS/RHEL
+   * <tt>dnf install gnupg2</tt> on Fedora
+   * <tt>apt install gnupg</tt> on Debian/Ubuntu
+   <br /><br />
+
+   On Windows, install <a target="_blank" href="https://www.gpg4win.org/">Gpg4win</a> <a target="_blank" href="https://chocolatey.org/packages/Gpg4win">using Chocolatey:
+   <tt>choco install gpg4win</tt>
+
+1. On macOS, install <a target="_blank" href="https://superuser.com/questions/655246/are-gnupg-1-and-gnupg-2-compatible-with-each-other">gnupg2</a> for the gpg program:
 
    In the script, if each utility is found, it is re-installed if the REINSTALL flag is set on, which it is by default.
-
-1. Install <a target="_blank" href="https://superuser.com/questions/655246/are-gnupg-1-and-gnupg-2-compatible-with-each-other">gnupg2</a> for the gpg program:
 
    <pre>
    MY_RUNTYPE="upgrade"
