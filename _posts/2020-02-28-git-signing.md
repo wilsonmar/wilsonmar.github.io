@@ -18,7 +18,7 @@ comments: true
 
 This article is a step-by-step tutorial on how to setup and use GPG for Git to use for signing tags, for non-repudiation.
 
-The contribution of this article is the logical ordering of deep-dive concepts presented in a succint way, as a hands-on narrated scenic tour. "PROTIP" flags advice from hard-won experience, available only here for you.
+The contribution of this article is the logical ordering of deep-dive concepts presented in a succint way, as a hands-on narrated scenic tour. "PROTIP" flags advice from hard-won experience such as relevant keyboard shortcuts and things to remember, available only here for you.
 
 NOTE: This page is still actively under construction.
 
@@ -95,11 +95,11 @@ build-error: 0 (30 days)
    <tt>\-\-keyid-format LONG</tt> requests showing only those keys where both public and private key pair exists. This is becuase both are required to sign tags.
    If nothing is returned, there are no keys usable for signing.
    
-   PROTIP: This gpg command was added as Bash shell alias (keyboard shortcut) in <a target="_blank" href="https://github.com/wilsonmar/git-utilities/blob/master/aliases.sh">https://github.com/wilsonmar/git-utilities/blob/master/aliases.sh</a> so that you just type:
+   PROTIP: This agove command was added as Bash shell alias (keyboard shortcut) in <a target="_blank" href="https://github.com/wilsonmar/git-utilities/blob/master/aliases.sh">https://github.com/wilsonmar/git-utilities/blob/master/aliases.sh</a>  so that you can instead just type:
 
    <pre><strong>gsk</strong></pre>
 
-   The first line in the response lists the location where keys are stored:
+   In the response, the first line lists the location where keys are stored:
 
    <pre>/Users/wilson_mar/.gnupg/pubring.kbx
 ------------------------------------
@@ -229,7 +229,7 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
    PROTIP: Redirecting the command output to a file makes it easier and less error-prone than manually highlighting and copying.
 
-1. Copy the file's contents to the Clipboard:
+1. Copy the file's contents to your operating system Clipboard:
 
    <pre><strong>pbcopy < $HOME/mygitsigning.pub</strong></pre>
 
@@ -255,7 +255,7 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
    <pre><strong>git config --global commit.gpgsign true
    </strong></pre>
 
-1. Each command above add an entry in file <tt>$HOME/.gitconfig</tt> created by the Git client:
+1. Each command above adds an entry in file <tt>$HOME/.gitconfig</tt> created by the Git client:
 
    <pre>[user]
 	name = John Doe
@@ -265,12 +265,14 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 	program = gpg2
    </pre>
 
-1. If you are not using zsh, edit you ~/.bash_profile to avoid these error messages:
+1. If you are not using Zsh, edit you ~/.bash_profile to avoid these error messages:
 
    <pre>
 error: gpg failed to sign the data
 fatal: failed to write commit object
    </pre>
+
+   If using Zsh, edit your ~/.bashrc file.
 
    Paste in:
 
@@ -278,28 +280,27 @@ fatal: failed to write commit object
 echo 'export GPG_TTY=$(tty)' >> ~/.profile
    </strong></pre>
 
-1. Activate the setting by restarting your Terminal session:
+   <tt>GPG_TTY</tt> variable is to avoid errors.
+
+1. Activate the setting by restarting your Terminal session. If not using Zsh:
 
    <pre><strong>source ~/.bash_profile
    </strong></pre>
 
-1. Viewing the GPG key in GitHub's online UI, a key is flagged as "Unverified" until the email sent by GitHub is acknowledged.
-
 
    ## Sign Git Tags
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=3SQhq12nEZI">VIDEO</a>:
-   CI-CD Using Git-Tags (on Jenkins) Apr 21, 2019
-   
-1. Construct that command to sign a Git tag (such as "v1.5.2") and paste the Passphrase when prompted:
+   <a target="_blank" href="https://www.youtube.com/watch?v=govmXpDGLpo" title="Dec 31, 2016">VIDEO</a>: 
+
+1. Construct a command to create a Git tag (such as "v1.5.2") to the current HEAD:
 
    <pre><strong>GIT_TRACE=1 git tag -a -s v1.5.2 -m 'Signed tag 1.5.2'</strong></pre>
 
-   <tt>-a</tt> puts the tag in the repository when pushed to GitHub.
+   <tt>-a</tt> (annotation) puts the tag in the repository when pushed to GitHub.
 
-   PROTIP: Git tags are a single word, in Semantic Versionioning format. See semver.com.
+   PROTIP: Git tags are like a branch name. in Semantic Versionioning format. See semver.com.
 
-   <tt>GIT_TRACE=1</tt> enables tracing. Example output on macOS:
+       <tt>GIT_TRACE=1</tt> enables tracing. Example output on macOS:
    
    <pre>
 03:45:46.646487 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/bin/git
@@ -308,9 +309,20 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
 03:45:46.650392 run-command.c:643       trace: run_command: gpg2 --status-fd=2 -bsau 62C414BA89BFBE52
    </pre>
 
+   You are prompted for the GPG key Passphrase.
+
+   Alternately, construct a command to create a Git tag (such as "v1.5.2") to a <strong>previous commit</strong>:
+
+   <pre><strong>GIT_TRACE-1 git tag v1.5.2 f3c9f3a</strong></pre>
+
+
 1. To verify whether your tag was signed:
 
    <pre><strong>git tag -v 1.5.2</strong></pre>
+
+1. For a list of all version 1 tags:
+
+   <pre><strong>git tag -l "v1.*"</strong></pre>
 
 1. See signing info with your latest commit in the git log:
 
@@ -324,12 +336,88 @@ gpg:                using RSA key 62C414BA89BFBE52
 gpg: Good signature from "John Doe <john_doe+github@gmail.com>" [ultimate]
    </pre>
 
-1. After push, switch to an internet browser to see a verified badge next to your commits on GitHub online.
+
+   ## Push by Tag
+
+1. When pushing, specify the new Tag like a branch:
+
+   <pre><strong>git push origin v1.5.2</strong></pre>
+
+1. For convenience (in scripts), push all tags:
+
+   <pre><strong>git push --tags</strong></pre>
+
+1. In GitHub, click the releases tab to see Tags:
+
+   <tt>https://github.com/.../.../releases</tt>
 
 
-   ## Sign Git Commits & merges
+   ## Delete Tags
 
-1. To sign a commit, add capital <tt>-S</tt>, such as:
+1. To delete a Tag locally:
+
+   <pre><strong>git tag -d v1.5.2</strong></pre>
+
+   <tt>--delete</tt> is the long form of the <tt>-d</tt> parameter.
+
+   Multiple tags can be specified in one command (separated by spaces).
+
+1. To delete a Tag in remote (GitHub):
+
+   <pre><strong>git push origin -d v1.5.2</strong></pre>
+
+   Alternately, the really short form replaces -d with a colon (:):
+
+   <pre><strong>git push origin :v1.5.2</strong></pre>
+
+
+   ## Tags in CI/CD
+
+1. View the list of tags with their full (40 character) hash using the <a target="_blank" href="https://git-scm.com/docs/git-show-ref">git show-ref command</a>:
+
+   <pre><strong>git show-ref --tags
+   </strong></pre>
+
+   PROTIP: The above command was added as Bash shell alias (keyboard shortcut) in <a target="_blank" href="https://github.com/wilsonmar/git-utilities/blob/master/aliases.sh">https://github.com/wilsonmar/git-utilities/blob/master/aliases.sh</a> so that you can instead just type:
+
+   <pre><strong>gst
+   </strong></pre>
+
+   The response is a list of full hashes with the path, such as:
+
+   <pre>d4c1e33d1969c8b35938db498a556de25b8c3aa3 refs/tags/v1.5.2</pre>
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=3SQhq12nEZI" title="Apr 21, 2019">
+   VIDEO:</a> In CI/CD such as Jenkins, get the first among latest tags using the <a target="_blank" href="https://git-scm.com/docs/git-ref-list">git ref-list command</a>:
+
+   <pre><strong>COMMIT_ID=$(git rev-list --tags --date-order | head -1)
+   </strong></pre>
+
+   The response is simply a full hash, such as:
+
+   <pre>d4c1e33d1969c8b35938db498a556de25b8c3aa3</pre>
+
+1. Extract the Tag based on the hash using the <a target="_blank" href="https://git-scm.com/docs/git-show-ref">git show-ref command</a>:
+
+   <pre><strong>TAG=$( git show-ref --tags | grep "${COMMIT_ID}" | awk -F / '{print $NF}')
+   </strong></pre>
+
+   The variable is used to specify the version in a Docker Build, Push, then Kubernetes apply, such as:
+
+   <pre><strong>docker build -t "$DOCKER_ACCOUNT/$DOCKER_REPO:$TAG" .
+   docker push "$DOCKER_ACCOUNT/$DOCKER_REPO:$TAG"
+   sed -e "s/VERSION/$TAG/" /home/centos/deployment.yml >/tmp/deployment.yml
+   kubectl apply -f /tmp/deployment.yml
+   kubectl get pods -o wide
+   </strong></pre>
+
+
+
+## Sign Git Commits & merges
+
+   This is not recommended by some, but ...
+
+1. To sign a commit, add command flag capital <tt>-S</tt>, such as:
 
    <pre><strong>GIT_TRACE=1 git commit -a -S -m "Some message"</strong></pre>
 
@@ -347,6 +435,8 @@ gpg: Good signature from "John Doe <john_doe+github@gmail.com>" [ultimate]
 [master 71ad705] Some message
  1 file changed, 1 insertion(+)
    </pre>
+
+1. After push, switch to an internet browser to see a verified badge next to your commits on GitHub online.
 
 
 ## Encrypting whole files
