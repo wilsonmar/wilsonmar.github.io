@@ -1372,6 +1372,8 @@ Nov 19, 2019 [55:37] by Rod Davison
    An Introduction to Git and GitHub</a> [38:26] by Brian Yu(brianyu28) for Harvard CS50 class 
    confidently uses clear graphics with demos.
 
+<a name="RaghavPal"></a>
+
 ### Raghav Pal 
 
 On Jan 2, 2016, <a target="_blank" href="https://www.linkedin.com/in/raghavpal/">Raghav</a> has a Automation Step by Step channel where he has a Git and GitHub Beginner Tutorial, which actually covers more advanced features than most others,
@@ -1394,16 +1396,17 @@ such as autocomplete:
 7. <a target="_blank" href="https://www.youtube.com/watch?v=Ft2LXlaSEfs&list=PLhW3qG5bs-L8OlICbNX9u4MZ3rAt5c5GG&index=7">
    How To Add Eclipse Project To GitHub | How to Commit, Push, Pull from Eclipse to GitHub</a> [11:36] Nov 14, 2017
 
+<a name="ZachGovani"></a>
+
 ### Zach Govani
 
-On the Mobile Developers of Berkeley YouTube channel all on Sep 29, 2017 
+On the Mobile Developers of Berkeley YouTube channel all on Sep 29, 2017:
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=5pGps0KsdL4">
    Git and GitHub Basics</a> [4:57]
 * <a target="_blank" href="https://www.youtube.com/watch?v=cIw0aOyXUcg">
    How to deal with git merge conflicts using GitHub</a>
-   [5:39] shows his
-   https://github.com/zgovani/gitpractice
+   [5:39] shows his <a target="_blank" href="https://github.com/zgovani/gitpractice">https://github.com/zgovani/gitpractice</a>
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=Synh-q2c9ts">
    Git Feature Branching</a>
@@ -1413,7 +1416,7 @@ On the Mobile Developers of Berkeley YouTube channel all on Sep 29, 2017
 
 ### @DavidMahler
 
-https://www.linkedin.com/in/davidmahler/
+<a target="_blank" href="https://www.linkedin.com/in/davidmahler/">https://www.linkedin.com/in/davidmahler</a>
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=uR6G2v_WsRA">
     Introduction to Git - Core Concepts</a> [28:37] Jun 21, 2017
