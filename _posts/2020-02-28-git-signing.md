@@ -145,7 +145,29 @@ build-error: 0 (30 days)
    The pubring.kbx file is the "Key Ring" file. See <a target="_blank" href="https://kb.iu.edu/d/awiu">https://kb.iu.edu/d/awiu</a> about keyring management commands.
 
 
-   ## Optional Yubiky using GPGTools Suite 
+   ## External (GPG Suite)
+
+   If you're working on open-source projects, not for Enterprise internal use, you can
+   install the <a target="_blank" href="https://gpgtools.org/">GPG Suite</a> (UI app)
+   or Keybase.io.
+
+   The Suite can be installed as a <a target="_blank" href="https://formulae.brew.sh/cask/gpg-suite">Homebrew formula</a> "brew cask install gpg-suite" (brew cask install gpgtools no longer exists).
+   The GUI app is installed at "/Applications/GPG Keychain.app".
+   The first time it runs, this pop-up appears:
+
+   <a target="_blank" href="git-signing-gpgtools-upload-828x498.png"><img width="414" alt="git-signing-gpgtools-upload-828x498.png" src="https://user-images.githubusercontent.com/300046/75632532-ef07ab00-5bca-11ea-8c4a-36000f5ed099.png"></a>
+
+   Read about it at <a target="_blank" href="https://gpgtools.org/">GPGTools.org</a> and <a target="_blank" href="   https://gist.github.com/danieleggert/b029d44d4a54b328c0bac65d46ba4c65">here</a>.
+
+   The Suite requires to be installed "brew install pinentry-mac", activated by then entry in file 
+   <tt>~/.gnupg/gpg-agent.conf</tt> 
+
+   <pre>pinentry-program /usr/local/MacGPG2/libexec/pinentry-mac.app/Contents/MacOS/pinentry-mac</pre>
+
+
+
+
+   ## Optional Yubiky smart chip
 
    If your laptop's USB has been locked down, skip this and move on to <a href="#GenerateKey">generate a key</a>.
 
@@ -154,47 +176,19 @@ build-error: 0 (30 days)
 
    PROTIP: If you lose your physical dongle, you'll need to re-generate all keys.
 
-   Keys written to a card can only be used in combination with a PIN code, so even if a YubiKey is stolen, a thief would not be able to authenticate directly.
+   Keys written to a card can only be used in combination with a PIN code, so that even if a YubiKey is stolen, a thief would not be able to authenticate directly.
 
-   Each YubiKey has its own unique cardno.
+   Each YubiKey is its own unique cardno.
 
-1. Install the <a target="_blank" href="https://gpgtools.org/">GPG Suite</a> (UI app) as a <a target="_blank" href="https://formulae.brew.sh/cask/gpg-suite">Homebrew formula</a>:
+1. Install requisite software:
 
-   <pre><strong>brew cask install gpg-suite</strong></pre>
-
-   (brew cask install gpgtools no longer exists)
-
-1. Invoke the GUI app installed:
-
-   <pre><strong>open "/Applications/GPG Keychain.app"</strong></pre>
-
-   The first time it runs, this pop-up appears:
-
-   <a target="_blank" href="git-signing-gpgtools-upload-828x498.png"><img width="414" alt="git-signing-gpgtools-upload-828x498.png" src="https://user-images.githubusercontent.com/300046/75632532-ef07ab00-5bca-11ea-8c4a-36000f5ed099.png"></a>
-
-   Read about it at <a target="_blank" href="https://gpgtools.org/">GPGTools.org</a>.
-
-   https://gist.github.com/danieleggert/b029d44d4a54b328c0bac65d46ba4c65
-
-1. Install
-
-   <pre>brew install pinentry-mac
-   brew install ykman
+   <pre>brew install ykman
    brew install yubikey-personalization
    </pre>
 
-   Warning: ykpers 1.20.0 is already installed and up-to-date
+   Install of yubikey-personalization issues Warning: ykpers 1.20.0 is already installed and up-to-date.
 
    QUESTION: How to check for vulnerabilities in the above utilities?
-
-1. Use a text editor to add inside file <tt>~/.gnupg/gpg-agent.conf</tt> this line that executes the "pinentry-mac" binary executable:
-
-   <pre>pinentry-program /usr/local/MacGPG2/libexec/pinentry-mac.app/Contents/MacOS/pinentry-mac</pre>
-
-   under:
-   <pre>default-cache-ttl 600
-max-cache-ttl 7200
-   </pre>
 
 1. Use a text editor to add inside file <tt>~/.gnupg/gpg.conf</tt> "no-tty" so it contains:
 
@@ -333,13 +327,14 @@ echo $GPGKeyID
    No response is expected from the command.
 
 
+
    ## OPTIONAL: Edit GPG key
 
    In case you want to fix a typo:
 
 1. Associate an email (value for field uid) with your GPG key, which Git requires by entering the <strong>edit-key</strong> mode:
 
-   <pre><strlng>gpg --edit-key "${GPGKeyID}"</strong></pre>
+   <pre><strlng>gpg --edit-key 62C414BA89BFBE52</strong></pre>
 
    This results in this prompt:
 
@@ -477,6 +472,7 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
 
    <pre><strong>GIT_TRACE-1 git tag v1.5.2 f3c9f3a</strong></pre>
 
+   
 1. For a list of all version 1 tags:
 
    <pre><strong>git tag -l "v1.*"</strong></pre>
@@ -493,6 +489,15 @@ gpg:                using RSA key 62C414BA89BFBE52
 gpg: Good signature from "John Doe <john_doe+github@gmail.com>" [ultimate]
    </pre>
 
+   ### Silencing
+
+   I don't recommend this, but theoretically you can silence the "you need a Passphrase" prompt by adding in file <tt>~/.gnupg/gpg.conf</tt> "batch". But 
+
+   # Connects gpg-agent to the OSX keychain via the brew-installed
+# pinentry program from GPGtools. This is the OSX 'magic sauce',
+# allowing the gpg key's passphrase to be stored in the login
+# keychain, enabling automatic key signing.
+pinentry-program /usr/local/bin/pinentry-mac   
 
    ## Push by Tag
 
