@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Git Signing"
-excerpt: "Establish non-repudiation in GitHub using GPG (installer gnupg2)"
+excerpt: "Establish non-repudiation in GitHub using GPG (installer gnupg2), Vault, Yubikey"
 tags: [git, security]
 date: "2020-02-28"
 file: "git-signing"
@@ -18,9 +18,27 @@ comments: true
 
  > "If you ... want to verify that commits are actually from a trusted source, Git has a few ways to sign and verify work using GPG." -<a target="_blank" href="https://git-scm.com/docs/git-show-ref">git-scm.com/show-ref command</a>
 
+Protect Your Git Repositories From Commit Forgery Using Signing<a target="_blank" href="https://medium.com/@rwbutler/signing-commits-using-gpg-on-macos-7210362d15">*</a>
+
 This article is a step-by-step tutorial on how to setup and use GPG for Git to use for signing Git Tags, for non-repudiation. Also covered are releases associated with Tags. Since we're using GPG, we have bonus notes about signing of whole files using GPG.
 
 The contribution of this article is the logical ordering of <strong>deep-dive</strong> concepts presented in a succint way, as a hands-on narrated scenic tour. "PROTIP" flags advice from hard-won experience such as relevant keyboard shortcuts and things to remember, available only here for you.
+
+## The Ideal Situation
+
+Here's the workflow I'd like to see:
+
+Before someone starts a job/project, a trusted administrator (the boss) specifies on a "self-service" app what should be installed on each worker's laptop, such as the <a href="#Installers">client utilities</a> which should be installed for his/her specific job based on RBAC (Role-Based Access Control) policies.
+
+The app generates the certificate pairs, installs them on GitHub, and saves the keys on the worker's laptop.
+This provides a more trusted chain than each employee generating their own key pair.
+
+Then all a new working developer needs to do is make a change and do a git add/commit/push on a pre-configured laptop.
+
+
+<a name="Installers"></a>
+
+## Install client utilities
 
 NOTE: This page is still actively under construction.
 
@@ -118,7 +136,9 @@ build-error: 0 (30 days)
    git config user.email "john_doe@gmail.com"
    </strong></pre>
 
-   PROTIP: A big reason organizations ask for encrypted signing is that any name and email can be specified in Git.
+   PROTIP: Any name and email can be specified in Git. That's a big reason organizations ask for cryptographically signing commits in GitHub.
+
+
 
 
    <a name="ListKeys"></a>
@@ -142,9 +162,11 @@ build-error: 0 (30 days)
 ------------------------------------
    </pre>
 
-   (You would see your own user name instead of "wilson_mar" above.)
+   (You would of course see your own user name instead of "wilson_mar" above.)
 
-   The pubring.kbx file is the "Key Ring" file. See <a target="_blank" href="https://kb.iu.edu/d/awiu">https://kb.iu.edu/d/awiu</a> about keyring management commands.
+   The pubring.kbx file is Gnupg program's "Key Ring" file. See <a target="_blank" href="https://kb.iu.edu/d/awiu">https://kb.iu.edu/d/awiu</a> about keyring management commands.
+
+   Alternative Key Ring management tools are Keybase.io, GPG Suite, macOS's Apple Key Ring, and others.
 
 
    ## External (GPG Suite)
@@ -712,6 +734,7 @@ https://wiki.gentoo.org/wiki/GnuPG#Changing_pinentry_for_SSH_logins
 https://ice-blog.readthedocs.io/en/latest/tutorial/encrypt/gpg/
 
 https://jigarius.com/blog/signing-git-commits Sep 6, 2019
+
 
 
 ## More on DevOps #
