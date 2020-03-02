@@ -33,7 +33,7 @@ Before someone starts a job/project, a trusted administrator (the boss) specifie
 The app generates the certificate pairs, installs them on GitHub, and saves the keys on the worker's laptop.
 This provides a more trusted chain than each employee generating their own key pair.
 
-Then all a new working developer needs to do is make a change and do a git add/commit/push on a pre-configured laptop.
+Then all a new working developer needs to do is make a change and do a <a href="#SignCommits">git add/commit/push</a> on a pre-configured laptop.
 
 
 <a name="Installers"></a>
@@ -437,7 +437,7 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
    <pre><strong>git config --global tag.forceSignAnnotated true
    </strong></pre>
 
-1. Configure Git to auto-sign ALL commits on ALL repos (not recommended):
+1. Configure Git to auto-sign ALL commits on ALL repos:
 
    <pre><strong>git config --global commit.gpgsign true
    </strong></pre>
@@ -619,6 +619,7 @@ To github.com:wilsonmar/git-utilities
    </strong></pre>
 
 
+<a name="SignCommits"></a>
 
 ## Sign Git Commits & merges
 
@@ -663,9 +664,9 @@ Users may want this level of verification for security reasons. Especially if th
    gpg --detach-sign --sign-with 62C414BA89BFBE52 -o package.sig package.exe
    </strong></pre>
 
-   <tt>/-/-detach-sign</tt> requests a detached signature to be generated.
+   <tt>\-\-detach-sign</tt> requests a detached signature to be generated.
 
-   <tt>/-/-sign-with</tt> precedes the GPG key id to be used to perform signing.
+   <tt>\-\-sign-with</tt> precedes the GPG key id to be used to perform signing.
 
    <tt>-o</tt> specifies the output file. Traditionally we use either a <tt>.sig</tt> or a <tt>.gpg</tt> extension.
 
