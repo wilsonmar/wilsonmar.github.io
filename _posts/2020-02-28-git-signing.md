@@ -29,7 +29,7 @@ NOTE: This page is still actively under construction.
 1. TODO: Execute a Bash script to do the following:
    Until then, manuall install:
 
-   <a target="_blank" href="https://wilsonmar.github.io/homebrew/">brew (Homebrew)</a>
+   <a target="_blank" href="https://wilsonmar.github.io/macos-homebrew/">brew (Homebrew)</a>
    
 1. Install a Git client:
 
@@ -267,6 +267,8 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 1. Type "O" (capital or lowercase O) to save the entry.
 
 1. In response to "Please enter the passphrase to protect your new key":
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/75696173-26349580-5c79-11ea-9227-6731ccd22211.png"><img width="671" alt="git-signed-pass-form" src="https://user-images.githubusercontent.com/300046/75696173-26349580-5c79-11ea-9227-6731ccd22211.png"></a>
             
    PROTIP: Save you <strong>Passphrase</strong> in a secure place (such as in <a target="_blank" href="https://wilsonmar.github.io/hashicorp-vault/">Hashicorp Vault</a>), <strong>then</strong> copy it to paste in the prompt. This tactic is to ensure that you really can retrieve it when you use the key in a future command.
 
@@ -490,8 +492,8 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
    The response would include, for example:
 
    <pre>commit 71ad7059817e609b52b29469e1214a56799b33ef (HEAD -> master)
-gpg: Signature made Mon Jun 11 11:02:05 2020 EDT
-gpg:                using RSA key 62C414BA89BFBE52
+gpg: Signature made Mon Mar  2 11:07:39 2020 EST
+gpg:                using RSA key 0BB29E3C5216420CC50ACF8D62C414BA89BFBE51
 gpg: Good signature from "John Doe <john_doe+github@gmail.com>" [ultimate]
    </pre>
 
@@ -686,15 +688,14 @@ This article was the result of consulting several sources of information.
 Explanation of gpg program parameters are at:
 https://www.gnupg.org/documentation/manuals/gnupg/GPG-Input-and-Output.html
 
-
 As with all things Git, the canonical documentation is at git-scm.
 Regarding Git signing:
 <a target="_blank" href="https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work">
 https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work</a>
 
-
 https://help.github.com/en/github/authenticating-to-github/telling-git-about-your-signing-key
 
+https://help.github.com/en/enterprise/2.17/user/github/authenticating-to-github/signing-commits
 
 https://confluence.atlassian.com/bitbucketserver/using-gpg-keys-913477014.html
 
