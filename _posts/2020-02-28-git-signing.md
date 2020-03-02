@@ -400,7 +400,7 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
 1. Configure Git to use the program for signing:
 
-   <pre><strong>git config --global gpg.program /usr/local/MacGPG2/bin/gpg2
+   <pre><strong>git config --global gpg.program gpg
    </strong></pre>
 
 1. Configure Git to use your chosen key for signing ("0A46826A" in the example here):
@@ -506,7 +506,7 @@ gpg: Good signature from "John Doe <john_doe+github@gmail.com>" [ultimate]
 pinentry-program /usr/local/bin/pinentry-mac   
    </pre>
 
-   
+
    ## Push by Tag
 
    PROTIP: REMEMBER: Tags are push of tags are in addition to content commits.
