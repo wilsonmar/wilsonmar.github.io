@@ -31,10 +31,9 @@ The contribution of this article is the logical ordering of <strong>deep-dive</s
 
 Here's the workflow I would like to see. It's not so much self-service as a tool for administrators. Anyway...
 
-Before someone starts a job/project, a trusted administrator (the boss) specifies on a "self-service" app what should be installed on each worker's laptop, such as the <a href="#Installers">client utilities</a> which should be installed for his/her specific job based on RBAC (Role-Based Access Control) policies.
+Before someone starts a job/project, a trusted administrator (the boss) specifies on a "self-service" app what should be installed on each worker's laptop, such as the <a href="#Installers">client utilities</a> which should be installed for his/her specific job based on RBAC (Role-Based Access Control) policies. Better yet, <a target="_blank" href="https://en.wikipedia.org/wiki/Attribute-based_access_control">Attribute-based Access Control (ABAC)</a>.
 
-The app generates the certificate pairs, installs them on GitHub, and saves the keys on the worker's laptop.
-This provides a more trusted chain than each employee generating their own key pair.
+The app generates the certificate pairs, stores them in Vault, installs them on GitHub, and saves the keys on the worker's laptop. This provides a more trusted chain than each employee generating their own key pair.
 
 Then all a new working developer needs to do is, on a pre-configured laptop, make a change and do a git <a href="#SignTag">tag</a> or <a href="#SignCommits">add/commit</a>, then <a href=#Push">push</a>.
 
