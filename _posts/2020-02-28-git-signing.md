@@ -24,16 +24,17 @@ This article is a step-by-step tutorial on how to setup and use GPG for Git to u
 
 The contribution of this article is the logical ordering of <strong>deep-dive</strong> concepts presented in a succint way, as a hands-on narrated scenic tour. "PROTIP" flags advice from hard-won experience such as relevant keyboard shortcuts and things to remember, available only here for you.
 
-## The Ideal Situation
 
-Here's the workflow I'd like to see:
+## Desired Self-Servie Workflow
+
+Here's the workflow we would like to see:
 
 Before someone starts a job/project, a trusted administrator (the boss) specifies on a "self-service" app what should be installed on each worker's laptop, such as the <a href="#Installers">client utilities</a> which should be installed for his/her specific job based on RBAC (Role-Based Access Control) policies.
 
 The app generates the certificate pairs, installs them on GitHub, and saves the keys on the worker's laptop.
 This provides a more trusted chain than each employee generating their own key pair.
 
-Then all a new working developer needs to do is make a change and do a <a href="#SignCommits">git add/commit/push</a> on a pre-configured laptop.
+Then all a new working developer needs to do is, on a pre-configured laptop, make a change and do a git <a href="#SignTag">tag</a> or <a href="#SignCommits">add/commit</a>, then <a href=#Push">push</a>.
 
 
 <a name="Installers"></a>
@@ -530,6 +531,7 @@ gpg: Good signature from "John Doe <john_doe+github@gmail.com>" [ultimate]
 pinentry-program /usr/local/bin/pinentry-mac   
    </pre>
 
+   <a name="Push"></a>
 
    ## Push by Tag
 
