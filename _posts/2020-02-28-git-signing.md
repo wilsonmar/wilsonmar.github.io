@@ -25,9 +25,11 @@ This article is a step-by-step tutorial on how to setup and use GPG for Git to u
 The contribution of this article is the logical ordering of <strong>deep-dive</strong> concepts presented in a succint way, as a hands-on narrated scenic tour. "PROTIP" flags advice from hard-won experience such as relevant keyboard shortcuts and things to remember, available only here for you.
 
 
-## Desired Self-Servie Workflow
+<a name="SelfService"></a>
 
-Here's the workflow we would like to see:
+## Desired "Self-Serve" Workflow
+
+Here's the workflow I would like to see. It's not so much self-service as a tool for administrators. Anyway...
 
 Before someone starts a job/project, a trusted administrator (the boss) specifies on a "self-service" app what should be installed on each worker's laptop, such as the <a href="#Installers">client utilities</a> which should be installed for his/her specific job based on RBAC (Role-Based Access Control) policies.
 
@@ -205,7 +207,7 @@ build-error: 0 (30 days)
 
    Each YubiKey is its own unique cardno.
 
-1. Install requisite software:
+1. Install software to manage Yubikey (<a target="_blank" href="https://github.com/Yubico/yubikey-manager">ykman</a>):
 
    <pre>brew install ykman
    brew install yubikey-personalization
