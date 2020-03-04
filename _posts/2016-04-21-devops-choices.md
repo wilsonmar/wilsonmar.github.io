@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This page is one of a [series on DevOps](/devops-series/).
+This page is one of a [series on DevSecOps](/devsecops/).
 
 There are many choices of specific technologies within
 each category:
