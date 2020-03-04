@@ -4,7 +4,7 @@ title: "About DevOps"
 excerpt: "You gotta do it for competitive speed"
 tags: [devops]
 date: "2016-04-29"
-file: "devops-series"
+file: "devsecops"
 image:
 # feature: pic-brown-horses-running-forward-1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14724047/445df2f0-07d1-11e6-9c26-782291fe2b47.jpg
@@ -168,3 +168,4 @@ Rather than repeating others, let me link to the most influencial pieces about D
 * <a href="https://www.amazon.com/Practice-Cloud-System-Administration-Practices/dp/032194318X">Practice of Cloud System Administration: Designing and Operating Large Distributed Systems</a>
 * <a target="_blank" href="http://download.microsoft.com/download/C/4/A/C4A14099-FEA4-4CB3-8A8F-A0C2BE5A1219/The%20Release%20Pipeline%20Model.pdf">Microsoft's Release Pipeline Model - Download PDF</a> is a high-level description before Azure DevOps appeared.
 * https://continuousdelivery.com/implementing/patterns/
+
