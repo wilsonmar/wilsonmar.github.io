@@ -84,9 +84,6 @@ build-error: 0 (30 days)
    * <tt>apt install gnupg</tt> on Debian/Ubuntu
    <br /><br />
 
-   On Windows, install <a target="_blank" href="https://www.gpg4win.org/">Gpg4win</a> <a target="_blank" href="https://chocolatey.org/packages/Gpg4win">using Chocolatey:
-   <tt>choco install gpg4win</tt>
-
 1. On macOS, install <a target="_blank" href="https://superuser.com/questions/655246/are-gnupg-1-and-gnupg-2-compatible-with-each-other">gnupg2</a> for the gpg program:
 
    In the script, if each utility is found, it is re-installed if the REINSTALL flag is set on, which it is by default.
@@ -110,6 +107,10 @@ build-error: 0 (30 days)
       fi
    fi
    </pre>
+
+1. On Windows, install <a target="_blank" href="https://www.gpg4win.org/">Gpg4win</a> <a target="_blank" href="https://chocolatey.org/packages/Gpg4win">using Chocolatey</a>:
+
+   <tt>choco install gpg4win</tt>
 
 1. Ensure that commands for "gpg" are routed to gpg2:
 
@@ -171,7 +172,7 @@ build-error: 0 (30 days)
    Alternative Key Ring management tools are Keybase.io, GPG Suite, macOS's Apple Key Ring, and others.
 
 
-   ## External (GPG Suite)
+   ## External (GPG Suite) to openpgp.or
 
    If you're working on open-source projects, not for Enterprise internal use, you can
    install the <a target="_blank" href="https://gpgtools.org/">GPG Suite</a> (UI app)
@@ -193,7 +194,9 @@ build-error: 0 (30 days)
 
 
 
-   ## Optional Yubiky smart chip
+   ## Optional Yubikey smart chip
+
+   This is for those who work on multiple machines but must use a single signing key.
 
    If your laptop's USB has been locked down, skip this and move on to <a href="#GenerateKey">generate a key</a>.
 
@@ -295,6 +298,8 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/75696173-26349580-5c79-11ea-9227-6731ccd22211.png"><img width="671" alt="git-signed-pass-form" src="https://user-images.githubusercontent.com/300046/75696173-26349580-5c79-11ea-9227-6731ccd22211.png"></a>
             
    PROTIP: Save you <strong>Passphrase</strong> in a secure place (such as in <a target="_blank" href="https://wilsonmar.github.io/hashicorp-vault/">Hashicorp Vault</a>), <strong>then</strong> copy it to paste in the prompt. This tactic is to ensure that you really can retrieve it when you use the key in a future command.
+
+   REMEMBER: Don't reuse passwords.
 
 1. Re-enter the key.
 
@@ -405,7 +410,7 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
 1. Print the public GPG key, in <strong>ASCII armor</strong> format so that they can be sent in a standard messaging format such as email. (Otherwise, the output is in binary format). 
 
-   <pre><strong>gpg --armor --export "$GPGKeyID}" >$HOME/mygitsigning.pub</strong></pre>
+   <pre><strong>gpg --armor --export 62C414BA89BFBE52 >$HOME/mygitsigning.pub</strong></pre>
 
    PROTIP: Redirecting the command output to a file makes it easier and less error-prone than manually highlighting and copying.
 
@@ -439,10 +444,14 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
    <pre><strong>git config --global tag.forceSignAnnotated true
    </strong></pre>
 
+   <a name="SignAllCommits"></a>
+
 1. Configure Git to auto-sign ALL commits on ALL repos:
 
    <pre><strong>git config --global commit.gpgsign true
    </strong></pre>
+
+   PROTIP: It takes a little more time to sign commits.
 
 1. Each command above adds an entry in file <tt>$HOME/.gitconfig</tt> created by the Git client:
 
@@ -476,6 +485,34 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
    <pre><strong>source ~/.bash_profile
    </strong></pre>
 
+
+<a name="SignCommits"></a>
+
+## Sign Git Commits & merges
+
+   This is not recommended by some, but ...
+
+1. To sign a commit, if you didn't <a href="#SignAllCommits">specify signing every time</a>,
+   add command flag capital <tt>-S</tt>, such as:
+
+   <pre><strong>GIT_TRACE=1 git commit -a -S -m "Some message"</strong></pre>
+
+   A sample response at time of writing:
+
+   <pre>
+03:48:07.999728 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/bin/git
+03:48:08.000435 exec-cmd.c:236          trace: resolved executable dir: /Library/Developer/CommandLineTools/usr/bin
+03:48:08.001587 git.c:418               trace: built-in: git commit -a -S -m 'Some message'
+03:48:08.017126 run-command.c:643       trace: run_command: gpg2 --status-fd=2 -bsau 62C414BA89BFBE52
+03:48:08.153175 run-command.c:643       trace: run_command: git gc --auto
+03:48:08.156446 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/libexec/git-core/git
+03:48:08.157243 exec-cmd.c:236          trace: resolved executable dir: /Library/Developer/CommandLineTools/usr/libexec/git-core
+03:48:08.158689 git.c:418               trace: built-in: git gc --auto
+[master 71ad705] Some message
+ 1 file changed, 1 insertion(+)
+   </pre>
+
+1. After push, switch to an internet browser to see a verified badge next to your commits on GitHub online.
 
    ## Sign Git Tags
 
@@ -621,33 +658,6 @@ To github.com:wilsonmar/git-utilities
    kubectl get pods -o wide
    </strong></pre>
 
-
-<a name="SignCommits"></a>
-
-## Sign Git Commits & merges
-
-   This is not recommended by some, but ...
-
-1. To sign a commit, add command flag capital <tt>-S</tt>, such as:
-
-   <pre><strong>GIT_TRACE=1 git commit -a -S -m "Some message"</strong></pre>
-
-   A sample response at time of writing:
-
-   <pre>
-03:48:07.999728 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/bin/git
-03:48:08.000435 exec-cmd.c:236          trace: resolved executable dir: /Library/Developer/CommandLineTools/usr/bin
-03:48:08.001587 git.c:418               trace: built-in: git commit -a -S -m 'Some message'
-03:48:08.017126 run-command.c:643       trace: run_command: gpg2 --status-fd=2 -bsau 62C414BA89BFBE52
-03:48:08.153175 run-command.c:643       trace: run_command: git gc --auto
-03:48:08.156446 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/libexec/git-core/git
-03:48:08.157243 exec-cmd.c:236          trace: resolved executable dir: /Library/Developer/CommandLineTools/usr/libexec/git-core
-03:48:08.158689 git.c:418               trace: built-in: git gc --auto
-[master 71ad705] Some message
- 1 file changed, 1 insertion(+)
-   </pre>
-
-1. After push, switch to an internet browser to see a verified badge next to your commits on GitHub online.
 
 
 ## Encrypting whole files using GPG
