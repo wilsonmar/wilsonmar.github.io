@@ -18,13 +18,19 @@ shorturl: https://goo.gl/wojj1R
 {% include l18n.html %}
 {% include _toc.html %}
 
-This article contains my notes on Static Analysis of code.
-
 SonarQube (abbreviated to Sonar here)
-improves code quality by scanning source code
-to identify **issues** from **meaures** it calculates.
-The functionality it performs is
-SonarQube performs "static analysis" of programming code.
+improves quality by performing "static analysis" (scanning) of programming code to identify **issues** from **meaures** it calculates.
+
+> "Sonar's power is as a way to reveal specific coding tricks the team might want to adopt."
+
+PROTIP: Introduce rules gradually and gently. 
+
+Those who use Sonar purely as a surveillance tool to judge workers usually experience push-back.
+
+CAUTION: Sonar stores code (in some compressed form) that it processes, which may be of security concern. Licenses are limited to the lines of code Sonar stores.
+
+Upgrade to v7 involves a change to PostgreSQL or MariaDB from MySQL.
+
 
 ## Static Analysis vs Lint #
 

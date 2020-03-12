@@ -135,13 +135,11 @@ build-error: 0 (30 days)
 1. While in a Terminal with the present working directory at your local repository, configure you valid GitHub user name and email (if you haven't already). For example:
 
    <pre><strong>
-   git config user.name "John Doe"
-   git config user.email "john_doe@gmail.com"
+   git config --global user.name "John Doe"
+   git config --global user.email "john_doe@gmail.com"
    </strong></pre>
 
-   PROTIP: Any name and email can be specified in Git. That's a big reason organizations ask for cryptographically signing commits in GitHub.
-
-
+   PROTIP: Any name and email can be specified in Git. That's a big reason organizations ask for cryptographically signing commits in GitHub, which requires that the email specified be validated.
 
 
    <a name="ListKeys"></a>
@@ -418,9 +416,15 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
    <pre><strong>pbcopy < $HOME/mygitsigning.pub</strong></pre>
 
+   On Windows, pipe file contents to the clip.exe program built in within C:\Windows\system32 <a target="_blank" href="https://superuser.com/questions/472598/pbcopy-for-windows">*</a>:
+
+   <pre><strong>type mygitsigning.pub | clip</strong></pre>
+
+   But note that 
+
    Alternately, open the file using a text editor, select all file contents, and copy to Clipboard.
 
-   The public key contents includes the "-----BEGIN PGP PUBLIC KEY BLOCK-----" and "-----END PGP PUBLIC KEY BLOCK-----" markers.
+   The public key contents should include markers "-----BEGIN PGP PUBLIC KEY BLOCK-----" and "-----END PGP PUBLIC KEY BLOCK-----".
 
 1. Switch to the GitHub page opened and click on the input field (so the field border turns blue), then press command+V to paste. Click "Add GPG key".
 

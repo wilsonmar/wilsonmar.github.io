@@ -91,6 +91,11 @@ read() returns line endings (\n) in string lines.
 
 readlines() shows the whole file.
 
+To return just the first 3 characters of a string:
+
+<pre>letters = "abcdef"
+first_part = letters[:3]</pre>
+
 
 <a name="CopyFile"></a>
 
@@ -273,7 +278,21 @@ https://github.com/letspython3x/code_examples</a>
 <a target="_blank" href="https://www.learnpython.org/en/Classes_and_Objects">https://www.learnpython.org/en/Classes_and_Objects</a>
 
 
+## Math Operators
+
+<tt>11%5</tt> use the (percent sign), the modulo operator to divide 11 by the quotient 5 in order to return 1 because two 5s can go into 11, leaving 1 left over, the remainder.
+
+<tt>11//5</tt> uses "floor division" to return just the integer of 2, discarding the remainder. It returns the integral part of the quotient.
+
+To avoid divide by zero errors by returning 0:
+
+<pre>def weird_division(n, d):
+    return n / d if d else 0
+</pre>
+
 ## Testing
+
+Being a dynamic language, errors in Python code can appear only when run rather than when compiled.
 
 PROTIP: Create a test .py file to go with each py file.
 
@@ -287,7 +306,7 @@ There are several libraries to support testing.
 
 2. pyTest
 
-   * after pip3 install pytest
+   <pre>pip3 install pytest</pre>
 
    <pre>import file_ab_session as fas
 def test_add_function_given_two_arguments():
