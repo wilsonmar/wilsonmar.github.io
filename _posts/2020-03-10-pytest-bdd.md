@@ -16,9 +16,9 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-After following this hands-on tutorial, you would be able to add to your resume:
+After following this hands-on tutorial manually, you would be able to add to your resume:
 
-> Automated testing of BDD based on Gherkin-language stories using Python-based pytest-bdd installed using a Bash script. Includes test coverage analysis. Data-driven tests include localization verification.
+> Automated testing of BDD based on Gherkin-language stories using Python-based pytest-bdd installed using a Bash script. Integrated libraries for test coverage analysis, data-driven tests, and localization verification.
 
 
 ## Video tutorial
@@ -110,6 +110,8 @@ if you do it manually instead,
    </pre>
 
    Alternately, after git cloning, run <tt>pipenv install</tt> from the command line in the project's root directory. This references file <tt>pipfile</tt>.
+
+   https://github.com/hchasestevens/fault-localization
 
 1. Additionally, some want to install files to enable reference from within IDEs such as PyCharm, Eclipse, VSCode, etc.
 
@@ -213,6 +215,8 @@ Book: "Python Testing with pytest" by Brian Okken
 
 
    ### Hooks in conftest.py
+
+   To share common steps, fixtures, and BDD hooks between test modules.
 
    per-directory hooks
 
