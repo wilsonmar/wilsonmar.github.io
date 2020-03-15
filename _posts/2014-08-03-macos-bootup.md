@@ -18,15 +18,17 @@ comments: true
 This article describes the boot-up process on MacOS vs. Linux
 so you can better diagnose and troubleshoot issues.
 
+## Power button
+
+The power button is at the upper-right corner of the keyboard,
+with no marking.
+
+When the keyboard and mouse are not responsive, hold down the start (power) button for a <strong>hard reset</strong>.
+
 <a id="Bootupz"></a>
 
 ## Boot-up
 
-Immediately after pressing the power button on your Mac:
-
-<ul>
-<li> Hold down the start (power) button for a hard reset when the keyboard and mouse are not responsive.</li>
-</ul>
 While pressing the power/start:
 
 <ul>
@@ -39,8 +41,6 @@ While pressing the power/start:
 <li> Hold down &#8984; (command) + option + P + R to reset Parameter RAM (PRAM).</li>
 </ul>
 
-By contrast, to get the GRUB menu on Linux machines, hold down the power button for 5 seconds or repeatedly pressing the Shift key during bootup.
-
 After powering up your Mac, 
 a folder with a question mark means that a <a href="#MacBoot">boot folder (described below)</a> 
 was not found on the hard disk.
@@ -48,18 +48,18 @@ was not found on the hard disk.
 If pressing the start button does not work:
 
 <ol type="1">
-<li> Unplug the magsafe power cable.</li>
+<li> Unplug the power cable.</li>
 <li> Hold down the power button for about 10 seconds and keeping pressing.</li>
-<li> While still holding the power button down, insert the magsafe power cable 
+<li> While still holding the power button down, insert the magsafe power cable.
 and hold it for another 10 sec.</li>
 <li> Release the power button and 
 make a "normal" press as if you would normally turn on your computer.</li>
 </ol>
 
-If that doesn't work then try to remove one RAM memory chip and 
-switch places before repeating the above.
+If that doesn't work then try to remove one RAM memory chip and switch places before repeating the above.
 
 See https://www.tekrevue.com/tip/mac-startup-options/
+
 
 <a name="RecoveryMenu"></a>
 
@@ -76,8 +76,6 @@ With Lion onwards, Apple added a 2GB hidden recovery partition on the Mac’s ha
 Open a Terminal by clicking "Utilities" menu item:
 
 ![macos-bootup-utils-640x196-39501.jpg](https://user-images.githubusercontent.com/300046/41775582-a340e892-75e1-11e8-9298-d8713b9c42ea.jpg)
-
-
 
 Also, <strong>OS X Internet Recovery</strong> loads the recovery information directly from Apple’s servers. 
 
@@ -128,6 +126,9 @@ The download goes into the `/Applications` folder.
 
 See articles about this at <a target="_blank" href="https://www.macworld.com/article/3284378/how-to-create-a-bootable-macos-mojave-installer-drive.html">MacWorld</a>, <a target="_blank" href="https://9to5mac.com/2018/06/18/how-to-create-a-bootable-macos-mojave-10-14-usb-install-drive-video/">9to5mac</a>, and <a target="_blank" href="http://osxdaily.com/2018/09/26/make-macos-mojave-boot-usb-installer/">osxdaily</a>.
 
+
+<a name="StartUps"></a>
+
 ## Start-up items
 
 MacOS provices its <tt>launchctl</tt> utility for interaction with the OS X init script system deamon launchd
@@ -137,7 +138,15 @@ which controls the services that start up on boot.
 
    <pre><strong>launchctl list | wc -l</strong></pre>
 
-   375 shows up. Remove the "\| wc -l" to see the list.
+   375 shows up. 
+   
+1. Remove the "\| wc -l" to see the list.
+
+   On mine, the one that's not from com.apple is:
+
+   <tt>com.adobe.ARMDCHelper.cc24ae...</tt>
+
+   ### Launchd scripts
 
    Launchd scripts are stored in several folders:
 
@@ -182,10 +191,6 @@ which controls the services that start up on boot.
    ### Plists
 
    Plist files are how Macs define services.
-
-Linux launches a root shell session with this line:
-
-   <pre>rw init=/bin/bash</pre>
 
 
 ## More on OSX

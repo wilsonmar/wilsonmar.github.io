@@ -5,7 +5,7 @@ title: "Static Code Analysis"
 excerpt: "It has your back ... by riding your back"
 tags: [Sonarqube, quality, generation]
 date: "2016-07-05"
-file: "sonarqube-static-code-analysis"
+file: "sonarqube"
 image:
 # pic-blue-city-abu-dhabi-skyscrapers-1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15269473/c8311bfa-19bc-11e6-890c-06abc511ef39.jpg
@@ -25,11 +25,9 @@ improves quality by performing "static analysis" (scanning) of programming code 
 
 PROTIP: Introduce rules gradually and gently. 
 
-Those who use Sonar purely as a surveillance tool to judge workers usually experience push-back.
+WARNING: Those who use Sonar purely as a surveillance tool to judge workers usually experience consequences.
 
 CAUTION: Sonar stores code (in some compressed form) that it processes, which may be of security concern. Licenses are limited to the lines of code Sonar stores.
-
-Upgrade to v7 involves a change to PostgreSQL or MariaDB from MySQL.
 
 
 ## Static Analysis vs Lint #
@@ -132,6 +130,8 @@ Customizable **Tags** provide a way to categorize and filter rules.
 
 Since SonarQube runs as a server, it's best to have it run
 within a VM.
+
+Upgrade to v7 involves a change to PostgreSQL or MariaDB from MySQL.
 
 
 <a id="InstallSonarQubeEnv"></a>

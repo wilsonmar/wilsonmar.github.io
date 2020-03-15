@@ -323,12 +323,17 @@ includes a practice exam.
 * <a target="_blank" href="https://github.com/abhat222/Data-Science--Cheat-Sheet/tree/master/Python">
 Cheat Sheets on Python</a>
 
-https://github.com/google/teknowledge
+<a target="_blank" href="https://github.com/google/teknowledge">https://github.com/google/teknowledge</a>
 A basic CS curriculum to teach high schoolers coding in Python. Developed by Googlers on their 20% time with Carnagie Mellon https://academy.cs.cmu.edu/about  in Pittsburg over 10 weeks in 2018. http://teknowledge.xyz
 
 
-https://github.com/google/mobly
+<a target="_blank" href="https://github.com/google/mobly">https://github.com/google/mobly</a>
 a Python-based test framework that specializes in supporting test cases that require multiple devices, complex environments, or custom hardware setups.
+
+## Mind map
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/76685523-223e3700-65da-11ea-8177-925d3041ef99.png"><img alt="PythonFundamentalsCourse-MindMap-1.png" width="1066" height="719" src="https://user-images.githubusercontent.com/300046/76685523-223e3700-65da-11ea-8177-925d3041ef99.png"></a>
+From http://www.seleniumframework.com/python-course/
 
 
 ## Community
