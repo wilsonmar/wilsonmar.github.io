@@ -505,7 +505,12 @@ GitLab YouTube channel</a>:
 
 ## From client tooling vendors:
 
-### JetBrains
+<a name="JetBrains"></a>
+
+### JetBrainsTV
+
+<a target="_blank" href="https://www.youtube.com/watch?v=lyiBnyPPnG4&list=RDCMUCGp4UBwpTNegd_4nCpuBcow&index=23" title="Jan 30, 2017">
+How do I start working with Open Source and GitHub?</a>
 
 <a target="_blank" href="https://www.youtube.com/watch?v=Nftif2ynvdA">
 How and when do I merge or rebase?</a> 7 July 2017 [15:37]

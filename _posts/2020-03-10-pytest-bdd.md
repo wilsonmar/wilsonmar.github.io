@@ -65,7 +65,7 @@ After following this hands-on tutorial, you would be able to add to your resume:
 
    However, the combination provides a <strong>separation of concerns</strong> between test cases and test code. Gherkin steps may also be reused by multiple scenarios.
 
-   BTW, Within step_defs, file <tt>__init__.py</tt> (with no content) was needed by Python compiler 3.3 and earlier <a target="_blank" href="https://stackoverflow.com/questions/448271/what-is-init-py-for">*</a>.
+   BTW, Within step_defs, file <tt>__init__.py</tt> (with no content) is for Python 3.3 and earlier <a target="_blank" href="https://stackoverflow.com/questions/448271/what-is-init-py-for">*</a> to look for submodules inside that directory.
 
 1. PROTIP: In your editor, open a feature file in one pane and its associated py file in another pane. Better yet, if you have two monitors, have "features" folder in one and "step_defs" files in another.
 
@@ -113,11 +113,35 @@ if you do it manually instead,
 
 1. Additionally, some want to install files to enable reference from within IDEs such as PyCharm, Eclipse, VSCode, etc.
 
+   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=ixqeebhUa-w" title="Feb 26, 2018 [1:29:20]">Productive pytest with PyCharm</a>
+   by Brian Okken (@brianokken/Github:okken)
+
+
    ## Run individual test
 
 1. The script runs a specific test defined using pytest:
 
    <pre>pipenv run python -m pytest tests/step_defs/test_cu_steps.py</pre>
+
+   The response begins with:
+   <pre>Creating a virtualenv for this project…
+Pipfile: /Users/wilson_mar/gits/wilsonmar/tau-pytest-bdd/Pipfile
+Using /usr/local/bin/python3 (3.7.6) to create virtualenv…
+⠏ Creating virtual environment...Already using interpreter /usr/local/opt/python/bin/python3.7
+Using base prefix '/usr/local/Cellar/python/3.7.6_1/Frameworks/Python.framework/Versions/3.7'
+New python executable in /Users/wilson_mar/.local/share/virtualenvs/tau-pytest-bdd-YNf2NFbA/bin/python3.7
+Also creating executable in /Users/wilson_mar/.local/share/virtualenvs/tau-pytest-bdd-YNf2NFbA/bin/python
+Installing setuptools, pip, wheel...
+done.
+Running virtualenv with interpreter /usr/local/bin/python3
+✔ Successfully created virtual environment! 
+Virtualenv location: /Users/wilson_mar/.local/share/virtualenvs/tau-pytest-bdd-YNf2NFbA
+/Users/wilson_mar/.local/share/virtualenvs/tau-pytest-bdd-YNf2NFbA/bin/python: No module named pytest
+   </pre>
+
+
+
+
 
 1. After the test finishes, look at the <strong>test log/report</strong> and <strong>test coverage report</strong>.
 
@@ -131,7 +155,6 @@ if you do it manually instead,
 1. To run all "web" tests (not "api" tests):
 
    <pre>pipenv run python -m pytest -k "web"</pre>
-
 
 
 ## Pytest
@@ -149,6 +172,30 @@ https://automationpanda.com/python/
 https://automationpanda.com/2018/09/27/book-review-pytest-quick-start-guide/
 
 https://pragprog.com/book/bopytest/python-testing-with-pytest
+
+<a target="_blank" href="https://www.youtube.com/watch?v=8mp_1Jt-xHQ">VIDEO:</a>
+Automated testing with pytest and fixtures</a>
+at PyGotham 2017
+
+https://pytest-bdd.readthedocs.io/en/latest/index.html?#hooks
+Pytest-BDD – Hooks
+
+https://github.com/AndyLPK247/tau-pytest-bdd/tree/chapter-9
+GitHub Repo – Chapter 9
+
+https://pytest-bdd.readthedocs.io/
+Pytest-BDD Documentation
+
+https://automationpanda.com/2017/03/14/python-testing-101-pytest/
+Automation Panda - Python Testing 101: pytest
+
+https://automationpanda.com/2018/10/22/python-testing-101-pytest-bdd/
+Automation Panda - Python Testing 101: pytest-bdd
+
+https://github.com/AndyLPK247/behavior-driven-python
+GitHub Repo – Python BDD Test Framework Examples
+
+
 
 ## pytest-bdd
 
