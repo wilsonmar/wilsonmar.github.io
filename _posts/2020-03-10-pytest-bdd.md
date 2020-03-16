@@ -44,32 +44,6 @@ After following this hands-on tutorial manually, you would be able to add to you
    <a target="_blank" href="https://github.com/wilsonmar/tau-pytest-bdd">https://github.com/wilsonmar/tau-pytest-bdd
 
 
-   ### "test" folder
-
-   In the repo is a "test" folder, which in an integrated Agile team would be inside the source code repo of the app being tested.
-
-   ### Folder structure for Pytest-bdd
-   
-   Under the sample test folder, folders "features" and "step_defs" is for
-   use by the pytest-bdd framework.
-
-   "pytest-bdd" is used here because it is not a standalone framework like alternative Behave. Pytest-bdd is a plugin for pytest (<a target="_blank" href="https://docs.pytest.org/en/latest/">https://docs.pytest.org/en/latest</a>) and all of its features and other plugins.
-
-   Like other BDD frameworks, pytest-bdd test scenarios are written within 
-   ".feature" files using the Gherkin language which uses specific vocabulary. 
-   Keywords in Gherkin can be in several spoken languages.
-
-   Since Gherkin can be userstood by non-technical people, it is a common way to communicate specifications among "Three Amigos" (business analysts, testers, developers).
-
-   A frameworks for BDD ("black box testing") is very different from traditional testing frameworks like unittest and pytest which specify specific CSS markers coded by developers. 
-
-   However, the combination provides a <strong>separation of concerns</strong> between test cases and test code. Gherkin steps may also be reused by multiple scenarios.
-
-   BTW, Within step_defs, file <tt>__init__.py</tt> (with no content) is for Python 3.3 and earlier <a target="_blank" href="https://stackoverflow.com/questions/448271/what-is-init-py-for">*</a> to look for submodules inside that directory.
-
-1. PROTIP: In your editor, open a feature file in one pane and its associated py file in another pane. Better yet, if you have two monitors, have "features" folder in one and "step_defs" files in another.
-
-
 <a name="BashScript"></a>
 
 ## Bash Script 
@@ -100,6 +74,8 @@ if you do it manually instead,
 
    git remote add upstream https://github.com/AndyLPK247/tau-pytest-bdd.git
 
+1. Be inside virtualenv
+
 1. Install pre-requsities:
 
    <pre>pip install pyenv
@@ -109,15 +85,31 @@ if you do it manually instead,
    pip install -U pytest-xdist  # to run tests in parallel
    </pre>
 
-   Alternately, after git cloning, run <tt>pipenv install</tt> from the command line in the project's root directory. This references file <tt>pipfile</tt>.
+   Alternately, after git cloning, run referencing file <tt>pipfile</tt> to install dependencies:
+
+    <pre><strong>pipenv install</strong></pre>
+
+   The response:
+
+   <pre>Installing dependencies from Pipfile.lock (f55e24)…
+  🐍   ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ 19/19 — 00:00:07
+To activate this project's virtualenv, run pipenv shell.
+Alternatively, run a command inside the virtualenv with pipenv run.
+   </pre>   
 
    https://github.com/hchasestevens/fault-localization
 
-1. Additionally, some want to install files to enable reference from within IDEs such as PyCharm, Eclipse, VSCode, etc.
+1. Activate 
 
-   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=ixqeebhUa-w" title="Feb 26, 2018 [1:29:20]">Productive pytest with PyCharm</a>
-   by Brian Okken (@brianokken/Github:okken)
+   pipenv shell
 
+   The response should be a change to the prompt, such as:<br />
+   <tt>(tau-pytest-bdd) bash-5.0$</tt>
+
+   <pre>Launching subshell in virtual environment…
+bash-5.0$  . /Users/wilson_mar/.local/share/virtualenvs/tau-pytest-bdd-YNf2NFbA/bin/activate
+(tau-pytest-bdd) bash-5.0$ 
+   </pre>
 
    ## Run individual test
 
@@ -126,6 +118,7 @@ if you do it manually instead,
    <pre>pipenv run python -m pytest tests/step_defs/test_cu_steps.py</pre>
 
    The response begins with:
+   
    <pre>Creating a virtualenv for this project…
 Pipfile: /Users/wilson_mar/gits/wilsonmar/tau-pytest-bdd/Pipfile
 Using /usr/local/bin/python3 (3.7.6) to create virtualenv…
@@ -141,11 +134,17 @@ Virtualenv location: /Users/wilson_mar/.local/share/virtualenvs/tau-pytest-bdd-Y
 /Users/wilson_mar/.local/share/virtualenvs/tau-pytest-bdd-YNf2NFbA/bin/python: No module named pytest
    </pre>
 
-
-
-
+   ### Test coverage
 
 1. After the test finishes, look at the <strong>test log/report</strong> and <strong>test coverage report</strong>.
+
+
+   ## View test code
+
+1. Additionally, some want to install files to enable reference from within IDEs such as PyCharm, Eclipse, VSCode, etc.
+
+   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=ixqeebhUa-w" title="Feb 26, 2018 [1:29:20]">Productive pytest with PyCharm</a>
+   by Brian Okken (@brianokken/Github:okken)
 
 
    ## Alternative runs
@@ -157,6 +156,35 @@ Virtualenv location: /Users/wilson_mar/.local/share/virtualenvs/tau-pytest-bdd-Y
 1. To run all "web" tests (not "api" tests):
 
    <pre>pipenv run python -m pytest -k "web"</pre>
+
+
+
+   ### "test" folder
+
+   In the repo is a "test" folder, which in an integrated Agile team would be inside the source code repo of the app being tested.
+
+   ### Folder structure for Pytest-bdd
+   
+   Under the sample test folder, folders "features" and "step_defs" is for
+   use by the pytest-bdd framework.
+
+   "pytest-bdd" is used here because it is not a standalone framework like alternative Behave. Pytest-bdd is a plugin for pytest (<a target="_blank" href="https://docs.pytest.org/en/latest/">https://docs.pytest.org/en/latest</a>) and all of its features and other plugins.
+
+   Like other BDD frameworks, pytest-bdd test scenarios are written within 
+   ".feature" files using the Gherkin language which uses specific vocabulary. 
+   Keywords in Gherkin can be in several spoken languages.
+
+   Since Gherkin can be userstood by non-technical people, it is a common way to communicate specifications among "Three Amigos" (business analysts, testers, developers).
+
+   A frameworks for BDD ("black box testing") is very different from traditional testing frameworks like unittest and pytest which specify specific CSS markers coded by developers. 
+
+   However, the combination provides a <strong>separation of concerns</strong> between test cases and test code. Gherkin steps may also be reused by multiple scenarios.
+
+   BTW, Within step_defs, file <tt>__init__.py</tt> (with no content) is for Python 3.3 and earlier <a target="_blank" href="https://stackoverflow.com/questions/448271/what-is-init-py-for">*</a> to look for submodules inside that directory.
+
+1. PROTIP: In your editor, open a feature file in one pane and its associated py file in another pane. Better yet, if you have two monitors, have "features" folder in one and "step_defs" files in another.
+
+
 
 
 ## Pytest
