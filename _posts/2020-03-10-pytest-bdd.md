@@ -18,30 +18,26 @@ comments: true
 
 After following this hands-on tutorial manually, you would be able to add to your resume:
 
-> Automated testing of BDD based on Gherkin-language stories using Python-based pytest-bdd installed using a Bash script. Integrated libraries for test coverage analysis, data-driven tests, and localization verification.
+> Automated testing of BDD based on Gherkin using Python-based pytest-bdd installed using a Bash script. Integrated libraries for test coverage analysis, data-driven tests, and localization verification.
 
 
-## Video tutorial
+## Video tutorials
 
-1. First, learn about the basic concepts presented gradually in a logic sequence by watching the <a target="_blank" href="https://testautomationu.applitools.com/behavior-driven-python-with-pytest-bdd/">9 videos by Andrew at Applitools' Test Automation University (TAU)</a>.
+1. First, learn about the basic concepts about Pytest.
+
+   Andrew Knight (@automationpanda, <a target="_blank" href="https://www.AutomationPanda.com">AutomationPanda.com</a>) gradually presents, in a logic sequence and with quizzes <a target="_blank" href="https://testautomationu.applitools.com/behavior-driven-python-with-pytest-bdd/">9 videos at Applitools' Test Automation University (TAU)</a>.
 
    <a target="_blank" href="https://www.youtube.com/watch?v=ReB6YzMlQ3U" title="Jul 10, 2019 [2:05:00]">Behavior Driven Python with pytest-bdd</a>
 
+   ## Automation of install and run
 
-   ## Test assets
-
-   The value-add of this tutorial is automation (in a <a href="#BashScript">Bash script</a>) which clones and makes use of a GitHub repo from Andrew Knight (@automationpanda, <a target="_blank" href="https://www.AutomationPanda.com">AutomationPanda.com</a>):
-
-   <a target="_blank" href="https://github.com/AndyLPK247/tau-pytest-bdd">https://github.com/AndyLPK247/tau-pytest-bdd
-
-   In the root of the repo is file <tt>cucumbers.py</tt> file, which defines the subject being tested (a basket of cucumbers).
-   
-   In your mind, substitute the word "cucumber" with a "batch of invoices", or whatever else your own application manages.
-
-
-1. For the sake of consistency and my troubleshooting in this automated script, that repo I occassionally sync with as upstream to my forked version:
+   My value-add here is writing a <a href="#BashScript">Bash script</a> (below) that automatically installs what is needed and runs the test on a public website under test:
 
    <a target="_blank" href="https://github.com/wilsonmar/tau-pytest-bdd">https://github.com/wilsonmar/tau-pytest-bdd
+
+   This is a fork of Andrew's repo in order to avoid future possible breaking changes in Andrew's upstream repo. I occassionally sync with it and reconcile changes in my forked version.
+
+   <a target="_blank" href="https://github.com/AndyLPK247/tau-pytest-bdd">https://github.com/AndyLPK247/tau-pytest-bdd
 
 
 <a name="BashScript"></a>
@@ -76,16 +72,7 @@ if you do it manually instead,
 
 1. Be inside virtualenv
 
-1. Install pre-requsities:
-
-   <pre>pip install pyenv
-   pip install -U pytest
-   pip install -U pytest-bdd
-   pip install -U pytest-cov    # to generate code coverage reports
-   pip install -U pytest-xdist  # to run tests in parallel
-   </pre>
-
-   Alternately, after git cloning, run referencing file <tt>pipfile</tt> to install dependencies:
+1. Install pre-requsities referencing file <tt>pipfile</tt>:
 
     <pre><strong>pipenv install</strong></pre>
 
@@ -97,11 +84,21 @@ To activate this project's virtualenv, run pipenv shell.
 Alternatively, run a command inside the virtualenv with pipenv run.
    </pre>   
 
+   NOTE: This is instead of running individual "pip install" commands:
+   
+   <pre>pip install pyenv
+   pip install -U pytest
+   pip install -U pytest-bdd
+   pip install -U pytest-cov    # to generate code coverage reports
+   pip install -U pytest-xdist  # to run tests in parallel
+   </pre>
+
+   Alternately, after git cloning, install:
    https://github.com/hchasestevens/fault-localization
 
 1. Activate 
 
-   pipenv shell
+   <pre><strong>pipenv shell</strong></pre>
 
    The response should be a change to the prompt, such as:<br />
    <tt>(tau-pytest-bdd) bash-5.0$</tt>
@@ -113,12 +110,12 @@ bash-5.0$  . /Users/wilson_mar/.local/share/virtualenvs/tau-pytest-bdd-YNf2NFbA/
 
    ## Run individual test
 
-1. The script runs a specific test defined using pytest:
+1. The script runs a specific test while at the repo's root folder:
 
-   <pre>pipenv run python -m pytest tests/step_defs/test_cu_steps.py</pre>
+   <pre>pipenv run python -m pytest</pre>
 
    The response begins with:
-   
+
    <pre>Creating a virtualenv for this project…
 Pipfile: /Users/wilson_mar/gits/wilsonmar/tau-pytest-bdd/Pipfile
 Using /usr/local/bin/python3 (3.7.6) to create virtualenv…
@@ -132,6 +129,36 @@ Running virtualenv with interpreter /usr/local/bin/python3
 ✔ Successfully created virtual environment! 
 Virtualenv location: /Users/wilson_mar/.local/share/virtualenvs/tau-pytest-bdd-YNf2NFbA
 /Users/wilson_mar/.local/share/virtualenvs/tau-pytest-bdd-YNf2NFbA/bin/python: No module named pytest
+   </pre>
+
+1. The script runs a specific test while at the repo's root folder:
+
+   <pre>pipenv run python -m pytest test_web_steps.py</pre>
+
+1. A new window pops up and disappears.
+1. The response on the Terminal (with ... elipses replacing long strings):
+
+   <pre>
+======...====== test session starts ======...======
+platform darwin -- Python 3.7.6, pytest-4.4.1, py-1.8.0, pluggy-0.9.0
+rootdir: /Users/wilson_mar/gits/wilsonmar/tau-pytest-bdd/tests/step_defs
+plugins: bdd-3.1.0
+collected 2 items                                 
+&nbsp;
+test_web_steps.py .                             ...[100%]
+
+======...====== 2 passed in 23.64 seconds ======...
+(tau-pytest-bdd) bash-5.0$ pipenv run python -m pytest test_web_steps.py
+======...======  test session starts ===========...====== 
+platform darwin -- Python 3.7.6, pytest-4.4.1, py-1.8.0, pluggy-0.9.0
+rootdir: /Users/wilson_mar/gits/wilsonmar/tau-pytest-bdd/tests/step_defs
+plugins: bdd-3.1.0
+collected 2 items
+&nbsp;
+test_web_steps.py .                             ...[100%]
+&nbsp;
+======...======  2 passed in 19.80 seconds ======...====== 
+(tau-pytest-bdd) bash-5.0$ 
    </pre>
 
    ### Test coverage
@@ -158,8 +185,13 @@ Virtualenv location: /Users/wilson_mar/.local/share/virtualenvs/tau-pytest-bdd-Y
    <pre>pipenv run python -m pytest -k "web"</pre>
 
 
+<hr />
 
-   ### "test" folder
+## "test" folder contents
+
+   In the root of the repo is file <tt>cucumbers.py</tt> file, which defines the subject being tested (a basket of cucumbers).
+   
+   In your mind, substitute the word "cucumber" with a "batch of invoices", or whatever else your own application manages.
 
    In the repo is a "test" folder, which in an integrated Agile team would be inside the source code repo of the app being tested.
 
@@ -296,7 +328,6 @@ Book: "Python Testing with pytest" by Brian Okken
    def test_remove('../features/cucumbers.feature','Remove ... from a basket'):
       pass</pre>
 
-
    <pre>@given("The basket has 2 tasks")</pre>
 
    @when("...")
@@ -328,3 +359,28 @@ Mar 16, 2019
 Book "BDD in Action" by John Ferguson Smart.
 
 "The Cucumber Book" by Matt Wynne and Asiak Hellesoy.
+
+
+## Localization (L10N)
+
+There are two ways to select another language (such as "es" for Spanish, "ko" for Korean, "de" for German, etc.):
+
+   A. English was selected in browser's Preferences, but another the app displays another language.
+   
+   B. Another language was selected in browser's Perferences, and the app displays that language.
+
+To simulate selecting another language in the browser's Preferences in Firefox:
+
+<pre>FirefoxOptions options = new FirefoxOptions();
+options.addPreference("intl.accept_languages", language);
+driver = new FirefoxDriver(options);
+</pre>
+
+... and in Chrome:
+
+<pre>HashMap&LT;String, Object> chromePrefs = new HashMap&LT;String, Object>();
+chromePrefs.put("intl.accept_languages", language);
+ChromeOptions options = new ChromeOptions();
+options.setExperimentalOption("prefs", chromePrefs);
+driver = new ChromeDriver(options);
+</pre>
