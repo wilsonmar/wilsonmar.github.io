@@ -28,11 +28,11 @@ WARNING: I often get an undesired pop-up for Siri because its button is next to 
 
 ![macos-siri-popup-430x112](https://user-images.githubusercontent.com/300046/77134746-faadfb00-6a2d-11ea-994d-e2e7b3c35b84.jpg)
 
-PROTIP: When the keyboard and mouse are not responsive, hold down the start (power) button for a <strong>hard reset</strong>.
-
 <a id="Bootupz"></a>
 
 ## Boot-up
+
+PROTIP: When the keyboard and mouse are not responsive, hold down the start (power) button for a <strong>hard reset</strong>.
 
 While pressing the power/start:
 
@@ -196,6 +196,29 @@ which controls the services that start up on boot.
    ### Plists
 
    Plist files are how Macs define services.
+
+## PAM
+
+Linux operating sytems use PAM (Pluggable Authentication Model).
+
+<tt>otool -L /usr/bin/login</tt> is the macOS equivalent of the Linux <tt>ldd</tt> command which lists the shared library dependencies of an executable or shared library.
+
+Within folder <tt>cd /etc/pam.d</tt>, file <tt>login</tt> contains:
+
+<pre># login: auth account password session
+auth       optional       pam_krb5.so use_kcminit
+auth       optional       pam_ntlm.so try_first_pass
+auth       optional       pam_mount.so try_first_pass
+auth       required       pam_opendirectory.so try_first_pass
+account    required       pam_nologin.so
+account    required       pam_opendirectory.so
+password   required       pam_opendirectory.so
+session    required       pam_launchd.so
+session    required       pam_uwtmp.so
+session    optional       pam_mount.so
+</pre>
+
+Each operating sytem has its own set, including use of file pam_env.conf within folder /etc/security.
 
 
 ## More on OSX

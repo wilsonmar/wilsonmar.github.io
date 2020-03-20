@@ -18,7 +18,7 @@ comments: true
 
 <a href="https://wilsonmar.github.io/mac-osx-terminal">This tutorial</a> describes how to make use of the macOS Terminal to make your life easier and less frustrating.
 
-What Apple calls the Terminal is what Linux people call the shell 
+What Apple calls the Terminal is what Linux people call the shell console 
 (more specifically, the Bash shell). It's also called a command-line terminal, abbreviated as CLI.
 
 Information here is often used in interview questions.
@@ -27,7 +27,7 @@ Information here is often used in interview questions.
 
 ## Open Terminal (several ways) #
 
-Terminal is kinda buried perhaps because those who use a MacOS laptop just for social media probably won't need a Terminal. 
+On the Mac, the Terminal app is kinda buried, probably perhaps because those who use a MacOS laptop just for social media probably won't need a Terminal. 
 
 But if you're a developer, it's hard to get away from using a CLI. 
 
@@ -60,6 +60,69 @@ To enable that:
 <li> Close the dialog by clicking the red dot at the upper left corner.</li>
 </ol>
 
+
+## ~/.bash_profile
+
+When macOS logs in any and all users, it executes file <tt>/etc/profile</tt>.
+That file's default value on macOS is:
+
+<pre># System-wide .profile for sh(1)
+&nbsp;
+if [ -x /usr/libexec/path_helper ]; then
+	eval `/usr/libexec/path_helper -s`
+fi
+&nbsp;
+if [ "${BASH-no}" != "no" ]; then
+	[ -r /etc/bashrc ] && . /etc/bashrc
+fi
+</pre>
+
+In the above, "${BASH-no}" resolves to "/usr/local/bin/bash".
+
+The <tt>/etc/bashrc</tt> file contains this:
+
+<pre># System-wide .bashrc file for interactive bash(1) shells.
+if [ -z "$PS1" ]; then
+   return
+fi
+&nbsp;
+PS1='\h:\W \u\$ '
+# Make bash check its window size after a process completes
+shopt -s checkwinsize
+&nbsp;
+[ -r "/etc/bashrc_$TERM_PROGRAM" ] && . "/etc/bashrc_$TERM_PROGRAM"
+</pre>
+
+The above defines the "$PS1" variable which sets the Terminal's prompt to the left of the cursor.
+
+NOTE: On Ubuntu, instead of <tt>/etc/bashrc</tt>, the file is <tt>/etc/bash.bashrc</tt>.
+
+RedHat <strong>also</strong> executes <tt>/etc/profile.d</tt> if the shell invoked is an "Interactive Shell" (aka Login Shell) where a user can interact with the shell, i.e. your Terminal bash prompt. 
+
+Thus, whatever is specified in <tt>/etc/profile</tt> is NOT invoked for "non-interactive" shells invoked when a user cannot manually interact with it, i.e. a Bash script execution.
+
+PROTIP: One can change those files, but since operating system version upgrades can replace them without notice, it's better to create a file that is not supplied by the vendor, and within each user's $HOME folder: <tt>~/.bash_profile</tt>
+
+In other words, file <tt>/etc/profile</tt> is the system wide version of <tt>~/.bash_profile</tt> for all users.
+
+Examples of custom settings include:
+
+   * <tt>export HISTSIZE=1000</tt>  # sets the size of .bash_history lines of command history (500 by default)
+
+   * <tt>umask</tt>
+
+I put in an echo in each of the above files and this appears when I open a new terminal:
+
+<pre>In /etc/profile ...
+In /etc/bashrc ...
+In ~/.bash_profile ...
+In ~/.bashrc ...
+</pre>
+
+
+<hr />
+
+
 ## Within Text Editors/IDEs
 
 Many prefer the terminals built into VS Code and other editors/IDEs.
@@ -72,7 +135,7 @@ typing commands into a command-line terminal screen.
 
 1. To avoid text wrapping, cursor on the right edge to expand the screen width.
 
-### Hyper terminal
+### Hyper terminal app
 
 Get the .dmg installer from the website
 <a target="_blank" href="https://hyper.is/">https://hyper.is</a>. It's <a target="_blank" href="https://wesbos.com/uses/">used by</a> tutorials author Wes Bos.
