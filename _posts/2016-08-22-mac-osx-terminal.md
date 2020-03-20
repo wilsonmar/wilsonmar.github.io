@@ -115,9 +115,9 @@ In other words, file <tt>/etc/profile</tt> is the system wide version of <tt>~/.
 
 Examples of custom settings include:
 
-   * <tt>export HISTSIZE=1000</tt>  # sets the size of .bash_history lines of command history (500 by default)
+<tt>export HISTSIZE=1000</tt>  # sets the size of .bash_history lines of command history (500 by default)
 
-   * <tt>umask</tt>
+<tt>UMASK 077</tt> changes the User Mask value from default "0022". <a target="_blank" href="https://en.wikipedia.org/wiki/Umask">Wikipedia</a> says umask controls how file permissions are set for newly created files. 
 
 
 <hr />
@@ -673,7 +673,7 @@ By default, the Mac's Finder does not show hidden files.
 
    **TRUE or FALSE** - the value you want to set the preference to. In this case, it is a boolean, so the values must be TRUE or FALSE. I think you might be able to use YES or NO, but I'm not sure.
 
-   **&&** - a terminal operator to run whatever's after this if the previous command is successful.
+   **&&** - a terminal operator to run whatever's after this if the command to its left is successful.
 
    **killall** - kills processes or closes applications.
 
