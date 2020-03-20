@@ -61,7 +61,15 @@ To enable that:
 </ol>
 
 
-## ~/.bash_profile
+## Shell ~/.bash_profile invocations
+
+I put in an echo in the various files that macOS executes upon user login, when a new terminal is opened, and when a bash shell is invoked:
+
+<pre>In /etc/profile ...
+In /etc/bashrc ...
+In ~/.bash_profile ...
+In ~/.bashrc ...
+</pre>
 
 When macOS logs in any and all users, it executes file <tt>/etc/profile</tt>.
 That file's default value on macOS is:
@@ -110,14 +118,6 @@ Examples of custom settings include:
    * <tt>export HISTSIZE=1000</tt>  # sets the size of .bash_history lines of command history (500 by default)
 
    * <tt>umask</tt>
-
-I put in an echo in each of the above files and this appears when I open a new terminal:
-
-<pre>In /etc/profile ...
-In /etc/bashrc ...
-In ~/.bash_profile ...
-In ~/.bashrc ...
-</pre>
 
 
 <hr />
