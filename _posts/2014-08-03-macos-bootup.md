@@ -20,10 +20,15 @@ so you can better diagnose and troubleshoot issues.
 
 ## Power button
 
-The power button is at the upper-right corner of the keyboard,
-with no marking.
+On new MacBooks with the Touchbar, the power button is NOT MARKED at the upper-right corner of the keyboard. This is because the button also doubles as a finger scanner.
 
-When the keyboard and mouse are not responsive, hold down the start (power) button for a <strong>hard reset</strong>.
+![mck-background-480x237](https://user-images.githubusercontent.com/300046/77134556-3399a000-6a2d-11ea-8dcf-6ffe19c1ac42.jpg)
+
+WARNING: I often get an undesired pop-up for Siri because its button is next to the power button:
+
+![macos-siri-popup-430x112](https://user-images.githubusercontent.com/300046/77134746-faadfb00-6a2d-11ea-994d-e2e7b3c35b84.jpg)
+
+PROTIP: When the keyboard and mouse are not responsive, hold down the start (power) button for a <strong>hard reset</strong>.
 
 <a id="Bootupz"></a>
 

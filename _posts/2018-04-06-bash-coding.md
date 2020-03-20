@@ -957,11 +957,18 @@ https://www.linuxcloudvps.com/blog/how-to-automate-shell-scripts-with-expect-com
 
 https://dev.to/awwsmm/101-bash-commands-and-tips-for-beginners-to-experts-30je
 
-## Books you pay for
+## Rockstars
 
 <a target="_blank" href="https://www.amazon.com/dp/1788990552/">
 $18 Mastering Linux Shell Scripting: A practical guide to Linux command-line, Bash scripting, and Shell programming, 2nd Edition Paperback</a> 
 – April 19, 2018 by Mokhtar Ebrahim and Andrew Mallett 
+
+Andrew Mallett (@theurbanpenguin, theurbanpenguin.com) also created Pluralsight video course
+<a target="_blank" href="https://app.pluralsight.com/player?course=creating-shell-scripts-enterprise-linux/">
+Creating Shell Scripts in Enterprise Linux</a> July 31, 2019
+[2h 10m]
+
+## Books you pay for
 
 <a target="_blank" href="http://www.tldp.org/LDP/abs/html/abs-guide.html">
 Advanced Bash-Scripting Guide: An in-depth exploration of the art of shell scripting</a>

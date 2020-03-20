@@ -17,7 +17,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-"Service mesh" architecture is about microservices applications working within a "data plane" a standard way to hand-off  service-to-service access control authentication, encrypted communications, monitoring, logging, timeout handling, load balancing, health checks, and other operational cross-cutting concerns to a sidecar proxy within its pod, which works with a <strong>control plane</strong> common to all services. 
+"Service mesh" architecture is about microservices applications working within a "control plane" a standard way to hand-off service-to-service access control authentication, encrypted communications, monitoring, logging, timeout handling, load balancing, health checks, and other operational cross-cutting concerns to a sidecar proxy within its pod, which works with a <strong>control plane</strong> common to all services. 
 The control plane aggregates telemetry data for display on dashboards such as the hero image above.
 
 The implementations:
@@ -169,21 +169,25 @@ Ray Tsang (@saturnism, saturnism.me), Google Cloud Platform Developer Advocate i
 
 Kelsey Hightower:
 
-   * https://www.youtube.com/watch?v=s4qasWn_mFc Istio and Kubernetes (conversation)
+   * <a target="_blank" href="https://www.youtube.com/watch?v=s4qasWn_mFc"> Istio and Kubernetes</a> (conversation)
 
 ## References
 
-https://www.youtube.com/watch?v=QiXK0B9FhO0
-What is a service mesh? May 27, 2018
+<a target="_blank" href="https://www.syncfusion.com/ebooks/confirmation/istio-succinctly">
+BOOK: Istio Succinctly</a> 2020
+
+<a target="_blank" href="https://www.youtube.com/watch?v=QiXK0B9FhO0">
+What is a service mesh? May 27, 2018</a>
 by Defog Tech
 
-https://www.youtube.com/watch?v=QiXK0B9FhO0
-What is a service mesh? May 27, 2018
+<a target="_blank" href="https://www.youtube.com/watch?v=QiXK0B9FhO0">
+What is a service mesh? May 27, 2018</a>
 by Defog Tech
 
-https://www.youtube.com/watch?v=gauOI0O9fRM
-Microservices in the Cloud with Kubernetes and Istio (Google I/O '18) May 9, 2018
+<a target="_blank" href="https://www.youtube.com/watch?v=gauOI0O9fRM">
+Microservices in the Cloud with Kubernetes and Istio (Google I/O '18) May 9, 2018</a>
 by Sandeep Dinesh
+
 
 
 ## Social
