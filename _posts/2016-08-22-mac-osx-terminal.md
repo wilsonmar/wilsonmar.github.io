@@ -61,18 +61,17 @@ To enable that:
 </ol>
 
 
-## Shell ~/.bash_profile invocations
+## Bash shell invocations
 
 I put in an echo in the various files that macOS executes upon user login, when a new terminal is opened, and when a bash shell is invoked:
 
 <pre>In /etc/profile ...
 In /etc/bashrc ...
-In ~/.bash_profile ...
+In /Users/wilson_mar/.bash_profile EUID 501 Fri 2020-03-20 10:59:52 PM MDT -0600
 In ~/.bashrc ...
 </pre>
 
-When macOS logs in any and all users, it executes file <tt>/etc/profile</tt>.
-That file's default value on macOS is:
+When macOS logs in a user, it executes file <tt>/etc/profile</tt>. That file's code:
 
 <pre># System-wide .profile for sh(1)
 &nbsp;
@@ -85,9 +84,9 @@ if [ "${BASH-no}" != "no" ]; then
 fi
 </pre>
 
-In the above, "${BASH-no}" resolves to "/usr/local/bin/bash".
+<tt>echo ${BASH-no}</tt> resolves to <tt>/usr/local/bin/bash</tt>.
 
-The <tt>/etc/bashrc</tt> file contains this:
+The <tt>/etc/bashrc</tt> file contains:
 
 <pre># System-wide .bashrc file for interactive bash(1) shells.
 if [ -z "$PS1" ]; then
@@ -101,7 +100,7 @@ shopt -s checkwinsize
 [ -r "/etc/bashrc_$TERM_PROGRAM" ] && . "/etc/bashrc_$TERM_PROGRAM"
 </pre>
 
-The above defines the "$PS1" variable which sets the Terminal's prompt to the left of the cursor.
+The above defines the <tt>$PS1</tt> variable which sets the Terminal's prompt to the left of the cursor.
 
 NOTE: On Ubuntu, instead of <tt>/etc/bashrc</tt>, the file is <tt>/etc/bash.bashrc</tt>.
 
@@ -117,7 +116,26 @@ Examples of custom settings include:
 
 <tt>export HISTSIZE=1000</tt>  # sets the size of .bash_history lines of command history (500 by default)
 
-<tt>UMASK 077</tt> changes the User Mask value from default "0022". <a target="_blank" href="https://en.wikipedia.org/wiki/Umask">Wikipedia</a> says umask controls how file permissions are set for newly created files. 
+
+## User Mask for permissions
+
+<a target="_blank" href="https://en.wikipedia.org/wiki/Umask">Wikipedia</a> says umask controls how file permissions are set for newly created files. Please read it for the whole story on this.
+
+1. To identify the User Mask for permissions:
+
+   <pre><strong>umask
+umask -S</strong></pre>
+
+   Since the default is "0022":
+   <tt>-S</tt> shows the symbolic equivalent to "0022" for u=user, g=group, o=others :
+
+   <pre>u=rwx,g=rx,o=rx</pre>
+
+   <tt>r</tt> is for readable, <tt>x</tt> is for eXecutable by the user.
+
+1. To set the User Mask for permissions:
+
+   <tt>UMASK 077</tt>
 
 
 <hr />
@@ -1072,7 +1090,7 @@ and most configuration files are hidden.
 
 <a id="Edit_Terminal_setting"></a>
 
-## Edit terminal prompt setting #
+## PS1 terminal prompt setting #
 
 <div class="sidenote">
 Paul Irish offers his setup-a-new-machine.sh at
