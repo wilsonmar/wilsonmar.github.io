@@ -212,6 +212,7 @@ PROTIP: Values stored in variables during a run do not persist.
 
 The number of seconds is rounded DOWN, so a run that takes less than a second is measured as <strong>0</strong> seconds.
 
+<tt>18</tt>
 
 
 ## Set "Strict Mode"

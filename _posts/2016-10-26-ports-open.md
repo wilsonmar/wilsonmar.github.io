@@ -2,7 +2,6 @@
 layout: post
 title: "Ports Open on my Mac"
 excerpt: "What ports are open for hacking on my Mac?"
-shorturl: "https://goo.gl/Bdx8c2"
 tags: [Mac, Security]
 date: "2016-10-26"
 file: "ports-open"

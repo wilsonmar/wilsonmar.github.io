@@ -213,6 +213,9 @@ CAUTION: To kill all apps and shutdown a Mac right away (with no warning and no 
 These come from the bash terminal on Linux machines <a target="_blank" href="https://linuxacademy.com/blog/linux/ten-things-i-wish-i-knew-earlier-about-the-linux-command-line-2/">*here*</a>: Press control with your pinkie, then ...
 
 <ul>
+<li> control + C = Close processing</li>
+<li> control + L = cLear screen</li>
+<p></p>
 <li> <strong>control + A = Go to Beginning of line (as in A to Z)</strong> </li>
 <li> control + E = Go to End of line (hit E using longest finger)</li>
 <p></p>

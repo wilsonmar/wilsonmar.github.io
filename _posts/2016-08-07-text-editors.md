@@ -371,22 +371,24 @@ nano is easy to use for some beginners.
 However, it lacks the advanced features of vim and emacs. 
 
 
+<hr />
+
 <a name="vim"></a>
 
 ## Vim
 
-Vim is the most commonly available text editor in Linux.
+The original vi (VIsual editor) was developed in 1976 as part of the BSD Unix system (by Bill Joy, who went on to be one of the co-founders of Sun Microsystems which Oracle later purchased). 
 
-vim is vi plus the m from the word improved because Vim is functionally a superset of vi.
+vi is still the standard text editor available on many Unix and Linux system distributions. 
 
-The original vi (visual editor) was developed in 1976 as part of the BSD Unix system (by Bill Joy, who went on to be one of the co-founders of Sun Microsystems which Oracle later purchased). 
-vi is still the standard text editor available on many Unix system distributions. 
-A good reason to become proficient with vi is that vi may be the only editor available on some industrial systems where no extra software can be installed.
+A good reason to become proficient with vi is that vi/vim may be the only editor available on some industrial systems where no extra software can be installed.
+
 vi became popular within the Unix community for its full screen visual editing not available before. 
 
-The newer vim and graphical gvim, the graphical (XWindows) vim, adds many productivity features to vi:
+vim is vi plus the m from the word "improved" because Vim is functionally a superset of vi.
 
-   * .vimrc file defines
+The newer vim and gvim, the graphical (XWindows) vim, adds many productivity features to vi:
+
    * multi-level undo (J command) and redo
    * Split screen
    * Edit files inside zip files
@@ -407,15 +409,29 @@ and <tt>:set ff=dos</tt> to convert to Windows.
 
    See <a target="_blank" href="https://www.vimawesome.com/">vimawesome.com</a>
 
+### Customizations
 
-### Opening moves
+1. Open examples to customizations of vim user experience to paste in hidden file <tt>$HOME/.vimrc</tt> which vim looks for when it loads.
 
-0. To open to the first occurance of "x" in the file executed automatically when opening a command-line Terminal:
+   <pre>vim /usr/share/vim/vim80/vimrc_example.vim
+   </pre>
+
+1. Define your customizations of vim user experience. Examples of an abbreviation:
+
+   <pre>set bg=dark ai tabstop=2 expandtab
+abbr _bash #!/bin/bash&LT;CR>
+   </pre>
+
+1. Navigate to the folder desired or specify the parent folder when referencing the file name to be edited:
+
+   <pre><strong>vim ../sample_file</strong></pre>
+
+1. To open to the first occurance of "alias" in the file executed automatically when opening a command-line Terminal:
 
    <pre><strong>vim +/alias ~/.bash_profile
    </strong></pre>
 
-0. To open file and put cursor at line 5:
+1. To open file and put cursor at line 5:
 
    <pre><strong>vim +5 ~/.bash_profile
    </strong></pre>
@@ -430,10 +446,16 @@ and <tt>:set ff=dos</tt> to convert to Windows.
    * <a href="#CommandMode">ex (command) mode</a>
    <br /><br />
 
+
    ### Esc = caps lock
 
-   Press "Esc" key to exit command mode.
+1. To exit command mode, press "Esc" key.
+
    Many configure the "caps lock" key to act as the less easy to reach Esc key.
+
+1. To indent 5 lines at and below the current line:
+
+   <tt>5 >></tt>
 
    ### vi/vim cheatsheets
 
