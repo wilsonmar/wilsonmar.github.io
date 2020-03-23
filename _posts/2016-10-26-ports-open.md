@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Ports Open on my Mac"
-excerpt: "What ports are open for hacking on my Mac?"
-tags: [Mac, Security]
+title: "Ports Open (Networking)"
+excerpt: "What ports are open for hacking on my Mac and Linux machine?"
+tags: [Mac, Security, Networking]
 date: "2016-10-26"
 file: "ports-open"
 image:
@@ -20,16 +20,15 @@ Here is how to see what ports are open listening on a server.
 
 This is perhaps the most important potential vulnerability.
 
-Having ports listenting to outside traffic also takes a bit of CPU,
+Having ports listenting to outside traffic also takes CPU effort,
 which consumes electricity and thus reduce battery life.
-
 
 
 <a id="Spotlightz"></a>
 
 ## Spotlight on Network Utility to List Ports
 
-Apple's <strong>Spotlight</strong> is like Window's Search omni-box.
+Apple's macOS <strong>Spotlight</strong> is like Window's Search omni-box.
 <a target="_blank" href="http://osxdaily.com/2014/05/20/port-scanner-mac-network-utility/">
 *</a>
 

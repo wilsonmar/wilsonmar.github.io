@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This repo is about making use of utilities that install software on various operating systems.
+This article is about making use of utilities that install software on various operating systems.
 
 There are different package managers for each operating system and language:
 
@@ -151,6 +151,8 @@ They all have similar functionality:
 
 
 
+
+
 <a name="yum"></a>
 
 ## YUM (Yellowdog Unified Manager)
@@ -239,13 +241,19 @@ lists all the commands.
 
 ## APT
 
-1. API comes with Debian and Ubuntu operating systems, running as
-   `/etc/apt/aptdaemon/`.
+1. API comes with Debian and Ubuntu operating systems, running from:
 
-   The DPKG database is located by default at:<br />
+   `/etc/apt/aptdaemon/`
+
+   The program references the DPKG database located by default at:<br />
    <strong>/var/lib/dpkg</strong>
 
-   To see information about itself:
+   <a target="_blank" href="https://en.wikipedia.org/wiki/Dpkg">DPKG</a>
+
+1. To see information about itself:
+
+   <pre><strong>dpkg --get-selections | grep -w install
+   </strong></pre>
 
 2. To search debs available locally:
 

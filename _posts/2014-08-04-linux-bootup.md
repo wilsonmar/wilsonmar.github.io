@@ -19,21 +19,19 @@ This article describes the boot-up process on Linux
 so you can better diagnose and troubleshoot issues.
 
 
-1. View <tt>/var/log/boot.log</tt> containing the System boot log:
+1. View the System boot log:
 
-   <tt>more boot.log</tt>
+   <tt>more /var/log/boot.log</tt>
 
-   Example:
+   Example response:
 
    <pre>
 Starting udev:                                               [  OK  ]
 Setting hostname localhost.localdomain:                      [  OK  ]
-Setting up Logical Volume Management:   3 logical volume(s) in volume group "Vol Group" now active
-                                                             [  OK  ]
+Setting up Logical Volume Management:   3 logical volume(s) in volume group "Vol Group" now active [  OK  ]
 Checking filesystems
 /dev/mapper/VolGroup-lv_root: clean, 188360/1068960 files, 2692948/4287488 blocks
-/dev/sda1: clean, 46/128016 files, 111454/512000 blocks
-                                                             [  OK  ]
+/dev/sda1: clean, 46/128016 files, 111454/512000 blocks      [  OK  ]
 Remounting root filesystem in read-write mode:               [  OK  ]
 Mounting local filesystems:                                  [  OK  ]
 Enabling local filesystem quotas:                            [  OK  ]
@@ -43,7 +41,7 @@ Enabling /etc/fstab swaps:                                   [  OK  ]
 
 1. View <tt>/var/log/dmesg</tt> containing Kernel ring buffer (or kernel messages). Display the in-memory copy of the kernel ring buffer:
 
-   <tt>dmesg | head</tt>
+   <tt>sudo dmesg | head</tt>
 
    Example:
 
@@ -58,7 +56,7 @@ KERNEL supported cpus:
    Centaur CentaurHauls
 BIOS-provided physical RAM map:
  BIOS-e820: 0000000000000000 - 000000000009fc00 (usable)
-    </pre>   
+    </pre>
 
 <hr />
 

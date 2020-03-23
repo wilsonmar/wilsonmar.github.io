@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>covrr.com Almalfi Coast Video Hero</title>
+<style>
+  .homepage-hero-module {
+    border-right: none;
+    border-left: none;
+    position: relative;
+  }
+
+  .no-video .video-container video,
+  .touch .video-container video {
+    display: none;
+  }
+
+  .no-video .video-container .poster,
+  .touch .video-container .poster {
+    display: block !important;
+  }
+
+  .video-container {
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .video-container .poster img {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+  }
+
+  .video-container .filter {
+    z-index: 100;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+  }
+
+  .video-container video {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+  }
+
+  .video-container video.fillWidth {
+    width: 100%;
+  }
+</style>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+  // jQuery is required to run this code
+  $( document ).ready(function() {
+    scaleVideoContainer();
+
+    initBannerVideoSize('.video-container .poster img');
+    initBannerVideoSize('.video-container .filter');
+    initBannerVideoSize('.video-container video');
+
+    $(window).on('resize', function() {
+      scaleVideoContainer();
+      scaleBannerVideoSize('.video-container .poster img');
+      scaleBannerVideoSize('.video-container .filter');
+      scaleBannerVideoSize('.video-container video');
+    });
+  });
+
+  function scaleVideoContainer() {
+    var height = $(window).height() + 5;
+    var unitHeight = parseInt(height) + 'px';
+    $('.homepage-hero-module').css('height',unitHeight);
+  }
+
+  function initBannerVideoSize(element){
+    $(element).each(function(){
+      $(this).data('height', $(this).height());
+      $(this).data('width', $(this).width());
+    });
+
+    scaleBannerVideoSize(element);
+  }
+
+  function scaleBannerVideoSize(element) {
+
+    var windowWidth = $(window).width(),
+    windowHeight = $(window).height() + 5,
+    videoWidth,
+    videoHeight;
+
+    // console.log(windowHeight);
+
+    $(element).each(function(){
+      var videoAspectRatio = $(this).data('height')/$(this).data('width');
+
+      $(this).width(windowWidth);
+
+      if(windowWidth < 1000){
+          videoHeight = windowHeight;
+          videoWidth = videoHeight / videoAspectRatio;
+          $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
+
+          $(this).width(videoWidth).height(videoHeight);
+      }
+
+      $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
+
+    });
+  }
+</script>
+</head>
+<body>
+  <div class="homepage-hero-module">
+    <div class="video-container">
+      <div class="filter"></div>
+      <!-- Alternative: https://library.animatron.io/templates/c8b5565e0103cbd0253a91ff/youtube_horizontal_hd720.mp4 / jpg 1903 × 980 pixels = 1.941 ratio vs. 1.77 HD) - Scaled (76%) -->
+      <!-- Based on https://coverr.co/videos/amalfi-coast-bTeAKBk4kb -->
+      <video autoplay loop muted playsinline src="https://storage.coverr.co/videos/coverr-amalfi-coast-1570371443102?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjExNDMyN0NEOTRCMUFCMTFERTE3IiwiaWF0IjoxNTg0OTE3MTI5fQ.AF0ONWUPUSLf8c2SBDNRslA_FPaqJ-ncavKXa8fUUps" class="fillWidth"></video>
+      <div class="poster hidden">
+        <img src="ttps://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

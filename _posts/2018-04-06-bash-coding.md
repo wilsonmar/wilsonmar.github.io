@@ -963,7 +963,7 @@ https://dev.to/awwsmm/101-bash-commands-and-tips-for-beginners-to-experts-30je
 $18 Mastering Linux Shell Scripting: A practical guide to Linux command-line, Bash scripting, and Shell programming, 2nd Edition Paperback</a> 
 – April 19, 2018 by Mokhtar Ebrahim and Andrew Mallett 
 
-Andrew Mallett (@theurbanpenguin, theurbanpenguin.com) also created Pluralsight video course
+Andrew Mallett (<a target="_blank" href="https://twitter.com/@theurbanpenguin/">@theurbanpenguin</a>, <a target="_blank" href="https://www.theurbanpenguin.com/">theurbanpenguin.com</a>, <a target="_blank" href="https://www.udemy.com/course/automating-administration-using-ansible-on-centos-8/">Udemy</a>) also created Pluralsight video course
 <a target="_blank" href="https://app.pluralsight.com/player?course=creating-shell-scripts-enterprise-linux/">
 Creating Shell Scripts in Enterprise Linux</a> July 31, 2019
 [2h 10m]
