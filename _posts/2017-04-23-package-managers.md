@@ -341,10 +341,11 @@ For module parameters, look in directory:
    <pre><strong>/etc/modprobe.d
    </strong></pre>
 
-## Further reading
+
+## Video course
 
 <a target="_blank" href="https://app.pluralsight.com/library/courses/linux-installation-configuration/table-of-contents">
 Linux Installation and Initial Configuration</a>
 2 Jun 2014 by Andrew Mallett
-covers half the material of the LPIC-1 Linux certification.
+covers about half the material in the LPIC-1 Linux exam.
 
