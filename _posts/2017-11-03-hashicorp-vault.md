@@ -56,9 +56,78 @@ empheral (temporary) passwords and cryptographic offload to a central service:
 <a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM"><img alt="hashicorp-vault-dadgar-927x522-94211" src="https://user-images.githubusercontent.com/300046/38281567-67193598-3768-11e8-9061-ebc6abbeb1e9.jpg"></a>
 
 
-## Alternatives
+It's really dangerous to keep in GitHub plain-text secrets such as API Keys, etc.
+This is even if secrets are ecrypted (using GPG) because old versions hidden in history can be decrypted using old keys.
 
-Alternatives to secret management include:
+
+<a name="WithinCode"></a>
+
+## Within App Programming Code
+
+The "12 Factor App" advocates for app programming code to obtain secret data from environment variables rather than hard-coding them in code stored within GitHub. 
+
+Populating environment variables with clear-text secrets would occur outside the app, in the run-time environment.
+Seveal utilities have been created for that:
+
+* <a target="_blank" href="https://github.com/jamhed/govaultenv">https://github.com/jamhed/govaultenv</a>.
+
+
+<a name="envconsul"></a>
+
+## Using Envconsul with GitHub 
+
+<a target="_blank" href="https://github.com/hashicorp/envconsul">envconsul from HashiCorp, at https://github.com/hashicorp/envconsul</a> populates values in environment variables referenced within programming code (12-factor applications which get their configuration via the environment).
+
+Envconsul is launched as a subprocess (daemon) which retrieves secrets using REST API calls of KV (Key Value) pairs in Vault/Consul based on "configuration files" specified in the <a target="_blank" href="https://github.com/hashicorp/hcl">HashiCorp Configuration Language</a>. 
+
+It works on many major operating systems with no runtime requirements. On MacOS:
+
+   <pre>brew install envconsul
+   envconsul -v</pre>
+
+   <pre>v0.9.2 ()</pre>
+
+ For the full list of command-line options:
+
+   <pre>envconsul -h</pre>
+
+Envconsul is also available via a Docker container for scheduled environments.
+
+Secrets are requested based on a <strong>specification of secrets</strong> to be fetched from Hashicorp Vault based on a configuration file. A sample of its contents is this, which requests the api-key field of the secret at secret/production/third-party:
+
+   <ul><pre>production/third-party#api-key</pre></ul>
+
+Credentials authorizing retrieval requests are defined ...
+
+
+<a name="Vaultenv"></a>
+
+## Using Vaultenv with GitHub 
+
+<a target="_blank" href="https://github.com/channable/vaultenv">
+https://github.com/channable/vaultenv</a> populates values in OS environment variables referenced within programming code
+by making a syscall from the exec family. Vaultenv replaces its own process with your app. After your service has started, vaultenv is not running anymore.
+
+If secrets in Vault change, Vaultenv does not automatically restart services.
+By comparison, <a target="_blank" href="https://github.com/hashicorp/envconsul">envconsul from HashiCorp</a>, 
+daemonizes and spawn child processes to manage the lifecycle of the process it provides secrets.
+
+Vaultenv retrieves secrets using REST API calls of KV (Key Value) pairs based on "behavior configuration files" specified in the following files traveling with the programming code:
+
+   * $CWD/.env (as popularized by Ruby gems)
+   * /etc/vaultenv.conf
+   * $HOME/.config/vaultenv/vaultenv.conf
+   <br /><br />
+
+Within its configuration file, secrets are requested based on a <strong>specification of secrets</strong> to be fetched from Hashicorp Vault, such as this requesting the api-key field of the secret at secret/production/third-party.
+
+   <ul><pre>production/third-party#api-key</pre></ul>
+
+The utility is written in the Haskell language under a 3-clause BSD license 
+and <a target="_blank" href="https://github.com/channable/vaultenv/releases">releases</a> run on Linux (has not been tested on any other platform, such as macOS).
+
+
+## Alternatives to secret management
 
 * <strong>Environment variables</strong> in a clear-text file loaded into <strong>operating system variables</strong>, such as:
 
@@ -120,6 +189,7 @@ database_password = get_secret('db_pass')
 Coverage of what features a secrets service should have:
 
 * Installed in sealed mode
+
 * RBAC (Role-based Access Control) so each user has only the rights for his/her specific role. This has to be enabled in Kubernetes:
 
    <pre>--authorization-mode=RBAC</pre>
@@ -138,9 +208,10 @@ Coverage of what features a secrets service should have:
 <a target="_blank" href="https://learn.hashicorp.com/vault">https://learn.hashicorp.com/vault</a>
 
 
-<a target="_blank" href="https://www.katacoda.com/courses/docker-production/vault-secrets">Katacode's "Store Secrets using Hashicorp Vault"</a>
-provides a web-based interactive bash terminal.
+<a target="_blank" href="https://www.katacoda.com/courses/docker-production/vault-secrets">Katacode's "Store Secrets using Hashicorp Vault"</a> provides a web-based interactive bash terminal.
 
+https://www.vaultproject.io/docs/internals/security/
+Security Model
 
 
 <a name="InstallServer"></a>
@@ -154,6 +225,10 @@ CAUTION: If you are in a large enterprise, confer with your security team before
 installing. They often have a repository such as Artifactory or Nexus where
 installers are available after being vetted and perhaps patched
 for security vulnerabilities.
+
+See https://github.com/hashicorp/vault-guides
+and https://devopstales.github.io/linux/hashicorp-vault/
+
 
 A. <a href="#CloudService">Vault cloud service</a>
 
@@ -1025,8 +1100,8 @@ https://www.vaultproject.io/docs/internals/security.html
 Vault uses Shamir's Secret Sharing to control access to the "first secret" that we use as the root of all other secrets. A master key is generated automatically and broken into multiple shards. A configurable threshold of k shards is required to unseal a Vault with n shards in total.
 
 
-https://devopstales.github.io/linux/hashicorp-vault/
-install
+namic Credentials and Encryption as a data service, and “Policy as Code” vs “Secrets as Code.”
+
 
 <hr />
 

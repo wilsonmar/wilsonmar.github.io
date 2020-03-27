@@ -448,7 +448,6 @@ NOTE</a>: The Git smudge filter is what converts the LFS pointer stored in Git w
 * <a target="_blank" href="http://www.codeproject.com/Articles/602146/">Keeping-sensitive-config-settings-secret-with-Azur">
    Keeping sensitive config settings secrete with Azure</a>
 
-
 * <a target="_blank" href="https://www.youtube.com/watch?v=RRZiERo172k">
    Introduction to Keybase</a> 2014-11-26 
    social network and a crypto keyserver. 
@@ -456,7 +455,65 @@ NOTE</a>: The Git smudge filter is what converts the LFS pointer stored in Git w
 * <a target="_blank" href="https://www.youtube.com/watch?v=S4HP1pRTE3A">
    Easy File Encryption with Keybase - Hak5</a>
 
+## Mozilla SOPS
+
+https://github.com/mozilla/sops for yaml files.
+With SOPS when you want to edit a file, the file stays encrypted on disk, gets decrypted in RAM where you can edit it with vim, and when you save the edited file it gets re-encrypted before being written to disk. At the same time, it does offer the flexibility to quickly decrypt a few files so you can use a tool like vimdiff.
+
+SOPS uses your AWS credentials stored in ~/.aws to authenticate against KMS so you can encrypt and decrypt without a password.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=V2PRhxphH2w">Securing DevOps Show & Tell: Mozilla Sops 
+Mar 2, 2019</a> at https://frederic-hemberger.de/articles/manage-kubernetes-secrets-with-sops/
+
+https://oteemo.com/2019/06/20/hashicorp-vault-is-overhyped-and-mozilla-sops-with-kms-and-git-is-massively-underrated/
+lists Ideal Secrets Management Solution Requirements
+
+### Vault Dynamic Key Generation
+
+HashiCorp Vault provides Dynamic Credentials and Encryption as a data service to shift from keeping "Secrets as Code" to "Policy as Code," where credentials are dynamically generated on the fly in response to application needs, rather than versioned alongside code.
+
+Hashicorp Vault's "dynamic secrets" feature is ideal for scripts: an AWS access key can be generated for the duration of a script, then revoked. The keypair will not exist before or after the script runs, and the creation of the keys are completely logged.
+This is an improvement over using something like Amazon IAM but still effectively hardcoding limited-access access tokens in various places.
+
+https://github.com/gites/awesome-vault-tools
+
+
+
+## Storing encrypted in GitHub
+
+https://embeddedartistry.com/blog/2018/03/15/safely-storing-secrets-in-git/
+references use of <a target="_blank" href="https://github.com/StackExchange/blackbox">blackbox</a>, git-secret bash script, and  git-crypt. "Aside from an initial unlock command that needs to be used after cloning the repository, git-crypt encryption and decryption operations happen transparently. I find this workflow to be superior to git-secret and BlackBox."
+
+<a target="_blank" href="https://github.com/rustyio/git-gpg">
+git-gpg</a> stores encrypted git repositories on third-party / potentially insecure servers, but stores all changes to source files as compressible textual deltas (a key reason for using git in the first place). The repository is encrypted remotely but the local version has no encrypted blobs inside.
+-- https://news.ycombinator.com/item?id=11662364
+Git-secret – store private data in a Git repo (coderwall.com)
+Other benefits include architectural simplicity and low footprint: it consists of a single Python script that you add to your executable path.
+Its achilles heel is that old versions of keys are stored in Git history.
+
+
+
+## AWS KMS
+
+### Zamata
+
+Zemanta's https://github.com/Zemanta/py-secretcrypt
+and
+https://github.com/Zemanta/go-secretcrypt
+keeps secrets encrypted with Amazon KMS (Key Management Service) in repos, which are decrypted on the fly by the application.
+Access control is managed through AWS KMS key policies, with EC2 instances running the applications having permissions to decrypt the secrets.
+
+https://github.com/fugue/credstash
+uses AWS KMS for key wrapping and master-key storage, and DynamoDB for credential storage and sharing.
+Works in several flavors of Linux, in a variety of programming languages.
+
+https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/storage/common/storage-client-side-encryption.md
+Azure Key Vault
+
+## Keybase
+
 github.com/keybase
+http://g14n.info/2014/07/my-keybase-experience/
 
 
 ## More #

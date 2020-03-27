@@ -43,7 +43,8 @@ While pressing the power/start:
 
 <li> Hold down <strong>shift</strong> key to boot in Safe Mode (which does not load <a href="#StartUps">start-up items</a>).</li>
 <li> Hold down &#8984; (command) + R for the <a href="#RecoveryMenu">Recovery menu</a>.</li>
-<li> Hold down &#8984; (command) + option + P + R to reset Parameter RAM (PRAM).</li>
+<li> Hold down &#8984; (command) + option + P + R to reset Parameter RAM (PRAM/NVRAM). You'll need to provide your network password again.</li>
+<li> Hold down control + option + shift + power button to reset SMC.</li>
 </ul>
 
 After powering up your Mac, 
