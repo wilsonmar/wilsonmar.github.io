@@ -217,6 +217,6 @@ https://learning.oreilly.com/library/view/comptia-linuxlpic-1-portable/978013469
 
 ## More on OSX
 
-This is one of a series on Mac OSX:
+This is one of a series about MacOS:
 
 {% include mac_links.html %}
