@@ -41,6 +41,8 @@ SQL databases from Oracle, MySQL, etc. need to join physical tables together usi
 
    Writing SQL to represent a <strong>social graph</strong> containing 1,000 persons averaging 50 friends each can be difficult due to the need for joins and "de-normalized" physical structures. 
    
+   ## Graph Faster
+
    Moreover, it is also time consuming for traditional relational databases to process complex indexed queries, even if it's all in cache. However, Neo4j can process complex data structures efficiently because it uses pointers instead of table lookups (for "index free adjacency"). A  <a target="_blank" href="https://www.youtube.com/watch?v=oRtVdXvtD3o&time=1h1m31s">comparison VIDEO</a>:<br />
    <table border="1" cellpadding="4" cellspacing="0">
    <tr><th>&nbsp;</th><th># persons</th><th>query time</th></tr>
@@ -49,7 +51,9 @@ SQL databases from Oracle, MySQL, etc. need to join physical tables together usi
    <tr valign="top" align="right"><td>"Supernodes" in Neo4j</td><td>1,000,000</td><td>2 ms</td></tr>
    </table> 
 
-   Whereas SQL data is stored in separate tables joined together using complex queries, Neo4j is "white-board friendly". Neo4J data is stored the same way as illustrated by its data model. Neo4j database diagram look like ER (Entity-Relation) diagrams for SQL databases.
+   ## More relational than relational databases
+
+   Whereas SQL data is stored in separate tables joined together using complex queries, Neo4j is "white-board friendly". Neo4J data is stored the same way as illustrated by its data model. Graph database diagrams look like ER (Entity-Relation) diagrams for SQL databases. The example below uses data from <a target="_blank" href="https://grouplens.org/datasets/movielens/">Movielens database</a> containing 62,000 movies with 25 million ratings and one million tag applications applied by 162,000 users:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/34470717-c7b80a1a-ef05-11e7-9f9d-2fa35ee496e2.png">
    <img width="838" alt="neo4j-movie-graph-1676x702-144758" src="https://user-images.githubusercontent.com/300046/34470717-c7b80a1a-ef05-11e7-9f9d-2fa35ee496e2.png"></a>
@@ -75,9 +79,9 @@ SQL databases from Oracle, MySQL, etc. need to join physical tables together usi
 
 ## Which graph database and language?
 
-<a target="_blank" href="https://db-engines.com/en/ranking/graph+dbms">
-This ranking by db-engines.com</a> lists Neo4j as the most popular graph database, with Microsoft Cosmos catching up quickly. Notice that Cosmos and others are called "Multi-model" (providing a Document store, Key-value store, wide-column store as well as graph database).
+<a target="_blank" href="https://db-engines.com/en/ranking_trend/graph+dbms">This ranking by db-engines.com</a> lists Neo4j as the most popular graph database, with Microsoft Cosmos catching up quickly. Notice that Cosmos and others are called "Multi-model" (providing a Document store, Key-value store, wide-column store as well as graph database).
 
+<a target="_blank" href="https://www.wikiwand.com/en/Gremlin_(programming_language)">Gremlin</a> traversal machine is to graph computing as what the Java virtual machine (JVM) is to general purpose computing. Gremlin was developed (beginning in 2009) by Apache TinkerPop of the Apache Software Foundation. Thus, it is Apache-2 licensed.
 
 ### Cloud SaaS Graph database services
 

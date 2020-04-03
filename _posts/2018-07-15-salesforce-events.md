@@ -18,6 +18,12 @@ comments: true
 
 This page lists where you can actually meet people face-to-face.
 
+## Online Events
+
+<em>In the Covid-19 era:</em>
+
+
+
 ## Events by Salesforce
 
 <a target="_blank" href="https://developer.salesforce.com/calendar">https://developer.salesforce.com/calendar</a> is where you find and register for events.

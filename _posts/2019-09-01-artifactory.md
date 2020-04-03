@@ -507,6 +507,9 @@ Software Composition Analysis:
    * <a target="_blank" href="https://www.veracode.com/security/vulnerability-scanning-tools">Veracode.com</a>
    * <a target="_blank" href="https://www.whitesourcesoftware.com/">Whitesource</a>
 
+## JFrog the company
+
+* Glassdoor
 
 ## Resources
 
@@ -523,7 +526,6 @@ https://www.vogella.com/tutorials/Artifactory/article.html
 https://jfrog.com/blog/control-your-kubernetes-voyage-with-artifactory/
 artifactory-flow-k8s.png
 
-* Glassdoor
 
 ## Social Community
 
@@ -533,8 +535,33 @@ Questions and Answers on StackOverflow tagged "Artifactory"</a>
 * LinkedIn
 * Facebook
 * Instagram
+* https://flink.apache.org/
 
-https://flink.apache.org/
+## Python client for Artifactory
+
+REST API documentation refer to curl commands, but not sample coding, such as in Python, Go, NodeJs, etc.
+
+Additional functionality can be added by custom programming code calling REST APIs.
+
+https://github.com/jfrog/artifactory-scripts
+was last updated Sep 4, 2019
+
+
+<a target="_blank" href="https://devopshq.github.io/">DevOpsHQ</a>, a small team of Russians working on free tools,
+have developed https://github.com/devopshq/artifactory described at https://devopshq.github.io/artifactory/.
+It's based on https://docs.python.org/3/library/pathlib.html
+Although it is marked as "Code Quality D", it offers a good start.
+
+The above was found in a search of "artifactory" throughout GitHub.com.
+
+
+## Plug-ins
+
+https://github.com/jfrog/artifactory-user-plugins presented at https://www.jfrog.com/confluence/display/JFROG/User+Plugins
+   
+
+
+
 
 <hr />
 

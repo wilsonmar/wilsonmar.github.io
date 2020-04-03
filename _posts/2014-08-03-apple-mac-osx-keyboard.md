@@ -306,14 +306,14 @@ This is perhaps the most frustrating aspect of changing from Windows to a Mac.
 Here are the most problematic among
 <a target="_blank" href="https://support.microsoft.com/en-us/kb/970299/">
 Keyboard mappings using a PC keyboard on a Macintosh</a>
-on Microsoft's website:
+on Microsoft's website:<a target="_blank" href="http://osxdaily.com/2012/02/23/keyboard-shortcuts-to-navigate-select-text-mac-os-x/">*</a>
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr align="left"><th> Microsoft Windows </th><th> Apple Macintosh </th><th> issue </th></tr>
 <tbody>
 <tr><td> Right-click (Alt) </td><td> Holding down <strong>control</strong> during mouse click </td><td> -</td></tr>
 <tr><td> Ctrl + <em>mouse click multiple items</em> </td><td> control + option + <em>mouse click</em></td><td> Two keys on Mac</td></tr>
-<tr><td> Delete (right of cursor) </td><td><a href="#DeleteBackspace">fn + delete</a><br />control + D</td><td rowspan="2"><a href="#DeleteBackspace">swapped</a></td></tr>
+<tr><td> Delete (right of cursor) </td><td><a href="#DeleteBackspace">fn + delete</a><br />control + D</td><td rowspan="2"><a href="#DeleteBackspace"><u>swapped</u></a></td></tr>
 <tr><td> Backspace (left of cursor) </td><td><a href="#DeleteBackspace">delete</a><br />control + H</td></tr>
 <tr><td> Function key </td><td> fn + F1 ... F12 </td><td> &nbsp; </td></tr>
 <tr><td> Windows Start orb </td><td><a href="#AwkwardKeys">control+F2, then enter/return</a></td><td><a href="#AwkardKeys">awkard</a></td></tr>
@@ -324,22 +324,6 @@ on Microsoft's website:
 </tbody>
 </table>
 
-See http://osxdaily.com/2012/02/23/keyboard-shortcuts-to-navigate-select-text-mac-os-x/
-
-<a id="InsertKeyz"></a>
-
-### Insert key requires mapping #
-
-Sending the equivalent of Windows keyboard <strong>Insert</strong> 
-on a Mac is problematic, especially within a virtual Windows machine.
-
-<ul>
-<li> On older Macintosh keyboards, press the Help key.</li>
-<li> On older Macintosh notebook keyboards, press <strong>fn+M</strong>.</li>
-<li> Newer Macintosh notebooks do not support fn+M. 
-So map <strong>Alt+F1</strong> within 
-VMware Fusion > Preferences > Keyboard &amp; Mouse > Key Mappings.</li>
-</ul>
 
 <a id="DeleteBackspace"></a>
 
@@ -359,6 +343,21 @@ The ALT key on Windows is OPTION on Mac keyboards.
 <a target="_blank" href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1001675">
 To send key commands from a Mac into a Windows instance inside VMWare Fusion</a>.
 
+
+<a id="InsertKeyz"></a>
+
+### Insert key requires mapping #
+
+Sending the equivalent of Windows keyboard <strong>Insert</strong> 
+on a Mac is problematic, especially within a virtual Windows machine.
+
+<ul>
+<li> On older Macintosh keyboards, press the Help key.</li>
+<li> On older Macintosh notebook keyboards, press <strong>fn+M</strong>.</li>
+<li> Newer Macintosh notebooks do not support fn+M. 
+So map <strong>Alt+F1</strong> within 
+VMware Fusion > Preferences > Keyboard &amp; Mouse > Key Mappings.</li>
+</ul>
 
 <a id="RemapKeyboard"></a>
 
@@ -417,22 +416,22 @@ hold down all keys SHIFT OPTION COMMAND then click the app's icon.
 ## Keyboard Mapping
 
 <a target="_blank" href="https://apple.stackexchange.com/questions/16135/remap-home-and-end-to-beginning-and-end-of-line">
-NOTE</a>: MacOS defines most of its keybindings for editing text in:<br />
-<tt>/System/Library/Frameworks/AppKit.framework/Resources/StandardKeyBinding.dict</tt>
+NOTE</a>: MacOS defines most of its keybindings for editing text in:
+
+   <ul><tt>/System/Library/Frameworks/AppKit.framework/Resources/StandardKeyBinding.dict</tt></ul>
 
 PROTIP: Remap home and end key by creating folder <tt>~/Library/KeyBindings/</tt> 
 and in it file <tt>DefaultKeyBinding.dict</tt> containing a property list like this:
 
-<tt>
-{
+<pre>{
     "\UF729"  = moveToBeginningOfLine:; // home
     "\UF72B"  = moveToEndOfLine:; // end
     "$\UF729" = moveToBeginningOfLineAndModifySelection:; // shift-home
     "$\UF72B" = moveToEndOfLineAndModifySelection:; // shift-end
 }
-</tt>
+</pre>
 
-This requires a reboot.
+This change requires a reboot.
 
 
 ## App-specific keys #
