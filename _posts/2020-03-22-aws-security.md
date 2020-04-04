@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This article is about preparing for the
+Here are my (incomplete) notes while I'm preparing for the
 AWS Certified Security - Specialty (SCS-C01) exam:
 
 1. https://aws.amazon.com/certification/certified-security-specialty/
@@ -103,7 +103,7 @@ Pluralsight's Security video courses</a>:
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/securing-applications-aws">securing-applications-aws</a>
    
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-cloud-security-monitoring">aws-cloud-security-monitoring</a> 
-   by Saravanan Dhandapani Jun 26, 2019
+   by Saravanan Dhandapani (@) Jun 26, 2019
 
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/securing-aws-networks/table-of-contents">Securing AWS Networks
    25 Mar 2020 by Saravanan Dhandapani 
@@ -169,6 +169,14 @@ Type of control:
 * Detective
 * Responsive
 
+## Security Landscape
+
+* Governance
+* Management (CloudWatch, CloudTrail, Config)
+* Protection
+* Encryption (AWS CloudHSM, KMS)
+* Detection (A Macie, AWS Firewall Manager, AWS Security Hub, AWS Guard Duty)
+
 ## AWS CAF (Cloud Adoption Frmework)
 
 * Business
@@ -212,8 +220,6 @@ Create a multi-account setup with web servers running on EC2 instances as well a
 
 Use CloudFront, WAF, Shield. Install CloudWatch Logging agents on a few EC2 instances, consolidate logs in a central account, implement log file validation (extra credit — write a script to actually validate files based off events when new file is posted). 
 
-<strong>Macie</strong> - is really all that necessary?
-
 Grant one account read and read/write access to another account’s S3 buckets using IAM roles.
 
 Protect your EC2 instances with a homegrown proxy (install Squid or something), give them internet access and use NACLs and security groups to open a finite set of ports and restrict some IPs (use a VPN for testing),
@@ -254,12 +260,7 @@ About $200 USD is you get all of them.
    or https://www.ebay.com/itm/Amazon-AWS-Certified-Security-Specialty-SCS-C01-Exam-Test-QA-SIM-PDF-Simulator-/253754800538
    or https://www.dumps4download.com/scs-c01-dumps.html
 
-
-<a name="AbuseNotice""></a>
-## Abuse Notice
-
-TODO: sample here?
-
+<hr />
 
 ## AWS Security information
 
@@ -306,6 +307,7 @@ Building a Scalable and Secure Multi-VPC AWS Network Infrastructure</a>
 <a target="_blank" href="https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/gxp_compliance_automation_ra.pdf?did=wp_card&trk=wp_card">
 GxP Compliance Automation</a>
 
+
 <hr />
 
 ## Amazon/AWS Products
@@ -345,10 +347,72 @@ Generate report, which include "CIS Benchmarks".
 Account management service to consolidate accounts.
 
 
+### Amazon Macie 
+
+identify and classify PII (Personally Identifiable Information)
+in events and sessions involving critical assets (in S3)m ,
+by content type, using regex.
+
+Issue risk alerts by location.
+
+<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=ff1e3525-246f-4536-b78e-fe0bbc0c2d9e">VIDEO</a>
+
+
 ### AWS Config
+
+Get Started: Settings, Rules, Review.
 
 The type of rules that can be setup and how to automatically remediate non-compliant rules utilizing lambda
 
+Recorder
+Snapshot of current configs.
+
+Config items with history.
+
+Config stream automatically updated (notifies SNS)
+
+### VPC Flow Logs
+
+Setup:
+1. VPC
+1. Your VPCs
+1. Create Flow Log
+1. Filter All
+1. Destination Log Group
+1. IAM Role 
+1. Security Rules
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th>Log Format</th><th>Description</th></tr>
+<tr valign="top"><td>2</td><td>Version of log</td></tr>
+<tr valign="top"><td>123456789012</td><td>AWS Account</td></tr>
+<tr valign="top"><td>eni-081b2cff388ebbea33</td><td>Network interface id</td></tr>
+<tr valign="top"><td>194.26.39.111</td><td>Origin IP address</td></tr>
+<tr valign="top"><td>172.31.81.72</td><td>Dest. IP address</td></tr>
+<tr valign="top"><td>8080</td><td>Origin port</td></tr>
+<tr valign="top"><td>3398</td><td>Dest. port</td></tr>
+<tr valign="top"><td>6</td><td>Protocol</td></tr>
+<tr valign="top"><td>1</td><td>Packets</td></tr>
+<tr valign="top"><td>40</td><td>Bytes</td></tr>
+<tr valign="top"><td>158251432</td><td>Epoch start</td></tr>
+<tr valign="top"><td>158251812</td><td>Epoch end</td></tr>
+<tr valign="top"><td>REJECT</td><td>Action</td></tr>
+<tr valign="top"><td>OK</td><td>Logging status</td></tr>
+</table>
+
+### AWS Guard Duty
+
+Identifies <strong>findings</strong> by using machine learning analyze <strong>logs</strong> from CloudTrail, VPC, DNS.
+
+Enable for 30-day trial. Use sample files with Trusted IP Lists.
+member accounts.
+
+
+<a name="AbuseNotice""></a>
+
+### Abuse Notice
+
+TODO: sample here?
 
 
 <a name="KeyManagement"></a>
