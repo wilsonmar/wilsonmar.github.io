@@ -30,157 +30,6 @@ AWS Certified Security - Specialty (SCS-C01) exam:
 1. The <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Specialty_Exam-Guide_v1.6_FINAL.pdf">PDF</a>
 
 
-## AWS Virtual Classes
-
-For those who can afford it:
-
-$600 for 1 day <a target="_blank" href="https://www.aws.training/SessionSearch?pageNumber=1&courseId=44517">
-AWS Security Essentials</a>
-
-
-## Video courses
-
-<a target="_blank" href="https://app.pluralsight.com/paths/skill/aws-cloud-security">
-Pluralsight's Security video courses</a>:
-
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-security-introduction">aws-security-introduction</a>
-   
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/identity-access-management-aws-users">identity-access-management-aws-users</a>
-   
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/securing-data-aws">securing-data-aws</a>
-
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/securing-aws-infrastructure">securing-aws-infrastructure</a>
-   
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/securing-applications-aws">securing-applications-aws</a>
-   
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-cloud-security-monitoring">aws-cloud-security-monitoring</a>
-
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-networking-deep-dive-vpc">aws-networking-deep-dive-vpc</a>
-
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-security-best-practices">aws-security-best-practices</a> by Joseph Lee Hunsaker
-
-
-ACloud.Guru has a Exam Simulator 
-
-   * <a target="_blank" href="https://acloud.guru/course/aws-certified-security-specialty/learn/11050f3d-0362-ea01-f278-88368014a1cc/6b7857a0-5853-93af-2827-ba028b4021f1/watch">
-   Acloud.guru exam</a>
-
-
-LinuxAcademy.com 
-
-
-Qwiklabs.com provides time (an hour at a time) on servers to perform their step-by-step instructions on specific topics.
-
-
-## Security Principles
-
-
-* Least privilege
-
-* Handle keys with care
-   * Asociate IAM Role to compute resource
-   * Programmatic AssumeRole via STS SDK
-
-* Encrypt "All the Things"
-   * Require KMS Keys
-   * Data at rest: Use only encrypted EBS volumes
-   * S3 buckets
-   * RDS or Aurora databases
-   * Data in transit: S3 bucket config, CloudFront Cert. Manager
-
-* Monitor continuously
-   * CloudTrail Logs (cross region)
-   * S3 Access Logging
-   * VPC Flow Logs
-   * Billing Logs
-
-* Audit Regularly
-   * Trusted Advisor
-   * AWS Config
-   * Custom Scripts
-
-At a high level, within <a target="_blank" href="https://aws.amazon.com/security/">AWS Cloud Security at aws.amazon.com/security</a> is the mantra: 
-
-- Prevent 
-- Detect 
-- Respond 
-- Remediate
-
-
-
-## Lifecycle Actions
-
-Sequence to develop a secure web application within AWS cloud:
-
-1. Use accounts with MFA, not long term passwords.
-2. SSH from key pairs generated.
-2. Protect S3 CloudTrail and Billing buckets.
-2. Don't create public access to S3 buckets.
-2. Creaet "Admin" roles with limited privilege.
-2. Leverage IAM roles for EC2.
-2. Control traffic to EC2 using clear Security Groups.
-2. Enable communication by users and between app and database with roles having minimal IAM policies necessary.
-3. Setup apps with SSL certificates for HTTPS communication in transit.
-4. Decrypt data using a key.
-5. Setup read-only application and infrastructure logs [CloudTrail].
-6. Setup API Gateway and firewalls to manage access.
-7. Setup alerts
-8. Watch trends in application and infrastructure logs periodically.
-9. Setup backups using read and 
-9. HA and Multi-region operation
-9. Review billings monthly.
-
-
-
-
-## Hands-on
-
-GitHub?
-
-Create a multi-account setup with web servers running on EC2 instances as well as web services running through API Gateway, Lambda and S3.
-
-Use CloudFront, WAF, Shield. Install CloudWatch Logging agents on a few EC2 instances, consolidate logs in a central account, implement log file validation (extra credit — write a script to actually validate files based off events when new file is posted). Understand what Macie does although playing with it didn’t seem all that necessary.
-
-Grant one account read and read/write access to another account’s S3 buckets using IAM roles.
-
-Protect your EC2 instances with a homegrown proxy (install Squid or something), give them internet access and use NACLs and security groups to open a finite set of ports and restrict some IPs (use a VPN for testing),
-
-Apply Service Control Policies through the organization (as examples, restrict regions or mandate S3 encryption. They can be found here: https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_example-scps.html). Do this every day of the week before your exam and recite the script in your sleep the day of the exam :)
-
-Do all of this in CloudFormation and Terraform
-
--- from Chiradeep Chhaya
-
-Hardening before creating AMI:
-   * Exclude SSH authorized keys 
-   * Remove and disable passwords for all user accounts
-   * Securely delete all shell history and system log files containing sensitive data
-   find /root/.*history /home/*/*.history -exec rm -f {} \;
-   * Clear event logs
-
-   
-## Practice Tests
-
-$200 USD for all of them.
-
-* $41.30 USD (money back) <a target="_blank" href="https://www.youtube.com/watch?v=JvUGgVFeyRU">ad</a>
-   https://www.vmexam.com/aws/scs-c01-aws-certified-security-specialty
-   for 205+ questions for 2 months.
-
-* The AWS Certification Quiz Show: <a target="_blank" href="https://www.youtube.com/watch?v=LTOFzqkf5EE&time=4m8s">
-   CQ E13 (AWS Security - Specialty)</a> Nov 3, 2019 with Paul Hawkins (using ___)
-
-* $25 https://www.braincert.com/course/21137-AWS-Certified-Security-Specialty-Practice-Exams
-   provides 150 questions (3 practice tests - 50 questions each)
-
-* $11 https://www.udemy.com/course/scs-c01-aws-certified-security-specialty-practice-tests/
-
-* $40 https://www.whizlabs.com/aws-certified-security-specialty/
-
-* $69 for 333 questions ($100 with software) at https://www.dumpskey.com/amazon/aws-security-specialty-braindumps
-   or https://www.ebay.com/itm/Amazon-AWS-Certified-Security-Specialty-SCS-C01-Exam-Test-QA-SIM-PDF-Simulator-/253754800538
-   or https://www.dumps4download.com/scs-c01-dumps.html
-
 
 ## Exam Domains
 
@@ -229,6 +78,183 @@ $200 USD for all of them.
 * Security operations and risk
 
 
+
+## AWS Virtual Classes
+
+For those who can afford it:
+
+$600 for 1 day <a target="_blank" href="https://www.aws.training/SessionSearch?pageNumber=1&courseId=44517">
+AWS Security Essentials</a>
+
+
+## Video courses
+
+<a target="_blank" href="https://app.pluralsight.com/paths/skill/aws-cloud-security">
+Pluralsight's Security video courses</a>:
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-security-introduction">aws-security-introduction</a>
+   
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/identity-access-management-aws-users">identity-access-management-aws-users</a> by Brian Eiler
+   
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/securing-data-aws">securing-data-aws</a>
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/securing-aws-infrastructure">securing-aws-infrastructure</a>
+   
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/securing-applications-aws">securing-applications-aws</a>
+   
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-cloud-security-monitoring">aws-cloud-security-monitoring</a> 
+   by Saravanan Dhandapani Jun 26, 2019
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/securing-aws-networks/table-of-contents">Securing AWS Networks
+   25 Mar 2020 by Saravanan Dhandapani 
+
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-networking-deep-dive-vpc">aws-networking-deep-dive-vpc</a>
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-security-best-practices">aws-security-best-practices</a> by Joseph Lee Hunsaker
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/architecting-security-aws">Architecting for Security on AWSArchitecting for Security</a> Mar 08, 2020 By Ben Piper
+
+ACloud.Guru has a Exam Simulator 
+
+   * <a target="_blank" href="https://acloud.guru/course/aws-certified-security-specialty/learn/11050f3d-0362-ea01-f278-88368014a1cc/6b7857a0-5853-93af-2827-ba028b4021f1/watch">
+   Acloud.guru exam</a>
+
+
+LinuxAcademy.com 
+
+CloudAcademy.com
+
+Qwiklabs.com provides time (an hour at a time) on servers to perform their step-by-step instructions on specific topics.
+
+
+## Security Principles
+
+
+* Least privilege
+
+* Handle keys with care
+   * Asociate IAM Role to compute resource
+   * Programmatic AssumeRole via STS SDK
+
+* Encrypt "All the Things"
+   * Require KMS Keys
+   * Data at rest: Use only encrypted EBS volumes
+   * S3 buckets
+   * RDS or Aurora databases
+   * Data in transit: S3 bucket config, CloudFront Cert. Manager
+
+* Monitor continuously
+   * CloudTrail Logs (cross region)
+   * S3 Access Logging
+   * VPC Flow Logs
+   * Billing Logs
+
+* Audit Regularly
+   * Trusted Advisor
+   * AWS Config
+   * Custom Scripts
+
+At a high level, within <a target="_blank" href="https://aws.amazon.com/security/">AWS Cloud Security at aws.amazon.com/security</a> is the mantra: 
+
+- Prevent 
+- Detect 
+- Respond 
+- Remediate
+
+Type of control:
+
+* Directive
+* Preventive
+* Detective
+* Responsive
+
+## AWS CAF (Cloud Adoption Frmework)
+
+* Business
+* People
+* Governnce
+* Platform
+* Security
+* Operations
+
+
+## Lifecycle Actions
+
+Sequence to develop a secure web application within AWS cloud:
+
+1. Use accounts with MFA, not long term passwords.
+2. SSH from key pairs generated.
+2. Protect S3 CloudTrail and Billing buckets.
+2. Don't create public access to S3 buckets.
+2. Creaet "Admin" roles with limited privilege.
+2. Leverage IAM roles for EC2.
+2. Control traffic to EC2 using clear Security Groups.
+2. Enable communication by users and between app and database with roles having minimal IAM policies necessary.
+3. Setup apps with SSL certificates for HTTPS communication in transit.
+4. Decrypt data using a key.
+5. Setup read-only application and infrastructure logs [CloudTrail].
+6. Setup API Gateway and firewalls to manage access.
+7. Setup alerts
+8. Watch trends in application and infrastructure logs periodically.
+9. Setup backups using read and 
+9. HA and Multi-region operation
+9. Review billings monthly.
+
+
+
+
+## Hands-on
+
+GitHub?
+
+Create a multi-account setup with web servers running on EC2 instances as well as web services running through API Gateway, Lambda and S3.
+
+Use CloudFront, WAF, Shield. Install CloudWatch Logging agents on a few EC2 instances, consolidate logs in a central account, implement log file validation (extra credit — write a script to actually validate files based off events when new file is posted). 
+
+<strong>Macie</strong> - is really all that necessary?
+
+Grant one account read and read/write access to another account’s S3 buckets using IAM roles.
+
+Protect your EC2 instances with a homegrown proxy (install Squid or something), give them internet access and use NACLs and security groups to open a finite set of ports and restrict some IPs (use a VPN for testing),
+
+Apply Service Control Policies through the organization (as examples, restrict regions or mandate S3 encryption. They can be found here: https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_example-scps.html). Do this every day of the week before your exam and recite the script in your sleep the day of the exam :)
+
+Do all of this in CloudFormation and Terraform
+
+-- from Chiradeep Chhaya
+
+Hardening before creating AMI:
+   * Exclude SSH authorized keys 
+   * Remove and disable passwords for all user accounts
+   * Securely delete all shell history and system log files containing sensitive data
+   find /root/.*history /home/*/*.history -exec rm -f {} \;
+   * Clear event logs
+
+   
+## Practice Tests
+
+About $200 USD is you get all of them.
+
+* $41.30 USD (money back) <a target="_blank" href="https://www.youtube.com/watch?v=JvUGgVFeyRU">ad</a>
+   https://www.vmexam.com/aws/scs-c01-aws-certified-security-specialty
+   for 205+ questions for 2 months.
+
+* The AWS Certification Quiz Show: <a target="_blank" href="https://www.youtube.com/watch?v=LTOFzqkf5EE&time=4m8s">
+   CQ E13 (AWS Security - Specialty)</a> Nov 3, 2019 with Paul Hawkins (using ___)
+
+* $25 https://www.braincert.com/course/21137-AWS-Certified-Security-Specialty-Practice-Exams
+   provides 150 questions (3 practice tests - 50 questions each)
+
+* $11 https://www.udemy.com/course/scs-c01-aws-certified-security-specialty-practice-tests/
+
+* $40 https://www.whizlabs.com/aws-certified-security-specialty/
+
+* $69 for 333 questions ($100 with software) at https://www.dumpskey.com/amazon/aws-security-specialty-braindumps
+   or https://www.ebay.com/itm/Amazon-AWS-Certified-Security-Specialty-SCS-C01-Exam-Test-QA-SIM-PDF-Simulator-/253754800538
+   or https://www.dumps4download.com/scs-c01-dumps.html
+
+
 <a name="AbuseNotice""></a>
 ## Abuse Notice
 
@@ -269,8 +295,6 @@ PDF: DDoS Mitigation whitepaper</a>
 Data Residency: AWS Policy Perspectives</a>
 
 
-## 
-
 <a target="_blank" href="https://aws.amazon.com/security/security-learning/?whitepapers-main.sort-by=item.additionalFields.sortDate&whitepapers-main.sort-order=desc">AWS Cloud Security Learning</a>
 
 <a target="_blank" href="https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/scale-out-computing-aws-ra.pdf?did=wp_card&trk=wp_card">
@@ -282,10 +306,54 @@ Building a Scalable and Secure Multi-VPC AWS Network Infrastructure</a>
 <a target="_blank" href="https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/gxp_compliance_automation_ra.pdf?did=wp_card&trk=wp_card">
 GxP Compliance Automation</a>
 
+<hr />
+
+## Amazon/AWS Products
+
+### Amazon Inspector for EC2
+
+Weekly Runs vulnerability assessments of AWS Networks and Hosts 
+based on templates reaching targets.
+
+1. Install agent using keypair on targets (instances):
+
+   <pre>ssh -i awsgm.pem ec2-user@ec2-12-345-456-444.compute.-1.amazonaws.com
+wget https://inspector-agent.amazonaws.com/linux/latest/install
+sudo bash install
+   </pre>
+
+1. Run using service-linked Role, collecting for an hour.
+
+Findings by severity.
+
+Generate report, which include "CIS Benchmarks".
+
+### AWS Trusted Advisor
+
+5 categories for AWS accounts:
+
+* Cost optimization (upgrade)
+* Performance
+* Fault Tolerance
+
+* FREE Security (MFA, ports)
+* FREE Service Limits (Auto Scaling)
+
+
+### AWS Organizations
+
+Account management service to consolidate accounts.
+
+
+### AWS Config
+
+The type of rules that can be setup and how to automatically remediate non-compliant rules utilizing lambda
+
+
 
 <a name="KeyManagement"></a>
 
-## Key Management
+### Key Management
 
 <a target="_blank" href="https://d1.awsstatic.com/whitepapers/aws-kms-best-practices.pdf">
 PDF: AWS Key Management Service Best Practices</a>
@@ -294,9 +362,6 @@ KMS options:
    * API commands (Encrypt, Decrypt, Recrypt)
    * CMK – AWS created vs Imported
    * How to enforce annual rotation of keys
-
-## AWS Config
-The type of rules that can be setup and how to automatically remediate non-compliant rules utilizing lambda
 
 ## Macie
 
