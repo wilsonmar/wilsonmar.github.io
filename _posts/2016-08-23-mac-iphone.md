@@ -27,18 +27,21 @@ PROTIP: Store maps of public transportation routes and timetables on your mobile
 
 ## WiFi AirDrop from Mac to iPhoneX
 
-   On your iPhone X:
+   On your iPhone X/11:
 
 1. On the Desktop, sweep down from the upper-right corner of the screen for the Control Center.
 
-2. <img align="right" alt="mac-iphone-200x202-16205" width="100" src="https://user-images.githubusercontent.com/300046/46286412-f1785800-c533-11e8-8572-bdcce5039b83.png">Long press the middle of the square shown here until a window pops up. 
+2. <img align="right" alt="mac-iphone-200x202-16205" width="100" src="https://user-images.githubusercontent.com/300046/46286412-f1785800-c533-11e8-8572-bdcce5039b83.png"><strong>Long press the middle of the square</strong> shown here until a window pops up. 
 
-3. Tap on "AirDrop Receiving off" at the lower-left corner to turn it on.
+   BLAH: Why would Apple hide a useful control this way?
+
+3. If you see "AirDrop Receiving off" at the lower-left corner, Tap on it to turn it on.
 
 4. Select "Contacts Only" or "Everyone" to see the "AirDrop" icon turn blue.
 
    On the Mac:
 
+5. Turn on Wi-Fi and Bluetooth.
 5. Be in the Mac Finder app. (AirDrop is a feature of Finder, not a separate application)
 6. Turn on AirDrop by holding Shift+command and pressing R or use a mouse to select the Go menu.
 
@@ -51,10 +54,15 @@ PROTIP: Store maps of public transportation routes and timetables on your mobile
 8. Sign into iCloud. Provide your iPhone unlock code.
 9. Scroll up to see the contact you want to exchange files.
 10. Open another Finder window and navigate to the file you want to transfer.
-11. Drag and drop the file between the two Finder windows.
-12. On your iPhone, files transferred should appear among your <strong>Photos</strong>.
+11. Drag and drop the file on the picture icon representing your phone.
 
-PROTIP: AirDrop transfers only specific types of files: photos, videos, and locations.
+    PROTIP: AirDrop transfers only specific types of files: photos, videos, and locations.
+
+    On your iPhone, 
+
+12. click "Accept".
+13. files transferred should appear among your <strong>Photos</strong>.
+
 
 ## AirTrans alternative
 
