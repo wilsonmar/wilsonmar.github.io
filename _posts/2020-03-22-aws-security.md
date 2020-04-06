@@ -78,16 +78,38 @@ AWS Certified Security - Specialty (SCS-C01) exam:
 * Security operations and risk
 
 
+The Future of Security:
+
+* Static Code Analysis
+* Vulnerability Management
+* Compliance Checks
+* Web Application Scanning
+* Configuration Assessments
+
+Golden AMI Pipeline of EC2 images at https://github.com/Qualys-Public
 
 ## AWS Virtual Classes
 
-For those who can afford it:
+For those who can afford it, Amazon's live instructor-led classes:
 
 $600 for 1 day <a target="_blank" href="https://www.aws.training/SessionSearch?pageNumber=1&courseId=44517">
 AWS Security Essentials</a>
 
+Twitter Feeds:
+@awscloud
+@awssecurityinfo
+@awsidentity
+
 
 ## Video courses
+
+<a target="_blank" href="https://www.youtube.com/playlist?list=PLhr1KZpdzuke2ncPH0DVp9PswBFY5dIl6">Videos of 2019</a>
+#reInforce which take a dive deep into cloud security, IAM, and compliance.
+Steve Schmidt, CISO of Amazon Web Services.
+
+AWS seems optimistic that the George R. Brown Convention Center (1001 Avenida de Las Americas, Houston, TX, 77010) and Marriott Marquis Houston (1777 Walker Street, Houston, TX, 77010) will be open again on June 30 – July 1, 2020. $1,099 per person to speak directly with the AWS team.
+See https://reinforce.awsevents.com/
+
 
 <a target="_blank" href="https://app.pluralsight.com/paths/skill/aws-cloud-security">
 Pluralsight's Security video courses</a>:
@@ -127,6 +149,30 @@ CloudAcademy.com
 
 Qwiklabs.com provides time (an hour at a time) on servers to perform their step-by-step instructions on specific topics.
 
+   
+## Practice Tests
+
+About $200 USD is you get all of them.
+
+* $41.30 USD (money back) <a target="_blank" href="https://www.youtube.com/watch?v=JvUGgVFeyRU">ad</a>
+   https://www.vmexam.com/aws/scs-c01-aws-certified-security-specialty
+   for 205+ questions for 2 months.
+
+* The AWS Certification Quiz Show: <a target="_blank" href="https://www.youtube.com/watch?v=LTOFzqkf5EE&time=4m8s">
+   CQ E13 (AWS Security - Specialty)</a> Nov 3, 2019 with Paul Hawkins (using ___)
+
+* $25 https://www.braincert.com/course/21137-AWS-Certified-Security-Specialty-Practice-Exams
+   provides 150 questions (3 practice tests - 50 questions each)
+
+* $11 https://www.udemy.com/course/scs-c01-aws-certified-security-specialty-practice-tests/
+
+* $40 https://www.whizlabs.com/aws-certified-security-specialty/
+
+* $69 for 333 questions ($100 with software) at https://www.dumpskey.com/amazon/aws-security-specialty-braindumps
+   or https://www.ebay.com/itm/Amazon-AWS-Certified-Security-Specialty-SCS-C01-Exam-Test-QA-SIM-PDF-Simulator-/253754800538
+   or https://www.dumps4download.com/scs-c01-dumps.html
+
+<hr />
 
 ## Security Principles
 
@@ -230,6 +276,16 @@ Do all of this in CloudFormation and Terraform
 
 -- from Chiradeep Chhaya
 
+Create AWS Security Group using CLI:
+
+<pre>IP=10.10.10.10
+CIDR=32
+AWS_GROUP="xxxx"
+AWS_SEC_GROUP=mycorp_mydiv_myproj_mydept_mychargecode_myversion
+aws ec2 authorize-security-group-ingress --group-id "sg-$AWS_GROUP" \
+   --ip-permissions FromPort=10,ToPort=23,IpProtocol=tcp,IpRanges="[{CidrIp=$IP/$CIDR}]"
+</pre>
+
 Hardening before creating AMI:
    * Exclude SSH authorized keys 
    * Remove and disable passwords for all user accounts
@@ -237,28 +293,6 @@ Hardening before creating AMI:
    find /root/.*history /home/*/*.history -exec rm -f {} \;
    * Clear event logs
 
-   
-## Practice Tests
-
-About $200 USD is you get all of them.
-
-* $41.30 USD (money back) <a target="_blank" href="https://www.youtube.com/watch?v=JvUGgVFeyRU">ad</a>
-   https://www.vmexam.com/aws/scs-c01-aws-certified-security-specialty
-   for 205+ questions for 2 months.
-
-* The AWS Certification Quiz Show: <a target="_blank" href="https://www.youtube.com/watch?v=LTOFzqkf5EE&time=4m8s">
-   CQ E13 (AWS Security - Specialty)</a> Nov 3, 2019 with Paul Hawkins (using ___)
-
-* $25 https://www.braincert.com/course/21137-AWS-Certified-Security-Specialty-Practice-Exams
-   provides 150 questions (3 practice tests - 50 questions each)
-
-* $11 https://www.udemy.com/course/scs-c01-aws-certified-security-specialty-practice-tests/
-
-* $40 https://www.whizlabs.com/aws-certified-security-specialty/
-
-* $69 for 333 questions ($100 with software) at https://www.dumpskey.com/amazon/aws-security-specialty-braindumps
-   or https://www.ebay.com/itm/Amazon-AWS-Certified-Security-Specialty-SCS-C01-Exam-Test-QA-SIM-PDF-Simulator-/253754800538
-   or https://www.dumps4download.com/scs-c01-dumps.html
 
 <hr />
 
@@ -311,6 +345,19 @@ GxP Compliance Automation</a>
 <hr />
 
 ## Amazon/AWS Products
+
+### Amazon Detective
+
+new in 2020,
+uses Machine Learning and statistical analysis on outputs from Guard Duty, 
+
+### AWS Firewall Manager
+
+etc. to simplify WAF admin <strong>across accounts</strong>.
+
+### Security Hub
+
+summarizes
 
 ### Amazon Inspector for EC2
 
