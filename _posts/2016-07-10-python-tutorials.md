@@ -342,6 +342,13 @@ From http://www.seleniumframework.com/python-course/
 
 * <a target="_blank" href="https://stackoverflow.com/questions/tagged/python">Stack Overflow questions and answers tagged "Python"</a>
 
+## Desktop apps
+
+pyz
+
+py2app/py2exe
+
+pyInstaller
 
 ## More on Python
 

@@ -73,7 +73,7 @@ Operating systems (Linux and macOS included) have settings which limit the numbe
 
    ### Sierra and newer versions
 
-   Newer versions of macOS no not reference the file due to security considerations.
+   Newer versions of macOS do not reference the file due to security considerations.
 
    On newer macOS Sierra and High Sierra, <a target="_blank" href="https://blog.dekstroza.io/ulimit-shenanigans-on-osx-el-capitan/">Dejan Kitic</a> and
    <a target="_blank" href="https://docs.basho.com/riak/kv/2.1.4/using/performance/open-files-limit/#mac-os-x">this</a>
@@ -85,7 +85,7 @@ Operating systems (Linux and macOS included) have settings which limit the numbe
    * https://github.com/wilsonmar/mac-setup/blob/master/configs/limit.maxproc.plist at 2048
    <br /><br />
 
-4. 
+5. Do this:
 
    <pre><strong>sudo launchctl load -w /Library/LaunchDaemons/limit.maxfiles.plist
    sudo launchctl load -w /Library/LaunchDaemons/limit.maxproc.plist</strong></pre>
