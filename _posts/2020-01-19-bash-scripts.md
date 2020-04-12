@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bash scripts (coding)"
-excerpt: "Here is how you can install, configure, and run (then remove) a web app within Docker on macOS and Linux, with one copy/paste"
+excerpt: "This sample Bash script contains multiple features: install, configure, and run (then remove) a web app within Docker on macOS and Linux, with one copy/paste"
 tags: [devops, bash, programming]
 Categories: Devops
 date: "2020-01-19"
@@ -16,14 +16,26 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-   To avoid the toil and human error of manually typing commands on each new instance, I've written bash shell scripts that install what is needed on a MacOS or Linux terminal. A <strong>single command</strong> installs all that is needed:
-   XCode, Bash, git, Ruby, docker, docker-compose.
+New developers using a "MVP" (Minimum Viable Product) approach to the scope of their Bash scripts
+would aim for the smallest number of lines.
 
-NOTE: This page is still actively under construction.
+But those supporting production Bash scripts know that the initial script is duplicated for use in other purposes. Features or fixes added to one script would not be in the others, which then would accumulate "technical debt" over time. 
 
-## Input password
+Features that might be requested include:
 
-1. First, be at a Terminal on macOS or console after instantiating a Linux machine on VMWare, EC2, or other cloud.
+   * Install the same package on macOS and different packages for various Linux distributions
+   * Clone from GitHub
+   * Read secrets from a configuration file in clear text, encrypted file, Vault API using govaultenv
+   * Read secrets from cloud Key vaults on GCP, Azure, AWS (after installing their CLI)
+   * Create Docker image
+   * Run Python in Virtualenv
+   * Kill processes before and/or after each run
+   <br /><br />
+
+
+## Get started 
+
+1. Instantiating a Linux machine on VMWare, EC2, or other cloud.
 
    The script was tested on Ubuntu as well (running within VMWare Fusion on macOS), 
    but has untested code for CentOS and Red Hat (running within EC2).
@@ -37,6 +49,9 @@ NOTE: This page is still actively under construction.
 
    ## Copy and paste invocation
 
+   With this script, a <strong>single command</strong> installs all that is needed:
+   XCode, Bash, git, Ruby, docker, docker-compose.
+
 1. To execute the script just to get a short description of the parameters controlling what features are invoked, copy this command into your Clipboard by <strong>triple-clicking</strong> "bash" to turn this command line gray, then press command+C to copy:
 
    <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh)"
@@ -44,38 +59,57 @@ NOTE: This page is still actively under construction.
 
    <a name="Args"></a>
 
-   <pre>================================================ v0.59
+   <pre>=========================== 2020-04-12T14:19:45-0600-914 v0.65
 USAGE EXAMPLE during testing:
-./sample.sh -v -j -a  # NodeJs app
+./sample.sh -v -g "abcdef...89" -p "cp100-1094"  # Google API call
+./sample.sh -v -n -a  # NodeJs app with MongoDB
 ./sample.sh -v -i -o  # Ruby app
-./sample.sh -v -I -U -c -s -r -a -w  # Python app
+./sample.sh -v -I -U -c -s -y -r -a -w     # Python Flask web app in Docker
+./sample.sh -v -I -U -c -H -G -f "a9y-sample.py" -P "-v" -t -w -C  # Python sample app using Vault
+./sample.sh -v -V -c -T -F "section_2" -f "2-1.ipynb" -K  # Jupyter anaconda Tensorflow in Venv
 USAGE EXAMPLE after testing:
 ./sample.sh -v -D -M -C
 OPTIONS:
    -E           to set -e to NOT stop on error
    -X           to set -x to trace command lines
+   -H           install -Hashicorp Vault secret manager
    -v           to run -verbose (list space use and each image to console)
-   -g           -google cloud
+   -q           -quiet headings for each step
+   -V           to run within VirtualEnv
+   -g "abcdef...89" -gcloud API credentials for calls
    -i           -install Ruby and Refinery
-   -j           -install JavaScript (NodeJs) app with MongoDB
-   -y           -install Python in Virtualenv
+   -j            install -JavaScript (NodeJs) app with MongoDB
+   -y            install Python
    -I           -Install brew, docker, docker-compose
    -U           -Upgrade packages
+   -p "cp100"     -project in cloud
    -c           -clone from GitHub
-   -s           -set GitHub user info from ~/.secrets.sh in your user home folder
+   -F "abc"     -Folder for working
+   -f "a9y.py"  -file for working
+   -P "-v -x"   -Run parameters controlling program called
+   -s           -secrets retrieve (in default file within your user HOME folder)
    -n "John Doe"            GitHub user -name
    -e "john_doe@gmail.com"  GitHub user -email
-   -P " "    Project folder -path
    -r           start Docker before -run
-   -b           to -build Docker image
-   -a           to -actually run docker-compose
-   -o           to open/view -web page in default browser
-   -w           to open/view -web page in default browser
-   -D           to -Delete files after run (to save disk space)
-   -M           to remove Docker iMages pulled from DockerHub
-   -C           to remove -Cloned files after run (to save disk space)
-   -K           to stop processes at end of run (to save CPU)
+   -b           -build Docker image
+   -A           run in -Anaconda 
+   -T           run -Tensorflow
+   -t           run -tests against test server
+   -a           -actually run in prod server
+   -o           open/view -web page in default browser
+   -D           -Delete files after run (to save disk space)
+   -M           remove Docker iMages pulled from DockerHub
+   -C           remove -Cloned files after run (to save disk space)
+   -K           stop processes at end of run (to save CPU)
    </pre>
+
+   This sample script includes all the above features for apps in NodeJs, Ruby, and Python (Anacodna and Tensorflow, and a program cloned from GitHub) so that we can avoid some of the toil and human error of manually typing commands on each new instance.
+
+   ## Combos
+
+   Various combination of features can be turned on or off for a particular run of the script.
+
+   NOTE: This page is still actively under construction.
 
 1. To execute the script to do stuff, copy this command which has 
    <strong>-v -I -U -c -s -r -a -o</strong> at the end of the line to specify <a href="#Args">parameters</a> controlling what features are invoked each run:
@@ -92,7 +126,15 @@ OPTIONS:
    <pre>✔ End of script after 1883 seconds and 677960 bytes of disk space.
    </pre>
 
-   If you added the `-o` parameter to the command, the script opens the sample app in your default browser. It doesn't matter what the app is, but for now, the sample app looks like this:
+   ## Arguments
+
+   `-v` for -verbosity adds additional notes.
+
+   `-q` for -quiet suppresses headers and footers that appear by default, such as when running in production mode.
+
+   `-t` for -testing mode, which runs local Vault and app servers.
+
+   `-o` -opens the sample app in your default browser. It doesn't matter what the app is, but for now, the sample app looks like this:
 
    ![bash-scripts-landing-899x355](https://user-images.githubusercontent.com/300046/72588109-3e1ca980-38c5-11ea-965e-a935b8e69498.jpg)
 
@@ -732,6 +774,9 @@ Either way, the Docker daemon is started.
 ## References
 
 https://www.tutorialspoint.com/unix/unix-file-operators.htm
+
+<a target="_blank" href="https://www.qwiklabs.com/focuses/8715">Qwiklabs.com: Automating AWS Services with Scripting and the AWS CLI</a>
+
 
 ## More on DevOps #
 

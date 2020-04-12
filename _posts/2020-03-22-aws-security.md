@@ -377,6 +377,9 @@ Findings by severity.
 
 Generate report, which include "CIS Benchmarks".
 
+
+<a name="TrustedAdvisor"></a>
+
 ### AWS Trusted Advisor
 
 5 categories for AWS accounts:
@@ -387,6 +390,9 @@ Generate report, which include "CIS Benchmarks".
 
 * FREE Security (MFA, ports)
 * FREE Service Limits (Auto Scaling)
+
+<a target="_blank" href="https://www.qwiklabs.com/focuses/10448">
+Qwiklabs.com "Auditing Your Security with AWS Trusted Advisor"</a>
 
 
 ### AWS Organizations

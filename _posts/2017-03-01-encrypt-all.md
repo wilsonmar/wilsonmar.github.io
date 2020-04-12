@@ -3,7 +3,7 @@ layout: post
 title: "Encrypt all the things"
 excerpt: "How to store and send files securely"
 tags: [AWS, Security]
-date: "2017-03-01"
+date: "2020-04-05"
 file: "encrypt-all"
 image:
 # pic silver robot white skin handshake 1900x500
@@ -19,40 +19,89 @@ comments: true
 There is now a way to safely store files in encrypted format and 
 transmit files privately over "hostile" public internet lines.
 
-encryption in transit and at rest.
-
 That's good news amidst so much bad news about websites being hacked and private credentials stolen.
 It is now well-known that public wi-fi enables others to listen in to what you send.
 
-## AWS KMS
+Each cloud service (AWS with Azure with GCP, etc.) has its own mechanisms.
 
-Key Management Service uses the AWS Encryption SDK containing algorithms.
 
-Private CMA (Customer Master Keys) are created in KMS and remain there. 
+<a target="_blank" href="https://www.qwiklabs.com/focuses/10388">
+Qwiklabs.com: Introduction to AWS Key Management Service</a> (free)
+provides hands-on instructions on these procedures:
 
-   * AWS-managed CMA keys
-   * Customer-managed CMA keys can be symmetric or asymmetric
-   * AWS-owned CMA keys
+1. Create an Encryption Key
+2. Create an S3 bucket with CloudTrail logging functions
+3. Use an encryption key to encrypt data stored in a S3 bucket
+4. Monitor encryption key usage using CloudTrail
+5. Manage encryption keys for users and roles
+
+<hr />
+
+## Generate secret keys using AWS KMS 
+
+The below describes the manual way using a GUI.
+There is also an <a target="_blank" href="https://docs.aws.amazon.com/kms/latest/APIReference/Welcome.html">API</a>
+
+PROTIP: Use a separate Data key for different datasets.
+
+1. Use an internet browser to get on the AWS Management Console:
+
+   https://us-east-2.console.aws.amazon.com/console/home?region=us-east-2#
+
+1. Select your region.
+1. Enter Key Management Service (KMS).
+
+   <img width="401" alt="aws-kms-svc-802x308" src="https://user-images.githubusercontent.com/300046/78986307-3cd7d300-7ae8-11ea-9cd3-328902665460.png">
+
+   Notice the service is to securely ???
+
+   Private CMK (Customer Master Keys) are created in KMS and remain there.
+   
+1. Upon entry, there is a left menu:
+
+   * AWS-managed keys
+   * Customer-managed keys (symmetric or asymmetric)
+   * Customer key stores
    <br /><br />
 
-Each key has an Alias and Key ID, which are GUIDs with dashes, and enabled.
+   "Create a key" on the splash screen can also be invoked within the "Customer managed keys" menu item.
 
-Advanced Options: Key material origins: KMS, External, Customer key store (CloudHSM):
+   ## Create a KMS key
+
+   AWS creates a Default master key that protects the data of each service (such as Cloud9) when no other key is defined.
+
+1. Click "Create Key".
+
+1. Click "Advanced options" to view "Key material origin". Read the KMS docs at 
+
+   https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html
+
+   WARNING: Using <a target="_blank" href="https://console.aws.amazon.com/cloudhsm/home">AWS Cloud HSM</a> cluster incurs an hourly fee. And AWS has no visibility or access to encryption keys in HSM.
+
+1. On the configuration page, configure keys: click <strong>symmetric</strong>.
+
+   Symmetric keys are like a password, a single encryption key that is used for both encrypt and decrypt operations, 256-bit.
+
+   Asymmetric keys are RSA or elliptic curve (ECC) public/private key pairs used encrypt/decrypt or sign/verify operations
+
+1. On the Add Labels page, type in an Alias and Description. Next.
+
+   PROTIP: Define aliases to differentiate keys within the account.
+   
+   PROTIP: Establish a convention for naming keys for all departments, projects, etc.
+
+   Each key has an Alias and Key ID, which are GUIDs with dashes, and enabled.
+
+1. On the <strong>Define key administrative permissions</strong>, select <i class="far fa-check-square"></i> the user or role you're signed into the Console with.
+
+   Advanced Options: Key material origins: KMS, External, Customer key store (CloudHSM):
    * KMS are validated to FIPS 140-2 level 2, China region does not suppor asymmetric keys
    * CloudHSM are validated to FIPS 140-2 level 3, keys and hardware exclusive to customer, either symmetric or asymmetric
 
-<a target="_blank" href="https://www.youtube.com/watch?v=_gezaWmwzYY&list=PLhr1KZpdzuke2ncPH0DVp9PswBFY5dIl6&index=77">
-VIDEO: AWS re_Infoce 2019: Achieving Security Goals with AWS CloudHSM</a>
+<hr />
 
-CMA key + Encryption algorithm yields the Plaintext key and Encrypted key.
 
-Plaintext key + Data are fed into the Encryption algorithm yields Encrypted data.
-
-Encrypted key + CMA key fed into Decryption algorithm yields Plaintext key.
-
-A separate Data key is used for different datasets.
-
-### Encrypt AWS Network 
+### Encrypt AWS Network in transit
 
 <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=0ea16bcc-fcee-46c9-b1f8-85c2e29e80e5">GUI demo [3:05]</a>
 <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-networking-deep-dive-vpc/table-of-contents">AWS Networking Deep Dive: Virtual Private Cloud (VPC)</a>
@@ -86,6 +135,22 @@ To create VPC : Customer Gateway : VPN Site-to-site IPSEC
 
 1. Route Tables in left menu to Edit Routes.
 1. Type Destination IP & Target of on-premise network. Add route.
+
+
+
+## Generate secret key using AWS KMS 
+
+AWS KMS uses the <a target="_blank" href="https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/introduction.html">AWS Encryption SDK</a> of cryptographic algorithms.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=_gezaWmwzYY&list=PLhr1KZpdzuke2ncPH0DVp9PswBFY5dIl6&index=77">
+VIDEO: AWS re_Infoce 2019: Achieving Security Goals with AWS CloudHSM</a>
+
+CMK + Encryption algorithm yields the Plaintext key and Encrypted key.
+
+Plaintext key + Data are fed into the Encryption algorithm yields Encrypted data.
+
+Encrypted key + CMK fed into Decryption algorithm yields Plaintext key.
+
 
 
 ## Videos

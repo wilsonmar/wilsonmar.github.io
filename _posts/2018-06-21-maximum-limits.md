@@ -81,11 +81,11 @@ Operating systems (Linux and macOS included) have settings which limit the numbe
 
 4. Copy in folder <tt>/Library/LaunchDaemons/</tt> plist files from a GitHub repository:
 
-   * https://github.com/wilsonmar/mac-setup/blob/master/configs/limit.maxfiles.plist at 524288
-   * https://github.com/wilsonmar/mac-setup/blob/master/configs/limit.maxproc.plist at 2048
-   <br /><br />
+   https://github.com/wilsonmar/mac-setup/blob/master/configs/limit.maxfiles.plist at 524288
+   
+   https://github.com/wilsonmar/mac-setup/blob/master/configs/limit.maxproc.plist at 2048
 
-5. Do this:
+5. Invoke the files:
 
    <pre><strong>sudo launchctl load -w /Library/LaunchDaemons/limit.maxfiles.plist
    sudo launchctl load -w /Library/LaunchDaemons/limit.maxproc.plist</strong></pre>
@@ -94,7 +94,7 @@ Operating systems (Linux and macOS included) have settings which limit the numbe
 
    Their permissions need to be "-rw-r--r--", set by sudo chmod 644. 
 
-5. So how do you turn csrutil off? Google says sudo csrutil disable... Ummm, not so easy, can only be done in Recovery Mode. So, reboot, hold command + R to enter Recovery Mode, once there open terminal and do csrutil disable... Finally a breakthrough...disabled.
+5. So how do you turn csrutil off? Google says "sudo csrutil disable...". But not so easy. That can only be done in Recovery Mode. So, reboot, hold command + R to enter Recovery Mode, once there open terminal and do csrutil disable... Finally a breakthrough...disabled.
 
 
 4. Now you can adjust the process limit on Mac OS X Yosemite and El Capitan versions:
