@@ -1095,7 +1095,7 @@ by Tristan Colgate-McFarlane
 
 <a target="_blank" href="https://www.joyent.com/blog/secrets-management-in-the-autopilotpattern">https://www.joyent.com/blog/secrets-management-in-the-autopilotpattern</a>
 Vault provides encryption at rest for secrets, encrypted communication of those secrets to clients, and role-based access control and auditability for secrets. And it does so while allowing for high-availability configuration with a straightforward single-binary deployment. See the Vault documentation for details on their security and threat model.
-https://www.vaultproject.io/docs/internals/security.html
+-- See <a target="_blank" href="https://www.vaultproject.io/docs/internals/security.html">https://www.vaultproject.io/docs/internals/security.html</a>
 
 Vault uses Shamir's Secret Sharing to control access to the "first secret" that we use as the root of all other secrets. A master key is generated automatically and broken into multiple shards. A configurable threshold of k shards is required to unseal a Vault with n shards in total.
 
