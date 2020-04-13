@@ -1102,6 +1102,10 @@ Vault uses Shamir's Secret Sharing to control access to the "first secret" that 
 
 namic Credentials and Encryption as a data service, and “Policy as Code” vs “Secrets as Code.”
 
+<a target="_blank" href="https://learning.oreilly.com/videos/getting-started-with/1018947658/">
+VIDEO COURSE: Getting Started with HashiCorp Vault</a>
+by <a target="_blank" href="https://www.linkedin.com/in/bryan-krausen-5ab8794/">Bryan Krausen</a> (@btkrausen)
+
 
 <hr />
 

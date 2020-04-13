@@ -32,20 +32,17 @@ Features that might be requested include:
    * Kill processes before and/or after each run
    <br /><br />
 
+Each feature added may have logical inconsistencies with others.
+
+> This article presents a logical ordering of concepts presented in a succint way, as a hands-on narrated scenic tour.
+
 
 ## Get started 
 
-1. Instantiating a Linux machine on VMWare, EC2, or other cloud.
+1. Open a Terminal on your Mac or instantiate a Linux machine on VMWare, EC2, or other cloud.
 
-   The script was tested on Ubuntu as well (running within VMWare Fusion on macOS), 
+   The sample Bash script was tested on macOS and Ubuntu (running within VMWare Fusion on macOS), 
    but has untested code for CentOS and Red Hat (running within EC2).
-
-1. To avoid being asked to enter your password on every run, add yourself to the <tt>sudoers</tt> file. 
-
-   I do not encourage the disabling of password requests by adding this line to sudoers before executing scripts:
-
-   <pre><strong>echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
-   </strong></pre>
 
    ## Copy and paste invocation
 
@@ -142,11 +139,17 @@ OPTIONS:
 
    TODO: Load a sample NodeJs (JavaScript) app from <a target="_blank" href="https://github.com/wesbos/Learn-Node/tree/master/starter-files">https://github.com/wesbos/Learn-Node/tree/master/starter-files</a>
 
-<hr />
 
-> This article presents a logical ordering of concepts presented in a succint way, as a hands-on narrated scenic tour.
+   ## Enter Password
 
-   Each feature of the script is explained below:
+   You are prompted for a password.
+
+1. To avoid being asked to enter your password on every run, add yourself to the <tt>sudoers</tt> file. 
+
+   I do not encourage the disabling of password requests by adding this line to sudoers before executing scripts:
+
+   <pre><strong>echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
+   </strong></pre>
 
 1. View the install script at:
 
