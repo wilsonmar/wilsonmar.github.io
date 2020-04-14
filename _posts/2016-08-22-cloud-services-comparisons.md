@@ -277,10 +277,10 @@ Here are the names of brand names, some with links to marketing or documentation
 
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Security"></a>Security:</td></tr>
 
-<tr valign="top" class="tblOdd"><th align="left">Administration &amp; Security</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/active-directory/">Azure Active Directory</a>
+<tr valign="top" class="tblOdd"><th align="left">Administration &amp; Security (Identity and Access Management) </th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/active-directory/">Azure Active Directory</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/directoryservice/">DirectoryService</a>
-<br /><a target="_blank" href="http://aws.amazon.com/iam/">IAM (Identity and Access Management)</a><br /></td>
-    <td>-</td></tr>
+<br /><a target="_blank" href="http://aws.amazon.com/iam/">IAM</a></a><br /></td>
+    <td>Cloud IAM</td></tr>
 
 <tr valign="top" class="tblOdd"><th align="left">Threat Monitoring<br /></th><td><a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/intro-to-security-in-azure/2a-azure-security-center">Azure Security Center</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/config/">AWS Config</a></td>

@@ -18,7 +18,9 @@ comments: true
 
 Here is a hands-on tutorial about how to install and use Hashicorp's <a target="_blank" href="https://www.vaultproject.io">Vault (vaultproject.io)</a> to securely access secret keys and Hashicorp <strong>Consul</strong> to store key/value pairs. Installation is from scratch on a cloud environment using Docker and docker-compose.
 
-The unique contribution of this article is an attempt to provide a deep yet concise approach, done by using automation which are then explained.
+Vault provides "Encryption as a Service" to an enterprise in order to centralize secrets across the organization. Making secret handling easy (automated) enables replacement of long-lived secrets with dynamically generated asymetric X.509 certificates that have a controlled lease period.
+
+The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained.
 This course assumes participants bring a Mac or Windows laptop and have prior experience with Linux CLI commands.
 
 PROTIP: Where we want to end up is having the system handle secrets.
@@ -32,6 +34,9 @@ At the end of this tutorial, you should be able to:
 * <a href="#AppProgramming">Store and access secrets in Vault within a program</a>
 * Hashicorp Nomad passes secrets as files. It polls for changed values.
 	Tasks get tokens so they can retrieve values.
+<br /><br />
+
+Paid Enterprise editions include Read Replicas and Replication for DR, plus MFA, Sentinel, and HSM Auto-Unseal with FIPS 140-2 & Seal Wrap.
 
 ## What are secrets?
 
@@ -753,9 +758,11 @@ When a Vault server is started, it starts in a sealed state.
 
 No operations are possible with a Vault that is sealed.
 
-Unsealing is the process of constructing the <strong>master key</strong> needed to read the decryption key used to decrypt the data.
+Unsealing is the process of constructing the <strong>master key</strong> needed to read encryption key to encrypt data and decryption key used to decrypt data.
 
-[3:36] Vault splits the master key into 5 to 10 chars for that many different trustsed people to see a different portion. This is so that all those same people would provide their portion when the master is needed again. CAUTION: The master key should not be stored anywhere.
+PROTIP: Decryption keys are stored with data, in a form encrypted by a master key.
+
+[3:36] Vault splits the master key into 5 to 10 chars for that many different trusted people to see a different portion. This is so that all those same people would provide their portion when the master is needed again. CAUTION: The master key should not be stored anywhere but in memory.
 
 Alternately, sealing can be done by auto-unseal by using a cloud key from Azure Key Vault, <a target="_blank" href="https://vaultproject.io/docs/configuration/seal/azurekeyvault.html">such as this example stanza</a>:
 
@@ -767,7 +774,6 @@ Alternately, sealing can be done by auto-unseal by using a cloud key from Azure 
       key_name      = "vault_key"
    }
    </pre>
-
 
    <pre>./vault_ unseal af29615803fc23334c3a93f8ad58353b587f50eb0399d23a6950721cbae94948
    </pre>
@@ -781,7 +787,7 @@ Key Threshold: 1
 Unseal Progress: 0
    </pre>
 
-   <tt>shamir</tt> refers to Shamir’s secret sharing algorithm defined at: <a target="_blank" href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing">https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing</a>
+   <tt>Shamir</tt> refers to the Shamir secret sharing algorithm defined at: <a target="_blank" href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing">https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing</a>
 
    Higher Key Threshold values would require more key holders to perform unseal with their parts of the key. This provides an additional level of security for accessing data.
 
@@ -869,8 +875,7 @@ To revoke a lease on Azure:
 
    The response:
 
-   <pre>
-Successfully authenticated! The policies that are associated
+   <pre>Successfully authenticated! The policies that are associated
 with this token are listed below:
 &nbsp;   
 root
@@ -901,6 +906,8 @@ Hashicorp's Nomad ???
 
 
 <hr />
+
+<a name="Plugins"></a>
 
 <a name="Jenkins"></a>
 
@@ -958,13 +965,15 @@ https://www.vaultproject.io/intro/getting-started/deploy.html
 
 0. Retrieve the secret just added:
 
-   <pre><strong>vault read secret/donttell
+   <pre><strong>vault read secrets/apps/web/username
+vault read secrets/apps/portal/username
+vault read secrets/common/api_key
+vault read secret/donttell
    </strong></pre>
 
    The response, for example:
 
-   <pre>
-Key                 Value
+   <pre>Key                 Value
 ---                 -----
 refresh_interval    768h0m0s
 excited             yes
@@ -1076,6 +1085,10 @@ It specifies Consul as the backend to store secrets. Consul runs in HA mode. <tt
    <pre>vault init -address=${VAULT_ADDR} > keys.txt
    cat keys.txt
    </pre>
+
+## CA
+
+Vault can serve as a Root or Intermediate Certificate Authority.
 
 ## References
 

@@ -6,10 +6,10 @@ tags: [API, devsecops]
 date: "2020-03-10"
 file: "pytest-bdd"
 image:
-# cucumber-jars-1900x500-226446
-  feature: https://user-images.githubusercontent.com/300046/39661096-6eb2ee3e-5009-11e8-9cf8-8630c28a8db5.jpg
-  credit: proandroiddev
-  creditlink: https://proandroiddev.com/be-da-developer-cucumber-on-android-cfd07773e59d
+# cape-blue.jpg
+  feature: https://user-images.githubusercontent.com/300046/79251998-2f02b480-7e3e-11ea-81fd-fe690416e320.jpg
+  credit: enterprisersproject.com
+  creditlink: https://enterprisersproject.com/article/2019/5/3-mindfulness-exercises-try-when-you-feel-overwhelmed
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
