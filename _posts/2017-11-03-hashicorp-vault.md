@@ -65,6 +65,32 @@ It's really dangerous to keep in GitHub plain-text secrets such as API Keys, etc
 This is even if secrets are ecrypted (using GPG) because old versions hidden in history can be decrypted using old keys.
 
 
+<a name="consul"></a>
+
+## Consul
+
+The different stanzas:
+
+<pre>storage "consul" {
+   address = "127.0.0.1:8500"
+   path = "vault/"
+}
+listener "tcp" {
+   address = "0.0.0.0:8200"
+   cluster_address = "0.0.0.:8201"
+   tls_cert_file = "/etc/certs/"
+   tls_cert_key = "/etc/certs/vaultkey"
+}
+seal "awskms" {
+   region = "us-east-1"
+   kms_key_id = "f3459282-439a-b233-e210-3487b77c7e2"
+}
+api_addr = "https://10.0.0.10:8200"
+ui = true
+cluster_name = "my_cluster"
+log_level = "info"
+</pre>
+
 <a name="WithinCode"></a>
 
 ## Within App Programming Code
