@@ -36,7 +36,11 @@ At the end of this tutorial, you should be able to:
 	Tasks get tokens so they can retrieve values.
 <br /><br />
 
+Precompiled Vault binaries are available at <a target="_blank" href="https://releases.hashicorp.com/vault/">https://releases.hashicorp.com/vault</a>
+
+PROTIP: Enterprise and free versions have different binaries.
 Paid Enterprise editions include Read Replicas and Replication for DR, plus MFA, Sentinel, and HSM Auto-Unseal with FIPS 140-2 & Seal Wrap.
+A system service file is needed for prod instances.
 
 ## What are secrets?
 
@@ -64,32 +68,6 @@ empheral (temporary) passwords and cryptographic offload to a central service:
 It's really dangerous to keep in GitHub plain-text secrets such as API Keys, etc.
 This is even if secrets are ecrypted (using GPG) because old versions hidden in history can be decrypted using old keys.
 
-
-<a name="consul"></a>
-
-## Consul
-
-The different stanzas:
-
-<pre>storage "consul" {
-   address = "127.0.0.1:8500"
-   path = "vault/"
-}
-listener "tcp" {
-   address = "0.0.0.0:8200"
-   cluster_address = "0.0.0.:8201"
-   tls_cert_file = "/etc/certs/"
-   tls_cert_key = "/etc/certs/vaultkey"
-}
-seal "awskms" {
-   region = "us-east-1"
-   kms_key_id = "f3459282-439a-b233-e210-3487b77c7e2"
-}
-api_addr = "https://10.0.0.10:8200"
-ui = true
-cluster_name = "my_cluster"
-log_level = "info"
-</pre>
 
 <a name="WithinCode"></a>
 
@@ -424,11 +402,87 @@ Other commands:
    <pre><strong>vault kv
    </strong></pre>
 
-Precompiled Vault binaries are available at https://releases.hashicorp.com/vault/
+
+   ## Vault kv store commands
+
+   PROTIP: https://www.vaultproject.io/docs/commands/index.html
+
+1. Add a key:
+
+   <pre><strong>vault kv put hello/api username=john
+   </strong></pre>
+
+1. List keys and values:
+
+   <pre><strong>vault kv list hello
+   </strong></pre>
+
+1. Retrieve a keys and values:
+
+   <pre><strong>vault kv get hello/api 
+   </strong></pre>
+
+1. Delete a key's metadata:
+
+   <pre><strong>vault kv metadata delete hello/api 
+   </strong></pre>
+
+1. Delete a key:
+
+   <pre><strong>vault kv delete hello/api 
+   </strong></pre>
+
+
+   ## Vault secret engine commands
+
+1. Enable the AWS secrets engine:
+
+   <pre><strong>vault secrets enable aws
+   </strong></pre>
+
+   <pre>Success! Enabled the aws secrets engine at: aws/</pre>
+
+1. Enable for writing the root account within the AWS secrets engine in the CLI: 
+
+   <pre><strong>vault write aws/config/root \
+    access_key=1234567890abcdefg \
+    secret_key=... \
+    region=us-east-1
+   </strong></pre>
+
 
 
 <hr />
 
+
+<a name="consul"></a>
+
+## Consul
+
+To use Consul as the storage backend, download and install it on each node in the cluster, along with these different stanzas:
+
+<pre>storage "consul" {
+   address = "127.0.0.1:8500"
+   path = "vault/"
+}
+listener "tcp" {
+   address = "0.0.0.0:8200"
+   cluster_address = "0.0.0.:8201"
+   tls_cert_file = "/etc/certs/"
+   tls_cert_key = "/etc/certs/vaultkey"
+}
+seal "awskms" {
+   region = "us-east-1"
+   kms_key_id = "f3459282-439a-b233-e210-3487b77c7e2"
+}
+api_addr = "https://10.0.0.10:8200"
+ui = true
+cluster_name = "my_cluster"
+log_level = "info"
+</pre>
+
+
+https://medium.com/criteo-labs/configure-consul-for-performance-at-scale-f6a089706377
 
 <a name="Dockerfile"></a>
 
@@ -1139,7 +1193,7 @@ Vault provides encryption at rest for secrets, encrypted communication of those 
 Vault uses Shamir's Secret Sharing to control access to the "first secret" that we use as the root of all other secrets. A master key is generated automatically and broken into multiple shards. A configurable threshold of k shards is required to unseal a Vault with n shards in total.
 
 
-namic Credentials and Encryption as a data service, and “Policy as Code” vs “Secrets as Code.”
+namic Credentials and Encryption as a data service, and "Policy as Code" vs "Secrets as Code."
 
 <a target="_blank" href="https://learning.oreilly.com/videos/getting-started-with/1018947658/">
 VIDEO COURSE: Getting Started with HashiCorp Vault</a>

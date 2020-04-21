@@ -29,6 +29,7 @@ WARNING: Those who use Sonar purely as a surveillance tool to judge workers usua
 
 CAUTION: Sonar stores code (in some compressed form) that it processes, which may be of security concern. Licenses are limited to the lines of code Sonar stores.
 
+User Guide: https://docs.sonarqube.org/latest/user-guide/clean-as-you-code/
 
 ## Static Analysis vs Lint #
 
@@ -216,7 +217,14 @@ fuzz testing"</a> and
 <a target="_blank" href="https://www.wikiwand.com/en/Symbolic_execution">
 "symbolic-execution" approaches.
 
+## Custom Rules
 
+Write rules in Java to work on major languages, 
+or XPATH to work on data formats (XML, PL/SQL, Flex) using the SSLR Toolkit.
+
+https://docs.sonarqube.org/latest/extend/adding-coding-rules/
+
+Each rule defines Impact and Likelihood assessments.
 
 ## More on DevOps #
 
