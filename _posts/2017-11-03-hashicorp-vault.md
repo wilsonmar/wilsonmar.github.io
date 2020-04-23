@@ -69,6 +69,12 @@ It's really dangerous to keep in GitHub plain-text secrets such as API Keys, etc
 This is even if secrets are ecrypted (using GPG) because old versions hidden in history can be decrypted using old keys.
 
 
+## Competitors
+
+Alternatives to Hashicorp Vault include
+Vormetrix
+
+
 <a name="WithinCode"></a>
 
 ## Within App Programming Code
