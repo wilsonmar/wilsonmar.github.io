@@ -104,6 +104,32 @@ Intelligent adaptation depending on type of format (Markdown, Java, Bash, etc.):
 
 <hr />
 
+<a name="LastLine"></a>
+
+## Save Last Line with Carriage Return #
+
+Linters such as Flake8 look for an otherwise invisible end-of-line character in the last line,
+carried forward from a <a target="_blank" href="http://gcc.gnu.org/ml/gcc/2003-11/msg01568.html">
+legacy specification for the C language</a>.
+
+<a target="_blank" href="https://thoughtbot.com/blog/no-newline-at-end-of-file">
+PROTIP</a>: Configure your text editor to automatically add it when the file is saved
+to avoid having it flagged.
+
+For Vim users, you’re all set out of the box! Just don’t change your eol (end of line) setting.
+
+For Emacs users, add (setq require-final-newline t) to your .emacs or .emacs.d/init.el file.
+
+For Android Studio, RubyMine, PyCharm, and other IntelliJ, set “Ensure line feed at file end on Save” under “Editor.”
+
+For Atom, you’re also all set out of the box. Keep that via the Whitespace plugin.
+
+For VS Code, set <tt>"files.insertFinalNewline": true</tt>.
+
+For Sublime, set the <tt>ensure_newline_at_eof_on_save</tt> option to true.
+
+For TextMate, you can install the Avian Missing Bundle and add TM_STRIP_WHITESPACE_ON_SAVE = true to your .tm_properties file.
+
 
 <a name="Code"></a>
 
