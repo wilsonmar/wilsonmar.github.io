@@ -653,13 +653,35 @@ The "basename" command obtains the file name from a file path variable.
 
 ## cd / pushd / popd / pwd
 
-Before changing folders, `pushd` remembers a directory stack.
+To temporarily push into a folder then pop back up to the original folder:
 
-`pwd` displays the present workding directory (folder).
-Its value the operating system maintains in an enviornment variable retrieved by 
-`echo $PWD`
+<pre>echo $PWD
+pushd   # remembers a directory stack.
+pwd   # displays the present workding directory (folder).
+popd   # returns to the previous directory.
+</pre>
 
-`popd` returns to the previous directory.
+NOTE: Command `pwd` obtains its value from the variable $PWD which the operating system maintains.
+
+
+<a name="return255"></a>
+
+## return numbers to 255
+
+<a target="_blank" href="https://unix.stackexchange.com/questions/408543/how-can-a-bash-function-return-multiple-values">PROTIP: CAUTION:</a>
+bash's return can only return numbers, and only integers between 0 and 255.
+
+If you have large numbers, put it in a global variable or return a pre-agreed value.
+
+For a shell that can return anything (lists of things), consider es:
+
+<pre>es -c "fn f {return (a 'b c' d \$*)}; printf '%s\n' <={f x y}"
+a
+b c
+d
+x
+y
+</pre>
 
 
 <a name="JenkinsStart"></a>
