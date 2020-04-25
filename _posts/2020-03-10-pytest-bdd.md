@@ -384,3 +384,10 @@ ChromeOptions options = new ChromeOptions();
 options.setExperimentalOption("prefs", chromePrefs);
 driver = new ChromeDriver(options);
 </pre>
+
+
+## More about Python
+
+This is one of a series about Python:
+
+{% include python_links.html %}
