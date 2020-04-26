@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Terraform (vs. AWS Cloud Formation)"
-excerpt: "Immutable multi-service provisioning for Infrastructure as Code (IaC)"
+excerpt: "Immutable declarative multi-cloud Infrastructure as Code (IaC) provisioning"
 tags: [DevOps, ecosystem]
 date: "2017-09-23"
 file: "terraform"
