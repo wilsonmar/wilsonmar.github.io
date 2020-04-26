@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Terraform (vs. AWS Cloud Formation)"
-excerpt: "Immutable declarative multi-cloud Infrastructure as Code (IaC) provisioning"
+excerpt: "Immutable declarative multi-service Infrastructure as Code (IaC) provisioning"
 tags: [DevOps, ecosystem]
 date: "2017-09-23"
 file: "terraform"
@@ -16,18 +16,16 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/terraform">This tutorial</a> is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to 
-using Hashicorp's Terraform to build, change, and version clusters of 
-<a href="#Immutable">immutable</a> servers (through load balancers) 
-running in clouds using <a href="#Idempotent">idempotent</a> declarative specifications (templates). "Idempotent" means that repeat runs don't change anything if nothing is changed. Thus Terraform defines the "desired state configuration" (DSC).
+This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to using Hashicorp's Terraform to build, change, and version clusters of <a href="#Immutable">immutable</a> servers (through load balancers) running in clouds using <a href="#Idempotent">idempotent</a> declarative specifications (templates). "Idempotent" means that repeat runs don't change anything if nothing is changed. Thus Terraform defines the "desired state configuration" (DSC).
 
-Terraform is <strong>not a "multi-cloud tool" to ease migration</strong> among clouds to avoid vendor lock-in. One would need to rewrite all templates to move from, say, AWS to Azure. Terraform doesn't abstract resources needed to do that.
+Terraform is better characterized as a <strong>multi-service</strong> tool. Terraform is <strong>not a "multi-cloud tool" to ease migration</strong> among clouds to avoid vendor lock-in. One would need to rewrite all templates to move from, say, AWS to Azure. Terraform doesn't abstract resources needed to do that.
 
-Terraform is better characterized as a <strong>multi-service</strong> tool. <strong>One tool</strong> to manage GitHub/GitLab, Datadog, Digital Ocean, as well as AWS resources. Can’t really do that with CF alone.
+Terraform can also provision <strong>on-premises</strong> servers running VMWare and OpenStack as well as AWS, Azure, Google Cloud, Digitial Ocean, Fastly, and other <a href="#CloudProviders">cloud providers</a> (responsible for understanding API interacitons and exposing resources).
 
-Cloud Formation has <strong>nested stack</strong>.
+<strong>One tool</strong> to manage GitHub/GitLab, Datadog, too.
 
-Terraform can also provision <strong>on-premises</strong> servers running OpenStack as well as AWS, Azure, Google Cloud, Digitial Ocean, Fastly, and other <a href="#CloudProviders">cloud providers</a> -- "anything with an API".
+Can’t really do that with CFN alone. Even though
+Cloud Formation has <strong>nested stack</strong> only for AWS.
 
 
 ## Automation
@@ -36,7 +34,7 @@ Terraform's marketing page says it make infrastructure provisioning: Repeatable.
 
 Automating infrastructure deployment consists of these features:
 
-   * Provisioning resources
+   * Provisioning resource components (Load Balancer, EC2, vSphere)
    * Planning updates
    * Using source control
    * Reusing templates
@@ -52,7 +50,27 @@ The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/30870969-87e52558-a2a2-11e7-8cfa-454fe9081c64.png">
 <img alt="terraform-comp-colored-650x261-36439" width="650" height="261" src="https://user-images.githubusercontent.com/300046/30870914-62437728-a2a2-11e7-8e6a-e3c847f7984f.jpg"><small>(Click to pop-up full screen image <a target="_blank" href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c#.63ls7fpkq">colorized from Gruntwork's blog</a>)</small></a>
 
-Additionally...
+Ansible, Chef, Puppet, SaltStack install applications.<br />
+Terraform installs infrastructure in cloud and VM as workflows.<br />
+Kubernetes orchestrates (brings up and down) Docker containers.
+
+Terraform and Ansible can work in unison and complement each other. Terraform can bootstrap the underlying cloud infrastructure and then Ansible provisions the user space. To test a service on a dedicated server, skip using Terraform and run the Ansible playbook on that machine. Derek Morgan has a <a target="_blank" href="https://github.com/linuxacademy/terransible">"Deploy to AWS with Ansible and Terraform" video class</a> at LinuxAcademy which shows how to do just that, with <a target="_blank" href="https://github.com/linuxacademy/terransible">code</a> and <a target="_blank" href="https://www.lucidchart.com/documents/view/c1ceaa2b-647c-49bd-9dca-bcaffc04be3b">diagram</a>.
+
+
+<a name="Immutable"></a>
+
+"Immutable" means once instantiated, it doesn't change. In DevOps, this strategy means individual servers are treated like "cattle" (removed from the herd) and not as "pets" (courageously kept alive as long as possible).
+
+"When I make a mistake in a complicated setup, I can get going again quickly and easily with less troubleshooting because I can just re-run the script."
+
+WARNING: Terraform does not support rollbacks in any meaningful way.
+
+Terraform also provides <strong>parallel execution</strong> control, iterations, and (perhaps most of all) management of resources already created (desired state configuration) over several cloud providers (not just AWS).
+
+A key differentiator of Terraform is its <strong>plan</strong> command, which provides more than just a "dry-run" before configurations are applied for real. Under the covers, Terraform plan generates an executable, and uses it to apply, which guarantees that what appeared in plan is the same as with <a href="#TerraformApply">apply</a>.
+
+
+### vs. AWS Cloud Formation
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th> Feature </th><th> CloudFormation </th><th> Terraform </th></tr>
@@ -70,37 +88,20 @@ Additionally...
 <tr><td> <a href="#Modules">Extensible Modules</a> </td><td> No </td><td> <a href="#Modules">Yes</a> </td></tr>
 </table>
 
-Terraform and Ansible can work in unison and complement each other. Terraform can bootstrap the underlying cloud infrastructure and then Ansible provisions the user space. To test a service on a dedicated server, skip using Terraform and run the Ansible playbook on that machine. Derek Morgan has a <a target="_blank" href="https://github.com/linuxacademy/terransible">"Deploy to AWS with Ansible and Terraform" video class</a> at LinuxAcademy which shows how to do just that, with <a target="_blank" href="https://github.com/linuxacademy/terransible">code</a> and <a target="_blank" href="https://www.lucidchart.com/documents/view/c1ceaa2b-647c-49bd-9dca-bcaffc04be3b">diagram</a>.
-
-
-<a name="Immutable"></a>
-
-"Immutable" means once instantiated, it doesn't change. In DevOps, this strategy means individual servers are treated like "cattle" (removed from the herd) and not as "pets" (courageously kept alive as long as possible).
-
-"When I make a mistake in a complicated setup, I can get going again quickly and easily with less troubleshooting because I can just re-run the script."
-
-WARNING: Terraform does not support rollbacks in any meaningful way.
-
-Terraform also provides <strong>parallel execution</strong> control, iterations, and (perhaps most of all) management of resources already created (desired state configuration) over several cloud providers (not just AWS).
-
-A key differentiator is Terraform's plan command, which provides more than just a "dry-run" before configurations are applied for real. Under the covers, Terraform plan generates an executable, and uses it to apply, which guarantees that what appeared in plan is the same as with <a href="#TerraformApply">apply</a>.
-
-
-### vs. AWS Cloud Formation
 
 First of all, if you ever want to get AWS certified, you’re going to need to know Cloud Formation. For a company, it comes down to vendor support preferred, which is needed considering that the product has been available only a few years.
 
-Those who create AMI's now also provide CFN templates to customers.
+Those who create AMI's  also provide <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-guide.html">CFN templates</a> to customers.<a target="_blank" href="
+https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-sample-templates.html">*</a> (<a target="_blank" href="https://templates.cloudonaut.io/en/stable/">cloudnaut.io has free templates</a>)
 
 Some have found Cloud Formation's references and interpolation to be difficult. 
 Troposphere and Sceptre makes CFN easier to write with basic loops and logic that CFN lacks.
-But in <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2018/09/introducing-aws-cloudformation-macros/">Sep 2018 CloudFormation got <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">macros</a> to do iteration and interpolation (find-and-replace). Caveat: it does require some dependencies to be setup.
+But in <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2018/09/introducing-aws-cloudformation-macros/">Sep 2018 CloudFormation got <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">macros</a> to do iteration and interpolation (find-and-replace). Caveat: it requires dependencies to be setup.
 
-CFN also lacks the ability to upload large objects to S3.
+CFN limits the size of objects uploaded to S3.
 
 AWS Cloud Formation and Terraform can both be used at the same time.
-Terraform is often used to handle security groups, IAM resources, VPCs, Subnets, 
-and policy documents in general; while CFN is used for actual infrastructural components, now that cloud formation has released <strong>drift detection</strong>.
+Terraform is often used to handle security groups, IAM resources, VPCs, Subnets, and policy documents; while CFN is used for actual infrastructural components, now that cloud formation has released <strong>drift detection</strong>.
 
 <a target="_blank" href="https://www.reddit.com/r/aws/comments/9y25ei/why_should_i_learn_cloudformation_when_we_have/e9yqgcy/">NOTE</a>: "Combined with cfn-init and family, CloudFormation supports different forms of deployment patterns that is much more awkward to do in Terraform. ASGs with different replacement policies, automatic rollbacks based upon Cloudwatch alarms, and so forth are all well documented and work pretty straight forward in CloudFormation due to the state being managed purely internal to AWS. 
 Terraform is not really an application level deployment tool and you wind up rolling your own. Working out an odd mix of null resources and shell commands to deploy an application while trying to roll back is not straightforward and seems like a lot of reinventing the wheel."
@@ -142,37 +143,39 @@ Mitchell Hashimoto (CEO) YouTube channel</a>
 
 * No IRC (Internet Relay Chat)?
 
+
 <a name="Install"></a>
 
 ## Install Terraform #
 
    PROTIP: Terraform is written in the [Go language](/golang/), so (unlike Java) there is no separate VM to download.
 
-1. Get the version number of Terraform installed:
+1. Get the version number of Terraform, when installed:
 
    <pre><strong>terraform --version</strong></pre>
 
    The response I got (at time of writing) is:
 
-   <pre>Terraform v0.12.0</pre>
+   <pre>Terraform v0.12.24</pre>
 
-   WARNING: The response at time of writing, Terraform is not even "1.0.0" release, meaning it's in beta maturity:
+   WARNING: The response at time of writing, Terraform is "not even 1.0.0" release, as in it's in beta maturity.
 
 
-### Install on MacOS
+### Install on MacOS using tfenv
 
-1. So that you can easily switch among several versions installed of Terraform, install and use the Terraform <strong>version manager</strong>:
+1. PROTIP: Although you can <tt>brew install terraform</tt>, don't. So that you can easily switch among several versions installed of Terraform, install and use the Terraform <strong>version manager</strong>:
 
    <tt><strong>brew install tfenv
    </strong></tt>
 
    The response at time of writing:
 
-   <pre>
-==> Downloading https://github.com/tfutils/tfenv/archive/v0.6.0.tar.gz
-==> Downloading from https://codeload.github.com/tfutils/tfenv/tar.gz/v0.6.0
+   <pre>Uninstalling /usr/local/Cellar/terraform/0.12.24... (6 files, 51.2MB)
+(pygithub) bash-5.0$ brew install tfenv
+==> Downloading https://github.com/tfutils/tfenv/archive/v1.0.2.tar.gz
+==> Downloading from https://codeload.github.com/tfutils/tfenv/tar.gz/v1.0.2
 ######################################################################## 100.0%
-🍺  /usr/local/Cellar/tfenv/0.6.0: 19 files, 23.5KB, built in 7 seconds
+🍺  /usr/local/Cellar/tfenv/1.0.2: 20 files, 29.2KB, built in 4 seconds
    </pre>
 
    Source for this is has changed over time: from <a target="_blank" href="https://github.com/Zordrak/tfenv">https://github.com/Zordrak/tfenv</a> (previously from <a target="_blank" href="https://github.com/kamatama41/tfenv">https://github.com/kamatama41/tfenv</a>)
@@ -187,23 +190,27 @@ Mitchell Hashimoto (CEO) YouTube channel</a>
 
    The response:
 
-   <pre>
-[INFO] Installing Terraform v0.12.0
-[INFO] Downloading release tarball from https://releases.hashicorp.com/terraform/0.12.0/terraform_0.12.0_darwin_amd64.zip
+   <pre>==> Downloading https://github.com/tfutils/tfenv/archive/v1.0.2.tar.gz
+==> Downloading from https://codeload.github.com/tfutils/tfenv/tar.gz/v1.0.2
 ######################################################################## 100.0%
-[INFO] Downloading SHA hash file from https://releases.hashicorp.com/terraform/0.12.0/terraform_0.12.0_SHA256SUMS
-tfenv: tfenv-install: [WARN] Unable to verify GPG signature unless logged into keybase and following hashicorp
-Archive:  tfenv_download.j57U3f/terraform_0.12.0_darwin_amd64.zip
-  inflating: /usr/local/Cellar/tfenv/0.6.0/versions/0.12.0/terraform
-[INFO] Installation of terraform v0.12.0 successful
-[INFO] Switching to v0.12.0
+🍺  /usr/local/Cellar/tfenv/1.0.2: 20 files, 29.2KB, built in 4 seconds
+(pygithub) bash-5.0$ tfenv install latest
+[INFO] Installing Terraform v0.12.24
+[INFO] Downloading release tarball from https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_darwin_amd64.zip
+######################################################################## 100.0%
+[INFO] Downloading SHA hash file from https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_SHA256SUMS
+tfenv: tfenv-install: [WARN] No keybase install found, skipping OpenPGP signature verification
+Archive:  tfenv_download.PObWo2/terraform_0.12.24_darwin_amd64.zip
+  inflating: /usr/local/Cellar/tfenv/1.0.2/versions/0.12.24/terraform  
+[INFO] Installation of terraform v0.12.24 successful
+[INFO] Switching to v0.12.24
 [INFO] Switching completed
    </pre>
 
+   The above creates folder <strong>.terraform.d</strong> on your $HOME folder, containing files `checkpoint_cache` and `checkpoint_signature`.
+
    See <a target="_blank" href="https://www.hashicorp.com/blog/announcing-terraform-0-12">
    Hashicorp's version 12 announcement</a>.
-
-   The above creates folder <strong>.terraform.d</strong> on your $HOME folder, containing files `checkpoint_cache` and `checkpoint_signature`.
 
 1. Proceed to <a href="#Config">Configuration</a>.
 
@@ -253,7 +260,29 @@ Chocolatey installed 1/1 packages.
 1. Proceed to <a href="#Config">Configuration</a>.
 
 
-### Install on Ubuntu
+### Install on Linux
+
+PROTIP: Use Ansible, Chef, Puppet to install Terraform.
+
+* <a target="_blank" href="
+   https://github.com/migibert/terraform-role">
+   https://github.com/migibert/terraform-role</a>
+   Ansible role to install Terraform on Linux machines
+
+* <a target="_blank" href="
+   https://supermarket.chef.io/cookbooks/terraform">
+   https://supermarket.chef.io/cookbooks/terraform</a>
+
+* <a target="_blank" href="
+   https://forge.puppet.com/inkblot/terraform">
+   https://forge.puppet.com/inkblot/terraform</a>
+
+* <a target="_blank" href="
+   https://github.com/hashicorp/docker-hub-images/tree/master/terraform">
+   https://github.com/hashicorp/docker-hub-images/tree/master/terraform</a>
+   builds Docker containers for using the terraform command line program.
+
+To manually install on Ubuntu:
 
 1. On a Console (after substituing the current version):
 
@@ -265,6 +294,7 @@ sudo unzip terraform_0.11.5_linux_amd64.zip -d /usr/local/bin/
    </pre>
 
 2. Proceed to <a href="#Config">Configuration</a>.
+
 
 ### Install Docker
 
@@ -292,26 +322,6 @@ sudo apt-get install docker-ce
 2. Proceed to <a href="#Config">Configuration</a>.
    (next below)
 
-### Ansible, Chef, Puppet
-
-* <a target="_blank" href="
-   https://github.com/migibert/terraform-role">
-   https://github.com/migibert/terraform-role</a>
-   Ansible role to install Terraform on Linux machines
-
-* <a target="_blank" href="
-   https://supermarket.chef.io/cookbooks/terraform">
-   https://supermarket.chef.io/cookbooks/terraform</a>
-
-* <a target="_blank" href="
-   https://forge.puppet.com/inkblot/terraform">
-   https://forge.puppet.com/inkblot/terraform</a>
-
-* <a target="_blank" href="
-   https://github.com/hashicorp/docker-hub-images/tree/master/terraform">
-   https://github.com/hashicorp/docker-hub-images/tree/master/terraform</a>
-   builds Docker containers for using the terraform command line program.
-
 
 <hr />
 
@@ -336,8 +346,7 @@ If you prefer using Python, there is a Python module to provide a wrapper of ter
 
    Either way, the response is a menu (at time of writing):
 
-   <pre>
-Usage: terraform [--version] [--help] &LT;command> [args]
+   <pre>Usage: terraform [-version] [-help] &LT;command> [args]
 &nbsp;
 The available commands for execution are listed below.
 The most common, useful commands are shown first, followed by
@@ -346,23 +355,25 @@ started with Terraform, stick with the common commands. For the
 other commands, please read the help and docs before usage.
 &nbsp;
 Common commands:
-    <a href="#TerraformApply">apply</a>              Builds or changes infrastructure
+    apply              Builds or changes infrastructure
     console            Interactive console for Terraform interpolations
-    <strike>destroy</strike>            Destroy Terraform-managed infrastructure
+    destroy            Destroy Terraform-managed infrastructure
     env                Workspace management
     fmt                Rewrites config files to canonical format
-    <strike>get</strike>                Download and install modules for the configuration
+    get                Download and install modules for the configuration
     graph              Create a visual graph of Terraform resources
     import             Import existing infrastructure into Terraform
     init               Initialize a Terraform working directory
-    <strike>output</strike>             Read an output from a state file
-    <strike>plan</strike>               Generate and show an execution plan
+    login              Obtain and save credentials for a remote host
+    logout             Remove locally-stored credentials for a remote host
+    output             Read an output from a state file
+    plan               Generate and show an execution plan
     providers          Prints a tree of the providers used in the configuration
     refresh            Update local state file against real resources
     show               Inspect Terraform state or plan
     taint              Manually mark a resource for recreation
     untaint            Manually unmark a resource as tainted
-    <a href="#validate">validate</a>           Validates the Terraform files
+    validate           Validates the Terraform files
     version            Prints the Terraform version
     workspace          Workspace management
 &nbsp;
@@ -380,7 +391,7 @@ All other commands:
 
 3. Help on a specific command, for example:
 
-   <pre><strong>tf plan --help</strong></pre>
+   <pre><strong>terraform plan --help</strong></pre>
 
    <a name="Console"></a>
 
@@ -388,7 +399,7 @@ All other commands:
 
 4. Open the Terraform Console (REPL) from a Terminal/command shell:
 
-   <tt><strong>tf console</strong></tt>
+   <tt><strong>terraform console</strong></tt>
 
    The response is the prompt:
 
@@ -466,9 +477,42 @@ Install on MacOS:
 
 1. To install Terragrunt on macOS:
 
-   <tt>brew install terragrunt</tt>
+   <pre><strong>brew unlink tfenv
+   brew install terragrunt
+   brew unlink terraform
+   brew link --overwrite tfenv
+   </strong></tt>
 
-To define:
+   The unlink is to avoid error response:
+
+   <pre>Error: Cannot install terraform because conflicting formulae are installed.
+  tfenv: because tfenv symlinks terraform binaries
+&nbsp;
+Please `brew unlink tfenv` before continuing.
+&nbsp;
+Unlinking removes a formula's symlinks from /usr/local. You can
+link the formula again after the install finishes. You can --force this
+install, but the build may fail or cause obscure side effects in the
+resulting software.
+   </pre>
+
+   Otherwise:
+
+   <pre>==> Installing dependencies for terragrunt: terraform
+==> Installing terragrunt dependency: terraform
+==> Downloading https://homebrew.bintray.com/bottles/terraform-0.12.24.catalina.
+Already downloaded: /Users/wilson_mar/Library/Caches/Homebrew/downloads/041f7578654b5ef316b5a9a3a3af138b602684838e0754ae227b9494210f4017--terraform-0.12.24.catalina.bottle.tar.gz
+==> Pouring terraform-0.12.24.catalina.bottle.tar.gz
+🍺  /usr/local/Cellar/terraform/0.12.24: 6 files, 51.2MB
+==> Installing terragrunt
+==> Downloading https://homebrew.bintray.com/bottles/terragrunt-0.23.10.catalina
+==> Downloading from https://akamai.bintray.com/d6/d6924802f5cdfd17feae2b561ab9d
+######################################################################## 100.0%
+==> Pouring terragrunt-0.23.10.catalina.bottle.tar.gz
+🍺  /usr/local/Cellar/terragrunt/0.23.10: 5 files, 30.4MB
+   </pre>
+
+1. To define:
 
    <pre>terragrunt = {
      # (put your Terragrunt configuration here)
@@ -487,8 +531,9 @@ Since the point of Terraform is to get you into clouds, Terraform looks for spec
 1. Mac users: add credentials in their `~/.bash_profile` these lines:
 
    <pre>
-export AWS_ACCESS_KEY_ID=(your access key id)
-export AWS_SECRET_ACCESS_KEY=(your secret access key)
+export AWS_ACCESS_KEY_ID=<em>(your access key id)</em>
+export AWS_SECRET_ACCESS_KEY=<em>(your secret access key)</em>
+export AWS_REGION=<em>(your region in AWS)</em>
    </pre>
 
    For Azure:
@@ -574,9 +619,9 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
    The minimal HCL specifies the provider cloud, instance type used to house the AMI, which is specific to a region:
 
    <pre>provider "aws" {
-     access_key = "ACCESS_KEY_HERE"
-     secret_key = "SECRET_KEY_HERE"
-     region = "us-east-1"
+     access_key = "${var.aws_access_key}"
+     secret_key = "${var.aws_secret_key}"
+     region = "${var.aws_region}"
    }
    resource "aws_instance" "example" {
       ami = "ami-2757f631"
@@ -584,6 +629,21 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
    }</pre>
 
    Each block defined between curly braces is called a <strong>"stanza"</strong>.
+
+   "${var...}" references values defined in file "variables.tf", which provide the "Enter a value:" prompt when needed:
+
+   <pre>variable "aws_access_key" {
+      description = "AWS access key"
+   }
+   variable "aws_secret_key" {
+      description = "AWS secret key"
+   }
+   variable "aws_region" {
+      description = "AWS region"
+   }
+   </pre>
+
+   Values are defined in the <a href="#tfvars">terraform.tfvars</a> file.
 
    HCL is less verbose than JSON and more concise than YML. <a target="_blank" href="https://www.terraform.io/docs/configuration/syntax.html">*</a> 
 
@@ -687,67 +747,6 @@ terraform {
 
    This set can be within a sub-module folder.
 
-   ### Credentials in tfvars
-
-   Define cloud account credentials in a <strong>terraform.tfvars</strong> file containing;
-
-   <pre>
-aws_access_key = "<em>YourAWSAccessKey</em>"
-aws_secret_key = "<em>YourAWSSecretKey</em>"
-private_key_path = "C:\\<em>PathToYourPrivateKeys</em>\PrivateKey.pem"
-accountId = "<em>YourAWSAccountID</em>"
-   </pre>
-
-   This is not good security to risk such information in a repo potentially shared.
-
-   ### tfvars environments
-
-   PROTIP: Separate Terraform configurations by a folder for each environment.
-
-   * base (template for making changes)
-   * dev 
-   * loadtest (performance/stress testing)
-   * stage
-   * uat (User Acceptance Testing)
-   * prod
-   * demo (demostration used by salespeople)
-   * train (for training users)
-   <br /><br />
-
-1. Navigate into the base folder.
-
-   PROTIP: Terraform commands act only on the current directory, and does not recurse into sub directories.
-
-2. View the development.tfvars file:
-
-   <pre>
-environment_tag = "dev"
-tenant_id = "223d"
-billing_code_tag = "DEV12345"
-dns_site_name = "dev-web"
-dns_zone_name = "mycorp.xyz"
-dns_resource_group = "DNS"
-instance_count = "2"
-subnet_count = "2"
-   </pre>
-
-   The production.tfvars file usually instead contain more instances and thus subnets that go through a load balancer for auto-scaling:
-
-   <pre>
-environment_tag = "prod"
-tenant_id = "223d"
-billing_code_tag = "PROD12345"
-dns_site_name = "marketing"
-dns_zone_name = "mycorp.com"
-dns_resource_group = "DNS"
-instance_count = "6"
-subnet_count = "3"
-   </pre>
-
-   All these would use `main_config.tf` and `variables.tf` files commonly used for all environments:
-
-   Tag for cost tracking by codes identifying a particular budget, project, department, etc.
-
 
    <a name="variables.tf"></a>
 
@@ -755,8 +754,7 @@ subnet_count = "3"
 
    This file contains a reference to environment variables:
 
-   <pre>   
-variable "aws_access_key" {}
+   <pre>variable "aws_access_key" {}
 variable "aws_secret_key" {}
 &nbsp;
 variable "subnet_count" {
@@ -812,6 +810,70 @@ variable "server_port" {
 }</pre>   
 
    PROTIP: <strong>Each input</strong> should be defined as a variable.
+
+
+   <a name="tfvars"></a>
+
+   ### Credentials in tfvars
+
+   Define cloud account credentials in a <strong>terraform.tfvars</strong> file containing sample data:
+
+   <pre>aws_access_key = "123456789abcdef123456789"
+aws_secret_key = "<em>Your AWS SecretKey</em>"
+aws_region = "us-east-1"
+aws_accountId = "123456789123456789"
+private_key_path = "C:\\<em>PathToYourPrivateKeys</em>\PrivateKey.pem"
+   </pre>
+
+   This is not good security to risk such information in a repo potentially shared.
+
+   ### tfvars environments
+
+   PROTIP: Separate Terraform configurations by a folder for each environment:
+
+   * base (template for making changes)
+   * dev 
+   * loadtest (performance/stress testing)
+   * stage
+   * uat (User Acceptance Testing)
+   * prod
+   * demo (demostration used by salespeople)
+   * train (for training users)
+   <br /><br />
+
+1. Navigate into the base folder.
+
+   PROTIP: Terraform commands act only on the current directory, and does not recurse into sub directories.
+
+2. View the development.tfvars file:
+
+   <pre>environment_tag = "dev"
+tenant_id = "223d"
+billing_code_tag = "DEV12345"
+dns_site_name = "dev-web"
+dns_zone_name = "mycorp.xyz"
+dns_resource_group = "DNS"
+instance_count = "2"
+subnet_count = "2"
+   </pre>
+
+   The production.tfvars file usually instead contain more instances and thus subnets that go through a load balancer for auto-scaling:
+
+   <pre>
+environment_tag = "prod"
+tenant_id = "223d"
+billing_code_tag = "PROD12345"
+dns_site_name = "marketing"
+dns_zone_name = "mycorp.com"
+dns_resource_group = "DNS"
+instance_count = "6"
+subnet_count = "3"
+   </pre>
+
+   All these would use `main_config.tf` and `variables.tf` files commonly used for all environments:
+
+   <strong>Tag</strong> for cost tracking by codes identifying a particular budget, project, department, etc.
+
 
 
    ### Defaults and lookup function
@@ -1137,11 +1199,15 @@ commands will detect it and remind you to do so if necessary.
    This creates a hidden `.terraform\plugins" folder path containing a folder for your os - `darwin_amd64` for MacOS.
 
 
-   ### Provisioners
+<a name="Provisioners"></a>
 
-   Provisioner configurations are also plugins.
+### Provisioners
+
+   When a resource is initially created, provisioners can be executed to initialize that resource.
 
    Provisioner definitions define the properties of each resource, such as initialization commands. For example, this installs an nginx web server and displays a minimal HTML page:
+
+   Provisioner configurations are also plugins.
 
    <pre>
 provisioner "remote-exec" {
@@ -1323,10 +1389,9 @@ output "azure_rm_dns_cname" {
 
    PROTIP: CAUTION: tfstate files can contain secrets, so delete them before git add.
 
-1. In the `.gitignore` file are files generated during processing, so don't need to persist in a repository:
+1. In the <tt>.gitignore</tt> file are files generated during processing, so don't need to persist in a repository:
 
-   <pre>
-terraform.tfstate*
+   <pre>terraform.tfstate*
 *.tfstate
 *.tfstate.backup
 .terraform/
@@ -1404,7 +1469,7 @@ output "loadbalancer_dns_name" {
    <tt><strong>terraform destroy
    </strong></tt>
 
-   PROTIP: Amazon charges for Windows instances by the hour while it charges for Linux by the minute,
+   PROTIP: At time of this writing, Amazon charges for Windows instances by the hour while it charges for Linux by the minute,
    as other cloud providers do.
 
 0. Verify in the provider's console (aws.amazon.com)
@@ -1576,11 +1641,10 @@ co-founder of DevOps as a Service <a target="_blank" href="https://Gruntwork.io/
    * <a target="_blank" href="https://github.com/jason-azze/tf-web-exercise">
    https://github.com/jason-azze/tf-web-exercise</a>
 
-<strong>Ned Bellavance</strong> (<a target="_blank" href="https://twitter.com/ned1313">@ned1313</a> at <a target="_blank" href="https://www.nerdinthecloud.com/">nerdinthecloud.com</a>) has several video classs on Pluralsight:
+<strong>Ned Bellavance</strong> (<a target="_blank" href="https://twitter.com/ned1313">@ned1313</a> MS MVP at <a target="_blank" href="https://www.nerdinthecloud.com/">nerdinthecloud.com</a>) has several video classs on Pluralsight:
 
    * <a target="_blank" href="https://www.pluralsight.com/courses/terraform-getting-started">
    Terraform - Getting Started (Beginner level)</a> Sep 14 2017 [3h 11m]
-   (<a target="_blank" href="https://twitter.com/ned1313/">@ned1313</a>, <a target="_blank" href="https://www.nedinthecloud.com/">nedinthecloud</a>), MS MVP.
 
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/deep-dive-terraform/table-of-contents">
    Deep Dive - Terraform</a> 6 Feb 2018 [3h 39m] shows how to export secret keys for back-end processes,
@@ -1614,11 +1678,11 @@ Anton Babenko (<a target="_blank" href="https://github.com/antonbabenko">github.
 
 dtan4
 
-   <a target="_blank" href="
+   * <a target="_blank" href="
    http://terraforming.dtan4.net/">
    http://terraforming.dtan4.net</a>
 
-   <a target="_blank" href="
+   * <a target="_blank" href="
    https://github.com/dtan4/terraforming">
    https://github.com/dtan4/terraforming</a>
    is Ruby code.
