@@ -473,6 +473,8 @@ Nov 18, 2016 by Giuseppe B
    WARNING: There are some concerns about Terragrunt's use of invalid data structures. See
    <a target="_blank" href="https://github.com/gruntwork-io/terragrunt/issues/466">https://github.com/gruntwork-io/terragrunt/issues/466</a>
 
+   QUESTION: Terraform Enterprise cover features of Terragrunt?
+
 Install on MacOS:
 
 1. To install Terragrunt on macOS:
@@ -481,7 +483,7 @@ Install on MacOS:
    brew install terragrunt
    brew unlink terraform
    brew link --overwrite tfenv
-   </strong></tt>
+   </strong></pre>
 
    The unlink is to avoid error response:
 
