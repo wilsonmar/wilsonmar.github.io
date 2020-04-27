@@ -216,7 +216,7 @@ This is to avoid Freeze/thaw errors.
 * Test Events
 * Execution Results
 * Monitoring analytics
-
+<br /><br />
 
 <hr />
 
@@ -224,7 +224,7 @@ This is to avoid Freeze/thaw errors.
 
 ### AWS Lambda
 
-Internally, AWS Lambda functions are run using the AWS Firecracker open-source software managing lightweight VMs, to reduce startup time and memory overhead.
+Internally, AWS Lambda functions are run using <strong>AWS Firecracker</strong> open-source software managing lightweight VMs, to reduce startup time and memory overhead.
 
 <a target="_blank" href="https://docs.aws.amazon.com/lex/latest/dg/gs-bp.html">AWS Lex bot Lambda Blueprint</a> provides a pre-configured patterns for building conversational interfaces : OrderFlowers, ScheduleAppointment (in Python), BookTrip (in NodeJs).
 
@@ -1195,7 +1195,17 @@ which stores project metadata in S3.
 
 ## Production limits & prep #
 
+BLAH: The 64-character name limit.
+
 By default, AWS Lambda limits the total concurrent executions across all functions within a given region to <strong>100</strong>. This is a safety limit to protect users from costs due to potential runaway or recursive functions during initial development and testing. To increase this limit above the default, request a limit increase for concurrent executions <a target="_blank" href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html#increase-concurrent-executions-limit">here</a>.
+
+BLAH: Can't search for logs across regions.
+
+
+
+## Troubleshooting
+
+<a target="_blank" href="https://lumigo.io/">lumigo.io</a> offers their <a target="_blank" href="https://github.com/lumigo-io/lumigo-cli">lumigo-cli</a> to troubleshoot Serverless apps.
 
 
 <a name="Libraries"></a>
@@ -1218,20 +1228,28 @@ React Serverless app running in Azure?
 
 ## Rock Stars #
 
-Adnan Rahić (<a target="_blank" href="https://twitter.com/adnanrahic">@adnanrahic</a>, bookvar.co founder)
-$50 Packt <a target="_blank" href="https://www.packtpub.com/web-development/serverless-javascript-example-video">Serverless JavaScript by Example [Video]</a> December, 2017
+<strong>Yan Cui</strong> (<a target="_blank" href="https://twitter.com/@theburningmonk">@@theburningmonk</a><a target="_blank" href="https://theburningmonk.com/">theburningmonk.com</a> from London) goes deeper than anyone else on Serverless.
 
-Yan Cui (<a target="_blank" href="https://theburningmonk.com/">theburningmonk.com</a>) is an AWS Serverless Hero and author of <a target="_blank" href="https://www.manning.com/livevideo/production-ready-serverless?a_aid=aws-lambda-in-motion&a_bid=9318fc6f">Production-Ready Serverless: Operational Best Practices</a> 9h video course thru Manning. Subjects include:
+   * <a target="_blank" href="https://www.manning.com/livevideo/production-ready-serverless?a_aid=aws-lambda-in-motion&a_bid=9318fc6f">Production-Ready Serverless: Operational Best Practices</a> 9h LiveVideo course thru Manning. Subjects include:
 
    * API Gateway, VPC
    * Testing, Debugging, CI/CD, Canary Deployments
    * Process real-time events with Kinesis & Lambda
    * Logging, Monitoring, X-Ray, Correlation IDs, Performance, Error Handling
    * Lambda limits, Managing Configurations, 
+   <br /><br />
 
+   * <a target="_blank" href="https://www.youtube.com/user/theburntmonk/videos">YouTube video channel</a>
+
+   * <a target="_blank" href="https://hubs.ly/H0pQ5SS0 ">Podcast "realworldserverless.com"</a> (<a target="_blank" href="https://twitter.com/RealWorldSls">@RealWorldSls</a>)
+
+   * I paid the $400 to enroll in his live on-line class</a> that began May 1, 2020.
+
+Adnan Rahić (<a target="_blank" href="https://twitter.com/adnanrahic">@adnanrahic</a>, bookvar.co founder)
+$50 Packt <a target="_blank" href="https://www.packtpub.com/web-development/serverless-javascript-example-video">Serverless JavaScript by Example [Video]</a> December, 2017
 
 <a name="PhillipMuens"></a>
-Phillip Muens (@pmmuens, github.com/pmuens) from Germany
+<strong>Phillip Muens</strong> (@pmmuens, github.com/pmuens) from Germany
 
    * Has an informative blog at
    <a target="_blank" href="http://justserverless.com/blog/">
@@ -1257,7 +1275,7 @@ Phillip Muens (@pmmuens, github.com/pmuens) from Germany
    * Deprecated since Oct 2016 is <a target="_blank" href="https://github.com/JustServerless/learnserverless-book/issues/">
    https://github.com/JustServerless/learnserverless-book/issues</a>
 
-Matthew Fuller
+<strong>Matthew Fuller</strong>
 
    * <a target="_blank" href="https://www.amazon.com/AWS-Lambda-Guide-Serverless-Microservices-ebook/dp/B016JOMAEE/">
    AWS Lambda: A Guide to Serverless Microservices</a> Amazon Kindle book published 2016-01-11):
