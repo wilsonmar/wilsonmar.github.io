@@ -953,7 +953,7 @@ resource "aws_instance" "web" {
 
    <a name="Providers"></a>
 
-   ### Terraform Cloud Providers
+   ### Terraform Providers
 
    Terraform translates HCL into API calls defined in (at last count, 109) cloud provider repositories from Terraform, Inc. at:
 
@@ -961,7 +961,9 @@ resource "aws_instance" "web" {
    https://github.com/terraform-providers">
    https://github.com/terraform-providers</a>
    
-   #### Terraform Cloud Providers
+   <a name="Providers"></a>
+
+   ### Terraform Providers
 
    "aws", "google", "google-beta", "azurerm", "azuread",  "heroku", Kubernetes, "gitlab", DigitalOcean, Heroku, GitHub, OpenStack, "cloudscale", "cloudstack", "opentelekomcloud", "oci" (Oracle Cloud Infrastructure), "opc" (Oracle Public Cloud), "oracclepass" (Oracle Platform Cloud), "flexibleengine", "nsxt", "rancher", "rancher2", (VMware NSX-T), "vcd" (VMware vCloud Director ), "openstack", "azurestack", "scaleway", "UCloud", "JDcloud", Joyent Triton, Circonus, NaverCloud, TelefonicaOpenCloud, oneandone, Skytap, etc.
 
@@ -983,6 +985,15 @@ resource "aws_instance" "web" {
    <a target="_blank" href="
    https://github.com/hashicorp/terraform/tree/master/builtin/providers">
    https://github.com/hashicorp/terraform/tree/master/builtin/providers</a>
+
+   <a name="TFCloudProvider"></a>
+
+   ### Terraform Cloud Provider
+
+   Terraform now offers a Terraform Cloud
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=zOS3v9We1cg">
+   VIDEO INTRO</a>
 
 ### Terraform Providers
 
@@ -1020,14 +1031,12 @@ which performs the following steps for you:
 
    The response at time of writing:
 
-   <pre>
-Cloning into 'tf-sample'...
+   <pre>Cloning into 'tf-sample'...
 remote: Counting objects: 12, done.
 remote: Compressing objects: 100% (12/12), done.
 remote: Total 12 (delta 1), reused 9 (delta 0), pack-reused 0
 Unpacking objects: 100% (12/12), done.
    </pre>  
-
 
 1. PROTIP: Make sure that the AWS region is what you want.
 
@@ -1043,8 +1052,7 @@ Unpacking objects: 100% (12/12), done.
    The example in <a target="_blank" href="https://github.com/gruntwork-io/intro-to-terraform/blob/master/single-web-server/main.tf">
    Gruntwork's intro-to-terraform</a> also specifies the vpc security group:
 
-   <pre>
-resource "aws_instance" "example" {
+   <pre>resource "aws_instance" "example" {
   \# Ubuntu Server 14.04 LTS (HVM), SSD Volume Type in us-east-1
   ami = "ami-2d39803a"
   instance_type = "t2.micro"
@@ -1138,8 +1146,8 @@ output "elb_dns_name" {
    https://www.terraform.io/docs/commands/validate.html">
    https://www.terraform.io/docs/commands/validate.html</a>)
 
-   <tt><strong>terraform validate single-web-server
-   </strong></tt>
+   <pre><strong>terraform validate single-web-server
+   </strong></pre>
 
    If no issues are identified, no message appears. (no news is good news)
 
