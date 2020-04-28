@@ -16,13 +16,15 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to using Hashicorp's Terraform to build, change, and version clusters of <a href="#Immutable">immutable</a> servers (through load balancers) running in clouds using <a href="#Idempotent">idempotent</a> declarative specifications (templates). "Idempotent" means that repeat runs don't change anything if nothing is changed. Thus Terraform defines the "desired state configuration" (DSC).
+This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to using Hashicorp's Terraform to build, change, and version clusters of <a href="#Immutable">immutable</a> servers (through load balancers) running in clouds using <a href="#Idempotent">idempotent</a>. "Idempotent" means that repeat runs don't change anything if nothing is changed. 
+
+Terrafrom provides its own modules. But where Terraform comes up short, customer administrators can write <strong>modules</strong> of their own to add more logic to continue using declarative specifications (templates). Thus Terraform defines the "desired state configuration" (DSC). 
 
 Terraform is better characterized as a <strong>multi-service</strong> tool. Terraform is <strong>not a "multi-cloud tool" to ease migration</strong> among clouds to avoid vendor lock-in. One would need to rewrite all templates to move from, say, AWS to Azure. Terraform doesn't abstract resources needed to do that.
 
 Terraform can also provision <strong>on-premises</strong> servers running VMWare and OpenStack as well as AWS, Azure, Google Cloud, Digitial Ocean, Fastly, and other <a href="#CloudProviders">cloud providers</a> (responsible for understanding API interacitons and exposing resources).
 
-<strong>One tool</strong> to manage GitHub/GitLab, Datadog, too.
+<strong>One tool</strong> to manage GitHub/GitLab, Datadog, etc.
 
 Can’t really do that with CFN alone. Even though
 Cloud Formation has <strong>nested stack</strong> only for AWS.
@@ -150,7 +152,7 @@ Mitchell Hashimoto (CEO) YouTube channel</a>
 
    PROTIP: Terraform is written in the [Go language](/golang/), so (unlike Java) there is no separate VM to download.
 
-1. Get the version number of Terraform, when installed:
+1. When installed, get the version number of Terraform:
 
    <pre><strong>terraform --version</strong></pre>
 
@@ -162,6 +164,7 @@ Mitchell Hashimoto (CEO) YouTube channel</a>
 
 
 ### Install on MacOS using tfenv
+
 
 1. PROTIP: Although you can <tt>brew install terraform</tt>, don't. So that you can easily switch among several versions installed of Terraform, install and use the Terraform <strong>version manager</strong>:
 
@@ -211,6 +214,19 @@ Archive:  tfenv_download.PObWo2/terraform_0.12.24_darwin_amd64.zip
 
    See <a target="_blank" href="https://www.hashicorp.com/blog/announcing-terraform-0-12">
    Hashicorp's version 12 announcement</a>.
+
+   Note there are formula for terraform CLI:
+   
+   <pre><strong> brew search terraform</strong></pre>
+
+   <pre>==> Formulae
+iam-policy-json-to-terraform             terraform-provisioner-ansible
+terraform ✔                              terraform@0.11
+terraform-docs                           terraform_landscape
+terraform-inventory                      terraformer
+terraform-provider-libvirt               terraforming
+   </pre>
+
 
 1. Proceed to <a href="#Config">Configuration</a>.
 
@@ -990,11 +1006,12 @@ resource "aws_instance" "web" {
 
    ### Terraform Cloud Provider
 
-   Terraform now offers a Terraform Cloud
-
    <a target="_blank" href="https://www.youtube.com/watch?v=zOS3v9We1cg">
-   VIDEO INTRO</a>
+   VIDEO INTRO</a>:
+   Terraform now offers a Terraform Cloud provider to manage VCS provider GitHub
+   in temporary test workspaces to see the impact of incremental changes.
 
+   
 ### Terraform Providers
 
 The steps below are based on
@@ -1751,6 +1768,11 @@ Some CloudFormation templates are compatible with OpenStack Heat templates.
 ## References
 
 <a target="_blank" href="
+https://www.youtube.com/watch?v=UleogrJkZn0">
+Learn Terraform in 10 Minutes Tutorial</a>
+by Reval Govender
+
+<a target="_blank" href="
 https://www.youtube.com/channel/UCgWfCzNeAPmPq_1lRQ64JtQ/videos">
 SignalWarrant's videos on PowerShell</a>
 by David Keith Hall
@@ -1773,6 +1795,15 @@ Azure Resource Manager
 <a target="_blank" href="https://www.linkedin.com/in/sajithvenkit/">Sajith Venkit</a> explains Terraform file exampled in his <a target="_blank" href="https://www.codementor.io/alibabacloud/building-docker-enterprise-2-1-cluster-using-terraform-thh42zbd6?utm_swu=8964">"Building Docker Enterprise 2.1 Cluster Using Terraform" blog</a> and <a target="_blank" href="https://github.com/sajiv3m/docker-terraform-alicloud">repo for AliCloud</a> and <a target="_blank" href="https://github.com/sajiv3m/docker-terraform-azure">Azure</a>.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=uFaMUS6Z9fI">AWS Cloudformation vs Terraform: Prepare for DevOps/ Cloud Engineer Interview</a>
+
+<a target="_blank" href="
+https://www.youtube.com/watch?v=qFjGqPw1NUY">
+How to create a GitOps workflow with Terraform and Jenkins</a>
+Alex Podobnik
+
+<a target="_blank" href="
+https://www.youtube.com/watch?v=bKe4BkDfdvI">
+Manage SSH with HashiCorp Vault</a>
 
 
 ## More on DevOps #
