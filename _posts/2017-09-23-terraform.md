@@ -29,6 +29,8 @@ Terraform can also provision <strong>on-premises</strong> servers running VMWare
 Can’t really do that with CFN alone. Even though
 Cloud Formation has <strong>nested stack</strong> only for AWS.
 
+In its <a target="_blank" href="https://www.hashicorp.com/cloud-operating-model">PDF: Cloud Operating Model whitepaper</a>,
+
 
 ## Automation
 
@@ -165,6 +167,38 @@ Mitchell Hashimoto (CEO) YouTube channel</a>
 
 ### Install on MacOS using tfenv
 
+1. A search through brew:
+   
+   <pre><strong> brew search terraform</strong></pre>
+
+   <pre>==> Formulae
+iam-policy-json-to-terraform             terraform-provisioner-ansible
+terraform ✔                              terraform@0.11
+terraform-docs                           terraform_landscape
+terraform-inventory                      terraformer
+terraform-provider-libvirt               terraforming
+   </pre>
+
+   brew info terraform returns:
+
+   <pre>terraform: stable 0.12.24 (bottled), HEAD
+Tool to build, change, and version infrastructure
+https://www.terraform.io/
+Conflicts with:
+  tfenv (because tfenv symlinks terraform binaries)
+/usr/local/Cellar/terraform/0.12.24 (6 files, 51.2MB)
+  Poured from bottle on 2020-04-26 at 03:47:48
+From: https://github.com/Homebrew/homebrew-core/blob/master/Formula/terraform.rb
+==> Dependencies
+Build: go@1.13 ✘, gox ✔
+==> Options
+--HEAD
+	Install HEAD version
+==> Analytics
+install: 26,503 (30 days), 101,334 (90 days), 445,359 (365 days)
+install-on-request: 25,575 (30 days), 97,104 (90 days), 424,297 (365 days)
+build-error: 0 (30 days)
+   </pre>
 
 1. PROTIP: Although you can <tt>brew install terraform</tt>, don't. So that you can easily switch among several versions installed of Terraform, install and use the Terraform <strong>version manager</strong>:
 
@@ -214,18 +248,6 @@ Archive:  tfenv_download.PObWo2/terraform_0.12.24_darwin_amd64.zip
 
    See <a target="_blank" href="https://www.hashicorp.com/blog/announcing-terraform-0-12">
    Hashicorp's version 12 announcement</a>.
-
-   Note there are formula for terraform CLI:
-   
-   <pre><strong> brew search terraform</strong></pre>
-
-   <pre>==> Formulae
-iam-policy-json-to-terraform             terraform-provisioner-ansible
-terraform ✔                              terraform@0.11
-terraform-docs                           terraform_landscape
-terraform-inventory                      terraformer
-terraform-provider-libvirt               terraforming
-   </pre>
 
 
 1. Proceed to <a href="#Config">Configuration</a>.
@@ -689,19 +711,22 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
 
    PROTIP: Including in tf files AWS credentials such as these might inadvantly made visible to the public by getting checked into a public repository:
 
-   <pre>
-     access_key = "ACCESS_KEY_HERE"
+   <pre>access_key = "ACCESS_KEY_HERE"
      secret_key = "SECRET_KEY_HERE"
    </pre>
 
    If you simply leave out AWS credentials, Terraform will automatically search for saved API credentials (for example, in ~/.aws/credentials) or IAM instance profile credentials.
 
+### CFN vs. Terraform Enterprise
+
    An important distinction between Cloud Formmation and Terraform is that Terraform users track the <strong>state</strong> of each resource. 
 
-   Terraform Enterprise automatically store the history of all state revisions.
-
+   Terraform Enterprise automatically stores the history of all state revisions.
    See https://www.terraform.io/docs/state/index.html
 
+   <a target="_blank" href="https://www.youtube.com/watch?v=s8IZa_o5UGw/">VIDEO</a>:
+   Terraform Enterprise processes HCL with <strong>auditing policies</strong> like linter
+   https://github.com/terraform-linters/tflint
 
 <a name="StateS3"></a>
 
