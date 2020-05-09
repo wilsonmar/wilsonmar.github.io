@@ -20,14 +20,29 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
 
    GitHub Actions gives software development teams "world-class" CI capabilities, helping developers merge and deploy code many times in a single day to achieve Agile DevOps, for NodeJs and a wide range of programming languages.
 
-1. Documentation
 
-   https://help.github.com/en/actions
+## Sample repo
 
-   https://help.github.com/en/actions/building-and-testing-code-with-continuous-integration/setting-up-continuous-integration-using-github-actions
+A sample repo is described in <a target="_blank" href="https://www.youtube.com/watch?v=cyh8DU2QPzg">
+VIDEO: Continuous integration with GitHub Actions</a> [1:55:24] at GitHub Satellite 2020 on 7 May 2020
+
+   * Create and use multiple, customized workflows
+   * Implement a unit testing framework using GitHub Actions
+   * Use multiple jobs in a workflow and pass artifacts between jobs
+   * Configure a repository to work in conjunction with GitHub Actions workflows and your team's workflow.
+   <br /><br />
+
+   Topics:
+
+   * Configuration Infrastructure as Code (IaC) for Continuous Integration
+   * GitHub Actions in a Nutshell
+   * Actions vs Workflow
+   * Actions Definition and Explanation
+   * Lay of the Land
+   <br /><br />
 
 
-## What are Actions?
+## Actions in Jobs triggering Workflows
 
 1. Create a <strong>workflows</strong> folder within your repository.
 
@@ -54,22 +69,11 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
    This limit also applies to self-hosted runners.
 
 
-## Prerequisites, Intalling 
+1. Documentation
 
-<a target="_blank" href="https://www.youtube.com/watch?v=cyh8DU2QPzg">
-VIDEO: Continuous integration with GitHub Actions</a> [1:55:24] at GitHub Satellite 2020 on 7 May 2020
+   https://help.github.com/en/actions
 
-   * Create and use multiple, customized workflows
-   * Implement a unit testing framework using GitHub Actions
-   * Use multiple jobs in a workflow and pass artifacts between jobs
-   * Configure a repository to work in conjunction with GitHub Actions workflows and your team's workflow.
-   <br /><br />
-
-* Configuration Infrastructure as Code (IaC) for Continuous Integration
-* GitHub Actions in a Nutshell
-* Actions vs Workflow
-* Actions Definition and Explanation
-* Lay of the Land
+   https://help.github.com/en/actions/building-and-testing-code-with-continuous-integration/setting-up-continuous-integration-using-github-actions
 
 
    curl https://api.github.com/octocat
@@ -84,6 +88,7 @@ VIDEO: Continuous integration with GitHub Actions</a> [1:55:24] at GitHub Satell
    * @pprmk, Sr. Implementation Engineer
    * @dechyper, Solutions Architect
    * @iamhughes, Sr. DevOps Engineer
+   <br /><br />
 
 1. Go to
 
@@ -153,7 +158,58 @@ VIDEO: Continuous integration with GitHub Actions</a> [1:55:24] at GitHub Satell
 
    https://github.com/wilsonmar/github-actions-for-ci/issues/1
 
+1. [30:58] Click Actions tab, click "Set up this workflow" or navigate within the repo's <tt>.github/workflows</tt> folder to edit file <tt>nodejs.yml</tt> (the Actions file).
+1. Copy "Paste "CI for Node" into your invisible Clipboard.
+1. [31:29] Click "Start commit" to a new branch.
+1. [32:02] Commit new file.
+1. [32:05] Double-click to select all of the suggested name to Paste "CI for Node" insted. Click "Create pull request".
+1. [32:22] "Review required" and "Merging is blocked" apprears until ...
+1. [32:44] Click on "Details" or Actions tab to see jobs running. Click on a build.
+1. [33:11] Click "Pull Requests" tab to return to "CI for Node".
 
+   <a name="Vocabulary"></a>
+
+   ### Vocabulary
+
+   The on: field is what tells GitHub Actions when to run. In this case, we're running the workflow anytime there's a push.
+
+   The jobs: block defines the core component of an Actions workflow. Workflows are made of jobs, and our template workflow defines a single job with the identifier build. 
+
+   Every job also needs a specific host machine on which to run, the runs-on: field is how we specify it. The template workflow is running the build job in the latest version of Ubuntu, a Linux-based operating system.
+
+   Job: A job is a section of the workflow, and is made up of one or more steps. In this section of our workflow, the template defines the steps that make up the build job.
+
+   Workflow: A workflow is a unit of automation from start to finish, including the definition of what triggers the automation, what environment or other aspects should be taken account during the automation, and what should happen as a result of the trigger.
+
+   Step: A step represents one effect of the automation. A step could be defined as a GitHub Action, or another unit, like printing something to the console.
+
+   Action: A GitHub Action is a piece of automation written in a way that is compatible with workflows. Actions can be written by GitHub, by the open source community, or you can write them yourself!
+
+1. [34:08] Add your first test: Click "Pull requests" tab. Click "Add Jest tests". Click "Merge pull request".
+1. [34:53] Click "Delete branch".
+
+   ### Read Actions Log
+
+1. [35:06] Click on "next step" (created by the bot).
+1. [35:42] Navigate to the log output: Click on "Actions" tab. 
+1. [36:22] Click the latest "CI for Node" run (at the top. Click a build. Identify a name of a failing test with red "x". Expand it by clicking it. 
+1. [36:48] Identify the name "Initialize with two players" and copy it.
+1. [37:23] To "Pull requests". In the Comment paste the name of the failing test. Click "Comment".
+
+   ### Fix the test
+
+1. [37:50] Click "Commit suggestion" of "Update src/game.js". 
+1. [38:10] Click "Commit Changes". 
+1. [38:47] Refresh screen until bot makes "Changes approved".
+
+   ### Share
+
+1. [39:34] Click "Merge pull request".
+1. Delete branch.
+
+   ### Create a custom GitHub Actions workflow
+
+1. [56:00] 
 
    ### Learning Lab for you
 
