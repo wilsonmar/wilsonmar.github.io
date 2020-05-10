@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GitHub Actions (for free CI/CD)"
-excerpt: "Declare and invoke build and test from within GitHub"
+excerpt: "Declare and invoke build and test from within GitHub, for free."
 tags: [GitHub]
 date: "2020-05-09"
 file: "github-actions"
@@ -9,14 +9,14 @@ image:
 # github-mess-1900x500
   feature: https://user-images.githubusercontent.com/300046/81472787-5cc9e780-91b7-11ea-89a3-d7ddd2ab8b65.png
   credit: GitHubUniverse
-  creditlink: 
+  creditlink: https://www.youtube.com/watch?v=E1OunoCyuhY&t=237s
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
 
-This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to using GitHub's Actions to build at low cost, quickly.
+This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to using GitHub's Actions to build at <a href="#JobCost">low cost</a>, quickly.
 
 GitHub Actions enables software development teams to configure Infrastructure as Code (IaC) for Continuous Integration <a target="_blank" href="https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions">for NodeJs</a> and a wide range of programming languages.
 
@@ -33,33 +33,9 @@ When developers can merge and deploy code many times in a single day, they can a
 
 1. Create a <strong>workflows</strong> folder within your repository.
 
-   A workflow is a configurable automated process made up of one or more <strong>jobs</strong>.
+   Each workflow is defined by a yaml-formatted file.
 
-1. Create a yaml-formatted file to define each Workflow configuration.
-
-   template
-
-   There are <a target="_blank" href="https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions">limits on the number of concurrent jobs</a>:
-   Enterprise licensees have a limit of 180 jobs, of which 50 are macOS jobs, but only 5 macOS jobs for others.
-   Even free accounts get up to 20 concurrent jobs. 40 for those who pay $4 a month.
-   Each team gets 60 jobs at a time.
-
-1. Workflows are <strong>triggered</strong> by events in or outside GitHub or at a scheduled time.
-
-   Actions are individual steps within a workflow, executed from the new "Actions" tab that now appears on all GitHub repositories.
-
-   Several actions can combine into a job.
-
-   <strong>Templates</strong> or customize actions
-
-1. Workflows are run by <strong>Runners</strong> within a GitHub hosted environment or a self-hosted environment.
-
-   PROTIP: A <a href="#JobMatrix">job matrix</a> can generate a maximum of 256 jobs per workflow run. 
-   This limit also applies to self-hosted runners.
-
-1. PROTIP: Protect the master branch so it can't be inadvertently deleted or broken.
-
-1. PROTIP: Setup required reviews so that any pull requests are double checked by teammates.
+   PROTIP: To start, rather than creating your own a yaml-formatted file to define each Workflow configuration.
 
 1. To view the status of workflows, press the <strong>Actions</strong> tab at the top menu.
 
@@ -67,15 +43,45 @@ When developers can merge and deploy code many times in a single day, they can a
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/81493305-8a1ca100-925c-11ea-9e4f-7fbadf800585.png"><img alt="github-actions-menu-939x225.jpg" src="https://user-images.githubusercontent.com/300046/81493305-8a1ca100-925c-11ea-9e4f-7fbadf800585.png"></a>
 
+   Click "Set up a workflow yourself" or select a <strong>template</strong> containing pre-populated yml files from various people.
+
+   PROTIP: You can create and share templates for use by others in your own organization.
+
+   DEFINITION: In GitHub, a workflow is a configurable automated process made up of one or more <strong>jobs</strong>.
+
+   Actions are individual steps within a job.
+
+
+
+1. PROTIP: Protect the master branch so it can't be inadvertently deleted or broken.
+
+1. PROTIP: Setup required reviews so that any pull requests are double checked by teammates.
+
+   `on:` specifications inside that file define a scheduled time when the workflow is <strong>triggered</strong>. 
+
+   Alternately, workflows can be triggered by events in or outside GitHub, such as a git push or a scheduled time.
+
+1. Workflows are run by <strong>Runners</strong> within a GitHub hosted environment or a self-hosted environment.
+
+
 
 ## Documentation
 
-   <a target="_blank" href="
+<a target="_blank" href="
    https://help.github.com/en/actions">
    https://help.github.com/en/actions</a>
 
-   <a target="_blank" href="https://help.github.com/en/actions/building-and-testing-code-with-continuous-integration/setting-up-continuous-integration-using-github-actions">
+<a target="_blank" href="https://help.github.com/en/actions/building-and-testing-code-with-continuous-integration/setting-up-continuous-integration-using-github-actions">
    Setup Continuous Integrations</a>
+
+<a target="_blank" href="https://help.github.com/en/categories/automating-your-workflow-with-github-actions">
+https://help.github.com/en/categories/automating-your-workflow-with-github-actions</a>
+
+## Community
+
+<a target="_blank" href="
+https://github.community/t5/GitHub-Actions/bd-p/actions">
+https://github.community/t5/GitHub-Actions/bd-p/actions</a>
 
 ## Sample NPM workflow
 
@@ -93,7 +99,10 @@ When developers can merge and deploy code many times in a single day, they can a
 
    ### on: scheduled actions
 
-   The on: field is what tells GitHub Actions when to run. In this case, we're running the workflow anytime there's a push.
+   The on: field is what tells GitHub Actions when to run. 
+   The default trigger is git push. 
+
+   In this example, we're running the workflow anytime there's a push.
 
    <pre>on:
   push:
@@ -137,8 +146,9 @@ When developers can merge and deploy code many times in a single day, they can a
 
    Several `jobs:` blocks define different sections of a Workflow.
    
-
    ### runs-on: job host environment
+
+   `runs-on: ${{ matrix.os }}`
 
    Every job needs a specific <strong>host machine</strong> specified by the <tt>runs-on:</tt> field. This template workflow specifies using the latest version of Ubuntu, a Linux-based operating system.
 
@@ -147,6 +157,28 @@ When developers can merge and deploy code many times in a single day, they can a
    * ubuntu-latest, ubuntu-18.04, or ubuntu-16.04
    * windows-latest or windows-2019
    * macos-latest or macos-10.15
+   <br /><br />
+
+   `runs-on: ${{ matrix.os }}` refers to the "os" alternatives in the strategy section.
+
+   These specifiy the <strong>Runner</strong> within a GitHub hosted environment or a self-hosted environment.   
+
+
+   <a name="JobCost"></a>
+
+   ### Cost of GitHub Actions jobs
+
+   GitHub charges on a "pay as you go" basis two ways: by the minute used by each job and what operating system:
+
+   ![github-actions-cost-855x383](https://user-images.githubusercontent.com/300046/81502844-ba386400-929d-11ea-9a01-39051244e3d1.png)
+
+   There are <a target="_blank" href="https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions">limits on the number of concurrent jobs</a>:
+   Enterprise licensees have a limit of 180 jobs, of which 50 are macOS jobs, but only 5 macOS jobs for others.
+   Even free accounts get up to 20 concurrent jobs. 40 for those who pay $4 a month.
+   Each team gets 60 jobs at a time.
+
+   PROTIP: A <a href="#JobMatrix">job matrix</a> can generate a maximum of 256 jobs per workflow run. 
+   This limit also applies to self-hosted runners.
 
 
    <a name="JobMatrix"></a>
@@ -165,14 +197,17 @@ When developers can merge and deploy code many times in a single day, they can a
 
    CAUTION: Reference the list of releases for the language you're using, such as <a target="_blank" href="https://nodejs.org/en/about/releases/">this one for NodeJs</a>.
 
-   You can also vary the host operating system:
+   You can also vary the host operating system environment:
 
    <pre>   strategy:
       matrix:
-        node-version: [10.x, 12.x]
+        node-version: [10, 12, 14]
         os: [ubuntu-latest, windows-latest, macOS-latest]
    </pre>
 
+   The above would generate 3 x 3 = 9 job runs.
+
+   PROTIP: Different jobs in the matrix are run simultaneously.
 
 
    ### Steps
@@ -203,6 +238,8 @@ When developers can merge and deploy code many times in a single day, they can a
 
    `checkout@v2` retrieves the latest (such as v2.1.0) in <a target="_blank" href="https://github.com/actions/checkout/releases">https://github.com/actions/checkout/releases</a>. The action's home page is at https://github.com/marketplace/actions/checkout
 
+   PROTIP: Monitor when versions are updated. When an upgrade is available, search through GitHub repos to see which ones should be upgraded.
+
 
    ### - name: step in Actions coding
 
@@ -229,6 +266,12 @@ When developers can merge and deploy code many times in a single day, they can a
 
    PROTIP: Consider separate test jobs to separate build from test details.
 
+
+   ### env: ci: true
+
+   <pre>   env:
+   ci: true
+   </pre>
 
 ## Sample repo for GitHub's Tutorial
 
@@ -401,8 +444,9 @@ Coding Tech
 Fireship
 
 <a target="_blank" href="https://www.youtube.com/watch?v=e_F_4OB9Mg4">
-Introdution to GitHub Actions [38:46]</a> 
-by BlackMarbleLtd CEO @RichardFennell
+Introduction to GitHub Actions [38:46]</a> 
+by BlackMarbleLtd CEO @RichardFennell references
+<a target="_blank" href="https://github.com/rfennell/ActionPlayground/blob/master/src/helloworld.ts">https://github.com/rfennell/ActionPlayground/blob/master/src/helloworld.ts</a> (Typescript)
 
 <a target="_blank" href="https://www.youtube.com/watch?v=N_-Cu9_2YAA">
 Introducing GitHub Package Registry</a> 
