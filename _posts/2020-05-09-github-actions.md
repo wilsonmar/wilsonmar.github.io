@@ -18,10 +18,9 @@ comments: true
 
 This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to using GitHub's Actions to build at low cost, quickly.
 
-GitHub Actions enables software development teams to configure Infrastructure as Code (IaC) for Continuous Integration for NodeJs and a wide range of programming languages.
+GitHub Actions enables software development teams to configure Infrastructure as Code (IaC) for Continuous Integration <a target="_blank" href="https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions">for NodeJs</a> and a wide range of programming languages.
 
 When developers can merge and deploy code many times in a single day, they can achieve Agile DevOps.
-
 
 
 ## Actions in Jobs triggering Workflows
@@ -45,19 +44,17 @@ When developers can merge and deploy code many times in a single day, they can a
    Even free accounts get up to 20 concurrent jobs. 40 for those who pay $4 a month.
    Each team gets 60 jobs at a time.
 
-   PROTIP: Have separate dedicated test job to separate build from test details.
-
 1. Workflows are <strong>triggered</strong> by events in or outside GitHub or at a scheduled time.
 
    Actions are individual steps within a workflow, executed from the new "Actions" tab that now appears on all GitHub repositories.
 
-   Individual actions combine into a job.
+   Several actions can combine into a job.
 
-   Templates or customize actions
+   <strong>Templates</strong> or customize actions
 
 1. Workflows are run by <strong>Runners</strong> within a GitHub hosted environment or a self-hosted environment.
 
-   A <strong>job matrix</strong> can generate a maximum of 256 jobs per workflow run. 
+   PROTIP: A <strong>job matrix</strong> can generate a maximum of 256 jobs per workflow run. 
    This limit also applies to self-hosted runners.
 
 1. PROTIP: Protect the master branch so it can't be inadvertently deleted or broken.
@@ -70,6 +67,7 @@ When developers can merge and deploy code many times in a single day, they can a
 
    ![github-actions-menu-939x225](https://user-images.githubusercontent.com/300046/81493305-8a1ca100-925c-11ea-9e4f-7fbadf800585.png)
 
+
 ## Documentation
 
    <a target="_blank" href="
@@ -78,6 +76,140 @@ When developers can merge and deploy code many times in a single day, they can a
 
    <a target="_blank" href="https://help.github.com/en/actions/building-and-testing-code-with-continuous-integration/setting-up-continuous-integration-using-github-actions">
    Setup Continuous Integrations</a>
+
+## Sample NPM workflow
+
+Let's look at a yaml workflow file used by GitHub Actions.
+
+   <a target="_blank" href="
+   https://github.com/wilsonmar/ci-with-actions/blob/master/github-actions-for-ci/.github/workflows/nodejs.yml">
+   https://github.com/wilsonmar/ci-with-actions/blob/master/github-actions-for-ci/.github/workflows/nodejs.yml</a>
+
+   A workflow is a unit of automation from start to finish, including the definition of what triggers the automation, what environment or other aspects should be taken account during the automation, and what should happen as a result of the trigger.
+
+   <a name="OnAction"></a>
+
+   ### on: scheduled actions
+
+   The on: field is what tells GitHub Actions when to run. In this case, we're running the workflow anytime there's a push.
+
+   <pre>on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+   </pre>
+
+   Alternately,
+
+   <pre>on:
+  push:
+    branches:
+    - master
+    - release/*
+   </pre>
+
+   PROTIP: To set a workflow (using <a target="_blank" href="https://crontab.guru/">crontab specifications</a>) to run at 2:00 AM UTC every day, 1=Monday to 5=Friday:
+
+   <pre>on:
+  schedule:
+  - cron: "0 2 * * 1-5"
+   </pre>
+
+   1.  Minute   0 to 59, or * (no specific value)
+   2.  Hour  0 to 23, or * for any value. All times UTC.
+   3.  Day of the month  1 to 31, or * (no specific value)
+   4.  Mont  1 to 12, or * (no specific value)
+   5.  Day of the wee  0 to 7 (0 and 7 both represent Sunday), or * (no specific value)
+
+
+   ### jobs: block
+
+   Workflows are made of jobs, and the template workflow defines a single job with the identifier build. 
+
+   <pre>jobs:
+  build:
+    name: 'Build'
+    runs-on: ubuntu-latest
+    </pre>
+
+   Several `jobs:` blocks define different sections of a Workflow.
+   
+
+   ### runs-on: job host environment
+
+   Every job needs a specific <strong>host machine</strong> specified by the <tt>runs-on:</tt> field. This template workflow specifies using the latest version of Ubuntu, a Linux-based operating system.
+
+   <a target="_blank" href="https://help.github.com/articles/virtual-environments-for-github-actions">Others</a>:
+
+   * ubuntu-latest, ubuntu-18.04, or ubuntu-16.04
+   * windows-latest or windows-2019
+   * macos-latest or macos-10.15
+
+
+   ### job strategy
+
+   A Job Matrix is designed to build and test code with different environments and configurations.
+
+   <pre>   strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
+   </pre>
+
+   PROTIP: The code above defines variable `${{ matrix.node-version }}` which resolves to "8.x", 10.x", or "12.x" when referenced in the set of steps below, which are repeated automatically for each node-version specified.
+
+
+   ### Steps
+
+   Each job is made up of one or more steps. In the sample template:
+
+   <pre>    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: npm test
+    </pre>
+
+   `-` (a dash) precedes each action.
+
+
+   <a name="ActionsCoding"></a>
+
+   ### - uses: step in Actions coding
+
+   `- uses: actions/checkout@v2`
+
+   `actions` defines an action from <a target="_blank" href="https://github.com/marketplace">GitHub's public Marketplace</a> of <a target="_blank" href="https://github.com/marketplace?type=actions">Actions</a>, stored in <a target="_blank" href="https://github.com/actions/checkout">https://github.com/actions/checkout</a>
+
+
+   ### - name: step in Actions coding
+
+   Because the Node.js version needs to be specified several times:
+
+   ### - run: step in Actions coding
+
+   <pre>    - run: npm ci
+    - run: npm run build --if-present
+    - run: npm test
+   </pre>
+
+   `npm ci` was introduced in NodeJs 5.1 (2018) in place of "npm install" (or yarn) for <a target="_blank" href="https://www.youtube.com/watch?v=-yFXAYrUjlo">faster</a> downloading and installation of package dependencies (based on specifications in the package.json file) into the node_modules folder.
+
+   BTW the new GitHub Package Registry only supports npm as a client for JavaScript packages (at least for now).
+
+   `npm run build` runs the build field defined in the <a target="_blank" href="https://docs.npmjs.com/misc/scripts">scripts field</a> within package.json.
+
+   BTW npm build no longer exists as of 2019.
+
+   `--if-present` is an optional flag to avoid exiting with a non-zero exit code when the script is undefined.
+
+   `npm test` executes all tests defined.
+
+   PROTIP: Consider separate test jobs to separate build from test details.
 
 
 ## Sample repo for GitHub's Tutorial
@@ -90,17 +222,6 @@ VIDEO: Continuous integration with GitHub Actions</a> [1:55:24] at GitHub Satell
    * Use multiple jobs in a workflow and pass artifacts between jobs
    * Configure a repository to work in conjunction with GitHub Actions workflows and your team's workflow.
    <br /><br />
-
-   Topics:
-
-   * Configuration Infrastructure as Code (IaC) for Continuous Integration
-   * GitHub Actions in a Nutshell
-   * Actions vs Workflow
-   * Actions Definition and Explanation
-   * Lay of the Land
-   <br /><br />
-
-
 
    curl https://api.github.com/octocat
 
@@ -182,9 +303,10 @@ VIDEO: Continuous integration with GitHub Actions</a> [1:55:24] at GitHub Satell
 
 1. [29:34] Click "Start: Use a templated workflow" for the Issue#1 page on your own repo such as this (but with your name instead):
 
-   https://github.com/wilsonmar/github-actions-for-ci/issues/1
+   <tt>https://github.com/wilsonmar/github-actions-for-ci/issues/1</tt>
 
 1. [30:58] Click Actions tab, click "Set up this workflow" or navigate within the repo's <tt>.github/workflows</tt> folder to edit file <tt>nodejs.yml</tt> (the Actions file).
+
 1. Copy "Paste "CI for Node" into your invisible Clipboard.
 1. [31:29] Click "Start commit" to a new branch.
 1. [32:02] Commit new file.
@@ -193,23 +315,8 @@ VIDEO: Continuous integration with GitHub Actions</a> [1:55:24] at GitHub Satell
 1. [32:44] Click on "Details" or Actions tab to see jobs running. Click on a build.
 1. [33:11] Click "Pull Requests" tab to return to "CI for Node".
 
-   <a name="Vocabulary"></a>
+   Vocabulary is defined by the bot.
 
-   ### Vocabulary
-
-   The on: field is what tells GitHub Actions when to run. In this case, we're running the workflow anytime there's a push.
-
-   The jobs: block defines the core component of an Actions workflow. Workflows are made of jobs, and our template workflow defines a single job with the identifier build. 
-
-   Every job also needs a specific host machine on which to run, the runs-on: field is how we specify it. The template workflow is running the build job in the latest version of Ubuntu, a Linux-based operating system.
-
-   Job: A job is a section of the workflow, and is made up of one or more steps. In this section of our workflow, the template defines the steps that make up the build job.
-
-   Workflow: A workflow is a unit of automation from start to finish, including the definition of what triggers the automation, what environment or other aspects should be taken account during the automation, and what should happen as a result of the trigger.
-
-   Step: A step represents one effect of the automation. A step could be defined as a GitHub Action, or another unit, like printing something to the console.
-
-   Action: A GitHub Action is a piece of automation written in a way that is compatible with workflows. Actions can be written by GitHub, by the open source community, or you can write them yourself!
 
 1. [34:08] Add your first test: Click "Pull requests" tab. Click "Add Jest tests". Click "Merge pull request".
 1. [34:53] Click "Delete branch".
@@ -238,11 +345,6 @@ VIDEO: Continuous integration with GitHub Actions</a> [1:55:24] at GitHub Satell
    ### Create a custom GitHub Actions workflow
 
 1. [1:06:43] Click "Resume".
-
-
-
-
-
 
 
 ## Create Badge
