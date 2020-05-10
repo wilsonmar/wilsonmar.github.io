@@ -21,8 +21,21 @@ The word "Tesseract" was adopted as the name of the <a target="_blank" href="htt
 <a target="_blank" href="https://marvelcinematicuniverse.fandom.com/wiki/Tesseract"><img align="right" alt="tesseract-mcu2012-310x310.png" width="100" height="100" src="https://user-images.githubusercontent.com/300046/70930552-b6f0c300-1ff2-11ea-8326-641532761f51.png">
 The Tesseract shown in the Marvel Cinematic Universe</a> is a (3 dimensional) physical cube. But the object has a 4th dimension of time, thus enabling time travel in the MCU and in Madeleine L'Engle's novel/movie "A Wrinkle in Time".
 
-<a target="_blank" href="https://www.youtube.com/watch?v=iGO12Z5Lw8s">VIDEO: <img align="right" alt="tesseract-4d-proj-275x203.png" width="100" src="https://user-images.githubusercontent.com/300046/70930317-1f8b7000-1ff2-11ea-9a7c-2c62b3b3b00c.png"></a> 
+<a target="_blank" href="https://www.youtube.com/watch?v=iGO12Z5Lw8s">VIDEO: <img align="left" alt="tesseract-4d-proj-275x203.png" width="100" src="https://user-images.githubusercontent.com/300046/70930317-1f8b7000-1ff2-11ea-9a7c-2c62b3b3b00c.png"></a> 
 But a Tesseract in <a target="_blank" href="http://mathworld.wolfram.com/Tesseract.html">science (real life)</a> is <strong>conceptual</strong> "w" <strong>4th dimensional axis</strong> shown as a shadow.<a target="_blank" href="https://www.wikiwand.com/en/Tesseract">*</a> 
+
+## Usage
+
+1. I wrote <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/blob/master/bash/ocr.sh">a shell script</a> that converts the last file created in folder ~/Desktop and opens the output file in VSCode (using the code command):
+
+   <pre><strong>./ocr.sh</strong></pre>
+
+   Optionally, specify a file name:
+
+   <pre><strong>./ocr.sh "Screen Shot 2020-05-10 at 3.18.06 PM.png"</strong></pre>
+
+   Afterward, the image file is deleted.
+
 
 ## Installation
 
@@ -40,14 +53,25 @@ Tesseract 4 is included with Ubuntu 18.04+.
    <pre><strong>tesseract -v
    </strong></pre>
 
-   <pre>tesseract 4.1.0
- leptonica-1.78.0
-  libgif 5.2.1 : libjpeg 9c : libpng 1.6.37 : libtiff 4.1.0 : zlib 1.2.11 : libwebp 1.0.3 : libopenjp2 2.3.1
+   <pre>tesseract 4.1.1
+ leptonica-1.79.0
+  libgif 5.2.1 : libjpeg 9d : libpng 1.6.37 : libtiff 4.1.0 : zlib 1.2.11 : libwebp 1.1.0 : libopenjp2 2.3.1
  Found AVX2
  Found AVX
- Found SSE</pre>
+ Found FMA
+ Found SSE
+   </pre>
 
    The <a target="_blank" href="http://www.leptonica.org/">http://www.leptonica.org</a> dependency provides utilities for image processing and image analysis.
+
+   ### Use Tesseract
+
+   <pre><strong>
+   IN_FILE="tesseract-quick-brown-fox.png"
+   tesseract "${IN_FILE}"  out
+   </strong></pre>
+
+
 
 1. PROTIP: Navigate to the folder where where other image files are captured to, usually: 
 

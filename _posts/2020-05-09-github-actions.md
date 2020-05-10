@@ -25,7 +25,7 @@ When developers can merge and deploy code many times in a single day, they can a
 
 ## Actions in Jobs triggering Workflows
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/81487219-edd0ab00-9217-11ea-823d-b879aba42e28.jpg"><img alt="github-actions-diagram-550x368.jpg" width="550" height="368" src="https://user-images.githubusercontent.com/300046/81487219-edd0ab00-9217-11ea-823d-b879aba42e28.jpg"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/81487219-edd0ab00-9217-11ea-823d-b879aba42e28.jpg"><img alt="github-actions-diagram-550x368.jpg" width="550" height="368" src="https://user-images.githubusercontent.com/300046/81487219-edd0ab00-9217-11ea-823d-b879aba42e28.jpg"><br /><em>Click image to pop-up full-size display.</em></a>
 
 1. Create a <strong>.github</strong> folder within your repository.
 
@@ -45,8 +45,8 @@ When developers can merge and deploy code many times in a single day, they can a
 
    Click "Set up a workflow yourself" or select a <strong>template</strong> containing pre-populated yml files from various people.
 
-   PROTIP: You can create and share templates for use by others in your own organization.
-
+   PROTIP: You can create and share templates for use by others in your own organization. See <a target="_blank" href="https://help.github.com/en/actions/hosting-your-own-runners">https://help.github.com/en/actions/hosting-your-own-runners</a>
+ 
    DEFINITION: In GitHub, a workflow is a configurable automated process made up of one or more <strong>jobs</strong>.
 
    Actions are individual steps within a job.
@@ -61,12 +61,11 @@ When developers can merge and deploy code many times in a single day, they can a
 
    Alternately, workflows can be triggered by events in or outside GitHub, such as a git push or a scheduled time.
 
-1. Workflows are run by <strong>Runners</strong> within a GitHub hosted environment or a self-hosted environment.
-
 
 
 ## Documentation
 
+GitHub Actions Documentation is at
 <a target="_blank" href="
    https://help.github.com/en/actions">
    https://help.github.com/en/actions</a>
@@ -76,6 +75,19 @@ When developers can merge and deploy code many times in a single day, they can a
 
 <a target="_blank" href="https://help.github.com/en/categories/automating-your-workflow-with-github-actions">
 https://help.github.com/en/categories/automating-your-workflow-with-github-actions</a>
+
+<a target="_blank" href="https://help.github.com/en/actions/configuring-and-managing-workflows">
+https://help.github.com/en/actions/configuring-and-managing-workflows</a> 
+
+<a target="_blank" href="https://help.github.com/en/actions/language-and-framework-guides">
+https://help.github.com/en/actions/language-and-framework-guides</a>
+
+<a target="_blank" href="https://help.github.com/en/actions/migrating-to-github-actions">
+https://help.github.com/en/actions/migrating-to-github-actions</a>
+
+1. Workflows are run by <strong>Runners</strong> within a GitHub hosted environment or a self-hosted environment.
+
+
 
 ## Community
 
@@ -164,23 +176,6 @@ https://github.community/t5/GitHub-Actions/bd-p/actions</a>
    These specifiy the <strong>Runner</strong> within a GitHub hosted environment or a self-hosted environment.   
 
 
-   <a name="JobCost"></a>
-
-   ### Cost of GitHub Actions jobs
-
-   GitHub charges on a "pay as you go" basis two ways: by the minute used by each job and what operating system:
-
-   ![github-actions-cost-855x383](https://user-images.githubusercontent.com/300046/81502844-ba386400-929d-11ea-9a01-39051244e3d1.png)
-
-   There are <a target="_blank" href="https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions">limits on the number of concurrent jobs</a>:
-   Enterprise licensees have a limit of 180 jobs, of which 50 are macOS jobs, but only 5 macOS jobs for others.
-   Even free accounts get up to 20 concurrent jobs. 40 for those who pay $4 a month.
-   Each team gets 60 jobs at a time.
-
-   PROTIP: A <a href="#JobMatrix">job matrix</a> can generate a maximum of 256 jobs per workflow run. 
-   This limit also applies to self-hosted runners.
-
-
    <a name="JobMatrix"></a>
 
    ### job strategy: matrix
@@ -208,6 +203,23 @@ https://github.community/t5/GitHub-Actions/bd-p/actions</a>
    The above would generate 3 x 3 = 9 job runs.
 
    PROTIP: Different jobs in the matrix are run simultaneously.
+
+
+   <a name="JobCost"></a>
+
+   ### Cost of GitHub Actions jobs
+
+   GitHub charges on a "pay as you go" basis two ways: by the minute used by each job and what operating system:
+
+   ![github-actions-cost-855x383](https://user-images.githubusercontent.com/300046/81502844-ba386400-929d-11ea-9a01-39051244e3d1.png)
+
+   There are <a target="_blank" href="https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions">limits on the number of concurrent jobs</a>:
+   Enterprise licensees have a limit of 180 jobs, of which 50 are macOS jobs, but only 5 macOS jobs for others.
+   Even free accounts get up to 20 concurrent jobs. 40 for those who pay $4 a month.
+   Each team gets 60 jobs at a time.
+
+   PROTIP: A <a href="#JobMatrix">job matrix</a> can generate a maximum of 256 jobs per workflow run. 
+   This limit also applies to self-hosted runners.
 
 
    ### Steps
@@ -267,6 +279,39 @@ https://github.community/t5/GitHub-Actions/bd-p/actions</a>
    PROTIP: Consider separate test jobs to separate build from test details.
 
 
+   ### build and publish 
+
+   PROTIP: Include where you're publishing if you're publishing to the gpr (Google Package Registry) as well as NPM.
+
+   <pre>  jobs:
+   build:
+      ...
+   publish-npm:
+      ...
+   publish-gpr:
+   </pre>
+
+   ### Slack notification
+
+1. Post to a Slack channel when a new issue is added on GitHub:
+
+   <pre>  name: Slack Issue
+    on:
+      issues:
+         types: [opened]
+  job:
+     post_slack_message:
+       runs-on: ubuntu-latest
+       steps:
+         - uses: rtCamp/action-slack-notify@2.0.0
+         - env:
+             SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+             SLACK_USERNAME: memyselfandi
+             SLACK_CHANNEL: gh-issues
+   </pre>
+
+   Clear-text of secrets are input in the <tt>Security</tt> tab.
+
    ### env: ci: true
 
    <pre>   env:
@@ -298,10 +343,10 @@ VIDEO: Continuous integration with GitHub Actions</a> [1:55:24] at GitHub Satell
    * @iamhughes, Sr. DevOps Engineer
    <br /><br />
 
-1. Go to
+1. Throughout the course, return to the list of course agenda at:
 
-   https://git.io/Jewra which goes to<br />
-   https://lab.github.com/githubtraining/github-actions:-continuous-integration
+   <a target="_blank" href="https://lab.github.com/githubtraining/github-actions:-continuous-integration">https://git.io/Jewra which goes to<br />
+   https://lab.github.com/githubtraining/github-actions:-continuous-integration</a>
 
 1. Click "Start free course". You may be asked to login GitHub.
 1. [20:01] Choose either "Public" or "Private", then "Begin GitHub Actions: Continuous Integration".
@@ -473,6 +518,10 @@ https://coletiv.com/blog/how-to-setup-continuous-integration-and-deployment-work
 
 
 
+## Those using Actions
+
+<a target="_blank" href="https://github.com/actionsdesk">
+https://github.com/actionsdesk</a>
 
 
 ## More #
