@@ -16,9 +16,9 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to using Hashicorp's Terraform to build, change, and version clusters of <a href="#Immutable">immutable</a> servers (through load balancers) running in clouds using <a href="#Idempotent">idempotent</a>. "Idempotent" means that repeat runs don't change anything if nothing is changed. 
+This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to using Hashicorp's Terraform to build, change, and version clusters of <a href="#Immutable">immutable</a> servers (through load balancers) running in clouds using declarative statements that are <a href="#Idempotent">idempotent</a>.
 
-Terrafrom provides its own modules. But where Terraform comes up short, customer administrators can write <strong>modules</strong> of their own to add more logic to continue using declarative specifications (templates). Thus Terraform defines the "desired state configuration" (DSC). 
+Terrafrom provides its own <a href="#Modules">modules</a>. But where Terraform comes up short, customer administrators can write <a href="#Modules">modules</a> of their own to add more logic to continue using declarative specifications (templates). Thus Terraform defines the "desired state configuration" (DSC). 
 
 Terraform is better characterized as a <strong>multi-service</strong> tool. Terraform is <strong>not a "multi-cloud tool" to ease migration</strong> among clouds to avoid vendor lock-in. One would need to rewrite all templates to move from, say, AWS to Azure. Terraform doesn't abstract resources needed to do that.
 
@@ -55,19 +55,18 @@ The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and
 <img alt="terraform-comp-colored-650x261-36439" width="650" height="261" src="https://user-images.githubusercontent.com/300046/30870914-62437728-a2a2-11e7-8e6a-e3c847f7984f.jpg"><small>(Click to pop-up full screen image <a target="_blank" href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c#.63ls7fpkq">colorized from Gruntwork's blog</a>)</small></a>
 
 Ansible, Chef, Puppet, SaltStack install applications.<br />
-Terraform installs infrastructure in cloud and VM as workflows.<br />
-Kubernetes orchestrates (brings up and down) Docker containers.
+Terraform installs infrastructure in cloud and VM as <strong>workflows</strong>. Kubernetes orchestrates (brings up and down) Docker containers.
 
 Terraform and Ansible can work in unison and complement each other. Terraform can bootstrap the underlying cloud infrastructure and then Ansible provisions the user space. To test a service on a dedicated server, skip using Terraform and run the Ansible playbook on that machine. Derek Morgan has a <a target="_blank" href="https://github.com/linuxacademy/terransible">"Deploy to AWS with Ansible and Terraform" video class</a> at LinuxAcademy which shows how to do just that, with <a target="_blank" href="https://github.com/linuxacademy/terransible">code</a> and <a target="_blank" href="https://www.lucidchart.com/documents/view/c1ceaa2b-647c-49bd-9dca-bcaffc04be3b">diagram</a>.
 
 
 <a name="Immutable"></a>
 
+WARNING: Terraform does not support rollbacks.
+
 "Immutable" means once instantiated, it doesn't change. In DevOps, this strategy means individual servers are treated like "cattle" (removed from the herd) and not as "pets" (courageously kept alive as long as possible).
 
-"When I make a mistake in a complicated setup, I can get going again quickly and easily with less troubleshooting because I can just re-run the script."
-
-WARNING: Terraform does not support rollbacks in any meaningful way.
+Immutable and idempotent means "when I make a mistake in a complicated setup, I can get going again quickly and easily with less troubleshooting because I can just re-run the script."
 
 Terraform also provides <strong>parallel execution</strong> control, iterations, and (perhaps most of all) management of resources already created (desired state configuration) over several cloud providers (not just AWS).
 
@@ -124,7 +123,7 @@ Although Terraform is "open source", the Terraform GUI requires a license.
 
    <a target="_blank" href="https://www.hashicorp.com/products/terraform-old/">
    Paid Pro and Premium licenses of Terraform</a>
-   add version control integration, MFA security, and other enterprise features.
+   add version control integration, MFA security, HA, and other enterprise features.
 
 
 ## Websites to know
@@ -137,13 +136,23 @@ Although Terraform is "open source", the Terraform GUI requires a license.
    Official Getting Started docs at Hashicorp</a>
    focus on individual elements (i.e. resources, input variables, output variables, etc).
 
+<a target="_blank" href="
+https://www.twitch.tv/hashicorplive">
+https://www.twitch.tv/hashicorplive</a>
+1st & 3rd PT Fridays every month
+
+
+## Social
+
+* <a target="_blank" href="https://discuss.hashicorp.com/">https://discuss.hashicorp.com</a>
+
 * <a target="_blank" href="https://groups.google.com/forum/#!forum/terraform-tool">Google Group terraform-tool</a>
-* LinkedIn
+* <a target="_blank" href="https://linkedin.com/in/terraform">
+   LinkedIn</a>
 * <a target="_blank" href="https://stackoverflow.com/search?q=terraform">StackOverflow</a>
 * <a target="_blank" href="https://www.reddit.com/r/Terraform/">r/Terraform (Reddit sub-reddit)</a>
-* <a target="_blank" href="https://www.youtube.com/watch?v=Q6SGhWK6y0o&list=PL4z1WbdlT5GKw1l2w0U-8YijoTwZp_GvU">0.12-alpha4</a> Dec 20, 2018 on
-<a target="_blank" href="https://www.youtube.com/channel/UC0gjVbm7HY5GzDTo5NbQruA">
-Mitchell Hashimoto (CEO) YouTube channel</a>  
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=Q6SGhWK6y0o&list=PL4z1WbdlT5GKw1l2w0U-8YijoTwZp_GvU">0.12-alpha4</a> Dec 20, 2018 on <a target="_blank" href="https://www.youtube.com/channel/UC0gjVbm7HY5GzDTo5NbQruA">Mitchell Hashimoto (CEO) YouTube channel</a>  
 
 * No IRC (Internet Relay Chat)?
 
@@ -458,7 +467,7 @@ All other commands:
 
 ### Community modules
 
-Modules help you cope with the many DevOps components and alternatives:
+Modules are where the "smarts" are to manage each DevOps component:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/39751305-fb4167b4-5274-11e8-9ee4-b62324002453.png">
 <img alt="terraform-devops-vendors-807x352-107086" width="807" src="https://user-images.githubusercontent.com/300046/39751536-bd617afa-5275-11e8-943f-30ebbf17da0e.jpg"></a>
@@ -1773,6 +1782,8 @@ Oct 13, 2017 by Radek Simko (@RadekSimko), Terraform Expert HashiCorp
 25:22
 
 
+<a name="CFN"></a>
+
 ## AWS Cloud Formation
 
 <a target="_blank" href="http://www.slideshare.net/AntonBabenko/managing-aws-infrastructure-using-cloudformation">
@@ -1780,11 +1791,14 @@ Puppet, Chef, Ansible, Salt</a>
 AWS API libraries Boto, Fog
 
 AWS CloudFormation Sample Templates at
-https://github.com/awslabs/aws-cloudformation-templates
+<a target="_blank" href="
+https://github.com/awslabs/aws-cloudformation-templates">
+https://github.com/awslabs/aws-cloudformation-templates</a>
 
 
-https://www.safaribooksonline.com/library/view/aws-cloudformation-master/9781789343694/
-AWS CloudFormation Master Class
+<a target="_blank" href="
+https://www.safaribooksonline.com/library/view/aws-cloudformation-master/9781789343694/">
+AWS CloudFormation Master Class</a>
 by Stéphane Maarek from Packt May 2018
 
 Some CloudFormation templates are compatible with OpenStack Heat templates.
