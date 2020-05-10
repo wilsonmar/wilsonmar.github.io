@@ -18,12 +18,71 @@ comments: true
 
 This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to using GitHub's Actions to build at low cost, quickly.
 
-   GitHub Actions gives software development teams "world-class" CI capabilities, helping developers merge and deploy code many times in a single day to achieve Agile DevOps, for NodeJs and a wide range of programming languages.
+GitHub Actions enables software development teams to configure Infrastructure as Code (IaC) for Continuous Integration for NodeJs and a wide range of programming languages.
+
+When developers can merge and deploy code many times in a single day, they can achieve Agile DevOps.
 
 
-## Sample repo
 
-A sample repo is described in <a target="_blank" href="https://www.youtube.com/watch?v=cyh8DU2QPzg">
+## Actions in Jobs triggering Workflows
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/81487219-edd0ab00-9217-11ea-823d-b879aba42e28.jpg"><img alt="github-actions-diagram-550x368.jpg" width="550" height="368" src="https://user-images.githubusercontent.com/300046/81487219-edd0ab00-9217-11ea-823d-b879aba42e28.jpg"></a>
+
+1. Create a <strong>.github</strong> folder within your repository.
+
+   This follows the same convention as <tt>.circleci</tt>.
+
+1. Create a <strong>workflows</strong> folder within your repository.
+
+   A workflow is a configurable automated process made up of one or more <strong>jobs</strong>.
+
+1. Create a yaml-formatted file to define each Workflow configuration.
+
+   template
+
+   There are <a target="_blank" href="https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions">limits on the number of concurrent jobs</a>:
+   Enterprise licensees have a limit of 180 jobs, of which 50 are macOS jobs, but only 5 macOS jobs for others.
+   Even free accounts get up to 20 concurrent jobs. 40 for those who pay $4 a month.
+   Each team gets 60 jobs at a time.
+
+   PROTIP: Have separate dedicated test job to separate build from test details.
+
+1. Workflows are <strong>triggered</strong> by events in or outside GitHub or at a scheduled time.
+
+   Actions are individual steps within a workflow, executed from the new "Actions" tab that now appears on all GitHub repositories.
+
+   Individual actions combine into a job.
+
+   Templates or customize actions
+
+1. Workflows are run by <strong>Runners</strong> within a GitHub hosted environment or a self-hosted environment.
+
+   A <strong>job matrix</strong> can generate a maximum of 256 jobs per workflow run. 
+   This limit also applies to self-hosted runners.
+
+1. PROTIP: Protect the master branch so it can't be inadvertently deleted or broken.
+
+1. PROTIP: Setup required reviews so that any pull requests are double checked by teammates.
+
+1. To view the status of workflows, press the <strong>Actions</strong> tab at the top menu.
+
+   PROTIP: To get to the top of the screen to see GitHub's Tabs, on macOS, press command + up_arrow.
+
+   ![github-actions-menu-939x225](https://user-images.githubusercontent.com/300046/81493305-8a1ca100-925c-11ea-9e4f-7fbadf800585.png)
+
+## Documentation
+
+   <a target="_blank" href="
+   https://help.github.com/en/actions">
+   https://help.github.com/en/actions</a>
+
+   <a target="_blank" href="https://help.github.com/en/actions/building-and-testing-code-with-continuous-integration/setting-up-continuous-integration-using-github-actions">
+   Setup Continuous Integrations</a>
+
+
+## Sample repo for GitHub's Tutorial
+
+A sample repo was provided in <a target="_blank" href="https://www.youtube.com/watch?v=cyh8DU2QPzg">
 VIDEO: Continuous integration with GitHub Actions</a> [1:55:24] at GitHub Satellite 2020 on 7 May 2020
 
    * Create and use multiple, customized workflows
@@ -41,39 +100,6 @@ VIDEO: Continuous integration with GitHub Actions</a> [1:55:24] at GitHub Satell
    * Lay of the Land
    <br /><br />
 
-
-## Actions in Jobs triggering Workflows
-
-1. Create a <strong>workflows</strong> folder within your repository.
-
-   A workflow is a configurable automated process made up of one or more <strong>jobs</strong>.
-
-   There are <a target="_blank" href="https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions">limits on the number of concurrent jobs</a>:
-   Enterprise licensees have a limit of 180 jobs, of which 50 are macOS jobs, but only 5 macOS jobs for others.
-   Even free accounts get up to 20 concurrent jobs. 40 for those who pay $4 a month.
-   Each team gets 60 jobs at a time.
-
-   A yaml-formatted file defines each Workflow configuration.
-
-1. Workflows are <strong>triggered</strong> by events in or outside GitHub or at a scheduled time.
-
-   Actions are individual steps within a workflow, executed from the new "Actions" tab that now appears on all GitHub repositories.
-
-   Individual actions combine into a job.
-
-   Templates or customize actions
-
-1. Workflows are run by <strong>Runners</strong> within a GitHub hosted environment or a self-hosted environment.
-
-   A <strong>job matrix</strong> can generate a maximum of 256 jobs per workflow run. 
-   This limit also applies to self-hosted runners.
-
-
-1. Documentation
-
-   https://help.github.com/en/actions
-
-   https://help.github.com/en/actions/building-and-testing-code-with-continuous-integration/setting-up-continuous-integration-using-github-actions
 
 
    curl https://api.github.com/octocat
@@ -204,29 +230,26 @@ VIDEO: Continuous integration with GitHub Actions</a> [1:55:24] at GitHub Satell
 
    ### Share
 
-1. [39:34] Click "Merge pull request".
-1. Delete branch.
+1. [39:34] Click "Merge pull request". "Confirm Merge". "Delete branch".
+
+1. [56:11] https://github.com/wilsonmar/github-actions-for-ci/issues/1
+
 
    ### Create a custom GitHub Actions workflow
 
-1. [56:00] 
-
-   ### Learning Lab for you
-
-1. Go to 
-
-   https://lab.github.com/
-
-1. Click "Find your first course".
-1. Click "Start learning with GitHub Learning Lab".
-1. Click "Accept"
-
-   https://github.com/settings/installations/133009
+1. [1:06:43] Click "Resume".
 
 
-Templated workflow
 
-Actions Log
+
+
+
+
+## Create Badge
+
+Within Actions tab:
+
+<img width="332" alt="github-create-status-badge-664x766" src="https://user-images.githubusercontent.com/300046/81487058-10ae8f80-9217-11ea-8968-e71c5da077cf.png">
 
 
 ## References
