@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GitHub Actions (for free CI/CD)"
-excerpt: "Build "
+excerpt: "Declare and invoke build and test from within GitHub"
 tags: [GitHub]
 date: "2020-05-09"
 file: "github-actions"
@@ -54,7 +54,7 @@ When developers can merge and deploy code many times in a single day, they can a
 
 1. Workflows are run by <strong>Runners</strong> within a GitHub hosted environment or a self-hosted environment.
 
-   PROTIP: A <strong>job matrix</strong> can generate a maximum of 256 jobs per workflow run. 
+   PROTIP: A <a href="#JobMatrix">job matrix</a> can generate a maximum of 256 jobs per workflow run. 
    This limit also applies to self-hosted runners.
 
 1. PROTIP: Protect the master branch so it can't be inadvertently deleted or broken.
@@ -65,7 +65,7 @@ When developers can merge and deploy code many times in a single day, they can a
 
    PROTIP: To get to the top of the screen to see GitHub's Tabs, on macOS, press command + up_arrow.
 
-   ![github-actions-menu-939x225](https://user-images.githubusercontent.com/300046/81493305-8a1ca100-925c-11ea-9e4f-7fbadf800585.png)
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/81493305-8a1ca100-925c-11ea-9e4f-7fbadf800585.png"><img alt="github-actions-menu-939x225.jpg" src="https://user-images.githubusercontent.com/300046/81493305-8a1ca100-925c-11ea-9e4f-7fbadf800585.png"></a>
 
 
 ## Documentation
@@ -79,13 +79,15 @@ When developers can merge and deploy code many times in a single day, they can a
 
 ## Sample NPM workflow
 
-Let's look at a yaml workflow file used by GitHub Actions.
+1. Let's look at a yaml workflow file used by GitHub Actions.
 
    <a target="_blank" href="
    https://github.com/wilsonmar/ci-with-actions/blob/master/github-actions-for-ci/.github/workflows/nodejs.yml">
    https://github.com/wilsonmar/ci-with-actions/blob/master/github-actions-for-ci/.github/workflows/nodejs.yml</a>
 
    A workflow is a unit of automation from start to finish, including the definition of what triggers the automation, what environment or other aspects should be taken account during the automation, and what should happen as a result of the trigger.
+
+1. See https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions
 
    <a name="OnAction"></a>
 
@@ -100,7 +102,7 @@ Let's look at a yaml workflow file used by GitHub Actions.
     branches: [ master ]
    </pre>
 
-   Alternately,
+   Alternately, to enumerate several branches:
 
    <pre>on:
   push:
@@ -147,16 +149,30 @@ Let's look at a yaml workflow file used by GitHub Actions.
    * macos-latest or macos-10.15
 
 
-   ### job strategy
+   <a name="JobMatrix"></a>
+
+   ### job strategy: matrix
 
    A Job Matrix is designed to build and test code with different environments and configurations.
 
    <pre>   strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x]
+        node-version: [10.x, 12.x]
+        os: [ubuntu-latest, windows-latest, macOS-latest]
    </pre>
 
-   PROTIP: The code above defines variable `${{ matrix.node-version }}` which resolves to "8.x", 10.x", or "12.x" when referenced in the set of steps below, which are repeated automatically for each node-version specified.
+   PROTIP: The code above defines variable `${{ matrix.node-version }}` which resolves to "10.x", or "12.x" when referenced in the set of steps below, which are repeated automatically for each node-version specified.
+
+   CAUTION: Reference the list of releases for the language you're using, such as <a target="_blank" href="https://nodejs.org/en/about/releases/">this one for NodeJs</a>.
+
+   You can also vary the host operating system:
+
+   <pre>   strategy:
+      matrix:
+        node-version: [10.x, 12.x]
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+   </pre>
+
 
 
    ### Steps
@@ -183,7 +199,9 @@ Let's look at a yaml workflow file used by GitHub Actions.
 
    `- uses: actions/checkout@v2`
 
-   `actions` defines an action from <a target="_blank" href="https://github.com/marketplace">GitHub's public Marketplace</a> of <a target="_blank" href="https://github.com/marketplace?type=actions">Actions</a>, stored in <a target="_blank" href="https://github.com/actions/checkout">https://github.com/actions/checkout</a>
+   `actions` defines an action from <a target="_blank" href="https://github.com/marketplace">GitHub's public Marketplace</a> of <a target="_blank" href="https://github.com/marketplace?type=actions">Actions</a>. 
+
+   `checkout@v2` retrieves the latest (such as v2.1.0) in <a target="_blank" href="https://github.com/actions/checkout/releases">https://github.com/actions/checkout/releases</a>. The action's home page is at https://github.com/marketplace/actions/checkout
 
 
    ### - name: step in Actions coding
@@ -227,7 +245,7 @@ VIDEO: Continuous integration with GitHub Actions</a> [1:55:24] at GitHub Satell
 
 1. Go to and fork
    
-   https://github.com/githubsatelliteworkshops/ci-with-actions
+   <a target="_blank" href="https://github.com/githubsatelliteworkshops/ci-with-actions">https://github.com/githubsatelliteworkshops/ci-with-actions</a>
 
    BLAH: The pdf in the link satellite-2020-workshops-ci-with-actions.pdf
    does not have links enabled.
