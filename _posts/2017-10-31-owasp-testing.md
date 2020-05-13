@@ -60,6 +60,49 @@ YouTube videos from F5 DevCentral 2017 by John Wagnon (and Description from OWAS
 
 Cross-Site Request Forgery (CSRF)
 
+<a target="_blank" href="https://owasp.org/www-project-api-security/">API security has its own OWASP Top 10</a>:
+
+1. API1:2019 Broken Object Level Authorization
+
+    APIs tend to expose endpoints that handle object identifiers, creating a wide attack surface Level Access Control issue. Object level authorization checks should be considered in every function that accesses a data source using an input from the user.
+
+2. API2:2019 Broken User Authentication
+
+    Authentication mechanisms are often implemented incorrectly, allowing attackers to compromise authentication tokens or to exploit implementation flaws to assume other user’s identities temporarily or permanently. Compromising system’s ability to identify the client/user, compromises API security overall.
+
+3. API3:2019 Excessive Data Exposure
+
+    Looking forward to generic implementations, developers tend to expose all object properties without considering their individual sensitivity, relying on clients to perform the data filtering before displaying it to the user.
+
+4. API4:2019 Lack of Resources & Rate Limiting
+
+    Quite often, APIs do not impose any restrictions on the size or number of resources that can be requested by the client/user. Not only can this impact the API server performance, leading to Denial of Service (DoS), but also leaves the door open to authentication flaws such as brute force.
+
+5. API5:2019 Broken Function Level Authorization
+
+    Complex access control policies with different hierarchies, groups, and roles, and an unclear separation between administrative and regular functions, tend to lead to authorization flaws. By exploiting these issues, attackers gain access to other users’ resources and/or administrative functions.
+
+6. API6:2019 Mass Assignment
+
+    Binding client provided data (e.g., JSON) to data models, without proper properties filtering based on a whitelist, usually lead to Mass Assignment. Either guessing objects properties, exploring other API endpoints, reading the documentation, or providing additional object properties in request payloads, allows attackers to modify object properties they are not supposed to.
+
+7. API7:2019 Security Misconfiguration
+
+    Security misconfiguration is commonly a result of unsecure default configurations, incomplete or ad-hoc configurations, open cloud storage, misconfigured HTTP headers, unnecessary HTTP methods, permissive Cross-Origin resource sharing (CORS), and verbose error messages containing sensitive information.
+
+8. API8:2019 Injection
+
+    Injection flaws, such as SQL, NoSQL, Command Injection, etc., occur when untrusted data is sent to an interpreter as part of a command or query. The attacker’s malicious data can trick the interpreter into executing unintended commands or accessing data without proper authorization.
+
+9. API9:2019 Improper Assets Management
+
+    APIs tend to expose more endpoints than traditional web applications, making proper and updated documentation highly important. Proper hosts and deployed API versions inventory also play an important role to mitigate issues such as deprecated API versions and exposed debug endpoints.
+
+10. API10:2019 Insufficient Logging & Monitoring
+
+    Insufficient logging and monitoring, coupled with missing or ineffective integration with incident response, allows attackers to further attack systems, maintain persistence, pivot to more systems to tamper with, extract, or destroy data. Most breach studies demonstrate the time to detect a breach is over 200 days, typically detected by external parties rather than internal processes or monitoring.
+
+
 There is also SAN's <a target="_blank" href="https://www.sans.org/top25-software-errors/">Top 25 Software Errors</a> that include
 Insecure Interaction Between Components,
 Risky Resource Management, and
@@ -77,7 +120,23 @@ DAST cannot identify non-reflective vulnerabilities (i.e – Cross-Site Scriptin
 
 ## Get sample broken app
 
-PROTIP: If you run ZAP against a server you don't control, you are hacking that site.
+CAUTION PROTIP: If you run ZAP against a server you don't control, you are hacking that site.
+
+Several apps were created to exhibit vulnerability issues, as examples
+for Static Code vulnerability assessment (SAST) utilities such as GitHub CodeQL, SonarQube, Fortify, etc.. Which utility catches the most issues?
+
+CAUTION: Do not upload it to your hosting provider's public html folder or any Internet facing servers, as they will be compromised.
+
+So these apps should run only inside a guest machine within VirtualBox or VMware set to NAT networking mode. 
+
+### DVWA
+
+Damn Vulnerable Web Application (DVWA) at <a target="_blank" href="http://dvwa.co.uk">http://dvwa.co.uk</a> with code at
+<a target="_blank" href="https://github.com/ethicalhack3r/DVWA">
+https://github.com/ethicalhack3r/DVWA</a> is a PHP/MySQL web application.
+So use <a target="_blank" href="https://www.apachefriends.org/en/xampp.html">XAMPP</a> for its Apache web server and database.
+
+### BWA
 
 Stand-up an instance of the BWA (Broken Web Application),
 a collection of intentionally vulnerable web applications
@@ -299,27 +358,25 @@ You can also:
 
   https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
 
-1. https://en.wikipedia.org/wiki/Veracode at https://www.veracode.com/security/vulnerability-scanning-tools
-   acquired on Nov 5 2018 from Broadcom by private equity firm Thoma Bravo who also funded Compuware and Dynatrace, Solar Winds and McAfee https://thomabravo.com/2018/11/05/thoma-bravo-to-acquire-veracode-software-from-broadcom-inc-nasdaqavgo/
-   Only scans Java.
+1. <a target="_blank" href="https://en.wikipedia.org/wiki/Veracode">Veracode</a> <a target="_blank" href="https://www.veracode.com/security/vulnerability-scanning-tools">Vulnerability Scanning Tools</a> which only scans Java, were acquired on Nov 5 2018 from Broadcom by private equity firm Thoma Bravo who also funded Compuware and Dynatrace, Solar Winds and McAfee <a target="_blank" href="https://thomabravo.com/2018/11/05/thoma-bravo-to-acquire-veracode-software-from-broadcom-inc-nasdaqavgo/">*</a>
 
-2. MicroFocus (formerly HP) https://en.wikipedia.org/wiki/Fortify_Software
-   WebInspect
+2. WebInspect from MicroFocus (formerly HP), a part of the <a target="_blank" href="https://en.wikipedia.org/wiki/Fortify_Software">Fortify suite</a>, which consists of Fortify the SAST product.
+   
+3. <a target="_blank" href="https://www.checkmarx.com/">Checkmarx.com</a>, based in Israel, offers <a target="_blank" href="https://www.checkmarx.com/products/codebashing">Codebashing</a>, a developer education platform for secure coding training.
 
-3. Checkmarx based in Israel, offers Codebashing, a developer education platform for secure coding training.
-
-4. Synopsys acquired Black Duck, Coverity, and  
-   https://en.wikipedia.org/wiki/Cigital
-    Cigital SecureAssist – A lightweight IDE plugin that points out common security vulnerabilities in real time
+4. <a target="_blank" href="https://www.Synopsys.com/">Synopsys.com</a> acquired Black Duck, Coverity, and  
+   <a target="_blank" href="https://en.wikipedia.org/wiki/Cigital">Cigital SecureAssist</a>, a lightweight IDE plugin that points out common security vulnerabilities in real time.
 
 5. IBM AppScan
 
+6. <a target="_blank" href="https://en.wikipedia.org/wiki/Parasoft"> Parasoft</a>
 
-   * https://en.wikipedia.org/wiki/Parasoft Parasoft 
+7. Tenable.io by Nessus
 
-   * Tenable.io Nessus
 
 ## Resources
+
+Daniel Miessler's <a target="_blank" href="https://danielmiessler.com/projects/webappsec_testing_resources/">https://danielmiessler.com/projects/webappsec_testing_resources</a>
 
 <a target="_blank" href="https://app.pluralsight.com/library/courses/owasp-zap-web-app-pentesting-getting-started/table-of-contents">Getting Started with OWASP Zed Attack Proxy (ZAP) for Web Application Penetration Testing</a>	
 1h 40m video course 16 Feb 2017 by Mike Woolard
