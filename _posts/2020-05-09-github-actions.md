@@ -43,7 +43,7 @@ When developers can merge and deploy code many times in a single day, they can a
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/81493305-8a1ca100-925c-11ea-9e4f-7fbadf800585.png"><img alt="github-actions-menu-939x225.jpg" src="https://user-images.githubusercontent.com/300046/81493305-8a1ca100-925c-11ea-9e4f-7fbadf800585.png"></a>
 
-   Click "Set up a workflow yourself" or select a <strong>template</strong> containing pre-populated yml files from various people.
+1. Click "Set up a workflow yourself" or select a <strong>template</strong> containing pre-populated yml files from various people.
 
    PROTIP: You can create and share templates for use by others in your own organization. See <a target="_blank" href="https://help.github.com/en/actions/hosting-your-own-runners">https://help.github.com/en/actions/hosting-your-own-runners</a>
  
@@ -56,10 +56,6 @@ When developers can merge and deploy code many times in a single day, they can a
 1. PROTIP: Protect the master branch so it can't be inadvertently deleted or broken.
 
 1. PROTIP: Setup required reviews so that any pull requests are double checked by teammates.
-
-   `on:` specifications inside that file define a scheduled time when the workflow is <strong>triggered</strong>. 
-
-   Alternately, workflows can be triggered by events in or outside GitHub, such as a git push or a scheduled time.
 
 
 
@@ -111,25 +107,31 @@ https://github.community/t5/GitHub-Actions/bd-p/actions</a>
 
    ### on: scheduled actions
 
-   The on: field is what tells GitHub Actions when to run. 
-   The default trigger is git push. 
+   `on:` specifications inside that file define a scheduled time when the workflow is <strong>triggered</strong>. 
 
-   In this example, we're running the workflow anytime there's a push.
+   Alternately, workflows can be triggered by events in or outside GitHub, such as a git push or a scheduled time.
 
-   <pre>on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+   The default trigger is to run on every push to every branch: 
+
+   <pre>on: [push]
    </pre>
 
-   Alternately, to enumerate several branches:
+   This example is triggered upon a push to either the master branch or a release branch:
 
    <pre>on:
   push:
     branches:
     - master
     - release/*
+   </pre>
+
+   In this example, the workflow is triggered to run the master branch anytime there's a push or pull request.
+
+   <pre>on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
    </pre>
 
    PROTIP: To set a workflow (using <a target="_blank" href="https://crontab.guru/">crontab specifications</a>) to run at 2:00 AM UTC every day, 1=Monday to 5=Friday:
@@ -157,10 +159,9 @@ https://github.community/t5/GitHub-Actions/bd-p/actions</a>
     </pre>
 
    Several `jobs:` blocks define different sections of a Workflow.
+
    
    ### runs-on: job host environment
-
-   `runs-on: ${{ matrix.os }}`
 
    Every job needs a specific <strong>host machine</strong> specified by the <tt>runs-on:</tt> field. This template workflow specifies using the latest version of Ubuntu, a Linux-based operating system.
 
@@ -171,9 +172,13 @@ https://github.community/t5/GitHub-Actions/bd-p/actions</a>
    * macos-latest or macos-10.15
    <br /><br />
 
-   `runs-on: ${{ matrix.os }}` refers to the "os" alternatives in the strategy section.
+   The above specify the <strong>Runner</strong> within a GitHub hosted environment or a self-hosted environment.   
 
-   These specifiy the <strong>Runner</strong> within a GitHub hosted environment or a self-hosted environment.   
+   Ubuntu contains Docker.
+
+   Alternately,
+
+   `runs-on: ${{ matrix.os }}` refers to the "os" alternatives in the strategy section.
 
 
    <a name="JobMatrix"></a>
@@ -238,6 +243,22 @@ https://github.community/t5/GitHub-Actions/bd-p/actions</a>
     </pre>
 
    `-` (a dash) precedes each action.
+
+
+   <a name="Echo"></a>
+
+   ### Echo
+
+   Issue a message by running an echo command:
+
+   <pre>jobs:
+   build:
+      steps:
+        name: Run one-liner
+        run: echo Hello, world!
+   </pre>
+
+   Notice no quote characters.
 
 
    <a name="ActionsCoding"></a>
@@ -448,9 +469,11 @@ VIDEO: Continuous integration with GitHub Actions</a> [1:55:24] at GitHub Satell
 1. [56:11] https://github.com/wilsonmar/github-actions-for-ci/issues/1
 
 
-   ### Create a custom GitHub Actions workflow
+   ### Step 7: Create a custom GitHub Actions workflow
 
 1. [1:06:43] Click "Resume".
+
+
 
 
 ## Create Badge
