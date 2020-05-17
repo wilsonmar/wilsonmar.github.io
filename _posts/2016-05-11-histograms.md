@@ -31,8 +31,8 @@ My favorite approach is to change a pre-defined spreadsheet which includes codin
 
 1. Click to download and open the Histogram-Dynamic.xls Excel file at:
 
-   <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/downloads/Histogram-Dynamic.xlsx">
-   https://github.com/wilsonmar/wilsonmar.github.io/downloads/Histogram-Dynamic.xlsx</a>
+   <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/_downloads/Histogram-Dynamic.xlsx">
+   https://github.com/wilsonmar/wilsonmar.github.io/_downloads/Histogram-Dynamic.xlsx</a>
    
    It contains a <strong>pre-made</strong> histogram which you don't have to construct from scratch. The Excel sheet is from/described <a target="_blank" href="https://www.excelcampus.com/charts/dynamic-histogram/">here</a>, based on <a target="_blank" href="http://peltiertech.com/Excel/Charts/DynamicColumnChart1.html">Jon Peltier's techniques</a>:
 
