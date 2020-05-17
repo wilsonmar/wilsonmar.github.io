@@ -1,14 +1,10 @@
 ---
 layout: post
 title: "Histograms (and Frequency Diagrams in Excel)"
-excerpt: "See your data"
-tags: [apple, mac, setup]
-date: "2016-05-11"
+excerpt: "Visualize your data by splitting them into several bins"
+tags: [apple, mac, setup, viz]
+date: "2020-05-16"
 file: "histograms"
-image:
-  feature: https://cloud.githubusercontent.com/assets/300046/14583248/4b20c578-03d9-11e6-8f7a-c860b666bc73.jpg
-  credit: Wall Street Journal
-  creditlink: http://graphics.wsj.com/job-market-tracker/
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -29,12 +25,14 @@ My favorite approach is to change a pre-defined spreadsheet which includes codin
 
    ![Histogram-dynamic](https://user-images.githubusercontent.com/300046/82109413-de0f0600-96f2-11ea-809d-e046bf5dee01.gif)
 
-1. Click to download and open the Histogram-Dynamic.xls Excel file at:
+1. Click to download the Histogram-Dynamic.xls Excel file at:
 
-   <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/_downloads/Histogram-Dynamic.xlsx">
-   https://github.com/wilsonmar/wilsonmar.github.io/_downloads/Histogram-Dynamic.xlsx</a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/raw/upload/v1589687126/Histogram-Dynamic_nvgxqu.xlsx">
+   https://res.cloudinary.com/dcajqrroq/raw/upload/v1589687126/Histogram-Dynamic_nvgxqu.xlsx</a>
    
    It contains a <strong>pre-made</strong> histogram which you don't have to construct from scratch. The Excel sheet is from/described <a target="_blank" href="https://www.excelcampus.com/charts/dynamic-histogram/">here</a>, based on <a target="_blank" href="http://peltiertech.com/Excel/Charts/DynamicColumnChart1.html">Jon Peltier's techniques</a>:
+
+1. Click Save, OK, then open the file.
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/82134608-905bd180-97b6-11ea-82d9-464db1e12ddf.jpg"><img alt="histogram-freq-formula-1035x458.jpg" src="https://user-images.githubusercontent.com/300046/82134608-905bd180-97b6-11ea-82d9-464db1e12ddf.jpg"></a>
 
@@ -162,6 +160,9 @@ My favorite approach is to change a pre-defined spreadsheet which includes codin
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/82134608-905bd180-97b6-11ea-82d9-464db1e12ddf.jpg"><img alt="histogram-freq-formula-1035x458.jpg" src="https://user-images.githubusercontent.com/300046/82134608-905bd180-97b6-11ea-82d9-464db1e12ddf.jpg"></a>
 
 1. Press <strong>shift+command+return</strong> to save the array.
+
+1. Change "Age Group" to the X-axis name, such as "MB in repo".
+
 
    ### Adjust ranges
 
