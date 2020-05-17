@@ -392,6 +392,7 @@ VIDEO: Continuous integration with GitHub Actions</a> [1:55:24] at GitHub Satell
    1. Share the workflow with the team
    Merge the pull request containing your first workflow so the entire team can use it
 
+
    1. Create a custom GitHub Actions workflow
    Edit the existing workflow with new build targets
 
@@ -469,7 +470,7 @@ VIDEO: Continuous integration with GitHub Actions</a> [1:55:24] at GitHub Satell
 1. [56:11] https://github.com/wilsonmar/github-actions-for-ci/issues/1
 
 
-   ### Step 7: Create a custom GitHub Actions workflow
+   ### Step 7: (Work Session 2) Create a custom GitHub Actions workflow
 
 1. [1:06:43] Click "Resume".
 
