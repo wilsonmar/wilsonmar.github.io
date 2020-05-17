@@ -27,8 +27,8 @@ My favorite approach is to change a pre-defined spreadsheet which includes codin
 
 1. Click to download the Histogram-Dynamic.xls Excel file at:
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/raw/upload/v1589687126/Histogram-Dynamic_nvgxqu.xlsx">
-   https://res.cloudinary.com/dcajqrroq/raw/upload/v1589687126/Histogram-Dynamic_nvgxqu.xlsx</a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/raw/upload/v1589759018/Histogram-Dynamic_re4yrn.xlsx">
+   https://res.cloudinary.com/dcajqrroq/raw/upload/v1589759018/Histogram-Dynamic_re4yrn.xlsx</a>
    
    It contains a <strong>pre-made</strong> histogram which you don't have to construct from scratch. The Excel sheet is from/described <a target="_blank" href="https://www.excelcampus.com/charts/dynamic-histogram/">here</a>, based on <a target="_blank" href="http://peltiertech.com/Excel/Charts/DynamicColumnChart1.html">Jon Peltier's techniques</a>:
 
@@ -118,9 +118,10 @@ My favorite approach is to change a pre-defined spreadsheet which includes codin
 1. Click on cell C9 to change the Chart Title.
 1. Triple-click the text to select it all to type over your text.
 
-   ### Edit Frequency Array
 
-1. Click on cell E13 under the Frequency heading. Notice its formula:
+   ### Select array for delete
+
+1. Click on cell E13 the first cell immediately under the Frequency heading. Notice its current formula:
 
    <tt>{=FREQUENCY(tblData[Age],C13:C22)}</tt>
 
@@ -137,11 +138,13 @@ My favorite approach is to change a pre-defined spreadsheet which includes codin
    PROTIP: Among <a target="_blank" href="https://support.office.com/en-us/article/rules-for-changing-array-formulas-8a80c2c1-44c1-42c3-88c1-37a3a7c2d367">
    Microsoft's Rules</a> is that if you try to change or delete cells in an array formula, you'll see a "You cannot change part of an array" error.
 
-1. To <a target="_blank" href="https://support.office.com/en-us/article/delete-or-remove-a-formula-193dbbed-6fcf-4f07-9119-5acff81b89c5">delete the entire formula</a>: click a cell within the array. In the Home tab, if there is "Editing", click that. Click the icon to the right of "Find & Select", "Go To Special".
+1. To <a target="_blank" href="https://support.office.com/en-us/article/delete-or-remove-a-formula-193dbbed-6fcf-4f07-9119-5acff81b89c5">
+   delete the entire formula</a>: click a cell within the array. In the Home tab, if there is "Editing", click that. Click the icon to the right of "Find & Select", "Go To Special".
 
    <img width="193" alt="histogram-gotospecial" src="https://user-images.githubusercontent.com/300046/82133740-bed4af00-97ac-11ea-8544-05f2e2afc18d.png">
 
-1. Select "Current Array", then OK. Now you can press Delete on the keyboard.
+1. Select "Current Array", then OK. Now you can press <stgon>Delete</strong> on the keyboard.
+
 
    ### Rebuid the array
 
