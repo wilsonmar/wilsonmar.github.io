@@ -108,8 +108,6 @@ My favorite way approach is to change a pre-defined spreadsheet which includes c
 1. Click on cell F4. In the formula, double-click "tblData" and press command+V to paste in its place the "Repo_mb" Range Name.
 1. Click on cell F5. In the formula, double-click "tblData" and press command+V to paste in its place the "Repo_mb" Range Name.
 
-1. PROTIP: You may need to remove extremely large (outlier) values if they are either input errors or values that would distort the analysis about the remainder of the population. Right-click on F5 to select Copy. Switch to the "Data" sheet and command+F to find that value. Right-click on the value to select "Delete...". Select 
-
    ![histogram-delete-row-207x206](https://user-images.githubusercontent.com/300046/82128069-59190080-9775-11ea-8f0b-15067d57da91.jpg)
 
 1. Click on cell C5 to change the maximum value included in the Histogram. PROTIP: Make the maximum value in the Histogram larger than the largest value in the population which is also easily divisible. For example, the maximum population value of 40,034 would have a Histogram max. value like 50,000.
@@ -136,17 +134,38 @@ My favorite way approach is to change a pre-defined spreadsheet which includes c
    PROTIP: Among <a target="_blank" href="https://support.office.com/en-us/article/rules-for-changing-array-formulas-8a80c2c1-44c1-42c3-88c1-37a3a7c2d367">
    Microsoft's Rules</a> is that if you try to change or delete cells in an array formula, you'll see a "You cannot change part of an array" error.
 
-1. To <a target="_blank" href="https://support.office.com/en-us/article/delete-or-remove-a-formula-193dbbed-6fcf-4f07-9119-5acff81b89c5">delete the entire formula</a>: click a cell within the array. In the Home tab, click the icon to the right of "Find & Select", "Go To Special"
+1. To <a target="_blank" href="https://support.office.com/en-us/article/delete-or-remove-a-formula-193dbbed-6fcf-4f07-9119-5acff81b89c5">delete the entire formula</a>: click a cell within the array. In the Home tab, if there is "Editing", click that. Click the icon to the right of "Find & Select", "Go To Special".
 
    <img width="193" alt="histogram-gotospecial" src="https://user-images.githubusercontent.com/300046/82133740-bed4af00-97ac-11ea-8544-05f2e2afc18d.png">
 
 1. Select "Current Array", then OK. Now you can press Delete on the keyboard.
 
-1. Click on the first cell (E13) to enter the function:
+   ### Rebuid the array
 
-   <tt>=FREQUENCY(Repo_Size_mb,C14:C23)</tt>
+1. Click the top cell of the Frequency array (E13).
+1. Hold the shift key and click the last cell of the Frequency array, which is one more row than the bins for the <strong>spillover</strong> row.
 
-1. On macOS, press <strong>shift+command+return</strong> to save the array.
+   NOTE: The spillover row's value is not displayed in the Histogram (which is the reason why it exists).
+
+1. Click on the formula bar (to the right of the "fx" icon).
+1. Copy the formula below and paste it in the formula bar:
+
+   <tt>=FREQUENCY(Repo_Size_mb,C13:C22)</tt>
+
+   You know you have it right when the bins array is highlighted in blue:
+
+   ![histogram-freq-formula-1035x458](https://user-images.githubusercontent.com/300046/82134608-905bd180-97b6-11ea-82d9-464db1e12ddf.jpg)
+
+1. Press <strong>shift+command+return</strong> to save the array.
+
+   ### Adjust ranges
+
+   PROTIP: The special feature of the sample spreadsheet is that if there are a few extremely large numbers (outliers) at the leftmost or rightmost column that would distort the analysis about the remainder of the population, exclude them by changing the value in cells C4 and C5, which define the minimum and maximum values of data presented in the Histogram.
+
+ 1. Too many zero-valued
+
+1. If you prefer to remove extremely large (outlier) values permanently, right-click on F5 to select Copy of the value. Switch to the "Data" sheet and command+F to find that value. Right-click on the value to select "Delete...". Select 
+
 
 
    ### Range Names
