@@ -25,13 +25,13 @@ Throughout this page are "PROTIP" flags that highlight advice from experience no
 
 ### A dynamic Histogram
 
-My favorite way approach is to change a pre-defined spreadsheet which includes coding to provide a dynamic slider to control how many bins are shown:
+My favorite approach is to change a pre-defined spreadsheet which includes coding to provide a dynamic slider to control how many bins are shown:
 
    ![Histogram-dynamic](https://user-images.githubusercontent.com/300046/82109413-de0f0600-96f2-11ea-809d-e046bf5dee01.gif)
 
-1. <a target="_blank" href="[Histogram-Dynamic.xlsx](https://github.com/wilsonmar/wilsonmar.github.io/files/4637768/Histogram-Dynamic.xlsx)">Click here to download the Histogram-Dynamic.xls Excel file</a>, which contains a <strong>pre-made</strong> histogram which you don't have to construct from scratch. The Excel sheet is from/described at <a target="_blank" href="https://www.excelcampus.com/charts/dynamic-histogram/">https://www.excelcampus.com/charts/dynamic-histogram</a>, based on <a target="_blank" href="http://peltiertech.com/Excel/Charts/DynamicColumnChart1.html">Jon Peltier's techniques</a>:
+1. <a target="_blank" href="[Histogram-Dynamic.xlsx](https://github.com/wilsonmar/wilsonmar.github.io/files/4639572/Histogram-Dynamic.xlsx)">Click here to download the Histogram-Dynamic.xls Excel file</a>, which contains a <strong>pre-made</strong> histogram which you don't have to construct from scratch. The Excel sheet is from/described <a target="_blank" href="https://www.excelcampus.com/charts/dynamic-histogram/">here</a>, based on <a target="_blank" href="http://peltiertech.com/Excel/Charts/DynamicColumnChart1.html">Jon Peltier's techniques</a>:
 
-   ![histogram-landing-640x429](https://user-images.githubusercontent.com/300046/82134091-e75ea800-97b0-11ea-9853-fe883df10208.jpg)
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/82134608-905bd180-97b6-11ea-82d9-464db1e12ddf.jpg"><img alt="histogram-freq-formula-1035x458.jpg" src="https://user-images.githubusercontent.com/300046/82134608-905bd180-97b6-11ea-82d9-464db1e12ddf.jpg"></a>
 
    Colored cells are where values and formulas are changed for alternate data.
 
@@ -48,7 +48,7 @@ My favorite way approach is to change a pre-defined spreadsheet which includes c
    Notice that when the slider is moved, the Bin Count and Bin Size (B5 and B6) changes,
    as well as data with the "Chart Data" box. As the Bin Count changes, different rows are used in the Chart Data box.
 
-1. Click on cell F5. Notice is displays the maximum values within the data range named. Cell F4 displays the minimum values in the same range.
+1. Click on cell F5. Notice it displays the maximum values within the data range named. Cell F4 displays the minimum values in the same range.
 
    The "BinsArray" column contains the upper limit for each step in the Histogram.
 
