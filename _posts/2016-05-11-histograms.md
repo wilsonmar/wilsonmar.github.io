@@ -29,7 +29,12 @@ My favorite approach is to change a pre-defined spreadsheet which includes codin
 
    ![Histogram-dynamic](https://user-images.githubusercontent.com/300046/82109413-de0f0600-96f2-11ea-809d-e046bf5dee01.gif)
 
-1. <a target="_blank" href="[Histogram-Dynamic.xlsx](https://github.com/wilsonmar/wilsonmar.github.io/files/4639572/Histogram-Dynamic.xlsx)">Click here to download the Histogram-Dynamic.xls Excel file</a>, which contains a <strong>pre-made</strong> histogram which you don't have to construct from scratch. The Excel sheet is from/described <a target="_blank" href="https://www.excelcampus.com/charts/dynamic-histogram/">here</a>, based on <a target="_blank" href="http://peltiertech.com/Excel/Charts/DynamicColumnChart1.html">Jon Peltier's techniques</a>:
+1. Click to download and open the Histogram-Dynamic.xls Excel file at:
+
+   <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/downloads/Histogram-Dynamic.xlsx">
+   https://github.com/wilsonmar/wilsonmar.github.io/downloads/Histogram-Dynamic.xlsx</a>
+   
+   It contains a <strong>pre-made</strong> histogram which you don't have to construct from scratch. The Excel sheet is from/described <a target="_blank" href="https://www.excelcampus.com/charts/dynamic-histogram/">here</a>, based on <a target="_blank" href="http://peltiertech.com/Excel/Charts/DynamicColumnChart1.html">Jon Peltier's techniques</a>:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/82134608-905bd180-97b6-11ea-82d9-464db1e12ddf.jpg"><img alt="histogram-freq-formula-1035x458.jpg" src="https://user-images.githubusercontent.com/300046/82134608-905bd180-97b6-11ea-82d9-464db1e12ddf.jpg"></a>
 
@@ -154,7 +159,7 @@ My favorite approach is to change a pre-defined spreadsheet which includes codin
 
    You know you have it right when the bins array is highlighted in blue:
 
-   ![histogram-freq-formula-1035x458](https://user-images.githubusercontent.com/300046/82134608-905bd180-97b6-11ea-82d9-464db1e12ddf.jpg)
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/82134608-905bd180-97b6-11ea-82d9-464db1e12ddf.jpg"><img alt="histogram-freq-formula-1035x458.jpg" src="https://user-images.githubusercontent.com/300046/82134608-905bd180-97b6-11ea-82d9-464db1e12ddf.jpg"></a>
 
 1. Press <strong>shift+command+return</strong> to save the array.
 
