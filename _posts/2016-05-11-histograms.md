@@ -171,13 +171,10 @@ My favorite approach is to change a pre-defined spreadsheet which includes codin
 
    PROTIP: The special feature of the sample spreadsheet is that if there are a few extremely large numbers (outliers) at the leftmost or rightmost column that would distort the analysis about the remainder of the population, exclude them by changing the value in cells C4 and C5, which define the minimum and maximum values of data presented in the Histogram.
 
- 1. Too many zero-valued
-
 1. If you prefer to remove extremely large (outlier) values permanently, right-click on F5 to select Copy of the value. Switch to the "Data" sheet and command+F to find that value. Right-click on the value to select "Delete...". Select 
 
 
-
-   ### Range Names
+   ### Extrangeous Range Names
 
 1. Type in a new name in the box under heading "Enter a name for the data range:".
 1. Click OK to dismiss the dialog, which creates the name range.

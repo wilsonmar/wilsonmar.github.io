@@ -541,6 +541,10 @@ Oh See Media
 https://coletiv.com/blog/how-to-setup-continuous-integration-and-deployment-workflows-for-reactjs-using-github-actions/
 
 
+<a target="_blank" href="https://www.brighttalk.com/webcast/18268/406190">
+VIDEO: Unlocking the Cloud Operating Model with GitHub Actions</a>
+by Steve Winton, Senior Partner Engineer, GitHub
+
 
 ## Those using Actions
 

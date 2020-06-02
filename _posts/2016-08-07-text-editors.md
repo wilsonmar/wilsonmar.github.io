@@ -62,6 +62,7 @@ Licensed IDEs:
    * IntelliJ for Java, WebStorm and PhpStorm, $200 PyCharm for Python. All from JetBrains
    * <a href="#VisualStudioForMac">Visual Studio 2019 for Mac from Microsoft</a> (ported from Visual Studio, which is licensed) for developing <a target="_blank" href="https://wilsonmar.github.io/xamarion/">Xamarin</a> and Unity apps in the C# language
    * $49.99 <a target="_blank" href="https://www.barebones.com/products/bbedit/">BBEdit</a> has a 30-day evaluation period.
+   * <a target="_blank" href="https://www.activestate.com/products/komodo-ide/">multi-platform Komodo IDE</a> since 2018 is "free" as is part of an ActiveState Platform subscription. Its plug-ins are based on Mozilla add-ons such as a DOM Inspector.
 
 On-line (SaaS) browser-based subscriptions avoids need for setup and makes collaboration easier:
 
@@ -103,6 +104,21 @@ Intelligent adaptation depending on type of format (Markdown, Java, Bash, etc.):
 * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ms-vsts.team">Azure Repos</a> to connect to Azure DevOps Services and Team Foundation Server supportkng Team Foundation Version Control (TFVC). 
 
 <hr />
+
+## Configuration
+
+Here are the settings to make IDE clean of distractions and keyboard (rather than mouse) based:
+
+   * Hide the status bars on the top and bottom
+
+   * Disable file map at the right side, to recover space to see wider lines.
+
+   * Disable tabs, because it’s hard to remember if you have the file opened in tab and switching between tabs takes time.
+
+   * Set custom theme, font size and line-height using the more visually pleasant <strong>golden ratio</strong>.
+
+   * Hide the file explorer.
+
 
 <a name="LastLine"></a>
 

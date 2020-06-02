@@ -3,7 +3,7 @@ layout: post
 title: "Test for OWASP using ZAP on the Broken Web App"
 excerpt: "Practice penetration testing identifying security vulnerabilities in sample BWA app"
 tags: [API, devsecops]
-date: "2018-07-18"
+date: "2020-05-21"
 file: "owasp-testing"
 image:
 # devsecops-diagram-784x232.png
@@ -19,46 +19,63 @@ comments: true
 
 ## Penetration (Pen) Testing Tools
 
-Among <a target="_blank" href=" https://www.owasp.org/index.php/Appendix_A:_Testing_Tools">web app penetration testing tools</a>,
-the <a target="_blank" href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">Zed Attack Proxy (ZAP)</a>
+Among Dynamic App Security Testing (DAST) run while the app under test is running  <a target="_blank" href=" https://www.owasp.org/index.php/Appendix_A:_Testing_Tools">web app penetration testing tools</a>:
+
+A. The <a target="_blank" href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">Zed Attack Proxy (ZAP)</a>
 is offered free, and is actively maintained by hundreds of international volunteers. 
 Use it to scan for security vulnerabilities in your web applications while you are developing and testing your applications. 
 
-ZAP is a tool for Dynamic App Security Testing (DAST) run while the app under test is running.
+B. WebInspect from MicroFocus (formerly HP).
 
-By contrast SAST (Static App Security Testing) tools focus on scanning application source code for vulnerabilities in coding. Static Application Security Testing (SAST) vendors include Veracode, Perforce, http://www.castsoftware.com/ and Checkmarx, which adds an agent running along the app to report to a central Security Handler, called Interactive App Security Testing (IAST).
+C. Burp Suite (Pro)
+D. Dirtbuster
+
+## SAST
+By contrast SAST (Static App Security Testing) tools focus on scanning <strong>application source code</strong> for vulnerabilities in coding. Static Application Security Testing (SAST) vendors include Veracode, Perforce, http://www.castsoftware.com/ and Checkmarx, which adds an agent running along the app to report to a central Security Handler, called Interactive App Security Testing (IAST).
 
 Security tests should also cover the efficacy of Runtime Application Self-Protection (RASP) built within apps, rather than relying completely on the infrastructure Web Application Firewall (WAF).
 
 ## OWASP Top 10
 
-ZAP looks for vulnerabilities described by the non-profit OWASP (Open Web Application Security Project)
+DAST (like ZAP) look for vulnerabilities described by the non-profit OWASP (Open Web Application Security Project)
 <a target="_blank" href="https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project">OWASP (Open Web Application Security Project) Top 10</a> - <a target="_blank" href="https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf">2017 PDF</a>:
 
 YouTube videos from F5 DevCentral 2017 by John Wagnon (and Description from OWASP):
 
-   1. <a target="_blank" href="https://www.youtube.com/watch?v=rWHvp7rUka8&index=82&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC">Injection Attacks</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection">Description</a>, <a target="_blank" href="https://devcentral.f5.com/articles/owasp-mitigation-strategies-part-1-injection-attacks">blog article</a>)
+   1. <a target="_blank" href="https://www.youtube.com/watch?v=rWHvp7rUka8&index=82&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC">VIDEO:
+   Injection Attacks</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection">Description</a>, <a target="_blank" href="https://devcentral.f5.com/articles/owasp-mitigation-strategies-part-1-injection-attacks">blog article</a>)
 
-   2. <a target="_blank" href="https://www.youtube.com/watch?v=mruO75ONWy8&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=84">Broken Authentication</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication">Description</a>)
+   2. <a target="_blank" href="https://www.youtube.com/watch?v=mruO75ONWy8&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=84">VIDEO: 
+   Broken Authentication</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication">Description</a>)
 
-   3. <a target="_blank" href="https://www.youtube.com/watch?v=2RKbacrkUBU&index=83&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC">Sensitive Data Exposure</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure">Description</a>)
+   3. <a target="_blank" href="https://www.youtube.com/watch?v=2RKbacrkUBU&index=83&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC">VIDEO:
+   Sensitive Data Exposure</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure">Description</a>)
 
-   4. <a target="_blank" href="https://www.youtube.com/watch?v=g2ey7ry8_CQ&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=87">XML External Entities (XXE)</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)">Description</a>)
+   4. <a target="_blank" href="https://www.youtube.com/watch?v=g2ey7ry8_CQ&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=87">VIDEO:
+   XML External Entities (XXE)</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)">Description</a>)
 
-   5. <a target="_blank" href="https://www.youtube.com/watch?v=P38at6Tp8Ms&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=88">Broken Access Control</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control">Description</a>)
+   5. <a target="_blank" href="https://www.youtube.com/watch?v=P38at6Tp8Ms&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=88">VIDEO:
+   Broken Access Control</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control">Description</a>)
 
-   6. <a target="_blank" href="https://www.youtube.com/watch?v=JuGSUMtKTPU&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=90">Security Misconfiguration</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration">Description</a>)
+   6. <a target="_blank" href="https://www.youtube.com/watch?v=JuGSUMtKTPU&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=90">VIDEO:
+   Security Misconfiguration</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration">Description</a>)
 
-   7. <a target="_blank" href="https://www.youtube.com/watch?v=IuzU4y-UjLw&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=92">Cross-Site Scripting (XSS)</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)">Description</a>)
+   7. <a target="_blank" href="https://www.youtube.com/watch?v=IuzU4y-UjLw&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=92">VIDEO:
+   Cross-Site Scripting (XSS)</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)">Description</a>)
 
-   8. <a target="_blank" href="https://www.youtube.com/watch?v=nkTBwbnfesQ&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=94">Insecure Deserialization</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization">Description</a>)
+   8. <a target="_blank" href="https://www.youtube.com/watch?v=nkTBwbnfesQ&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=94">VIDEO:
+   Insecure Deserialization</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization">Description</a>)
 
-   9. <a target="_blank" href="https://www.youtube.com/watch?v=IGsNYVDKRV0&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=97">Using Components with Known Vulnerabilities</a>  (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities">Description</a>)
+   9. <a target="_blank" href="https://www.youtube.com/watch?v=IGsNYVDKRV0&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=97">VIDEO:
+   Using Components with Known Vulnerabilities</a>  (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities">Description</a>)
 
-   10. <a target="_blank" href="https://www.youtube.com/watch?v=mruO75ONWy8&index=84&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC">Insufficient Logging and Monitoring</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A10-Insufficient_Logging%26Monitoring">Description</a>)
+   10. <a target="_blank" href="https://www.youtube.com/watch?v=mruO75ONWy8&index=84&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC">VIDEO:
+   Insufficient Logging and Monitoring</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A10-Insufficient_Logging%26Monitoring">Description</a>)
    <br /><br />
 
-Cross-Site Request Forgery (CSRF)
+Also: Cross-Site Request Forgery (CSRF)
+
+## API Security 
 
 <a target="_blank" href="https://owasp.org/www-project-api-security/">API security has its own OWASP Top 10</a>:
 
@@ -111,7 +128,7 @@ Porous Defenses
 Additionally:
 * Payment Card Industry Data Security Standard (PCI DSS)
 * Health Insurance Portability and Accountability Act (HIPAA)
-* Motor Industry Software Reliability Association (MISRA)
+* Motor Industry Software Reliability Association (MISRA) C/C++ coding standards
 
 ## Test Scope
 
@@ -120,14 +137,19 @@ DAST cannot identify non-reflective vulnerabilities (i.e – Cross-Site Scriptin
 
 ## Get sample broken app
 
-CAUTION PROTIP: If you run ZAP against a server you don't control, you are hacking that site.
-
 Several apps were created to exhibit vulnerability issues, as examples
 for Static Code vulnerability assessment (SAST) utilities such as GitHub CodeQL, SonarQube, Fortify, etc.. Which utility catches the most issues?
 
 CAUTION: Do not upload it to your hosting provider's public html folder or any Internet facing servers, as they will be compromised.
 
 So these apps should run only inside a guest machine within VirtualBox or VMware set to NAT networking mode. 
+
+CAUTION PROTIP: If you run ZAP against a server you don't control, you are hacking that site.
+
+### Juice Shop
+Perhaps the most modern sample vulnerabler web app is <a target="_blank" href="https://owasp-juice.shop">Juice Shop</a> maintained by OWSAP by volunteers at <a target="_blank" href="https://juice-shop.herokuapp.com/#/">https://juice-shop.herokuapp.com/</a>
+book: "Pwning OWASP Juice Shop" at <a target="_blank" href="https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content">https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content</a> referencing code at 
+<a target="_blank" href="https://github.com/bkimminich/juice-shop">https://github.com/bkimminich/juice-shop</a>.
 
 ### DVWA
 
