@@ -18,6 +18,20 @@ comments: true
 
 Here are examples of what some websites can do to achieve a look that is clean, easy, fun, etc.
 
+## JavaScript Frameworks
+
+In 2020, JavaScript frameworks based on WebAssembly are the new darlings for their speed with small footprint (Lines of Code)
+<a target="_blank" href="https://medium.com/dailyjs/a-realworld-comparison-of-front-end-frameworks-2020-4e50655fe4c1">
+This article</a> is 
+by Eric Simons, who built <a target="_blank" href="https://medium.com/@ericsimons/introducing-realworld-6016654d36b5">"RealWord" apps</a> at <a target="_blank" href="https://github.com/gothinkster/realworld
+">https://github.com/gothinkster/realworld</a> 
+in React and several technologies. [https://gitter.im/realworld-dev/main]
+
+The <a target="_blank" href="https://github.com/gothinkster/apprun-realworld-example-app">
+RealWord example written using AppRun</a> seems to best fit the criteria of fast speed and small size (lines of code).
+<a target="_blank" href="https://apprun.js.org/">apprun.js.org</a> means AppRun is a MIT-licensed free JavaScript framework, so npm.
+
+
 ### Header #
 
 ![ui uber heading 650x169-24kb](https://cloud.githubusercontent.com/assets/300046/17858994/191a0122-6845-11e6-826f-46d78cefa94f.jpg)

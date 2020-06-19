@@ -185,15 +185,14 @@ If you didn't mean to fork a repository, but you did anyway,
 
    ### Un-Add/Reset from Staging
 
-   To remove a specified [file] (such as README.md) just from the staging area, 
+   To remove a specified [file] (such as README.md) just from the staging area (undo git add), 
    but leave the working directory unchanged:
 
    <pre><strong>git reset <em>[file]</em>
    </strong></pre>
 
    Alternately, the Staging area is also called <strong>cache</strong> 
-   because the command to 
-   <strong>remove</strong> a file in Staging:
+   because the command to <strong>remove</strong> a file in Staging:
 
    <pre><strong>git rm --cached <em>[file]</em>
    </strong></pre>
@@ -201,12 +200,11 @@ If you didn't mean to fork a repository, but you did anyway,
    * Specifying git rm without --cached removes the file from both cached and working directory.
    <br /><br />
 
-   To <strong>remove every file</strong> from Git's index/Staging:
+   To <strong>remove every file</strong> from Git's index/Staging, add <tt>-r .</tt> (with the dot representing all files and folders under the current folder):
 
    <pre><strong>git rm --cached -r .
    </strong></pre>
 
-   * The -r means -recursive of all files and folders under the current folder.
 
    [<a target="_blank" href="https://git-scm.com/docs/git-reset/">SCM</a>],
    <a href="https://wilsonmar.github.io/git-basics#Add">Return</a>

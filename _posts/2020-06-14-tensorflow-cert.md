@@ -1,0 +1,140 @@
+---
+layout: post
+title: "TensorFlow"
+excerpt: "TensorFlow Certification"
+tags: [TensorFlow, AI, Machine Learning]
+date: "2020-06-14"
+file: "tensorflow-cert"
+image:
+# https://blog.tensorflow.org/2019/01/whats-coming-in-tensorflow-2-0.html
+  feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
+  credit: TensorFlow.org
+  creditlink: https://blog.tensorflow.org/2019/01/whats-coming-in-tensorflow-2-0.html
+comments: true
+---
+<i>{{ page.excerpt }}</i>
+{% include l18n.html %}
+{% include _toc.html %}
+
+
+Here are links to each skill to be tested by the $100 5-hour 
+<a target="_blank" href="https://www.tensorflow.org/certificate">Tensorflow Certification Exam</a>, 
+according to the <a target="_blank" href="https://www.tensorflow.org/site-assets/downloads/marketing/cert/TF_Certificate_Candidate_Handbook.pdf">Certificate Candidate Handbook pdf</a>:
+
+## Categories
+
+1. <a href="#BuildNN">Build and train neural network models using TensorFlow 2.x</a>
+2. <a href="#ImageClas">Image classification</a>
+3. <a href="#NLP">Natural language processing (NLP)</a>
+4. <a href="#TimeSeries">Time series, sequences, and predictions</a>
+<br /><br />
+
+These certification topics are arranged differently than documentation:
+
+<a target="_blank" href="https://www.tensorflow.org/tutorials">Tutorials</a> arranges topics by order of difficulty:
+
+   * BEGINNER: ML basics with Keras
+   * BEGINNER: Load and preprocess data
+   * BEGINNER: Estimator
+
+   * ADVANCED: Customization
+   * ADVANCED: Distributed training
+   * ADVANCED: Images
+   * ADVANCED: Text
+   * ADVANCED: Structured data
+   * ADVANCED: Generative
+   * ADVANCED: Interoperability
+
+The <a target="_blank" href="https://www.tensorflow.org/guide">Guide</a> arranges topics by type:
+
+   * TensorFlow 2
+   * Keras
+   * Estimators
+   * Customization
+   * Data input pipelines
+   * Save a model
+   * Accelerators
+   * Performance
+   * Appendix: Version compatibility
+
+<hr />
+
+<a name="BuildNN"></a>
+
+### Build and train neural network models using TensorFlow 2.x
+
+You need to understand the foundational principles of machine learning (ML) and deep learning (DL) using TensorFlow 2.x:
+
+* Use TensorFlow 2.x.
+* Build, compile, and train machine learning (ML) models using TensorFlow.
+* Preprocess data to get it ready for use in a model.
+* Use models to predict results.
+* Build sequential models with multiple layers.
+* Build and train models for binary classification.
+* Build and train models for multi-class categorization.
+* Plot loss and accuracy of a trained model.
+* Identify strategies to prevent overfitting, including augmentation and dropout.
+* Use pretrained models (transfer learning).
+* Extract features from pre-trained models.
+* Ensure that inputs to a model are in the correct shape.
+* Ensure that you can match test data to the input shape of a neural network.
+* Ensure you can match output data of a neural network to specified input shape for test data. 
+* Understand batch loading of data.
+
+* Use callbacks to trigger the end of training cycles.
+* Use datasets from different sources.
+* Use datasets in different formats,including json and csv.
+* Use datasets from tf.data.datasets.
+
+<a name="ImageClas"></a>
+
+###  (2) Image classification
+
+You need to understand how to build image recognition and object detection models with deep neural networks and convolutional neural networks using TensorFlow 2.x:
+
+* Define Convolutional neural networks with Conv2D and pooling layers. 
+* Build and train models to process real-world image datasets.
+* Understand how to use convolutions to improve your neural network. 
+* Use real-world images in different shapes and sizes.
+* Use image augmentation to prevent overfitting.
+* Use Image Data Generator.
+* Understand how ImageDataGenerator labels images based on the directory structure.
+
+<a name="NLP"></a>
+
+### Natural language processing (NLP)
+
+You need to understand how to use neural networks to solve natural language processing problems using TensorFlow. 
+
+* Build natural language processing systems using TensorFlow.
+* Prepare text to use in TensorFlow models.
+* Build models that identify the category of a piece of text using binary categorization.
+* Build models that identify the category of a piece of text using multi-class categorization.
+* Use word embeddings in your TensorFlow model.
+* Use LSTMs in your model to classify text for either binary or multi-class categorization. 
+* Add RNN and GRU layers to your model.
+* Use RNNS, LSTMs, GRUs and CNNs in models that work with text.
+* Train LSTMs on existing text to generate text (such as songs and poetry).
+
+<a name="TimeSeries"></a>
+
+### Time series, sequences, and predictions
+
+You need to understand how to solve time series and forecasting problems in TensorFlow.
+You need to know how to:
+
+* Train, tune, and use timeseries, sequence and prediction models.
+* Prepare data for time series learning.
+* Understand MeanAverageError(MAE) and how it can be used to evaluate accuracy of sequence models.
+* Use RNNs and CNNs for timeseries, sequence, and forecasting models.
+* Identify when to use trailing versus centred windows.
+* Use TensorFlow for forecasting.
+* Prepare features and labels.
+* Identify and compensate for sequence bias.
+* Adjust the learning rate dynamically in time series, sequence, and prediction models.
+
+
+## Social
+
+https://blog.tensorflow.org/2020/05/tensorflow-user-groups-updates-from-around-the-world.html
+

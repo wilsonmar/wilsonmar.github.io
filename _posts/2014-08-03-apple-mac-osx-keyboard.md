@@ -834,6 +834,19 @@ Multiplexer
 https://github.com/Bash-it/bash-it
 community Bash framework of autocompletion, themes, aliases, custom functions that rips off https://github.com/robbyrussell/oh-my-zsh 
 
+## Outlook
+
+Among the <a target="_blank" href="https://support.microsoft.com/en-us/office/keyboard-shortcuts-for-outlook-3cdeb221-7ae5-4c1d-8c1d-9e63216c1efd?ui=en-us&rs=en-us&ad=us">
+Keyboard Shortcuts for Outlook on macOS</a>:
+
+Minimize or expand the ribbon = Options+ COMMAND +R
+
+Hide the reading pane or show it on the right = COMMAND +Backslash (\)
+
+Hide the reading pane or show it below = Shift+ COMMAND +Backslash (\)
+
+
+
 ## More on OSX #
 
 This is one of a series on Mac OSX:

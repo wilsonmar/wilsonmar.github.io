@@ -152,7 +152,7 @@ My main criteria is a <strong>narrow</strong> font so more characters fit on a l
 
 ### Vera Mono
 
-This is the standard monospaced font in Fedora Linux.﻿
+This is the standard monospaced font in Fedora Linux.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=61zHuzTSROQ">
 Todd McLeod's Favorite IDE Font</a> video with install on Gogland.
@@ -224,6 +224,32 @@ The font family, called Go, includes proportional- and fixed-width faces in norm
 https://blog.golang.org/go-fonts
 
 
+### Fira Code
+
+Shell Prompt Font: Fira Code at 
+<a target="_blank" href="https://github.com/tonsky/FiraCode">
+https://github.com/tonsky/FiraCode</a>
+
+
+<pre>brew tap homebrew/cask-fonts
+brew cask install font-fira-code
+</pre>
+
+The response at time of writing:
+
+<pre>==> Downloading https://github.com/tonsky/FiraCode/releases/download/5/Fira_Code
+==> Downloading from https://github-production-release-asset-2e65be.s3.amazonaws
+######################################################################## 100.0%
+==> Verifying SHA-256 checksum for Cask 'font-fira-code'.
+==> Installing Cask font-fira-code
+==> Moving Font 'FiraCode-Bold.ttf' to '/Users/wilson_mar/Library/Fonts/FiraCode
+==> Moving Font 'FiraCode-Light.ttf' to '/Users/wilson_mar/Library/Fonts/FiraCod
+==> Moving Font 'FiraCode-Medium.ttf' to '/Users/wilson_mar/Library/Fonts/FiraCo
+==> Moving Font 'FiraCode-Regular.ttf' to '/Users/wilson_mar/Library/Fonts/FiraC
+==> Moving Font 'FiraCode-Retina.ttf' to '/Users/wilson_mar/Library/Fonts/FiraCo
+==> Moving Font 'FiraCode-SemiBold.ttf' to '/Users/wilson_mar/Library/Fonts/Fira
+🍺  font-fira-code was successfully installed!
+</pre>
 
 
 ### Hack Fonts from GitHub

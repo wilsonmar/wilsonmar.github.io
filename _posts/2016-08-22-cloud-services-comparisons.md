@@ -20,7 +20,7 @@ comments: true
 
 Evaluations can be based on the advantages of cloud:
 
-1. Stop guessing about future capacity when building and maintaining on-premise data centers with idle <strong>over-provisioning</strong>, which can be expensive.
+1. Stop guessing about future capacity when building and maintaining on-premise data centers with idle <strong>over-provisioning</strong>, which can be expensive. That can't happend with cloud vendors which charge when consumed.
 
 2. Tap into <strong>more capacity pooled</strong> among many customers,to benefit from economies of scale.
 

@@ -107,17 +107,29 @@ Intelligent adaptation depending on type of format (Markdown, Java, Bash, etc.):
 
 ## Configuration
 
-Here are the settings to make IDE clean of distractions and keyboard (rather than mouse) based:
+To make IDE clean of distractions, override these default settings:
 
-   * Hide the status bars on the top and bottom
+* To recover space to see wider lines, disable file content "mini map" (preview) at the right side:
 
-   * Disable file map at the right side, to recover space to see wider lines.
+   Click the Settings icon (at the lower left). In the settings search bar type "minimap". Uncheck "Controls whether the minimap is shown."
 
-   * Disable tabs, because it’s hard to remember if you have the file opened in tab and switching between tabs takes time.
+* Hide the status bars on the top and bottom:
 
-   * Set custom theme, font size and line-height using the more visually pleasant <strong>golden ratio</strong>.
+   In View menu, select Appearance, unselect "Show Status Bar".  
 
-   * Hide the file explorer.
+* Hide the file explorer:
+
+   Press command+B on or and ctrl+B on Windows.
+
+* Hide line numbers:
+
+   Create a shortcut per https://github.com/Microsoft/vscode/issues/52735
+
+* Set custom theme, font size and line-height using the more visually pleasant <strong>golden ratio</strong>.
+
+* Disable tabs, because it’s hard to remember if you have the file opened in tab and switching between tabs takes time.
+
+* Install and use Emmet automation?
 
 
 <a name="LastLine"></a>
@@ -531,6 +543,10 @@ abbr _bash #!/bin/bash&LT;CR>
    it's saying just press a key for a command, such as q to quit out.
 
 0. Press q to quit out.
+
+
+   VIDEO: <a target="_blank" href="https://www.twitch.tv/theprimeagen">
+   theprimeagen on Twitch</a> shows his vim skills live.
 
 
    <a name="CommandMode"></a>

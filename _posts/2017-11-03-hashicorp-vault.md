@@ -29,6 +29,7 @@ For example, on my desktop I have 1Password, which can I either click "fill" or 
 At the end of this tutorial, you should be able to:
 
 * <a href="#InstallServer">Install Vault and Consul on a server using Docker</a>
+* <a href="#InstallEKS">Install Vault within AWS EKS cluster</a>
 * <a href="#Config">Initialize and Configure Vault</a>
 * <a href="#SecretsCLI">Store and access secrets in Vault from a CLI</a>
 * <a href="#AppProgramming">Store and access secrets in Vault within a program</a>
@@ -73,6 +74,123 @@ This is even if secrets are ecrypted (using GPG) because old versions hidden in 
 
 Alternatives to Hashicorp Vault include
 Vormetrix
+
+## Architecture
+
+https://www.vaultproject.io/docs/internals/architecture
+
+![vault-layers](https://user-images.githubusercontent.com/300046/83564966-cf8a6200-a4da-11ea-9bdf-1a2492c371df.png)
+
+Only the storage backend (which durably stores encrypted data) and the HTTP API are outside the barrier that is sealed and unsealed.
+
+When the Vault server is started, it must be provided with a storage backend so that data is available across restarts. The HTTP API similarly must be started by the Vault server on start so that clients can interact with it.
+
+https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss
+
+## Basic Course
+
+When given 30-day access to <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/vault-basics">
+the Vault Basics course</a>, its lessons are for running in <a target="_blank" href="https://www.vaultproject.io/docs/concepts/dev-server/">dev mode</a>:
+
+* The Vault CLI - Run the Vault Command Line Interface (CLI).
+* Your First Secret - Run a Vault dev server and write your first secret.
+
+   https://www.vaultproject.io/api-docs/index/
+
+* The Vault API - Use the Vault HTTP API
+
+   <pre>curl http://localhost:8200/v1/sys/health | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0{
+  "initialized": true,
+  "sealed": false,
+  "standby": false,
+  "performance_standby": false,
+  "replication_performance_mode": "disabled",
+  "replication_dr_mode": "disabled",
+  "server_time_utc": 1591126861,
+  "version": "1.2.3",
+  "cluster_name": "vault-cluster-2a4c0e97",
+  "cluster_id": "0b74ccb6-8cee-83b8-faa6-dc7355481e4b"
+}
+100   294  100   294    0     0  49000      0 --:--:-- --:--:-- --:--:-- 58800
+   </pre>
+
+   <pre><strong>curl --header "X-Vault-Token: root" http://localhost:8200/v1/secret/data/my-first-secret | jq</strong></pre>
+
+   <pre>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   289  100   289    0     0  32111      0 --:--:-- --:--:-- --:--:-- 32111
+{
+  "request_id": "1fbb67f5-04a2-5db1-06b4-8210a6959565",
+  "lease_id": "",
+  "renewable": false,
+  "lease_duration": 0,
+  "data": {
+    "data": {
+      "age": "100"
+    },
+    "metadata": {
+      "created_time": "2020-06-02T19:36:39.21280375Z",
+      "deletion_time": "",
+      "destroyed": false,
+      "version": 1
+    }
+  },
+  "wrap_info": null,
+  "warnings": null,
+  "auth": null
+}
+   </pre>
+
+* Run a Production Server - Configure, run, initialize, and unseal a production mode Vault server.
+
+   Production servers are configured by a <a target="_blank" href="https://www.vaultproject.io/docs/configuration/">vault-config.hcl file</a> (in folder /vault/config) read by <a target="_blank" href="https://www.vaultproject.io/docs/commands/operator/init/">server init command</a>
+
+   <pre><strong>vault server -config=/vault/config/vault-config.hcl
+   vault operator init -key-shares=1 -key-threshold=1
+   </strong></pre>
+
+   NOTICE that vault command parameters have a single dash, not a double-dash.
+
+   https://www.vaultproject.io/docs/concepts/seal/
+
+   Save the unseal key response and an initial root token to set the "VAULT_TOKEN" environment variable, using the initial root token that the "init" command returned:
+
+   <pre>export VAULT_TOKEN="$root_token"</pre>
+
+You next need to unseal your Vault server, providing the unseal key that the "init" command returned:
+vault operator unseal
+This will return the status of the server which should show that "Initialized" is "true" and that "Sealed` is "false".
+
+To check the status of your Vault server at any time, you can run the "vault status" command. If it shows that "Sealed" is "true", re-run the "vault operator unseal" command.
+
+Finally, log into the Vault UI with your root token. If you have problems, double-check that you ran all of the above commands.
+
+
+* Use the KV V2 Secrets Engine - Enable and use an instance of the <a target="_blank" href="https://www.vaultproject.io/docs/secrets/kv/kv-v2">KV v2 Secrets engine</a> (the default when running in dev mode):
+
+   <pre><strong>vault secrets enable -version=2 kv</strong></pre>
+
+   Alternately:<br />
+   <pre>vault secrets enable kv-v2</pre>
+
+* Use the Userpass Auth Method - Enable and use the userpass authentication method.
+
+
+
+* Use Vault Policies - Use Vault policies to grant different users access to different secrets. "Least privilege"
+   correspond to HTTP verbs: 
+
+   <pre>path "secret/dev/team-1/*" {
+  capabilities = ["create", "read", "list", "update", "delete"]
+}
+   </pre>
+
+
+
+NOTE: Labs timeout every 2 hours.
 
 
 <a name="WithinCode"></a>
@@ -447,6 +565,8 @@ Other commands:
    </strong></pre>
 
    <pre>Success! Enabled the aws secrets engine at: aws/</pre>
+
+   See https://www.vaultproject.io/docs/secrets/kv/kv-v2/
 
 1. Enable for writing the root account within the AWS secrets engine in the CLI: 
 
@@ -920,6 +1040,26 @@ To revoke a lease on Azure:
    <pre>vault lease revoke -prefix azure/creds/reader-role</pre>
 
 
+<a name="InstallEKS"></a>
+
+## Install Vault within AWS EKS cluster
+
+<a target="_blank" href="https://www.hashicorp.com/blog/announcing-the-vault-helm-chart/">
+Hashicorp announced a Helm chart to setup Vault in Kubernetes</a>
+
+https://www.vaultproject.io/docs/platform/k8s/helm
+
+https://github.com/hashicorp/vault-helm
+ 
+
+/Users/wilson_mar/Library/Python/3.7/lib/python/site-packages/ansible/modules/cloud/amazon
+To the templates we would need to add monitoring/Observability, SIEM, etc.
+
+
+There is a <a target="_blank" href="https://github.com/hashicorp/consul-helm">
+Consul provider helm chart</a>
+
+
 <a name="Configure"></a>
 
 ## Configure Vault
@@ -1204,6 +1344,113 @@ namic Credentials and Encryption as a data service, and "Policy as Code" vs "Sec
 <a target="_blank" href="https://learning.oreilly.com/videos/getting-started-with/1018947658/">
 VIDEO COURSE: Getting Started with HashiCorp Vault</a>
 by <a target="_blank" href="https://www.linkedin.com/in/bryan-krausen-5ab8794/">Bryan Krausen</a> (@btkrausen)
+
+## Database
+
+https://play.instruqt.com/hashicorp/tracks/vault-dynamic-database-credentials
+
+   https://www.vaultproject.io/docs/secrets/databases/
+
+   https://www.vaultproject.io/docs/secrets/databases/mysql-maria/
+
+1. See whether "Type" of secrets engines "database" are enabled:
+
+   vault secrets list
+
+1. Enable the Database secrets engine on the Vault server.
+
+   vault secrets enable -path=lob_a/workshop/database database
+
+   The expected response include "Success! Enabled the database secrets engine at: lob_a/workshop/database/
+
+Vault's Database secrets engine dynamically generates credentials (username and password) for many databases.
+
+In this challenge, you will configure the database secrets engine you enabled in the previous challenge on the path lob_a/workshop/database to work with the local instance of the MySQL database. We use a specific path rather than the default "database" to illustrate that multiple instances of the database secrets engine could be configured for different lines of business that might each have multiple databases.
+
+1. Configure the Database Secrets Engine on the Vault server.
+
+All secrets engines must be configured before they can be used.
+
+We first need to configure the database secrets engine to use the MySQL database plugin and valid connection information. We are configuring a database connection called "wsmysqldatabase" that is allowed to use two roles that we will create below.
+
+   <pre>vault write lob_a/workshop/database/config/wsmysqldatabase \
+  plugin_name=mysql-database-plugin \
+  connection_url="{{username}}:{{password}}@tcp(localhost:3306)/" \
+  allowed_roles="workshop-app","workshop-app-long" \
+  username="hashicorp" \
+  password="Password123"
+   </pre>
+
+   This will not return anything if successful.
+
+   Note that the username and password are templated in the "connection_url" string, getting their values from the "username" and "password" fields. We do this so that reading the path "lob_a/workshop/database/config/wsmysqldatabase" will not show them.
+
+   To test this, try running this command:
+
+   vault read lob_a/workshop/database/config/wsmysqldatabase
+
+ey                                   Value
+---                                   -----
+allowed_roles                         [workshop-app workshop-app-long]
+connection_details                    map[connection_url:{{username}}:{{password}}@tcp(localhost:3306)/ username:hashicorp]
+plugin_name                           mysql-database-plugin
+root_credentials_rotate_statements    []
+
+   You will not see the username and password.
+
+We used the initial MySQL username "hashicorp" and password "Password123" above. Validate that you can login to the MySQL server with this command:
+
+mysql -u hashicorp -pPassword123
+You should be given a mysql> prompt.
+
+Logout of the MySQL server by typing \q at the mysql> prompt. This should return you to the root@vault-mysql-server:~# prompt.
+
+We can make the configuration of the database secrets engine even more secure by rotating the root credentials (actually just the password) that we passed into the configuration. We do this by running this command:
+
+vault write -force lob_a/workshop/database/rotate-root/wsmysqldatabase
+This should return "Success! Data written to: lob_a/workshop/database/rotate-root/wsmysqldatabase".
+
+Now, if you try to login to the MySQL server with the same command given above, it should fail and give you the message "ERROR 1045 (28000): Access denied for user 'hashicorp'@'localhost' (using password: YES)". Please verify that:
+
+mysql -u hashicorp -pPassword123
+Note: You should not use the actual root user of the MySQL database (despite the reference to "root credentials"); instead, create a separate user with sufficient privileges to create users and to change its own password.
+
+Now, you should create the first of the two roles we will be using, "workshop-app-long", which generates credentials with an initial lease of 1 hour that can be renewed for up to 24 hours.
+
+vault write lob_a/workshop/database/roles/workshop-app-long \
+  db_name=wsmysqldatabase \
+  creation_statements="CREATE USER '{{name}}'@'%' IDENTIFIED BY '{{password}}';GRANT ALL ON my_app.* TO '{{name}}'@'%';" \
+  default_ttl="1h" \
+  max_ttl="24h"
+This should return "Success! Data written to: lob_a/workshop/database/roles/workshop-app-long".
+
+And then create the second role, "workshop-app" which has shorter default and max leases of 3 minutes and 6 minutes. (These are intentionally set long enough so that you can use the credentials generated for the role to connect to the database but also see them expire in the next challenge.)
+
+vault write lob_a/workshop/database/roles/workshop-app \
+  db_name=wsmysqldatabase \
+  creation_statements="CREATE USER '{{name}}'@'%' IDENTIFIED BY '{{password}}';GRANT ALL ON my_app.* TO '{{name}}'@'%';" \
+  default_ttl="3m" \
+  max_ttl="6m"
+This should return "Success! Data written to: lob_a/workshop/database/roles/workshop-app".
+
+The database secrets engine is now configured to talk to the MySQL server and is allowed to create users with two different roles. In the next challenge, you'll generate credentials (username and password) for these roles.
+
+
+
+* Generate and use dynamic database credentials for the MySQL database.
+
+* Renew and revoke database credentials for the MySQL database.
+
+https://www.vaultproject.io/docs/secrets/databases/mysql-maria/ 
+https://www.vaultproject.io/docs/secrets/databases/#usage https://www.vaultproject.io/api/secret/databases/#generate-credentials
+
+
+
+## Generate dynamic credentials for a MySQL database from Vault.
+
+https://play.instruqt.com/hashicorp/tracks/vault-dynamic-database-credentials
+
+
 
 
 <hr />
