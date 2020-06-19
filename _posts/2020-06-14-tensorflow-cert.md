@@ -6,8 +6,8 @@ tags: [TensorFlow, AI, Machine Learning]
 date: "2020-06-14"
 file: "tensorflow-cert"
 image:
-# https://blog.tensorflow.org/2019/01/whats-coming-in-tensorflow-2-0.html
-  feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
+# tensorflow2-diagram-1900x500
+  feature: https://user-images.githubusercontent.com/300046/85180823-a3dcdb00-b241-11ea-8dd7-d325da6f547b.jpg
   credit: TensorFlow.org
   creditlink: https://blog.tensorflow.org/2019/01/whats-coming-in-tensorflow-2-0.html
 comments: true
