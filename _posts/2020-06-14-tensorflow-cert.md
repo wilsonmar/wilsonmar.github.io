@@ -33,11 +33,24 @@ according to the <a target="_blank" href="https://www.tensorflow.org/site-assets
 
 The 4 above correspond to the 4 classes in the 
 <a target="_blank" href="https://www.coursera.org/specializations/tensorflow-in-practice">
-TensorFlow in Practice Specialization</a>
-with <a target="_blank" href="https://www.linkedin.com/in/laurence-moroney/">
-Laurence Moroney</a> working at Google Brain.
+TensorFlow in Practice Specialization</a>:
+
+1. <a target="_blank" href="https://www.coursera.org/learn/introduction-tensorflow/home/welcome">
+   Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning</a>
+2. <a target="_blank" href="https://www.coursera.org/learn/convolutional-neural-networks-tensorflow">
+   Convolutional Neural Networks in Tensorflow</a>
+3. <a target="_blank" href="https://www.coursera.org/learn/natural-language-processing-tensorflow">
+   Natural Language Processing in TensorFlow</a>
+4. <a target="_blank" href="https://www.coursera.org/learn/tensorflow-sequences-time-series-and-prediction">
+   Sequences, Time Series, and Preduction</a>
+<br /><br />
+
 They are offered by deeplearning.ai (Andrew Ng) through <a target="_blank" href="https://www.coursera.com">Coursera.com</a>.
-Each course is scheduled for 4 weeks, but you may be able to finish earlier since
+The instruction is <a target="_blank" href="https://www.linkedin.com/in/laurence-moroney/">
+Laurence Moroney</a> who works at Google Brain.
+
+Each course is scheduled for 4 weeks (containing 4 lessons each), 
+but you may be able to finish earlier since
 each course costs $49 per month after a 7-day free trial.
 
 In quizzes along the way, you get 3 attempts 8 hours apart.
@@ -76,6 +89,13 @@ The <a target="_blank" href="https://www.tensorflow.org/guide">Guide</a> arrange
    * Performance
    * Appendix: Version compatibility
 
+
+## Books
+
+<a target="_blank" href="https://www.manning.com/books/deep-learning-with-python">
+Deep Learning with Python" (Manning book)</a> by Francois Chollet 
+
+
 <hr />
 
 <a name="BuildNN"></a>
@@ -107,7 +127,7 @@ You need to understand the foundational principles of machine learning (ML) and 
 
 <a name="ImageClas"></a>
 
-###  (2) Image classification
+### Image classification
 
 You need to understand how to build image recognition and object detection models with deep neural networks and convolutional neural networks using TensorFlow 2.x:
 
@@ -142,16 +162,48 @@ You need to understand how to use neural networks to solve natural language proc
 You need to understand how to solve time series and forecasting problems in TensorFlow.
 You need to know how to:
 
-* Train, tune, and use timeseries, sequence and prediction models.
+* Train, tune, and use timeseries, sequence, and prediction models.
 * Prepare data for time series learning.
-* Understand MeanAverageError(MAE) and how it can be used to evaluate accuracy of sequence models.
+* Understand Mean Average Error (MAE) and how it can be used to evaluate accuracy of sequence models.
+
+   <pre>errors = forecasts - actual
+   mae = np.abs(errors) .mean()  # absolute value to not penalize large values
+   keras.metrics.mean_absolute_error(x_valid, naive_forecast).numpy()
+   </pre>
+
+   <pre># mean squared error:
+   mse = np.square(errors) .mean()  # so opposite errors don't cancel each other out
+   rmse = np.sqrt(mse)  # root mean square error
+   mape = np.abs(errors / x_valid) .mean()  # mean absolute percentage error
+   </pre>
+
 * Use RNNs and CNNs for timeseries, sequence, and forecasting models.
 * Identify when to use trailing versus centred windows.
 * Use TensorFlow for forecasting.
 * Prepare features and labels.
 * Identify and compensate for sequence bias.
 * Adjust the learning rate dynamically in time series, sequence, and prediction models.
+<br /><br />
 
+Multi-Variate (births/deaths, CO2/Temp, Longitude/Latitude) imputation.
+Seasonality. Autocorrelation with lag. 
+Impulses.
+Spikes are called innovations.
+Stationary. 
+Fixed partioning of Training Period, Validation Period, Test Period.
+Or roll-forward partioning a day at a time.
+"Differencing" Moving averge for a smoothing effect.
+Trailing window and centered windows to smooth past values.
+
+<a target="_blank" href="https://colab.research.google.com/github/lmoroney/dlaicourse/blob/master/TensorFlow%20In%20Practice/Course%204%20-%20S%2BP/S%2BP_Week_1_Lesson_2.ipynb">Week 1 Lesson 2</a>
+has an error
+https://github.com/tensorflow/tensorflow/issues/27470
+
+<a target="_blank" href="https://colab.research.google.com/github/lmoroney/dlaicourse/blob/master/TensorFlow%20In%20Practice/Course%204%20-%20S%2BP/S%2BP%20Week%201%20-%20Lesson%203%20-%20Notebook.ipynb">Week 1 Lesson 3 Forecasting</a>
+
+https://colab.research.google.com/github/lmoroney/dlaicourse/blob/master/TensorFlow%20In%20Practice/Course%204%20-%20S%2BP/Week%201%20Exercise%20Question.ipynb
+
+In lesson 4, sun spot activity.
 
 ## Social
 
@@ -165,18 +217,39 @@ https://blog.tensorflow.org/2020/05/tensorflow-user-groups-updates-from-around-t
 ## Test Enviornment
 
 You can take the test at home
-The TensorFlow certificate exam runs inside PyCharm,
-which has a free Community Edition and a Professional edition for $89.
+The TensorFlow certificate exam runs in the TF Exam plugin inside PyCharm, 
+which provide the UI to submit answers.
+
+PyCharm has a free Community Edition and a Professional edition for $89.
 
 Call the project "TFExams".
 
+Not all questions have the same weight.
+In the test you have to code five models of increasing difficulty:
 
-## Colab Run Enviornment
+   1. Basic/Simple model
+   2. Model from learning dataset
+   3. Convolutional Neural Network with real-world image dataset
+   4. NLP Text Classification with real-world text dataset
+   5. Sequence Model with real-world numeric dataset
+   <br /><br />
+
+Open book.
+You need to score 90% or more to pass.
+
+You must wait 14 days to take it a second time, two months for the third attempt,
+and one year for the 4th exam.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Rzpt-H_QrFE">
+TensorFlow Developer Certificate | Google Brain</a>
+
+
+## Colab Run Environment
 
 For practice, it's free to run <a target="_blank" href="https://colab.research.google.com/">
 Google Colab (Colaboratory) environment on-line</a>, but <a target="_blank" href="https://colab.research.google.com/">more memory, faster CPU, longer runtimes</a> can be had for $10/month.
 
-Colab have a UI like Google Docs. Click the Settings icon to change Site Theme to "Adaptive" for white font on black background.
+Colab have a UI like Google Docs. Click the Settings icon to change Site Theme to "Adaptive" for white font on black background. PROTIP: Press Shift+Enter to run.
 
 * There are reports
 
@@ -185,5 +258,5 @@ Class 1 - Part 2 - Lesson 2 - Notebook.ipynb - The Hello-World of Deep Learning 
 
 * <a target="_blank" href="https://bkpkegayrtgmzkotpnuzkk.coursera-apps.org/notebooks/week1/Exercise_1_House_Prices_Question.ipynb">Take-home exercise: Housing Prices</a>
 
-Press Shift+Enter to run.
 
+https://medium.com/@rbarbero/tensorflow-certification-tips-d1e0385668c8
