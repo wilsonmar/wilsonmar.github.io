@@ -21,13 +21,32 @@ Here are links to each skill to be tested by the $100 5-hour
 <a target="_blank" href="https://www.tensorflow.org/certificate">Tensorflow Certification Exam</a>, 
 according to the <a target="_blank" href="https://www.tensorflow.org/site-assets/downloads/marketing/cert/TF_Certificate_Candidate_Handbook.pdf">Certificate Candidate Handbook pdf</a>:
 
-## Categories
+## Content Categories
 
 1. <a href="#BuildNN">Build and train neural network models using TensorFlow 2.x</a>
 2. <a href="#ImageClas">Image classification</a>
 3. <a href="#NLP">Natural language processing (NLP)</a>
 4. <a href="#TimeSeries">Time series, sequences, and predictions</a>
 <br /><br />
+
+## Course
+
+The 4 above correspond to the 4 classes in the 
+<a target="_blank" href="https://www.coursera.org/specializations/tensorflow-in-practice">
+TensorFlow in Practice Specialization</a>
+with <a target="_blank" href="https://www.linkedin.com/in/laurence-moroney/">
+Laurence Moroney</a> working at Google Brain.
+They are offered by deeplearning.ai (Andrew Ng) through <a target="_blank" href="https://www.coursera.com">Coursera.com</a>.
+Each course is scheduled for 4 weeks, but you may be able to finish earlier since
+each course costs $49 per month after a 7-day free trial.
+
+In quizzes along the way, you get 3 attempts 8 hours apart.
+You have to answer all questions on every attempt.
+
+PROTIP: I usually set the speed at 1.25X.
+
+
+## Documentation
 
 These certification topics are arranged differently than documentation:
 
@@ -136,5 +155,35 @@ You need to know how to:
 
 ## Social
 
+Those <a target="_blank" href="https://developers.google.com/certification/directory/tensorflow">
+who have passed the test get listed on Google's directory</a> (for 3 years).
+The first certificate was dated 6 March 2020. There were 198 as of 18 Jun 2020.
+
 https://blog.tensorflow.org/2020/05/tensorflow-user-groups-updates-from-around-the-world.html
+
+
+## Test Enviornment
+
+You can take the test at home
+The TensorFlow certificate exam runs inside PyCharm,
+which has a free Community Edition and a Professional edition for $89.
+
+Call the project "TFExams".
+
+
+## Colab Run Enviornment
+
+For practice, it's free to run <a target="_blank" href="https://colab.research.google.com/">
+Google Colab (Colaboratory) environment on-line</a>, but <a target="_blank" href="https://colab.research.google.com/">more memory, faster CPU, longer runtimes</a> can be had for $10/month.
+
+Colab have a UI like Google Docs. Click the Settings icon to change Site Theme to "Adaptive" for white font on black background.
+
+* There are reports
+
+* <a target="_blank" href="https://colab.research.google.com/github/lmoroney/dlaicourse/blob/master/Course%201%20-%20Part%202%20-%20Lesson%202%20-%20Notebook.ipynb">
+Class 1 - Part 2 - Lesson 2 - Notebook.ipynb - The Hello-World of Deep Learning with Neural Networks</a>
+
+* <a target="_blank" href="https://bkpkegayrtgmzkotpnuzkk.coursera-apps.org/notebooks/week1/Exercise_1_House_Prices_Question.ipynb">Take-home exercise: Housing Prices</a>
+
+Press Shift+Enter to run.
 
