@@ -49,12 +49,15 @@ They are offered by deeplearning.ai (Andrew Ng) through <a target="_blank" href=
 The instruction is <a target="_blank" href="https://www.linkedin.com/in/laurence-moroney/">
 Laurence Moroney</a> who works at Google Brain.
 
+   * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=VwVg9jCtqaU">Machine Learning Zero to Hero (Laurence at Google I/O'19)</a> [35:32]
+   <br /><br />
+
 Each course is scheduled for 4 weeks (containing 4 lessons each), 
 but you may be able to finish earlier since
 each course costs $49 per month after a 7-day free trial.
 
 In quizzes along the way, you get 3 attempts 8 hours apart.
-You have to answer all questions on every attempt.
+You have to answer all questions again on every attempt.
 
 PROTIP: I usually set the speed at 1.25X.
 
@@ -93,7 +96,7 @@ The <a target="_blank" href="https://www.tensorflow.org/guide">Guide</a> arrange
 ## Books
 
 <a target="_blank" href="https://www.manning.com/books/deep-learning-with-python">
-Deep Learning with Python" (Manning book)</a> by Francois Chollet 
+Deep Learning with Python</a>, <a target="_blank" href="https://www.manning.com/books/deep-learning-with-python-second-edition">2nd edition</a> (Manning book) by Francois Chollet 
 
 
 <hr />
