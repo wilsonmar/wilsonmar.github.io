@@ -188,6 +188,9 @@ by Defog Tech
 Microservices in the Cloud with Kubernetes and Istio (Google I/O '18) May 9, 2018</a>
 by Sandeep Dinesh
 
+<a target="_blank" href="https://www.youtube.com/watch?v=IblDMVwSSk4/"
+title="[44:37]">APIs, Microservices, and the Service Mesh (Cloud Next '19)</a>
+by <a target="_blank" href="https://www.linkedin.com/in/dinochiesa/">Dino Chiesa</a>
 
 
 ## Social
