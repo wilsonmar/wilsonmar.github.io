@@ -216,6 +216,10 @@ The first certificate was dated 6 March 2020. There were 198 as of 18 Jun 2020.
 
 https://blog.tensorflow.org/2020/05/tensorflow-user-groups-updates-from-around-the-world.html
 
+https://www.mrdbourke.com/ml-study-may-2020/
+https://towardsdatascience.com/how-i-passed-the-tensorflow-developer-certification-exam-f5672a1eb641
+by Daniel Bourke
+
 
 ## Test Enviornment
 
@@ -237,10 +241,10 @@ In the test you have to code five models of increasing difficulty:
    5. Sequence Model with real-world numeric dataset
    <br /><br />
 
-Open book.
-You need to score 90% or more to pass.
-
-You must wait 14 days to take it a second time, two months for the third attempt,
+It's an <strong>open book</strong> test.
+But you need to score 90% or more to pass.
+If you don't pass, you must wait 14 days before taking it a second time, 
+two months for the third attempt,
 and one year for the 4th exam.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=Rzpt-H_QrFE">
@@ -263,3 +267,4 @@ Class 1 - Part 2 - Lesson 2 - Notebook.ipynb - The Hello-World of Deep Learning 
 
 
 https://medium.com/@rbarbero/tensorflow-certification-tips-d1e0385668c8
+

@@ -25,6 +25,14 @@ comments: true
 </th><th><a href="/ruby-on-apple-mac-osx/">Ruby</a>
 </th><th> Features introduced
 </th></tr>
+<tr valign="top"><td> 10.16<br />MacOS
+</td><td align="right"> Big Sur
+</td><td align="right"> Fall 2020
+</td><td align="right"> ?
+</td><td align="right"> 3 ?
+</td><td align="right"> ?
+</td><td align="left"> Run iPhone & iPad apps, Control Center. Safari language translation.
+</td></tr>
 <tr valign="top"><td> 10.15<br />MacOS
 </td><td align="right"> Catalina
 </td><td align="right"> Fall 2019
