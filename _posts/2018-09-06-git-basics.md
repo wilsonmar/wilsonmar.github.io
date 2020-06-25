@@ -45,6 +45,15 @@ At the end of each segment we review key learnings to make sure you have mastere
 
 In this tutorial, we also learn how to recover from mistakes right after we try each command.
 
+## Basic concepts video
+
+<amp-youtube data-videoid="OVwS_Swkhik" layout="responsive" width="480" height="270"></amp-youtube>
+
+NOTE: Since the above video was created, GitHub has gone to free private repositories, but no longer free website hosting. Their $4 a month for "Pro" subscriptions does provide GitHub Pages hosting.
+
+To recap the video, a <strong>"blob"</strong> is the set of characters in the last revision identified by a "hash" calculated from the text changed plus some metadata such as the data of the change, the person making the change, etc. The 7 characters shown is the first 7 characters of the full hash string.
+
+
 <a name="Flowchart"></a>
 
 ## Script and Topics flowchart
@@ -65,11 +74,16 @@ For an <strong>animated</strong> flowchart where you can click the Pause button 
 
 BTW I'm working on a video in which I verbally narrate the video using text on this web page. Until then I have for you an animated diagram above.
 
-## Setup utilities
+## Terminal or Git Bash Console
 
-Now setup Homebrew/Chocolatey, Git/msysgit.
+   This tutorial is designed for someone with a <a target="_blank" href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">
+   Git command-line client installed</a>.
 
-<amp-youtube data-videoid="OVwS_Swkhik" layout="responsive" width="480" height="270"></amp-youtube>
+To make use of a terminal console on your laptop, you need to open the <strong>Terminal</strong> program on a Mac or, if you're on a Windows machine, the <strong>Git Bash</strong> program installed. 
+
+   Since a Bash shell does not come with <strong>Microsoft Windows</strong> machines, a bash terminal program called <strong>git bash</strong> needs to be install by the Windows <strong>Chocolatey</strong> installer installing the <strong>msysgit</strong> package. But you must have Administrator permissions to install them.
+
+On Windows:
 
 1. So that you can update versions automatically later, automate client installs on Windows, by first installing <a target="_blank" href="https://choclately.org/">Chocolatey</a> using a PowerShell command:
 
@@ -86,6 +100,8 @@ Now setup Homebrew/Chocolatey, Git/msysgit.
 
    ![image](https://user-images.githubusercontent.com/300046/45103610-892d8680-b0ed-11e8-921c-d2b03b32a6ba.png)
 
+On macOS (Mac laptop):
+
 1. Open a Bash terminal by command+Tab (holding down the command key, then press Tab) for the Spotlight. Type "ter" until "Terminal.app" appears, press Enter to select it.
 
 2. Click anywhere on the Terminal window. Press <strong>command+N</strong> for the Basic session colors and other UI. Alternately, point your cursor beyond the top of the screen for the Terminal menu to appear and select Shell, New Window and select one of the <strong>themes</strong>.
@@ -98,27 +114,19 @@ Now setup Homebrew/Chocolatey, Git/msysgit.
    * Red Sands is earthy brown
    <br /><br />
 
-   ## Terminal / Git Bash
-
-3. To make use of it on your laptop, you need to open the <strong>Terminal</strong> program on a Mac or, if you're on a Windows machine, the <strong>Git Bash</strong> program installed. 
-
-   Since a Bash shell does not come with <strong>Microsoft Windows</strong> machines, a bash terminal program called <strong>git bash</strong> needs to be install by the Windows <strong>Chocolatey</strong> installer installing the <strong>msysgit</strong> package. But you must have Administrator permissions to install them.
 
    <a name="TerminalvsGUI"></a>
 
    ### Terminal vs GUI
 
-   This tutorial is designed for someone with a <a target="_blank" href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">
-   Git command-line client installed</a>.
-
    Due to the open-source availability to how Git works,
    there are many Git clients available.
 
-   But NOT clients include a <strong>git bash</strong> program so you can run commands like a Linux command line (shown by this tutorial).
-
    Most IDEs and text editors today have incorporated commonly used Git client functionality into their software. 
 
-   On <strong>IntelliJ</strong>, get its Git menu by right-clicking on the project in the left Solution pane to see this menu:
+   But NOT all clients include a <strong>git bash</strong> program so you can run commands like a Linux command line (shown by this tutorial).
+
+   The <strong>IntelliJ</strong> IDE has a Git menu by right-clicking on the project in the left Solution pane to see this menu:
 
    We will return to this after going through this course to see if you recognize what each GUI item does.
 
@@ -134,24 +142,21 @@ Now setup Homebrew/Chocolatey, Git/msysgit.
 
    * See <a target="_blank" href="https://www.youtube.com/watch?v=C0bFLGJqnI8&list=PL-suslzEBiMo0B5RcAikOaqDLKoG9Okub">VIDEO: Using Git within Eclipse</a> May 21, 2013 by Dr. Brian Fraser 
 
-
-## Ways to get a shell script 
-
-   a. bash curl command to a script (see immediately below)
-
 ## Ways to get a Git repository
 
-   PROTIP: There are several ways to obtain this file from GitHub, GitLab, BitBucket, or other host:
+   PROTIP: There are several ways to obtain a repository in GitHub, GitLab, BitBucket, or other host:
 
    a. Download ZIP file<br />
    b. Open in Desktop client (using Git for GitHub)<br />
    c. git clone https or SSH url<br />
-   d. hub command<br />
+   d. hub command (installed)<br />
    e. bash curl command to a script (see immediately below)
    <br /><br />
 
-## A script types commands for you
 
+<a name="ScriptTypes"></a>
+
+## A script types commands for you
 
 An bash script was created to automatically <strong>type for you</strong> the various commands in this course. It's to see whether what you are asked to type manually actually works. This is so we can see whether <strong>it was working before</strong>, so you don't blame yourself for not typing commands correctly and waste time debugging.
 
@@ -173,8 +178,6 @@ An bash script was created to automatically <strong>type for you</strong> the va
 
    which is the default <strong>shell program</strong> that comes with MacOS machines to process commands of the operating system.
    
-   A <strong>"blob"</strong> is the set of characters in the last revision identified by a "hash" calculated from the text changed plus some metadata such as the data of the change, the person making the change, etc. The 7 characters shown is the first 7 characters of the full hash string.
-
    ### Bash curl command pasted in Terminal
 
    To run the shell script without first downloading it:
@@ -198,7 +201,7 @@ An bash script was created to automatically <strong>type for you</strong> the va
 
    ### ./bash_profile
    
-7. PROTIP: When a Terminal or Git Bash session is started, the operating system automatically (in the background) runs command:
+7. PROTIP: When a Terminal or Git Bash session is started on a Mac, the operating system automatically (in the background) runs several files, which include:
 
    <pre>source ~/.bash_profile</pre>
 
@@ -250,11 +253,11 @@ An bash script was created to automatically <strong>type for you</strong> the va
 
    Numbering of sections in the script:
 
-   0.x <a href="#BashUtils">Script start-up</a>
+   0.x <a href="#ScriptTypes">Bash Script start-up</a> (above)
 
-   1.x <a href="#MacInstall">Mac client Install and Configuration</a>
+   1.x <a href="#MacInstall">Git client Install and Configuration</a>
    
-   2.x <a href="#GitConfig">Git Setup and Configuration</a>
+   2.x <a href="#GitConfig">Git program Configuration</a>
    
    3.x <a href="#Cloud">Cloud repository setup, forking, cloning</a>
 
@@ -276,23 +279,24 @@ An bash script was created to automatically <strong>type for you</strong> the va
 
 ## 0.x Bash script start-up
 
+The script displays the time and other metadata about the run.
 
+1. The first thing the script does is figure out what operating system it is running on. That uses a command common to all operating systems:
 
+   <pre>uname -a</pre>
+
+   NOTE: "Darwin" is the internal name of the operating system running on a Mac.
 
 
 <a name="MacInstall"></a>
 
 ## 1.x Client Install and Configuration
 
-   On the Mac, the git-basics.sh script installs a Git client if needed.
+If needed, the git-basics.sh script installs a Git client using a package manager.
 
-1. The first thing the script does is figure out what operating system it is running on. That uses a command common to all operating systems:
+On a Mac:
 
-   <pre>uname -a</pre>
-
-   "Darwin" is the internal name of the operating system running on a Mac.
-
-2. If the script is running on a <strong>Mac</strong>, the script installs <strong>Homebrew</strong> if needed.
+1. If the script is running on a <strong>Mac</strong>, the script installs <strong>Homebrew</strong> if needed.
 
 3. A Git client is installed if the git command is not found.
 
@@ -313,6 +317,9 @@ An bash script was created to automatically <strong>type for you</strong> the va
    <pre><strong>brew install jq</strong></pre>
 
 
+On Windows machines, the Chocolatey package manager is installed if not found.
+
+
    <a name="EnvVars"></a>
 
    ### Enviornment variables & values
@@ -329,6 +336,7 @@ An bash script was created to automatically <strong>type for you</strong> the va
 
    PROTIP: The <tt>git-basics.env</tt> file is placed in your $HOME folder, separate from any folder that can be pushed back to Git hosting because you may want to <strong>type your password</strong> in the file for more automatic functionality in the script, such as deleting repos, functions which even hub does not perform.
 
+   There is an enterprise edition of the script that has more secure features such as reference to a Vault server which holds and dispenses secrets.
 
    ### git-scripts folder in $HOME
 
@@ -337,13 +345,13 @@ An bash script was created to automatically <strong>type for you</strong> the va
    Files from GitHub load the folder with files containing default values.
    If the file is there already, don't overlay the file.
 
-7. <strong>git-basics.sh</strong>, the shell script, is copied into that "git-utilities" folder so you have the option of editing the files and re-running locally on your laptop.
+7. <strong>git-basics.sh</strong>, the shell script described above is copied into that "git-utilities" folder so you have the option of editing the files and re-running locally on your laptop.
 
 8. To halt processing for customizations, press <strong>control+C</strong> on the Mac or Press any key to continue default processing. 
 
    This is so you can <a href="#EditRun">edit the files downloaded so you can run rerun locally (as described below)</a>.
 
-   If you do edit the file locally, comment out the read command line and its fancy_echo command by adding a # in front of them.
+   If you do edit the file locally, comment out the read command line and its echo command by adding a # in front of them.
 
 
    <a name="#EditRun"></a>
@@ -1182,7 +1190,7 @@ and the repository exists.
 
    That is why my script has "Press when ready" steps - for all three manual actions below:
 
-   ### 1. Create a pull/merge request
+### 1. Create a pull/merge request
 
 1. To make a pull/merge request, log into your Git hosting GUI and navigate to your origin repo.
 
@@ -1208,7 +1216,7 @@ and the repository exists.
 
    See https://about.gitlab.com/2016/12/01/how-to-keep-your-fork-up-to-date-with-its-origin/
 
-   ### 2. Squash and merge 
+   ### Squash and merge 
 
 5. Next, on a different browser, login as the committer of that upstream repo.
 
@@ -1224,13 +1232,13 @@ and the repository exists.
 
    ![git-alt-merge-309x262-20359](https://user-images.githubusercontent.com/300046/45144563-bb85c500-b17b-11e8-8fe7-950067bc9300.jpg)
 
-10. Click "Confirm Squash and merge".
+9. Click "Confirm Squash and merge".
 
-    A purple "Merged" appears at the top of the screen.
+   A purple "Merged" appears at the top of the screen.
 
-   ### 3. Add file to upstream
+   ### Add file to upstream
 
-    While still in the upstream repo (hotwilson), establish conditions for the next set of steps, in the upstream remote, make a change such as adding a file. 
+   While still in the upstream repo (hotwilson), establish conditions for the next set of steps, in the upstream remote, make a change such as adding a file. 
 
 11. Click "Create new file" button.
 
@@ -1253,7 +1261,7 @@ and the repository exists.
 
    Next, let's look at what happens if, over time, changes occur in the upstream repo. 
 
-   See https://help.github.com/articles/syncing-a-fork/
+   Based on <a target="_blank" href="https://help.github.com/articles/syncing-a-fork/">https://help.github.com/articles/syncing-a-fork</a> ...
 
 1. Open a different browser (Firefox or Brave) to login and make a change.
    In the script there is a message:
@@ -1268,7 +1276,7 @@ and the repository exists.
    git remote add upstream "https://github.com/$OTHER_ACCT/$OTHER_REPO"
    </pre>
 
-   which by default translates to:
+   which by default, the variables are expanded to:
 
    <pre><strong>
    git remote add upstream https://github.com/hotwilson/some-repo
@@ -1288,7 +1296,7 @@ and the repository exists.
 
    ```-v``` is for verification.
 
-   Expect to see both your origin and upstream remotes listed.
+   Expect to see both your origin and upstream remotes listed, such as:
 
    <pre>
 origin   git@github.com:wilsonmar/some-repo.git (fetch)
