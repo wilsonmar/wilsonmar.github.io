@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Markdown text for GitHub from HTML"
-excerpt: "Yes, it's a round-trip ticket"
+excerpt: "Coding markup"
 tags: [HTML, personalization, jekyll]
 date: "2016-03-16"
 file: "markdown-text-for-github-from-html"
@@ -15,98 +15,35 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This post is about converting existing HTML into markdown text in a file like README.md.
-
-I wrote this because I haven't seen an approach like this described.
-
-I'm having to convert hundreds of pages I've written in HTML since the 90's.
-
-> Let me help you with this. Call me!
+This post is about how to craft markdown text in a file like README.md.
 
 ## Why Markdown? #
 
 Back in 2004, Apple pundit John Gruber <a target="_blank" href="http://daringfireball.net/projects/markdown/
-">came up with the idea</a> after becoming frustrated by laborious HTML tags to properly format his content. 
+">came up with the idea of markdown</a> after becoming frustrated by laborious HTML tags to properly format his content. 
 
 Markdown is a simple writing system which makes web-based documents both easier to write and 
 easier to read in their raw state.
+
+Most technical people now write whole blog sites in Markup. This is largely to put docs nearer to code, usually in README files. Self-publishing sites such as GitBook make use of markup. Even fiction writers are writing in markdown code to use GitHub’s collaboration features.
 
 Many non-technical writers prefer writing Markdown text instead of using the mouse-enabled Microsoft Word.
 They say writing pure text allows them to keep their fingers firmly planted on the keyboard
 even as they apply formatting on the fly. 
 Being able to format using text codes means they don't have to stop typing or think about anything else to apply text styling.
 
-This tutorial is for such people.
+Markdown is less limiting than crafting Confluence.
 
 ## Automatic conversion #
 
+There are many tutorials about markdown already, so this adds tricks to convert existing HTML into Markdown.
+I've had to convert hundreds of pages I've written in HTML since the 90's.
+
 You can copy HTML and paste into Dom Christie's website for conversion to Markdown:
 
-   <a target="_blank" href="http://domchristie.github.io/to-markdown/">
+   <ul><a target="_blank" href="http://domchristie.github.io/to-markdown/">
    http://domchristie.github.io/to-markdown</a>
-
-## Ordered lists #
-
-My favorite feature of Markdown is it **automatically ordered numbers in lists**!
-
-We can begin all items of unordered lists with a 0.
-
-{% highlight html %}
-1. First item.
-0. Second item.
-9. Third item.
-{% endhighlight %}
-
-The coding above Markdown renders correctly as 1,2,3.
-
-
-## Indention
-In order for numbering to continue, all lines must be indented.
-
-Heading lines can be indented.
-
-Use 3 spaces in front of 3 backticks.
-
-4 or more back-ticks is a signal to highlight the sentence in a box, not to indent.
-
-Also, Liquid markdown does not recognize indention.
-
-PROTIP: A workaround if you are not able to get automatic numbering: code the numbering yourself.
-
-To make Markdown interpret a paragraph starting with a number as a list,
-put a left-slash in front of the dot, as in:
-
-{% highlight html %}
-1492\. That was the year.
-{% endhighlight %}
-
-## Line breaks
-
-Both styles of line break tags result in a new line (without a blank line in between):
-
-the XHTML style:
-
-{% highlight html %}
-Hello<br />there
-{% endhighlight %}
-
-or HTML-style tags:
-
-{% highlight html %}
-Hello<br>there
-{% endhighlight %}
-
-
-## Paragraphs
-
-One reason Markdown text is easier to write than HTML is
-there is no need for `<p>` to force a blank line.
-
-Just a blank line will do.
-
-One can do a mass change of `<p>` in a text editor.
-
-Remember to clean up ending  `</p>` tags.
+   </ul>
 
 ## Bulk change HTML to Markdown programs
 
@@ -130,6 +67,89 @@ Download and run the program using this syntax
 
 PROTIP: Automatic approaches today are usually too automatic, converting what is better left in HTML.
 
+
+## Paragraphs
+
+One reason Markdown text is easier to write than HTML is
+there is no need for `<p>` to force a blank line.
+
+Just a blank line will do.
+
+One can do a mass change of `<p>` in a text editor.
+
+Remember to clean up ending  `</p>` tags.
+
+## Ordered lists #
+
+My favorite feature of Markdown is it **automatically ordered numbers in lists** like this:
+
+{% highlight html %}
+1. First item.
+0. Second item.
+9. Third item.
+{% endhighlight %}
+
+The coding above Markdown renders correctly as 1,2,3.
+
+That means you can write this:
+
+{% highlight html %}
+1. First item.
+1. Second item.
+1. Third item.
+&LT;br>&LT;br>
+{% endhighlight %}
+
+## Line breaks
+
+PROTIP: Add line breaks (&LT;br>&LT;br>) under lists so add a blank line before the next paragraph.
+
+Both styles of line break tags result in a new line (without a blank line in between):
+
+the XHTML style:
+
+{% highlight html %}
+Hello<br />there
+{% endhighlight %}
+
+or HTML-style tags:
+
+{% highlight html %}
+Hello<br>there
+{% endhighlight %}
+
+## Indention
+
+Markdown uses spaces in front of lines to indent text, such as:
+
+{% highlight html %}
+1. First item:
+
+   Something
+
+2. Second item 
+{% endhighlight %}
+
+PROTIP: A workaround if you are not able to get automatic numbering: code the numbering yourself.
+To make Markdown interpret a paragraph starting with a number as a list,
+put a left-slash in front of the dot, as in:
+
+{% highlight html %}
+1492\. That was the year.
+{% endhighlight %}
+
+In order for numbering to continue, all lines must be indented.
+
+Heading lines can be indented.
+
+4 or more back-ticks is a signal to highlight the sentence in a box, not to indent.
+
+Use 3 spaces in front of 3 backticks.
+
+Not specified in most tutorials about indenting markdown is the use of a bug in HTML.
+
+   <ul>The `<ul>` HTML tag around this text causes an identation of 4 spaces.
+   </ul>
 
 ## Unordered Lists
 
@@ -274,7 +294,7 @@ Markdown reverses the order of text and links.
  [mysite](http://wilsonmar.github.io/)
 {% endhighlight %}
 
-The same goest for the alternate "automatic" format Markdown offers to link:
+The same goes for the alternate "automatic" format Markdown offers to link:
 
 {% highlight html %}
 <http://wilsonmar.github.io>
@@ -340,7 +360,8 @@ claims to incorporate the capabilities of other parsers:
 
 Markdown text in GitHub recognizes Liquid syntax as defined in:
 
-   * [https://docs.shopify.com/themes/liquid/basics](https://docs.shopify.com/themes/liquid/basics)
+   <ul>[https://docs.shopify.com/themes/liquid/basics](https://docs.shopify.com/themes/liquid/basics)
+   </ul>
 
 This coding would process html as such between a set of
 Liquid &#123;% tag markers:
