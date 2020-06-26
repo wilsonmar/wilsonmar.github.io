@@ -3,7 +3,7 @@ layout: post
 title: "AWS Onboarding"
 excerpt: "for System Administration and billing"
 tags: [AWS, EC2, cloud, on-boarding]
-date: "2016-03-29"
+date: "2020-06-26"
 file: "aws-onboarding"
 image:
 # feature: pic data center slice 1900x500.jpg
@@ -194,13 +194,13 @@ PROTIP: To avoid this money-sucing situation, use a script to instantiate and in
    IAM Policies for this does not include:
 
    * AWSOrganizationsServiceTrustPolicy (A policy to allow AWS Organizations to share trust with other approved AWS Services for the purpose of simplifying customer configuration)
+   <br /><br />
 
 
 <a name="DNS-Billing"></a>
 
 ### DNS Billing
 
-Be aware that AWS has a 
 
 
 
@@ -265,6 +265,7 @@ Be aware that AWS has a
 
    * AWSSupportAccess (Allows users to access the AWS Support Center)
    * SupportUser (This policy grants permissions to troubleshoot and resolve issues in an AWS account. This policy also enables the user to contact AWS support to create and manage cases)
+   <br /><br />
 
 1. Scroll down to view videos on specific technical issues by Amazon people.
 
@@ -301,9 +302,11 @@ Be aware that AWS has a
    * AWSResourceGroupsReadOnlyAccess
    * AWSServiceCatalogAdminFullAccess
    * AWSServiceCatalogEndUserFullAccess
+   <br /><br />
 
    * PowerUserAccess
    * SecretsManagerReadWrite
+   <br /><br />
 
 
    <a name="Well-Architected"></a>
@@ -335,19 +338,18 @@ Be aware that AWS has a
    The policy needed for this:
 
    * AWSTrustedAdvisorServiceRolePolicy
+   <br /><br />
 
    The AWS CLI command:
 
-   <pre>
-   aws support describe-trusted-advisor-check-result \
+   <pre>aws support describe-trusted-advisor-check-result \
       --check-id eW7HH0l7J9 \
       --query 'result.sort_by(flaggedResources[?status!="ok"],&metadata
    </pre>
 
    To get the check-id:
 
-   <pre>
-# region must be us-east-1 as it only when support command works
+   <pre># region must be us-east-1 as it only when support command works
 CHECK_ID=$(aws --region us-east-1 support describe-trusted-advisor-checks --language en --query 'checks[?name==`Service Limits`].{id:id}[0].id' --output text)
 echo $CHECK_ID
    </pre>
@@ -1262,6 +1264,13 @@ Script to launch Amazon EC2 Spot instances</a> with a simple Python script
    - wait for the instance to boot
    - connect to it via SSH and run a script of your choice
 
+
+## Hashicorp Terraform Enterprise
+
+Hashicorp has a "Sentinal" product component which enforces various fine-grained rules (policy sets) to what can be done by each role. It also estimates monthly cost.
+
+Rules in Hashicorp's <a target="_blank" href="https://www.hashicorp.com/resources/secure-your-cloud-with-terraform-foundational-policy-library/">
+Foundational Policy library</a> at <a target="_blank" href="https://github.com/hashicorp/terraform-foundational-policies-library">https://github.com/hashicorp/terraform-foundational-policies-library</a> is based on <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks/">Center for Internet Security (CIS) Benchmarks</a> [<a target="_blank" href="https://www.cisecurity.org/wp-content/uploads/2018/03/CIS-Controls-Measures-and-Metrics-V7.pdf">pdf</a>] (including Compute, Databases, Kubernetes, Storage, Networks) covering Azure and GCP as well as AWS.
 
 ## More on Amazon #
 
