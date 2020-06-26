@@ -84,12 +84,11 @@ To see your markdown turn into HTML, use this online tool:
    </ul>
 
 ## Headings #
-   ### Sub-heading #
-      #### Sub-sub-heading #
+### Sub-heading #
+#### Sub-sub-heading #
 ## Heading 2 #
 
-Instead of HTML `<h2>` and such tags, replace with `##`
-(called <a target="_blank" href="http://www.aaronsw.com/2002/atx/">Atx-style</a> headers) such as:
+The headings above make use of `##` (called <a target="_blank" href="http://www.aaronsw.com/2002/atx/">Atx-style</a> headers) instead of HTML `<h2>` tags.
 
 {% highlight html %}
 ## Heading #
@@ -97,9 +96,11 @@ Instead of HTML `<h2>` and such tags, replace with `##`
 #### Sub-sub-heading #
 {% endhighlight %}
 
+The ending '##' character is optional. It can be any number of characters.
+
 Markdown recognizes up to 6 hash characters for 6 levels.
 
-The ending '##' character is optional. It can be any number of characters.
+WARNING: Markdown is not good about indenting headings.
 
 Alternately, <a target="_blank" href="http://docutils.sourceforge.net/mirror/setext.html">Setext-style</a>
 headers are specified (“underlined”) by a series of
