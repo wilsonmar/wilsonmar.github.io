@@ -1267,10 +1267,10 @@ Script to launch Amazon EC2 Spot instances</a> with a simple Python script
 
 ## Hashicorp Terraform Enterprise
 
-Hashicorp has a "Sentinal" product component which enforces various fine-grained rules (policy sets) to what can be done by each role. It also estimates monthly cost.
+<a target="_blank" href="https://webinars.securityboulevard.com/controlling-cloud-costs-with-hashicorp-terraform">VIDEO</a>: Hashicorp has a "Sentinal" product component which enforces various fine-grained rules (policy sets) to what can be done by each role. It also estimates monthly cost from cloud usage.
 
 Rules in Hashicorp's <a target="_blank" href="https://www.hashicorp.com/resources/secure-your-cloud-with-terraform-foundational-policy-library/">
-Foundational Policy library</a> at <a target="_blank" href="https://github.com/hashicorp/terraform-foundational-policies-library">https://github.com/hashicorp/terraform-foundational-policies-library</a> is based on <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks/">Center for Internet Security (CIS) Benchmarks</a> [<a target="_blank" href="https://www.cisecurity.org/wp-content/uploads/2018/03/CIS-Controls-Measures-and-Metrics-V7.pdf">pdf</a>] (including Compute, Databases, Kubernetes, Storage, Networks) covering Azure and GCP as well as AWS.
+Foundational Policy library</a> is at <a target="_blank" href="https://github.com/hashicorp/terraform-foundational-policies-library">https://github.com/hashicorp/terraform-foundational-policies-library</a>. Such "Policies as Code" are crafted based on <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks/">Center for Internet Security (CIS) Benchmarks</a> [<a target="_blank" href="https://www.cisecurity.org/wp-content/uploads/2018/03/CIS-Controls-Measures-and-Metrics-V7.pdf">pdf</a>] (including Compute, Databases, Kubernetes, Storage, Networks) covering Azure and GCP as well as AWS.
 
 ## More on Amazon #
 
