@@ -62,11 +62,26 @@ Download and run the program using this syntax
 (assuming Pythong is installed):
 
    ```
-   chmod a+x html2text.py ; ./html2text.py erlang.html
+chmod a+x html2text.py ; ./html2text.py erlang.html
    ```
 
 PROTIP: Automatic approaches today are usually too automatic, converting what is better left in HTML.
 
+
+## Headings #
+
+Instead of HTML `<h2>` and such tags, replace with `##`
+(called <a target="_blank" href="http://www.aaronsw.com/2002/atx/">Atx-style</a> headers) such as:
+
+{% highlight html %}
+\#\# Heading \#
+   \#\#\# Sub-heading \#
+      \#\#\#\# Sub-sub-heading \#
+{% endhighlight %}
+
+Markdown recognizes up to 6 hash characters for 6 levels.
+
+The ending '##' character is optional. It can be any number of characters.
 
 ## Paragraphs
 
@@ -75,9 +90,9 @@ there is no need for `<p>` to force a blank line.
 
 Just a blank line will do.
 
-One can do a mass change of `<p>` in a text editor.
+To convert from HTML with a lot of `<p>`, do a mass change (replace all) in a text editor.
 
-Remember to clean up ending  `</p>` tags.
+Remember to clean up ending `</p>` tags by replacing them with nothing.
 
 ## Ordered lists #
 
@@ -97,7 +112,7 @@ That means you can write this:
 1. First item.
 1. Second item.
 1. Third item.
-&LT;br>&LT;br>
+<br><br>
 {% endhighlight %}
 
 ## Line breaks
@@ -148,7 +163,7 @@ Use 3 spaces in front of 3 backticks.
 
 Not specified in most tutorials about indenting markdown is the use of a bug in HTML.
 
-   <ul>The `<ul>` HTML tag around this text causes an identation of 4 spaces.
+   <ul>The &LT;ul> HTML tag around this text causes an identation of 4 spaces.
    </ul>
 
 ## Unordered Lists
@@ -162,9 +177,9 @@ HTML must be more correct than HTML read by internet browsers.
 
 * There must be a blank line after anchor tags `<a name=...` and a heading text line.
 
-PROTIP: Markdown recognizes different characters to parse into lists:
+WARNING: Markdown may not recognize different characters to parse into lists:
 
-\* Asterisk
+\* Asterisk<br />
 
 \+ plus sign
 
@@ -206,15 +221,6 @@ that Markdown converts into escape entities that begin with an **&amp;** (ampers
 * **&gt;** (greater than) is turned into &amp;gt; because that's used to signify block quotes in Markdown.
 
 * the ampersand itself turns to &amp;amp;, as in link URLs.
-
-## Headings #
-
-Instead of the opening `<h2>` and such tags, replace with `##`
-(called <a target="_blank" href="http://www.aaronsw.com/2002/atx/">Atx-style</a> headers).
-
-Markdown recognizes up to 6 hash characters for 6 levels.
-
-The ending '##' character is optional. It can be any number of characters.
 
 ## Tables #
 
