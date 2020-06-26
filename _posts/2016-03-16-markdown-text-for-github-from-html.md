@@ -45,13 +45,14 @@ You can copy HTML and paste into Dom Christie's website for conversion to Markdo
    http://domchristie.github.io/to-markdown</a>
    </ul>
 
-## Bulk change HTML to Markdown programs
+### Auto Convert HTML to text
 
-You can specify a URL to a HTML file:
+You can specify a URL in this website, which converts HTML page to text:
 
-   * <a target="_blank" href="http://www.aaronsw.com/2002/html2text/">http://www.aaronsw.com/2002/html2text</a>
+   <ul><a target="_blank" href="http://www.aaronsw.com/2002/html2text/">http://www.aaronsw.com/2002/html2text</a>
+   </ul>
 
-It returns a page of Markdown text you can copy and paste to a Markdown file.
+   The website returns a page of Markdown text you can then copy and paste to a Markdown file.
 
 The author of that site provides his Python program at:
 
@@ -82,6 +83,19 @@ Instead of HTML `<h2>` and such tags, replace with `##`
 Markdown recognizes up to 6 hash characters for 6 levels.
 
 The ending '##' character is optional. It can be any number of characters.
+
+Alternately, <a target="_blank" href="http://docutils.sourceforge.net/mirror/setext.html">Setext-style</a>
+headers are specified (“underlined”) by a series of
+equal signs (for first-level headers) and dashes (for second-level headers):
+
+<pre><code>
+First-level H1 headers
+=============
+
+Second-level H2 headers
+-------------
+</code></pre>
+
 
 ## Paragraphs
 
@@ -115,9 +129,44 @@ That means you can write this:
 <br><br>
 {% endhighlight %}
 
+## Indention
+
+Markdown uses spaces in front of lines to indent text, such as:
+
+{% highlight html %}
+1. First item:
+
+   Something
+
+2. Second item 
+{% endhighlight %}
+
+CAUTION: No spaces in front of "Something" above would break automatic numbering.
+In order for numbering to continue, all lines must be indented at least 3 spaces.
+
+Another good reason to let Markdown number for you is that after item number 10,
+you need to indent 4 spaces to avoid stopping auto-numbering.
+
+On their own, 4 or more back-ticks is a signal to highlight the sentence in a box, not to indent.
+
+Use 3 spaces in front of 3 backticks.
+
+Not specified in most tutorials about indenting markdown is the use of a bug in HTML.
+
+   <ul>The &LT;ul> HTML tag (meant to define an unordered list) around this text causes an identation of 4 spaces.
+   </ul>
+
+PROTIP: A workaround if you are not able to get automatic numbering: code the numbering yourself.
+To make Markdown interpret a paragraph starting with a number as a list,
+put a left-slash in front of the dot, as in:
+
+{% highlight html %}
+1492\. That was the year.
+{% endhighlight %}
+
 ## Line breaks
 
-PROTIP: Add line breaks (&LT;br>&LT;br>) under lists so add a blank line before the next paragraph.
+PROTIP: Add line breaks (`<br><br>`) under lists so add a blank line before the next paragraph.
 
 Both styles of line break tags result in a new line (without a blank line in between):
 
@@ -132,39 +181,6 @@ or HTML-style tags:
 {% highlight html %}
 Hello<br>there
 {% endhighlight %}
-
-## Indention
-
-Markdown uses spaces in front of lines to indent text, such as:
-
-{% highlight html %}
-1. First item:
-
-   Something
-
-2. Second item 
-{% endhighlight %}
-
-PROTIP: A workaround if you are not able to get automatic numbering: code the numbering yourself.
-To make Markdown interpret a paragraph starting with a number as a list,
-put a left-slash in front of the dot, as in:
-
-{% highlight html %}
-1492\. That was the year.
-{% endhighlight %}
-
-In order for numbering to continue, all lines must be indented.
-
-Heading lines can be indented.
-
-4 or more back-ticks is a signal to highlight the sentence in a box, not to indent.
-
-Use 3 spaces in front of 3 backticks.
-
-Not specified in most tutorials about indenting markdown is the use of a bug in HTML.
-
-   <ul>The &LT;ul> HTML tag around this text causes an identation of 4 spaces.
-   </ul>
 
 ## Unordered Lists
 
@@ -222,28 +238,6 @@ that Markdown converts into escape entities that begin with an **&amp;** (ampers
 
 * the ampersand itself turns to &amp;amp;, as in link URLs.
 
-## Tables #
-
-Alternately, <a target="_blank" href="http://docutils.sourceforge.net/mirror/setext.html">Setext-style</a>
-headers are specified (“underlined”) by a series of
-equal signs (for first-level headers) and dashes (for second-level headers):
-
-<pre><code>
-First-level H1 headers
-=============
-
-Second-level H2 headers
--------------
-</code></pre>
-
-## Tables in HTML
-
-HTML tables renders well from within Markdown text document.
-
-However, some HTML tables were used in the early days of the internet
-were used to format an entire page. Such coding would need surgery to look well
-since tables are now intended to fit into a text column.
-
 ## Bold and italics
 
 CAUTION: Markdown coding are not processed within HTML tables.
@@ -267,6 +261,37 @@ Continue to italicize with:
 which renders as:
 
 <em>italicized</em> rather than Markdown _italicized_ or *italicized*
+
+
+## Tables in HTML
+
+Ironically, HTML tables renders well from within Markdown text document:
+
+<table><thead><tr><th>Column 1</th><th align="right">#</th></tr></thead>
+<tbody>
+<tr valign="top"><td>Here and<br>there</td><td>1,234,567</td></tr>
+<tr valign="top"><td>Everywhere</td><td>2</td></tr>
+</tbody>
+<tfoot><tr valign="top"><td>Sun:</td><td>1,234,569</td></tr>
+</tfoot>
+</table>
+
+is rendered by this code:
+
+{% highlight html %}
+<table><thead><tr><th>Column 1</th><th align="right">#</th></tr></thead>
+<tbody>
+<tr valign="top"><td>Here and<br>there</td><td>1,234,567</td></tr>
+<tr valign="top"><td>Everywhere</td><td>2</td></tr>
+</tbody>
+<tfoot><tr valign="top"><td>Sun:</td><td>1,234,569</td></tr>
+</tfoot>
+</table>
+{% endhighlight %}
+
+However, some HTML tables were used in the early days of the internet
+were used to format an entire page. Such coding would need surgery to look well
+since tables are now intended to fit into a text column.
 
 
 ## Tools?
