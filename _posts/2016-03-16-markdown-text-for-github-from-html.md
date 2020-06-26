@@ -86,7 +86,11 @@ To see your markdown turn into HTML, use this online tool:
 ## Headings #
 ### Sub-heading #
 #### Sub-sub-heading #
-## Heading 2 #
+##### Sub-sub-sub heading #
+
+Markdown recognizes up to 6 hash characters for 6 levels.
+
+WARNING: Markdown is not good about indenting headings.
 
 The headings above make use of `##` (called <a target="_blank" href="http://www.aaronsw.com/2002/atx/">Atx-style</a> headers) instead of HTML `<h2>` tags.
 
@@ -96,23 +100,20 @@ The headings above make use of `##` (called <a target="_blank" href="http://www.
 #### Sub-sub-heading #
 {% endhighlight %}
 
-The ending '##' character is optional. It can be any number of characters.
-
-Markdown recognizes up to 6 hash characters for 6 levels.
-
-WARNING: Markdown is not good about indenting headings.
+The ending '##' character is optional, with any number of characters.
 
 Alternately, <a target="_blank" href="http://docutils.sourceforge.net/mirror/setext.html">Setext-style</a>
 headers are specified (“underlined”) by a series of
 equal signs (for first-level headers) and dashes (for second-level headers):
 
-<pre><code>
-First-level H1 headers
+<pre><code>First-level H1 headers
 =============
 
 Second-level H2 headers
 -------------
 </code></pre>
+
+<hr />
 
 ## Horizontal rule
 
@@ -213,7 +214,7 @@ Hello<br>there
 ## Unordered Lists
 
 CAUTION: Even though HTML can be written or pasted into markdown (.md) files,
-HTML must be more correct than HTML read by internet browsers.
+HTML must be more correct in Markdown than HTML read by internet browsers.
 
 * There must be a blank line before `<ul>` or `<ol>`.
 
