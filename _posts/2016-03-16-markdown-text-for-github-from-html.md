@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Markdown text for GitHub from HTML"
-excerpt: "Coding markup"
+excerpt: "Tricks to force Markdown to show things the way you want."
 tags: [HTML, personalization, jekyll]
-date: "2016-03-16"
+date: "2020-06-23"
 file: "markdown-text-for-github-from-html"
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/14624073/7b96364a-0594-11e6-9643-06decef9dbfd.jpg
@@ -47,6 +47,14 @@ You can copy HTML and paste into Dom Christie's website for conversion to Markdo
 
 ### Auto Convert HTML to text
 
+The easiest way to convert HTML to Markdown text is to use Aaron Swartz’s
+
+   * <a target="_blank" href="http://www.aaronsw.com/2002/html2text/">html2text.py Python script or on-line</a>
+   But it has not been updated since 2011.
+
+> My experience is that we'll need to pretty much go through each line
+to make it look good in Markdown text.
+
 You can specify a URL in this website, which converts HTML page to text:
 
    <ul><a target="_blank" href="http://www.aaronsw.com/2002/html2text/">http://www.aaronsw.com/2002/html2text</a>
@@ -68,16 +76,25 @@ chmod a+x html2text.py ; ./html2text.py erlang.html
 
 PROTIP: Automatic approaches today are usually too automatic, converting what is better left in HTML.
 
+### Markdown to HTML
+
+To see your markdown turn into HTML, use this online tool:
+
+   <ul><a target="_blank" href="http://daringfireball.net/projects/markdown/dingus">Dingus</a>
+   </ul>
 
 ## Headings #
+   ### Sub-heading #
+      #### Sub-sub-heading #
+## Heading 2 #
 
 Instead of HTML `<h2>` and such tags, replace with `##`
 (called <a target="_blank" href="http://www.aaronsw.com/2002/atx/">Atx-style</a> headers) such as:
 
 {% highlight html %}
-\#\# Heading \#
-   \#\#\# Sub-heading \#
-      \#\#\#\# Sub-sub-heading \#
+## Heading #
+### Sub-heading #
+#### Sub-sub-heading #
 {% endhighlight %}
 
 Markdown recognizes up to 6 hash characters for 6 levels.
@@ -95,6 +112,16 @@ First-level H1 headers
 Second-level H2 headers
 -------------
 </code></pre>
+
+## Horizontal rule
+
+A line going across the page accentuates divisions.
+
+Use HTML markup tag:
+
+{% highlight html %}
+<hr />
+{% endhighlight %}
 
 
 ## Paragraphs
@@ -241,12 +268,14 @@ that Markdown converts into escape entities that begin with an **&amp;** (ampers
 
 ## Tables in HTML
 
-HTML table coding in Markdown document renders well:
+Some early websites used HTML table code to format an entire page. 
+Such coding would need surgery to look well since tables are now intended to fit into a text column.
+But HTML table coding in Markdown document usually renders well:
 
 <table border="1" cellpadding="4" cellspacing="0">
 <thead><tr><th align="left">Column 1</th><th align="right">#</th></tr></thead>
 <tbody>
-<tr valign="top"><td>Here and<br><strong>there</strong></td><td>1,234,567</td></tr>
+<tr valign="top"><td>*Here* and<br><strong>there</strong></td><td align="right">1,234,567</td></tr>
 <tr valign="top"><td>Everywhere</td><td align="right">2</td></tr>
 </tbody>
 <tfoot><tr valign="top"><td align="right">Sum:</td><td align="right">1,234,569</td></tr>
@@ -259,7 +288,7 @@ is rendered by this code:
 <table border="1" cellpadding="4" cellspacing="0">
 <thead><tr><th align="left">Column 1</th><th align="right">#</th></tr></thead>
 <tbody>
-<tr valign="top"><td>Here and<br><strong>there</strong></td><td>1,234,567</td></tr>
+<tr valign="top"><td>*Here* and<br><strong>there</strong></td><td align="right">1,234,567</td></tr>
 <tr valign="top"><td>Everywhere</td><td align="right">2</td></tr>
 </tbody>
 <tfoot><tr valign="top"><td align="right">Sum:</td><td align="right">1,234,569</td></tr>
@@ -271,21 +300,20 @@ In headings, center alignment is the default, so align left is necessary.
 
 `valign` (vertical alignment) is necessary to keep text at the top of boxes rather than centered vertically.
 
-However, some HTML tables were used in the early days of the internet
-were used to format an entire page. Such coding would need surgery to look well
-since tables are now intended to fit into a text column.
 
 ## Bold and italics in Tables
 
 CAUTION: Markdown coding are not processed within HTML tables.
 
-So within tables continue to bold with
+Within the sample table above, asterisks in `*Here*` are normally recognized as Markdown code to bold.
+
+So within HTML table code use HTML coding:
 
 {% highlight html %}
 <strong>emphasized</strong> rather than Markdown __emphasized__ or **emphasized**
 {% endhighlight %}
 
-which renders as:
+which renders the same:
 
 <strong>emphasized</strong> rather than Markdown __emphasized__ or **emphasized**
 
@@ -295,24 +323,10 @@ Continue to italicize with:
 <em>italicized</em> rather than Markdown _italicized_ or *italicized*
 {% endhighlight %}
 
-which renders as:
+which renders the same:
 
 <em>italicized</em> rather than Markdown _italicized_ or *italicized*
 
-
-## Tools?
-
-To see your markdown turn into HTML, use this online tool:
-
-   * <a target="_blank" href="http://daringfireball.net/projects/markdown/dingus">Dingus</a>
-
-The easiest way to convert HTML to Markdown text is to use Aaron Swartz’s
-
-   * <a target="_blank" href="http://www.aaronsw.com/2002/html2text/">html2text.py Python script or on-line</a>
-   But it has not been updated since 2011.
-
-> My experience is that we'll need to pretty much go through each line
-to make it look good in Markdown text.
 
 ## Links
 
@@ -358,14 +372,6 @@ To specify starting the video at a specific time (1 minute 2 seconds), use a lin
 
 {% highlight html %}
 <a target="_blank" href="https://www.youtube.com/watch?v=Onv9nhPIBp0&t=1m2s">Link to YouTube</a>.
-{% endhighlight %}
-
-## Horizontal rule
-
-A line going across the page in HTML is:
-
-{% highlight html %}
-<hr />
 {% endhighlight %}
 
 
