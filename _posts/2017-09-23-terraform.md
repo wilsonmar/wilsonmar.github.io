@@ -63,7 +63,6 @@ Terraform and Ansible can work in unison and complement each other. Terraform ca
 <a name="Immutable"></a>
 
 WARNING: Terraform does not support rollbacks.
-
 "Immutable" means once instantiated, it doesn't change. In DevOps, this strategy means individual servers are treated like "cattle" (removed from the herd) and not as "pets" (courageously kept alive as long as possible).
 
 Immutable and idempotent means "when I make a mistake in a complicated setup, I can get going again quickly and easily with less troubleshooting because I can just re-run the script."
@@ -136,13 +135,13 @@ Although Terraform is "open source", the Terraform GUI requires a license.
    Official Getting Started docs at Hashicorp</a>
    focus on individual elements (i.e. resources, input variables, output variables, etc).
 
-<a target="_blank" href="
-https://www.twitch.tv/hashicorplive">
-https://www.twitch.tv/hashicorplive</a>
-1st & 3rd PT Fridays every month
-
+<a target="_blank" href="https://github.com/fedekau/terraform-with-circleci-example">https://github.com/fedekau/terraform-with-circleci-example</a>
 
 ## Social
+
+* <a target="_blank" href="
+https://www.twitch.tv/hashicorplive">
+https://www.twitch.tv/hashicorplive</a> 1st & 3rd PT Fridays every month
 
 * <a target="_blank" href="https://discuss.hashicorp.com/">https://discuss.hashicorp.com</a>
 
