@@ -238,7 +238,44 @@ that Markdown converts into escape entities that begin with an **&amp;** (ampers
 
 * the ampersand itself turns to &amp;amp;, as in link URLs.
 
-## Bold and italics
+
+## Tables in HTML
+
+HTML table coding in Markdown document renders well:
+
+<table border="1" cellpadding="4" cellspacing="0">
+<thead><tr><th align="left">Column 1</th><th align="right">#</th></tr></thead>
+<tbody>
+<tr valign="top"><td>Here and<br><strong>there</strong></td><td>1,234,567</td></tr>
+<tr valign="top"><td>Everywhere</td><td align="right">2</td></tr>
+</tbody>
+<tfoot><tr valign="top"><td align="right">Sum:</td><td align="right">1,234,569</td></tr>
+</tfoot>
+</table>
+
+is rendered by this code:
+
+{% highlight html %}
+<table border="1" cellpadding="4" cellspacing="0">
+<thead><tr><th align="left">Column 1</th><th align="right">#</th></tr></thead>
+<tbody>
+<tr valign="top"><td>Here and<br><strong>there</strong></td><td>1,234,567</td></tr>
+<tr valign="top"><td>Everywhere</td><td align="right">2</td></tr>
+</tbody>
+<tfoot><tr valign="top"><td align="right">Sum:</td><td align="right">1,234,569</td></tr>
+</tfoot>
+</table>
+{% endhighlight %}
+
+In headings, center alignment is the default, so align left is necessary.
+
+`valign` (vertical alignment) is necessary to keep text at the top of boxes rather than centered vertically.
+
+However, some HTML tables were used in the early days of the internet
+were used to format an entire page. Such coding would need surgery to look well
+since tables are now intended to fit into a text column.
+
+## Bold and italics in Tables
 
 CAUTION: Markdown coding are not processed within HTML tables.
 
@@ -261,37 +298,6 @@ Continue to italicize with:
 which renders as:
 
 <em>italicized</em> rather than Markdown _italicized_ or *italicized*
-
-
-## Tables in HTML
-
-Ironically, HTML tables renders well from within Markdown text document:
-
-<table><thead><tr><th>Column 1</th><th align="right">#</th></tr></thead>
-<tbody>
-<tr valign="top"><td>Here and<br>there</td><td>1,234,567</td></tr>
-<tr valign="top"><td>Everywhere</td><td>2</td></tr>
-</tbody>
-<tfoot><tr valign="top"><td>Sun:</td><td>1,234,569</td></tr>
-</tfoot>
-</table>
-
-is rendered by this code:
-
-{% highlight html %}
-<table><thead><tr><th>Column 1</th><th align="right">#</th></tr></thead>
-<tbody>
-<tr valign="top"><td>Here and<br>there</td><td>1,234,567</td></tr>
-<tr valign="top"><td>Everywhere</td><td>2</td></tr>
-</tbody>
-<tfoot><tr valign="top"><td>Sun:</td><td>1,234,569</td></tr>
-</tfoot>
-</table>
-{% endhighlight %}
-
-However, some HTML tables were used in the early days of the internet
-were used to format an entire page. Such coding would need surgery to look well
-since tables are now intended to fit into a text column.
 
 
 ## Tools?
