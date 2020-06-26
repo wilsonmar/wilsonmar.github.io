@@ -83,10 +83,11 @@ To see your markdown turn into HTML, use this online tool:
    <ul><a target="_blank" href="http://daringfireball.net/projects/markdown/dingus">Dingus</a>
    </ul>
 
-## Headings #
-### Sub-heading #
-#### Sub-sub-heading #
-##### Sub-sub-sub heading #
+## Heading (h2) #
+### Sub-heading (h3) #
+#### Sub-sub-heading (h4) #
+##### Sub-sub-sub-heading (h5) #
+###### Sub-sub-sub-sub-heading (h6) #
 
 Markdown recognizes up to 6 hash characters for 6 levels.
 
@@ -95,9 +96,11 @@ WARNING: Markdown is not good about indenting headings.
 The headings above make use of `##` (called <a target="_blank" href="http://www.aaronsw.com/2002/atx/">Atx-style</a> headers) instead of HTML `<h2>` tags.
 
 {% highlight html %}
-## Heading #
-### Sub-heading #
-#### Sub-sub-heading #
+## Heading (h2) #
+### Sub-heading (h3) #
+#### Sub-sub-heading (h4) #
+##### Sub-sub-sub-heading (h5) #
+###### Sub-sub-sub-sub-heading (h6) #
 {% endhighlight %}
 
 The ending '##' character is optional, with any number of characters.
@@ -114,6 +117,7 @@ Second-level H2 headers
 </code></pre>
 
 <hr />
+<hr size="2"/>
 
 ## Horizontal rule
 
@@ -123,6 +127,7 @@ Use HTML markup tag:
 
 {% highlight html %}
 <hr />
+<hr size="2"/>
 {% endhighlight %}
 
 
