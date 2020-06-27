@@ -603,13 +603,15 @@ https://nvd.nist.gov/ncp/checklist/740
 
 ## FedRAMP/FISMA compliance
 
-In the US federal government, the Federal Information Security Management Act of 2002 (FISMA) is a law implented according to National Institute of Standards and Technology (NIST) Special Publication (SP) 800-53 <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">[pdf]</a>.
+In the US federal government, the Federal Information Security Management Act of 2002 (FISMA) law is implemented according to National Institute of Standards and Technology (NIST) Special Publication (SP) <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">800-53 [pdf]</a>.
 
 In 2011 a "cloud first" policy was defined in the Federal Risk and Authorization Program (FedRAMP) <a target="_blank" href="https://cio.gov/wp-content/uploads/downloads/2012/09/Federal-Cloud-Computing-Strategy.pdf">[pdf]</a> where federal agencies make use of cloud service providers (CSPs) given authority to operate (ATO) after receiving system authorization from an independent security assessment conducted by a 3PAO (third-party Assessor). 
 
 A <strong>System Security Plan (SSP)</strong> is required by the
 OMB Security Authorization of Information Systems in Cloud Computing
 <a target="_blank" href="https://cio.gov/wp-content/uploads/2012/09/fedrampmemo.pdf">[pdf]</a>. 
+
+Each SSP authorization package can be in a machine-readable (JSON or XML format) <a target="_blank" href="https://github.com/usnistgov/OSCAL/">https://github.com/usnistgov/OSCAL</a>Open Security Controls Assessment Language (OSCAL)</a> based on <a target="_blank" href="https://www.fedramp.gov/using-the-fedramp-oscal-resources-and-templates/">templates</a> created based on <a target="_blank" href="https://github.com/GSA/fedramp-automation/blob/master/documents/FedRAMP_OSCAL_Registry.xlsx">this Excel xlsx file</a> which defines fields (extensions), identifiers, and values in the <a target="_blank" href="https://github.com/GSA/fedramp-automation">FedRAMP Registry at https://github.com/GSA/fedramp-automation</a>. The template by FedRAMP PMO and <a target="_blank" href="https://www.nist.gov/oscal/">NIST</a>.
 
 <a target="_blank" href="https://www.coalfire.com/Documents/Whitepapers/FISMA-vs-FedRAMP_Controls-authorizations">Coalfire</a>
 came up with this count of controls:
