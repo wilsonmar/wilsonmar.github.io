@@ -41,9 +41,10 @@ You can move faster around Outlook by using <a target="_blank" href="https://sup
 ">Keyboard shortcuts</a>:
 
 On a Mac, press command and a number to reach each view:
-<img width="214" alt="calendar-outlook-" src="https://user-images.githubusercontent.com/300046/85925223-35f16e80-b854-11ea-81fe-acbdabede28c.png">
+<img width="640" alt="calendar-outlook-" src="https://user-images.githubusercontent.com/300046/85925223-35f16e80-b854-11ea-81fe-acbdabede28c.png">
 <table border="1" cellpadding="4" cellspacing="0">
-<tr valign="top"><td>Email</td><td>Calendar</td><td>Contacts</td><td>Tasks</td><td>Notes</td></tr>
+<tr valign="top" align="center"><td>Email</td><td>Calendar</td><td>Contacts</td><td>Tasks</td><td>Notes</td></tr>
+<tr valign="top" align="center"><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
 </table>
 
 For Email – command+1<br />
@@ -54,9 +55,14 @@ For Notes – Command+5
 
 To switch Windows – Command+`
 
-Next item – ctrl+[<br />
-Prev item – ctrl+]
+Prev item – ctrl+]<br />
+Next item – ctrl+[
 
+Insert emoji - Control+ COMMAND +Spacebar
+
+Save an item - COMMAND +S
+
+Hide Outlook - command+Q
 
 
 ## Update Jekyll Theme with Calendar
