@@ -3,12 +3,12 @@ layout: post
 title: "AI Ecosystems APIs"
 excerpt: "Brand names for how corporate overlords are making humans into robots"
 tags: [machine learning, AI]
-date: "2019-12-14"
+date: "2020-05-22"
 file: "ai-ecosystem"
 image:
 # feature: pic green matrix hallway 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14623876/07afd066-0593-11e6-933a-2e596511ac67.jpg
-  credit: 
+  credit: Matrix film
   creditlink: 
 comments: true
 ---
@@ -196,6 +196,11 @@ implement the solution using sparse distributed matrices in PySpark.
 ## Footnotes
 
 https://www.wikiwand.com/en/Deep_learning
+
+
+## Social communities
+
+* <a target="_blank" href="https://coursera.community/artificial-intelligence-ai-64/">Coursera's AI Forum</a>
 
 
 ## More

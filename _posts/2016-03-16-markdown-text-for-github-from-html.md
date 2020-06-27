@@ -76,6 +76,19 @@ chmod a+x html2text.py ; ./html2text.py erlang.html
 
 PROTIP: Automatic approaches today are usually too automatic, converting what is better left in HTML.
 
+
+## Paragraphs
+
+One reason Markdown text is easier to write than HTML is
+there is no need for `<p>` to force a blank line.
+
+Just a blank line will do.
+
+To convert from HTML with a lot of `<p>`, do a mass change (replace all) in a text editor.
+
+Remember to clean up ending `</p>` tags by replacing them with nothing.
+
+
 ### Markdown to HTML
 
 To see your markdown turn into HTML, use this online tool:
@@ -129,18 +142,6 @@ Use HTML markup tag:
 <hr />
 <hr size="2"/>
 {% endhighlight %}
-
-
-## Paragraphs
-
-One reason Markdown text is easier to write than HTML is
-there is no need for `<p>` to force a blank line.
-
-Just a blank line will do.
-
-To convert from HTML with a lot of `<p>`, do a mass change (replace all) in a text editor.
-
-Remember to clean up ending `</p>` tags by replacing them with nothing.
 
 ## Ordered lists #
 

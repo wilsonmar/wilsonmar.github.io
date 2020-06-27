@@ -16,9 +16,9 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Here is a list of data avaiable.
+Here is a list of data available on the internet.
 
-"Data is the crude oil of the 21st Century, and analytics is the combustion engine." --Gartner
+> "Data is the crude oil of the 21st Century, and analytics is the combustion engine." --Gartner
 
 I'd like to see how different people work on the same set of data:
 
@@ -189,16 +189,32 @@ OpenSecrets.org provides datasets</a> related to US political campaign finance.
    "lets you search the collections of libraries in your community and thousands more around the world." 
    
 
-### Geography 
+## Maps of Geography 
 
-   Street Names
+<a target="_blank" href="https://waymo.com/open/about/">https://waymo.com/open</a> from Alphabet's (Google's) self-driving car company Waymo has data collected by Waymo self-driving cars. As of this writing, it had 1,950 segments for 20s each, collected by high resolution LIDAR cameras at 10Hz (200,000 frames) in diverse geographies and conditions. Their code is at <a target="_blank" href="https://github.com/waymo-research/waymo-open-dataset">https://github.com/waymo-research/waymo-open-dataset</a>
 
-   Zip codes by state, latitude, longitude
+
+Country codes
+
+City 
+
+Street Names
+
+Zip codes by state, latitude, longitude
+
+Waypoints
+
+<hr />
 
 ## Weather
 
-## Music
+National Weather Service.
 
+Weather Channel.
+
+Open Weather.
+
+## Music
 
 ### Pandora music
 
@@ -207,6 +223,12 @@ Spotify's API</a>
 was used<a target="_blank" href="http://rcharlie.com/2017-02-16-fitteR-happieR/">
 to identify the sadest Radiohead song</a>.
 
+Spotify.
+
+Lyrics
+
+
+<hr />
 
 ## Domains
 
@@ -214,6 +236,8 @@ First names registered in each state, by year, in the US
    from Google Big Data
 
 Musicbase from a game
+
+<hr />
 
 ## Using data   
 
