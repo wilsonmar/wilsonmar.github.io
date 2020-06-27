@@ -38,7 +38,7 @@ They say writing pure text allows them to keep their fingers near the keyboard
 even as they apply formatting on the fly. 
 Being able to format using text codes means they don't have to stop typing or think about anything else to apply text styling.
 
-Markdown is less limiting than crafting Confluence.
+In my opinion, Markdown is less limiting than crafting Confluence.
 
 <a target="_blank" href="https://www.markdownguide.org/basic-syntax/">markdownguide.org/basic-syntax</a> displays how Markdown converts to HTML and output rendered by GitHub.
 
