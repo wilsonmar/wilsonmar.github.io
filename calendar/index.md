@@ -35,6 +35,29 @@ NOTE: I usually am up by 4 am Pacific Time (5 am Mountain, 6 am Central, 7 am Ea
 NOTE: In this calendar I keep only the times I cannot move.
 I have a separate calendar I use to plan my day.
 
+## Speedy Outlook usage with Keyboard shortcuts
+
+You can move faster around Outlook by using <a target="_blank" href="https://support.microsoft.com/en-us/office/keyboard-shortcuts-for-outlook-3cdeb221-7ae5-4c1d-8c1d-9e63216c1efd
+">Keyboard shortcuts</a>:
+
+On a Mac, press command and a number to reach each view:
+<img width="214" alt="calendar-outlook-" src="https://user-images.githubusercontent.com/300046/85925223-35f16e80-b854-11ea-81fe-acbdabede28c.png">
+<table border="1" cellpadding="4" cellspacing="0">
+<tr valign="top"><td>Email</td><td>Calendar</td><td>Contacts</td><td>Tasks</td><td>Notes</td></tr>
+</table>
+
+For Email – command+1<br />
+For Calendar – command+2<br />
+For Contacts – Command+3<br />
+For Tasks – Commands+4<br />
+For Notes – Command+5
+
+To switch Windows – Command+`
+
+Next item – ctrl+[<br />
+Prev item – ctrl+]
+
+
 
 ## Update Jekyll Theme with Calendar
 
