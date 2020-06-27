@@ -124,6 +124,23 @@ defined affect scores -- a mood score.
 
 ## Data
 
+<a target="_blank" href="https://data.gov">data.gov</a> is home to the U.S. Government’s open data.
+Their <a target="_blank" href="https://labs.data.gov/dashboard/offices/qa">QA stats by department</a> provides data quality metrics such as:
+
+   <ul>
+   * % Valid metadata
+   * % Working Download URLs
+   * % Correct Format
+   <br /><br />
+   Visibly missing is data from the VA and EPA, plus most agencies.
+   us_budget has dollar outlays of each bureau within all agency (branch) of the US government, by year from 1962 to 2021.
+   </ul>
+
+
+<a target="_blank" href="https://github.com/COVID19Tracking/covid-tracking-data">
+COVID-19 Tracking Data</a> exposed by the API, featuring
+hourly updates shown on <a target="_blank" href="https://covidtracking.com/">CovidTracking.com</a>.
+
 <a target="_blank" href="https://parking.api.smgov.net/">
 https://parking.api.smgov.net</a> has
 Santa Monica parking meters API data
@@ -141,8 +158,6 @@ IEX (Investors Exchange)</a> has real-time stock exchange.
 
 archive.ics.uci.edu/ml/datasets.html
 
-data.gov
-
 Amazon Cloud
 
 Azure - Community content are in the Cortana Gallery.
@@ -157,8 +172,6 @@ Google Big Data
 
    IMDB 
 
-   us_budget has dollar outlays of each bureau within all agency (branch) of the US government, by year from 1962 to 2021
-
 Kaggle
 
 Allen Institute (ai2) - http://allenai.org/data.html
@@ -169,7 +182,9 @@ OpenSecrets.org provides datasets</a> related to US political campaign finance.
    * <a target="_blank" href="https://docs.google.com/spreadsheets/d/1yMoTeRd5BbiFBhIRN_q1uFcB4bjxDuhhvZjS6352c40/edit#gid=0">
    Google Sheet Contributions from AT&T, Verizon and Comcast to 115th Members</a>
     
-### News
+## News
+
+US Census
 
    http://news.google.com/archivesearch
    has 200 years of archives
@@ -208,24 +223,50 @@ Waypoints
 
 ## Weather
 
-National Weather Service.
+[?] <a target="_blank" href="https://openweathermap.org/api">OpenWeatherMap.org API</a> is free and based on 40,000 crowd-sourced weather stations.
+   <a target="_blank" href="https://rapidapi.com/community/api/open-weather-map">*</a>
 
-Weather Channel.
+[x] <a target="_blank" href="https://www.weatherbit.io/">Weatherbit API</a>
 
-Open Weather.
+[<a target="_blank" href="https://www.accuweather.com/en/us/joliet/59041/weather-forecast/2196900">*</a>] 
+<a target="_blank" href="https://developer.accuweather.com/">AccuWeather API</a>
+
+[<a target="_blank" href="https://wx.aerisweather.com/local/us/mt/joliet">*</a>] 
+<a target="_blank" href="https://www.aerisweather.com/">AerisWeather API</a>
+
+[x] <a target="_blank" href="https://weather2020.com/">Weather2020 API</a> provides a 12-week forecast.
+
+[x] <a target="_blank" href="https://www.climacell.co/weather-api/">ClimaCell Microweather API</a>
+
+[x] <a target="_blank" href="https://www.weatherbit.io/">Weatherbit</a> uses Machine Learning to predict weather.
+
+[*] <a target="_blank" href="https://api.weather.mg/">Metrogroup</a> specializes in nautical data around the UK.
+
+[*] <a target="_blank" href="https://weatherstack.com/">Weatherstack</a> in the UK.
+
+* Dark Sky API</a> <a target="_blank" href="https://www.fastcompany.com/90485131/apples-dark-sky-acquisition-could-be-bad-news-for-indie-weather-apps">closed down, thanks to Apple.
+
+[x] <a target="_blank" href="https://www.climate.gov/">NOAA (climate.gov)</a>
+
+<a target="_blank" href="https://forecast.weather.gov/MapClick.php?lat=45.4857&lon=-108.9697">[*]</a> 
+<a target="_blank" href="https://www.weather.gov/">National Weather Service (weather.gov)</a>
+
+<a target="_blank" href="https://weather.com/weather/today/l/f59d9298e84bbe13f58e2e13109b4d0c9cf46bdacd86ce7707d718f4630b2334">[*]</a> 
+<a target="_blank" href="https://www.weather.com/">Weather Channel (weather.com)</a> (an IBM business)
+
 
 ## Music
-
-### Pandora music
 
 <a target="_blank" href="https://developer.spotify.com/web-api/">
 Spotify's API</a>
 was used<a target="_blank" href="http://rcharlie.com/2017-02-16-fitteR-happieR/">
 to identify the sadest Radiohead song</a>.
 
-Spotify.
-
 Lyrics
+
+Pandora music?
+
+Amazon music?
 
 
 <hr />
