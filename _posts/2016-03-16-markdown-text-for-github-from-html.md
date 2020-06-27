@@ -17,26 +17,34 @@ comments: true
 
 This post is about how to craft markdown text in a file like README.md.
 
+This article adds real-world observations (PROTIPs) to the short introduction at <a target="_blank" href="https://guides.github.com/features/mastering-markdown/">guides.github.com/features/mastering-markdown</a>.
+
 ## Why Markdown? #
 
 Back in 2004, Apple pundit John Gruber <a target="_blank" href="http://daringfireball.net/projects/markdown/
-">came up with the idea of markdown</a> after becoming frustrated by laborious HTML tags to properly format his content. 
+">came up with the idea of markdown</a> after becoming frustrated by laborious HTML tags to properly format his content. [<a target="_blank" href="https://en.wikipedia.org/wiki/Markdown">Wikipedia</a>]
+
+Markdown is a way to style text on the web by defining regular text with a few non-alphabetic characters.
 
 Markdown is a simple writing system which makes web-based documents both easier to write and 
 easier to read in their raw state.
 
+GitHub renders markdown automatically in files with suffix of .md or .markdown, such as README.md or README.markdown.
+
 Most technical people now write whole blog sites in Markup. This is largely to put docs nearer to code, usually in README files. Self-publishing sites such as GitBook make use of markup. Even fiction writers are writing in markdown code to use GitHub’s collaboration features.
 
 Many non-technical writers prefer writing Markdown text instead of using the mouse-enabled Microsoft Word.
-They say writing pure text allows them to keep their fingers firmly planted on the keyboard
+They say writing pure text allows them to keep their fingers near the keyboard
 even as they apply formatting on the fly. 
 Being able to format using text codes means they don't have to stop typing or think about anything else to apply text styling.
 
 Markdown is less limiting than crafting Confluence.
 
+<a target="_blank" href="https://www.markdownguide.org/basic-syntax/">markdownguide.org/basic-syntax</a> displays how Markdown converts to HTML and output rendered by GitHub.
+
 ## Automatic conversion #
 
-There are many tutorials about markdown already, so this adds tricks to convert existing HTML into Markdown.
+This article adds tricks to convert existing HTML into Markdown.
 I've had to convert hundreds of pages I've written in HTML since the 90's.
 
 You can copy HTML and paste into Dom Christie's website for conversion to Markdown:
@@ -68,7 +76,7 @@ The author of that site provides his Python program at:
    https://github.com/aaronsw/html2text</a>
 
 Download and run the program using this syntax
-(assuming Pythong is installed):
+(assuming Python is installed):
 
    ```
 chmod a+x html2text.py ; ./html2text.py erlang.html
@@ -82,7 +90,7 @@ PROTIP: Automatic approaches today are usually too automatic, converting what is
 One reason Markdown text is easier to write than HTML is
 there is no need for `<p>` to force a blank line.
 
-Just a blank line will do.
+Just a blank line will reflect as such in the output.
 
 To convert from HTML with a lot of `<p>`, do a mass change (replace all) in a text editor.
 
@@ -91,20 +99,18 @@ Remember to clean up ending `</p>` tags by replacing them with nothing.
 
 ### Markdown to HTML
 
-To see your markdown turn into HTML, use this online tool:
+To see your markdown turn into HTML, use the online tool at:
 
-   <ul><a target="_blank" href="http://daringfireball.net/projects/markdown/dingus">Dingus</a>
+   <ul><a target="_blank" href="http://daringfireball.net/projects/markdown/dingus">daringfireball.net/projects/markdown/dingus</a>
    </ul>
+
+Markdown recognizes up to 6 hash characters for 6 levels:
 
 ## Heading (h2) #
 ### Sub-heading (h3) #
 #### Sub-sub-heading (h4) #
 ##### Sub-sub-sub-heading (h5) #
 ###### Sub-sub-sub-sub-heading (h6) #
-
-Markdown recognizes up to 6 hash characters for 6 levels.
-
-WARNING: Markdown is not good about indenting headings.
 
 The headings above make use of `##` (called <a target="_blank" href="http://www.aaronsw.com/2002/atx/">Atx-style</a> headers) instead of HTML `<h2>` tags.
 
@@ -118,6 +124,8 @@ The headings above make use of `##` (called <a target="_blank" href="http://www.
 
 The ending '##' character is optional, with any number of characters.
 
+WARNING: Markdown is not good about indenting headings.
+
 Alternately, <a target="_blank" href="http://docutils.sourceforge.net/mirror/setext.html">Setext-style</a>
 headers are specified (“underlined”) by a series of
 equal signs (for first-level headers) and dashes (for second-level headers):
@@ -130,7 +138,6 @@ Second-level H2 headers
 </code></pre>
 
 <hr />
-<hr size="2"/>
 
 ## Horizontal rule
 
@@ -140,7 +147,6 @@ Use HTML markup tag:
 
 {% highlight html %}
 <hr />
-<hr size="2"/>
 {% endhighlight %}
 
 ## Ordered lists #
@@ -182,11 +188,11 @@ In order for numbering to continue, all lines must be indented at least 3 spaces
 Another good reason to let Markdown number for you is that after item number 10,
 you need to indent 4 spaces to avoid stopping auto-numbering.
 
-On their own, 4 or more back-ticks is a signal to highlight the sentence in a box, not to indent.
-
 Use 3 spaces in front of 3 backticks.
 
-Not specified in most tutorials about indenting markdown is the use of a bug in HTML.
+On their own, 4 or more back-ticks is a signal to highlight the sentence in a box, not to indent.
+
+Not specified in most tutorials about indenting markdown is the use of a bug in HTML:
 
    <ul>The &LT;ul> HTML tag (meant to define an unordered list) around this text causes an identation of 4 spaces.
    </ul>
@@ -311,7 +317,7 @@ In headings, center alignment is the default, so align left is necessary.
 
 ## Bold and italics in Tables
 
-CAUTION: Markdown coding are not processed within HTML tables.
+CAUTION: GitHub Markdown coding is not processed within HTML tables. (The "Markdown Extra" does though)
 
 Within the sample table above, asterisks in `*Here*` are normally recognized as Markdown code to bold.
 
