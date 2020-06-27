@@ -21,6 +21,7 @@ This page is one of a [series on DevSecOps](/devsecops/).
 There are many choices of specific technologies within
 each category:
 
+0. <a href="#Governance">Governance</a>
 0. <a href="#DevProcess">Development process</a>
 0. <a href="#DevOS">Developer laptop</a>
 
@@ -64,6 +65,24 @@ each category:
 0. <a href="#RESTAPI">REST API management</a>
 0. <a href="#MachineLearning">Machine Learning</a>
 0. <a href="#Others">Other technologies</a>
+
+<hr />
+
+## Governance
+
+What is it about forcing manual approval from “executive” level personnel?
+
+Is it to encourage (force) more participation from them?
+
+If so, what do we want them to do before approving or disapproving each request?
+
+How often are those actions actually performed (versus perfunctory approval)?
+
+Since approvals may cause some delay, is the price of such delays worth the actual security increase?
+
+Can those actions be automated to ensure that they actually get done, every time, with less delay? 
+
+That is the basic question asked by DevSecOps.
 
 ## Implications
 
