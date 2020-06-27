@@ -223,6 +223,8 @@ Waypoints
 
 ## Weather
 
+<a target="_blank" href="https://www.timeanddate.com/weather/">[*] TimeAndDate.com</a> provides a webpage you can personalize with your favorite cities, with weather information and local time.
+
 [?] <a target="_blank" href="https://openweathermap.org/api">OpenWeatherMap.org API</a> is free and based on 40,000 crowd-sourced weather stations.
    <a target="_blank" href="https://rapidapi.com/community/api/open-weather-map">*</a>
 
@@ -247,6 +249,8 @@ Waypoints
 * Dark Sky API</a> <a target="_blank" href="https://www.fastcompany.com/90485131/apples-dark-sky-acquisition-could-be-bad-news-for-indie-weather-apps">closed down, thanks to Apple.
 
 [x] <a target="_blank" href="https://www.climate.gov/">NOAA (climate.gov)</a>
+
+<a target="_blank" href="https://worldweather.wmo.int/en/home.html">World Meteorological Organization at https://worldweather.wmo.int</a> provides weather throughout the world, but for mostly cities.
 
 <a target="_blank" href="https://forecast.weather.gov/MapClick.php?lat=45.4857&lon=-108.9697">[*]</a> 
 <a target="_blank" href="https://www.weather.gov/">National Weather Service (weather.gov)</a>
