@@ -4,7 +4,7 @@ title: "Bash scripts (coding)"
 excerpt: "This sample Bash script contains multiple features: install, configure, and run (then remove) a web app within Docker on macOS and Linux, with one copy/paste"
 tags: [devops, bash, programming]
 Categories: Devops
-date: "2020-01-19"
+date: "2020-06-27"
 file: "bash-scripts"
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/14612210/373cb4e2-0553-11e6-8a1a-4b5e1dabe181.jpg
@@ -16,150 +16,176 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-New developers using a "MVP" (Minimum Viable Product) approach to the scope of their Bash scripts
-would aim for the smallest number of lines.
+## TL;DR Summary
 
-But those supporting production Bash scripts know that the initial script is duplicated for use in other purposes. Features or fixes added to one script would not be in the others, which then would accumulate "technical debt" over time. 
+This article describes a Bash script that, with a <strong>single command</strong> does all this:
 
-Features that might be requested include:
-
-   * Install the same package on macOS and different packages for various Linux distributions
-   * Clone from GitHub
-   * Read secrets from a configuration file in clear text, encrypted file, Vault API using govaultenv
-   * Read secrets from cloud Key vaults on GCP, Azure, AWS (after installing their CLI)
-   * Create Docker image
-   * Run Python in Virtualenv
-   * Kill processes before and/or after each run
+   1. Capture a time stamp to later calculate how long the script runs.
+   2. Display a menu if no parameter is specified in the command line
+   3. Define variables for use as "feature flags".
+   4. Set variables associated with each parameter flag
+   5. Set static variables and custom functions to echo text to screen
+   6. Obtain information about the operating system in use to 
+   7. Upgrade to the latest version of bash
+   8. Define utility functions, such as the one to kill process by name
+   9. Set traps to display information if script is interrupted.
+   10. Print run Operating enviornment information
+   11. Install installers (XCode, HomeBrew, apt-get), depending on operating system
+   12. Get secrets from $HOME/.secrets.sh file:
+   13. Display run variables 
+   14. Configure project folder location where files are created by the run
+   15. Install basic utilities: Git, jq
+   16. Obtain repository from GitHub
+   17. Pipenv
+   18. Connect to Google Comput Cloud (GCP), if requested, to get secrets
+   19. Connect to AWS
+   20. Install K8S minikube
+   21. Install EKS using eksctl
+   22. Install Azure
+   23. Read secrets from a configuration file in clear text, encrypted file, Vault API using govaultenv
+   24. Use CircleCI
+   25. Use Yubikey
+   26. Use Hashicorp Vault
+   27. Use NodeJs
+   28. Run Virtualenv
+   29. Use Pyenv
+   30. Use Anaconda
+   31. Use GoLang
+   32. Use Python
+   33. Use Tensorflow
+   34. Use Ruby
+   35. Use WebGoat
+   36. Use Eggplant
+   37. Use Docker
+   38. Run within Docker
+   39. Update GitHub
+   40. Remove GitHub folder after run
+   41. Kill processes after run
+   42. Delete Docker containers after run
+   43. Remove Docker images downloaded
    <br /><br />
 
-Each feature added may have logical inconsistencies with others.
+Each of the above are preceded by "###" comment tags in the script.
 
-> This article presents a logical ordering of concepts presented in a succint way, as a hands-on narrated scenic tour.
+I've refined the script over the years to be a "Swiss Army Knife" that enables me to very quickly get stuff done. So it contains most of the coding tricks one would need to use. The script use includes all the above features for apps in NodeJs, Ruby, and Python (Anacodna and Tensorflow, and a program cloned from GitHub) so that we can avoid some of the toil and human error of manually typing commands on each new instance.
 
-
-## Get started 
+## Copy and paste invocation for menu
 
 1. Open a Terminal on your Mac or instantiate a Linux machine on VMWare, EC2, or other cloud.
 
-   The sample Bash script was tested on macOS and Ubuntu (running within VMWare Fusion on macOS), 
-   but has untested code for CentOS and Red Hat (running within EC2).
-
-   ## Copy and paste invocation
-
-   With this script, a <strong>single command</strong> installs all that is needed:
-   XCode, Bash, git, Ruby, docker, docker-compose.
-
-1. To execute the script just to get a short description of the parameters controlling what features are invoked, copy this command into your Clipboard by <strong>triple-clicking</strong> "bash" to turn this command line gray, then press command+C to copy:
+1. Execute the script just to get a short description of the parameters controlling what features are invoked, copy this command into your Clipboard by <strong>triple-clicking</strong> "bash" to turn this command line gray, then press command+C to copy:
 
    <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh)"
    </strong></pre>
 
    <a name="Args"></a>
 
-   <pre>=========================== 2020-04-12T14:19:45-0600-914 v0.65
+   <pre>=========================== 2020-06-28T10:26:41-0600-347 ./sample.sh v0.72
+OPTIONS:
+   -E            continue (NOT stop) on error
+   -v            run -verbose (list space use and each image to console)
+   -q           -quiet headings for each step
+   -x            set -x to trace command lines
+&nbsp;
+   -I           -Install jq, brew, docker, docker-compose, etc.
+   -U           -Upgrade installed packages
+&nbsp;
+   -s           -secrets retrieve
+   -S "~/.alt.secrets.sh"  -Secrets full file path
+   -H           install/use -Hashicorp Vault secret manager
+   -m           Setup Vault SSH CA cert
+&nbsp;
+   -L           use CircleCI
+   -aws         -AWS cloud
+   -eks         -eks (Elastic Kubernetes Service) in AWS cloud
+   -g "abcdef...89" -gcloud API credentials for calls
+   -p "cp100"   -project in cloud
+&nbsp;
+   -d           -delete GitHub and pyenv from previous run
+   -c           -clone from GitHub
+   -N           -Name of GitHub Repo folder
+   -n "John Doe"            GitHub user -name
+   -e "john_doe@gmail.com"  GitHub user -email
+&nbsp;
+   -k           -k install and use Docker
+   -k8s         -k8s (Kubernetes) minikube
+   -b           -build Docker image
+   -dc           use docker-compose.yml file
+   -w           -write image to DockerHub
+   -r           -restart (Docker) before run
+&nbsp;
+   -py          run with Pyenv
+   -V           to run within VirtualEnv (pipenv is default)
+   -tf          -tensorflow
+   -A           run with Python -Anaconda
+   -y            install Python Flask
+&nbsp;
+   -i           -install Ruby and Refinery
+   -j            install -JavaScript (NodeJs) app with MongoDB
+&nbsp;
+   -G           -GitHub is the basis for program to run
+   -F "abc"     -Folder inside repo
+   -f "a9y.py"  -file (program) to run
+   -P "-v -x"   -Parameters controlling program called
+   -u           -update GitHub
+   -a           -actually run server (not dry run)
+   -t           setup -test server to run tests
+   -o           -open/view app or web page in default browser
+&nbsp;
+   -K           stop OS processes at end of run (to save CPU)
+   -D           -Delete files after run (to save disk space)
+   -C           remove -Cloned files after run (to save disk space)
+   -M           remove Docker iMages pulled from DockerHub
 USAGE EXAMPLE during testing:
+./sample.sh -v -W -r -k -a -o -K -D  # WebGoat Docker with Contrast agent
+./sample.sh -v -s -eggplant -k -a -K -D  # eggplant use docker-compose of selenium-hub images
+./sample.sh -v -S "$HOME/.mck-secrets.sh" -eks -D
+./sample.sh -v -S "$HOME/.mck-secrets.sh" -H -m -t    # Use SSH-CA certs with -H Hashicorp Vault -test actual server
 ./sample.sh -v -g "abcdef...89" -p "cp100-1094"  # Google API call
 ./sample.sh -v -n -a  # NodeJs app with MongoDB
 ./sample.sh -v -i -o  # Ruby app
-./sample.sh -v -I -U -c -s -y -r -a -w     # Python Flask web app in Docker
-./sample.sh -v -I -U -c -H -G -f "a9y-sample.py" -P "-v" -t -w -C  # Python sample app using Vault
+./sample.sh -v -I -U -c -s -y -r -a -AWS   # Python Flask web app in Docker
+./sample.sh -v -I -U    -s -H    -t        # Initiate Vault test server
+./sample.sh -v          -s -H              #      Run Vault test program
+./sample.sh -q          -s -H    -a        # Initiate Vault prod server
+./sample.sh -v -I -U -c    -H -G -N "python-samples" -f "a9y-sample.py" -P "-v" -t -AWS -C  # Python sample app using Vault
 ./sample.sh -v -V -c -T -F "section_2" -f "2-1.ipynb" -K  # Jupyter anaconda Tensorflow in Venv
-USAGE EXAMPLE after testing:
+./sample.sh -v -V -c -L -s    # Use CircLeci based on secrets
 ./sample.sh -v -D -M -C
-OPTIONS:
-   -E           to set -e to NOT stop on error
-   -X           to set -x to trace command lines
-   -H           install -Hashicorp Vault secret manager
-   -v           to run -verbose (list space use and each image to console)
-   -q           -quiet headings for each step
-   -V           to run within VirtualEnv
-   -g "abcdef...89" -gcloud API credentials for calls
-   -i           -install Ruby and Refinery
-   -j            install -JavaScript (NodeJs) app with MongoDB
-   -y            install Python
-   -I           -Install brew, docker, docker-compose
-   -U           -Upgrade packages
-   -p "cp100"     -project in cloud
-   -c           -clone from GitHub
-   -F "abc"     -Folder for working
-   -f "a9y.py"  -file for working
-   -P "-v -x"   -Run parameters controlling program called
-   -s           -secrets retrieve (in default file within your user HOME folder)
-   -n "John Doe"            GitHub user -name
-   -e "john_doe@gmail.com"  GitHub user -email
-   -r           start Docker before -run
-   -b           -build Docker image
-   -A           run in -Anaconda 
-   -T           run -Tensorflow
-   -t           run -tests against test server
-   -a           -actually run in prod server
-   -o           open/view -web page in default browser
-   -D           -Delete files after run (to save disk space)
-   -M           remove Docker iMages pulled from DockerHub
-   -C           remove -Cloned files after run (to save disk space)
-   -K           stop processes at end of run (to save CPU)
+./sample.sh -G -v -f "challenge.py" -P "-v"  # to run a program in python-samples
+./sample.sh -v -s -H -m -o -t  # Vault SSH keygen
    </pre>
 
-   This sample script includes all the above features for apps in NodeJs, Ruby, and Python (Anacodna and Tensorflow, and a program cloned from GitHub) so that we can avoid some of the toil and human error of manually typing commands on each new instance.
+   ## Common Parameters
 
-   ## Combos
-
-   Various combination of features can be turned on or off for a particular run of the script.
-
-   NOTE: This page is still actively under construction.
-
-1. To execute the script to do stuff, copy this command which has 
-   <strong>-v -I -U -c -s -r -a -o</strong> at the end of the line to specify <a href="#Args">parameters</a> controlling what features are invoked each run:
+1. Change what each run of the script does by changing <a href="#Args">parameters</a> invoking the command, such as <strong>-v -I -U -c -s -r -a -o</strong> 
 
    <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh)" -v -I -U -c -s -r -a -o
    </strong></pre>
-
-1. Open a Terminal on your mac, click on it, and keypress command+V to paste.
-
-1. Edit the <a href="#Args">parameters</a> controlling features invoked in the run.
 
    The script ends with a message like this:
 
    <pre>✔ End of script after 1883 seconds and 677960 bytes of disk space.
    </pre>
 
-   ## Arguments
-
    `-v` for -verbosity adds additional notes.
 
-   `-q` for -quiet suppresses headers and footers that appear by default, such as when running in production mode.
+   `-q` for -quiet suppression of headers and footers that appear by default, such as when running in production mode.
 
    `-t` for -testing mode, which runs local Vault and app servers.
 
    `-o` -opens the sample app in your default browser. It doesn't matter what the app is, but for now, the sample app looks like this:
 
-   ![bash-scripts-landing-899x355](https://user-images.githubusercontent.com/300046/72588109-3e1ca980-38c5-11ea-965e-a935b8e69498.jpg)
 
-   The internals of the above sample Python app is described <a target="_blank" href="https://wilsonmar.github.io/python-api-flask">here</a>.
+<hr />
 
-   TODO: Load a sample NodeJs (JavaScript) app from <a target="_blank" href="https://github.com/wesbos/Learn-Node/tree/master/starter-files">https://github.com/wesbos/Learn-Node/tree/master/starter-files</a>
+## Edit sample.sh
 
+1. Use a text editor or IDE to open the `sample.sh` file.
 
-   ## Enter Password
+   ### First line Shebang and comments
 
-   You are prompted for a password.
-
-1. To avoid being asked to enter your password on every run, add yourself to the <tt>sudoers</tt> file. 
-
-   I do not encourage the disabling of password requests by adding this line to sudoers before executing scripts:
-
-   <pre><strong>echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
-   </strong></pre>
-
-1. View the install script at:
-
-   <pre><strong><a target="_blank" href="https://github.com/wilsonmar/DevSecOps/blob/master/bash/sample.sh">https://github.com/wilsonmar/DevSecOps/blob/master/bash/sample.sh</a>
-   </strong></pre>
-
-   TODO: The script creates the app locally, the builds a Docker image based on a Dockerfile, runs the app, and if it passes tests, stores it in Dockerhub.
-
-
-   ## Shebang and comments
+1. Look at the first line.
    
    Unlike the Windows operating system, which decides what program is used to open a file based on the file name "extension" behind the dot, Linux systems ignores the file name and looks into the file to see the first line.
    
@@ -192,21 +218,21 @@ OPTIONS:
    `bash` is the interpreter. (`python` is used in Python scripts.)
    
 
+   <a name="ShellCheck"></a>
 
-<a name="ShellCheck"></a>
+   ### Lint Shellcheck
 
-## Lint Shellcheck
-
-This comment line disables (excludes) ShellCheck linter check <a target="_blank" href="https://www.shellcheck.net/wiki/SC2034">SC2034</a> in the file:
+2. This comment line disables (excludes) ShellCheck linter check <a target="_blank" href="https://www.shellcheck.net/wiki/SC2034">SC2034</a> in the file:
 
    <pre>shellcheck disable=SC2001 # See if you can use ${variable//search/replace} instead.
    </pre>
 
-After ShellCheck version 0.4.6, the line can be added anywhere for the next line in the script.
+   After ShellCheck version 0.4.6, the line can be added anywhere for the next line in the script.
 
    The entire script can be copied and pasted online for checking at <a target="_blank" href="https://shellcheck.net">shellcheck.net</a>, but that can be a security violation. So we install it for local running:
 
-1. Install from <a target="_blank" href="https://github.com/koalaman/shellcheck">https://github.com/koalaman/shellcheck</a>
+
+   Install ShellCheck from <a target="_blank" href="https://github.com/koalaman/shellcheck">https://github.com/koalaman/shellcheck</a>
 
    <pre><strong>bash install shellcheck</strong></pre>
 
