@@ -61,6 +61,9 @@ Next item – ctrl+[
 Insert emoji - Control+ COMMAND +Spacebar
 
 Save an item - COMMAND +S
+Reply - COMMAND+R<br />
+Reply to all - Shift+  COMMAND +R<br />
+Forward message - COMMAND +J
 
 Hide Outlook - command+Q
 
