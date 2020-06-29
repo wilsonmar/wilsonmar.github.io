@@ -841,15 +841,19 @@ The Ruby <strong>Gemfile</strong> specifies the packages mentioned in the import
 
 The <strong>Gemfile.lock</strong> file reflects what Bundler records as the exact versions installed. This way, when the same library/project is loaded on another machine, running bundle install will look at the Gemfile.lock and sinstall the exact same versions, rather than just using the Gemfile and installing the most recent versions. (Running different versions on different machines could lead to broken tests, etc.)
 
+
 <a name="UseDocker"></a>
 
 ## Docker and docker-compose
 
-This script automatically 
+This script can get you up and running with a DockerHub image, but with the ability to get listings of containers and images without much typing.
 
-`-R` restarts the Docker daemon if it's already running.
+This is the case when running <tt>-eggplant</tt>.
+
+`-k` installs and uses Docker and docker-compose. It restarts the Docker daemon if it's already running.
 Either way, the Docker daemon is started.
 
+`-a` 
 
 <a name="CleanUp"></a>
 
