@@ -18,29 +18,37 @@ comments: true
 
 This article describes a Bash script that, with a <strong>single command</strong> can do all this:
 
-   1. Capture a <a href="#TimeStart">time stamp</a> to later calculate how long the script runs.
+   Define bash <a href="#ShellCheck">ShellCheck</a> rules that need to be disabled.
+   1. Echo time, name, version metadata about run
+      * <a href="#FileMetadata">File metadata</a> about the script in comments.
+      * Capture a <a href="#TimeStart">time stamp</a> to later calculate how long the script runs.
    2. Display a menu if no parameter is specified in the command line
    3. Define variables for use as "feature flags".
    4. Set variables associated with each parameter flag
-   5. Define custom functions to echo text to screen
-   6. Obtain information about the operating system in use to 
-   7. Upgrade to the latest version of bash
-   8. Set traps to display information if script is interrupted.
-   9. Print run Operating environment information and set <a href="#StrictMode">"Strict Mode"</a>
-> base on parameters.
+   5. Define <a href="#EchoFunctions">custom functions to echo text to screen</a>
+   6. <a href="#OSDetect">Detect the operating system in use</a> to <a href="#silent-apt-get-install">install the install appropriate to the OS</a>.
+   7. Upgrade to the <a href="#BashVersions">latest version of bash</a>
+   8. Set <a href="#BashTraps">Bash traps</a> to display information if script is interrupted.
+   9. Print run Operating environment information and set <a href="#StrictMode">"Strict Mode"</a> based on parameters specified for the run.
    10. Install <a href="#Installers">installers</a> (XCode, HomeBrew, apt-get), depending on operating system
    11. Define shell utility functions, such as <a href="#ShellCheck">ShellCheck</a> and the function to kill process by name, etc.
    12. Install basic utilities: Git, jq
    
+       <strong>Run configuration:</strong>
+
    13. <a href="#GettingSecrets">Get secrets</a> from a clear-text file in $HOME folder
-   14. Display run variables 
+   14. TODO: Display run variables 
    15. Configure project folder location where files are created by the run
    16. Obtain repository from GitHub
    17. Pipenv and Pyenv to install Python and its modules
 
+       <strong>Connect to cloud (to get secrets):</strong>
+
    18. Connect to Google Comput Cloud (GCP), if requested, to get secrets
    19. Connect to AWS
    20. Connect to Azure
+
+       <strong>Apps:</strong>
    
    21. Install K8S minikube
    22. Install EKS using eksctl
@@ -61,6 +69,8 @@ This article describes a Bash script that, with a <strong>single command</strong
    37. Use Docker
    38. Run within Docker
    39. Update GitHub
+
+       <strong>Clean-Up:</strong>
 
    40. Remove GitHub folder after run
    41. Kill processes after run
@@ -187,12 +197,23 @@ USAGE EXAMPLE during testing:
 
 <hr />
 
+   The rest of this article describes <strong>coding tricks</strong> used and 
+   how you might customize the script.
+
 ## Edit sample.sh
 
 1. Use a text editor or IDE to open the `sample.sh` file.
 
-   The rest of this article describes <strong>coding tricks</strong> used and 
-   how you might customize the script.
+   ### Indent 3 spaces
+
+   It's an asthetic choice.
+
+   <a target="_blank" href="https://google.github.io/styleguide/shell.xml?showone=Use_Local_Variables#Use_Local_Variables">Google's Style Guide</a>
+   calls for two spaces.
+
+   But <strong>three spaces</strong> make the line indent under if align better.
+   And the if statement is the most common in the script. 
+
 
    ### First line Shebang and comments
 
@@ -231,7 +252,7 @@ USAGE EXAMPLE during testing:
 
    <a name="ShellCheck"></a>
 
-   ### Shellcheck Linting
+   ### Disable Shellcheck Linting Rules
 
 2. This comment line disables (excludes) ShellCheck linter check <a target="_blank" href="https://www.shellcheck.net/wiki/SC2034">SC2034</a> in the file:
 
@@ -255,6 +276,13 @@ USAGE EXAMPLE during testing:
    <pre><strong>shellcheck sample.sh</strong></pre>
 
    No response text is issued if no errors were found.
+
+   
+   <a name="FileMetadata"></a>
+
+   ### File metadata
+
+   Metadata about the file, such as 
 
 
    ### Clear screen echo
@@ -295,37 +323,6 @@ USAGE EXAMPLE during testing:
    The number of seconds is rounded DOWN, so a run that takes less than a second is measured as <strong>0</strong> seconds.
 
    <tt>18</tt>
-
-   <a name="StrictMode"></a>
-
-   ### Set "Strict Mode"
-
-   At the beginning of the script file is:
-
-   <pre>set -e  # exits script when a command fails
-# set -eu pipefail  # pipefail counts as a parameter
-   </pre>
-
-   Others are there for convenience, to copy and paste to a specific point in the script where commands need to be visible for debugging:
-
-   <pre># set -x to show commands for specific issues.
-# set -o nounset
-   </pre>
-
-   Some put them all in one line:
-   <pre>set -o nounset -o pipefail -o errexit  # "strict mode"</pre>
-
-   <tt>pipefail</tt> means that when the program encounters an exit code != 0, the exit code for the pipeline (Bash script) becomes != 0. <a target="_blank" href="https://news.ycombinator.com/item?id=10736584"> E.g.</a> pipefail can be useful to ensure `curl does-not-exist-aaaaaaa.com | wc -c` doesn't exit with exit code 0..!>
-
-   <a target="_blank" href="https://medium.com/expedia-group-tech/using-bash-for-devops-7046eed1aa63">Some</a> toggle tracing on and off by defining <tt>export DEBUG=TRUE</tt> and add in the code:
-
-   <pre>DEBUG="TRUE"
-...
-if [[ "${DEBUG:-FALSE}" != "FALSE" ]]; then
-  set -o xtrace
-fi</pre>
-
-
    ## Arguments into script
 
    The <tt>args_prompt()</tt> function defines text that is echoed to the console if the script is invoked with no arguments, such as:
@@ -368,8 +365,6 @@ red="\e[31m"
 reset="\e[0m"
 underline="\e[4m"
    </pre>
-
-### Alternative tput coding
 
    Different Linux distributions and platforms recognize different toggle codes. So use the alternate approach using the <a target="_blank" href="https://en.wikipedia.org/wiki/Tput">tput</a> utility which <a target="_blank" href="http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x405.html">works</a> on all *nix systems to display attribute variables.
    
@@ -414,9 +409,9 @@ echo "${reverse}${cyan}Info${reset} cyan reversed"
 echo "${white}Whatever white${reset} this is"
    </pre>
 
-<a name="PrintMeta"></a>
+<a name="EchoFunctions"></a>
 
-## 
+## Custom functions to echo text to screen
 
 To format output, this code is used:
 
@@ -454,7 +449,7 @@ The `printf` command is used instead of `echo` for compatibility with all versio
 PROTIP: Notice there are HTML/CSS icons within text, so the file must be stored in UTF-8 format.
 
 <img align="right" alt="bash-scripts-171x139.png" src="https://user-images.githubusercontent.com/300046/72717345-129df700-3b31-11ea-877d-dc73677ee8d9.png">
-BTW To test <a target="_blank" href="https://www.toptal.com/designers/htmlarrows/symbols/">how the codes look</a>, put this in a script:
+`-vv` sets debuggin on to print <a target="_blank" href="https://www.toptal.com/designers/htmlarrows/symbols/">how the codes look</a>:
 
    <pre>h2 "Header here"
 info "info"
@@ -465,6 +460,38 @@ warning "warning (warnNotice)"
 fatal "fatal (warnError)"
    </pre>
 
+
+   <a name="StrictMode"></a>
+
+   ### Set "Strict Mode"
+
+   At the beginning of the script file is:
+
+   <pre>set -e  # exits script when a command fails
+# set -eu pipefail  # pipefail counts as a parameter
+   </pre>
+
+   Others are there for convenience, to copy and paste to a specific point in the script where commands need to be visible for debugging:
+
+   <pre># set -x to show commands for specific issues.
+# set -o nounset
+   </pre>
+
+   Some put them all in one line:
+   <pre>set -o nounset -o pipefail -o errexit  # "strict mode"</pre>
+
+   <tt>pipefail</tt> means that when the program encounters an exit code != 0, the exit code for the pipeline (Bash script) becomes != 0. <a target="_blank" href="https://news.ycombinator.com/item?id=10736584"> E.g.</a> pipefail can be useful to ensure `curl does-not-exist-aaaaaaa.com | wc -c` doesn't exit with exit code 0..!>
+
+   <a target="_blank" href="https://medium.com/expedia-group-tech/using-bash-for-devops-7046eed1aa63">Some</a> toggle tracing on and off by defining <tt>export DEBUG=TRUE</tt> and add in the code:
+
+   <pre>DEBUG="TRUE"
+...
+if [[ "${DEBUG:-FALSE}" != "FALSE" ]]; then
+  set -o xtrace
+fi</pre>
+
+
+<a name="OSDetect"></a>
 
 ## Operating System Detection
 
@@ -517,6 +544,7 @@ else
 fi
 </pre>
 
+
 <a name="silent-apt-get-install"></a>
 
 ## apt-get install function
@@ -546,7 +574,6 @@ The output that remains is from <tt>dpkg</tt> which was forked by apt-get. So
 However, you'll still see error messages, which go out thru stderr.
 
 <tt>< /dev/null</tt> pipes stdin standard output to nothing.
-
 <a target="_blank" href="https://peteris.rocks/blog/quiet-and-unattended-installation-with-apt-get/"><em>Explained here</em></a>.
 
 
@@ -596,7 +623,44 @@ There is NO WARRANTY, to the extent permitted by law.
    <tt>grep 'bash'</tt> filters out lines that do not contain the word "bash" in the response.
 
 
-## Disk space free capacity
+<a name="BashTraps"></a>
+
+## Bash Traps
+
+The Bash trap command catches signals so it can execute some commands when appropriate,
+such as <a target="_blank" href="https://www.shellscript.sh/trap.html">
+cleaning up temp files before the script finishes</a>, called an
+<a target="_blank" href="http://redsymbol.net/articles/bash-exit-traps/">exit trap</a>.
+
+   <pre>
+cleanup() {
+    err=$?
+    echo "Cleaning stuff up..."
+    trap '' EXIT INT TERM
+    exit $err 
+}
+sig_cleanup() {
+    trap '' EXIT # some shells will call EXIT after the INT handler
+    false # sets $?
+    cleanup
+}
+   </pre>
+
+<a target="_blank" href="https://unix.stackexchange.com/questions/57940/trap-int-term-exit-really-necessary">
+The above cleanup function</a> is invoked when INT TERM occurs to trigger the function,
+at the bottom of the script:
+
+   <pre>trap cleanup EXIT
+trap sig_cleanup INT QUIT TERM
+   </pre>
+
+This statement in the script...
+
+<pre><strong>trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
+</strong></pre>
+
+
+### Disk space free capacity
 
 We want to know how much disk space is available at the beginning of the run, and the amount of space taken during the run.
 
@@ -639,40 +703,10 @@ At the end of the script, another variable is obtained when the END variable is 
 time and disk space used during the script run.
 
 
+zzz
 
-## Bash Traps
 
-The Bash trap command catches signals so it can execute some commands when appropriate,
-such as <a target="_blank" href="https://www.shellscript.sh/trap.html">
-cleaning up temp files before the script finishes</a>, called an
-<a target="_blank" href="http://redsymbol.net/articles/bash-exit-traps/">exit trap</a>.
-
-   <pre>
-cleanup() {
-    err=$?
-    echo "Cleaning stuff up..."
-    trap '' EXIT INT TERM
-    exit $err 
-}
-sig_cleanup() {
-    trap '' EXIT # some shells will call EXIT after the INT handler
-    false # sets $?
-    cleanup
-}
-   </pre>
-
-<a target="_blank" href="https://unix.stackexchange.com/questions/57940/trap-int-term-exit-really-necessary">
-The above cleanup function</a> is invoked when INT TERM occurs to trigger the function,
-at the bottom of the script:
-
-   <pre>trap cleanup EXIT
-trap sig_cleanup INT QUIT TERM
-   </pre>
-
-This statement in the script...
-
-<pre><strong>trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
-</strong></pre>
+<a name="UtilityFuncs"></a>
 
 ## Utility functions
 
@@ -695,18 +729,7 @@ Code reusability: Bash functions don't return anything; they only produce output
 Scope: Bash has a simple system of local scope which roughly resembles "dynamic scope" (e.g. Javascript, elisp). Functions see the locals of their callers (like Python's "nonlocal" keyword), but can't access a caller's positional parameters (except through BASH_ARGV if extdebug is enabled). Reusable functions can't be guaranteed free of namespace collisions unless you resort to weird naming rules to make conflicts sufficiently unlikely. This is particularly a problem if implementing functions that expect to be acting upon variable names from frame n-3 which may have been overwritten by your reusable function at n-2. Ksh93 can use the more common lexical scope rules by declaring functions with the "function name { ... }" syntax (Bash can't, but supports this syntax anyway).
 
 
-### Indent 3 spaces
-
-It's an asthetic choice.
-
-<a target="_blank" href="https://google.github.io/styleguide/shell.xml?showone=Use_Local_Variables#Use_Local_Variables">Google's Style Guide</a>
-calls for two spaces.
-
-But <strong>three spaces</strong> make the line indent under if align better.
-And the if statement is the most common in the script. 
-
-
-## Script run enviornment 
+## Script run environment 
 
 These commands obtain information about the script's environment:
 
@@ -778,16 +801,13 @@ The script looks for the file name copied by a previous run.
 
 File names on the local machine are specified in the repo's .gitignore file so they don't get pushed into GitHub.
 
+
 <a name="Installers"></a>
 
 ## Package Manager install
 
-`-I` triggers installation of utilities and packages that the app requires.
-
 This script installs the packages managers needed for the operating system under use.
 brew first requires HomeBrew to be installed (using Ruby).
-
-`-U` updates all utilities already installed.
 
 Read <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/README.md">this README</a> which provides someone new to Macs specific steps to configure and run scripts to install apps on Macs. So first finish reading that about "shbangs" and grep for Bash shell versions.
 
@@ -798,16 +818,22 @@ But Linuxbrew installs packages to a unique folder, so that path needs to be add
 
 "brew --prefix" yields "/usr/local".
 
+
 ## Ruby Gemfile of versions
 
 The Ruby <strong>Gemfile</strong> specifies the packages mentioned in the import statement within Ruby programs. The latest <strong>version</strong> of each package is specified by default. Or a specific version can be specified.
 
 The <strong>Gemfile.lock</strong> file reflects what Bundler records as the exact versions installed. This way, when the same library/project is loaded on another machine, running bundle install will look at the Gemfile.lock and sinstall the exact same versions, rather than just using the Gemfile and installing the most recent versions. (Running different versions on different machines could lead to broken tests, etc.)
 
+<a name="UseDocker"></a>
+
 ## Docker and docker-compose
 
 `-R` restarts the Docker daemon if it's already running.
 Either way, the Docker daemon is started.
+
+
+<a name="CleanUp"></a>
 
 ## Clean-up
 
