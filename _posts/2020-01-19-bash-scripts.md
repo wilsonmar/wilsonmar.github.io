@@ -18,13 +18,15 @@ comments: true
 
 This article describes a Bash script that, with a <strong>single command</strong> can do all this:
 
-   Define bash <a href="#ShellCheck">ShellCheck</a> rules that need to be disabled.
-   1. Echo time, name, version metadata about run
-      * <a href="#FileMetadata">File metadata</a> about the script in comments.
+   1. Have initial lines to:
+      * <a href="#Shebang">Shebang</>
+      * Define bash <a href="#ShellCheck">ShellCheck</a> rules that need to be disabled.
+      * Echo time, name, version metadata about run
+      * <a href="#FileMetadata">Metadata</a> about the script in comments.
       * Capture a <a href="#TimeStart">time stamp</a> to later calculate how long the script runs.
    2. Display a menu if no parameter is specified in the command line
-   3. Define variables for use as "feature flags".
-   4. Set variables associated with each parameter flag
+   3. Define variables for use as "feature flags" to control specific features run.
+   4. Set variables associated with each parameter flag.
    5. Define <a href="#EchoFunctions">custom functions to echo text to screen</a>
    6. <a href="#OSDetect">Detect the operating system in use</a> to <a href="#silent-apt-get-install">install the install appropriate to the OS</a>.
    7. Upgrade to the <a href="#BashVersions">latest version of bash</a>
@@ -36,11 +38,11 @@ This article describes a Bash script that, with a <strong>single command</strong
    
        <strong>Run configuration:</strong>
 
-   13. <a href="#GettingSecrets">Get secrets</a> from a clear-text file in $HOME folder
-   14. TODO: Display run variables 
-   15. Configure project folder location where files are created by the run
-   16. Obtain repository from GitHub
-   17. Pipenv and Pyenv to install Python and its modules
+   13. <a href="#GettingSecrets">Get secrets</a> (and other run-time variables) from a clear-text file in $HOME folder or from a crypto program.
+   14. Configure project folder location where files are created during the run.
+   15. Obtain repository from GitHub.
+   16. Reveal secrets stored within <a href="#GitSecret">.gitsecret</a> folder within repo from GitHub (after installing gnupg and git-secret)
+   17. Pipenv and Pyenv to install Python and its modules.
 
        <strong>Connect to cloud (to get secrets):</strong>
 
@@ -72,10 +74,10 @@ This article describes a Bash script that, with a <strong>single command</strong
 
        <strong>Clean-Up:</strong>
 
-   40. Remove GitHub folder after run
-   41. Kill processes after run
-   42. Delete Docker containers after run
-   43. Remove Docker images downloaded
+   40. -C to remove GitHub folder after run
+   41. -K to Kill processes after run (to save CPU)
+   42. -D to Delete containers and other files after run (to save disk space)
+   43. -M to remove Docker iMages downloaded from DockerHub (to save disk space)
    <br /><br />
 
 Each of the above are preceded by "###" comment tags in the script.
@@ -171,7 +173,7 @@ USAGE EXAMPLE during testing:
 ./sample.sh -v -s -H -m -o -t  # Vault SSH keygen
    </pre>
 
-   ## Common Parameters
+   ## Common Run Parameters
 
 1. Change what each run of the script does by changing <a href="#Args">parameters</a> invoking the command, such as <strong>-v -I -U -c -s -r -a -o</strong> 
 
@@ -185,15 +187,17 @@ USAGE EXAMPLE during testing:
 
    `-v` for -verbosity adds additional notes.
 
+   `-vv` for debugging verbosity such as a display <a href="#SampleEchos">example log types</a>.
+
    `-q` for -quiet suppression of headers and footers that appear by default, such as when running in production mode.
 
    `-t` for -testing mode, which runs local Vault and app servers.
 
-   `-o` -opens the sample app in your default browser. It doesn't matter what the app is, but for now, the sample app looks like this:
-
    `-I` runs installers, but installs each only if it is not already installed.
 
    `-I` and `-U` updates installers even though each is installed. Some installers are invoked only if the feature is also specified. But Homebrew and git are updated if no other utilities are specified.
+
+   `-o` -opens the sample app in your default browser.
 
 <hr />
 
@@ -214,6 +218,8 @@ USAGE EXAMPLE during testing:
    But <strong>three spaces</strong> make the line indent under if align better.
    And the if statement is the most common in the script. 
 
+
+   <a name="Shebang"></a>
 
    ### First line Shebang and comments
 
@@ -271,7 +277,7 @@ USAGE EXAMPLE during testing:
 
    <pre><strong>bash install shellcheck</strong></pre>
 
-1. To lint a sample bash shell script so that it does not flag referenced variables as an error:
+1. This script runs ShellCheck to lint itself:
 
    <pre><strong>shellcheck sample.sh</strong></pre>
 
@@ -448,8 +454,10 @@ The `printf` command is used instead of `echo` for compatibility with all versio
 
 PROTIP: Notice there are HTML/CSS icons within text, so the file must be stored in UTF-8 format.
 
+<a name="SampleEchos"></a>
+
 <img align="right" alt="bash-scripts-171x139.png" src="https://user-images.githubusercontent.com/300046/72717345-129df700-3b31-11ea-877d-dc73677ee8d9.png">
-`-vv` sets debuggin on to print <a target="_blank" href="https://www.toptal.com/designers/htmlarrows/symbols/">how the codes look</a>:
+`-vv` sets debugging on to print <a target="_blank" href="https://www.toptal.com/designers/htmlarrows/symbols/">how the codes look</a>:
 
    <pre>h2 "Header here"
 info "info"
@@ -461,9 +469,9 @@ fatal "fatal (warnError)"
    </pre>
 
 
-   <a name="StrictMode"></a>
+<a name="StrictMode"></a>
 
-   ### Set "Strict Mode"
+### Set "Strict Mode"
 
    At the beginning of the script file is:
 
@@ -703,9 +711,6 @@ At the end of the script, another variable is obtained when the END variable is 
 time and disk space used during the script run.
 
 
-zzz
-
-
 <a name="UtilityFuncs"></a>
 
 ## Utility functions
@@ -767,13 +772,16 @@ Sample response:
 
 <a name="GettingSecrets"></a>
 
-## Getting Secrets
+## Getting Initial Secrets
 
 Keeping secrets from being exposed is the bane of developers' existance.
 
+We need to retieve secrets in order to have credentials to access services on the web, such as AWS, Azure, GCP, etc.
+
 Some think that specifying `.gitignore` or keeping a repo as private is enough to keep secrets safe.
 But anytime something is on the internet, it can be exposed.
-So my preferred solution is to re-enter the data each time or save a <tt>.secrets</tt> file in your user $HOME folder.
+
+retrieve a <tt>.secrets</tt> file in your user $HOME folder.
 Edit the file to contain something like:
 
 <pre># Used by https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh
@@ -782,14 +790,13 @@ GitHub_USER_NAME="John Doe"
 GitHub_USER_EMAIL="john_doe@a.com"
 </pre>
 
-Specify `-s` in run parameters for the script to make use of this file.
+`-s` specified in run parameters for the script to make use of this file.
 
-If the file is not found or variable not found, the script falls back to asking for manual input of the variables.
+If that is not specified, or if the file is not found or variable not found, the script falls back to asking for manual input of the variables every run.
 
 In a forthcoming refactoring, we may add use of Hashicorp Vault, which puts another secret in place of the real secret.
 
-
-## Copy Sample files
+### Copy Sample files
 
 The particular application has sample files which should be copied, then <strong>edited</strong> for use.
 
@@ -800,6 +807,15 @@ The particular application has sample files which should be copied, then <strong
 The script looks for the file name copied by a previous run.
 
 File names on the local machine are specified in the repo's .gitignore file so they don't get pushed into GitHub.
+
+
+## GitHub and .gitsecret
+
+<a name="GitSecret"></a>
+
+If a <tt>.gitsecret</tt> folder is found in the repo, the script installs gpg and git-secret brew.
+
+TODO: Also detect if <a target="_blank" href="https://www.passwordstore.org/">https://www.passwordstore.org</a> using <tt>brew install pass</tt>.
 
 
 <a name="Installers"></a>
@@ -816,7 +832,7 @@ On Macs, <a target="_blank" href="https://wilsonmar.github.io/xcode">XCode</a> n
 <a target="_blank" href="https://wilsonmar.github.io/wsl">Windows on Linux</a> can use either a fork of Homebrew (Linuxbrew) or apt-get/yum.
 But Linuxbrew installs packages to a unique folder, so that path needs to be added to the search PATH in <strong>~/.bash_profile</strong>.
 
-"brew --prefix" yields "/usr/local".
+<tt>brew --prefix</tt> yields <tt>"/usr/local"</tt>
 
 
 ## Ruby Gemfile of versions
@@ -828,6 +844,8 @@ The <strong>Gemfile.lock</strong> file reflects what Bundler records as the exac
 <a name="UseDocker"></a>
 
 ## Docker and docker-compose
+
+This script automatically 
 
 `-R` restarts the Docker daemon if it's already running.
 Either way, the Docker daemon is started.
