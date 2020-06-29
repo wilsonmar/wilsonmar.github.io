@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "GitHub GraphQL API"
+title: "GitHub GraphQL (API)"
 excerpt: "GitHub's REST API was perfect. Now THIS is more perfect."
 tags: [GitHub, API, GraphQL]
-date: "2020-02-15"
+date: "2020-06-27"
 file: "github-graphql"
 image:
 # pic green easter island 2 hillside 1920x1080
@@ -49,7 +49,8 @@ GitHub's guides provide sample API calls using the curl command-line utility.
    Building apps
    <br /><br />
 
-But I prefer using Python example client code for better handling of results (looping through a list, saving to a database, etc.)
+
+Python example client code for better handling of results (looping through a list, saving to a database, etc.)
 
 <a name="PyGitHub"></a>
 

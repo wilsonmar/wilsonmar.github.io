@@ -16,39 +16,41 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-## TL;DR Summary
+This article describes a Bash script that, with a <strong>single command</strong> can do all this:
 
-This article describes a Bash script that, with a <strong>single command</strong> does all this:
-
-   1. Capture a time stamp to later calculate how long the script runs.
+   1. Capture a <a href="#TimeStart">time stamp</a> to later calculate how long the script runs.
    2. Display a menu if no parameter is specified in the command line
    3. Define variables for use as "feature flags".
    4. Set variables associated with each parameter flag
-   5. Set static variables and custom functions to echo text to screen
+   5. Define custom functions to echo text to screen
    6. Obtain information about the operating system in use to 
    7. Upgrade to the latest version of bash
-   8. Define utility functions, such as the one to kill process by name
-   9. Set traps to display information if script is interrupted.
-   10. Print run Operating enviornment information
-   11. Install installers (XCode, HomeBrew, apt-get), depending on operating system
-   12. Get secrets from $HOME/.secrets.sh file:
-   13. Display run variables 
-   14. Configure project folder location where files are created by the run
-   15. Install basic utilities: Git, jq
+   8. Set traps to display information if script is interrupted.
+   9. Print run Operating environment information and set <a href="#StrictMode">"Strict Mode"</a>
+> base on parameters.
+   10. Install <a href="#Installers">installers</a> (XCode, HomeBrew, apt-get), depending on operating system
+   11. Define shell utility functions, such as <a href="#ShellCheck">ShellCheck</a> and the function to kill process by name, etc.
+   12. Install basic utilities: Git, jq
+   
+   13. <a href="#GettingSecrets">Get secrets</a> from a clear-text file in $HOME folder
+   14. Display run variables 
+   15. Configure project folder location where files are created by the run
    16. Obtain repository from GitHub
-   17. Pipenv
+   17. Pipenv and Pyenv to install Python and its modules
+
    18. Connect to Google Comput Cloud (GCP), if requested, to get secrets
    19. Connect to AWS
-   20. Install K8S minikube
-   21. Install EKS using eksctl
-   22. Install Azure
+   20. Connect to Azure
+   
+   21. Install K8S minikube
+   22. Install EKS using eksctl
    23. Read secrets from a configuration file in clear text, encrypted file, Vault API using govaultenv
    24. Use CircleCI
    25. Use Yubikey
    26. Use Hashicorp Vault
    27. Use NodeJs
    28. Run Virtualenv
-   29. Use Pyenv
+   29. Configure Pyenv with virtualenv
    30. Use Anaconda
    31. Use GoLang
    32. Use Python
@@ -59,6 +61,7 @@ This article describes a Bash script that, with a <strong>single command</strong
    37. Use Docker
    38. Run within Docker
    39. Update GitHub
+
    40. Remove GitHub folder after run
    41. Kill processes after run
    42. Delete Docker containers after run
@@ -68,6 +71,8 @@ This article describes a Bash script that, with a <strong>single command</strong
 Each of the above are preceded by "###" comment tags in the script.
 
 I've refined the script over the years to be a "Swiss Army Knife" that enables me to very quickly get stuff done. So it contains most of the coding tricks one would need to use. The script use includes all the above features for apps in NodeJs, Ruby, and Python (Anacodna and Tensorflow, and a program cloned from GitHub) so that we can avoid some of the toil and human error of manually typing commands on each new instance.
+
+If this is too much for you, just cut out the features you don't want, and enjoy the rest.
 
 ## Copy and paste invocation for menu
 
@@ -176,12 +181,18 @@ USAGE EXAMPLE during testing:
 
    `-o` -opens the sample app in your default browser. It doesn't matter what the app is, but for now, the sample app looks like this:
 
+   `-I` runs installers, but installs each only if it is not already installed.
+
+   `-I` and `-U` updates installers even though each is installed. Some installers are invoked only if the feature is also specified. But Homebrew and git are updated if no other utilities are specified.
 
 <hr />
 
 ## Edit sample.sh
 
 1. Use a text editor or IDE to open the `sample.sh` file.
+
+   The rest of this article describes <strong>coding tricks</strong> used and 
+   how you might customize the script.
 
    ### First line Shebang and comments
 
@@ -220,7 +231,7 @@ USAGE EXAMPLE during testing:
 
    <a name="ShellCheck"></a>
 
-   ### Lint Shellcheck
+   ### Shellcheck Linting
 
 2. This comment line disables (excludes) ShellCheck linter check <a target="_blank" href="https://www.shellcheck.net/wiki/SC2034">SC2034</a> in the file:
 
@@ -229,114 +240,117 @@ USAGE EXAMPLE during testing:
 
    After ShellCheck version 0.4.6, the line can be added anywhere for the next line in the script.
 
-   The entire script can be copied and pasted online for checking at <a target="_blank" href="https://shellcheck.net">shellcheck.net</a>, but that can be a security violation. So we install it for local running:
+   Alternately, in the script define the code associated with each rule to -exclude from checking:
 
+   <pre><strong>export SHELLCHECK_OPTS="-e SC2001 -e SC2059 -e SC2034 -e SC1090"</strong></pre>
+
+   Also, the entire script can be copied and pasted online for checking at <a target="_blank" href="https://shellcheck.net">shellcheck.net</a>, but that can be a security violation. So we install it for local running:
 
    Install ShellCheck from <a target="_blank" href="https://github.com/koalaman/shellcheck">https://github.com/koalaman/shellcheck</a>
 
    <pre><strong>bash install shellcheck</strong></pre>
 
-1. Define a variable of checks to -exclude from checking:
-
-   <pre><strong>export SHELLCHECK_OPTS="-e SC2001 -e SC2059 -e SC2034 -e SC1090"</strong></pre>
-
 1. To lint a sample bash shell script so that it does not flag referenced variables as an error:
 
    <pre><strong>shellcheck sample.sh</strong></pre>
 
-   ShellCheck issues no response message is issued if no errors were found.
+   No response text is issued if no errors were found.
 
 
-## Clear screen echo
+   ### Clear screen echo
 
-To show responses at the top of the terminal, delete the comment # to enable `clear`  # screen (but not history).
+1. To show responses at the top of the terminal, delete the comment # to enable `clear`  # screen (but not history).
 
-However, a lot of output would scroll past, so it is rather useless.
-Better to print a long string as a visual marker to differentiate between different runs:
+   However, a lot of output would scroll past, so it is rather useless.
+   Better to print a long string as a visual marker to differentiate between different runs:
 
-<pre>echo "========================= $SCRIPT_VERSION"</pre>
+   <pre>echo "========================= $SCRIPT_VERSION"</pre>
 
-The <tt>SCRIPT_VERSION</tt> is shown at the beginning and the end to detect whether a cached version of the script was used. That happens.
+   The <tt>SCRIPT_VERSION</tt> is shown at the beginning and the end to detect whether a cached version of the script was used. That happens.
 
+   <a name="TimeStart"></a>
 
-## Time start - end = elapsed
+   ### Time end - start = elapsed
 
-To determine elapsed time, START time stamps are captured as soon as the script starts.
+   To determine elapsed time, START time stamps are captured as soon as the script starts.
 
-When the script ends, END time stamps are captured to calculate the <strong>elapsed</strong> time.
+   When the script ends, END time stamps are captured to calculate the <strong>elapsed</strong> time.
 
-There are two time stamp formats.
+   There are two time stamp formats.
 
-<pre>EPOCH_START="$(date -u +%s)"  # such as 1572634619</pre>
+   <pre>EPOCH_START="$(date -u +%s)"  # such as 1572634619</pre>
 
-captures the number of minutes since the Jan 1, 1970 epoch point in time.
+   captures the number of minutes since the Jan 1, 1970 epoch point in time.
 
-<pre>LOG_DATETIME=$(date +%Y-%m-%dT%H:%M:%S%z)-$((1 + RANDOM % 1000))</pre>
+   <pre>LOG_DATETIME=$(date +%Y-%m-%dT%H:%M:%S%z)-$((1 + RANDOM % 1000))</pre>
 
-captures the date in a human-readable year-month-day-hour-minutes "ISO 8601" format which also includes the hours and minutes from UTC/GMT, such as "-600" (for US Central Time) in this sample output:
+   captures the date in a human-readable year-month-day-hour-minutes "ISO 8601" format which also includes the hours and minutes from UTC/GMT, such as "-600" (for US Central Time) in this sample output:
 
    <tt>sample.sh.2018-04-22T19:26:20-0600-18</tt>
 
-An additional RANDOM number is added to ensure uniqueness.
+   An additional RANDOM number is added to ensure uniqueness among several instances running.
 
-PROTIP: Values stored in variables during a run do not persist.
+   PROTIP: Values stored in variables during a run do not persist.
 
-The number of seconds is rounded DOWN, so a run that takes less than a second is measured as <strong>0</strong> seconds.
+   The number of seconds is rounded DOWN, so a run that takes less than a second is measured as <strong>0</strong> seconds.
 
-<tt>18</tt>
+   <tt>18</tt>
 
+   <a name="StrictMode"></a>
 
-## Set "Strict Mode"
+   ### Set "Strict Mode"
 
-At the beginning of the script file is:
+   At the beginning of the script file is:
 
-<pre>set -e  # exits script when a command fails
+   <pre>set -e  # exits script when a command fails
 # set -eu pipefail  # pipefail counts as a parameter
-</pre>
+   </pre>
 
-Others are there for convenience, to copy and paste to a specific point in the script where commands need to be visible for debugging:
+   Others are there for convenience, to copy and paste to a specific point in the script where commands need to be visible for debugging:
 
-<pre># set -x to show commands for specific issues.
+   <pre># set -x to show commands for specific issues.
 # set -o nounset
-</pre>
+   </pre>
 
-Some put them all in one line:
-<pre>set -o nounset -o pipefail -o errexit  # "strict mode"</pre>
+   Some put them all in one line:
+   <pre>set -o nounset -o pipefail -o errexit  # "strict mode"</pre>
 
-<tt>pipefail</tt> means that when the program encounters an exit code != 0, the exit code for the pipeline (Bash script) becomes != 0. <a target="_blank" href="https://news.ycombinator.com/item?id=10736584"> E.g.</a> pipefail can be useful to ensure `curl does-not-exist-aaaaaaa.com | wc -c` doesn't exit with exit code 0..!>
+   <tt>pipefail</tt> means that when the program encounters an exit code != 0, the exit code for the pipeline (Bash script) becomes != 0. <a target="_blank" href="https://news.ycombinator.com/item?id=10736584"> E.g.</a> pipefail can be useful to ensure `curl does-not-exist-aaaaaaa.com | wc -c` doesn't exit with exit code 0..!>
 
-<a target="_blank" href="https://medium.com/expedia-group-tech/using-bash-for-devops-7046eed1aa63">Some</a> toggle tracing on and off by defining <tt>export DEBUG=TRUE</tt> and add in the code:
+   <a target="_blank" href="https://medium.com/expedia-group-tech/using-bash-for-devops-7046eed1aa63">Some</a> toggle tracing on and off by defining <tt>export DEBUG=TRUE</tt> and add in the code:
 
-<pre>DEBUG="TRUE"
+   <pre>DEBUG="TRUE"
 ...
 if [[ "${DEBUG:-FALSE}" != "FALSE" ]]; then
   set -o xtrace
 fi</pre>
 
 
-## Arguments into script
+   ## Arguments into script
 
-The <tt>args_prompt()</tt> function defines text that is echoed to the console if the script is invoked with no arguments, such as:
+   The <tt>args_prompt()</tt> function defines text that is echoed to the console if the script is invoked with no arguments, such as:
 
-<pre><strong>./sample.sh -h -v -I -U -c -s -r -a -o</strong></pre>
+   <pre><strong>./sample.sh -h -v -I -U -c -s -r -a -o</strong></pre>
 
-Checking for whether parameters were added is done by this code:
+   Checking for whether parameters were added is done by this code:
 
-<pre>if [ $# -eq 0 ]; then  # display if no parameters are provided:
+   <pre>if [ $# -eq 0 ]; then  # display if no parameters are provided:
    args_prompt
 fi</pre>
 
-<a href="#args">A sample response was shown above</a>.
+   <a href="#args">A sample response was shown above</a>.
 
-The USAGE example shows the various parameters that need to be added to specific actions taken by the script.
+   The USAGE example shows the various parameters that need to be added to specific actions taken by the script.
 
-This design ensures the flexibility of the script.
+   This design ensures the flexibility of the script.
+ 
+   Flags not associated with a text string specification (such as Verbose) default to false and get switched to true when specified.
 
-Flags not associated with a text string specification (such as Verbose) default to false and get switched to true when specified.
+   Text variables are defined first, then exported in a separate step as recommended by Shellcheck.
 
-Text variables are defined first, then exported in a separate step as recommended by Shellcheck.
+<a name="TextColors"></a>
 
-## Text colors in messages
+## Text color codes in messages
 
 The Unix operating system (on which today's Linux distributions are based) "streams" text to the Console. Colors (colours) and other effects are specified by inserting "<strong>toggles</strong>" (attributes) that change the appearing of text following it. A <strong>reset</strong> sets all text to display in the default appearance.
 
@@ -400,8 +414,9 @@ echo "${reverse}${cyan}Info${reset} cyan reversed"
 echo "${white}Whatever white${reset} this is"
    </pre>
 
+<a name="PrintMeta"></a>
 
-## Echo/print messages
+## 
 
 To format output, this code is used:
 
@@ -727,9 +742,9 @@ Sample response:
 `wilson_mar` is my user name on my macOS laptop.
 
 
-<a name="KeepingSecrets"></a>
+<a name="GettingSecrets"></a>
 
-## Keeping Secrets
+## Getting Secrets
 
 Keeping secrets from being exposed is the bane of developers' existance.
 
@@ -763,6 +778,8 @@ The script looks for the file name copied by a previous run.
 
 File names on the local machine are specified in the repo's .gitignore file so they don't get pushed into GitHub.
 
+<a name="Installers"></a>
+
 ## Package Manager install
 
 `-I` triggers installation of utilities and packages that the app requires.
@@ -773,6 +790,8 @@ brew first requires HomeBrew to be installed (using Ruby).
 `-U` updates all utilities already installed.
 
 Read <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/README.md">this README</a> which provides someone new to Macs specific steps to configure and run scripts to install apps on Macs. So first finish reading that about "shbangs" and grep for Bash shell versions.
+
+On Macs, <a target="_blank" href="https://wilsonmar.github.io/xcode">XCode</a> needs to be installed for utilities needed by the HomeBrew installer.
 
 <a target="_blank" href="https://wilsonmar.github.io/wsl">Windows on Linux</a> can use either a fork of Homebrew (Linuxbrew) or apt-get/yum.
 But Linuxbrew installs packages to a unique folder, so that path needs to be added to the search PATH in <strong>~/.bash_profile</strong>.
