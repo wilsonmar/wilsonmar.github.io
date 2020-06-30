@@ -30,6 +30,52 @@ I'd like to see how different people work on the same set of data:
 
 unsplash.com
 
+<a target="_blank" href="https://paperswithcode.com/area/natural-language-processing">
+Natural Language Processing datasets at PapersWithCode.com</a>
+
+<a target="_blank" href="https://paperswithcode.com/area/computer-vision">
+Computer Vision datasets at PapersWithCode.com</a>
+
+## Speech / Voice
+
+<a target="_blank" href="https://paperswithcode.com/area/speech">
+Speech datasets at PapersWithCode.com</a>
+
+<a target="_blank" href="https://paperswithcode.com/area/audio">
+Audio datasets at PapersWithCode.com</a>
+
+## Music
+
+<a target="_blank" href="https://paperswithcode.com/area/music">
+Music datasets at PapersWithCode.com</a>
+
+<a target="_blank" href="https://developer.spotify.com/web-api/">
+Spotify's API</a>
+was used<a target="_blank" href="http://rcharlie.com/2017-02-16-fitteR-happieR/">
+to identify the sadest Radiohead song</a>.
+
+Lyrics
+
+Pandora music?
+
+Amazon music?
+
+
+# Computer Code
+
+<a target="_blank" href="https://paperswithcode.com/area/computer-code">
+Computer Code datasets at PapersWithCode.com</a>
+
+## Medical
+
+<a target="_blank" href="https://paperswithcode.com/area/medical">
+Medical datasets at PapersWithCode.com</a>
+
+## Robots
+
+<a target="_blank" href="https://paperswithcode.com/area/robots">
+Robots datasets at PapersWithCode.com</a>
+
 ### Microsoft's COCO 
 
 <a target="_blank" href="https://www.ted.com/talks/joseph_redmon_how_a_computer_learns_to_recognize_objects_instantly#t-286801">VIDEO</a>: 
@@ -257,20 +303,6 @@ Waypoints
 
 <a target="_blank" href="https://weather.com/weather/today/l/f59d9298e84bbe13f58e2e13109b4d0c9cf46bdacd86ce7707d718f4630b2334">[*]</a> 
 <a target="_blank" href="https://www.weather.com/">Weather Channel (weather.com)</a> (an IBM business)
-
-
-## Music
-
-<a target="_blank" href="https://developer.spotify.com/web-api/">
-Spotify's API</a>
-was used<a target="_blank" href="http://rcharlie.com/2017-02-16-fitteR-happieR/">
-to identify the sadest Radiohead song</a>.
-
-Lyrics
-
-Pandora music?
-
-Amazon music?
 
 
 <hr />
