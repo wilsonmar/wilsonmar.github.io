@@ -18,8 +18,8 @@ comments: true
 
 This article describes a Bash script that, with a <strong>single command</strong> can do all this:
 
-   1. Have initial lines to:
-      * <a href="#Shebang">Shebang</>
+   1. Define initial lines to:
+      * First line file type <a href="#Shebang">"shebang"</a>
       * Define bash <a href="#ShellCheck">ShellCheck</a> rules that need to be disabled.
       * Echo time, name, version metadata about run
       * <a href="#FileMetadata">Metadata</a> about the script in comments.
@@ -66,18 +66,18 @@ This article describes a Bash script that, with a <strong>single command</strong
    32. Use Python
    33. Use Tensorflow
    34. Use Ruby
-   35. Use WebGoat
-   36. Use Eggplant
-   37. Use Docker
-   38. Run within Docker
-   39. Update GitHub
+   35. Setup Eggplant
+   
+   36. Use Docker
+   37. Run within Docker
+   38. Update GitHub
 
        <strong>Clean-Up:</strong>
 
-   40. -C to remove GitHub folder after run
-   41. -K to Kill processes after run (to save CPU)
-   42. -D to Delete containers and other files after run (to save disk space)
-   43. -M to remove Docker iMages downloaded from DockerHub (to save disk space)
+   39. -C to remove GitHub folder after run
+   40. -K to Kill processes after run (to save CPU)
+   41. -D to Delete containers and other files after run (to save disk space)
+   42. -M to remove Docker iMages downloaded from DockerHub (to save disk space)
    <br /><br />
 
 Each of the above are preceded by "###" comment tags in the script.
@@ -277,12 +277,13 @@ USAGE EXAMPLE during testing:
 
    <pre><strong>bash install shellcheck</strong></pre>
 
-1. This script runs ShellCheck to lint itself:
+1. This script runs ShellCheck to lint itself. 
 
    <pre><strong>shellcheck sample.sh</strong></pre>
 
    No response text is issued if no errors were found.
 
+   PROTIP: If ShellCheck finds an issue, the script stops.
    
    <a name="FileMetadata"></a>
 
@@ -769,6 +770,9 @@ Sample response:
 
 `wilson_mar` is my user name on my macOS laptop.
 
+<a name="ShellCheck"></a>
+
+## ShellCheck
 
 <a name="GettingSecrets"></a>
 
