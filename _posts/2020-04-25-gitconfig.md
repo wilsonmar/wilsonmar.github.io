@@ -1,20 +1,198 @@
+---
+layout: post
+title: "GitConfig "
+excerpt: "for multi-account usage"
+tags: [apple, mac, setup, Go]
+date: "2020-04-15"
+file: "goconfig"
+image:
+# books-1900x500.jpg
+  feature: https://user-images.githubusercontent.com/300046/80358183-3f049600-8839-11ea-9b41-3a07bdcc6596.jpg
+  credit: 
+  creditlink: 
+comments: true
+---
+<i>{{ page.excerpt }}</i>
+{% include l18n.html %}
+{% include _toc.html %}
 
-![books-1900x500.jpg](https://user-images.githubusercontent.com/300046/80358183-3f049600-8839-11ea-9b41-3a07bdcc6596.jpg)
+<img src="https://user-images.githubusercontent.com/300046/80358183-3f049600-8839-11ea-9b41-3a07bdcc6596.jpg">
 
-## Professional multi-account usage
+To enable you to quickly become productive, this hands-on tutorial contains instructions for quick installation and <strong>efficient usage</strong> of tools accessing several GitHub accounts used.
 
-This tutorial contains instructions for installation and usage of GitHub tools used by professionals:
+## McKinsey GitHub Organizations
 
-   * a Git Terminal client 
-   * a utility to cryptographically sign commits, called GPG (GNU Privacy Guard)
-   * keyboard shortcuts
+Historically, each of several McKinsey cells make use of their own source code repository.
 
-   * a folder containing Git Hooks to take automatic actions
-   * a utility to compare several files as the default within Git
-   * a professional text editor as the default within Git
+   <ul>
+   <li><a target="_blank" href="https://githuben.intranet.mckinsey.com">https://githuben.intranet.mckinsey.com</a> used by T&D (Technology and Digital) is an on-prem. GitHub Enterprise instance</li>
+   <li>Quay.io (from RedHat/IBM)</li>
+   <li>self-hosted GitHub on AWS</li>
+   <li></li>
+   <li>is an on-prem. Git instance by HSS (Health Systems and Services?) is obsolete</li>
+   </ul>
+
+Some of these instances require VPN access, which can be a hassle.
+
+Having disparate systems has made it difficult for workers to easily work across cells.
+Fragmented administrative support has resulted in <strong>technical debt</strong> which is slowing down adoption of innovations, especially around security and self-service.
+
+So to concentrate support capabilities, a McKinsey "OneGitHub" initiative in 2020 is migrating repositories to a set of new <strong>organizations</strong> on the public GitHub.com world-wide infrastructure:
+
+   <ul>
+   <li><a target="_blank" href="https://github.com/McK-Internal">https://github.com/McK-Internal</a> for holding production code for internal systems (not seen by clients).</li>
+   <li><a target="_blank" href="https://github.com/McK-Internal-Test">https://github.com/McK-Internal-Test</a> for testing internal systems.</li>
+   <li><a target="_blank" href="https://github.com/McK-Playgroud">https://github.com/McK-Playground</a> for individuals doing experiments.</li>
+   </ul>
+
+Each Github organization has a slightly different <a href="#SecConfig">security configuration</a>.
+But none of the new orgs require special VPN configuration.
+
+Each GitHub organization has a different naming convention for how to <a href="#RepoNaming">name repositories</a>.
+
+The strategy for maximum worker convenience is that each worker has a <strong>single GitHub.com account</strong> to access all repositories, McKinsey or otherwise. Access to specific McKinsey repositories are assigned by McKinsey administrators who associate specific users with Teams in GitHub.
+
+
+## GitHub.com account
+
+1. Create a public GitHub.com account using your McKinsey work email at:
+
+   <a target="_blank" href="https://github.com/">https://github.com</a> 
+
+   <img width="398" alt="github-new-user" src="https://user-images.githubusercontent.com/300046/86534738-07007b80-be98-11ea-80f4-4471a21fc213.png">
+
+1. PROTIP: You can't use underlines in GitHub user names. So use your first-name dash last-name such as "jane-doe". If you have a popular name and have been assigned a suffix such as "-GGN", include that in your GitHub name to avoid confusion, such as:
+
+   `jane-doe-ggn`
+
+1. Come up with a strong password. 
+
+1. Configure your profile with a picture at:
+
+   <a target="_blank" href="https://github.com/">https://github.com</a> 
+
+1. MFA via Okta ???
+
+## Access in McK via Duo
+
+While a self-service portal is being built, a system Administrator manually initiates the enrollment of each new GitHub user using a FIA utility website.
+
+1. When you receive an email from Luc Allain via GitHub.com, click the green "Join" button. That opens a new tab on your default internet browser.
+
+1. Get authenticated by opening the Duo app on your iPhone and clicking the buttons.
+
+   Now you can access files when working on the internet browser.
+
+   To use Visual Studio Code within GitHub.com online, configure your <a href="#dotfiles">personal dotfiles</a> repository.
+
+   Also, most developers prefer a way to work <strong>offline on their laptops</strong> (without an internet connection) in case they need to. So they clone (download) files to work, then push "commits" (changes) back to GitHub. To do that requires installing some software utilities and configuration work.
+
+   <a name="dotfiles"></a>
+
+   ## Personal Dotfiles repos
+
+   Files used to install and configure utilities and environment for "local" work on laptops are typically stored in a repository called "dotfiles" in your personal account.
+
+   You only need one set of dotfiles for your laptop to access various organizations on github.
+
+   If you don't already have a dotfiles repository, I have programmed a shell script that automates installation of several tools for you.
+
+   The automation is one of many ways to setup a laptop.
+
+   ### Search within GitHub
+
+1. Just so you understand the variety, here is the result of a search through all github.com of "dotfiles":
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/86536824-e93b1280-bea7-11ea-8a8d-2264c3d155db.png"><img width="1080" alt="github-search-dotfiles" src="https://user-images.githubusercontent.com/300046/86536824-e93b1280-bea7-11ea-8a8d-2264c3d155db.png"></a>
+
+   Dotfiles are a highly personal matter.
+
+   So instructions here are necessarily for a specific set of configurations, which you can customize after this generic installation.
+
+   I have programmed a shell script that automates installation of several
+
+
+<hr />
+
+
+## Run install script on macOS
+
+1. Switch to a Terminal shell window. Press command+spacebar and type enough of "Terminal.app" for a selection to appear, then press Enter to open it.
+
+1. <strong>Triple-click</strong> this command to highlight it, then press command+C to copy it to your invisible Clipboard:
+
+   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh)"
+   </strong></pre>
+
+1. Switch to the Terminal window by pressing command+Tab.
+
+2. Click anywhere on the Terminal.
+
+3. Press command+V to paste from the Clipboard and execute the script.
+
+Below are the steps performed by the script.
+
+## Automated Install Script
+
+Here is what our automation script installs and configures:
+
+   1. A <a href="#DotFiles">base dotfiles repository</a> as the basis for customizations
+   2. A Git client. There are many available, but this is the most popular
+   3. A Git GUI client (GitHub Desktop) so you can download any repository with one click
+   4. Terminal client "iTerm2" and "Hyper"
+
+   1. A utility to compare differences among several files as the default within Git
+   1. <a href="#TextEditor">Text editor</a> Visual Studio Code and popular plugins
+
+   1. The GPG (GNU Privacy Guard) utility to cryptographically sign git commits
+   1. The "vault" (from Hashicorp) which manages secrets 
+   1. The "git-secrets" as git sub-commands to scan for presence of secrets in Python code.
+
+   1. The "hub" utility to perform actions on GitHub.com from the command line
+   1. The "jq" utility to parse JSON within Command Line programs within the Terminal
+   1. The "Insomnia" REST API GUI client
+
+   1. <a href="#Fonts">Fonts</a> that are easier on your eyes.
+   1. Web browser plug-ins to optionally set dark mode
+   1. Keyboard shortcuts so you can type a few characters instead of long commands
    <br /><br />
 
-(Instructions here uses TextEdit, a GUI text editor that comes with macOS.)
+
+<hr />
+
+Here are the manual equivalents to the automated script invoked above:
+
+   <a name="DotFiles"></a>
+
+   ### dotfiles
+
+1. Switch to an internet browser such as Google Chrome and get yourself to this:
+
+   <a target="_blank" href="https://github.com/wilsonmar/dofiles">https://github.com/wilsonmar/dotfiles</a> 
+
+1. 
+
+
+
+
+<a name="TextEditor"></a>
+
+## Text Editor
+
+Instructions here uses TextEdit, a GUI text editor that comes with macOS.)
+
+## Configure secrets file
+
+1. Open a text editor to create and save a text file containing your secrets
+
+   <pre>
+   </pre>
+
+1. Open a text editor to create and save a text file containing your secrets
+
+   <pre>
+   </pre>
+
 
 ## Multiple GitHub accounts
 
@@ -308,9 +486,26 @@ gbs         # to add, commit, and push with a generic message
    ## Git Hooks on clients
 
 
+<a name="SecConfig"></a>
+
+## Org. Security Configuration
+
+
+
 ## References
 
 https://www.freecodecamp.org/news/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca/
 
 https://medium.com/the-andela-way/a-practical-guide-to-managing-multiple-github-accounts-8e7970c8fd46
+
+
+
+<a name="RepoNaming"></a>
+
+## Repo Naming conventions
+
+
+<a name="Fonts"></a>
+
+### Fonts
 
