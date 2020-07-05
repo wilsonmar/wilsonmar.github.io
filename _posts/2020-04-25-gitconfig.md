@@ -81,15 +81,18 @@ While a self-service portal is being built, a system Administrator manually init
 
 1. When you receive an email from Luc Allain via noreply@GitHub.com, click the green "Join" button. That opens a new tab on your default internet browser.
 
-   <img width="449" alt="github-mck-invite-449x431.jpg" src="https://user-images.githubusercontent.com/300046/86538861-d0395e00-beb5-11ea-9467-66ae27cd8881.jpg"></a>
+   <img width="449" alt="github-mck-invite-449x431.jpg" src="https://user-images.githubusercontent.com/300046/86538861-d0395e00-beb5-11ea-9467-66ae27cd8881.jpg">
 
-1. Type your GitHub user account you <a href="#GitHubNewAcct">setup above</a>:
+1. In "Pick a username", type the GitHub user account you specified in the <a href="#GitHubNewAcct">setup step above</a>:
 
    ![github-mck-sel-name-207x350](https://user-images.githubusercontent.com/300046/86538905-4047e400-beb6-11ea-8dc2-35aa70b16d6f.jpg)
 
+1. You need to type the same email address and password you specified when setting up that username.
+
 1. Get authenticated by opening the Duo app on your iPhone and clicking the buttons.
 
-   After authentication, you still need to get assigned permissions to specific repositories.
+   After authentication, you still need to get assigned permissions to specific repositories
+   (based on GitHub Team assignment).
    
 
 <hr />
@@ -97,32 +100,6 @@ While a self-service portal is being built, a system Administrator manually init
 ### Install macOS laptop
 
    Most developers prefer a way to work <strong>offline on their laptops</strong> (without an internet connection) in case they need to. So they clone (download) files to work, then push "commits" (changes) back to GitHub. To do that requires installing some software utilities and configuration work.
-
-   <a name="dotfiles"></a>
-
-   ### Personal Dotfiles repos
-
-   Files used to install and configure utilities and environment for "local" work on laptops are stored in a "dotfiles" repository under your personal account. 
-
-   If your current laptop is lost or damaged, you can reinstall the latest versions of your tools.
-
-   You only need one set of dotfiles for your laptop to access various organizations on github.
-
-   If you don't already have a dotfiles repository, I have programmed a shell script that automates installation of several tools for you.
-
-   The automation is one of many ways to setup a laptop.
-
-   ### Search within GitHub
-
-1. Just so you understand the variety, here is the result of a search through all github.com of "dotfiles":
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/86536824-e93b1280-bea7-11ea-8a8d-2264c3d155db.png"><img width="1080" alt="github-search-dotfiles" src="https://user-images.githubusercontent.com/300046/86536824-e93b1280-bea7-11ea-8a8d-2264c3d155db.png"></a>
-
-   This list of nearly 140,000 (at time of writing) can be sorted different ways.
-
-   Dotfiles are a highly personal matter.
-   More details about dotfiles are <a target="_blank" href="https://wilsonmar.github.io/dotfiles/">here</a>.
-
    Instructions and automation below are necessarily for a specific set of configurations, which you can customize after this generic installation.
 
 <hr />
@@ -139,9 +116,9 @@ While a self-service portal is being built, a system Administrator manually init
 
 1. Switch to the Terminal window by pressing command+Tab until you rest on the Terminal icon.
 
-2. Click anywhere on the Terminal.
+2. Click anywhere on the Terminal. You might be required to enter your password again.
 
-3. Press command+V to paste from the Clipboard and execute the script.
+3. Press command+V to paste from the Clipboard.
 
 4. Press cursor back to change `-u wilsonmar` to your own GitHub account, such as `-u john-doe`.
 
@@ -151,20 +128,21 @@ Below describes steps performed by the script.
 
 ## Automated Install Script
 
-Here is what our automation script installs and configures:
+Th automation script installs and configures all that many have requested, listed here for those who only want to install specific features on their own:
 
-   1. On Windows: a Subsystem for Linux to run Bash scripts
+   1. On <a href="#WindowsInstall">Windows</a>: a PowerShell script to install Subsystem for Linux to run Bash scripts
    1. On macOS: XCode utilities, Ruby, and Homebrew to install utilities
    1. Upgrade components which come with the operating system and is likely obsolete
-   1. A <a href="#GitClient">Git client</a> program (optionally, Tower) and plug-ins
 
-   1. A <a href="#DotFiles">base dotfiles repository</a> as the basis for customizations
+   1. A <a href="#GitClient">Git client</a> program to `git clone` and other commands
    1. A <a href="#GitGUIClient">Git GUI client</a> (GitHub Desktop) so you can download any repository with one click
    4. A Terminal client "iTerm2" and "Hyper"
 
-   1. The "hub" utility to perform actions on GitHub.com from the command line
-   1. The "jq" utility to parse JSON within Command Line programs within the Terminal
-   1. The "Insomnia" REST API GUI client
+   1. A <a href="#DotFiles">base dotfiles repository</a> as the basis for customizations (git clone)
+   1. "hub" utility to perform actions on GitHub.com from the command line
+   1. "jq" utility to parse JSON within Command Line programs within the Terminal
+   1. "curl" and "wget" utilities to process REST API on the command line (like on Linux)
+   1. "Insomnia" REST API GUI client
 
    1. "vault" (from Hashicorp) client to manage secrets on Vault Server
    1. "Pylint" and "Flake8" linter and "Bandit" security scanner for Python code
@@ -174,12 +152,12 @@ Here is what our automation script installs and configures:
    1. Web browser plug-ins to optionally set dark mode
    1. Keyboard shortcuts and utilities so you can type a few characters instead of long commands
 
-      These have implications for editing the `.gitconfig` file:
+      These have implications for editing the `.gitconfig` file</a>:
 
    1. A utility to compare differences among several files as the default within Git
    1. <a href="#TextEditor">Text editor</a> Visual Studio Code and popular plugins
-   1. The GPG (GNU Privacy Guard) utility to optionally cryptographically sign git commits
-
+   1. The GPG (GNU Privacy Guard) utility to optionally cryptographically sign Git commits
+   1. Configuration of .gitconfig to automatically provide keys to several GitHub organizations
    <br /><br />
 
 
@@ -187,21 +165,120 @@ Here is what our automation script installs and configures:
 
 Below are the manual equivalents to the automated script invoked above:
 
-<a name="DotFiles"></a>
+<a name="WindowsInstall"></a>
 
-### dotfiles
+## Windows install
 
-1. Switch to an internet browser such as Google Chrome and get yourself to this:
+Automation of Windows 10 means running first running a Microsoft's PowerShell script, <strong>manually</strong>. PowerShell comes installed by default in every Windows machine (starting with Windows 7 SP1 and Windows Server 2008 R2 SP1). But it's <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/install/installing-windows-powershell?view=powershell-7">invoked differently depending on the edition of Windows</a>. Instructions below are for Windows 10 Desktop (not Server):
 
-   <a target="_blank" href="https://github.com/wilsonmar/dofiles">https://github.com/wilsonmar/dotfiles</a> 
+1. Identify the version of PowerShell:
 
-1. 
+   <pre><strong>$PSVersionTable </strong></pre>
+
+   Windows Automatic Updates keeps the version current to what is available (5.1 at time of writing).
+
+   ### Upgrade .NET Framework 4.5 (or later)
+
+1. In an internet browser (Google Chrome), get the <strong>offline</strong> installer:
+
+   https://www.microsoft.com/en-us/download/details.aspx?id=40779
+
+1. Click "Download", then "Save".
+1. After download is complete ...
+
+   ### Change PowerShell Execution Policy
+
+<a target="_blank" href="https://www.youtube.com/watch?v=a85QLUJ0Wbs">VIDEO</a>
+
+1. Open PowerShell program by pressing the Windows	key on your keyboard or clicking the Windows icon at the left lower corner. Then, start typing "PowerShell" until the full name appears. Click on that.
+
+   `PS ` appears when you are in PowerShell.
+
+1. Change PowerShell's execution policy (i.e. enable Powershell), to avoid errors:
+
+   <pre><strong>Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+   </strong></pre>
+
+1. To install <a target="_blank" href="https://scoop.sh/">Scoop</a> (which is now preferred over Chocolately), within the PowerShell prompt, use iwr (which is equivalent to curl in Linux):
+
+   <pre><strong>iwr -useb get.scoop.sh | iex</strong></pre>
+
+   Alternately, triple-click this command and paste in Powershell prompt:
+
+   <pre><strong>Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+   </strong></pre>
+
+1. If you prefer to use "curl" and "touch" commands from Linux, out of habit:
+
+   <pre><strong>scoop install curl touch openssh</strong></pre>
+
+1. Install 7zip client needed by some Windows apps to unzip archives in that format:
+
+   <pre><strong>scoop install 7zip</strong></pre>
+
+1. To reduce eyestrain, format the command-line Terminal with the Solarized theme of colors:
+
+   <pre><strong>scoop install concfg
+concfg import solarized small
+y</strong></pre>
+
+
+
+
 
 <a name="GitGUIClient"></a>
 
 ## Git Client GUI program
 
 There are several available, but this is the most popular
+
+1. Install Git CLI client using Homebrew. On macOS:
+
+   <pre><strong>brew install git</strong></pre>
+
+   On Windows:
+
+   <pre><strong>scoop install git</strong></pre>
+
+   Now you should be able to press the Windows key to open the "Git Bash" program, 
+   then run Bash scripts.
+
+1. On Windows: Install Git command completion and to show what brach on the command prompt:
+
+   <pre><strong>scoop install pshazz</strong></pre>
+
+
+
+
+<a name="dotfiles"></a>
+
+
+### Personal Dotfiles repos
+
+   Files used to install and configure utilities and environment for "local" work on laptops are stored in a "dotfiles" repository under your personal account. 
+
+   If your current laptop is lost or damaged, you can reinstall the latest versions of your tools.
+
+   You only need one set of dotfiles for your laptop to access various organizations on github.
+
+   If you don't already have a dotfiles repository, I have programmed a shell script that automates installation of several tools for you. Such automation is one of many ways to setup a laptop.
+
+### Search within GitHub
+
+1. Just so you get an idea of their popularity and variety, here is the result of a search through all github.com of "dotfiles":
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/86536824-e93b1280-bea7-11ea-8a8d-2264c3d155db.png"><img width="1080" alt="github-search-dotfiles" src="https://user-images.githubusercontent.com/300046/86536824-e93b1280-bea7-11ea-8a8d-2264c3d155db.png"></a>
+
+   This list of nearly 140,000 (at time of writing) can be sorted different ways.
+
+   Dotfiles are a highly personal matter.
+   More details about dotfiles are <a target="_blank" href="https://wilsonmar.github.io/dotfiles/">here</a>.
+
+1. Switch to an internet browser such as Google Chrome and get yourself to this:
+
+   <a target="_blank" href="https://github.com/wilsonmar/dofiles">https://github.com/wilsonmar/dotfiles</a> 
+
+
 
 
 <a name="TextEditor"></a>
