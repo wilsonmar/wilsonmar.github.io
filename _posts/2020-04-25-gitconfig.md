@@ -16,8 +16,6 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<img src="https://user-images.githubusercontent.com/300046/80358183-3f049600-8839-11ea-9b41-3a07bdcc6596.jpg">
-
 To enable you to quickly become productive, this hands-on tutorial contains instructions for quick installation and <strong>efficient usage</strong> of tools accessing several GitHub accounts used.
 
 ## McKinsey GitHub Organizations
@@ -25,19 +23,19 @@ To enable you to quickly become productive, this hands-on tutorial contains inst
 Historically, each of several McKinsey cells make use of their own source code repository.
 
    <ul>
+   <li><a target="_blank" href="https://quantumblacklabs.com/">https://quantumblacklabs.com</a> used by Quantum Black is already on GitHub SaaS</li>
    <li><a target="_blank" href="https://githuben.intranet.mckinsey.com">https://githuben.intranet.mckinsey.com</a> used by T&D (Technology and Digital) is an on-prem. GitHub Enterprise instance</li>
-   <li>Quay.io (from RedHat/IBM)</li>
-   <li>self-hosted GitHub on AWS</li>
-   <li></li>
-   <li>is an on-prem. Git instance by HSS (Health Systems and Services?) is obsolete</li>
+   <li><a target="_blank" href="https://git.mckinsey-solutions.com/">https://git.mckinsey-solutions.com</a> used by ClienTech is an on-prem. instance </li>
+   <li><a target="_blank" href="https://github.mdl.cloud/">https://github.mdl.cloud</a> used by MDL is GitHub instance on self-hosted AWS</li>
+   <li><a target="_blank" href="https://git.dev-nebula.com/">https://git.dev-nebula.com</a> used by HSS (Health Systems and Services?) is an on-prem. instance of GitBucket (obsolete version v4.22.0)</li>
    </ul>
 
-Some of these instances require VPN access, which can be a hassle.
+Some of these instances (such as MDL) require VPN access, which can be a hassle.
 
-Having disparate systems has made it difficult for workers to easily work across cells.
+Having disparate systems has made it difficult for people to easily work across cells.
 Fragmented administrative support has resulted in <strong>technical debt</strong> which is slowing down adoption of innovations, especially around security and self-service.
 
-So to concentrate support capabilities, a McKinsey "OneGitHub" initiative in 2020 is migrating repositories to a set of new <strong>organizations</strong> on the public GitHub.com world-wide infrastructure:
+So to concentrate support capabilities, a McKinsey "OneGitHub" initiative in 2020 is migrating repositories to a set of new <strong>organizations</strong> on the GitHub.com SaaS world-wide infrastructure:
 
    <ul>
    <li><a target="_blank" href="https://github.com/McK-Internal">https://github.com/McK-Internal</a> for holding production code for internal systems (not seen by clients).</li>
@@ -53,7 +51,9 @@ Each GitHub organization has a different naming convention for how to <a href="#
 The strategy for maximum worker convenience is that each worker has a <strong>single GitHub.com account</strong> to access all repositories, McKinsey or otherwise. Access to specific McKinsey repositories are assigned by McKinsey administrators who associate specific users with Teams in GitHub.
 
 
-## GitHub.com account
+<a name="GitHubNewAcct"></a>
+
+## New GitHub.com account
 
 1. Create a public GitHub.com account using your McKinsey work email at:
 
@@ -67,6 +67,8 @@ The strategy for maximum worker convenience is that each worker has a <strong>si
 
 1. Come up with a strong password. 
 
+1. Store the password in a safe place.
+
 1. Configure your profile with a picture at:
 
    <a target="_blank" href="https://github.com/">https://github.com</a> 
@@ -77,21 +79,32 @@ The strategy for maximum worker convenience is that each worker has a <strong>si
 
 While a self-service portal is being built, a system Administrator manually initiates the enrollment of each new GitHub user using a FIA utility website.
 
-1. When you receive an email from Luc Allain via GitHub.com, click the green "Join" button. That opens a new tab on your default internet browser.
+1. When you receive an email from Luc Allain via noreply@GitHub.com, click the green "Join" button. That opens a new tab on your default internet browser.
+
+   <img width="449" alt="github-mck-invite-449x431.jpg" src="https://user-images.githubusercontent.com/300046/86538861-d0395e00-beb5-11ea-9467-66ae27cd8881.jpg"></a>
+
+1. Type your GitHub user account you <a href="#GitHubNewAcct">setup above</a>:
+
+   ![github-mck-sel-name-207x350](https://user-images.githubusercontent.com/300046/86538905-4047e400-beb6-11ea-8dc2-35aa70b16d6f.jpg)
 
 1. Get authenticated by opening the Duo app on your iPhone and clicking the buttons.
 
-   Now you can access files when working on the internet browser.
+   After authentication, you still need to get assigned permissions to specific repositories.
+   
 
-   To use Visual Studio Code within GitHub.com online, configure your <a href="#dotfiles">personal dotfiles</a> repository.
+<hr />
 
-   Also, most developers prefer a way to work <strong>offline on their laptops</strong> (without an internet connection) in case they need to. So they clone (download) files to work, then push "commits" (changes) back to GitHub. To do that requires installing some software utilities and configuration work.
+### Install macOS laptop
+
+   Most developers prefer a way to work <strong>offline on their laptops</strong> (without an internet connection) in case they need to. So they clone (download) files to work, then push "commits" (changes) back to GitHub. To do that requires installing some software utilities and configuration work.
 
    <a name="dotfiles"></a>
 
-   ## Personal Dotfiles repos
+   ### Personal Dotfiles repos
 
-   Files used to install and configure utilities and environment for "local" work on laptops are typically stored in a repository called "dotfiles" in your personal account.
+   Files used to install and configure utilities and environment for "local" work on laptops many store online in a repository called "dotfiles" in your personal account.
+
+   If your current laptop is lost or damaged, you can reinstall the latest versions of your tools.
 
    You only need one set of dotfiles for your laptop to access various organizations on github.
 
@@ -105,46 +118,46 @@ While a self-service portal is being built, a system Administrator manually init
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/86536824-e93b1280-bea7-11ea-8a8d-2264c3d155db.png"><img width="1080" alt="github-search-dotfiles" src="https://user-images.githubusercontent.com/300046/86536824-e93b1280-bea7-11ea-8a8d-2264c3d155db.png"></a>
 
+   This list of nearly 140,000 (at time of writing) can be sorted different ways.
+
    Dotfiles are a highly personal matter.
+   More details about dotfiles are <a target="_blank" href="https://wilsonmar.github.io/dotfiles/">here</a>.
 
-   So instructions here are necessarily for a specific set of configurations, which you can customize after this generic installation.
-
-   I have programmed a shell script that automates installation of several
-
+   Instructions and automation below are necessarily for a specific set of configurations, which you can customize after this generic installation.
 
 <hr />
 
 
-## Run install script on macOS
+### Run install script on macOS
 
 1. Switch to a Terminal shell window. Press command+spacebar and type enough of "Terminal.app" for a selection to appear, then press Enter to open it.
 
 1. <strong>Triple-click</strong> this command to highlight it, then press command+C to copy it to your invisible Clipboard:
 
-   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh)"
+   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh) -u wilson-mar"
    </strong></pre>
 
-1. Switch to the Terminal window by pressing command+Tab.
+1. Switch to the Terminal window by pressing command+Tab until you rest on the Terminal icon.
 
 2. Click anywhere on the Terminal.
 
 3. Press command+V to paste from the Clipboard and execute the script.
 
-Below are the steps performed by the script.
+4. Press cursor back to change `-u wilsonmar` to your own GitHub account, such as `-u john-doe`.
+
+5. Press Enter to run the script.
+
+Below describes steps performed by the script.
 
 ## Automated Install Script
 
 Here is what our automation script installs and configures:
 
    1. A <a href="#DotFiles">base dotfiles repository</a> as the basis for customizations
-   2. A Git client. There are many available, but this is the most popular
-   3. A Git GUI client (GitHub Desktop) so you can download any repository with one click
+   2. A Git client terminal program. 
+   3. A <a href="#GitGUIClient">Git GUI client</a> (GitHub Desktop) so you can download any repository with one click
    4. Terminal client "iTerm2" and "Hyper"
 
-   1. A utility to compare differences among several files as the default within Git
-   1. <a href="#TextEditor">Text editor</a> Visual Studio Code and popular plugins
-
-   1. The GPG (GNU Privacy Guard) utility to cryptographically sign git commits
    1. The "vault" (from Hashicorp) which manages secrets 
    1. The "git-secrets" as git sub-commands to scan for presence of secrets in Python code.
 
@@ -155,16 +168,23 @@ Here is what our automation script installs and configures:
    1. <a href="#Fonts">Fonts</a> that are easier on your eyes.
    1. Web browser plug-ins to optionally set dark mode
    1. Keyboard shortcuts so you can type a few characters instead of long commands
+
+      These have implications for editing the `.gitconfig` file:
+
+   1. A utility to compare differences among several files as the default within Git
+   1. <a href="#TextEditor">Text editor</a> Visual Studio Code and popular plugins
+   1. The GPG (GNU Privacy Guard) utility to optionally cryptographically sign git commits
+
    <br /><br />
 
 
 <hr />
 
-Here are the manual equivalents to the automated script invoked above:
+Below are the manual equivalents to the automated script invoked above:
 
-   <a name="DotFiles"></a>
+<a name="DotFiles"></a>
 
-   ### dotfiles
+### dotfiles
 
 1. Switch to an internet browser such as Google Chrome and get yourself to this:
 
@@ -172,7 +192,11 @@ Here are the manual equivalents to the automated script invoked above:
 
 1. 
 
+<a name="GitGUIClient"></a>
 
+## Git Client GUI program
+
+There are several available, but this is the most popular
 
 
 <a name="TextEditor"></a>
