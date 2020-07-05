@@ -497,10 +497,11 @@ A discussion forum about markdown is at:
 * <a target="_blank" href="https://blog.ghost.org/markdown/">
    List of markdown editors across operating systems</a>
 
-* https://blog.ghost.org/markdown/
+* <a target="_blank" href="https://blog.ghost.org/markdown/">https://blog.ghost.org/markdown</a>
 
+* <a target="_blank" href="https://leanpub.com/markdown-to-ebook">Markdown to Ebook</a> is available on Leanpub.com, about how to write a book in Leanpub using Markdown.
 
-
+* <a target="_blank" href="https://www.jeffgeerling.com/blog/self-publishing-my-first-technical-book-leanpub">Jeff Geerling's musings on writing a book</a>
 
 ## More on front-end styling #
 
