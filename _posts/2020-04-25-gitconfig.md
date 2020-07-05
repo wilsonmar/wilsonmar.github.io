@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "GitConfig "
-excerpt: "for multi-account usage"
-tags: [apple, mac, setup, Go]
-date: "2020-04-15"
+excerpt: "Setup automation for multi-account usage"
+tags: [setup, mac, Windows, bash]
+date: "2020-07-05"
 file: "goconfig"
 image:
 # books-1900x500.jpg
@@ -102,7 +102,7 @@ While a self-service portal is being built, a system Administrator manually init
 
    ### Personal Dotfiles repos
 
-   Files used to install and configure utilities and environment for "local" work on laptops many store online in a repository called "dotfiles" in your personal account.
+   Files used to install and configure utilities and environment for "local" work on laptops are stored in a "dotfiles" repository under your personal account. 
 
    If your current laptop is lost or damaged, you can reinstall the latest versions of your tools.
 
@@ -153,21 +153,26 @@ Below describes steps performed by the script.
 
 Here is what our automation script installs and configures:
 
-   1. A <a href="#DotFiles">base dotfiles repository</a> as the basis for customizations
-   2. A Git client terminal program. 
-   3. A <a href="#GitGUIClient">Git GUI client</a> (GitHub Desktop) so you can download any repository with one click
-   4. Terminal client "iTerm2" and "Hyper"
+   1. On Windows: a Subsystem for Linux to run Bash scripts
+   1. On macOS: XCode utilities, Ruby, and Homebrew to install utilities
+   1. Upgrade components which come with the operating system and is likely obsolete
+   1. A <a href="#GitClient">Git client</a> program (optionally, Tower) and plug-ins
 
-   1. The "vault" (from Hashicorp) which manages secrets 
-   1. The "git-secrets" as git sub-commands to scan for presence of secrets in Python code.
+   1. A <a href="#DotFiles">base dotfiles repository</a> as the basis for customizations
+   1. A <a href="#GitGUIClient">Git GUI client</a> (GitHub Desktop) so you can download any repository with one click
+   4. A Terminal client "iTerm2" and "Hyper"
 
    1. The "hub" utility to perform actions on GitHub.com from the command line
    1. The "jq" utility to parse JSON within Command Line programs within the Terminal
    1. The "Insomnia" REST API GUI client
 
+   1. "vault" (from Hashicorp) client to manage secrets on Vault Server
+   1. "Pylint" and "Flake8" linter and "Bandit" security scanner for Python code
+   1. "git-secrets" as git sub-commands to scan for presence of secrets in Python code.
+
    1. <a href="#Fonts">Fonts</a> that are easier on your eyes.
    1. Web browser plug-ins to optionally set dark mode
-   1. Keyboard shortcuts so you can type a few characters instead of long commands
+   1. Keyboard shortcuts and utilities so you can type a few characters instead of long commands
 
       These have implications for editing the `.gitconfig` file:
 
