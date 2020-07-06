@@ -13,10 +13,9 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
-{% include l18n.html %}
 {% include _toc.html %}
 
-To enable you to quickly become productive, this hands-on tutorial contains instructions for quick installation and <strong>efficient usage</strong> of tools accessing several GitHub accounts used.
+To enable you to quickly become productive, this hands-on tutorial contains step-by-step instructions (with commentary) for quick installation and <strong>efficient usage</strong> of tools accessing several GitHub accounts used.
 
 ## McKinsey GitHub Organizations
 
@@ -48,9 +47,18 @@ So to concentrate support capabilities, a McKinsey "OneGitHub" initiative in 202
 Each Github organization has a slightly different <a href="#SecConfig">security configuration</a>.
 But none of the new orgs require special VPN configuration.
 
+`Key` in the tables refer to <a href="#KeyboardShortcuts">Keyboard shortcuts</a> to reach each repo quickly.
+
 Each GitHub organization has a different naming convention for how to <a href="#RepoNaming">name repositories</a>.
 
-The strategy for maximum worker convenience is that each worker has a <strong>single GitHub.com account</strong> to access all repositories, McKinsey or otherwise. Access to specific McKinsey repositories are assigned by McKinsey administrators who associate specific users with Teams in GitHub.
+The strategy for maximum worker convenience is that you have a <strong>single GitHub.com account</strong> to access all repositories, including your own personal account if you prefer. This can happen because access to specific McKinsey repositories are assigned based on association of specific users with GitHub Teams which are associated. You can be associated with one of three levels of access to each repository:
+
+   * Admin
+   * Regular
+   * Read-only
+   <br /><br />
+
+First, you need a GitHub account.
 
 
 <a name="GitHubNewAcct"></a>
@@ -94,12 +102,12 @@ While a self-service portal is being built, a system Administrator manually init
 1. Get authenticated by opening the Duo app on your iPhone and clicking the buttons.
 
    After authentication, you still need to get assigned permissions to specific repositories
-   (based on GitHub Team assignment).
+   (based on GitHub Team assignment for each repo).
    
 
 <hr />
 
-## Install on laptops
+## What's in your laptop?
 
    Most developers prefer a way to work <strong>offline on their laptops</strong> (without an internet connection) in case they need to. So they clone (download) files to work, then push "commits" (changes) back to GitHub. To do that requires installing some software utilities and configuration work.
    Instructions and automation below are necessarily for a specific set of configurations, which you can customize after this generic installation.
@@ -110,7 +118,7 @@ But when your laptop is ever lost, stolen, or needs to be replaced, you'll have 
 
 That's why we have created an automation script to install and configure the most popular utilities used by developers like you, for Windows and macOS.
 
-## Automated Install Script
+### What devs want
 
 Our automation script installs and configures several of what many developers requested. (However, you may want to install specific features on your own):
 
@@ -152,21 +160,23 @@ Below are the manual equivalents to the automated script invoked above, fo
 <hr />
 
 
-Before running the script, Windows 10 users need to prepare:
+Before running the install script, Windows 10 users need to prepare:
 
 <a name="WindowsInstall"></a>
 
-### Prepare Windows 10
+## Prepare Windows 10
 
 Automation of Windows 10 means running first running a Microsoft's PowerShell script, <strong>manually</strong>. PowerShell comes installed by default in every Windows machine (starting with Windows 7 SP1 and Windows Server 2008 R2 SP1). But it's <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/install/installing-windows-powershell?view=powershell-7">invoked differently depending on the edition of Windows</a>. Instructions below are for Windows 10 Desktop (not Server):
 
 ### Install Git Bash (Git for Windows)
 
-1. <a target="_blank" href="https://www.udemy.com/course/git-bash/learn/lecture/2752490#overview">VIDEO</a>: Install "Git for Windows" from:
+<a target="_blank" href="https://www.udemy.com/course/git-bash/learn/lecture/2752490#overview">VIDEO</a>: Install "Git for Windows":
 
+1. In an internet browser (Google Chrome), go to URL:
+ 
    <a target="_blank" href="https://git-for-windows.github.io/">https://git-for-windows.github.io/</a>
 
-1. Click on the "Download" button.
+1. Click the blue "Download" button.
 1. Click the "64 bit.exe" link to begin download (into your Downloads folder).
 1. Click OK to the security warning.
 1. Click the installer to invoke it.
@@ -278,9 +288,18 @@ What is installed here is the most popular. But because Git file format is well 
 
    ### Git command auto-completion
 
-1. On Windows: Install Git command completion and to show what brach on the command prompt:
+1. On Windows: Install Git command completion and to show the current Git branch on the command prompt:
 
    <pre><strong>scoop install pshazz</strong></pre>
+
+   Alternately, edit the Windows start-up script so that the prompt is always on the same pixel, with blank lines between commands.
+
+
+<a name="TextEditor"></a>
+
+## Text Editor
+
+Instructions here uses TextEdit, a GUI text editor that comes with macOS.
 
 
 
@@ -298,7 +317,7 @@ What is installed here is the most popular. But because Git file format is well 
 
    If you don't already have a dotfiles repository, I have programmed a shell script that automates installation of several tools for you. Such automation is one of many ways to setup a laptop.
 
-   ### Search within GitHub
+### Search within GitHub
 
 1. Just so you get an idea of their popularity and variety, here is the result of a search through all github.com of "dotfiles":
 
@@ -310,18 +329,32 @@ What is installed here is the most popular. But because Git file format is well 
    More details about dotfiles are <a target="_blank" href="https://wilsonmar.github.io/dotfiles/">here</a>.
 
 
-<a name="TextEditor"></a>
-
-## Text Editor
-
-Instructions here uses TextEdit, a GUI text editor that comes with macOS.
-
-
+<a name="KeyboardShortcuts"></a>
 
 ## Keyboard shortcuts
 
+"Key" in tables listing URLs in the text above indicate these operating-system level keyboard shortcuts:
 
+   <pre>
+alias qbc="open https://quantumblacklabs.com"
+alias ghn="open https://githuben.intranet.mckinsey.com"
+alias mcks="open https://git.mckinsey-solutions.com"
+alias mdlc="open https://github.mdl.cloud"
+alias hssc="open https://git.dev-nebula.com"
+&nbsp;
+alias mci="open https://github.com/McK-Internal"
+alias mcp="open https://github.com/McK-Playground"
+alias mct="open https://github.com/McK-Internal-Test"
+</pre>
 
+Other shortcuts include:
+
+   <pre>gsl   # for git status list
+gas "msg"   # to add and commit with a message
+gbs         # to add, commit, and push with a generic message
+   </pre>
+
+Again, these are set for each person's personal interest in `~/.bash_profile` in the $HOME root folder for each macOS user. Some prefer to define aliases in a separate alias.sh file so that they can be easily defined for both bash and ZSH shells.
 
 
 ### Install Python
@@ -333,7 +366,16 @@ Instructions here uses TextEdit, a GUI text editor that comes with macOS.
 
 <hr />
 
+## SSH for single GitHub account
+
+Those who use only a single account on GitHub would do the following for each:
+
+
+
 ## SSH for Multiple GitHub accounts
+
+
+
 
 1. Specify a strong password.
 1. You may specify the same email address at several hosts.
@@ -389,6 +431,8 @@ Host *
    `ServerAlive` entries specify a "keep alive" to keep VPN lines working rather than timing out.
 
 
+
+
    ### Generate SSH keypair
 
 1. In a Termial:
@@ -435,6 +479,41 @@ Host *
    <pre><strong>ssh-add ~/.ssh/id_rsa
 ssh-add ~/.ssh/id_rsa
    </strong></pre>
+
+
+
+
+## The Vault SSH_Git cert:
+
+After <a target="_blank" href="https://gist.github.com/kawsark/587f40541881cea58fbaaf07bb82b1be">configuration of the Vault server</a>, 
+
+<pre>
+ssh_vault () {
+  export SSH_USER="$(whoami)"
+  export SSH_SERVER="<ssh_host>"
+  export VAULT_ADDR="http://<vault_dns>:8200"
+  rm -f token ssh-ca.json .ssh/id_rsa_${SSH_USER}*
+  ssh-keygen -t rsa -N "" -C "${SSH_USER}" -f .ssh/id_rsa_${SSH_USER}
+  export public_key=$(cat .ssh/id_rsa_${SSH_USER}.pub)
+  curl -s \
+      --request POST \
+      --data '{"password": "test"}' \
+      ${VAULT_ADDR}/v1/auth/userpass/login/${SSH_USER} | jq -r .auth.client_token > token
+  export VAULT_TOKEN=$(cat token)
+  curl -s \
+    --header "X-Vault-Token: ${VAULT_TOKEN}" \
+    --request POST \
+    --data "{\"public_key\":\"${public_key}\",\"valid_principals\":\"${SSH_USER}\"}" \
+    $VAULT_ADDR/v1/ssh-client-signer/sign/clientrole | jq -r .data.signed_key > .ssh/id_rsa_${SSH_USER}.signed.pub
+  chmod 400 .ssh/id_rsa_${SSH_USER}*
+  ssh -i .ssh/id_rsa_${SSH_USER}.signed.pub -i .ssh/id_rsa_${SSH_USER} ${SSH_USER}@${SSH_SERVER}
+}
+   </pre>
+
+
+
+
+
 
 
    ## On your macOS laptop
@@ -554,28 +633,16 @@ Repeat for a second and third account.
 1. Switch to a Terminal.
 1. Clone from your personal GitHub
 
-   ## Git add and commit
 
-1. Configure keyboard shortcuts in a bash profile:
 
-   <pre>gsl   # for git status list
-gas "msg"   # to add and commit with a message
-gbs         # to add, commit, and push with a generic message
-   </pre>
-
-   ## Edit
-
-1. Pull and Merge if necessary
-1. Edit a file to change
-1. Add, Commit, and Push
-
-   ## Compare files utility
+### Compare files utility
 
 
 <a name="SecConfig"></a>
 
-## Org. Security Configuration
+## Org. Security Configurations
 
+Because GitHub Teams controls visibility of each repository, a repository can never setup as "public".
 
 
 ## References
