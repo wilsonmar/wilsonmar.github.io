@@ -23,11 +23,11 @@ Historically, each of several McKinsey cells make use of their own source code r
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Key </th><th> URL </th><th> Usage </th></tr>
-<tr valign="top"><td> qbc </td><td><a target="_blank" href="https://github.com/orgs/quantumblack/">https://github.com/orgs/quantumblack</a></td><td> used by Quantum Black is already on GitHub SaaS</td></tr>
-<tr valign="top"><td> ghn </td><td><a target="_blank" href="https://githuben.intranet.mckinsey.com">https://githuben.intranet.mckinsey.com</a></td><td>used by T&D (Technology and Digital) is an on-prem. GitHub Enterprise instance</td></tr>
-<tr valign="top"><td> mcks </td><td><a target="_blank" href="https://git.mckinsey-solutions.com/">https://git.mckinsey-solutions.com</a></td><td>used by ClienTech is an on-prem. instance</td></tr>
-<tr valign="top"><td> mdlc </td><td><a target="_blank" href="https://github.mdl.cloud/">https://github.mdl.cloud</a></td><td>used by MDL, a GitHub instance on self-hosted AWS</td></tr>
-<tr valign="top"><td> hssc </td><td><a target="_blank" href="https://git.dev-nebula.com/">https://git.dev-nebula.com</a></td><td>used by HSS (Health Systems and Services?), an on-prem. instance of GitBucket (obsolete version v4.22.0)</td></tr>
+<tr valign="top"><td> qbg </td><td><a target="_blank" href="https://github.com/orgs/quantumblack/">https://github.com/orgs/quantumblack</a></td><td> used by Quantum Black is already on GitHub SaaS</td></tr>
+<tr valign="top"><td> tdg </td><td><a target="_blank" href="https://githuben.intranet.mckinsey.com">https://githuben.intranet.mckinsey.com</a></td><td>used by T&D (Technology and Digital) is an on-prem. GitHub Enterprise instance</td></tr>
+<tr valign="top"><td> ctg </td><td><a target="_blank" href="https://git.mckinsey-solutions.com/">https://git.mckinsey-solutions.com</a></td><td>used by ClienTech is an on-prem. instance</td></tr>
+<tr valign="top"><td> mdlg </td><td><a target="_blank" href="https://github.mdl.cloud/">https://github.mdl.cloud</a></td><td>used by MDL, a GitHub instance on self-hosted AWS</td></tr>
+<tr valign="top"><td> hsg </td><td><a target="_blank" href="https://git.dev-nebula.com/">https://git.dev-nebula.com</a></td><td>used by HSS (Health Systems and Services?), an on-prem. instance of GitBucket (obsolete version v4.22.0)</td></tr>
 </table>
 
 Some of these instances (such as MDL) require VPN access, which can be a hassle.
@@ -39,15 +39,16 @@ So to concentrate support capabilities, a McKinsey "OneGitHub" initiative in 202
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Key </th><th> URL </th><th> Usage </th></tr>
-<tr valign="top"><td> mci </td><td><a target="_blank" href="https://github.com/McK-Internal">https://github.com/McK-Internal</a></td><td>for holding production code for internal systems (not seen by clients).</td></tr>
-<tr valign="top"><td> mct </td><td><a target="_blank" href="https://github.com/McK-Internal-Test">https://github.com/McK-Internal-Test</a></td><td> for testing internal systems.</td></tr>
-<tr valign="top"><td> mcp </td><td><a target="_blank" href="https://github.com/McK-Playgroud">https://github.com/McK-Playground</a></td><td> for individuals doing experiments.</td></tr>
+<tr valign="top"><td> gmi </td><td><a target="_blank" href="https://github.com/McK-Internal">https://github.com/McK-Internal</a></td><td>for holding production code for internal systems (not seen by clients).</td></tr>
+<tr valign="top"><td> gmt </td><td><a target="_blank" href="https://github.com/McK-Internal-Test">https://github.com/McK-Internal-Test</a></td><td> for testing internal systems.</td></tr>
+<tr valign="top"><td> gmp </td><td><a target="_blank" href="https://github.com/McK-Playgroud">https://github.com/McK-Playground</a></td><td> for individuals doing experiments.</td></tr>
 </table>
 
 Each Github organization has a slightly different <a href="#SecConfig">security configuration</a>.
 But none of the new orgs require special VPN configuration.
 
-`Key` in the tables refer to <a href="#KeyboardShortcuts">Keyboard shortcuts</a> to reach each repo quickly.
+`Key` within the tables here refer to a consistent abbreviation and also the <a href="#KeyboardShortcuts">Keyboard alias shortcut</a> to reach each repo quickly.
+(These are at the operating system level, so none of them can be names of Linux programs)
 
 Each GitHub organization has a different naming convention for how to <a href="#RepoNaming">name repositories</a>.
 
@@ -83,7 +84,9 @@ First, you need a GitHub account.
 
    <a target="_blank" href="https://github.com/settings/profile">https://github.com/settings/profile</a> 
 
-1. Click "Edit" on the profile picture to provide your profile photo.
+1. Click "Edit" on the profile picture to provide an image so your team can identify people in a small amount of space.
+
+   PROTIP: If you are concerned about facial recognition privacy, use a character, an AI style-transfer generated image, or a photo of you wearing a face mask.
 
 1. In "Bio", type your Twitter handle as an alternate way to reach you, such as:
 
@@ -91,7 +94,7 @@ First, you need a GitHub account.
     
 1. In "Company" field, enter your McKinsey cell name, such as "T&D", "MDL", etc.
 
-1. In "Location" field, enter your office and, optionally, WFH location so people know your time zone when scheduling meetings.
+1. In "Location" field, enter your office and, optionally, WFH location so people know your <strong>time zone</strong> when scheduling meetings.
 
 
 ## Access in McK via Duo
@@ -131,7 +134,7 @@ That's why we have created an automation script to install and configure the mos
 
 Our automation script installs and configures several of what many developers requested. (However, you may want to install specific features on your own):
 
-   1. On <a href="#WindowsInstall">install what is needed on Windows</a>: a PowerShell script to install Subsystem for Linux to run Bash scripts
+   1. On <a href="#WindowsInstall">install what is needed on Windows</a>: a PowerShell script to install what is needed to run Bash scripts
    1. On macOS: XCode utilities, Ruby, and Homebrew to install utilities
    1. Upgrade components which come with the operating system and is likely obsolete
 
@@ -203,7 +206,7 @@ Automation of Windows 10 means first running Microsoft's PowerShell script <stro
 
    <pre><strong>$PSVersionTable </strong></pre>
 
-   Windows Automatic Updates keeps the version current to what is available (5.1 at time of writing).
+   Windows Automatic Updates keeps the PS version current to what is available (5.1 at time of writing).
 
    ### Upgrade .NET Framework
 
@@ -215,7 +218,8 @@ Automation of Windows 10 means first running Microsoft's PowerShell script <stro
 1. Click "Download", then "Save".
 1. After download is complete, run the installer.
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=a85QLUJ0Wbs">VIDEO</a>
+   <a target="_blank" href="https://www.youtube.com/watch?v=a85QLUJ0Wbs">VIDEO</a>:
+   This you need to call McKinsey GHD so they can do it with you.
 
    ### Change PowerShell Execution Policy
 
@@ -223,6 +227,8 @@ Automation of Windows 10 means first running Microsoft's PowerShell script <stro
 
    <pre><strong>Set-ExecutionPolicy RemoteSigned -scope CurrentUser
    </strong></pre>
+
+   Press A to confirm.
 
 1. To install <a target="_blank" href="https://scoop.sh/">Scoop</a> (which is now preferred over Chocolately), within the PowerShell prompt, use iwr (which is equivalent to curl in Linux):
 
@@ -520,7 +526,7 @@ ssh_vault () {
    </pre>
 
 
-
+https://dickingwithdocker.com/2020/05/securing-ssh-with-the-vault-ssh-backend-and-github-authentication/
 
 
 
