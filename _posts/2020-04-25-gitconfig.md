@@ -35,7 +35,7 @@ Some of these instances (such as MDL) require VPN access, which can be a hassle.
 Having disparate systems has made it difficult for people to easily work across cells.
 Fragmented administrative support has resulted in <strong>technical debt</strong> which is slowing down adoption of innovations, especially around security and self-service.
 
-So to concentrate support capabilities, a McKinsey "OneGitHub" initiative in 2020 is migrating repositories to a set of new <strong>organizations</strong> on the GitHub.com SaaS world-wide infrastructure:
+So to concentrate support capabilities and volume discounts, a McKinsey "OneGitHub" initiative in 2020 is migrating repositories to a set of new <strong>organizations</strong> on the GitHub.com SaaS world-wide infrastructure:
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Key </th><th> URL </th><th> Usage </th></tr>
@@ -50,17 +50,16 @@ But none of the new orgs require special VPN configuration.
 `Key` within the tables here refer to a consistent abbreviation and also the <a href="#KeyboardShortcuts">Keyboard alias shortcut</a> to reach each repo quickly.
 (These are at the operating system level, so none of them can be names of Linux programs)
 
-Each GitHub organization has a different naming convention for how to <a href="#RepoNaming">name repositories</a>.
+Each GitHub organization has a different <a href="#RepoNaming">naming convention for how to name repositories</a>.
 
-The strategy for maximum worker convenience is that you have a <strong>single GitHub.com account</strong> to access all repositories, including your own personal account if you prefer. This can happen because access to specific McKinsey repositories are assigned based on association of specific users with GitHub Teams which are associated. You can be associated with one of three levels of access to each repository:
+The strategy for maximum worker convenience is that you have a <strong>single GitHub.com account</strong> to access all repositories, including your own personal account if you prefer. This can happen safely because access to specific McKinsey repositories are assigned based on association of specific users with GitHub Teams which are associated. You can be associated with one of three levels of access to each repository:
 
    * Admin
    * Regular
    * Read-only
    <br /><br />
 
-First, you need a GitHub account.
-
+If you already have a GitHub.com account, scroll down to ensure you have a full <a name="Profile">Profile</a>.
 
 <a name="GitHubNewAcct"></a>
 
@@ -80,28 +79,39 @@ First, you need a GitHub account.
 
 1. Store the password in a safe place.
 
-1. Click the icon at the upper-right corner and select "Your profile" at:
+1. Press OK.
+
+
+   <a name="Profile"></a>
+
+   ## Profile in GitHub.com
+
+1. Click the icon at the upper-right corner and select "Your profile" to be at:
 
    <a target="_blank" href="https://github.com/settings/profile">https://github.com/settings/profile</a> 
 
-1. Click "Edit" on the profile picture to provide an image so your team can identify people in a small amount of space.
+1. Click "Edit" on the profile picture to provide an image so your team can identify people in a small amount of space:
 
-   PROTIP: If you are concerned about facial recognition privacy, use a character, an AI style-transfer generated image, or a photo of you wearing a face mask.
+   <img width="263" alt="github-user-icons" src="https://user-images.githubusercontent.com/300046/86605097-80b16b80-bf63-11ea-8a33-caacf78c964a.png">
+
+   PROTIP: If you are concerned about facial recognition privacy, use a <a target="_blank" href="https://octodex.github.com/">cartoon from the Octodex</a>, an AI style-transfer generated image, or a photo of you wearing a face mask.
 
 1. In "Bio", type your Twitter handle as an alternate way to reach you, such as:
 
    <a target="_blank" href="https://twitter.com/wilsonmar">https://twitter.com/wilsonmar</a> 
     
-1. In "Company" field, enter your McKinsey cell name, such as "T&D", "MDL", etc.
+1. In "Company" field, enter your McKinsey cell name, such as "T&D", "MDL", "HSS", etc.
 
 1. In "Location" field, enter your office and, optionally, WFH location so people know your <strong>time zone</strong> when scheduling meetings.
+
+1. Click OK.
 
 
 ## Access in McK via Duo
 
-While a self-service portal is being built, a system Administrator manually initiates the enrollment of each new GitHub user using a FIA utility website.
+1. While a <a target="_blank" href="https://mckinseydev.service-now.com/it?sys_id=954987ecdbf9585054a85bd05b961992&id=mck_osa_homepage&sysparm_category=&spa=1&ver=1">self-service portal</a> is being built, a system Administrator manually initiates the enrollment of each new GitHub user using a <a target="_blank" href="https://fia-portal.intranet.mckinsey.com/groups">FIA utility website</a>.
 
-1. When you receive an email from Luc Allain via noreply@GitHub.com, click the green "Join" button. That opens a new tab on your default internet browser.
+1. When you receive an email (from noreply@GitHub.com), click the green "Join" button. That opens a new tab on your default internet browser.
 
    <img width="449" alt="github-mck-invite-449x431.jpg" src="https://user-images.githubusercontent.com/300046/86538861-d0395e00-beb5-11ea-9467-66ae27cd8881.jpg">
 
@@ -113,9 +123,10 @@ While a self-service portal is being built, a system Administrator manually init
 
 1. Get authenticated by opening the Duo app on your iPhone and clicking the buttons.
 
-   After authentication, you still need to get assigned permissions to specific repositories
+1. After authentication, the Administrator will assign you permissions to specific team repositories
    (based on GitHub Team assignment for each repo).
    
+   <img width="599" alt="github-okta-add-u" src="https://user-images.githubusercontent.com/300046/86605465-fa495980-bf63-11ea-917e-18a6220ca49b.png">
 
 <hr />
 
@@ -145,18 +156,18 @@ Our automation script installs and configures several of what many developers re
 
    1. A <a href="#DotFiles">base dotfiles repository</a> as the basis for customizations (git clone)
    1. Keyboard shortcuts and utilities so you can type a few characters instead of long commands
+   1. <a href="#Fonts">Fonts</a> and templates that are easier on your eyes.
+   1. Web browser plug-ins to optionally set dark mode
+
+   1. "ansible-vault" to keep secrets for Ansible
+   1. "vault" (from Hashicorp) client to manage secrets on Vault Server
+   1. "git-secrets" as git sub-commands to scan for presence of secrets in Python code.
+   1. "Pylint" and "Flake8" linter and "Bandit" security scanner for Python code
 
    1. "hub" utility to perform actions on GitHub.com from the command line
    1. "jq" utility to parse JSON within Command Line programs within the Terminal
    1. "curl" and/or "wget" utilities to process REST API on the command line (like on Linux)
    1. "Insomnia" REST API GUI client
-
-   1. "ansible-vault" to keep secrets for Ansible
-   1. "vault" (from Hashicorp) client to manage secrets on Vault Server
-   1. "Pylint" and "Flake8" linter and "Bandit" security scanner for Python code
-
-   1. <a href="#Fonts">Fonts</a> and templates that are easier on your eyes.
-   1. Web browser plug-ins to optionally set dark mode
 
       These have implications for editing the `.gitconfig` file</a>:
 
@@ -164,7 +175,8 @@ Our automation script installs and configures several of what many developers re
    1. <a href="#TextEditor">Text editor</a> Visual Studio Code and popular plugins
    1. The GPG (GNU Privacy Guard) utility to optionally cryptographically sign Git commits
    1. Configuration of .gitconfig to automatically provide keys to several GitHub organizations
-   1. "git-secrets" as git sub-commands to scan for presence of secrets in Python code.
+   
+   1. Request a SSH certificate from Vault based on a public key generated locally, to run daily.
    <br /><br />
 
 Below are the manual equivalents to the automated script invoked above, fo
@@ -228,7 +240,7 @@ Automation of Windows 10 means first running Microsoft's PowerShell script <stro
    <pre><strong>Set-ExecutionPolicy RemoteSigned -scope CurrentUser
    </strong></pre>
 
-   Press A to confirm.
+   Press A (for All) to confirm.
 
 1. To install <a target="_blank" href="https://scoop.sh/">Scoop</a> (which is now preferred over Chocolately), within the PowerShell prompt, use iwr (which is equivalent to curl in Linux):
 
@@ -351,15 +363,15 @@ Instructions here uses TextEdit, a GUI text editor that comes with macOS.
 "Key" in tables listing URLs in the text above indicate these operating-system level keyboard shortcuts:
 
    <pre>
-alias qbc="open https://quantumblacklabs.com"
-alias ghn="open https://githuben.intranet.mckinsey.com"
-alias mcks="open https://git.mckinsey-solutions.com"
-alias mdlc="open https://github.mdl.cloud"
-alias hssc="open https://git.dev-nebula.com"
+alias qbq="open https://github.com/orgs/quantumblack"
+alias tdg="open https://githuben.intranet.mckinsey.com"
+alias ctg="open https://git.mckinsey-solutions.com"
+alias mdlg="open https://github.mdl.cloud"
+alias hsg="open https://git.dev-nebula.com"
 &nbsp;
-alias mci="open https://github.com/McK-Internal"
-alias mcp="open https://github.com/McK-Playground"
-alias mct="open https://github.com/McK-Internal-Test"
+alias gmi="open https://github.com/McK-Internal"
+alias gmp="open https://github.com/McK-Playground"
+alias gmt="open https://github.com/McK-Internal-Test"
 </pre>
 
 Other shortcuts include:
