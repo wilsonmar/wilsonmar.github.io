@@ -89,7 +89,7 @@ This is where America began as colonies of England (until 1776).
 <ul>
 <li><a target="_blank" href="http://www.bates.edu/museum.xml">Bates Museum of Art</a>, Lewiston</li>
 <li><a target="_blank" href="http://www.bowdoin.edu/art-museum/">Bowdoin College Museum of Art</a>, Brunswick</li>
-<li><a target="_blank" href="http://www.colby.edu/museum/index.html">Colby College Museum of Art</a>, Waterville</li>
+<li><a target="_blank" href="http://www.colby.edu/museum/">Colby College Museum of Art</a>, Waterville</li>
 <li><a target="_blank" href="http://farnsworthmuseum.org/">Farnsworth Art Museum</a>, Rockland</li>
 <li><a target="_blank" href="http://www.umaine.edu/hudsonmuseum/">Hudson Museum at the University of Maine</a>, Orono</li>
 <li><a target="_blank" href="http://www.portlandmuseum.org/">Portland Museum of Art</a></li>
@@ -236,9 +236,9 @@ John F. Kennedy Presidential Library and Museum</a>, Columbia Point, Boston</li>
 <li><a target="_blank" href="http://mattatuckmuseum.org/">Mattatuck Museum</a>, Waterbury</li>
 <li><a target="_blank" href="http://www.norwichfreeacademy.com/slater_museum/">Slater Museum at Norwich Free Academy</a></li>
 
-<li><a target="_blank" href="http://ycba.yale.edu/index.asp">Yale Center for British Art</a>, New Haven</li>
+<li><a target="_blank" href="https://britishart.yale.edu/">Yale Center for British Art</a>, New Haven</li>
 <li><a target="_blank" href="http://artgallery.yale.edu/">Yale University Art Gallery</a>,  New Haven</li>
-<li><a target="_blank" href="http://www.hctc.commnet.edu/artmuseum/index.html">Housatonic Museum of Art</a>, Bridgeport</li>
+<li><a target="_blank" href="http://www2.housatonic.edu/artmuseum/">Housatonic Museum of Art</a>, Bridgeport</li>
 <li><a target="_blank" href="http://www.aldrichart.org/">Aldrich Museum of Contemporary Art</a>, Ridgefield</li>
 <li><a target="_blank" href="http://www.stamfordmuseum.org/">The Stamford Museum and Nature Center</a></li>
 <li><a target="_blank" href="http://www.brucemuseum.org/">Bruce Museum of Arts and Science</a>, Greenwich</li>
@@ -370,10 +370,10 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 <li><a target="_blank" href="http://www.tju.edu/eakins/">The Eakins Gallery at Thomas Jefferson University</a></li>
 <li><a target="_blank" href="http://www.lasalle.edu/services/art-mus/">La Salle University Art Museum</a></li>
 <li><a target="_blank" href="http://www.icaphila.org/">Institute of Contemporary Art</a></li>
-<li><a target="_blank" href="http://www.upenn.edu/ARG/index.html">Arthur Ross Gallery at the University of Pennsylvania</a></li>
+<li><a target="_blank" href="http://www.arthurrossgallery.org/">Arthur Ross Gallery at the University of Pennsylvania</a></li>
 <li>Academy of Natural Sciences</li>
 <li><a target="_blank" href="http://www.rosenbach.org/main.html">Rosenbach Museum and Library</a></li>
-<li><a target="_blank" href="http://www.philamuseum.org/main.asp"><strong>Philadelphia Museum of Art</strong></a></li>
+<li><a target="_blank" href="http://www.philamuseum.org/"><strong>Philadelphia Museum of Art</strong></a></li>
 <li><a target="_blank" href="http://www.rodinmuseum.org/">Rodin Museum at the Philadelphia Museum of Art</a></li>
 <li> Barnes Foundation Collection, Merion</li>
 <li> Museum of American Art</li>
@@ -420,7 +420,7 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="scripts/allr.pl?&c=c&search=11069"><font COLOR="#FF0000">Posters from this museum</font></a></li -->
 <li><a target="_blank" href="http://www.contemporary.org/">Contemporary Museum</a>, Baltimore</li>
 <li><a target="_blank" href="http://www.mdarchives.state.md.us/msa/speccol/sc4600/sc4680/html/intro_peabody.html">Peabody Gallery of Art</a>, Baltimore</li>
-<li><a target="_blank" href="http://www.thewalters.org/index.html"><strong>Walters Art Gallery</strong></a>, Baltimore</li>
+<li><a target="_blank" href="http://www.thewalters.org/"><strong>Walters Art Gallery</strong></a>, Baltimore</li>
 <li><a target="_blank" href="http://www.wardmuseum.org/">Ward Museum of Wildfowl Art</a>, Salisbury</li>
 <li><a target="_blank" href="http://www.washcomuseum.org/">Washington County Museum of Fine Arts</a>, Hagerstown</li>
 </ul>
@@ -453,7 +453,7 @@ The Smithsonian Institution: The Freer Gallery of Art and The Arthur M. Sackler 
 <li><a target="_blank" href="http://americanart.si.edu/"><strong>Smithsonian American Art Museum</strong></a></li>
 <li><a target="_blank" href="http://www.nmwa.org/"><strong>National Museum of Women in the Arts</strong></a></li>
 <li><a target="_blank" href="http://www.npg.si.edu/"><strong>National Portrait Gallery</strong></a></li>
-<li><a target="_blank" href="http://www.aoc.gov/cc/art/nsh/index.cfm">National Statuary Hall</a></li>
+<li><a target="_blank" href="https://www.aoc.gov/the-national-statuary-hall-collection">National Statuary Hall</a></li>
 <li><a target="_blank" href="http://www.phillipscollection.org/"><strong>Phillips Collection</strong></a> 1600 21st Street, NW 20009 Closed Mondays </li>
 <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="scripts/allr.pl?&c=c&search=11046"><font COLOR="#FF0000">Posters from this museum</font></a></li -->
 <li><a target="_blank" href="http://www.si.edu/"><strong>Smithsonian Institution</strong></a></li>
@@ -662,10 +662,9 @@ the 4th longest in the world (after Nile, Amazon, Yangtze).<br />
 <ul>
 <li><a target="_blank" href="http://www.blockmuseum.northwestern.edu/">Block Museum of Art at Northwestern University</a>, Evanston</li>
 <li><a target="_blank" href="http://www.elmhurstartmuseum.org/">Elmhurst Art Museum</a></li>
-<li><a target="_blank" href="http://www.jal.cc.il.us/museum/index.html">John A. Logan College Museum and Art Galleries</a>, Carterville</li>
 <li><a target="_blank" href="http://www.art.uiuc.edu/galleries/kam/">Krannert Art Museum</a>, Champaign</li>
 <li><a target="_blank" href="http://www.cedarhurst.org/">The Mitchell Museum and Cedarhurst Sculpture Park</a>, Mt. Vernon</li>
-<li><a target="_blank" href="http://www.vpa.niu.edu/museum/index.html">Northern Illinois University Art Museum</a>, DeKalb</li>
+<li><a target="_blank" href="https://www.niu.edu/artmuseum/">Northern Illinois University Art Museum</a>, DeKalb</li>
 <li><a target="_blank" href="http://www.rockfordartmuseum.org/">Rockford Art Museum</a></li>
 <li><a target="_blank" href="http://www.museum.siu.edu/">Southern Illinois University Museum</a>, Carbondale</li>
 <li><a target="_blank" href="http://www.eiu.edu/~tarble/">Tarble Arts Center at Eastern Illinois University</a>, Charleston</li>
@@ -705,7 +704,7 @@ the 4th longest in the world (after Nile, Amazon, Yangtze).<br />
 <ul>
 <li><a target="_blank" href="http://www.trumanlibrary.org/">
 Harry S. Truman Presidential Library and Museum</a>, Independence</li>
-<li><a target="_blank" href="http://www.cmc.edu/ashby/index.html">Ashby-Hodge Gallery of American Art</a>, Fayette</li>
+<li><a target="_blank" href="http://www.cmc.edu/ashby/">Ashby-Hodge Gallery of American Art</a>, Fayette</li>
 <li><a target="_blank" href="http://www.daummuseum.org/">Daum Museum of Contemporary Art</a>, Sedalia</li>
 <li><a target="_blank" href="http://www.mham.org/">Margaret Harwell Art Museum</a>, Poplar Bluff</li>
 <li><a target="_blank" href="http://museum.research.missouri.edu/">Museum of Art and Archaeology at the University of Missouri</a>, Columbia</li>
@@ -903,7 +902,7 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 ### Buffalo:
 
 <ul>
-<li><a target="_blank" href="http://www.albrightknox.org/ak_index.html">Albright-Knox Art Gallery</a>, Buffalo</li>
+<li><a target="_blank" href="http://www.albrightknox.org/">Albright-Knox Art Gallery</a>, Buffalo</li>
 <li><a target="_blank" href="http://www.artgallery.buffalo.edu/">State University at Buffalo Art Gallery</a></li>
 <li><a target="_blank" href="http://www.burchfield-penney.org/">The Burchfield Penney Art Center</a>, Buffalo</li>
 </ul>
@@ -986,7 +985,7 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 
 <ul>
 <li><a target="_blank" href="http://www.bsu.edu/artmuseum/general.asp">Ball State University Museum of Art</a>, Muncie</li>
-<li><a target="_blank" href="http://www.valpo.edu/artmuseum/index.html">Brauer Museum of Art at Valparaiso University</a></li>
+<li><a target="_blank" href="https://www.valpo.edu/brauer-museum-of-art/">Brauer Museum of Art at Valparaiso University</a></li>
 <li><a target="_blank" href="http://www.emuseum.org/">Evansville Museum of Arts and Science</a></li>
 <li><a target="_blank" href="http://www.fwmoa.org/">Fort Wayne Museum of Art</a></li>
 <li><a target="_blank" href="http://www.glmart.org/">Greater Lafayette Museum of Art</a></li>
@@ -1105,9 +1104,9 @@ Jundt Art Center and Museum at Gonzaga University</a></li>
 <li><a target="_blank" href="http://www.sfsu.edu/~gallery/">San Francisco State University Fine Arts Gallery</a></li>
 <li><a target="_blank" href="http://www.usfca.edu/library/thacher/">Thacher Gallery at the University of San Francisco</a></li>
 <li> California Academy of Science</li>
-<li><a target="_blank" href="http://www.famsf.org/legion/index.asp">California Museum of the Legion Of Honor</a></li>
+<li><a target="_blank" href="http://www.famsf.org/legion/">California Museum of the Legion Of Honor</a></li>
 <li><a target="_blank" href="https://www.sfmoma.org/">San Francisco Museum of Modern Art</a></li>
-<li><a target="_blank" href="http://www.famsf.org/deyoung/index.asp">M H de Young Museum</a>, San Francisco </li>
+<li><a target="_blank" href="http://www.famsf.org/">M H de Young Museum</a>, San Francisco </li>
 <li><a target="_blank" href="http://www.friendsofphotography.org/">Friends of Photography/Ansel Adams Center</a>, San Francisco</li>
 <li><a target="_blank" href="http://www.jmsf.org/">The Jewish Museum</a>, San Francisco</a></li>
 <li><a target="_blank" href="http://www.mocfa.org/">Museum of Craft and Folk Art</a> </li>
@@ -1209,7 +1208,7 @@ Ronald Reagan Presidential Library and Museum</a>, Simi Valley</li>
 <li><a target="_blank" href="http://www.lamoa.net/">Latino Art Museum</a>, Pomona</li>
 <li><a target="_blank" href="http://historicalglassmuseum.com/">Historical Glass Museum</a>, Redlands</li>
 <li><a target="_blank" href="http://cmp1.ucr.edu/">California Museum of Photography at U.C. Riverside</a></li>
-<li><a target="_blank" href="http://sweeney.ucr.edu/index.html">Sweeney Art Gallery at U.C. Riverside</a></li>
+<li><a target="_blank" href="http://sweeney.ucr.edu/">Sweeney Art Gallery at U.C. Riverside</a></li>
 <li><a target="_blank" href="http://www.riversideartmuseum.org/">Riverside Art Museum</a></li>
 <li><a target="_blank" href="http://www.bmoa.org/">Bakersfield Museum of Art</a></li>
 <li><a target="_blank" href="http://www.psmuseum.org/">Palm Springs Desert Museum</a></li>
@@ -1221,7 +1220,7 @@ Ronald Reagan Presidential Library and Museum</a>, Simi Valley</li>
 <ul>
 <li><a target="_blank" href="http://www.mopa.org/">Museum of Photographic Arts</a></li>
 <li><a target="_blank" href="http://www.mingei.org/">Mingei International Museum of Folk Art</a></li>
-<li><a target="_blank" href="http://gort.ucsd.edu/sj/timken/index.html">Timken Museum of Art</a>, San Diego</li>
+<li><a target="_blank" href="http://www.timkenmuseum.org/">Timken Museum of Art</a>, San Diego</li>
 <li><a target="_blank" href="http://www.mcasd.org/">Museum of Contemporary Art</a></li>
 <li><a target="_blank" href="http://www.sandiego-art.org/">San Diego Art Institute</a></li>
 <li><a target="_blank" href="http://stuartcollection.ucsd.edu/">Stuart Collection of Sculpture at U.C. San Diego</a></li>
@@ -1290,9 +1289,9 @@ It then goes through Boise, Idaho to Portland, Oregon. The map of it in 1907:
 <li> Boot Hill Museum, Dodge City</li>
 <li><a target="_blank" href="http://www.k-state.edu/bma/">Beach Museum of Art at Kansas State University</a>, Manhattan</li>
 <li><a target="_blank" href="http://www.sandzen.org/">Birger Sandzen Memorial Gallery</a>, Lindsborg</li>
-<li><a target="_blank" href="http://skyways.lib.ks.us/kansas/museums/coutts/index.html">Coutts Memorial Museum of Art</a>, El Dorado</li>
-<li><a target="_blank" href="http://www.washburn.edu/mulvane/index.html">Mulvane Art Museum at Washburn University</a>, Topeka</li>
-<li><a target="_blank" href="http://www.ku.edu/~sma/index.html">Spencer Museum of Art at the University of Kansas</a>, Lawrence</li>
+<li><a target="_blank" href="http://skyways.lib.ks.us/kansas/museums/coutts/">Coutts Memorial Museum of Art</a>, El Dorado</li>
+<li><a target="_blank" href="http://www.washburn.edu/mulvane/">Mulvane Art Museum at Washburn University</a>, Topeka</li>
+<li><a target="_blank" href="https://www.spencerart.ku.edu/">Spencer Museum of Art at the University of Kansas</a>, Lawrence</li>
 <li><a target="_blank" href="http://webs.wichita.edu/?view=ulrich">Ulrich Museum of Art at Wichita State University</a></li>
 <li><a target="_blank" href="http://www.wichitaartmuseum.org/">Wichita Art Museum</a></li>
 <li><a target="_blank" href="http://ozmuseum.com/">Oz museum</a>, Wamego</li>
@@ -1310,8 +1309,8 @@ It then goes through Boise, Idaho to Portland, Oregon. The map of it in 1907:
 <li><a target="_blank" href="http://www.crma.org/">Cedar Rapids Museum of Art</a></li>
 <li><a target="_blank" href="http://www.art-dma.org/">Davenport Museum of Art</a></li>
 <li><a target="_blank" href="http://www.desmoinesartcenter.org/">Des Moines Art Center</a></li>
-<li><a target="_blank" href="http://www.uiowa.edu/uima/index.html">University of Iowa Museum of Art</a>, Iowa City</li>
-<li><a target="_blank" href="http://www.wplwloo.lib.ia.us/waterloo/arts/index.html">Waterloo Museum of Art</a></li>
+<li><a target="_blank" href="http://www.uiowa.edu/uima/">University of Iowa Museum of Art</a>, Iowa City</li>
+<li><a target="_blank" href="http://www.wplwloo.lib.ia.us/waterloo/arts/">Waterloo Museum of Art</a></li>
 <li> Des Moines: Living History Farms (at Urbandale)</li>
 <li><a target="_blank" href="https://hoover.archives.gov/">Herbert Hoover Presidential Library and Museum</a>, West Branch</li>
 </ul>
@@ -1330,7 +1329,7 @@ It then goes through Boise, Idaho to Portland, Oregon. The map of it in 1907:
 <li><a target="_blank" href="http://www.focol.org/~paineart/">Paine Art Center and Arboretum</a>, Oshkosh</li>
 <li><a target="_blank" href="http://www.ramart.org/">Racine Art Museum</a></li>
 <li><a target="_blank" href="http://www.wbartmuseum.com/">West Bend Art Museum</a></li>
-<li><a target="_blank" href="http://www.beloit.edu/~museum/wright/index.htm">Wright Museum of Art at Beloit College</a>, Beloit</li>
+<li><a target="_blank" href="http://www.beloit.edu/~museum/wright/">Wright Museum of Art at Beloit College</a>, Beloit</li>
 </ul>
 
 ### Milwaukee:
@@ -1412,7 +1411,7 @@ It then goes through Boise, Idaho to Portland, Oregon. The map of it in 1907:
 > <strong> Montana </strong>
 
 <ul>
-<li><a target="_blank" href="http://www.holtermuseum.org/index.html">Holter Museum of Art</a>, Helena</li>
+<li><a target="_blank" href="http://www.holtermuseum.org/">Holter Museum of Art</a>, Helena</li>
 <li><a target="_blank" href="https://www.nps.gov/glac/">Glacier National Park</a></li>
 <li><a target="_blank" href="http://www.cmrussell.org/">C.M. Russell Museum</a>, Great Falls</li>
 <li><a target="_blank" href="http://www.artmissoula.org/">Art Museum of Missoula</a></li>
@@ -1508,10 +1507,8 @@ we begin from Oklahoma and take a long detour North to avoid too much desert alo
 <li><a target="_blank" href="http://www.mamfw.org/">Modern Art Museum of Fort Worth</a></li>
 <li><a target="_blank" href="http://www.sidrmuseum.org/">Sid Richardson Collection of Western Art</a>, Fort Worth</li>
 <li><a target="_blank" href="http://www.baylor.edu/Art/index.php?id=5310">Baylor University Art Galleries</a>, Waco</li>
-<li><a target="_blank" href="https://bush41library.tamu.edu/">
-George Bush Presidential Library and Museum</a>, College Station</li>
-<li><a target="_blank" href="https://www.archives.gov/presidential-libraries/visit#">
-George W. Bush Presidential Library and Museum</a>, Dallas</li>
+<li><a target="_blank" href="https://bush41library.tamu.edu/">George Bush Presidential Library and Museum</a>, College Station</li>
+<li><a target="_blank" href="https://www.archives.gov/presidential-libraries/visit#">George W. Bush Presidential Library and Museum</a>, Dallas</li>
 </ul>
 
 ### Austin:
