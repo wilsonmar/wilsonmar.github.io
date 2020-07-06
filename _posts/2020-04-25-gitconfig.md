@@ -23,7 +23,7 @@ Historically, each of several McKinsey cells make use of their own source code r
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Key </th><th> URL </th><th> Usage </th></tr>
-<tr valign="top"><td> qbc </td><td><a target="_blank" href="https://quantumblacklabs.com/">https://quantumblacklabs.com</a></td><td> used by Quantum Black is already on GitHub SaaS</td></tr>
+<tr valign="top"><td> qbc </td><td><a target="_blank" href="https://github.com/orgs/quantumblack/">https://github.com/orgs/quantumblack</a></td><td> used by Quantum Black is already on GitHub SaaS</td></tr>
 <tr valign="top"><td> ghn </td><td><a target="_blank" href="https://githuben.intranet.mckinsey.com">https://githuben.intranet.mckinsey.com</a></td><td>used by T&D (Technology and Digital) is an on-prem. GitHub Enterprise instance</td></tr>
 <tr valign="top"><td> mcks </td><td><a target="_blank" href="https://git.mckinsey-solutions.com/">https://git.mckinsey-solutions.com</a></td><td>used by ClienTech is an on-prem. instance</td></tr>
 <tr valign="top"><td> mdlc </td><td><a target="_blank" href="https://github.mdl.cloud/">https://github.mdl.cloud</a></td><td>used by MDL, a GitHub instance on self-hosted AWS</td></tr>
@@ -79,11 +79,20 @@ First, you need a GitHub account.
 
 1. Store the password in a safe place.
 
-1. Configure your profile with a picture at:
+1. Click the icon at the upper-right corner and select "Your profile" at:
 
-   <a target="_blank" href="https://github.com/">https://github.com</a> 
+   <a target="_blank" href="https://github.com/settings/profile">https://github.com/settings/profile</a> 
 
-1. MFA via Okta ???
+1. Click "Edit" on the profile picture to provide your profile photo.
+
+1. In "Bio", type your Twitter handle as an alternate way to reach you, such as:
+
+   <a target="_blank" href="https://twitter.com/wilsonmar">https://twitter.com/wilsonmar</a> 
+    
+1. In "Company" field, enter your McKinsey cell name, such as "T&D", "MDL", etc.
+
+1. In "Location" field, enter your office and, optionally, WFH location so people know your time zone when scheduling meetings.
+
 
 ## Access in McK via Duo
 
