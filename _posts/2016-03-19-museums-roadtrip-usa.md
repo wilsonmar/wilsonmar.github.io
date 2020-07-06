@@ -51,6 +51,11 @@ the route</a> mapped below:
 <a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/25560224/6b14fde6-2d1c-11e7-952e-52e883844808.jpg">
 <img alt="us-tour-natl-park-route" width="650" src="https://cloud.githubusercontent.com/assets/300046/25560224/6b14fde6-2d1c-11e7-952e-52e883844808.jpg"></a>
 
+The planned route of the <a target="_blank" href="https://www.history.com/topics/black-history/freedom-rides">Freedom Ride</a> May 1961 through the "Jim Crow" South to test a Supreme Court ruling against “whites-only” restrooms and lunch counters at bus stations:
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/86551553-8fb40180-bf02-11ea-88f3-8b070e22aec6.png"><img width="1314" alt="map-freedom-ride" src="https://user-images.githubusercontent.com/300046/86551553-8fb40180-bf02-11ea-88f3-8b070e22aec6.png"></a>
+
+The ride stopped on May 14 in Anniston, Alabama when the bus was burnt by segregationists.
+
 > Do you have a roadtrip map? Send it to me and I'll post it here.
 
 ## Gas and Charging #
