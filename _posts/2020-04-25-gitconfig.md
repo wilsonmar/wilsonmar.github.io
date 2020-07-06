@@ -166,7 +166,7 @@ Before running the install script, Windows 10 users need to prepare:
 
 ## Prepare Windows 10
 
-Automation of Windows 10 means running first running a Microsoft's PowerShell script, <strong>manually</strong>. PowerShell comes installed by default in every Windows machine (starting with Windows 7 SP1 and Windows Server 2008 R2 SP1). But it's <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/install/installing-windows-powershell?view=powershell-7">invoked differently depending on the edition of Windows</a>. Instructions below are for Windows 10 Desktop (not Server):
+Automation of Windows 10 means first running Microsoft's PowerShell script <strong>manually</strong>. PowerShell comes installed by default in every Windows machine (starting with Windows 7 SP1 and Windows Server 2008 R2 SP1). But it's <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/install/installing-windows-powershell?view=powershell-7">invoked differently depending on the edition of Windows</a>. Instructions below are for Windows 10 Desktop (not Server):
 
 ### Install Git Bash (Git for Windows)
 
@@ -180,7 +180,7 @@ Automation of Windows 10 means running first running a Microsoft's PowerShell sc
 1. Click the "64 bit.exe" link to begin download (into your Downloads folder).
 1. Click OK to the security warning.
 1. Click the installer to invoke it.
-1. In Select Components, select where you would like to have "Git Bash" icon.
+1. In Select Components, select where you would like to have "Git Bash" icons to click:
 
    ![git-bash-win-icons-653x506](https://user-images.githubusercontent.com/300046/86545961-76558a00-beef-11ea-8cb1-e93503781135.jpg)
 
