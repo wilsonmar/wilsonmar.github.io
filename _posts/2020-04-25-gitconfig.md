@@ -22,13 +22,14 @@ To enable you to quickly become productive, this hands-on tutorial contains inst
 
 Historically, each of several McKinsey cells make use of their own source code repository.
 
-   <ul>
-   <li><a target="_blank" href="https://quantumblacklabs.com/">https://quantumblacklabs.com</a> used by Quantum Black is already on GitHub SaaS</li>
-   <li><a target="_blank" href="https://githuben.intranet.mckinsey.com">https://githuben.intranet.mckinsey.com</a> used by T&D (Technology and Digital) is an on-prem. GitHub Enterprise instance</li>
-   <li><a target="_blank" href="https://git.mckinsey-solutions.com/">https://git.mckinsey-solutions.com</a> used by ClienTech is an on-prem. instance </li>
-   <li><a target="_blank" href="https://github.mdl.cloud/">https://github.mdl.cloud</a> used by MDL is GitHub instance on self-hosted AWS</li>
-   <li><a target="_blank" href="https://git.dev-nebula.com/">https://git.dev-nebula.com</a> used by HSS (Health Systems and Services?) is an on-prem. instance of GitBucket (obsolete version v4.22.0)</li>
-   </ul>
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Key </th><th> URL </th><th> Usage </th></tr>
+<tr valign="top"><td> qbc </td><td><a target="_blank" href="https://quantumblacklabs.com/">https://quantumblacklabs.com</a></td><td> used by Quantum Black is already on GitHub SaaS</td></tr>
+<tr valign="top"><td> ghn </td><td><a target="_blank" href="https://githuben.intranet.mckinsey.com">https://githuben.intranet.mckinsey.com</a></td><td>used by T&D (Technology and Digital) is an on-prem. GitHub Enterprise instance</td></tr>
+<tr valign="top"><td> mcks </td><td><a target="_blank" href="https://git.mckinsey-solutions.com/">https://git.mckinsey-solutions.com</a></td><td>used by ClienTech is an on-prem. instance</td></tr>
+<tr valign="top"><td> mdlc </td><td><a target="_blank" href="https://github.mdl.cloud/">https://github.mdl.cloud</a></td><td>used by MDL, a GitHub instance on self-hosted AWS</td></tr>
+<tr valign="top"><td> hssc </td><td><a target="_blank" href="https://git.dev-nebula.com/">https://git.dev-nebula.com</a></td><td>used by HSS (Health Systems and Services?), an on-prem. instance of GitBucket (obsolete version v4.22.0)</td></tr>
+</table>
 
 Some of these instances (such as MDL) require VPN access, which can be a hassle.
 
@@ -37,11 +38,12 @@ Fragmented administrative support has resulted in <strong>technical debt</strong
 
 So to concentrate support capabilities, a McKinsey "OneGitHub" initiative in 2020 is migrating repositories to a set of new <strong>organizations</strong> on the GitHub.com SaaS world-wide infrastructure:
 
-   <ul>
-   <li><a target="_blank" href="https://github.com/McK-Internal">https://github.com/McK-Internal</a> for holding production code for internal systems (not seen by clients).</li>
-   <li><a target="_blank" href="https://github.com/McK-Internal-Test">https://github.com/McK-Internal-Test</a> for testing internal systems.</li>
-   <li><a target="_blank" href="https://github.com/McK-Playgroud">https://github.com/McK-Playground</a> for individuals doing experiments.</li>
-   </ul>
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Key </th><th> URL </th><th> Usage </th></tr>
+<tr valign="top"><td> mci </td><td><a target="_blank" href="https://github.com/McK-Internal">https://github.com/McK-Internal</a></td><td>for holding production code for internal systems (not seen by clients).</td></tr>
+<tr valign="top"><td> mct </td><td><a target="_blank" href="https://github.com/McK-Internal-Test">https://github.com/McK-Internal-Test</a></td><td> for testing internal systems.</td></tr>
+<tr valign="top"><td> mcp </td><td><a target="_blank" href="https://github.com/McK-Playgroud">https://github.com/McK-Playground</a></td><td> for individuals doing experiments.</td></tr>
+</table>
 
 Each Github organization has a slightly different <a href="#SecConfig">security configuration</a>.
 But none of the new orgs require special VPN configuration.
@@ -61,7 +63,7 @@ The strategy for maximum worker convenience is that each worker has a <strong>si
 
    <img width="398" alt="github-new-user" src="https://user-images.githubusercontent.com/300046/86534738-07007b80-be98-11ea-80f4-4471a21fc213.png">
 
-1. PROTIP: You can't use underlines in GitHub user names. So use your first-name dash last-name such as "jane-doe". If you have a popular name and have been assigned a suffix such as "-GGN", include that in your GitHub name to avoid confusion, such as:
+1. PROTIP: GitHub does not allow use of spaces or underline characters in user names, so use dashes to separate words. For example, use your first-name dash last-name such as "jane-doe". If you have a popular name and have been assigned a suffix such as "-GGN", include that in your GitHub name to avoid confusion, such as:
 
    `jane-doe-ggn`
 
@@ -97,60 +99,44 @@ While a self-service portal is being built, a system Administrator manually init
 
 <hr />
 
-### Install macOS laptop
+## Install on laptops
 
    Most developers prefer a way to work <strong>offline on their laptops</strong> (without an internet connection) in case they need to. So they clone (download) files to work, then push "commits" (changes) back to GitHub. To do that requires installing some software utilities and configuration work.
    Instructions and automation below are necessarily for a specific set of configurations, which you can customize after this generic installation.
 
-<hr />
+You can install all utilities and make configuration changes manually.
 
+But when your laptop is ever lost, stolen, or needs to be replaced, you'll have to take time again (at protentially the worst possible time) to install and configure again. More importantly, you want a quick way to keep up with upgrading all the components, if only to get security updates.
 
-### Run install script on macOS
-
-1. Switch to a Terminal shell window. Press command+spacebar and type enough of "Terminal.app" for a selection to appear, then press Enter to open it.
-
-1. <strong>Triple-click</strong> this command to highlight it, then press command+C to copy it to your invisible Clipboard:
-
-   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh) -u wilson-mar"
-   </strong></pre>
-
-1. Switch to the Terminal window by pressing command+Tab until you rest on the Terminal icon.
-
-2. Click anywhere on the Terminal. You might be required to enter your password again.
-
-3. Press command+V to paste from the Clipboard.
-
-4. Press cursor back to change `-u wilsonmar` to your own GitHub account, such as `-u john-doe`.
-
-5. Press Enter to run the script.
-
-Below describes steps performed by the script.
+That's why we have created an automation script to install and configure the most popular utilities used by developers like you, for Windows and macOS.
 
 ## Automated Install Script
 
-Th automation script installs and configures all that many have requested, listed here for those who only want to install specific features on their own:
+Our automation script installs and configures several of what many developers requested. (However, you may want to install specific features on your own):
 
-   1. On <a href="#WindowsInstall">Windows</a>: a PowerShell script to install Subsystem for Linux to run Bash scripts
+   1. On <a href="#WindowsInstall">install what is needed on Windows</a>: a PowerShell script to install Subsystem for Linux to run Bash scripts
    1. On macOS: XCode utilities, Ruby, and Homebrew to install utilities
    1. Upgrade components which come with the operating system and is likely obsolete
 
    1. A <a href="#GitClient">Git client</a> program to `git clone` and other commands
+   1. Git command auto-completion
    1. A <a href="#GitGUIClient">Git GUI client</a> (GitHub Desktop) so you can download any repository with one click
-   4. A Terminal client "iTerm2" and "Hyper"
+   1. A Terminal client "iTerm2" and "Hyper"
 
    1. A <a href="#DotFiles">base dotfiles repository</a> as the basis for customizations (git clone)
+   1. Keyboard shortcuts and utilities so you can type a few characters instead of long commands
+
    1. "hub" utility to perform actions on GitHub.com from the command line
    1. "jq" utility to parse JSON within Command Line programs within the Terminal
-   1. "curl" and "wget" utilities to process REST API on the command line (like on Linux)
+   1. "curl" and/or "wget" utilities to process REST API on the command line (like on Linux)
    1. "Insomnia" REST API GUI client
 
+   1. "ansible-vault" to keep secrets for Ansible
    1. "vault" (from Hashicorp) client to manage secrets on Vault Server
    1. "Pylint" and "Flake8" linter and "Bandit" security scanner for Python code
-   1. "git-secrets" as git sub-commands to scan for presence of secrets in Python code.
 
-   1. <a href="#Fonts">Fonts</a> that are easier on your eyes.
+   1. <a href="#Fonts">Fonts</a> and templates that are easier on your eyes.
    1. Web browser plug-ins to optionally set dark mode
-   1. Keyboard shortcuts and utilities so you can type a few characters instead of long commands
 
       These have implications for editing the `.gitconfig` file</a>:
 
@@ -158,18 +144,41 @@ Th automation script installs and configures all that many have requested, liste
    1. <a href="#TextEditor">Text editor</a> Visual Studio Code and popular plugins
    1. The GPG (GNU Privacy Guard) utility to optionally cryptographically sign Git commits
    1. Configuration of .gitconfig to automatically provide keys to several GitHub organizations
+   1. "git-secrets" as git sub-commands to scan for presence of secrets in Python code.
    <br /><br />
 
+Below are the manual equivalents to the automated script invoked above, fo
 
 <hr />
 
-Below are the manual equivalents to the automated script invoked above:
+
+Before running the script, Windows 10 users need to prepare:
 
 <a name="WindowsInstall"></a>
 
-## Windows install
+### Prepare Windows 10
 
 Automation of Windows 10 means running first running a Microsoft's PowerShell script, <strong>manually</strong>. PowerShell comes installed by default in every Windows machine (starting with Windows 7 SP1 and Windows Server 2008 R2 SP1). But it's <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/install/installing-windows-powershell?view=powershell-7">invoked differently depending on the edition of Windows</a>. Instructions below are for Windows 10 Desktop (not Server):
+
+### Install Git Bash (Git for Windows)
+
+1. <a target="_blank" href="https://www.udemy.com/course/git-bash/learn/lecture/2752490#overview">VIDEO</a>: Install "Git for Windows" from:
+
+   <a target="_blank" href="https://git-for-windows.github.io/">https://git-for-windows.github.io/</a>
+
+1. Click on the "Download" button.
+1. Click the "64 bit.exe" link to begin download (into your Downloads folder).
+1. Click OK to the security warning.
+1. Click the installer to invoke it.
+1. In Select Components, select where you would like to have "Git Bash" icon.
+
+   ![git-bash-win-icons-653x506](https://user-images.githubusercontent.com/300046/86545961-76558a00-beef-11ea-8cb1-e93503781135.jpg)
+
+   ### Open PowerShell
+
+1. Open the PowerShell command-line program by pressing the Windows key on your keyboard or clicking the Windows icon at the left lower corner. Then, start typing "PowerShell" until the full name appears. Click on that.
+
+   `PS ` appears when you are in PowerShell.
 
 1. Identify the version of PowerShell:
 
@@ -177,22 +186,19 @@ Automation of Windows 10 means running first running a Microsoft's PowerShell sc
 
    Windows Automatic Updates keeps the version current to what is available (5.1 at time of writing).
 
-   ### Upgrade .NET Framework 4.5 (or later)
+   ### Upgrade .NET Framework
 
-1. In an internet browser (Google Chrome), get the <strong>offline</strong> installer:
+1. In an internet browser (Google Chrome), get the <strong>offline</strong> installer for .NET 4.5:
 
-   https://www.microsoft.com/en-us/download/details.aspx?id=40779
+   <a target="_blank" href="https://www.microsoft.com/en-us/download/details.aspx?id=40779">
+   https://www.microsoft.com/en-us/download/details.aspx?id=40779</a>
 
 1. Click "Download", then "Save".
-1. After download is complete ...
+1. After download is complete, run the installer.
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=a85QLUJ0Wbs">VIDEO</a>
 
    ### Change PowerShell Execution Policy
-
-<a target="_blank" href="https://www.youtube.com/watch?v=a85QLUJ0Wbs">VIDEO</a>
-
-1. Open PowerShell program by pressing the Windows	key on your keyboard or clicking the Windows icon at the left lower corner. Then, start typing "PowerShell" until the full name appears. Click on that.
-
-   `PS ` appears when you are in PowerShell.
 
 1. Change PowerShell's execution policy (i.e. enable Powershell), to avoid errors:
 
@@ -222,15 +228,42 @@ Automation of Windows 10 means running first running a Microsoft's PowerShell sc
 concfg import solarized small
 y</strong></pre>
 
+<hr />
 
+## Open command-line
+
+NOTE: If you rather not type commands, see the <a href="#GUIGit">GUI Git clients</a>.
+
+1. Switch to a command-line shell window. 
+
+   On macOS, press command+spacebar and type enough of "Terminal.app" for a selection to appear, then press Enter to open it.
+
+   On Windows 10, press the Windows key on the keyboard and type <strong>"Git Bash"</strong> until the program appears, then press Enter to invoke it. Note this is different than running the "Windows Subsystem for Linux” option which runs the entire Ubuntu operating system (or other distribution).
+
+1. <strong>Triple-click</strong> this command to highlight it, then press command+C to copy it to your invisible Clipboard:
+
+   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/bash/sample.sh) -u wilson-mar"
+   </strong></pre>
+
+1. On macOS, switch to the Terminal window by pressing command+Tab until you rest on the Terminal icon.
+
+   On Windows, switch to the Terminal window by pressing ctrl+Esc until you reston the Terminal icon.
+
+2. Click anywhere on the Terminal screen. You might be required to enter your password again.
+
+3. Press command+V to paste from the Clipboard.
+
+4. Press cursor back to change `-u wilsonmar` to your own GitHub account, such as `-u john-doe`.
+
+5. Press Enter to run the script.
 
 
 
 <a name="GitGUIClient"></a>
 
-## Git Client GUI program
+### Git Client GUI program
 
-There are several available, but this is the most popular
+What is installed here is the most popular. But because Git file format is well known, <a target="_blank" href="https://help.github.com/en/github/getting-started-with-github/set-up-git">several Git clients are available</a>, and can be installed in addition.
 
 1. Install Git CLI client using Homebrew. On macOS:
 
@@ -242,6 +275,8 @@ There are several available, but this is the most popular
 
    Now you should be able to press the Windows key to open the "Git Bash" program, 
    then run Bash scripts.
+
+   ### Git command auto-completion
 
 1. On Windows: Install Git command completion and to show what brach on the command prompt:
 
@@ -263,7 +298,7 @@ There are several available, but this is the most popular
 
    If you don't already have a dotfiles repository, I have programmed a shell script that automates installation of several tools for you. Such automation is one of many ways to setup a laptop.
 
-### Search within GitHub
+   ### Search within GitHub
 
 1. Just so you get an idea of their popularity and variety, here is the result of a search through all github.com of "dotfiles":
 
@@ -274,59 +309,31 @@ There are several available, but this is the most popular
    Dotfiles are a highly personal matter.
    More details about dotfiles are <a target="_blank" href="https://wilsonmar.github.io/dotfiles/">here</a>.
 
-1. Switch to an internet browser such as Google Chrome and get yourself to this:
-
-   <a target="_blank" href="https://github.com/wilsonmar/dofiles">https://github.com/wilsonmar/dotfiles</a> 
-
-
-
 
 <a name="TextEditor"></a>
 
 ## Text Editor
 
-Instructions here uses TextEdit, a GUI text editor that comes with macOS.)
-
-## Configure secrets file
-
-1. Open a text editor to create and save a text file containing your secrets
-
-   <pre>
-   </pre>
-
-1. Open a text editor to create and save a text file containing your secrets
-
-   <pre>
-   </pre>
+Instructions here uses TextEdit, a GUI text editor that comes with macOS.
 
 
-## Multiple GitHub accounts
 
-What is unusual with this tutorial, not covered in the <a target="_blank" href="https://wilsonmar.github.io/git-github-videos">my many of video tutorials on GitHub</a>, 
-is how to setup your macOS laptop to <strong>switch among several GitHub accounts</strong>:
+## Keyboard shortcuts
 
-   * A personal account at<br />
-   <a target="_blank" href="https://github.com/">github.com/your_name</a>
 
-   * An on-prem work account at<br />
-   <a target="_blank" href="https://githuben.intranet.mckinsey.com/">githuben.intranet.mckinsey.com</a> requested on <a target="_blank" href="https://mckinsey.service-now.com/ghd?id=mck_app_cat_item&sys_id=94802e59db7fa344e9d8ef084896191f&search_term=github">GHD</a>
 
-   * A public-facing work account at<br />
-   <a target="_blank" href="https://github.com/">funcorp.github.com</a> requested at ???
+
+
+### Install Python
+
+<a target="_blank" href="https://www.youtube.com/watch?v=oLEkF7ctXOU">On Windows</a>
+
+
+
 
 <hr />
 
-1. In Enterprise environments, apply for and install VPN (Virtual Private Network) access.
-
-1. Apply for an account at each GitHub host landing page. Instructions below apply to 
-
-   <a target="_blank" href="https://GitHub.com">GitHub.com</a>
-
-
-
-1. Specify an <strong>account name</strong> that is unique among all other users at that host name:
-
-   PROTIP: GitHub does not allow use of spaces or underline characters in user names, so use dashes to separate words.
+## SSH for Multiple GitHub accounts
 
 1. Specify a strong password.
 1. You may specify the same email address at several hosts.
@@ -429,30 +436,6 @@ Host *
 ssh-add ~/.ssh/id_rsa
    </strong></pre>
 
-
-   ## Install Git Client
-
-1. Decide among several alternatives:
-
-   https://help.github.com/en/github/getting-started-with-github/set-up-git
-
-
-   ## GPG install
-
-1. Install GPG utility so you can cryptographically sign commits when needed.
-
-
-<hr />
-
-Repeat this for each account:
-
-1. Open an internet browser (Google Chrome) to the account.
-1. Login using your 
-1. Save the URL for frequent access on the browser toolbar.
-
-1. Configure with your picture.
-1. Configure 2FA on your iPhone.
-1. Save passcodes to a secure place (in case you are locked out).
 
    ## On your macOS laptop
 
@@ -589,9 +572,6 @@ gbs         # to add, commit, and push with a generic message
    ## Compare files utility
 
 
-   ## Git Hooks on clients
-
-
 <a name="SecConfig"></a>
 
 ## Org. Security Configuration
@@ -614,4 +594,11 @@ https://medium.com/the-andela-way/a-practical-guide-to-managing-multiple-github-
 <a name="Fonts"></a>
 
 ### Fonts
+
+
+<a name="GPG"></a>
+
+### GPG install
+
+1. Install GPG utility so you can cryptographically sign commits when needed.
 
