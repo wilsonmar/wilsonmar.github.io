@@ -77,7 +77,9 @@ Vormetrix
 
 ## Architecture
 
-https://www.vaultproject.io/docs/internals/architecture
+<a target="_blank" href="
+https://www.vaultproject.io/docs/internals/architecture">
+https://www.vaultproject.io/docs/internals/architecture</a>
 
 ![vault-layers](https://user-images.githubusercontent.com/300046/83564966-cf8a6200-a4da-11ea-9bdf-1a2492c371df.png)
 
@@ -85,7 +87,9 @@ Only the storage backend (which durably stores encrypted data) and the HTTP API 
 
 When the Vault server is started, it must be provided with a storage backend so that data is available across restarts. The HTTP API similarly must be started by the Vault server on start so that clients can interact with it.
 
-https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss
+<a target="_blank" href="
+https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss">
+https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss</a>
 
 ## Basic Course
 
@@ -95,7 +99,9 @@ the Vault Basics course</a>, its lessons are for running in <a target="_blank" h
 * The Vault CLI - Run the Vault Command Line Interface (CLI).
 * Your First Secret - Run a Vault dev server and write your first secret.
 
-   https://www.vaultproject.io/api-docs/index/
+   <a target="_blank" href="
+   https://www.vaultproject.io/api-docs/index/">
+   https://www.vaultproject.io/api-docs/index</a>
 
 * The Vault API - Use the Vault HTTP API
 
@@ -200,9 +206,21 @@ NOTE: Labs timeout every 2 hours.
 The "12 Factor App" advocates for app programming code to obtain secret data from environment variables rather than hard-coding them in code stored within GitHub. 
 
 Populating environment variables with clear-text secrets would occur outside the app, in the run-time environment.
-Seveal utilities have been created for that:
+Seveal utilities have been created for that.
 
-* <a target="_blank" href="https://github.com/jamhed/govaultenv">https://github.com/jamhed/govaultenv</a>.
+* <a target="_blank" href="https://github.com/jamhed/govaultenv">https://github.com/jamhed/govaultenv</a> includes access to Kuberets (but not clouds AWS, GCP, etc.).
+
+
+<a name="Daytona"></a>
+
+### Daytona client from Cruise
+
+<a target="_blank" href="https://github.com/cruise-automation/daytona">
+https://github.com/cruise-automation/daytona</a> is written in Golang 
+to be a "lighter, alternative, implementation" Vault client CLI services and containers. It automates authentication, fetching of secrets, and token renewal to Kubernetes, AWS, and GCP.
+Daytona is performant becuase it pre-fetches secrets upon launch and store them either in environment variables, as JSON in a specified file, or as singular or plural secrets in a specified file.
+
+
 
 
 <a name="envconsul"></a>
@@ -238,12 +256,11 @@ Credentials authorizing retrieval requests are defined ...
 ## Using Vaultenv with GitHub 
 
 <a target="_blank" href="https://github.com/channable/vaultenv">
-https://github.com/channable/vaultenv</a> populates values in OS environment variables referenced within programming code
-by making a syscall from the exec family. Vaultenv replaces its own process with your app. After your service has started, vaultenv is not running anymore.
+https://github.com/channable/vaultenv</a> populates values in OS environment variables referenced within programming code by making a syscall from the exec family. Vaultenv replaces its own process with your app. After your service has started, vaultenv is not running anymore.
 
 If secrets in Vault change, Vaultenv does not automatically restart services.
-By comparison, <a target="_blank" href="https://github.com/hashicorp/envconsul">envconsul from HashiCorp</a>, 
-daemonizes and spawn child processes to manage the lifecycle of the process it provides secrets.
+By comparison, <a target="_blank" href="https://github.com/hashicorp/envconsul">envconsul from HashiCorp</a> (also describe here), 
+daemonizes and spawns child processes to manage the lifecycle of the process it provides secrets.
 
 Vaultenv retrieves secrets using REST API calls of KV (Key Value) pairs based on "behavior configuration files" specified in the following files traveling with the programming code:
 
@@ -408,8 +425,7 @@ It is well suited for cloud environments where HSMs are either not available or 
 
    Note there are several:
 
-   <pre>
-==> Formulae
+   <pre>==> Formulae
 infosec/core/govaultenv ✔   ssh-vault  vault ✔ vault-cli  vaulted
 ==> Casks
 aws-vault                                                            btcpayserver-vault                                                   gmvault
@@ -1252,9 +1268,12 @@ Use libraries for:
 * C#
 * Java
 * Node JavaScript
+* Golang
+<br /><br />
 
+Several Vault clients have been written.
 
-## Store Secrets using Hashicorp Vault
+### Vault CLI Katakoda hands-on lab
 
 The hands-on Katakoda lab <a target="_blank" href="https://katacoda.com/courses/docker-security/vault-secrets">Store Secrets using Hashicorp Vault</a>  makes use of a <tt>vault.hcl</tt> file:
 
@@ -1312,7 +1331,10 @@ It specifies Consul as the backend to store secrets. Consul runs in HA mode. <tt
    cat keys.txt
    </pre>
 
-## CA
+
+<hr />
+
+## CA for SSH
 
 Vault can serve as a Root or Intermediate Certificate Authority.
 

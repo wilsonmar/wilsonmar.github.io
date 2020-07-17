@@ -170,7 +170,12 @@ perezoso. A raposa marrom rapida
 salta sobre o céo preguicoso.
    </pre>
 
-   Even though the image is slightly crooked, Tesseract should recogize all the various special characters such as curly braces, angle brackets, !, $, #, %, slash, and @ signs, etc.
+   Even though the image is slightly tilted, Tesseract should recogize all the various special characters such as curly braces, angle brackets, !, $, #, %, slash, and @ signs, etc.
+   However:
+
+   * the two dots in front of "schnelle” is mis-recognized,
+   * the tilde on top of "céo" is wrongly recognized as a tick
+   * the descender in "preguicoso" is not recognized
    
 
    ### Language recognition

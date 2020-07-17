@@ -21,28 +21,24 @@ Here are links to each skill to be tested by the $100 5-hour
 <a target="_blank" href="https://www.tensorflow.org/certificate">Tensorflow Certification Exam</a>, 
 according to the <a target="_blank" href="https://www.tensorflow.org/site-assets/downloads/marketing/cert/TF_Certificate_Candidate_Handbook.pdf">Certificate Candidate Handbook pdf</a>:
 
-## Content Categories
-
 1. <a href="#BuildNN">Build and train neural network models using TensorFlow 2.x</a>
 2. <a href="#ImageClas">Image classification</a>
 3. <a href="#NLP">Natural language processing (NLP)</a>
 4. <a href="#TimeSeries">Time series, sequences, and predictions</a>
 <br /><br />
 
-## Course
-
-The 4 above correspond to the 4 classes in the 
+The above certification categories is used as the structure of 4 classes in the 
 <a target="_blank" href="https://www.coursera.org/specializations/tensorflow-in-practice">
 TensorFlow in Practice Specialization</a>:
 
 1. <a target="_blank" href="https://www.coursera.org/learn/introduction-tensorflow/home/welcome">
    Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning</a>
 2. <a target="_blank" href="https://www.coursera.org/learn/convolutional-neural-networks-tensorflow">
-   Convolutional Neural Networks in Tensorflow</a>
+   Convolutional Neural Networks (CNN) in Tensorflow</a>
 3. <a target="_blank" href="https://www.coursera.org/learn/natural-language-processing-tensorflow">
-   Natural Language Processing in TensorFlow</a>
+   Natural Language Processing (NLP) in TensorFlow</a>
 4. <a target="_blank" href="https://www.coursera.org/learn/tensorflow-sequences-time-series-and-prediction">
-   Sequences, Time Series, and Preduction</a>
+   Sequences, Time Series, and Prediction</a>
 <br /><br />
 
 They are offered by deeplearning.ai (Andrew Ng) through <a target="_blank" href="https://www.coursera.com">Coursera.com</a>.
