@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Maximum limits (macOS etc.)"
+title: "Maximum limits (in macOS file descriptors)"
 excerpt: "Set this higher to prevent errors during high load"
 tags: [apple, mac, setup, USB]
 date: "2018-06-21"

@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Fonts on Mac OSX"
+title: "Fonts on macOS"
 excerpt: "You are what font you use"
 tags: [apple, mac, setup]
-date: "2016-10-20"
+date: "2020-07-15"
 file: "fonts-on-mac-os"
 image:
 # feature: pic brown wood apple logo 1900x500.jpg
@@ -26,14 +26,12 @@ The easiest way to install free fonts is to use <a target="_blank" href="https:/
 
 1. First, do this command one time to configure:
 
-   <tt><strong>
-   brew tap caskroom/fonts
+   <tt><strong>brew tap caskroom/fonts
    </strong></tt>
 
    The response at time of writing:
 
-   <pre>
-==> Tapping caskroom/fonts
+   <pre>==> Tapping caskroom/fonts
 Cloning into '/usr/local/Homebrew/Library/Taps/caskroom/homebrew-fonts'...
 remote: Counting objects: 1140, done.
 remote: Compressing objects: 100% (677/677), done.
@@ -50,8 +48,7 @@ Tapped 0 formulae (1,156 files, 945.1KB)
 
 3. For each font you want installed. The most popular are:
 
-   <tt><strong>
-   brew cask install font-open-sans
+   <tt><strong>brew cask install font-open-sans
    </strong></tt>
 
    PROTIP: This draws from font-open-sans.rb at
@@ -59,8 +56,7 @@ Tapped 0 formulae (1,156 files, 945.1KB)
 
    Note in the response that all the variants are installed:
 
-   <pre>
-==> Satisfying dependencies
+   <pre>==> Satisfying dependencies
 ==> Checking out https://github.com/google/fonts/trunk/apache/opensans
 ==> No checksum defined for Cask font-open-sans, skipping verification
 ==> Installing Cask font-open-sans
@@ -82,6 +78,7 @@ Tapped 0 formulae (1,156 files, 945.1KB)
 
 According to a research study done by Hongkiat, the top 10 free and paid fonts mentioned by web and graphic designers were:
 
+- Inconsolata (Free)
 * Myriad Pro (Free)
 * Bebas Neue (Free)
 * Ubuntu (Free)
@@ -91,9 +88,13 @@ According to a research study done by Hongkiat, the top 10 free and paid fonts m
 * Fedra Sans (Paid)
 <br /><br />
 
-http://www.aumcore.com/
+* http://www.aumcore.com/
+* [Cascadia Code](https://github.com/microsoft/cascadia-code) (Free)
+* [Dank Mono](https://dank.sh/) (Paid)
+* [Operator Mono](https://www.typography.com/fonts/operator/styles) (Paid)
+* [Fira Code](https://github.com/tonsky/FiraCode) (Free)
 
-
+- 
 <a id="FontBook"></a>
 
 ## View fonts you have on Mac
@@ -101,6 +102,8 @@ http://www.aumcore.com/
 Use Apple's Font Book app:
 
 0. In Finder, choose Go > Applications. Scroll to Font Book and double-click to open it.
+
+   ( `open "/Applications/Font Book.app"` doesn't work )
 
 0. Click "User".
 
@@ -113,16 +116,28 @@ This program is described at https://support.apple.com/en-us/HT201749
 
 ## Cross-platform Fonts
 
-Loading Open Sans on both Mac and Windows enable similar display.
+Open Sans on both Mac and Windows enable similar display.
 
-0. https://www.fontsquirrel.com/fonts/open-sans
+* <a target="_blank" href="https://www.fontsquirrel.com/fonts/open-sans">https://www.fontsquirrel.com/fonts/open-sans</a>
+
+https://fonts.google.com/specimen/Open+Sans
+
+The Light font is minimalistic.
+
+
+## Corporate Fonts
+
+Many large enterprises prefer to use their own fonts as part of their "branding".
+
+* https://www.smashingmagazine.com/2008/03/60-brilliant-typefaces-for-corporate-design/
 
 
 ## Bitmap vs vector
 
-There are two ways fonts are drawn - as bitmaps dots or as vectors by a program. 
+There are two ways fonts are drawn - as bitmaps as static dots in a bitmap file or as 
+<strong>vectors</strong> drawn dynamically by a program. 
 
-Vector fonts are better on my Apple monitors with 1080p HD and above
+Vector fonts look better on Apple monitors (with 1080p HD and above)
 because they allow more efficient scaling.
 
 When using old monitors with lower resolution below 720p,
@@ -152,7 +167,7 @@ My main criteria is a <strong>narrow</strong> font so more characters fit on a l
 
 ### Vera Mono
 
-This is the standard monospaced font in Fedora Linux.
+Vera Mono is the standard monospaced font in Fedora Linux.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=61zHuzTSROQ">
 Todd McLeod's Favorite IDE Font</a> video with install on Gogland.
@@ -217,11 +232,13 @@ Thanks to his work, we now have a good fixed-sized font that works across Mac an
 https://github.com/andreberg/Meslo-Font/wiki/Using-Meslo-LG-with-the-Windows-Console 
 
 
+<a name="GoLang"></a>
+
 ### GoLang fonts
 
 The font family, called Go, includes proportional- and fixed-width faces in normal, bold, and italic renderings. 
 
-https://blog.golang.org/go-fonts
+<a target="_blank" href="https://blog.golang.org/go-fonts">https://blog.golang.org/go-fonts</a>
 
 
 ### Fira Code
@@ -256,9 +273,9 @@ The response at time of writing:
 
 There are two to try:
 
-   https://github.com/andreberg/Meslo-Font
+   <a target="_blank" href="https://github.com/andreberg/Meslo-Font">https://github.com/andreberg/Meslo-Font</a>
 
-   https://github.com/chrissimpkins/Hack
+   <a target="_blank" href="https://github.com/chrissimpkins/Hack">https://github.com/chrissimpkins/Hack</a>
 
 0. Scroll down to click "Latest version", which for me was:
    
@@ -276,9 +293,9 @@ There are two to try:
 
 This is not only a casual, fun-looking font, but one that makes it easier to read for those with mild Dylexia.
 
-0. https://www.dyslexiefont.com/
+0. <a target="_blank" href="https://www.dyslexiefont.com/">https://www.dyslexiefont.com</a>
 
-0. Click the Home Edition (or Education or Business)
+0. Click the Home Edition (or Education or Business).
 
 0. The font file available when I did this was:
 
@@ -291,15 +308,14 @@ For when you don't want your text to be recognized by Tesseract or other Optical
 
 pdf ocrx extract text from PDF files.
 
-http://videos.komando.com/watch/4124/kims-picks-new-nsa-proof-font
+<a target="_blank" href="http://videos.komando.com/watch/4124/kims-picks-new-nsa-proof-font">VIDEO</a>: ZXX fonts by Sang Mun, former NSA contractor, has 6 styles:
+   * Sans 
+   * Bold
+   * Camo has camoflouge 
+   * False puts the real letter inside larger false letters
+   * Noise has dots
+   * XCD puts a cross over letters. It’s the most successful.
 
-ZXX fonts by Sang Mun, former NSA contractor, has 6 styles:
-* Sans 
-* Bold
-* Camo has camoflouge 
-* False puts the real letter inside larger false letters
-* Noise has dots
-* XCD puts a cross over letters. It’s the most successful.
 
 ## Comic font to use in meme cartoons
 
@@ -309,10 +325,9 @@ Words in this cartoon meme, from World's Finest Comics #153 (1965), is changed t
 
 It doesn't look right if one of the standard fonts for word processing are used on comics such as this.
 
-It's more appropriate to use Neale Davidson's Comic Book font is at https://www.dafont.com/comic-book.font
+It's more appropriate to use Neale Davidson's Comic Book font is at <a target="_blank" href="https://www.dafont.com/comic-book.font">https://www.dafont.com/comic-book.font</a>
 
-Instead of using a scan, which looks pixelated, Miles Goodhew at http://blog.m0les.com/2012/12/bat-slap-retro-vectored.html
-vectorized it into an SVG file using the Inkscape open-source drawing program from https://inkscape.org/
+Instead of using a scan, which looks pixelated, Miles Goodhew at <a target="_blank" href="http://blog.m0les.com/2012/12/bat-slap-retro-vectored.html">http://blog.m0les.com/2012/12/bat-slap-retro-vectored.html</a> vectorized it into an SVG file using the <a target="_blank" href="https://inkscape.org/">Inkscape</a> open-source drawing program.
 
 
 ## More on OSX
