@@ -16,67 +16,82 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Here is a succinct summary of technical aspects on how cars can drive themselves.
+Here are my notes about technical aspects of how cars can drive themselves.
 
 TAGS: #autonomousdriving #AI
 
-## Levels of autonomy
+## Why AV
 
-Part of the facination (and fear) about Artificial Intelligence is how computers are becoming better than humans in many arenas.
+Part of the facination (and fear) about Artificial Intelligence (AI) is computers becoming <strong>better and faster</strong> than humans in many arenas.
 
-Because human drivers can be inexperienced, drunk, too tired or too distracted, etc. I predict that, at the current rate of progress, eventually the cost of "human error" will be higher than misjudgements by computers controlling vehicles. Then, governments, auto makers, insurance companies, and others will make it more difficult to own cars. This is because self-driving cars can travel faster than what people can safely handle (around 70 mph). 
+Driving takes concentration and is tiring. 
+Because human drivers can be inexperienced, drunk, too tired, too distracted, etc., 
+at the current rate of progress on AVs (Autonomous Vehicles), eventually the cost of "human error" (1 accident every 100,000 miles) will be higher than misjudgements by computers controlling vehicles. 
 
-If Uber and/or <a target="_blank" href="https://twitter.com/LyftLevel5">Lyft's Level5</a> venture succeed, parking will be a thing of the past.
-And so are the jobs of human drivers.
+Then, governments, auto makers, insurance companies, and others will make it more difficult to own human-driven cars. 
 
-Uber has, since 2012, been offering free rides in driverless cars aroud Pittsberg and Chandler, AZ.
+Also, as cars automate more, and human drivers have less to do, inattention becomes even more of an issue.
+
+Going further, perhaps self-driving cars can <strong>travel faster</strong> than what people can safely handle (around 70 mph). 
+
+## The race to AV
+
+Every auto manufacturer has a self-driving car program.
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th>Company</th><th>Automaker</th></tr>
+<tr valign="top"><td><a href="#Apple">Apple</a></td><td>Mercedes</td></tr>
+<tr valign="top"><td><a href="#Argo">Argo</a></td><td>Ford/VW</td></tr>
+<tr valign="top"><td><a href="#Baidu">Baidu</a></td><td>Lincoln MKZ</td></tr>
+<tr valign="top"><td><a href="#Comma">Comma</a></td><td>(Honda)</td></tr>
+<tr valign="top"><td><a href="#Cruise">Cruise</a></td><td>GM/Honda</td></tr>
+<tr valign="top"><td><a href="#Lyft">Lyft</a></td><td>-</td></tr>
+<tr valign="top"><td><a href="#Tesla">Tesla</a></td><td>Tesla</td></tr>
+<tr valign="top"><td><a href="#Uber">Uber</a></td><td>-</td></tr>
+<tr valign="top"><td><a href="#Google">Waymo/Google</a></td><td>Volvo XC90</td></tr>
+</table>
+
+Honda's 2017 models and onward are built with self-driving features.
 
 
 ## Levels of autonomy 
 
 (from the Society of Automotive Engineers):
 
-1. Driver Assistance - driver is fully engaged.
-2. Partial Automation - cruise control, lane keeping.
+1. Driver Assistance - driver is fully engaged. Voice prompts.
+2. Partial Automation - lane keeping with cruise control.
 3. Conditional Automation - driver is ready to take over.
 4. High Automation - no controls for human use, operating within a geofence
-   <a target="_blank" href="https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_2_5_hardware_system_installation_guide_v1.md">(Apollo 2.5)</a>
-5. Full Automation - without a geofencem in a closed venue low-speed environment such as by minibuses, valet parking, delivery robots. <a target="_blank" href="https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_3_0_quick_start.md">(Apollo 3.0)</a>
+5. Full Automation - starting from without a geofence in a closed venue low-speed environment such as by minibuses, valet parking, delivery robots.
 
 
+### Shared rides
 
-## Controls
+The high cost of computing power on purpose-built AVs forces amortization across many rides in taxis.
 
-Computers needs to be able to control the vehicle's steering, throttle, and breaking systems to execute its planning.
-So vehicles need to be equipped with by-wire systems: including but not limited to brake by-wire, steering by-wire, throttle by-wire and shift by-wire.
+City governments may actually see lack of need for parking undermine revenue from cark parks and traffic tickets.
 
-Every auto manufacturer has a self-driving car program:
+Uber has, since 2012, been offering free rides in driverless cars aroud Pittsberg and Chandler, AZ.
 
-* Honda's 2017 models and onward are built that way.
+Cruise has been offering rides in San Francisco, California.
 
-* The Lincoln MKZ is what Apollo is currently tested on.
+Las Vegas.
 
-* On Teslas even the glovebox lock is controlled by the computer.
+Uber and Lyft has dessicimated the jobs of human drivers.
+COVID-19 is making it even more dangerous to be a driver.
 
-Additional organizations work with the 
-Autonomous Technology Certification Facility (ATCF)
+NOTE: On Teslas even the glovebox lock is controlled by the computer.
 
-## Degrees
+Zoox got the first California permit to transport passengers in self-driving cars, in 2018.
+Waymo in 2019. Uber in 2020.
 
-BTW David Silver worked at Ford's self-driving car program and is now teaching online Udacity's hands-on Nanodegree programs on self-driving cars at the 
-<a target="_blank" href="https://www.udacity.com/course/intro-to-self-driving-cars--nd113">4-month Intro</a> and <a target="_blank" href="https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013">advanced Engineer (2 three-month terms)</a>.
-
-   * https://discussions.udacity.com/
-   * Slack for students
-   <br /><br />
-
-Students work on Udacity's car named Nanna.
-
-Udacity is founded by Sabastian Thrun (from Sweden), the "father" of self-driving car. When he was a professor at Stanford, his team won the DARPA Grand Challenge car race. He then joined Google.
 
 ## Companies
 
 * https://www.technologyreview.com/s/604006/autox-has-built-a-self-driving-car-that-navigates-with-a-bunch-of-50-webcams/
+
+
+<a name="Apple"></a>
 
 ### Apple
 
@@ -88,28 +103,96 @@ A disclosure in 2018 states that 5,000 employees at Apple know about a self-driv
 
 In April 2018, Apple hired Google's former AI boss to run Siri and machine learning.
 
+
+<a name="Google"></a>
+
 ### Alphabet (Google) 
 
 Alphabet (Google) holds a seven percent stake in Uber.
 Google also owns Waymo.
 
+<a target="_blank" href="https://www.youtube.com/watch?v=tiwVMrTLUWg">VIDEO</a>:
+Chris Urmson, head of Google's driverless car program, shares footage showing how cars see.
+
+
+<a name="Baidu"></a>
+
 ### Baidu's Apollo
 
 Baidu is the Google of China, providing a search engine.
+
+<a target="_blank" href="https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_3_0_quick_start.md">Apollo</a>
 
 Silver created a <a target="_blank" href="https://classroom.udacity.com/courses/ud0419/">free intro class</a> using Baidu's Apollo library at:
 
    <a target="_blank" href="https://github.com/ApolloAuto/apollo">https://github.com/ApolloAuto/apollo</a>
 
 <a target="_blank" href="https://dueros.baidu.com/en/index.html">
-DuerOS</a> is Baidu's conversational AI program with embedded AI speech and image recognition. See
-https://duer.baidu.com/en/html/dueros/index.html
+DuerOS</a> is Baidu's conversational AI program with embedded AI speech and image recognition. <a target="_blank" href="https://duer.baidu.com/en/html/dueros/index.html">*</a>
 
-Social:
+   <a target="_blank" href="https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_2_5_hardware_system_installation_guide_v1.md">(Apollo 2.5)</a>
 
    * https://twitter.com/apolloplatform
  
+
+<a name="Cruise"></a>
+
+### Cruise
+
+GM cars have "SuperCruise"
+
+
+<a name="Comma"></a>
+
+### Comma.ai
+
+Rather than building vehicles, George Hotz, founder of <a target="_blank" href="https://www.comma.ai">Comma.ai</a> in San Diego, has its $100 "Comma two" Android mobile app to provide self-driving capabilities by a CAN bus wire harness taping via ODB-II port on <a target="_blank" href="https://comma.ai/shop/products/comma-two-devkit">several recent models of cars</a>: Acura RDX, Chrysler Pacifica, Honda Accord/CRV 2015+/Fit, Jeep Grand Cherokee, 2015+, Kia, Lexus CT/ES/IS/NX/RX, Subaru, Toyota Avalon/Camry/C-HR/Corolla/Highlander 2017+/Prius 2016+/RAV4, Volkswagon Golf 2015+).
+<a target="_blank" href="https://www.youtube.com/watch?v=iwcYp-XT7UI&time=37m51s" title="Aug 5, 2019">"The 2020 Corolla is the best car with OpenPilot. It has less lag"</a>..
+
+Comma's "OpenDriver" software is open sourced, so it's difficult to regulate by governments.
+
+Heads-up Display (HUD) streams video for view online at <a target="_blank" href="https://my.comma.ai/cabana/">https://my.comma.ai/cabana</a>. It uses OpenStreetMap.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Nnh5TQ60hek" title="Feb 24, 2020 [22:54">VIDEO</a>:
+The camera facing the driver detects whether the driver is paying attention to the road.
+There are also infrared LEDs on Comma's windshield case to provide night-time driver monitoring.
+
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=iwcYp-XT7UI">VIDEO</a>:
+* https://www.youtube.com/watch?v=2Veptye978c
+
+<a name="Lyft"></a>
+
+### Lyft
+
+<a target="_blank" href="https://twitter.com/LyftLevel5">Lyft's Level5</a>
+
+
+### Tesla Motors
+
+Elon Musk became the wealthiest person in the world with 25% ownership in Tesla.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=HM23sjhtk4Q" title="April 22, 2019">VIDEO</a>: "Lidar is a fool's errand". 
+
+
 ### X-Motors
+
+<hr />
+
+## Trainings
+
+<a target="_blank" href="https://www.youtube.com/watch?v=1L0TKZQcUtA">VIDEO</a>:
+<a target="_blank" href="http://selfdrivingcars.mit.edu/">
+MIT 6.S094: Introduction to Deep Learning and Self-Driving Cars</a>
+
+BTW David Silver worked at Ford's self-driving car program and is now teaching online Udacity's hands-on Nanodegree programs on self-driving cars at the 
+<a target="_blank" href="https://www.udacity.com/course/intro-to-self-driving-cars--nd113">4-month Intro</a> and <a target="_blank" href="https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013">advanced Engineer (2 three-month terms)</a>. Students work on Udacity's car named Nanna.
+
+   * https://discussions.udacity.com/
+   * Slack for students
+   <br /><br />
+
+Udacity is founded by Sabastian Thrun (from Sweden), the "father" of self-driving car. When he was a professor at Stanford, his team won the first DARPA Grand Challenge car race. He then joined Google.
 
 <hr />
 
@@ -122,6 +205,18 @@ Intel's Mobileye</a>.
 
 ASUS GTX1080 GPU-A8G- Gaming GPU Card
 
+
+#### Controls
+
+Computers needs to be able to control the vehicle's steering, throttle, and breaking systems to execute its planning.
+
+So vehicles need to be equipped with by-wire systems: brake by-wire, steering by-wire, throttle by-wire and shift by-wire, etc.
+
+Additional organizations work with the 
+Autonomous Technology Certification Facility (ATCF)
+
+
+<hr />
 
 ## Software
 
@@ -147,14 +242,14 @@ The "Canbus" is a Controller Area Network (CAN) which transfers data between dev
 
 ### HMI (Human-Machine Interface)
 
-An off-line demo without the expensive hardware can install and run "rosbag". 
-See: https://github.com/ApolloAuto/apollo/tree/master/docs/demo_guide
-
-It's kinda like Grand Theft Auto game (but you can't get out of the car to beat up prostitutes).
-
+An <a target="_blank" href="https://github.com/ApolloAuto/apollo/tree/master/docs/demo_guide">off-line demo</a> without the expensive hardware can install and run on laptops.
+It's kinda like the Grand Theft Auto game.
 It uses Baidu's Python-based Apollo Dreamview visualization software running under Linux: Ubuntu 14.04.
+Apollo is based on Linux Kernel 4.4.32).
 
-Apollo is based on Linux Kernel 4.4.32)
+Cruse's <a target="_blank" href="https://github.com/cruise-automation/rosbag.js">
+Rosbg.js</a> is a node.js & browser compatible Node@10.x module for reading 
+<a target="_blank" href="http://wiki.ros.org/rosbag">rosbag binary data files</a>.
 
 RTOS
 
@@ -171,18 +266,18 @@ Baidu has 300 survey vehicles to map all the highways in China.
 
 ### Localization
 
+For a vehicle to "localize" itself to <strong>single-digit centimeter</strong> accuracy, it currently needs to use several technologies.
+
 Self-driving cars need to figure out more precisely where it is in the world than what GPS (Global Positioning System) can provide. A GNSS (Global Navigation Satellite System) receiver needs at least 3 of 30 satellites to calulate its location (based on time of flight).
+Also, GPS updates every 10 seconds, which is too slow.
 
-BTW, RTK (Real Time Kinematic) positioning uses ground stations to provide "ground truth" used to ensure GPS accuracy to 10 meters.
-
-GPS updates every 10 seconds, which is too slow.
-
-For a vehicle to "localize" itself to <strong>single-digit centimeter</strong> accuracy, it uses several technologies.
+RTK (Real Time Kinematic) positioning uses ground stations to provide "ground truth" used to ensure GPS accuracy to 10 meters.
 
 The <a target="_blank" href="https://www.digikey.com/en/product-highlight/a/analog-devices/adis1647x-mini-mems-imu-2000-sec/">Inertial Measurement Unit (IMU)</a> consists of a 3-axis gyroscope and accelerometer.
 It updates at 1000 Hz (near real time).
 The system has to reconcile two XY coordinate frames: the vehicle and the map.
 In the 3D Gyroscope, the spin axis is set to the global coordinate system while the 3 gimbals rotate.
+
 
 <a name="LIDAR"></a>
 
@@ -191,9 +286,8 @@ In the 3D Gyroscope, the spin axis is set to the global coordinate system while 
 LiDARs today use 32 lasers and 1 or 2 million beams per second, and that a 64-laser system emitting 6.4 million beams a second would give superior vertical resolution and quicker refreshes. This would be better able to capture small, fast objects such as animals darting into the road. 
 
 Alex Lidow, CEO and cofounder of Efficient Power Conversion, a provider of the gallium nitride chips found in many modern lidars.
-
-* https://backchannel.com/how-my-public-records-request-triggered-waymos-self-driving-car-lawsuit-1699ff35ac28#.vi4talr7i
-by https://medium.com/@meharris/
+https://backchannel.com/how-my-public-records-request-triggered-waymos-self-driving-car-lawsuit-1699ff35ac28#.vi4talr7i
+by <a target="_blank" href="https://medium.com/@meharris/">@meharris</a>
 
 
 
@@ -209,15 +303,17 @@ cameras, radar, LiDAR (Light Detection and Ranging System).
 
 Deep (learning) Neural Networks are used to draw bounding boxes to identify which lane the car is using.
 
+
 <a name="Prediction"></a>
 
 ### Prediction
 
-RNN (Recurrent Neural Network)
+A RNN (Recurrent Neural Network)
+is used to project trajectories, Frenet coordinates
+on short and long time horizons.
 
-To project trajectories, Frenet coordinates
-on short and long time horizons
-Software creates waypoints that plot the plan.
+Software creates <strong>waypoints</strong> that plot the plan.
+
 
 <a name="Planning"></a>
 
@@ -229,9 +325,4 @@ Analyzing the actual route traveled.
 
 
 
-## Classes
-
-https://www.youtube.com/watch?v=1L0TKZQcUtA<br />
-MIT 6.S094: Introduction to Deep Learning and Self-Driving Cars
-http://selfdrivingcars.mit.edu/
 

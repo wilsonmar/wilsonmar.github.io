@@ -37,15 +37,94 @@ At the end of this tutorial, you should be able to:
 	Tasks get tokens so they can retrieve values.
 <br /><br />
 
+
+## Install Server binaries
+
 Precompiled Vault binaries are available at <a target="_blank" href="https://releases.hashicorp.com/vault/">https://releases.hashicorp.com/vault</a>
 
 PROTIP: Enterprise and free versions have different binaries.
 Paid Enterprise editions include Read Replicas and Replication for DR, plus MFA, Sentinel, and HSM Auto-Unseal with FIPS 140-2 & Seal Wrap.
 A system service file is needed for prod instances.
 
+PROTIP: Vault has a single program file for server and client.
+
+
+## Skill Certification
+
+In 2020 Hashicorp offers a $70 for 1 hour certification exam for Vault.
+
+1	Compare authentication methods
+   * Describe authentication methods
+   * Choose an authentication method based on use case
+   * Differentiate human vs. system auth methods
+
+2	Create Vault policies
+   * Illustrate the value of Vault policy
+   * Describe Vault policy syntax: path
+   * Describe Vault policy syntax: capabilities
+   * Craft a Vault policy based on requirements
+
+3	Assess Vault tokens
+   * Describe Vault token
+   * Differentiate between service and batch tokens. Choose one based on use-case
+   * Describe root token uses and lifecycle
+   * Define token accessors
+   * Explain time-to-live
+   * Explain orphaned tokens
+   * Create tokens based on need
+
+4	Manage Vault leases
+   * Explain the purpose of a lease ID
+   * Renew leases
+   * Revoke leases
+
+5	Compare and configure Vault secrets engines
+   * Choose a secret method based on use case
+   * Contrast dynamic secrets vs. static secrets and their use cases
+   * Define transit engine
+   * Define secrets engines
+
+6	Utilize Vault CLI
+   * Authenticate to Vault
+   * Configure authentication methods
+   * Configure Vault policies
+   * Access Vault secrets
+   * Enable Secret engines
+   * Configure environment variables
+
+7	Utilize Vault UI
+   * Authenticate to Vault
+   * Configure authentication methods
+   * Configure Vault policies
+   * Access Vault secrets
+   * Enable Secret engines
+
+8	Be aware of the Vault API
+   * Authenticate to Vault via Curl
+   * Access Vault secrets via Curl
+
+9	Explain Vault architecture
+   * Describe the encryption of data stored by Vault
+   * Describe cluster strategy
+   * Describe storage backends
+   * Describe the Vault agent
+   * Describe secrets caching
+   * Be aware of identities and groups
+   * Describe Shamir secret sharing and unsealing
+   * Be aware of replication
+   * Describe seal/unseal
+   * Explain response wrapping
+   * Explain the value of short-lived, dynamically generated secrets
+
+10	Explain encryption as a service
+    * Configure transit secret engine
+   * Encrypt and decrypt secrets
+   * Rotate the encryption key
+
+
 ## What are secrets?
 
-A secret is anything that you want to tightly control access to, such as API keys, passwords, certificates, and more. 
+A secret is any "clear text" that you want to tightly control access to, such as API keys, passwords, certificates, and more. 
 
 Vault provides high-level policy management, secret leasing, audit logging, and automatic revocation.
 
@@ -75,6 +154,7 @@ This is even if secrets are ecrypted (using GPG) because old versions hidden in 
 Alternatives to Hashicorp Vault include
 Vormetrix
 
+
 ## Architecture
 
 <a target="_blank" href="
@@ -90,6 +170,36 @@ When the Vault server is started, it must be provided with a storage backend so 
 <a target="_blank" href="
 https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss">
 https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss</a>
+
+<a target="_blank" href="
+https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss/index.html#1">
+https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss/index.html</a>
+
+<hr />
+
+<a name="WithinCode"></a>
+
+## Within App Programming Code
+
+The "12 Factor App" advocates for app programming code to obtain secret data from environment variables rather than hard-coding them in code stored within GitHub. 
+
+Populating environment variables with clear-text secrets would occur outside the app, in the run-time environment.
+Seveal utilities have been created for that.
+
+* <a target="_blank" href="https://github.com/jamhed/govaultenv">https://github.com/jamhed/govaultenv</a> includes access to Kuberets (but not clouds AWS, GCP, etc.).
+
+
+<a name="Daytona"></a>
+
+### Daytona client from Cruise
+
+<a target="_blank" href="https://github.com/cruise-automation/daytona">
+https://github.com/cruise-automation/daytona</a> is written in Golang 
+to be a "lighter, alternative, implementation" Vault client CLI services and containers. It automates authentication, fetching of secrets, and token renewal to Kubernetes, AWS, and GCP.
+Daytona is performant becuase it pre-fetches secrets upon launch and store them either in environment variables, as JSON in a specified file, or as singular or plural secrets in a specified file.
+
+
+<hr />
 
 ## Basic Course
 
@@ -197,29 +307,6 @@ Finally, log into the Vault UI with your root token. If you have problems, doubl
 
 
 NOTE: Labs timeout every 2 hours.
-
-
-<a name="WithinCode"></a>
-
-## Within App Programming Code
-
-The "12 Factor App" advocates for app programming code to obtain secret data from environment variables rather than hard-coding them in code stored within GitHub. 
-
-Populating environment variables with clear-text secrets would occur outside the app, in the run-time environment.
-Seveal utilities have been created for that.
-
-* <a target="_blank" href="https://github.com/jamhed/govaultenv">https://github.com/jamhed/govaultenv</a> includes access to Kuberets (but not clouds AWS, GCP, etc.).
-
-
-<a name="Daytona"></a>
-
-### Daytona client from Cruise
-
-<a target="_blank" href="https://github.com/cruise-automation/daytona">
-https://github.com/cruise-automation/daytona</a> is written in Golang 
-to be a "lighter, alternative, implementation" Vault client CLI services and containers. It automates authentication, fetching of secrets, and token renewal to Kubernetes, AWS, and GCP.
-Daytona is performant becuase it pre-fetches secrets upon launch and store them either in environment variables, as JSON in a specified file, or as singular or plural secrets in a specified file.
-
 
 
 

@@ -390,6 +390,23 @@ for index in range(8):
 
 set([3,2,3,1,5]) # auto-renumbers with duplicates removed
 
+## Tuple
+
+<pre>person = ('john', 'doe', 40)
+person
+type(person)
+</pre>
+
+Tuples are fixed-sized collections of related items (akin to a "struct" in Java or "record")
+used to pass multiple values of various types to or from a function.
+
+Use a list instead for a collection of similar objects.
+
+PROTIP: When adding a single value, include a comma at the end to avoid it being classified as a string:
+
+<pre>person = 'john',
+type(person)
+</pre>
 
 
 ## More about Python
