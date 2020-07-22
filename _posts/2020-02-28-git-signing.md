@@ -20,7 +20,9 @@ comments: true
 
 Protect Your Git Repositories From Commit Forgery Using Signing<a target="_blank" href="https://medium.com/@rwbutler/signing-commits-using-gpg-on-macos-7210362d15">*</a>
 
-This article is a step-by-step tutorial on how to setup and use GPG for Git to use for signing Git Tags, for non-repudiation. Also covered are releases associated with Tags. Since we're using GPG, we have bonus notes about signing of whole files using GPG.
+This article is a step-by-step tutorial on how to setup and use GPG for Git to use for signing Git Tags, for non-repudiation. Also covered are releases associated with Tags. 
+
+BONUS: Since we're using GPG, here are also <a href="#EncryptFiles">notes about signing of whole files using GPG</a>.
 
 The contribution of this article is the logical ordering of <strong>deep-dive</strong> concepts presented in a succint way, as a hands-on narrated scenic tour. "PROTIP" flags advice from hard-won experience such as relevant keyboard shortcuts and things to remember, available only here for you.
 
@@ -35,7 +37,7 @@ Before someone starts a job/project, a trusted administrator (the boss) specifie
 
 The app generates the certificate pairs, stores them in Vault, installs them on GitHub, and saves the keys on the worker's laptop. This provides a more trusted chain than each employee generating their own key pair.
 
-Then all a new working developer needs to do is, on a pre-configured laptop, make a change and do a git <a href="#SignTag">tag</a> or <a href="#SignCommits">add/commit</a>, then <a href=#Push">push</a>.
+Then all a new working developer needs to do is, on a pre-configured laptop, make a change and do a git <a href="#SignTag">tag</a> or <a href="#SignCommits">add and commit with a tag</a>, then <a href="#Push">push</a>.
 
 
 <a name="Installers"></a>
@@ -44,16 +46,17 @@ Then all a new working developer needs to do is, on a pre-configured laptop, mak
 
 NOTE: This page is still actively under construction.
 
+### Install on macOS
+
 1. Open a Terminal. Be at your home user folder.
 
-1. TODO: Execute a Bash script to do the following:
-   Until then, manuall install:
-
-   <a target="_blank" href="https://wilsonmar.github.io/macos-homebrew/">brew (Homebrew)</a>
+1. Execute a Bash script to do the following:
+   
+   Alternately, manually install <a target="_blank" href="https://wilsonmar.github.io/macos-homebrew/">brew (Homebrew)</a>
    
 1. Install a Git client:
 
-   brew install git
+   <pre><strong>brew install git</strong></pre>
 
 1. For information about the brew gpg2 install:
 
@@ -61,8 +64,25 @@ NOTE: This page is still actively under construction.
 
    The response at time of writing:
 
-   <pre>
-gnupg: stable 2.2.19 (bottled)
+   <pre>gnupg: stable 2.2.21 (bottled)
+GNU Pretty Good Privacy (PGP) package
+https://gnupg.org/
+/usr/local/Cellar/gnupg/2.2.21 (134 files, 11.2MB) *
+  Poured from bottle on 2020-07-09 at 18:44:27
+From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/gnupg.rb
+License: GPL-3.0
+==> Dependencies
+Build: pkg-config ✔
+Required: adns ✔, gettext ✔, gnutls ✔, libassuan ✔, libgcrypt ✔, libgpg-error ✔, libksba ✔, libusb ✔, npth ✔, pinentry ✔
+==> Analytics
+install: 55,008 (30 days), 120,808 (90 days), 506,457 (365 days)
+install-on-request: 47,841 (30 days), 104,969 (90 days), 428,775 (365 days)
+build-error: 0 (30 days)
+   </pre>
+
+   To give you an idea of the pace of change:
+
+   <pre>gnupg: stable 2.2.19 (bottled)
 GNU Pretty Good Privacy (PGP) package
 https://gnupg.org/
 /usr/local/Cellar/gnupg/2.2.19 (134 files, 11MB) *
@@ -88,8 +108,7 @@ build-error: 0 (30 days)
 
    In the script, if each utility is found, it is re-installed if the REINSTALL flag is set on, which it is by default.
 
-   <pre>
-   MY_RUNTYPE="upgrade"
+   <pre>MY_RUNTYPE="upgrade"
    &nbsp;
    if ! command -v gpg >/dev/null; then
       echo "Installing GPG2 for commit signing..."
@@ -108,7 +127,16 @@ build-error: 0 (30 days)
    fi
    </pre>
 
-1. On Windows, install <a target="_blank" href="https://www.gpg4win.org/">Gpg4win</a> <a target="_blank" href="https://chocolatey.org/packages/Gpg4win">using Chocolatey</a>:
+
+   ### Install on Windows
+
+1. Install <a target="_blank" href="https://chocolatey.org/">Chocolatey</a> if you havent's already.
+
+1. Install with one command using Chocolatey:
+
+   <pre><strong>choco install gpg2 gnupg -y</strong></pre>
+
+   Alternately, install <a target="_blank" href="https://www.gpg4win.org/">Gpg4win</a> GUI <a target="_blank" href="https://chocolatey.org/packages/Gpg4win">using Chocolatey</a>:
 
    <tt>choco install gpg4win</tt>
 
@@ -122,6 +150,25 @@ build-error: 0 (30 days)
    <pre>==> Downloading https://homebrew.bintray.com/bottles/gmp-6.2.0.mojave.bottle.tar.gz</pre>
 
 
+   ### Config
+
+   PROTIP: The command above creates folder `$HOME/.gnupg`.
+
+1. Update or Create ~/.gnupg/gpg.conf
+
+   <pre><strong>code "$HOME/.gnupg/gpg.conf"
+
+1. Remove the comment character # from "use-agent" to enable it:
+   
+   <pre># Uncomment within config (or add this line)
+   # This tells gpg to use the gpg-agent
+   use-agent
+   </pre>
+
+1. Update permissions on your `~/.gnupg` Directory:
+
+   <pre><strong>chmod 700 ~/.gnupg</strong></pre>
+
 
    ## Email address
 
@@ -134,8 +181,7 @@ build-error: 0 (30 days)
 
 1. While in a Terminal with the present working directory at your local repository, configure you valid GitHub user name and email (if you haven't already). For example:
 
-   <pre><strong>
-   git config --global user.name "John Doe"
+   <pre><strong>git config --global user.name "John Doe"
    git config --global user.email "john_doe@gmail.com"
    </strong></pre>
 
@@ -146,7 +192,7 @@ build-error: 0 (30 days)
 
    ## List GPG keys
 
-1. List what keys have been signed, meaning secret keys:
+1. List what keys have been signed, meaning secret keys (more selective than the `gpg -k` command):
 
    <pre><strong>gpg --list-secret-keys --keyid-format LONG</strong></pre>
 
@@ -157,13 +203,11 @@ build-error: 0 (30 days)
 
    <pre><strong>gsk</strong></pre>
 
-   In the response, the first line lists the location where keys are stored:
+   In the response, the first line lists the location where keys are stored (with your own user name instead of "wilson_mar"):
 
    <pre>/Users/wilson_mar/.gnupg/pubring.kbx
 ------------------------------------
    </pre>
-
-   (You would of course see your own user name instead of "wilson_mar" above.)
 
    The pubring.kbx file is Gnupg program's "Key Ring" file. See <a target="_blank" href="https://kb.iu.edu/d/awiu">https://kb.iu.edu/d/awiu</a> about keyring management commands.
 
@@ -189,7 +233,7 @@ build-error: 0 (30 days)
 
    <pre>pinentry-program /usr/local/MacGPG2/libexec/pinentry-mac.app/Contents/MacOS/pinentry-mac</pre>
 
-
+1. If you are not using a Yubikey, proceed to <a href="#GenerateKey">Generate GPG key pairs</a>.
 
 
    ## Optional Yubikey smart chip
@@ -242,8 +286,7 @@ gpg/card>
 
    The response is like this:
 
-   <pre>
-Reader ...........: Yubico Yubikey NEO OTP U2F CCID
+   <pre>Reader ...........: Yubico Yubikey NEO OTP U2F CCID
 Application ID ...: <em>ID</em>
 Version ..........: 2.0
 Manufacturer .....: Yubico
@@ -284,7 +327,7 @@ Signature PIN ....: not forced
 
    <pre>Real Name: John Doe
 Email address: john-doe+github@gmail.com
-Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
+Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? _
    </pre>
 
    You’ll have to generate one GPG key for each email address to use if you want to use different email addresses on different projects.
@@ -297,11 +340,11 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
             
    PROTIP: Save you <strong>Passphrase</strong> in a secure place (such as in <a target="_blank" href="https://wilsonmar.github.io/hashicorp-vault/">Hashicorp Vault</a>), <strong>then</strong> copy it to paste in the prompt. This tactic is to ensure that you really can retrieve it when you use the key in a future command.
 
-   REMEMBER: Don't reuse passwords.
+   REMEMBER: Don't reuse passwords and passphrases.
 
 1. Re-enter the key.
 
-1. Press Enter. The long-winded response:
+1. Press Enter. Sample long-winded response:
 
    <pre>We need to generate a lot of random bytes. It is a good idea to perform
 some other action (type on the keyboard, move the mouse, utilize the
@@ -343,7 +386,6 @@ sec   rsa2048/62C414BA89BFBE52 2020-03-01 [SC] [expires: 2022-03-01]
 uid                 [ultimate] John Doe <john_doe+github@gmail.com>
 ssb   rsa2048/7F2026C2A22F2B37 2020-03-01 [E] [expires: 2022-03-01]
    </pre>
-
 
 1. Manually highlight and copy the GPG key ID, which is after "rsa2048/" in the sec section, <tt>62C414BA89BFBE52</tt> in the sample above.
 
@@ -387,7 +429,7 @@ Comment: My Git signing key
 Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
    </pre>
 
-   The response is:
+   The response is like:
 
    <pre>You selected this USER-ID: 
     "John Doe (My Git signing key) &LT;john_doe+github@gmail.com>"
@@ -414,13 +456,11 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
 1. Copy the file's contents to your operating system Clipboard:
 
-   <pre><strong>pbcopy < $HOME/mygitsigning.pub</strong></pre>
+   <pre><strong>pbcopy < "$HOME/mygitsigning.pub"</strong></pre>
 
    On Windows, pipe file contents to the clip.exe program built in within C:\Windows\system32 <a target="_blank" href="https://superuser.com/questions/472598/pbcopy-for-windows">*</a>:
 
    <pre><strong>type mygitsigning.pub | clip</strong></pre>
-
-   But note that 
 
    Alternately, open the file using a text editor, select all file contents, and copy to Clipboard.
 
@@ -448,7 +488,12 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
    <pre><strong>git config --global tag.forceSignAnnotated true
    </strong></pre>
 
+
    <a name="SignAllCommits"></a>
+
+   ### Sign all commits
+
+   PROTIP: Many say it's not necessary to sign every commit, just the commit designated by a release.
 
 1. Configure Git to auto-sign ALL commits on ALL repos:
 
@@ -469,20 +514,27 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
 1. If you are not using Zsh, edit you ~/.bash_profile to avoid these error messages:
 
-   <pre>
-error: gpg failed to sign the data
+   <pre>error: gpg failed to sign the data
 fatal: failed to write commit object
    </pre>
 
    If using Zsh, edit your ~/.bashrc file.
 
-   Paste in:
+   Add lines to the bottom of the Shell invocation file:
 
    <pre><strong>test -r ~/.bash_profile && echo 'export GPG_TTY=$(tty)' >> ~/.bash_profile
 echo 'export GPG_TTY=$(tty)' >> ~/.profile
    </strong></pre>
 
    <tt>GPG_TTY</tt> variable is to avoid errors.
+
+1. Confirm:
+
+   <pre><strong>echo $GPG_TTY
+   </strong></pre>
+
+   <pre>/dev/ttys001
+   </pre>
 
 1. Activate the setting by restarting your Terminal session. If not using Zsh:
 
@@ -503,8 +555,7 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
 
    A sample response at time of writing:
 
-   <pre>
-03:48:07.999728 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/bin/git
+   <pre>03:48:07.999728 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/bin/git
 03:48:08.000435 exec-cmd.c:236          trace: resolved executable dir: /Library/Developer/CommandLineTools/usr/bin
 03:48:08.001587 git.c:418               trace: built-in: git commit -a -S -m 'Some message'
 03:48:08.017126 run-command.c:643       trace: run_command: gpg2 --status-fd=2 -bsau 62C414BA89BFBE52
@@ -517,6 +568,9 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
    </pre>
 
 1. After push, switch to an internet browser to see a verified badge next to your commits on GitHub online.
+
+
+   <a name="SignGitTags"></a>
 
    ## Sign Git Tags
 
@@ -532,8 +586,7 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
 
    <tt>GIT_TRACE=1</tt> enables tracing. Example output on macOS:
    
-   <pre>
-03:45:46.646487 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/bin/git
+   <pre>03:45:46.646487 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/bin/git
 03:45:46.647227 exec-cmd.c:236          trace: resolved executable dir: /Library/Developer/CommandLineTools/usr/bin
 03:45:46.647782 git.c:418               trace: built-in: git tag -a -s v1.5.2 -m 'Signed tag 1.5.2'
 03:45:46.650392 run-command.c:643       trace: run_command: gpg2 --status-fd=2 -bsau 62C414BA89BFBE52
@@ -541,11 +594,13 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
 
    You are prompted for the GPG key Passphrase.
 
-   Alternately, construct a command to create a Git tag (such as "v1.5.2") to a <strong>previous commit</strong> (such as "f3c9f3a"):
+   Alternately, construct a command to create a Git tag (such as "v1.5.2") to a <strong>previous commit</strong> SHA (such as "f3c9f3a"):
 
    <pre><strong>GIT_TRACE-1 git tag v1.5.2 f3c9f3a</strong></pre>
 
-   
+
+   ### List Git tags
+
 1. For a list of all version 1 tags:
 
    <pre><strong>git tag -l "v1.*"</strong></pre>
@@ -577,7 +632,7 @@ pinentry-program /usr/local/bin/pinentry-mac
 
    ## Push by Tag
 
-   PROTIP: REMEMBER: Tags are push of tags are in addition to content commits.
+   PROTIP: REMEMBER: Tags are push of tags are <strong>in addition</strong> to content commits.
 
 1. For convenience (in scripts), push all tags to GitHub:
 
@@ -589,8 +644,7 @@ pinentry-program /usr/local/bin/pinentry-mac
 
    A sample response:
 
-   <pre>
-Enumerating objects: 1, done.
+   <pre>Enumerating objects: 1, done.
 Counting objects: 100% (1/1), done.
 Writing objects: 100% (1/1), 540 bytes | 540.00 KiB/s, done.
 Total 1 (delta 0), reused 0 (delta 0)
@@ -663,6 +717,7 @@ To github.com:wilsonmar/git-utilities
    </strong></pre>
 
 
+<a name="EncryptFiles"></a>
 
 ## Encrypting whole files using GPG
 
@@ -675,10 +730,11 @@ The steps below describes work with a <strong>detached signature</strong> where 
 <a target="_blank" href="https://davidboland.site/blog/signing-you-work-as-a-developer">BLOG</a>:
 Users may want this level of verification for security reasons. Especially if the package handles sensitive information.
 
+1. Get the signature, such as "62C414BA89BFBE52".
+
 1. To create a signed file:
 
-   <pre><strong>
-   gpg --detach-sign --sign-with 62C414BA89BFBE52 -o package.sig package.exe
+   <pre><strong>gpg --detach-sign --sign-with 62C414BA89BFBE52 -o package.sig package.exe
    </strong></pre>
 
    <tt>\-\-detach-sign</tt> requests a detached signature to be generated.
@@ -689,14 +745,15 @@ Users may want this level of verification for security reasons. Especially if th
 
 1. For a user to verify integrity of the file:
 
-   <pre><strong>
-   gpg --verify package.sig package.exe
+   <pre><strong>gpg --verify package.sig package.exe
    </strong></pre>
 
 
 ### Standard signing
 
-Standard signing and clear signing both affects the cleartext file itself. Standard signing is used with encryption. Clear signing wraps the input with plaintext signature. 
+Standard signing and clear signing both affects the cleartext file itself. 
+Standard signing is used with encryption. 
+Clear signing wraps the input with plaintext signature. 
 
 1. To sign a plaintext file with your secret key:
 
@@ -720,38 +777,53 @@ Standard signing and clear signing both affects the cleartext file itself. Stand
 
 
 
-
 ## Resources
 
 This article was the result of consulting several sources of information.
 
 Explanation of gpg program parameters are at:
-https://www.gnupg.org/documentation/manuals/gnupg/GPG-Input-and-Output.html
+<a target="_blank" href="https://www.gnupg.org/documentation/manuals/gnupg/GPG-Input-and-Output.html">https://www.gnupg.org/documentation/manuals/gnupg/GPG-Input-and-Output.html</a>
 
 As with all things Git, the canonical documentation is at git-scm.
 Regarding Git signing:
 <a target="_blank" href="https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work">
 https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work</a>
 
-https://help.github.com/en/github/authenticating-to-github/telling-git-about-your-signing-key
+<a target="_blank" href="
+https://help.github.com/en/github/authenticating-to-github/telling-git-about-your-signing-key">
+https://help.github.com/en/github/authenticating-to-github/telling-git-about-your-signing-key</a>
 
-https://help.github.com/en/enterprise/2.17/user/github/authenticating-to-github/signing-commits
+<a target="_blank" href="
+https://help.github.com/en/enterprise/2.17/user/github/authenticating-to-github/signing-commits">
+https://help.github.com/en/enterprise/2.17/user/github/authenticating-to-github/signing-commits</a>
 
-https://confluence.atlassian.com/bitbucketserver/using-gpg-keys-913477014.html
+<a target="_blank" href="
+https://confluence.atlassian.com/bitbucketserver/using-gpg-keys-913477014.html">
+https://confluence.atlassian.com/bitbucketserver/using-gpg-keys-913477014.html</a>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=KhROpuxHyH8">
-VIDEO: [Git/GitHub] Signing your commits in GitHub -- Getting the verified badge on your commits</a> Jul 8, 2018 by Raveesh Agarwal
+<a target="_blank" href="https://www.youtube.com/watch?v=KhROpuxHyH8" title="Jul 8, 2018">
+VIDEO: [Git/GitHub] Signing your commits in GitHub -- Getting the verified badge on your commits</a> by Raveesh Agarwal
 
-https://stackoverflow.com/questions/39494631/gpg-failed-to-sign-the-data-fatal-failed-to-write-commit-object-git-2-10-0
+<a target="_blank" href="
+https://stackoverflow.com/questions/39494631/gpg-failed-to-sign-the-data-fatal-failed-to-write-commit-object-git-2-10-0">
+https://stackoverflow.com/questions/39494631/gpg-failed-to-sign-the-data-fatal-failed-to-write-commit-object-git-2-10-0</a>
 
-https://juliansimioni.com/blog/troubleshooting-gpg-git-commit-signing/
+<a target="_blank" href="
+https://juliansimioni.com/blog/troubleshooting-gpg-git-commit-signing/">
+https://juliansimioni.com/blog/troubleshooting-gpg-git-commit-signing</a>
 quotes
-https://wiki.gentoo.org/wiki/GnuPG#Changing_pinentry_for_SSH_logins
+<a target="_blank" href="
+https://wiki.gentoo.org/wiki/GnuPG#Changing_pinentry_for_SSH_logins/">
+https://wiki.gentoo.org/wiki/GnuPG#Changing_pinentry_for_SSH_logins</a>
 
 
-https://ice-blog.readthedocs.io/en/latest/tutorial/encrypt/gpg/
+<a target="_blank" href="
+https://ice-blog.readthedocs.io/en/latest/tutorial/encrypt/gpg/">
+https://ice-blog.readthedocs.io/en/latest/tutorial/encrypt/gpg</a>
 
-https://jigarius.com/blog/signing-git-commits Sep 6, 2019
+<a target="_blank" href="
+https://jigarius.com/blog/signing-git-commits" title="Sep 6, 2019">
+https://jigarius.com/blog/signing-git-commits</a>
 
 
 
@@ -760,3 +832,9 @@ https://jigarius.com/blog/signing-git-commits Sep 6, 2019
 This is one of a series on DevOps:
 
 {% include devops_links.html %}
+
+## More on DevSecOps #
+
+This is one of a series on Security in DevSecOps:
+
+{% include devsecops_links.html %}

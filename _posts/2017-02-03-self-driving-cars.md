@@ -114,6 +114,8 @@ Google also owns Waymo.
 <a target="_blank" href="https://www.youtube.com/watch?v=tiwVMrTLUWg">VIDEO</a>:
 Chris Urmson, head of Google's driverless car program, shares footage showing how cars see.
 
+<a target="_blank" href="https://www.wikiwand.com/en/Waymo">https://www.wikiwand.com/en/Waymo</a>
+
 
 <a name="Baidu"></a>
 
@@ -153,10 +155,11 @@ Comma's "OpenDriver" software is open sourced, so it's difficult to regulate by 
 
 Heads-up Display (HUD) streams video for view online at <a target="_blank" href="https://my.comma.ai/cabana/">https://my.comma.ai/cabana</a>. It uses OpenStreetMap.
 
+Comma's access to ODB-II enables response to ABS (Anti-brake System) triggers.
+
 <a target="_blank" href="https://www.youtube.com/watch?v=Nnh5TQ60hek" title="Feb 24, 2020 [22:54">VIDEO</a>:
 The camera facing the driver detects whether the driver is paying attention to the road.
 There are also infrared LEDs on Comma's windshield case to provide night-time driver monitoring.
-
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=iwcYp-XT7UI">VIDEO</a>:
 * https://www.youtube.com/watch?v=2Veptye978c
