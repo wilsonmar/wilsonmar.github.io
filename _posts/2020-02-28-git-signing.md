@@ -365,7 +365,7 @@ uid                      Wilson Mar <john_doe+github@gmail.com>
 sub   rsa2048 2020-03-01 [E] [expires: 2022-03-01]
    </pre>
 
-   Notice the default expiry period is <strong>two years</strong>.
+   WARNING: Notice the expiry period is <strong>two years</strong> from date of creation.
 
    "rsa2048" is the encryption algorithm used.
 
@@ -825,7 +825,9 @@ https://ice-blog.readthedocs.io/en/latest/tutorial/encrypt/gpg</a>
 https://jigarius.com/blog/signing-git-commits" title="Sep 6, 2019">
 https://jigarius.com/blog/signing-git-commits</a>
 
-
+<a target="_blank" href="
+https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e">
+https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e</a>
 
 ## More on DevOps #
 

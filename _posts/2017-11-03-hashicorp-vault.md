@@ -152,7 +152,8 @@ This is even if secrets are ecrypted (using GPG) because old versions hidden in 
 ## Competitors
 
 Alternatives to Hashicorp Vault include
-Vormetrix
+Vormetrix,
+<a target="_blank" href="https://medium.com/keycloak">Red-Hat Keycloak</a>
 
 
 ## Architecture
