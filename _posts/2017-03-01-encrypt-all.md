@@ -168,3 +168,9 @@ VIDEO: AWS re_Infoce 2019</a>
 Introduction to AWS Services</a> by the AWS Training Center
 Jun 9, 2019 [38:53] is highly rated introduction
 
+## More on Security #
+
+This is one of a series on Security in DevSecOps:
+
+{% include security_links.html %}
+

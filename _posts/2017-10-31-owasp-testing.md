@@ -404,9 +404,14 @@ Daniel Miessler's <a target="_blank" href="https://danielmiessler.com/projects/w
 1h 40m video course 16 Feb 2017 by Mike Woolard
 
 
-## More
+## More on DevOps #
 
-More about API usage and management:
+This is one of a series on DevOps:
 
-{% include api_links.html %}
+{% include devops_links.html %}
 
+## More on Security #
+
+This is one of a series on Security in DevSecOps:
+
+{% include security_links.html %}

@@ -617,3 +617,10 @@ AWS Transit Gateway Reference Architectures for Many Amazon VPCs
 * https://medium.com/@cbchhaya/aws-certified-security-specialty-scs-c01-4b8a62d3c680
    suggests 4 months of preparation 
    using 4 account setup and used attached as well as detached accounts with AWS Organizations.
+
+
+## More on Security #
+
+This is one of a series on Security in DevSecOps:
+
+{% include security_links.html %}

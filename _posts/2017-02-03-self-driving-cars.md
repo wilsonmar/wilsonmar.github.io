@@ -20,7 +20,7 @@ Here are my notes about technical aspects of how cars can drive themselves.
 
 TAGS: #autonomousdriving #AI
 
-## Why AV
+## Why AV (Autonomous Vehicles)
 
 Part of the facination (and fear) about Artificial Intelligence (AI) is computers becoming <strong>better and faster</strong> than humans in many arenas.
 
@@ -34,18 +34,25 @@ Also, as cars automate more, and human drivers have less to do, inattention beco
 
 Going further, perhaps self-driving cars can <strong>travel faster</strong> than what people can safely handle (around 70 mph). 
 
+<a target="_blank" href="https://www.linkedin.com/pulse/5-ways-self-driving-cars-could-make-our-world-lives-better-marr/">*</a>
+
+
 ## The race to AV
 
 Every auto manufacturer has a self-driving car program.
+Among the <a target="_blank" href="https://www.cbinsights.com/research/autonomous-driverless-vehicles-corporations-list/">40 companies</a>:
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr><th>Company</th><th>Automaker</th></tr>
-<tr valign="top"><td><a href="#Apple">Apple</a></td><td>Mercedes</td></tr>
+<tr><th>Company</th><th>Automaker</th><th>Notes</th></tr>
+<tr valign="top"><td><a href="#Apple">Apple</a></td><td>Mercedes</td><td>Drive.ai</td></tr>
+<tr valign="top"><td><a href="#Apple">Bosch</a></td><td>Daimler</td><td>-</td></tr>
 <tr valign="top"><td><a href="#Argo">Argo</a></td><td>Ford/VW</td></tr>
-<tr valign="top"><td><a href="#Baidu">Baidu</a></td><td>Lincoln MKZ</td></tr>
+<tr valign="top"><td><a href="#Audi">Audi</a></td><td>Audi</td></tr>
+<tr valign="top"><td><a href="#Baidu">Baidu</a></td><td>Lincoln MKZ</td><td>China</td></tr>
 <tr valign="top"><td><a href="#Comma">Comma</a></td><td>(Honda)</td></tr>
 <tr valign="top"><td><a href="#Cruise">Cruise</a></td><td>GM/Honda</td></tr>
-<tr valign="top"><td><a href="#Lyft">Lyft</a></td><td>-</td></tr>
+<tr valign="top"><td><a href="#BMW">Intel,MobileEye</a></td><td>BMW</td></tr>
+<tr valign="top"><td><a href="#Lyft">Lyft</a></td><td>Aptiv</td></tr>
 <tr valign="top"><td><a href="#Tesla">Tesla</a></td><td>Tesla</td></tr>
 <tr valign="top"><td><a href="#Uber">Uber</a></td><td>-</td></tr>
 <tr valign="top"><td><a href="#Google">Waymo/Google</a></td><td>Volvo XC90</td></tr>

@@ -742,3 +742,9 @@ Education/Experience Requirements:
 
 
 https://linuxacademy.com/cp/modules/view/id/316?utm_source=intercom&utm_medium=email&utm_campaign=AprilNewsletter2019
+
+## More on Security #
+
+This is one of a series on Security in DevSecOps:
+
+{% include security_links.html %}
