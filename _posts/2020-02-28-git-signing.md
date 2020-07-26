@@ -835,8 +835,8 @@ This is one of a series on DevOps:
 
 {% include devops_links.html %}
 
-## More on DevSecOps #
+## More on Security #
 
 This is one of a series on Security in DevSecOps:
 
-{% include devsecops_links.html %}
+{% include security_links.html %}
