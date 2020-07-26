@@ -1561,8 +1561,6 @@ https://www.vaultproject.io/docs/secrets/databases/#usage https://www.vaultproje
 https://play.instruqt.com/hashicorp/tracks/vault-dynamic-database-credentials
 
 
-
-
 <hr />
 
 ## More on DevOps #
@@ -1570,3 +1568,10 @@ https://play.instruqt.com/hashicorp/tracks/vault-dynamic-database-credentials
 This is one of a series on DevOps:
 
 {% include devops_links.html %}
+
+## More on Security #
+
+This is one of a series on Security:
+
+{% include security_links.html %}
+
