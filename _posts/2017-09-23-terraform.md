@@ -725,16 +725,24 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
 
    If you simply leave out AWS credentials, Terraform will automatically search for saved API credentials (for example, in ~/.aws/credentials) or IAM instance profile credentials.
 
-### CFN vs. Terraform Enterprise
+### Terraform Enterprise TFLint
 
    An important distinction between Cloud Formmation and Terraform is that Terraform users track the <strong>state</strong> of each resource. 
 
    Terraform Enterprise automatically stores the history of all state revisions.
-   See https://www.terraform.io/docs/state/index.html
+   <a target="_blank" href="https://www.terraform.io/docs/state/index.html">https://www.terraform.io/docs/state</a>
 
    <a target="_blank" href="https://www.youtube.com/watch?v=s8IZa_o5UGw/">VIDEO</a>:
+   Terraform Enterprise has producers (experts) and read-only consumers.
    Terraform Enterprise processes HCL with <strong>auditing policies</strong> like linter
-   https://github.com/terraform-linters/tflint
+   <a target="_blank" href="https://github.com/terraform-linters/tflint">https://github.com/terraform-linters/tflint</a>, installed on Windows using <a target="_blank" href="https://chocolatey.org/packages/tflint">choco install tflint</a>. See https://spin.atomicobject.com/2019/09/03/cloud-infrastructure-entr/
+
+   [8:25] Terraform Enterprise enforces "policy as code" which automates the application of what CIS (Center for Internet Security) calls (free) "benchmarks" -- secure configuration settings for <strong>hardening</strong> operating systems, for AWS settings at (the 155 page) <a target="_blank" href="https://www.cisecurity.org/benchmark/amazon_web_services/">https://www.cisecurity.org/benchmark/amazon_web_services/</a>.
+
+   * Set to public instead of private?
+   
+   <a target="_blank" href="https://github.com/gruntwork-io/terratest/">Terratest</a> from Gruntwork.
+
 
 <a name="StateS3"></a>
 
@@ -1178,15 +1186,18 @@ output "elb_dns_name" {
    Gruntwork has an open-source library to setup and tear down conditions for verifying whether 
    servers created by Terraform actually work.
 
-   * <target="_blank" href="https://github.com/gruntwork-io/terratest">
+   <a target="_blank" href="https://github.com/gruntwork-io/terratest">
    https://github.com/gruntwork-io/terratest</a>
    is a Go library that makes it easier to write automated tests for your infrastructure code.
-   <br /><br />
-
-   It's written in Go that uses Packer, ssh, and other commands.
-
-   The library can be used as the basis to automate experimentation and
+   It's written in Go that uses Packer, ssh, and other commands
+   to automate experimentation and
    to collect results (impact of) various configuration changes.
+
+   <a target="_blank" href="https://terratest.gruntwork.io/docs/getting-started/quick-start/">
+   Quick Start Terratest</a>
+
+   <a target="_blank" href="https://www.linkedin.com/pulse/terratest-tf-lint-terraform-compliance-fabio-palumbo/?articleId=6677222508749438976">BLOG</a>:
+
 
 <a name="validate"></a>
 

@@ -1144,9 +1144,22 @@ To revoke a lease on Azure:
    <pre>vault lease revoke -prefix azure/creds/reader-role</pre>
 
 
+<hr />
+
+## Vault on AWS
+
+There are several options for hosting Vault.
+
+<a target="_blank" href="https://aws.amazon.com/quickstart/architecture/vault/">
+https://aws.amazon.com/quickstart/architecture/vault</a>
+describes "A unified interface to manage and encrypt secrets on the AWS Cloud".
+
+![hashicorp-vault-on-aws-architecture c47a3bf846dc964bb4464471a764b26f1b0d9639](https://user-images.githubusercontent.com/300046/88661137-42582980-d095-11ea-9772-c627376b2b26.png)
+
+
 <a name="InstallEKS"></a>
 
-## Install Vault within AWS EKS cluster
+### Install Vault within AWS EKS cluster
 
 <a target="_blank" href="https://www.hashicorp.com/blog/announcing-the-vault-helm-chart/">
 Hashicorp announced a Helm chart to setup Vault in Kubernetes</a>

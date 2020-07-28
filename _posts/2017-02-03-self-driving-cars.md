@@ -32,9 +32,9 @@ Then, governments, auto makers, insurance companies, and others will make it mor
 
 Also, as cars automate more, and human drivers have less to do, inattention becomes even more of an issue.
 
-Going further, perhaps self-driving cars can <strong>travel faster</strong> than what people can safely handle (around 70 mph). 
-
-<a target="_blank" href="https://www.linkedin.com/pulse/5-ways-self-driving-cars-could-make-our-world-lives-better-marr/">*</a>
+Over time, as AI take over the road, self-driving cars can <strong>travel faster</strong> than what people can safely handle (around 70 mph). This would create a market for <strong>mini-hotels</strong> such as
+<a target="_blank" href="https://www.wallpaper.com/lifestyle/volvo-360c-autonomous-concept-car-review">Volvo’s 360c concept car</a> unveiled in 2018<a target="_blank" href="https://www.linkedin.com/pulse/5-ways-self-driving-cars-could-make-our-world-lives-better-marr/">*</a>
+Without constant attention to driving, personal vehicles can be RVs with a desk, bed, toilet, frige, etc. Commute without stress. Travel between cities without going through security.
 
 
 ## The race to AV
