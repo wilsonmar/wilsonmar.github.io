@@ -743,6 +743,7 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
    
    <a target="_blank" href="https://github.com/gruntwork-io/terratest/">Terratest</a> from Gruntwork.
 
+   https://itnext.io/automatic-terraform-linting-with-reviewdog-and-tflint-f4fb66034abb
 
 <a name="StateS3"></a>
 
