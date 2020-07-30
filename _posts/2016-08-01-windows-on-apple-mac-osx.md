@@ -66,8 +66,6 @@ A <a target="_blank" href="https://secureanycloud.com/">hardened</a> Amazon Mach
 
    PROTIP: With Amazon, you pay for hourly increments. With Google, you pay per minute.
 
-
-
 <a target="_blank" href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/connecting_to_windows_instance.html">Connect to an instance in AWS EC2</a>:
 
 1. Create an Amazon EC2 account at http://aws.amazon.com/ec2/.
@@ -874,43 +872,153 @@ Through trial and error, I found a number of things that could be disabled to im
 
 ## VMware Fusion #
 
-It costs $395, but you can run quickly switch among Windows or Linux on a MacOSX machine using VMWare Fusion.
+With VMWare Fusion, you can run quickly switch among Windows or Linux on a MacOSX machine using VMWare Fusion.
 
-This would enable you to experiment with setups.
+This would enable you to experiment with setups -- a fresh instance of Windows.
 
-VMware Fusion 7 worked great. But when I upgraded my Mac to Yosemite, I got this message:
+1. The marketing page for VMWare's Fusion is at
+
+   <a target="_blank" href="https://www.vmware.com/products/fusion.html">https://www.vmware.com/products/fusion.html</a>
+
+   The Pro edition costs $395 enables you to share images.
+
+1. Buy it to get the license key so you don't get nagged later.
+
+   ### Installing Fusion
+
+1. Un-install Vagrant.app (in /Applications) to avoid issues.
+
+   VMware Fusion 7 worked great. But when I upgraded my Mac to Yosemite, 
+   VMware Sopport was not able to figure it out until <a target="_blank" href="https://unix.stackexchange.com/questions/169623/yosemite-fusion-7-0-1-now-gets-could-not-open-dev-vmmon-no-such-file-or-dir">Some</a> found that uninstalling Vagrant fixed the problem. 
+
+1. There are several versions on Brew:
+
+   <pre><strong>brew search fusion</strong></pre>
+
+   <pre>autodesk-fusion360                            suitcase-fusion                               vmware-fusion10
+macfusion                                     vmware-fusion                                 vmware-fusion7
+macfusion-ng                                  vmware-fusion-tech-preview                    vmware-fusion8
+   </pre>
+
+1. Install the latest version of VMWare Fusion:
+
+   <pre><strong>brew cask install vmware-fusion</strong></pre>
+
+   <a target="_blank" href="https://developer.apple.com/library/content/technotes/tn2459/_index.html">  https://developer.apple.com/library/content/technotes/tn2459/_index.html</a>
+
+1. You'll be prompted for your password, then:
+
+   <pre>🍺  vmware-fusion was successfully installed!</pre>
+
+1. When done, open /Applications folder, sort by Name, and scroll to see "VMWare Fusion.app".
+
+   PROTIP: Apps in the /Applications folder are sorted by the date when the app was created, not when it was installed on your laptop.
+
+1. Click OK to "System Extention Blocked".
+1. Click Agree to Terms & Conditions.
+1. Copy the License key and paste in the form. Continue.
+1. You'll be asked to enter your password again. Then "Done".
+1. Click OK to "VMWare Fusion.app" wants access to control "System Events.app".
+1. Click "Allow" or "Don't Allow" to "VMware Fusion" Notifications. You can change it later.
+1. Open <strong>System Preferences → Security & Privacy → General</strong>
+
+   vmware-fusion requires a kernel extension to work. If the installation fails, retry after you enable it in:
+
+1. Click "Allow" to "System software from developer "VMWare Inc." was blocked<br />
+   from loading.
+1. Click the lock to block further changes on that form.
+1. Click "Cancel" at the "Select the Installation Method" screen because you'll see it again.
+1. To open the app, on the Touchpad squeeze four fingers together and use two fingers to scroll. Click "VMWare Fusion".
+
+   ### Get Windows image
+
+1. See my article <a target="_blank" href="https://wilsonmar.github.io/packer/">Packer from Hashicorp within macOS</a> to create an ISO image of Windows with a license for the Windows operating system.
 
 
-VMware Sopport was not able to figure it about trying various tricks. 
-<a target="_blank" href="https://unix.stackexchange.com/questions/169623/yosemite-fusion-7-0-1-now-gets-could-not-open-dev-vmmon-no-such-file-or-dir">Some</a> found that uninstalling Vagrant fixed the problem. <a target="_blank" href="https://apple.stackexchange.com/questions/155109/vmware-fusion-could-not-open-dev-vmmon-error">Others</a> suggested:
+   ### Troubleshooting
+
+   My Fusion instance has been more stable that my Windows PC laptop.
+   
+   <a target="_blank" href="https://apple.stackexchange.com/questions/155109/vmware-fusion-could-not-open-dev-vmmon-error">Others</a> suggested:
 
    <tt><strong>sudo kextunload -b com.intel.kext.intelhaxm
    </strong></tt>
 
-<a target="_blank" href="http://www.souldevteam.net/blog/2013/10/06/os-x-mavericks-10-9-retail-vmware-image-release-notes-links/">
-Run OSX in VMware within Windows</a>
+   * <a target="_blank" href="http://www.souldevteam.net/blog/2013/10/06/os-x-mavericks-10-9-retail-vmware-image-release-notes-links/">
+   Run OSX in VMware within Windows</a>
 
-* http://www.tekrevue.com/os-x/
+   * http://www.tekrevue.com/os-x/
 
-* <a target="_blank" href="http://www.souldevteam.net/blog/2013/10/06/os-x-mavericks-10-9-retail-vmware-image-release-notes-links/">
-Run OSX in VMware within Windows</a>
+   * <a target="_blank" href="http://www.souldevteam.net/blog/2013/10/06/os-x-mavericks-10-9-retail-vmware-image-release-notes-links/">
+   Run OSX in VMware within Windows</a>
 
-* <a target="_blank" href="https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1001934">
+   * <a target="_blank" href="https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1001934">
    Defragmenting, shrinking, and cleaning up VMware Fusion virtual machine disks</a>
-<br /><br />
+   <br /><br />
+
+   ### Keyboard
+
+   To press the Windows key, press the command key.
+
+   To press F keys (F2, etc.), hold down the fn key and press F2, etc.
+   at the top row.
+
+   ### Settings
+
+   Several topics below refer to use of VMWare Tools installed from inside Windows.
+
+   You need to be on a single-screen 
+   to obtain the VMWare Machine menu at the top by moving the mouse there.
+
+   0. Click Sharing.
+   0. Use the square + and - icons at the lower right.
+
+   PROTIP: Do not mirror a folder. It may take too much space.
+
+   ### Shared Folder
+
+   This uses VMWare Tools installed from inside Windows.
+
+0. Virtual Machine > Settings > Sharing
+
+   PROTIP: After unzip, delete the zip file to keep disk usage low.
 
 
-## USB Drives
+   ### Delete Snapshots #
 
-Most USB drives are sold formatting in NTFS which Mac can read but not write to.
+   VMWare Fusion automatically takes snapshots as a fall-back.
+
+   But they take up room.
+
+   In the list of Virtual Machines available, the amount of room taken by snapshots is listed.
+
+   To establish a particular state of an instance as the <strong>base</strong> for another image, it's best to remove the snapshots.
+
+0. Shut down the virtual machine.
+0. Make a complete backup to anotther USB device.
+0. Go to Virtual Machine menu Snapshots. ...
+0. Select one or more snapshots to delete by holding down Shift when clicking.
+0. Click the Delete icon.
+0. Watch the progress bar at the bottom. This takes several minutes.
+
+
+
+<hr />
+
+## USB Drive Formats
+
+Windows and Macs can both read older FAT32-formatted drives. But...
+
+   * FAT32 has a 4GB size limit per file, so it isn't ideal for video files. 
+   * FAT32 also has 32 GB limit for drives, not the 2 TB external drives.
+   <br /><br />
+
+Most external USB drives today (TB size) are sold formatted in <strong>NTFS</strong> for Windows , which Mac can read but not write to.
+
 Windows computers can't even read Mac-formatted HFS+ drives. 
 
-FAT32 has a 4GB size limit per file, so it isn't ideal for video files. 
-FAT32 also has 32 GB limit for drives.
-
 <strong>exFAT</strong> has a theoritical limit of 16 Exa-bytes. 64 ZB (512 TB recommended max).
-Format the USB drive in "exFAT" format and it can be read by both Windows and Mac (except for Leopard version of Macs, which few Mac users have anymore).
-<a target="_blank" href="http://superuser.com/questions/257646/why-should-i-use-exfat-over-ntfs-on-removable-media">This blog</a> says it's faster than NTFS.
+Format the USB drive in "exFAT" format and it can be read by both Windows and Mac (except for Leopard version of Macs, which few Mac users have anymore). <a target="_blank" href="http://superuser.com/questions/257646/why-should-i-use-exfat-over-ntfs-on-removable-media">This blog</a> says it's faster than NTFS.
 
 To format extFAT on a Mac UI:
 
@@ -941,23 +1049,19 @@ diskutil unmountDisk force disk3
 
 0. Write zeros
 
-   <pre>
-sudo dd if=/dev/zero of=/dev/disk3 bs=1024 count=1024
+   <pre>sudo dd if=/dev/zero of=/dev/disk3 bs=1024 count=1024
    </pre>
 
    The response:
 
-   <pre>
-1024+0 records in
+   <pre>1024+0 records in
 1024+0 records out
 1048576 bytes transferred in 1.889696 secs (554891 bytes/sec)
    </pre>   
 
-0. partition it again in "MBR" partition scheme for use with Windows machines:
+0. Partition it again in "MBR" partition scheme for use with Windows machines:
 
-   <pre>
-diskutil partitionDisk disk3 1 MBR exfat MyDisk 100%
-   </pre>
+   <pre><strong>diskutil partitionDisk disk3 1 MBR exfat MyDisk 100%</strong></pre>
 
    "Error creating partition map: The disk is too large to be supported by the given partition scheme (-69659)"
 
@@ -969,16 +1073,13 @@ diskutil partitionDisk disk3 1 MBR exfat MyDisk 100%
    Alternately, to partition it in "Mac OS Extended (Journaled)" format
    so a Mac can boot from it:
 
-   <pre>
-diskutil partitionDisk disk3 GPT JHFS+ "My External HD" 0g
-   </pre>
+   <pre><strong>diskutil partitionDisk disk3 GPT JHFS+ "My External HD" 0g</strong></pre>
 
-   See http://www.theinstructional.com/guides/disk-management-from-the-command-line-part-2
+   See <a target="_blank" href="http://www.theinstructional.com/guides/disk-management-from-the-command-line-part-2">this</a>
 
    The response:
 
-   <pre>
-Started partitioning on disk3
+   <pre>Started partitioning on disk3
 Unmounting disk
 Creating the partition map
 Waiting for partitions to activate
@@ -995,15 +1096,15 @@ Finished partitioning on disk3
 
 0. Repeat the steps above for ExFAT.
 
-Click on the Partition tab in the DU main window.
+0. Click on the Partition tab in the DU main window.
  
 3. Under the Volume Scheme heading set the number of partitions from the drop down menu to one. 
 Click on the Options button, set the partition scheme to MBR then click on the OK button. 
 Set the format type to MSDOS (FAT32.) Click on the Partition button and wait until the process has completed.
 
-See https://support.apple.com/kb/PH22240?locale=en_US
+   See https://support.apple.com/kb/PH22240?locale=en_US
 
-Alternately:
+   Alternately:
 
 0. brew install e2fsprogs
 0. figure out the name of your partition or drive using diskutil list -- in my case, my partition had was on disk2 and had the identifier of disk3s2
@@ -1021,40 +1122,12 @@ Alternately:
 2. In the "File System" dropdown, choose exFAT instead of NTFS.
 3. Click Start and close this window when finished.
 
-
 https://osxfuse.github.io/
 (file system in user space) 
 
 https://unetbootin.github.io/
 loads Linux ISO images to USB drives
 
-
-### Keyboard
-
-To press the Windows key, press the command key.
-
-To press F keys (F2, etc.), hold down the fn key and press F2, etc.
-at the top row.
-
-### Settings
-
-Several topics below refer to use of VMWare Tools installed from inside Windows.
-
-You need to be on a single-screen 
-to obtain the VMWare Machine menu at the top by moving the mouse there.
-
-0. Click Sharing.
-0. Use the square + and - icons at the lower right.
-
-PROTIP: Do not mirror a folder. It may take too much space.
-
-### Shared Folder
-
-This uses VMWare Tools installed from inside Windows.
-
-0. Virtual Machine > Settings > Sharing
-
-PROTIP: After unzip, delete the zip file to keep disk usage low.
 
 
 ### Defrag Windows
@@ -1074,29 +1147,12 @@ are available.
 0. The PC can be used throughout the process, but it's not advisable.
 
 
-### Delete Snapshots #
-
-VMWare automatically takes snapshots as a fall-back.
-
-These take up room.
-
-In the list of Virtual Machines available, the amount of roome taken by
-snapshots is listed.
-
-To establish a particular state of an instance as the <strong>base</strong> for another image, it's best to remove the snapshots.
-
-0. Shut down the virtual machine.
-0. Make a complete backup to anotther USB device.
-0. Go to Virtual Machine menu Snapshots. ...
-0. Select one or more snapshots to delete by holding down Shift when clicking.
-0. Click the Delete icon.
-0. Watch the progress bar at the bottom. This takes several minutes.
-
 
 
 ## Configuration
 
 It's a good thing the classic Control Panel is still in Windows 10.
+
 The Color Picker in the classic Control Panel is nested under "Appearance and Personalization", "Personalization", 
 then "Color and Appearance."
 
@@ -1105,7 +1161,7 @@ even though Windows 10 Personalization page of the Settings app
 provides only a limited palette of 48 colors to choose from.
 
 
-### Fink
+## Fink
 
    <a target="_blank" href="http://www.simplehelp.net/2007/05/09/how-to-install-linux-applications-in-os-x-a-complete-walkthrough/">
    Back in 2007</a>
@@ -1134,6 +1190,7 @@ now built on Google Chrome.
 9. Drag the app's icon to your Dock bar for easy access.
 10. See https://www.microsoftedgeinsider.com/en-us/welcome?channel=canary&version=76.0.176.0
 11. On Twitter, follow <a target="_blank" href="https://twitter.com/msedgedev">@msedgedev</a> and <a target="_blank" href="https://twitter.com/MicrosoftEdge">@MicrosoftEdge</a> for videos that says Edge can recognize handwriting from a stylus. Save to Microsoft's OneNote.
+
 
 ## References
 
