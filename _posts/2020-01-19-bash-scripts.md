@@ -877,6 +877,9 @@ https://www.tutorialspoint.com/unix/unix-file-operators.htm
 
 <a target="_blank" href="https://www.qwiklabs.com/focuses/8715">Qwiklabs.com: Automating AWS Services with Scripting and the AWS CLI</a>
 
+Sander van Vugt (<a target="_blank" href="https://LivingOpenSource.com/">LivingOpenSource.com</a>) <a target="_blank" href="https://github.com/sandervanvugt/cool-bash">
+https://github.com/sandervanvugt/cool-bash</a>
+
 
 ## More on DevOps #
 

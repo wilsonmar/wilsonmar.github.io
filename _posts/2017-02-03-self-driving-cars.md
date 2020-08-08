@@ -130,18 +130,20 @@ Chris Urmson, head of Google's driverless car program, shares footage showing ho
 
 Baidu is the Google of China, providing a search engine.
 
-<a target="_blank" href="https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_3_0_quick_start.md">Apollo</a>
+<a target="_blank" href="https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_3_0_quick_start.md">Apollo</a> (<a target="_blank" href="https://twitter.com/apolloplatform">@apolloplatform</a>) Baidu's self-titled "the world's first production-ready" AV.
 
-Silver created a <a target="_blank" href="https://classroom.udacity.com/courses/ud0419/">free intro class</a> using Baidu's Apollo library at:
+Apollo Valet Parking is due to launch in 2020.
 
-   <a target="_blank" href="https://github.com/ApolloAuto/apollo">https://github.com/ApolloAuto/apollo</a>
+Silver at Udacity created a <a target="_blank" href="https://classroom.udacity.com/courses/ud0419/">free intro class</a> using Baidu's Apollo library at <a target="_blank" href="https://github.com/ApolloAuto/apollo">https://github.com/ApolloAuto/apollo</a>
+
+Baidu's AV has 5 cameras and 12 ultrasonic radars. Processors onboard run Xilinx processors on Infineon chips.
 
 <a target="_blank" href="https://dueros.baidu.com/en/index.html">
 DuerOS</a> is Baidu's conversational AI program with embedded AI speech and image recognition. <a target="_blank" href="https://duer.baidu.com/en/html/dueros/index.html">*</a>
 
    <a target="_blank" href="https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_2_5_hardware_system_installation_guide_v1.md">(Apollo 2.5)</a>
 
-   * https://twitter.com/apolloplatform
+
  
 
 <a name="Cruise"></a>

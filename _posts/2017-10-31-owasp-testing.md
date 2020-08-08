@@ -30,6 +30,8 @@ B. WebInspect from MicroFocus (formerly HP).
 C. Burp Suite (Pro)
 D. Dirtbuster
 
+E. <a target="_blank" href="https://www.brighttalk.com/webcast/17668/423557">VIDEO</a>: ForAllSecure 
+
 ## SAST
 By contrast SAST (Static App Security Testing) tools focus on scanning <strong>application source code</strong> for vulnerabilities in coding. Static Application Security Testing (SAST) vendors include Veracode, Perforce, http://www.castsoftware.com/ and Checkmarx, which adds an agent running along the app to report to a central Security Handler, called Interactive App Security Testing (IAST).
 

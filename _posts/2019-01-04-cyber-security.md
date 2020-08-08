@@ -3,7 +3,7 @@ layout: post
 title: "Cyber Security"
 excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
 tags: [security]
-date: "2019-01-04"
+date: "2020-08-02"
 file: "cyber-security"
 image:
 # cyber-security-hero-1900x500-22924.jpb/.png 
@@ -20,7 +20,7 @@ comments: true
 
 ## Adobe Common Control Framework
 
-Adobe <a target="_blank" href="https://adobe.allegiancetech.com/cgi-bin/qwebcorporate.dll?idx=VM6HD7">open-sourced</a> its <a target="_blank" href="https://blogs.adobe.com/security/2017/05/open-source-ccf.html">Common Control Framework</a> which encompasses several security frameworks. Adobe's CCF covers ISO 27001, SOC, FedRAMP, PCI DSS, GLBA, FERPA, and others. <a target="_blank" href="https://www.adobe.com/security/compliance/ccf-download.html">Download</a> the <a target="_blank" href="https://www.adobe.com/pdf/Open_Source_CCF.pdf">pdf</a>. Adobe's control families is most comprehensive:
+Adobe <a target="_blank" href="https://adobe.allegiancetech.com/cgi-bin/qwebcorporate.dll?idx=VM6HD7">open-sourced</a> its <a target="_blank" href="https://blogs.adobe.com/security/2017/05/open-source-ccf.html">own Common Control Framework</a> which encompasses several security frameworks. Adobe's CCF covers ISO 27001, SOC, FedRAMP, PCI DSS, GLBA, FERPA, and others. <a target="_blank" href="https://www.adobe.com/security/compliance/ccf-download.html">Download</a> the <a target="_blank" href="https://www.adobe.com/pdf/Open_Source_CCF.pdf">pdf</a>. Adobe's control families is most comprehensive:
 
    1. Asset management
    2. Business Continuity
@@ -43,6 +43,13 @@ Adobe <a target="_blank" href="https://adobe.allegiancetech.com/cgi-bin/qwebcorp
    19. Third Party Management
    20. Vulnerability Management
    <br /><br />
+
+# SABSA
+
+The SABSA (Sherwood Applied Business Security Architecture) provides a customizable framework and methodology for enterprises,
+based on business requirements (like NIST for private businesses):
+
+<img width="682" alt="cyber-scaba-matrix" src="https://user-images.githubusercontent.com/300046/89186535-29e68400-d559-11ea-9532-ac57a3f6d306.png">
 
 ## Amazon's Compliance
 
