@@ -505,7 +505,9 @@ abbr _bash #!/bin/bash&LT;CR>
 
 1. To exit command mode, press "Esc" key.
 
-   Many configure the "caps lock" key to act as the less easy to reach Esc key.
+   ![vi-esc-alien](https://user-images.githubusercontent.com/300046/89724350-3b97b380-d9bf-11ea-8528-92879a6500b7.png)
+
+   PROTIP: Many configure the "caps lock" key to act as the less easy to reach Esc key.
 
 1. To indent 5 lines at and below the current line:
 
