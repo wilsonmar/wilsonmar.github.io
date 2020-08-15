@@ -45,9 +45,8 @@ BTW, finding where each site is located was a great geography lesson for me.
 The about route was optimized for least driving time using Google Maps API driven by <a target="_blank" href="
 https://github.com/rhiever/Data-Analysis-and-Machine-Learning-Projects/blob/master/optimal-road-trip/Computing%20the%20optimal%20road%20trip%20across%20the%20U.S..ipynb"> Machine Learning algorithms run in a Python Jupyter Notebook</a> as <a target="_blank" href="http://www.randalolson.com/2015/03/08/computing-the-optimal-road-trip-across-the-u-s/">described by Randal S. Olson</a>.
 
-But if you want to visit national parks, consider
-<a target="_blank" href="https://tbandjtravel.com/the-u-s-map/">
-the route</a> mapped below:
+If you want <a target="_blank" href="https://tbandjtravel.com/the-u-s-map/">
+a route to visit national parks</a>:
 <a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/25560224/6b14fde6-2d1c-11e7-952e-52e883844808.jpg">
 <img alt="us-tour-natl-park-route" width="650" src="https://cloud.githubusercontent.com/assets/300046/25560224/6b14fde6-2d1c-11e7-952e-52e883844808.jpg"></a>
 
@@ -648,11 +647,16 @@ Jimmy Carter Presidential Library and Museum</a>, Atlanta</li>
 
 <a name="DownMississippi"></a>
 
-## Down the Mississippi
+## Along the Mississippi River
 
 <a target="_blank" href="https://www.nps.gov/miss/riverfacts.htm">(2,300 miles),
 the 4th longest in the world (after Nile, Amazon, Yangtze).<br />
 <img alt="us-watershedbg" width="650" src="https://cloud.githubusercontent.com/assets/300046/25560325/ff5f8ab4-2d1e-11e7-9b96-f34d6aa0d902.jpg"></a>
+
+Viking River Cruises has, an <a target="_blank" href="https://viking.tv/index/story/mississippi-americas-heartland">8 day "America Heartland" cruise from St. Louis upstream to St. Paul:
+<img width="377" alt="roadtrip-usa-viking.png" src="https://user-images.githubusercontent.com/300046/90310441-86796580-deae-11ea-8738-2ac6e5bf7669.png"></a>
+and a "Hearth of the Delta" cruise from New Orleans to Memphis, with stops in the Vicksburg battlegrounds.
+
 
 
 <a name="IL"></a>
@@ -708,6 +712,7 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 <li><a target="_blank" href="http://www.daummuseum.org/">Daum Museum of Contemporary Art</a>, Sedalia</li>
 <li><a target="_blank" href="http://www.mham.org/">Margaret Harwell Art Museum</a>, Poplar Bluff</li>
 <li><a target="_blank" href="http://museum.research.missouri.edu/">Museum of Art and Archaeology at the University of Missouri</a>, Columbia</li>
+<li>Mark Twain Museum, Hanibal</li>
 </ul>
 
 ### Kansas City:
@@ -756,10 +761,11 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 
 <ul>
 <li><a target="_blank" href="http://www.people.memphis.edu/~artmuseum/amhome.html">Art Museum of the University of Memphis</a></li>
-<li><a target="_blank" href="http://www.dixon.org/">Dixon Gallery and Gardens</a>, Memphis</li>
-<li><a target="_blank" href="http://www.brooksmuseum.org/">Memphis Brooks Museum of Art</a>, Memphis</li>
+<li><a target="_blank" href="http://www.dixon.org/">Dixon Gallery and Gardens</a></li>
+<li><a target="_blank" href="http://www.brooksmuseum.org/">Memphis Brooks Museum of Art</a></li>
 <li><a target="_blank" href="http://www.memphis.edu/egypt/">University of Memphis Institute of Egyptian Art and Archaeology</a></li>
-<li><a target="_blank" href="http://www.graceland.com/">Elvis Prestly's Graceland</a>, Memphis</li>
+<li><a target="_blank" href="http://www.graceland.com/">Elvis Prestly's Graceland</a></li>
+<li>Sun Records</li>
 </ul>
 
 <a name="AR"></a>
