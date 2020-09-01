@@ -29,22 +29,26 @@ Home Assistant presents a clickable dashboard such as:
 
 ## Architecture
 
-Home Assistant are custom Python scripts running on a Raspberry Pi machine board powered by <a target="_blank" href="https://github.com/home-assistant/hassos">HassOS</a> (instead of Raspian).
+Home Assistant consists of custom <strong>Python scripts</strong> running on a <strong>Raspberry Pi</strong> machine board powered by <a target="_blank" href="https://github.com/home-assistant/hassos">HassOS</a> (instead of Raspian) operating system.
 
 It's open sourced <a target="_blank" href="http://paulusschoutsen.nl/blog/2013/12/home-assistant-home-automation-in-python/">since 2016</a> by <a target="_blank" href="https://www.linkedin.com/in/schoutsen/">Paulus Schoutsen</a>, <a target="_blank" href="https://github.com/balloob">founder</a>, at https://github.com/home-assistant/home-assistant. 
 
-The <a target="_blank" href="https://apps.apple.com/us/developer/robert-trencheny/id1088078259">iOS & Watch app</a> by <a target="_blank" href="https://www.linkedin.com/in/robbiet">Robert Trencheny</a> uses the Home Assistant Cloud.
-
-Most IOT projects that use the ESP8266 or ESP32 can be tied into this system as easily as connecting to Adafruit.io, IFTTT, or Samsung Smart Hub.
-
-But Home Assistant's Smart Home Hub also eliminates the (annoying) need to installing multiple apps to control  devices.
 
 > Unlike Samsung's SmartThings Hub and other cloud-based services, <strong>Home Assistant does not send data out to the internet</strong>. So you have total data privacy and less lag while watching Netflix.
 
-Home Assistant uses the MQTT protocol and supports over 1,400 devices -- just about every type of Smart Home device from Google Home, Alexa, Nest, Ecobee, Z-Wave,Hue, Lifx, Belkin WeMo, <a target="_blank" href="https://www.ikea.com/us/en/product-guides/ikea-home-smart-system/">IKEA Trådfri</a>, Sonos, etc.
+Home Assistant uses the MQTT protocol and supports over 1,400 devices -- just about every type of Smart Home device from Google Home, Alexa, Nest, Ecobee, Z-Wave, Hue, Lifx, Belkin WeMo, <a target="_blank" href="https://www.ikea.com/us/en/product-guides/ikea-home-smart-system/">IKEA Trådfri</a>, Sonos, etc.
+
+Most IOT projects that use the <a target="_blank" href="https://www.wikiwand.com/en/ESP8266">ESP8266</a> or ESP32 can be tied into this system as easily as connecting to Adafruit.io, IFTTT, or Samsung Smart Hub.
+
+But Home Assistant's Smart Home Hub also eliminates the (annoying) need to installing multiple apps to control devices.
+
+The <a target="_blank" href="https://apps.apple.com/us/developer/robert-trencheny/id1088078259">iOS & Watch app</a> by <a target="_blank" href="https://www.linkedin.com/in/robbiet">Robert Trencheny</a> uses the Home Assistant Cloud.
+But alas, Apple does not allow it within the US.
 
 
 ## Install on Raspberry Pi
+
+1. Review my article <a target="_blank" href="https://wilsonmar.github.io/iot-raspberry-install/">IoT Raspberry Install</a>
 
 1. Download from <a target="_blank" href="https://www.home-assistant.io/hassio/installation/">https://www.home-assistant.io/hassio/installation</a> the latest version, such as:
 
