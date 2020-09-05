@@ -22,7 +22,7 @@ This is a follow-up to <a target="_blank" href="https://wilsonmar.github.io/serv
 
 ## Permissions for serverless-admin
 
-0. Create an Amazon Web Services account. See [my tutorial on Amazon on-ramp](/amazon-onboarding/).
+1. Create an Amazon Web Services account. See [my tutorial on Amazon on-ramp](/amazon-onboarding/).
 
    ### Create a "serverless-admin" user 
 
@@ -40,7 +40,7 @@ This is a follow-up to <a target="_blank" href="https://wilsonmar.github.io/serv
 0. Click **Attach Policy** and select the **Administrator Access**
 0. Click on **Attach Policy**
 
-### Python
+### Python setup
 
 0. Install Python. See <a href="https://wilsonmar.github.io/python-install/">
    my tutorial on Python interpreter installation on Macs</a>.
@@ -57,7 +57,6 @@ This is a follow-up to <a target="_blank" href="https://wilsonmar.github.io/serv
    The \-\-user option tells pip to install the program to a subdirectory of your user directory to avoid modifying libraries used by your operating sytem.
 
 0. Verify:
-
    <pre><strong>aws --version
    </strong></pre>
 
@@ -79,7 +78,29 @@ This is a follow-up to <a target="_blank" href="https://wilsonmar.github.io/serv
 The <a href="https://www.qwiklabs.com/focuses/284?locale=en&parent=catalog">
 Qwiklab Introduction to AWS Lambda</a>
 
-1. Login to 
+
+## API Gateway
+
+- API Gateway Overview: https://aws.amazon.com/api-gateway/
+
+- API Gateway Developer Documentation: https://aws.amazon.com/documentation/apigateway/
+
+Understanding the costs of API Gateway is also crucial. What you see in this course will be within the free tier but once you start playing around with it on your own or you're using it for production, you may encounter costs.
+
+Check the following link to understand what's free and what's not: https://aws.amazon.com/api-gateway/pricing/
+
+## Serverless Application Model (SAM)
+
+SAM Github Page: https://github.com/awslabs/serverless-application-model
+
+Using SAM: https://github.com/awslabs/serverless-application-model/blob/master/HOWTO.md
+
+Deploying Lambda Functions (with SAM and even automated!): http://docs.aws.amazon.com/lambda/latest/dg/deploying-lambda-apps.html
+
+## Testing
+
+https://github.com/atlassian/localstack
+
 
 ## Lambda CLI
 

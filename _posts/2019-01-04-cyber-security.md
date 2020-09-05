@@ -46,10 +46,12 @@ Adobe <a target="_blank" href="https://adobe.allegiancetech.com/cgi-bin/qwebcorp
 
 # SABSA
 
-The SABSA (Sherwood Applied Business Security Architecture) provides a customizable framework and methodology for enterprises,
+The SABSA (Sherwood Applied Business Security Architecture) is a "customizable" framework and methodology for enterprises,
 based on business requirements (like NIST for private businesses):
 
 <img width="682" alt="cyber-scaba-matrix" src="https://user-images.githubusercontent.com/300046/89186535-29e68400-d559-11ea-9532-ac57a3f6d306.png">
+
+Enterprise Security Architecture (ESA).
 
 ## Amazon's Compliance
 
@@ -699,17 +701,6 @@ Different periods for rotating different key types. Here is the "regular basis" 
 </tbody></table>
 
 
-## Professional certifications
-
-Certified Information Systems Security Professional (CISSP) is the most sought-after certification in cybersecurity.
-
-<a target="_blank" href="http://www.isaca.org/CERTIFICATION/Pages/default.aspx">ISACA.org</a>:
-
-* Certified in Risk and Information Systems Control (CRISC)
-* Certified Information Security Manager (CISM)
-* Certified in the Governance of Enterprise IT (CGEIT)
-* Cybersecurity Nexus – CSX Certificates and CSX-P Certification
-
 ## Security Engineer
 
 Here are "Essential Job Functions" from various job descriptions:
@@ -749,6 +740,8 @@ Education/Experience Requirements:
 
 
 https://linuxacademy.com/cp/modules/view/id/316?utm_source=intercom&utm_medium=email&utm_campaign=AprilNewsletter2019
+
+
 
 ## More on Security #
 

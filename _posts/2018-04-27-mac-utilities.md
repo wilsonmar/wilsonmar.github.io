@@ -171,13 +171,23 @@ Instead of "basic", there is also "mini" and "full" scope of output. When provid
 
    The response also shows whether CPU utilization is increasing recently:
 
-   <pre>
- 6:35  up 9 days, 11:56, 7 users, load averages: 2.09 2.24 2.06
+   <pre>6:35  up 9 days, 11:56, 7 users, load averages: 2.09 2.24 2.06
    </pre>
 
-   "load averages" numbers are calculations of the average system load over three period of times:
-   the last one-, five-, and fifteen-minute periods.
-   These count the <strong>number of processes</strong> either using or <strong>waiting</strong> for CPU (the ready queue or run queue) increments the load number by 1. In a system with four CPUs, a load average of 3.73 would indicate that there were, on average, 3.73 processes ready to run, and each one could be scheduled into a CPU.
+   "load averages" numbers are calculations of the average system load over three periods of times: the last one-, five-, and fifteen-minute periods.
+   These count the <strong>number of processes</strong> either using or <strong>waiting</strong> for CPU (the ready queue or run queue) increments the load number by 1. 
+
+   In a system with <strong>four CPU cores</strong>, a load average of 3.73 would indicate that there were, on average, 3.73 processes ready to run, and each one could be scheduled into a CPU.
+
+## To identify number of CPU cores
+
+   <pre><strong>sysctl hw.physicalcpu 
+   hw.logicalcpu</strong></pre>
+
+   Response:
+
+   <pre>hw.physicalcpu: 6
+hw.logicalcpu: 12</pre>
 
 
 ## Memory Statistics
