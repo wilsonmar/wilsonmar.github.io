@@ -461,6 +461,10 @@ Tamas Piros offers free
    * Create a Blog Using the JAMstack - Create, manage and publish your own blog using 11ty and NetlifyCMS.
    * Create an E-Commerce App with Gatsby - How to utilise the JAMstack when building e-commerce websites
 
+## References
+
+<a target="_blank" href="https://www.youtube.com/watch?v=oRG1E0xLB4U">
+JAMstack e-commerce panel discussion</a>
 
 
 ## More on front-end software development #

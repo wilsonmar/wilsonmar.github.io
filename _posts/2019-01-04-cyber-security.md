@@ -20,7 +20,7 @@ comments: true
 
 ## Adobe Common Control Framework
 
-Adobe <a target="_blank" href="https://adobe.allegiancetech.com/cgi-bin/qwebcorporate.dll?idx=VM6HD7">open-sourced</a> its <a target="_blank" href="https://blogs.adobe.com/security/2017/05/open-source-ccf.html">own Common Control Framework</a> which encompasses several security frameworks. Adobe's CCF covers ISO 27001, SOC, FedRAMP, PCI DSS, GLBA, FERPA, and others. <a target="_blank" href="https://www.adobe.com/security/compliance/ccf-download.html">Download</a> the <a target="_blank" href="https://www.adobe.com/pdf/Open_Source_CCF.pdf">pdf</a>. Adobe's control families is most comprehensive:
+Adobe <a target="_blank" href="https://adobe.allegiancetech.com/cgi-bin/qwebcorporate.dll?idx=VM6HD7">open-sourced</a> its <a target="_blank" href="https://blogs.adobe.com/security/2017/05/open-source-ccf.html">own Common Control Framework</a> which encompasses several security frameworks. Adobe's CCF covers <a href="#iso27002">ISO 27001/27002</a>, SOC, FedRAMP, PCI DSS, GLBA, FERPA, and others. <a target="_blank" href="https://www.adobe.com/security/compliance/ccf-download.html">Download</a> the <a target="_blank" href="https://www.adobe.com/pdf/Open_Source_CCF.pdf">pdf</a>. Adobe's control families is most comprehensive:
 
    1. Asset management
    2. Business Continuity
@@ -87,6 +87,15 @@ The Center for Internet Security (CIS) is a community of users, vendors and subj
    https://www.cisecurity.org/white-papers/cis-controls-v7-measures-metrics/
 
 <hr />
+
+<a name="iso27002"></a>
+
+## ISO 27002
+
+The ISO Code of practice for information security controls defines 114 controls grouped into 14 categories.
+
+https://iso27001security.com/
+
 
 ### CIS Security Benchmarks for Linux 
 
@@ -612,7 +621,9 @@ https://nvd.nist.gov/ncp/checklist/740
 
 ## FedRAMP/FISMA compliance
 
-In the US federal government, the Federal Information Security Management Act of 2002 (FISMA) law is implemented according to National Institute of Standards and Technology (NIST) Special Publication (SP) <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">800-53 [pdf]</a>.
+In the US federal government, the Federal Information Security Management Act of 2002 (FISMA) law is implemented according to National Institute of Standards and Technology (NIST) Special Publication (SP) <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">800-53 [pdf]</a> contains 157 controls within 19 control families. Each control is designated as low, moderate, or high impact.
+
+NIST also publishes SP1800 (Cybersecurity practice guides) and the broader SP 500 (Information Technology).
 
 In 2011 a "cloud first" policy was defined in the Federal Risk and Authorization Program (FedRAMP) <a target="_blank" href="https://cio.gov/wp-content/uploads/downloads/2012/09/Federal-Cloud-Computing-Strategy.pdf">[pdf]</a> where federal agencies make use of cloud service providers (CSPs) given authority to operate (ATO) after receiving system authorization from an independent security assessment conducted by a 3PAO (third-party Assessor). 
 
