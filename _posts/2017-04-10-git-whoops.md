@@ -104,7 +104,7 @@ If you didn't mean to fork a repository, but you did anyway,
    However, the "current" state of your project remains untouched in the master branch.
 
 
-   [<a target="_blank" href="https://git-scm.com/docs/git-checkout/">SCM</a>],
+   [<a target="_blank" href="https://git-scm.com/docs/git-checkout/">git-checkout in SCM</a>],
    <a href="https://wilsonmar.github.io/git-basics#Checkout">Return</a>
 
 
@@ -117,7 +117,7 @@ If you didn't mean to fork a repository, but you did anyway,
    <pre><strong>git branch -d <em>branch name</em>
    </strong></pre>
 
-   [<a target="_blank" href="https://git-scm.com/docs/git-branch/">SCM</a>],
+   [<a target="_blank" href="https://git-scm.com/docs/git-branch/">git-branch in SCM</a>],
    <a href="https://wilsonmar.github.io/git-basics#NewBranch">Return</a>
 
 
@@ -125,21 +125,23 @@ If you didn't mean to fork a repository, but you did anyway,
 
    ### Editing
 
-   It doesn't matter how many times a file is changed and saved if that file is unmanaged.
+   NOTE: It doesn't matter how many times a file is changed and saved if that file is unmanaged.
 
-   Use the <a href="#Status">git status</a> command to see whether the file is managed.
+   To see whether the file is managed:
+
+   <pre><strong>git status</strong></pre>
 
 
    <a name="Cherry-pick"></a>
 
    ### git cherry-pick
 
-   To replay changes specified in a specific commit onto files in the working directory:
+   To "replay" changes specified in a specific commit onto files in the working directory:
 
    <pre><strong>git cherry-pick <em>[commit SHA1]</em>
    </strong></pre>
 
-   [<a target="_blank" href="https://git-scm.com/docs/git-cherry-pick/">SCM</a>]
+   [<a target="_blank" href="https://git-scm.com/docs/git-cherry-pick/">git-cherry-pick in SCM</a>,<a target="_blank" href="https://www.youtube.com/watch?time_continue=10&v=FdZecVxzJbk">VIDEO</a>]
 
 
    <a name="Status"></a>
@@ -163,7 +165,7 @@ If you didn't mean to fork a repository, but you did anyway,
    ### Local Clean
 
    If you are overwhelmed by too many <strong>untracked</strong> files in your working directory,
-   first see what files will be cleared using one command, first use the -n flag:
+   first enumerate what files will be cleared:
 
    <pre><strong>git clean -n
    </strong></pre>
@@ -178,7 +180,7 @@ If you didn't mean to fork a repository, but you did anyway,
    * <strong>-x</strong> removes files Git ignores due to mention in .gitignore.
    <br /><br />
 
-   [<a target="_blank" href="https://git-scm.com/docs/git-clean">SCM</a>]
+   [<a target="_blank" href="https://git-scm.com/docs/git-clean">git-clean in SCM</a>]
 
 
    <a name="Add"></a>
@@ -206,7 +208,7 @@ If you didn't mean to fork a repository, but you did anyway,
    </strong></pre>
 
 
-   [<a target="_blank" href="https://git-scm.com/docs/git-reset/">SCM</a>],
+   [<a target="_blank" href="https://git-scm.com/docs/git-reset/">git-reset in SCM</a>],
    <a href="https://wilsonmar.github.io/git-basics#Add">Return</a>
 
 
@@ -223,16 +225,18 @@ If you didn't mean to fork a repository, but you did anyway,
    <pre><strong>git commit -m"#DAC-123 Update again for show" --amend
    </strong></pre>
 
-   The above creates a new commit in place of the previous commit.
+   The above creates a <strong>new commit SHA</strong> in place of the previous commit.
 
    The amend action is remembered by `git reflog` locally until purged.
 
-   To replace just the content of a commit, git add the change, then:
+   ### Commit - Amend Contents
+
+   To replace just the content text of a commit, git add the change then:
 
    <pre><strong>git commit --amend --no-edit
    </strong></pre>
 
-   You lose the ability to fall-back to previous versions.
+   The above command means you lose the ability to fall-back to previous versions.
    So use it only to fix minor typos.
 
    See [<a target="_blank" href="https://git-scm.com/docs/git-commit/">docs/git-commit</a>]
@@ -299,7 +303,7 @@ ee1a5c98 Update</pre>
    <a target="_blank" href="https://www.kernel.org/pub/software/scm/git/docs/git-revert.html">
    manual on the git revert command</a>.
 
-   <a target="_blank" href="https://git-scm.com/docs/git-revert">SCM</a>,
+   <a target="_blank" href="https://git-scm.com/docs/git-revert">git-revert in SCM</a>,<br />
    <a href="https://wilsonmar.github.io/git-basics#Commit">Return</a>
 
 
@@ -313,17 +317,17 @@ ee1a5c98 Update</pre>
    <pre><strong>git reset --hard <em>HEAD^</em>
    </strong></pre>
 
+   * PROTIP: `--hard` is recommended because it keeps the working tree the same as what's
+   in the .git repository.
    * This should only be for commits which have not been pushed public.
    * <tt>HEAD~1</tt> is same as <tt>HEAD^</tt> to go back one commit.
    * <tt>HEAD~2</tt> or <tt>HEAD^^</tt> to go back two commits.
    * Do not specify just HEAD because the point of the command is to go back.
-   * PROTIP: `--hard` is recommended because it keeps the working tree the same as what's
-   in the .git repository.
    * PROTIP: You may prefer to completely clear out whatever files created are untracked
    in the working tree.
    * The next step is usually a `git add`.
 
-   [<a target="_blank" href="https://git-scm.com/docs/git-reset/">SCM</a>]
+   [<a target="_blank" href="https://git-scm.com/docs/git-reset/">git-reset in SCM</a>]
 
    <a name="Push"></a>
 
@@ -335,15 +339,17 @@ ee1a5c98 Update</pre>
    But do it for each commit pushed, in reverse order.
 
    Alternately, to undo the previous `git push` command (specified by HEAD^) 
-   which sent to a remote origin 
-   what has been committed for a specific branch:
+   which sent to a remote origin what has been committed for a specific branch:
 
    <pre><strong>git push -f origin HEAD^:master
    </strong></pre>
    
-   [<a target="_blank" href="https://git-scm.com/docs/git-push/">SCM</a>],
+   [<a target="_blank" href="https://git-scm.com/docs/git-push/">git-push in SCM</a>],
    <a href="https://wilsonmar.github.io/git-basics#Push">Return</a>
 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=ElRzTuYln0M">VIDEO: Rewriting Git History - Amend, Reword, Delete, Reorder, Squash and Split by The Modern Coder</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=3dk3s4LK-Wg">Git Tutorial 5: Undoing/Reverting/Resetting code changes by codebasics</a>
+   <br /><br />
 
    <a name="Tags"></a>
 
@@ -354,7 +360,7 @@ ee1a5c98 Update</pre>
    <pre>git tag released/201706
    </pre>
 
-   In GitHub, the colon character is what specifies delete, followed by "refs/tags" as in:
+   PROTIP: In GitHub, the colon character is what specifies delete, followed by "refs/tags" as in:
 
    <pre><strong>git push origin :refs/tags/released/201706
    </strong></pre>
