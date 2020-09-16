@@ -467,6 +467,13 @@ Tamas Piros offers free
 JAMstack e-commerce panel discussion</a>
 
 
+Phil Hawsworth of Netlify has a 
+<a target="_blank" href="https://www.youtube.com/watch?v=A_l0qrPUJds">3-hour YouTube course</a>
+<a target="_blank" href="https://app.slack.com/client/TJT9BQC6R/CJTADS0KS">his slack</a> announced the 
+<a target="_blank" href="https://www.youtube.com/playlist?list=PLzlG0L9jlhEPV9w1x68jm1c79fBzhZCoF">8-video Headless Commerce Summit</a> Sep 3, 2020.
+<a target="_blank" href="https://twitter.com/jamstackconf/">@jamstackconf</a>
+
+
 ## More on front-end software development #
 
 This is one of several topics:

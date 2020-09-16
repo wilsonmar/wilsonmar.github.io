@@ -16,40 +16,39 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+Browser extensions inject <strong>JavaScript</strong> code within internet browsers to modify web content users see and interact with, changing and extending the behavior of the browser itself.
+
+The value of this tutorial is the painstaking arrangement of a learning sequence that is both thorough yet logical.
+
+Each browser is a bit different. Documentation:
+   * https://developer.chrome.com/extensions/overview
+   * Mozilla Firefox
+   * Microsoft Edge accepts extensions from other browsers
+   * Apple Safari
+   <br /><br />
 
 
-Browser extensions customize internet browsers. They can modify web content users see and interact with or extend and change the behavior of the browser itself.
+## Show me some Chrome extensions
 
-https://developer.chrome.com/extensions/overview
-
-
-NOTE: "Page actions" icons to the left of the star icon in the address bar are for specific pages (URLs).
-"Browser actions" icons to the right of the star icon add functionality on most/all websites.
-
-
-## Where are extensions installed?
-
-1. On Chrome, click the three vertical dots at the upper-right corner and<br />
-   select "More Tools", then "Extensions".
+1. In Chrome, click the three vertical dots at the upper-right corner, select "More Tools", then "Extensions".
 
    Alternately, type in or click: 
 
    <a target="_blank" href="chrome://extensions/">
    chrome://extensions/</a>
 
-   On Firefox, click the "sandwich" icon at the upper-right corner and<br />
+   In Firefox, click the "sandwich" icon at the upper-right corner and<br />
    select "Add-ons".
 
-   Security-concious companies manage browsers of their people to add extension such as
+   PROTIP: Security-conscious companies manage browsers of their people to add extension such as
    "DigiCert Authentication Client Extension".
 
-
-   ## Get me some extensions
-
-1. Search for Chrome Extensions at:
+1. In another Chrome tab, search for Chrome Extensions at:
 
    <a target="_blank" href="https://chrome.google.com/webstore/category/extensions?hl=en">
    https://chrome.google.com/webstore/category/extensions?hl=en</a>
+
+   On that website, click "Install" for one you like.
 
    Here are the most useful and highly-rated by a large number of people:
 
@@ -115,47 +114,54 @@ NOTE: "Page actions" icons to the left of the star icon in the address bar are f
    * <a target="_blank" href="https://www.youtube.com/watch?v=QYrZNRd_8rI">
    9 Browser Extensions that May Change your Life</a> Jun 13, 2018 by Steve Dotto (dottotech)
 
+   ## TODO: For other browsers
 
-   ## Don't show all the icons
+   ## Install Chrome Extension locally
 
-1. Click the Extensions icon
+1. The sample code associated with Google's tutorial at<br /><a target="_blank" href="https://developer.chrome.com/extensions/getstarted">https://developer.chrome.com/extensions/getstarted</a> is at <br /><a target="_blank" href="https://developer.chrome.com/extensions/examples/tutorials/get_started_complete.zip">https://developer.chrome.com/extensions/examples/tutorials/get_started_complete.zip</a>.
 
+   PROTIP: Google loads extensions from its website by loading zip files.
 
-   ## Get a sample Chrome extension folder
-
-1. Click the url below to download file get_started_complete.zip:
-
-   <a target="_blank" href="https://developer.chrome.com/extensions/examples/tutorials/get_started_complete.zip">https://developer.chrome.com/extensions/examples/tutorials/get_started_complete.zip</a>
-
-   PROTIP: Google obtains extensions by loading zip files.
-
-   It's from Google's tutorial at <a target="_blank" href="https://developer.chrome.com/extensions/getstarted">https://developer.chrome.com/extensions/getstarted</a>
+   "Browser actions" icons to the right of the star icon add functionality on most/all websites.
 
    Files from Google contain "Copyright 2018 The Chromium Authors" and
    "Use of this source code is governed by a BSD-style license" which <a target="_blank" href="https://en.wikipedia.org/wiki/BSD_licenses">is one of the oldest and broadly used license family in the FOSS ecosystem</a>".
 
    So those who change it code can use the "3-clause BSD License 2.0", which <a target="_blank" href="https://en.wikipedia.org/wiki/BSD_licenses">Wikipedia says</a> is compatible with almost all FOSS licenses (and as well proprietary licenses).
 
-
 2. Unzip get_started_complete.zip into folder get_started_complete.
 
 3. I renamed the folder and moved its files to a Git-enabled folder so I can version control changes and load it up to GitHub.com for archival and sharing.
+
+
+   ### Remove Extension
+
+1. In the Extensions page, click the "Remove" associated with the extension to remove it (and reclaim disk space).
+
+
+## Install extension locally
 
    Code to other examples include:
 
    * <a target="_blank" href="https://github.com/PalashTanejaPro/BlindHelper">https://github.com/PalashTanejaPro/BlindHelper</a> explained at <a target="_blank" href="https://www.freecodecamp.org/news/how-to-create-a-chrome-extension-part-1-ad2a3a77541/"> "Talk to Me" at Freecodecamp.org</a>.
    
    * <a target="_blank" href="https://www.youtube.com/watch?v=Ipa58NVGs_c">
-   How to Make Chrome Extensions</a>
-   by Kyle Robinson Young
+   How to Make Chrome Extensions</a> by Kyle Robinson Young
    shows how to create an extension from scratch
 
+1. View <a target="_blank" href="https://blog.hartleybrody.com/chrome-extension/">Harley Brody's blog "So You Want to Build a Chrome Extension?"</a> from June 5, 2013, but still relevant today.
 
-   ## Load your own extension
+   He wrote the "BuzzKill" Chrome Extension that automatically removes all Buzz Feed content from the browsing experience on Facebook.com.
+
+1. Navigate to <a target="_blank" href="https://www.facebook.com/">facebook.com</a> and login.
+
+1. On a new Chrome tab, On <a target="_blank" href="https://github.com/hartleybrody/buzzkill">https://github.com/hartleybrody/buzzkill</a>, click Fork to your own account, click the green "Code" and Download or clone.
+1. <tt>cd buzzkill</tt>
 
 1. In Chrome URL <a target="_blank" href="chrome://extensions/">
    chrome://extensions/</a><br />
-   Click “Developer mode” in the top right to expose a menu:
+
+1. Click the slider to turn on <strong>Developer Mode</strong> at the top right to expose a menu:
 
    <pre>Load unpacked | Pack extension | Update</pre>
 
@@ -168,6 +174,24 @@ NOTE: "Page actions" icons to the left of the star icon in the address bar are f
    PROTIP: Stay on this page. When code is changed, Chrome knows to reload your extension. You won't need to press command+R.
 
    Notice "Inspect views background" in some of the extensions. See <a href="#background">below</a>.
+
+1. Click <strong>Load unpacked</strong> and navigate to buzzkill. "Make Facebook Great Again" should appear.
+
+   NOTE: Extensions are automatically turned On upon load.
+
+1. Switch to Facebook tab.
+
+   NOTE: "Page actions" icons to the left of the star icon in the address bar are for specific pages (URLs).
+
+   ### Examine code for sample extension
+
+
+1. Click the url below to download file get_started_complete.zip:
+
+   PROTIP: Google obtains extensions by loading zip files.
+
+
+   ## Load your own extension
 
 1. To activate the add-on, click the extension icon at the upper-right
 
@@ -202,6 +226,8 @@ NOTE: "Page actions" icons to the left of the star icon in the address bar are f
 
 Extensions are zipped bundles of HTML, CSS, JavaScript, images, and other files used in the web platform. Google's "Getting Started Example" contains these default files:
 
+In Google's folder:
+
 <pre>.
 ├── LICENSE
 ├── README.md
@@ -218,16 +244,57 @@ Extensions are zipped bundles of HTML, CSS, JavaScript, images, and other files 
 └── popup.js
 </pre>
 
-JavaScript (.js) files Google calls "content scripts".
 
-Content scripts are specified in the manifest.json file, which Google reads as the "entry point".
+In the BuzzKill folder:
 
-The "get_started" image files are the same image in 4 different sizes 16, 32, 48, 128 pixels square.
+<pre>├── README.md
+├── bootstrap.js
+├── clean.js
+├── images
+│   └── icon.png
+├── libs
+│   └── underscore.min.js
+├── manifest.json
+├── popup.html
+└── settings.js
+</pre>
+
+The manifest.json file Google reads as the "entry point".
+
+The BuzzKill extension, becuase it has permissions to work only on Facebook, is a <strong>page_action
 
 In the manifest.json file, specify the URL Google should check every few hours to see if there is an update:
 
-<pre>"update_url": "https://mysite.com/myextension.xml"</pre>
+   <ul><pre>"update_url": "https://mysite.com/myextension.xml"</pre>
+   </ul>
 
+JavaScript (.js) files Google calls "content scripts".
+
+
+### Icons
+
+The "icon.png" should be like the "get_started" image files -- the same image in 4 different sizes 16, 32, 48, 128 pixels square. Note that the icon files are specified twice:
+
+<pre>
+  "icons": {
+    "16": "images/get_started16.png",
+    "32": "images/get_started32.png",
+    "48": "images/get_started48.png",
+    "128": "images/get_started128.png"
+  },
+</pre>
+
+<pre>
+  "page_action": {
+    "default_title": "Getting Started Example",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/get_started16.png",
+      "32": "images/get_started32.png",
+      "48": "images/get_started48.png",
+      "128": "images/get_started128.png"
+    }
+</pre>
 
 ## Menu change
 
@@ -311,6 +378,4 @@ https://www.youtube.com/watch?v=e3McMaHvlBY
 https://youtu.be/uh84Asy2W4s
 Fullstack Academy
 
-https://blog.hartleybrody.com/chrome-extension/
-So You Want to Build a Chrome Extension?
-June 5, 2013
+

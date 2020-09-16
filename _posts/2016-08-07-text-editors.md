@@ -284,6 +284,16 @@ Its <a target="_blank" href="https://www.hanselman.com/blog/VisualStudioCodeRemo
 
 0. Select the full command that appears in the drop-down.
 
+
+### Extensions
+
+Emmet to add smart auto-completion suggestions to html editing.
+comes with VSCode.
+
+"Live Server" to Launch a development local Server with live reload feature for static & dynamic pages. It automatically refreshes browser when changes are detected in files. 
+
+
+
 ### Tutorials on VSCode
 
 Perhaps the most intensive tutorial is <a target="_blank" href="https://realpython.com/courses/python-development-visual-studio-code-setup-guide/">the Setup Guid from RealPython</a>
