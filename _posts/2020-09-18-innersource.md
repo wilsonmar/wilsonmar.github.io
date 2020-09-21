@@ -187,6 +187,9 @@ A sample pattern is "Management Review":
 
 "Patlet" is the heading for a summary statement about a pattern.
 
+The "Review Committee" pattern is at <a target="_blank" href="
+https://github.com/InnerSourceCommons/InnerSourcePatterns/blob/master/patterns/2-structured/review-committee.md">https://github.com/InnerSourceCommons/InnerSourcePatterns/blob/master/patterns/2-structured/review-committee.md</a>
+
 
 ## Culture
 
