@@ -72,7 +72,7 @@ Many GitHub users highlighted in <a target="_blank" href="https://github.com/cus
 
 ## Roles
 
-April 2020 <a target="_blank" href="https://innersourcecommons.org/resources/learningpath/">"Learning Path" script</a> and video <a target="_blank" href="https://www.youtube.com/watch?v=l93ohSHhr5U&list=PLCH-i0B0otNRnLlkiwxf0qKOnH5NvO5pK">on YouTube</a>, and <a target="_blank" href="https://learning.oreilly.com/learning-paths/learning-path-innersource/0636920438137/">O'Reilly.com</a> with Johannes Tiigges and (InnerSourceCommons founder) Isobel Drost-Fromm (@divadanese), clarifies key roles in InnerSource:
+April 2020 <a target="_blank" href="https://innersourcecommons.org/resources/learningpath/">"Learning Path" script</a> and (with Keith Rudlidge of Nike) <a target="_blank" href="https://www.youtube.com/watch?v=l93ohSHhr5U&list=PLCH-i0B0otNRnLlkiwxf0qKOnH5NvO5pK">on YouTube video</a>, and <a target="_blank" href="https://learning.oreilly.com/learning-paths/learning-path-innersource/0636920438137/">O'Reilly.com</a> with Johannes Tiigges and (InnerSourceCommons founder) Isobel Drost-Fromm (@divadanese), clarifies key roles in InnerSource:
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=ncPO1fz5fRg&list=PLCH-i0B0otNRJ6elYs7sfim--14E6FOQq">VIDEO</a> <a target="_blank" href="https://innersourcecommons.org/resources/learningpath/contributor/02/"><strong>Contributors</strong></a> "are also called guests" who contribute code, bug reports, docs.
    PROTIP: cut dependencies. 
@@ -175,11 +175,17 @@ InnerSource practitioners created a vocabulary for describing challenges and pro
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/93719879-b7e6f000-fb42-11ea-8c1e-a30704b6f77d.png">
 <img width="539" alt="innersource-meta" src="https://user-images.githubusercontent.com/300046/93719879-b7e6f000-fb42-11ea-8c1e-a30704b6f77d.png"></a>
 
-The above diagram is explained in <a target="_blank" href="https://www.youtube.com/watch?v=1M6QWrA3Y0I&list=PLCH-i0B0otNSiHdPkI1AJ86ajzNaH3wnH&index=2">this video</a>.
+The above diagram is explained in <a target="_blank" href="https://www.youtube.com/watch?v=1M6QWrA3Y0I&list=PLCH-i0B0otNSiHdPkI1AJ86ajzNaH3wnH&index=2">this video "InnerSource Patterns - How They Work"</a>.
 
-<strong>Problems</strong> exist within a <strong>context</strong>.
-<strong>Forces</strong> perpetuate the problems.
+<strong>Problems</strong> (challenges) exist within a <strong>context</strong>. <strong>Forces</strong> perpetuate the problems.
 The <strong>Resulting context</strong> are the conditions we wish to achieve. If we don't have a known <strong>Resolution</strong> which affects the forces. If a Resolution is not proven with Known Instances, the pattern is called a <strong>donut</strong> (with context around a missing Resolution).
+
+A sample pattern is "Management Review":
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/93804289-533f9a00-fc03-11ea-8a4e-953c3f214366.png">
+<img width="673" alt="innersource-mgmt-review-pattern" src="https://user-images.githubusercontent.com/300046/93804289-533f9a00-fc03-11ea-8a4e-953c3f214366.png"></a>
+
+"Patlet" is the heading for a summary statement about a pattern.
 
 
 ## Culture
