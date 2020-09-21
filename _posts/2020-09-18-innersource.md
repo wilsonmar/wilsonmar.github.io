@@ -149,13 +149,13 @@ However, there are also much more powerful <strong>forces</strong> contributing 
 > "InnerSource is as much cultural transformation than a technical one."
 
 
-## A war of dominance
+## Struggle for dominance
 
 In "traditional" work cultures, the "top dog" enjoys more independence. To become a "star performer", either officially designated or not, is typically achieved through bluster: by openly insulting less brazen colleagues and limiting sharing of knowledge only to show superiority rather than to mentor others.
 
-Such "hero cultures" have more limited capability than more inclusive cultures where open sharing elevate all members.
+Some managers may prefer this situation because it "gets the work done", even if it's just on the short term.
 
-Some managers prefer this situation because it involves less people to manage.
+However, the capacity and growth potential in "hero cultures" are below what can be achieved in more inclusive cultures where open sharing elevate all members.
 
 While heros may be able to deliver on the short term, when considering long term consequences, when the hero inevitably leaves, the organization can become crippled.
 
