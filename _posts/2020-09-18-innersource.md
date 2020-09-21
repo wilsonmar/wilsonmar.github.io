@@ -94,7 +94,7 @@ April 2020 <a target="_blank" href="https://innersourcecommons.org/resources/lea
 <a target="_blank" href="https://github.com/a-a-ron">Aaron Stewart</a>, a Program Architect at GitHub, created a video series on Pluralsight has a <a target="_blank" href="https://app.pluralsight.com/paths/skills/collaborative-coding-with-github">"Collaborative Coding with GitHub" series</a> that includes <a target="_blank" href="https://app.pluralsight.com/library/courses/adopting-innersource-culture-github/table-of-contents">"Adopting an InnerSource Culture with GitHub"</a>
 [1h 42m] released 30 Mar 2020
 
-The course references GitHub's <a target-"_blank" href="https://lab.github.com/githubtraining/innersource-fundamentals">32 m "InnerSource Fundamentals" class</a> which creates the "InnerSource Toolkit" website providing a resource others can use to introduce InnerSource.
+The course references GitHub's <a target="_blank" href="https://lab.github.com/githubtraining/innersource-fundamentals">32 m "InnerSource Fundamentals" class</a> which creates the "InnerSource Toolkit" website providing a resource others can use to introduce InnerSource.
 
    * <a target="_blank" href="https://github.com/a-a-ron/innersource-template-pluralsight/">github.com/a-a-ron/innersource-template-pluralsight</a>
 
@@ -109,9 +109,7 @@ In the course, Aaron also provides a Checklist for Measuring Success
 
 ## Success Metrics
 
-This is based on ???
-
-Under the "Insights" tab for each project:
+QUESTION: Under the "Insights" tab for each project???
 
 Along the lifecycle:
 
