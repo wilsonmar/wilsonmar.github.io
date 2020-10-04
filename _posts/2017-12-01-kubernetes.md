@@ -144,11 +144,11 @@ To ensure a comprehensive coverage of topics, I look to the <a target="_blank" h
 
 Instead of multiple choice questions, the exam consists of <strong>task-based practical responses while running live clusters.</strong> Each exam includes one free fail retake.
 
-PROTIP: You'll need a corded webcam (not one built-in).
-
-You'll have to take the exam again after 2 years.
+After two, you'll have to wait to take the exam again after 2 years.
 
 To compare the domain focus for each exam:
+
+<a name="ExamDomains"></a>
 
 <table border="1" cellspacing="0" cellpadding="4">
 <tr><th> CK Admin. </th><th> CK App. Dev. </th></tr>
@@ -164,26 +164,41 @@ To compare the domain focus for each exam:
     05% Scheduling<br />
     05% Logging / Monitoring<br />
 </td><td>
-    20% Pod Design<br />
-    18% Observability<br />
-    18% Configuration<br />
-    13% Core Concepts<br />
-    13% Services &amp; Networking<br />
-    10% Multi-Container Pods<br />
-    08% State Persistence
+    13% Core Concepts (API, pods, namespaces)<br />
+    18% Configuration (ConfigMaps, SecurityContexts, Resource Requirements, Secrets)<br />
+    10% Multi-Container Pods (design pattern: Ambassador, Adapter, Sidecar)<br />
+    18% Observability (Liveness & Readiness Probes, Container Logging, Metrics server, Monitoring apps, Debugging)<br />
+    20% Pod Design (Deployments, Rolling Updates, Rollbacks, Labels, Selectors, Annotations, Rollbacks, Jobs, CronJobs)<br />
+    13% Services &amp; Networking (NetworkPolicies)<br />
+    08% State Persistence (Volumes, PersistentVolumeClaims)
 </td></tr>
 </table>
+
+## Preparations
+
+   PROTIP: vim is the only editor available, so learn to search lines in vim (Esc, /, the text to be searched).
+   
+   <pre>:set shiftwidth=2</pre>
+
+   To indent several lines with one command: Esc Shift+V for Visual Line mode, highlight lines, 
+   Shift . to shift left, Shift , to shift right.
+
+   To output a file:
+
+   <pre>kubectl logs alta3pod | sudo tee ~/opt/answers/mypod.logs</pre>
 
    PROTIP: The Linux Foundation exam focuses only on "pure" Kubernetes commands and excludes add-ons such as OpenStack.
 
 CNCF is part of the Linux Foundation, so... 
-
 1. Get an account (Linux Foundation credentials ) at <a target="_blank" href="https://identity.linuxfoundation.org/">https://identity.linuxfoundation.org</a>.
 
    It's a non-profit organization, thus the ".org".
 
 2. Login to <a target="_blank" href="https://linuxfoundation.org/">https://linuxfoundation.org</a> and join as a member for a $100 discount toward certifications.
+
 3. Go to <a target="_blank" href="https://training.linuxfoundation.org/linux-courses/system-administration-training/kubernetes-fundamentals">https://training.linuxfoundation.org/linux-courses/system-administration-training/kubernetes-fundamentals</a> and pay for the $300 exam or for $199 more take their class.
+
+8. Find dates and times when you're in a quiet private indoor place with no co-workers.
 
 4. Use your Linux Foundation credentials to sign-in at <a target="_blank" href="https://www.examslocal.com/">examslocal.com</a>, and select either or both of two exams from CNCF:
 
@@ -194,9 +209,20 @@ CNCF is part of the Linux Foundation, so...
 5. Click "Or Sign In With" tab and select "Sign in for exams powered by the Linux Foundation".
 6. Log in using your preferred account.
 7. Click "Handbook link" to download it.
-8. Select the date, then click OK.
-9. Setup your home computer to take the exam <a target="_blank" href="http://www.examslocal.com/linuxfoundation/"> at home</a> using the Chrome extension from "Innovative Exams", which uses your laptop camera and microphone watching you use a virtual Ubuntu machine. 
-10. Take the 180 minute (2 hour) exam.
+
+8. PROTIP: You'll need a corded (Logitech) webcam (not one built-in).
+
+9. Setup your home computer to take the exam <a target="_blank" href="http://www.examslocal.com/linuxfoundation/"> at home</a> using the <strong>Chrome extension</strong> from "Innovative Exams", which uses your laptop camera and microphone watching you use a virtual Ubuntu machine. 
+9. <a href="#[1]">Create bookmarks in Chrome</a>
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/95026201-e2f63700-064c-11eb-9651-0902cc7732df.png"><img width="390" alt="kubernetes-bookmarks" src="https://user-images.githubusercontent.com/300046/95026201-e2f63700-064c-11eb-9651-0902cc7732df.png"></a>
+
+1. The exam takes 180 minutes (2 hour), so before you start, go to the bathroom. 
+1. You can only have clear liquids in a clear bottle next to you.
+1. Have your ID with you.
+1. To the proctor, show your ID and pan all the way around the room.
+1. You have 180 minutes to answer 19 questions. Although there are 19 objectives, not all objectives may be in every exam.
+1. A Notpad is available during the exam.
 
 ### Video courses
 
@@ -233,17 +259,27 @@ CNCF is part of the Linux Foundation, so...
 
 <a target="_blank" href="https://cloudacademy.com/learning-paths/certified-kubernetes-application-developer-ckad-exam-preparation-451/">CloudAcademy.com has a 11-hour "Learning Path"</a> August 27th, 2019 by Logan Rakai. Its lab enables you to skip all the install hassle. includes a Challenge and Cert Prep. off <a target="_blank" href="https://github.com/cloudacademy/intro-to-k8s">https://github.com/cloudacademy/intro-to-k8s</a>
 
-<a target="_blank" href="https://www.udemy.com/course/certified-kubernetes-application-developer/">Udemy.com has "Kubernetes Certified Application Developer (CKAD) with Tests"</a> updated 09/2020 has 9.5 hours of video.
+The most thorough:<br />
+<a target="_blank" href="https://www.udemy.com/course/certified-kubernetes-application-developer/">Udemy.com has a CKAD course with Tests</a> updated 09/2020 with 9.5 hours of video.
 
-<a target="_blank" href="https://acloud.guru/learn/d068441f-75b4-4fe8-a7a6-df9153f24a35">ACloud.guru CKAD course</a> by William Boyd has 3.5 hours of video organized according to the exam domains, 13 hands-on labs, and 3 practice exams.
+<a target="_blank" href="https://acloud.guru/learn/d068441f-75b4-4fe8-a7a6-df9153f24a35">ACloud.guru CKAD course</a> by <a target="_blank" href="https://www.linkedin.com/in/wilb/">William Boyd</a> has 3.5 hours of video organized according to <a href="#ExamDomains">exam domains</a>, 13 hands-on labs, and 3 practice exams based on v1.13.
+
+Others on CKAD:
+
+* <a name="[1]">[1]</a> <a target="_blank" href="https://www.youtube.com/watch?v=uzxSZqSqiLk&list=PLleCw-vqe90DzAwG6Z_f9GARu-y6HbHXf">Alta3 Research's Playlist</a> includes <a target="_blank" href="https://www.youtube.com/watch?v=5cgpFWVD8ds">VIDEO [11:02] : How to CRUSH the CKAD Exam!</a> Jul 27, 2020 shows sample quetions and suggestions to each of 19 objectives.
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=qA4dNATs5nE">VIDEO: How to pass the Certified Kubernetes Application Developer (CKAD) exam</a> by Santiago Alejandro Agüero 
+* <a target="_blank" href="https://www.youtube.com/watch?v=dIBX8TQJxW8">CKAD Certification Exam Tips</a> by Cloud and Beyond
+
+* <a target="_blank" href="https://medium.com/@krystiannowaczyk/how-i-passed-the-cka-certified-kubernetes-administrator-exam-f94b11566528">"How I passed the CKA Exam"</a> by Krystian Nowaczyk (who maintains <a target="_blank" href="https://github.com/ramitsurana/awesome-kubernetes">github.com/ramitsurana/awesome-kubernetes</a>) provides a list of resources he used.
 
 
-Others:
+Others on CKA:
 
-* <a target="_blank" href="https://medium.com/@krystiannowaczyk/how-i-passed-the-cka-certified-kubernetes-administrator-exam-f94b11566528">"How I passed the CKA (Certified Kubernetes Administrator) Exam"</a> by Krystian Nowaczyk (who maintains <a target="_blank" href="https://github.com/ramitsurana/awesome-kubernetes">github.com/ramitsurana/awesome-kubernetes</a>) provides a list of resources he used.
 * <a target="_blank" href="https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days-e4603ac40746">"How to ace the CKA exam in 7 days</a> is click-bait?
 * <a target="_blank" href="https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days-e4603ac40746">how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days</a>
 * <a target="_blank" href="https://www.linkedin.com/learning/certified-kubernetes-application-developer-ckad-cert-prep-exam-tips?u=26886050">Certified Kubernetes Application Developer (CKAD) Cert Prep: Exam Tips</a> by Benjamin Muschko
+
 
 <a name="#k8s_clouds"></a>
 
@@ -398,9 +434,12 @@ and invokes the Kubernetes <strong>API server</strong>. That command is installe
 <strong>kubectl</strong> package (pronounced "cube cuddle"). 
 There is a command with the same name used to obtain the <strong>version</strong>.
 
-The kubectl <strong>get nodes</strong> command lists basic information about each node.
+1. View memory and CPU usage of pods across nodes from the K8s Metrics Server:
 
-The <strong>describe</strong> command provides more detailed information.
+   <pre><strong>kubectl top node</strong>
+
+   <pre><strong>kubectl top pod</strong>
+
 
 ### API Server
 
