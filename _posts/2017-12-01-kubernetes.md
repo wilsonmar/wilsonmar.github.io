@@ -128,11 +128,25 @@ Although the word "kubernetes" is a Greek word meaning "captain", it has become 
    <br /><br />
 
 
-### Certification in Kubernetes
+## Professional certifications in Kubernetes
 
-To ensure a comprehensive coverage of topics, I look to the <a target="_blank" href="https://www.cncf.io/certification/ckad/">2-hour Kubernetes Application Developer (CKAD)</a> and <a target="_blank" href="https://www.cncf.io/certification/expert/">3-hour Certified Kubernetes Administrator (CKA)</a> exams CNCF announced November 8, 2016. Each is $300, which includes one free fail retake. You'll have to take the exam again after 2 years.
-The exam has no multiple choice questions, just task-based practical responses while running live clusters.
-You'll need a corded webcame (not one built-in).
+To ensure a comprehensive coverage of topics, I look to the <a target="_blank" href="https://www.cncf.io/certification/ckad/">2-hour Kubernetes Application Developer (CKAD)</a> and <a target="_blank" href="https://www.cncf.io/certification/expert/">3-hour Certified Kubernetes Administrator (CKA)</a> exams CNCF first announced November 8, 2016. For $300 ($499 with a <a target="_blank" href="https://training.linuxfoundation.org/training/kubernetes-for-developers/">35-hour video course LFD259</a>):
+
+   1. Course Introduction
+   2. Kubernetes Architecture
+   3. Build
+   4. Design
+   5. Deployment Configuration
+   6. Security
+   7. Exposing Applications
+   8. Troubleshooting
+   <br /><br />
+
+Instead of multiple choice questions, the exam consists of <strong>task-based practical responses while running live clusters.</strong> Each exam includes one free fail retake.
+
+PROTIP: You'll need a corded webcam (not one built-in).
+
+You'll have to take the exam again after 2 years.
 
 To compare the domain focus for each exam:
 
@@ -150,10 +164,10 @@ To compare the domain focus for each exam:
     05% Scheduling<br />
     05% Logging / Monitoring<br />
 </td><td>
-    13% Core Concepts<br />
-    18% Configuration<br />
     20% Pod Design<br />
     18% Observability<br />
+    18% Configuration<br />
+    13% Core Concepts<br />
     13% Services &amp; Networking<br />
     10% Multi-Container Pods<br />
     08% State Persistence
@@ -173,8 +187,8 @@ CNCF is part of the Linux Foundation, so...
 
 4. Use your Linux Foundation credentials to sign-in at <a target="_blank" href="https://www.examslocal.com/">examslocal.com</a>, and select either or both of two exams from CNCF:
 
-   * Linux Foundation : Certified Kubernetes Administrator (CKA)  -  English
-   * Linux Foundation : Certified Kubernetes Application Developer (CKAD)  -  English
+   * Linux Foundation : Certified Kubernetes Application Developer (CKAD) - English
+   * Linux Foundation : Certified Kubernetes Administrator (CKA) - English
    <br /><br />
 
 5. Click "Or Sign In With" tab and select "Sign in for exams powered by the Linux Foundation".
@@ -184,14 +198,54 @@ CNCF is part of the Linux Foundation, so...
 9. Setup your home computer to take the exam <a target="_blank" href="http://www.examslocal.com/linuxfoundation/"> at home</a> using the Chrome extension from "Innovative Exams", which uses your laptop camera and microphone watching you use a virtual Ubuntu machine. 
 10. Take the 180 minute (2 hour) exam.
 
-Resources:
+### Video courses
+
+<a target="_blank" href="https://app.pluralsight.com/paths/certificate/certified-kubernetes-application-developer-ckad">Pluralsight has a 14-hour series of videos on CKAD</a> by Dan Wahlin (@danwahlin, codewithdan.com). In chron order:
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-core-concepts">Kubernetes for Developers: Core Concepts</a> 4h 34m Sept 15, 2019
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-moving-cloud">Kubernetes for Developers: Moving to the Cloud</a> by Craig Golightly (@seethatgo, seethatgo.com) 1h 3m Dec 19, 2019 deploys the same simple sample Python app (kubernetes-developers-moving-cloud.zip) to <a href="#k8s_clouds">AKS, EKS, and GKE clouds</a>.
+ 
+   CAUTION: <a target="_blank" href="https://aws.amazon.com/blogs/developer/aws-cli-v2-is-now-generally-available/">
+   aws v2 CLI</a> became generally available in Feb 2020 shortly after this course was published.
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-deploying-code">Kubernetes for Developers: Deploying Your Code</a> 3h 4m Feb 26, 2020
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-integrating-volumes-using-multi-container-pods">Kubernetes for Developers: Integrating Volumes and Using Multi-container Pods</a> by Nigel Poulton 2h 26m Apr 23, 2020
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-docker-compose-to-kubernetes">Kubernetes for Developers: Moving from Docker Compose to Kubernetes</a> 2h 20m May 28, 2020
+
+<a target="_blank" href="https://www.linkedin.com/learning/kubernetes-essential-training-application-development/kubernetes-for-developers?u=26886050">LinkedIn learning</a> by Matt Turner (from England) is hands-on using minikube 1.9.2 and kubernetes-cli 1.18.2 on a Mac:
+
+   * Running a local cluster
+   * Running containers
+   * Viewing logs
+   * Remotely executing commands
+   * Orchestrating real-world workloads
+   * Batch processing with jobs and cron jobs
+   * Managing resource usage
+   * Keeping containers secure
+   * Advanced deployment patterns
+   * Analyzing traffic
+   * Extending Kubernetes
+   * DRY deployment and debugging tools
+   <br /><br />
+
+<a target="_blank" href="https://cloudacademy.com/learning-paths/certified-kubernetes-application-developer-ckad-exam-preparation-451/">CloudAcademy.com has a 11-hour "Learning Path"</a> August 27th, 2019 by Logan Rakai. Its lab enables you to skip all the install hassle. includes a Challenge and Cert Prep. off <a target="_blank" href="https://github.com/cloudacademy/intro-to-k8s">https://github.com/cloudacademy/intro-to-k8s</a>
+
+<a target="_blank" href="https://www.udemy.com/course/certified-kubernetes-application-developer/">Udemy.com has "Kubernetes Certified Application Developer (CKAD) with Tests"</a> updated 09/2020 has 9.5 hours of video.
+
+<a target="_blank" href="https://acloud.guru/learn/d068441f-75b4-4fe8-a7a6-df9153f24a35">ACloud.guru CKAD course</a> by William Boyd has 3.5 hours of video organized according to the exam domains, 13 hands-on labs, and 3 practice exams.
+
+
+Others:
 
 * <a target="_blank" href="https://medium.com/@krystiannowaczyk/how-i-passed-the-cka-certified-kubernetes-administrator-exam-f94b11566528">"How I passed the CKA (Certified Kubernetes Administrator) Exam"</a> by Krystian Nowaczyk (who maintains <a target="_blank" href="https://github.com/ramitsurana/awesome-kubernetes">github.com/ramitsurana/awesome-kubernetes</a>) provides a list of resources he used.
-
 * <a target="_blank" href="https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days-e4603ac40746">"How to ace the CKA exam in 7 days</a> is click-bait?
-
 * <a target="_blank" href="https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days-e4603ac40746">how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days</a>
+* <a target="_blank" href="https://www.linkedin.com/learning/certified-kubernetes-application-developer-ckad-cert-prep-exam-tips?u=26886050">Certified Kubernetes Application Developer (CKAD) Cert Prep: Exam Tips</a> by Benjamin Muschko
 
+<a name="#k8s_clouds"></a>
 
 ## Multi-cloud
 
@@ -245,7 +299,9 @@ Amazon ECS (Elastic Container Service for Kubernetes)</a> is "supercharged" by t
    See the <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/TheEKSManifest.html">EKS Manifest diagram</a> explained by Mark Richman (@mrichman) in his <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/293">video class</a>, with code at <a target="_blank" href="https://github.com/linuxacademy/eks-deep-dive-2019">https://github.com/linuxacademy/eks-deep-dive-2019</a>.
    
 
-* <a target="_blank" href="https://aws.amazon.com/fargate/">AWS Fargate</a> Launch Type provides for horizontal scaling on Amazon's own fleet of EC2 clusters. It's informally called the "AWS Container Manager".
+   PROTIP: My sample.sh installs the utilities and brings up a EKS cluster with one command. It costs $110 per month.
+
+EKS makes use of <a target="_blank" href="https://aws.amazon.com/fargate/">AWS Fargate</a> Launch Type provides for horizontal scaling on Amazon's own fleet of EC2 clusters. It's informally called the "AWS Container Manager".
 
    Fargate supports <a target="_blank" href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">"awsvpc" network mode</a> natively so that tasks running on the same instance share that's instance's ENI.
 
@@ -268,7 +324,7 @@ Amazon ECS (Elastic Container Service for Kubernetes)</a> is "supercharged" by t
 * https://github.com/kubernetes-sigs/kubespray
 
 
-## Orchestration systems managing Docker containers:
+## Other Orchestration systems managing Docker containers
 
    * OpenShift
    * Kubernetes by Google
@@ -282,9 +338,7 @@ Amazon ECS (Elastic Container Service for Kubernetes)</a> is "supercharged" by t
 
 * Docker Swarm incorporated <a href="#Rancher">Rancher</a> from Rancher Labs (#RancherK8s).
 
-   <a target="_blank" href="https://rancher.com/">Rancher Kubernetes Engine (RKE)</a> simplifies cluster administration (on EC2, Azure, GCE, Digital Ocean, EKS, AKS, GKE, vSphere or bare metal) - (provisiong, authentication, RBAC, Policy, Security, monitoring, Capacity scaling, Cost control). Its catalog is based on <a href="#Helm">Helm</a>
-
-   See <a target="_blank" href="https://rancher.com/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/node-pools/ec2/">Creating an Amazon EC2 Cluster using Rancher</a>
+   <a target="_blank" href="https://rancher.com/">Rancher Kubernetes Engine (RKE)</a> simplifies cluster administration (on EC2, Azure, GCE, Digital Ocean, EKS, AKS, GKE, vSphere or bare metal) - (provisiong, authentication, RBAC, Policy, Security, monitoring, Capacity scaling, Cost control). Its catalog is based on <a href="#Helm">Helm</a>. See <a target="_blank" href="https://rancher.com/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/node-pools/ec2/">Creating an Amazon EC2 Cluster using Rancher</a>.
 
 * <a target="_blank" href="https://mesosphere.com/product/">Mesosphere DC/OS</a> (Data Center Operating System) runs Apache Mesos to abstract CPU, memory, storage to provide an API to program a multi-cloud multi-tenant data center (at Twitter, Yelp, Ebay, Azure, Apple, etc.) as if it's a single pool of resources. Kubernetes can run on top of it, but the DC/OS has premium (licensed) enterprise features. So it's not for you if you never want to pay for anything.
 
@@ -547,8 +601,6 @@ The Kubtest suite builds, stages, extracts, and brings up the cluster.
 After testing, it dumps logs and tears down the test rig.
 
 
-
-
 ## Social
 
    * <a target="_blank" href="https://twitter.com/kubernetesio/">Twitter: @kubernetesio</a>
@@ -568,6 +620,7 @@ After testing, it dumps logs and tears down the test rig.
 
    * <a target="_blank" href="https://www.KubeCon.io">KubeCon.io</a> Conferences (<a target="_blank" href="https://www.twitter.com/KubeConio/">#KubeConio</a>)
 
+<hr />
 
 <a name="Install"></a>
 
@@ -583,7 +636,7 @@ Rancher initially created it's own framework (called Cattle) to coordinate Docke
 Now Rancher's networking provides a consistent solution across a variety of platforms, especially on bare metal or standard (non cloud) virtual servers.
 In addition to Kubernetes, Rancher enables users to deploy a choice of Cattle, Docker Swarm, Apache Mesos upstream project for DCOS (Data Center Operating System). Rancher eventually become part of Docker Swarm.
 
-Within https://github.com/kubernetes/kops KOPS 
+Within <a target="_blank" href="https://github.com/kubernetes/kops/">KOPS</a>
 
 
 
@@ -619,23 +672,46 @@ Minikube goes beyond Docker For Mac (DFM) and Docker for Windows (DFW)
 and includes a node and a Master when it spins up in a local environment (such as your laptop).
 
 CAUTION: At time of writing, <a target="_blank" href="https://github.com/kubernetes/minikube">https://github.com/kubernetes/minikube</a>
-has 257 issues and 20 pending Pull Requests.
+has 257 issues and 20 pending Pull Requests, but we're using it anyway.
 
 1. Install on a Mac Docker:
  
-   <pre><strong>
-   brew install docker-machine-driver-xhyve
+   <pre><strong>brew install docker-machine-driver-xhyve
    </strong></pre>
 
 1. Install on a Mac Minikube:
 
-   <pre><strong>
-   brew install minikube -y
+   <pre><strong>brew install minikube
    </strong></pre>
 
-2. Verify if its command works by getting the version:
+   This installs folder:<br />
+   $HOME/.minikube
 
-   <pre>minikube version</pre>
+1. Verify Install:
+
+   <pre><strong>minikube version
+   </strong></pre>
+
+   At time of writing, the verion 1.13.1
+
+   <pre>==> Checking for dependents of upgraded formulae...
+Error: No such file or directory - /usr/local/Cellar/eksctl/0.24.0
+   </pre>
+
+2. What is in the Kubernetes config file?
+
+   <pre><strong>cat $HOME/.kube/config</strong></pre>
+
+2. To avoid "The connection to the server localhost:8080 was refused"
+
+   https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/
+
+   <pre><strong>sudo touch $HOME/.kube/config</strong></pre>
+   <pre><strong>sudo chown $USER $HOME/.kube/config
+   chmod 600 $HOME/.kube/config
+   </strong></pre>
+
+   Deleted the old config from ~/.kube and then restarted docker (for macos) and it rebuilt the config folder. 
 
 3. Show the current context:
 
@@ -643,7 +719,9 @@ has 257 issues and 20 pending Pull Requests.
    kubectl config current-context
    </strong></pre>
 
-   The response on minikube is "minikube".
+   The expected response on minikube is "minikube".
+
+   <a name="StartMinikube"></a>
 
 3. Start the service:
 
@@ -659,7 +737,17 @@ has 257 issues and 20 pending Pull Requests.
    minikube start --vm-driver=hyperv
    </pre>
 
-3. Dashboard
+   <pre>😄  minikube v1.13.1 on Darwin 10.15.7
+✨  Using the docker driver based on existing profile
+👍  Starting control plane node minikube in cluster minikube
+🏃  Updating the running docker "minikube" container ...
+🐳  Preparing Kubernetes v1.19.2 on Docker 19.03.8 ...
+🔎  Verifying Kubernetes components...
+🌟  Enabled addons: default-storageclass, storage-provisioner
+🏄  Done! kubectl is now configured to use "minikube" by default
+   </pre>
+
+3. Open the Minkube Dashboard server localhost:53764 poped upped on your default browser:
 
    <pre>minikube dashboard</pre>
 
@@ -669,46 +757,64 @@ has 257 issues and 20 pending Pull Requests.
 
 5. Recover space:
 
-   <pre>minikube delete</pre>
+   <pre><strong>minikube delete
+   </strong></pre>
+
+   <pre>🔥  Deleting "minikube" in docker ...
+🔥  Deleting container "minikube" ...
+🔥  Removing /Users/wilson_mar/.minikube/machines/minikube ...
+💀  Removed all traces of the "minikube" cluster.
+   </pre>
 
    Kubectl 1.8 scale is now the preferred way to control graceful delete.
 
    Kubectl 1.8 rollout and rollback now support stateful sets ???
 
+1. To continue, <a href="#StartMinikube">start minikube again</a>.
+
 
    <a name="kubectl"></a>
 
-   ### kubectl CLI client install
+   ## kubectl CLI client install
 
-   Kubernetes administrators use the <strong>`kubectl`</strong> (kube + ctl)
+   Kubernetes administrators use <strong>kubectl</strong> (kube + ctl)
    the CLI tool running outside Kubernetes servers to control them. 
    It's automatically installed within Google cloud instances, but on Macs clients:
 
 1. Install on a Mac:
  
-   <pre><strong>
-   brew install kubectl -y
+   <pre><strong>brew install kubectl
    </strong></pre>
 
    <pre>🍺  /usr/local/Cellar/kubernetes-cli/1.8.3: 108 files, 50.5MB
+   1.19.2
    </pre>
+
+   It's required by eksctl and minikube.
 
 0. Verify
  
    <pre><strong>kubectl version --client
    </strong></pre>
 
-   A sample response:
-
-   <pre>
-Client Version: version.Info{Major:"1", Minor:"15", GitVersion:"v1.15.2", GitCommit:"f6278300bebbb750328ac16ee6dd3aa7d3549568", GitTreeState:"clean", BuildDate:"2019-08-05T16:54:35Z", GoVersion:"go1.12.7", Compiler:"gc", Platform:"darwin/amd64"}
+   <pre>Client Version: version.Info{Major:"1", Minor:"18", GitVersion:"v1.18.8", GitCommit:"9f2892aab98fe339f3bd70e3c470144299398ace", GitTreeState:"clean", BuildDate:"2020-08-13T16:12:48Z", GoVersion:"go1.13.15", Compiler:"gc", Platform:"darwin/amd64"}
    </pre>
 
-   1. Check the status of the job using the kubectl describe command.
+   NOTICE that Golang is a component.
+
+   If you get this error message:
+   <pre>The connection to the server localhost:8080 was refused - did you specify the right host or port?
+   </pre>
+
+   1. Check the status of jobs
+   
+   <pre><strong>kubectl describe</strong></pre>
+
+   <pre>error: You must specify the type of resource to describe. Use "kubectl api-resources" for a complete list of supported resources.</pre>
 
    2. When a job is complete, view its results:
 
-   <pre>kubectl logs counter</pre>
+   <pre><strong>kubectl logs counter</strong></pre>
 
    The API Server routes several <strong>kinds</strong> of <a href="#Ayaml-files">yaml declaration files</a>: Pod, Deployment of pods, Service, Job, Configmap.
 
@@ -721,16 +827,16 @@ Client Version: version.Info{Major:"1", Minor:"15", GitVersion:"v1.15.2", GitCom
 
 1. View your current configuration settings and current context 
 
-   <pre>kubectl config view</pre>
+   <pre><strong>kubectl config view
+   </strong></pre>
 
    Sample response from file <tt>~/.kube/config</tt>
 
-   <pre>
-apiVersion: v1
+   <pre>apiVersion: v1
 clusters:
 - cluster:
-    certificate-authority: /Users/wilsonmar/.minikube/ca.crt
-    server: https://192.168.99.100:8443
+    certificate-authority: /Users/wilson_mar/.minikube/ca.crt
+    server: https://127.0.0.1:32772
   name: minikube
 contexts:
 - context:
@@ -743,13 +849,104 @@ preferences: {}
 users:
 - name: minikube
   user:
-    client-certificate: /Users/wilsonmar/.minikube/client.crt
-    client-key: /Users/wilsonmar/.minikube/client.key
+    client-certificate: /Users/wilson_mar/.minikube/profiles/minikube/client.crt
+    client-key: /Users/wilson_mar/.minikube/profiles/minikube/client.key
    </pre>
+
+   ### kubectl run
+
+1. Make an imperative command:
+
+   <pre><strong>kubectl run --image=nginx web
+   </strong></pre>
+
+   <pre>pod/web created
+   </pre>
+
+1. 
+
+   <pre><strong>kubectl get pods
+   </strong></pre>
+
+   <pre>NAME   READY   STATUS    RESTARTS   AGE
+web    1/1     Running   0          2m59s
+   </pre>
+
+1. Details:
+
+   <pre><strong>kubectl describe pod web
+   </strong></pre>
+
+   <pre>Name:         web
+Namespace:    default
+Priority:     0
+Node:         minikube/172.17.0.3
+Start Time:   Sun, 04 Oct 2020 07:02:16 -0600
+Labels:       run=web
+Annotations:  &LP;none>
+Status:       Running
+IP:           172.18.0.3
+IPs:
+  IP:  172.18.0.3
+Containers:
+  web:
+    Container ID:   docker://ecd03de690f64202c6bdf35d4b4192e5af32854d9c77093f31136570507cc600
+    Image:          nginx
+    Image ID:       docker-pullable://nginx@sha256:c628b67d21744fce822d22fdcc0389f6bd763daac23a6b77147d0712ea7102d0
+    Port:           &LP;none>
+    Host Port:      &LP;none>
+    State:          Running
+      Started:      Sun, 04 Oct 2020 07:02:49 -0600
+    Ready:          True
+    Restart Count:  0
+    Environment:    &LP;none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-72hc5 (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-72hc5:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-72hc5
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  &LP;none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason     Age    From               Message
+  ----    ------     ----   ----               -------
+  Normal  Scheduled  4m40s  default-scheduler  Successfully assigned default/web to minikube
+  Normal  Pulling    4m39s  kubelet, minikube  Pulling image "nginx"
+  Normal  Pulled     4m7s   kubelet, minikube  Successfully pulled image "nginx" in 31.950535327s
+  Normal  Created    4m7s   kubelet, minikube  Created container web
+  Normal  Started    4m7s   kubelet, minikube  Started container web
+   </pre>
+
+
+   ### On GCP
+
+1. On GCP:
+
+   <pre>gcloud container clusters get-credentials guestbook2</pre>
+
+kubectl get pods --all-namespaces
+
+
 
 <a name="Centos"></a>
 
 ### CentOS
+
+First, install kubeadm 
+
+cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+chown $(id -u):$(id -g) $HOME/.kube/config
+
 
    <pre>
 cat &LT; /etc/yum.repos.d/kubernetes.repo
