@@ -4,7 +4,7 @@ title: "Kubernetes (K8s)"
 excerpt: "Container engine in clouds, including OpenShift"
 modified:
 tags: [google, cloud]
-date: "2017-12-01"
+date: "2020-10-04"
 file: "kubernetes"
 image:
 # kubernetes-head-1900x500-472493.jpg
@@ -96,7 +96,7 @@ In 2019 Kubernetes added <strong>auto-scaling</strong> based on metrics API meas
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/51218893-5a75b700-18fc-11e9-89af-7ba9ca3000c5.jpg"><img alt="
 k8s-linuxacademy-arch-912x415-32433.jpg" src="https://user-images.githubusercontent.com/300046/51218893-5a75b700-18fc-11e9-89af-7ba9ca3000c5.jpg"></a>
 is described in the <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/155">
-Linux Academy's CKA course</a> of 05:34:43 hours of videos by Chad Miller (<a target="_blank" href="https://twitter.com/OpenChad/">@OpenChad</a>).
+Linux Academy's CKA course</a> of 5:34:43 hours of videos by Chad Miller (<a target="_blank" href="https://twitter.com/OpenChad/">@OpenChad</a>). 
 
 Read <a target="_blank" href="https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/">Docs</a> and <a target="_blank" href="https://kubernetes.io/docs/tutorials/">tutorials</a> from Kubernetes.io.
 
@@ -148,10 +148,25 @@ After two, you'll have to wait to take the exam again after 2 years.
 
 To compare the domain focus for each exam:
 
-<a name="ExamDomains"></a>
+<a name="CKAD_ExamDomains"></a>
+
+### CKAD Exam Domains
 
 <table border="1" cellspacing="0" cellpadding="4">
-<tr><th> CK Admin. </th><th> CK App. Dev. </th></tr>
+<tr valign="top"><td>
+    13% Core Concepts (API, pods, namespaces)<br />
+    18% Configuration (ConfigMaps, SecurityContexts, Resource Requirements, Secrets)<br />
+    10% Multi-Container Pods (design pattern: Ambassador, Adapter, Sidecar)<br />
+    18% Observability (Liveness & Readiness Probes, Container Logging, Metrics server, Monitoring apps, Debugging)<br />
+    20% Pod Design (Deployments, Rolling Updates, Rollbacks, Labels, Selectors, Annotations, Rollbacks, Jobs, CronJobs)<br />
+    13% Services &amp; Networking (NetworkPolicies)<br />
+    08% State Persistence (Volumes, PersistentVolumeClaims)
+</td></tr>
+</table>
+
+### CKA Exam Domains
+
+<table border="1" cellspacing="0" cellpadding="4">
 <tr valign="top"><td>
     19% Core Concepts<br />
     12% Installation, Configuration & Validation<br />
@@ -163,16 +178,10 @@ To compare the domain focus for each exam:
     07% Storage<br />
     05% Scheduling<br />
     05% Logging / Monitoring<br />
-</td><td>
-    13% Core Concepts (API, pods, namespaces)<br />
-    18% Configuration (ConfigMaps, SecurityContexts, Resource Requirements, Secrets)<br />
-    10% Multi-Container Pods (design pattern: Ambassador, Adapter, Sidecar)<br />
-    18% Observability (Liveness & Readiness Probes, Container Logging, Metrics server, Monitoring apps, Debugging)<br />
-    20% Pod Design (Deployments, Rolling Updates, Rollbacks, Labels, Selectors, Annotations, Rollbacks, Jobs, CronJobs)<br />
-    13% Services &amp; Networking (NetworkPolicies)<br />
-    08% State Persistence (Volumes, PersistentVolumeClaims)
 </td></tr>
 </table>
+
+
 
 ## Preparations
 
@@ -190,15 +199,15 @@ To compare the domain focus for each exam:
    PROTIP: The Linux Foundation exam focuses only on "pure" Kubernetes commands and excludes add-ons such as OpenStack.
 
 CNCF is part of the Linux Foundation, so... 
-1. Get an account (Linux Foundation credentials ) at <a target="_blank" href="https://identity.linuxfoundation.org/">https://identity.linuxfoundation.org</a>.
+1. Get an account (Linux Foundation credentials ) at <a target="_blank" href="https://identity.linuxfoundation.org/">https://identity.linuxfoundation.org</a>. https://myprofile.linuxfoundation.org/
 
    It's a non-profit organization, thus the ".org".
 
-2. Login to <a target="_blank" href="https://linuxfoundation.org/">https://linuxfoundation.org</a> and join as a member for a $100 discount toward certifications.
+2. Login to <a target="_blank" href="https://joinnow.platform.linuxfoundation.org/?project=tlf">linuxfoundation.org and join as a member</a> for a $100 discount toward certifications.
 
-3. Go to <a target="_blank" href="https://training.linuxfoundation.org/linux-courses/system-administration-training/kubernetes-fundamentals">https://training.linuxfoundation.org/linux-courses/system-administration-training/kubernetes-fundamentals</a> and pay for the $300 exam or for $199 more take their class.
+3. Go to <a target="_blank" href="https://training.linuxfoundation.org/linux-courses/system-administration-training/kubernetes-fundamentals">https://training.linuxfoundation.org/linux-courses/system-administration-training/kubernetes-fundamentals</a> and pay for the $300 exam plus $199 more if you want to take their class.
 
-8. Find dates and times when you're in a quiet private indoor place with no co-workers.
+4. Find dates and times when you're in a quiet private indoor place where no one else (co-workers) are near.
 
 4. Use your Linux Foundation credentials to sign-in at <a target="_blank" href="https://www.examslocal.com/">examslocal.com</a>, and select either or both of two exams from CNCF:
 
@@ -213,18 +222,33 @@ CNCF is part of the Linux Foundation, so...
 8. PROTIP: You'll need a corded (Logitech) webcam (not one built-in).
 
 9. Setup your home computer to take the exam <a target="_blank" href="http://www.examslocal.com/linuxfoundation/"> at home</a> using the <strong>Chrome extension</strong> from "Innovative Exams", which uses your laptop camera and microphone watching you use a virtual Ubuntu machine. 
-9. <a href="#[1]">Create bookmarks in Chrome</a>
+9. <a href="#[1]">PROTIP: Create bookmarks in Chrome</a> for reference
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/95026201-e2f63700-064c-11eb-9651-0902cc7732df.png"><img width="390" alt="kubernetes-bookmarks" src="https://user-images.githubusercontent.com/300046/95026201-e2f63700-064c-11eb-9651-0902cc7732df.png"></a>
 
-1. The exam takes 180 minutes (2 hour), so before you start, go to the bathroom. 
+1. The exam takes 180 minutes (<strong>3 hours</strong>), so before you start, go to the bathroom. 
 1. You can only have clear liquids in a clear bottle next to you.
 1. Have your ID with you.
 1. To the proctor, show your ID and pan all the way around the room.
-1. You have 180 minutes to answer 19 questions. Although there are 19 objectives, not all objectives may be in every exam.
+1. <strong>19 questions</strong> means less than 10 minutes per question. But the recommended strategy is to avoid getting bogged down on long and complex questions. First go through all the questions to answer the easiest ones first. Along the way, mark ones you want to go back to.
+
+   NOTE: Although there are 19 objectives, not all objectives may be in every exam.
+
 1. A Notpad is available during the exam.
 
+1. Create an Acclaim account.
+1. If you pass the exam, go to acclaim to get your digital badge to post on social media.
+
+
 ### Video courses
+
+<a target="_blank" href="https://cloudacademy.com/learning-paths/certified-kubernetes-application-developer-ckad-exam-preparation-451/">CloudAcademy.com has a 11-hour "Learning Path"</a> August 27th, 2019 by Logan Rakai. Its <a target="_blank" href="https://cloudacademy.com/lab/introduction-kubernetes-playground/?context_resource=lp&context_id=451">Playground lab</a> enables you to <strong>skip all the install details</strong> and get to learn kubernetes commands. 
+
+<a target="_blank" href=https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png">
+<img alt="k8s-cloudacademy-after" src="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"></a>
+
+It includes a Challenge and Cert Prep. off <a target="_blank" href="https://github.com/cloudacademy/intro-to-k8s">https://github.com/cloudacademy/intro-to-k8s</a>
+
 
 <a target="_blank" href="https://app.pluralsight.com/paths/certificate/certified-kubernetes-application-developer-ckad">Pluralsight has a 14-hour series of videos on CKAD</a> by Dan Wahlin (@danwahlin, codewithdan.com). In chron order:
 
@@ -257,21 +281,37 @@ CNCF is part of the Linux Foundation, so...
    * DRY deployment and debugging tools
    <br /><br />
 
-<a target="_blank" href="https://cloudacademy.com/learning-paths/certified-kubernetes-application-developer-ckad-exam-preparation-451/">CloudAcademy.com has a 11-hour "Learning Path"</a> August 27th, 2019 by Logan Rakai. Its lab enables you to skip all the install hassle. includes a Challenge and Cert Prep. off <a target="_blank" href="https://github.com/cloudacademy/intro-to-k8s">https://github.com/cloudacademy/intro-to-k8s</a>
+
+<a name="LFS258"></a>
+
+<strong>LFS258</strong>
+
+https://training.linuxfoundation.org/cm/prep/
+
 
 The most thorough:<br />
 <a target="_blank" href="https://www.udemy.com/course/certified-kubernetes-application-developer/">Udemy.com has a CKAD course with Tests</a> updated 09/2020 with 9.5 hours of video.
 
-<a target="_blank" href="https://acloud.guru/learn/d068441f-75b4-4fe8-a7a6-df9153f24a35">ACloud.guru CKAD course</a> by <a target="_blank" href="https://www.linkedin.com/in/wilb/">William Boyd</a> has 3.5 hours of video organized according to <a href="#ExamDomains">exam domains</a>, 13 hands-on labs, and 3 practice exams based on v1.13.
+<a target="_blank" href="https://acloud.guru/learn/d068441f-75b4-4fe8-a7a6-df9153f24a35">ACloud.guru CKAD course</a> by <a target="_blank" href="https://www.linkedin.com/in/wilb/">William Boyd</a> has 3.5 hours of video organized according to <a href="#CKAD_ExamDomains">exam domains</a>, 13 hands-on labs, and 3 practice exams based on v1.13.
+
 
 Others on CKAD:
 
 * <a name="[1]">[1]</a> <a target="_blank" href="https://www.youtube.com/watch?v=uzxSZqSqiLk&list=PLleCw-vqe90DzAwG6Z_f9GARu-y6HbHXf">Alta3 Research's Playlist</a> includes <a target="_blank" href="https://www.youtube.com/watch?v=5cgpFWVD8ds">VIDEO [11:02] : How to CRUSH the CKAD Exam!</a> Jul 27, 2020 shows sample quetions and suggestions to each of 19 objectives.
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=qA4dNATs5nE">VIDEO: How to pass the Certified Kubernetes Application Developer (CKAD) exam</a> by Santiago Alejandro Agüero 
-* <a target="_blank" href="https://www.youtube.com/watch?v=dIBX8TQJxW8">CKAD Certification Exam Tips</a> by Cloud and Beyond
+* <a target="_blank" href="https://www.youtube.com/watch?v=dIBX8TQJxW8">VIDEO: CKAD Certification Exam Tips</a> by Cloud and Beyond shows commands that threw him off:
 
+   <pre>kubectl set image deployment/nginx nginx=nginx:191</pre>
+
+   To <a target="_blank" href="https://kubernetes.io/tasks/tools/install-kubectl/">set autocomplete with alias to Kubernetes</a>:
+
+   <pre>alias k=kubectl
+   complete -F __start_kubectl k</pre>
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=qA4dNATs5nE">VIDEO: How to pass the Certified Kubernetes Application Developer (CKAD) exam</a> by Santiago Alejandro Agüero 
 * <a target="_blank" href="https://medium.com/@krystiannowaczyk/how-i-passed-the-cka-certified-kubernetes-administrator-exam-f94b11566528">"How I passed the CKA Exam"</a> by Krystian Nowaczyk (who maintains <a target="_blank" href="https://github.com/ramitsurana/awesome-kubernetes">github.com/ramitsurana/awesome-kubernetes</a>) provides a list of resources he used.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=rnemKrveZks">Tips from Tips on preparing for CKAD</a> by Muralidaran Shanmugham
 
 
 Others on CKA:
@@ -358,6 +398,28 @@ EKS makes use of <a target="_blank" href="https://aws.amazon.com/fargate/">AWS F
 "How Qubit built its production ready Kubernetes (k8s) environments"</a>
 
 * https://github.com/kubernetes-sigs/kubespray
+<br /><br />
+
+
+## Add-ons to Kubernetes
+
+* <a target="_blank" href="https://github.com/appscode/">AppsCode</a> provides several utiities for Kubernetes.
+* <a target="_blank" href="https://coreos.com/tectonic/">CoreOS Tectonic</a> multi-cloud is being integrated with RedHat.
+* <a target="_blank" href="https://containership.io/">Containership Kubernetes Engine</a>
+* <a target="_blank" href="">Giant Swarm managed Kubernetes</a>
+* <a target="_blank" href="https://console.bluemix.net/containers-kubernetes/catalog/cluster/">IBM Cloud Kubernetes Service (IKS) works with their IBM Cloud Container Registry. See <a target="_blank" href="https://console.bluemix.net/docs/containers/cs_tutorials_cf.html#cf_tutorial">tutorial</a>
+* <a target="_blank" href="https://www.madcore.ai">Madcore.ai</a>
+
+* Mail.Ru Cloud Solutions Containers
+* <a target="_blank" href="https://www.mirantis.com/software/mcp/">Mirantis' Cloud Platform</a>
+* PKS (Pivotal Kubernetes Service)
+* <a target="_blank" href="https://platform9.com/">Platform 9</a> provide OpenStack with Kubernetes
+* Red Hat <a href="#OpenShift">OpenShift</a> Enterprise platform as a service (PaaS)
+* Rackspace's Kubernetes as a Service
+* Stackpoint
+
+* <a target="_blank" href="https://buddy.works/guides/how-optimize-kubernetes-workflow">Buddy</a>
+   automates Kubernetes workflows.
 
 
 ## Other Orchestration systems managing Docker containers
@@ -371,6 +433,8 @@ EKS makes use of <a target="_blank" href="https://aws.amazon.com/fargate/">AWS F
    * Cloudify
    * Helios
    <br /><br />
+
+## Competing Orchestration systems
 
 * Docker Swarm incorporated <a href="#Rancher">Rancher</a> from Rancher Labs (#RancherK8s).
 
@@ -393,26 +457,6 @@ EKS makes use of <a target="_blank" href="https://aws.amazon.com/fargate/">AWS F
    * <a target="_blank" href="https://www.youtube.com/watch?v=KTN_QBuDplo">What is OpenShift?</a> Aug 1, 2019
    * <a target="_blank" href="https://www.youtube.com/watch?v=cTPFwXsM2po">Kubernetes vs. OpenShift</a>: is not open-source. OpenShift is opinionated about a Docker Registry and CI/CD.
    <br /><br />
-
-## Add-ons to Kubernetes
-
-* <a target="_blank" href="https://github.com/appscode/">AppsCode</a> provides several utiities for Kubernetes.
-* <a target="_blank" href="https://coreos.com/tectonic/">CoreOS Tectonic</a> multi-cloud is being integrated with RedHat.
-* <a target="_blank" href="https://containership.io/">Containership Kubernetes Engine</a>
-* <a target="_blank" href="">Giant Swarm managed Kubernetes</a>
-* <a target="_blank" href="https://console.bluemix.net/containers-kubernetes/catalog/cluster/">IBM Cloud Kubernetes Service (IKS) works with their IBM Cloud Container Registry. See <a target="_blank" href="https://console.bluemix.net/docs/containers/cs_tutorials_cf.html#cf_tutorial">tutorial</a>
-* <a target="_blank" href="https://www.madcore.ai">Madcore.ai</a>
-
-* Mail.Ru Cloud Solutions Containers
-* <a target="_blank" href="https://www.mirantis.com/software/mcp/">Mirantis' Cloud Platform</a>
-* PKS (Pivotal Kubernetes Service)
-* <a target="_blank" href="https://platform9.com/">Platform 9</a> provide OpenStack with Kubernetes
-* Red Hat <a href="#OpenShift">OpenShift</a> Enterprise platform as a service (PaaS)
-* Rackspace's Kubernetes as a Service
-* Stackpoint
-
-* <a target="_blank" href="https://buddy.works/guides/how-optimize-kubernetes-workflow">Buddy</a>
-   automates Kubernetes workflows.
 
 <hr />
 
@@ -634,11 +678,17 @@ BTW What are now called "nodes" were previously called minions. Apparently Googl
 
 ### Testing
 
-End-to-end tests by those who develop Kubernetes are coded in Ginko and Gomega (because Kubernets is written in Go).
+1. Dry-run
+ 
+   <pre><strong>kubectl create -f pod.yaml --dry-run=client</strong></pre>
+
+End-to-end tests by those who develop Kubernetes are coded in 
+Ginko and Gomega (because Kubernets is written in Go).
 
 The Kubtest suite builds, stages, extracts, and brings up the cluster.
 After testing, it dumps logs and tears down the test rig.
 
+zzz
 
 ## Social
 
@@ -1184,11 +1234,10 @@ daemonset "kube-flannel.ds" created
    mkdir /srv/kubernetes
    </pre>
 
-1. Get a utility to generate TLS certificates:
+1. Missing: Get a utility to generate TLS certificates:
 
-   <pre>
-   brew install easyrsa
-   </pre>
+   <pre><strong>brew install easyrsa
+   </strong></pre>
 
 1. Run it:
 
