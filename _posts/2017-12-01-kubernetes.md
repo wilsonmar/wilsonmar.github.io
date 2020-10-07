@@ -242,12 +242,10 @@ CNCF is part of the Linux Foundation, so...
 
 ### Video courses
 
-<a target="_blank" href="https://cloudacademy.com/learning-paths/certified-kubernetes-application-developer-ckad-exam-preparation-451/">CloudAcademy.com has a 11-hour "Learning Path"</a> August 27th, 2019 by Logan Rakai. Its <a target="_blank" href="https://cloudacademy.com/lab/introduction-kubernetes-playground/?context_resource=lp&context_id=451">Playground lab</a> enables you to <strong>skip all the install details</strong> and get to learn kubernetes commands. 
+<a target="_blank" href="https://cloudacademy.com/learning-paths/certified-kubernetes-application-developer-ckad-exam-preparation-451/">CloudAcademy.com has a 11-hour "Learning Path"</a> updated August 27th, 2019 by Logan Rakai. Its <a target="_blank" href="https://cloudacademy.com/lab/introduction-kubernetes-playground/?context_resource=lp&context_id=451">Playground lab</a> enables you to <strong>skip all the install details</strong> and get to learn kubernetes commands which build this:
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"><img alt="k8s-cloudacademy-after" src="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"></a>
 
-<a target="_blank" href=https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png">
-<img alt="k8s-cloudacademy-after" src="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"></a>
-
-It includes a Challenge and Cert Prep. off <a target="_blank" href="https://github.com/cloudacademy/intro-to-k8s">https://github.com/cloudacademy/intro-to-k8s</a>
+The class also includes a Challenge and Cert Prep. off <a target="_blank" href="https://github.com/cloudacademy/intro-to-k8s">https://github.com/cloudacademy/intro-to-k8s</a>
 
 
 <a target="_blank" href="https://app.pluralsight.com/paths/certificate/certified-kubernetes-application-developer-ckad">Pluralsight has a 14-hour series of videos on CKAD</a> by Dan Wahlin (@danwahlin, codewithdan.com). In chron order:
@@ -287,9 +285,16 @@ It includes a Challenge and Cert Prep. off <a target="_blank" href="https://gith
 <strong>LFS258</strong>
 
 https://training.linuxfoundation.org/cm/prep/
+https://training.linuxfoundation.org/cm/prep/?course=LFS258
+Ready-for.sh
+   <pre>wget http://bit.ly/LFready -O ready-for.sh
+   chmod 755 ready-for.sh
+   ./ready-for.sh --help
+   Not for macOS
+   </pre>
 
+Supplemental Materials	LFS258_V2020-09-01_SOLUTIONS.tar.bz2
 
-The most thorough:<br />
 <a target="_blank" href="https://www.udemy.com/course/certified-kubernetes-application-developer/">Udemy.com has a CKAD course with Tests</a> updated 09/2020 with 9.5 hours of video.
 
 <a target="_blank" href="https://acloud.guru/learn/d068441f-75b4-4fe8-a7a6-df9153f24a35">ACloud.guru CKAD course</a> by <a target="_blank" href="https://www.linkedin.com/in/wilb/">William Boyd</a> has 3.5 hours of video organized according to <a href="#CKAD_ExamDomains">exam domains</a>, 13 hands-on labs, and 3 practice exams based on v1.13.
