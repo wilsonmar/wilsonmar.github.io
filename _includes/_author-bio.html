@@ -17,7 +17,6 @@
   {% if author.email %}<a href="mailto:{{ author.email }}" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email me</a>{% endif %}
   {% if author.email %}<a href="https://www.google.com/calendar/embed?src={{ author.email | replace: "@", "%40" }}" class="author-social" target="_blank"><i class="fa fa-fw fa-calendar"></i> Calendar</a>{% endif %}
   {% if author.skype %}<a href="skype:{{ author.skype " }}?call" }}" class="author-social" target="_blank"><i class="fa fa-fw fa-skype"></i> Skype call</a>{% endif %}
-  {% if author.phone %}<a href="tel:+13103207878" class="author-social"><i class="fa fa-fw fa-phone"></i> {{ author.phone }}</a>{% endif %}
 <p></p>
 
   {% if author.linkedin %}<a href="https://www.linkedin.com/in/{{ author.linkedin }}" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>{% endif %}

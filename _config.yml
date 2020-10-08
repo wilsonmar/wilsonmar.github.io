@@ -101,19 +101,14 @@ analytics:
   google:
     tracking_id          : "UA-125784220-1"
 
-# Google AdSense
-google_ad_client         :
-google_ad_slot           :
-
 # Site owner/author:
 owner:
   name: Wilson Mar
   avatar: https://cloud.githubusercontent.com/assets/14143059/19370193/7c75dcd2-9167-11e6-993f-0ba63422714b.jpg
-  bio: "Hello. Hire me!"
+  bio: "Hello!"
   email: wilsonmar@gmail.com
   phone: 310 320-7878
   whatsapp: +13103207878
-#  citrix: MTYzMDs3NDc=-ak2yo1dniypx1ree0398hj3d61raszy7bg5xce1137dfjcqnl0mfp52ygs1fwnom
   disqus-shortname: wilsonmargithubio
   twitter: wilsonmar
   gitter: wilsonmar
