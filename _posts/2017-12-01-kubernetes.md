@@ -207,24 +207,39 @@ CNCF is part of the Linux Foundation, so...
 
 3. Go to <a target="_blank" href="https://training.linuxfoundation.org/linux-courses/system-administration-training/kubernetes-fundamentals">https://training.linuxfoundation.org/linux-courses/system-administration-training/kubernetes-fundamentals</a> and pay for the $300 exam plus $199 more if you want to take their class.
 
+   If you have a Registration code: <a target="_blank" href="https://trainingportal.linuxfoundation.org/redeem">https://trainingportal.linuxfoundation.org/redeem</a>
+
 4. Find dates and times when you're in a quiet private indoor place where no one else (co-workers) are near.
 
-4. Use your Linux Foundation credentials to sign-in at <a target="_blank" href="https://www.examslocal.com/">examslocal.com</a>, and select either or both of two exams from CNCF:
+4. Use your Linux Foundation credentials to create an account at <a target="_blank" href="https://www.examslocal.com/">examslocal.com</a>.
+
+1. <a target="_blank" href="https://chrome.google.com/webstore/detail/innovative-exams-screensh/dkbjhjljfaagngbdhomnlcheiiangfle/related">Install the Chrome extension</a> used to take exams, verified during exam scheduling.
+
+4. Sign-in at <a target="_blank" href="https://www.examslocal.com/">examslocal.com</a>. For "Sponsor and exam", type one of the following:
 
    * Linux Foundation : Certified Kubernetes Application Developer (CKAD) - English
    * Linux Foundation : Certified Kubernetes Administrator (CKA) - English
    <br /><br />
 
+   Click on the list, then Click "Next".
+   Click the buttons in the <a target="_blank" href="https://docs.linuxfoundation.org/tc-docs/certification/lf-candidate-handbook/exam-preparation-checklist">Checklist form</a>
+
+   <img target="_blank" href="https://user-images.githubusercontent.com/300046/95417806-2d98dd00-08f3-11eb-8268-15ac5a7c7f4a.png"><img width="1235" alt="k8s-checklist" src="https://user-images.githubusercontent.com/300046/95417806-2d98dd00-08f3-11eb-8268-15ac5a7c7f4a.png"></a>
+
 5. Click "Or Sign In With" tab and select "Sign in for exams powered by the Linux Foundation".
 6. Log in using your preferred account.
 7. Click "Handbook link" to download it.
 
+   https://trainingportal.linuxfoundation.org/learn/course/certified-kubernetes-application-developer-ckad/exam/exam
+
 8. PROTIP: You'll need a corded (Logitech) webcam (not one built-in).
 
 9. Setup your home computer to take the exam <a target="_blank" href="http://www.examslocal.com/linuxfoundation/"> at home</a> using the <strong>Chrome extension</strong> from "Innovative Exams", which uses your laptop camera and microphone watching you use a virtual Ubuntu machine. 
-9. <a href="#[1]">PROTIP: Create bookmarks in Chrome</a> for reference
+9. <a href="#[1]">PROTIP: Create bookmarks in Chrome</a> for reference to <a target="_blank" href="https://kubernetes.io/docs/home/">ONLY kubernetes.io pages</a>
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/95026201-e2f63700-064c-11eb-9651-0902cc7732df.png"><img width="390" alt="kubernetes-bookmarks" src="https://user-images.githubusercontent.com/300046/95026201-e2f63700-064c-11eb-9651-0902cc7732df.png"></a>
+
+   https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/
 
 1. The exam takes 180 minutes (<strong>3 hours</strong>), so before you start, go to the bathroom. 
 1. You can only have clear liquids in a clear bottle next to you.
@@ -238,9 +253,12 @@ CNCF is part of the Linux Foundation, so...
 
 1. Create an Acclaim account.
 1. If you pass the exam, go to acclaim to get your digital badge to post on social media.
-
+   
+   https://trainingportal.linuxfoundation.org/pages/exam-history
 
 ### Video courses
+
+https://docs.linuxfoundation.org/tc-docs/certification/lf-candidate-handbook
 
 <a target="_blank" href="https://cloudacademy.com/learning-paths/certified-kubernetes-application-developer-ckad-exam-preparation-451/">CloudAcademy.com has a 11-hour "Learning Path"</a> updated August 27th, 2019 by Logan Rakai. Its <a target="_blank" href="https://cloudacademy.com/lab/introduction-kubernetes-playground/?context_resource=lp&context_id=451">Playground lab</a> enables you to <strong>skip all the install details</strong> and get to learn kubernetes commands which build this:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"><img alt="k8s-cloudacademy-after" src="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"></a>
@@ -278,6 +296,10 @@ The class also includes a Challenge and Cert Prep. off <a target="_blank" href="
    * Extending Kubernetes
    * DRY deployment and debugging tools
    <br /><br />
+
+
+On edX.org is a useful preparation: 
+<a target="_blank" href="https://www.edx.org/course/introduction-to-kubernetes"><strong>LFS158x</strong>: Introduction to Kubernetes</a>
 
 
 <a name="LFS258"></a>
