@@ -75,6 +75,8 @@ To compare the domain focus for each exam:
 </td></tr>
 </table>
 
+![k8s-CKAD-logo](https://user-images.githubusercontent.com/300046/95665889-8f369280-0b11-11eb-8198-53843ab26bde.png)
+
 To ensure a comprehensive coverage of topics, look to the <a target="_blank" href="https://www.cncf.io/certification/ckad/">2-hour Kubernetes Application Developer (CKAD)</a> and For $300 ($499 with a <a target="_blank" href="https://training.linuxfoundation.org/training/kubernetes-for-developers/">35-hour video/on-site course LFD259</a>):
 
    1. Course Introduction
@@ -117,17 +119,21 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes
 
 ### CKS Exam Domains
 
-<a target="_blank" href="https://training.linuxfoundation.org/announcements/new-kubernetes-security-specialist-certification-to-help-professionals-demonstrate-expertise-in-securing-container-based-applications/">Coming November, 2020</a>: <a target="_blank" href="https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/">CKS exam</a> is $300 for 2 hours.
+<a target="_blank" href="https://training.linuxfoundation.org/announcements/new-kubernetes-security-specialist-certification-to-help-professionals-demonstrate-expertise-in-securing-container-based-applications/">Coming November, 2020</a> (before the KubeCon North America conference): <a target="_blank" href="https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/">CKS exam</a> is $300 for 2 hours.
 
 It's for those who hold a CKA certification.
 
-* 10% Cluster Setup
-* 15% Cluster Hardening
-* 15% System Hardening
-* 20% Minimize Microservice Vulnerabilities
-* 20% Supply Chain Security
-* 20% Monitoring, Logging, and Runtime Security
+* 10% Cluster Setup - Best practice for configuration to control environment access, rights and platform conformity.
+* 15% Cluster Hardening - to protect K8s API and utilize RBAC
+* 15% System Hardening - to improve the security of OS & Network; restrict access through IAM
+* 20% Minimize Microservice Vulnerabilities - to use various mechanisms to isolate, protect, and control workload.
+* 20% Supply Chain Security - forcontainer-oriented security, trusted resources, optimized container images, CVE scanning
+* 20% Monitoring, Logging, and Runtime Security - to analyse and detect threads
 <br /><br />
+
+https://github.com/ijelliti/CKSS-Certified-Kubernetes-Security-Specialist
+
+https://k21academy.com/docker-kubernetes/certified-kubernetes-security-specialist-cks-step-by-step-activity-guide-hands-on-lab/
 
 Resources:
 
