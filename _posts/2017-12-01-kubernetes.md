@@ -75,7 +75,7 @@ To compare the domain focus for each exam:
 </td></tr>
 </table>
 
-![k8s-CKAD-logo](https://user-images.githubusercontent.com/300046/95665889-8f369280-0b11-11eb-8198-53843ab26bde.png)
+<img alt="k8s-ckad-logo-328x311.jpg" width="328" height="311" src="https://user-images.githubusercontent.com/300046/95666890-b09c7c00-0b1b-11eb-820c-ca44d8c9c0e5.jpg"></a>
 
 To ensure a comprehensive coverage of topics, look to the <a target="_blank" href="https://www.cncf.io/certification/ckad/">2-hour Kubernetes Application Developer (CKAD)</a> and For $300 ($499 with a <a target="_blank" href="https://training.linuxfoundation.org/training/kubernetes-for-developers/">35-hour video/on-site course LFD259</a>):
 
@@ -136,6 +136,9 @@ https://github.com/ijelliti/CKSS-Certified-Kubernetes-Security-Specialist
 https://k21academy.com/docker-kubernetes/certified-kubernetes-security-specialist-cks-step-by-step-activity-guide-hands-on-lab/
 
 Resources:
+
+https://github.com/NodyHub/docker-k8s-resources/tree/master/k8s-pods
+sample Security yaml
 
 <a target="_blank" href="https://www.pluralsight.com/courses/configuring-managing-kubernetes-security">Pluralsight "Configuring and Managing Kubernetes Security</a> by Anthony Nocentino (@nocentio, centinosystems.com)
 
@@ -283,7 +286,12 @@ On ZSH:
    https://trainingportal.linuxfoundation.org/pages/exam-history</a>
 
 
+
+
 <hr />
+
+https://github.com/kubernauts/practical-kubernetes-problems
+
 
 <a name="Helm"></a>
 
@@ -543,10 +551,9 @@ Others on CKA:
    * Cluster APIs: APIService, Binding, CSR, ClusterRole, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
    <br /><br />
 
-
 <a name="yaml-files"></a>
 
-## yaml file Kinds
+### yaml file Kinds
 
 The kinds of yaml files:
 
@@ -575,6 +582,28 @@ The kinds of yaml files:
 
    Label
 
+https://kubernetesbyexample.com/
+pods
+labels
+deployments
+services
+service discovery
+port forward
+health checks
+environment variables
+namespaces
+volumes
+persistent volumes
+secrets
+logging
+jobs
+stateful sets
+init containers
+nodes
+API server
+
+
+https://ravikirans.com/cks-kubernetes-security-exam-study-guide/
 
 <hr />
 
