@@ -59,14 +59,14 @@ Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), wit
    <ul><a target="_blank" href="https://kubernetes.io/">https://kubernetes.io</a><br />
    (<a target="_blank" href="https://twitter.com/kubernetesio/">Twitter: @kubernetesio</a>)</ul>
 
-The website, and the Kubernetes code is maintained by the Linux Foundation, which also owns the registered trademark for Kubernetes (the logo of a sailing ship's wheel).
+The website, and the Kubernetes code is maintained by the Linux Foundation, which also owns the registered trademark for the logo of a sailing ship's wheel.
+
+The word "kubernetes" is the ancient Greek word for people who pilot cargo ships – “helmsman” in English. Thus the nautical references and why Kubernetes experts are called “captain” and why associated products have nautical themes, such as <a target="_blank" href="https://wilsonmar.github.io/helm/">Helm</a>, the package manager for Kubernetes.
 
 <img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
 <a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">This blog</a> and
 <a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
 revealed that the predecessor to Kubernetes was called "the Borg" becuase initial developers were fans of the "Star Trek Next Generation" TV series. The "Borg" <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all  civilizations it encounters into its "collective". The logo for Kubernetes inside the 6 sided hexagons representing each Google service has 7 sides. This is because a beloved character in the TV series, played by the curvacious Jeri Ryan, is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
-
-The word "kubernetes" is a Greek word meaning "captain". Thus the nautical theme.
 
 
 ## Professional certifications in Kubernetes
@@ -500,13 +500,43 @@ Others on CKA:
 
 <hr />
 
+## Glossary - how buzzwords fit together
+
+This diagram is shown at the ending of a small (upcoming) movie logically illustrating how the various glossary terms relate with each other:
+
+<img width="914" alt="k8s-docker" src="https://user-images.githubusercontent.com/300046/95684822-564dfa80-0bb1-11eb-803a-1c742cf0bd07.png">
+
+"Containerized" <a href="#micro-services">microservice apps</a> are <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, <a target="_blank" href="https://quay.io/">Quay.io</a>, or an organization's own binary repository setup using Nexus or Artifactory. 
+
+This tutorial focuses on <strong>Docker</strong> containers as the <strong>Container Runtime Interface (CRI)</strong>. 
+But Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") containers, which provided a CLI for containers as part of CoreOS. It became the first archived project of CNCF after IBM bought Red Hat with its competing "containerd" <a target="_blank" href="https://github.com/kubernetes-sigs/cri-o">cri-o technology.
+
+CRI-O, Docker, ContainerD support Runc. Runc is the low-level tool which does the heavy lifting of spawning a Linux container. (<a target="_blank" href="https://www.youtube.com/watch?v=0uy2V2kYl4U" title="Feb 15, 2019">See CVE-2019-5736</a>).
+
+Kubernetes automates resilience by abstacting the network and storage shared by ephemeral replaceable <strong>pods</strong> which the Kubernetes Controller replicates to increase capacity.
+
+Kubernetes replicates Pods (the same set of containers in each) across several worker <strong>Nodes</strong> (VM or physical machines).
+
+Each set of pods are within a <strong>node</strong>.
+Kubernetes assigns each node with a different <strong>external IP address</strong>.
+
+<strong>Containers</strong> within the same pod share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage Volumes, and other resources.
+Every <strong>container</strong> has its own unique <strong>port number</strong> within its pod's IP.
+
+
+In each pod, <a target="_blank" href="https://wilsonmar.github.io/service-mesh">Service Mesh Istio architecture</a> has an "Envoy proxy" to facilitate the communictions and retry logic from the business logic containers in its pod.
+
+![kubernetes-structure-502x205-12351.png](https://user-images.githubusercontent.com/300046/47167711-5cf45080-d2bc-11e8-8c95-a76b1b92373a.png)
+
+In the illustration below, each pod (each a different color) encapsulates one or more (Docker) container hosts (operating processes, each shown as a circle):
+
+![k8s-container-sets-479x364.jpg](https://user-images.githubusercontent.com/300046/33526550-6c98a980-d800-11e7-9862-ff202492e08b.jpg)
+<!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
+
 
 <a name="Helm"></a>
 
 ## Helm charts
-
-The name Kubernetes is the ancient Greek word for people who pilot cargo ships -- "helmsman" in English. 
-Thus the nautical references and why Kubernetes experts are called "captain" and why associated products have nautical themes, such as "Helm".
 
 <a target="_blank" href="https://www.youtube.com/watch?v=0vpM8E28aXQ&time=9m45s">VIDEO</a>: Helm (<a target="_blank" href="https://helm.sh/">helm.sh</a>) is the default package manager for Kubernets (like pip and NuGet). It was started by a company called Deis in October 2015 out of a hackathon.
 
@@ -537,39 +567,6 @@ Draft uses language packs for Ruby, C# .NET Core 2.2 with Windows packs, authent
 
 <a target="_blank" href="https://www.ibm.com/blogs/bluemix/2018/06/deploy-scalable-web-application-kubernetes-using-helm/">
 IBM: Deploy a scalable web application to Kubernetes using Helm</a>
-
-
-## How? A summary
-
-<img alt="k8s.pptx" src="images/k8s-docker.png">
-
-"Containerized" <a href="#micro-services">microservice apps</a> are <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, <a target="_blank" href="https://quay.io/">Quay.io</a>, or an organization's own binary repository setup using Nexus or Artifactory. 
-
-This tutorial focuses on <strong>Docker</strong> containers as the <strong>Container Runtime Interface (CRI)</strong>. 
-But Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") containers, which provided a CLI for containers as part of CoreOS. It became the first archived project of CNCF after IBM bought Red Hat with its competing "containerd" <a target="_blank" href="https://github.com/kubernetes-sigs/cri-o">cri-o technology.
-
-CRI-O, Docker, ContainerD support Runc. Runc is the low-level tool which does the heavy lifting of spawning a Linux container. (<a target="_blank" href="https://www.youtube.com/watch?v=0uy2V2kYl4U" title="Feb 15, 2019">See CVE-2019-5736</a>).
-
-Kubernetes automates resilience by abstacting the network and storage shared by ephemeral replaceable <strong>pods</strong> which the Kubernetes Controller replicates to increase capacity.
-
-Kubernetes replicates Pods (the same set of containers in each) across several worker <strong>Nodes</strong> (VM or physical machines).
-
-Each set of pods are within a <strong>node</strong>.
-Kubernetes assigns each node with a different <strong>external IP address</strong>.
-
-<strong>Containers</strong> within the same pod share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage Volumes, and other resources.
-Every <strong>container</strong> has its own unique <strong>port number</strong> within its pod's IP.
-
-
-In each pod, <a target="_blank" href="https://wilsonmar.github.io/service-mesh">Service Mesh Istio architecture</a> has an "Envoy proxy" to facilitate the communictions and retry logic from the business logic containers in its pod.
-
-![kubernetes-structure-502x205-12351.png](https://user-images.githubusercontent.com/300046/47167711-5cf45080-d2bc-11e8-8c95-a76b1b92373a.png)
-
-In the illustration below, each pod (each a different color) encapsulates one or more (Docker) container hosts (operating processes, each shown as a circle):
-
-![k8s-container-sets-479x364.jpg](https://user-images.githubusercontent.com/300046/33526550-6c98a980-d800-11e7-9862-ff202492e08b.jpg)
-<!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
-
 
 
 <a name="Namespaces"></a>
