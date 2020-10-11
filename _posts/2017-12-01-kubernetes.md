@@ -36,7 +36,7 @@ Kubernetes is called "container orchestration" software because it automates the
 <br /><br />
 
 Kubernetes applies principles of the <a target="_blank" href="https://www.reactivemanifesto.org/">Reactive Manifesto</a> of 2014:
-<img src="../images/k8s/reactive-traits.svg">
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"><img width="546" alt="reactive-manifesto" src="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"></a>
 
 
 ## Open Sourced and collaborative
