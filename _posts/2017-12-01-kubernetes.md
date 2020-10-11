@@ -39,7 +39,7 @@ Kubernetes applies principles of the <a target="_blank" href="https://www.reacti
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"><img width="546" alt="reactive-manifesto" src="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"></a>
 
 
-## Open Sourced and collaborative
+## Open-Sourced and collaborative
 
 Releases of Kubernetes are listed where Kubernetes open-sourced its source code within GitHub.com:
 
@@ -540,6 +540,8 @@ IBM: Deploy a scalable web application to Kubernetes using Helm</a>
 
 
 ## How? A summary
+
+<img alt="k8s.pptx" src="images/k8s-docker.png">
 
 "Containerized" <a href="#micro-services">microservice apps</a> are <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, <a target="_blank" href="https://quay.io/">Quay.io</a>, or an organization's own binary repository setup using Nexus or Artifactory. 
 
