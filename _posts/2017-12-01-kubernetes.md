@@ -59,6 +59,8 @@ Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), wit
    <ul><a target="_blank" href="https://kubernetes.io/">https://kubernetes.io</a><br />
    (<a target="_blank" href="https://twitter.com/kubernetesio/">Twitter: @kubernetesio</a>)</ul>
 
+The website, and the Kubernetes code is maintained by the Linux Foundation, which also owns the registered trademark for Kubernetes (the logo of a sailing ship's wheel).
+
 <img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
 <a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">This blog</a> and
 <a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
@@ -66,7 +68,6 @@ revealed that the predecessor to Kubernetes was called "the Borg" becuase initia
 
 The word "kubernetes" is a Greek word meaning "captain". Thus the nautical theme.
 
-The logo of a sailing ship's wheel is a registered trademark of the Linux Foundation, which maintains the website <a target="_blank" href="https://kubernetes.io">https://kubernetes.io</a>
 
 ## Professional certifications in Kubernetes
 
@@ -243,7 +244,7 @@ CNCF is part of the Linux Foundation, so...
 
    The playground environment is pre-loaded with Source-to-Image (S2I) builders for Java (Wildfly), Javascript (Node.JS), Perl, PHP, Python and Ruby. Templates are also available for MariaDB, MongoDB, MySQL, PostgreSQL and Redis.
 
-1. See 3 preview exam questions (with answer explained) after signing up at <a target="_blank" href="https://killer.sh/">https://killer.sh</a> (Killer Shell's) CKA/CKAD Simulator</a> provides close replica of the CKAD exam browser terminal with 20 CKAD and 25 CKA questions, at 29.99€ for two sessions. Each session includes 36 hours of access to a cluster environment. They recommend you start the first session when you’re at the beginning of your CKA or CKAD journey. 
+1. See 3 preview exam questions (with answer explained) after signing up at <a target="_blank" href="https://killer.sh/">https://killer.sh</a> (Killer Shell's) CKA/CKAD Simulator</a> provides close replica of the CKAD exam browser terminal with 20 CKAD and 25 CKA questions, at 29.99€ for two sessions (before 10% discount). Each session includes 36 hours of access to a cluster environment. They recommend you start the first session when you’re at the beginning of your CKA or CKAD journey. 
 
 
 ### Day before exam
@@ -295,13 +296,13 @@ source <(kubectl completion bash)
 echo "source <(kubectl completion bash)" >> ~/.bashrc
    </pre>
 
-On ZSH:
+   On ZSH:
 
    <pre>source <(kubectl completion zsh)
    echo "[[ $commands[kubectl] ]] && source <(kubectl completion zsh)" >> ~/.zshrc
     </pre>
 
-   #### vim skills
+   #### vim indentation
 
    PROTIP: vim is the only editor available, so learn to search lines in vim (Esc, /, the text to be searched).
    
@@ -312,16 +313,25 @@ On ZSH:
 
    ### Output file
 
-   To output a file:
+   To output a file to a pod named "pod-x":
 
-   <pre>kubectl logs alta3pod | sudo tee ~/opt/answers/mypod.logs</pre>
-
+   <pre>kubectl logs pod-x | sudo tee ~/opt/answers/mypod.logs</pre>
 
 1. <strong>19 questions</strong> means less than 10 minutes per question. But the recommended strategy is to avoid getting bogged down on long and complex questions. First go through all the questions to answer the easiest ones first. Along the way, mark ones you want to go back to.
 
    NOTE: Although there are 19 objectives, not all objectives may be in every exam.
 
-1. A Notpad is available during the exam.
+1. Paste to the Notpad available during the exam. Save commands there for copy rather than retype.
+
+   <pre><strong>k -n pluto get all -o wide
+   </strong></pre>
+
+1. The above get listings for namespace "pluto".
+ 
+1. Run a busybox web server to test access externally:
+
+   <pre><strong>k run tmp --restart=Never --rm --image=busybox -i -- wget -O- 10.12.2.15
+   </strong></pre>
 
 ### After exam
 
@@ -343,7 +353,7 @@ Its <a target="_blank" href="https://github.com/kubernetes/kubernetes">code page
 
 <a name="Social"></a>
 
-## Social
+## Social media communities
 
    * <a target="_blank" href="https://kubernetes.io/community/">https://kubernetes.io/community</a>
    * <a target="_blank" href="https://slack.k8.io">https://slack.k8.io</a>
@@ -351,16 +361,16 @@ Its <a target="_blank" href="https://github.com/kubernetes/kubernetes">code page
    * <a target="_blank" href="https://slack.k8s.io">https://slack.k8s.io</a>
    * <a target="_blank" href="https://plus.google.com/communities/115402602543170235291">
    Google+ Group: Kubernetes</a>
-   * https://groups.google.com/forum/#!forum/kubernetes-announce for announcements
-   * https://groups.google.com/forum/#!forum/kubernetes-dev for contributors to the Kubernetes project to discuss design and implementation issues.
-   * https://stackoverflow.com/search?q=k8s+or+kubernetes for developers
-   * https://serverfault.com/search?q=k8s+or+kubernetes for sysadmins.
-   * https://groups.google.com/forum/#!forum/kubernetes-sig-scale
-   * https://www.youtube.com/playlist?list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ&disable_polymer=true
-   Kubernetes Google Community video chats
+   * <a target="_blank" href="https://groups.google.com/forum/#!forum/kubernetes-announce for announcements
+   * <a target="_blank" href="https://groups.google.com/forum/#!forum/kubernetes-dev">Contributors to the Kubernetes project to discuss design and implementation issues</a>.
+   * <a target="_blank" href="https://stackoverflow.com/search?q=k8s+or+kubernetes">Stackoverflow for developers</a>
+   * <a target="_blank" href="https://serverfault.com/search?q=k8s+or+kubernetes">for sysadmins</a>
+   * <a target="_blank" href="https://groups.google.com/forum/#!forum/kubernetes-sig-scale">kubernetes-sig-scale</a>
+   * <a target="_blank" href="https://www.youtube.com/playlist?list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ&disable_polymer=true">
+   Kubernetes Google Community video chats</a>
 
-   * https://cloud.google.com/support/docs/issue-trackers to report bugs
-   <br /><br />
+   * <a target="_blank" href="https://cloud.google.com/support/docs/issue-trackers">https://cloud.google.com/support/docs/issue-trackers</a>
+   to report bugs.
 
    * <a target="_blank" href="https://www.KubeCon.io">KubeCon.io</a> Conferences (<a target="_blank" href="https://www.twitter.com/KubeConio/">#KubeConio</a>)
 
@@ -380,20 +390,29 @@ To get explanations in a logic sequence, take courses:
 
 <a name="LFS258"></a>
 
-### Linux Foundation LFS258/
+### Linux Foundation LFS258
 
 The definitive courses are from the same organization that created the exam.
 
-https://training.linuxfoundation.org/cm/prep/
+<a target="_blank" href="https://training.linuxfoundation.org/cm/prep/">
+https://training.linuxfoundation.org/cm/prep</a>
 
-https://training.linuxfoundation.org/cm/prep/?course=LFS258
+<a target="_blank" href="https://training.linuxfoundation.org/cm/prep/?course=LFS258">
+https://training.linuxfoundation.org/cm/prep/?course=LFS258</a>
 
 Ready-for.sh
    <pre>wget http://bit.ly/LFready -O ready-for.sh
    chmod 755 ready-for.sh
    ./ready-for.sh --help
-   Not for macOS
+   # Not for macOS
    </pre>
+
+### EdX
+
+edX.org publishes some courses from Linux Academy.
+
+<a target="_blank" href="https://www.edx.org/course/introduction-to-kubernetes"><strong>LFS158x</strong>: Introduction to Kubernetes</a>
+
 
 
 ### CloudAcademy
@@ -423,7 +442,8 @@ The class also includes a Challenge and Cert Prep. off <a target="_blank" href="
 
 ### LinkedIn
 
-<a target="_blank" href="https://www.linkedin.com/learning/kubernetes-essential-training-application-development/kubernetes-for-developers?u=26886050">LinkedIn learning</a> by Matt Turner (from England) is hands-on using minikube 1.9.2 and kubernetes-cli 1.18.2 on a Mac:
+<a target="_blank" href="https://www.linkedin.com/learning/kubernetes-essential-training-application-development/kubernetes-for-developers?u=26886050">"Kubernetes Essential Training: Application Development"</a> 
+by Matt Turner (from England) is hands-on using minikube 1.9.2 and kubernetes-cli 1.18.2 on a Mac:
 
    * Running a local cluster
    * Running containers
@@ -439,11 +459,7 @@ The class also includes a Challenge and Cert Prep. off <a target="_blank" href="
    * DRY deployment and debugging tools
    <br /><br />
 
-
-### EdX
-
-On edX.org is a useful preparation: 
-<a target="_blank" href="https://www.edx.org/course/introduction-to-kubernetes"><strong>LFS158x</strong>: Introduction to Kubernetes</a>
+<a target="_blank" href="https://www.linkedin.com/learning/learning-kubernetes/welcome?u=26886050">Learning Kubernetes</a> (on a Mac) by Karthik Gaekwad (<a target="_blank" href="https://www.linkedin.com/in/kgaekwad/">when he was at Oracle</a>)
 
 
 ### Udemy
