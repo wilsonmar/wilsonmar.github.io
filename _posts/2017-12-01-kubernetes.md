@@ -21,37 +21,46 @@ comments: true
 
 ## Why Kubernetes?
 
+With Kubernetes, <strong>dev teams</strong> can take complete charge of production operations in cloud environments -- deploy both application code and all the environment settings, at their own cadence, without ceremonies and wait time to coordinate releases.
+
 Kubernetes is called "container orchestration" software because it automates the deployment, scaling and management of containerized applications<a target="_blank" href="https://en.wikipedia.org/wiki/Kubernetes">[Wikipedia]</a>. 
 
-Kubernetes enables the smashing of traditional barriers between dev and Ops teams who had complete charge of production operations. With Kubernetes, once Ops setup a cluster, the dev teams can deploy both application code and all the environment settings, at their own cadence, without ceremonies and wait time to coordinate releases.
-
+* Authentication -> Authorization -> Admission Control
+* Replication of components
+* Service discovery
+* Load balancing
+* Logging across components
+* Rolling updates
+* Monitoring and health checking
+* Auto-scaling
 
 ## Open Sourced and collaborative
 
-Kubernetes was created inside Google (using the [Golang](/Golang/) programming language).
+The current production release candidate ("rc") is listed in a page where Kubernetes open-sourced its source code within GitHub:
 
+   <ul><a target="_blank" href="https://github.com/kubernetes/kubernetes/releases">https://github.com/kubernetes/kubernetes/releases</a></ul>
+
+Kubernetes was created inside Google (using the [Golang](/Golang/) programming language).
 Kubernetes was used inside Google for over a decade before being open-sourced in 2014 to the Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>) collective.
 
-<img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
-<a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">This blog</a> and
-<a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
-revealed that the predecessor to Kubernetes was called "the Borg" becuase initial developers were fans of Star Trek Next Generation. In the TV series, the Borg <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all  civilizations it encounters into its "collective". The logo for Kubernetes inside the 6 sided hexagons representing each Google service has 7 sides. This is because a beloved character in the TV series, played by the curvacious Jeri Ryan, is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
-
-Its Google heritage means Kubernetes is about scaling for a lot of traffic
-with redundancies to achieve high availability (HA).
-
-Kubernetes is often abbreviated as <strong>k8s</strong>, with 8 replacing the number of characters between k and s. Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to <a target="_blank" href="https://kubernetes.io/">https://kubernetes.io</a>, the home page for the software.
-
-Although the word "kubernetes" is a Greek word meaning "captain", it has become a registered trademark of the Linux Foundation, which maintains the website <a target="_blank" href="https://kubernetes.io">https://kubernetes.io</a> and
-   source code at <a target="_blank" href="https://github.com/kubernetes/kubernetes">
-   https://github.com/kubernetes/kubernetes</a>
-
-   * v1.0 was committed on July 2015 within GitHub, and released on July 21, 2015
+   * v1.0 was committed on July 2015 within GitHub, and released on July 21, <strong>2015</strong>
    * v1.6 was led by a CoreOS developer
    * v1.7 was led by a Googler
    * v1.8 is led by <a target="_blank" href="https://www.linkedin.com/in/jaicesinger/">Jaice Singer DuMars</a> (<a target="_blank" href="https://twitter.com/jaicesd">@jaicesd</a>) after Microsoft joined the CNCF July 2017 <a target="_blank" href="https://twitter.com/jaydumars?lang=en">VIDEO</a>
    <br /><br />
 
+Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), with 8 replacing the number of characters between k and s. Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to the home page for the software:
+
+   <ul><a target="_blank" href="https://kubernetes.io/">https://kubernetes.io</a></ul>
+
+<img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
+<a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">This blog</a> and
+<a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
+revealed that the predecessor to Kubernetes was called "the Borg" becuase initial developers were fans of the "Star Trek Next Generation" TV series. The "Borg" <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all  civilizations it encounters into its "collective". The logo for Kubernetes inside the 6 sided hexagons representing each Google service has 7 sides. This is because a beloved character in the TV series, played by the curvacious Jeri Ryan, is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
+
+The word "kubernetes" is a Greek word meaning "captain". Thus the nautical theme.
+
+The logo of a sailing ship's wheel is a registered trademark of the Linux Foundation, which maintains the website <a target="_blank" href="https://kubernetes.io">https://kubernetes.io</a>
 
 ## Professional certifications in Kubernetes
 
@@ -75,9 +84,9 @@ To compare the domain focus for each exam:
 </td></tr>
 </table>
 
-<img alt="k8s-ckad-logo-328x311.jpg" width="328" height="311" src="https://user-images.githubusercontent.com/300046/95666890-b09c7c00-0b1b-11eb-820c-ca44d8c9c0e5.jpg"></a>
+<img alt="k8s-ckad-logo-328x311.jpg" width="328" height="311" src="https://user-images.githubusercontent.com/300046/95666890-b09c7c00-0b1b-11eb-820c-ca44d8c9c0e5.jpg">
 
-To ensure a comprehensive coverage of topics, look to the <a target="_blank" href="https://www.cncf.io/certification/ckad/">2-hour Kubernetes Application Developer (CKAD)</a> and For $300 ($499 with a <a target="_blank" href="https://training.linuxfoundation.org/training/kubernetes-for-developers/">35-hour video/on-site course LFD259</a>):
+The <a target="_blank" href="https://training.linuxfoundation.org/training/kubernetes-for-developers/">35-hour video/on-site course LFD259</a> $199 upgrade offered with the <a target="_blank" href="https://www.cncf.io/certification/ckad/">CKAD exam sign-up</a> covers this series of <strong>topics</strong>:
 
    1. Course Introduction
    2. Kubernetes Architecture
@@ -88,6 +97,8 @@ To ensure a comprehensive coverage of topics, look to the <a target="_blank" hre
    7. Exposing Applications
    8. Troubleshooting
    <br /><br />
+
+LFD459 is the 3-day on-site equivalent course code.
 
 ### CKA Exam Domains
 
@@ -116,6 +127,11 @@ provides sample exam questions.
 
 CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes 
 (e.g., v1.19 as of 1 Sep 2020).
+
+### Certificed Kubernauts.io Practioner (CKP)
+
+https://trainings.kubernauts.sh/ describes a certification offered independently by 
+https://kubernauts.de/en/home/ (<a target="_blank" href="https://twitter.com/kubernauts/">@kubernauts</a> in Germany) which also provides free <strong>namespaces</strong> (using Rancher) at <a target="_blank" href="https://kubernauts.sh/">https://kubernauts.sh</a>
 
 ### CKS Exam Domains
 
@@ -286,11 +302,14 @@ On ZSH:
    https://trainingportal.linuxfoundation.org/pages/exam-history</a>
 
 
-
-
 <hr />
 
-https://github.com/kubernauts/practical-kubernetes-problems
+Its <a target="_blank" href="https://github.com/kubernetes/kubernetes">code page</a> has a summary description of:
+
+   <ul>"Production-Grade Container Scheduling and Management"</ul>
+
+<a target="_blank" href="https://github.com/kubernauts/practical-kubernetes-problems">
+https://github.com/kubernauts/practical-kubernetes-problems</a>
 
 
 <a name="Helm"></a>
@@ -669,6 +688,8 @@ From the https://kubernetes.io/docs/user-guide/kubectl-cheatsheet/
 
 
 ### Amazon AWS ECS & EKS
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/95669605-ccb21480-0b3f-11eb-956b-a5a09c90f3ac.png"><img alt="k8s-aws-kubernauts" src="https://user-images.githubusercontent.com/300046/95669605-ccb21480-0b3f-11eb-956b-a5a09c90f3ac.png"></a>
 
 <a target="_blank" href="https://aws.amazon.com/ecs/">
 Amazon ECS (Elastic Container Service for Kubernetes)</a> is "supercharged" by the<br /><a target="_blank" href="https://aws.amazon.com/eks/">Amazon EKS (Elastic Kubernetes Service)</a>, which provides deeper integration into AWS infrastructure (than ECS) for better reliability (at higher cost). Amazon said it runs upstream K8s, not a fork (such as AWS ELasticSearch), so it should be portable to other clouds and on-premises.
