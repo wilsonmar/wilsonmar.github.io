@@ -33,10 +33,15 @@ Kubernetes is called "container orchestration" software because it automates the
 * Rolling updates
 * Monitoring and health checking
 * Auto-scaling
+<br /><br />
+
+Kubernetes applies principles of the <a target="_blank" href="https://www.reactivemanifesto.org/">Reactive Manifesto</a> of 2014:
+<img src="../images/k8s/reactive-traits.svg">
+
 
 ## Open Sourced and collaborative
 
-The current production release candidate ("rc") is listed in a page where Kubernetes open-sourced its source code within GitHub:
+Releases of Kubernetes are listed where Kubernetes open-sourced its source code within GitHub.com:
 
    <ul><a target="_blank" href="https://github.com/kubernetes/kubernetes/releases">https://github.com/kubernetes/kubernetes/releases</a></ul>
 
@@ -51,7 +56,8 @@ Kubernetes was used inside Google for over a decade before being open-sourced in
 
 Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), with 8 replacing the number of characters between k and s. Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to the home page for the software:
 
-   <ul><a target="_blank" href="https://kubernetes.io/">https://kubernetes.io</a></ul>
+   <ul><a target="_blank" href="https://kubernetes.io/">https://kubernetes.io</a><br />
+   (<a target="_blank" href="https://twitter.com/kubernetesio/">Twitter: @kubernetesio</a>)</ul>
 
 <img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
 <a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">This blog</a> and
@@ -66,7 +72,7 @@ The logo of a sailing ship's wheel is a registered trademark of the Linux Founda
 
 Instead of multiple choice questions, K8s exam consists of <strong>task-based practical responses while SSH'd into live clusters.</strong> Each exam includes one free fail retake.
 
-To compare the domain focus for each exam:
+There is support for other languages other than English.
 
 <a name="CKAD_ExamDomains"></a>
 
@@ -100,6 +106,13 @@ The <a target="_blank" href="https://training.linuxfoundation.org/training/kuber
 
 LFD459 is the 3-day on-site equivalent course code.
 
+<a target="_blank" href="https://github.com/dgkanatsios/CKAD-exercises">
+https://github.com/dgkanatsios/CKAD-exercises</a> 
+provides sample exam questions.
+
+CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes 
+(e.g., v1.19 as of 1 Sep 2020).
+
 ### CKA Exam Domains
 
 <a target="_blank" href="https://www.cncf.io/certification/expert/">3-hour Certified Kubernetes Administrator (CKA)</a> exams CNCF first announced November 8, 2016. 
@@ -121,17 +134,12 @@ LFD459 is the 3-day on-site equivalent course code.
 
 Sample questions (exercises):
 
-PROTIP: <a target="_blank" href="https://github.com/dgkanatsios/CKAD-exercises">
-https://github.com/dgkanatsios/CKAD-exercises</a> 
-provides sample exam questions.
-
-CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes 
-(e.g., v1.19 as of 1 Sep 2020).
+https://github.com/walidshaari/Kubernetes-Certified-Administrator
 
 ### Certificed Kubernauts.io Practioner (CKP)
 
 https://trainings.kubernauts.sh/ describes a certification offered independently by 
-https://kubernauts.de/en/home/ (<a target="_blank" href="https://twitter.com/kubernauts/">@kubernauts</a> in Germany) which also provides free <strong>namespaces</strong> (using Rancher) at <a target="_blank" href="https://kubernauts.sh/">https://kubernauts.sh</a>
+https://kubernauts.de/en/home/ (<a target="_blank" href="https://twitter.com/kubernauts/">@kubernauts</a> in Germany) which also provides free <strong>namespaces</strong> (using <a href="#Rancher">Rancher</a>) at <a target="_blank" href="https://kubernauts.sh/">https://kubernauts.sh</a>
 
 ### CKS Exam Domains
 
@@ -160,7 +168,7 @@ sample Security yaml
 
 https://ravikirans.com/cks-kubernetes-security-exam-study-guide/
 
-* <a target="_blank" href="https://github.com/walidshaari/Certified-Kubernetes-Security-Specialist">https://github.com/walidshaari/Certified-Kubernetes-Security-Specialist</a> by <a target="_blank" href="https://walidshaari.blogspot.com">Walid Shaari</a>
+* <a target="_blank" href="https://github.com/walidshaari/Certified-Kubernetes-Security-Specialist">https://github.com/walidshaari/Certified-Kubernetes-Security-Specialist</a> by <a target="_blank" href="https://walidshaari.blogspot.com">Walid Shaari</a> (<a target="_blank" href="https://medium.com/@walidshaari">author in Medium</a>).
 
 <hr />
 
@@ -168,23 +176,7 @@ https://ravikirans.com/cks-kubernetes-security-exam-study-guide/
 
    PROTIP: The Linux Foundation exam focuses only on "pure" Kubernetes commands and excludes add-ons such as OpenStack.
 
-### vim
-
- PROTIP: vim is the only editor available, so learn to search lines in vim (Esc, /, the text to be searched).
-   
-   <pre>:set shiftwidth=2</pre>
-
-   To indent several lines with one command: Esc Shift+V for Visual Line mode, highlight lines, 
-   Shift . to shift left, Shift , to shift right.
-
-### Output file
-
-   To output a file:
-
-   <pre>kubectl logs alta3pod | sudo tee ~/opt/answers/mypod.logs</pre>
-
-
-### Signing up
+### Sign up for exam
 
 CNCF is part of the Linux Foundation, so... 
 1. Get an account (Linux Foundation credentials ) at <a target="_blank" href="https://identity.linuxfoundation.org/">https://identity.linuxfoundation.org</a>. https://myprofile.linuxfoundation.org/
@@ -228,6 +220,8 @@ CNCF is part of the Linux Foundation, so...
 
 9. Setup your home computer to take the exam <a target="_blank" href="http://www.examslocal.com/linuxfoundation/"> at home</a> using the <strong>Chrome extension</strong> from "Innovative Exams", which uses your laptop camera and microphone watching you use a virtual Ubuntu machine.
 
+### Study 
+
 9. <a href="#[1]">PROTIP: Create bookmarks in Chrome</a> for <a target="_blank" href="   https://github.com/walidshaari/Kubernetes-Certified-Administrator/blob/main/README-ckad.md
 ">links</a> to ONLY <a target="_blank" href="https://kubernetes.io/docs/home/">kubernetes.io pages</a>
 
@@ -242,6 +236,14 @@ CNCF is part of the Linux Foundation, so...
    https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks
 
    https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad
+
+   <a target="_blank" href="https://github.com/kubernauts/practical-kubernetes-problems">https://github.com/kubernauts/practical-kubernetes-problems</a> provides yaml files
+
+8. Use kubectl commands in a Kubernetes cluster 60 minutes at a time within <a target="_blank" href="https://learn.openshift.com/playgrounds/">Red Hat's OpenShift Playground</a> powered by KataKoda. Use the "oc" CLI program.
+
+   The playground environment is pre-loaded with Source-to-Image (S2I) builders for Java (Wildfly), Javascript (Node.JS), Perl, PHP, Python and Ruby. Templates are also available for MariaDB, MongoDB, MySQL, PostgreSQL and Redis.
+
+1. See 3 preview exam questions (with answer explained) after signing up at <a target="_blank" href="https://killer.sh/">https://killer.sh</a> (Killer Shell's) CKA/CKAD Simulator</a> provides close replica of the CKAD exam browser terminal with 20 CKAD and 25 CKA questions, at 29.99€ for two sessions. Each session includes 36 hours of access to a cluster environment. They recommend you start the first session when you’re at the beginning of your CKA or CKAD journey. 
 
 
 ### Day before exam
@@ -266,11 +268,25 @@ CNCF is part of the Linux Foundation, so...
 
 ### Start of exam
 
-1. Save a few seconds typing: Setup a shorthand alias so you can type "k" instead of kubectl:
+1. Save a few seconds typing: 
+
+   <a target="_blank" href="https://codeburst.io/resource-creation-tips-for-the-kubernetes-cka-ckd-certification-exam-740b70a13f97">
+   Resource Creation Tips for the Kubernetes CKA / CKD Certification Exam</a>
+   by John Tucker
+
+   #### Aliases
+
+1. Setup a shorthand alias so you can type "k" instead of kubectl:
 
    <pre>alias k=kubectl
 complete -F __start_kubectl k
    </pre>
+
+1. Setup alias:
+
+   <pre>export do="--dry-run=client -o yaml"</pre>
+
+   #### Bash Autocompletion
 
 1. Save a few seconds by setting up autocompletion. On bash:
 
@@ -285,7 +301,21 @@ On ZSH:
    echo "[[ $commands[kubectl] ]] && source <(kubectl completion zsh)" >> ~/.zshrc
     </pre>
 
-1. Setup Prometheus?
+   #### vim skills
+
+   PROTIP: vim is the only editor available, so learn to search lines in vim (Esc, /, the text to be searched).
+   
+   <pre>:set shiftwidth=2</pre>
+
+   To indent several lines with one command: Esc Shift+V for Visual Line mode, highlight lines, 
+   Shift . to shift left, Shift , to shift right.
+
+   ### Output file
+
+   To output a file:
+
+   <pre>kubectl logs alta3pod | sudo tee ~/opt/answers/mypod.logs</pre>
+
 
 1. <strong>19 questions</strong> means less than 10 minutes per question. But the recommended strategy is to avoid getting bogged down on long and complex questions. First go through all the questions to answer the easiest ones first. Along the way, mark ones you want to go back to.
 
@@ -308,153 +338,51 @@ Its <a target="_blank" href="https://github.com/kubernetes/kubernetes">code page
 
    <ul>"Production-Grade Container Scheduling and Management"</ul>
 
-<a target="_blank" href="https://github.com/kubernauts/practical-kubernetes-problems">
-https://github.com/kubernauts/practical-kubernetes-problems</a>
-
-
-<a name="Helm"></a>
-
-## Helm charts
-
-The name Kubernetes is the ancient Greek word for people who pilot cargo ships -- "helmsman" in English. 
-Thus the nautical references and why Kubernetes experts are called "captain" and why associated products have nautical themes, such as "Helm".
-
-<a target="_blank" href="https://www.youtube.com/watch?v=0vpM8E28aXQ&time=9m45s">VIDEO</a>: Helm (<a target="_blank" href="https://helm.sh/">helm.sh</a>) is the default package manager for Kubernets (like pip and NuGet). It was started by a company called Deis in October 2015 out of a hackathon.
-
-<a targeet="_blank" href="https://www.youtube.com/watch?v=4ht22ReBjno">
-The Illustrated Children's Guide to Kubernetes</a>
-by Deis, Inc.
-
-Helm Charts are a collection of <strong>templates</strong> that can be pulled from a version-controlled Helm repo to define, install, and upgrade complex Kubernetes applications, thus reducing copy-and-paste (and room for error in repetition).
-
-A Helm chart can be used to <a target="_blank" href="https://skillsmatter.com/skillscasts/10813-faas-and-furious-0-to-serverless-in-60-seconds-anywhere">
-quickly create an OpenFaaS (Serverless) cluster</a>:
-
-<ul>
-   <pre>git clone https://github.com/openfaas/faas-netes && cd faas-netes
-   kubectl apply -f ./namespaces.yml 
-   kubectl apply -f ./yaml_armhf
-   </pre>
-</ul>
-
-Microsoft created <a target="_blank" href="https://github.com/Azure/draft">Draft</a> (like Scaffold) to simplify getting started in Azure to <a target="_blank" href="https://github.com/PatrickLang/fabrikamfiber/tree/helm-2019-mssql-linux">lift-and-shift</a> Windows ASP.NET apps. It has two commands:
-
-<ul><pre><strong>
-   draft create  # helm chart and Dockerfile
-   draft up      # deploy</strong></pre>
-</ul>
-
-Draft uses language packs for Ruby, C# .NET Core 2.2 with Windows packs, authenticated to Azure Container Registry (ACR) and AKS.
-
-<a target="_blank" href="https://www.ibm.com/blogs/bluemix/2018/06/deploy-scalable-web-application-kubernetes-using-helm/">
-IBM: Deploy a scalable web application to Kubernetes using Helm</a>
-
-
-## How? A summary
-
-"Containerized" <a href="#micro-services">microservice apps</a> are <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, <a target="_blank" href="https://quay.io/">Quay.io</a>, or an organization's own binary repository setup using Nexus or Artifactory. 
-
-This tutorial focuses on <strong>Docker</strong> containers as the <strong>Container Runtime Interface (CRI)</strong>. 
-But Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") containers, which provided a CLI for containers as part of CoreOS. It became the first archived project of CNCF after IBM bought Red Hat with its competing "containerd" <a target="_blank" href="https://github.com/kubernetes-sigs/cri-o">cri-o technology.
-
-Both cri-o and Docker support runc.
-
-Kubernetes automates resilience by abstacting the network and storage shared by ephemeral replaceable <strong>pods</strong> which the Kubernetes Controller replicates to increase capacity.
-
-Kubernetes replicates Pods (the same set of containers in each) across several worker <strong>Nodes</strong> (VM or physical machines).
-
-Each set of pods are within a <strong>node</strong>.
-Kubernetes assigns each node with a different <strong>external IP address</strong>.
-
-<strong>Containers</strong> within the same pod share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage Volumes, and other resources.
-Every <strong>container</strong> has its own unique <strong>port number</strong> within its pod's IP.
-
-
-In each pod, <a target="_blank" href="https://wilsonmar.github.io/service-mesh">Service Mesh Istio architecture</a> has an "Envoy proxy" to facilitate the communictions and retry logic from the business logic containers in its pod.
-
-![kubernetes-structure-502x205-12351.png](https://user-images.githubusercontent.com/300046/47167711-5cf45080-d2bc-11e8-8c95-a76b1b92373a.png)
-
-In the illustration below, each pod (each a different color) encapsulates one or more (Docker) container hosts (operating processes, each shown as a circle):
-
-![k8s-container-sets-479x364.jpg](https://user-images.githubusercontent.com/300046/33526550-6c98a980-d800-11e7-9862-ff202492e08b.jpg)
-<!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
-
-
-
-<a name="Namespaces"></a>
-
-Nodes are managed together as a <strong>namespace</strong>.
-Kubernetes can manage several namespaces running in each <strong>cluster</strong>. 
-
-   "The primary grouping concept in Kubernetes is the namespace. Namespaces are also a way to divide cluster resources between multiple uses. That being said, there is no security between namespaces in Kubernetes; if you are a "user" in a Kubernetes cluster, you can see _all_ the different namespaces and the resources defined in them." -- from the book: OpenShift for Developers, A Guide for Impatient Beginners by Grant Shipley and Graham Dumpleton.
-
-### OpenShift project wall namespaces
-
-   <strong>Projects</strong> in OpenShift provide "walls" between namespaces, ensuring that users or applications can only see and access what they are allowed to. OpenShift projects wrap a namespace by adding security annotations which control access to that namespace. Access is controlled through an authentication and authorization model based on users and groups. 
-
-   <a target="_blank" href="https://docs.openshift.com/enterprise/3.2/architecture/core_concepts/routes.html">
-   This diagram</a> illustrates what OpenShift adds: 
-   ![kubernetes-openshift-502x375-107638](https://user-images.githubusercontent.com/300046/42333404-e3f5953a-8037-11e8-9691-0172a8a96388.jpg)
-
-   OpenShift's Router is instead a HAProxy container (taking the place of NGINX).
-
-   ![k8s-openshift-projects-461x277-64498](https://user-images.githubusercontent.com/300046/42337120-f421563c-8042-11e8-9d2b-d19615b4da0c.jpg)
-
-#### OpenShift routes to services
-
-Services can be referenced by external clients using a host name such as "hello-svc.mycorp.com" by using
-OpenShift Enterprise, which uses "routes" that defines the rules the HAProxy applies to incoming connections.
-
-Routes are deployed by an OpenShift Enterprise administrator as <strong>routers</strong> to nodes in an OpenShift Enterprise cluster. To clarify, the default Router in Openshift is an actual HAProxy container providing reverse proxy capabilities.
-
-
-
-### Cluster networking
-
-   A private ClusterIP is accessible by nodes only within the same cluster.
-
-   Services listen on the same <strong>nodePort</strong> (TCP 30000 - 32767 defined by `--service-node-port-range`).
-
-<a target="_blank" title="from Yongbok Kim (who writes in Korean)" href="https://user-images.githubusercontent.com/300046/33525757-6fcd2624-d7f3-11e7-9745-79ce5f9600e9.jpg">
-<img alt="k8s-arch-ruo91-797x451-104467" src="https://user-images.githubusercontent.com/300046/33525757-6fcd2624-d7f3-11e7-9745-79ce5f9600e9.jpg"></a>
-
-The diagram above is referenced throughout this tutorial, particularly in the <a href="#Details">Details section below</a>. It is by Yongbok Kim who presents <a target="_blank" href="https://translate.google.com/translate?hl=en&sl=ko&tl=en&u=http://www.yongbok.net/blog/google-kubernetes-container-cluster-manager/">
-animations on his website</a>.
-
-   Communications with outside service network callers occur through a single Virtual IP address (VIP) going through a <strong>kube-proxy</strong> pod within each node.
-   The Kube-proxy load balances traffic to <strong>deployments</strong>, which are load-balanced sets of pods within each node. Kube-proxy IPVS Mode is native to the Linux kernel.
-   CBR0 (Custom Bridge zero) forwards the eth0, which rewrites the destination IP to a pod behind the Service<a target="_blank" href="https://acloud.guru/course/kubernetes-deep-dive/learn/2ddbcafb-9f4f-ed6c-3cec-912cb68a7944/36910c67-4dfd-3343-648a-3a266aa9f667/watch?backUrl=~2Fcourses&backUrl=~2Fcourses&backUrl=~2Fcourses,~2Fcourses">3:18 into chapter 6 Big Picture</a>
-
-Kubernetes manages the instantiating, starting, stopping, updating, and deleting of a <strong>pre-defined number of pod replicas</strong> based on declarations in <strong>*.yaml</strong> files or interactive commands.
-
-The number of pods replicated is based on <strong>deployment</strong> yaml files. 
-Service yaml files specify what ports are used in deployments.
-
-In 2019 Kubernetes added <strong>auto-scaling</strong> based on metrics API measurement of demand.
-
-<a target="_blank" href="https://linuxacademy.com/cp/guides/download/refsheets/guides/refsheets/linuxacademy-kubernetesadmin-archdiagrams-1_1516737832.pdf">This Architectural Diagram pdf</a>:
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/51218893-5a75b700-18fc-11e9-89af-7ba9ca3000c5.jpg"><img alt="
-k8s-linuxacademy-arch-912x415-32433.jpg" src="https://user-images.githubusercontent.com/300046/51218893-5a75b700-18fc-11e9-89af-7ba9ca3000c5.jpg"></a>
-is described in the <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/155">
-Linux Academy's CKA course</a> of 5:34:43 hours of videos by Chad Miller (<a target="_blank" href="https://twitter.com/OpenChad/">@OpenChad</a>). 
-
-* <a target="_blank" href="https://training.linuxfoundation.org/training/kubernetes-fundamentals/">Kubernetes Fundamentals</a> $299 video course offered on EdX.com from LinuxFoundation.
-
-<a target="_blank" href="../img/k8s/k8s-arch-x-team.webp"><img alt="Kubernetes Architecture" width="793" height="573" src="../img/k8s/k8s-arch-x-team.webp"></a>
-Source: <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes-architecture/">X-Team</a>
 
 <hr />
 
+<a name="Social"></a>
+
+## Social
+
+   * <a target="_blank" href="https://kubernetes.io/community/">https://kubernetes.io/community</a>
+   * <a target="_blank" href="https://slack.k8.io">https://slack.k8.io</a>
+   * <a target="_blank" href="https://www.meetup.com/kubernauts/">https://www.meetup.com/kubernauts</a>
+   * <a target="_blank" href="https://slack.k8s.io">https://slack.k8s.io</a>
+   * <a target="_blank" href="https://plus.google.com/communities/115402602543170235291">
+   Google+ Group: Kubernetes</a>
+   * https://groups.google.com/forum/#!forum/kubernetes-announce for announcements
+   * https://groups.google.com/forum/#!forum/kubernetes-dev for contributors to the Kubernetes project to discuss design and implementation issues.
+   * https://stackoverflow.com/search?q=k8s+or+kubernetes for developers
+   * https://serverfault.com/search?q=k8s+or+kubernetes for sysadmins.
+   * https://groups.google.com/forum/#!forum/kubernetes-sig-scale
+   * https://www.youtube.com/playlist?list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ&disable_polymer=true
+   Kubernetes Google Community video chats
+
+   * https://cloud.google.com/support/docs/issue-trackers to report bugs
+   <br /><br />
+
+   * <a target="_blank" href="https://www.KubeCon.io">KubeCon.io</a> Conferences (<a target="_blank" href="https://www.twitter.com/KubeConio/">#KubeConio</a>)
+
+
+## Latest videos about K8s
+
+For the most up-to-date information by practioners:
+
+* <a target="_blank" href="https://www.youtube.com/playlist?list=PLj6h78yzYM2O1wlsM-Ma-RYhfT5LKq0XC">YouTube Videos from Kubcon + CloudNativeCon Europe 2020</a>
+
+* <a target="_blank" href="https://mauilion.dev/about/">weekly video chat</a> on Heptio's YouTube channel of Duffie Cooley (<a target="_blank" href="https://twitter.com/mauilion">@mauilion</a>).
+
+
 ## Video courses
 
+To get explanations in a logic sequence, take courses:
 
 <a name="LFS258"></a>
 
-### Linux Foundation
+### Linux Foundation LFS258/
 
-The definitive courses are from the same organization 
-
-<strong>LFS258</strong>
+The definitive courses are from the same organization that created the exam.
 
 https://training.linuxfoundation.org/cm/prep/
 
@@ -557,6 +485,139 @@ Others on CKA:
 <hr />
 
 
+<a name="Helm"></a>
+
+## Helm charts
+
+The name Kubernetes is the ancient Greek word for people who pilot cargo ships -- "helmsman" in English. 
+Thus the nautical references and why Kubernetes experts are called "captain" and why associated products have nautical themes, such as "Helm".
+
+<a target="_blank" href="https://www.youtube.com/watch?v=0vpM8E28aXQ&time=9m45s">VIDEO</a>: Helm (<a target="_blank" href="https://helm.sh/">helm.sh</a>) is the default package manager for Kubernets (like pip and NuGet). It was started by a company called Deis in October 2015 out of a hackathon.
+
+<a targeet="_blank" href="https://www.youtube.com/watch?v=4ht22ReBjno">
+The Illustrated Children's Guide to Kubernetes</a>
+by Deis, Inc.
+
+Helm Charts are a collection of <strong>templates</strong> that can be pulled from a version-controlled Helm repo to define, install, and upgrade complex Kubernetes applications, thus reducing copy-and-paste (and room for error in repetition).
+
+A Helm chart can be used to <a target="_blank" href="https://skillsmatter.com/skillscasts/10813-faas-and-furious-0-to-serverless-in-60-seconds-anywhere">
+quickly create an OpenFaaS (Serverless) cluster</a>:
+
+<ul>
+   <pre>git clone https://github.com/openfaas/faas-netes && cd faas-netes
+   kubectl apply -f ./namespaces.yml 
+   kubectl apply -f ./yaml_armhf
+   </pre>
+</ul>
+
+Microsoft created <a target="_blank" href="https://github.com/Azure/draft">Draft</a> (like Scaffold) to simplify getting started in Azure to <a target="_blank" href="https://github.com/PatrickLang/fabrikamfiber/tree/helm-2019-mssql-linux">lift-and-shift</a> Windows ASP.NET apps. It has two commands:
+
+<ul><pre><strong>
+   draft create  # helm chart and Dockerfile
+   draft up      # deploy</strong></pre>
+</ul>
+
+Draft uses language packs for Ruby, C# .NET Core 2.2 with Windows packs, authenticated to Azure Container Registry (ACR) and AKS.
+
+<a target="_blank" href="https://www.ibm.com/blogs/bluemix/2018/06/deploy-scalable-web-application-kubernetes-using-helm/">
+IBM: Deploy a scalable web application to Kubernetes using Helm</a>
+
+
+## How? A summary
+
+"Containerized" <a href="#micro-services">microservice apps</a> are <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, <a target="_blank" href="https://quay.io/">Quay.io</a>, or an organization's own binary repository setup using Nexus or Artifactory. 
+
+This tutorial focuses on <strong>Docker</strong> containers as the <strong>Container Runtime Interface (CRI)</strong>. 
+But Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") containers, which provided a CLI for containers as part of CoreOS. It became the first archived project of CNCF after IBM bought Red Hat with its competing "containerd" <a target="_blank" href="https://github.com/kubernetes-sigs/cri-o">cri-o technology.
+
+CRI-O, Docker, ContainerD support Runc. Runc is the low-level tool which does the heavy lifting of spawning a Linux container. (<a target="_blank" href="https://www.youtube.com/watch?v=0uy2V2kYl4U" title="Feb 15, 2019">See CVE-2019-5736</a>).
+
+Kubernetes automates resilience by abstacting the network and storage shared by ephemeral replaceable <strong>pods</strong> which the Kubernetes Controller replicates to increase capacity.
+
+Kubernetes replicates Pods (the same set of containers in each) across several worker <strong>Nodes</strong> (VM or physical machines).
+
+Each set of pods are within a <strong>node</strong>.
+Kubernetes assigns each node with a different <strong>external IP address</strong>.
+
+<strong>Containers</strong> within the same pod share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage Volumes, and other resources.
+Every <strong>container</strong> has its own unique <strong>port number</strong> within its pod's IP.
+
+
+In each pod, <a target="_blank" href="https://wilsonmar.github.io/service-mesh">Service Mesh Istio architecture</a> has an "Envoy proxy" to facilitate the communictions and retry logic from the business logic containers in its pod.
+
+![kubernetes-structure-502x205-12351.png](https://user-images.githubusercontent.com/300046/47167711-5cf45080-d2bc-11e8-8c95-a76b1b92373a.png)
+
+In the illustration below, each pod (each a different color) encapsulates one or more (Docker) container hosts (operating processes, each shown as a circle):
+
+![k8s-container-sets-479x364.jpg](https://user-images.githubusercontent.com/300046/33526550-6c98a980-d800-11e7-9862-ff202492e08b.jpg)
+<!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
+
+
+
+<a name="Namespaces"></a>
+
+Nodes are managed together as a <strong>namespace</strong>.
+
+Kubernetes can manage several namespaces running in each <strong>cluster</strong>. 
+
+   "The primary grouping concept in Kubernetes is the namespace. Namespaces are also a way to divide cluster resources between multiple uses. That being said, there is no security between namespaces in Kubernetes; if you are a "user" in a Kubernetes cluster, you can see _all_ the different namespaces and the resources defined in them." -- from the book: OpenShift for Developers, A Guide for Impatient Beginners by Grant Shipley and Graham Dumpleton.
+
+### OpenShift project wall namespaces
+
+   <strong>Projects</strong> in OpenShift provide "walls" between namespaces, ensuring that users or applications can only see and access what they are allowed to. OpenShift projects wrap a namespace by adding security annotations which control access to that namespace. Access is controlled through an authentication and authorization model based on users and groups. 
+
+   <a target="_blank" href="https://docs.openshift.com/enterprise/3.2/architecture/core_concepts/routes.html">
+   This diagram</a> illustrates what OpenShift adds: 
+   ![kubernetes-openshift-502x375-107638](https://user-images.githubusercontent.com/300046/42333404-e3f5953a-8037-11e8-9691-0172a8a96388.jpg)
+
+   OpenShift's Router is instead a HAProxy container (taking the place of NGINX).
+
+   ![k8s-openshift-projects-461x277-64498](https://user-images.githubusercontent.com/300046/42337120-f421563c-8042-11e8-9d2b-d19615b4da0c.jpg)
+
+#### OpenShift routes to services
+
+Services can be referenced by external clients using a host name such as "hello-svc.mycorp.com" by using
+OpenShift Enterprise, which uses "routes" that defines the rules the HAProxy applies to incoming connections.
+
+Routes are deployed by an OpenShift Enterprise administrator as <strong>routers</strong> to nodes in an OpenShift Enterprise cluster. To clarify, the default Router in Openshift is an actual HAProxy container providing reverse proxy capabilities.
+
+
+
+### Cluster networking
+
+   A private ClusterIP is accessible by nodes only within the same cluster.
+
+   Services listen on the same <strong>nodePort</strong> (TCP 30000 - 32767 defined by `--service-node-port-range`).
+
+<a target="_blank" title="from Yongbok Kim (who writes in Korean)" href="https://user-images.githubusercontent.com/300046/33525757-6fcd2624-d7f3-11e7-9745-79ce5f9600e9.jpg">
+<img alt="k8s-arch-ruo91-797x451-104467" src="https://user-images.githubusercontent.com/300046/33525757-6fcd2624-d7f3-11e7-9745-79ce5f9600e9.jpg"></a>
+
+The diagram above is referenced throughout this tutorial, particularly in the <a href="#Details">Details section below</a>. It is by Yongbok Kim who presents <a target="_blank" href="https://translate.google.com/translate?hl=en&sl=ko&tl=en&u=http://www.yongbok.net/blog/google-kubernetes-container-cluster-manager/">
+animations on his website</a>.
+
+   Communications with outside service network callers occur through a single Virtual IP address (VIP) going through a <strong>kube-proxy</strong> pod within each node.
+   The Kube-proxy load balances traffic to <strong>deployments</strong>, which are load-balanced sets of pods within each node. Kube-proxy IPVS Mode is native to the Linux kernel.
+   CBR0 (Custom Bridge zero) forwards the eth0, which rewrites the destination IP to a pod behind the Service<a target="_blank" href="https://acloud.guru/course/kubernetes-deep-dive/learn/2ddbcafb-9f4f-ed6c-3cec-912cb68a7944/36910c67-4dfd-3343-648a-3a266aa9f667/watch?backUrl=~2Fcourses&backUrl=~2Fcourses&backUrl=~2Fcourses,~2Fcourses">3:18 into chapter 6 Big Picture</a>
+
+Kubernetes manages the instantiating, starting, stopping, updating, and deleting of a <strong>pre-defined number of pod replicas</strong> based on declarations in <strong>*.yaml</strong> files or interactive commands.
+
+The number of pods replicated is based on <strong>deployment</strong> yaml files. 
+Service yaml files specify what ports are used in deployments.
+
+In 2019 Kubernetes added <strong>auto-scaling</strong> based on metrics API measurement of demand.
+
+<a target="_blank" href="https://linuxacademy.com/cp/guides/download/refsheets/guides/refsheets/linuxacademy-kubernetesadmin-archdiagrams-1_1516737832.pdf">This Architectural Diagram pdf</a>:
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/51218893-5a75b700-18fc-11e9-89af-7ba9ca3000c5.jpg"><img alt="
+k8s-linuxacademy-arch-912x415-32433.jpg" src="https://user-images.githubusercontent.com/300046/51218893-5a75b700-18fc-11e9-89af-7ba9ca3000c5.jpg"></a>
+is described in the <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/155">
+Linux Academy's CKA course</a> of 5:34:43 hours of videos by Chad Miller (<a target="_blank" href="https://twitter.com/OpenChad/">@OpenChad</a>). 
+
+* <a target="_blank" href="https://training.linuxfoundation.org/training/kubernetes-fundamentals/">Kubernetes Fundamentals</a> $299 video course offered on EdX.com from LinuxFoundation.
+
+<a target="_blank" href="../img/k8s/k8s-arch-x-team.webp"><img alt="Kubernetes Architecture" width="793" height="573" src="../img/k8s/k8s-arch-x-team.webp"></a>
+Source: <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes-architecture/">X-Team</a>
+
+
 <a name="K8s_API"></a>
 
 ## K8s API
@@ -598,29 +659,29 @@ The kinds of yaml files:
    * hello-green.yaml
    * hello.yaml
    * monolith.yaml
+   <br /><br />
 
-   Label
+<a target="_blank" href="https://kubernetesbyexample.com/">https://kubernetesbyexample.com</a>:
 
-https://kubernetesbyexample.com/
-pods
-labels
-deployments
-services
-service discovery
-port forward
-health checks
-environment variables
-namespaces
-volumes
-persistent volumes
-secrets
-logging
-jobs
-stateful sets
-init containers
-nodes
-API server
-
+   * <a target="_blank" href="https://kubernetesbyexample.com//pods/">Pods</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//labels/">Labels</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//deployments/">Deployments</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//services/">Services</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//sd/">Service Discovery</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//pf/">Port Forward</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//healthz/">Health Checks</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//envs/">Environment Variables</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//ns/">Namespaces</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//volumes/">Volumes</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//pv/">Persistent Volumes</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//secrets/">Secrets</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//logging/">Logging</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//jobs/">Jobs</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//statefulset/">Stateful Sets</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//ic/">Init Containers</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//nodes/">Nodes</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//api/">API Server</a>
+   <br /><br />
 
 https://ravikirans.com/cks-kubernetes-security-exam-study-guide/
 
@@ -1060,28 +1121,6 @@ The Kubtest suite builds, stages, extracts, and brings up the cluster.
 After testing, it dumps logs and tears down the test rig.
 
 
-<a name="Social"></a>
-
-## Social
-
-   * <a target="_blank" href="https://kubernetes.io/community/">https://kubernetes.io/community</a>
-
-   * <a target="_blank" href="https://twitter.com/kubernetesio/">Twitter: @kubernetesio</a>
-   * <a target="_blank" href="https://slack.k8s.io">https://slack.k8s.io</a>
-   * <a target="_blank" href="https://plus.google.com/communities/115402602543170235291">
-   Google+ Group: Kubernetes</a>
-   * https://groups.google.com/forum/#!forum/kubernetes-announce for announcements
-   * https://groups.google.com/forum/#!forum/kubernetes-dev for contributors to the Kubernetes project to discuss design and implementation issues.
-   * https://stackoverflow.com/search?q=k8s+or+kubernetes for developers
-   * https://serverfault.com/search?q=k8s+or+kubernetes for sysadmins.
-   * https://groups.google.com/forum/#!forum/kubernetes-sig-scale
-   * https://www.youtube.com/playlist?list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ&disable_polymer=true
-   Kubernetes Google Community video chats
-
-   * https://cloud.google.com/support/docs/issue-trackers to report bugs
-   <br /><br />
-
-   * <a target="_blank" href="https://www.KubeCon.io">KubeCon.io</a> Conferences (<a target="_blank" href="https://www.twitter.com/KubeConio/">#KubeConio</a>)
 
 <hr />
 
@@ -2435,6 +2474,15 @@ Microsoft's "<a target="_blank" href="https://azure.microsoft.com/mediahandler/f
 
 9. <a target="_blank" href="https://learnk8s.io/troubleshooting-deployments/">A visual guide on troubleshooting Kubernetes deployments</a> DECEMBER 2019
 
+1. https://coreos.com/blog/kubectl-tips-and-tricks
+
+   https://www.youtube.com/watch?v=GEKTz5E22hY from Jun 22, 2017
+
+   Covers bash completion   
+
+https://medium.com/@bjammal/hands-on-ambassador-pattern-625a13ceb8b7?
+
+https://medium.com/payscale-tech/imperative-vs-declarative-a-kubernetes-tutorial-4be66c5d8914?
 
 ## More on DevOps #
 
