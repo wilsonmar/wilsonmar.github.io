@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Kubernetes (K8s)"
-excerpt: "Container engine in clouds, including OpenShift"
+excerpt: "Container orchestration engine in clouds, including OpenShift"
 modified:
 tags: [google, cloud]
 date: "2020-10-04"
@@ -159,6 +159,8 @@ It's for those who hold a CKA certification.
 https://github.com/ijelliti/CKSS-Certified-Kubernetes-Security-Specialist
 
 https://k21academy.com/docker-kubernetes/certified-kubernetes-security-specialist-cks-step-by-step-activity-guide-hands-on-lab/
+
+DockerDocker (specifically, Docker Engine) provides operating-system-level virtualization in containers.
 
 Resources:
 
@@ -417,7 +419,7 @@ edX.org publishes some courses from Linux Academy.
 
 ### CloudAcademy
 
-<a target="_blank" href="https://cloudacademy.com/learning-paths/certified-kubernetes-application-developer-ckad-exam-preparation-451/">CloudAcademy.com has a 11-hour "Learning Path"</a> updated August 27th, 2019 by Logan Rakai. Its <a target="_blank" href="https://cloudacademy.com/lab/introduction-kubernetes-playground/?context_resource=lp&context_id=451">Playground lab</a> enables you to <strong>skip all the install details</strong> and get to learn kubernetes commands which build this:
+<a target="_blank" href="https://cloudacademy.com/learning-paths/certified-kubernetes-application-developer-ckad-exam-preparation-451/">CloudAcademy.com has a 11-hour "Learning Path"</a> updated August 27th, 2019 by Logan Rakai. Its <a target="_blank" href="https://cloudacademy.com/lab/introduction-kubernetes-playground/?context_resource=lp&context_id=451">Playground lab</a> enables you to <strong>skip all the install details</strong> to build this:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"><img alt="k8s-cloudacademy-after" src="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"></a>
 
 The class also includes a Challenge and Cert Prep. off <a target="_blank" href="https://github.com/cloudacademy/intro-to-k8s">https://github.com/cloudacademy/intro-to-k8s</a>
@@ -436,9 +438,23 @@ The class also includes a Challenge and Cert Prep. off <a target="_blank" href="
 
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-deploying-code">Kubernetes for Developers: Deploying Your Code</a> 3h 4m Feb 26, 2020
 
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-docker-compose-to-kubernetes">Kubernetes for Developers: Moving from Docker Compose to Kubernetes</a> 2h 20m May 28, 2020
+
+Nigel Poulton (@NigelPoulton, <a target="_blank" href="https://www.nigelpoulton.com/">nigelpoulton.com</a>), Docker Captain:
+
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-integrating-volumes-using-multi-container-pods">Kubernetes for Developers: Integrating Volumes and Using Multi-container Pods</a> by Nigel Poulton 2h 26m Apr 23, 2020
 
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-docker-compose-to-kubernetes">Kubernetes for Developers: Moving from Docker Compose to Kubernetes</a> 2h 20m May 28, 2020
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files">
+   Getting Started with Kubernetes</a> 22 May 2017
+
+   * Book: "Docker for Sysadmins"
+
+   * Book: "Docker Deep Dive"
+
+   * Book: "Kubernetes Deep Dive"
+
+   * <a target="_blank" href="https://acloud.guru/course/kubernetes-deep-dive/dashboard">A Cloud Guru video course "Kubernetes Deep Dive"</a> (released Oct 2018) references a WordPress sample app at <a target="_blank" href="https://github.com/nigelpoulton/k8s-sample-apps">https://github.com/nigelpoulton/k8s-sample-apps</a>
+
 
 ### LinkedIn
 
@@ -526,12 +542,25 @@ Every <strong>container</strong> has its own unique <strong>port number</strong>
 
 In each pod, <a target="_blank" href="https://wilsonmar.github.io/service-mesh">Service Mesh Istio architecture</a> has an "Envoy proxy" to facilitate the communictions and retry logic from the business logic containers in its pod.
 
-![kubernetes-structure-502x205-12351.png](https://user-images.githubusercontent.com/300046/47167711-5cf45080-d2bc-11e8-8c95-a76b1b92373a.png)
-
 In the illustration below, each pod (each a different color) encapsulates one or more (Docker) container hosts (operating processes, each shown as a circle):
 
 ![k8s-container-sets-479x364.jpg](https://user-images.githubusercontent.com/300046/33526550-6c98a980-d800-11e7-9862-ff202492e08b.jpg)
 <!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
+
+
+<a name="krew"></a>
+
+## Plug-in manager
+
+1. Like apt-get, but for use within Kubernetes:
+
+   <pre><strong>kubectl krew install tree</strong></pre>
+
+   From the krew-index plug repository on the internet.
+
+1. For a deployment, list its Pods within ReplicaSet:
+ 
+   <pre>kubectl tree deployment ???</pre>
 
 
 <a name="Helm"></a>
@@ -568,6 +597,8 @@ Draft uses language packs for Ruby, C# .NET Core 2.2 with Windows packs, authent
 <a target="_blank" href="https://www.ibm.com/blogs/bluemix/2018/06/deploy-scalable-web-application-kubernetes-using-helm/">
 IBM: Deploy a scalable web application to Kubernetes using Helm</a>
 
+A Deployment is an API object that manages a replicated application, typically by running Pods with no local state.
+
 
 <a name="Namespaces"></a>
 
@@ -579,23 +610,22 @@ Kubernetes can manage several namespaces running in each <strong>cluster</strong
 
 ### OpenShift project wall namespaces
 
-   <strong>Projects</strong> in OpenShift provide "walls" between namespaces, ensuring that users or applications can only see and access what they are allowed to. OpenShift projects wrap a namespace by adding security annotations which control access to that namespace. Access is controlled through an authentication and authorization model based on users and groups. 
+Red Hat's OpenShift product adds <strong>Projects</strong> as "walls" between namespaces, ensuring that users or applications can only see and access what they are allowed to. OpenShift projects wrap a namespace by adding security annotations which control access to that namespace. Access is controlled through an authentication and authorization model based on users and groups. 
 
    <a target="_blank" href="https://docs.openshift.com/enterprise/3.2/architecture/core_concepts/routes.html">
    This diagram</a> illustrates what OpenShift adds: 
    ![kubernetes-openshift-502x375-107638](https://user-images.githubusercontent.com/300046/42333404-e3f5953a-8037-11e8-9691-0172a8a96388.jpg)
 
+#### OpenShift routes to services
+
    OpenShift's Router is instead a HAProxy container (taking the place of NGINX).
 
    ![k8s-openshift-projects-461x277-64498](https://user-images.githubusercontent.com/300046/42337120-f421563c-8042-11e8-9d2b-d19615b4da0c.jpg)
 
-#### OpenShift routes to services
-
 Services can be referenced by external clients using a host name such as "hello-svc.mycorp.com" by using
-OpenShift Enterprise, which uses "routes" that defines the rules the HAProxy applies to incoming connections.
+OpenShift Enterprise, which uses <strong>routes</strong> that define the rules the HAProxy applies to incoming connections.
 
 Routes are deployed by an OpenShift Enterprise administrator as <strong>routers</strong> to nodes in an OpenShift Enterprise cluster. To clarify, the default Router in Openshift is an actual HAProxy container providing reverse proxy capabilities.
-
 
 
 ### Cluster networking
@@ -633,6 +663,11 @@ Linux Academy's CKA course</a> of 5:34:43 hours of videos by Chad Miller (<a tar
 Source: <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes-architecture/">X-Team</a>
 
 
+PROTIP: To list clusters and switch between them, consider brew installing utilities <a target="_blank" href="https://github.com/ahmetb/kubectx">https://github.com/ahmetb/kubectx</a> and kubens.
+
+kube-ps1.sh creates a shell pod envbin.
+
+
 <a name="K8s_API"></a>
 
 ## K8s API
@@ -645,6 +680,12 @@ Source: <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes
    * Metadata APIs: Controllere, CRD, Event, LimitRange, HPA, ...
    * Cluster APIs: APIService, Binding, CSR, ClusterRole, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
    <br /><br />
+
+kubectl api-??? | grep ???
+
+The aggregation layer lets you install additional Kubernetes-style APIs in your cluster.
+
+ConfigMap is an API object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume.
 
 <a name="yaml-files"></a>
 
@@ -939,6 +980,10 @@ There is a command with the same name used to obtain the <strong>version</strong
    * authorization to handle role, rb
    * storage to handle pv (persistent volume) and <a href="#PVC">pvc</a>, sc (storage classes)
 
+### Declarative vs. Declarative
+
+https://medium.com/payscale-tech/imperative-vs-declarative-a-kubernetes-tutorial-4be66c5d8914?
+
 
 <a name="Scheduler"></a>
 <a name="Scheduling"></a>
@@ -983,6 +1028,9 @@ There is a command with the same name used to obtain the <strong>version</strong
 
    For network resiliency, <strong>HA Proxy cluster</strong> distributes traffic among nodes.
 
+   Endpoints track the IP addresses of Pods with matching selectors.
+
+   EndpointSlice groups network endpoints together with Kubernetes resources.
 
 <a name="Controllers"></a>
    
@@ -1035,6 +1083,10 @@ root      9735     1  3 Oct07 ?        00:54:09 /usr/bin/kubelet --bootstrap-kub
    sudo less /var/log/calico/cni/cni.log
 
    sudo less /etc/cni/net.d/calico-kubeconfig
+
+zzz
+
+
 
 <a name="cAdvisor"></a>
 
@@ -1210,11 +1262,15 @@ has 257 issues and 20 pending Pull Requests, but we're using it anyway.
    <pre><strong>minikube version
    </strong></pre>
 
-   At time of writing, the verion 1.13.1
-
    <pre>==> Checking for dependents of upgraded formulae...
 Error: No such file or directory - /usr/local/Cellar/eksctl/0.24.0
    </pre>
+
+2. View the version:
+
+   <pre><strong>kubectl version</strong></pre>
+
+   At time of writing, the verion 1.19.2
 
 2. What is in the Kubernetes config file?
 
@@ -1233,27 +1289,26 @@ Error: No such file or directory - /usr/local/Cellar/eksctl/0.24.0
 
 3. Show the current context:
 
-   <pre><strong>
-   kubectl config current-context
+   <pre><strong>kubectl config current-context
    </strong></pre>
 
    The expected response on minikube is "minikube".
 
    <a name="StartMinikube"></a>
 
-3. Start the service:
+3. Start Docker Desktop app before starting minikube.
+
+3. Start the minikube service, with add-ons which are each a pod:
 
    On Mac:
 
-   <pre>
-   minikube start --vm-driver=xhyve
+   <pre><strong>minikube start --vm-driver=xhyve --addons=dashboard --addons=metrics-server   --addons="ingress" --addons="ingress-dns"
    </pre>
 
    On Windows:
 
-   <pre>
-   minikube start --vm-driver=hyperv
-   </pre>
+   <pre><strong>minikube start --vm-driver=hyperv
+   </strong></pre>
 
    <pre>😄  minikube v1.13.1 on Darwin 10.15.7
 ✨  Using the docker driver based on existing profile
@@ -2299,22 +2354,6 @@ Others:
    * OpenVswitch
 
 
-## Learning resources
-
-Nigel Poulton (@NigelPoulton, <a target="_blank" href="https://www.nigelpoulton.com/">nigelpoulton.com</a>), Docker Captain:
-
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files">
-   Getting Started with Kubernetes</a> 22 May 2017
-
-   * Book: "Docker for Sysadmins"
-
-   * Book: "Docker Deep Dive"
-
-   * Book: "Kubernetes Deep Dive"
-
-   * <a target="_blank" href="https://acloud.guru/course/kubernetes-deep-dive/dashboard">A Cloud Guru video course "Kubernetes Deep Dive"</a> (released Oct 2018) references a WordPress sample app at <a target="_blank" href="https://github.com/nigelpoulton/k8s-sample-apps">https://github.com/nigelpoulton/k8s-sample-apps</a>
-
-
 ## Make your own K8s
 
 Kelsey Hightower, in <a target="_blank" href="https://github.com/kelseyhightower/kubernetes-the-hard-way">
@@ -2383,7 +2422,7 @@ https://github.com/ramitsurana/awesome-kubernetes
 
 
 
-## Jobs
+## Jobs for you
 
 <a target="_blank" href="https://www.sdxcentral.com/articles/news/kubernetes-dominates-in-it-job-searches/2019/01/">
 Kubernetes Dominates in IT Job Searches</a>
@@ -2497,7 +2536,15 @@ Microsoft's "<a target="_blank" href="https://azure.microsoft.com/mediahandler/f
 
 https://medium.com/@bjammal/hands-on-ambassador-pattern-625a13ceb8b7?
 
-https://medium.com/payscale-tech/imperative-vs-declarative-a-kubernetes-tutorial-4be66c5d8914?
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr valign="center"><th> Pod ...</th><th> Affinity </th><th> Anti-Affinity</th></tr>
+<tr valign="center"><th> To Pods </th><td> podAffinity </td><td> topologySpreadContraints</td></tr>
+<tr valign="center"><th> To Nodes </th><td> nodeAffinity </td><td> Taints and Tolerations</td></tr>
+</table>
+
+A cgroup (control group) is a group of Linux processes with optional resource isolation, accounting, and limits.
+
 
 ## More on DevOps #
 
