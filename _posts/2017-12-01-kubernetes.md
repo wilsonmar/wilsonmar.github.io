@@ -133,9 +133,7 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes
 </td></tr>
 </table>
 
-Sample questions (exercises):
-
-https://github.com/walidshaari/Kubernetes-Certified-Administrator
++<a target="_blank" href="https://github.com/walidshaari/Kubernetes-Certified-Administrator">https://github.com/walidshaari/Kubernetes-Certified-Administrator</a> lists links by exam domain.
 
 ### Certificed Kubernauts.io Practioner (CKP)
 
@@ -363,7 +361,7 @@ Its <a target="_blank" href="https://github.com/kubernetes/kubernetes">code page
    * <a target="_blank" href="https://slack.k8s.io">https://slack.k8s.io</a>
    * <a target="_blank" href="https://plus.google.com/communities/115402602543170235291">
    Google+ Group: Kubernetes</a>
-   * <a target="_blank" href="https://groups.google.com/forum/#!forum/kubernetes-announce for announcements
+   * <a target="_blank" href="https://groups.google.com/forum/#!forum/kubernetes-announce ">for announcements</a>
    * <a target="_blank" href="https://groups.google.com/forum/#!forum/kubernetes-dev">Contributors to the Kubernetes project to discuss design and implementation issues</a>.
    * <a target="_blank" href="https://stackoverflow.com/search?q=k8s+or+kubernetes">Stackoverflow for developers</a>
    * <a target="_blank" href="https://serverfault.com/search?q=k8s+or+kubernetes">for sysadmins</a>
@@ -522,10 +520,9 @@ This diagram is shown at the ending of a small (upcoming) movie logically illust
 
 <img width="914" alt="k8s-docker" src="https://user-images.githubusercontent.com/300046/95684822-564dfa80-0bb1-11eb-803a-1c742cf0bd07.png">
 
-"Containerized" <a href="#micro-services">microservice apps</a> are <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, <a target="_blank" href="https://quay.io/">Quay.io</a>, or an organization's own binary repository setup using Nexus or Artifactory. 
+This tutorial focuses on <strong>Docker</strong> containers as Kubernetes' <strong>Container Runtime Interface (CRI)</strong>. BTW Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") containers, which provided a CLI for containers as part of CoreOS. Rkt became the first archived project of CNCF after IBM bought Red Hat with its competing "containerd" <a target="_blank" href="https://github.com/kubernetes-sigs/cri-o">cri-o technology.
 
-This tutorial focuses on <strong>Docker</strong> containers as the <strong>Container Runtime Interface (CRI)</strong>. 
-But Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") containers, which provided a CLI for containers as part of CoreOS. It became the first archived project of CNCF after IBM bought Red Hat with its competing "containerd" <a target="_blank" href="https://github.com/kubernetes-sigs/cri-o">cri-o technology.
+"Containerized" <a href="#micro-services">microservice apps</a> are <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, <a target="_blank" href="https://quay.io/">Quay.io</a>, or an organization's own binary repository setup using Nexus or Artifactory. 
 
 CRI-O, Docker, ContainerD support Runc. Runc is the low-level tool which does the heavy lifting of spawning a Linux container. (<a target="_blank" href="https://www.youtube.com/watch?v=0uy2V2kYl4U" title="Feb 15, 2019">See CVE-2019-5736</a>).
 
