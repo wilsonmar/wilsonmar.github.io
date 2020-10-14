@@ -33,7 +33,7 @@ The contribution of this article is the logical ordering of <strong>deep-dive</s
 
 Here's the workflow I would like to see. It's not so much self-service as a tool for administrators. Anyway...
 
-Before someone starts a job/project, a trusted administrator (the boss) specifies on a "self-service" app what should be installed on each worker's laptop, such as the <a href="#Installers">client utilities</a> which should be installed for his/her specific job based on RBAC (Role-Based Access Control) policies. Better yet, <a target="_blank" href="https://en.wikipedia.org/wiki/Attribute-based_access_control">Attribute-based Access Control (ABAC)</a>.
+Before someone starts a job/project, a trusted administrator (the boss) specifies on a "self-service" app what should be installed on each worker's laptop, such as the <a href="#Installers">client utilities</a> which should be installed for his/her specific job based on RBAC (Role-Based Access Control) or <a target="_blank" href="https://en.wikipedia.org/wiki/Attribute-based_access_control">Attribute-based Access Control (ABAC)</a> policies.
 
 The app generates the certificate pairs, stores them in Vault, installs them on GitHub, and saves the keys on the worker's laptop. This provides a more trusted chain than each employee generating their own key pair.
 
@@ -44,9 +44,32 @@ Then all a new working developer needs to do is, on a pre-configured laptop, mak
 
 ## Install client utilities
 
-NOTE: This page is still actively under construction.
+The alternatives:
 
-### Install on macOS
+   * Install on macOS GPG-Suite GUI app which stores keys in the protected macOS KeyChain.
+
+   * Install on macOS GPGN2 command line utility
+
+   * Install on Windows a GUI app
+
+### Install on macOS GPG-Suite GUI app 
+
+1. Install :
+
+   <pre><strong>brew cask install gpg-suite</strong></pre>
+
+   (its previous name was gpgtools, as in the website)
+
+1. Pinch 4 fingers together on the Touchpad and scroll around to click on "GPG Keychain" icon:
+
+   <img width="126" alt="git-signing-gpg-suite" src="https://user-images.githubusercontent.com/300046/95812445-a83a7180-0cd2-11eb-8c70-bfa7b1a5032b.png">
+
+   NOTE: It's in the /Applications folder.
+
+1. In /Applications folder,
+
+
+### Install on macOS gnupg2 CLI utility
 
 1. Open a Terminal. Be at your home user folder.
 
@@ -199,7 +222,7 @@ build-error: 0 (30 days)
    <tt>\-\-keyid-format LONG</tt> requests showing only those keys where both public and private key pair exists. This is becuase both are required to sign tags.
    If nothing is returned, there are no keys usable for signing.
    
-   PROTIP: This agove command was added as Bash shell alias (keyboard shortcut) in <a target="_blank" href="https://github.com/wilsonmar/git-utilities/blob/master/aliases.sh">https://github.com/wilsonmar/git-utilities/blob/master/aliases.sh</a>  so that you can instead just type:
+   PROTIP: This above command was added as Bash shell alias (keyboard shortcut) in <a target="_blank" href="https://github.com/wilsonmar/git-utilities/blob/master/aliases.sh">https://github.com/wilsonmar/git-utilities/blob/master/aliases.sh</a>  so that you can instead just type:
 
    <pre><strong>gsk</strong></pre>
 
@@ -312,6 +335,14 @@ Signature PIN ....: not forced
    ## Generate GPG key pairs
 
    Git UI clients such as <a target="_blank" href="https://support.gitkraken.com/git-workflows-and-extensions/commit-signing-with-gpg/">GitKraken can generate GPG keys with its UI</a>.
+
+
+   ### Gen GPG using macOS GPG-Suite
+
+   <img width="779" alt="git-signing-mac-keychain" src="https://user-images.githubusercontent.com/300046/95813251-b1c4d900-0cd4-11eb-86d0-6896fd78cdf1.png">
+
+
+   ### Gen GPG on macOS Terminal
 
    Here are instructions for doing it on a macOS Terminal:
 

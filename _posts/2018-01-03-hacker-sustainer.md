@@ -205,3 +205,11 @@ That's the contribution of Sustainers with experience.
 ## Resources
 
 https://www.tlnt.com/four-keys-to-building-a-strong-and-sustainable-corporate-culture/
+
+
+## More on DevOps #
+
+This is one of a series on DevOps:
+
+{% include devops_links.html %}
+

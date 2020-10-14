@@ -353,11 +353,13 @@ But the most desired now (May 2019) is <a target="_blank" href="https://www.amaz
    [_] It's a true luxury to have a hot drink on a cold night or a cold drink on a hot day. 
    <strong>Double-walled canisters</strong> keep hot drinks hot and cold drinks cold.
 
-   [_] I got a <strong>cup made of silicon</strong> so I can microwave water or the contents of a Campbell's soup can.
+   [_] I got a <strong>cup made of silicon</strong> so I can microwave water or the contents of a large Campbell's soup can.
    
-   [_] I put it under a plate instead of using an <strong>aluminum pot holder</strong> to handle the flimsy silicon when it's hot.
+   [_] I put it under a paper plate to handle the flimsy silicon when it's hot.
 
+   [_] At home, I think those plastic containers restaurants use to hold hot take-out soup are fantastic.
 
+   [_] I'm a big fan of Rubbermaid containers. Oh so convenient. But at $9 each, they are more expensive than the food it holds.
 
 <a name="Food"></a>
 
