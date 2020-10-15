@@ -66,7 +66,7 @@ The word "kubernetes" is the ancient Greek word for people who pilot cargo ships
 <img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
 <a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">This blog</a> and
 <a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
-revealed that the predecessor to Kubernetes was called "the Borg" becuase initial developers were fans of the "Star Trek Next Generation" TV series. The "Borg" <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all  civilizations it encounters into its "collective". The logo for Kubernetes inside the 6 sided hexagons representing each Google service has 7 sides. This is because a beloved character in the TV series, played by the curvacious Jeri Ryan, is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
+revealed that the predecessor to Kubernetes was called <a target="_blank" href="https://ai.google/research/pubs/pub43438">"The Borg"</a> becuase initial developers were fans of the "Star Trek Next Generation" TV series. In the series, the "Borg" society <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all  civilizations it encounters into its "collective". The logo for Kubernetes inside the 6 sided hexagons representing each Google service has 7 sides. This is because a beloved character in the TV series, played by the curvacious Jeri Ryan, is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
 
 
 ## Professional certifications in Kubernetes
@@ -81,7 +81,7 @@ There is support for other languages other than English.
 
 <table border="1" cellspacing="0" cellpadding="4">
 <tr valign="top"><td>
-    13% Core Concepts (API, pods, namespaces)<br />
+    13% Core Concepts (API, pods, <a href="Namespaces">namespaces</a>)<br />
     18% Configuration (ConfigMaps, SecurityContexts, Resource Requirements, Secrets)<br />
     10% Multi-Container Pods (design pattern: Ambassador, Adapter, Sidecar)<br />
     18% Observability (Liveness & Readiness Probes, Container Logging, Metrics server, Monitoring apps, Debugging)<br />
@@ -138,7 +138,7 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes
 ### Certificed Kubernauts.io Practioner (CKP)
 
 https://trainings.kubernauts.sh/ describes a certification offered independently by 
-https://kubernauts.de/en/home/ (<a target="_blank" href="https://twitter.com/kubernauts/">@kubernauts</a> in Germany) which also provides free <strong>namespaces</strong> (using <a href="#Rancher">Rancher</a>) at <a target="_blank" href="https://kubernauts.sh/">https://kubernauts.sh</a>
+https://kubernauts.de/en/home/ (<a target="_blank" href="https://twitter.com/kubernauts/">@kubernauts</a> in Germany) which also provides free <a href="#Namespaces">namespaces</a> (using <a href="#Rancher">Rancher</a>) at <a target="_blank" href="https://kubernauts.sh/">https://kubernauts.sh</a>
 
 ### CKS Exam Domains
 
@@ -175,7 +175,7 @@ https://ravikirans.com/cks-kubernetes-security-exam-study-guide/
 
 ## Exam Preparations
 
-   PROTIP: The Linux Foundation exam focuses only on "pure" Kubernetes commands and excludes add-ons such as OpenStack.
+   PROTIP: The Linux Foundation exam focuses only on "pure" Kubernetes commands and excludes <a href="#Addons">add-ons</a> such as OpenStack.
 
 ### Sign up for exam
 
@@ -326,7 +326,7 @@ echo "source <(kubectl completion bash)" >> ~/.bashrc
    <pre><strong>k -n pluto get all -o wide
    </strong></pre>
 
-1. The above get listings for namespace "pluto".
+1. The above get listings for a namespace called "pluto".
  
 1. Run a busybox web server to test access externally:
 
@@ -386,7 +386,11 @@ For the most up-to-date information by practioners:
 
 ## Video courses
 
-To get explanations in a logic sequence, take courses:
+Research into learning point to "spaced repetion" as the way to get what want to remember in our long-term memory.
+
+Different instructors explain concepts in different logical sequences.
+
+So looking at different video classes provide that.
 
 <a name="LFS258"></a>
 
@@ -413,6 +417,14 @@ edX.org publishes some courses from Linux Academy.
 
 <a target="_blank" href="https://www.edx.org/course/introduction-to-kubernetes"><strong>LFS158x</strong>: Introduction to Kubernetes</a>
 
+
+### O'Reilly
+
+<a target="_blank" href="https://learning.oreilly.com/videos/certified-kubernetes-application/">
+7h video class</a> by Sander van Vugt, who, as a Linux expert, provides in-depth CentOS install advice (including SELinux) available nowhere else.
+His diagrams are on a lightboard.
+
+BLAH: O'Reilly's videos are annoying because you have to move the sound up on every new chapter.
 
 
 ### CloudAcademy
@@ -475,6 +487,10 @@ by Matt Turner (from England) is hands-on using minikube 1.9.2 and kubernetes-cl
 
 <a target="_blank" href="https://www.linkedin.com/learning/learning-kubernetes/welcome?u=26886050">Learning Kubernetes</a> (on a Mac) by Karthik Gaekwad (<a target="_blank" href="https://www.linkedin.com/in/kgaekwad/">when he was at Oracle</a>)
 
+### LinuxAcademy
+
+The CKAD Troubleshooting class is highly recommended.
+
 
 ### Udemy
 
@@ -508,17 +524,17 @@ ACloud.guru's Vicky Tanya Seno at Santa Monica College is preparing a course on 
 
 Others on CKA:
 
+* Kode Kloud
+
 * <a target="_blank" href="https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days-e4603ac40746">"How to ace the CKA exam in 7 days</a> is click-bait?
 * <a target="_blank" href="https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days-e4603ac40746">how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days</a>
 * <a target="_blank" href="https://www.linkedin.com/learning/certified-kubernetes-application-developer-ckad-cert-prep-exam-tips?u=26886050">Certified Kubernetes Application Developer (CKAD) Cert Prep: Exam Tips</a> by Benjamin Muschko
 
 <hr />
 
-## Glossary - how buzzwords fit together
+<a name="Namespaces"></a>
 
-This diagram is shown at the ending of a small (upcoming) movie logically illustrating how the various glossary terms relate with each other:
-
-<img width="914" alt="k8s-docker" src="https://user-images.githubusercontent.com/300046/95684822-564dfa80-0bb1-11eb-803a-1c742cf0bd07.png">
+A "namespace" provides isolation between system components (network, files, users, processes, IPCs).
 
 This tutorial focuses on <strong>Docker</strong> containers as Kubernetes' <strong>Container Runtime Interface (CRI)</strong>. BTW Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") containers, which provided a CLI for containers as part of CoreOS. Rkt became the first archived project of CNCF after IBM bought Red Hat with its competing "containerd" <a target="_blank" href="https://github.com/kubernetes-sigs/cri-o">cri-o technology.
 
@@ -545,6 +561,327 @@ In the illustration below, each pod (each a different color) encapsulates one or
 <!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
 
 
+<hr />
+
+## Install
+
+Let's start by installing minikube on your laptop.
+
+<a name="Minikube"></a>
+
+### Install Minikube
+
+Minikube goes beyond Docker For Mac (DFM) and Docker for Windows (DFW)
+and includes a node and a Master when it spins up in a local environment (such as your laptop).
+
+CAUTION: At time of writing, <a target="_blank" href="https://github.com/kubernetes/minikube">https://github.com/kubernetes/minikube</a>
+has 257 issues and 20 pending Pull Requests, but we're using it anyway.
+
+1. Install on a Mac Docker:
+ 
+   <pre><strong>brew install docker-machine-driver-xhyve
+   </strong></pre>
+
+1. Install on a Mac Minikube:
+
+   <pre><strong>brew install minikube
+   </strong></pre>
+
+   This installs folder:<br />
+   $HOME/.minikube
+
+1. Verify Install:
+
+   <pre><strong>minikube version
+   </strong></pre>
+
+   <pre>==> Checking for dependents of upgraded formulae...
+Error: No such file or directory - /usr/local/Cellar/eksctl/0.24.0
+   </pre>
+
+### Install Docker & Kubernetes on CentOS
+
+1. Install the the <strong>Docker Desktop app</strong> 
+
+   On CentOS/RHEL 7:
+
+   <pre><strong>yum install docker</strong></pre>
+
+   On CentOS/RHEL 8, Docker is not installed by default, so there download  <strong>docker-ce</strong> from docker.io:
+
+   https://docks.docker.com/install/linux/docker-ce/centos/
+
+   The Open Container Initiative at <a target="_blank" href="https://opencontainers.org/">https://opencontainers.org</a> defined the image-spec to define how to package contaiiners in a "filesystem bundle" and run them in a container. This ensures comptibility among containers, no matter the originating enviroment.
+
+
+
+   ### Kubernetes Version
+
+
+2. View the version:
+
+   <pre><strong>kubectl version</strong></pre>
+
+   At time of writing, the verion 1.19.2
+
+
+
+## Configuration
+
+<a name="Contexts"></a>
+
+### Config Contexts
+
+2. What is in the Kubernetes config file?
+
+   <pre><strong>cat $HOME/.kube/config</strong></pre>
+
+2. To avoid "The connection to the server localhost:8080 was refused"
+
+   <a target="_blank" href="https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/">https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting</a>
+
+   <pre><strong>sudo touch $HOME/.kube/config</strong></pre>
+   <pre><strong>sudo chown $USER $HOME/.kube/config
+   chmod 600 $HOME/.kube/config
+   </strong></pre>
+
+   Deleted the old config from ~/.kube and then restarted docker (for macos) and it rebuilt the config folder. 
+
+3. Show the current context:
+
+   <pre><strong>kubectl config current-context
+   </strong></pre>
+
+   The expected response on minikube is "minikube".
+
+   <a name="StartMinikube"></a>
+
+   NOTE: Kubernetes can use alternative container runtimes 
+   to run on top of cri-o, such as RedHat's podman, LXC.
+
+3. Start Docker before installing/starting minikube:
+
+   <pre><strong>systemctl enable --now docker</strong></pre>
+
+3. Start the minikube service, with add-ons which are each a pod:
+
+   On Mac:
+
+   <pre><strong>minikube start --vm-driver=xhyve --addons=dashboard --addons=metrics-server   --addons="ingress" --addons="ingress-dns"
+   </pre>
+
+   On Windows:
+
+   <pre><strong>minikube start --vm-driver=hyperv
+   </strong></pre>
+
+   <pre>😄  minikube v1.13.1 on Darwin 10.15.7
+✨  Using the docker driver based on existing profile
+👍  Starting control plane node minikube in cluster minikube
+🏃  Updating the running docker "minikube" container ...
+🐳  Preparing Kubernetes v1.19.2 on Docker 19.03.8 ...
+🔎  Verifying Kubernetes components...
+🌟  Enabled addons: default-storageclass, storage-provisioner
+🏄  Done! kubectl is now configured to use "minikube" by default
+   </pre>
+
+3. Open the Minkube Dashboard server localhost:53764 poped upped on your default browser:
+
+   <pre>minikube dashboard</pre>
+
+4. Stop the service:
+
+   <pre>minikube stop</pre>
+
+5. Recover space:
+
+   <pre><strong>minikube delete
+   </strong></pre>
+
+   <pre>🔥  Deleting "minikube" in docker ...
+🔥  Deleting container "minikube" ...
+🔥  Removing /Users/wilson_mar/.minikube/machines/minikube ...
+💀  Removed all traces of the "minikube" cluster.
+   </pre>
+
+   Kubectl 1.8 scale is now the preferred way to control graceful delete.
+
+   Kubectl 1.8 rollout and rollback now support stateful sets ???
+
+1. To continue, <a href="#StartMinikube">start minikube again</a>.
+
+
+   <a name="kubectl"></a>
+
+   ## kubectl CLI client install
+
+   Kubernetes administrators use <strong>kubectl</strong> (kube + ctl)
+   the CLI tool running outside Kubernetes servers to control them. 
+   It's automatically installed within Google cloud instances, but on Macs clients:
+
+1. Install on a Mac:
+ 
+   <pre><strong>brew install kubectl
+   </strong></pre>
+
+   <pre>🍺  /usr/local/Cellar/kubernetes-cli/1.8.3: 108 files, 50.5MB
+   1.19.2
+   </pre>
+
+   It's required by eksctl and minikube.
+
+0. Verify
+ 
+   <pre><strong>kubectl version --client
+   </strong></pre>
+
+   <pre>Client Version: version.Info{Major:"1", Minor:"18", GitVersion:"v1.18.8", GitCommit:"9f2892aab98fe339f3bd70e3c470144299398ace", GitTreeState:"clean", BuildDate:"2020-08-13T16:12:48Z", GoVersion:"go1.13.15", Compiler:"gc", Platform:"darwin/amd64"}
+   </pre>
+
+   NOTICE that Golang is a component.
+
+   If you get this error message:
+   <pre>The connection to the server localhost:8080 was refused - did you specify the right host or port?
+   </pre>
+
+   ### Jobs
+
+   <tt>spec: completions: 5</tt> defines the number of pods started within a job.
+
+   <tt>parallelism: 2</tt> defines 
+
+   1. Check the status of jobs
+   
+   <pre><strong>kubectl get jobs </strong></pre>
+
+   <pre>NAME     COMPLETIONS   DURATION   AGE
+somejob   5/5           27s        9m41s</pre>
+
+   2. When a job is complete, view its results:
+
+   <pre><strong>kubectl logs counter</strong></pre>
+
+   The API Server routes several <strong>kinds</strong> of <a href="#Ayaml-files">yaml declaration files</a>: Pod, Deployment of pods, Service, Job, Configmap.
+
+   API primatives ???
+
+1. Add 
+
+   https://plugins.jetbrains.com/plugin/10485-kubernetes
+
+
+1. View your current configuration settings and current context 
+
+   <pre><strong>kubectl config view
+   </strong></pre>
+
+   Sample response from file <tt>~/.kube/config</tt>
+
+   <pre>apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority: /Users/wilson_mar/.minikube/ca.crt
+    server: https://127.0.0.1:32772
+  name: minikube
+contexts:
+- context:
+    cluster: minikube
+    user: minikube
+  name: minikube
+current-context: minikube
+kind: Config
+preferences: {}
+users:
+- name: minikube
+  user:
+    client-certificate: /Users/wilson_mar/.minikube/profiles/minikube/client.crt
+    client-key: /Users/wilson_mar/.minikube/profiles/minikube/client.key
+   </pre>
+
+   ### kubectl run
+
+1. Make an imperative command:
+
+   <pre><strong>kubectl run --image=nginx web
+   </strong></pre>
+
+   <pre>pod/web created
+   </pre>
+
+1. 
+
+   <pre><strong>kubectl get pods
+   </strong></pre>
+
+   <pre>NAME   READY   STATUS    RESTARTS   AGE
+web    1/1     Running   0          2m59s
+   </pre>
+
+1. Details:
+
+   <pre><strong>kubectl describe pod web
+   </strong></pre>
+
+   <pre>Name:         web
+Namespace:    default
+Priority:     0
+Node:         minikube/172.17.0.3
+Start Time:   Sun, 04 Oct 2020 07:02:16 -0600
+Labels:       run=web
+Annotations:  &LP;none>
+Status:       Running
+IP:           172.18.0.3
+IPs:
+  IP:  172.18.0.3
+Containers:
+  web:
+    Container ID:   docker://ecd03de690f64202c6bdf35d4b4192e5af32854d9c77093f31136570507cc600
+    Image:          nginx
+    Image ID:       docker-pullable://nginx@sha256:c628b67d21744fce822d22fdcc0389f6bd763daac23a6b77147d0712ea7102d0
+    Port:           &LP;none>
+    Host Port:      &LP;none>
+    State:          Running
+      Started:      Sun, 04 Oct 2020 07:02:49 -0600
+    Ready:          True
+    Restart Count:  0
+    Environment:    &LP;none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-72hc5 (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-72hc5:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-72hc5
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  &LP;none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason     Age    From               Message
+  ----    ------     ----   ----               -------
+  Normal  Scheduled  4m40s  default-scheduler  Successfully assigned default/web to minikube
+  Normal  Pulling    4m39s  kubelet, minikube  Pulling image "nginx"
+  Normal  Pulled     4m7s   kubelet, minikube  Successfully pulled image "nginx" in 31.950535327s
+  Normal  Created    4m7s   kubelet, minikube  Created container web
+  Normal  Started    4m7s   kubelet, minikube  Started container web
+   </pre>
+
+
+
+<hr />
+
+## Glossary - how buzzwords fit together
+
+This diagram is shown at the ending of a small (upcoming) movie logically illustrating how the various glossary terms relate with each other:
+
+<img width="914" alt="k8s-docker" src="https://user-images.githubusercontent.com/300046/95684822-564dfa80-0bb1-11eb-803a-1c742cf0bd07.png">
+
 <a name="krew"></a>
 
 ## Plug-in manager
@@ -558,6 +895,29 @@ In the illustration below, each pod (each a different color) encapsulates one or
 1. For a deployment, list its Pods within ReplicaSet:
  
    <pre>kubectl tree deployment ???</pre>
+
+
+<a name="Addons"></a>
+
+### Add-ons to Kubernetes
+
+* <a target="_blank" href="https://github.com/appscode/">AppsCode</a> provides several utiities for Kubernetes.
+* <a target="_blank" href="https://coreos.com/tectonic/">CoreOS Tectonic</a> multi-cloud is being integrated with RedHat.
+* <a target="_blank" href="https://containership.io/">Containership Kubernetes Engine</a>
+* <a target="_blank" href="">Giant Swarm managed Kubernetes</a>
+* <a target="_blank" href="https://console.bluemix.net/containers-kubernetes/catalog/cluster/">IBM Cloud Kubernetes Service (IKS) works with their IBM Cloud Container Registry. See <a target="_blank" href="https://console.bluemix.net/docs/containers/cs_tutorials_cf.html#cf_tutorial">tutorial</a>
+* <a target="_blank" href="https://www.madcore.ai">Madcore.ai</a>
+
+* Mail.Ru Cloud Solutions Containers
+* <a target="_blank" href="https://www.mirantis.com/software/mcp/">Mirantis' Cloud Platform</a>
+* PKS (Pivotal Kubernetes Service)
+* <a target="_blank" href="https://platform9.com/">Platform 9</a> provide OpenStack with Kubernetes
+* Red Hat <a href="#OpenShift">OpenShift</a> Enterprise platform as a service (PaaS)
+* Rackspace's Kubernetes as a Service
+* Stackpoint
+
+* <a target="_blank" href="https://buddy.works/guides/how-optimize-kubernetes-workflow">Buddy</a>
+   automates Kubernetes workflows.
 
 
 <a name="Helm"></a>
@@ -871,27 +1231,6 @@ EKS makes use of <a target="_blank" href="https://aws.amazon.com/fargate/">AWS F
 * https://github.com/kubernetes-sigs/kubespray
 
 <hr />
-
-## Add-ons to Kubernetes
-
-* <a target="_blank" href="https://github.com/appscode/">AppsCode</a> provides several utiities for Kubernetes.
-* <a target="_blank" href="https://coreos.com/tectonic/">CoreOS Tectonic</a> multi-cloud is being integrated with RedHat.
-* <a target="_blank" href="https://containership.io/">Containership Kubernetes Engine</a>
-* <a target="_blank" href="">Giant Swarm managed Kubernetes</a>
-* <a target="_blank" href="https://console.bluemix.net/containers-kubernetes/catalog/cluster/">IBM Cloud Kubernetes Service (IKS) works with their IBM Cloud Container Registry. See <a target="_blank" href="https://console.bluemix.net/docs/containers/cs_tutorials_cf.html#cf_tutorial">tutorial</a>
-* <a target="_blank" href="https://www.madcore.ai">Madcore.ai</a>
-
-* Mail.Ru Cloud Solutions Containers
-* <a target="_blank" href="https://www.mirantis.com/software/mcp/">Mirantis' Cloud Platform</a>
-* PKS (Pivotal Kubernetes Service)
-* <a target="_blank" href="https://platform9.com/">Platform 9</a> provide OpenStack with Kubernetes
-* Red Hat <a href="#OpenShift">OpenShift</a> Enterprise platform as a service (PaaS)
-* Rackspace's Kubernetes as a Service
-* Stackpoint
-
-* <a target="_blank" href="https://buddy.works/guides/how-optimize-kubernetes-workflow">Buddy</a>
-   automates Kubernetes workflows.
-
 
 ## Other Orchestration systems managing Docker containers
 
@@ -1230,279 +1569,6 @@ for security vulnerabilities.
 See <a target="_blank" href="https://kubernetes.io/docs/setup/pick-right-solution/">
 https://kubernetes.io/docs/setup/pick-right-solution</a>
 
-
-<a name="Minikube"></a>
-
-### Minikube
-
-Minikube goes beyond Docker For Mac (DFM) and Docker for Windows (DFW)
-and includes a node and a Master when it spins up in a local environment (such as your laptop).
-
-CAUTION: At time of writing, <a target="_blank" href="https://github.com/kubernetes/minikube">https://github.com/kubernetes/minikube</a>
-has 257 issues and 20 pending Pull Requests, but we're using it anyway.
-
-1. Install on a Mac Docker:
- 
-   <pre><strong>brew install docker-machine-driver-xhyve
-   </strong></pre>
-
-1. Install on a Mac Minikube:
-
-   <pre><strong>brew install minikube
-   </strong></pre>
-
-   This installs folder:<br />
-   $HOME/.minikube
-
-1. Verify Install:
-
-   <pre><strong>minikube version
-   </strong></pre>
-
-   <pre>==> Checking for dependents of upgraded formulae...
-Error: No such file or directory - /usr/local/Cellar/eksctl/0.24.0
-   </pre>
-
-2. View the version:
-
-   <pre><strong>kubectl version</strong></pre>
-
-   At time of writing, the verion 1.19.2
-
-2. What is in the Kubernetes config file?
-
-   <pre><strong>cat $HOME/.kube/config</strong></pre>
-
-2. To avoid "The connection to the server localhost:8080 was refused"
-
-   https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/
-
-   <pre><strong>sudo touch $HOME/.kube/config</strong></pre>
-   <pre><strong>sudo chown $USER $HOME/.kube/config
-   chmod 600 $HOME/.kube/config
-   </strong></pre>
-
-   Deleted the old config from ~/.kube and then restarted docker (for macos) and it rebuilt the config folder. 
-
-3. Show the current context:
-
-   <pre><strong>kubectl config current-context
-   </strong></pre>
-
-   The expected response on minikube is "minikube".
-
-   <a name="StartMinikube"></a>
-
-3. Start Docker Desktop app before starting minikube.
-
-3. Start the minikube service, with add-ons which are each a pod:
-
-   On Mac:
-
-   <pre><strong>minikube start --vm-driver=xhyve --addons=dashboard --addons=metrics-server   --addons="ingress" --addons="ingress-dns"
-   </pre>
-
-   On Windows:
-
-   <pre><strong>minikube start --vm-driver=hyperv
-   </strong></pre>
-
-   <pre>😄  minikube v1.13.1 on Darwin 10.15.7
-✨  Using the docker driver based on existing profile
-👍  Starting control plane node minikube in cluster minikube
-🏃  Updating the running docker "minikube" container ...
-🐳  Preparing Kubernetes v1.19.2 on Docker 19.03.8 ...
-🔎  Verifying Kubernetes components...
-🌟  Enabled addons: default-storageclass, storage-provisioner
-🏄  Done! kubectl is now configured to use "minikube" by default
-   </pre>
-
-3. Open the Minkube Dashboard server localhost:53764 poped upped on your default browser:
-
-   <pre>minikube dashboard</pre>
-
-4. Stop the service:
-
-   <pre>minikube stop</pre>
-
-5. Recover space:
-
-   <pre><strong>minikube delete
-   </strong></pre>
-
-   <pre>🔥  Deleting "minikube" in docker ...
-🔥  Deleting container "minikube" ...
-🔥  Removing /Users/wilson_mar/.minikube/machines/minikube ...
-💀  Removed all traces of the "minikube" cluster.
-   </pre>
-
-   Kubectl 1.8 scale is now the preferred way to control graceful delete.
-
-   Kubectl 1.8 rollout and rollback now support stateful sets ???
-
-1. To continue, <a href="#StartMinikube">start minikube again</a>.
-
-
-   <a name="kubectl"></a>
-
-   ## kubectl CLI client install
-
-   Kubernetes administrators use <strong>kubectl</strong> (kube + ctl)
-   the CLI tool running outside Kubernetes servers to control them. 
-   It's automatically installed within Google cloud instances, but on Macs clients:
-
-1. Install on a Mac:
- 
-   <pre><strong>brew install kubectl
-   </strong></pre>
-
-   <pre>🍺  /usr/local/Cellar/kubernetes-cli/1.8.3: 108 files, 50.5MB
-   1.19.2
-   </pre>
-
-   It's required by eksctl and minikube.
-
-0. Verify
- 
-   <pre><strong>kubectl version --client
-   </strong></pre>
-
-   <pre>Client Version: version.Info{Major:"1", Minor:"18", GitVersion:"v1.18.8", GitCommit:"9f2892aab98fe339f3bd70e3c470144299398ace", GitTreeState:"clean", BuildDate:"2020-08-13T16:12:48Z", GoVersion:"go1.13.15", Compiler:"gc", Platform:"darwin/amd64"}
-   </pre>
-
-   NOTICE that Golang is a component.
-
-   If you get this error message:
-   <pre>The connection to the server localhost:8080 was refused - did you specify the right host or port?
-   </pre>
-
-   ### Jobs
-
-   <tt>spec: completions: 5</tt> defines the number of pods started within a job.
-
-   <tt>parallelism: 2</tt> defines 
-
-   1. Check the status of jobs
-   
-   <pre><strong>kubectl get jobs </strong></pre>
-
-   <pre>NAME     COMPLETIONS   DURATION   AGE
-somejob   5/5           27s        9m41s</pre>
-
-   2. When a job is complete, view its results:
-
-   <pre><strong>kubectl logs counter</strong></pre>
-
-   The API Server routes several <strong>kinds</strong> of <a href="#Ayaml-files">yaml declaration files</a>: Pod, Deployment of pods, Service, Job, Configmap.
-
-   API primatives ???
-
-1. Add 
-
-   https://plugins.jetbrains.com/plugin/10485-kubernetes
-
-
-1. View your current configuration settings and current context 
-
-   <pre><strong>kubectl config view
-   </strong></pre>
-
-   Sample response from file <tt>~/.kube/config</tt>
-
-   <pre>apiVersion: v1
-clusters:
-- cluster:
-    certificate-authority: /Users/wilson_mar/.minikube/ca.crt
-    server: https://127.0.0.1:32772
-  name: minikube
-contexts:
-- context:
-    cluster: minikube
-    user: minikube
-  name: minikube
-current-context: minikube
-kind: Config
-preferences: {}
-users:
-- name: minikube
-  user:
-    client-certificate: /Users/wilson_mar/.minikube/profiles/minikube/client.crt
-    client-key: /Users/wilson_mar/.minikube/profiles/minikube/client.key
-   </pre>
-
-   ### kubectl run
-
-1. Make an imperative command:
-
-   <pre><strong>kubectl run --image=nginx web
-   </strong></pre>
-
-   <pre>pod/web created
-   </pre>
-
-1. 
-
-   <pre><strong>kubectl get pods
-   </strong></pre>
-
-   <pre>NAME   READY   STATUS    RESTARTS   AGE
-web    1/1     Running   0          2m59s
-   </pre>
-
-1. Details:
-
-   <pre><strong>kubectl describe pod web
-   </strong></pre>
-
-   <pre>Name:         web
-Namespace:    default
-Priority:     0
-Node:         minikube/172.17.0.3
-Start Time:   Sun, 04 Oct 2020 07:02:16 -0600
-Labels:       run=web
-Annotations:  &LP;none>
-Status:       Running
-IP:           172.18.0.3
-IPs:
-  IP:  172.18.0.3
-Containers:
-  web:
-    Container ID:   docker://ecd03de690f64202c6bdf35d4b4192e5af32854d9c77093f31136570507cc600
-    Image:          nginx
-    Image ID:       docker-pullable://nginx@sha256:c628b67d21744fce822d22fdcc0389f6bd763daac23a6b77147d0712ea7102d0
-    Port:           &LP;none>
-    Host Port:      &LP;none>
-    State:          Running
-      Started:      Sun, 04 Oct 2020 07:02:49 -0600
-    Ready:          True
-    Restart Count:  0
-    Environment:    &LP;none>
-    Mounts:
-      /var/run/secrets/kubernetes.io/serviceaccount from default-token-72hc5 (ro)
-Conditions:
-  Type              Status
-  Initialized       True 
-  Ready             True 
-  ContainersReady   True 
-  PodScheduled      True 
-Volumes:
-  default-token-72hc5:
-    Type:        Secret (a volume populated by a Secret)
-    SecretName:  default-token-72hc5
-    Optional:    false
-QoS Class:       BestEffort
-Node-Selectors:  &LP;none>
-Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
-                 node.kubernetes.io/unreachable:NoExecute for 300s
-Events:
-  Type    Reason     Age    From               Message
-  ----    ------     ----   ----               -------
-  Normal  Scheduled  4m40s  default-scheduler  Successfully assigned default/web to minikube
-  Normal  Pulling    4m39s  kubelet, minikube  Pulling image "nginx"
-  Normal  Pulled     4m7s   kubelet, minikube  Successfully pulled image "nginx" in 31.950535327s
-  Normal  Created    4m7s   kubelet, minikube  Created container web
-  Normal  Started    4m7s   kubelet, minikube  Started container web
-   </pre>
 
 
    ### On GCP

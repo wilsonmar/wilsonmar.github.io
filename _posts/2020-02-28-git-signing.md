@@ -54,11 +54,13 @@ The alternatives:
 
 ### Install on macOS GPG-Suite GUI app 
 
-1. Install :
+Instead of <a target="_blank" href="https://www.youtube.com/watch?v=FrrT9fYoL3Y">VIDEO: downloading from website and clicking</a> manually:
+
+1. Install with one command after <a target="_blank" href="https://wilsonmar.github.io/homebrew/">installing Homebrew</a>:
 
    <pre><strong>brew cask install gpg-suite</strong></pre>
 
-   (its previous name was gpgtools, as in the website)
+   (its previous name was gpgtools, as in the website gpgtools.com)
 
 1. Pinch 4 fingers together on the Touchpad and scroll around to click on "GPG Keychain" icon:
 
@@ -810,7 +812,7 @@ Clear signing wraps the input with plaintext signature.
 
 ## Resources
 
-This article was the result of consulting several sources of information.
+This article was the result of consulting several sources of information:
 
 Explanation of gpg program parameters are at:
 <a target="_blank" href="https://www.gnupg.org/documentation/manuals/gnupg/GPG-Input-and-Output.html">https://www.gnupg.org/documentation/manuals/gnupg/GPG-Input-and-Output.html</a>
