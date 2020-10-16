@@ -107,10 +107,6 @@ The <a target="_blank" href="https://training.linuxfoundation.org/training/kuber
 
 LFD459 is the 3-day on-site equivalent course code.
 
-<a target="_blank" href="https://github.com/dgkanatsios/CKAD-exercises">
-https://github.com/dgkanatsios/CKAD-exercises</a> 
-provides sample exam questions.
-
 CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes 
 (e.g., v1.19 as of 1 Sep 2020).
 
@@ -177,12 +173,26 @@ https://ravikirans.com/cks-kubernetes-security-exam-study-guide/
 
    PROTIP: The Linux Foundation exam focuses only on "pure" Kubernetes commands and excludes <a href="#Addons">add-ons</a> such as OpenStack.
 
-### Sign up for exam
+1. <a target="_blank" href="https://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc">Keyboard shortcuts for Bash</a>
 
-CNCF is part of the Linux Foundation, so... 
+1. Get proficient with vim well using vimtutor, so that commands are intuitive (where you don't have to pause for remembering how to do things in vim).
+
+
+   ### Sign up for exam
+
+   CNCF is part of the Linux Foundation, so... 
+
 1. Get an account (Linux Foundation credentials ) at <a target="_blank" href="https://identity.linuxfoundation.org/">https://identity.linuxfoundation.org</a>. https://myprofile.linuxfoundation.org/
 
    It's a non-profit organization, thus the ".org".
+
+   https://docs.linuxfoundation.org/tc-docs/certification/lf-candidate-handbook
+
+   https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks
+
+   https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad
+
+
 
 2. Login to <a target="_blank" href="https://joinnow.platform.linuxfoundation.org/?project=tlf">linuxfoundation.org and join as a member</a> for a $100 discount toward certifications.
 
@@ -221,30 +231,39 @@ CNCF is part of the Linux Foundation, so...
 
 9. Setup your home computer to take the exam <a target="_blank" href="http://www.examslocal.com/linuxfoundation/"> at home</a> using the <strong>Chrome extension</strong> from "Innovative Exams", which uses your laptop camera and microphone watching you use a virtual Ubuntu machine.
 
-### Study 
+   ### Sample exam questions 
 
-9. <a href="#[1]">PROTIP: Create bookmarks in Chrome</a> for <a target="_blank" href="   https://github.com/walidshaari/Kubernetes-Certified-Administrator/blob/main/README-ckad.md
-">links</a> to ONLY <a target="_blank" href="https://kubernetes.io/docs/home/">kubernetes.io pages</a>
+1. <a target="_blank" href="https://github.com/dgkanatsios/CKAD-exercises">https://github.com/dgkanatsios/CKAD-exercises</a> 
+   provides sample exam questions.
 
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/95026201-e2f63700-064c-11eb-9651-0902cc7732df.png"><img width="390" alt="kubernetes-bookmarks" src="https://user-images.githubusercontent.com/300046/95026201-e2f63700-064c-11eb-9651-0902cc7732df.png"></a>
+1. <a target="_blank" href="https://medium.com/bb-tutorials-and-thoughts/practice-enough-with-these-questions-for-the-ckad-exam-2f42d1228552">Practice enough</a> 
 
-   https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/
-
-   https://www.cncf.io/certification/ckad/
-
-   https://docs.linuxfoundation.org/tc-docs/certification/lf-candidate-handbook
-
-   https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks
-
-   https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad
-
-   <a target="_blank" href="https://github.com/kubernauts/practical-kubernetes-problems">https://github.com/kubernauts/practical-kubernetes-problems</a> provides yaml files
 
 8. Use kubectl commands in a Kubernetes cluster 60 minutes at a time within <a target="_blank" href="https://learn.openshift.com/playgrounds/">Red Hat's OpenShift Playground</a> powered by KataKoda. Use the "oc" CLI program.
 
    The playground environment is pre-loaded with Source-to-Image (S2I) builders for Java (Wildfly), Javascript (Node.JS), Perl, PHP, Python and Ruby. Templates are also available for MariaDB, MongoDB, MySQL, PostgreSQL and Redis.
 
 1. See 3 preview exam questions (with answer explained) after signing up at <a target="_blank" href="https://killer.sh/">https://killer.sh</a> (Killer Shell's) CKA/CKAD Simulator</a> provides close replica of the CKAD exam browser terminal with 20 CKAD and 25 CKA questions, at 29.99€ for two sessions (before 10% discount). Each session includes 36 hours of access to a cluster environment. They recommend you start the first session when you’re at the beginning of your CKA or CKAD journey. 
+
+
+   ### Bookmarks to docs
+
+   <a href="#[1]">PROTIP: Create bookmarks in Chrome</a> for <a target="_blank" href="   https://github.com/walidshaari/Kubernetes-Certified-Administrator/blob/main/README-ckad.md">links</a> to ONLY <a target="_blank" href="https://kubernetes.io/docs/home/">kubernetes.io pages</a>
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/95026201-e2f63700-064c-11eb-9651-0902cc7732df.png"><img width="390" alt="kubernetes-bookmarks" src="https://user-images.githubusercontent.com/300046/95026201-e2f63700-064c-11eb-9651-0902cc7732df.png"></a>
+
+   * <a target="_blank" href="https://kubernetes.io/docs/user-guide/kubectl-cheatsheet/">kubectl cheatsheet</a>
+
+   * <a target="_blank" href="https://kubernetes.io/generated/kubectl/kubectl-commands/">kubectl commands</a>
+
+   * <a target="_blank" href="https://kubernetes.io/docs/tasks/">docs/tasks</a>
+
+   * <a target="_blank" href="https://www.cncf.io/certification/ckad/">https://www.cncf.io/certification/ckad</a>
+
+   * <a target="_blank" href="https://github.com/kubernauts/practical-kubernetes-problems">https://github.com/kubernauts/practical-kubernetes-problems</a> provides yaml files
+
+   * <a target="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/">kubernetes API</a>
+
 
 
 ### Day before exam
@@ -429,7 +448,9 @@ BLAH: O'Reilly's videos are annoying because you have to move the sound up on ev
 
 ### CloudAcademy
 
-<a target="_blank" href="https://cloudacademy.com/learning-paths/certified-kubernetes-application-developer-ckad-exam-preparation-451/">CloudAcademy.com has a 11-hour "Learning Path"</a> updated August 27th, 2019 by Logan Rakai. Its <a target="_blank" href="https://cloudacademy.com/lab/introduction-kubernetes-playground/?context_resource=lp&context_id=451">Playground lab</a> enables you to <strong>skip all the install details</strong> to build this:
+<a target="_blank" href="https://cloudacademy.com/learning-paths/certified-kubernetes-application-developer-ckad-exam-preparation-451/">CloudAcademy's 11-hour "Learning Path" course</a> was updated August 27th, 2019 by Logan Rakai. 
+
+Its <a target="_blank" href="https://cloudacademy.com/lab/introduction-kubernetes-playground/?context_resource=lp&context_id=451">Playground lab</a> enables you to <strong>skip all the install details</strong> to build this:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"><img alt="k8s-cloudacademy-after" src="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"></a>
 
 The class also includes a Challenge and Cert Prep. off <a target="_blank" href="https://github.com/cloudacademy/intro-to-k8s">https://github.com/cloudacademy/intro-to-k8s</a>
@@ -494,7 +515,10 @@ The CKAD Troubleshooting class is highly recommended.
 
 ### Udemy
 
-<a target="_blank" href="https://www.udemy.com/course/certified-kubernetes-application-developer/">Udemy.com has a CKAD course with Tests</a> updated 09/2020 with 9.5 hours of video.
+<a target="_blank" href="https://mckinsey.udemy.com/course/certified-kubernetes-application-developer/">Udemy.com has a CKAD course with Tests</a> updated 09/2020 with 9.5 hours of video.
+
+<a target="_blank" href="https://mckinsey.udemy.com/course/learn-kubernetes">"Learn Kubernetes"</a>
+
 
 ### ACloud.guru
 
@@ -1150,8 +1174,6 @@ This makes GKE "self healing" to provide high availability and reliability with
 
 In <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes-architecture/">this diagram</a>:
 
-
-From the https://kubernetes.io/docs/user-guide/kubectl-cheatsheet/
 
 0. List all pods, including in the system namespace:
 
@@ -2587,17 +2609,16 @@ Microsoft's "<a target="_blank" href="https://azure.microsoft.com/mediahandler/f
 
 7. <a target="_blank" href="https://azure.microsoft.com/en-us/topic/what-is-kubernetes/">https://azure.microsoft.com/en-us/topic/what-is-kubernetes</a>
 
-8. https://aka.ms/k8slearning
+8. <a target="_blank" href="https://aka.ms/k8slearning">https://aka.ms/k8slearning</a>
 
 9. <a target="_blank" href="https://learnk8s.io/troubleshooting-deployments/">A visual guide on troubleshooting Kubernetes deployments</a> DECEMBER 2019
 
-1. https://coreos.com/blog/kubectl-tips-and-tricks
+1. <a target="_blank" href="https://coreos.com/blog/kubectl-tips-and-tricks">https://coreos.com/blog/kubectl-tips-and-tricks</a>
 
-   https://www.youtube.com/watch?v=GEKTz5E22hY from Jun 22, 2017
-
+   <a target="_blank" href="https://www.youtube.com/watch?v=GEKTz5E22hY">VIDEO</a> from Jun 22, 2017
    Covers bash completion   
 
-https://medium.com/@bjammal/hands-on-ambassador-pattern-625a13ceb8b7?
+   <a target="_blank" href="https://medium.com/@bjammal/hands-on-ambassador-pattern-625a13ceb8b7?">Ambassasor Pattern</a>
 
 
 <table border="1" cellpadding="4" cellspacing="0">
@@ -2607,6 +2628,11 @@ https://medium.com/@bjammal/hands-on-ambassador-pattern-625a13ceb8b7?
 </table>
 
 A cgroup (control group) is a group of Linux processes with optional resource isolation, accounting, and limits.
+
+## Blogs
+
+* <a target="_blank" href="https://www.linkedin.com/pulse/from-zero-ckad-30-days-pranam-mohanty/">From zero to CKAD in 30 days</a> August 9, 2020 by Pranam Mohanty
+
 
 
 ## More on DevOps #
