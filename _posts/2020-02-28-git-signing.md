@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Git Signing"
-excerpt: "Establish non-repudiation in GitHub using GPG (installer gnupg2), Vault, Yubikey"
+excerpt: "Sign git commits and tags (for non-repudiation) in GitHub using GPG, Vault, Yubikey, Keybase"
 tags: [git, security]
-date: "2020-02-28"
+date: "2020-10-18"
 file: "git-signing"
 image:
 # git-signing-1900x500.jpg
@@ -16,15 +16,17 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+This article is a step-by-step tutorial on how to setup and use GPG signatures for Git to sign commits and tags, for non-repudiation. Git tags are associated with releases. 
+
+The contribution of this article is the logical ordering of <strong>deep-dive</strong> concepts presented in a succint way, as a hands-on narrated scenic tour. "PROTIP" flags advice from hard-won experience such as relevant keyboard shortcuts and things to remember, available only here for you.
+
+## Why?
+
  > "If you ... want to verify that commits are actually from a trusted source, Git has a few ways to sign and verify work using GPG." -<a target="_blank" href="https://git-scm.com/docs/git-show-ref">git-scm.com/show-ref command</a>
 
 Protect Your Git Repositories From Commit Forgery Using Signing<a target="_blank" href="https://medium.com/@rwbutler/signing-commits-using-gpg-on-macos-7210362d15">*</a>
 
-This article is a step-by-step tutorial on how to setup and use GPG for Git to use for signing Git Tags, for non-repudiation. Also covered are releases associated with Tags. 
-
 BONUS: Since we're using GPG, here are also <a href="#EncryptFiles">notes about signing of whole files using GPG</a>.
-
-The contribution of this article is the logical ordering of <strong>deep-dive</strong> concepts presented in a succint way, as a hands-on narrated scenic tour. "PROTIP" flags advice from hard-won experience such as relevant keyboard shortcuts and things to remember, available only here for you.
 
 
 <a name="SelfService"></a>
@@ -46,11 +48,14 @@ Then all a new working developer needs to do is, on a pre-configured laptop, mak
 
 The alternatives:
 
-   * Install on macOS GPG-Suite GUI app which stores keys in the protected macOS KeyChain.
+   * <a href="#install_gpg-suite">Install on macOS GPG-Suite GUI</a> app which stores keys in the protected macOS KeyChain.
 
-   * Install on macOS GPGN2 command line utility
+   * <a href="#gnupg2_mac_install">Install on macOS GPGN2 command line utility</a>
 
-   * Install on Windows a GUI app
+   * <a href="#install-win">Install on Windows a GUI app</a>
+
+
+<a name="install_gpg-suite"></a>
 
 ### Install on macOS GPG-Suite GUI app 
 
@@ -70,6 +75,8 @@ Instead of <a target="_blank" href="https://www.youtube.com/watch?v=FrrT9fYoL3Y"
 
 1. In /Applications folder,
 
+
+<a name="install-win"></a>
 
 ### Install on macOS gnupg2 CLI utility
 
@@ -195,12 +202,22 @@ build-error: 0 (30 days)
    <pre><strong>chmod 700 ~/.gnupg</strong></pre>
 
 
+
+   ## Keybase
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=4V-7KnhcrbY" title="Mar 14, 2018">VIDEO</a> explains:
+
+   <a target="_blank" href="https://github.com/pstadler/keybase-gpg-github">https://github.com/pstadler/keybase-gpg-github</a>
+
+   https://www.youtube.com/watch?v=8_L6XljCZzA"> Keybase and PASS
+
    ## Email address
 
-1. Switch to GitHub to identify your "no-reply" public email address, such as 
-   "john_doe+github@gmail.com".
+1. Switch to your GitHub Profile Email page
 
-   <a target="_blank" href="https://github.com/settings/profile">https://github.com/settings/profile</a>
+   <a target="_blank" href="https://github.com/settings/emails">https://github.com/settings/emails</a>
+
+1. Identify your "no-reply" public email address, such as "john_doe+github@gmail.com".
 
    IMPORTANT: The email specified to GPG should match the email in GitHub.
 

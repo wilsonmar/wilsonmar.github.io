@@ -112,6 +112,44 @@ At the end of the script, the log is shown in an editor to <strong>enable search
 
 ## Sudo and Password
 
+To run a single command using elevated privileges:
+
+   <pre><strong>sudo find ...
+   </strong></pre>
+
+CAUTION: we want to avoid using sudo to install packages because that results in sudo having ownership to files, 
+which then requires password entry to access.
+That's why we install using Homebrew, which installs packages within <tt>/user/local</tt>.
+
+The su command lets you switch to another user, to run multiple commands, without having to logout and then login as that user.
+That other user is usually root (superuser) account. So if you don't specify the other user, it's assumed to be root.
+
+   <pre><strong>su -
+su -l
+su --login
+   </strong></pre>
+
+All three su commands above do the same thing -- create a new environment (by running the ~/.bashrc of the other user) which define the PATH and other system variables.
+
+The response is to require you to enter the root password.
+
+CAUTION: If several people know the root passwords, it's not possible to directly trace what a user did after they su'd to the root account. So supply your account password with this:
+
+   <pre><strong>sudo su
+   </strong></pre>
+
+
+To run with elevated privileges, Centrify's dzdo command line program uses role-based access rights for zones stored in Microsoft Active Directory instead of sudo using a sudoers configuration file.
+
+   <pre><strong>dzdo su -
+   </strong></pre>
+
+   <pre><strong>dzdo su - lucy
+   </strong></pre>
+
+
+
+
 To disable inputting password, add this below line in sudoers file:
 
    <pre><strong>sudo visudo

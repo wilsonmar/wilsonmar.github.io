@@ -79,17 +79,47 @@ There is support for other languages other than English.
 
 ### CKAD Exam Domains
 
-<table border="1" cellspacing="0" cellpadding="4">
-<tr valign="top"><td>
-    13% Core Concepts (API, pods, <a href="Namespaces">namespaces</a>)<br />
-    18% Configuration (ConfigMaps, SecurityContexts, Resource Requirements, Secrets)<br />
-    10% Multi-Container Pods (design pattern: Ambassador, Adapter, Sidecar)<br />
-    18% Observability (Liveness & Readiness Probes, Container Logging, Metrics server, Monitoring apps, Debugging)<br />
-    20% Pod Design (Deployments, Rolling Updates, Rollbacks, Labels, Selectors, Annotations, Rollbacks, Jobs, CronJobs)<br />
-    13% Services &amp; Networking (NetworkPolicies)<br />
-    08% State Persistence (Volumes, PersistentVolumeClaims)
-</td></tr>
-</table>
+Here is the full text of the <a target="_blank" href="https://github.com/cncf/curriculum">CNCF's exam curriculum</a>
+
+13% Core Concepts (API, pods, <a href="Namespaces">namespaces</a>)<br />
+   * Understand Kubernetes API primitives
+   * Create and configure basic Pods
+   <br /><br />
+
+18% Configuration (ConfigMaps, SecurityContexts, Resource Requirements, Secrets)<br />
+   • Understand ConfigMaps
+   • Understand SecurityContexts
+   • Define an application’s resource requirements
+   • Create & consume Secrets
+   • Understand ServiceAccounts
+   <br /><br />
+
+10% Multi-Container Pods (design pattern: Ambassador, Adapter, Sidecar)<br />
+   * Understand Multi-Container Pod design patterns (e .g. ambassador, adapter, sidecar)
+   <br /><br />
+
+18% Observability (Liveness & Readiness Probes, Container Logging, Metrics server, Monitoring apps, Debugging)<br />
+   * Understand LivenessProbes and ReadinessProbes
+   * Understand container logging
+   * Understand how to monitor applications in Kubernetes
+   * Understand debugging in Kubernetes
+   <br /><br />
+
+20% Pod Design (Deployments, Rolling Updates, Rollbacks, Labels, Selectors, Annotations, Rollbacks, Jobs, CronJobs)<br />
+   • Understand Deployments and how to perform rolling updates
+   • Understand Deployments and how to perform rollbacks
+   • Understand Jobs and CronJobs 
+   • Understand how to use Labels, Selectors, and Annotations
+   <br /><br />
+
+13% Services &amp; Networking (NetworkPolicies)<br />
+   * Understand Services
+   * Demonstrate basic understanding of NetworkPolicies
+   <br /><br />
+
+08% State Persistence (Volumes, PersistentVolumeClaims)
+   * Understand PersistentVolumeClaims for storage
+   <br /><br />
 
 <img alt="k8s-ckad-logo-328x311.jpg" width="328" height="311" src="https://user-images.githubusercontent.com/300046/95666890-b09c7c00-0b1b-11eb-820c-ca44d8c9c0e5.jpg">
 
@@ -107,8 +137,11 @@ The <a target="_blank" href="https://training.linuxfoundation.org/training/kuber
 
 LFD459 is the 3-day on-site equivalent course code.
 
-CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes 
-(e.g., v1.19 as of 1 Sep 2020).
+The Linux Foundation exam focuses only on "pure" Kubernetes commands and excludes <a href="#Addons">add-ons</a> such as OpenStack, Helm, Istio.
+
+PROTIP: LF class materials are distributed in .bz2 format which can be opened on macOS by the <a target="_blank" href="https://apps.apple.com/us/app/the-unarchiver/id425424353?mt=12&ign-mpt=uo%3D4">
+Unarchiver</a>
+
 
 ### CKA Exam Domains
 
@@ -171,7 +204,7 @@ https://ravikirans.com/cks-kubernetes-security-exam-study-guide/
 
 ## Exam Preparations
 
-   PROTIP: The Linux Foundation exam focuses only on "pure" Kubernetes commands and excludes <a href="#Addons">add-ons</a> such as OpenStack.
+CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e.g., v1.19 as of 1 Sep 2020).
 
 1. <a target="_blank" href="https://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc">Keyboard shortcuts for Bash</a>
 
@@ -210,6 +243,7 @@ https://ravikirans.com/cks-kubernetes-security-exam-study-guide/
 
    * Linux Foundation : Certified Kubernetes Application Developer (CKAD) - English
    * Linux Foundation : Certified Kubernetes Administrator (CKA) - English
+   * Linux Foundation : Certified Kubernetes Security (CKS) - English ?
    <br /><br />
 
    Click on the list, then Click "Next".
@@ -271,14 +305,20 @@ https://ravikirans.com/cks-kubernetes-security-exam-study-guide/
 1. Arrange to sleep well the night before the exam.
 1. If you travel, make sure you are living in the correct time zone.
 
+1. Move files from your Downloads and Documents folder.
+1. Clear your desk of papers, books. The proctor will be checking.
+
+
 ### Before start of exam questions
 
 1. Take a shower. Put on a comfortable outfit. Brush your teeth. Make your bed. 
 1. Eat proteins rather than carbohydrates and sugar before the exam.
-1. Fill a clear bottle with no labels holding clear liquids (water).
+1. Fill a clear bottle with no labels holding clear liquids (water). You're not allowed to eat snacks.
 
-1. Clear your desk of papers, books. The proctor will be checking.
+1. Put on music that helps you concentrate. Turn it off before starting the test.
+
 1. Start calm, not rushed. Be setup and be ready a half hour before the scheduled exam.
+
 1. You may start your exam up to 15 minutes prior to your scheduled appointment time.
 
 1. Have your ID out and ready to present to the video camera.
@@ -330,27 +370,40 @@ echo "source <(kubectl completion bash)" >> ~/.bashrc
    To indent several lines with one command: Esc Shift+V for Visual Line mode, highlight lines, 
    Shift . to shift left, Shift , to shift right.
 
+
    ### Output file
 
    To output a file to a pod named "pod-x":
 
    <pre>kubectl logs pod-x | sudo tee ~/opt/answers/mypod.logs</pre>
 
-1. <strong>19 questions</strong> means less than 10 minutes per question. But the recommended strategy is to avoid getting bogged down on long and complex questions. First go through all the questions to answer the easiest ones first. Along the way, mark ones you want to go back to.
+
+1. <strong>19 questions</strong> means less than 10 minutes per question. So avoid getting bogged down on the longer complex questions. First go through all the questions to answer the easiest ones first. Along the way, mark ones you want to go back to.
 
    NOTE: Although there are 19 objectives, not all objectives may be in every exam.
 
-1. Paste to the Notpad available during the exam. Save commands there for copy rather than retype.
+1. Avoid writing yaml by scratch.
+
+   Search within kubernetes.io to copy code.
+
+   Use <tt>kubectl create</tt>.
+
+   Paste to the Notpad available during the exam. Save commands there for copy rather than retype.
 
    <pre><strong>k -n pluto get all -o wide
    </strong></pre>
 
-1. The above get listings for a namespace called "pluto".
- 
+1. Use <tt>kubectl explain</tt>.
+
+1. Use <tt>help</tt> as in <tt>kubectl create configmap help </tt>.
+
 1. Run a busybox web server to test access externally:
 
    <pre><strong>k run tmp --restart=Never --rm --image=busybox -i -- wget -O- 10.12.2.15
    </strong></pre>
+
+1. Do not delete/remove what you have done! People/robots review your servers after the test.
+
 
 ### After exam
 
@@ -515,16 +568,16 @@ The CKAD Troubleshooting class is highly recommended.
 
 ### Udemy
 
-<a target="_blank" href="https://mckinsey.udemy.com/course/certified-kubernetes-application-developer/">Udemy.com has a CKAD course with Tests</a> updated 09/2020 with 9.5 hours of video.
+<a target="_blank" href="https://mckinsey.udemy.com/course/learn-kubernetes">"Learn Kubernetes"</a> provides a tutorial on yaml.
 
-<a target="_blank" href="https://mckinsey.udemy.com/course/learn-kubernetes">"Learn Kubernetes"</a>
+<a target="_blank" href="https://mckinsey.udemy.com/course/certified-kubernetes-application-developer/">Udemy.com has a CKAD course with Tests</a> updated 09/2020 with 9.5 hours of video. It includes 30-minute lightning rounds to practice the stress of taking the exam. Surviging this gives you confidence.
 
 
 ### ACloud.guru
 
 <a target="_blank" href="https://acloud.guru/learn/d068441f-75b4-4fe8-a7a6-df9153f24a35">ACloud.guru CKAD course</a> by <a target="_blank" href="https://www.linkedin.com/in/wilb/">William Boyd</a> has 3.5 hours of video organized according to <a href="#CKAD_ExamDomains">exam domains</a>, 13 hands-on labs, and 3 practice exams based on v1.13.
 
-ACloud.guru's Vicky Tanya Seno at Santa Monica College is preparing a course on Kubernetes 
+(ACloud.guru's Vicky Tanya Seno at Santa Monica College is preparing a course on Kubernetes)
 
 
 ### Others on CKAD
