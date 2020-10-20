@@ -881,6 +881,11 @@ Sander van Vugt (<a target="_blank" href="https://LivingOpenSource.com/">LivingO
 https://github.com/sandervanvugt/cool-bash</a>
 
 
+<a target="_blank" href="https://github.com/ianmiell/bash-next-steps">
+Ian Miell</a>, author of Bash the Hard Way, has a "Bash Next Steps" video course on OReilly which
+covers Bash 5 features.
+
+
 ## More on DevOps #
 
 This is one of a series on DevOps:

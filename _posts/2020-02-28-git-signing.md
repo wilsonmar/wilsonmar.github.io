@@ -29,9 +29,32 @@ Protect Your Git Repositories From Commit Forgery Using Signing<a target="_blank
 BONUS: Since we're using GPG, here are also <a href="#EncryptFiles">notes about signing of whole files using GPG</a>.
 
 
+## Decisions
+
+There are several variations (decisions) regarding the workflow to use:
+
+   * Operating system of local machine (macOS, Windows, Linux flavors)
+   * Install a GUI app and/or Command-line program to sign keys
+   * Download <a href="#Installers">installer</a> from publisher web page or run package manager (Homebrew, Chocolately)
+
+   * The secret-keeping service (macOS Keychain, GPG, Yubikey, <a href="#Keybase">Keybase.io</a>, <a href="#SelfService">employer-specified</a>, etc.)
+   * Whether to sign every commit or just git tags per release
+   <br /><br />
+
+The steps:
+
+   1. Install apps and programs locally
+   2. Set up Git to sign all commits
+   3. Add public GPG key to GitHub
+   4. <a href="#ListKeys">List keys</a>
+   5. Sign Git commits
+   6. Sign Git tags
+   7. Import key to GPG on another host
+
+
 <a name="SelfService"></a>
 
-## Desired "Self-Serve" Workflow
+### Desired "Self-Serve" Workflow
 
 Here's the workflow I would like to see. It's not so much self-service as a tool for administrators. Anyway...
 
@@ -41,19 +64,21 @@ The app generates the certificate pairs, stores them in Vault, installs them on 
 
 Then all a new working developer needs to do is, on a pre-configured laptop, make a change and do a git <a href="#SignTag">tag</a> or <a href="#SignCommits">add and commit with a tag</a>, then <a href="#Push">push</a>.
 
+<hr />
 
 <a name="Installers"></a>
 
-## Install client utilities
+## Install client utilities and sign
 
 The alternatives:
 
    * <a href="#install_gpg-suite">Install on macOS GPG-Suite GUI</a> app which stores keys in the protected macOS KeyChain.
-
    * <a href="#gnupg2_mac_install">Install on macOS GPGN2 command line utility</a>
 
+   * <a href="#InstallWindowsCLI">Install on Windows CLI program</a>
    * <a href="#install-win">Install on Windows a GUI app</a>
 
+   * <a href="#GitKraken">Install GitKraken app and sign</a>
 
 <a name="install_gpg-suite"></a>
 
@@ -71,12 +96,19 @@ Instead of <a target="_blank" href="https://www.youtube.com/watch?v=FrrT9fYoL3Y"
 
    <img width="126" alt="git-signing-gpg-suite" src="https://user-images.githubusercontent.com/300046/95812445-a83a7180-0cd2-11eb-8c70-bfa7b1a5032b.png">
 
-   NOTE: It's in the /Applications folder.
+   NOTE: It's in "/Applications/GPG Keychain.app".
 
-1. In /Applications folder,
+   #### Gen GPG using macOS GPG-Suite
+
+1. To generated a GPG key pair click "+ New", then select the Key Type "RSA Sign Only)".
+
+   <img width="779" alt="git-signing-mac-keychain" src="https://user-images.githubusercontent.com/300046/95813251-b1c4d900-0cd4-11eb-86d0-6896fd78cdf1.png">
 
 
-<a name="install-win"></a>
+
+
+
+<a name="gnupg2_mac_install"></a>
 
 ### Install on macOS gnupg2 CLI utility
 
@@ -112,24 +144,23 @@ install-on-request: 47,841 (30 days), 104,969 (90 days), 428,775 (365 days)
 build-error: 0 (30 days)
    </pre>
 
-   To give you an idea of the pace of change:
 
-   <pre>gnupg: stable 2.2.19 (bottled)
-GNU Pretty Good Privacy (PGP) package
-https://gnupg.org/
-/usr/local/Cellar/gnupg/2.2.19 (134 files, 11MB) *
-  Poured from bottle on 2020-01-23 at 19:10:32
-From: https://github.com/Homebrew/homebrew-core/blob/master/Formula/gnupg.rb
-==> Dependencies
-Build: pkg-config ✔
-Required: adns ✔, gettext ✔, gnutls ✔, libassuan ✔, libgcrypt ✔, libgpg-error ✔, libksba ✔, libusb ✔, npth ✔, pinentry ✔
-==> Analytics
-install: 32,457 (30 days), 132,214 (90 days), 533,317 (365 days)
-install-on-request: 28,189 (30 days), 111,655 (90 days), 439,134 (365 days)
-build-error: 0 (30 days)
+1. Ensure that commands for "gpg" are routed to gpg2:
+
+   <pre>alias gpg="gpg2"
+   echo -e "\n$(gpg --version | grep gpg)"    # gpg (GnuPG) 2.2.19
    </pre>
 
-   Linux installers have other package names:
+   PROTIP: The response shows that the installation is specific to each version of macOS:<br />
+   <pre>==> Downloading https://homebrew.bintray.com/bottles/gmp-6.2.0.mojave.bottle.tar.gz</pre>
+
+
+
+   <a name="LinuxInstallers"></a>
+
+   ### Linux installers
+
+   Package installers on Linux have other package names:
 
    * <tt>yum install gnupg2</tt> on CentOS/RHEL
    * <tt>dnf install gnupg2</tt> on Fedora
@@ -160,7 +191,9 @@ build-error: 0 (30 days)
    </pre>
 
 
-   ### Install on Windows
+   <a name="InstallWindowsCLI"></a>
+
+   ### Install CLI on Windows
 
 1. Install <a target="_blank" href="https://chocolatey.org/">Chocolatey</a> if you havent's already.
 
@@ -171,15 +204,6 @@ build-error: 0 (30 days)
    Alternately, install <a target="_blank" href="https://www.gpg4win.org/">Gpg4win</a> GUI <a target="_blank" href="https://chocolatey.org/packages/Gpg4win">using Chocolatey</a>:
 
    <tt>choco install gpg4win</tt>
-
-1. Ensure that commands for "gpg" are routed to gpg2:
-
-   <pre>alias gpg="gpg2"
-   echo -e "\n$(gpg --version | grep gpg)"    # gpg (GnuPG) 2.2.19
-   </pre>
-
-   PROTIP: The response shows that the installation is specific to each version of macOS:<br />
-   <pre>==> Downloading https://homebrew.bintray.com/bottles/gmp-6.2.0.mojave.bottle.tar.gz</pre>
 
 
    ### Config
@@ -203,15 +227,8 @@ build-error: 0 (30 days)
 
 
 
-   ## Keybase
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=4V-7KnhcrbY" title="Mar 14, 2018">VIDEO</a> explains:
-
-   <a target="_blank" href="https://github.com/pstadler/keybase-gpg-github">https://github.com/pstadler/keybase-gpg-github</a>
-
-   https://www.youtube.com/watch?v=8_L6XljCZzA"> Keybase and PASS
-
-   ## Email address
+   ## Email address in GitHub
 
 1. Switch to your GitHub Profile Email page
 
@@ -230,18 +247,115 @@ build-error: 0 (30 days)
    PROTIP: Any name and email can be specified in Git. That's a big reason organizations ask for cryptographically signing commits in GitHub, which requires that the email specified be validated.
 
 
-   <a name="ListKeys"></a>
 
-   ## List GPG keys
+## Where to store keys
+
+
+   <a name="Keybase"></a>
+
+### Keybase
+
+   The advantage of using the Keybase app to generate GPG keys is that the keys are stored online at <a target="_blank" href="https://keybase.io/">keybase.io</a>, where you'll be able to retrieve your keys when you don't have your laptop anymore.
+
+   The downside is that it's possible for Keybase.io to be hacked. 
+
+   PROTIP: Keybase was acquired by Zoom in 2020. Some are concerned that Zoom will stop support of the product because Zoom only wanted the talent and not fund the free product.
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=4V-7KnhcrbY" title="Mar 14, 2018">VIDEO</a> explains
+   <a target="_blank" href="https://github.com/pstadler/keybase-gpg-github">https://github.com/pstadler/keybase-gpg-github</a>
+
+1. Go to <a target="_blank" href="https://keybase.io/">keybase.io</a> and create an account.
+
+   NOTE: Because Keybase asks for verfification of social media accounts, it may be more comforting for repository owners to know that users went through more hoops to obtain and verify each of their accounts, so the account used is less likely to be a fake.
+   Keybase provides value-added services such as adding encryption around direct messages on Twitter.
+   <a target="_blank" href="https://www.youtube.com/watch?v=8_L6XljCZzA">VIDEO</a>: Keybase also works with the pass utility to manage passwords securely (like Vault).
+
+1. Install the Keybase app to <tt>/Applications/Keybase.app</tt>:
+
+   <pre><strong>brew cask install keybase</strong></pre>
+
+1. Sign locally out to the Keybase service:
+
+   <pre><strong>keybase login</strong></pre>
+
+   It takes a few seconds and returns you to the command prompt.
+
+1. To avoid <a target="_blank" href="#https://blog.pablobm.com/2017/05/30/warning-server-gpg-agent-is-older-than-us.html">error message</a>: 
+
+   <pre>gpg: WARNING: server 'gpg-agent' is older than us (2.2.20 < 2.2.23)
+gpg: Note: Outdated servers may lack important security fixes.
+gpg: Note: Use the command "gpgconf --kill all" to restart them.
+   </pre>
+
+   do this:
+
+   <pre><strong>gpgconf --kill gpg-agent</strong></pre>
+
+1. Import public keys using Keybase:
+
+   <pre><strong>keybase pgp export | gpg --import</strong></pre>
+
+   Example response:   
+
+   <pre>gpg: key 938BBBDEB75FEA21: public key "Wilson Mar <wilsonmar@gmail.com>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+   </pre>
+
+1. Get the private key:
+
+   <pre><strong>keybase pgp export --secret | gpg --allow-secret-key --import</strong></pre>
+
+   If you see this response:
+
+   <pre>▶ ERROR No matching keys found
+gpg: no valid OpenPGP data found.
+gpg: Total number processed: 0
+   </pre>
+
+   ...
+
+1. Verify progress:
+
+   <pre><strong>gpg --list-secret-keys</strong></pre>
+
+1. Generate a GPG keypair:
+
+   <pre><strong>keybase pgp gen --multi</strong></pre>
+
+   Example prompts and responses:
+
+   <pre>Enter your real name, which will be publicly visible in your new key: Patrick Stadler
+Enter a public email address for your key: patrick.stadler@gmail.com
+Enter another email address (or &Lt;enter> when done):
+Push an encrypted copy of your new secret key to the Keybase.io server? [Y/n] Y
+▶ INFO PGP User ID: Patrick Stadler <patrick.stadler@gmail.com> [primary]
+▶ INFO Generating primary key (4096 bits)
+▶ INFO Generating encryption subkey (4096 bits)
+▶ INFO Generated new PGP key:
+▶ INFO   user: Patrick Stadler <patrick.stadler@gmail.com>
+▶ INFO   4096-bit RSA key, ID CB86A866E870EE00, created 2016-04-06
+▶ INFO Exported new key to the local GPG keychain
+   </pre>
+
+1. Skip to <a href="#ListKeys">list keys</a>.
+
+
+
+<hr />
+
+<a name="ListKeys"></a>
+
+## List GPG keys
 
 1. List what keys have been signed, meaning secret keys (more selective than the `gpg -k` command):
 
    <pre><strong>gpg --list-secret-keys --keyid-format LONG</strong></pre>
 
-   <tt>\-\-keyid-format LONG</tt> requests showing only those keys where both public and private key pair exists. This is becuase both are required to sign tags.
+   <tt>\-\-keyid-format LONG</tt> requests showing only those keys where both public and private key pair exists. This is becuase both are required to sign commits and tags.
    If nothing is returned, there are no keys usable for signing.
    
-   PROTIP: This above command was added as Bash shell alias (keyboard shortcut) in <a target="_blank" href="https://github.com/wilsonmar/git-utilities/blob/master/aliases.sh">https://github.com/wilsonmar/git-utilities/blob/master/aliases.sh</a>  so that you can instead just type:
+   PROTIP: This above command can be used often, so added as Bash shell alias (keyboard shortcut) in <a target="_blank" href="https://github.com/wilsonmar/git-utilities/blob/master/aliases.sh">https://github.com/wilsonmar/git-utilities/blob/master/aliases.sh</a> so that you can instead just type:
 
    <pre><strong>gsk</strong></pre>
 
@@ -251,16 +365,19 @@ build-error: 0 (30 days)
 ------------------------------------
    </pre>
 
-   The pubring.kbx file is Gnupg program's "Key Ring" file. See <a target="_blank" href="https://kb.iu.edu/d/awiu">https://kb.iu.edu/d/awiu</a> about keyring management commands.
+   PROTIP: File <tt>pubring.kbx</tt> is the Gnupg program's "Key Ring" file. See <a target="_blank" href="https://kb.iu.edu/d/awiu">https://kb.iu.edu/d/awiu</a> about keyring management commands.
 
-   Alternative Key Ring management tools are Keybase.io, GPG Suite, macOS's Apple Key Ring, and others.
+1. To list all keys:
+
+   <pre><strong>gpg --list-keys</strong></pre>
 
 
-   ## External (GPG Suite) to openpgp.or
+   ### External (GPG Suite) to openpgp.or
 
    If you're working on open-source projects, not for Enterprise internal use, you can
    install the <a target="_blank" href="https://gpgtools.org/">GPG Suite</a> (UI app)
-   or Keybase.io.
+   or <a href="#Keybase">Keybase.io</a>.
+
 
    The Suite can be installed as a <a target="_blank" href="https://formulae.brew.sh/cask/gpg-suite">Homebrew formula</a> "brew cask install gpg-suite" (brew cask install gpgtools no longer exists).
    The GUI app is installed at "/Applications/GPG Keychain.app".
@@ -349,16 +466,17 @@ Signature PIN ....: not forced
    * https://evilmartians.com/chronicles/stick-with-security-yubikey-ssh-gnupg-macos
 
 
-   <a name="GenerateKey"></a>
+<a name="GitKraken"></a>
 
-   ## Generate GPG key pairs
+### Install GitKraken app and sign
 
    Git UI clients such as <a target="_blank" href="https://support.gitkraken.com/git-workflows-and-extensions/commit-signing-with-gpg/">GitKraken can generate GPG keys with its UI</a>.
 
 
-   ### Gen GPG using macOS GPG-Suite
 
-   <img width="779" alt="git-signing-mac-keychain" src="https://user-images.githubusercontent.com/300046/95813251-b1c4d900-0cd4-11eb-86d0-6896fd78cdf1.png">
+<a name="GenerateKey"></a>
+
+## Generate GPG key pairs
 
 
    ### Gen GPG on macOS Terminal
@@ -678,6 +796,7 @@ gpg: Good signature from "John Doe <john_doe+github@gmail.com>" [ultimate]
 pinentry-program /usr/local/bin/pinentry-mac   
    </pre>
 
+
    <a name="Push"></a>
 
    ## Push by Tag
@@ -709,11 +828,13 @@ To github.com:wilsonmar/git-utilities
 
    ## Delete Tags
 
+   Git tags such as "v1.5.2" are meant to be permanently associated with a particular commit through history.
+
 1. To delete a Tag locally:
 
    <pre><strong>git tag -d v1.5.2</strong></pre>
 
-   <tt>--delete</tt> is the long form of the <tt>-d</tt> parameter.
+   Alternately, <tt>--delete</tt> is the long form of the <tt>-d</tt> parameter.
 
    Multiple tags can be specified in one command (separated by spaces).
 
@@ -766,6 +887,8 @@ To github.com:wilsonmar/git-utilities
    kubectl get pods -o wide
    </strong></pre>
 
+
+<hr />
 
 <a name="EncryptFiles"></a>
 
@@ -879,6 +1002,14 @@ https://jigarius.com/blog/signing-git-commits</a>
 https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e">
 https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e</a>
 
+<a target="_blank" href="https://www.youtube.com/watch?v=KhROpuxHyH8">VIDEO</a>:
+[Git/GitHub] Signing your commits in GitHub -- Getting the verified badge on your commits</a>
+Jul 7, 2018
+
+<a target="_blank" href="https://mikegerwitz.com/2012/05/a-git-horror-story-repository-integrity-with-signed-commits">
+A Git Horror Story: repository integrity with signed commits</a>
+
+
 ## More on DevOps #
 
 This is one of a series on DevOps:
@@ -890,4 +1021,3 @@ This is one of a series on DevOps:
 This is one of a series on Security in DevSecOps:
 
 {% include security_links.html %}
-

@@ -493,8 +493,7 @@ edX.org publishes some courses from Linux Academy.
 ### O'Reilly
 
 <a target="_blank" href="https://learning.oreilly.com/videos/certified-kubernetes-application/">
-7h video class</a> by Sander van Vugt, who, as a Linux expert, provides in-depth CentOS install advice (including SELinux) available nowhere else.
-His diagrams are on a lightboard.
+7h video class</a> by Sander van Vugt, who, as a Linux expert, provides in-depth CentOS install advice (including SELinux) and <a target="_blank" href="https://github.com/sandervanvugt/ckad">files</a> available nowhere else. His diagrams are on a lightboard.
 
 BLAH: O'Reilly's videos are annoying because you have to move the sound up on every new chapter.
 
