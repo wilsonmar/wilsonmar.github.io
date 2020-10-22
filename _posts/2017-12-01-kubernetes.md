@@ -39,7 +39,7 @@ Kubernetes applies principles of the <a target="_blank" href="https://www.reacti
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"><img width="546" alt="reactive-manifesto" src="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"></a>
 
 
-## Open-Sourced and collaborative
+## Open-Source History
 
 Releases of Kubernetes are listed where Kubernetes open-sourced its source code within GitHub.com:
 
@@ -206,18 +206,13 @@ https://ravikirans.com/cks-kubernetes-security-exam-study-guide/
 
 CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e.g., v1.19 as of 1 Sep 2020).
 
-1. <a target="_blank" href="https://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc">Keyboard shortcuts for Bash</a>
-
-1. Get proficient with vim well using vimtutor, so that commands are intuitive (where you don't have to pause for remembering how to do things in vim).
-
-
    ### Sign up for exam
 
    CNCF is part of the Linux Foundation, so... 
 
 1. Get an account (Linux Foundation credentials ) at <a target="_blank" href="https://identity.linuxfoundation.org/">https://identity.linuxfoundation.org</a>. https://myprofile.linuxfoundation.org/
 
-   It's a non-profit organization, thus the ".org".
+   NOTE: It's a non-profit organization, thus the ".org".
 
    https://docs.linuxfoundation.org/tc-docs/certification/lf-candidate-handbook
 
@@ -231,7 +226,7 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 
 3. Go to <a target="_blank" href="https://training.linuxfoundation.org/linux-courses/system-administration-training/kubernetes-fundamentals">https://training.linuxfoundation.org/linux-courses/system-administration-training/kubernetes-fundamentals</a> and pay for the $300 exam plus $199 more if you want to take their class.
 
-   If you have a Registration code: <a target="_blank" href="https://trainingportal.linuxfoundation.org/redeem">https://trainingportal.linuxfoundation.org/redeem</a>
+   Alternately, if you have a Registration code: <a target="_blank" href="https://trainingportal.linuxfoundation.org/redeem">https://trainingportal.linuxfoundation.org/redeem</a>
 
 4. Find dates and times when you're in a quiet private indoor place where no one else (co-workers) are near.
 
@@ -280,7 +275,16 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 1. See 3 preview exam questions (with answer explained) after signing up at <a target="_blank" href="https://killer.sh/">https://killer.sh</a> (Killer Shell's) CKA/CKAD Simulator</a> provides close replica of the CKAD exam browser terminal with 20 CKAD and 25 CKA questions, at 29.99€ for two sessions (before 10% discount). Each session includes 36 hours of access to a cluster environment. They recommend you start the first session when you’re at the beginning of your CKA or CKAD journey. 
 
 
+   ### Build speed
+
+1. Practice <a target="_blank" href="https://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc">Keyboard shortcuts for Bash</a>
+
+1. Get proficient with vim well using vimtutor, so that commands are intuitive (where you don't have to pause for remembering how to do things in vim).
+
+
    ### Bookmarks to docs
+
+1. Rather than typing from scratch, copy and paste from pages in Kubernetes.io.
 
    <a href="#[1]">PROTIP: Create bookmarks in Chrome</a> for <a target="_blank" href="   https://github.com/walidshaari/Kubernetes-Certified-Administrator/blob/main/README-ckad.md">links</a> to ONLY <a target="_blank" href="https://kubernetes.io/docs/home/">kubernetes.io pages</a>
 
@@ -611,6 +615,16 @@ Others on CKA:
 <a name="Namespaces"></a>
 
 A "namespace" provides isolation between system components (network, files, users, processes, IPCs).
+
+A namespace is so fundamental that the namespace name is metadata in yaml files defining pods:
+
+   <pre>
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-ready
+  namespace: default
+   </pre>
 
 This tutorial focuses on <strong>Docker</strong> containers as Kubernetes' <strong>Container Runtime Interface (CRI)</strong>. BTW Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") containers, which provided a CLI for containers as part of CoreOS. Rkt became the first archived project of CNCF after IBM bought Red Hat with its competing "containerd" <a target="_blank" href="https://github.com/kubernetes-sigs/cri-o">cri-o technology.
 
