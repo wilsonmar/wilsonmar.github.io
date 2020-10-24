@@ -1,16 +1,16 @@
 ---
 layout: post
 title: "Virtualbox"
-excerpt: "now old school"
+excerpt: "Although it doesn't have the path to production like Docker and Kubernetes, it's free (unlike VMware Fusion)"
 modified:
 tags: [virtualbox]
 date: "2019-10-04"
 file: "virtualbox"
 image:
-# kubernetes-head-1900x500-472493.jpg
-  feature: https://user-images.githubusercontent.com/300046/39955449-b791191e-558b-11e8-8bde-9042df1b66ab.jpg
-  credit: Jeremy Thomas
-  creditlink: https://www.flickr.com/photos/132218932@N03/page2
+# virtualbox-300x700
+  feature: https://user-images.githubusercontent.com/300046/97094515-85815480-1612-11eb-8587-127ab8bd8c23.jpeg
+  credit: 
+  creditlink: 
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -20,16 +20,15 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/virtualbox/">This</a> is a hands-on  introduction with insightful commentary carefully sequenced to make complex material easier to understand quickly. This is not a "demo", but an immersive step-by-step "deep dive" tutorial aimed to make you productive.
 
-NOTE: Docker and <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a> is now a superior utility to Virtualbox.
+NOTE: Docker and <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a> is now a superior utility to Virtualbox. Their images are smaller and quicker to load. They have a path to production usage whereas <a href="#Scripts">Virtualbox command scripts</a> are only for local use.
 
-On macOS, VMWare Fusion is superior to Virtualbox.
+Virtualbox is free, unlike $350 VMWare Fusion On macOS. Their images are about the same size.
 
 Nevertheless, some tutorials still reference Virtualbox.
-
 So here we are.
 
 
-## Before
+## Before install
 
    PROTIP: Instead of downloading the installer from https://www.virtualbox.org/
    and clicking, use Homebrew on macOS.
@@ -56,9 +55,9 @@ installer: The install failed. (The Installer encountered an error that caused t
 
    <img width="391" alt="virtualbox-kext-popup" src="https://user-images.githubusercontent.com/300046/97080041-c26b2e00-15b5-11eb-82a1-1381e39e52db.png">
 
-1. Clicking on it is equivalent to clicking the Apple icon for 
+1. Clicking on "Open Security Preferences" is equivalent to clicking the Apple icon for:
 
-   <strong>System Preferences → Security & Privacy → General tab</strong>
+   <strong>Apple icon → System PreferencesSecurity & Privacy → General tab</strong>
 
    <img width="666" alt="virtualbox-lock-config" src="https://user-images.githubusercontent.com/300046/97080210-fa26a580-15b6-11eb-8b07-49f56fcf15e6.png">
 
@@ -90,26 +89,17 @@ installer: The install failed. (The Installer encountered an error that caused t
 
 
 
-
-
-
-
-
 <hr />
 
 
-   ### Run Install & Run Script 
+## Install & Run Script 
 
-   I've created a single shell script which installs Virtualbox.
-
-1. Copy and paste on Terminal:
-
-   TODO: badh
+Below is a description of each steps, in GUI and CLI.
 
 
-> Below is a description of each steps, in GUI and CLI.
+### On macOS 
 
-1. Use Homebrew to install
+1. Use Homebrew to install both GUI app and CLI programs from one installer:
 
    <pre><strong>brew cask install virtualbox</strong></pre>
 
@@ -130,7 +120,7 @@ installer: The install was successful.
 🍺  virtualbox was successfully installed!
    </pre>
 
-   ### GUI
+   ### GUI app
 
    From here you can open the GUI:
 
@@ -143,7 +133,7 @@ installer: The install was successful.
    OReilly "Getting started with continuous delivery (CD)"
 
 
-   ### CLI
+   ### CLI program
 
    Scripts make use of the 
 
@@ -157,7 +147,7 @@ installer: The install was successful.
 
 1. Import appliance (.ova file) to designated folder:
 
-   The GUI has: 
+   The GUI top menu:<br /> 
    <tt>(Apple) VirtualBox  File  Machine  Window  Help</tt>
 
 1. Press command+I (or Pull down File to select "Import Appliance").
@@ -170,11 +160,13 @@ installer: The install was successful.
 
 1. Click Continue for the Appliance settings dialog.
 
-   <img width="896" alt="virtualbox-appliance-settings" src="https://user-images.githubusercontent.com/300046/97081394-6b6a5680-15bf-11eb-85db-2b10d670f7d1.png">
+   <a targt="_blank" href="https://user-images.githubusercontent.com/300046/97081394-6b6a5680-15bf-11eb-85db-2b10d670f7d1.png">
+   <img width="896" alt="virtualbox-appliance-settings" src="https://user-images.githubusercontent.com/300046/97081394-6b6a5680-15bf-11eb-85db-2b10d670f7d1.png"></a>
 
 1. Click "Import" and "Agree". Wait for it, then the "Oracle VM VirtualBox Manager":
 
-   <img width="840" alt="virtualbox-manager" src="https://user-images.githubusercontent.com/300046/97081510-20047800-15c0-11eb-8233-5a88ad7ed9b2.png">
+   <a targt="_blank" href="https://user-images.githubusercontent.com/300046/97081510-20047800-15c0-11eb-8233-5a88ad7ed9b2.png">
+      <img width="840" alt="virtualbox-manager" src="https://user-images.githubusercontent.com/300046/97081510-20047800-15c0-11eb-8233-5a88ad7ed9b2.png"></a>
 
    <img width="839" alt="virtualbox-manager-2" src="https://user-images.githubusercontent.com/300046/97082721-04519f80-15c9-11eb-8f65-30ed1b84e10a.png">
 
@@ -187,8 +179,6 @@ installer: The install was successful.
 
 1. The UI provides several ways to Start: Click the yellow arrow; If you have several ova file Groups, right-click on the one you want started to select "Start", then "Normal" for GUI (not "Headless").
 
-   <img width="337" alt="virtualbox-switch-msg" src="https://user-images.githubusercontent.com/300046/97082702-e421e080-15c8-11eb-83bd-8a745fb02b7d.png">
-
    The equivalent CLI:
 
    <pre><strong>VBoxManage startvm $VM_NAME -- type=headless</strong></pre>
@@ -199,38 +189,43 @@ VM "cd" has been successfully started.
 
    REMEMBER: Switch by pressing left command+C.
 
-   Check "Do not show this message again", then click "Switch" to this pop-up.
+1. There are two messages that pop-up during install and also appear at the top of the client UI Desktop:
 
    <img width="464" alt="virtualbox-capture-msg" src="https://user-images.githubusercontent.com/300046/97082832-bf7a3880-15c9-11eb-84c3-b3ef6b4c0b42.png">
 
-   Check "Do not show this message again", then click "Cancel" to the pop-up.
+   Check "Do not show this message again", then click "Cancel" to the pop-up (do not Switch).
 
    <img width="337" alt="virtualbox-switch-msg" src="https://user-images.githubusercontent.com/300046/97082852-e33d7e80-15c9-11eb-8be0-664d5f7ba32e.png">
 
-   Check "Do not show this message again", then click "Cancel" to the pop-up.
+   Check "Do not show this message again", then click "Cancel" to the pop-up (do not Capture).
 
-   PROTIP: Avoid using "scaled mode". Press command+F
+   PROTIP: Avoid using "scaled mode". Press command+F.
 
    You should now be on the server Desktop.
 
-1. Click "X" on the far right of the messages to dismiss messages at the top of the screen about “Auto capture keyboard” and “mouse pointer integration” you can just click the x 
+1. Click "X" on the far right of each message to dismiss messages at the top of the screen about “Auto capture keyboard” and “mouse pointer integration” you can just click the x. 
 
    PROTIP: Keyboard shortcut command+Tab doesn't work from within Virtualbox.
    So it helps to have a second monitor you can mouse to access macOS programs.
    
 1. If you are given an option to upgrade ubuntu, decline.
 
+
+   ### Network Settings
+
+1. In the GUI Terminal Emulator, click on Terminal.
+1. Verify that you have internet connectivity from the VM: 
+
+   <pre><strong>ping google.com</strong></pre>
+
+   <pre>PING google.com (108.177.112.113) bytes of data.</pre>
+
+
 1. Add a network adapter to the VM to configures the network adapter to work on host-only mode, 
    connected to the vboxnet0 network:
 
    <pre><strong>VBoxManage modifyvm $VM_NAME --nic2 hostonly --hostonlyadapter2 vboxnet0</strong></pre>
 
-
-1. In the GUI Terminal Emulator, verify that you have internet connectivity from the VM: 
-
-   <pre><strong>ping google.com</strong></pre>
-
-   <pre>PING google.com (108.177.112.113) bytes of data.</pre>
 
 1. In the GUI Terminal, list all IP addresses from a given network and look for which one was assigned to the VM:
 
@@ -243,18 +238,11 @@ sudo arp-scan --interface=vboxnet0 --localnet
    <pre><strong>VBoxManage guestproperty enumerate $VM_NAME</strong></pre>
 
 
-
-
-1. Invoke application programs in the Virtualbox.
-
-
-1. PROTIP: Keyboard shortcut command+Tab doesn't work from within Virtualbox.
-   So it helps to have a second monitor you can mouse to access macOS programs.
-   
-
 <hr />
 
-   ### VBoxManage script
+<a name="Scripts"></a>
+
+## VBoxManage script
 
 1. Open a Terminal 
    PROTIP: You can access Virtualbox instances from a Terminal outside the Virtualbox using the VBOXManage CLI.
@@ -311,6 +299,17 @@ VBoxManage modifyvm $name --nic1 bridged --bridgeadapter1 eth0
 VBoxHeadless -s $name
    </pre>
 
+
+<hr />
+
+## Do work
+
+1. Invoke application programs in the Virtualbox.
+
+
+1. PROTIP: Keyboard shortcut command+Tab doesn't work from within Virtualbox.
+   So it helps to have a second monitor you can mouse to access macOS programs.
+   
 
 
 <hr />

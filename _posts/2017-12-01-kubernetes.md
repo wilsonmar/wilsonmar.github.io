@@ -19,13 +19,15 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">This</a> is a hands-on  introduction with insightful commentary carefully sequenced to make complex material easier to understand quickly. This is not a "demo", but an immersive step-by-step "deep dive" tutorial aimed to make you productive.
 
+NOTE: This is now a "starter set" actively undergoing additions.
+
 ## Why Kubernetes?
 
 With Kubernetes, <strong>dev teams</strong> can take complete charge of production operations in cloud environments -- deploy both application code and all the environment settings, at their own cadence, without ceremonies and wait time to coordinate releases.
 
 Kubernetes is called "container orchestration" software because it automates the deployment, scaling and management of containerized applications<a target="_blank" href="https://en.wikipedia.org/wiki/Kubernetes">[Wikipedia]</a>. 
 
-* Authentication -> Authorization -> Admission Control
+* Authentication -> Authorization -> <a href="#Admission">Admission Control</a>
 * Replication of components
 * Service discovery
 * Load balancing
@@ -48,7 +50,7 @@ Releases of Kubernetes are listed where Kubernetes open-sourced its source code 
 Kubernetes was created inside Google (using the [Golang](/Golang/) programming language).
 Kubernetes was used inside Google for over a decade before being open-sourced in 2014 to the Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>) collective.
 
-   * v1.0 was committed on July 2015 within GitHub, and released on July 21, <strong>2015</strong>
+   * v1.0 (first commit within GitHub) was on July 2015, and released on July 21, <strong>2015</strong>
    * v1.6 was led by a CoreOS developer
    * v1.7 was led by a Googler
    * v1.8 is led by <a target="_blank" href="https://www.linkedin.com/in/jaicesinger/">Jaice Singer DuMars</a> (<a target="_blank" href="https://twitter.com/jaicesd">@jaicesd</a>) after Microsoft joined the CNCF July 2017 <a target="_blank" href="https://twitter.com/jaydumars?lang=en">VIDEO</a>
@@ -90,11 +92,11 @@ Here is the full text of the <a target="_blank" href="https://github.com/cncf/cu
    • Understand ConfigMaps
    • Understand SecurityContexts
    • Define an application’s resource requirements
-   • Create & consume Secrets
+   • Create & consume <a href="#Secrets">Secrets</a>
    • Understand ServiceAccounts
    <br /><br />
 
-10% Multi-Container Pods (design pattern: Ambassador, Adapter, Sidecar)<br />
+10% <a href="#Multi-Container">Multi-Container Pods</a><br />
    * Understand Multi-Container Pod design patterns (e .g. ambassador, adapter, sidecar)
    <br /><br />
 
@@ -105,7 +107,7 @@ Here is the full text of the <a target="_blank" href="https://github.com/cncf/cu
    * Understand debugging in Kubernetes
    <br /><br />
 
-20% Pod Design (Deployments, Rolling Updates, Rollbacks, Labels, Selectors, Annotations, Rollbacks, Jobs, CronJobs)<br />
+20% Pod Design (Deployments, Rolling Updates, Rollbacks, Labels, Selectors, Annotations, Rollbacks, <a href="#Jobs">Jobs</a>, CronJobs)<br />
    • Understand Deployments and how to perform rolling updates
    • Understand Deployments and how to perform rollbacks
    • Understand Jobs and CronJobs 
@@ -176,7 +178,7 @@ https://kubernauts.de/en/home/ (<a target="_blank" href="https://twitter.com/kub
 It's for those who hold a CKA certification.
 
 * 10% Cluster Setup - Best practice for configuration to control environment access, rights and platform conformity.
-* 15% Cluster Hardening - to protect K8s API and utilize RBAC
+* 15% Cluster Hardening - to protect K8s API and utilize <a href="#RBAC">RBAC</a>
 * 15% System Hardening - to improve the security of OS & Network; restrict access through IAM
 * 20% Minimize Microservice Vulnerabilities - to use various mechanisms to isolate, protect, and control workload.
 * 20% Supply Chain Security - forcontainer-oriented security, trusted resources, optimized container images, CVE scanning
@@ -432,22 +434,28 @@ Its <a target="_blank" href="https://github.com/kubernetes/kubernetes">code page
 ## Social media communities
 
    * <a target="_blank" href="https://kubernetes.io/community/">https://kubernetes.io/community</a>
+
+   * <a target="_blank" href="https://dex.dev">https://dex.dev</a>
+
+   * <a target="_blank" href="https://kubernetes.slack.com">https://kubernetes.slack.com</a>
    * <a target="_blank" href="https://slack.k8.io">https://slack.k8.io</a>
-   * <a target="_blank" href="https://www.meetup.com/kubernauts/">https://www.meetup.com/kubernauts</a>
    * <a target="_blank" href="https://slack.k8s.io">https://slack.k8s.io</a>
-   * <a target="_blank" href="https://plus.google.com/communities/115402602543170235291">
-   Google+ Group: Kubernetes</a>
-   * <a target="_blank" href="https://groups.google.com/forum/#!forum/kubernetes-announce ">for announcements</a>
-   * <a target="_blank" href="https://groups.google.com/forum/#!forum/kubernetes-dev">Contributors to the Kubernetes project to discuss design and implementation issues</a>.
+
    * <a target="_blank" href="https://stackoverflow.com/search?q=k8s+or+kubernetes">Stackoverflow for developers</a>
    * <a target="_blank" href="https://serverfault.com/search?q=k8s+or+kubernetes">for sysadmins</a>
+
+   * <a target="_blank" href="https://plus.google.com/communities/115402602543170235291">Google+ Group: Kubernetes</a>
+   * <a target="_blank" href="https://groups.google.com/forum/#!forum/kubernetes-announce ">for announcements</a>
+   * <a target="_blank" href="https://groups.google.com/forum/#!forum/kubernetes-dev">Contributors to the Kubernetes project to discuss design and implementation issues</a>.
    * <a target="_blank" href="https://groups.google.com/forum/#!forum/kubernetes-sig-scale">kubernetes-sig-scale</a>
+
    * <a target="_blank" href="https://www.youtube.com/playlist?list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ&disable_polymer=true">
    Kubernetes Google Community video chats</a>
 
-   * <a target="_blank" href="https://cloud.google.com/support/docs/issue-trackers">https://cloud.google.com/support/docs/issue-trackers</a>
-   to report bugs.
+   * <a target="_blank" href="https://cloud.google.com/support/docs/issue-trackers">https://cloud.google.com/support/docs/issue-trackers</a> to report bugs.
 
+   * <a target="_blank" href="https://www.meetup.com/kubernauts/">https://www.meetup.com/kubernauts</a>
+   * <a target="_blank" href="https://www.meetup.com/topics/kubernauts/">https://www.meetup.com/topics/kubernauts</a>
    * <a target="_blank" href="https://www.KubeCon.io">KubeCon.io</a> Conferences (<a target="_blank" href="https://www.twitter.com/KubeConio/">#KubeConio</a>)
 
 
@@ -455,18 +463,39 @@ Its <a target="_blank" href="https://github.com/kubernetes/kubernetes">code page
 
 For the most up-to-date information by practioners:
 
-* <a target="_blank" href="https://www.youtube.com/playlist?list=PLj6h78yzYM2O1wlsM-Ma-RYhfT5LKq0XC">YouTube Videos from Kubcon + CloudNativeCon Europe 2020</a>
+Kubcon conferences are held 3 times a year in Asia, Europe, and US from https://events.linuxfoundation.org.
 
-* <a target="_blank" href="https://mauilion.dev/about/">weekly video chat</a> on Heptio's YouTube channel of Duffie Cooley (<a target="_blank" href="https://twitter.com/mauilion">@mauilion</a>).
+   * <a target="_blank" href="https://www.youtube.com/playlist?list=PLj6h78yzYM2O1wlsM-Ma-RYhfT5LKq0XC">YouTube Videos from Kubcon + CloudNativeCon Europe 2020</a>
+
+Others:
+
+   * <a target="_blank" href="https://mauilion.dev/about/">weekly video chat</a> on Heptio's YouTube channel of Duffie Cooley (<a target="_blank" href="https://twitter.com/mauilion">@mauilion</a>).
+
+O'Reilly's <a target="_blank" href="https://learning.oreilly.com/live-training/courses/oreilly-infrastructure-ops-superstream-series/0636920410027/?utm_medium=email&utm_source=platform+b2b&utm_campaign=superstream&utm_content=20201022+reminder4+io+ev3"> Infrastructure & Ops Superstream Series: Session 3 Oct. 21, 2020: Kubernetes</a> 
+
+@EllenKorbes: "Successful Kubernetes Development Workflows"
+
+<a target="_blank" href="https://www.linkedin.com/in/javajon/">Jonathan Johnson</a>'s live online training "Kubernetes in Three Weeks" courses through O'Reilly:
+
+   * <a target="_blank" href="https://learning.oreilly.com/live-training/courses/kubernetes-in-three-weeks-part-ii/0636920411109/">Part I</a> - Meshing and Observability
+
+   * <a target="_blank" href="https://learning.oreilly.com/live-training/courses/kubernetes-in-three-weeks-part-ii/0636920411109/">Part II</a> - Operators and Serverless
+
+   * Part III - CI/CD Pipelines on Kubernetes
+
+Programming Kubernetes (book)
+Kubernetes Best Practices (book)
+Kubernetes Up and Running, second edition (book)
 
 
 ## Video courses
 
-Research into learning point to "spaced repetion" as the way to get what want to remember in our long-term memory.
+Research into learning point to "spaced repetition" as the way to get what want to remember in our long-term memory.
 
 Different instructors explain concepts in different logical sequences.
 
-So looking at different video classes provide that.
+So looking at different video classes provides that.
+
 
 <a name="LFS258"></a>
 
@@ -529,10 +558,10 @@ The class also includes a Challenge and Cert Prep. off <a target="_blank" href="
 
 Nigel Poulton (@NigelPoulton, <a target="_blank" href="https://www.nigelpoulton.com/">nigelpoulton.com</a>), Docker Captain:
 
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-integrating-volumes-using-multi-container-pods">Kubernetes for Developers: Integrating Volumes and Using Multi-container Pods</a> by Nigel Poulton 2h 26m Apr 23, 2020
-
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files">
    Getting Started with Kubernetes</a> 22 May 2017
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-integrating-volumes-using-multi-container-pods">2h 26m VIDEO course: "Kubernetes for Developers: Integrating Volumes and Using Multi-container Pods"</a> by Nigel Poulton Apr 23, 2020
 
    * Book: "Docker for Sysadmins"
 
@@ -563,6 +592,10 @@ by Matt Turner (from England) is hands-on using minikube 1.9.2 and kubernetes-cl
    <br /><br />
 
 <a target="_blank" href="https://www.linkedin.com/learning/learning-kubernetes/welcome?u=26886050">Learning Kubernetes</a> (on a Mac) by Karthik Gaekwad (<a target="_blank" href="https://www.linkedin.com/in/kgaekwad/">when he was at Oracle</a>)
+
+
+<a target="_blank" href="https://www.linkedin.com/learning/devops-foundations-transforming-the-enterprise/transforming-your-organization">"DevOps Foundations: Transforming the Enterprise
+Transforming your organization"</a> by Mirco Hering, Global DevOps Practice Lead at Accenture
 
 ### LinuxAcademy
 
@@ -610,11 +643,120 @@ Others on CKA:
 * <a target="_blank" href="https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days-e4603ac40746">how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days</a>
 * <a target="_blank" href="https://www.linkedin.com/learning/certified-kubernetes-application-developer-ckad-cert-prep-exam-tips?u=26886050">Certified Kubernetes Application Developer (CKAD) Cert Prep: Exam Tips</a> by Benjamin Muschko
 
+
+
 <hr />
+
+K8s recognizes both imperative and declarative yaml files.
+
+GitOps: ArgoCD monitors GitHub and applies changes to K8s Controller.
+
+
+
+## Just one web server:
+
+1. For Docker to create an Nginx web server:
+
+   <pre><strong>docker run --name my-nginx -p 80 nginx:1.19.2</strong></pre>
+
+1. For Kubernetes to run a pod:
+
+   <pre><strong>kubectl run   my-nginx --port 80 --image=nginx:1.19.2</strong></pre>
+
+1. Declarative
+
+   <pre>apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: nginx
+spec:
+  containers:
+  - name: my-nginx
+    image: nginx:1.19.2
+    ports:
+    - containerPort: 80
+   </pre>
+
+1, Install Vscode and IntelliJ extensions for formatting YAML files.
+   To indent multiple lines at a time.
+
+1. Declare ReplicaSet
+
+   <pre>apiVersion: v1
+kind: ReplicaSet
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: my-nginx
+        image: nginx:1.19.2
+        ports:
+        - containerPort: 80
+   </pre>
+
+
+1. Busybox image:
+
+   <pre>apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-ready
+  namespace: default
+   </pre>
+
+
+
+
+<pre><strong>kubectl run --restart=Always      # creates deployment
+kubectl run --restart=Never       # creates pod
+kubectl run --restart=OnFailure   # creates job
+</strong></pre>
+
+<a name="Jobs"></a>
+
+### Jobs
+
+Batch jobs are supervisor processes that run once and completed.
+
+
 
 <a name="Namespaces"></a>
 
 A "namespace" provides isolation between system components (network, files, users, processes, IPCs).
+
+Specifying different namespaces are useful in large enterprises.
+
+   * <a href="#Secrets">Secrets</a> are not shared across namespaces.
+   <br /><br />
+
+Declarative commands to define a sample namespace:
+
+   <pre>kubectl create namespace ticketing
+kubectl label namespace ticketing venue=opera watch=cpu
+kubectl get namespaces
+kubectl get namespace apps-collection -o YAML
+   </pre>
+
+yaml to define a namespace:
+
+   <pre>apiVersion: v1   # Object controller version
+kind: Namespace          # Object classification
+metadata:                # Associated data
+  labels:
+    venue: opera
+    watch: cpu
+spec:                    # specific object details
+   </pre>
+
+
 
 A namespace is so fundamental that the namespace name is metadata in yaml files defining pods:
 
@@ -634,7 +776,11 @@ CRI-O, Docker, ContainerD support Runc. Runc is the low-level tool which does th
 
 Kubernetes automates resilience by abstacting the network and storage shared by ephemeral replaceable <strong>pods</strong> which the Kubernetes Controller replicates to increase capacity.
 
+> PROTIP: "The median number of containers running on a single host is about 10." -- Sysdig, April 17, 2017. But there can be up to 100 pods per node (at v1.17)
+
 Kubernetes replicates Pods (the same set of containers in each) across several worker <strong>Nodes</strong> (VM or physical machines).
+
+> K8s supports up to 5,000 node clusters of up to 150,000 pods (at v1.17)
 
 Each set of pods are within a <strong>node</strong>.
 Kubernetes assigns each node with a different <strong>external IP address</strong>.
@@ -651,11 +797,24 @@ In the illustration below, each pod (each a different color) encapsulates one or
 <!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
 
 
+
+In <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=bf09c049-8db9-4d14-81c7-77f1e942524c">
+"Kubernetes Un-Scaried"</a> by Phil Taprogge (of Snyk) offers this diagram:
+<img width="435" alt="k8s-phil-diagram" src="https://user-images.githubusercontent.com/300046/97088709-09761500-15f0-11eb-8eb2-4f99edab5db0.png">
+
+
+
+
 <hr />
 
-## Install
+## Install Minikube
 
-Let's start by installing minikube on your laptop.
+Instead of minikube, there's also K3s, Microk8s on Linux, Minishift.
+
+   * KinD (Kubernetes in Docker) <a target="_blank" href="https://kind.sigs.k8s.io/">https://kind.sigs.k8s.io/</a> builds K8s clusters out of Docker containers running Docker in Docker, good for integration with a CI/CD pipeline.
+   <br /><br />
+
+But let's start by installing minikube on your laptop.
 
 <a name="Minikube"></a>
 
@@ -851,7 +1010,12 @@ somejob   5/5           27s        9m41s</pre>
 
    <pre><strong>kubectl logs counter</strong></pre>
 
-   The API Server routes several <strong>kinds</strong> of <a href="#Ayaml-files">yaml declaration files</a>: Pod, Deployment of pods, Service, Job, Configmap.
+
+   The <a href="#API_Server">API Server</a> authenticates using one of several methods (basic, certificates, tokens, etc.).
+
+   "Authorization" refers to determining whether the requester is allowed to perform based on role (using <a href="#RBAC">RBAC</a>).
+
+   The <a href="#API_Server">API Server</a> routes several <strong>kinds</strong> of <a href="#Ayaml-files">yaml declaration files</a>: Pod, Deployment of pods, Service, Job, Configmap.
 
    API primatives ???
 
@@ -962,7 +1126,20 @@ Events:
   Normal  Started    4m7s   kubelet, minikube  Started container web
    </pre>
 
+Each node has a kubelet, container tooling (Docker), kube-proxy, supervisord
 
+kube-proxy watches the <a href="#API_Server">API server</a> for addition and removal requests.
+For each new service, kube-proxy opens a randomly chosen port on the local node.
+It then makes proxied connections to one of the corresponding back-end pods.
+
+
+<a name="Kubelet"></a>
+
+#### Kubelet
+
+Kubelet only manages containers created by the <a href="#API_Server">API server</a> - not any container running on the node.
+
+Kubelet takes a set of Podspecs provided bythe kube-apiserver to ensure that containers described are running and healthy.
 
 <hr />
 
@@ -1009,12 +1186,17 @@ This diagram is shown at the ending of a small (upcoming) movie logically illust
 * <a target="_blank" href="https://buddy.works/guides/how-optimize-kubernetes-workflow">Buddy</a>
    automates Kubernetes workflows.
 
+* <a target="_blank" href="https://bit.ly/3dcRg4Y">RabbitMQ</a> for AMQP messaging with StatefulSet app
 
 <a name="Helm"></a>
 
 ## Helm charts
 
 <a target="_blank" href="https://www.youtube.com/watch?v=0vpM8E28aXQ&time=9m45s">VIDEO</a>: Helm (<a target="_blank" href="https://helm.sh/">helm.sh</a>) is the default package manager for Kubernets (like pip and NuGet). It was started by a company called Deis in October 2015 out of a hackathon.
+
+Helm templating creates yaml.
+
+Helm is further automated with Tilt.
 
 <a targeet="_blank" href="https://www.youtube.com/watch?v=4ht22ReBjno">
 The Illustrated Children's Guide to Kubernetes</a>
@@ -1096,6 +1278,9 @@ Kubernetes manages the instantiating, starting, stopping, updating, and deleting
 The number of pods replicated is based on <strong>deployment</strong> yaml files. 
 Service yaml files specify what ports are used in deployments.
 
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/96952588-6c5e9380-14ac-11eb-8658-40fdee2aee93.png">
+<img width="707" alt="k8s-svc-deploy-asso" src="https://user-images.githubusercontent.com/300046/96952588-6c5e9380-14ac-11eb-8658-40fdee2aee93.png"></a>
+
 In 2019 Kubernetes added <strong>auto-scaling</strong> based on metrics API measurement of demand.
 
 <a target="_blank" href="https://linuxacademy.com/cp/guides/download/refsheets/guides/refsheets/linuxacademy-kubernetesadmin-archdiagrams-1_1516737832.pdf">This Architectural Diagram pdf</a>:
@@ -1154,7 +1339,23 @@ The kinds of yaml files:
    * monolith.yaml
    * secure-monolith.yaml
 
-### services samples
+<a name="DaemonSets"></a>
+
+### DaemonSets
+
+   DaemonSets ensure that all nodes run a copy of a specified pod.
+
+   As nodes are added or removed from the cluster, a DaemonSet adds or removes the required pods.
+
+<a name="Services"></a>
+
+### Services
+
+Internal services are only reachable within a cluster.
+
+External services are exposed by end-points (NodePoints)
+
+Examples:
 
    * auth.yaml
    * frontend.yaml
@@ -1216,10 +1417,12 @@ The 8 labs covering 8 hours of the
 <a target="_blank" href="https://webinars-run.qwiklab.com/quests/29">
 Kubernetes in the Google Cloud Qwiklab quest</a>
 
+<a target="_blank" href="https://bit.ly/33Cd4Uw/">First K8s app</a>
+
 
 <a name="GKE"></a>
 
-#### How Google Kubernetes Engine (GKE) works
+#### Google Kubernetes Engine (GKE) 
 
 ![kubernetes-pods-599x298-35069](https://user-images.githubusercontent.com/300046/31013696-81d30fc0-a4d4-11e7-9852-36be55b74499.jpg)
 
@@ -1237,6 +1440,8 @@ The <a target="_blank" href="https://cloud.google.com./container-engine/docs/rep
 replication controller</a> automatically adds or removes pods to comply with the specified number of pod replicas declared are running across nodes.
 This makes GKE "self healing" to provide high availability and reliability with
 "autoscaling" up and down based on demand.
+
+> PROTIP: The virtual reality mobile game Pokemon Go released in 2018 was the largest deployment of GKE at the time.
 
 In <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes-architecture/">this diagram</a>:
 
@@ -1364,7 +1569,9 @@ EKS makes use of <a target="_blank" href="https://aws.amazon.com/fargate/">AWS F
 
 A Kublet agent program is automatically installed in each node created.
 
-Each <strong>kubelet</strong> manages what is called the "control pane" which allocates IP addresses and runs nodes under its control.
+<a name="ControlPlane"></a>
+
+Each <strong>kubelet</strong> manages what is called the <strong>control pane</strong> which allocates IP addresses and runs nodes under its control. 
 
 Kublet constantly compares the status of pods against what is declared in yaml files, and starts or deletes pods as necessary to meet the request. 
 
@@ -1378,7 +1585,7 @@ Restarting Kublet itself depends on the operating system (`monit` on Debian or `
 Nodes are joined to the master node using the <strong>kubeadm join</strong> program and command.
 
 The master node itself is crated by the <strong>kubeadm init</strong> command which establishes folders 
-and invokes the Kubernetes <strong>API server</strong>. That command is installed along with the 
+and invokes the Kubernetes <a href="#API_Server">API server</a>. That command is installed along with the 
 <strong>kubectl</strong> package (pronounced "cube cuddle"). 
 There is a command with the same name used to obtain the <strong>version</strong>.
 
@@ -1403,6 +1610,13 @@ There is a command with the same name used to obtain the <strong>version</strong
    * apps to handle deploy, sts, ds
    * authorization to handle role, rb
    * storage to handle pv (persistent volume) and <a href="#PVC">pvc</a>, sc (storage classes)
+   <br /><br />
+
+<a name="RBAC"></a>
+
+RBAC (Role-Based Access Control)
+
+
 
 ### Declarative vs. Declarative
 
@@ -1414,7 +1628,7 @@ https://medium.com/payscale-tech/imperative-vs-declarative-a-kubernetes-tutorial
    
 ### Scheduler
 
-   The API Server puts nodes in "pending" state when it sends requests to bring them up and down to the <strong>Scheduler</strong> to do so only when there are enough resources available.
+   The <a href="#API_Server">API Server</a> puts nodes in "pending" state when it sends requests to bring them up and down to the <strong>Scheduler</strong> to do so only when there are enough resources available.
    The scheduler can operate according to a schedule.
    But whether it does or not are defined in rules (called <strong>"Taints"</strong>) obeyed by the Scheduler about nodes.
    Rules obeyed by the Scheduler about pods are called <strong>"Tolerances"</strong>.
@@ -1425,7 +1639,7 @@ https://medium.com/payscale-tech/imperative-vs-declarative-a-kubernetes-tutorial
 
 ### etcd storage 
 
-   The API Server and Scheduler persists their configuration and status information in a 
+   The <a href="#API_Server">API Server</a> and Scheduler persists their configuration and status information in a 
    <strong>ETCD cluster</strong> 
    <a target="_blank" href="https://coreos.com/etcd/docs/latest/getting-started-with-etcd.html">
    (from CoreOS)</a>.
@@ -1759,7 +1973,7 @@ This section further explains the <a href="#Architecture">architecture diagram a
    ### Deploy Kubernetes master node
 
 1. Use this command to deploy the <strong>master node</strong> which controls the other nodes. 
-   So it's <a href="#MasterDeploy">deployed first</a> which invokes the <strong>API Server</strong>
+   So it's <a href="#MasterDeploy">deployed first</a> which invokes the <a href="#API_Server">API Server</a>
 
    <pre>sudo kubeadm init --pod-network-cidr=10.244.0.0/16</pre>
 
@@ -1820,7 +2034,7 @@ daemonset "kube-flannel.ds" created
    Specifying wide output adds the IP address column
 
    Included are pods named:
-   * api server (aka "master") accepts kubectl commands
+   * <a href="#API_Server">api server</a> (aka "master") accepts kubectl commands
    * <a href="#etcd">etcd</a> (cluster store) for HA (High Availability) in control pane
    * controller to watch for changes and maintain desired state
    * dns (domain name server)
@@ -1907,15 +2121,21 @@ daemonset "kube-flannel.ds" created
    ./easyrsa --batch "--req-cn=${MASTER_IP}@`date +%s`* build-ca nopass
    </pre>
 
+
+   <a name="Watchers"></a>
+
    ### Watchers
    
    To register watchers on specific nodes.???
    Kubernetes supports TLS certifications for encryption over the line.
 
    REST API CRUD operations are used 
-   For authorization, Kubernetes supports Role Base Access Control (RBAC),
-   (ABAC), and Webhook.
-   Admission ???
+   
+   <a name="Admission"></a>
+
+   The K8s Admission Controller enables less coding in yaml files by adding what is necssary.
+
+   <pre><strong>kubectl details? </strong></pre>
 
 
 1. Put in that folder (in each node):
@@ -1929,7 +2149,7 @@ daemonset "kube-flannel.ds" created
    * server.key - server cert private key
    <br /><br />
 
-1. Copy from API server to each master node:
+1. Copy from <a href="#API_Server">API server</a> to each master node:
 
    <pre><strong>
    cp kube-apiserver.yaml  /etc/kubernetes/manifests/
@@ -2147,6 +2367,20 @@ spec:
       hostPath:
 path: /var/lib/docker
    </pre>
+
+
+<a name="Labels"></a>
+
+### Labels and Selectors
+
+Labels are specified for users of Kubernetes
+
+   * release: stable, canary
+   * environment: eve, qa, production
+   * tier: frontend or backend or cache
+   <br /><br />
+
+Selectors filter 
 
 
 <a name="rc"></a>
@@ -2419,7 +2653,7 @@ A Kubelet <strong>agent program</strong> is installed on each server
 to watch the apiserver and register each node with the cluster.
 
 
-PROTIP: Use a DaemonSet when running clustered Kubernetes with static pods to run a pod on every node. Static pods are managed directly by the kubelet daemon on a specific node, without the API server observing it. 
+PROTIP: Use a DaemonSet when running clustered Kubernetes with static pods to run a pod on every node. Static pods are managed directly by the kubelet daemon on a specific node, without the <a href="#API_Server">API server</a> observing it. 
 
    * https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/
 
@@ -2694,6 +2928,53 @@ Microsoft's "<a target="_blank" href="https://azure.microsoft.com/mediahandler/f
 </table>
 
 A cgroup (control group) is a group of Linux processes with optional resource isolation, accounting, and limits.
+
+
+<a name="Secrets"></a>
+
+### Secrets - custom controllers
+
+Pods consume <strong>static</strong> ConfigMaps and Secrets. 
+
+PROTIP: To monitor for changes apply updates to hash in PodSpec, then triggers changes:
+install custom controller "Wave" at <a target="_blank" href="https://github.com/pusher/wave">https://github.com/pusher/wave</a>.
+
+What Kubernetes calls its secrets are actually Base64 encoded text.
+
+PROTIP: custom controller turn proxies into Secrets. 
+sealed secrets:
+   * Bitnami's Secret Controller has a key in the Controller used to do asymmetric encrypt and decrypt of external secrets stored in Git.
+   * AWS Secrets Manager (ASM)
+   <br /><br />
+
+
+
+
+<a name="Debugging"></a>
+
+K8s does not come with debuggers. Output to logs, then use tracing. Printlines.
+
+<a target="_blank" href="https://datadoghq.com/">DatadogHQ.com</a> for metrics & traces
+
+<a target="_blank" href="https://unumotors.com/">unu</a> uses Jaeger for auto-instrumentation 
+
+<a target="_blank" href="https://mindspace.net">Mindspace.net</a> provides IDE connecting to node remote debugging.
+
+<a target="_blank" href="https://cluster-api.sigs.k8s.io/">cluster-api.sigs.k8s.io</a> printlines
+
+
+<a name="Multi-Container"></a>
+
+## Multi-Container Pods
+
+The <strong>kube-scheduler</strong> assigns pods to nodes at runtime. 
+Before scheduling, it checks resources, QoS, policies, user specs.
+
+
+References:
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-integrating-volumes-using-multi-container-pods">2h 26m VIDEO course: "Kubernetes for Developers: Integrating Volumes and Using Multi-container Pods"</a> by Nigel Poulton Apr 23, 2020
+
 
 ## Blogs
 
