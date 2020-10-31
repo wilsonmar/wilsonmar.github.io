@@ -21,6 +21,73 @@ comments: true
 
 NOTE: This is now a "starter set" actively undergoing additions.
 
+I'm restructuring this so that revelations about architecture components and flows are based on yaml and what commands reveal rather than as trivia to be memorized.
+
+## Keyword Index Alphabetically
+
+To quickly in this document:
+
+<a href="#Annotations">Annotations</a>,
+<a href="#API_Server">API Server</a>,
+<a href="#apply">apply</a>,
+<a href="#CKAD_ExamDomains">CKAD</a>, 
+<a href="#Clusters">Clusters</a>,
+<a href="#CronJobs">CronJobs</a>,
+<a href="#Declarative">Declarative</a>,
+<a href="#DaemonSets">DaemonSets</a>,
+<a href="#Deployments">Deployments</a>,
+<a href="#Envars">Environment Variables</a>,
+<a href="#Imperative">Imperative</a>,
+<a href="#InitContainers">Init Containers</a>,
+<a name="#Kubelet">Kubelet</a>,
+<a href="#kube-proxy">kube-proxy</a>,
+<a href="#Jobs">Jobs</a>, 
+<a href="#Labels">Labels</a>, 
+<a href="#LoadBalancer">LoadBalancer</a>, 
+<a href="#Logging">Logging</a>,
+<a href="#Metadata">Metadata</a>,
+<a href="#Namespaces">Namespaces</a>, 
+<a href="#Nodes">Nodes</a>,
+<a href="#Podspecs">Podspecs</a>,
+<a href="#Pods">Pods</a>, 
+<a href="#Probes">Probes</a>, 
+<a href="#PersistentVolumes">Persistent Volumes</a>,
+<a href="#PortForwarding">Port Forwarding</a>,
+<a href="#ReplicaSets">ReplicaSets</a>,
+<a href="#Rollbacks">Rollbacks</a>,
+<a href="#RollingUpdates">Rolling Updates</a>,
+<a href="#Secrets">Secrets</a>,
+<a href="#Selectors">Selectors</a>, 
+<a href="#Services">Services</a>,
+<a href="#Services">Service Discovery</a>,
+<a href="#StatefulSets">StatefulSets</a>,
+<a href="#Volumes">Volumes</a>,
+<a href="#Workloads">Workloads API</a>
+
+
+<a target="_blank" href="https://kubernetesbyexample.com/">https://kubernetesbyexample.com</a>:
+
+   * <a target="_blank" href="https://kubernetesbyexample.com//api/">API Server</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//deployments/">Deployments</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//envs/">Environment Variables</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//healthz/">Health Checks</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//ic/">Init Containers</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//jobs/">Jobs</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//labels/">Labels</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//logging/">Logging</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//ns/">Namespaces</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//nodes/">Nodes</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//pods/">Pods</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//pv/">Persistent Volumes</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//pf/">Port Forward</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//secrets/">Secrets</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//services/">Services</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//sd/">Service Discovery</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//statefulset/">Stateful Sets</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//volumes/">Volumes</a>
+   <br /><br />
+
+
 ## Why Kubernetes?
 
 With Kubernetes, <strong>dev teams</strong> can take complete charge of production operations in cloud environments -- deploy both application code and all the environment settings, at their own cadence, without ceremonies and wait time to coordinate releases.
@@ -69,6 +136,9 @@ The word "kubernetes" is the ancient Greek word for people who pilot cargo ships
 <a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">This blog</a> and
 <a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
 revealed that the predecessor to Kubernetes was called <a target="_blank" href="https://ai.google/research/pubs/pub43438">"The Borg"</a> becuase initial developers were fans of the "Star Trek Next Generation" TV series. In the series, the "Borg" society <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all  civilizations it encounters into its "collective". The logo for Kubernetes inside the 6 sided hexagons representing each Google service has 7 sides. This is because a beloved character in the TV series, played by the curvacious Jeri Ryan, is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
+See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kubernetes">Timeline of Kubernetes</a>
+
+<a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>
 
 
 ## Professional certifications in Kubernetes
@@ -177,7 +247,7 @@ https://kubernauts.de/en/home/ (<a target="_blank" href="https://twitter.com/kub
 
 It's for those who hold a CKA certification.
 
-* 10% Cluster Setup - Best practice for configuration to control environment access, rights and platform conformity.
+* 10% Cluster Setup - Best practice for configuration to control environment access, rights, and platform conformity.
 * 15% Cluster Hardening - to protect K8s API and utilize <a href="#RBAC">RBAC</a>
 * 15% System Hardening - to improve the security of OS & Network; restrict access through IAM
 * 20% Minimize Microservice Vulnerabilities - to use various mechanisms to isolate, protect, and control workload.
@@ -185,22 +255,21 @@ It's for those who hold a CKA certification.
 * 20% Monitoring, Logging, and Runtime Security - to analyse and detect threads
 <br /><br />
 
-https://github.com/ijelliti/CKSS-Certified-Kubernetes-Security-Specialist
-
-https://k21academy.com/docker-kubernetes/certified-kubernetes-security-specialist-cks-step-by-step-activity-guide-hands-on-lab/
-
 DockerDocker (specifically, Docker Engine) provides operating-system-level virtualization in containers.
 
-Resources:
+* <a target="_blank" href="https://www.pluralsight.com/courses/configuring-managing-kubernetes-security">Pluralsight "Configuring and Managing Kubernetes Security</a> by Anthony Nocentino (@nocentio, centinosystems.com) is the one to take.
 
-https://github.com/NodyHub/docker-k8s-resources/tree/master/k8s-pods
+* https://github.com/NodyHub/docker-k8s-resources/tree/master/k8s-pods
 sample Security yaml
 
-<a target="_blank" href="https://www.pluralsight.com/courses/configuring-managing-kubernetes-security">Pluralsight "Configuring and Managing Kubernetes Security</a> by Anthony Nocentino (@nocentio, centinosystems.com)
-
-https://ravikirans.com/cks-kubernetes-security-exam-study-guide/
+* https://ravikirans.com/cks-kubernetes-security-exam-study-guide/
 
 * <a target="_blank" href="https://github.com/walidshaari/Certified-Kubernetes-Security-Specialist">https://github.com/walidshaari/Certified-Kubernetes-Security-Specialist</a> by <a target="_blank" href="https://walidshaari.blogspot.com">Walid Shaari</a> (<a target="_blank" href="https://medium.com/@walidshaari">author in Medium</a>).
+
+* https://github.com/ijelliti/CKSS-Certified-Kubernetes-Security-Specialist
+
+* https://k21academy.com/docker-kubernetes/certified-kubernetes-security-specialist-cks-step-by-step-activity-guide-hands-on-lab/
+
 
 <hr />
 
@@ -392,9 +461,13 @@ echo "source <(kubectl completion bash)" >> ~/.bashrc
 
    Search within kubernetes.io to copy code.
 
-   Use <tt>kubectl create</tt>.
+1. Create yaml file as well as pod:
 
-   Paste to the Notpad available during the exam. Save commands there for copy rather than retype.
+   <tt>kubectl create -f file.pod.yaml</tt>.
+
+   The resulting file includes additional annotations.
+
+1. Paste to the Notpad available during the exam. Save commands there for copy rather than retype.
 
    <pre><strong>k -n pluto get all -o wide
    </strong></pre>
@@ -591,7 +664,8 @@ by Matt Turner (from England) is hands-on using minikube 1.9.2 and kubernetes-cl
    * DRY deployment and debugging tools
    <br /><br />
 
-<a target="_blank" href="https://www.linkedin.com/learning/learning-kubernetes/welcome?u=26886050">Learning Kubernetes</a> (on a Mac) by Karthik Gaekwad (<a target="_blank" href="https://www.linkedin.com/in/kgaekwad/">when he was at Oracle</a>)
+<a target="_blank" href="https://www.linkedin.com/learning/learning-kubernetes/welcome?u=26886050">Learning Kubernetes</a> (on a Mac) by Karthik Gaekwad (<a target="_blank" href="https://www.linkedin.com/in/kgaekwad/">when he was at Oracle</a>) references files in 
+<a target="_blank" href="https://github.com/karthequian/Kubernetes/blob/master/CourseHandout.md">https://github.com/karthequian/Kubernetes/blob/master/CourseHandout.md</a>.
 
 
 <a target="_blank" href="https://www.linkedin.com/learning/devops-foundations-transforming-the-enterprise/transforming-your-organization">"DevOps Foundations: Transforming the Enterprise
@@ -647,6 +721,30 @@ Others on CKA:
 
 <hr />
 
+## Cloud Kubernetes Cloud Services
+
+* ECS, EKS = Elastic (AWS) Container Service & Elastic Kubernetes Service
+* IKS = IBM cloud Kubernetes Service
+* ACK = Alibaba Cloud Kubernetes
+* DOKS = Digital Ocean 
+* OKS = Oracle 
+* PKE = Bonzai
+* MKE = D2iQ (Day two iQ) rebranded from Mesos DC/OS meta clusters
+* OKD = OpenShift (Red Hat) Origin community distribution
+* PKS = VMWare Tanzu purchase of Pivotal, Heptio (Joe Bada, Craig McLukie), merphe from PCS
+* RKE = Rancher 
+* Canonical
+
+* Hashicorp Nomad is a lighter orchestrator, not just for containers
+
+
+<hr />
+
+## Hands-on Declarative Kubernetes Commands 
+
+<a name="Imperative"></a>
+<a name="Declarative"></a>
+
 K8s recognizes both imperative and declarative yaml files.
 
 GitOps: ArgoCD monitors GitHub and applies changes to K8s Controller.
@@ -681,7 +779,11 @@ spec:
 1, Install Vscode and IntelliJ extensions for formatting YAML files.
    To indent multiple lines at a time.
 
+   <a name="ReplicaSets"></a>
+
 1. Declare ReplicaSet
+
+   ReplicaSets enable deployment of several pods, and check their status as a single unit (replicas).
 
    <pre>apiVersion: v1
 kind: ReplicaSet
@@ -701,6 +803,12 @@ spec:
         ports:
         - containerPort: 80
    </pre>
+
+   <a name="Selectors"></a>
+
+   Label Selectors above select a set of objects using a single statement.
+
+   "=", "!=", IN, NOTIN, EXISTS are valid selectors.
 
 
 1. Busybox image:
@@ -758,7 +866,9 @@ spec:                    # specific object details
 
 
 
-A namespace is so fundamental that the namespace name is metadata in yaml files defining pods:
+<a name="Podspecs"></a>
+
+Podspecs are yaml files that describe a pod.
 
    <pre>
 apiVersion: v1
@@ -768,7 +878,7 @@ metadata:
   namespace: default
    </pre>
 
-This tutorial focuses on <strong>Docker</strong> containers as Kubernetes' <strong>Container Runtime Interface (CRI)</strong>. BTW Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") containers, which provided a CLI for containers as part of CoreOS. Rkt became the first archived project of CNCF after IBM bought Red Hat with its competing "containerd" <a target="_blank" href="https://github.com/kubernetes-sigs/cri-o">cri-o technology.
+This tutorial focuses on use of <strong>Docker</strong> containers as Kubernetes' <strong>Container Runtime Interface (CRI)</strong>. BTW Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") containers, which provided a CLI for containers as part of CoreOS. Rkt became the first archived project of CNCF after IBM bought Red Hat with its competing "containerd" <a target="_blank" href="https://github.com/kubernetes-sigs/cri-o">cri-o technology.
 
 "Containerized" <a href="#micro-services">microservice apps</a> are <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, <a target="_blank" href="https://quay.io/">Quay.io</a>, or an organization's own binary repository setup using Nexus or Artifactory. 
 
@@ -780,7 +890,7 @@ Kubernetes automates resilience by abstacting the network and storage shared by 
 
 Kubernetes replicates Pods (the same set of containers in each) across several worker <strong>Nodes</strong> (VM or physical machines).
 
-> K8s supports up to 5,000 node clusters of up to 150,000 pods (at v1.17)
+> K8s supports up to 5,000 node clusters of up to 150,000 pods (at v1.17). Production setups have at least 3 nodes per cluster.
 
 Each set of pods are within a <strong>node</strong>.
 Kubernetes assigns each node with a different <strong>external IP address</strong>.
@@ -803,8 +913,6 @@ In <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=b
 <img width="435" alt="k8s-phil-diagram" src="https://user-images.githubusercontent.com/300046/97088709-09761500-15f0-11eb-8eb2-4f99edab5db0.png">
 
 
-
-
 <hr />
 
 ## Install Minikube
@@ -820,11 +928,10 @@ But let's start by installing minikube on your laptop.
 
 ### Install Minikube
 
-Minikube goes beyond Docker For Mac (DFM) and Docker for Windows (DFW)
+Minikube goes beyond older Docker For Mac (DFM) and Docker for Windows (DFW)
 and includes a node and a Master when it spins up in a local environment (such as your laptop).
 
-CAUTION: At time of writing, <a target="_blank" href="https://github.com/kubernetes/minikube">https://github.com/kubernetes/minikube</a>
-has 257 issues and 20 pending Pull Requests, but we're using it anyway.
+CAUTION: At time of writing, <a target="_blank" href="https://github.com/kubernetes/minikube">https://github.com/kubernetes/minikube</a>has 257 issues and 20 pending Pull Requests, but we're using it anyway.
 
 1. Install on a Mac Docker:
  
@@ -1126,20 +1233,39 @@ Events:
   Normal  Started    4m7s   kubelet, minikube  Started container web
    </pre>
 
-Each node has a kubelet, container tooling (Docker), kube-proxy, supervisord
-
-kube-proxy watches the <a href="#API_Server">API server</a> for addition and removal requests.
-For each new service, kube-proxy opens a randomly chosen port on the local node.
-It then makes proxied connections to one of the corresponding back-end pods.
+Service cluster IPs and prots are found through Docker --link compatible enviornment variables specifying ports opened by the service proxy.
 
 
 <a name="Kubelet"></a>
 
+Each node has a kubelet, container tooling (Docker), kube-proxy, supervisord.
+
+<a name="kube-proxy"></a>
+
+kube-proxy <strong>watches</strong> the <a href="#API_Server">API server</a> for addition and removal requests.
+For each new service, kube-proxy opens a randomly chosen port on the local node.
+It then makes proxied connections to one of the corresponding back-end pods.
+
+The "proxy" in kube-proxy means that it can do simple network stream or round-robin forwarding across a set of backends.
+
+Three modes:
+
+   * User space mode
+   * Iptables mode
+   * Ipvs mode (alpha as of v1.8)
+
+
 #### Kubelet
+
+Kublet communicates with the API server to see if pods have been assigned to nodes.
 
 Kubelet only manages containers created by the <a href="#API_Server">API server</a> - not any container running on the node.
 
 Kubelet takes a set of Podspecs provided bythe kube-apiserver to ensure that containers described are running and healthy.
+
+Kubelet mounts and runs pod volumes and secrets.
+
+Kubelet executes health checks to identify pod/node status.
 
 <hr />
 
@@ -1148,6 +1274,15 @@ Kubelet takes a set of Podspecs provided bythe kube-apiserver to ensure that con
 This diagram is shown at the ending of a small (upcoming) movie logically illustrating how the various glossary terms relate with each other:
 
 <img width="914" alt="k8s-docker" src="https://user-images.githubusercontent.com/300046/95684822-564dfa80-0bb1-11eb-803a-1c742cf0bd07.png">
+
+
+On minikube, delete all pods from default namespace:
+
+   <pre>kubectl delete --all pods --namespace=default
+kubectl delete --all deployments --namespace=default
+kubectl delete --all services --namespace=default
+   </pre>
+
 
 <a name="krew"></a>
 
@@ -1214,6 +1349,12 @@ quickly create an OpenFaaS (Serverless) cluster</a>:
    </pre>
 </ul>
 
+<a name="apply"></a>
+
+<tt>kubectl apply</tt> makes changes if its subject already exists (the command is declarative?).
+
+## Microsoft Draft
+
 Microsoft created <a target="_blank" href="https://github.com/Azure/draft">Draft</a> (like Scaffold) to simplify getting started in Azure to <a target="_blank" href="https://github.com/PatrickLang/fabrikamfiber/tree/helm-2019-mssql-linux">lift-and-shift</a> Windows ASP.NET apps. It has two commands:
 
 <ul><pre><strong>
@@ -1223,10 +1364,11 @@ Microsoft created <a target="_blank" href="https://github.com/Azure/draft">Draft
 
 Draft uses language packs for Ruby, C# .NET Core 2.2 with Windows packs, authenticated to Azure Container Registry (ACR) and AKS.
 
+
+
 <a target="_blank" href="https://www.ibm.com/blogs/bluemix/2018/06/deploy-scalable-web-application-kubernetes-using-helm/">
 IBM: Deploy a scalable web application to Kubernetes using Helm</a>
 
-A Deployment is an API object that manages a replicated application, typically by running Pods with no local state.
 
 
 <a name="Namespaces"></a>
@@ -1301,6 +1443,10 @@ kube-ps1.sh creates a shell pod envbin.
 
 
 <a name="K8s_API"></a>
+<a name="Workloads"></a>
+<a name="Metadata"></a>
+<a name="Clusters"></a>
+<a name="CronJobs"></a>
 
 ## K8s API
 
@@ -1325,7 +1471,12 @@ ConfigMap is an API object used to store non-confidential data in key-value pair
 
 The kinds of yaml files:
 
+
+<a name="Deployments"></a>
+
 ### Deployments
+
+A Deployment is an API object that manages a replicated application, typically by running Pods with no local state.
 
    * auth.yaml
    * frontend.yaml
@@ -1335,9 +1486,19 @@ The kinds of yaml files:
 
 ### Pods
 
-   * healthy-monolith.yaml configures "livenessProbe" (in folder healthz) and "readinessProbe" (in folder readiness) on port 81
    * monolith.yaml
    * secure-monolith.yaml
+
+
+<a name="Probes"></a>
+
+healthy-monolith.yaml configures "livenessProbe" (in folder healthz) and "readinessProbe" (in folder readiness) on port 81
+
+   * ExecAction executes an action inside the container
+   * TCPSocketAction checks against the container's IP address on a specified port
+   * HTTPGetAction - HTTP Get request against container
+
+
 
 <a name="DaemonSets"></a>
 
@@ -1347,9 +1508,14 @@ The kinds of yaml files:
 
    As nodes are added or removed from the cluster, a DaemonSet adds or removes the required pods.
 
+1. Deleting a DaemonSet removes the pods it manages.
+
+
 <a name="Services"></a>
 
 ### Services
+
+Services provide an un-changing IP address to pods in the back-end.
 
 Internal services are only reachable within a cluster.
 
@@ -1363,28 +1529,6 @@ Examples:
    * hello-green.yaml
    * hello.yaml
    * monolith.yaml
-   <br /><br />
-
-<a target="_blank" href="https://kubernetesbyexample.com/">https://kubernetesbyexample.com</a>:
-
-   * <a target="_blank" href="https://kubernetesbyexample.com//pods/">Pods</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//labels/">Labels</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//deployments/">Deployments</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//services/">Services</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//sd/">Service Discovery</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//pf/">Port Forward</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//healthz/">Health Checks</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//envs/">Environment Variables</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//ns/">Namespaces</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//volumes/">Volumes</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//pv/">Persistent Volumes</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//secrets/">Secrets</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//logging/">Logging</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//jobs/">Jobs</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//statefulset/">Stateful Sets</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//ic/">Init Containers</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//nodes/">Nodes</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//api/">API Server</a>
    <br /><br />
 
 https://ravikirans.com/cks-kubernetes-security-exam-study-guide/
@@ -2881,6 +3025,9 @@ https://github.com/hjacobs/kubernetes-failure-stories</a>
 
 Kubstack
 
+<a target="_blank" href="https://www.youtube.com/watch?v=OcOkh2mYLoA">
+Daniel Pacak's experience with CKAD</a> (from Aqua Security)
+
 <a target="_blank" href="https://twitter.com/pst418">@pst418</a>
 
 
@@ -2961,6 +3108,11 @@ K8s does not come with debuggers. Output to logs, then use tracing. Printlines.
 <a target="_blank" href="https://mindspace.net">Mindspace.net</a> provides IDE connecting to node remote debugging.
 
 <a target="_blank" href="https://cluster-api.sigs.k8s.io/">cluster-api.sigs.k8s.io</a> printlines
+
+
+<a target="_blank" href="https://docs.gitlab.com/12.10/charts/development/kube-monkey/#:~:text=kube%20monkey%20is%20an%20implementation,of%20a%20highly%20available%20system">KubeMonkey</a>
+is a Chaos Monkey forcing random failures within Kubernetes -- to test the fault tolerance of our deployments.
+
 
 
 <a name="Multi-Container"></a>

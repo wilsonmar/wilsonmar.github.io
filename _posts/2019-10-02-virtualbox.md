@@ -238,6 +238,11 @@ sudo arp-scan --interface=vboxnet0 --localnet
    <pre><strong>VBoxManage guestproperty enumerate $VM_NAME</strong></pre>
 
 
+Others:
+
+https://www.techrepublic.com/article/how-to-create-a-bash-script-for-starting-virtualbox-vms/
+
+
 <hr />
 
 <a name="Scripts"></a>
