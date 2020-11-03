@@ -1,7 +1,7 @@
----
+rishabh_marwaha---
 layout: post
 title: "Kubernetes (K8s)"
-excerpt: "Container orchestration engine in clouds, including OpenShift"
+excerpt: "for orchestration of containers, especially in clouds, including OpenShift"
 modified:
 tags: [google, cloud]
 date: "2020-10-04"
@@ -19,24 +19,31 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">This</a> is a hands-on  introduction with insightful commentary carefully sequenced to make complex material easier to understand quickly. This is not a "demo", but an immersive step-by-step "deep dive" tutorial aimed to make you productive.
 
-NOTE: This is now a "starter set" actively undergoing additions.
+NOTE: This article is now a "starter set" actively undergoing additions.
 
 I'm restructuring this so that revelations about architecture components and flows are based on yaml and what commands reveal rather than as trivia to be memorized.
 
 ## Keyword Index Alphabetically
 
-To quickly in this document:
+Here are the major buzzwords, listed here alphabetically for quick access:
 
+<a href="#Admission">Admission Control</a>,
 <a href="#Annotations">Annotations</a>,
+<a href="#APIs">APIs</a>,
 <a href="#API_Server">API Server</a>,
 <a href="#apply">apply</a>,
+Auto-scaling,
 <a href="#CKAD_ExamDomains">CKAD</a>, 
 <a href="#Clusters">Clusters</a>,
+cm=configmaps,
 <a href="#CronJobs">CronJobs</a>,
 <a href="#Declarative">Declarative</a>,
-<a href="#DaemonSets">DaemonSets</a>,
-<a href="#Deployments">Deployments</a>,
+Discovery,
+<a href="#DaemonSets">ds=DaemonSets</a>,
+<a href="#Deployments">deployment/</a>,
+ep=endpoints,
 <a href="#Envars">Environment Variables</a>,
+health checks,
 <a href="#Imperative">Imperative</a>,
 <a href="#InitContainers">Init Containers</a>,
 <a name="#Kubelet">Kubelet</a>,
@@ -46,24 +53,31 @@ To quickly in this document:
 <a href="#LoadBalancer">LoadBalancer</a>, 
 <a href="#Logging">Logging</a>,
 <a href="#Metadata">Metadata</a>,
-<a href="#Namespaces">Namespaces</a>, 
-<a href="#Nodes">Nodes</a>,
+<a href="#Namespaces">ns=Namespaces</a>, 
+<a href="#Nodes">no=Nodes</a>,
+<a href="#NodePort">NodePort</a>,
+<a href="#OpenShift">OpenShift</a>,
 <a href="#Podspecs">Podspecs</a>,
 <a href="#Pods">Pods</a>, 
+<a href="#PVC">PVC</a>,
+<a href="#ReadinessProbes">Readiness Probes</a>, 
+<a href="#LivenessProbes">Liveness Probes</a>, 
+<a href="#Pods">po/Pods</a>, 
 <a href="#Probes">Probes</a>, 
 <a href="#PersistentVolumes">Persistent Volumes</a>,
 <a href="#PortForwarding">Port Forwarding</a>,
-<a href="#ReplicaSets">ReplicaSets</a>,
+<a href="#Replication">Replication</a>,
+<a href="#ReplicaSets">rs=ReplicaSets</a>,
 <a href="#Rollbacks">Rollbacks</a>,
 <a href="#RollingUpdates">Rolling Updates</a>,
 <a href="#Secrets">Secrets</a>,
 <a href="#Selectors">Selectors</a>, 
-<a href="#Services">Services</a>,
+<a href="#Services">svc=Services</a>,
+<a href="#ServiceAccounts">sa=ServiceAccounts</a>,
 <a href="#Services">Service Discovery</a>,
-<a href="#StatefulSets">StatefulSets</a>,
+<a href="#StatefulSets">sts=StatefulSets</a>,
 <a href="#Volumes">Volumes</a>,
 <a href="#Workloads">Workloads API</a>
-
 
 <a target="_blank" href="https://kubernetesbyexample.com/">https://kubernetesbyexample.com</a>:
 
@@ -95,13 +109,7 @@ With Kubernetes, <strong>dev teams</strong> can take complete charge of producti
 Kubernetes is called "container orchestration" software because it automates the deployment, scaling and management of containerized applications<a target="_blank" href="https://en.wikipedia.org/wiki/Kubernetes">[Wikipedia]</a>. 
 
 * Authentication -> Authorization -> <a href="#Admission">Admission Control</a>
-* Replication of components
-* Service discovery
 * Load balancing
-* Logging across components
-* Rolling updates
-* Monitoring and health checking
-* Auto-scaling
 <br /><br />
 
 Kubernetes applies principles of the <a target="_blank" href="https://www.reactivemanifesto.org/">Reactive Manifesto</a> of 2014:
@@ -123,7 +131,7 @@ Kubernetes was used inside Google for over a decade before being open-sourced in
    * v1.8 is led by <a target="_blank" href="https://www.linkedin.com/in/jaicesinger/">Jaice Singer DuMars</a> (<a target="_blank" href="https://twitter.com/jaicesd">@jaicesd</a>) after Microsoft joined the CNCF July 2017 <a target="_blank" href="https://twitter.com/jaydumars?lang=en">VIDEO</a>
    <br /><br />
 
-Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), with 8 replacing the number of characters between k and s. Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to the home page for the software:
+Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), with 8 replacing the number of characters between k and s. Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to the <strong>home page for Kubernetes software</strong>:
 
    <ul><a target="_blank" href="https://kubernetes.io/">https://kubernetes.io</a><br />
    (<a target="_blank" href="https://twitter.com/kubernetesio/">Twitter: @kubernetesio</a>)</ul>
@@ -153,45 +161,26 @@ There is support for other languages other than English.
 
 Here is the full text of the <a target="_blank" href="https://github.com/cncf/curriculum">CNCF's exam curriculum</a>
 
-13% Core Concepts (API, pods, <a href="Namespaces">namespaces</a>)<br />
+13% Core Concepts (<a href="#APIs">APIs</a>, Create and configure basic <a href="#Pods">pods</a>, <a href="Namespaces">namespaces</a>)<br />
    * Understand Kubernetes API primitives
-   * Create and configure basic Pods
    <br /><br />
 
-18% Configuration (ConfigMaps, SecurityContexts, Resource Requirements, Secrets)<br />
-   • Understand ConfigMaps
-   • Understand SecurityContexts
-   • Define an application’s resource requirements
-   • Create & consume <a href="#Secrets">Secrets</a>
-   • Understand ServiceAccounts
+18% Configuration (<a href="#ConfigMaps">ConfigMaps</a>, <a href="#SecurityContexts">SecurityContexts</a>, <a href="#Resources">Resource Requirements</a>, Create & consume <a href="#Secrets">Secrets</a>, <a href="#ServiceAccounts">ServiceAccounts</a>
    <br /><br />
 
-10% <a href="#Multi-Container">Multi-Container Pods</a><br />
-   * Understand Multi-Container Pod design patterns (e .g. ambassador, adapter, sidecar)
+10% <a href="#Multi-Container">Multi-Container Pods</a> design patterns (e .g. <a href="#Ambassador">ambassador</a>, <a href="#Adapter">adapter</a>, <a href="#Sidecar">sidecar</a>)
    <br /><br />
 
-18% Observability (Liveness & Readiness Probes, Container Logging, Metrics server, Monitoring apps, Debugging)<br />
-   * Understand LivenessProbes and ReadinessProbes
-   * Understand container logging
-   * Understand how to monitor applications in Kubernetes
-   * Understand debugging in Kubernetes
+18% Observability (<a href="#Probes">Liveness & Readiness Probes</a>, Container Logging, Metrics server, Monitoring apps, Debugging)  <br /><br />
+
+20% Pod Design (<a href="#Labels">Labels</a>, <a href="#Selectors">Selectors</a>, <a href="#Annotations">Annotations</a>, Deployments, Rolling Updates, <a href="#Rollbacks">Rollbacks</a>, <a href="#Rollbacks">Rollbacks</a>, <a href="#Jobs">Jobs</a>, <a href="#CronJobs">CronJobs</a>)
    <br /><br />
 
-20% Pod Design (Deployments, Rolling Updates, Rollbacks, Labels, Selectors, Annotations, Rollbacks, <a href="#Jobs">Jobs</a>, CronJobs)<br />
-   • Understand Deployments and how to perform rolling updates
-   • Understand Deployments and how to perform rollbacks
-   • Understand Jobs and CronJobs 
-   • Understand how to use Labels, Selectors, and Annotations
+13% <a href="#Services">Services</a> &amp; Networking (<a href="#NetworkPolicies">NetworkPolicies</a>)
    <br /><br />
 
-13% Services &amp; Networking (NetworkPolicies)<br />
-   * Understand Services
-   * Demonstrate basic understanding of NetworkPolicies
-   <br /><br />
-
-08% State Persistence (Volumes, PersistentVolumeClaims)
-   * Understand PersistentVolumeClaims for storage
-   <br /><br />
+08% State Persistence (<a href="#Volumes">Volumes</a>, <a href="#pvc">PersistentVolumeClaims</a>) for storage
+  <br /><br />
 
 <img alt="k8s-ckad-logo-328x311.jpg" width="328" height="311" src="https://user-images.githubusercontent.com/300046/95666890-b09c7c00-0b1b-11eb-820c-ca44d8c9c0e5.jpg">
 
@@ -277,7 +266,7 @@ sample Security yaml
 
 CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e.g., v1.19 as of 1 Sep 2020).
 
-   ### Sign up for exam
+### Sign up for exam
 
    CNCF is part of the Linux Foundation, so... 
 
@@ -403,69 +392,31 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 
 ### Start of exam
 
-1. Save a few seconds typing: 
-
-   <a target="_blank" href="https://codeburst.io/resource-creation-tips-for-the-kubernetes-cka-ckd-certification-exam-740b70a13f97">
-   Resource Creation Tips for the Kubernetes CKA / CKD Certification Exam</a>
-   by John Tucker
-
-   #### Aliases
-
-1. Setup a shorthand alias so you can type "k" instead of kubectl:
-
-   <pre>alias k=kubectl
-complete -F __start_kubectl k
-   </pre>
-
-1. Setup alias:
-
-   <pre>export do="--dry-run=client -o yaml"</pre>
-
-   #### Bash Autocompletion
-
-1. Save a few seconds by setting up autocompletion. On bash:
-
-   <pre>bash completion
-source <(kubectl completion bash) 
-echo "source <(kubectl completion bash)" >> ~/.bashrc
-   </pre>
-
-   On ZSH:
-
-   <pre>source <(kubectl completion zsh)
-   echo "[[ $commands[kubectl] ]] && source <(kubectl completion zsh)" >> ~/.zshrc
-    </pre>
-
-   #### vim indentation
-
-   PROTIP: vim is the only editor available, so learn to search lines in vim (Esc, /, the text to be searched).
-   
-   <pre>:set shiftwidth=2</pre>
-
-   To indent several lines with one command: Esc Shift+V for Visual Line mode, highlight lines, 
-   Shift . to shift left, Shift , to shift right.
-
-
-   ### Output file
-
-   To output a file to a pod named "pod-x":
-
-   <pre>kubectl logs pod-x | sudo tee ~/opt/answers/mypod.logs</pre>
-
+1. <a href="#CustomizeTerminal">Customize your terminal for productivity</a>.
 
 1. <strong>19 questions</strong> means less than 10 minutes per question. So avoid getting bogged down on the longer complex questions. First go through all the questions to answer the easiest ones first. Along the way, mark ones you want to go back to.
 
-   NOTE: Although there are 19 objectives, not all objectives may be in every exam.
+   NOTE: Although there are 19 objectives, not all objectives planned are in every exam.
 
-1. Avoid writing yaml by scratch.
+1. PROTIP: Avoid writing yaml by scratch.
 
    Search within kubernetes.io to copy code.
 
 1. Create yaml file as well as pod:
 
-   <tt>kubectl create -f file.pod.yaml</tt>.
+   <pre>kubectl create -f file.pod.yaml --record</pre>
 
    The resulting file includes additional annotations.
+
+   <a name="Rollbacks"></a>
+
+   `--record=true`  # to save rollback history obtained by:
+
+   <pre>k rollout history deployment/some-deployment</pre>
+
+1. <strong>Undo</strong> rollout (rollback):
+
+   <pre>k rollout undo deployment/my-deployment --revision=v1.2</pre>
 
 1. Paste to the Notpad available during the exam. Save commands there for copy rather than retype.
 
@@ -491,13 +442,6 @@ echo "source <(kubectl completion bash)" >> ~/.bashrc
    
    <a target="_blank" href="https://trainingportal.linuxfoundation.org/pages/exam-history">
    https://trainingportal.linuxfoundation.org/pages/exam-history</a>
-
-
-<hr />
-
-Its <a target="_blank" href="https://github.com/kubernetes/kubernetes">code page</a> has a summary description of:
-
-   <ul>"Production-Grade Container Scheduling and Management"</ul>
 
 
 <hr />
@@ -599,7 +543,7 @@ edX.org publishes some courses from Linux Academy.
 ### O'Reilly
 
 <a target="_blank" href="https://learning.oreilly.com/videos/certified-kubernetes-application/">
-7h video class</a> by Sander van Vugt, who, as a Linux expert, provides in-depth CentOS install advice (including SELinux) and <a target="_blank" href="https://github.com/sandervanvugt/ckad">files</a> available nowhere else. His diagrams are on a lightboard.
+7h video class over 3 days live course</a> by Sander van Vugt, who, as a Linux expert, provides in-depth CentOS install advice (including SELinux) and <a target="_blank" href="https://github.com/sandervanvugt/ckad">files</a> available nowhere else. His diagrams are on a lightboard.
 
 BLAH: O'Reilly's videos are annoying because you have to move the sound up on every new chapter.
 
@@ -611,7 +555,85 @@ BLAH: O'Reilly's videos are annoying because you have to move the sound up on ev
 Its <a target="_blank" href="https://cloudacademy.com/lab/introduction-kubernetes-playground/?context_resource=lp&context_id=451">Playground lab</a> enables you to <strong>skip all the install details</strong> to build this:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"><img alt="k8s-cloudacademy-after" src="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"></a>
 
-The class also includes a Challenge and Cert Prep. off <a target="_blank" href="https://github.com/cloudacademy/intro-to-k8s">https://github.com/cloudacademy/intro-to-k8s</a>
+PROTIP: A browser-based session times out too quickly and is cumbersome to copy and paste. So use SSH instead.
+
+#### Prep standalone SSH client on macOS
+
+1. Open an SSH client Terminal by pressing command+spacebar for the Spotlight, then type "Terminal" and select "Terminal.app".
+1. Enter your user password if prompted.
+1. Create a folder "k8s-class", then navigate into it:
+   
+   <pre>cd .. && mkdir -p k8s-cloud && cd k8s-cloud</pre>
+
+1. Switch to the CloudAcademy lab page. Automatically launched are four EC2 instances in the "us-west-2b" AWS Availability Zone: The "bastion" exposed to a public internet subnet and, within a private subnet, a "k8s-master" t3.micro and two "k8s-node" t3.small. In about 10 minutes, all instance status reach "running" and Alarm Status "finish loading".
+1. Click the box to the left of "bastion-host". When "Connect" changes from gray, click it. 
+1. Click the PEM file (such as "554282681613.pem") and save the file in that folder.
+1. Copy the PEM file name and save to your Clipboard.
+
+1. Switch to the Terminal.  
+1. Set permissions (so your key is not publicly viewable for SSH to work):
+   
+   <pre>chmod 400 554282681613.pem</pre>
+
+1. Compose the command to connect to your instance by typing and pasteing its Public DNS: first type "ssh -i", then paste the pem file, then type "ubuntu@" for the user name inside the host, then switch to the EC2 page to copy and paste the "Public DNS (IPv4)" URL:
+
+   <pre>ssh -i "554282681613.pem" ubuntu@ec2-34-210-196-19.us-west-2.compute.amazonaws.com</pre>
+
+   The wizard should automatically detects the key you used to launch the instance.
+   But if the response is: "ubuntu@github.com: Permission denied (publickey).", try to rename file by:
+
+   <pre>mv ~/.ssh/config config.sav</pre>
+
+
+1. Type yes and press Enter when you see:
+
+   <pre>The authenticity of host 'ec2-34-210-196-19.us-west-2.compute.amazonaws.com (34.210.196.19)' can't be established.
+ECDSA key fingerprint is SHA256:sg0jaN4L4RX8ZAxGDo/elIf6HFU+H/3OTG4DALwU5Ik.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? 
+   </pre>
+
+   You should see a prompt such as:
+
+   <tt>ubuntu@ip-10-0-128-5:~$ </tt>
+
+1. <a href="#CustomizeTerminal">Customize the Terminal environment for your productivity</a>.
+
+1. Switch to the CloudAcademy.com page and scroll down to the list of commands. If you customized alias k:
+
+   <pre>k get nodes</pre>
+
+1. Make use of files also at <a target="_blank" href="https://github.com/cloudacademy/intro-to-k8s/tree/master/src">https://github.com/cloudacademy/intro-to-k8s/tree/master/src</a>
+
+   <pre>cd src && ls</pre>
+
+
+   <pre>10.1-namespace.yaml         5.1-namespace.yaml
+10.2-data_tier_config.yaml  5.2-data_tier.yaml
+10.3-data_tier.yaml         5.3-app_tier.yaml
+10.4-app_tier_secret.yaml   5.4-support_tier.yaml
+10.5-app_tier.yaml          6.1-app_tier_cpu_request.yaml
+1.1-basic_pod.yaml          6.2-autoscale.yaml
+1.2-port_pod.yaml           7.1-namespace.yaml
+1.3-labeled_pod.yaml        7.2-data_tier.yaml
+1.4-resources_pod.yaml      7.3-app_tier.yaml
+2.1-web_service.yaml        8.1-app_tier.yaml
+3.1-namespace.yaml          9.1-namespace.yaml
+3.2-multi_container.yaml    9.2-pv_data_tier.yaml
+4.1-namespace.yaml          9.3-app_tier.yaml
+4.2-data_tier.yaml          9.4-support_tier.yaml
+4.3-app_tier.yaml           metrics-server
+   </pre>
+
+1. Create and delete pod (all named "mypod"):
+
+   <pre>kubectl create -f 1.1-basic_pod.yaml
+kubectl get pods
+kubectl describe pod mypod | more
+kubectl delete pod mypod
+   </pre>
+
+
+   192.168.35.2
 
 
 ### Pluralsight
@@ -682,6 +704,10 @@ The CKAD Troubleshooting class is highly recommended.
 
 <a target="_blank" href="https://mckinsey.udemy.com/course/certified-kubernetes-application-developer/">Udemy.com has a CKAD course with Tests</a> updated 09/2020 with 9.5 hours of video. It includes 30-minute lightning rounds to practice the stress of taking the exam. Surviging this gives you confidence.
 
+<a target="_blank" href="https://mckinsey.udemy.com/course/docker-and-kubernetes-the-complete-guide/learn/lecture/11582328?start=150#overview">"Docker and Kubernetes: The Complete Guide"</a>
+by Stephen Grider. Diagrams for the 21h video uses draw.io accessing 
+https://github.com/StephenGrider/DockerCasts/tree/master/diagrams
+
 
 ### ACloud.guru
 
@@ -740,6 +766,80 @@ Others on CKA:
 
 <hr />
 
+<a name="CustomizeTerminal"></a>
+
+## Customize Terminal
+
+1. Save a few seconds typing: 
+
+   <a target="_blank" href="https://codeburst.io/resource-creation-tips-for-the-kubernetes-cka-ckd-certification-exam-740b70a13f97">
+   Resource Creation Tips for the Kubernetes CKA / CKD Certification Exam</a>
+   by John Tucker
+
+   ### Setup prompt at left
+
+1. Setup the prompt so it always appear at the left:
+
+   <pre>export PS1="\n  \w\[\033[33m\]\n$ "
+   </pre>
+
+   ### Setup k aliase
+
+1. Setup a shorthand alias so you can type "k" instead of kubectl:
+
+   <pre>alias k=kubectl
+complete -F __start_kubectl k
+   </pre>
+
+1. Setup alias:
+
+   <pre>export do="--dry-run=client -o yaml"</pre>
+
+   ### Bash Autocompletion
+
+1. Save a few seconds by setting up autocompletion. On bash:
+
+   <pre>bash completion
+source <(kubectl completion bash) 
+echo "source <(kubectl completion bash)" >> ~/.bashrc
+   </pre>
+
+   On ZSH:
+
+   <pre>source <(kubectl completion zsh)
+   echo "[[ $commands[kubectl] ]] && source <(kubectl completion zsh)" >> ~/.zshrc
+    </pre>
+
+   ### vim indentation
+
+   PROTIP: vim is the only editor available, so learn to search lines in vim (Esc, /, the text to be searched).
+   
+   <pre>:set shiftwidth=2</pre>
+
+   To indent several lines with one command: Esc Shift+V for Visual Line mode, highlight lines, 
+   Shift . to shift left, Shift , to shift right.
+
+
+   ### Output file
+
+   To output a file to a pod named "pod-x":
+
+   <pre>kubectl logs pod-x | sudo tee ~/opt/answers/mypod.logs</pre>
+
+
+
+## K command tips and tricks
+
+Its <a target="_blank" href="https://github.com/kubernetes/kubernetes">code page</a> has a summary description of:
+
+   <ul>"Production-Grade Container Scheduling and Management"</ul>
+
+1. Specify the kubectl command by itself to list its sub-commands.
+
+   <pre>kubectl completion --help</pre>
+
+
+
 ## Hands-on Declarative Kubernetes Commands 
 
 <a name="Imperative"></a>
@@ -757,9 +857,11 @@ GitOps: ArgoCD monitors GitHub and applies changes to K8s Controller.
 
    <pre><strong>docker run --name my-nginx -p 80 nginx:1.19.2</strong></pre>
 
-1. For Kubernetes to run a pod:
+1. For Kubernetes to establish a "naked" pod using the un-deprecated run command (use deployment instead):
 
    <pre><strong>kubectl run   my-nginx --port 80 --image=nginx:1.19.2</strong></pre>
+
+   The opposite is "delete pod x.
 
 1. Declarative
 
@@ -776,9 +878,13 @@ spec:
     - containerPort: 80
    </pre>
 
-1, Install Vscode and IntelliJ extensions for formatting YAML files.
+1. Install Vscode and IntelliJ extensions for formatting YAML files.
    To indent multiple lines at a time.
 
+
+
+
+   <a name="Replication"></a>
    <a name="ReplicaSets"></a>
 
 1. Declare ReplicaSet
@@ -803,12 +909,6 @@ spec:
         ports:
         - containerPort: 80
    </pre>
-
-   <a name="Selectors"></a>
-
-   Label Selectors above select a set of objects using a single statement.
-
-   "=", "!=", IN, NOTIN, EXISTS are valid selectors.
 
 
 1. Busybox image:
@@ -865,6 +965,12 @@ spec:                    # specific object details
    </pre>
 
 
+List:
+
+   <pre>kubectl get -n kube-system serviceaccounts</pre>
+
+   <pre>kubectl describe -n kube-system clusterrole system:coredns</pre>
+
 
 <a name="Podspecs"></a>
 
@@ -915,7 +1021,7 @@ In <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=b
 
 <hr />
 
-## Install Minikube
+## Minikube Alternatives
 
 Instead of minikube, there's also K3s, Microk8s on Linux, Minishift.
 
@@ -923,6 +1029,7 @@ Instead of minikube, there's also K3s, Microk8s on Linux, Minishift.
    <br /><br />
 
 But let's start by installing minikube on your laptop.
+
 
 <a name="Minikube"></a>
 
@@ -946,6 +1053,12 @@ CAUTION: At time of writing, <a target="_blank" href="https://github.com/kuberne
    This installs folder:<br />
    $HOME/.minikube
 
+   Alternately, use curl to obtain a back version:
+
+   <pre>curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_1.7.2-0_amd64.deb \
+&& sudo dpkg -i minikube_1.7.2-0_amd64.deb
+   </pre>
+
 1. Verify Install:
 
    <pre><strong>minikube version
@@ -954,6 +1067,23 @@ CAUTION: At time of writing, <a target="_blank" href="https://github.com/kuberne
    <pre>==> Checking for dependents of upgraded formulae...
 Error: No such file or directory - /usr/local/Cellar/eksctl/0.24.0
    </pre>
+
+1. To run minikube within a VM so we will need to use the None (bare-metal) driver. The none driver requires minikube to be run as root, until #3760 can be addressed. To make none the default driver run the following command
+
+   <pre><strong>sudo minikube config set vm-driver none
+   </strong></pre>
+
+1. Start within Virtualbox <a target="_blank" href="https://webme.ie/how-to-run-minikube-on-a-virtualbox-vm/">*</a>:
+
+   <pre><strong>sudo minikube start --memory=4096 </strong></pre>
+
+
+1. Install kubectl command:
+
+   <pre><strong>sudo apt-get update && sudo apt-get install -y apt-transport-https
+   </strong></pre>
+
+
 
 ### Install Docker & Kubernetes on CentOS
 
@@ -1265,7 +1395,11 @@ Kubelet takes a set of Podspecs provided bythe kube-apiserver to ensure that con
 
 Kubelet mounts and runs pod volumes and secrets.
 
+   Image pull secrets authenticates with private container registries.
+
 Kubelet executes health checks to identify pod/node status.
+
+   Service accounts can also store image pull secrets.
 
 <hr />
 
@@ -1387,6 +1521,9 @@ Red Hat's OpenShift product adds <strong>Projects</strong> as "walls" between na
    This diagram</a> illustrates what OpenShift adds: 
    ![kubernetes-openshift-502x375-107638](https://user-images.githubusercontent.com/300046/42333404-e3f5953a-8037-11e8-9691-0172a8a96388.jpg)
 
+
+<a name="OpenShift"></a>
+
 #### OpenShift routes to services
 
    OpenShift's Router is instead a HAProxy container (taking the place of NGINX).
@@ -1402,6 +1539,8 @@ Routes are deployed by an OpenShift Enterprise administrator as <strong>routers<
 ### Cluster networking
 
    A private ClusterIP is accessible by nodes only within the same cluster.
+
+<a name="NodePort"></a>
 
    Services listen on the same <strong>nodePort</strong> (TCP 30000 - 32767 defined by `--service-node-port-range`).
 
@@ -1491,8 +1630,28 @@ A Deployment is an API object that manages a replicated application, typically b
 
 
 <a name="Probes"></a>
+<a name="ReadinessProbes"></a>
+<a name="LivenessProbes"></a>
 
-healthy-monolith.yaml configures "livenessProbe" (in folder healthz) and "readinessProbe" (in folder readiness) on port 81
+1. Configure "livenessProbe" (in folder health) and 
+   "readinessProbe" (in folder readiness) on port 80
+
+   In healthy-monolith-with-probes.yaml 
+
+   <pre>readinessProbe:
+    initialDelaySeconds: 5  # before applying health checks
+    timeoutSeconds: 1
+    httpGet: 
+      path: /
+      port: 80
+  livenessProbe:
+    initialDelaySeconds: 5  # after init/startup before applying probe
+    timeoutSeconds: 1
+    httpGet: 
+      path: /
+      port: 80
+   </pre>
+
 
    * ExecAction executes an action inside the container
    * TCPSocketAction checks against the container's IP address on a specified port
@@ -1520,6 +1679,15 @@ Services provide an un-changing IP address to pods in the back-end.
 Internal services are only reachable within a cluster.
 
 External services are exposed by end-points (NodePoints)
+
+
+   <pre>kubectl create -f 2.1-web_service.yaml
+kubectl get services
+kubectl describe service webserver  # copy IP: value 10.108.171.76
+kubectl describe nodes | grep -i address -A 1
+curl 10.0.0.100:3#### (replace #### with the actual port digits)
+   </pre>
+
 
 Examples:
 
@@ -2519,12 +2687,45 @@ path: /var/lib/docker
 
 Labels are specified for users of Kubernetes
 
+Sample labels and values:
+
    * release: stable, canary
    * environment: eve, qa, production
    * tier: frontend or backend or cache
+   * team: ecommerce, auth, purchasing, marketing
+   * author: name
+   * tech-lead: name
+   * application-type: ui
+   * release-version: 1.0
    <br /><br />
 
-Selectors filter 
+1. Overwrite (Add) a label after a pod created:
+
+   k label po/helloworld app=helloworldapp --overwrite
+
+1. List labels for a pod created:
+
+   k get pods --show-labels
+
+   ... app=helloworldapp
+
+   <a name="Selectors"></a>
+
+   ### Selectors
+
+1. show pods labeled with values matching in list of values:
+
+   k get pods -l 'release-version in (1.0, 2.0)'
+
+   <a name="Selectors"></a>
+
+   Label Selectors above select a set of objects using a single statement.
+
+   "=", "!=", IN, NOTIN, EXISTS are valid selectors.
+
+1. Delete pods
+
+   <pre>k delete pods -l application-level=1.0</pre>
 
 
 <a name="rc"></a>
@@ -3065,8 +3266,12 @@ Microsoft's "<a target="_blank" href="https://azure.microsoft.com/mediahandler/f
    <a target="_blank" href="https://www.youtube.com/watch?v=GEKTz5E22hY">VIDEO</a> from Jun 22, 2017
    Covers bash completion   
 
-   <a target="_blank" href="https://medium.com/@bjammal/hands-on-ambassador-pattern-625a13ceb8b7?">Ambassasor Pattern</a>
 
+   <a name="Ambassador">ambassador pattern</a> to proxy access a database (perhaps charded)<a target="_blank" href="https://medium.com/@bjammal/hands-on-ambassador-pattern-625a13ceb8b7?">*</a>
+
+   <a name="Adapter">Adapter pattern</a> presents a standardized interface across multiple pods, to normalize output logs and monitoring data. Adapts third-party software.
+
+   <a name="Sidecar">sidecar pattern</a>
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="center"><th> Pod ...</th><th> Affinity </th><th> Anti-Affinity</th></tr>
@@ -3094,6 +3299,9 @@ sealed secrets:
    * AWS Secrets Manager (ASM)
    <br /><br />
 
+<a name="ServiceAccounts"></a>
+
+### ServiceAccounts
 
 
 
@@ -3126,6 +3334,8 @@ Before scheduling, it checks resources, QoS, policies, user specs.
 References:
 
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-integrating-volumes-using-multi-container-pods">2h 26m VIDEO course: "Kubernetes for Developers: Integrating Volumes and Using Multi-container Pods"</a> by Nigel Poulton Apr 23, 2020
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=3RTvoI-A7UQ">VIDEO: Kubernetes and Container Orchestration 101 - Computer Stuff They Didn't Teach You #11</a> by Microsoft legend Scott Hanselman.
 
 
 ## Blogs
