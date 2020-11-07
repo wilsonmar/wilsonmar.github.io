@@ -31,6 +31,8 @@ Each approach has its own advantages and disadvantages:
 
 Access Windows machines by running a [client software that runs Microsoft's Remote Desktop Protocol (RDP)](/rdp/), from within a Windows, MacOS, or Linux machine.
 
+## Apple docs
+
 Apple offers the "Mac OS X - Certified Associate" certification exam on this topic (Mac Integration) on each OSX version. Those who pass get on <a target="_blank" href="https://i7lp.integral7.com/durango/do/pr/prSearch?ownername=apple&channel=apple">Apple's Registry</a>.
 
 <a target="_blank" href="https://training.apple.com/pdf/Mac_Integration_Basics_10.13_Participant_Guide.pdf">Apple has a document</a>
@@ -40,6 +42,7 @@ Included is security at the user, local-networking, and remote-networking levels
 Migrate data from a Windows computer to a Mac.
 Back up data.
 Run Windows programs on a Mac. 
+
 
 <hr />
 
@@ -1196,6 +1199,7 @@ now built on Google Chrome.
 
 * <a target="_blank" href="https://www.howtogeek.com/187359/5-ways-to-run-windows-software-on-a-mac/">5 ways to run windows software on a Mac</a>
 
+* <a target="_blank" href="https://www.pcmag.com/news/how-to-run-windows-on-a-mac">How to run Windows on a Mac</a>
 
 
 ## More on OSX

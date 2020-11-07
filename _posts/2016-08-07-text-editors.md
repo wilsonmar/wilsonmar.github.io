@@ -475,6 +475,10 @@ and <tt>:set ff=dos</tt> to convert to Windows.
 
 ### Customizations
 
+1. To set your default editor to vim, add
+
+   <pre>echo "export EDITOR=/usr/bin/vim" >> ~/.bashrc</pre>
+
 1. Open examples to customizations of vim user experience to paste in hidden file <tt>$HOME/.vimrc</tt> which vim looks for when it loads.
 
    <pre>vim /usr/share/vim/vim80/vimrc_example.vim

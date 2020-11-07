@@ -17,11 +17,15 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/kubernetes/">This</a> is a hands-on  introduction with insightful commentary carefully sequenced to make complex material easier to understand quickly. This is not a "demo", but an immersive step-by-step "deep dive" tutorial aimed to make you productive.
+I created <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">this</a> to help me prepare for Kubernetes exams.
+
+I've tried to provide insightful commentary around carefully sequenced hands-on activities automated in a shell script
+-- an immersive step-by-step "deep dive" tutorial aimed to make you productive.
+I'm restructuring this so that revelations about architecture components and flows are based on yaml and what commands reveal rather than as trivia to be memorized.
+
+That's how I hope to make this complex material easier to understand quickly. 
 
 NOTE: This article is now a "starter set" actively undergoing additions.
-
-I'm restructuring this so that revelations about architecture components and flows are based on yaml and what commands reveal rather than as trivia to be memorized.
 
 ## Keyword Index Alphabetically
 
@@ -104,12 +108,16 @@ health checks,
 
 ## Why Kubernetes?
 
-With Kubernetes, <strong>dev teams</strong> can take complete charge of production operations in cloud environments -- deploy both application code and all the environment settings, at their own cadence, without ceremonies and wait time to coordinate releases.
+With Kubernetes, <strong>dev teams</strong> can take complete control of production operations in cloud environments 
+-- deploy both application code and all the environment settings, at their own cadence, without ceremonies and wait time to coordinate releases.
 
 Kubernetes is called "container orchestration" software because it automates the deployment, scaling and management of containerized applications<a target="_blank" href="https://en.wikipedia.org/wiki/Kubernetes">[Wikipedia]</a>. 
 
 * Authentication -> Authorization -> <a href="#Admission">Admission Control</a>
 * Load balancing
+* Mixed operating systems (Ubuntu, Alpine, etc.)
+* Using images in Docker avoids the "it works on my machine" troubleshooting of setup or dependencies
+* Unlike Elastic Beanstalk, the k8s master controls what each its nodes do
 <br /><br />
 
 Kubernetes applies principles of the <a target="_blank" href="https://www.reactivemanifesto.org/">Reactive Manifesto</a> of 2014:
@@ -452,7 +460,9 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 
    * <a target="_blank" href="https://kubernetes.io/community/">https://kubernetes.io/community</a>
 
-   * <a target="_blank" href="https://dex.dev">https://dex.dev</a>
+   * <a target="_blank" href="https://kodekloud.com/">https://kodekloud.com community Slack sign-up</a>
+
+   * <a target="_blank" href="https://dex.dev/">https://dex.dev</a>
 
    * <a target="_blank" href="https://kubernetes.slack.com">https://kubernetes.slack.com</a>
    * <a target="_blank" href="https://slack.k8.io">https://slack.k8.io</a>
@@ -467,7 +477,8 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
    * <a target="_blank" href="https://groups.google.com/forum/#!forum/kubernetes-sig-scale">kubernetes-sig-scale</a>
 
    * <a target="_blank" href="https://www.youtube.com/playlist?list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ&disable_polymer=true">
-   Kubernetes Google Community video chats</a>
+   Kubernetes Google Community video chats</a> weekly going back to 2017 but stopped July 2020
+   * <a target="_blank" href="https://discuss.kubernetes.io/">https://discuss.kubernetes.io</a>
 
    * <a target="_blank" href="https://cloud.google.com/support/docs/issue-trackers">https://cloud.google.com/support/docs/issue-trackers</a> to report bugs.
 
@@ -514,6 +525,21 @@ Different instructors explain concepts in different logical sequences.
 So looking at different video classes provides that.
 
 
+### KodeKloud
+
+<a target="_blank" href="https://kodeKloud.com/">KodeKloud.com</a> (at USD $228/year less FESTIVERJ20) 
+provides lab environment using the Teachable.com platform but sold on Udemy
+
+Teacher and founder <a target="_blank" href="https://www.linkedin.com/in/mmumshad/">Mumshad Mannambeth</a> (living in Singapore) also
+created a free work simulator for people to gain "real" work experience at <a target="_blank" href="https://kodekloud.com/p/kodekloud-engineer">https://kodekloud.com/p/kodekloud-engineer</a>
+
+<a target="_blank" href="https://www.youtube.com/channel/UCSWj8mqQCcrcBlXPi4ThRDQ">KodeKloud's YouTube channel</a>
+has series for absolute beginners on <a target="_blank" href="http://bit.ly/GitForBeginnersKodeKloud">Git</a>, Ansible, Puppet, Shell, Docker, Kubernetes
+
+https://www.youtube.com/watch?v=QJ4fODH6DXI
+
+
+
 <a name="LFS258"></a>
 
 ### Linux Foundation LFS258
@@ -543,7 +569,7 @@ edX.org publishes some courses from Linux Academy.
 ### O'Reilly
 
 <a target="_blank" href="https://learning.oreilly.com/videos/certified-kubernetes-application/">
-7h video class over 3 days live course</a> by Sander van Vugt, who, as a Linux expert, provides in-depth CentOS install advice (including SELinux) and <a target="_blank" href="https://github.com/sandervanvugt/ckad">files</a> available nowhere else. His diagrams are on a lightboard.
+7h video class over 3 days live course</a> by <a target="_blank" href="https://www.linkedin.com/in/sandervanvugt/">Sander van Vugt</a>, who, as a Linux expert, provides in-depth CentOS install advice (including SELinux) and <a target="_blank" href="https://github.com/sandervanvugt/ckad">files</a> available nowhere else. His diagrams are on a lightboard. <!-- mail@sandervanvugt.nl -->
 
 BLAH: O'Reilly's videos are annoying because you have to move the sound up on every new chapter.
 
@@ -569,15 +595,18 @@ PROTIP: A browser-based session times out too quickly and is cumbersome to copy 
 1. Click the box to the left of "bastion-host". When "Connect" changes from gray, click it. 
 1. Click the PEM file (such as "554282681613.pem") and save the file in that folder.
 1. Copy the PEM file name and save to your Clipboard.
-
 1. Switch to the Terminal.  
+1. Construct a variable set command because it's referenced several times:
+
+   <pre>PEMF="554282681613.pem"</pre>
+
 1. Set permissions (so your key is not publicly viewable for SSH to work):
    
-   <pre>chmod 400 554282681613.pem</pre>
+   <pre>chmod 400 "$PEMF"</pre>
 
 1. Compose the command to connect to your instance by typing and pasteing its Public DNS: first type "ssh -i", then paste the pem file, then type "ubuntu@" for the user name inside the host, then switch to the EC2 page to copy and paste the "Public DNS (IPv4)" URL:
 
-   <pre>ssh -i "554282681613.pem" ubuntu@ec2-34-210-196-19.us-west-2.compute.amazonaws.com</pre>
+   <pre>ssh -i "$PEMF" ubuntu@ec2-34-210-196-19.us-west-2.compute.amazonaws.com</pre>
 
    The wizard should automatically detects the key you used to launch the instance.
    But if the response is: "ubuntu@github.com: Permission denied (publickey).", try to rename file by:
@@ -599,6 +628,8 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 1. <a href="#CustomizeTerminal">Customize the Terminal environment for your productivity</a>.
 
 1. Switch to the CloudAcademy.com page and scroll down to the list of commands. If you customized alias k:
+   
+   Using the alias setup above, ensure you can see master and nodes:
 
    <pre>k get nodes</pre>
 
@@ -633,10 +664,9 @@ kubectl delete pod mypod
    </pre>
 
 
-   192.168.35.2
-
-
 ### Pluralsight
+
+NOTE: Pluralsight videos can be viewed as a Tivo app on my TV.
 
 <a target="_blank" href="https://app.pluralsight.com/paths/certificate/certified-kubernetes-application-developer-ckad">Pluralsight has a 14-hour series of videos on CKAD</a> by Dan Wahlin (@danwahlin, codewithdan.com). In chron order:
 
@@ -836,6 +866,8 @@ Its <a target="_blank" href="https://github.com/kubernetes/kubernetes">code page
 
 1. Specify the kubectl command by itself to list its sub-commands.
 
+1. Specify the kubectl command with --help get info:
+
    <pre>kubectl completion --help</pre>
 
 
@@ -843,12 +875,45 @@ Its <a target="_blank" href="https://github.com/kubernetes/kubernetes">code page
 ## Hands-on Declarative Kubernetes Commands 
 
 <a name="Imperative"></a>
-<a name="Declarative"></a>
 
 K8s recognizes both imperative and declarative yaml files.
 
 GitOps: ArgoCD monitors GitHub and applies changes to K8s Controller.
 
+<a name="Declarative"></a>
+
+Every K8s yaml filee must have these top-level properties:
+
+   <ul><pre>apiVersion:
+kind:
+metadata:
+spec:
+   <pre></ul>
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr valign="top"><td>apiVersion:</td><td>v1
+  </td><td>apps/v1
+</tr>
+<tr valign="top"><td>kind:</td><td>Pod<br />Servicce
+  </td><td>ReplicaSet<br />Deployment</td><td>
+</tr>
+</table>
+
+metadata contains a dictionary indented name: and label:
+
+In spec: is a dictionary item containers: specifying a list/array represented by a dash in front of each item
+
+   <ul><pre>spec:
+  containers:
+    - name: nginx-containers
+      image: nginx
+   </pre></ul>
+
+   Notice the dash is indented under containers.
+
+1. To view the yaml file:
+
+   kubectl config view
 
 
 ## Just one web server:
@@ -934,6 +999,18 @@ kubectl run --restart=OnFailure   # creates job
 
 Batch jobs are supervisor processes that run once and completed.
 
+3 types of jobs:
+
+   * completions=1 & parallelism=1 for non-parallel: one pod is started
+   * completions=n & parallelism=m for n fixed completions in parallel 
+   * completions=1 & parallelism=m for n jobs work queue started until 1 completed (rarely used)
+   <br /><br />
+
+To delete job after finish:
+<pre>ttlSecondsAfterFinished: 20</pre>
+
+
+
 
 
 <a name="Namespaces"></a>
@@ -972,7 +1049,19 @@ List:
    <pre>kubectl describe -n kube-system clusterrole system:coredns</pre>
 
 
+QUESTION: Find all pods that have been started with the kubectl run command:
+
+kubectl get pods nginxpod --show-labels | grep run
+
+kubectl run pod test --image=nginx --dry-run=client -o jasonpath='{metadata.labels}'
+
+
+QUESTON: Create a Cron job that will run ???
+
+
 <a name="Podspecs"></a>
+
+### Podspecs
 
 Podspecs are yaml files that describe a pod.
 
@@ -983,6 +1072,13 @@ metadata:
   name: busybox-ready
   namespace: default
    </pre>
+
+## Deleting Pods
+
+   <pre>k delete pod frontend --grace-period=0 --force</pre>
+
+
+## Overview
 
 This tutorial focuses on use of <strong>Docker</strong> containers as Kubernetes' <strong>Container Runtime Interface (CRI)</strong>. BTW Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") containers, which provided a CLI for containers as part of CoreOS. Rkt became the first archived project of CNCF after IBM bought Red Hat with its competing "containerd" <a target="_blank" href="https://github.com/kubernetes-sigs/cri-o">cri-o technology.
 
@@ -1033,17 +1129,39 @@ But let's start by installing minikube on your laptop.
 
 <a name="Minikube"></a>
 
-### Install Minikube
+## Install Minikube
 
 Minikube goes beyond older Docker For Mac (DFM) and Docker for Windows (DFW)
 and includes a node and a Master when it spins up in a local environment (such as your laptop).
 
 CAUTION: At time of writing, <a target="_blank" href="https://github.com/kubernetes/minikube">https://github.com/kubernetes/minikube</a>has 257 issues and 20 pending Pull Requests, but we're using it anyway.
+MUST READ: <a target="_blank" href="https://minikube.sigs.k8s.io/docs/drivers/docker/#known-issues">Known Issues with Minikube</a>
+(Ingress and ingress-dns addons are not supported on Linux)
 
+
+### Minikube on Windows
+
+1. On Windows, (pardoxically) make sure Docker Desktop’s container type setting is Linux and not windows. see docker docs on switching container type. You can verify your Docker container type by running:
+
+   <pre>docker info --format '{{.OSType}}'</pre>
+
+https://minikube.sigs.k8s.io/docs/drivers/hyperv/
+
+
+### Minikube on MacOS
+
+NOTE: Docker drivers do not currently support ARM architecture (only AMD64).
+
+1. Install Docker for Desktop
+
+   This automatically installs the HyperKit hypervisor for macOS.
+
+<!--
 1. Install on a Mac Docker:
  
    <pre><strong>brew install docker-machine-driver-xhyve
    </strong></pre>
+-->
 
 1. Install on a Mac Minikube:
 
@@ -1059,6 +1177,10 @@ CAUTION: At time of writing, <a target="_blank" href="https://github.com/kuberne
 && sudo dpkg -i minikube_1.7.2-0_amd64.deb
    </pre>
 
+1. Make hyperkit the default driver<a target="_blank" href="https://minikube.sigs.k8s.io/docs/drivers/hyperkit/">*</a>:
+
+   <pre><strong>minikube config set driver hyperkit</strong></pre>
+
 1. Verify Install:
 
    <pre><strong>minikube version
@@ -1073,9 +1195,11 @@ Error: No such file or directory - /usr/local/Cellar/eksctl/0.24.0
    <pre><strong>sudo minikube config set vm-driver none
    </strong></pre>
 
+   These changes will take effect upon a minikube delete and then a minikube start
+
 1. Start within Virtualbox <a target="_blank" href="https://webme.ie/how-to-run-minikube-on-a-virtualbox-vm/">*</a>:
 
-   <pre><strong>sudo minikube start --memory=4096 </strong></pre>
+   <pre><strong>sudo minikube start --memory=4096</strong></pre>
 
 
 1. Install kubectl command:
@@ -1585,7 +1709,12 @@ kube-ps1.sh creates a shell pod envbin.
 <a name="Workloads"></a>
 <a name="Metadata"></a>
 <a name="Clusters"></a>
+
 <a name="CronJobs"></a>
+
+https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/
+
+   <pre>k create cronjob my-job --image=busybox --schedule="*/1 * * * *" --logger hello</pre>
 
 ## K8s API
 
@@ -1622,6 +1751,16 @@ A Deployment is an API object that manages a replicated application, typically b
    * hello-green.yaml
    * hello-canary.yaml
    * hello.yaml
+
+1. Create deployment of 3 pods:
+
+   kubectl create deployment nginx-lab8 --image=nginx --replicas=3 --dry-run=client -o yaml > lab8.yaml
+
+
+1. To delete
+
+   <pre>kubectl delete deployments.app pod mydep ???</pre>
+
 
 ### Pods
 
@@ -1896,10 +2035,13 @@ Restarting Kublet itself depends on the operating system (`monit` on Debian or `
 
 Nodes are joined to the master node using the <strong>kubeadm join</strong> program and command.
 
+The master node runs the kube-apiserver and componenets etcd, controller, scheduler.
+
 The master node itself is crated by the <strong>kubeadm init</strong> command which establishes folders 
 and invokes the Kubernetes <a href="#API_Server">API server</a>. That command is installed along with the 
 <strong>kubectl</strong> package (pronounced "cube cuddle"). 
 There is a command with the same name used to obtain the <strong>version</strong>.
+
 
 1. View memory and CPU usage of pods across nodes from the K8s Metrics Server:
 
@@ -2694,10 +2836,15 @@ Sample labels and values:
    * tier: frontend or backend or cache
    * team: ecommerce, auth, purchasing, marketing
    * author: name
+   * maintainer: joe
    * tech-lead: name
    * application-type: ui
    * release-version: 1.0
    <br /><br />
+
+1. Create label automatically:
+
+   kubectl expose
 
 1. Overwrite (Add) a label after a pod created:
 
@@ -2708,6 +2855,8 @@ Sample labels and values:
    k get pods --show-labels
 
    ... app=helloworldapp
+
+
 
    <a name="Selectors"></a>
 
@@ -2897,7 +3046,15 @@ spec:
 
    <pre>kubectl get deployment nginx-deployment -o yaml</pre>
 
+   <a name="RollingUpdate"></a>
+
    Notice the "RollingUpdateStrategy: 25% max unavilable, 25% max surge".
+
+   In the yaml, RollingUpdate is part of strategy:
+
+   <pre>strategy:
+    Rolling Update: 
+   </pre>
 
 1. Begin rollout of a new desired version from the command line:
 
