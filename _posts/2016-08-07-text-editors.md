@@ -523,9 +523,58 @@ abbr _bash #!/bin/bash&LT;CR>
 
    PROTIP: Many configure the "caps lock" key to act as the less easy to reach Esc key.
 
-1. To indent 5 lines at and below the current line:
 
-   <tt>5 >></tt>
+   <a name="ViIndent"></a>
+
+   ### Indenting within vi
+
+1. If you're using the vi client rather than a web page, in insert mode, Ctrl-T indents the current line, and Ctrl-D unindents.
+
+   When indenting or unindenting, lines are shifted one 'shiftwidth' to the right or left.
+
+   If you're on a web browser:
+
+1. If you’re copying blocks of text around and need to align the indent of a block in its new location, to automatically align the pasted block with the surrounding text, 
+
+   use <tt>]p</tt> to paste instead of just <tt>p</tt>.
+
+   After pasting:
+
+1. Indent 5 lines at and below the cursor:
+
+   <tt>5>></tt>
+
+   <tt>3<<</tt> to un-dent (shift left)
+
+1. For all commands, pressing . (period) repeats the operation.   
+
+   Typing <tt>5>>..</tt> shifts five lines to the right, and then repeats the operation twice so that the five lines are shifted three times.
+
+1. To mark a block of lines and indent it, <tt>Vjj></td> to indent three lines (Vim only). 
+
+   To indent a curly-braces block, put your cursor on one of the curly braces and use <tt>>%</tt>.
+   Alternately, from anywhere inside block use <tt>>iB</tt>.
+
+   Beyond the test: Install Vscode and IntelliJ extensions for formatting YAML files.
+   To indent multiple lines at a time.
+
+1. To adjust the indent on three lines, put the cursor anywhere in the first line:
+
+   Press V then jj to visually select the three lines.
+
+   Press > to indent (shift text one 'shiftwidth' to the right), or press < to shift left.
+
+   Press . to repeat the indent, or u to undo if you have shifted too far.
+
+   Type <tt>gv</tt> if you want to reselect the lines (not needed).
+
+   Type >2j to shift right or <2j to shift left.
+
+   <tt>>}</tt> to indent from the cursor to the next blank line, or 
+
+   <tt><aB</tt> to un-indent the current C-like {...} "block" structure.
+
+
 
    ### vi/vim cheatsheets
 

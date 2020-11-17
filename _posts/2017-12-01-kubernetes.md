@@ -80,6 +80,8 @@ health checks,
 <a href="#ServiceAccounts">sa=ServiceAccounts</a>,
 <a href="#Services">Service Discovery</a>,
 <a href="#StatefulSets">sts=StatefulSets</a>,
+<a href="#Taints">Taints</a>,
+<a href="#Tolerations">Tolerations</a>,
 <a href="#Volumes">Volumes</a>,
 <a href="#Workloads">Workloads API</a>
 
@@ -162,6 +164,7 @@ See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kuberne
 Instead of multiple choice questions, K8s exam consists of <strong>task-based practical responses while SSH'd into live clusters.</strong> Each exam includes one free fail retake.
 
 There is support for other languages other than English.
+
 
 <a name="CKAD_ExamDomains"></a>
 
@@ -298,9 +301,15 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 
 4. Find dates and times when you're in a quiet private indoor place where no one else (co-workers) are near.
 
-4. Use your Linux Foundation credentials to create an account at <a target="_blank" href="https://www.examslocal.com/">examslocal.com</a>.
+4. Use your Linux Foundation credentials to create an account at 
+
+   <a target="_blank" href="https://www.examslocal.com/">examslocal.com</a>.
 
 1. <a target="_blank" href="https://chrome.google.com/webstore/detail/innovative-exams-screensh/dkbjhjljfaagngbdhomnlcheiiangfle/related">Install the Chrome extension</a> used to take exams, verified during exam scheduling.
+
+1. Pick a date when your Biorythms are positive on Intellectual and Physical, not hitting bottom or crossing from positive to negative:
+
+   <a target="_blank" href="https://keisan.casio.com/exec/system/1340246447">https://keisan.casio.com/exec/system/1340246447</a>
 
 4. Sign-in at <a target="_blank" href="https://www.examslocal.com/">examslocal.com</a>. For "Sponsor and exam", type one of the following:
 
@@ -326,7 +335,7 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 
 8. PROTIP: You'll need a corded (Logitech) webcam (not one built-in).
 
-9. Setup your home computer to take the exam <a target="_blank" href="http://www.examslocal.com/linuxfoundation/"> at home</a> using the <strong>Chrome extension</strong> from "Innovative Exams", which uses your laptop camera and microphone watching you use a virtual Ubuntu machine.
+9. Setup your home computer to take the exam <a target="_blank" href="https://www.examslocal.com/ScheduleExam/Home/CompatibilityCheck?reservationId=fe1aa455-cbc0-4db3-ad96-adae3948d68c">Compatibility Check</a>a using the <strong>Chrome extension</strong> from "Innovative Exams", which uses your laptop camera and microphone watching you use a virtual Ubuntu machine.
 
    ### Sample exam questions 
 
@@ -408,15 +417,20 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 
 1. PROTIP: Avoid writing yaml by scratch.
 
-   Search within kubernetes.io to copy code.
+1. <a href="#Declarative">Generate a declarative yaml file from an imperative command:</a>
+
+1. PROTIP: Learn to search within kubernetes.io to copy code.
+
+
 
 1. Create yaml file as well as pod:
 
    <pre>kubectl create -f file.pod.yaml --record</pre>
 
-   The resulting file includes additional annotations.
 
    <a name="Rollbacks"></a>
+
+   ### Record Rollback history
 
    `--record=true`  # to save rollback history obtained by:
 
@@ -460,7 +474,8 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 
    * <a target="_blank" href="https://kubernetes.io/community/">https://kubernetes.io/community</a>
 
-   * <a target="_blank" href="https://kodekloud.com/">https://kodekloud.com community Slack sign-up</a>
+   * <a target="_blank" href="https://community.kodekloud.com/">https://community.kodekloud.com</a>
+   * <a target="_blank" href="https://community.kodekloud.com/">https://kodekloud.com community Slack sign-up</a>
 
    * <a target="_blank" href="https://dex.dev/">https://dex.dev</a>
 
@@ -490,6 +505,9 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 ## Latest videos about K8s
 
 For the most up-to-date information by practioners:
+
+<a target="_blank" href="https://www.youtube.com/watch?v=QJ4fODH6DXI">
+Kubernetes Concepts Explained in 9 minutes!</a> Oct 31, 2019 by <a target="_blank" href="https://www.linkedin.com/in/mmumshad/">Mumshad Mannambeth</a> 
 
 Kubcon conferences are held 3 times a year in Asia, Europe, and US from https://events.linuxfoundation.org.
 
@@ -525,19 +543,39 @@ Different instructors explain concepts in different logical sequences.
 So looking at different video classes provides that.
 
 
-### KodeKloud
+### KodeKloud from Udemy.com
 
-<a target="_blank" href="https://kodeKloud.com/">KodeKloud.com</a> (at USD $228/year less FESTIVERJ20) 
-provides lab environment using the Teachable.com platform but sold on Udemy
+This I think these are the most thoroughly and logically presented tutorials for CKAD and CKA.
 
-Teacher and founder <a target="_blank" href="https://www.linkedin.com/in/mmumshad/">Mumshad Mannambeth</a> (living in Singapore) also
-created a free work simulator for people to gain "real" work experience at <a target="_blank" href="https://kodekloud.com/p/kodekloud-engineer">https://kodekloud.com/p/kodekloud-engineer</a>
+I have several tabs open taking it:
 
-<a target="_blank" href="https://www.youtube.com/channel/UCSWj8mqQCcrcBlXPi4ThRDQ">KodeKloud's YouTube channel</a>
-has series for absolute beginners on <a target="_blank" href="http://bit.ly/GitForBeginnersKodeKloud">Git</a>, Ansible, Puppet, Shell, Docker, Kubernetes
+1. The courses is availble for USD $228/year (less FESTIVERJ20) at <a target="_blank" href="https://kodeKloud.com/">KodeKloud.com</a> where <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">Videos are presented on KodeKloud.com</a> (using the Teachable.com platform).
 
-https://www.youtube.com/watch?v=QJ4fODH6DXI
+1. The courses can also be purchased at Udemy.com:
 
+   * <a target="_blank" href="https://www.udemy.com/course/certified-kubernetes-application-developer/">Kubernetes Certified Application Developer (CKAD) with Tests</a>, with 9 hours of videos, and<br />
+   <a target="_blank" href="https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/">Kubernetes Certified Application Developer (CKA) with Tests</a>, with 18 hours of videos.
+
+1. Either way purchased, the course includes access to a KataKoda-powered <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">lab environment</a> for one hour at a time. 
+
+   The <a href="#Aliases">k alias for kubectl</a> is already configured, so type <tt>k</tt> instead of <tt>kubectl</tt>.
+
+1. A "Quiz Portal" invoked from within the labs UI provides challenge questions and answers.
+
+   Some hints reference answer files in folder "/var/answers", viewed by a command in the Terminal, such as:
+
+   <pre>cat /var/answers/answer-ubuntu-sleeper-2.yaml</pre>
+
+1. Within the quiz, some links to solutions to labs on YouTube are broken. So stay on the Udemy UI for Solution videos.
+
+   <a target="_blank" href="https://www.youtube.com/channel/UCSWj8mqQCcrcBlXPi4ThRDQ">KodeKloud's YouTube channel</a> still provides a series for absolute beginners on <a target="_blank" href="http://bit.ly/GitForBeginnersKodeKloud">Git</a>, Ansible, Puppet, Shell, Docker, Kubernetes. https://www.youtube.com/watch?v=QJ4fODH6DXI
+
+1. Teacher and founder <a target="_blank" href="https://www.linkedin.com/in/mmumshad/">Mumshad Mannambeth</a> (living in Singapore) also created a free work simulator for people to gain "real" work experience at <a target="_blank" href="https://kodekloud.com/p/kodekloud-engineer">https://kodekloud.com/p/kodekloud-engineer</a>.
+
+1. For CKA, he also authored <a target="_blank" href="https://github.com/mmumshad/kubernetes-the-hard-way">https://github.com/mmumshad/kubernetes-the-hard-way</a> (on Virtualbox and Vagrant using Docker instead of containerd) which takes a manual approach to bootstrap a Kubernetes cluster from scratch, for learning to understand each task performed by the automation. The tutorial adapts the original using GCP developed by Kelsey Hightower.
+
+1. <a target="_blank" href="https://join.slack.com/t/kodekloudworkspace/shared_invite/zt-fz4nok2p-4~RJZBLNgThqSeuroLSPiQ">Join</a> the Slack channel for <a target="_blank" href="https://app.slack.com/client/TDSBA9B9V/CDR4R9Z7E/thread/CDR4R9Z7E-1604511588.117400">CKAD</a> and <a target="_blank" href="https://app.slack.com/client/TDSBA9B9V/CHMV3P9NV/thread/CDR4R9Z7E-1604511588.117400">CKA</a> students.
+                         
 
 
 <a name="LFS258"></a>
@@ -663,6 +701,14 @@ kubectl describe pod mypod | more
 kubectl delete pod mypod
    </pre>
 
+1. Get the "image:" name -internal within the output:
+
+   k describe pod xxx | grep -i image
+
+1. Get the Node name:
+
+   k get pods -o wide
+
 
 ### Pluralsight
 
@@ -739,6 +785,7 @@ by Stephen Grider. Diagrams for the 21h video uses draw.io accessing
 https://github.com/StephenGrider/DockerCasts/tree/master/diagrams
 
 
+
 ### ACloud.guru
 
 <a target="_blank" href="https://acloud.guru/learn/d068441f-75b4-4fe8-a7a6-df9153f24a35">ACloud.guru CKAD course</a> by <a target="_blank" href="https://www.linkedin.com/in/wilb/">William Boyd</a> has 3.5 hours of video organized according to <a href="#CKAD_ExamDomains">exam domains</a>, 13 hands-on labs, and 3 practice exams based on v1.13.
@@ -778,6 +825,8 @@ Others on CKA:
 <hr />
 
 ## Cloud Kubernetes Cloud Services
+
+Each offering has its own acronym:
 
 * ECS, EKS = Elastic (AWS) Container Service & Elastic Kubernetes Service
 * IKS = IBM cloud Kubernetes Service
@@ -858,6 +907,8 @@ echo "source <(kubectl completion bash)" >> ~/.bashrc
 
 
 
+<a name="Aliases"></a>
+
 ## K command tips and tricks
 
 Its <a target="_blank" href="https://github.com/kubernetes/kubernetes">code page</a> has a summary description of:
@@ -874,49 +925,53 @@ Its <a target="_blank" href="https://github.com/kubernetes/kubernetes">code page
 
 ## Hands-on Declarative Kubernetes Commands 
 
-<a name="Imperative"></a>
-
 K8s recognizes both imperative and declarative yaml files.
 
-GitOps: ArgoCD monitors GitHub and applies changes to K8s Controller.
+### Declarative vs. Declarative
 
-<a name="Declarative"></a>
+<a target="_blank" href="https://medium.com/payscale-tech/imperative-vs-declarative-a-kubernetes-tutorial-4be66c5d8914?">REF</a>:
 
-Every K8s yaml filee must have these top-level properties:
+TASK: Create a pod with the ubuntu image to run a container to sleep for 5000 seconds. Modify the file ubuntu-sleeper-2.yaml.
 
-   <ul><pre>apiVersion:
-kind:
+   <pre>apiVersion: v1
+kind: Pod
 metadata:
+  name: ubuntu-sleeper-2
 spec:
-   <pre></ul>
-
-<table border="1" cellpadding="4" cellspacing="0">
-<tr valign="top"><td>apiVersion:</td><td>v1
-  </td><td>apps/v1
-</tr>
-<tr valign="top"><td>kind:</td><td>Pod<br />Servicce
-  </td><td>ReplicaSet<br />Deployment</td><td>
-</tr>
-</table>
-
-metadata contains a dictionary indented name: and label:
-
-In spec: is a dictionary item containers: specifying a list/array represented by a dash in front of each item
-
-   <ul><pre>spec:
   containers:
-    - name: nginx-containers
-      image: nginx
-   </pre></ul>
+  - name: ubuntu
+    image: ubuntu
+    command:
+    - “sleep”
+    - “5000”
+   </pre>
 
-   Notice the dash is indented under containers.
+   The command can also be written as: ???
 
-1. To view the yaml file:
+   <pre>command: [ "sleep", "5000" ]
+   </pre>
 
-   kubectl config view
+This references Dockerfile:
+
+   <pre>ENTRYPOINT ["python", "app.py"]
+CMD ["--color", "red"]
+   </pre>
 
 
-## Just one web server:
+
+
+
+### Dockerfile correspondance
+
+<a target="_blank" href=https://user-images.githubusercontent.com/300046/99159670-dc230100-269b-11eb-90a4-b9f6953aba16.png">
+<img alt="k8s-dockerfile-sleep" width="989" height="385" src="https://user-images.githubusercontent.com/300046/99159670-dc230100-269b-11eb-90a4-b9f6953aba16.png"></a>
+
+
+<a name="Imperative"></a>
+
+### Imperative one web server:
+
+<a target="_blank" href="https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12039438">Klab</a>:
 
 1. For Docker to create an Nginx web server:
 
@@ -924,11 +979,7 @@ In spec: is a dictionary item containers: specifying a list/array represented by
 
 1. For Kubernetes to establish a "naked" pod using the un-deprecated run command (use deployment instead):
 
-   <pre><strong>kubectl run   my-nginx --port 80 --image=nginx:1.19.2</strong></pre>
-
-   The opposite is "delete pod x.
-
-1. Declarative
+   <pre><strong>kubectl run my-nginx --port 80 --image=nginx:1.19.2</strong></pre>
 
    <pre>apiVersion: v1
 kind: Pod
@@ -943,40 +994,75 @@ spec:
     - containerPort: 80
    </pre>
 
-1. Install Vscode and IntelliJ extensions for formatting YAML files.
-   To indent multiple lines at a time.
+1. The opposite is "delete pod x".
 
 
 
+   <a name="Declarative"></a>
 
-   <a name="Replication"></a>
-   <a name="ReplicaSets"></a>
+1. Generate a declarative yaml file from an imperative command:
 
-1. Declare ReplicaSet
+   <pre><strong>k run redis --image=redis --dry-run=client -o yaml > mypod.yaml</strong></pre>
 
-   ReplicaSets enable deployment of several pods, and check their status as a single unit (replicas).
+1. Vi pod.yaml to edit<a target="_blank" href="https://vim.fandom.com/wiki/Shifting_blocks_visually">*</a>
 
-   <pre>apiVersion: v1
-kind: ReplicaSet
+   Every K8s yaml file must have these top-level properties:
+
+   <pre>apiVersion:
+kind:
+metadata:
 spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: my-nginx
-        image: nginx:1.19.2
-        ports:
-        - containerPort: 80
-   </pre>
+   <pre>
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr valign="top"><td>apiVersion:</td><td>v1
+     </td><td>apps/v1
+   </td></tr>
+   <tr valign="top"><td>kind:</td><td>Pod<br />Servicce
+     </td><td><a href="#ReplicaSets">ReplicaSet</a></td><td><a href="#Deployment">Deployment</a>
+   </td></tr>
+   </table>
+
+   REMEMBER: kind: value must be <strong>Title case</strong> (first character upper case).
+
+   metadata contains a dictionary indented name: and label:
+
+   In spec: is a dictionary item containers: specifying a list/array represented by a dash in front of each item
+
+   <ul><pre>spec:
+  containers:
+    - name: nginx-containers
+      image: nginx
+   </pre></ul>
+
+   Notice the dash is indented under containers.
+
+1. View the yaml file:
+
+   kubectl config view
+
+1. Create instance by applying yaml -file
+
+   k apply -f mypod.yml
+
+1. List pods 
+
+   k get pods
+
+1. Edit the pod's yaml file:
+
+   k edit pod mypod.yaml
+
+1. Extract a declaration yaml file from a running pod:
+
+   <pre><strong>k get pod mypod -o yaml > definition.yaml</strong></pre>
+
+   But this can be messy because you'll have to delete all <tt>item:</tt> lines.
+
+   In vi normal mode, delate 5 lines, including the cursor, <tt>5dd</tt>.
 
 
-1. Busybox image:
+1. A Busybox image contains several apps:
 
    <pre>apiVersion: v1
 kind: Pod
@@ -985,13 +1071,119 @@ metadata:
   namespace: default
    </pre>
 
+   <a name="apply"></a>
+
+   <tt>kubectl apply</tt> makes changes if its subject already exists (the command is declarative?).
+
+   REMEMBER: kubectl create throws an error if the resource already exists, whereas kubectl apply won't. 
+   kubectl create says "create this thing" whereas kubectl apply says "do whatever is necessary (create, update, etc) to make it look like this".
+
+   The resulting file includes additional annotations.
 
 
 
-<pre><strong>kubectl run --restart=Always      # creates deployment
+   Beyond the test: GitOps: ArgoCD monitors GitHub and applies changes to K8s Controller.
+
+
+   <a name="Replication"></a>
+   <a name="ReplicaSets"></a>
+   <a name="LoadBalancer"></a>
+
+## Replicas for Replication
+
+   The ReplicaSet process replaces the older ReplicationController.
+
+   ReplicaSets enable deployment of several pods, and check their status as a single unit (replicas).
+
+   This enables Load Balancing across several machines for more capacity, redunancy, and rolling updates without downtime.
+
+   ReplicaSets monitor the number of pods and create pods to match the number of replicas for the label type requested in the yaml.
+
+The sample ReplicaSet.yml file:
+
+   <pre>apiVersion: v1
+kind: ReplicaSet
+metadata:
+  name: my-app
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+        app: myapp
+        type: front-end
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx:1.19.2
+        ports:
+        - containerPort: 80
+replicas: 3
+selector: 
+  matchLabels:
+    type: front-end
+   </pre>
+
+   A selector is required within ReplicaSet yaml.
+
+
+   PROTIP: The spec: template: is copied from a pod definition yaml, then indented.
+
+   PROTIP: <a target="_blank" href="https://wilsonmar.github.io/#ViIndent">Indent paste using vi</a>
+
+
+1. PROTIP: Remember the ".apps" when listing replicasets:
+
+   k get replicasets.apps
+
+1. Identify the image:
+
+   k describe replicasets.apps replicaset-1  | grep -i image:
+
+
+   ### Modify replicas to scale
+
+   * Edit the file, then<br />k replace -f replicaset-def.yaml
+
+   There are several ways which doesn't modify the file:
+
+   * k scale --relicas=6 -f replicaset-def.yaml
+
+   * k scale --replicas=6 replicaset myapp-replicaset
+
+   * Scale based on load
+
+Practice test with quiz about pod commands: https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12039431
+
+
+
+## Deployments
+
+To upgrade gradually in a production environment without downtime, do a <strong>rolling update</strong>.
+
+Deployments make use of Replicasets.
+
+
+   <pre><strong>kubectl run --restart=Always      # creates deployment
 kubectl run --restart=Never       # creates pod
 kubectl run --restart=OnFailure   # creates job
-</strong></pre>
+   </strong></pre>
+
+1. List deployments 3 different ways, they all work:
+
+   <pre>k get deployment
+k get deployments
+k get deployment.app
+k get deployments.app
+   </pre>
+
+Practice test with quiz about deployments: https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12039434
+
+
+
 
 <a name="Jobs"></a>
 
@@ -1006,8 +1198,9 @@ Batch jobs are supervisor processes that run once and completed.
    * completions=1 & parallelism=m for n jobs work queue started until 1 completed (rarely used)
    <br /><br />
 
-To delete job after finish:
-<pre>ttlSecondsAfterFinished: 20</pre>
+1. To delete job after finish:
+   
+   <pre>ttlSecondsAfterFinished: 20</pre>
 
 
 
@@ -1490,6 +1683,11 @@ Events:
 Service cluster IPs and prots are found through Docker --link compatible enviornment variables specifying ports opened by the service proxy.
 
 
+REMEMBER: unlike k describe xxx, k cluster-info is a single verb:
+
+   <pre><strong>kubectl cluster-info</strong></pre>
+
+
 <a name="Kubelet"></a>
 
 Each node has a kubelet, container tooling (Docker), kube-proxy, supervisord.
@@ -1581,6 +1779,9 @@ kubectl delete --all services --namespace=default
 
 * <a target="_blank" href="https://bit.ly/3dcRg4Y">RabbitMQ</a> for AMQP messaging with StatefulSet app
 
+> Kubernetes is a platform used for building platforms such as OpenShift, Helm, EKS, CrossPlane.
+
+
 <a name="Helm"></a>
 
 ## Helm charts
@@ -1607,9 +1808,7 @@ quickly create an OpenFaaS (Serverless) cluster</a>:
    </pre>
 </ul>
 
-<a name="apply"></a>
 
-<tt>kubectl apply</tt> makes changes if its subject already exists (the command is declarative?).
 
 ## Microsoft Draft
 
@@ -1631,6 +1830,7 @@ IBM: Deploy a scalable web application to Kubernetes using Helm</a>
 
 <a name="Namespaces"></a>
 
+<a target="_blank" href="https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12039436">Klab</a>:
 Nodes are managed together as a <strong>namespace</strong>.
 
 Kubernetes can manage several namespaces running in each <strong>cluster</strong>. 
@@ -1738,6 +1938,8 @@ ConfigMap is an API object used to store non-confidential data in key-value pair
 ### yaml file Kinds
 
 The kinds of yaml files:
+
+???
 
 
 <a name="Deployments"></a>
@@ -2045,9 +2247,9 @@ There is a command with the same name used to obtain the <strong>version</strong
 
 1. View memory and CPU usage of pods across nodes from the K8s Metrics Server:
 
-   <pre><strong>kubectl top node</strong>
+   <pre><strong>kubectl top node</strong></pre>
 
-   <pre><strong>kubectl top pod</strong>
+   <pre><strong>kubectl top pod</strong></pre>
 
 
 <a name="API_Server"></a>
@@ -2071,23 +2273,76 @@ There is a command with the same name used to obtain the <strong>version</strong
 RBAC (Role-Based Access Control)
 
 
-
-### Declarative vs. Declarative
-
-https://medium.com/payscale-tech/imperative-vs-declarative-a-kubernetes-tutorial-4be66c5d8914?
-
-
 <a name="Scheduler"></a>
 <a name="Scheduling"></a>
    
 ### Scheduler
 
    The <a href="#API_Server">API Server</a> puts nodes in "pending" state when it sends requests to bring them up and down to the <strong>Scheduler</strong> to do so only when there are enough resources available.
-   The scheduler can operate according to a schedule.
-   But whether it does or not are defined in rules (called <strong>"Taints"</strong>) obeyed by the Scheduler about nodes.
+   The scheduler operate according to a schedule.
+
+   <a target="_blank" href="https://kubernetes.io/docs/concepts/scheduling-eviction/scheduler-perf-tuning/">perf tunint</a>
+
    Rules obeyed by the Scheduler about pods are called <strong>"Tolerances"</strong>.
+
+<a name="Taints"></a>
+<a name="Tolerations"></a>
+
+### Taints and Tolerations
+
+<a target="_blank" href="https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/">REF</a>:
+
+<a target="_blank" href="https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12077203">KLab</a>:
+"Node affinity" is a property of Pods that <strong>attracts</strong> them to a set of nodes (either as a preference or a hard requirement). 
+
+<a target="_blank" href="https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12077181">KLab</a>:
+Taints and tolerations work together to ensure that pods are not scheduled onto inappropriate nodes. 
+
+Taint nodes with keyname=value:effect in commands targeting nodes.
+
+Tolerate pods in PodSpec yaml with matching taints.
+
+The Node controller uses built-in taints to specify conditions: "network-unavailable", "unshedulable", "cloudprovider unitialized", "not-ready", "memory-pressure", "disk-pressure", "out-of-disk",
+
+1. Use the <tt>taint nodes</tt> subcommand to specify to the Scheduler a node to <strong>repel</strong> pods matching the key:
+
+   <pre><strong>kubectl taint nodes node1 dedicated=group1:NoSchedule</strong></pre>
+
+   More than one taint can be applied to a node.
+
+1. Remove a taint by a dash after the taint effect:
+
+   <pre><strong>kubectl taint nodes node1 key=value:NoSchedule-</strong></pre>
+
+1. Tolerate (ignore taints) in <strong>PodSpec yaml</strong> spec: to allow (but do not require) certain pods to schedule onto nodes with matching taints.
+
+  <pre>  tolerations:
+  - key: "example-key"
+    operator: "Exists"
+    effect: "NoSchedule"
+   </pre>
+
+   <tt>effect: "PreferNoSchedule"</tt> defines a "preference" or "soft" version of NoSchedule -- the system will try to avoid placing a pod that does not tolerate the taint on the node, but it is not required. 
+
+   <tt>effect: "NoExecute"</tt> causes any pods that do not tolerate the taint to be evicted immediately, and pods that do tolerate the taint will never be evicted. 
+
+   <tt>tolerationSeconds: 3600</tt> optionally added to NoExecute effect dictates how many seconds the pod stays bound to the node after the taint is added. If this pod is running and a matching taint is added to the node, then the pod will stay bound to the node for 3600 seconds, and then be evicted. If the taint is removed before that time, the pod will not be evicted.
+
+
    Such details are reaveled using the <tt>kubectl describe nodes</tt> command.
    
+   NOTE: Tolerations are one of a few PodSpec items which can be edited while active, along with containers[*].image, initContainers[*].image, and activeDeadlineSeconds.
+
+   <pre><strong>kubectl edit pod &LT;pod name></strong></pod>
+
+   If attempt fails, the file is saved to    /tmp/kubectl-edit-ccvrq.yaml
+
+
+   ### Extract pod yaml from running podspec
+
+   <pre><strong>kubectl get pod &LT;pod name> -o yaml > my-new-pod.yaml </strong></pod>
+
+   https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12039454
 
 <a name="#etcd"></a>
 
@@ -2228,8 +2483,15 @@ spec:
   restartPolicy: Always
    </pre>
 
-Kubernetes is written in the Go language, so it can run on Windows, Linux, and MacOS
-(the need to install a JVM).
+Other command:
+
+   <pre>command:
+    - sh
+    - "-c"
+    - echo Hello Kubernetes! && sleep 3000
+    </pre>
+
+
 
 <a name="RaspPi"></a>
 
@@ -3499,6 +3761,7 @@ References:
 
 * <a target="_blank" href="https://www.linkedin.com/pulse/from-zero-ckad-30-days-pranam-mohanty/">From zero to CKAD in 30 days</a> August 9, 2020 by Pranam Mohanty
 
+https://lnkd.in/f3BciG5
 
 
 ## More on DevOps #
