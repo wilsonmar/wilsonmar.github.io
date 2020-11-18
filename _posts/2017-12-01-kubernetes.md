@@ -1,4 +1,4 @@
-rishabh_marwaha---
+---
 layout: post
 title: "Kubernetes (K8s)"
 excerpt: "for orchestration of containers, especially in clouds, including OpenShift"
