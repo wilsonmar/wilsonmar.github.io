@@ -43,7 +43,7 @@ cm=configmaps,
 <a href="#CronJobs">CronJobs</a>,
 <a href="#Declarative">Declarative</a>,
 Discovery,
-<a href="#DaemonSets">ds=DaemonSets</a>,
+<a href="#DaemonSets"><strong>ds</strong>=DaemonSets</a>,
 <a href="#Deployments">deployment/</a>,
 ep=endpoints,
 <a href="#Envars">Environment Variables</a>,
@@ -58,7 +58,7 @@ health checks,
 <a href="#Logging">Logging</a>,
 <a href="#Metadata">Metadata</a>,
 <a href="#Namespaces">ns=Namespaces</a>, 
-<a href="#Nodes">no=Nodes</a>,
+<a href="#Nodes"><strong>no</strong>=Nodes</a>,
 <a href="#NodePort">NodePort</a>,
 <a href="#OpenShift">OpenShift</a>,
 <a href="#Podspecs">Podspecs</a>,
@@ -66,24 +66,25 @@ health checks,
 <a href="#PVC">PVC</a>,
 <a href="#ReadinessProbes">Readiness Probes</a>, 
 <a href="#LivenessProbes">Liveness Probes</a>, 
-<a href="#Pods">po/Pods</a>, 
+<a href="#Pods"><strong>po</strong>=Pods</a>, 
 <a href="#Probes">Probes</a>, 
 <a href="#PersistentVolumes">Persistent Volumes</a>,
 <a href="#PortForwarding">Port Forwarding</a>,
 <a href="#Replication">Replication</a>,
-<a href="#ReplicaSets">rs=ReplicaSets</a>,
+<a href="#ReplicaSets"><strong>rs</strong>=ReplicaSets</a>,
 <a href="#Rollbacks">Rollbacks</a>,
 <a href="#RollingUpdates">Rolling Updates</a>,
 <a href="#Secrets">Secrets</a>,
 <a href="#Selectors">Selectors</a>, 
 <a href="#Services">svc=Services</a>,
-<a href="#ServiceAccounts">sa=ServiceAccounts</a>,
+<a href="#ServiceAccounts"><strong>sa</strong>=ServiceAccounts</a>,
 <a href="#Services">Service Discovery</a>,
-<a href="#StatefulSets">sts=StatefulSets</a>,
+<a href="#StatefulSets"><strong>sts</strong>=StatefulSets</a>,
 <a href="#Taints">Taints</a>,
 <a href="#Tolerations">Tolerations</a>,
 <a href="#Volumes">Volumes</a>,
 <a href="#Workloads">Workloads API</a>
+
 
 <a target="_blank" href="https://kubernetesbyexample.com/">https://kubernetesbyexample.com</a>:
 
@@ -107,6 +108,27 @@ health checks,
    * <a target="_blank" href="https://kubernetesbyexample.com//volumes/">Volumes</a>
    <br /><br />
 
+
+<a name="Topics"></a>
+
+## Topics
+
+* <a href="#IAC">Infrastructure as code</a>
+* Manage containers
+* Naming and discovery
+* Mounting storage systems
+* Balancing loads
+* Rolling updates
+* Distributing secrets/config
+* Checking application health
+* Monitoring resources
+* Accessing and ingesting logs
+* Replicating application instances
+* Horizontal autoscaling
+* Debugging applications
+
+
+<hr />
 
 ## Why Kubernetes?
 
@@ -139,6 +161,7 @@ Kubernetes was used inside Google for over a decade before being open-sourced in
    * v1.6 was led by a CoreOS developer
    * v1.7 was led by a Googler
    * v1.8 is led by <a target="_blank" href="https://www.linkedin.com/in/jaicesinger/">Jaice Singer DuMars</a> (<a target="_blank" href="https://twitter.com/jaicesd">@jaicesd</a>) after Microsoft joined the CNCF July 2017 <a target="_blank" href="https://twitter.com/jaydumars?lang=en">VIDEO</a>
+   * v1.19 is the current version.
    <br /><br />
 
 Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), with 8 replacing the number of characters between k and s. Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to the <strong>home page for Kubernetes software</strong>:
@@ -576,7 +599,7 @@ I have several tabs open taking it:
 
 1. <a target="_blank" href="https://join.slack.com/t/kodekloudworkspace/shared_invite/zt-fz4nok2p-4~RJZBLNgThqSeuroLSPiQ">Join</a> the Slack channel for <a target="_blank" href="https://app.slack.com/client/TDSBA9B9V/CDR4R9Z7E/thread/CDR4R9Z7E-1604511588.117400">CKAD</a> and <a target="_blank" href="https://app.slack.com/client/TDSBA9B9V/CHMV3P9NV/thread/CDR4R9Z7E-1604511588.117400">CKA</a> students.
                          
-
+For CKA, https://github.com/kodekloudhub/certified-kubernetes-administrator-course
 
 <a name="LFS258"></a>
 
@@ -793,7 +816,7 @@ https://github.com/StephenGrider/DockerCasts/tree/master/diagrams
 (ACloud.guru's Vicky Tanya Seno at Santa Monica College is preparing a course on Kubernetes)
 
 
-### Others on CKAD
+### Others on CKAD:
 
 * <a name="[1]">[1]</a> <a target="_blank" href="https://www.youtube.com/watch?v=uzxSZqSqiLk&list=PLleCw-vqe90DzAwG6Z_f9GARu-y6HbHXf">Alta3 Research's Playlist</a> includes <a target="_blank" href="https://www.youtube.com/watch?v=5cgpFWVD8ds">VIDEO [11:02] : How to CRUSH the CKAD Exam!</a> Jul 27, 2020 shows sample quetions and suggestions to each of 19 objectives.
 
@@ -811,37 +834,14 @@ https://github.com/StephenGrider/DockerCasts/tree/master/diagrams
 
 <a target="_blank" href="https://www.youtube.com/watch?v=rnemKrveZks">Tips from Tips on preparing for CKAD</a> by Muralidaran Shanmugham
 
+* <a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&list=RDCMUCdngmbVKX1Tgre699-XLlUA&start_radio=1&t=1911">
+Kubernetes Tutorial for Beginners [Full Course in 4 Hours]</a> Nov 6, 2020 (using k8s v1.17.0) by TechWorld with Nana
 
-Others on CKA:
 
-* Kode Kloud
+### Others on CKA:
 
 * <a target="_blank" href="https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days-e4603ac40746">"How to ace the CKA exam in 7 days</a> is click-bait?
-* <a target="_blank" href="https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days-e4603ac40746">how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days</a>
 * <a target="_blank" href="https://www.linkedin.com/learning/certified-kubernetes-application-developer-ckad-cert-prep-exam-tips?u=26886050">Certified Kubernetes Application Developer (CKAD) Cert Prep: Exam Tips</a> by Benjamin Muschko
-
-
-
-<hr />
-
-## Cloud Kubernetes Cloud Services
-
-Each offering has its own acronym:
-
-* ECS, EKS = Elastic (AWS) Container Service & Elastic Kubernetes Service
-* IKS = IBM cloud Kubernetes Service
-* ACK = Alibaba Cloud Kubernetes
-* DOKS = Digital Ocean 
-* OKS = Oracle 
-* PKE = Bonzai
-* MKE = D2iQ (Day two iQ) rebranded from Mesos DC/OS meta clusters
-* OKD = OpenShift (Red Hat) Origin community distribution
-* PKS = VMWare Tanzu purchase of Pivotal, Heptio (Joe Bada, Craig McLukie), merphe from PCS
-* RKE = Rancher 
-* Canonical
-
-* Hashicorp Nomad is a lighter orchestrator, not just for containers
-
 
 <hr />
 
@@ -923,7 +923,7 @@ Its <a target="_blank" href="https://github.com/kubernetes/kubernetes">code page
 
 
 
-## Hands-on Declarative Kubernetes Commands 
+## Declarative Kubernetes Commands 
 
 K8s recognizes both imperative and declarative yaml files.
 
@@ -961,9 +961,9 @@ CMD ["--color", "red"]
 
 
 
-### Dockerfile correspondance
+### Dockerfile to Pod yaml correspondance
 
-<a target="_blank" href=https://user-images.githubusercontent.com/300046/99159670-dc230100-269b-11eb-90a4-b9f6953aba16.png">
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/99159670-dc230100-269b-11eb-90a4-b9f6953aba16.png">
 <img alt="k8s-dockerfile-sleep" width="989" height="385" src="https://user-images.githubusercontent.com/300046/99159670-dc230100-269b-11eb-90a4-b9f6953aba16.png"></a>
 
 
@@ -1012,7 +1012,7 @@ spec:
 kind:
 metadata:
 spec:
-   <pre>
+   </pre>
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr valign="top"><td>apiVersion:</td><td>v1
@@ -1025,9 +1025,23 @@ spec:
 
    REMEMBER: kind: value must be <strong>Title case</strong> (first character upper case).
 
+
+   The basic components of Kubernetes have <strong>abbreviations</strong>:
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr valign="top"><td>k get </td><td> <a href="#Pods">po</a> </td><td> <a href="#Nodes">no</a> </td><td> <a href="#Services">svc</a> </td><td> <a href="#ReplicaSets">rs</a> </td><td> <a href="#Deployment">deployment</a>
+     </td></tr>
+   <tr valign="top"><td><em>abbreviation:</em></td><td></td><td> <a href="#Pods">pods</a> </td><td> <a href="#Nodes">nodes</a> </td><td> <a href="#Services">services</a> </td><td> <a href="#ReplicaSets">replicaset</a> </td><td> <a href="#Deployment">deployment</a>
+     </td></tr>
+   </table>
+
+   REMEMBEER: IRL Admins do not code to work with individual pods, because the whole point of K8s is to automate that chore.
+   
+   Admins define abstractions for <strong>deployment</strong> of images (Docker containers) which define blueprints for creating pods.
+
    metadata contains a dictionary indented name: and label:
 
-   In spec: is a dictionary item containers: specifying a list/array represented by a dash in front of each item
+   In <tt>spec:</tt> is a dictionary item <tt>containers:</tt> specifying a list/array represented by a dash in front of each item:
 
    <ul><pre>spec:
   containers:
@@ -1035,7 +1049,7 @@ spec:
       image: nginx
    </pre></ul>
 
-   Notice the dash is indented under containers.
+   REMEMBER: Under containers:, the dash in front of name is indented.
 
 1. View the yaml file:
 
@@ -1324,6 +1338,8 @@ But let's start by installing minikube on your laptop.
 
 ## Install Minikube
 
+<a target="_blank" href="https://kubernetes.io/docs/tasks/tools/install-minikube/">REF</a>:
+
 Minikube goes beyond older Docker For Mac (DFM) and Docker for Windows (DFW)
 and includes a node and a Master when it spins up in a local environment (such as your laptop).
 
@@ -1394,12 +1410,13 @@ Error: No such file or directory - /usr/local/Cellar/eksctl/0.24.0
 
    <pre><strong>sudo minikube start --memory=4096</strong></pre>
 
+   NOTE: <a target="_blank" href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">REF: kubectl CLI (kubernetes-cli) is installed by minikube install</a>.
+
 
 1. Install kubectl command:
 
    <pre><strong>sudo apt-get update && sudo apt-get install -y apt-transport-https
    </strong></pre>
-
 
 
 ### Install Docker & Kubernetes on CentOS
@@ -1770,8 +1787,6 @@ kubectl delete --all services --namespace=default
 * <a target="_blank" href="https://www.mirantis.com/software/mcp/">Mirantis' Cloud Platform</a>
 * PKS (Pivotal Kubernetes Service)
 * <a target="_blank" href="https://platform9.com/">Platform 9</a> provide OpenStack with Kubernetes
-* Red Hat <a href="#OpenShift">OpenShift</a> Enterprise platform as a service (PaaS)
-* Rackspace's Kubernetes as a Service
 * Stackpoint
 
 * <a target="_blank" href="https://buddy.works/guides/how-optimize-kubernetes-workflow">Buddy</a>
@@ -1780,6 +1795,31 @@ kubectl delete --all services --namespace=default
 * <a target="_blank" href="https://bit.ly/3dcRg4Y">RabbitMQ</a> for AMQP messaging with StatefulSet app
 
 > Kubernetes is a platform used for building platforms such as OpenShift, Helm, EKS, CrossPlane.
+
+
+<hr />
+
+### Cloud Kubernetes Services
+
+Each offering has its own acronym:
+
+* ECS = Elastic (AWS) Container Service 
+* EKS = Elastic Kubernetes Service
+* IKS = IBM cloud Kubernetes Service
+* ACK = Alibaba Cloud Kubernetes
+* DOKS = Digital Ocean 
+* OKS = Oracle 
+* PKE = Bonzai
+* MKE = D2iQ (Day two iQ) rebranded from Mesos DC/OS meta clusters
+* OKD = OpenShift (Red Hat) Origin community distribution
+* PKS = VMWare Tanzu purchase of Pivotal, Heptio (Joe Bada, Craig McLukie), merphe from PCS
+* RKE = Rancher 
+* Canonical
+
+
+
+* Red Hat <a href="#OpenShift">OpenShift</a> Enterprise platform as a service (PaaS)
+* Rackspace's Kubernetes as a Service
 
 
 <a name="Helm"></a>
@@ -1809,8 +1849,7 @@ quickly create an OpenFaaS (Serverless) cluster</a>:
 </ul>
 
 
-
-## Microsoft Draft
+### Microsoft Draft
 
 Microsoft created <a target="_blank" href="https://github.com/Azure/draft">Draft</a> (like Scaffold) to simplify getting started in Azure to <a target="_blank" href="https://github.com/PatrickLang/fabrikamfiber/tree/helm-2019-mssql-linux">lift-and-shift</a> Windows ASP.NET apps. It has two commands:
 
@@ -1848,11 +1887,12 @@ Red Hat's OpenShift product adds <strong>Projects</strong> as "walls" between na
 
 <a name="OpenShift"></a>
 
-#### OpenShift routes to services
+#@## OpenShift routes to services
 
    OpenShift's Router is instead a HAProxy container (taking the place of NGINX).
 
-   ![k8s-openshift-projects-461x277-64498](https://user-images.githubusercontent.com/300046/42337120-f421563c-8042-11e8-9d2b-d19615b4da0c.jpg)
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/42337120-f421563c-8042-11e8-9d2b-d19615b4da0c.jpg">
+   <img alt="k8s-openshift-projects-461x277-64498.jpg" width="461" height="277" src="https://user-images.githubusercontent.com/300046/42337120-f421563c-8042-11e8-9d2b-d19615b4da0c.jpg"></a>
 
 Services can be referenced by external clients using a host name such as "hello-svc.mycorp.com" by using
 OpenShift Enterprise, which uses <strong>routes</strong> that define the rules the HAProxy applies to incoming connections.
@@ -1904,6 +1944,8 @@ PROTIP: To list clusters and switch between them, consider brew installing utili
 
 kube-ps1.sh creates a shell pod envbin.
 
+<hr />
+
 
 <a name="K8s_API"></a>
 <a name="Workloads"></a>
@@ -1932,14 +1974,6 @@ kubectl api-??? | grep ???
 The aggregation layer lets you install additional Kubernetes-style APIs in your cluster.
 
 ConfigMap is an API object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume.
-
-<a name="yaml-files"></a>
-
-### yaml file Kinds
-
-The kinds of yaml files:
-
-???
 
 
 <a name="Deployments"></a>
@@ -2041,6 +2075,9 @@ Examples:
    <br /><br />
 
 https://ravikirans.com/cks-kubernetes-security-exam-study-guide/
+
+
+
 
 <hr />
 
@@ -2202,7 +2239,8 @@ EKS makes use of <a target="_blank" href="https://aws.amazon.com/fargate/">AWS F
 
    See <a target="_blank" href="https://www.youtube.com/watch?v=NRZ6N4e-Mko">Container Orchestration Wars (2017)</a> at the Velocity Conf 19 Jun 2017 by Karl Isenberg (@karlfi) of Mesosphere
 
-* Hashicorp <a target="_blank" href="https://www.nomadproject.io/intro/index.html">Nomad</a>.
+* Hashicorp <a target="_blank" href="https://www.nomadproject.io/intro/index.html">Nomad</a>
+   is a lighter-weight orchestrator, not just for containers.
 
 * Red Hat (which IBM bought in 2018) offers its <strong>OpenShift</strong> to enable Docker and Kubernetes for the enterprise by adding external host names (projects) that add role-based security around <a href="#Namespaces">namespaces</a>. OpenStack enables running of k8s containers in other clouds or within private data centers.
 
@@ -2379,6 +2417,8 @@ The Node controller uses built-in taints to specify conditions: "network-unavail
 
    EndpointSlice groups network endpoints together with Kubernetes resources.
 
+
+
 <a name="Controllers"></a>
    
 ### Node Controllers and Ingress
@@ -2431,8 +2471,7 @@ root      9735     1  3 Oct07 ?        00:54:09 /usr/bin/kubelet --bootstrap-kub
 
    sudo less /etc/cni/net.d/calico-kubeconfig
 
-zzz
-
+   </pre>
 
 
 <a name="cAdvisor"></a>
@@ -2446,23 +2485,7 @@ zzz
 
 <hr />
 
-<a name="Topics"></a>
-
-## Topics
-
-* <a href="#IAC">Infrastructure as code</a>
-* Manage containers
-* Naming and discovery
-* Mounting storage systems
-* Balancing loads
-* Rolling updates
-* Distributing secrets/config
-* Checking application health
-* Monitoring resources
-* Accessing and ingesting logs
-* Replicating application instances
-* Horizontal autoscaling
-* Debugging applications
+<a name="yaml-files"></a>
 
 Containers are declared by yaml such as this to run Alphine Linux Docker container:
 
@@ -3762,6 +3785,13 @@ References:
 * <a target="_blank" href="https://www.linkedin.com/pulse/from-zero-ckad-30-days-pranam-mohanty/">From zero to CKAD in 30 days</a> August 9, 2020 by Pranam Mohanty
 
 https://lnkd.in/f3BciG5
+
+Sandeep Dinesh (@sandeepdinesh) from 2018
+   * https://medium.com/google-cloud/kubernetes-best-practices-season-one-11119aee1d10
+   * https://www.youtube.com/playlist?list=PLIivdWyY5sqL3xfXz5xJvwzFW_tlQB_GB
+
+Observability
+https://searchitoperations.techtarget.com/news/252492344/Observability-standards-emerge-as-Kubernetes-matures
 
 
 ## More on DevOps #
