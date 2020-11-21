@@ -17,13 +17,14 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-I created <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">this</a> to help me prepare for Kubernetes exams.
+I created <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">this</a> to help me to both prepare for Kubernetes exams and to work as an SRE.
 
-I've tried to provide insightful commentary around carefully sequenced hands-on activities automated in a shell script
+I hope to make this complex material easier to understand quickly. 
+
+The aim here is to provide insightful commentary around carefully sequenced hands-on activities automated in a shell script
 -- an immersive step-by-step "deep dive" tutorial aimed to make you productive.
-I'm restructuring this so that revelations about architecture components and flows are based on yaml and what commands reveal rather than as trivia to be memorized.
 
-That's how I hope to make this complex material easier to understand quickly. 
+I'm restructuring this so that revelations about architecture components and flows are based on yaml and what commands reveal rather than as trivia to be memorized.
 
 NOTE: This article is now a "starter set" actively undergoing additions.
 
