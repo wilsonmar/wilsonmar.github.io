@@ -450,19 +450,6 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 
    <pre>kubectl create -f file.pod.yaml --record</pre>
 
-
-   <a name="Rollbacks"></a>
-
-   ### Record Rollback history
-
-   `--record=true`  # to save rollback history obtained by:
-
-   <pre>k rollout history deployment/some-deployment</pre>
-
-1. <strong>Undo</strong> rollout (rollback):
-
-   <pre>k rollout undo deployment/my-deployment --revision=v1.2</pre>
-
 1. Paste to the Notpad available during the exam. Save commands there for copy rather than retype.
 
    <pre><strong>k -n pluto get all -o wide
@@ -996,13 +983,20 @@ spec:
 
 1. The opposite is "delete pod x".
 
+1. List pods 
+
+   <pre><strong>k get pods</strong></pre>
+
 
 
    <a name="Declarative"></a>
 
+   ### Declarative yaml   
+
 1. Generate a declarative yaml file from an imperative command:
 
    <pre><strong>k run redis --image=redis --dry-run=client -o yaml > mypod.yaml</strong></pre>
+
 
 1. Vi pod.yaml to edit<a target="_blank" href="https://vim.fandom.com/wiki/Shifting_blocks_visually">*</a>
 
@@ -1023,6 +1017,8 @@ spec:
    </td></tr>
    </table>
 
+   ### kind:
+
    REMEMBER: kind: value must be <strong>Title case</strong> (first character upper case).
 
 
@@ -1037,9 +1033,23 @@ spec:
 
    REMEMBEER: IRL Admins do not code to work with individual pods, because the whole point of K8s is to automate that chore.
    
-   Admins define abstractions for <strong>deployment</strong> of images (Docker containers) which define blueprints for creating pods.
+   Admins define abstractions for <strong>deployment</strong> of images (Docker containers) which define templates (blueprints) for creating pods.
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/99866180-3de7dd00-2b6c-11eb-9b4f-563ea790bb9e.png">
+   <img width="784" alt="k8s-deployment-rs-1568x584" width="1568" height="584" src="https://user-images.githubusercontent.com/300046/99866180-3de7dd00-2b6c-11eb-9b4f-563ea790bb9e.png"></a>
+
+
+   ### metadata:
 
    metadata contains a dictionary indented name: and label:
+
+
+1. View the yaml file:
+
+   <pre><strong>kubectl config view</strong></pre>
+
+
+   ### spec:
 
    In <tt>spec:</tt> is a dictionary item <tt>containers:</tt> specifying a list/array represented by a dash in front of each item:
 
@@ -1051,21 +1061,14 @@ spec:
 
    REMEMBER: Under containers:, the dash in front of name is indented.
 
-1. View the yaml file:
-
-   kubectl config view
 
 1. Create instance by applying yaml -file
 
-   k apply -f mypod.yml
-
-1. List pods 
-
-   k get pods
+   <pre><strong>k apply -f mypod.yml</strong></pre>
 
 1. Edit the pod's yaml file:
 
-   k edit pod mypod.yaml
+   <pre><strong>k edit pod mypod.yaml</strong></pre>
 
 1. Extract a declaration yaml file from a running pod:
 
@@ -1102,6 +1105,7 @@ metadata:
    <a name="Replication"></a>
    <a name="ReplicaSets"></a>
    <a name="LoadBalancer"></a>
+
 
 ## Replicas for Replication
 
@@ -3294,7 +3298,7 @@ spec:
 
 <a name="DeploymentYml"></a>
 
-### Deploy yml
+### Deploy yml Deployment
 
 The `deploy.yml` defines the deploy:
 
@@ -3372,6 +3376,20 @@ spec:
 1. Backout the revision:
 
    <pre>kubectl rollout undo deployment/nginx-deployment --to-revision=2</pre>
+
+
+
+   <a name="Rollbacks"></a>
+
+   ### Record Rollback history
+
+   `--record=true`  # to save rollback history obtained by:
+
+   <pre>k rollout history deployment/some-deployment</pre>
+
+1. <strong>Undo</strong> rollout (rollback):
+
+   <pre>k rollout undo deployment/my-deployment --revision=v1.2</pre>
 
 
 <a name="SecurityContext"></a>
@@ -3789,9 +3807,13 @@ https://lnkd.in/f3BciG5
 Sandeep Dinesh (@sandeepdinesh) from 2018
    * https://medium.com/google-cloud/kubernetes-best-practices-season-one-11119aee1d10
    * https://www.youtube.com/playlist?list=PLIivdWyY5sqL3xfXz5xJvwzFW_tlQB_GB
+   <br /><br />
 
-Observability
-https://searchitoperations.techtarget.com/news/252492344/Observability-standards-emerge-as-Kubernetes-matures
+<a target="_blank" href="https://searchitoperations.techtarget.com/news/252492344/Observability-standards-emerge-as-Kubernetes-matures">
+Observability</a>
+
+<a target="_blank" href="https://www.ibm.com/cloud/architecture/content/course/kubernetes-101/deployments-replica-sets-and-pods/">
+IBM's Kubernetes 101</a>
 
 
 ## More on DevOps #
