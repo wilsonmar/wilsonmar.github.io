@@ -2716,16 +2716,17 @@ The Node controller uses built-in taints to specify conditions: "network-unavail
    
    NOTE: Tolerations are one of a few PodSpec items which can be edited while active, along with containers[*].image, initContainers[*].image, and activeDeadlineSeconds.
 
-   <pre><strong>kubectl edit pod &LT;pod name></strong></pod>
+   <pre><strong>kubectl edit pod <em>pod name</em></strong></pod>
 
-   If attempt fails, the file is saved to    /tmp/kubectl-edit-ccvrq.yaml
+   If attempt fails, the file is saved to <tt>/tmp/kubectl-edit-ccvrq.yaml</tt>
 
 
    ### Extract pod yaml from running podspec
 
    <pre><strong>kubectl get pod &LT;pod name> -o yaml > my-new-pod.yaml </strong></pod>
 
-   https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12039454
+   <a target="_blank" href="https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12039454">https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12039454</a>
+
 
 <a name="#etcd"></a>
 
