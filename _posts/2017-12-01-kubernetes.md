@@ -17,19 +17,20 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-I created <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">this</a> to help me prepare for Kubernetes exams.
+I created <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">this</a> to help me to both prepare for Kubernetes exams and to work as an SRE.
 
-I've tried to provide insightful commentary around carefully sequenced hands-on activities automated in a shell script
+I hope to make this complex material easier to understand quickly. 
+
+The aim here is to provide insightful commentary around carefully sequenced hands-on activities automated in a shell script
 -- an immersive step-by-step "deep dive" tutorial aimed to make you productive.
-I'm restructuring this so that revelations about architecture components and flows are based on yaml and what commands reveal rather than as trivia to be memorized.
 
-That's how I hope to make this complex material easier to understand quickly. 
+I'm restructuring this so that revelations about architecture components and flows are based on yaml and what commands reveal rather than as trivia to be memorized.
 
 NOTE: This article is now a "starter set" actively undergoing additions.
 
 ## Keyword Index Alphabetically
 
-Here are the major buzzwords, listed here alphabetically for quick access:
+So you can go quickly/directly to terms:
 
 <a href="#Admission">Admission Control</a>,
 <a href="#Annotations">Annotations</a>,
@@ -39,26 +40,30 @@ Here are the major buzzwords, listed here alphabetically for quick access:
 Auto-scaling,
 <a href="#CKAD_ExamDomains">CKAD</a>, 
 <a href="#Clusters">Clusters</a>,
-cm=configmaps,
+<a href="#ConfigMaps"><strong>cm</strong>=configmaps</a>,
+<a href="#Contexts">Contexts</a>,
 <a href="#CronJobs">CronJobs</a>,
 <a href="#Declarative">Declarative</a>,
 Discovery,
-<a href="#DaemonSets">ds=DaemonSets</a>,
+<a href="#DaemonSets"><strong>ds</strong>=DaemonSets</a>,
 <a href="#Deployments">deployment/</a>,
 ep=endpoints,
 <a href="#Envars">Environment Variables</a>,
+<a href="#Hashes">hashes</a>,
 health checks,
 <a href="#Imperative">Imperative</a>,
 <a href="#InitContainers">Init Containers</a>,
 <a name="#Kubelet">Kubelet</a>,
 <a href="#kube-proxy">kube-proxy</a>,
+<a href="#Ingress">Ingress</a>,
 <a href="#Jobs">Jobs</a>, 
+<a href="#Kubelet">Kubelet</a>,
 <a href="#Labels">Labels</a>, 
 <a href="#LoadBalancer">LoadBalancer</a>, 
 <a href="#Logging">Logging</a>,
 <a href="#Metadata">Metadata</a>,
 <a href="#Namespaces">ns=Namespaces</a>, 
-<a href="#Nodes">no=Nodes</a>,
+<a href="#Nodes"><strong>no</strong>=Nodes</a>,
 <a href="#NodePort">NodePort</a>,
 <a href="#OpenShift">OpenShift</a>,
 <a href="#Podspecs">Podspecs</a>,
@@ -66,24 +71,26 @@ health checks,
 <a href="#PVC">PVC</a>,
 <a href="#ReadinessProbes">Readiness Probes</a>, 
 <a href="#LivenessProbes">Liveness Probes</a>, 
-<a href="#Pods">po/Pods</a>, 
+<a href="#Pods"><strong>po</strong>=Pods</a>, 
 <a href="#Probes">Probes</a>, 
 <a href="#PersistentVolumes">Persistent Volumes</a>,
 <a href="#PortForwarding">Port Forwarding</a>,
 <a href="#Replication">Replication</a>,
-<a href="#ReplicaSets">rs=ReplicaSets</a>,
+<a href="#ReplicaSets"><strong>rs</strong>=ReplicaSets</a>,
 <a href="#Rollbacks">Rollbacks</a>,
 <a href="#RollingUpdates">Rolling Updates</a>,
 <a href="#Secrets">Secrets</a>,
 <a href="#Selectors">Selectors</a>, 
 <a href="#Services">svc=Services</a>,
-<a href="#ServiceAccounts">sa=ServiceAccounts</a>,
+<a href="#ServiceAccounts"><strong>sa</strong>=ServiceAccounts</a>,
 <a href="#Services">Service Discovery</a>,
-<a href="#StatefulSets">sts=StatefulSets</a>,
+<a href="#StatefulSets"><strong>sts</strong>=StatefulSets</a>,
+<a href="#StorageClasses">Storage Classes</a>,
 <a href="#Taints">Taints</a>,
 <a href="#Tolerations">Tolerations</a>,
 <a href="#Volumes">Volumes</a>,
 <a href="#Workloads">Workloads API</a>
+
 
 <a target="_blank" href="https://kubernetesbyexample.com/">https://kubernetesbyexample.com</a>:
 
@@ -108,6 +115,27 @@ health checks,
    <br /><br />
 
 
+<a name="Topics"></a>
+
+## Topics
+
+* <a href="#IAC">Infrastructure as code</a>
+* Manage containers
+* Naming and discovery
+* Mounting storage systems
+* Balancing loads
+* Rolling updates
+* Distributing secrets/config
+* Checking application health
+* Monitoring resources
+* Accessing and ingesting logs
+* Replicating application instances
+* Horizontal autoscaling
+* Debugging applications
+
+
+<hr />
+
 ## Why Kubernetes?
 
 With Kubernetes, <strong>dev teams</strong> can take complete control of production operations in cloud environments 
@@ -119,7 +147,7 @@ Kubernetes is called "container orchestration" software because it automates the
 * Load balancing
 * Mixed operating systems (Ubuntu, Alpine, etc.)
 * Using images in Docker avoids the "it works on my machine" troubleshooting of setup or dependencies
-* Unlike Elastic Beanstalk, the k8s master controls what each its nodes do
+* Unlike Elastic Beanstalk, the k8s master controls what each of its nodes do
 <br /><br />
 
 Kubernetes applies principles of the <a target="_blank" href="https://www.reactivemanifesto.org/">Reactive Manifesto</a> of 2014:
@@ -139,6 +167,7 @@ Kubernetes was used inside Google for over a decade before being open-sourced in
    * v1.6 was led by a CoreOS developer
    * v1.7 was led by a Googler
    * v1.8 is led by <a target="_blank" href="https://www.linkedin.com/in/jaicesinger/">Jaice Singer DuMars</a> (<a target="_blank" href="https://twitter.com/jaicesd">@jaicesd</a>) after Microsoft joined the CNCF July 2017 <a target="_blank" href="https://twitter.com/jaydumars?lang=en">VIDEO</a>
+   * v1.19 is the current version.
    <br /><br />
 
 Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), with 8 replacing the number of characters between k and s. Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to the <strong>home page for Kubernetes software</strong>:
@@ -158,6 +187,57 @@ See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kuberne
 
 <a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>
 
+
+<hr />
+
+
+## Overview
+
+This tutorial focuses on use of <strong>Docker</strong> containers as Kubernetes' <strong>Container Runtime Interface (CRI)</strong>. BTW Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") containers, which provided a CLI for containers as part of CoreOS. Rkt became the first archived project of CNCF after IBM bought Red Hat with its competing "containerd" <a target="_blank" href="https://github.com/kubernetes-sigs/cri-o">cri-o technology.
+
+"Containerized" <a href="#micro-services">microservice apps</a> are <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, <a target="_blank" href="https://quay.io/">Quay.io</a>, or an organization's own binary repository setup using Nexus or Artifactory. 
+
+CRI-O, Docker, ContainerD support Runc. Runc is the low-level tool which does the heavy lifting of spawning a Linux container. (<a target="_blank" href="https://www.youtube.com/watch?v=0uy2V2kYl4U" title="Feb 15, 2019">See CVE-2019-5736</a>).
+
+Kubernetes automates resilience by abstacting the network and storage shared by ephemeral replaceable <strong>pods</strong> which the Kubernetes Controller replicates to increase capacity.
+
+> PROTIP: "The median number of containers running on a single host is about 10." -- Sysdig, April 17, 2017. But there can be up to 100 pods per node (at v1.17)
+
+Kubernetes replicates Pods (the same set of containers in each) across several worker <strong>Nodes</strong> (VM or physical machines).
+
+> K8s supports up to 5,000 node clusters of up to 150,000 pods (at v1.17). Production setups have at least 3 nodes per cluster.
+
+Each set of pods are within a <strong>node</strong>.
+Kubernetes assigns each node with a different <strong>external IP address</strong>.
+
+<strong>Containers</strong> within the same pod share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage Volumes, and other resources.
+Every <strong>container</strong> has its own unique <strong>port number</strong> within its pod's IP.
+
+
+In each pod, <a target="_blank" href="https://wilsonmar.github.io/service-mesh">Service Mesh Istio architecture</a> has an "Envoy proxy" to facilitate the communictions and retry logic from the business logic containers in its pod.
+
+In the illustration below, each pod (each a different color) encapsulates one or more (Docker) container hosts (operating processes, each shown as a circle):
+
+![k8s-container-sets-479x364.jpg](https://user-images.githubusercontent.com/300046/33526550-6c98a980-d800-11e7-9862-ff202492e08b.jpg)
+<!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
+
+
+
+In <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=bf09c049-8db9-4d14-81c7-77f1e942524c">
+"Kubernetes Un-Scaried"</a> by Phil Taprogge (of Snyk) offers this diagram:
+<img width="435" alt="k8s-phil-diagram" src="https://user-images.githubusercontent.com/300046/97088709-09761500-15f0-11eb-8eb2-4f99edab5db0.png">
+
+
+<hr />
+
+## Glossary - how buzzwords fit together
+
+This diagram is shown at the ending of a small (upcoming) movie logically illustrating how the various glossary terms relate with each other:
+
+<img width="914" alt="k8s-docker" src="https://user-images.githubusercontent.com/300046/95684822-564dfa80-0bb1-11eb-803a-1c742cf0bd07.png">
+
+
+   <hr />
 
 ## Professional certifications in Kubernetes
 
@@ -427,19 +507,6 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 
    <pre>kubectl create -f file.pod.yaml --record</pre>
 
-
-   <a name="Rollbacks"></a>
-
-   ### Record Rollback history
-
-   `--record=true`  # to save rollback history obtained by:
-
-   <pre>k rollout history deployment/some-deployment</pre>
-
-1. <strong>Undo</strong> rollout (rollback):
-
-   <pre>k rollout undo deployment/my-deployment --revision=v1.2</pre>
-
 1. Paste to the Notpad available during the exam. Save commands there for copy rather than retype.
 
    <pre><strong>k -n pluto get all -o wide
@@ -576,7 +643,7 @@ I have several tabs open taking it:
 
 1. <a target="_blank" href="https://join.slack.com/t/kodekloudworkspace/shared_invite/zt-fz4nok2p-4~RJZBLNgThqSeuroLSPiQ">Join</a> the Slack channel for <a target="_blank" href="https://app.slack.com/client/TDSBA9B9V/CDR4R9Z7E/thread/CDR4R9Z7E-1604511588.117400">CKAD</a> and <a target="_blank" href="https://app.slack.com/client/TDSBA9B9V/CHMV3P9NV/thread/CDR4R9Z7E-1604511588.117400">CKA</a> students.
                          
-
+For CKA, https://github.com/kodekloudhub/certified-kubernetes-administrator-course
 
 <a name="LFS258"></a>
 
@@ -596,6 +663,20 @@ Ready-for.sh
    ./ready-for.sh --help
    # Not for macOS
    </pre>
+
+
+### Nina on Logging on Udemy
+
+<a target="_blank" href="https://www.youtube.com/watch?v=3c-iBn73dDE&list=RDCMUCdngmbVKX1Tgre699-XLlUA&start_radio=1">Docker Tutorial for Beginners [Full Course in 3 Hours]</a>.
+
+<a target="_blank" href="https://www.youtube.com/channel/UCdngmbVKX1Tgre699-XLlUA">
+YouTube channel "Nana's TechWorld"</a> by <a target="_blank" href="https://www.linkedin.com/in/nana-janashia/">entrepreneur Nana Janashia</a> (from Austria) features animated illustrations.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=I5c8Pfg2tys">VIDEO intro of</a>
+Unique Udemy course <a target="_blank" href="https://www.udemy.com/course/logging-in-kubernetes-with-efk-stack/?couponCode=UDEMY_NANA_NOV2020">
+Logging in Kubernetes with EFK Stack | The Complete Guide</a>
+covers how to set up K8s clusters from scratch and configure logging with ElasticSearch, Fluentd and Kibana 
+
 
 ### EdX
 
@@ -793,7 +874,7 @@ https://github.com/StephenGrider/DockerCasts/tree/master/diagrams
 (ACloud.guru's Vicky Tanya Seno at Santa Monica College is preparing a course on Kubernetes)
 
 
-### Others on CKAD
+### Others on CKAD:
 
 * <a name="[1]">[1]</a> <a target="_blank" href="https://www.youtube.com/watch?v=uzxSZqSqiLk&list=PLleCw-vqe90DzAwG6Z_f9GARu-y6HbHXf">Alta3 Research's Playlist</a> includes <a target="_blank" href="https://www.youtube.com/watch?v=5cgpFWVD8ds">VIDEO [11:02] : How to CRUSH the CKAD Exam!</a> Jul 27, 2020 shows sample quetions and suggestions to each of 19 objectives.
 
@@ -811,39 +892,455 @@ https://github.com/StephenGrider/DockerCasts/tree/master/diagrams
 
 <a target="_blank" href="https://www.youtube.com/watch?v=rnemKrveZks">Tips from Tips on preparing for CKAD</a> by Muralidaran Shanmugham
 
+* <a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&list=RDCMUCdngmbVKX1Tgre699-XLlUA&start_radio=1&t=1911">
+Kubernetes Tutorial for Beginners [Full Course in 4 Hours]</a> Nov 6, 2020 (using k8s v1.17.0) by TechWorld with Nana
 
-Others on CKA:
 
-* Kode Kloud
+### Others on CKA:
 
 * <a target="_blank" href="https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days-e4603ac40746">"How to ace the CKA exam in 7 days</a> is click-bait?
-* <a target="_blank" href="https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days-e4603ac40746">how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days</a>
 * <a target="_blank" href="https://www.linkedin.com/learning/certified-kubernetes-application-developer-ckad-cert-prep-exam-tips?u=26886050">Certified Kubernetes Application Developer (CKAD) Cert Prep: Exam Tips</a> by Benjamin Muschko
 
+<hr />
+
+<a name="Install"></a>
+
+## Installation
+
+### Minikube Alternatives
+
+Instead of minikube, there's also K3s, Microk8s on Linux, Minishift.
+
+   * KinD (Kubernetes in Docker) <a target="_blank" href="https://kind.sigs.k8s.io/">https://kind.sigs.k8s.io/</a> builds K8s clusters out of Docker containers running Docker in Docker, good for integration with a CI/CD pipeline.
+   <br /><br />
+
+   NOTE: Kubernetes can use alternative container runtimes 
+   to run on top of cri-o, such as RedHat's podman, LXC.
+
+But let's start by installing minikube on your laptop.
+
+
+<a name="Minikube"></a>
+
+### Minikube install
+
+<a target="_blank" href="https://kubernetes.io/docs/tasks/tools/install-minikube/">REF</a>:
+
+Minikube goes beyond older Docker For Mac (DFM) and Docker for Windows (DFW)
+and includes a node and a Master when it spins up in a local environment (such as your laptop).
+
+CAUTION: At time of writing, <a target="_blank" href="https://github.com/kubernetes/minikube">https://github.com/kubernetes/minikube</a>has 257 issues and 20 pending Pull Requests, but we're using it anyway.
+MUST READ: <a target="_blank" href="https://minikube.sigs.k8s.io/docs/drivers/docker/#known-issues">Known Issues with Minikube</a>
+(<a href="#Ingress">Ingress</a> and ingress-dns addons are not supported on Linux)
+
+
+### Minikube on Windows
+
+1. Start Docker before installing/starting minikube:
+
+   <pre><strong>systemctl enable --now docker</strong></pre>
+
+1. Verify your Docker container type:
+
+   <pre>docker info --format '{{.OSType}}'</pre>
+
+   On macOS, the response is "Linux".
+
+   On Windows, (pardoxically) make sure Docker Desktop’s container type setting is Linux and not windows. see docker docs on switching container type. 
+   
+   See https://minikube.sigs.k8s.io/docs/drivers/hyperv/
+
+
+### Minikube on MacOS using Docker Desktop
+
+### Docker Desktop install on macOS
+
+   NOTE: Docker drivers do not currently support ARM architecture (only AMD64).
+
+1. Follow <a target="_blank" href="https://wilsonmar.github.io/docker/">Install Docker for Desktop</a>:
+   
+1. If the Docker Desktop icon appears (it's already installed), right-click on it and shut it down.
+
+   Then upgrade it:
+
+   <pre><strong>brew cask upgrade docker
+   </strong></pre>
+
+   This automatically installs the HyperKit hypervisor for macOS.
+
+   So there is no need to do what older docs say:
+
+   <pre><strike>brew install docker-machine-driver-xhyve
+   </strike></pre>
+
+   Make sure Docker Desktop is running:
+
+
+   ### Install Minikube
+
+1. I do not recommend using curl to obtain a specific back version of Minikube:
+
+   <pre><strike>curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_1.7.2-0_amd64.deb \
+&& sudo dpkg -i minikube_1.7.2-0_amd64.deb
+   </strike></pre>
+
+1. Install on a Mac Minikube:
+
+   <pre><strong>brew install minikube
+   </strong></pre>
+
+1. A lot prints out, to get the <strong>caveats</strong> about what was installed:
+
+   <pre><strong>brew info minikube
+   </strong></pre>
+
+   <pre>minikube: stable 1.15.1 (bottled), HEAD
+Run a Kubernetes cluster locally
+https://minikube.sigs.k8s.io/
+/usr/local/Cellar/minikube/1.15.1 (8 files, 62.4MB) *
+  Poured from bottle on 2020-11-22 at 11:46:27
+From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/minikube.rb
+License: Apache-2.0
+==> Dependencies
+Build: go ✘, go-bindata ✘
+Required: kubernetes-cli ✔
+==> Options
+--HEAD
+        Install HEAD version
+==> Caveats
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+&nbsp;
+zsh completions have been installed to:
+  /usr/local/share/zsh/site-functions
+==> Analytics
+install: 44,822 (30 days), 110,033 (90 days), 415,969 (365 days)
+install-on-request: 37,280 (30 days), 92,684 (90 days), 342,920 (365 days)
+build-error: 0 (30 days)
+   </pre>
+
+   There is no need to do what older docs say: Make hyperkit the default driver<a target="_blank" href="https://minikube.sigs.k8s.io/docs/drivers/hyperkit/">*</a>:
+
+   <pre><strike>minikube config set driver hyperkit</strike></pre>
+
+
+1. Make sure you're running the version just installed:
+
+   <pre><strong>minikube version</strong></pre>
+
+   The result:
+
+   <pre>minikube version: v1.15.1
+commit: 23f40a012abb52eff365ff99a709501a61ac5876
+   </pre>
+
+1. Installation should have created folder: 
+
+   <pre><strong>ls $HOME/.minikube</strong></pre>
+
+   The result:
+
+   <pre>addons              ca.pem              certs               key.pem             profiles
+ca.crt              cache               config              logs                proxy-client-ca.crt
+ca.key              cert.pem            files               machines            proxy-client-ca.key
+   </pre>
+
+1. PROTIP: Assign permissions to avoid run error:
+
+   <pre><strong>sudo chown -R $USER $HOME/.minikube
+chmod -R u+wrx $HOME/.minikube
+   </strong></pre>
+
+   No response is expected on success.
+
+
+   <a name="StartMinikube"></a>
+
+   ### Start Minikube with Docker driver
+
+   PROTIP: If you start minikube with <tt>sudo</tt> you'll get:
+
+
+1. PROTIP: Define this as an alias to your ~/.desktop_profile:
+
+   <pre>alias mk8s="minikube delete;minikube start --driver=docker --memory=4096"</pre>
+
+   <tt>--memory=1990</tt> can be adjusted <a href="#AdjDocker">per instructions below</a>.
+
+   PROTIP: Before starting minikube, <tt>minikube delete</tt> to avoid this error message:
+   <pre>💢  Exiting due to GUEST_DRIVER_MISMATCH: The existing "minikube" cluster was created using the "docker" driver, which is incompatible with requested "hyperkit" driver.
+💡  Suggestion: Delete the existing 'minikube' cluster using: 'minikube delete', or start the existing 'minikube' cluster using: 'minikube start --driver=docker'
+   </pre>
+
+   PROTIP: Don't use <tt>sudo minikube</tt> or you'll get this error message:
+   <pre>❌  Exiting due to DRV_AS_ROOT: The "hyperkit" driver should not be used with root privileges.</pre>
+
+   Alternately, start within Virtualbox <a target="_blank" href="https://webme.ie/how-to-run-minikube-on-a-virtualbox-vm/">*</a>:
+   <pre><strong>sudo minikube start --memory=4096</strong></pre>
+
+   An example of an expected response:
+
+   <pre>😄  minikube v1.15.1 on Darwin 10.15.7
+✨  Using the docker driver based on user configuration
+👍  Starting control plane node minikube in cluster minikube
+🚜  Pulling base image ...
+💾  Downloading Kubernetes v1.19.4 preload ...
+    > preloaded-images-k8s-v6-v1.19.4-docker-overlay2-amd64.tar.lz4: 486.35 MiB
+🔥  Creating docker container (CPUs=2, Memory=1990MB) ...
+🐳  Preparing Kubernetes v1.19.4 on Docker 19.03.13 ...
+🔎  Verifying Kubernetes components...
+🌟  Enabled addons: storage-provisioner
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+   </pre>
+
+1. TODO: Start Docker 
+
+
+   If Docker Desktop is not running, you won't see the icon at the top of the screen and you'll get this error:
+
+   <pre>🤷  Exiting due to PROVIDER_DOCKER_NOT_FOUND: The 'docker' provider was not found: exec: "docker": executable file not found in $PATH
+💡  Suggestion: Install Docker
+📘  Documentation: https://minikube.sigs.k8s.io/docs/drivers/docker/
+   </pre>
+
+   An example of a good start:
+
+   <pre>🙄  "minikube" profile does not exist, trying anyways.
+💀  Removed all traces of the "minikube" cluster.
+😄  minikube v1.15.1 on Darwin 10.15.7
+✨  Using the docker driver based on user configuration
+👍  Starting control plane node minikube in cluster minikube
+🔥  Creating docker container (CPUs=2, Memory=1987MB) ...
+🐳  Preparing Kubernetes v1.19.4 on Docker 19.03.13 ...
+🔎  Verifying Kubernetes components...
+🌟  Enabled addons: storage-provisioner, default-storageclass
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+   </pre>
+
+
+3. Start the minikube service, with add-ons which are each a pod:
+
+   On Mac:
+
+   <pre><strong>minikube start --vm-driver=xhyve --addons=dashboard --addons=metrics-server   --addons="ingress" --addons="ingress-dns"
+   </pre>
+
+   On Windows:
+
+   <pre><strong>minikube start --vm-driver=hyperv
+   </strong></pre>
+
+   <pre>😄  minikube v1.13.1 on Darwin 10.15.7
+✨  Using the docker driver based on existing profile
+👍  Starting control plane node minikube in cluster minikube
+🏃  Updating the running docker "minikube" container ...
+🐳  Preparing Kubernetes v1.19.2 on Docker 19.03.8 ...
+🔎  Verifying Kubernetes components...
+🌟  Enabled addons: default-storageclass, storage-provisioner
+🏄  Done! kubectl is now configured to use "minikube" by default
+   </pre>
+
+
+
+   <a name="AdjDocker"></a>
+
+1. If you plan on doing a lot of work, configure Docker with more memory: The default is 1990MB.
+   
+   Click the Docker icon on your Mac, then select "Preferences" then "Resources":
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/99923919-2be57600-2cf5-11eb-8d5f-e828a016808f.png">
+   <img width="793" alt="k8s-minikube-resources" src="https://user-images.githubusercontent.com/300046/99923919-2be57600-2cf5-11eb-8d5f-e828a016808f.png"></a>
+
+   TODO: Check how much memory is already being used.
+
+   Slide the appropriate tab to specify a larger number.
+
+
+
+   ### Kubectl CLI install
+
+   NOTE: <a target="_blank" href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">REF: kubectl CLI (kubernetes-cli) is installed by minikube install</a>.
+
+1. Install kubectl command:
+
+   <pre><strong>sudo apt-get update && sudo apt-get install -y apt-transport-https
+   </strong></pre>
+
+   <a name="kubectl"></a>
+
+   ## kubectl CLI client install
+
+   Kubernetes administrators use <strong>kubectl</strong> (kube + ctl)
+   the CLI tool running outside Kubernetes servers to control them. 
+   It's <strong>automatically installed</strong> within Google cloud instances, 
+   but on Macs clients:
+
+1. Install on a Mac:
+ 
+   <pre><strong>brew install kubectl
+   </strong></pre>
+
+   <pre>🍺  /usr/local/Cellar/kubernetes-cli/1.8.3: 108 files, 50.5MB
+   1.19.2
+   </pre>
+
+   It's required by eksctl and minikube.
+
+0. Verify the version installed: 
+
+   <pre><strong>kubectl version --client
+   </strong></pre>
+
+   At time of writing:
+
+   <pre>Client Version: version.Info{Major:"1", Minor:"18", GitVersion:"v1.18.8", GitCommit:"9f2892aab98fe339f3bd70e3c470144299398ace", GitTreeState:"clean", BuildDate:"2020-08-13T16:12:48Z", GoVersion:"go1.13.15", Compiler:"gc", Platform:"darwin/amd64"}
+   </pre>
+
+   NOTICE that Golang programming is a component.
+
+   If you get this error message:
+   <pre>The connection to the server localhost:8080 was refused - did you specify the right host or port?
+   </pre>
+
+
+
+### Install Docker & Kubernetes on CentOS
+
+1. Install the the <strong>Docker Desktop app</strong> 
+
+   On CentOS/RHEL 7:
+
+   <pre><strong>yum install docker</strong></pre>
+
+   On CentOS/RHEL 8, Docker is not installed by default, so there download  <strong>docker-ce</strong> from docker.io:
+
+   https://docks.docker.com/install/linux/docker-ce/centos/
+
+   The Open Container Initiative at <a target="_blank" href="https://opencontainers.org/">https://opencontainers.org</a> defined the image-spec to define how to package contaiiners in a "filesystem bundle" and run them in a container. This ensures comptibility among containers, no matter the originating enviroment.
+
+
+
+   ### Start Minikube within VM
+
+1. To run minikube within a VM so we will need to use the None (bare-metal) driver. The none driver requires minikube to be run as root, until #3760 can be addressed. To make none the default driver:
+
+   <pre><strong>sudo minikube config set vm-driver none
+   </strong></pre>
+
+   These changes will take effect upon a minikube delete and then a minikube start
+
+
+   ### Stop Minikube
+
+4. Stop the service:
+
+   <pre>minikube stop</pre>
+
+5. Recover space:
+
+   <pre><strong>minikube delete
+   </strong></pre>
+
+   <pre>🔥  Deleting "minikube" in docker ...
+🔥  Deleting container "minikube" ...
+🔥  Removing /Users/wilson_mar/.minikube/machines/minikube ...
+💀  Removed all traces of the "minikube" cluster.
+   </pre>
+
+   Kubectl 1.8 scale is now the preferred way to control graceful delete.
+
+   Kubectl 1.8 rollout and rollback now support stateful sets ???
+
+1. To continue, <a href="#StartMinikube">start minikube again</a>.
 
 
 <hr />
 
-## Cloud Kubernetes Cloud Services
 
-Each offering has its own acronym:
+## Configuration
 
-* ECS, EKS = Elastic (AWS) Container Service & Elastic Kubernetes Service
-* IKS = IBM cloud Kubernetes Service
-* ACK = Alibaba Cloud Kubernetes
-* DOKS = Digital Ocean 
-* OKS = Oracle 
-* PKE = Bonzai
-* MKE = D2iQ (Day two iQ) rebranded from Mesos DC/OS meta clusters
-* OKD = OpenShift (Red Hat) Origin community distribution
-* PKS = VMWare Tanzu purchase of Pivotal, Heptio (Joe Bada, Craig McLukie), merphe from PCS
-* RKE = Rancher 
-* Canonical
+zzz
 
-* Hashicorp Nomad is a lighter orchestrator, not just for containers
+Service cluster IPs and ports are found through Docker --link compatible enviornment variables specifying ports opened by the service proxy.
+
+
+1. REMEMBER: Unlike k describe xxx, k cluster-info is a single verb:
+
+   <pre><strong>kubectl cluster-info</strong></pre>
+
+   Example response:
+
+   <pre>Kubernetes master is running at https://127.0.0.1:32768
+KubeDNS is running at https://127.0.0.1:32768/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+   </pre>
+
+
+<a name="Config"></a>
+<a name="Contexts"></a>
+
+### Configure Contexts
+
+3. Show the current context:
+
+   <pre><strong>kubectl config current-context
+   </strong></pre>
+
+   The expected response on minikube is "minikube".
+
+2. To avoid "The connection to the server localhost:8080 was refused"
+
+   <a target="_blank" href="https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/">https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting</a>
+
+   <pre><strong>sudo touch $HOME/.kube/config</strong></pre>
+   <pre><strong>sudo chown $USER $HOME/.kube/config
+   chmod 600 $HOME/.kube/config
+   </strong></pre>
+
+   Deleted the old config from ~/.kube and then restarted docker (for macos) and it rebuilt the config folder. 
+
+
+2. What is in the Kubernetes configuration file showing configuration settings and current context:
+
+   <pre><strong>cat $HOME/.kube/config</strong></pre>
+
+   Sample response:
+
+   <pre>apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority: /Users/wilson_mar/.minikube/ca.crt
+    server: https://127.0.0.1:32768
+  name: minikube
+contexts:
+- context:
+    cluster: minikube
+    namespace: default
+    user: minikube
+  name: minikube
+current-context: minikube
+kind: Config
+preferences: {}
+users:
+- name: minikube
+  user:
+    client-certificate: /Users/wilson_mar/.minikube/profiles/minikube/client.crt
+    client-key: /Users/wilson_mar/.minikube/profiles/minikube/client.key
+    </pre>
+
+   REMEMBER: When a namespace is not specified in yaml, the name "default" is assumed.
+
+1. The same JSON as in file <tt>~/.kube/config</tt> is displayed by:
+
+   <pre><strong>kubectl config view
+   </strong></pre>
+
+  PROTIP: If your server is not up, you'll see this error message when attempting a kubectl command:
+  <pre>The connection to the server 127.0.0.1:32772 was refused - did you specify the right host or port?</pre>
 
 
 <hr />
+
 
 <a name="CustomizeTerminal"></a>
 
@@ -861,6 +1358,7 @@ Each offering has its own acronym:
 
    <pre>export PS1="\n  \w\[\033[33m\]\n$ "
    </pre>
+
 
    ### Setup k aliase
 
@@ -899,13 +1397,6 @@ echo "source <(kubectl completion bash)" >> ~/.bashrc
    Shift . to shift left, Shift , to shift right.
 
 
-   ### Output file
-
-   To output a file to a pod named "pod-x":
-
-   <pre>kubectl logs pod-x | sudo tee ~/opt/answers/mypod.logs</pre>
-
-
 
 <a name="Aliases"></a>
 
@@ -919,11 +1410,11 @@ Its <a target="_blank" href="https://github.com/kubernetes/kubernetes">code page
 
 1. Specify the kubectl command with --help get info:
 
-   <pre>kubectl completion --help</pre>
+   <pre>k completion --help</pre>
 
 
 
-## Hands-on Declarative Kubernetes Commands 
+## Declarative Kubernetes Commands 
 
 K8s recognizes both imperative and declarative yaml files.
 
@@ -958,12 +1449,131 @@ CMD ["--color", "red"]
    </pre>
 
 
+<a name="Namespaces"></a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&t=1h46m19s">NinaK</a>:
+
+K8s namespaces are used to separate resources (network, files, users, processes, IPCs, etc.) into 
+<strong>virtual clusters</strong> inside a K8s cluster.
+
+   * Nginx-Ingress controller
+   * Database (<a href=#shared-db">shared mysql-service</a> or mongodb-service)
+   * Logging: Elastic stack
+   * Monitoring
+   <br /><br />
+
+   * Development
+   * Staging 
+   * Blue/Green production
+   <br /><br />
+
+Namespaces provide <strong>isolation</strong> among different project teams, so they don't overwrite each other's definitions.
+<a href="#Secrets">Secrets</a> and <a href="#ConfigMaps">ConfigMaps</a> are not shared across namespaces.
+
+Different limits on resources (CPU, RAM, storage) can be defined for each namespace.
+
+Thus, separation of different namespaces are useful for large enterprises.
+
+
+1. List where KubeDNS is running:
+
+   <pre><strong>k cluster-info</strong></pre>
+   
+   Out of the box, without creating anything:
+
+   <pre><strong>k get ns</strong></pre>
+
+   * kube-public contains publically accessible (without auth) <a href="#ConfigMaps">ConfigMaps</a> which contain cluster info (kubectl cluster-info)
+   * kube-system holds k8s internal system processes (master, kubectl, etc.)
+   * kube-node-lease holds heartbeats of nodes and the availability of nodes (lease objects)
+   * default holds resources you create
+   * <a href="#Dashboard">kubernetes-dashboard</a> is created only within minikube.
+   <br /><br />
+
+   <a name="Dashboard"></a>
+
+   ### Minikube Dashboard
+
+3. Open the Minkube Dashboard server localhost:53764 poped upped on your default browser:
+
+   <pre><strong>minikube dashboard</strong></pre>
+
+   <pre>🔌  Enabling dashboard ...
+🤔  Verifying dashboard health ...
+🚀  Launching proxy ...
+🤔  Verifying proxy health ...
+🎉  Opening http://127.0.0.1:54702/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/ in your default browser...
+   </pre>
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/99926854-630d5480-2d00-11eb-9e65-ebc0c448e390.png">
+   <img src="k8s-dashboard-sample-1920x1080.png" width="1920" height="1080" src="https://user-images.githubusercontent.com/300046/99926854-630d5480-2d00-11eb-9e65-ebc0c448e390.png"></a>
+
+1. Escape by pressing <strong>ctrl+C</strong>.
+
+<hr />
+
+   ### Declarative yaml
+
+1. Declarative yaml to define a new namespace:
+
+   <pre>apiVersion: v1   # Object controller version
+kind: Namespace          # Object classification
+metadata:                # Associated data
+  labels:
+    venue: opera
+    watch: cpu
+spec:                    # specific object details
+   </pre>
+
+   Alternately, imperative commands to define a new namespace:
+
+   <pre><strong>kubectl create namespace ticketing
+kubectl label namespace ticketing venue=opera watch=cpu
+kubectl get namespaces
+kubectl get namespace apps-collection -o YAML
+   </strong></pre>
+
+1. REMEMBER: List <tt>api-resources</tt> (not just resources) not bound to a namespace (NOT namespaced) so they can be referenced by named namespaces, such as shared Volumes, nodes:
+
+   <pre><strong>k api-resources --namespaced=false
+   </strong></pre>
+
+1. On minikube, delete all resources from the default namespace:
+
+   <pre>kubectl delete --all pods --namespace=default
+kubectl delete --all deployments --namespace=default
+kubectl delete --all services --namespace=default
+   </pre>
+
+
+<a name="Clusters"></a>
+
+Kubernetes can manage several namespaces running in each <strong>cluster</strong>. 
+
+   "The primary grouping concept in Kubernetes is the namespace. Namespaces are also a way to divide cluster resources between multiple uses. That being said, there is no security between namespaces in Kubernetes; if you are a "user" in a Kubernetes cluster, you can see _all_ the different namespaces and the resources defined in them." -- from the book: OpenShift for Developers, A Guide for Impatient Beginners by Grant Shipley and Graham Dumpleton.
+
+<a name="OpenShift"></a>
+
+### OpenShift project wall namespaces
+
+Red Hat's OpenShift product adds <strong>Projects as "walls" between namespaces</strong>, ensuring that users or applications can only see and access what they are allowed to. OpenShift projects wrap a namespace by adding <strong>security annotations</strong> which control access to that namespace. Access is controlled through an authentication and authorization model based on users and groups. 
+
+   <a target="_blank" href="https://docs.openshift.com/enterprise/3.2/architecture/core_concepts/routes.html">
+   This diagram</a> illustrates what OpenShift adds: 
+   ![kubernetes-openshift-502x375-107638](https://user-images.githubusercontent.com/300046/42333404-e3f5953a-8037-11e8-9691-0172a8a96388.jpg)
 
 
 
-### Dockerfile correspondance
 
-<a target="_blank" href=https://user-images.githubusercontent.com/300046/99159670-dc230100-269b-11eb-90a4-b9f6953aba16.png">
+
+<hr />
+
+
+
+
+### Dockerfile to Pod yaml correspondance
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/99159670-dc230100-269b-11eb-90a4-b9f6953aba16.png">
 <img alt="k8s-dockerfile-sleep" width="989" height="385" src="https://user-images.githubusercontent.com/300046/99159670-dc230100-269b-11eb-90a4-b9f6953aba16.png"></a>
 
 
@@ -973,9 +1583,14 @@ CMD ["--color", "red"]
 
 <a target="_blank" href="https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12039438">Klab</a>:
 
-1. For Docker to create an Nginx web server:
+1. For Docker to create an Nginx web server:+
 
    <pre><strong>docker run --name my-nginx -p 80 nginx:1.19.2</strong></pre>
+
+
+   <a name="Pods"></a>
+
+   ### Pod yaml
 
 1. For Kubernetes to establish a "naked" pod using the un-deprecated run command (use deployment instead):
 
@@ -994,15 +1609,37 @@ spec:
     - containerPort: 80
    </pre>
 
+   NOTE: The pod definition above is defined (with an additional indentation) as a <tt>template</tt> within deployments.           
+
+
 1. The opposite is "delete pod x".
 
+1. List pods 
+
+   <pre><strong>k get pods</strong></pre>
+
+1. Copy a specific pod name generated to paste in the command to see its logs:
+
+   <pre><strong>kubectl logs <em>pod-name</em></strong></pre>
+
+1. Output log file to a pod (named "pod-x"):
+
+   <pre>k logs pod-x | sudo tee ~/opt/answers/mypod.logs</pre>
+
+
+1. Execute iteractive terminal on a pod with bash installed (most Linux have --bin/sh installed):
+
+   <pre><strong>kubectl exec -it <em>pod-name</em> --bin/bash</strong></pre>
 
 
    <a name="Declarative"></a>
 
+   ### Declarative yaml   
+
 1. Generate a declarative yaml file from an imperative command:
 
    <pre><strong>k run redis --image=redis --dry-run=client -o yaml > mypod.yaml</strong></pre>
+
 
 1. Vi pod.yaml to edit<a target="_blank" href="https://vim.fandom.com/wiki/Shifting_blocks_visually">*</a>
 
@@ -1012,7 +1649,7 @@ spec:
 kind:
 metadata:
 spec:
-   <pre>
+   </pre>
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr valign="top"><td>apiVersion:</td><td>v1
@@ -1023,11 +1660,33 @@ spec:
    </td></tr>
    </table>
 
-   REMEMBER: kind: value must be <strong>Title case</strong> (first character upper case).
+   ### kind: abbreviations
+
+   PROTIP: Use <strong>abbreviations</strong> (in lower case) of basic Kubernetes components to save time typing:
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr valign="top"><td>k get </td><td> <a href="#Pods">po</a> </td><td> <a href="#Nodes">no</a> </td><td> <a href="#Services">svc</a> </td><td> <a href="#ReplicaSets">rs</a> </td><td> <a href="#Deployment">deployment</a>
+     </td></tr>
+   <tr valign="top"><td><em>abbreviation:</em></td><td></td><td> <a href="#Pods">pods</a> </td><td> <a href="#Nodes">nodes</a> </td><td> <a href="#Services">services</a> </td><td> <a href="#ReplicaSets">replicaset</a> </td><td> <a href="#Deployment">deployment</a>
+     </td></tr>
+   </table>
+
+   REMEMBER: <tt>kind:</tt> full value must be <strong>Title case</strong> (first character upper case), <strong>singular</strong> (not plural).
+
+
+   REMEMBEER: IRL Admins do not code to work with individual pods, because the whole point of K8s is to automate that chore.
+ 
+   Admins define abstractions for <a href="#Deployments">deployment</a> of images (Docker containers) which define templates (blueprints) for creating pods.
+
+
+   ### metadata:
 
    metadata contains a dictionary indented name: and label:
 
-   In spec: is a dictionary item containers: specifying a list/array represented by a dash in front of each item
+
+   ### spec:
+
+   In <tt>spec:</tt> is a dictionary item <tt>containers:</tt> specifying a list/array represented by a dash in front of each item:
 
    <ul><pre>spec:
   containers:
@@ -1035,23 +1694,16 @@ spec:
       image: nginx
    </pre></ul>
 
-   Notice the dash is indented under containers.
+   REMEMBER: Under containers:, the dash in front of name is indented.
 
-1. View the yaml file:
-
-   kubectl config view
 
 1. Create instance by applying yaml -file
 
-   k apply -f mypod.yml
-
-1. List pods 
-
-   k get pods
+   <pre><strong>k apply -f mypod.yml</strong></pre>
 
 1. Edit the pod's yaml file:
 
-   k edit pod mypod.yaml
+   <pre><strong>k edit pod mypod.yaml</strong></pre>
 
 1. Extract a declaration yaml file from a running pod:
 
@@ -1081,532 +1733,12 @@ metadata:
    The resulting file includes additional annotations.
 
 
-
    Beyond the test: GitOps: ArgoCD monitors GitHub and applies changes to K8s Controller.
 
 
-   <a name="Replication"></a>
-   <a name="ReplicaSets"></a>
-   <a name="LoadBalancer"></a>
 
-## Replicas for Replication
 
-   The ReplicaSet process replaces the older ReplicationController.
-
-   ReplicaSets enable deployment of several pods, and check their status as a single unit (replicas).
-
-   This enables Load Balancing across several machines for more capacity, redunancy, and rolling updates without downtime.
-
-   ReplicaSets monitor the number of pods and create pods to match the number of replicas for the label type requested in the yaml.
-
-The sample ReplicaSet.yml file:
-
-   <pre>apiVersion: v1
-kind: ReplicaSet
-metadata:
-  name: my-app
-  labels:
-    app: myapp
-    type: front-end
-spec:
-  template:
-    metadata:
-      name: myapp-pod
-      labels:
-        app: myapp
-        type: front-end
-    spec:
-      containers:
-      - name: nginx-container
-        image: nginx:1.19.2
-        ports:
-        - containerPort: 80
-replicas: 3
-selector: 
-  matchLabels:
-    type: front-end
-   </pre>
-
-   A selector is required within ReplicaSet yaml.
-
-
-   PROTIP: The spec: template: is copied from a pod definition yaml, then indented.
-
-   PROTIP: <a target="_blank" href="https://wilsonmar.github.io/#ViIndent">Indent paste using vi</a>
-
-
-1. PROTIP: Remember the ".apps" when listing replicasets:
-
-   k get replicasets.apps
-
-1. Identify the image:
-
-   k describe replicasets.apps replicaset-1  | grep -i image:
-
-
-   ### Modify replicas to scale
-
-   * Edit the file, then<br />k replace -f replicaset-def.yaml
-
-   There are several ways which doesn't modify the file:
-
-   * k scale --relicas=6 -f replicaset-def.yaml
-
-   * k scale --replicas=6 replicaset myapp-replicaset
-
-   * Scale based on load
-
-Practice test with quiz about pod commands: https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12039431
-
-
-
-## Deployments
-
-To upgrade gradually in a production environment without downtime, do a <strong>rolling update</strong>.
-
-Deployments make use of Replicasets.
-
-
-   <pre><strong>kubectl run --restart=Always      # creates deployment
-kubectl run --restart=Never       # creates pod
-kubectl run --restart=OnFailure   # creates job
-   </strong></pre>
-
-1. List deployments 3 different ways, they all work:
-
-   <pre>k get deployment
-k get deployments
-k get deployment.app
-k get deployments.app
-   </pre>
-
-Practice test with quiz about deployments: https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12039434
-
-
-
-
-<a name="Jobs"></a>
-
-### Jobs
-
-Batch jobs are supervisor processes that run once and completed.
-
-3 types of jobs:
-
-   * completions=1 & parallelism=1 for non-parallel: one pod is started
-   * completions=n & parallelism=m for n fixed completions in parallel 
-   * completions=1 & parallelism=m for n jobs work queue started until 1 completed (rarely used)
-   <br /><br />
-
-1. To delete job after finish:
-   
-   <pre>ttlSecondsAfterFinished: 20</pre>
-
-
-
-
-
-<a name="Namespaces"></a>
-
-A "namespace" provides isolation between system components (network, files, users, processes, IPCs).
-
-Specifying different namespaces are useful in large enterprises.
-
-   * <a href="#Secrets">Secrets</a> are not shared across namespaces.
-   <br /><br />
-
-Declarative commands to define a sample namespace:
-
-   <pre>kubectl create namespace ticketing
-kubectl label namespace ticketing venue=opera watch=cpu
-kubectl get namespaces
-kubectl get namespace apps-collection -o YAML
-   </pre>
-
-yaml to define a namespace:
-
-   <pre>apiVersion: v1   # Object controller version
-kind: Namespace          # Object classification
-metadata:                # Associated data
-  labels:
-    venue: opera
-    watch: cpu
-spec:                    # specific object details
-   </pre>
-
-
-List:
-
-   <pre>kubectl get -n kube-system serviceaccounts</pre>
-
-   <pre>kubectl describe -n kube-system clusterrole system:coredns</pre>
-
-
-QUESTION: Find all pods that have been started with the kubectl run command:
-
-kubectl get pods nginxpod --show-labels | grep run
-
-kubectl run pod test --image=nginx --dry-run=client -o jasonpath='{metadata.labels}'
-
-
-QUESTON: Create a Cron job that will run ???
-
-
-<a name="Podspecs"></a>
-
-### Podspecs
-
-Podspecs are yaml files that describe a pod.
-
-   <pre>
-apiVersion: v1
-kind: Pod
-metadata:
-  name: busybox-ready
-  namespace: default
-   </pre>
-
-## Deleting Pods
-
-   <pre>k delete pod frontend --grace-period=0 --force</pre>
-
-
-## Overview
-
-This tutorial focuses on use of <strong>Docker</strong> containers as Kubernetes' <strong>Container Runtime Interface (CRI)</strong>. BTW Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") containers, which provided a CLI for containers as part of CoreOS. Rkt became the first archived project of CNCF after IBM bought Red Hat with its competing "containerd" <a target="_blank" href="https://github.com/kubernetes-sigs/cri-o">cri-o technology.
-
-"Containerized" <a href="#micro-services">microservice apps</a> are <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, <a target="_blank" href="https://quay.io/">Quay.io</a>, or an organization's own binary repository setup using Nexus or Artifactory. 
-
-CRI-O, Docker, ContainerD support Runc. Runc is the low-level tool which does the heavy lifting of spawning a Linux container. (<a target="_blank" href="https://www.youtube.com/watch?v=0uy2V2kYl4U" title="Feb 15, 2019">See CVE-2019-5736</a>).
-
-Kubernetes automates resilience by abstacting the network and storage shared by ephemeral replaceable <strong>pods</strong> which the Kubernetes Controller replicates to increase capacity.
-
-> PROTIP: "The median number of containers running on a single host is about 10." -- Sysdig, April 17, 2017. But there can be up to 100 pods per node (at v1.17)
-
-Kubernetes replicates Pods (the same set of containers in each) across several worker <strong>Nodes</strong> (VM or physical machines).
-
-> K8s supports up to 5,000 node clusters of up to 150,000 pods (at v1.17). Production setups have at least 3 nodes per cluster.
-
-Each set of pods are within a <strong>node</strong>.
-Kubernetes assigns each node with a different <strong>external IP address</strong>.
-
-<strong>Containers</strong> within the same pod share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage Volumes, and other resources.
-Every <strong>container</strong> has its own unique <strong>port number</strong> within its pod's IP.
-
-
-In each pod, <a target="_blank" href="https://wilsonmar.github.io/service-mesh">Service Mesh Istio architecture</a> has an "Envoy proxy" to facilitate the communictions and retry logic from the business logic containers in its pod.
-
-In the illustration below, each pod (each a different color) encapsulates one or more (Docker) container hosts (operating processes, each shown as a circle):
-
-![k8s-container-sets-479x364.jpg](https://user-images.githubusercontent.com/300046/33526550-6c98a980-d800-11e7-9862-ff202492e08b.jpg)
-<!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
-
-
-
-In <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=bf09c049-8db9-4d14-81c7-77f1e942524c">
-"Kubernetes Un-Scaried"</a> by Phil Taprogge (of Snyk) offers this diagram:
-<img width="435" alt="k8s-phil-diagram" src="https://user-images.githubusercontent.com/300046/97088709-09761500-15f0-11eb-8eb2-4f99edab5db0.png">
-
-
-<hr />
-
-## Minikube Alternatives
-
-Instead of minikube, there's also K3s, Microk8s on Linux, Minishift.
-
-   * KinD (Kubernetes in Docker) <a target="_blank" href="https://kind.sigs.k8s.io/">https://kind.sigs.k8s.io/</a> builds K8s clusters out of Docker containers running Docker in Docker, good for integration with a CI/CD pipeline.
-   <br /><br />
-
-But let's start by installing minikube on your laptop.
-
-
-<a name="Minikube"></a>
-
-## Install Minikube
-
-Minikube goes beyond older Docker For Mac (DFM) and Docker for Windows (DFW)
-and includes a node and a Master when it spins up in a local environment (such as your laptop).
-
-CAUTION: At time of writing, <a target="_blank" href="https://github.com/kubernetes/minikube">https://github.com/kubernetes/minikube</a>has 257 issues and 20 pending Pull Requests, but we're using it anyway.
-MUST READ: <a target="_blank" href="https://minikube.sigs.k8s.io/docs/drivers/docker/#known-issues">Known Issues with Minikube</a>
-(Ingress and ingress-dns addons are not supported on Linux)
-
-
-### Minikube on Windows
-
-1. On Windows, (pardoxically) make sure Docker Desktop’s container type setting is Linux and not windows. see docker docs on switching container type. You can verify your Docker container type by running:
-
-   <pre>docker info --format '{{.OSType}}'</pre>
-
-https://minikube.sigs.k8s.io/docs/drivers/hyperv/
-
-
-### Minikube on MacOS
-
-NOTE: Docker drivers do not currently support ARM architecture (only AMD64).
-
-1. Install Docker for Desktop
-
-   This automatically installs the HyperKit hypervisor for macOS.
-
-<!--
-1. Install on a Mac Docker:
- 
-   <pre><strong>brew install docker-machine-driver-xhyve
-   </strong></pre>
--->
-
-1. Install on a Mac Minikube:
-
-   <pre><strong>brew install minikube
-   </strong></pre>
-
-   This installs folder:<br />
-   $HOME/.minikube
-
-   Alternately, use curl to obtain a back version:
-
-   <pre>curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_1.7.2-0_amd64.deb \
-&& sudo dpkg -i minikube_1.7.2-0_amd64.deb
-   </pre>
-
-1. Make hyperkit the default driver<a target="_blank" href="https://minikube.sigs.k8s.io/docs/drivers/hyperkit/">*</a>:
-
-   <pre><strong>minikube config set driver hyperkit</strong></pre>
-
-1. Verify Install:
-
-   <pre><strong>minikube version
-   </strong></pre>
-
-   <pre>==> Checking for dependents of upgraded formulae...
-Error: No such file or directory - /usr/local/Cellar/eksctl/0.24.0
-   </pre>
-
-1. To run minikube within a VM so we will need to use the None (bare-metal) driver. The none driver requires minikube to be run as root, until #3760 can be addressed. To make none the default driver run the following command
-
-   <pre><strong>sudo minikube config set vm-driver none
-   </strong></pre>
-
-   These changes will take effect upon a minikube delete and then a minikube start
-
-1. Start within Virtualbox <a target="_blank" href="https://webme.ie/how-to-run-minikube-on-a-virtualbox-vm/">*</a>:
-
-   <pre><strong>sudo minikube start --memory=4096</strong></pre>
-
-
-1. Install kubectl command:
-
-   <pre><strong>sudo apt-get update && sudo apt-get install -y apt-transport-https
-   </strong></pre>
-
-
-
-### Install Docker & Kubernetes on CentOS
-
-1. Install the the <strong>Docker Desktop app</strong> 
-
-   On CentOS/RHEL 7:
-
-   <pre><strong>yum install docker</strong></pre>
-
-   On CentOS/RHEL 8, Docker is not installed by default, so there download  <strong>docker-ce</strong> from docker.io:
-
-   https://docks.docker.com/install/linux/docker-ce/centos/
-
-   The Open Container Initiative at <a target="_blank" href="https://opencontainers.org/">https://opencontainers.org</a> defined the image-spec to define how to package contaiiners in a "filesystem bundle" and run them in a container. This ensures comptibility among containers, no matter the originating enviroment.
-
-
-
-   ### Kubernetes Version
-
-
-2. View the version:
-
-   <pre><strong>kubectl version</strong></pre>
-
-   At time of writing, the verion 1.19.2
-
-
-
-## Configuration
-
-<a name="Contexts"></a>
-
-### Config Contexts
-
-2. What is in the Kubernetes config file?
-
-   <pre><strong>cat $HOME/.kube/config</strong></pre>
-
-2. To avoid "The connection to the server localhost:8080 was refused"
-
-   <a target="_blank" href="https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/">https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting</a>
-
-   <pre><strong>sudo touch $HOME/.kube/config</strong></pre>
-   <pre><strong>sudo chown $USER $HOME/.kube/config
-   chmod 600 $HOME/.kube/config
-   </strong></pre>
-
-   Deleted the old config from ~/.kube and then restarted docker (for macos) and it rebuilt the config folder. 
-
-3. Show the current context:
-
-   <pre><strong>kubectl config current-context
-   </strong></pre>
-
-   The expected response on minikube is "minikube".
-
-   <a name="StartMinikube"></a>
-
-   NOTE: Kubernetes can use alternative container runtimes 
-   to run on top of cri-o, such as RedHat's podman, LXC.
-
-3. Start Docker before installing/starting minikube:
-
-   <pre><strong>systemctl enable --now docker</strong></pre>
-
-3. Start the minikube service, with add-ons which are each a pod:
-
-   On Mac:
-
-   <pre><strong>minikube start --vm-driver=xhyve --addons=dashboard --addons=metrics-server   --addons="ingress" --addons="ingress-dns"
-   </pre>
-
-   On Windows:
-
-   <pre><strong>minikube start --vm-driver=hyperv
-   </strong></pre>
-
-   <pre>😄  minikube v1.13.1 on Darwin 10.15.7
-✨  Using the docker driver based on existing profile
-👍  Starting control plane node minikube in cluster minikube
-🏃  Updating the running docker "minikube" container ...
-🐳  Preparing Kubernetes v1.19.2 on Docker 19.03.8 ...
-🔎  Verifying Kubernetes components...
-🌟  Enabled addons: default-storageclass, storage-provisioner
-🏄  Done! kubectl is now configured to use "minikube" by default
-   </pre>
-
-3. Open the Minkube Dashboard server localhost:53764 poped upped on your default browser:
-
-   <pre>minikube dashboard</pre>
-
-4. Stop the service:
-
-   <pre>minikube stop</pre>
-
-5. Recover space:
-
-   <pre><strong>minikube delete
-   </strong></pre>
-
-   <pre>🔥  Deleting "minikube" in docker ...
-🔥  Deleting container "minikube" ...
-🔥  Removing /Users/wilson_mar/.minikube/machines/minikube ...
-💀  Removed all traces of the "minikube" cluster.
-   </pre>
-
-   Kubectl 1.8 scale is now the preferred way to control graceful delete.
-
-   Kubectl 1.8 rollout and rollback now support stateful sets ???
-
-1. To continue, <a href="#StartMinikube">start minikube again</a>.
-
-
-   <a name="kubectl"></a>
-
-   ## kubectl CLI client install
-
-   Kubernetes administrators use <strong>kubectl</strong> (kube + ctl)
-   the CLI tool running outside Kubernetes servers to control them. 
-   It's automatically installed within Google cloud instances, but on Macs clients:
-
-1. Install on a Mac:
- 
-   <pre><strong>brew install kubectl
-   </strong></pre>
-
-   <pre>🍺  /usr/local/Cellar/kubernetes-cli/1.8.3: 108 files, 50.5MB
-   1.19.2
-   </pre>
-
-   It's required by eksctl and minikube.
-
-0. Verify
- 
-   <pre><strong>kubectl version --client
-   </strong></pre>
-
-   <pre>Client Version: version.Info{Major:"1", Minor:"18", GitVersion:"v1.18.8", GitCommit:"9f2892aab98fe339f3bd70e3c470144299398ace", GitTreeState:"clean", BuildDate:"2020-08-13T16:12:48Z", GoVersion:"go1.13.15", Compiler:"gc", Platform:"darwin/amd64"}
-   </pre>
-
-   NOTICE that Golang is a component.
-
-   If you get this error message:
-   <pre>The connection to the server localhost:8080 was refused - did you specify the right host or port?
-   </pre>
-
-   ### Jobs
-
-   <tt>spec: completions: 5</tt> defines the number of pods started within a job.
-
-   <tt>parallelism: 2</tt> defines 
-
-   1. Check the status of jobs
-   
-   <pre><strong>kubectl get jobs </strong></pre>
-
-   <pre>NAME     COMPLETIONS   DURATION   AGE
-somejob   5/5           27s        9m41s</pre>
-
-   2. When a job is complete, view its results:
-
-   <pre><strong>kubectl logs counter</strong></pre>
-
-
-   The <a href="#API_Server">API Server</a> authenticates using one of several methods (basic, certificates, tokens, etc.).
-
-   "Authorization" refers to determining whether the requester is allowed to perform based on role (using <a href="#RBAC">RBAC</a>).
-
-   The <a href="#API_Server">API Server</a> routes several <strong>kinds</strong> of <a href="#Ayaml-files">yaml declaration files</a>: Pod, Deployment of pods, Service, Job, Configmap.
-
-   API primatives ???
-
-1. Add 
-
-   https://plugins.jetbrains.com/plugin/10485-kubernetes
-
-
-1. View your current configuration settings and current context 
-
-   <pre><strong>kubectl config view
-   </strong></pre>
-
-   Sample response from file <tt>~/.kube/config</tt>
-
-   <pre>apiVersion: v1
-clusters:
-- cluster:
-    certificate-authority: /Users/wilson_mar/.minikube/ca.crt
-    server: https://127.0.0.1:32772
-  name: minikube
-contexts:
-- context:
-    cluster: minikube
-    user: minikube
-  name: minikube
-current-context: minikube
-kind: Config
-preferences: {}
-users:
-- name: minikube
-  user:
-    client-certificate: /Users/wilson_mar/.minikube/profiles/minikube/client.crt
-    client-key: /Users/wilson_mar/.minikube/profiles/minikube/client.key
-   </pre>
-
-   ### kubectl run
+### kubectl run
 
 1. Make an imperative command:
 
@@ -1680,64 +1812,293 @@ Events:
   Normal  Started    4m7s   kubelet, minikube  Started container web
    </pre>
 
-Service cluster IPs and prots are found through Docker --link compatible enviornment variables specifying ports opened by the service proxy.
+<hr />
 
 
-REMEMBER: unlike k describe xxx, k cluster-info is a single verb:
 
-   <pre><strong>kubectl cluster-info</strong></pre>
+   <a name="Replication"></a>
+   <a name="ReplicaSets"></a>
+
+## Deploy Replicas for Replication, Rolling Updates
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/99866180-3de7dd00-2b6c-11eb-9b4f-563ea790bb9e.png">
+   <img width="784" alt="k8s-deployment-rs-1568x584" width="1568" height="584" src="https://user-images.githubusercontent.com/300046/99866180-3de7dd00-2b6c-11eb-9b4f-563ea790bb9e.png"></a>
+
+   The ReplicaSet process replaces the older ReplicationController.
+
+   ReplicaSets enable deployment of several pods, and check their status as a single unit (replicas).
+
+   This enables Load Balancing across several machines for more capacity, redunancy, and rolling updates without downtime.
+
+   ReplicaSets monitor the number of pods and create pods to match the number of replicas for the label type requested in the yaml.
+
+The sample ReplicaSet.yml file:
+
+   <pre>apiVersion: v1
+kind: ReplicaSet
+metadata:
+  name: my-app
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+        app: myapp
+        type: front-end
+        pec:
+      containers:
+      - name: nginx-container
+        image: nginx:1.19.2
+        ports:
+        - containerPort: 80
+replicas: 3
+selector: 
+  matchLabels:
+    type: front-end
+   </pre>
+
+   A selector is required within ReplicaSet yaml.
 
 
-<a name="Kubelet"></a>
+   PROTIP: The spec: template: is copied from a pod definition yaml, then indented.
 
-Each node has a kubelet, container tooling (Docker), kube-proxy, supervisord.
-
-<a name="kube-proxy"></a>
-
-kube-proxy <strong>watches</strong> the <a href="#API_Server">API server</a> for addition and removal requests.
-For each new service, kube-proxy opens a randomly chosen port on the local node.
-It then makes proxied connections to one of the corresponding back-end pods.
-
-The "proxy" in kube-proxy means that it can do simple network stream or round-robin forwarding across a set of backends.
-
-Three modes:
-
-   * User space mode
-   * Iptables mode
-   * Ipvs mode (alpha as of v1.8)
+   PROTIP: <a target="_blank" href="https://wilsonmar.github.io/#ViIndent">Indent paste using vi</a>
 
 
-#### Kubelet
+1. PROTIP: Remember the ".apps" when listing replicasets:
 
-Kublet communicates with the API server to see if pods have been assigned to nodes.
+   k get replicasets.apps
 
-Kubelet only manages containers created by the <a href="#API_Server">API server</a> - not any container running on the node.
+1. Identify the image:
 
-Kubelet takes a set of Podspecs provided bythe kube-apiserver to ensure that containers described are running and healthy.
+   k describe replicasets.apps replicaset-1  | grep -i image:
 
-Kubelet mounts and runs pod volumes and secrets.
 
-   Image pull secrets authenticates with private container registries.
+   ### Modify replicas to scale
 
-Kubelet executes health checks to identify pod/node status.
+   * Edit the file, then<br />k replace -f replicaset-def.yaml
 
-   Service accounts can also store image pull secrets.
+   There are several formats which doesn't modify the file:
+
+   * k scale --relicas=6 -f replicaset-def.yaml
+
+   * k scale --replicas=6 replicaset myapp-replicaset
+
+   * Scale based on load
+
+Practice test with quiz about pod commands: https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12039431
+
+
+
+## Deployments
+
+To upgrade gradually in a production environment without downtime, do a <strong>rolling update</strong>.
+
+Deployments make use of Replicasets.
+
+   <pre><strong>kubectl run --restart=Always      # creates deployment
+kubectl run --restart=Never       # creates pod
+kubectl run --restart=OnFailure   # creates job
+   </strong></pre>
+
+1. List deployments 3 different ways, they all work:
+
+   <pre>k get deployment
+k get deployments
+k get deployment.app
+k get deployments.app
+   </pre>
+
+Practice test with quiz about deployments: https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12039434
+
+
+
+
+<a name="Services"></a>
+<a name="NodePoints"></a>
+
+## Services
+
+<a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&t=2h13m44s">VIDEO: Nina</a>
+
+Services provide an un-changing IP address to pods in the back-end.
+
+Internal services are only reachable within a cluster.
+
+External services are exposed by <strong>Endpoints:</strong> (<strong>NodePoints</strong>).
+
+PROTIP: Services are defined with a port.
+
+REMEMBER: Port numbers in deployment yaml must match port numbers in services yaml.
+
+   <pre>spec:
+  selector:
+    app: nginx
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+   </pre>
+
+1. Verify visibility using curl:
+
+   <pre>kubectl create -f 2.1-web_service.yaml
+kubectl get services
+kubectl describe service webserver  # copy IP: value 10.108.171.76
+kubectl describe nodes | grep -i address -A 1
+curl 10.0.0.100:3#### (replace #### with the actual port digits)
+   </pre>
+
+
+Examples of services :
+
+   * auth.yaml
+   * frontend.yaml
+   * hello-blue.yaml
+   * hello-green.yaml
+   * hello.yaml
+   * monolith.yaml
+   <br /><br />
+
+<a target="_blank" href="https://ravikirans.com/cks-kubernetes-security-exam-study-guide/">
+https://ravikirans.com/cks-kubernetes-security-exam-study-guide</a>
+
+
+1. To show all components in a mongodb app:
+
+   <pre><strong>kubectl get all | grep mongodb </strong></pre>
+
+
+<a name="LoadBalancer"></a>
+
+TODO: Configure
+
+   <pre><strong>kubectl get service</strong></pre>
+
+The LoadBalancer type service assigns an <strong>EXTERNAL-IP address</strong> which accepts external requests.
+
+1. List the URL:
+
+   <pre><strong>minkube service mongo-extress-service</strong></pre>
+
+   To text, create a database.
+
+
+
+   <a name="shared-db"></a>
+
+   #### shared mysql-service yaml ConfigMap
+
+1. Define a commonly used ConfigMap within a service named "database":
+
+   <pre>apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysel-configmap
+data: 
+  db_url: mysel-service.database
+   </pre>
+
+   REMEMBER: ".database" above references the namespace. [1:15:17]
+
+1. View
+
+   <pre><strong>k get configmap -n my-namespace</strong></pre>
+
 
 <hr />
 
-## Glossary - how buzzwords fit together
-
-This diagram is shown at the ending of a small (upcoming) movie logically illustrating how the various glossary terms relate with each other:
-
-<img width="914" alt="k8s-docker" src="https://user-images.githubusercontent.com/300046/95684822-564dfa80-0bb1-11eb-803a-1c742cf0bd07.png">
 
 
-On minikube, delete all pods from default namespace:
+<a name="Jobs"></a>
 
-   <pre>kubectl delete --all pods --namespace=default
-kubectl delete --all deployments --namespace=default
-kubectl delete --all services --namespace=default
+### Jobs
+
+Batch jobs are supervisor processes that run once and immediately completed.
+
+3 types of jobs:
+
+   * completions=1 & parallelism=1 for non-parallel: one pod is started
+   * completions=n & parallelism=m for n fixed completions in parallel 
+   * completions=1 & parallelism=m for n jobs work queue started until 1 completed (rarely used)
+   <br /><br />
+
+
+   <tt>spec: completions: 5</tt> defines the number of pods started within a job.
+
+   <tt>parallelism: 2</tt> defines 
+
+1. Check the status of jobs
+   
+   <pre><strong>kubectl get jobs </strong></pre>
+
+   <pre>NAME     COMPLETIONS   DURATION   AGE
+somejob   5/5           27s        9m41s</pre>
+
+2. When a job is complete, view its results:
+
+   <pre><strong>kubectl logs <em>pod-name</em></strong></pre>
+
+
+   The <a href="#API_Server">API Server</a> authenticates using one of several methods (basic, certificates, tokens, etc.).
+
+   "Authorization" refers to determining whether the requester is allowed to perform based on role (using <a href="#RBAC">RBAC</a>).
+
+   The <a href="#API_Server">API Server</a> routes several <strong>kinds</strong> of <a href="#Ayaml-files">yaml declaration files</a>: Pod, Deployment of pods, Service, Job, Configmap.
+
+1. Add 
+
+   <a target="_blank" href="https://plugins.jetbrains.com/plugin/10485-kubernetes">https://plugins.jetbrains.com/plugin/10485-kubernetes</a>
+
+1. Delete job after finish:
+   
+   <pre>ttlSecondsAfterFinished: 20</pre>
+
+
+<hr />
+
+## Misc. List:
+
+   <pre>kubectl get -n kube-system serviceaccounts</pre>
+
+   <pre>kubectl describe -n kube-system clusterrole system:coredns</pre>
+
+
+QUESTION: Find all pods that have been started with the kubectl run command:
+
+kubectl get pods nginxpod --show-labels | grep run
+
+kubectl run pod test --image=nginx --dry-run=client -o jasonpath='{metadata.labels}'
+
+
+QUESTON: Create a Cron job that will run ???
+
+
+<a name="Podspecs"></a>
+
+### Podspecs
+
+Podspecs are yaml files that describe a pod.
+
+   <pre>
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-ready
+  namespace: default
    </pre>
+
+## Deleting Pods
+
+   <pre>k delete pod frontend --grace-period=0 --force</pre>
+
+
+
+<hr />
+
 
 
 <a name="krew"></a>
@@ -1770,8 +2131,6 @@ kubectl delete --all services --namespace=default
 * <a target="_blank" href="https://www.mirantis.com/software/mcp/">Mirantis' Cloud Platform</a>
 * PKS (Pivotal Kubernetes Service)
 * <a target="_blank" href="https://platform9.com/">Platform 9</a> provide OpenStack with Kubernetes
-* Red Hat <a href="#OpenShift">OpenShift</a> Enterprise platform as a service (PaaS)
-* Rackspace's Kubernetes as a Service
 * Stackpoint
 
 * <a target="_blank" href="https://buddy.works/guides/how-optimize-kubernetes-workflow">Buddy</a>
@@ -1779,7 +2138,29 @@ kubectl delete --all services --namespace=default
 
 * <a target="_blank" href="https://bit.ly/3dcRg4Y">RabbitMQ</a> for AMQP messaging with StatefulSet app
 
-> Kubernetes is a platform used for building platforms such as OpenShift, Helm, EKS, CrossPlane.
+> Kubernetes is a platform used for building platforms such as <a href="#OpenShift">OpenShift</a>, Helm, EKS, CrossPlane.
+
+
+<hr />
+
+### Cloud Kubernetes Services
+
+Each offering has its own acronym:
+
+* ECS = Elastic (AWS) Container Service 
+* EKS = Elastic Kubernetes Service
+* IKS = IBM cloud Kubernetes Service
+* ACK = Alibaba Cloud Kubernetes
+* DOKS = Digital Ocean 
+* OKS = Oracle 
+* PKE = Bonzai
+* MKE = D2iQ (Day two iQ) rebranded from Mesos DC/OS meta clusters
+* OKD = <a href="#OpenShift">OpenShift</a> (Red Hat) Enterprise platform as a service (PaaS) Origin community distribution
+* PKS = VMWare Tanzu purchase of Pivotal, Heptio (Joe Bada, Craig McLukie), merphe from PCS
+* RKE = Rancher 
+* Canonical
+
+* Rackspace's Kubernetes as a Service
 
 
 <a name="Helm"></a>
@@ -1808,51 +2189,24 @@ quickly create an OpenFaaS (Serverless) cluster</a>:
    </pre>
 </ul>
 
+Videos:
 
-
-## Microsoft Draft
-
-Microsoft created <a target="_blank" href="https://github.com/Azure/draft">Draft</a> (like Scaffold) to simplify getting started in Azure to <a target="_blank" href="https://github.com/PatrickLang/fabrikamfiber/tree/helm-2019-mssql-linux">lift-and-shift</a> Windows ASP.NET apps. It has two commands:
-
-<ul><pre><strong>
-   draft create  # helm chart and Dockerfile
-   draft up      # deploy</strong></pre>
-</ul>
-
-Draft uses language packs for Ruby, C# .NET Core 2.2 with Windows packs, authenticated to Azure Container Registry (ACR) and AKS.
-
-
-
-<a target="_blank" href="https://www.ibm.com/blogs/bluemix/2018/06/deploy-scalable-web-application-kubernetes-using-helm/">
+   * <a target="_blank" href="https://www.youtube.com/channel/UCdngmbVKX1Tgre699-XLlUA&t=1h24m24s">
+Helm Explained by "Nana's TechWorld"</a>
+   * <a target="_blank" href="https://www.ibm.com/blogs/bluemix/2018/06/deploy-scalable-web-application-kubernetes-using-helm/">
 IBM: Deploy a scalable web application to Kubernetes using Helm</a>
-
-
-
-<a name="Namespaces"></a>
-
-<a target="_blank" href="https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12039436">Klab</a>:
-Nodes are managed together as a <strong>namespace</strong>.
-
-Kubernetes can manage several namespaces running in each <strong>cluster</strong>. 
-
-   "The primary grouping concept in Kubernetes is the namespace. Namespaces are also a way to divide cluster resources between multiple uses. That being said, there is no security between namespaces in Kubernetes; if you are a "user" in a Kubernetes cluster, you can see _all_ the different namespaces and the resources defined in them." -- from the book: OpenShift for Developers, A Guide for Impatient Beginners by Grant Shipley and Graham Dumpleton.
-
-### OpenShift project wall namespaces
-
-Red Hat's OpenShift product adds <strong>Projects</strong> as "walls" between namespaces, ensuring that users or applications can only see and access what they are allowed to. OpenShift projects wrap a namespace by adding security annotations which control access to that namespace. Access is controlled through an authentication and authorization model based on users and groups. 
-
-   <a target="_blank" href="https://docs.openshift.com/enterprise/3.2/architecture/core_concepts/routes.html">
-   This diagram</a> illustrates what OpenShift adds: 
-   ![kubernetes-openshift-502x375-107638](https://user-images.githubusercontent.com/300046/42333404-e3f5953a-8037-11e8-9691-0172a8a96388.jpg)
 
 
 <a name="OpenShift"></a>
 
-#### OpenShift routes to services
+### OpenShift routes to services
 
    OpenShift's Router is instead a HAProxy container (taking the place of NGINX).
 
-   ![k8s-openshift-projects-461x277-64498](https://user-images.githubusercontent.com/300046/42337120-f421563c-8042-11e8-9d2b-d19615b4da0c.jpg)
+   HAProxy uses a <a target="_blank" href="http://searchnetworking.techtarget.com/definition/VRRP">VRRP (Virtual Router Redundancy Protocol)</a> automatically assigns available Internet Protocol routers to participating hosts.
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/42337120-f421563c-8042-11e8-9d2b-d19615b4da0c.jpg">
+   <img alt="k8s-openshift-projects-461x277-64498.jpg" width="461" height="277" src="https://user-images.githubusercontent.com/300046/42337120-f421563c-8042-11e8-9d2b-d19615b4da0c.jpg"></a>
 
 Services can be referenced by external clients using a host name such as "hello-svc.mycorp.com" by using
 OpenShift Enterprise, which uses <strong>routes</strong> that define the rules the HAProxy applies to incoming connections.
@@ -1905,6 +2259,27 @@ PROTIP: To list clusters and switch between them, consider brew installing utili
 kube-ps1.sh creates a shell pod envbin.
 
 
+<a name="MS-Draft"></a>
+
+### Microsoft Draft
+
+Microsoft created <a target="_blank" href="https://github.com/Azure/draft">Draft</a> (like Scaffold) to simplify getting started in Azure to <a target="_blank" href="https://github.com/PatrickLang/fabrikamfiber/tree/helm-2019-mssql-linux">lift-and-shift</a> Windows ASP.NET apps. It has two commands:
+
+<ul><pre><strong>
+   draft create  # helm chart and Dockerfile
+   draft up      # deploy</strong></pre>
+</ul>
+
+Draft uses language packs for Ruby, C# .NET Core 2.2 with Windows packs, authenticated to Azure Container Registry (ACR) and AKS.
+
+
+
+
+
+
+<hr />
+
+
 <a name="K8s_API"></a>
 <a name="Workloads"></a>
 <a name="Metadata"></a>
@@ -1931,15 +2306,7 @@ kubectl api-??? | grep ???
 
 The aggregation layer lets you install additional Kubernetes-style APIs in your cluster.
 
-ConfigMap is an API object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume.
-
-<a name="yaml-files"></a>
-
-### yaml file Kinds
-
-The kinds of yaml files:
-
-???
+ConfigMap is an API object used to store non-confidential data in key-value pairs. Pods can consume <a href="#ConfigMaps">ConfigMaps</a> as environment variables, command-line arguments, or as configuration files in a volume.
 
 
 <a name="Deployments"></a>
@@ -1954,15 +2321,19 @@ A Deployment is an API object that manages a replicated application, typically b
    * hello-canary.yaml
    * hello.yaml
 
-1. Create deployment of 3 pods:
+1. Create a yaml file from a command to deploy 3 replica pods:
 
-   kubectl create deployment nginx-lab8 --image=nginx --replicas=3 --dry-run=client -o yaml > lab8.yaml
+   <pre><strong>kubectl create deployment nginx-lab8 --image=nginx --replicas=3 --dry-run=client -o yaml > lab8.yaml
+   </strong></pre>
 
 
-1. To delete
+1. To delete a deployment:
 
    <pre>kubectl delete deployments.app pod mydep ???</pre>
 
+
+
+<a name="Pods"></a>
 
 ### Pods
 
@@ -2011,37 +2382,6 @@ A Deployment is an API object that manages a replicated application, typically b
 1. Deleting a DaemonSet removes the pods it manages.
 
 
-<a name="Services"></a>
-
-### Services
-
-Services provide an un-changing IP address to pods in the back-end.
-
-Internal services are only reachable within a cluster.
-
-External services are exposed by end-points (NodePoints)
-
-
-   <pre>kubectl create -f 2.1-web_service.yaml
-kubectl get services
-kubectl describe service webserver  # copy IP: value 10.108.171.76
-kubectl describe nodes | grep -i address -A 1
-curl 10.0.0.100:3#### (replace #### with the actual port digits)
-   </pre>
-
-
-Examples:
-
-   * auth.yaml
-   * frontend.yaml
-   * hello-blue.yaml
-   * hello-green.yaml
-   * hello.yaml
-   * monolith.yaml
-   <br /><br />
-
-https://ravikirans.com/cks-kubernetes-security-exam-study-guide/
-
 <hr />
 
 <a name="#k8s_clouds"></a>
@@ -2054,7 +2394,7 @@ Being open-source has enabled Kubernetes to flourish on several clouds<a target=
 
 <a href="#GKE">Google Kubernetes Engine (GKE)</a> is a container management SaaS product.
 GKE runs within the Google Compute Platform (GCP) on top of Google Compute Engine providing machines.
-GKE in GCP integration covers networking and VPC, monitoring, logging, and CI/CD.
+GKE in GCP integration provides networking with VPC, monitoring, logging, and CI/CD.
 
    ![k8s-gcp-738x314-14535](https://user-images.githubusercontent.com/300046/42350579-5b4fd060-806e-11e8-8bc4-f88cf32f8bc7.jpg)
 
@@ -2202,7 +2542,8 @@ EKS makes use of <a target="_blank" href="https://aws.amazon.com/fargate/">AWS F
 
    See <a target="_blank" href="https://www.youtube.com/watch?v=NRZ6N4e-Mko">Container Orchestration Wars (2017)</a> at the Velocity Conf 19 Jun 2017 by Karl Isenberg (@karlfi) of Mesosphere
 
-* Hashicorp <a target="_blank" href="https://www.nomadproject.io/intro/index.html">Nomad</a>.
+* Hashicorp <a target="_blank" href="https://www.nomadproject.io/intro/index.html">Nomad</a>
+   is a lighter-weight orchestrator, not just for containers.
 
 * Red Hat (which IBM bought in 2018) offers its <strong>OpenShift</strong> to enable Docker and Kubernetes for the enterprise by adding external host names (projects) that add role-based security around <a href="#Namespaces">namespaces</a>. OpenStack enables running of k8s containers in other clouds or within private data centers.
 
@@ -2216,11 +2557,53 @@ EKS makes use of <a target="_blank" href="https://aws.amazon.com/fargate/">AWS F
 
 <hr />
 
+<a name="Nodes"></a>
+
+## Nodes
+
+
+<a name="Kubelet"></a>
+
+Each node has a <a href="#Kublet">kubelet</a>, container tooling (Docker), <a href="#kube-proxy">kube-proxy</a>, supervisord.
+
+
+<a name="kube-proxy"></a>
+
+kube-proxy <strong>watches</strong> the <a href="#API_Server">API server</a> for addition and removal requests.
+For each new service, kube-proxy opens a randomly chosen port on the local node.
+It then makes proxied connections to one of the corresponding back-end pods.
+
+The "proxy" in kube-proxy means that it can do simple network stream or round-robin forwarding across a set of backends.
+
+Three modes:
+
+   * User space mode
+   * Iptables mode
+   * Ipvs mode (alpha as of v1.8)
+
+
 <a name="Kublet"></a>
 
 ## Kublet
 
 A Kublet agent program is automatically installed in each node created.
+
+Kubelet only manages containers created by the <a href="#API_Server">API server</a> - not any container running on the node.
+
+Kublet communicates with the <a href="#API-server">API server</a> to see if pods have been assigned to nodes.
+
+Kubelet takes a set of <a href="#Podspecs">Podspecs</a> provided bythe kube-apiserver to ensure that containers described are running and healthy.
+
+Kubelet mounts and runs pod  <a href="#Volumes">volumes</a> and <a href="#Secrets">secrets</a>.
+
+   Image pull secrets authenticates with private container registries.
+
+Kubelet executes health checks to identify pod/node status.
+
+   Service accounts can also store image pull secrets.
+
+
+
 
 <a name="ControlPlane"></a>
 
@@ -2379,6 +2762,8 @@ The Node controller uses built-in taints to specify conditions: "network-unavail
 
    EndpointSlice groups network endpoints together with Kubernetes resources.
 
+
+
 <a name="Controllers"></a>
    
 ### Node Controllers and Ingress
@@ -2431,8 +2816,7 @@ root      9735     1  3 Oct07 ?        00:54:09 /usr/bin/kubelet --bootstrap-kub
 
    sudo less /etc/cni/net.d/calico-kubeconfig
 
-zzz
-
+   </pre>
 
 
 <a name="cAdvisor"></a>
@@ -2446,23 +2830,7 @@ zzz
 
 <hr />
 
-<a name="Topics"></a>
-
-## Topics
-
-* <a href="#IAC">Infrastructure as code</a>
-* Manage containers
-* Naming and discovery
-* Mounting storage systems
-* Balancing loads
-* Rolling updates
-* Distributing secrets/config
-* Checking application health
-* Monitoring resources
-* Accessing and ingesting logs
-* Replicating application instances
-* Horizontal autoscaling
-* Debugging applications
+<a name="yaml-files"></a>
 
 Containers are declared by yaml such as this to run Alphine Linux Docker container:
 
@@ -2492,32 +2860,11 @@ Other command:
     </pre>
 
 
+<hr />
 
-<a name="RaspPi"></a>
+<a name="Nodes"></a>
 
-### Raspberry Pi
-
-Read how the legendary Scott Hanselman <a target="_blank" href="https://www.hanselman.com/blog/HowToBuildAKubernetesClusterWithARMRaspberryPiThenRunNETCoreOnOpenFaas.aspx"> 
-built Kubernetes on 6 Raspberry Pi nodes</a>, each with a 32GB SD card to a 1GB RAM ARM chip (like on smartphones).
-
-<a target="_blank" href="https://www.hanselminutes.com/612/serverless-and-openfaas-with-alex-ellis">
-Hansel talked with</a>
-<a target="_blank" href="https://www.alexellis.io/">Alex Ellis</a> (<a target="_blank" href="https://twitter.com/alexellisuk/">@alexellisuk</a>)
-keeps his <a target="_blank" href="https://gist.github.com/alexellis/fdbc90de7691a1b9edb545c17da2d975#file-prep-sh">
-instructions with shell file</a> updated for <a target="_blank" href="https://blog.alexellis.io/serverless-kubernetes-on-raspberry-pi/">running on the Pis</a> to install <a target="_blank" href="https://openfaas.com/">OpenFaaS</a>.
-
-CNCF Ambassador Chris Short developed the
-<a target="_blank" href="https://rak8s.io/"> rak8s (pronounced rackets) library</a> to 
-<a target="_blank" href="https://chrisshort.net/my-raspberry-pi-kubernetes-cluster/">make use of Ansible</a>.
-
-Others:
-   * https://blog.hypriot.com/getting-started-with-docker-on-your-arm-device/
-   * https://blog.sicara.com/build-own-cloud-kubernetes-raspberry-pi-9e5a98741b49
-
-<a name="Architecture"></a>
-
-
-### Architecture diagram
+### Nodes Architecture diagram
 
 <a target="_blank" href="https://translate.google.com/translate?hl=en&sl=ko&tl=en&u=http%3A%2F%2Fwww.yongbok.net%2Fblog%2F">
 Yongbok Kim (who writes in Korean)</a> <a target="_blank" href="https://cdn.yongbok.net/ruo91/architecture/k8s/v1.1/kubernetes_architecture.png">posted (on Jan 24, 2016)</a> a master map of how all the pieces relate to each other:<br />
@@ -2525,7 +2872,11 @@ Yongbok Kim (who writes in Korean)</a> <a target="_blank" href="https://cdn.yong
 <a target="_blank" title="k8s_details-ruo91-2071x2645.png" href="https://user-images.githubusercontent.com/300046/33525160-4dc5931a-d7e7-11e7-8b83-9e373fc5ac7d.png">
 <img alt="k8s_details-ruo91-350x448.jpg" src="https://user-images.githubusercontent.com/300046/33525167-7a5d3b9e-d7e7-11e7-8dd6-99694dc31782.jpg"></a>
 
-BTW What are now called "nodes" were previously called minions. Apparently Google namers forgot about the existance of NodeJs, which refers to nodes differently.
+BTW What are now called <a href="#Nodes">nodes</a> were previously called "minions", perhaps in deference to NodeJs, which refers to nodes differently.
+
+<a target="_blank" href="https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12039436">Klab</a>:
+Nodes are managed together within each namespace.
+
 
 <a name="TestingK8s"></a>
 
@@ -2741,7 +3092,7 @@ configmap "kube-flannel.cfg" created
 daemonset "kube-flannel.ds" created
    </pre>
 
-   configmaps in cfg files are used to define <strong>environment variables</strong>.
+   <a href="#ConfigMaps">ConfigMaps</a> in cfg files are used to define <strong>environment variables</strong>.
 
 1. List pods created:
 
@@ -2894,30 +3245,12 @@ daemonset "kube-flannel.ds" created
 
 ## Container Storage Interface (CSI)
 
-   <a name="PVC"></a>
 
-### Volumes
-   
-   Containers also share attached data <strong>volumes</strong> available within each Pod.
+<a name="ConfigMaps"></a>
 
-   <a href="#kubelet">Kubelet agents</a>
+## Configmap
 
-   HAProxy
-   VRRP (Virtual Router Redundancy Protocol)
-   http://searchnetworking.techtarget.com/definition/VRRP
-   automatically assigns available Internet Protocol routers to participating hosts.
-
-   A Persistent Volume (PV) is a provisioned block of storage for use by the cluster. 
-
-   A Persistent Volume Claim (PVC) is a request for that storage by a user, and once granted, is 
-   used as a "claim check" for 
-
-   Recycling policies are Retain (keep the contents) and Recycle (Scrub the contents).
-
-
-<a name="ConfigMap"></a>
-
-## configmap
+<a href="https://www.youtube.com/watch?v=X48VuDVv0do&t=2h51m42s">VIDEO: Nana</a>
 
 Use ConfigMaps as environment variables or using a volume mount in a specific namespace.
 
@@ -2929,7 +3262,7 @@ Use ConfigMaps as environment variables or using a volume mount in a specific na
         key: special.how
 </pre>
 
-A pod manifest uses the valueFrom key and the configMapKeyRef value to read the values:
+Within a pod manifest, <tt>valueFrom</tt> key and the configMapKeyRef value to read the values:
 
 <pre>volumes:
   - name: config-volume
@@ -2938,17 +3271,249 @@ A pod manifest uses the valueFrom key and the configMapKeyRef value to read the 
 </pre>
 
 
-## Activities
 
-1. To drain a node out of service temporarily for maintenance:
+<hr />
 
-   <pre>kubectl drain node3.mylabserver.com --ignore-daemonsets</pre>
 
-   ### DaemonSets
+<a name="Volumes"></a>
+
+<a target="_blank" href="https://www.youtube.com/channel/UCdngmbVKX1Tgre699-XLlUA&t=2h38m07s">VIDEO: from "Nana's TechWorld"</a>
+
+### Volumes
+   
+   Docker Containers share attached data <strong>volumes</strong> available within each Pod:
+
+   REMEMBER: Local Volumes defined in pods disappear when the pod dies.
+
+   Sample pod yaml definining the volumes mounted within its containers:
+
+   <pre>apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  containers:
+    - name: myfrontend
+    image: nginx
+    volumeMounts:
+    - mountPath: "/var/www/html"
+      name: mypd
+  volumes:
+    - name: mypd
+      persistentVolumeClaim:
+        claimName: pvc-name
+   </pre>
+
+
+   For a elastic-app, define several volume types in a container referencing PVC names in awsElasticBlockStore:
+
+   <pre>spec:
+  containers:
+  - image: elastic:latest
+    name: elastic-container
+    ports:
+    - containerPort: 9200
+    volumeMounts:
+    - name: es-persistent-storage
+      mountPath: /var/lib/data
+    - name: es-secret-dir
+      mountPath: /var/lib/secret
+    - name: es-config-dir
+      mountPath: /var/lib/config
+  volumes:
+  - name: es-persistent-storage
+    persistentVolumeClain:
+      claimName: es-pv-claim
+  - name: es-secret-dir
+    secret:
+      secretName: es-secret
+  - name: es-config-dir
+    configMap:
+      name: es-config-map
+   </pre>
+
+
+<a name="PersistentVolume"></a>
+
+### Persistent Volume (PV)
+
+   PV's are a cluster resource, not to a specific _____.
+
+Admins create a Persistent Volume (PV) to provision blocks of storage (of specific Gigabit capacity sizes) for use within a specific cluster. 
+
+   PV's are like an external plugin to a cluster.
+
+   A complete list in kubernetes.io.
+
+
+   #### Locally to a single Node:
+
+   <pre>apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-pv
+spec:
+  capacity:
+    storage: 100 Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-storage
+  local:
+    path: /mnt/disks/ssd1
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - example-node
+   </pre>
+
+   <tt>persistentVolumeReclaimPolicy</tt> (Recycling) policies are:
+   * Delete
+   * <strong>Retain</strong> (keep the contents) 
+   * <strong>Recycle</strong> (Scrub the contents).
+   <br /><br />
+
+   #### For a NFS (Network File System):
+
+   <pre>apiVersion: v1
+kind: PersistentVolume
+metadata:
+  pv-name
+spec:
+  capacity:
+    storage: 5 Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: slow
+  mountOptions:
+    - hard
+    - nfsvers=4.0
+  nfs:
+    path: /dir/path/on/nfs/server
+    server: nfs-server-ip-address
+   </pre>
+
+
+   On a Google Cloud ext4 type volume:
+
+   <pre>apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: google-cloud-volume
+  labels:
+    failure-domain.beta.kubernetes.io/zone: us-central1-a__us-central1-b
+spec:
+  capacity:
+    storage: 400 Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  gcePersistantDisk:
+    pdName: my-data-disk
+    fsType: ext4
+   </pre>
+
+
+<a name="StorageClasses"></a>
+
+## Storage Classes
+
+Create persistent volumes dynamically:
+
+   <pre>apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: storage-class-name
+provisioner: kubernetes.io/aws-ebs
+parameters:
+  type: io1
+  iopsPerGB: "10"
+  fsType: ext4
+   </pre>
+
+   REMEMBER: <tt>name: storage-class-name</tt> must match <a href="#PVC">PVC config</a> <tt>storageClassName: storage-class-name</tt>
+
+
+<a name="PVC"></a>
+
+### Persistant Volume Claim
+
+   A Persistent Volume Claim (PVC) is a request for that storage by a user.
+
+   Once granted, a PVC is used as a "claim check" for the storage.
+
+   <pre>apiVersin: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-name
+spec:
+  storageClassName: manual
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: storage-class-name
+   </pre>
+
+   REMEMBER: The <tt>metadata: name:</tt> in the PVC definition needs to match the Pod's <tt>claimName: pvc-name</tt>.
+
+   Kubernetes tries to find a PV that matches the <tt>capacity: 10Gi</tt> with a compatible persistent volume in the cluster.
+
+   REMEMBER: <tt>name: storage-class-name</tt> in pod definition must match <a href="#PVC">PVC config</a> <tt>storageClassName: storage-class-name</tt>
+
+
+<hr />
+
+<a name="StatefulSets"></a>
+
+## Deploy StatefulSet components
+
+<a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&t=2h58m38s">VIDEO</a>
+
+Stateless apps don't keep a record of state (such as shopping cart items).
+Each request is completely new, without regard for what activity occured before.
+So they can be defined using deployment components.
+   * Data passes through NodeJs.
+   * Pods are identical and interchangeable, 
+   * Standard Pods have the same service name.
+   * Pods created in random order with random <a href="#Hashes">hashes</a>.
+   <br /><br />
+
+Each Stateful app (such as mysql-app) that stores data (updates a database such as MongoDB) about the state of each transaction
+are defined using Kubernetes StatefulSets (STS) components:
+   * Previous State Data (in data replicas) is queried and updated depending on the data state
+   * STS Pods are NOT identical. Each pods has a <strong>sticky identity</strong>, .{governing service domain}
+   * STS Pods have individual service names, not interchangeable
+   * STS Pods are created in sequence, after success of each Pod, based on a persistent individual identify
+   <br /><br />
+
+Add pods can read. But only Master pods can write.
+
+To ensure each Pod maintains the latest state in local storage, 
+<strong>continuous data sync</strong> occurs from master to slaves.
+
+
+
+
+<a name="DaemonSets"></a>
+
+## DaemonSets
 
    daemonsets (ds) 
 
    Usually for system services or other pods that need to physically reside on every node in the cluster, such as for network services. They can also be deployed only to certain nodes using labels and node selectors.
+
+1. To drain a node out of service temporarily for maintenance:
+
+   <pre>kubectl drain node3.mylabserver.com --ignore-daemonsets</pre>
 
 1. To return to service:
 
@@ -3271,7 +3836,7 @@ spec:
 
 <a name="DeploymentYml"></a>
 
-### Deploy yml
+### Deploy yml Deployment
 
 The `deploy.yml` defines the deploy:
 
@@ -3349,6 +3914,20 @@ spec:
 1. Backout the revision:
 
    <pre>kubectl rollout undo deployment/nginx-deployment --to-revision=2</pre>
+
+
+
+   <a name="Rollbacks"></a>
+
+   ### Record Rollback history
+
+   `--record=true`  # to save rollback history obtained by:
+
+   <pre>k rollout history deployment/some-deployment</pre>
+
+1. <strong>Undo</strong> rollout (rollback):
+
+   <pre>k rollout undo deployment/my-deployment --revision=v1.2</pre>
 
 
 <a name="SecurityContext"></a>
@@ -3726,6 +4305,8 @@ sealed secrets:
 
 <a name="Debugging"></a>
 
+## Debugging
+
 K8s does not come with debuggers. Output to logs, then use tracing. Printlines.
 
 <a target="_blank" href="https://datadoghq.com/">DatadogHQ.com</a> for metrics & traces
@@ -3757,11 +4338,48 @@ References:
 * <a target="_blank" href="https://www.youtube.com/watch?v=3RTvoI-A7UQ">VIDEO: Kubernetes and Container Orchestration 101 - Computer Stuff They Didn't Teach You #11</a> by Microsoft legend Scott Hanselman.
 
 
+
+
+<a name="RaspPi"></a>
+
+### K8s on Raspberry Pi
+
+Read how the legendary Scott Hanselman <a target="_blank" href="https://www.hanselman.com/blog/HowToBuildAKubernetesClusterWithARMRaspberryPiThenRunNETCoreOnOpenFaas.aspx"> 
+built Kubernetes on 6 Raspberry Pi nodes</a>, each with a 32GB SD card to a 1GB RAM ARM chip (like on smartphones).
+
+<a target="_blank" href="https://www.hanselminutes.com/612/serverless-and-openfaas-with-alex-ellis">
+Hansel talked with</a>
+<a target="_blank" href="https://www.alexellis.io/">Alex Ellis</a> (<a target="_blank" href="https://twitter.com/alexellisuk/">@alexellisuk</a>)
+keeps his <a target="_blank" href="https://gist.github.com/alexellis/fdbc90de7691a1b9edb545c17da2d975#file-prep-sh">
+instructions with shell file</a> updated for <a target="_blank" href="https://blog.alexellis.io/serverless-kubernetes-on-raspberry-pi/">running on the Pis</a> to install <a target="_blank" href="https://openfaas.com/">OpenFaaS</a>.
+
+CNCF Ambassador Chris Short developed the
+<a target="_blank" href="https://rak8s.io/"> rak8s (pronounced rackets) library</a> to 
+<a target="_blank" href="https://chrisshort.net/my-raspberry-pi-kubernetes-cluster/">make use of Ansible</a>.
+
+Others:
+   * https://blog.hypriot.com/getting-started-with-docker-on-your-arm-device/
+   * https://blog.sicara.com/build-own-cloud-kubernetes-raspberry-pi-9e5a98741b49
+
+
+<hr />
+
 ## Blogs
 
 * <a target="_blank" href="https://www.linkedin.com/pulse/from-zero-ckad-30-days-pranam-mohanty/">From zero to CKAD in 30 days</a> August 9, 2020 by Pranam Mohanty
 
 https://lnkd.in/f3BciG5
+
+Sandeep Dinesh (@sandeepdinesh) from 2018
+   * https://medium.com/google-cloud/kubernetes-best-practices-season-one-11119aee1d10
+   * https://www.youtube.com/playlist?list=PLIivdWyY5sqL3xfXz5xJvwzFW_tlQB_GB
+   <br /><br />
+
+<a target="_blank" href="https://searchitoperations.techtarget.com/news/252492344/Observability-standards-emerge-as-Kubernetes-matures">
+Observability</a>
+
+<a target="_blank" href="https://www.ibm.com/cloud/architecture/content/course/kubernetes-101/deployments-replica-sets-and-pods/">
+IBM's Kubernetes 101</a>
 
 
 ## More on DevOps #
