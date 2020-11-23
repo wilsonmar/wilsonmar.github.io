@@ -24,9 +24,28 @@ I hope to make this complex material easier to understand quickly.
 The aim here is to provide insightful commentary around carefully sequenced hands-on activities automated in a shell script
 -- an immersive step-by-step "deep dive" tutorial aimed to make you productive.
 
-I'm restructuring this so that revelations about architecture components and flows are based on yaml and what commands reveal rather than as trivia to be memorized.
+WARNING: I'm restructuring this so that revelations about architecture components and flows are based on yaml and what commands reveal rather than as trivia to be memorized.
 
 NOTE: This article is now a "starter set" actively undergoing additions.
+
+<a name="Topics"></a>
+
+## Topics
+
+* <a href="#IAC">Infrastructure as code</a> (IAC)
+* Manage containers
+* Naming and discovery
+* Mounting storage systems
+* Balancing loads
+* Rolling updates
+* Distributing secrets/config
+* Checking application health
+* Monitoring resources
+* Accessing and ingesting logs
+* Replicating application instances
+* Horizontal autoscaling
+* Debugging applications
+
 
 ## Keyword Index Alphabetically
 
@@ -115,25 +134,6 @@ health checks,
    <br /><br />
 
 
-<a name="Topics"></a>
-
-## Topics
-
-* <a href="#IAC">Infrastructure as code</a>
-* Manage containers
-* Naming and discovery
-* Mounting storage systems
-* Balancing loads
-* Rolling updates
-* Distributing secrets/config
-* Checking application health
-* Monitoring resources
-* Accessing and ingesting logs
-* Replicating application instances
-* Horizontal autoscaling
-* Debugging applications
-
-
 <hr />
 
 ## Why Kubernetes?
@@ -205,7 +205,7 @@ Kubernetes automates resilience by abstacting the network and storage shared by 
 
 Kubernetes replicates Pods (the same set of containers in each) across several worker <strong>Nodes</strong> (VM or physical machines).
 
-> K8s supports up to 5,000 node clusters of up to 150,000 pods (at v1.17). Production setups have at least 3 nodes per cluster.
+> Production setups have at least 3 nodes per cluster. K8s supports up to 5,000 node clusters of up to 150,000 pods (at v1.17).
 
 Each set of pods are within a <strong>node</strong>.
 Kubernetes assigns each node with a different <strong>external IP address</strong>.
@@ -2716,7 +2716,7 @@ The Node controller uses built-in taints to specify conditions: "network-unavail
    
    NOTE: Tolerations are one of a few PodSpec items which can be edited while active, along with containers[*].image, initContainers[*].image, and activeDeadlineSeconds.
 
-   <pre><strong>kubectl edit pod <em>pod name</em></strong></pod>
+   <pre><strong>kubectl edit pod <em>pod name</em></strong></pre>
 
    If attempt fails, the file is saved to <tt>/tmp/kubectl-edit-ccvrq.yaml</tt>
 
