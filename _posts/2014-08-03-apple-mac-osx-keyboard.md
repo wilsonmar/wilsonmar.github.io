@@ -60,6 +60,8 @@ Although pricey at <a target="_blank" href="https://www.amazon.com/Kinesis-Advan
 makes it easier and faster for your fingers to reach keys due to its unique contoured key wells.
 Its keys in the middle transfer more work to thumbs than conventional square keyboards.
 
+![keyboard-kinesis-557x455](https://user-images.githubusercontent.com/300046/99932329-e5a00f00-2d14-11eb-8a1d-3a3cb5ee3722.png)
+
 A <a target="_blank" href="https://www.youtube.com/watch?v=psC3ysre2RMhdn2VvdJWbs">Ergonomics shop TheHumanSolution.com</a>
 note the slant of keys enables <a target="_blank" href="https://www.youtube.com/watch?v=psC3ysre2RM&t=9m44s" title="Jun 24, 2020">natural (rather than bent) wrist placement</a> that prevents repetitive motion injury causing career-ending pain in wrists and shoulders.
 
