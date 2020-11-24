@@ -66,7 +66,7 @@ Auto-scaling,
 Discovery,
 <a href="#DaemonSets"><strong>ds</strong>=DaemonSets</a>,
 <a href="#Deployments">deployment/</a>,
-ep=endpoints,
+<strong>ep</strong>=endpoints,
 <a href="#Envars">Environment Variables</a>,
 <a href="#Hashes">hashes</a>,
 health checks,
@@ -81,26 +81,25 @@ health checks,
 <a href="#LoadBalancer">LoadBalancer</a>, 
 <a href="#Logging">Logging</a>,
 <a href="#Metadata">Metadata</a>,
-<a href="#Namespaces">ns=Namespaces</a>, 
+<a href="#Namespaces"><strong>ns</strong>=Namespaces</a>, 
 <a href="#Nodes"><strong>no</strong>=Nodes</a>,
 <a href="#NodePort">NodePort</a>,
 <a href="#OpenShift">OpenShift</a>,
-<a href="#Podspecs">Podspecs</a>,
-<a href="#Pods">Pods</a>, 
-<a href="#PVC">PVC</a>,
-<a href="#ReadinessProbes">Readiness Probes</a>, 
-<a href="#LivenessProbes">Liveness Probes</a>, 
 <a href="#Pods"><strong>po</strong>=Pods</a>, 
+<a href="#Podspecs">Podspecs</a>,
+mi<a href="#ReadinessProbes">Readiness Probes</a>, 
+<a href="#LivenessProbes">Liveness Probes</a>, 
 <a href="#Probes">Probes</a>, 
 <a href="#PersistentVolumes">Persistent Volumes</a>,
 <a href="#PortForwarding">Port Forwarding</a>,
+<a href="#PVC">PVC</a>,
 <a href="#Replication">Replication</a>,
 <a href="#ReplicaSets"><strong>rs</strong>=ReplicaSets</a>,
 <a href="#Rollbacks">Rollbacks</a>,
 <a href="#RollingUpdates">Rolling Updates</a>,
 <a href="#Secrets">Secrets</a>,
 <a href="#Selectors">Selectors</a>, 
-<a href="#Services">svc=Services</a>,
+<a href="#Services"><strong>svc</strong>=Services</a>,
 <a href="#ServiceAccounts"><strong>sa</strong>=ServiceAccounts</a>,
 <a href="#Services">Service Discovery</a>,
 <a href="#StatefulSets"><strong>sts</strong>=StatefulSets</a>,
@@ -109,30 +108,6 @@ health checks,
 <a href="#Tolerations">Tolerations</a>,
 <a href="#Volumes">Volumes</a>,
 <a href="#Workloads">Workloads API</a>
-
-
-<a target="_blank" href="https://kubernetesbyexample.com/">https://kubernetesbyexample.com</a>:
-
-   * <a target="_blank" href="https://kubernetesbyexample.com//api/">API Server</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//deployments/">Deployments</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//envs/">Environment Variables</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//healthz/">Health Checks</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//ic/">Init Containers</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//jobs/">Jobs</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//labels/">Labels</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//logging/">Logging</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//ns/">Namespaces</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//nodes/">Nodes</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//pods/">Pods</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//pv/">Persistent Volumes</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//pf/">Port Forward</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//secrets/">Secrets</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//services/">Services</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//sd/">Service Discovery</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//statefulset/">Stateful Sets</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//volumes/">Volumes</a>
-   <br /><br />
-
 
 <hr />
 
@@ -381,11 +356,19 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 
 4. Find dates and times when you're in a quiet private indoor place where no one else (co-workers) are near.
 
+   Select a date when your mental and physical are in peak Biorythm
+
+4. Open a <strong>Chrome browser</strong>.
 4. Use your Linux Foundation credentials to create an account at 
 
    <a target="_blank" href="https://www.examslocal.com/">examslocal.com</a>.
 
+1. Select the date, your time zone. The website is incredibly slow.
+1. Click the date again in orange. Click the time range.
+
 1. <a target="_blank" href="https://chrome.google.com/webstore/detail/innovative-exams-screensh/dkbjhjljfaagngbdhomnlcheiiangfle/related">Install the Chrome extension</a> used to take exams, verified during exam scheduling.
+
+   Click the green "I agree", then "Confirm Reservation".
 
 1. Pick a date when your Biorythms are positive on Intellectual and Physical, not hitting bottom or crossing from positive to negative:
 
@@ -586,6 +569,10 @@ Others:
 
 O'Reilly's <a target="_blank" href="https://learning.oreilly.com/live-training/courses/oreilly-infrastructure-ops-superstream-series/0636920410027/?utm_medium=email&utm_source=platform+b2b&utm_campaign=superstream&utm_content=20201022+reminder4+io+ev3"> Infrastructure & Ops Superstream Series: Session 3 Oct. 21, 2020: Kubernetes</a> 
 
+Interactive KataKoda lab on OReilly.com: <a target="_blank" href="https://learning.oreilly.com/scenarios/deploying-python-apis/9781492090465/">Deploying Python APIs on Kubernetes: Deploying a Development Kubernetes Cluster</a> 
+   using the K3s Kubernetes distribution from Rancher, a Certified Lightweight Kubernetes Distribution built for IoT and Edge remote ecomputing. It stores data using sqlite3 instead of etcd. It bootstrap script K3sup at https://github.com/alexellis/k3sup.
+
+
 @EllenKorbes: "Successful Kubernetes Development Workflows"
 
 <a target="_blank" href="https://www.linkedin.com/in/javajon/">Jonathan Johnson</a>'s live online training "Kubernetes in Three Weeks" courses through O'Reilly:
@@ -665,7 +652,11 @@ Ready-for.sh
    </pre>
 
 
-### Nina on Logging on Udemy
+<a name="Logging"></a>
+
+### Logging
+
+   * <a target="_blank" href="https://kubernetesbyexample.com//logging/">kubernetesbyexample.com: Logging</a>
 
 <a target="_blank" href="https://www.youtube.com/watch?v=3c-iBn73dDE&list=RDCMUCdngmbVKX1Tgre699-XLlUA&start_radio=1">Docker Tutorial for Beginners [Full Course in 3 Hours]</a>.
 
@@ -1452,6 +1443,7 @@ CMD ["--color", "red"]
 <a name="Namespaces"></a>
 
 <a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&t=1h46m19s">NinaK</a>:
+   * <a target="_blank" href="https://kubernetesbyexample.com//ns/">kubernetesbyexample.com: Namespaces</a>
 
 K8s namespaces are used to separate resources (network, files, users, processes, IPCs, etc.) into 
 <strong>virtual clusters</strong> inside a K8s cluster.
@@ -1591,6 +1583,9 @@ Red Hat's OpenShift product adds <strong>Projects as "walls" between namespaces<
    <a name="Pods"></a>
 
    ### Pod yaml
+
+   * <a target="_blank" href="https://kubernetesbyexample.com//pods/">kubernetesbyexample.com: Pods</a>
+
 
 1. For Kubernetes to establish a "naked" pod using the un-deprecated run command (use deployment instead):
 
@@ -1972,13 +1967,36 @@ https://ravikirans.com/cks-kubernetes-security-exam-study-guide</a>
    <pre><strong>kubectl get all | grep mongodb </strong></pre>
 
 
-<a name="LoadBalancer"></a>
+   <a name="LoadBalancer"></a>
 
-TODO: Configure
+   ### LoadBalancer
 
-   <pre><strong>kubectl get service</strong></pre>
+   One type of service is a LoadBalancer with a external IP extended from nodePort service which extends an ClusterIP :
 
-The LoadBalancer type service assigns an <strong>EXTERNAL-IP address</strong> which accepts external requests.
+   <pre>
+apiVersion: v1
+kind: Service
+metadata:
+  name: la-lb-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: la-lb
+  ports:
+  - protocol: TCP
+    port: 3200  # clusterIP
+    targetPort: 3000
+    nodePort: 30010
+  clusterIP: 10.0.171.223
+  loadBalancerIP: 78.12.23.17
+   </pre>
+
+   Notice static IP addresses are being specified here. Is that a good thing?
+
+
+   <pre><strong>k get svc</strong></pre>
+
+   The LoadBalancer type service assigns an <strong>EXTERNAL-IP address</strong> which accepts external requests.
 
 1. List the URL:
 
@@ -2016,6 +2034,9 @@ data:
 <a name="Jobs"></a>
 
 ### Jobs
+
+   * <a target="_blank" href="https://kubernetesbyexample.com//jobs/">kubernetesbyexample.com: Jobs</a>
+
 
 Batch jobs are supervisor processes that run once and immediately completed.
 
@@ -2313,6 +2334,9 @@ ConfigMap is an API object used to store non-confidential data in key-value pair
 
 ### Deployments
 
+   * <a target="_blank" href="https://kubernetesbyexample.com//deployments/">kubernetesbyexample.com: Deployments</a>
+
+
 A Deployment is an API object that manages a replicated application, typically by running Pods with no local state.
 
    * auth.yaml
@@ -2369,6 +2393,11 @@ A Deployment is an API object that manages a replicated application, typically b
    * TCPSocketAction checks against the container's IP address on a specified port
    * HTTPGetAction - HTTP Get request against container
 
+<a name="HealthChecks"></a>
+
+### Health Checks
+
+   * <a target="_blank" href="https://kubernetesbyexample.com//healthz/">kubernetesbyexample.com: Health Checks</a>
 
 
 <a name="DaemonSets"></a>
@@ -2561,6 +2590,8 @@ EKS makes use of <a target="_blank" href="https://aws.amazon.com/fargate/">AWS F
 
 ## Nodes
 
+   * <a target="_blank" href="https://kubernetesbyexample.com//nodes/">kubernetesbyexample.com: Nodes</a>
+
 
 <a name="Kubelet"></a>
 
@@ -2638,6 +2669,9 @@ There is a command with the same name used to obtain the <strong>version</strong
 <a name="API_Server"></a>
 
 ### API Server
+
+   * <a target="_blank" href="https://kubernetesbyexample.com//api/">kubernetesbyexample.com: API Server</a>
+
 
    The kubectl client communicates using REST API calls to an <strong>API Server</strong> 
    which handles authentication and authorization.
@@ -3272,6 +3306,10 @@ Within a pod manifest, <tt>valueFrom</tt> key and the configMapKeyRef value to r
 </pre>
 
 
+<a name="EnvironmentVariables"></a>
+
+   * <a target="_blank" href="https://kubernetesbyexample.com//envs/">kubernetesbyexample.com: Environment Variables</a>
+
 
 <hr />
 
@@ -3279,6 +3317,7 @@ Within a pod manifest, <tt>valueFrom</tt> key and the configMapKeyRef value to r
 <a name="Volumes"></a>
 
 <a target="_blank" href="https://www.youtube.com/channel/UCdngmbVKX1Tgre699-XLlUA&t=2h38m07s">VIDEO: from "Nana's TechWorld"</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//volumes/">kubernetesbyexample.com: Volumes</a>
 
 ### Volumes
    
@@ -3338,7 +3377,9 @@ spec:
 
 ### Persistent Volume (PV)
 
-   PV's are a cluster resource, not to a specific _____.
+   * <a target="_blank" href="https://kubernetesbyexample.com//pv/">kubernetesbyexample.com: Persistent Volumes</a>
+
+PV's are a cluster resource, not to a specific _____.
 
 Admins create a Persistent Volume (PV) to provision blocks of storage (of specific Gigabit capacity sizes) for use within a specific cluster. 
 
@@ -3478,6 +3519,7 @@ spec:
 ## Deploy StatefulSet components
 
 <a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&t=2h58m38s">VIDEO</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//statefulset/">kubernetesbyexample.com: Stateful Sets</a>
 
 Stateless apps don't keep a record of state (such as shopping cart items).
 Each request is completely new, without regard for what activity occured before.
@@ -3524,6 +3566,9 @@ To ensure each Pod maintains the latest state in local storage,
 <a name="micro-services"></a>
 
 ## Sample micro-service apps
+
+   * <a target="_blank" href="https://kubernetesbyexample.com//services/">kubernetesbyexample.com: Services</a>
+
 
 Bob Reselman's 3-day hands-on classes on Kubernetes makes use of <strong>bash scripts</strong> and sample app at <a target="_blank" href="https://github.com/reselbob/CoolWithKube">https://github.com/reselbob/CoolWithKube</a>
   
@@ -3785,24 +3830,7 @@ spec:
 
    PROTIP: The selector should match the pods.xml.
 
-   One type of service is load balancer within a cloud:
 
-   <pre>
-apiVersion: v1
-kind: Service
-metadata:
-  name: la-lb-service
-spec:
-  selector:
-    app: la-lb
-  ports:
-  - port: 80
-    protocol: TCP
-    targetPort: 9376
-  type: LoadBalancer
-  clusterIP: 10.0.171.223
-  loadBalancerIP: 78.12.23.17
-   </pre>
 
 0. To create services:
 
@@ -4285,6 +4313,8 @@ A cgroup (control group) is a group of Linux processes with optional resource is
 
 ### Secrets - custom controllers
 
+   * <a target="_blank" href="https://kubernetesbyexample.com//secrets/">kubernetesbyexample.com: Secrets</a>
+
 Pods consume <strong>static</strong> ConfigMaps and Secrets. 
 
 PROTIP: To monitor for changes apply updates to hash in PodSpec, then triggers changes:
@@ -4367,7 +4397,33 @@ Others:
 
 ## Blogs
 
-* <a target="_blank" href="https://www.linkedin.com/pulse/from-zero-ckad-30-days-pranam-mohanty/">From zero to CKAD in 30 days</a> August 9, 2020 by Pranam Mohanty
+<a target="_blank" href="https://kubernetesbyexample.com/">https://kubernetesbyexample.com</a> provides in-depth yet concise coverage, with sample code:
+
+   * <a target="_blank" href="https://kubernetesbyexample.com//api/">API Server</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//deployments/">Deployments</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//envs/">Environment Variables</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//healthz/">Health Checks</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//ic/">Init Containers</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//jobs/">Jobs</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//labels/">Labels</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//logging/">Logging</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//ns/">Namespaces</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//nodes/">Nodes</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//pods/">Pods</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//pv/">Persistent Volumes</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//pf/">Port Forward</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//secrets/">Secrets</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//services/">Services</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//sd/">Service Discovery</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//statefulset/">Stateful Sets</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//volumes/">Volumes</a>
+   <br /><br />
+
+<a target="_blank" href="https://www.ibm.com/cloud/architecture/content/course/kubernetes-101/deployments-replica-sets-and-pods/">
+IBM's Kubernetes 101</a> is an excellent overview.
+
+
+<a target="_blank" href="https://www.linkedin.com/pulse/from-zero-ckad-30-days-pranam-mohanty/">From zero to CKAD in 30 days</a> August 9, 2020 by Pranam Mohanty
 
 https://lnkd.in/f3BciG5
 
@@ -4379,8 +4435,7 @@ Sandeep Dinesh (@sandeepdinesh) from 2018
 <a target="_blank" href="https://searchitoperations.techtarget.com/news/252492344/Observability-standards-emerge-as-Kubernetes-matures">
 Observability</a>
 
-<a target="_blank" href="https://www.ibm.com/cloud/architecture/content/course/kubernetes-101/deployments-replica-sets-and-pods/">
-IBM's Kubernetes 101</a>
+
 
 
 ## More on DevOps #
