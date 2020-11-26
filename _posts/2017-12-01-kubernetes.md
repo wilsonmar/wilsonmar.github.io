@@ -323,7 +323,29 @@ sample Security yaml
 
 * https://github.com/ijelliti/CKSS-Certified-Kubernetes-Security-Specialist
 
-* https://k21academy.com/docker-kubernetes/certified-kubernetes-security-specialist-cks-step-by-step-activity-guide-hands-on-lab/
+#### K21Academy
+
+https://k21academy.com/docker-kubernetes/certified-kubernetes-security-specialist-cks-step-by-step-activity-guide-hands-on-lab/
+is normally $997, with a 60 day money-back guarantee.
+
+
+#### Whizlabs.com
+
+Known for their sample exams, $99/year on sale from $199 for all courses, by instructors from India.
+If you want faster video playback, you have to set it for every video. Annoying.
+
+* <a target="_blank" href="https://www.whizlabs.com/learn/course/certified-kubernetes-application-developer/">Certified Kubernetes Application Developer (CKAD)</a>
+[05:25:21]
+
+* <a target="_blank" href="https://www.whizlabs.com/learn/course/certified-kubernetes-administrator/">Certified Kubernetes Administrator(CKA)</a>
+[08:09:07]
+
+* <a target="_blank" href="https://www.whizlabs.com/learn/course/kubernetes/">* Learn Kubernetes with AWS And Docker</a>
+[04:01:16
+
+* <a target="_blank" href="https://www.whizlabs.com/learn/course/deploying-microservices-to-kubernetes-using-azure-devops/">Deploying Microservices to Kubernetes using Azure DevOps</a>
+[06:43:32]
+
 
 
 <hr />
@@ -571,6 +593,20 @@ O'Reilly's <a target="_blank" href="https://learning.oreilly.com/live-training/c
 
 Interactive KataKoda lab on OReilly.com: <a target="_blank" href="https://learning.oreilly.com/scenarios/deploying-python-apis/9781492090465/">Deploying Python APIs on Kubernetes: Deploying a Development Kubernetes Cluster</a> 
    using the K3s Kubernetes distribution from Rancher, a Certified Lightweight Kubernetes Distribution built for IoT and Edge remote ecomputing. It stores data using sqlite3 instead of etcd. It bootstrap script K3sup at https://github.com/alexellis/k3sup.
+
+Jonathan Johnson
+   * https://learning.oreilly.com/scenarios/kubernetes-pipelines-sonarqube/9781492078975/
+   Kubernetes Pipelines: SonarQube
+
+   * https://learning.oreilly.com/scenarios/kubernetes-pipelines-registries/9781492078951/
+   Kubernetes Pipelines: Registries
+
+   * https://learning.oreilly.com/scenarios/kubernetes-pipelines-tekton/9781492083900/
+   Kubernetes Pipelines: Tekton Pipelines
+
+   * https://learning.oreilly.com/scenarios/kubernetes-pipelines-python/9781492090182/
+   Kubernetes Pipelines: Python Pipeline to Kubernetes (using Tekton Pipelines to package Python in an efficient container)
+   Kaniko container
 
 
 @EllenKorbes: "Successful Kubernetes Development Workflows"
