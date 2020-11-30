@@ -916,10 +916,10 @@ New python executable in /Users/mac/gits/wilsonmar/shippable/one/bin/python
 Installing setuptools, pip, wheel...
   Complete output from command /Users/mac/gits/wils...pable/one/bin/python - setuptools pip wheel:
   Traceback (most recent call last):
-  File "<stdin>", line 4, in <module>
-  File "/Users/mac/miniconda2/lib/python2.7/tempfile.py", line 32, in <module>
+  File "&LT;stdin>", line 4, in &LT;module>
+  File "/Users/mac/miniconda2/lib/python2.7/tempfile.py", line 32, in &LT;module>
     import io as _io
-  File "/Users/mac/miniconda2/lib/python2.7/io.py", line 51, in <module>
+  File "/Users/mac/miniconda2/lib/python2.7/io.py", line 51, in &LT;module>
     import _io
 ImportError: dlopen(/Users/mac/gits/wilsonmar/shippable/one/lib/python2.7/lib-dynload/_io.so, 2): Symbol not found: __PyCodecInfo_GetIncrementalDecoder
   Referenced from: /Users/mac/gits/wilsonmar/shippable/one/lib/python2.7/lib-dynload/_io.so

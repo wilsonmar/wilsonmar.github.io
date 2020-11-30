@@ -3,7 +3,7 @@ layout: post
 title: "Apple Mac OSX Keyboard Shortcuts"
 excerpt: "Shortcuts and utilities"
 tags: [apple, mac, keyboard]
-date: "2014-08-03"
+date: "2020-11-22"
 file: "apple-mac-osx-keyboard"
 image:
 # feature: pic white keyboard british 1900x500.jpg
@@ -22,60 +22,115 @@ Many reference keys using symbols, so memorize this:
 
 This article provides an enhanced presentation of <a target="_blank" href="https://support.apple.com/en-us/HT201236">Apple's Keyboard Shortcuts at https://support.apple.com/en-us/HT201236</a>
 
-<a id="Gymnastics"></a>
+
+<a name="Gymnastics"></a>
 
 ## Full Screen Finger Gymnastics #
 
 Let's get right down to an often-used action invoked by a complicated key combination:
 toggle full screen, which enables you to <strong>focus on your content</strong> rather than be distracted by buttons, menus, lists, etc.
 
-Windows has its F12 key. Apple has Mac users do the equivalent of a double Summersault:
+Windows has its F12 key. Apple has Mac users do the equivalent of a <strong>double Summersault</strong> with your fingers.
+How do you type, at the same time:
 
-   * control + command + F
+   <ul><strong>control + command + F</strong></ul>
 
 PROTIP: To toggle <strong>Full Screen view</strong> using the default configuration from Apple: while keeping your left forefinger on the F "home" key, reach with your left thumb to hold down the control key. This may hurt at first (until you get used to it). Try raising your hand
-Now, while keeping your right forefinger on the J "home" key, reach with your right thumb to hold down the command key on the right side of the Space Bar. Then you're in position to press F with your left forefinger.
+
+   Now, while keeping your right forefinger on the J "home" key, reach with your right thumb to hold down the command key on the right side of the Space Bar. Then you're in position to press F with your left forefinger.
+
+## Key visibility
+
+PROTIP: Some use keyboards (RGB) that light up keys in the dark. But I personally think the best strategy is to find a way to not have to look at the keyboard at all.
+
+PROTIP: Some put tiny drops from a glue gun on strategic points on the keyboard so they can orient their finger in the dark without looking.
 
 PROTIP: Repeated practice trains muscle memory so you can find the keys without the need to take your eyes off the screen. Do not make it a habit to look at the keyboard while you learn to do the routine, which includes getting your hands back to to "home row" with forefingers on F and J. (Like a Jedi Paduan in the Star Wars movies training blindfolded)
 
+   This may be a generalization. But many top coders actually like the <strong>vi text editor</strong> because it doesn't use difficult-to-reach keys or mouse that require the user to take their eyes off the screen. DevSecOps coders have no choice because some operating systems only offer only vi (such as during Kubernetes exams). 
+
    PROTIP: To evaluate Mac developers, some interviewers ask "show me how you enter and exit Full Screen". This is because they assume that the most productive developers work with their hands always on the keyboard. 
 
-   This may be a generalization. But many top coders actually like the vi text editor. DevOps coders have to choice because computers can't move mice and click things. Resourceful coders make it so they don't need to waste time and attention reaching for the mouse. 
 
-   PROTIP: Some put tiny drops from a glue gun on strategic points on the keyboard so they can orient their finger in the dark.
+## Keyboard Ergonomics
+
+Resourceful coders make it so they don't need to waste time and attention reaching for the mouse. 
+
+Although pricey at <a target="_blank" href="https://www.amazon.com/Kinesis-Advantage2-Ergonomic-Keyboard-KB600/dp/B07K1SMRGS/">$340 from Amazon</a> (perhaps the most expensive keyboard available), the "Advantage2" keyboard <a target="_blank" href="https://kinesis-ergo.com/shop/advantage2/">from Kinesis-ergo.com</a> (at Bethel, Washington state)
+makes it easier and faster for your fingers to reach keys due to its unique contoured key wells.
+Its keys in the middle transfer more work to thumbs than conventional square keyboards.
+
+![keyboard-kinesis-557x455](https://user-images.githubusercontent.com/300046/99932329-e5a00f00-2d14-11eb-8a1d-3a3cb5ee3722.png)
+
+A <a target="_blank" href="https://www.youtube.com/watch?v=psC3ysre2RMhdn2VvdJWbs">Ergonomics shop TheHumanSolution.com</a>
+note the slant of keys enables <a target="_blank" href="https://www.youtube.com/watch?v=psC3ysre2RM&t=9m44s" title="Jun 24, 2020">natural (rather than bent) wrist placement</a> that prevents repetitive motion injury causing career-ending pain in wrists and shoulders.
+
+However, the keyboard does take some "learning time" as its keys are in a different location than on conventional keyboards.
+The manufacturer has a 7 day return and 3 year warranty policy.
+
+Desiring quieter operation, I chose <a target="_blank" href="https://www.youtube.com/watch?v=1WYWePNJTo4&t=1m28s">Cherry 45g MX <strong>Red</strong> (quiet linear-force, not "clicky") mechanical key switches</a> (instead of Brown keys which provide tactile feedback on each keypress). Cherry Red key switches are also used in the <a target="_blank" href="https://www.youtube.com/watch?v=rGM8Y6yal-8&t=4m58s">iKDC KD104 MX silent keyboards</a>. 
+
+But I don't think the Red keys are<a target="_blank" href="https://www.youtube.com/watch?v=BKbQS1vZz2w&t=3m23s" title="Mar 30, 2019">not much quieter than other keyboards</a>.
+(Razor Opto-mechanical Red or Ornata v2 membrane keyboards seem the quietest to me. They are also have short 1mm travel to activate and quickest debounce delay).
+
+Further quiet may be achieved by lubrication or <a target="_blank" href="https://www.youtube.com/watch?v=O3-9ttpaU0E&t=2m5s">replacing key switches</a> with <a target="_blank" href="https://zealpc.net/products/healio">rubbery Zilent keys</a>. 
+
+(I don't know how the keyboard responds to "rollover" of several keys almost simultaneously, which other keyboards call "anti-ghosting").
+
+For even faster operation, use the keyboard's 2MB of memory on-board to store SmartSet Programming Engine macros.
+
+Videos: 
+
+   * https://www.youtube.com/watch?v=8WwuusfB0QA Aug 20, 2016 is the most detailed
+   * https://www.youtube.com/watch?v=ILItPWuirAk
+   * https://www.youtube.com/watch?v=PhQlZvUzT7w Aug 3, 2016 from Kinesis
+   <br /><br />
+
+### Foot pedels
+
+The Kinesis Advantage keyboard has a <a target="_blank" href="https://www.youtube.com/watch?v=dHhr30207JY">
+phone plug</a> to connect to a <a target="_blank" href="https://kinesis-ergo.com/products/#se2-foot-pedals">foot peddle</a>
+to press the "Enter" key.
 
 
-## Caps Lock to Escape
+## Switch keys on macOS
+
+### Caps Lock unintended
 
 BLAH: It's annoying when all of a sudden everything I type is in caps.
 That happens because I accidentally had my hand too far to the left when I intended to press the A key.
 
 I can type all caps by holding down the shift key with my left or right hand.
 
+We can kill 2 keys at once.
+
+## Caps Lock to Escape
+
 BLAH: The Esc (Escape) key is too far North on the keyboard and forces some to look down on the keyboard. And the Caps Lock key is too close to keys, causing problems with accidental password entry and lockouts.
 
    PROTIP: Make the <strong>caps lock</strong> key work like the Esc key:
 
 1. Press the Apple icon and select System Preferences.
-2. Type K to highlight Keyboard. Press space bar to open it.
+2. Type K. Cursor down to highlight Keyboard. Press space bar to open it.
 3. Click "Modifier Keys" at the lower-right corner.
-4. Click the entry for "Caps Lock Key:" and select "Escape".
-5. Click OK.
-  
 
-## Switch command and control
+   ![mac-modifier-control-399x224-27632](https://user-images.githubusercontent.com/300046/31076959-877c6f84-a731-11e7-8fcc-7d12af4c2c8e.jpg)
+
+4. Click the entry for "Caps Lock (&#8682;) Key:" and select "&#9099; Escape".
+
+   ### Swap command and control as well
 
    PROTIP: Some switch the control and command keys on the left side so that they can get to all such keys using thumbs.
    This would also allow you to press two keys at once by pressing between the keys,
    thus able to perform most combinations using your hands.
 
-   PROTIP: In OS X Lion onward, change the caps lock key in:
+4. Click the entry for "Control (^) Key:" and select "&#8984; Command".
+4. Click the entry for "Command (&#8984;) Key:" and select "^ Control".
 
-   System Preferences > Keyboard > Modifier Keys
-
-   ![mac-modifier-control-399x224-27632](https://user-images.githubusercontent.com/300046/31076959-877c6f84-a731-11e7-8fcc-7d12af4c2c8e.jpg)
-
-   This can also be done using a <a target="_blank" href="https://apple.stackexchange.com/questions/283252/how-do-i-remap-a-key-in-macos-sierra-e-g-right-alt-to-right-control">
+5. Click OK.
+6. Press control+Q or click the red x to dismiss the System Preferences dialog.
+  
+   Alternately, the above actions can be done using a <a target="_blank" href="https://apple.stackexchange.com/questions/283252/how-do-i-remap-a-key-in-macos-sierra-e-g-right-alt-to-right-control">
    Python script</a> or by downloading the free 
    <a target="_blank" href="https://pqrs.org/osx/karabiner/">Karabiner</a>
    which works on OSX Sierra since <a target="_blank" href="https://developer.apple.com/library/content/technotes/tn2450/_index.html">Apple remapped key commands</a>. 
