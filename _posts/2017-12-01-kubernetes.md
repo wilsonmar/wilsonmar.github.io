@@ -19,18 +19,18 @@ comments: true
 
 I created <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">this</a> to help me to both prepare for Kubernetes exams and to work as an SRE.
 
-I hope to make this complex material easier to understand quickly. 
+The contribution of this is a logical presentation making this complex material easier to understand quickly yet more deeply.
 
 The aim here is to provide insightful commentary around carefully sequenced hands-on activities automated in a shell script
 -- an immersive step-by-step "deep dive" tutorial aimed to make you productive.
 
-WARNING: I'm restructuring this so that revelations about architecture components and flows are based on yaml and what commands reveal rather than as trivia to be memorized.
+WARNING: I'm restructuring this so that revelations about architecture components and flows are based on yaml and what commands reveal rather than as trivia to be memorized. Emphasis on practical commands means less emphasis on architecture trivia.
 
 NOTE: This article is now a "starter set" actively undergoing additions.
 
 <a name="Topics"></a>
 
-## Topics
+## What Kubernetes contributes
 
 * <a href="#IAC">Infrastructure as code</a> (IAC)
 * Manage containers
@@ -441,13 +441,24 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 
 1. Practice <a target="_blank" href="https://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc">Keyboard shortcuts for Bash</a>
 
-1. Get proficient with vim well using vimtutor, so that commands are intuitive (where you don't have to pause for remembering how to do things in vim).
-
+1. Get proficient with vim well  so that commands are intuitive (where you don't have to pause for remembering how to do things in vim). Use the <a target="_blank" href="http://www2.geog.ucl.ac.uk/~plewis/teaching/unix/vimtutor">vimtutor</a> program that usually gets installed when you install the normal vim/gvim package.
 
    ### Bookmarks to docs
 
-1. Rather than typing from scratch, copy and paste from pages in Kubernetes.io.
+   You are allowed one browser window: kubernetes.io, so:
 
+1. PROTIP: Rather than typing from scratch, copy and paste commands from pages in Kubernetes.io.
+
+   Key sections of kubernetes.io are:
+
+   * Documentation
+   * Getting started
+   * Concepts
+   * Tasks
+   * Tutorials
+   * Reference
+   <br /><br />
+   
    <a href="#[1]">PROTIP: Create bookmarks in Chrome</a> for <a target="_blank" href="   https://github.com/walidshaari/Kubernetes-Certified-Administrator/blob/main/README-ckad.md">links</a> to ONLY <a target="_blank" href="https://kubernetes.io/docs/home/">kubernetes.io pages</a>
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/95026201-e2f63700-064c-11eb-9651-0902cc7732df.png"><img width="390" alt="kubernetes-bookmarks" src="https://user-images.githubusercontent.com/300046/95026201-e2f63700-064c-11eb-9651-0902cc7732df.png"></a>
@@ -463,7 +474,6 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
    * <a target="_blank" href="https://github.com/kubernauts/practical-kubernetes-problems">https://github.com/kubernauts/practical-kubernetes-problems</a> provides yaml files
 
    * <a target="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/">kubernetes API</a>
-
 
 
 ### Day before exam
@@ -494,6 +504,12 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 
 ### Start of exam
 
+1. Enter website and click grey "Take Exam" button.
+
+   <a target="_blank" href="
+   https://trainingportal.linuxfoundation.org/learn/course/certified-kubernetes-application-developer-ckad/exam/exam">
+   https://trainingportal.linuxfoundation.org/learn/course/certified-kubernetes-application-developer-ckad/exam/exam</a>
+
 1. <a href="#CustomizeTerminal">Customize your terminal for productivity</a>.
 
 1. <strong>19 questions</strong> means less than 10 minutes per question. So avoid getting bogged down on the longer complex questions. First go through all the questions to answer the easiest ones first. Along the way, mark ones you want to go back to.
@@ -502,11 +518,9 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 
 1. PROTIP: Avoid writing yaml by scratch.
 
-1. <a href="#Declarative">Generate a declarative yaml file from an imperative command:</a>
+   PROTIP: Learn to search within kubernetes.io to copy code.
 
-1. PROTIP: Learn to search within kubernetes.io to copy code.
-
-
+   <a href="#Declarative">Generate a declarative yaml file from an imperative command:</a>
 
 1. Create yaml file as well as pod:
 
@@ -645,10 +659,11 @@ I have several tabs open taking it:
 
    * <a target="_blank" href="https://www.udemy.com/course/certified-kubernetes-application-developer/">Kubernetes Certified Application Developer (CKAD) with Tests</a>, with 9 hours of videos, and<br />
    <a target="_blank" href="https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/">Kubernetes Certified Application Developer (CKA) with Tests</a>, with 18 hours of videos.
+   <br /><br />
 
 1. Either way purchased, the course includes access to a KataKoda-powered <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">lab environment</a> for one hour at a time. 
 
-   The <a href="#Aliases">k alias for kubectl</a> is already configured, so type <tt>k</tt> instead of <tt>kubectl</tt>.
+   PROTIP: The <a href="#Aliases">k alias for kubectl</a> is already configured, so type <tt>k</tt> instead of <tt>kubectl</tt>.
 
 1. A "Quiz Portal" invoked from within the labs UI provides challenge questions and answers.
 
@@ -960,6 +975,12 @@ CAUTION: At time of writing, <a target="_blank" href="https://github.com/kuberne
 MUST READ: <a target="_blank" href="https://minikube.sigs.k8s.io/docs/drivers/docker/#known-issues">Known Issues with Minikube</a>
 (<a href="#Ingress">Ingress</a> and ingress-dns addons are not supported on Linux)
 
+Before starting minikube, in command+Spacebar type "Activity Monitor.app" and click to open it. 
+Click the "% CPU" tab label to sort on it. Note the number for process "com.docker.hyperkit".
+If the mac's fan spins constantly: in Docker's Properties Resources, adjust Memory higher.
+
+Each node in a cluster must have at least 300 MiB of memory.
+
 
 ### Minikube on Windows
 
@@ -1145,28 +1166,64 @@ chmod -R u+wrx $HOME/.minikube
    </pre>
 
 
-3. Start the minikube service, with add-ons which are each a pod:
+3. Start the minikube service, with add-ons (which each runs in a pod):
 
    On Mac:
 
-   <pre><strong>minikube start --vm-driver=xhyve --addons=dashboard --addons=metrics-server   --addons="ingress" --addons="ingress-dns"
-   </pre>
+   <pre><strong>minikube start --vm-driver=xhyve --addons=dashboard --addons=metrics-server --addons=ingress --addons="ingress-dns"
+   </strong></pre>
 
    On Windows:
 
    <pre><strong>minikube start --vm-driver=hyperv
    </strong></pre>
 
-   <pre>😄  minikube v1.13.1 on Darwin 10.15.7
-✨  Using the docker driver based on existing profile
-👍  Starting control plane node minikube in cluster minikube
-🏃  Updating the running docker "minikube" container ...
-🐳  Preparing Kubernetes v1.19.2 on Docker 19.03.8 ...
-🔎  Verifying Kubernetes components...
-🌟  Enabled addons: default-storageclass, storage-provisioner
-🏄  Done! kubectl is now configured to use "minikube" by default
-   </pre>
 
+1. To enable services after starting minikube:
+
+   <pre><strong>minikube addons enable metrics-server</strong></pre>
+
+1. To see whether the metrics-server is running, or another provider of the resource metrics API (metrics.k8s.io), run the following command:
+
+   <pre><strong>kubectl get apiservices</strong></pre>
+
+   The response:
+
+   <pre>NAME                                   SERVICE   AVAILABLE   AGE
+v1.                                    Local     True        24s
+v1.admissionregistration.k8s.io        Local     True        24s
+v1.apiextensions.k8s.io                Local     True        24s
+v1.apps                                Local     True        24s
+v1.authentication.k8s.io               Local     True        24s
+v1.authorization.k8s.io                Local     True        24s
+v1.autoscaling                         Local     True        24s
+v1.batch                               Local     True        23s
+v1.certificates.k8s.io                 Local     True        23s
+v1.coordination.k8s.io                 Local     True        23s
+v1.events.k8s.io                       Local     True        23s
+v1.networking.k8s.io                   Local     True        23s
+v1.rbac.authorization.k8s.io           Local     True        23s
+v1.scheduling.k8s.io                   Local     True        23s
+v1.storage.k8s.io                      Local     True        23s
+v1beta1.admissionregistration.k8s.io   Local     True        24s
+v1beta1.apiextensions.k8s.io           Local     True        24s
+v1beta1.authentication.k8s.io          Local     True        24s
+v1beta1.authorization.k8s.io           Local     True        24s
+v1beta1.batch                          Local     True        23s
+v1beta1.certificates.k8s.io            Local     True        23s
+v1beta1.coordination.k8s.io            Local     True        23s
+v1beta1.discovery.k8s.io               Local     True        23s
+v1beta1.events.k8s.io                  Local     True        23s
+v1beta1.extensions                     Local     True        23s
+v1beta1.networking.k8s.io              Local     True        23s
+v1beta1.node.k8s.io                    Local     True        23s
+v1beta1.policy                         Local     True        23s
+v1beta1.rbac.authorization.k8s.io      Local     True        23s
+v1beta1.scheduling.k8s.io              Local     True        23s
+v1beta1.storage.k8s.io                 Local     True        23s
+v2beta1.autoscaling                    Local     True        24s
+v2beta2.autoscaling                    Local     True        24s
+   </pre>
 
 
    <a name="AdjDocker"></a>
@@ -1286,8 +1343,6 @@ chmod -R u+wrx $HOME/.minikube
 
 ## Configuration
 
-zzz
-
 Service cluster IPs and ports are found through Docker --link compatible enviornment variables specifying ports opened by the service proxy.
 
 
@@ -1313,7 +1368,7 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
    <pre><strong>kubectl config current-context
    </strong></pre>
 
-   The expected response on minikube is "minikube".
+   The expected response on macOS is "minikube".
 
 2. To avoid "The connection to the server localhost:8080 was refused"
 
@@ -1445,11 +1500,16 @@ Its <a target="_blank" href="https://github.com/kubernetes/kubernetes">code page
 
 K8s recognizes both imperative and declarative yaml files.
 
+
 ### Declarative vs. Declarative
 
 <a target="_blank" href="https://medium.com/payscale-tech/imperative-vs-declarative-a-kubernetes-tutorial-4be66c5d8914?">REF</a>:
 
-TASK: Create a pod with the ubuntu image to run a container to sleep for 5000 seconds. Modify the file ubuntu-sleeper-2.yaml.
+* Imperative commands act directly on live objects.
+
+* Declarative commands act on yaml files which define objects.
+
+TASK: Create a pod with the ubuntu image to run a container to sleep for 5000 seconds. (Modify file ubuntu-sleeper-2.yaml)
 
    <pre>apiVersion: v1
 kind: Pod
@@ -1475,11 +1535,15 @@ This references Dockerfile:
 CMD ["--color", "red"]
    </pre>
 
+PROTIP: Names of resources can be up to 253 characters. No underlines (use dashes and dots).
+
 
 <a name="Namespaces"></a>
 
 <a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&t=1h46m19s">NinaK</a>:
    * <a target="_blank" href="https://kubernetesbyexample.com//ns/">kubernetesbyexample.com: Namespaces</a>
+
+PROTIP: Each UUID created by K8s is unique across all namespaces within a cluster.
 
 K8s namespaces are used to separate resources (network, files, users, processes, IPCs, etc.) into 
 <strong>virtual clusters</strong> inside a K8s cluster.
@@ -1500,12 +1564,29 @@ Namespaces provide <strong>isolation</strong> among different project teams, so 
 
 Different limits on resources (CPU, RAM, storage) can be defined for each namespace.
 
-Thus, separation of different namespaces are useful for large enterprises.
+Thus, separation of different namespaces is useful within large enterprises.
+
+1. Specify a namespace in a command:
+
+   <strong>k run nginx --image=nginx</strong>
+
+1. Attach a namespace as the context for all subsequent commands:
+
+   <strong>k config set-context --current --namespace=namespace-1</strong>
+
+1. List pods across a namespace across a cluster:
+
+   <strong>k get pods --all=namespace</strong>
+
+1. API Resources within a namespace:
+
+   <strong>k api-resources --namespaced=true</strong>
+
 
 
 1. List where KubeDNS is running:
 
-   <pre><strong>k cluster-info</strong></pre>
+   <pre><strong>kubectl cluster-info</strong></pre>
    
    Out of the box, without creating anything:
 
@@ -1513,10 +1594,11 @@ Thus, separation of different namespaces are useful for large enterprises.
 
    * kube-public contains publically accessible (without auth) <a href="#ConfigMaps">ConfigMaps</a> which contain cluster info (kubectl cluster-info)
    * kube-system holds k8s internal system processes (master, kubectl, etc.)
-   * kube-node-lease holds heartbeats of nodes and the availability of nodes (lease objects)
-   * default holds resources you create
+   * kube-node-lease holds lease objects containing heartbeats of nodes and the availability of nodes 
+   * default holds resources you create without specifying a namespace
    * <a href="#Dashboard">kubernetes-dashboard</a> is created only within minikube.
    <br /><br />
+
 
    <a name="Dashboard"></a>
 
@@ -1591,12 +1673,7 @@ Red Hat's OpenShift product adds <strong>Projects as "walls" between namespaces<
    ![kubernetes-openshift-502x375-107638](https://user-images.githubusercontent.com/300046/42333404-e3f5953a-8037-11e8-9691-0172a8a96388.jpg)
 
 
-
-
-
 <hr />
-
-
 
 
 ### Dockerfile to Pod yaml correspondance
@@ -2041,10 +2118,15 @@ spec:
    To text, create a database.
 
 
+   <a name="ConfigMaps"></a>
 
    <a name="shared-db"></a>
 
    #### shared mysql-service yaml ConfigMap
+
+   ConfigMap is an API object used to store non-confidential data in key-value pairs. 
+
+   Pods can consume <a href="#ConfigMaps">ConfigMaps</a> as environment variables, command-line arguments, or as configuration files in a volume.
 
 1. Define a commonly used ConfigMap within a service named "database":
 
@@ -2355,15 +2437,11 @@ https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/
    * Workloads APIs: Container, Job, CronJob, Deployment, StatefulSet, ReplicaSet, Pod, ReplicationController
    * Service APIs: Endpoints, Ingress, Service
    * Config and storage APIs: ConfigMap, CSIDriver, Secret, StorageClass, Volume
-   * Metadata APIs: Controllere, CRD, Event, LimitRange, HPA, ...
+   * Metadata APIs: Controllere, CRD, Event, LimitRange, HPA (HorizontalPodAutoscaler), PodDistributionBudget, ...
    * Cluster APIs: APIService, Binding, CSR, ClusterRole, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
    <br /><br />
 
-kubectl api-??? | grep ???
-
 The aggregation layer lets you install additional Kubernetes-style APIs in your cluster.
-
-ConfigMap is an API object used to store non-confidential data in key-value pairs. Pods can consume <a href="#ConfigMaps">ConfigMaps</a> as environment variables, command-line arguments, or as configuration files in a volume.
 
 
 <a name="Deployments"></a>
