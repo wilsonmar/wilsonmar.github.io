@@ -200,12 +200,13 @@ dotnet-install: Installation finished successfully.
 
 1. Verify:
 
-   dotnet --version
-   was 2.1.505
+   <pre><strong>dotnet --version</strong></pre>
+
+   3.1.201
 
 1. For more verbose:
 
-   dotnet --info
+   <pre><strong>dotnet --info</strong></pre>
 
 1. Node and NPM:
 
@@ -222,20 +223,39 @@ dotnet-install: Installation finished successfully.
 
 1. To enable <strong>az</strong> CLI commands:
 
-   <pre><strong>brew install azure-cli
-   az --version</strong></pre>
-
-   The response:
-   <pre>azure-cli                         2.0.68</pre>
+   <pre><strong>brew install azure-cli</strong></pre>
 
    Alternately, if you already have it installed and want to <strong>upgrade</strong> to the latest version:
 
    <pre>brew upgrade azure-cli</pre>
 
-   Analyze and act on caveats in response such as:
+1. Analytics:
 
-   <pre>
-==> python
+   <pre><strong>brew info azure-cli</strong></pre>
+
+   <pre>azure-cli: stable 2.15.1 (bottled), HEAD
+Microsoft Azure CLI 2.0
+https://docs.microsoft.com/cli/azure/overview
+/usr/local/Cellar/azure-cli/2.15.1 (16,636 files, 221.9MB) *
+  Poured from bottle on 2020-12-04 at 15:31:19
+From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/azure-cli.rb
+License: MIT
+==> Dependencies
+Required: openssl@1.1 ✔, python@3.8 ✔
+==> Options
+--HEAD
+  Install HEAD version
+==> Caveats
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+==> Analytics
+install: 38,000 (30 days), 103,343 (90 days), 318,336 (365 days)
+install-on-request: 37,613 (30 days), 102,290 (90 days), 313,119 (365 days)
+build-error: 0 (30 days)</pre>
+
+1. Analyze and act on caveats in response such as:
+
+   <pre>==> python
 Python has been installed as
   /usr/local/bin/python3
 &nbsp;
@@ -257,37 +277,40 @@ Bash completion has been installed to:
   /usr/local/etc/bash_completion.d
    </pre>
 
-   PROTIP: The CLI doesn't use a Python virtual environment, so it relies on finding the installed Python version.
-
 1. Confirm:
 
    <pre><strong>az --version</strong></pre>
 
-   The response:
+   PROTIP: The CLI doesn't use a Python virtual environment, so it relies on finding the installed Python version.
 
-   <pre>
-azure-cli                         2.0.68
+   <pre>azure-cli                         2.15.1
 &nbsp;
-command-modules-nspkg               2.0.3
-core                              2.0.68
-nspkg                              3.0.4
-telemetry                          1.0.3
+core                              2.15.1
+telemetry                          1.0.6
 &nbsp;
-Python location '/usr/local/Cellar/azure-cli/2.0.68/libexec/bin/python'
-Extensions directory '/Users/wilsonmar/.azure/cliextensions'
+Extensions:
+azure-cli-iot-ext                  0.8.7
 &nbsp;
-Python (Darwin) 3.7.4 (default, Jul  9 2019, 18:13:23) 
-[Clang 10.0.1 (clang-1001.0.46.4)]
+Python location '/usr/local/Cellar/azure-cli/2.15.1/libexec/bin/python'
+Extensions directory '/Users/wilson_mar/.azure/cliextensions'
+&nbsp;
+Python (Darwin) 3.8.6 (default, Nov 20 2020, 18:29:40)
+[Clang 12.0.0 (clang-1200.0.32.27)]
 &nbsp;
 Legal docs and information: aka.ms/AzureCliLegal
 &nbsp;
+&nbsp;
 Your CLI is up-to-date.
+&nbsp;
+Please let us know how we are doing: https://aka.ms/azureclihats
+and let us know if you're interested in trying out our newest features: https://aka.ms/CLIUXstudy
    </pre>
 
 (<a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest">based on docs for macOS, Ubuntu, Windows 10, Azure Cloud Shell</a>)
 
-https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest
-Get started with Azure CLI
+<a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest">
+https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest</a>
+to Get started with Azure CLI
 
 
 <hr />
