@@ -43,9 +43,9 @@ Those who store binary files in the same repo as their text would experience muc
 But most SVM users don't know or care about LFS because they have not created individual files larger than the <strong>2 GB</strong>that GitHub can handle. 
 CAUTION: Video files can easily exceed that size.
 
-So an alternative to Git-LFS is <a href="#DVC">DVC</a>.
-
 Also, due to their size, binary files should really be stored at a SaaS service (such as Clooudinary) where they can be <strong>automatically resized</strong> for various client form factors and then duplicated in a set of servers for fast retrieval world-wide.
+
+So an alternative to Git-LFS is <a href="#DVC">DVC</a>. Unlike git-lfs, DVC doesn't require installing a dedicated server; It can be used on-premises (NAS, SSH, for example) or with any major cloud provider (S3, Google Cloud, Azure).
 
 
 <a name="Installation"></a>
