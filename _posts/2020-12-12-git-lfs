@@ -1,0 +1,443 @@
+---
+layout: post
+title: "Git-LFS (Large File System) and DVC"
+excerpt: "Git clean and smudge binary files to and from a separate LFS Store, transparently"
+tags: [git]
+date: "2020-12-12"
+file: "git-lfs"
+image:
+# cyber-security-hero-1900x500-22924.jpb/.png 
+  feature: https://user-images.githubusercontent.com/300046/61989997-46bab400-aff5-11e9-9045-8075ede3d5a3.jpg
+  credit: Addie Wagenknecht
+  creditlink: http://www.placesiveneverbeen.com/details/asymmetric-love
+comments: true
+---
+<i>{{ page.excerpt }}</i>
+{% include l18n.html %}
+{% include _toc.html %}
+
+
+Git-LFS (Large File System) is actually a misnomer for a way to store and retrieve <strong>binary files</strong>
+from a system away from a system designed to store <strong>text</strong> files.
+
+Examples of binary files are: pdf files, videos (mp4), audio samples (.mp3), graphics (.png, .jpg, etc.). 
+Other examples are text pointers, datasets, etc.
+Java .war files and .NET Intermediate Language (IL) files can also be considered binary files.
+
+Major SaaS SCM vendors offer their own <strong>LFS store</strong> service to store binary files:
+
+   * GitHub: https://github.blog/2015-04-08-announcing-git-large-file-storage-lfs/
+   * GitLab: https://docs.gitlab.com/ee/topics/git/lfs/
+   * BitBucket: 
+   <br /><br />
+
+There is a DIY Git-LFS server that stores files on AWS S3 at https://github.com/meltingice/git-lfs-s3 
+
+(Gogs, a Git service that runs on your own hardware, does not have built-in Git-LFS support.)
+
+<a target="_blank" href="https://www.atlassian.com/git/tutorials/git-lfs">https://www.atlassian.com/git/tutorials/git-lfs</a>
+is a great introduction, with cartoons.
+
+Those who store binary files in the same repo as their text would experience much faster push and pull times if they instead use gif-lfs.
+
+But most SVM users don't know or care about LFS because they have not created individual files larger than the <strong>2 GB</strong>that GitHub can handle. 
+CAUTION: Video files can easily exceed that size.
+
+So an alternative to Git-LFS is <a href="#DVC">DVC</a>.
+
+Also, due to their size, binary files should really be stored at a SaaS service (such as Clooudinary) where they can be <strong>automatically resized</strong> for various client form factors and then duplicated in a set of servers for fast retrieval world-wide.
+
+
+<a name="Installation"></a>
+
+## Installation
+
+1. Install git
+
+2. Download and install the Git command line extension (written in Go) from <a target="_blank" href="https://github.com/git-lfs/git-lfs">https://github.com/git-lfs/git-lfs</a>
+
+   Within MacOS, Homebrew: 
+
+   <pre><strong>brew install git-lfs</strong></pre>
+
+   Alternately, to use MacPorts: 
+
+   <pre><strong>port install git-lfs</strong></pre>
+
+   Within Windows:
+
+   <pre><strong>choco install git-lfs -y</strong></pre>
+
+   Within Ubuntu:
+
+   <pre><strong>sudo apt install git-lfs</strong></pre>
+
+
+   <a name="ConfigGlobal"></a>
+
+   ## Configure globally
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=006RUPVIP-c&t=14m45s">VIDEO</a>:
+
+1. Set up Git LFS for your user account by running:
+
+   <pre><strong>git lfs install</strong></pre>
+
+   You only need to run the above once.
+
+   The command edits file <tt>~/.gitconfig</tt> to add activation of Git's internal clean and smudge filters:
+
+   <pre>[filter "lfs"]
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
+   </pre>
+
+   The clean filter is invoked 
+
+   The smudge filter is invoked upon git checkout to find LFS objects within <tt>.git/lfs/objects</tt> or the hosted LFS store (in the back-end).
+
+
+   ## In each repo
+
+   The command above changes the content of git's <tt>.config</tt> file and <strong>Git Hooks</strong> within the <tt>.hooks</tt> folder within the <tt>.git</tt> folder initialized by Git within <strong>each repository</strong> Git manages. Listed here by sequence of execution:
+
+   1. pre-push
+   2. post-checkout
+   3. post-commit
+   4. post-merge 
+   <br /><br />
+
+   Git message
+
+   git-LFS works by adding commands within <strong>Git Hooks</strong> on <strong>every user's laptop</strong>:
+
+
+   These hooks replace files with pointers to a different registry, such as GitHub LFS or JFrog Artifactory.
+
+
+1. Specify all <strong>file extension media types</strong> to be tracked (managed) by Git-LFS:
+
+   <pre><strong>git lfs track "*.pdf"
+git lfs track "*.png"
+git lfs track "*.jpg"
+git lfs track "*.gif"
+git lfs track "*.mp4"
+git lfs track "*.mp3"
+   </strong></pre>
+
+   PROTIP: Each of the above commands adds in file <tt>.gitattributes</tt> a line such as:
+
+   <pre>*.png filter=lfs diff=lfs merge=lfs -text</pre>
+
+   The command can be run anytime to configure more file extensions.
+
+
+1. Make sure .gitattributes is tracked:
+
+   <pre><strong>git add .gitattributes
+git commit -m "Add attributes for LFS"
+git push origin master
+   </strong></pre>
+
+    Note that defining the file types Git LFS should track will not, by itself, convert any pre-existing files to Git LFS, such as files on other branches or in your prior commit history. 
+
+
+   ## Add binary file
+
+   <pre><strong>git add huge/* </strong></pre>
+
+   PROTIP: The above command results in binary file types specified being moved within the <strong>lfs</strong> folder within the repo's <strong>.git</strong> folder.
+
+   Upon git push, notice:
+
+   <pre>Uploading LFS objects:</pre>
+
+   After the upload, on Github.com, a "LFS" marker is shown next to each binary file managed under LFS.
+
+
+   Notice that large (binary) files remain within the repo locally.
+
+
+   ## Migrate
+
+1. command, which has a range of options designed to suit various potential use cases.
+
+   <pre><strong>git lfs migrate</strong></pre>
+
+
+
+   ## Commit LFS
+
+1. Commit and push to GitHub as per normal:
+
+   <pre><strong>git add file.psd
+git commit -m "Add design file"
+git push origin master
+   </strong></pre>
+
+
+   ## Clone/merge of lfs
+
+   When a repo using LFS is cloned on another folder/laptop, the "git-merge" hook downloads binary fines to the <tt>.git/lfs</tt> folder within the repo.
+
+   REMEMBER: GitHub does not (cannot) identify what has changed within each file like it does within text files.
+
+1. To manually change the size of a file:
+
+   <pre><strong>fallocate -l 1000001 binary/some-1mb.mp4</strong></pre>
+
+   REMEMBER: Because intermediate versions of binary files are not tracked like git-managed versioned text files,
+   only the most recent binary file is retrieved from LFS.
+
+
+## Un-installation
+
+   <pre><strong>git lfs uninstall</strong></pre>
+
+## Other
+
+To configure git-lfs (GitHub’s Large File System), commands like these are placed in hook files:
+
+   <pre><strong>#!/bin/sh
+command -v git-lfs >/dev/null 2>&1 || { echo >&2 "\nThis repository is configured for Git LFS but 'git-lfs' was not found on your path. If you no longer wish to use Git LFS, remove this hook by deleting .git/hooks/post-commit.\n"; exit 2; }
+git lfs post-commit "$@"
+   </strong></pre>
+
+   The above commands first checks if git-lfs is installed, then performs the git lfs command, with “$@” forwarding the attributes passed into the hook file.
+
+
+<a name="Artifactory"></a>
+
+## JFrog Artifactory LFS
+
+Artifactory lets you define which users or groups of users can access your LFS repositories.
+A full set of permissions can be configured:
+
+   * where developers can deploy binary assets to, 
+   * whether they can delete assets and more. 
+
+Artifactory integrates with the most common access protocols such as LDAP, SAML, Crowd, and others.
+
+
+<a target="_blank" href="https://www.youtube.com/watch?v=006RUPVIP-c">
+VIDEO: Managing huge files on the right storage with Git LFS</a> Jul 19, 2016 [39:46]
+by Tim Pettersen (@kannonboy) at the JFrog conference where Atlassian was going to announce a competitive solution than LFS at the same JFrog conference. He illustrates Git internals to show why large binary files are so expensive.
+LFS OID are gen'd in SHA256<a target="_blank" href="https://www.youtube.com/watch?v=006RUPVIP-c&t=13m30s">*</a> which S3 can validate automatically.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=9gaTargV5BY">
+Managing huge files on the right storage with Git LFS</a>
+by JFrog
+
+
+https://www.jfrog.com/confluence/display/JFROG/Git+LFS+Repositories
+
+
+<a name="DVC"></a>
+
+## DVC (Data Version Control)
+
+<strong>dvc</strong> is a CLI package that wraps around (extends) Git and git-lfs to store large files in away from GitHub.
+
+dvc also enable git checkout of versioned data.
+
+1. DVC's <a target="_blank" href="https://dvc.org/doc/get-started/install">installers</a> include snap, pip, brew, choco, conda (Anaconda) or an OS-specific package. It installs/upgrades python3, grpc, awscli, azure-cli, sqlite, Qt, opencv, imagemagick, ansible, vtk, apache-arrow, thrift, zstd, and other packages it needs.
+
+   <a target="_blank" href="https://dvc.org/">https://dvc.org</a> is Apache2 open sourced at <a target="_blank" href="https://github.com/iterative/dvc">https://github.com/iterative/dvc</a>
+
+   On MacOS:
+
+   <pre><strong>brew install dvc</strong></pre>
+
+   <a name="dvc_flowchart"></a>
+
+   ### DVC Data Flow chart
+
+   ![git-lfs-dvc](https://user-images.githubusercontent.com/300046/102021627-48962c00-3d3e-11eb-933a-9808beec02d5.gif)
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=kLKBcPonMYw">VIDEO: 
+   Versioning Data with DVC (Hands-On Tutorial!)</a> Sep 30, 2020
+   and <a target="_blank" href="https://dvc.org/doc/start/data-versioning">https://dvc.org/doc/start/data-versioning</a>:
+
+
+   ### Initialize dvc raw data manifest md5 
+
+1. Create a repository.
+1. Make a folder and cd into it.
+1. <tt>dvc init</tt> establishes metric collection and creates folder <strong>~/.dvc</strong>.
+
+   QUESTION: Does it create the config file ???
+
+1. Create a <tt>data</tt> folder and download into it a sample data.xml file referenced by the ML model:
+
+   <tt>dvc get https://github.com/iterative/dataset-registry \
+   get-started/data.xml  -o data/data.xml</tt> 
+
+   <a name="dvc_add"></a>
+
+1. <tt>dvc add data/data.xml</tt>
+
+   This creates a .dvc file which contains a MD5 hash value of the contents. This "pointer" enables versioning of the data.
+
+1. <tt>cat data/data.xml.dvc</tt>
+
+   <pre>outs:
+- md5: a23023923ab033023f09a9bbc333d
+  path: data.xml</pre>
+
+   In other words, DVC uses reflinks (or hardlinks) to avoid copy operations on checkouts.
+
+1. <tt>git add data/data.xml.dvc</tt>
+
+1. In the imported .gitignore file there is a line to not upload file "/data.xml". Add it:
+
+   <tt>git add data/.gitignore</tt>
+
+   PROTIP: This is so that when the actual (big) file is pulled in locally, it won't be accidentally uploaded into GitHub.
+
+1. <tt>git commit -m "Add raw data"</tt>
+1. <tt>cd data</tt>
+
+
+   ### Remote Files in GCP
+
+1. On Google Drive, get the URL to a folder:
+
+   <img width="296" alt="git-lfs-gdrive" src="https://user-images.githubusercontent.com/300046/102024409-29ec6100-3d4f-11eb-95fe-755d471cfc56.png">
+
+1. Highlight and copy the response.
+1. Define the remote:
+
+   <tt>dvc remote add -d storage gdrive://234203409023909fabcde</tt>
+
+   The command updates the <tt>config</tt> file in the <tt>.dvc</tt> (hidden) folder in the repository this:
+
+   <pre>['remote storage']
+   url = gdrive://234203409023909fabcde
+   </pre>
+
+1. Commit:
+
+   <tt>dvc commit .dvc/config -m "Configure remote storage"
+dvc push</tt>
+
+1. Paste when you're prompted to "Enter a Verification Code". Download of the actual file represented by the md5 hash should now occur.
+   
+   ### Remote files in EC2 on AWS
+
+1. To share data in S3:
+
+   <pre><strong>dvc remote add myremote -d s3://mybucket/image_cnn</strong></pre>
+
+1. To obtain actual files from remote storage:
+
+   <tt>dvc push</tt> and underlying <tt>dvc fetch</tt> commands <strong>extend git</strong> to populate assets from <strong>remote data storage</strong> (S3, GS, Azure, SSH, etc.) based on SHA references in the Local Cache.
+
+   "Makefiles for data and ML projects" done right.
+
+   The "pkl" file type defines the local workspace model pulled from GitHub or 
+   <a target="_blank" href="https://dagshub.com/">https://dagshub.com</a>, DVC's SasS equivalent of GitHub.com.
+
+   They are called <strong>DVC pipelines</strong> (computational graph) because they connect code and data together to specify all steps to produce a model: input dependencies including data, commands to run, and output information to be saved. This is why DVC is advertised as a <strong>reproducible</strong> and shareable data pipeline (for Machine Learning experiments) with metrics tracking. 
+
+
+Versioning of datasets by dvc enables repeatable runs and thus comparison of results from different datasets.
+This is described as "CML (Continuous Machine Learning)" leverages GitHub Actions, as described at <a target="_blank" href="https://www.youtube.com/watch?v=9BgIDqAzfuA&list=PL7WG7YrwYcnDBDuCkFbcyjnZQrdskFsBz">series of youtube videos</a>.
+
+<a target="_blank" href="https://www.linkedin.com/in/drelleobrien/">Elle O'Brien, Ph.D.</a> at Dmitry Petrov's iterative.ai (with her stuffed rainbow owl DeeVee) created a <a target="_blank" href="https://www.youtube.com/channel/UC37rp97Go-xIX3aNFVHhXfQ">series of videos on Youtube</a>
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=UbL7VUpv1Bs">VIDEO: 
+   Version Control for Data Science Explained in 5 Minutes (No Code!)</a>
+
+   * https://www.linkedin.com/feed/update/urn:li:activity:6742278455498551296/
+
+Marcel Ribeiro-Dantas is the first DVC Ambassador
+
+<a target="_blank" href="https://discord.com/invite/dvwXA2N">Invite</a> to <a target="_blank" href="https://discord.com/channels/485586884165107732/485596111378317349">DVC's Discord chat</a>
+
+https://towardsdatascience.com/why-git-and-git-lfs-is-not-enough-to-solve-the-machine-learning-reproducibility-crisis-f733b49e96e8
+
+https://blog.codecentric.de/en/2020/01/remote-training-gitlab-ci-dvc/
+
+
+<a target="_blank" href="https://www.youtube.com/watch?v=oF0qk3Q7g4E">
+How to Track your Development Process with DVC</a>
+Dec 11, 2019
+by Mark Keinhoerster and Tim Sabsch
+
+https://dvc.org/blog
+
+<hr />
+
+<a name="Github-LFS-Store"></a>
+
+## Github.com LFS Store
+
+we see the attached Git LFS Data image, which shows 4.29 GB of 1 GB used. How do we pay for that? How can we identify which teams and repos are using that storage?
+
+I do see your ownership of the organization referenced along with the current LFS usage:
+
+LFS Repository Usage:
+
+??? repository the 4.29 GB of storage, and the detailed breakdown of user usage:
+
+  "yuktikhurana": {
+    "bandwidth_down": 0.0,
+    "bandwidth_up": 4.3
+
+To purchase additional storage and bandwidth for an organization, please navigate through your Profile -> Select the desired Organization Icon -> Settings -> Billing & plans and select the Subscriptions section. In the Git LFS Data section, click Add more data or use the Edit drop-down and click Add more data packs. Each pack provides 50GB of storage and 50 GB of bandwidth.
+
+How can we block usage of LFS enterprise-wide? We would like people to use our Artifactory instance instead.
+
+We can disable LFS at the Organizational level. To lower LFS storage usage and current LFS storage tracking however, those LFS objects will need to be removed from the storage on our end. Deleting them from the GitHub repository doesn't automatically remove them from using your GitHub.com LFS storage allocation.
+
+We can either delete all existing LFS objects in the repository, or you can let us know the object IDs of specific LFS files we should delete for you. (Or just the ones to save, if that's easier.) You can find each object ID using this command:
+
+shasum -a 256 path/to/file
+(replace "path/to/file" with the path to the file in your repository.)
+
+After providing us with the info about which objects to delete, you'll need to completely remove the deleted LFS files from the repository history, so that Git doesn't continue to track them in LFS.
+
+	
+Wilson Mar
+Dec 11, 2020, 5:24 PM UTC
+
+Nick, At https://github.com/organizations/<em>org</em>/settings/billing we see the attached Git LFS Data image, which shows 4.29 GB of 1 GB used. 
+1. How do we pay for that?
+2. How can we identify which teams and repos are using that storage?
+3. How can we block usage of LFS enterprise-wide? We would like people to use our Artifactory instance instead.
+
+
+------------
+
+Advantages to using Artifactory instead of GitHub's LFS support:
+
+
+## References
+
+https://git-lfs.github.com/
+
+
+<a target="_blank" href="https://www.youtube.com/watch?v=xPFLAAhuGy0">
+Pluralsight video: 045 Introduction to Git LFS (Large File Storage)</a>
+Oct 6, 2019 by Dan Gitschooldude
+
+<a target="_blank" href="https://www.youtube.com/watch?v=09McJ2NL7YM">
+How To setup Git with Git LFS for Unity</a>
+Broken Knights Games
+
+https://medium.com/junior-dev/how-to-use-git-lfs-large-file-storage-to-push-large-files-to-github-41c8db1e2d65
+
+https://dzone.com/articles/git-lfs-why-and-how-to-use
+
+
+<a target="_blank" href="https://www.youtube.com/watch?v=YQzNfb4IwEY">
+GitLFS - How to handle large files in Git</a> by Lars Schneider at FOSSASIA Summit 2017
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Q7i_qQW__q4">
+Git LFS at Light Speed - Git Merge 2017</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=3seDPCi1FnA">
+Tracking Huge Files with Git LFS - Atlassian Summit 2016</a>
+Atlassian
+
