@@ -101,7 +101,7 @@ mi<a href="#ReadinessProbes">Readiness Probes</a>,
 <a href="#Selectors">Selectors</a>, 
 <a href="#Services"><strong>svc</strong>=Services</a>,
 <a href="#ServiceAccounts"><strong>sa</strong>=ServiceAccounts</a>,
-<a href="#Services">Service Discovery</a>,
+<a href="#ServicesDiscovery">Service Discovery</a>,
 <a href="#StatefulSets"><strong>sts</strong>=StatefulSets</a>,
 <a href="#StorageClasses">Storage Classes</a>,
 <a href="#Taints">Taints</a>,
@@ -152,7 +152,7 @@ Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), wit
 
 The website, and the Kubernetes code is maintained by the Linux Foundation, which also owns the registered trademark for the logo of a sailing ship's wheel.
 
-The word "kubernetes" is the ancient Greek word for people who pilot cargo ships – “helmsman” in English. Thus the nautical references and why Kubernetes experts are called “captain” and why associated products have nautical themes, such as <a target="_blank" href="https://wilsonmar.github.io/helm/">Helm</a>, the package manager for Kubernetes.
+The word "kubernetes" is the ancient Greek word for people who pilot cargo ships – "helmsman" in English. Thus why Kubernetes experts are called "captains", and why associated products have nautical themes, such as <a target="_blank" href="https://wilsonmar.github.io/helm/">Helm</a>, the package manager for Kubernetes.
 
 <img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
 <a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">This blog</a> and
@@ -168,7 +168,7 @@ See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kuberne
 
 ## Overview
 
-This tutorial focuses on use of <strong>Docker</strong> containers as Kubernetes' <strong>Container Runtime Interface (CRI)</strong>. BTW Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") containers, which provided a CLI for containers as part of CoreOS. Rkt became the first archived project of CNCF after IBM bought Red Hat with its competing "containerd" <a target="_blank" href="https://github.com/kubernetes-sigs/cri-o">cri-o technology.
+This tutorial focuses on use of <strong>Docker</strong> containers as Kubernetes' <a target="_blank" href="https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/">Container Runtime Interface (CRI)</a>. Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") containers, which provided a CLI for containers as part of CoreOS. Rkt became the first archived project of CNCF after IBM bought Red Hat with its competing "containerd" <a target="_blank" href="https://github.com/kubernetes-sigs/cri-o">cri-o technology.
 
 "Containerized" <a href="#micro-services">microservice apps</a> are <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, <a target="_blank" href="https://quay.io/">Quay.io</a>, or an organization's own binary repository setup using Nexus or Artifactory. 
 
@@ -322,6 +322,10 @@ sample Security yaml
 * <a target="_blank" href="https://github.com/walidshaari/Certified-Kubernetes-Security-Specialist">https://github.com/walidshaari/Certified-Kubernetes-Security-Specialist</a> by <a target="_blank" href="https://walidshaari.blogspot.com">Walid Shaari</a> (<a target="_blank" href="https://medium.com/@walidshaari">author in Medium</a>).
 
 * https://github.com/ijelliti/CKSS-Certified-Kubernetes-Security-Specialist
+
+* <a target="_blank" href="https://ravikirans.com/cks-kubernetes-security-exam-study-guide/">
+https://ravikirans.com/cks-kubernetes-security-exam-study-guide</a>
+
 
 #### K21Academy
 
@@ -535,10 +539,12 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 
 1. Use <tt>help</tt> as in <tt>kubectl create configmap help </tt>.
 
-1. Run a busybox web server to test access externally:
+1. Run a busybox web server to test retrieval of externally (using wget):
 
    <pre><strong>k run tmp --restart=Never --rm --image=busybox -i -- wget -O- 10.12.2.15
    </strong></pre>
+
+   Notice "Never" is title cased.
 
 1. Do not delete/remove what you have done! People/robots review your servers after the test.
 
@@ -608,18 +614,33 @@ O'Reilly's <a target="_blank" href="https://learning.oreilly.com/live-training/c
 Interactive KataKoda lab on OReilly.com: <a target="_blank" href="https://learning.oreilly.com/scenarios/deploying-python-apis/9781492090465/">Deploying Python APIs on Kubernetes: Deploying a Development Kubernetes Cluster</a> 
    using the K3s Kubernetes distribution from Rancher, a Certified Lightweight Kubernetes Distribution built for IoT and Edge remote ecomputing. It stores data using sqlite3 instead of etcd. It bootstrap script K3sup at https://github.com/alexellis/k3sup.
 
+
+<a target="_blank" href="https://learning.oreilly.com/learning-paths/learning-path-certified/9781492061021/">
+Certified Kubernetes Application Developer (CKAD) Prep Course</a> July 2019 [4h 53m] uses
+<a target="_blank" href="https://github.com/bmuschko/ckad-study-guide">https://github.com/bmuschko/ckad-study-guide</a>
+and <a target="_blank" href="https://github.com/bmuschko/ckad-crash-course">https://github.com/bmuschko/ckad-crash-course</a>
+by Benjamin Muschko (@bmuschko, <a target="_blank" href="https://www.bmuschko.com/">bmuschko.com</a>, <a target="_blank" href="https://www.automatedascent.com/">automatedascent.com</a>) 
+
+https://github.com/cncf/curriculum - v1.19
+
+<a target="_blank" href="https://learning.oreilly.com/library/view/kubernetes-patterns/9781492050278/">
+BOOK: Kubernetes Patterns</a>
+by Bilgin Ibryam, Roland Huß
+
+
 Jonathan Johnson
-   * https://learning.oreilly.com/scenarios/kubernetes-pipelines-sonarqube/9781492078975/
-   Kubernetes Pipelines: SonarQube
 
-   * https://learning.oreilly.com/scenarios/kubernetes-pipelines-registries/9781492078951/
-   Kubernetes Pipelines: Registries
+   * <a target="_blank" href="https://learning.oreilly.com/scenarios/kubernetes-pipelines-sonarqube/9781492078975/">
+   Kubernetes Pipelines: SonarQube</a>
 
-   * https://learning.oreilly.com/scenarios/kubernetes-pipelines-tekton/9781492083900/
-   Kubernetes Pipelines: Tekton Pipelines
+   * <a target="_blank" href="https://learning.oreilly.com/scenarios/kubernetes-pipelines-registries/9781492078951/">
+   Kubernetes Pipelines: Registries</a>
 
-   * https://learning.oreilly.com/scenarios/kubernetes-pipelines-python/9781492090182/
-   Kubernetes Pipelines: Python Pipeline to Kubernetes (using Tekton Pipelines to package Python in an efficient container)
+   * <a target="_blank" href="https://learning.oreilly.com/scenarios/kubernetes-pipelines-tekton/9781492083900/">
+   Kubernetes Pipelines: Tekton Pipelines</a>
+
+   * <a target="_blank" href="https://learning.oreilly.com/scenarios/kubernetes-pipelines-python/9781492090182/">
+   Kubernetes Pipelines: Python Pipeline to Kubernetes (using Tekton Pipelines to package Python in an efficient container)</a>
    Kaniko container
 
 
@@ -949,6 +970,8 @@ Kubernetes Tutorial for Beginners [Full Course in 4 Hours]</a> Nov 6, 2020 (usin
 
 ## Installation
 
+https://redhat-scholars.github.io/kubernetes-tutorial/kubernetes-tutorial/installation.html
+
 ### Minikube Alternatives
 
 Instead of minikube, there's also K3s, Microk8s on Linux, Minishift.
@@ -960,6 +983,13 @@ Instead of minikube, there's also K3s, Microk8s on Linux, Minishift.
    to run on top of cri-o, such as RedHat's podman, LXC.
 
 But let's start by installing minikube on your laptop.
+
+
+### Additional Utilities
+
+Kustomize.io kustomize command creates customized raw, template-free YAML (overlay) files for multiple purposes (dev, prod).
+It leaves the base (original) YAML file untouched and usable as is.
+For example, dev would have <tt>replicas: 1</tt> while pro would have <tt>replicas: 5</tt>.
 
 
 <a name="Minikube"></a>
@@ -975,12 +1005,16 @@ CAUTION: At time of writing, <a target="_blank" href="https://github.com/kuberne
 MUST READ: <a target="_blank" href="https://minikube.sigs.k8s.io/docs/drivers/docker/#known-issues">Known Issues with Minikube</a>
 (<a href="#Ingress">Ingress</a> and ingress-dns addons are not supported on Linux)
 
+PROTIP: Minikube makes your mac's fan fly!
 Before starting minikube, in command+Spacebar type "Activity Monitor.app" and click to open it. 
 Click the "% CPU" tab label to sort on it. Note the number for process "com.docker.hyperkit".
 If the mac's fan spins constantly: in Docker's Properties Resources, adjust Memory higher.
 
-Each node in a cluster must have at least 300 MiB of memory.
+Each node in a cluster uses at least 300 MiB of memory.
 
+More about drivers:
+* https://docs.okd.io/latest/minishift/getting-started/setting-up-virtualization-environment.html
+* https://minikube.sigs.k8s.io/docs/drivers/
 
 ### Minikube on Windows
 
@@ -1357,6 +1391,10 @@ KubeDNS is running at https://127.0.0.1:32768/api/v1/namespaces/kube-system/serv
 To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
    </pre>
 
+1. To further debug and diagnose:
+
+   <pre><strong>kubectl cluster-info dump</strong></pre>
+
 
 <a name="Config"></a>
 <a name="Contexts"></a>
@@ -1507,6 +1545,8 @@ K8s recognizes both imperative and declarative yaml files.
 
 * Imperative commands act directly on live objects.
 
+* Imperative commands provide no track record history.
+
 * Declarative commands act on yaml files which define objects.
 
 TASK: Create a pod with the ubuntu image to run a container to sleep for 5000 seconds. (Modify file ubuntu-sleeper-2.yaml)
@@ -1543,7 +1583,11 @@ PROTIP: Names of resources can be up to 253 characters. No underlines (use dashe
 <a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&t=1h46m19s">NinaK</a>:
    * <a target="_blank" href="https://kubernetesbyexample.com//ns/">kubernetesbyexample.com: Namespaces</a>
 
-PROTIP: Each UUID created by K8s is unique across all namespaces within a cluster.
+Namespaces provide a <strong>scope</strong> for names, as a way to divide cluster resources.
+
+PROTIP: Each UUID created (described) by K8s is unique across all namespaces within a cluster.
+
+Namespaces are intended for use in environments with many users spread across multiple teams. 
 
 K8s namespaces are used to separate resources (network, files, users, processes, IPCs, etc.) into 
 <strong>virtual clusters</strong> inside a K8s cluster.
@@ -1560,11 +1604,14 @@ K8s namespaces are used to separate resources (network, files, users, processes,
    <br /><br />
 
 Namespaces provide <strong>isolation</strong> among different project teams, so they don't overwrite each other's definitions.
+
 <a href="#Secrets">Secrets</a> and <a href="#ConfigMaps">ConfigMaps</a> are not shared across namespaces.
 
 Different limits on resources (CPU, RAM, storage) can be defined for each namespace.
 
 Thus, separation of different namespaces is useful within large enterprises.
+
+You don't need to create or think about the default namespace.
 
 1. Specify a namespace in a command:
 
@@ -1586,11 +1633,10 @@ Thus, separation of different namespaces is useful within large enterprises.
 
 1. List where KubeDNS is running:
 
-   <pre><strong>kubectl cluster-info</strong></pre>
-   
    Out of the box, without creating anything:
 
-   <pre><strong>k get ns</strong></pre>
+   <pre><strong>k get ns
+kubectl get namespaces</strong></pre>
 
    * kube-public contains publically accessible (without auth) <a href="#ConfigMaps">ConfigMaps</a> which contain cluster info (kubectl cluster-info)
    * kube-system holds k8s internal system processes (master, kubectl, etc.)
@@ -1728,12 +1774,17 @@ spec:
 
 1. Copy a specific pod name generated to paste in the command to see its logs:
 
-   <pre><strong>kubectl logs <em>pod-name</em></strong></pre>
+   <pre><strong>kubectl logs pod/<em>pod-name</em></strong></pre>
 
 1. Output log file to a pod (named "pod-x"):
 
    <pre>k logs pod-x | sudo tee ~/opt/answers/mypod.logs</pre>
 
+   TOOL: stern, 
+
+   elasticsearch, fluentd, kibana: https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/fluentd-elastisearch
+
+   k port-forward service/kibana-logging 5601:5601 --namespace=kube-system
 
 1. Execute iteractive terminal on a pod with bash installed (most Linux have --bin/sh installed):
 
@@ -1924,15 +1975,15 @@ Events:
 
 
 
-   <a name="Replication"></a>
-   <a name="ReplicaSets"></a>
+<a name="Replication"></a>
+<a name="ReplicaSets"></a>
 
 ## Deploy Replicas for Replication, Rolling Updates
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/99866180-3de7dd00-2b6c-11eb-9b4f-563ea790bb9e.png">
    <img width="784" alt="k8s-deployment-rs-1568x584" width="1568" height="584" src="https://user-images.githubusercontent.com/300046/99866180-3de7dd00-2b6c-11eb-9b4f-563ea790bb9e.png"></a>
 
-   The ReplicaSet process replaces the older ReplicationController.
+   (The ReplicaSet process replaces the older ReplicationController.)
 
    ReplicaSets enable deployment of several pods, and check their status as a single unit (replicas).
 
@@ -1970,26 +2021,25 @@ selector:
 
    A selector is required within ReplicaSet yaml.
 
-
    PROTIP: The spec: template: is copied from a pod definition yaml, then indented.
 
-   PROTIP: <a target="_blank" href="https://wilsonmar.github.io/#ViIndent">Indent paste using vi</a>
+   PROTIP: <a target="_blank" href="https://wilsonmar.github.io/text-editors#ViIndent">Indent paste using vi</a>
 
 
 1. PROTIP: Remember the ".apps" when listing replicasets:
 
-   k get replicasets.apps
+   <pre><strong>k get replicasets.apps</strong></pre>
 
 1. Identify the image:
 
-   k describe replicasets.apps replicaset-1  | grep -i image:
+   <pre><strong>k describe replicasets.apps replicaset-1  | grep -i image:</strong></pre>
 
 
    ### Modify replicas to scale
 
    * Edit the file, then<br />k replace -f replicaset-def.yaml
 
-   There are several formats which doesn't modify the file:
+   REMEMBER: several formats don't modify the file:
 
    * k scale --relicas=6 -f replicaset-def.yaml
 
@@ -2040,7 +2090,20 @@ External services are exposed by <strong>Endpoints:</strong> (<strong>NodePoints
 
 PROTIP: Services are defined with a port.
 
+Types of services:
+
+   * ClusterIP exposes only inside the cluster
+   * NodePort exposes a port through the node to the world
+   * LodBalancer exposes the service externally using a cloud provider's load
+   <br /><br />
+
 REMEMBER: Port numbers in deployment yaml must match port numbers in services yaml.
+
+1. Administrator: Create a new service account:
+
+   <pre><strong>kubectl create serviceaccount backend-team</strong></pre>
+
+1. Define the service yaml:
 
    <pre>spec:
   selector:
@@ -2060,6 +2123,8 @@ kubectl describe nodes | grep -i address -A 1
 curl 10.0.0.100:3#### (replace #### with the actual port digits)
    </pre>
 
+   PROTIP: A secret is assigned automatically.
+
 
 Examples of services :
 
@@ -2070,9 +2135,6 @@ Examples of services :
    * hello.yaml
    * monolith.yaml
    <br /><br />
-
-<a target="_blank" href="https://ravikirans.com/cks-kubernetes-security-exam-study-guide/">
-https://ravikirans.com/cks-kubernetes-security-exam-study-guide</a>
 
 
 1. To show all components in a mongodb app:
@@ -2110,6 +2172,17 @@ spec:
    <pre><strong>k get svc</strong></pre>
 
    The LoadBalancer type service assigns an <strong>EXTERNAL-IP address</strong> which accepts external requests.
+
+   <a name="ServicesDiscovery"></a>
+
+   ### Service Discovery
+
+1. cat /etc/resolve.conf
+
+   <pre>search default.svc.cluster.local  svc.cluster.local  cluster.local
+   nameserver 10.96.0.10
+   options ndots:5</pre>
+
 
 1. List the URL:
 
@@ -2259,6 +2332,8 @@ metadata:
 
 ### Add-ons to Kubernetes
 
+> Kubernetes is a platform used for building platforms such as <a href="#OpenShift">OpenShift</a>, Helm, EKS, CrossPlane.
+
 * <a target="_blank" href="https://github.com/appscode/">AppsCode</a> provides several utiities for Kubernetes.
 * <a target="_blank" href="https://coreos.com/tectonic/">CoreOS Tectonic</a> multi-cloud is being integrated with RedHat.
 * <a target="_blank" href="https://containership.io/">Containership Kubernetes Engine</a>
@@ -2275,10 +2350,17 @@ metadata:
 * <a target="_blank" href="https://buddy.works/guides/how-optimize-kubernetes-workflow">Buddy</a>
    automates Kubernetes workflows.
 
+* Octant cluster visualization
 * <a target="_blank" href="https://bit.ly/3dcRg4Y">RabbitMQ</a> for AMQP messaging with StatefulSet app
 
-> Kubernetes is a platform used for building platforms such as <a href="#OpenShift">OpenShift</a>, Helm, EKS, CrossPlane.
+helm install -name prometheus stable/prometheus-operator
 
+k port-forward service/prometheus-grafana 9091:80
+
+<a target="_blank" href="https://github.com/Albertoimpl/k8s-for-the-busy">https://github.com/Albertoimpl/k8s-for-the-busy</a>
+by Alberto C. Rios (@albertoimpl)
+
+https://github.com/ojhughes/k8s-for-the-busy-java-developer by Ollie Hughes (@olliehughes82)
 
 <hr />
 
@@ -2409,7 +2491,8 @@ Microsoft created <a target="_blank" href="https://github.com/Azure/draft">Draft
    draft up      # deploy</strong></pre>
 </ul>
 
-Draft uses language packs for Ruby, C# .NET Core 2.2 with Windows packs, authenticated to Azure Container Registry (ACR) and AKS.
+Draft uses language packs for Ruby, C# .NET Core 2.2 with Windows packs, 
+authenticated to Azure Container Registry (ACR) and <a href="#AKS">AKS</a>.
 
 
 
@@ -2480,32 +2563,61 @@ A Deployment is an API object that manages a replicated application, typically b
 
 
 <a name="Probes"></a>
+
+livenessProbe : should I restart the container?  to actuator/info
+
+readinessProbe : should I accept traffic?        to actuator/health
+
 <a name="ReadinessProbes"></a>
 <a name="LivenessProbes"></a>
 
 1. Configure "livenessProbe" (in folder health) and 
+
    "readinessProbe" (in folder readiness) on port 80
 
    In healthy-monolith-with-probes.yaml 
 
-   <pre>readinessProbe:
-    initialDelaySeconds: 5  # before applying health checks
-    timeoutSeconds: 1
-    httpGet: 
-      path: /
-      port: 80
+   <pre>...
   livenessProbe:
-    initialDelaySeconds: 5  # after init/startup before applying probe
-    timeoutSeconds: 1
     httpGet: 
-      path: /
-      port: 80
+      path: "/actuator/info"
+      port: 8080
+    failureThreshold: 3
+    successThreshold: 1
+    initialDelaySeconds: 5   # after init/startup before applying probe
+    periodSeconds: 30
+    timeoutSeconds: 10
+  readinessProbe:
+    httpGet: 
+      path: "/actuator/health"
+      port: 8080
+    failureThreshold: 3
+    successThreshold: 1
+    initialDelaySeconds: 15  # before applying health checks
+    periodSeconds: 30
+    timeoutSeconds: 10  # Needed?
    </pre>
-
 
    * ExecAction executes an action inside the container
    * TCPSocketAction checks against the container's IP address on a specified port
    * HTTPGetAction - HTTP Get request against container
+   <br /><br />
+
+Probes with Dekorate
+
+   <pre>...
+  startupProbe:
+    httpGet: 
+      path: "/healthz"
+      port: liveness-port
+    failureThreshold: 30
+    periodSeconds: 10
+   </pre>
+
+Skaffold
+
+Oketeto
+
 
 <a name="HealthChecks"></a>
 
@@ -2533,6 +2645,8 @@ A Deployment is an API object that manages a replicated application, typically b
 
 Being open-source has enabled Kubernetes to flourish on several clouds<a target="_blank" href="https://codefresh.io/kubernetes-guides/kubernetes-cloud-aws-vs-gcp-vs-azure/">*</a>
 
+
+
 ### Google Cloud Qwiklabs
 
 <a href="#GKE">Google Kubernetes Engine (GKE)</a> is a container management SaaS product.
@@ -2554,6 +2668,8 @@ The 8 labs covering 8 hours of the
 Kubernetes in the Google Cloud Qwiklab quest</a>
 
 <a target="_blank" href="https://bit.ly/33Cd4Uw/">First K8s app</a>
+
+
 
 
 <a name="GKE"></a>
@@ -2581,13 +2697,37 @@ This makes GKE "self healing" to provide high availability and reliability with
 
 In <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes-architecture/">this diagram</a>:
 
+1. Create demo-cluster:
 
-0. List all pods, including in the system namespace:
-
-   <pre><strong>
-   kubectl get nodes --all-namespaces
+   <pre><strong>gcloud container clusters create demo-cluster --num-nodes=3
    </strong></pre>
 
+   kubectl create deployment demo-app --image=gcr.io/demo-project-123/demo:1.0
+
+   kubectl expose deployment demo-app --type=LoadBalancer --port 5000 --target-port 5000
+
+1. List all pods, including in the system namespace:
+
+   <pre><strong>kubectl get nodes --all-namespaces
+   </strong></pre>
+
+1. Scale:
+
+   <pre><strong>kubectl scale deployment demo-app --replicas=3
+   </strong></pre>
+
+1. Loop responses:
+
+   <pre><strong>while true; do sleep 0.1; curl http://xx.xx.xx.xxx:5000/; echo -e; done
+   </strong></pre>
+
+1. Delete GKE cluster:
+
+   <pre><strong>kubectl delete service demo-app
+gcloud container cluster delete demo-cluster
+gcloud container images delete gcr.io/demo-project-123/demo:1.0
+gcloud container images delete gcr.io/demo-project-123/demo:2.0
+   </strong></pre>
 
 
 ### Amazon AWS ECS & EKS
@@ -2647,8 +2787,43 @@ EKS makes use of <a target="_blank" href="https://aws.amazon.com/fargate/">AWS F
 * Kops for AWS (at <a target="_blank" href="https://github.com/kubernetes/kops">https://github.com/kubernetes/kops</a>) is open-source to enable multi-master, multi-AZ cluster setup and management of multiple instance groups. Admins must stand up the masters, unlike in ECS/EKS. See <a target="_blank" title="Oct 27, 2017 by Tristan Colgate-McFarlane" href="https://medium.com/qubit-engineering/kubernetes-up-integrated-authentication-5d2c908c2810">
 "How Qubit built its production ready Kubernetes (k8s) environments"</a>
 
+1. Manage EKS nodepgroups:
+
+   <pre><strong>eksctl get nodegroup --cluster=demo-cluster-ec2
+eksctl scale nodegroup --cluster=demo-cluster-ec2 --nodes=1 --name=ng-exxx
+   </strong></pre>
+
+1. Delete to stop charges:
+
+   <pre><strong>kubectl delete service demo-app
+eksctl delete cluster --name demo-cluster-ec2
+aws ecr list-images --repository-name demo
+aws ecr batch-delete-image --repository-name demo --image-ids xxx
+aws ecr delete-repository --repository-name demo --force
+   </strong></pre>
+
+
+<a name="AKS"></a>
 
 ### Microsoft's Azure Kubernetes Service (AKS)
+
+Pluralsight: <a target="_blank" href="https://app.pluralsight.com/library/courses/azure-container-service-big-picture/table-of-contents">Azure Kubernetes Service (AKS) – The Big Picture</a> 13 Aug 2018
+by Manoj Nair (ManojNair.in)
+
+AKS manages the Control Plane master node.
+
+kubectl is included as part of the Azure Cloud Shell.
+
+SF (Servic Fabric) is the core technology.
+
+ACI (Azure Container Instances) connector :
+
+   <pre><strong>az container create --resource-group myResourceGroup -- name mycontainer --image microsoft/acl-helloworld --dns-name --label myClustre --port 80</strong></pre>
+
+ACR (Azure Container Regustry) stores images.
+
+To run an app in AKS, post App Descriptor to the K8s API Server, and Scheduler schedules worker nodes.
+
 
 ### Other clouds
 
@@ -2663,7 +2838,8 @@ EKS makes use of <a target="_blank" href="https://aws.amazon.com/fargate/">AWS F
 
 ## Other Orchestration systems managing Docker containers
 
-   * OpenShift
+   * OpenShift dedicated
+   * OpenShift Online (cloud-based)
    * Kubernetes by Google
    * Centos
    * Atomic
@@ -2677,7 +2853,7 @@ EKS makes use of <a target="_blank" href="https://aws.amazon.com/fargate/">AWS F
 
 * Docker Swarm incorporated <a href="#Rancher">Rancher</a> from Rancher Labs (#RancherK8s).
 
-   <a target="_blank" href="https://rancher.com/">Rancher Kubernetes Engine (RKE)</a> simplifies cluster administration (on EC2, Azure, GCE, Digital Ocean, EKS, AKS, GKE, vSphere or bare metal) - (provisiong, authentication, RBAC, Policy, Security, monitoring, Capacity scaling, Cost control). Its catalog is based on <a href="#Helm">Helm</a>. See <a target="_blank" href="https://rancher.com/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/node-pools/ec2/">Creating an Amazon EC2 Cluster using Rancher</a>.
+   <a target="_blank" href="https://rancher.com/">Rancher Kubernetes Engine (RKE)</a> simplifies cluster administration (on EC2, Azure, GCE, Digital Ocean, EKS, <a href="#AKS">AKS</a>, GKE, vSphere or bare metal) - (provisiong, authentication, RBAC, Policy, Security, monitoring, Capacity scaling, Cost control). Its catalog is based on <a href="#Helm">Helm</a>. See <a target="_blank" href="https://rancher.com/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/node-pools/ec2/">Creating an Amazon EC2 Cluster using Rancher</a>.
 
 * <a target="_blank" href="https://mesosphere.com/product/">Mesosphere DC/OS</a> (Data Center Operating System) runs Apache Mesos to abstract CPU, memory, storage to provide an API to program a multi-cloud multi-tenant data center (at Twitter, Yelp, Ebay, Azure, Apple, etc.) as if it's a single pool of resources. Kubernetes can run on top of it, but the DC/OS has premium (licensed) enterprise features. So it's not for you if you never want to pay for anything.
 
@@ -2690,7 +2866,7 @@ EKS makes use of <a target="_blank" href="https://aws.amazon.com/fargate/">AWS F
 
 * Red Hat (which IBM bought in 2018) offers its <strong>OpenShift</strong> to enable Docker and Kubernetes for the enterprise by adding external host names (projects) that add role-based security around <a href="#Namespaces">namespaces</a>. OpenStack enables running of k8s containers in other clouds or within private data centers.
 
-   OpenShift runs under OKD (Origin Kubernetes Distribution) which include a container and Istio mesh. NOTE: IBM is pushing its "<strong>containerd</strong>", its replacement for Docker.
+   OpenShift runs under OKD (Origin Kubernetes Distribution) which include a container and Istio mesh. NOTE: IBM is pushing its "<strong>containerd</strong>", its replacement for Docker. Azure uses containerd by default.
 
    See <a target="_blank" href="https://www.redhat.com/en/technologies/cloud-computing/openshift">https://www.redhat.com/en/technologies/cloud-computing/openshift</a>,
   
@@ -3492,6 +3668,7 @@ spec:
 ### Persistent Volume (PV)
 
    * <a target="_blank" href="https://kubernetesbyexample.com//pv/">kubernetesbyexample.com: Persistent Volumes</a>
+   <br /><br />
 
 PV's are a cluster resource, not to a specific _____.
 
@@ -3625,6 +3802,9 @@ spec:
 
    REMEMBER: <tt>name: storage-class-name</tt> in pod definition must match <a href="#PVC">PVC config</a> <tt>storageClassName: storage-class-name</tt>
 
+More:
+* https://redhat-scholars.github.io/kubernetes-tutorial/kubernetes-tutorial/volumes-persistentvolumes.html
+* https://github.com/burrsutter/9stepsawesome/blob/master/9_databases.adoc
 
 <hr />
 
@@ -3814,10 +3994,13 @@ path: /var/lib/docker
 
 ### Labels and Selectors
 
-Labels are specified for users of Kubernetes
+<tt>app</tt> labels are specified in pods for services to reference them:
+
+   <img alt="k8s-label-service-link" width="743" height="249" src="https://user-images.githubusercontent.com/300046/101234429-65ff3200-367c-11eb-9818-8462f0eb1486.png">
 
 Sample labels and values:
 
+   * app: <em>myapp</em>
    * release: stable, canary
    * environment: eve, qa, production
    * tier: frontend or backend or cache
@@ -4006,6 +4189,18 @@ spec:
         protocol: TCP
     nodeSelector:
       net: gigabit
+   </pre>
+
+
+   <pre>...
+spec:
+  resources:
+    requests:
+      memory: "300Mi"
+      cpu: "250m"  # 1/4 core
+    limits:
+      memory: "400Mi"
+      cpu: "1000m"  # 1 core
    </pre>
 
    Deployment wraps around <strong>replica sets</strong>, a newer version of doing rolling-update on Replication Controller. Old replica sets can revert roll-back by just changing the deploy.yml file.
@@ -4242,9 +4437,6 @@ shows the steps of how to create Compute Engine yourself:
    * Deploy clustesr DNS add-on
    <br /><br />
 
-<a target="_blank" href="http://post.oreilly.com/rd/9z1z07qqefah7igu9ftil9os3s666asu5a6lfhh1eko">O'Reilly book</a>
-Kubernetes adventures on Azure, Part 1 (Linux cluster)
-Having read several books on Kubernetes, Ivan Fioravanti, writing for Hackernoon, says it's time to start adventuring in the magical world of Kubernetes for real! And he does so using Microsoft Azure. Enjoy the step-by-step account of his escapade (part 1).
 
 
 
@@ -4375,6 +4567,10 @@ Daniel Pacak's experience with CKAD</a> (from Aqua Security)
 
 <a target="_blank" href="https://www.gcppodcast.com/post/">GCP PODCAST</a>: <a target="_blank" href="https://www.gcppodcast.com/post/episode-3-kubernetes-and-google-container-engine/">Kubernetes and Google Container Engine</a> hosts Francesc Campoy Flores and Mark Mandel interview Brian Dorsey, Developer Advocate, Google Cloud Platform. Comments at <a target="_blank" href="https://www.reddit.com/r/gcppodcast/comments/3sf3yr/episode_3_kubernetes_and_google_container_engine/">r/gcppodcast</a>
 
+<a target="_blank" href="http://post.oreilly.com/rd/9z1z07qqefah7igu9ftil9os3s666asu5a6lfhh1eko">O'Reilly book</a>
+Kubernetes adventures on Azure, Part 1 (Linux cluster)
+Having read several books on Kubernetes, Ivan Fioravanti, writing for Hackernoon, says it's time to start adventuring in the magical world of Kubernetes for real! And he does so using Microsoft Azure. Enjoy the step-by-step account of his escapade (part 1).
+
 Microsoft's "<a target="_blank" href="https://azure.microsoft.com/mediahandler/files/resourcefiles/kubernetes-learning-path/Kubernetes%20Learning%20Path%20version%201.0.pdf?utm_campaign=ossonazure">PDF: 50 days from zero to hero with Kubernetes</a>" includes:
 
 1. <a target="_blank" href="https://azure.microsoft.com/mediahandler/files/resourcefiles/phippy-goes-to-the-zoo/Phippy%20Goes%20To%20The%20Zoo_MSFTonline.pdf">Phippy Goes to the Zoo</a> is a children's book character Phippy (from Docker) introduct pods, replica sets, deployments, ingress.
@@ -4441,6 +4637,33 @@ sealed secrets:
    * Bitnami's Secret Controller has a key in the Controller used to do asymmetric encrypt and decrypt of external secrets stored in Git.
    * AWS Secrets Manager (ASM)
    <br /><br />
+
+1. Encode Plain Text to base64 using program provided by operating system:
+
+   <pre><strong>echo -n 'supersecret' | base64</strong></pre>
+
+   <tt>c3VwAXJzZWNyZXQ=</tt>
+
+1. Use encoded secret:
+
+   <pre>apiVersion: v1
+kind: Secret
+metadata
+  name: database-secrets
+type: Opaque
+data:
+  DB_PASSWORD: "c3VwAXJzZWNyZXQ="
+volumes:
+  - name: database-secrets
+  secrets:
+    secretName: database-secrets
+   </pre>
+
+   * Encrypting data on rest: https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/
+   * Using Sealed Secrets that allow us to encrypt everything in git:
+   https://github.com/bitnami-labs/sealed-secrets
+   * Using Vault to store them: https://github.com/coreos/vault-operator
+
 
 <a name="ServiceAccounts"></a>
 
@@ -4549,8 +4772,17 @@ Sandeep Dinesh (@sandeepdinesh) from 2018
 <a target="_blank" href="https://searchitoperations.techtarget.com/news/252492344/Observability-standards-emerge-as-Kubernetes-matures">
 Observability</a>
 
+Burr Sutter (<a target="_blank" href="httpps://www.burrsutter.com/">burrsutter.com</a>)
+As a Red Hat employee:
+   * <a target="_blank" href="https://github.com/redhat-scholars/kubernetes-tutorial">
+   https://github.com/redhat-scholars/kubernetes-tutorial</a>
+   * bit.ly/9stepsawesome
+   * 11 Steps to Awesome with Kubernetes, Istio, and Knative
+   * https://developers.redhat.com/devnation/master-course/kubernetes (fundamentals)
+   <br /><br />
 
-
+Alex Soto (lordofthejars.com)
+   * https://github.com/redhat-scholars/kubernetes-tutorial
 
 ## More on DevOps #
 
