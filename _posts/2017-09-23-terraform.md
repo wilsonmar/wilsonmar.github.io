@@ -49,7 +49,7 @@ The objective is to <strong>save money</strong> by automating the configuration 
 
 ## Infrastructure as Code Competition
 
-The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and Terraform:
+The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and Terraform:<a target="_blank" href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c">*</a>
 
 <table border="1" cellpadding="4" cellspacing="0">
 <thead><tr><th>&nbsp;</th><th>Maturity</th><th>Community</th><th>Type
