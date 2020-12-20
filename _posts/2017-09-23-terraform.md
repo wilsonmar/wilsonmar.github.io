@@ -64,19 +64,19 @@ The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and
    </td><td>Mutable</td><td>Procedural
    </td><td>Yes</td><td>Yes</td></tr>
 <tr valign="top"><td>SaltStack</td><td>2011 Medium</td><td>Large</td><td>Config Mgmt
-   </td><td>Mutable</td><td>Declarative
+   </td><td>Mutable</td><td bgcolor="yellow">Declarative
    </td><td>Yes</td><td>Yes</td></tr>
 <tr valign="top"><td>Ansible</td><td>2012 Medium</td><td>Huge</td><td>Config Mgmt
    </td><td>Mutable</td><td>Procedural
    </td><td>No</td><td>No</td></tr>
 <tr valign="top"><td>CF</td><td>2011 Medium</td><td>Small<a href="#x1">*1</a></td><td>Provisioning
-   </td><td>Immutable</td><td>Declarative
+   </td><td>Immutable</td><td bgcolor="yellow">Declarative
    </td><td>No</td><td>No</td></tr>
 <tr valign="top"><td>Heat</td><td>2012 Low</td><td>Small</td><td>Provisioning
-   </td><td>Immutable</td><td>Declarative
+   </td><td>Immutable</td><td bgcolor="yellow">Declarative
    </td><td>No</td><td>No</td></tr>
 <tr valign="top"><td>Terraform</td><td>2014 Low</td><td>Huge</td><td>Provisioning
-   </td><td>Immutable</td><td>Declarative
+   </td><td>Immutable</td><td bgcolor="yellow">Declarative
    </td><td>No</td><td>No</td></tr>
 </tbody></table>
 
