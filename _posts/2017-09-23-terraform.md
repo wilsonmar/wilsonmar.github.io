@@ -3,7 +3,7 @@ layout: post
 title: "Terraform (vs. AWS Cloud Formation)"
 excerpt: "Immutable declarative multi-service Infrastructure as Code (IaC) provisioning"
 tags: [DevOps, ecosystem]
-date: "2017-09-23"
+date: "2020-12-19"
 file: "terraform"
 image:
 # feature: pic data center slice 1900x500.jpg
@@ -51,8 +51,39 @@ The objective is to <strong>save money</strong> by automating the configuration 
 
 The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and Terraform:
 
+<table border="1" cellpadding="4" cellspacing="0">
+<thead><tr><th>&nbsp;</th><th>Maturity</th><th>Community</th><th>Type
+   </th><th>Infra.</th><th>Lang.
+   </th><th>Agent</th><th>Master</th><th>-</th></tr>
+</thead><tbody>
+<tr valign="top"><td>Chef</td><td>High</td><td>Large</td><td>Config Mgmt
+   </td><td>Mutable</td><td>Procedural
+   </td><td>Yes</td><td>Yes</td><td>-</td></tr>
+<tr valign="top"><td>Puppet</td><td>High</td><td>Large</td><td>Config Mgmt
+   </td><td>Mutable</td><td>Declarative
+   </td><td>Yes</td><td>Yes</td><td>-</td></tr>
+<tr valign="top"><td>SaltStack</td><td>Medium</td><td>Large</td><td>Config Mgmt
+   </td><td>Mutable</td><td>Declarative
+   </td><td>Yes</td><td>Yes</td><td>-</td></tr>
+<tr valign="top"><td>Ansible</td><td>Medium</td><td>Huge</td><td>Config Mgmt
+   </td><td>Mutable</td><td>Procedural
+   </td><td>No</td><td>No</td><td>-</td></tr>
+<tr valign="top"><td>CF</td><td>Medium</td><td>Small<a href="x1">*1</a></td><td>Provisioning
+   </td><td>Immutable</td><td>Declarative
+   </td><td>No</td><td>No</td><td>-</td></tr>
+<tr valign="top"><td>Heat</td><td>Low</td><td>Small</td><td>Provisioning
+   </td><td>Immutable</td><td>Declarative
+   </td><td>No</td><td>No</td><td>-</td></tr>
+<tr valign="top"><td>Terraform</td><td>Low</td><td>Huge</td><td>Provisioning
+   </td><td>Immutable</td><td>Declarative
+   </td><td>No</td><td>No</td><td>-</td></tr>
+</tbody></table>
+<a name="x1"></a>*1 - CF (CloudFormation) is used only within the AWS cloud while others operate on all clouds.
+CF is the only <strong>closed-sourced</strong> solution on this list.
+
+
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/30870969-87e52558-a2a2-11e7-8cfa-454fe9081c64.png">
-<img alt="terraform-comp-colored-650x261-36439" width="650" height="261" src="https://user-images.githubusercontent.com/300046/30870914-62437728-a2a2-11e7-8e6a-e3c847f7984f.jpg"><small>(Click to pop-up full screen image <a target="_blank" href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c#.63ls7fpkq">colorized from Gruntwork's blog</a>)</small></a>
+<img alt="terraform-comp-colored-650x261-36439" width="650" height="261" src="https://user-images.githubusercontent.com/300046/30870914-62437728-a2a2-11e7-8e6a-e3c847f7984f.jpg"><br /><small>(Click to pop-up full screen image <a target="_blank" href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c#.63ls7fpkq">colorized from Gruntwork's blog</a>)</small></a>
 
 Ansible, Chef, Puppet, SaltStack install applications.<br />
 Terraform installs infrastructure in cloud and VM as <strong>workflows</strong>. Kubernetes orchestrates (brings up and down) Docker containers.
