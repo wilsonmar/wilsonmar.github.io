@@ -47,7 +47,7 @@ Automating infrastructure deployment consists of these features:
 The objective is to <strong>save money</strong> by automating the configuration of servers and other resources, which is quicker and more consistent than manually clicking through the GUI.
 
 
-## Infrastructure as Code Competition
+## Infrastructure as Code (IaC) Competition
 
 The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and Terraform:<a target="_blank" href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c">*</a>
 
@@ -56,27 +56,27 @@ The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and
    </th><th>Infra.</th><th>Lang.
    </th><th>Agent</th><th>Master</th><th>-</th></tr>
 </thead><tbody>
-<tr valign="top"><td>Chef</td><td>High</td><td>Large</td><td>Config Mgmt
-   </td><td>Mutable</td><td>Procedural
-   </td><td>Yes</td><td>Yes</td><td>-</td></tr>
-<tr valign="top"><td>Puppet</td><td>High</td><td>Large</td><td>Config Mgmt
+<tr valign="top"><td>Puppet</td><td>2005 High</td><td>Large</td><td>Config Mgmt
    </td><td>Mutable</td><td>Declarative
-   </td><td>Yes</td><td>Yes</td><td>-</td></tr>
-<tr valign="top"><td>SaltStack</td><td>Medium</td><td>Large</td><td>Config Mgmt
-   </td><td>Mutable</td><td>Declarative
-   </td><td>Yes</td><td>Yes</td><td>-</td></tr>
-<tr valign="top"><td>Ansible</td><td>Medium</td><td>Huge</td><td>Config Mgmt
+   </td><td>Yes</td><td>Yes</td></tr>
+<tr valign="top"><td>Chef</td><td>2009 High</td><td>Large</td><td>Config Mgmt
    </td><td>Mutable</td><td>Procedural
-   </td><td>No</td><td>No</td><td>-</td></tr>
-<tr valign="top"><td>CF</td><td>Medium</td><td>Small<a href="x1">*1</a></td><td>Provisioning
+   </td><td>Yes</td><td>Yes</td></tr>
+<tr valign="top"><td>SaltStack</td><td>2011 Medium</td><td>Large</td><td>Config Mgmt
+   </td><td>Mutable</td><td>Declarative
+   </td><td>Yes</td><td>Yes</td></tr>
+<tr valign="top"><td>Ansible</td><td>2012 Medium</td><td>Huge</td><td>Config Mgmt
+   </td><td>Mutable</td><td>Procedural
+   </td><td>No</td><td>No</td></tr>
+<tr valign="top"><td>CF</td><td>2011 Medium</td><td>Small<a href="#x1">*1</a></td><td>Provisioning
    </td><td>Immutable</td><td>Declarative
-   </td><td>No</td><td>No</td><td>-</td></tr>
-<tr valign="top"><td>Heat</td><td>Low</td><td>Small</td><td>Provisioning
+   </td><td>No</td><td>No</td></tr>
+<tr valign="top"><td>Heat</td><td>2012 Low</td><td>Small</td><td>Provisioning
    </td><td>Immutable</td><td>Declarative
-   </td><td>No</td><td>No</td><td>-</td></tr>
-<tr valign="top"><td>Terraform</td><td>Low</td><td>Huge</td><td>Provisioning
+   </td><td>No</td><td>No</td></tr>
+<tr valign="top"><td>Terraform</td><td>2014 Low</td><td>Huge</td><td>Provisioning
    </td><td>Immutable</td><td>Declarative
-   </td><td>No</td><td>No</td><td>-</td></tr>
+   </td><td>No</td><td>No</td></tr>
 </tbody></table>
 <a name="x1"></a>*1 - CF (CloudFormation) is used only within the AWS cloud while others operate on all clouds.
 CF is the only <strong>closed-sourced</strong> solution on this list.
