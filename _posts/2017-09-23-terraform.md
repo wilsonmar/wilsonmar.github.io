@@ -54,7 +54,7 @@ The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and
 <table border="1" cellpadding="4" cellspacing="0">
 <thead><tr><th>&nbsp;</th><th>Maturity</th><th>Community</th><th>Type
    </th><th>Infra.</th><th>Lang.
-   </th><th>Agent</th><th>Master</th><th>-</th></tr>
+   </th><th>Agent</th><th>Master</th></tr>
 </thead><tbody>
 <tr valign="top"><td>Puppet</td><td>2005 High</td><td>Large</td><td>Config Mgmt
    </td><td>Mutable</td><td>Declarative
