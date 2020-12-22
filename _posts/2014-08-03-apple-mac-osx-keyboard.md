@@ -16,45 +16,47 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Many reference keys using symbols, so memorize this:
+This topic is about how you can do things faster by automating actions on the keyboard controlling your Mac,
+beyond <a target="_blank" href="https://support.apple.com/en-us/HT201236">Apple's standard Keyboard Shortcuts at https://support.apple.com/en-us/HT201236</a>
+
+## Special key Names and Symbols
+
+The "Special" keys on a Mac's keyboard are represented by both symbols and names, so memorize this:
 
 <amp-img width="413" height="399" alt="Apple keys symbols" src="https://cloud.githubusercontent.com/assets/300046/15536540/fe6cb344-222e-11e6-9f2b-c37419a9d42f.gif"></amp-img>
 
-This article provides an enhanced presentation of <a target="_blank" href="https://support.apple.com/en-us/HT201236">Apple's Keyboard Shortcuts at https://support.apple.com/en-us/HT201236</a>
+
+## Key visibility
+
+PROTIP: Some use keyboards (RGB) that light up keys in the dark. But I personally think the best strategy is to find a way to NOT have to look at the keyboard at all.
+
+PROTIP: Resourceful coders make it so they don't need to waste time and attention reaching for the mouse. 
+
+PROTIP: Some put tiny drops from a glue gun on strategic points on the keyboard so they can orient their finger in the dark without looking.
+
+PROTIP: Repeated practice trains muscle memory so you can find the keys without the need to take your eyes off the screen. Do not make it a habit to look at the keyboard while you learn to do the routine, which includes getting your hands back to to "home row" with forefingers on F and J. Try to keep your forefingers in the "home" position of F and J. Most keyboard have a tiny bump on those two keys.
+
+   This may be a generalization, but many top coders actually like the <strong>vi text editor</strong> because it doesn't use difficult-to-reach keys or mouse that require the user to take their eyes off the screen. DevSecOps coders have no choice because some operating systems only offer only vi (such as during Kubernetes exams). 
 
 
 <a name="Gymnastics"></a>
 
 ## Full Screen Finger Gymnastics #
 
-Let's get right down to an often-used action invoked by a complicated key combination:
-toggle full screen, which enables you to <strong>focus on your content</strong> rather than be distracted by buttons, menus, lists, etc.
+PROTIP: To evaluate Mac developers, some interviewers ask "show me how you enter and exit Full Screen". This is because they assume that the most productive developers work with their hands always on the keyboard. 
 
-Windows has its F12 key. Apple has Mac users do the equivalent of a <strong>double Summersault</strong> with your fingers.
-How do you type, at the same time:
+Rather than be distracted by buttons, menus, lists, etc. you may want to <strong>focus on your content</strong>
+by <strong>toggling full screen</strong>. Windows has its F12 key. But on macOS the default operation is a complicated key combination typed at the same time -- the equivalent of a <strong>double Summersault</strong> with your fingers:
 
-   <ul><strong>control + command + F</strong></ul>
+   <ul><strong>control + command + F</strong>
 
-PROTIP: To toggle <strong>Full Screen view</strong> using the default configuration from Apple: while keeping your left forefinger on the F "home" key, reach with your left thumb to hold down the control key. This may hurt at first (until you get used to it). Try raising your hand
+   PROTIP: Try raising your hand while keeping your left forefinger on the F "home" key, reach with your left thumb <strong>inside</strong> to hold down the control key. This may hurt at first (until you get used to it).
 
    Now, while keeping your right forefinger on the J "home" key, reach with your right thumb to hold down the command key on the right side of the Space Bar. Then you're in position to press F with your left forefinger.
-
-## Key visibility
-
-PROTIP: Some use keyboards (RGB) that light up keys in the dark. But I personally think the best strategy is to find a way to not have to look at the keyboard at all.
-
-PROTIP: Some put tiny drops from a glue gun on strategic points on the keyboard so they can orient their finger in the dark without looking.
-
-PROTIP: Repeated practice trains muscle memory so you can find the keys without the need to take your eyes off the screen. Do not make it a habit to look at the keyboard while you learn to do the routine, which includes getting your hands back to to "home row" with forefingers on F and J. (Like a Jedi Paduan in the Star Wars movies training blindfolded)
-
-   This may be a generalization. But many top coders actually like the <strong>vi text editor</strong> because it doesn't use difficult-to-reach keys or mouse that require the user to take their eyes off the screen. DevSecOps coders have no choice because some operating systems only offer only vi (such as during Kubernetes exams). 
-
-   PROTIP: To evaluate Mac developers, some interviewers ask "show me how you enter and exit Full Screen". This is because they assume that the most productive developers work with their hands always on the keyboard. 
+   </ul>
 
 
 ## Keyboard Ergonomics
-
-Resourceful coders make it so they don't need to waste time and attention reaching for the mouse. 
 
 Although pricey at <a target="_blank" href="https://www.amazon.com/Kinesis-Advantage2-Ergonomic-Keyboard-KB600/dp/B07K1SMRGS/">$340 from Amazon</a> (perhaps the most expensive keyboard available), the "Advantage2" keyboard <a target="_blank" href="https://kinesis-ergo.com/shop/advantage2/">from Kinesis-ergo.com</a> (at Bethel, Washington state)
 makes it easier and faster for your fingers to reach keys due to its unique contoured key wells.
@@ -413,6 +415,7 @@ on a Mac is problematic, especially within a virtual Windows machine.
 So map <strong>Alt+F1</strong> within 
 VMware Fusion > Preferences > Keyboard &amp; Mouse > Key Mappings.</li>
 </ul>
+
 
 <a id="RemapKeyboard"></a>
 
@@ -880,30 +883,35 @@ describes setup and use of <a target="_blank" href="http://www.hammerspoon.org/g
 
 Assign Hyper+X to a specific program, and the pop-up shown by command+Tab will not come up.
 
-## Tmux
-
-Multiplexer
-
 ## Bash-it
 
-https://github.com/Bash-it/bash-it
-community Bash framework of autocompletion, themes, aliases, custom functions that rips off https://github.com/robbyrussell/oh-my-zsh 
+<a target="_blank" href="https://github.com/Bash-it/bash-it">https://github.com/Bash-it/bash-it</a>
+community Bash framework of autocompletion, themes, aliases, custom functions based on <a target="_blank" href="https://github.com/robbyrussell/oh-my-zsh">https://github.com/robbyrussell/oh-my-zsh</a>
 
 ## Outlook
 
 Among the <a target="_blank" href="https://support.microsoft.com/en-us/office/keyboard-shortcuts-for-outlook-3cdeb221-7ae5-4c1d-8c1d-9e63216c1efd?ui=en-us&rs=en-us&ad=us">
 Keyboard Shortcuts for Outlook on macOS</a>:
 
-Minimize or expand the ribbon = Options+ COMMAND +R
+Minimize or expand the ribbon = Options + COMMAND + R
 
-Hide the reading pane or show it on the right = COMMAND +Backslash (\)
+Hide the reading pane or show it on the right = COMMAND + Backslash (\)
 
-Hide the reading pane or show it below = Shift+ COMMAND +Backslash (\)
+Hide the reading pane or show it below = Shift+ COMMAND + Backslash (\)
 
+## Tmux
 
+Tmux is a contraction of "Terminal Multiplexer".
+
+## Comprehensive
+
+<a target="_blank" href="https://tyler.io/i-may-have-gone-overboard-with-my-keyboard-shortcuts/">Tyler.io</a>
+show the keys he defined using Magnet (https://magnet.crowdcafe.com/) and KeyboardMaestro (https://www.keyboardmaestro.com/main/).
+Tyler Hall's code is at https://github.com/tylerhall/
 
 ## More on OSX #
 
 This is one of a series on Mac OSX:
 
 {% include mac_links.html %}
+

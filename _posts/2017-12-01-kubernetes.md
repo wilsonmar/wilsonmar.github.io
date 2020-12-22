@@ -68,6 +68,7 @@ Discovery,
 <a href="#Deployments">deployment/</a>,
 <strong>ep</strong>=endpoints,
 <a href="#Envars">Environment Variables</a>,
+<a href="#Expose">Expose</a>,
 <a href="#Hashes">hashes</a>,
 health checks,
 <a href="#Imperative">Imperative</a>,
@@ -106,6 +107,7 @@ mi<a href="#ReadinessProbes">Readiness Probes</a>,
 <a href="#StorageClasses">Storage Classes</a>,
 <a href="#Taints">Taints</a>,
 <a href="#Tolerations">Tolerations</a>,
+<a href="#Vim">Vim</a>,
 <a href="#Volumes">Volumes</a>,
 <a href="#Workloads">Workloads API</a>
 
@@ -218,7 +220,9 @@ This diagram is shown at the ending of a small (upcoming) movie logically illust
 
 Instead of multiple choice questions, K8s exam consists of <strong>task-based practical responses while SSH'd into live clusters.</strong> Each exam includes one free fail retake.
 
-There is support for other languages other than English.
+MOVE: There is support for other languages other than English.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=L6K_8dOFR5w">VIDEO: "Hands-on Tips ot Pass the CKAD Exam"</a> from CloudAcademy.
 
 
 <a name="CKAD_ExamDomains"></a>
@@ -250,24 +254,6 @@ Here is the full text of the <a target="_blank" href="https://github.com/cncf/cu
 
 <img alt="k8s-ckad-logo-328x311.jpg" width="328" height="311" src="https://user-images.githubusercontent.com/300046/95666890-b09c7c00-0b1b-11eb-820c-ca44d8c9c0e5.jpg">
 
-The <a target="_blank" href="https://training.linuxfoundation.org/training/kubernetes-for-developers/">35-hour video/on-site course LFD259</a> $199 upgrade offered with the <a target="_blank" href="https://www.cncf.io/certification/ckad/">CKAD exam sign-up</a> covers this series of <strong>topics</strong>:
-
-   1. Course Introduction
-   2. Kubernetes Architecture
-   3. Build
-   4. Design
-   5. Deployment Configuration
-   6. Security
-   7. Exposing Applications
-   8. Troubleshooting
-   <br /><br />
-
-LFD459 is the 3-day on-site equivalent course code.
-
-The Linux Foundation exam focuses only on "pure" Kubernetes commands and excludes <a href="#Addons">add-ons</a> such as OpenStack, Helm, Istio.
-
-PROTIP: LF class materials are distributed in .bz2 format which can be opened on macOS by the <a target="_blank" href="https://apps.apple.com/us/app/the-unarchiver/id425424353?mt=12&ign-mpt=uo%3D4">
-Unarchiver</a>
 
 
 ### CKA Exam Domains
@@ -327,12 +313,6 @@ sample Security yaml
 https://ravikirans.com/cks-kubernetes-security-exam-study-guide</a>
 
 
-#### K21Academy
-
-https://k21academy.com/docker-kubernetes/certified-kubernetes-security-specialist-cks-step-by-step-activity-guide-hands-on-lab/
-is normally $997, with a 60 day money-back guarantee.
-
-
 #### Whizlabs.com
 
 Known for their sample exams, $99/year on sale from $199 for all courses, by instructors from India.
@@ -349,6 +329,12 @@ If you want faster video playback, you have to set it for every video. Annoying.
 
 * <a target="_blank" href="https://www.whizlabs.com/learn/course/deploying-microservices-to-kubernetes-using-azure-devops/">Deploying Microservices to Kubernetes using Azure DevOps</a>
 [06:43:32]
+
+
+#### K21Academy
+
+https://k21academy.com/docker-kubernetes/certified-kubernetes-security-specialist-cks-step-by-step-activity-guide-hands-on-lab/
+is normally $997, with a 60 day money-back guarantee.
 
 
 
@@ -445,7 +431,7 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 
 1. Practice <a target="_blank" href="https://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc">Keyboard shortcuts for Bash</a>
 
-1. Get proficient with vim well  so that commands are intuitive (where you don't have to pause for remembering how to do things in vim). Use the <a target="_blank" href="http://www2.geog.ucl.ac.uk/~plewis/teaching/unix/vimtutor">vimtutor</a> program that usually gets installed when you install the normal vim/gvim package.
+1. Get proficient with the <a href="#Vim">vim editor</a> so that commands are intuitive (where you don't have to pause for remembering how to do things in vim). Use the <a target="_blank" href="http://www2.geog.ucl.ac.uk/~plewis/teaching/unix/vimtutor">vimtutor</a> program that usually gets installed when you install the normal vim/gvim package.
 
    ### Bookmarks to docs
 
@@ -539,10 +525,12 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 
 1. Use <tt>help</tt> as in <tt>kubectl create configmap help </tt>.
 
-1. Run a busybox web server to test access externally:
+1. Run a busybox web server to test retrieval of externally (using wget):
 
    <pre><strong>k run tmp --restart=Never --rm --image=busybox -i -- wget -O- 10.12.2.15
    </strong></pre>
+
+   Notice "Never" is title cased.
 
 1. Do not delete/remove what you have done! People/robots review your servers after the test.
 
@@ -666,9 +654,9 @@ Different instructors explain concepts in different logical sequences.
 So looking at different video classes provides that.
 
 
-### KodeKloud from Udemy.com
+### KodeKloud also from Udemy.com
 
-This I think these are the most thoroughly and logically presented tutorials for CKAD and CKA.
+PROTIP: This I think is the most thoroughly and logically presented tutorials for CKAD and CKA.
 
 I have several tabs open taking it:
 
@@ -699,22 +687,46 @@ I have several tabs open taking it:
 1. For CKA, he also authored <a target="_blank" href="https://github.com/mmumshad/kubernetes-the-hard-way">https://github.com/mmumshad/kubernetes-the-hard-way</a> (on Virtualbox and Vagrant using Docker instead of containerd) which takes a manual approach to bootstrap a Kubernetes cluster from scratch, for learning to understand each task performed by the automation. The tutorial adapts the original using GCP developed by Kelsey Hightower.
 
 1. <a target="_blank" href="https://join.slack.com/t/kodekloudworkspace/shared_invite/zt-fz4nok2p-4~RJZBLNgThqSeuroLSPiQ">Join</a> the Slack channel for <a target="_blank" href="https://app.slack.com/client/TDSBA9B9V/CDR4R9Z7E/thread/CDR4R9Z7E-1604511588.117400">CKAD</a> and <a target="_blank" href="https://app.slack.com/client/TDSBA9B9V/CHMV3P9NV/thread/CDR4R9Z7E-1604511588.117400">CKA</a> students.
+
+1. KodeKloud's Mock Tests, which Ansar (Amoury) Memon's <a target="_blank" href="https://www.youtube.com/channel/UCXOYtKi39m28Gd7FGaDVYGw">"The FrontOpsGuys" on YouTube</a> answers for 
+   <a target="_blank" href="https://www.youtube.com/channel/UCXOYtKi39m28Gd7FGaDVYGw">Test 1</a> and 
+   <a target="_blank" href="https://www.youtube.com/watch?v=BiY3b7F96wc">Test 2</a>
+
                          
 For CKA, https://github.com/kodekloudhub/certified-kubernetes-administrator-course
+
 
 <a name="LFS258"></a>
 
 ### Linux Foundation LFS258
 
-The definitive courses are from the same organization that created the exam.
+On would think the definitive courses would be from the same organization that created the exam.
 
-<a target="_blank" href="https://training.linuxfoundation.org/cm/prep/">
-https://training.linuxfoundation.org/cm/prep</a>
+The <a target="_blank" href="https://training.linuxfoundation.org/training/kubernetes-for-developers/">35-hour video/on-site course LFD259</a> $199 upgrade offered with the <a target="_blank" href="https://www.cncf.io/certification/ckad/">CKAD exam sign-up</a> covers this series of <strong>topics</strong>:
 
-<a target="_blank" href="https://training.linuxfoundation.org/cm/prep/?course=LFS258">
-https://training.linuxfoundation.org/cm/prep/?course=LFS258</a>
+   1. Course Introduction
+   2. Kubernetes Architecture
+   3. Build
+   4. Design
+   5. Deployment Configuration
+   6. Security
+   7. Exposing Applications
+   8. Troubleshooting
+   <br /><br />
 
-Ready-for.sh
+LFD459 is the 3-day on-site equivalent course code.
+
+PROTIP: LF class materials (<a target="_blank" href="https://training.linuxfoundation.org/cm/prep/">
+https://training.linuxfoundation.org/cm/prep</a>) are distributed in .bz2 format which can be opened on macOS by the <a target="_blank" href="https://apps.apple.com/us/app/the-unarchiver/id425424353?mt=12&ign-mpt=uo%3D4">
+Unarchiver</a>
+
+I took <a target="_blank" href="https://training.linuxfoundation.org/cm/prep/?course=LFS258">
+https://training.linuxfoundation.org/cm/prep/?course=LFS258</a> but found it to be like "drinking water from a fire hose" in that the 600 page coureware is comprehensive. But exercises during the class are not repeatable after the class.
+
+The Linux Foundation exam focuses only on "pure" Kubernetes commands and excludes <a href="#Addons">add-ons</a> such as OpenStack, Helm, Istio. However, LFD259 covers Istio anyway.
+
+Ready-for.sh establishes the environment:
+
    <pre>wget http://bit.ly/LFready -O ready-for.sh
    chmod 755 ready-for.sh
    ./ready-for.sh --help
@@ -854,18 +866,22 @@ kubectl delete pod mypod
 
 ### Pluralsight
 
-NOTE: Pluralsight videos can be viewed as a Tivo app on my TV.
+PROTIP: Pluralsight videos can be viewed as a <strong>Tivo app</strong> on my TV. That's a big plus. No others offer that.
 
-<a target="_blank" href="https://app.pluralsight.com/paths/certificate/certified-kubernetes-application-developer-ckad">Pluralsight has a 14-hour series of videos on CKAD</a> by Dan Wahlin (@danwahlin, codewithdan.com). In chron order:
+<a target="_blank" href="https://app.pluralsight.com/paths/certificate/certified-kubernetes-application-developer-ckad">Pluralsight has a 14-hour series of videos on CKAD</a> by Dan Wahlin (@danwahlin, codewithdan.com). Courses in chron order:
 
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-core-concepts">Kubernetes for Developers: Core Concepts</a> 4h 34m Sept 15, 2019
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-core-concepts">Kubernetes for Developers: Core Concepts</a> 4h 34m Sept 15, 2019 with files at <a target="_blank" href="https://github.com/DanWahlin/DockerAndKubernetesCourseCode">https://github.com/DanWahlin/DockerAndKubernetesCourseCode</a> shows setup and troubleshooting of a whole NGINX app with Redis and MongoDB. <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=ffb6bf03-179b-405c-8a4c-99a5d1567b6c">VIDEO</a>: His sample code references environment variables set on the Terminal before invoking K8s:
+
+   <pre>export APP_ENV=development
+   export DOCKER_ACCT=codewithdan
+   </pre>
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-deploying-code">Kubernetes for Developers: Deploying Your Code</a> 3h 4m Feb 26, 2020
 
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-moving-cloud">Kubernetes for Developers: Moving to the Cloud</a> by Craig Golightly (@seethatgo, seethatgo.com) 1h 3m Dec 19, 2019 deploys the same simple sample Python app (kubernetes-developers-moving-cloud.zip) to <a href="#k8s_clouds">AKS, EKS, and GKE clouds</a>.
  
    CAUTION: <a target="_blank" href="https://aws.amazon.com/blogs/developer/aws-cli-v2-is-now-generally-available/">
    aws v2 CLI</a> became generally available in Feb 2020 shortly after this course was published.
-
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-deploying-code">Kubernetes for Developers: Deploying Your Code</a> 3h 4m Feb 26, 2020
 
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-docker-compose-to-kubernetes">Kubernetes for Developers: Moving from Docker Compose to Kubernetes</a> 2h 20m May 28, 2020
 
@@ -983,10 +999,9 @@ Instead of minikube, there's also K3s, Microk8s on Linux, Minishift.
 But let's start by installing minikube on your laptop.
 
 
-### Additional Utilities
+### Kustomize templating utility
 
-Kustomize.io kustomize command creates customized raw, template-free YAML (overlay) files for multiple purposes (dev, prod).
-It leaves the base (original) YAML file untouched and usable as is.
+<a target="_blank" href="https://www.kustomize.io/">Kustomize.io</a> <tt>kustomize</tt> command creates customized raw, template-free YAML (overlay) files for multiple purposes (dev, prod). It leaves the base (original) YAML file untouched and usable as is.
 For example, dev would have <tt>replicas: 1</tt> while pro would have <tt>replicas: 5</tt>.
 
 
@@ -1505,7 +1520,10 @@ echo "source <(kubectl completion bash)" >> ~/.bashrc
    echo "[[ $commands[kubectl] ]] && source <(kubectl completion zsh)" >> ~/.zshrc
     </pre>
 
-   ### vim indentation
+
+   <a name="Vim"></a>
+
+   ### Vim Editor - indentation
 
    PROTIP: vim is the only editor available, so learn to search lines in vim (Esc, /, the text to be searched).
    
@@ -1514,6 +1532,7 @@ echo "source <(kubectl completion bash)" >> ~/.bashrc
    To indent several lines with one command: Esc Shift+V for Visual Line mode, highlight lines, 
    Shift . to shift left, Shift , to shift right.
 
+   <a target="_blank" href="https://www.youtube.com/watch?v=knyJt8d6C_8">VIDEO</a> "Vim crash course".
 
 
 <a name="Aliases"></a>
@@ -1543,6 +1562,8 @@ K8s recognizes both imperative and declarative yaml files.
 
 * Imperative commands act directly on live objects.
 
+* Imperative commands provide no track record history.
+
 * Declarative commands act on yaml files which define objects.
 
 TASK: Create a pod with the ubuntu image to run a container to sleep for 5000 seconds. (Modify file ubuntu-sleeper-2.yaml)
@@ -1571,7 +1592,51 @@ This references Dockerfile:
 CMD ["--color", "red"]
    </pre>
 
-PROTIP: Names of resources can be up to 253 characters. No underlines (use dashes and dots).
+PROTIP: <strong>Names of resources can be up to 253 characters</strong>. No underlines (use dashes and dots).
+
+1. A pod that adds to an emptyDir volume a HTML file every 10 seconds (so you can tell it's running from a browser):
+
+   <pre>apiVersion v1
+kind: pod
+spec:
+  volumes:
+      -name: html
+  containers:
+  - name: nginx
+    image: nginx:alpine
+    volumeMounts:
+      - name: html
+        mountPath: /usr/share/nginx/html
+        readOnly: true
+  - name: html-updater
+    image: alpine
+    command: ["/bin/sh", "-c"]
+    args:
+      - while true; do date >> /html/index.html;
+          sleep 10; done
+    volume Mounts:
+      - name: html
+        mountPath: /html          
+   </pre>
+
+1. Socket hostPath Volume which disappears when each pod dies:
+
+   <pre>apiVersion v1
+kind: pod
+spec:
+  volumes:
+    - name: docker-socket
+      hostPath:
+        path: /var/run/docker.sock
+        type: Socket
+  containers:
+  - name: docker
+    image: docker
+    command: ["sleep"]
+    volume Mounts:
+      - name: docker-socket
+        mountPath: /var/run/docker.sock       
+   </pre>
 
 
 <a name="Namespaces"></a>
@@ -1746,6 +1811,8 @@ Red Hat's OpenShift product adds <strong>Projects as "walls" between namespaces<
 
    <pre><strong>kubectl run my-nginx --port 80 --image=nginx:1.19.2</strong></pre>
 
+   Alternately:
+
    <pre>apiVersion: v1
 kind: Pod
 metadata:
@@ -1761,6 +1828,7 @@ spec:
 
    NOTE: The pod definition above is defined (with an additional indentation) as a <tt>template</tt> within deployments.           
 
+   <a target="_blank" href="https://www.youtube.com/watch?v=TPXwVmvzlV4&time=4m53s">PROTIP:</a> Specification of a label in the k run command creates a pod rather than a deployment. So no need to set flag "--restart=Never".
 
 1. The opposite is "delete pod x".
 
@@ -2082,8 +2150,6 @@ Services provide an un-changing IP address to pods in the back-end.
 
 Internal services are only reachable within a cluster.
 
-External services are exposed by <strong>Endpoints:</strong> (<strong>NodePoints</strong>).
-
 PROTIP: Services are defined with a port.
 
 Types of services:
@@ -2093,13 +2159,24 @@ Types of services:
    * LodBalancer exposes the service externally using a cloud provider's load
    <br /><br />
 
+Examples of services:
+
+   * auth.yaml
+   * frontend.yaml
+   * hello-blue.yaml
+   * hello-green.yaml
+   * hello.yaml
+   * monolith.yaml
+   <br /><br />
+
+
 REMEMBER: Port numbers in deployment yaml must match port numbers in services yaml.
 
-1. Administrator: Create a new service account:
+1. Administrator: Create a new service account named "backend-team":
 
    <pre><strong>kubectl create serviceaccount backend-team</strong></pre>
 
-1. Define the service yaml:
+1. Define the service 2.1-web_service.yaml:
 
    <pre>spec:
   selector:
@@ -2119,23 +2196,21 @@ kubectl describe nodes | grep -i address -A 1
 curl 10.0.0.100:3#### (replace #### with the actual port digits)
    </pre>
 
-   PROTIP: A secret is assigned automatically.
-
-
-Examples of services :
-
-   * auth.yaml
-   * frontend.yaml
-   * hello-blue.yaml
-   * hello-green.yaml
-   * hello.yaml
-   * monolith.yaml
-   <br /><br />
+   PROTIP: A secret is assigned automatically each service.
 
 
 1. To show all components in a mongodb app:
 
    <pre><strong>kubectl get all | grep mongodb </strong></pre>
+
+
+   <a name="Expose">Expose</a>,
+
+   ### Expose service command
+
+   PROTIP: External services are exposed by <strong>Endpoints:</strong> (<strong>NodePoints</strong>).
+
+   https://kubernetes.io/docs/reference/generated
 
 
    <a name="LoadBalancer"></a>
@@ -2189,13 +2264,15 @@ spec:
 
    <a name="ConfigMaps"></a>
 
+   ### ConfigMaps
+
+   DEFINITION: ConfigMap is an API object used to store non-confidential data in key-value pairs. 
+
+   Pods can consume <a href="#ConfigMaps">ConfigMaps</a> as environment variables, command-line arguments, or as configuration files in a volume.
+
    <a name="shared-db"></a>
 
    #### shared mysql-service yaml ConfigMap
-
-   ConfigMap is an API object used to store non-confidential data in key-value pairs. 
-
-   Pods can consume <a href="#ConfigMaps">ConfigMaps</a> as environment variables, command-line arguments, or as configuration files in a volume.
 
 1. Define a commonly used ConfigMap within a service named "database":
 
@@ -2578,19 +2655,19 @@ readinessProbe : should I accept traffic?        to actuator/health
     httpGet: 
       path: "/actuator/info"
       port: 8080
-    failureThreshold: 3
+    failureThreshold: 3      # Default is 3
     successThreshold: 1
     initialDelaySeconds: 5   # after init/startup before applying probe
-    periodSeconds: 30
-    timeoutSeconds: 10
+    periodSeconds: 30        # Default is 10
+    timeoutSeconds: 10       # Default is 1
   readinessProbe:
     httpGet: 
       path: "/actuator/health"
       port: 8080
-    failureThreshold: 3
-    successThreshold: 1
+    failureThreshold: 3      # Default is 3
+    successThreshold: 1     
     initialDelaySeconds: 15  # before applying health checks
-    periodSeconds: 30
+    periodSeconds: 30        # Default is 10
     timeoutSeconds: 10  # Needed?
    </pre>
 
@@ -2598,6 +2675,14 @@ readinessProbe : should I accept traffic?        to actuator/health
    * TCPSocketAction checks against the container's IP address on a specified port
    * HTTPGetAction - HTTP Get request against container
    <br /><br />
+
+Alternately:
+
+   <pre> httpGet: 
+      path: "/index.html"
+      port: 80
+   </pre>
+
 
 Probes with Dekorate
 
@@ -3605,11 +3690,14 @@ Within a pod manifest, <tt>valueFrom</tt> key and the configMapKeyRef value to r
 <a target="_blank" href="https://www.youtube.com/channel/UCdngmbVKX1Tgre699-XLlUA&t=2h38m07s">VIDEO: from "Nana's TechWorld"</a>
    * <a target="_blank" href="https://kubernetesbyexample.com//volumes/">kubernetesbyexample.com: Volumes</a>
 
-### Volumes
-   
+### Volumes of data storage
+
+![k8s-sc-pvc-pv-453x248](https://user-images.githubusercontent.com/300046/102702327-c6ff3c00-421e-11eb-8388-a7936121a2e7.png)
+<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=808b5550-4ef6-48af-87f7-7143ba693937">(credit)</a>
+
    Docker Containers share attached data <strong>volumes</strong> available within each Pod:
 
-   REMEMBER: Local Volumes defined in pods disappear when the pod dies.
+   REMEMBER: Local Volumes defined in pods disappear when each pod dies.
 
    Sample pod yaml definining the volumes mounted within its containers:
 
@@ -3630,6 +3718,22 @@ spec:
         claimName: pvc-name
    </pre>
 
+
+
+<a name="PersistentVolume"></a>
+
+### Persistent Volume (PV)
+
+   * <a target="_blank" href="https://kubernetesbyexample.com//pv/">kubernetesbyexample.com: Persistent Volumes</a>
+   <br /><br />
+
+PV's are a cluster resource, not to a specific _____.
+
+Admins create a Persistent Volume (PV) to provision blocks of storage (of specific Gigabit capacity sizes) for use within a specific cluster. 
+
+   PV's are like an external plugin to a cluster.
+
+   A complete list in kubernetes.io.
 
    For a elastic-app, define several volume types in a container referencing PVC names in awsElasticBlockStore:
 
@@ -3658,24 +3762,9 @@ spec:
       name: es-config-map
    </pre>
 
+   <a name="nodeAffinity"></a>
 
-<a name="PersistentVolume"></a>
-
-### Persistent Volume (PV)
-
-   * <a target="_blank" href="https://kubernetesbyexample.com//pv/">kubernetesbyexample.com: Persistent Volumes</a>
-   <br /><br />
-
-PV's are a cluster resource, not to a specific _____.
-
-Admins create a Persistent Volume (PV) to provision blocks of storage (of specific Gigabit capacity sizes) for use within a specific cluster. 
-
-   PV's are like an external plugin to a cluster.
-
-   A complete list in kubernetes.io.
-
-
-   #### Locally to a single Node:
+   #### Locally to a single Node with nodeAffinity:
 
    <pre>apiVersion: v1
 kind: PersistentVolume
@@ -3698,8 +3787,13 @@ spec:
         - key: kubernetes.io/hostname
           operator: In
           values:
-          - example-node
+          - <em>node-name</em>
    </pre>
+
+
+   <pre>volumeMode: Block</pre>
+  
+
 
    <tt>persistentVolumeReclaimPolicy</tt> (Recycling) policies are:
    * Delete
@@ -3750,9 +3844,53 @@ spec:
    </pre>
 
 
+## Cloud Volumes (Geo-replicated)
+
+* AWS Elastic Block Store (EBS)
+* GCP GCE Persistent Disk
+* Azure Disk and Azure FIle
+<br /><br />
+
+   <pre>apiVersion: v1
+kind: Pod
+metadata:
+  name: azure-pod-azure
+spec:
+  volumes:
+  - name: data   
+    azureFile:   # Azure File storage
+      secretName: <em>azure-secret</em>
+      shareName: <em>share-name</em>
+      readOnly: false
+  containers:
+  - image: someimage
+    name: my-app
+    volumeMounts:
+    - name: data
+      mountPath: /data/storage
+   </pre>
+
+Alternately on Google:
+
+   <pre>    gcePersistentDisk:
+      pdName: datastorage
+      fsType: ext4
+   </pre>
+
+Alternately:
+
+   <pre>    awsElesticBlockStore:   # AWS EBS
+      volumeID: <em>volume_ID</em>
+      fsType: ext4
+   </pre>
+
+
+
 <a name="StorageClasses"></a>
 
 ## Storage Classes
+
+A storage class (sc) is a type of <strong>template</strong> used to <strong>dynamically</strong> provision data storage.
 
 Create persistent volumes dynamically:
 
@@ -3767,12 +3905,13 @@ parameters:
   fsType: ext4
    </pre>
 
+
    REMEMBER: <tt>name: storage-class-name</tt> must match <a href="#PVC">PVC config</a> <tt>storageClassName: storage-class-name</tt>
 
 
 <a name="PVC"></a>
 
-### Persistant Volume Claim
+### Persistant Volume Claim (PVC)
 
    A Persistent Volume Claim (PVC) is a request for that storage by a user.
 
@@ -3813,12 +3952,8 @@ More:
 
 Stateless apps don't keep a record of state (such as shopping cart items).
 Each request is completely new, without regard for what activity occured before.
-So they can be defined using deployment components.
-   * Data passes through NodeJs.
-   * Pods are identical and interchangeable, 
-   * Standard Pods have the same service name.
-   * Pods created in random order with random <a href="#Hashes">hashes</a>.
-   <br /><br />
+So they can be defined using deployment components:
+Standard Pods are identical and interchangeable, with the same service name, created in random order with random <a href="#Hashes">hashes</a>. Data passes through NodeJs.
 
 Each Stateful app (such as mysql-app) that stores data (updates a database such as MongoDB) about the state of each transaction
 are defined using Kubernetes StatefulSets (STS) components:
@@ -4010,17 +4145,21 @@ Sample labels and values:
 
 1. Create label automatically:
 
-   kubectl expose
+   <pre><strong>kubectl expose</strong></pre>
 
 1. Overwrite (Add) a label after a pod created:
 
-   k label po/helloworld app=helloworldapp --overwrite
+   <pre><strong>k label po/helloworld app=helloworldapp --overwrite</strong></pre>
 
 1. List labels for a pod created:
 
-   k get pods --show-labels
+   <pre><strong>k get pods --show-labels</strong></pre>
 
-   ... app=helloworldapp
+   <pre><strong>... app=helloworldapp</strong></pre>
+
+1. View labels using grep flags:
+
+   <pre><strong>k describe po mssaging | grep -C 5 -i labels</strong></pre>
 
 
 
@@ -4609,22 +4748,21 @@ Microsoft's "<a target="_blank" href="https://azure.microsoft.com/mediahandler/f
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="center"><th> Pod ...</th><th> Affinity </th><th> Anti-Affinity</th></tr>
 <tr valign="center"><th> To Pods </th><td> podAffinity </td><td> topologySpreadContraints</td></tr>
-<tr valign="center"><th> To Nodes </th><td> nodeAffinity </td><td> Taints and Tolerations</td></tr>
+<tr valign="center"><th> To Nodes </th><td> <a href="#nodeAffinity">nodeAffinity</a> </td><td> Taints and Tolerations</td></tr>
 </table>
 
 A cgroup (control group) is a group of Linux processes with optional resource isolation, accounting, and limits.
 
 
-<a name="Secrets"></a>
 
-### Secrets - custom controllers
+<a name="Secrets"></a>
+## Secrets
 
    * <a target="_blank" href="https://kubernetesbyexample.com//secrets/">kubernetesbyexample.com: Secrets</a>
+   * In https://kubernetes.io/docs/concepts/secret/#best-practices
+   * https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data Enable encryption at rest for cluster data
 
-Pods consume <strong>static</strong> ConfigMaps and Secrets. 
-
-PROTIP: To monitor for changes apply updates to hash in PodSpec, then triggers changes:
-install custom controller "Wave" at <a target="_blank" href="https://github.com/pusher/wave">https://github.com/pusher/wave</a>.
+### Base64 Encoding
 
 What Kubernetes calls its secrets are actually Base64 encoded text.
 
@@ -4634,13 +4772,52 @@ sealed secrets:
    * AWS Secrets Manager (ASM)
    <br /><br />
 
-1. Encode Plain Text to base64 using program provided by operating system:
+1. Encode (not encrypt) plain text to base64 encoding using program within coreutils that comes with macOS/Linux operating systems:
 
-   <pre><strong>echo -n 'supersecret' | base64</strong></pre>
+   <pre><strong>echo -n 'supersecret' | base64 > encoded_file ; cat encoded_file</strong></pre>
+
+   (echo -n removes invisible new line characters for conversion)
 
    <tt>c3VwAXJzZWNyZXQ=</tt>
 
-1. Use encoded secret:
+1. Decode a base64 encoded file to text:
+
+   <pre><strong>base64 --decode encoded_file</strong></pre>
+
+1. Create a secret from a text literal and store in K8s:
+
+   <pre><strong>k create secret generic my-secret-literal \
+    --from-literal=my-password
+   </strong></pre>
+
+   <pre><strong>k create secret generic my-db-password \
+    --from-literal=db-password='password'
+    --from-literal=db-root-password='password'
+   </strong></pre>
+
+1. Create a secret keypair and store in K8s:
+
+   <pre><strong>k create secret generic my-secret-file \
+    --from-file=ssh-privatekey=~/.ssh/id_rsa
+    --from-file=ssh-publickey=~/.ssh/id_rsa.pub
+   </strong></pre>
+
+1. Create a secret from a keypair:
+
+   <pre><strong>k create secret tls tls-secret  \
+    --cert=<em>path/to</em>/tls.cert
+    --key=<em>path/to</em>/tls.key
+   </strong></pre>
+
+
+### Secrets - custom controllers
+
+REMEMBER: Pods consume <strong>static</strong> ConfigMaps and Secrets. 
+
+PROTIP: To monitor for changes apply updates to hash in PodSpec, then triggers changes:
+install custom controller "Wave" at <a target="_blank" href="https://github.com/pusher/wave">https://github.com/pusher/wave</a>.
+
+1. Use encoded secret (saved insecurely encoded in Base64):
 
    <pre>apiVersion: v1
 kind: Secret
@@ -4648,7 +4825,7 @@ metadata
   name: database-secrets
 type: Opaque
 data:
-  DB_PASSWORD: "c3VwAXJzZWNyZXQ="
+  DB_PASSWORD: "c3VwAXJzZWNyZXQ="   # encoded Base64 (not secret)
 volumes:
   - name: database-secrets
   secrets:
@@ -4656,9 +4833,14 @@ volumes:
    </pre>
 
    * Encrypting data on rest: https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/
-   * Using Sealed Secrets that allow us to encrypt everything in git:
-   https://github.com/bitnami-labs/sealed-secrets
+   * Using Sealed Secrets that allow us to encrypt everything in Git:
+   <a target="_blank" href="https://github.com/bitnami-labs/sealed-secrets">https://github.com/bitnami-labs/sealed-secrets</a>
    * Using Vault to store them: https://github.com/coreos/vault-operator
+   <br /><br />
+
+PROTIP: K8s stores secrets in memory (tempfs on a Node, not on disk) in etcd (which should be limited to admin users).
+
+TOOL: "Studio 3T" to connect to MongoDB.
 
 
 <a name="ServiceAccounts"></a>
@@ -4779,6 +4961,11 @@ As a Red Hat employee:
 
 Alex Soto (lordofthejars.com)
    * https://github.com/redhat-scholars/kubernetes-tutorial
+
+https://itnext.io/bootstrapping-kubernetes-clusters-on-aws-with-terraform-b7c0371aaea0
+using kubeadm on AWS
+
+
 
 ## More on DevOps #
 

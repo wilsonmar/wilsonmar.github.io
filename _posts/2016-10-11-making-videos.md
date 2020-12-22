@@ -436,3 +436,9 @@ PROTIP: Those hard of hearing would appreciate you offering closed captioning in
 
 <a target="_blank" href="https://obsproject.com/">obsproject.com</a>
 
+https://www.youtube.com/watch?v=pSexUljveYE
+Talking head in circle with shadow in Camtasia 2020 | Camtasia Circular Video Tutorial
+
+https://www.youtube.com/watch?v=mzUIeq1PX7o
+Put a video on a Powerpoint slide deck - Add your personal touch as a presenter
+

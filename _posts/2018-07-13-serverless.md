@@ -87,7 +87,7 @@ defining the <a target="_blank" href="https://docs.pivotal.io/pfs/0-1/using-pfs-
 ### Database idle costs money! #
 
    "You never pay for idle" Austen says 
-   in an interview with by CloudAcademy <a target="_blank" href="https://www.youtube.com/watch?v=pvmx0IVfBLc">
+   in an interview with CloudAcademy <a target="_blank" href="https://www.youtube.com/watch?v=pvmx0IVfBLc">
    Introduction to the Serverless Paradigm</a> [23:50]
 
    WRONG! While Lambda does not incur charges while idle,
@@ -1351,8 +1351,24 @@ by Sebastien Goasguen
 
 ### Lists:
 
+<a target="_blank" href="https://github.com/anaibol/awesome-serverless">https://github.com/anaibol/awesome-serverless</a>
+
 <a target="_blank" href="https://techbeacon.com/50-best-starter-kits-resources-building-serverless-apps">https://techbeacon.com/50-best-starter-kits-resources-building-serverless-apps</a>
 
+## Salesforce integration
+
+https://apex.run
+
+AWS IDE
+
+Zip fileslocally and upload to Lambda
+
+
+<a target="_blank" href="https://cloudacademy.com/course/build-aws-serverless-web-applications-with-python/">
+Video course "Build AWS Serverless Web Applications with Python"</a> (3.6) Virtualenv by Ben Lambert covers coding with Visual Studio Code from <a target="_blank" href="https://github.com/whelmed/ca-python-serverless">https://github.com/whelmed/ca-python-serverless</a> last updated 2017. The example uses Vagrant, VirtualBox, AWS API Gateway, S3 Bucket, DynamoDB, and Cognito User Pool to create a multi-user to-do list MVC application based on <a target="_blank" href="https://vuejs.org/">Vue.js</a>. 
+
+* https://github.com/spulec/moto
+* https://github.com/awslabs/aws-sam-local
 
 ## More on Clouds #
 

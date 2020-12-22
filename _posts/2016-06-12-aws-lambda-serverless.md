@@ -16,9 +16,55 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This tutorial aims to have you ending up with a serverless app running in the Amazon cloud.
+This tutorial aims to have you ending up with a serverless app running in the Amazon cloud
+-- a multi-user to-do list MVC application based on <a target="_blank" href="https://vuejs.org/">Vue.js</a>. 
 
 This is a follow-up to <a target="_blank" href="https://wilsonmar.github.io/serverless/">my notes on the ecosystem around the Serverless computing concept</a>.
+
+This page contains <strong>notes</strong> based on several sources, including 
+Last updated 2017, video course <a target="_blank" href="https://cloudacademy.com/course/build-aws-serverless-web-applications-with-python/">"Build AWS Serverless Web Applications with Python"</a> (3.6) Virtualenv by Ben Lambert covers coding using Visual Studio Code from <a target="_blank" href="https://github.com/whelmed/ca-python-serverless">https://github.com/whelmed/ca-python-serverless</a>. 
+
+As with many Serverless running within AWS, the example uses AWS API Gateway. Serverless with Salesforce has input via another API Gateway. Also used in AWS are S3 Buckets to store files, DynamoDB to store documents, and Cognito User Pool to mange user metadata:
+
+![serverless-aws-arch-463x534](https://user-images.githubusercontent.com/300046/102751967-0bc1ca80-4326-11eb-9327-0e8604ed3e26.png)
+
+Vagrant, VirtualBox, 
+
+   * https://github.com/spulec/moto
+   * https://github.com/awslabs/aws-sam-local
+
+## AWS Account setup
+
+1. Obtain an account.
+
+   ### Setup DynamoDB
+
+1. At the AWS Console, select "DynamoDB".
+1. Table Name: "TodoList"
+1. Primary key: Partition key: userId. Add sort key: todoId. Use default settings.
+
+   ### Setup Cognito User Pool
+
+1. At the AWS Console, select "Cognito".
+1. Pool Name: TodoUserPool. Review defaults.
+1. Alias attribute: Email address or phone number.
+1. Menu: App client. Add an app client. App client name: "AppClientForTodoUserPool"
+1. Uncheck Generate client secret. Creat client app.
+1. Create pool. In "App clients" page, copy App client id.
+
+   ### IAM
+
+1. At the AWS Console, select "IAM"
+1. In Users, Add User, "todo_developer", Programmatic access
+1. Create New Group. "todo-serverless"
+
+1. Install awscli
+1. pem file on local laptop.
+
+
+
+
+
 
 ## Permissions for serverless-admin
 
@@ -106,6 +152,13 @@ https://github.com/atlassian/localstack
 
 https://blog.symphonia.io/learning-lambda-part-5-743d8a99db53
 
+New Lambda Layers: http://bit.ly/2TEPC15 
+
+* FFmpeg (media processing)
+* SOX (Sound eXchange)
+* Pandoc (document conversion)
+* RSVG (SVG rendering) - (nice work, 
+
 
 ## Resources #
 
@@ -120,9 +173,6 @@ https://blog.symphonia.io/learning-lambda-part-5-743d8a99db53
   repo</a>
 
 On LinuxAcademy:
-
-* <a target="_blank" href="https://beta.linuxacademy.com/#/challenges/details/d39c6361-d78b-41f1-bbad-98f430fb80a0?redirect_uri=https://app.linuxacademy.com/search?query=c%23">QUIZ: Serverless Architectures on AWS for the Solutions Architect</a>
-[15m] Jul 22, 2018 by Wayde Gilchrist
 
 * <a target="_blank" href="https://beta.linuxacademy.com/#/challenges/details/d39c6361-d78b-41f1-bbad-98f430fb80a0?redirect_uri=https://app.linuxacademy.com/search?query=c%23">QUIZ: Serverless Architectures on AWS for the Solutions Architect</a>
 [15m] Jul 22, 2018 by Wayde Gilchrist
@@ -150,13 +200,15 @@ by Fernando Medina Corey (@fmc_sea, fernandomc.com)
 
 ## Twitter #
 
-@AWSLambda
+<a target="_blank" href="https://www.twitter.com/@AWSLambda">@AWSLambda</a>
 
-\#AWSLambda
+<a target="_blank" href="https://www.twitter.com/#AWSLambda">\#AWSLambda</a>
 
-@lambda_conf
+<a target="_blank" href="https://www.twitter.com/@lambda_conf">@lambda_conf</a>
 
-@lambdatips
+<a target="_blank" href="https://www.twitter.com/@lambdatips">@lambdatips</a>
+
+<a target="_blank" href="https://www.twitter.com/@esh">@esh = Eric Hammond</a>
 
 
 ## More on Serverless #
