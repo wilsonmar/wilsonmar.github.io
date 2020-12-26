@@ -1363,13 +1363,6 @@ AWS IDE
 
 Zip fileslocally and upload to Lambda
 
-
-<a target="_blank" href="https://cloudacademy.com/course/build-aws-serverless-web-applications-with-python/">
-Video course "Build AWS Serverless Web Applications with Python"</a> (3.6) Virtualenv by Ben Lambert covers coding with Visual Studio Code from <a target="_blank" href="https://github.com/whelmed/ca-python-serverless">https://github.com/whelmed/ca-python-serverless</a> last updated 2017. The example uses Vagrant, VirtualBox, AWS API Gateway, S3 Bucket, DynamoDB, and Cognito User Pool to create a multi-user to-do list MVC application based on <a target="_blank" href="https://vuejs.org/">Vue.js</a>. 
-
-* https://github.com/spulec/moto
-* https://github.com/awslabs/aws-sam-local
-
 ## More on Clouds #
 
 This is one of a series on Cloud computing

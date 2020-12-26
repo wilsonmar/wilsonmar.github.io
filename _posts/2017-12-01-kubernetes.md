@@ -59,25 +59,26 @@ So you can go quickly/directly to terms:
 Auto-scaling,
 <a href="#CKAD_ExamDomains">CKAD</a>, 
 <a href="#Clusters">Clusters</a>,
+<a href="#ClusterRoles">ClusterRoles</a>,
 <a href="#ConfigMaps"><strong>cm</strong>=configmaps</a>,
 <a href="#Contexts">Contexts</a>,
+<a href="#Controllers">Controllers</a>,
 <a href="#CronJobs">CronJobs</a>,
 <a href="#Declarative">Declarative</a>,
 Discovery,
 <a href="#DaemonSets"><strong>ds</strong>=DaemonSets</a>,
 <a href="#Deployments">deployment/</a>,
-<strong>ep</strong>=endpoints,
+<a href="#Endpoints"><strong>ep</strong>=endpoints</a>,
 <a href="#Envars">Environment Variables</a>,
 <a href="#Expose">Expose</a>,
 <a href="#Hashes">hashes</a>,
-health checks,
+<a href="#HealthChecks">health checks</a>,
 <a href="#Imperative">Imperative</a>,
 <a href="#InitContainers">Init Containers</a>,
-<a name="#Kubelet">Kubelet</a>,
-<a href="#kube-proxy">kube-proxy</a>,
 <a href="#Ingress">Ingress</a>,
 <a href="#Jobs">Jobs</a>, 
 <a href="#Kubelet">Kubelet</a>,
+<a href="#kube-proxy">kube-proxy</a>,
 <a href="#Labels">Labels</a>, 
 <a href="#LoadBalancer">LoadBalancer</a>, 
 <a href="#Logging">Logging</a>,
@@ -88,7 +89,7 @@ health checks,
 <a href="#OpenShift">OpenShift</a>,
 <a href="#Pods"><strong>po</strong>=Pods</a>, 
 <a href="#Podspecs">Podspecs</a>,
-mi<a href="#ReadinessProbes">Readiness Probes</a>, 
+<a href="#ReadinessProbes">Readiness Probes</a>, 
 <a href="#LivenessProbes">Liveness Probes</a>, 
 <a href="#Probes">Probes</a>, 
 <a href="#PersistentVolumes">Persistent Volumes</a>,
@@ -168,15 +169,21 @@ See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kuberne
 <hr />
 
 
-## Overview
-
-This tutorial focuses on use of <strong>Docker</strong> containers as Kubernetes' <a target="_blank" href="https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/">Container Runtime Interface (CRI)</a>. Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") containers, which provided a CLI for containers as part of CoreOS. Rkt became the first archived project of CNCF after IBM bought Red Hat with its competing "containerd" <a target="_blank" href="https://github.com/kubernetes-sigs/cri-o">cri-o technology.
+## Architectural Components Overview
 
 "Containerized" <a href="#micro-services">microservice apps</a> are <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, <a target="_blank" href="https://quay.io/">Quay.io</a>, or an organization's own binary repository setup using Nexus or Artifactory. 
 
-CRI-O, Docker, ContainerD support Runc. Runc is the low-level tool which does the heavy lifting of spawning a Linux container. (<a target="_blank" href="https://www.youtube.com/watch?v=0uy2V2kYl4U" title="Feb 15, 2019">See CVE-2019-5736</a>).
-
 Kubernetes automates resilience by abstacting the network and storage shared by ephemeral replaceable <strong>pods</strong> which the Kubernetes Controller replicates to increase capacity.
+
+
+This tutorial focuses on use of <strong>Docker</strong> containers as Kubernetes' <a target="_blank" href="https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/">Container Runtime Interface (CRI)</a>, which ensures that every image can be run on every runtime. 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=7KUdmFyefSA&list=RDCMUCdngmbVKX1Tgre699-XLlUA&start_radio=1&t=526">VIDEO</a>: Kubernetes only need the Container Runtime from Docker's Engine, which Kubernetes created a "dockershim" to use Docker's Container Runtime. Then Docker extracted and gave to CNCF "containerd".
+
+Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") containers, which provided a CLI for containers as part of CoreOS. Rkt became the first archived project of CNCF after IBM bought Red Hat and its competing <a target="_blank" href="https://github.com/kubernetes-sigs/cri-o">cri-o technology used with OpenShift.
+
+Runc is supported by CRI-O, Docker, ContainerD. Runc is the low-level tool which does the "heavy lifting" of spawning a Linux container. (<a target="_blank" href="https://www.youtube.com/watch?v=0uy2V2kYl4U" title="Feb 15, 2019">See CVE-2019-5736</a>).
+
 
 > PROTIP: "The median number of containers running on a single host is about 10." -- Sysdig, April 17, 2017. But there can be up to 100 pods per node (at v1.17)
 
@@ -187,9 +194,13 @@ Kubernetes replicates Pods (the same set of containers in each) across several w
 Each set of pods are within a <strong>node</strong>.
 Kubernetes assigns each node with a different <strong>external IP address</strong>.
 
-<strong>Containers</strong> within the same pod share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage Volumes, and other resources.
-Every <strong>container</strong> has its own unique <strong>port number</strong> within its pod's IP.
 
+![k8s-pod-sharing-324x247](https://user-images.githubusercontent.com/300046/103014494-12099f80-44fc-11eb-9e4e-3380963051da.png)
+<a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/8l95i/kubernetes-concepts">*</a>
+
+<strong>Containers</strong> within the same pod share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage Volumes, and other resources.
+
+Every <strong>container</strong> has its own unique <strong>port number</strong> within the pod's shared IP.
 
 In each pod, <a target="_blank" href="https://wilsonmar.github.io/service-mesh">Service Mesh Istio architecture</a> has an "Envoy proxy" to facilitate the communictions and retry logic from the business logic containers in its pod.
 
@@ -199,12 +210,6 @@ In the illustration below, each pod (each a different color) encapsulates one or
 <!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
 
 
-
-In <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=bf09c049-8db9-4d14-81c7-77f1e942524c">
-"Kubernetes Un-Scaried"</a> by Phil Taprogge (of Snyk) offers this diagram:
-<img width="435" alt="k8s-phil-diagram" src="https://user-images.githubusercontent.com/300046/97088709-09761500-15f0-11eb-8eb2-4f99edab5db0.png">
-
-
 <hr />
 
 ## Glossary - how buzzwords fit together
@@ -212,6 +217,14 @@ In <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=b
 This diagram is shown at the ending of a small (upcoming) movie logically illustrating how the various glossary terms relate with each other:
 
 <img width="914" alt="k8s-docker" src="https://user-images.githubusercontent.com/300046/95684822-564dfa80-0bb1-11eb-803a-1c742cf0bd07.png">
+
+Clients interact with the master node (K8s Control Plane) via the kube-apiserver.
+
+<strong>etcd</strong> is the database within each cluster.
+
+In <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=bf09c049-8db9-4d14-81c7-77f1e942524c">
+"Kubernetes Un-Scaried"</a> by Phil Taprogge (of Snyk) offers this diagram:<br />
+<img width="435" alt="k8s-phil-diagram" src="https://user-images.githubusercontent.com/300046/97088709-09761500-15f0-11eb-8eb2-4f99edab5db0.png">
 
 
    <hr />
@@ -825,10 +838,9 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
    <pre>k get nodes</pre>
 
-1. Make use of files also at <a target="_blank" href="https://github.com/cloudacademy/intro-to-k8s/tree/master/src">https://github.com/cloudacademy/intro-to-k8s/tree/master/src</a>
+1. Make use of files at <a target="_blank" href="https://github.com/cloudacademy/intro-to-k8s/tree/master/src">https://github.com/cloudacademy/intro-to-k8s/tree/master/src</a> described by <a target="_blank" href="https://cloudacademy.com/course/introduction-to-kubernetes">this Intro to Kubernetes course</a>:
 
    <pre>cd src && ls</pre>
-
 
    <pre>10.1-namespace.yaml         5.1-namespace.yaml
 10.2-data_tier_config.yaml  5.2-data_tier.yaml
@@ -847,21 +859,25 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 4.3-app_tier.yaml           metrics-server
    </pre>
 
+   PROTIP: Kubernetes is <strong>immutable</strong>, so rather than changing a runnin pod, delete it and recreate it.
+
 1. Create and delete pod (all named "mypod"):
 
-   <pre>kubectl create -f 1.1-basic_pod.yaml
+   <pre><strong>kubectl create -f 1.1-basic_pod.yaml
 kubectl get pods
 kubectl describe pod mypod | more
-kubectl delete pod mypod
-   </pre>
+kubectl delete po <em>mypod</em> --grace-period=0 --force
+   </strong></pre>
+
+   PROTIP: <tt>\-\-grace-period=0 \-\-force</tt> for immediate execution (especially during exam)
 
 1. Get the "image:" name -internal within the output:
 
-   k describe pod xxx | grep -i image
+   <pre><strong>k describe pod xxx | grep -i image</strong></pre>
 
 1. Get the Node name:
 
-   k get pods -o wide
+   <pre><strong>k get pods -o wide</strong></pre>
 
 
 ### Pluralsight
@@ -1378,9 +1394,9 @@ v2beta2.autoscaling                    Local     True        24s
 💀  Removed all traces of the "minikube" cluster.
    </pre>
 
-   Kubectl 1.8 scale is now the preferred way to control graceful delete.
+   Since Kubectl 1.8, scale is the preferred way to control graceful delete.
 
-   Kubectl 1.8 rollout and rollback now support stateful sets ???
+   rollout and rollback support stateful sets since Kubectl 1.8.
 
 1. To continue, <a href="#StartMinikube">start minikube again</a>.
 
@@ -1699,17 +1715,31 @@ You don't need to create or think about the default namespace.
    <pre><strong>k get ns
 kubectl get namespaces</strong></pre>
 
-   * kube-public contains publically accessible (without auth) <a href="#ConfigMaps">ConfigMaps</a> which contain cluster info (kubectl cluster-info)
-   * kube-system holds k8s internal system processes (master, kubectl, etc.)
-   * kube-node-lease holds lease objects containing heartbeats of nodes and the availability of nodes 
-   * default holds resources you create without specifying a namespace
-   * <a href="#Dashboard">kubernetes-dashboard</a> is created only within minikube.
+   * <strong>default</strong> holds resources users create without specifying a namespace
+
+   * <strong>kube-public</strong> contains publically accessible (without auth) <a href="#ConfigMaps">ConfigMaps</a> ? which contain cluster info (kubectl cluster-info)
+
+   * <strong>kube-system</strong> holds k8s internal system processes (master, kubectl, etc.) manages objects created by the system itself (Controllers, ConfigMap, Secrets, Deployments)
+
+   * <strong>kube-node-lease</strong> holds lease objects containing heartbeats of nodes and the availability of nodes 
+
+   * <a href="#Dashboard"><strong>kubernetes-dashboard</strong></a> is created only within minikube.
    <br /><br />
 
 
    <a name="Dashboard"></a>
 
-   ### Minikube Dashboard
+   ### Add-on Dashboard
+
+   The Kubernetes dashboard add-on to Kubernetes was originally intended to provide a convenient web-based way for administrators to manage a cluster. In the past, it was backed by a highly privileged kubernetes service account by default.
+   
+   The default configuration expose a public interface vulnerable to remote attacks.
+   
+   So completely disable the kubernetes dashboard by default.
+
+   Instead of using the Kubernetes dashboard, use the GSP console's built-in GKE dashboard or Kubectl commands.
+   They provide all the old dashboard's functionality (and more) without exposing an additional attack service.
+   
 
 3. Open the Minkube Dashboard server localhost:53764 poped upped on your default browser:
 
@@ -1826,7 +1856,7 @@ spec:
     - containerPort: 80
    </pre>
 
-   NOTE: The pod definition above is defined (with an additional indentation) as a <tt>template</tt> within deployments.           
+   NOTE: The pod definition above is defined (with an additional indentation) as a <tt>template</tt> within <a href="#Deployments">deployments</a>.
 
    <a target="_blank" href="https://www.youtube.com/watch?v=TPXwVmvzlV4&time=4m53s">PROTIP:</a> Specification of a label in the k run command creates a pod rather than a deployment. So no need to set flag "--restart=Never".
 
@@ -1849,6 +1879,13 @@ spec:
    elasticsearch, fluentd, kibana: https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/fluentd-elastisearch
 
    k port-forward service/kibana-logging 5601:5601 --namespace=kube-system
+
+1. Find all pods that have been started with the kubectl run command: ???
+
+   kubectl get pods nginxpod --show-labels | grep run
+
+   kubectl run pod test --image=nginx --dry-run=client -o jasonpath='{metadata.labels}'
+
 
 1. Execute iteractive terminal on a pod with bash installed (most Linux have --bin/sh installed):
 
@@ -2037,12 +2074,26 @@ Events:
 
 <hr />
 
+<a name="Controllers"></a>
+## Controller objects
 
+* <a href="#Deployments">Deployments</a>
+* <a href="#ReplicaSets">ReplicaSets</a>, which replaces <a href="#ReplicationControllers">Replication Controllers</a>
+* <a href="#StatefulSets">StatefulSets</a>
+* <a href="#DaemonSets">DaemonSets</a>
+* <a href="#Jobs">Jobs</a>
+<br /><br />
+
+Because Deployments provide a helpful "front end" to ReplicaSets, training focuses on Deployments.
 
 <a name="Replication"></a>
 <a name="ReplicaSets"></a>
 
 ## Deploy Replicas for Replication, Rolling Updates
+
+A ReplicaSet controller ensures that a population of Pods, all identical to one another, are running at the same time. 
+
+Deployments manage their own ReplicaSets to achieve the declarative goals you prescribe, so you will most commonly work with Deployment objects.
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/99866180-3de7dd00-2b6c-11eb-9b4f-563ea790bb9e.png">
    <img width="784" alt="k8s-deployment-rs-1568x584" width="1568" height="584" src="https://user-images.githubusercontent.com/300046/99866180-3de7dd00-2b6c-11eb-9b4f-563ea790bb9e.png"></a>
@@ -2089,6 +2140,26 @@ selector:
 
    PROTIP: <a target="_blank" href="https://wilsonmar.github.io/text-editors#ViIndent">Indent paste using vi</a>
 
+   Deployments let you do declarative updates to ReplicaSets and Pods. 
+
+   <pre>kubectl run <em>deployment-name</em> \
+   --image <em>[IMAGE]:[TAB]</em> \
+   --replicas 3 \
+   --labels <em>[KEY]=[VALUE]</em> \
+   --port 8080 \
+   --generator deployment/apps.va \
+   --save-config
+   </pre>
+
+   Deployments let you create, update, roll back, and scale Pods, using ReplicaSets as needed. 
+   For example, when you perform a rolling upgrade of a Deployment, the Deployment object creates a second ReplicaSet, and then increases the number of Pods in the new ReplicaSet as it decreases the number of Pods in its original ReplicaSet.
+
+   Replication Controllers perform a similar role to the combination of ReplicaSets and Deployments, but their use is no longer recommended. 
+
+   If you need to deploy applications that maintain local state, StatefulSet is a better option. A StatefulSet is similar to a Deployment in that the Pods use the same container spec. The Pods created through Deployment are not given persistent identities, however; by contrast, Pods created using StatefulSet have unique persistent identities with stable network identity and persistent disk storage. 
+
+   If you need to run certain Pods on all the nodes within the cluster or on a selection of nodes, use DaemonSet. DaemonSet ensures that a specific Pod is always running on all or some subset of the nodes. If new nodes are added, DaemonSet will automatically set up Pods in those nodes with the required specification. The word "daemon" is a computer science term meaning a non-interactive process that provides useful services to other processes. A Kubernetes cluster might use a DaemonSet to ensure that a logging agent like fluentd is running on all nodes in the cluster.
+
 
 1. PROTIP: Remember the ".apps" when listing replicasets:
 
@@ -2126,7 +2197,9 @@ kubectl run --restart=Never       # creates pod
 kubectl run --restart=OnFailure   # creates job
    </strong></pre>
 
-1. List deployments 3 different ways, they all work:
+To perform an upgrade, the Deployment object will create a second ReplicaSet object, and then increase the number of (upgraded) Pods in the second ReplicaSet while it decreases the number in the first ReplicaSet.
+
+1. List deployments, different ways:
 
    <pre>k get deployment
 k get deployments
@@ -2206,11 +2279,13 @@ curl 10.0.0.100:3#### (replace #### with the actual port digits)
 
    <a name="Expose">Expose</a>,
 
-   ### Expose service command
+   ### Expose service within deployment
 
    PROTIP: External services are exposed by <strong>Endpoints:</strong> (<strong>NodePoints</strong>).
 
    https://kubernetes.io/docs/reference/generated
+
+   <pre><strong>k expose deployment <em>deployment</em> --port=6379 -n <em>namespace</em> --name=<em>service-name</em></strong></pre>
 
 
    <a name="LoadBalancer"></a>
@@ -2301,8 +2376,11 @@ data:
 
    * <a target="_blank" href="https://kubernetesbyexample.com//jobs/">kubernetesbyexample.com: Jobs</a>
 
-
 Batch jobs are supervisor processes that run once and immediately completed.
+The Job controller creates one or more Pods required to run a task. 
+When the task is completed, Job will then terminate all those Pods. 
+
+The CronJob controller runs Pods on a time-based schedule.
 
 3 types of jobs:
 
@@ -2348,15 +2426,6 @@ somejob   5/5           27s        9m41s</pre>
 ## Misc. List:
 
    <pre>kubectl get -n kube-system serviceaccounts</pre>
-
-   <pre>kubectl describe -n kube-system clusterrole system:coredns</pre>
-
-
-QUESTION: Find all pods that have been started with the kubectl run command:
-
-kubectl get pods nginxpod --show-labels | grep run
-
-kubectl run pod test --image=nginx --dry-run=client -o jasonpath='{metadata.labels}'
 
 
 QUESTON: Create a Cron job that will run ???
@@ -2568,10 +2637,6 @@ Draft uses language packs for Ruby, C# .NET Core 2.2 with Windows packs,
 authenticated to Azure Container Registry (ACR) and <a href="#AKS">AKS</a>.
 
 
-
-
-
-
 <hr />
 
 
@@ -2594,7 +2659,7 @@ https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/
    * Service APIs: Endpoints, Ingress, Service
    * Config and storage APIs: ConfigMap, CSIDriver, Secret, StorageClass, Volume
    * Metadata APIs: Controllere, CRD, Event, LimitRange, HPA (HorizontalPodAutoscaler), PodDistributionBudget, ...
-   * Cluster APIs: APIService, Binding, CSR, ClusterRole, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
+   * Cluster APIs: APIService, Binding, CSR, <a href="#ClusterRoles">ClusterRole</a>, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
    <br /><br />
 
 The aggregation layer lets you install additional Kubernetes-style APIs in your cluster.
@@ -2726,13 +2791,28 @@ Oketeto
 
 Being open-source has enabled Kubernetes to flourish on several clouds<a target="_blank" href="https://codefresh.io/kubernetes-guides/kubernetes-cloud-aws-vs-gcp-vs-azure/">*</a>
 
+PROTIP: Cloud SaaS provide a <strong>GUI</strong> that presents clickable specifications to avoid mis-typing obscure keywords.
+
+However, the complexity of configurations means that you have to learn how to visually navigate the GUI menus and forms.
+
+Kubernetes in the cloud also enables <strong>multi-region</strong> setups. GCP has
+<tt>--horizontal-pod-autoscaler-downscal-stabilization</tt> to provide a wait period (5 minutes) before another scale-down action<a target="_blank" href="https://www.coursera.org/learn/deploying-workloads-google-kubernetes-engine-gke/lecture/obhDh/services-and-scaling">*</a> 
 
 
-### Google Cloud Qwiklabs
 
-<a href="#GKE">Google Kubernetes Engine (GKE)</a> is a container management SaaS product.
-GKE runs within the Google Compute Platform (GCP) on top of Google Compute Engine providing machines.
-GKE in GCP integration provides networking with VPC, monitoring, logging, and CI/CD.
+### IBM CloudLabs
+
+https://www.youtube.com/watch?v=aSrqRSk43lY&list=PLOspHqNVtKABAVX4azqPIu6UfsPzSu2YN&index=2
+
+
+### Google Cloud GKE GCE Qwiklabs
+
+
+<a target="_blank" href="https://cloud.google.com/kubernetes-engine/">Google Kubernetes Engine (GKE)</a> is Google's container management SaaS offering. 
+
+GKE runs within the <a target="_blank" href="https://wilsonmar.github.io/gcp/">Google Compute Platform (GCP)</a> on top of Google Compute Engine (GCE) providing machines.
+
+GKE provides networking within VPC, monitoring, logging, and CI/CD (Google Build).
 
    ![k8s-gcp-738x314-14535](https://user-images.githubusercontent.com/300046/42350579-5b4fd060-806e-11e8-8bc4-f88cf32f8bc7.jpg)
 
@@ -2740,17 +2820,88 @@ GKE in GCP integration provides networking with VPC, monitoring, logging, and CI
 
    ![k8s-gcp-search-656x866-37655](https://user-images.githubusercontent.com/300046/42350888-a8aca044-806f-11e8-8848-813657b7660d.jpg)
 
-<a target="_blank" href="https://run.qwiklabs.com/catalog?keywords=Kubernetes">Qwiklabs has several hands-on labs using Kubernetes</a> on Google Cloud
+<a target="_blank" href="https://inthecloud.withgoogle.com/kubernetes-training-offer/register.html">30 days free training instances</a> after completing a Tour class. <a target="_blank" href="https://run.qwiklabs.com/catalog?keywords=Kubernetes">Qwiklabs has several hands-on labs using Kubernetes</a> on Google Cloud. Its labs are used in Coursera courses, which explains provides lab solutions videos such as 
+   * <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/1pxSX/lab-solution">Accessing the Cloud COnsole and Cloud Shell</a>
+   * <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/BxVeI/lab-solution"> Deploying GKE</a>
+   * <a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13134687?parent=lti_session">Implementing Role-Based Access Control with Google Kubernetes Engine</a>
+   <br /><br />
 
-<a target="_blank" href="https://run.qwiklabs.com/quests/142?catalog_rank=%7B%22rank%22%3A4%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&search_id=7405314">QUEST: Secure Workloads in Google Kubernetes Engine</a>
-
-The 8 labs covering 8 hours of the
-<a target="_blank" href="https://webinars-run.qwiklab.com/quests/29">
-Kubernetes in the Google Cloud Qwiklab quest</a>
+<a target="_blank" href="https://run.qwiklabs.com/quests/142?catalog_rank=%7B%22rank%22%3A4%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&search_id=7405314">Qwiklabs QUEST: Secure Workloads in Google Kubernetes Engine</a> consists of 8 labs covering 8 hours of the
+   <a target="_blank" href="https://webinars-run.qwiklab.com/quests/29">
+   Kubernetes in the Google Cloud Qwiklab quest</a>
 
 <a target="_blank" href="https://bit.ly/33Cd4Uw/">First K8s app</a>
 
+1. In the Google Cloud Console, on the Navigation menu, in the Dashboard, click "Go to APIs Overview.
+1. Confirm Country and Terms of Service, then click "AGREE AND CONTINUE".
+1. Click to expand APIs & Services. Click "+ ENABLE APIS AND SERVICES".
+1. In the Search for APIs & Services box, enter "Cloud Build".
+1. In the resulting card for the "Cloud Build API", if you do not see "API enabled", click the ENABLE button.
+1. Use the Back button to return to the previous screen with a search box. In the search box, enter "Container Registry".
+1. Click card "Google Container Registry API". If you do not see "API enabled", click the ENABLE button.
 
+1. Click the "Activate Cloud Shell" icon. Drag the Console devider to see more. 
+1. Create file: nano quickstart.sh
+
+   <pre>#!/bin/sh
+echo "Hello, world! The time is $(date)."
+   </pre>
+
+1. Press ctrl+S to save and ctrl+X to exit.
+1. Create file: nano Dockerfile
+
+   <pre>FROM alpine
+COPY quickstart.sh /
+CMD ["/quickstart.sh"]
+   </pre>
+
+1. Press ctrl+S to save and ctrl+X to exit.
+
+1. In Cloud Shell, build an image based on the "Dockerfile":
+
+   <pre><strong>gcloud builds submit --tag gcr.io/${GOOGLE_CLOUD_PROJECT}/quickstart-image .</strong></pre>
+
+   Notice the dot at the end to specify that the source filecho $?e is in the current working directory.
+
+1. Authorize Cloud Shell.
+1. Create a soft link as a shortcut to the working directory <strong>~/ak8s</strong>:.
+
+   <pre>ln -s ~/training-data-analyst/courses/ak8s/v1.1 ~/ak8s</pre>
+
+1. Get the repo (wait for it to finish):
+
+   <pre><strong>git clone https://github.com/GoogleCloudPlatform/training-data-analyst
+ln -s ~/training-data-analyst/courses/ak8s/v1.1 ~/ak8s
+cd ~/ak8s/Cloud_Build/a
+   </strong></pre>
+
+1. Confirm on the Navigation menu UI: scroll down to TOOLS section. Click Container Registry to select Images. Click quickstart-image for a list.
+
+1. Run Google Cloud Build:
+
+   <pre><strong>cd ~/ak8s/Cloud_Build/b
+gcloud builds submit --config cloudbuild.yaml .
+   </strong></pre>
+
+1. Confirm whether the command shell knows the build failed (returns 1 instead of 0):
+
+   <pre><strong>echo $?</strong></pre>
+
+1. cat cloudbuild.yaml
+
+   <pre>...
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/quickstart-image', '.' ]
+images:
+- 'gcr.io/$PROJECT_ID/quickstart-image'
+   </pre>
+
+1. Start a Cloud Build
+
+   <pre>gcloud builds submit --config cloudbuild.yaml .</pre>
+
+1. Back in the Navigation menu UI, click Container Registry > Images and then click quickstart-image to see two versions of quickstart-image listed (a and b).
 
 
 <a name="GKE"></a>
@@ -2957,64 +3108,304 @@ To run an app in AKS, post App Descriptor to the K8s API Server, and Scheduler s
 
 <hr />
 
+Each cluster has a master and several nodes.
+
 <a name="Nodes"></a>
 
 ## Nodes
 
    * <a target="_blank" href="https://kubernetesbyexample.com//nodes/">kubernetesbyexample.com: Nodes</a>
+   <br /><br />
+
+Each node is created with a <a href="#Kublet">kubelet</a> process, container tooling (Docker), <a href="#kube-proxy">kube-proxy</a>, supervisord.
+
+Internally, Kubernetes itself does NOT create nodes. 
+
+Cluster admins use the kubeadm CLI to create nodes and add them to Kubernetes.
+
+### GCP GKE masters
+
+Within a <a target="_blank" href="https://wilsonmar.github.io/gcp/">GCP</a>, GKE provides the master node Kubernetes Control Plane components, which include node creation by deploying and registering Google Compute Engine instances as nodes. 
+
+GKE exposes IP addresses, which can be isolated from the public internet.
+
+GCP does not charge for the master, which is an abstract part of the GKE service not exposed to GCP customers
+
+Each Google <strong>regional cluster</strong> spans several physical Zones, each with a master and its worker nodes.
+The same number of nodes is the same in each zone.
+
+Multiple GCP projects can run on a single cluster.
+
+Use the Google Console to specify the size of hardward in each <strong>node pool</strong> (a GKE feature).
 
 
-<a name="Kubelet"></a>
+## Master Node (Control Plane)
 
-Each node has a <a href="#Kublet">kubelet</a>, container tooling (Docker), <a href="#kube-proxy">kube-proxy</a>, supervisord.
+   * Kubernetes Control Plane security: https://cloud.google.com/kubernetes-engine/docs/concepts/control-plane-security
+   <br /><br />
 
+All master components (API server, etcd database, Controller Manager) is collectively called the Kubernetes Control Plane.
+are managed by Google/AWS.
 
-<a name="kube-proxy"></a>
+Secure communications between the master and nodes within a cluster automatically relies on the shared root of trust provided by certificates issued by a CA. Each cluster has its own root Certificate Authority (CA). An internal Google service manages root keys for the CA, so you can't manually rotate the etcd certificates and GKE.
 
-kube-proxy <strong>watches</strong> the <a href="#API_Server">API server</a> for addition and removal requests.
-For each new service, kube-proxy opens a randomly chosen port on the local node.
-It then makes proxied connections to one of the corresponding back-end pods.
+GKE uses a separate per cluster CA to provide certificates for the etcd databases within a cluster.
 
-The "proxy" in kube-proxy means that it can do simple network stream or round-robin forwarding across a set of backends.
+Separate CA's are used for each separate cluster.
+When a new node of a Kubernetes cluster is created, the node is injected with a shared secret as part of its creation.
+This secret is then used by its kubelet to submit certificate signing requests to the cluster root CA.
+That way, it can get client certificates when the node is created, and new certificates when they need to be renewed or rotated 
 
-Three modes:
-
-   * User space mode
-   * Iptables mode
-   * Ipvs mode (alpha as of v1.8)
-
-
-<a name="Kublet"></a>
-
-## Kublet
-
-A Kublet agent program is automatically installed in each node created.
-
-Kubelet only manages containers created by the <a href="#API_Server">API server</a> - not any container running on the node.
-
-Kublet communicates with the <a href="#API-server">API server</a> to see if pods have been assigned to nodes.
-
-Kubelet takes a set of <a href="#Podspecs">Podspecs</a> provided bythe kube-apiserver to ensure that containers described are running and healthy.
-
-Kubelet mounts and runs pod  <a href="#Volumes">volumes</a> and <a href="#Secrets">secrets</a>.
-
-   Image pull secrets authenticates with private container registries.
-
-Kubelet executes health checks to identify pod/node status.
-
-   Service accounts can also store image pull secrets.
+Secret can be accessed by pods and by extension their containers, unless metadata concealment is enabled.
 
 
+1. Create a new IP address for the cluster master along with its existing IP address.
+
+New credentials are issued to the control plane.
+Note that the API server will not be available during this period although pods continue to run.
+After the masters reconfigured, the nodes are automatically updated by GKE to use the new IP and credentials.
+
+This causes GKE to also automatically upgrade the node version to the closest supported version.
+All of your API clients outside the cluster must also be updated to use the new credentials.
+Rotation must be completed for the cluster master to start serving with the new IP address and new credentials,
+and remove the old IP address and old credentials.
+If the rotation is not completed manually, GKE will automatically complete the rotation after seven days.
+
+Note that you can also rotate the IP address for your cluster.
+This essentially goes through the same process because their certificates must be renewed when the master IP address is changed,
+but with different commands:<a target="_blank" href="https://www.coursera.org/learn/deploying-secure-kubernetes-containers-in-production/lecture/OK7gE/kubernetes-control-plane-security">*</a>
+
+1. Initiate credential rotation:
+
+   <pre><strong>gcloud container clusters update <em>[CLUSTER-NAME]</em> --start-credential-rotation</strong></pre>
+
+2. Complete credential rotation:
+
+   <pre><strong>gcloud container clusters update <em>[CLUSTER-NAME]</em> --complete-credential-rotation</strong></pre>
+
+3. Initiate IP rotation:
+
+   <pre><strong>gcloud container clusters update <em>[CLUSTER-NAME]</em> --start-ip-rotation</strong></pre>
+
+4. Complete IP rotation:
+
+   <pre><strong>gcloud container clusters update <em>[CLUSTER-NAME]</em> --complete-ip-rotation</strong></pre>
 
 
-<a name="ControlPlane"></a>
+Pods can access the metadata of the nodes that they're running on, such as the node secret that is used for node configuration.
+If a pod is compromised, this could potentially be used in unintended ways.
+To prevent such exposure, always configure the Cloud IAM service account for the node with minimal permissions.
 
-Each <strong>kubelet</strong> manages what is called the <strong>control pane</strong> which allocates IP addresses and runs nodes under its control. 
+But don't confuse as Google service account with the Kurbenetes Service account.
+This is the Cloud IAM service account used by the node VM itself.
 
-Kublet constantly compares the status of pods against what is declared in yaml files, and starts or deletes pods as necessary to meet the request. 
+Don't use the <tt>compute.instances.get</tt> permission through a service account, compute instance admin role, or any custom roles.
+Omitting this permission blocks holders of the role from getting metadata on GKE nodes by making direct Compute Engine API calls to those nodes.
 
-Restarting Kublet itself depends on the operating system (`monit` on Debian or `systemctl` on systemd-based systems).
+Disable legacy metadata APIs. V1 APIs restrict the retrieval of metadata. But Compute Engine API endpoints using versions 0.1 and V1 beta-1, support querying of metadata.
 
+From GKE version 1.12+, legacy Compute Engine metadata endpoints are disabled by default.
+With earlier versions, they can only be disabled by creating a new cluster or adding a new node port to an existing cluster.
+
+#### metadata concealment
+
+To prevents a pod from accessing node metadata, there is a temporary solution that will be deprecated as better security improvements are developed in the future. It does this by restricting access to cube NF which contains cubic credentials and the virtual machines instance identity token. See <a target="_blank" href="https://cloud.google.com/kubernetes-engine/docs/how-to/protecting-cluster-metadata">"protecting cluster metadata"</a>
+
+
+<a name="PodSecurityContexts"></a>
+
+#### Pod Security contexts
+
+By default, containers inside a pod allow privilege elevation, and can access the host file system and the host network.
+But although convenient, that can be undesirable from a security perspective.
+
+To restricts what containers in a pod can do, set <strong>security contexts</strong> in the pod specification so it's applied to all of the pod's containers.
+Using security contexts in a pod definition, you can exercise a lot of control over the use of the host namespace,
+networking, file system, and volume types, whether privilege containers can run, and whether code in the container can escalate to root privileges.
+
+This sample privileged-pod.yaml is used to the the pod security policy:
+
+   <pre>kind: Pod
+apiVersion: v1
+metadata:
+  name: privileged-pod
+spec:
+  containers:
+  - name: privileged-pod
+    image: nginx
+    securityContext:
+      privileged: true
+   </pre>
+
+This sample provides specific user and group context for containers:
+
+   <pre>...
+spec:
+  securityContext:
+    runAsUser: 1000
+      fsGroup: 2000
+   </pre>
+
+<tt>runAsUser</tt> ID "1000" for any containers in the pod. This should not be zero because, in a Linux system, zero is the privileged <strong>root</strong> user's User ID. Taking away root privilege from the code running inside the container limits what it can do in case of compromise.
+
+<tt>fsGroup</tt> ID "2000" is associated with all containers in the pod. 
+
+   * Enable <strong>#Seccomp</strong> to block code running in containers from making system calls. 
+   * Enable <strong>AppArmor</strong> to restrict individual program actions.
+   <br /><br />
+
+Such direct configuration of security contexts in each individual pod can become a lot of work.
+
+
+<a name="PodSecurityPolicies"></a>
+
+#### Pod Security policies (PSP)
+
+A request can be passed through multiple controllers.
+If the request fails at any point, the entire request is rejected immediately, with the end user receiving an error.
+
+Pod security policies apply to multiple pods without having to specify and manage those details in each pod definition.
+Defining pod security policies creates reusable security contexts. It's easier to define and manage security configurations separately, and then apply them to the pods that need them.
+
+Each pod security policy consists of an <strong>object</strong> and an admission controller. 
+
+The pod security policy object (a set of restrictions, requirements, and defaults) are defined in the same way as
+a security context inside a pod, and can be used to control the same security features.
+
+The pod security policy admission controller acts on the creation and modification of pods.
+
+During the creation or update of a pod, the Container Runtime enforces pod security policies based on the requested security context which defines whether the pod should be admitted. 
+
+For pod to be admitted to the cluster, it must fulfill all of security conditions defined in the pod security policy.
+These rules are only applied when a pod is being created or updated.
+
+The pod security policy admission controller validates or modifies requests to create or update pods against security policies.
+A non-mutating admission controller just validates requests.
+A mutating and mission controller can modify and validate requests.
+
+   <pre>apiversion: policy/v1beta1
+kind: PodSecurityPolicy
+metadata:
+  name: demo-psp
+spec:
+  privileged: false   # Don't allow privileged pods
+  allowPrivilegeEscalation: false
+  volumes: 
+    - 'configMap'
+    - 'emptyDir'
+    - 'projected'
+    - 'secret'
+    - 'persistentVolumeClaim'
+  hostNetwork: false
+  hostIPC: false
+  hostPID: false
+  selLinux:
+    rule: 'RunAsAny'
+  fsGroup:
+    rule: RunAsAny
+  runAsUser:
+    rule: 'MustRunAsNonRoot'
+  readOnlyRootFileSystem: false
+  volumes: 
+  - '*'
+   </pre>
+
+
+After defining a pod security policy, authorize it.
+Otherwise it'll prevent other Pods from being created.
+
+* <a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13131899?parent=lti_session">Securing Google Kubernetes Engine with Cloud IAM and Pod Security Policies</a> 90m.
+
+<a name="ClusterRoles"></a>
+
+#### ClusterRoles
+
+You can authorize a policy using Kubernetes Role-Based Access Control.
+
+Here, a clusterRole allows the pod security policy to be used: restricted-pods-role.yaml 
+
+   <pre>apiVersion: rbac.authorization.k8s.io/vi
+kind: ClusterRole
+metadata:
+  name: psp-clusterole
+rules:
+- apiGroups:
+  - extensions
+  resources:
+  - podsecuritypolicies
+  resourceNames:
+  - demo-psp
+  verbs:
+  - use
+   </pre>
+
+Next define a role binding to bind the previous cluster role to users or groups.
+In this example, two subjects for the role binding are specified.
+
+   <pre>apiVersion: rbac.authorization.k8s.io/vi
+kind: RoleBinding
+metadata:
+  name: psp-rolebinding
+  namespace: demo
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: psp-clusterrole
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: system.serviceaccounts
+- kind: ServiceAccount
+  name: service@example.com
+  namespace: demo
+   </pre>
+
+
+The first is a group containing all service counts within the demo name-space.
+The other is a specific service account in the demo name space.
+The role binding can grant permission to the creator of the pod, which might be a deployment,
+replica set or other template controller.
+
+It can grant permission to the created pods service account.
+Note that granting the controller access to the policy, would grant access for all pods created by that controller.
+So the preferred method for authorizing policies is to grant access to the pods service account.
+Without a pod security policy controller, pod security policies mean nothing.
+You need both to define policies, and to enable the pod security policy controller.
+Careful, the order here matters. 
+If you enable the pod security policy controller before defining any policies, you've just commanded that nothing is allowed to be deployed.
+In GKE, the pod security policy controller is disabled by default.
+If you choose to use pod security policies, first define them, and then enable the controller with the G-Cloud command shown here. 
+Name represents the name of your cluster.
+
+You can take additional security measures in kubernetes, and many of these are enabled by default in GKE, 
+especially if you choose to run recent versions of kubernetes in your GKE cluster.
+
+For example, GKE by default uses Google's container optimized OS for the node OS.
+Unlike a general purpose Linux distribution, the container optimized OS implements a minimal read-only file system.
+Performs system integrity checks and implements firewalls, audit logging, and automatic updates.
+You can enable node auto upgrades to keep all of your nodes running the latest version of Kubernetes.
+You can choose to run private clusters, which contain nodes without external IP addresses.
+You can also choose to run the cluster master for a private cluster without a publicly reachable end point using Master authorized networks.
+By default, private clusters do not allow TCP IP addresses to access the cluster master end point.
+Using private clusters with master authorized networks, makes your cluster master reachable only by the specific address ranges that you choose.
+Nodes within your cluster VPC network can still access the master, and so can Google's internal production jobs that manage it for you.
+Make sure to protect your secrets by using encrypted secrets.
+To store sensitive configuration information rather than storing them in config maps.
+Whenever possible, grant privilege to groups rather than individual users.
+This applies both to Cloud IAM which lets you grant rules to Google groups, as well as kubernetes are back which lets you
+grant roles to kubernetes groups.
+Suppose you grant privileges to an administrator named Pat in many places and then Pat leaves your company.
+You now must track down all the places where Pat has privileges, and remove them.
+That's tedious and error-prone.
+
+If you follow the best practice of always granting privileges to groups rather than to users, you can remove Pat's access simply
+by taking Pat out of the administrator group. 
+
+<a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13131337?parent=lti_session">Qwiklab: Implementing Role-Based Access Control with Google Kubernetes Engine</a>:
+
+
+
+<hr />
 
 <a name="MasterNode"></a>
 
@@ -3055,6 +3446,66 @@ There is a command with the same name used to obtain the <strong>version</strong
    * authorization to handle role, rb
    * storage to handle pv (persistent volume) and <a href="#PVC">pvc</a>, sc (storage classes)
    <br /><br />
+
+
+
+<a name="kube-proxy"></a>
+
+### Kube-proxy
+
+The kube-proxy maintains network connectivity among the Pods in a cluster.
+
+kube-proxy <strong>watches</strong> the <a href="#API_Server">API server</a> for addition and removal requests.
+For each new service, kube-proxy opens a randomly chosen port on the local node.
+It then makes proxied connections to one of the corresponding back-end pods.
+
+The "proxy" in kube-proxy means that it can do simple network stream or round-robin forwarding across a set of backends.
+
+Three modes:
+
+   * User space mode
+   * Iptables mode
+   * Ipvs mode (alpha as of v1.8)
+
+
+
+<a name="Kubelet"></a>
+
+### Kubelet
+
+A Kublet agent program is automatically installed in each node created.
+
+Kubelet serves as Kubernetes’s agent on each node.
+
+Kubelet only manages containers created by the <a href="#API_Server">API server</a> - not any container running on the node.
+
+Kublet communicates with the <a href="#API-server">API server</a> to see if pods have been assigned to nodes.
+
+Kubelets communicate with the Kubernetes API server using secured network communications protocols TLS and SSH based on certificates issued by the clusters root CA to support those protocols.
+
+
+Kubelet takes a set of <a href="#Podspecs">Podspecs</a> provided bythe kube-apiserver to ensure that containers described are running and healthy.
+
+Kubelet mounts and runs pod  <a href="#Volumes">volumes</a> and <a href="#Secrets">secrets</a>.
+
+   Image pull secrets authenticates with private container registries.
+
+Kubelet executes health checks to identify pod/node status.
+
+   Service accounts can also store image pull secrets.
+
+
+<a name="ControlPlane"></a>
+
+### Control Plane
+
+Each <strong>kubelet</strong> manages the <strong>"Control Pane"</strong> which allocates IP addresses and runs nodes under its control. 
+
+Kublet constantly compares the status of pods against what is declared in yaml files, and starts or deletes pods as necessary to meet the request. 
+
+Restarting Kublet itself depends on the operating system (`monit` on Debian or `systemctl` on systemd-based systems).
+
+
 
 <a name="RBAC"></a>
 
@@ -3186,6 +3637,10 @@ The Node controller uses built-in taints to specify conditions: "network-unavail
    <strong>Ingress Resource</strong> defines the connection rules.
 
    In Kubernetes the <strong>Ingress Controller</strong> could be a NGINX container providing reverse proxy capabilities.
+
+In Google Kubernetes Engine, by default LoadBalancers give access to a regional Network Load Balancing configuration. 
+To get access to a global HTTP(S) Load Balancing configuration, use an Ingress object.
+
 
 <a name="Plug-in_Network"></a>
 
@@ -4076,8 +4531,7 @@ which is part of the <a taget="_blank" href="https://run.qwiklab.com/quests/29">
 
 <a target="_blank" href="https://github.com/timstclair/kube-contrib/blob/master/devel/manifests/cadvisor-pod.yaml">An example (cadvisor)</a>:
 
-   <pre>
-apiVersion: v1
+   <pre>apiVersion: v1
 kind: Pod
 metadata:
   name:   cadvisor
@@ -4143,9 +4597,9 @@ Sample labels and values:
    * release-version: 1.0
    <br /><br />
 
-1. Create label automatically:
+1. Create label automatically 
 
-   <pre><strong>kubectl expose</strong></pre>
+   <pre><strong>kubectl expose ...</strong></pre>
 
 1. Overwrite (Add) a label after a pod created:
 
@@ -4161,7 +4615,28 @@ Sample labels and values:
 
    <pre><strong>k describe po mssaging | grep -C 5 -i labels</strong></pre>
 
+   BLAH: grep commands are simple and display extra text.
 
+   <a target="_blank" href="https://www.youtube.com/watch?v=vljkDorNiuw&list=RDCMUCSWj8mqQCcrcBlXPi4ThRDQ&start_radio=1">VIDEO</a>: To precisely define extracts for processing by another command, use <a target="_blank" href="https://kubernetes.io/docs/reference/kubectl/jsonpath/">JSONPath</a>:
+
+1. Get the IP of the pods with label app=nginx, using JSONPath:
+
+   <pre>kubectl get pods -l app=nginx -o jsonpath='{range .items[*]}{.status.podIP}{"\n"}{end}'</pre>
+
+   instead of
+
+   <pre>kubectl get pods -o wide --no-headers | awk '{print $1,$6}'</pre>
+
+   Note that JSONPath references object names which makes the request more understandable than
+   awk referencing relative positions in output, which can change over time.
+
+   More examples of JSONPath:
+   https://github.com/himadriganguly/k8s-jsonpath/tree/main/pods   
+
+   
+1. Custom columns
+
+   https://kubernetes.io/docs/reference/kubectl/cheatsheet/#formatting-output
 
    <a name="Selectors"></a>
 
@@ -4185,6 +4660,8 @@ Sample labels and values:
 <a name="rc"></a>
 
 ### Replication rc.yml
+
+A ReplicaSet configures a Deployment controller to create and maintain a specific version of the Pods that the Deployment specifies.
 
 The `rc.yml` (Replication Controller) defines the number of replicas and 
 
@@ -4380,15 +4857,6 @@ spec:
 
    <pre>kubectl get deployments </pre>
 
-1. List the history:
-
-   <pre>kubectl rollout history deployment/nginx-deployment --revision=3</pre>
-
-1. Backout the revision:
-
-   <pre>kubectl rollout undo deployment/nginx-deployment --to-revision=2</pre>
-
-
 
    <a name="Rollbacks"></a>
 
@@ -4398,9 +4866,21 @@ spec:
 
    <pre>k rollout history deployment/some-deployment</pre>
 
+1. List the history:
+
+   <pre>kubectl rollout history deployment/nginx-deployment --revision=3</pre>
+
+1. rollout (rollback) Backout the revision to a specific revision:
+
+   <pre>kubectl rollout undo deployment/nginx-deployment --to-revision=2</pre>
+
+   PROTIP: Notice the difference between --to-revision= and --revision=
+
 1. <strong>Undo</strong> rollout (rollback):
 
    <pre>k rollout undo deployment/my-deployment --revision=v1.2</pre>
+
+   The default spec.revisionHistoryLimit is 10 versions retained.
 
 
 <a name="SecurityContext"></a>
@@ -4964,6 +5444,80 @@ Alex Soto (lordofthejars.com)
 
 https://itnext.io/bootstrapping-kubernetes-clusters-on-aws-with-terraform-b7c0371aaea0
 using kubeadm on AWS
+
+## Production
+
+Google on Coursera has a video course <a target="_blank" href="https://www.coursera.org/learn/deploying-secure-kubernetes-containers-in-production/">Architecting with Google Kubernetes Engine: Production</a>
+by Maya Kaczorowski (Product Manager, Container Security). 
+
+Every operation on a GCP resource is performed using an API call for which accesses is controlled using a permission.
+
+OpenID Connect to API server operates on top of OAuth, safer than x509 certs.
+Windows AD servers can sync one-way via Google Cloud Directory Sync (GCDS) by grouping GCP permissions into <strong>roles</strong> based on common user flows. NOTE: Permissions can't be individually assigned to members,
+
+Get a G-Suite Domain or Cloud Identity domain (free). 
+
+Cloud IAM policy grants roles to users.
+Cloud IAM defines a list of bindings designating which members can view or change GKE cluster configurations.
+
+An IAM policy can be attached to a specific resource, a project, a project folder, or a whole organization.
+
+Inside the cluster, K8s RBAC, Pod Security.
+
+Access control can be setup at any level within the GCP organizational hierarchy and choose the most appropriate level for each IAM policy.
+Within an organization, you can have multiple folders containing multiple projects and so on.
+
+Cloud IAM policies applied at higher levels of a GCP organizational hierarchy are <strong>inherited</strong> by resources lower down that hierarchy. An IAM policy attached at the organizational level will automatically have access to all folders, all projects, and ultimately all relevant resources. There's no way to grant a permission at higher level in the hierarchy and then take it away below.
+
+So, in general, the policies applied at higher levels should grant very few permissions and policies applied at lower levels
+should grant additional permissions to only those who need them. 
+
+
+There are three kinds of roles in cCloud IAM: primitive, predefined, and custom.
+<strong>Primitive roles</strong> grant users global access to all GCP resources within a <strong>project</strong>
+(app engine, compute engine, and cloud storage).
+They existed before Cloud IAM, but can still be used with Cloud IAM. 
+The three primitive roles: <strong>viewer role</strong> permits read-only actions, such as viewing existing resources or data across the whole project. <strong>editor role</strong> adds modifying of existing resources.
+<strong>owner role</strong> adds the right to manage roles and permissions and set up billing for a project.<a target="_blank" href-"https://googlecoursera.qwiklabs.com/focuses/13134687?parent=lti_session">*</a>
+
+kubectl apply -f pod-reader-role.yaml
+
+   <pre>kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  namespace: production
+  name: pod-reader
+rules:
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["create", "get", "list", "watch"]
+   </pre>
+
+GKE provides several <strong>Predefined roles</strong> to provide granular access to Kubernetes engine resource.
+<strong>GKE viewer role</strong> gives read-only access as might be needed for auditing.
+<strong>GKE developer role</strong> grants developers and release engineers full control to all resources within a cluster.
+<strong>GKE admin role</strong> gives project owners, system administrators, and on-call engineers full access to clusters and Kubernetes engine resource is inside the clusters (create, delete, update, view clusters), but provides no access to Kubernetes resources.
+
+<strong>GKE custom roles</strong> provides even more granular control to a specific user account managing software running inside a certain GKE cluster, but not have any access to view GCP resources, and nothing else.
+
+
+## Video Courses
+
+<a target="_blank" href="https://www.coursera.org/specializations/architecting-google-kubernetes-engine">Coursera's "Architecting with Google Kubernetes Engine Specialization"</a> is focused on building efficient computing infrastructures using Kubernetes and Google Kubernetes Engine (GKE). The specialization introduces participants to deploying and managing containerized applications on GKE and the other services provided by Google Cloud Platform. Through a combination of presentations, demos, and hands-on labs, participants explore and deploy solution elements, including infrastructure components such as pods, containers, deployments, and services; as well as networks and application services. The specialization also covers deploying practical solutions including security and access management, resource management, and resource monitoring. 
+
+1. <a target="_blank" href="https://www.coursera.org/learn/gcp-fundamentals">Google Cloud Platform Fundamentals: Core Infrastructure</a>
+
+   This course introduces you to concepts and terminology for working with Google Cloud Platform (GCP). You learn about, and compare, many of the computing and storage services available in Google Cloud Platform, including Google App Engine, Google Compute Engine, Google Kubernetes Engine, Google Cloud Storage, Google Cloud SQL, and BigQuery. You learn about important resource and policy management tools, such as the Google Cloud Resource Manager hierarchy and Google Cloud Identity and Access Management. Hands-on labs give you foundational skills for working with GCP.
+
+2. <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke">Architecting with Google Kubernetes Engine: Foundations</a>
+
+   In this course you get a review of the layout and principles of Google Cloud Platform, followed by an introduction to creating and managing software containers and an introduction to the architecture of Kubernetes.
+
+3. <a target="_blank" href="https://www.coursera.org/learn/deploying-workloads-google-kubernetes-engine-gke">Architecting with Google Kubernetes Engine: Workloads</a> by Alex Hanna
+
+   In this course you learn about performing Kubernetes operations; creating and managing deployments; the tools of GKE networking; and how to give your Kubernetes workloads persistent storage.
+
+4. <a target="_blank" href="https://www.coursera.org/learn/deploying-secure-kubernetes-containers-in-production">Architecting with Google Kubernetes Engine: Production</a>
 
 
 
