@@ -407,10 +407,10 @@ Hidden text
 </details>
 
 {% highlight html %}
-<details>
-  <summary>Click to expand!</summary>
+&#123;details>
+  &#123;summary>Click to expand!</summary>
 Hidden text
-</details>
+&#123;/details>
 {% endhighlight %}
 
 
