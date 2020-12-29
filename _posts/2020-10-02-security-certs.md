@@ -125,7 +125,9 @@ to dozen of exams across six specific domains. It offers remote proctoring throu
 ## Comptia
 
 <a target="_blank" href="https://www.comptia.org/certifications/security">Security+</a> 
-is considered an "entry level" exam but its detailed coverage of some obscure encryption protocols makes it difficult even for professionals. Nevertheless, DoD 8570 compliance means job candidates need to have passed to even apply for some government jobs.
+is considered an "entry level" exam but its detailed coverage of some obscure encryption protocols makes it difficult even for professionals. Nevertheless, <a target="_blank" href="https://public.cyber.mil/cw/cwmp/dod-approved-8570-baseline-certifications/">DoD 8570</a> compliance means job candidates need to have passed to it to just apply for some government jobs.
+
+PROTIP: I passed the Security+ after studying literally 4 years, on and off. What helped me get over the intimidation is to seek out the trick questions and delight in them as an intellectual curiosity.
 
 ## Cisco
 
@@ -134,7 +136,11 @@ is considered an "entry level" exam but its detailed coverage of some obscure en
 Only 4,000 people have passed it world-wide.
 
 
-## CEH
+## EC-Council Penetration Tester
+
+EC-Council has 3 levels of certification. See FAQ at <a target="_blank" href="https://cert.eccouncil.org/faq.html">https://cert.eccouncil.org/faq.html</a>
+
+### CEH 
 
 The CEHv10 (Certified Ethical Hacker version 10) ANSI exam 
 as defined by <a target="_blank" href="https://www.eccouncil.org/programs/certified-ethical-hacker-ceh">https://www.eccouncil.org/programs/certified-ethical-hacker-ceh</a>
@@ -152,11 +158,19 @@ https://s3-us-west-2.amazonaws.com/edm-image/documents/CEH-Handbook-v2.2.pdf
 
 Blueprint: https://cert.eccouncil.org/images/doc/CEH-Exam-Blueprint-v2.0.pdf
 
-FAQ: https://cert.eccouncil.org/faq.html
+### ECSA
 
-## ECSA Practical exam 
+At the Advanced level is ECSA: Security Analyst
+https://www.eccouncil.org/programs/certified-security-analyst-ecsa-practical/
 
 
+### LPT
+
+At the Expert Level is LPT: Licensed Penetration Tester [Master]
+https://www.eccouncil.org/programs/licensed-penetration-tester-lpt-master/
+with training via CPENT.
+
+EC-Council built the Advanced Penetration Testing Cyber Range (ECCAPT) and was designed by experts who each have more than 25 years of professional security testing across the globe.
 
 ## References
 
