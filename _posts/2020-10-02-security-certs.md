@@ -2,9 +2,9 @@
 layout: post
 title: "Security Certifications"
 excerpt: "Getting certified"
-tags: [security]
-date: "2020-10-02"
-file: "security-"
+tags: [security,certs]
+date: "2020-12-11"
+file: "security-certs"
 image:
 # cyber-security-hero-1900x500-22924.jpb/.png 
   feature: https://user-images.githubusercontent.com/300046/61989997-46bab400-aff5-11e9-9045-8075ede3d5a3.jpg
@@ -16,9 +16,10 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-
 There are several (overlapping) certification exams (from competing agencies) for security professionals:
 
+The vast landscape of security certifications is illustrated by this map at <a target="_blank" href="https://pauljerimy.com/security-certification-roadmap/">https://pauljerimy.com/security-certification-roadmap</a>:
+<img width="1613" alt="security-cert-landscape" src="https://user-images.githubusercontent.com/300046/101941672-91ff4380-3ba5-11eb-8b16-1368f9ce1349.png">
 
 ## ISC2.org
 
@@ -96,7 +97,7 @@ Offensive Security is a for-profit company offering courses with labs and certif
 
    * <a target="_blank" href="https://www.offensive-security.com/awe-osee/">OSEE (Offensive Security Exploitation Expert)</a> covers DEP, ASLR evasion, heap spraying, function pointer overwrites. OSEE holders must complete the Advanced Windows Exploitation (AWE) course by Offensive Security held in a live hands-on environment at a Black Hat conference in Las Vegas, NV.
    
-   That plus pass a rigorous <strong>72-hour practical exam</strong>that includes preparing a comprehensive penetration test report. So this certificate indicates a level of expertise far beyond that of most penetration testers.
+   That plus pass a rigorous <strong>72-hour practical exam</strong> that includes preparing a comprehensive penetration test report. So this certificate indicates a level of expertise far beyond that of most penetration testers.
 
    Topics include: 64-bit Exploitation, Debugging, DEP ByPass, Disarming EMET Mitigations, Exploit Development, Heap Spray, Kernel Driver Exploitation, Kernel Pool Exploitation, Memory Protection Bypass, NX/ASLR Bypass, ROP Chain, Sandbox Escape, Shellcode, WinDBG, Windows Kernel Exploitation.
     
@@ -123,18 +124,22 @@ to dozen of exams across six specific domains. It offers remote proctoring throu
 
 ## Comptia
 
-Security+ 
+<a target="_blank" href="https://www.comptia.org/certifications/security">Security+</a> 
+is considered an "entry level" exam but its detailed coverage of some obscure encryption protocols makes it difficult even for professionals. Nevertheless, DoD 8570 compliance means job candidates need to have passed to even apply for some government jobs.
 
 ## Cisco
 
-CCIE - Cisco 2.3 times to pass the lab. Only 4,000 people have passed it.
+<a target="_blank" href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert.html">CCIE - Cisco</a>
+
+Only 4,000 people have passed it world-wide.
 
 
 ## CEH
 
 The CEHv10 (Certified Ethical Hacker version 10) ANSI exam 
-as defined by https://www.eccouncil.org/programs/certified-ethical-hacker-ceh
+as defined by <a target="_blank" href="https://www.eccouncil.org/programs/certified-ethical-hacker-ceh">https://www.eccouncil.org/programs/certified-ethical-hacker-ceh</a>
 asks 125 multiple-choice questions in 4 hours.
+
 The exam is protored by ECC EXAM (as 312-50) and Pearson VUE (as 312-50), 
 courseware is discounted to $850, with upgrade for VUE exam for $100.
 from "Aspen iLabs".
@@ -149,8 +154,15 @@ Blueprint: https://cert.eccouncil.org/images/doc/CEH-Exam-Blueprint-v2.0.pdf
 
 FAQ: https://cert.eccouncil.org/faq.html
 
-The ECSA Practical exam 
+## ECSA Practical exam 
 
+
+
+## References
+
+On Udemy: <a target="_blank" href="https://www.udemy.com/course/secure-product-lifecycle-101/">
+Security Product Lifecycle 101</a> (SPLC) by Implementing Security. Voiced by an enthusiastic voice pro.
+References SAMM 2.0, OWASP Top 10.
 
 
 ## More on Security #
