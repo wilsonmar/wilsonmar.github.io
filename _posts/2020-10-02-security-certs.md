@@ -122,12 +122,80 @@ to dozen of exams across six specific domains. It offers remote proctoring throu
    * <a target="_blank" href="https://www.giac.org/certification/security-expert-gse">GSE (GIAC Security Expert)</a> is the premier security-related certification available today. After you score at least the gold level in 2 of 3 tests above, you take a multiple-choice test, then a hands-on lab (not available due to COVID). The proctored Exam has Minimum Passing Score of 64% to 24 VM-based Hands-On Questions with a 3-Hour Time Limit.
 
 
-## Comptia
+## CompTIA
+
+So compliance with <a target="_blank" href="https://public.cyber.mil/cw/cwmp/dod-approved-8570-baseline-certifications/">DoD 8570-2005</a> retired by <a target="_blank" href="https://www.nist.gov/news-events/news/2016/08/dod-directive-814001-cyberspace-workforce-management">NIST DoD Directive 8140.01</a> means job candidates need to have passed to it to just apply for some government jobs. DoD 8140 expands on DoD 8570 to leverage the <a target="_blank" href="https://dodcio.defense.gov/Cyber-Workforce/DCWF.aspx">Defense Cybersecurity Workforce Framework (DCWF)</a>, which draws from the original <a target="_blank" href="https://www.nist.gov/itl/applied-cybersecurity/nice/nice-cybersecurity-workforce-framework-resource-center">National Initiative for Cybersecurity Education (NICE) Cybersecurity Workforce Framework (NCWF)</a> and DoD Joint Cyberspace Training and Certification Standards (JCT&CS).
+
+CompTIA certifications were designed for compliance with ISO 17024 standards and approved by the US DoD to meet directive 8140/8570.01-M requirements. Regulators and government rely on ANSI accreditation, because it provides confidence and trust in the outputs of an accredited program. Over 2.3 million CompTIA ISO/ANSI-accredited exams have been delivered since January 1, 2011.
+
+
+### Security+
 
 <a target="_blank" href="https://www.comptia.org/certifications/security">Security+</a> 
-is considered an "entry level" exam but its detailed coverage of some obscure encryption protocols makes it difficult even for professionals. Nevertheless, <a target="_blank" href="https://public.cyber.mil/cw/cwmp/dod-approved-8570-baseline-certifications/">DoD 8570</a> compliance means job candidates need to have passed to it to just apply for some government jobs.
+is considered an "entry level" exam but its detailed coverage of some obscure encryption protocols makes it difficult even for professionals. 
 
 PROTIP: I passed the Security+ after studying literally 4 years, on and off. What helped me get over the intimidation is to seek out the trick questions and delight in them as an intellectual curiosity.
+
+https://public.cyber.mil/devsecops/
+
+### CASP+
+
+<a target="_blank" href="https://www.comptia.org/certifications/comptia-advanced-security-practitioner">
+CASP+ (CompTIA Advanced Security Practioner) exam CAS-003</a> is a hands-on, performance-based certification for practitioners — not managers — at the advanced skill level of cybersecurity -- implementing solutions policies and frameworks. 
+For $452 USD (or $799 with retake and $849 with Labs), you'll have 165 minutes to answer 90 multiple-choice and "performance-based" questions, for pass/fail grading. Performance-based questions (PBQs) test a candidate’s ability to solve problems in a simulated environment that approximates a virtual environment with a firewall, network diagram, terminal window, or operating system. 
+
+CASP+ satisfies Baseline Certification for DoD IAT (Information Assurance Technical) Level III, IAM (Information Assurance Management) Level II, and IASAE (Information Assurance Security Architecture and Engineering) level I and II jobs.
+
+* <a target="_blank" href="https://learning.oreilly.com/learning-paths/learning-path-comptia/9780135945025/">18+ hours of prep videos</a>released Jan. 2018 by Michael J. Shannon
+
+1. Risk Management
+
+   1: Business and Industry Influences and Risks
+
+   2: Organizational Security Privacy Policies and Procedures
+
+   3: Risk Mitigation Strategies and Controls
+
+   4: Risk Metric Scenarios for Enterprise Security
+
+2. Enterprise Security Architecture
+
+   5: Integrating Network and Security Components, Concepts, and Architectures
+
+   6: Integrating Security Controls for Host Devices
+
+   7: Integrating Controls for Mobile and Small Form Factor Devices
+
+   8: Selecting Software Security Controls
+
+3. Enterprise Security Operations
+
+   9: Conducting Security Assessments
+
+   10: Selecting the Proper Security Assessment Tools
+
+   11: Implementing Incident Response and Recovery
+
+4. Technical Integration of Enterprise Security
+
+   12: Integrating Hosts, Storage, and Applications in the Enterprise
+
+   13: Integrating Cloud and Virtualization Technologies in the Enterprise
+
+   14: Integrating and Troubleshooting Advanced AAA Technologies
+
+   15: Implementing Cryptographic Techniques
+
+   16: Secure Communication and Collaboration Solutions
+
+5. Research, Development and Collaboration
+
+   17: Applying Research Methods for Trend and Impact Analysis
+
+   18: Implementing Security Activities Across the Technology Life Cycle
+
+   19: Interacting Across Diverse Business Units
+
 
 ## Cisco
 
