@@ -138,6 +138,11 @@ PROTIP: I passed the Security+ after studying literally 4 years, on and off. Wha
 
 https://public.cyber.mil/devsecops/
 
+### PenTest+
+
+https://www.whizlabs.com/comptia-pentest/
+
+
 ### CASP+
 
 <a target="_blank" href="https://www.comptia.org/certifications/comptia-advanced-security-practitioner">
@@ -146,7 +151,7 @@ For $452 USD (or $799 with retake and $849 with Labs), you'll have 165 minutes t
 
 CASP+ satisfies Baseline Certification for DoD IAT (Information Assurance Technical) Level III, IAM (Information Assurance Management) Level II, and IASAE (Information Assurance Security Architecture and Engineering) level I and II jobs.
 
-* <a target="_blank" href="https://learning.oreilly.com/learning-paths/learning-path-comptia/9780135945025/">18+ hours of prep videos</a>released Jan. 2018 by Michael J. Shannon
+<a target="_blank" href="https://learning.oreilly.com/learning-paths/learning-path-comptia/9780135945025/">18+ hours of prep videos</a>released Jan. 2018 by Michael J. Shannon
 
 1. Risk Management
 
@@ -158,7 +163,7 @@ CASP+ satisfies Baseline Certification for DoD IAT (Information Assurance Techni
 
    4: Risk Metric Scenarios for Enterprise Security
 
-2. Enterprise Security Architecture
+2. Enterprise network and Security Architecture
 
    5: Integrating Network and Security Components, Concepts, and Architectures
 
@@ -196,6 +201,29 @@ CASP+ satisfies Baseline Certification for DoD IAT (Information Assurance Techni
 
    19: Interacting Across Diverse Business Units
 
+<a target="_blank" href="https://www.udemy.com/course/comptia-advanced-security-practitioner-casp-exam-cas-003/">
+Udemy Prepatory course for the exam CAS-003</a>
+
+   1. Understanding Risk Management - 2hr 22min <a target="_blank" href="https://mckinsey.udemy.com/course/comptia-advanced-security-practitioner-casp-exam-cas-003/learn/quiz/4616263#reviews">QUIZ</a>
+   2. Network and Security - 1hr 55m <a target="_blank" href="https://mckinsey.udemy.com/course/comptia-advanced-security-practitioner-casp-exam-cas-003/learn/quiz/4616410#reviews">QUIZ</a>
+   3. Implementing Advanced Authentication and Cryptographic Techniques - 1hr 46min <a target="_blank" href="https://mckinsey.udemy.com/course/comptia-advanced-security-practitioner-casp-exam-cas-003/learn/quiz/4616464#reviews">QUIZ</a>
+   4. Implementing Security for Systems, Applications, and Storage - 2hr 23min <a target="_blank" href="https://mckinsey.udemy.com/course/comptia-advanced-security-practitioner-casp-exam-cas-003/learn/quiz/4616574#reviews">QUIZ</a>
+   5. Implementing Security for Cloud and Virtualization Technologies - 1hr 45min <a target="_blank" href="https://mckinsey.udemy.com/course/comptia-advanced-security-practitioner-casp-exam-cas-003/learn/quiz/4616602#reviews">QUIZ</a>
+   6. Utilizing Security Assessments and Incident Response - 1hr 42min <a target="_blank" href="https://mckinsey.udemy.com/course/comptia-advanced-security-practitioner-casp-exam-cas-003/learn/quiz/4616616#reviews">QUIZ</a>
+   <br /><br />
+
+Memory dump tools: Memdump, KnTTools on Windows, FATKit 
+
+Runtime Debugging: AddressSanitizer, C# Deleaker, Software Verify
+
+Attestation provides evidence about a target to an appraiser so that policy compliance can be determined prior to authorization of access.
+
+The Annualized Loss Expectancy (ALE) is the product of the Annual Rate of Occurrence (ARO) multiplied by the Single Loss Expectancy (SLE).
+
+Bluesnarfing is the unauthorized access of a device by an attacker who is trying to access information on the device.
+
+Hyperconvergence takes convergence a step further by utilizing software to perform integration without requiring hardware changes.
+
 
 ## Cisco
 
@@ -206,11 +234,13 @@ Only 4,000 people have passed it world-wide.
 
 ## EC-Council Penetration Tester
 
-EC-Council has 3 levels of certification. See FAQ at <a target="_blank" href="https://cert.eccouncil.org/faq.html">https://cert.eccouncil.org/faq.html</a>
+(International Council of E-Commerce Consultants) EC-Council from Malaysia since 2001 has 3 levels of certification. See FAQ at <a target="_blank" href="https://cert.eccouncil.org/faq.html">https://cert.eccouncil.org/faq.html</a>
+
+33% off until Dec 31.
 
 ### CEH 
 
-The CEHv10 (Certified Ethical Hacker version 10) ANSI exam 
+The CEHv10 (Certified Ethical Hacker version 11) ANSI exam 
 as defined by <a target="_blank" href="https://www.eccouncil.org/programs/certified-ethical-hacker-ceh">https://www.eccouncil.org/programs/certified-ethical-hacker-ceh</a>
 asks 125 multiple-choice questions in 4 hours.
 
@@ -226,11 +256,15 @@ https://s3-us-west-2.amazonaws.com/edm-image/documents/CEH-Handbook-v2.2.pdf
 
 Blueprint: https://cert.eccouncil.org/images/doc/CEH-Exam-Blueprint-v2.0.pdf
 
-### ECSA
+### CPENT / ECSA 
 
-At the Advanced level is ECSA: Security Analyst
+The Advanced level is ECSA: Security Analyst
 https://www.eccouncil.org/programs/certified-security-analyst-ecsa-practical/
+is being phased out in Oct. 2020 in favor of the <a target="_blank" href="https://cert.eccouncil.org/certified-penetration-testing-professional-cpent.html">CPENT (Certified Penetration Testing Professional)</a>.
 
+Covers "double pivoting".
+
+$2199 w/ training, $799 for challenge.
 
 ### LPT
 
@@ -238,13 +272,15 @@ At the Expert Level is LPT: Licensed Penetration Tester [Master]
 https://www.eccouncil.org/programs/licensed-penetration-tester-lpt-master/
 with training via CPENT.
 
-EC-Council built the Advanced Penetration Testing Cyber Range (ECCAPT) and was designed by experts who each have more than 25 years of professional security testing across the globe.
+EC-Council built the Advanced Penetration Testing Cyber Range (ECCAPT).
 
 ## References
 
 On Udemy: <a target="_blank" href="https://www.udemy.com/course/secure-product-lifecycle-101/">
 Security Product Lifecycle 101</a> (SPLC) by Implementing Security. Voiced by an enthusiastic voice pro.
 References SAMM 2.0, OWASP Top 10.
+
+Data-Driven Security (Pearson) by Jacobs and Rudis
 
 
 ## More on Security #
