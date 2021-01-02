@@ -50,23 +50,74 @@ Someone watching over your shoulder can see your password being typed in.
 
 A <strong>key-logger</strong> program ("spyware") installed on your laptop can capture what you type on your keyboard.
 
-This is why most enterprise GitHub instances route GitHut logins through their Duo or other multi-factor authentication process on each user's own smart mobile phone.
+This is why most enterprise GitHub instances route login to their GitHub organization automatically through their Duo or other multi-factor authentication process on each user's own smart mobile phone.
 
 
 <a name="2FA"></a>
 
 ## SOLUTION 1. Enable 2FA with an Authenticator app
 
+### One-time 2FA setup
+
+This is recommended to protect GitHub accounts opened using a Gmail or other private email address (not a corporate email).
+
 There are many tutorials on how to do this on YouTube.
 
-1. In an internal browser (Chrome) at https://github.com, login using your password.
+1. In an internal browser (Chrome) at <a target="_blank" href="https://github.com/">https://github.com</a> 
+1. Login using your account name and password.
 1. Click the avatar picture on the top right on the black band for the drop-down menu to select "Settings".
+1. In the left sidebar, click <strong>Account security</strong>.
 1. Click the green "Enable two-factor authentication".
+
+   ![2fa-enable-300x123](https://user-images.githubusercontent.com/300046/103462493-c5d01380-4ce2-11eb-9f67-da26c03dbb6c.jpg)
+
+   If an "Enabled" button appears if you're already enabled. In that case, click "Edit" to "Authenticator App" under "Two-factor methods".
+
+   PROTIP: 2FA requires you to obtain a TOTP (Time-based One-time Password) number <strong>in addition</strong> to your password.
+
 1. Provide your password again.
+1. On the Two-factor authentication page, click the green "Set up using an app" button for a list of recovery codes.
 
-PROTIP: Print and store your one-time passwords 
+   ![2fa-recovery-codes-528x718](https://user-images.githubusercontent.com/300046/103462601-9e2d7b00-4ce3-11eb-8240-affaad9ddf1b.jpg)
 
-PROTIP: If you lose your 2FA device, you'll need to remove 2FA.
+   CAUTION: Recovery codes are the only way to access your account again if you lose your 2FA device. GitHub Support will not be able to restore access to your account, forcing you to lose all repos and history created under that account.
+
+1. PROTIP: Print and save your recovery codes in a safe place. You get a list of recovery codes because each can only be used once instead of your static Password to get back into your account.
+
+   1. Click Copy, then paste in a file within 1Password or other password-protected location. This enables you to copy and paste later.
+   1. Click Print to save a hard copy of your recovery codes
+   1. Click Download to save your recovery codes in clear text on your device (not recommended)
+
+1. Click "Next" for a QR code for your Authenticator app to read.
+
+1. If you already have Duo, open that app. You can also install from the iPhone store:
+
+   * Google Authenticator on <a target="_blank" href="https://apps.apple.com/us/app/google-authenticator/id388497605">iPhones</a> or <a target="_blank" href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en_US&gl=US">Google Play on Android</a>
+   * <a target="_blank" href="https://www.microsoft.com/en-us/account/authenticator">Microsoft Authenticator</a> <a target="_blank" href="https://apps.apple.com/us/app/microsoft-authenticator/id983156458">on iPhones</a> or <a target="_blank" href="https://play.google.com/store/apps/details?id=com.azure.authenticator&hl=en_US&gl=US">Google Play for Android</a>.
+   <br /><br />
+
+1. In your chosen authenticator app, click "+" for the camera to appear.
+1. Hold your camera to position the QR code to take up the screen to scan it.
+1. After scanning, the last item on the app displays a six-digit code that you can enter on GitHub. 
+
+   PROTIP: Ignore the space between the numbers. Enter just the 6 numbers.
+
+1. Click "Enable".
+1. Click your avatar and select "Sign out".
+1. Sign in again. 
+
+
+   ### Responding to a 2FA challenge
+
+1. When you see a "Two-factor authentication" challenge on a web page:
+
+   ![2fa-code-entry-238x300](https://user-images.githubusercontent.com/300046/103462405-30cd1a80-4ce2-11eb-9dc4-cd9b13f2e906.jpg)
+
+1. On your smart phone, open your authentication app (Duo).
+1. Click the arrow on the right edge of the "GITHUB" entry listing your account name, so that you see six numbers.
+
+1. On your laptop's browser, type those numbers in the Authentication Code field entry.
+1. Success means you see your landing page at "github.com".
 
 
 <hr />
@@ -86,9 +137,37 @@ References:
 
 <a name="DorkLocally"></a>
 
-## SOLUTION 2. Automate "Dorking" scans of you code locally 
+## SOLUTION 2. Automate "Dorking" scans of you code 
 
-git-secrets
+There are two places scanning should occur: locally on laptops and in the GitHub cloud.
+
+GitHub itself has a "GitHub Advanced Security (GHAS)" offering for Enterprise users. Its advantage is that it scans without any developer effort. 
+
+It's a "premium" service ($36.69 per committer with 90 days free) because regular expressions needs to be written to detect secrets applicable to each circumstance, such as AWS credentials, etc.
+
+Coverage of tools is important, so are several competing 3rd-party utilities which detect secrets in GitHub repositories:
+
+   * Nightfall with SSO
+   <br /><br />
+
+On the laptop locally, it takes effort to install Git hooks to fire upon git commit commands.
+
+The options:
+
+"Detect Secrets" open-source code.
+
+git-secrets 
+
+Git Guardian
+
+"GittyLeaks" open-source code.
+
+GitLeaks is a post-commit utility written in Go open-source code.
+
+GuardRails is proprietary but has reports and login security.
+
+TruffleHog is open-source code.
+
 
 <hr />
 
@@ -97,16 +176,13 @@ git-secrets
 
 ## PROBLEM 3. Secrets remain in prior commit history
 
+PROTIP: If a file is deleted using `git rm` and a commit is made,
+a vestige of that data still exist in the repository's <strong>history</strong> (.git folder).
 
 
 <a name="RemoveHistory"></a>
 
 ## SOLUTION 3. Remove secrets in prior commit history on GitHub
-
-What if you found out that your private data has been exposed in a GitHub repo?
-
-PROTIP: If a file is deleted using `git rm` and a commit is made,
-a vestige of that data still exist in the repository's <strong>history</strong> (.git folder).
 
 Utility program <a target="_blank" href="http://rtyley.github.io/bfg-repo-cleaner/">
    BFG Repo-Cleaner</a> 
