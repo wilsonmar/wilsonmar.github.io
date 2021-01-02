@@ -3,7 +3,7 @@ layout: post
 title: "GitHub Data Security"
 excerpt: "How to keep secrets out of GitHub"
 tags: [github, security]
-date: "2016-06-06"
+date: "2021-01-02"
 file: "github-data-security"
 image:
 # pic secret finger over mouth 1900x500
@@ -16,9 +16,34 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+This article provides solutions to several situations enabling public leak of secret data from your GitHub:
+
+1. Your GitHub account password can be stolen
+2. You can forget to remove secrets in files before making code public
+3. "Dorking" scans by hackers look for secrets in GitHub
+4. Secrets remain in prior commit history need to be removed from GitHub
+5. SSH keys to access GitHub remain on disk, subject to theft
+<br /><br />
+
+Recommendations offered in this article are:
+
+1. Setup 2FA with an authenticator to physically confirm GitHub access
+2. Always refer to secrets as variables in your code
+3. Automate "Dorking" scans of you code to look for secrets locally before pushing to GitHub
+4. Scan for and remove secrets in prior commit history on GitHub
+5. Access GitHub with rotated SSH certificates generated (automatically every day)
+<br /><br />
+
+<hr />
+
+<!-- 
+## Diagram
+
+Here is a diagram describing how ALL the various techniques work together:
+
 <amp-img width="714" height="466" alt="github-secrets-v02-714x466"
 layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/15831785/7aa96c3e-2bdc-11e6-9c3f-0dbf31a59f42.png"></amp-img>
-
+-->
 In our individual machines, 
 we use the `ssh-keygen` utility to generate key pairs.
 The public key we copy into each <strong>server</strong> 
@@ -462,11 +487,15 @@ With SOPS when you want to edit a file, the file stays encrypted on disk, gets d
 
 SOPS uses your AWS credentials stored in ~/.aws to authenticate against KMS so you can encrypt and decrypt without a password.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=V2PRhxphH2w">Securing DevOps Show & Tell: Mozilla Sops 
+* <a target="_blank" href="https://www.youtube.com/watch?v=V2PRhxphH2w">Securing DevOps Show & Tell: Mozilla Sops 
 Mar 2, 2019</a> at https://frederic-hemberger.de/articles/manage-kubernetes-secrets-with-sops/
 
-https://oteemo.com/2019/06/20/hashicorp-vault-is-overhyped-and-mozilla-sops-with-kms-and-git-is-massively-underrated/
-lists Ideal Secrets Management Solution Requirements
+* <a target="_blank" href="https://www.youtube.com/watch?v=KHMhYJpYMIU">VIDEO: 
+Avoid committing your secrets with Kustomize and SOPS</a> May 31, 2019
+
+* <a target="_blank" href="https://oteemo.com/2019/06/20/hashicorp-vault-is-overhyped-and-mozilla-sops-with-kms-and-git-is-massively-underrated/">
+lists Ideal Secrets Management Solution Requirements</a>
+
 
 ### Vault Dynamic Key Generation
 
