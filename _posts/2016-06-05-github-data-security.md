@@ -492,15 +492,6 @@ Backup encryption key files in a cloud vendor's key store, because cloud vendors
 
 Some utilities (such as SOP) reference your AWS credentials stored in ~/.aws to authenticate against KMS so you can encrypt and decrypt without a password.
 
-
-### SOP Decrypts to RAM
-
-To avoid forgetting to re-encrypt files decrypted on your laptop, consider <a target="_blank" href="https://github.com/mozilla/sops">https://github.com/mozilla/sops</a>, which <strong>decrypt files in RAM</strong> where you can edit it or use tools like vimdiff. When the utility re-encrypts files before saving them to disk.
-References:
-   * <a target="_blank" href="https://www.youtube.com/watch?v=V2PRhxphH2w">Securing DevOps Show & Tell: Mozilla Sops Mar 2, 2019</a> at https://frederic-hemberger.de/articles/manage-kubernetes-secrets-with-sops/
-   * <a target="_blank" href="https://www.youtube.com/watch?v=KHMhYJpYMIU">VIDEO: Avoid committing your secrets with Kustomize and SOPS</a> May 31, 2019
-   * <a target="_blank" href="https://oteemo.com/2019/06/20/hashicorp-vault-is-overhyped-and-mozilla-sops-with-kms-and-git-is-massively-underrated/">lists Ideal Secrets Management Solution Requirements</a>
-
 ### Offline capable?
 
 CAUTION: Programming reference to a cloud key store may slow progress to those who work <strong>offline</strong>, and need a cache of secrets on their laptop.
@@ -598,15 +589,57 @@ TODO: Below are steps to setup use of:
 
 ### Google secret keeping
 
+After setting up Google Cloud CLI,
+adapt this shell script to establish a key, encrypt, and decrpt:
+
+   <pre><strong>KEY_NAME="talk-key"
+KEYRING_FILE="my-sample-keyring"
+CLEAR_TEXT_FILE_PATH="/tmp/the-secret-of-cloud.txt"
+&nbsp;
+gcloud kms keys create "${KEY_NAME}" --location global --keyring "${KEYRING_FILE}" --purpose encryption
+echo "clear text contents to be encrypted" > "${CLEAR_TEXT_FILE_PATH}"
+&nbsp;
+gcloud kms encrypt --location global --keyring "${KEYRING_FILE}" --key "${KEY_NAME}" \
+   --plaintext-file "${CLEAR_TEXT_FILE_PATH}"
+cat "${CLEAR_TEXT_FILE_PATH}".encrypted
+&nbsp;
+gcloud kms decrypt --location global --keyring "${KEYRING_FILE}" --key "${KEY_NAME}" \
+   --ciphertext-file \
+   --plaintext-file=-
+   </secret></pre>
+
+
+
+### SOPS decrypt to RAM for editing
+
+To avoid forgetting to re-encrypt files decrypted on your laptop, <a target="_blank" href="https://github.com/mozilla/sops">https://github.com/mozilla/sops</a> (SOP = Secrets OPerationS), written by Mozilla (the alternative browser) to <strong>decrypt files in RAM</strong> where you can edit and the utility re-encrypts files automatically before saving them to disk.
+
+An example using GCP KMS:
+
+   <pre>CLEAR_TEXT_FILE_PATH="/tmp/myfile.enc.yaml"
+sops --encrypt --gcp-kms "${KEY_NAME}"   "${CLEAR_TEXT_FILE_PATH}" > "${CLEAR_TEXT_FILE_PATH}"
+sops --decrypt "${CLEAR_TEXT_FILE_PATH}"
+sops "${CLEAR_TEXT_FILE_PATH}"  # to edit then save using default vim editor
+sops --decrypt "${CLEAR_TEXT_FILE_PATH}"
+   </pre>
+
+Note that sops automatically decrypts to use Git diff commands to identify between two files differences in specific lines.
+
+References about this topic:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=V2PRhxphH2w">Securing DevOps Show & Tell: Mozilla Sops Mar 2, 2019</a> video of <a target="_blank" href="https://frederic-hemberger.de/articles/manage-kubernetes-secrets-with-sops/">blog article</a>.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=KHMhYJpYMIU">VIDEO: Avoid committing your secrets with Kustomize and SOPS</a> (with Agilicus add-on to Kustomize) May 31, 2019 [17:40]
+   * <a target="_blank" href="https://oteemo.com/2019/06/20/hashicorp-vault-is-overhyped-and-mozilla-sops-with-kms-and-git-is-massively-underrated/">lists Ideal Secrets Management Solution Requirements</a>
+
+
 
 <a name="Azure_Config"></a>
 
 ### Azure Key Vault
 
 References:
-
    * <a target="_blank" href="https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/storage/common/storage-client-side-encryption.md">Azure Key Vault</a>
    * http://www.codeproject.com/Articles/602146/">Keeping-sensitive-config-settings-secret-with-Azur">Keeping sensitive config settings secrete with Azure</a>
+
 
 
 <hr />
