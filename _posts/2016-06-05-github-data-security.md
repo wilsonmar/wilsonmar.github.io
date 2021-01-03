@@ -1132,7 +1132,7 @@ Having the 24 hour key rotation policy in place means new certificate are create
 Here is a static flowchart of the process described above:
 
 <a target="_blank" hrf="https://user-images.githubusercontent.com/300046/103477675-5576d000-4d7e-11eb-836d-c109e52f2b32.png">
-<img alt="github-data-ssh-keyrotation-2806x1656" width="2806" height="1656" src="https://user-images.githubusercontent.com/300046/103477675-5576d000-4d7e-11eb-836d-c109e52f2b32.png"></a>
+<img alt="github-data-ssh-keyrotation-2806x1656" width="640" src="https://user-images.githubusercontent.com/300046/103477675-5576d000-4d7e-11eb-836d-c109e52f2b32.png"></a>
 
 Steps to make this happen include:
 
