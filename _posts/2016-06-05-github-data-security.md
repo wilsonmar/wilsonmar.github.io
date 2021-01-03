@@ -71,7 +71,7 @@ There are many tutorials on how to do this on YouTube.
 
    ![2fa-enable-300x123](https://user-images.githubusercontent.com/300046/103462493-c5d01380-4ce2-11eb-9f67-da26c03dbb6c.jpg)
 
-   If an "Enabled" button appears if you're already enabled. In that case, click "Edit" to "Authenticator App" under "Two-factor methods".
+   Alternately, an "Enabled" button appears if you're already enabled. In that case, click "Edit" to "Authenticator App" under "Two-factor methods".
 
    PROTIP: 2FA requires you to obtain a TOTP (Time-based One-time Password) number <strong>in addition</strong> to your password.
 
@@ -87,6 +87,7 @@ There are many tutorials on how to do this on YouTube.
    1. Click Copy, then paste in a file within 1Password or other password-protected location. This enables you to copy and paste later.
    1. Click Print to save a hard copy of your recovery codes
    1. Click Download to save your recovery codes in clear text on your device (not recommended)
+   <br /><br />
 
 1. Click "Next" for a QR code for your Authenticator app to read.
 
@@ -119,6 +120,8 @@ There are many tutorials on how to do this on YouTube.
 1. On your laptop's browser, type those numbers in the Authentication Code field entry.
 1. Success means you see your landing page at "github.com".
 
+References:
+   * <a target="_blank" href="https://docs.github.com/en/github/authenticating-to-github/configuring-two-factor-authentication">https://docs.github.com/en/github/authenticating-to-github/configuring-two-factor-authentication</a>
 
 <hr />
 
@@ -129,9 +132,7 @@ There are many tutorials on how to do this on YouTube.
 Rogue "dorking" scanners are looking through <strong>every</strong> public repository, every day, looking for secrets.
 
 References:
-
    * http://www.securityweek.com/github-search-makes-easy-discovery-encryption-keys-passwords-source-code
-
    * http://www.itworld.com/article/2921135/security/add-github-dorking-to-list-of-security-concerns.html
 
 
@@ -256,9 +257,6 @@ The other problem with this approach is what happens when your laptop crashes?
 Your passwords and encryption keys can be lost forever if they are not backed up.
 
 
-
-
-
    <a name="ConfigScript"></a>
 
    ### Ignore change 
@@ -341,8 +339,7 @@ to a folder outside of the Git repository.
 ### Sync from Dropbox #
 
 <a target="_blank" href="http://www.technorange.com/cloudlinker-direct-link-generator-for-dropboxgoogle-driveone-drive-copy-com/">
-This on-line tool</a> generates a direct link from a share link into
-Dropbox, Google Drive, and Microsoft OneDrive.
+This on-line tool</a> generates a direct link from a share link into Dropbox, Google Drive, and Microsoft OneDrive.
 
 
 
@@ -724,25 +721,411 @@ References:
 
 ## PROBLEM 7. SSH keys to access GitHub remain on disk, subject to theft
 
-In our individual machines, 
-we use the `ssh-keygen` utility to generate key pairs.
-The public key we copy into each <strong>server</strong> 
-so we can <strong>`SSH`</strong>
-with the private side of the pair (instead of a password).
+1. When you want to clone a repository to your laptop, in the Code section, click the green "Code" button.
 
-Some use an encrypted USB Solid State Drive for sole physical posession. 
-But if that's lost or stolen, security can be compromised.
+   <img width="126" alt="github-code-button-252x94" src="https://user-images.githubusercontent.com/300046/103463075-fc0f9200-4ce6-11eb-80ba-4169807a6e52.png">
+
+1. You are presented with a choice of "HTTP", "SSH", and (new) "GitHub CLI":
+
+   <img width="382" alt="github-ssh-menu-764x554" src="https://user-images.githubusercontent.com/300046/103463147-76d8ad00-4ce7-11eb-9f41-db883cd1ce39.png">
+
+   SSH (Secure Shell) is also used by Linux to secure transmission between servera and laptop clients.
+
+   PROTIP: Being able to use SSH means that we don't have to input our password each time a Git command is issued.
+
+   Instead of passwords, SSH uses certificate files generated together. 
+
+   Instead of exchanging a single mutually known password, smart mathematics is used such that the public key is manually pasted in GitHub GUI to be used to decrypt data which was encrypted using the other part of the key pair.
+
+
+   ### Run shell script to install software and run
+
+   TODO: How to load and run shell script.
+   
+   The script does for you all the manual steps described in this section below:
+
+   <a href="#LoadSampleFiles">     A. Download sample repository containing setup files</a>
+   <a href="#InstallEditor">       B. Install Editor app</a>
+   <a href="#DefineAccounts">      C. Define a file listing each GitHub organization/account</a>
+   <a href="#BeginWork">           D. Begin work on each GitHub organization/account</a>
+   <a href="#InstallGitUtilities"> E. Install Git and related utilities, if needed</a>
+   <a href="#GlobalEditConfig">    F. Create global .gitconfig file with editor setting</a>
+   <a href="#FolderEachAccount">   G. Make a folder for each GitHub account's repositories</a>
+
+   <a href="#GlobalGitConfig">     F. Remove global .gitconfig user settings</a>
+   <a href="#CreateGitConfig">     H. Populate a Git configuration file in each account folder</a>
+   <a href="#IncludeIf">           H. Specify IncludeIf for account in Git config</a>
+   <a href="#BeAtSSH">             I. Be in SSH folder</a>
+   <a href="#GenSSH">              J. Generate SSH keys for each GitHub account</a>
+
+   <a href="#GenSSH">              K. Test interaction with each GitHub repository</a>
+   <a href="#GenSSH">              L. Repeat above steps for each additional account</a>
+   <a href="#ConfigGit">           M. Configure other Git features</a>
+   
+<hr />
+
+1. Switch to your local IDE or Terminal (on Mac, press command+spacebar for the Spotlight Search, then type "Term" and press Enter to select "Terminal.app"). Enter your password if prompted.
+
+   <a name="LoadSampleFiles"></a>
+
+   ### A. Download sample setup files
+
+   Since Git utilities may not be available on your laptop, download sample files using a command.
+
+1. Defines a variable to specify the path, then use the variable to create a folder, and cd into it.
+
+   <pre><strong>GIT_FOLDER="$HOME/git-utilities"
+mkdir -p "$HOME/${GIT_FOLDER}"
+cd "$HOME/${GIT_FOLDER}"
+   </strong></pre>
+
+   The Terminal prompt should now be at <tt>~/git-utilities</tt> or whatever you changed the path to.
+
+   Files in the folder relevant to this:
+
+   <pre>curl -O https://raw.githubusercontent.com/wilsonmar/git-utilities/master/my_github_accts.csv
+   </pre>
+   
+   <pre>curl -O https://raw.githubusercontent.com/wilsonmar/git-utilities/master/git-certs-setup.sh
+   </pre>
+
+   * <tt>my_github_accts_vars.sh</tt>
+
+
+
+   <a name="InstallEditor"></a>
+
+   ### B. Install Editor app
+
+1. Determine what text editor you want to load when Git needs one.
+
+   PROTIP: I personally like the Sublime Text editor because it loads up the fastest.
+
+   But subl needs to be installed and licensed (for $85 one time).
+
+   The nano editor comes with MacBbook macOS operating system.
+
+1. Install the selected editor app (such as Sublime Text).
+
+
+   <a name="DefineAccounts"></a>
+
+   ### C. Define a file listing each GitHub organization/account
+
+   PROTIP: Many developers switch among multiple GitHub organizations/accounts during a working day.
+
+1. Download a sample file:
+
+   <pre>curl -O https://raw.githubusercontent.com/wilsonmar/git-utilities/master/my_github_accts.csv
+   </pre>
+
+1. Open a text editor to manually edit sample file named <tt>my_github_accts.csv</tt>.
+
+   It contains a line for each github organization/account, with associated fields:
+
+   <pre>
+_folder,      _Name,    _acct,    _email,            _note
+gmail_acct,   John Doe, johndoe,  johndoe@gmail.com, Personal GitHub account created using personal Gmail or other email
+client1_acct, John Doe, john-doe, john_doe@mck.com,  Customer/client organization account
+job1_acct,    John Doe, john-doe, john_doe@mck.com,  Employer organization account
+vendor1_acct, John Doe, johndoe1, john-doe@soft.ai,  vendor organization account
+   </pre>
+
+   PROTIP: We recommend that, even if you only have your own personal account now, <strong>be prepared</strong> to use multiple GitHub accounts by doing the work of just the first account.
+
+   If you're <strong>manually performing</strong> the steps below, create the file above as a <strong>checklist</strong> as you repeat commands for each organization/account folder and files.
+
+
+   <a name="BeginWork"></a>
+
+   ### D. Begin work on each GitHub organization/account
+
+1. Switch back to the Terminal.
+
+1. Download a sample script file:
+
+   <pre><strong>curl -O https://raw.githubusercontent.com/wilsonmar/git-utilities/master/???script.sh
+   chmod +x ???script.sh
+   </strong></pre>
+   
+   That script automatically performs all the steps described in the remainder of the steps below, for each GitHub organization/account <a href="#DefineAccounts">listed in the file above</a>.
+
+1. If want to run the automated script, first run without any paramters to get a list of possible parameters to customize each run:
+
+   <pre><strong>./???script.sh
+   </strong></pre>
+
+   <tt>-v</tt> specifies verbose output.
+
+
+   <a name="InstallGitUtilities"></a>
+
+   ### E. Install Git and related utilities, if needed
+
+   If requested by a parameter, the automated script installs these:
+
+   1. XCode
+   1. Homebrew
+   1. Git program
+   1. GitHub CLI
+   <br /><br />
+
+   Alternately, if you don't run the script, you'll need to manually install each one.
+
+
+   <a name="GlobalEditConfig"></a>
+
+   ### F. Create global .gitconfig file with editor setting
+
+   Since we are creating a git configuration file for each organization/account folder, we <strong>don't need global user</strong> configurations.
+
+1. In a Terminal, set the text editor command to be used by Git:
+
+   <pre><strong>git config --global core.editor "subl"
+   </strong></pre>
+
+   Instead of <tt>subl</tt> for Sublime, use <tt>code</tt> for Visual Studio Code, <tt>nano</tt> for Nano, etc.
+
+   <tt>git config --global</tt> commands update the contents of the <tt>~/.gitconfig</tt> file.
+
+   <tt>~</tt> specifies the user's home folder.
+
+1. Open the editor using a git command:
+
+    <pre><strong>git config --global --editor subl
+   </strong></pre>
+
+   That command is equivalent to, alternately :
+
+   <pre><strong>subl ~/.gitconfig
+   </strong></pre>
+
+   Due to the previous command, you should see in your editor:
+
+   <pre>[core]
+   editor = 'subl'
+   </pre>
+
+   There are possibly other git global configuration settings if your Git configuration is not new, such as:
+
+   <pre>[core]
+repositoryformatversion = 0
+filemode = true
+bare = false
+logallrefupdates = true
+ignorecase = true
+precomposeunicode = true
+   </pre>
+
+   Configuring these is not within the scope of this document.
+
+   Later, from this file we will replace global configuration settings values for a single user such as:
+
+   <pre>[user]
+    name = John Doe
+    email = johndoe@gmail.com
+   </pre>
+
+   (with "IncludeIf" and "path" statements) 
+
+   First...
+
+
+   <a name="FolderEachAccount"></a>
+
+   ### G. Make a folder for each GitHub account's repositories
+
+1. Switch back to the Terminal.
+
+1. Download a sample script file:
+
+   <pre><strong>curl -O https://raw.githubusercontent.com/wilsonmar/git-utilities/master/my_github_accts_vars.sh
+   chmod +x my_github_accts_vars.sh
+   </strong></pre>
+   
+   That script automatically performs all the steps described in the remainder of the steps below, for each GitHub organization/account <a href="#DefineAccounts">listed in the file above</a>.
+
+1. To avoid manualtyping, run script:
+
+   <pre><strong>chmod +x my_github_accts_vars.sh
+./my_github_accts_vars.sh      
+   </strong></pre>
+
+   The script creates variables based on values copied from <a href="#DefineAccounts">the Github organizations/accounts defined above in flat file my_github_accts.csv</a>:
+
+   <pre>export LOCAL_SSH_KEYFILE="gmail_acct"
+export MY_EMAIL_ADDRESS="johndoe@gmail.com"
+export MY_GITHUB_ACCTNAME="johndoe"
+export MY_FULL_NAME="John Doe"
+   </pre>
+
+   REMEMBER: In Bash script export commands allow no spaces around the equal (=) sign.
+
+   Use of variables helps ensure that <strong>several commands below</strong> will use values consistently.
+
+1. Make a folder for the current GitHub organization/account based on the variable defined above:
+
+   <pre><strong>mkdir ~/$LOCAL_SSH_KEYFILE
+   </strong></pre>
+
+
+   <a name="GlobalGitConfig"></a>
+
+   ### G. Replace global .gitconfig user settings
+
+1. Use your default editor to <strong>edit</strong> Git's global <tt>.gitconfig</tt> configuration file:
+
+   <pre><strong>git config --global --edit
+   </strong></pre>
+
+   We will replace these values in a config file associated with each GitHub organization/account.
+
+   In 2019, at git version 1.23, "conditional include" ("IncludeIf") was added to Git Core. That enables Git to automatically select the configuration file Git uses to be based on whatever folder is active. 
+   
+   References:
+   * <a target="_blank" href="https://git-scm.com/docs/git-config#_conditional_includes">https://git-scm.com/docs/git-config#_conditional_includes</a> is the official documentation
+   * <a target="_blank" href="https://blog.thomasheartman.com/posts/modularizing-your-git-config-with-conditional-includes">https://blog.thomasheartman.com/posts/modularizing-your-git-config-with-conditional-includes</a>
+   * <a target="_blank" href="https://www.motowilliams.com/conditional-includes-for-git-config">https://www.motowilliams.com/conditional-includes-for-git-config</a>
+   <br /><br />
+
+   <a name="CreateGitConfig"></a>
+
+   ### H. Populate a Git configuration file in each account folder
+
+1. Edit the <tt>~/.gitconfig</tt> text file to confirm that the above commands created a git configuration file, using your favorite text editor:
+
+   Either way, you should see something like this (but with your name and email instead):
+
+   <pre>[user]
+    name = John Doe
+    email = johndoe@gmail.com
+   </pre>
+
+
+
+   <a name="IncludeIf"></a>
+
+   ### I. Specify IncludeIf for each account
+
+1. Construct new lines in the account folder's .gitconfig file based on the $LOCAL_SSH_KEYFIL variable name:
+
+   <pre>[includeIf "gitdir:~/gmail_acct/"]
+ path = ~/gmail_acct/.gitconfig
+   </pre>
+
+   PROTIP: We are using the name of the account folder the same name as the SSH keypair file name.
+
+   PROTIP: In the includeIf line, the trailing slash after the directory path makes it so that all subdirectories of the specified directory is matched.
+
+   Alternately, instead of using a text editor, use these commands to concatenate the lines to the bottom of the file:
+
+   <pre>echo "[includeIf "gitdir:~/$LOCAL_SSH_KEYFILE/"]" >>~/$LOCAL_SSH_KEYFILE/.gitconfig
+ path = ~/$LOCAL_SSH_KEYFILE/.gitconfig  >>~/$LOCAL_SSH_KEYFILE/.gitconfig
+   </pre>
+
+   Either way, put the includes at the bottom of your files to make sure the included config isn't overridden later on in the source file.
+
+
+   ~/.git/config
+
+
+1. Verify:
+
+   <pre><strong>git config list</strong></pre>
+
+   TODO: If you get <tt>error: key does not contain a section: list</tt>
+   ...
+
+   Next, let's create that folder referenced above.
+
+
+   <a name="BeAtSSH"></a>
+
+   ### E. Be in SSH folder
+
+1. Be at the folder where SSH stores its key pairs file:
+
+   <pre><strong>cd $HOME/.ssh</strong></pre>
+
+   If it does not already exist, make the folder yourself.
+
+
+   <a name="GenSSH"></a>
+
+   ### F. Generate SSH keys for each GitHub account
+
+1. Within the ~/.ssh folder, generate a pair using defaults for the GitHub account:
+
+   <pre><strong>ssh-keygen -t rsa -f "${LOCAL_SSH_KEYFILE}" -C "${MY_EMAIL_ADDRESS}" -N ""</strong></pre>
+
+   <tt>-N</tt> specifies that no Passphrase will be requested when the key is used. Specifying one would require it to be manually entered with every command -- not something most would want to do.
+
+   <tt>-C</tt> provides an optional unique name within the Public key.
+
+
+
+
+   TODO: A "fingerprint" of the key is generated to uniquely identify each one.
+
+   
+1. The public key we copy into each <strong>server</strong> so we can <strong>`SSH`</strong> 
+
+1. with the private side of the pair (instead of a password).
+
+   Some use an encrypted USB Solid State Drive for sole physical posession. 
+   But if that's lost or stolen, security can be compromised.
 
 
 <a href="#SSH_certs"></a>
 
 ## SOLUTION 7. Access GitHub with rotated SSH certificates generated (automatically every day)
 
+
+
+then "Clone with SSH protocol" (don't use HTTPS). 
+
+
+
+But one concern about this now traditional approach is that the keypair sits on the computer for months and years, allowing it to possibly be stolen and used on another, rogue, computer.
+
+So the solution we're using is to make use of a recent extension to the SSH protocol. The extension receives an additional certificate file added to Git requests.
+
+The certificate file is created by what is called a policy "wrapper” because it wraps policies around the public key, such as limiting the life span of the key wrapped to 24 hours.
+
+When GitHub receives and unwraps the request, it enforces the policy.
+
+Having the 24 hour policy in place means a new certificate must be created every day, by what we call a “key rotation” script. It makes an API call and receives the certificate file.
+
+To ensure the authenticity of certificates, GitHub references another public key -- the Certificate Authority public key generated on the Vault server and pasted into GitHub by the administrator.
+
+The Policy Wrapper is a Vault server.
+
+
 PROTIP: For those who only want to create credential once,
 one approach is to store credentials in a <strong>cloud drive</strong>
 (such as Dropbox, Box, Google Drive, or Microsoft OneDrive).
 Credentials there can be downloaded along with
 <strong>SSH scripts</strong> to simplify execution.
+
+
+
+   <a name="ConfigGit"></a>
+
+   ### I. Configure other Git features
+
+   TODO: NOTE: There are other lines in the .gitconfig file. Not within the scope of this introductory tutorial is enabling the gpg program to establish GPG keys used to sign git commits, which would add lines such as these:
+
+   <pre>[core]
+ editor = subl
+signingkey = 62C414BA89BFBE52
+&nbsp;
+[gpg]
+ program = gpg
+&nbsp;
+[tag]
+ forceSignAnnotated = true
+   </pre>
+
 
 ### Vault Dynamic Key Generation
 
@@ -791,7 +1174,7 @@ References on this topic:
 * <a target="_blank" href="http://stackoverflow.com/questions/6009/how-do-you-deal-with-configuration-files-in-source-control">
    How do you deal with configuration files in source control</a>
 
-
+https://dev.to/himadriganguly/configure-ssh-server-with-key-based-and-two-factor-authentication-3oc2
 
 
 ## More #
