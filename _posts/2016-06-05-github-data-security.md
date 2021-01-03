@@ -677,7 +677,7 @@ cat "${CLEAR_TEXT_FILE_PATH}".encrypted
 gcloud kms decrypt --location global --keyring "${KEYRING_FILE}" --key "${KEY_NAME}" \
    --ciphertext-file \
    --plaintext-file=-
-   </secret></pre>
+   </strong></pre>
 
 
 
@@ -1131,7 +1131,8 @@ Having the 24 hour key rotation policy in place means new certificate are create
 
 Here is a static flowchart of the process described above:
 
-![github-data-ssh-keyrotation-2806x1656](https://user-images.githubusercontent.com/300046/103477675-5576d000-4d7e-11eb-836d-c109e52f2b32.png)
+<a target="_blank" hrf="https://user-images.githubusercontent.com/300046/103477675-5576d000-4d7e-11eb-836d-c109e52f2b32.png">
+<img alt="github-data-ssh-keyrotation-2806x1656" width="2806" height="1656" src="https://user-images.githubusercontent.com/300046/103477675-5576d000-4d7e-11eb-836d-c109e52f2b32.png"></a>
 
 Steps to make this happen include:
 
@@ -1149,20 +1150,6 @@ Steps to make this happen include:
 
 
 <hr />
-
-## Keybase
-
-* github.com/keybase
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=S4HP1pRTE3A">
-   Easy File Encryption with Keybase - Hak5</a>
-
-* http://g14n.info/2014/07/my-keybase-experience/
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=RRZiERo172k">
-   Introduction to Keybase</a> 2014-11-26 
-   social network and a crypto keyserver. 
-
 
 ## Resources #
 
