@@ -24,7 +24,7 @@ There are 7 conditions enabling public leak of secret data from GitHub repositor
 4. <a href="#Forgot">You may forget to add .gitignore or remove local secrets</a>
 5. <a href="#Crackers">Static passwords can be cracked eventually</a>
 6. <a href="#Crash">You can lose secrets when your laptop crashes or is lost</a>
-7. <a href="#SSH_remains">SSH keys to access GitHub remain on disk, subject to theft</a>
+7. <a href="#SSH_remains">SSH keys to access GitHub are static, subject to theft</a>
 <br /><br />
 
 "How to" recommendations offered in this article are:
@@ -645,25 +645,23 @@ TODO: Below are steps to setup use of:
    </pre>
 
    
-   ### Zamata
+   ### KMS utilities on AWS
 
-   Zemanta's https://github.com/Zemanta/py-secretcrypt
-   and
-   https://github.com/Zemanta/go-secretcrypt
+   Zemanta's <a target="_blank" href="https://github.com/Zemanta/py-secretcrypt">https://github.com/Zemanta/py-secretcrypt</a>
+   and <a target="_blank" href="https://github.com/Zemanta/go-secretcrypt">https://github.com/Zemanta/go-secretcrypt</a>
    keeps secrets encrypted with Amazon KMS (Key Management Service) in repos, which are decrypted on the fly by the application.
    Access control is managed through AWS KMS key policies, with EC2 instances running the applications having permissions to decrypt the secrets.
 
-   https://github.com/fugue/credstash
+   <a target="_blank" href="https://github.com/fugue/credstash">https://github.com/fugue/credstash</a>
    uses AWS KMS for key wrapping and master-key storage, and DynamoDB for credential storage and sharing.
    Works in several flavors of Linux, in a variety of programming languages.
 
 
 <a name="Google_Config"></a>
 
-### Google secret keeping
+### Google Cloud secret keeping
 
-After setting up Google Cloud CLI,
-adapt this shell script to establish a key, encrypt, and decrpt:
+After setting up Google Cloud CLI, adapt this shell script to establish a key, encrypt, and decrpt:
 
    <pre><strong>KEY_NAME="talk-key"
 KEYRING_FILE="my-sample-keyring"
@@ -683,7 +681,7 @@ gcloud kms decrypt --location global --keyring "${KEYRING_FILE}" --key "${KEY_NA
 
 
 
-### SOPS decrypt to RAM for editing
+#### SOPS decrypt to RAM for editing
 
 To avoid forgetting to re-encrypt files decrypted on your laptop, <a target="_blank" href="https://github.com/mozilla/sops">https://github.com/mozilla/sops</a> (SOP = Secrets OPerationS), written by Mozilla (the alternative browser) to <strong>decrypt files in RAM</strong> where you can edit and the utility re-encrypts files automatically before saving them to disk.
 
@@ -1064,7 +1062,6 @@ export MY_FULL_NAME="John Doe"
 
 
 
-
    TODO: A "fingerprint" of the key is generated to uniquely identify each one.
 
    
@@ -1074,38 +1071,6 @@ export MY_FULL_NAME="John Doe"
 
    Some use an encrypted USB Solid State Drive for sole physical posession. 
    But if that's lost or stolen, security can be compromised.
-
-
-<a href="#SSH_certs"></a>
-
-## SOLUTION 7. Access GitHub with rotated SSH certificates generated (automatically every day)
-
-
-
-then "Clone with SSH protocol" (don't use HTTPS). 
-
-
-
-But one concern about this now traditional approach is that the keypair sits on the computer for months and years, allowing it to possibly be stolen and used on another, rogue, computer.
-
-So the solution we're using is to make use of a recent extension to the SSH protocol. The extension receives an additional certificate file added to Git requests.
-
-The certificate file is created by what is called a policy "wrapper” because it wraps policies around the public key, such as limiting the life span of the key wrapped to 24 hours.
-
-When GitHub receives and unwraps the request, it enforces the policy.
-
-Having the 24 hour policy in place means a new certificate must be created every day, by what we call a “key rotation” script. It makes an API call and receives the certificate file.
-
-To ensure the authenticity of certificates, GitHub references another public key -- the Certificate Authority public key generated on the Vault server and pasted into GitHub by the administrator.
-
-The Policy Wrapper is a Vault server.
-
-
-PROTIP: For those who only want to create credential once,
-one approach is to store credentials in a <strong>cloud drive</strong>
-(such as Dropbox, Box, Google Drive, or Microsoft OneDrive).
-Credentials there can be downloaded along with
-<strong>SSH scripts</strong> to simplify execution.
 
 
 
@@ -1127,18 +1092,60 @@ signingkey = 62C414BA89BFBE52
    </pre>
 
 
-### Vault Dynamic Key Generation
 
-HashiCorp Vault provides Dynamic Credentials and Encryption as a data service to shift from keeping "Secrets as Code" to "Policy as Code," where credentials are dynamically generated on the fly in response to application needs, rather than versioned alongside code.
+<hr />
 
-Hashicorp Vault's "dynamic secrets" feature is ideal for scripts: an AWS access key can be generated for the duration of a script, then revoked. The keypair will not exist before or after the script runs, and the creation of the keys are completely logged.
-This is an improvement over using something like Amazon IAM but still effectively hardcoding limited-access access tokens in various places.
+<a name="SSH_remains"></a>
 
-<a target="_blank" href="https://gist.github.com/shadowhand/873637">
-This blog</a> provides an alternative using the openssl utility.
+### PROBLEM 7. SSH keys to access GitHub are static, subject to theft
 
-References on this topic:
-   * <a target="_blank" href="https://github.com/gites/awesome-vault-tools">https://github.com/gites/awesome-vault-tools</a>
+The traditional approach of <strong>users</strong> (developers) generating SSH key <strong>themselves</strong>, locally on a laptop
+is cumbersome for the user and dangerous for security because the SSH keys generated remain stored locally and possibly over a long period of time.
+
+Someone else can copy an SSH key and access your account on a rogue computer.
+
+
+
+<a name="SSH_certs"></a>
+
+## SOLUTION 7. Access GitHub with rotated SSH certificates generated (automatically every day)
+
+We need a modern way that <strong>automatically generates SSH keys every day</strong>, so you don't have ssh-keygen to run and  copying and pasting to a GitHub form.
+
+The solution makes use of an new extension to the SSH protocol implemented by GitHub. References:
+   * <a target="_blank" href="https://github.blog/2019-08-14-ssh-certificate-authentication-for-github-enterprise-cloud/">https://github.blog/2019-08-14-ssh-certificate-authentication-for-github-enterprise-cloud</a> announces "SSH certificate authentication for GitHub Enterprise Cloud" by Ben Toews
+   <br /><br />
+
+The SSH protocol extension involves an additional <strong>SSH certificate file</strong> added to Git requests. 
+
+The SSH certificate file is created by what is called a policy "wrapper" program because it wraps policies around the public key, such as limiting the life span of the key wrapped to 24 hours. 
+
+The Policy Wrapper program is a <strong>Hashicorp Vault</strong> server maintained by an enterprise.
+
+To ensure the authenticity of certificates, GitHub references another public key -- the <strong>Certificate Authority</strong> public key generated on the Vault server and pasted into GitHub by the administrator.
+
+When GitHub receives and unwraps the request, it enforces the policy.
+
+Having the 24 hour key rotation policy in place means new certificate are created every day, by what we call a <strong>"key rotation" program/script</strong> running on laptops. It makes an API call to the Vault server and receives the SSH certificate file.
+
+
+Here is a static flowchart of the process described above:
+
+![github-data-ssh-keyrotation-2806x1656](https://user-images.githubusercontent.com/300046/103477675-5576d000-4d7e-11eb-836d-c109e52f2b32.png)
+
+Steps to make this happen include:
+
+1. Enable SSH Certificate processing for GitHub organization.
+
+1. Create a Vault API service (Certificate Authority).
+1. Enroll users to the Vault API service.
+1. Perform penetration tests of the Vault API server.
+1. Ensure the Vault API service has the capacity needed.
+
+1. Create/Test a "key rotation" program which accesses the Vault API.
+1. Install "key rotation" program (with associated dependencies) on all laptops.
+
+1. Require SSH Certificate processing for all access to GitHub organization.
 
 
 <hr />
