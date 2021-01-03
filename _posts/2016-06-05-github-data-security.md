@@ -50,16 +50,23 @@ Someone watching over your shoulder can see your password being typed in.
 
 A <strong>key-logger</strong> program ("spyware") installed on your laptop can capture what you type on your keyboard.
 
-This is why most enterprise GitHub instances route login to their GitHub organization automatically through their Duo or other multi-factor authentication process on each user's own smart mobile phone.
-
 
 <a name="2FA"></a>
 
 ## SOLUTION 1. Enable 2FA with an Authenticator app
 
+Most enterprise GitHub instances route login to their GitHub organization automatically through their Duo or other multi-factor authentication process on each user's own smart mobile phone.
+
+If you use an employer-provided smartphone, your employer GitHub account would be protected.
+
+But your personal GitHub account is still exposed.
+
+<a name="GitHub2FA"></a>
+
 ### One-time 2FA setup
 
-This is recommended to protect GitHub accounts opened using a Gmail or other private email address (not a corporate email).
+PROTIP: To protect GitHub accounts opened using a Gmail or other private email address (not a corporate email),
+we recommended that you enable GitHub's 2FA (Two-factor Authentication).
 
 There are many tutorials on how to do this on YouTube.
 
@@ -91,9 +98,14 @@ There are many tutorials on how to do this on YouTube.
 
 1. Click "Next" for a QR code for your Authenticator app to read.
 
-1. If you already have Duo, open that app. You can also install from the iPhone store:
+1. If you already have Duo, open that app. Alternately, go to the Store app on your smartphone and install one:
+
+   <a name="AuthApps"></a>
+
+   * <a target="_blank" href="https://guide.duo.com/iphone">Duo</a> on <a target="_blank" href="https://apps.apple.com/us/app/duo-mobile/id422663827">iPhone</a> or <a target="_blank" href="https://support.google.com/duo/answer/6386089?co=GENIE.Platform%3DiOS&hl=en">Google Play on Android</a>
 
    * Google Authenticator on <a target="_blank" href="https://apps.apple.com/us/app/google-authenticator/id388497605">iPhones</a> or <a target="_blank" href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en_US&gl=US">Google Play on Android</a>
+
    * <a target="_blank" href="https://www.microsoft.com/en-us/account/authenticator">Microsoft Authenticator</a> <a target="_blank" href="https://apps.apple.com/us/app/microsoft-authenticator/id983156458">on iPhones</a> or <a target="_blank" href="https://play.google.com/store/apps/details?id=com.azure.authenticator&hl=en_US&gl=US">Google Play for Android</a>.
    <br /><br />
 
@@ -114,7 +126,7 @@ There are many tutorials on how to do this on YouTube.
 
    ![2fa-code-entry-238x300](https://user-images.githubusercontent.com/300046/103462405-30cd1a80-4ce2-11eb-9dc4-cd9b13f2e906.jpg)
 
-1. On your smart phone, open your authentication app (Duo).
+1. On your smart phone, open your <a href="#AuthApps">authentication app (Duo, etc.)</a>.
 1. Click the arrow on the right edge of the "GITHUB" entry listing your account name, so that you see six numbers.
 
 1. On your laptop's browser, type those numbers in the Authentication Code field entry.
@@ -777,7 +789,7 @@ Steps to make this happen include:
 1. Create a Vault API service (Certificate Authority).
 1. Enroll users to the Vault API service.
 1. Perform penetration tests of the Vault API server.
-1. Ensure the Vault API service has the capacity needed.
+1. Ensure the Vault API service has the capacity needed (SSH load testing using <a target="_blank" href="https://www.pureload.com/support/protocol-support/ssh-ftp-telnet/">PureLoad</a> or <a target="_blank" href="https://github.com/shazow/ssh-hammer">https://github.com/shazow/ssh-hammer</a>).
 
 1. Create/Test a "key rotation" program which accesses the Vault API.
 1. Install "key rotation" program (with associated dependencies) on all laptops.
