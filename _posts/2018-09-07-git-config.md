@@ -25,28 +25,28 @@ This is designed to offer maximum depth at minimum time because I've spent a lot
 
 This explains both the shell script and manual steps in the stages outlined below:
 
-   <a href="#TerminalvsGUI">        A. Establish a Terminal CLI environment</a>
+   <a href="#TerminalvsGUI">        A. Establish a Terminal CLI environment</a><br />
    <a href="#LoadSampleFiles">      B. Download sample repository containing setup files</a>
 
-   <a href="#InstallBaseUtilities"> C. Install base utilities, if needed</a>
-   <a href="#InstallEditor">        D. Install Editor app</a>
+   <a href="#InstallBaseUtilities"> C. Install base utilities, if needed</a><br />
+   <a href="#InstallEditor">        D. Install Editor app</a><br />
    <a href="#InstallGitClients">    E. Install Git client apps</a>
 
-   <a href="#DefineAccounts">       F. Define a file listing each GitHub organization/account</a>
+   <a href="#DefineAccounts">       F. Define a file listing each GitHub organization/account</a><br />
    <a href="#BeginWork">            G. Begin work on each GitHub organization/account</a>
 
-   <a href="#GlobalEditConfig">     H. Create global .gitconfig file with editor setting</a>
+   <a href="#GlobalEditConfig">     H. Create global .gitconfig file with editor setting</a><br />
    <a href="#FolderEachAccount">    I. Make a folder for each GitHub account's repositories</a>
 
-   <a href="#GlobalGitConfig">      J. Replace global .gitconfig user settings</a>
-   <a href="#CreateGitConfig">      K. Populate a Git configuration file in each account folder</a>
+   <a href="#GlobalGitConfig">      J. Replace global .gitconfig user settings</a><br />
+   <a href="#CreateGitConfig">      K. Populate a Git configuration file in each account folder</a><br />
    <a href="#IncludeIf">            L. Specify IncludeIf for account in Git config</a>
 
-   <a href="#BeAtSSH">              M. Be in SSH folder</a>
+   <a href="#BeAtSSH">              M. Be in SSH folder</a><br />
    <a href="#GenSSH">               N. Generate SSH keys for each GitHub account</a>
 
-   <a href="#GenSSH">               O. Test interaction with each GitHub repository</a>
-   <a href="#MoConfigs">            P. Configure other Git features</a>
+   <a href="#GenSSH">               O. Test interaction with each GitHub repository</a><br />
+   <a href="#MoConfigs">            P. Configure other Git features</a><br />
    <a href="#RepateOrg">            Q. Repeat above steps for each additional account</a>
    
 <hr />
