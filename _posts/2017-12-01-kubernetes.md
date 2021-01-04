@@ -28,25 +28,6 @@ WARNING: I'm restructuring this so that revelations about architecture component
 
 NOTE: This article is now a "starter set" actively undergoing additions.
 
-<a name="Topics"></a>
-
-## What Kubernetes contributes
-
-* <a href="#IAC">Infrastructure as code</a> (IAC)
-* Manage containers
-* Naming and discovery
-* Mounting storage systems
-* Balancing loads
-* Rolling updates
-* Distributing secrets/config
-* Checking application health
-* Monitoring resources
-* Accessing and ingesting logs
-* Replicating application instances
-* Horizontal autoscaling
-* Debugging applications
-
-
 ## Keyword Index Alphabetically
 
 So you can go quickly/directly to terms:
@@ -121,6 +102,9 @@ Discovery,
 With Kubernetes, <strong>dev teams</strong> can take complete control of production operations in cloud environments 
 -- deploy both application code and all the environment settings, at their own cadence, without ceremonies and wait time to coordinate releases.
 
+Kubernetes applies principles of the <a target="_blank" href="https://www.reactivemanifesto.org/">Reactive Manifesto</a> of 2014:
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"><img width="546" alt="reactive-manifesto" src="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"></a>
+
 Kubernetes is called "container orchestration" software because it automates the deployment, scaling and management of containerized applications<a target="_blank" href="https://en.wikipedia.org/wiki/Kubernetes">[Wikipedia]</a>. 
 
 * Authentication -> Authorization -> <a href="#Admission">Admission Control</a>
@@ -130,8 +114,24 @@ Kubernetes is called "container orchestration" software because it automates the
 * Unlike Elastic Beanstalk, the k8s master controls what each of its nodes do
 <br /><br />
 
-Kubernetes applies principles of the <a target="_blank" href="https://www.reactivemanifesto.org/">Reactive Manifesto</a> of 2014:
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"><img width="546" alt="reactive-manifesto" src="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"></a>
+<a name="Topics"></a>
+
+## What Kubernetes contributes
+
+* <a href="#IAC">Infrastructure as code</a> (IAC)
+* Manage containers
+* Naming and discovery
+* Mounting storage systems
+* Balancing loads
+* Rolling updates
+* Distributing secrets/config
+* Checking application health
+* Monitoring resources
+* Accessing and ingesting logs
+* Replicating application instances
+* Horizontal autoscaling
+* Debugging applications
+
 
 
 ## Open-Source History
@@ -574,6 +574,7 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
    * <a target="_blank" href="https://www.kubernetespodcast.com/">https://kubernetespodcast.com</a> podcast is hosted by the Clound Native advocacy team at Google Cloud: Craig Box and Adam Glick. On <a target="_blank" href="https://podcasts.apple.com/us/podcast/kubernetes-podcast-from-google/id1370049232?mt=2">Apple Podcasts</a>, etc.
 
    * <a target="_blank" href="https://kubernetes.io/community/">https://kubernetes.io/community</a>
+   * <a target="_blank" href="https://www.reddit.com/r/kubernetes">https://www.reddit.com/r/kubernetes</a> "subreddit"
 
    * <a target="_blank" href="https://community.kodekloud.com/">https://community.kodekloud.com</a>
    * <a target="_blank" href="https://community.kodekloud.com/">https://kodekloud.com community Slack sign-up</a>
@@ -623,7 +624,7 @@ O'Reilly's <a target="_blank" href="https://learning.oreilly.com/live-training/c
 Interactive KataKoda lab on OReilly.com: <a target="_blank" href="https://learning.oreilly.com/scenarios/deploying-python-apis/9781492090465/">Deploying Python APIs on Kubernetes: Deploying a Development Kubernetes Cluster</a> 
    using the slim K3s Kubernetes distribution from Rancher, a Certified Lightweight Kubernetes Distribution built for IoT and Edge remote ecomputing. It stores data using sqlite3 instead of etcd. It bootstrap script K3sup installer at <a target="_blank" href="https://github.com/alexellis/k3sup">https://github.com/alexellis/k3sup</a>.
 
-arkade
+arkade - portable Kubernetes marketplace
 
 <a target="_blank" href="https://learning.oreilly.com/library/view/kubernetes-patterns/9781492050278/">
 BOOK: Kubernetes Patterns</a>
@@ -657,7 +658,9 @@ Jonathan Johnson
    * Part III - CI/CD Pipelines on Kubernetes
 
 Programming Kubernetes (book)
+
 Kubernetes Best Practices (book)
+
 Kubernetes Up and Running, second edition (book)
 
 
@@ -749,24 +752,22 @@ Ready-for.sh establishes the environment:
    # Not for macOS
    </pre>
 
-https://github.com/cncf/curriculum - v1.19
+<a target="_blank" href="https://github.com/cncf/curriculum">https://github.com/cncf/curriculum</a> - v1.19
+contains one-page curriculum pdf's.
 
 
-<a name="Logging"></a>
-
-### Logging
-
-   * <a target="_blank" href="https://kubernetesbyexample.com//logging/">kubernetesbyexample.com: Logging</a>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=3c-iBn73dDE&list=RDCMUCdngmbVKX1Tgre699-XLlUA&start_radio=1">Docker Tutorial for Beginners [Full Course in 3 Hours]</a>.
+### Nana's TechWorld on YouTube
 
 <a target="_blank" href="https://www.youtube.com/channel/UCdngmbVKX1Tgre699-XLlUA">
 YouTube channel "Nana's TechWorld"</a> by <a target="_blank" href="https://www.linkedin.com/in/nana-janashia/">entrepreneur Nana Janashia</a> (from Austria) features animated illustrations.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=3c-iBn73dDE&list=RDCMUCdngmbVKX1Tgre699-XLlUA&start_radio=1">Docker Tutorial for Beginners [Full Course in 3 Hours]</a>.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=I5c8Pfg2tys">VIDEO intro of</a>
 Unique Udemy course <a target="_blank" href="https://www.udemy.com/course/logging-in-kubernetes-with-efk-stack/?couponCode=UDEMY_NANA_NOV2020">
 Logging in Kubernetes with EFK Stack | The Complete Guide</a>
 covers how to set up K8s clusters from scratch and configure logging with ElasticSearch, Fluentd and Kibana 
+
 
 
 ### EdX
@@ -1830,6 +1831,10 @@ Kubernetes can manage several namespaces running in each <strong>cluster</strong
 
    "The primary grouping concept in Kubernetes is the namespace. Namespaces are also a way to divide cluster resources between multiple uses. That being said, there is no security between namespaces in Kubernetes; if you are a "user" in a Kubernetes cluster, you can see _all_ the different namespaces and the resources defined in them." -- from the book: OpenShift for Developers, A Guide for Impatient Beginners by Grant Shipley and Graham Dumpleton.
 
+PROTIP: Install <a target="_blank" href="https://github.com/ahmetb/kubectx">https://github.com/ahmetb/kubectx</a> command to switch among clusters. kubens to switch among namespaces. Written in Bash and Go. References:
+   * https://computingforgeeks.com/manage-multiple-kubernetes-clusters-with-kubectl-kubectx/
+
+
 <a name="OpenShift"></a>
 
 ### OpenShift project wall namespaces
@@ -2108,6 +2113,51 @@ Events:
   Normal  Created    4m7s   kubelet, minikube  Created container web
   Normal  Started    4m7s   kubelet, minikube  Started container web
    </pre>
+
+
+<hr />
+
+
+<a name="Multi-Container"></a>
+
+## Multi-Container Pods
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-integrating-volumes-using-multi-container-pods">2h 26m VIDEO course: "Kubernetes for Developers: Integrating Volumes and Using Multi-container Pods"</a> by Nigel Poulton Apr 23, 2020
+   * <a target="_blank" href="https://www.youtube.com/watch?v=3RTvoI-A7UQ">VIDEO: Kubernetes and Container Orchestration 101 - Computer Stuff They Didn't Teach You #11</a> by Microsoft legend Scott Hanselman.
+   <br /><br />
+
+The <strong>kube-scheduler</strong> assigns pods to nodes at runtime. 
+Before scheduling, it checks resources, QoS, policies, user specs.
+
+This needs application executables to be designed and built as microservices (independent, small, reuseable code) instead of a monalith.
+
+Containers within each pod share the same lifecycle.
+
+Several containers: the webapp, log-agent, Istio, etc.
+
+Patterns:
+
+<a name="Ambassador"></a> 
+
+The <strong>ambassador</strong> pattern is to <strong>proxy</strong> in front of accessing a database (perhaps charded)<a target="_blank" href="https://medium.com/@bjammal/hands-on-ambassador-pattern-625a13ceb8b7?">*</a>
+
+One use case is to make consistent the format of dates sent to the database.
+
+Another use case is to route requests to one of several databases (dev/test/prod).
+
+<a name="Adapter"></a>
+
+The <strong>Adapter pattern</strong> presents a standardized interface across multiple pods, to normalize output logs and monitoring data. Adapts third-party software.
+
+<a name="Sidecar"></a>
+
+The <strong>Sidecar</strong> pattern
+<table border="1" cellpadding="4" cellspacing="0">
+<tr valign="center"><th> Pod ...</th><th> Affinity </th><th> Anti-Affinity</th></tr>
+<tr valign="center"><th> To Pods </th><td> podAffinity </td><td> topologySpreadContraints</td></tr>
+<tr valign="center"><th> To Nodes </th><td> <a href="#nodeAffinity">nodeAffinity</a> </td><td> Taints and Tolerations</td></tr>
+</table>
+
 
 
 <hr />
@@ -2861,7 +2911,7 @@ A Deployment is an API object that manages a replicated application, typically b
 ## Health Checks
 
    * <a target="_blank" href="https://kubernetesbyexample.com//healthz/">kubernetesbyexample.com: Health Checks</a>
-   * <a target="_blank" href="https://inlets.dev/blog/2020/12/15/multi-cluster-monitoring.html">How to monitor multi-cloud Kubernetes with Prometheus and Grafana</a> Inlets blog December 15, 2020 by Johan Siebens 
+   * <a target="_blank" href="https://inlets.dev/blog/2020/12/15/multi-cluster-monitoring.html">How to monitor multi-cloud Kubernetes with Prometheus and Grafana</a> (on Equinix Metal) Inlets blog December 15, 2020 by Johan Siebens 
 
 <a name="Probes"></a>
 
@@ -2931,9 +2981,12 @@ Skaffold
 Oketeto
 
 
-<a name="Logs"></a>
+<a name="Logging"></a>
 
-### Logs
+### Logging
+
+   * <a target="_blank" href="https://kubernetesbyexample.com//logging/">kubernetesbyexample.com: Logging</a>
+   <br /><br />
 
 1. Get pod name
 
@@ -2941,7 +2994,11 @@ Oketeto
 
 1. List log entries for pod:
 
-   kubectl logs -f event-simulator-pod event-simulator
+   kubectl logs -f <em>POD NAME HERE</em> event-simulator
+
+
+PROTIP: To display the tail end of logs for containers and multiple pods (rather than scrolling through an entire log), install <a target="_blank" href="https://github.com/wercker/stern/tree/master/stern">stern at https://github.com/wercker/stern/tree/master/stern</a>. It's from Wercker (which was acquired by Oracle in 2017). BTW, on a ship stern is the tail end.
+Install from <a target="_blank" href="https://github.com/wercker/stern/releases">https://github.com/wercker/stern/releases</a>
 
 
 <hr />
@@ -2966,6 +3023,9 @@ Kubernetes in the cloud also enables <strong>multi-region</strong> setups. GCP h
 
 https://www.youtube.com/watch?v=aSrqRSk43lY&list=PLOspHqNVtKABAVX4azqPIu6UfsPzSu2YN&index=2
 
+### Equinix Metal, orion-equinix
+
+https://inlets.dev/blog/2020/12/15/multi-cluster-monitoring.html
 
 ### Google Cloud GKE GCE Qwiklabs
 
@@ -5617,72 +5677,27 @@ K8s does not come with debuggers. Output to logs, then use tracing. Printlines.
 is a Chaos Monkey forcing random failures within Kubernetes -- to test the fault tolerance of our deployments.
 
 
-
-<a name="Multi-Container"></a>
-
-## Multi-Container Pods
-
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-integrating-volumes-using-multi-container-pods">2h 26m VIDEO course: "Kubernetes for Developers: Integrating Volumes and Using Multi-container Pods"</a> by Nigel Poulton Apr 23, 2020
-   * <a target="_blank" href="https://www.youtube.com/watch?v=3RTvoI-A7UQ">VIDEO: Kubernetes and Container Orchestration 101 - Computer Stuff They Didn't Teach You #11</a> by Microsoft legend Scott Hanselman.
-   <br /><br />
-
-The <strong>kube-scheduler</strong> assigns pods to nodes at runtime. 
-Before scheduling, it checks resources, QoS, policies, user specs.
-
-This needs application executables to be designed and built as microservices (independent, small, reuseable code) instead of a monalith.
-
-Containers within each pod share the same lifecycle.
-
-Several containers: the webapp, log-agent, Istio, etc.
-
-Patterns:
-
-<a name="Ambassador"></a> 
-
-The <strong>ambassador</strong> pattern is to <strong>proxy</strong> in front of accessing a database (perhaps charded)<a target="_blank" href="https://medium.com/@bjammal/hands-on-ambassador-pattern-625a13ceb8b7?">*</a>
-
-One use case is to make consistent the format of dates sent to the database.
-
-Another use case is to route requests to one of several databases (dev/test/prod).
-
-<a name="Adapter"></a>
-
-The <strong>Adapter pattern</strong> presents a standardized interface across multiple pods, to normalize output logs and monitoring data. Adapts third-party software.
-
-<a name="Sidecar"></a>
-
-The <strong>Sidecar</strong> pattern
-<table border="1" cellpadding="4" cellspacing="0">
-<tr valign="center"><th> Pod ...</th><th> Affinity </th><th> Anti-Affinity</th></tr>
-<tr valign="center"><th> To Pods </th><td> podAffinity </td><td> topologySpreadContraints</td></tr>
-<tr valign="center"><th> To Nodes </th><td> <a href="#nodeAffinity">nodeAffinity</a> </td><td> Taints and Tolerations</td></tr>
-</table>
-
-
-
 <hr />
 
 <a name="RaspPi"></a>
 
 ## K8s on Raspberry Pi
 
-Read how the legendary Scott Hanselman <a target="_blank" href="https://www.hanselman.com/blog/HowToBuildAKubernetesClusterWithARMRaspberryPiThenRunNETCoreOnOpenFaas.aspx"> 
-built Kubernetes on 6 Raspberry Pi nodes</a>, each with a 32GB SD card to a 1GB RAM ARM chip (like on smartphones).
+Scott Hanselman <a target="_blank" href="https://www.hanselman.com/blog/HowToBuildAKubernetesClusterWithARMRaspberryPiThenRunNETCoreOnOpenFaas.aspx">built Kubernetes on 6 Raspberry Pi nodes</a>, each with a 32GB SD card to a 1GB RAM ARM chip (like on smartphones).
 
 <a target="_blank" href="https://www.hanselminutes.com/612/serverless-and-openfaas-with-alex-ellis">
-Hansel talked with</a>
-<a target="_blank" href="https://www.alexellis.io/">Alex Ellis</a> (<a target="_blank" href="https://twitter.com/alexellisuk/">@alexellisuk</a>)
+Hansel talked with</a> <a target="_blank" href="https://www.alexellis.io/">Alex Ellis</a> (<a target="_blank" href="https://twitter.com/alexellisuk/">@alexellisuk</a>)
 keeps his <a target="_blank" href="https://gist.github.com/alexellis/fdbc90de7691a1b9edb545c17da2d975#file-prep-sh">
 instructions with shell file</a> updated for <a target="_blank" href="https://blog.alexellis.io/serverless-kubernetes-on-raspberry-pi/">running on the Pis</a> to install <a target="_blank" href="https://openfaas.com/">OpenFaaS</a>.
 
 CNCF Ambassador Chris Short developed the
 <a target="_blank" href="https://rak8s.io/"> rak8s (pronounced rackets) library</a> to 
-<a target="_blank" href="https://chrisshort.net/my-raspberry-pi-kubernetes-cluster/">make use of Ansible</a>.
+<a target="_blank" href="https://chrisshort.net/my-raspberry-pi-kubernetes-cluster/">make use of Ansible on Raspberry Pi</a>.
 
 Others:
    * https://blog.hypriot.com/getting-started-with-docker-on-your-arm-device/
    * https://blog.sicara.com/build-own-cloud-kubernetes-raspberry-pi-9e5a98741b49
-
+   <br /><br />
 
 <hr />
 
@@ -5795,12 +5810,6 @@ GKE provides several <strong>Predefined roles</strong> to provide granular acces
 <strong>GKE admin role</strong> gives project owners, system administrators, and on-call engineers full access to clusters and Kubernetes engine resource is inside the clusters (create, delete, update, view clusters), but provides no access to Kubernetes resources.
 
 <strong>GKE custom roles</strong> provides even more granular control to a specific user account managing software running inside a certain GKE cluster, but not have any access to view GCP resources, and nothing else.
-
-
-## Others
-
-
-
 
 
 ## Video Courses
