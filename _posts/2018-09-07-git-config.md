@@ -19,6 +19,8 @@ comments: true
 
 Here is a hands-on instructions and software to get those new to Git productive for professional usage using a local Git client. 
 
+PROTIP: This integrates (implements) <a target="_blank" href="https://wilsonmar.github.io/github-data-security/">actions that block possible leak of data in my "GitHub Data Security" blog article</a>.
+
 This is designed to offer maximum depth at minimum time because I've spent a lot of time on <strong>sequencing</strong> learning and on time-saving <strong>automation</strong>.
 
 ## Stages to install software and run
