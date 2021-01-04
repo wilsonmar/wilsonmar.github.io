@@ -17,63 +17,80 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This is a hands-on deep dive immersive course to get those new to Git productive for professional usage using a local Git client. 
+Here is a hands-on instructions and software to get those new to Git productive for professional usage using a local Git client. 
 
-### Video diagram
+This is designed to offer maximum depth at minimum time because I've spent a lot of time on <strong>sequencing</strong> learning and on time-saving <strong>automation</strong>.
+
+## Stages to install software and run
+
+This explains both the shell script and manual steps in the stages outlined below:
+
+   <a href="#TerminalvsGUI">        A. Establish a Terminal CLI environment</a>
+   <a href="#LoadSampleFiles">      B. Download sample repository containing setup files</a>
+
+   <a href="#InstallBaseUtilities"> C. Install base utilities, if needed</a>
+   <a href="#InstallEditor">        D. Install Editor app</a>
+   <a href="#InstallGitClients">    E. Install Git client apps</a>
+
+   <a href="#DefineAccounts">       F. Define a file listing each GitHub organization/account</a>
+   <a href="#BeginWork">            G. Begin work on each GitHub organization/account</a>
+
+   <a href="#GlobalEditConfig">     H. Create global .gitconfig file with editor setting</a>
+   <a href="#FolderEachAccount">    I. Make a folder for each GitHub account's repositories</a>
+
+   <a href="#GlobalGitConfig">      J. Replace global .gitconfig user settings</a>
+   <a href="#CreateGitConfig">      K. Populate a Git configuration file in each account folder</a>
+   <a href="#IncludeIf">            L. Specify IncludeIf for account in Git config</a>
+
+   <a href="#BeAtSSH">              M. Be in SSH folder</a>
+   <a href="#GenSSH">               N. Generate SSH keys for each GitHub account</a>
+
+   <a href="#GenSSH">               O. Test interaction with each GitHub repository</a>
+   <a href="#MoConfigs">            P. Configure other Git features</a>
+   <a href="#RepateOrg">            Q. Repeat above steps for each additional account</a>
+   
+<hr />
+
+<a name="SummaryDiagram"></a>
+
+## Summary Diagram
 
 This tutorial is part of a video that explains my bash script as part of my <a target="_blank" href="https://wilsonmar.github.io/git-basics/">Git Basics tutorial</a> sequenced by this animated diagram about installation and configuration:
 
 <a target="_blank" title="git-basics-10d-flow-1215x683.jpg" href="https://user-images.githubusercontent.com/300046/47591914-86515400-d92e-11e8-9f48-268a5aad1b9d.jpg">
 <img alt="git-basics-10d-flow-1215x683.jpg" width="648" src="https://user-images.githubusercontent.com/300046/47591914-86515400-d92e-11e8-9f48-268a5aad1b9d.jpg"><br /><small>Click on the flowchart above to pop-up a full-screen (static) image</small></a>
 
-You learn in minimum time because I've spent a lot of time on sequencing your learning and on time-saving automation.
+
+<a name="TerminalvsGUI"></a>
+
+### A. Establish a Terminal CLI environment
+
+   This tutorial is designed for someone with a <a target="_blank" href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">
+   Git command-line client installed</a>.
+
+To make use of it on your laptop, you need to open the <strong>Terminal</strong> program on a Mac or, if you're on a Windows machine, the <strong>Git Bash</strong> program installed. 
 
 
-<a name="GitConfig"></a>
+#### Terminal on macOS
 
-### Global configuration file
+1. Switch to your local IDE or Terminal (on Mac, press command+spacebar for the Spotlight Search, then type "Term" and press Enter to select "Terminal.app"). Enter your password if prompted.
 
-Git stores global configuration settings in a <strong>.gitconfig</strong> text file within the user's HOME directory.
+2. Click anywhere on the Terminal window. Press <strong>command+N</strong> for the Basic session colors and other UI. Alternately, point your cursor beyond the top of the screen for the Terminal menu to appear and select Shell, New Window and select one of the <strong>themes</strong>.
 
-1. Git outputs error messages if a push is attempted without these user settings.
+   ![git-terminal-colors-689x273.jpg](https://user-images.githubusercontent.com/300046/44993171-ddeac900-af56-11e8-8a21-126647ced79a.jpg)
 
-
-
-2. Two commands Git requires is for <strong>attribution</strong> included in metadata for each commit. Type these commands, replacing the example for Wilson with your own name and email address:
-
-   <pre><strong>
-git config --global user.name "Wilson Mar"
-git config --global user.id "wilsonmar+GitHub@gmail.com"
-   </strong></pre>
-
-3. To list the global <tt>.gitconfig</tt> configuration file:
-   
-   <pre><strong>
-git config --list
-   </strong></pre>
-
-   PROTIP: If you see a : (colon) on the last line of the Terminal screen, press <strong>q</strong> to quit out of the listing.
-
-   WARNING: This is commented out because it's too long.
-
-   In our class we don't have the time to go through all the configurations that control how Git makes use of its many features. 
-
-   BONUS: <a href="#MoConfigs">More configuration settings</a>
-
-4. On a Windows machine, to mute annoying warnings about conversion of line endings in files saved on Mac machines:
-
-   <pre><strong>
-git config --global core.safecrlf false
-   </strong></pre>
-
-   The command issues no response.
-
-   The command does not turn off conversion.
+   * Grass is green
+   * Ocean is blue
+   * Pro is black
+   * Red Sands is earthy brown
+   <br /><br />
 
 
-## Setup utilities
+<a name="WindowsSetup"></a>
 
-Now setup Homebrew/Chocolatey, Git/msysgit.
+### Setup on Windows utilities
+
+   Since a Bash shell does not come built-in on <strong>Microsoft Windows</strong> machines, a bash terminal program called <strong>git bash</strong> needs to be install by the Windows <strong>Chocolatey</strong> installer installing the <strong>msysgit</strong> package. But you must have Administrator permissions to install them.
 
 1. So that you can update versions automatically later, automate client installs on Windows, by first installing <a target="_blank" href="https://choclately.org/">Chocolatey</a> using a PowerShell command:
 
@@ -86,37 +103,74 @@ Now setup Homebrew/Chocolatey, Git/msysgit.
 
    ```-y``` takes the place of clicking "OK" to submit to legalistic licenses.
 
-3. To open <strong>git bash</strong>, press the Micosoft icon on the keyboard. Type git. When "git bash" appears, click on it.
+1. To open <strong>git bash</strong>, press the Micosoft icon on the keyboard. Type git. When "git bash" appears, click on it.
 
    ![image](https://user-images.githubusercontent.com/300046/45103610-892d8680-b0ed-11e8-921c-d2b03b32a6ba.png)
 
-1. Open a Bash terminal by command+Tab (holding down the command key, then press Tab) for the Spotlight. Type "ter" until "Terminal.app" appears, press Enter to select it.
 
-2. Click anywhere on the Terminal window. Press <strong>command+N</strong> for the Basic session colors and other UI. Alternately, point your cursor beyond the top of the screen for the Terminal menu to appear and select Shell, New Window and select one of the <strong>themes</strong>.
 
-   ![git-terminal-colors-689x273.jpg](https://user-images.githubusercontent.com/300046/44993171-ddeac900-af56-11e8-8a21-126647ced79a.jpg)
+<a name="LoadSampleFiles"></a>
 
-   * Grass is green
-   * Ocean is blue
-   * Pro is black
-   * Red Sands is earthy brown
+### B. Download sample repository containing setup files
+
+   Since Git utilities may not be available on your laptop at this point, download sample files using a command.
+
+1. Defines a variable to specify the path, then use the variable to create a folder, and cd into it.
+
+   <pre><strong>GIT_FOLDER="$HOME/git-utilities"
+mkdir -p "$HOME/${GIT_FOLDER}"
+cd "$HOME/${GIT_FOLDER}"
+   </strong></pre>
+
+   The Terminal prompt should now be at <tt>~/git-utilities</tt> or whatever you changed the path to.
+
+   Files in the folder relevant to this:
+
+   <pre>curl -O https://raw.githubusercontent.com/wilsonmar/git-utilities/master/my_github_accts.csv
+   </pre>
+   
+   <pre>curl -O https://raw.githubusercontent.com/wilsonmar/git-utilities/master/git-certs-setup.sh
+   </pre>
+
+   * <tt>my_github_accts_vars.sh</tt>
+
+
+   <a name="InstallBaseUtilities"></a>
+
+   ### C. Install base utilities, if needed
+
+1. If requested by a parameter, the automated script installs these:
+
+   1. XCode
+   1. Homebrew
+   1. Git program
+   1. GitHub CLI
    <br /><br />
 
-   ## Terminal / Git Bash
+   Alternately, if you don't run the script, you'll need to manually install each one.
 
-3. To make use of it on your laptop, you need to open the <strong>Terminal</strong> program on a Mac or, if you're on a Windows machine, the <strong>Git Bash</strong> program installed. 
 
-   Since a Bash shell does not come with <strong>Microsoft Windows</strong> machines, a bash terminal program called <strong>git bash</strong> needs to be install by the Windows <strong>Chocolatey</strong> installer installing the <strong>msysgit</strong> package. But you must have Administrator permissions to install them.
+   <a name="InstallEditor"></a>
 
-   <a name="TerminalvsGUI"></a>
+   ### D. Install Editor app
 
-   ### Terminal vs GUI
+1. Determine what text editor you want to load when Git needs one.
 
-   This tutorial is designed for someone with a <a target="_blank" href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">
-   Git command-line client installed</a>.
+   PROTIP: I personally like the Sublime Text editor because it loads up the fastest.
 
-   Due to the open-source availability to how Git works,
-   there are many Git clients available.
+   But subl needs to be installed and licensed (for $85 one time).
+
+   The nano editor comes with MacBbook macOS operating system.
+
+1. Install the selected editor app (such as Sublime Text).
+
+
+
+<a name="InstallGitClients"></a>
+
+### E. Install Git client apps
+
+   Due to the open-source availability to how Git works, there are many Git clients available.
 
    But NOT clients include a <strong>git bash</strong> program so you can run commands like a Linux command line (shown by this tutorial).
 
@@ -137,6 +191,369 @@ Now setup Homebrew/Chocolatey, Git/msysgit.
    We will soon show how Git enables every portion of code to be worked on at the same time.
 
    * See <a target="_blank" href="https://www.youtube.com/watch?v=C0bFLGJqnI8&list=PL-suslzEBiMo0B5RcAikOaqDLKoG9Okub">VIDEO: Using Git within Eclipse</a> May 21, 2013 by Dr. Brian Fraser 
+
+
+   <a name="DefineAccounts"></a>
+
+   ### F. Define a file listing each GitHub organization/account
+
+   PROTIP: Many developers switch among multiple GitHub organizations/accounts during a working day.
+
+1. Download a sample file using the curl utility:
+
+   <pre>curl -O https://raw.githubusercontent.com/wilsonmar/git-utilities/master/my_github_accts.csv
+   </pre>
+
+1. Open a text editor to manually edit sample file named <tt>my_github_accts.csv</tt>.
+
+   It contains a line for each github organization/account, with associated fields:
+
+   <pre>
+_folder,      _Name,    _acct,    _email,            _note
+gmail_acct,   John Doe, johndoe,  johndoe@gmail.com, Personal GitHub account created using personal Gmail or other email
+client1_acct, John Doe, john-doe, john_doe@mck.com,  Customer/client organization account
+job1_acct,    John Doe, john-doe, john_doe@mck.com,  Employer organization account
+vendor1_acct, John Doe, johndoe1, john-doe@soft.ai,  vendor organization account
+   </pre>
+
+   PROTIP: We recommend that, even if you only have your own personal account now, <strong>be prepared</strong> to use multiple GitHub accounts by doing the work of just the first account.
+
+   If you're <strong>manually performing</strong> the steps below, create the file above as a <strong>checklist</strong> as you repeat commands for each organization/account folder and files.
+
+
+   <a name="BeginWork"></a>
+
+   ### G. Begin work on each GitHub organization/account
+
+1. Switch back to the Terminal.
+
+1. Download a sample script file:
+
+   <pre><strong>curl -O https://raw.githubusercontent.com/wilsonmar/git-utilities/master/???script.sh
+   chmod +x ???script.sh
+   </strong></pre>
+   
+   That script automatically performs all the steps described in the remainder of the steps below, for each GitHub organization/account <a href="#DefineAccounts">listed in the file above</a>.
+
+1. If want to run the automated script, first run without any paramters to get a list of possible parameters to customize each run:
+
+   <pre><strong>./???script.sh
+   </strong></pre>
+
+   <tt>-v</tt> specifies verbose output.
+
+
+
+   <a name="GlobalEditConfig"></a>
+
+   ### H. Create global .gitconfig file with editor setting
+
+   Since we are creating a git configuration file for each organization/account folder, we <strong>don't need global user</strong> configurations.
+
+1. In a Terminal, set the text editor command to be used by Git:
+
+   <pre><strong>git config --global core.editor "subl"
+   </strong></pre>
+
+   Instead of <tt>subl</tt> for Sublime, use <tt>code</tt> for Visual Studio Code, <tt>nano</tt> for Nano, etc.
+
+   <tt>git config --global</tt> commands update the contents of the <tt>~/.gitconfig</tt> file.
+
+   <tt>~</tt> specifies the user's home folder.
+
+1. Open the editor using a git command:
+
+    <pre><strong>git config --global --editor subl
+   </strong></pre>
+
+   That command is equivalent to, alternately :
+
+   <pre><strong>subl ~/.gitconfig
+   </strong></pre>
+
+   Due to the previous command, you should see in your editor:
+
+   <pre>[core]
+   editor = 'subl'
+   </pre>
+
+1. List git global settings:
+
+   <pre><strong>git config --list
+   </strong></pre>
+
+   Sample response:
+
+   <pre>credential.helper=osxkeychain
+core.editor=subl
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+diff.external=/usr/local/bin/git-diff-cmd.sh
+includeif.gitdir:~/gmail_acct/.path=~/gmail_acct/.gitconfig
+   </pre>
+
+   PROTIP: If you see a : (colon) on the last line of the Terminal screen, press <strong>q</strong> to quit out of the listing.
+
+
+1. There are possibly other git global configuration settings if your Git configuration is not new, such as:
+
+   <pre>[core]
+repositoryformatversion = 0
+filemode = true
+bare = false
+logallrefupdates = true
+ignorecase = true
+precomposeunicode = true
+   </pre>
+
+   Configuring these is not within the scope of this document.
+
+
+
+   Later, from this file we will replace global configuration settings values for a single user such as:
+
+   <pre>[user]
+    name = John Doe
+    email = johndoe@gmail.com
+   </pre>
+
+   (with "IncludeIf" and "path" statements) 
+
+   That setting is the result of a command such as:
+
+   <pre><strong>git config --global user.name "John Doe"
+git config --global user.id "johndoe@gmail.com"
+   </strong></pre>
+
+
+   First...
+
+
+   <a name="FolderEachAccount"></a>
+
+   ### I. Make a folder for each GitHub account's repositories
+
+1. Switch back to the Terminal.
+
+1. Download a sample script file:
+
+   <pre><strong>curl -O https://raw.githubusercontent.com/wilsonmar/git-utilities/master/my_github_accts_vars.sh
+   chmod +x my_github_accts_vars.sh
+   </strong></pre>
+   
+   That script automatically performs all the steps described in the remainder of the steps below, for each GitHub organization/account <a href="#DefineAccounts">listed in the file above</a>.
+
+1. To avoid manualtyping, run script:
+
+   <pre><strong>chmod +x my_github_accts_vars.sh
+./my_github_accts_vars.sh      
+   </strong></pre>
+
+   The script creates variables based on values copied from <a href="#DefineAccounts">the Github organizations/accounts defined above in flat file my_github_accts.csv</a>:
+
+   <pre>export LOCAL_SSH_KEYFILE="gmail_acct"
+export MY_EMAIL_ADDRESS="johndoe@gmail.com"
+export MY_GITHUB_ACCTNAME="johndoe"
+export MY_FULL_NAME="John Doe"
+   </pre>
+
+   REMEMBER: In Bash script export commands allow no spaces around the equal (=) sign.
+
+   Use of variables helps ensure that <strong>several commands below</strong> will use values consistently.
+
+1. Make a folder for the current GitHub organization/account based on the variable defined above:
+
+   <pre><strong>mkdir ~/$LOCAL_SSH_KEYFILE
+   </strong></pre>
+
+
+   <a name="GlobalGitConfig"></a>
+
+   ### J. Replace global .gitconfig user settings
+
+1. Use your default editor to <strong>edit</strong> Git's global <tt>.gitconfig</tt> configuration file:
+
+   <pre><strong>git config --global --edit
+   </strong></pre>
+
+   We will replace these values in a config file associated with each GitHub organization/account.
+
+   In 2019, at git version 1.23, "conditional include" ("IncludeIf") was added to Git Core. That enables Git to automatically select the configuration file Git uses to be based on whatever folder is active. 
+   
+   References:
+   * <a target="_blank" href="https://git-scm.com/docs/git-config#_conditional_includes">https://git-scm.com/docs/git-config#_conditional_includes</a> is the official documentation
+   * <a target="_blank" href="https://blog.thomasheartman.com/posts/modularizing-your-git-config-with-conditional-includes">https://blog.thomasheartman.com/posts/modularizing-your-git-config-with-conditional-includes</a>
+   * <a target="_blank" href="https://www.motowilliams.com/conditional-includes-for-git-config">https://www.motowilliams.com/conditional-includes-for-git-config</a>
+   <br /><br />
+
+
+   <a name="CreateGitConfig"></a>
+
+   ### K. Populate a Git configuration file in each account folder
+
+1. Edit the <tt>~/.gitconfig</tt> text file to confirm that the above commands created a git configuration file, using your favorite text editor:
+
+   Either way, you should see something like this (but with your name and email instead):
+
+   <pre>[user]
+    name = John Doe
+    email = johndoe@gmail.com
+   </pre>
+
+
+
+   <a name="IncludeIf"></a>
+
+   ### L. Specify IncludeIf for each account
+
+1. Construct new lines in the account folder's .gitconfig file based on the $LOCAL_SSH_KEYFIL variable name:
+
+   <pre>[includeIf "gitdir:~/gmail_acct/"]
+ path = ~/gmail_acct/.gitconfig
+   </pre>
+
+   PROTIP: We are using the name of the account folder the same name as the SSH keypair file name.
+
+   PROTIP: In the includeIf line, the trailing slash after the directory path makes it so that all subdirectories of the specified directory is matched.
+
+   Alternately, instead of using a text editor, use these commands to concatenate the lines to the bottom of the file:
+
+   <pre>echo "[includeIf "gitdir:~/$LOCAL_SSH_KEYFILE/"]" >>~/$LOCAL_SSH_KEYFILE/.gitconfig
+ path = ~/$LOCAL_SSH_KEYFILE/.gitconfig  >>~/$LOCAL_SSH_KEYFILE/.gitconfig
+   </pre>
+
+   Either way, put the includes at the bottom of your files to make sure the included config isn't overridden later on in the source file.
+
+
+   ~/.git/config
+
+
+1. Verify:
+
+   <pre><strong>git config list</strong></pre>
+
+   TODO: If you get <tt>error: key does not contain a section: list</tt>
+   ...
+
+   Next, let's create that folder referenced above.
+
+
+   <a name="BeAtSSH"></a>
+
+   ### Be in SSH folder
+
+1. Be at the folder where SSH stores its key pairs file:
+
+   <pre><strong>cd $HOME/.ssh</strong></pre>
+
+   If it does not already exist, make the folder yourself.
+
+
+   <a name="GenSSH"></a>
+
+   ### Generate SSH keys for each GitHub account
+
+   References:
+   * <a target="_blank" href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Generating a new SSH key and adding it to the ssh-agent</a>
+   <br /><br />
+
+1. Within the ~/.ssh folder, generate a pair using defaults for the GitHub account:
+
+   <pre><strong>ssh-keygen -t rsa -f "${LOCAL_SSH_KEYFILE}" -C "${MY_EMAIL_ADDRESS}" -N ""</strong></pre>
+
+   <tt>-N</tt> specifies that no Passphrase will be requested when the key is used. Specifying one would require it to be manually entered with every command -- not something most would want to do.
+
+   <tt>-C</tt> provides an optional unique name within the Public key.
+
+
+
+   TODO: A "fingerprint" of the key is generated to uniquely identify each one.
+
+   
+1. The public key we copy into each <strong>server</strong> so we can <strong>`SSH`</strong> 
+
+1. with the private side of the pair (instead of a password).
+
+   Some use an encrypted USB Solid State Drive for sole physical posession. 
+   But if that's lost or stolen, security can be compromised.
+
+
+
+<hr />
+
+<a name="MoConfigs"></a>
+
+### P. Configure other Git features
+
+There are other lines in the .gitconfig file.
+
+1. On a Windows machine, to mute annoying warnings about conversion of line endings in files saved on Mac machines:
+
+   <pre><strong>git config --global core.safecrlf false
+   </strong></pre>
+
+   The command issues no response.
+
+   The command does not turn off conversion.
+
+1. <a href="https://wilsonmar.github.io/git-signing">Configure Git Signing</a> describes steps to enable the gpg program to establish GPG keys used to sign git commits, which would add lines such as these:
+
+   <pre>[core]
+ editor = subl
+signingkey = 62C414BA89BFBE52
+&nbsp;
+[gpg]
+ program = gpg
+&nbsp;
+[tag]
+ forceSignAnnotated = true
+   </pre>
+
+
+1. GitHub Enterprise users whitelist hostnames using:
+   
+   <pre><strong>git config --global --add hub.host my.example.org
+   </strong></pre>
+
+1. Change default commit message editor program to Sublime Text (instead of vi):
+   
+   <pre>git config core.editor "~/Sublime\ Text\ 3/sublime_text -w"</pre>
+
+1. Allow all Git commands to use colored output, if possible:
+
+   <pre>git config color.ui auto</pre>
+
+1. Get the size of what was transmitted on the current repo folder:
+
+   <pre><strong>git count-objects -v</strong></pre>
+
+   <pre>
+count: 1749
+size: 12308
+in-pack: 344
+packs: 1
+size-pack: 109
+prune-packable: 0
+garbage: 0
+size-garbage: 0
+   </pre>
+
+   <pre>git remote show origin</pre>
+
+   But I have a script that installs them and other apps on a Mac according to a specification file. It's at <a target="_blank" href="https://github.com/wilsonmar/mac-setup/master/blog/mac-install-all.sh">https://github.com/wilsonmar/mac-setup/master/blog/mac-install-all.sh</a>
+
+
+
+<a name="RepateOrg"></a>
+
+### Q. Repeat above steps for each additional account
+
+zzzz
+
+
+<hr />
 
 
 ## Ways to get a shell script 
@@ -1398,46 +1815,6 @@ added: xome
 
 
 <hr />
-
-## BONUS topics
-
-<a name="MoConfigs"></a>
-
-### More configuration settings
-
-   For example, GitHub Enterprise users whitelist hostnames using:
-   
-   * git config --global --add hub.host my.example.org
-   <br /><br />
-
-   Change default commit message editor program to Sublime Text (instead of vi):
-   
-   <pre>git config core.editor "~/Sublime\ Text\ 3/sublime_text -w"</pre>
-
-   Allow all Git commands to use colored output, if possible:
-
-   <pre>git config color.ui auto</pre>
-
-   Get the size of what was transmitted on the current repo folder:
-
-   <pre><strong>git count-objects -v</strong></pre>
-
-   <pre>
-count: 1749
-size: 12308
-in-pack: 344
-packs: 1
-size-pack: 109
-prune-packable: 0
-garbage: 0
-size-garbage: 0
-   </pre>
-
-   <pre>git remote show origin</pre>
-
-   But I have a script that installs them and other apps on a Mac according to a specification file. It's at https://github.com/wilsonmar/mac-setup/master/blog/mac-install-all.sh
-
-
 
 <a name="DefaultBranch"></a>
 
