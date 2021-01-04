@@ -90,7 +90,7 @@ To make use of it on your laptop, you need to open the <strong>Terminal</strong>
 
 <a name="WindowsSetup"></a>
 
-### Setup on Windows utilities
+#### Setup on Windows utilities
 
    Since a Bash shell does not come built-in on <strong>Microsoft Windows</strong> machines, a bash terminal program called <strong>git bash</strong> needs to be install by the Windows <strong>Chocolatey</strong> installer installing the <strong>msysgit</strong> package. But you must have Administrator permissions to install them.
 
@@ -119,10 +119,10 @@ To make use of it on your laptop, you need to open the <strong>Terminal</strong>
 
 1. Defines a variable to specify the path, then use the variable to create a folder, and cd into it.
 
-   <pre><strong>GIT_FOLDER="$HOME/git-utilities"
-mkdir -p "$HOME/${GIT_FOLDER}"
+   <tt><strong>GIT_FOLDER="$HOME/git-utilities"<br />
+mkdir -p "$HOME/${GIT_FOLDER}"<br />
 cd "$HOME/${GIT_FOLDER}"
-   </strong></pre>
+   </strong></tt>
 
    The Terminal prompt should now be at <tt>~/git-utilities</tt> or whatever you changed the path to.
 
