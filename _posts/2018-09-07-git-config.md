@@ -120,7 +120,9 @@ To make use of it on your laptop, you need to open the <strong>Terminal</strong>
 1. Defines a variable to specify the path, then use the variable to create a folder, and cd into it.
 
    <tt><strong>GIT_FOLDER="$HOME/git-utilities"<br />
+
 mkdir -p "$HOME/${GIT_FOLDER}"<br />
+
 cd "$HOME/${GIT_FOLDER}"
    </strong></tt>
 
@@ -380,8 +382,6 @@ export MY_FULL_NAME="John Doe"
    <pre><strong>git config --global --edit
    </strong></pre>
 
-   We will replace these values in a config file associated with each GitHub organization/account.
-
    In 2019, at git version 1.23, "conditional include" ("IncludeIf") was added to Git Core. That enables Git to automatically select the configuration file Git uses to be based on whatever folder is active. 
    
    References:
@@ -404,6 +404,9 @@ export MY_FULL_NAME="John Doe"
     email = johndoe@gmail.com
    </pre>
 
+   In a config file, we will replace the above values with IncludeIF statements.
+
+   The above staements will be in a config file, with name and email appropriate for each GitHub organization/account.
 
 
    <a name="IncludeIf"></a>
