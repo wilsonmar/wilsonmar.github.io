@@ -20,6 +20,8 @@ There are several (overlapping) certification exams (from competing agencies) fo
 
 The vast landscape of security certifications illustrated by this map is from <a target="_blank" href="https://pauljerimy.com/category/book-reviews/">security techo thriller book reviewer</a> Paul Jerimy at <a target="_blank" href="https://pauljerimy.com/security-certification-roadmap/">https://pauljerimy.com/security-certification-roadmap:
 <img width="1613" alt="security-cert-landscape" src="https://user-images.githubusercontent.com/300046/101941672-91ff4380-3ba5-11eb-8b16-1368f9ce1349.png"></a>
+<em>Click for full screen image.</em>
+
 
 ## ISC2.org
 
@@ -147,11 +149,23 @@ https://www.whizlabs.com/comptia-pentest/
 
 <a target="_blank" href="https://www.comptia.org/certifications/comptia-advanced-security-practitioner">
 CASP+ (CompTIA Advanced Security Practioner) exam CAS-003</a> is a hands-on, performance-based certification for practitioners — not managers — at the advanced skill level of cybersecurity -- implementing solutions policies and frameworks. 
-For $452 USD (or $799 with retake and $849 with Labs), you'll have 165 minutes to answer 90 multiple-choice and "performance-based" questions, for pass/fail grading. Performance-based questions (PBQs) test a candidate’s ability to solve problems in a simulated environment that approximates a virtual environment with a firewall, network diagram, terminal window, or operating system. 
+For $466 USD (or $799 with retake and $849 with Labs), you'll have 165 minutes to answer 90 multiple-choice and "performance-based" questions, for pass/fail grading. 
 
-CASP+ satisfies Baseline Certification for DoD IAT (Information Assurance Technical) Level III, IAM (Information Assurance Management) Level II, and IASAE (Information Assurance Security Architecture and Engineering) level I and II jobs.
+<a target="_blank" href="https://www.comptia.org/testing/testing-options/about-comptia-performance-exams/performance-based-questions-explained">Performance-based questions (PBQs)</a> test a candidate’s ability to solve problems in a simulated environment that approximates a virtual environment with a firewall, network diagram, terminal window, or operating system.
+<a target="_blank" href="https://quizlet.com/it/513316332/casp-cas-003-performance-based-questions-flash-cards/">12 Flash cards</a>
+Sample
 
-<a target="_blank" href="https://learning.oreilly.com/learning-paths/learning-path-comptia/9780135945025/">18+ hours of prep videos</a>released Jan. 2018 by Michael J. Shannon
+* To check config on RedHat 5.5:
+
+   chkconfig --test
+
+* Services to disable on DNS:
+
+   http, mysqld, lopd, bluetooth, wpa supplicant
+
+CASP+ satisfies <a target="_blank" href="https://public.cyber.mil/cw/cwmp/dod-approved-8570-baseline-certifications/">Baseline Certification for DoD IAT (Information Assurance Technical) Level III</a>, IAM (Information Assurance Management) Level II, and IASAE (Information Assurance Security Architecture and Engineering) level I and II jobs.
+
+Topics covered in <a target="_blank" href="https://learning.oreilly.com/learning-paths/learning-path-comptia/9780135945025/">18+ hours of prep videos</a> released Jan. 2018 by Michael J. Shannon
 
 1. Risk Management
 
