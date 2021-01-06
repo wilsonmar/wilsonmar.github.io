@@ -1,25 +1,25 @@
 ---
 layout: post
 title: "Security Certifications"
-excerpt: "Getting certified"
+excerpt: "There are several (overlapping) ones. Collect them all!"
 tags: [security,certs]
-date: "2020-12-11"
+date: "2021-01-06"
 file: "security-certs"
 image:
 # cyber-security-hero-1900x500-22924.jpb/.png 
-  feature: https://user-images.githubusercontent.com/300046/61989997-46bab400-aff5-11e9-9045-8075ede3d5a3.jpg
-  credit: Addie Wagenknecht
-  creditlink: http://www.placesiveneverbeen.com/details/asymmetric-love
+  feature: https://user-images.githubusercontent.com/300046/103753295-19cf4680-4fc8-11eb-9c7a-d23d3c5c2d79.jpg
+  credit: Paul Jerimy
+  creditlink: https://pauljerimy.com/security-certification-roadmap
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
 
-There are several (overlapping) certification exams (from competing agencies) for security professionals:
+There are several (overlapping) certification exams (from competing agencies) for security professionals.
 
-The vast landscape of security certifications is illustrated by this map at <a target="_blank" href="https://pauljerimy.com/security-certification-roadmap/">https://pauljerimy.com/security-certification-roadmap</a>:
-<img width="1613" alt="security-cert-landscape" src="https://user-images.githubusercontent.com/300046/101941672-91ff4380-3ba5-11eb-8b16-1368f9ce1349.png">
+The vast landscape of security certifications illustrated by this map is from <a target="_blank" href="https://pauljerimy.com/category/book-reviews/">security techo thriller book reviewer</a> Paul Jerimy at <a target="_blank" href="https://pauljerimy.com/security-certification-roadmap/">https://pauljerimy.com/security-certification-roadmap:
+<img width="1613" alt="security-cert-landscape" src="https://user-images.githubusercontent.com/300046/101941672-91ff4380-3ba5-11eb-8b16-1368f9ce1349.png"></a>
 
 ## ISC2.org
 
@@ -280,7 +280,9 @@ On Udemy: <a target="_blank" href="https://www.udemy.com/course/secure-product-l
 Security Product Lifecycle 101</a> (SPLC) by Implementing Security. Voiced by an enthusiastic voice pro.
 References SAMM 2.0, OWASP Top 10.
 
-Data-Driven Security (Pearson) by Jacobs and Rudis
+* Data-Driven Security (Pearson) by Jacobs and Rudis
+
+* <a target="_blank" href="https://www.beyond20.com/blog/best-cyber-security-certification-path-for-a-great-career/">
 
 
 ## More on Security #
