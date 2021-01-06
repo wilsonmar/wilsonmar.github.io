@@ -27,7 +27,9 @@ There are 7 conditions enabling public leak of secret data from GitHub repositor
 7. <a href="#SSH_remains">SSH keys to access GitHub are static, subject to theft</a>
 <br /><br />
 
-"How to" recommendations offered in this article are:
+<a name="HowTo"></a>
+
+How to" recommendations offered in this article are:
 
 1. <a href="#2FA">Setup 2FA with an authenticator to physically confirm GitHub access</a>
 2. <a href="#DorkLocally">Automate "Dorking" scans of you code to look for secrets locally before pushing to GitHub</a>
