@@ -430,7 +430,7 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
    ### Sample exam questions 
 
 1. <a target="_blank" href="https://github.com/dgkanatsios/CKAD-exercises">https://github.com/dgkanatsios/CKAD-exercises</a> 
-   provides sample exam questions.
+   by Dimitris-Ilias Gkanatsios (of Microsoft) provides sample exercises to prepare for the CKAD exam.
 
 1. <a target="_blank" href="https://medium.com/bb-tutorials-and-thoughts/practice-enough-with-these-questions-for-the-ckad-exam-2f42d1228552">Practice enough</a> 
 
@@ -782,8 +782,7 @@ edX.org publishes some courses from Linux Academy.
 <a target="_blank" href="https://learning.oreilly.com/learning-paths/learning-path-certified/9781492061021/">
 Certified Kubernetes Application Developer (CKAD) Prep Course</a> July 2019 [4h 53m] uses
 <a target="_blank" href="https://github.com/bmuschko/ckad-study-guide">https://github.com/bmuschko/ckad-study-guide</a>
-and <a target="_blank" href="https://github.com/bmuschko/ckad-crash-course">https://github.com/bmuschko/ckad-crash-course</a>
-by Benjamin Muschko (@bmuschko, <a target="_blank" href="https://www.bmuschko.com/">bmuschko.com</a>, <a target="_blank" href="https://www.automatedascent.com/">automatedascent.com</a>) 
+and <a target="_blank" href="https://github.com/bmuschko/ckad-crash-course">https://github.com/bmuschko/ckad-crash-course "In-depth and hands-on practice for acing the exam"</a> by Benjamin Muschko (@bmuschko, <a target="_blank" href="https://www.bmuschko.com/">bmuschko.com</a>, <a target="_blank" href="https://www.automatedascent.com/">automatedascent.com</a>) 
 
 
 <a target="_blank" href="https://learning.oreilly.com/videos/certified-kubernetes-application/">
@@ -1224,9 +1223,6 @@ chmod -R u+wrx $HOME/.minikube
 🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
    </pre>
 
-1. TODO: Start Docker 
-
-
    If Docker Desktop is not running, you won't see the icon at the top of the screen and you'll get this error:
 
    <pre>🤷  Exiting due to PROVIDER_DOCKER_NOT_FOUND: The 'docker' provider was not found: exec: "docker": executable file not found in $PATH
@@ -1249,11 +1245,11 @@ chmod -R u+wrx $HOME/.minikube
    </pre>
 
 
-3. Start the minikube service, with add-ons (which each runs in a pod):
+   Alternately, start the minikube service, with add-ons (which each runs in a pod):
 
    On Mac:
 
-   <pre><strong>minikube start --vm-driver=xhyve --addons=dashboard --addons=metrics-server --addons=ingress --addons="ingress-dns"
+   <pre><strong>minikube start ... --addons=dashboard --addons=metrics-server --addons=ingress --addons="ingress-dns"
    </strong></pre>
 
    On Windows:
@@ -2750,7 +2746,7 @@ quickly create an OpenFaaS (Serverless) cluster</a>:
 Videos:
 
    * <a target="_blank" href="https://www.youtube.com/channel/UCdngmbVKX1Tgre699-XLlUA&t=1h24m24s">
-Helm Explained by "Nana's TechWorld"</a>
+Helm Explained by "Nana's TechWorld"</a> (<a target="_blank" href="https://www.linkedin.com/in/nana-janashia/">Nana Janashia</a>)
    * <a target="_blank" href="https://www.ibm.com/blogs/bluemix/2018/06/deploy-scalable-web-application-kubernetes-using-helm/">
 IBM: Deploy a scalable web application to Kubernetes using Helm</a>
 
