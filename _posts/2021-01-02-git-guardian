@@ -200,6 +200,8 @@ Blog:
 1. Below the "HEALTH" drop-down, click the arrow next to the list.
 1. Check or uncheck the type of health determined for each source to be displayed.
 
+   ![git-guardian-health-status-213x261](https://user-images.githubusercontent.com/300046/104546750-20724500-55ea-11eb-98bc-445494136c39.png)
+
    NOTE: Icons under "PROTECTION" identify whether each source is being monitored.
 
 1. Mouse over or click the time icon to see a pop-up of the date/time of last scan.
@@ -419,6 +421,9 @@ GG is run using GitHub Actions invoking<br />
 
 ## Run within on-prem GitHub Enterprise instance
  
+   GitGuardian Private Repository Monitoring is a Kubernetes application. You can install the software on an existing cluster or use our installer that has an embedded, production-ready Kubernetes distribution packaged with it.
+   See https://docs.gitguardian.com/internal-repositories-monitoring/self_hosting/replicated_installation
+   
 1. Setup Single Sign On (or SSO) allows you to manage your workspace authentication and membership via a third-party identity provider.
 
 1. Install GG app on your GitHub Enterprise on-prem. server.
