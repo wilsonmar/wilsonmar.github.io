@@ -3,7 +3,7 @@ layout: post
 title: "Cyber Security"
 excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
 tags: [security]
-date: "2020-08-02"
+date: "2021-01-05"
 file: "cyber-security"
 image:
 # cyber-security-hero-1900x500-22924.jpb/.png 
@@ -44,14 +44,28 @@ Adobe <a target="_blank" href="https://adobe.allegiancetech.com/cgi-bin/qwebcorp
    20. Vulnerability Management
    <br /><br />
 
-# SABSA
+## SABSA
 
 The SABSA (Sherwood Applied Business Security Architecture) is a "customizable" framework and methodology for enterprises,
-based on business requirements (like NIST for private businesses):
+based on business requirements (like NIST for private businesses). The framework uses six communication questions (What, Where, When, Why, Who, and How) that intersect with six layers of Enterprise Security Architecture (ESA) (operational, component, physical, logical, conceptual, and contextual):
 
 <img width="682" alt="cyber-scaba-matrix" src="https://user-images.githubusercontent.com/300046/89186535-29e68400-d559-11ea-9532-ac57a3f6d306.png">
 
-Enterprise Security Architecture (ESA).
+Four stages of a security program life cycle:
+
+   1. Plan and Organize
+   2. Implement
+   3. Operate and Maintain
+   4. Monitor and Evaluate
+   <br /><br />
+
+Focus of security awareness training:
+
+* Senior management: risk to the organization and the laws and regulations that affect the organization.
+* Middle management: policies, standards, baselines, guidelines, and procedures that affect security. 
+* Technical staff: configuring and maintaining security controls, including how to recognize an attack when it occurs. 
+* Regular staff: responsibilities regarding security for performing day-to-day tasks in a secure manner. 
+
 
 ## Amazon's Compliance
 
@@ -90,12 +104,22 @@ The Center for Internet Security (CIS) is a community of users, vendors and subj
 
 <a name="iso27002"></a>
 
-## ISO 27002
+## ISO 27002 Controls (Counter-measures)
 
-The ISO Code of practice for information security controls defines 114 controls grouped into 14 categories.
+<a target="_blank" href="https://iso27001security.com/">https://iso27001security.com</a><br />
+ISO Code of practice for information security controls defines 114 controls grouped into 14 categories.
+REMEMBER:
 
-https://iso27001security.com/
-
+   * ISO/IEC 27005 addresses risk management. 
+   * ISO/IEC 27007 addresses auditing. 
+   * ISO/IEC 27011 addresses telecommunications organization guidelines.
+   * ISO/IEC 27012 addresses controls (counter-measures)
+   * ISO/IEC 27015 addresses financial organization guidelines. 
+   * ISO/IEC 27033 addresses network security. 
+   * ISO/IEC 27034 addresses application security.
+   * ISO/IEC 27037 addresses digital evidence guidelines.
+   * ISO/IEC 27799 addresses health organization guidelines.
+   <br /><br />
 
 ### CIS Security Benchmarks for Linux 
 
@@ -430,6 +454,12 @@ Below is an approach that can be used for Gap Analysis of what needs to be done 
 
 <strong>AI. System Configuration Baselines & Images</strong>
 
+   * Baselines are used assess the security state 
+   * Procedures provide all the detailed actions that personnel are required to follow. 
+   * Standards provide the steps necessary to achieve security. 
+   * Guidelines provide recommended actions to carry out under certain conditions.
+   <br /><br />
+
    * 5.1	Establish Secure Configurations
    * 5.2	Maintain Secure Images
    * 5.3	Securely Store Master Images
@@ -616,12 +646,21 @@ https://github.com/dev-sec/cis-docker-benchmark
 
 https://nvd.nist.gov/ncp/checklist/740
 
-![cybersecurity-NIST-Functions-382x390-19166](https://user-images.githubusercontent.com/300046/55505840-3f6c3680-5611-11e9-811d-4411e01c5afd.jpg)
-800-53
 
 ## FedRAMP/FISMA compliance
 
-In the US federal government, the Federal Information Security Management Act of 2002 (FISMA) law is implemented according to National Institute of Standards and Technology (NIST) Special Publication (SP) <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">800-53 [pdf]</a> contains 157 controls within 19 control families. Each control is designated as low, moderate, or high impact.
+In the US federal government, the Federal Information Security Management Act of 2002 (FISMA) law is implemented according to National Institute of Standards and Technology (NIST) Special Publication (SP) <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">800-53 [pdf]</a>. The security controls development framework contains 157 controls within 19 control families. Each control is designated as low, moderate, or high impact. 
+![cybersecurity-NIST-Functions-382x390-19166](https://user-images.githubusercontent.com/300046/55505840-3f6c3680-5611-11e9-811d-4411e01c5afd.jpg)
+800-53
+
+SP 800-30 steps for a risk assessment: 
+   1. Identify the assets and their value. 
+   2. Identify threats. 
+   3. Identify vulnerabilities. 
+   4. Determine likelihood. 
+   5. Identify impact. 
+   6. Determine risk as a combination of likelihood and impact.
+   <br /><br />
 
 NIST also publishes SP1800 (Cybersecurity practice guides) and the broader SP 500 (Information Technology).
 
@@ -750,9 +789,131 @@ Education/Experience Requirements:
 * In-depth knowledge of more than one Information Security principle and discipline.
 
 
-https://linuxacademy.com/cp/modules/view/id/316?utm_source=intercom&utm_medium=email&utm_campaign=AprilNewsletter2019
+## Glossary
 
+A vulnerability is an absence or a weakness of a countermeasure that is in place.
 
+An exposure is an instance of being subjected or exposed to losses from a threat.
+
+A trigger is an event that indicates that a risk has occurred or is about to occur. 
+
+Tenents:
+   1. Confidentiality (IPSec encryption in transit, social engineering)
+   2. Integrity 
+   3. Availability (RAID-5, DDoS)
+   4. Accountability (auditing)
+   <br /><br />
+
+CRAMM is an abbreviation of "C" for the UK government’s Central Computer and Telecommunications Agency (CCTA) Risk Analysis and Management Method. CRAMM reviews includes three steps:
+   1. Identify and value assets.
+   2. Identify threats and vulnerabilities and calculate risks.
+   3. Identify and prioritize countermeasures.
+   <br /><br />
+
+Threat modeling process:
+   1. Decompose the application or infrastructure
+   1. Determine the threats
+   1. Determine countermeasures and mitigations
+   1. Rank the threats
+   <br /><br />
+
+Threats: spoofing, tampering, repudiation, information disclosure, denial of service, and elevation of privilege. 
+
+Models:
+   1. The Open Group Architecture Framework (TOGAF) is an enterprise architecture framework that is based on four interrelated domains: technology, applications, data, and business. 
+   1. Sherwood Applied Business Security Architecture (SABSA) is a framework in addition to a methodology in that it prescribes the processes to follow to build and maintain the architecture. It uses the six communication questions (What, Where, When, Why, Who, and How) that intersect with six layers (operational, component, physical, logical, conceptual, and contextual. 
+   1. The Zachman Framework is a two-dimensional model that intersects communication interrogatives (What, Why, Where, and so on) with various viewpoints (Planner, Owner, Designer, and so on). 
+   1. The ISO/IEC 27000 Series establishes information security standards published jointly by the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC). Control Objectives for Information and Related Technology (COBIT) is a set of control objectives used as a framework for IT governance.
+   <br /><br />
+
+Process impprovement approaches:
+   * Capability Maturity Model Integration (CMMI) addresses development, services, and acquisitions. 
+   * Six Sigma includes methodologies DMAIC (Define, Measure, Analyze, Improve existing, Control process) or DMADV (Define, Measure, Analyze, Design, Verify new customer)
+   * Control Objectives for Information and Related Technology (COBIT) is a security controls development framework that uses a process model to subdivide IT into four domains: Plan and Organize (PO), Acquire and Implement (AI), Deliver and Support (DS), and Monitor and Evaluate (ME).
+   * Department of Defense Architecture Framework (DoDAF) is an architecture framework that organizes a set of products under eight viewpoints: Capability Viewpoint (CV), Data and Information Viewpoint (DIV), Operation viewpoint (OV), Project Viewpoint (PV), SerViCes Viewpoint (SvcV), STanDards Viewpoint (STDV), and Systems viewpoint (SV), All Viewpoint (required) (AV).
+   * British Ministry of Defence Architecture Framework (MODAF) is an architecture framework that divides information into seven viewpoints: STrategic viewpoint (StV), Operational Viewpoint (OV), Service-Oriented Viewpoint (SOV), Acquisition Viewpoint (AcV), Technical viewpoint (TV), Systems Viewpoint (SV), All viewpoint (AV).
+   <br /><br />
+
+Security program lifecycle:
+   1. Plan and organize
+   2. Implement
+   3. Monitor and evaluate (review audit logs)
+   4. Operate and Maintain (perform audits)
+   <br /><br />
+
+To establish a relationship with a third party which accesses organizational assets both remotely and locally:
+   1. Perform a risk assessment on the third party’s network, to determine its compliance with organizational security policies and standards.
+   2. Establish a written security policy with the third party. 
+   3. Provide access to internal resources for the third-party personnel.
+   4. Audit the third party’s access to internal resources.
+   <br /><br />
+
+Types of controls:
+   * Data backups are recovery <strong>logical controls</strong>. 
+   * Recovery administrative controls do NOT include data backups. 
+   * Server images are both corrective and technical controls.
+   * Disaster recovery plans are recovery administrative controls. 
+   * Job rotation and background checks are <strong>detective administrative controls</strong>.
+   <br /><br />
+
+Documents:
+   * A business impact analysis (BIA) is a functional analysis that lists the critical and necessary business functions, their resource dependencies, and their level of criticality to the overall organization. Risks.
+   * The business continuity plan (BCP) considers all aspects that are affected by a disaster, including functions, systems, personnel, and facilities, and lists and prioritizes the services that are needed. 
+   * A contingency plan provides instruction on what personnel should do until the functions and systems are restored to full  functionality. 
+   * A disaster recovery plan (DRP) is implemented when the emergency occurs and includes the steps to restore functions and systems.
+   <br /><br />
+
+US Laws:
+   * The Federal Privacy Act of 1974 ensures that only authorized persons should have access to personal information and that personal records should be up to date and accurate. 
+   * The Federal Intelligence Surveillance Act (FISA) of 1978 affects law enforcement and intelligence agencies and gives procedures for the physical and electronic surveillance and collection of “foreign intelligence information” between “foreign powers” and “agents of foreign powers.”
+
+   * The Computer Fraud and Abuse Act (CFAA) of 1986 affects any entities that may engage in hacking of “protected computers” as defined in the Act. It requires the creation of computer security plans and the appropriate training of system users or owners where the systems house sensitive information. was the first law written to require a formal computer security plan. 
+   * The Electronic Communications Privacy Act (ECPA) of 1986 extended government restrictions on wiretaps from telephone calls to include transmissions of electronic data by computer?
+
+   * The United States Federal Sentencing Guidelines of 1991 affects individuals and organizations convicted of felonies and serious (Class A) misdemeanors. It provides guidelines to prevent sentencing disparities that exist across the United States.
+   * The US Economic Espionage Act of 1996 provides a framework to deal with espionage attacks on corporations. According to the Act, all the assets of the organization, whether substantial or not, require protection. The Economic Espionage Act of 1996 affects companies that have trade secrets and any individuals who plan to use encryption technology for criminal activities. 
+   * The Communications Assistance for Law Enforcement Act (CALEA) of 1994 requires telecommunications carriers and manufacturers of telecommunications equipment to modify and design their equipment, facilities, and services to ensure that they have built-in surveillance capabilities. 
+   * The Gramm-Leach-Bliley Act (GLBA) of 1999 affects all financial institutions, including banks, loan companies, insurance companies, investment companies, and credit card providers. 
+
+   * The Personal Information Protection and Electronic Documents Act (PIPEDA) affects private sector organizations that collect, use, and disclose personal information in the course of commercial business in Canada. 
+   * The Federal Information Security Management Act (FISMA) of 2002 affects every federal agency. It requires the federal agencies to develop, document, and implement an agency-wide information security program.
+   * Basel II affects financial institutions and addresses minimum capital requirements, supervisory review, and market discipline. 
+
+   * The Health Insurance Portability and Accountability Act (HIPAA) prevents medical organizations (including health insurance companies, hospitals, and doctors’ offices) from sharing patient healthcare information without consent. 
+   * The Sarbanes-Oxley (SOX) Act provides guidelines on accurately reporting corporate financial data to shareholders.
+   * The General Data Protection Regulation (GDPR) states that the data gathered for private individuals should be used only for the purpose for which it is collected.
+   * The European Union Principles on Privacy state that the data gathered for private individuals should be used only for the purpose for which it is collected. 
+   * The United States Federal Sentencing Guidelines of 1991 affects individuals and organizations convicted of felonies and serious (Class A) misdemeanors. It provides guidelines to prevent sentencing disparities that exist across the United States. 
+   * The Communications Assistance for Law Enforcement Act (CALEA) of 1994 requires telecommunications carriers and manufacturers of telecommunications equipment to modify and design their equipment, facilities, and services to ensure that they have built-in surveillance capabilities. 
+   * The Personal Information Protection and Electronic Documents Act (PIPEDA) affects private sector organizations that collect, use, and disclose personal information in the course of commercial business in Canada. 
+   * The Federal Information Security Management Act (FISMA) of 2002 affects every federal agency. It requires the federal agencies to develop, document, and implement an agency-wide information security program. 
+   * The Payment Card Industry Data Security Standard (PCI DSS) affects any organizations that handle cardholder information for the major credit card companies.
+   <br /><br />
+
+RFC's https://tools.ietf.org/html/rfc1087
+   * RFC 1087 outlines concepts pertaining to what the IAB considers unethical and unacceptable. It considers destroying the integrity of computer-based information unethical.
+   * RFC 2010 Operational Criteria for Root Name Servers
+   * RFC 1589 A Kernel Model for Precision Timekeeping
+   * RFC 1150 F.Y.I. on F.Y.I.
+   <br /><br />
+
+NIST SP 800-53 is within section 4 SECURITY CONTROL SELECTION of 
+<a target="_blank" href="https://csrc.nist.gov/publications/fips">https://csrc.nist.gov/publications/fips</a> NISP FIPS-200 and 201-3
+catagorizes by impact.
+
+https://nvd.nist.gov/vuln/search
+known issues
+
+"Do not appropriate other people’s intellectual output" is one of the Computer Ethics Institute (CEI) Ten Commandments of Computer Ethics, but is not part of the(ISC)2 code of ethics preamble.
+
+Quantitative risk analysis: Asset Value (AV) x Exposure Factor (EF) = Single Loss Expectancy (SLE).
+
+Annualized Rate of Occurrence (ARO) X Single Loss Expectancy (SLE) = Annual Loss Expectancy (ALE).
+
+Cost/benefit of implementing a particular safeguard, where ALE is the annual loss expectancy: 
+(ALE before safeguard) – (ALE after safeguard) – (annual cost of safeguard)
+
+Residual risk = total risk – countermeasures.
 
 ## More on Security #
 
