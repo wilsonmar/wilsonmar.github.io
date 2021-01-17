@@ -25,19 +25,66 @@ The vast landscape of security certifications illustrated by this map is from <a
 
 ## ISC2.org
 
-ISC2.org (a non-profit)
-<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">Pricing</a> is for taking tests at a Pearson Vue test center:
+ISC2.org (a non-profit), which published a Code of Ethics.
 
-* <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$249 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/SSCP">SSCP (Systems Security Certified Practitioner)</a>
+<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">Prices for exams</a> taken at Pearson Vue test centers:
 
-* <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CISSP">CISSP (Certified Information Systems Security Professional) is a sought-after certification on leadership in cybersecurity. The CISSP exam requires test takers to write an essay. 
+<a name="SSCP"></a>
 
+### SSCP
 
-  <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">Pearson CSSLP practice test on O'Reilly</a> via <a target="_blank" href="https://pearsontestprep.com/#/examsettings">PearsonTestPrep.com</a> provides questions for each of 8 specific objectives from 4 tests.
+<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$249 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/SSCP">SSCP (Systems Security Certified Practitioner)</a>
 
-* <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CCSP">CCSP (Certified Cloud Security Professional)</a>
+<a name="CISSP"></a>
 
-* <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CSSLP">CSSLP (Certified Secure Software Lifecycle Professional)</a> is the secure <strong>software development</strong> certification. The 15 Sep 2020 edition is NOT covered in the <a target="_blank" href="https://learning.oreilly.com/library/view/csslp-certification-all-in-one/9781260441697/">All-in-One book</a> by Wm. Arthur Conklin, Daniel Paul Shoemaker. 
+### CISSP
+
+<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CISSP">CISSP (Certified Information Systems Security Professional) is a sought-after certification on leadership in cybersecurity. It is the "gold standard" of vendor-neutral cybersecurity certifications. Earning it proves you understand cybersecurity from a management viewpoint—a requirement if your organization is subject to PCI, GDPR, HIPAA, SOX, ISO 27001, or other regulations. 
+
+The first version of the Common Body of Knowledge (CBK) was finalized in 1992 and the CISSP credential was launched two years later.
+
+The CISSP exam is adaptive, asking 30-150 questions, depending on whether answers are correct.
+So someone may not need all 3 hours.
+You need to pass 70% on <em>each</em> of the eight CISSP domains. Numbers below are counts of questions in the <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">OReilly/Pearson bank</a>:
+
+   1. Security and Risk Management - 334
+   2. Asset Security - 44
+   3. Security Architecture and Engineering - 268
+   4. Communication and Network Security - 114 on OSI model
+   5. Identity and Access Management (IAM) - 82 on biometrics
+   6. Security Assessment and Testing - 41 on NIST SP 800-92
+   7. Security Operations - 245 
+   8. Software Development Security - 164 on SDLC 
+   <br /><br />
+
+There is also a 5 year experience requirement.
+
+Written Reference:
+
+   * <a target="_blank" href="https://www.amazon.com/Certified-Information-Security-Professional-Official/dp/1119523265/">Sybex $58 BOOK: "(ISC)2 CISSP Certified Information Systems Security Professional Official Study Guide & Practice Tests Bundle Second" Edition</a> by Mike Chapple
+
+   * https://josephdelgadillo.com/cissp-testprep-cheatsheet/ provides a PowerPoint file.
+
+Practice Tests:
+
+   * online practice test: https://insidethemicrosoftcloud.com/cissp-practice-quiz/
+   https://www.youtube.com/channel/UCAr0yk0um7lwLjmrKfzwyig/videos
+
+   * For 20 years, Dean Bushmiller has a live <a target="_blank" href="https://learning.oreilly.com/live-training/courses/cissp-bootcamp/0636920483199/">CISSP Bootcamp"</a> on OReilly.com includes a set of proprietary visual "mind maps" to collect, practice, and verify your knowledge.
+
+   * <a target="_blank" href="https://www.sunflower-cissp.com/glossary/cissp/5497/download-sunflower-cissp-2019-pdf-document">PDF: Sunflower CISSP</a>
+
+Video prep courses view:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=4esHgEOmTqU&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR">YouTube playlist on CISSP FREE</a> by "Skillset" provides a good overview, but it's from 2016.
+
+   * <a target="_blank" href="https://cloudacademy.com/learning-paths/preparation-for-the-cissp-certification-640/">CloudAcademy.com "CISSP Prep."</a> [subscription] has a timed (40 minute) Knowledge Check of about 20 questions for each domain, available on mobile phones.
+
+   * <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">Pearson CSSLP practice test provides questions. The <a target="_blank" href="https://pearsontestprep.com/#/examsettings">PearsonTestPrep.com</a> software enables display of individual domains from all 4 tests at once, showing only questions you missed before. Explanations are given as to why each response is correct or not.
+
+   * <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CCSP">CCSP (Certified Cloud Security Professional)</a>
+
+   * <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CSSLP">CSSLP (Certified Secure Software Lifecycle Professional)</a> is the secure <strong>software development</strong> certification. The 15 Sep 2020 edition is NOT covered in the <a target="_blank" href="https://learning.oreilly.com/library/view/csslp-certification-all-in-one/9781260441697/">All-in-One book</a> by Wm. Arthur Conklin, Daniel Paul Shoemaker. 
 
    <a target="_blank" href="https://www.linkedin.com/in/slandail?trk=lil_course">Jerod Brennen</a> created video courses (on LinkedIn Learning) for each domain:
 
@@ -64,11 +111,43 @@ ISC2.org (a non-profit)
 
    https://quizlet.com/343215416/csslp-exam-guide-flash-cards/
 
-   <a target="_blank" href="https://app.pluralsight.com/paths/certificate/certified-secure-software-lifecycle-professional-csslpr">Pluralsight video courses</a> by Kevin Henry (kevinmhenry at msn) is from 2017.
+   * <a target="_blank" href="https://app.pluralsight.com/paths/certificate/certified-secure-software-lifecycle-professional-csslpr">Pluralsight video courses</a> by Kevin Henry (kevinmhenry at msn) is from 2017.
+   * <a target="_blank" href="https://www.udemy.com/user/thorpedersen/​">Thor Pederson Course on Udemy</a>
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=Mpn3Sd9f4lc&list=PLOYQCApvKhV2-j38RvgfHHdsB_VSDPfpP&index=2">8 YouTube videos from The Cloud Tech Guy Joe</a> Jan, 2020 talks about the subject rather than taking a deep dive.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Mpn3Sd9f4lc&list=PLOYQCApvKhV2-j38RvgfHHdsB_VSDPfpP&index=2">8 YouTube videos from The Cloud Tech Guy Joe</a> Jan, 2020 talks about the subject rather than taking a deep dive.
 
-   <a target="_blank" href="https://mckinsey.udemy.com/course/isc2-csslp-certification-exam-prep-practice-exams/">Practice Exams 2020</a> by Chandrika Patel
+   * <a target="_blank" href="https://mckinsey.udemy.com/course/isc2-csslp-certification-exam-prep-practice-exams/">Practice Exams 2020</a> by Chandrika Patel
+
+   * <a target="_blank" href="https://www.amazon.co.uk/Eleventh-Hour-CISSP%C2%AE-Study-Guide/dp/0128112484/">18.17 LB BOOK: 11th Hour</a>
+   * Luke Ahmed: https://www.studynotesandtheory.com/​ 
+   * Mindmap videos: https://www.youtube.com/channel/UCXk6...​ 
+
+   * <a target="_blank" href="https://www.Cissprep.net">Cissprep.net Memorisation sheet</a>
+   * Exam tips: https://www.youtube.com/watch?v=HWg2g...​  
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Igq9Q3r00uk">CISSP MasterClass™ Mission</a> by Sagar Bansal
+
+   * <a target="_blank" href="https://www.sageknowsit.com/product/ebook-infosec-brain-dump-template/">https://www.sageknowsit.com/product/ebook-infosec-brain-dump-template</a>$14.99 eBook: InfoSec Brain Dump Template w/Study Schedule
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=v2Y6Zog8h2A">Kelly Handerhan's "Why you will pass the CISSP" video</a>
+   
+   * <a target="_blank" href="https://www.cybrary.it/">cybrary.it</a> 
+
+   * <a target="_blank" href="https://www.amazon.co.uk/CISSP-Official-ISC-Practice-Tests-ebook/dp/B07D8FZN8M/">BOOK: ISC2 official practice tests</a>
+
+Facebook Groups to join:
+   * <a target="_blank" href="https://www.facebook.com/groups/ThorTeaches">ThorTeaches</a>
+   * <a target="_blank" href="">Luke/SNT</a>
+   <br /><br />
+
+
+Suggestions:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=8BvAx0n500k&list=RD8BvAx0n500k&start_radio=1&rv=8BvAx0n500k&t=0">
+   Ignore the Orange Book</a>. Focus on 15408 Common Criteria on how to build computers based on Bella-Padua. 
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=tjOjjXVPQeU">Graph your progress</a> from <a target="_blank" href="https://www.sageknowsit.com/">sageknowsit.com</a>
+
+
 
 ## ISACA.org
 
@@ -85,6 +164,8 @@ From <a target="_blank" href="http://www.isaca.org/CERTIFICATION/Pages/default.a
    * <a target="_blank" href="https://www.isaca.org/credentialing/certified-data-privacy-solutions-engineer">CDPSE (Certified Data Privacy Solutions Engineer)</a> covers privacy governance, privacy architecture, data lifecycle
 
    * <a target="_blank" href="https://www.isaca.org/credentialing/csx-p">CSX-P (Cybersecurity Practitioner)</a> is derived from the <a target="_blank" href="https://www.nist.gov/cyberframework">NIST Cyberframework</a> is 4 hours.
+
+### CSX
 
 ISACA's <a target="_blank" href="https://www.isaca.org/credentialing/cybersecurity">Cybersecurity Nexus (CSX) Certificates</a>  
 
@@ -149,7 +230,14 @@ https://www.whizlabs.com/comptia-pentest/
 
 <a target="_blank" href="https://www.comptia.org/certifications/comptia-advanced-security-practitioner">
 CASP+ (CompTIA Advanced Security Practioner) exam CAS-003</a> is a hands-on, performance-based certification for practitioners — not managers — at the advanced skill level of cybersecurity -- implementing solutions policies and frameworks. 
-For $466 USD (or $799 with retake and $849 with Labs), you'll have 165 minutes to answer 90 multiple-choice and "performance-based" questions, for pass/fail grading. 
+For $396 for COMPTia members or $466 USD (or $799 with retake and $849 with Labs), you'll have 165 minutes to answer 90 multiple-choice and "performance-based" questions, for pass/fail grading. The domains:
+
+   1. 19% Risk Management  
+   1. 25% Enterprise Security Architecture  
+   1. 20% Enterprise Security Operations  
+   1. 23% Technical Integration of Enterprise Security  
+   1. 13% Research, Development, and Collaboration 
+   <br /><br />
 
 <a target="_blank" href="https://www.comptia.org/testing/testing-options/about-comptia-performance-exams/performance-based-questions-explained">Performance-based questions (PBQs)</a> test a candidate’s ability to solve problems in a simulated environment that approximates a virtual environment with a firewall, network diagram, terminal window, or operating system.
 <a target="_blank" href="https://quizlet.com/it/513316332/casp-cas-003-performance-based-questions-flash-cards/">12 Flash cards</a>
@@ -157,15 +245,29 @@ Sample
 
 * To check config on RedHat 5.5:
 
-   chkconfig --test
+   <pre><strong>chkconfig --test</strong></pre>
 
 * Services to disable on DNS:
 
    http, mysqld, lopd, bluetooth, wpa supplicant
 
+* To stop service:
+
+   <pre><strong>service httpd stop</strong></pre>
+
 CASP+ satisfies <a target="_blank" href="https://public.cyber.mil/cw/cwmp/dod-approved-8570-baseline-certifications/">Baseline Certification for DoD IAT (Information Assurance Technical) Level III</a>, IAM (Information Assurance Management) Level II, and IASAE (Information Assurance Security Architecture and Engineering) level I and II jobs.
 
-Topics covered in <a target="_blank" href="https://learning.oreilly.com/learning-paths/learning-path-comptia/9780135945025/">18+ hours of prep videos</a> released Jan. 2018 by Michael J. Shannon
+<a target="_blank" href="https://learning.oreilly.com/library/view/casp-practice-tests/9781119683728/">CASP+ Practice Tests</a>
+by Nadean H. Tanner (at Puppet, Metasploit)
+
+   * <a target="_blank" href="https://exploit-exercises.com/">Exploit-Exercises.com</a> provides virtual machines, documentation, and challenges covering a wide range of security issues.
+   * <a target="_blank" href="https://www.hacking-lab.com/index.html">hacking-lab.com/index.html</a> provides capture-the-flag (CTF) exercises in a variety of fields.
+   * <a target="_blank" href="https://www.owasp.org/index.php/OWASP_Hacking_Lab">www.owasp.org/index.php/OWASP_Hacking_Lab</a>
+   OWASP Hacking Lab provides excellent web application–focused exercises.
+   * <a target="_blank" href="https://www.pentesterlab.com/exercises/">PentesterLab</a> provides subscription-based access to penetration testing exercises
+   <br /><br />
+
+<a target="_blank" href="https://learning.oreilly.com/learning-paths/learning-path-comptia/9780135945025/">O'Reilly video 18+ hours</a> released Jan. 2018 by Michael J. Shannon
 
 1. Risk Management
 
@@ -215,8 +317,18 @@ Topics covered in <a target="_blank" href="https://learning.oreilly.com/learning
 
    19: Interacting Across Diverse Business Units
 
+
+Kelly Handerhan's Cybrary videos
+
+<a target="_blank" href="https://www.reddit.com/r/CompTIA/comments/aoyk2q/casp_cas003_help/">CASP CAS-003 help on Reddit</a> (archived)
+
+Ucertify has good labs 
+
+Sybex book has labs as well
+
+
 <a target="_blank" href="https://www.udemy.com/course/comptia-advanced-security-practitioner-casp-exam-cas-003/">
-Udemy Prepatory course for the exam CAS-003</a>
+Udemy video "Prepatory course for the exam CAS-003"</a>
 
    1. Understanding Risk Management - 2hr 22min <a target="_blank" href="https://mckinsey.udemy.com/course/comptia-advanced-security-practitioner-casp-exam-cas-003/learn/quiz/4616263#reviews">QUIZ</a>
    2. Network and Security - 1hr 55m <a target="_blank" href="https://mckinsey.udemy.com/course/comptia-advanced-security-practitioner-casp-exam-cas-003/learn/quiz/4616410#reviews">QUIZ</a>
@@ -225,6 +337,12 @@ Udemy Prepatory course for the exam CAS-003</a>
    5. Implementing Security for Cloud and Virtualization Technologies - 1hr 45min <a target="_blank" href="https://mckinsey.udemy.com/course/comptia-advanced-security-practitioner-casp-exam-cas-003/learn/quiz/4616602#reviews">QUIZ</a>
    6. Utilizing Security Assessments and Incident Response - 1hr 42min <a target="_blank" href="https://mckinsey.udemy.com/course/comptia-advanced-security-practitioner-casp-exam-cas-003/learn/quiz/4616616#reviews">QUIZ</a>
    <br /><br />
+
+<a target="_blank" href="https://www.amazon.com/s?k=casp+cas-003&crid=3XWIZV0LMDWT&sprefix=CASP+CAS%2Caps%2C194&ref=nb_sb_ss_ts-a-p_1_8">Amazon search CAS-003</a>
+
+<a target="_blank" href="https://www.amazon.com/Official-CompTIA-Self-Paced-Certification-CAS-003/dp/1642740632/">The Official CompTIA CASP+ Self-Paced Certification Study Guide (Exam CAS-003)</a> Paperback by Jason Nufryk is $219.00
+
+Notes:
 
 Memory dump tools: Memdump, KnTTools on Windows, FATKit 
 
@@ -279,6 +397,8 @@ is being phased out in Oct. 2020 in favor of the <a target="_blank" href="https:
 Covers "double pivoting".
 
 $2199 w/ training, $799 for challenge.
+
+<a name="LPT"></a>
 
 ### LPT
 
