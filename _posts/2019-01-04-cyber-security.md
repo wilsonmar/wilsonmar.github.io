@@ -58,6 +58,12 @@ HITRUST Common Security Framework (CSF)</a> includes, harmonizes, and cross-refe
 <a target="_blank" href="https://aws.amazon.com/compliance/">Amazon Compliance at<br /></a>https://aws.amazon.com/compliance</a>
 
 
+## Microsoft Cybersecurity Reference Architecture
+
+<a target="_blank" href="https://www.youtube.com/watch?v=emdGpNwfWHY">
+Distilling the Microsoft Cybersecurity Reference Architecture</a>
+
+
 <a name="CIS"></a>
 
 ## Center for Internet Security (CIS)
@@ -258,6 +264,8 @@ Below is an approach that can be used for Gap Analysis of what needs to be done 
 
    * 14.7	Enforce Access Control to Data through Automated Tools
    * 14.8	Encrypt Sensitive Information at Rest
+
+   Egress monitoring occurs when an organization monitors the outbound flow of information from one network to another. The most popular form of egress monitoring is carried out using firewalls that monitor and control outbound traffic. Continuous monitoring and Continuous Monitoring as a Service (CMaaS) are not specific enough to answer this question. Any logging and monitoring activities should be part of an organizational continuous monitoring program. The continuous monitoring program must be designed to meet the needs of the organization and implemented correctly to ensure that the organization’s critical infrastructure is guarded. Organizations may want to look into CMaaS solutions deployed by cloud service providers. 
 
 <strong>K. Host Based Firewall</strong>
 
@@ -850,9 +858,15 @@ FIPS 199 designations:
    * HIGH if the loss of confidentiality, integrity, or availability could be expected to have a severe or catastrophic adverse effect on organizational operations, organizational assets, or individuals.
    <br /><br />
 
-U.S. federal agencies use the sensitive but unclassified (SBU) designation when information is not classified but still needs to be protected and requires strict controls over its distribution.
+U.S. federal agencies use the SBU (Sensitive But Unclassified) designation for information is not secret but still needs to be protected and requires strict controls over its distribution.
 
 "Do not appropriate other people’s intellectual output" is one of the Computer Ethics Institute (CEI) Ten Commandments of Computer Ethics, but is not part of the(ISC)2 code of ethics preamble.
+
+Components of configuration management:
+   * configuration control
+   * configuration status accounting
+   * configuration auditing
+   <br /><br />
 
 ## Security Testing
 
@@ -861,6 +875,13 @@ OSSTMM (Open Source Security Testing Methodology Manual) published by Pete Herzo
 COSCO (Committee of Sponsoring Organizations) broadly defines ERM (Enterprise Risk Management) as “the culture, capabilities and practices integrated with strategy-setting and its execution, that organizations rely on to manage risk in creating, preserving and realizing value.” The ERM framework is presented in the form of a three-dimensional matrix. The matrix includes eight components of enterprise risk management and four categories of objectives across the top: strategic, operations, reporting, and compliance. 
 
 The organization, its divisions, and business units are depicted as the third dimension of the matrix for applying the framework.
+
+Rules of evidence:
+   * Be authentic.
+   * Be accurate.
+   * Be complete.
+   * Be convincing.
+   * Be admissible.
 
 ## RFCs
 
@@ -962,6 +983,18 @@ Tenents:
    4. Accountability (auditing)
    <br /><br />
 
+<a name="RAID"></a>
+RAID (Redundant Array of Independent Disks): parity information is used to regenerate the data in the case of a single drive failure. 
+   * RAID-0 Striping of data parts over 2 drives
+   * RAID-1 Mirroring of 2 drives
+   * RAID-10 Mirroring+Striping
+   * RAID-2 stripes the data across all drives at the bit level rather than the byte level.
+   * RAID-3 parity information is written to a single dedicated drive. Data is written across all drives like striping.
+   * RAID-5 Parity information is written across all drives like striping as well
+   * RAID-6 Parity of 2 
+   * RAID-7 enables the drive array to continue to operate if any disk or any path to any disk fails. The multiple disks in the array operate as a single virtual disk.
+   <br /><br />
+
 ### Threats
 
 CRAMM is an abbreviation of "C" for the UK government’s Central Computer and Telecommunications Agency (CCTA) Risk Analysis and Management Method. CRAMM reviews includes three steps:
@@ -985,8 +1018,9 @@ Penetration test methodology - To simulate an attack on a system or network to e
    5. Document Findings
    <br /><br />
 
-Microsoft Threat Model Tool - dataflow diagrams that reflect potential threats. STRIDE and DREAD
+<strong>Enticement</strong> is when a system has apparent flaws that were deliberately made available for penetration and exploitation.
 
+Microsoft Threat Model Tool - dataflow diagrams that reflect potential threats. STRIDE and DREAD
 Developed by Microsoft, STRIDE is a memonic for classification of threats in an application:
    * Spoofing of user identity
    * Tampering
@@ -996,8 +1030,6 @@ Developed by Microsoft, STRIDE is a memonic for classification of threats in an 
    * Elevation of privilege
    <br /><br />
    
-Threats: spoofing, tampering, repudiation, information disclosure, denial of service, and elevation of privilege. 
-
 Attacks - incidents that violate an organization’s security or privacy policies:
    * In a side-channel attack, the attacker gains information about the encryption algorithms from the cryptosystem that is implemented in the network.
    * In a known plaintext attack, an attacker uses the plaintext and ciphertext versions of a message to discover the key used.
@@ -1018,6 +1050,21 @@ Attacks to data and databases <a target="_blank" href="https://www.youtube.com/w
 
 A breach is an attack that has been successful in reaching its goal. 
 
+* Means is how a criminal committed a crime.
+* Motive is why a crime is committed. 
+* Opportunity is when and where a crime occurred.
+* Exigent circumstances are when evidence might be destroyed.
+<br /><br />
+
+order in which evidence should be saved:
+   1. Memory contents
+   2. Swap files
+   3. Network processes
+   4. System processes
+   5. File system information
+   6. Raw disk blocks
+   <br /><br />
+
 ## Models & Lifecycles
 
 Focus of security awareness training:
@@ -1035,8 +1082,7 @@ The Trike methodology is an implementation model created and then analyzed to pr
 
 <img width="682" alt="cyber-scaba-matrix" src="https://user-images.githubusercontent.com/300046/89186535-29e68400-d559-11ea-9532-ac57a3f6d306.png">
 
-Four stages of a security program life cycle:
-
+Security program life cycle:
    1. Plan and Organize
    2. Implement
    3. Operate and Maintain
@@ -1099,6 +1145,45 @@ The process of acquiring software:
    2.   Contracting: Once planning is complete, the organization creates a request for proposal (RFP) or other supplier solicitation forms, evaluates the supplier proposals, and negotiates the final contract with the selected seller.
    3.   Monitoring and accepting: When a contract is in place, the organization establishes the contract work schedule, implements change control procedures, and reviews and accepts the software deliverables.
    4.   Follow-up: When the software is in place, the organization must sustain the software, including managing risks and changes. At some point, it may be necessary for the organization to decommission the software.
+   <br /><br />
+
+Incident response process:
+   1.   Detect the incident.
+   2.   Respond to the incident.
+   3.   Report the incident to the appropriate personnel.
+   4.   Recover from the incident.
+   5.   Remediate all components affected by the incident to ensure that all traces of the incident have been removed.
+   6.   Review the incident and document all findings.
+   <br /><br />
+
+Incident response:
+   1. Triage: The incident response team examines the incident to see what was affected and sets priorities. 
+   1. Investigation: Involves the collection of relevant data.
+   1. Containment: The damage is mitigated or contained.
+   1. Analysis: Where the <strong>root cause</strong> of the incident is discovered.
+   1. Tracking: Where the <strong>source</strong> (user or device) of the incident is determined.
+   1. Post-mortem review: Record lessons learned.
+   1. Recovery: Necessary adjustments or enhancements are made to policies and procedures.
+   <br /><br />
+
+Forensic investigation process:
+   1. Identification - reviewing audit logs, monitoring systems, analyzing user complaints, analyzing detection mechanisms 
+   2. Preservation
+   3. Collection - making system images, implementing chain of custody, documenting the evidence, and recording timestamps.
+   4. Examination determining and documenting characteristics, such as timestamps and identification properties. After the evidence has been fully analyzed using scientific methods, the full incident should be reconstructed and documented.
+   5. Analysis
+   6. Presentation
+   7. Decision
+   <br /><br />
+
+Change control process: 
+   1. The change is requested. 
+   2. The change is approved. 
+   3. The change is documented in the change log. 
+   4. The change is tested and presented. 
+   5. The change is implemented. 
+   6. The change is reported to management or the CCB.
+   <br /><br />
 
 ### Cohesion is opposite of Coupling
    * <strong>Low cohesion</strong> describes a module that carries out <strong>many tasks</strong>, making it harder to maintain and reuse.
@@ -1145,6 +1230,21 @@ Documents:
    * A disaster recovery plan (DRP) is implemented when the emergency occurs and includes the steps to restore functions and systems.
    <br /><br />
 
+System resilience is the ability of a system, device, or data center to recover quickly and continue operating after an equipment failure, power outage, or other disruption. It involves the use of redundant components or facilities.
+
+Metrics detered by BIA (Business Impact Assessment):
+   * RPO (Recovery Point Objective) = Maximum tolerable data loss
+   * RTO (Recovery Time Objective) = Recovery time to a defined service level
+   * WRT (Work Recovery Time) = Max. time to verify integrity of systems & data
+   * MTD (Maximum Tolerable Downtime) = Max. total time process can be disrupted
+   <br /><br />
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=oAjNL3I_3-E&t=4m"><img alt="cyber-sec-bia-terms-581x239" src="https://user-images.githubusercontent.com/300046/104836718-0ac08200-586d-11eb-8ea9-c67720e58e4f.png"></a>
+
+   * Mean time to repair (MTTR) is the average amount of time it takes to get a device fixed and back online. 
+   * Mean time between failure (MTBF) describes how often a component fails on average.
+   <br /><br />
+
 ACID properties:
    * Atomicity means that either all operations are complete or the database changes are rolled back. 
    * Consistency means that the transaction follows an integrity process that ensures that data is consistent in all places where it exists. 
@@ -1179,6 +1279,8 @@ Polyinstantiation prevents data inference attacks by preventing low-level databa
 Dedicated security mode employs a single classification level.
 
 "system integrity" implies that a system will work as intended.
+
+Hierarchical storage management (HSM) is type of backup management system that provides a continuous online backup by using optical or tape “jukeboxes.” 
 
 Aspects of identity management whereby users are identified, authenticated, and authorized: 
 entities, attributes, credentials, and entitlements.
@@ -1259,13 +1361,19 @@ Ciphers:
 A running key cipher is NOT a substitution cipher. A running key cipher uses a physical component, usually a book, to provide the polyalphabetic characters. All the other options are substitution ciphers.
 
 Malware (malicious software):
+   * A worm is a program that spreads itself through network connections. 
+   * A companion is a new file created with a similar name so users activate it.
    * A virus relies upon other application programs to execute itself and infect a system.
    * An armored virus includes protective code that prevents examination of critical elements, such as scans by antivirus software.
    * Spyware uses tracking cookies to collect and report on a user’s activities to the spyware programmer. 
    * A Trojan horse is malware disguised as a useful utility but embeds malicious code in itself. 
-   * A worm is a program that spreads itself through network connections. 
    * Adware is a software application that displays advertisements while the application is executing.
+   * A Macro is written into like VB in Excel.
+   * Logic bombs are triggered by events like a specific date.
    <br /><br />
+
+   * Multipartite spreads in different ways
+   * Polymorphic can change to avoid detection.
 
 Model:
    * A state machine model examines every possible state the system could be in and ensures that the system maintains the proper security relationship between objects and subjects in each state.
@@ -1374,16 +1482,27 @@ A process is a series of actions or steps taken in order to achieve a particular
 
 Workflow
 
-Metrics:
-   * RTO (Recovery Time Objective)
-   * MTD (Maximum Tolerable Downtime)
-   <br /><br />
-
 Confinement is a term used to describe processes in a system. When a process is confined, the process is only allowed to read from and write to certain memory locations and resources. Confinement is usually carried out using the operating system, through a confinement service, or using a hypervisor.
 
 The bounds of a process set limits on the memory addresses and resources the process can access. The bounds logically segment memory areas for each process to use.
 
 ### Physical
+
+Failsoft is the capability of a system to terminate non-critical processes when a failure occurs.
+
+Alternative sites:
+   * A hot site contains telecommunications and computers and is the most expensive alternative site. It takes the shortest amount of time to recover.
+   * A cold site does not contain any computers or telecommunications equipment. It does contain wiring, heating and air, and raised flooring. It is much cheaper than a hot site. However, it takes much longer to recover. 
+   * A warm site contains telecommunications equipment but no computers and is cheaper than a hot site but more expensive than a cold site. It takes longer to recover than a hot site but shorter to recover than a cold site.
+   * A tertiary site provides an alternate in case the hot site, warm site, or cold site is unavailable.
+   <br /><br />
+
+Fail-over testing:
+   * A full-interruption test involves a hard switchover from the primary facility to the alternative facility. 
+   * A structured walk-through test is a representative of each department or functional area thoroughly reviews the business continuity plan’s accuracy.
+   * A functional drill tests a single department to see whether the department’s disaster recovery plan (DRP) is complete.
+   * An evacuation drill has personnel follow the exiting or shelter-in-place guidelines for a particular disaster type.
+   <br /><br />
 
 Fire extinguisher classes:
    * Class A extinguishers are used for ordinary combustibles. 
@@ -1391,6 +1510,15 @@ Fire extinguisher classes:
    * Class C extinguishers are used for electrical equipment. 
    * Class D extinguishers are used for combustible metals.
    * Class K extinguishers are used for cooking oil or fat.
+   <br /><br />
+
+A preaction extinguisher operates like a dry pipe system except that the sprinkler head holds a thermal-fusible link that must melt before the water is released. This is currently the recommended system for a computer room.
+
+Locks:
+   * A warded lock has a spring-loaded bolt with a notch in it. The lock has wards or metal projections inside the lock with which the key will match and enable opening the lock. 
+   * A tumbler lock has more moving parts than the warded lock, with the key raising the lock metal piece to the correct height.
+   * A combination lock requires rotating the lock in a pattern, which if correct lines up the tumblers and opens the lock.
+   * A cable lock has vinyl-coated steel cables that connect to the laptop and then lock around an object.
    <br /><br />
 
 ## Biometrics
@@ -1409,6 +1537,8 @@ SOC 3 is the only SOC report that should be shared with the general public.
 https://isc.sans.edu/forums/diary/Verifying+Running+Processes+against+VirusTotal+DomainWide/25078/
 
 An AUP (acceptable use policy) details appropriate use of information systems, handling standards, monitoring, and privacy expectations.
+
+“Security is always excessive until it's not enough.” – Robbie Sinclair
 
 ## More on Security #
 
