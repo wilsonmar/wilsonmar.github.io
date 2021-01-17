@@ -44,28 +44,10 @@ Adobe <a target="_blank" href="https://adobe.allegiancetech.com/cgi-bin/qwebcorp
    20. Vulnerability Management
    <br /><br />
 
-## SABSA
+## HITRUST CSF
 
-The SABSA (Sherwood Applied Business Security Architecture) is a "customizable" framework and methodology for enterprises,
-based on business requirements (like NIST for private businesses). The framework uses six communication questions (What, Where, When, Why, Who, and How) that intersect with six layers of Enterprise Security Architecture (ESA) (operational, component, physical, logical, conceptual, and contextual):
-
-<img width="682" alt="cyber-scaba-matrix" src="https://user-images.githubusercontent.com/300046/89186535-29e68400-d559-11ea-9532-ac57a3f6d306.png">
-
-Four stages of a security program life cycle:
-
-   1. Plan and Organize
-   2. Implement
-   3. Operate and Maintain
-   4. Monitor and Evaluate
-   <br /><br />
-
-Focus of security awareness training:
-
-* Senior management: risk to the organization and the laws and regulations that affect the organization.
-* Middle management: policies, standards, baselines, guidelines, and procedures that affect security. 
-* Technical staff: configuring and maintaining security controls, including how to recognize an attack when it occurs. 
-* Regular staff: responsibilities regarding security for performing day-to-day tasks in a secure manner. 
-
+<a target="_blank" href="https://hitrustalliance.net/understanding-leveraging-csf/">
+HITRUST Common Security Framework (CSF)</a> includes, harmonizes, and cross-references existing, globally recognized standards, regulations, and business requirements, including ISO, EU GDPR, <a href="#NIST">NIST</a>, and PCI.
 
 ## Amazon's Compliance
 
@@ -110,15 +92,22 @@ The Center for Internet Security (CIS) is a community of users, vendors and subj
 ISO Code of practice for information security controls defines 114 controls grouped into 14 categories.
 REMEMBER:
 
-   * ISO/IEC 27005 addresses risk management. 
-   * ISO/IEC 27007 addresses auditing. 
-   * ISO/IEC 27011 addresses telecommunications organization guidelines.
+   * ISO/IEC 27005 addresses risk management
+   * ISO/IEC 27007 addresses auditing
+   * ISO/IEC 27011 addresses telecommunications organization guidelines
    * ISO/IEC 27012 addresses controls (counter-measures)
-   * ISO/IEC 27015 addresses financial organization guidelines. 
-   * ISO/IEC 27033 addresses network security. 
-   * ISO/IEC 27034 addresses application security.
-   * ISO/IEC 27037 addresses digital evidence guidelines.
-   * ISO/IEC 27799 addresses health organization guidelines.
+   * ISO/IEC 27015 addresses financial organization guidelines
+   * ISO/IEC 27033 addresses network security
+   * ISO/IEC 27034 addresses application security
+   * ISO/IEC 27037 addresses digital evidence guidelines
+   * ISO/IEC 27799 addresses health organization guidelines
+   <br /><br />
+
+ISO/IEC 15288:2015  four categories of processes:
+   1. Agreement processes, including acquisition and supply
+   2. Organizational project-enabling processes, including infrastructure management, quality management, and knowledge management
+   3. Technical management processes, including project planning, risk management, configuration management, and quality assurance
+   4. Technical processes, including system requirements definition, system analysis, implementation, integration, operation, maintenance, and disposal
    <br /><br />
 
 ### CIS Security Benchmarks for Linux 
@@ -631,7 +620,9 @@ chmod: Unable to change file mode on /Users/wilsonmar/projects/WM/bin/jad.readme
 
 <hr />
 
-## Docker
+## Docker CIS
+
+https://github.com/dev-sec/cis-docker-benchmark
 
 There is also a Docker CAT:
 https://www.cisecurity.org/benchmark/docker/
@@ -641,10 +632,10 @@ The Docker Bench for Security is a script that checks for dozens of common best-
 
 https://blog.theodo.fr/2017/12/security-best-practices-tool-vms-including-dockers-host/
 
-Not to be confused with
-https://github.com/dev-sec/cis-docker-benchmark
-
 https://nvd.nist.gov/ncp/checklist/740
+
+<a target="_blank" href="https://nvd.nist.gov/vuln/search">https://nvd.nist.gov/vuln/search</a> for 
+known issues
 
 
 ## FedRAMP/FISMA compliance
@@ -662,7 +653,16 @@ SP 800-30 steps for a risk assessment:
    6. Determine risk as a combination of likelihood and impact.
    <br /><br />
 
+SP 800-34 
+   * A CIP (critical infrastructure protection) plan is a set of policies and procedures that serve to protect and recover assets and mitigate risks and vulnerabilities.
+   * An OEP (occupant emergency plan) outlines first-response procedures for occupants of a facility in the event of a threat or incident to the health and safety of personnel, the environment, or property.
+   * An ISCP (information system contingency plan) provides established procedures for the assessment and recovery of a system following a system disruption.
+   * A COOP (Continuity Of Operations) plan focuses on restoring an organization’s mission-essential functions (MEFs) at an alternate site and performing those functions for up to 30 days before returning to normal operations.
+   <br /><br />
+
 NIST also publishes SP1800 (Cybersecurity practice guides) and the broader SP 500 (Information Technology).
+
+### FedRAMP
 
 In 2011 a "cloud first" policy was defined in the Federal Risk and Authorization Program (FedRAMP) <a target="_blank" href="https://cio.gov/wp-content/uploads/downloads/2012/09/Federal-Cloud-Computing-Strategy.pdf">[pdf]</a> where federal agencies make use of cloud service providers (CSPs) given authority to operate (ATO) after receiving system authorization from an independent security assessment conducted by a 3PAO (third-party Assessor). 
 
@@ -697,16 +697,20 @@ for tools.
 
 <a target="_blank" href="https://www.cvedetails.com/top-50-products.php?year=0">Top 50 Products By Total Number Of "Distinct" Vulnerabilities - for all time</a> <a target="_blank" href="https://www.stigviewer.com/stigs">include</a> product versions now obsolete.
 
-## Other standards
+## International 
 
-https://quizlet.com/222277746/devsecops-acronyms-and-buzzwords-flash-cards/
+International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) 27018 code of practice covers the processing of personal information by cloud service providers.
 
-The Functions and Categories within the NIST Cybersecurity (Program) Framework (CSF) maps NIST 800-53 to CIS Controls:
+MTCS (Multi-Tier Cloud Security) Singapore 584:2013 Certification covers  Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS).
 
-![cybersecurity-nist-342x275](https://user-images.githubusercontent.com/300046/55505643-c8cf3900-5610-11e9-8f79-3e7bec5cfe7c.jpg)
 
-<a target="_blank" href="https://www.nist.gov/itl">
-NIST Information Technology Laboratory</a> emails out <a target="_blank" href="https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3">bulletins about vulnerabilities</a>
+## US Laws
+
+* Jurisdiction is the power or right of a legal or political agency to exercise its authority over a person, subject matter, or territory. Jurisdiction can be affected when the organization that owns the data is in one country while the data itself is stored in a facility in another country
+* Standing
+* Jurisprudence
+* Authority
+<br /><br />
 
 QUESTION: How does CIS relate to ITIL?
 
@@ -718,13 +722,155 @@ UK Government G-Cloud. The UK Government G-Cloud is a cloud computing certificat
 
 Health Insurance Portability and Accountability Act (HIPAA) is a US federal law that regulates patient Protected Health Information (PHI). A Business Associate Agreement (BAA) stipulates adherence to security and privacy provisions in HIPAA and the Health Information Technology for Economic and Clinical Health Act (HITECH) Act. 
 
-International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) 27018 code of practice covers the processing of personal information by cloud service providers.
-
-MTCS (Multi-Tier Cloud Security) Singapore 584:2013 Certification covers  Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS).
-
 Service Organization Controls (SOC) 1, 2, and 3 report is a framework by independent third-party auditors covering controls for data security, availability, processing integrity, and confidentiality as applicable to in-scope trust principles for each service.
 
+   * The Federal Privacy Act of 1974 ensures that only authorized persons should have access to personal information and that personal records should be up to date and accurate. 
+   * The Federal Intelligence Surveillance Act (FISA) of 1978 affects law enforcement and intelligence agencies and gives procedures for the physical and electronic surveillance and collection of “foreign intelligence information” between “foreign powers” and “agents of foreign powers.”
+
+   * The Computer Fraud and Abuse Act (CFAA) of 1986 affects any entities that may engage in hacking of “protected computers” as defined in the Act. It requires the creation of computer security plans and the appropriate training of system users or owners where the systems house sensitive information. was the first law written to require a formal computer security plan. 
+   * The Electronic Communications Privacy Act (ECPA) of 1986 extended government restrictions on wiretaps from telephone calls to include transmissions of electronic data by computer.
+
+   * The United States Federal Sentencing Guidelines of 1991 affects individuals and organizations convicted of felonies and serious (Class A) misdemeanors. It provides guidelines to prevent sentencing disparities that exist across the United States.
+   * The US Economic Espionage Act of 1996 provides a framework to deal with espionage attacks on corporations. According to the Act, all the assets of the organization, whether substantial or not, require protection. The Economic Espionage Act of 1996 affects companies that have trade secrets and any individuals who plan to use encryption technology for criminal activities. 
+   * The Communications Assistance for Law Enforcement Act (CALEA) of 1994 requires telecommunications carriers and manufacturers of telecommunications equipment to modify and design their equipment, facilities, and services to ensure that they have built-in surveillance capabilities. 
+   * The Gramm-Leach-Bliley Act (GLBA) of 1999 affects all financial institutions, including banks, loan companies, insurance companies, investment companies, and credit card providers. 
+
+   * The Personal Information Protection and Electronic Documents Act (PIPEDA) affects private sector organizations that collect, use, and disclose personal information in the course of commercial business in Canada. 
+   * The Federal Information Security Management Act (FISMA) of 2002 affects every federal agency. It requires the federal agencies to develop, document, and implement an agency-wide information security program.
+   * Basel II affects financial institutions and addresses minimum capital requirements, supervisory review, and market discipline. 
+
+   * The Health Insurance Portability and Accountability Act (HIPAA) prevents medical organizations (including health insurance companies, hospitals, and doctors’ offices) from sharing patient healthcare information without consent. 
+   * The Sarbanes-Oxley (SOX) Act provides guidelines on accurately reporting corporate financial data to shareholders.
+   * The General Data Protection Regulation (GDPR) states that the data gathered for private individuals should be used only for the purpose for which it is collected.
+   * The European Union Principles on Privacy state that the data gathered for private individuals should be used only for the purpose for which it is collected. 
+   * The United States Federal Sentencing Guidelines of 1991 affects individuals and organizations convicted of felonies and serious (Class A) misdemeanors. It provides guidelines to prevent sentencing disparities that exist across the United States. 
+   * The Communications Assistance for Law Enforcement Act (CALEA) of 1994 requires telecommunications carriers and manufacturers of telecommunications equipment to modify and design their equipment, facilities, and services to ensure that they have built-in surveillance capabilities. 
+   * The Personal Information Protection and Electronic Documents Act (PIPEDA) affects private sector organizations that collect, use, and disclose personal information in the course of commercial business in Canada. 
+   * The Federal Information Security Management Act (FISMA) of 2002 affects every federal agency. It requires the federal agencies to develop, document, and implement an agency-wide information security program. 
+   * The Payment Card Industry Data Security Standard (PCI DSS) affects any organizations that handle cardholder information for the major credit card companies.
+   <br /><br />
+
+### FIPS
+
+To comply with federal standards, organizations 
+   1. determine the security category of their information system in accordance with FIPS (Federal Information Processing Standard) Publication 199, Standards for Security Categorization of Federal Information and Information Systems
+   2. derive the information system impact level from the security category in accordance with FIPS Publication 200
+   3. apply the appropriately tailored set of baseline security controls in NIST Special Publication 800-53 Rev. 4.
+   <br /><br />
+
+
+<a name="NIST"></a>
+
+### NIST
+
+The Functions and Categories within the NIST Cybersecurity (Program) Framework (CSF) maps NIST 800-53 to CIS Controls:
+
+![cybersecurity-nist-342x275](https://user-images.githubusercontent.com/300046/55505643-c8cf3900-5610-11e9-8f79-3e7bec5cfe7c.jpg)
+
+<a target="_blank" href="https://www.nist.gov/itl">
+NIST Information Technology Laboratory</a> emails out <a target="_blank" href="https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3">bulletins about vulnerabilities</a>
+
 National Institute of Standards and Technology (NIST) Cybersecurity Framework (CSF) is a voluntary Framework that consists of standards, guidelines, and best practices to manage cybersecurity-related risks. Through a validated assessment performed by the Health Information Trust Alliance (HITRUST), a leading security and privacy standards development and accreditation organization, Office 365 is certified to the objectives specified in the NIST CSF.
+
+NIST SP 800-39 provides guidance for an integrated, organization-wide program for managing information security risk to organizational operations (i.e., mission, functions, image, and reputation), organizational assets, individuals, other organizations, and the nation resulting from the operation and use of federal information systems.
+
+Among <a target="_blank" href="https://csrc.nist.gov/publications/sp800">The many NIST SP 800 documents</a>:
+   * <a target="_blank" href="https://csrc.nist.gov/publications/detail/sp/800-60/vol-1-rev-1/final">
+   NIST SP 800-60</a> provides guidelines for mapping types of information and information systems to security categories.
+   * SP 800-183 describes the Internet of Things (IoT).
+   <br /><br />
+
+NIST SP 800-53 is within section 4 SECURITY CONTROL SELECTION of 
+<a target="_blank" href="https://csrc.nist.gov/publications/fips">https://csrc.nist.gov/publications/fips</a> NISP FIPS-200 and 201-3 catagorizes by impact.
+
+NIST SP 800-57 Key management lifecycle:
+   1. Pre-operational phase
+   2. Operational phase
+   3. Post-operational phase
+   4. Destroyed phase
+   <br /><br />
+
+NIST SP 800-92 log management infrastructure
+* General functions (log parsing, event filtering, and event aggregation)
+* Storage (log rotation, log archival, log reduction, log conversion, log normalization, log file integrity checking)
+* Log analysis (event correlation, log viewing, log reporting)
+* Log disposal (log clearing)
+<br /><br />
+
+NIST SP 800-137 ISCM (information security continuous monitoring) plan 
+   1.   Define an ISCM strategy.
+   2.   Establish an ISCM program.
+   3.   Implement an ISCM program.
+   4.   Analyze the data collected, and report findings.
+   5.   Respond to findings.
+   6.   Review and update the monitoring program.
+   <br /><br />
+
+Tiers in an organization defined by SP 800-139
+   1. Organization view, which addresses risk from an organizational perspective by establishing and implementing governance structures that are consistent with the strategic goals and objectives of organizations and the requirements defined by federal laws, directives, policies, regulations, standards, and missions/business functions. 
+   * Tier 2 is the mission/business process view, which designs, develops, and implements mission/business processes that support the missions/business functions defined at Tier 1. 
+   * Tier 3 is the information systems view, which includes operational systems, systems under development, systems undergoing modification, and systems in some phase of the system development life cycle.
+   <br /><br />
+
+SP 800-139 Functions to implement the appropriate safeguards to ensure delivery of critical infrastructure services
+   * Identify (ID): Develop the organizational understanding to manage cybersecurity risk to systems, assets, data, and capabilities.
+   * Protect (PR): Develop and implement the appropriate safeguards to ensure delivery of critical infrastructure services.
+   * Detect (DE): Develop and implement the appropriate activities to identify the occurrence of a cybersecurity event.
+   * Respond (RS): Develop and implement the appropriate activities to take action regarding a detected cybersecurity event.
+   * Recover (RC): Develop and implement the appropriate activities to maintain plans for resilience and to restore any capabilities or services that were impaired due to a cybersecurity event.
+   <br /><br />
+
+SP 800-139 framework implementation maturity tiers:
+   * Tier 1: Partial means that risk management practices are not formalized, and risk is managed in an ad hoc and sometimes reactive manner.
+   * Tier 2: Risk Informed means that risk management practices are approved by management but may not be established as organizational-wide policy.
+   * Tier 3: Repeatable means that the organization’s risk management practices are formally approved and expressed as policy.
+   * Tier 4: Adaptive means that the organization adapts its cybersecurity practices based on lessons learned and predictive indicators derived from previous and current cybersecurity activities through a process of continuous improvement.
+   <br /><br />
+
+NIST SP 800-160 defines the systems security engineering framework. It defines, bounds, and focuses the systems security engineering activities, both technical and nontechnical, toward the achievement of stakeholder security objectives and presents a coherent, well-formed, evidence-based case that those objectives have been achieved.
+Contexts within which security activities are conducted according to NIST SP 800-160?
+   * Problem context
+   * Solution context
+   * Trustworthiness context
+   <br /><br />
+
+NIST SP 800-154 is a draft publication for data-centric system threat modeling. It includes these steps:
+   1. Identify and characterize the system and data of interest.
+   2. Identify and select the attack vectors to be included in the model.
+   3. Characterize the security controls for mitigating the attack vectors.
+   4. Analyze the threat model.
+   <br /><br />
+
+NIST SP 800-66 provides guidelines for implementing the HIPAA Security Rule, which requires securing protected health information (PHI), also referred to as EPHI or ePHI (electronic protected health information). PHI is any individually identifiable health information.
+
+NIST SP 800-122 gives guidelines on protecting the confidentiality of PII (Personally identifiable information) is considered information that should be classified and protected. PII are assigned confidentiality impact levels based on
+FIPS 199 designations: 
+   * LOW if the loss of confidentiality, integrity, or availability could be expected to have a limited adverse effect on organizational operations, organizational assets, or individuals.
+   * MODERATE if the loss of confidentiality, integrity, or availability could be expected to have a serious adverse effect on organizational operations, organizational assets, or individuals.
+   * HIGH if the loss of confidentiality, integrity, or availability could be expected to have a severe or catastrophic adverse effect on organizational operations, organizational assets, or individuals.
+   <br /><br />
+
+U.S. federal agencies use the sensitive but unclassified (SBU) designation when information is not classified but still needs to be protected and requires strict controls over its distribution.
+
+"Do not appropriate other people’s intellectual output" is one of the Computer Ethics Institute (CEI) Ten Commandments of Computer Ethics, but is not part of the(ISC)2 code of ethics preamble.
+
+## Security Testing
+
+OSSTMM (Open Source Security Testing Methodology Manual) published by Pete Herzog of ISECOM (Institute for Security and Open Methodologies) covers the different kinds of security tests of physical, human (processes), and communication systems. It does not cover any specific tools that can be used to perform these tests. It defines five risk categorizations: vulnerability, weakness, concern, exposure, and anomaly. Once a risk is detected and verified, it is assigned a risk assessment value.
+
+COSCO (Committee of Sponsoring Organizations) broadly defines ERM (Enterprise Risk Management) as “the culture, capabilities and practices integrated with strategy-setting and its execution, that organizations rely on to manage risk in creating, preserving and realizing value.” The ERM framework is presented in the form of a three-dimensional matrix. The matrix includes eight components of enterprise risk management and four categories of objectives across the top: strategic, operations, reporting, and compliance. 
+
+The organization, its divisions, and business units are depicted as the third dimension of the matrix for applying the framework.
+
+## RFCs
+
+RFC's https://tools.ietf.org/html/rfc1087
+   * RFC 1087 outlines concepts pertaining to what the IAB considers unethical and unacceptable. It considers destroying the integrity of computer-based information unethical.
+   * RFC 2010 Operational Criteria for Root Name Servers
+   * RFC 1589 A Kernel Model for Precision Timekeeping
+   * RFC 1150 F.Y.I. on F.Y.I.
+   <br /><br />
+
 
 ## Credential Rotation Lifecycle
 
@@ -791,11 +937,23 @@ Education/Experience Requirements:
 
 ## Glossary
 
+https://quizlet.com/222277746/devsecops-acronyms-and-buzzwords-flash-cards/
+
 A vulnerability is an absence or a weakness of a countermeasure that is in place.
 
 An exposure is an instance of being subjected or exposed to losses from a threat.
 
 A trigger is an event that indicates that a risk has occurred or is about to occur. 
+
+Quantitative risk analysis: Asset Value (AV) x Exposure Factor (EF) = Single Loss Expectancy (SLE).
+<a target="_blank" href="https://www.youtube.com/watch?v=mpSdrr7QzZE">VIDEO</a> 
+
+Annualized Rate of Occurrence (ARO) X Single Loss Expectancy (SLE) = Annual Loss Expectancy (ALE).
+
+Cost/benefit of implementing a particular safeguard, where ALE is the annual loss expectancy: 
+(ALE before safeguard) – (ALE after safeguard) – (annual cost of safeguard)
+
+Residual risk = total risk – countermeasures.
 
 Tenents:
    1. Confidentiality (IPSec encryption in transit, social engineering)
@@ -804,26 +962,104 @@ Tenents:
    4. Accountability (auditing)
    <br /><br />
 
+### Threats
+
 CRAMM is an abbreviation of "C" for the UK government’s Central Computer and Telecommunications Agency (CCTA) Risk Analysis and Management Method. CRAMM reviews includes three steps:
    1. Identify and value assets.
    2. Identify threats and vulnerabilities and calculate risks.
    3. Identify and prioritize countermeasures.
    <br /><br />
 
-Threat modeling process:
+A threat modeling program continually reassess the threat environment, including new adversaries, and proactively adapt their information security program. Threat modeling process:
    1. Decompose the application or infrastructure
-   1. Determine the threats
-   1. Determine countermeasures and mitigations
-   1. Rank the threats
+   2. Determine the threats
+   3. Determine countermeasures and mitigations
+   4. Rank the threats
    <br /><br />
 
+Penetration test methodology - To simulate an attack on a system or network to evaluate the risk profile of an environment
+   1. Reconnaissance
+   2. Enumeration
+   3. Vulnerability Analysis
+   4. Execution/Exploitation
+   5. Document Findings
+   <br /><br />
+
+Microsoft Threat Model Tool - dataflow diagrams that reflect potential threats. STRIDE and DREAD
+
+Developed by Microsoft, STRIDE is a memonic for classification of threats in an application:
+   * Spoofing of user identity
+   * Tampering
+   * Repudiation
+   * Information disclosure (privacy breach or data leak)
+   * Denial of service (DoS)
+   * Elevation of privilege
+   <br /><br />
+   
 Threats: spoofing, tampering, repudiation, information disclosure, denial of service, and elevation of privilege. 
 
+Attacks - incidents that violate an organization’s security or privacy policies:
+   * In a side-channel attack, the attacker gains information about the encryption algorithms from the cryptosystem that is implemented in the network.
+   * In a known plaintext attack, an attacker uses the plaintext and ciphertext versions of a message to discover the key used.
+   * In an analytic attack, an attacker uses known structural weaknesses or flaws to determine the algorithm used.
+   * In a replay attack, an attacker monitors the traffic stream in a network and maliciously repeats or delays the transmission of valid data over the network.
+   * A <strong>race condition</strong> causes processes to execute in a different order to affect the result.
+   * A Time-Of-Check/Time-Of-Use (TOC/TOU) attack, also called <strong>asynchronous attack</strong>, interrupts a task and changes something to affect the result while the tasks occur in the correct order. A countermeasure is making critical sets of instructions atomic.
+   * <strong>Emanations capturing</strong> is eavesdropping on wave frequencies to capture traffic.
+   * A maintenance hook is a backdoor in an application that is designed by the application developers to perform maintenance tasks, which can enable code to be executed without the usual security checks. A countermeasure for maintenance hooks is code reviews. 
+   * A buffer overflow transmits too much data to an application or operating system. A countermeasure for buffer overflows is input validation. 
+   * A <strong>covert storage channel attack</strong> is when one process writes data to a hard drive and another process reads it. In this attack a higher-level subject writes data to a storage area and a lower-level subject reads it.
+   <br /><br />
+
+Attacks to data and databases <a target="_blank" href="https://www.youtube.com/watch?v=YqFhKlzAABE&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR&index=27">VIDEO</a>
+   * An inference attack is the development of a detailed version of an object from another object using different values in the new object. A countermeasure is <strong>Polyinstantiation</strong>, which is development of a detailed version of an object from another object using different values in the new object. 
+   * A data contamination attack. Proper implementation of security levels is a countermeasure for data contamination. 
+   <br /><br />
+
+A breach is an attack that has been successful in reaching its goal. 
+
+## Models & Lifecycles
+
+Focus of security awareness training:
+   * Senior management: risk to the organization and the laws and regulations that affect the organization.
+   * Middle management: policies, standards, baselines, guidelines, and procedures that affect security. 
+   * Technical staff: configuring and maintaining security controls, including how to recognize an attack when it occurs. 
+   * Regular staff: responsibilities regarding security for performing day-to-day tasks in a secure manner. 
+   <br /><br />
+
+FERMA (??? European Risk Management Standard) provides guidelines for managing risk in an organization.
+
+The PASTA methodology provides a seven-step process for analyzing applications to align business objectives and technical requirements. This method provides a threat identification, enumeration, and scoring process. It is intended to provide an attacker-centric view of the application and infrastructure from which defenders can develop an asset-centric mitigation strategy.
+
+The Trike methodology is an implementation model created and then analyzed to produce a threat model. Risk values are assigned to the identified threats. Mitigating controls are assigned to the vulnerabilities that lead to the identified threats.
+
+<img width="682" alt="cyber-scaba-matrix" src="https://user-images.githubusercontent.com/300046/89186535-29e68400-d559-11ea-9532-ac57a3f6d306.png">
+
+Four stages of a security program life cycle:
+
+   1. Plan and Organize
+   2. Implement
+   3. Operate and Maintain
+   4. Monitor and Evaluate
+   <br /><br />
+
+   * Stakeholder refers to any individuals, teams, and departments, including groups outside the organization, with interests or concerns that should be considered.
+   * View refers to the representation of the system from the perspective of a stakeholder or a set of stakeholders.
+   * Viewpoint is a template used to develop individual views that establish the audience, techniques, and assumptions made. 
+   * Architecture describes the organization of the system, including its components and their interrelationships along with the principles that guided its design and evolution. 
+   * Architectural description (AD) refers to the set of documents that convey the architecture in a formal manner.
+   <br /><br />
+
 Models:
-   1. The Open Group Architecture Framework (TOGAF) is an enterprise architecture framework that is based on four interrelated domains: technology, applications, data, and business. 
-   1. Sherwood Applied Business Security Architecture (SABSA) is a framework in addition to a methodology in that it prescribes the processes to follow to build and maintain the architecture. It uses the six communication questions (What, Where, When, Why, Who, and How) that intersect with six layers (operational, component, physical, logical, conceptual, and contextual. 
-   1. The Zachman Framework is a two-dimensional model that intersects communication interrogatives (What, Why, Where, and so on) with various viewpoints (Planner, Owner, Designer, and so on). 
-   1. The ISO/IEC 27000 Series establishes information security standards published jointly by the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC). Control Objectives for Information and Related Technology (COBIT) is a set of control objectives used as a framework for IT governance.
+   * The Open Group Architecture Framework (TOGAF) is an enterprise architecture framework that is based on four interrelated domains: technology, applications, data, and business. 
+
+   * Sherwood Applied Business Security Architecture (SABSA) is a framework in addition to a methodology in that it prescribes the processes to follow to build and maintain the architecture. It uses the six communication questions (What, Where, When, Why, Who, and How) that intersect with six layers (operational, component, physical, logical, conceptual, and contextual. 
+
+   The SABSA (Sherwood Applied Business Security Architecture) is a "customizable" framework and methodology for enterprises,   based on business requirements (like NIST for private businesses). The framework uses six communication questions (What, Where, When, Why, Who, and How) that intersect with six layers of Enterprise Security Architecture (ESA) (operational, component, physical, logical, conceptual, and contextual):
+
+   * The Zachman Framework is a two-dimensional model that intersects communication interrogatives (What, Why, Where, and so on) with various viewpoints (Planner, Owner, Designer, and so on). 
+
+   * The ISO/IEC 27000 Series establishes information security standards published jointly by the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC). Control Objectives for Information and Related Technology (COBIT) is a set of control objectives used as a framework for IT governance.
    <br /><br />
 
 Process impprovement approaches:
@@ -832,6 +1068,7 @@ Process impprovement approaches:
    * Control Objectives for Information and Related Technology (COBIT) is a security controls development framework that uses a process model to subdivide IT into four domains: Plan and Organize (PO), Acquire and Implement (AI), Deliver and Support (DS), and Monitor and Evaluate (ME).
    * Department of Defense Architecture Framework (DoDAF) is an architecture framework that organizes a set of products under eight viewpoints: Capability Viewpoint (CV), Data and Information Viewpoint (DIV), Operation viewpoint (OV), Project Viewpoint (PV), SerViCes Viewpoint (SvcV), STanDards Viewpoint (STDV), and Systems viewpoint (SV), All Viewpoint (required) (AV).
    * British Ministry of Defence Architecture Framework (MODAF) is an architecture framework that divides information into seven viewpoints: STrategic viewpoint (StV), Operational Viewpoint (OV), Service-Oriented Viewpoint (SOV), Acquisition Viewpoint (AcV), Technical viewpoint (TV), Systems Viewpoint (SV), All viewpoint (AV).
+   * DHS (Department of Homeland Security) is involved in promoting software security best practices. Its Build Security In (BSI) initiative promotes a process-agnostic approach that makes security recommendations with regard to architectures, testing methods, code reviews, and management processes.
    <br /><br />
 
 Security program lifecycle:
@@ -839,6 +1076,51 @@ Security program lifecycle:
    2. Implement
    3. Monitor and evaluate (review audit logs)
    4. Operate and Maintain (perform audits)
+   <br /><br />
+
+Information life cycle:
+   1. Create/receive
+   1. Distribute
+   1. Use
+   1. Maintain
+   1. Dispose/store
+   <br /><br />
+
+System Development Life Cycle:
+   1.   Initiate
+   2.   Acquire/Develop
+   3.   Implement
+   4.   Operate/Maintain
+   5.   Dispose
+   <br /><br />
+
+The process of acquiring software:
+   1.   Planning: During this phase, the organization performs a needs assessment, develops the software requirements, creates the acquisition strategy, and develops evaluation criteria and a plan.
+   2.   Contracting: Once planning is complete, the organization creates a request for proposal (RFP) or other supplier solicitation forms, evaluates the supplier proposals, and negotiates the final contract with the selected seller.
+   3.   Monitoring and accepting: When a contract is in place, the organization establishes the contract work schedule, implements change control procedures, and reviews and accepts the software deliverables.
+   4.   Follow-up: When the software is in place, the organization must sustain the software, including managing risks and changes. At some point, it may be necessary for the organization to decommission the software.
+
+### Cohesion is opposite of Coupling
+   * <strong>Low cohesion</strong> describes a module that carries out <strong>many tasks</strong>, making it harder to maintain and reuse.
+   * High cohesion describes a software module that does not affect many other modules, is easier to update.
+
+   * <strong>High coupling</strong> describes a module that must <strong>interact with many other modules</strong>.
+   * Low coupling describes a module that performs its job without using other modules.
+   <br /><br />
+
+Polyinstantiation is a process used to prevent data inference violations. 
+
+Aggregation is a database security concern that arises when a user does not have complete access to sensitive data but can access portions of it. 
+
+WASC (Web Application Security Consortium) is an organization that provides best practices for web-based applications along with a variety of resources, tools, and information that organizations can make use of in developing web applications.
+
+Change control process: 
+   1. requested; 
+   2. approved; 
+   3. documented in the change log; 
+   4. tested and presented; 
+   5. implemented; 
+   6. reported to management or the change control board (CCB).
    <br /><br />
 
 To establish a relationship with a third party which accesses organizational assets both remotely and locally:
@@ -863,57 +1145,270 @@ Documents:
    * A disaster recovery plan (DRP) is implemented when the emergency occurs and includes the steps to restore functions and systems.
    <br /><br />
 
-US Laws:
-   * The Federal Privacy Act of 1974 ensures that only authorized persons should have access to personal information and that personal records should be up to date and accurate. 
-   * The Federal Intelligence Surveillance Act (FISA) of 1978 affects law enforcement and intelligence agencies and gives procedures for the physical and electronic surveillance and collection of “foreign intelligence information” between “foreign powers” and “agents of foreign powers.”
-
-   * The Computer Fraud and Abuse Act (CFAA) of 1986 affects any entities that may engage in hacking of “protected computers” as defined in the Act. It requires the creation of computer security plans and the appropriate training of system users or owners where the systems house sensitive information. was the first law written to require a formal computer security plan. 
-   * The Electronic Communications Privacy Act (ECPA) of 1986 extended government restrictions on wiretaps from telephone calls to include transmissions of electronic data by computer?
-
-   * The United States Federal Sentencing Guidelines of 1991 affects individuals and organizations convicted of felonies and serious (Class A) misdemeanors. It provides guidelines to prevent sentencing disparities that exist across the United States.
-   * The US Economic Espionage Act of 1996 provides a framework to deal with espionage attacks on corporations. According to the Act, all the assets of the organization, whether substantial or not, require protection. The Economic Espionage Act of 1996 affects companies that have trade secrets and any individuals who plan to use encryption technology for criminal activities. 
-   * The Communications Assistance for Law Enforcement Act (CALEA) of 1994 requires telecommunications carriers and manufacturers of telecommunications equipment to modify and design their equipment, facilities, and services to ensure that they have built-in surveillance capabilities. 
-   * The Gramm-Leach-Bliley Act (GLBA) of 1999 affects all financial institutions, including banks, loan companies, insurance companies, investment companies, and credit card providers. 
-
-   * The Personal Information Protection and Electronic Documents Act (PIPEDA) affects private sector organizations that collect, use, and disclose personal information in the course of commercial business in Canada. 
-   * The Federal Information Security Management Act (FISMA) of 2002 affects every federal agency. It requires the federal agencies to develop, document, and implement an agency-wide information security program.
-   * Basel II affects financial institutions and addresses minimum capital requirements, supervisory review, and market discipline. 
-
-   * The Health Insurance Portability and Accountability Act (HIPAA) prevents medical organizations (including health insurance companies, hospitals, and doctors’ offices) from sharing patient healthcare information without consent. 
-   * The Sarbanes-Oxley (SOX) Act provides guidelines on accurately reporting corporate financial data to shareholders.
-   * The General Data Protection Regulation (GDPR) states that the data gathered for private individuals should be used only for the purpose for which it is collected.
-   * The European Union Principles on Privacy state that the data gathered for private individuals should be used only for the purpose for which it is collected. 
-   * The United States Federal Sentencing Guidelines of 1991 affects individuals and organizations convicted of felonies and serious (Class A) misdemeanors. It provides guidelines to prevent sentencing disparities that exist across the United States. 
-   * The Communications Assistance for Law Enforcement Act (CALEA) of 1994 requires telecommunications carriers and manufacturers of telecommunications equipment to modify and design their equipment, facilities, and services to ensure that they have built-in surveillance capabilities. 
-   * The Personal Information Protection and Electronic Documents Act (PIPEDA) affects private sector organizations that collect, use, and disclose personal information in the course of commercial business in Canada. 
-   * The Federal Information Security Management Act (FISMA) of 2002 affects every federal agency. It requires the federal agencies to develop, document, and implement an agency-wide information security program. 
-   * The Payment Card Industry Data Security Standard (PCI DSS) affects any organizations that handle cardholder information for the major credit card companies.
+ACID properties:
+   * Atomicity means that either all operations are complete or the database changes are rolled back. 
+   * Consistency means that the transaction follows an integrity process that ensures that data is consistent in all places where it exists. 
+   * Isolation means that the transaction does not interact with other transactions until completion.
+   * Durability is present when, once verified, the transaction is committed and cannot be rolled back. 
    <br /><br />
 
-RFC's https://tools.ietf.org/html/rfc1087
-   * RFC 1087 outlines concepts pertaining to what the IAB considers unethical and unacceptable. It considers destroying the integrity of computer-based information unethical.
-   * RFC 2010 Operational Criteria for Root Name Servers
-   * RFC 1589 A Kernel Model for Precision Timekeeping
-   * RFC 1150 F.Y.I. on F.Y.I.
+System owners are responsible for the systems on which data resides. While the data owner owns the data and the data custodian configures the appropriate permissions for user access to the data, the system owner must determine the parameters that govern the system, such as what types of data and applications can be stored on the system, who owns the data and applications, and who determined the users that can access the data and applications.
+
+Data classification program:
+   1. Define the classification levels. 
+   2. Specify the data classification criteria.
+
+   3. Identify the data owners who determine the classification level of the information he owns and protects the data for which he is responsible.
+   4. Identify the data custodian who implements the information classification and controls determined by the data owner.
+
+   5. Indicate the controls required for each classification level. The System owner ensures that the appropriate controls are in place.
+   6. Document any known exceptions to the controls. 
+
+   7. Document information custody transfer guidelines. 
+   8. Create data classification review procedures. 
+   9. Document data declassification procedures. 
+
+   10. Develop the data classification security awareness program.
+   * Security administrator maintains security devices and software, including firewalls, antivirus software, etc.
    <br /><br />
 
-NIST SP 800-53 is within section 4 SECURITY CONTROL SELECTION of 
-<a target="_blank" href="https://csrc.nist.gov/publications/fips">https://csrc.nist.gov/publications/fips</a> NISP FIPS-200 and 201-3
-catagorizes by impact.
+REMEMBER: A land attack sends a spoofed TCP SYN packet with the target host’s IP address and an open port as both the source and the destination to the target host on an open port.
 
-https://nvd.nist.gov/vuln/search
-known issues
+Polyinstantiation prevents data inference attacks by preventing low-level database users from inferring the existence of higher-level data. It enables a relation to contain multiple tuples with the same primary keys, with each instance distinguished by a security level. https://www.wikiwand.com/en/Inference_attack
 
-"Do not appropriate other people’s intellectual output" is one of the Computer Ethics Institute (CEI) Ten Commandments of Computer Ethics, but is not part of the(ISC)2 code of ethics preamble.
+Dedicated security mode employs a single classification level.
 
-Quantitative risk analysis: Asset Value (AV) x Exposure Factor (EF) = Single Loss Expectancy (SLE).
+"system integrity" implies that a system will work as intended.
 
-Annualized Rate of Occurrence (ARO) X Single Loss Expectancy (SLE) = Annual Loss Expectancy (ALE).
+Aspects of identity management whereby users are identified, authenticated, and authorized: 
+entities, attributes, credentials, and entitlements.
 
-Cost/benefit of implementing a particular safeguard, where ALE is the annual loss expectancy: 
-(ALE before safeguard) – (ALE after safeguard) – (annual cost of safeguard)
+CPTED (Crime prevention through environmental design): 
+   * natural access control
+   * natural territorials reinforcement
+   * natural surveillance
+   <br /><br />
 
-Residual risk = total risk – countermeasures.
+<a target="_blank" href="https://www.youtube.com/watch?v=_IfGEY4fo18">Trusted Computer System Evaluation Criteria (TCSEC)</a> 
+functionality at least once. Enhanced by EU in ITSEC to assurance every time:
+   * F6 + E6 = A1 = Mathamatically Verified protection
+   * F3 + E3 = B1, B2, B3 = Mandatory Protection (military) resistant to penetration attempts.
+   * F2 + E2 = C2 = Controlled access protection
+   * F1 + E1 = C1 = Discretionary Protection (commercial)
+   * E0 = D  = Minimal Protection
+   <br /><br />
+
+ISO 15408 2005 = Common Criteria on TOE (Target of Evaulation) for Security Target report satisfies independently verified 
+by NIAP (National Information Assurance Partnership) to
+"compliant" instead of previous EAL (Evaluation Assurance Levels) 1 - 7 highest:
+   1. A user wants the system to operate but ignore security threats.
+   2. Developers use good design practices but security is not a high priority.
+   4. Security configuration is based on good commercial development. This level is the common benchmark for commercial systems, including operating systems and products.
+   5. Security is implemented starting in early design. Provides high levels of security assurance.
+   6. Specialized security engineering provides high levels of assurance. Highly secure from penetration attackers.
+   7. Extremely high levels of security are provided. This level requires extensive testing, measurement, and independent testing.
+   <br /><br />
+
+Security Models: VIDEO <a target="_blank" href="https://www.youtube.com/watch?v=FRi73kodf_c&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR&index=2">2</a>,<a target="_blank" title="2016" href="https://www.youtube.com/watch?v=4esHgEOmTqU&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR">3</a> 
+   * The <a target="_blank" href="https://www.wikiwand.com/en/Bell%E2%80%93LaPadula_model">Bell-LaPadula (BLP) model</a> focuses on data confidentiality and controlled access to classified information. It uses a state machine with transition functions to control information flow, characterized by the phrase "write up, read down" (WURD). It was the first mathematical model of a multilevel system for enforcing access control. Not dynamic. It's a multilevel security model because it allows simultaneous processing of classified information across the security levels.
+   
+   * The Brewer-Nash (Chinese Wall) model introduced the concept of allowing <strong>dynamic</strong> access controls based on a user’s previous actions (conflicts of interest). Based on RBAC.
+
+   * The <a target="_blank" href="https://www.wikiwand.com/en/Clark%E2%80%93Wilson_model">Clark-Wilson integrity model</a> concerns itself with data integrity by allowing data to be altered only through programs and not directly by users.
+   * The Lipner model shares characteristics with the Clark-Wilson model in that it separates objects into data and programs.
+   * The Biba Integrity Model describes rules for the protection of data integrity. 
+   * Graham-Denning model
+   * HRU (Harrison-Ruzzo-Ullman) uses ACL matrix of subject roles with columns of objects.
+   * The Take-Grant model is represented as a directed graph, called a protection graph. The subjects and objects of the computer system are the vertices and the access rights of subjects to objects are represented by arcs.
+   * The Goguen-Meseguer model is the foundation of the noninterference model. With this model, the list of objects that a subject can access is predetermined.
+   * The Sutherland model defines a set of system states, initial states, and state transitions. Using these predetermined secure states, the Sutherland model maintains integrity and prohibits interference.
+   <br /><br />
+
+A <strong>reference monitor</strong> is a system component that enforces access controls on an object.
+
+   * A PLD (programmable logic device) is an integrated circuit with connections or internal logic gates that can be changed through a programming process. 
+   * A FPGA (field-programmable gate array) is a type of PLD that is programmed by blowing fuse connections on the chip or using an antifuse that makes a connection when a high voltage is applied to the junction.
+   * Flash memory is a type of electrically programmable ROM.
+   * Firmware is a type of ROM where a program or low-level instructions are installed.
+   * The TCB (Trusted Computer Base) comprises the components (hardware, firmware, and/or software) that are trusted to enforce the security policy of the system that, if compromised, jeopardize the security properties of the entire system.
+   <br /><br />
+
+Multithreading allows multiple tasks to be performed within a single process. A thread is a self-contained sequence of instruction that can execute in parallel with other threads that are part of the same process. Multithreading is often used in applications to reduce overhead and increase efficiency.
+
+Multitasking ...
+
+A <strong>protection domain</strong> is memory space isolated from other running processes in a multiprocessing system. 
+
+State machine models: 
+   * A state machine model examines every possible state the system could be in and ensures that the system maintains the proper security relationship between objects and subjects in each state.
+   * The multilevel lattice and information flow model types focus mainly on information flow. The multilevel lattice model was developed mainly to deal with confidentiality issues, and the information flow model focuses on controlling information flows that relate two versions of the same object. 
+   * A non-interference model is less concerned with the flow of information and more concerned with a subject’s knowledge of the state of the system at a point in time; it concentrates on preventing the actions that take place at one level from altering the state presented to another level.
+   * A matrix-based model organizes tables of subjects and objects indicating what actions individual subjects can take upon individual objects.
+   <br /><br />
+
+Cryptographic key life cycle: 1. Creation 2. Initialization 3. Distribution 4. Activation 5. Inactivation 6. Termination
+  PROTIP: Creation before Initialization; Activation after Distribution.
+
+Ciphers:
+   * Diffusion is the process of changing the location of plaintext within the ciphertext. 
+   * Confusion is the process of changing a key value during each round of encryption. 
+   * Transposition is the process of shuffling or reordering the plaintext to hide the original message. 
+   * Substitution is the process of exchanging one byte in a message for another.
+   <br /><br />
+
+A running key cipher is NOT a substitution cipher. A running key cipher uses a physical component, usually a book, to provide the polyalphabetic characters. All the other options are substitution ciphers.
+
+Malware (malicious software):
+   * A virus relies upon other application programs to execute itself and infect a system.
+   * An armored virus includes protective code that prevents examination of critical elements, such as scans by antivirus software.
+   * Spyware uses tracking cookies to collect and report on a user’s activities to the spyware programmer. 
+   * A Trojan horse is malware disguised as a useful utility but embeds malicious code in itself. 
+   * A worm is a program that spreads itself through network connections. 
+   * Adware is a software application that displays advertisements while the application is executing.
+   <br /><br />
+
+Model:
+   * A state machine model examines every possible state the system could be in and ensures that the system maintains the proper security relationship between objects and subjects in each state.
+   * The non-interference model is less concerned with the flow of information and more concerned with a subject’s knowledge of the state of the system at a point in time; it concentrates on preventing the actions that take place at one level from altering the state presented to another level.
+   * The matrix-based model organizes tables of subjects and objects indicating what actions individual subjects can take upon individual objects. 
+   * The multilevel lattice model was developed mainly to deal with confidentiality issues and focuses mainly on information flow. 
+   * The information flow model focuses on controlling information flows that relate two versions of the same object.
+   <br /><br />
+
+Ciphers:
+   * A concealment cipher occurs when plaintext is interspersed somewhere within other written material. Also called "Null" cipher.
+   * Vigenere cipher <a target="_blank" href="https://www.youtube.com/watch?v=SkJcmCaHqS0">VIDEO</a> was used by US Confederates using a brass cipher disk. It aims to defeat simple frequency analysis.
+
+   * A running key cipher uses a physical component, usually a book, to provide the polyalphabetic characters. 
+   * Enigma
+   * Lucifer was created by IBM and used a <a target="_blank" href="https://www.youtube.com/watch?v=FGhj3CGxl8I">Feistel cipher</a> a framework to build ciphers. based on DES. Used by TwoFish. Its innovation is decryption.
+   <br /><br />
+
+   Kerckhoff’s Principle
+
+* A symmetric algorithm uses a private or secret key that must remain secret between the two parties. It provides confidentiality but NOT authentication or nonrepudiation.
+* Symmetric algorithms include both stream-based and block ciphers. 
+
+REMEMBER Algorithms: https://competitions.cry.yp.to/aes.html
+   * MD5, SHA-1, SHA-256, RIPEMD-160 are hashing algorithms.
+   * El Gamal (slowest), AES, Twofish, Blowfish, Skipjack, DES, and 3DES are symmetric algorithms (same key for encrypt/decrypt, so one time)
+   * RSA, DSA, Elliptic Curve Cryptosystem (ECC), Diffie-Hellman key exchange, Knapsack are asymmetric
+   * RSA, ECC support digital signatures and encryption. 
+
+   * DES uses a 64-bit block size. 56 bits.
+   * IDEA provides a key size up to 128 bits.
+   * RC6 provides the <strong>largest key size</strong> up to 2,048 bits. From NSA.
+   
+   * RC6 supports a 32-, 64-, or 128-bit block size. Written by Ron Rivest
+   * 3DES provides a key size up to 168 bits. 3 costly rounds. Not widely used.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=O4xNJsjtN6E">AES</a> supports a 128-, 192-, or 256-bit (16 byte) block size, weaved through data blocks. Subset of Rijndael, winner of NIST contest for faster in 1998.
+   * Twofish provides a key size 128-, 192-, 256 bits. Written by Bruce Sheiner
+   * Blowfish
+   <br /><br />
+
+   REMEMBER: rounds of computations:
+   * HAVAL performs 3, 4, or 5 
+   * MD5 performs 4 
+   * IDEA performs 8
+   * AES performs 14 
+   * TwoFish performs 16
+   * Tiger performs 24
+   * Skipjack performs 32
+   * SHA-256 performs 64
+   <br /><br />
+
+   RC4 is a stream cipher and does not have a block size. RC4 is symmetric.
+
+   * Stream-based ciphers are generally cheaper to implement than block ciphers.
+   * Block ciphers are generally less susceptible to security issues.
+   * Block ciphers are generally used more in software implementations.
+
+Block cipher modes use IVs to ensure that patterns are not produced during encryption. But IVs are not modes. 
+Modes used by block ciphers: Electronic Code Book (ECB), Cipher Block Chaining (CBC), Cipher Feedback (CFB), and Counter Mode (CTR).
+
+<a target="_blank" href="https://www.youtube.com/watch?v=VPvZbMXfv_0">VIDEO</a>: Hybrid cryptography combines the convenience of a public-key cryptosystem with the efficiency of a symmetric-key cryptosystem. Public-key cryptosystems are convenient in that they do not require the sender and receiver to share a common secret in order to communicate securely:
+   1. The symmetric algorithm provides keys used for encryption. 
+   2. The symmetric keys are passed to the asymmetric algorithm, which encrypts the symmetric keys and automatically distributes them. 
+   3. The message is encrypted with the symmetric key. 
+   4. Both the message and the key are sent to the receiver. 
+   5. The receiver decrypts the symmetric key and uses the symmetric key to decrypt the message.
+   <br /><br />
+
+Implementation of Confusion is the process of changing a key value during each round of encryption.
+   * 3DES-EEE3 encrypts each block of data three times, each time with a different key. 
+   * 3DES-EDE3 encrypts each block of data with the first key, decrypts each block with the second key, and encrypts each block with the third key.
+   * 3DES-EDE2 encrypts each block of data with the first key, decrypts each block with the second key, and then encrypts each block with the first key.
+   * 3DES-EEE2 encrypts each block of data with the first key, encrypts each block with the second key, and then encrypts each block with the third key.
+   <br /><br />
+
+With public key infrastructure (PKI)
+   * A subject is an entity that seeks to have a certificate validated. 
+   * A target is a path to a public key. 
+   * A verifier is an entity that verifies a public key chain.
+   * A trust anchor is a public key that verifies the certificate used in a digital signature. 
+   <br /><br />
+
+OCSP (Online Certificate Status Protocol) is the Internet protocol that obtains the revocation status of an X.509 digital certificate. A certificate revocation list (CRL) contains a list of all the certificates that have been revoked. 
+
+Key clustering occurs when different encryption keys generate the same ciphertext from the same plaintext message. 
+Cryptanalysis is the science of decrypting ciphertext without prior knowledge of the key or cryptosystem used. 
+A keyspace is all the possible key values when using a particular algorithm or other security measure. 
+
+A TPM (Trusted Platform Module) protects the contents of an encrypted hard drive by storing the decryption key in the host computer. If the hard drive is removed, the data cannot be decrypted. 
+Secure Electronic Transaction (SET) was a credit card transaction technology. 
+
+SAML (Security Assertion Markup Language) is an XML-based open standard data format for exchanging authentication and authorization data between parties, in particular, between an identity provider and a service provider.
+
+OVAL (Open Vulnerability and Assessment Language) is a standard written in XML that provides open and publicly available security content. Its purpose is to standardize information between different security tools.
+
+Memory:
+   * Associative memory searches for a specific data value in memory rather than using a specific memory address.
+   * Indirect addressing is the type of memory addressing where the address location that is specified in the program instruction contains the address of the final desired location.
+   * Absolute addressing addresses the entire primary memory space. Implied addressing refers to registers usually contained inside the CPU.
+   * A memory leak occurs when a computer program incorrectly manages memory allocations, which can exhaust available system memory as an application runs. 
+   <br /><br />
+
+CTR (DES Counter Mode) is used in IEEE 802.11i. 
+
+A process is a series of actions or steps taken in order to achieve a particular end. Organizations will define individual processes and their relationship to one another.
+
+Workflow
+
+Metrics:
+   * RTO (Recovery Time Objective)
+   * MTD (Maximum Tolerable Downtime)
+   <br /><br />
+
+Confinement is a term used to describe processes in a system. When a process is confined, the process is only allowed to read from and write to certain memory locations and resources. Confinement is usually carried out using the operating system, through a confinement service, or using a hypervisor.
+
+The bounds of a process set limits on the memory addresses and resources the process can access. The bounds logically segment memory areas for each process to use.
+
+### Physical
+
+Fire extinguisher classes:
+   * Class A extinguishers are used for ordinary combustibles. 
+   * Class B extinguishers are used for flammable liquids and flammable gases. 
+   * Class C extinguishers are used for electrical equipment. 
+   * Class D extinguishers are used for combustible metals.
+   * Class K extinguishers are used for cooking oil or fat.
+   <br /><br />
+
+## Biometrics
+
+* A Type I error is false rejection rate (FRR). 
+* A Type II error is false acceptance rate (FAR). 
+* Crossover error rate (CER) is the point at which FRR equals FAR. 
+* Throughput rate is the rate at which users are authenticated.
+<br /><br />
+
+SOC 3 is the only SOC report that should be shared with the general public.
+
+
+## Social
+
+https://isc.sans.edu/forums/diary/Verifying+Running+Processes+against+VirusTotal+DomainWide/25078/
+
+An AUP (acceptable use policy) details appropriate use of information systems, handling standards, monitoring, and privacy expectations.
 
 ## More on Security #
 
