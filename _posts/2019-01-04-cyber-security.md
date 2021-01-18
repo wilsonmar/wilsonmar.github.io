@@ -58,10 +58,12 @@ HITRUST Common Security Framework (CSF)</a> includes, harmonizes, and cross-refe
 <a target="_blank" href="https://aws.amazon.com/compliance/">Amazon Compliance at<br /></a>https://aws.amazon.com/compliance</a>
 
 
+<a name="MCRA"></a>
+
 ## Microsoft Cybersecurity Reference Architecture
 
-<a target="_blank" href="https://www.youtube.com/watch?v=emdGpNwfWHY">
-Distilling the Microsoft Cybersecurity Reference Architecture</a>
+<a target="_blank" href="https://www.youtube.com/watch?v=emdGpNwfWHY">VIDEO Distilling</a>
+<a target="_blank" href="https://aka.ms/MCRA/">Infographic in PowerPoint: Microsoft Azure Cybersecurity Reference Architecture</a>
 
 
 <a name="CIS"></a>
@@ -455,6 +457,7 @@ Below is an approach that can be used for Gap Analysis of what needs to be done 
    * Procedures provide all the detailed actions that personnel are required to follow. 
    * Standards provide the steps necessary to achieve security. 
    * Guidelines provide recommended actions to carry out under certain conditions.
+   * Initiation is not a component of configuration management!
    <br /><br />
 
    * 5.1	Establish Secure Configurations
@@ -649,6 +652,7 @@ known issues
 ## FedRAMP/FISMA compliance
 
 In the US federal government, the Federal Information Security Management Act of 2002 (FISMA) law is implemented according to National Institute of Standards and Technology (NIST) Special Publication (SP) <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">800-53 [pdf]</a>. The security controls development framework contains 157 controls within 19 control families. Each control is designated as low, moderate, or high impact. 
+
 ![cybersecurity-NIST-Functions-382x390-19166](https://user-images.githubusercontent.com/300046/55505840-3f6c3680-5611-11e9-811d-4411e01c5afd.jpg)
 800-53
 
@@ -853,9 +857,9 @@ NIST SP 800-66 provides guidelines for implementing the HIPAA Security Rule, whi
 
 NIST SP 800-122 gives guidelines on protecting the confidentiality of PII (Personally identifiable information) is considered information that should be classified and protected. PII are assigned confidentiality impact levels based on
 FIPS 199 designations: 
-   * LOW if the loss of confidentiality, integrity, or availability could be expected to have a limited adverse effect on organizational operations, organizational assets, or individuals.
-   * MODERATE if the loss of confidentiality, integrity, or availability could be expected to have a serious adverse effect on organizational operations, organizational assets, or individuals.
-   * HIGH if the loss of confidentiality, integrity, or availability could be expected to have a severe or catastrophic adverse effect on organizational operations, organizational assets, or individuals.
+   * LOW if the loss of <a href="#CIA">confidentiality, integrity, or availability</a> could be expected to have a limited adverse effect on organizational operations, organizational assets, or individuals.
+   * MODERATE if the loss of <a href="#CIA">CIA</a> could be expected to have a serious adverse effect on organizational operations, organizational assets, or individuals.
+   * HIGH if the loss of <a href="#CIA">CIA</a> could be expected to have a severe or catastrophic adverse effect on organizational operations, organizational assets, or individuals.
    <br /><br />
 
 U.S. federal agencies use the SBU (Sensitive But Unclassified) designation for information is not secret but still needs to be protected and requires strict controls over its distribution.
@@ -958,7 +962,8 @@ Education/Experience Requirements:
 
 ## Glossary
 
-https://quizlet.com/222277746/devsecops-acronyms-and-buzzwords-flash-cards/
+<a target="_blank" href="https://quizlet.com/222277746/devsecops-acronyms-and-buzzwords-flash-cards/">
+My Quizlet of Cyber Security Aconyms</a>
 
 A vulnerability is an absence or a weakness of a countermeasure that is in place.
 
@@ -976,11 +981,16 @@ Cost/benefit of implementing a particular safeguard, where ALE is the annual los
 
 Residual risk = total risk – countermeasures.
 
-Tenents:
-   1. Confidentiality (IPSec encryption in transit, social engineering)
-   2. Integrity 
-   3. Availability (RAID-5, DDoS)
-   4. Accountability (auditing)
+<a name="CIA">CIA</a>
+Tenents: CIA+IAAA
+   * Confidentiality vs. Disclosure (IPSec encryption in transit, social engineering)
+   * Integrity vs. Alteration (shared among authorized persons or organizations)
+   * Availability vs. Destruction (RAID-5, DDoS)
+
+   * Identification
+   * Authentication
+   * Authorization
+   * Accountability (auditing)
    <br /><br />
 
 <a name="RAID"></a>
@@ -996,6 +1006,8 @@ RAID (Redundant Array of Independent Disks): parity information is used to regen
    <br /><br />
 
 ### Threats
+
+<a target="_blank" href="https://www.hytrust.com/uploads/2015/08/HyTrust-Infographic-Cloud-Kill-Chain.pdf">PDF</a>: <a target="_blank" href="https://www.youtube.com/watch?v=emdGpNwfWHY&t=17m24s">VIDEO</a>: Cyber Kill Chain<br /><img width="1570" alt="cyber-kill-chain-lockheed-3144x1246" src="https://user-images.githubusercontent.com/300046/104851985-729abb00-58b5-11eb-9713-84470116acf9.png"></a>
 
 CRAMM is an abbreviation of "C" for the UK government’s Central Computer and Telecommunications Agency (CCTA) Risk Analysis and Management Method. CRAMM reviews includes three steps:
    1. Identify and value assets.
@@ -1030,8 +1042,9 @@ Developed by Microsoft, STRIDE is a memonic for classification of threats in an 
    * Elevation of privilege
    <br /><br />
    
-Attacks - incidents that violate an organization’s security or privacy policies:
+Attacks: - incidents that violate an organization’s security or privacy policies:
    * In a side-channel attack, the attacker gains information about the encryption algorithms from the cryptosystem that is implemented in the network.
+   * Evesdropping (traffic analysis). Countermeasures are sending noise, padding messages, mix non-info in data.
    * In a known plaintext attack, an attacker uses the plaintext and ciphertext versions of a message to discover the key used.
    * In an analytic attack, an attacker uses known structural weaknesses or flaws to determine the algorithm used.
    * In a replay attack, an attacker monitors the traffic stream in a network and maliciously repeats or delays the transmission of valid data over the network.
@@ -1044,17 +1057,22 @@ Attacks - incidents that violate an organization’s security or privacy policie
    <br /><br />
 
 Attacks to data and databases <a target="_blank" href="https://www.youtube.com/watch?v=YqFhKlzAABE&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR&index=27">VIDEO</a>
-   * An inference attack is the development of a detailed version of an object from another object using different values in the new object. A countermeasure is <strong>Polyinstantiation</strong>, which is development of a detailed version of an object from another object using different values in the new object. 
+   * An inference attack is the development of a detailed version of an object from another object using different values in the new object, such as the difference between totals versus details allowed. A countermeasure is <strong>Polyinstantiation</strong> which prevents data inference attacks by preventing low-level database users from inferring the existence of higher-level data. It enables a relation to contain multiple tuples with the same primary keys, with each instance distinguished by a security level. https://www.wikiwand.com/en/Inference_attack
    * A data contamination attack. Proper implementation of security levels is a countermeasure for data contamination. 
    <br /><br />
 
-A breach is an attack that has been successful in reaching its goal. 
+Events: System-level, application-level, or user-level?
+   * User-level events include Authentication attempts, command run, security violations. 
+   * System-level events include logon attempts, logon IDs, logon attempts, Administration tools usage, user and client computer lockout, system performance, time/date, administration tools usage, and device usage.
+   * Application-level events include files opened and closed, error messages, security violations, and file modifications.
+   <br /><br />
 
-* Means is how a criminal committed a crime.
-* Motive is why a crime is committed. 
-* Opportunity is when and where a crime occurred.
-* Exigent circumstances are when evidence might be destroyed.
-<br /><br />
+A breach is an attack that has been successful in reaching its goal. 
+   * Means is how a criminal committed a crime.
+   * Motive is why a crime is committed. 
+   * Opportunity is when and where a crime occurred.
+   * Exigent circumstances are when evidence might be destroyed.
+   <br /><br />
 
 order in which evidence should be saved:
    1. Memory contents
@@ -1074,13 +1092,24 @@ Focus of security awareness training:
    * Regular staff: responsibilities regarding security for performing day-to-day tasks in a secure manner. 
    <br /><br />
 
-FERMA (??? European Risk Management Standard) provides guidelines for managing risk in an organization.
+   * FERMA (??? European Risk Management Standard) provides guidelines for managing risk in an organization.
 
-The PASTA methodology provides a seven-step process for analyzing applications to align business objectives and technical requirements. This method provides a threat identification, enumeration, and scoring process. It is intended to provide an attacker-centric view of the application and infrastructure from which defenders can develop an asset-centric mitigation strategy.
+   * The PASTA methodology provides a seven-step process for analyzing applications to align business objectives and technical requirements. This method provides a threat identification, enumeration, and scoring process. It is intended to provide an attacker-centric view of the application and infrastructure from which defenders can develop an asset-centric mitigation strategy.
 
-The Trike methodology is an implementation model created and then analyzed to produce a threat model. Risk values are assigned to the identified threats. Mitigating controls are assigned to the vulnerabilities that lead to the identified threats.
+   * The Open Group Architecture Framework (TOGAF) is an enterprise architecture framework that is based on four interrelated domains: technology, applications, data, and business. 
 
-<img width="682" alt="cyber-scaba-matrix" src="https://user-images.githubusercontent.com/300046/89186535-29e68400-d559-11ea-9532-ac57a3f6d306.png">
+   * Sherwood Applied Business Security Architecture (SABSA) is a framework in addition to a methodology in that it prescribes the processes to follow to build and maintain the architecture. It uses the six communication questions (What, Where, When, Why, Who, and How) that intersect with six layers (operational, component, physical, logical, conceptual, and contextual. 
+
+   The SABSA (Sherwood Applied Business Security Architecture) is a "customizable" framework and methodology for enterprises,   based on business requirements (like NIST for private businesses). The framework uses six communication questions (What, Where, When, Why, Who, and How) that intersect with six layers of Enterprise Security Architecture (ESA) (operational, component, physical, logical, conceptual, and contextual):
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/89186535-29e68400-d559-11ea-9532-ac57a3f6d306.png"><img width="682" alt="cyber-scaba-matrix" src="https://user-images.githubusercontent.com/300046/89186535-29e68400-d559-11ea-9532-ac57a3f6d306.png"></a>
+
+   * The Zachman Framework is a two-dimensional model that intersects communication interrogatives (What, Why, Where, and so on) with various viewpoints (Planner, Owner, Designer, and so on). 
+
+   * The ISO/IEC 27000 Series establishes information security standards published jointly by the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC). Control Objectives for Information and Related Technology (COBIT) is a set of control objectives used as a framework for IT governance.
+   <br /><br />
+
+   * The Trike methodology is an implementation model created and then analyzed to produce a threat model. Risk values are assigned to the identified threats. Mitigating controls are assigned to the vulnerabilities that lead to the identified threats.
 
 Security program life cycle:
    1. Plan and Organize
@@ -1096,24 +1125,17 @@ Security program life cycle:
    * Architectural description (AD) refers to the set of documents that convey the architecture in a formal manner.
    <br /><br />
 
-Models:
-   * The Open Group Architecture Framework (TOGAF) is an enterprise architecture framework that is based on four interrelated domains: technology, applications, data, and business. 
-
-   * Sherwood Applied Business Security Architecture (SABSA) is a framework in addition to a methodology in that it prescribes the processes to follow to build and maintain the architecture. It uses the six communication questions (What, Where, When, Why, Who, and How) that intersect with six layers (operational, component, physical, logical, conceptual, and contextual. 
-
-   The SABSA (Sherwood Applied Business Security Architecture) is a "customizable" framework and methodology for enterprises,   based on business requirements (like NIST for private businesses). The framework uses six communication questions (What, Where, When, Why, Who, and How) that intersect with six layers of Enterprise Security Architecture (ESA) (operational, component, physical, logical, conceptual, and contextual):
-
-   * The Zachman Framework is a two-dimensional model that intersects communication interrogatives (What, Why, Where, and so on) with various viewpoints (Planner, Owner, Designer, and so on). 
-
-   * The ISO/IEC 27000 Series establishes information security standards published jointly by the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC). Control Objectives for Information and Related Technology (COBIT) is a set of control objectives used as a framework for IT governance.
-   <br /><br />
-
 Process impprovement approaches:
    * Capability Maturity Model Integration (CMMI) addresses development, services, and acquisitions. 
+
    * Six Sigma includes methodologies DMAIC (Define, Measure, Analyze, Improve existing, Control process) or DMADV (Define, Measure, Analyze, Design, Verify new customer)
+
    * Control Objectives for Information and Related Technology (COBIT) is a security controls development framework that uses a process model to subdivide IT into four domains: Plan and Organize (PO), Acquire and Implement (AI), Deliver and Support (DS), and Monitor and Evaluate (ME).
+
    * Department of Defense Architecture Framework (DoDAF) is an architecture framework that organizes a set of products under eight viewpoints: Capability Viewpoint (CV), Data and Information Viewpoint (DIV), Operation viewpoint (OV), Project Viewpoint (PV), SerViCes Viewpoint (SvcV), STanDards Viewpoint (STDV), and Systems viewpoint (SV), All Viewpoint (required) (AV).
+
    * British Ministry of Defence Architecture Framework (MODAF) is an architecture framework that divides information into seven viewpoints: STrategic viewpoint (StV), Operational Viewpoint (OV), Service-Oriented Viewpoint (SOV), Acquisition Viewpoint (AcV), Technical viewpoint (TV), Systems Viewpoint (SV), All viewpoint (AV).
+
    * DHS (Department of Homeland Security) is involved in promoting software security best practices. Its Build Security In (BSI) initiative promotes a process-agnostic approach that makes security recommendations with regard to architectures, testing methods, code reviews, and management processes.
    <br /><br />
 
@@ -1166,6 +1188,8 @@ Incident response:
    1. Recovery: Necessary adjustments or enhancements are made to policies and procedures.
    <br /><br />
 
+   See ASD Mitigations
+
 Forensic investigation process:
    1. Identification - reviewing audit logs, monitoring systems, analyzing user complaints, analyzing detection mechanisms 
    2. Preservation
@@ -1195,7 +1219,14 @@ Change control process:
 
 Polyinstantiation is a process used to prevent data inference violations. 
 
+Relationship cardinality means whether a relationship is one-to-one, many-to-one, or many-to-many.
+
+High cardinality means a high number of distinct (unique) values in a table column, relative to the number of rows in the table. 
+
 Aggregation is a database security concern that arises when a user does not have complete access to sensitive data but can access portions of it. 
+
+The domain of a relation is the set of allowable values that an attribute can take, composed of values that can be entered in a column (attribute) of a table (relation).
+
 
 WASC (Web Application Security Consortium) is an organization that provides best practices for web-based applications along with a variety of resources, tools, and information that organizations can make use of in developing web applications.
 
@@ -1232,14 +1263,14 @@ Documents:
 
 System resilience is the ability of a system, device, or data center to recover quickly and continue operating after an equipment failure, power outage, or other disruption. It involves the use of redundant components or facilities.
 
-Metrics detered by BIA (Business Impact Assessment):
+Metrics defined by BIA (Business Impact Assessment):
    * RPO (Recovery Point Objective) = Maximum tolerable data loss
    * RTO (Recovery Time Objective) = Recovery time to a defined service level
    * WRT (Work Recovery Time) = Max. time to verify integrity of systems & data
    * MTD (Maximum Tolerable Downtime) = Max. total time process can be disrupted
    <br /><br />
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=oAjNL3I_3-E&t=4m"><img alt="cyber-sec-bia-terms-581x239" src="https://user-images.githubusercontent.com/300046/104836718-0ac08200-586d-11eb-8ea9-c67720e58e4f.png"></a>
+   <a target="_blank" href="https://www.youtube.com/watch?v=oAjNL3I_3-E&t=4m"><img alt="cyber-sec-bia-terms-581x239" width="581" src="https://user-images.githubusercontent.com/300046/104836718-0ac08200-586d-11eb-8ea9-c67720e58e4f.png"></a>
 
    * Mean time to repair (MTTR) is the average amount of time it takes to get a device fixed and back online. 
    * Mean time between failure (MTBF) describes how often a component fails on average.
@@ -1274,8 +1305,6 @@ Data classification program:
 
 REMEMBER: A land attack sends a spoofed TCP SYN packet with the target host’s IP address and an open port as both the source and the destination to the target host on an open port.
 
-Polyinstantiation prevents data inference attacks by preventing low-level database users from inferring the existence of higher-level data. It enables a relation to contain multiple tuples with the same primary keys, with each instance distinguished by a security level. https://www.wikiwand.com/en/Inference_attack
-
 Dedicated security mode employs a single classification level.
 
 "system integrity" implies that a system will work as intended.
@@ -1294,11 +1323,15 @@ CPTED (Crime prevention through environmental design):
 <a target="_blank" href="https://www.youtube.com/watch?v=_IfGEY4fo18">Trusted Computer System Evaluation Criteria (TCSEC)</a> 
 functionality at least once. Enhanced by EU in ITSEC to assurance every time:
    * F6 + E6 = A1 = Mathamatically Verified protection
-   * F3 + E3 = B1, B2, B3 = Mandatory Protection (military) resistant to penetration attempts.
+   * F5 + E5 = B3 = Mandatory Protection (military) resistant to penetration attempts.
+   * F4 + E4 = B2 = Structured Protection (military)
+   * F3 + E3 = B1 = Mandatory Protection (military)
    * F2 + E2 = C2 = Controlled access protection
    * F1 + E1 = C1 = Discretionary Protection (commercial)
-   * E0 = D  = Minimal Protection
+   * &nbsp;&nbsp;&nbsp;&nbsp;E0 = D&nbsp; = Minimal Protection
    <br /><br />
+
+Covert channel analysis is introduced at B2 and above.
 
 ISO 15408 2005 = Common Criteria on TOE (Target of Evaulation) for Security Target report satisfies independently verified 
 by NIAP (National Information Assurance Partnership) to
@@ -1374,6 +1407,8 @@ Malware (malicious software):
 
    * Multipartite spreads in different ways
    * Polymorphic can change to avoid detection.
+   <br /><br />
+
 
 Model:
    * A state machine model examines every possible state the system could be in and ensures that the system maintains the proper security relationship between objects and subjects in each state.
@@ -1456,6 +1491,8 @@ With public key infrastructure (PKI)
    * A trust anchor is a public key that verifies the certificate used in a digital signature. 
    <br /><br />
 
+RARP (Reverse Address Resolution Protocol) when communicating for the first time to find the IP address matching the MAC.
+
 OCSP (Online Certificate Status Protocol) is the Internet protocol that obtains the revocation status of an X.509 digital certificate. A certificate revocation list (CRL) contains a list of all the certificates that have been revoked. 
 
 Key clustering occurs when different encryption keys generate the same ciphertext from the same plaintext message. 
@@ -1485,6 +1522,8 @@ Workflow
 Confinement is a term used to describe processes in a system. When a process is confined, the process is only allowed to read from and write to certain memory locations and resources. Confinement is usually carried out using the operating system, through a confinement service, or using a hypervisor.
 
 The bounds of a process set limits on the memory addresses and resources the process can access. The bounds logically segment memory areas for each process to use.
+
+PAT (Port Address Translation) maps ports.
 
 ### Physical
 
