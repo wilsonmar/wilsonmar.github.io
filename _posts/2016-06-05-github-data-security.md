@@ -171,7 +171,13 @@ The options:
 
 <strong>git-secrets</strong> at <a target="_blank" href="https://github.com/awslabs/git-secrets">github.com/awslabs/git-secrets</a> is from AWS Labs, so does not scan secrets for other clouds. However, there is less concern about malware in the utility. Procedures to install it is detailed at <a target="_blank" href="https://git-secret.io/">git-secret.io</a>.
 
+<a target="_blank" href="https://github.com/duo-labs/secret-bridge">secret-bridge</a> <a target="_blank" href="https://duo.com/labs/research/how-to-monitor-github-for-secrets">by Duo</a>
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/105407348-d80ae680-5bea-11eb-96d0-c8f35631afde.png"><img alt="github-data-security-secret-bridge-2648x77g" width="2648 src="https://user-images.githubusercontent.com/300046/105407348-d80ae680-5bea-11eb-96d0-c8f35631afde.png"></a>
+
 <strong>AWS Macie</strong> (described at <a target="_blank" href="https://docs.aws.amazon.com/macie/">docs.aws.amazon.com/macie</a>) is an SaaS cloud service from Amazon that uses machine learning and pattern matching to discover and protect your sensitive data in AWS S3 buckets, at scale. Macie’s alerts, or findings, can be searched and filtered in the AWS Management Console and sent to Amazon EventBridge (CloudWatch Events), for integration with existing workflow or event management systems, or to be used in combination  to take automated remediation actions using AWS Step Functions. It can be invoked from commands in AWS CLI.
+
+<strong>GitHub Advanced Security</strong>, a licensed SaaS service from GitHub itself, sends emails about secrets found within Enterprise GitHub instances.
 
 <strong>GitLeaks</strong> is a post-commit utility written in Go open-source code at <a target="_blank" href="https://github.com/zricethezav/gitleaks">https://github.com/zricethezav/gitleaks</a>. It's author, Zachary Rice, currently works at GitLab. It can be run as a <a target="_blank" href="https://github.com/zricethezav/gitleaks-action">GitHub Actions</a>. It scans git repos (or files) for secrets using regex and <a target="_blank" href="https://en.wikipedia.org/wiki/Entropy_(information_theory)">Shannon entropy</a>. Josphat Mutai's <a target="_blank" href="https://computingforgeeks.com/gitleaks-audit-git-repos-for-secrets/">blog describes it's cool features</a>.
 
@@ -183,8 +189,11 @@ The options:
 
 TruffleHog is open-source code.
 
-GuardRails is proprietary but has reports and login security.
+GuardRails is proprietary but has reports and login security, which is important to keep knowledge of internal vulnerabilities isolated to only those who need to know. 
+<a target="_blank" href="https://github.com/marketplace/guardrails">On GitHub's Marketplace</a>.
 
+
+   <br /><br />
 
 <hr />
 
@@ -337,7 +346,7 @@ Among the "12 Factor App" <a target="_blank" href="https://12factor.net/">12fact
 
    CAUTION: The problem is that some simply save the .env file in the same folder, which is then subject to being pushed to a GitHub repository.
 
-1. To insert a secret key in a Mac's .bash_profile script that the operating system executes upon boot-up, one can:
+1. To insert a secret key to the bottom of a Mac's <tt>~/.bash_profile</tt> script that the operating system executes upon boot-up, one can:
 
    {% highlight text %}
    echo "export SECRET_PASS=12345678910" >> ~/app-root/data/.bash_profile{% endhighlight %}
