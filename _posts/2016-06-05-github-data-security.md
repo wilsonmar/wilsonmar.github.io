@@ -3,7 +3,7 @@ layout: post
 title: "GitHub Data Security"
 excerpt: "How to keep secrets out of GitHub"
 tags: [github, security]
-date: "2021-01-02"
+date: "2021-01-20"
 file: "github-data-security"
 image:
 # pic secret finger over mouth 1900x500
@@ -16,11 +16,11 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-There are 7 conditions enabling public leak of secret data from GitHub repositories:
+Conditions enabling leak of secrets from GitHub and other source repositories:
 
 1. <a href="#Need_2FA">Your GitHub account password can be stolen</a>
 2. <a href="#Dorking">"Dorking" scans by hackers look for secrets in GitHub</a>
-3. <a href="#SecretsRemain">Secrets remain in prior commit history need to be removed from GitHub</a>
+3. <a href="#SecretsRemain">Secrets remain in prior commit history</a>
 4. <a href="#Forgot">You may forget to add .gitignore or remove local secrets</a>
 5. <a href="#Crackers">Static passwords can be cracked eventually</a>
 6. <a href="#Crash">You can lose secrets when your laptop crashes or is lost</a>
@@ -29,18 +29,16 @@ There are 7 conditions enabling public leak of secret data from GitHub repositor
 
 <a name="HowTo"></a>
 
-How to" recommendations offered in this article are:
+Recommendations offered in this article:
 
 1. <a href="#2FA">Setup 2FA with an authenticator to physically confirm GitHub access</a>
-2. <a href="#DorkLocally">Automate "Dorking" scans of you code to look for secrets locally before pushing to GitHub</a>
+2. <a href="#DorkLocally">Automate scans to look for secrets locally before/after pushing to GitHub</a>
 3. <a href="#RemoveHistory">Remove secrets in prior commit history on GitHub</a>
 4. <a href="#UseVariables">Refer to secrets as variables in your code</a>
 5. <a href="#Encrypt">Rotate keys to encrypted files</a>
 6. <a href="#SecretsInCloud">Save secret keys in the cloud</a>
 7. <a href="#SSH_certs">Rotate secrets: Access GitHub with rotated SSH certificates generated (automatically every day)</a>
 <br /><br />
-
-<a href="#Local_Diagram">Diagram</a>
 
 <hr />
 
@@ -143,7 +141,9 @@ References:
 
 ## PROBLEM 2. "Dorking" scans by hackers look for secrets in GitHub
 
-Rogue "dorking" scanners are looking through <strong>every</strong> public repository, every day, looking for secrets.
+A "dork" is American slang for someone who is both academically inclined and also silly and clumsy.<a target="_blank" href="https://www.urbandictionary.com/define.php?term=Dork">*</a>
+
+Rogue "dorking" scanners are looking through <strong>every</strong> public repository, every commit made, every day, looking for secrets.
 
 References:
    * http://www.securityweek.com/github-search-makes-easy-discovery-encryption-keys-passwords-source-code
@@ -169,19 +169,21 @@ On the laptop locally, it takes effort to install Git hooks to fire upon git com
 
 The options:
 
-<strong>git-secrets</strong> at <a target="_blank" href="https://github.com/awslabs/git-secrets">https://github.com/awslabs/git-secrets</a> is from AWS, so does not scan secrets for other clouds. However, there is less concern about malware in the utility. The procedure to install it is detailed at <a target="_blank" href="https://git-secret.io/">https://git-secret.io</a>.
+<strong>git-secrets</strong> at <a target="_blank" href="https://github.com/awslabs/git-secrets">github.com/awslabs/git-secrets</a> is from AWS Labs, so does not scan secrets for other clouds. However, there is less concern about malware in the utility. Procedures to install it is detailed at <a target="_blank" href="https://git-secret.io/">git-secret.io</a>.
+
+<strong>AWS Macie</strong> (described at <a target="_blank" href="https://docs.aws.amazon.com/macie/">docs.aws.amazon.com/macie</a>) is an SaaS cloud service from Amazon that uses machine learning and pattern matching to discover and protect your sensitive data in AWS S3 buckets, at scale. Macie’s alerts, or findings, can be searched and filtered in the AWS Management Console and sent to Amazon EventBridge (CloudWatch Events), for integration with existing workflow or event management systems, or to be used in combination  to take automated remediation actions using AWS Step Functions. It can be invoked from commands in AWS CLI.
 
 <strong>GitLeaks</strong> is a post-commit utility written in Go open-source code at <a target="_blank" href="https://github.com/zricethezav/gitleaks">https://github.com/zricethezav/gitleaks</a>. It's author, Zachary Rice, currently works at GitLab. It can be run as a <a target="_blank" href="https://github.com/zricethezav/gitleaks-action">GitHub Actions</a>. It scans git repos (or files) for secrets using regex and <a target="_blank" href="https://en.wikipedia.org/wiki/Entropy_(information_theory)">Shannon entropy</a>. Josphat Mutai's <a target="_blank" href="https://computingforgeeks.com/gitleaks-audit-git-repos-for-secrets/">blog describes it's cool features</a>.
 
-Git Guardian
+<strong>Git Guardian</strong> (at <a target="_blank" href="https://gitguardian.com/">gitguardian.com</a>) is an automated monitoring cloud utility to detect API keys and other credentials and secrets exposed in source code on public SaaS or private (internal/on-prem) GitHub. Free on public repos. Its documentation is published at <a target="_blank" href="https://docs.gitguardian.com/internal-repositories-monitoring/home">https://docs.gitguardian.com/internal-repositories-monitoring/home</a>.
 
 "GittyLeaks" open-source code.
 
 "Detect Secrets" open-source code.
 
-GuardRails is proprietary but has reports and login security.
-
 TruffleHog is open-source code.
+
+GuardRails is proprietary but has reports and login security.
 
 
 <hr />
