@@ -19,7 +19,7 @@ comments: true
 Conditions enabling leak of secrets from GitHub and other source repositories:
 
 1. <a href="#Need_2FA">Your GitHub account password can be stolen</a>
-2. <a href="#Dorking">"Dorking" scans by hackers look for secrets in GitHub</a>
+2. <a href="#Dorking">Hackers are doing "Dorking" scans looking for secrets in GitHub</a>
 3. <a href="#SecretsRemain">Secrets remain in prior commit history</a>
 4. <a href="#Forgot">You may forget to add .gitignore or remove local secrets</a>
 5. <a href="#Crackers">Static passwords can be cracked eventually</a>
@@ -139,7 +139,7 @@ References:
 
 <a name="Dorking"></a>
 
-## PROBLEM 2. "Dorking" scans by hackers look for secrets in GitHub
+## PROBLEM 2. Hackers are doing "Dorking" scans looking for secrets in GitHub
 
 A "dork" is American slang for someone who is both academically inclined and also silly and clumsy.<a target="_blank" href="https://www.urbandictionary.com/define.php?term=Dork">*</a>
 
