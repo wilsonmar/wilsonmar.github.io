@@ -987,11 +987,7 @@ Tenents: CIA+IAAA
    * Integrity vs. Alteration (shared among authorized persons or organizations)
    * Availability vs. Destruction (RAID-5, DDoS)
 
-   * Identification
-   * Authentication
-   * Authorization
    * Accountability (auditing)
-   <br /><br />
 
 <a name="RAID"></a>
 RAID (Redundant Array of Independent Disks): parity information is used to regenerate the data in the case of a single drive failure. 
@@ -1022,16 +1018,6 @@ A threat modeling program continually reassess the threat environment, including
    4. Rank the threats
    <br /><br />
 
-Penetration test methodology - To simulate an attack on a system or network to evaluate the risk profile of an environment
-   1. Reconnaissance
-   2. Enumeration
-   3. Vulnerability Analysis
-   4. Execution/Exploitation
-   5. Document Findings
-   <br /><br />
-
-<strong>Enticement</strong> is when a system has apparent flaws that were deliberately made available for penetration and exploitation.
-
 Microsoft Threat Model Tool - dataflow diagrams that reflect potential threats. STRIDE and DREAD
 Developed by Microsoft, STRIDE is a memonic for classification of threats in an application:
    * Spoofing of user identity
@@ -1043,6 +1029,7 @@ Developed by Microsoft, STRIDE is a memonic for classification of threats in an 
    <br /><br />
    
 Attacks: - incidents that violate an organization’s security or privacy policies:
+   * A smurf attack uses a type of ping packet called an ICMP ECHO REQUEST. 
    * In a side-channel attack, the attacker gains information about the encryption algorithms from the cryptosystem that is implemented in the network.
    * Evesdropping (traffic analysis). Countermeasures are sending noise, padding messages, mix non-info in data.
    * In a known plaintext attack, an attacker uses the plaintext and ciphertext versions of a message to discover the key used.
@@ -1054,6 +1041,10 @@ Attacks: - incidents that violate an organization’s security or privacy polici
    * A maintenance hook is a backdoor in an application that is designed by the application developers to perform maintenance tasks, which can enable code to be executed without the usual security checks. A countermeasure for maintenance hooks is code reviews. 
    * A buffer overflow transmits too much data to an application or operating system. A countermeasure for buffer overflows is input validation. 
    * A <strong>covert storage channel attack</strong> is when one process writes data to a hard drive and another process reads it. In this attack a higher-level subject writes data to a storage area and a lower-level subject reads it.
+   * REMEMBER: A <strong>land attack</strong> sends a spoofed TCP SYN packet with the target host’s IP address and an open port as both the source and the destination to the target host on an open port.
+   * Network address hijacking reroutes data traffic from a network device to a personal computer. 
+   * A ping of death attack floods target computers with oversized packets, causing the target computer to either freeze or crash.
+   * In SMTP relay attacks outbound mail folders fill up with spam relayed through your email server. 
    <br /><br />
 
 Attacks to data and databases <a target="_blank" href="https://www.youtube.com/watch?v=YqFhKlzAABE&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR&index=27">VIDEO</a>
@@ -1061,7 +1052,7 @@ Attacks to data and databases <a target="_blank" href="https://www.youtube.com/w
    * A data contamination attack. Proper implementation of security levels is a countermeasure for data contamination. 
    <br /><br />
 
-Events: System-level, application-level, or user-level?
+Events: System-level, application-level, or user-level? REMEMBER
    * User-level events include Authentication attempts, command run, security violations. 
    * System-level events include logon attempts, logon IDs, logon attempts, Administration tools usage, user and client computer lockout, system performance, time/date, administration tools usage, and device usage.
    * Application-level events include files opened and closed, error messages, security violations, and file modifications.
@@ -1074,14 +1065,17 @@ A breach is an attack that has been successful in reaching its goal.
    * Exigent circumstances are when evidence might be destroyed.
    <br /><br />
 
-order in which evidence should be saved:
-   1. Memory contents
-   2. Swap files
-   3. Network processes
-   4. System processes
-   5. File system information
-   6. Raw disk blocks
+## Penetration test
+
+Penetration test methodology - To simulate an attack on a system or network to evaluate the risk profile of an environment
+   1. Reconnaissance
+   2. Enumeration
+   3. Vulnerability Analysis
+   4. Execution/Exploitation
+   5. Document Findings
    <br /><br />
+
+<strong>Enticement</strong> is when a system has apparent flaws that were deliberately made available for penetration and exploitation.
 
 ## Models & Lifecycles
 
@@ -1188,16 +1182,25 @@ Incident response:
    1. Recovery: Necessary adjustments or enhancements are made to policies and procedures.
    <br /><br />
 
-   See ASD Mitigations
+   See ASD (Australian) Mitigations
 
-Forensic investigation process:
-   1. Identification - reviewing audit logs, monitoring systems, analyzing user complaints, analyzing detection mechanisms 
-   2. Preservation
-   3. Collection - making system images, implementing chain of custody, documenting the evidence, and recording timestamps.
-   4. Examination determining and documenting characteristics, such as timestamps and identification properties. After the evidence has been fully analyzed using scientific methods, the full incident should be reconstructed and documented.
+Forensic investigation process: REMEMBER: 
+   1. Identification - start action log, reviewing audit logs, monitoring systems, analyzing user complaints, analyzing detection mechanisms, signature resolution.
+   2. Preservation - chain of custody standards, imaging technologies, and time synchronization. All while folling chain of custody standards.
+   3. Collection - making system images, implementing chain of custody, documenting the evidence, and recording timestamps. Data reduction.
+   4. Examination determining and documenting characteristics, such as timestamps and identification properties. Examination includes traceability, validation techniques, filtering techniques, pattern matching, hidden data discovery, and hidden data extraction. After the evidence has been fully analyzed using scientific methods, the full incident should be reconstructed and documented.
    5. Analysis
    6. Presentation
    7. Decision
+   <br /><br />
+
+Order evidence should be saved: REMEMBER: ephemeral
+   1. Memory contents
+   2. Swap files
+   3. Network processes
+   4. System processes
+   5. File system information
+   6. Raw disk blocks
    <br /><br />
 
 Change control process: 
@@ -1246,7 +1249,13 @@ To establish a relationship with a third party which accesses organizational ass
    4. Audit the third party’s access to internal resources.
    <br /><br />
 
-Types of controls:
+Types of control:
+   * Directive
+   * Preventive
+   * Detective
+   * Responsive
+   <br /><br />
+
    * Data backups are recovery <strong>logical controls</strong>. 
    * Recovery administrative controls do NOT include data backups. 
    * Server images are both corrective and technical controls.
@@ -1264,8 +1273,8 @@ Documents:
 System resilience is the ability of a system, device, or data center to recover quickly and continue operating after an equipment failure, power outage, or other disruption. It involves the use of redundant components or facilities.
 
 Metrics defined by BIA (Business Impact Assessment):
-   * RPO (Recovery Point Objective) = Maximum tolerable data loss
-   * RTO (Recovery Time Objective) = Recovery time to a defined service level
+   * RPO (Recovery Point Objective) = Maximum tolerable <strong>data</strong> loss period
+   * RTO (Recovery Time Objective) = Recovery <strong>time</strong> to a defined service level
    * WRT (Work Recovery Time) = Max. time to verify integrity of systems & data
    * MTD (Maximum Tolerable Downtime) = Max. total time process can be disrupted
    <br /><br />
@@ -1302,8 +1311,6 @@ Data classification program:
    10. Develop the data classification security awareness program.
    * Security administrator maintains security devices and software, including firewalls, antivirus software, etc.
    <br /><br />
-
-REMEMBER: A land attack sends a spoofed TCP SYN packet with the target host’s IP address and an open port as both the source and the destination to the target host on an open port.
 
 Dedicated security mode employs a single classification level.
 
@@ -1393,13 +1400,36 @@ Ciphers:
 
 A running key cipher is NOT a substitution cipher. A running key cipher uses a physical component, usually a book, to provide the polyalphabetic characters. All the other options are substitution ciphers.
 
-Malware (malicious software):
+Steganography
+   * Distortion techniques are when the knowledge of original cover in the decoding process is essential at the receiver side. 
+   * Least significant bit steganography is when some or all the bits or bytes inside an image are replaced with bits of the secret message. quality of the image is degraded. 
+   * Transform domain techniques are when secret information is embedded in the <strong>frequency domain</strong> of the signal. 
+   * Statistical methods encode information by changing several statistical properties of a cover.
+   * Linguistic steganography hides a message in a nonobvious way like within another file. 
+      * Visual and text semagrams hide a message using signs or symbols that look innocuous. 
+      * Open codes, which include jargon code and covered ciphers, hide a message in a legitimate looking carrier, sometimes called overt communication.
+   <br /><br />
+
+   * stego medium is the file or object after the message has been hidden.
+   * The payload is the message that is hidden.
+   * The cover medium is the file or object before the message is hidden within it.
+   * The carrier is the method of transmitting the stego medium.
+   <br /><br />
+
+* Due care means an organization has taken the necessary steps to protect the organization, its resources, and personnel. 
+* Due diligence means an organization has evaluated information to identify vulnerabilities, threats, and issues related to risk. 
+<br /><br />
+
+
+<a name="Malware"></a>
+
+## Malware (malicious software):
    * A worm is a program that spreads itself through network connections. 
    * A companion is a new file created with a similar name so users activate it.
    * A virus relies upon other application programs to execute itself and infect a system.
    * An armored virus includes protective code that prevents examination of critical elements, such as scans by antivirus software.
    * Spyware uses tracking cookies to collect and report on a user’s activities to the spyware programmer. 
-   * A Trojan horse is malware disguised as a useful utility but embeds malicious code in itself. 
+   * A Trojan horse is malware disguised as a useful utility but embeds malicious code in itself. A symptom of a Trojan horse is that unknown software is using covert channels to perform malicious activities, such as deleting system files and planting a backdoor into a system.
    * Adware is a software application that displays advertisements while the application is executing.
    * A Macro is written into like VB in Excel.
    * Logic bombs are triggered by events like a specific date.
@@ -1427,7 +1457,7 @@ Ciphers:
    * Lucifer was created by IBM and used a <a target="_blank" href="https://www.youtube.com/watch?v=FGhj3CGxl8I">Feistel cipher</a> a framework to build ciphers. based on DES. Used by TwoFish. Its innovation is decryption.
    <br /><br />
 
-   Kerckhoff’s Principle
+   Kerckhoff’s Principle - the only safe is the key
 
 * A symmetric algorithm uses a private or secret key that must remain secret between the two parties. It provides confidentiality but NOT authentication or nonrepudiation.
 * Symmetric algorithms include both stream-based and block ciphers. 
@@ -1525,15 +1555,39 @@ The bounds of a process set limits on the memory addresses and resources the pro
 
 PAT (Port Address Translation) maps ports.
 
+IDS (Intrusion Detection System)
+   * HIDS (Host-based IDS)
+   * A heuristic-based (or rule-based) IDS is an expert system that uses a knowledge base, inference engine, and rule-based programming. 
+   * A signature-based IDS analyzes traffic and compares it to attack or state patterns, called signatures, that reside within the IDS database.
+   * A traffic anomaly-based IDS tracks traffic pattern changes. All future traffic patterns are compared to the sample. 
+   * An anomaly-based IDS analyzes traffic and compares it to normal traffic to determine if said traffic is a threat. 
+   * An application-based IDS is a specialized IDS that analyzes transaction log files for a single application.
+   <br /><br />
+
+Backups:
+   * GRS (grandfather-father-son) backup rotation scheme Three sets of backup media
+   <br /><br />
+
+SOC 3 is the only SOC report that should be shared with the general public.
+
+
 ### Physical
 
 Failsoft is the capability of a system to terminate non-critical processes when a failure occurs.
 
+Gates:
+   * Class 1 gates are suitable for residential use. 
+   * Class 2 gates are suitable for commercial usage.
+   * Class 3 gates are suitable for industrial usage.
+   * Class 4 gates are suitable for restricted areas.
+   <br /><br />
+
 Alternative sites:
+   * A redundant site provides a site that is recoverable in the least amount of time and will allow the organization to have the most control of the resources. 
    * A hot site contains telecommunications and computers and is the most expensive alternative site. It takes the shortest amount of time to recover.
    * A cold site does not contain any computers or telecommunications equipment. It does contain wiring, heating and air, and raised flooring. It is much cheaper than a hot site. However, it takes much longer to recover. 
    * A warm site contains telecommunications equipment but no computers and is cheaper than a hot site but more expensive than a cold site. It takes longer to recover than a hot site but shorter to recover than a cold site.
-   * A tertiary site provides an alternate in case the hot site, warm site, or cold site is unavailable.
+   * A tertiary site provides an alternate in case both the primary and hot site, warm site, or cold site is unavailable.
    <br /><br />
 
 Fail-over testing:
@@ -1560,18 +1614,185 @@ Locks:
    * A cable lock has vinyl-coated steel cables that connect to the laptop and then lock around an object.
    <br /><br />
 
-## Biometrics
+<a name="IAM"></a>
 
-* A Type I error is false rejection rate (FRR). 
-* A Type II error is false acceptance rate (FAR). 
-* Crossover error rate (CER) is the point at which FRR equals FAR. 
-* Throughput rate is the rate at which users are authenticated.
+## IAM
+
+Identity provisioning life cycle: The identity must be created first. It is then configured, modified, and monitored. 
+The account is is revoked when no longer needed.
+
+IDaaS (Identity as a Service) Provides a set of identity and access management functions to target systems on customers’ premises and/or in the cloud.
+
+## Access Control IAAA
+   1. Identification is the act of a user professing an identity to an access control system.
+   2. Authentication is the act of validating a user with a unique identifier by providing the appropriate credentials.
+   3. Authorization
+   <br /><br />
+
+   Accountability is not a step in access control. Accountability is the capability of an organization to hold users responsible for their actions.
+
+* Remote Authentication Dial-In User Service (RADIUS) is a standard published in RFC 2138
+* Terminal Access Controller Access-Control System Plus (TACACS+) is a Cisco-proprietary method.
+
+In a MAC (Mandatory access control) environment: <a target="_blank" href="https://www.youtube.com/watch?v=mNN-fEboRAA&list=ULpxsrZMHAL8w&index=4846">VIDEO</a>
+   * a label is required for each subject and object. Each file is an object. Users are subjects. Clearance is a privilege.
+   * Rule-based access control is most often used by routers and firewalls to control access to networks.
+   * The dedicated mandatory access control (MAC) security mode employs a single classification level.
+   * In the system high mandatory access control (MAC) security mode, all users of the system have the same security clearance but do not all possess a need-to-know clearance for all the information in the system.
+   * In dedicated security mode, all users can access all data, but they must sign a nondisclosure agreement (NDA) and be formally approved for access on a need-to-know basis. 
+   * In multilevel security mode allows two or more classification levels of information to be processed at the same time.
+   * In the compartmented security mode, all users must possess the highest security clearance (as in both dedicated and system high security), but they must also have a valid need-to-know clearance, a signed NDA, and formal approval for all information to which they have access.
+   <br /><br />
+
+Types of authentication factors: something you know (knowledge), something you have (possession), and something you are (characteristic).
+A password and pin combo includes only a single knowledge authentication factor type, so is not 2FA.
+
+A capability table lists the access rights that a particular subject has to objects.
+
+## Smart Cards
+
+The user private key encrypts a challenge regnerated by the computer.
+
+### Biometrics
+
+Facial recognition:
+   * In an <strong>eigenfaces</strong> facial scan, measurements of facial components are gathered and compared to a set of standard eigenfaces.
+   * In an <strong>eigenfeatures</strong> facial scan, the distances between the facial features are measured and recorded.
+   * In a retina scan, blood vessel pattern is scanned.
+   * In an iris scan, the colored portion of the eye, including all rifts, coronas, and furrows, is scanned.
+   * Vascular scan
+   * Keystroke dynamics
+   * Signature dynamics
+   <br /><br />
+
+A characteristics factor for authentication?
+
+Errors:
+   * A Type I error is false rejection rate (FRR). 
+   * A Type II error is false acceptance rate (FAR). 
+   * Crossover error rate (CER) is the point at which FRR equals FAR. 
+   * Throughput rate is the rate at which users are authenticated.
+   <br /><br />
+
+Desktop sessions can be managed through screensavers, timeouts, logon, and schedule limitations. 
+Federal Information Processing Standards (FIPS) Publication 201.2 and NIST Special Publication 800-79-2 are documents that provide guidance on proof of identity.
+In Kerberos, the Key Distribution Center (KDC) issues a ticket-granting ticket (TGT) to the principal. 
+The principal sends the TGT to the ticket-granting service (TGS) when the principal needs to connect to another entity.
+
+In a MAC environment, each subject and object is given a label. 
+   * The term for a file in a mandatory access control (MAC) environment is an object. 
+   * The term for a user in an MAC environment is a subject. 
+   * The term for a clearance in a MAC environment is a privilege.
+   <br /><br />
+
+DAC controls are determined by the data owner.
+
+RBAC uses roles to provide access to the data.
+
+## OSI (Open System Interconnect) 
+
+Memomnic: Please Do Not Throw Sausage Pizza Away or All People Seem To Need Data Processing
+
+PDUs (Process Data Units)
+1. Physical bits - Signal through cable hubs, Repeaters,  Amplifiers, patch panels 
+2. Data Link frames - MAC address, Logical Link control switching through Ethernet Bridges
+3. Network packets - Fragment logical addressing routers in IP headers IPv4, IPv6, BGP, OSPF
+4. Transport segments - Adds protocol for end-to-end TCP, UDP, SSL, TLS ports sockets (no hardware)
+5. Session data - RPC, tunneling makes a communication session between a service or application on the source device possible with the same service or application on the destination device. 
+6. Presentation data - file format operating system, encryption
+7. Application data - encapsulation of content HTTP, FTP, SSH, SMTP, API Gateways, Proxy servers doing conversions. It receives the raw data from the application in use and provides services, such as file transfer and message exchange to the application
 <br /><br />
 
-SOC 3 is the only SOC report that should be shared with the general public.
+Access control lists (ACL) are typically used on routers, which map to layer 3 of the OSI model.
+The Link layer of the TCP/IP model corresponds to the Data Link and Physical layers of the OSI model. 
+The Transport layer of the TCP/IP model corresponds to the Transport layer of the OSI model. 
+
+OSI Resources:
+   * https://www.youtube.com/watch?v=G7aVKgGUe9c by Professor Messer has graphic illustrations, using WireShark to display details
+   * https://www.youtube.com/watch?v=HEEnLZV2wGI by  Kelly Handerhan uses an analogy of a letter being sent among two buildings where each floor is a layer of the OSI stack.
+   * https://www.youtube.com/watch?v=H6Jy-P_iFmo by Skillset
+   * https://www.youtube.com/watch?v=HEEnLZV2wGI by Eli the computer guy on a whiteboard is a bit repetitive
+   * https://www.youtube.com/watch?v=LANW3m7UgWs by CertBros Real World Example https://www.youtube.com/watch?v=LANW3m7UgWs&list=PLF1hDMPPRqGxpYdo0ctaa7MxfOi9vjs1u&index=3
+   * https://www.youtube.com/watch?v=Ilk7UXzV_Qc by RealPars 
+   <br /><br />
+
+Port numbers:
+23: Telnet
+443: HTTPS
+80: HTTP
+110: POP3
+3389 RDP 
+548 AFP 
+143 IMAP
+22 SSH 
+SSL
+
+Point-to-Point Tunneling Protocol (PPTP) encapsulates the original LAN packet with another header and trailer, while encrypting the original packet.
+
+Address Resolution Protocol (ARP) resolves IP addresses to MAC addresses.
+
+Network File System (NFS) is a client/server file-sharing protocol used in UNIX/Linux.
+
+Fibre Channel over Ethernet (FCoE) encapsulates Fibre Channel frames over Ethernet networks.
+
+Network address translation (NAT) is a service that can be supplied by a router or by a server. 
+
+DNP3 is a multilayer protocol that is used between components in process automation systems in electric and water companies.
+
+IPv4 uses 32 bits. IPv6 uses 128 bits.
+
+Private addresses:
+   * Class A 10.0.0.0–10.255.255.255
+   * Class B 172.16.0.0–172.31.255.255
+   * Class C 192.168.0.0–192.168.255.255 in range of addresses is from 192.0.0.0 to 223.255.255.255.
+   <br /><br />
+
+802.11ac includes multi-user multiple-input, multiple-output (MU MIMO).
+
+High-Data-Rate Digital Subscriber Line (HDSL) can achieve 1.544 Mbps each way over two copper twisted pairs.
+
+Secure HTTP (S-HTTP) encrypts only a single message. 
+Hypertext Transfer Protocol Secure (HTTPS) establishes a session using a digital certificate and encrypts an entire session. 
+Secure Electronic Transaction (SET) secures credit card transaction information over the Internet. 
+Implement Internet Protocol Security (IPsec) to protect data that is transmitted over a VPN. 
+
+Implementing an IPS is more expensive than implementing an IDS.
+   * IPS (intrusion prevention system) is a network device that detects a network intrusion and prevents the network intrusion.
+   * IDS (An intrusion detection system) is a network device that detects network intrusion attempts and either logs the intrusion or contacts the appropriate personnel. 
+   <br /><br />>
+
+Network access control (NAC) ensures that the computers on the network meet an organization's security policies. 
+ A virtual private network (VPN) is a private network that users can connect to over a public network. Internet Protocol Security (IPsec) is a protocol that secures IP communication over a private or public network. A demilitarized zone (DMZ) is a section of a network that is isolated from the rest of the network with firewalls.
+
+Frame Relay and X.25 are packet-switched technologies. 
+
+A three-legged firewall uses three interfaces, one connected to the untrusted network, one to the internal network, and another to a DMZ.
+
+A kernel proxy firewall is an example of a fifth generation firewall. It inspects the packet at every layer of the OSI model but does not introduce the performance hit that an application layer firewall will because it does this at the kernel layer. 
 
 
-## Social
+IP header protocol field REMEMBER 
+   * 1 = ICMP (Internet Control Message Protocol)
+   * 2 = IGMP (Internet Group Management Protocol)
+   * 6 = TCP (Transmission Control Protocol) 
+   * 17 = UDP 
+   * 115 = L2TP (Layer 2)
+   <br /><br />
+
+DSL:
+   * Symmetric DSL (SDSL), data travels in both directions at the same rate. 
+   * Asymmetric DSL (ADSL) provides faster download speed than upload speed. 
+   * High Bit-Rate DSL (HDSL) offers speeds up to 1.544 Mbps over regular UTP cable. 
+   * Very High Bit-Rate DSL (VDSL) is capable of supporting high-definition TV (HDTV) and VoIP.
+
+## Firewalls
+
+* A stateful firewall forwards packets on behalf of the client. It examines each packet and permits or denies it passage based on many factors, including the state table.
+* A proxy firewall hides a packet’s true origin before sending it through another network.
+* BA packet-filtering firewall forwards packets based on rules that define which traffic is permitted and denied on the network.
+* A bastion host is a hardened system that usually resides on a demilitarized zone (DMZ) and is accessed frequently.
+
+## Security Social sites
 
 https://isc.sans.edu/forums/diary/Verifying+Running+Processes+against+VirusTotal+DomainWide/25078/
 
