@@ -171,9 +171,9 @@ The options:
 
 <strong>git-secrets</strong> at <a target="_blank" href="https://github.com/awslabs/git-secrets">github.com/awslabs/git-secrets</a> is from AWS Labs, so does not scan secrets for other clouds. However, there is less concern about malware in the utility. Procedures to install it is detailed at <a target="_blank" href="https://git-secret.io/">git-secret.io</a>.
 
-<a target="_blank" href="https://github.com/duo-labs/secret-bridge">secret-bridge</a> <a target="_blank" href="https://duo.com/labs/research/how-to-monitor-github-for-secrets">by Duo</a>
+<a target="_blank" href="https://github.com/duo-labs/secret-bridge">secret-bridge</a> <a target="_blank" href="https://duo.com/labs/research/how-to-monitor-github-for-secrets">by Duo</a> sends Slack messages (PROTIP: Slack messages can have significantly better response than emails).
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/105407348-d80ae680-5bea-11eb-96d0-c8f35631afde.png"><img alt="github-data-security-secret-bridge-2648x77g" width="2648 src="https://user-images.githubusercontent.com/300046/105407348-d80ae680-5bea-11eb-96d0-c8f35631afde.png"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/105407348-d80ae680-5bea-11eb-96d0-c8f35631afde.png"><img alt="github-data-security-secret-bridge-2648x77g" width="2648" src="https://user-images.githubusercontent.com/300046/105407348-d80ae680-5bea-11eb-96d0-c8f35631afde.png"></a>
 
 <strong>AWS Macie</strong> (described at <a target="_blank" href="https://docs.aws.amazon.com/macie/">docs.aws.amazon.com/macie</a>) is an SaaS cloud service from Amazon that uses machine learning and pattern matching to discover and protect your sensitive data in AWS S3 buckets, at scale. Macie’s alerts, or findings, can be searched and filtered in the AWS Management Console and sent to Amazon EventBridge (CloudWatch Events), for integration with existing workflow or event management systems, or to be used in combination  to take automated remediation actions using AWS Step Functions. It can be invoked from commands in AWS CLI.
 
