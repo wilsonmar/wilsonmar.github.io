@@ -34,7 +34,7 @@ Recommendations offered in this article:
 1. <a href="#2FA">Setup 2FA with an authenticator to physically confirm GitHub access</a>
 2. <a href="#DorkLocally">Automate scans to look for secrets locally before/after pushing to GitHub</a>
 3. <a href="#RemoveHistory">Remove secrets in prior commit history on GitHub</a>
-4. <a href="#UseVariables">Refer to secrets as variables in your code</a>
+4. <a href="#UseVariables">Refer to secrets as environment variables in your code</a>
 5. <a href="#Encrypt">Rotate keys to encrypted files</a>
 6. <a href="#SecretsInCloud">Save secret keys in the cloud</a>
 7. <a href="#SSH_certs">Rotate secrets: Access GitHub with rotated SSH certificates generated (automatically every day)</a>
@@ -305,24 +305,35 @@ Another option is to use pre and post-commit hooks to automatically add/remove s
 
 <a name="UseVariables"></a>
 
-## SOLUTION 4. Refer to secrets as variables in your code
+## SOLUTION 4. Refer to secrets as environment variables in your code
 
-TODO: One of the "12 Factor App".
+Among the "12 Factor App" <a target="_blank" href="https://12factor.net/">12factor.net</a>) which summarizes the basic design principles of modern web apps. In <a target="_blank" href="https://12factor.net/config">Factor 3: Config</a>:
 
-1. To retrieve an environment variable into the program:
+> Apps sometimes store config as constants in the code. This is a violation of twelve-factor, which requires strict separation of config from code. Config varies substantially across deploys, code does not.
 
-   * Python programs reference `process.env.SECRET_PASS`.
+> A litmus test for whether an app has all config correctly factored out of the code is whether the codebase could be made open source at any moment, without compromising any credentials.
 
-   * PHP programs use `getenv('SECRET_PASS');`.
+> The twelve-factor app stores config in environment variables (often shortened to env vars or env). Env vars are easy to change between deploys without changing any code; unlike config files, there is little chance of them being checked into the code repo accidentally; and unlike custom config files, or other config mechanisms such as Java System Properties, they are a language- and OS-agnostic standard.
 
-   * C# programs use `System.Environment.GetEnvironmentVariable("SECRET_PASS", _<br />EnvironmentVariableTarget.Process)`.
+1. Examples of code to retrieve an environment variable into the program:
 
-   * JavaScript NOTE: Internet browser sandboxing restricts JavaScript from accessing operating system
-environment variables.
+   Python programs reference `process.env.SECRET_PASS`.
 
+   PHP programs use `getenv('SECRET_PASS');`.
+
+   C# programs use `System.Environment.GetEnvironmentVariable("SECRET_PASS", _<br />EnvironmentVariableTarget.Process)`.
+
+   JavaScript is restricted from accessing operating system environment variables by Internet browser sandboxing. So setup a <a target="_blank" href="https://developer.wordpress.org/rest-api/">REST API endpoint</a> on a server you control to call with your app's JavaScript. For example, to <a target="_blank" href="https://developer.mailchimp.com/">get MailChimp to send email from your web app</a>, <a target="_blank" href="https://gomakethings.com/keeping-api-credentials-secret-with-vanilla-javascript/">create a MailChimp API on your server</a> using <a target="_blank" href="https://github.com/cferdinandi/gmt-mailchimp-wp-rest-api">this</a> <a target="_blank" href="https://developer.wordpress.org/rest-api/">Wordpress middleware API</a> which stores your credentials securely on the server, and makes the real API call on your request. It then sends back the data, optionally filtering out any data you don’t want exposed publicly first. Test that the <a target="_blank" href="https://www.wikiwand.com/en/Same-origin_policy">Same Origin Policy</a> prevents rogue "leaching" sites from calling your API endpoint (<a target="_blank" href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html">cross-site request forgery</a>), change your API method signatures. Have the server API verify document.location on the client-side. <a target="_blank" href="https://softwareengineering.stackexchange.com/questions/229859/how-to-avoid-unauthorized-use-of-an-api">Generate and exchange a session key</a>:
+   1. Client embeds client_key in request for API library.
+   2. Server determines host that has access to the API, if any.
+   3. Server picks "salt" for a session key and sends it to the client with the library [or as part of another pre-auth exchange].
+   4. Client calculates a session_key using hash(document.location.host + session_salt).
+   5. Client uses session_key + client_key for an API call.
+   6. Server validates the call by looking up the client_key's host and "salt" in the session, computing the hash, and comparing to the provided client_key.
+   7. Server validates SameSite Cookie Attribute.
+   <br /><br />
 
 1. TODO: Some GitHub contains sample values in a file
-
 
    CAUTION: The problem is that some simply save the .env file in the same folder, which is then subject to being pushed to a GitHub repository.
 
@@ -330,9 +341,6 @@ environment variables.
 
    {% highlight text %}
    echo "export SECRET_PASS=12345678910" >> ~/app-root/data/.bash_profile{% endhighlight %}
-
-
-
 
 
 An extention of this concept is to reference a file name that is actually reached via a <a href="#Symlink">symlink</a> 
@@ -348,8 +356,9 @@ to a folder outside of the Git repository.
    ln -s ~/.aws/config  config
    </pre>
 
-1. On Windows, a "Shortcut" is created to a file.
+1. On Windows, to create a "Shortcut" file, right-click the folder icon you want to make a shortcut of, and select "Create shortcut" from the right-click menu that appears. 
 
+   Alternatively, you can right-click and hover your mouse over the "Send to" option and select "Desktop".
 
 
 ### Sync from Dropbox #
@@ -524,7 +533,7 @@ Some devs code their programs to read ".env" files in a folder outside Git repos
 
 But mechanisms to <strong>backup</strong> those secrets can be problematic.
 
-Many enterprises block USB drives from being plugged in (see STUXNET vulnerability).
+Many enterprises block USB drives from being plugged in (to avoid STUXNET vulnerability).
 
 The application 1Password takes a compromise approach of
 allowing password crypts to be transferred among multiple local devices,
@@ -535,7 +544,7 @@ but not over a public network.
 
 ## Local Diagram
 
-Here is a draft diagram describing how the various techniques above work together:
+Here is a draft diagram describing how the various techniques above working together:
 
 <amp-img width="714" height="466" alt="github-secrets-v02-714x466"
 layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/15831785/7aa96c3e-2bdc-11e6-9c3f-0dbf31a59f42.png"></amp-img>
