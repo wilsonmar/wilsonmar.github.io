@@ -299,9 +299,9 @@ https://kubernauts.de/en/home/ (<a target="_blank" href="https://twitter.com/kub
 
 ### CKS Exam Domains
 
-<a target="_blank" href="https://training.linuxfoundation.org/announcements/new-kubernetes-security-specialist-certification-to-help-professionals-demonstrate-expertise-in-securing-container-based-applications/">From November, 2020</a> the <a target="_blank" href="https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/">CKS (Certified Kubernetes Security) exam</a> for those who hold a CKA certification.
+<a target="_blank" href="https://training.linuxfoundation.org/announcements/new-kubernetes-security-specialist-certification-to-help-professionals-demonstrate-expertise-in-securing-container-based-applications/">Coming November, 2020</a> (before the KubeCon North America conference): <a target="_blank" href="https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/">CKS exam</a> is $300 for 2 hours.
 
-It is $300 for 2 hours:
+It's for those who hold a CKA certification.
 
 * 10% Cluster Setup - Best practice for configuration to control environment access, rights, and platform conformity.
 * 15% Cluster Hardening - to protect K8s API and utilize <a href="#RBAC">RBAC</a>
@@ -311,16 +311,14 @@ It is $300 for 2 hours:
 * 20% Monitoring, Logging, and Runtime Security - to analyse and detect threads
 <br /><br />
 
-Linux Foundation also offers (since Jan 2021 during registration) <a target="_blank" href="https://trainingportal.linuxfoundation.org/learn/course/kubernetes-security-essentials-lfs260/">Kubernetes Security Essentials</a> (course LFS260) by Timothy Serewicz.
-
 DockerDocker (specifically, Docker Engine) provides operating-system-level virtualization in containers.
 
 * <a target="_blank" href="https://www.pluralsight.com/courses/configuring-managing-kubernetes-security">Pluralsight "Configuring and Managing Kubernetes Security</a> by Anthony Nocentino (@nocentio, centinosystems.com) is the one to take.
 
-* <a target="_blank" href="https://github.com/NodyHub/docker-k8s-resources/tree/master/k8s-pods">
-sample Security yaml</a>
+* https://github.com/NodyHub/docker-k8s-resources/tree/master/k8s-pods
+sample Security yaml
 
-* <a target="_blank" href="https://ravikirans.com/cks-kubernetes-security-exam-study-guide/">ravikirans.com/cks-kubernetes-security-exam-study-guide</a>
+* https://ravikirans.com/cks-kubernetes-security-exam-study-guide/
 
 * <a target="_blank" href="https://github.com/walidshaari/Certified-Kubernetes-Security-Specialist">https://github.com/walidshaari/Certified-Kubernetes-Security-Specialist</a> by <a target="_blank" href="https://walidshaari.blogspot.com">Walid Shaari</a> (<a target="_blank" href="https://medium.com/@walidshaari">author in Medium</a>).
 

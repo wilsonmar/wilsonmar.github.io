@@ -26,37 +26,38 @@ The "Special" keys on a Mac's keyboard are represented by both symbols and names
 <amp-img width="413" height="399" alt="Apple keys symbols" src="https://cloud.githubusercontent.com/assets/300046/15536540/fe6cb344-222e-11e6-9f2b-c37419a9d42f.gif"></amp-img>
 
 
-## Key visibility
-
-PROTIP: Some use keyboards (RGB) that light up keys in the dark. But I personally think the best strategy is to find a way to NOT have to look at the keyboard at all.
-
-PROTIP: Resourceful coders make it so they don't need to waste time and attention reaching for the mouse. 
-
-PROTIP: Some put tiny drops from a glue gun on strategic points on the keyboard so they can orient their finger in the dark without looking.
-
-PROTIP: Repeated practice trains muscle memory so you can find the keys without the need to take your eyes off the screen. Do not make it a habit to look at the keyboard while you learn to do the routine, which includes getting your hands back to to "home row" with forefingers on F and J. Try to keep your forefingers in the "home" position of F and J. Most keyboard have a tiny bump on those two keys.
-
-   This may be a generalization, but many top coders actually like the <strong>vi text editor</strong> because it doesn't use difficult-to-reach keys or mouse that require the user to take their eyes off the screen. DevSecOps coders have no choice because some operating systems only offer only vi (such as during Kubernetes exams). 
-
-
 <a name="Gymnastics"></a>
 
 ## Full Screen Finger Gymnastics #
 
 PROTIP: To evaluate Mac developers, some interviewers ask "show me how you enter and exit Full Screen". This is because they assume that the most productive developers work with their hands always on the keyboard. 
 
-Rather than be distracted by buttons, menus, lists, etc. you may want to <strong>focus on your content</strong>
-by <strong>toggling full screen</strong>. Windows has its F12 key. But on macOS the default operation is a complicated key combination typed at the same time -- the equivalent of a <strong>double Summersault</strong> with your fingers:
+Windows has its F12 key. Apple has Mac users do the equivalent of a <strong>double Summersault</strong> with your fingers.
+How do you type, at the same time:
 
-   <ul><strong>control + command + F</strong>
+   <ul><strong>control + command + F</strong></ul>
 
-   PROTIP: Try raising your hand while keeping your left forefinger on the F "home" key, reach with your left thumb <strong>inside</strong> to hold down the control key. This may hurt at first (until you get used to it).
+PROTIP: To toggle <strong>Full Screen view</strong> using the default configuration from Apple: while keeping your left forefinger on the F "home" key, reach with your left thumb to hold down the control key. This may hurt at first (until you get used to it). Try raising your hand
+
+   Now, while keeping your right forefinger on the J "home" key, reach with your right thumb to hold down the command key on the right side of the Space Bar. Then you're in position to press F with your left forefinger.
+
+## Key visibility
+
+PROTIP: Some use keyboards (RGB) that light up keys in the dark. But I personally think the best strategy is to find a way to not have to look at the keyboard at all.
+
+PROTIP: Some put tiny drops from a glue gun on strategic points on the keyboard so they can orient their finger in the dark without looking.
 
    Now, while keeping your right forefinger on the J "home" key, reach with your right thumb to hold down the command key on the right side of the Space Bar. Then you're in position to press F with your left forefinger.
    </ul>
 
+   This may be a generalization. But many top coders actually like the <strong>vi text editor</strong> because it doesn't use difficult-to-reach keys or mouse that require the user to take their eyes off the screen. DevSecOps coders have no choice because some operating systems only offer only vi (such as during Kubernetes exams). 
+
+   PROTIP: To evaluate Mac developers, some interviewers ask "show me how you enter and exit Full Screen". This is because they assume that the most productive developers work with their hands always on the keyboard. 
+
 
 ## Keyboard Ergonomics
+
+Resourceful coders make it so they don't need to waste time and attention reaching for the mouse. 
 
 Although pricey at <a target="_blank" href="https://www.amazon.com/Kinesis-Advantage2-Ergonomic-Keyboard-KB600/dp/B07K1SMRGS/">$340 from Amazon</a> (perhaps the most expensive keyboard available), the "Advantage2" keyboard <a target="_blank" href="https://kinesis-ergo.com/shop/advantage2/">from Kinesis-ergo.com</a> (at Bethel, Washington state)
 makes it easier and faster for your fingers to reach keys due to its unique contoured key wells.
