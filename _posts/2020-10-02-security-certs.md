@@ -43,8 +43,14 @@ ISC2.org (a non-profit), which published a Code of Ethics.
 
 The first version of the Common Body of Knowledge (CBK) was finalized in 1992 and the CISSP credential was launched two years later.
 
-The CISSP exam is adaptive, asking 30-150 questions, depending on whether answers are correct.
+The CISSP exam is adaptive, asking 30-150 questions (25 don't count), depending on whether answers are correct. The better you are, the harder the test is. If you aced the first 10 questions, you'll be put into "brutal mode".
+
+https://www.youtube.com/watch?v=5nqqL1rjIY4
+
+You won't be able to go back and change answers in previous questions answered.
+
 So someone may not need all 3 hours.
+
 You need to pass 70% on <em>each</em> of the eight CISSP domains. Numbers below are counts of questions in the <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">OReilly/Pearson bank</a>:
 
    1. Security and Risk Management - 334
@@ -67,8 +73,11 @@ Written Reference:
 
 Practice Tests:
 
-   * online practice test: https://insidethemicrosoftcloud.com/cissp-practice-quiz/
-   https://www.youtube.com/channel/UCAr0yk0um7lwLjmrKfzwyig/videos
+   * <a target="_blank" href="https://www.youtube.com/watch?v=jZSAZ1neFZk&list=PLBpnwlO9U5unYmbZp2DJETNOHg8s_yW37">VIDEO: ITDojo playlist: 100+ Question of the day</a>, explained
+
+   * <a target="_blank" href="https://insidethemicrosoftcloud.com/cissp-practice-quiz/">50 question CISSP Practice Quiz online</a>
+   
+   * <a target="_blank" href="https://www.youtube.com/channel/UCAr0yk0um7lwLjmrKfzwyig/videos">On Youtube</a>
 
    * For 20 years, Dean Bushmiller has a live <a target="_blank" href="https://learning.oreilly.com/live-training/courses/cissp-bootcamp/0636920483199/">CISSP Bootcamp"</a> on OReilly.com includes a set of proprietary visual "mind maps" to collect, practice, and verify your knowledge.
 
@@ -128,8 +137,8 @@ Video prep courses view:
 
    * <a target="_blank" href="https://www.sageknowsit.com/product/ebook-infosec-brain-dump-template/">https://www.sageknowsit.com/product/ebook-infosec-brain-dump-template</a>$14.99 eBook: InfoSec Brain Dump Template w/Study Schedule
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=v2Y6Zog8h2A">Kelly Handerhan's "Why you will pass the CISSP" video</a>
-   
+   * Kelly Handerhan, the "Mister Rogers of CISSP" <a target="_blank" href="https://www.youtube.com/watch?v=v2Y6Zog8h2A">"Why you will pass the CISSP" video</a> among her <a target="_blank" href="https://www.youtube.com/watch?v=-99b1YUFx0A&list=PLJ-B2OMLT_K89_2YNVj2I7UJMIwuxZydg">YouTube CyberTrain.IT playlist</a> 
+
    * <a target="_blank" href="https://www.cybrary.it/">cybrary.it</a> 
 
    * <a target="_blank" href="https://www.amazon.co.uk/CISSP-Official-ISC-Practice-Tests-ebook/dp/B07D8FZN8M/">BOOK: ISC2 official practice tests</a>
@@ -139,6 +148,59 @@ Facebook Groups to join:
    * <a target="_blank" href="">Luke/SNT</a>
    <br /><br />
 
+YouTube videos with content index (and ads) by Rob Richa, with <a target="_blank" href="https://www.linkedin.com/in/jberti/">John Berti</a> of Destination Certifications:
+
+1. Security & Risk Management: https://www.youtube.com/watch?v=geGALIfOxtI​&t=30s
+
+2. 
+   * Asset Classification: https://www.youtube.com/watch?v=aN9zkmzYTmQ​&t=30s
+   * Privacy: https://www.youtube.com/watch?v=lrI4QIa8S2I​&t=30s
+   <br /><br />
+
+3.
+   * Models and Frameworks: https://www.youtube.com/watch?v=qZB6_lp9M30​&t=30s
+   * Evaluation Criteria: https://www.youtube.com/watch?v=WqHmDL7YAvw​&t=30s
+   * Trusted Computing Base: https://www.youtube.com/watch?v=fwU7n_3h058​&t=30s
+   * Vulnerabilities in Systems: https://www.youtube.com/watch?v=fPUypU7ysMw​&t=30s
+   * Cloud: https://www.youtube.com/watch?v=-rWQ7YuxiLY​&t=30s
+   * Cryptography: https://www.youtube.com/watch?v=LLRaa0kOMDM​&t=30s
+   * Digital Certificates, Digital Signatures & PKI: https://www.youtube.com/watch?v=8XKdFSG3ua4​&t=30s
+   * Cryptanalysis: https://www.youtube.com/watch?v=pnITDgs63M4​&t=30s
+   * Physical Security: https://www.youtube.com/watch?v=7ESQwNJ9HXU​&t=30s
+   <br /><br />
+
+5.
+   * Access Control Overview: https://www.youtube.com/watch?v=BUcoABZzeQ4​&t=30s
+   * Single Sign-on & Federated Access: https://www.youtube.com/watch?v=_U4QMIxVk8M​&t=30s
+   <br /><br />
+
+6.
+   * Security Assessment and Testing Overview: https://www.youtube.com/watch?v=eDVZvw5NziA​&t=30s
+   * Vulnerability Assessment and Penetration Testing: https://www.youtube.com/watch?v=vZ0S8GdWiIk​&t=30s
+   * Logging & Monitoring: https://www.youtube.com/watch?v=cwcARccyWyY​&t=30s
+   <br /><br />
+
+7. Security Operations:
+   * Investigations: https://www.youtube.com/watch?v=Urev5cZgny8​&t=30s - Locard's Principle: perp. will leave something behind and take something
+   * Incident Response: https://www.youtube.com/watch?v=PwxFwndQ7Jk​&t=30s
+   * Malware: https://www.youtube.com/watch?v=SVbrRozyIpo​&t=30s
+   * Patching & Change Management: https://www.youtube.com/watch?v=xX4U6Lz82Bk​&t=30s
+   * Recovery Strategies: https://www.youtube.com/watch?v=DrrfrJBnx28​&t=30s
+   * Business Continuity Management (BCM): https://www.youtube.com/watch?v=oAjNL3I_3-E​&t=30s
+   <br /><br />
+
+8.
+   * Secure Software Development: https://youtu.be/fS5WWjuyFmQ​&t=30s
+   * Databases: https://youtu.be/-70DBd6cNDw&t=30s
+   <br /><br />
+
+Bootcamp: <a target="_blank" href="https://www.youtube.com/watch?v=pgEn1h_too0&list=PLETKkWHNA3qgWGW54totIqfHpAwQT574b&index=12">13 day 2 hours each from April 13, 2020 FRSecure CISSP Mentor Program (12th year) streaming by <a target="_blank" href="https://twitter.com/evanfrancen?lang=en">@evanfrancen</a>. S2me.io
+
+posted by SANS Blue Team Ops:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=bopYRxAyTU8">CISSP Cram Session</a> Jun 28, 2020. Slides at <a target="_blank" href="https://www.EricConrad.com/">EricConrad.com</a>, author of <a target="_blank" href="https://mtg414.com/">MGT414.com</a>: SANS Training Program for CISSP® Certification, as well as the <a target="_blank" href="https://www.amazon.com/CISSP-Study-Guide-Third-Conrad/dp/0128024372">CISSP® Study Guide (Syngress)</a>.
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=5nqqL1rjIY4">Test-Taking Tactics</a>
 
 Suggestions:
 
@@ -148,10 +210,9 @@ Suggestions:
    * <a target="_blank" href="https://www.youtube.com/watch?v=tjOjjXVPQeU">Graph your progress</a> from <a target="_blank" href="https://www.sageknowsit.com/">sageknowsit.com</a>
 
 
-
 ## ISACA.org
 
-From <a target="_blank" href="http://www.isaca.org/CERTIFICATION/Pages/default.aspx">ISACA.org</a> asks for a $50 test application processing fee in addition to membership fee for a US$185 discount to the US$760 online, remotely-proctored exam fee. 
+<a target="_blank" href="http://www.isaca.org/CERTIFICATION/Pages/default.aspx">ISACA.org</a> asks for a $50 test application processing fee in addition to membership fee for a US$185 discount to the US$760 online, remotely-proctored exam fee. 
 
    * <a target="_blank" href="https://www.isaca.org/credentialing/cybersecurity/csx-fundamentals-certificate">CSX Fundamentals</a>
 
@@ -165,7 +226,7 @@ From <a target="_blank" href="http://www.isaca.org/CERTIFICATION/Pages/default.a
 
    * <a target="_blank" href="https://www.isaca.org/credentialing/csx-p">CSX-P (Cybersecurity Practitioner)</a> is derived from the <a target="_blank" href="https://www.nist.gov/cyberframework">NIST Cyberframework</a> is 4 hours.
 
-### CSX
+### ISACA CSX
 
 ISACA's <a target="_blank" href="https://www.isaca.org/credentialing/cybersecurity">Cybersecurity Nexus (CSX) Certificates</a>  
 
@@ -408,6 +469,45 @@ with training via CPENT.
 
 EC-Council built the Advanced Penetration Testing Cyber Range (ECCAPT).
 
+## AWS Security
+
+See my notes at <a target="_blank" href="https://wilsonmar.github.io/aws-security">https://wilsonmar.github.io/aws-security</a>
+
+## Microsoft AZ-500
+
+<a target="_blank" href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3VwUH">PDF</a>: Updated Jan 21, 2021 
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-500">
+Microsoft's $160 AZ-500 Azure Security Technologies</a> Associate online exam for people who maintain security posture, identify and remediate vulnerabilities by using a variety of security tools, implemente threat protection, and respond to security incident escalations. Domains:
+
+1. Manage Identity and Access
+2. Implement Platform Protection
+3. Manage Security Operations
+4. Policy and Data Infrastucture
+5. Data at Rest, App Security, Key Vault
+<br /><br />
+
+Peter Zerger (@pzerger) 
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=BkP6NZ83U5c">VIDEO: How to prepare</a> <a target="_blank" href="https://bit.ly/AZ500ExamPrep">https://bit.ly/AZ500ExamPrep</a>
+
+   * <a target="_blank" href="https://aka.ms/MCRA/">PDF Map: Microsoft Azure Cybersecurity Reference Architecture</a>
+
+   * <a target="_blank" href="https://bit.ly/InsideAzure">Inside Azure (free book)
+
+   * <a target="_blank" href="https://lnkd.in/gyf9WBV">5 Tips and 3 Freebies for AZ-500 Prep
+
+   * <a target="_blank" href="https://lnkd.in/g8Be3pY">Strategy for "How should I prepare for AZ-500 Exam?"
+
+   * <a target="_blank" href="https://lnkd.in/gBC_c8x">AZ-500 Exam Cram Series
+
+   * <a target="_blank" href="https://lnkd.in/gmg6dJu">AZ-500 Video Practice Exam Questions
+
+   * https://cloudacademy.com/learning-paths/az-500-exam-preparation-microsoft-azure-security-technologies-650/
+
+   * https://www.pluralsight.com/courses/microsoft-azure-incident-response-remediation
+   * https://blog.ahasayen.com/az-500-azure-security-engineer-exam/
+   * https://zimmergren.net/passing-az-500-microsoft-certified-azure-security-engineer-associate/
+
 ## References
 
 On Udemy: <a target="_blank" href="https://www.udemy.com/course/secure-product-lifecycle-101/">
@@ -418,6 +518,7 @@ References SAMM 2.0, OWASP Top 10.
 
 * <a target="_blank" href="https://www.beyond20.com/blog/best-cyber-security-certification-path-for-a-great-career/">
 
+Podcast: Evan Francen's Unsecurity
 
 ## More on Security #
 
