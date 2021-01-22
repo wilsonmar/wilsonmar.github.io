@@ -4,7 +4,7 @@ title: "Bash (script) coding"
 excerpt: "Walk though the tricks (Bashisms) used in a script to install, configure, and run many programs on macOS and Linux"
 tags: [devops, bash, programming]
 Categories: Devops
-date: "2018-04-06"
+date: "2021-01-21"
 file: "bash-coding"
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/14612210/373cb4e2-0553-11e6-8a1a-4b5e1dabe181.jpg
@@ -17,6 +17,8 @@ comments: true
 {% include _toc.html %}
 
 This page is a deep dive into the <strong>technical ideosycracies</strong> of shell script files.
+
+"Bash" is derived from the Japanese word <em>ibasho</em> which means "a place where you can feel like yourself."<a target="_blank" href="https://www.wired.com/story/group-house-covid-risk-points/">*</a>
 
 This tutorial picks up from <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/README.md">this README</a> which provides someone new to Macs specific steps to configure and run scripts to install apps on Macs. So first finish reading that about "shbangs" and grep for Bash shell versions.
 
