@@ -18,6 +18,7 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/cyber-security/">This page</a> contains my notes on resources for Cyber Security, which is a vast field. This single page is just for reference.
 
+
 ## Adobe Common Control Framework
 
 Adobe <a target="_blank" href="https://adobe.allegiancetech.com/cgi-bin/qwebcorporate.dll?idx=VM6HD7">open-sourced</a> its <a target="_blank" href="https://blogs.adobe.com/security/2017/05/open-source-ccf.html">own Common Control Framework</a> which encompasses several security frameworks. Adobe's CCF covers <a href="#iso27002">ISO 27001/27002</a>, SOC, FedRAMP, PCI DSS, GLBA, FERPA, and others. <a target="_blank" href="https://www.adobe.com/security/compliance/ccf-download.html">Download</a> the <a target="_blank" href="https://www.adobe.com/pdf/Open_Source_CCF.pdf">pdf</a>. Adobe's control families is most comprehensive:
@@ -1725,7 +1726,7 @@ Port numbers:
 548 AFP 
 143 IMAP
 22 SSH 
-SSL
+443 SSL
 
 Point-to-Point Tunneling Protocol (PPTP) encapsulates the original LAN packet with another header and trailer, while encrypting the original packet.
 
