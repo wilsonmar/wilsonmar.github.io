@@ -171,7 +171,7 @@ The options:
 
 <strong>git-secrets</strong> at <a target="_blank" href="https://github.com/awslabs/git-secrets">github.com/awslabs/git-secrets</a> is from AWS Labs, so does not scan secrets for other clouds. However, there is less concern about malware in the utility. Procedures to install it is detailed at <a target="_blank" href="https://git-secret.io/">git-secret.io</a>.
 
-<a target="_blank" href="https://github.com/duo-labs/secret-bridge">secret-bridge</a> <a target="_blank" href="https://duo.com/labs/research/how-to-monitor-github-for-secrets">by Duo</a> sends Slack messages (PROTIP: Slack messages can have significantly better response than emails).
+<a target="_blank" href="https://github.com/duo-labs/secret-bridge">secret-bridge</a> <a target="_blank" href="https://duo.com/labs/research/how-to-monitor-github-for-secrets">by Duo</a> sends Slack messages (PROTIP: Slack messages can have significantly better response than emails). It automates execution of several secret detection tools based on repository events.
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/105407348-d80ae680-5bea-11eb-96d0-c8f35631afde.png"><img alt="github-data-security-secret-bridge-2648x77g" width="2648" src="https://user-images.githubusercontent.com/300046/105407348-d80ae680-5bea-11eb-96d0-c8f35631afde.png"></a>
 
@@ -189,11 +189,9 @@ The options:
 
 TruffleHog is open-source code.
 
-GuardRails is proprietary but has reports and login security, which is important to keep knowledge of internal vulnerabilities isolated to only those who need to know. 
+GuardRails has proprietary code but produces reports and provide login security, which is important to keep knowledge of internal vulnerabilities isolated to only those who need to know. 
 <a target="_blank" href="https://github.com/marketplace/guardrails">On GitHub's Marketplace</a>.
 
-
-   <br /><br />
 
 <hr />
 
@@ -332,7 +330,7 @@ Among the "12 Factor App" <a target="_blank" href="https://12factor.net/">12fact
 
    C# programs use `System.Environment.GetEnvironmentVariable("SECRET_PASS", _<br />EnvironmentVariableTarget.Process)`.
 
-   JavaScript is restricted from accessing operating system environment variables by Internet browser sandboxing. So setup a <a target="_blank" href="https://developer.wordpress.org/rest-api/">REST API endpoint</a> on a server you control to call with your app's JavaScript. For example, to <a target="_blank" href="https://developer.mailchimp.com/">get MailChimp to send email from your web app</a>, <a target="_blank" href="https://gomakethings.com/keeping-api-credentials-secret-with-vanilla-javascript/">create a MailChimp API on your server</a> using <a target="_blank" href="https://github.com/cferdinandi/gmt-mailchimp-wp-rest-api">this</a> <a target="_blank" href="https://developer.wordpress.org/rest-api/">Wordpress middleware API</a> which stores your credentials securely on the server, and makes the real API call on your request. It then sends back the data, optionally filtering out any data you don’t want exposed publicly first. Test that the <a target="_blank" href="https://www.wikiwand.com/en/Same-origin_policy">Same Origin Policy</a> prevents rogue "leaching" sites from calling your API endpoint (<a target="_blank" href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html">cross-site request forgery</a>), change your API method signatures. Have the server API verify document.location on the client-side. <a target="_blank" href="https://softwareengineering.stackexchange.com/questions/229859/how-to-avoid-unauthorized-use-of-an-api">Generate and exchange a session key</a>:
+   JavaScript is restricted from accessing operating system environment variables by Internet browser sandboxing. So setup a <a target="_blank" href="https://developer.wordpress.org/rest-api/">REST API endpoint</a> on a server you control to call with your app's JavaScript. For example, to <a target="_blank" href="https://developer.mailchimp.com/">get MailChimp to send email from your web app</a>, <a target="_blank" href="https://gomakethings.com/keeping-api-credentials-secret-with-vanilla-javascript/">create a MailChimp API on your server</a> using <a target="_blank" href="https://github.com/cferdinandi/gmt-mailchimp-wp-rest-api">this</a> <a target="_blank" href="https://developer.wordpress.org/rest-api/">Wordpress middleware API</a> which stores your credentials securely on the server, and makes the real API call on your request. It then sends back the data, optionally filtering out any data you don’t want exposed publicly first. Test that the <a target="_blank" href="https://www.wikiwand.com/en/Same-origin_policy">Same Origin Policy</a> prevents rogue "leaching" sites from calling your API endpoint (<a target="_blank" href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html">cross-site request forgery (CSRF)</a>, one of the <a target="_blank" href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html">OWASP Top 10 Vulnerabilities</a>) by adding <tt>X-CSRF-CHECK: 1</tt> onto your application's AJAX calls and having the backend check for <tt>$_SERVER['HTTP_X_CSRF_CHECK']</tt> or <a target="_blank" href="https://softwareengineering.stackexchange.com/questions/229859/how-to-avoid-unauthorized-use-of-an-api">generate and exchange a custom session key</a>:
    1. Client embeds client_key in request for API library.
    2. Server determines host that has access to the API, if any.
    3. Server picks "salt" for a session key and sends it to the client with the library [or as part of another pre-auth exchange].
@@ -342,6 +340,7 @@ Among the "12 Factor App" <a target="_blank" href="https://12factor.net/">12fact
    7. Server validates SameSite Cookie Attribute.
    <br /><br />
 
+   
 1. TODO: Some GitHub contains sample values in a file
 
    CAUTION: The problem is that some simply save the .env file in the same folder, which is then subject to being pushed to a GitHub repository.
