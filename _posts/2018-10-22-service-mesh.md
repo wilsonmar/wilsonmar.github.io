@@ -4,7 +4,7 @@ title: "Service Mesh (Envoy, Istio, Linkerd)"
 excerpt: "The sidecar proxy separates cross-cutting operational concerns from business logic, handing off to a control pane to do the rest"
 modified:
 tags: [git]
-date: "2018-10-22"
+date: "2021-01-04"
 file: "service-mesh"
 image:
 # svcmesh-istio-api-egress-metrics-1900x500-73342.jpg
@@ -146,6 +146,7 @@ The circuit breaker pattern isolates unhealthy instances, then gradually brings 
 
 <hr />
 
+
 ## Workshop 
 
 There is a quite thorough hands-on workshop using GKE (Google Kubernetes Engine).
@@ -159,6 +160,125 @@ There is a quite thorough hands-on workshop using GKE (Google Kubernetes Engine)
    * <a target="_blank" href="https://github.com/jamesward/istio-workshop">https://github.com/jamesward/istio-workshop</a> from Nov 2017 is a whole workshop with code.
 
 <hr />
+
+### Install prereqs and Istio
+
+1. See my tutorial to <a target="_blank" href="https://wilsonmar.github.io/git-config">Install Git</a> and other utilities
+1. See my tutorial to <a target="_blank" href="https://wilsonmar.github.io/kubernetes">Install Kubernetes</a> (minikube)
+1. See my tutorial to <a target="_blank" href="https://wilsonmar.github.io/helm">Install Helm</a> 3.4.2-catalina
+1. See my tutorial to <a target="_blank" href="https://wilsonmar.github.io/terminal">Bring up Terminal</a>
+
+1. Rather than download Istio from https://github.com/istio/istio/releases
+
+   <pre><strong>brew install istioctl</strong></pre>
+
+1. Verify installed version:
+
+   <pre><strong>istioctl version</strong></pre>
+
+   If your pods have not already been setup:
+
+   <pre>unable to retrieve Pods: Get "https://127.0.0.1:32768/api/v1/namespaces/istio-system/pods?fieldSelector=status.phase%3DRunning&labelSelector=app%3Distiod": dial tcp 127.0.0.1:32768: connect: connection refused
+   </pre>
+
+1. See my tutorial to <a target="_blank" href="https://wilsonmar.github.io/kubernetes/#start-minikube-with-docker-driver">Start minikube with Docker driver</a>
+
+1. Start
+
+   <pre>kubectl apply -f install/kubernetes/helm/helm-service-account.yaml
+helm init --upgrade --service-account tiller
+helm install install/kubernetes/helm/istio --name istio \
+  --namespace istio-system \
+  --set gateways.istio-ingressgateway.type=NodePort \
+  --set gateways.istio-egressgateway.type=NodePort \
+  --set sidecarInjectorWebhook.enabled=false \
+  --set global.mtls.enabled=false \
+  --set tracing.enabled=true
+   </pre>
+
+<hr />
+
+## Verifying Istio is meshing
+
+<a target="_blank" href="https://www.linkedin.com/learning/kubernetes-service-mesh-with-istio/verifying-that-istio-is-meshing?contextUrn=urn%3Ali%3AlyndaLearningPath%3A5c48d3fc498e244c8376de8c&u=26886050">VIDEO</a>
+
+To enable Istio by default for resources deployed into the environment, "label" the namespace to enable auto-injection into:
+
+1. First, clean up the hostname environment because we previously disabled automatic injection of the Istio proxy for the environment where we wish to transition an application to Istio, or one where multiple application environments may exist, all of which may not use a service mesh.
+
+   ```
+   kubectl delete -f hostname.yaml
+   ```
+
+1. Reset the istio relase to include the auto-injection webhook:
+
+   ```
+helm upgrade istio install/kubernetes/helm/istio \
+  --namespace istio-system \
+  --set gateways.istio-ingressgateway.type=NodePort \
+  --set gateways.istio-egressgateway.type=NodePort \
+  --set sidecarInjectorWebhook.enabled=true \
+  --set global.mtls.enabled=false \
+  --set tracing.enabled=true
+   ```
+
+1. Label the namespace with the "istio-injection" key:
+
+   ```
+kubectl label namespace default istio-injection=enabled
+   ```
+
+1. Re-install the hostname.yaml app and we should see that the sidecar is automatically injected:
+
+   ```
+kubectl apply -f hostname.yaml
+kubectl get pods -l app=hostname
+   ```
+
+
+1. Use <a target="_blank" href="https://github.com/fortio/fortio">fortio for load testing</a> a command tool written in Golang.
+
+   <pre>./fortio load -c 3 -n 20 -qps 0 http://hostname/version</pre>
+
+   qps = Queries Per Second
+
+1. List processing stats:
+
+   <pre>./fortio-faults</pre>
+
+
+## Sample Apps
+
+<a target="_blank" href="https://github.com/blueperf/Overview">Blueperf</a> - the Public Cloud Environment Performance Analysis Application containing (Java) microservices application for fictional Airline Company "Acme Air". By Joe McClure at IBM, using IBM Cloud Kubernetes Service (IKS).
+
+   * acmeair-mainservice-java (GUI)
+   * acmeair-authservice-java JWT (Set environment variable SECURE_SERVICE_CALLS = false to disable authentication.)
+   * acmeair-bookingservice-java handles getting, making, and cancelling flight bookings.
+   * acmeair-customerservice-java
+   * acmeair-flightservice-java queries flights and reward miles.
+   * acmeair-driver - a workload driver for the Acme Air Sample Application.
+   <br /><br />
+
+Isotope is a synthetic app with configurable topology.
+
+<img width="876" alt="istio-sample-app-1752x874" src="https://user-images.githubusercontent.com/300046/103592144-7c80ef00-4eaf-11eb-8319-5837ac7a59be.png">
+<a href="#[1]">[1]</a>
+
+<a name="[1]">[1]</a><a target="_blank" href="https://www.linkedin.com/learning/kubernetes-service-mesh-with-istio/installing-istio?contextUrn=urn%3Ali%3AlyndaLearningPath%3A5c48d3fc498e244c8376de8c&u=26886050">"Kubernetes: Service Mesh with Istio"</a> released 2018 by Robert Starmer (of Kumulus) is part of the <a target="_blank" href="https://www.linkedin.com/learning/paths/master-cloud-native-infrastructure-with-kubernetes?u=26886050">"Master Cloud-Native Infrastructure with Kubernetes" Learning Path</a> on LinkedIn. <a target="_blank" href="https://github.com/jaegertracing/jaeger-operator">Jaeger Operator</a> is covered.
+
+The course uses Istio-1.0.2 and Helm within minkube on a OSX machine.
+
+*    Adding Istio to a microservice
+*    Traffic routing and deployment
+*    Creating advanced route rules with Istio
+*    Modifying routes for Canary deployments
+*    Establishing MTLS credentials
+*    Connecting to non-MTLS services
+*    Connecting Istio to OpenTracing
+*    Improving microservice robustness
+*    Forcing aborts in specific applications - done by Istio recognizing cookie headers as triggers.
+<br /><br />
+
 
 ## Rock Stars
 

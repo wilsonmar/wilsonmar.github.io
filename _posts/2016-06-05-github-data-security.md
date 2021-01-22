@@ -3,7 +3,7 @@ layout: post
 title: "GitHub Data Security"
 excerpt: "How to keep secrets out of GitHub"
 tags: [github, security]
-date: "2016-06-06"
+date: "2021-01-20"
 file: "github-data-security"
 image:
 # pic secret finger over mouth 1900x500
@@ -16,92 +16,197 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<amp-img width="714" height="466" alt="github-secrets-v02-714x466"
-layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/15831785/7aa96c3e-2bdc-11e6-9c3f-0dbf31a59f42.png"></amp-img>
+Conditions enabling leak of secrets from GitHub and other source repositories:
 
-In our individual machines, 
-we use the `ssh-keygen` utility to generate key pairs.
-The public key we copy into each <strong>server</strong> 
-so we can <strong>`SSH`</strong>
-with the private side of the pair (instead of a password).
+1. <a href="#Need_2FA">Your GitHub account password can be stolen</a>
+2. <a href="#Dorking">Hackers are doing "Dorking" scans looking for secrets in GitHub</a>
+3. <a href="#SecretsRemain">Secrets remain in prior commit history</a>
+4. <a href="#Forgot">You may forget to add .gitignore or remove local secrets</a>
+5. <a href="#Crackers">Static passwords can be cracked eventually</a>
+6. <a href="#Crash">You can lose secrets when your laptop crashes or is lost</a>
+7. <a href="#SSH_remains">SSH keys to access GitHub are static, subject to theft</a>
+<br /><br />
 
-PROTIP: For those who only want to create credential once,
-one approach is to store credentials in a <strong>cloud drive</strong>
-(such as Dropbox, Box, Google Drive, or Microsoft OneDrive).
-Credentials there can be downloaded along with
-<strong>SSH scripts</strong> to simplify execution.
+<a name="HowTo"></a>
 
-Some prefer to use an encrypted USB Solid State Drive
-for sole physical posession. But if that's lost or stolen,
-security can be compromised.
+Recommendations offered in this article:
 
-The application 1Password takes a compromise approach of
-allowing password crypts to be transferred among multiple local devices,
-but not over a public network.
+1. <a href="#2FA">Setup 2FA with an authenticator to physically confirm GitHub access</a>
+2. <a href="#DorkLocally">Automate scans to look for secrets locally before/after pushing to GitHub</a>
+3. <a href="#RemoveHistory">Remove secrets in prior commit history on GitHub</a>
+4. <a href="#UseVariables">Refer to secrets as environment variables in your code</a>
+5. <a href="#Encrypt">Rotate keys to encrypted files</a>
+6. <a href="#SecretsInCloud">Save secret keys in the cloud</a>
+7. <a href="#SSH_certs">Rotate secrets: Access GitHub with rotated SSH certificates generated (automatically every day)</a>
+<br /><br />
 
-### Git #
+<hr />
 
-As we write functions within application source files,
-we put them within a Git folder,
-and commit changes into .git history.
+<a name="Need_2FA"></a>
 
-The private <strong>API keys</strong> and 
-crypto certificates from Certificate Authorities
-we collectively call <strong>secrets</strong> 
-for accessing web services
-can be conveninently just copied into the Git folder.
+## PROBLEM 1. Your GitHub account password can be stolen
 
-When files are pushed up to GitHub or other repository,
-<strong>.gitignore</strong> settings should 
-prevent the certificate from being uploaded and thus risk exposure.
+Someone watching over your shoulder can see your password being typed in.
 
-PROTIP: Many say it's NOT a good idea to keep secrets such as passwords and 
-other private data in a GitHub repository. 
-Murphy's Law applies here too.
-
-Rogue "dorking" scanners are looking through 
-every public repository, looking for secrets.
-
-PROTIP: Organizations should do their own scans 
-to find issues before others do.
-
-If private information is found, we
-can use <a href="#BFG">the BFG utility to remove it</a>.
-
-CAUTION: But even after data is removed from the <strong>current</strong> repository,
-like the Padora's Box legend,
-whatever was exposed can nevertheless live on in 
-any forks, clones, or zip files
-others have taken of the repository.
-
-A more secure approach is to define a 
-<a href="#ConfigScript">configuration script</a> that establishes a 
-<a href="#Symlink">symlink</a> 
-to reference secret files in folders outside of the Git repository.
-
-Private file in them can be referenced in 
-<strong>profile scripts</strong> that load files and
-<a href="#EnvVars">environment variables</a> 
-within memory accessible by application programs.
+A <strong>key-logger</strong> program ("spyware") installed on your laptop can capture what you type on your keyboard.
 
 
-## Dorking scans #
+<a name="2FA"></a>
 
-There are utilities (called "dorking") 
-that scan through all GitHub repos looking for exposed keys.
+## SOLUTION 1. Enable 2FA with an Authenticator app
 
+Most enterprise GitHub instances route login to their GitHub organization automatically through their Duo or other multi-factor authentication process on each user's own smart mobile phone.
+
+If you use an employer-provided smartphone, your employer GitHub account would be protected.
+
+But your personal GitHub account is still exposed.
+
+<a name="GitHub2FA"></a>
+
+### One-time 2FA setup
+
+PROTIP: To protect GitHub accounts opened using a Gmail or other private email address (not a corporate email),
+we recommended that you enable GitHub's 2FA (Two-factor Authentication).
+
+There are many tutorials on how to do this on YouTube.
+
+1. In an internal browser (Chrome) at <a target="_blank" href="https://github.com/">https://github.com</a> 
+1. Login using your account name and password.
+1. Click the avatar picture on the top right on the black band for the drop-down menu to select "Settings".
+1. In the left sidebar, click <strong>Account security</strong>.
+1. Click the green "Enable two-factor authentication".
+
+   ![2fa-enable-300x123](https://user-images.githubusercontent.com/300046/103462493-c5d01380-4ce2-11eb-9f67-da26c03dbb6c.jpg)
+
+   Alternately, an "Enabled" button appears if you're already enabled. In that case, click "Edit" to "Authenticator App" under "Two-factor methods".
+
+   PROTIP: 2FA requires you to obtain a TOTP (Time-based One-time Password) number <strong>in addition</strong> to your password.
+
+1. Provide your password again.
+1. On the Two-factor authentication page, click the green "Set up using an app" button for a list of recovery codes.
+
+   ![2fa-recovery-codes-528x718](https://user-images.githubusercontent.com/300046/103462601-9e2d7b00-4ce3-11eb-8240-affaad9ddf1b.jpg)
+
+   CAUTION: Recovery codes are the only way to access your account again if you lose your 2FA device. GitHub Support will not be able to restore access to your account, forcing you to lose all repos and history created under that account.
+
+1. PROTIP: Print and save your recovery codes in a safe place. You get a list of recovery codes because each can only be used once instead of your static Password to get back into your account.
+
+   1. Click Copy, then paste in a file within 1Password or other password-protected location. This enables you to copy and paste later.
+   1. Click Print to save a hard copy of your recovery codes
+   1. Click Download to save your recovery codes in clear text on your device (not recommended)
+   <br /><br />
+
+1. Click "Next" for a QR code for your Authenticator app to read.
+
+1. If you already have Duo, open that app. Alternately, go to the Store app on your smartphone and install one:
+
+   <a name="AuthApps"></a>
+
+   * <a target="_blank" href="https://guide.duo.com/iphone">Duo</a> on <a target="_blank" href="https://apps.apple.com/us/app/duo-mobile/id422663827">iPhone</a> or <a target="_blank" href="https://support.google.com/duo/answer/6386089?co=GENIE.Platform%3DiOS&hl=en">Google Play on Android</a>
+
+   * Google Authenticator on <a target="_blank" href="https://apps.apple.com/us/app/google-authenticator/id388497605">iPhones</a> or <a target="_blank" href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en_US&gl=US">Google Play on Android</a>
+
+   * <a target="_blank" href="https://www.microsoft.com/en-us/account/authenticator">Microsoft Authenticator</a> <a target="_blank" href="https://apps.apple.com/us/app/microsoft-authenticator/id983156458">on iPhones</a> or <a target="_blank" href="https://play.google.com/store/apps/details?id=com.azure.authenticator&hl=en_US&gl=US">Google Play for Android</a>.
+   <br /><br />
+
+1. In your chosen authenticator app, click "+" for the camera to appear.
+1. Hold your camera to position the QR code to take up the screen to scan it.
+1. After scanning, the last item on the app displays a six-digit code that you can enter on GitHub. 
+
+   PROTIP: Ignore the space between the numbers. Enter just the 6 numbers.
+
+1. Click "Enable".
+1. Click your avatar and select "Sign out".
+1. Sign in again. 
+
+
+   ### Responding to a 2FA challenge
+
+1. When you see a "Two-factor authentication" challenge on a web page:
+
+   ![2fa-code-entry-238x300](https://user-images.githubusercontent.com/300046/103462405-30cd1a80-4ce2-11eb-9dc4-cd9b13f2e906.jpg)
+
+1. On your smart phone, open your <a href="#AuthApps">authentication app (Duo, etc.)</a>.
+1. Click the arrow on the right edge of the "GITHUB" entry listing your account name, so that you see six numbers.
+
+1. On your laptop's browser, type those numbers in the Authentication Code field entry.
+1. Success means you see your landing page at "github.com".
+
+References:
+   * <a target="_blank" href="https://docs.github.com/en/github/authenticating-to-github/configuring-two-factor-authentication">https://docs.github.com/en/github/authenticating-to-github/configuring-two-factor-authentication</a>
+
+<hr />
+
+<a name="Dorking"></a>
+
+## PROBLEM 2. Hackers are doing "Dorking" scans looking for secrets in GitHub
+
+A "dork" is American slang for someone who is both academically inclined and also silly and clumsy.<a target="_blank" href="https://www.urbandictionary.com/define.php?term=Dork">*</a>
+
+Rogue "dorking" scanners are looking through <strong>every</strong> public repository, every commit made, every day, looking for secrets.
+
+References:
    * http://www.securityweek.com/github-search-makes-easy-discovery-encryption-keys-passwords-source-code
-
    * http://www.itworld.com/article/2921135/security/add-github-dorking-to-list-of-security-concerns.html
 
-<a name="BFG"></a>
 
-## Get it out of there! #
+<a name="DorkLocally"></a>
 
-What if you found out that your private data has been exposed in a GitHub repo?
+## SOLUTION 2. Automate "Dorking" scans of you code 
+
+There are two places scanning should occur: locally on laptops and in the GitHub cloud.
+
+GitHub itself has a "GitHub Advanced Security (GHAS)" offering for Enterprise users. Its advantage is that it scans without any developer effort. 
+
+It's a "premium" service ($36.69 per committer with 90 days free) because regular expressions needs to be written to detect secrets applicable to each circumstance, such as AWS credentials, etc.
+
+Coverage of tools is important, so are several competing 3rd-party utilities which detect secrets in GitHub repositories:
+
+   * Nightfall with SSO
+   <br /><br />
+
+On the laptop locally, it takes effort to install Git hooks to fire upon git commit commands.
+
+The options:
+
+<strong>git-secrets</strong> at <a target="_blank" href="https://github.com/awslabs/git-secrets">github.com/awslabs/git-secrets</a> is from AWS Labs, so does not scan secrets for other clouds. However, there is less concern about malware in the utility. Procedures to install it is detailed at <a target="_blank" href="https://git-secret.io/">git-secret.io</a>.
+
+<a target="_blank" href="https://github.com/duo-labs/secret-bridge">secret-bridge</a> <a target="_blank" href="https://duo.com/labs/research/how-to-monitor-github-for-secrets">by Duo</a> sends Slack messages (PROTIP: Slack messages can have significantly better response than emails). It automates execution of several secret detection tools based on repository events.
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/105407348-d80ae680-5bea-11eb-96d0-c8f35631afde.png"><img alt="github-data-security-secret-bridge-2648x77g" width="2648" src="https://user-images.githubusercontent.com/300046/105407348-d80ae680-5bea-11eb-96d0-c8f35631afde.png"></a>
+
+<strong>AWS Macie</strong> (described at <a target="_blank" href="https://docs.aws.amazon.com/macie/">docs.aws.amazon.com/macie</a>) is an SaaS cloud service from Amazon that uses machine learning and pattern matching to discover and protect your sensitive data in AWS S3 buckets, at scale. Macie’s alerts, or findings, can be searched and filtered in the AWS Management Console and sent to Amazon EventBridge (CloudWatch Events), for integration with existing workflow or event management systems, or to be used in combination  to take automated remediation actions using AWS Step Functions. It can be invoked from commands in AWS CLI.
+
+<strong>GitHub Advanced Security</strong>, a licensed SaaS service from GitHub itself, sends emails about secrets found within Enterprise GitHub instances.
+
+<strong>GitLeaks</strong> is a post-commit utility written in Go open-source code at <a target="_blank" href="https://github.com/zricethezav/gitleaks">https://github.com/zricethezav/gitleaks</a>. It's author, Zachary Rice, currently works at GitLab. It can be run as a <a target="_blank" href="https://github.com/zricethezav/gitleaks-action">GitHub Actions</a>. It scans git repos (or files) for secrets using regex and <a target="_blank" href="https://en.wikipedia.org/wiki/Entropy_(information_theory)">Shannon entropy</a>. Josphat Mutai's <a target="_blank" href="https://computingforgeeks.com/gitleaks-audit-git-repos-for-secrets/">blog describes it's cool features</a>.
+
+<strong>Git Guardian</strong> (at <a target="_blank" href="https://gitguardian.com/">gitguardian.com</a>) is an automated monitoring cloud utility to detect API keys and other credentials and secrets exposed in source code on public SaaS or private (internal/on-prem) GitHub. Free on public repos. Its documentation is published at <a target="_blank" href="https://docs.gitguardian.com/internal-repositories-monitoring/home">https://docs.gitguardian.com/internal-repositories-monitoring/home</a>.
+
+"GittyLeaks" open-source code.
+
+"Detect Secrets" open-source code.
+
+TruffleHog is open-source code.
+
+GuardRails has proprietary code but produces reports and provide login security, which is important to keep knowledge of internal vulnerabilities isolated to only those who need to know. 
+<a target="_blank" href="https://github.com/marketplace/guardrails">On GitHub's Marketplace</a>.
+
+
+<hr />
+
+
+<a name="SecretsRemain"></a>
+
+## PROBLEM 3. Secrets remain in prior commit history
 
 PROTIP: If a file is deleted using `git rm` and a commit is made,
 a vestige of that data still exist in the repository's <strong>history</strong> (.git folder).
+
+
+<a name="RemoveHistory"></a>
+
+## SOLUTION 3. Remove secrets in prior commit history on GitHub
 
 Utility program <a target="_blank" href="http://rtyley.github.io/bfg-repo-cleaner/">
    BFG Repo-Cleaner</a> 
@@ -153,24 +258,47 @@ content. The Git Real 2 course covers this.
 0. Notify all those who may have forked or cloned or downloaded the repo.
 
 
-<a name="ConfigScript"></a>
 
-## Config Script #
+<hr />
 
-You can tell Git to ignore changes to a file in the future:
+<a name="Forgot"></a>
 
-   <pre><strong>
-   git update-index --assume-unchanged  <em>file</em>
+## PROBLEM 4. You may forget to add .gitignore or remove local secrets
+
+Some devs write code (in shell scripts, etc.) to read ".env" files containing secrets.
+
+When a repository is created on Github.com, you have an option of creating a <strong>.gitignore</strong> file to travel with content in the repository.
+
+Folder and file names specified in that file Git ignores when pushing up to GitHub.
+
+So some devs over-depend on this mechanism and save secrets.
+
+The problem with this approach is we sometimes forget to add that line in .gitignore before pushing to GitHub.
+
+The other problem with this approach is what happens when your laptop crashes?
+
+Your passwords and encryption keys can be lost forever if they are not backed up.
+
+
+   <a name="ConfigScript"></a>
+
+   ### Ignore change 
+
+1. Tell Git to ignore changes to a file in the future:
+
+   <pre><strong>git update-index --assume-unchanged  <em>file</em>
    </strong></pre>
 
    However, this works only on a single branch.
+   
    On a change of branch, Git detects changes in the config file, and you'll have to either undo them, or check them in.
 
-To track changes again:
+1. To track changes again:
 
-   <pre><strong>
-   git update-index --no-assume-unchanged <em>file</em>
+   <pre><strong>git update-index --no-assume-unchanged <em>file</em>
    </strong></pre>
+
+   References:
 
    * http://www.codeproject.com/Articles/602146/Keeping-sensitive-config-settings-secret-with-Azur
 
@@ -180,43 +308,106 @@ Another option is to use pre and post-commit hooks to automatically add/remove s
 
 
 
-### Certificate from file ###
+
+
+<a name="UseVariables"></a>
+
+## SOLUTION 4. Refer to secrets as environment variables in your code
+
+Among the "12 Factor App" <a target="_blank" href="https://12factor.net/">12factor.net</a>) which summarizes the basic design principles of modern web apps. In <a target="_blank" href="https://12factor.net/config">Factor 3: Config</a>:
+
+> Apps sometimes store config as constants in the code. This is a violation of twelve-factor, which requires strict separation of config from code. Config varies substantially across deploys, code does not.
+
+> A litmus test for whether an app has all config correctly factored out of the code is whether the codebase could be made open source at any moment, without compromising any credentials.
+
+> The twelve-factor app stores config in environment variables (often shortened to env vars or env). Env vars are easy to change between deploys without changing any code; unlike config files, there is little chance of them being checked into the code repo accidentally; and unlike custom config files, or other config mechanisms such as Java System Properties, they are a language- and OS-agnostic standard.
+
+1. Examples of code to retrieve an environment variable into the program:
+
+   Python programs reference `process.env.SECRET_PASS`.
+
+   PHP programs use `getenv('SECRET_PASS');`.
+
+   C# programs use `System.Environment.GetEnvironmentVariable("SECRET_PASS", _<br />EnvironmentVariableTarget.Process)`.
+
+   JavaScript is restricted from accessing operating system environment variables by Internet browser sandboxing. So setup a <a target="_blank" href="https://developer.wordpress.org/rest-api/">REST API endpoint</a> on a server you control to call with your app's JavaScript. For example, to <a target="_blank" href="https://developer.mailchimp.com/">get MailChimp to send email from your web app</a>, <a target="_blank" href="https://gomakethings.com/keeping-api-credentials-secret-with-vanilla-javascript/">create a MailChimp API on your server</a> using <a target="_blank" href="https://github.com/cferdinandi/gmt-mailchimp-wp-rest-api">this</a> <a target="_blank" href="https://developer.wordpress.org/rest-api/">Wordpress middleware API</a> which stores your credentials securely on the server, and makes the real API call on your request. It then sends back the data, optionally filtering out any data you don’t want exposed publicly first. Test that the <a target="_blank" href="https://www.wikiwand.com/en/Same-origin_policy">Same Origin Policy</a> prevents rogue "leaching" sites from calling your API endpoint (<a target="_blank" href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html">cross-site request forgery (CSRF)</a>, one of the <a target="_blank" href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html">OWASP Top 10 Vulnerabilities</a>) by adding <tt>X-CSRF-CHECK: 1</tt> onto your application's AJAX calls and having the backend check for <tt>$_SERVER['HTTP_X_CSRF_CHECK']</tt> or <a target="_blank" href="https://softwareengineering.stackexchange.com/questions/229859/how-to-avoid-unauthorized-use-of-an-api">generate and exchange a custom session key</a>:
+   1. Client embeds client_key in request for API library.
+   2. Server determines host that has access to the API, if any.
+   3. Server picks "salt" for a session key and sends it to the client with the library [or as part of another pre-auth exchange].
+   4. Client calculates a session_key using hash(document.location.host + session_salt).
+   5. Client uses session_key + client_key for an API call.
+   6. Server validates the call by looking up the client_key's host and "salt" in the session, computing the hash, and comparing to the provided client_key.
+   7. Server validates SameSite Cookie Attribute.
+   <br /><br />
+
+   
+1. TODO: Some GitHub contains sample values in a file
+
+   CAUTION: The problem is that some simply save the .env file in the same folder, which is then subject to being pushed to a GitHub repository.
+
+1. To insert a secret key to the bottom of a Mac's <tt>~/.bash_profile</tt> script that the operating system executes upon boot-up, one can:
+
+   {% highlight text %}
+   echo "export SECRET_PASS=12345678910" >> ~/app-root/data/.bash_profile{% endhighlight %}
+
+
+An extention of this concept is to reference a file name that is actually reached via a <a href="#Symlink">symlink</a> 
+to a folder outside of the Git repository.
+
+<a name="Symlink"></a>
+
+### Symlink Configuration #
+
+1. On a Mac, this sample command is used to create a symlink. For example:
+
+   <pre>ln -s ~/.aws/credentials  credentials
+   ln -s ~/.aws/config  config
+   </pre>
+
+1. On Windows, to create a "Shortcut" file, right-click the folder icon you want to make a shortcut of, and select "Create shortcut" from the right-click menu that appears. 
+
+   Alternatively, you can right-click and hover your mouse over the "Send to" option and select "Desktop".
+
+
+### Sync from Dropbox #
+
+<a target="_blank" href="http://www.technorange.com/cloudlinker-direct-link-generator-for-dropboxgoogle-driveone-drive-copy-com/">
+This on-line tool</a> generates a direct link from a share link into Dropbox, Google Drive, and Microsoft OneDrive.
+
+
+
+### Certificate from file # 
 
    In Bash, an export command is used to bring in the
    public key generated by ssh-gen into the user's home hidden
    .ssh folder:
 
-   <pre>
-   export RSA_PUBLIC_KEY=$(cat ~/.ssh/id_rsa.pub)
+   <pre>export RSA_PUBLIC_KEY=$(cat ~/.ssh/id_rsa.pub)
    </pre>
 
    But PowerShell's equivalent reads
    certificate files created using putty-gen
    or Mysysgit (the Git client for Windows):
 
-   <pre><strong>
-   $RSA_PUBLIC_KEY = Get-Content "~/.ssh/id_rsa.pub"
+   <pre><strong>$RSA_PUBLIC_KEY = Get-Content "~/.ssh/id_rsa.pub"
    # echo "RSA_PUBLIC_KEY=$RSA_PUBLIC_KEY"
    </strong></pre>
 
    <a target="_blank" href="https://www.simple-talk.com/sysadmin/powershell/powershell-one-liners-accessing-handling-and-writing-data/#first">
    Among the many variations</a>:
 
-   <pre>
-   $RSA_PUBLIC_KEY = [IO.File]::ReadAllText("~/.ssh/id_rsa.pub").split("`n")
+   <pre>$RSA_PUBLIC_KEY = [IO.File]::ReadAllText("~/.ssh/id_rsa.pub").split("`n")
    </pre>
 
    The split method using the back-tick adds a trailing empty line at 
    the bottom of the file.
 
-
-### Secrets file to Hash Table ###
+### In shell file: Secrets file to Hash Table ###
 
    On my Mac I used a text editor to create a 
    text file containing these (fake) secrets:
 
-   <pre>
-GITHUB_PASSWORD = '234sdsdvs32'
+   <pre>GITHUB_PASSWORD = '234sdsdvs32'
 GITHUB_TOKEN = '1234567890123456789012345678901234567890'
    </pre>
 
@@ -237,16 +428,14 @@ GITHUB_TOKEN = '1234567890123456789012345678901234567890'
    and variables need to have dollar signs. So rather than
    creating a password file containing:
 
-   <pre>
-$GITHUB_PASSWORD = '234sdsdvs32'
+   <pre>$GITHUB_PASSWORD = '234sdsdvs32'
 $GITHUB_TOKEN = '1234567890123456789012345678901234567890'
    </pre>
 
    I can also create a .ps1 file which defines a <strong>hashtable</strong>
    (a collection of key/value pairs, also called "associative arrays"):
 
-   <pre>
-   [ordered]@{Key1=Value1;Key2=Value2}
+   <pre>[ordered]@{Key1=Value1;Key2=Value2}
    </pre>
 
    However, I prefer to read the text file previously read by Bash
@@ -260,129 +449,7 @@ $GITHUB_TOKEN = '1234567890123456789012345678901234567890'
    </strong></pre>
 
 
-<a name="Config"></a>
-
-## AWS CLI Configuration #
-
-Although AWS in 2015 enabled users to 
-<a target="_blank" href="https://blogs.aws.amazon.com/security/post/Tx1XWZ93EAFL9C4/How-to-Switch-Easily-Between-AWS-Accounts-by-Using-the-AWS-Management-Console-an">
-switch roles in the Console</a>, switching roles in the CLI is not yet availble.
-
-AWS provides a command to define admin access:
-
-   <pre>
-   aws configure
-   </pre>
-
-List the location on a Mac or Linux machine:
-
-   <pre>
-   ls ~/.aws
-   </pre>
-
-List the location on Windows:
-
-   <pre>
-   dir %UserProfile%\.aws
-   </pre>
-
-Insidie the .aws folder is a <strong>credentials</strong> file containing, for example:
-
-   <pre>
-   [default]
-   aws_access_key_id = ABCDEFGVSYNHR5G2VNGQ
-   aws_secret_access_key = 123456nVqH3AWz5pGQcZ/+JDHB4dBM2BDNtzUsnK
-
-   [user2]
-   aws_access_key_id=AKIAI44QH8DHBEXAMPLE
-   aws_secret_access_key=je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLEKEY
-   </pre>
-
-On a Mac, store:
-
-   <pre>
-   export AWS_ACCESS_KEY_ID='YOUR_AWS_API_KEY'
-   export AWS_SECRET_ACCESS_KEY='YOUR_AWS_API_SECRET_KEY'
-   </pre>
-
-   * https://aws.amazon.com/blogs/apn/getting-started-with-ansible-and-dynamic-amazon-ec2-inventory-management/
-
-Insidie the .aws folder is a <strong>config</strong> file containing, for example:
-
-   <pre>
-   [default]
-   region=us-west-2
-   output=json
-
-   [profile e1]
-   region=us-east-1
-   output=text
-   </pre>
-
-   PROTIP: Define profile names with the region.
-
-   <pre>
-   aws s3 ls \-\-profile default
-   </pre>
-
-
-See http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-config-files
-
-
-Configuration includes enabling auto completion for AWS CLI, 
-edit file <strong>/etc/bashrc</strong> to add:
-
-   <pre>
-   complete -C aws_completer aws
-   </pre>
-
-<a name="Symlink"></a>
-
-## Symlink Configuration #
-
-On a Mac, this sample command is used to create a symlink. For example:
-
-   <pre>
-   ln -s ~/.aws/credentials  credentials
-   ln -s ~/.aws/config  config
-   </pre>
-
-On Windows, a "Shortcut" is created to a file.
-
-
-<a name="CloudSync"></a>
-
-## Sync from Dropbox #
-
-<a target="_blank" href="http://www.technorange.com/cloudlinker-direct-link-generator-for-dropboxgoogle-driveone-drive-copy-com/">
-This on-line tool</a> generates a direct link from a share link into
-Dropbox, Google Drive, and Microsoft OneDrive.
-
-
-<a name="EnvVars"></a>
-
-## Enviornment variables #
-
-To insert secret key in a Mac's .bash_profile script that the operating system executes upon boot-up, on can:
-
-   {% highlight text %}
-   echo "export SECRET_PASS=12345678910" >> ~/app-root/data/.bash_profile{% endhighlight %}
-
-   But this is not as secure as k
-
-Programming to retrieve an environment variable into the program:
-
-   * Python programs reference `process.env.SECRET_PASS`.
-
-   * PHP programs use `getenv('SECRET_PASS');`.
-
-   * C# programs use `System.Environment.GetEnvironmentVariable("SECRET_PASS", _<br />EnvironmentVariableTarget.Process)`.
-
-NOTE: Internet browser sandboxing restricts JavaScript from accessing operating system
-environment variables.
-
-
-## Automatic Encryption
+### Automatic Encryption
 
 <a target="_blank" 
  href="github-data-security-git-v04-1010x479-113713.jpg" href="https://user-images.githubusercontent.com/300046/38212884-a4e2121a-367c-11e8-8f2d-5fdb81824943.jpg">
@@ -415,18 +482,480 @@ When someone is out - just delete their public key, re-encrypt the files, and th
 PROTIP: This is not a totally secure approach for extremely sensitive production data
 because, any encryption can be hacked given enough time using on supercomputers now commonly available to hackers.
 
+
+
 <hr />
 
-<a target="_blank" href="https://gist.github.com/shadowhand/873637">
-This blog</a> provides an alternative using the openssl utility.
+<a name="Crackers"></a>
 
-Hashicorp Consul
+## PROBLEM 5. Static passwords and keys can be cracked
 
-## LFS
+Some devs make use of programs that encrypt files stored in GitHub.
+
+### Storing encrypted data in GitHub
+
+"Aside from an initial unlock command that needs to be used after cloning the repository, git-crypt encryption and decryption operations happen transparently. I find this workflow to be superior to git-secret and BlackBox." says <a target="_blank" href="https://github.com/StackExchange/blackbox">blackbox</a>, git-secret bash script, and  git-crypt. 
+
+   * <a target="_blank" href="https://embeddedartistry.com/blog/2018/03/15/safely-storing-secrets-in-git/">https://embeddedartistry.com/blog/2018/03/15/safely-storing-secrets-in-git</a> references use of 
+   <br /><br />
+
+<a target="_blank" href="https://github.com/rustyio/git-gpg">git-gpg</a> stores encrypted git repositories on third-party / potentially insecure servers, but stores all changes to source files as compressible textual deltas (a key reason for using git in the first place). The repository is encrypted remotely but the local version has no encrypted blobs inside.
+
+   * <a target="_blank" href="https://news.ycombinator.com/item?id=11662364">Git-secret – store private data in a Git repo (coderwall.com)</a>
+   <br /><br />
+
+Other benefits include architectural simplicity and low footprint: it consists of a single Python script added to your executable path.
+
+CAUTION: Their achilles heel is that old versions of keys are stored in Git history.
+
+
+### Cracking
+
+CAUTION: The problem is that recent advances in computing hardware enable passwords and keys to be cracked.
+
+Thieves can now direct thousands of computers to guess encryption keys quickly.
+
+
+## SOLUTION 5. Rotate keys to encrypted files
+
+The down-side of storing encrypted files is that GitHub, being designed to work with text, can no longer compare and version encrypted files.
+
+As binary files, entire files are versioned using Git LFS (Large File Store) capabilities.
+
+But diff of individual lines within encrypted files are not currently conviently available.
+
+### LFS for binary files
 
 <a target="_blank" href="https://github.com/git-lfs/git-lfs/issues/1720">
 NOTE</a>: The Git smudge filter is what converts the LFS pointer stored in Git with the actual large file from the LFS server. If your local repository does not have the LFS object, the smudge filter will have to download it. Network issues can affect downloading and thus smudge filter operation.
 
+
+
+<hr />
+
+<a name="Crash"></a>
+
+## PROBLEM 6. You can lose secrets when your laptop crashes or is lost
+
+Some devs code their programs to read ".env" files in a folder outside Git repository folder, such as the user's root foler.
+
+But mechanisms to <strong>backup</strong> those secrets can be problematic.
+
+Many enterprises block USB drives from being plugged in (to avoid STUXNET vulnerability).
+
+The application 1Password takes a compromise approach of
+allowing password crypts to be transferred among multiple local devices,
+but not over a public network.
+
+
+<a name="Local_Diagram"></a>
+
+## Local Diagram
+
+Here is a draft diagram describing how the various techniques above working together:
+
+<amp-img width="714" height="466" alt="github-secrets-v02-714x466"
+layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/15831785/7aa96c3e-2bdc-11e6-9c3f-0dbf31a59f42.png"></amp-img>
+
+
+As we write functions within application source files,
+we put them within a Git folder, and commit changes (which Git stores in its .git folder containing history).
+
+The private <strong>API keys</strong> and 
+crypto certificates from Certificate Authorities
+we collectively call <strong>secrets</strong> 
+for accessing web services
+can be conveninently just copied into the Git folder.
+
+When files are pushed up to GitHub or other repository,
+<strong>.gitignore</strong> settings should 
+prevent the certificate from being uploaded and thus risk exposure.
+
+PROTIP: Many say it's NOT a good idea to keep secrets such as passwords and 
+other private data in a GitHub repository. 
+Murphy's Law applies here too.
+
+PROTIP: Organizations should do their own scans to find issues before others do.
+
+CAUTION: But even after data is removed from the <strong>current</strong> repository,
+like the Padora's Box legend,
+whatever was exposed can nevertheless live on in 
+any forks, clones, or zip files
+others have taken of the repository.
+
+Private file in them can be referenced in 
+<strong>profile scripts</strong> that load files and
+<a href="#EnvVars">environment variables</a> 
+within memory accessible by application programs.
+
+
+
+<a name="SecretsInCloud"></a>
+
+## SOLUTION 6. Save secret keys in the cloud
+
+Backup encryption key files in a cloud vendor's key store, because cloud vendors have top professionals figuring out how to keep data safe for a lot of people.
+
+Some utilities (such as SOP) reference your AWS credentials stored in ~/.aws to authenticate against KMS so you can encrypt and decrypt without a password.
+
+### Offline capable?
+
+CAUTION: Programming reference to a cloud key store may slow progress to those who work <strong>offline</strong>, and need a cache of secrets on their laptop.
+
+TODO: Below are steps to setup use of:
+
+   * <a href="#AWS_Config">AWS KMS (Key Management Service)</a>
+   * <a href="#Goolge_Config">Google secret keeping</a>
+   * <a href="#Azure_Config">Azure Key Vault</a>
+   <br /><br />
+
+
+<a name="AWS_Config"></a>
+
+### AWS CLI Configuration #
+
+1. AWS provides a command to define your credentials to access its cloud:
+
+   <pre>aws configure
+   </pre>
+
+   BLAH: Although AWS in 2015 enabled users to <a target="_blank" href="https://blogs.aws.amazon.com/security/post/Tx1XWZ93EAFL9C4/How-to-Switch-Easily-Between-AWS-Accounts-by-Using-the-AWS-Management-Console-an">
+   switch roles in the Console</a>, switching roles in the CLI is not available at time of writing.
+
+1. List the location on a Mac or Linux machine:
+
+   <pre>ls ~/.aws
+   </pre>
+
+1. List the location on Windows:
+
+   <pre>dir %UserProfile%\.aws
+   </pre>
+
+   Insidie the .aws folder is a <strong>credentials</strong> file containing, for example:
+
+   <pre>[default]
+   aws_access_key_id = ABCDEFGVSYNHR5G2VNGQ
+   aws_secret_access_key = 123456nVqH3AWz5pGQcZ/+JDHB4dBM2BDNtzUsnK
+
+   [user2]
+   aws_access_key_id=AKIAI44QH8DHBEXAMPLE
+   aws_secret_access_key=je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLEKEY
+   </pre>
+
+1. On a Mac, store:
+
+   <pre>export AWS_ACCESS_KEY_ID='YOUR_AWS_API_KEY'
+   export AWS_SECRET_ACCESS_KEY='YOUR_AWS_API_SECRET_KEY'
+   </pre>
+
+   * https://aws.amazon.com/blogs/apn/getting-started-with-ansible-and-dynamic-amazon-ec2-inventory-management/
+
+1. Insidie the .aws folder is a <strong>config</strong> file containing, for example:
+
+   <pre>[default]
+   region=us-west-2
+   output=json
+
+   [profile e1]
+   region=us-east-1
+   output=text
+   </pre>
+
+   PROTIP: Define profile names with the region.
+
+   <pre>aws s3 ls \-\-profile default
+   </pre>
+
+
+   See http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-config-files
+
+
+1. Configuration includes enabling auto completion for AWS CLI, 
+   edit file <strong>/etc/bashrc</strong> to add:
+
+   <pre>complete -C aws_completer aws
+   </pre>
+
+   
+   ### KMS utilities on AWS
+
+   Zemanta's <a target="_blank" href="https://github.com/Zemanta/py-secretcrypt">https://github.com/Zemanta/py-secretcrypt</a>
+   and <a target="_blank" href="https://github.com/Zemanta/go-secretcrypt">https://github.com/Zemanta/go-secretcrypt</a>
+   keeps secrets encrypted with Amazon KMS (Key Management Service) in repos, which are decrypted on the fly by the application.
+   Access control is managed through AWS KMS key policies, with EC2 instances running the applications having permissions to decrypt the secrets.
+
+   <a target="_blank" href="https://github.com/fugue/credstash">https://github.com/fugue/credstash</a>
+   uses AWS KMS for key wrapping and master-key storage, and DynamoDB for credential storage and sharing.
+   Works in several flavors of Linux, in a variety of programming languages.
+
+
+<a name="Google_Config"></a>
+
+### Google Cloud secret keeping
+
+After setting up Google Cloud CLI, adapt this shell script to establish a key, encrypt, and decrpt:
+
+   <pre><strong>KEY_NAME="talk-key"
+KEYRING_FILE="my-sample-keyring"
+CLEAR_TEXT_FILE_PATH="/tmp/the-secret-of-cloud.txt"
+&nbsp;
+gcloud kms keys create "${KEY_NAME}" --location global --keyring "${KEYRING_FILE}" --purpose encryption
+echo "clear text contents to be encrypted" > "${CLEAR_TEXT_FILE_PATH}"
+&nbsp;
+gcloud kms encrypt --location global --keyring "${KEYRING_FILE}" --key "${KEY_NAME}" \
+   --plaintext-file "${CLEAR_TEXT_FILE_PATH}"
+cat "${CLEAR_TEXT_FILE_PATH}".encrypted
+&nbsp;
+gcloud kms decrypt --location global --keyring "${KEYRING_FILE}" --key "${KEY_NAME}" \
+   --ciphertext-file \
+   --plaintext-file=-
+   </strong></pre>
+
+
+
+#### SOPS decrypt to RAM for editing
+
+To avoid forgetting to re-encrypt files decrypted on your laptop, <a target="_blank" href="https://github.com/mozilla/sops">https://github.com/mozilla/sops</a> (SOP = Secrets OPerationS), written by Mozilla (the alternative browser) to <strong>decrypt files in RAM</strong> where you can edit and the utility re-encrypts files automatically before saving them to disk.
+
+An example using GCP KMS:
+
+   <pre>CLEAR_TEXT_FILE_PATH="/tmp/myfile.enc.yaml"
+sops --encrypt --gcp-kms "${KEY_NAME}"   "${CLEAR_TEXT_FILE_PATH}" > "${CLEAR_TEXT_FILE_PATH}"
+sops --decrypt "${CLEAR_TEXT_FILE_PATH}"
+sops "${CLEAR_TEXT_FILE_PATH}"  # to edit then save using default vim editor
+sops --decrypt "${CLEAR_TEXT_FILE_PATH}"
+   </pre>
+
+Note that sops automatically decrypts to use Git diff commands to identify between two files differences in specific lines.
+
+References about this topic:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=V2PRhxphH2w">Securing DevOps Show & Tell: Mozilla Sops Mar 2, 2019</a> video of <a target="_blank" href="https://frederic-hemberger.de/articles/manage-kubernetes-secrets-with-sops/">blog article</a>.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=KHMhYJpYMIU">VIDEO: Avoid committing your secrets with Kustomize and SOPS</a> (with Agilicus add-on to Kustomize) May 31, 2019 [17:40]
+   * <a target="_blank" href="https://oteemo.com/2019/06/20/hashicorp-vault-is-overhyped-and-mozilla-sops-with-kms-and-git-is-massively-underrated/">lists Ideal Secrets Management Solution Requirements</a>
+
+
+
+<a name="Azure_Config"></a>
+
+### Azure Key Vault
+
+References:
+   * <a target="_blank" href="https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/storage/common/storage-client-side-encryption.md">Azure Key Vault</a>
+   * http://www.codeproject.com/Articles/602146/">Keeping-sensitive-config-settings-secret-with-Azur">Keeping sensitive config settings secrete with Azure</a>
+
+
+
+<hr />
+
+<a name="SSH_remains"></a>
+
+### PROBLEM 7. SSH keys to access GitHub are static, subject to theft
+
+1. When at a repository on GitHub, in the Code section, you want to clone a repository to your laptop, click the green "Code" button:
+
+   <img width="126" alt="github-code-button-252x94" src="https://user-images.githubusercontent.com/300046/103463075-fc0f9200-4ce6-11eb-80ba-4169807a6e52.png">
+
+1. You are presented with a choice of "HTTP", "SSH", and (new) "GitHub CLI":
+
+   <a name="CodePopUp"></a>
+
+   <img width="382" alt="github-ssh-menu-764x554" src="https://user-images.githubusercontent.com/300046/103463147-76d8ad00-4ce7-11eb-9f41-db883cd1ce39.png">
+
+   If you choose "Download ZIP", it would include only the most recent version of files and won't include the history of changes ("commits") made.
+
+   Underlined in red is <strong>SSH</strong> (Secure Shell), used for a <strong>more secure</strong> connection than HTTPS.
+   The SSH protocol is used extensively by Linux operating systems to secure transmission between servers and laptop clients.
+   (Linus Torvolds, who created Linux, also created Git)
+
+   Instead of passwords, using SSH means that we won't have to input a password each time a Git command is issued.
+
+   TMI: The public key file and private key file generated use what is called "asymmetric cryptography" algorithms. 
+   Instead of exchanging a single mutually known ("symmetric") password, smart mathematics is used such that the public key is manually pasted in GitHub GUI to be used to decrypt data which was encrypted using the other part of the key pair.
+
+   However, to make user of SSH involves each <strong>user</strong> (developer) generating SSH keys locally on a laptop, obtaining the contents of the public key, and pasting that in a GitHub GUI. Explained below:
+
+1. Open a Terminal window.
+
+1. Navigate to the (hidden) folder which programs go to (by default) to find SSH key files. On a Mac:
+
+   <pre><strong>cd $HOME/.ssh</strong></pre>
+
+   If the folder doesn't exist, create it.
+
+   SSH makes use of a pair of files generated together by the <strong>ssh-keygen</strong> utility program used by Linux users.
+
+1. PROTIP: To avoid typing mistakes, construct commands to define variables substituted with your information:
+
+   <pre><strong>export GITHUB_ORG="gmail_acct"
+   export MY_EMAIL_ADDRESS="john-doe@gmail.com"
+   </strong></pre>
+
+   <tt>{GITHUB_ORG}</tt> is a variable which defines the file name and also the folder where you store repositories under your account.
+
+1. Create a pair of SSH key files by copying the line below and pasting in your Terminal:
+
+   <pre><strong>ssh-keygen -t rsa -f "${GITHUB_ORG}" -C "${MY_EMAIL_ADDRESS}" -N ""</strong></pre>
+
+   <tt>-N ""</tt> specifies that no Passphrase will be requested when the key is used. Otherwise, you'll have to type your password in when executing every git command.
+
+   NOTE: If <tt>-f "${GITHUB_ORG}"</tt> is omitted, you will be prompted for it. Pressing Enter at the prompt will result in a default name of "id_rsa".
+
+   The response is something like this:
+
+   <pre>Generating public/private rsa key pair.
+Your identification has been saved in mck_acct.
+Your public key has been saved in mck_acct.pub.
+The key fingerprint is:
+SHA256:o3um68DCgu29uREm2Di6tgGrSCTUaHZdhOS4Aj6nHnc wilson_mar@NYC-192850-C02Z70CMLVDT
+The key's randomart image is:
++---[RSA 3072]----+
+|    ..oo         |
+|  o +..          |
+|.= + o           |
+|*+. .            |
+|*=ooo   S        |
+|*==+ . . .       |
+|==+.+E.          |
+|==+o.+ .o        |
+|=oo =+==         |
++----[SHA256]-----+
+   </pre>
+
+1. Make sure the ssh agent program used to register key identities is running:
+
+   <pre><strong>eval "$(ssh-agent -s)"</strong></pre>
+
+   A sample response is:<br />
+   <tt>Agent pid 21631</tt>
+
+1. Register the newly created key identities:
+
+   <pre>ssh-add "$HOME/.ssh/${GITHUB_ORG}"</pre>
+
+   Example response on a laptop configured with "johndoe" as the machine user name:
+
+   <pre>Identity added: /Users/johndoe/.ssh/gmail_acct (john-doe@gmail.com)</pre>
+
+1. Copy the contents of the public key file to your machine's Clipboard. On a Mac:
+
+   <pre><strong>pbcopy < "$HOME/.ssh/${GITHUB_ORG}.pub"</strong></pre>
+
+   On Windows:
+
+   <pre><strong>clip < "$HOME/.ssh/${GITHUB_ORG}.pub"</strong></pre>
+
+   ### Add the newly created public key to your GitHub account
+
+1. Switch to an internet browser.
+
+1. Construct your GitHub.com by substituting the example with your GitHub.com account name, for example:
+
+   <pre>https://github.com/wilson-mar</pre>
+
+1. Login using your password and 2FA challenge.
+
+1. Click on the drop-down arrow icon beside the icon (avatar) at the top right of GitHub's navigation bar.
+
+1. Select "Settings" in the drop-down.
+
+1. Click on "SSH and GPG keys" link on the navigation menu at the left.
+
+1. Click on the green "New SSH key" button by the top right.
+
+1. Click inside the "Title" field and type your machine and file name you are about to paste. Example:
+
+   <tt>Windows 10 laptop file id_rsa.pub</tt>
+
+1. Click inside the "Key" data entry field which says "Begins with"...
+
+1. To paste from Clipboard: On macOS, press command+V. On Windows, press ctrl+V.
+
+   "ssh-rsa" should be the first line, followed by something humans cannot read.
+
+1. Click "Add SSH key".
+
+1. Enter your GitHub password again when prompted to confirm.
+
+1. You should receive an email with subject:
+
+   <pre>[EXT][GitHub] A new public key was added to your account</pre>
+
+   ### Make use of SSH protocol
+
+1. Switch back to view your repository view on GitHub.com <a href="#CodePopUp">at the Code pop-up as shown above</a>.
+
+   Notice that "git@github.com:<em>username</em>" appears instead of "https://github.com/<em>username</em>". 
+
+References about this topics:
+   * https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+   * A 10-minute video course at https://mckinsey.udemy.com/course/github-ultimate/learn/lecture/4731854#overview
+   <br /><br />
+
+   -------   
+
+   The above steps are rather <strong>cumbersome</strong> for the user and can be dangerous for security because the SSH keys generated remain stored locally and possibly over a long period of time.
+
+> Someone else can copy an SSH key and access your account on a rogue computer.
+
+
+<a name="SSH_certs"></a>
+
+## SOLUTION 7. Access GitHub with rotated SSH certificates generated (automatically every day)
+
+A more modern way that <strong>automatically generates SSH keys every day</strong>, each user of GitHub doesn't have ssh-keygen to run and  copying and pasting to a GitHub form.
+
+The solution makes use of an new extension to the SSH protocol implemented by GitHub for its <strong>GitHub Enterprise Cloud license users</strong> (not individual users). 
+
+References:
+   * <a target="_blank" href="https://github.blog/2019-08-14-ssh-certificate-authentication-for-github-enterprise-cloud/">https://github.blog/2019-08-14-ssh-certificate-authentication-for-github-enterprise-cloud</a> announces "SSH certificate authentication for GitHub Enterprise Cloud" August 14, 2019 by <a target="_blank" href="https://www.linkedin.com/in/benjamin-toews-80bba620/">Ben Toews</a>
+   * <a target="_blank" href="https://github.blog/changelog/2019-08-15-ssh-certificate-authentication-for-github-enterprise-cloud/">https://github.blog/changelog/2019-08-15-ssh-certificate-authentication-for-github-enterprise-cloud/</a>
+   <br /><br />
+
+The SSH protocol extension involves an additional <strong>SSH certificate file</strong> added to Git requests. 
+
+The SSH certificate file is created by what is called a policy "wrapper" program because it wraps policies around the public key, such as limiting the life span of the key wrapped to 24 hours. 
+
+The Policy Wrapper program is a <strong>Hashicorp Vault</strong> server maintained by an enterprise.
+
+To ensure the authenticity of certificates, GitHub references another public key -- the <strong>Certificate Authority</strong> public key generated on the Vault server and pasted into GitHub by the administrator.
+
+When GitHub receives and unwraps the request, it enforces the policy.
+
+Having the 24 hour key rotation policy in place means new certificate are created every day, by what we call a <strong>"key rotation" program/script</strong> running on laptops. It makes an API call to the Vault server and receives the SSH certificate file.
+
+Here is a static flowchart of the process described above:
+
+<a target="_blank" hrf="https://user-images.githubusercontent.com/300046/103477675-5576d000-4d7e-11eb-836d-c109e52f2b32.png">
+<img alt="github-data-ssh-keyrotation-2806x1656" width="640" src="https://user-images.githubusercontent.com/300046/103477675-5576d000-4d7e-11eb-836d-c109e52f2b32.png"></a>
+
+Steps to make this happen include:
+
+1. As the Organization's Owner, enable SSH Certificate processing for GitHub organization.
+
+1. Create a Vault API CA (Certificate Authority) service.
+
+1. Enroll users to the Vault API service.
+
+1. Perform penetration tests of the Vault API server.
+
+1. Ensure the Vault API service has the capacity needed (SSH load testing using <a target="_blank" href="https://www.pureload.com/support/protocol-support/ssh-ftp-telnet/">PureLoad</a> or <a target="_blank" href="https://github.com/shazow/ssh-hammer">https://github.com/shazow/ssh-hammer</a>).
+
+1. Create/Test a "key rotation" program which accesses the Vault API.
+
+1. Install "key rotation" program (with associated dependencies) on all laptops.
+
+1. Require SSH Certificate processing for all access to GitHub organization.
+
+1. Each user within an Enterprise GitHub Organization, enable "Single sign-on organizations" in the SSH keys section, click "Enable SSO", then "Authorize".
+
+1. To troubleshoot
+
+   <pre><strong>ssh -Tv git@github.com</strong></pre>
+
+
+
+<hr />
 
 ## Resources #
 
@@ -445,75 +974,7 @@ NOTE</a>: The Git smudge filter is what converts the LFS pointer stored in Git w
 * <a target="_blank" href="http://stackoverflow.com/questions/6009/how-do-you-deal-with-configuration-files-in-source-control">
    How do you deal with configuration files in source control</a>
 
-* <a target="_blank" href="http://www.codeproject.com/Articles/602146/">Keeping-sensitive-config-settings-secret-with-Azur">
-   Keeping sensitive config settings secrete with Azure</a>
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=RRZiERo172k">
-   Introduction to Keybase</a> 2014-11-26 
-   social network and a crypto keyserver. 
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=S4HP1pRTE3A">
-   Easy File Encryption with Keybase - Hak5</a>
-
-## Mozilla SOPS
-
-https://github.com/mozilla/sops for yaml files.
-With SOPS when you want to edit a file, the file stays encrypted on disk, gets decrypted in RAM where you can edit it with vim, and when you save the edited file it gets re-encrypted before being written to disk. At the same time, it does offer the flexibility to quickly decrypt a few files so you can use a tool like vimdiff.
-
-SOPS uses your AWS credentials stored in ~/.aws to authenticate against KMS so you can encrypt and decrypt without a password.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=V2PRhxphH2w">Securing DevOps Show & Tell: Mozilla Sops 
-Mar 2, 2019</a> at https://frederic-hemberger.de/articles/manage-kubernetes-secrets-with-sops/
-
-https://oteemo.com/2019/06/20/hashicorp-vault-is-overhyped-and-mozilla-sops-with-kms-and-git-is-massively-underrated/
-lists Ideal Secrets Management Solution Requirements
-
-### Vault Dynamic Key Generation
-
-HashiCorp Vault provides Dynamic Credentials and Encryption as a data service to shift from keeping "Secrets as Code" to "Policy as Code," where credentials are dynamically generated on the fly in response to application needs, rather than versioned alongside code.
-
-Hashicorp Vault's "dynamic secrets" feature is ideal for scripts: an AWS access key can be generated for the duration of a script, then revoked. The keypair will not exist before or after the script runs, and the creation of the keys are completely logged.
-This is an improvement over using something like Amazon IAM but still effectively hardcoding limited-access access tokens in various places.
-
-https://github.com/gites/awesome-vault-tools
-
-
-
-## Storing encrypted in GitHub
-
-https://embeddedartistry.com/blog/2018/03/15/safely-storing-secrets-in-git/
-references use of <a target="_blank" href="https://github.com/StackExchange/blackbox">blackbox</a>, git-secret bash script, and  git-crypt. "Aside from an initial unlock command that needs to be used after cloning the repository, git-crypt encryption and decryption operations happen transparently. I find this workflow to be superior to git-secret and BlackBox."
-
-<a target="_blank" href="https://github.com/rustyio/git-gpg">
-git-gpg</a> stores encrypted git repositories on third-party / potentially insecure servers, but stores all changes to source files as compressible textual deltas (a key reason for using git in the first place). The repository is encrypted remotely but the local version has no encrypted blobs inside.
--- https://news.ycombinator.com/item?id=11662364
-Git-secret – store private data in a Git repo (coderwall.com)
-Other benefits include architectural simplicity and low footprint: it consists of a single Python script that you add to your executable path.
-Its achilles heel is that old versions of keys are stored in Git history.
-
-
-
-## AWS KMS
-
-### Zamata
-
-Zemanta's https://github.com/Zemanta/py-secretcrypt
-and
-https://github.com/Zemanta/go-secretcrypt
-keeps secrets encrypted with Amazon KMS (Key Management Service) in repos, which are decrypted on the fly by the application.
-Access control is managed through AWS KMS key policies, with EC2 instances running the applications having permissions to decrypt the secrets.
-
-https://github.com/fugue/credstash
-uses AWS KMS for key wrapping and master-key storage, and DynamoDB for credential storage and sharing.
-Works in several flavors of Linux, in a variety of programming languages.
-
-https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/storage/common/storage-client-side-encryption.md
-Azure Key Vault
-
-## Keybase
-
-github.com/keybase
-http://g14n.info/2014/07/my-keybase-experience/
+https://dev.to/himadriganguly/configure-ssh-server-with-key-based-and-two-factor-authentication-3oc2
 
 
 ## More #

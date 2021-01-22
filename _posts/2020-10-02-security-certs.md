@@ -471,62 +471,7 @@ EC-Council built the Advanced Penetration Testing Cyber Range (ECCAPT).
 
 ## AWS Security
 
-To earn a <a target="_blank" href="https://aws.amazon.com/certification/certified-security-specialty/">AWS Certified Security - Specialty</a> certification, 
-
-The below domain info is adapted from <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Specialty_Exam-Guide.pdf">AWS's exam guide PDF</a>
-
-The $300 exam is difficult becuase it has 65 questions in 3 hours (170 minutes). Many of the questions are long paragraphs and have multiple answers.
-
-Domain 1: Incident Response (12%)
-
-   * 1.1 Given an AWS abuse notice, evaluate the suspected compromised instance or exposed access keys.
-   * 1.2 Verify that the Incident Response plan includes relevant AWS services.
-   * 1.3 Evaluate the configuration of automated alerting,and execute possible remediation of security-related incidents and emerging issues.
-   <br /><br />
-
-Domain 2:Logging and Monitoring (20%)
-
-   * 2.1 Design and implement security monitoring and alerting.
-   * 2.2 Troubleshoot security monitoring and alerting.
-   * 2.3 Design and implement a logging solution.
-   * 2.4 Troubleshoot logging solutions.Domain 
-   <br /><br />
-
-Domain 3: Infrastructure Security
-
-   * 3.1 Design edge security on AWS.
-   * 3.2 Design and implement a secure network infrastructure.
-   * 3.3 Troubleshoot a secure network infrastructure.3.4Design and implement host-based security.
-   <br /><br />
-
-Domain 4: Identity and Access Management (26%)
-
-   * 4.1 Design and implement a scalable authorization and authentication system to access AWS resources.
-   * 4.2 Troubleshoot an authorization and authentication system to access AWS resources.
-   <br /><br />
-
-Domain 5: Data Protection (22%)
-
-   * 5.1 Design and implement key management and use.
-   * 5.2 Troubleshoot key management.
-   * 5.3 Design and implement a data encryption solution for data at rest and data in transit.
-   <br /><br />
-
-Video courses:
-   * <a target="_blank" href="https://learning.oreilly.com/videos/aws-certified-security/">Oreilly</a> by Chad Smith
-   * <a target="_blank" href="https://www.udemy.com/course/aws-certified-security-specialty/">Udemy</a> 23.5 hr by Zeal Zora with 1 practice test
-   * LinkedIn
-   * Pluralsight
-   * CloudAcademy
-   * <a target="_blank" href="https://acloudguru.com/course/aws-certified-security-specialty">ACloud.guru</a>
-   <br /><br />
-
-Amazon's webinars:
-   * Well-architected framework
-   * <a target="_blank" href="https://pages.awscloud.com/endpoint-security.html">How to Build and Endpoint Security Strategy is AWS</a>
-   * <a target="_blank" href="https://pages.awscloud.com/HowTo-AppSec.html">How to secure app pipelines in AWS</a>
-   * <a target="_blank" href="https://pages.awscloud.com/Enterprise_Cloud-Based_Firewalls.html">How to Protect Enterprise Systems with Cloud-Based Firewalls</a>
-   <br /><br />
+See my notes at <a target="_blank" href="https://wilsonmar.github.io/aws-security">https://wilsonmar.github.io/aws-security</a>
 
 ## Microsoft AZ-500
 

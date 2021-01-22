@@ -28,25 +28,6 @@ WARNING: I'm restructuring this so that revelations about architecture component
 
 NOTE: This article is now a "starter set" actively undergoing additions.
 
-<a name="Topics"></a>
-
-## What Kubernetes contributes
-
-* <a href="#IAC">Infrastructure as code</a> (IAC)
-* Manage containers
-* Naming and discovery
-* Mounting storage systems
-* Balancing loads
-* Rolling updates
-* Distributing secrets/config
-* Checking application health
-* Monitoring resources
-* Accessing and ingesting logs
-* Replicating application instances
-* Horizontal autoscaling
-* Debugging applications
-
-
 ## Keyword Index Alphabetically
 
 So you can go quickly/directly to terms:
@@ -63,6 +44,7 @@ Auto-scaling,
 <a href="#ConfigMaps"><strong>cm</strong>=configmaps</a>,
 <a href="#Contexts">Contexts</a>,
 <a href="#Controllers">Controllers</a>,
+<a href="#CRD">CRD</a>, 
 <a href="#CronJobs">CronJobs</a>,
 <a href="#Declarative">Declarative</a>,
 Discovery,
@@ -76,7 +58,7 @@ Discovery,
 <a href="#Imperative">Imperative</a>,
 <a href="#InitContainers">Init Containers</a>,
 <a href="#Ingress">Ingress</a>,
-<a href="#Jobs">Jobs</a>, 
+<a href="#JSONPath">JSONPath</a>,
 <a href="#Kubelet">Kubelet</a>,
 <a href="#kube-proxy">kube-proxy</a>,
 <a href="#Labels">Labels</a>, 
@@ -84,6 +66,7 @@ Discovery,
 <a href="#Logging">Logging</a>,
 <a href="#Metadata">Metadata</a>,
 <a href="#Namespaces"><strong>ns</strong>=Namespaces</a>, 
+<a href="#NetworkPolicies"><strong>netpol</strong>=NetworkPolicies</a>, 
 <a href="#Nodes"><strong>no</strong>=Nodes</a>,
 <a href="#NodePort">NodePort</a>,
 <a href="#OpenShift">OpenShift</a>,
@@ -119,6 +102,9 @@ Discovery,
 With Kubernetes, <strong>dev teams</strong> can take complete control of production operations in cloud environments 
 -- deploy both application code and all the environment settings, at their own cadence, without ceremonies and wait time to coordinate releases.
 
+Kubernetes applies principles of the <a target="_blank" href="https://www.reactivemanifesto.org/">Reactive Manifesto</a> of 2014:
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"><img width="546" alt="reactive-manifesto" src="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"></a>
+
 Kubernetes is called "container orchestration" software because it automates the deployment, scaling and management of containerized applications<a target="_blank" href="https://en.wikipedia.org/wiki/Kubernetes">[Wikipedia]</a>. 
 
 * Authentication -> Authorization -> <a href="#Admission">Admission Control</a>
@@ -128,8 +114,24 @@ Kubernetes is called "container orchestration" software because it automates the
 * Unlike Elastic Beanstalk, the k8s master controls what each of its nodes do
 <br /><br />
 
-Kubernetes applies principles of the <a target="_blank" href="https://www.reactivemanifesto.org/">Reactive Manifesto</a> of 2014:
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"><img width="546" alt="reactive-manifesto" src="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"></a>
+<a name="Topics"></a>
+
+## What Kubernetes contributes
+
+* <a href="#IAC">Infrastructure as code</a> (IAC)
+* Manage containers
+* Naming and discovery
+* Mounting storage systems
+* Balancing loads
+* Rolling updates
+* Distributing secrets/config
+* Checking application health
+* Monitoring resources
+* Accessing and ingesting logs
+* Replicating application instances
+* Horizontal autoscaling
+* Debugging applications
+
 
 
 ## Open-Source History
@@ -297,9 +299,9 @@ https://kubernauts.de/en/home/ (<a target="_blank" href="https://twitter.com/kub
 
 ### CKS Exam Domains
 
-<a target="_blank" href="https://training.linuxfoundation.org/announcements/new-kubernetes-security-specialist-certification-to-help-professionals-demonstrate-expertise-in-securing-container-based-applications/">Coming November, 2020</a> (before the KubeCon North America conference): <a target="_blank" href="https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/">CKS exam</a> is $300 for 2 hours.
+<a target="_blank" href="https://training.linuxfoundation.org/announcements/new-kubernetes-security-specialist-certification-to-help-professionals-demonstrate-expertise-in-securing-container-based-applications/">From November, 2020</a> the <a target="_blank" href="https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/">CKS (Certified Kubernetes Security) exam</a> for those who hold a CKA certification.
 
-It's for those who hold a CKA certification.
+It is $300 for 2 hours:
 
 * 10% Cluster Setup - Best practice for configuration to control environment access, rights, and platform conformity.
 * 15% Cluster Hardening - to protect K8s API and utilize <a href="#RBAC">RBAC</a>
@@ -309,14 +311,16 @@ It's for those who hold a CKA certification.
 * 20% Monitoring, Logging, and Runtime Security - to analyse and detect threads
 <br /><br />
 
+Linux Foundation also offers (since Jan 2021 during registration) <a target="_blank" href="https://trainingportal.linuxfoundation.org/learn/course/kubernetes-security-essentials-lfs260/">Kubernetes Security Essentials</a> (course LFS260) by Timothy Serewicz.
+
 DockerDocker (specifically, Docker Engine) provides operating-system-level virtualization in containers.
 
 * <a target="_blank" href="https://www.pluralsight.com/courses/configuring-managing-kubernetes-security">Pluralsight "Configuring and Managing Kubernetes Security</a> by Anthony Nocentino (@nocentio, centinosystems.com) is the one to take.
 
-* https://github.com/NodyHub/docker-k8s-resources/tree/master/k8s-pods
-sample Security yaml
+* <a target="_blank" href="https://github.com/NodyHub/docker-k8s-resources/tree/master/k8s-pods">
+sample Security yaml</a>
 
-* https://ravikirans.com/cks-kubernetes-security-exam-study-guide/
+* <a target="_blank" href="https://ravikirans.com/cks-kubernetes-security-exam-study-guide/">ravikirans.com/cks-kubernetes-security-exam-study-guide</a>
 
 * <a target="_blank" href="https://github.com/walidshaari/Certified-Kubernetes-Security-Specialist">https://github.com/walidshaari/Certified-Kubernetes-Security-Specialist</a> by <a target="_blank" href="https://walidshaari.blogspot.com">Walid Shaari</a> (<a target="_blank" href="https://medium.com/@walidshaari">author in Medium</a>).
 
@@ -428,19 +432,24 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
    ### Sample exam questions 
 
 1. <a target="_blank" href="https://github.com/dgkanatsios/CKAD-exercises">https://github.com/dgkanatsios/CKAD-exercises</a> 
-   provides sample exam questions.
+   by Dimitris-Ilias Gkanatsios (of Microsoft) provides sample exercises to prepare for the CKAD exam.
 
 1. <a target="_blank" href="https://medium.com/bb-tutorials-and-thoughts/practice-enough-with-these-questions-for-the-ckad-exam-2f42d1228552">Practice enough</a> 
 
 
-8. Use kubectl commands in a Kubernetes cluster 60 minutes at a time within <a target="_blank" href="https://learn.openshift.com/playgrounds/">Red Hat's OpenShift Playground</a> powered by KataKoda. Use the "oc" CLI program.
+   ### Use play environments
 
-   The playground environment is pre-loaded with Source-to-Image (S2I) builders for Java (Wildfly), Javascript (Node.JS), Perl, PHP, Python and Ruby. Templates are also available for MariaDB, MongoDB, MySQL, PostgreSQL and Redis.
+8. Use playground instances to use kubectl commands in a Kubernetes cluster (60 minutes at a time) :
 
-1. See 3 preview exam questions (with answer explained) after signing up at <a target="_blank" href="https://killer.sh/">https://killer.sh</a> (Killer Shell's) CKA/CKAD Simulator</a> provides close replica of the CKAD exam browser terminal with 20 CKAD and 25 CKA questions, at 29.99€ for two sessions (before 10% discount). Each session includes 36 hours of access to a cluster environment. They recommend you start the first session when you’re at the beginning of your CKA or CKAD journey. 
+   KodeKloud instances come up the quickest.
 
+   Coursera makes use of Google cloud, requiring copy and pasting of accounts and passwords, bringing up CLI, creating environment variables, etc. every time.
+
+   KataKoda, <a target="_blank" href="https://learn.openshift.com/playgrounds/">Red Hat's OpenShift Playground</a> using its "oc" CLI program. The KataKoda playground environment is pre-loaded with Source-to-Image (S2I) builders for Java (Wildfly), Javascript (Node.JS), Perl, PHP, Python and Ruby. Templates are also available for MariaDB, MongoDB, MySQL, PostgreSQL and Redis.
 
    ### Build speed
+
+1. See 3 preview exam questions (with answer explained) after signing up at <a target="_blank" href="https://killer.sh/">https://killer.sh</a> (Killer Shell's) CKA/CKAD Simulator</a> provides close replica of the CKAD exam browser terminal with 20 CKAD and 25 CKA questions, at 29.99€ for two sessions (before 10% discount). Each session includes 36 hours of access to a cluster environment. They recommend you start the first session when you’re at the beginning of your CKA or CKAD journey. 
 
 1. Practice <a target="_blank" href="https://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc">Keyboard shortcuts for Bash</a>
 
@@ -550,7 +559,7 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 
 ### After exam
 
-1. Create an Acclaim account.
+1. Create an <a target="_blank" href="https://www.acclaim.com/">Acclaim.com</a> account to manage publicity across many certifications.
 1. If you pass the exam (score above 66%), go to acclaim to get your digital badge to post on social media.
    
    <a target="_blank" href="https://trainingportal.linuxfoundation.org/pages/exam-history">
@@ -563,7 +572,11 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 
 ## Social media communities
 
+   * <a target="_blank" href="https://www.kubeweekly.io">https://kubeweekly.io</a>, a weekly podcast [subscribe!]
+   * <a target="_blank" href="https://www.kubernetespodcast.com/">https://kubernetespodcast.com</a> podcast is hosted by the Clound Native advocacy team at Google Cloud: Craig Box and Adam Glick. On <a target="_blank" href="https://podcasts.apple.com/us/podcast/kubernetes-podcast-from-google/id1370049232?mt=2">Apple Podcasts</a>, etc.
+
    * <a target="_blank" href="https://kubernetes.io/community/">https://kubernetes.io/community</a>
+   * <a target="_blank" href="https://www.reddit.com/r/kubernetes">https://www.reddit.com/r/kubernetes</a> "subreddit"
 
    * <a target="_blank" href="https://community.kodekloud.com/">https://community.kodekloud.com</a>
    * <a target="_blank" href="https://community.kodekloud.com/">https://kodekloud.com community Slack sign-up</a>
@@ -611,16 +624,9 @@ Others:
 O'Reilly's <a target="_blank" href="https://learning.oreilly.com/live-training/courses/oreilly-infrastructure-ops-superstream-series/0636920410027/?utm_medium=email&utm_source=platform+b2b&utm_campaign=superstream&utm_content=20201022+reminder4+io+ev3"> Infrastructure & Ops Superstream Series: Session 3 Oct. 21, 2020: Kubernetes</a> 
 
 Interactive KataKoda lab on OReilly.com: <a target="_blank" href="https://learning.oreilly.com/scenarios/deploying-python-apis/9781492090465/">Deploying Python APIs on Kubernetes: Deploying a Development Kubernetes Cluster</a> 
-   using the K3s Kubernetes distribution from Rancher, a Certified Lightweight Kubernetes Distribution built for IoT and Edge remote ecomputing. It stores data using sqlite3 instead of etcd. It bootstrap script K3sup at https://github.com/alexellis/k3sup.
+   using the slim K3s Kubernetes distribution from Rancher, a Certified Lightweight Kubernetes Distribution built for IoT and Edge remote ecomputing. It stores data using sqlite3 instead of etcd. It bootstrap script K3sup installer at <a target="_blank" href="https://github.com/alexellis/k3sup">https://github.com/alexellis/k3sup</a>.
 
-
-<a target="_blank" href="https://learning.oreilly.com/learning-paths/learning-path-certified/9781492061021/">
-Certified Kubernetes Application Developer (CKAD) Prep Course</a> July 2019 [4h 53m] uses
-<a target="_blank" href="https://github.com/bmuschko/ckad-study-guide">https://github.com/bmuschko/ckad-study-guide</a>
-and <a target="_blank" href="https://github.com/bmuschko/ckad-crash-course">https://github.com/bmuschko/ckad-crash-course</a>
-by Benjamin Muschko (@bmuschko, <a target="_blank" href="https://www.bmuschko.com/">bmuschko.com</a>, <a target="_blank" href="https://www.automatedascent.com/">automatedascent.com</a>) 
-
-https://github.com/cncf/curriculum - v1.19
+arkade - portable Kubernetes marketplace
 
 <a target="_blank" href="https://learning.oreilly.com/library/view/kubernetes-patterns/9781492050278/">
 BOOK: Kubernetes Patterns</a>
@@ -654,7 +660,9 @@ Jonathan Johnson
    * Part III - CI/CD Pipelines on Kubernetes
 
 Programming Kubernetes (book)
+
 Kubernetes Best Practices (book)
+
 Kubernetes Up and Running, second edition (book)
 
 
@@ -746,22 +754,22 @@ Ready-for.sh establishes the environment:
    # Not for macOS
    </pre>
 
+<a target="_blank" href="https://github.com/cncf/curriculum">https://github.com/cncf/curriculum</a> - v1.19
+contains one-page curriculum pdf's.
 
-<a name="Logging"></a>
 
-### Logging
-
-   * <a target="_blank" href="https://kubernetesbyexample.com//logging/">kubernetesbyexample.com: Logging</a>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=3c-iBn73dDE&list=RDCMUCdngmbVKX1Tgre699-XLlUA&start_radio=1">Docker Tutorial for Beginners [Full Course in 3 Hours]</a>.
+### Nana's TechWorld on YouTube
 
 <a target="_blank" href="https://www.youtube.com/channel/UCdngmbVKX1Tgre699-XLlUA">
 YouTube channel "Nana's TechWorld"</a> by <a target="_blank" href="https://www.linkedin.com/in/nana-janashia/">entrepreneur Nana Janashia</a> (from Austria) features animated illustrations.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=3c-iBn73dDE&list=RDCMUCdngmbVKX1Tgre699-XLlUA&start_radio=1">Docker Tutorial for Beginners [Full Course in 3 Hours]</a>.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=I5c8Pfg2tys">VIDEO intro of</a>
 Unique Udemy course <a target="_blank" href="https://www.udemy.com/course/logging-in-kubernetes-with-efk-stack/?couponCode=UDEMY_NANA_NOV2020">
 Logging in Kubernetes with EFK Stack | The Complete Guide</a>
 covers how to set up K8s clusters from scratch and configure logging with ElasticSearch, Fluentd and Kibana 
+
 
 
 ### EdX
@@ -772,6 +780,12 @@ edX.org publishes some courses from Linux Academy.
 
 
 ### O'Reilly
+
+<a target="_blank" href="https://learning.oreilly.com/learning-paths/learning-path-certified/9781492061021/">
+Certified Kubernetes Application Developer (CKAD) Prep Course</a> July 2019 [4h 53m] uses
+<a target="_blank" href="https://github.com/bmuschko/ckad-study-guide">https://github.com/bmuschko/ckad-study-guide</a>
+and <a target="_blank" href="https://github.com/bmuschko/ckad-crash-course">https://github.com/bmuschko/ckad-crash-course "In-depth and hands-on practice for acing the exam"</a> by Benjamin Muschko (@bmuschko, <a target="_blank" href="https://www.bmuschko.com/">bmuschko.com</a>, <a target="_blank" href="https://www.automatedascent.com/">automatedascent.com</a>) 
+
 
 <a target="_blank" href="https://learning.oreilly.com/videos/certified-kubernetes-application/">
 7h video class over 3 days live course</a> by <a target="_blank" href="https://www.linkedin.com/in/sandervanvugt/">Sander van Vugt</a>, who, as a Linux expert, provides in-depth CentOS install advice (including SELinux) and <a target="_blank" href="https://github.com/sandervanvugt/ckad">files</a> available nowhere else. His diagrams are on a lightboard. <!-- mail@sandervanvugt.nl -->
@@ -936,6 +950,9 @@ by Matt Turner (from England) is hands-on using minikube 1.9.2 and kubernetes-cl
    * DRY deployment and debugging tools
    <br /><br />
 
+   <ul>The class has quizzes and covers 3rd-party tools such as <a target="_blank" href="https://www.linkedin.com/learning/kubernetes-essential-training-application-development/tools-for-dry-deployments-helm?u=26886050">Helm</a>, Kustomize, kubectl sniff (WireShark), Skaffold, telepresence.
+   </ul>
+
 <a target="_blank" href="https://www.linkedin.com/learning/learning-kubernetes/welcome?u=26886050">Learning Kubernetes</a> (on a Mac) by Karthik Gaekwad (<a target="_blank" href="https://www.linkedin.com/in/kgaekwad/">when he was at Oracle</a>) references files in 
 <a target="_blank" href="https://github.com/karthequian/Kubernetes/blob/master/CourseHandout.md">https://github.com/karthequian/Kubernetes/blob/master/CourseHandout.md</a>.
 
@@ -1007,6 +1024,7 @@ https://redhat-scholars.github.io/kubernetes-tutorial/kubernetes-tutorial/instal
 Instead of minikube, there's also K3s, Microk8s on Linux, Minishift.
 
    * KinD (Kubernetes in Docker) <a target="_blank" href="https://kind.sigs.k8s.io/">https://kind.sigs.k8s.io/</a> builds K8s clusters out of Docker containers running Docker in Docker, good for integration with a CI/CD pipeline.
+   CAUTION: This utility is built for the Kubernetes team's convenience and thus does not have some convenience features and add-ons.
    <br /><br />
 
    NOTE: Kubernetes can use alternative container runtimes 
@@ -1017,8 +1035,11 @@ But let's start by installing minikube on your laptop.
 
 ### Kustomize templating utility
 
-<a target="_blank" href="https://www.kustomize.io/">Kustomize.io</a> <tt>kustomize</tt> command creates customized raw, template-free YAML (overlay) files for multiple purposes (dev, prod). It leaves the base (original) YAML file untouched and usable as is.
-For example, dev would have <tt>replicas: 1</tt> while pro would have <tt>replicas: 5</tt>.
+<a target="_blank" href="https://www.kustomize.io/">Kustomize.io</a> <tt>kustomize</tt> command creates customized raw, template-free YAML (overlay) files for multiple purposes (dev, prod). It leaves the base (original) YAML file untouched and usable as is. For example, dev would have <tt>replicas: 1</tt> while pro would have <tt>replicas: 5</tt>.
+
+References:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=5gsHYdiD6v8">VIDEO by The DevOps Guy</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=ASK6p2r-Yrk">VIDEO Kustomize Getting Started</a>
 
 
 <a name="Minikube"></a>
@@ -1204,9 +1225,6 @@ chmod -R u+wrx $HOME/.minikube
 🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
    </pre>
 
-1. TODO: Start Docker 
-
-
    If Docker Desktop is not running, you won't see the icon at the top of the screen and you'll get this error:
 
    <pre>🤷  Exiting due to PROVIDER_DOCKER_NOT_FOUND: The 'docker' provider was not found: exec: "docker": executable file not found in $PATH
@@ -1229,11 +1247,11 @@ chmod -R u+wrx $HOME/.minikube
    </pre>
 
 
-3. Start the minikube service, with add-ons (which each runs in a pod):
+   Alternately, start the minikube service, with add-ons (which each runs in a pod):
 
    On Mac:
 
-   <pre><strong>minikube start --vm-driver=xhyve --addons=dashboard --addons=metrics-server --addons=ingress --addons="ingress-dns"
+   <pre><strong>minikube start ... --addons=dashboard --addons=metrics-server --addons=ingress --addons="ingress-dns"
    </strong></pre>
 
    On Windows:
@@ -1396,7 +1414,19 @@ v2beta2.autoscaling                    Local     True        24s
 
    Since Kubectl 1.8, scale is the preferred way to control graceful delete.
 
-   rollout and rollback support stateful sets since Kubectl 1.8.
+   <pre><strong>kubectl scale --replicas=3 deployment nginx-deployment</strong></pre>
+
+   Since Kubectl 1.8, rollout and rollback support stateful sets.
+
+   <pre><strong>kubectl set image deployment.v1.apps/nginx-deployment nginx=nginx:1.9.1 --record
+   kubectl rollout status deployment.v1.apps/nginx-deployment
+   kubectl rollout history deployment nginx-deployment
+   </strong></pre>
+
+1. To rollback, undo
+
+   kubectl rollout undo deployments nginx-deployment
+   kubectl rollout history deployment/nginx-deployment --revision=3
 
 1. To continue, <a href="#StartMinikube">start minikube again</a>.
 
@@ -1799,6 +1829,10 @@ Kubernetes can manage several namespaces running in each <strong>cluster</strong
 
    "The primary grouping concept in Kubernetes is the namespace. Namespaces are also a way to divide cluster resources between multiple uses. That being said, there is no security between namespaces in Kubernetes; if you are a "user" in a Kubernetes cluster, you can see _all_ the different namespaces and the resources defined in them." -- from the book: OpenShift for Developers, A Guide for Impatient Beginners by Grant Shipley and Graham Dumpleton.
 
+PROTIP: Install <a target="_blank" href="https://github.com/ahmetb/kubectx">https://github.com/ahmetb/kubectx</a> command to switch among clusters. kubens to switch among namespaces. Written in Bash and Go. References:
+   * https://computingforgeeks.com/manage-multiple-kubernetes-clusters-with-kubectl-kubectx/
+
+
 <a name="OpenShift"></a>
 
 ### OpenShift project wall namespaces
@@ -1933,11 +1967,16 @@ spec:
 
    REMEMBER: <tt>kind:</tt> full value must be <strong>Title case</strong> (first character upper case), <strong>singular</strong> (not plural).
 
-
    REMEMBEER: IRL Admins do not code to work with individual pods, because the whole point of K8s is to automate that chore.
  
    Admins define abstractions for <a href="#Deployments">deployment</a> of images (Docker containers) which define templates (blueprints) for creating pods.
 
+   <a name="CRD"></a>
+   CRD (Custom Resource Definition) defines a custom/another/new resource kind.
+   It uses <tt>apiVersion: apiextensions.k8s.io</tt>.
+   (like built-in code for StatefulSets).
+   Improbable.io makes use of crd for its etcdclusters (apiVersion: etcd.improbable.io).
+   For examaple: <tt>kubectl tree etcdcluster example</tt>
 
    ### metadata:
 
@@ -1992,10 +2031,11 @@ metadata:
 
    The resulting file includes additional annotations.
 
+### ArgoCD
 
-   Beyond the test: GitOps: ArgoCD monitors GitHub and applies changes to K8s Controller.
+Beyond the test: GitOps: ArgoCD monitors GitHub and applies changes to K8s Controller.
 
-
+   * <a target="_blank" href="https://www.youtube.com/watch?v=2WSJF7d8dUg&list=RDCMUCFe9-V_rN9nLqVNiI8Yof3w&index=2">Introduction to ArgoCD : Kubernetes DevOps CI/CD</a>
 
 
 ### kubectl run
@@ -2071,6 +2111,52 @@ Events:
   Normal  Created    4m7s   kubelet, minikube  Created container web
   Normal  Started    4m7s   kubelet, minikube  Started container web
    </pre>
+
+
+<hr />
+
+
+<a name="Multi-Container"></a>
+
+## Multi-Container Pods
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-integrating-volumes-using-multi-container-pods">2h 26m VIDEO course: "Kubernetes for Developers: Integrating Volumes and Using Multi-container Pods"</a> by Nigel Poulton Apr 23, 2020
+   * <a target="_blank" href="https://www.youtube.com/watch?v=3RTvoI-A7UQ">VIDEO: Kubernetes and Container Orchestration 101 - Computer Stuff They Didn't Teach You #11</a> by Microsoft legend Scott Hanselman.
+   <br /><br />
+
+The <strong>kube-scheduler</strong> assigns pods to nodes at runtime. 
+Before scheduling, it checks resources, QoS, policies, user specs.
+
+This needs application executables to be designed and built as microservices (independent, small, reuseable code) instead of a monalith.
+
+Containers within each pod share the same lifecycle.
+
+Several containers: the webapp, log-agent, Istio, etc.
+
+Patterns:
+
+<a name="Ambassador"></a> 
+
+The <strong>ambassador</strong> pattern is to <strong>proxy</strong> in front of accessing a database (perhaps charded)<a target="_blank" href="https://medium.com/@bjammal/hands-on-ambassador-pattern-625a13ceb8b7?">*</a>
+
+One use case is to make consistent the format of dates sent to the database.
+
+Another use case is to route requests to one of several databases (dev/test/prod).
+
+<a name="Adapter"></a>
+
+The <strong>Adapter pattern</strong> presents a standardized interface across multiple pods, to normalize output logs and monitoring data. Adapts third-party software.
+
+<a name="Sidecar"></a>
+
+The <strong>Sidecar</strong> pattern
+<table border="1" cellpadding="4" cellspacing="0">
+<tr valign="center"><th> Pod ...</th><th> Affinity </th><th> Anti-Affinity</th></tr>
+<tr valign="center"><th> To Pods </th><td> podAffinity </td><td> topologySpreadContraints</td></tr>
+<tr valign="center"><th> To Nodes </th><td> <a href="#nodeAffinity">nodeAffinity</a> </td><td> Taints and Tolerations</td></tr>
+</table>
+
+
 
 <hr />
 
@@ -2211,19 +2297,31 @@ Practice test with quiz about deployments: https://kodekloud.com/courses/kuberne
 
 
 
+<a name="DaemonSets"></a>
+
+## DaemonSets
+
+   DaemonSets ensure that all nodes run a copy of a specified pod.
+
+   As nodes are added or removed from the cluster, a DaemonSet adds or removes the required pods.
+
+1. Deleting a DaemonSet removes the pods it manages.
+
+
+
 
 <a name="Services"></a>
 <a name="NodePoints"></a>
 
-## Services
+## svc = Services
 
 <a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&t=2h13m44s">VIDEO: Nina</a>
 
-Services provide an un-changing IP address to pods in the back-end.
-
-Internal services are only reachable within a cluster.
+Services provide an <strong>un-changing IP address</strong> to pods in the back-end.
 
 PROTIP: Services are defined with a port.
+
+Internal services are only reachable within a cluster.
 
 Types of services:
 
@@ -2232,7 +2330,9 @@ Types of services:
    * LodBalancer exposes the service externally using a cloud provider's load
    <br /><br />
 
-Examples of services:
+REMEMBER: Port numbers in deployment yaml must match port numbers in services yaml.
+
+Example yaml of services:
 
    * auth.yaml
    * frontend.yaml
@@ -2243,7 +2343,9 @@ Examples of services:
    <br /><br />
 
 
-REMEMBER: Port numbers in deployment yaml must match port numbers in services yaml.
+<a name="ServiceAccounts"></a>
+
+## sa = ServiceAccounts
 
 1. Administrator: Create a new service account named "backend-team":
 
@@ -2301,6 +2403,7 @@ metadata:
   name: la-lb-service
 spec:
   type: LoadBalancer
+  sessionAffinity: ClientIP
   selector:
     app: la-lb
   ports:
@@ -2311,6 +2414,8 @@ spec:
   clusterIP: 10.0.171.223
   loadBalancerIP: 78.12.23.17
    </pre>
+
+   <tt>sessionAffinity: ClientIP</tt> to ensure that each client's first request to determine which Pod will be used for all subsequent connections, when switching versions mid-transaction can cause issues.
 
    Notice static IP addresses are being specified here. Is that a good thing?
 
@@ -2369,18 +2474,21 @@ data:
 <hr />
 
 
-
 <a name="Jobs"></a>
 
-### Jobs
+### Kind: Job
 
    * <a target="_blank" href="https://kubernetesbyexample.com//jobs/">kubernetesbyexample.com: Jobs</a>
+   <br /><br />
 
 Batch jobs are supervisor processes that run once and immediately completed.
-The Job controller creates one or more Pods required to run a task. 
-When the task is completed, Job will then terminate all those Pods. 
+The Job controller within the Control Plane creates one or more Pods required to run a task. 
 
-The CronJob controller runs Pods on a time-based schedule.
+   <tt>spec: completions: 5</tt> defines the number of pods started within a job.
+
+   <tt>spec: parallelism: 1</tt> defines the number of pods running at the same time.
+
+   When the task is completed, the Job terminates.
 
 3 types of jobs:
 
@@ -2389,22 +2497,73 @@ The CronJob controller runs Pods on a time-based schedule.
    * completions=1 & parallelism=m for n jobs work queue started until 1 completed (rarely used)
    <br /><br />
 
+If a node fails while a Job is executing on that node, Kubernetes will restart the Job on a node that is still running.
 
-   <tt>spec: completions: 5</tt> defines the number of pods started within a job.
+To fail jobs that don't finish within a set number seconds:
 
-   <tt>parallelism: 2</tt> defines 
+<a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13235441?parent=lti_session">This example-job.yaml</a> uses perl language built-in command to compute the value of Pi to 2,000 places and then prints the result:
 
-1. Check the status of jobs
+   <pre>apiVersion: batch/v1
+kind: Job
+metadata:
+  # Unique key of the Job instance
+  name: example-job
+spec:
+  template:
+    metadata:
+      name: example-job
+    spec:
+      containers:
+      - name: pi
+        image: perl
+        command: ["perl"]
+        args: ["-Mbignum=bpi", "-wle", "print bpi(2000)"]
+      # Do not restart containers after they exit
+      restartPolicy: Never
+   </pre>
+
+kubectl apply -f example-job.yaml
+
+1. For the job's start time and success status, describe the job
+
+   <pre>Start Time:     Thu, 20 Dec 2018 14:34:09 +0000
+Pods Statuses:  0 Running / 1 Succeeded / 0 Failed
+   </pre>
+
+1. Additional conditions:
+
+   <pre>...
+spec:
+  backoffLimit: 4
+  activeDeadlineSeconds: 300
+  template:
+  ...
+   </pre>
+
+1. Delete job after finish:
+   
+   <pre>ttlSecondsAfterFinished: 20</pre>
+
+1. When a job is completed, the Job terminates Pods used unless:
+
+   <pre><strong>kubectl delete job <em>job-name</em> --cascade false </strong></pre>
+
+1. After running, check the status of jobs
    
    <pre><strong>kubectl get jobs </strong></pre>
 
    <pre>NAME     COMPLETIONS   DURATION   AGE
-somejob   5/5           27s        9m41s</pre>
+somejob   5/5           27s        9m41s
+   </pre>
 
-2. When a job is complete, view its results:
+
+<a name="CronJobs"></a>
+
+### Kind: Cronjob
+
+2. When a job is complete, view results in logs:
 
    <pre><strong>kubectl logs <em>pod-name</em></strong></pre>
-
 
    The <a href="#API_Server">API Server</a> authenticates using one of several methods (basic, certificates, tokens, etc.).
 
@@ -2412,13 +2571,47 @@ somejob   5/5           27s        9m41s</pre>
 
    The <a href="#API_Server">API Server</a> routes several <strong>kinds</strong> of <a href="#Ayaml-files">yaml declaration files</a>: Pod, Deployment of pods, Service, Job, Configmap.
 
-1. Add 
+The CronJob controller runs Pods on a <strong>time-based schedule</strong>  like Linux cron uses (minute, hour, day, month, day of week 0-6)
+
+1. apply example-cronjob.yaml with batch apiVersion and kind: Cronjob, with a schedule spec:
+
+   <pre>apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: hello
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: hello
+            image: busybox
+            args:
+            - /bin/sh
+            - -c
+            - date; echo "Hello, World!"
+          restartPolicy: OnFailure
+   </pre>
+
+Additional:
+
+   <pre>...
+spec:
+  schedule: "*/1 * * * *"
+  startingDeadlineSeconds: 3600    # to stop repeated unsuccessful attempts to start
+  concurrencyPolicy: Forbid        # or replace existing concurrent jobs
+  suspend: True
+  successfulJobsHistoryLimit: 3    # retained in history
+  failedJobsHistoryLimit: 1        # 
+  jobtemplate:
+    ...
+   </pre>
+
+1. Add-on for jetbrains:
 
    <a target="_blank" href="https://plugins.jetbrains.com/plugin/10485-kubernetes">https://plugins.jetbrains.com/plugin/10485-kubernetes</a>
-
-1. Delete job after finish:
-   
-   <pre>ttlSecondsAfterFinished: 20</pre>
 
 
 <hr />
@@ -2555,7 +2748,7 @@ quickly create an OpenFaaS (Serverless) cluster</a>:
 Videos:
 
    * <a target="_blank" href="https://www.youtube.com/channel/UCdngmbVKX1Tgre699-XLlUA&t=1h24m24s">
-Helm Explained by "Nana's TechWorld"</a>
+Helm Explained by "Nana's TechWorld"</a> (<a target="_blank" href="https://www.linkedin.com/in/nana-janashia/">Nana Janashia</a>)
    * <a target="_blank" href="https://www.ibm.com/blogs/bluemix/2018/06/deploy-scalable-web-application-kubernetes-using-helm/">
 IBM: Deploy a scalable web application to Kubernetes using Helm</a>
 
@@ -2577,7 +2770,26 @@ OpenShift Enterprise, which uses <strong>routes</strong> that define the rules t
 Routes are deployed by an OpenShift Enterprise administrator as <strong>routers</strong> to nodes in an OpenShift Enterprise cluster. To clarify, the default Router in Openshift is an actual HAProxy container providing reverse proxy capabilities.
 
 
-### Cluster networking
+<a name="NetworkPolicies"></a>
+
+## netpol = NetworkPolicies
+
+
+
+<a name="ClusterNetworking"></a>
+
+## HA Proxy cluster
+
+   For network resiliency, <strong>HA Proxy cluster</strong> distributes traffic among nodes.
+
+   <strong>Endpoints</strong> track the IP addresses of Pods with matching selectors.
+
+   <tt>EndpointSlice</tt> groups network endpoints together with Kubernetes resources.
+
+
+<a name="Cluster"></a>
+
+## Cluster networking
 
    A private ClusterIP is accessible by nodes only within the same cluster.
 
@@ -2645,7 +2857,6 @@ authenticated to Azure Container Registry (ACR) and <a href="#AKS">AKS</a>.
 <a name="Metadata"></a>
 <a name="Clusters"></a>
 
-<a name="CronJobs"></a>
 
 https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/
 
@@ -2658,7 +2869,7 @@ https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/
    * Workloads APIs: Container, Job, CronJob, Deployment, StatefulSet, ReplicaSet, Pod, ReplicationController
    * Service APIs: Endpoints, Ingress, Service
    * Config and storage APIs: ConfigMap, CSIDriver, Secret, StorageClass, Volume
-   * Metadata APIs: Controllere, CRD, Event, LimitRange, HPA (HorizontalPodAutoscaler), PodDistributionBudget, ...
+   * Metadata APIs: Controller, <a href="#CRD">CRD</a>, Event, LimitRange, HPA (HorizontalPodAutoscaler), PodDistributionBudget, ...
    * Cluster APIs: APIService, Binding, CSR, <a href="#ClusterRoles">ClusterRole</a>, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
    <br /><br />
 
@@ -2691,20 +2902,23 @@ A Deployment is an API object that manages a replicated application, typically b
    <pre>kubectl delete deployments.app pod mydep ???</pre>
 
 
+<hr />
 
-<a name="Pods"></a>
+<a name="HealthChecks"></a>
 
-### Pods
+## Health Checks
 
-   * monolith.yaml
-   * secure-monolith.yaml
-
+   * <a target="_blank" href="https://kubernetesbyexample.com//healthz/">kubernetesbyexample.com: Health Checks</a>
+   * <a target="_blank" href="https://inlets.dev/blog/2020/12/15/multi-cluster-monitoring.html">How to monitor multi-cloud Kubernetes with Prometheus and Grafana</a> (on Equinix Metal) Inlets blog December 15, 2020 by Johan Siebens 
 
 <a name="Probes"></a>
 
-livenessProbe : should I restart the container?  to actuator/info
+## Probes
 
-readinessProbe : should I accept traffic?        to actuator/health
+<table border="1" cellpadding="4" cellspacing="1">
+<tr valign="top"><td> Accept traffic? </td><td> readinessProbe </td><td> actuator/health </td></tr>
+<tr valign="top"><td> Restart the container? </td><td> livenessProbe </td><td> actuator/info </td></tr>
+</table>
 
 <a name="ReadinessProbes"></a>
 <a name="LivenessProbes"></a>
@@ -2765,22 +2979,24 @@ Skaffold
 Oketeto
 
 
-<a name="HealthChecks"></a>
+<a name="Logging"></a>
 
-### Health Checks
+### Logging
 
-   * <a target="_blank" href="https://kubernetesbyexample.com//healthz/">kubernetesbyexample.com: Health Checks</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//logging/">kubernetesbyexample.com: Logging</a>
+   <br /><br />
+
+1. Get pod name
+
+   kubectl get pods
+
+1. List log entries for pod:
+
+   kubectl logs -f <em>POD NAME HERE</em> event-simulator
 
 
-<a name="DaemonSets"></a>
-
-### DaemonSets
-
-   DaemonSets ensure that all nodes run a copy of a specified pod.
-
-   As nodes are added or removed from the cluster, a DaemonSet adds or removes the required pods.
-
-1. Deleting a DaemonSet removes the pods it manages.
+PROTIP: To display the tail end of logs for containers and multiple pods (rather than scrolling through an entire log), install <a target="_blank" href="https://github.com/wercker/stern/tree/master/stern">stern at https://github.com/wercker/stern/tree/master/stern</a>. It's from Wercker (which was acquired by Oracle in 2017). BTW, on a ship stern is the tail end.
+Install from <a target="_blank" href="https://github.com/wercker/stern/releases">https://github.com/wercker/stern/releases</a>
 
 
 <hr />
@@ -2800,13 +3016,16 @@ Kubernetes in the cloud also enables <strong>multi-region</strong> setups. GCP h
 
 
 
+
 ### IBM CloudLabs
 
 https://www.youtube.com/watch?v=aSrqRSk43lY&list=PLOspHqNVtKABAVX4azqPIu6UfsPzSu2YN&index=2
 
+### Equinix Metal, orion-equinix
+
+https://inlets.dev/blog/2020/12/15/multi-cluster-monitoring.html
 
 ### Google Cloud GKE GCE Qwiklabs
-
 
 <a target="_blank" href="https://cloud.google.com/kubernetes-engine/">Google Kubernetes Engine (GKE)</a> is Google's container management SaaS offering. 
 
@@ -2821,7 +3040,7 @@ GKE provides networking within VPC, monitoring, logging, and CI/CD (Google Build
    ![k8s-gcp-search-656x866-37655](https://user-images.githubusercontent.com/300046/42350888-a8aca044-806f-11e8-8848-813657b7660d.jpg)
 
 <a target="_blank" href="https://inthecloud.withgoogle.com/kubernetes-training-offer/register.html">30 days free training instances</a> after completing a Tour class. <a target="_blank" href="https://run.qwiklabs.com/catalog?keywords=Kubernetes">Qwiklabs has several hands-on labs using Kubernetes</a> on Google Cloud. Its labs are used in Coursera courses, which explains provides lab solutions videos such as 
-   * <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/1pxSX/lab-solution">Accessing the Cloud COnsole and Cloud Shell</a>
+   * <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/1pxSX/lab-solution">Accessing the Cloud Console and Cloud Shell</a>
    * <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/BxVeI/lab-solution"> Deploying GKE</a>
    * <a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13134687?parent=lti_session">Implementing Role-Based Access Control with Google Kubernetes Engine</a>
    <br /><br />
@@ -2829,6 +3048,8 @@ GKE provides networking within VPC, monitoring, logging, and CI/CD (Google Build
 <a target="_blank" href="https://run.qwiklabs.com/quests/142?catalog_rank=%7B%22rank%22%3A4%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&search_id=7405314">Qwiklabs QUEST: Secure Workloads in Google Kubernetes Engine</a> consists of 8 labs covering 8 hours of the
    <a target="_blank" href="https://webinars-run.qwiklab.com/quests/29">
    Kubernetes in the Google Cloud Qwiklab quest</a>
+
+<a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13143652?parent=lti_session">Deploying Google Kubernetes Engine Clusters from Cloud Shell</a>
 
 <a target="_blank" href="https://bit.ly/33Cd4Uw/">First K8s app</a>
 
@@ -2962,7 +3183,7 @@ gcloud container images delete gcr.io/demo-project-123/demo:2.0
    </strong></pre>
 
 
-### Amazon AWS ECS & EKS
+### Amazon AWS ECS & EKS & KOPS
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/95669605-ccb21480-0b3f-11eb-956b-a5a09c90f3ac.png"><img alt="k8s-aws-kubernauts" src="https://user-images.githubusercontent.com/300046/95669605-ccb21480-0b3f-11eb-956b-a5a09c90f3ac.png"></a>
 
@@ -3016,8 +3237,7 @@ EKS makes use of <a target="_blank" href="https://aws.amazon.com/fargate/">AWS F
 
    A concern with Fargate is its time to load.
 
-* Kops for AWS (at <a target="_blank" href="https://github.com/kubernetes/kops">https://github.com/kubernetes/kops</a>) is open-source to enable multi-master, multi-AZ cluster setup and management of multiple instance groups. Admins must stand up the masters, unlike in ECS/EKS. See <a target="_blank" title="Oct 27, 2017 by Tristan Colgate-McFarlane" href="https://medium.com/qubit-engineering/kubernetes-up-integrated-authentication-5d2c908c2810">
-"How Qubit built its production ready Kubernetes (k8s) environments"</a>
+* Kops for AWS (at <a target="_blank" href="https://github.com/kubernetes/kops">https://github.com/kubernetes/kops</a>) is open-source to enable multi-master, multi-AZ cluster setup and management of multiple instance groups. Admins must stand up the master (Control Plane), unlike in ECS/EKS. See <a target="_blank" title="Oct 27, 2017 by Tristan Colgate-McFarlane" href="https://medium.com/qubit-engineering/kubernetes-up-integrated-authentication-5d2c908c2810">"How Qubit built its production ready Kubernetes (k8s) environments"</a>
 
 1. Manage EKS nodepgroups:
 
@@ -3123,6 +3343,23 @@ Internally, Kubernetes itself does NOT create nodes.
 
 Cluster admins use the kubeadm CLI to create nodes and add them to Kubernetes.
 
+1. To list resource usage across nodes of the cluster:
+
+   <pre><strong>kubectl top nodes</strong></pre>
+
+   <pre>NAME                            CPU(cores)   CPU%  MEMORY(bytes)  MEMORY%
+gke-standard-cluster-1-def...   29m          3%    431Mi          16%
+   </pre>
+
+1. To list resource usage across pods of the cluster:
+
+   <pre><strong>kubectl top pods</strong></pre>
+
+   <pre>NAME                            CPU(cores)   CPU%  MEMORY(bytes)  MEMORY%
+gke-standard-cluster-1-def...   29m          3%    431Mi          16%
+   </pre>
+
+
 ### GCP GKE masters
 
 Within a <a target="_blank" href="https://wilsonmar.github.io/gcp/">GCP</a>, GKE provides the master node Kubernetes Control Plane components, which include node creation by deploying and registering Google Compute Engine instances as nodes. 
@@ -3219,11 +3456,26 @@ To prevents a pod from accessing node metadata, there is a temporary solution th
 By default, containers inside a pod allow privilege elevation, and can access the host file system and the host network.
 But although convenient, that can be undesirable from a security perspective.
 
-To restricts what containers in a pod can do, set <strong>security contexts</strong> in the pod specification so it's applied to all of the pod's containers.
-Using security contexts in a pod definition, you can exercise a lot of control over the use of the host namespace,
-networking, file system, and volume types, whether privilege containers can run, and whether code in the container can escalate to root privileges.
+   To restrict what containers in a pod can do, set <strong>security contexts</strong> in the pod specification so it's applied to all of the pod's containers.
 
-This sample privileged-pod.yaml is used to the the pod security policy:
+1. To display the current context ID within GKE:
+
+   <pre><strong>kubectl config current-context</strong></pre>
+
+   <pre>gke_[PROJECT_ID]_us-central1-a_standard-cluster-1</pre>
+
+
+1. To list all cluster contexts' namespace and AUTHINFO:
+
+   kubectl config get-contexts
+
+1. To change context:
+
+   <pre>kubectl config use-context gke_${GOOGLE_CLOUD_PROJECT}_us-central1-a_standard-cluster-1</pre>
+
+   Using security contexts in a pod definition, you can exercise a lot of control over the use of the host namespace, networking, file system, and volume types, whether privilege containers can run, and whether code in the container can escalate to root privileges.
+
+   This sample privileged-pod.yaml is used to define a pod's security policy:
 
    <pre>kind: Pod
 apiVersion: v1
@@ -3237,7 +3489,7 @@ spec:
       privileged: true
    </pre>
 
-This sample provides specific user and group context for containers:
+   This sample provides specific user and group context for containers:
 
    <pre>...
 spec:
@@ -3246,15 +3498,15 @@ spec:
       fsGroup: 2000
    </pre>
 
-<tt>runAsUser</tt> ID "1000" for any containers in the pod. This should not be zero because, in a Linux system, zero is the privileged <strong>root</strong> user's User ID. Taking away root privilege from the code running inside the container limits what it can do in case of compromise.
+   <tt>runAsUser</tt> ID "1000" for any containers in the pod. This should not be zero because, in a Linux system, zero is the privileged <strong>root</strong> user's User ID. Taking away root privilege from the code running inside the container limits what it can do in case of compromise.
 
-<tt>fsGroup</tt> ID "2000" is associated with all containers in the pod. 
+   <tt>fsGroup</tt> ID "2000" is associated with all containers in the pod. 
 
    * Enable <strong>#Seccomp</strong> to block code running in containers from making system calls. 
    * Enable <strong>AppArmor</strong> to restrict individual program actions.
    <br /><br />
 
-Such direct configuration of security contexts in each individual pod can become a lot of work.
+Such direct configuration of security contexts in each individual pod can be a lot of work.
 
 
 <a name="PodSecurityPolicies"></a>
@@ -3515,69 +3767,191 @@ RBAC (Role-Based Access Control)
 <a name="Scheduler"></a>
 <a name="Scheduling"></a>
    
-### Scheduler
+### Scheduler Pod stats
 
    The <a href="#API_Server">API Server</a> puts nodes in "pending" state when it sends requests to bring them up and down to the <strong>Scheduler</strong> to do so only when there are enough resources available.
    The scheduler operate according to a schedule.
+
+Pod phases:
+1. Pending - accepted, but being scheduled (being pull from repo)
+2. Running after being attached to a node and containers created
+3. Succeeded means all containers are running (terminated as specified)
+4. Failed - 
+5. Unknown - communication error
+6. CrashLoopBackOff - pod not configured correctly
 
    <a target="_blank" href="https://kubernetes.io/docs/concepts/scheduling-eviction/scheduler-perf-tuning/">perf tunint</a>
 
    Rules obeyed by the Scheduler about pods are called <strong>"Tolerances"</strong>.
 
-<a name="Taints"></a>
-<a name="Tolerations"></a>
 
-### Taints and Tolerations
+<hr />
 
-<a target="_blank" href="https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/">REF</a>:
+## Taints and Tolerations
 
-<a target="_blank" href="https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12077203">KLab</a>:
-"Node affinity" is a property of Pods that <strong>attracts</strong> them to a set of nodes (either as a preference or a hard requirement). 
+   * <a target="_blank" href="https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/">REF</a>:
+   * https://mckinsey.udemy.com/course/certified-kubernetes-application-developer/learn/lecture/12903100#notes
+   <br /><br />
 
 <a target="_blank" href="https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12077181">KLab</a>:
-Taints and tolerations work together to ensure that pods are not scheduled onto inappropriate nodes. 
+Taints and tolerations work together to ensure that pods are not scheduled onto inappropriate nodes and pods. 
 
-Taint nodes with keyname=value:effect in commands targeting nodes.
+  * Taints on <strong>nodes</strong> with <tt>keyname=value:effect</tt> in commands targeting nodes.
 
-Tolerate pods in PodSpec yaml with matching taints.
+  * Tolerations on <strong>pods</strong> in PodSpec yaml with matching taints.
 
-The Node controller uses built-in taints to specify conditions: "network-unavailable", "unshedulable", "cloudprovider unitialized", "not-ready", "memory-pressure", "disk-pressure", "out-of-disk",
+<a name="Taints"></a>
+
+### Taints repel from nodes
+
+To taint nodes, <a target="_blank" href="https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12077203">KLab</a>: 
 
 1. Use the <tt>taint nodes</tt> subcommand to specify to the Scheduler a node to <strong>repel</strong> pods matching the key:
 
-   <pre><strong>kubectl taint nodes node1 dedicated=group1:NoSchedule</strong></pre>
+   <pre><strong>kubectl taint nodes <em>node1</em> keyname=value:taint-effect dedicated=group1:NoSchedule</strong></pre>
 
-   More than one taint can be applied to a node.
+   <tt>taint-effect</tt> defines what happens to pods which do not tolerate the taint.
 
-1. Remove a taint by a dash after the taint effect:
+   * <tt>NoSchedule</tt>
+
+   * <tt>effect: "PreferNoSchedule"</tt> defines a "preference" or "soft" version of NoSchedule -- the system will try to avoid placing a pod that does not tolerate the taint on the node, but it is not required. 
+
+   * <tt>effect: "NoExecute"</tt> causes any pods that do not tolerate the taint to be evicted immediately, and pods that do tolerate the taint will never be evicted. 
+
+1. PROTIP: <tt>tolerationSeconds: 3600</tt> optionally added to <strong>NoExecute</strong> effect dictates how many seconds the pod stays bound to the node after the taint is added. If this pod is running and a matching taint is added to the node, then the pod will stay bound to the node for 3600 seconds, and then be evicted. If the taint is removed before that time, the pod will not be evicted.
+
+   NOTE: No more than one taint can be applied to a node.
+
+1. PROTIP: Remove a taint by a <strong>dash after the taint effect</strong>:
 
    <pre><strong>kubectl taint nodes node1 key=value:NoSchedule-</strong></pre>
 
+
+   <a name="Tolerations"></a>
+
+   ### Tolerations attract into pods
+
 1. Tolerate (ignore taints) in <strong>PodSpec yaml</strong> spec: to allow (but do not require) certain pods to schedule onto nodes with matching taints.
 
-  <pre>  tolerations:
-  - key: "example-key"
-    operator: "Exists"
+   NOTE: Tolerations are one of a few PodSpec items which can be edited while active, along with containers[*].image, initContainers[*].image, and <a href="#Jobs">Job activeDeadlineSeconds</a>.
+
+  <pre>spec:
+  ...
+  tolerations:
+  - key: "app"
+    operator: "Equal"
+    value: "blue"
     effect: "NoSchedule"
    </pre>
 
-   <tt>effect: "PreferNoSchedule"</tt> defines a "preference" or "soft" version of NoSchedule -- the system will try to avoid placing a pod that does not tolerate the taint on the node, but it is not required. 
+   The equivalent imperative command format:
 
-   <tt>effect: "NoExecute"</tt> causes any pods that do not tolerate the taint to be evicted immediately, and pods that do tolerate the taint will never be evicted. 
+   <pre>kubectl taint nodes node1 app=blue:NoSchedule
+   </pre>
 
-   <tt>tolerationSeconds: 3600</tt> optionally added to NoExecute effect dictates how many seconds the pod stays bound to the node after the taint is added. If this pod is running and a matching taint is added to the node, then the pod will stay bound to the node for 3600 seconds, and then be evicted. If the taint is removed before that time, the pod will not be evicted.
-
-
-   Such details are reaveled using the <tt>kubectl describe nodes</tt> command.
+1. Such details are reaveled using the <tt>kubectl describe nodes</tt> command.
    
-   NOTE: Tolerations are one of a few PodSpec items which can be edited while active, along with containers[*].image, initContainers[*].image, and activeDeadlineSeconds.
-
    <pre><strong>kubectl edit pod <em>pod name</em></strong></pre>
 
    If attempt fails, the file is saved to <tt>/tmp/kubectl-edit-ccvrq.yaml</tt>
 
 
-   ### Extract pod yaml from running podspec
+<a name="NodeSelectors"></a>
+
+### NodeSelectors
+
+For pods defined with nodeSelector such as:
+
+   <pre>
+  nodeSelector:
+    size: Large
+   </pre>
+
+That k8s matched them with nodes specs are defined: 
+
+???
+
+
+<a name="nodeAffinity"></a>
+
+### nodeAffinity & podAntiAffinity
+
+   * <a target="_blank" href="https://mckinsey.udemy.com/course/certified-kubernetes-application-developer/learn/lecture/12903116#notes">KK VIDEO</a>
+   * https://www.coursera.org/learn/deploying-workloads-google-kubernetes-engine-gke/lecture/aJh3H/affinity-and-anti-affinity
+   <br /><br />
+
+"Node affinity" is a property of Pods that <strong>attracts</strong> them to a set of nodes (either as a preference or a hard requirement). The Node controller uses built-in taints to specify conditions: "network-unavailable", "unshedulable", "cloudprovider unitialized", "not-ready", "memory-pressure", "disk-pressure", "out-of-disk",
+
+   <pre>spec:
+  containers:
+  ...
+  affinity:
+    nodeAffinity:
+    <strong>requiredDuringScheduleingIgnoredDuringExecution:</strong>
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: size
+          operator: In
+          values:
+          - Large
+   </pre>
+
+Affinity settings are used to put in each zones one and only one web server Pod and cache Pod:
+
+![k8s-affinity-zones-1554x778](https://user-images.githubusercontent.com/300046/103451396-f67f6100-4c80-11eb-8298-93ec7b0090da.png)
+
+Types:
+
+1. <strong>requiredDuringScheduleingIgnoredDuringExecution:</strong>
+2. <strong>preferredDuringScheduleingIgnoredDuringExecution:</strong>
+3. <strong>requiredDuringScheduleingRequiredDuringExecution:</strong>
+Put another way:
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th>.</th><th>DuringScheduling</th><th>DuringExecution</th></tr>
+<tr valign="top"><td>Type 1 </td><td>Required </td><td> Ignored </td></tr>
+<tr valign="top"><td>Type 2 </td><td>Preferred </td><td> Ignored </td></tr>
+<tr valign="top"><td>Type 3 </td><td>Required </td><td> Required </td></tr>
+</table>
+
+Alternatively:
+To a single Node with nodeAffinity:
+
+   <pre>apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-pv
+spec:
+  capacity:
+    storage: 100 Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-storage
+  local:
+    path: /mnt/disks/ssd1
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - <em>node-name</em>
+   </pre>
+
+
+
+   <pre>volumeMode: Block</pre>
+
+   <tt>persistentVolumeReclaimPolicy</tt> (Recycling) policies are:
+   * Delete
+   * <strong>Retain</strong> (keep the contents) 
+   * <strong>Recycle</strong> (Scrub the contents).
+   <br /><br />
+
+
+## Extract pod yaml from running podspec
 
    <pre><strong>kubectl get pod &LT;pod name> -o yaml > my-new-pod.yaml </strong></pod>
 
@@ -3607,18 +3981,6 @@ The Node controller uses built-in taints to specify conditions: "network-unavail
 1. To create a EKS cluster:
 
    <pre><strong>eksctl create cluster</strong></pre>
-
-
-<a name="Cluster"></a>
-
-### HA Proxy cluster
-
-   For network resiliency, <strong>HA Proxy cluster</strong> distributes traffic among nodes.
-
-   Endpoints track the IP addresses of Pods with matching selectors.
-
-   EndpointSlice groups network endpoints together with Kubernetes resources.
-
 
 
 <a name="Controllers"></a>
@@ -4180,6 +4542,7 @@ spec:
 ### Persistent Volume (PV)
 
    * <a target="_blank" href="https://kubernetesbyexample.com//pv/">kubernetesbyexample.com: Persistent Volumes</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=ZxC6FwEc9WQ">Persistent Volumes on Kubernetes for beginners</a> by That DevOps Guy
    <br /><br />
 
 PV's are a cluster resource, not to a specific _____.
@@ -4216,45 +4579,6 @@ Admins create a Persistent Volume (PV) to provision blocks of storage (of specif
     configMap:
       name: es-config-map
    </pre>
-
-   <a name="nodeAffinity"></a>
-
-   #### Locally to a single Node with nodeAffinity:
-
-   <pre>apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: local-pv
-spec:
-  capacity:
-    storage: 100 Gi
-  volumeMode: Filesystem
-  accessModes:
-    - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Delete
-  storageClassName: local-storage
-  local:
-    path: /mnt/disks/ssd1
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: kubernetes.io/hostname
-          operator: In
-          values:
-          - <em>node-name</em>
-   </pre>
-
-
-   <pre>volumeMode: Block</pre>
-  
-
-
-   <tt>persistentVolumeReclaimPolicy</tt> (Recycling) policies are:
-   * Delete
-   * <strong>Retain</strong> (keep the contents) 
-   * <strong>Recycle</strong> (Scrub the contents).
-   <br /><br />
 
    #### For a NFS (Network File System):
 
@@ -4611,11 +4935,19 @@ Sample labels and values:
 
    <pre><strong>... app=helloworldapp</strong></pre>
 
+
+   ### kubectl describe
+
 1. View labels using grep flags:
 
    <pre><strong>k describe po mssaging | grep -C 5 -i labels</strong></pre>
 
    BLAH: grep commands are simple and display extra text.
+
+
+   <a name="JSONPath"></a>
+
+   ### JSONPath
 
    <a target="_blank" href="https://www.youtube.com/watch?v=vljkDorNiuw&list=RDCMUCSWj8mqQCcrcBlXPi4ThRDQ&start_radio=1">VIDEO</a>: To precisely define extracts for processing by another command, use <a target="_blank" href="https://kubernetes.io/docs/reference/kubectl/jsonpath/">JSONPath</a>:
 
@@ -4632,6 +4964,11 @@ Sample labels and values:
 
    More examples of JSONPath:
    https://github.com/himadriganguly/k8s-jsonpath/tree/main/pods   
+
+
+1. List containers running within a pod:
+
+   <pre><strong>kubectl get pods [pod-name-here] -n [namespace] -o jsonpath='{.spec.containers[*].name}*</strong></pre>
 
    
 1. Custom columns
@@ -4845,6 +5182,10 @@ spec:
 
    <pre>kubectl rollout status deployment/nginx-deployment</pre>
 
+1. Pause Rollout to control what is included in update:
+
+   <pre>kubectl pause deployment/nginx-deployment</pre>
+
 1. Describe the yaml for a deployment:
 
    <pre>kubectl describe deployment nginx-deployment</pre>
@@ -4917,13 +5258,15 @@ spec:
    
    This can take several minutes.
 
-1. Enter the security context:
+1. Bring up a shell the security context pod:
 
    <pre>kubectl exec -it security-context-pod -- sh</pre>
    
-1. See the users:
+1. Bring up shell and execute shell command (such as ls, ps aux to see processes):
 
-   <pre>ps aux</pre>
+   <pre>kubectl exec -c <em>container id</em> -it <em>pod name</em> -- <em>command</em> </pre>
+
+   <tt>-c</tt> if there are several containers in a pod.
 
 1. See that the group is "2000" as specified:
 
@@ -5219,18 +5562,6 @@ Microsoft's "<a target="_blank" href="https://azure.microsoft.com/mediahandler/f
    Covers bash completion   
 
 
-   <a name="Ambassador">ambassador pattern</a> to proxy access a database (perhaps charded)<a target="_blank" href="https://medium.com/@bjammal/hands-on-ambassador-pattern-625a13ceb8b7?">*</a>
-
-   <a name="Adapter">Adapter pattern</a> presents a standardized interface across multiple pods, to normalize output logs and monitoring data. Adapts third-party software.
-
-   <a name="Sidecar">sidecar pattern</a>
-
-<table border="1" cellpadding="4" cellspacing="0">
-<tr valign="center"><th> Pod ...</th><th> Affinity </th><th> Anti-Affinity</th></tr>
-<tr valign="center"><th> To Pods </th><td> podAffinity </td><td> topologySpreadContraints</td></tr>
-<tr valign="center"><th> To Nodes </th><td> <a href="#nodeAffinity">nodeAffinity</a> </td><td> Taints and Tolerations</td></tr>
-</table>
-
 A cgroup (control group) is a group of Linux processes with optional resource isolation, accounting, and limits.
 
 
@@ -5323,10 +5654,6 @@ PROTIP: K8s stores secrets in memory (tempfs on a Node, not on disk) in etcd (wh
 TOOL: "Studio 3T" to connect to MongoDB.
 
 
-<a name="ServiceAccounts"></a>
-
-### ServiceAccounts
-
 
 
 <a name="Debugging"></a>
@@ -5348,45 +5675,27 @@ K8s does not come with debuggers. Output to logs, then use tracing. Printlines.
 is a Chaos Monkey forcing random failures within Kubernetes -- to test the fault tolerance of our deployments.
 
 
-
-<a name="Multi-Container"></a>
-
-## Multi-Container Pods
-
-The <strong>kube-scheduler</strong> assigns pods to nodes at runtime. 
-Before scheduling, it checks resources, QoS, policies, user specs.
-
-
-References:
-
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-integrating-volumes-using-multi-container-pods">2h 26m VIDEO course: "Kubernetes for Developers: Integrating Volumes and Using Multi-container Pods"</a> by Nigel Poulton Apr 23, 2020
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=3RTvoI-A7UQ">VIDEO: Kubernetes and Container Orchestration 101 - Computer Stuff They Didn't Teach You #11</a> by Microsoft legend Scott Hanselman.
-
-
-
+<hr />
 
 <a name="RaspPi"></a>
 
-### K8s on Raspberry Pi
+## K8s on Raspberry Pi
 
-Read how the legendary Scott Hanselman <a target="_blank" href="https://www.hanselman.com/blog/HowToBuildAKubernetesClusterWithARMRaspberryPiThenRunNETCoreOnOpenFaas.aspx"> 
-built Kubernetes on 6 Raspberry Pi nodes</a>, each with a 32GB SD card to a 1GB RAM ARM chip (like on smartphones).
+Scott Hanselman <a target="_blank" href="https://www.hanselman.com/blog/HowToBuildAKubernetesClusterWithARMRaspberryPiThenRunNETCoreOnOpenFaas.aspx">built Kubernetes on 6 Raspberry Pi nodes</a>, each with a 32GB SD card to a 1GB RAM ARM chip (like on smartphones).
 
 <a target="_blank" href="https://www.hanselminutes.com/612/serverless-and-openfaas-with-alex-ellis">
-Hansel talked with</a>
-<a target="_blank" href="https://www.alexellis.io/">Alex Ellis</a> (<a target="_blank" href="https://twitter.com/alexellisuk/">@alexellisuk</a>)
+Hansel talked with</a> <a target="_blank" href="https://www.alexellis.io/">Alex Ellis</a> (<a target="_blank" href="https://twitter.com/alexellisuk/">@alexellisuk</a>)
 keeps his <a target="_blank" href="https://gist.github.com/alexellis/fdbc90de7691a1b9edb545c17da2d975#file-prep-sh">
 instructions with shell file</a> updated for <a target="_blank" href="https://blog.alexellis.io/serverless-kubernetes-on-raspberry-pi/">running on the Pis</a> to install <a target="_blank" href="https://openfaas.com/">OpenFaaS</a>.
 
 CNCF Ambassador Chris Short developed the
 <a target="_blank" href="https://rak8s.io/"> rak8s (pronounced rackets) library</a> to 
-<a target="_blank" href="https://chrisshort.net/my-raspberry-pi-kubernetes-cluster/">make use of Ansible</a>.
+<a target="_blank" href="https://chrisshort.net/my-raspberry-pi-kubernetes-cluster/">make use of Ansible on Raspberry Pi</a>.
 
 Others:
    * https://blog.hypriot.com/getting-started-with-docker-on-your-arm-device/
    * https://blog.sicara.com/build-own-cloud-kubernetes-raspberry-pi-9e5a98741b49
-
+   <br /><br />
 
 <hr />
 
@@ -5509,13 +5818,23 @@ GKE provides several <strong>Predefined roles</strong> to provide granular acces
 
    This course introduces you to concepts and terminology for working with Google Cloud Platform (GCP). You learn about, and compare, many of the computing and storage services available in Google Cloud Platform, including Google App Engine, Google Compute Engine, Google Kubernetes Engine, Google Cloud Storage, Google Cloud SQL, and BigQuery. You learn about important resource and policy management tools, such as the Google Cloud Resource Manager hierarchy and Google Cloud Identity and Access Management. Hands-on labs give you foundational skills for working with GCP.
 
-2. <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke">Architecting with Google Kubernetes Engine: Foundations</a>
+2. <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke">Architecting with Google Kubernetes Engine: Foundations</a> reviews the layout and principles of Google Cloud Platform, followed by an introduction to creating and managing software containers and an introduction to the architecture of Kubernetes.
 
-   In this course you get a review of the layout and principles of Google Cloud Platform, followed by an introduction to creating and managing software containers and an introduction to the architecture of Kubernetes.
+3. <a target="_blank" href="https://www.coursera.org/learn/deploying-workloads-google-kubernetes-engine-gke">Architecting with Google Kubernetes Engine: Workloads</a> by Alex Hanna. Covers: GKE Cluster; Deployments;Jobs and Cronjobs; Cluster Scaling; Pod placement; Pod Autoscaling and Node Pools; Pod networking; Services, Ingress; Load balancing; Network security; Volumes, Stateful Sets; ConfigMaps; Secrets; Persistent Data; 
 
-3. <a target="_blank" href="https://www.coursera.org/learn/deploying-workloads-google-kubernetes-engine-gke">Architecting with Google Kubernetes Engine: Workloads</a> by Alex Hanna
+   To create a cluster with autoscaling:
 
-   In this course you learn about performing Kubernetes operations; creating and managing deployments; the tools of GKE networking; and how to give your Kubernetes workloads persistent storage.
+   <pre><strong>gcloud container clusters create <em>cluster-name</em> --num-nodes 30 \
+   --enable-autoscaling --min-nodes 15 --max-nodes 50 --zone <em>comput-zone</em> </strong></pre>
+
+   To scale nodes in a cluster node pool:
+
+   <pre><strong>gcloud container clusters resize <em>projectdemo</em> --node-pool <em>default-pool</em> --size 6</strong></pre>
+
+   To disable auto-scaling:
+
+   <pre><strong>... --no-enable-autoscaling ...</strong></pre>
+
 
 4. <a target="_blank" href="https://www.coursera.org/learn/deploying-secure-kubernetes-containers-in-production">Architecting with Google Kubernetes Engine: Production</a>
 

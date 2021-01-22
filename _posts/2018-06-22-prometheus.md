@@ -3,7 +3,7 @@ layout: post
 title: "Prometheus (CNCF with Kubernetes)"
 excerpt: "Open-source (free) monitoring"
 tags: [Clouds, Monitoring, Analytics, CNCF, Kubernetes]
-date: "2018-06-22"
+date: "2020-12-30"
 file: "prometheus"
 image:
 # ![dynatrace-per-minute-1900x500-162499.jpg
@@ -163,15 +163,19 @@ To run Prometheus after downloading the Docker image from the "prom" account in 
    Add <tt>--storage.tsdb.path</tt> for another path.
    Add <tt>--storage.tsdb.retention</tt> to specify another retention period than the default 15d (days).
 
-2. Open a browser to http://localhost:9090/metrics to see the log.
+2. Open a browser to see the log at:
 
-   There is no menu item to view this page.
+   <a target="_blank" href="http://localhost:9090/metrics">http://localhost:9090/metrics</a> 
 
-3. Open a browser to http://localhost:9090/ to see the Graph 
+   There is no menu item to view the page.
+
+3. Open a browser to see the Graph at the URL home page:
+
+   <a target="_blank" href="http://localhost:9090/">http://localhost:9090</a>
 
    <img alt="prometheus-graph-menu-403x380-51898.jpg" width="403" src="https://user-images.githubusercontent.com/300046/41504993-ea9bcd8a-71bb-11e8-8070-72af4050c796.jpg">
 
-   These are metrics for the Go language/virtual machine running locally.
+   The above example are metrics for the Go language/virtual machine running locally.
 
    NOTE: <a target="_blank" href="https://prometheus.io/docs/introduction/overview/">https://prometheus.io/docs</a> contains docs. It says in 2012 <strong>SoundCloud</strong> wrote Prometheus in <a target="_blank" href="https://wilsonmar.github.io/golang/">Golang</a> and open sourced it at <a target="_blank" href="https://github.com/prometheus/">https://github.com/prometheus</a>.
 
@@ -187,7 +191,7 @@ To run Prometheus after downloading the Docker image from the "prom" account in 
 
    <pre>go_gc_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.5"}</pre>
 
-   See https://prometheus.io/docs/prometheus/latest/storage/
+   See <a target="_blank" href="https://prometheus.io/docs/prometheus/latest/storage/">https://prometheus.io/docs/prometheus/latest/storage</a>
 
 5. Press Execute.
 6. Click "Graph".
@@ -197,7 +201,7 @@ To run Prometheus after downloading the Docker image from the "prom" account in 
 
    ### Configuring Prometheus.yml
 
-5. Open a browser to http://localhost:9090/config
+5. Open a browser to <a target="_blank" href="http://localhost:9090/config/">http://localhost:9090/config</a>
 
    <strong>prometheus.yml</strong> is the configuration file that contains these blocks: 
    global, rule_files, and scrape_configs. Optionally, there are remote_read, remote_write, alerting.
@@ -541,5 +545,9 @@ references an <a target="_blank" href="https://interactive.linuxacademy.com/diag
 
    The course also looks at creating persistent dashboards with Grafana and use its various graphing options to better track data.
 
+## Other notes
 
+https://timber.io/blog/prometheus-the-good-the-bad-and-the-ugly/
 
+https://eng.uber.com/m3/
+Uber open-sourced their M3 Metrics platform for Prometheus in 2018

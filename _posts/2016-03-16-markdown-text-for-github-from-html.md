@@ -3,7 +3,7 @@ layout: post
 title: "Markdown text for GitHub from HTML"
 excerpt: "Tricks to force Markdown to show things the way you want."
 tags: [HTML, personalization, jekyll]
-date: "2020-06-23"
+date: "2020-12-27"
 file: "markdown-text-for-github-from-html"
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/14624073/7b96364a-0594-11e6-9643-06decef9dbfd.jpg
@@ -395,6 +395,24 @@ To specify starting the video at a specific time (1 minute 2 seconds), use a lin
 
 {% highlight html %}
 <a target="_blank" href="https://www.youtube.com/watch?v=Onv9nhPIBp0&t=1m2s">Link to YouTube</a>.
+{% endhighlight %}
+
+## Click to expand
+
+<details>
+  <summary>Click to expand!</summary>
+Hidden text
+</details>
+
+Click on the "Click to expand!" above to reveal hidden text.
+
+To hide text until the reader clicks, surround the hidden text this way:
+
+{% highlight html %}
+&#123;details>
+  &#123;summary>Click to expand!</summary>
+Hidden text
+&#123;/details>
 {% endhighlight %}
 
 
