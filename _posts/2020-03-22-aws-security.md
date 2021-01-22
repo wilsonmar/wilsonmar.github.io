@@ -16,22 +16,26 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Here are my (incomplete) notes while I'm preparing for the
-AWS Certified Security - Specialty (SCS-C01) exam:
+Here are my (incomplete) notes while I'm preparing for the AWS Certified Security - Specialty (SCS-C01) exam:
 
-1. https://aws.amazon.com/certification/certified-security-specialty/
+See <a target="_blank" href="https://wilsonmar.github.io/cyber-security/">my webpage on cyber-security</a>
+
+The <strong>AWS Certified Security - Specialty</a> certification home page is at
+
+   <ul><a target="_blank" href="https://aws.amazon.com/certification/certified-security-specialty/">https://aws.amazon.com/certification/certified-security-specialty</a>
+   </ul>
 
    The exam costs $300 USD (50% off if you clear another certification).
-   for 170 minutes (almost 3 hours without breaks). 
-   Answer 75% of 1000 points for correct multiple choice, multiple answer questions.
 
    Practice exam: 40 USD.
 
-1. The <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Specialty_Exam-Guide_v1.6_FINAL.pdf">PDF</a>
+   PROTIP: The exam is difficult becuase you need to correctly answer 75% of 65 multiple-choice questions in 3 hours without breaks (170 minutes). Many of the questions are long paragraphs and have multiple answers.
 
 
+## Domain outline
 
-## Exam Domains
+The below domain info is adapted from <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Specialty_Exam-Guide.pdf">AWS's exam guide PDF</a>
+<a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Specialty_Exam-Guide_v1.6_FINAL.pdf">v1.6</a>
 
 1. Incident Response (Forensics) 12%
    1. Given an <a href="#AbuseNotice">AWS abuse notice</a>, evaluate the suspected compromised instance or exposed access keys.
@@ -88,7 +92,8 @@ The Future of Security:
 
 Golden AMI Pipeline of EC2 images at https://github.com/Qualys-Public
 
-## AWS Virtual Classes
+
+## Paid AWS Virtual Classes
 
 For those who can afford it, Amazon's live instructor-led classes:
 
@@ -101,15 +106,21 @@ Twitter Feeds:
 @awsidentity
 
 
-## Video courses
+## 3rd-party video courses
 
-<a target="_blank" href="https://www.youtube.com/playlist?list=PLhr1KZpdzuke2ncPH0DVp9PswBFY5dIl6">Videos of 2019</a>
-#reInforce which take a dive deep into cloud security, IAM, and compliance.
-Steve Schmidt, CISO of Amazon Web Services.
+   * <a target="_blank" href="https://learning.oreilly.com/videos/aws-certified-security/">Oreilly</a> by Chad Smith
+   * <a target="_blank" href="https://www.udemy.com/course/aws-certified-security-specialty/">Udemy</a> 23.5 hr by Zeal Zora with 1 practice test
+   * LinkedIn
+   * CloudAcademy
+   * LinuxAcademy.com 
+   * <a target="_blank" href="https://acloudguru.com/course/aws-certified-security-specialty">ACloud.guru</a>
+   * <a href="#Pluralsight">Pluralsight</a>
+   <br /><br />
 
-AWS seems optimistic that the George R. Brown Convention Center (1001 Avenida de Las Americas, Houston, TX, 77010) and Marriott Marquis Houston (1777 Walker Street, Houston, TX, 77010) will be open again on June 30 – July 1, 2020. $1,099 per person to speak directly with the AWS team.
-See https://reinforce.awsevents.com/
 
+<a name="Pluralsight"></a>
+
+### Pluralsight
 
 <a target="_blank" href="https://app.pluralsight.com/paths/skill/aws-cloud-security">
 Pluralsight's Security video courses</a>:
@@ -143,7 +154,6 @@ ACloud.Guru has a Exam Simulator
    Acloud.guru exam</a>
 
 
-LinuxAcademy.com 
 
 CloudAcademy.com
 
@@ -176,7 +186,6 @@ About $200 USD is you get all of them.
 
 ## Security Principles
 
-
 * Least privilege
 
 * Handle keys with care
@@ -208,13 +217,6 @@ At a high level, within <a target="_blank" href="https://aws.amazon.com/security
 - Respond 
 - Remediate
 
-Type of control:
-
-* Directive
-* Preventive
-* Detective
-* Responsive
-
 ## Security Landscape
 
 * Governance
@@ -224,6 +226,8 @@ Type of control:
 * Detection (A Macie, AWS Firewall Manager, AWS Security Hub, AWS Guard Duty)
 
 ## AWS CAF (Cloud Adoption Frmework)
+
+MEMONIC?
 
 * Business
 * People
@@ -256,11 +260,7 @@ Sequence to develop a secure web application within AWS cloud:
 9. Review billings monthly.
 
 
-
-
 ## Hands-on
-
-GitHub?
 
 Create a multi-account setup with web servers running on EC2 instances as well as web services running through API Gateway, Lambda and S3.
 
@@ -480,7 +480,9 @@ KMS options:
    * CMK – AWS created vs Imported
    * How to enforce annual rotation of keys
 
-## Macie
+## AWS Macie search
+
+Makes use of Machine Learning technology developed within Amazon.
 
 
 ## difference between Cloudtrail vs Cloudwatch
@@ -529,13 +531,6 @@ SSL for HTTPS
 Only HTTP, not UDP protocol.
 
 
-<hr />
-
-
-
-
-See <a target="_blank" href="https://wilsonmar.github.io/cyber-security/">my webpage on cyber-security</a>
-
 read intro to AWS Security Processes</a>
 
    * Confidentiality (MFA)
@@ -546,10 +541,11 @@ read intro to AWS Security Processes</a>
 
 ## IAM Policies
 
-Three different types of IAM policies:
-* AWS managed policies
-* Customer (administrator) managed policies
-* Inline policies
+Types of IAM policies:
+   * AWS managed policies
+   * Customer (administrator) managed policies
+   * Inline policies
+   <br /><br />
 
 S3 Bucket policies
 
@@ -592,6 +588,12 @@ https://www.youtube.com/watch?v=1JAx2npuprk&list=PLtK75qxsQaMIHQOaDd0Zl_jOuu1m3v
 
 ## AWS Amazon Tech Talks
 
+   * Well-architected framework
+   * <a target="_blank" href="https://pages.awscloud.com/endpoint-security.html">How to Build and Endpoint Security Strategy is AWS</a>
+   * <a target="_blank" href="https://pages.awscloud.com/HowTo-AppSec.html">How to secure app pipelines in AWS</a>
+   * <a target="_blank" href="https://pages.awscloud.com/Enterprise_Cloud-Based_Firewalls.html">How to Protect Enterprise Systems with Cloud-Based Firewalls</a>
+   <br /><br />
+
 https://aws.amazon.com/events/online-tech-talks/on-demand/?ott-on-demand-all.sort-by=item.additionalFields.startDateTime&ott-on-demand-all.sort-order=desc
 
 https://pages.awscloud.com/Remediating-Amazon-GuardDuty-and-AWS-Security-Hub-Findings_2019_0320-SID_OD.html?&trk=ep_card-el_a131L000005uKBhQAM&trkCampaign=NA-FY19-AWS-DIGMKT-WEBINAR-SERIES-March_2019_0320-SID&sc_channel=el&sc_campaign=pac_2018-2019_exlinks_ondemand_OTT_evergreen&sc_outcome=Product_Adoption_Campaigns&sc_geo=NAMER&sc_country=mult
@@ -601,10 +603,9 @@ Remediating Amazon GuardDuty and AWS Security Hub Findings
 https://pages.awscloud.com/AWS-Transit-Gateway-Reference-Architectures-for-Many-Amazon-VPCs_2019_0811-NET_OD.html?&trk=ep_card-el_a131L0000057bPDQAY&trkCampaign=NA-FY19-AWS-DIGMKT-WEBINAR-SERIES-August_2019_0811-NET&sc_channel=el&sc_campaign=pac_2018-2019_exlinks_ondemand_OTT_evergreen&sc_outcome=Product_Adoption_Campaigns&sc_geo=NAMER&sc_country=mult
 AWS Transit Gateway Reference Architectures for Many Amazon VPCs
 
-
-## References
-
-
+<a target="_blank" href="https://www.youtube.com/playlist?list=PLhr1KZpdzuke2ncPH0DVp9PswBFY5dIl6">Videos of 2019</a>
+#reInforce which take a dive deep into cloud security, IAM, and compliance.
+Steve Schmidt, CISO of Amazon Web Services.
 
 
 ## Blog articles
