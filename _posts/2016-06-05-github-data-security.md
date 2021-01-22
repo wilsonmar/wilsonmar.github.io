@@ -752,23 +752,149 @@ References:
 
 ### PROBLEM 7. SSH keys to access GitHub are static, subject to theft
 
-1. When you want to clone a repository to your laptop, in the Code section, click the green "Code" button.
+1. When at a repository on GitHub, in the Code section, you want to clone a repository to your laptop, click the green "Code" button:
 
    <img width="126" alt="github-code-button-252x94" src="https://user-images.githubusercontent.com/300046/103463075-fc0f9200-4ce6-11eb-80ba-4169807a6e52.png">
 
 1. You are presented with a choice of "HTTP", "SSH", and (new) "GitHub CLI":
 
+   <a name="CodePopUp"></a>
+
    <img width="382" alt="github-ssh-menu-764x554" src="https://user-images.githubusercontent.com/300046/103463147-76d8ad00-4ce7-11eb-9f41-db883cd1ce39.png">
 
-   SSH (Secure Shell) is also used by Linux to secure transmission between servera and laptop clients.
+   If you choose "Download ZIP", it would include only the most recent version of files and won't include the history of changes ("commits") made.
 
-   PROTIP: Being able to use SSH means that we don't have to input our password each time a Git command is issued.
+   Underlined in red is <strong>SSH</strong> (Secure Shell), used for a <strong>more secure</strong> connection than HTTPS.
+   The SSH protocol is used extensively by Linux operating systems to secure transmission between servers and laptop clients.
+   (Linus Torvolds, who created Linux, also created Git)
 
-   Instead of passwords, SSH uses certificate files generated together. 
+   Instead of passwords, using SSH means that we won't have to input a password each time a Git command is issued.
 
-   Instead of exchanging a single mutually known password, smart mathematics is used such that the public key is manually pasted in GitHub GUI to be used to decrypt data which was encrypted using the other part of the key pair.
+   TMI: The public key file and private key file generated use what is called "asymmetric cryptography" algorithms. 
+   Instead of exchanging a single mutually known ("symmetric") password, smart mathematics is used such that the public key is manually pasted in GitHub GUI to be used to decrypt data which was encrypted using the other part of the key pair.
 
-1. The traditional approach of <strong>users</strong> (developers) generating SSH key <strong>themselves</strong>, locally on a laptop is cumbersome for the user and dangerous for security because the SSH keys generated remain stored locally and possibly over a long period of time.
+   However, to make user of SSH involves each <strong>user</strong> (developer) generating SSH keys locally on a laptop, obtaining the contents of the public key, and pasting that in a GitHub GUI. Explained below:
+
+1. Open a Terminal window.
+
+1. Navigate to the (hidden) folder which programs go to (by default) to find SSH key files. On a Mac:
+
+   <pre><strong>cd $HOME/.ssh</strong></pre>
+
+   If the folder doesn't exist, create it.
+
+   SSH makes use of a pair of files generated together by the <strong>ssh-keygen</strong> utility program used by Linux users.
+
+1. PROTIP: To avoid typing mistakes, construct commands to define variables substituted with your information:
+
+   <pre><strong>export GITHUB_ORG="gmail_acct"
+   export MY_EMAIL_ADDRESS="john-doe@gmail.com"
+   </strong></pre>
+
+   <tt>{GITHUB_ORG}</tt> is a variable which defines the file name and also the folder where you store repositories under your account.
+
+1. Create a pair of SSH key files by copying the line below and pasting in your Terminal:
+
+   <pre><strong>ssh-keygen -t rsa -f "${GITHUB_ORG}" -C "${MY_EMAIL_ADDRESS}" -N ""</strong></pre>
+
+   <tt>-N ""</tt> specifies that no Passphrase will be requested when the key is used. Otherwise, you'll have to type your password in when executing every git command.
+
+   NOTE: If <tt>-f "${GITHUB_ORG}"</tt> is omitted, you will be prompted for it. Pressing Enter at the prompt will result in a default name of "id_rsa".
+
+   The response is something like this:
+
+   <pre>Generating public/private rsa key pair.
+Your identification has been saved in mck_acct.
+Your public key has been saved in mck_acct.pub.
+The key fingerprint is:
+SHA256:o3um68DCgu29uREm2Di6tgGrSCTUaHZdhOS4Aj6nHnc wilson_mar@NYC-192850-C02Z70CMLVDT
+The key's randomart image is:
++---[RSA 3072]----+
+|    ..oo         |
+|  o +..          |
+|.= + o           |
+|*+. .            |
+|*=ooo   S        |
+|*==+ . . .       |
+|==+.+E.          |
+|==+o.+ .o        |
+|=oo =+==         |
++----[SHA256]-----+
+   </pre>
+
+1. Make sure the ssh agent program used to register key identities is running:
+
+   <pre><strong>eval "$(ssh-agent -s)"</strong></pre>
+
+   A sample response is:<br />
+   <tt>Agent pid 21631</tt>
+
+1. Register the newly created key identities:
+
+   <pre>ssh-add "$HOME/.ssh/${GITHUB_ORG}"</pre>
+
+   Example response on a laptop configured with "johndoe" as the machine user name:
+
+   <pre>Identity added: /Users/johndoe/.ssh/gmail_acct (john-doe@gmail.com)</pre>
+
+1. Copy the contents of the public key file to your machine's Clipboard. On a Mac:
+
+   <pre><strong>pbcopy < "$HOME/.ssh/${GITHUB_ORG}.pub"</strong></pre>
+
+   On Windows:
+
+   <pre><strong>clip < "$HOME/.ssh/${GITHUB_ORG}.pub"</strong></pre>
+
+   ### Add the newly created public key to your GitHub account
+
+1. Switch to an internet browser.
+
+1. Construct your GitHub.com by substituting the example with your GitHub.com account name, for example:
+
+   <pre>https://github.com/wilson-mar</pre>
+
+1. Login using your password and 2FA challenge.
+
+1. Click on the drop-down arrow icon beside the icon (avatar) at the top right of GitHub's navigation bar.
+
+1. Select "Settings" in the drop-down.
+
+1. Click on "SSH and GPG keys" link on the navigation menu at the left.
+
+1. Click on the green "New SSH key" button by the top right.
+
+1. Click inside the "Title" field and type your machine and file name you are about to paste. Example:
+
+   <tt>Windows 10 laptop file id_rsa.pub</tt>
+
+1. Click inside the "Key" data entry field which says "Begins with"...
+
+1. To paste from Clipboard: On macOS, press command+V. On Windows, press ctrl+V.
+
+   "ssh-rsa" should be the first line, followed by something humans cannot read.
+
+1. Click "Add SSH key".
+
+1. Enter your GitHub password again when prompted to confirm.
+
+1. You should receive an email with subject:
+
+   <pre>[EXT][GitHub] A new public key was added to your account</pre>
+
+   ### Make use of SSH protocol
+
+1. Switch back to view your repository view on GitHub.com <a href="#CodePopUp">at the Code pop-up as shown above</a>.
+
+   Notice that "git@github.com:<em>username</em>" appears instead of "https://github.com/<em>username</em>". 
+
+References about this topics:
+   * https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+   * A 10-minute video course at https://mckinsey.udemy.com/course/github-ultimate/learn/lecture/4731854#overview
+   <br /><br />
+
+   -------   
+
+   The above steps are rather <strong>cumbersome</strong> for the user and can be dangerous for security because the SSH keys generated remain stored locally and possibly over a long period of time.
 
 > Someone else can copy an SSH key and access your account on a rogue computer.
 
@@ -777,9 +903,10 @@ References:
 
 ## SOLUTION 7. Access GitHub with rotated SSH certificates generated (automatically every day)
 
-We need a modern way that <strong>automatically generates SSH keys every day</strong>, so you don't have ssh-keygen to run and  copying and pasting to a GitHub form.
+A more modern way that <strong>automatically generates SSH keys every day</strong>, each user of GitHub doesn't have ssh-keygen to run and  copying and pasting to a GitHub form.
 
 The solution makes use of an new extension to the SSH protocol implemented by GitHub for its <strong>GitHub Enterprise Cloud license users</strong> (not individual users). 
+
 References:
    * <a target="_blank" href="https://github.blog/2019-08-14-ssh-certificate-authentication-for-github-enterprise-cloud/">https://github.blog/2019-08-14-ssh-certificate-authentication-for-github-enterprise-cloud</a> announces "SSH certificate authentication for GitHub Enterprise Cloud" August 14, 2019 by <a target="_blank" href="https://www.linkedin.com/in/benjamin-toews-80bba620/">Ben Toews</a>
    * <a target="_blank" href="https://github.blog/changelog/2019-08-15-ssh-certificate-authentication-for-github-enterprise-cloud/">https://github.blog/changelog/2019-08-15-ssh-certificate-authentication-for-github-enterprise-cloud/</a>
@@ -797,7 +924,6 @@ When GitHub receives and unwraps the request, it enforces the policy.
 
 Having the 24 hour key rotation policy in place means new certificate are created every day, by what we call a <strong>"key rotation" program/script</strong> running on laptops. It makes an API call to the Vault server and receives the SSH certificate file.
 
-
 Here is a static flowchart of the process described above:
 
 <a target="_blank" hrf="https://user-images.githubusercontent.com/300046/103477675-5576d000-4d7e-11eb-836d-c109e52f2b32.png">
@@ -805,17 +931,28 @@ Here is a static flowchart of the process described above:
 
 Steps to make this happen include:
 
-1. Enable SSH Certificate processing for GitHub organization.
+1. As the Organization's Owner, enable SSH Certificate processing for GitHub organization.
 
-1. Create a Vault API service (Certificate Authority).
+1. Create a Vault API CA (Certificate Authority) service.
+
 1. Enroll users to the Vault API service.
+
 1. Perform penetration tests of the Vault API server.
+
 1. Ensure the Vault API service has the capacity needed (SSH load testing using <a target="_blank" href="https://www.pureload.com/support/protocol-support/ssh-ftp-telnet/">PureLoad</a> or <a target="_blank" href="https://github.com/shazow/ssh-hammer">https://github.com/shazow/ssh-hammer</a>).
 
 1. Create/Test a "key rotation" program which accesses the Vault API.
+
 1. Install "key rotation" program (with associated dependencies) on all laptops.
 
 1. Require SSH Certificate processing for all access to GitHub organization.
+
+1. Each user within an Enterprise GitHub Organization, enable "Single sign-on organizations" in the SSH keys section, click "Enable SSO", then "Authorize".
+
+1. To troubleshoot
+
+   <pre><strong>ssh -Tv git@github.com</strong></pre>
+
 
 
 <hr />
