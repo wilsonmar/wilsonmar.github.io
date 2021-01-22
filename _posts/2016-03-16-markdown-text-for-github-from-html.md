@@ -399,12 +399,14 @@ To specify starting the video at a specific time (1 minute 2 seconds), use a lin
 
 ## Click to expand
 
-To hide text until the reader clicks on the "Click to expand!", surround the hidden text this way:
-
 <details>
   <summary>Click to expand!</summary>
 Hidden text
 </details>
+
+Click on the "Click to expand!" above to reveal hidden text.
+
+To hide text until the reader clicks, surround the hidden text this way:
 
 {% highlight html %}
 &#123;details>
