@@ -67,9 +67,11 @@ There is also a 5 year experience requirement.
 
 Written Reference:
 
-   * <a target="_blank" href="https://www.amazon.com/Certified-Information-Security-Professional-Official/dp/1119523265/">Sybex $58 BOOK: "(ISC)2 CISSP Certified Information Systems Security Professional Official Study Guide & Practice Tests Bundle Second" Edition</a> by Mike Chapple
+   * <a target="_blank" href="https://josephdelgadillo.com/cissp-testprep-cheatsheet/">Joseph Delgadillo's cissp-testprep-cheatsheet</a> provides a PowerPoint file.
 
-   * https://josephdelgadillo.com/cissp-testprep-cheatsheet/ provides a PowerPoint file.
+   * <a target="_blank" href="https://www.amazon.com/Certified-Information-Security-Professional-Official/dp/1119523265/">Sybex $58 BOOK: "(ISC)2 CISSP Certified Information Systems Security Professional Official Study Guide & Practice Tests Bundle Second" Edition</a> by Mike Chapple, who has a video course on LinkedIn Learning which is deep yet concise, with effective sequencing of topics. He also shows demos of security-related Windows programs where appropriate, such as Windows Firewall Log Viewer.
+
+   * <a target="_blank" href="https://wilsonmar.github.io/cyber-security/">My notes on cyber security</a> highlights what to remember.
 
 Practice Tests:
 
@@ -209,6 +211,129 @@ Suggestions:
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=tjOjjXVPQeU">Graph your progress</a> from <a target="_blank" href="https://www.sageknowsit.com/">sageknowsit.com</a>
 
+## CCSK
+
+<a target="_blank" href="https://cloudsecurityalliance.org/education/ccsk/">The Certificate of Cloud Security Knowledge (CCSK)</a> is marketed as a complement to other credentials (CCAK, CISA, CISSP, CCSP) by the <a target="_blank" href="https://cloudsecurityalliance.org/">Cloud Security Alliance (CSA)</a> which also markets <a target="_blank" href="https://cloudsecurityalliance.org/education/#_ccsk">training</a> 
+
+The CCSK is an open-book, online exam, completed in 90 minutes with 60 multiple-choice questions selected randomly from the CCSK question pool. Purchasing the exam costs $395 (free to veterans) and provides you with two test attempts, which you will have 2 years to use. The minimum passing score is 80%.
+
+Of vendor-neutral questions in v4 of the exam available December 1, 2017:
+
+   * 87% are based on the <a target="_blank" href="https://cloudsecurityalliance.org/download/security-guidance-v4/">CSA Guidance v4</a>
+   * 7% are based on <a target="_blank" href="https://cloudsecurityalliance.org/download/cloud-controlsmatrix-
+v3-0-1/"">CSA’s CCM (Cloud Controls Matrix) 3.0.1</a>
+   * 6% are based on the <a target="_blank" href="http://www.enisa.europa.eu/act/rm/files/deliverables/cloud-computing-riskassessment">report from ENISA ()</a>
+   <br /><br />
+
+Domain 1 Cloud Computing Concepts and Architectures
+* Definitions of Cloud Computing
+   - Service Models
+   - Deployment Models
+   - Reference and Architecture Models
+   - Logical Model
+* Cloud Security Scope, Responsibilities, and Models
+* Areas of Critical Focus in Cloud Security
+<br /><br />
+
+Domain 2: Governance and Enterprise Risk Management
+* Tools of Cloud Governance
+* Enterprise Risk Management in the Cloud
+* Effects of various Service and Deployment Models
+* Cloud Risk Trade-offs and Tools
+<br /><br />
+
+Domain 3: Legal Issues, Contracts and Electronic Discovery
+* Legal Frameworks Governing Data Protection and Privacy
+  - Cross-Border Data Transfer
+  - Regional Considerations
+* Contracts and Provider Selection
+  - Contracts
+  - Due Diligence
+  - Third-Party Audits and Attestations
+* Electronic Discovery
+  - Data Custody
+  - Data Preservation
+  - Data Collection
+  - Response to a Subpoena or Search Warrant
+<br /><br />
+
+Domain 4: Compliance and Audit Management
+* Compliance in the Cloud
+  - Compliance impact on cloud contracts
+  - Compliance scope
+  - Compliance analysis requirements
+
+* Audit Management in the Cloud
+  - Right to audit
+  - Audit scope
+  - Auditor requirements
+<br /><br />
+
+Domain 5: Information Governance
+* Governance Domains
+* Six phases of the Data Security Lifecycle and their key elements
+* Data Security Functions, Actors and Controls
+<br /><br />
+
+Domain 6: Management Plane and Business Continuity
+* Business Continuity and Disaster Recovery in the Cloud
+* Architect for Failure
+* Management Plane Security
+<br /><br />
+
+Domain 7: Infrastructure Security
+* Cloud Network Virtualization
+* Security Changes With Cloud Networking
+* Challenges of Virtual Appliances
+* SDN Security Benefits
+* Micro-segmentation and the Software Defined Perimeter
+* Hybrid Cloud Considerations
+* Cloud Compute and Workload Security
+<br /><br />
+
+Domain 8: Virtualization and Containers
+* Mayor Virtualizations Categories
+* Network
+* Storage
+* Containers
+<br /><br />
+
+Domain 9: Incident Response
+* Incident Response Lifecycle
+* How the Cloud Impacts IR
+<br /><br />
+
+Domain 10: Application Security
+* Opportunities and Challenges
+* Secure Software Development Lifecycle
+* How Cloud Impacts Application Design and Architectures
+<br /><br />
+
+Domain 11: Data Security and Encryption
+* Data Security Controls
+* Cloud Data Storage Types
+* Managing Data Migrations to the Cloud
+* Securing Data in the Cloud
+<br /><br />
+
+Domain 12: Identity, Entitlement, and Access Management
+* IAM Standards for Cloud Computing
+* Managing Users and Identities
+* Authentication and Credentials
+* Entitlement and Access Management
+<br /><br />
+
+Domain 13: Security as a Service
+* Potential Benefits and Concerns of SecaaS
+* Major Categories of Security as a Service Offerings
+<br /><br />
+
+Domain 14: Related Technologies
+* Big Data
+* Internet of Things
+* Mobile
+* Serverless Computing
+<br /><br />
 
 ## ISACA.org
 
