@@ -175,9 +175,9 @@ The options:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/105407348-d80ae680-5bea-11eb-96d0-c8f35631afde.png"><img alt="github-data-security-secret-bridge-2648x77g" width="2648" src="https://user-images.githubusercontent.com/300046/105407348-d80ae680-5bea-11eb-96d0-c8f35631afde.png"></a>
 
-<strong>AWS Macie</strong> (described at <a target="_blank" href="https://docs.aws.amazon.com/macie/">docs.aws.amazon.com/macie</a>) is an SaaS cloud service from Amazon that uses machine learning and pattern matching to discover and protect your sensitive data in AWS S3 buckets, at scale. Macie’s alerts, or findings, can be searched and filtered in the AWS Management Console and sent to Amazon EventBridge (CloudWatch Events), for integration with existing workflow or event management systems, or to be used in combination  to take automated remediation actions using AWS Step Functions. It can be invoked from commands in AWS CLI.
+<strong>GitHub Advanced Security</strong>, a licensed SaaS service from GitHub itself, sends emails about secrets found within Enterprise GitHub instances. Its advantage is that its simple analysis reports are available along with code, which no other vendors can provide.
 
-<strong>GitHub Advanced Security</strong>, a licensed SaaS service from GitHub itself, sends emails about secrets found within Enterprise GitHub instances.
+<strong>AWS Macie</strong> (described at <a target="_blank" href="https://docs.aws.amazon.com/macie/">docs.aws.amazon.com/macie</a>) is an SaaS cloud service from Amazon that uses machine learning and pattern matching to discover and protect your sensitive data in AWS S3 buckets, at scale. Macie’s alerts, or findings, can be searched and filtered in the AWS Management Console and sent to Amazon EventBridge (CloudWatch Events), for integration with existing workflow or event management systems, or to be used in combination  to take automated remediation actions using AWS Step Functions. It can be invoked from commands in AWS CLI.
 
 <strong>GitLeaks</strong> is a post-commit utility written in Go open-source code at <a target="_blank" href="https://github.com/zricethezav/gitleaks">https://github.com/zricethezav/gitleaks</a>. It's author, Zachary Rice, currently works at GitLab. It can be run as a <a target="_blank" href="https://github.com/zricethezav/gitleaks-action">GitHub Actions</a>. It scans git repos (or files) for secrets using regex and <a target="_blank" href="https://en.wikipedia.org/wiki/Entropy_(information_theory)">Shannon entropy</a>. Josphat Mutai's <a target="_blank" href="https://computingforgeeks.com/gitleaks-audit-git-repos-for-secrets/">blog describes it's cool features</a>.
 
@@ -189,8 +189,7 @@ The options:
 
 TruffleHog is open-source code.
 
-GuardRails has proprietary code but produces reports and provide login security, which is important to keep knowledge of internal vulnerabilities isolated to only those who need to know. 
-<a target="_blank" href="https://github.com/marketplace/guardrails">On GitHub's Marketplace</a>.
+<a target="_blank" href="https://www.guardrails.io/">GuardRails.io</a> (<a target="_blank" href="https://twitter.com/guardrailsio">@guardrailsio</a>) on <a target="_blank" href="https://github.com/marketplace/guardrails">GitHub's Marketplace</a> uses proprietary code. It produces reports and provides login security, which are  important to keep knowledge of internal vulnerabilities isolated to only those who need to know. Its free plan scans only PRs and retains data for a day. It claims use of machine learning to automatically identifies the programming languages and frameworks for each file and the appropriate security tools. <a target="_blank" href="https://docs.guardrails.io/docs/en/introduction.html">Documentation</a>. <a target="_blank" href="https://www.youtube.com/watch?v=9UJ-t0jQ4mA&time=5m16s">VIDEO: "The Future of DevSecOps"</a> by CEO Stefan Streichsbier.
 
 
 <hr />
