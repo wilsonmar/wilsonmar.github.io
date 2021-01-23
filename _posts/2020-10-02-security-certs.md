@@ -215,14 +215,14 @@ Suggestions:
 
 <a target="_blank" href="https://cloudsecurityalliance.org/education/ccsk/">The Certificate of Cloud Security Knowledge (CCSK)</a> is marketed as a complement to other credentials (CCAK, CISA, CISSP, CCSP) by the <a target="_blank" href="https://cloudsecurityalliance.org/">Cloud Security Alliance (CSA)</a> which also markets <a target="_blank" href="https://cloudsecurityalliance.org/education/#_ccsk">training</a> 
 
-The CCSK is an open-book, online exam, completed in 90 minutes with 60 multiple-choice questions selected randomly from the CCSK question pool. Purchasing the exam costs $395 (free to veterans) and provides you with two test attempts, which you will have 2 years to use. The minimum passing score is 80%.
+The CCSK is an open-book, online exam, completed in 90 minutes. Purchasing the exam costs $395 (free to veterans) and provides you with two test attempts, which you will have 2 years to use. The minimum passing score is 80%.
 
-Of vendor-neutral questions in v4 of the exam available December 1, 2017:
+Of the 60 multiple-choice vendor-neutral questions selected randomly from the CCSK question pool in v4 of the exam available December 1, 2017:
 
    * 87% are based on the <a target="_blank" href="https://cloudsecurityalliance.org/download/security-guidance-v4/">CSA Guidance v4</a>
    * 7% are based on <a target="_blank" href="https://cloudsecurityalliance.org/download/cloud-controlsmatrix-
-v3-0-1/"">CSA’s CCM (Cloud Controls Matrix) 3.0.1</a>
-   * 6% are based on the <a target="_blank" href="http://www.enisa.europa.eu/act/rm/files/deliverables/cloud-computing-riskassessment">report from ENISA ()</a>
+v3-0-1/"">CSA’s CCM (Cloud Controls Matrix) spreadsheet 3.0.1</a> which cross references the many other standard worldwide (AICPA, PIPEDA, CIS, COBIT, CSA, ENISA, FedRAMP, GAAP, HIPPA, HITRUST, IEC, NIST, PCI, etc.).
+   * 6% are based on the <a target="_blank" href="http://www.enisa.europa.eu/act/rm/files/deliverables/cloud-computing-riskassessment">2009 Cloud Computing report</a> from the <a target="_blank" href="http://www.enisa.europa.eu/">ENISA (European Network and Information Security Agency)</a>
    <br /><br />
 
 Domain 1 Cloud Computing Concepts and Architectures
