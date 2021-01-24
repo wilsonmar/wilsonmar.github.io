@@ -966,6 +966,12 @@ Education/Experience Requirements:
 <a target="_blank" href="https://quizlet.com/222277746/devsecops-acronyms-and-buzzwords-flash-cards/">
 My Quizlet of Cyber Security Aconyms</a>
 
+   * Policies - general statements from management
+   * Standards - specific mandatory security controls
+   * Procedures - step-by-step instructions
+   * Guidelines - recommended actions to follow
+   <br /><br />
+
 A vulnerability is an absence or a weakness of a countermeasure that is in place.
 
 An exposure is an instance of being subjected or exposed to losses from a threat.
@@ -1785,10 +1791,6 @@ Network access control (NAC) ensures that the computers on the network meet an o
 
 Frame Relay and X.25 are packet-switched technologies. 
 
-A three-legged firewall uses three interfaces, one connected to the untrusted network, one to the internal network, and another to a DMZ.
-
-A kernel proxy firewall is an example of a fifth generation firewall. It inspects the packet at every layer of the OSI model but does not introduce the performance hit that an application layer firewall will because it does this at the kernel layer. 
-
 
 IP header protocol field REMEMBER 
    * 1 = ICMP (Internet Control Message Protocol)
@@ -1806,18 +1808,30 @@ DSL:
 
 ## Firewalls
 
+A three-legged firewall uses three interfaces, one connected to the untrusted network, one to the internal network, and another to a DMZ.
+
+A kernel proxy firewall is an example of a fifth generation firewall. It inspects the packet at every layer of the OSI model but does not introduce the performance hit that an application layer firewall will because it does this at the kernel layer. 
+
 * A stateful firewall forwards packets on behalf of the client. It examines each packet and permits or denies it passage based on many factors, including the state table.
 * A proxy firewall hides a packet’s true origin before sending it through another network.
 * BA packet-filtering firewall forwards packets based on rules that define which traffic is permitted and denied on the network.
 * A bastion host is a hardened system that usually resides on a demilitarized zone (DMZ) and is accessed frequently.
 
-## Security Social sites
+## Blogs and News 
 
 https://isc.sans.edu/forums/diary/Verifying+Running+Processes+against+VirusTotal+DomainWide/25078/
+
+* Krebs on Security
+* Naked Security
+* Threat Level
+* Dark Reading
+* Threatpost
+
 
 An AUP (acceptable use policy) details appropriate use of information systems, handling standards, monitoring, and privacy expectations.
 
 “Security is always excessive until it's not enough.” – Robbie Sinclair
+
 
 ## More on Security #
 
