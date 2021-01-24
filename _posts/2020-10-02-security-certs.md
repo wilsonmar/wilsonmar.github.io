@@ -23,7 +23,7 @@ The vast landscape of security certifications illustrated by this map is from <a
 <em>Click for full screen image.</em>
 
 
-## CCSK
+## CCSK (Cloud Security Alliance Certificate of Security Knowledge)
 
 <a target="_blank" href="https://cloudsecurityalliance.org/education/ccsk/">The Certificate of Cloud Security Knowledge (CCSK)</a> is marketed as a complement to other credentials (CCAK, CISA, CISSP, CCSP) by the Seattle-based <a target="_blank" href="https://cloudsecurityalliance.org/">Cloud Security Alliance (CSA)</a> which also markets <a target="_blank" href="https://cloudsecurityalliance.org/education/#_ccsk">training</a>. The CSA <a target="_blank" href="https://github.com/cloudsecurityalliance/ctpd">Cloud Trust Protocol Daemon protoype</a>
 
@@ -33,9 +33,15 @@ Of the 60 multiple-choice vendor-neutral questions selected randomly from the CC
 
    * 6% are based on the <a target="_blank" href="http://www.enisa.europa.eu/act/rm/files/deliverables/cloud-computing-riskassessment">2009 Cloud Computing report</a> from the <a target="_blank" href="http://www.enisa.europa.eu/">ENISA (European Network and Information Security Agency)</a>
 
-   * 7% are based on <a target="_blank" href="https://cloudsecurityalliance.org/download/cloud-controlsmatrix-v3-0-1/"">CSA’s CCM (Cloud Controls Matrix) spreadsheet 3.0.1</a> which cross references the many other standard worldwide (AICPA, PIPEDA, CIS, COBIT, CSA, ENISA, FedRAMP, GAAP, HIPPA, HITRUST, IEC, NIST, PCI, etc.). It is the basis for CSA's <a target="_blank" href="https://cloudsecurityalliance.org/research/working-groups/consensus-assessments/">Consensus Assessments Initiative Questionnaire (CAIQ)</a> industry-accepted way to document which security controls exist in IaaS, PaaS, and SaaS services, which inputs to <a target="_blank" href="https://cloudsecurityalliance.org/star/">"Level 1" of the STAR (CSA Security Trust Assurance and Risk)</a> <a target="_blank" href="https://cloudsecurityalliance.org/star/registry/">Registry</a> of vendors.
+   * 7% are based on <a target="_blank" href="https://cloudsecurityalliance.org/download/cloud-controlsmatrix-v3-0-1/"ß>CSA’s CCM (Cloud Controls Matrix) spreadsheet 3.0.1</a> which cross references the many other standard worldwide (AICPA, PIPEDA, CIS, COBIT, CSA, ENISA, FedRAMP, GAAP, HIPPA, HITRUST, IEC, NIST, PCI, etc.). It is the basis for CSA's <a target="_blank" href="https://cloudsecurityalliance.org/research/working-groups/consensus-assessments/">Consensus Assessments Initiative Questionnaire (CAIQ)</a> industry-accepted way to document which security controls exist in IaaS, PaaS, and SaaS services, which inputs to <a target="_blank" href="https://cloudsecurityalliance.org/star/">"Level 1" of the STAR (CSA Security Trust Assurance and Risk)</a> <a target="_blank" href="https://cloudsecurityalliance.org/star/registry/">Registry</a> of vendors.
 
-   * 87% are based on the <a target="_blank" href="https://cloudsecurityalliance.org/download/security-guidance-v4/">CSA Guidance v4</a> at <a target="_blank" href="https://github.com/cloudsecurityalliance/CSA-Guidance">https://github.com/cloudsecurityalliance/CSA-Guidance</a> is a masterwork providing a summary of terms and concepts which integrate the various worldwide standards. 
+   * 87% are based on the <a target="_blank" href="https://cloudsecurityalliance.org/download/security-guidance-v4/">CSA Guidance v4</a> at PROTIP: <a target="_blank" href="https://github.com/cloudsecurityalliance/CSA-Guidance">https://github.com/cloudsecurityalliance/CSA-Guidance</a> -- a masterwork providing a summary of terms and concepts which integrate the various worldwide standards. 
+
+<a target="_blank" href="https://www.whizlabs.com/learn/course/ccsk-pt/">
+Whizlabs has sample tests</a> but questionable quality with too many double negative questions and answers.
+
+https://www.meetup.com/Cloud-Security-Alliance-Northeast-Ohio-Chapter/events/275707693/
+Cloud Security Alliance NorthEast Ohio chapter
 
 Domain 1 Cloud Computing Concepts and Architectures
 * Definitions of Cloud Computing
