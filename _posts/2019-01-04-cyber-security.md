@@ -675,6 +675,7 @@ SP 800-34
 
 NIST also publishes SP1800 (Cybersecurity practice guides) and the broader SP 500 (Information Technology).
 
+
 ### FedRAMP
 
 In 2011 a "cloud first" policy was defined in the Federal Risk and Authorization Program (FedRAMP) <a target="_blank" href="https://cio.gov/wp-content/uploads/downloads/2012/09/Federal-Cloud-Computing-Strategy.pdf">[pdf]</a> where federal agencies make use of cloud service providers (CSPs) given authority to operate (ATO) after receiving system authorization from an independent security assessment conducted by a 3PAO (third-party Assessor). 
@@ -775,6 +776,8 @@ To comply with federal standards, organizations
 <a name="NIST"></a>
 
 ### NIST
+
+NIST CSRC (Computer Security Resource Center)
 
 The Functions and Categories within the NIST Cybersecurity (Program) Framework (CSF) maps NIST 800-53 to CIS Controls:
 
@@ -1817,16 +1820,45 @@ A kernel proxy firewall is an example of a fifth generation firewall. It inspect
 * BA packet-filtering firewall forwards packets based on rules that define which traffic is permitted and denied on the network.
 * A bastion host is a hardened system that usually resides on a demilitarized zone (DMZ) and is accessed frequently.
 
-## Blogs and News 
+<hr />
 
-https://isc.sans.edu/forums/diary/Verifying+Running+Processes+against+VirusTotal+DomainWide/25078/
+## Resources
 
-* Krebs on Security
-* Naked Security
-* Threat Level
-* Dark Reading
-* Threatpost
+* <a target="_blank" href="https://isc.sans.edu/podcast.html">PODCAST: SANS.edu Internet Storm Center daily</a>
+* <a target="_blank" href="https://www.cyberaces.org/"">SANS Cyber Aces</a>
+* <a target="_blank" href="https://isc.sans.edu/forums/diary/Verifying+Running+Processes+against+VirusTotal+DomainWide/25078/">SANS.edu diary</a>
+* <a target="_blank" href="https://www.sans.org/reading-room">SANS.edu reading room white papers</a>
 
+* Purdue University's <a target="_blank" href="https://www.cerias.purdue.edu/">CERIAS (Center for Eduation and Research in Information Assurance and Security)</a> weekly, <a target="_blank" href="https://www.youtube.com/user/ceriaspurdue">YOUTUBE channel</a> 
+
+* <a target="_blank" href="https://krebsonsecurity.com/">Krebs on Security</a>
+
+* <a target="_blank" href="https://nakedsecurity.sophos.com/">Naked Security by Sophos</a> (<a target="_blank" href="https://twitter.com/nakedsecurity">@nakedsecurity</a>) <a target="_blank" href="https://nakedsecurity.sophos.com/category/audio-and-video/podcast/">PODCAST</a> weekly since April 2010 by Product Evangelist Tony Ross.
+
+* <a target="_blank" href="https://www.wired.com/category/threatlevel/">Wired magazine Threat Level</a>
+
+* <a target="_blank" href="https://www.darkreading.com/">Dark Reading</a>
+
+* <a target="_blank" href="https://threatpost.com/">Threatpost</a>
+
+* <a target="_blank" href="https://www.infosecurity-magazine.com/">Information Security magazine</a>
+
+* <a target="_blank" href="https://www.brakeingsecurity.com/">PODCAST: Brakeing Down Security</a> (<a target="_blank" href="https://twitter.com/brakesec?lang=en">@brakesec</a>)
+
+* <a target="_blank" href="http://podcast.wh1t3rabbit.net/">PODCAST: Down the Security Rabbithole</a>
+
+* <a target="_blank" href="https://southernfriedsecurity.com/">PODCAST: The Southern Fried Security Podcast</a>
+
+* <a target="_blank" href="https://securitycurrent.com/podcasts/">PODCAST: Security Current</a>
+
+* <a target="_blank" href="https://www.cybrary.it/">cybrary.it</a> "The Leading Cybersecurity Professional Development Platform"
+
+* <a target="_blank" href="https://www.offensive-security.com/metasploit-unleashed/">Metasploit Unleashed</a> by Offensive Security training
+
+* <a target="_blank" href="https://resources.infosecinstitute.com/topic/cissp-cryptography-mini-course/">CISSP Cyptography Mini Course</a>
+
+
+## Miscellaneous
 
 An AUP (acceptable use policy) details appropriate use of information systems, handling standards, monitoring, and privacy expectations.
 

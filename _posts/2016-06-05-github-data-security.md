@@ -350,6 +350,7 @@ Examples of code to retrieve an environment variable into the program:
    7. Server validates SameSite Cookie Attribute.
    <br /><br />
 
+   See <a target="_blank" href="https://www.gatsbyjs.com/docs/conceptual/security-in-gatsby/">Security in Gatsby</a>
    
 1. Some GitHub contains sample values in a file
 
