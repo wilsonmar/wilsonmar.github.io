@@ -107,6 +107,18 @@ The course references GitHub's <a target="_blank" href="https://lab.github.com/g
 In the course, Aaron also provides a Checklist for Measuring Success 
 
 
+## Sharing in Lifecycle
+
+Sharing is a mindset. Toward that end, "Security Guidance for Critical Areas of Focus in Cloud Computing v4.0" has Sharing in its definition of Data Security Lifecycle:
+
+1. Create
+2. Store
+3. Use
+4. Share
+5. Archive
+6. Destroy
+<br /><br />
+
 ## Success Metrics
 
 QUESTION: Under the "Insights" tab for each project???
