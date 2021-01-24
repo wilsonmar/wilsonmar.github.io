@@ -1555,6 +1555,24 @@ Confinement is a term used to describe processes in a system. When a process is 
 The bounds of a process set limits on the memory addresses and resources the process can access. The bounds logically segment memory areas for each process to use.
 
 PAT (Port Address Translation) maps ports.
+   * 0 - 1023 = well-know ports
+   * 1024 - 49141 = registered ports (1433 for MS SQL, 1431 for Oracle SQL)
+   * 49152 - 54535 = dynamic ports
+   <br /><br />
+
+Ports: REMEMBER
+   * 21 = FTP
+   * 22 = SSH (Secure Shell)
+   * 25 = SMTP (Simple Mail Transfer Protocol)
+   * 3389 = RDP (Remote Desktop Protocol)
+   * 137, 138, 139 = NETBios
+   * 53 = DNS (Domain Name System) lookups
+   * 110 = POP (post Office Protocol)
+   * 143 = IMAP (Internet Message Access Protocol)
+   * 80 = HTTP
+   * 443 = HTTPS (Secure, encrypted)
+   * ICMP Pings
+   <br /><br />
 
 IDS (Intrusion Detection System)
    * HIDS (Host-based IDS)

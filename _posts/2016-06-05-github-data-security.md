@@ -175,9 +175,9 @@ The options:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/105407348-d80ae680-5bea-11eb-96d0-c8f35631afde.png"><img alt="github-data-security-secret-bridge-2648x77g" width="2648" src="https://user-images.githubusercontent.com/300046/105407348-d80ae680-5bea-11eb-96d0-c8f35631afde.png"></a>
 
-<strong>AWS Macie</strong> (described at <a target="_blank" href="https://docs.aws.amazon.com/macie/">docs.aws.amazon.com/macie</a>) is an SaaS cloud service from Amazon that uses machine learning and pattern matching to discover and protect your sensitive data in AWS S3 buckets, at scale. Macie’s alerts, or findings, can be searched and filtered in the AWS Management Console and sent to Amazon EventBridge (CloudWatch Events), for integration with existing workflow or event management systems, or to be used in combination  to take automated remediation actions using AWS Step Functions. It can be invoked from commands in AWS CLI.
+<strong>GitHub Advanced Security</strong>, a licensed SaaS service from GitHub itself, sends emails about secrets found within Enterprise GitHub instances. Its advantage is that its simple analysis reports are available along with code, which no other vendors can provide.
 
-<strong>GitHub Advanced Security</strong>, a licensed SaaS service from GitHub itself, sends emails about secrets found within Enterprise GitHub instances.
+<strong>AWS Macie</strong> (described at <a target="_blank" href="https://docs.aws.amazon.com/macie/">docs.aws.amazon.com/macie</a>) is an SaaS cloud service from Amazon that uses machine learning and pattern matching to discover and protect your sensitive data in AWS S3 buckets, at scale. Macie’s alerts, or findings, can be searched and filtered in the AWS Management Console and sent to Amazon EventBridge (CloudWatch Events), for integration with existing workflow or event management systems, or to be used in combination  to take automated remediation actions using AWS Step Functions. It can be invoked from commands in AWS CLI.
 
 <strong>GitLeaks</strong> is a post-commit utility written in Go open-source code at <a target="_blank" href="https://github.com/zricethezav/gitleaks">https://github.com/zricethezav/gitleaks</a>. It's author, Zachary Rice, currently works at GitLab. It can be run as a <a target="_blank" href="https://github.com/zricethezav/gitleaks-action">GitHub Actions</a>. It scans git repos (or files) for secrets using regex and <a target="_blank" href="https://en.wikipedia.org/wiki/Entropy_(information_theory)">Shannon entropy</a>. Josphat Mutai's <a target="_blank" href="https://computingforgeeks.com/gitleaks-audit-git-repos-for-secrets/">blog describes it's cool features</a>.
 
@@ -189,8 +189,7 @@ The options:
 
 TruffleHog is open-source code.
 
-GuardRails has proprietary code but produces reports and provide login security, which is important to keep knowledge of internal vulnerabilities isolated to only those who need to know. 
-<a target="_blank" href="https://github.com/marketplace/guardrails">On GitHub's Marketplace</a>.
+<a target="_blank" href="https://www.guardrails.io/">GuardRails.io</a> (<a target="_blank" href="https://twitter.com/guardrailsio">@guardrailsio</a>) on <a target="_blank" href="https://github.com/marketplace/guardrails">GitHub's Marketplace</a> uses proprietary code. It produces reports and provides login security, which are  important to keep knowledge of internal vulnerabilities isolated to only those who need to know. Its free plan scans only PRs and retains data for a day. It claims use of machine learning to automatically identifies the programming languages and frameworks for each file and the appropriate security tools. <a target="_blank" href="https://docs.guardrails.io/docs/en/introduction.html">Documentation</a>. <a target="_blank" href="https://www.youtube.com/watch?v=9UJ-t0jQ4mA&time=5m16s">VIDEO: "The Future of DevSecOps"</a> by CEO Stefan Streichsbier.
 
 
 <hr />
@@ -230,7 +229,7 @@ content. The Git Real 2 course covers this.
 
 0. Zip up the repo so you have a fall-back.
 
-0. Make a copy of the repo as backup:
+0. Make a copy of the repo  locally as backup:
 
    `git clone poodles burning-poodles`
 
@@ -280,11 +279,11 @@ The other problem with this approach is what happens when your laptop crashes?
 Your passwords and encryption keys can be lost forever if they are not backed up.
 
 
-   <a name="ConfigScript"></a>
+<a name="ConfigScript"></a>
 
-   ### Ignore change 
+### Ignore change 
 
-1. Tell Git to ignore changes to a file in the future:
+1. Tell Git to ignore changes to a file in the future by constructing this command by replacing <em>file</em> with your own file's name:
 
    <pre><strong>git update-index --assume-unchanged  <em>file</em>
    </strong></pre>
@@ -293,12 +292,12 @@ Your passwords and encryption keys can be lost forever if they are not backed up
    
    On a change of branch, Git detects changes in the config file, and you'll have to either undo them, or check them in.
 
-1. To track changes again:
+1. To track changes again, construct this command by replacing <em>file</em> with your own file's name:
 
    <pre><strong>git update-index --no-assume-unchanged <em>file</em>
    </strong></pre>
 
-   References:
+References:
 
    * http://www.codeproject.com/Articles/602146/Keeping-sensitive-config-settings-secret-with-Azur
 
@@ -322,13 +321,24 @@ Among the "12 Factor App" <a target="_blank" href="https://12factor.net/">12fact
 
 > The twelve-factor app stores config in environment variables (often shortened to env vars or env). Env vars are easy to change between deploys without changing any code; unlike config files, there is little chance of them being checked into the code repo accidentally; and unlike custom config files, or other config mechanisms such as Java System Properties, they are a language- and OS-agnostic standard.
 
-1. Examples of code to retrieve an environment variable into the program:
+Examples of code to retrieve an environment variable into the program:
+
+
+### Python coding
 
    Python programs reference `process.env.SECRET_PASS`.
 
+### PHP coding
+
    PHP programs use `getenv('SECRET_PASS');`.
 
-   C# programs use `System.Environment.GetEnvironmentVariable("SECRET_PASS", _<br />EnvironmentVariableTarget.Process)`.
+### C# coding
+
+   C# programs use:
+
+   `System.Environment.GetEnvironmentVariable("SECRET_PASS", _ EnvironmentVariableTarget.Process)`
+
+### JavaScript (NodeJs) coding
 
    JavaScript is restricted from accessing operating system environment variables by Internet browser sandboxing. So setup a <a target="_blank" href="https://developer.wordpress.org/rest-api/">REST API endpoint</a> on a server you control to call with your app's JavaScript. For example, to <a target="_blank" href="https://developer.mailchimp.com/">get MailChimp to send email from your web app</a>, <a target="_blank" href="https://gomakethings.com/keeping-api-credentials-secret-with-vanilla-javascript/">create a MailChimp API on your server</a> using <a target="_blank" href="https://github.com/cferdinandi/gmt-mailchimp-wp-rest-api">this</a> <a target="_blank" href="https://developer.wordpress.org/rest-api/">Wordpress middleware API</a> which stores your credentials securely on the server, and makes the real API call on your request. It then sends back the data, optionally filtering out any data you don’t want exposed publicly first. Test that the <a target="_blank" href="https://www.wikiwand.com/en/Same-origin_policy">Same Origin Policy</a> prevents rogue "leaching" sites from calling your API endpoint (<a target="_blank" href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html">cross-site request forgery (CSRF)</a>, one of the <a target="_blank" href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html">OWASP Top 10 Vulnerabilities</a>) by adding <tt>X-CSRF-CHECK: 1</tt> onto your application's AJAX calls and having the backend check for <tt>$_SERVER['HTTP_X_CSRF_CHECK']</tt> or <a target="_blank" href="https://softwareengineering.stackexchange.com/questions/229859/how-to-avoid-unauthorized-use-of-an-api">generate and exchange a custom session key</a>:
    1. Client embeds client_key in request for API library.
@@ -341,18 +351,13 @@ Among the "12 Factor App" <a target="_blank" href="https://12factor.net/">12fact
    <br /><br />
 
    
-1. TODO: Some GitHub contains sample values in a file
+1. Some GitHub contains sample values in a file
 
    CAUTION: The problem is that some simply save the .env file in the same folder, which is then subject to being pushed to a GitHub repository.
 
-1. To insert a secret key to the bottom of a Mac's <tt>~/.bash_profile</tt> script that the operating system executes upon boot-up, one can:
 
-   {% highlight text %}
-   echo "export SECRET_PASS=12345678910" >> ~/app-root/data/.bash_profile{% endhighlight %}
+An extention of this concept is to reference a file name that is actually reached via a <a href="#Symlink">symlink</a> to a folder outside of the Git repository, such as on the user's $HOME folder.
 
-
-An extention of this concept is to reference a file name that is actually reached via a <a href="#Symlink">symlink</a> 
-to a folder outside of the Git repository.
 
 <a name="Symlink"></a>
 
@@ -480,8 +485,7 @@ If the script has code to decrypt the secret files itself based on the public ke
 When someone is out - just delete their public key, re-encrypt the files, and they won’t be able to decrypt secrets anymore.
 
 PROTIP: This is not a totally secure approach for extremely sensitive production data
-because, any encryption can be hacked given enough time using on supercomputers now commonly available to hackers.
-
+because, any encryption can be hacked given enough time using on supercomputers now commonly available to hackers. This is dealt with in the next section.
 
 
 <hr />
