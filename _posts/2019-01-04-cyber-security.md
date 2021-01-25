@@ -1831,7 +1831,7 @@ A kernel proxy firewall is an example of a fifth generation firewall. It inspect
 
 * Purdue University's <a target="_blank" href="https://www.cerias.purdue.edu/">CERIAS (Center for Eduation and Research in Information Assurance and Security)</a> weekly, <a target="_blank" href="https://www.youtube.com/user/ceriaspurdue">YOUTUBE channel</a> 
 
-* <a target="_blank" href="https://krebsonsecurity.com/">Krebs on Security</a>
+* <a target="_blank" href="https://krebsonsecurity.com/">(Brian) Krebs on Security</a>
 
 * <a target="_blank" href="https://nakedsecurity.sophos.com/">Naked Security by Sophos</a> (<a target="_blank" href="https://twitter.com/nakedsecurity">@nakedsecurity</a>) <a target="_blank" href="https://nakedsecurity.sophos.com/category/audio-and-video/podcast/">PODCAST</a> weekly since April 2010 by Product Evangelist Tony Ross.
 

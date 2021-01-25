@@ -29,7 +29,7 @@ The vast landscape of security certifications illustrated by this map is from <a
 
 QUESTION: Can the exam be taken remotely? The CSA <a target="_blank" href="https://github.com/cloudsecurityalliance/ctpd">Cloud Trust Protocol Daemon protoype inactive?</a>
 
-The CCSK is an open-book, online exam, completed in 90 minutes. Purchasing the exam costs $395 (free to veterans) for two test attempts, which you will have 2 years to use. The minimum passing score is 80%.
+The CCSK is an <strong>open-book, online exam</strong>, completed in 90 minutes. Purchasing the exam costs $395 (free to veterans) for two test attempts, which you will have 2 years to use. The minimum passing score is 80%.
 
 Of the 60 multiple-choice vendor-neutral questions selected randomly from the CCSK question pool in v4 of the exam available December 1, 2017:
 
