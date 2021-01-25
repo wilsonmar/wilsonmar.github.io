@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AWS Lambda Basics"
-excerpt: "Kinda like Java Lambdas, but not really"
+excerpt: "Scalable stateless short-lived functions. Nothing to do with Java Lambdas."
 tags: [programming, AWS, EC2, lambda, cloud]
 date: "2016-06-03"
 file: "aws-lambda"
@@ -16,14 +16,58 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+AWS Lambda is used to make small (< 512MB) programs making small (< 128 byte) requests to perform short-lived (< 15 second) stateless  processing such as trigging other actions to occur. 
+
+AWS takes care of scaling. Behind the GUI, AWS Lambda acts like a giant single server.
+
+## Why? #
+
+<a target="_blank" href="https://www.linkedin.com/in/andrew-baird-2bb7324a">
+Andrew Baird</a>, AWS Solutions Architect,
+<a target="_blank" href="https://www.youtube.com/watch?v=O2GQRC0sVA8&t=5m22s">
+listed all the questions that developers DON'T have to graple with
+in his March 2016 webinar "Getting Started with Serverless Architectures"</a>.
+
+  <amp-img alt="lambda questions 650x287" width="650" height="287" src="https://cloud.githubusercontent.com/assets/300046/16016299/920289da-3157-11e6-8252-1849a5f1fda3.jpg"></amp-img>
+
+> "There are tools and entire industries whose entire value proposition are about answering just one of these."
+
+## Why NOT? #
+
+An app is NOT a good candidate for using AWS Lambda if
+you interact with components in EC2 instances:
+
+   * App requires a custom AMI (extra programs on servers rather than via REST API)
+   * Need to SSH into server using multiple accounts
+   * Need to use LDAP for authentication
+   * OS updates impact your app?
+   * OS configuration such as memory settings, max. file handlers, etc.
+   * OS snapshots during security incidents
+   * Intrusion detection is needed (not available in AWS Lambda)
+   * Network speeds are important (not known in AWS Lambda)
+   * VPC is needed (not yet supported in AWS Lambda)
+   <br /><br />
+
+## Hands-on
+
 <a target="_blank" href="https://wilsonmar.github.io/aws-lambda/">
-This tutorial</a> provides a deep dive into the basics of creating and using functions within AWS Lambda.
-This is a hands-on guided tour.
+This tutorial</a> is a hands-on guided tour taking a deep dive into the basics of creating and using functions-as-a-service called AWS Lambda.
+
 Take one step at a time and we point out PROTIPs and notes along the way.
 
-0. Use an internet browser to get on the AWS Console at<br />
+1. Get an AWS Account. PROTIP: Don't use a root account.
+
+   https://wilsonmar.github.io/aws-iam/
+
+   https://wilsonmar.github.io/aws-onboarding/
+
+   ## AWS GUI
+
+1. Use an internet browser to get on the AWS Console at<br />
    <a target="_blank" href="http://aws.amazon.com/">
    http://aws.amazon.com</a>
+
+   ### Competitors
 
    BTW, competitors to AWS Lambda  include:
 
@@ -33,19 +77,24 @@ Take one step at a time and we point out PROTIPs and notes along the way.
    * <a target="_blank" href="https://cloud.google.com/functions/">
    Google Cloud Functions</a>
 
+   * Iron runs Serverless within on-prem servers.
+
    TODO: I hope to have a competitive comparison in the future.
 
 0. Click <strong>Sign In</strong> to the AWS Lambda Console.
+
    If you have signed in before, the URL changes to include your working region.
 
-   <a target="_blank" href="https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2">
-   https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2</a>
+   <a target="_blank" href="https://us-east-2.console.aws.amazon.com/lambda/home?region=us-east-2#/functions">
+   https://us-east-2.console.aws.amazon.com/lambda/home?region=us-east-2#/functions</a>
 
-   NOTE: AWS Lambda acts like a giant single server.
-   But you get to pick which Availability Zone.
+   Notice the region code appears twice in the URL.
 
-0. Change the region if you need.
+   NOTE: <a target="_blank" href="https://status.aws.amazon.com/">https://status.aws.amazon.com/</a> provides trouble reports by AWS service within region.
 
+1. Pick the region. 
+
+   PROTIP: I like using us-east-2, being acutally in Ohio, serves both West and East coast in a single region.
 
 0. Select <strong>Services</strong> from the top menu.
 
@@ -82,7 +131,7 @@ Take one step at a time and we point out PROTIPs and notes along the way.
 0. Click <a target="_blank" href="http://aws.amazon.com/lambda/pricing">
    http://aws.amazon.com/lambda/pricing</a>
 
-   It says the first million requests are free. That's 20 cents you'll save each month.
+   PROTIP: The first million requests are free. That's 20 cents you'll save each month.
 
    For now, the first 400,000 GB-seconds (x 1024 = 409,600,000 MB-seconds) are free.
 
@@ -102,103 +151,34 @@ Take one step at a time and we point out PROTIPs and notes along the way.
    NOTE: How much each Lambda request consumes in memory time is described in
    <a href="#CloudWatch">CloudWatch</a>, below.
 
-## Why? #
-
-<a target="_blank" href="https://www.linkedin.com/in/andrew-baird-2bb7324a">
-Andrew Baird</a>, AWS Solutions Architect,
-<a target="_blank" href="https://www.youtube.com/watch?v=O2GQRC0sVA8&t=5m22s">
-listed all the questions that developers DON'T have to graple with
-in his March 2016 webinar "Getting Started with Serverless Architectures"</a>.
-
-  <amp-img alt="lambda questions 650x287" width="650" height="287" src="https://cloud.githubusercontent.com/assets/300046/16016299/920289da-3157-11e6-8252-1849a5f1fda3.jpg"></amp-img>
-
-> "There are tools and entire industries whose entire value proposition are about answering just one of these."
-
-## Why NOT? #
-
-An app is NOT a good candidate for using AWS Lambda if
-you interact with components in EC2 instances:
-
-   * App requires a custom AMI (extra programs on servers rather than via REST API)
-   * Need to SSH into server using multiple accounts
-   * Need to use LDAP for authentication
-   * OS updates impact your app?
-   * OS configuration such as memory settings, max. file handlers, etc.
-   * OS snapshots during security incidents
-   * Intrusion detection is needed (not available in AWS Lambda)
-   * Network speeds are important (not known in AWS Lambda)
-   * VPC is needed (not yet supported in AWS Lambda)
 
 <a name="CreateFunction"></a>
 
-## Create a Lambda function #
+## Options to Create Lambda functions #
 
 There are several options for creating Lambda functions:
 
 <ul>
-  <li><a href="#AWSCLI">AWS CLI (Command Line Interface)</a></li>
+  <li><a href="#AWSCLI">AWS CLI (Command Line Interface) calling nvm, npm, serverless</a></li>
   <li>Console GUI interactively (below)</li>
   <li>Serverless framework</li>
+  <li><a href="#Terraform">Terraform</a></li>
 </ul>
 
-0. Click “Create a Lambda Function”.
+## Use GUI to Create a Hello World Lambda function #
 
-### Source of code #
+According to https://www.scalyr.com/blog/aws-lambda-tutorial/
 
-There are several ways to get programming code into AWS Lambda:
 
-<ul>
-   <li><a href="#SelectBlueprint">Select Blueprint of Amazon-defined code - Hello JSON</a></li>
-   <li><a href="#PasteS3">Paste inline code from Clipboard - Trigger from S3</a>.</li>
-   <li><a href="#UploadZipSNS"> Upload a Zip file with library - SNS Email</a></li>
-   <li><a href="#UploadFromS3"> Obtain code from S3</a></li>
-   <li><a href="#GetFromGitHub">Get from GitHub (for Dynamo DB Pull)</a></li>
-</ul>
+![aws-lambda-heading-1082x204](https://user-images.githubusercontent.com/300046/105657017-bd519f80-5e80-11eb-8226-46caf8d6c9c0.png)
 
-<hr />
+1. Click “Create Function”.
 
-<a name="SelectBlueprint"></a>
+   ![aws-lambda-create-1312x256](https://user-images.githubusercontent.com/300046/105657185-115c8400-5e81-11eb-90f7-cbe1e32a23ed.png)
 
-## Select Blueprint of Amazon-defined code - Hello JSON #
+1. Leave alone the default "Author from scratch".
 
-### Function name #
-
-0. Click the right-arrow to Page forward if you don't see “Hello World”.
-
-    <amp-img alt="lambda blueprint page forward 244x55" width="244" height="55" src="https://cloud.githubusercontent.com/assets/300046/15981923/dadb3122-2f39-11e6-803c-6b6db5873701.jpg" ></amp-img>
-
-    PROTIP: Highlight the blueprint’s name (in bold letters) and
-    copy it to your Clipboard so your can paste it into the function name during the next step.
-
-0. PROTIP: Use your mouse to highlight the function name for use in a later step.
-
-0. Click on the name “Hello World” Node.js function.
-
-   Amazon calls Lambda a "compute service" because programmers write code as discrete API
-   handler functions responding to
-   <strong>events</strong> such as an image being uploaded into S3.
-
-   <pre>
-   'use strict';
-   console.log('Loading function');
-
-   exports.handler = (event, context, callback) => {
-      //console.log('Received event:', JSON.stringify(event, null, 2));
-    console.log('value1 =', event.key1);
-    console.log('value2 =', event.key2);
-    console.log('value3 =', event.key3);
-    callback(null, event.key1);  // Echo back the first key value
-    // callback('Something went wrong');
-   };
-   </pre>
-
-   NOTE: The callback function is like a return statement.
-   The callback value is the JSON file <strong>returned</strong> after asynchronous execution.
-
-   Additional observations about Node.js programming is at
-   [AWS Lambda Node JavaScript Programming](/aws-lambda-node-js-programming/).
-
-0. PROTIP: Construct a function name with more metadata, like this example:
+1. PROTIP: For Function Name, construct one with metadata such as this example:
 
    <pre>
    learn1-hello-json-node43-v01
@@ -210,15 +190,13 @@ There are several ways to get programming code into AWS Lambda:
    * Include in the name the language and its version (such as node43 for Node.js 4.3).
    * Specify a version number (v01) for different versions you want to keep simultaneously.
    (Git can keep history of alterations to the same version)
-
-   #### Description #
-
-   PROTIP: In the description, put in a URL to a wiki ?
+   <br /><br />
 
    #### Runtime #
 
-   The code associated with each blueprint is for a particular runtime.
-   So runtime isn’t a choice that can be changed on this form.
+1. Use default Runtime "Node.js 12.x".
+
+   Runtime isn’t a choice that can be changed on this form.
 
    <amp-img width="380" height="161" alt="lambda runtimes 2016-06-03" src="https://cloud.githubusercontent.com/assets/300046/15778339/c5db0258-2952-11e6-8ac0-5b641024f760.jpg"></amp-img>
 
@@ -241,7 +219,89 @@ There are several ways to get programming code into AWS Lambda:
    WARNING: These underlying versions can change at anytime, unannounced.
    So have a way of being notified if errors are detected in run logs.
 
+
+
+1. Don't Change default execution role.
+
+   Each AWS role defines the entitlements the function has within the AWS platform.
+
+1. Don't change Advanced settings.
+
+   ### Source of code #
+
+   There are several ways to get programming code into AWS Lambda:
+
+   <ul>
+   <li><a href="#SelectBlueprint">Select Blueprint of Amazon-defined code - Hello JSON</a></li>
+   <li><a href="#PasteS3">Paste inline code from Clipboard - Trigger from S3</a>.</li>
+   <li><a href="#UploadZipSNS"> Upload a Zip file with library - SNS Email</a></li>
+   <li><a href="#UploadFromS3"> Obtain code from S3</a></li>
+   <li><a href="#GetFromGitHub">Get from GitHub (for Dynamo DB Pull)</a></li>
+   </ul>
+
+   Each of these are covered below. Click to go to that section.
+
+1. Click "+ Add Trigger" to select from among AWS and partners in EventBridge.
+
+<a name="SelectBlueprint"></a>
+
+## Select Blueprint of pre-defined code - Hello  #
+
+    <amp-img alt="lambda blueprint page forward 244x55" width="244" height="55" src="https://cloud.githubusercontent.com/assets/300046/15981923/dadb3122-2f39-11e6-803c-6b6db5873701.jpg" ></amp-img>
+
+1. Click the Filter field and Type "Hello" to get a list.
+
+   NOTE: Code associated with each blueprint is for a particular runtime.
+
+1. Click on the name “Hello World” Nodejs function.
+
+   NOTE: Amazon calls Lambda a "compute service" because programmers write code as discrete API handler functions responding to <strong>events</strong> such as an image being uploaded into S3.
+
+1. Click the orange "Create Function". We will make changes to the default code later.
+
+
+   <a name="SourceCode"></a>
+
+   ### Source Code
+
+   ![aws-lambda-code-1303x663](https://user-images.githubusercontent.com/300046/105657500-becf9780-5e81-11eb-93d7-56094e17a51e.png)
+
+1. Click "index.js" within "Environment" vertical tab.
+
+   <pre>'use strict';
+   console.log('Loading function');
+   exports.handler = (event, context, callback) => {
+      //console.log('Received event:', JSON.stringify(event, null, 2));
+    console.log('value1 =', event.key1);
+    console.log('value2 =', event.key2);
+    console.log('value3 =', event.key3);
+    callback(null, event.key1);  // Echo back the first key value
+    // callback('Something went wrong');
+   };
+   </pre>
+
+   NOTE: The callback function is like a return statement.
+   The callback value is the JSON file <strong>returned</strong> after asynchronous execution.
+
+   Additional observations about Node.js JavaScript programming at:
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-nodejs.html
+   * https://stackify.com/aws-lambda-with-node-js-a-complete-getting-started-guide/ to upload an image in S3.
+   
+
+   #### Description #
+
+   PROTIP: In the description, put in a URL to a wiki ?
+
    Scroll down beyond the script to more input fields.
+
+
+   #### Configuration
+
+1. Click "Configuration" menu.
+
+   ![aws-lambda-config-menu-212x477](https://user-images.githubusercontent.com/300046/105659393-e3c60980-5e85-11eb-80d1-921847347cb5.png)
+
+
 
    <a name="Handler"></a>
 
@@ -250,6 +310,7 @@ There are several ways to get programming code into AWS Lambda:
    NOTE: `index.handler` specifies the default index module.
 
    Leave the default alone for now.
+
 
    ### Role #
 
@@ -290,6 +351,7 @@ There are several ways to get programming code into AWS Lambda:
    CAUTION: If a function needs more memory than allocated, it would fail,
    and AWS would still charge you for the allocated memory.
 
+
    #### Timeout #
 
    The longest allowed is <strong>5 minutes</strong>.
@@ -302,15 +364,19 @@ There are several ways to get programming code into AWS Lambda:
    <a target="_blank" href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">
    limits</a> are necessary to keep one function to affect all others.
 
+
    #### VPC #
 
    Our initial example does not use the internet.
+
 
    ### Save and Test #
 
 0. Click Next.
 
 0. Review, then click <strong>Create function</strong>.
+
+
 
 0. Click Test.
 
@@ -322,6 +388,7 @@ There are several ways to get programming code into AWS Lambda:
 
    On first invocation is a pop-up **Input test event**.
    This can later be obtained by Actions > Configure test event.
+
 
    #### Input test sample event data template #
 
@@ -1017,6 +1084,11 @@ Typer Cross
 
 * Michael LaFrenier @MLaFrecruiter Talent Sourcer and Executive Recruiter for Amazon Web Services
 
+
+
+<a name="Terraform"></a>
+
+### Terraform
 
 
 
