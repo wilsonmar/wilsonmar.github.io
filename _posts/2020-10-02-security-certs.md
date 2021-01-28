@@ -182,7 +182,7 @@ https://www.youtube.com/watch?v=5nqqL1rjIY4
 
 You won't be able to go back and change answers in previous questions answered.
 
-So someone may not need all 3 hours.
+Those who ace the test would get done before 3 hours.
 
 You need to pass 70% on <em>each</em> of the eight CISSP domains. Numbers below are counts of questions in the <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">OReilly/Pearson bank</a>:
 
@@ -206,9 +206,9 @@ Written Reference:
 
    * <a target="_blank" href="https://wilsonmar.github.io/cyber-security/">My notes on cyber security</a> highlights what to remember.
 
-Practice Tests:
+<a target="_blank" href="https://www.linkedin.com/pulse/where-do-i-find-cissp-practice-questions-nick-webb/">Practice Questions</a>:
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=jZSAZ1neFZk&list=PLBpnwlO9U5unYmbZp2DJETNOHg8s_yW37">VIDEO: ITDojo playlist: 100+ Question of the day</a>, explained
+   * <a target="_blank" href="https://twitter.com/ITDojo">@ITDojo</a> <a target="_blank" href="https://www.youtube.com/watch?v=jZSAZ1neFZk&list=PLBpnwlO9U5unYmbZp2DJETNOHg8s_yW37">VIDEO: Question of the day</a>, 100+ of them explained by Colin Weaver.
 
    * <a target="_blank" href="https://insidethemicrosoftcloud.com/cissp-practice-quiz/">50 question CISSP Practice Quiz online</a>
    
@@ -217,6 +217,9 @@ Practice Tests:
    * For 20 years, Dean Bushmiller has a live <a target="_blank" href="https://learning.oreilly.com/live-training/courses/cissp-bootcamp/0636920483199/">CISSP Bootcamp"</a> on OReilly.com includes a set of proprietary visual "mind maps" to collect, practice, and verify your knowledge.
 
    * <a target="_blank" href="https://www.sunflower-cissp.com/glossary/cissp/5497/download-sunflower-cissp-2019-pdf-document">PDF: Sunflower CISSP</a>
+
+   * <a target="_blank" href="https://www.studynotesandtheory.com/single-post/practice-question-security-testing">VIDEO</a> at <a target="_blank" href="https://www.studynotesandtheory.com/​">studynotesandtheory.com</a> by Luke Ahmed
+
 
 Video prep courses view:
 
@@ -263,7 +266,7 @@ Video prep courses view:
    * <a target="_blank" href="https://mckinsey.udemy.com/course/isc2-csslp-certification-exam-prep-practice-exams/">Practice Exams 2020</a> by Chandrika Patel
 
    * <a target="_blank" href="https://www.amazon.co.uk/Eleventh-Hour-CISSP%C2%AE-Study-Guide/dp/0128112484/">18.17 LB BOOK: 11th Hour</a>
-   * Luke Ahmed: https://www.studynotesandtheory.com/​ 
+
    * Mindmap videos: https://www.youtube.com/channel/UCXk6...​ 
 
    * <a target="_blank" href="https://www.Cissprep.net">Cissprep.net Memorisation sheet</a>

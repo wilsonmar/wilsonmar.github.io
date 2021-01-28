@@ -73,10 +73,12 @@ Take one step at a time and we point out PROTIPs and notes along the way.
 
    * <a target="_blank" href="https://azure.microsoft.com/en-us/services/functions/">
    Microsoft Azure Functions</a>
-
    * <a target="_blank" href="https://cloud.google.com/functions/">
    Google Cloud Functions</a>
-
+   * <a target="_blank" href="https://www.ibm.com/cloud/functions">
+   IBM OpenWhisk</a>
+   * https://kubeless.io/
+   * https://spotinst.com/
    * Iron runs Serverless within on-prem servers.
 
    TODO: I hope to have a competitive comparison in the future.

@@ -18,6 +18,10 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/cyber-security/">This page</a> contains my notes on resources for Cyber Security, which is a vast field. This single page is just for reference.
 
+## Jericho Commandments
+
+<a target="_blank" href="https://collaboration.opengroup.org/jericho/commandments_v1.2.pdf">
+https://collaboration.opengroup.org/jericho/commandments_v1.2.pdf</a> define the 11 areas and principles that must be observed when planning for a de-perimeterized future. 
 
 ## Adobe Common Control Framework
 
@@ -54,9 +58,8 @@ HITRUST Common Security Framework (CSF)</a> includes, harmonizes, and cross-refe
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/56856297-c8c31000-6914-11e9-874e-c0417d380dfd.png"><img width="926" alt="aws-compliance" src="https://user-images.githubusercontent.com/300046/56856297-c8c31000-6914-11e9-874e-c0417d380dfd.png"></a>
 
-<a target="_blank" href="https://aws.amazon.com/compliance/programs/">Compliance Programs at<br />https://aws.amazon.com/compliance/programs</a> covers security requirements in Canada, Asia Pacific, and Europe.
-
-<a target="_blank" href="https://aws.amazon.com/compliance/">Amazon Compliance at<br /></a>https://aws.amazon.com/compliance</a>
+<a target="_blank" href="https://aws.amazon.com/compliance/">aws.Amazon.com/Compliance</a>
+<a target="_blank" href="https://aws.amazon.com/compliance/programs/">/Programs</a> covers security requirements in Canada, Asia Pacific, and Europe.
 
 
 <a name="MCRA"></a>
@@ -66,6 +69,36 @@ HITRUST Common Security Framework (CSF)</a> includes, harmonizes, and cross-refe
 <a target="_blank" href="https://www.youtube.com/watch?v=emdGpNwfWHY">VIDEO Distilling</a>
 <a target="_blank" href="https://aka.ms/MCRA/">Infographic in PowerPoint: Microsoft Azure Cybersecurity Reference Architecture</a>
 
+
+<hr />
+
+<a name="iso27002"></a>
+
+## ISO 27002 Controls (Counter-measures)
+
+<a target="_blank" href="https://iso27001security.com/">https://iso27001security.com</a><br />
+ISO Code of practice for information security controls defines 114 controls grouped into 14 categories. REMEMBER:
+
+   * ISO/IEC 27005 addresses risk management
+   * ISO/IEC 27007 addresses auditing
+   * ISO/IEC 27011 addresses telecommunications organization guidelines
+   * ISO/IEC 27012 addresses controls (counter-measures)
+   * ISO/IEC 27015 addresses financial organization guidelines
+   * ISO/IEC 27033 addresses network security
+   * ISO/IEC 27034 addresses application security
+   * ISO/IEC 27037 addresses digital evidence guidelines
+   * ISO/IEC 27799 addresses health organization guidelines
+   <br /><br />
+
+## ISO/IEC 15288:2015  
+
+Four categories of processes:
+
+   1. Agreement processes, including acquisition and supply
+   2. Organizational project-enabling processes, including infrastructure management, quality management, and knowledge management
+   3. Technical management processes, including project planning, risk management, configuration management, and quality assurance
+   4. Technical processes, including system requirements definition, system analysis, implementation, integration, operation, maintenance, and disposal
+   <br /><br />
 
 <a name="CIS"></a>
 
@@ -90,34 +123,6 @@ The Center for Internet Security (CIS) is a community of users, vendors and subj
 1. Download and review "Measures and Metrics" pdf and excel:
 
    https://www.cisecurity.org/white-papers/cis-controls-v7-measures-metrics/
-
-<hr />
-
-<a name="iso27002"></a>
-
-## ISO 27002 Controls (Counter-measures)
-
-<a target="_blank" href="https://iso27001security.com/">https://iso27001security.com</a><br />
-ISO Code of practice for information security controls defines 114 controls grouped into 14 categories.
-REMEMBER:
-
-   * ISO/IEC 27005 addresses risk management
-   * ISO/IEC 27007 addresses auditing
-   * ISO/IEC 27011 addresses telecommunications organization guidelines
-   * ISO/IEC 27012 addresses controls (counter-measures)
-   * ISO/IEC 27015 addresses financial organization guidelines
-   * ISO/IEC 27033 addresses network security
-   * ISO/IEC 27034 addresses application security
-   * ISO/IEC 27037 addresses digital evidence guidelines
-   * ISO/IEC 27799 addresses health organization guidelines
-   <br /><br />
-
-ISO/IEC 15288:2015  four categories of processes:
-   1. Agreement processes, including acquisition and supply
-   2. Organizational project-enabling processes, including infrastructure management, quality management, and knowledge management
-   3. Technical management processes, including project planning, risk management, configuration management, and quality assurance
-   4. Technical processes, including system requirements definition, system analysis, implementation, integration, operation, maintenance, and disposal
-   <br /><br />
 
 ### CIS Security Benchmarks for Linux 
 
@@ -1837,9 +1842,9 @@ A kernel proxy firewall is an example of a fifth generation firewall. It inspect
 
 * <a target="_blank" href="https://www.wired.com/category/threatlevel/">Wired magazine Threat Level</a>
 
-* <a target="_blank" href="https://www.darkreading.com/">Dark Reading</a>
+* <a target="_blank" href="https://www.darkreading.com/">Dark Reading</a> news website
 
-* <a target="_blank" href="https://threatpost.com/">Threatpost</a>
+* <a target="_blank" href="https://threatpost.com/">Threatpost</a> news website
 
 * <a target="_blank" href="https://www.infosecurity-magazine.com/">Information Security magazine</a>
 

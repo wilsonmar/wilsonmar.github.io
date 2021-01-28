@@ -553,66 +553,65 @@ allowing password crypts to be transferred among multiple local devices,
 but not over a public network.
 
 
-<a name="Local_Diagram"></a>
-
-## Local Diagram
-
-Here is a draft diagram describing how the various techniques above working together:
-
-<amp-img width="714" height="466" alt="github-secrets-v02-714x466"
-layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/15831785/7aa96c3e-2bdc-11e6-9c3f-0dbf31a59f42.png"></amp-img>
-
-
-As we write functions within application source files,
-we put them within a Git folder, and commit changes (which Git stores in its .git folder containing history).
-
-The private <strong>API keys</strong> and 
-crypto certificates from Certificate Authorities
-we collectively call <strong>secrets</strong> 
-for accessing web services
-can be conveninently just copied into the Git folder.
-
-When files are pushed up to GitHub or other repository,
-<strong>.gitignore</strong> settings should 
-prevent the certificate from being uploaded and thus risk exposure.
-
-PROTIP: Many say it's NOT a good idea to keep secrets such as passwords and 
-other private data in a GitHub repository. 
-Murphy's Law applies here too.
-
-PROTIP: Organizations should do their own scans to find issues before others do.
-
-CAUTION: But even after data is removed from the <strong>current</strong> repository,
-like the Padora's Box legend,
-whatever was exposed can nevertheless live on in 
-any forks, clones, or zip files
-others have taken of the repository.
-
-Private file in them can be referenced in 
-<strong>profile scripts</strong> that load files and
-<a href="#EnvVars">environment variables</a> 
-within memory accessible by application programs.
-
-
-
 <a name="SecretsInCloud"></a>
 
 ## SOLUTION 6. Save secret keys in the cloud
 
-Backup encryption key files in a cloud vendor's key store, because cloud vendors have top professionals figuring out how to keep data safe for a lot of people.
+Cloud vendors have the money to hire top professionals figuring out how to keep data safe for a lot of others.
 
-Some utilities (such as SOP) reference your AWS credentials stored in ~/.aws to authenticate against KMS so you can encrypt and decrypt without a password.
+<a name="CloudKeyStores"></a>
 
-### Offline capable?
-
-CAUTION: Programming reference to a cloud key store may slow progress to those who work <strong>offline</strong>, and need a cache of secrets on their laptop.
-
-TODO: Below are steps to setup use of:
+If you do still store secrets in .env files, store a backup of them in a cloud vendor's key store:
 
    * <a href="#AWS_Config">AWS KMS (Key Management Service)</a>
    * <a href="#Goolge_Config">Google secret keeping</a>
    * <a href="#Azure_Config">Azure Key Vault</a>
    <br /><br />
+
+
+### GitHub Secrets
+
+In 2020 GitHub introduced the <strong>Secrets</strong> page within the Settings tab of each repository for use with GitHub Actions pipelines. 
+
+1. BLAH: The "Manage organization secrets" to define secrets for the whole organization (which can include other repos) is there for convenience.
+
+   <img width="354" alt="github-secrets-drop-708x644" src="https://user-images.githubusercontent.com/300046/105930046-1b5bbf80-6006-11eb-8e2e-33fe33904fb0.png">
+
+1. Typically, "New repository secret" would be clicked to define secrets applicable to only the current repository.
+   
+   NOTE: "YOUR_SECRET_NAME" is in all caps because that's the convention for naming static variables programs/pipeline code use to obtain secret values.
+
+   Secrets are environment variables that are encrypted. 
+
+   PROTIP: In the name add a word for the type of secret, such as "API_ACCESS_TOKEN", etc.
+
+   Environment secrets
+
+   Repository secrets
+
+2. Type plain text secrets in the form so GitHub can hide the secret for reference within GitHub Actions pipelines.
+
+   Secrets entered are encrypted before they reach GitHub because GitHub uses a <a target="_blank" href="https://libsodium.gitbook.io/doc/public-key_cryptography/sealed_boxes">"libsodium sealed box"</a> which encrypts each message using an ephemeral key pair (using a secret part destroyed right after encryption processing). So the sender cannot decrypt its own message later. The recipient decrypts messages using its private key.<a target="_blank" href="https://docs.github.com/en/actions/reference/encrypted-secrets">*</a>
+
+Secrets are not passed to workflows that are triggered by a pull request from a fork.
+
+CAUTION: Anyone with collaborator access to this repository can use these secrets for Actions. So some prefer to store their secrets elsewhere, such as Hashicorp Vault or <a href="#CloudKeyStores">cloud key store</a>.
+
+
+<hr />
+
+Some utilities (such as SOP) reference your AWS credentials stored in folder <tt>$HOME/.aws</tt> to authenticate against KMS so you can encrypt and decrypt without a password.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=qgF7XquqVSA" title="Dec 20, 2020">
+VIDEO: Keeping secrets in your infrastructure pipeline</a> at GitHub Universe 2020 <a target="_blank" href="https://speakerdeck.com/joatmon08/keeping-secrets-in-your-infrastructure-pipeline">[deck]</a>
+
+Rosemary Wang (<a target="_blank" href="https://linkedin.com/in/rosemarywang"">@rosemarywang</a>), Developer Advocate, HashiCorp
+<a target="_blank" href="https://joatmon08.github.com/">code</a>
+
+
+### Offline capable?
+
+CAUTION: Programming reference to a cloud key store may slow progress to those who work <strong>offline</strong>, and need a cache of secrets on their laptop.
 
 
 <a name="AWS_Config"></a>
@@ -957,6 +956,48 @@ Steps to make this happen include:
 1. To troubleshoot
 
    <pre><strong>ssh -Tv git@github.com</strong></pre>
+
+
+
+<a name="Local_Diagram"></a>
+
+## Local Diagram
+
+Here is a draft diagram describing how the various techniques above working together:
+
+<amp-img width="714" height="466" alt="github-secrets-v02-714x466"
+layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/15831785/7aa96c3e-2bdc-11e6-9c3f-0dbf31a59f42.png"></amp-img>
+
+
+As we write functions within application source files,
+we put them within a Git folder, and commit changes (which Git stores in its .git folder containing history).
+
+The private <strong>API keys</strong> and 
+crypto certificates from Certificate Authorities
+we collectively call <strong>secrets</strong> 
+for accessing web services
+can be conveninently just copied into the Git folder.
+
+When files are pushed up to GitHub or other repository,
+<strong>.gitignore</strong> settings should 
+prevent the certificate from being uploaded and thus risk exposure.
+
+PROTIP: Many say it's NOT a good idea to keep secrets such as passwords and 
+other private data in a GitHub repository. 
+Murphy's Law applies here too.
+
+PROTIP: Organizations should do their own scans to find issues before others do.
+
+CAUTION: But even after data is removed from the <strong>current</strong> repository,
+like the Padora's Box legend,
+whatever was exposed can nevertheless live on in 
+any forks, clones, or zip files
+others have taken of the repository.
+
+Private file in them can be referenced in 
+<strong>profile scripts</strong> that load files and
+<a href="#EnvVars">environment variables</a> 
+within memory accessible by application programs.
 
 
 
