@@ -1601,8 +1601,11 @@ Backups:
    * GRS (grandfather-father-son) backup rotation scheme Three sets of backup media
    <br /><br />
 
-SOC 3 is the only SOC report that should be shared with the general public.
+AICPA Trust Service Principles, including Security, Availability and Confidentiality. 
+SOC 2 Type II, along with ISO 27001
+https://www.hashicorp.com/blog/hashicorp-achieves-soc-2-type-i-compliance
 
+SOC 3 is the only SOC report that should be shared with the general public.
 
 ### Physical
 

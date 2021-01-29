@@ -3,7 +3,7 @@ layout: post
 title: "Text Editors (on the Mac)"
 excerpt: "nano, pico, vim, subl, code, atom, Eclipse, IntelliJ, Visual Studio, Cloud9, etc."
 tags: [apple, mac, setup]
-date: "2016-08-07"
+date: "2021-01-27"
 file: "text-editors"
 image:
 # feature: pic RichTextEditorToolBar 1900x500.jpg
@@ -362,6 +362,10 @@ Extensions for developing on the Salesforce Platform
 
 * https://medium.com/productivedev/toward-a-mouse-free-developer-experience-in-vscode-97e621d5136e
    covers Install Vim extension for VSCode.
+
+* https://dev.to/5t3ph/how-i-set-up-vscode-for-recording-a-screencast-be7
+   by Stephanie Eckles at Egghead/now Microsoft
+
 
 <hr />
 
