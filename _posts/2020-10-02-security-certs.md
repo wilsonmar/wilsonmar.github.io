@@ -172,19 +172,22 @@ ISC2.org (a non-profit), which published a Code of Ethics.
 
 ### CISSP
 
-<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CISSP">CISSP (Certified Information Systems Security Professional) is a sought-after certification on leadership in cybersecurity. It is the "gold standard" of vendor-neutral cybersecurity certifications. Earning it proves you understand cybersecurity from a management viewpoint—a requirement if your organization is subject to PCI, GDPR, HIPAA, SOX, ISO 27001, or other regulations. 
+<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CISSP">CISSP (Certified Information Systems Security Professional) is a sought-after certification on leadership in cybersecurity. It is the "gold standard" of vendor-neutral cybersecurity certifications. Earning it proves you understand cybersecurity from a management viewpoint -— a requirement if your organization is subject to PCI, GDPR, HIPAA, SOX, ISO 27001, or other regulations. 
 
-The first version of the Common Body of Knowledge (CBK) was finalized in 1992 and the CISSP credential was launched two years later.
+The first version of the Common Body of Knowledge (CBK) was finalized in 1992 and the CISSP credential was launched in 1994.
+Since it's an internationally recognized, there are questions about Canada, UK, EU, etc.
 
-The CISSP exam is adaptive, asking 30-150 questions (25 don't count), depending on whether answers are correct. The better you are, the harder the test is. If you aced the first 10 questions, you'll be put into "brutal mode".
+Rather than the previous 250 questions over 6 hourse, the CISSP exam is now adaptive, asking 100-150 questions (25 don't count), depending on whether answers are correct. The better you are, the harder the test is. If you aced the first 10 questions, you'll be put into "brutal mode".
+
+PROTIP: With Adaptive Testing, your objective is to get hard questions. So study as if you're going to get all hard questions.
 
 https://www.youtube.com/watch?v=5nqqL1rjIY4
 
-You won't be able to go back and change answers in previous questions answered.
+This also means you won't be able to go back and change answers in previous questions answered.
 
-Those who ace the test would get done before 3 hours.
+With CAT (Computer Adaptive Testing), those who ace the test would get done before 3 hours and 150 questions.
 
-You need to pass 70% on <em>each</em> of the eight CISSP domains. Numbers below are counts of questions in the <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">OReilly/Pearson bank</a>:
+You need to pass at least 70% on <em>each</em> of the eight CISSP domains. Numbers below are counts of questions in the <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">OReilly/Pearson bank</a>:
 
    1. Security and Risk Management - 334
    2. Asset Security - 44
@@ -208,7 +211,7 @@ Written Reference:
 
 <a target="_blank" href="https://www.linkedin.com/pulse/where-do-i-find-cissp-practice-questions-nick-webb/">Practice Questions</a>:
 
-   * <a target="_blank" href="https://twitter.com/ITDojo">@ITDojo</a> <a target="_blank" href="https://www.youtube.com/watch?v=jZSAZ1neFZk&list=PLBpnwlO9U5unYmbZp2DJETNOHg8s_yW37">VIDEO: Question of the day</a>, 100+ of them explained by Colin Weaver.
+   * PROTIP: The toughest questions among samples is <a target="_blank" href="https://twitter.com/ITDojo">@ITDojo</a> <a target="_blank" href="https://www.youtube.com/watch?v=jZSAZ1neFZk&list=PLBpnwlO9U5unYmbZp2DJETNOHg8s_yW37">VIDEO: Question of the day</a>, 100+ of them explained by Colin Weaver. 
 
    * <a target="_blank" href="https://insidethemicrosoftcloud.com/cissp-practice-quiz/">50 question CISSP Practice Quiz online</a>
    
@@ -218,7 +221,7 @@ Written Reference:
 
    * <a target="_blank" href="https://www.sunflower-cissp.com/glossary/cissp/5497/download-sunflower-cissp-2019-pdf-document">PDF: Sunflower CISSP</a>
 
-   * <a target="_blank" href="https://www.studynotesandtheory.com/single-post/practice-question-security-testing">VIDEO</a> at <a target="_blank" href="https://www.studynotesandtheory.com/​">studynotesandtheory.com</a> by Luke Ahmed
+   * <a target="_blank" href="https://www.studynotesandtheory.com/single-post/practice-question-security-testing">VIDEO</a> at <a target="_blank" href="https://www.studynotesandtheory.com/​">studynotesandtheory.com</a> by <a target="_blank" href="https://www.linkedin.com/in/luke-ahmed-446601133/">Luke Ahmed</a>, who is dedicated to CISSP education.
 
 
 Video prep courses view:
@@ -258,8 +261,11 @@ Video prep courses view:
 
    https://quizlet.com/343215416/csslp-exam-guide-flash-cards/
 
-   * <a target="_blank" href="https://app.pluralsight.com/paths/certificate/certified-secure-software-lifecycle-professional-csslpr">Pluralsight video courses</a> by Kevin Henry (kevinmhenry at msn) is from 2017.
-   * <a target="_blank" href="https://www.udemy.com/user/thorpedersen/​">Thor Pederson Course on Udemy</a>
+   * <a target="_blank" href="https://app.pluralsight.com/paths/certificate/certified-secure-software-lifecycle-professional-csslpr">Pluralsight video courses</a> by Kevin Henry (kevinmhenry at msn) is from 2017 and is too high general for me.
+
+   * <a target="_blank" href="#">OReilly LiveSessions</a> by Sari Greene (sarigreene.com)
+
+   * On Udemy <a target="_blank" href="https://mckinsey.udemy.com/course/cissp-certification-practice-exam-1/learn/quiz/4377650#overview">McK</a> <a target="_blank" href="https://www.udemy.com/user/thorpedersen/​">Thor Pederson courses</a> and <a target="_blank" href="https://www.udemy.com/course/cissp-certification-practice-exam-1/">3 sets of 125 questions in 3 hours</a>. Has a Facebook Groups to join: <a target="_blank" href="https://www.facebook.com/groups/ThorTeaches">ThorTeaches</a>
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=Mpn3Sd9f4lc&list=PLOYQCApvKhV2-j38RvgfHHdsB_VSDPfpP&index=2">8 YouTube videos from The Cloud Tech Guy Joe</a> Jan, 2020 talks about the subject rather than taking a deep dive.
 
@@ -280,11 +286,6 @@ Video prep courses view:
    * <a target="_blank" href="https://www.cybrary.it/">cybrary.it</a> 
 
    * <a target="_blank" href="https://www.amazon.co.uk/CISSP-Official-ISC-Practice-Tests-ebook/dp/B07D8FZN8M/">BOOK: ISC2 official practice tests</a>
-
-Facebook Groups to join:
-   * <a target="_blank" href="https://www.facebook.com/groups/ThorTeaches">ThorTeaches</a>
-   * <a target="_blank" href="">Luke/SNT</a>
-   <br /><br />
 
 YouTube videos with content index (and ads) by Rob Richa, with <a target="_blank" href="https://www.linkedin.com/in/jberti/">John Berti</a> of Destination Certifications:
 

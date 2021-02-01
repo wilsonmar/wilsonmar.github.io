@@ -21,7 +21,27 @@ comments: true
 ## Jericho Commandments
 
 <a target="_blank" href="https://collaboration.opengroup.org/jericho/commandments_v1.2.pdf">
-https://collaboration.opengroup.org/jericho/commandments_v1.2.pdf</a> define the 11 areas and principles that must be observed when planning for a de-perimeterized future. 
+https://collaboration.opengroup.org/jericho/commandments_v1.2.pdf</a> define the 11 areas and principles that must be observed when planning for a de-perimeterized future in cloud environments. 
+
+## Amazon's Compliance
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/56856297-c8c31000-6914-11e9-874e-c0417d380dfd.png"><img width="926" alt="aws-compliance" src="https://user-images.githubusercontent.com/300046/56856297-c8c31000-6914-11e9-874e-c0417d380dfd.png"></a>
+
+<a target="_blank" href="https://aws.amazon.com/compliance/">aws.Amazon.com/Compliance</a>
+<a target="_blank" href="https://aws.amazon.com/compliance/programs/">/Programs</a> covers security requirements in Canada, Asia Pacific, and Europe.
+
+
+<a name="MCRA"></a>
+
+## Microsoft Cybersecurity Reference Architecture
+
+<a target="_blank" href="https://www.youtube.com/watch?v=emdGpNwfWHY">VIDEO Distilling</a>
+<a target="_blank" href="https://aka.ms/MCRA/">Infographic in PowerPoint: Microsoft Azure Cybersecurity Reference Architecture</a>
+
+
+## Google?
+
+TBD
 
 ## Adobe Common Control Framework
 
@@ -54,31 +74,16 @@ Adobe <a target="_blank" href="https://adobe.allegiancetech.com/cgi-bin/qwebcorp
 <a target="_blank" href="https://hitrustalliance.net/understanding-leveraging-csf/">
 HITRUST Common Security Framework (CSF)</a> includes, harmonizes, and cross-references existing, globally recognized standards, regulations, and business requirements, including ISO, EU GDPR, <a href="#NIST">NIST</a>, and PCI.
 
-## Amazon's Compliance
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/56856297-c8c31000-6914-11e9-874e-c0417d380dfd.png"><img width="926" alt="aws-compliance" src="https://user-images.githubusercontent.com/300046/56856297-c8c31000-6914-11e9-874e-c0417d380dfd.png"></a>
-
-<a target="_blank" href="https://aws.amazon.com/compliance/">aws.Amazon.com/Compliance</a>
-<a target="_blank" href="https://aws.amazon.com/compliance/programs/">/Programs</a> covers security requirements in Canada, Asia Pacific, and Europe.
-
-
-<a name="MCRA"></a>
-
-## Microsoft Cybersecurity Reference Architecture
-
-<a target="_blank" href="https://www.youtube.com/watch?v=emdGpNwfWHY">VIDEO Distilling</a>
-<a target="_blank" href="https://aka.ms/MCRA/">Infographic in PowerPoint: Microsoft Azure Cybersecurity Reference Architecture</a>
-
-
 <hr />
 
 <a name="iso27002"></a>
 
-## ISO 27002 Controls (Counter-measures)
+## 
 
 <a target="_blank" href="https://iso27001security.com/">https://iso27001security.com</a><br />
 ISO Code of practice for information security controls defines 114 controls grouped into 14 categories. REMEMBER:
 
+   * ISO/IEC 27002 Controls (Counter-measures) of ISMS (Information Security Management System)
    * ISO/IEC 27005 addresses risk management
    * ISO/IEC 27007 addresses auditing
    * ISO/IEC 27011 addresses telecommunications organization guidelines
@@ -655,12 +660,26 @@ https://nvd.nist.gov/ncp/checklist/740
 known issues
 
 
-## FedRAMP/FISMA compliance
+## NIST NVD CVE
+
+<a target="_blank" href="http://csrc.nist.gov/"">http://csrc.nist.gov</a> (Computer Security Resource Center) maintains the <a target="_blank" href="https://nvd.nist.gov/800-53">NIST 800-53 "National Vulnerability Database"</a> by MITRE's CVE (Computer Vulnerabilities and Exposures) system using OSCAL (Open Security Controls Assessment Language), currently available in JSON, XML, and YAML. OVAL : Open Vulnerability and Assessment Language for use world-wide.
+
+PROTIP: Many Software Component Vulnerabity scan programs (Rapid7, JFrog Xray, etc.) refer to the <a target="_blank" href="https://www.vicarius.io/research-center">NVD online</a> as the basis for scanning. 
+
+   * <a target="_blank" href="https://www.cvedetails.com/product-list.php">by app at CVEDetails.com</a>
+   * <a target="_blank" href="https://www.vicarius.io/research-center/os/linux-kernel-id19832_4673">Linux Kernel</a>
+   * <a target="_blank" href="https://www.vicarius.io/research-center/os/windows-id20092_6750">Windows OS</a>
+   <br /><br />
+
+<a target="_blank" href="https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final">READ: SP 800-53 Rev 5 "Security and Privacy Controls for Information Systems and Organizations"</a><br />
+<a target="_blank" href="cybersecurity-NIST-Functions-382x390-19166" href="https://user-images.githubusercontent.com/300046/55505840-3f6c3680-5611-11e9-811d-4411e01c5afd.jpg">
+<a target="_blank" alt="cybersecurity-NIST-Functions-382x390-19166.jpg" src="https://user-images.githubusercontent.com/300046/55505840-3f6c3680-5611-11e9-811d-4411e01c5afd.jpg""></a>
+
+NIST also publishes SP1800 (Cybersecurity practice guides) and the broader SP 500 (Information Technology).
+
+### FedRAMP/FISMA compliance
 
 In the US federal government, the Federal Information Security Management Act of 2002 (FISMA) law is implemented according to National Institute of Standards and Technology (NIST) Special Publication (SP) <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">800-53 [pdf]</a>. The security controls development framework contains 157 controls within 19 control families. Each control is designated as low, moderate, or high impact. 
-
-![cybersecurity-NIST-Functions-382x390-19166](https://user-images.githubusercontent.com/300046/55505840-3f6c3680-5611-11e9-811d-4411e01c5afd.jpg)
-800-53
 
 SP 800-30 steps for a risk assessment: 
    1. Identify the assets and their value. 
@@ -677,8 +696,6 @@ SP 800-34
    * An ISCP (information system contingency plan) provides established procedures for the assessment and recovery of a system following a system disruption.
    * A COOP (Continuity Of Operations) plan focuses on restoring an organization’s mission-essential functions (MEFs) at an alternate site and performing those functions for up to 30 days before returning to normal operations.
    <br /><br />
-
-NIST also publishes SP1800 (Cybersecurity practice guides) and the broader SP 500 (Information Technology).
 
 
 ### FedRAMP
@@ -739,7 +756,7 @@ As of May 25, 2018, a European privacy law — GDPR (General Data Protection Reg
 
 UK Government G-Cloud. The UK Government G-Cloud is a cloud computing certification for services used by government entities in the United Kingdom.
 
-Health Insurance Portability and Accountability Act (HIPAA) is a US federal law that regulates patient Protected Health Information (PHI). A Business Associate Agreement (BAA) stipulates adherence to security and privacy provisions in HIPAA and the Health Information Technology for Economic and Clinical Health Act (HITECH) Act. 
+HIPAA (Health Insurance Portability and Accountability Act) is a US federal law that regulates patient Protected Health Information (PHI). A Business Associate Agreement (BAA) stipulates adherence to security and privacy provisions in HIPAA and the Health Information Technology for Economic and Clinical Health Act (HITECH) Act. 
 
 Service Organization Controls (SOC) 1, 2, and 3 report is a framework by independent third-party auditors covering controls for data security, availability, processing integrity, and confidentiality as applicable to in-scope trust principles for each service.
 
@@ -930,6 +947,7 @@ Different periods for rotating different key types. Here is the "regular basis" 
    </td><td>2 years</td></tr >
 </tbody></table>
 
+Book copyright in the US & UK is 70 years after death of author.
 
 ## Security Engineer
 
@@ -980,13 +998,16 @@ My Quizlet of Cyber Security Aconyms</a>
    * Guidelines - recommended actions to follow
    <br /><br />
 
-A vulnerability is an absence or a weakness of a countermeasure that is in place.
+A threat is a potential harmful incident. weakness that can be exploited?
 
 An exposure is an instance of being subjected or exposed to losses from a threat.
 
+A vulnerability is an absence or a weakness of a countermeasure that is in place.
+
 A trigger is an event that indicates that a risk has occurred or is about to occur. 
 
-Quantitative risk analysis: Asset Value (AV) x Exposure Factor (EF) = Single Loss Expectancy (SLE).
+Quantitative risk analysis: REMEMBER: 
+Asset Value (AV) x Exposure Factor (EF) = Single Loss Expectancy (SLE).
 <a target="_blank" href="https://www.youtube.com/watch?v=mpSdrr7QzZE">VIDEO</a> 
 
 Annualized Rate of Occurrence (ARO) X Single Loss Expectancy (SLE) = Annual Loss Expectancy (ALE).
@@ -997,10 +1018,11 @@ Cost/benefit of implementing a particular safeguard, where ALE is the annual los
 Residual risk = total risk – countermeasures.
 
 <a name="CIA">CIA</a>
-Tenents: CIA+IAAA
+Tenents: CIA triad +IAAA
    * Confidentiality vs. Disclosure (IPSec encryption in transit, social engineering)
    * Integrity vs. Alteration (shared among authorized persons or organizations)
    * Availability vs. Destruction (RAID-5, DDoS)
+   <br /><br />
 
    * Accountability (auditing)
 
@@ -1011,7 +1033,7 @@ RAID (Redundant Array of Independent Disks): parity information is used to regen
    * RAID-10 Mirroring+Striping
    * RAID-2 stripes the data across all drives at the bit level rather than the byte level.
    * RAID-3 parity information is written to a single dedicated drive. Data is written across all drives like striping.
-   * RAID-5 Parity information is written across all drives like striping as well
+   * RAID-5 Parity information is written across all drives like striping as well. Min. 3 drives?
    * RAID-6 Parity of 2 
    * RAID-7 enables the drive array to continue to operate if any disk or any path to any disk fails. The multiple disks in the array operate as a single virtual disk.
    <br /><br />
@@ -1133,6 +1155,14 @@ Security program life cycle:
    * Architecture describes the organization of the system, including its components and their interrelationships along with the principles that guided its design and evolution. 
    * Architectural description (AD) refers to the set of documents that convey the architecture in a formal manner.
    <br /><br />
+
+Software Capability Maturity Model
+    1. Initial (chaotic, ad hoc, individual heroics) - the starting point for use of a new or undocumented repeat process.
+    2. Repeatable - the process is at least documented sufficiently such that repeating the same steps may be attempted.
+    3. Defined - the process is defined/confirmed as a standard business process.
+    4. Capable - the process is quantitatively managed in accordance with agreed-upon metrics.
+    5. Efficient - process management includes deliberate process optimization/improvement.
+    <br /><br />
 
 Process impprovement approaches:
    * Capability Maturity Model Integration (CMMI) addresses development, services, and acquisitions. 
@@ -1279,15 +1309,22 @@ Types of control:
    <br /><br />
 
 Documents:
-   * A business impact analysis (BIA) is a functional analysis that lists the critical and necessary business functions, their resource dependencies, and their level of criticality to the overall organization. Risks.
-   * The business continuity plan (BCP) considers all aspects that are affected by a disaster, including functions, systems, personnel, and facilities, and lists and prioritizes the services that are needed. 
+   * A business impact analysis (BIA) is a functional analysis that lists the critical and necessary business functions, their resource dependencies, and their level of criticality to the overall organization. Risks. Minimum Operating Requirements (MOR)
+   * The business continuity plan (BCP) "what" considers all aspects that are affected by a disaster, including functions, systems, personnel, and facilities, and lists and prioritizes the services that are needed. 
    * A contingency plan provides instruction on what personnel should do until the functions and systems are restored to full  functionality. 
-   * A disaster recovery plan (DRP) is implemented when the emergency occurs and includes the steps to restore functions and systems.
+   * A disaster recovery plan (DRP) "how" is implemented when the emergency occurs and includes the steps to restore functions and systems. Includes identification of specific hardware.
+   <br /><br />
+
+DRP lifecycle phases:
+   1. Mitigation
+   2. Preparation (for preparedness)
+   3. Response (activation, execution)
+   4. Recovery toward normalcy
    <br /><br />
 
 System resilience is the ability of a system, device, or data center to recover quickly and continue operating after an equipment failure, power outage, or other disruption. It involves the use of redundant components or facilities.
 
-Metrics defined by BIA (Business Impact Assessment):
+Metrics defined by BIA (Business Impact Assessment): REMEMBER MTD &LT;= RTO + WRT
    * RPO (Recovery Point Objective) = Maximum tolerable <strong>data</strong> loss period
    * RTO (Recovery Time Objective) = Recovery <strong>time</strong> to a defined service level
    * WRT (Work Recovery Time) = Max. time to verify integrity of systems & data
@@ -1309,6 +1346,9 @@ ACID properties:
 
 System owners are responsible for the systems on which data resides. While the data owner owns the data and the data custodian configures the appropriate permissions for user access to the data, the system owner must determine the parameters that govern the system, such as what types of data and applications can be stored on the system, who owns the data and applications, and who determined the users that can access the data and applications.
 
+Military classification: Unclassified, Controlled Unclassified (CUI), Confidential, Secret, Top-secret
+
+Commercial classification: 
 Data classification program:
    1. Define the classification levels. 
    2. Specify the data classification criteria.
@@ -1413,7 +1453,13 @@ Ciphers:
    * Substitution is the process of exchanging one byte in a message for another.
    <br /><br />
 
-A running key cipher is NOT a substitution cipher. A running key cipher uses a physical component, usually a book, to provide the polyalphabetic characters. All the other options are substitution ciphers.
+A <strong>salt</strong> is used to prevent precomputation attacks such as Rainbow Tables.
+A salt is a non-secret, random value that's used to ensure that the same plaintext will not consistently hash to the same output value; 
+
+A <strong>nonce</strong> ("number used once") is typically used to prevent replay attacks. 
+A nounce is typically a randomly generated value associated with a message in a cryptographic scheme, and must be unique within some specified scope (such as a given time interval, or a session). 
+
+A <strong>running key cipher</strong> is NOT a substitution cipher. A running key cipher uses a physical component, usually a book, to provide the polyalphabetic characters. All the other options are substitution ciphers.
 
 Steganography
    * Distortion techniques are when the knowledge of original cover in the decoding process is essential at the receiver side. 
@@ -1477,6 +1523,8 @@ Ciphers:
 * A symmetric algorithm uses a private or secret key that must remain secret between the two parties. It provides confidentiality but NOT authentication or nonrepudiation.
 * Symmetric algorithms include both stream-based and block ciphers. 
 
+* discrete logarithms ??  https://crypto.stanford.edu/pbc/notes/crypto/factoring.html
+
 REMEMBER Algorithms: https://competitions.cry.yp.to/aes.html
    * MD5, SHA-1, SHA-256, RIPEMD-160 are hashing algorithms.
    * El Gamal (slowest), AES, Twofish, Blowfish, Skipjack, DES, and 3DES are symmetric algorithms (same key for encrypt/decrypt, so one time)
@@ -1513,6 +1561,8 @@ REMEMBER Algorithms: https://competitions.cry.yp.to/aes.html
 
 Block cipher modes use IVs to ensure that patterns are not produced during encryption. But IVs are not modes. 
 Modes used by block ciphers: Electronic Code Book (ECB), Cipher Block Chaining (CBC), Cipher Feedback (CFB), and Counter Mode (CTR).
+
+NSA Clipper chip uses Skipjack
 
 <a target="_blank" href="https://www.youtube.com/watch?v=VPvZbMXfv_0">VIDEO</a>: Hybrid cryptography combines the convenience of a public-key cryptosystem with the efficiency of a symmetric-key cryptosystem. Public-key cryptosystems are convenient in that they do not require the sender and receiver to share a common secret in order to communicate securely:
    1. The symmetric algorithm provides keys used for encryption. 
@@ -1607,6 +1657,12 @@ https://www.hashicorp.com/blog/hashicorp-achieves-soc-2-type-i-compliance
 
 SOC 3 is the only SOC report that should be shared with the general public.
 
+RAM
+   * DRAM (Dynamic Random Access Memory) capacitors
+   * SRAM keeps data stored as long as it has power
+   * SDRAM (Synchronous Dynamic Access Memory)  access commands simultaneously,
+   * DDR (DD2, DD3, DDR4)
+
 ### Physical
 
 Failsoft is the capability of a system to terminate non-critical processes when a failure occurs.
@@ -1620,7 +1676,7 @@ Gates:
 
 Alternative sites:
    * A redundant site provides a site that is recoverable in the least amount of time and will allow the organization to have the most control of the resources. 
-   * A hot site contains telecommunications and computers and is the most expensive alternative site. It takes the shortest amount of time to recover.
+   * A hot site contains telecommunications and computers and is the most expensive alternative site. It takes the shortest amount of time to recover. Has Backups??
    * A cold site does not contain any computers or telecommunications equipment. It does contain wiring, heating and air, and raised flooring. It is much cheaper than a hot site. However, it takes much longer to recover. 
    * A warm site contains telecommunications equipment but no computers and is cheaper than a hot site but more expensive than a cold site. It takes longer to recover than a hot site but shorter to recover than a cold site.
    * A tertiary site provides an alternate in case both the primary and hot site, warm site, or cold site is unavailable.
@@ -1660,6 +1716,7 @@ The account is is revoked when no longer needed.
 IDaaS (Identity as a Service) Provides a set of identity and access management functions to target systems on customers’ premises and/or in the cloud.
 
 ## Access Control IAAA
+
    1. Identification is the act of a user professing an identity to an access control system.
    2. Authentication is the act of validating a user with a unique identifier by providing the appropriate credentials.
    3. Authorization
@@ -1680,16 +1737,22 @@ In a MAC (Mandatory access control) environment: <a target="_blank" href="https:
    * In the compartmented security mode, all users must possess the highest security clearance (as in both dedicated and system high security), but they must also have a valid need-to-know clearance, a signed NDA, and formal approval for all information to which they have access.
    <br /><br />
 
-Types of authentication factors: something you know (knowledge), something you have (possession), and something you are (characteristic).
+MFA types:
+   * Type 1 – Something You <strong>Know</strong> (knowledge)– includes passwords, PINs, combinations, code words, or secret handshakes. Anything that you can remember and then type, say, do, perform, or otherwise recall when needed falls into this category.
+   * Type 2 – Something You <strong>Have</strong> (possssion) – includes all items that are physical objects, such as keys, smart phones, smart cards, USB drives, and TOTP token devices. (A token device produces a time-based PIN or can compute a response from a challenge number issued by the server.).
+   * Type 3 – Something You <strong>Are</strong> (characteristic) – includes any part of the human body that can be offered for verification, such as fingerprints, palm scanning, facial recognition, retina scans, iris scans, and voice verification.
+   <br /><br />
+
 A password and pin combo includes only a single knowledge authentication factor type, so is not 2FA.
 
 A capability table lists the access rights that a particular subject has to objects.
 
-## Smart Cards
+
+## Type 2 Have Smart Cards
 
 The user private key encrypts a challenge regnerated by the computer.
 
-### Biometrics
+### Type 3 Are Biometrics
 
 Facial recognition:
    * In an <strong>eigenfaces</strong> facial scan, measurements of facial components are gathered and compared to a set of standard eigenfaces.
@@ -1703,9 +1766,9 @@ Facial recognition:
 
 A characteristics factor for authentication?
 
-Errors:
-   * A Type I error is false rejection rate (FRR). 
-   * A Type II error is false acceptance rate (FAR). 
+Biometric Errors:
+   * A Type I error is false rejection rate (FRR) increases with sensitivity
+   * A Type II error is false acceptance rate (FAR) reduces with sensitivity
    * Crossover error rate (CER) is the point at which FRR equals FAR. 
    * Throughput rate is the rate at which users are authenticated.
    <br /><br />
@@ -1771,11 +1834,13 @@ Network File System (NFS) is a client/server file-sharing protocol used in UNIX/
 
 Fibre Channel over Ethernet (FCoE) encapsulates Fibre Channel frames over Ethernet networks.
 
+CSMA/CD (Carrier-sense multiple access with collision detection) Ethernet
+
 Network address translation (NAT) is a service that can be supplied by a router or by a server. 
 
 DNP3 is a multilayer protocol that is used between components in process automation systems in electric and water companies.
 
-IPv4 uses 32 bits. IPv6 uses 128 bits.
+IPv4 uses 32 bits. IPv6 uses 128 bits, has built-in IPSec
 
 Private addresses:
    * Class A 10.0.0.0–10.255.255.255
@@ -1807,7 +1872,7 @@ IP header protocol field REMEMBER
    * 1 = ICMP (Internet Control Message Protocol)
    * 2 = IGMP (Internet Group Management Protocol)
    * 6 = TCP (Transmission Control Protocol) 
-   * 17 = UDP 
+   * 17 = UDP (User Datagram Protocol) used by VOIP
    * 115 = L2TP (Layer 2)
    <br /><br />
 
@@ -1827,6 +1892,9 @@ A kernel proxy firewall is an example of a fifth generation firewall. It inspect
 * A proxy firewall hides a packet’s true origin before sending it through another network.
 * BA packet-filtering firewall forwards packets based on rules that define which traffic is permitted and denied on the network.
 * A bastion host is a hardened system that usually resides on a demilitarized zone (DMZ) and is accessed frequently.
+
+
+
 
 <hr />
 
