@@ -562,7 +562,8 @@ Such plans sequence work so that technical and organizational dependencies among
    * /benchmarks/CIS_Google_Chrome_Benchmark_v1.3.0-xccdf.xml
    * /benchmarks/CIS_Microsoft_Windows_10_Enterprise_Release_1803_Benchmark_v1.5.0-xccdf.xml
    * /benchmarks/CIS_Ubuntu_Linux_18.04_LTS_Benchmark_v1.0.0-xccdf.xml
-
+   <br /><br />
+   
 1. Click "Next".
 1. Selet Profile Level 1.
 1. Notice that the report goes to your user home folder, not your present Working Directory containing the program.
@@ -662,7 +663,7 @@ known issues
 
 ## NIST NVD CVE
 
-<a target="_blank" href="http://csrc.nist.gov/"">http://csrc.nist.gov</a> (Computer Security Resource Center) maintains the <a target="_blank" href="https://nvd.nist.gov/800-53">NIST 800-53 "National Vulnerability Database"</a> by MITRE's CVE (Computer Vulnerabilities and Exposures) system using OSCAL (Open Security Controls Assessment Language), currently available in JSON, XML, and YAML. OVAL : Open Vulnerability and Assessment Language for use world-wide.
+<a target="_blank" href="http://csrc.nist.gov/">http://csrc.nist.gov</a> (Computer Security Resource Center) maintains the <a target="_blank" href="https://nvd.nist.gov/800-53">NIST 800-53 "National Vulnerability Database"</a> by MITRE's CVE (Computer Vulnerabilities and Exposures) system using OSCAL (Open Security Controls Assessment Language), currently available in JSON, XML, and YAML. OVAL : Open Vulnerability and Assessment Language for use world-wide.
 
 PROTIP: Many Software Component Vulnerabity scan programs (Rapid7, JFrog Xray, etc.) refer to the <a target="_blank" href="https://www.vicarius.io/research-center">NVD online</a> as the basis for scanning. 
 
@@ -716,8 +717,11 @@ SP 800-30 steps for a risk assessment:
 
 SP 800-34 
    * A CIP (critical infrastructure protection) plan is a set of policies and procedures that serve to protect and recover assets and mitigate risks and vulnerabilities.
+
    * An OEP (occupant emergency plan) outlines first-response procedures for occupants of a facility in the event of a threat or incident to the health and safety of personnel, the environment, or property.
+
    * An ISCP (information system contingency plan) provides established procedures for the assessment and recovery of a system following a system disruption.
+
    * A COOP (Continuity Of Operations) plan focuses on restoring an organization’s mission-essential functions (MEFs) at an alternate site and performing those functions for up to 30 days before returning to normal operations.
    <br /><br />
 
@@ -730,7 +734,7 @@ A <strong>System Security Plan (SSP)</strong> is required by the
 OMB Security Authorization of Information Systems in Cloud Computing
 <a target="_blank" href="https://cio.gov/wp-content/uploads/2012/09/fedrampmemo.pdf">[pdf]</a>. 
 
-Each SSP authorization package can be in a machine-readable (JSON or XML format) <a target="_blank" href="https://github.com/usnistgov/OSCAL/">https://github.com/usnistgov/OSCAL</a>Open Security Controls Assessment Language (OSCAL)</a> based on <a target="_blank" href="https://www.fedramp.gov/using-the-fedramp-oscal-resources-and-templates/">templates</a> created based on <a target="_blank" href="https://github.com/GSA/fedramp-automation/blob/master/documents/FedRAMP_OSCAL_Registry.xlsx">this Excel xlsx file</a> which defines fields (extensions), identifiers, and values in the <a target="_blank" href="https://github.com/GSA/fedramp-automation">FedRAMP Registry at https://github.com/GSA/fedramp-automation</a>. The template by FedRAMP PMO and <a target="_blank" href="https://www.nist.gov/oscal/">NIST</a>.
+Each SSP authorization package can be in a machine-readable (JSON or XML format) <a target="_blank" href="https://github.com/usnistgov/OSCAL/">https://github.com/usnistgov/OSCAL</a> Open Security Controls Assessment Language - based on <a target="_blank" href="https://www.fedramp.gov/using-the-fedramp-oscal-resources-and-templates/">templates</a> created based on <a target="_blank" href="https://github.com/GSA/fedramp-automation/blob/master/documents/FedRAMP_OSCAL_Registry.xlsx">this Excel xlsx file</a> which defines fields (extensions), identifiers, and values in the <a target="_blank" href="https://github.com/GSA/fedramp-automation">FedRAMP Registry at https://github.com/GSA/fedramp-automation</a>. The template by FedRAMP PMO and <a target="_blank" href="https://www.nist.gov/oscal/">NIST</a>.
 
 
 ## DISA SIST & SRG
@@ -1097,7 +1101,7 @@ RAID (Redundant Array of Independent Disks): parity information is used to regen
 
 ### Threats
 
-<a target="_blank" href="https://www.hytrust.com/uploads/2015/08/HyTrust-Infographic-Cloud-Kill-Chain.pdf">PDF</a>: <a target="_blank" href="https://www.youtube.com/watch?v=emdGpNwfWHY&t=17m24s">VIDEO</a>: Cyber Kill Chain<br /><img width="1570" alt="cyber-kill-chain-lockheed-3144x1246" src="https://user-images.githubusercontent.com/300046/104851985-729abb00-58b5-11eb-9713-84470116acf9.png"></a>
+<a target="_blank" href="https://www.hytrust.com/uploads/2015/08/HyTrust-Infographic-Cloud-Kill-Chain.pdf">PDF</a>: <a target="_blank" href="https://www.youtube.com/watch?v=emdGpNwfWHY&t=17m24s">VIDEO</a>: Cyber Kill Chain<br /><img width="1570" alt="cyber-kill-chain-lockheed-3144x1246" src="https://user-images.githubusercontent.com/300046/104851985-729abb00-58b5-11eb-9713-84470116acf9.png">
 
 CRAMM is an abbreviation of "C" for the UK government’s Central Computer and Telecommunications Agency (CCTA) Risk Analysis and Management Method. CRAMM reviews includes three steps:
    1. Identify and value assets.
@@ -1954,14 +1958,12 @@ A kernel proxy firewall is an example of a fifth generation firewall. It inspect
 * A bastion host is a hardened system that usually resides on a demilitarized zone (DMZ) and is accessed frequently.
 
 
-
-
 <hr />
 
 ## Resources
 
 * <a target="_blank" href="https://isc.sans.edu/podcast.html">PODCAST: SANS.edu Internet Storm Center daily</a>
-* <a target="_blank" href="https://www.cyberaces.org/"">SANS Cyber Aces</a>
+* <a target="_blank" href="https://www.cyberaces.org/">SANS Cyber Aces</a>
 * <a target="_blank" href="https://isc.sans.edu/forums/diary/Verifying+Running+Processes+against+VirusTotal+DomainWide/25078/">SANS.edu diary</a>
 * <a target="_blank" href="https://www.sans.org/reading-room">SANS.edu reading room white papers</a>
 
