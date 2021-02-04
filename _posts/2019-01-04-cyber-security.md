@@ -681,6 +681,19 @@ NIST also publishes SP1800 (Cybersecurity practice guides) and the broader SP 50
 
 In the US federal government, the FISMA (Federal Information Security Management Act) of 2002 law is implemented according to  NIST (National Institute of Standards and Technology) Special Publication (SP) <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">800-53 [pdf]</a>. The security controls development framework contains of 157 controls within 19 control families. Each control is designated as low, moderate, or high impact. 
 
+<a target="_blank" href="https://www.coalfire.com/Documents/Whitepapers/FISMA-vs-FedRAMP_Controls-authorizations">Coalfire</a>
+came up with this count of controls:
+![cyber-fisma-fedramp-counts-683x586-55388](https://user-images.githubusercontent.com/300046/55948774-75f81180-5c0e-11e9-8596-1dd0194c6dbd.jpg)
+
+FedRAMP added 144 control to 728 in FISMA, for a total of 872 controls.
+
+NIST SP 800-53 is within section 4 SECURITY CONTROL SELECTION of 
+<a target="_blank" href="https://csrc.nist.gov/publications/fips">https://csrc.nist.gov/publications/fips</a> NISP FIPS-200 and 201-3 catagorizes by impact.
+
+Cybersecurity Maturity Model Certification (CMMC) framework
+March 18, 2020 at <a target="_blank" href="https://www.acq.osd.mil/cmmc/">https://www.acq.osd.mil/cmmc</a>
+
+
 SP 800-30 steps for a risk assessment: 
    1. Identify the assets and their value. 
    2. Identify threats. 
@@ -719,12 +732,6 @@ OMB Security Authorization of Information Systems in Cloud Computing
 
 Each SSP authorization package can be in a machine-readable (JSON or XML format) <a target="_blank" href="https://github.com/usnistgov/OSCAL/">https://github.com/usnistgov/OSCAL</a>Open Security Controls Assessment Language (OSCAL)</a> based on <a target="_blank" href="https://www.fedramp.gov/using-the-fedramp-oscal-resources-and-templates/">templates</a> created based on <a target="_blank" href="https://github.com/GSA/fedramp-automation/blob/master/documents/FedRAMP_OSCAL_Registry.xlsx">this Excel xlsx file</a> which defines fields (extensions), identifiers, and values in the <a target="_blank" href="https://github.com/GSA/fedramp-automation">FedRAMP Registry at https://github.com/GSA/fedramp-automation</a>. The template by FedRAMP PMO and <a target="_blank" href="https://www.nist.gov/oscal/">NIST</a>.
 
-<a target="_blank" href="https://www.coalfire.com/Documents/Whitepapers/FISMA-vs-FedRAMP_Controls-authorizations">Coalfire</a>
-came up with this count of controls:
-![cyber-fisma-fedramp-counts-683x586-55388](https://user-images.githubusercontent.com/300046/55948774-75f81180-5c0e-11e9-8596-1dd0194c6dbd.jpg)
-
-FedRAMP added 144 control to 728 in FISMA, for a total of 872 controls.
-
 
 ## DISA SIST & SRG
 
@@ -736,7 +743,7 @@ Cloud Computing Security Requirements Guide (CC SRG)</a> are also defined by DIS
 <a target="_blank" href="https://csrc.nist.gov/Projects/scap-validation-program">SCAP (ecurity Content Automation Protocol)</a> <a target="_blank" href="https://en.wikipedia.org/wiki/Security_Content_Automation_Protocol">[Wikipedia]</a> checklists enable automated vulnerability management, measurement, and policy compliance evaluation of systems deployed in an organization.
 See the <a target="_blank" href="https://www.youtube.com/watch?v=-h_lj5sWo4A">2015 viewer video</a>.
 
-See https://www.open-scap.org/
+See <a target="_blank" href="https://www.open-scap.org/">https://www.open-scap.org</a>
 for tools.
 
 
@@ -861,9 +868,6 @@ Among <a target="_blank" href="https://csrc.nist.gov/publications/sp800">The man
    * SP 800-183 describes the Internet of Things (IoT).
    <br /><br />
 
-NIST SP 800-53 is within section 4 SECURITY CONTROL SELECTION of 
-<a target="_blank" href="https://csrc.nist.gov/publications/fips">https://csrc.nist.gov/publications/fips</a> NISP FIPS-200 and 201-3 catagorizes by impact.
-
 NIST SP 800-57 Key management lifecycle:
    1. Pre-operational phase
    2. Operational phase
@@ -908,10 +912,6 @@ SP 800-139 framework implementation maturity tiers:
    * Tier 4: Adaptive means that the organization adapts its cybersecurity practices based on lessons learned and predictive indicators derived from previous and current cybersecurity activities through a process of continuous improvement.
    <br /><br />
 
-https://www.acq.osd.mil/cmmc/
-Cybersecurity Maturity Model Certification (CMMC) framework
-March 18, 2020   
-
 NIST SP 800-160 defines the systems security engineering framework. It defines, bounds, and focuses the systems security engineering activities, both technical and nontechnical, toward the achievement of stakeholder security objectives and presents a coherent, well-formed, evidence-based case that those objectives have been achieved.
 Contexts within which security activities are conducted according to NIST SP 800-160?
    * Problem context
@@ -935,10 +935,9 @@ FIPS 199 designations:
    * HIGH if the loss of <a href="#CIA">CIA</a> could be expected to have a severe or catastrophic adverse effect on organizational operations, organizational assets, or individuals.
    <br /><br />
 
-U.S. federal agencies use the SBU (Sensitive But Unclassified) designation for information is not secret but still needs to be protected and requires strict controls over its distribution.
+U.S. federal agencies use the SBU (Sensitive But Unclassified) designation for information not secret but still needs to be protected and requires strict controls over its distribution.
 
-<a target="_blank" href="http://ethics-wg.org/framework.htm">http://ethics-wg.org/framework.htm</a>
-
+<a target="_blank" href="http://ethics-wg.org/framework.htm">http://ethics-wg.org/framework.htm</a> says:
 "Do not appropriate other people’s intellectual output" is one of the Computer Ethics Institute (CEI) Ten Commandments of Computer Ethics, but is not part of the(ISC)2 code of ethics preamble.
 
 Components of configuration management:
