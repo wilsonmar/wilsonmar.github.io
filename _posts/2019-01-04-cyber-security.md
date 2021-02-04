@@ -679,7 +679,7 @@ NIST also publishes SP1800 (Cybersecurity practice guides) and the broader SP 50
 
 ### FedRAMP/FISMA compliance
 
-In the US federal government, the Federal Information Security Management Act of 2002 (FISMA) law is implemented according to National Institute of Standards and Technology (NIST) Special Publication (SP) <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">800-53 [pdf]</a>. The security controls development framework contains 157 controls within 19 control families. Each control is designated as low, moderate, or high impact. 
+In the US federal government, the FISMA (Federal Information Security Management Act) of 2002 law is implemented according to  NIST (National Institute of Standards and Technology) Special Publication (SP) <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">800-53 [pdf]</a>. The security controls development framework contains of 157 controls within 19 control families. Each control is designated as low, moderate, or high impact. 
 
 SP 800-30 steps for a risk assessment: 
    1. Identify the assets and their value. 
@@ -688,6 +688,17 @@ SP 800-30 steps for a risk assessment:
    4. Determine likelihood. 
    5. Identify impact. 
    6. Determine risk as a combination of likelihood and impact.
+   <br /><br />
+
+
+   * A threat is potential danger
+   * A threat agent is an individual or group that can manifest a threat.
+   * A threat event is a specific instance of a threat
+   * A vulnerability is a weakness
+   * An exploit is when a threat agent successfully takes advantage of a vulnerability
+   * Impact is the magniture of harm caused by a threat source
+   * Likelihood (of occurence) is a weighted factor that a given threat agent is capable of exploiting a given vulnerability
+   * Level of risk before treatment is the inherent risk
    <br /><br />
 
 SP 800-34 
@@ -739,6 +750,10 @@ International Organization for Standardization (ISO) and the International Elect
 
 MTCS (Multi-Tier Cloud Security) Singapore 584:2013 Certification covers  Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS).
 
+EU Cookie Law <a target="_blank" href="http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm">http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm</a>
+
+<a target="_blank" href="https://www.oecd.org/">OECD.org</a> Privacy Principles for Canada, Mexico, EU GDPR
+
 
 ## US Laws
 
@@ -763,36 +778,64 @@ Service Organization Controls (SOC) 1, 2, and 3 report is a framework by indepen
    * The Federal Privacy Act of 1974 ensures that only authorized persons should have access to personal information and that personal records should be up to date and accurate. 
    * The Federal Intelligence Surveillance Act (FISA) of 1978 affects law enforcement and intelligence agencies and gives procedures for the physical and electronic surveillance and collection of “foreign intelligence information” between “foreign powers” and “agents of foreign powers.”
 
-   * The Computer Fraud and Abuse Act (CFAA) of 1986 affects any entities that may engage in hacking of “protected computers” as defined in the Act. It requires the creation of computer security plans and the appropriate training of system users or owners where the systems house sensitive information. was the first law written to require a formal computer security plan. 
-   * The Electronic Communications Privacy Act (ECPA) of 1986 extended government restrictions on wiretaps from telephone calls to include transmissions of electronic data by computer.
+   * 1986 Computer Fraud and Abuse Act (CFAA) affects any entities that may engage in hacking of “protected computers” as defined in the Act. It requires the creation of computer security plans and the appropriate training of system users or owners where the systems house sensitive information. was the first law written to require a formal computer security plan. 
+   * 1986 Electronic Communications Privacy Act (ECPA) extended government restrictions on wiretaps from telephone calls to include transmissions of electronic data by computer.
 
-   * The United States Federal Sentencing Guidelines of 1991 affects individuals and organizations convicted of felonies and serious (Class A) misdemeanors. It provides guidelines to prevent sentencing disparities that exist across the United States.
-   * The US Economic Espionage Act of 1996 provides a framework to deal with espionage attacks on corporations. According to the Act, all the assets of the organization, whether substantial or not, require protection. The Economic Espionage Act of 1996 affects companies that have trade secrets and any individuals who plan to use encryption technology for criminal activities. 
-   * The Communications Assistance for Law Enforcement Act (CALEA) of 1994 requires telecommunications carriers and manufacturers of telecommunications equipment to modify and design their equipment, facilities, and services to ensure that they have built-in surveillance capabilities. 
-   * The Gramm-Leach-Bliley Act (GLBA) of 1999 affects all financial institutions, including banks, loan companies, insurance companies, investment companies, and credit card providers. 
+   * 1991 United States Federal Sentencing Guidelines of affects individuals and organizations convicted of felonies and serious (Class A) misdemeanors. It provides guidelines to prevent sentencing disparities that exist across the United States.
+   * 1996 US Economic Espionage Act provides a framework to deal with espionage attacks on corporations. According to the Act, all the assets of the organization, whether substantial or not, require protection. The Economic Espionage Act of 1996 affects companies that have trade secrets and any individuals who plan to use encryption technology for criminal activities. 
+   * 1994 Communications Assistance for Law Enforcement Act (CALEA) requires telecommunications carriers and manufacturers of telecommunications equipment to modify and design their equipment, facilities, and services to ensure that they have built-in surveillance capabilities. 
+   * 1999 GLBA (Gramm-Leach-Bliley Act) affects all financial institutions, including banks, loan companies, insurance companies, investment companies, and credit card providers. 
 
    * The Personal Information Protection and Electronic Documents Act (PIPEDA) affects private sector organizations that collect, use, and disclose personal information in the course of commercial business in Canada. 
    * The Federal Information Security Management Act (FISMA) of 2002 affects every federal agency. It requires the federal agencies to develop, document, and implement an agency-wide information security program.
    * Basel II affects financial institutions and addresses minimum capital requirements, supervisory review, and market discipline. 
 
-   * The Health Insurance Portability and Accountability Act (HIPAA) prevents medical organizations (including health insurance companies, hospitals, and doctors’ offices) from sharing patient healthcare information without consent. 
+   * The HIPAA (Health Insurance Portability and Accountability Act) security rule prevents medical organizations (including health insurance companies, hospitals, and doctors’ offices) from sharing patient healthcare information without consent. 
    * The Sarbanes-Oxley (SOX) Act provides guidelines on accurately reporting corporate financial data to shareholders.
    * The General Data Protection Regulation (GDPR) states that the data gathered for private individuals should be used only for the purpose for which it is collected.
    * The European Union Principles on Privacy state that the data gathered for private individuals should be used only for the purpose for which it is collected. 
    * The United States Federal Sentencing Guidelines of 1991 affects individuals and organizations convicted of felonies and serious (Class A) misdemeanors. It provides guidelines to prevent sentencing disparities that exist across the United States. 
    * The Communications Assistance for Law Enforcement Act (CALEA) of 1994 requires telecommunications carriers and manufacturers of telecommunications equipment to modify and design their equipment, facilities, and services to ensure that they have built-in surveillance capabilities. 
    * The Personal Information Protection and Electronic Documents Act (PIPEDA) affects private sector organizations that collect, use, and disclose personal information in the course of commercial business in Canada. 
+
    * The Federal Information Security Management Act (FISMA) of 2002 affects every federal agency. It requires the federal agencies to develop, document, and implement an agency-wide information security program. 
+
    * The Payment Card Industry Data Security Standard (PCI DSS) affects any organizations that handle cardholder information for the major credit card companies.
+
+   * COPPA - online collection and use of data for minors under 13
+
+   * FERPA (Family Educational Rights and Privacy Act) requires educational institutions to protect the privacy of student records
    <br /><br />
+
+## Reporting
+
+https://threatmap.checkpoint.com/ThreatPortal/livemap
+
+Interpol: https://www.interpol.int/Crime-areas/Cybercrime/Cybercrime
+
+FBI https://fbi.gov/investigate/cyber
+
+DHS: https://www.dhs.gov/topic/cybersecurity
+
+Property Law: https://www.bsa.org
+
+### US State laws
+
+   * 2003 Calif. SB 1386 Security Breach Information Act is the first state to require notification
+   * 2010 201 CMR 17 Massachusetts Standards for the Protection of Personal Information of Residents
+   * ncsl.org (National Conference of State Legislators) has research on <a target="_blank" href="https://ncsl.org/research/telecommunications-and-information-technology/data-security-laws.aspx">data-security-laws</a> (Private Sector), 
+   <a target="_blank" href="https://ncsl.org/research/telecommunications-and-information-technology/data-disposal-laws.aspx">data-disposal-laws</a>x,
+   <a target="_blank" href="https://ncsl.org/research/telecommunications-and-information-technology/security-breach-notification-laws.aspx">security-breach-notification-laws</a>.
 
 ### FIPS
 
-To comply with federal standards, organizations 
+FIPS 199 says federal organizations 
    1. determine the security category of their information system in accordance with FIPS (Federal Information Processing Standard) Publication 199, Standards for Security Categorization of Federal Information and Information Systems
    2. derive the information system impact level from the security category in accordance with FIPS Publication 200
    3. apply the appropriately tailored set of baseline security controls in NIST Special Publication 800-53 Rev. 4.
    <br /><br />
+
+Military classification: Unclassified, Controlled Unclassified (CUI), Confidential, Secret, Top-secret
 
 
 <a name="NIST"></a>
@@ -865,6 +908,10 @@ SP 800-139 framework implementation maturity tiers:
    * Tier 4: Adaptive means that the organization adapts its cybersecurity practices based on lessons learned and predictive indicators derived from previous and current cybersecurity activities through a process of continuous improvement.
    <br /><br />
 
+https://www.acq.osd.mil/cmmc/
+Cybersecurity Maturity Model Certification (CMMC) framework
+March 18, 2020   
+
 NIST SP 800-160 defines the systems security engineering framework. It defines, bounds, and focuses the systems security engineering activities, both technical and nontechnical, toward the achievement of stakeholder security objectives and presents a coherent, well-formed, evidence-based case that those objectives have been achieved.
 Contexts within which security activities are conducted according to NIST SP 800-160?
    * Problem context
@@ -889,6 +936,8 @@ FIPS 199 designations:
    <br /><br />
 
 U.S. federal agencies use the SBU (Sensitive But Unclassified) designation for information is not secret but still needs to be protected and requires strict controls over its distribution.
+
+<a target="_blank" href="http://ethics-wg.org/framework.htm">http://ethics-wg.org/framework.htm</a>
 
 "Do not appropriate other people’s intellectual output" is one of the Computer Ethics Institute (CEI) Ten Commandments of Computer Ethics, but is not part of the(ISC)2 code of ethics preamble.
 
@@ -949,6 +998,7 @@ Different periods for rotating different key types. Here is the "regular basis" 
 
 Book copyright in the US & UK is 70 years after death of author.
 
+
 ## Security Engineer
 
 Here are "Essential Job Functions" from various job descriptions:
@@ -985,7 +1035,11 @@ Education/Experience Requirements:
 * Ability to maintain focus and develop proficiency in new skills rapidly.
 * Ability to work in a fast paced environment.
 * In-depth knowledge of more than one Information Security principle and discipline.
+<br /><br />
 
+AICPA (American Institue of Certified Public Accountants) 
+SSAE18 (Statement on Standards for Attestation Agreement #18) 
+SOC (Service Organization Control) Reports are internal control reports on the services provied by a service organization.
 
 ## Glossary
 
@@ -997,6 +1051,10 @@ My Quizlet of Cyber Security Aconyms</a>
    * Procedures - step-by-step instructions
    * Guidelines - recommended actions to follow
    <br /><br />
+
+Privacy Threshold Assesssment - Used to identify PI and determine how to trat the data
+
+OCTAVE (Operationally Critical Threat, Asset, and Vulnerability Evaluation) developed at Carnegie Mellon SEI
 
 A threat is a potential harmful incident. weakness that can be exploited?
 
@@ -1312,6 +1370,8 @@ Documents:
    * A business impact analysis (BIA) is a functional analysis that lists the critical and necessary business functions, their resource dependencies, and their level of criticality to the overall organization. Risks. Minimum Operating Requirements (MOR)
    * The business continuity plan (BCP) "what" considers all aspects that are affected by a disaster, including functions, systems, personnel, and facilities, and lists and prioritizes the services that are needed. 
    * A contingency plan provides instruction on what personnel should do until the functions and systems are restored to full  functionality. 
+   * A CCP (Crisis Communication Plan)
+   * OEP (Occupant Emergency Plan)
    * A disaster recovery plan (DRP) "how" is implemented when the emergency occurs and includes the steps to restore functions and systems. Includes identification of specific hardware.
    <br /><br />
 
@@ -1325,10 +1385,13 @@ DRP lifecycle phases:
 System resilience is the ability of a system, device, or data center to recover quickly and continue operating after an equipment failure, power outage, or other disruption. It involves the use of redundant components or facilities.
 
 Metrics defined by BIA (Business Impact Assessment): REMEMBER MTD &LT;= RTO + WRT
-   * RPO (Recovery Point Objective) = Maximum tolerable <strong>data</strong> loss period
-   * RTO (Recovery Time Objective) = Recovery <strong>time</strong> to a defined service level
-   * WRT (Work Recovery Time) = Max. time to verify integrity of systems & data
-   * MTD (Maximum Tolerable Downtime) = Max. total time process can be disrupted
+   1. Identify Essential Services & Dependencies
+   2. Determine <strong>MTD</strong> (Maximum Tolerable Downtime) = Max. total time process can be disrupted
+   3. Determine <strong>RPO</strong> (Recovery Point Objective) = Maximum tolerable <strong>data</strong> loss period
+   4. Identify infrastructure and Dependencies
+   5. Determine current RPO & <strong>RTO</strong> (Recovery Time Objective) = Recovery <strong>time</strong> to a defined service level, including <strong>WRT</strong> (Work Recovery Time) = Max. time to verify integrity of systems & data
+   6. Gap Analysis
+   7. Report to management    
    <br /><br />
 
    <a target="_blank" href="https://www.youtube.com/watch?v=oAjNL3I_3-E&t=4m"><img alt="cyber-sec-bia-terms-581x239" width="581" src="https://user-images.githubusercontent.com/300046/104836718-0ac08200-586d-11eb-8ea9-c67720e58e4f.png"></a>
@@ -1345,8 +1408,6 @@ ACID properties:
    <br /><br />
 
 System owners are responsible for the systems on which data resides. While the data owner owns the data and the data custodian configures the appropriate permissions for user access to the data, the system owner must determine the parameters that govern the system, such as what types of data and applications can be stored on the system, who owns the data and applications, and who determined the users that can access the data and applications.
-
-Military classification: Unclassified, Controlled Unclassified (CUI), Confidential, Secret, Top-secret
 
 Commercial classification: 
 Data classification program:

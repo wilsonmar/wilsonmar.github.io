@@ -3,7 +3,7 @@ layout: post
 title: "Salesforce DX (Developer eXperience) deep dive"
 excerpt: "Begin to use Git and GitHub (DevHub) for software-driven (modular) continuous development"
 tags: [salesforce, git]
-date: "2018-08-08"
+date: "2021-02-02"
 file: "salesforce-dx"
 image:
 # feature: pic orange wm_mcnaughton_sunset_runner_1900x500.jpg
@@ -17,8 +17,9 @@ comments: true
 {% include _toc.html %}
 
 
-This is a step-by-step hands-on tutorial on using the Salesforce DX (Developer eXperience) for continuous testing and development. Succinct and without hype. PROTIPs here present wisdom and knowledge from experience unique to this site.
-Unlike Trailhead's instructions, this displays output from commands.
+This is a step-by-step hands-on tutorial on using the Salesforce DX (Developer eXperience) for continuous testing and development of Salesforce modules. 
+
+Succinct and without hype. PROTIPs here present wisdom and knowledge from experience unique to this site. Unlike Trailhead's instructions, this displays output from commands.
 
 PROTIP: SFDX was announced in 2015 and entered <a target="_blank" href="https://developer.salesforce.com/blogs/developer-relations/2017/06/introducing-salesforce-dx-open-beta.html">Open Beta June 2017</a>, available in all prod and business orgs.
 
@@ -73,10 +74,12 @@ The bottom line of all this is to reduce the "friction" that keep changes from o
 
 ## Enable Dev Hub in Production Org
 
-   ![sfdx-devhub-req-648x478-60179](https://user-images.githubusercontent.com/300046/43937840-613735c0-9c1d-11e8-9062-873ea87335b0.jpg)
+HISTORY: Initially, Developer Edition Orgs cannot be enabled as a "Dev Hub", when 
+Dev Hub can only be enabled on environments that have active paying users, such as Production or Business Orgs. See <a target="_blank" href="https://developer.salesforce.com/page/An_Introduction_to_Environments">Intro to Environments</a>.
 
-   PROTIP: Developer Edition Orgs cannot be enabled as a "Dev Hub". 
-   Dev Hub can only be enabled on environments that have active paying users, such as Production or Business Orgs. See <a target="_blank" href="https://developer.salesforce.com/page/An_Introduction_to_Environments">Intro to Environments</a>.
+<a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_setup_enable_devhub.htm">Now</a>: "You can't enable Dev Hub in a sandbox".
+
+   ![sfdx-devhub-req-648x478-60179](https://user-images.githubusercontent.com/300046/43937840-613735c0-9c1d-11e8-9062-873ea87335b0.jpg)
 
    <strong>BLAH: What that means is previously unlimited FREE Developer accounts will be limited to 30 days when working with scratch Orgs (which require Dev Hub to activate).</strong>
 
@@ -136,6 +139,7 @@ Change Set Development Model
 
 
 <a name="Git"></a>
+
 ### Git
 
 DX is enabled by the rapid and near ubiquitous adoption of <strong>Git</strong> to store text 
@@ -162,31 +166,61 @@ With Salesforce DX, a local project is tied to a repository. Each project contai
 
 In more complex orgs, you may find it necessary to have multiple related artifacts developed as part of the same project. This happens when sets of components and customizations depend on others.
 
-http://resources.docs.salesforce.com/rel1/doc/en-us/static/pdf/SF_Git_cheatsheet_web.pdf
-Git CheatSheet
+<a target="_blank" href="http://resources.docs.salesforce.com/rel1/doc/en-us/static/pdf/SF_Git_cheatsheet_web.pdf">Git CheatSheet PDF</a>
+
+<hr />
+
+## Install SFDX CLI on your laptop
+
+The below is based on <a target="_blank" href="https://developer.salesforce.com/tools/sfdxcli">https://developer.salesforce.com/tools/sfdxcli</a>
+
+1. Install Node
+
+1. Be at any folder because install is to these folders:
+
+   <pre>~/Library/Caches/sfdx  # contains version
+   </pre>
 
 
-## Install SFDX CLI
+1. PROTIP: There is "brew install sfdx", which installs to:
 
-See https://developer.salesforce.com/tools/sfdxcli
+   <pre>/usr/local/Caskroom/sfdx  # if brew was used
+/usr/local/bin/sfdx
+/usr/local/lib/sfdx
+/usr/local/lib/sfdx/bin/sfdx
+~/.config/sfdx
+~/.local/share/sfdx
+~/.cache/sfdx
+   </pre>
 
-1. SFDX CLI
-
-   PROTIP: There is "brew install sfdx". However:
+   However:
 
    <pre><strong>npm install --global sfdx-cli</strong></pre>
+
+   <pre>npm WARN deprecated @salesforce/plugin-analytics@1.12.1: This package has been deprecated in favor of https://www.npmjs.com/package/@salesforce/plugin-telemetry
+npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+npm WARN deprecated har-validator@5.1.5: this library is no longer supported
+npm WARN deprecated debug@4.1.1: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
+npm WARN deprecated request-promise-native@1.0.9: request-promise-native has been deprecated because it extends the now deprecated request package, see https://github.com/request/request/issues/3142
+/Users/wilson_mar/.npm-global/bin/sfdx -> /Users/wilson_mar/.npm-global/lib/node_modules/sfdx-cli/bin/run
++ sfdx-cli@7.82.1-0
+added 1136 packages from 679 contributors in 69.202s
+   </pre>
+
+   Note above the symbolic file and resolved folder where sfdx is installed.
 
 1. Verify version installed:
 
    <pre><strong>sfdx version</strong></pre>
 
-   <pre>
- ▸    sfdx-cli: update available from 6.26.0 to 6.27.0-24408b4625
-sfdx-cli/6.26.0 (darwin-x64) node-v10.7.0
+   <pre>sfdx-cli/7.82.1-0 darwin-x64 node-v14.6.0
    </pre>
 
+   Above that line can be<br />
+   <pre>▸    sfdx-cli: update available from 6.26.0 to 6.27.0-24408b4625</pre>
 
-   ### Update
+
+   ### Update install
 
 1. Before upddating SFDX, update node and npm.
 
@@ -194,8 +228,7 @@ sfdx-cli/6.26.0 (darwin-x64) node-v10.7.0
 
    <pre><strong>sfdx update</strong></pre>
 
-   <pre>
- ▸    Use "npm install --global sfdx-cli" to update npm-based installations.
+   <pre>▸    Use "npm install --global sfdx-cli" to update npm-based installations.
 sfdx-cli: Updating plugins... done
    </pre>
 
@@ -205,8 +238,7 @@ sfdx-cli: Updating plugins... done
 
    The response include warnings about deprecated packages and vulnerabilities.
 
-   <pre>
-/usr/local/bin/sfdx -> /usr/local/lib/node_modules/sfdx-cli/bin/run
+   <pre>/usr/local/bin/sfdx -> /usr/local/lib/node_modules/sfdx-cli/bin/run
 + sfdx-cli@6.44.0
 added 1315 packages in 57.348s
    </pre>
@@ -217,198 +249,218 @@ added 1315 packages in 57.348s
 
    <pre><strong>sfdx plugins --core</strong></pre>
 
-   <pre>
-@salesforce/plugin-generator 0.0.10 (core)
-@salesforce/sfdx-trust 1.0.8 (core)
-builtins 1.0.0 (core)
-salesforcedx 43.11.0 (core)
+   <pre>@oclif/plugin-autocomplete 0.1.5 (core)
+@oclif/plugin-commands 1.3.0 (core)
+@oclif/plugin-help 3.2.1 (core)
+@oclif/plugin-not-found 1.2.4 (core)
+@oclif/plugin-plugins 1.9.5 (core)
+@oclif/plugin-update 1.3.10 (core)
+@oclif/plugin-warn-if-update-available 1.7.0 (core)
+@oclif/plugin-which 1.0.3 (core)
+@salesforce/sfdx-trust 3.6.0 (core)
+alias 1.1.3 (core)
+analytics 1.12.1 (core)
+auth 1.4.7 (core)
+config 1.2.1 (core)
+generator 1.1.5 (core)
+salesforcedx 50.7.1 (core)
+├─ @salesforce/sfdx-plugin-lwc-test 0.1.7 (core)
+├─ templates 50.1.0 (core)
+├─ apex 0.1.4 (core)
+├─ salesforce-alm 50.7.1 (core)
+├─ schema 1.0.3 (core)
+└─ custom-metadata 1.0.10 (core)
+sfdx-cli 7.82.1-0 (core)
    </pre>
 
 1. Get a list of operations under the force topic:
 
    <pre><strong>sfdx force --help</strong></pre>
 
-   <pre>
-Usage: sfdx force: [-v] [--json] [--loglevel &LT;string>] [flags]
+   <pre>USAGE
+  $ sfdx force [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 &nbsp;
-Flags:
- -v, --version        display the Salesforce API version
- --json               format output as json
- --loglevel LOGLEVEL  logging level for this command invocation
-                      (error*,trace,debug,info,warn,fatal)
+OPTIONS
+  --json                                                                            format output as json
+  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for this command invocation
 &nbsp;
-Usage: sfdx force:COMMAND
-&nbsp;
-Help topics, type sfdx help TOPIC for more details:
-&nbsp;
- force:alias        manage username aliases
- force:apex         work with Apex code
- force:auth         authorize an org for use with the Salesforce CLI
- force:config       configure the Salesforce CLI
- force:data         manipulate records in your org
- force:doc          display help for force commands
- force:lightning    create and test Lightning component bundles
- force:limits       view your org’s limits
- force:mdapi        retrieve and deploy metadata using Metadata API
- force:org          manage your Salesforce DX orgs
- force:package      develop second-generation packages; install and uninstall first- and second-generation packages
- force:package1     develop first-generation managed and unmanaged packages
- force:project      set up a Salesforce DX project
- force:schema       view standard and custom objects
- force:source       sync your project with your orgs
- force:user         perform user-related admin tasks
- force:visualforce  create and edit Visualforce files
+TOPICS
+  force:analytics    work with analytics assets
+  force:apex         work with Apex code
+  force:auth         authorize an org for use with the Salesforce CLI
+  force:cmdt         create and update custom metadata types and their records
+  force:community    create and publish a community
+  force:data         manipulate records in your org
+  force:lightning    create Aura components and Lightning web components
+  force:limits       view your org’s limits
+  force:mdapi        retrieve and deploy metadata using Metadata API
+  force:org          manage your orgs
+  force:package      develop and install packages
+  force:package1     develop first-generation managed and unmanaged packages
+  force:project      set up a Salesforce DX project
+  force:schema       view standard and custom objects
+  force:source       sync your project with your orgs
+  force:user         perform user-related admin tasks
+  force:visualforce  create and edit Visualforce files  </pre>
    </pre>
 
 1. Get a list of all commands, including the verb:
 
    <pre><strong>sfdx force:doc:commands:list</strong></pre>
 
-   Expand the 
-
-   <pre>
+   <pre>WARNING: The command "DocListCommand" has been deprecated and will be removed in v49.0 or later. Use "sfdx commands" instead.
 === Commands
-  force:alias:list                    # list username aliases for the Salesforce CLI
-  force:alias:set                     # set username aliases for the Salesforce CLI
-  force:apex:class:create             # create an Apex class
-  force:apex:execute                  # execute anonymous Apex code
-  force:apex:log:get                  # fetch a debug log
-  force:apex:log:list                 # list debug logs
-  force:apex:log:tail                 # start debug logging and display logs
-  force:apex:test:report              # display test results
-  force:apex:test:run                 # invoke Apex tests
-  force:apex:trigger:create           # create an Apex trigger
-  force:auth:jwt:grant                # authorize an org using the JWT flow
-  force:auth:logout                   # log out from authorized orgs
-  force:auth:sfdxurl:store            # authorize an org using an SFDX auth URL
-  force:auth:web:login                # authorize an org using the web login flow
-  force:config:get                    # get config var values for given names
-  force:config:list                   # list config vars for the Salesforce CLI
-  force:config:set                    # set config vars for the Salesforce CLI
-  force:data:bulk:delete              # bulk delete records from a csv file
-  force:data:bulk:status              # view the status of a bulk data load job or batch
-  force:data:bulk:upsert              # bulk upsert records from a CSV file
-  force:data:record:create            # create a record
-  force:data:record:delete            # delete a record
-  force:data:record:get               # view a record
-  force:data:record:update            # update a record
-  force:data:soql:query               # execute a SOQL query
-  force:data:tree:export              # export data from an org into sObject tree format for force:data:tree:import consumption
-  force:data:tree:import              # import data into an org using SObject Tree Save API
-  force:doc:commands:display          # display help for force commands
-  force:doc:commands:list             # list the force commands
-  force:lightning:app:create          # create a Lightning app
-  force:lightning:component:create    # create a Lightning component
-  force:lightning:event:create        # create a Lightning event
-  force:lightning:interface:create    # create a Lightning interface
-  force:lightning:test:create         # create a Lightning test
-  force:lightning:test:install        # install Lightning Testing Service unmanaged package in your org
-  force:lightning:test:run            # invoke Lightning component tests
-  force:limits:api:display            # display current org’s limits
-  force:mdapi:convert                 # convert metadata from the Metadata API format into the Salesforce DX format
-  force:mdapi:deploy                  # deploy metadata to an org using Metadata API
-  force:mdapi:deploy:report           # check the status of a metadata deployment
-  force:mdapi:retrieve                # retrieve metadata from an org using Metadata API
-  force:mdapi:retrieve:report         # check the status of a metadata retrieval
-  force:org:create                    # create a scratch org
-  force:org:delete                    # mark a scratch org for deletion
-  force:org:display                   # get org description
-  force:org:list                      # list all orgs you’ve created or authenticated to
-  force:org:open                      # open an org in your browser
-  force:org:shape:create              # create a snapshot of org edition, features, and licenses
-  force:org:shape:delete              # delete all org shapes for a target org
-  force:org:shape:list                # list all org shapes you’ve created
-  force:package1:version:create       # create a first-generation package version in the release org
-  force:package1:version:create:get   # retrieve the status of a package version creation request
-  force:package1:version:display      # display details about a first-generation package version
-  force:package1:version:list         # list package versions for the specified first-generation package or for the org
-  force:package2:create               # (deprecated) create a second-generation package
-  force:package2:list                 # (deprecated) list all second-generation packages in the Dev Hub org
-  force:package2:update               # (deprecated) update a second-generation package
-  force:package2:version:create       # (deprecated) create a second-generation package version
-  force:package2:version:create:get   # (deprecated) retrieve a package version creation request
-  force:package2:version:create:list  # (deprecated) list package version creation requests
-  force:package2:version:get          # (deprecated) retrieve a package version in the Dev Hub org
-  force:package2:version:list         # (deprecated) list all package versions in the Dev Hub org
-  force:package2:version:update       # (deprecated) update a second-generation package version
-  force:package:create                # create a package
-  force:package:install               # install a package in the target org
-  force:package:install:get           # (deprecated) retrieve the status of a package installation request
-  force:package:install:report        # retrieve the status of a package installation request
-  force:package:installed:list        # list the org’s installed packages
-  force:package:list                  # list all packages in the Dev Hub org
-  force:package:uninstall             # uninstall a second-generation package from the target org
-  force:package:uninstall:get         # (deprecated) retrieve the status of a package uninstall request
-  force:package:uninstall:report      # retrieve status of package uninstall request
-  force:package:update                # update package details
-  force:package:version:create        # create a package version
-  force:package:version:create:list   # list package version creation requests
-  force:package:version:create:report # retrieve details about a package version creation request
-  force:package:version:list          # list all package versions in the Dev Hub org
-  force:package:version:promote       # promote a package version to released
-  force:package:version:report        # retrieve details about a package version in the Dev Hub org
-  force:package:version:update        # update a package version
-  force:project:create                # create a new SFDX project
-  force:project:upgrade               # update project config files to the latest format
-  force:schema:sobject:describe       # describe an object
-  force:schema:sobject:list           # list all objects of a specified category
-  force:source:convert                # convert Salesforce DX source into Metadata API format
-  force:source:open                   # edit a Lightning Page with Lightning App Builder
-  force:source:pull                   # pull source from the scratch org to the project
-  force:source:push                   # push source to an org from the project
-  force:source:status                 # list local changes and/or changes in a scratch org
-  force:user:create                   # create a user for a scratch org
-  force:user:display                  # displays information about a user of a scratch org
-  force:user:list                     # lists all users of a scratch org
-  force:user:password:generate        # generate a password for scratch org users
-  force:user:permset:assign           # assign a permission set to one or more users of an org
-  force:visualforce:component:create  # create a Visualforce component
-  force:visualforce:page:create       # create a Visualforce page
+  force:analytics:template:create       # add an Analytics template to your workspace
+  force:apex:class:create               # create an Apex class
+  force:apex:execute                    # executes anonymous Apex code
+  force:apex:log:get                    # fetch debug logs
+  force:apex:log:list                   # display a list of IDs and general information about debug logs
+  force:apex:log:tail                   # start debug logging and display logs
+  force:apex:test:report                # display test results
+  force:apex:test:run                   # invoke Apex tests
+  force:apex:trigger:create             # create an Apex trigger
+  force:auth:device:login               # authorize an org using a device code
+  force:auth:jwt:grant                  # authorize an org using the JWT flow
+  force:auth:list                       # list auth connection information
+  force:auth:logout                     # log out from authorized orgs
+  force:auth:sfdxurl:store              # authorize an org using an SFDX auth URL
+  force:auth:web:login                  # authorize an org using the web login flow
+  force:cmdt:create                     # creates a new custom metadata type in the current project
+  force:cmdt:field:create               # generate a custom metadata field based on the field type provided
+  force:cmdt:generate                   # generates a custom metadata type and all its records for the provided sObject
+  force:cmdt:record:create              # create a new record for a given custom metadata type in the current project
+  force:cmdt:record:insert              # create new custom metadata type records from a CSV file
+  force:community:create                # creates a community using a template
+  force:community:publish               # publishes a Lightning community to make it live
+  force:community:template:list         # retrieves the list of templates available in your org
+  force:data:bulk:delete                # bulk delete records from a csv file
+  force:data:bulk:status                # view the status of a bulk data load job or batch
+  force:data:bulk:upsert                # bulk upsert records from a CSV file
+  force:data:record:create              # create a record
+  force:data:record:delete              # delete a record
+  force:data:record:get                 # view a record
+  force:data:record:update              # update a record
+  force:data:soql:query                 # execute a SOQL query
+  force:data:tree:export                # export data from an org into sObject tree format for force:data:tree:import consumption
+  force:data:tree:import                # import data into an org using SObject Tree Save API
+  force:lightning:app:create            # create a Lightning app
+  force:lightning:component:create      # create a bundle for an Aura component or a Lightning web component
+  force:lightning:event:create          # create a Lightning event
+  force:lightning:interface:create      # create a Lightning interface
+  force:lightning:lint                  # analyze (lint) Aura component code
+  force:lightning:lwc:test:create       # creates a Lightning web component test file with boilerplate code inside a __tests__ directory.
+  force:lightning:lwc:test:run          # invokes Lightning Web Components Jest unit tests.
+  force:lightning:lwc:test:setup        # install Jest unit testing tools for Lightning Web Components.
+  force:lightning:test:create           # create a Lightning test
+  force:limits:api:display              # display current org’s limits
+  force:mdapi:convert                   # convert metadata from the Metadata API format into the source format
+  force:mdapi:deploy                    # deploy metadata to an org using Metadata API
+  force:mdapi:deploy:cancel             # cancel a metadata deployment
+  force:mdapi:deploy:report             # check the status of a metadata deployment
+  force:mdapi:describemetadata          # display the metadata types enabled for your org
+  force:mdapi:listmetadata              # display properties of metadata components of a specified type
+  force:mdapi:retrieve                  # retrieve metadata from an org using Metadata API
+  force:mdapi:retrieve:report           # check the status of a metadata retrieval
+  force:org:clone                       # clone a sandbox org
+  force:org:create                      # create a scratch or sandbox org
+  force:org:delete                      # mark a scratch or sandbox org for deletion
+  force:org:display                     # get org description
+  force:org:list                        # list all orgs you’ve created or authenticated to
+  force:org:open                        # open an org in your browser
+  force:org:shape:create                # Create a scratch org configuration (shape) based on the specified source org
+  force:org:shape:delete                # delete all org shapes for a target org
+  force:org:shape:list                  # list all org shapes you’ve created
+  force:org:snapshot:create             # snapshot a scratch org
+  force:org:snapshot:delete             # delete a scratch org snapshot
+  force:org:snapshot:get                # get details about a scratch org snapshot
+  force:org:snapshot:list               # list scratch org snapshots
+  force:org:status                      # report sandbox org creation status and authenticate to org
+  force:package1:version:create         # create a first-generation package version in the release org
+  force:package1:version:create:get     # retrieve the status of a package version creation request
+  force:package1:version:display        # display details about a first-generation package version
+  force:package1:version:list           # list package versions for the specified first-generation package or for the org
+  force:package:create                  # create a package
+  force:package:delete                  # delete a package
+  force:package:hammertest:list         # list the statuses of running and completed ISV Hammer tests
+  force:package:hammertest:report       # display the status or results of a ISV Hammer test
+  force:package:hammertest:run          # run ISV Hammer
+  force:package:install                 # install a package in the target org
+  force:package:install:report          # retrieve the status of a package installation request
+  force:package:installed:list          # list the org’s installed packages
+  force:package:list                    # list all packages in the Dev Hub org
+  force:package:uninstall               # uninstall a second-generation package from the target org
+  force:package:uninstall:report        # retrieve status of package uninstall request
+  force:package:update                  # update package details
+  force:package:version:create          # create a package version
+  force:package:version:create:list     # list package version creation requests
+  force:package:version:create:report   # retrieve details about a package version creation request
+  force:package:version:delete          # delete a package version
+  force:package:version:displayancestry # display the ancestry tree for a 2GP managed package version
+  force:package:version:list            # list all package versions in the Dev Hub org
+  force:package:version:promote         # promote a package version to released
+  force:package:version:report          # retrieve details about a package version in the Dev Hub org
+  force:package:version:update          # update a package version
+  force:project:create                  # create a Salesforce DX project
+  force:project:upgrade                 # update project config files to the latest format
+  force:schema:sobject:describe         # displays the metadata for a standard or custom object
+  force:schema:sobject:list             # list all objects of a specified category
+  force:source:convert                  # convert source into Metadata API format
+  force:source:delete                   # delete source from your project and from a non-source-tracked org
+  force:source:deploy                   # deploy source to an org
+  force:source:deploy:cancel            # cancel a source deployment
+  force:source:deploy:report            # check the status of a metadata deployment
+  force:source:open                     # edit a Lightning Page with Lightning App Builder
+  force:source:pull                     # pull source from the scratch org to the project
+  force:source:push                     # push source to a scratch org from the project
+  force:source:retrieve                 # retrieve source from an org
+  force:source:status                   # list local changes and/or changes in a scratch org
+  force:source:tracking:clear           # clear all local source tracking information
+  force:source:tracking:reset           # reset local and remote source tracking
+  force:user:create                     # create a user for a scratch org
+  force:user:display                    # displays information about a user of a scratch org
+  force:user:list                       # lists all users of a scratch org
+  force:user:password:generate          # generate a password for scratch org users
+  force:user:permset:assign             # assign a permission set to one or more users of an org
+  force:visualforce:component:create    # create a Visualforce component
+  force:visualforce:page:create         # create a Visualforce page
    </pre>
 
 1. Get a list of just org operations:
 
    <pre><strong>sfdx force:org --help</strong></pre>
 
-   <pre>
-Usage: sfdx force:org:COMMAND [command-specific-options]
+   <pre>manage your orgs
 &nbsp;
-manage your Salesforce DX orgs
+USAGE
+  $ sfdx force:org:COMMAND
 &nbsp;
-sfdx force:org commands: (get help with sfdx help force:org:COMMAND)
- force:org:create        create a scratch org
- force:org:delete        mark a scratch org for deletion
- force:org:display       get org description
- force:org:list          list all orgs you’ve created or authenticated to
- force:org:open          open an org in your browser
- force:org:shape:create  create a snapshot of org edition, features, and licenses
- force:org:shape:delete  delete all org shapes for a target org
- force:org:shape:list    list all org shapes you’ve created
+TOPICS
+  force:org:shape     manage org shape
+  force:org:snapshot  manage org snapshots
+&nbsp;
+COMMANDS
+  force:org:clone    clone a sandbox org
+  force:org:create   create a scratch or sandbox org
+  force:org:delete   mark a scratch or sandbox org for deletion
+  force:org:display  get org description
+  force:org:list     list all orgs you’ve created or authenticated to
+  force:org:open     open an org in your browser
+  force:org:status   report sandbox org creation status and authenticate to org
    </pre>
 
 
    ### Uninstall CLI
-
-1. Where installed:
-
-   <pre>
-/usr/local/Caskroom/sfdx
-/usr/local/bin/sfdx
-/usr/local/lib/sfdx
-/usr/local/lib/sfdx/bin/sfdx
-~/.config/sfdx
-~/.local/share/sfdx
-~/Library/Caches/sfdx
-~/.cache/sfdx
-   </pre>
 
 1. To uninstall:
 
    <pre><strong>sfdx plugins:uninstall salesforcedx</strong></pre>
 
 
-## Sample DX project
+<hr />
 
+<a name="SampleProject"></a>
+
+## Sample DX project
 
 On your local machine (laptop), perform these steps to obtain assets from GitHub to create a scratch org:
 
@@ -1007,7 +1059,13 @@ Others from Salesforce Developers on YouTube:
 Ruth Sears-Blazej (@ruth_sfdc_docs) write docs about SFDC.
 
 
-## Happy Trails
+## GitHub and Travis CI/CD Trailhead
+
+Trailhead project: <a target="_blank" href="https://trailhead.salesforce.com/content/learn/modules/sfdx_travis_ci/sfdx_travis_ci_setup">Get Set Up with GitHub and Travis Continuous Integration</a> [+50 points in 40 mins]
+Use the Salesforce command-line interface to create, convert, and deploy apps.
+
+
+## Quick Start Trailhead
 
 Trailhead project: <a target="_blank" href="https://trailhead.salesforce.com/projects/quick-start-salesforce-dx">Quick Start: Salesforce DX</a> [40 mins]
 Use the Salesforce command-line interface to create, convert, and deploy apps.

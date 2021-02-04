@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Python Tutorials"
-excerpt: "Learn to play with python"
+excerpt: "Who will teach you to code in python"
 tags: [python, apple, mac, setup]
-date: "2016-07-10"
+date: "2021-02-01"
 file: "python-tutorials"
 image:
 # pic white python logo 1900x500.jpg
@@ -24,6 +24,11 @@ Here are the classes I've seen that teach Python programming.
 is the official tutorial.
 
 <a target="_blank" href="https://docs.python.org/3/library/index.html">https://docs.python.org/3/library/index.html</a> is the official documentation.
+
+## Mind map
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/76685523-223e3700-65da-11ea-8177-925d3041ef99.png"><img alt="PythonFundamentalsCourse-MindMap-1.png" width="1066" height="719" src="https://user-images.githubusercontent.com/300046/76685523-223e3700-65da-11ea-8177-925d3041ef99.png"></a>
+from <a target="_blank" href="http://www.seleniumframework.com/python-course/">http://www.seleniumframework.com/python-course</a>
 
 
 ## Free Tutorials about Python
@@ -109,7 +114,7 @@ http://sthurlow.com/python/</a>
    Error Handling</a>
 
 
-### EDX.org
+### EDX.org & MIT
 
 <a target="_blank" href="https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-9">
 MIT's Introduction to Computer Science using Python course 600.1.X</a> Aug 10, 2016 (free or $75 certificate) makes use of Windows and MacOS/Linux. Its major topics:
@@ -330,10 +335,20 @@ A basic CS curriculum to teach high schoolers coding in Python. Developed by Goo
 <a target="_blank" href="https://github.com/google/mobly">https://github.com/google/mobly</a>
 a Python-based test framework that specializes in supporting test cases that require multiple devices, complex environments, or custom hardware setups.
 
-## Mind map
+## Secure coding
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/76685523-223e3700-65da-11ea-8177-925d3041ef99.png"><img alt="PythonFundamentalsCourse-MindMap-1.png" width="1066" height="719" src="https://user-images.githubusercontent.com/300046/76685523-223e3700-65da-11ea-8177-925d3041ef99.png"></a>
-From http://www.seleniumframework.com/python-course/
+CodeBashing.com from Checkmarx, developer of CxSAST, which scans for security vulnerabilities in code, start a tutorial at <a target="_blank" href="https://www.checkmarx.com/supported-coding-languages/python-security-vulnerabilities-and-language-overview/">https://www.checkmarx.com/supported-coding-languages/python-security-vulnerabilities-and-language-overview</a>
+are gamified lessons covering vulnerable coding and how to mitigate:
+
+   * <a target="_blank" href="https://free.codebashing.com/courses/python/lessons/sql_injection">SQL Injections (SQLi)</a>
+   * XSS (Cross Site Scripting)
+   * Cross Site Request Forgery,
+
+   * LDAP Injections
+   * Command Injections
+   * XPath Injections
+
+FreeCodeCamp.org
 
 
 ## Community

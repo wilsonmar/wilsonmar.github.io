@@ -158,7 +158,7 @@ Domain 14: Related Technologies
 
 ## ISC2.org
 
-ISC2.org (a non-profit), which published a Code of Ethics.
+ISC2.org (a non-profit), publishes a Code of Ethics at <a target="_blank" href="https://www.isc2.org/ethics">https://www.isc2.org/ethics</a>
 
 <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">Prices for exams</a> taken at Pearson Vue test centers:
 
@@ -616,7 +616,7 @@ See my notes at <a target="_blank" href="https://wilsonmar.github.io/aws-securit
 
 <a target="_blank" href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3VwUH">PDF</a>: Updated Jan 21, 2021 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-500">
-Microsoft's $160 AZ-500 Azure Security Technologies</a> Associate online exam for people who maintain security posture, identify and remediate vulnerabilities by using a variety of security tools, implemente threat protection, and respond to security incident escalations. Domains:
+Microsoft's $160 AZ-500 Azure Security Technologies</a> Associate online exam for people who maintain security posture, identify and remediate vulnerabilities by using a variety of security tools, implement threat protection, and respond to security incident escalations. Domains:
 
 1. Manage Identity and Access
 2. Implement Platform Protection
@@ -631,25 +631,45 @@ Peter Zerger (@pzerger)
 
    * <a target="_blank" href="https://aka.ms/MCRA/">PDF Map: Microsoft Azure Cybersecurity Reference Architecture</a>
 
-   * <a target="_blank" href="https://bit.ly/InsideAzure">Inside Azure (free book)
+   * <a target="_blank" href="https://bit.ly/InsideAzure">Inside Azure (free book)</a>
 
-   * <a target="_blank" href="https://lnkd.in/gyf9WBV">5 Tips and 3 Freebies for AZ-500 Prep
+   * <a target="_blank" href="https://lnkd.in/gyf9WBV">5 Tips and 3 Freebies for AZ-500 Prep</a>
 
-   * <a target="_blank" href="https://lnkd.in/g8Be3pY">Strategy for "How should I prepare for AZ-500 Exam?"
+   * <a target="_blank" href="https://lnkd.in/g8Be3pY">Strategy for "How should I prepare for AZ-500 Exam?"</a>
 
-   * <a target="_blank" href="https://lnkd.in/gBC_c8x">AZ-500 Exam Cram Series
+   * <a target="_blank" href="https://lnkd.in/gBC_c8x">AZ-500 Exam Cram Series</a>
 
-   * <a target="_blank" href="https://lnkd.in/gmg6dJu">AZ-500 Video Practice Exam Questions
+   * <a target="_blank" href="https://lnkd.in/gmg6dJu">AZ-500 Video Practice Exam Questions</a>
 
-   * https://cloudacademy.com/learning-paths/az-500-exam-preparation-microsoft-azure-security-technologies-650/
+<a target="_blank" href="https://cloudacademy.com/learning-paths/az-500-exam-preparation-microsoft-azure-security-technologies-650/">CloudAcademy.com</a> 16h video series by Thomas Mitchell
+
+Other videos:
+
+   * https://zimmergren.net/passing-az-500-microsoft-certified-azure-security-engineer-associate/
 
    * https://www.pluralsight.com/courses/microsoft-azure-incident-response-remediation
+
    * https://blog.ahasayen.com/az-500-azure-security-engineer-exam/
-   * https://zimmergren.net/passing-az-500-microsoft-certified-azure-security-engineer-associate/
+
+## Secure Coding
+
+CodeBashing.com from Checkmarx has gamified tutorials on identifying and mitgating vulnerabilities in code for many languages:
+<a target="_blank" href="https://free.codebashing.com/courses/hacking_headlines">Hacking Headlines</a>, 
+<a target="_blank" href="https://free.codebashing.com/courses/source_codes">Source Code (for each language)</a>:
+Android (Java), iOS, 
+C/C++, 
+<a target="_blank" href="https://free.codebashing.com/courses/dotnet">C# .NET</a>, .NET Backend, .NET Advanced,
+Go,
+<a target="_blank" href="https://free.codebashing.com/courses/java">Java</a>, Java Backend, Java Advanced, Scala
+NodeJS,
+PHP,
+Python Django,
+Ruby on Rails,
+
 
 ## References
 
-On Udemy: <a target="_blank" href="https://www.udemy.com/course/secure-product-lifecycle-101/">
+On Udemy: <a target="_blank" href="https://mckinsey.udemy.com/course/secure-product-lifecycle-101/">McK</a> <a target="_blank" href="https://www.udemy.com/course/secure-product-lifecycle-101/">
 Security Product Lifecycle 101</a> (SPLC) by Implementing Security. Voiced by an enthusiastic voice pro.
 References SAMM 2.0, OWASP Top 10.
 
@@ -658,6 +678,7 @@ References SAMM 2.0, OWASP Top 10.
 * <a target="_blank" href="https://www.beyond20.com/blog/best-cyber-security-certification-path-for-a-great-career/">
 
 Podcast: Evan Francen's Unsecurity
+
 
 ## More on Security #
 

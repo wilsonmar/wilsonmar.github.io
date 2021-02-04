@@ -375,6 +375,10 @@ An extention of this concept is to reference a file name that is actually reache
    Alternatively, you can right-click and hover your mouse over the "Send to" option and select "Desktop".
 
 
+### GitLab
+
+By contrast, https://docs.gitlab.com/ee/ci/secrets/index.html
+
 ### Sync from Dropbox #
 
 <a target="_blank" href="http://www.technorange.com/cloudlinker-direct-link-generator-for-dropboxgoogle-driveone-drive-copy-com/">
