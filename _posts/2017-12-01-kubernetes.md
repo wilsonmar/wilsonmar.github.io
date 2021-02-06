@@ -2054,12 +2054,13 @@ metadata:
 
 <a name="ArgoCD"></a>
 
-### ArgoCD
+### ArgoCD 
 
-Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
+Argo CD is a declarative, GitOps Continuous Delivery tool for Kubernetes.
 
 "GitOps" means ArgoCD monitors GitHub and applies changes of declarative yaml to K8s Controllers automatically:
 
+   * <a target="_blank" href="https://argoproj.github.io/argo-cd/operator-manual/architecture/">Architecture diagram</a>
    * <a target="_blank" href="https://argoproj.github.io/argo-cd/">argoproj.github.io/argo-cd</a> home page
    * <a target="_blank" href="https://www.youtube.com/watch?v=2WSJF7d8dUg&list=RDCMUCFe9-V_rN9nLqVNiI8Yof3w&index=2">Introduction to ArgoCD : Kubernetes DevOps CI/CD</a>
    * Open sourced at <a target="_blank" href="https://github.com/argoproj/argo-cd/">github.com/argoproj/argo-cd</a>
