@@ -54,6 +54,7 @@ The planned route of the <a target="_blank" href="https://www.history.com/topics
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/86551553-8fb40180-bf02-11ea-88f3-8b070e22aec6.png"><img width="1314" alt="map-freedom-ride" src="https://user-images.githubusercontent.com/300046/86551553-8fb40180-bf02-11ea-88f3-8b070e22aec6.png"></a>
 
 The ride stopped on May 14 in Anniston, Alabama when the bus was burnt by segregationists.
+Woolworth lunch counter in downtown Greensboro, NC is a <a target="_blank" href="https://www.sitinmovement.org/">museum</a>.
 
 > Do you have a roadtrip map? Send it to me and I'll post it here.
 
@@ -508,16 +509,23 @@ US Holocost Memorial Museum</a> 10-5:30 every day, but timed passes are necessar
 > <strong>North Carolina</strong>
 
 <ul>
-<li><a target="_blank" href="https://www.ackland.org/">Ackland Art Museum at the University of North Carolina</a>, Chapel Hill</li>
 <li><a target="_blank" href="https://ashevilleart.org/">Asheville Art Museum</a></li>
-<li><a target="_blank" href="https://www.camnc.org/">Contemporary Art Museum</a>, Raleigh</li>
+<li><a target="_blank" href="https://www.biltmore.com/our-story/">Biltmore Estate</a>, the largest privately-owned house in America, built by George Vanderbilt, Asheville</li> 
+<li>In Asheville, a McDonald's with a piano inside</li>
+
+<li><a target="_blank" href="https://www.ackland.org/">Ackland Art Museum at the University of North Carolina</a>, Chapel Hill</li>
 <li><a target="_blank" href="https://www.duke.edu/web/duma/">Duke University Museum of Art</a>, Durham</li>
+
 <li><a target="_blank" href="https://www.guilford.edu/original/libraryart/artgallery/Art.html">Guilford College Art Gallery</a>, Greensboro</li>
+
 <li><a target="_blank" href="https://www.hickorymuseumofart.org/">Hickory Museum of Art</a></li>
 <li><a target="_blank" href="https://www.mintmuseum.org/">Mint Museum of Art</a>, Charlotte</li>
+
 <li><a target="_blank" href="https://www.ncmoa.org/">North Carolina Museum of Art, Raleigh</a></li>
 <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="scripts/allr.pl?&c=c&search=11248"><font COLOR="#FF0000">Posters from this museum</font></a></li -->
+<li><a target="_blank" href="https://www.camnc.org/">Contemporary Art Museum</a>, Raleigh</li>
 <li><a target="_blank" href="https://www.ncsu.edu/gad/">North Carolina State University Gallery of Art and Design</a>, Raleigh</li>
+
 <li><a target="_blank" href="https://www.reynoldahouse.org/">Reynolda House Museum of American Art</a>, Winston-Salem</li>
 <li><a target="_blank" href="https://www.secca.org/">Southeastern Center for Contemporary Art (SECCA)</a>, Winston-Salem</li>
 <li><a target="_blank" href="https://www.wfu.edu/academics/art/main.htm">Wake Forest University Art Collections</a>, Winston-Salem</li>
