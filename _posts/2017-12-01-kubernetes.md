@@ -1031,13 +1031,21 @@ Instead of minikube, there's also K3s, Microk8s on Linux, Minishift.
 But let's start by installing minikube on your laptop.
 
 
+<a name="Kustomize"></a>
+
 ### Kustomize templating utility
 
-<a target="_blank" href="https://www.kustomize.io/">Kustomize.io</a> <tt>kustomize</tt> command creates customized raw, template-free YAML (overlay) files for multiple purposes (dev, prod). It leaves the base (original) YAML file untouched and usable as is. For example, dev would have <tt>replicas: 1</tt> while pro would have <tt>replicas: 5</tt>.
-
+<a target="_blank" href="https://www.kustomize.io/">Kustomize.io</a> provides a <tt>kustomize</tt> command to create customized raw, template-free YAML (overlay) files for multiple purposes (dev, prod). It leaves the base (original) YAML file untouched and usable as is. For example, dev would have <tt>replicas: 1</tt> while pro would have <tt>replicas: 5</tt>.
 References:
    * <a target="_blank" href="https://www.youtube.com/watch?v=5gsHYdiD6v8">VIDEO by The DevOps Guy</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=ASK6p2r-Yrk">VIDEO Kustomize Getting Started</a>
+   <br /><br />
+
+Some feel Kustomize doesn't provide enough flexibility in that it results in 15 different files for one application.
+
+Alternatives are Jsonnet and yq.
+<a target="_blank" href="https://blog.dev.proton.ai/infrastructure/2021/01/11/scaling-kubernetes-with-jsonnet-and-argocd.html">
+This article</a> concludes that Jsonnet templating's ability to "use variables, conditionals, functions, etc. to generate JSON, and feels more like writing JavaScript in some cases than writing a template at all. This ticked all our boxes: giving us the repeatability of a templating environment with the power of something closer to a programming language. We combine Jsonnet with <a href="#ArgoCD">ArgoCD</a> to scale our deployments across thousands of microservices."
 
 
 <a name="Minikube"></a>
@@ -2029,12 +2037,19 @@ metadata:
 
    The resulting file includes additional annotations.
 
+
+<a name="ArgoCD"></a>
+
 ### ArgoCD
 
-Beyond the test: GitOps: ArgoCD monitors GitHub and applies changes to K8s Controller.
+Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 
+"GitOps" means ArgoCD monitors GitHub and applies changes of declarative yaml to K8s Controllers automatically:
+
+   * <a target="_blank" href="https://argoproj.github.io/argo-cd/">argoproj.github.io/argo-cd</a> home page
    * <a target="_blank" href="https://www.youtube.com/watch?v=2WSJF7d8dUg&list=RDCMUCFe9-V_rN9nLqVNiI8Yof3w&index=2">Introduction to ArgoCD : Kubernetes DevOps CI/CD</a>
-
+   * Open sourced at <a target="_blank" href="https://github.com/argoproj/argo-cd/">github.com/argoproj/argo-cd</a>
+   <br /><br />
 
 ### kubectl run
 

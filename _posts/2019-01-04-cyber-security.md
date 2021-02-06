@@ -558,12 +558,13 @@ Such plans sequence work so that technical and organizational dependencies among
 1. Select "CIS_Apple_OSX_10.12_Benchmark" even if you have a more recent version.
 
    View the misc folder benchmarks.txt to see this list:
+
    * /benchmarks/CIS_Apple_OSX_10.12_Benchmark_v1.0.0.xml
    * /benchmarks/CIS_Google_Chrome_Benchmark_v1.3.0-xccdf.xml
    * /benchmarks/CIS_Microsoft_Windows_10_Enterprise_Release_1803_Benchmark_v1.5.0-xccdf.xml
    * /benchmarks/CIS_Ubuntu_Linux_18.04_LTS_Benchmark_v1.0.0-xccdf.xml
    <br /><br />
-   
+
 1. Click "Next".
 1. Selet Profile Level 1.
 1. Notice that the report goes to your user home folder, not your present Working Directory containing the program.
@@ -1440,14 +1441,24 @@ Hierarchical storage management (HSM) is type of backup management system that p
 Aspects of identity management whereby users are identified, authenticated, and authorized: 
 entities, attributes, credentials, and entitlements.
 
+Principles: Deter, Detect, Delay
+
+Default to lock: fail-secure
+
 CPTED (Crime prevention through environmental design): 
    * natural access control
    * natural territorials reinforcement
    * natural surveillance
+
+   * People protect territory they feel is their own
+   * People have a certain respect for the territory of others
+   * Intruders do not want to be seen
+   * Limiting access discourages intruders and/or marks them as intruders
    <br /><br />
 
-<a target="_blank" href="https://www.youtube.com/watch?v=_IfGEY4fo18">Trusted Computer System Evaluation Criteria (TCSEC)</a> 
-functionality at least once. Enhanced by EU in ITSEC to assurance every time:
+Perimeter of two lines: sterile zone
+
+<a target="_blank" href="https://www.youtube.com/watch?v=_IfGEY4fo18">Trusted Computer System Evaluation Criteria (TCSEC)</a> functionality at least once. Enhanced by EU in ITSEC to assurance every time:
    * F6 + E6 = A1 = Mathamatically Verified protection
    * F5 + E5 = B3 = Mandatory Protection (military) resistant to penetration attempts.
    * F4 + E4 = B2 = Structured Protection (military)
@@ -1510,14 +1521,17 @@ State machine models:
 Cryptographic key life cycle: 1. Creation 2. Initialization 3. Distribution 4. Activation 5. Inactivation 6. Termination
   PROTIP: Creation before Initialization; Activation after Distribution.
 
-Ciphers:
-   * Diffusion is the process of changing the location of plaintext within the ciphertext. 
-   * Confusion is the process of changing a key value during each round of encryption. 
-   * Transposition is the process of shuffling or reordering the plaintext to hide the original message. 
-   * Substitution is the process of exchanging one byte in a message for another.
+Cipher strategies:
+   * <strong>Substitution</strong> exchanges one byte in a message for another. The key is the shift pattern, as in the "Caesar cipher".
+   * <strong>Confusion</strong> substitutes <strong>values</strong> during each round of encryption, on the entire key. As in RC4 stream ciphers.
+
+   * <strong>Transposition</strong> shuffles or <strong>reorders</strong> plaintext to another place in the block. They key is the transposition code. Creates
+   * <strong>Diffusion</strong> changes the order/location of plaintext within the ciphertext through multiple rounds, for block ciphers. Dissipates redunancy such as "u" after "q".
+
+   * Key stretching to output an enhanced (stronger) key
    <br /><br />
 
-A <strong>salt</strong> is used to prevent precomputation attacks such as Rainbow Tables.
+A <strong>salt</strong> is used to prevent pre-computation attacks such as Rainbow Tables.
 A salt is a non-secret, random value that's used to ensure that the same plaintext will not consistently hash to the same output value; 
 
 A <strong>nonce</strong> ("number used once") is typically used to prevent replay attacks. 
@@ -1590,10 +1604,17 @@ Ciphers:
 * discrete logarithms ??  https://crypto.stanford.edu/pbc/notes/crypto/factoring.html
 
 REMEMBER Algorithms: https://competitions.cry.yp.to/aes.html
-   * MD5, SHA-1, SHA-256, RIPEMD-160 are hashing algorithms.
-   * El Gamal (slowest), AES, Twofish, Blowfish, Skipjack, DES, and 3DES are symmetric algorithms (same key for encrypt/decrypt, so one time)
-   * RSA, DSA, Elliptic Curve Cryptosystem (ECC), Diffie-Hellman key exchange, Knapsack are asymmetric
+
+Hashing digital signatures: MD5, NSA's SHA-1, SHA-256, 384, 512
+   * RIPEMD-160 (originally based on MD4)
+ 
+Symmetric algorithms (same key for encrypt/decrypt, so one time): El Gamal (slowest), AES, Twofish, Blowfish, Skipjack, DES, and 3DES
+
+Asymmetic (2 keys)
+   * ECC (Elliptic Curve Cryptosystem) is US govt. std asymmetric
+   * RSA is defacto commercial asymmetic algorithm
    * RSA, ECC support digital signatures and encryption. 
+   * DSA, Diffie-Hellman key exchange, Knapsack are asymmetric
 
    * DES uses a 64-bit block size. 56 bits.
    * IDEA provides a key size up to 128 bits.
@@ -1919,7 +1940,10 @@ High-Data-Rate Digital Subscriber Line (HDSL) can achieve 1.544 Mbps each way ov
 Secure HTTP (S-HTTP) encrypts only a single message. 
 Hypertext Transfer Protocol Secure (HTTPS) establishes a session using a digital certificate and encrypts an entire session. 
 Secure Electronic Transaction (SET) secures credit card transaction information over the Internet. 
-Implement Internet Protocol Security (IPsec) to protect data that is transmitted over a VPN. 
+
+Internet Protocol Security (IPsec) protects data transmitted over a VPN. HMAC (Hashed Message Authentication Code), used by TLS, includes a symmetric key to provie data integrity and data origin auth.
+
+In 2016, DROWN vulnerability (Decrypting RSA with Obsolete an d Weakened eNcryption) by taking advantage of backward compatibility to force insecure SSLv2 connection downgrade from TLS. So disable obsolete protocol downgrading.
 
 Implementing an IPS is more expensive than implementing an IDS.
    * IPS (intrusion prevention system) is a network device that detects a network intrusion and prevents the network intrusion.
@@ -1945,6 +1969,9 @@ DSL:
    * Asymmetric DSL (ADSL) provides faster download speed than upload speed. 
    * High Bit-Rate DSL (HDSL) offers speeds up to 1.544 Mbps over regular UTP cable. 
    * Very High Bit-Rate DSL (VDSL) is capable of supporting high-definition TV (HDTV) and VoIP.
+   <br /><br />
+
+DSA (Digital Signature Algorithm) - US standard
 
 ## Firewalls
 
@@ -1995,6 +2022,7 @@ A kernel proxy firewall is an example of a fifth generation firewall. It inspect
 
 * <a target="_blank" href="https://resources.infosecinstitute.com/topic/cissp-cryptography-mini-course/">CISSP Cyptography Mini Course</a>
 
+* <a target="_blank" href="https://roadtripnation.com/roadtrip/cybersecurity">RoadTripNation.com "Life Hackers" episode</a> on Cyber Security.
 
 ## Miscellaneous
 
