@@ -39,7 +39,7 @@ https://collaboration.opengroup.org/jericho/commandments_v1.2.pdf</a> define the
 <a target="_blank" href="https://aka.ms/MCRA/">Infographic in PowerPoint: Microsoft Azure Cybersecurity Reference Architecture</a>
 
 
-## Google?
+## Google Cloud?
 
 TBD
 
@@ -1671,9 +1671,12 @@ With public key infrastructure (PKI)
    * A trust anchor is a public key that verifies the certificate used in a digital signature. 
    <br /><br />
 
+CHAP (Challenge Auth Protocol) from Microsoft negotiates a 3-way handshake asymmetric algorithm to supports mutual auth. can randomly require re-auth. Based on username and password, so is vulnerable.
+
 RARP (Reverse Address Resolution Protocol) when communicating for the first time to find the IP address matching the MAC.
 
 OCSP (Online Certificate Status Protocol) is the Internet protocol that obtains the revocation status of an X.509 digital certificate. A certificate revocation list (CRL) contains a list of all the certificates that have been revoked. 
+Pinned.
 
 Key clustering occurs when different encryption keys generate the same ciphertext from the same plaintext message. 
 Cryptanalysis is the science of decrypting ciphertext without prior knowledge of the key or cryptosystem used. 
@@ -1943,7 +1946,9 @@ Secure Electronic Transaction (SET) secures credit card transaction information 
 
 Internet Protocol Security (IPsec) protects data transmitted over a VPN. HMAC (Hashed Message Authentication Code), used by TLS, includes a symmetric key to provie data integrity and data origin auth.
 
-In 2016, DROWN vulnerability (Decrypting RSA with Obsolete an d Weakened eNcryption) by taking advantage of backward compatibility to force insecure SSLv2 connection downgrade from TLS. So disable obsolete protocol downgrading.
+TLS 1.3 server cert. is encrypted when sent to client, which hides the name of the server.
+
+In 2016, DROWN vulnerability (Decrypting RSA with Obsolete and Weakened eNcryption) by taking advantage of backward compatibility to force insecure SSLv2 connection downgrade from TLS. So disable obsolete protocol downgrading.
 
 Implementing an IPS is more expensive than implementing an IDS.
    * IPS (intrusion prevention system) is a network device that detects a network intrusion and prevents the network intrusion.

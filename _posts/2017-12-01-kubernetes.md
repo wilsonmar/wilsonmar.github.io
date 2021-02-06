@@ -1041,13 +1041,25 @@ References:
    * <a target="_blank" href="https://www.youtube.com/watch?v=ASK6p2r-Yrk">VIDEO Kustomize Getting Started</a>
    <br /><br />
 
-Some feel Kustomize doesn't provide enough flexibility and that it results in 15 different files for one application.
+Some feel Kustomize doesn't provide enough flexibility and that it results in too many different files for one application.
 
-Alternatives are yq and Jsonnet (at <a target="_blank" href="https://jsonnet.org/">jsonnet.org</a> at <a target="_blank" href="https://github.com/google/jsonnet">github.com/google/jsonnet</a>).
+Alternatives are yq and Jsonnet.
+
+<a name="Jsonnet"></a>
+
+### Jsonnet
+
+Jsonnet (pronounced "jay sonnet") at <a target="_blank" href="https://jsonnet.org/">jsonnet.org</a> (from a 20% project within Google) is a DSL templating language which can generate .json, .conf, .sh, and .ini files. Its Creative Commons-licensed C++ code  is at <a target="_blank" href="https://github.com/google/jsonnet">github.com/google/jsonnet</a>. 
+
+A faster <a target="_blank" href="https://github.com/google/go-jsonnet">go-jasonnet</a> is written in <a target="_blank" href="https://wilsonmar.github.io/golang">Go language</a> and built using Bazel. There's also <a target="_blank" href="https://www.newtonsoft.com/json">Json.NET</a>.
+
+<a target="_blank" href="https://blog.dev.proton.ai/infrastructure/2021/01/11/scaling-kubernetes-with-jsonnet-and-argocd.html">Sample code in this article</a> shows how Jsonnet templating's ability to extends JSON to "use variables, conditionals, functions, etc. to generate JSON, and feels more like writing JavaScript in some cases than writing a template."
 
 <img alt="cyber-jsonnet.venn.svg" src="../images/cyber-jsonnet.venn.svg">
 
-<a target="_blank" href="https://blog.dev.proton.ai/infrastructure/2021/01/11/scaling-kubernetes-with-jsonnet-and-argocd.html">This article</a> concludes that Jsonnet templating's ability to "use variables, conditionals, functions, etc. to generate JSON, and feels more like writing JavaScript in some cases than writing a template. This ticked all our boxes: giving us the repeatability of a templating environment with the power of something closer to a programming language. We combine Jsonnet with <a href="#ArgoCD">ArgoCD</a> to scale our deployments across thousands of microservices."
+"This ticked all our boxes: giving us the repeatability of a templating environment with the power of something closer to a programming language."
+
+"We combine Jsonnet with <a href="#ArgoCD">ArgoCD</a> to scale our deployments across thousands of microservices."
 
 
 <a name="Minikube"></a>
