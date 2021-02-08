@@ -1143,7 +1143,9 @@ Attacks: - incidents that violate an organization’s security or privacy polici
    * REMEMBER: A <strong>land attack</strong> sends a spoofed TCP SYN packet with the target host’s IP address and an open port as both the source and the destination to the target host on an open port.
    * Network address hijacking reroutes data traffic from a network device to a personal computer. 
    * A ping of death attack floods target computers with oversized packets, causing the target computer to either freeze or crash.
-   * In SMTP relay attacks outbound mail folders fill up with spam relayed through your email server. 
+   * In SMTP relay attacks outbound mail folders fill up with spam relayed through your email server.
+   * A salami attack is when small changes to data are made over time.
+   * Data diddling is when changes to data are made before and after an attack.
    <br /><br />
 
 Attacks to data and databases <a target="_blank" href="https://www.youtube.com/watch?v=YqFhKlzAABE&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR&index=27">VIDEO</a>
@@ -1606,7 +1608,7 @@ Ciphers:
 REMEMBER Algorithms: https://competitions.cry.yp.to/aes.html
 
 Hashing digital signatures: MD5, NSA's SHA-1, SHA-256, 384, 512
-   * RIPEMD-160 (originally based on MD4)
+   * RIPEMD-160 (originally based on MD4, now obsoleted)
  
 Symmetric algorithms (same key for encrypt/decrypt, so one time): El Gamal (slowest), AES, Twofish, Blowfish, Skipjack, DES, and 3DES
 
@@ -1644,8 +1646,14 @@ Asymmetic (2 keys)
    * Block ciphers are generally less susceptible to security issues.
    * Block ciphers are generally used more in software implementations.
 
-Block cipher modes use IVs to ensure that patterns are not produced during encryption. But IVs are not modes. 
-Modes used by block ciphers: Electronic Code Book (ECB), Cipher Block Chaining (CBC), Cipher Feedback (CFB), and Counter Mode (CTR).
+Block symmetric cipher modes use IVs to ensure that patterns are not produced during encryption. But IVs are not modes. 
+Modes used by block ciphers: 
+   * ECB (Electronic Code Book) has no relationship with other blocks
+   * CBC (Cipher Block Chaining) can have pipeline stalls
+   * CFB (Cipher FeedBack) 
+   * CTR (CounTeR Mode) turns into a string cipher
+   * GCM (Galois field/Counter Mode) parallel 128 bits https://www.wikiwand.com/en/Galois/Counter_Mode
+   <br /><br />
 
 NSA Clipper chip uses Skipjack
 
@@ -1672,6 +1680,9 @@ With public key infrastructure (PKI)
    <br /><br />
 
 CHAP (Challenge Auth Protocol) from Microsoft negotiates a 3-way handshake asymmetric algorithm to supports mutual auth. can randomly require re-auth. Based on username and password, so is vulnerable.
+
+FHRP (First Hop Redundancy Protocol) for shared IP routing redundancy
+VRRP group
 
 RARP (Reverse Address Resolution Protocol) when communicating for the first time to find the IP address matching the MAC.
 
@@ -1706,24 +1717,36 @@ Confinement is a term used to describe processes in a system. When a process is 
 
 The bounds of a process set limits on the memory addresses and resources the process can access. The bounds logically segment memory areas for each process to use.
 
-PAT (Port Address Translation) maps ports.
+PAT (Port Address Translation) maps ports.:
    * 0 - 1023 = well-know ports
    * 1024 - 49141 = registered ports (1433 for MS SQL, 1431 for Oracle SQL)
    * 49152 - 54535 = dynamic ports
    <br /><br />
 
-Ports: REMEMBER
-   * 21 = FTP
-   * 22 = SSH (Secure Shell)
-   * 25 = SMTP (Simple Mail Transfer Protocol)
-   * 3389 = RDP (Remote Desktop Protocol)
-   * 137, 138, 139 = NETBios
-   * 53 = DNS (Domain Name System) lookups
-   * 110 = POP (post Office Protocol)
-   * 143 = IMAP (Internet Message Access Protocol)
+TCP Ports: REMEMBER
    * 80 = HTTP
    * 443 = HTTPS (Secure, encrypted)
-   * ICMP Pings
+   * 21 or 990 = FTP and FTPS which adds SSL & TLS to encrypt
+   * 22 = SSH (Secure Shell) used by SFTP
+   * 3389 = RDP (Remote Desktop Protocol) from Microsoft
+
+   * 25 = SMTP (Simple Mail Transfer Protocol)
+   * 110 = POP (post Office Protocol) clear text auth.
+   * 143 = IMAP (Internet Message Access Protocol) files remain on server
+   * 995 = Secure POP3 supports SSL/TLS
+   * 993 = Secure IMAP supports SSL/TLS
+
+   * 137, 138, 139 = NETBios
+   * 53 = DNS (Domain Name System) lookups
+   * No port for ICMP RFC 792 Pings RFC 1122 as it's in IP transport layer
+   <br /><br />
+
+IP header protocol field REMEMBER 
+   * 1 = ICMP (Internet Control Message Protocol)
+   * 2 = IGMP (Internet Group Management Protocol)
+   * 6 = TCP (Transmission Control Protocol) 
+   * 17 = UDP (User Datagram Protocol) used by VOIP
+   * 115 = L2TP (Layer 2)
    <br /><br />
 
 IDS (Intrusion Detection System)
@@ -1834,6 +1857,9 @@ MFA types:
 A password and pin combo includes only a single knowledge authentication factor type, so is not 2FA.
 
 A capability table lists the access rights that a particular subject has to objects.
+
+PIV (Personal Identity Verification) card, call "CAC" card by the US military. https://piv.idmanagement.gov/
+Derived PIV credentials stored securely on mobile device in a TPM.
 
 
 ## Type 2 Have Smart Cards
@@ -1961,14 +1987,6 @@ Network access control (NAC) ensures that the computers on the network meet an o
 Frame Relay and X.25 are packet-switched technologies. 
 
 
-IP header protocol field REMEMBER 
-   * 1 = ICMP (Internet Control Message Protocol)
-   * 2 = IGMP (Internet Group Management Protocol)
-   * 6 = TCP (Transmission Control Protocol) 
-   * 17 = UDP (User Datagram Protocol) used by VOIP
-   * 115 = L2TP (Layer 2)
-   <br /><br />
-
 DSL:
    * Symmetric DSL (SDSL), data travels in both directions at the same rate. 
    * Asymmetric DSL (ADSL) provides faster download speed than upload speed. 
@@ -1989,6 +2007,11 @@ A kernel proxy firewall is an example of a fifth generation firewall. It inspect
 * BA packet-filtering firewall forwards packets based on rules that define which traffic is permitted and denied on the network.
 * A bastion host is a hardened system that usually resides on a demilitarized zone (DMZ) and is accessed frequently.
 
+## Metrics
+
+https://www.infosecurity-magazine.com/webinars/top5-datasecurity-metrics/
+The Top Five Security Metrics
+
 
 <hr />
 
@@ -2001,17 +2024,24 @@ A kernel proxy firewall is an example of a fifth generation firewall. It inspect
 
 * Purdue University's <a target="_blank" href="https://www.cerias.purdue.edu/">CERIAS (Center for Eduation and Research in Information Assurance and Security)</a> weekly, <a target="_blank" href="https://www.youtube.com/user/ceriaspurdue">YOUTUBE channel</a> 
 
-* <a target="_blank" href="https://krebsonsecurity.com/">(Brian) Krebs on Security</a>
-
 * <a target="_blank" href="https://nakedsecurity.sophos.com/">Naked Security by Sophos</a> (<a target="_blank" href="https://twitter.com/nakedsecurity">@nakedsecurity</a>) <a target="_blank" href="https://nakedsecurity.sophos.com/category/audio-and-video/podcast/">PODCAST</a> weekly since April 2010 by Product Evangelist Tony Ross.
+
+* <a target="_blank" href="https://krebsonsecurity.com/">(Brian) Krebs on Security</a> is an investigative report.
+
+* <a target="_blank" href="https://www.schneier.com/blog/">Schneier.com Blog</a> (@schneierblog)
+
+* <a target="_blank" href="https://www.grahamcluley.com/">GrahamCluley.com</a> (@gcluley)<br />
+   <a target="_blank" href="https://smashingsecurity.com/listen/">SmashingSecurity podcast</a>
+
+* <a target="_blank" href="https://www.infosecurity-magazine.com/">Information Security magazine</a> (@InfosecurityMag)
+
+* <a target="_blank" href="https://www.wired.com/category/security/">Wired magazine Security articles</a> had Christopher Krebs of Krebs-Stamos Group, was first Director of Cybersecurity at the Department of Homeland Security (fired by Trump), discusses the real threats to voting, from disinformation to intimidation to foreign interference.
 
 * <a target="_blank" href="https://www.wired.com/category/threatlevel/">Wired magazine Threat Level</a>
 
 * <a target="_blank" href="https://www.darkreading.com/">Dark Reading</a> news website
 
 * <a target="_blank" href="https://threatpost.com/">Threatpost</a> news website
-
-* <a target="_blank" href="https://www.infosecurity-magazine.com/">Information Security magazine</a>
 
 * <a target="_blank" href="https://www.brakeingsecurity.com/">PODCAST: Brakeing Down Security</a> (<a target="_blank" href="https://twitter.com/brakesec?lang=en">@brakesec</a>)
 

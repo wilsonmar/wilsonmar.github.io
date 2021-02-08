@@ -29,7 +29,7 @@ Journeys on water as she flows:
 Journeys on land:
 
    * <a href="#WestwardVermont"> Westward from Vermont to Kentucky</a>
-   * <a href="#NorthernMiddleAmerica">Westward through Northern Middle America</a>
+   * <a href="#NorthernMiddleAmerica">Westward through Northern states</a>
    * <a href="#Southwestward"> Westward through the Southwest</a>
 
 BTW, finding where each site is located was a great geography lesson for me.
@@ -1257,15 +1257,15 @@ Ronald Reagan Presidential Library and Museum</a>, Simi Valley</li>
 
 <a name="NorthernMiddleAmerica"></a>
 
-## Westward through Northern Middle America
+## Westward through Northern states
 
-To go from New York City to Seattle it would take at least 42 hours to cross 11 states, traveling 2,852-miles on Interstates 80 and 90.
+To go from New York City to Seattle, it would take at least 42 hours to cross 11 states, traveling 2,852-miles on Interstates 80 and 90.
 
 Historically, there are names for wagon trains traveling through the Northern United States:
 
 <a name="LewisAndClark"></a>
 
-### Lewis and Clark Trail Westward
+### Lewis and Clark Trail Westward Ho
 
 The <a target="_blank" href="https://lewisandclark.org/wiki/index.php?title=Main_Page">Lewis and Clark Trail</a>
 today is a set of hiking trails that commemorates the Lewis and Clark Expedition of 1804 to 1806.
@@ -1426,7 +1426,7 @@ It then goes through Boise, Idaho to Portland, Oregon. The map of it in 1907:
 
 <ul>
 <li><a target="_blank" href="https://www.holtermuseum.org/">Holter Museum of Art</a>, Helena</li>
-<li><a target="_blank" href="https://www.nps.gov/glac/">Glacier National Park</a></li>
+<li><a target="_blank" href="https://www.nps.gov/glac/">Glacier National Park</a> "Crown of the Continent"</li>
 <li><a target="_blank" href="https://www.cmrussell.org/">C.M. Russell Museum</a>, Great Falls</li>
 <li><a target="_blank" href="https://www.artmissoula.org/">Art Museum of Missoula</a></li>
 <li><a target="_blank" href="https://www.umt.edu/partv/famus/">University of Montana Museum of Fine Arts</a>, Missoula</li>
@@ -1436,6 +1436,7 @@ It then goes through Boise, Idaho to Portland, Oregon. The map of it in 1907:
 <li><a target="_blank" href="https://www.tippetrise.org/">Tippet Rise Art Center</a>, near Bozeman</li>
 
 <li><a target="_blank" href="https://yellowstone.artmuseum.org/">Yellowstone Art Museum</a>, Billings</li>
+<li>The only known markings by the <a href="#LewisAndClark">Lewis and Clark Corp</a>, Billings</li>
 </ul>
 
 
@@ -1622,8 +1623,10 @@ Lyndon Baines Johnson Presidential Library and Museum</a>, Austin</li>
 <ul>
 <li><a target="_blank" href="https://www.byu.edu/moa/">Brigham Young University Museum of Art</a>, Provo</li>
 <li><a target="_blank" href="https://www.sma.nebo.edu/">Springville Museum of Art</a></li>
-<li> Salt Lake City: The Museum of Church History and Art</li>
+
+<li> The Museum of (Mormon) Church History and Art, Salt Lake City</li>
 <li><a target="_blank" href="https://www.umfa.utah.edu/">Utah Museum of Fine Arts at the University of Utah</a>, Salt Lake City</li>
+
 <li><a target="_blank" href="https://www.suu.edu/museums/">Braithwaite Arts Gallery at Southern Utah University</a>, Cedar City</li>
 </ul>
 
@@ -1633,8 +1636,8 @@ Lyndon Baines Johnson Presidential Library and Museum</a>, Austin</li>
 > <strong> Arizona</strong>
 
 <ul>
-
-<li type="disc"><a target="_blank" href="https://www.nps.gov/grca/">El Tovar Hotel</a>, Grand Canyon Village</li>
+<li><a target="_blank" href="https://www.grandcanyonlodges.com/lodging/el-tovar-hotel/">El Tovar Hotel</a> on the North Rim has a formal dress code!</li>
+<li type="disc"><a target="_blank" href="https://www.nps.gov/grca/">Grand Canyon Village</a></li>
 <li><a target="_blank" href="https://asuartmuseum.asu.edu/">Arizona State University Art Museum</a>, Tempe</li>
 <li><a target="_blank" href="https://dizzy.library.arizona.edu/branches/ccp/ccphome.html">Center for Creative Photography at the University of Arizona</a>, Tuscon</li>
 <li><a target="_blank" href="https://westernmuseum.org/">Desert Caballeros Western Museum</a>, Wickenburg</li>

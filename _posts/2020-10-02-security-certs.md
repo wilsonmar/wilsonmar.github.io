@@ -228,6 +228,8 @@ Video prep courses view:
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=4esHgEOmTqU&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR">YouTube playlist on CISSP FREE</a> by "Skillset" provides a good overview, but it's from 2016.
 
+   * <a target="_blank" href="https://learning.oreilly.com/videos/cissp-second-edition/9780135180488">OReilly LiveSessions CISSP</a> by Sari Greene (<a target="_blank" href="https://www.sarigreene.com/">sarigreene.com</a>) I think is indeed the most thorough (deep dive) of all video courses I've viewed. 26 hours. A quize of terms at the end of each video. It's from 2018 though.
+
    * <a target="_blank" href="https://cloudacademy.com/learning-paths/preparation-for-the-cissp-certification-640/">CloudAcademy.com "CISSP Prep."</a> [subscription] has a timed (40 minute) Knowledge Check of about 20 questions for each domain, available on mobile phones.
 
    * <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">Pearson CSSLP practice test provides questions. The <a target="_blank" href="https://pearsontestprep.com/#/examsettings">PearsonTestPrep.com</a> software enables display of individual domains from all 4 tests at once, showing only questions you missed before. Explanations are given as to why each response is correct or not.
@@ -262,8 +264,6 @@ Video prep courses view:
    https://quizlet.com/343215416/csslp-exam-guide-flash-cards/
 
    * <a target="_blank" href="https://app.pluralsight.com/paths/certificate/certified-secure-software-lifecycle-professional-csslpr">Pluralsight video courses</a> by Kevin Henry (kevinmhenry at msn) is from 2017 and is too high general for me.
-
-   * <a target="_blank" href="#">OReilly LiveSessions</a> by Sari Greene (sarigreene.com)
 
    * On Udemy <a target="_blank" href="https://mckinsey.udemy.com/course/cissp-certification-practice-exam-1/learn/quiz/4377650#overview">McK</a> <a target="_blank" href="https://www.udemy.com/user/thorpedersen/​">Thor Pederson courses</a> and <a target="_blank" href="https://www.udemy.com/course/cissp-certification-practice-exam-1/">3 sets of 125 questions in 3 hours</a>. Has a Facebook Groups to join: <a target="_blank" href="https://www.facebook.com/groups/ThorTeaches">ThorTeaches</a>
 
