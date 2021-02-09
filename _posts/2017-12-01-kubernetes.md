@@ -3598,6 +3598,10 @@ Otherwise it'll prevent other Pods from being created.
 
 More fine grained/dynamic policies can be defined by third-party add-on <a target="_blank" href="https://www.styra.com/">Styra</a> for K8s, which is a use case for Styra's more generic OPA (Open Policy Agent) policy language which decouples a policy model from app code. Since OPA API works for many products and services it provides a unified toolset and framework for policy enforcement across the cloud native stack.
 
+This is similar to what Terraform Enterprise provides.
+
+In the future, policies can be generated from AI/ML model processing, perhaps dynamically.
+
 
 <a name="ClusterRoles"></a>
 
