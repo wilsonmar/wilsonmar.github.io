@@ -234,8 +234,6 @@ Video prep courses view:
 
    * <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">Pearson CSSLP practice test provides questions. The <a target="_blank" href="https://pearsontestprep.com/#/examsettings">PearsonTestPrep.com</a> software enables display of individual domains from all 4 tests at once, showing only questions you missed before. Explanations are given as to why each response is correct or not.
 
-   * <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CCSP">CCSP (Certified Cloud Security Professional)</a>
-
    * <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CSSLP">CSSLP (Certified Secure Software Lifecycle Professional)</a> is the secure <strong>software development</strong> certification. The 15 Sep 2020 edition is NOT covered in the <a target="_blank" href="https://learning.oreilly.com/library/view/csslp-certification-all-in-one/9781260441697/">All-in-One book</a> by Wm. Arthur Conklin, Daniel Paul Shoemaker. 
 
    <a target="_blank" href="https://www.linkedin.com/in/slandail?trk=lil_course">Jerod Brennen</a> created video courses (on LinkedIn Learning) for each domain:
@@ -347,6 +345,12 @@ Suggestions:
    Ignore the Orange Book</a>. Focus on 15408 Common Criteria on how to build computers based on Bella-Padua. 
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=tjOjjXVPQeU">Graph your progress</a> from <a target="_blank" href="https://www.sageknowsit.com/">sageknowsit.com</a>
+
+### CCSP
+
+<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CCSP">CCSP (Certified Cloud Security Professional)</a>
+
+   * <a target="_blank" href="https://www.linkedin.com/learning/ccsp-cert-prep-4-cloud-application-security-audio-review/">LinkedIn audio review course</a> with practice questions. By Mike Chapple
 
 
 ## ISACA.org

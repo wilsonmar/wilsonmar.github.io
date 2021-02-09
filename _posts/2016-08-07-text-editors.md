@@ -3,7 +3,7 @@ layout: post
 title: "Text Editors (on the Mac)"
 excerpt: "nano, pico, vim, subl, code, atom, Eclipse, IntelliJ, Visual Studio, Cloud9, etc."
 tags: [apple, mac, setup]
-date: "2021-01-27"
+date: "2021-02-09"
 file: "text-editors"
 image:
 # feature: pic RichTextEditorToolBar 1900x500.jpg
@@ -66,12 +66,19 @@ Licensed IDEs:
 
 On-line (SaaS) browser-based subscriptions avoids need for setup and makes collaboration easier:
 
-   * <a target="_blank" href="https://www.gitpod.io/">gitpod.io</a> is a Chrome add-on which replaces the green "Clone or download" button with their "Gitpod" button to an on-line IDE in the cloud and automation.
-
    * <a href="#Cloud9">Cloud9 from Amazon</a> runs in an EC2 instance to provide a debugger and terminal to various dev enviornments for AWS Lambda serverless, CodeStar, CodeBuild, CodePipeline, etc.
 
+   * <a target="_blank" href="https://www.gitpod.io/">gitpod.io</a> is a Chrome add-on which replaces the green "Clone or download" button with their "Gitpod" button to an on-line IDE in the cloud and automation.
 
+   * <a target="_blank" href="">SnapLogic</a>
+   <br /><br />
 
+Not for MacOS (Windows or Linux only):
+
+   * <a href="#Lite">Lite</a>
+   * Notepad++
+
+   
 <hr />
 
 <a name="Features"></a>
@@ -1711,6 +1718,23 @@ BTW, additional tutorials on .NET Core Razor:
    * <a target="_blank" href="https://www.youtube.com/watch?v=--lYHxrsLsc">VIDEO: ASP.NET CORE for Beginners - an 8 Hour Workshop</a> Apr 15, 2018 by Jeffrey T. Fritz and guests Jon Galloway, Julie Lerman (@JulieLerman), and Shayne Boyer (@spboyer). They create a travel app, starting from the API.
 
 <hr />
+
+<a name="Lite"></a>
+
+## Lite
+
+https://github.com/rxi/lite is currently only for Windows and Linux.
+
+Lite is a lightweight modern code editor written in the Lua programming language. 
+In 2019.
+
+The base editor is just a simple text box. Plugins written in Lua provide additional functionality.
+
+Lite takes less than 1-megabyte space of disk. VSCode takes more than 200 megabytes.
+
+Lite takes 20 megabytes of memory while VSCode takes 1.2 GB to do the same job.
+
+Lite is faster than VSCode becuase it’s not a hybrid application. Lite uses C and SDL graphics library to render GUI elements of the application. So there is no bulky JavaScript and HTML code to draw fake native-like GUI elements inside a web browser instance. 
 
 
 ## References

@@ -1651,7 +1651,7 @@ Modes used by block ciphers:
    * ECB (Electronic Code Book) has no relationship with other blocks
    * CBC (Cipher Block Chaining) can have pipeline stalls
    * CFB (Cipher FeedBack) 
-   * CTR (CounTeR Mode) turns into a string cipher
+   * CTR (DES CounTeR Mode) turns into a string cipher is used in IEEE 802.11i which details security mechanisms.
    * GCM (Galois field/Counter Mode) parallel 128 bits https://www.wikiwand.com/en/Galois/Counter_Mode
    <br /><br />
 
@@ -1707,8 +1707,6 @@ Memory:
    * A memory leak occurs when a computer program incorrectly manages memory allocations, which can exhaust available system memory as an application runs. 
    <br /><br />
 
-CTR (DES Counter Mode) is used in IEEE 802.11i. 
-
 A process is a series of actions or steps taken in order to achieve a particular end. Organizations will define individual processes and their relationship to one another.
 
 Workflow
@@ -1739,6 +1737,9 @@ TCP Ports: REMEMBER
    * 137, 138, 139 = NETBios
    * 53 = DNS (Domain Name System) lookups
    * No port for ICMP RFC 792 Pings RFC 1122 as it's in IP transport layer
+
+   * 389 = LDAP
+   * 646 = Secure LDAP
    <br /><br />
 
 IP header protocol field REMEMBER 
@@ -1748,6 +1749,10 @@ IP header protocol field REMEMBER
    * 17 = UDP (User Datagram Protocol) used by VOIP
    * 115 = L2TP (Layer 2)
    <br /><br />
+
+MPLS is a protocol-independent transport mechanism. Uses labels, but not for IP routing.
+
+Convergence to use IP protocol for a variety of formats (data, voice, etc.)
 
 IDS (Intrusion Detection System)
    * HIDS (Host-based IDS)
@@ -1825,6 +1830,14 @@ Identity provisioning life cycle: The identity must be created first. It is then
 The account is is revoked when no longer needed.
 
 IDaaS (Identity as a Service) Provides a set of identity and access management functions to target systems on customers’ premises and/or in the cloud.
+
+## SSO
+
+Shibboleth is a SAML standards-based open source software for web single sign-on and attribute exchange framework.
+
+OAuth2 is an auth framework that enables apps to obtain limited access to user account on an HTTP service.
+
+SAML
 
 ## Access Control IAAA
 

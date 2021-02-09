@@ -3594,7 +3594,10 @@ spec:
 After defining a pod security policy, authorize it.
 Otherwise it'll prevent other Pods from being created.
 
-* <a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13131899?parent=lti_session">Securing Google Kubernetes Engine with Cloud IAM and Pod Security Policies</a> 90m.
+<a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13131899?parent=lti_session">Securing Google Kubernetes Engine with Cloud IAM and Pod Security Policies</a> 90m.
+
+More fine grained/dynamic policies can be defined by third-party add-on <a target="_blank" href="https://www.styra.com/">Styra</a> for K8s, which is a use case for Styra's more generic OPA (Open Policy Agent) policy language which decouples a policy model from app code. Since OPA API works for many products and services it provides a unified toolset and framework for policy enforcement across the cloud native stack.
+
 
 <a name="ClusterRoles"></a>
 
