@@ -1723,7 +1723,8 @@ BTW, additional tutorials on .NET Core Razor:
 
 ## Lite
 
-https://github.com/rxi/lite is currently only for Windows and Linux.
+<a target="_blank" href="https://github.com/mathewmariani/lite-macos">mathewmariani/lite-macos</a> is a port of 
+<a target="_blank" href="https://github.com/rxi/lite">github.com/rxi/lite</a> for Windows and Linux.
 
 Lite is a lightweight modern code editor written in the Lua programming language. 
 In 2019.
