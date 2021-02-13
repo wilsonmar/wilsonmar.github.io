@@ -695,6 +695,26 @@ came up with this count of controls:
 ![cyber-fisma-fedramp-counts-683x586-55388](https://user-images.githubusercontent.com/300046/55948774-75f81180-5c0e-11e9-8596-1dd0194c6dbd.jpg)
 
 FedRAMP added 144 control to 728 in FISMA, for a total of 872 controls.
+Control Families:
+* AC - Access Control
+* AU - Audit and Accountability
+* AT - Awareness and Training
+* CM - Configuration Management
+* CP - Contingency Planning
+* IA - Identification and Authentication
+* IR - Incident Response
+* MA - Maintenance
+* MP - Media Protection
+* PS - Personnel Security
+* PE - Physical and Environmental Protection
+* PL - Planning
+* PM - Program Management
+* RA - Risk Assessment
+* CA - Security Assessment and Authorization
+* SC - System and Communications Protection
+* SI - System and Information Integrity
+* SA - System and Services Acquisition
+<br /><br />
 
 NIST SP 800-53 is within section 4 SECURITY CONTROL SELECTION of 
 <a target="_blank" href="https://csrc.nist.gov/publications/fips">https://csrc.nist.gov/publications/fips</a> NISP FIPS-200 and 201-3 catagorizes by impact.

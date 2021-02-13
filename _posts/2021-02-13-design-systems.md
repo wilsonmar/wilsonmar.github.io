@@ -66,9 +66,11 @@ Facebook
 
 ## Tools
 
-Many provide their Design System as a plugin for the Sketch graphic program on macOS.
+Many provide their Design System as a plugin for the <strong>Sketch</strong> graphic program on macOS.
 
 Salesforce provides a <a target="_blank" href="https://www.lightningdesignsystem.com/tools/validator/">SLDS Validator for VS Code at https://www.lightningdesignsystem.com/tools/validator/</a> which scans your markup, validates it against a database of guidelines/tips/gotchas/etc. extracted from the SLDS documentation, and offers suggestions on how to improve your code.
+
+Figma
 
 
 <a name="Design_Tokens"></a>
