@@ -439,6 +439,13 @@ Below is an approach that can be used for Gap Analysis of what needs to be done 
    * 18.5	Use Only Standardized and Extensively Reviewed Encryption Algorithms
    * 18.9	Separate Production and Non-Production Systems
 
+<a target="_blank" href="https://www.coursera.org/specializations/secure-coding-practices?">
+Secure Coding Practices Specialization"</a> consists of 4 courses on Coursera:
+
+by Matthew Bishop, PhD at UCDavis
+<a target="_blank" href="https://www.coursera.org/specializations/secure-coding-practices?">
+
+  
 <strong>AF. Software Application Inventory</strong>
 
    * 2.1	Maintain Inventory of Authorized Software
@@ -725,6 +732,8 @@ SP 800-34
 
    * A COOP (Continuity Of Operations) plan focuses on restoring an organization’s mission-essential functions (MEFs) at an alternate site and performing those functions for up to 30 days before returning to normal operations.
    <br /><br />
+
+SP 800-40 Guide to Enterpise Patch Management Technologies
 
 
 ### FedRAMP
@@ -1967,9 +1976,11 @@ Network address translation (NAT) is a service that can be supplied by a router 
 
 DNP3 is a multilayer protocol that is used between components in process automation systems in electric and water companies.
 
-IPv4 uses 32 bits. IPv6 uses 128 bits, has built-in IPSec
+IPv4 uses 32 bits.<br />
+IPv6 uses 128 bits, has built-in IPSec. Sends Solicited Node (ICMP) Multicast Address unicast to a single node to resolve MAC addr.
+concatenated with 104-bit addr. SLAAC (StateLess Address Auto Configuration) to auto configure based on network prefix.
 
-Private addresses:
+Private addresses: REMEMBER:
    * Class A 10.0.0.0–10.255.255.255
    * Class B 172.16.0.0–172.31.255.255
    * Class C 192.168.0.0–192.168.255.255 in range of addresses is from 192.0.0.0 to 223.255.255.255.

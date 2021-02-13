@@ -647,6 +647,8 @@ Peter Zerger (@pzerger)
 
 <a target="_blank" href="https://cloudacademy.com/learning-paths/az-500-exam-preparation-microsoft-azure-security-technologies-650/">CloudAcademy.com</a> 16h video series by Thomas Mitchell
 
+<a target="_blank" href="https://mckinsey.udemy.com/course/exam-azure-2/"">McK</a> <a target="_blank" href="https://www.udemy.com/course/exam-azure-2">Udemy.com "updated 2020"</a> 15.5h videos by Alan Anthony Rodrigues
+
 Other videos:
 
    * https://zimmergren.net/passing-az-500-microsoft-certified-azure-security-engineer-associate/
@@ -654,6 +656,18 @@ Other videos:
    * https://www.pluralsight.com/courses/microsoft-azure-incident-response-remediation
 
    * https://blog.ahasayen.com/az-500-azure-security-engineer-exam/
+
+## Google
+
+<a target="_blank" href="https://cloud.google.com/certification/cloud-security-engineer">
+Google Professional Cloud Security Engineer</a>, for $200 for 50 questions in 120 minutes, will have obtained the skills to “enable organizations to design and implement a secure infrastructure on Google Cloud Platform. Through an understanding of security best practices and industry security requirements, this individual designs, develops, and manages a secure infrastructure leveraging Google security technologies. Topics and skills:
+
+   * Configure access within a cloud solution environment
+   * Configure network security
+   * Ensure data protection
+   * Manage operations within a cloud solution environment
+   * Ensure compliance
+   <br /><br />
 
 ## Secure Coding
 
