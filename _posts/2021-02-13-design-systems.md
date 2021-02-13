@@ -19,23 +19,23 @@ comments: true
 > "Design systems allow designers to make better decisions"
 
 Behind every major organization creating websites is a "Design System" publication which specifies the UX (User Experience).
-UX includes more than colors, fonts (typography), icons (iconography), <a href="#Design_Tokens">Design Tokens</a>, and other aspects of building websites and Andriod/iOS mobile apps. Design Systems provide Guidelines on Voice and Tone, Animation, Accessibility, Layout, Navigation, Search, Messaging, Data Visualization, Localization, etc. 
+UX includes more than colors, fonts (typography), icons (iconography), <a href="#Design_Tokens">Design Tokens</a>, line height, and other aspects of styling websites and Andriod/iOS mobile apps. Design Systems provide Guidelines on Voice and Tone, Animation, Accessibility, Layout, Navigation, Search, Messaging, Data Visualization, Localization, etc. 
 Component blueprints provide examples to code components such as Accordion, Checkbox, etc. in the form of 
 
-	* Bootstrap theme file 
-	* React component library
-	* Custom font files
-	* Sketch core library specifying fonts
-	* Sketch icon library
-	* Sketch Grid library
-	* Sketch illustration library
+   * Bootstrap theme file 
+   * React component library
+   * Custom font files
+   * Sketch core library specifying fonts
+   * Sketch icon library
+   * Sketch Grid library
+   * Sketch illustration library
 	<br /><br />
 
 ## Examples
 
 <a target="_blank" href="https://www.invisionapp.com/inside-design/design-systems/">Your guide to design systems from the world’s leading brands</a> Oct. 9, 2017
 
-US Government has the U.S. Web Design System (USWDS) at <a target="_blank" href="https://designsystem.digital.gov/">designsystem.digital.gov</a>
+US Government has the U.S. Web Design System (USWDS) at <a target="_blank" href="https://designsystem.digital.gov/">designsystem.digital.gov</a> (Slack channel https://chat.18f.gov/)
 
 US Parks System has a distinctive black at the top.
 
@@ -75,18 +75,33 @@ Salesforce provides a <a target="_blank" href="https://www.lightningdesignsystem
 
 ## Design tokens
 
+> "You can think of a design token as a key that unlocks a specific value."
+
 Tokens are like nicknames for colors, opacity, shadows, etc. See <a target="_blank" href="https://www.youtube.com/watch?v=wtTstdiBuUk">VIDEO "What are Design Tokens"</a>. Alias tokens are diverged Global Tokens made for context-specific purpose, to separate concerns.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=mq984Mc9UVA">
 The Future of Design Systems</a> | Hayley Hughes | Airbnb | Awwwards Conf San Fran
 
-SASS
+Tokens are specified in SASS files, not token values.
+
+### A Measure of Line Height
+
+USDS defines the "measure" token to standardize line heights:
+
+* 1 =	44ex
+* 2 =	60ex
+* 3 =	64ex
+* 4 =	68ex
+* 5 = 	72ex
+* 6 =	88ex
+* 'none' =	no max width
+
 
 ## Resources #
 
 The Red Dot Design Award (at <a target="_blank" href="https://www.red-dot.org/">red-dot.org</a>) is a German international design prize awarded by Red Dot GmbH & Co. It is one of the most prestigious design awards worldwide and honors innovation, concepts and visions. 
 
-* Salesforce https://www.lightningdesignsystem.com/resources/articles/
+* Salesforce articles https://www.lightningdesignsystem.com/resources/articles/
 
 
 ## More on front-end styling #

@@ -949,7 +949,10 @@ Steps to make this happen include:
 
 1. Ensure the Vault API service has the capacity needed (SSH load testing using <a target="_blank" href="https://www.pureload.com/support/protocol-support/ssh-ftp-telnet/">PureLoad</a> or <a target="_blank" href="https://github.com/shazow/ssh-hammer">https://github.com/shazow/ssh-hammer</a>).
 
-1. Create/Test a "key rotation" program which accesses the Vault API.
+1. Create/Test a "key rotation" program which calls the Vault CA API to obtain a SSH certificate to send to GitHub:
+
+   * On macOS, this would be <a target="_blank" href="https://medium.com/@acwrightdesign/creating-a-macos-menu-bar-application-using-swiftui-54572a5d5f87">programmed in SwiftUI</a> as <a target="_blank" href="https://macmenubar.com/">a Menu bar app/icon</a> at the top of every macOS screen.
+   <br /><br />
 
 1. Install "key rotation" program (with associated dependencies) on all laptops.
 
