@@ -1639,7 +1639,7 @@ REMEMBER Algorithms: https://competitions.cry.yp.to/aes.html
 Hashing digital signatures: MD5, NSA's SHA-1, SHA-256, 384, 512
    * RIPEMD-160 (originally based on MD4, now obsoleted)
  
-Symmetric algorithms (same key for encrypt/decrypt, so one time): El Gamal (slowest), AES, Twofish, Blowfish, Skipjack, DES, and 3DES
+Symmetric algorithms (same key for encrypt/decrypt, so one time): RC5, El Gamal (slowest), AES, Twofish, Blowfish, Skipjack, Serpent, DES, and 3DES
 
 Asymmetic (2 keys)
    * ECC (Elliptic Curve Cryptosystem) is US govt. std asymmetric
