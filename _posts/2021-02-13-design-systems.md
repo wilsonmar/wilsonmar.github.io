@@ -37,8 +37,6 @@ Component blueprints provide examples to code components such as Accordion, Chec
 
 US Government has the U.S. Web Design System (USWDS) at <a target="_blank" href="https://designsystem.digital.gov/">designsystem.digital.gov</a> (Slack channel <a target="_blank" href="https://chat.18f.gov/">chat.18f.gov</a>)
 
-US Parks System has a distinctive black at the top.
-
 McKinsey (<a target="_blank" href="https://twitter.com/mckinseydesign?lang=en">@MckinseyDesign</a>)
 https://master.dy3kg4d0la9fi.amplifyapp.com/
 

@@ -1636,8 +1636,11 @@ Ciphers:
 
 REMEMBER Algorithms: https://competitions.cry.yp.to/aes.html
 
-Hashing digital signatures: MD5, NSA's SHA-1, SHA-256, 384, 512
+http://thedigitalstandard.blogspot.com/2009/11/why-fuzzy-hashing-is-really-cool.html
+
+Hashing digital signatures: MD5 (128), NSA's SHA-1 (160), SHA-256, 384, 512 <a target="_blank" href="https://www.youtube.com/watch?v=stf9UlkYYn0&list=PLBpnwlO9U5unYmbZp2DJETNOHg8s_yW37&index=76">VIDEO QUIZ</a>
    * RIPEMD-160 (originally based on MD4, now obsoleted)
+   * whirlpool 512 hash
  
 Symmetric algorithms (same key for encrypt/decrypt, so one time): RC5, El Gamal (slowest), AES, Twofish, Blowfish, Skipjack, Serpent, DES, and 3DES
 
@@ -1751,17 +1754,18 @@ PAT (Port Address Translation) maps ports.:
    <br /><br />
 
 TCP Ports: REMEMBER
-   * 80 = HTTP
-   * 443 = HTTPS (Secure, encrypted)
+   * 80/443 = HTTPS (Secure, encrypted)
    * 21 or 990 = FTP and FTPS which adds SSL & TLS to encrypt
    * 22 = SSH (Secure Shell) used by SFTP
    * 3389 = RDP (Remote Desktop Protocol) from Microsoft
 
-   * 25 = SMTP (Simple Mail Transfer Protocol)
-   * 110 = POP (post Office Protocol) clear text auth.
-   * 143 = IMAP (Internet Message Access Protocol) files remain on server
-   * 995 = Secure POP3 supports SSL/TLS
-   * 993 = Secure IMAP supports SSL/TLS
+   * 22 SSH 
+   * 23: Telnet
+   * 3389 RDP 
+
+   * 25/465 = SMTP (Simple Mail Transfer Protocol) / TLS <a target="_blank" href="https://www.youtube.com/watch?v=8Ppl62Bl9RE">VIDEO</a>
+   * 110/995 = POP (post Office Protocol) clear text auth. / TLS
+   * 143/993 = IMAP (Internet Message Access Protocol) files remain on server / TLS
 
    * 137, 138, 139 = NETBios
    * 53 = DNS (Domain Name System) lookups
@@ -1769,7 +1773,9 @@ TCP Ports: REMEMBER
 
    * 389 = LDAP
    * 646 = Secure LDAP
+   * 548 = AFP (Apple Filing Protocol) https://www.wikiwand.com/en/Apple_Filing_Protocol elim. for AppleTalk
    <br /><br />
+
 
 IP header protocol field REMEMBER 
    * 1 = ICMP (Internet Control Message Protocol)
@@ -1794,6 +1800,10 @@ IDS (Intrusion Detection System)
 
 Backups:
    * GRS (grandfather-father-son) backup rotation scheme Three sets of backup media
+   * ASR (Automated System Recovery) from disk image to restore
+   * Remote journaling
+   * Electronic vaulting - files copies auto transmitted to backup location
+   * Disk shadowing - written to independent disks, transparent to the user
    <br /><br />
 
 AICPA Trust Service Principles, including Security, Availability and Confidentiality. 
@@ -1971,17 +1981,6 @@ OSI Resources:
    * https://www.youtube.com/watch?v=Ilk7UXzV_Qc by RealPars 
    <br /><br />
 
-Port numbers:
-23: Telnet
-443: HTTPS
-80: HTTP
-110: POP3
-3389 RDP 
-548 AFP 
-143 IMAP
-22 SSH 
-443 SSL
-
 Point-to-Point Tunneling Protocol (PPTP) encapsulates the original LAN packet with another header and trailer, while encrypting the original packet.
 
 Address Resolution Protocol (ARP) resolves IP addresses to MAC addresses.
@@ -2000,7 +1999,7 @@ IPv4 uses 32 bits.<br />
 IPv6 uses 128 bits, has built-in IPSec. Sends Solicited Node (ICMP) Multicast Address unicast to a single node to resolve MAC addr.
 concatenated with 104-bit addr. SLAAC (StateLess Address Auto Configuration) to auto configure based on network prefix.
 
-Private addresses: REMEMBER:
+Private addresses: REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=se14Kog6raE&list=PLBpnwlO9U5unYmbZp2DJETNOHg8s_yW37&index=72">VIDEO QUZ</a>
    * Class A 10.0.0.0–10.255.255.255
    * Class B 172.16.0.0–172.31.255.255
    * Class C 192.168.0.0–192.168.255.255 in range of addresses is from 192.0.0.0 to 223.255.255.255.

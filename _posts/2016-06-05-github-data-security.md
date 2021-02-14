@@ -954,7 +954,9 @@ Steps to make this happen include:
    * On macOS, this would be <a target="_blank" href="https://medium.com/@acwrightdesign/creating-a-macos-menu-bar-application-using-swiftui-54572a5d5f87">programmed in SwiftUI</a> as <a target="_blank" href="https://macmenubar.com/">a Menu bar app/icon</a> at the top of every macOS screen.
    <br /><br />
 
-1. Install "key rotation" program (with associated dependencies) on all laptops.
+1. Install "key rotation" client program (with associated dependencies) on all laptops.
+
+   The program would also need to create/edit .git/config files.
 
 1. Require SSH Certificate processing for all access to GitHub organization.
 
