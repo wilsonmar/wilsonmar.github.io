@@ -962,10 +962,11 @@ Steps to make this happen include:
 
 1. Each user within an Enterprise GitHub Organization, enable "Single sign-on organizations" in the SSH keys section, click "Enable SSO", then "Authorize".
 
-1. To troubleshoot
+1. To troubleshoot:
 
    <pre><strong>ssh -Tv git@github.com</strong></pre>
 
+1. Performance testing SSH connections using Neoload and <a target="_blank" href="https://github.com/Neotys-Connect/Terminal">Terminal add-on</a>
 
 
 <a name="Local_Diagram"></a>

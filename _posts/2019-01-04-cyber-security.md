@@ -690,6 +690,8 @@ NIST also publishes SP1800 (Cybersecurity practice guides) and the broader SP 50
 
 In the US federal government, the FISMA (Federal Information Security Management Act) of 2002 law is implemented according to  NIST (National Institute of Standards and Technology) Special Publication (SP) <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">800-53 [pdf]</a>. The security controls development framework contains of 157 controls within 19 control families. Each control is designated as low, moderate, or high impact. 
 
+<a target="_blank" href="https://storefront.disa.mil/kinetic/disa/service-catalog#/forms/cloud-service-support">Cloud Service Support</a>
+
 <a target="_blank" href="https://www.coalfire.com/Documents/Whitepapers/FISMA-vs-FedRAMP_Controls-authorizations">Coalfire</a>
 came up with this count of controls:
 ![cyber-fisma-fedramp-counts-683x586-55388](https://user-images.githubusercontent.com/300046/55948774-75f81180-5c0e-11e9-8596-1dd0194c6dbd.jpg)
@@ -1756,12 +1758,10 @@ PAT (Port Address Translation) maps ports.:
 TCP Ports: REMEMBER
    * 80/443 = HTTPS (Secure, encrypted)
    * 21 or 990 = FTP and FTPS which adds SSL & TLS to encrypt
+
+   * 23: Telnet
    * 22 = SSH (Secure Shell) used by SFTP
    * 3389 = RDP (Remote Desktop Protocol) from Microsoft
-
-   * 22 SSH 
-   * 23: Telnet
-   * 3389 RDP 
 
    * 25/465 = SMTP (Simple Mail Transfer Protocol) / TLS <a target="_blank" href="https://www.youtube.com/watch?v=8Ppl62Bl9RE">VIDEO</a>
    * 110/995 = POP (post Office Protocol) clear text auth. / TLS
@@ -1771,8 +1771,7 @@ TCP Ports: REMEMBER
    * 53 = DNS (Domain Name System) lookups
    * No port for ICMP RFC 792 Pings RFC 1122 as it's in IP transport layer
 
-   * 389 = LDAP
-   * 646 = Secure LDAP
+   * 389/646 = LDAP / Secure LDAP
    * 548 = AFP (Apple Filing Protocol) https://www.wikiwand.com/en/Apple_Filing_Protocol elim. for AppleTalk
    <br /><br />
 
