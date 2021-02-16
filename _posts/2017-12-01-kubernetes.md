@@ -5874,6 +5874,10 @@ GKE provides several <strong>Predefined roles</strong> to provide granular acces
 4. <a target="_blank" href="https://www.coursera.org/learn/deploying-secure-kubernetes-containers-in-production">Architecting with Google Kubernetes Engine: Production</a>
 
 
+## References
+
+K8s failure stories at <a target="_blank" href="https://k8s.af/">k8s.af</a>
+
 
 ## More on DevOps #
 
