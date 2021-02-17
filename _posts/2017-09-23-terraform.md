@@ -1883,6 +1883,7 @@ Alex Podobnik
 https://www.youtube.com/watch?v=bKe4BkDfdvI">
 Manage SSH with HashiCorp Vault</a>
 
+<a target="_blank" href="https://github.com/dod-iac">github.com/dod-iac (DOD Infrastructure as Code)</a> is 36 examples of how the Pentagon uses Terraform within AWS IAM, S3, EBS, KMS, Kinesis api gateway, Lambda, MFA, GuardDuty, Route53, etc.
 
 ## More on DevOps #
 
