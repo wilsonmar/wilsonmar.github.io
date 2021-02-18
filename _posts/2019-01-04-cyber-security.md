@@ -156,7 +156,7 @@ as addressed by CIS Benchmarks across several Linux distributions:
    3.5. Uncommon Network Protocols
    3.6. Firewall Configuration
 
-4. Logging and Auditing
+4. Logging and Auditing [<a target="_blank" href="https://www.youtube.com/watch?v=cwcARccyWyY&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=20">MINDMAP</a>]
    4.1. Configure System Accounting (auditd)
    4.2. Configure Logging
 
@@ -673,6 +673,7 @@ known issues
 
 <a target="_blank" href="http://csrc.nist.gov/">http://csrc.nist.gov</a> (Computer Security Resource Center) maintains the <a target="_blank" href="https://nvd.nist.gov/800-53">NIST 800-53 "National Vulnerability Database"</a> by MITRE's CVE (Computer Vulnerabilities and Exposures) system using OSCAL (Open Security Controls Assessment Language), currently available in JSON, XML, and YAML. OVAL : Open Vulnerability and Assessment Language for use world-wide.
 
+[<a target="_blank" href="https://www.youtube.com/watch?v=fPUypU7ysMw&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=6">MINDMAP</a>] 
 PROTIP: Many Software Component Vulnerabity scan programs (Rapid7, JFrog Xray, etc.) refer to the <a target="_blank" href="https://www.vicarius.io/research-center">NVD online</a> as the basis for scanning. 
 
    * <a target="_blank" href="https://www.cvedetails.com/product-list.php">by app at CVEDetails.com</a>
@@ -690,7 +691,7 @@ NIST also publishes SP1800 (Cybersecurity practice guides) and the broader SP 50
 
 In the US federal government, the FISMA (Federal Information Security Management Act) of 2002 law is implemented according to  NIST (National Institute of Standards and Technology) Special Publication (SP) <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">800-53 [pdf]</a>. The security controls development framework contains of 157 controls within 19 control families. Each control is designated as low, moderate, or high impact. 
 
-<a target="_blank" href="https://storefront.disa.mil/kinetic/disa/service-catalog#/forms/cloud-service-support">Cloud Service Support</a>
+<a target="_blank" href="https://storefront.disa.mil/kinetic/disa/service-catalog#/forms/cloud-service-support">DISA's Cloud Service Support</a>
 
 <a target="_blank" href="https://www.coalfire.com/Documents/Whitepapers/FISMA-vs-FedRAMP_Controls-authorizations">Coalfire</a>
 came up with this count of controls:
@@ -757,6 +758,13 @@ SP 800-34
 
 SP 800-40 Guide to Enterpise Patch Management Technologies
 
+800-34 RMF (Risk Management Framework)
+   1. Categorize
+   2. Select security controls
+   3. Implement controls
+   4. Assess controls
+   5. Authorize
+   6. Monitor
 
 ### FedRAMP
 
@@ -1179,8 +1187,8 @@ Attacks: - incidents that violate an organization’s security or privacy polici
    * Data diddling is when changes to data are made before and after an attack.
    <br /><br />
 
-Attacks to data and databases <a target="_blank" href="https://www.youtube.com/watch?v=YqFhKlzAABE&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR&index=27">VIDEO</a>
-   * An inference attack is the development of a detailed version of an object from another object using different values in the new object, such as the difference between totals versus details allowed. A countermeasure is <strong>Polyinstantiation</strong> which prevents data inference attacks by preventing low-level database users from inferring the existence of higher-level data. It enables a relation to contain multiple tuples with the same primary keys, with each instance distinguished by a security level. https://www.wikiwand.com/en/Inference_attack
+Attacks to data and databases <a target="_blank" href="https://www.youtube.com/watch?v=YqFhKlzAABE&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR&index=27">VIDEO</a> [<a target="_blank" href="https://www.youtube.com/watch?v=-70DBd6cNDw&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=29&t=11s">MINDMAP</a>]
+   * An inference attack is the development of a detailed version of an object from another object using different values in the new object, such as the difference between totals versus details allowed. A countermeasure is <strong>Polyinstantiation</strong> which prevents low-level database users from inferring the existence of higher-level data. It enables a relation to contain multiple tuples (rows) with the same primary keys, with each instance distinguished by a security level. [<a target="_blank" href="https://www.wikiwand.com/en/Inference_attack">WIKIPEDIA</a>]
    * A data contamination attack. Proper implementation of security levels is a countermeasure for data contamination. 
    <br /><br />
 
@@ -1197,7 +1205,9 @@ A breach is an attack that has been successful in reaching its goal.
    * Exigent circumstances are when evidence might be destroyed.
    <br /><br />
 
-## Penetration test
+## Network Penetration test
+
+[<a target="_blank" href="https://www.youtube.com/watch?v=6X4A6B94vmw&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=12">MINDMAP</a>]
 
 Penetration test methodology - To simulate an attack on a system or network to evaluate the risk profile of an environment
    1. Reconnaissance
@@ -1232,7 +1242,7 @@ Focus of security awareness training:
 
    * The Zachman Framework is a two-dimensional model that intersects communication interrogatives (What, Why, Where, and so on) with various viewpoints (Planner, Owner, Designer, and so on). 
 
-   * The ISO/IEC 27000 Series establishes information security standards published jointly by the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC). Control Objectives for Information and Related Technology (COBIT) is a set of control objectives used as a framework for IT governance.
+   * The ISO/IEC 27000 Series establishes information security standards published jointly by the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC). Auditors' Control Objectives for Information and Related Technology (COBIT) is a set of control objectives used as a framework for IT governance.
    <br /><br />
 
    * The Trike methodology is an implementation model created and then analyzed to produce a threat model. Risk values are assigned to the identified threats. Mitigating controls are assigned to the vulnerabilities that lead to the identified threats.
@@ -1403,16 +1413,22 @@ Types of control:
    * Job rotation and background checks are <strong>detective administrative controls</strong>.
    <br /><br />
 
-Documents:
-   * A business impact analysis (BIA) is a functional analysis that lists the critical and necessary business functions, their resource dependencies, and their level of criticality to the overall organization. Risks. Minimum Operating Requirements (MOR)
-   * The business continuity plan (BCP) "what" considers all aspects that are affected by a disaster, including functions, systems, personnel, and facilities, and lists and prioritizes the services that are needed. 
+DRP (Disaster Recovery Plan) defines "how" is implemented when the emergency occurs and includes the steps to restore functions and systems. Includes identification of specific hardware.
+DRP lifecycle phases:
+   1. BIA (Business impact analysis) is a functional analysis that lists the critical and necessary business functions, their resource dependencies, and their level of criticality to the overall organization. Risks. Minimum Operating Requirements (MOR)
+   2. Define strategies
+   3. Define Plans and Procedures
+   4. Train users
+   5. Exercise the plan
+   6. Review and update the plan
+
+   * OEP (Occupant Emergency Plan)
+   * The BCP (business continuity plan) defines "what" -- considers all aspects that are affected by a disaster, including functions, systems, personnel, and facilities, and lists and prioritizes the services that are needed. 
    * A contingency plan provides instruction on what personnel should do until the functions and systems are restored to full  functionality. 
    * A CCP (Crisis Communication Plan)
-   * OEP (Occupant Emergency Plan)
-   * A disaster recovery plan (DRP) "how" is implemented when the emergency occurs and includes the steps to restore functions and systems. Includes identification of specific hardware.
    <br /><br />
 
-DRP lifecycle phases:
+DRP activation:
    1. Mitigation
    2. Preparation (for preparedness)
    3. Response (activation, execution)
@@ -1491,7 +1507,7 @@ CPTED (Crime prevention through environmental design):
 
 Perimeter of two lines: sterile zone
 
-<a target="_blank" href="https://www.youtube.com/watch?v=_IfGEY4fo18">Trusted Computer System Evaluation Criteria (TCSEC)</a> functionality at least once. Enhanced by EU in ITSEC to assurance every time:
+[<a target="_blank" href="https://www.youtube.com/watch?v=WqHmDL7YAvw&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=4">MINDMAP</a>] <a target="_blank" href="https://www.youtube.com/watch?v=_IfGEY4fo18">Trusted Computer System Evaluation Criteria (TCSEC)</a> functionality at least once. Enhanced by EU in ITSEC to assurance every time:
    * F6 + E6 = A1 = Mathamatically Verified protection
    * F5 + E5 = B3 = Mandatory Protection (military) resistant to penetration attempts.
    * F4 + E4 = B2 = Structured Protection (military)
@@ -1514,7 +1530,7 @@ by NIAP (National Information Assurance Partnership) to
    7. Extremely high levels of security are provided. This level requires extensive testing, measurement, and independent testing.
    <br /><br />
 
-Security Models: VIDEO <a target="_blank" href="https://www.youtube.com/watch?v=FRi73kodf_c&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR&index=2">2</a>,<a target="_blank" title="2016" href="https://www.youtube.com/watch?v=4esHgEOmTqU&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR">3</a> 
+Security Models: <a target="_blank" href="https://www.youtube.com/watch?v=qZB6_lp9M30&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=3">VIDEO</a>: <a target="_blank" href="https://www.youtube.com/watch?v=FRi73kodf_c&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR&index=2">2</a>,<a target="_blank" title="2016" href="https://www.youtube.com/watch?v=4esHgEOmTqU&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR">3</a> 
    * The <a target="_blank" href="https://www.wikiwand.com/en/Bell%E2%80%93LaPadula_model">Bell-LaPadula (BLP) model</a> focuses on data confidentiality and controlled access to classified information. It uses a state machine with transition functions to control information flow, characterized by the phrase "write up, read down" (WURD). It was the first mathematical model of a multilevel system for enforcing access control. Not dynamic. It's a multilevel security model because it allows simultaneous processing of classified information across the security levels.
    
    * The Brewer-Nash (Chinese Wall) model introduced the concept of allowing <strong>dynamic</strong> access controls based on a user’s previous actions (conflicts of interest). Based on RBAC.
@@ -1529,13 +1545,16 @@ Security Models: VIDEO <a target="_blank" href="https://www.youtube.com/watch?v=
    * The Sutherland model defines a set of system states, initial states, and state transitions. Using these predetermined secure states, the Sutherland model maintains integrity and prohibits interference.
    <br /><br />
 
-A <strong>reference monitor</strong> is a system component that enforces access controls on an object.
+## TCB RMC
+
+The TCB (Trusted Computer Base) [<a target="_blank" href="https://www.youtube.com/watch?v=fwU7n_3h058&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=5">MINDMAP</a>] comprises the components (hardware, firmware, and/or software) that are trusted to enforce the security policy of the system that, if compromised, jeopardize the security properties of the entire system.
+
+The RMC <strong>Reference monitor Concept</strong> has active Subject and passive Object, with Rules component enforces access controls on an object.
 
    * A PLD (programmable logic device) is an integrated circuit with connections or internal logic gates that can be changed through a programming process. 
    * A FPGA (field-programmable gate array) is a type of PLD that is programmed by blowing fuse connections on the chip or using an antifuse that makes a connection when a high voltage is applied to the junction.
    * Flash memory is a type of electrically programmable ROM.
    * Firmware is a type of ROM where a program or low-level instructions are installed.
-   * The TCB (Trusted Computer Base) comprises the components (hardware, firmware, and/or software) that are trusted to enforce the security policy of the system that, if compromised, jeopardize the security properties of the entire system.
    <br /><br />
 
 Multithreading allows multiple tasks to be performed within a single process. A thread is a self-contained sequence of instruction that can execute in parallel with other threads that are part of the same process. Multithreading is often used in applications to reduce overhead and increase efficiency.
@@ -1551,7 +1570,19 @@ State machine models:
    * A matrix-based model organizes tables of subjects and objects indicating what actions individual subjects can take upon individual objects.
    <br /><br />
 
-Cryptographic key life cycle: 1. Creation 2. Initialization 3. Distribution 4. Activation 5. Inactivation 6. Termination
+### Cryptography
+
+[<a target="_blank" href="https://www.youtube.com/watch?v=LLRaa0kOMDM&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=8">MINDMAP</a>]
+
+Cryptographic key life cycle: 
+   1. Creation 
+   2. Initialization 
+   3. Distribution 
+   4. Activation 
+   5. Inactivation 
+   6. Termination
+   <br /><br />
+
   PROTIP: Creation before Initialization; Activation after Distribution.
 
 Cipher strategies:
@@ -1620,6 +1651,9 @@ Model:
    * The information flow model focuses on controlling information flows that relate two versions of the same object.
    <br /><br />
 
+
+## Cryptography
+
 Ciphers:
    * A concealment cipher occurs when plaintext is interspersed somewhere within other written material. Also called "Null" cipher.
    * Vigenere cipher <a target="_blank" href="https://www.youtube.com/watch?v=SkJcmCaHqS0">VIDEO</a> was used by US Confederates using a brass cipher disk. It aims to defeat simple frequency analysis.
@@ -1644,12 +1678,13 @@ Hashing digital signatures: MD5 (128), NSA's SHA-1 (160), SHA-256, 384, 512 <a t
    * RIPEMD-160 (originally based on MD4, now obsoleted)
    * whirlpool 512 hash
  
-Symmetric algorithms (same key for encrypt/decrypt, so one time): RC5, El Gamal (slowest), AES, Twofish, Blowfish, Skipjack, Serpent, DES, and 3DES
+Symmetric algorithms (same key for encrypt/decrypt, so one time): 
+   * DES, 3DES, AES (Rijndael), RC5/RC6, Blowfish, Twofish, Skipjack, SAFER, CAST-128, Serpent, El Gamal (slowest)
 
 Asymmetic (2 keys)
-   * ECC (Elliptic Curve Cryptosystem) is US govt. std asymmetric
    * RSA is defacto commercial asymmetic algorithm
-   * RSA, ECC support digital signatures and encryption. 
+   * RSA, ECC (efficient) support digital signatures and encryption. 
+   * ECC (Elliptic Curve Cryptosystem) is US govt. std asymmetric
    * DSA, Diffie-Hellman key exchange, Knapsack are asymmetric
 
    * DES uses a 64-bit block size. 56 bits.
@@ -1667,25 +1702,25 @@ Asymmetic (2 keys)
    * HAVAL performs 3, 4, or 5 
    * MD5 performs 4 
    * IDEA performs 8
-   * AES performs 14 
+   * AES (Rijndael) performs 14 
    * TwoFish performs 16
    * Tiger performs 24
    * Skipjack performs 32
    * SHA-256 performs 64
    <br /><br />
 
-   RC4 is a stream cipher and does not have a block size. RC4 is symmetric.
-
-   * Stream-based ciphers are generally cheaper to implement than block ciphers.
-   * Block ciphers are generally less susceptible to security issues.
-   * Block ciphers are generally used more in software implementations.
+Stream ciphers are generally cheaper to implement than block ciphers.
+   * RC4 is a symmetric stream cipher and does not have a block size.
 
 Block symmetric cipher modes use IVs to ensure that patterns are not produced during encryption. But IVs are not modes. 
 Modes used by block ciphers: 
-   * ECB (Electronic Code Book) has no relationship with other blocks
+   * Block ciphers are generally less susceptible to security issues.
+   * Block ciphers are generally used more in software implementations.
+
+   * ECB (Electronic Code Book) blocks have no relationship with other blocks. Least secure but fastest because it doesn't use initialization vector. Used for small random code.
+   * CTR (DES CounTeR Mode) turns into a string cipher used in IEEE 802.11i which details security mechanisms. Has best balance of speed and security.
    * CBC (Cipher Block Chaining) can have pipeline stalls
    * CFB (Cipher FeedBack) 
-   * CTR (DES CounTeR Mode) turns into a string cipher is used in IEEE 802.11i which details security mechanisms.
    * GCM (Galois field/Counter Mode) parallel 128 bits https://www.wikiwand.com/en/Galois/Counter_Mode
    <br /><br />
 
@@ -1817,9 +1852,11 @@ RAM
    * SDRAM (Synchronous Dynamic Access Memory)  access commands simultaneously,
    * DDR (DD2, DD3, DDR4)
 
-### Physical
+### Physical Security
 
-Failsoft is the capability of a system to terminate non-critical processes when a failure occurs.
+[<a target="_blank" href="https://www.youtube.com/watch?v=7ESQwNJ9HXU&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=11">MINDMAP</a>]
+
+Fail-soft is the capability of a system to terminate non-critical processes when a failure occurs.
 
 Gates:
    * Class 1 gates are suitable for residential use. 
@@ -1870,6 +1907,8 @@ The account is is revoked when no longer needed.
 IDaaS (Identity as a Service) Provides a set of identity and access management functions to target systems on customers’ premises and/or in the cloud.
 
 ## SSO
+
+[<a target="_blank" href="https://www.youtube.com/watch?v=_U4QMIxVk8M&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=17">MINDMAP</a>]
 
 Shibboleth is a SAML standards-based open source software for web single sign-on and attribute exchange framework.
 
@@ -1955,7 +1994,7 @@ RBAC uses roles to provide access to the data.
 
 ## OSI (Open System Interconnect) 
 
-Memomnic: Please Do Not Throw Sausage Pizza Away or All People Seem To Need Data Processing
+Memomnic: Please Do Not Throw Sausage Pizza Away or All People Seem To Need Data Processing [<a target="_blank" href="https://www.youtube.com/watch?v=6X4A6B94vmw&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=12">MINDMAP</a>]
 
 PDUs (Process Data Units)
 1. Physical bits - Signal through cable hubs, Repeaters,  Amplifiers, patch panels 
