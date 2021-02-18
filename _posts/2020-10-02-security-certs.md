@@ -620,14 +620,79 @@ See my notes at <a target="_blank" href="https://wilsonmar.github.io/aws-securit
 
 <a target="_blank" href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3VwUH">PDF</a>: Updated Jan 21, 2021 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-500">
-Microsoft's $160 AZ-500 Azure Security Technologies</a> Associate online exam for people who maintain security posture, identify and remediate vulnerabilities by using a variety of security tools, implement threat protection, and respond to security incident escalations. Domains:
+Microsoft's $165 AZ-500 Azure Security Technologies</a> Associate online exam for people who maintain security posture, identify and remediate vulnerabilities by using a variety of security tools, implement threat protection, and respond to security incident escalations. Domains:
 
-1. Manage Identity and Access
-2. Implement Platform Protection
-3. Manage Security Operations
-4. Policy and Data Infrastucture
-5. Data at Rest, App Security, Key Vault
-<br /><br />
+   1. Manage Identity and Access (30-35%)
+   2. Implement Platform Protection (15-20%)
+   3. Manage Security Operations (25-30%)
+   4. Secure data and applications (20-25%) <strike>Policy and Data Infrastucture & Data at Rest, App Security, Key Vault</strike>
+   <br /><br />
+
+Microsoft provides free 6 learning paths:
+
+1. <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/secure-your-cloud-apps/">
+Secure your cloud applications in Azure</a> 6 Modules - 5 hr 36 min
+   1. Microsoft Azure Well-Architected Framework - Security - 1 hr 2 min
+   2. Top 5 security items to consider before pushing to production - 45 min
+   3. Create security baselines - 1 hr
+   4. Manage secrets in your server apps with Azure Key Vault - 46 min
+   5. Secure an ASP.NET Core web app with the Identity framework - 1 hr 8 min
+   6. Control authentication for your APIs with Azure API Management - 55 min
+   <br /><br />
+
+2. <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/implement-resource-mgmt-security/">
+Implement resource management security in Azure</a> 6 Modules - 3 hr 27 min
+   1. Protect against security threats on Azure - 25 min
+   2. Build a cloud governance strategy on Azure - 48 min
+   3. Control and organize Azure resources with Azure Resource Manager - 46 min
+   4. Secure your Azure resources with Azure role-based access control (Azure RBAC) - 37 min
+   5. Manage access to an Azure subscription by using Azure role-based access control (Azure RBAC) - 21 min
+   6. Create custom roles for Azure resources with role-based access control (RBAC) - 30 min
+   <br /><br />
+
+3. <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/implement-network-security/">
+Implement network security in Azure</a> 5 Modules:
+   1. Secure network connectivity on Azure - 32 min
+   2. Configure the network for your virtual machines - 1 hr 34 min
+   3. Secure and isolate access to Azure resources by using network security groups and service endpoints - 43 min
+   4. Encrypt network traffic end to end with Azure Application Gateway - 1 hr 17 min
+   5. Monitor and troubleshoot your end-to-end Azure network infrastructure by using network monitoring tools - 1 hr 2 min
+   <br /><br />
+
+4. <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/implement-host-security/">
+Implement virtual machine host security in Azure</a> 6 Modules:
+   1. Microsoft Azure Well-Architected Framework - Security - 1 hr 2 min
+   2. Create security baselines - 1 hr
+   3. Create a Linux virtual machine in Azure - 1 hr 26 min
+   4. Create a Windows virtual machine in Azure - 51 min
+   5. Secure your Azure virtual machine disks - 1 hr 1 min
+   6. Protect your servers and VMs from brute-force and malware attacks with Azure Security Center - 44 min
+   <br /><br />
+
+5. <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/manage-identity-and-access/">
+Manage identity and access in Azure Active Directory</a> 9 Modules:
+   1. Protect against security threats on Azure - 25 min
+   2. Create an Azure account - 39 min
+   3. Manage users and groups in Azure Active Directory - 50 min
+   4. Create Azure users and groups in Azure Active Directory - 41 min
+   5. Secure your application by using OpenID Connect and Azure AD - 50 min
+   6. Secure Azure Active Directory users with Multi-Factor Authentication - 38 min
+   7. Manage device identity with Azure AD join and Enterprise State Roaming - 25 min
+   8. Allow users to reset their password with Azure Active Directory self-service password reset - 31 min
+   9. Add custom domain name to Azure Active Directory - 18 min
+   <br /><br />
+
+6. <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/manage-security-operations/">
+Manage security operations in Azure</a> 8 Modules:
+   1. Protect against security threats on Azure - 25 min
+   2. Create security baselines - 1 hr
+   3. Identify security threats with Azure Security Center - 43 min
+   4. Resolve security threats with Azure Security Center - 44 min
+   5. Protect your servers and VMs from brute-force and malware attacks with Azure Security Center - 44 min
+   6. Analyze your Azure infrastructure by using Azure Monitor logs - 36 min
+   7. Improve incident response with alerting on Azure - 53 min
+   8. Capture Web Application Logs with App Service Diagnostics Logging - 55 min
+   <br /><br />
 
 Peter Zerger (@pzerger) 
 
@@ -647,7 +712,7 @@ Peter Zerger (@pzerger)
 
 <a target="_blank" href="https://cloudacademy.com/learning-paths/az-500-exam-preparation-microsoft-azure-security-technologies-650/">CloudAcademy.com</a> 16h video series by Thomas Mitchell
 
-<a target="_blank" href="https://mckinsey.udemy.com/course/exam-azure-2/"">McK</a> <a target="_blank" href="https://www.udemy.com/course/exam-azure-2">Udemy.com "updated 2020"</a> 15.5h videos by Alan Anthony Rodrigues
+<a target="_blank" href="https://mckinsey.udemy.com/course/exam-azure-2/">McK</a> <a target="_blank" href="https://www.udemy.com/course/exam-azure-2">Udemy.com "updated 2020"</a> 15.5h videos by Alan Anthony Rodrigues
 
 Other videos:
 
