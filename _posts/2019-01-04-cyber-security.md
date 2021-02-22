@@ -1165,8 +1165,12 @@ Developed by Microsoft, STRIDE is a memonic for classification of threats in an 
    * Denial of service (DoS)
    * Elevation of privilege
    <br /><br />
+
+Cryptoanalytic attacks try to deduce the key via brute-force (dictionary most likely)
+
+Cryptographic attacks: man-in-the-middle, replay, timing, radiation,
    
-Attacks: - incidents that violate an organization’s security or privacy policies:
+Attacks: incidents that violate an organization’s security or privacy policies:
    * A smurf attack uses a type of ping packet called an ICMP ECHO REQUEST. 
    * In a side-channel attack, the attacker gains information about the encryption algorithms from the cryptosystem that is implemented in the network.
    * Evesdropping (traffic analysis). Countermeasures are sending noise, padding messages, mix non-info in data.
@@ -1274,11 +1278,11 @@ Process impprovement approaches:
 
    * Six Sigma includes methodologies DMAIC (Define, Measure, Analyze, Improve existing, Control process) or DMADV (Define, Measure, Analyze, Design, Verify new customer)
 
-   * Control Objectives for Information and Related Technology (COBIT) is a security controls development framework that uses a process model to subdivide IT into four domains: Plan and Organize (PO), Acquire and Implement (AI), Deliver and Support (DS), and Monitor and Evaluate (ME).
+   * Control Objectives for Information and Related Technology (COBIT) is a security controls development framework that uses a process model to subdivide IT into four domains: 1) Plan and Organize (PO), 2) Acquire and Implement (AI), 3) Deliver and Support (DS), and 4) Monitor and Evaluate (ME).
 
    * Department of Defense Architecture Framework (DoDAF) is an architecture framework that organizes a set of products under eight viewpoints: Capability Viewpoint (CV), Data and Information Viewpoint (DIV), Operation viewpoint (OV), Project Viewpoint (PV), SerViCes Viewpoint (SvcV), STanDards Viewpoint (STDV), and Systems viewpoint (SV), All Viewpoint (required) (AV).
 
-   * British Ministry of Defence Architecture Framework (MODAF) is an architecture framework that divides information into seven viewpoints: STrategic viewpoint (StV), Operational Viewpoint (OV), Service-Oriented Viewpoint (SOV), Acquisition Viewpoint (AcV), Technical viewpoint (TV), Systems Viewpoint (SV), All viewpoint (AV).
+   * British Ministry of Defense Architecture Framework (MODAF) is an architecture framework that divides information into seven viewpoints: STrategic viewpoint (StV), Operational Viewpoint (OV), Service-Oriented Viewpoint (SOV), Acquisition Viewpoint (AcV), Technical viewpoint (TV), Systems Viewpoint (SV), All viewpoint (AV).
 
    * DHS (Department of Homeland Security) is involved in promoting software security best practices. Its Build Security In (BSI) initiative promotes a process-agnostic approach that makes security recommendations with regard to architectures, testing methods, code reviews, and management processes.
    <br /><br />
@@ -1595,7 +1599,7 @@ Cipher strategies:
    * Key stretching to output an enhanced (stronger) key
    <br /><br />
 
-A <strong>salt</strong> is used to prevent pre-computation attacks such as Rainbow Tables.
+A <strong>salt</strong> is used to prevent pre-computation attacks such as Rainbow Tables (hash of passwords)
 A salt is a non-secret, random value that's used to ensure that the same plaintext will not consistently hash to the same output value; 
 
 A <strong>nonce</strong> ("number used once") is typically used to prevent replay attacks. 
@@ -1681,7 +1685,7 @@ Hashing digital signatures: MD5 (128), NSA's SHA-1 (160), SHA-256, 384, 512 <a t
 Symmetric algorithms (same key for encrypt/decrypt, so one time): 
    * DES, 3DES, AES (Rijndael), RC5/RC6, Blowfish, Twofish, Skipjack, SAFER, CAST-128, Serpent, El Gamal (slowest)
 
-Asymmetic (2 keys)
+Asymmetic (2 keys) REMEMBER:
    * RSA is defacto commercial asymmetic algorithm
    * RSA, ECC (efficient) support digital signatures and encryption. 
    * ECC (Elliptic Curve Cryptosystem) is US govt. std asymmetric
@@ -1741,12 +1745,16 @@ Implementation of Confusion is the process of changing a key value during each r
    * 3DES-EEE2 encrypts each block of data with the first key, encrypts each block with the second key, and then encrypts each block with the third key.
    <br /><br />
 
-With public key infrastructure (PKI)
+
+
+PKI (Public Key Infrastructure):
    * A subject is an entity that seeks to have a certificate validated. 
    * A target is a path to a public key. 
    * A verifier is an entity that verifies a public key chain.
    * A trust anchor is a public key that verifies the certificate used in a digital signature. 
    <br /><br />
+
+## Protocols
 
 CHAP (Challenge Auth Protocol) from Microsoft negotiates a 3-way handshake asymmetric algorithm to supports mutual auth. can randomly require re-auth. Based on username and password, so is vulnerable.
 
@@ -1790,12 +1798,12 @@ PAT (Port Address Translation) maps ports.:
    * 49152 - 54535 = dynamic ports
    <br /><br />
 
-TCP Ports: REMEMBER
+Common TCP Ports in layer 4: REMEMBER
    * 80/443 = HTTPS (Secure, encrypted)
-   * 21 or 990 = FTP and FTPS which adds SSL & TLS to encrypt
+   * 21/990 = FTP and FTPS which adds SSL & TLS to encrypt
 
-   * 23: Telnet
    * 22 = SSH (Secure Shell) used by SFTP
+   * 23: Telnet (not secure)
    * 3389 = RDP (Remote Desktop Protocol) from Microsoft
 
    * 25/465 = SMTP (Simple Mail Transfer Protocol) / TLS <a target="_blank" href="https://www.youtube.com/watch?v=8Ppl62Bl9RE">VIDEO</a>
@@ -1810,10 +1818,9 @@ TCP Ports: REMEMBER
    * 548 = AFP (Apple Filing Protocol) https://www.wikiwand.com/en/Apple_Filing_Protocol elim. for AppleTalk
    <br /><br />
 
-
 IP header protocol field REMEMBER 
    * 1 = ICMP (Internet Control Message Protocol)
-   * 2 = IGMP (Internet Group Management Protocol)
+   * 2 = IGMP (Internet Group Management Protocol) to estab. multicaset group transmitted to at once
    * 6 = TCP (Transmission Control Protocol) 
    * 17 = UDP (User Datagram Protocol) used by VOIP
    * 115 = L2TP (Layer 2)
@@ -1854,7 +1861,9 @@ RAM
 
 ### Physical Security
 
-[<a target="_blank" href="https://www.youtube.com/watch?v=7ESQwNJ9HXU&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=11">MINDMAP</a>]
+[<a target="_blank" href="https://www.youtube.com/watch?v=7ESQwNJ9HXU&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=11&t=16s">MINDMAP</a>]
+
+Strategies: Deter, Delay, Detect, Assess, Respond
 
 Fail-soft is the capability of a system to terminate non-critical processes when a failure occurs.
 
@@ -1994,7 +2003,9 @@ RBAC uses roles to provide access to the data.
 
 ## OSI (Open System Interconnect) 
 
-Memomnic: Please Do Not Throw Sausage Pizza Away or All People Seem To Need Data Processing [<a target="_blank" href="https://www.youtube.com/watch?v=6X4A6B94vmw&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=12">MINDMAP</a>]
+[<a target="_blank" href="https://www.youtube.com/watch?v=6X4A6B94vmw&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=12&t=9s">MINDMAP</a>]
+
+Memomnic: Please Do Not Throw Sausage Pizza Away or All People Seem To Need Data Processing 
 
 PDUs (Process Data Units)
 1. Physical bits - Signal through cable hubs, Repeaters,  Amplifiers, patch panels 
@@ -2019,9 +2030,11 @@ OSI Resources:
    * https://www.youtube.com/watch?v=Ilk7UXzV_Qc by RealPars 
    <br /><br />
 
+
 Point-to-Point Tunneling Protocol (PPTP) encapsulates the original LAN packet with another header and trailer, while encrypting the original packet.
 
-Address Resolution Protocol (ARP) resolves IP addresses to MAC addresses.
+Address Resolution Protocol (ARP) resolves IP addresses to MAC addresses. Between layer 2 and 3.
+RAP (Reverse Address Protocol) resolve MAC address to IP addresses.
 
 Network File System (NFS) is a client/server file-sharing protocol used in UNIX/Linux.
 
@@ -2067,7 +2080,6 @@ Network access control (NAC) ensures that the computers on the network meet an o
 
 Frame Relay and X.25 are packet-switched technologies. 
 
-
 DSL:
    * Symmetric DSL (SDSL), data travels in both directions at the same rate. 
    * Asymmetric DSL (ADSL) provides faster download speed than upload speed. 
@@ -2088,10 +2100,12 @@ A kernel proxy firewall is an example of a fifth generation firewall. It inspect
 * BA packet-filtering firewall forwards packets based on rules that define which traffic is permitted and denied on the network.
 * A bastion host is a hardened system that usually resides on a demilitarized zone (DMZ) and is accessed frequently.
 
+
+
 ## Metrics
 
-https://www.infosecurity-magazine.com/webinars/top5-datasecurity-metrics/
-The Top Five Security Metrics
+<a target="_blank" href="https://www.infosecurity-magazine.com/webinars/top5-datasecurity-metrics/">
+The Top Five Security Metrics</a>
 
 
 <hr />

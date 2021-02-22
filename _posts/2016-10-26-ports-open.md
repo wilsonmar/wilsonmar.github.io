@@ -23,6 +23,8 @@ This is perhaps the most important potential vulnerability.
 Having ports listenting to outside traffic also takes CPU effort,
 which consumes electricity and thus reduce battery life.
 
+Port 3389 is used for communicating with Microsoft's RDP protocol on Windows machines. See <a target="_blank" href="https://wilsonmar.github.io/rdp">My notes on Windows RDP</a>.
+
 
 <a id="Spotlightz"></a>
 

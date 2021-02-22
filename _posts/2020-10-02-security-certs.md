@@ -620,13 +620,23 @@ See my notes at <a target="_blank" href="https://wilsonmar.github.io/aws-securit
 
 <a target="_blank" href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3VwUH">PDF</a>: Updated Jan 21, 2021 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-500">
-Microsoft's $165 AZ-500 Azure Security Technologies</a> Associate online exam for people who maintain security posture, identify and remediate vulnerabilities by using a variety of security tools, implement threat protection, and respond to security incident escalations. Domains:
+Microsoft's AZ-500 Azure Security Technologies</a> <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-devops/?wt.mc_id=esi_lxp_webpage_wwl">Associate</a> online exam for people who maintain security posture, identify and remediate vulnerabilities by using a variety of security tools, implement threat protection, and respond to security incident escalations. Domains:
 
    1. Manage Identity and Access (30-35%)
    2. Implement Platform Protection (15-20%)
    3. Manage Security Operations (25-30%)
-   4. Secure data and applications (20-25%) <strike>Policy and Data Infrastucture & Data at Rest, App Security, Key Vault</strike>
+   4. Secure data and applications (20-25%) (Policy and Data Infrastucture & Data at Rest, App Security, Key Vault)
    <br /><br />
+
+It costs $165 to Pearson Vue, less if you're a certified trainer or in the <a target="_blank" href="https://esi.microsoft.com/getcertification">esi.microsoft.com/getcertification</a>, which has practice tests from MeasureUp.
+
+Prequisite is certification as either:
+
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-administrator/">Microsoft Certified: Azure Administrator Associate</a> exam AZ-104. <a target="_blank" href="https://cloudacademy.com/lab-challenge/microsoft-azure-administrator-az-104-challenge">Challenge</a>
+
+   or 
+
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-developer/">Microsoft Certified: Azure Developer Associate</a> exam <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-204">AZ-204 "Developing Solutions for Microsoft Azure"</a>.
 
 Microsoft's learning paths for AZ-500 :
 
@@ -684,26 +694,32 @@ Manage <strong>identity and access</strong> in Azure Active Directory</a> 9 Modu
 
 6. <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/manage-security-operations/">
 Manage <strong>security operations</strong> in Azure</a> 8 Modules - 6 hr
-   1. Protect against security threats on Azure - 25 min
+   1. Protect against security threats on Azure - 25 min of <a target="_blank" href="https://www.tailwindtraders.com/">tailwindtraders.com</a>. Its security posture is monitored using <a target="_blank" href="https://azure.microsoft.com/services/security-center">Azure Security Center</a> adaptive application controls to define rules for <a target="_blank" href="https://docs.microsoft.com/en-us/azure/security-center/secure-score-security-controls">secure score</a>. Azure Logic Apps and Security Center connectors. Azure Sentinel SIEM using Common Event Format (CEF) messaging standard, Syslog, or REST API.
    2. Create security baselines - 1 hr
    3. Identify security threats with Azure Security Center - 43 min
    4. Resolve security threats with Azure Security Center - 44 min
    5. Protect your servers and VMs from brute-force and malware attacks with Azure Security Center - 44 min
+   Security Center uses network security group (NSG) rules to restrict access to management ports when not in use.
    6. Analyze your Azure infrastructure by using Azure Monitor logs - 36 min
    7. Improve incident response with alerting on Azure - 53 min
    8. Capture Web Application Logs with App Service Diagnostics Logging - 55 min
    <br /><br />
+
+https://microsoft.github.io/AzureTipsAndTricks/
+
+https://cloudacademy.com/learning-paths/az-500-exam-preparation-microsoft-azure-security-technologies-650/
+
 
 <a name="MSWAF"></a>
 
 ### Well Architected Framework
 
 The <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/">Microsoft Azure Well-Architecture Framework</a> 5 pillars are the same as <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html">Amazon's</a>:
-   * Cost Optimization - Managing costs to maximize the value delivered.
-   * Operational Excellence - Operations processes that keep a system running in production.
-   * Performance Efficiency - The ability of a system to adapt to changes in load.
-   * Reliability - The ability of a system to recover from failures and continue to function.
-   * Security - Protecting applications and data from threats.
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/cost/overview">Cost Optimization</a> - Managing costs to maximize the value delivered.
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/devops/overview">Operational Excellence</a> - Operations processes that keep a system running in production.
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/scalability/overview">Performance Efficiency</a> - The ability of a system to adapt to changes in load.
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/resiliency/overview">Reliability</a> - The ability of a system to recover from failures and continue to function.
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/security/overview">Security</a> - Protecting applications and data from threats.
    <br /><br />
 
 Peter Zerger (@pzerger) :

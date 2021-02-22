@@ -1885,6 +1885,8 @@ Manage SSH with HashiCorp Vault</a>
 
 <a target="_blank" href="https://github.com/dod-iac">github.com/dod-iac (DOD Infrastructure as Code)</a> is 36 examples of how the Pentagon uses Terraform within AWS IAM, S3, EBS, KMS, Kinesis api gateway, Lambda, MFA, GuardDuty, Route53, etc.
 
+<a target="_blank" href="https://www.youtube.com/watch?v=6UDePj5newo&list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7&index=10">VIDEO: Terraform Provider Azure.gov</a> for standardized templates across clouds.
+
 ## More on DevOps #
 
 This is one of a series on DevOps:

@@ -46,19 +46,37 @@ comments: true
 
 3. After registering, use this URL:
 
-   https://techprofile.microsoft.com/en-us/<em>your name</em>
+   <a target="_blank" href="https://techprofile.microsoft.com/en-us/">techprofile.microsoft.com/en-us/</a>
 
+   PROTIP: Bookmark the above link.
 
+   ### Other training options which include cloud time
 
-## Microsoft Azure account
+   * <a target="_blank" href="https://cloudacademy.com/library/azure/">cloudacademy.com/library/azure</a>
+   * Pluralsight.com
+   * LinkedIn Learning
+   * ACloudGuru.com
+
+   ### Other Training options with NO cloud time
+
+   * <a target="_blank" href="https://www.udemy.com/course/microsoft-certified-azure-administrator/">Udemy.com</a> by Alan Rodriguez
+   <br /><br />
+
+   ## Microsoft Azure account
+
+   NOTE: There is a separate <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/government/">Azure fed/state/local gov</a> is an isolated "soverign" DoD Level 5 cloud on US soil operated by US citizens. It has its own Marketplace of apps. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-welcome">What is gov?</a> 
+
+   * <a target="_blank" href="https://www.youtube.com/playlist?list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7">YouTube playlist</a> by Zach Kramer and Steve Michelotti
+   * https://azure.microsoft.com/en-us/global-infrastructure/government/
+   <br /><br />
 
 1. PROTIP: Avoid using an email that you use for your own banking, shopping, social media, etc. For continuity with a real cloud, you'll need an email address that you can share and transfer to other people. That's so at a company, you will need to give someone else the password so that if you're ever go on vacation or get "run over a bus", your organization can continue.
 
-   In you're in an enterprise company, get an email adddress from a corporate assets administrator. A different account is often created for each department of responsibility.
+   In you're in an enterprise company, get an email adddress from a corporate assets administrator. A different (service) account is often created for each department of responsibility.
 
    PROTIP: In the name include the month and year in the account name (such as johndoe1901@hotmail.com) for 2019-01 (January). Many <strong>create several email accounts</strong> because each Azure subscription includes a $200 credit to spend on any service for the <strong>first 30 days</strong>, free access to the most popular Azure products for 12 months, and access to more than 25 products that are always free. 
 
-   When someone signs up for a Microsoft cloud service subscription such as Microsoft Azure, Microsoft Intune, or Office 365, a dedicated instance of Azure AD (Active Directory) is created for your organization. Azure AD is partitioned into separate tenants. A tenant is a dedicated, isolated instance of the Azure Active Directory service, owned and managed by an organization. 
+   When someone signs up for a Microsoft cloud service subscription such as Microsoft Azure, Microsoft Intune, or Office 365, a dedicated instance of Azure AD (Active Directory) is created for your organization. Azure AD is partitioned into separate <strong>tenants</strong>. Each tenant is a dedicated, isolated instance of the Azure Active Directory service, owned and managed by an organization. 
    
 2. For birthdate, make up an adult year: 2019 - 22 = 1997
 
@@ -76,9 +94,21 @@ comments: true
    PROTIP: It's best security that for 3FA you use someone else's phone.
    But as my wife will tell you this can get annoying if you work while she's sleeping with her phone next to her.
 
-4. You'll need a credit card number.
+4. Get a debit or credit card number.
 
-   Many companies have a company (corporate) credit card.
+   BIG PROTIP: Avoid using a personal credit card which can keep charging your card without your approval of specific charges.
+   Amazon and Microsoft do not provide anyone you can actually talk to about charges.
+   And cancelling your credit card will negatively affect your credit scrore, which results in you paying higher interest rates.
+
+   So get a <strong>pre-paid debit card</strong> to pay for cloud usage.
+   Such cards only lets you spend the money you load onto the card. 
+   <a target="_blank" href="https://www.bluebird.com/">Bluebird</a> VISA card (by American Express) 
+   takes no overdraft fee and no purchase fee.
+   Add money (recharge) free at Walmart customer service counters or via a connected checking account.
+
+   Unlike Movo, Bluebird does not have a $4.95 inactivity fee after three months without activity.
+
+5. Create a separate card sub-account for each cloud account.
 
 5. Sign up for Azure:
 
@@ -97,25 +127,32 @@ comments: true
 8. Get a unique profile image and <a target="_blank" href="https://account.microsoft.com/profile/edit-picture?fref=home.banner.profile">add picture</a>.
 
 
-## Two Azure portals #
+## ASM No More #
 
-Microsoft has been transitioning from the "classic" (older)
-Azure Service Management (ASM) to the Azure Resource Manager (ARM).
+On July 1, 2019, Microsoft fully transitioned from the "classic" (older) Azure Service Management (ASM) when <a target="_blank" href="https://docs.microsoft.com/en-us/azure/multi-factor-authentication/multi-factor-authentication-faq">Multi-factor authentication (through the PhoneFactor Web (PFWeb) portal), API Management, BizTalk, and Managed Cache became available to the Azure Resource Manager (ARM).
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom"><th> Product </th><th> Sign-up page </th><th> Dashboard page </th></tr>
-<tr valign="top"><td> <a href="#ASM-signup">ASM</a> </td><td>
+<tr valign="bottom"><th> - </th><th> <a href="#ARM-signup">ARM</a> 
+   </th><th> <a href="#ASM-signup">ASM</a>  </th></tr>
+<tr valign="top"><td> Name: </td><td>
+   Azure Resource Manager
+   </td><td> 
+   Azure Service Management
+   </td></tr>
+<tr valign="top"><td> Sign-up page: </td><td>
+   <a target="_blank" href="https://manage.windowsazure.com/"> manage.windowsazure.com</a>
+   </td><td> 
    <a target="_blank" href="https://account.windowsazure.com/signup/"> 
    account.windowsazure.com/signup</a>
-   </td><td> 
-   <a target="_blank" href="https://manage.windowsazure.com/"> manage.windowsazure.com</a>
    </td></tr>
-<tr valign="top"><td> <a href="#ARM-signup">ARM</a> </td><td>
-   <a target="_blank" href="https://azure.com">
-   azure.com</a><br />azure.microsoft.com/en-us/
+<tr valign="top"><td> Dashboard page: </td><td>
+   <a target="_blank" href="https://azure.com/">
+   azure.com</a> = <br /><a target="_blank" href="https://azure.microsoft.com/en-us/">azure.microsoft.com/en-us</a>
    </td><td>    
    <a target="_blank" href="https://portal.azure.com/"><strong>portal.azure.com</strong></a>
    </td></tr>
+<tr valign="top"><td> Racks span: </td><td>
+   3 </td><td> 2  </td></tr>
 </table>
 
 ASM has "Cloud Services" and "Affinity Groups"
@@ -125,46 +162,7 @@ providing a single-resource point-of-view [i.e. manage a single resource at a ti
 ARM includes <strong>parallelization</strong> when creating resources for faster deployment of complex, interdependent solutions. 
 ARM also includes granular access control, and the ability to tag resources with metadata.
 
-Services NOT available in the newer ARM portal:
-
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/multi-factor-authentication/multi-factor-authentication-faq">Multi-factor authentication</a> (this is a big deal)
-   * API Management
-   * BizTalk
-   * Managed Cache 
-   <br /><br />
-
 Also, instead of 2 racks, ARM resources can span 3 racks of computers.
-
-See: <a target="_blank" href="https://azure.microsoft.com/en-us/features/azure-portal/availability/">
-   Which portal supports each Azure service, listed alphabetically</a>
-
-
-<a name="ASM-signup"></a>
-
-## ASM Sign-up #
-
-   The older steps to "Create an API gateway and Developer Portal in minutes":
-
-0. <a target="_blank" href="
-   https://account.windowsazure.com/signup">
-   https://account.windowsazure.com/signup</a>
-
-0. If you have a BizSpark account, activate the $25/month Azure credit at<br />
-   <a target="_blank" href="
-   https://myprodscussu1.app.vssubscriptions.visualstudio.com/Dashboard">
-   https://myprodscussu1.app.vssubscriptions.visualstudio.com/Dashboard</a>
-
-   <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/ext/subscription/account?view=azure-cli-latest#-ext-subscription-az-account-create">
-   NOTE</a>: This can be done by the AZ CLI command "az account create" for those who have a
-   MS-AZR-0017P (EnterpriseAgreement) or MS-AZR-0148P (EnterpriseAgreement devTest).
-
-0. Verfication by text message or call does not use land-line VOIP phone numbers,
-   only cellular numbers.
-
-0. Input credit card (even though it's free).
-
-0. Click "Start Managing my service" for <a target="_blank" href="https://portal.azure.com/">
-   https://portal.azure.com</a>
 
 
 <a name="ARM-signup"></a>
@@ -173,8 +171,8 @@ See: <a target="_blank" href="https://azure.microsoft.com/en-us/features/azure-p
 
 0. If you are not logged in, type <a target="_blank" href="https://azure.com/">azure.com</a> in your browser's address.
 
-   You'll get sent to a marketing page such as:<br />
-   https://azure.microsoft.com/en-us/?v=17.14
+   You'll get sent to a marketing page:<br />
+   <a target="_blank" href="https://azure.microsoft.com/en-us/">azure.microsoft.com/en-us</a>
 
 0. Click the <strong>portal</strong> link at the upper right corner.
 
