@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: "Azure (cloud) certifications"
@@ -18,16 +17,17 @@ comments: true
 {% include _toc.html %}
 
 
-After Microsoft rebranded "70-x" series to Azure "AZ-x" series, Microsoft continues to <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/retired-certification-exams">retire a long list of exams at a brisk rate</a>.
+Microsoft rebranded certification coding of "70-x" series to role-based Azure "AZ-x" series.
+Microsoft continues to <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/retired-certification-exams">retire a long list of exams at a brisk rate</a>:
 
    * 70-532 - Developing Microsoft Azure Solutions
    * 70-533 - Implementing Microsoft Azure Infrastructure Solutions
    * 70-534 - Architecting Azure Solutions
    * 70-535 - Architecting Microsoft Azure Solutions (ARM templates)
-   * 70-538 - Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/70-537">70-538 - Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack</a> replaced by AZ-600 Stack Hub Operator Associate.
    <br /><br />
 
-PROTIP: Even though Microsoft presents certifications by roles below, people still take exams based on product:
+NOTE: Groupings of Microsoft's certifications by roles below, people still take exams based on product:
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Role </th><th> Product </th><th> Certification </th></tr>
@@ -57,8 +57,8 @@ PROTIP: Even though Microsoft presents certifications by roles below, people sti
    </td><td> DP-900 Azure Data Fundamentals<br />
 DP-100 Azure Data Scientist Associate<br />
    DP-300 Azure Database Administrator Associate<br />
-   DP-200, DP-201 Azure Data Engineer Associate
-   </td><td> PL-600 Power Platform Solution Architect Expert<br />
+   DP-200, DP-201 Azure Data Engineer Associate<br />
+   PL-600 Power Platform Solution Architect Expert<br />
       DP-100 Data Scientist Associate
 
    </td></tr>
@@ -115,6 +115,7 @@ https://www.youtube.com/watch?v=53LO_rJz6Es&list=PLHh_n2lgzcrvecPJ-zMukLlDrq0GMS
 
 https://www.youtube.com/watch?v=cAgN6Ac8MS4&list=PLHh_n2lgzcrvecPJ-zMukLlDrq0GMSMmB&index=2
 
+https://azure.microsoft.com/en-us/support/legal/sla/
 
 AIP (Azure Information Protection) labls prevents people from sending info labeled as confidential.
 
@@ -136,10 +137,86 @@ The Azure Advisor service automatically examines all of your Azure resources and
 
 The Threat Protection dashboard Azure Security Center dashboard shows an accounts' actual security alerts, which can then be clicked on more detailed information?
 
-Azure Blueprints automates the deployment of complete Azure environments, including policies and permissions?
+Azure Blueprints automates the deployment of complete Azure environments, including policies and permissions
+
+## Identity
+
+Azure Active Directory - Synchronize on-premises directories and enable single sign-on
+ 
+Azure Active Directory Domain Services - Join Azure virtual machines to a domain without domain controllers
+ 
+Azure Information Protection - Better protect your sensitive information—anytime, anywhere
+
+## DevOps
+
+Azure Monitor - Full observability into your applications, infrastructure, and network
+
+## Security services
+
+Azure Active Directory - Synchronize on-premises directories and enable single sign-on
+ 
+Azure Sentinel - Put cloud-native SIEM and intelligent security analytics to work to help protect your enterprise
+ 
+Security Center - Unify security management and enable advanced threat protection across hybrid cloud workloads
+ 
+Key Vault - Safeguard and maintain control of keys and other secrets
+ 
+Application Gateway - Build secure, scalable, and highly available web front ends in Azure
+ 
+VPN Gateway - Establish secure, cross-premises connectivity
+ 
+Azure Dedicated HSM - Manage hardware security modules that you use in the cloud
+ 
+Azure DDoS Protection - Protect your applications from Distributed Denial of Service (DDoS) attacks
+ 
+Azure Defender - Protect hybrid cloud workloads
+
+Azure Information Protection - Better protect your sensitive information—anytime, anywhere
+ 
+## Containers
+
+Service Fabric - Develop microservices and orchestrate containers on Windows or Linux
+ 
+Container Registry - Store and manage container images across all types of Azure deployments
+ 
+Azure Kubernetes Service (AKS) - Simplify the deployment, management, and operations of Kubernetes
+ 
+Azure Red Hat OpenShift - Fully managed OpenShift service, jointly operated with Red Hat
 
 
+## Integration
 
+Azure Logic Apps - Automate the access and use of data across clouds without writing code
+ 
+Service Bus - Connect across private and public cloud environments
+ 
+API Management - Publish APIs to developers, partners, and employees securely and at scale
+ 
+Event Grid - Get reliable event delivery at massive scale
+
+## Management and Governance
+
+Azure Advisor - Your personalized Azure best practices recommendation engine
+ 
+Azure Backup - Simplify data protection and protect against ransomware
+ 
+Azure Site Recovery - Keep your business running with built-in disaster recovery service
+ 
+Automation - Simplify cloud management with process automation
+ 
+Traffic Manager - Route incoming traffic for high performance and availability
+ 
+Network Watcher - Network performance monitoring and diagnostics solution
+ 
+Azure Managed Applications - Simplify management of cloud offerings
+ 
+Azure Monitor - Full observability into your applications, infrastructure, and network
+ 
+Azure Migrate - Easily discover, assess, right-size, and migrate your on-premises VMs to Azure
+ 
+Scheduler - Run your jobs on simple or complex recurring schedules
+ 
+Azure Policy - Implement corporate governance and standards at scale for Azure resources
 
 
 ## AZ-400 Developer
