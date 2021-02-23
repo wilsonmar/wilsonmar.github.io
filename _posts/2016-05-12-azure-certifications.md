@@ -1,9 +1,10 @@
+
 ---
 layout: post
 title: "Azure (cloud) certifications"
-excerpt: "Study. Take a test. Put a badge on your uniform."
+excerpt: "No more ASM and MCSD"
 tags: [cloud]
-date: "2016-05-12"
+date: "2021-02-22"
 file: "azure-certifications"
 image:
 # azure ms logo wait 1900x500-39kb.jpg
@@ -17,11 +18,74 @@ comments: true
 {% include _toc.html %}
 
 
-Exams as conducted by Pearson VUE testing centers.
+After Microsoft rebranded "70-x" series to Azure "AZ-x" series, Microsoft continues to <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/retired-certification-exams">retire a long list of exams at a brisk rate</a>.
+
+   * 70-532 - Developing Microsoft Azure Solutions
+   * 70-533 - Implementing Microsoft Azure Infrastructure Solutions
+   * 70-534 - Architecting Azure Solutions
+   * 70-535 - Architecting Microsoft Azure Solutions (ARM templates)
+   * 70-538 - Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack
+   <br /><br />
+
+PROTIP: Even though Microsoft presents certifications by roles below, people still take exams based on product:
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Role </th><th> Product </th><th> Certification </th></tr>
+
+<tr valign="top"><td> * Administrator
+      </td><td> AZ-900 Fundamentals<br />
+      AZ-104 Azure Administrator Associate<br />
+
+   </td></tr>
+<tr valign="top"><td> * Solution Architect
+      </td><td> AZ-303, AZ-304 Azure Solutions Architect Expert<br />
+   AZ-600 Stack Hub Operator Associate<br />
+        AZ-120 Azure for SAP Workloads Specialty
+
+   </td></tr>
+<tr valign="top"><td> * Developer
+   </td><td> AZ-204 Azure Developer Associate<br />
+       AZ-220 Azure IoT Developer Specialty
+
+   </td></tr>
+<tr valign="top"><td> * Functional Consultant
+      </td><td> AZ-140 Virtual Desktop Specialty
+
+   </td></tr>
+<tr valign="top"><td> * Data Engineer
+* Data Scientist
+   </td><td> DP-900 Azure Data Fundamentals<br />
+DP-100 Azure Data Scientist Associate<br />
+   DP-300 Azure Database Administrator Associate<br />
+   DP-200, DP-201 Azure Data Engineer Associate
+   </td><td> PL-600 Power Platform Solution Architect Expert<br />
+      DP-100 Data Scientist Associate
+
+   </td></tr>
+<tr valign="top"><td> * AI Engineer
+   </td><td> AI-900 AI Fundamentals<br />
+    AI-100 Azure AI Engineer Associate
+
+   </td></tr>
+<tr valign="top"><td> * Security Engineer
+   </td><td> SC-900 Security, Compliance, and Identity Fundamentals<br />
+    SC-200 Security Operations Analyst Associate<br />
+    SC-300 Identity and Access Administrator Associate<br />
+    AZ-500 Azure Security Engineer Associate
+
+   </td></tr>
+<tr valign="top"><td> * DevOps Engineer
+   </td><td> AZ-400 DevOps Engineer Expert
+   </td></tr>
+
+</table>
+
+Unless noted, exams as still $165 conducted by Pearson VUE, but not in testing centers thanks to COVID.
+
 
 <a name="AzureCert"></a>
 
-## Azure Certification #
+## Azure Certifications #
 
 * <a target="_blank" href="https://www.microsoft.com/en-us/learning/mcsd-azure-architect-certification.aspx">
    MCSD Solutions Developer: Azure Solutions Architect</a>
@@ -42,125 +106,48 @@ Exams as conducted by Pearson VUE testing centers.
 
 * https://buildazure.com/certifications/
 
-### Exam 70-532 - Developing Microsoft Azure Solutions
+## AZ-900 Foundation
 
-https://www.microsoft.com/en-us/learning/exam-70-532.aspx
+https://cloudacademy.com/learning-paths/az-900-exam-preparation-microsoft-azure-fundamentals-524/
 
-* Create and Manage Azure Resource Manager Virtual Machines (20-25%)
-* Design and Implement a Storage and Data Strategy (25-30%)
-* Manage Identity, Application, and Network Services (10-15%)
-* Design and Implement Azure Compute, Web, and Mobile Services (35-40%)
+https://www.youtube.com/watch?v=53LO_rJz6Es&list=PLHh_n2lgzcrvecPJ-zMukLlDrq0GMSMmB
+  Ravikirans answers Whizlabs 55 questions on Dec 7, 2020
 
-*    Compare the services available in the Azure platform
-*    Configure and deploy ASP.NET web applications
-*    Creating Azure WebSites from the gallery
-*    Deploying and monitoring Azure WebSites
-*    Creating and configuring Azure Virtual Machines
-*    Describe the relationship between Cloud Services and Virtual Machines
-*    Deploy existing Cloud Service packages
-*    Create and manage a Storage account
-*    Manage blobs and containers in a Storage account
-*    Create, configure and connect to a SQL Databases instance
-*    Identify the implications of importing a SQL Standalone database
-*    Manage users, groups and subscriptions in an Azure Active Directory instance
-*    Create a virtual network
-*    Implement a point to site network
-
-Resources:
-
-* <a target="_blank" href="https://channel9.msdn.com/Blogs/mcpexamprep/70-532-Developing-Microsoft-Azure-Solutions">
-Video reviewing</a> 1hr 13  by Sidney Andrews
-
-<a target="_blank" href="https://www.pluralsight.com/courses/azure-solutions-web-apps-70-532">
-Design and Implement Web Apps for Azure Solutions (70-532)
-5h 31m video from Pluralsight</a> Aug 30, 2016
-by Tim Warner 
-
-<a target="_blank" href="https://examregistration.microsoft.com/?action=1&locale=en-us&examcode=532&examname=Developing%20Microsoft%20Azure%20Solutions">
-$165</a>
-
-### Exam 70-533 - Implementing Microsoft Azure Infrastructure Solutions
-
-This is based on ASM vs. new ARM.
-
-• Implement a website
-• Implement virtual machines
-• Implement cloud services
-• Implement storage
-• Implement an Azure Active Directory
-• Implement virtual networks
-
-By <a target="_blank" href="http://www.timwarnertech.com/">Tim Warner</a>:
-
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/preparing-pass-microsoft-azure-70-533-exam">
-   Preparing to Pass the Microsoft Azure (70-533) Exam</a>
-   Intermediate Mar 04, 2016 1h 30m (17)
-
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/implementing-websites-azure-infrastructure-70-533">
-   Implementing Web Apps for Azure Infrastructure (70-533)</a>
-   Beginner Mar 15, 2016 4h 26m (14)
-
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/implementing-virtual-machines-azure-infrastructure-70-533">
-   Implementing Virtual Machines for Azure Infrastructure (70-533)</a>
-   Intermediate Apr 27, 2016 4h 46m
-
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/implementing-cloud-services-azure-infrastructure">
-Implementing Cloud Services for Azure Infrastructure (70-533)</a>
-by Razi bin Rais Intermediate Jul 09,  2015 2h 52m (111)
+https://www.youtube.com/watch?v=cAgN6Ac8MS4&list=PLHh_n2lgzcrvecPJ-zMukLlDrq0GMSMmB&index=2
 
 
-### Exam 70-534 - Architecting Azure Solutions
+AIP (Azure Information Protection) labls prevents people from sending info labeled as confidential.
 
-• Design Azure infrastructure and networking
-• Secure resources
-• Design an application storage and data access strategy
-• Design an advanced application
-• Design websites
-• Design a management, monitoring, and business continuity strategy
+Azure Policy Service organizes policies into an initiative.
 
-Resources:
+https://ServiceTrust.microsoft.com
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/architecting-azure-solutions-70-534-secure-resources">
-   Secure Resources</a>
-   by Orin Thomas Intermediate Jan 06, 2016 3h 0m (15)
+https://github.com/cloudacademy/azure-overview
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/azure-solutions-70-534-storage-data-access">
-   Design an application storage and data access strategy</a>
+Microsoft Compliance Center
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/architecting-azure-solutions-70-534-design-application">
-   Design an Advanced Application</a>
-   by Orin Thomas Intermediate Mar 10, 2016 1h 40m
+Azure Security Center's resource hygiene dashboard displays what type of resource information?
 
-* Design Web Apps
+The resource hygiene dashboard displays how secure resources are based on Azure security best practices.
 
-* Design a management, monitoring, and business continuity strategy
+Azure Service Health Azure management service informs you about problems with the Azure platform itself and upcoming maintenance events?
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/architecting-azure-solutions-70-534-infrastructure-networking">
-   Infrastructure and Network</a>
-   by Orin ThomasIntermediateNov 22, 20153h 52m
+The Azure Advisor service automatically examines all of your Azure resources and identifies ways to optimize them.
 
-* Up to 5 VIPs per service.
+The Threat Protection dashboard Azure Security Center dashboard shows an accounts' actual security alerts, which can then be clicked on more detailed information?
 
-### Exam 70-535 - Architecting Microsoft Azure Solutions
-
-ARM templates.
-
-### Exam 70-538 - Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack
-
-Coming soon (in beta). $165
-
-https://www.microsoft.com/en-us/learning/exam-70-537.aspx
+Azure Blueprints automates the deployment of complete Azure environments, including policies and permissions?
 
 
-* Deploying and Integrating an Azure Stack Environment (20-25%)
-* Configuring PaaS and IaaS for an Azure Stack Environment (25-30%)
-* Providing Services to and Enabling DevOps for Azure Stack Tenants (25-30%)
-* Maintaining and Monitoring an Azure Stack Environment (20-25%)
+
+
+
+## AZ-400 Developer
+
+https://github.com/timothywarner/az400
 
 
 ## Linux Azure
-
-The Nadella Era in Microsoft 
 
 https://azure.microsoft.com/en-us/learn/skills/
 

@@ -157,12 +157,15 @@ On July 1, 2019, Microsoft fully transitioned from the "classic" (older) Azure S
 
 ASM has "Cloud Services" and "Affinity Groups"
 which is structured with Resource Groups (logical containers)
-providing a single-resource point-of-view [i.e. manage a single resource at a time]
+providing a single-resource point-of-view [i.e. manage a single resource at a time].
 
 ARM includes <strong>parallelization</strong> when creating resources for faster deployment of complex, interdependent solutions. 
 ARM also includes granular access control, and the ability to tag resources with metadata.
 
 Also, instead of 2 racks, ARM resources can span 3 racks of computers.
+
+Enabling of MFA is hidden behind "..." (More) in All Users menu bar.
+Note "only users licensed to use Microsoft Online Services are eligible for Multi-Factor Authentication."
 
 
 <a name="ARM-signup"></a>

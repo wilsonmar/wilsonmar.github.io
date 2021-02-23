@@ -23,7 +23,46 @@ This is perhaps the most important potential vulnerability.
 Having ports listenting to outside traffic also takes CPU effort,
 which consumes electricity and thus reduce battery life.
 
-Port 3389 is used for communicating with Microsoft's RDP protocol on Windows machines. See <a target="_blank" href="https://wilsonmar.github.io/rdp">My notes on Windows RDP</a>.
+<a name="ports"></a>
+
+## Ports
+
+PAT (Port Address Translation) maps ports.:
+   * 0 - 1023 = well-know ports
+   * 1024 - 49141 = registered ports (1433 for MS SQL, 1431 for Oracle SQL, etc.)
+   * 49152 - 54535 = dynamic ports
+   <br /><br />
+
+Port 3389 is used for communicating with Microsoft's RDP (Remote Desktop Protocol) on Windows machines. See <a target="_blank" href="https://wilsonmar.github.io/rdp">My notes on Windows RDP</a>.
+
+Common TCP Ports in layer 4: REMEMBER
+   * 80/443 = HTTPS (Secure, encrypted)
+   * 21/990 = FTP and FTPS which adds SSL & TLS to encrypt
+
+   * 22 = SSH (Secure Shell) used by SFTP
+   * 23: Telnet (not secure)
+   * 3389 = RDP (Remote Desktop Protocol) from Microsoft
+
+   * 25/465 = SMTP (Simple Mail Transfer Protocol) / TLS <a target="_blank" href="https://www.youtube.com/watch?v=8Ppl62Bl9RE">VIDEO</a>
+   * 110/995 = POP (post Office Protocol) clear text auth. / TLS
+   * 143/993 = IMAP (Internet Message Access Protocol) files remain on server / TLS
+
+   * 137, 138, 139 = NETBios
+   * 53 = DNS (Domain Name System) lookups
+   * No port for ICMP RFC 792 Pings RFC 1122 as it's in IP transport layer
+
+   * 389/646 = LDAP / Secure LDAP
+   * 445 = SMB (Server Message Block) from Azure Files
+   * 548 = AFP (Apple Filing Protocol) https://www.wikiwand.com/en/Apple_Filing_Protocol elim. for AppleTalk
+   <br /><br />
+
+IP header protocol field REMEMBER 
+   * 1 = ICMP (Internet Control Message Protocol)
+   * 2 = IGMP (Internet Group Management Protocol) to estab. multicaset group transmitted to at once
+   * 6 = TCP (Transmission Control Protocol) 
+   * 17 = UDP (User Datagram Protocol) used by VOIP
+   * 115 = L2TP (Layer 2)
+   <br /><br />
 
 
 <a id="Spotlightz"></a>
