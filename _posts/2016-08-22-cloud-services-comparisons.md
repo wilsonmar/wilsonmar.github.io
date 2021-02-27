@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Cloud services comparisons"
-excerpt: "Take my cloud ... please"
+excerpt: "Which cloud is best? Azure vs. AWS vs. Google"
 tags: [Cloud, comparison]
-date: "2016-08-22"
+date: "2021-02-26"
 file: "cloud-services-comparisons"
 image: # pic-black-bkg-white-cloud_1920x1200
   feature: https://cloud.githubusercontent.com/assets/300046/15269257/8104a824-19b6-11e6-9c42-014bf608009a.jpg
@@ -20,17 +20,17 @@ comments: true
 
 Evaluations can be based on the advantages of cloud:
 
-1. Stop guessing about future capacity when building and maintaining on-premise data centers with idle <strong>over-provisioning</strong>, which can be expensive. That can't happend with cloud vendors which charge when consumed.
+1. Cloud vendors provide a <strong>large capacity pool</strong>, and benefit from economies of scale, for many users who pay for <strong>actual usage</strong>.
 
-2. Tap into <strong>more capacity pooled</strong> among many customers,to benefit from economies of scale.
+2. Paying for metered actual usage <strong>conserves cash up-front</strong> which trades variable expense (OpEx) for capital expense (CapEx).
 
-3. Paying for public cloud use as you go <strong>conserves cash up-front</strong> which trades variable expense (OpEx) for capital expense (CapEx).
+3. It's <strong>faster to obtain capacity</strong> by using cloud vendors who can buy <strong>newer, speedier</strong> equipment. This helps your organization to achieve <strong>agility</strong>. 
 
-4. <strong>Faster</strong> to obtain capacity and achieve <strong>agility</strong>. Cloud vendors can buy <strong>newer, faster</strong> equipment.
+4. Individual users can now stop <strong>over-provisioning</strong> on-premise data centers to ensure adequate capacity which often go <strong>unused</strong> due to the uncertainty of future demand. 
 
-5. Get <strong>expert specialists</strong> at facilities, security, scalability, etc. by hiring them through cloud vendors who share their <strong>innovations</strong>.
+5. Scale enables cloud vendors to hire <strong>expert specialist teams</strong> who can <strong>innovate</strong> faster than individual companies.
 
-6. Cloud customers' workers achieve higher <strong>productivity</strong> from more efficient up-to-date methods and by off-loading tasks to cloud specialists.
+6. Cloud customers' workers make use of cloud vendor innovations to achieve higher <strong>productivity</strong> and security.
 
 7. Greater <strong>reliability</strong> to make data backup, disaster recovery, and business continuity easier and less expensive, with data being mirrored at multiple redundant sites on the cloud provider’s network.
 
@@ -182,43 +182,58 @@ Amazon provides software to host whatever OS is put into images.
 But its free server images are based on CentOS, derived from <strong>Red Hat</strong> as both use the yum package manager.
 Amazon is working on "Linux2" based on Red Hat.
 
-## Network infrastructure
 
-Google has laid its own fiber-optic wires around the world:
+<hr />
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/62699138-1af7e080-b99c-11e9-859f-f3d4a4c88105.png"><img alt="google-cables-1533x861.png" width="1533" src="https://user-images.githubusercontent.com/300046/62699138-1af7e080-b99c-11e9-859f-f3d4a4c88105.png"></a>
-
-As of this writing, latency between the EU and Asia locations is very high because Google Compute Engine does not have a direct link between them.
-
-PROTIP: If you only operate out of just one region in the world, use a <strong>Central US</strong> region, which reaches West to Asia and East to Europe. 
-
-## Network speed
+## Network speed comparisons
 
 Under ideal conditions, latency over networks are limited by speed of light traveling within fiber-optic cables, which is roughly 202562 km/s or or 125866 miles/s. (Actual reachable speed is still a bit lower than that).
 
 To estimate distance between terrestial locations, use <a target="_blank" href="https://www.daftlogic.com/projects-google-maps-distance-calculator.htm">Distance Calculator website</a>
 
-To compare network speeds:
+TUTORIAL: Qwiklabs <a target="_blank" href="https://www.qwiklabs.com/focuses/1282">Network Performance Testing</a> tutorial provides step-by-step instructions for obtaining timings between regions. It sets up one network with five subnetworks in different regions and a VM in each subnetwork. Utilities ping, <a target="_blank" href="hhttps://en.wikipedia.org/wiki/Iperf">iperf</a>. 
 
-* Amazon's own <a target="_blank" href="http://ec2-reachability.amazonaws.com/">EC2 Reachability Test</a> does not provide ping speeds to <strong>specific IP addresses</strong> within each availability zone within each region, but a green icon when it can be currently reached at any speed.
+Alternately, the <a target="_blank" href="https://github.com/traviscross/mtr">open-sourced</a> Linux/Unix utility <a target="_blank" href="https://ss64.com/bash/mtr.html">mtr</a> (<a target="_blank" href="https://www.bitwizard.nl/mtr/">My Traceroute</a>, originally called Matt's traceroute) combines Ping and Traceroute functions<a target="_blank" href="https://support.8x8.com/us/support-services/support/Download_WinMTR_Ping_and_Traceroute_Tool">*</a> <a target="_blank" href="https://www.linode.com/docs/networking/diagnostics/diagnosing-network-issues-with-mtr/">brew install mtr</a> is available for macOS to <tt>sudo mtr</tt>.
 
-* <a target="_blank" href="http://www.cloudping.info/">http://cloudping.info</a> measures current ping speed to various regions on Amazon's EC2 cloud. Scroll down to click "HTTP Ping" to begin collection to a running line graph:
 
-   ![cloud-services-amazon-392x647-65305](https://user-images.githubusercontent.com/300046/40890545-21c4a818-6735-11e8-92b3-9329d0465914.jpg)
+To compare network speeds using GUI tools:
 
-* <a target="_blank" href="https://ping.varunagw.com/aws.htm">https://ping.varunagw.com/aws.htm</a> provides green, yellow, red colors with Mean, Median, Min, and Max statistics based several measures of the speed to each EC2 region.
 
-* <a target="_blank" href="http://www.azurespeed.com/">http://http://www.azurespeed.com</a> measures current ping speed to various regions on Microsoft's Azure cloud. To stop collection, click "uncheck all" or individual regions of interest:
+### Google networks
 
-   ![cloud-service-azure-checks-603x261-56530](https://user-images.githubusercontent.com/300046/40890517-a7bc4b02-6734-11e8-9c1f-88e6a686de0d.jpg)
+Google has laid its own fiber-optic wires around the world:
 
-* <a target="_blank" href="http://www.gcping.com/">http://www.gcping.com</a> measures current ping speed to <a target="_blank" href="https://cloud.google.com/compute/docs/regions-zones/#available">regions on Google's cloud</a>. 
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/62699138-1af7e080-b99c-11e9-859f-f3d4a4c88105.png"><img alt="google-cables-1533x861.png" width="1533" src="https://user-images.githubusercontent.com/300046/62699138-1af7e080-b99c-11e9-859f-f3d4a4c88105.png"></a>
+
+As of this writing, latency between Google's EU and Asia locations is very high because Google Compute Engine does not have a direct link between them.
+
+PROTIP: If you only operate out of just one region in the world, use a <strong>Central US</strong> region, which reaches West to Asia and East to Europe. 
+
+<a target="_blank" href="http://www.gcping.com/">http://www.gcping.com</a> measures current ping speed to <a target="_blank" href="https://cloud.google.com/compute/docs/regions-zones/#available">regions on Google's cloud</a>. 
 
    ![cloud-services-gcping-507x224-14208](https://user-images.githubusercontent.com/300046/40890488-10f2b1de-6734-11e8-8aea-6ebfb3edfa3c.jpg)
 
    To stop collection, press the dot with the arrow.
 
-   Qwiklabs <a target="_blank" href="https://www.qwiklabs.com/focuses/1282">Network Performance Testing</a> provides step-by-step instructions for obtaining timings between regions. It sets up one network with five subnetworks in different regions and a VM in each subnetwork. Utilities ping, <a target="_blank" href="hhttps://en.wikipedia.org/wiki/Iperf">iperf</a>. Alternately, the <a target="_blank" href="https://github.com/traviscross/mtr">open-sourced</a> Linux/Unix utility <a target="_blank" href="https://ss64.com/bash/mtr.html">mtr</a> (<a target="_blank" href="https://www.bitwizard.nl/mtr/">My Traceroute</a>, originally called Matt's traceroute) combines Ping and Traceroute functions<a target="_blank" href="https://support.8x8.com/us/support-services/support/Download_WinMTR_Ping_and_Traceroute_Tool">*</a> <a target="_blank" href="https://www.linode.com/docs/networking/diagnostics/diagnosing-network-issues-with-mtr/">brew install mtr</a> is available for macOS to <tt>sudo mtr</tt>.
+
+### Amazon
+
+Amazon's own <a target="_blank" href="http://ec2-reachability.amazonaws.com/">EC2 Reachability Test</a> does not provide ping speeds to <strong>specific IP addresses</strong> within each availability zone within each region, but a green icon when it can be currently reached at any speed.
+
+<a target="_blank" href="http://www.cloudping.info/">http://cloudping.info</a> measures current ping speed to various regions on Amazon's EC2 cloud. Scroll down to click "HTTP Ping" to begin collection to a running line graph:
+
+   ![cloud-services-amazon-392x647-65305](https://user-images.githubusercontent.com/300046/40890545-21c4a818-6735-11e8-92b3-9329d0465914.jpg)
+
+<a target="_blank" href="https://ping.varunagw.com/aws.htm">https://ping.varunagw.com/aws.htm</a> provides green, yellow, red colors with Mean, Median, Min, and Max statistics based several measures of the speed to each EC2 region.
+
+
+### Microsoft Azure
+
+<a target="_blank" href="http://www.azurespeed.com/">http://http://www.azurespeed.com</a> measures current ping speed to various regions on Microsoft's Azure cloud. To stop collection, click "uncheck all" or individual regions of interest:
+
+   ![cloud-service-azure-checks-603x261-56530](https://user-images.githubusercontent.com/300046/40890517-a7bc4b02-6734-11e8-9c1f-88e6a686de0d.jpg)
+
+
 
 
 ## Outage tracking #

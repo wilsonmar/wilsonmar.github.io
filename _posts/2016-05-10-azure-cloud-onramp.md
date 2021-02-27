@@ -50,17 +50,53 @@ comments: true
 
    PROTIP: Bookmark the above link.
 
+
    ### Other training options which include cloud time
 
    * <a target="_blank" href="https://cloudacademy.com/library/azure/">cloudacademy.com/library/azure</a>
    * Pluralsight.com
    * LinkedIn Learning
    * ACloudGuru.com
+   <br /><br />
+
+   AZ-900 Cloud concepts: availability, fault tolerance, public/private/hybrid cloud, IaaS, PaaS, SaaS
 
    ### Other Training options with NO cloud time
 
    * <a target="_blank" href="https://www.udemy.com/course/microsoft-certified-azure-administrator/">Udemy.com</a> by Alan Rodriguez
    <br /><br />
+
+   ## Tenant
+
+   Below tenant”
+   • Can have multiple subscriptions per tenant (e.g. for depts.)
+   A <strong>Subscription</strong> is a billing boundary linked to an Azure account; AND A container for resource groups
+
+   Subscription types:
+   • Azure pass (e.g. with a course)
+   • MSDN (Developer Network)
+   • Azure trial
+   • Pay-as-you-go (most common)
+   • Enterprise (involves a minimum commitment)
+
+   Each Management Group is a container for one or more subscriptions
+   • You can build a hierarchy of these
+   • You can assign policies to a management group
+
+   Policies are rules stating which resources can be deployed to which locations
+   • Microsoft provides a number of built-in policies
+   • Create custom policies using JSON
+
+   Tags are your own metadata for:
+   • Searching
+   • Viewing
+   • Billing
+   
+   Assign at resource level or resource group level
+   • Child resources don’t inherit tags from group level
+   
+   Name and value pairs
+      • Project = Acme 
 
    ## Microsoft Azure account
 
@@ -68,6 +104,20 @@ comments: true
 
    * <a target="_blank" href="https://www.youtube.com/playlist?list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7">YouTube playlist</a> by Zach Kramer and Steve Michelotti
    * https://azure.microsoft.com/en-us/global-infrastructure/government/
+   <br /><br />
+
+   Each RBAC (Role-Based Access Control) delegates resource administration to groups/users
+   • Over 75 built-in roles; custom roles are possible
+      • Owner, contributor, reader
+   
+   • Collections of related permissions
+   
+   User roles scopes:
+   • Tenant
+   • Management group
+   • Subscription
+   • Resource group
+   • Resource
    <br /><br />
 
 1. PROTIP: Avoid using an email that you use for your own banking, shopping, social media, etc. For continuity with a real cloud, you'll need an email address that you can share and transfer to other people. That's so at a company, you will need to give someone else the password so that if you're ever go on vacation or get "run over a bus", your organization can continue.
@@ -155,7 +205,7 @@ On July 1, 2019, Microsoft fully transitioned from the "classic" (older) Azure S
    3 </td><td> 2  </td></tr>
 </table>
 
-ASM has "Cloud Services" and "Affinity Groups"
+ASM had "Cloud Services" and "Affinity Groups"
 which is structured with Resource Groups (logical containers)
 providing a single-resource point-of-view [i.e. manage a single resource at a time].
 
@@ -363,6 +413,7 @@ See <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-powershell/
    CAUTION: Logging in online imbues you with a full set of permissions that a login using the az command does not
    fully possess.
 
+
    <a name="TenantID"></a>
 
    ### Tenant ID
@@ -552,10 +603,15 @@ Developer Commmunity Forum for support
 
    * <a target="_blank" href="https://podcasts.apple.com/us/podcast/azure-ninjas/id1305172229">Azure Ninjas</a> (Microsoft Global Black Belts)
 
-## Channel 9 Microsoft
 
-   * <a target="_blank" href="https://channel9.msdn.com/Shows/Visual-Studio-Toolbox">Visual Studio Toolbox videos</a>
+## Policy
 
+Policy Definition options:
+   * Allowed VM SKU's
+   * Locations
+   * Allowed Resource Type
+   * Allowed Storage Account SKUs
+   <br /><br />
 
 ## More on DevOps #
 

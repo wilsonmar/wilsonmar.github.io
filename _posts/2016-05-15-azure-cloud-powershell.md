@@ -3,7 +3,7 @@ layout: post
 title: "Azure Cloud PowerShell Scripting"
 excerpt: "Do anything you want!"
 tags: [cloud, powershell]
-date: "2016-05-15"
+date: "2021-02-24"
 file: "azure-cloud-powershell"
 image:
 # fig blue powershell icon-1900x500
@@ -16,16 +16,16 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This tutorial describes the use of PowerShell Core on Azure cloud.
+This tutorial describes the use of PowerShell Core within the Azure cloud.
 
 Powershell refers to both the command-line shell and scripting language designed for system administration. 
-When "PowerShell Core 6.0" was announced on January 10, 2018, the word "Powershell" on its own now refers to the decade-old "PowerShell" integrated into all recent versions of Microsoft's Windows operating system. 
+(When "PowerShell Core 6.0" was announced on January 10, 2018, the word "Powershell" on its own now refers to the decade-old "PowerShell" integrated into all recent versions of Microsoft's Windows operating system.)
 
 The new "PowerShell Core" is available as a cross-platform application such that scripts written on MacOS will run on Windows, Linux, or other supported operating system. This also means that PowerShell Core does not have commands associated with the .NET Framework (for Windows OS).
 
-This is a similar rebranding of .NET vs. .NET Core. 
+This is similar to the rebranding of .NET vs. .NET Core. 
 
-PowerShell <strong>cmdlets</strong> let you manage the computers from the command line.
+PowerShell <strong>cmdlets</strong> let you manage computers from the command line.
 
 See <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/learn/windows-powershell-glossary?view=powershell-6">Glossary of terms</a>
 
@@ -37,11 +37,29 @@ See <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripti
 <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6">This</a>
 says "xcode-select --install" is needed as a pre-requisite.
 
+On MacOS:
+
 1. Install using Homebrew:
 
-   <pre><strong>brew cask install powershell</strong></pre>
+   <pre><strong>brew install --cask powershell</strong></pre>
 
-   ATTENTION: Enter your password when prompted.
+   <pre>==> Downloading https://github.com/PowerShell/PowerShell/releases/download/v7
+==> Downloading from https://github-releases.githubusercontent.com/49609581/9
+...
+==> Installing Cask powershell
+==> Running installer for powershell; your password may be necessary.
+Package installers may write to any location; options such as `--appdir` are ignored.
+Password:
+   </pre>
+
+1. ATTENTION: Enter your laptop password when prompted.
+
+   <pre>installer: Package name is PowerShell - 7.1.2
+installer: Installing at base path /
+installer: The install was successful.
+🍺  powershell was successfully installed!
+   </pre>
+
 
    <a name="VerifyPSInstall"></a>
 
@@ -51,30 +69,30 @@ says "xcode-select --install" is needed as a pre-requisite.
  
    The response at time of writing:
 
-   <pre>
-PowerShell v6.2.0
-Copyright (c) Microsoft Corporation. All rights reserved.
+   <pre>PowerShell 7.1.2
+Copyright (c) Microsoft Corporation.
 &nbsp;
-<a target="_blank" href="https://aka.ms/pscore6-docs">https://aka.ms/pscore6-docs</a>
+https://aka.ms/powershell
 Type 'help' to get help.
 PS /Users/...> 
    </pre>
 
-   `PS` means you are in the PowerShell shell. 
+   `PS` displayed means you are in the PowerShell shell. 
 
-1. To get the current version:
+   Gone is line: <a target="_blank" href="https://aka.ms/pscore6-docs">https://aka.ms/pscore6-docs</a>
+
+1. To get the current version of PowerShell and related components installed:
 
    <pre><strong>$PSVersionTable</strong></pre>
 
-   The response at time of writing:
+   The response at time of writing: on a Mac:
 
-   <pre>
-Name                           Value
+   <pre>Name                           Value
 ----                           -----
-PSVersion                      6.2.0
+PSVersion                      7.1.2
 PSEdition                      Core
-GitCommitId                    6.2.0
-OS                             Darwin 18.5.0 Darwin Kernel Version 18.5.0: Mon Mar 11 20:40:32 PDT 2019; root:xnu-4903.251.3~3/RELEASE_X86_64
+GitCommitId                    7.1.2
+OS                             Darwin 19.6.0 Darwin Kernel Version 19.6.0: …
 Platform                       Unix
 PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0…}
 PSRemotingProtocolVersion      2.3
@@ -82,18 +100,44 @@ SerializationVersion           1.1.0.1
 WSManStackVersion              3.0
    </pre>
 
-1. To exit out of PS and into the Bash shell:
+   On Windows 10:
+
+   <pre>Name                           Value
+----                           -----
+PSVersion                      5.0.10586.63
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
+BuildVersion                   10.0.10586.63
+CLRVersion                     4.0.30319.42000
+WSManStackVersion              3.0
+PSRemotingProtocolVersion      2.3
+SerializationVersion           1.1.0.1
+   </pre>
+
+   Compare against the response on Windows 7:
+
+   <pre>Name                           Value
+----                           -----
+CLRVersion                     2.0.50727.5420
+BuildVersion                   6.1.7601.17514
+PSVersion                      2.0
+WSManStackVersion              2.0
+PSCompatibleVersions           {1.0, 2.0}
+SerializationVersion           1.1.0.1
+PSRemotingProtocolVersion      2.1
+   </pre>
+
+1. Exit out of PS and into the Bash shell:
 
    <pre><strong>exit</strong></pre>
 
-1. <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-6">Learn PowerShell</a>
+1. To enter PowerShell:
 
 
    ### Upgrade PowerShell
 
 1. To upgrade:
 
-   <pre><strong>brew cask upgrade powershell</strong></pre>
+   <pre><strong>brew upgrade --cask powershell</strong></pre>
 
 1. <a href="#VerifyPSInstall">Verify PowerShell install</a> again.
 
@@ -111,34 +155,33 @@ https://www.microsoft.com/web/downloads/platform.aspx</a>
    used by ARM to enable infrastructure configurations to be defined
    (much like Puppet).
 
-### Install for ASM Imperative Commands #
 
-   <strong>Imperative</strong> commands (verbs such as to start or stop an app or machine)
-   are used in the classic ASM. If you're not using ASM, skip this.
-
-0. http://azure.microsoft.com/en-us/downloads
-0. Click PowerShell to download WindowsAzurePowershellGet.3f.3f.3fnew.exe and invoke it to download more.
-0. Click Install.
-0. Accept the pre-requisite of <strong>Windows Azure Powershell</strong>.
-
-0. Click Add for <strong>Azure Cross-platform Command-line Tools</strong> to download WindowsAzureXPlatCLI.3f.3f.3fnew.exe
-   aka Power Tools
-
-   NOTE: "XPlat" means Cross-platform. It's for ASM portal usage.
-
-
-### Install PowerShell #
+### Install PowerShell Scripts #
 
 Run from the <a target="_blank" href="https://www.powershellgallery.com/items?itemType=PSModule">
 Powershell Gallery</a> the Workflow to Download All Gallery Modules:
 
 0. Click the "Deploy" button or:
 
-   <pre><strong>
-   Install-Script -Name Download-AllGalleryModules
+   <pre><strong>Install-Script -Name Download-AllGalleryModules
    </strong></pre>
 
-0. Press Y to accept that the modules are from an untrusted source.
+   <pre>Untrusted repository
+You are installing the scripts from an untrusted repository. If you trust
+this repository, change its InstallationPolicy value by running the
+Set-PSRepository cmdlet. Are you sure you want to install the scripts from
+'PSGallery'?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help
+   </pre>
+
+0. Press A to accept install of all modules from an untrusted source.
+
+   ??? this error:
+
+   <pre>Install-Package: /usr/local/microsoft/powershell/7/Modules/PowerShellGet/PSModule.psm1:10044                                                               Line |                                                                      10044 |  … talledPackages = PackageManagement\Install-Package @PSBoundParameters                                                                                |                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      | The specified script file
+      | '/var/folders/r7/_4wzn4hn6yb2xxlms995lnkc0000gn/T/1269304408/Download-AllGalleryModules.0.1.0/Download-AllGalleryModules.ps1' has parse errors, try again after fixing the parse errors.
+   </pre>
 
 0. Click the "Deploy" button. You should see Azure's Custon Deployment bolt with Parameters:
 
@@ -151,83 +194,52 @@ Powershell Gallery</a> the Workflow to Download All Gallery Modules:
 0. Click Review legal terms then click Purchase.
 0. Click Create.
 
+
+
+   ### Connect into Azure
+
+1. To get the Azure sign-in screen pop-up in your default internet browser (Chrome):
+
+   <pre><strong>Connect-AzAccount</strong></pre>
+
+   ???
+
+   <pre>Connect-AzAccount: The term 'Connect-AzAccount' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+   </pre>
+
+
+
 ### Make Imperative Commands #
 
-   <tt><strong>PS C:\\>
-   </strong></tt>
+   Windows PowerShell <strong>providers</strong> access data stores, such as the Windows Registry and certificate store, as easily as you access the file system. 
 
-Windows PowerShell <strong>providers</strong> access data stores, such as the Windows Registry and certificate store, as easily as you access the file system. 
+1. Install NuGet provider:
 
-Install NuGet provider:
-
-   <pre><strong>
-   Install-PackageProvider -Name NuGet -Force
+   <pre><strong>Install-PackageProvider -Name NuGet -Force
    </strong></pre>
 
-Get a count of how many commands for Azure module:
+1. Get a count of how many commands for Azure module:
 
-   <pre><strong>
-   Get-Command -Module Azure | Measure-Object
+   <pre><strong>Get-Command -Module Azure | Measure-Object
    </strong></pre>
 
    I got a count of 697 commands for just Azure for ASM.
 
-List Azure commands containing "vm":
+1. List Azure commands containing "vm" (virtual machine):
 
-   <pre><strong>
-   Get-Command -Module Azure -noun *vm*
+   <pre><strong>Get-Command -Module Azure -noun *vm*
    </strong></pre>
+
 
 ### Enable PS1 execution #
 
 PowerShell commands can be script files with <strong>.ps1</strong> file extension.
 
-   <pre><strong>
-   Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+   <pre><strong>Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
    </strong></pre>
 
-
-### PowerShell Version #
-
-As with all PowerShell versions:
-
-   <pre><strong>
-   $PSVersionTable
-   </strong></pre>
-
-On MacOS:
-
-{% highlight text %}
-{% endhighlight %}
-
-
-On Windows 10:
-
-{% highlight text %}
-Name                           Value
-----                           -----
-PSVersion                      5.0.10586.63
-PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
-BuildVersion                   10.0.10586.63
-CLRVersion                     4.0.30319.42000
-WSManStackVersion              3.0
-PSRemotingProtocolVersion      2.3
-SerializationVersion           1.1.0.1
-{% endhighlight %}
-
-   Compare against the response on Windows 7:
-
-{% highlight text %}
-Name                           Value
-----                           -----
-CLRVersion                     2.0.50727.5420
-BuildVersion                   6.1.7601.17514
-PSVersion                      2.0
-WSManStackVersion              2.0
-PSCompatibleVersions           {1.0, 2.0}
-SerializationVersion           1.1.0.1
-PSRemotingProtocolVersion      2.1
-{% endhighlight %}
+   On a Mac: Set-ExecutionPolicy: Operation is not supported on this platform.
 
 
    ## Azure 
@@ -560,7 +572,11 @@ The equivalent
 * Get-AzureRmVMImageOffer -Location $locName -PublisherName $Publisher
 * Get-AzureRmVMImageSku -Location $locName -PublisherName $Publisher -Offer $offer
 
+## Resources
 
+1. <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-7">doc.microsoft.com: What is PowerShell?</a>
+
+1. <a target="_blank" href="https://app.pluralsight.com/library/courses/powershell-getting-started/table-of-contents">Pluralsight VIDEO: "PowerShell 7.0.3: Getting Started" 3h 4m 14 Sep 2020</a> by Michael Bender (@MichaelBender, itsallgeek2mike.com)
 
 ## More on DevOps #
 

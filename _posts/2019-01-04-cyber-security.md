@@ -689,7 +689,9 @@ NIST also publishes SP1800 (Cybersecurity practice guides) and the broader SP 50
 
 ### FedRAMP/FISMA compliance
 
-In the US federal government, the FISMA (Federal Information Security Management Act) of 2002 law is implemented according to  NIST (National Institute of Standards and Technology) Special Publication (SP) <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">800-53 [pdf]</a>. The security controls development framework contains of 157 controls within 19 control families. Each control is designated as low, moderate, or high impact. 
+<a target="_blank" href="https://www.youtube.com/channel/UCkUuvNigxkKnk3SffjdbmQg">VIDEOS</a> from info.fedramp.gov
+
+In the US federal government, the FISMA (Federal Information Security Management Act) of 2002 law is implemented according to NIST (National Institute of Standards and Technology) Special Publication (SP) <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">800-53 [pdf]</a>. The security controls development framework contains of 157 controls within 19 control families. Each control is designated as low, moderate, or high impact. 
 
 <a target="_blank" href="https://storefront.disa.mil/kinetic/disa/service-catalog#/forms/cloud-service-support">DISA's Cloud Service Support</a>
 
@@ -790,6 +792,8 @@ See the <a target="_blank" href="https://www.youtube.com/watch?v=-h_lj5sWo4A">20
 See <a target="_blank" href="https://www.open-scap.org/">https://www.open-scap.org</a>
 for tools.
 
+* ITAR (International Traffic in Arms Regulations)
+* ECCN (Export Control Classification Number)
 
 ## Source of vulnerabilities
 
