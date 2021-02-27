@@ -199,7 +199,7 @@ Alternately, the <a target="_blank" href="https://github.com/traviscross/mtr">op
 To compare network speeds using GUI tools:
 
 
-### Google networks
+### Google networking
 
 Google has laid its own fiber-optic wires around the world:
 
@@ -216,7 +216,7 @@ PROTIP: If you only operate out of just one region in the world, use a <strong>C
    To stop collection, press the dot with the arrow.
 
 
-### Amazon
+### Amazon networking
 
 Amazon's own <a target="_blank" href="http://ec2-reachability.amazonaws.com/">EC2 Reachability Test</a> does not provide ping speeds to <strong>specific IP addresses</strong> within each availability zone within each region, but a green icon when it can be currently reached at any speed.
 
@@ -227,12 +227,22 @@ Amazon's own <a target="_blank" href="http://ec2-reachability.amazonaws.com/">EC
 <a target="_blank" href="https://ping.varunagw.com/aws.htm">https://ping.varunagw.com/aws.htm</a> provides green, yellow, red colors with Mean, Median, Min, and Max statistics based several measures of the speed to each EC2 region.
 
 
-### Microsoft Azure
+### Microsoft Azure networking
+
+At time of writing, Microsoft has 16 regions around the world:
+   
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/109390014-59315980-78cc-11eb-8f55-568068a08f2f.png">
+   <img alt="az-region-map-2020-916x516" width="916" src="https://user-images.githubusercontent.com/300046/109390014-59315980-78cc-11eb-8f55-568068a08f2f.png"></a>
 
 <a target="_blank" href="http://www.azurespeed.com/">http://http://www.azurespeed.com</a> measures current ping speed to various regions on Microsoft's Azure cloud. To stop collection, click "uncheck all" or individual regions of interest:
 
-   ![cloud-service-azure-checks-603x261-56530](https://user-images.githubusercontent.com/300046/40890517-a7bc4b02-6734-11e8-9c1f-88e6a686de0d.jpg)
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/40890517-a7bc4b02-6734-11e8-9c1f-88e6a686de0d.jpg">
+   <img alt="cloud-service-azure-checks-603x261-56530" width="603" src="https://user-images.githubusercontent.com/300046/40890517-a7bc4b02-6734-11e8-9c1f-88e6a686de0d.jpg"></a>
 
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/networking/azure-network-latency">https://docs.microsoft.com/en-us/azure/networking/azure-network-latency</a> displays Microsoft's own analysis of <strong>ping speeds between its regions</strong> (using data from the <a target="_blank" href="https://www.thousandeyes.com/">thousandeyes.com</a> network analytics company):
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/109372837-e773f400-7868-11eb-8804-1d306f22fba2.png">
+   <img alt="azure-network-latency-2020-12-2761x1756.png" width="2761" src="https://user-images.githubusercontent.com/300046/109372837-e773f400-7868-11eb-8804-1d306f22fba2.png"></a>
 
 
 

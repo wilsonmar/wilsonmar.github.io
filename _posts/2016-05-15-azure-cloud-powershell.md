@@ -282,13 +282,12 @@ At /usr/local/microsoft/powershell/6.0.0-beta.7/Modules/PowerShellGet/1.1.3.2/PS
 
 0. Load the module into your PowerShell session. Modules are loaded using the Import-Module cmdlet:
 
-   Import-Module AzureRM.Netcore
-
+   <pre><strong>Import-Module AzureRM.Netcore</strong></pre>
 
    http://www.signalwarrant.com/automate-creating-lab-virtual-machines-in-azure-with-powershell/
 
 
-   ## Environments
+   ## Azure Environments (Clouds)
 
    https://docs.microsoft.com/en-us/powershell/azure/authenticate-azureps?view=azurermps-4.4.0
 
@@ -299,8 +298,7 @@ At /usr/local/microsoft/powershell/6.0.0-beta.7/Modules/PowerShellGet/1.1.3.2/PS
 
    Sample response:
 
-   <pre>
-AzureCloud
+   <pre>AzureCloud
 AzureChinaCloud
 AzureUSGovernment
 AzureGermanCloud
@@ -317,8 +315,7 @@ AzureGermanCloud
 
    CAUTION: This sample response exposes senstive information:
 
-   <pre>
-Environment           : AzureCloud
+   <pre>Environment           : AzureCloud
 Account               : username@contoso.com
 TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 SubscriptionId        : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
@@ -328,8 +325,7 @@ CurrentStorageAccount :
 
 0. Get the dialog box asking for your Azure credentials to login interactively at <a target="_blank" href="https://aka.ms/devicelogin">https://aka.ms/devicelogin</a>:
 
-   <tt><strong>
-   Login-AzureRmAccount -EnvironmentName AzureCloud
+   <tt><strong>Login-AzureRmAccount -EnvironmentName AzureCloud
    </strong></tt>
 
    Alternately, login by specifying an Azure Service Principle:
@@ -339,12 +335,9 @@ CurrentStorageAccount :
    PROTIP: Some put the above command in a command file with a short name.
 
 
-
-
 List Mangement Verbs
 
-   <pre><strong>
-   azure
+   <pre><strong>azure
    </strong></pre>
 
 Clear Screen
