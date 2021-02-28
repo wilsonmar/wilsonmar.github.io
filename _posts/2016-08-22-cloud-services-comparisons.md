@@ -229,11 +229,15 @@ Amazon's own <a target="_blank" href="http://ec2-reachability.amazonaws.com/">EC
 
 ### Microsoft Azure networking
 
-At time of writing, Microsoft has 16 regions around the world:
-   
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/109390014-59315980-78cc-11eb-8f55-568068a08f2f.png">
-   <img alt="az-region-map-2020-916x516" width="916" src="https://user-images.githubusercontent.com/300046/109390014-59315980-78cc-11eb-8f55-568068a08f2f.png"></a>
+At time of writing, Microsoft has over 60 regions around the world on <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/geographies/">their map</a>:
 
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/109421738-cfe65980-7995-11eb-9a04-1b385f2ed631.png">
+   <img alt="az-map-2021-1440x741.png" width="1440" src="https://user-images.githubusercontent.com/300046/109421738-cfe65980-7995-11eb-9a04-1b385f2ed631.png"></a>
+
+There is also an <a target="_blank" href="https://build5nines.com/map-azure-regions/">
+interactive map showing a point for each region's Longitude and Latitude</a> with city name.
+
+   
 <a target="_blank" href="http://www.azurespeed.com/">http://http://www.azurespeed.com</a> measures current ping speed to various regions on Microsoft's Azure cloud. To stop collection, click "uncheck all" or individual regions of interest:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/40890517-a7bc4b02-6734-11e8-9c1f-88e6a686de0d.jpg">
@@ -244,6 +248,10 @@ At time of writing, Microsoft has 16 regions around the world:
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/109372837-e773f400-7868-11eb-8804-1d306f22fba2.png">
    <img alt="azure-network-latency-2020-12-2761x1756.png" width="2761" src="https://user-images.githubusercontent.com/300046/109372837-e773f400-7868-11eb-8804-1d306f22fba2.png"></a>
 
+PROTIP: The slowest connection is 400 ms round-trip between Cape Town (South Africa West) and Australia East.
+
+
+https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions
 
 
 ## Outage tracking #

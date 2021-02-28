@@ -51,9 +51,52 @@ comments: true
    PROTIP: Bookmark the above link.
 
 
+   ### Azure GUI thru CloudAcademy 
+
+   Here's how to use <a target="_blank" href="https://cloudacademy.com/library/azure/">cloudacademy.com/library/azure</a> labs:
+
+1. Search for an Azure course
+1. At a Lab such as <a target="_blank" href="https://cloudacademy.com/lab/start-your-first-azure-virtual-machine-windows/connecting-to-the-virtual-machine-rdp/?context_id=524&context_resource=lp">"Start Your First Azure Virtual Machine (Windows)"</a>
+
+   My alternative instructions (which works for macOS):
+
+1. Click "Start Lab".
+1. PROTIP: Right-click on "Open Environment" to "Open Link in New Window" so you can quickly switch using command+` on macOS.
+1. Click "Use another account".
+1. In the CloudAcademy screen, click "Copy" for Username.
+1. In the Azure Signin, paste the email (such as "student-1551-576984@labscloudacademy.onmicrosoft.com"). Click Next.
+1. In the CloudAcademy screen, click "Copy" for Password.
+1. In the Azure Signin, paste the Password (such as "Ca1_iyvB75Wl"). Click "Sign in".
+1. Click the Username account for the lab.
+1. Click "Maybe later" for tour for the Azure landing page (Dashboard).
+
+1. In the CloudAcademy screen, scroll to bottom to click "Next Step".
+1. Click "Resource Group" under the Navigate label.
+1. Click the "cal-xxx-yy" presented.
+
+1. PROTIP: The app for macOS suggested is no longer available in the store. Use one noted in <a target="_blank" href="https://wilsonmar.github.io/rdp/">my tutorial on RDP</a>.
+
+1. Click the Azure Portal accordion menu in the upper-left corner.
+1. Select "Virtual machines" in the left menu.
+1. Click the running VM name in the list for the "Overview" blade.
+
+   * A <strong>Blade</strong> is a portion of the page that pops up as you navigate in the portal. (Note: A Blade is contextual and tied to your navigation. This will become more intuitive as you use the portal.) 
+   * Opening a series of blades is called a <strong>journey</strong>.
+   * <strong>Hub</strong> is the Icon/category for navigation within the left Azure Portal menu that is opened by clicking the upper-left accordion icon alt.
+   <br /><br />
+
+1. Click "Connect", then "RDP". Click "Download RPD File". 
+1. In the pop-up Finder, navigate to a container folder (such as "Projects"), create a folder, and save the RDP file.
+1. Switch to Finder and navigate to your RDP file.
+
+   ### Use Terraform on Azure
+
+   PROTIP: Azure Cloud Shell has Terraform pre-installed!
+
+   https://medium.com/microsoftazure/get-started-with-terraform-by-building-an-azure-vm-tutorial-350175e2cd88
+
    ### Other training options which include cloud time
 
-   * <a target="_blank" href="https://cloudacademy.com/library/azure/">cloudacademy.com/library/azure</a>
    * Pluralsight.com
    * LinkedIn Learning
    * ACloudGuru.com
@@ -102,7 +145,7 @@ comments: true
 
    NOTE: There is a separate <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/government/">Azure fed/state/local gov</a> is an isolated "soverign" DoD Level 5 cloud on US soil operated by US citizens. It has its own Marketplace of apps. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-welcome">What is gov?</a> 
 
-   * <a target="_blank" href="https://www.youtube.com/playlist?list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7">YouTube playlist</a> by Zach Kramer and Steve Michelotti
+   * <a target="_blank" href="https://www.youtube.com/playlist?list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7">YouTube playlist on Azure</a> by Zach Kramer and Steve Michelotti
    * https://azure.microsoft.com/en-us/global-infrastructure/government/
    <br /><br />
 
@@ -216,6 +259,10 @@ Also, instead of 2 racks, ARM resources can span 3 racks of computers.
 
 Enabling of MFA is hidden behind "..." (More) in All Users menu bar.
 Note "only users licensed to use Microsoft Online Services are eligible for Multi-Factor Authentication."
+
+https://github.com/Azure/azure-quickstart-templates
+contains Azure Resource Manager templates contributed by the community.
+
 
 
 <a name="ARM-signup"></a>
