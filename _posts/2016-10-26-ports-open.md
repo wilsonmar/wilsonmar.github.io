@@ -3,7 +3,7 @@ layout: post
 title: "Ports Open (Networking)"
 excerpt: "What ports are open for hacking on my Mac and Linux machine?"
 tags: [Mac, Security, Networking]
-date: "2016-10-26"
+date: "2021-03-01"
 file: "ports-open"
 image:
 # pic silver robot white skin handshake 1900x500
@@ -29,8 +29,8 @@ which consumes electricity and thus reduce battery life.
 
 PAT (Port Address Translation) maps ports.:
    * 0 - 1023 = well-know ports
-   * 1024 - 49141 = registered ports (1433 for MS SQL, 1431 for Oracle SQL, etc.)
-   * 49152 - 54535 = dynamic ports
+   * 1024 - 49141 = <strong>Registered ports</strong> (1433 for MS SQL, 1431 for Oracle SQL, etc.)
+   * 49152 - 54535 65535 = dynamic ports
    <br /><br />
 
 Port 3389 is used for communicating with Microsoft's RDP (Remote Desktop Protocol) on Windows machines. See <a target="_blank" href="https://wilsonmar.github.io/rdp">My notes on Windows RDP</a>.
@@ -146,21 +146,19 @@ Dropbox         21014  mac  163u     IPv4 0xeef754dd0e9f763b        0t0      TCP
 
 Linux requires root on operations for well-known ports below 1024.
 
-Registered Ports: 1024 through 49151.
 
-Dynamic/Private : 49152 through 65535. 
+## Protocols
 
 TCP (Transmission Control Protocol) is the most commonly used protocol on the Internet and any TCP/IP network. TCP enables two hosts to establish a connection and exchange streams of data. TCP guarantees delivery of data and that packets will be delivered in the same order in which they were sent. Guaranteed communication/delivery is the key difference between TCP and UDP on ort 53.
 
 UDP (Datagram Protocol) is connectionless and does not guarantee reliable communication; it's up to the application that received the message to process any errors and verify correct delivery. UDP is often used with time-sensitive applications, such as audio/video streaming, where dropping some packets is preferable to waiting for delayed data. 
 
 
-## Processes Tour
+### Processes Tour
 
    NOTE: Drag the scroll bar to see what is beyond what is displayed.
 
-   <pre>
-     0t0      TCP 127.0.0.1:27017 (LISTEN)
+   <pre>     0t0      TCP 127.0.0.1:27017 (LISTEN)
    </pre>
 
 <strong>mongod</strong> is MongoDB listening on port 27017.
@@ -207,14 +205,9 @@ I used once to get a file.
 
 ### For a list of processes on Mac:
 
-http://www.westwind.com/reference/OS-X/background-processes.html
+Don't visit http://www.westwind.com/reference/OS-X/background-processes.html
 
 <strong>ftp</strong> (tftp) should not appear.
-
-
-## Firewall
-
-
 
 
 ## NMAP
@@ -223,30 +216,46 @@ Scan other machines
 
 0. Install
 
-   <tt><strong>
-   brew install nmap
+   <tt><strong>brew install nmap
    </strong></tt>
+
+   (Zenmap is the GUI)
 
 0. There are a lot of options
 
-   <tt><strong>
-   nmap -h
+   <tt><strong>nmap -h
    </strong></tt>
 
    The format:
 
-   <tt><strong>
-   nmap [scan type] [options] {target specification}
+   <tt><strong>nmap [scan type] [options] {target specification}
    </strong></tt>
 
 0. There are a lot of options
 
-   <tt><strong>
-   nmap -h
+   <tt><strong>nmap -h
    </strong></tt>
+
+0. Scan for vulnerabilities using nmap scripts.
+
+0. Scan for vulnerabilities using vulnerability scanners:
+
+   OpenVAS
+
+0. Scans for versions of applications and operating systems.
+   Compare those against known vulnerabilities and exploits.
+
+Devices  on the   Internet with  open  ports are   indexed  by <a target="_blank" href="https://www.Shodan.io/">Shodan.io</a>.
+
+SNR (software defined radios)
 
 
 ## Resources 
+
+Learn basic hardware hacking  with  UbertoothOne   and   HackRF One.
+
+US Government has free training at <a target="_blank" href="https://ics-cert-training.inl.gov/learn">
+https://ics-cert-training.inl.gov/learn</a>
 
 https://www.wikiwand.com/en/Lsof
 
@@ -254,52 +263,27 @@ https://danielmiessler.com/study/lsof/#gs.3YHJpiA
 
 https://netadmintools.com/html/lsof.man.html
 
-https://www.zeek.org
-Zeek (formerly Bro) and/or 
-https://www.snort.org
-Snort
+<a target="_blank" href="https://www.zeek.org/">
+Zeek.org</a> (formerly Bro) and/or 
+<a target="_blank" href="https://www.snort.org/">snort.org</a>
+
 Network Intrusion detection systems (NIDS)
 
-https://cybersecurity.att.com/products/ossim
-AlienVault Open Source SIEM (OSSIM) with Open Threat Exchange (OTX)
-Security Information and Event Management (SIEM) software
+<a target="_blank" href="https://cybersecurity.att.com/products/ossim">AlienVault Open Source SIEM (OSSIM)</a> 
+with Open Threat Exchange (OTX)
+Security Information and Event Management (SIEM) software.
 
-CompTIA CySA+ (CSO-001) exam launched April 21, 2020 on Vue & Pearson online
-$359 to answer 75% of 85 questions in 165 minutes
 
-<a target="_blank" href="https://www.infosecinstitute.com/webinar/comptia-cysa-certification-changes-everything-you-need-to-know/?utm_status=success">VIDEO</a>:
+## Honeypots
 
-1. Threat and vulnerability management:
+Commercial Honeypot software:
+   * Fortinet – FortiDeceptor
+   * Attivio - BOTsink
+   * Fidelis – Fidelis  Deception
+   * TrapX– DeceptionGrid
+   * Illusive  – Illusive  Platform
+   <br /><br />
 
-   1. Explain the importance of threat data and intelligence.
-   1. Given a scenario, utilize threat intelligene to support organizatoinal security.
-   1. Given a scenario, perform vulnerability management activities.
-   1. Given a scenario, analyze the output from common vulnerability assessment tools.
-   1. Explain the threats and vulnerabilities associated with operating in the cloud.
-   1. Given a scenario, implement controls to mitigate attacks and software vulnerabilities.
-
-2. Software and systems security
-   1. Given a scenario, apply security solutions for infastructure management
-   2. Explain software assurance best practices
-   3. Explain hardware assurance best practices
-
-3. Security operations and monitoring:
-   1. Given a scenario, analyze data as part of security monitoring activities.
-   2. Given a scenario, implement configuration changes to existing controls to improve security.
-   3. Explain the importance of proactive threat hunting.
-   4. Compare and contrast automation concepts and technologies.
-
-4. Incident response
-   1. Explain the importance of the incident response process.
-   1. Given a scenario, apply the appropriate incident response procedure.
-   1. Given an incident, analyze potential indicators of compromise.
-   1. Given a scenario, utilize basic digital forensics techniques.
-
-1. Compliance and assessment
-   1. Understand the importance of data privacy and protection
-   2. Given a scenario, apply security concepts in support of organizational risk mitigation
-   3. Explain the importance of frameworks, policies, procedures and controls.
-   
 
 ## More on OSX
 

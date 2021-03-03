@@ -24,7 +24,8 @@ Conditions enabling leak of secrets from GitHub and other source repositories:
 4. <a href="#Forgot">You may forget to add .gitignore or remove local secrets</a>
 5. <a href="#Crackers">Static passwords can be cracked eventually</a>
 6. <a href="#Crash">You can lose secrets when your laptop crashes or is lost</a>
-7. <a href="#SSH_remains">SSH keys to access GitHub are static, subject to theft</a>
+7. <a href="#PAT_remains">PAT (Personal Access Tokens) are static, subject to theft</a>
+8. <a href="#SSH_remains">SSH keys to access GitHub are static, subject to theft</a>
 <br /><br />
 
 <a name="HowTo"></a>
@@ -37,7 +38,8 @@ Recommendations offered in this article:
 4. <a href="#UseVariables">Refer to secrets as environment variables in your code</a>
 5. <a href="#Encrypt">Rotate keys to encrypted files</a>
 6. <a href="#SecretsInCloud">Save secret keys in the cloud</a>
-7. <a href="#SSH_certs">Rotate secrets: Access GitHub with rotated SSH certificates generated (automatically every day)</a>
+7. <a href="#PAT_Rotation">Rotate Personal Access Tokens every month/quarter/year</a>
+8. <a href="#SSH_certs">Rotate secrets: Access GitHub with rotated SSH certificates generated (automatically every day)</a>
 <br /><br />
 
 <hr />
@@ -181,7 +183,7 @@ The options:
 
 <strong>GitLeaks</strong> is a post-commit utility written in Go open-source code at <a target="_blank" href="https://github.com/zricethezav/gitleaks">https://github.com/zricethezav/gitleaks</a>. It's author, Zachary Rice, currently works at GitLab. It can be run as a <a target="_blank" href="https://github.com/zricethezav/gitleaks-action">GitHub Actions</a>. It scans git repos (or files) for secrets using regex and <a target="_blank" href="https://en.wikipedia.org/wiki/Entropy_(information_theory)">Shannon entropy</a>. Josphat Mutai's <a target="_blank" href="https://computingforgeeks.com/gitleaks-audit-git-repos-for-secrets/">blog describes it's cool features</a>.
 
-<strong>Git Guardian</strong> (at <a target="_blank" href="https://gitguardian.com/">gitguardian.com</a>) is an automated monitoring cloud utility to detect API keys and other credentials and secrets exposed in source code on public SaaS or private (internal/on-prem) GitHub. Free on public repos. Its documentation is published at <a target="_blank" href="https://docs.gitguardian.com/internal-repositories-monitoring/home">https://docs.gitguardian.com/internal-repositories-monitoring/home</a>.
+<strong>Git Guardian</strong> (at <a target="_blank" href="https://gitguardian.com/">gitguardian.com</a>) is an automated monitoring cloud utility to detect API keys and other credentials and secrets exposed in source code on public SaaS or private (internal/on-prem) GitHub. Free on public repos. Its documentation is published at <a target="_blank" href="https://docs.gitguardian.com/internal-repositories-monitoring/home">https://docs.gitguardian.com/internal-repositories-monitoring/home</a>. 
 
 "GittyLeaks" open-source code.
 
@@ -189,8 +191,11 @@ The options:
 
 TruffleHog is open-source code.
 
-<a target="_blank" href="https://www.guardrails.io/">GuardRails.io</a> (<a target="_blank" href="https://twitter.com/guardrailsio">@guardrailsio</a>) on <a target="_blank" href="https://github.com/marketplace/guardrails">GitHub's Marketplace</a> uses proprietary code. It produces reports and provides login security, which are  important to keep knowledge of internal vulnerabilities isolated to only those who need to know. Its free plan scans only PRs and retains data for a day. It claims use of machine learning to automatically identifies the programming languages and frameworks for each file and the appropriate security tools. <a target="_blank" href="https://docs.guardrails.io/docs/en/introduction.html">Documentation</a>. <a target="_blank" href="https://www.youtube.com/watch?v=9UJ-t0jQ4mA&time=5m16s">VIDEO: "The Future of DevSecOps"</a> by CEO Stefan Streichsbier.
+<a target="_blank" href="https://www.guardrails.io/">GuardRails.io</a> (<a target="_blank" href="https://twitter.com/guardrailsio">@guardrailsio</a>) on <a target="_blank" href="https://github.com/marketplace/guardrails">GitHub's Marketplace</a> uses proprietary code. It produces reports and provides login security, which are  important to keep knowledge of internal vulnerabilities isolated to only those who need to know. Its free plan scans only PRs and retains data for a day. It claims use of machine learning to automatically identifies the programming languages and frameworks for each file and the appropriate security tools.
 
+   * <a target="_blank" href="https://docs.guardrails.io/docs/en/introduction.html">Documentation</a>. <a target="_blank" href="https://www.youtube.com/watch?v=9UJ-t0jQ4mA&time=5m16s">VIDEO: "The Future of DevSecOps"</a> by CEO Stefan Streichsbier.
+
+   * Guardrail's <a target="_blank" href="https://docs.guardrails.io/docs/en/vulnerabilities/general/hard-coded-secrets">"Fixing Hard-Coded Secrets"</a>
 
 <hr />
 
@@ -756,9 +761,28 @@ References:
 
 <hr />
 
+<a name="PAT_remains"></a>
+
+### PROBLEM 7. PAT (Personal Access Tokens) are static, subject to theft
+
+Github allows for several ways to authenticate and authorize access to repositories.
+In addition to passwords, Github enables users to create a Personal Access Token (PAT) to authenticate instead of a password.
+
+The concern is that any static key is subject to cracking and theft.
+Anyeone who knows a password/PAT can access all data of that user on GitHub, include deletion.
+
+
+<a name="PAT_Rotation"></a>
+
+## SOLUTION 7. Rotate Personal Access Tokens every month/quarter/year
+
+PROTIP: In your Calendar (such as Outlook), create an appointment for each Private Access Token created.
+
+<hr />
+
 <a name="SSH_remains"></a>
 
-### PROBLEM 7. SSH keys to access GitHub are static, subject to theft
+### PROBLEM 8. SSH keys to access GitHub are static, subject to theft
 
 1. When at a repository on GitHub, in the Code section, you want to clone a repository to your laptop, click the green "Code" button:
 
@@ -909,7 +933,7 @@ References about this topics:
 
 <a name="SSH_certs"></a>
 
-## SOLUTION 7. Access GitHub with rotated SSH certificates generated (automatically every day)
+## SOLUTION 8. Access GitHub with rotated SSH certificates generated (automatically every day)
 
 A more modern way that <strong>automatically generates SSH keys every day</strong>, each user of GitHub doesn't have ssh-keygen to run and  copying and pasting to a GitHub form.
 

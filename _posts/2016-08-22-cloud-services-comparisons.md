@@ -16,6 +16,21 @@ comments: true
 {% include _toc.html %}
 
 
+## Cloud Service Models
+
+* Applications   - SaaS
+* App Data       - SaaS (Storage: Blob, Table, File, Message; DB: Postgres SQL, Cosmos planetary DB)
+
+* App Runtime    - PaaS
+* Middleware     - PaaS
+* O/S            - PaaS
+
+* Virtualization - IaaS
+* Servers        - IaaS
+* Storage        - IaaS
+* Networking     - IaaS
+<br /><br />
+
 ## Why? Advantages of Cloud
 
 Evaluations can be based on the advantages of cloud:
@@ -285,7 +300,8 @@ https://outage.report/aws-amazon-web-services
 * <a href="#Networks">Networks</a>
 * <a href="#Management">Management</a> (monitoring, governance)
 * <a href="#DevOps">DevOps</a> (development to operations)
-* <a href="#Compute">Compute</a> (Web, mobile, containers)
+
+* <a href="#Compute">Compute</a> (PaaS Web apps, mobile apps, containers, Functions, Logic Apps)
 * <a href="#Integration">Integration</a> (messaging, migrate)
 * <a href="#Persistance">Persistance</a> (storage, databases)
 * <a href="#Analytics">Analytics</a> (includes Machine Learning & AI)
@@ -312,7 +328,7 @@ Here are the names of brand names, some with links to marketing or documentation
 
 <tr valign="top" class="tblOdd"><th align="left">Administration &amp; Security (Identity and Access Management) </th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/active-directory/">Azure Active Directory</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/directoryservice/">DirectoryService</a>
-<br /><a target="_blank" href="http://aws.amazon.com/iam/">IAM</a></a><br /></td>
+<br /><a target="_blank" href="https://aws.amazon.com/iam/">IAM</a></td>
     <td>Cloud IAM</td></tr>
 
 <tr valign="top" class="tblOdd"><th align="left">Threat Monitoring<br /></th><td><a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/intro-to-security-in-azure/2a-azure-security-center">Azure Security Center</a>
@@ -370,7 +386,7 @@ Here are the names of brand names, some with links to marketing or documentation
 
 <tr valign="top" bgcolor="#d3d3d3"><td colspan="4"><a name="Management"></a>Management:</td></tr>
 
-<tr valign="top" class="tblEven"><th align="left">What services?</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/managed-applications/">Azure Managed Applications</a>
+<tr valign="top" class="tblEven"><th align="left">Turnkey solutions</th><td><a target="_blank" href="https://azure.microsoft.com/en-us/services/managed-applications/">Azure Managed Applications</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/servicecatalog/">AWS Service Catalog</a></td>
     <td>-</td></tr>
 
@@ -381,11 +397,11 @@ Here are the names of brand names, some with links to marketing or documentation
 </td><td><a target="_blank" href="http://aws.amazon.com/cloudwatch/">CloudWatch</a></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblEven"><th align="left"><br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/event-hubs/">Azure Event Hubs</a>
+<tr valign="top" class="tblEven"><th align="left">real-time data ingestion</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/event-hubs/">Azure Event Hubs</a>
 </td><td>None<br /></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblEven"><th align="left">Audit logs<br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/operational-insights/">Azure Operational Insights</a>
+<tr valign="top" class="tblEven"><th align="left">Audit logs (Observability)<br /></th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/operational-insights/">Azure Operational Insights</a>
 </td><td><a target="_blank" href="http://aws.amazon.com/cloudtrail/">CloudTrail</a>
 </td>
     <td>-</td></tr>
@@ -581,7 +597,7 @@ Here are the names of brand names, some with links to marketing or documentation
 </td><td><a target="_blank" href="https://aws.amazon.com/rekognition/">Rekognition image and video</a></td>
     <td>-</td></tr>
 
-<tr valign="top" class="tblOdd"><th align="left">Computer Vision</th><td><a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/">Computer Vision</a><a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/face/">Face</a>
+<tr valign="top" class="tblOdd"><th align="left">Computer Vision</th><td><a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/">Computer Vision</a><a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/face/">Face</a>,<a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-recognizing-text">OCR</a>
 </td><td><a target="_blank" href="https://aws.amazon.com/rekognition/">Rekognition</a></td>
     <td>-</td></tr>
 

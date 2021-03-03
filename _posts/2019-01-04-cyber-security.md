@@ -2132,7 +2132,6 @@ An AUP (acceptable use policy) details appropriate use of information systems, h
 
 “Security is always excessive until it's not enough.” – Robbie Sinclair
 
-
 ## More on Security #
 
 This is one of a series on Security in DevSecOps:

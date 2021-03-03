@@ -175,11 +175,10 @@ It's core engine is built using GitHub's Electron for multi-plantform (Mac, Wind
 
 But VSCode's windowing is much more configurable, which has enabled many add-ons that has made it the most feature-rich and thus most preferred editor today. 
 
-1. Open a Mac Terminal: 
-
+1. Open a Mac Terminal
 1. Install the GUI program using Homebrew:
 
-   <tt><strong>brew cask install visual-studio-code
+   <tt><strong>brew install --cask visual-studio-code
    </strong></tt>
 
 1. Navigate to a folder.
@@ -1208,50 +1207,64 @@ complete
 
 ## Visual Studio for Mac #
 
-PROTIP: Avoid videos which are not applicable to the "2019" version:
-
-   * <a target="_blank" href="https://www.youtube.com/watch?v=DS4zGjyo4Zs">VIDEO: Install when it was in Preview</a>  Jan 10, 2019.
-   * <a target="_blank" href="https://www.youtube.com/watch?v=jUiuIAZt6Dw">Using Git with Visual Studio</a> Apr 7, 2017
-
-The following was written after <a target="_blank" href="https://devblogs.microsoft.com/visualstudio/visual-studio-2019-for-mac-is-now-available/">April 9, 2019 release</a>.
-
-### &nbsp; &nbsp; &nbsp; Prerequites
-
-1. See <a target="_blank" href="https://wilsonmar.github.io/xcode/">https://wilsonmar.github.io/xcode</a> to install Apple's <strong>XCode</strong>.
-
-### &nbsp; &nbsp; &nbsp; Install
-
-Follow along watching <a target="_blank" href="https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-12-Getting-Started-with-Visual-Studio-for-Mac">VIDEO: Snack Pack 12: Getting Started with Visual Studio 2017 for Mac</a> May 31, 2017 by James Montemagno (<a target="_blank" href="http://twitter.com/jamesmontemagno">@jamesmontemagno<a>). which covers mobile development as well.
-
-   <a target="_blank" href="https://github.com/MicrosoftDocs/visualstudio-docs">https://github.com/MicrosoftDocs/visualstudio-docs</a> contains source files for the Visual Studio technical documentation published on docs.microsoft.com.
-
 0. If you type "https://visualstudio.com" (the previous URL) you are redirected to:
    <a target="_blank" href="https://visualstudio.microsoft.com/">https://visualstudio.microsoft.com</a>
 
-   <a target="_blank" href="https://visualstudio.microsoft.com/vs/mac/">https://visualstudio.microsoft.com/vs/mac</a>
+   * "Visual Studio Code" is free software for both Windows and Macs. It is used to develop code in NodeJs, Python, SQL, etc.
 
-0. Click "Download for Mac" and select "Community 2019 for Mac".
+   * <a target="_blank" href="https://visualstudio.microsoft.com/vs/mac/#vs_mac_table">Only "Visual Studio for Windows"</a> can be used to develop WPF, Windows Forms, UWP, and Desktop/mobile apps using C++. It is licensed (costs money).
 
-   PROTIP: The 2019 version is also called "v16" behind the scenes.
+   * <a target="_blank" href="https://visualstudio.microsoft.com/vs/mac/">"Visual Studio for Mac</a> is used only to develop code in JavaScript/Typescript, and <strong>cannot be used to develop code in NodeJs, Python, SQL</strong>. It contains features of the previous "Xamarin Studio" to develop apps and games for iOS, Android, and web using .NET.
 
-   The "Professional" and "Enterprise" versions cost money but provides more features.
+   * <a target="_blank" href="https://visualstudio.microsoft.com/vs/community/">Visual Studio for Mac -- Community Edition"</a> is FREE software "for students, open-source and individual developers".
 
-   PROTIP: Although Xamarin Studio is currently offered,
-   its functonality is being folded into 
-   <a target="_blank" href="https://www.visualstudio.com/vs/visual-studio-mac/">Visual Studio for Mac</a> until May 31, 2017.
+   * <a target="_blank" href="https://visualstudio.microsoft.com/vs/professional/">Visual Studio for Mac -- Professional Edition"</a> costs $45/month, but a $50/month Azure credit. 
 
-0. Click "Save" on the pop-up to download <strong>visualstudioformacinstaller.dmg</strong>:
+   Both Professional and Enterpise comes with licenses for Azure DevOps Basic + Test Plan and GitHub Enterprise.
+
+   Using Visual Studio to develop <a target="_blank" href="https://visualstudio.microsoft.com/vs/mac/unity/">C# with the Unity 3D IDE</a> requires an aditional license for Unity.
+
+   * <a target="_blank" href="https://visualstudio.microsoft.com/vs/enterprise/">Visual Studio for Mac -- Enterprise Edition"</a> costs $250/month but $150/month Azure credit.
+
+   <a target="_blank" href="https://visualstudio.microsoft.com/vs/compare/">Enterprise adds Power BI Pro, Live Dependency Validation, Snapshot Debugger, Time Travel Debugging, Fakes, Code Coverage, IntelliTest, IntelliTrace, Code Map Debugger Integration,  .NET Memory Dump Analysis, Xamarin Inspector, Xamarin Profiler</a>.
+   <br /><br />
+
+
+PROTIP: Avoid videos which are not applicable to the "2019" version:<strike>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=DS4zGjyo4Zs">VIDEO: Install when it was in Preview</a>  Jan 10, 2019.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=jUiuIAZt6Dw">Using Git with Visual Studio</a> Apr 7, 2017
+   * <a target="_blank" href="https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-12-Getting-Started-with-Visual-Studio-for-Mac">VIDEO: Snack Pack 12: Getting Started with Visual Studio 2017 for Mac</a> May 31, 2017 by James Montemagno (<a target="_blank" href="http://twitter.com/jamesmontemagno">@jamesmontemagno<a>). which covers mobile development as well.
+   </strike><br /><br />
+
+The following was written after <a target="_blank" href="https://devblogs.microsoft.com/visualstudio/visual-studio-2019-for-mac-is-now-available/">April 9, 2019 release</a>.
+
+1. See <a target="_blank" href="https://wilsonmar.github.io/xcode/">https://wilsonmar.github.io/xcode</a> to install Apple's <strong>XCode</strong>.
+
+   <a target="_blank" href="https://github.com/MicrosoftDocs/visualstudio-docs">https://github.com/MicrosoftDocs/visualstudio-docs</a> contains source files for the Visual Studio technical documentation published on docs.microsoft.com.
+
+1. PROTIP: I recommend using Homebrew for silent (no clicking) install and automatic upgrade:
+
+   <pre><strong>brew install --cask visual-studio
+   </strong></pre>
+
+   This installs to Homebrew's folders so that no admin privileges are needed.
+
+However, if you insist on following Microsoft's instructions: click "Download Visual Studio for Mac" and select "Community 2019 for Mac".
+
+1. Click "Save" on the pop-up to download <strong>visualstudioformacinstaller.dmg</strong>:
 
    * 31.6 MB for 2019
    * 22.8 MB for preview
    <br /><br />
 
-0. Rename the installer with a suffix such as 
+   PROTIP: <a target="_blank" href="https://www.wikiwand.com/en/Microsoft_Visual_Studio">The 2019 version is also called "v16" behind the scenes.</a>
+
+1. Rename the installer with a suffix such as 
    "vsstudioformac_CE_2019.dmg". 
 
    <img align="right" alt="vs-mac-install-logo-263x303-8462" width="132" src="https://user-images.githubusercontent.com/300046/56370993-7e75bc80-61b9-11e9-8bf7-87e514e3e6db.jpg">
 
-0. In Finder, double-click on the .dmg file to open with the "DiskImageMounter".
+1. In Finder, double-click on the .dmg file to open with the "DiskImageMounter".
 
    Wait for the logo to appear.
 
@@ -1259,19 +1272,19 @@ Follow along watching <a target="_blank" href="https://channel9.msdn.com/Shows/X
 
    There is a different logo for the previous 2017 version.
 
-0. Click the logo that appears.
-0. Click Open for the "Visual Studio for Mac Installer" to appear.
-0. Click "Continue" in the "Thank you for downloading".
+1. Click the logo that appears.
+1. Click Open for the "Visual Studio for Mac Installer" to appear.
+1. Click "Continue" in the "Thank you for downloading".
    * 8.0.3
 
    ![vs-mac-install-internet-484x162](https://user-images.githubusercontent.com/300046/56370860-3d7da800-61b9-11e9-9b13-de8dcaa58077.jpg)
 
-0. Uncheck or check what type of apps you want to develop.
+1. Uncheck or check what type of apps you want to develop.
 
    ![vs-mac-install-options-447x297-9602](https://user-images.githubusercontent.com/300046/56370758-0f986380-61b9-11e9-869f-2bea9b6975d2.jpg)
 
-0. Click "Install and Update". 
-0. While you wait many minutes for the downloading:
+1. Click "Install and Update". 
+1. While you wait many minutes for the downloading:
 
    Sign up for <a target="_blank" href="https://www.linkedin.com/learning/">LinkedIn Learning</a> video tutorials.
 
@@ -1279,37 +1292,38 @@ Follow along watching <a target="_blank" href="https://channel9.msdn.com/Shows/X
 
    Download <a target="_blank" href="https://github.com/aspnet/AspNetCore.Docs/tree/master/aspnetcore/tutorials/razor-pages/razor-pages-start/2.2-stage-samples">sample application code</a> for sample <a target="_blank" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-2.2&tabs=visual-studio">.NET Core 2.2 Razor pages</a>
 
-0. Switch to Finder, system "/Applications" folder and notice there is, at time of writing:
+1. Switch to Finder, system "/Applications" folder and notice there is, at time of writing:
 
    "Visual Studio.app" of 1.55 GB and<br />
    "Xamarine Profiler.app" of 93.6 MB.
 
-0. Navigate to your <strong>Projects</strong> folder and drag it to the Finder's left Navigatin pane, for easy access.
+1. Navigate to your <strong>Projects</strong> folder and drag it to the Finder's left Navigatin pane, for easy access.
 
-0. On the Touchpad, spread 4 finger together at the same time to see that Powershell has been installed as well.
+1. On the Touchpad, spread 4 finger together at the same time to see that Powershell has been installed as well.
 
    ![vs-mac-icons-413x105-5443](https://user-images.githubusercontent.com/300046/56381960-7a569880-61d3-11e9-96ff-c44baa1c35e1.jpg)
    <br />
 
-0. PROTIP: Drag the app icon and drop it on your Mac Dock for easy access.
+1. PROTIP: Drag the app icon and drop it on your Mac Dock for easy access.
 
    BTW, multiple instances of Visual Studio for Mac can be started by right-clicking its icon in the Apple Dock bar, then selecting "New Instance".
 
    ![vs2019-mac-dock-354x137](https://user-images.githubusercontent.com/300046/56686530-68706c00-6691-11e9-85eb-b3f8141c8010.jpg)
 
-0. Use your mouse to click the "Visual Studio" icon to open the program to see this:
+1. Use your mouse to click the "Visual Studio" icon to open the program to see this:
 
    ![vs-mac-2019-new-669x269-10031](https://user-images.githubusercontent.com/300046/56381902-5f842400-61d3-11e9-8a22-0e594d4dd570.jpg)
 
-0. Dismiss the "Start Window" pop-up by clicking the red dot at its upper left corner.
+1. Dismiss the "Start Window" pop-up by clicking the red dot at its upper left corner.
+
 
    ### Check for Updates
 
-0. Click "Visual Studio" at the top menu to select "Check for Updates...":
+1. Click "Visual Studio" at the top menu to select "Check for Updates...":
 
    ![vs-mac-top-menu-269x299-10152](https://user-images.githubusercontent.com/300046/56392151-e2b27380-61ed-11e9-9949-1337c9c5912c.jpg)
 
-0. If updates are being downloaded, wait for all updates to download. While you're waiting: 
+1. If updates are being downloaded, wait for all updates to download. While you're waiting: 
 
    PROTIP: Uncheck "Check automatically" so that you can check whether future installers are good.
 
@@ -1320,23 +1334,24 @@ Follow along watching <a target="_blank" href="https://channel9.msdn.com/Shows/X
    PROTIP: See if there are comments about the update. Switch to: 
    <a target="_blank" href="https://developercommunity.visualstudio.com/"><strong>https://developercommunity.visualstudio.com</strong></a>
 
-0. Click "Visual Studio for Mac" tab.
-0. In the search box type "Visual Studio 2019 for Mac update 8.0.4.0" or whatever version.
-0. PROTIP: Ignore entries that are for the Windows version, older 2017 for Mac versions, Xamarin, etc.
-0. If no issues are identified, click "Restart" for the install.
-0. PROTIP: Go back to "Check Updates" because some (such as Java) require another update to finish.
+1. Click "Visual Studio for Mac" tab.
+1. In the search box type "Visual Studio 2019 for Mac update 8.0.4.0" or whatever version.
+1. PROTIP: Ignore entries that are for the Windows version, older 2017 for Mac versions, Xamarin, etc.
+1. If no issues are identified, click "Restart" for the install.
+1. PROTIP: Go back to "Check Updates" because some (such as Java) require another update to finish.
+
 
    ### Sign in Microsoft
 
-0. Press command+, or click "Visual Studio", then select <strong>Account...</strong>, then go through the prompts.
+1. Press command+, or click "Visual Studio", then select <strong>Account...</strong>, then go through the prompts.
 
    PROTIP: Setup Microsoft Authenticator on your phone to use multi-factor authentication. It's cooler and safer.
 
-0. Click the red dot to exit sign-in (yeah I know they should have an "OK" button to dismiss).
+1. Click the red dot to exit sign-in (yeah I know they should have an "OK" button to dismiss).
 
    ### Preferences
 
-0. Press command+comma or click "Visual Studio" in the menu, then select <strong>Preferences...</strong>.
+1. Press command+comma or click "Visual Studio" in the menu, then select <strong>Preferences...</strong>.
    * In Visual Style, select Dark User Interface theme
    * Author information.
    * Key bindings
@@ -1350,8 +1365,8 @@ Follow along watching <a target="_blank" href="https://channel9.msdn.com/Shows/X
    * In Accessibility, check "Enable".
    <br /><br />
 
-0. Press command+Q to close the program.
-0. Restart the program again.
+1. Press command+Q to close the program.
+1. Restart the program again.
 
 ### Get existing repo
 

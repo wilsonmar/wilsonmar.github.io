@@ -3238,8 +3238,10 @@ Amazon ECS (Elastic Container Service for Kubernetes)</a> is "supercharged" by t
 
    ![eks-ecs-vpc-eni-960x720-31322](https://user-images.githubusercontent.com/300046/58670099-27f0b780-82fb-11e9-8cbf-443c37cc2bfd.png)
 
-   While ECS assigns separate ENI to each ECS task (a group of containers), EKS attaches <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/MultipleIP.html">multiple ENIs</a> per instance, with multiple private IP addresses assigned to each ENI. Since EKS shares network interfaces among pods, a different Security Group cannot be specified to restric a specific pod.
+   While ECS assigns separate ENI to each ECS task (a group of containers), EKS attaches <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/MultipleIP.html">multiple ENIs</a> per instance, with multiple private IP addresses assigned to each ENI. Since EKS shares network interfaces among pods, a different Security Group cannot be specified to restrict a specific pod.
    
+   <a target="_blank" href="https://lucid.app/lucidchart/4cdfbb0f-f55c-4946-9ff1-20cb322bba13/view?page=.KLxqmC.JY2R#"><img width="460" alt="k8s-networking-920x840" src="https://user-images.githubusercontent.com/300046/109592053-e098eb80-7acb-11eb-8805-262ec4797c5d.png"></a>
+
    Moreover, network interfaces, multiple private IPv4 addresses, and IPv6 addresses are only available for instances running under a <strong>isolated VPC</strong> (Virtual Private Cloud) and perhaps with AWS PrivateLink access. So EKS requires AWS VPC. For best isolation (rather than sharing), create a different VPC and Security Group for each cluster.
 
    Both ECS and EKS is accessed from its ECS CLI console and supports ECS API commands and <strong>Docker Compose</strong>. AWS CloudTrail logging.

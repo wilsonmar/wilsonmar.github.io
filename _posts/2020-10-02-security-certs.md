@@ -560,7 +560,43 @@ Bluesnarfing is the unauthorized access of a device by an attacker who is trying
 
 Hyperconvergence takes convergence a step further by utilizing software to perform integration without requiring hardware changes.
 
+### CompTIA CySA+
 
+CompTIA CySA+ (CSO-001) exam launched April 21, 2020 on Vue & Pearson online $359 to answer 75% of 85 questions in 165 minutes
+
+<a target="_blank" href="https://www.infosecinstitute.com/webinar/comptia-cysa-certification-changes-everything-you-need-to-know/?utm_status=success">VIDEO</a>:
+
+1. Threat and vulnerability management:
+
+   1. Explain the importance of threat data and intelligence.
+   1. Given a scenario, utilize threat intelligene to support organizatoinal security.
+   1. Given a scenario, perform vulnerability management activities.
+   1. Given a scenario, analyze the output from common vulnerability assessment tools.
+   1. Explain the threats and vulnerabilities associated with operating in the cloud.
+   1. Given a scenario, implement controls to mitigate attacks and software vulnerabilities.
+
+2. Software and systems security
+   1. Given a scenario, apply security solutions for infastructure management
+   2. Explain software assurance best practices
+   3. Explain hardware assurance best practices
+
+3. Security operations and monitoring:
+   1. Given a scenario, analyze data as part of security monitoring activities.
+   2. Given a scenario, implement configuration changes to existing controls to improve security.
+   3. Explain the importance of proactive threat hunting.
+   4. Compare and contrast automation concepts and technologies.
+
+4. Incident response
+   1. Explain the importance of the incident response process.
+   1. Given a scenario, apply the appropriate incident response procedure.
+   1. Given an incident, analyze potential indicators of compromise.
+   1. Given a scenario, utilize basic digital forensics techniques.
+
+1. Compliance and assessment
+   1. Understand the importance of data privacy and protection
+   2. Given a scenario, apply security concepts in support of organizational risk mitigation
+   3. Explain the importance of frameworks, policies, procedures and controls.
+   
 ## Cisco
 
 <a target="_blank" href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert.html">CCIE - Cisco</a>

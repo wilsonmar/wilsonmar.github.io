@@ -89,13 +89,63 @@ comments: true
 1. In the pop-up Finder, navigate to a container folder (such as "Projects"), create a folder, and save the RDP file.
 1. Switch to Finder and navigate to your RDP file.
 
-   ### Use Terraform on Azure
 
-   PROTIP: Azure Cloud Shell has Terraform pre-installed!
+## Install
+
+### Install on Windows
+
+https://www.youtube.com/watch?v=2Jz-ncFPusY&list=PLD7svyKaquTlE9dErhMazFhWbSSCfMP_4&index=4
+
+### Install on MacOS
+
+
+
+
+
+## Use Terraform on Azure
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=Axs2IH94hbA" title="Feb 27, 2019">VIDEO</a>
+
+   ARM template example: https://github.com/Azure/azure-quickstart-templates/101-vm-simple-linux/azuredeploy.json
+
+   HCL .tf files to define Terraform can have comments.
+
+1. PROTIP: Azure Cloud Shell has Terraform pre-installed!
+
+1. Kick off
+
+   <pre>terraform apply</pre>
 
    https://medium.com/microsoftazure/get-started-with-terraform-by-building-an-azure-vm-tutorial-350175e2cd88
+   using PowerShell.
 
-   ### Other training options which include cloud time
+   <a target="_blank" href="https://www.youtube.com/watch?v=JaesylupZa8" title="Jul 3, 2019">
+   Deploying your Azure Infrastructure with Terraform in Azure DevOps</a> Lab 
+
+   https://azuredevopslabs.com/labs/vstsextend/terraform/
+   shows an animated flowchart.
+
+   TODO: Read ~/.env in shell file?
+
+   <pre>ARM_SUBSCRIPTION_ID="XXXX"
+ARM_CLIENT_ID="XXXX"
+ARM_CLIENT_SECRET="XXXX"
+ARM_TENANT_ID="XXXX"
+   </pre>
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=JKVkblsp3cM" title="Nov 13, 2018">
+   VIDEO: Using Terraform with Azure</a> by John Savill
+
+   https://build5nines.com/get-started-with-terraform-on-microsoft-azure/
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=CRueD4fU0AI&list=PLD7svyKaquTlE9dErhMazFhWbSSCfMP_4">
+   Getting Started with Terraform for Azure (12 short videos)</a> by Skylines Academy
+
+   https://www.udemy.com/course/learning-terraform-on-microsoft-azure/
+   $34.99
+
+
+   ### Other training options
 
    * Pluralsight.com
    * LinkedIn Learning
@@ -108,6 +158,9 @@ comments: true
 
    * <a target="_blank" href="https://www.udemy.com/course/microsoft-certified-azure-administrator/">Udemy.com</a> by Alan Rodriguez
    <br /><br />
+
+
+   <a name="Tenant"></a>
 
    ## Tenant
 
