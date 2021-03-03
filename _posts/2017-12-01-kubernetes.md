@@ -2729,14 +2729,17 @@ https://github.com/ojhughes/k8s-for-the-busy-java-developer by Ollie Hughes (@ol
 
 ### Cloud Kubernetes Services
 
-Each offering has its own acronym:
+Each offering has its own acronym (where KS = Kubernetes Service):
+
+* ACK = Alibaba Cloud Kubernetes
 
 * ECS = Elastic (AWS) Container Service 
-* EKS = Elastic Kubernetes Service
-* IKS = IBM cloud Kubernetes Service
-* ACK = Alibaba Cloud Kubernetes
-* DOKS = Digital Ocean 
-* OKS = Oracle 
+* EKS = Elastic
+* GKS = Google
+* IKS = IBM cloud
+
+* DOKS = Digital Ocean
+* OKS = Oracle
 * PKE = Bonzai
 * MKE = D2iQ (Day two iQ) rebranded from Mesos DC/OS meta clusters
 * OKD = <a href="#OpenShift">OpenShift</a> (Red Hat) Enterprise platform as a service (PaaS) Origin community distribution
@@ -3043,6 +3046,11 @@ Kubernetes in the cloud also enables <strong>multi-region</strong> setups. GCP h
 <tt>--horizontal-pod-autoscaler-downscal-stabilization</tt> to provide a wait period (5 minutes) before another scale-down action<a target="_blank" href="https://www.coursera.org/learn/deploying-workloads-google-kubernetes-engine-gke/lecture/obhDh/services-and-scaling">*</a> 
 
 
+### GKS
+
+Google's Kubernetes Service offers <a target="_blank" href="https://cloudonair.withgoogle.com/events/security-talks-march-2021/watch?talk=detect-threats">KTD (Kubnetes Threat Detection)</a>. On each node a KTD daemonset that collects, interprets, and annotates signals for a back-end <strong>KTD Detection Plane</strong> that uses Machine Learning to make findings for the SOC (Security Command Center) and Cloud Logging.
+
+<img width="386" alt="k8s-ktd" src="https://user-images.githubusercontent.com/300046/109877993-e9ef9880-7c30-11eb-8320-ce3b431a9186.png">
 
 
 ### IBM CloudLabs
