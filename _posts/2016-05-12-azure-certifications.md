@@ -17,6 +17,8 @@ comments: true
 {% include _toc.html %}
 
 
+PROTIP: <a target="_blank" href="https://twitter.com/search?q=%23azurecertified&src=typed_query">Tweet #azurecertified</a> or #MicrosoftCertified when you pass each exam.
+
 Microsoft rebranded certification coding of "70-x" series to role-based Azure "AZ-x" series.
 Microsoft continues to <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/retired-certification-exams">retire a long list of exams at a brisk rate</a>:
 
@@ -32,28 +34,32 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Role </th><th> Certification exam </th></tr>
 
-<tr valign="top"><td> * Administrator
+<tr valign="top"><td> Administrator
       </td><td><a href="#AZ-900">AZ-900 Fundamentals</a><br />
       <a href="#AZ-104">AZ-104 Azure Administrator Associate</a>
 
    </td></tr>
-<tr valign="top"><td> * Functional Consultant
-      </td><td> AZ-140 Virtual Desktop Specialty
+<tr valign="top"><td> Functional Consultant
+      </td><td><a href="#AZ-140">AZ-140 Virtual Desktop Specialty</a>
 
    </td></tr>
-<tr valign="top"><td> * Solution Architect
+<tr valign="top"><td> Solution Architect
       </td><td> AZ-303 Azure Solutions Architect Expert: Technologies<br />
         AZ-304 Azure Solutions Architect Expert: Design<br />
    AZ-600 Stack Hub Operator Associate<br />
         AZ-120 Azure for SAP Workloads Specialty
 
    </td></tr>
-<tr valign="top"><td> * Developer
-   </td><td> AZ-204 Azure Developer Associate<br />
+<tr valign="top"><td> Developer
+   </td><td>AZ-204 Azure Developer Associate<br />
        AZ-220 Azure IoT Developer Specialty
 
    </td></tr>
-<tr valign="top"><td> * Data Engineer
+<tr valign="top"><td> DevOps Engineer
+   </td><td><a href="#AZ-400">AZ-400 DevOps Engineer Expert</a>
+
+   </td></tr>
+<tr valign="top"><td> Data Engineer
 * Data Scientist
    </td><td> DP-900 Azure Data Fundamentals<br />
 DP-100 Azure Data Scientist Associate<br />
@@ -62,116 +68,63 @@ DP-100 Azure Data Scientist Associate<br />
    PL-600 Power Platform Solution Architect Expert
 
    </td></tr>
-<tr valign="top"><td> * AI Engineer
+<tr valign="top"><td> AI Engineer
    </td><td> AI-900 AI Fundamentals<br />
     AI-100 Azure AI Engineer Associate
 
    </td></tr>
-<tr valign="top"><td> * Security Engineer
-   </td><td> SC-900 Security, Compliance, and Identity Fundamentals<br />
+<tr valign="top"><td> Security Engineer
+   </td><td><a href="#SC-900">SC-900 Security, Compliance, and Identity Fundamentals</a><br />
     SC-200 Security Operations Analyst Associate<br />
     SC-300 Identity and Access Administrator Associate<br />
     AZ-500 Azure Security Engineer Associate
 
    </td></tr>
-<tr valign="top"><td> * DevOps Engineer
-   </td><td> AZ-400 DevOps Engineer Expert
-   </td></tr>
-
 </table>
 
-Azure administrators are people who:
-   * Implement
-   * Monitor
-   * Maintain
-
-...services relating to:
-   * Compute resources
-   * Storage
-   * Networking
-   * Security
-   <br /><br />
-
-Unless noted, exams as still $165 conducted by Pearson VUE, but not in testing centers thanks to COVID.
-
-https://azure.microsoft.com/en-us/learn/skills/
-
-https://docs.microsoft.com/en-us/azure/architecture/example-scenario/apps/ecommerce-scenario
-with pricing
-https://cloudacademy.com/course/overview-of-azure-services/designing-solution/?context_id=524&context_resource=lp
-Benefit with on-prem. licenses.
+Andrew Brown offers this diagram:
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/110194383-8ebad300-7df5-11eb-9c0c-2d5f165f0ffe.jpeg"><img alt="az-certs-1868x1092.png" width="1868" src="https://user-images.githubusercontent.com/300046/110194383-8ebad300-7df5-11eb-9c0c-2d5f165f0ffe.jpeg"></a>
 
 
-<a name="AzureCert"></a>
-
-## Azure Certifications #
-
-* <a target="_blank" href="https://www.microsoft.com/en-us/learning/mcsd-azure-architect-certification.aspx">
-   MCSD Solutions Developer: Azure Solutions Architect</a>
-
-* <a target="_blank" href="https://azure.microsoft.com/en-us/community/training/">
-   community training</a>
-
-* <a target="_blank" href="https://azure.microsoft.com/en-us/marketplace/programs/certified/">
-   certification for apps</a>
-
-* <a target="_blank" href="https://mva.microsoft.com/product-training/microsoft-azure#!lang=1033">
-   Microsoft Virtual Academy courses</a>
-
-* <a target="_blank" href="https://www.opsgility.com/">
-   Opsgility.com</a> provides hands-on, deep-dive training
-
-* https://borntolearn.mslearn.net/goodstuff/p/microsoftspecialist
-
-* https://buildazure.com/certifications/
-
-## Tech Support
-
-Microsoft Developer Network Forums
-
-https://azure.microsoft.com/en-us/services/preview
-
-Microsoft's support levels:
-* Basic
-* Developer - 8 hours
-* Standard - 1 hour response time
-* Professional Direct - 1 hour, Training, ProDirect Delivery Manager
-* Premier - 15 minute response, TAM
-<br /><br />
+<hr />
 
 <a name="#AZ-900"></a>
 
 ## AZ-900 Azure Fundamentals
 
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-900">https://docs.microsoft.com/en-us/learn/certifications/exams/az-900</a>
+
 AZ-900 Microsoft Azure Fundamentals
-is not required for any associate or expert certifications: availability, fault tolerance,
+is not a required prerequisite for any associate or expert certification.
+
+It's less expensive than other AZ exams ($65 vs. $165).
+
+It's worth considering if you are new to Microsoft exams.
+It builds confidence with Microsoft and Pearson/Vue exam taking process.
+
+Passing AZ 900 demonstrates broad understanding of cloud concepts:
+availability, fault tolerance, 
 public/private/hybrid cloud, IaaS, PaaS, SaaS
 
-It's less expensive than other AZ exams ($65 vs. $165)
+Andrew Brown, who also offers <a target="_blank" href="https://www.exampro.co/az-900">Exampro prep course for $29/month</a>, shows that (by skipping the repeatition of topics), a good summary can be done in a <a target="_blank" href="https://www.youtube.com/watch?v=NKEFWyqJ5XA" title="Jun 17, 2020">
+3 hour VIDEO</a> (with ads but great diagrams). It's done through <a target="_blank" href="https://www.freecodecamp.org/news/azure-fundamentals-course-az900/">FreeCodeCamp.org</a>His advice:
+   * Study 1-3 hours a day, every day.
+   <br /><br />
 
-But it's worth considering if you are new to Microsoft exams.
+If you want time on servers (one hour at a time), subscribe to
+<a target="_blank" href="https://cloudacademy.com/learning-paths/az-900-exam-preparation-microsoft-azure-fundamentals-524/">CloudAcademy.com</a>
 
-Passing AZ 900 demonstrates broad understanding of cloud concepts
+<a target="_blank" href="https://www.youtube.com/watch?v=53LO_rJz6Es&list=PLHh_n2lgzcrvecPJ-zMukLlDrq0GMSMmB" title="Dec 7, 2020">Ravikirans answers Whizlabs 55 questions</a> 
 
-https://cloudacademy.com/learning-paths/az-900-exam-preparation-microsoft-azure-fundamentals-524/
-
-https://www.youtube.com/watch?v=53LO_rJz6Es&list=PLHh_n2lgzcrvecPJ-zMukLlDrq0GMSMmB
-  Ravikirans answers Whizlabs 55 questions on Dec 7, 2020
-
-https://www.youtube.com/watch?v=cAgN6Ac8MS4&list=PLHh_n2lgzcrvecPJ-zMukLlDrq0GMSMmB&index=2
-
-https://azure.microsoft.com/en-us/support/legal/sla/
-
-https://ServiceTrust.microsoft.com
-
-https://github.com/cloudacademy/azure-overview
+<a target="_blank" href="https://www.youtube.com/watch?v=cAgN6Ac8MS4&list=PLHh_n2lgzcrvecPJ-zMukLlDrq0GMSMmB&index=2">AZ-900 15 questions from WhizLabs</a>
 
 
 <a name="AZ-104"></a>
 
 ## AZ-104 Azure Administrator Associate
 
-https://docs.microsoft.com/en-us/learn/certifications/exams/az-104
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-104">
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-104</a>
 
 Implement, monitor, and maintain Azure solutions including
 compute, storage, network, and security resources
@@ -179,228 +132,69 @@ compute, storage, network, and security resources
 * Manage Azure identities and governance; 
 * implement and manage storage; 
 * deploy and manage Azure compute resources; 
-* configure and manage virtual networking;
-* monitor and back up Azure resources
+* configure and manage <a target="_blank" href="https://wilsonmar.github.io/azure-networking/">virtual networking</a>;
+* <a target="_blank" href="https://wilsonmar.github.io/azure-monitoring/">monitor</a> and back up Azure resources
+<br /><br />
+
+1. Take a Practice Test (from MeasureUp) that feels just like the actual test, if you are enrolled in <a target="_blank" href="https://esi.microsoft.com/getcertification">Microsoft's Enterprise Skills Initiative</a>.
+
+* <a target="_blank" href="https://cloudacademy.com/learning-paths/az-104-exam-preparation-microsoft-azure-administrator-1-1332/">CloudAcademy's learning path</a>, by Thomas Mitchell, provides quizzes along the way and time on actual Azure instances.
+
+* <a target="_blank" href="https://cloudacademy.com/learning-paths/az-104-exam-preparation-microsoft-azure-administrator-1-1332/">
+CloudAcademy</a>
+
+* <a target="_blank" href="https://www.udemy.com/course/exam-az-104-microsoft-azure-administrator/">Udemy 15.5 hour video course by Anand Rao Nednur</a>
+
+
+<a name="SC-900"></a>
+
+### SC-900 Security
+
+See https://wilsonmar.github.io/security-certifications
 
 
 <a name="AZ-400"></a>
 
-### AZ-400 Developer
+## AZ-400 DevOps Engineer Expert
 
-https://github.com/timothywarner/az400
+https://docs.microsoft.com/en-us/learn/certifications/devops-engineer/
 
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-400
+will be updated March 23, 2021
 
-
-## GUI, CLI, SDK
-
-Azure Cloud Shell
-   • Open in Azure portal
-   • “Azure drive” lets you navigate resources
-   * Switch between PowerShell and CLI
-
-Azure PowerShell
-   • Module of Azure cmdlets
-   • Updated approximately monthly
-
-Azure CLI (Bash)
-   • a.k.a. “AZ” commands
-   • Cross-platform (macOS, Linux, Windows)
-   • Install from Web
+<a target="_blank" href="https://github.com/timothywarner/az400">OReilly.com class by Timothy Warner</a>
 
 
-### Platforms
+<a name="AZ-140"></a>
 
-"Microsoft Stack" runs Azure on on-prem servers.
+## AZ-140 Azure Desktop Seciality
+
+<img align="right" width="300" src="http://code.benco.io/icon-collection/azure-icons/Windows-Virtual-Desktop.svg">
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-140">
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-140</a>
+
+This exam is new as of March 29, 2021.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-desktop/overview">What is Windows Desktop?</a> (not Windows Virtual Desktop classic).
+
+Windows Virtual Desktop (WVD) is a desktop and app virtualization service that runs on the Azure cloud. It works with Office 365 ProPlus. It competes with Citrix stateful VDI (Virtual Desktop Infrastructure).
+   * https://www.clouddesktoponline.com/what-is-windows-virtual-desktop-wvd/
+   * https://azure.microsoft.com/en-us/services/virtual-desktop/
+   * https://www.microsoft.com/en-us/microsoft-365/modern-desktop/enterprise/windows-virtual-desktop
+   <br /><br />
+
+Skills the exam measures:
+* Plan a Windows Virtual Desktop architecture - <a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-desktop/create-host-pools-azure-marketplace">ARM VM host pool</a>
+* Implement a Windows Virtual Desktop infrastructure. test from the Azure Gallery.
+* Manage access and security
+* Manage user environments and <a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-desktop/manage-app-groups">RemoteApp Groups and programs</a>
+* Monitor and maintain a Windows Virtual Desktop infrastructure
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-desktop/create-validation-host-pool">Host pool</a>
+<br /><br />
 
 
 <hr />
-
-
-## Identity
-
-Azure Active Directory - Synchronize on-premises directories and enable single sign-on
- 
-Azure Active Directory Domain Services - Join Azure virtual machines to a domain without domain controllers
- 
-Azure Information Protection - Better protect your sensitive information—anytime, anywhere
-
-MFA requires P2-level license
-
-## DevOps
-
-Azure Monitor - Full observability into your applications, infrastructure, and network
-
-ARM Templates
-
-Azure Blueprints automates the deployment of complete Azure environments, including policies and permissions. Like Terraform doesd.
-
-## Security services
-
-https://cloudacademy.com/course/microsoft-azure-security-solutions-975/what-is-shared-responsibility/?context_id=524&context_resource=lp
-
-AIP (Azure Information Protection) labls prevents people from sending info labeled as confidential.
-
-Azure Policy Service organizes policies into an initiative.
-
-Azure Active Directory - Synchronize on-premises directories and enable single sign-on
- 
-Azure Sentinel - Put cloud-native SIEM and intelligent security analytics to work to help protect your enterprise
- 
-Security Center - Unify security management and enable advanced threat protection across hybrid cloud workloads
- 
-Azure Security Center's resource hygiene dashboard displays what type of resource information?
-
-The resource hygiene dashboard displays how secure resources are based on Azure security best practices.
-
-Azure Service Health Azure management service informs you about problems with the Azure platform itself and upcoming maintenance events?
-
-The Threat Protection dashboard Azure Security Center dashboard shows an accounts' actual security alerts, which can then be clicked on more detailed information?
-
-Key Vault - Safeguard and maintain control of keys and other secrets
- 
-Application Gateway - Build secure, scalable, and highly available web front ends in Azure
- 
-VPN Gateway - Establish secure, cross-premises connectivity. Via IPsec/IKE VNet-to-Vnet or site-to-site connection.
- 
-Azure Dedicated HSM - Manage hardware security modules that you use in the cloud
- 
-Azure DDoS Protection - Basic protection of applications from Distributed Denial of Service (DDoS) attacks is automatically enabled for always-on traffic monitoring for real-time mitigation. Standard license mitigates against protocol, app layer, and volumetric attacks.
- 
-Azure Defender - Protect hybrid cloud workloads
-
-Azure Information Protection - Better protect sensitive information—anytime, anywhere
- 
-Microsoft Compliance Center
-
-WAF (Web Application Firewall) https://docs.microsoft.com/azure/web-application-firewall/overview
-
-Intune for mobile.
-
-## Containers
-
-Service Fabric - Develop microservices and orchestrate containers on Windows or Linux
- 
-Container Registry - Store and manage container images across all types of Azure deployments
- 
-Azure Kubernetes Service (AKS) - Simplify the deployment, management, and operations of Kubernetes
- 
-Azure Red Hat OpenShift - Fully managed OpenShift service, jointly operated with Red Hat
-
-
-## Integration
-
-Azure Logic Apps - Automate the access and use of data across clouds without writing code
- 
-Service Bus - Connect across private and public cloud environments
- 
-API Management - Publish APIs to developers, partners, and employees securely and at scale
- 
-Event Grid - Get reliable event delivery at massive scale
-
-## Identities, Management and Governance
-
-Manage Azure AD objects
-   • Users, groups, guests, devices; bulk updates; Azure AD join; self-service password reset
-
-Manage Role-Based Access Control
-   • Roles, assigning roles at different levels; interpret access assignments
-
-Manage subscriptions and governance
-   • Subscriptions, management groups; policies, quotas, tags; resource groups, resource locks
-
-Storage name all lowercase, not special characters.
-
-Azure AD Objects:
-Users, groups, devices
-• Manage via Azure portal or programmatically
-• Users can be “members” or “guests”
-• Users can be created directly or via link with on-premises network
-• Azure AD accounts often called “work or school” accounts
-• Azure AD groups are leveraged by Microsoft Intune
-• “Global administrator” can perform all administrative functions
-• User Administrator, Billing Administrator are other AAD roles
-• Azure AD roles not identical to Azure RBAC roles
-
-Hybrid Identities
-• Azure AD Connect synchronizes accounts and passwords between on-premises and Azure AD domains
-• Free but must download
-• Don’t install on a DC but needs access to a DC and Internet
-• Usually a dedicated, robust server
-• Wizard has “express mode” for common options
-• Global admin rights in AAD; Enterprise admin in ADDS
-• “Writeback” = propagate account changes made in Azure to on-premises network (AAD Premium)
-
-MFA MFA for other users requires Azure AD Premium
-• You can enable individual users for MFA
-• Factors include:
-• Phone call
-• Text
-• Mobile app
-• Token
-
-Resources:
-An instance of a particular Azure service
-• Disk
-• Network
-• Network Security Group
-• etc.
-• Some are fixed-price, others are variable (e.g. storage)
-• Sometimes there are limits above which you pay extra
-
-Account kind: StorageV2
-
-Resource Groups:
-• A logical grouping of Azure resources that work together and/or
-have a shared life cycle
-• Why group resources?
-• Provisioning/deprovisioning
-• Monitoring
-• Cost management (easier with subscriptions though)
-• Maintenance
-• Example: application = domain name + virtual network + 4 VM’s
-• Not nestable
-• Can contain resources from multiple regions
-
-Tiering turns on-premis to a cache for Azure Storage - Azure Cloud Share.
-
-Instead of secrets, use SAS (Shared Access Signature) for Connection string
-
-## Services
-
-Azure Advisor - examines all of your Azure resources and identifies ways to optimize them, according to 4 blades (well-architected)
-  Your personalized Azure best practices recommendation engine. Gets info from Security Center.
- 
-Azure Backup - Simplify data protection and protect against ransomware
- 
-Azure Site Recovery - Keep your business running with built-in disaster recovery service
- 
-Automation - Simplify cloud management with process automation
- 
-Traffic Manager - Route incoming traffic for high performance and availability
- 
-Network Watcher - Network performance monitoring and diagnostics solution
- 
-Azure Managed Applications - Simplify management of cloud offerings
- 
-Azure Monitor - Full observability into your applications, infrastructure, and network
- 
-Azure Migrate - Easily discover, assess, right-size, and migrate on-premises VMs to Azure (lift-and-shift)
- 
-Scheduler - Run your jobs on simple or complex recurring schedules
- 
-Azure Policy - Implement corporate governance and standards at scale for Azure resources
-
-
-## Storage
-
-Shared access safer than keys!
-
-## Networking
-
-Azure Bastion
-
-Azure Firewall
-
 
 
 ## More on DevOps #
