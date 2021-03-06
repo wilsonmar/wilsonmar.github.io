@@ -167,16 +167,14 @@ will be updated March 23, 2021
 
 <a name="AZ-140"></a>
 
-## AZ-140 Azure Desktop Seciality
-
-<img align="right" width="300" src="http://code.benco.io/icon-collection/azure-icons/Windows-Virtual-Desktop.svg">
+## AZ-140 Azure Desktop Speciality
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-140">
-https://docs.microsoft.com/en-us/learn/certifications/exams/az-140</a>
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-140</a> exam is new as of March 29, 2021.
 
-This exam is new as of March 29, 2021.
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-desktop/overview">What is Windows Desktop?</a> (not Windows Virtual Desktop classic).
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-desktop/overview"><img align="right" width="200" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-icons/Windows-Virtual-Desktop.svg">
+<!-- http://code.benco.io/icon-collection/azure-icons/Windows-Virtual-Desktop.svg -->
+What is Windows Desktop?</a> (not Windows Virtual Desktop classic).
 
 Windows Virtual Desktop (WVD) is a desktop and app virtualization service that runs on the Azure cloud. It works with Office 365 ProPlus. It competes with Citrix stateful VDI (Virtual Desktop Infrastructure).
    * https://www.clouddesktoponline.com/what-is-windows-virtual-desktop-wvd/
