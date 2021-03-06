@@ -118,6 +118,8 @@ If you want time on servers (one hour at a time), subscribe to
 
 <a target="_blank" href="https://www.youtube.com/watch?v=cAgN6Ac8MS4&list=PLHh_n2lgzcrvecPJ-zMukLlDrq0GMSMmB&index=2">AZ-900 15 questions from WhizLabs</a>
 
+<a target="_blank" href="https://quizlet.com/416573542/az-900-flash-cards/">Quizlet flash cards</a>
+
 
 <a name="AZ-104"></a>
 
@@ -144,6 +146,8 @@ compute, storage, network, and security resources
 CloudAcademy</a>
 
 * <a target="_blank" href="https://www.udemy.com/course/exam-az-104-microsoft-azure-administrator/">Udemy 15.5 hour video course by Anand Rao Nednur</a>
+
+<a target="_blank" href="https://quizlet.com/subject/az-104/">Quizlet flash cards</a>
 
 
 <a name="SC-900"></a>
@@ -172,7 +176,7 @@ will be updated March 23, 2021
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-140">
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-140</a> exam is new as of March 29, 2021.
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-desktop/overview"><img align="right" width="200" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-icons/Windows-Virtual-Desktop.svg">
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-desktop/overview"><img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-icons/Windows-Virtual-Desktop.svg">
 <!-- http://code.benco.io/icon-collection/azure-icons/Windows-Virtual-Desktop.svg -->
 What is Windows Desktop?</a> (not Windows Virtual Desktop classic).
 
