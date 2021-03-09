@@ -35,12 +35,14 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
 <tr><th> Role </th><th> Certification exam </th></tr>
 
 <tr valign="top"><td> Administrator
-      </td><td><li><a href="#AZ-900">AZ-900 Fundamentals</a></li>
+      </td><td><ul><li><a href="#AZ-900">AZ-900 Fundamentals</a></li>
       <li><a href="#AZ-104">AZ-104 Azure Administrator Associate</a></li>
+      </ul>
 
    </td></tr>
 <tr valign="top"><td> Functional Consultant
-      </td><td><ul><li><a href="#AZ-140">AZ-140 Virtual Desktop Specialty</a></li></ul>
+      </td><td><ul><li><a href="#AZ-140">AZ-140 Virtual Desktop Specialty</a></li>
+      </ul>
 
    </td></tr>
 <tr valign="top"><td> Solution Architect
@@ -49,15 +51,18 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
         <li>AZ-600 Stack Hub Operator Associate</li>
         <li>AZ-120 Azure for SAP Workloads Specialty</li>
         </ul>
+
    </td></tr>
 <tr valign="top"><td> Developer
    </td><td><ul><li>AZ-204 Azure Developer Associate</li>
        <li>AZ-220 Azure IoT Developer Specialty</li>
        </ul>
+
    </td></tr>
 <tr valign="top"><td> DevOps Engineer
    </td><td><ul><li><a href="#AZ-400">AZ-400 DevOps Engineer Expert</a></li>
       </ul>
+
    </td></tr>
 <tr valign="top"><td> Data Engineer<br /> Data Scientist
    </td><td><ul><li>DP-900 Azure Data Fundamentals</li>
