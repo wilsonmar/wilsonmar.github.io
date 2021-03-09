@@ -40,43 +40,46 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
 
    </td></tr>
 <tr valign="top"><td> Functional Consultant
-      </td><td><li><a href="#AZ-140">AZ-140 Virtual Desktop Specialty</a></li>
+      </td><td><ul><li><a href="#AZ-140">AZ-140 Virtual Desktop Specialty</a></li></ul>
 
    </td></tr>
 <tr valign="top"><td> Solution Architect
-      </td><td><li>AZ-303 Azure Solutions Architect Expert: Technologies</li>
+      </td><td><ul><li>AZ-303 Azure Solutions Architect Expert: Technologies</li>
         <li>AZ-304 Azure Solutions Architect Expert: Design</li>
         <li>AZ-600 Stack Hub Operator Associate</li>
         <li>AZ-120 Azure for SAP Workloads Specialty</li>
-
+        </ul>
    </td></tr>
 <tr valign="top"><td> Developer
-   </td><td><li>AZ-204 Azure Developer Associate</li>
+   </td><td><ul><li>AZ-204 Azure Developer Associate</li>
        <li>AZ-220 Azure IoT Developer Specialty</li>
-
+       </ul>
    </td></tr>
 <tr valign="top"><td> DevOps Engineer
-   </td><td><li><a href="#AZ-400">AZ-400 DevOps Engineer Expert</a></li>
-
+   </td><td><ul><li><a href="#AZ-400">AZ-400 DevOps Engineer Expert</a></li>
+      </ul>
    </td></tr>
 <tr valign="top"><td> Data Engineer<br /> Data Scientist
-   </td><td><li>DP-900 Azure Data Fundamentals</li>
+   </td><td><ul><li>DP-900 Azure Data Fundamentals</li>
    <li>DP-100 Azure Data Scientist Associate</li>
    <li><a href="#DP-203">DP-203 Azure Data Engineer Associate</a></li>
    <li>DP-300 Azure Database Administrator Associate</li>
    <li>PL-600 Power Platform Solution Architect Expert<li>
+   </ul>
 
    </td></tr>
 <tr valign="top"><td> AI Engineer
-   </td><td><li>AI-900 AI Fundamentals</li>
+   </td><td><ul><li>AI-900 AI Fundamentals</li>
      <li>AI-100 Azure AI Engineer Associate</li>
+     </ul>
 
    </td></tr>
 <tr valign="top"><td> Security Engineer
-   </td><td><li><a href="#SC-900">SC-900 Security, Compliance, and Identity Fundamentals</a></li>
+   </td><td><ul><li><a href="#SC-900">SC-900 Security, Compliance, and Identity Fundamentals</a></li>
     <li>SC-200 Security Operations Analyst Associate</li>
     <li>SC-300 Identity and Access Administrator Associate</li>
     <li>AZ-500 Azure Security Engineer Associate</li>
+    </ul>
 
    </td></tr>
 </table>
