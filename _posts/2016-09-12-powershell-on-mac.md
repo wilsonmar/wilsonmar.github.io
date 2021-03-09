@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "PowerShell on MacOS"
-excerpt: "Love Child or Demon Spawn?"
+excerpt: "Run PowerShell commands on Macs for fun and profit"
 tags: [mac, cloud, powershell, microsoft]
 shorturl: "https://git.io/v1wOP"
-date: "2016-09-12"
+date: "2021-03-05"
 file: "powershell-on-mac"
 image:
 # powershell blue banner-1900x500-296kb.jpg
@@ -17,12 +17,13 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+<img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-icons/Powershell.svg" alt="Powershell icon"><a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=1h48m8s">VIDEO</a>
+
 This article describes the use of PowerShell scripting on Mac and Linux.
 
-"PowerShell" refers to both the command-line shell and scripting language designed system administration. 
+"PowerShell" refers to both the command-line shell AND scripting language designed system administration. (When “PowerShell Core 6.0” was announced on January 10, 2018, the word “Powershell” on its own now refers to the decade-old “PowerShell” integrated into all recent versions of Microsoft’s Windows operating system.)
 
-PowerShell is an <strong>object-centered</strong> "management engine"
-that can be hosted in an application program.
+PowerShell is an <strong>object-centered</strong> "management engine" that can be hosted in an application program:
 
    * CMD in Windows
    * PowerShell ISE (from Microsoft)
@@ -31,17 +32,23 @@ that can be hosted in an application program.
    * Idera PowerShell Pro
    <br /><br />
 
-ISE =  "Integrated Scripting Environment" is a GUI that provides
+"PowerShell Core” is available as a cross-platform application such that scripts written on MacOS will run on Windows, Linux, or other supported operating system. This also means that PowerShell Core does not have commands associated with the .NET Framework (for Windows OS). This is similar to the rebranding of .NET vs. .NET Core.
+
+PowerShell <strong>cmdlets</strong> (pronounced "command-lets") let you manage computers from the command line.
+
+ISE (Integrated Scripting Environment) is a GUI that provides
 popup tab completion and other assists.
 
 PowerShell promises more consistency than the 
-various commands added over time by various parties.
+various commands added over time by various parties:
 
    * It reads Excel files natively as well as JSON, XML, and even ASCII.
    * Microsoft Deployment Toolkit
    * Microsoft System Center
    * IBM, etc.
    <br /><br />
+
+* <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-powershell/">wilsonmar.github.io/azure-cloud-powershell</a>
 
 
 ## Open source on Linux and MacOS #
@@ -60,15 +67,17 @@ https://github.com/PowerShell/PowerShell</a>.
 This article</a> notes Desired State Configuration for Linux and the promise of SSH support arrived in 2014 (several months before Microsoft open sourced .NET and brought .NET Core to Linux). But "you had to author your scripts on the Windows platform, you had to configure things on the Windows platform and then deliver the desired configuration to a Linux box and have it be configured; now you can do all of that on Linux.”
 
 
+## Install PowerShell Core on MacOS #
 
+PowerShell Core supports macOS 10.12 and higher.
+See <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-6">this for other os</a>
 
+1. <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6">This</a>
+says needed as a pre-requisite is
 
-## Install PowerShell on MacOS #
+   <pre><strong>xcode-select --install</strong></pre>
 
-0. There is a brew powershell as of beta.7:
-
-   <tt><strong>brew cask install powershell
-   </strong></tt>
+1. PROTIP: Skip the manual install and <a href="#UseBrow">install using Homebrew</a>.
 
    Alternately, click to download the latest release for MacOS at:<br />
    <a target="_blank" href="https://github.com/PowerShell/PowerShell/">
@@ -122,49 +131,91 @@ This article</a> notes Desired State Configuration for Linux and the promise of 
    NOTE: For Windows: <a target="_blank" href="https://www.microsoft.com/en-us/download/details.aspx?id=50395">
    Microsoft Windows Management Framework 5.0</a>
 
+   <a name="InAndOut"></a>
+
+   ### Install using Homebrew
+
+1. Alternately, use Homebrew:
+
+   <tt><strong>brew install --cask powershell
+   </strong></tt>
+
+   <pre>==> Downloading https://github.com/PowerShell/PowerShell/releases/download/v7
+==> Downloading from https://github-releases.githubusercontent.com/49609581/9
+...
+==> Installing Cask powershell
+==> Running installer for powershell; your password may be necessary.
+Package installers may write to any location; options such as `--appdir` are ignored.
+Password:
+   </pre>
+
+1. ATTENTION: Enter your laptop password when prompted.
+
+   Response:
+
+   <pre>installer: Package name is PowerShell - 7.1.2
+installer: Installing at base path /
+installer: The install was successful.
+🍺  powershell was successfully installed!
+   </pre>
+
 
    ### In and Out #
 
+   <a name="pwsh"></a>
+
 0. Open a Terminal shell window to launch PowerShell:
 
-   <tt><strong>
-   powershell
+   <tt><strong>pwsh
    </strong></tt>
 
    Alternately:
 
-   <tt><strong>
-   pwsh
+   <tt><strong>powershell
    </strong></tt>
 
-   The response is <strong>"PS" in front of the file path prompt</strong>:
+   The response:
 
-   <pre>
-PowerShell 
-Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+   <pre>PowerShell 7.1.2
+Copyright (c) Microsoft Corporation.
 &nbsp;
-PS /Users/...>
+https://aka.ms/powershell
+Type 'help' to get help.
+PS /Users/...> 
    </pre>
+
+   `PS` displayed means you are in the PowerShell shell. 
+
+   Gone is line: <a target="_blank" href="https://aka.ms/pscore6-docs">https://aka.ms/pscore6-docs</a>
+
+   ### Upgrade PowerShell
+
+1. To upgrade:
+
+   <pre><strong>brew upgrade --cask powershell</strong></pre>
+
+1. <a href="#VerifyPSInstall">Verify PowerShell install</a> again.
+
+
+   ### Versions of PowerShell:
 
 0. Check the version of PowerShell being used by calling a <strong>pre-defined variable</strong>:
 
-   <tt><strong>
-   $psversiontable
+   <tt><strong>$psversiontable
    </strong></tt>
 
    PROTIP: With PowerShell, a variable can act like a command.
 
    Response:
 
-   <pre>
-Name                           Value                                                                       
-----                           -----                                                                        
-PSVersion                      6.0.0-beta
+   <pre>Name                           Value
+----                           -----
+PSVersion                      7.1.2
 PSEdition                      Core
-GitCommitId                    v6.0.0-beta.7
-OS                             Darwin 16.7.0 Darwin Kernel Version 16.7.0: Thu Jun 15 17:36:27 PDT 2017; root:xnu-3789.70.16~2/RELEASE_X86_64   
+GitCommitId                    7.1.2
+OS                             Darwin 19.6.0 Darwin Kernel Version 19.6.0: Tue Jan 12 22:13:05 PST 2021; root:xnu-6153.141.16~1/RELEASE_X86_64
 Platform                       Unix
-PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0…}
 PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 WSManStackVersion              3.0
@@ -172,8 +223,7 @@ WSManStackVersion              3.0
 
    QUESTION: What's the CLRVersion?
 
-   ### Versions of PowerShell:
-
+   * 7.0
    * 6.0 for Mac/Linux in Windows 10 Anniversay Edition
    * 5.0 in 2015 for Visual Studio Code text editor
    * 4.0 in 2014 with Windows 10 and .NET Framework 4.0 and Windows Management Framework 3.0
@@ -186,19 +236,60 @@ WSManStackVersion              3.0
    PROTIP: Know the <a target="_blank" href="https://github.com/PowerShell/PowerShell/blob/master/docs/KNOWNISSUES.md#command-availability/">
    PowerShell commands known not to work on Linux/macOS</a>.
 
+
+   ### Exit PowerShell
+
 0. To leave PowerShell, it's the same as in Bash scripts:
 
-   <tt><strong>
-   exit
+   <tt><strong>exit
    </strong></tt>
 
-   When you return back in...
 
-0. Get help information for a command:
+   ### Configure Terminal colors
 
-   <tt><strong>
-   get-help stop-service
+1. Configure your Terminal colors
+
+   See https://sqlsunday.com/2019/03/04/how-to-set-up-a-beautiful-powershell-core-terminal-on-mac-os/
+
+0. <a href="#pwsh">Get back in PowerShell</a>...
+
+
+<hr />
+
+
+   ### Clear PS Screen
+
+   This doesn't need any modules installed:
+
+1. Clear Screen:
+
+   <pre><strong>cls
+   </strong></pre>
+
+
+   ### Get Help on commands
+
+1. Get help information for a command (such as stop-service):
+
+   <tt><strong>get-help stop-service
    </strong></tt>
+
+   <pre>Name                              Category  Module                    Synopsis
+----                              --------  ------                    --------
+Register-ArgumentCompleter        Cmdlet    Microsoft.PowerShell.Core Registers a custom argument completer.
+about_If                          HelpFile                
+about_Pipelines                   HelpFile
+   </pre>
+
+   ### Continuation & wide view
+
+   PROTIP: To continue a line end (like back-slash in Bash), use "tick marks" (` at the upper-left on Mac keyboards) and use "vertical bar" (| at the right of Mac keyboards) <a target="_blank" href="https://poshoholic.com/2010/11/11/powershell-quick-tip-creating-wide-tables-with-powershell/">:</a>
+
+   <pre><strong>Get-Alias -Definition Invoke-* `
+| Format-Table -Property * -AutoSize `
+| Out-String -Width 4096 `
+| Out-File aliases.txt
+   </strong></pre>
 
 
 
@@ -267,8 +358,7 @@ PowerShell errors occur if .NET Core is not installed, so:
 
    On a Mac:
    
-   <pre>
-   brew update
+   <pre>brew update
    brew install openssl
    ln -s /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib /usr/local/lib/
    ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
@@ -296,14 +386,12 @@ PowerShell errors occur if .NET Core is not installed, so:
 0. Edit your Bash shell search PATH to include
    <strong>/usr/local/share/dotnet</strong> 
 
-   <tt><strong>
-   atom ~/.bash_profile
+   <tt><strong>atom ~/.bash_profile
    </strong></tt>
 
    An example:
 
-   <pre>
-   PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet
+   <pre>PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet
    </pre>
 
 0. Open a new Terminal shell window to run:
@@ -314,8 +402,7 @@ PowerShell errors occur if .NET Core is not installed, so:
 
    The response:
 
-   <pre>
-Microsoft .NET Core Shared Framework Host
+   <pre>Microsoft .NET Core Shared Framework Host
   Version  : 1.0.1
   Build    : cee57bf6c981237d80aa1631cfe83cb9ba329f12
 Usage: dotnet [common-options] [[options] path-to-application]
@@ -348,8 +435,7 @@ a long string of commands necessary in today's complex world.
 
 To call scripts, an example:
 
-   <pre><strong>
-   & ".\basics.ps1"
+   <pre><strong>& ".\basics.ps1"
    </strong></pre>
 
    PROTIP: Make sure that when a file with .ps1 extension is clicked from Folder,
@@ -357,8 +443,7 @@ To call scripts, an example:
 
    A sample command to invoke the script including an execution policy :
 
-   <pre>
-Powershell -executionpolicy remotesigned 
+   <pre>Powershell -executionpolicy remotesigned 
 -command { import-module ‘C:\Users\pm\Documents\WindowsPowerShell\Modules\MyTwitter’
  ;Send-Tweet -Message ‘Message_ Twitter2’}
    </pre>
@@ -397,8 +482,7 @@ https://github.com/MeshkDevs/InvokeTwitterAPIs
 
 0. Set
 
-   <tt><strong>
-   Set-ExecutionPolicy AllSigned
+   <tt><strong>Set-ExecutionPolicy AllSigned
    </strong></tt>
 
 ### Install a signing cert on Mac #
@@ -410,8 +494,7 @@ To add the CA root certificate (either PEM or DER format) into the OSX global ke
 
 0. In a Terminal shell window, run command:
 
-   <tt><strong>
-   certtool i mycertificate.crt k=X509Anchors 
+   <tt><strong>certtool i mycertificate.crt k=X509Anchors 
    </strong></tt>
 
    Add a "d" at the end for DER format.
@@ -427,13 +510,18 @@ To add the CA root certificate (either PEM or DER format) into the OSX global ke
 
 Increasingly, hackers are using PowerShell to create havoc.
 
-So it's a good idea to automatically logging using the 
-`start-transcript` and `stop-transcript` commands.
+So it's a good idea to automatically log:
 
-BLAH: The sample script at https://github.com/wilsonmar/git-utilities/ps-auto-log.ps1,
-causes errors during execution of scripts.
+   `start-transcript` 
 
-Inside the file:
+   PROTIP: This can use up a lot of space quickly, so some management of its use is necessary.
+
+   `stop-transcript`
+
+   BLAH: The sample script at https://github.com/wilsonmar/git-utilities/ps-auto-log.ps1,
+   causes errors during execution of scripts.
+
+   Inside the file:
 
    <pre>
 **********************
@@ -456,16 +544,65 @@ SerializationVersion: 1.1.0.1
 Transcript started, output file is ~/Documents/PowerShell/Transcript\2016-12-09T08-48-45-local.txt
    </pre>
 
-PROTIP: This can use up a lot of space quickly, so some management of its use is necessary.
 
+<hr />
+
+## PS Verbs
+
+All PowerShell cmdlets follow a standardized verb-noun 
+naming convention that makes it easy to look up, find, and use cmdlets.
+
+1. For a list of all the verbs:
+
+   <tt><strong>get-verb
+   </strong></tt>
+
+   <pre>Verb        AliasPrefix Group          Description
+----        ----------- -----          -----------
+Add         a           Common         Adds a resource to a container, or attaches an item to another item
+...
+   </pre>
+
+   REMEMBER: Capitalization counts within PowerShell.
+
+   ??? AliasProfix 
+
+   The output is sorted within PS Command Groupings:
+
+   * Common
+   * Communication
+   * Data
+   * Diagnostic
+   * Lifecycle
+   * Other
+   * Security
+   <br /><br />
+
+1. List of all comdlets beginning with a verb:
+
+   <tt><strong>get-command -verb export
+   </strong></tt>
+
+   <pre>
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           Export-AdlStoreChildItemProperties                 1.3.0      Az.DataLakeStore
+   </pre>
+
+1. List of all comdlets beginning with a verb:
+
+   <tt><strong>get-command -verb export<br />
+   get-command -noun ACL
+   </strong></tt>
+
+<hr />
 
 ## Version Logic: If Then Else #
 
-I haven't found a way to have a Bash script that 
+NOTE: I haven't found a way to have a Bash script that 
 can also be run as a PowerShell script.
 
-PROTIP: Switching from Bash to PowerShell means a one-time migration and there is no turning back unless you want to maintain
-parallel scripts.
+PROTIP: Switching from Bash to PowerShell means a one-time migration and there is no turning back unless you want to maintain parallel scripts.
 
 This is largely because of differences in if/then/else coding.
    The same if/then/else syntax in PowerShell scripts for
@@ -473,19 +610,16 @@ This is largely because of differences in if/then/else coding.
 
    On Bash:
 
-   <pre>
-   if [ "$IsWindows" = True ]; then
+   <pre>if [ "$IsWindows" = True ]; then
        echo "Do Windows"
    fi
    </pre>
 
-> The question is whether a single PowerShell script can really
-run on both Mac and Windows. Do a parallel run.
+> If there is a question whether a single PowerShell script can really run on both Mac and Windows. Do a parallel run.
 
    For different actions in PowerShell according to type of operating system:
 
-   <pre>
-If ($IsWindows -eq True) { echo "IsWindows"}
+   <pre>If ($IsWindows -eq True) { echo "IsWindows"}
    echo "Windows"
    # use "C:/Users/%USERNAME%/.ssh/id_rsa.pub"
 ElseIf ($IsOSX -eq True) {"IsOSX"}
@@ -525,16 +659,15 @@ in PowerShell because tilde does not always represent the
 the user's home folder as in Linux.
 This is because PS has different
 "providers" that include HKLM and HKCU top-levels in the Windows Registry.
-Get a list of providers and disk space:
 
-   <tt><strong>
-   Get-PSDrive
+1. Get a list of providers and disk space:
+
+   <tt><strong>Get-PSDrive
    </strong></tt>
 
    The response:
 
-   <pre>
-Name           Used (GB)     Free (GB) Provider      Root                      
+   <pre>Name           Used (GB)     Free (GB) Provider      Root                      
 ----           ---------     --------- --------      ----                      
 /                 386.19         78.43 FileSystem    /                         
 Alias                                  Alias                                   
@@ -547,27 +680,86 @@ PowerShell calls files "items" as a term that groups files with registry keys an
 
    returns the Mode and LastWriteTime of the user.
 
-Instead of "mkdir" to create folders, use 
+1. Instead of "mkdir" to create folders, use 
 
-   <tt><strong>
-   New-Item
+   <tt><strong>New-Item
    </strong></tt>
 
-To list files in a folder, it's the same as in Bash:
+1. To list files in a folder, it's the same as in Bash:
 
-   ls -al
+   <pre><strong>ls -al</strong></pre>
 
-PowerShell <strong>cmdlets</strong> (command-lets) 
+   <pre>PowerShell <strong>cmdlets</strong> (command-lets) 
 enables computers to be managed from the command line,
 much like Bash shell scripts on Linux machines.
 How many are there?
 
+   <tt><strong>(get-command).count
+   </strong></tt>
+
+   At time of writing, the response is 3879.
+
+   https://github.com/pester/Pester/wiki/Mock
+
+
+## Alias not parameters #
+
+Many Bash commands work in PowerShell (ls, cat, echo) because
+<strong>Aliases</strong> make many commands in Bash scripts work:
+
+   <tt><strong>get-alias echo
+   </strong></tt>
+
+   The response is what is executed:
+
+   <pre>Alias           echo -> Write-Output</pre>
+   
+   BLAH: Many parameters to aliases are not recognized.
+   For example, this common command results in an error:
+
+   <pre>ls -al</pre>
+
+   Instead, use:
+
+   <tt><strong>dir -File | format-table
+   </strong></tt>
+
+   NOTE: dir is an alias to Get-ChildItem.
+
+   Thus,
+
+   <tt><strong>Write-Host $env:computername -foreground Green
+   </strong>
+
+   "--passthru" means do not go through Pipeline.
+
+   <a target="_blank" href="http://thesociablegeek.com/azure/using-curl-in-powershell/">
+   You can reset a default alias</a>.
+
+
+## Environment Variables ###
+
+   PROTIP: Environment variables defined in Bash scripts
+   can be read by PowerShell scripts and visa-versa.
+
+1. List all OS environment variables:
+
+   <pre><strong>dir env:\
+   </strong></pre>
+
+   Alternately, since the command "dir" is an alias of Get-ChildItem.
+
+   <pre><strong>Get-ChildItem Env:
+   </strong></pre>
+
+1. For the value of a single environment variable:
+
    <tt><strong>
-   (get-command).count
+   Get-ChildItem Env:USER<br />
+   Get-ChildItem Env:AWS_DEFAULT_REGION
    </strong></tt>
 
 
-https://github.com/pester/Pester/wiki/Mock
 
 
 ## Handling secrets ##
@@ -590,8 +782,7 @@ See my tutorial on [GitHub Data Security](/data-security-github/)
 
    An example of a REST API call:
 
-   <pre>
-$headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
+   <pre>$headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("X-DATE", '9/29/2016')
 $headers.Add("X-SIGNATURE", '234j123l4kl23j41l23k4j')
 $headers.Add("X-API-KEY", 'testuser')
@@ -626,83 +817,24 @@ $response = Invoke-RestMethod 'http://example.com/api/people/1' -Headers $header
    handle more complexity than v3 syntax:
 
 
+<hr />
 
-## Alias not parameters #
+## Remove/Delete whole folder #
 
-Many Bash commands work in PowerShell (ls, cat, echo) because
-<strong>Aliases</strong> make many commands in Bash scripts work:
+Instead of "rm -rf" in Bash <a target="_blank" href="
+https://blogs.technet.microsoft.com/heyscriptingguy/2012/02/22/the-best-way-to-use-powershell-to-delete-folders/">:</a>
 
-   <tt><strong>
-   get-alias echo
-   </strong></tt>
-
-   The response is "Write-Output", which is what is executed.
-
-   BLAH: Many parameters to aliases are not recognized.
-   For example, this common command results in an error:
-
-   ls -al
-
-   Instead, use:
-
-   <tt><strong>
-   dir -File | format-table<br />
-   </strong></tt>
-
-   NOTE: dir is an alias to Get-ChildItem.
-
-   Thus,
-
-   <tt><strong>
-   Write-Host $env:computername -foreground Green
-   </strong>
-
-   "--passthru" means do not go through Pipeline.
-
-   <a target="_blank" href="http://thesociablegeek.com/azure/using-curl-in-powershell/">
-   You can reset a default alias</a>.
-
-
-## Environment Variables ###
-
-   PROTIP: Environment variables defined in Bash scripts
-   can be read by PowerShell scripts and visa-versa.
-
-   Lists of environment variables:
-
-   <pre><strong>
-   dir env:\
-   Get-ChildItem Env:
-   </strong></pre>
-
-   The command "dir" is an alias of Get-ChildItem.
-
-   For the value of a single environment variable:
-
-   <tt><strong>
-   Get-ChildItem Env:USER<br />
-   Get-ChildItem Env:AWS_DEFAULT_REGION
-   </strong></tt>
-
-
-## Paths #
-
-Instead of "rm -rf" in Bash:
-https://blogs.technet.microsoft.com/heyscriptingguy/2012/02/22/the-best-way-to-use-powershell-to-delete-folders/
-
-   <pre><strong>
-   Remove-Item -path c:\* -Filter *text* -WhatIf
+   <pre><strong>Remove-Item -path c:\* -Filter *text* -WhatIf
    </strong></pre>
 
    "-WhatIf" specifies a dry-run.
 
 
-## Combine files
+## Combine text in files
 
    Ro add the content of several files into a single text file:
 
-   <pre><strong>
-   Get-Content "directory path"\*.txt -Force | Set-Content "directory path"\results.txt
+   <pre><strong>Get-Content "directory path"\*.txt -Force | Set-Content "directory path"\results.txt
    </strong></pre>
 
 ## Cmdlets #
@@ -710,24 +842,9 @@ https://blogs.technet.microsoft.com/heyscriptingguy/2012/02/22/the-best-way-to-u
 PS has some smarter parameters, such as filtering for files only
 and running recursively into sub-folders:
 
-   <tt><strong>
-   dir c:\work\*.ps1 -file -recurse
+   <tt><strong>dir c:\work\*.ps1 -file -recurse
    </strong></tt>
 
-All PowerShell cmdlets follow a standardized verb-noun 
-naming convention that makes it easy to look up, find, and use cmdlets.
-For a list of all the verbs:
-
-   <tt><strong>
-   get-verb 
-   </strong></tt>
-
-   REMEMBER: Capitalization counts within PowerShell.
-
-   <tt><strong>
-   get-command -verb export<br />
-   get-command -noun ACL
-   </strong></tt>
 
 ## paths #
 
@@ -740,20 +857,20 @@ For a list of all the verbs:
 
 ### .NET Framework members
 
-   Initially built on Microsoft's .NET Framework, PowerShell
-   can refer to a static .NET member in square brackets
-   with two colons to specify Pi:
+1. Since PowerShell was initially built on Microsoft's .NET Framework, PowerShell can refer to a static .NET member within square brackets followed by two colons to specify Pi:
 
-   <tt>
-   [math]::pi
+   <tt>[math]::pi
    </tt>
 
-   It's wonderful that PowerShell doesn't require an echo to display the value of objects.
+   Response:
 
-   To delete a file in the .NET I/O directory object:
+   <pre>3.14159265358979</pre>
 
-   <pre>
-   [io.directory]::Delete("C:\test*")
+   NOTE: Unlike Python, it's wonderful that PowerShell doesn't require an echo command to display the value of objects.
+
+1. To delete a file in the .NET I/O directory object, such as "tests":
+
+   <pre>[io.directory]::Delete("C:\test*")
    </pre>
 
    The issue with using .NET objects is that they may execute in a different folder context
@@ -766,37 +883,41 @@ For a list of all the verbs:
 
 0. To count the number of cmdlets:
 
-   <pre>
-   $size/1MB
+   <pre>$size/1MB
    </pre>
+
+   0
 
    To get the current folder:
 
-   <pre><strong>
-   $MyFileName = "data.txt"
+   <pre><strong>$MyFileName = "data.txt"
    $filebase = <strong>$PSScriptRoot</strong> + "\" + $MyFileName
    </strong></pre>
 
    Alternatively, use (since v2):
 
-   <pre><strong>
-   (Resolve-Path .\).Path
-   </strong></pre>
+1. Current folder path in PowerShell is a PathInfo object:
 
-   This returns a PathInfo object.
+   <pre><strong>(Resolve-Path .\).Path
+   </strong></pre>
 
    $scriptDir = Split-Path -Path $MyInvocation.MyCommand.Definition -Parent
 
 
 ## Dates #
 
-Based on http://ss64.com/ps/syntax-dateformats.html
+Based on <a target="_blank" href="http://ss64.com/ps/syntax-dateformats.html">http://ss64.com/ps/syntax-dateformats.html</a>
 
-   <pre><strong>
-   Get-Date -Format "yyyy-MM-dd HH:mm"<br />
-   $time = (Get-Date).AddDays(-30) -Format "yyyy-MM-dd HH:mm"
+   <pre><strong>Get-Date -Format "yyyy-MM-dd HH:mm"
+   </strong></pre>
 
-   $dirName  = [io.path]::GetDirectoryName($path)
+   <pre>2021-03-07 05:22</pre>
+
+1. Define variables:
+
+   <pre><strong>Get-Date -Format "yyyy-MM-dd HH:mm"
+$time = (Get-Date).AddDays(-30) -Format "yyyy-MM-dd HH:mm"
+$dirName  = [io.path]::GetDirectoryName($path)
 $filename = [io.path]::GetFileNameWithoutExtension($path)
 $ext      = [io.path]::GetExtension($path)
 $newPath  = "$dirName\$filename $(get-date -f yyyy-MM-dd)$ext"
@@ -840,14 +961,12 @@ Piping:
 
    To list all variables defined and their values:
 
-   <tt><strong>
-   Get-Variable | Out-String
+   <tt><strong>Get-Variable | Out-String
    </strong></tt>
 
    PROTIP: With PowerShell, it's best to use out-file instead of ">" redirect character:
 
-   <tt><strong>
-   dir -file -hidden | out-file -filepath rootfiles.txt<br />
+   <tt><strong>dir -file -hidden | out-file -filepath rootfiles.txt<br />
    </strong></tt>
 
 Error handling:
@@ -874,13 +993,12 @@ Error handling:
    4 = Ignore [parameter value only]
 
 
-## Module to call REST API #
+## Module to call Twitter REST API #
 
    <a target="_blank" href="https://marckean.com/2015/09/21/use-powershell-to-make-rest-api-calls-using-json-oauth/">
    This</a> suggests:
 
-   <pre>
-   $J = Invoke-WebRequest `
+   <pre>$J = Invoke-WebRequest `
    -Uri http://search.twitter.com/search.json?q=PowerShell `
     | ConvertFrom-Json
    </pre>
@@ -906,8 +1024,7 @@ $hashtable
 
    The output is:
 
-   <pre>
-Name                           Value                                           
+   <pre>Name                           Value                                           
 ----                           -----                                           
 item2                          value2                                          
 item1                          value1   
@@ -948,9 +1065,8 @@ item1                          value1
    I then saved the module in the same GitHub folder as my script,
    and added a command to pull the module into the script:
 
-   <pre>
-   Import-module "../MyTwitter.psm1"
-   </pre>
+   <pre><strong>Import-module "../MyTwitter.psm1"
+   </strong></pre>
 
    Alternately, Copy-install the module to your $env:PSModulePath
 
@@ -971,25 +1087,21 @@ item1                          value1
 
 0. Paste in your PowerShell script:
 
-   <pre><strong>
-   Send-Tweet -Message '@adbertram Thanks for the Powershell Twitter module'
+   <pre><strong>Send-Tweet -Message '@adbertram Thanks for the Powershell Twitter module'
    </strong></pre>
 
-   BTW, PowerShell cmdlets in https://github.com/Iristyle/Posh-GitHub
-   is only for use on Windows.
+   BTW, PowerShell cmdlets in https://github.com/Iristyle/Posh-GitHub is only for use on Windows.
 
-Trevor Sullivan (@pcgeek86) made a 
+* Trevor Sullivan (@pcgeek86) made a 
 <a target="_blank" href="https://channel9.msdn.com/Blogs/trevor-powershell/Automating-the-GitHub-REST-API-Using-PowerShell">
 20:40 video Mar 17, 2016</a>
 
-<a target="_blank" href="http://dotps1.github.io/PSProfile/">
+* <a target="_blank" href="http://dotps1.github.io/PSProfile/">
 A PowerShell Module for manipulating PowerShell Profiles</a>
-by
-<a target="_blank" href="https://dotps1.github.io/projects.html">
-Thomas Malkewitz</a>
+by <a target="_blank" href="https://dotps1.github.io/projects.html">Thomas Malkewitz</a>
 
 
-## Curl #
+### Curl #
 
    curl is an alias for Invoke-WebRequest in PowerShell.
 
@@ -1001,54 +1113,25 @@ Thomas Malkewitz</a>
    -Header @{"X-ApiKey"=$apiKey}
    </pre>
 
-https://channel9.msdn.com/Blogs/trevor-powershell/Automating-the-GitHub-REST-API-Using-PowerShell
+   See https://channel9.msdn.com/Blogs/trevor-powershell/Automating-the-GitHub-REST-API-Using-PowerShell
 
 
-   ## JSON from REST API #
+## JSON from REST API #
 
    To extract out a key from the JSON file:
 
-   <pre>
-   $x.Stuffs | where { $_.Name -eq "Darts" } 
+   <pre>$x.Stuffs | where { $_.Name -eq "Darts" } 
    </pre>
 
 https://www.pluralsight.com/courses/powershell-modules-advanced-functions-building
 
 
 
-
-### Profile scripts #
-
-
-<a target="_blank" href="https://app.pluralsight.com/library/courses/powershell-v3-essentials-it-pt3/table-of-contents">Jeff Hicks notes</a> these profile scripts execute automatically at start:
-
-   To view all profiles:
-
-   <tt><strong>
-   $profile | select *
-   </strong></tt>
-
-
-<table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom"><th> Folder </th><th> Script file </th><th> Script name </th></tr>
-<tr valign="top"><td rowspan="3"> C:\Windows\ System32\ WindowsPowerShell\ v1.0\ 
-                      </td><td align="right"> profile.ps1 </td><td> AllUsersAllHosts </td></tr>
-  <tr><td align="right"> Microsoft.PowerShell.profile.ps1 </td><td> AllUsersCurrentHost </td></tr>
-  <tr><td align="right"> Microsoft.PowerShellSE.profile.ps1 </td><td> AllUsersCurrentHost (ISE) </td></tr>
-<tr valign="top"><td rowspan="3"> C:\Users\&LT;user&GT;\Documents\ WindowsPowerShell\ or /Users/&LT;user&GT;/ .config/powershell/
-  </td><td align="right"> Microsoft.PowerShell.profile.ps1 </td><td> CurrentUsersAllHosts* </td></tr>
-  <tr><td align="right"> profile.ps1 </td><td> CurrentUserCurrentHost </td></tr>
-  <tr><td align="right"> Microsoft.PowerShellSE.profile.ps1 </td><td> CurrentUserCurrentHost (ISE) </td></tr>
-</table>
-
-
-* = This is the one shown when $profile is typed in.
-
-
 ## API calls #
 
    Corporate IT departments often use Group Policies.
 
+   <pre>
    $Headers = "Authorization: token ${GITHUB_TOKEN}"
    echo "Headers=$Headers"  # DEBUGGING
 
@@ -1066,6 +1149,35 @@ https://www.pluralsight.com/courses/powershell-modules-advanced-functions-buildi
       # -f is for substitution of (0).
       # See https://technet.microsoft.com/en-us/library/ee692795.aspx
       Write-Host ("Headers="+$Headers)
+   </pre>
+
+
+
+### Profile scripts #
+
+<a target="_blank" href="https://app.pluralsight.com/library/courses/powershell-v3-essentials-it-pt3/table-of-contents">Jeff Hicks notes</a> these profile scripts execute automatically at start:
+
+1. To view all profiles:
+
+   <tt><strong>$profile | select *
+   </strong></tt>
+
+   Response:
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr valign="bottom"><th> Folder </th><th> Script file </th><th> Script name </th></tr>
+<tr valign="top"><td rowspan="3"> C:\Windows\ System32\ WindowsPowerShell\ v1.0\ 
+                      </td><td align="right"> profile.ps1 </td><td> AllUsersAllHosts </td></tr>
+  <tr><td align="right"> Microsoft.PowerShell.profile.ps1 </td><td> AllUsersCurrentHost </td></tr>
+  <tr><td align="right"> Microsoft.PowerShellSE.profile.ps1 </td><td> AllUsersCurrentHost (ISE) </td></tr>
+<tr valign="top"><td rowspan="3"> C:\Users\&LT;user&GT;\Documents\ WindowsPowerShell\ or /Users/&LT;user&GT;/ .config/powershell/
+  </td><td align="right"> Microsoft.PowerShell.profile.ps1 </td><td> CurrentUsersAllHosts* </td></tr>
+  <tr><td align="right"> profile.ps1 </td><td> CurrentUserCurrentHost </td></tr>
+  <tr><td align="right"> Microsoft.PowerShellSE.profile.ps1 </td><td> CurrentUserCurrentHost (ISE) </td></tr>
+</table>
+
+
+* = This is the one shown when $profile is typed in.
 
 
 ## Iterate #
@@ -1074,8 +1186,7 @@ https://www.pluralsight.com/courses/powershell-modules-advanced-functions-buildi
    Stephane</a> shows this command to move (pipe) png files from 
    Desktop to Pictures folder:
 
-   <pre>
-   Get-ChildItem -Filter '*.png' | Move-Item -Destination '../Pictures'
+   <pre>Get-ChildItem -Filter '*.png' | Move-Item -Destination '../Pictures'
    </pre>
 
    A variable can contain an array:
@@ -1092,19 +1203,14 @@ https://www.pluralsight.com/courses/powershell-modules-advanced-functions-buildi
    Remotely restart a server</a>
 
 
-## More Libraries #
-
-https://www.simple-talk.com/blogs/psyaml-powershell-yaml/
-
 ## Read in CSV file #
 
 <a target="_blank" href="https://www.petri.com/making-data-dance-with-powershell">This blog</a> gives an example of importing a CSV file:
 
-   <tt><strong>
-   $data = Import-CSV C:\scripts\moviedata.csv
+   <tt><strong>$data = Import-CSV C:\scripts\moviedata.csv
    </strong></tt>
 
-   Sorting by date requires creating a new property:
+   PROTIP: Sorting by date requires creating a new property:
 
    <pre><strong>
    $data | Add-Member -MemberType ScriptProperty `
@@ -1121,9 +1227,18 @@ https://www.simple-talk.com/blogs/psyaml-powershell-yaml/
    Select Title.ReleaseDate.OpensIn.Coments
    </strong></pre>
 
+## Social
 
-## More on DevOps #
+https://powershell.slack.com/
 
-This is one of a series on DevOps:
+## More PS Libraries #
+
+<a target="_blank" href="https://www.simple-talk.com/blogs/psyaml-powershell-yaml/">
+https://www.simple-talk.com/blogs/psyaml-powershell-yaml</a>
+
+
+## More on DevSecOps #
+
+This is one of a series on DevSecOps:
 
 {% include devops_links.html %}
