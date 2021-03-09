@@ -35,7 +35,7 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
 <tr><th> Role </th><th> Certification exam </th></tr>
 
 <tr valign="top"><td> Administrator
-      </td><td>* <a href="#AZ-900">AZ-900 Fundamentals</a>
+      </td><td>* <a href="#AZ-900">AZ-900 Fundamentals</a><br />
       * <a href="#AZ-104">AZ-104 Azure Administrator Associate</a>
 
    </td></tr>
@@ -44,14 +44,14 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
 
    </td></tr>
 <tr valign="top"><td> Solution Architect
-      </td><td>* AZ-303 Azure Solutions Architect Expert: Technologies
-        * AZ-304 Azure Solutions Architect Expert: Design
-        * AZ-600 Stack Hub Operator Associate
+      </td><td>* AZ-303 Azure Solutions Architect Expert: Technologies<br />
+        * AZ-304 Azure Solutions Architect Expert: Design<br />
+        * AZ-600 Stack Hub Operator Associate<br />
         * AZ-120 Azure for SAP Workloads Specialty
 
    </td></tr>
 <tr valign="top"><td> Developer
-   </td><td>* AZ-204 Azure Developer Associate
+   </td><td>* AZ-204 Azure Developer Associate<br />
        * AZ-220 Azure IoT Developer Specialty
 
    </td></tr>
@@ -60,22 +60,22 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
 
    </td></tr>
 <tr valign="top"><td> Data Engineer<br /> Data Scientist
-   </td><td>* DP-900 Azure Data Fundamentals
-   * DP-100 Azure Data Scientist Associate
-   * <a href="#DP-203">DP-203 Azure Data Engineer Associate</a>
-   * DP-300 Azure Database Administrator Associate
-   * PL-600 Power Platform Solution Architect Expert* 
+   </td><td>* DP-900 Azure Data Fundamentals<br />
+   * DP-100 Azure Data Scientist Associate<br />
+   * <a href="#DP-203">DP-203 Azure Data Engineer Associate</a><br />
+   * DP-300 Azure Database Administrator Associate<br />
+   * PL-600 Power Platform Solution Architect Expert
 
    </td></tr>
 <tr valign="top"><td> AI Engineer
-   </td><td>* AI-900 AI Fundamentals
+   </td><td>* AI-900 AI Fundamentals<br />
      * AI-100 Azure AI Engineer Associate
 
    </td></tr>
 <tr valign="top"><td> Security Engineer
-   </td><td>* <a href="#SC-900">SC-900 Security, Compliance, and Identity Fundamentals</a>
-    * SC-200 Security Operations Analyst Associate
-    * SC-300 Identity and Access Administrator Associate
+   </td><td>* <a href="#SC-900">SC-900 Security, Compliance, and Identity Fundamentals</a><br />
+    * SC-200 Security Operations Analyst Associate<br />
+    * SC-300 Identity and Access Administrator Associate<br />
     * AZ-500 Azure Security Engineer Associate
 
    </td></tr>
