@@ -1,11 +1,10 @@
 ---
 layout: post
-title: "PowerShell on MacOS"
-excerpt: "Run PowerShell commands on Macs for fun and profit"
+title: "PowerShell Install Coding"
+excerpt: "Make PowerShell your superpower on Windows and Macs, for fun and profit"
 tags: [mac, cloud, powershell, microsoft]
-shorturl: "https://git.io/v1wOP"
 date: "2021-03-05"
-file: "powershell-on-mac"
+file: "powershell-install-coding"
 image:
 # powershell blue banner-1900x500-296kb.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/18789323/d2ff6614-8167-11e6-94b5-f37637e01d9c.jpg
@@ -17,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-icons/Powershell.svg" alt="Powershell icon"><a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=1h48m8s">VIDEO</a>
+<img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-icons/Powershell.svg" alt="Powershell icon">
 
 This article describes the use of PowerShell scripting on Mac and Linux.
 
@@ -32,11 +31,13 @@ PowerShell is an <strong>object-centered</strong> "management engine" that can b
    * Idera PowerShell Pro
    <br /><br />
 
-"PowerShell Core” is available as a cross-platform application such that scripts written on MacOS will run on Windows, Linux, or other supported operating system. This also means that PowerShell Core does not have commands associated with the .NET Framework (for Windows OS). This is similar to the rebranding of .NET vs. .NET Core.
+<strong>PowerShell Core</strong> is available as a cross-platform application such that scripts written on MacOS will run on Windows, Linux, or other supported operating system. 
+So it does not have commands associated with the .NET Framework (for Windows OS). 
+Such is similar to the rebranding of .NET vs. .NET Core.
 
 PowerShell <strong>cmdlets</strong> (pronounced "command-lets") let you manage computers from the command line.
 
-ISE (Integrated Scripting Environment) is a GUI that provides
+ISE (Integrated Scripting Environment) is a <strong>GUI</strong> program that provides
 popup tab completion and other assists.
 
 PowerShell promises more consistency than the 
@@ -48,23 +49,24 @@ various commands added over time by various parties:
    * IBM, etc.
    <br /><br />
 
-* <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-powershell/">wilsonmar.github.io/azure-cloud-powershell</a>
-
+The above and other scripting is covered in my blog <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-powershell/">wilsonmar.github.io/azure-cloud-powershell</a>
 
 ## Open source on Linux and MacOS #
 
-From the <a target="_blank" href="https://www.youtube.com/channel/UCMhQH-yJlr4_XHkwNunfMog">
-PowerShell and DSC Team YouTube channel</a>:
-
-<amp-youtube data-videoid="2WZwv7TxqZ0" layout="responsive" width="480" height="270"></amp-youtube>
-This 51-minute series of demos was published Aug 18, 2016, the same day
 <a target="_blank" href="https://aka.ms/hosoyc">
-PowerShell is open-sourced</a> for all OSs at<br />
+PowerShell is open-sourced</a> for all OSs at 
 <a target="_blank" href="https://github.com/PowerShell/PowerShell/">
 https://github.com/PowerShell/PowerShell</a>.
 
-<a target="_blank" href="http://www.networkworld.com/article/3109486/application-development/powershell-for-linux-makes-it-easier-to-mix-clients-servers-and-clouds.html">
-This article</a> notes Desired State Configuration for Linux and the promise of SSH support arrived in 2014 (several months before Microsoft open sourced .NET and brought .NET Core to Linux). But "you had to author your scripts on the Windows platform, you had to configure things on the Windows platform and then deliver the desired configuration to a Linux box and have it be configured; now you can do all of that on Linux.”
+
+## PowerShell Install on Windows
+
+<a target="_blank" href="https://technet.microsoft.com/en-us/library/dn807169.aspx">
+Windows PowerShellGet Module</a> if you don't want to install these from the
+<a target="_blank" href="https://www.microsoft.com/web/downloads/platform.aspx">Web Platform Installer (wpilauncher.exe) at
+https://www.microsoft.com/web/downloads/platform.aspx</a>
+
+I have a separate blog <a target="_blank" href="https://wilsonmar.github.io/powershell-dsc/">wilsonmar.github.io/powershell-dsc</a>
 
 
 ## Install PowerShell Core on MacOS #
@@ -164,12 +166,13 @@ installer: The install was successful.
 
    <a name="pwsh"></a>
 
-0. Open a Terminal shell window to launch PowerShell:
+0. Open a Terminal shell window to launch PowerShell<br />
+   on MacOS:
 
    <tt><strong>pwsh
    </strong></tt>
 
-   Alternately:
+   On Windows:
 
    <tt><strong>powershell
    </strong></tt>
@@ -188,6 +191,22 @@ PS /Users/...>
 
    Gone is line: <a target="_blank" href="https://aka.ms/pscore6-docs">https://aka.ms/pscore6-docs</a>
 
+   Sometimes the response also has:
+
+   <pre>A new PowerShell stable release is available: v7.1.3 
+   Upgrade now, or check out the release page at:       
+     https://aka.ms/PowerShell-Release?tag=v7.1.3       
+   </pre>
+   
+
+   ### Exit PowerShell
+
+0. To leave PowerShell, it's the same as in Bash scripts:
+
+   <tt><strong>exit
+   </strong></tt>
+
+
    ### Upgrade PowerShell
 
 1. To upgrade:
@@ -195,6 +214,8 @@ PS /Users/...>
    <pre><strong>brew upgrade --cask powershell</strong></pre>
 
 1. <a href="#VerifyPSInstall">Verify PowerShell install</a> again.
+
+1. <a href="#pwsh">Log into PowerShell again (see above)</a>.
 
 
    ### Versions of PowerShell:
@@ -237,24 +258,14 @@ WSManStackVersion              3.0
    PowerShell commands known not to work on Linux/macOS</a>.
 
 
-   ### Exit PowerShell
 
-0. To leave PowerShell, it's the same as in Bash scripts:
-
-   <tt><strong>exit
-   </strong></tt>
-
-
-   ### Configure Terminal colors
+   ## Configure Terminal colors
 
 1. Configure your Terminal colors
 
    See https://sqlsunday.com/2019/03/04/how-to-set-up-a-beautiful-powershell-core-terminal-on-mac-os/
 
 0. <a href="#pwsh">Get back in PowerShell</a>...
-
-
-<hr />
 
 
    ### Clear PS Screen
@@ -269,6 +280,12 @@ WSManStackVersion              3.0
 
    ### Get Help on commands
 
+1. Download help files:
+
+   <pre><strong>update-help -force
+   </strong></pre>
+
+
 1. Get help information for a command (such as stop-service):
 
    <tt><strong>get-help stop-service
@@ -281,7 +298,8 @@ about_If                          HelpFile
 about_Pipelines                   HelpFile
    </pre>
 
-   ### Continuation & wide view
+
+   ## Output continuation & wide view
 
    PROTIP: To continue a line end (like back-slash in Bash), use "tick marks" (` at the upper-left on Mac keyboards) and use "vertical bar" (| at the right of Mac keyboards) <a target="_blank" href="https://poshoholic.com/2010/11/11/powershell-quick-tip-creating-wide-tables-with-powershell/">:</a>
 
@@ -292,6 +310,7 @@ about_Pipelines                   HelpFile
    </strong></pre>
 
 
+<hr />
 
 ## Visual Studio Code Editor #
 
@@ -396,8 +415,7 @@ PowerShell errors occur if .NET Core is not installed, so:
 
 0. Open a new Terminal shell window to run:
 
-   <pre><strong>
-   dotnet
+   <pre><strong>dotnet
    </strong></pre>
 
    The response:
@@ -425,6 +443,172 @@ To get started on developing applications for .NET Core, install .NET SDK from:
    $response = Invoke-WebRequest -Uri "www.microsoft.com" 
    $response.items
    </strong></pre>
+
+
+
+<hr />
+
+## PowerShellGet Commands
+
+See https://docs.microsoft.com/en-us/powershell/module/powershellget/?view=powershell-7.1
+
+   The PowerShellGet module provides commands for discovering, installing, updating and publishing PowerShell artifacts like Modules, DSC Resources, Role Capabilities, and Scripts.
+
+Install-Module AZ -AllowClobber -Force
+
+### PowerShell commands
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/find-command?view=powershell-7.1">Find-Command</a> - Finds PowerShell commands in modules.
+
+## Modules
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/get-installedmodule">
+Get-InstalledModule </a> - Gets a list of modules on the computer that were installed by PowerShellGet.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/find-module">
+Install-Module </a> - Downloads one or more modules from a repository, and installs them on the local computer.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/uninstall-module">
+Uninstall-Module</a> - Uninstalls a module.
+
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/update-modulemanifest">
+Update-ModuleManifest</a> - Updates a module manifest file.
+
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/find-rolecapability">
+Find-RoleCapability </a> - Finds role capabilities in modules.
+
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/update-module">
+Update-Module</a> - Downloads and installs the newest version of specified modules from an online gallery to the local computer.
+
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/save-module">
+Save-Module </a> - Saves a module and its dependencies on the local computer but doesn't install the module.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/publish-module">
+Publish-Module </a> - Publishes a specified module from the local computer to an online gallery.
+
+
+## PS Script Linting
+
+TOOL: https://github.com/PowerShell/PSScriptAnalyzer/
+PSScriptAnalyzer for static linting of PS Module script code
+https://poshoholic.com/2015/05/21/powershell-script-analyzer/
+
+1. Install-Module -Name PSScriptAnalyzer
+1. Type A
+1. Run
+
+   <pre><strong>$targetPath="/usr/local/microsoft/powershell/7/Modules/PSReadLine"
+   Invoke-ScriptAnalyzer `
+     -Path     $targetPath/SamplePSReadLineProfile.ps1 `
+     -Settings $targetPath/PSReadLine.psd1
+   </strong></pre>
+
+   Results:
+
+   <pre>Invoke-ScriptAnalyzer: aliasestoexport is not a valid key in the settings hashtable. Valid keys are CustomRulePath, ExcludeRules, IncludeRules, IncludeDefaultRules, RecurseCustomRulePath, Rules and Severity.
+    </pre>
+
+Invoke-ScriptAnalyzer [-Path] <String> [-CustomRulePat3.  <String[]>] [-RecurseCustomRulePath] [-ExcludeRule <String[]>] [-IncludeDefaultRules] [-IncludeRule <String[]>] [-Severity <String[]>] [-Recurse] [-SuppressedOnly] [-Fix] [-EnableExit] [-ReportSummary] [-Settings <Object>] [-SaveDscDependency] [<CommonParameters>]
+
+Get-ScriptAnalyzerRule [-CustomRulePath <String[]>] [-RecurseCustomRulePath] [-Name <String[]>] [-Severity <String[]>] [<CommonParameters>]
+
+Invoke-ScriptAnalyzer [-ScriptDefinition] <String> [-CustomRulePath <String[]>] [-RecurseCustomRulePath] [-ExcludeRule <String[]>] [-IncludeDefaultRules] [-IncludeRule <String[]>] [-Severity <String[]>] [-Recurse] [-SuppressedOnly] [-EnableExit] [-ReportSummary] [-Settings <Object>] [-SaveDscDependency] [<CommonParameters>]
+
+Invoke-Formatter [-ScriptDefinition] <String> [[-Settings] <Object>] [[-Range] <Int32[]>] [<CommonParameters>]
+
+### PS Repository
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/get-psrepository">
+Get-PSRepository </a> - Gets PowerShell repositories.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/set-psrepository">
+Set-PSRepository </a> - Sets values for a registered repository.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/register-psrepository">
+Register-PSRepository </a> - Registers a PowerShell repository.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/unregister-psrepository">
+Unregister-PSRepository </a> - Unregisters a repository.
+
+
+### PS Script Files
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/find-script">
+Find-Script </a> - Finds a script.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/get-installedscript">
+Install-Script </a> - Installs a script.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/uninstall-script">
+Uninstall-Script</a> - Uninstalls a script.
+
+
+<a target="_blank" href="">
+Get-InstalledScript </a> - Gets an installed script.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/update-scriptfileinfo">
+Update-ScriptFileInfo</a> - Updates information for a script.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/new-scriptfileinfo">
+New-ScriptFileInfo </a> - Creates a script file with metadata.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/test-scriptfileinfo">
+Test-ScriptFileInfo</a> - Validates a comment block for a script.
+
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/save-script">
+Save-Script </a> - Saves a script.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/update-script">
+Update-Script</a> - Updates a script.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/publish-script">
+Publish-Script </a> - Publishes a script.
+
+
+### DSC Resource commands
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/powershellget/find-dscresource">
+Find-DscResource </a> - Finds Desired State Configuration (DSC) resources.
+
+
+<hr />
+
+## Make Imperative Commands #
+
+   Windows PowerShell <strong>providers</strong> access data stores, such as the Windows Registry and certificate store, as easily as you access the file system. 
+
+1. Install NuGet provider:
+
+   <pre><strong>Install-PackageProvider -Name NuGet -Force
+   </strong></pre>
+
+1. Get a count of how many commands for Azure module:
+
+   <pre><strong>Get-Command -Module Azure | Measure-Object
+   </strong></pre>
+
+   I got a count of 697 commands for just Azure for ASM.
+
+1. List Azure commands containing "vm" (virtual machine):
+
+   <pre><strong>Get-Command -Module Azure -noun *vm*
+   </strong></pre>
+
+
+### Enable PS1 execution #
+
+On Windows machines, PowerShell commands can be script files with <strong>.ps1</strong> file extension.
+
+   <pre><strong>Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+   </strong></pre>
+
+   On a Mac: <br />
+   <pre>Set-ExecutionPolicy: Operation is not supported on this platform.</pre>
 
 
 ## Execute script file #
@@ -506,7 +690,7 @@ To add the CA root certificate (either PEM or DER format) into the OSX global ke
 
 
 
-## Automatic logging
+## Automatic transcript logging
 
 Increasingly, hackers are using PowerShell to create havoc.
 
@@ -523,8 +707,7 @@ So it's a good idea to automatically log:
 
    Inside the file:
 
-   <pre>
-**********************
+   <pre>**********************
 Windows PowerShell transcript start
 Start time: 20161209084850
 Username: \root
@@ -595,7 +778,38 @@ Alias           Export-AdlStoreChildItemProperties                 1.3.0      Az
    get-command -noun ACL
    </strong></tt>
 
-<hr />
+
+   ## Envrionment variables #
+
+1. To list, remember the colon at the end:
+
+   <pre><strong>Get-ChildItem Env:
+   </strong></pre>
+
+1. For the value to a specific variable:
+
+   <pre><strong>Get-ChildItem Env:PATHEXT
+   </strong></pre>
+
+1. Define a temporary environment variable:
+
+   <pre><strong>$env:MyTestVariable = "A temporary test variable."
+   </strong></pre>
+
+1. Define a new permanent environment variable:
+
+   <pre><strong>
+   [Environment]::SetEnvironmentVariable("TestVariableName", "My Value", "<em>option</em>")
+   </strong></pre>
+
+   In option is either "Machine", "User", or "Process".
+
+
+## Filter output
+
+   <pre>get-??? -filter "starswith(givenName,'Al')"
+   </pre>
+
 
 ## Version Logic: If Then Else #
 
@@ -734,7 +948,7 @@ Many Bash commands work in PowerShell (ls, cat, echo) because
    "--passthru" means do not go through Pipeline.
 
    <a target="_blank" href="http://thesociablegeek.com/azure/using-curl-in-powershell/">
-   You can reset a default alias</a>.
+   PROTIP: You can reset a default alias</a>.
 
 
 ## Environment Variables ###
@@ -759,7 +973,17 @@ Many Bash commands work in PowerShell (ls, cat, echo) because
    Get-ChildItem Env:AWS_DEFAULT_REGION
    </strong></tt>
 
+1. Save a password data type:
 
+   <pre><strong>$mypassword = New-Object System.Management.Automation.PSCredential($username, $SecurePassword) 
+   </strong></pre>
+
+   According to <a target="_blank" href="https://www.udemy.com/course/exam-az-104-microsoft-azure-administrator/learn/lecture/18878420#questions">VIDEO</a>:
+
+   <pre><strong>$mypassword = New-Object -TypeName Microoft.Open-AzureAd.Model.PasswordProfile
+   $mypassword.Password = "ChangeMe"
+   new-azureaduser -DisplayName "John" -PasswordProfile $userpassword -UserPrincipalName johndoe@mycorp.com
+   </strong></pre>
 
 
 ## Handling secrets ##
@@ -1229,7 +1453,8 @@ https://www.pluralsight.com/courses/powershell-modules-advanced-functions-buildi
 
 ## Social
 
-https://powershell.slack.com/
+<a target="_blank" href="https://powershell.slack.com/">https://powershell.slack.com</a>
+
 
 ## More PS Libraries #
 
