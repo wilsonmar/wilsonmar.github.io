@@ -3,7 +3,7 @@ layout: post
 title: "PowerShell DSC (Desired State Configuration)"
 excerpt: "Let PowerShell make it right and keep it right"
 tags: [cloud, powershell, microsoft]
-date: "2016-05-23"
+date: "2021-03-10"
 file: "powershell-dsc"
 image:
 # fig blue powershell icon-1900x500
@@ -18,26 +18,72 @@ comments: true
 
 This article describes the use of Windows PowerShell Desired State Configuration (DSC).
 
-Concepts here are introduced after you take an action.
+<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=5h0m14s">VIDEO</a>
+
+DSC (Desired State Configuration) is a PowerShell management platform that uses Configuration as code (CaC) declarations, in GitHub.
+
+On every target node, the process running in the background to parse and "enact" configurations sent to the node is the <strong>LCM (Local Configuration Manager)</strong>. 
+   * https://docs.microsoft.com/en-us/powershell/dsc/metaconfig 
+   * https://docs.microsoft.com/en-us/powershell/dsc/metaconfig4
+   * https://msdn.microsoft.com/en-us/powershell/dsc
+   * <strike>http://blogs.msdn.com/b/powershell</strike> and https://github.com/PowerShell/DscResources are no longer the
+   Central repository for PowerShell DSC resources maintained within Microsoft.
+
+From the <a target="_blank" href="https://www.youtube.com/channel/UCMhQH-yJlr4_XHkwNunfMog">
+PowerShell and DSC Team YouTube channel</a>:
+
+<amp-youtube data-videoid="2WZwv7TxqZ0" layout="responsive" width="480" height="270"></amp-youtube>
+This 51-minute series of demos was published Aug 18, 2016, the same day
+
+<a target="_blank" href="http://www.networkworld.com/article/3109486/application-development/powershell-for-linux-makes-it-easier-to-mix-clients-servers-and-clouds.html">
+This article</a> notes Desired State Configuration for Linux and the promise of SSH support arrived in 2014 (several months before Microsoft open sourced .NET and brought .NET Core to Linux). But "you had to author your scripts on the Windows platform, you had to configure things on the Windows platform and then deliver the desired configuration to a Linux box and have it be configured; now you can do all of that on Linux.”
 
 
-## Sample scripts
+## PowerShell Commands
 
-### Resources
+   PROTIP: A PowerShell DSC configuration file is a PowerShell script, and thus has a .ps1 file suffix and runs within the PowerShell command-line shell. DSC was introduced with PowerShell 4.0.
+
+0. On MacOS, if you don't have PowerShell already, perform <a target="_blank" href="https://wilsonmar.github.io/2016-09-12-powershell-on-mac">my steps to install PowerShell on MacOS</a>
+
+0. List PowerShell functions for DSC:
+
+   <tt><strong>Get-command -Noun dsc*  
+   </strong></tt>
+
+   The response:
+
+   <pre>CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Function        Find-DSCResource                                   2.2.5      PowerShellGet
+Function        Get-DscResource                                    2.0.5      PSDesiredStateConfiguration
+Function        Invoke-DscResource                                 2.0.5      PSDesiredStateConfiguration
+Function        New-DscChecksum                                    2.0.5      PSDesiredStateConfiguration
+   </pre>
+
+0. Get resources for DSC:
+
+   <tt><strong>Get-DscResource
+   </strong></tt>
+
+   The response:
+
+   <pre>MethodInvocationException: /usr/local/microsoft/powershell/7/Modules/PSDesiredStateConfiguration/PSDesiredStateConfiguration.psm1:3927                                                      
+Line |                                                                                                                                                                                      
+3927 |          [Microsoft.PowerShell.DesiredStateConfiguration.Internal.DscC …                                                                                                             
+     |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                                               
+     | Exception calling "LoadDefaultCimKeywords" with "2" argument(s): "Unable to load shared library 'libmi' or one of its dependencies. In order to help diagnose loading                
+     | problems, consider setting the DYLD_PRINT_LIBRARIES environment variable: dlopen(liblibmi, 1): image not found"  
+   </pre>
+
+
+## Sample DSC scripts
 
    DSC resources can be obtained from several places:
 
+   * <a target="_blank" href="https://www.PowerShellGallery.com/">PowerShellGallery.com</a>
    * <a href="#FromGitHub">GitHub.com</a>
-   * <a target="_blank" href="https://www.powershellgallery.com/">powershellgallery.com/</a>
    * PowerShell Package Manager (of PowerShell modules)
    <br /><br />
-
-   On every target node, the process running in the background to parse and "enact" configurations sent to the node is the Local Configuration Manager (LCM). See https://docs.microsoft.com/en-us/powershell/dsc/metaconfig and https://docs.microsoft.com/en-us/powershell/dsc/metaconfig4
-
-   https://msdn.microsoft.com/en-us/powershell/dsc
-
-   http://blogs.msdn.com/b/powershell/
-   Central repository for PowerShell Desired State Configuration (DSC) resources maintained within Microsoft.
 
 
 <a name="FromGitHub"></a>
@@ -54,9 +100,6 @@ Concepts here are introduced after you take an action.
 0. Use an internew browser (Chrome) to my sample PowerShell DSC scripts at:
 
    <a target="_blank" href="https://github.com/wilsonmar/powershell-dsc">https://github.com/wilsonmar/powershell-dsc</a>
-
-   (I would be honored if it earns your clicking the Star.
-   And please let me know if there is anything I could add or fix.)
 
 0. Create a GitHub account for yourself if you haven't already.
 0. Click the <strong>Fork</strong> button to make it yours, since you will be making changes.
@@ -106,46 +149,6 @@ Configuration HelloConfig1 {
    When the name of the script (without the .ps1 suffix) is specified within PowerShell, that script is compiled into a <strong>MOF document for each node</strong> 
 
    within a folder created in the current directory with the same name as the configuration. For example:
-
-
-   ### PowerShell Commands
-
-   PROTIP: A PowerShell DSC configuration file is a PowerShell script, and thus has a .ps1 file suffix and runs within the PowerShell command-line shell. DSC was introduced with PowerShell 4.0.
-
-0. On MacOS, install PowerShell.
-0. Enter PowerShell:
-
-   <tt><strong>powershell
-   </strong></tt>
-
-0. List PowerShell functions for DSC:
-
-   <tt><strong>Get-command -Noun dsc*  
-   </strong></tt>
-
-   The response:
-
-   <pre>
-CommandType     Name                                               Version    Source
------------     ----                                               -------    ------
-Function        Find-DscResource                                   1.1.3.2    PowerShellGet
-Function        Get-DscResource                                    0.0        
-Function        Get-DSCResourceModules                             0.0        
-Function        New-DscChecksum                                    0.0        PSDesiredStateConfiguration
-   </pre>
-
-0. Get resources for DSC:
-
-   <tt><strong>Get-DscResource
-   </strong></tt>
-
-   The response:
-
-   <pre>
-???
-   </pre>
-
-   PowerShellGallery.com
 
 
    ### Compile to MOF

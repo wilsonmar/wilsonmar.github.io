@@ -3,7 +3,7 @@ layout: post
 title: "MacOS setup automation using a bootstrap script and Ansible"
 excerpt: "How I setup several Macbooks while I sleep"
 tags: [apple, mac, setup, automation]
-date: "2016-09-15"
+date: "2021-03-15"
 file: "ansible-mac-osx-setup"
 image:
 # feature: pic brown wood apple logo 1900x500.jpg
@@ -562,6 +562,9 @@ https://www.ansible.com/videos-ansiblefest-sf-2016
 <a target="_blank" href="https://gist.github.com/jloveland/df1bdec4705220eb5990">
 5 minutes Kubernetes Cluster on Mac</a>
 
+## Ansible on Azure
+
+<a target="_blank" href="https://cloud.netapp.com/blog/azure-cvo-blg-ansible-azure-automating-azures-basic-building-blocks">READ: Ansible & Azure: Automating the Basic Building Blocks of the Azure Cloud</a>
 
 ## More on OSX
 

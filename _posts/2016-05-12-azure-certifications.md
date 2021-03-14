@@ -45,7 +45,7 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
    </td></tr>
 <tr valign="top"><td> Solution Architect
       </td><td>* AZ-303 Azure Solutions Architect Expert: Technologies<br />
-        * AZ-304 Azure Solutions Architect Expert: Design<br />
+        * <a href="#AZ=304">AZ-304</a> Azure Solutions Architect Expert: Design<br />
         * AZ-600 Stack Hub Operator Associate<br />
         * AZ-120 Azure for SAP Workloads Specialty
 
@@ -107,8 +107,7 @@ public/private/hybrid cloud, IaaS, PaaS, SaaS
 
 Andrew Brown, who also offers <a target="_blank" href="https://www.exampro.co/az-900">Exampro prep course for $29/month</a>, shows that (by skipping the repeatition of topics), a good summary can be done in a <a target="_blank" href="https://www.youtube.com/watch?v=NKEFWyqJ5XA" title="Jun 17, 2020">
 3 hour VIDEO</a> (with ads but great diagrams). It's done through <a target="_blank" href="https://www.freecodecamp.org/news/azure-fundamentals-course-az900/">FreeCodeCamp.org</a>His advice:
-   * Study 1-3 hours a day, every day.
-   <br /><br />
+"Study 1-3 hours a day, every day".
 
 If you want time on servers (one hour at a time), subscribe to
 <a target="_blank" href="https://cloudacademy.com/learning-paths/az-900-exam-preparation-microsoft-azure-fundamentals-524/">CloudAcademy.com</a>
@@ -139,20 +138,34 @@ compute, storage, network, and security resources
 
    * https://docs.microsoft.com/en-us/learn/azure/
 
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-administrator/?wt.mc_id=esi_lxp_webpage_wwl&tab=tab-learning-paths">Microsoft's tutorial</a> provides more managerial aspects</a> (such as governance) than others.
+
 Video Lectures:
 
-1. <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E">9:33:29 Video</a> <a target="_blank" href="https://learning.oreilly.com/videos/exam-az-104-microsoft/9780136823483/9780136823483-A104_01_01_01">with transcript from OReilly</a> by Michael J. Shannon takes a deep dive on a lightboard.
+2. Michael J. Shannon takes a deep dive on a lightboard in <a target="_blank" href="https://learning.oreilly.com/videos/exam-az-104-microsoft/9780136823483/9780136823483-A104_01_01_01">9+ hours of videos with transcript from OReilly</a> 
 
-* <a target="_blank" href="https://cloudacademy.com/learning-paths/az-104-exam-preparation-microsoft-azure-administrator-1-1332/">CloudAcademy's learning path</a>, by Thomas Mitchell, provides quizzes along the way and time on actual Azure instances.
+* <a target="_blank" href="https://cloudacademy.com/learning-paths/az-104-exam-preparation-microsoft-azure-administrator-1-1332/">CloudAcademy's learning path</a>, by Thomas Mitchell, provides quizzes along the way and <strong>time on actual Azure instances</strong>.
+
+* Tim Warner <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-administrator-preparing-az-104-exam">Pluralsight: Microsoft Azure Administrator: Preparing for the AZ-104 Exam</a>
 
 * <a target="_blank" href="https://cloudacademy.com/learning-paths/az-104-exam-preparation-microsoft-azure-administrator-1-1332/">
-CloudAcademy</a>
+CloudAcademy</a> provides lab time on the real Azure environment.
 
-* <a target="_blank" href="https://www.udemy.com/course/exam-az-104-microsoft-azure-administrator/">Udemy 15.5 hour video course by Anand Rao Nednur</a>
+* Anand Rao Nednur's <a target="_blank" href="https://mckinsey.udemy.com/course/exam-az-104-microsoft-azure-administrator/">McK</a> <a target="_blank" href="https://www.udemy.com/course/exam-az-104-microsoft-azure-administrator/"><strong>15.5 hour</strong> Udemy video course</a> (sometimes using a lightboard) is <strong>most comprehensive</strong>. So it's as much about understanding how to do the job as passing the test.
 
-* <a target="_blank" href="https://www.udemy.com/course/microsoft-certified-azure-administrator/">Udemy.com</a> by Alan Rodriguez
+* Alan Rodriguez's <a target="_blank" href="https://mckinsey.udemy.com/course/microsoft-certified-azure-administrator/">McK</a> <a target="_blank" href="https://www.udemy.com/course/microsoft-certified-azure-administrator/">Udemy.com</a> 
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-administrator-preparing-az-104-exam">Pluralsight: Microsoft Azure Administrator: Preparing for the AZ-104 Exam</a> by Tim Warner
+* Niraj Kumar, founder of <a target="_blank" href="https://azureezy.com/az-104-azure-administrator/">Azureezy.com</a>, https://t.me/AzureTalk, has <a target="_blank" href="https://t.me/azuretalk">Telegram chat</a> with his series on <a target="_blank" href="https://www.youtube.com/watch?v=413zBdy_ocQ">YouTube Jul 21, 2020</a> with <a target="_blank" href="https://azureezy.com/az-104-azure-administrator/">slidedecks here</a>:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=413zBdy_ocQ&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI">AZ exams</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=413zBdy_ocQ&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&t=9m39s">Manage Azure Identities and governance</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=lL6Osu3GERQ&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&index=2">Implement and manage Azure Webapps and Container</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=V0FUu0S2Eck&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&index=3">Azure Compute</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=3WdTLn8vNO4&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&index=4">Azure Storage</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=_Z9xzuX6Fsw&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&index=5">Azure Networking Part1</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=FVJUZkmuozY&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&index=6">Azure Networking Part2</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=JEveC534tQk&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&index=7">Azure Backup and Site Recovery</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=AzPvDNUldoI&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&index=8&t=10m43s" title="Sep 15, 2020">1hr 47m Azure Monitoring</a>
+   <br /><br />
 
 Flash cards:
 
@@ -211,6 +224,25 @@ Skills the exam measures:
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-desktop/create-validation-host-pool">Host pool</a>
 <br /><br />
 
+<hr />
+
+<a name="AZ-204"></a>
+
+## AZ-204 Developing Solutions for Microsoft Azure
+
+https://app.pluralsight.com/paths/certificate/developing-solutions-for-microsoft-azure-az-204
+Includes:
+   * https://app.pluralsight.com/paths/certificate/developing-solutions-for-microsoft-azure-az-204
+
+
+<a name="AZ-304"></a>
+
+## AZ-304 Azure Architect Design
+
+https://www.azurebarry.com/prepare-for-the-az304-exam/
+
+https://www.pluralsight.com/paths/microsoft-azure-architect-design-az-304
+
 
 <hr />
 
@@ -266,8 +298,9 @@ John McIntyre
    * https://www.youtube.com/watch?v=tMYOi5E14eU 2020
    * https://www.youtube.com/watch?v=dvP0JwchjfI 2019 "SQL Data Warehouse"
 
-## More on DevOps #
 
-This is one of a series on DevOps:
+## More on Cloud #
 
-{% include devops_links.html %}
+This is one of a series on cloud computing:
+
+{% include cloud_links.html %}
