@@ -32,7 +32,13 @@ GitHub was among the first to adopt GraphQL's leading-edge API techniques, so th
 I first looked at GitHub's GraphQL API in 2016 during their <strike>https://developer.github.com/early-access/graphql/</strike> which included the <strike>https://developer.github.com/early-access/graphql/explorer/</strike>
 
 
-## Learning GraphQL
+## GitHub Auth Token
+
+Even working on public repos, unauthenticated clients can make only 60 requests per hour and see limited informaiton unless you get an authentication token to make a call like this:
+
+   <pre>curl -i -H "Authorization: token 5199831f4dd3b79e7c5b7e0ebe75d67aa66e79d4" \
+    https://api.github.com/user/repos
+   </pre>
 
 GitHub's guides provide sample API calls using the curl command-line utility.
 
@@ -42,20 +48,34 @@ GitHub's guides provide sample API calls using the curl command-line utility.
 
    Others:
 
-   * https://docs.graphene-python.org/en/stable/quickstart
    * https://developer.github.com/enterprise/2.20/
    * https://developer.github.com/enterprise/2.20/apps/<br />
    Building apps
    <br /><br />
 
-
-## GitHub Auth Token
-
 1. Get a GitHub account if you don't already have one.
 
-1. Generate an Authorization token from
+1. Navigate to the Settings page of the repo you want to use APIs on.
 
-   <a target="_blank" href=""></a>
+   NOTE: You need to be an owner or Administrator to see "Settings" tab.
+
+   PROTIP: Avoid creating and using a <strong>PAT (Personal Access Token)</strong> because that is like a password that grants full access to all your repositories in your account.
+
+   <strong>Deploy keys</strong> limits access to a specific repository in your account using SSH.
+
+   An "OAuth App" acts as a GitHub user, whereas a "GitHub App" uses its own identity installed on an organization (granted by an organization administrator).
+
+   Read: https://insomnia.rest/blog/oauth2-github-api
+
+1. Register a new OAuth application
+
+   https://github.com/settings/applications/new
+
+   See https://docs.github.com/en/rest/guides/basics-of-authentication
+
+   https://docs.github.com/en/rest/reference/repos#create-a-repository-for-the-authenticated-user
+
+1. In the <strong>Deploy keys</strong> menu, click "Add deploy key".
 
 1. Be in your home user folder, which is never pushed to any public GitHub. Here is where you can keep files containing secrets.
 
@@ -71,6 +91,8 @@ MY_GITHUB_TOKEN="23441234f13b1134c36667a"
 1. If you're using GitHub Enterprise behind the Okta identity provider (IdP) for SSO (Single Sign On), you will need to be given access that instance an probably have to install a VPN client as well.
 
    https://help.github.com/en/github/authenticating-to-github/about-authentication-with-saml-single-sign-on
+
+1. READ GitHub's REST API documentation at:
 
    https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-identity-and-access-management-with-saml-single-sign-on
 
@@ -88,6 +110,11 @@ As with any API, there are several ways you can there make calls:
    * <a href="#ClientPrograms">Installing a client programs: Postman or Insomnia on the Mac, etc.
 
    * <a href="#Programming">Installing a programming environment: Python, NodeJs, Ruby, etc.
+
+
+## Insomnia
+
+https://github.com/swinton/github-rest-apis-for-insomnia
 
 
 <a name="CustomPrograms"></a>
@@ -180,7 +207,13 @@ only categories of their services.
 A custom server would enable you to respond any way you want.
 (But you also have to worry about providing enough capacity, unlike a SaaS offering like GitHub)
 
-"Ariadne" is a Python code library for implementing GraphQL servers using a SDL (Schema Definition Language) so less coding is needed.
+There are two major Python code library for implementing GraphQL servers:
+
+The Graphene Python library takes a "code-first" approach:
+
+   <a target="_blank" href="https://docs.graphene-python.org/en/stable/quickstart">https://docs.graphene-python.org/en/stable/quickstart</a>
+
+"Ariadne" using a SDL (Schema Definition Language) so less coding is needed.
 
    <a target="_blank" href="https://ariadnegraphql.org/">
    https://ariadnegraphql.org/</a> describes
