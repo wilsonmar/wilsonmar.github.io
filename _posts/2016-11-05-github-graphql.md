@@ -18,9 +18,14 @@ comments: true
 
 This article covers working with GitHub's GraphQL by manually issuing single requests and by programming.
 
-## GitHub's GraphQL
+<a name="Endpoint"></a>
 
-GitHub provides a well-known GraphQL API that accepts a lot of traffic.
+## GitHub's GraphQL Endpoint
+
+GitHub provides a well-known GraphQL API end-point which accepts a lot of traffic for all operations:
+
+   <ul><pre><strong>https://api.github.com/graphql</strong></pre>
+   </ul>
 
 GitHub was among the first to adopt GraphQL's leading-edge API techniques, so their APIs are referenced as an example industry-standard we would do well to emulate:
 
@@ -31,16 +36,29 @@ GitHub was among the first to adopt GraphQL's leading-edge API techniques, so th
 
 I first looked at GitHub's GraphQL API in 2016 during their <strike>https://developer.github.com/early-access/graphql/</strike> which included the <strike>https://developer.github.com/early-access/graphql/explorer/</strike>
 
+## Technologies to Access
 
-## GitHub Auth Token
+As with any API, there are several ways you can there make calls:
+   
+* Without installing anything: on a Terminal CLI crafting curl commands
 
-Even working on public repos, unauthenticated clients can make only 60 requests per hour and see limited informaiton unless you get an authentication token to make a call like this:
+* <a href="#ClientPrograms">Installing a client programs: Insomnia on the Mac or Windows. There is also Postman.
 
-   <pre>curl -i -H "Authorization: token 5199831f4dd3b79e7c5b7e0ebe75d67aa66e79d4" \
-    https://api.github.com/user/repos
-   </pre>
+   <strong>This article focuses on use of Insomnia, a favorite among developers.</strong>.
 
-GitHub's guides provide sample API calls using the curl command-line utility.
+      Read: https://insomnia.rest/blog/oauth2-github-api
+
+* Install a (Chrome or Mozilla Firefox) browser extension: <a target="_blank" href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en">Postman</a>, <a target="_blank" href="https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo">Advanced REST Client</a>, <a target="https://chrome.google.com/webstore/detail/talend-api-tester-free-ed/aejoelaoggembcahagimdiliamlcdmfm?hl=en">Talend API Tester</a>.
+
+* <a href="#CustomPrograms">Custom programs</a>. 
+
+* <a href="#Programming">Installing a programming environment: Python, NodeJs, Ruby, etc.
+
+* TODO: Reference an OpenAPI (Swagger) spec file.
+
+<hr />
+
+## GitHub Documentation
 
 1. GitHub's Developer Guide on GraphQL is at:
 
@@ -53,19 +71,65 @@ GitHub's guides provide sample API calls using the curl command-line utility.
    Building apps
    <br /><br />
 
+1. Click https://docs.github.com/en
+
+   Notice there is a REST API and GraphQL API.
+
+1. Click "GraphQL API" at https://docs.github.com/en/graphql
+
+   "to create precise and flexible queries for the data you need to integrate with GitHub."
+
 1. Get a GitHub account if you don't already have one.
+
+   GitHub's guides provide sample API calls using the curl command-line utility.
+
+
+   ## GitHub Auth Token
+
+   Even working on public repos, unauthenticated clients can make only 60 requests per hour and see limited informaiton unless you get an authentication token to make a call like this:
+
+   <pre>curl -i -H "Authorization: token 5199831f4dd3b79e7c5b7e0ebe75d67aa66e79d4" \
+    https://api.github.com/user/repos
+   </pre>
+
+   <tt>-H</tt> specifies the token in the HTTP header (which is more secure than in Query parameters).
+
+
+1. Click your avatar image at the upper-right corner to be at:
+
+   <a target="_blank" href="https://github.com/settings/profile">
+   https://github.com/settings/profile</a>
+
+1. Click "Developer settings" in the left menu to be at:
+
+   <a target="_blank" href="https://github.com/settings/developers">
+   https://github.com/settings/developers</a>
+
+   <a target="_blank" href="https://www.youtube.com/playlist?list=PL13mreFCu1Josp4PCNb1WlOiaRY6p73D1"">VIDEO</a> and 
+   <a target="_blank" href="https://markselby9.medium.com/how-to-insomnia-for-graphql-requests-b270e16876a1">this blog</a> explains the steps for generating a PAT for Insomnia to use as a bearer authentication token. It references <a target="_blank" href="help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line">this GitHub doc</a>.
+
+   PROTIP: Remember that a <a target="_blank" href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token">PAT (Personal Access Token)</a> is the same as your account password which grants full access to all your repositories within your account.
+
+
+   ### OAuth App
+
+   An "OAuth App" (such as Insomnia) acts as a GitHub user.
+
+   A "GitHub App" uses its own identity installed on an organization (granted by an organization administrator).
+
+1. Click "OAuth Apps" to register a new OAuth GitHub app at:
+
+   <a target="_blank" href="https://github.com/settings/applications/new">https://github.com/settings/applications/new</a>
+
+   ![graphql-oauth-form-592x496](https://user-images.githubusercontent.com/300046/111416039-ae30e600-86a8-11eb-8bbe-e7819245dae8.png)
+
+   READ: https://docs.github.com/en/developers/apps/differences-between-github-apps-and-oauth-apps
 
 1. Navigate to the Settings page of the repo you want to use APIs on.
 
    NOTE: You need to be an owner or Administrator to see "Settings" tab.
 
-   PROTIP: Avoid creating and using a <strong>PAT (Personal Access Token)</strong> because that is like a password that grants full access to all your repositories in your account.
-
    <strong>Deploy keys</strong> limits access to a specific repository in your account using SSH.
-
-   An "OAuth App" acts as a GitHub user, whereas a "GitHub App" uses its own identity installed on an organization (granted by an organization administrator).
-
-   Read: https://insomnia.rest/blog/oauth2-github-api
 
 1. Register a new OAuth application
 
@@ -97,25 +161,72 @@ MY_GITHUB_TOKEN="23441234f13b1134c36667a"
    https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-identity-and-access-management-with-saml-single-sign-on
 
 
-## Technologies to Access
-
-As with any API, there are several ways you can there make calls:
-   
-   * Without installing anything:<br />on a Terminal crafting curl commands
-
-   * Installing a browser add-on
-
-   * <a href="#CustomPrograms">Custom programs</a>
-
-   * <a href="#ClientPrograms">Installing a client programs: Postman or Insomnia on the Mac, etc.
-
-   * <a href="#Programming">Installing a programming environment: Python, NodeJs, Ruby, etc.
+   https://medium.com/swlh/introduction-to-graphql-with-github-api-64ee8bb11630
 
 
-## Insomnia
+   <a name="ClientPrograms"></a>
 
-https://github.com/swinton/github-rest-apis-for-insomnia
+   ### Install client program Insomnia
 
+1. Install Insomina <br />
+   into the <tt>~/Applications</tt> folder on your Mac, using Homebrew:
+
+   <pre><strong>brew install --cask insomina
+   </strong></pre>
+
+   Alternately, on Windows within Git Bash run as Administrator (with elevated privileges), use Chocolatey:
+
+   <pre><strong>choco install -y insomina-rest-api-client
+   </strong></pre>
+
+
+   ### v3 GraphQL
+
+1. There is a set of calls which can be loaded into Insomnia from:
+
+   https://github.com/swinton/github-rest-apis-for-insomnia
+
+   That is v3 of GitHub's API, which made individual REST calls.
+
+   "Imported Worspaces" categories, alphabetically:
+
+   * activity
+   * apps
+   * checks
+   * codes-of-conduct
+   * emojis
+   * gists
+   * <strong>git</strong>
+   * gitignore
+   * interactions
+   * issues
+   * licenses
+   * markdown
+   * meta
+   * migrations
+   * oauth-authorizations
+   * orgs
+   * projects
+   * pulls
+   * rate-limit
+   * reactions
+   * <strong>repos</strong>
+   * scim
+   * search
+   * teams
+   * <strong>users</strong>
+   <br /><br />
+
+   PROTIP: GraphQL is V4 of GitHub's API. 
+   GraphQL calls can request any of the above categories of data in a single call. Conversion to GraphQL saved Github, Facebook, and others tremendously reduced traffic, bandwidth, and server processing load.
+
+   ### v4 GraphQL
+
+   TODO::
+
+
+
+<hr />
 
 <a name="CustomPrograms"></a>
 
@@ -133,17 +244,6 @@ The app provides a UI to GitHub API calls made by the model_gh.py program.
 <a target="_blank" href="https://cz.linkedin.com/in/pavel-prudk%C3%BD-4711ab88">Pavel Prudký (from Prague)</a> shared his <a target="_blank" href="https://datahappy.wordpress.com/2019/07/05/flask-mvc-github-integration-boilerplate-project-finished/">Python Flask mvc app to list/manage GitHub branches and files</a> on <a target="_blank" href="https://github.com/datahappy1/flask_mvc_github_example_project">his GitHub</a>:
 
 <a target="_blank" title="github-flask-app-749x461.png" href="https://user-images.githubusercontent.com/300046/75112636-aae93900-5613-11ea-8189-d7777af60e0a.png"><img alt="github-flask-app-665x409.png" src="https://user-images.githubusercontent.com/300046/75112389-59d84580-5611-11ea-8c0c-decf2b595a05.png"></a>
-
-
-<a name="ClientPrograms"></a>
-
-### Install client programs
-
-1. Install Insomina.<br />
-   On a Mac using Homebrew:
-
-   <pre><strong>brew install --cask insomina
-   </strong></pre>
 
 
 <a name="Programming"></a>
