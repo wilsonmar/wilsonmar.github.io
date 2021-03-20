@@ -19,7 +19,7 @@ comments: true
 This is a hands-on deep-dive introduction to installing and using Docusaurus as a static (JAM stack) website builder.
 
 
-1. Visit https://v2.docusaurus.io/
+1. Visit <a target="_blank" href="https://v2.docusaurus.io/">https://v2.docusaurus.io</a>
 
    Docusauraus2 provides several features not provided by GitHub Pages:
 
@@ -29,12 +29,13 @@ This is a hands-on deep-dive introduction to installing and using Docusaurus as 
    * Translations (Internationalization, abbreviated as "i18n")
    <br /><br />
 
-1. https://pester.dev/docs/additional-resources/articles/
+1. <a target="_blank" href="https://pester.dev/docs/additional-resources/articles/">https://pester.dev/docs/additional-resources/articles</a>
+
    Searcheable Table in a sample Docusaurus (React) site
 
    This takes advantage of React, not possible with plain static GitHub Markdown alone.
 
-2. https://v2.docusaurus.io/docs
+2. <a target="_blank" href="https://v2.docusaurus.io/docs">https://v2.docusaurus.io/docs</a>
 
    NOTE that Docusaurus does not support Windows IE11 (Internet Explorer).
 
@@ -43,13 +44,13 @@ This is a hands-on deep-dive introduction to installing and using Docusaurus as 
 
    ## Due Diligence
 
-3. https://github.com/facebook/docusaurus
+3. <a target="_blank" href="https://github.com/facebook/docusaurus">https://github.com/facebook/docusaurus</a>
 
    Docusaurus was created and now maintained by Facebook, as a free open-source resource.
 
    264 watching and 22,400 Stars
 
-4. https://github.com/facebook/docusaurus/issues
+4. <a target="_blank" href="https://github.com/facebook/docusaurus/issues">https://github.com/facebook/docusaurus/issues</a>
 
    Evaluate the repo for due diligence.
 
@@ -57,49 +58,49 @@ This is a hands-on deep-dive introduction to installing and using Docusaurus as 
 
    The oldest open issue goes back to May 5, 2018.
 
-5. https://github.com/facebook/docusaurus/pulse
+5. <a target="_blank" href="https://github.com/facebook/docusaurus/pulse">https://github.com/facebook/docusaurus/pulse</a>
 
    21 authors have pushed 35 commits to master and 68 commits to all branches.
 
    Sebastien Lorber is the major contributor and owner, a contractor at Facebook. His personal website <a target="_blank" href="https://sebastienlorber.com/">https://sebastienlorber.com</a> has an icon to switch between dark and light themes.
 
-6. https://twitter.com/docusaurus
+6. <a target="_blank" href="https://twitter.com/docusaurus
 
    Docusaurus1 began in 2017. It now has 2,438 Followers.
 
    On Mar 9, 2021 "Docusaurus2 now has full feature parity with v1"
 
    So stay away from version 1 documentation at<br />
-   https://docusaurus.io/docs/en/installation/
+   <a target="_blank" href="https://docusaurus.io/docs/en/installation/">https://docusaurus.io/docs/en/installation</a>
 
-1. (Based on https://v2.docusaurus.io/blog/2017/12/14/introducing-docusaurus)
+1. (Based on <a target="_blank" href="https://v2.docusaurus.io/blog/2017/12/14/introducing-docusaurus">https://v2.docusaurus.io/blog/2017/12/14/introducing-docusaurus</a>)
 
    "We created Docusaurus ... provide a consistent look and feel across all our open source projects".  
 
-1. https://openbase.com/js/docusaurus
+1. <a target="_blank" href="https://openbase.com/js/docusaurus">https://openbase.com/js/docusaurus</a>
 
    Trend of weekly downloads and reviews in OpenBase.com
 
-6. https://stackshare.io/docusaurus
+6. <a target="_blank" href="https://stackshare.io/docusaurus">https://stackshare.io/docusaurus</a>
 
    Who's using Docusaurus?
 
-6. https://v2.docusaurus.io/showcase/
+6. <a target="_blank" href="https://v2.docusaurus.io/showcase/">https://v2.docusaurus.io/showcase</a>
 
    What some Docusaurus-based sites look like.
 
-7. https://v2.docusaurus.io/blog
+7. <a target="_blank" href="https://v2.docusaurus.io/blog">https://v2.docusaurus.io/blog</a>
 
-8. https://v2.docusaurus.io/docs/design-principles
+8. <a target="_blank" href="https://v2.docusaurus.io/docs/design-principles">https://v2.docusaurus.io/docs/design-principles</a>
 
-9. https://opencollective.com/docusaurus#category-BUDGET
+9. <a target="_blank" href="https://opencollective.com/docusaurus#category-BUDGET">https://opencollective.com/docusaurus#category-BUDGET</a>
 
    Support Docusaurus financially.
 
    ## View Sample Online
 
-1. https://new.docusaurus.io/ refers you to<br />
-   https://codesandbox.io/s/docusaurus
+1. <a target="_blank" href="https://new.docusaurus.io/">https://new.docusaurus.io</a> refers you to<br />
+   <a target="_blank" href="https://codesandbox.io/s/docusaurus">https://codesandbox.io/s/docusaurus</a>
 
    It's an online sandbox, showing the same site contents as after local install below:
 
@@ -108,7 +109,7 @@ This is a hands-on deep-dive introduction to installing and using Docusaurus as 
 
    ## v2 local install
 
-1. https://v2.docusaurus.io/docs/installation
+1. <a target="_blank" href="https://v2.docusaurus.io/docs/installation">https://v2.docusaurus.io/docs/installation</a>
 
    There are two ways to get started:
 
@@ -173,12 +174,15 @@ Ok to proceed? (y) y
 
    ## View site locally
 
-
 1. Start the development server:
 
    <pre><strong>yarn run start</strong></pre>
 
-   This opens on your default browser<br />
+   or
+
+   <pre><strong>npx docusaurus start</strong></pre>
+
+   The above command opens on your default browser<br />
    <a target="_blank" href="http://localhost:3000">http://localhost:3000</a>
 
    Back on the CLI, no other commands can be added until you
@@ -218,8 +222,7 @@ Below is a correspondance of the documentation and visuals associated with files
 <tr valign="top"><td> <a href="#buildhtml">build folder</a>
    </td><td><em>not displayed</em>
    </td><td>minified js assets, html, etc. served to users, created by <tt>yarn build</tt>:
-   <pre>404.html      assets        blog          docs          img           index.html    markdown-page sitemap.xml
-   </pre>
+   404.html, assets, blog, docs, img, index.html, markdown-page, sitemap.xml
    </td></tr>
 
 <tr valign="top"><td> <a target="_blank" href="https://v2.docusaurus.io/docs/cli">package.json</a>
@@ -237,9 +240,9 @@ Below is a correspondance of the documentation and visuals associated with files
    </td><td> where you maintain the layout and content of the sidebar (left-side menu)
    </td></tr>
 
-<tr valign="top"><td>src/css
+<tr valign="top"><td> src folder
    </td><td><em>not displayed</em>
-   </td><td> index.js is what NodeJs invokes, the "brains" of Docusauraus. css files define the layout. Files:
+   </td><td> index.js is what NodeJs invokes to load React.js, the "brains" of Docusauraus. css files define the layout. Files:
    <pre>src
 ├── css
 │   └── custom.css
@@ -251,7 +254,7 @@ Below is a correspondance of the documentation and visuals associated with files
    </td></tr>
 
 <tr valign="top"><td> static/img
-   </td><td><em>not displayed</em>
+   </td><td>Referenced in html & css
    </td><td> static images. Files:
    <pre>docusaurus.png
  favicon.ico
@@ -260,6 +263,7 @@ Below is a correspondance of the documentation and visuals associated with files
  undraw_docusaurus_react.svg
  undraw_docusaurus_tree.svg
    </pre>
+   These get built into the <tt>build/img</tt> folder.
    </td></tr>
 
 </table>
@@ -274,7 +278,7 @@ Below is a correspondance of the documentation and visuals associated with files
 
 1. <a target="_blank" href="https://v2.docusaurus.io/docs/docusaurus.config.js">https://v2.docusaurus.io/docs/docusaurus.config.js</a> lists each configuration item.
 
-   https://luctst.github.io/docusaurus-starter-pack/docs/siteconfig.html
+   <a target="_blank" href="https://luctst.github.io/docusaurus-starter-pack/docs/siteconfig.html">https://luctst.github.io/docusaurus-starter-pack/docs/siteconfig.html</a>
 
    ### Configure cname
 
@@ -286,28 +290,31 @@ Below is a correspondance of the documentation and visuals associated with files
 
    ## Code Sortable Tables
 
-1. https://docs.theochu.com/docusaurus/sortable-tables/
+1. <a target="_blank" href="https://docs.theochu.com/docusaurus/sortable-tables/">https://docs.theochu.com/docusaurus/sortable-tables</a>
 
 
    ## Code theme styling
 
-1. https://v2.docusaurus.io/docs/api/themes
+1. <a target="_blank" href="https://v2.docusaurus.io/docs/api/themes">https://v2.docusaurus.io/docs/api/themes</a>
 
-1. https://docs.theochu.com/docusaurus/styling/
+1. <a target="_blank" href="https://docs.theochu.com/docusaurus/styling/">https://docs.theochu.com/docusaurus/styling/</a>
 
-1. https://docusaurus-template-no-style.netlify.app/
+1. <a target="_blank" href="https://docusaurus-template-no-style.netlify.app/">https://docusaurus-template-no-style.netlify.app</a>
 
    ## Add Content Search
 
-1. https://docs.theochu.com/docusaurus/search/
+1. <a target="_blank" href="https://docs.theochu.com/docusaurus/search/">https://docs.theochu.com/docusaurus/search</a>
 
    ## Add plug-ins
 
-1. https://v2.docusaurus.io/docs/api/plugins
+1. <a target="_blank" href="https://v2.docusaurus.io/docs/api/plugins">https://v2.docusaurus.io/docs/api/plugins</a>
+
+   
+   <a name="l10n"></a>
 
    ## Localization
 
-1. https://docusaurus.io/docs/en/translation/
+1. <a target="_blank" href="https://docusaurus.io/docs/en/translation/">https://docusaurus.io/docs/en/translation</a>
 
    via CrowdIn.
    
@@ -352,7 +359,7 @@ ls -al
 
 ## References
 
-https://blog.logrocket.com/easy-documentation-with-docusaurus/
+<a target="_blank" href="https://blog.logrocket.com/easy-documentation-with-docusaurus/">https://blog.logrocket.com/easy-documentation-with-docusaurus</a>
 
 
 ## More on front-end software development #
