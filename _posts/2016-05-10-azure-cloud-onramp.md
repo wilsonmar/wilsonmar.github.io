@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Azure Cloud Onramp (Consoles)"
-excerpt: "Get into and around the Azure cloud ASM & ARM portals"
+title: "Azure Cloud Onramp"
+excerpt: "Get into and around the Azure Active Directory and ARM portals"
 tags: [cloud, azure]
-date: "2016-05-10"
+date: "2021-03-05"
 file: "azure-cloud-onramp"
 image:
 # azure ms logo wait 1900x500-39kb.jpg
@@ -16,214 +16,162 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">This</a> is a step-by-step hands-on approach to getting you up and running on Azure cloud.
+This is a hands-on deep-dive tutorial with commentary along the way, covering how to get an account into Azure, set MFA, use Active Directory.
+
+<a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">This</a> is the hands-on step-by-step tutorial I would give to a developer or administrator getting up and running on Azure cloud.
+
+## $50/month with $39/month Visual Studio license
+
+Instead of "Pay-As-You-GO", pay for a Visual Studio license.
+
+PROTIP: Do that after using your initial free credits:
 
 ## Microsoft Learn account
 
-1. Get an account into "Microsoft Learn", which provides FREE temporary cloud instances for hands-on learning. This one feature is getting many to invest their time on Azure versus AWS, Google, etc.
+1. Get a "Microsoft Learn" account for $200 of credits to spend in 30 days of hands-on learning:
 
-   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">https://docs.microsoft.com/en-us/learn/azure/</a>
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">docs.microsoft.com/en-us/learn/azure/</a>
 
-   Notice that the product categories are: .NET, Azure, Business Applications, Dynamics 365, Power Platfor, Visual Studio, and Windows.
+   Product categories are: .NET, Azure, Business Applications, Dynamics 365, Power Platfor, Visual Studio, Windows, etc.
+
 
    ### Job Roles
 
-2. Select your role:
+2. Microsoft aligned these job roles with <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Azure certification exams</a>:
 
-   * Business User
-   * Business Analyst
    * (Azure) Administrator
    * (Azure) Developer
    * (Azure) Solution Architect
    * Data Engineer
    * AI Engineer
+   * Business Analyst
+   * Business User
    <br /><br />
+
+   PROTIP: These learning roles are different than the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a>.
 
    MY OPINION: I think job roles should be multi-select checkboxes.
    This segregation also adds to duplicating material.
 
-   PROTIP: These learning roles are differen than the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a>.
-
 3. After registering, use this URL:
 
-   <a target="_blank" href="https://techprofile.microsoft.com/en-us/">techprofile.microsoft.com/en-us/</a>
+   <a target="_blank" href="https://techprofile.microsoft.com/en-us/"><strong>techprofile.microsoft.com/en-us</strong></a>
 
-   PROTIP: Bookmark the above link.
+   PROTIP: Bookmark the above link because it integrates various information about your certifications within Microsoft.
 
 
-   ### Azure GUI thru CloudAcademy 
+<hr />
 
-   Here's how to use <a target="_blank" href="https://cloudacademy.com/library/azure/">cloudacademy.com/library/azure</a> labs:
+## Use 1 year free services
 
-1. Search for an Azure course
-1. At a Lab such as <a target="_blank" href="https://cloudacademy.com/lab/start-your-first-azure-virtual-machine-windows/connecting-to-the-virtual-machine-rdp/?context_id=524&context_resource=lp">"Start Your First Azure Virtual Machine (Windows)"</a>
+The clock is ticking:
 
-   My alternative instructions (which works for macOS):
+   * Compute: 750 hours of B1S Linux VMs
+   * Compute: 750 hours of B1S Windows VMs
+   * Storage: Manage Disks 64 GB x 2
+   * Storage SQL: up to 250 GB
+   * Storage File: 5GB
+   * Storage Blobs: 5 GB
+   * Cosmo DB up to 5 GB 400 request units
+   * Network bandwidth: 15 GB outbound data transfer
+   * AI & Machine Learning services
+   <br /><br />
 
-1. Click "Start Lab".
-1. PROTIP: Right-click on "Open Environment" to "Open Link in New Window" so you can quickly switch using command+` on macOS.
+   TODO: HANDS-ON: Make use of them without spending any money of your own!
+
+PROTIP: It makes more sense to look at a live example populated with several resources, in context:
+
+## Azure GUI thru CloudAcademy 
+
+1. <a target="_blank" href="https://cloudacademy.com/library/azure/">cloudacademy.com/library/azure</a> has defined several labs.
+1. Search for "Azure".
+1. Select a lab for your learning sequence:
+   * <a target="_blank" href="https://cloudacademy.com/lab/start-your-first-azure-virtual-machine-windows/connecting-to-the-virtual-machine-rdp/?context_id=524&context_resource=lp">"Start Your First Azure Virtual Machine (Windows)"</a>
+
+   PROTIP: Below are my <strong>alternative enhanced</strong> instructions (which works for macOS):
+
+1. Click the green "Start Lab".
+1. PROTIP: <strong>Right-click on "Open Environment"</strong> to select <strong>Open Link in New Window</strong>.
+1. Click and hold on the top of the Window to adjust an overlap.
+1. If there is another lab account (such as "student-1551-576984@labscloudacademy.onmicrosoft.com"), click the three dots to remove it.
 1. Click "Use another account".
-1. In the CloudAcademy screen, click "Copy" for Username.
+1. Switch between the two windows using <strong>command+`</strong> (` on the upper-left of macOS keyboards).
+1. In the CloudAcademy screen, click "Copy" icon for Username.
 1. In the Azure Signin, paste the email (such as "student-1551-576984@labscloudacademy.onmicrosoft.com"). Click Next.
-1. In the CloudAcademy screen, click "Copy" for Password.
-1. In the Azure Signin, paste the Password (such as "Ca1_iyvB75Wl"). Click "Sign in".
+1. In the CloudAcademy screen, click "Copy" icon for Password.
+1. In Azure Signin, click on the Password screen and paste (such as "Ca1_iyvB75Wl"). Click "Sign in".
+
 1. Click the Username account for the lab.
 1. Click "Maybe later" for tour for the Azure landing page (Dashboard).
 
-1. In the CloudAcademy screen, scroll to bottom to click "Next Step".
+   ### Windows RDP Command Line
+
+1. <img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/general-1-All-Resources.svg">Click the "All Resources" icon for a list.
+
+1. Switch back to the CloudAcademy screen, scroll to bottom to click "Next Step".
 1. Click "Resource Group" under the Navigate label.
+
+   <img alt="Resource Group" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-patterns/azure-resource-group-blue.svg">
+
 1. Click the "cal-xxx-yy" presented.
 
 1. PROTIP: The app for macOS suggested is no longer available in the store. Use one noted in <a target="_blank" href="https://wilsonmar.github.io/rdp/">my tutorial on RDP</a>.
 
-1. Click the Azure Portal accordion menu in the upper-left corner.
-1. Select "Virtual machines" in the left menu.
-1. Click the running VM name in the list for the "Overview" blade.
+1. <img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/general-17-Home.svg">Click the Azure Portal "Home" (accordion) menu in the upper-left corner.
 
-   * A <strong>Blade</strong> is a portion of the page that pops up as you navigate in the portal. (Note: A Blade is contextual and tied to your navigation. This will become more intuitive as you use the portal.) 
-   * Opening a series of blades is called a <strong>journey</strong>.
-   * <strong>Hub</strong> is the Icon/category for navigation within the left Azure Portal menu that is opened by clicking the upper-left accordion icon alt.
-   <br /><br />
+1. Select "Virtual machines" in the left menu.
+
+1. Click the running VM name in the list for the "Overview" blade.
 
 1. Click "Connect", then "RDP". Click "Download RPD File". 
 1. In the pop-up Finder, navigate to a container folder (such as "Projects"), create a folder, and save the RDP file.
 1. Switch to Finder and navigate to your RDP file.
 
+<hr />
 
-## Install
-
-### Install on Windows
-
-https://www.youtube.com/watch?v=2Jz-ncFPusY&list=PLD7svyKaquTlE9dErhMazFhWbSSCfMP_4&index=4
-
-### Install on MacOS
-
-
-
-
-
-## Use Terraform on Azure
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=Axs2IH94hbA" title="Feb 27, 2019">VIDEO</a>
-
-   ARM template example: https://github.com/Azure/azure-quickstart-templates/101-vm-simple-linux/azuredeploy.json
-
-   HCL .tf files to define Terraform can have comments.
-
-1. PROTIP: Azure Cloud Shell has Terraform pre-installed!
-
-1. Kick off
-
-   <pre>terraform apply</pre>
-
-   https://medium.com/microsoftazure/get-started-with-terraform-by-building-an-azure-vm-tutorial-350175e2cd88
-   using PowerShell.
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=JaesylupZa8" title="Jul 3, 2019">
-   Deploying your Azure Infrastructure with Terraform in Azure DevOps</a> Lab 
-
-   https://azuredevopslabs.com/labs/vstsextend/terraform/
-   shows an animated flowchart.
-
-   TODO: Read ~/.env in shell file?
-
-   <pre>ARM_SUBSCRIPTION_ID="XXXX"
-ARM_CLIENT_ID="XXXX"
-ARM_CLIENT_SECRET="XXXX"
-ARM_TENANT_ID="XXXX"
-   </pre>
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=JKVkblsp3cM" title="Nov 13, 2018">
-   VIDEO: Using Terraform with Azure</a> by John Savill
-
-   https://build5nines.com/get-started-with-terraform-on-microsoft-azure/
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=CRueD4fU0AI&list=PLD7svyKaquTlE9dErhMazFhWbSSCfMP_4">
-   Getting Started with Terraform for Azure (12 short videos)</a> by Skylines Academy
-
-   https://www.udemy.com/course/learning-terraform-on-microsoft-azure/
-   $34.99
-
-
-   ### Other training options
-
-   * Pluralsight.com
-   * LinkedIn Learning
-   * ACloudGuru.com
-   <br /><br />
-
-   AZ-900 Cloud concepts: availability, fault tolerance, public/private/hybrid cloud, IaaS, PaaS, SaaS
-
-   ### Other Training options with NO cloud time
-
-   * <a target="_blank" href="https://www.udemy.com/course/microsoft-certified-azure-administrator/">Udemy.com</a> by Alan Rodriguez
-   <br /><br />
-
-
-   <a name="Tenant"></a>
-
-   ## Tenant
-
-   Below tenant”
-   • Can have multiple subscriptions per tenant (e.g. for depts.)
-   A <strong>Subscription</strong> is a billing boundary linked to an Azure account; AND A container for resource groups
-
-   Subscription types:
-   • Azure pass (e.g. with a course)
-   • MSDN (Developer Network)
-   • Azure trial
-   • Pay-as-you-go (most common)
-   • Enterprise (involves a minimum commitment)
-
-   Each Management Group is a container for one or more subscriptions
-   • You can build a hierarchy of these
-   • You can assign policies to a management group
-
-   Policies are rules stating which resources can be deployed to which locations
-   • Microsoft provides a number of built-in policies
-   • Create custom policies using JSON
-
-   Tags are your own metadata for:
-   • Searching
-   • Viewing
-   • Billing
-   
-   Assign at resource level or resource group level
-   • Child resources don’t inherit tags from group level
-   
-   Name and value pairs
-      • Project = Acme 
-
-   ## Microsoft Azure account
-
-   NOTE: There is a separate <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/government/">Azure fed/state/local gov</a> is an isolated "soverign" DoD Level 5 cloud on US soil operated by US citizens. It has its own Marketplace of apps. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-welcome">What is gov?</a> 
+## Microsoft Azure account
 
    * <a target="_blank" href="https://www.youtube.com/playlist?list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7">YouTube playlist on Azure</a> by Zach Kramer and Steve Michelotti
    * https://azure.microsoft.com/en-us/global-infrastructure/government/
-   <br /><br />
-
-   Each RBAC (Role-Based Access Control) delegates resource administration to groups/users
-   • Over 75 built-in roles; custom roles are possible
-      • Owner, contributor, reader
-   
-   • Collections of related permissions
-   
-   User roles scopes:
-   • Tenant
-   • Management group
-   • Subscription
-   • Resource group
-   • Resource
    <br /><br />
 
 1. PROTIP: Avoid using an email that you use for your own banking, shopping, social media, etc. For continuity with a real cloud, you'll need an email address that you can share and transfer to other people. That's so at a company, you will need to give someone else the password so that if you're ever go on vacation or get "run over a bus", your organization can continue.
 
    In you're in an enterprise company, get an email adddress from a corporate assets administrator. A different (service) account is often created for each department of responsibility.
 
-   PROTIP: In the name include the month and year in the account name (such as johndoe1901@hotmail.com) for 2019-01 (January). Many <strong>create several email accounts</strong> because each Azure subscription includes a $200 credit to spend on any service for the <strong>first 30 days</strong>, free access to the most popular Azure products for 12 months, and access to more than 25 products that are always free. 
+   PROTIP: In the name include the month and year in the account name (such as johndoe1901@hotmail.com) for 2019-01 (January). Many <strong>create several email accounts</strong> because each Azure subscription includes a $200 credit to spend on any service for the <strong>first 30 days</strong>, free access to the most popular Azure products for 12 months. 
 
-   When someone signs up for a Microsoft cloud service subscription such as Microsoft Azure, Microsoft Intune, or Office 365, a dedicated instance of Azure AD (Active Directory) is created for your organization. Azure AD is partitioned into separate <strong>tenants</strong>. Each tenant is a dedicated, isolated instance of the Azure Active Directory service, owned and managed by an organization. 
-   
+   Azure provide access to more than 25 products that are always free. 
+
+   ### Azure Active Directory
+
+   When someone signs up for a Microsoft cloud service subscription (such as Microsoft Azure, Office 365, Microsoft Intune, etc.), a dedicated instance of <strong>Azure AD (Active Directory)</strong> is created. 
+
+   READ: <a target="_blank" href="https://microsoftlearning.github.io/AZ-900T0x-MicrosoftAzureFundamentals/Instructions/Walkthroughs/19-Use%20the%20Azure%20Pricing%20Calculator.html"><img width="20" alt="pricing" src="https://code.benco.io/icon-collection/azure-patterns/calculator-pricing-details.svg"></a> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/active-directory/">Azure Active Directory pricing</a>. Notice only the free version of Azure AD has that 500,000 <strong>object limit</strong>.
+
+   Premium P1 features include Password Protection (custom banned password).
+
+   Premium P2 includes all P1 features, plus really cool "Identity Protection" which is Vulnerabilities and risky accounts detection, Risk based Conditional Access policies, 
+
+   "Identity Governance" include Privileged Identity Management (PIM), Access Reviews, and time-saving <a target="_blank"" href="https://docs.microsoft.com/en-us/azure/active-directory/governance/entitlement-management-overview">Entitlement Management</a>.
+
+   ### Azure AD PIM RBAC
+
+   With the PIM (Priviledge Identity Mangement) service, each Admin is licensed at Preminu P2 level for time-base (Just-In-Time) Role-based access control (RBAC).
+
+   ### Enterprise discount
+
+   Available to Enterprise customers only: <a target="_blank" href="https://cloudacademy.com/course/understanding-azure-pricing-and-support/planning-and-management/">15% Discounts on Public Prices</a>
+
+
+   <a name="Tenants"></a>
+
+   ### AD Tenants
+
+   The Azure SaaS service separates different customers into different <strong>tenants</strong> (like tenants in an apartment building). Each tenant is a dedicated, isolated instance of the Azure Active Directory service, owned and managed by an organization. 
+
+   Azure AD supports auth protocols: OAuth, OpenID, SAML, WS-Federation to 
+
 2. For birthdate, make up an adult year: 2019 - 22 = 1997
 
    PROTIP: Write it down for account recovery, such as in a 1Password entry.
@@ -266,20 +214,35 @@ ARM_TENANT_ID="XXXX"
 
    PROTIP: Use address with a zip code that's not associated with your home address, and used only for banking.
 
-   Multiple subscriptions can be created under a single Azure account (Dev, Test, Staging, Production, etc.). This is particularly useful for businesses because access control and billing occur at the subscription level, not the account level. 
+   Multiple subscriptions can be created under a single Azure account (Dev, Test, Staging, Production, Logging,  Demo, Training, DR, etc.). This is particularly useful for businesses because:
+
+   PROTIP: access control and billing occur at the subscription level, not the account level.
+
+   PROTIP: Each Subscription can only trust a single AAD directory.
+
+   Transfer ownership of a subscription, such as to a central accounting department.
+
+   Add additional subscriptions when you may exceed limits within a subscription: # VNets.
 
 7. Install the <strong>Microsoft Authenticator app</strong> on you smartphone and setup Two-factor authentication to approve access using your phone.
 
 8. Get a unique profile image and <a target="_blank" href="https://account.microsoft.com/profile/edit-picture?fref=home.banner.profile">add picture</a>.
 
 
-## ASM No More #
+## Microsoft Azure Government
+
+   There is a separate <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/government/">Azure fed/state/local gov</a> is an isolated "soverign" DoD Level 5 cloud on US soil operated by US citizens. It has its own Marketplace of apps. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-welcome">What is gov?</a> 
+
+
+<a name="ASM"></a>
+
+### From ASM to ARM #
 
 On July 1, 2019, Microsoft fully transitioned from the "classic" (older) Azure Service Management (ASM) when <a target="_blank" href="https://docs.microsoft.com/en-us/azure/multi-factor-authentication/multi-factor-authentication-faq">Multi-factor authentication (through the PhoneFactor Web (PFWeb) portal), API Management, BizTalk, and Managed Cache became available to the Azure Resource Manager (ARM).
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th> - </th><th> <a href="#ARM-signup">ARM</a> 
-   </th><th> <a href="#ASM-signup">ASM</a>  </th></tr>
+   </th><th> <a href="#ASM">ASM</a>  </th></tr>
 <tr valign="top"><td> Name: </td><td>
    Azure Resource Manager
    </td><td> 
@@ -292,13 +255,21 @@ On July 1, 2019, Microsoft fully transitioned from the "classic" (older) Azure S
    account.windowsazure.com/signup</a>
    </td></tr>
 <tr valign="top"><td> Dashboard page: </td><td>
+   <a target="_blank" href="https://portal.azure.com/"><strong><u>https://portal.azure.com</u></strong></a> or
+   <a target="_blank" href="https://portal.azure.us/">portal.azure.us</a> for US Government portal
+   </td><td>    
    <a target="_blank" href="https://azure.com/">
    azure.com</a> = <br /><a target="_blank" href="https://azure.microsoft.com/en-us/">azure.microsoft.com/en-us</a>
-   </td><td>    
-   <a target="_blank" href="https://portal.azure.com/"><strong>portal.azure.com</strong></a>
+   </td></tr>
+<tr valign="top"><td> Azure AD </td><td>
+   <a target="_blank" href="https://aad.portal.azure.com/"><strong><u>https://aad.portal.azure.com</u></strong></a> or
+   <a target="_blank" href="https://portal.azure.us/">portal.azure.us</a> for US Government portal
+   </td><td> -   
    </td></tr>
 <tr valign="top"><td> Racks span: </td><td>
    3 </td><td> 2  </td></tr>
+<tr valign="top"><td> Tagging: </td><td>
+   No </td><td> Yes </td></tr>
 </table>
 
 ASM had "Cloud Services" and "Affinity Groups"
@@ -310,17 +281,16 @@ ARM also includes granular access control, and the ability to tag resources with
 
 Also, instead of 2 racks, ARM resources can span 3 racks of computers.
 
-Enabling of MFA is hidden behind "..." (More) in All Users menu bar.
-Note "only users licensed to use Microsoft Online Services are eligible for Multi-Factor Authentication."
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/111055690-eda3cc00-8435-11eb-9563-aa0fb3154d40.png"><img alt="az-arm-interfaces-599x315.png" width="599" src="https://user-images.githubusercontent.com/300046/111055690-eda3cc00-8435-11eb-9563-aa0fb3154d40.png"></a>
 
-https://github.com/Azure/azure-quickstart-templates
-contains Azure Resource Manager templates contributed by the community.
+ARM handles Authentication for access to back-end Web App, Data Store, Virtual Machines, etc. from the Azure Portal GUI, PowerShell (Az module), CLI, and ARM IaC templates (by REST clients):
 
 
+<hr />
 
 <a name="ARM-signup"></a>
 
-## ARM Sign-up at Azure.com
+### ARM Sign-up at Azure.com
 
 0. If you are not logged in, type <a target="_blank" href="https://azure.com/">azure.com</a> in your browser's address.
 
@@ -341,70 +311,69 @@ contains Azure Resource Manager templates contributed by the community.
 
    This is the <strong>Dashboard</strong>.
 
+0. Initial entry pop-up: Azure Advisor
+
+   ### Azure Advisor
+
+   On initial entry into portal, Azure greets you with a pop-up about Azure Advisor.
+
+   <a target="_blank" href="https://azure.microsoft.com/en-us/services/advisor/"><img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-patterns/advisor-blue.svg">
+   Azure Advisor</a> provides <strong>recommendations</strong> by categories of the "Well-Architected Framework" (but not "monitoring"):
+   * Cost
+   * Security
+   * Reliability
+   * Operational excellence
+   * Performance
+   <br /><br />
 
 
 <a name="ARM-Menu"></a>
 
 ## ARM Dashboard Tour #
 
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-overview">DOC</a>:
+
 0. At <a target="_blank" href="https://portal.azure.com/">
    https://portal.azure.com</a>
 
-0. Click the "hamburger" icon at the upper-left corner for English descriptions of each icon on the left edge.
+0. Click the "wheel" icon for Portal Settings:
+   
+   PROTIP: If you wear glasses on video calls, reduce glare by clicking "Black" for the dark theme (with yellow font). 
 
-0. Click it again. It's a toggle.
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/111880191-8c1cb980-896f-11eb-9c8b-86d556a46843.png"><img width="1165" alt="azure-portal-dark-2330x1246" src="https://user-images.githubusercontent.com/300046/111880191-8c1cb980-896f-11eb-9c8b-86d556a46843.png"></a>
 
-0. Click the ">" at the lower-left corner to manage which icons appear on the left edge.
+0. Click the "hamburger" (home) icon at the upper-left corner for English descriptions of each icon on the left edge.
 
-0. Scroll down the long list to get a sense of the categories:
+0. Click the "<" icon at top of the separator to collapse ("dock") or expand the text of services listed on the left menu.
 
-   * GENERAL
-   * COMPUTE
-   * NETWORKING
-   * STORAGE
-   * DATABASES
-   * INTELLIGENCE + ANALYTICS
-   * INTERNET OF THINGS
-   * ENTERPRISE INTEGRATION
-   * SECURITY + IDENTITY
-   * DEVELOPER TOOLS
-   * MONITORING + MANAGEMENT
-   * ADD-ONS
-   * OTHER
-   <br /><br />
+   PROTIP: To set its expansion state permanently, click the ‘settings cog’ icon in the top right of portal and click the ‘Choose your default mode for the portal menu’ option. Setting that to ‘docked’.
 
-0. Click the star to control items that appear as icons on the left of the page.
 
-0. Drag an icon and drop it to reorder the icons. 
+   ### GUI Navigation Hubs, Panes, blades
 
-   PROTIP: I drag the "Billing" icon to the top so I manage the money involved.
-
-   BTW, billing is associated with Management <strong>Subscriptions</strong>
-   with names such as "Pay-as-you-go..."
-
-   ### Help + Support
-
-0. Scroll down to click Help + Support (the person icon in blue). Notice the URL change:
-
-   https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview
+   DEFINITION: A <strong>Hub</strong> is a category for navigation within the left Azure Portal menu that is opened by clicking the upper-left accordion icon alt.
 
    Panes that appear on the right are called "blades".
+   A <strong>Blade</strong> is a portion of the page that pops up as you navigate in the portal. (Note: A Blade is <strong>contextual</strong> and tied to your navigation. This will become more intuitive as you use the portal.) 
 
-   Support requests can ALSO be reached another way.
+   Opening a series of blades is called a <strong>journey</strong>.
 
-0. Click the question mark icon at the upper-right corner.
+0. For a list of all Categories, click <img width="20" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/general-17-Home.svg">All Services, which also displays All Resources.
 
-   ![azure help upper right 220x267](https://cloud.githubusercontent.com/assets/300046/25567655/c2642352-2dc0-11e7-9e6d-ef60c659a152.png)
+   PROTIP: This gives you an idea of how vast the Azure offering is, and the product names certification aspirants should know.
 
+0. Click the <img width="20" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/command-1094-Favorite.svg">star icon so it is gold to enable the service to show on the menu or unselect to remove the service from the bar.
 
-   Notice Support options are also listed behind the smily face icon.
+   <img width="20" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/general-17-Home.svg">Home
 
-   Moreover, there is also a "Help + Support" box on the Dashboard.
+0. Drag and drop the Categories in a stable sequence and position you can mouse to quickly:
 
-   That's now 3 places you can find it.
+   Example: I drag the "Billing" icon to the top because I manage the money involved.
 
-0. Right-click on the "Help + Support" box on the Dashboard and select "unpin"
-   becuase you now know you can reach it (in two places).
+   ### License types
+
+   BTW, billing is associated with <strong>Management Subscriptions</strong> with names such as "Pay-as-you-go..."
+
 
    ### Keyboard Shortcuts
 
@@ -414,6 +383,54 @@ contains Azure Resource Manager templates contributed by the community.
 
    https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-keyboard-shortcuts
 
+
+   ### Help + Support
+
+0. Scroll down to click Help + Support (the person icon in blue). Notice the URL change:
+
+   https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview
+
+   Alternately, support requests can ALSO be reached by<br />
+   clicking the question mark icon at the upper-right corner.
+
+   ![azure help upper right 220x267](https://cloud.githubusercontent.com/assets/300046/25567655/c2642352-2dc0-11e7-9e6d-ef60c659a152.png)
+
+   Notice Support options are also listed behind the smily face icon.
+
+   Moreover, there is also a "Help + Support" box on the Dashboard.
+
+   That's now 3 places you can find it.
+
+   
+   ### Support Plans
+
+   * Standard (Basic) free for Prod. use
+   * Developer $29/mo. for non-prod. use
+   * Professional Direct $1000/mo for "Business Critical" when you file a business-critical issue with technical support, the earliest you can expect a response from technical support? Within 1 hour
+   * Premier for "substantial dependence" with a TAM.
+
+   <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=672143e9-2e2c-49d6-b5f4-6558d88f66e1">VIDEO "Microsoft Azure Pricing and Support Options"</a>
+
+
+0. Right-click on the "Help + Support" box on the Dashboard and select "unpin"
+   becuase you now know you can reach it (in two places).
+
+
+   <a name="Social"></a>
+
+   ### Social Support Forums about Azure
+
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/support/community/">Azure.microsoft Community Forum</a>
+
+   * <a target="_blank" href="https://social.msdn.microsoft.com/Forums/azure/en-US/home">MSDN</a>
+
+   <em>Filtered for Most Votes on Accepted answers:</em>
+
+   * <a target="_blank" href="https://stackoverflow.com/questions/tagged/azure?sort=MostVotes&filters=NoAcceptedAnswer&edited=true">StackOverflow</a>
+
+   * <a target="_blank" href="https://serverfault.com/questions/tagged/azure">Serverfault</a>
+
+   * <a target="_blank" href="https://channel9.msdn.com/Shows/Tuesdays-With-Corey/">Tuesdays with Corey</a> (Sanders, VP of Azure Compute, now Corporate VP of Microsoft Solutions, about Azure on Microsoft's Channel9 video site). <a target="_blank" href="https://twitter.com/search?f=realtime&q=%23AzureTwC&src=typd">#AzureTwC</a>
    
    ### Marketplace
 
@@ -432,10 +449,264 @@ contains Azure Resource Manager templates contributed by the community.
 
 0. Click the X to close a blade.
 
-## Install Powershell 
 
-See <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-powershell/">https://wilsonmar.github.io/azure-cloud-powershell/</a>
+### User MFA (Multifactor Authentication)
 
+MFA comes with Azure AD Premium.
+
+Enrollment is needed.
+
+1. In the Users service: 
+1. Click "Multi-Factor Authentication" in the Command bar.
+
+   This is because MFA is set in a different service.
+
+   Previously, MFA (Multi-Factor Authentication) was hidden behind "..." (More) in All Users menu bar.
+
+1. Check the box next to a user before clicking "Enable" on the right.
+
+   Thus, only users licensed to use Microsoft Online Services are eligible for Multi-Factor Authentication.
+
+   ### Types of Factors
+
+   Types of factors used to authenticate a user request via multi-factor authentication (MFA):
+
+   * A knowledge factor - something the user knows - Password (in Azure AD)
+
+   * A possession factor - something the user owns, such as an email address or mobile device.
+
+   * An "inheritance" factor (is) - something that confirms identity via a physical characteristic, such as a fingerprint or other biometric. (NOT an identity factor)
+   <br /><br />
+
+Methods of MFA:
+   * Password (in Azure AD)
+   * Call to Phone
+   * SMS Text Message to Phone
+   * Notification through Mobile Authenticator App
+   * Verification Code from Mobile App
+   * One Time Pin (OTP) from a Hardware (Ubi) Token
+   <br /><br />
+
+
+<hr />
+
+## AAD (Azure Active Directory)
+
+PROTIP: Azure AD users and groups are created in a flat structure, with no Organizational Units (OUs) or Group Policy Objects (GPOs).
+
+### SSPR (Self-Service Password Reset)
+
+Allow end-users to reset forgotten passwords without calling the Helpdesk. Not in free version of AAD.
+
+
+### Install Azure AD Module
+
+1. In Windows, right-click run as Administrator.
+
+1. On PowerShell:
+
+   <pre><strong>install-module -name azuread -Force
+   </strong></pre>
+
+   PROTIP: Module names are not case sensitive.
+
+   <pre>Untrusted repository
+You are installing the modules from an untrusted repository. If you trust this repository, change its InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure you 
+want to install the modules from 'PSGallery'?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+   </pre>
+
+1. Type "A" to response above.
+
+1. On PowerShell: Load the module (no response expected):
+
+   <pre><strong>get-module azuread
+   </strong></pre>
+
+1. Sign in:
+
+   <pre><strong>Connect-AzureAD
+   </strong></pre>
+
+   
+
+   PROTIP: User Role "Global Administrator" can do anything.
+
+   There are many "Limited administrator" roles.
+
+
+   get-azureaduser
+
+
+## Access Control (IAM) Roles
+
+<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h35m50s">VIDEO</a>
+
+Role Scope of Security Principal (from narrowest)
+   * Container within Blob Service
+   * Queue
+   * Storage Account
+
+   * Resource Group
+   * Subscription
+
+<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h40m5s">VIDEO</a>
+Add Role Assignment Role
+   * Owner
+   * Contributor - Backup Contributor & Operator
+   * Reader'
+   * Avere Contributor & Operator
+   * etc.
+
+Assign access to:
+   * Azure AD user, group, or service principal
+   * User assigned managed identity
+   * System assigned managed identity
+   * App Service
+   * Container instance
+   * Container Registry Task
+   * Data Factory
+   * Function App
+   * Logic App
+   * Remote Rendering Account
+   * Virtual Machine
+   * Virtual Machine Scale Set
+   <br /><br />
+
+
+<a name="MgmtCerts"></a>
+
+## Management Certificates
+
+Azure uses Management (x509 v3) Certificates (.cer file containing a public key) 
+to access resources in an Azure Subscription.
+
+There is a limit of 100 Management certs per Azure subscription (administrator).
+
+   * Development
+   * Test 
+   * Pre-prod (Staging)
+   * Prod
+
+
+   ## Management Group Initiative
+
+1. <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=ff82e602-05c5-4b71-b907-a011015d2859">VIDEO</a>: All Services -> Management Groups to apply governance conditions (access & policies) above Subscriptions.
+
+1. Add Subscription
+
+
+   ## Policies and Initiatives
+
+   An <strong>initiative</strong> describes a group of policies across different management groups, subscriptions, resource groups, ?
+
+
+   <a name="Tenant"></a>
+
+## Tenant
+
+<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=4h29m37s">VIDEO</a>
+
+1. If you have an account that signs into more than one Tenant, define the default Tenant using PowerShell:
+
+   <pre><strong>Set-AzureRmContext
+   </strong></pre>
+
+
+## Subscriptions
+
+Below tenant can be multiple Subscriptions per tenant (e.g. for depts.)
+   A <strong>Subscription</strong> is a billing boundary linked to an Azure account
+   AND A container for resource groups.
+
+Subscription types:
+   * Azure pass (e.g. with a course)
+   * MSDN (Developer Network)
+   * Azure trial
+   * Pay-as-you-go (most common)
+   * Enterprise (involves a minimum commitment)
+   <br /><br />
+
+The 2000 role assignments limit per subscription is fixed and cannot be increased.
+
+
+## Management Group for RBAC
+
+<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=1h33m1s">VIDEO</a>
+
+Each <strong>Management Group</strong> is a container for one or more subscriptions
+   * You can build a hierarchy of these
+   * You can assign policies to a management group
+
+for RBAC (Role-Based Access Control)
+Inheritance Scope: Management Groups are above Subscriptions above Resource Group container for Resources
+
+Roles: Owner, Contributor, Reader (Observer), User Access Admin
+   * User
+   * Group in AD
+   * Service Principal - security identity used by app services
+   * Managed by Azure Identity
+
+Role Assignment of Role Definitions which list operations that can be performed by the Security Principal.
+
+See https://docs.microsoft.com/en-us/azure/role-based-access-control/troubleshooting
+
+
+## Policies
+
+Policies are rules stating which resources can be deployed to which locations
+   * Microsoft provides a number of built-in policies
+   * Create custom policies using JSON
+
+Assign at resource level or resource group level
+   * Child resources don’t inherit tags from group level
+   
+   PROTIP: All resources in a resource group should share the same lifecycle.
+
+## Tags
+
+Tags are your own metadata for:
+   * Searching
+   * Viewing
+   * Billing
+   
+Name and value pairs:
+   * Project = Acme 
+
+
+## Limits = Quotas
+
+<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=15m5s">VIDEO</a>
+
+REMEMBER: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-subscription-service-limits">Quotas (Limits)</a> cannot be increased in FREE subscriptions!
+
+
+REMEMBER: Azure supports up to 15 tags per Resource Group.
+
+## Pricing Calculator
+
+<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=22m55s">VIDEO</a>
+
+Estimate costs of various services.
+
+https://azure.microsoft.com/en-us/pricing/calculator/
+
+
+
+## Cloud Shell
+
+<img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-patterns/cloud-shell.svg">
+
+
+### Create AZ Role
+
+1. To create an AZ role in PowerShell, define a JSON file then:
+
+   <pre><strong>az role definition create --role-definition "~/CustomRoles/ReaderShpportRole.json"
+   </strong></pre>
+
+
+<hr />
 
 ## AZ API
 
@@ -445,6 +716,7 @@ See <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-powershell/
 
    The "mac-install-all.sh" script places a <strong>secrets.sh</strong> file in your machine's home folder.
 
+   <img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-patterns/azure-cli.svg">
    The script takes care of <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli?view=azure-cli-latest">installing the azure CLI</a>
 
 4. Edit the file there (not in the repo directory).
@@ -459,7 +731,8 @@ See <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-powershell/
 
    <tt>TRYOUT="az-vm"</tt>
 
-   ... the Bash script has been programmed to create an instance using az cli commands rather than manually copied and pasted onto a <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-shell/overview?view=azure-cli-latest">Azure Cloud Shell</a> instance launched on an internet browser as described (using command+shift+V) at:
+   ... the Bash script has been programmed to create an instance using az cli commands rather than manually copied and pasted onto a 
+   <img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-patterns/cloud-shell.svg"><a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-shell/overview?view=azure-cli-latest">Azure Cloud Shell</a> instance launched on an internet browser as described (using command+shift+V) at:
 
    <a target="_blank" href="
    https://docs.microsoft.com/en-us/cli/azure/azure-cli-vm-tutorial?view=azure-cli-latest">
@@ -482,8 +755,7 @@ See <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-powershell/
 
    This creates an Azure (Serverless) Function, as described in commands listed at:
 
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json&view=azure-cli-latest">
-   Azure Functions</a>
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json&view=azure-cli-latest">Azure Functions</a>
 
    The unique aspect of the mac-install-all.sh script is that it does NOT require you to go from screen to screen
    typing steps by step starting from<br />
@@ -494,9 +766,7 @@ See <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-powershell/
    bringing your laptop to a point where you can work on changing the sample to the app you want.
    You can then re-run the script, and any changes to the underlying framework would be upgraded if needed.
 
-   Since Azure provides a small amount of free time to all accounts each month under their
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-scale#consumption-plan">
-   Consumption Plan</a>,
+   Since Azure provides a small amount of free time to all accounts each month under their <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-scale#consumption-plan">Consumption Plan</a>,
    you can do several runs each month without spending any cash. See their <a target="_blank" href="``https://azure.microsoft.com/en-us/pricing/details/functions/">Pricing</a>.
 
    The "az-func" TRYOUT does all the following:
@@ -648,6 +918,15 @@ Create a Service Principal</a> using <a target="_blank" href="https://docs.micro
 
 QUESTION: limits to total concurrent executions across all functions within a given region to 100?
 
+   ### Regional Zones for Egress
+
+   Regions are grouped into 4 zones for pricing network Egress:
+
+   1. US, US Gov, Canada, Europe, UK, France, Switzerland
+   2. East Asia, Southeast Asia, Japan, Australia, India, Korea
+   3. Brazil, South Africa, UAE
+   4. (DE Zone 1) Germany
+
 ## Azure AD & PIM
 
    Subscriptions include "Azure AD Premium P2" and "Enterprise Mobility + Security (EMS) E5".
@@ -655,12 +934,44 @@ QUESTION: limits to total concurrent executions across all functions within a gi
    An additional paid subscription is <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">Azure AD Privileged Identity Management (PIM)</a> which minimizes the number of people who have access to secure information, which mitigates the risk of excessive, unnecessary, or misused access rights and provides oversight of role assignments, self-service, and just-in-time role activation and Azure AD and Azure resource access reviews.
 
 
-## Batch commands
+## Azure AD B2B (Business-to-Business) 
+allows an organization to securely share company applications and company services with guest users from other orgs, while retaining control over company data. Auth policies protect corp. data. 
 
-Azure provides a way to perform the same process on many at once. See:
-https://docs.microsoft.com/en-us/cli/azure/batch?view=azure-cli-latest
+1. Portal Menu > Azure Active Directory. Select yours.
+1. Users. +New guest user. Type email. Invite.
+1. Guest user clicks "Get Started" in emai;.
+<br /><br />
+TODO: REST API?
 
-Azure has "Web Jobs" for Azure Functions background jobs.
+## Azure AD B2C (Business to Consumer)
+enables customers can use a registered app with the Identity Experience Framework
+defines interacting with external multi-party Identity Providers (IdP's) such as Facebook.
+
+It makes use of SYN cookies and rate & connection limits defined by a Trust Framework policy.
+
+1. +Create a resource: Azure Active Directory B2C
+1. Create.
+1. An additional B2C Tenant is created
+1. Create.
+1. Link to subscription.
+
+
+
+
+## Azure AD Connect
+
+Azure AD Join
+
+Azure Policy
+
+Azure Role-Based Access Control (RBAC)
+
+Azure AD Roles
+
+
+
+
+<hr />
 
 ## Resources : Videos
 
@@ -671,23 +982,15 @@ Azure has "Web Jobs" for Azure Functions background jobs.
 
 1. Install in VSCode <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools">Azure Resource Manager Tools</a> for Template language support for Azure Resource Manager JSON files.
 
+
+
 ## Live events to meet people
 
-https://global.azurebootcamp.net/
-April 27, 2019
+WARNING: <a target="_blank" href="https://azure.microsoft.com/en-us/resources/videos/azure-friday-get-ready-for-global-azure-bootcamp-2019/">
+The "Global Azure Bootcamp April 27, 2019" experience website 
+<a target="_blank" href="https://global.azurebootcamp.net/">
+global.azurebootcamp.net</a> has converted to Vue and Google stuff.
 
-<a target="_blank" href="https://azure.microsoft.com/en-us/resources/videos/azure-friday-get-ready-for-global-azure-bootcamp-2019/">
-Get ready for Global Azure Bootcamp 2019</a> 
-
-<a name="Social"></a>
-
-## Social
-
-https://azure.microsoft.com/en-us/support/community/
-Azure Community Forums for support
-
-https://social.msdn.microsoft.com/Forums/en-US/home
-Developer Commmunity Forum for support
 
 ## Podcasts:
  
@@ -712,6 +1015,33 @@ Policy Definition options:
    * Allowed Resource Type
    * Allowed Storage Account SKUs
    <br /><br />
+
+
+### Public Preview
+
+When an Azure service feature is in public preview, it means the feature is available for all Azure customers for beta testing.
+
+## Topics
+
+Devices are managed on Azure AD
+
+Users on another Azure AD (B2B) or public IDP (B2C)
+
+
+<a target="_blank" href="https://github.com/Azure/azure-quickstart-templates/">This</a> contains Azure Resource Manager templates contributed by the community.
+
+## Azure Futures Roadmap
+
+* <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/WhatsNewBlade">"What's New" page on Azure Portal</a>
+
+* <a target="_blank" href="https://azure.microsoft.com/en-us/blog/">Azure Blog</a> for Official announcements
+
+* <a target="_blank" href="https://azure.microsoft.com/updates">azure.microsoft.com/updates</a> in now timing out. It has filters for GA vs. futures.
+
+
+## References
+
+https://olohmann.github.io/azure-hands-on-labs/labs/07_iac/iac.html
 
 ## More on DevOps #
 

@@ -2879,6 +2879,8 @@ Microsoft created <a target="_blank" href="https://github.com/Azure/draft">Draft
 Draft uses language packs for Ruby, C# .NET Core 2.2 with Windows packs, 
 authenticated to Azure Container Registry (ACR) and <a href="#AKS">AKS</a>.
 
+* <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/containers/aks/secure-baseline-aks">"Baseline architecture for an Azure Kubernetes Service (AKS) cluster"</a> reference architecture
+https://github.com/mspnp/aks-secure-baseline
 
 <hr />
 
@@ -3048,10 +3050,11 @@ Kubernetes in the cloud also enables <strong>multi-region</strong> setups. GCP h
 
 ### GKS
 
-Google's Kubernetes Service offers <a target="_blank" href="https://cloudonair.withgoogle.com/events/security-talks-march-2021/watch?talk=detect-threats">KTD (Kubnetes Threat Detection)</a>. On each node a KTD daemonset that collects, interprets, and annotates signals for a back-end <strong>KTD Detection Plane</strong> that uses Machine Learning to make findings for the SOC (Security Command Center) and Cloud Logging.
+Google's Kubernetes Service offers KTD (Kubnetes Threat Detection). On each node a KTD daemonset that collects, interprets, and annotates signals for a back-end <strong>KTD Detection Plane</strong> that uses Machine Learning to make findings for the Google SCC (Security Command Center) and Cloud Logging:
 
-<img width="386" alt="k8s-ktd" src="https://user-images.githubusercontent.com/300046/109877993-e9ef9880-7c30-11eb-8320-ce3b431a9186.png">
+<a target="_blank" href="https://cloudonair.withgoogle.com/events/security-talks-march-2021/watch?talk=detect-threats"><img width="386" alt="k8s-ktd" src="https://user-images.githubusercontent.com/300046/109877993-e9ef9880-7c30-11eb-8320-ce3b431a9186.png"></a>
 
+Google's approach enables detection of broad, new classes of infection such as forclosing reverse shells (phoning home).
 
 ### IBM CloudLabs
 
@@ -3304,15 +3307,26 @@ AKS manages the Control Plane master node.
 
 kubectl is included as part of the Azure Cloud Shell.
 
-SF (Servic Fabric) is the core technology.
+SF (Service Fabric) is the core technology.
 
 ACI (Azure Container Instances) connector :
-
+<ul>
    <pre><strong>az container create --resource-group myResourceGroup -- name mycontainer --image microsoft/acl-helloworld --dns-name --label myClustre --port 80</strong></pre>
+</ul>
 
-ACR (Azure Container Regustry) stores images.
+ACR (Azure Container Regustry) stores images (like DockerHub).
+
+ACI (Azure Container Instances) provides hypervisor isolation.
+
+Deploy a model as web service on Azure Container Instances by combining ACI with ACI Logic Apps connector, Azure queues, Azure Functions, Azure Machine Learning to 
+
+See <a target="_blank" href="https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-portal">
+Quickstart: hands-on Deploy AKS to ACI</a>
 
 To run an app in AKS, post App Descriptor to the K8s API Server, and Scheduler schedules worker nodes.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=DRsEQqjcv4g&list=PLD7svyKaquTn7bkKclDkYktSAAcmyuoaj">
+VIDEO "K8s on MS Azure"</a>
 
 
 ### Other clouds
@@ -5888,6 +5902,15 @@ GKE provides several <strong>Predefined roles</strong> to provide granular acces
 
 K8s failure stories at <a target="_blank" href="https://k8s.af/">k8s.af</a>
 
+K8s experts Fairwinds.com has https://github.com/FairwindsOps/apprentice-learning-plan for new Site Reliability Engineers.
+Fairwinds also has open-source tools at <a target="_blank" href="https://github.com/FairwindsOps">their FairwindsOps GitHub</a> using @goreleaser:
+
+   * Polaris validates best practices as defined at their <a target="_blank" href="https://www.fairwinds.com/kubernetes-best-practices-comprehensive-white-paper">K8s Best Practices" white paper PDF</a>
+   * reckoner to declaratively install and manage multiple Helm chart releases
+   * terraform-bastion instance to proxy SSH and API access to a private Kubernetes cluster.
+   * gemini to automate backups of PersistentVolumeClaims in Kubernetes using VolumeSnapshots
+   * ClusterOps 
+   * https://github.com/FairwindsOps/k8s-workshop
 
 ## More on DevOps #
 

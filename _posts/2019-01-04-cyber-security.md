@@ -18,6 +18,10 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/cyber-security/">This page</a> contains my notes on resources for Cyber Security, which is a vast field. This single page is just for reference.
 
+Cloud Security Posture Management (CSPM) monitors continuously identifies and remediaties cloud infrastructure risks in each cloud service using application programming interfaces (APIs) configuration data against compliance benchmarks. For example, they can ensure logs are being gathered from host operating systems and the network (NetFlow), and that API event logging is turned on. 
+
+The newer acronym CIEM (Cloud Infrastructure Entitlements Management) was coined by <a target="_blank" href="https://ermetic.com/">ermetic.com</a> for their product which ensures that identities (both human and machine)  do not have excessive permissions that can be exploited by threat actors or malicious insiders.
+
 ## Jericho Commandments
 
 <a target="_blank" href="https://collaboration.opengroup.org/jericho/commandments_v1.2.pdf">
@@ -892,6 +896,12 @@ FIPS 199 says federal organizations
 
 Military classification: Unclassified, Controlled Unclassified (CUI), Confidential, Secret, Top-secret
 
+CUI (Controlled Unclassified) previously marked: 
+   * For Official Use Only (FOUO)
+   * Sensitive But Unclassified (SBU)
+   * Dozens of other "sensitive" labels used by different U.S. agencies
+   * Sensitive Security Information (SSI)
+
 
 <a name="NIST"></a>
 
@@ -1668,7 +1678,7 @@ Ciphers:
 
    * A running key cipher uses a physical component, usually a book, to provide the polyalphabetic characters. 
    * Enigma
-   * Lucifer was created by IBM and used a <a target="_blank" href="https://www.youtube.com/watch?v=FGhj3CGxl8I">Feistel cipher</a> a framework to build ciphers. based on DES. Used by TwoFish. Its innovation is decryption.
+   * "Lucifer" was created by IBM and used a <a target="_blank" href="https://www.youtube.com/watch?v=FGhj3CGxl8I">Feistel cipher</a> a framework to build ciphers. based on DES. Used by TwoFish. Its innovation is decryption.
    <br /><br />
 
    Kerckhoff’s Principle - the only safe is the key
