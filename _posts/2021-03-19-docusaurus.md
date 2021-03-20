@@ -195,7 +195,7 @@ Below is a correspondance of the documentation and visuals associated with files
    </td></tr>
 
 <tr valign="top"><td> docs folder
-   </td><td><em>not displayed</em>
+   </td><td><a href="#">Docs menu on init page</a>
    </td><td> where you add your markdown that represents your documentation. Files:
    <pre>create-a-blog-post.md 
  create-a-document.md  
@@ -207,12 +207,24 @@ Below is a correspondance of the documentation and visuals associated with files
    </td></tr>
 
 <tr valign="top"><td> blogs folder
-   </td><td><em>not displayed</em>
+   </td><td><a href="#">Blog menu on init page</a>
    </td><td> where you add your markdown for your dated blog posts. Files:
    <pre>2019-05-28-hola.md        
 2019-05-29-hello-world.md 
 2019-05-30-welcome.md
    </pre>
+   </td></tr>
+
+<tr valign="top"><td> <a href="#buildhtml">build folder</a>
+   </td><td><em>not displayed</em>
+   </td><td>minified js assets, html, etc. served to users, created by <tt>yarn build</tt>:
+   <pre>404.html      assets        blog          docs          img           index.html    markdown-page sitemap.xml
+   </pre>
+   </td></tr>
+
+<tr valign="top"><td> <a target="_blank" href="https://v2.docusaurus.io/docs/cli">package.json</a>
+   </td><td><em>not displayed</em>
+   </td><td>List of NodeJs modules
    </td></tr>
 
 <tr valign="top"><td> node_modules 
@@ -225,19 +237,17 @@ Below is a correspondance of the documentation and visuals associated with files
    </td><td> where you maintain the layout and content of the sidebar (left-side menu)
    </td></tr>
 
-<tr valign="top"><td> <a target="_blank" href="https://v2.docusaurus.io/docs/cli">package.json</a>
+<tr valign="top"><td>src/css
    </td><td><em>not displayed</em>
-   </td><td>is where you make most of the customizations for your site.
-   </td></tr>
-
-<tr valign="top"><td> src/css/custom.css 
-   </td><td><em>not displayed</em>
-   </td><td> -
-   </td></tr>
-
-<tr valign="top"><td> pages
-   </td><td><em>not displayed</em>
-   </td><td> where you add custom pages for your site; 
+   </td><td> index.js is what NodeJs invokes, the "brains" of Docusauraus. css files define the layout. Files:
+   <pre>src
+├── css
+│   └── custom.css
+└── pages
+    ├── index.js
+    ├── markdown-page.md
+    └── styles.module.css
+  </pre>
    </td></tr>
 
 <tr valign="top"><td> static/img
@@ -301,11 +311,38 @@ Below is a correspondance of the documentation and visuals associated with files
 
    via CrowdIn.
    
+
+   <a name="buildhtml"></a>
+
    ## Generate html static files
-   
-   <pre><strong>yarn build
+
+1. List files, then build:
+
+   <pre><strong>ls -al
+yarn build
    </strong></pre>
 
+   <pre>[en] Creating an optimized production build...
+&nbsp;
+✔ Client
+  Compiled successfully in 10.57s
+&nbsp;
+✔ Server
+  Compiled successfully in 12.26s
+&nbsp;
+Success! Generated static files in build.
+&nbsp;
+Use `npm run serve` to test your build locally.
+&nbsp;
+✨  Done in 16.98s.
+   </pre>
+
+1. List files, then build:
+   
+   <pre><strong>ls -al build
+npm run serve
+ls -al
+   </strong></pre>
 
    ## Publish to GitHub
    
