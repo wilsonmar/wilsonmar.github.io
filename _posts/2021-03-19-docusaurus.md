@@ -6,8 +6,8 @@ tags: [cloud]
 date: "2021-03-19"
 file: "docusaurus"
 image:
-# azure ms logo wait 1900x500-39kb.jpg
-  feature: ![docusaurus2-hero-1900x500](https://user-images.githubusercontent.com/300046/111859862-8ab8a600-8909-11eb-9e10-998eef488ba1.png)
+# ![docusaurus2-hero-1900x500]
+  feature: https://user-images.githubusercontent.com/300046/111859862-8ab8a600-8909-11eb-9e10-998eef488ba1.png
   credit: Docusaurus
   creditlink: https://v2.docusaurus.io/showcase/
 comments: true
