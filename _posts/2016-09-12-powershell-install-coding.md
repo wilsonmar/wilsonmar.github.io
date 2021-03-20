@@ -779,37 +779,96 @@ Alias           Export-AdlStoreChildItemProperties                 1.3.0      Az
    </strong></tt>
 
 
-   ## Envrionment variables #
+   ## Environment variables #
 
-1. To list, remember the colon at the end:
+   <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.1">READ</a>
+   <a target="_blank" href="https://adamtheautomator.com/powershell-environment-variables/">READ</a>: 
+
+1. List all enviornment variables, remember the colon at the end:
 
    <pre><strong>Get-ChildItem Env:
    </strong></pre>
 
-1. For the value to a specific variable:
+   An alternate form:
+   
+   <pre><strong>Get-ChildItem -Path Env:\
+   </strong></pre>
+   
+   Alternately, use the legacy .NET command:
 
-   <pre><strong>Get-ChildItem Env:PATHEXT
+   <pre><strong>[System.Environment]::GetEnvironmentVariables()
+   </strong></pre>
+
+   The first lines in response:
+
+   <pre>Name                           Value
+----                           -----
+_                              /usr/local/bin/pwsh
+__CF_USER_TEXT_ENCODING        0x1F5:0:0
+...
+   </PRE>
+
+1. For the value to a specific system variable:
+
+   <pre><strong>$env:PATH
+   </strong></pre>
+
+   Alternately:
+
+   <pre><strong>Get-ChildItem Env:PATH
    </strong></pre>
 
 1. Define a temporary environment variable:
 
-   <pre><strong>$env:MyTestVariable = "A temporary test variable."
+   <pre><strong>$env:MyTempVariable = "A temporary test variable."
    </strong></pre>
 
-1. Define a new permanent environment variable:
+1. Retrieve a User environment variable:
 
-   <pre><strong>
-   [Environment]::SetEnvironmentVariable("TestVariableName", "My Value", "<em>option</em>")
+   <pre><strong>$env:MyTempVariable
    </strong></pre>
 
-   In option is either "Machine", "User", or "Process".
+1. To delete an Environment Variable, set its value to an empty string:
+
+   <pre><strong>$env:MyTempVariable = ''
+   </strong></pre>
+    
+1. Define a new permanent environment variable on Windows, containing specified text:
+
+   <pre><strong>[Environment]::SetEnvironmentVariable("PermVariableName", "Remember This", "User")
+   </strong></pre>
+
+   Instead of "User", the option can be either "Machine", "User", or "Process".
+
+1. Retrieve a User environment variable:
+
+   <pre><strong>[System.Environment]::GetEnvironmentVariable('appdata')
+   </strong></pre>
+
+   Alternately:
+
+   <pre><strong>[Environment]::GetEnvironmentVariable("PermVariableName", "User")
+   </strong></pre>
 
 
+NOTE: PowerShell has providers that creates one or more drives, which are hierarchical, file system-like structures that allow a user to manage various areas in Windows. One of those providers is for environment variables called Environment.
+
+Built-in Providers for the Windows operating system:<a target="_bank" href="https://ss64.com/ps/syntax-env.html">*</a>:
+
+   * Alias - Windows PowerShell aliases {Alias}
+   * Certificate - X509 certificates for digital signatures {cert}
+   * Environment - Windows environment variables {Env}
+   * FileSystem - File system drives, directories and files {filesystem}
+   * Function - Windows PowerShell functions {Function}
+   * Registry - Windows registry {HKLM, HKCU}
+   * Variable - Windows PowerShell variables {Variable}
+
+<!--
 ## Filter output
 
-   <pre>get-??? -filter "starswith(givenName,'Al')"
+   <pre>get-ChildItem -filter "starswith(givenName,'Al')"
    </pre>
-
+-->
 
 ## Version Logic: If Then Else #
 

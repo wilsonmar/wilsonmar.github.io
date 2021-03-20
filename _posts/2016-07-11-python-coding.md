@@ -3,7 +3,7 @@ layout: post
 title: "Python Coding"
 excerpt: "Tricks and tips from various learning resources"
 tags: [python, coding]
-date: "2016-07-11"
+date: "2021-03-04"
 file: "python-coding"
 image:
 # pic white python logo 1900x500.jpg
@@ -18,11 +18,19 @@ comments: true
 
 Here are various coding tips I've seen while going through [Python programming classes](/python-tutorials/) after [installing Python](/python-install/) and [Jupyter](/jupyter/).
 
+## Setup
+
+The below assumes that you've installed Python and are at a REPL prompt:
+
+
+
 <a name="ReservedKeywords"></a>
 
 ## Reserved Keywords
 
-Listed alphabetically below are words that Python's reserved for itself, so you can't use them as custom variables:
+Listed alphabetically below are words that Python's reserved for itself, so you can't use them as custom variables.
+
+PROTIP: Research and find out what each is about:
 
 *	and 
 *	as
@@ -67,13 +75,19 @@ A list can be retrieved by this code:
 print(keyword.kwlist)
 </pre>
 
+## String
+
+To return just the first 3 characters of a string:
+
+<pre>letters = "abcdef"
+first_part = letters[:3]</pre>
 
 ## File open() modes
 
 PROTIP: Be explicit about using text (vs. binary) mode.
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom"><th>&nbsp;</th><th>Character</th><th>Meaning</th></tr>
+<tr valign="bottom"><th>Character</th><th>Meaning</th></tr>
 <tr valign="top"><td>b</td><td>binary (text mode is default)</td></tr>
 <tr valign="top"><td>t</td><td>text mode (default)</td></tr>
 <tr valign="top"><td>r</td><td>read-only (the default)</td></tr>
@@ -84,17 +98,12 @@ PROTIP: Be explicit about using text (vs. binary) mode.
 <tr valign="top"><td>U</td><td>universal newlines mode (used to upgrade older code)</td></tr>
 </table>
 
-write() returns the count of codepoints (characters in the string), not the number of bytes. 
+<strong>write()</strong> returns the count of codepoints (characters in the string), not the number of bytes. 
 So don't use it's count.
 
-read() returns line endings (\n) in string lines.
+<strong>read()</strong> returns line endings (\n) in string lines.
 
-readlines() shows the whole file.
-
-To return just the first 3 characters of a string:
-
-<pre>letters = "abcdef"
-first_part = letters[:3]</pre>
+<strong>readlines()</strong> shows the whole file.
 
 
 <a name="CopyFile"></a>
@@ -109,15 +118,17 @@ This table summarizes the differences among shutil commands:
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th>&nbsp;</th><th>Dest. dir.</th><th>Copies metadata</th><th>Preserve permissions</th><th>Accepts file object</th></tr>
-<tr valign="top" align="center"><td align="left"><a href="#shutil.copyfile"><tt>shutil.copyfile</tt></a></td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
-<tr valign="top" align="center"><td align="left"><tt>shutil.copyfileobj</tt></td><td>No</td><td>No</td><td>No</td><td><strong>Yes</strong></td></tr>
-<tr valign="top" align="center"><td align="left"><tt>shutil.copy</tt></td><td>Yes</td><td>No</td><td><strong>Yes</strong></td><td>No</td></tr>
-<tr valign="top" align="center"><td align="left"><tt>shutil.copy2</tt></td><td>Yes</td><td><strong>Yes</strong></td><td>Yes</td><td>No</td></tr>
+<tr valign="top" align="center"><td align="left"><a href="#shutil.copyfile"><tt>shutil.copyfile</tt></a></td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="center"><td align="left"><tt>shutil.copyfileobj</tt></td><td>-</td><td>-</td><td>-</td><td><strong>Yes</strong></td></tr>
+<tr valign="top" align="center"><td align="left"><tt>shutil.copy</tt></td><td>Yes</td><td>-</td><td><strong>Yes</strong></td><td>-</td></tr>
+<tr valign="top" align="center"><td align="left"><tt>shutil.copy2</tt></td><td>Yes</td><td><strong>Yes</strong></td><td><strong>Yes</strong></td><td>-</td></tr>
 </table>
 
 See https://docs.python.org/3/library/filesys.html
 
-<a  name="FileMetadata"></a>
+<a name="FileMetadata"></a>
+
+### File Metadata
 
 Metadata includes Last modified and Last accessed info (mtime and atime). 
 Such information is maintained at the folder level.
@@ -139,9 +150,9 @@ For all commands, if the destination location is not writable, an IOError except
 Notice both individual file copy commands do not copy over permissions from the source file.
 Both folder-level copy commands below carry over permissions.
 
-But note that folder-level copy commands do not buffer.
+CAUTION: folder-level copy commands do not buffer.
 
-* To copy a file to another folder and <strong>retain metadata</strong>:
+* PROTIP: To copy a file to another folder and <strong>retain metadata</strong>:
 
    <pre><strong>file_src = 'source.txt'  
 f_src = open(file_src, 'rb')
@@ -179,7 +190,7 @@ os.popen('copy source.txt destination.txt')
 
 ## Error Exception handling
 
-Handle file not found exception<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=42650a6d-6632-4ae7-8b4f-88fa80ce6633">:</a><a target="_blank" href="https://app.pluralsight.com/course-player?clipId=23a27b06-78be-41d9-82d7-eb73fb4f414f">:</a>
+Handle file not found exception <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=42650a6d-6632-4ae7-8b4f-88fa80ce6633">:</a> <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=23a27b06-78be-41d9-82d7-eb73fb4f414f">:</a>
 
 <pre># if file doesn't exist in folder, create it:
 import os
@@ -238,14 +249,13 @@ Brilliant.
 
 <a target="_blank" href="https://dbader.org/blog/python-commandline-tools-with-click">
 Dan Bader recommends</a> the use of 
-<a target="_blank" href="http://click.pocoo.org/6/why/">http://click.pocoo.org/6/why</a>
+<a target="_blank" href="http://click.pocoo.org/6/why/">click.pocoo.org/6/why</a>
 click custom package (from Armin Ronacher) instead of the
 argparse package that comes with Python 3.2+ (and the optparse package that comes with Python 2).
 
 Click provides decorators such as the "@click.command()" below:
 
-   <pre>
-\# cli.py
+   <pre>\# cli.py
 import click
 &nbsp;
 @click.command()
@@ -262,7 +272,7 @@ if __name__ == "__main__":
 <pre>squares = [x * x for x in range(10)]
 </pre>
 
-[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+<pre>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</pre>
 
 <a target="_blank" href="https://github.com/austin-taylor/code-vault/blob/master/python_expert_notebook.ipynb">
 The Playbook</a> of code shown on 

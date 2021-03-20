@@ -52,6 +52,7 @@ Common TCP Ports in layer 4: REMEMBER
    * No port for ICMP RFC 792 Pings RFC 1122 as it's in IP transport layer
 
    * 389/646 = LDAP / Secure LDAP
+   * 88 = Kerberos (Windows)
    * 445 = SMB (Server Message Block) from Azure Files
    * 548 = AFP (Apple Filing Protocol) https://www.wikiwand.com/en/Apple_Filing_Protocol elim. for AppleTalk
    <br /><br />

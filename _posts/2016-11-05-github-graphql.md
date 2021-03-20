@@ -168,8 +168,8 @@ MY_GITHUB_TOKEN="23441234f13b1134c36667a"
 
    ### Install client program Insomnia
 
-1. Install Insomina <br />
-   into the <tt>~/Applications</tt> folder on your Mac, using Homebrew:
+1. PROTIP: Instead of downloading from https://insomnia.rest/download, 
+   install Insomina into the <tt>~/Applications</tt> folder on your Mac, using <a target="_blank" href="https://wilsonmar.github.io/macos-homebrew//">Homebrew</a>:
 
    <pre><strong>brew install --cask insomina
    </strong></pre>
@@ -178,6 +178,11 @@ MY_GITHUB_TOKEN="23441234f13b1134c36667a"
 
    <pre><strong>choco install -y insomina-rest-api-client
    </strong></pre>
+
+   NOTE: Insomnia is built using GitHub's Electron, which enables coding of JavaScript to generate programs running on macOS and Windows.
+   Insomnia is MIT open-sourced at https://github.com/Kong/insomnia
+
+   Swagger can be generated from API definitions in Insomnia using <a target="_blank" href="https://github.com/mlabouardy/swaggymnia">Swaggymnia</a>
 
 
    ### v3 GraphQL
@@ -222,9 +227,10 @@ MY_GITHUB_TOKEN="23441234f13b1134c36667a"
 
    ### v4 GraphQL
 
-   TODO::
+   <a target="_blank" href="https://support.insomnia.rest/article/176-graphql-queries">https://support.insomnia.rest/article/176-graphql-queries</a>
+   says Insomnia provides auto-completion and linting of GraphQL queries.
 
-
+   BLOG: https://medium.com/swlh/introduction-to-graphql-with-github-api-64ee8bb11630
 
 <hr />
 

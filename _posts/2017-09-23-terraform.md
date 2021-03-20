@@ -3,7 +3,7 @@ layout: post
 title: "Terraform (vs. AWS Cloud Formation)"
 excerpt: "Immutable declarative multi-service Infrastructure as Code (IaC) provisioning"
 tags: [DevOps, ecosystem]
-date: "2020-12-19"
+date: "2021-03-04"
 file: "terraform"
 image:
 # feature: pic data center slice 1900x500.jpg
@@ -100,7 +100,7 @@ Terraform also provides <strong>parallel execution</strong> control, iterations,
 A key differentiator of Terraform is its <strong>plan</strong> command, which provides more than just a "dry-run" before configurations are applied for real. Under the covers, Terraform plan generates an executable, and uses it to apply, which guarantees that what appeared in plan is the same as with <a href="#TerraformApply">apply</a>.
 
 
-### vs. AWS Cloud Formation
+### Terraform vs. AWS Cloud Formation
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th> Feature </th><th> CloudFormation </th><th> Terraform </th></tr>
@@ -137,6 +137,12 @@ Terraform is often used to handle security groups, IAM resources, VPCs, Subnets,
 Terraform is not really an application level deployment tool and you wind up rolling your own. Working out an odd mix of null resources and shell commands to deploy an application while trying to roll back is not straightforward and seems like a lot of reinventing the wheel."
 
 Moreover, security-concious organization make it difficult to use third party products due to time-consuming infosec clearances needed.
+
+### Crossplane
+
+<a target="_blank" href="https://blog.crossplane.io/">Crossplane.io</a> provides more flexible ways to interact with Kubernetes than Terraform. Their <a target="_blank" href="https://github.com/crossplane">github.com/crossplane</a> has providers for AWS, Azure, and GCP.
+
+<a target="_blank" href="https://blog.crossplane.io/crossplane-vs-terraform/"><img src="../images/terraform-Crossplane-Stack.svg"></a>
 
 
 <a name="Licensing"></a>
@@ -243,12 +249,10 @@ build-error: 0 (30 days)
 
    The response at time of writing:
 
-   <pre>Uninstalling /usr/local/Cellar/terraform/0.12.24... (6 files, 51.2MB)
-(pygithub) bash-5.0$ brew install tfenv
-==> Downloading https://github.com/tfutils/tfenv/archive/v1.0.2.tar.gz
-==> Downloading from https://codeload.github.com/tfutils/tfenv/tar.gz/v1.0.2
-######################################################################## 100.0%
-🍺  /usr/local/Cellar/tfenv/1.0.2: 20 files, 29.2KB, built in 4 seconds
+   <pre>==> Downloading https://github.com/tfutils/tfenv/archive/v2.2.0.tar.gz
+==> Downloading from https://codeload.github.com/tfutils/tfenv/tar.gz/v2.2.0
+##O=#  #                                                                      
+🍺  /usr/local/Cellar/tfenv/2.2.0: 23 files, 79.6KB, built in 8 seconds
    </pre>
 
    Source for this is has changed over time: from <a target="_blank" href="https://github.com/Zordrak/tfenv">https://github.com/Zordrak/tfenv</a> (previously from <a target="_blank" href="https://github.com/kamatama41/tfenv">https://github.com/kamatama41/tfenv</a>)
@@ -280,7 +284,7 @@ Archive:  tfenv_download.PObWo2/terraform_0.12.24_darwin_amd64.zip
 [INFO] Switching completed
    </pre>
 
-   The above creates folder <strong>.terraform.d</strong> on your $HOME folder, containing files `checkpoint_cache` and `checkpoint_signature`.
+   PROTIP: The above commands create folder <strong>.terraform.d</strong> on your $HOME folder, containing files `checkpoint_cache` and `checkpoint_signature`.
 
    See <a target="_blank" href="https://www.hashicorp.com/blog/announcing-terraform-0-12">
    Hashicorp's version 12 announcement</a>.

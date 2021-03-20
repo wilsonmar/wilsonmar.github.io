@@ -1224,17 +1224,14 @@ complete
 
    Using Visual Studio to develop <a target="_blank" href="https://visualstudio.microsoft.com/vs/mac/unity/">C# with the Unity 3D IDE</a> requires an aditional license for Unity.
 
-   * <a target="_blank" href="https://visualstudio.microsoft.com/vs/enterprise/">Visual Studio for Mac -- Enterprise Edition"</a> costs $250/month but $150/month Azure credit.
-
-   <a target="_blank" href="https://visualstudio.microsoft.com/vs/compare/">Enterprise adds Power BI Pro, Live Dependency Validation, Snapshot Debugger, Time Travel Debugging, Fakes, Code Coverage, IntelliTest, IntelliTrace, Code Map Debugger Integration,  .NET Memory Dump Analysis, Xamarin Inspector, Xamarin Profiler</a>.
+   * <a target="_blank" href="https://visualstudio.microsoft.com/vs/enterprise/">Visual Studio for Mac -- Enterprise Edition"</a> costs $250/month but $150/month Azure credit. <a target="_blank" href="https://visualstudio.microsoft.com/vs/compare/">Enterprise Edition adds</a> Power BI Pro, Live Dependency Validation, Snapshot Debugger, Time Travel Debugging, Fakes, Code Coverage, IntelliTest, IntelliTrace, Code Map Debugger Integration,  .NET Memory Dump Analysis, Xamarin Inspector, Xamarin Profiler</a>.
    <br /><br />
 
-
-PROTIP: Avoid videos which are not applicable to the "2019" version:<strike>
+PROTIP: Ignore videos which are NOT applicable to the current "2019" version:
    * <a target="_blank" href="https://www.youtube.com/watch?v=DS4zGjyo4Zs">VIDEO: Install when it was in Preview</a>  Jan 10, 2019.
    * <a target="_blank" href="https://www.youtube.com/watch?v=jUiuIAZt6Dw">Using Git with Visual Studio</a> Apr 7, 2017
    * <a target="_blank" href="https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-12-Getting-Started-with-Visual-Studio-for-Mac">VIDEO: Snack Pack 12: Getting Started with Visual Studio 2017 for Mac</a> May 31, 2017 by James Montemagno (<a target="_blank" href="http://twitter.com/jamesmontemagno">@jamesmontemagno<a>). which covers mobile development as well.
-   </strike><br /><br />
+   <br /><br />
 
 The following was written after <a target="_blank" href="https://devblogs.microsoft.com/visualstudio/visual-studio-2019-for-mac-is-now-available/">April 9, 2019 release</a>.
 
@@ -1299,7 +1296,7 @@ However, if you insist on following Microsoft's instructions: click "Download Vi
 
 1. Navigate to your <strong>Projects</strong> folder and drag it to the Finder's left Navigatin pane, for easy access.
 
-1. On the Touchpad, spread 4 finger together at the same time to see that Powershell has been installed as well.
+1. On the Mac's Touchpad, spread 4 finger together at the same time to see that Powershell has been installed as well.
 
    ![vs-mac-icons-413x105-5443](https://user-images.githubusercontent.com/300046/56381960-7a569880-61d3-11e9-96ff-c44baa1c35e1.jpg)
    <br />
@@ -1367,6 +1364,7 @@ However, if you insist on following Microsoft's instructions: click "Download Vi
 
 1. Press command+Q to close the program.
 1. Restart the program again.
+
 
 ### Get existing repo
 
