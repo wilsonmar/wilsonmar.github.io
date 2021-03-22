@@ -140,7 +140,7 @@ Telemetry such as events and traces are stored as logs in addition to performanc
    Folders in the repo have different items than in groupings Portal GUI:
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr><th>Same</th><th>In Portal GUI</th></tr>In repo</th></tr>
+   <tr><th>Same</th><th>In Portal GUI</th><th>In repo</th></tr>
    <tr valign="top"><td>
       * Solution(s) - <em>see comparion table below</em>
       </td><td>
@@ -156,7 +156,7 @@ Telemetry such as events and traces are stored as logs in addition to performanc
    
    Solution(s):
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr><th>Same</th><th>In Portal GUI</th></tr>In repo</th></tr>
+   <tr><th>Same</th><th>In Portal GUI</th><th>In repo</th></tr>
    <tr valign="top"><td>
       * Change Tracking<br />
       * ContainerInsights<br />
