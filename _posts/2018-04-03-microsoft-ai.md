@@ -68,6 +68,8 @@ to perform SGD (stochastic-gradient descent).
 The Classic version reflected "All Microsoft all the time"
 with proprietary "pickle" files.
 
+XiaoIce, a chatbot Microsoft launched in China, "has more than 200 million users, has engaged in 30 billion conversations, and has an average conversation length of 23 turns, which averages out to about half an hour, achieving human parity at translation from Chinese to English. Japan-based Rinna and the US-based Zo)
+
 "Cortana" was the brand-name of Microsoft's AI. Cortana began as the name of the fictional artificially intelligent character in the Halo video game series. 
 Cortana was going to be Microsoft's answer to Siri and Alexa, an AI-powered personal assistant capable of responding to voice commands, armed with a collection of third-party skills. 
 
@@ -75,12 +77,20 @@ But <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microso
 
 ## Principled AI
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/azure-artificial-intelligence/5-ai-impact-and-ethics">Microsoft's ethical principles</a>
-guiding the development and use of artificial intelligence with people:
+Microsoft has a <a target="_blank" href="https://www.microsoft.com/research/group/fate/">FATE (Fairness, Accountability, Transparency, and Ethics)</a> research group:
 
-* Reliability & Safety: AI systems should perform reliably and safely.
-* Inclusiveness: AI systems should empower everyone and engage people.
-* Privacy & Security: AI systems should be secure and respect privacy.
+   * Fairness: AI systems should treat all people fairly.
+   * Accountability: AI systems should have algorithmic accountability.
+   * Transparency: AI systems should be understandable.
+   * Ethics
+   <br /><br />
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/azure-artificial-intelligence/5-ai-impact-and-ethics">Microsoft's ethical principles</a>guiding the development and use of artificial intelligence with people:
+
+   * Reliability & Safety: AI systems should perform reliably and safely.
+   * Inclusiveness: AI systems should empower everyone and engage people.
+   * Privacy & Security: AI systems should be secure and respect privacy.
+   <br /><br />
 
 
 ## Current AI certifications
@@ -180,9 +190,6 @@ Case studies of how people are already making use of AI/ML to save time and mone
    * Custom Entity Extraction with Text Analytics
    <br /><br />
 
-XiaoIce, a chatbot Microsoft launched in China, "has more than 200 million users, has engaged in 30 billion conversations, and has an average conversation length of 23 turns, which averages out to about half an hour, achieving human parity at translation from Chinese to English.
- Japan-based Rinna and the US-based Zo)
-
 
 ## Sample Python Code
 
@@ -191,14 +198,6 @@ https://docs.microsoft.com/en-us/samples/azure/azureml-examples/azure-machine-le
 https://github.com/Azure/azureml-examples
 Pytorch
 
-
-## FATE and Ethical Principles
-
-Microsoft has a <a target="_blank" href="https://www.microsoft.com/research/group/fate/">FATE (Fairness, Accountability, Transparency, and Ethics)</a> research group:
-
-* Fairness: AI systems should treat all people fairly.
-* Accountability: AI systems should have algorithmic accountability.
-* Transparency: AI systems should be understandable.
 
 ## Tutorials How-To
 
