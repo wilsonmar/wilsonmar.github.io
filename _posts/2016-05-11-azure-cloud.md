@@ -46,6 +46,8 @@ The <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/welc
 
 This is missing some new services such as DevOps.
 
+https://docs.microsoft.com/en-us/azure/architecture/icons/
+
 <a target="_blank" href="https://my.visualstudio.com/Benefits?wt.mc_id=o~msft~profile~devprogram_attach&workflowid=devprogram&mkt=en-us">Visual Studio Dev Essentials</a> provides a list of tools and ecosystem.
 
 ## Architectural components #
@@ -88,16 +90,6 @@ components for "High Control":
    * Jelastic
 
 <strong>Azure Stack</strong> runs Azure runs within a private data center.
-
-## Logging #
-
-![azure-log-analytics-711x306-35708](https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg)
-
-* Azure Monitor (pane of glass for monitoring on Azure), 
-* Azure Log Analytics (log ingestion and IaaS monitoring), and
-* Application Insights (application performance monitoring including availability, performance, and exception information)
-
-Learn Module: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/handle-transient-errors-in-your-app/">Handle transient errors in your app</a>
 
 ## Plan
 
@@ -382,23 +374,6 @@ Container restart policies:
    * <strong>Never</strong> for run one-time only.
    * <strong>OnFailure</strong> only when the process short-lived tasks terminates with a nonzero exit code.
 
-<a name="MgmtCerts"></a>
-
-## Management Certificates
-
-Azure uses Management (x509 v3) Certificates (.cer file containing a public key) 
-to access resources in an Azure Subscription.
-
-There is a limit of 100 Management certs per Azure subscription (administrator).
-
-   * Development
-   * Test 
-   * Pre-prod (Staging)
-   * Prod
-
-## Professional certifications
-
-<a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-AZ-103.aspx">Exam AZ-103: Microsoft Azure Administrator</a> supercedes exams AZ-100 and AZ-101 which have been retired.
 
 ## Installers #
 
@@ -459,8 +434,7 @@ Every resource is in only one group, listed here by stack:
 
 A resource group can contain resources residing in different <strong>regions</strong>.
 
-   <tt><strong>
-   Get-AzureRmResourceProvider
+   <tt><strong>Get-AzureRmResourceProvider
    </strong></tt>
 
 
@@ -525,13 +499,33 @@ Azure Service Fabric offers a substitute for external storage via its
 accessing dictionary entries.
 
 
-<a name="ScaleSets"></a>
+<a name="ImportExport"></a>
 
-### Load Scale sets #
+## Data Import/Export Jobs Service #
+
+<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h40m45s">VIDEO</a>
+
+Azure Import/Export service can uses physical drives to import into Azure Blog Storage or Azure Files.
+
+1. WaImportExportV2.exe for files (v1 for blobs), BitLocker encrypt
 
 
+* Data Box Gateway virtual appliance
+* Data Box Edge to Azure IoT Edge
+* Data Box Offline  (Robocopy) 
+   * Data Box Disk - 8 TB SSD x 5 packs (128 AES encrypted)
+   * Data Box - 100 TB AES 256
+   * Data Box Heavy - 1TB ruggedized 
 
-## Overview Videos
+Azure Jobs
+
+CDN Endpoints
+
+<hr />
+
+## Resources
+
+### Overview Videos
 
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-big-picture">
 Windows Azure: The Big Picture
@@ -554,7 +548,7 @@ by Matt Milner  Beginner Mar 10, 2016 1h 50m
    Modernizing Your Websites with Azure Platform as a Service</a>
    by Troy HuntIntermediateApr 02, 20155h 26m
 
-## Extentions Marketplace
+### Extentions Marketplace
 
 VIDEO: <a target="_blank" href="https://app.pluralsight.com/library/courses/windows-azure-marketplace/">Windows Azure Marketplace</a>
 by Joe Kunk Intermediate Dec 19, 2013 1h 56m
@@ -606,7 +600,7 @@ Azure Websites and WebJobs</a>
 by Matt MilnerIntermediateOct 12, 20143h 47m (155)
 
 
-##  AD:
+###  AD:
 
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-access-signatures-getting-started">
 Getting Started with Microsoft Azure Shared Access Signatures</a>
@@ -637,7 +631,7 @@ Azure Hybrid Connections: First Look</a>
 by Dan Toomey Beginner Jun 12,  2015 1h 48m (59)
 
 
-##  Operations:
+###  Operations:
 
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/azure-elastic-scale">
 Elastic Scaling on Windows Azure</a>
@@ -685,7 +679,7 @@ by Scott SeelyIntermediateOct 31, 2012 2h 0m (61)
 Extending Active Directory to the Cloud</a>
 by Russell Smith
 
-## Dev #
+### Dev #
 
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/windows-azure-iaas-essentials">
 Windows Azure Infrastructure as a Service Essentials</a>
@@ -724,7 +718,7 @@ Build a Lab Environment w/ Microsoft Azure & Windows Server 2012</a>
 by Gary Grudzinskas Intermediate Jun 23,  2015 2h 20m (127)
 
 
-##  Data:
+###  Data:
 
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/azure-cloud-services-storage-fundamentals">
 Fundamentals of Azure Cloud Services and Storage</a>
@@ -758,7 +752,7 @@ by Elton Stoneman Intermediate Jun 16,  2015 5h 21m (155)
 Hosting SQL Server in Microsoft Azure IaaS Fundamentals</a>
 by Mike McKeown Intermediate Oct 11, 2013 1h 40m (125)
 
-##  Mobile:
+###  Mobile:
 
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/windows-azure-mobile-services">
 Windows Azure Mobile Services</a>
@@ -784,8 +778,9 @@ by Yacine Khammal Intermediate Feb 14, 2012  2h 37m
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th>ACTUAL MONTHLY UPTIME %</th><th> SERVICE CREDIT PERCENTAGE </th></tr>
 <tr valign="top"><td> < 99.9 </td><td> 10 </td></tr>
-< 99	25 </td></tr
-< 95	100 </td></tr
+<tr valign="top"><td> 99 </td><td>  25 </td></tr>
+<tr valign="top"><td> 95 </td><td>	100 </td></tr>
+</table>
 
 ## More on DevOps #
 

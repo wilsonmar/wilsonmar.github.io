@@ -18,14 +18,14 @@ comments: true
 
 ## Cloud Service Models
 
-* Applications   - SaaS
+* Applications   - SaaS (React/Vue, Design System)
 * App Data       - SaaS (Storage: Blob, Table, File, Message; DB: Postgres SQL, Cosmos planetary DB)
 
-* App Runtime    - PaaS
-* Middleware     - PaaS
-* O/S            - PaaS
+* App Runtime    - PaaS (Web Apps)
+* Middleware     - PaaS (<a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a>)
+* O/S            - PaaS (<a target="_blank" href="https://cloudacademy.com/course/getting-started-azure-app-service/app-service-overview/">Azure App Service</a>)
 
-* Virtualization - IaaS
+* Virtualization - IaaS (VM, Containers)
 * Servers        - IaaS
 * Storage        - IaaS
 * Networking     - IaaS
@@ -607,6 +607,8 @@ Here are the names of brand names, some with links to marketing or documentation
 
 </tbody></table>
 
+Azure MDC (Mobile Data Center) makes use of "Azure Stack" software that runs Azure on-prem. in shipping containers, each with its own power and cooling hardware.
+
 Credit:
 <a target="_blank" href="http://www.tomsitpro.com/articles/azure-vs-aws-cloud-comparison,2-870-2.html"> 
 TomsITPro</a> and
@@ -623,6 +625,54 @@ IBM Bluemix</a>
 "Understanding the Difference Between Microsoft Azure and Amazon AWS" by veteran Pluralsight video presenter Elias Khanser, a Microsoft MVP</a>
 
 https://cloudonaut.io/my-mental-model-of-aws/
+
+
+Your business is transitioning from an entirely on-premise IT environment to one hosted entirely in the public cloud. All physical servers and resources within your on-premise space will be replaced with virtual cloud resources hosted at offsite locations, on hardware that is managed by the cloud provider.
+
+You are forecasting your IT resource costs for required compute, networking, and storage, and how expenses will change as a result of your cloud migration.
+
+Which statement describes how your capital expenditures and operational expenditures for IT resources will change by migrating entirely to the public cloud?
+
+
+A
+Your capital expenditure costs for IT resources will increase, while your operational expenditures will not change.
+
+
+B
+Your IT resource costs will generally change from operational expenditures to capital expenditures.
+
+
+C
+Your operational expenditure costs for IT resources will increase, while your capital expenditures will not change.
+
+
+D
+Your IT resource costs will generally change from capital expenditures to operational expenditures.
+
+
+To answer this question, review the statement below and decide if the statement is correct as it is, or if the underlined portion of the statement needs to be replaced with one of the choices below.
+
+The scalability of Azure services refers to the ability to quickly recover from system failure.
+
+
+A
+inexpensively deploy compute, storage, and networking resources without a large capital investment
+
+
+
+B
+pay only for the resources you use
+
+
+
+C
+The statement is correct.
+
+
+
+D
+rapidly increase or decrease the number of Azure resources based on demand
+
 
 
 ## More on DevOps #

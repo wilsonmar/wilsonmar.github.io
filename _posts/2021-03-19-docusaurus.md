@@ -226,8 +226,8 @@ Below is a correspondance of the documentation and visuals associated with files
    </td></tr>
 
 <tr valign="top"><td> <a target="_blank" href="https://v2.docusaurus.io/docs/cli">package.json</a>
-   </td><td><em>not displayed</em>
-   </td><td>List of NodeJs modules
+   </td><td><em>Text editor</em>
+   </td><td>List of NodeJs modules to be downloaded into node_modules folderl
    </td></tr>
 
 <tr valign="top"><td> node_modules 
@@ -241,7 +241,7 @@ Below is a correspondance of the documentation and visuals associated with files
    </td></tr>
 
 <tr valign="top"><td> src folder
-   </td><td><em>not displayed</em>
+   </td><td><em>Within a text editor</em>
    </td><td> index.js is what NodeJs invokes to load React.js, the "brains" of Docusauraus. css files define the layout. Files:
    <pre>src
 ├── css

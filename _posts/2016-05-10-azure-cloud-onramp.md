@@ -18,21 +18,47 @@ comments: true
 
 This is a hands-on deep-dive tutorial with commentary along the way, covering how to get an account into Azure, set MFA, use Active Directory.
 
-<a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">This</a> is the hands-on step-by-step tutorial I would give to a developer or administrator getting up and running on Azure cloud.
+<a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">This</a> is the hands-on step-by-step tutorial I would give to an administrator getting up and running on Azure cloud.
 
-## $50/month with $39/month Visual Studio license
+## Quick Reference Links
 
-Instead of "Pay-As-You-GO", pay for a Visual Studio license.
+PROTIP: Bookmark these links
 
-PROTIP: Do that after using your initial free credits:
+<table border="1" cellpadding="4" cellspacing="0">
+<tr valign="top"><td> Marketing </td><td>
+   <a target="_blank" href="https://azure.com/">azure.com</a>
+   = <a target="_blank" href="https://azure.microsoft.com/en-us/">azure.microsoft.com/en-us</a>
+   </td></tr>
+<tr valign="top"><td> Sign-up: </td><td>
+   <a target="_blank" href="https://account.windowsazure.com/signup/"> 
+   account.windowsazure.com/signup</a>
+   </td></tr>
+<tr valign="top"><td> Dashboard page: </td><td>
+   <a target="_blank" href="https://portal.azure.com/"><strong><u>https://portal.azure.com</u></strong></a> or
+   <a target="_blank" href="https://portal.azure.us/">portal.azure.us</a> for the <a href="#USGov">US Government portal</a>
+   </td></tr>
+<tr valign="top"><td> <a href="#AAD">Azure AD</a> </td><td>
+   <a target="_blank" href="https://aad.portal.azure.com/"><strong><u>https://aad.portal.azure.com</u></strong></a>
+   </td></tr>
+<tr valign="top"><td> Personal </a> </td><td>
+   <a target="_blank" href="https://techprofile.microsoft.com/en-us/"><strong>techprofile.microsoft.com/en-us</strong></a>
+   integrates various information about your certifications and learnings taken within Microsoft.
+    </td></tr>
+</table>
 
-## Microsoft Learn account
+<a name="USGov"></a>
 
-1. Get a "Microsoft Learn" account for $200 of credits to spend in 30 days of hands-on learning:
+## Microsoft Azure Government
 
-   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">docs.microsoft.com/en-us/learn/azure/</a>
+   There is a separate <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/government/">Azure fed/state/local gov</a> is an isolated "soverign" DoD Level 5 cloud on US soil operated by US citizens. It has its own Marketplace of apps. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-welcome">What is gov?</a> 
 
-   Product categories are: .NET, Azure, Business Applications, Dynamics 365, Power Platfor, Visual Studio, Windows, etc.
+## Azure first-timer deals
+
+   * Get a "Microsoft Learn" account for $200 of credits to spend in 30 days and also a year of <a href="#FreeSvcs">free services</a>.
+
+   * After that instead of "Pay-As-You-GO",
+
+   * PROTIP: Buy a Visual Studio license for $39/month and get $50 of credit each month. See <a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">docs.microsoft.com/en-us/learn/azure/</a>
 
 
    ### Job Roles
@@ -53,16 +79,52 @@ PROTIP: Do that after using your initial free credits:
    MY OPINION: I think job roles should be multi-select checkboxes.
    This segregation also adds to duplicating material.
 
-3. After registering, use this URL:
+   <strong>Global Administrators</strong>, aka Company Administrators, in Azure Active Directory have access to <strong>all services</strong> that use Azure Active Directory identities like Microsoft 365 security center, Microsoft 365 compliance center, Exchange Online, SharePoint Online, and Skype for Business Online.
 
-   <a target="_blank" href="https://techprofile.microsoft.com/en-us/"><strong>techprofile.microsoft.com/en-us</strong></a>
+   So it's important to assign other more specific roles:
 
-   PROTIP: Bookmark the above link because it integrates various information about your certifications within Microsoft.
+   * Application Administrators can create and manage all aspects of enterprise applications, application registrations, and application proxy settings.
+
+   * Application Developers can create application registrations when the “Users can register applications” setting is set to No.
+
+   * Authentication Administrators can set or reset non-password credentials for some users and can update passwords for all users.
+
+   * Azure DevOps Administrators can manage the Azure DevOps policy to restrict new Azure DevOps organization creation to a set of configurable users or groups.
+
+   * Azure Information Protection Administrators have all permissions in the Azure Information Protection service.
+
+   * B2C User Flow Administrators can create and manage B2C User Flows (also called “built-in” policies) in the Azure portal.
+
+   * B2C User Flow Attribute Administrators can add or delete custom attributes available to all user flows in the tenant.
+
+   * B2C IEF Keyset Administrators can create and manage policy keys and secrets for token encryption, token signatures, and claim encryption/decryption.
+
+   * B2C IEF Policy Administrators can create, read, update, and delete all custom policies in Azure AD B2C and therefore have full control over the Identity Experience Framework in the relevant Azure AD B2C tenant.
+
+   * Billing Administrators can makes purchases, manages subscriptions, manages support tickets, and monitors service health.
+
+   * Cloud Application Administrators have the same permissions as the Application Administrator role, excluding the ability to manage application proxy.
+
+   * Cloud Device Administrators can enable, disable, and delete devices in Azure AD and read Windows 10 BitLocker keys (if present) in the Azure portal.
+
+   * Compliance Administrators have permissions to manage compliance-related features in the Microsoft 365 compliance center, Microsoft 365 admin center, Azure, and Microsoft 365 Security & Compliance Center.
+
+   * Compliance Data Administrators have permissions to track data in the Microsoft 365 compliance center, Microsoft 365 admin center, and Azure. Users can also track compliance data within the Exchange admin center,
+
+   * Conditional Access Administrators have the ability to manage Azure Active Directory Conditional Access settings
+
+   * Exchange Administrators have global permissions within Microsoft Exchange Online, when the service is present.
+
+   * Directory Readers can read basic directory information.
+
+   * Groups Administrators can create/manage groups and its settings like naming and expiration policies.
+
+   * Security Administrators have permissions to manage security-related features in the Microsoft 365 security center, Azure Active Directory Identity Protection, Azure Information Protection, and Microsoft 365 Security & Compliance Center.
 
 
-<hr />
+<a name="FreeSvcs"></a>
 
-## Use 1 year free services
+## First year free services
 
 The clock is ticking:
 
@@ -149,11 +211,30 @@ PROTIP: It makes more sense to look at a live example populated with several res
 
    READ: <a target="_blank" href="https://microsoftlearning.github.io/AZ-900T0x-MicrosoftAzureFundamentals/Instructions/Walkthroughs/19-Use%20the%20Azure%20Pricing%20Calculator.html"><img width="20" alt="pricing" src="https://code.benco.io/icon-collection/azure-patterns/calculator-pricing-details.svg"></a> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/active-directory/">Azure Active Directory pricing</a>. Notice only the free version of Azure AD has that 500,000 <strong>object limit</strong>.
 
-   Premium P1 features include Password Protection (custom banned password).
+   Premium P1 features include Password Protection (custom banned password). Dynamic groups requires a Premium P1 license.
 
-   Premium P2 includes all P1 features, plus really cool "Identity Protection" which is Vulnerabilities and risky accounts detection, Risk based Conditional Access policies, 
+   Premium P2 includes all P1 features, plus really cool <strong>"Identity Protection"</strong> with these policies Assignment to all users:
 
-   "Identity Governance" include Privileged Identity Management (PIM), Access Reviews, and time-saving <a target="_blank"" href="https://docs.microsoft.com/en-us/azure/active-directory/governance/entitlement-management-overview">Entitlement Management</a>.
+   * Multi-factor authentication registration policy to Require MFT
+
+   * User risk remediation policy to require password change, with review of number of users impacted
+
+   * Sign-in remediation policy to automate analysis of signals from each sign-in, both real-time and offline, and calculates a risk score based on the probability that the sign-in wasn't performed by the user. Administrators can decide based on this risk score signal to enforce organizational requirements. Administrators can choose to block access, allow access, or allow access but require multi-factor authentication. If risk is detected, users can perform multi-factor authentication to self-remediate and close the risky sign-in event to prevent unnecessary noise for administrators.
+
+   * Investigate risks using data in the portal.
+
+   * Export risk detection data to third-party utilities for further analysis.
+
+   ### Risk Events
+
+   
+
+   Risk level and risk detail fields are hidden to those with just the Azure AD Premium P1 edition.
+
+   Advanced detections (such as unfamiliar sign-in properties) are not covered by your license, and will appear under the name Sign-in with additional risk detected. 
+
+   P2 "Identity Governance" include Privileged Identity Management (PIM), Access Reviews, and time-saving <a target="_blank"" href="https://docs.microsoft.com/en-us/azure/active-directory/governance/entitlement-management-overview">Entitlement Management</a>.
+
 
    ### Azure AD PIM RBAC
 
@@ -229,48 +310,12 @@ PROTIP: It makes more sense to look at a live example populated with several res
 8. Get a unique profile image and <a target="_blank" href="https://account.microsoft.com/profile/edit-picture?fref=home.banner.profile">add picture</a>.
 
 
-## Microsoft Azure Government
-
-   There is a separate <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/government/">Azure fed/state/local gov</a> is an isolated "soverign" DoD Level 5 cloud on US soil operated by US citizens. It has its own Marketplace of apps. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-welcome">What is gov?</a> 
-
-
 <a name="ASM"></a>
 
-### From ASM to ARM #
+### ASM obsoleted by ARM
 
 On July 1, 2019, Microsoft fully transitioned from the "classic" (older) Azure Service Management (ASM) when <a target="_blank" href="https://docs.microsoft.com/en-us/azure/multi-factor-authentication/multi-factor-authentication-faq">Multi-factor authentication (through the PhoneFactor Web (PFWeb) portal), API Management, BizTalk, and Managed Cache became available to the Azure Resource Manager (ARM).
 
-<table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom"><th> - </th><th> <a href="#ARM-signup">ARM</a> 
-   </th><th> <a href="#ASM">ASM</a>  </th></tr>
-<tr valign="top"><td> Name: </td><td>
-   Azure Resource Manager
-   </td><td> 
-   Azure Service Management
-   </td></tr>
-<tr valign="top"><td> Sign-up page: </td><td>
-   <a target="_blank" href="https://manage.windowsazure.com/"> manage.windowsazure.com</a>
-   </td><td> 
-   <a target="_blank" href="https://account.windowsazure.com/signup/"> 
-   account.windowsazure.com/signup</a>
-   </td></tr>
-<tr valign="top"><td> Dashboard page: </td><td>
-   <a target="_blank" href="https://portal.azure.com/"><strong><u>https://portal.azure.com</u></strong></a> or
-   <a target="_blank" href="https://portal.azure.us/">portal.azure.us</a> for US Government portal
-   </td><td>    
-   <a target="_blank" href="https://azure.com/">
-   azure.com</a> = <br /><a target="_blank" href="https://azure.microsoft.com/en-us/">azure.microsoft.com/en-us</a>
-   </td></tr>
-<tr valign="top"><td> Azure AD </td><td>
-   <a target="_blank" href="https://aad.portal.azure.com/"><strong><u>https://aad.portal.azure.com</u></strong></a> or
-   <a target="_blank" href="https://portal.azure.us/">portal.azure.us</a> for US Government portal
-   </td><td> -   
-   </td></tr>
-<tr valign="top"><td> Racks span: </td><td>
-   3 </td><td> 2  </td></tr>
-<tr valign="top"><td> Tagging: </td><td>
-   No </td><td> Yes </td></tr>
-</table>
 
 ASM had "Cloud Services" and "Affinity Groups"
 which is structured with Resource Groups (logical containers)
@@ -286,30 +331,7 @@ Also, instead of 2 racks, ARM resources can span 3 racks of computers.
 ARM handles Authentication for access to back-end Web App, Data Store, Virtual Machines, etc. from the Azure Portal GUI, PowerShell (Az module), CLI, and ARM IaC templates (by REST clients):
 
 
-<hr />
-
-<a name="ARM-signup"></a>
-
-### ARM Sign-up at Azure.com
-
-0. If you are not logged in, type <a target="_blank" href="https://azure.com/">azure.com</a> in your browser's address.
-
-   You'll get sent to a marketing page:<br />
-   <a target="_blank" href="https://azure.microsoft.com/en-us/">azure.microsoft.com/en-us</a>
-
-0. Click the <strong>portal</strong> link at the upper right corner.
-
-   This redirects you a list of Microsoft accounts that have been used on your computer.
-
-0. Click the account name (email) you use for Azure.
-
-0. Enter the password.
-
-   You redirected to various URLs until you land on a URL such as this containing your Tenant ID GUID:
-
-   https://portal.azure.com/#dashboard/private/a7a02378-1e4b-4017-972e-9dfe53bc2b2f
-
-   This is the <strong>Dashboard</strong>.
+## Initial Entry Azure Advisor pop-up
 
 0. Initial entry pop-up: Azure Advisor
 
@@ -450,13 +472,47 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 0. Click the X to close a blade.
 
 
-### User MFA (Multifactor Authentication)
+<hr />
 
-MFA comes with Azure AD Premium.
-
-Enrollment is needed.
+## Add User
 
 1. In the Users service: 
+
+   REMEMBER: different Sources of users:
+
+   * Windows Server AD, 
+   * Invited User, 
+   * Microsoft Account, 
+   * External Azure Active Directory
+   <br /><br />
+
+1. New guest user.
+1. Click New user.
+
+   Two ways to create a user: Create user and Invite user.
+
+1. Create a new user. Review Identity, Groups and roles, Settings, and Job Info.
+
+1. Going back to Azure AD, under Manage click Groups.
+
+1. Review the Group types: Security and Office 365.
+
+1. Create a new group by clicking “New Group” with the Membership type as Assigned.
+
+1. Add a user to the same group.
+
+1. Create another new group with Membership type as Dynamic user.
+
+1. Review the details to construct dynamic group membership rul
+es.
+
+
+   ### User MFA (Multifactor Authentication)
+
+   MFA comes with Azure AD Premium.
+
+   Enrollment is needed.
+
 1. Click "Multi-Factor Authentication" in the Command bar.
 
    This is because MFA is set in a different service.
@@ -488,11 +544,12 @@ Methods of MFA:
    <br /><br />
 
 
-<hr />
+<a name="AAD"></a>
 
 ## AAD (Azure Active Directory)
 
-PROTIP: Azure AD users and groups are created in a flat structure, with no Organizational Units (OUs) or Group Policy Objects (GPOs).
+PROTIP: Azure AD users and groups are created in a <strong>flat structure</strong>, with no Organizational Units (OUs) or Group Policy Objects (GPOs) as in classic Active Directory on-prem.
+
 
 ### SSPR (Self-Service Password Reset)
 

@@ -82,7 +82,7 @@ HITRUST Common Security Framework (CSF)</a> includes, harmonizes, and cross-refe
 
 <a name="iso27002"></a>
 
-## 
+## ISO 27002
 
 <a target="_blank" href="https://iso27001security.com/">https://iso27001security.com</a><br />
 ISO Code of practice for information security controls defines 114 controls grouped into 14 categories. REMEMBER:
@@ -654,6 +654,20 @@ RESPONSE:
 chmod: Unable to change file mode on /Users/wilsonmar/projects/WM/bin/jad.readme.txt: Operation not permitted
 
 <hr />
+
+<a name="ChangeMgmt"></a>
+
+## Change management
+
+<a target="_blank" href="https://www.youtube.com/watch?v=LGqZbiitiDw">VIDEO</a>: REMEMBER memonic: Ricard Rarely Approves The Scheduled Deployment
+
+1. Request the change
+2. Review the change
+3. Approve/reject the change
+4. Test the change
+5. Schedule and implement the change
+6. Document the change
+
 
 ## Docker CIS
 
@@ -1279,12 +1293,12 @@ Security program life cycle:
    * Architectural description (AD) refers to the set of documents that convey the architecture in a formal manner.
    <br /><br />
 
-Software Capability Maturity Model
+Software Capability Maturity Model - REMEMBER: I Read Data Maps Online
     1. Initial (chaotic, ad hoc, individual heroics) - the starting point for use of a new or undocumented repeat process.
-    2. Repeatable - the process is at least documented sufficiently such that repeating the same steps may be attempted.
+    2. Repeatable - process is at least documented sufficiently such that repeating the same steps may be attempted.
     3. Defined - the process is defined/confirmed as a standard business process.
-    4. Capable - the process is quantitatively managed in accordance with agreed-upon metrics.
-    5. Efficient - process management includes deliberate process optimization/improvement.
+    4. Managed/Capable - the process is quantitatively managed in accordance with agreed-upon metrics.
+    5. Optimized - process management includes deliberate process optimization/improvement.
     <br /><br />
 
 Process impprovement approaches:
@@ -1306,6 +1320,14 @@ Security program lifecycle:
    2. Implement
    3. Monitor and evaluate (review audit logs)
    4. Operate and Maintain (perform audits)
+   <br /><br />
+
+IDEAL model: REMEMBER: I Do Every Exam Live
+   1. Initiating - provide business reasons behind change
+   2. Diagnosing - need for changes by analysing current state
+   3. Establishing - plan of action from recommendations
+   4. Acting - develop, test, refine, implement solutions
+   5. Learning - analyzing results and proposing new actions
    <br /><br />
 
 Information life cycle:
@@ -1331,13 +1353,14 @@ The process of acquiring software:
    4.   Follow-up: When the software is in place, the organization must sustain the software, including managing risks and changes. At some point, it may be necessary for the organization to decommission the software.
    <br /><br />
 
-Incident response process:
-   1.   Detect the incident.
-   2.   Respond to the incident.
-   3.   Report the incident to the appropriate personnel.
-   4.   Recover from the incident.
-   5.   Remediate all components affected by the incident to ensure that all traces of the incident have been removed.
-   6.   Review the incident and document all findings.
+<a target="_blank" href="https://www.youtube.com/watch?v=LGqZbiitiDw&t=5m">VIDEO</a>: REMEMBER picmonic: Incident response process: DRMRRRL (drumroll)
+   1. Detect (identify) using monitoring tools, IPs, firewalls, users, notifications
+   2. Respond (triage) in decision to declare a real incident
+   3. Mitigate (correction & containment) with malware - disconnect device
+   4. Report the incident to relevant stakeholders (legal, customers, regulatory)
+   5. Recover (return to normal) from the incident.
+   6. Remediate (root cause) so all components affected by the incident to ensure that all traces of the incident have been removed.
+   7. Lessons Learned review of the incident and document all findings (to prevent reccurence)
    <br /><br />
 
 Incident response:
@@ -1417,11 +1440,12 @@ To establish a relationship with a third party which accesses organizational ass
    4. Audit the third party’s access to internal resources.
    <br /><br />
 
-Types of control:
-   * Directive
-   * Preventive
-   * Detective
-   * Responsive
+Types of control function:
+   * Preventive - Reduces the probability or impact of a threat, like firewalls.
+   * Detective - dentifies attacks as they happen, like surveillance.
+   * Corrective - Controls how the system responds to an ongoing attack, like system patches.
+   * Deterrent - Keeps attackers away from the system, like least privilege.
+   * Recovery - Recovers system from an attack, like backups.
    <br /><br />
 
    * Data backups are recovery <strong>logical controls</strong>. 
@@ -1430,6 +1454,12 @@ Types of control:
    * Disaster recovery plans are recovery administrative controls. 
    * Job rotation and background checks are <strong>detective administrative controls</strong>.
    <br /><br />
+
+Resolution  Description
+   * Avoid - The part of the system containing the issue will be cut.
+   * Reduce - Issue will be addressed with bug fixes or redesign to reduce or eliminate threat impact and severity.
+   * Transfer - Issue will be handled by another system or team.
+   * Accept - (without a resolution). Based on threat severity.
 
 DRP (Disaster Recovery Plan) defines "how" is implemented when the emergency occurs and includes the steps to restore functions and systems. Includes identification of specific hardware.
 DRP lifecycle phases:
@@ -1471,10 +1501,10 @@ Metrics defined by BIA (Business Impact Assessment): REMEMBER MTD &LT;= RTO + WR
    * Mean time between failure (MTBF) describes how often a component fails on average.
    <br /><br />
 
-ACID properties:
-   * Atomicity means that either all operations are complete or the database changes are rolled back. 
-   * Consistency means that the transaction follows an integrity process that ensures that data is consistent in all places where it exists. 
-   * Isolation means that the transaction does not interact with other transactions until completion.
+ACID properties: REMEMBER: Analysts Can Interpret Data
+   * Atomicity - either all operations are complete or changes are rolled back. 
+   * Consistency - transaction follows an integrity process that ensures that data is consistent in all places where it exists. 
+   * Isolation - transaction separately from each other, does not interact with other transactions until completion.
    * Durability is present when, once verified, the transaction is committed and cannot be rolled back. 
    <br /><br />
 

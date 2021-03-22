@@ -68,8 +68,8 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
 
    </td></tr>
 <tr valign="top"><td> AI Engineer
-   </td><td>* AI-900 AI Fundamentals<br />
-     * AI-100 Azure AI Engineer Associate
+   </td><td>* <a href="#AI-900">AI-900 AI Fundamentals</a><br />
+     * <a href="#AI-100">AI-100 Azure AI Engineer Associate</a>
 
    </td></tr>
 <tr valign="top"><td> Security Engineer
@@ -140,9 +140,16 @@ compute, storage, network, and security resources
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-administrator/?wt.mc_id=esi_lxp_webpage_wwl&tab=tab-learning-paths">Microsoft's tutorial</a> provides more managerial aspects</a> (such as governance) than others.
 
+A search of Microsoft Learn for "Administrator" and "Azure" <a target="_blank" href="https://docs.microsoft.com/en-us/learn/browse/?roles=administrator&wt.mc_id=esi_lxp_webpage_wwl&products=azure&resource_type=learning%20path">82 </a> <a target="_blank" href="https://docs.microsoft.com/en-us/learn/browse/?roles=administrator&wt.mc_id=esi_lxp_webpage_wwl&products=azure&resource_type=module">yielded 317 modules</a> over 14 pages (at time of writing). Most of them focus on a specific service/product:
+
+   * <a target="_blank" href="https://docs.microsoft.com/learn/modules/bash-introduction/">Intro to Bash</a>
+   * <a target="_blank" href="https://docs.microsoft.com/learn/modules/introduction-azure-firewall/">Intro to Azure Firewall</a>
+
 Video Lectures:
 
-2. Michael J. Shannon takes a deep dive on a lightboard in <a target="_blank" href="https://learning.oreilly.com/videos/exam-az-104-microsoft/9780136823483/9780136823483-A104_01_01_01">9+ hours of videos with transcript from OReilly</a> 
+1. Michael J. Shannon takes a deep dive on a lightboard in <a target="_blank" href="https://learning.oreilly.com/videos/exam-az-104-microsoft/9780136823483/9780136823483-A104_01_01_01">9+ hours of videos with transcript from OReilly</a> 
+
+* Pluralsight has <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-azure-administrator-az-104">a series of videos for each domain</a>
 
 * <a target="_blank" href="https://cloudacademy.com/learning-paths/az-104-exam-preparation-microsoft-azure-administrator-1-1332/">CloudAcademy's learning path</a>, by Thomas Mitchell, provides quizzes along the way and <strong>time on actual Azure instances</strong>.
 
@@ -175,6 +182,8 @@ Sample tests:
 
 1. Take a Practice Test (from MeasureUp) that feels just like the actual test, if you are enrolled in <a target="_blank" href="https://esi.microsoft.com/getcertification">Microsoft's Enterprise Skills Initiative</a>.
 
+   After sign-up, you get an email to register an account <a target="_blank" href="https://www.skillpipe.com/">https://www.skillpipe.com</a> then paste the license key from the email to redeem it on your <a target="_blank" href="https://www.skillpipe.com/#/bookshelf/books">bookshelf</a>, where you take the course.
+
 * <a target="_blank" href="https://app.pluralsight.com/paths/skills/microsoft-azure-administrator-az-104">Pluralsight</a>
 by Tim Warner with <a target="_blank" href="https://www.kaplanlearn.com/education/offeringdashboard/index/04347ac4e89b19f5ef7559ef6f975386">Kaplan sample exam</a>.
 
@@ -184,6 +193,12 @@ by Tim Warner with <a target="_blank" href="https://www.kaplanlearn.com/educatio
 ### SC-900 Security
 
 See https://wilsonmar.github.io/security-certifications
+
+Domains:
+* Manage identity and access (20-25%)
+* Implement platform protection (35-40%)
+* Secure data and applications (30-35%)
+* Manage security operations (15-20%)
 
 
 <a name="AZ-400"></a>
@@ -246,6 +261,39 @@ https://www.pluralsight.com/paths/microsoft-azure-architect-design-az-304
 
 <hr />
 
+<a name="DP-900"></a>
+
+## DP-900 Azure Data Fundamentals 
+
+https://learning.oreilly.com/live-training/courses/microsoft-azure-data-fundamentals-dp-900-crash-course/0636920051861/
+by Emilio Melo
+
+* https://learning.oreilly.com/videos/azure-overview-introduction/10009OVERVIEW/10009OVERVIEW-AZINTRO_16
+“Cloud and Azure Overview” section in Azure Overview: Introduction for Beginners (video)
+
+* https://learning.oreilly.com/search/?query=Exam%20DP-200%3A%20Implementing%20an%20Azure%20Data%20Solution%20Crash%20Course&formats=live%20online%20training&publishers=O%27Reilly%20Media%2C%20Inc.&sort=relevance
+Exam DP-200: Implementing an Azure Data Solution Crash Course (live online training course with Reza Salehi)
+
+* https://learning.oreilly.com/search/?query=Exam%20DP-201%3A%20Designing%20an%20Azure%20Data%20Solution%20Crash%20Course&formats=live%20online%20training&publishers=O%27Reilly%20Media%2C%20Inc.&sort=relevance
+Exam DP-201: Designing an Azure Data Solution Crash Course (live online training course with Reza Salehi)
+
+* https://learning.oreilly.com/videos/professional-azure-sql/9781789535495/
+ Professional Azure SQL Database Administration (video, 4h 58m)
+
+* https://learning.oreilly.com/videos/getting-started-with/9781484260203/
+Getting Started with Microsoft Cosmos DB Using C#: Cloud Database Support for .NET Applications (video, 1h 2m)
+
+* https://learning.oreilly.com/videos/learning-microsoft-power/9781789347104/
+Learning Microsoft Power BI (video, 3h 55m)
+
+* https://learning.oreilly.com/videos/create-an-azure/9781491989623/
+Create an Azure SQL Data Warehouse in Minutes (video, 1h 22m)
+
+* https://learning.oreilly.com/videos/information-management-using/9781491989647/
+Information Management Using Azure Data Factory (video, 1h 16m)
+
+
+
 <a name="DP-203"></a>
 
 ## DP-203 Azure Data Engineer Associate
@@ -281,22 +329,27 @@ DP-203 Learning Path:
 
 https://ravikirans.com/dp-203-azure-exam-study-guide/
 
-
 James Serra, Microsoft NYC
-   * https://www.youtube.com/watch?v=oylzwwmTkaM "Data Lakehouse"
-   * JamesSerra.com
+   * <a target="_blank" href="https://www.youtube.com/watch?v=oylzwwmTkaM">"Data Lakehouse"</a>
+   * (<a target="_blank" href="https://JamesSerra.com/">JamesSerra.com</a>
 
 The Azure Synapse platform (EDW and Data Lakes).
-   * Announced November 2019 - https://azure.microsoft.com/en-us/blog/azure-sql-data-warehouse-is-now-azure-synapse-analytics/
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/blog/azure-sql-data-warehouse-is-now-azure-synapse-analytics/">Announced November 2019</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=2DX7dgR8cEw">VIDEO: Azure Synapse Analytics - Introduction & Overview</a>
    * https://azure.microsoft.com/en-us/services/synapse-analytics/
    * SaaS service integrates Power BI visualization, Azure Machine Learning,  Azure Data Lake Storage Gen2 as a data warehouse and a consistent data model. Machine Learning models can be created and saved in ONNX format, which are stored within the Azure Synapse data store and used with the native PREDICT instruction.
    * Synapse Analytics Studio
    * https://www.sqlshack.com/understanding-azure-synapse-analytics-formerly-sql-dw/
-   * https://www.youtube.com/watch?v=2DX7dgR8cEw Azure Synapse Analytics - Introduction & Overview
 
 John McIntyre
    * https://www.youtube.com/watch?v=tMYOi5E14eU 2020
    * https://www.youtube.com/watch?v=dvP0JwchjfI 2019 "SQL Data Warehouse"
+
+<hr />
+
+## AI certifications
+
+See <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">my tutorial on Microsoft AI</a>
 
 
 ## More on Cloud #

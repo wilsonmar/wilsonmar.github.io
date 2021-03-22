@@ -16,155 +16,49 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This tutorial describes the use of PowerShell Core within the Azure cloud.
+This tutorial describes the install and coding of <strong>automation</strong> within the Azure cloud, using PowerShell, CLI, ARM templates in JSON, etc.
 
-Powershell refers to both the command-line shell and scripting language designed for system administration. 
-(When "PowerShell Core 6.0" was announced on January 10, 2018, the word "Powershell" on its own now refers to the decade-old "PowerShell" integrated into all recent versions of Microsoft's Windows operating system.)
+This is one of a series about Azure on my blog:
+   * <a target="_blank" href="">Azure Onramp</a> (accounts)
+   * Azure PowerShell install and coding
+   * Azure CLI install and coding
+   * Azure-specific Automation 
+   * Azure Compute (VM)
+   * Azure Storage
+   * Azure Functions (Serverless)
+   * Azure Monitoring
+   <br /><br />
 
-The new "PowerShell Core" is available as a cross-platform application such that scripts written on MacOS will run on Windows, Linux, or other supported operating system. This also means that PowerShell Core does not have commands associated with the .NET Framework (for Windows OS).
+<hr />
 
-This is similar to the rebranding of .NET vs. .NET Core. 
+## MacOS Install
 
-PowerShell <strong>cmdlets</strong> let you manage computers from the command line.
+1. Install PowerShell as described on my blog:
 
-See <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/learn/windows-powershell-glossary?view=powershell-6">Glossary of terms</a>
+   <a target="_blank" href="https://wilsonmar.github.io/powershell-on-mac/">wilsonmar.github.io/powershell-on-mac</a>
 
-## Install PowerShell Core
+1. These if errors below:
 
-PowerShell Core supports macOS 10.12 and higher.
-See <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-6">this for other os</a>
+   <pre>Update NuGet
+   Install-PackageProvider -Name NuGet -Force
+   Exit
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6">This</a>
-says "xcode-select --install" is needed as a pre-requisite.
-
-On MacOS:
-
-1. Install using Homebrew:
-
-   <pre><strong>brew install --cask powershell</strong></pre>
-
-   <pre>==> Downloading https://github.com/PowerShell/PowerShell/releases/download/v7
-==> Downloading from https://github-releases.githubusercontent.com/49609581/9
-...
-==> Installing Cask powershell
-==> Running installer for powershell; your password may be necessary.
-Package installers may write to any location; options such as `--appdir` are ignored.
-Password:
+   Update PowerShellGet
+   Install-Module -Name PowerShellGet -Force
+   Exit
    </pre>
 
-1. ATTENTION: Enter your laptop password when prompted.
+   ## Install PowerShell Scripts #
 
-   <pre>installer: Package name is PowerShell - 7.1.2
-installer: Installing at base path /
-installer: The install was successful.
-🍺  powershell was successfully installed!
-   </pre>
+   Run from the <a target="_blank" href="https://www.powershellgallery.com/items?itemType=PSModule">
+   Powershell Gallery</a> the Workflow to Download All Gallery Modules:
 
-
-   <a name="VerifyPSInstall"></a>
-
-1. Verify that your install is working properly:
-
-   <pre><strong>pwsh</strong></pre>
- 
-   The response at time of writing:
-
-   <pre>PowerShell 7.1.2
-Copyright (c) Microsoft Corporation.
-&nbsp;
-https://aka.ms/powershell
-Type 'help' to get help.
-PS /Users/...> 
-   </pre>
-
-   `PS` displayed means you are in the PowerShell shell. 
-
-   Gone is line: <a target="_blank" href="https://aka.ms/pscore6-docs">https://aka.ms/pscore6-docs</a>
-
-1. To get the current version of PowerShell and related components installed:
-
-   <pre><strong>$PSVersionTable</strong></pre>
-
-   The response at time of writing: on a Mac:
-
-   <pre>Name                           Value
-----                           -----
-PSVersion                      7.1.2
-PSEdition                      Core
-GitCommitId                    7.1.2
-OS                             Darwin 19.6.0 Darwin Kernel Version 19.6.0: …
-Platform                       Unix
-PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0…}
-PSRemotingProtocolVersion      2.3
-SerializationVersion           1.1.0.1
-WSManStackVersion              3.0
-   </pre>
-
-   On Windows 10:
-
-   <pre>Name                           Value
-----                           -----
-PSVersion                      5.0.10586.63
-PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
-BuildVersion                   10.0.10586.63
-CLRVersion                     4.0.30319.42000
-WSManStackVersion              3.0
-PSRemotingProtocolVersion      2.3
-SerializationVersion           1.1.0.1
-   </pre>
-
-   Compare against the response on Windows 7:
-
-   <pre>Name                           Value
-----                           -----
-CLRVersion                     2.0.50727.5420
-BuildVersion                   6.1.7601.17514
-PSVersion                      2.0
-WSManStackVersion              2.0
-PSCompatibleVersions           {1.0, 2.0}
-SerializationVersion           1.1.0.1
-PSRemotingProtocolVersion      2.1
-   </pre>
-
-1. Exit out of PS and into the Bash shell:
-
-   <pre><strong>exit</strong></pre>
-
-1. To enter PowerShell:
-
-
-   ### Upgrade PowerShell
-
-1. To upgrade:
-
-   <pre><strong>brew upgrade --cask powershell</strong></pre>
-
-1. <a href="#VerifyPSInstall">Verify PowerShell install</a> again.
-
-
-<a target="_blank" href="https://technet.microsoft.com/en-us/library/dn807169.aspx">
-Windows PowerShellGet Module</a> if you don't want to install these from the
-<a target="_blank" href="https://www.microsoft.com/web/downloads/platform.aspx">Web Platform Installer (wpilauncher.exe) at
-https://www.microsoft.com/web/downloads/platform.aspx</a>
-
-
-### Install for ARM Declarative Templates #
-
-   <strong>declarative syntax</strong> are defined
-   in Resource Manager <strong>templates</strong>
-   used by ARM to enable infrastructure configurations to be defined
-   (much like Puppet).
-
-
-### Install PowerShell Scripts #
-
-Run from the <a target="_blank" href="https://www.powershellgallery.com/items?itemType=PSModule">
-Powershell Gallery</a> the Workflow to Download All Gallery Modules:
-
-0. Click the "Deploy" button or:
+1. Click the "Deploy" button or:
 
    <pre><strong>Install-Script -Name Download-AllGalleryModules
    </strong></pre>
+
+   Response:
 
    <pre>Untrusted repository
 You are installing the scripts from an untrusted repository. If you trust
@@ -174,11 +68,12 @@ Set-PSRepository cmdlet. Are you sure you want to install the scripts from
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help
    </pre>
 
-0. Press A to accept install of all modules from an untrusted source.
+1. Press A to accept install of all modules from an untrusted source.
 
-   ??? this error:
+   BLAH: Response: See https://github.com/Azure/azure-powershell/issues/11772
 
-   <pre>Install-Package: /usr/local/microsoft/powershell/7/Modules/PowerShellGet/PSModule.psm1:10044                                                               Line |                                                                      10044 |  … talledPackages = PackageManagement\Install-Package @PSBoundParameters                                                                                |                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   <pre>Install-Package: /usr/local/microsoft/powershell/7/Modules/PowerShellGet/PSModule.psm1:10044                             Line 10044 |
+      | … talledPackages = PackageManagement\Install-Package @PSBoundParameters
       | The specified script file
       | '/var/folders/r7/_4wzn4hn6yb2xxlms995lnkc0000gn/T/1269304408/Download-AllGalleryModules.0.1.0/Download-AllGalleryModules.ps1' has parse errors, try again after fixing the parse errors.
    </pre>
@@ -195,56 +90,94 @@ Set-PSRepository cmdlet. Are you sure you want to install the scripts from
 0. Click Create.
 
 
+## AZ Versions & Upgrade
 
-   ### Connect into Azure
+1. List Azure Verbs
 
-1. To get the Azure sign-in screen pop-up in your default internet browser (Chrome):
+   <pre><strong>az
+   </strong></pre>
 
-   <pre><strong>Connect-AzAccount</strong></pre>
+   Response:
+   <pre>Welcome to the cool new Azure CLI!</pre>
 
-   ???
 
-   <pre>Connect-AzAccount: The term 'Connect-AzAccount' is not recognized as a name of a cmdlet, function, script file, or executable program.
-Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+1. List Azure version:
+
+   <pre><strong>az --version
+   </strong></pre>
+
+   <pre>azure-cli                         2.19.1 *
+core                              2.19.1 *
+telemetry                          1.0.6
+Extensions:
+azure-cli-iot-ext                  0.8.7
+Python location '/usr/local/Cellar/azure-cli/2.19.1/libexec/bin/python'
+Extensions directory '/Users/wilson_mar/.azure/cliextensions'
+Python (Darwin) 3.8.8 (default, Feb 21 2021, 08:26:42) 
+[Clang 12.0.0 (clang-1200.0.32.29)]
+Legal docs and information: aka.ms/AzureCliLegal
+You have 2 updates available. Consider updating your CLI installation with 'az upgrade'
+&nbsp;
+Please let us know how we are doing: https://aka.ms/azureclihats
+and let us know if you're interested in trying out our newest features: https://aka.ms/CLIUXstudy
+   </pre>
+
+1. Upgrade Azure:
+
+   <pre><strong>az upgrade
+   </strong></pre>
+
+   <pre>This command is in preview and under development. Reference and support levels: https://aka.ms/CLI_refstatus
+Your current Azure CLI version is 2.19.1. Latest version available is 2.20.0.
+Please check the release notes first: https://docs.microsoft.com/cli/azure/release-notes-azure-cli
+   </pre>
+
+1. List Regions = Locations with Providers:
+
+   <pre><strong>$FormatEnumerationLimit=-1 
+    Get-AzLocation
+   </strong></pre>
+
+   PROTIP: The format command expands elipsis (...) See https://greiginsydney.com/viewing-truncated-powershell-output/
+
+   <pre>
+Location    : eastasia
+DisplayName : East Asia
+Providers   : {Microsoft.Security, 84codes.CloudAMQP, LiveArena.Broadcast, Microsoft.AAD…}
    </pre>
 
 
+### Install for ARM Declarative Templates #
 
-### Make Imperative Commands #
-
-   Windows PowerShell <strong>providers</strong> access data stores, such as the Windows Registry and certificate store, as easily as you access the file system. 
-
-1. Install NuGet provider:
-
-   <pre><strong>Install-PackageProvider -Name NuGet -Force
-   </strong></pre>
-
-1. Get a count of how many commands for Azure module:
-
-   <pre><strong>Get-Command -Module Azure | Measure-Object
-   </strong></pre>
-
-   I got a count of 697 commands for just Azure for ASM.
-
-1. List Azure commands containing "vm" (virtual machine):
-
-   <pre><strong>Get-Command -Module Azure -noun *vm*
-   </strong></pre>
+   <strong>declarative syntax</strong> are defined
+   in Resource Manager <strong>templates</strong>
+   used by ARM to enable infrastructure configurations to be defined
+   (much like Puppet).
 
 
-### Enable PS1 execution #
-
-PowerShell commands can be script files with <strong>.ps1</strong> file extension.
-
-   <pre><strong>Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
-   </strong></pre>
-
-   On a Mac: Set-ExecutionPolicy: Operation is not supported on this platform.
+<hr />
 
 
-   ## Azure 
+## Install Azure Module
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/azure/install-azurermps-maclinux?view=azurermps-4.4.0">NOTE</a>:
+1. Within pwsh <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-6.13.0">:</a>
+
+   <pre><strong>Install-Module -Name Az -AllowClobber</strong></pre>
+
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/azure/install-az-ps">Install Azure PowerShell</a>
+
+1. Type A to respond:
+
+   <pre>Untrusted repository
+You are installing the modules from an untrusted repository. If you trust this repository, change its InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure you 
+want to install the modules from 'PSGallery'?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+   </pre>
+
+
+   ### Azure .NET Core Deprecated
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/powershell/azure/install-azurermps-maclinux?view=azurermps-4.4.0">NOTE</a>: We don't use "AzureRM...." modules/commands any more.
 
 0. Establish admin rights on MacOS:
 
@@ -256,42 +189,23 @@ PowerShell commands can be script files with <strong>.ps1</strong> file extensio
    <tt><strong>Install-Module AzureRM.NetCore
    </strong></tt>
 
-0. Press A for all to this prompt:
-
-   <pre>
-Untrusted repository
-You are installing the modules from an untrusted repository. If you trust this repository, change its InstallationPolicy value by running the 
-Set-PSRepository cmdlet. Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
-   </pre>
-
-   <strong>BLAH: This keeps me from going further:
-
-   <pre>
-PackageManagement\Install-Package : Administrator rights are required to install modules in 
-'/usr/local/microsoft/powershell/6.0.0-beta.7/Modules'. Log on to the computer with an account that has Administrator rights, and then try 
-again, or install '/Users/wilsonmar/.local/share/powershell/Modules' by adding "-Scope CurrentUser" to your command. You can also try running 
-the Windows PowerShell session with elevated rights (Run as Administrator).
-At /usr/local/microsoft/powershell/6.0.0-beta.7/Modules/PowerShellGet/1.1.3.2/PSModule.psm1:1867 char:21
-+ ...          $null = PackageManagement\Install-Package @PSBoundParameters
-+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidArgument: (Microsoft.Power....InstallPackage:InstallPackage) [Install-Package], Exception
-    + FullyQualifiedErrorId : InstallModuleNeedsCurrentUserScopeParameterForNonAdminUser,Install-PackageUtility,Microsoft.PowerShell.PackageMan 
-   agement.Cmdlets.InstallPackage
-   </pre>
+   No response is expected when successful.
 
 0. Load the module into your PowerShell session. Modules are loaded using the Import-Module cmdlet:
 
    <pre><strong>Import-Module AzureRM.Netcore</strong></pre>
+
+   <pre>WARNING: AzureRM.Netcore has been deprecated.  Use the 'Az' module instead.  The 'Az' module is avalable from the PSGallery https://www.powershellgallery.com/packages/Az/. You can find information about getting started with 'Az' at https://docs.microsoft.com/en-us/powershell/azure/new-azureps-module-az. To uninstall AzureRM.Netcore you can use the provided 'Uninstall-AzureRMNetcore' cmdlet.
+   </pre>
 
    http://www.signalwarrant.com/automate-creating-lab-virtual-machines-in-azure-with-powershell/
 
 
    ## Azure Environments (Clouds)
 
-   https://docs.microsoft.com/en-us/powershell/azure/authenticate-azureps?view=azurermps-4.4.0
+   <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/azure/authenticate-azureps?view=azurermps-4.4.0">READ</a>:
 
-0. Get a list of environments available:
+0. Get a list of Resoure Manager Environments available:
 
    <tt><strong>Get-AzureRmEnvironment | Select-Object Name
    </strong></tt>
@@ -306,7 +220,7 @@ AzureGermanCloud
 
 0. Create an Azure Service Principal if you don't have one
 
-   https://docs.microsoft.com/en-us/powershell/azure/create-azure-service-principal-azureps?view=azurermps-4.4.0
+   <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/azure/create-azure-service-principal-azureps?view=azurermps-4.4.0">READ</a>:
 
 0. Get your TenantId from your subscription after logging in interactively:
 
@@ -335,244 +249,129 @@ CurrentStorageAccount :
    PROTIP: Some put the above command in a command file with a short name.
 
 
-List Mangement Verbs
+1. Pop-up help for a command to a different window for multiple windows:
 
-   <pre><strong>azure
+   <pre><strong>help Get-AzureSubscription -ShowWindow
    </strong></pre>
 
-Clear Screen
 
-   <pre><strong>
-   cls
+<hr />
+
+## Alternative automation
+
+<a target="_blank" href="https://www.youtube.com/watch?v=8E63s2QlbhA&t=6m9s">VIDEO</a>
+
+### Pulumi
+
+Pulumi enables programmatic access to Azure in JavaScript for use by application-building devs.
+
+Pulumi does not generate templates.
+
+### Azure Bicep
+
+is an ARM DSL developed by the Azure team like Terraform
+
+### Farmer 
+
+Use simplified ".fs" DSL code that runs to spit out ARM template JSON files.
+
+1. In the folder containing the .fs file you want to run:
+
+   <pre><strong>dotnet run</strong></pre>
+
+https://compositionalit.github.io/farmer/
+
+https://github.com/compositionalit/farmer
+
+<hr />
+
+## Sign Into Azure
+
+zzz
+
+### Connect-AzAccount with credentials
+
+1. Obtain a browser URL to <strong>sign into</strong> your Azure account:
+
+   <pre><strong>Connect-AzAccount</strong></pre>
+
+   or
+
+   <pre><strong>Connect-AzureRmAccount</strong></pre>
+
+   Alternately, to get prompted in the CLI:
+
+   <pre>Login-AzAccount -Credential (Get-Credential)</pre>
+
+   Response:
+
+   <pre>PowerShell credential request
+Enter your credentials.
+User: 
+   </pre>
+
+1. On your default browser, pick (click on) the Microsoft account you want
+
+   <pre>Authentication complete. You can return to the application. Feel free to close this browser tab.</pre>
+
+1. Switch back to the Terminal to see Account (email), SubscriptionName, TenantId (GUI), Environment ("AzureCloud")
+
+1. See https://docs.microsoft.com/en-us/powershell/azure/new-azureps-module-az?view=azps-5.6.0
+
+
+### Authenticate into Azure Cloud #
+
+1. The easiest way:
+
+   <pre><strong>az login
    </strong></pre>
 
-Download help files:
+   The response:
 
-   <pre><strong>
-   update-help -force
-   </strong></pre>
+   <pre>The default web browser has been opened at https://login.microsoftonline.com/common/oauth2/authorize. Please continue the login in the web browser. If no web browser is available or if the web browser fails to open, use device code flow with `az login --use-device-code`.
+   </pre>
 
-Pop-up help for a command to a different window for multiple windows:
+1. Pick an account in your default internet browser.
+1. If you have MFA, answer it.
+1. You should see on the browser:
 
-   <pre><strong>
-   help Get-AzureSubscription -ShowWindow
-   </strong></pre>
+   <pre>You have logged into Microsoft Azure!
+You can close this window, or we will redirect you to the <u>Azure CLI documents</u> in 10 seconds.
+   </pre>
 
-### Authenticate #
+   The URL to Azure CLI documents is:
 
-   <pre><strong>
-   azure login
-   </strong></pre>
+   <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/">https://docs.microsoft.com/en-us/cli/azure</a>
 
-   Copy the code and open
-   <a target="_blank" href="https://aka.ms/devicelogin">https://aka.ms/devicelogin</a>
+1. Switch back to the CLI (on macOS: press command+tab).
 
-   <pre><strong>
-   azure account list
-   </strong></pre>
-
-   <pre><strong>
-   add-azureaccount
-   </strong></pre>
-
-   <pre><strong>
-   Get-AzureSubscription
-   </strong></pre>
-
-### Envrionment variables #
-
-To list, remember the colon at the end:
-
-   <pre><strong>
-   Get-ChildItem Env:
-   </strong></pre>
-
-For the value to a specific variable:
-
-   <pre><strong>
-   Get-ChildItem Env:PATHEXT
-   </strong></pre>
-
-Define a temporary environment variable:
-
-   <pre><strong>
-   $env:MyTestVariable = "A temporary test variable."
-   </strong></pre>
-
-Define a new permanent environment variable:
-
-   <pre><strong>
-   [Environment]::SetEnvironmentVariable("TestVariableName", "My Value", "<em>option</em>")
-   </strong></pre>
-
-   In option is either "Machine", "User", or "Process".
-
-
-### For loops #
-
-Based on http://www.symbiosysconsulting.com/pinging-from-powershell
-
-   <pre><strong>
-   1..254 | ForEach-Object { ping "192.168.0.$_" }
-   </strong></pre>
-
-   Notice "$_" is the placeholder variable for the range before the pipe.
-
-   This loops through a range of IP's within an internal subnet to show which ones respond:
-
-   <pre><strong>
-   (
-    (1..254) | % {
-        $ping = New-Object System.Net.NetworkInformation.Ping;
-        [Void](Register-ObjectEvent $ping PingCompleted -Action {
-            param($s, $e);
-            if($e.Reply.Status -eq "Success") {
-                Write-Host $e.Reply.Address, ($e.Reply.RoundtripTime.toString() + "ms")
-            }
-        })
-        $ping.SendPingAsync("192.168.0.$_")
-    }
-   ).Wait()
-   </strong></pre>
-
-Rather than looping:
-
-## Declarative Templates #
-
-Multiple services can be deployed at the same time (asychronously), as a group, along with their dependencies by
-using a <strong>group template</strong> that defines <strong>desired end state</strong>
-of application components.
-
-The Local Configuration Manager (LCM)  introduced in Windows PowerShell 5.0 is the engine of
-DSC = Desired State Configuration.
-
-Differences in each stage of the application lifecycle can be specified.
-
-This makes it easy to get a total bill by viewing the rolled-up costs for the entire group or for a group of resources sharing the same tag.
-
-See <a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/">
-Azure Resource Manager overview</a> by Tom FitzMacken.
-
-At <a target="_blank" href="http://github.com/Azure/">http://github.com/Azure</a> are<br />
-sample ARM JSON templates at <a target="_blank" href="https://github.com/Azure/azure-quickstart-templates/">
-azure-quickstart-template code</a> presented
-<a target="_blank" href="https://azure.microsoft.com/en-us/documentation/templates/">
-here</a>.
-
-Every template contains this:
-
-{% highlight json %}
-{
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "conventVersion": "1.0.0.0",
-    "parameters":{
-      "storageAccountUniqueName": {
-         "type": "String",
-         "metadata": {
-           "description": "Unique name of storage account"
-       }
-      "storageAccountType": {
-         "type": "String",
-         "defaultValue": "Standard_LRS",
-         "allowedValues": [
-              "Standard_LRS",
-              "Standard_GRS",
-              "Standard_RAGRS",
-              "Premium_LRS",
-          ]
-       }
-    }
-  },
-    "variables":{
-
-  },
-    "resources":{
-
-  },
-    "outputs":{
-
-  }
-}{% endhighlight %}
-
-### Types #
-
- * Standard_LRS = Locally Redundant Storage
- * Standard_GRS = Geographically Redundant Storage
- * Standard_RAGRS = Read Access Geographically Redundant Storage
- * Premium_LRS =
-
-## Override #
-
-Parameters can be overriden with separate parameter files references:
-
-{% highlight json %}
-{
-    "type": "Microsoft.Storage/storageAccounts",
-    "name": "variables('StorageAccountName')",
-    "location": "[resourceGroup().location]",
-    "apiVersion": "2015-05-01-preview",
-    "propterties": {
-      "accountType": "[parameters('storageAccountType')]"
-    }
-}{% endhighlight %}
-
-"[resourceGroup().location]" enables the resource group to span across regions.
-
-## Load Balancer #
-
-An example DNS host name is mydeployment.eastus.cloudapp.azure.com, IP 23.99.9.198.
-
-Up to 100 vms can be supported by a Load Balancer.
-
-NAT rules on the Load Balancer route inbound traffic dynamically or statically to reserved IPs.
-
-## Virtual Machine images #
-
-An example declarative template would include:
-
-{% highlight json %}
-    "imageReference": {
-      "publisher": "MicrosoftSQLServer",
-      "offer": "SQL2014-WS2012R2",
-      "sku": "Standard",
-      "version": "latest"
-    }{% endhighlight %}
-
-publisher options:
-
-   * "MicrosoftSQLServer"
-   * redhat
-   * barracuda
-
-sku options:
-
-   * "Standard"
-   * "Web"
-   * "Enterprise"
-   * "EnterpriseOptimized"
-   * "EnterpriseOptimizedDW" for Data Warehouse needing fast read but can tolerate slower bulk writes
-   * "EnterpriseOptimizedOLTP" needing fast read and fast write
-
-"offer" options:
-
-   * "SP2014SP1-WS2012R2"
-   * "SQL2014-WS2012R2"
-   * etc.
-
-The equivalent
-
-* Get-AzureRmVMImagePublisher -Location $locName | select PublisherName
-* Get-AzureRmVMImageOffer -Location $locName -PublisherName $Publisher
-* Get-AzureRmVMImageSku -Location $locName -PublisherName $Publisher -Offer $offer
 
 ## Resources
 
 1. <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-7">doc.microsoft.com: What is PowerShell?</a>
 
-1. <a target="_blank" href="https://app.pluralsight.com/library/courses/powershell-getting-started/table-of-contents">Pluralsight VIDEO: "PowerShell 7.0.3: Getting Started" 3h 4m 14 Sep 2020</a> by Michael Bender (@MichaelBender, itsallgeek2mike.com)
+1. <a target="_blank" href="https://app.pluralsight.com/library/courses/powershell-getting-started/table-of-contents">Pluralsight VIDEO: "PowerShell 7.0.3: Getting Started" 3h 4m 14 Sep 2020</a> by Michael Bender (@MichaelBender, <a target="_blank" href="https://www.itsallgeek2mike.com/">itsallgeek2mike.com</a>)
 
-## More on DevOps #
+1. https://docs.microsoft.com/en-us/azure/key-vault/general/tutorial-net-create-vault-azure-web-app
 
-This is one of a series on DevOps:
+1. https://www.oneidentity.com/products/active-roles/
+
+
+   ## Generate a visual diagram
+
+1. Use VSCode "ARM Viewer" to generate a visual diagram 
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=ek8ArrOfJxA">VIDEO: Generate an Architecture Diagram</a>using <a target="_blank" href="https://diagrams.net">diagrams.net</a> 
+
+   https://rules.ssw.com.au/architecture-diagram
+
+   https://rules.ssw.com.au/azure-resources-diagram
+
+   https://rules.ssw.com.au/azure-resources-creating
+
+
+## More on DevSecOps #
+
+This is one of a series on DevSecOps:
 
 {% include devops_links.html %}
