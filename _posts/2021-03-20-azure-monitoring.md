@@ -152,8 +152,9 @@ Telemetry such as events and traces are stored as logs in addition to performanc
       * Azure Services<br />
       * Scenarios (How to's)<br />
       * Solutions
-   <br /><br />
-
+   </td></tr></table>
+   
+   Solution(s):
    <table border="1" cellpadding="4" cellspacing="0">
    <tr><th>Same</th><th>In Portal GUI</th></tr>In repo</th></tr>
    <tr valign="top"><td>
@@ -184,7 +185,7 @@ Telemetry such as events and traces are stored as logs in addition to performanc
       </td></tr>
    </table>
 
-1. In the repo README file, click "Log Analytics Demo Enviornment" to open in Portal:
+1. In the repo README file, click "Log Analytics Demo Enviornment" to open a new Portal tab:
 
    <a target="_blank" href="
    https://portal.loganalytics.io/demo">
