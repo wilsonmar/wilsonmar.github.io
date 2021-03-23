@@ -137,6 +137,10 @@ Telemetry such as events and traces are stored as logs in addition to performanc
 
    <strong>Workbooks</strong> combine multiple sets of data in an interactive report (visualization).
 
+   <a name="KQL_folders"></a>
+
+   ### KQL folders
+
    Folders in the repo have different items than in groupings Portal GUI:
 
    <table border="1" cellpadding="4" cellspacing="0">
@@ -144,13 +148,13 @@ Telemetry such as events and traces are stored as logs in addition to performanc
    <tr valign="top"><td>
       * Solution(s) - <em>see comparion table below</em>
       </td><td>
-      * Category (of architecture)<br />
+      * Category <em>(of architecture)</em><br />
       * Resource Type<br />
       * Solution<br />
       * Topic
       </td><td>
       * Azure Services<br />
-      * Scenarios (How to's)<br />
+      * Scenarios <em>(How to's)</em><br />
       * Solutions
    </td></tr></table>
    
@@ -192,7 +196,19 @@ Telemetry such as events and traces are stored as logs in addition to performanc
    https://portal.loganalytics.io/demo</a>
 
 1. Click "Query explorer" tab at the right.
-1. Expand "favorites":
+1. Expand "Solution Queries":
+
+   * Active Directory Health Check
+   * Alert Management
+   * Antimalware Assessment
+   * Change Tracking
+   * Security and Audit
+   * SQL Health Check
+   * Update Management
+   * Wire data
+   <br /><br />
+
+1. Expand "Favorites":
 
    * All Syslog records with errors
    * Available memory (MB) per hour for computers that are named "Contoso*"
@@ -208,13 +224,12 @@ Telemetry such as events and traces are stored as logs in addition to performanc
 
 ### Log Analytics (LA)
 
-VIDEO: https://youtu.be/T2Vpi6ph8ck
-
+<a target="_blank" href="https://youtu.be/T2Vpi6ph8ck">VIDEO</a>,
 VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=-aMecR2Nrfc&list=PLLasX02E8BPCCsHzNLJjcElCwF52rnh6t">How to get started with Azure Monitor Log Analytics</a>
 
-![azure-log-analytics-711x306-35708](https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg)
+Log Analytics reads data sources to create virtual tables in <a href="#LA_Workspaces">workspaces</a> for use by <a href="#KQL">KQL queries</a>.
 
-Log Analytics is the primary tool in the Azure portal for writing log queries and interactively analyzing their results. Even if a log query is used elsewhere in Azure Monitor, you'll typically write and test the query first using Log Analytics.
+![azure-log-analytics-711x306-35708](https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg)
 
 How you start Log Analytics within Azure Portal limits the <strong>scope of data</strong> available: ???
    * From Log Analytics workspaces menu
@@ -222,10 +237,35 @@ How you start Log Analytics within Azure Portal limits the <strong>scope of data
    * From an Azure resource menu, select "Logs".
    <br /><br />
 
-<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h24m40s">VIDEO</a>
+
+<a name="LA_Workspaces"></a>
+
+### LA Workspaces
+
+1. In Portal search for "Log Analytics workspaces".
+1. + Create (previously Add) an instance.
+1. Specify the resource group you defined earlier.
+1. Type name based on your Naming Guidelines.
+1. Next: Pricing
+1. Review + Create, Create.
+
+   "OMS" (Operations Management Suite) is legacy branding which hasn't been updated.
+
+1. Go to Resource.
+1. Click "<<" at the top of the Portal menu to hide it for more room.
+1. Scroll down to "Workspace Data Sources" -> Virtual machines.
+1. Click a VM running.
+
+### Network Performance Monitor (NPM)
+
+1. In a Log Analytics workspace, click General: Solutions.
+1. 
+
+
+
+### Log Analytics 
 
 TASK: Connect Activity Logs from various Subscriptions to a Azure Montitor Logs (prev. aka Log Analytics) for up to 90 days.
-
 
 1. From the "Monitor" menu, select "Logs" for "Log Analytics".
 
@@ -254,30 +294,62 @@ TASK: Connect Activity Logs from various Subscriptions to a Azure Montitor Logs 
    Data sources and solutions each create different record types, each with its own set of properties. But you can still analyze sources and solutions together in queries to the workspace. This capability allows you to use the same tools and methods to work with a variety of data collected by a variety of sources.
 
 
+<a name="KQL"></a>
 
 ## Kusto query language (KQL)
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/data-explorer/">DOCS</a>:
 
 Kusto is named after pioneering Oceanographer Jacque Custou (pronounced "Kusto").
 Like the language, he dove deep into a vast ocean for new insights.
 
 The language is read-only, of up to 5 GB.
 
-References:
+KQL is used in several Azure products, include the ADX managed SaaS service (GA 2019) for big data exploration in NRT (Near Real Time):
 
-   * 4 hr VIDEO COURSE: <a target="_blank" href="https://www.pluralsight.com/courses/kusto-query-language-kql-from-scratch" title="20 Jun 2018">
-   Kusto Query Language (KQL) from scratch</a>
-   by Robert Cain
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/sqlcheatsheet">Compared to SQL</a>, KQL is less verbose 
+but is <strong>proprietary to Microsoft</strong>.
+
+References:
 
    * 2.45 hr VIDEO COURSE: <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-data-exploring/table-of-contents" title="12 Sep 2019">
    Exploring Data in Microsoft Azure Using Kusto Query Language and Azure Data Explorer</a>
    by Neeraj Kumar (@mstechtrainings)
    <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=d8b7a63f-4f04-4df6-895d-7441148d65c1">makes use of NOAA's Storm Events Database</a>.
+
+   * <a target="_blank" href="https://www.pluralsight.com/courses/microsoft-azure-data-explorer-starting">4h VIDEO COURSE:
+   How to Start with Microsoft Azure Data Explorer</a> (ADX) 29 Jun 2020
+   by Xavier Morera
+   * https://www.pluralsight.com/partners/microsoft/azure-data-explorer
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/data-explorer/security-baseline">https://docs.microsoft.com/en-us/azure/data-explorer/security-baseline</a>
    <br /><br />
 
-<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=5d02bb1a-8e72-4e31-9955-e6f34dc7a37d">VIDEO</a> 
-1. Copy and paste <a target="_blank" href="https://aka.ms/LADemo">https://aka.ms/LADemo</a>
+   * <a target="_blank" href=""https://azure-training.com/azure-data-science/the-kusto-query-language/">This article on KQL</a> is one of Neeraj Kumar's excellent <a target="_blank" href="https://azure-training.com/azure-data-science/">series on data science using Azure</a>.
 
-   Although it no longer goes to portal.loganalytics.io, demo data does appear.
+   * https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/best-practices
+
+Hands-on:
+
+<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=5d02bb1a-8e72-4e31-9955-e6f34dc7a37d">VIDEO</a> 
+
+1. Open demo data from Microsoft:
+
+   <a target="_blank" href="https://aka.ms/LADemo">https://aka.ms/LADemo</a> which resolves to:<br />
+   <a target="_blank" href="
+   https://portal.loganalytics.io/demo">
+   https://portal.loganalytics.io/demo</a>
+
+1. Click the book icon at the right and select "Online course" for:
+
+   4 hr VIDEO COURSE: <a target="_blank" href="https://www.pluralsight.com/courses/kusto-query-language-kql-from-scratch" title="20 Jun 2018">
+   Kusto Query Language (KQL) from scratch</a>
+   by Robert Cain, who also has an <a href="#KQL_ADE">Advanced course</a>.
+
+1. Click the book icon at the right and select "Language Reference" for:
+
+   https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/
+   
+   Observe that KQL is part of Azure Data Explorer.
 
 1. Click "Query explorer" tab at the right.
 1. Expand "Saved Queries"
@@ -425,6 +497,8 @@ References:
 1. Create visualizations, etc. 
 
 
+   <a name="KQL_ADE"></a>
+
    ### KQL in Data Explorer
 
 1. <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-data-explorer-advanced-query-capabilities/table-of-contents">VIDEO course Microsoft Azure Data Explorer - Advanced KQL</a> by Robert Cain.
@@ -451,7 +525,9 @@ References:
 1. <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-data-exploring">Exploring Data in Microsoft Azure Using Kusto Query Language and Azure Data Explorer</a>, download exercise file microsoft-azure-data-exploring.zip (to your Downloads folder) and unzip. In folder coursfiles, ??
 
 
+KQL References:
 
+   * https://docs.microsoft.com/en-us/sharepoint/dev/general-development/keyword-query-language-kql-syntax-reference
 
 
 <a name="MetricData"></a>
@@ -737,10 +813,13 @@ To on-board Azure Sentinel:
 
 References:
 
-MS LEARN: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/tm-threat-modeling-fundamentals/">Threat Modeling Fundamentals</a>:
+   * MS LEARN: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/tm-threat-modeling-fundamentals/">Threat Modeling Fundamentals</a>:
 
    * READ: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/tm-introduction-to-threat-modeling/">Intro to Threat Modeling</a>
 
+   * BOOK <a target="_blank" href="https://learning.oreilly.com/library/view/learn-azure-sentinel/9781838980924">Learn Azure Sentinel</a>
+
+   * https://learning.oreilly.com/library/view/microsoft-azure-sentinel/9780136485506
 
 ## Stay Up to Date
 
