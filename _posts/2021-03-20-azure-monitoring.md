@@ -137,6 +137,7 @@ Telemetry such as events and traces are stored as logs in addition to performanc
 
    <strong>Workbooks</strong> combine multiple sets of data in an interactive report (visualization).
 
+
    <a name="KQL_folders"></a>
 
    ### KQL folders
@@ -258,10 +259,27 @@ How you start Log Analytics within Azure Portal limits the <strong>scope of data
 
 ### Network Performance Monitor (NPM)
 
+<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=dfa3a215-bad0-4842-9822-a9c922112f53">VIDEO</a>:
+
+1. "+ Create a resource".
+1. In Search in the Marketplace, type enough of "Network Performance Monitor" to select it.  Notice it's "Solarwinds".
+1. Click the blue Create.
+1. Create new Resource Group and define a VM server.
+
+   ...
+
+1. Get connected to a valid workspace.
 1. In a Log Analytics workspace, click General: Solutions.
-1. 
 
+1. Download Windows Agent into each subnet.
 
+   ... synthetic transactions
+
+1. The full list of columns in table "NetworkMonitoring" is
+
+   <a target="_blank" href="
+   https://docs.microsoft.com/en-us/azure/azure-monitor/reference/tables/NetworkMonitoring">
+   https://docs.microsoft.com/en-us/azure/azure-monitor/reference/tables/NetworkMonitoring</a>
 
 ### Log Analytics 
 
@@ -373,6 +391,12 @@ Hands-on:
    CounterValue | CounterPath | StandardDeviation | Type | 
 
    _ResourceID | TenantID | SourceSystem | MG
+
+1. PROTIP: The full list of columns for this and all other tables is:
+
+   <a target="_blank" href="
+   https://docs.microsoft.com/en-us/azure/azure-monitor/reference/tables/perf">
+   https://docs.microsoft.com/en-us/azure/azure-monitor/reference/tables/perf</a>
 
 1. Set the Time Frame or set in the script text:
 
@@ -753,6 +777,7 @@ Azure Security Center ??? through <a href="#Event_Hubs">Azure Event Hubs</a> - a
 
 Processed events that Azure Security Center produces are published to the <strong>Azure activity log</strong>, one of the log types available through Azure Monitor. Azure Monitor offers a consolidated pipeline for routing any of your monitoring data into a SIEM tool. This is done by streaming that data to an event hub, where it can then be pulled into a partner tool.This pipe uses the Azure Monitor single pipeline for getting access to the monitoring data from your Azure environment. This allows you to easily set up SIEMs and monitoring tools to consume the data. Currently, the exposed security data from Azure Security Center to a SIEM consists of security alerts."
 
+https://github.com/ned1313/Monitor-Security-with-Azure-Security-Center
 
 ??? Azure Security Center stores data that it collects in a Log Analytics workspace where it can be analyzed with other log data.
 
@@ -823,16 +848,17 @@ References:
 
 ## Stay Up to Date
 
-https://www.youtube.com/watch?v=LOjBMJqOp6Q
-Azure Monitor: The essentials every admin should know
-by KnowOps
-
-https://www.youtube.com/watch?v=-aMecR2Nrfc&list=PLLasX02E8BPCCsHzNLJjcElCwF52rnh6t
-
-
+From Microsoft:
 * <a target="_blank" href="https://aka.ms/MonitoringDocs">Azure Monitoring Documentation</a>
 * <a target="_blank" href="https://aka.ms/AzMonSkills">Useful Skills & courses</a>
 * <a target="_blank" href="https://aka.ms/AzMonStories">Case Studies</a>
+<br /><br />
+
+<a target="_blank" href="https://www.youtube.com/watch?v=LOjBMJqOp6Q">
+Azure Monitor: The essentials every admin should know</a>
+by KnowOps
+
+https://www.youtube.com/watch?v=-aMecR2Nrfc&list=PLLasX02E8BPCCsHzNLJjcElCwF52rnh6t
 
 <a target="_blank" href="https://www.youtube.com/watch?v=-aMecR2Nrfc&list=PLLasX02E8BPCCsHzNLJjcElCwF52rnh6t&index=1">Microsoft's YouTube channel for Azure Monitoring</a>
 
@@ -844,3 +870,6 @@ VIDEO COURSE: <a target="_blank" href="https://www.pluralsight.com/courses/azure
 This is one of a series on Azure:
 
 {% include devops_links.html %}
+
+
+User Defined Routes and NVA (Network V A)

@@ -784,6 +784,7 @@ Certified Kubernetes Application Developer (CKAD) Prep Course</a> July 2019 [4h 
 <a target="_blank" href="https://github.com/bmuschko/ckad-study-guide">https://github.com/bmuschko/ckad-study-guide</a>
 and <a target="_blank" href="https://github.com/bmuschko/ckad-crash-course">https://github.com/bmuschko/ckad-crash-course "In-depth and hands-on practice for acing the exam"</a> by Benjamin Muschko (@bmuschko, <a target="_blank" href="https://www.bmuschko.com/">bmuschko.com</a>, <a target="_blank" href="https://www.automatedascent.com/">automatedascent.com</a>) 
 
+https://github.com/bmuschko/cka-crash-course
 
 <a target="_blank" href="https://learning.oreilly.com/videos/certified-kubernetes-application/">
 7h video class over 3 days live course</a> by <a target="_blank" href="https://www.linkedin.com/in/sandervanvugt/">Sander van Vugt</a>, who, as a Linux expert, provides in-depth CentOS install advice (including SELinux) and <a target="_blank" href="https://github.com/sandervanvugt/ckad">files</a> available nowhere else. His diagrams are on a lightboard. <!-- mail@sandervanvugt.nl -->

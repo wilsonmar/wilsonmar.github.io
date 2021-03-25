@@ -87,6 +87,35 @@ Andrew Brown offers this diagram:
 
 <hr />
 
+## Microsoft Learning
+
+1. <a target="_blank" href="https://esi.microsoft.com/">Microsoft's Enterprise Skills Initiative</a>. Sign in with your corporate email.
+1. https://esi.microsoft.com/deliverymultiday 
+1. Search for a class by checking different time zones.
+
+   PROTIP: Instructor may not provide a file of their PowerPoint file.
+
+1. The Skillpipe.com provided with registration may not be created to align with the live course's lab.
+
+1. In the registration email, "click here to join the training" makes use of Microsoft Teams. So install it. 
+1. Once in Teams, click Show conversation icon. 
+
+   QUESTION: How to get rid of participant list at bottom of screen?
+
+1. aka.ms/az500labs
+
+1. Browser "Join conversation" can be dismissed once you're in Teams app.
+1. To participate in quizes https://m??? and provide a code from trainer.
+1. To get to lab: on Chrome open a Guest profile to access <a target="_blank" href="https://esi.learnondemand.net">https://esi.learnondemand.net</a> using a code given by the instructor (such as "E059CE1A"). It pop up a window at https://labclient.labondemand.com. Sign in using your personal email.
+1. Redeem training key provided by trainer.
+1. Launch at https://esi.learnondemand.net/Lab/... 
+1. Click the working form field you want to fill before clicking gthe "T" icon to paste into the working screen.
+1. Lab instructions are also GitHub (such as https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies)
+1. If your lab is frozen, Reconnect:
+
+   ![az-certs-labclient-reconnect-170x137](https://user-images.githubusercontent.com/300046/112444873-1c625200-8d14-11eb-9b67-f1bfe5a76a9b.png)
+
+
 <a name="#AZ-900"></a>
 
 ## AZ-900 Azure Fundamentals

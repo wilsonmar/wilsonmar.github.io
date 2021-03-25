@@ -982,6 +982,7 @@ The solution makes use of an new extension to the SSH protocol implemented by Gi
 References:
    * <a target="_blank" href="https://github.blog/2019-08-14-ssh-certificate-authentication-for-github-enterprise-cloud/">https://github.blog/2019-08-14-ssh-certificate-authentication-for-github-enterprise-cloud</a> announces "SSH certificate authentication for GitHub Enterprise Cloud" August 14, 2019 by <a target="_blank" href="https://www.linkedin.com/in/benjamin-toews-80bba620/">Ben Toews</a>
    * <a target="_blank" href="https://github.blog/changelog/2019-08-15-ssh-certificate-authentication-for-github-enterprise-cloud/">https://github.blog/changelog/2019-08-15-ssh-certificate-authentication-for-github-enterprise-cloud/</a>
+   * <a target="_blank" href="https://dev.to/himadriganguly/configure-ssh-server-with-key-based-and-two-factor-authentication-3oc2">SSH 2FA</a>
    <br /><br />
 
 The SSH protocol extension involves an additional <strong>SSH certificate file</strong> added to Git requests. 
