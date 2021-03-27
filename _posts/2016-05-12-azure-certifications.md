@@ -89,28 +89,55 @@ Andrew Brown offers this diagram:
 
 ## Microsoft Learning
 
+<a target="_blank" href="https://events.microsoft.com/?timeperiod=next30Days&isSharedInLocalViewMode=true&country=United%20States&language=English">Microsoft Events</a>
+
 1. <a target="_blank" href="https://esi.microsoft.com/">Microsoft's Enterprise Skills Initiative</a>. Sign in with your corporate email.
 1. https://esi.microsoft.com/deliverymultiday 
 1. Search for a class by checking different time zones.
 
-   PROTIP: Instructor may not provide a file of their PowerPoint file.
+   ### Skillpipe online class
 
-1. The Skillpipe.com provided with registration may not be created to align with the live course's lab.
+1. PROTIP: Allocate time on your personal calendar to go through the online Skillpipe class before attending the live class. You'll be less confused and stressed during the class, and enjoy it more.
 
-1. In the registration email, "click here to join the training" makes use of Microsoft Teams. So install it. 
+   CAUTION: The Skillpipe.com provided with registration may not be created to align with the live course's lab.
+
+
+   ### Join live class
+
+1. In the registration email, "click here to join the training" makes use of Microsoft Teams. So install or upgrade it before the class.
+
+   PROTIP: It helps to have a secone screen: one to view instructions, another for notes.
+
 1. Once in Teams, click Show conversation icon. 
 
    QUESTION: How to get rid of participant list at bottom of screen?
 
-1. aka.ms/az500labs
-
 1. Browser "Join conversation" can be dismissed once you're in Teams app.
-1. To participate in quizes https://m??? and provide a code from trainer.
-1. To get to lab: on Chrome open a Guest profile to access <a target="_blank" href="https://esi.learnondemand.net">https://esi.learnondemand.net</a> using a code given by the instructor (such as "E059CE1A"). It pop up a window at https://labclient.labondemand.com. Sign in using your personal email.
+1. To participate in quizzes <a target="_blank" href="https://www.menti.com/">menti.com/</a> is used with a code from trainer.
+
 1. Redeem training key provided by trainer.
-1. Launch at https://esi.learnondemand.net/Lab/... 
+
+1. To get to lab: on Chrome open a Guest profile to access <a target="_blank" href="https://esi.learnondemand.net">https://esi.learnondemand.net</a> using a code given by the instructor (such as "E059CE1A"). It pop up a window at https://labclient.labondemand.com. Sign in using your personal email.
+1. Click the class link.
+
+   PROTIP: Instructor may not provide a file of their PowerPoint file.
+
+   ### Labs during live class
+
+   PROTIP: Allocate time on your personal calendar to finish or review labs.
+   Notice the 4-day class goes Monday-Friday 9am-5pm at the local time zone.
+
+1. Click blue Launch button at https://esi.learnondemand.net/Lab/... 
+
+1. aka.ms/az500labs
+1. To search within lab instructions, see GitHub (such as https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies)
+
+   You can't paste from your regular Clipboard into the VM.
+
 1. Click the working form field you want to fill before clicking gthe "T" icon to paste into the working screen.
-1. Lab instructions are also GitHub (such as https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies)
+
+   Notice that the Subscription is "Azure pass - Sponsorship".
+
 1. If your lab is frozen, Reconnect:
 
    ![az-certs-labclient-reconnect-170x137](https://user-images.githubusercontent.com/300046/112444873-1c625200-8d14-11eb-9b67-f1bfe5a76a9b.png)
@@ -223,11 +250,22 @@ by Tim Warner with <a target="_blank" href="https://www.kaplanlearn.com/educatio
 
 See https://wilsonmar.github.io/security-certifications
 
+<a target="_blank" href="https://www.youtube.com/watch?v=Bz-8jM3jg-8">VIDEO</a><a target="_blank" href="https://github.com/johnthebrit/RandomStuff/blob/master/SC-900ReviewWhiteboard.svg">*</a>
+
+SC-900 60 minutes to answer 50 single-line mulitple-choice questions about features (not configuration).
+Includes M365 Defender and Compliance Center.
+
 Domains:
 * Manage identity and access (20-25%)
 * Implement platform protection (35-40%)
 * Secure data and applications (30-35%)
 * Manage security operations (15-20%)
+
+<a name="AZ-500"></a>
+
+## Security certifications
+
+https://www.thomasmaurer.ch/2020/05/az-500-study-guide-microsoft-azure-security-technologies-2021/
 
 
 <a name="AZ-400"></a>
@@ -376,10 +414,28 @@ John McIntyre
 
 <hr />
 
+
+<a name="AI-900"></a>
+<a name="AI-100"></a>
+
 ## AI certifications
 
-See <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">my tutorial on Microsoft AI</a>
+<a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">my tutorial on Microsoft AI</a>
 
+<a target="_blank" href="https://www.youtube.com/watch?v=fQhgRR_Vtus&list=PLHh_n2lgzcrvecPJ-zMukLlDrq0GMSMmB&index=3">
+AI-900 Sample Practice Exam Questions</a>
+
+<a target="_blank" href="https://ravikirans.com/ai-900-azure-exam-study-guide/">
+AI-900 Study Guide</a>
+
+
+## References
+
+<a target="_blank" href="https://ravikirans.com/category/azure-certification/">
+Ravikiran Azure Certs</a>
+
+
+https://aka.ms/ESIStudyGuides
 
 ## More on Cloud #
 
