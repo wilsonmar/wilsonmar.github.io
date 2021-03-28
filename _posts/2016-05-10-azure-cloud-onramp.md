@@ -48,15 +48,35 @@ PROTIP: Bookmark these links
 
 <a name="USGov"></a>
 
-## Microsoft Azure Government
+### Microsoft Azure Government
 
    There is a separate <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/government/">Azure fed/state/local gov</a> is an isolated "soverign" DoD Level 5 cloud on US soil operated by US citizens. It has its own Marketplace of apps. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-welcome">What is gov?</a> 
+
+   For example, <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/compare-azure-government-global-azure">endpoints</a> for    Speech Studio Speech translation :
+   * Virginia: https://usgovvirginia.s2s.speech.azure.us
+   * Arizona: https://usgovarizona.s2s.speech.azure.us
+   <br /><br />
+
+   https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/
+
+## Browser Profiles
+
+When you return to the Portal, Azure knows your account becuase it stores a "cookie" in your browser.
+
+That is a hassle when you're switching among different Azure accounts.
+
+PROTIP: So if you're using Google Chrome, click the Chrome avatar at the upper-right corner to create a different profile for each Azure account.
+
+   * <a href="#MSAccount">Learn account</a> using your personal email (such as at gmail.com).
+   * Account using your Visual Studio benefit (using your work email)
+   * Work account to do your job as an Administrator.
+   <br /><br />
 
 ## Azure first-timer deals
 
    * Get a "Microsoft Learn" account for $200 of credits to spend in 30 days and also a year of <a href="#FreeSvcs">free services</a>.
 
-   * After that instead of "Pay-As-You-GO",
+   * After that instead of "Pay-As-You-Go",
 
    * PROTIP: Buy a Visual Studio license for $39/month and get $50 of credit each month. See <a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">docs.microsoft.com/en-us/learn/azure/</a>
 
@@ -79,7 +99,14 @@ PROTIP: Bookmark these links
    MY OPINION: I think job roles should be multi-select checkboxes.
    This segregation also adds to duplicating material.
 
-   <strong>Global Administrators</strong>, aka Company Administrators, in Azure Active Directory have access to <strong>all services</strong> that use Azure Active Directory identities like Microsoft 365 security center, Microsoft 365 compliance center, Exchange Online, SharePoint Online, and Skype for Business Online.
+
+   ## Global Admin Account
+
+   <strong>Global Administrators</strong>, aka Company Administrators, in Azure AD have access to <strong>all services</strong> that use Azure Active Directory identities like Microsoft 365 security center, Microsoft 365 compliance center, Exchange Online, SharePoint Online, and Skype for Business Online.
+
+   PROTIP: Don't use that account regularly and set an Activity Alert when it is used. Have no MFA on it. Have 2-5 global admins. <a target="_blank" href="https://www.youtube.com/watch?v=vZ9uQtO7mSU&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=2">VIDEO</a> 
+
+   PROTIP: Global Admin privileges are neede to enable <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">AD PIM (Privileged Identity Management)</a> for a directory.
 
    So it's important to assign other more specific roles:
 
@@ -124,7 +151,9 @@ PROTIP: Bookmark these links
 
 <a name="FreeSvcs"></a>
 
-## First year free services
+### First year free services
+
+https://azure.microsoft.com/en-us/free/free-account-faq/
 
 The clock is ticking:
 
@@ -143,7 +172,7 @@ The clock is ticking:
 
 PROTIP: It makes more sense to look at a live example populated with several resources, in context:
 
-## Azure GUI thru CloudAcademy 
+### Azure GUI thru CloudAcademy 
 
 1. <a target="_blank" href="https://cloudacademy.com/library/azure/">cloudacademy.com/library/azure</a> has defined several labs.
 1. Search for "Azure".
@@ -191,7 +220,9 @@ PROTIP: It makes more sense to look at a live example populated with several res
 
 <hr />
 
-## Microsoft Azure account
+<a name="MSAccount"></a>
+
+### Microsoft Azure account setup
 
    * <a target="_blank" href="https://www.youtube.com/playlist?list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7">YouTube playlist on Azure</a> by Zach Kramer and Steve Michelotti
    * https://azure.microsoft.com/en-us/global-infrastructure/government/
@@ -226,8 +257,6 @@ PROTIP: It makes more sense to look at a live example populated with several res
    * Export risk detection data to third-party utilities for further analysis.
 
    ### Risk Events
-
-   
 
    Risk level and risk detail fields are hidden to those with just the Azure AD Premium P1 edition.
 
@@ -284,6 +313,11 @@ PROTIP: It makes more sense to look at a live example populated with several res
    Unlike Movo, Bluebird does not have a $4.95 inactivity fee after three months without activity.
 
 5. Create a separate card sub-account for each cloud account.
+
+
+   <a name="SignUp"></a>
+
+   ### Sign Up for Azure
 
 5. Sign up for Azure:
 
@@ -360,15 +394,96 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
 0. Click the "wheel" icon for Portal Settings:
    
-   PROTIP: If you wear glasses on video calls, reduce glare by clicking "Black" for the dark theme (with yellow font). 
+0. PROTIP: If you wear glasses on video calls, reduce glare by clicking "Black" for the dark theme. You may not like the putrid yellow font associated with High Contrast:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/111880191-8c1cb980-896f-11eb-9c8b-86d556a46843.png"><img width="1165" alt="azure-portal-dark-2330x1246" src="https://user-images.githubusercontent.com/300046/111880191-8c1cb980-896f-11eb-9c8b-86d556a46843.png"></a>
+
+
+   ### Dock hamburger menu
 
 0. Click the "hamburger" (home) icon at the upper-left corner for English descriptions of each icon on the left edge.
 
 0. Click the "<" icon at top of the separator to collapse ("dock") or expand the text of services listed on the left menu.
 
-   PROTIP: To set its expansion state permanently, click the ‘settings cog’ icon in the top right of portal and click the ‘Choose your default mode for the portal menu’ option. Setting that to ‘docked’.
+   PROTIP: To set its expansion state permanently, click the ‘settings cog’ icon in the top right of portal and click the ‘Choose your default mode for the portal menu’ option. Setting that to docked or undocked.
+
+0. PROTIP: To keep things simple, I arrange the FAVORITES menu item alphabetically.
+
+   1. App Services
+   2. Advisor
+   3. Azure Active Directory
+   4. Cost Management + Billing
+   5. Function App
+   6. Load balancers
+   7. Monitor
+   8. Security Center
+   9. Storage Accounts
+   10. (0) Virtual Machines
+   <br /><br />
+
+   REMEMBER your list by number because you can ...
+
+   <a name="Keyboard_Shortcuts"></a>
+   
+   ### Keyboard Shortcuts
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=ha2ESFCcERQ&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=15" title="Dec 5, 2019">VIDEO</a>
+
+0. Hold down G and press a number to view one of the first 10 menu items.
+
+   PROTIP: If you memorize these shortcuts, you never need to mouse to the "hamberger" menu again.
+
+0. Click the "?" at the top of the page to click <u>Keyboard shortcuts</u>. 
+
+   In there and in <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-keyboard-shortcuts">DOCS</a>, "G+." means <strong>while holding down the G key</strong>, press the period key, which puts the focus on the ">>" icon so you can press Enter to expand or contract the left menu.
+
+   PROTIP: You an use the G key as if it's like the Command/Ctrl key because you're not filling out a form. If you see G appear in a form fill field (such as the browser URL), backspace to clear the field, then press Tab off the form fields and try again.
+
+0. Press Esc to escape from the help window.
+
+0. A reminder of the G key is always present at the top of every Azure screen:<br />
+   "Search resources, services, and docs (G+/)", which means hold down G and press / to search.
+
+   PROTIP: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/project/navigation/keyboard-shortcuts?view=azure-devops">Azure DevOps uses more G keys (and M keys as well)</a>.
+
+0. To toggle use of the <strong>whole screen</strong> on Windows PCs: press F11. On macOS: hold down command on the right, control on the left, then F.
+
+   QUESTION: How to toggle
+
+0. Hold down G and press R for <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups">Resource Groups</a>. So drag and drop that to the bottom of the list.
+
+0. For a New Resource, hold down G and press N.
+
+0. Drag and drop <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseAll">All resources</a> in the menu to the bottom of the list because you can reach it without a mouse by holding down G and pressing A.
+
+   Since A is so popular:
+
+0. For <a target="_blank" href="https://portal.azure.com/#allservices">All services</a>, hold down G and press B.
+
+0. For <a href="#Dashboard">Dashboard</a>, hold down G and press D.
+
+0. In Edge, flip to the second-from-the-left tab with command+2.
+0. Switch among windows command+` (at the upper-left corner of the keyboard).
+0. To find text on the page, press command+F.
+
+QUESTION: Toggle to/from Full Screen???
+
+
+<a name="Dashboard"></a>
+
+## Dashboard for Users
+
+In the left menu, where is the menu item for Users (the one most often used by Administrators)?
+
+   Press G+D to reach the Dashboard.
+
+1. PROTIP: Click Dashboard to configure it with Users at the upper-left.
+1. Get rid of an item by clicking the "..." to "Remove from dashboard" or New Dashboard.
+1. To rearrange location, click the "..." on any item and select "Customize".
+1. Click "Edit" from the command bar to search for Users, Add.
+1. Click "Save" at the top.
+
+
 
 
    ### GUI Navigation Hubs, Panes, blades
@@ -392,18 +507,61 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
    Example: I drag the "Billing" icon to the top because I manage the money involved.
 
+
    ### License types
 
    BTW, billing is associated with <strong>Management Subscriptions</strong> with names such as "Pay-as-you-go..."
 
 
-   ### Keyboard Shortcuts
+   ### Support Plans
 
-0. Click Keyboard shortcuts in the menu.
+   * Standard (Basic) free for Prod. use
+   * Developer $29/mo. for non-prod. use
+   * Professional Direct $1000/mo for "Business Critical" when you file a business-critical issue with technical support, the earliest you can expect a response from technical support? Within 1 hour
+   * Premier for "substantial dependence" with a TAM.
 
-   BLAH: I have no idea what G means. See:
+   <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=672143e9-2e2c-49d6-b5f4-6558d88f66e1">VIDEO "Microsoft Azure Pricing and Support Options"</a>
 
-   https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-keyboard-shortcuts
+
+0. Right-click on the "Help + Support" box on the Dashboard and select "unpin"
+   becuase you now know you can reach it (in two places).
+
+   <a name="Social"></a>
+
+   ### Social Support Forums about Azure
+
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/support/community/">Azure.microsoft Community Forum</a>
+
+   * <a target="_blank" href="https://social.msdn.microsoft.com/Forums/azure/en-US/home">MSDN</a>
+
+   <em>Filtered for Most Votes on Accepted answers:</em>
+
+   * <a target="_blank" href="https://stackoverflow.com/questions/tagged/azure?sort=MostVotes&filters=NoAcceptedAnswer&edited=true">StackOverflow</a>
+
+   * <a target="_blank" href="https://serverfault.com/questions/tagged/azure">Serverfault</a>
+
+   * <a target="_blank" href="https://channel9.msdn.com/Shows/Tuesdays-With-Corey/">Tuesdays with Corey</a> (Sanders, VP of Azure Compute, now Corporate VP of Microsoft Solutions, about Azure on Microsoft's Channel9 video site). <a target="_blank" href="https://twitter.com/search?f=realtime&q=%23AzureTwC&src=typd">#AzureTwC</a>
+   
+
+   <a name="Marketplace"></a>
+
+   ### Marketplace
+
+0. Right-click on the "Marketplace" box on the Dashboard and select "unpin"
+   becuase you can reach it this way:
+
+0. Click on the green + icon for a list in the <strong>Marketplace</strong>. Additional categories are:
+
+   * Web + Mobile
+   * Containers
+   * Blockchain
+   <br /><br />
+   
+   <a target="_blank" href="https://linuxacademy.com/cp/socialize/index/type/community_post/id/16110">
+   Click "Web + Mobile" to create a Web App on Azure</a> is a common use case.
+
+0. Click the X to close a blade.
+ 
 
 
    ### Help + Support
@@ -423,56 +581,16 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
    That's now 3 places you can find it.
 
-   
-   ### Support Plans
+0. Microsoft calls their business-level oriented collection of implementation guidance <a target="_blank" href="https://www.youtube.com/watch?v=9VJYVITjckw">VIDEO</a>: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/microsoft-cloud-adoption-framework-for-azure/">MS_LEARN</a>: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/">Microsoft Cloud Adoption Framework for Azure"</a>.
 
-   * Standard (Basic) free for Prod. use
-   * Developer $29/mo. for non-prod. use
-   * Professional Direct $1000/mo for "Business Critical" when you file a business-critical issue with technical support, the earliest you can expect a response from technical support? Within 1 hour
-   * Premier for "substantial dependence" with a TAM.
+   Additional sites:
 
-   <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=672143e9-2e2c-49d6-b5f4-6558d88f66e1">VIDEO "Microsoft Azure Pricing and Support Options"</a>
-
-
-0. Right-click on the "Help + Support" box on the Dashboard and select "unpin"
-   becuase you now know you can reach it (in two places).
-
-
-   <a name="Social"></a>
-
-   ### Social Support Forums about Azure
-
-   * <a target="_blank" href="https://azure.microsoft.com/en-us/support/community/">Azure.microsoft Community Forum</a>
-
-   * <a target="_blank" href="https://social.msdn.microsoft.com/Forums/azure/en-US/home">MSDN</a>
-
-   <em>Filtered for Most Votes on Accepted answers:</em>
-
-   * <a target="_blank" href="https://stackoverflow.com/questions/tagged/azure?sort=MostVotes&filters=NoAcceptedAnswer&edited=true">StackOverflow</a>
-
-   * <a target="_blank" href="https://serverfault.com/questions/tagged/azure">Serverfault</a>
-
-   * <a target="_blank" href="https://channel9.msdn.com/Shows/Tuesdays-With-Corey/">Tuesdays with Corey</a> (Sanders, VP of Azure Compute, now Corporate VP of Microsoft Solutions, about Azure on Microsoft's Channel9 video site). <a target="_blank" href="https://twitter.com/search?f=realtime&q=%23AzureTwC&src=typd">#AzureTwC</a>
-   
-   ### Marketplace
-
-0. Right-click on the "Marketplace" box on the Dashboard and select "unpin"
-   becuase you can reach it this way:
-
-0. Click on the green + icon for a list in the <strong>Marketplace</strong>. Additional categories are:
-
-   * Web + Mobile
-   * Containers
-   * Blockchain
-   <br /><br />
-   
-   <a target="_blank" href="https://linuxacademy.com/cp/socialize/index/type/community_post/id/16110">
-   Click "Web + Mobile" to create a Web App on Azure</a> is a common use case.
-
-0. Click the X to close a blade.
+   https://microsoft.github.io/AzureTipsAndTricks/blog/tip1.html
 
 
 <hr />
+
+<a name="AddUsers"></a>
 
 ## Add User
 
@@ -507,25 +625,49 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 es.
 
 
+<a name="AAD"></a>
+
+## AAD (Azure Active Directory)
+
+PROTIP: Azure AD users and groups are created in a <strong>flat structure</strong>, with no Organizational Units (OUs) or Group Policy Objects (GPOs) as in classic Active Directory on-prem.
+
+
+In the Manage section, click Licenses.
+
+On the Licenses | Overview blade, in the Manage section, click All products and then click + Try / Buy.
+
+On the Activate blade, in the Azure AD Premium P2 section, click Free Trial and then click Activate.
+
+   <a name="MFA"></a>
+
    ### User MFA (Multifactor Authentication)
 
    MFA comes with Azure AD Premium.
 
-   Enrollment is needed.
+   Only users licensed to use Microsoft Online Services are eligible for Multi-Factor Authentication.
 
-1. Click "Multi-Factor Authentication" in the Command bar.
+1. To enable MFA, in Azure Portal GUI, search for Security service.
+1. In the menu under "Manage", click MFA, 
+1. Click "Additional cloud-based MFA settings".
 
-   This is because MFA is set in a different service.
+   Observe: MFA is set outside of Portal in a web page:<br />
+   <tt>https://account.activedirectory.windowsazure.com/usermanagement/mfasettings.aspx?tenantId=...</tt>
 
    Previously, MFA (Multi-Factor Authentication) was hidden behind "..." (More) in All Users menu bar.
 
-1. Check the box next to a user before clicking "Enable" on the right.
+1. Verification options:
+   * Call to phone is grayed out? QUESTION
+   * Text message to phone (SMS)
+   * Notification through mobile app
+   * Verification code from mobile app or hardware token
+   <br /><br />
 
-   Thus, only users licensed to use Microsoft Online Services are eligible for Multi-Factor Authentication.
+   QUESTION: Not listed are other Methods of authentication:
+   * Password (in Azure AD)
+   * One Time Pin (OTP) from a Hardware (Ubi) Token
+   <br /><br />
 
-   ### Types of Factors
-
-   Types of factors used to authenticate a user request via multi-factor authentication (MFA):
+   ### Factors of auth
 
    * A knowledge factor - something the user knows - Password (in Azure AD)
 
@@ -534,21 +676,10 @@ es.
    * An "inheritance" factor (is) - something that confirms identity via a physical characteristic, such as a fingerprint or other biometric. (NOT an identity factor)
    <br /><br />
 
-Methods of MFA:
-   * Password (in Azure AD)
-   * Call to Phone
-   * SMS Text Message to Phone
-   * Notification through Mobile Authenticator App
-   * Verification Code from Mobile App
-   * One Time Pin (OTP) from a Hardware (Ubi) Token
-   <br /><br />
+1. Optionally check "Allow users to remember multi-factor authentication on devices they trust (between one to 365 days)".
 
+1. Click Save.
 
-<a name="AAD"></a>
-
-## AAD (Azure Active Directory)
-
-PROTIP: Azure AD users and groups are created in a <strong>flat structure</strong>, with no Organizational Units (OUs) or Group Policy Objects (GPOs) as in classic Active Directory on-prem.
 
 
 ### SSPR (Self-Service Password Reset)
@@ -658,23 +789,38 @@ There is a limit of 100 Management certs per Azure subscription (administrator).
    An <strong>initiative</strong> describes a group of policies across different management groups, subscriptions, resource groups, ?
 
 
-   <a name="Tenant"></a>
+<a name="Tenant"></a>
 
 ## Tenant
 
-<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=4h29m37s">VIDEO</a>
+1. To switch among tenants in the Portal GUI, use the "Directory + subscription" filter at the top menu of every screen:
 
-1. If you have an account that signs into more than one Tenant, define the default Tenant using PowerShell:
+   <img alt="az-onramp-subscrip-462x263" width="462" height="263" src="https://user-images.githubusercontent.com/300046/112444406-9cd48300-8d13-11eb-9aac-24feb64af66a.png">
+
+   Within PowerShell, define the default Tenant (if you need to sign into more than one Tenant):
 
    <pre><strong>Set-AzureRmContext
    </strong></pre>
 
 
+<a name="Subscriptions"></a>
+
 ## Subscriptions
 
-Below tenant can be multiple Subscriptions per tenant (e.g. for depts.)
-   A <strong>Subscription</strong> is a billing boundary linked to an Azure account
+<a target="_blank" href="https://www.youtube.com/watch?v=LMAC0IIYSJM&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=17">VIDEO KnowOps</a>
+
+At the <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade">Subscription pane</a>
+
+A <strong>Subscription</strong> is a billing boundary linked to an Azure account
    AND A container for resource groups.
+
+There can be multiple Subscriptions per tenant (e.g. for depts.).
+   * Non-prod (for devs)
+   * Production (for operations)
+   * Multi-region
+   <br /><br />
+
+The 2000 role assignments limit per subscription is fixed and cannot be increased.
 
 Subscription types:
    * Azure pass (e.g. with a course)
@@ -683,8 +829,6 @@ Subscription types:
    * Pay-as-you-go (most common)
    * Enterprise (involves a minimum commitment)
    <br /><br />
-
-The 2000 role assignments limit per subscription is fixed and cannot be increased.
 
 
 ## Management Group for RBAC
@@ -753,6 +897,12 @@ https://azure.microsoft.com/en-us/pricing/calculator/
 ## Cloud Shell
 
 <img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-patterns/cloud-shell.svg">
+
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=YlbFQtUFOY8&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=7" title="AZ Interactive mode by Dana Epps Oct 10, 2019">VIDEO</a> Azure provides contextual prompts in their:
+
+   <pre><strong>az interactive</strong></pre>
+
 
 
 ### Create AZ Role
@@ -830,15 +980,47 @@ https://azure.microsoft.com/en-us/pricing/calculator/
 
    Account Password > Login > Tenant > Principal > APP_ID > Roles > Template > stop
 
-1. The script uses this command to log you in:
 
-   <pre>az login -u "$AZ_USER" -p "$AZ_PASSWORD"</pre>
+   ### Login
+
+1. For attended manual log in:
+
+   <pre><strong>az login </strong></pre>
+
+   The response expected is a new tab to appear in your default browser window asking for your account.
+
+   Alternately, for unattended log in:
+
+   <pre><strong>az login -u "$AZ_USER" -p "$AZ_PASSWORD"</strong></pre>
 
    If you have not signed up for a <strong>subscription</strong>, you'll get an error such as:
    "No subscriptions were found for 'None'. If this is expected, use '--allow-no-subscriptions' to have tenant level accesses"
 
-   CAUTION: Logging in online imbues you with a full set of permissions that a login using the az command does not
-   fully possess.
+   ### Set subscription
+
+   There can be more than one subscription, so set to just to use:
+
+1. The JSON that comes back from <tt>az login</tt> can be retrieved again by:
+
+   <pre><strong>RESPONSE=$( az account list)</strong></pre>
+
+1. Pick out the subscription from the list:
+   
+   TODO:
+
+1. Set the subscription:
+
+   <pre><strong>az account set --subscription=</strong></pre>
+
+1. Set the cloud:
+
+   <pre>az cloud set --name AzureUSGovernment  # or AzureChinaCloud, or AzureGermanCloud.
+   </pre>
+
+
+   ### Permissions
+
+   CAUTION: Logging in online imbues you with a full set of permissions that a login using the az command does not fully possess.
 
 
    <a name="TenantID"></a>
@@ -869,6 +1051,8 @@ https://azure.microsoft.com/en-us/pricing/calculator/
    </pre>
 
    This is recommended instead of the alternative of asking Azure to <tt>--create-cert</tt> in command:
+
+   ### Service Principal
 
 5. We next <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest">
 Create a Service Principal</a> using <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/best-practices/naming-conventions">
@@ -914,7 +1098,7 @@ Create a Service Principal</a> using <a target="_blank" href="https://docs.micro
    
    The command has additional options:
 
-   <tt>az ad sp create-for-rbac -n "lnx" \
+   <prea>az ad sp create-for-rbac -n "lnx" \
    --role contributor \
    --scopes /subscriptions/ssssssss-ssss-ssss-ssss-ssssssssssss
    </pre>
@@ -922,12 +1106,15 @@ Create a Service Principal</a> using <a target="_blank" href="https://docs.micro
 
    ### Login for sure
 
+   <a target="_blank" href="https://www.youtube.com/watch?v=x2aIVYxim-A&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=6&t=3m28s" title="Oct 3, 2019">VIDEO</a>
+
 6. Now we take the
    <a target="_blank" href="https://lnx.azurewebsites.net/directory-roles-for-azure-ad-service-principal/">
    NOTE</a>: 
    
-   <tt>az login --service-principal -u "$AZ_APP_ID" \
-   -p "$AZ_PEM_LOC" --tenant "$AZ_TENANT"</tt>
+   <pre>az login --service-principal -u "$AZ_APP_ID" \
+   -p "$AZ_PEM_LOC" --tenant "$AZ_TENANT"
+   </pre>
 
    https://msdn.microsoft.com/en-us/library/azure/ad/graph/api/api-catalog
    is the older version of
@@ -1086,6 +1273,19 @@ Users on another Azure AD (B2B) or public IDP (B2C)
 
 
 <a target="_blank" href="https://github.com/Azure/azure-quickstart-templates/">This</a> contains Azure Resource Manager templates contributed by the community.
+
+## Security Center
+
+Host recommendations:
+   * OS security settings configuration rules
+   * System security & critical updates missing
+   * Endpoint protection recommendations
+   * Disk encryption validation
+   * Remediate vulnerabilities assessment
+   * Threat detection
+   <br /><br />
+Each can be exempted.
+
 
 ## Azure Futures Roadmap
 

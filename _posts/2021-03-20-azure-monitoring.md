@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure Monitoring"
-excerpt: "How to get logs and alerts"
+excerpt: "How to get logs and metrics ingested and displayed with actionable alerts"
 tags: [microsoft, SIEM, monitoring]
 date: "2021-03-20"
 file: "azure-monitoring"
@@ -17,12 +17,14 @@ comments: true
 {% include _toc.html %}
 
 
-There are several Azure services related to monitoring:
+Several Azure services are related to the business of monitoring:
    * <a href="#Monitor">Azure Monitor</a>
-   * <a href="#Azure_Sentinel">Azure Sentinel (SIEM)</a>
+   * <a href="#Log_Analytics">Log Analytics</a> <a href="#LA_Workspaces">Workspaces</a>
    * <a href="#Security_Center">Azure Security Center</a>
    * <a href="#AppInsights">Azure Application Insights</a>
    * <a href="#Event_Hubs">Azure Event Hubs</a>
+   * <a href="#Defender">Microsoft Defender</a>
+   * <a href="#Azure_Sentinel">Azure Sentinel (SIEM like Splunk)</a>
    <br /><br />
 
 
@@ -40,14 +42,14 @@ There are several Azure services related to monitoring:
 
    Between new product announcements occur in March each year at Microsoft's Ignite conference, Kayode Prince <a target="_blank" href="https://techcommunity.microsoft.com/t5/tag/CustomerConnections/tg-p/board-id/AzureMonitor">videos</a>
 
+   ### Theoretical arrangement
 
    <a target="_blank" href="https://www.youtube.com/watch?v=eSutaPE80PM">VIDEO</a> What is Azure Monitor? <em>from Microsoft:</em>
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/111892248-4f78ae80-89bf-11eb-8ba0-f934dc3314cc.png"><img alt="az-mon-hybrid-1534x787" width="640" src="https://user-images.githubusercontent.com/300046/111892248-4f78ae80-89bf-11eb-8ba0-f934dc3314cc.png"></a>
 
 * PROTIP: Azure Monitor collects fundamental types of data: 
-   * metrics and 
-   * <a href="##Logs">logs</a>
-   * Service Health are also metrics.
+   * <a href="##Logs">logs</a> and
+   * metrics (which include <a href="#Service_Health">Service Health</a>)
    <br /><br />
 
 * <strong>Insights</strong> are elicited from:
@@ -560,6 +562,10 @@ KQL References:
 
 Some metric data can be stored in Logs to combine them with other monitoring data for trending and other data analysis.
 
+<a name="Service_Health"></a>
+
+### Service Health metrics
+
 
 <a name="Dashboard"></a>
 
@@ -773,6 +779,8 @@ Security Center lists prioritized security alerts to provide information needed 
 
 To stream collected monitor data to an external SIEM (Security Information and Event Management) solutions such as Azure Sentinel or Splunk.
 
+<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/azure-sentinel/">Charges are based on a fixed Capacity Reservation</a> (in Log Analytics), from $123 per day for increments of 100GB, with overage at $2.46 per GB-ingested. <a target="_blank" href="https://blog.johnjoyner.net/using-azure-sentinel-how-much-does-it-cost/">WestUS costs 30% more than EastUS</a>.
+
 Azure Security Center ??? through <a href="#Event_Hubs">Azure Event Hubs</a> - a streaming platform and event ingestion service that transforms and stores data by using any real-time analytics provider or batching/storage adapters. Use Event Hubs to stream log data from Azure Monitor to a SIEM tool.
 
 Processed events that Azure Security Center produces are published to the <strong>Azure activity log</strong>, one of the log types available through Azure Monitor. Azure Monitor offers a consolidated pipeline for routing any of your monitoring data into a SIEM tool. This is done by streaming that data to an event hub, where it can then be pulled into a partner tool.This pipe uses the Azure Monitor single pipeline for getting access to the monitoring data from your Azure environment. This allows you to easily set up SIEMs and monitoring tools to consume the data. Currently, the exposed security data from Azure Security Center to a SIEM consists of security alerts."
@@ -781,33 +789,97 @@ https://github.com/ned1313/Monitor-Security-with-Azure-Security-Center
 
 ??? Azure Security Center stores data that it collects in a Log Analytics workspace where it can be analyzed with other log data.
 
+
+https://docs.microsoft.com/en-us/azure/security-center/security-center-alerts-overview
+Security alerts and incidents in Azure Security CenterLearn how Azure Security Center generates security alerts and correlates them into incidents.docs.microsoft.com​[12:42 PM] Ken Lawson
+    
+https://docs.microsoft.com/en-us/azure/security-center/security-center-alerts-overview
+Security alerts and incidents in Azure Security CenterLearn how Azure Security Center generates security alerts and correlates them into incidents.docs.microsoft.com​[12:45 PM] Ken Lawson
+    
+https://docs.microsoft.com/en-us/azure/sentinel/create-incidents-from-alerts
+Create incidents from alerts in Azure SentinelLearn how to create incidents from alerts in Azure Sentinel.docs.microsoft.com​[12:46 PM] Ken Lawson
+    
+https://docs.microsoft.com/en-us/azure/logic-apps/quickstart-create-first-logic-app-workflow
+Quickstart - Create your first Logic Apps workflow - Azure portal - Azure Logic AppsBuild your first automated Logic Apps workflow in the Azure portal using this quickstart guide. Learn the basics of system integration and enterprise application integration (EAI) solutions in Logi...docs.microsoft.com​[12:>"X?51 PM] Ken Lawson
+    
+The JuPyter notebooks link to an Azure ML workspace
+​    
+https://docs.microsoft.com/en-us/azure/machine-learning/how-to-run-jupyter-notebooks#:~:text=How%20to%20run%20Jupyter%20Notebooks%20in%20your%20workspace,experiment.%20...%205%20Change%20the%20notebook%20environment.
+Run Jupyter notebooks in your workspace - Azure Machine LearningLearn how run a Jupyter notebook without leaving your workspace in Azure Machine Learning studio.docs.microsoft.com
+
+<hr />
+
+<a name="Defender"></a>
+
+## Microsoft Defender
+
+* Identity 
+* Endpoint forensic analyzes communication patterns
+* Cloud App Security (Caspia???) analyzes apps, conditional access proxies (DLP?). Was ATP 
+
+<a target="_blank" href="https://security.microsoft.com/homepage">security.microsoft.com Office 365 Security Center</a>integrates "Microsoft Defender for Endpoint" and "Microsoft Defender for Office 365". It provides eXtended Detection and Response (XDR): incident management, automatic investigation and remediation, Microsoft Threat Experts, threat analytics, and cross-domain proactive hunting.
+Phishing protection. Provides a <a target="_blank" href="https://security.microsoft.com/securescore">Secure Score summary metric</a>; email threat alert policies. 
+
+Microsoft <strong>InTune</strong> policy engine manages Windows 10 & macOS client (device) security.
+Includes  MDM (Mobile Device Management) can wipe entire device.
+MAM (Application) with app allow/deny policies.
+
+<a target="_blank" href="https://compliance.microsoft.com/homepage">
+compliance.microsoft.com</a> has data classification and data connectors shown a Compliance Manager by Solution:
+   * Catalog (of risks)
+   * Audit (can go to 10 years with additional licensing)
+   * Content search
+   * Communication compliance (profanity, etc.) 
+   * Data loss prevention (DLP) exfiltration, watermarkx 
+   * Data subject requests
+   * eDiscovery (hold)
+   * Information governance
+   * Information protection
+   * Insider risk management
+   * Records management
+   <br /><br />
+
+Privilege Access Management - task scope
+
+Customer Lockbox in Office 365 to transfer files to Microsoft engineers.
+
+Twitter <a target="_blank" href="https://twitter.com/MSThreatProtect">@MSThreatProtect (integrated SIEM and XDR)</a>, <a target="_blank" href="https://twitter.com/@MsftSecIntel">@MsftSecIntel (Microsoft Security Intelligence)</a>
+
+
 <a name="Azure_Sentinel"></a>
 
 ## Azure Sentinel (SIEM)
 
-Custom alert rules were retired from Azure Security Center on June 30, 2019 so they can be in the new Azure Sentinel product.
+DEPRECATION: Custom alert rules were retired from Azure Security Center on June 30, 2019 so they can be in the new Azure Sentinel product.
 
-Azure Sentinal competes with Splunk and others to provide a SIEM (Security Information and Event Management) solution that collects monitor data to provide a centralized analysis and visualization.
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/sentinel/overview">
+Azure Sentinal</a> competes with Splunk and others to provide a SIEM (Security Information and Event Management) solution that collects monitor data to provide a centralized analysis and visualization for SOC (Security Operations Center).
 
 Sentinal is called a SOAR (Security Orchestration Automated Response) solution because ???
 
-To on-board Azure Sentinel:
+??? Azure Sentinel stores data from data sources into a Log Analytics workspace.
 
-1. Enable Azure Sentinel
+<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/azure-sentinal">PRICING</a>
+https://blog.johnjoyner.net/using-azure-sentinel-how-much-does-it-cost/
+
+To onboard Azure Sentinel:
+
+1. Enable Azure Sentinel in Portal.
 
 1. Define subscriptions handled by each playbook.
 
    A Sentinel <strong>playbook</strong> is a collection of procedures that can be run from Azure Sentinel in response to an alert. 
+   Each Sentinel playbook can handle several subscriptions at once.
 
-   A Sentinel playbook can handle several subscriptions at once.
-
-2. Connect data sources. 
+2. Connect data sources.
 
    Investigation graph for visualizing and traversing the connections between entities like users, assets, applications, or URLs and related activities like logins, data transfers, or application usage to rapidly understand the scope and impact of an incident.
 
    Azure Sentinel comes with a number of connectors for Microsoft solutions, available out of the box and providing real-time integration, including Microsoft Threat Protection solutions, Microsoft 365 sources, including Microsoft 365, Azure AD, Azure ATP, Microsoft Cloud App Security, etc.
 
    In addition, there are built-in connectors to the broader security ecosystem for non-Microsoft solutions. You can also use common event format, Syslog or REST-API to connect your data sources with Azure Sentinel.
+
+   Microsoft's security researchers built the Azure Sentinel GitHub repository at <a target="_blank" href="https://github.com/Azure/Azure-Sentinel">https://github.com/Azure/Azure-Sentinel</a> to cover 400 detection, exploratory, and hunting queries, plus Jupyter Notebooks samples and related Python libraries, playbooks samples, and parsers. 
 
 1. Select from a gallery of <a href="#Dashboard">dashboards</a> to surface insights based on custom data.
 1. Customize your dashboard.
@@ -822,8 +894,6 @@ To on-board Azure Sentinel:
 
    Azure Sentinel has more than 100 built-in alert rules, or you can create your own.
 
-   Microsoft's security researchers built the Azure Sentinel GitHub repository at <a target="_blank" href="https://github.com/Azure/Azure-Sentinel">https://github.com/Azure/Azure-Sentinel</a> to over 400 detection, exploratory, and hunting queries, plus Jupyter Notebooks samples and related Python libraries, playbooks samples, and parsers. 
-
 1. Define a notebook.
 
    A notebook is a step-by-step playbook where one can walk through the steps of an investigation and hunt.
@@ -834,7 +904,17 @@ To on-board Azure Sentinel:
 
    All incidents start as unassigned. Add comments so that other analysts will be able to understand what was investigated and what concerns are around the incident.
 
-??? Azure Sentinel stores data from data sources into a Log Analytics workspace.
+Linking O365 to Log Analytics - https://docs.microsoft.com/en-us/azure/azure-monitor/insights/solution-office-365
+Office 365 management solution in Azure - Azure MonitorThis article provides details on configuration and use of the Office 365 solution in Azure.  It includes detailed description of the Office 365 records created in Azure Monitor.docs.microsoft.com​
+    
+Linking O365 to Sentinel - https://docs.microsoft.com/en-us/azure/sentinel/connect-office-365
+Connect Office 365 logs to Azure SentinelLearn to use the Office 365 log connector to bring in information about ongoing user and admin activities in Exchange, Teams, and SharePoint, including OneDrive.docs.microsoft.com​
+    
+https://techcommunity.microsoft.com/t5/azure-sentinel/best-practices-for-designing-an-azure-sentinel-or-azure-security/ba-p/832574
+Best practices for designing an Azure Sentinel or Azure Security Center Log Analytics workspace  Note: alot has be updated since this article: we now have official guidelines in the documentation: Extend Azure Sentinel across workspaces and tenants. You may also want to review the Webinar on...techcommunity.microsoft.com​
+    
+https://techcommunity.microsoft.com/t5/azure-sentinel/become-an-azure-sentinel-ninja-the-complete-level-400-training/ba-p/1246310
+
 
 References:
 
@@ -863,6 +943,23 @@ https://www.youtube.com/watch?v=-aMecR2Nrfc&list=PLLasX02E8BPCCsHzNLJjcElCwF52rn
 <a target="_blank" href="https://www.youtube.com/watch?v=-aMecR2Nrfc&list=PLLasX02E8BPCCsHzNLJjcElCwF52rnh6t&index=1">Microsoft's YouTube channel for Azure Monitoring</a>
 
 VIDEO COURSE: <a target="_blank" href="https://www.pluralsight.com/courses/azure-iaas-monitoring-management-getting-started">Microsoft Azure IaaS Monitoring & Management</a>
+
+SCOM (System Center Operations Manager) monitoring tool have management packs
+for managing specific products
+
+https://www.linkedin.com/learning/search?keywords=exam%20az-500%3A%20microsoft%20azure%20security%20technologies&u=3322
+
+Monitor alerts - Actionable or noise happens..
+
+Sev (Severity) levels:
+Sev 0 = Critical<br />
+Sev 1 = Error<br />
+Sev 2 = Warning<br />
+Sev 3 = Informational<br />
+Sev 4 = Verbose
+
+
+## Social
 
 
 ## More on Azure #

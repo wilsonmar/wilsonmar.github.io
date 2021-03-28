@@ -220,7 +220,9 @@ The options:
 
 TruffleHog is open-source code.
 
-<hr />
+<a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-securing-application-lifecycle/table-of-contents">VIDEO</a>:
+course Securing the Application Lifecycle in Microsoft Azure</>
+by Reza Salehi describes use of Microsoft DevLabs created CredScan (Credential Scanner) for use within licensed Visual Studio IDE clients and within the Azure cloud run as a task in Microsoft Security Code Analysis Extension.
 
 
 <hr />
@@ -486,6 +488,8 @@ a vestige of that data still exist in the repository's <strong>history</strong> 
 <a name="RemoveHistory"></a>
 
 ## SOLUTION 4. Remove secrets in prior commit history on GitHub
+
+See https://microsoft.github.io/AzureTipsAndTricks/blog/tip115.html
 
 Git has a <a target="_blank" href="https://git-scm.com/docs/git-filter-branch">
 `git-filter-branch` command</a> which 
@@ -1031,8 +1035,14 @@ Steps to make this happen include:
 
    <pre><strong>ssh -Tv git@github.com</strong></pre>
 
-1. Performance testing SSH connections using Neoload and <a target="_blank" href="https://github.com/Neotys-Connect/Terminal">Terminal add-on</a>
+   or if it's a GitHub Organization, for example:
 
+   <pre><strong>ssh -Tv g-12345678@github.com</strong></pre>
+
+1. Performance testing SSH connections using <a target="_blank" href="https://github.com/Neotys-Connect/Terminal">Neoload's Terminal add-on</a>
+
+
+<hr />
 
 <a name="Local_Diagram"></a>
 

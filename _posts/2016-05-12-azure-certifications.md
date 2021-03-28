@@ -128,15 +128,21 @@ Andrew Brown offers this diagram:
    Notice the 4-day class goes Monday-Friday 9am-5pm at the local time zone.
 
 1. Click blue Launch button at https://esi.learnondemand.net/Lab/... 
+   or aka.ms/az500labs
 
-1. aka.ms/az500labs
+1. Claim your Azure Pass Promo Code from instructor at microsoftazurepass.com.
+   
+   Notice that the Subscription is "Azure pass - Sponsorship".
+
+1. Check for your $100 spent and remaining balance at 
+
+   <a target="_blank" href="https://www.microsoftazuresponsorships.com/balance">https://www.microsoftazuresponsorships.com/balance</a> using your personal email account.
+
 1. To search within lab instructions, see GitHub (such as https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies)
 
    You can't paste from your regular Clipboard into the VM.
 
-1. Click the working form field you want to fill before clicking gthe "T" icon to paste into the working screen.
-
-   Notice that the Subscription is "Azure pass - Sponsorship".
+1. Click the working form field you want to fill before clicking the "T" icon to paste into the working screen.
 
 1. If your lab is frozen, Reconnect:
 
@@ -244,13 +250,17 @@ Sample tests:
 by Tim Warner with <a target="_blank" href="https://www.kaplanlearn.com/education/offeringdashboard/index/04347ac4e89b19f5ef7559ef6f975386">Kaplan sample exam</a>.
 
 
+<a name="AZ-500"></a>
+
+## AZ-500 Security certifications
+
+See <a target="_blank" href="https://wilsonmar.github.io/security-certifications">https://wilsonmar.github.io/security-certifications</a> - my blog on security certifications.
+
+https://www.thomasmaurer.ch/2020/05/az-500-study-guide-microsoft-azure-security-technologies-2021/
+
 <a name="SC-900"></a>
 
 ### SC-900 Security
-
-See https://wilsonmar.github.io/security-certifications
-
-<a target="_blank" href="https://www.youtube.com/watch?v=Bz-8jM3jg-8">VIDEO</a><a target="_blank" href="https://github.com/johnthebrit/RandomStuff/blob/master/SC-900ReviewWhiteboard.svg">*</a>
 
 SC-900 60 minutes to answer 50 single-line mulitple-choice questions about features (not configuration).
 Includes M365 Defender and Compliance Center.
@@ -261,16 +271,19 @@ Domains:
 * Secure data and applications (30-35%)
 * Manage security operations (15-20%)
 
-<a name="AZ-500"></a>
+Videos:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Bz-8jM3jg-8&list=RDCMUCpIn7ox7j7bH_OFj7tYouOQ&start_radio=1&t=5297">2hr John Savill</a>draws a <a target="_blank" href="https://github.com/johnthebrit/RandomStuff/blob/master/SC-900ReviewWhiteboard.svg">massive whiteboard</a> as massive as his muscles. One in a massive series with <a target="_blank" href="https://github.com/johnthebrit/AzureMasterClass">a pdfs in GitHub</a>.
 
-## Security certifications
+   * aka.ms/az500labs
+   https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies
 
-https://www.thomasmaurer.ch/2020/05/az-500-study-guide-microsoft-azure-security-technologies-2021/
 
 
 <a name="AZ-400"></a>
 
 ## AZ-400 DevOps Engineer Expert
+
+Covers configuration of security services.
 
 https://docs.microsoft.com/en-us/learn/certifications/devops-engineer/
 

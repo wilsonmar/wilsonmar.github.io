@@ -1018,6 +1018,17 @@ Components of configuration management:
    * configuration auditing
    <br /><br />
 
+## Defense in Depth
+
+1. Physical security
+2. Identity
+3. Perimeter
+4. Network
+5. Compute
+6. Application'
+7. Data
+
+
 ## Security Testing
 
 OSSTMM (Open Source Security Testing Methodology Manual) published by Pete Herzog of ISECOM (Institute for Security and Open Methodologies) covers the different kinds of security tests of physical, human (processes), and communication systems. It does not cover any specific tools that can be used to perform these tests. It defines five risk categorizations: vulnerability, weakness, concern, exposure, and anomaly. Once a risk is detected and verified, it is assigned a risk assessment value.
@@ -1184,8 +1195,27 @@ A threat modeling program continually reassess the threat environment, including
    4. Rank the threats
    <br /><br />
 
-Microsoft Threat Model Tool - dataflow diagrams that reflect potential threats. STRIDE and DREAD
-Developed by Microsoft, STRIDE is a memonic for classification of threats in an application:
+<a target="_blank" href="https://attack.mitre.org/">https://attack.mitre.org</a>
+ATT&CK process: 
+   1. Reconnaissance
+   2. Resource Development
+   3. Initial Access
+   4. Execution
+   5. Persistence
+   6. Privilege Escalation
+   7. Defense Evasion
+   8. Credential Access
+   9. Discovery
+   10. Lateral Movement
+   11. Collection
+   12. Command and Control
+   13. Exfiltration
+   14. Impact
+   <br /><br />
+
+Microsoft Threat Model Tool - dataflow diagrams that reflect potential threats. 
+
+STRIDE is a memonic for classification of threats in an application:
    * Spoofing of user identity
    * Tampering
    * Repudiation
@@ -1193,6 +1223,7 @@ Developed by Microsoft, STRIDE is a memonic for classification of threats in an 
    * Denial of service (DoS)
    * Elevation of privilege
    <br /><br />
+DREAD   
 
 Cryptoanalytic attacks try to deduce the key via brute-force (dictionary most likely)
 
@@ -1578,7 +1609,7 @@ by NIAP (National Information Assurance Partnership) to
    7. Extremely high levels of security are provided. This level requires extensive testing, measurement, and independent testing.
    <br /><br />
 
-Security Models: <a target="_blank" href="https://www.youtube.com/watch?v=qZB6_lp9M30&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=3">VIDEO</a>: <a target="_blank" href="https://www.youtube.com/watch?v=FRi73kodf_c&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR&index=2">2</a>,<a target="_blank" title="2016" href="https://www.youtube.com/watch?v=4esHgEOmTqU&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR">3</a> 
+Security Models: <a target="_blank" href="https://www.youtube.com/watch?v=LGqZbiitiDw&t=15m32s">REMEMBER</a> <a target="_blank" href="https://www.youtube.com/watch?v=qZB6_lp9M30&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=3">VIDEO</a>: <a target="_blank" href="https://www.youtube.com/watch?v=FRi73kodf_c&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR&index=2">2</a>,<a target="_blank" title="2016" href="https://www.youtube.com/watch?v=4esHgEOmTqU&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR">3</a> 
    * The <a target="_blank" href="https://www.wikiwand.com/en/Bell%E2%80%93LaPadula_model">Bell-LaPadula (BLP) model</a> focuses on data confidentiality and controlled access to classified information. It uses a state machine with transition functions to control information flow, characterized by the phrase "write up, read down" (WURD). It was the first mathematical model of a multilevel system for enforcing access control. Not dynamic. It's a multilevel security model because it allows simultaneous processing of classified information across the security levels.
    
    * The Brewer-Nash (Chinese Wall) model introduced the concept of allowing <strong>dynamic</strong> access controls based on a user’s previous actions (conflicts of interest). Based on RBAC.

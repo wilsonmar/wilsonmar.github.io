@@ -3,7 +3,7 @@ layout: post
 title: "Making videos"
 excerpt: "Tediously using Camtasia, Audacity, and animated PowerPoint on a Mac"
 tags: [Videos, Evangelism]
-date: "2016-10-11"
+date: "2021-03-26"
 file: "making-videos"
 image:
 # pic silver robot white skin handshake 1900x500
@@ -106,6 +106,18 @@ PROTIP: If you are using a Mac, get a separate monitor of 1900x1080 (Full HD) re
 
    <a target="_blank" href="https://lame.buanzo.org/#lameosxdl">https://lame.buanzo.org/#lameosxdl</a>
 
+
+   ### Install ffmpeg
+
+   The free CLI utility can be used to make video files smaller and better.
+
+1. This command took a 8 minute video file from 112MB to 58MB:
+
+   <pre><strong>ffmpeg -i input.mp4 -b 800k output.mp4</strong></pre>
+
+1. This command tos use H.265 took a 8 minute video file to 28.5MB (but Apple only shows audio):
+
+   <pre><strong>ffmpeg -i input.mp4 -vcodec libx265 -crf 28 output.mp4</strong></pre>
 
 
 ## Presentation materials
