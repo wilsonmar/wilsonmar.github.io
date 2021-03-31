@@ -927,7 +927,7 @@ Nigel Poulton (@NigelPoulton, <a target="_blank" href="https://www.nigelpoulton.
 
    * Book: "Kubernetes Deep Dive"
 
-   * <a target="_blank" href="https://acloud.guru/course/kubernetes-deep-dive/dashboard">A Cloud Guru video course "Kubernetes Deep Dive"</a> (released Oct 2018) references a WordPress sample app at <a target="_blank" href="https://github.com/nigelpoulton/k8s-sample-apps">https://github.com/nigelpoulton/k8s-sample-apps</a>
+   * <a target="_blank" href="https://www.acloudguru.com/">ACloudguru.com</a> video course <a target="_blank" href="https://acloud.guru/course/kubernetes-deep-dive/dashboard">"Kubernetes Deep Dive"</a> (released Oct 2018) references a WordPress sample app at <a target="_blank" href="https://github.com/nigelpoulton/k8s-sample-apps">https://github.com/nigelpoulton/k8s-sample-apps</a>
 
 
 ### LinkedIn
@@ -976,9 +976,9 @@ https://github.com/StephenGrider/DockerCasts/tree/master/diagrams
 
 
 
-### ACloud.guru
+### ACloudguru.com
 
-<a target="_blank" href="https://acloud.guru/learn/d068441f-75b4-4fe8-a7a6-df9153f24a35">ACloud.guru CKAD course</a> by <a target="_blank" href="https://www.linkedin.com/in/wilb/">William Boyd</a> has 3.5 hours of video organized according to <a href="#CKAD_ExamDomains">exam domains</a>, 13 hands-on labs, and 3 practice exams based on v1.13.
+<a target="_blank" href="https://www.acloudguru.com/">ACloudguru.com</a> <a target="_blank" href="https://acloudguru.com/learn/d068441f-75b4-4fe8-a7a6-df9153f24a35">CKAD course</a> by <a target="_blank" href="https://www.linkedin.com/in/wilb/">William Boyd</a> has 3.5 hours of video organized according to <a href="#CKAD_ExamDomains">exam domains</a>, 13 hands-on labs, and 3 practice exams based on v1.13.
 
 (ACloud.guru's Vicky Tanya Seno at Santa Monica College is preparing a course on Kubernetes)
 
@@ -2837,7 +2837,7 @@ animations on his website</a>.
 
    Communications with outside service network callers occur through a single Virtual IP address (VIP) going through a <strong>kube-proxy</strong> pod within each node.
    The Kube-proxy load balances traffic to <strong>deployments</strong>, which are load-balanced sets of pods within each node. Kube-proxy IPVS Mode is native to the Linux kernel.
-   CBR0 (Custom Bridge zero) forwards the eth0, which rewrites the destination IP to a pod behind the Service<a target="_blank" href="https://acloud.guru/course/kubernetes-deep-dive/learn/2ddbcafb-9f4f-ed6c-3cec-912cb68a7944/36910c67-4dfd-3343-648a-3a266aa9f667/watch?backUrl=~2Fcourses&backUrl=~2Fcourses&backUrl=~2Fcourses,~2Fcourses">3:18 into chapter 6 Big Picture</a>
+   CBR0 (Custom Bridge zero) forwards the eth0, which rewrites the destination IP to a pod behind the Service<a target="_blank" href="https://acloudguru.com/course/kubernetes-deep-dive/learn/2ddbcafb-9f4f-ed6c-3cec-912cb68a7944/36910c67-4dfd-3343-648a-3a266aa9f667/watch?backUrl=~2Fcourses&backUrl=~2Fcourses&backUrl=~2Fcourses,~2Fcourses">3:18 into chapter 6 Big Picture</a>
 
 Kubernetes manages the instantiating, starting, stopping, updating, and deleting of a <strong>pre-defined number of pod replicas</strong> based on declarations in <strong>*.yaml</strong> files or interactive commands.
 

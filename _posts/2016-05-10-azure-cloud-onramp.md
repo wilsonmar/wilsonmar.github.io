@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure Cloud Onramp"
-excerpt: "Get into and around the Azure Active Directory and ARM portals"
+excerpt: "Get to know Subscriptions, Support plans, ARM portal Keyboard Shortcuts, Azure Active Directory"
 tags: [cloud, azure]
 date: "2021-03-05"
 file: "azure-cloud-onramp"
@@ -34,16 +34,20 @@ PROTIP: Bookmark these links
    account.windowsazure.com/signup</a>
    </td></tr>
 <tr valign="top"><td> Dashboard page: </td><td>
-   <a target="_blank" href="https://portal.azure.com/"><strong><u>https://portal.azure.com</u></strong></a> or
+   <a target="_blank" href="https://portal.azure.com/"><strong><u>https://portal.azure.com</u></strong></a> 
+   </td><td>
    <a target="_blank" href="https://portal.azure.us/">portal.azure.us</a> for the <a href="#USGov">US Government portal</a>
    </td></tr>
 <tr valign="top"><td> <a href="#AAD">Azure AD</a> </td><td>
    <a target="_blank" href="https://aad.portal.azure.com/"><strong><u>https://aad.portal.azure.com</u></strong></a>
    </td></tr>
+<tr valign="top"><td> All Admin Centers </td><td>
+   <a target="_blank" href="https://admin.microsoft.com/AdminPortal/Home#/alladmincenters"><strong><u>https://admin.microsoft.com/AdminPortal/Home#/alladmincenters</u></strong></a>
+   </td></tr>
 <tr valign="top"><td> Personal </a> </td><td>
    <a target="_blank" href="https://techprofile.microsoft.com/en-us/"><strong>techprofile.microsoft.com/en-us</strong></a>
    integrates various information about your certifications and learnings taken within Microsoft.
-    </td></tr>
+   </td></tr>
 </table>
 
 <a name="USGov"></a>
@@ -51,6 +55,8 @@ PROTIP: Bookmark these links
 ### Microsoft Azure Government
 
    There is a separate <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/government/">Azure fed/state/local gov</a> is an isolated "soverign" DoD Level 5 cloud on US soil operated by US citizens. It has its own Marketplace of apps. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-welcome">What is gov?</a> 
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/compare-azure-government-global-azure">DOC: Compare Global vs. Gov</a>
 
    For example, <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/compare-azure-government-global-azure">endpoints</a> for    Speech Studio Speech translation :
    * Virginia: https://usgovvirginia.s2s.speech.azure.us
@@ -61,7 +67,7 @@ PROTIP: Bookmark these links
 
 ## Browser Profiles
 
-When you return to the Portal, Azure knows your account becuase it stores a "cookie" in your browser.
+PROTIP: When you return to the Portal, Azure knows your account becuase it stores a "cookie" in your browser.
 
 That is a hassle when you're switching among different Azure accounts.
 
@@ -78,7 +84,8 @@ PROTIP: So if you're using Google Chrome, click the Chrome avatar at the upper-r
 
    * After that instead of "Pay-As-You-Go",
 
-   * PROTIP: Buy a Visual Studio license for $39/month and get $50 of credit each month. See <a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">docs.microsoft.com/en-us/learn/azure/</a>
+   * PROTIP: Buy a Visual Studio Professional license for $39/month and get $50/mo credit each month. Kinda like almost free. See <a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">docs.microsoft.com/en-us/learn/azure/</a>.
+   * Buy a Visual Studio Enterprise license for $150/month credit on Azure.
 
 
    ### Job Roles
@@ -147,6 +154,23 @@ PROTIP: So if you're using Google Chrome, click the Chrome avatar at the upper-r
    * Groups Administrators can create/manage groups and its settings like naming and expiration policies.
 
    * Security Administrators have permissions to manage security-related features in the Microsoft 365 security center, Azure Active Directory Identity Protection, Azure Information Protection, and Microsoft 365 Security & Compliance Center.
+
+   BTW, after you follow instructions below on setting up CLI, this Bash command lists all the pre-defined roles:
+
+   <pre><strong>az role definition list -o table --query [].roleName</strong></pre>
+
+   The basic categories are owner, contributor, and reader.
+
+   ### Permissions
+
+   Permissions to Actions are:
+   * actions
+   * notActions
+   * dataActions
+   * notDataActions
+   <br /><br />
+
+   The actions are implemented by resource providers.
 
 
 <a name="FreeSvcs"></a>
@@ -236,7 +260,7 @@ PROTIP: It makes more sense to look at a live example populated with several res
 
    Azure provide access to more than 25 products that are always free. 
 
-   ### Azure Active Directory
+   ### Azure Active Directory (AAD)
 
    When someone signs up for a Microsoft cloud service subscription (such as Microsoft Azure, Office 365, Microsoft Intune, etc.), a dedicated instance of <strong>Azure AD (Active Directory)</strong> is created. 
 
@@ -246,7 +270,14 @@ PROTIP: It makes more sense to look at a live example populated with several res
 
    Premium P2 includes all P1 features, plus really cool <strong>"Identity Protection"</strong> with these policies Assignment to all users:
 
-   * Multi-factor authentication registration policy to Require MFT
+   Additionally, Microsoft 365 subscribers have an additional Azure AD licensing options:
+   * Free 500,000 object limit, includes MFA for O365 services
+   * $1/mo. Basic for group-base access management with SLAs
+   * $6/mo. P1 for conditional access based on device/location & MFA for on-prem. services
+   * $9/mo. P2 for Identity Protection, Access reviews, Privileged Identity Management
+   <br /><br />
+
+   * Multi-factor authentication registration policy to Require MFA
 
    * User risk remediation policy to require password change, with review of number of users impacted
 
@@ -263,6 +294,11 @@ PROTIP: It makes more sense to look at a live example populated with several res
    Advanced detections (such as unfamiliar sign-in properties) are not covered by your license, and will appear under the name Sign-in with additional risk detected. 
 
    P2 "Identity Governance" include Privileged Identity Management (PIM), Access Reviews, and time-saving <a target="_blank"" href="https://docs.microsoft.com/en-us/azure/active-directory/governance/entitlement-management-overview">Entitlement Management</a>.
+
+
+   Devices are managed on Azure AD
+
+   Users on another Azure AD (B2B) or public IDP (B2C)
 
 
    ### Azure AD PIM RBAC
@@ -346,10 +382,9 @@ PROTIP: It makes more sense to look at a live example populated with several res
 
 <a name="ASM"></a>
 
-### ASM obsoleted by ARM
+### ARM obsoletes ASM
 
 On July 1, 2019, Microsoft fully transitioned from the "classic" (older) Azure Service Management (ASM) when <a target="_blank" href="https://docs.microsoft.com/en-us/azure/multi-factor-authentication/multi-factor-authentication-faq">Multi-factor authentication (through the PhoneFactor Web (PFWeb) portal), API Management, BizTalk, and Managed Cache became available to the Azure Resource Manager (ARM).
-
 
 ASM had "Cloud Services" and "Affinity Groups"
 which is structured with Resource Groups (logical containers)
@@ -362,10 +397,32 @@ Also, instead of 2 racks, ARM resources can span 3 racks of computers.
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/111055690-eda3cc00-8435-11eb-9563-aa0fb3154d40.png"><img alt="az-arm-interfaces-599x315.png" width="599" src="https://user-images.githubusercontent.com/300046/111055690-eda3cc00-8435-11eb-9563-aa0fb3154d40.png"></a>
 
-ARM handles Authentication for access to back-end Web App, Data Store, Virtual Machines, etc. from the Azure Portal GUI, PowerShell (Az module), CLI, and ARM IaC templates (by REST clients):
+ARM handles Authentication for access to back-end Web App, Data Store, Virtual Machines, etc. 
 
 
-## Initial Entry Azure Advisor pop-up
+## Resource Groups
+
+
+Resource groups can be created by using the following methods:
+
+   * <a href="#Portal">Azure portal GUI</a>
+   * JSON Templates IaC templates (by custom REST API clients)
+   * Azure Cloud Shell which enable: Azure PowerShell (Az modules)
+   * Azure Bash CLI (az commands)
+   * <a href="#Bicep">Azure Bicep (like Terraform)</a>
+   * Azure programmatic SDKs using programming languages C# .NET, Java, Python, NodJs (JavaScript), etc.
+   <br /><br />
+
+<hr />
+
+<a name="Portal"></a>
+
+## Portal.azure.com GUI
+
+
+
+
+### Initial Entry Azure Advisor pop-up
 
 0. Initial entry pop-up: Azure Advisor
 
@@ -382,10 +439,25 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
    * Performance
    <br /><br />
 
+### Security Center
+
+Host recommendations:
+   * OS security settings configuration rules
+   * System security & critical updates missing
+   * Endpoint protection recommendations
+   * Disk encryption validation
+   * Remediate vulnerabilities assessment
+   * Threat detection
+   <br /><br />
+
+Each can be exempted.
+
+
+
 
 <a name="ARM-Menu"></a>
 
-## ARM Dashboard Tour #
+## ARM Portal GUI Dashboard Tour #
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-overview">DOC</a>:
 
@@ -399,6 +471,16 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/111880191-8c1cb980-896f-11eb-9c8b-86d556a46843.png"><img width="1165" alt="azure-portal-dark-2330x1246" src="https://user-images.githubusercontent.com/300046/111880191-8c1cb980-896f-11eb-9c8b-86d556a46843.png"></a>
 
 
+   ### GUI Navigation Hubs, Panes, Blades
+
+   DEFINITION: A <strong>Hub</strong> is a category for navigation within the left Azure Portal menu that is opened by clicking the upper-left accordion icon alt.
+
+   Panes that appear on the right are called "blades".
+   A <strong>Blade</strong> is a portion of the page that pops up as you navigate in the portal. (Note: A Blade is <strong>contextual</strong> and tied to your navigation. This will become more intuitive as you use the portal.) 
+
+   Opening a series of blades is called a <strong>journey</strong>.
+
+
    ### Dock hamburger menu
 
 0. Click the "hamburger" (home) icon at the upper-left corner for English descriptions of each icon on the left edge.
@@ -406,6 +488,10 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 0. Click the "<" icon at top of the separator to collapse ("dock") or expand the text of services listed on the left menu.
 
    PROTIP: To set its expansion state permanently, click the ‘settings cog’ icon in the top right of portal and click the ‘Choose your default mode for the portal menu’ option. Setting that to docked or undocked.
+
+   <a name="Keyboard_Shortcuts"></a>
+   
+   ### Left Dock Keyboard Shortcuts
 
 0. PROTIP: To keep things simple, I arrange the FAVORITES menu item alphabetically.
 
@@ -421,21 +507,24 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
    10. (0) Virtual Machines
    <br /><br />
 
-   REMEMBER your list by number because you can ...
+0. ??? Click the <img width="20" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/command-1094-Favorite.svg">star icon so it is gold to enable the service to show on the menu or unselect to remove the service from the bar.
 
-   <a name="Keyboard_Shortcuts"></a>
-   
-   ### Keyboard Shortcuts
+   <img width="20" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/general-17-Home.svg">Home
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=ha2ESFCcERQ&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=15" title="Dec 5, 2019">VIDEO</a>
+0. Drag and drop the Categories in a stable sequence and position you can mouse to quickly:
+
+   Example: I drag the "Billing" icon to the top because I manage the money involved.
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=A0uXwdLDzf4">VIDEO</a> 
+   PROTIP: If you memorize the number of your menu, you'll never need to mouse to the "hamberger" menu again, avoid being distracted by menu text, and recover screen real estate.
 
 0. Hold down G and press a number to view one of the first 10 menu items.
 
-   PROTIP: If you memorize these shortcuts, you never need to mouse to the "hamberger" menu again.
+   <a target="_blank" href="https://www.youtube.com/watch?v=ha2ESFCcERQ&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=15" title="Dec 5, 2019">VIDEO</a>: Many find themselves more productive when they don't have to reach for the mouse. Keeping hands on the keyboard reduces a distraction. Thus, it's impressive wizardry during demos.
 
 0. Click the "?" at the top of the page to click <u>Keyboard shortcuts</u>. 
 
-   In there and in <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-keyboard-shortcuts">DOCS</a>, "G+." means <strong>while holding down the G key</strong>, press the period key, which puts the focus on the ">>" icon so you can press Enter to expand or contract the left menu.
+   In there and in <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-keyboard-shortcuts">DOCS</a>, "G+." means <strong>while holding down the G key</strong>, press the period key, which puts the focus on the ">>" icon so you can press Enter to expand or contract the left menu. Press Tab to cycle down the menu.
 
    PROTIP: You an use the G key as if it's like the Command/Ctrl key because you're not filling out a form. If you see G appear in a form fill field (such as the browser URL), backspace to clear the field, then press Tab off the form fields and try again.
 
@@ -446,36 +535,268 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
    PROTIP: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/project/navigation/keyboard-shortcuts?view=azure-devops">Azure DevOps uses more G keys (and M keys as well)</a>.
 
-0. To toggle use of the <strong>whole screen</strong> on Windows PCs: press F11. On macOS: hold down command on the right, control on the left, then F.
 
-   QUESTION: How to toggle
 
-0. Hold down G and press R for <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups">Resource Groups</a>. So drag and drop that to the bottom of the list.
+   <a name="AllServices"></a>
 
-0. For a New Resource, hold down G and press N.
+   ### All Services
 
-0. Drag and drop <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseAll">All resources</a> in the menu to the bottom of the list because you can reach it without a mouse by holding down G and pressing A.
+0. For <a target="_blank" href="https://portal.azure.com/#allservices"><img width="20" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/general-17-Home.svg">All services</a>, hold down G and press <strong>B</strong>.
 
-   Since A is so popular:
+0. Click "All" for a complete of all services Azure has to offer, arranged within the category order on the left menu.
 
-0. For <a target="_blank" href="https://portal.azure.com/#allservices">All services</a>, hold down G and press B.
+   PROTIP: This gives you an idea of how vast the Azure offering is, and the product names certification aspirants should know.
 
-0. For <a href="#Dashboard">Dashboard</a>, hold down G and press D.
 
-0. In Edge, flip to the second-from-the-left tab with command+2.
+   <a name="FullScreen"></a>
+
+   ### Full screen toggle
+
+0. To toggle a window to take up the <strong>whole screen</strong> on Windows PCs: press F11 or Alt+Enter or Windows key + up-arrow. On macOS: hold down command on the right, control on the left, then F (control+command+F). Repeat the keys to un-maximize. This is equivalent to clicking the green "maximize" icon on the upper-left of each app window or double-clicking on the app's title bar. 
+
+   CAUTION: Any window maximized will not be brought up by the keyboard shortcut which cycles through various windows within the app (command+` on macOS; Alt+Tab on Windows PCs). To see the maximized window, you have to cursor near the top edge until the app's menu appears, then pull down the browser's Window menu.
+
+   QUESTION: How to toggle full screen in Azure like on Netflix, which removes menus, breadcrumbs, and command bar? Alt+Space+X on Windows.
+
 0. Switch among windows command+` (at the upper-left corner of the keyboard).
 0. To find text on the page, press command+F.
 
-QUESTION: Toggle to/from Full Screen???
+
+   <a name="ResourceGroups"></a>
+
+   ### Resource Groups
+
+   Before any resource can be provisioned, you need a resource group for it to be placed in.
+   Each resource must be in a resource group. 
+   A resource can only be a member of a single resource group. 
+
+0. Drag and drop "Resource Groups" Home menu item to the bottom of the list. That's because you can ...
+
+0. Hold down G and press <strong>R</strong> for <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups">Resource Groups</a>. 
+
+   DEFINITION: A resource group is a logical container for resources deployed on Azure: virtual machines, Application Gateways, CosmosDB instances, etc. Many resources can be moved between resource groups.  
+
+   Resource groups also define a <strong>scope</strong> for applying role-based access control (RBAC) permissions which limit access to allow only what is needed.
+
+   Deleting a resource group results in deletion of all resources contained within it. So resource groups make it easy to remove a set of resources at once. That's great for non-production environments.
+
+   Resource groups have a flat structure: they cannot be nested. 
+
+   ### Command bar + Create Resource Group
+
+0. Hold down G and press <strong>,</strong> (comma) to focus on the command bar.
+0. If "+ Create" is highlighted, press Enter to invoke it.
+0. If you have more than one Subscription, ensure you have the intended one.
+0. Type your Resource group name.
+
+   ### Region = Location
+
+0. Select the Region (aka Location) closest to intended users. 
+
+   PROTIP: There are differences in prices among regions. "WestUS" is generally the least expensive among US regions.
+
+   Individual resources created within a Resource Group will be placed in the same region.
+
+   ### Tags
+
+0. Click "Review + create" if you are not using Tags or if the resource doesn't support tags.<br />
+   Click "Tags" if you can specify one according to your Tag Naming Convention:
+
+   Tag names are limited to 512 characters.<br />
+   Tag names for storage accounts have a limit of 128 characters.
+
+   Tags are your own metadata for:
+   * Searching
+   * Viewing
+   * Billing
+   <br /><br />
+
+   When are able to invoke CLI commands, consider:
+
+   <pre><strong>az resource tag --tags Department=Finance \
+    --resource-group "$AZ_RESOURCE_GROUP" \
+    --resource-type "Microsoft.Network/virtualNetworks" \
+    --name msftlearn-vnet1 
+   </strong></pre>
+
+   Each tag is a name=value pair such as <tt>Department=Finance</tt> or <tt>Project=Acme</tt>, etc. 
+
+   Each tag value is limited to 256 characters for all types of resources. 
+   * Environment=Production or Staging or "NPT" (Non-Production/Test)
+   * Department or Accounting / cost center Charge Code
+   * Geography
+   * shutdown=6PM and startup=7AM for automation
+   <br /><br />
+
+   Tags are not inherited from parent resources. 
+
+   A resource be associated with up to 50 tags.
+
+0. Click "Create".
 
 
-<a name="Dashboard"></a>
+   ## Policy creation
 
-## Dashboard for Users
+0. Select the <strong>Policy</strong> service.   
 
-In the left menu, where is the menu item for Users (the one most often used by Administrators)?
+   Policies are rules stating which resources can be deployed to which locations
+   * Microsoft provides a number of built-in policies
+   * Create custom policies using JSON
 
-   Press G+D to reach the Dashboard.
+   Assign at resource level or resource group level
+   * Child resources don’t inherit tags from group level
+   
+   PROTIP: All resources in a resource group should share the same lifecycle.
+
+0. In the left menu select the <strong>Definitions</strong> pane under the Authoring section.
+
+   You should see a list of built-in policies that you can use. 
+
+0. Click G+ for focusing on "+ Policy" to press Enter to create a custom policy in the New policy definition dialog.
+
+0. Set the Definition location, click the blue .... and select the Subscription for the policy to be stored in, which should be the same subscription as our resource group. Click Select.
+
+0. Back on the New Policy definition dialog, type Name value of Enforce tag on resource.
+
+0. For the Description, enter This policy enforces the existence of a tag on a resource.
+
+0. For <strong>Category</strong> select Use existing and then select the General category.
+
+0. For the POLICY RULE, select all text in the box (command+A), then delete it.
+0. Copy and paste the following into the box:
+
+   <pre>{
+  "mode": "Indexed",
+  "policyRule": {
+    "if": {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "exists": "false"
+    },
+    "then": {
+      "effect": "deny"
+    }
+  },
+  "parameters": {
+    "tagName": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Name",
+        "description": "Name of the tag, such as 'environment'"
+      }
+    }
+  }
+}
+   </pre>
+
+0. Click "Save".
+
+   Uses for policy:
+
+   * restrict which Azure regions you can deploy resources to.
+   * restrict which types of virtual machine sizes can be deployed.
+   * enforce naming conventions to keep a consistent standard across all Azure resources.
+   <br /><br />
+
+
+   ### Assign policy
+
+   To enable the policy, create an assignment. Assign it to the scope of your resource group, so that it applies to anything inside the resource group.
+
+1. In the policy pane, under the Authoring section on the left, select Assignments.
+1. Select <strong>Assign policy</strong> at the top command bar.
+
+1. In the Assign policy pane, click the blue .... for Scope. Select Resource Group. Click Select.
+
+1. For Policy definition, click the blue .... In the Type drop-down, select Custom, select the Enforce tag on resource policy you created, then click Select.
+
+1. Select Next to go to the Parameters pane.
+
+1. On the Parameters pane, for Tag name enter Department.
+
+1. Click "Review + create" then "Create" to create the assignment.
+
+
+
+
+   ## Policies and Management Group Initiative
+
+1. <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=ff82e602-05c5-4b71-b907-a011015d2859">VIDEO</a>: All Services -> Management Groups to apply governance conditions (access & policies) above Subscriptions.
+
+1. Add Subscription
+
+   An <strong>initiative</strong> describes a group of policies across different management groups, subscriptions, resource groups, ?
+
+
+   <a name="NewResource"></a>
+
+   ### New Individual Resource
+
+   DEFINITION: Each Azure resource is an <strong>instance</strong> of a service you have <strong>already provisioned</strong>.
+
+0. For a New Resource, hold down G and press <strong>N</strong> to select a new resource from Azure's <strong>Marketplace</strong> of services.
+
+   NOTE: This is also reached by clicking "+ Create a resource" or Home icon then "+ Create a resource".
+
+   ### Favorites
+
+0. Within the Marketplace of services/resources, clicking the star icon labeled "Favorites" adds the item to the <a href="#Dashboard">Dashboard (described in a section below)</a>.
+
+   ### New Web App
+   
+   PROTIP: Launching a "Web App" means that you provision a VM (Virtual Machine) which incur charges continuously (until you go broke). A server is used to generate HTML and CSS files as needed (real-time) based on requests from users.
+
+   <a target="_blank" href="https://linuxacademy.com/cp/socialize/index/type/community_post/id/16110">DOC: "Launching a Simple Web App in Azure"</a>
+
+
+   <a name="NewStaticWebApp"></a>
+
+   ### New Static Web App
+
+   "Static web apps" serve the same (static) HTML and CSS files to all users pre-generated when saved (pushed) to GitHub. This means that users don't have to wait for them to be generated.
+   
+0. In another browser tab, sign into GitHub and create a repository containing Nuxt.js or other template to generate HTML and CSS files.
+
+0. Scroll down the "Azure Marketplace" menu to click "Web".
+0. Click "Static Web App (preview)".
+0. Select the Resource Group created already.
+0. Type a Name that follows your Naming Convensions. For example, "msftlearn-core-infra-rg-dev" consists of 
+   * "msftlearn" for the types of resources 
+   * "hr" for Human Resources, "fin" for finance, etc.
+   * "core-infra" for what is contained within,
+   * "dev" or "prod" for environment
+   * "rg" for the type of resource it is (resource group)
+   <br /><br />
+
+0. PROTIP: WARNING: Select a Region that's the same as your Resource Group or you'll incur inter-region network charges.
+0. For Deployment details: Source, select "GitHub" the default.
+0. Click "Sign in with Github" for a pop-up screen to enter the email address you used to create the GitHub account you want to associate.
+0. Type the code shown on your mobile 2FA (Authentication) mobile app to <strong>Verify</strong>.
+0. Click "Grant" each additional organization/account.
+0. Click "Authorize ..." to dismiss the pop-up.
+
+0. You should get an email with subject:
+
+   <pre>[GitHub] A third-party OAuth application has been added to your account</pre>
+
+0. Select the Organization, Repository, Branch created in the step above.
+
+
+   <a name="AllResources"></a>
+
+   ### All Resources
+   
+0. Drag and drop <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseAll">All resources</a> in the menu to the bottom of the list because you can reach it without a mouse by holding down G and pressing <strong>A</strong>. 
+
+   That brings up a list of all resources you have already brought to life.
+
+
+   <a name="Dashboard"></a>
+
+   ### Dashboard
+
+0. For <a href="#Dashboard">Dashboard</a>, hold down G and press <strong>D</strong>.
+
+   In the left menu, where is the menu item for Users (the one most often used by Administrators)?
 
 1. PROTIP: Click Dashboard to configure it with Users at the upper-left.
 1. Get rid of an item by clicking the "..." to "Remove from dashboard" or New Dashboard.
@@ -484,33 +805,12 @@ In the left menu, where is the menu item for Users (the one most often used by A
 1. Click "Save" at the top.
 
 
+   <a name="LicenseTypes"></a>
 
-
-   ### GUI Navigation Hubs, Panes, blades
-
-   DEFINITION: A <strong>Hub</strong> is a category for navigation within the left Azure Portal menu that is opened by clicking the upper-left accordion icon alt.
-
-   Panes that appear on the right are called "blades".
-   A <strong>Blade</strong> is a portion of the page that pops up as you navigate in the portal. (Note: A Blade is <strong>contextual</strong> and tied to your navigation. This will become more intuitive as you use the portal.) 
-
-   Opening a series of blades is called a <strong>journey</strong>.
-
-0. For a list of all Categories, click <img width="20" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/general-17-Home.svg">All Services, which also displays All Resources.
-
-   PROTIP: This gives you an idea of how vast the Azure offering is, and the product names certification aspirants should know.
-
-0. Click the <img width="20" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/command-1094-Favorite.svg">star icon so it is gold to enable the service to show on the menu or unselect to remove the service from the bar.
-
-   <img width="20" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/general-17-Home.svg">Home
-
-0. Drag and drop the Categories in a stable sequence and position you can mouse to quickly:
-
-   Example: I drag the "Billing" icon to the top because I manage the money involved.
-
-
-   ### License types
+   ### License types of Subscriptions
 
    BTW, billing is associated with <strong>Management Subscriptions</strong> with names such as "Pay-as-you-go..."
+
 
 
    ### Support Plans
@@ -522,9 +822,13 @@ In the left menu, where is the menu item for Users (the one most often used by A
 
    <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=672143e9-2e2c-49d6-b5f4-6558d88f66e1">VIDEO "Microsoft Azure Pricing and Support Options"</a>
 
-
 0. Right-click on the "Help + Support" box on the Dashboard and select "unpin"
    becuase you now know you can reach it (in two places).
+
+   ### Box
+
+   For Microsoft people to access a customer's unencrypted data, they are supposed to look into the "Box" where a customer put files they want Microsoft to see.
+
 
    <a name="Social"></a>
 
@@ -543,25 +847,6 @@ In the left menu, where is the menu item for Users (the one most often used by A
    * <a target="_blank" href="https://channel9.msdn.com/Shows/Tuesdays-With-Corey/">Tuesdays with Corey</a> (Sanders, VP of Azure Compute, now Corporate VP of Microsoft Solutions, about Azure on Microsoft's Channel9 video site). <a target="_blank" href="https://twitter.com/search?f=realtime&q=%23AzureTwC&src=typd">#AzureTwC</a>
    
 
-   <a name="Marketplace"></a>
-
-   ### Marketplace
-
-0. Right-click on the "Marketplace" box on the Dashboard and select "unpin"
-   becuase you can reach it this way:
-
-0. Click on the green + icon for a list in the <strong>Marketplace</strong>. Additional categories are:
-
-   * Web + Mobile
-   * Containers
-   * Blockchain
-   <br /><br />
-   
-   <a target="_blank" href="https://linuxacademy.com/cp/socialize/index/type/community_post/id/16110">
-   Click "Web + Mobile" to create a Web App on Azure</a> is a common use case.
-
-0. Click the X to close a blade.
- 
 
 
    ### Help + Support
@@ -589,6 +874,34 @@ In the left menu, where is the menu item for Users (the one most often used by A
 
 
 <hr />
+
+<a name="Region"></a>
+
+## Region = Location
+
+1. Go to Azure Resource Explorer:
+
+   <a target="_blank" href="https://resources.azure.com/">https://resources.azure.com</a>
+
+1. To provides API calls and responses. Under your subscription / locations is JSON with logitude and latitudes of each location (region):
+
+   <pre>      "id": "/subscriptions/.../locations/westus3",
+      "name": "westus3",
+      "displayName": "West US 3",
+      "longitude": "-112.074036",
+      "latitude": "33.448376"
+   </pre>
+
+1. On Google Maps, type in Search as "33.448376, -122.074036".
+
+   Alternately, construct a URL such as:
+
+   <a target="_blank" href="
+   https://www.google.com/maps?q=37.819722,-122.478611">
+   https://www.google.com/maps?q=33.448376,-122.074036</a>
+
+1. Click to see it's in downtown Phoenix. (For security, that is not the exact location so Amazon can't drop a bomb on it).
+
 
 <a name="AddUsers"></a>
 
@@ -630,6 +943,8 @@ es.
 ## AAD (Azure Active Directory)
 
 PROTIP: Azure AD users and groups are created in a <strong>flat structure</strong>, with no Organizational Units (OUs) or Group Policy Objects (GPOs) as in classic Active Directory on-prem.
+
+By default, Azure roles and Azure AD roles do not span Azure and Azure AD. However, if a Global Administrator elevates their access by choosing the Access management for Azure resources switch in the Azure portal, the Global Administrator will be granted the User Access Administrator role (an Azure role) on all subscriptions for a particular tenant. The User Access Administrator role enables the user to grant other users access to Azure resources. This switch can be helpful to regain access to a subscription.
 
 
 In the Manage section, click Licenses.
@@ -777,18 +1092,6 @@ There is a limit of 100 Management certs per Azure subscription (administrator).
    * Prod
 
 
-   ## Management Group Initiative
-
-1. <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=ff82e602-05c5-4b71-b907-a011015d2859">VIDEO</a>: All Services -> Management Groups to apply governance conditions (access & policies) above Subscriptions.
-
-1. Add Subscription
-
-
-   ## Policies and Initiatives
-
-   An <strong>initiative</strong> describes a group of policies across different management groups, subscriptions, resource groups, ?
-
-
 <a name="Tenant"></a>
 
 ## Tenant
@@ -851,28 +1154,6 @@ Roles: Owner, Contributor, Reader (Observer), User Access Admin
 Role Assignment of Role Definitions which list operations that can be performed by the Security Principal.
 
 See https://docs.microsoft.com/en-us/azure/role-based-access-control/troubleshooting
-
-
-## Policies
-
-Policies are rules stating which resources can be deployed to which locations
-   * Microsoft provides a number of built-in policies
-   * Create custom policies using JSON
-
-Assign at resource level or resource group level
-   * Child resources don’t inherit tags from group level
-   
-   PROTIP: All resources in a resource group should share the same lifecycle.
-
-## Tags
-
-Tags are your own metadata for:
-   * Searching
-   * Viewing
-   * Billing
-   
-Name and value pairs:
-   * Project = Acme 
 
 
 ## Limits = Quotas
@@ -1017,6 +1298,7 @@ https://azure.microsoft.com/en-us/pricing/calculator/
    <pre>az cloud set --name AzureUSGovernment  # or AzureChinaCloud, or AzureGermanCloud.
    </pre>
 
+   NOTE: China cloud is operated by 21 Vianet.
 
    ### Permissions
 
@@ -1050,7 +1332,10 @@ https://azure.microsoft.com/en-us/pricing/calculator/
    chmod 600 $SSH_USER.pem
    </pre>
 
+
+
    This is recommended instead of the alternative of asking Azure to <tt>--create-cert</tt> in command:
+
 
    ### Service Principal
 
@@ -1171,12 +1456,23 @@ QUESTION: limits to total concurrent executions across all functions within a gi
    3. Brazil, South Africa, UAE
    4. (DE Zone 1) Germany
 
+
+
+
 ## Azure AD & PIM
 
    Subscriptions include "Azure AD Premium P2" and "Enterprise Mobility + Security (EMS) E5".
 
-   An additional paid subscription is <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">Azure AD Privileged Identity Management (PIM)</a> which minimizes the number of people who have access to secure information, which mitigates the risk of excessive, unnecessary, or misused access rights and provides oversight of role assignments, self-service, and just-in-time role activation and Azure AD and Azure resource access reviews.
+   An additional paid subscription is <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">Azure AD Privileged Identity Management (PIM)</a> which minimizes the number of people who have access to secure information. It mitigates the risk of excessive, unnecessary, or misused access rights and provides oversight of role assignments, self-service, and just-in-time role activation and Azure AD and Azure resource access reviews.
 
+   EMS (Enterprise Mobility + Security) includes:
+   * AAD is the cloud-based IAM service to control access to internal and external applications
+   * Microsoft Intune is used for MDM (Mobile Device Management) but also PCs to remote reset and wipe. compliance status
+   * Azure Info Protection protects documents tagged to not be shared
+   * Microsoft Cloud App Security
+   * Microsoft Advanced Thereat Analytics (ATA) is an on-prem. platform to protect against targeted cyber attacks along the "Cyber Kill Chain" attack process (Domain Dominance) by parsing network traffic to create a behavioral profile about user activities.
+   * Azure Advanced Threat Protection is a cloud-based triage tool which displays incidents on a timeline 
+   <br /><br />
 
 ## Azure AD B2B (Business-to-Business) 
 allows an organization to securely share company applications and company services with guest users from other orgs, while retaining control over company data. Auth policies protect corp. data. 
@@ -1199,6 +1495,31 @@ It makes use of SYN cookies and rate & connection limits defined by a Trust Fram
 1. Create.
 1. Link to subscription.
 
+
+
+
+<a name="Bicep"></a>
+
+## Azure Bicep > Terraform
+
+<a target="_blank" href="https://www.youtube.com/watch?v=_yvb6NVx61Y" title="Understanding and Using Project BICEP - The NEW Azure Deployment Technology by John Savill Mar 9, 2021">VIDEO</a>:
+
+Azure Bicep files contain a custom Domain Specific Language (DSL) designed to be easier to read than ARM JSON templates.
+
+https://github.com/Azure/bicep/tree/main/docs/examples
+
+Tooling in Visual Studio Code <strong>transpiles</strong> Bicep files to ARM templates.
+
+Bicep files are like Terraform declarative files.
+But instead of state files like Terraform, Azure itself manages state.
+
+QUESTION: What about templating? Pulumi?
+
+In March 2021, Bicep is not yet integrated into the Portal.
+
+https://github.com/Azure/bicep
+
+1. Install the Bicep CLI.
 
 
 
@@ -1265,26 +1586,11 @@ Policy Definition options:
 
 When an Azure service feature is in public preview, it means the feature is available for all Azure customers for beta testing.
 
+
 ## Topics
-
-Devices are managed on Azure AD
-
-Users on another Azure AD (B2B) or public IDP (B2C)
 
 
 <a target="_blank" href="https://github.com/Azure/azure-quickstart-templates/">This</a> contains Azure Resource Manager templates contributed by the community.
-
-## Security Center
-
-Host recommendations:
-   * OS security settings configuration rules
-   * System security & critical updates missing
-   * Endpoint protection recommendations
-   * Disk encryption validation
-   * Remediate vulnerabilities assessment
-   * Threat detection
-   <br /><br />
-Each can be exempted.
 
 
 ## Azure Futures Roadmap
@@ -1295,10 +1601,18 @@ Each can be exempted.
 
 * <a target="_blank" href="https://azure.microsoft.com/updates">azure.microsoft.com/updates</a> in now timing out. It has filters for GA vs. futures.
 
+* <a target="_blank" href="https://www.youtube.com/watch?v=9RtzSIrRijg&list=RDCMUCp8lLM2JP_1pv6E0NQ38pqw&index=1">Azure This Week</a> by Lars Klint and <a target="_blank" href="https://www.youtube.com/channel/UCbjgKwnWnGG7sKCPTRgrFcw" title="Gwyn Pena-Siguenza">GPS</a> at <a target="_blank" href="https://www.acloudguru.com/">ACloudGuru.com</a>.
+
 
 ## References
 
 https://olohmann.github.io/azure-hands-on-labs/labs/07_iac/iac.html
+
+The minimum prior notification will Microsoft give before ending support for products governed by the Modern Lifecycle Policy is 12 months.
+
+https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/how-to-connect-fed-azure-adfs
+ADFS (Azure Directory Federated Services)
+
 
 ## More on DevOps #
 

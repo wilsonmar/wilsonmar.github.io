@@ -203,9 +203,9 @@ There is also a 5 year experience requirement.
 
 Written Reference:
 
-   * <a target="_blank" href="https://josephdelgadillo.com/cissp-testprep-cheatsheet/">Joseph Delgadillo's cissp-testprep-cheatsheet</a> provides a PowerPoint file.
+   * <a target="_blank" href="https://www.amazon.com/Certified-Information-Security-Professional-Official/dp/1119523265/">$58</a> <a target="_blank" href="https://learning.oreilly.com/library/view/isc2-cissp-certified/9781119475934/">Sybex BOOK</a>: "(ISC)2 CISSP Certified Information Systems Security Professional <strong>Official Study Guide</strong> & Practice Tests Bundle Second" Edition</a> by Mike Chapple, who has a video course on LinkedIn Learning which is deep yet concise, with effective sequencing of topics. He also shows demos of security-related Windows programs where appropriate, such as Windows Firewall Log Viewer.
 
-   * <a target="_blank" href="https://www.amazon.com/Certified-Information-Security-Professional-Official/dp/1119523265/">Sybex $58 BOOK: "(ISC)2 CISSP Certified Information Systems Security Professional Official Study Guide & Practice Tests Bundle Second" Edition</a> by Mike Chapple, who has a video course on LinkedIn Learning which is deep yet concise, with effective sequencing of topics. He also shows demos of security-related Windows programs where appropriate, such as Windows Firewall Log Viewer.
+   * <a target="_blank" href="https://josephdelgadillo.com/cissp-testprep-cheatsheet/">Joseph Delgadillo's cissp-testprep-cheatsheet</a> provides a PowerPoint file.
 
    * <a target="_blank" href="https://wilsonmar.github.io/cyber-security/">My notes on cyber security</a> highlights what to remember.
 

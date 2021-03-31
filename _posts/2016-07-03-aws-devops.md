@@ -57,10 +57,6 @@ User Guides from Amazon:
    * <a target="_blank" href="https://github.com/awslabs/aws-devops-essential">
    AWS DevOps Essentials</a>
 
-From Acloud.guru
-
-* https://read.acloud.guru
-
 * <a target="_blank" href="https://acloud.guru/learn/aws-certified-devops-engineer-professional">AWS Certified DevOps Engineer - Professional 6-hour video</a> by Nick Triantafillou covers:
 
    * Core Concepts

@@ -3,7 +3,7 @@ layout: post
 title: "Jenkins Setup"
 excerpt: "Make your robot butler"
 tags: [Jenkins, setup]
-date: "2016-05-19"
+date: "2021-03-29"
 file: "jenkins-setup"
 image:
 # pic silver robot white skin handshake 1900x500
@@ -1803,6 +1803,10 @@ New podcast every Friday! Sign up for our weekly and nightly emails. Open source
 
    The <a target="_blank" href="https://gitter.im/wakaleo/jenkins-the-definitive-guide-book">
    Gitter channel associated with the book</a>.
+
+## References
+
+https://github.com/bmuschko/cje-crash-course
 
 ## More on DevOps #
 

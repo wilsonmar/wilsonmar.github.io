@@ -1197,20 +1197,20 @@ A threat modeling program continually reassess the threat environment, including
 
 <a target="_blank" href="https://attack.mitre.org/">https://attack.mitre.org</a>
 ATT&CK process: 
-   1. Reconnaissance
-   2. Resource Development
-   3. Initial Access
-   4. Execution
-   5. Persistence
-   6. Privilege Escalation
-   7. Defense Evasion
+   1. <strong>Reconnaissance</strong>
+   2. Resource Development (new)
+   3. Initial Access (Intrusion)
+   4. Execution (<strong>Exploitation</strong>)
+   5. Persistence (new)
+   6. <strong>Privilege Escalation</strong>
+   7. Defense Evasion (Obfuscation Anti-forensics)
    8. Credential Access
-   9. Discovery
-   10. Lateral Movement
-   11. Collection
-   12. Command and Control
-   13. Exfiltration
-   14. Impact
+   9. Discovery (new)
+   10. <strong>Lateral Movement</strong>
+   11. Collection (new)
+   12. Command and Control (<strong>Denial of service</strong>)
+   13. <strong>Exfiltration</strong>
+   14. Impact (new)
    <br /><br />
 
 Microsoft Threat Model Tool - dataflow diagrams that reflect potential threats. 
@@ -1609,18 +1609,25 @@ by NIAP (National Information Assurance Partnership) to
    7. Extremely high levels of security are provided. This level requires extensive testing, measurement, and independent testing.
    <br /><br />
 
-Security Models: <a target="_blank" href="https://www.youtube.com/watch?v=LGqZbiitiDw&t=15m32s">REMEMBER</a> <a target="_blank" href="https://www.youtube.com/watch?v=qZB6_lp9M30&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=3">VIDEO</a>: <a target="_blank" href="https://www.youtube.com/watch?v=FRi73kodf_c&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR&index=2">2</a>,<a target="_blank" title="2016" href="https://www.youtube.com/watch?v=4esHgEOmTqU&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR">3</a> 
-   * The <a target="_blank" href="https://www.wikiwand.com/en/Bell%E2%80%93LaPadula_model">Bell-LaPadula (BLP) model</a> focuses on data confidentiality and controlled access to classified information. It uses a state machine with transition functions to control information flow, characterized by the phrase "write up, read down" (WURD). It was the first mathematical model of a multilevel system for enforcing access control. Not dynamic. It's a multilevel security model because it allows simultaneous processing of classified information across the security levels.
+Security Models: <a target="_blank" href="https://www.youtube.com/watch?v=LGqZbiitiDw&t=15m32s" title="CISSP Memorization Tips and Techniques (ultimate guide) by Jan 25, 2021">REMEMBER</a> <a target="_blank" href="https://www.youtube.com/watch?v=qZB6_lp9M30&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=3">VIDEO</a>: <a target="_blank" href="https://www.youtube.com/watch?v=FRi73kodf_c&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR&index=2">2</a>,<a target="_blank" title="2016" href="https://www.youtube.com/watch?v=4esHgEOmTqU&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR">3</a> 
+   * The <a target="_blank" href="https://www.wikiwand.com/en/Bell%E2%80%93LaPadula_model">Bell-LaPadula (BLP) model</a> focuses on data confidentiality and controlled access to classified information. It uses a state machine with transition functions to control information flow, characterized by the phrase "write up, read down" (WURD). MEMONIC: Bell. It was the first mathematical model of a multilevel system for enforcing access control. Not dynamic. It's a multilevel security model because it allows simultaneous processing of classified information across the security levels.
    
    * The Brewer-Nash (Chinese Wall) model introduced the concept of allowing <strong>dynamic</strong> access controls based on a user’s previous actions (conflicts of interest). Based on RBAC.
 
    * The <a target="_blank" href="https://www.wikiwand.com/en/Clark%E2%80%93Wilson_model">Clark-Wilson integrity model</a> concerns itself with data integrity by allowing data to be altered only through programs and not directly by users.
+
    * The Lipner model shares characteristics with the Clark-Wilson model in that it separates objects into data and programs.
+
    * The Biba Integrity Model describes rules for the protection of data integrity. 
+
    * Graham-Denning model
+
    * HRU (Harrison-Ruzzo-Ullman) uses ACL matrix of subject roles with columns of objects.
+
    * The Take-Grant model is represented as a directed graph, called a protection graph. The subjects and objects of the computer system are the vertices and the access rights of subjects to objects are represented by arcs.
+
    * The Goguen-Meseguer model is the foundation of the noninterference model. With this model, the list of objects that a subject can access is predetermined.
+
    * The Sutherland model defines a set of system states, initial states, and state transitions. Using these predetermined secure states, the Sutherland model maintains integrity and prohibits interference.
    <br /><br />
 

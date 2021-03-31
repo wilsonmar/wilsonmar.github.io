@@ -1745,7 +1745,7 @@ co-founder of DevOps as a Service <a target="_blank" href="https://Gruntwork.io/
    * <a target="_blank" href="https://github.com/jason-azze/tf-web-exercise">
    https://github.com/jason-azze/tf-web-exercise</a>
 
-<strong>Ned Bellavance</strong> (<a target="_blank" href="https://twitter.com/ned1313">@ned1313</a> MS MVP at <a target="_blank" href="https://www.nerdinthecloud.com/">nerdinthecloud.com</a>) has several video classs on Pluralsight:
+<strong>Ned Bellavance</strong> (<a target="_blank" href="https://twitter.com/ned1313">@ned1313</a> MS MVP at <a target="_blank" href="https://www.nerdinthecloud.com/">nerdinthecloud.com</a>) has several video classes on Pluralsight:
 
    * <a target="_blank" href="https://www.pluralsight.com/courses/terraform-getting-started">
    Terraform - Getting Started (Beginner level)</a> Sep 14 2017 [3h 11m]

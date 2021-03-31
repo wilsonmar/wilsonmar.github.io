@@ -57,7 +57,9 @@ PROTIP: Some put tiny drops from a glue gun on strategic points on the keyboard 
 
 ## Keyboard Ergonomics
 
-Resourceful coders make it so they don't need to waste time and attention reaching for the mouse. 
+PROTIP: Resourceful coders make it so they don't need to waste time and attention reaching for the mouse. 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=oOdfefV2R1I">VIDEO</a>: "Among fastest competitive typists, only two use Dvorick key layout".
 
 Although pricey at <a target="_blank" href="https://www.amazon.com/Kinesis-Advantage2-Ergonomic-Keyboard-KB600/dp/B07K1SMRGS/">$340 from Amazon</a> (perhaps the most expensive keyboard available), the "Advantage2" keyboard <a target="_blank" href="https://kinesis-ergo.com/shop/advantage2/">from Kinesis-ergo.com</a> (at Bethel, Washington state)
 makes it easier and faster for your fingers to reach keys due to its unique contoured key wells.
@@ -89,12 +91,15 @@ Videos:
    * https://www.youtube.com/watch?v=PhQlZvUzT7w Aug 3, 2016 from Kinesis
    <br /><br />
 
+
 ### Foot pedels
 
 The Kinesis Advantage keyboard has a <a target="_blank" href="https://www.youtube.com/watch?v=dHhr30207JY">
 phone plug</a> to connect to a <a target="_blank" href="https://kinesis-ergo.com/products/#se2-foot-pedals">foot peddle</a>
 to press the "Enter" key.
 
+
+<hr />
 
 ## Switch keys on macOS
 
@@ -106,6 +111,7 @@ That happens because I accidentally had my hand too far to the left when I inten
 I can type all caps by holding down the shift key with my left or right hand.
 
 We can kill 2 keys at once.
+
 
 ## Caps Lock to Escape
 
@@ -145,13 +151,14 @@ BLAH: The Esc (Escape) key is too far North on the keyboard and forces some to l
 
 ## Voice Recognition
 
-   PROTIP: Those who don't have people sitting nearby can enable <strong>voice recognition</strong> to automatically type some (not all) keys.
-   This has been available since the OSX Yosemite version.
+   PROTIP: A big benefit of working from home is that I don't have people sitting nearby. So now I can enable <strong>voice recognition</strong> to automatically type some (not all) keys. This has been available since the OSX Yosemite version.
 
    <a target="_blank" href="https://support.apple.com/en-us/HT203085">
    https://support.apple.com/en-us/HT203085</a>
 
    See <a target="_blank" href="https://www.macworld.com/article/2843499/how-to-command-your-mac-with-your-voice.html">this video</a>:
+
+   Give it a try:
 
 1. CAUTION: Enabling "Use Enhanced Dictation" (In Apple System Preferences > Dictation & Speech > Turn on Dictation) causes an approximately 800MB file to be downloaded to your Mac. 
 
@@ -297,7 +304,7 @@ But use a companion key on the right side of the keyboard.
 
 ## Process Navigation #
 
-Press <strong>command + Tab</strong> to cycle through programs running.
+Press <strong>command + Tab</strong> to cycle through programs (apps) running.
 
 Press shift plus the above reverses the cycling direction.
 

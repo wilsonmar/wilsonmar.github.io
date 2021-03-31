@@ -113,7 +113,7 @@ Twitter Feeds:
    * LinkedIn
    * CloudAcademy
    * LinuxAcademy.com 
-   * <a target="_blank" href="https://acloudguru.com/course/aws-certified-security-specialty">ACloud.guru</a>
+   * <a target="_blank" href="https://acloudguru.com/course/aws-certified-security-specialty">ACloudguru.com</a>
    * <a href="#Pluralsight">Pluralsight</a>
    <br /><br />
 
@@ -148,10 +148,8 @@ Pluralsight's Security video courses</a>:
 
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/architecting-security-aws">Architecting for Security on AWSArchitecting for Security</a> Mar 08, 2020 By Ben Piper
 
-ACloud.Guru has a Exam Simulator 
-
-   * <a target="_blank" href="https://acloud.guru/course/aws-certified-security-specialty/learn/11050f3d-0362-ea01-f278-88368014a1cc/6b7857a0-5853-93af-2827-ba028b4021f1/watch">
-   Acloud.guru exam</a>
+ACloudGuru.com has a <a target="_blank" href="https://acloudguru.com/course/aws-certified-security-specialty/learn/11050f3d-0362-ea01-f278-88368014a1cc/6b7857a0-5853-93af-2827-ba028b4021f1/watch">
+Exam Simulator</a>
 
 
 

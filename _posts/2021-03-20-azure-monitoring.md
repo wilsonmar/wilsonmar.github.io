@@ -27,6 +27,7 @@ Several Azure services are related to the business of monitoring:
    * <a href="#Azure_Sentinel">Azure Sentinel (SIEM like Splunk)</a>
    <br /><br />
 
+https://docs.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/service-health-and-continuity
 
 <a name="Monitor"></a>
 
@@ -221,6 +222,9 @@ Telemetry such as events and traces are stored as logs in addition to performanc
    * Usage data volume per data type
    * Which computers sent a heartbeat in the last hour, and when they last sent it
    <br /><br />
+
+
+https://jmespath.org/tutorial.html
 
 
 <a name="Log_Analytics"></a>

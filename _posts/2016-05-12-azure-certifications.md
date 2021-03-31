@@ -52,7 +52,7 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
    </td></tr>
 <tr valign="top"><td> Developer
    </td><td>* AZ-204 Azure Developer Associate<br />
-       * AZ-220 Azure IoT Developer Specialty
+       * <a href="#AZ-220">Azure IoT Developer Specialty</a> 
 
    </td></tr>
 <tr valign="top"><td> DevOps Engineer
@@ -76,7 +76,8 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
    </td><td>* <a href="#SC-900">SC-900 Security, Compliance, and Identity Fundamentals</a><br />
     * SC-200 Security Operations Analyst Associate<br />
     * SC-300 Identity and Access Administrator Associate<br />
-    * AZ-500 Azure Security Engineer Associate
+    * SC-400 Information Protection Administrator<br />
+    * <a href="#AZ-500">AZ-500 Azure Security Engineer Associate</a>
 
    </td></tr>
 </table>
@@ -87,7 +88,9 @@ Andrew Brown offers this diagram:
 
 <hr />
 
-## Microsoft Learning
+## Training vendors
+
+### Microsoft Learning
 
 <a target="_blank" href="https://events.microsoft.com/?timeperiod=next30Days&isSharedInLocalViewMode=true&country=United%20States&language=English">Microsoft Events</a>
 
@@ -149,6 +152,33 @@ Andrew Brown offers this diagram:
    ![az-certs-labclient-reconnect-170x137](https://user-images.githubusercontent.com/300046/112444873-1c625200-8d14-11eb-9b67-f1bfe5a76a9b.png)
 
 
+### Cloud Academy
+
+If you want time on servers (one hour at a time), subscribe to
+<a target="_blank" href="https://cloudacademy.com/learning-paths/az-900-exam-preparation-microsoft-azure-fundamentals-524/">CloudAcademy.com</a>
+
+See my step-by-step advice for using CloudAcademy's Azure environment at ...
+
+
+### OReilly
+
+Offers cloud time
+
+
+### A Cloud Guru & Linux Academy
+
+ACloudGuru.com (formerly ACloud.guru) offers cloud time
+
+They purchased
+<a target="_blank" href="https://app.linuxacademy.com/search?type=Course&categories=Azure">
+LinuxAcademy.com</a>
+
+### Vlad
+
+https://vladtalkstech.com/microsoft-certification-study-guides
+
+<hr />
+
 <a name="#AZ-900"></a>
 
 ## AZ-900 Azure Fundamentals
@@ -171,8 +201,8 @@ Andrew Brown, who also offers <a target="_blank" href="https://www.exampro.co/az
 3 hour VIDEO</a> (with ads but great diagrams). It's done through <a target="_blank" href="https://www.freecodecamp.org/news/azure-fundamentals-course-az900/">FreeCodeCamp.org</a>His advice:
 "Study 1-3 hours a day, every day".
 
-If you want time on servers (one hour at a time), subscribe to
 <a target="_blank" href="https://cloudacademy.com/learning-paths/az-900-exam-preparation-microsoft-azure-fundamentals-524/">CloudAcademy.com</a>
+includes time on servers (one hour at a time).
 
 <a target="_blank" href="https://www.youtube.com/watch?v=53LO_rJz6Es&list=PLHh_n2lgzcrvecPJ-zMukLlDrq0GMSMmB" title="Dec 7, 2020">Ravikirans answers Whizlabs 55 questions</a> 
 
@@ -236,6 +266,10 @@ CloudAcademy</a> provides lab time on the real Azure environment.
    * <a target="_blank" href="https://www.youtube.com/watch?v=AzPvDNUldoI&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&index=8&t=10m43s" title="Sep 15, 2020">1hr 47m Azure Monitoring</a>
    <br /><br />
 
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/573">LinuxAcademy</a>
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/763">Intro to Azure Files</a>
+
 Flash cards:
 
 * <a target="_blank" href="https://quizlet.com/subject/az-104/">Quizlet flash cards</a>
@@ -250,19 +284,51 @@ Sample tests:
 by Tim Warner with <a target="_blank" href="https://www.kaplanlearn.com/education/offeringdashboard/index/04347ac4e89b19f5ef7559ef6f975386">Kaplan sample exam</a>.
 
 
-<a name="AZ-500"></a>
+<hr />
 
-## AZ-500 Security certifications
+<a name="Sec_Certs"></a>
 
-See <a target="_blank" href="https://wilsonmar.github.io/security-certifications">https://wilsonmar.github.io/security-certifications</a> - my blog on security certifications.
+## Security Certifications
 
-https://www.thomasmaurer.ch/2020/05/az-500-study-guide-microsoft-azure-security-technologies-2021/
+<a target="_blank" href="https://www.youtube.com/watch?v=6znaiD9B8mw">
+Ask the Experts: New Microsoft Security Compliance, Identity Training and Certification Portfolio</a> from Ignite March 2021
+
+
+<a name="#MS-900"></a>
+
+## MS-900 Office 365 Fundamentals
+
+<a target="_blank" href="https://www.youtube.com/watch?v=xirUELDSrUE">Carla Jenkins</a>
+recommends this because Azure security exams cover 365 as well.
+
+https://docs.microsoft.com/en-us/learn/certifications/exams/ms-900
+
+https://vladtalkstech.com/ms-900-study-guide-microsoft-365-fundamentals
+
+## MS-500 Microsoft 365 Security Admin
+
+https://docs.microsoft.com/en-us/learn/certifications/exams/ms-500
+
+https://vladtalkstech.com/ms-500-study-guide-microsoft-365-security-administration
+
+<a target="_blank" href="https://www.udemy.com/course/microsoft-365-security-administration-exam-ms-500/">
+on Udemy: Microsoft 365 Security Administration (Exam MS-500)</a>
+
+
+https://spvlad.com/2OxcZIJ
+Planning and Designing Microsoft 365 Identity Strategy
+
+<a target="_blank" href="https://app.pluralsight.com/library/courses/protecting-devices-applications-microsoft-365">
+VIDEO: Protecting Devices and Applications in Microsoft 365</a>
+By Robert McMillen
+
 
 <a name="SC-900"></a>
 
 ### SC-900 Security
 
-SC-900 60 minutes to answer 50 single-line mulitple-choice questions about features (not configuration).
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/sc-900">
+SC-900</a> (in beta) takes 60 minutes to answer 50 single-line mulitple-choice questions about features (not configuration).
 Includes M365 Defender and Compliance Center.
 
 Domains:
@@ -292,6 +358,21 @@ will be updated March 23, 2021
 
 <a target="_blank" href="https://github.com/timothywarner/az400">OReilly.com class by Timothy Warner</a>
 
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/463">Linux Academy: Preparing for AZ-400</a>
+
+
+<a name="AZ-500"></a>
+
+## AZ-500 Security certifications
+
+See <a target="_blank" href="https://wilsonmar.github.io/security-certifications">https://wilsonmar.github.io/security-certifications</a> - my blog on security certifications.
+
+https://www.thomasmaurer.ch/2020/05/az-500-study-guide-microsoft-azure-security-technologies-2021/
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/367">Linux Academy Microsoft Azure Security Technologies</a> by Tia Williams
+
+
+<hr />
 
 <a name="AZ-140"></a>
 
@@ -428,6 +509,42 @@ John McIntyre
 <hr />
 
 
+<a name="AZ-303"></a>
+
+## AZ-303
+
+Anthony James at LinuxAcademy:
+
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/579">Design Concepts</a>
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/525"> Part 1</a>
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/526"> Part 2</a>
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/527"> Part 3</a>
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/528"> Part 4</a>
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/826">Part 5</a>
+   <br /><br />
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/345">Linux Academy: Azure CLI Esssentials</a>   
+
+https://linuxacademy.com/cp/modules/view/id/369">Learn Azure by Doing</a>   
+
+https://linuxacademy.com/cp/modules/view/id/461">Implementing App Infrastructure</a>
+
+https://linuxacademy.com/cp/modules/view/id/757?redirect_uri=https://app.linuxacademy.com/search?type=Course&categories=Azure
+Cost control in Azure
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/666">Intro to Azure Security</a>
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/706">Azure IAM Concepts</a>
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/733">Deployment Pipelines using GitHub Actions</a>
+
+
+## AZ-304 Architecture Design
+
+https://linuxacademy.com/cp/modules/view/id/776?redirect_uri=https://app.linuxacademy.com/search?type=Course&categories=Azure
+
+<hr />
+
 <a name="AI-900"></a>
 <a name="AI-100"></a>
 
@@ -440,6 +557,15 @@ AI-900 Sample Practice Exam Questions</a>
 
 <a target="_blank" href="https://ravikirans.com/ai-900-azure-exam-study-guide/">
 AI-900 Study Guide</a>
+
+
+<a name="AZ-220"></a>
+
+## AZ-220 IoT
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/537">Course 1</a>
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/538">Course 2</a>
 
 
 ## References

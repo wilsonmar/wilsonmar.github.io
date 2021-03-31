@@ -468,12 +468,24 @@ On your local machine (laptop), perform these steps to obtain assets from GitHub
 
 1. Install Git https://help.github.com/articles/set-up-git/
 
+1. See the list of sample apps in GitHub:
+
+   <a target="_blank" href="
+   https://github.com/trailheadapps/">
+   https://github.com/trailheadapps</a>
+
 1. Download a sample repo from GitHub - the Dreamforce ’16 Developer Keynote sample application, called the DreamHouse app stored in GitHub. It's author is listed as Wade Wegner, <a target="_blank" href="https://www.linkedin.com/in/wadewegner/">Salesforce SVP Product Management</a>:
 
-   <pre><strong>git clone https://github.com/forcedotcom/sfdx-dreamhouse.git
-   cd sfdx-dreamhouse
+   https://github.com/trailheadapps/dreamhouse-sfdx (previously<br />
+   https://github.com/forcedotcom/sfdx-dreamhouse.git)
+
+1. Sign into Github to use SSH
+
+   <pre><strong>git clone git@github.com:trailheadapps/dreamhouse-sfdx.git
+   cd dreamhouse-sfdx
    </strong></pre>
 
+1. Alternately:
 
    <pre>
 git clone https://github.com/forcedotcom/sfdx-simple.git
