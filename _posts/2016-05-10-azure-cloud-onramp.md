@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure Cloud Onramp"
-excerpt: "Get to know Subscriptions, Support plans, ARM portal Keyboard Shortcuts, Azure Active Directory"
+excerpt: "Get to know Subscriptions, Support plans, ARM portal Keyboard Shortcuts, Tags, Policies"
 tags: [cloud, azure]
 date: "2021-03-05"
 file: "azure-cloud-onramp"
@@ -714,7 +714,6 @@ Each can be exempted.
 1. On the Parameters pane, for Tag name enter Department.
 
 1. Click "Review + create" then "Create" to create the assignment.
-
 
 
 

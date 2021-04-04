@@ -6,10 +6,10 @@ tags: [microsoft, SIEM, monitoring]
 date: "2021-03-20"
 file: "azure-monitoring"
 image:
-# feature: pic green matrix hallway 1900x500.jpg
-  feature: https://cloud.githubusercontent.com/assets/300046/14623876/07afd066-0593-11e6-933a-2e596511ac67.jpg
-  credit: 
-  creditlink: 
+# az-monitoring-MSLEARN-1506x357
+  feature: https://user-images.githubusercontent.com/300046/113497609-fc285500-94c2-11eb-9f48-38cb8dabc860.png
+  credit: Microsoft Learn
+  creditlink: https://docs.microsoft.com/en-us/learn/modules/design-monitoring-strategy-on-azure/2-full-stack-monitoring
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -17,7 +17,7 @@ comments: true
 {% include _toc.html %}
 
 
-Several Azure services are related to the business of monitoring:
+Several Azure services are related to all the monitoring done within Azure:
    * <a href="#Monitor">Azure Monitor</a>
    * <a href="#Log_Analytics">Log Analytics</a> <a href="#LA_Workspaces">Workspaces</a>
    * <a href="#Security_Center">Azure Security Center</a>
@@ -27,7 +27,15 @@ Several Azure services are related to the business of monitoring:
    * <a href="#Azure_Sentinel">Azure Sentinel (SIEM like Splunk)</a>
    <br /><br />
 
-https://docs.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/service-health-and-continuity
+Issues:
+   * poor response times,
+   * changing usage rates, 
+   * exceptions, and 
+   * security risks
+   * capacity limits
+   * suspicious activity.
+   <br /><br />
+
 
 <a name="Monitor"></a>
 
@@ -961,6 +969,13 @@ Sev 1 = Error<br />
 Sev 2 = Warning<br />
 Sev 3 = Informational<br />
 Sev 4 = Verbose
+
+## References
+
+https://docs.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/service-health-and-continuity
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/design-monitoring-strategy-on-azure/?">
+LEARN: Design a holistic monitoring strategy on Azure</a>
 
 
 ## Social

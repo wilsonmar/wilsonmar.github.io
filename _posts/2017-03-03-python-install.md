@@ -58,6 +58,8 @@ An additional complication is that there are several alternative virtual environ
 * Virtualenv (venv) is an environment manager for Python.
 * <a href="#Conda">Conda</a> does both, and is language agnostic (not just for Python).
 
+* <a href="#easy_install">easy_install</a> is an environment manager.
+
 * <a href="#MiniConda">Miniconda</a> is a lightweight distribution of Conda, and uses conda commands.
 * Anaconda is installed on top of miniconda to provide a curated collection of <a target="_blank" href="https://docs.continuum.io/anaconda/pkgs.html">over 720 "common" packages</a> for scientific Python users.
 
@@ -82,18 +84,15 @@ PROTIP: PIP install is troublesome, often because they are more recent than thos
 
 There is what can be a confusing conflict of choice here for installing Python and its package manager.
 
-   * NOT recommended is the manual approach of <a href="#PackagInstallerz">download Python installer from python.org</a>, even though that's the method described in various (obsolete) websites and books.
-
-   <a target="_blank" href="https://www.python.org/downloads/mac-osx/">https://www.python.org/downloads/mac-osx</a>
-
-   * <a href="#easy_install">easy_install</a> is an environment manager.
+   * Even though that's the method described in various (obsolete) websites and books, NOT recommended is the manual approach of <a href="#PackagInstallerz">download Python installer from python.org</a>: <a target="_blank" href="https://www.python.org/downloads/mac-osx/">https://www.python.org/downloads/mac-osx</a>
    <br /><br />
 
+   <a href="#easy_install">easy_install</a> is an environment manager.
    <a target="_blank" href="http://stackoverflow.com/questions/1213690/what-is-the-most-compatible-way-to-install-python-modules-on-a-mac">
    One writes</a>:
-   "Avoid easy_install or pip to install a Python package that needs a library used by non Python programs, such as Qt bindings (PySide)" or django<a target="_blank" href="https://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/">*</a>.
+   "Avoid easy_install or pip to install a Python package that needs a library used by non Python programs, such as Qt bindings (PySide)" or Django<a target="_blank" href="https://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/">*</a>.
 
-   PROTIP: So if you must use easy_install, delete it after.
+   PROTIP: If you must use easy_install, delete it after.
 
 Alternatively, use a package manager. CAUTION: <a target="_blank" href="http://stackoverflow.com/questions/33874084/how-can-i-resolve-a-conflict-between-homebrew-and-macports-or-fink">MacPorts, Fink, and Homebrew do not coexist well on the same machine</a>.
 
@@ -112,7 +111,7 @@ Alternatively, use a package manager. CAUTION: <a target="_blank" href="http://s
 
    <pre><strong>docker pull python:3-alpine</strong></pre>
 
-1. Container:
+1. Build a container containing a small python environment:
 
    <pre><strong>docker container run -d --memory=20m --memory-swap=20m -name myPython python:3-alpine sleep 3600</strong></pre>
 
@@ -124,7 +123,7 @@ Alternatively, use a package manager. CAUTION: <a target="_blank" href="http://s
 
 1. Stop the Docker instance:
 
-   <pre><strong>docker pull python:3-alpine</strong></pre>
+   <pre><strong>docker stop python:3-alpine</strong></pre>
 
 <a name="PythonMacVersion"></a>
 

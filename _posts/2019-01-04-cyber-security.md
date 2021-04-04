@@ -2215,3 +2215,12 @@ An AUP (acceptable use policy) details appropriate use of information systems, h
 This is one of a series on Security in DevSecOps:
 
 {% include security_links.html %}
+
+PowerBI
+
+* Power Query - transformations to clean up data
+* Power Pivot - use Dax to understand datasets
+* Power View/Power Map to visualize
+
+PowerBI Desktop combines the above.
+

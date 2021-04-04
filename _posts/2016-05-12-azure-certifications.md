@@ -19,16 +19,6 @@ comments: true
 
 PROTIP: <a target="_blank" href="https://twitter.com/search?q=%23azurecertified&src=typed_query">Tweet #azurecertified</a> or #MicrosoftCertified when you pass each exam.
 
-Microsoft rebranded certification coding of "70-x" series to role-based Azure "AZ-x" series.
-Microsoft continues to <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/retired-certification-exams">retire a long list of exams at a brisk rate</a>:
-
-   * 70-532 - Developing Microsoft Azure Solutions
-   * 70-533 - Implementing Microsoft Azure Infrastructure Solutions
-   * 70-534 - Architecting Azure Solutions
-   * 70-535 - Architecting Microsoft Azure Solutions (ARM templates)
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/70-537">70-538 - Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack</a> replaced by AZ-600 Stack Hub Operator Associate.
-   <br /><br />
-
 NOTE: Groupings of Microsoft's certifications by roles below, people still take exams based on product:
 
 <table border="1" cellpadding="4" cellspacing="0">
@@ -85,10 +75,25 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
 Andrew Brown offers this diagram:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/110194383-8ebad300-7df5-11eb-9c0c-2d5f165f0ffe.jpeg"><img alt="az-certs-1868x1092.png" width="1868" src="https://user-images.githubusercontent.com/300046/110194383-8ebad300-7df5-11eb-9c0c-2d5f165f0ffe.jpeg"></a>
 
+## Rebranding to roles
+
+Microsoft has rebranded certification coding of "70-x" series to role-based Azure "AZ-x" series.
+Microsoft continues to <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/retired-certification-exams">retire a long list of exams at a brisk rate</a>:
+
+   * 70-532 - Developing Microsoft Azure Solutions
+   * 70-533 - Implementing Microsoft Azure Infrastructure Solutions
+   * 70-534 - Architecting Azure Solutions
+   * 70-535 - Architecting Microsoft Azure Solutions (ARM templates)
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/70-537">70-538 - Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack</a> replaced by AZ-600 Stack Hub Operator Associate.
+   <br /><br />
+
 
 <hr />
 
 ## Training vendors
+
+<a target="_blank" href="https://cloudacademy.com/library/azure/quizzes/">
+Microsoft Quizzes by CloudAcademy</a>
 
 ### Microsoft Learning
 
@@ -294,20 +299,14 @@ by Tim Warner with <a target="_blank" href="https://www.kaplanlearn.com/educatio
 Ask the Experts: New Microsoft Security Compliance, Identity Training and Certification Portfolio</a> from Ignite March 2021
 
 
-<a name="#MS-900"></a>
-
-## MS-900 Office 365 Fundamentals
-
-<a target="_blank" href="https://www.youtube.com/watch?v=xirUELDSrUE">Carla Jenkins</a>
-recommends this because Azure security exams cover 365 as well.
-
-https://docs.microsoft.com/en-us/learn/certifications/exams/ms-900
-
-https://vladtalkstech.com/ms-900-study-guide-microsoft-365-fundamentals
+<a name="MS-900"></a>
 
 ## MS-500 Microsoft 365 Security Admin
 
-https://docs.microsoft.com/en-us/learn/certifications/exams/ms-500
+<a target="_blank" href="
+https://docs.microsoft.com/en-us/learn/certifications/exams/ms-500">
+https://docs.microsoft.com/en-us/learn/certifications/exams/ms-500</a>
+
 
 https://vladtalkstech.com/ms-500-study-guide-microsoft-365-security-administration
 
@@ -338,7 +337,7 @@ Domains:
 * Manage security operations (15-20%)
 
 Videos:
-   * <a target="_blank" href="https://www.youtube.com/watch?v=Bz-8jM3jg-8&list=RDCMUCpIn7ox7j7bH_OFj7tYouOQ&start_radio=1&t=5297">2hr John Savill</a>draws a <a target="_blank" href="https://github.com/johnthebrit/RandomStuff/blob/master/SC-900ReviewWhiteboard.svg">massive whiteboard</a> as massive as his muscles. One in a massive series with <a target="_blank" href="https://github.com/johnthebrit/AzureMasterClass">a pdfs in GitHub</a>.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Bz-8jM3jg-8&list=RDCMUCpIn7ox7j7bH_OFj7tYouOQ&start_radio=1&t=5297">2hr John Savill</a>draws a <a target="_blank" href="https://github.com/johnthebrit/RandomStuff/blob/master/SC-900ReviewWhiteboard.svg">massive whiteboard</a> as massive as his muscles. One in a massive series with <a target="_blank" href="https://github.com/johnthebrit/AzureMasterClass">pdfs in GitHub</a>.
 
    * aka.ms/az500labs
    https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies
@@ -376,7 +375,7 @@ https://www.thomasmaurer.ch/2020/05/az-500-study-guide-microsoft-azure-security-
 
 <a name="AZ-140"></a>
 
-## AZ-140 Azure Desktop Speciality
+## AZ-140 Azure Desktop Speciality (New)
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-140">
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-140</a> exam is new as of March 29, 2021.
@@ -400,24 +399,81 @@ Skills the exam measures:
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-desktop/create-validation-host-pool">Host pool</a>
 <br /><br />
 
+
+<a name="#MS-900"></a>
+
+## MS-900 Office 365 Fundamentals
+
+<a target="_blank" href="https://www.youtube.com/watch?v=xirUELDSrUE">Carla Jenkins</a>
+recommends this because Azure security exams cover 365 as well.
+
+https://docs.microsoft.com/en-us/learn/certifications/exams/ms-900
+
+https://vladtalkstech.com/ms-900-study-guide-microsoft-365-fundamentals
+
+
+
 <hr />
 
 <a name="AZ-204"></a>
 
 ## AZ-204 Developing Solutions for Microsoft Azure
 
+<a target="_blank" href="
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-204">
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-204</a>
+
 https://app.pluralsight.com/paths/certificate/developing-solutions-for-microsoft-azure-az-204
 Includes:
    * https://app.pluralsight.com/paths/certificate/developing-solutions-for-microsoft-azure-az-204
+
+
+<a name="AZ-303"></a>
+
+## AZ-303 Azure Architect Technologies
+
+<a target="_blank" href="
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-303">
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-303</a>
+
+https://linuxacademy.com/cp/modules/view/id/826
+AZ-303 Part 5 - Preparing for the Microsoft Azure Architect Technologies Exam
 
 
 <a name="AZ-304"></a>
 
 ## AZ-304 Azure Architect Design
 
-https://www.azurebarry.com/prepare-for-the-az304-exam/
+<a target="_blank" href="
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-304">
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-304</a> 
+120 minutes to answer 40-60 business case scenario questions.
 
-https://www.pluralsight.com/paths/microsoft-azure-architect-design-az-304
+Topics:
+* Cost Optimization (cheapest approach),
+* Migration Planning,
+* Governance,
+* Data Integration,
+* Application Architecture
+<br /><br />
+
+Links to Microsoft docs for each item in the syllubus are detailed by<br />
+<a target="_blank" href="
+https://www.azurebarry.com/prepare-for-the-az304-exam/">
+https://www.azurebarry.com/prepare-for-the-az304-exam</a>
+
+<a target="_blank" href="
+https://www.pluralsight.com/paths/microsoft-azure-architect-design-az-304">
+Pluralsight</a>
+
+<a target="_blank" href="
+https://linuxacademy.com/cp/modules/view/id/579">
+Azure Architect Design Concepts</a>
+is foundational to:
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/776">
+10h 42m LinuxAcademy video course</a>
+by Russell Croft at ACloudGuru
 
 
 <hr />
@@ -523,21 +579,6 @@ Anthony James at LinuxAcademy:
    * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/826">Part 5</a>
    <br /><br />
 
-<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/345">Linux Academy: Azure CLI Esssentials</a>   
-
-https://linuxacademy.com/cp/modules/view/id/369">Learn Azure by Doing</a>   
-
-https://linuxacademy.com/cp/modules/view/id/461">Implementing App Infrastructure</a>
-
-https://linuxacademy.com/cp/modules/view/id/757?redirect_uri=https://app.linuxacademy.com/search?type=Course&categories=Azure
-Cost control in Azure
-
-<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/666">Intro to Azure Security</a>
-
-<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/706">Azure IAM Concepts</a>
-
-<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/733">Deployment Pipelines using GitHub Actions</a>
-
 
 ## AZ-304 Architecture Design
 
@@ -572,6 +613,21 @@ AI-900 Study Guide</a>
 
 <a target="_blank" href="https://ravikirans.com/category/azure-certification/">
 Ravikiran Azure Certs</a>
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/345">Linux Academy: Azure CLI Esssentials</a>   
+
+https://linuxacademy.com/cp/modules/view/id/369">Learn Azure by Doing</a>   
+
+https://linuxacademy.com/cp/modules/view/id/461">Implementing App Infrastructure</a>
+
+https://linuxacademy.com/cp/modules/view/id/757?redirect_uri=https://app.linuxacademy.com/search?type=Course&categories=Azure
+Cost control in Azure
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/666">Intro to Azure Security</a>
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/706">Azure IAM Concepts</a>
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/733">Deployment Pipelines using GitHub Actions</a>
 
 
 https://aka.ms/ESIStudyGuides
