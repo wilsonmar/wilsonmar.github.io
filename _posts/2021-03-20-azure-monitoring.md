@@ -24,6 +24,7 @@ Several Azure services are related to all the monitoring done within Azure:
    * <a href="#AppInsights">Azure Application Insights</a>
    * <a href="#Event_Hubs">Azure Event Hubs</a>
    * <a href="#Defender">Microsoft Defender</a>
+   * <a href="#Metrics_Explorer">Metrics Explorer</a>
    * <a href="#Azure_Sentinel">Azure Sentinel (SIEM like Splunk)</a>
    <br /><br />
 
@@ -969,6 +970,18 @@ Sev 1 = Error<br />
 Sev 2 = Warning<br />
 Sev 3 = Informational<br />
 Sev 4 = Verbose
+
+
+<a name="Metrics_Explorer"></a>
+
+## Metrics Explorer 
+
+Analyze collected data using Metrics Explorer for charting and visual correlation and Log Analytics for ad-hoc queries, trending, and pattern recognition. 
+
+Azure Monitor allows you to manage and create alerts, notifications, and actions such as runbooks and autoscale based on metrics and logs. 
+
+Integrate Azure Monitor with other tools using Event Hubs to export data or APIs for ingestion and export.
+
 
 ## References
 

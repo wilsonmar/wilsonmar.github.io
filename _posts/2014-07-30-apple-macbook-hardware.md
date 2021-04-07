@@ -3,7 +3,7 @@ layout: post
 title: "Apple Macbook Hardware"
 excerpt: "It's stylish because it's expensive"
 tags: [apple, mac, setup]
-date: "2014-07-30"
+date: "2021-04-05"
 file: "apple-macbook-hardware"
 image:
 # ![apple-store-fisheye-1900x500-42783.jpg
@@ -235,6 +235,19 @@ Plug it into a battery pack and you can charge the laptop.
 <a target="_blank" href="https://www.amazon.com/dp/B01MUAEI7J/">This $90 adapter from Amazon</a> works for me:
 ![apple-macbook-hardware-adapter-569x345-43408](https://user-images.githubusercontent.com/300046/40870296-d1e6947e-65e9-11e8-8529-70b9ef107123.jpg)
 
+### Network
+
+To see the impact of a cable vs. Wi-Fi:
+
+1. Press and hold Option on the keyboard while clicking the WiFi icon on the top menu bar.
+
+1. Note the <strong>RSSI</strong> value for signal strength.
+ 
+   Under <strong>-60 dBm</strong> (3 or less bars) is a poor connection.
+
+1. Get a USB-C to 45 adapter and plug in a cable that connects directly to your router.
+
+   What is the RSSI value?
 
 ## Camera
 
