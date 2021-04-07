@@ -42,13 +42,11 @@ As with any API, there are several ways you can there make calls:
    
 * Without installing anything: on a Terminal CLI crafting curl commands
 
-* <a href="#ClientPrograms">Installing a client programs: Insomnia on the Mac or Windows. There is also Postman.
+* <a href="#ClientPrograms">Installing a client programs: Insomnia on the Mac or Windows</a>. 
 
-   <strong>This article focuses on use of Insomnia, a favorite among developers.</strong>.
+   Read: <a target="_blank" href="https://insomnia.rest/blog/oauth2-github-api">https://insomnia.rest/blog/oauth2-github-api</a>
 
-      Read: https://insomnia.rest/blog/oauth2-github-api
-
-* Install a (Chrome or Mozilla Firefox) browser extension: <a target="_blank" href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en">Postman</a>, <a target="_blank" href="https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo">Advanced REST Client</a>, <a target="https://chrome.google.com/webstore/detail/talend-api-tester-free-ed/aejoelaoggembcahagimdiliamlcdmfm?hl=en">Talend API Tester</a>.
+* Alternatively, install a (Chrome or Mozilla Firefox) browser extension: <a target="_blank" href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en">Postman</a>, <a target="_blank" href="https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo">Advanced REST Client</a>, <a target="https://chrome.google.com/webstore/detail/talend-api-tester-free-ed/aejoelaoggembcahagimdiliamlcdmfm?hl=en">Talend API Tester</a>.
 
 * <a href="#CustomPrograms">Custom programs</a>. 
 
@@ -105,10 +103,20 @@ As with any API, there are several ways you can there make calls:
    <a target="_blank" href="https://github.com/settings/developers">
    https://github.com/settings/developers</a>
 
-   <a target="_blank" href="https://www.youtube.com/playlist?list=PL13mreFCu1Josp4PCNb1WlOiaRY6p73D1"">VIDEO</a> and 
+1. Click "Personal access tokens".
+
+   <a target="_blank" href="https://www.youtube.com/playlist?list=PL13mreFCu1Josp4PCNb1WlOiaRY6p73D1">VIDEO</a> and 
    <a target="_blank" href="https://markselby9.medium.com/how-to-insomnia-for-graphql-requests-b270e16876a1">this blog</a> explains the steps for generating a PAT for Insomnia to use as a bearer authentication token. It references <a target="_blank" href="help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line">this GitHub doc</a>.
 
    PROTIP: Remember that a <a target="_blank" href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token">PAT (Personal Access Token)</a> is the same as your account password which grants full access to all your repositories within your account.
+
+1. Check "Enterprise billing", then "Save"
+
+   ![github-ent-data-chk-406x76](https://user-images.githubusercontent.com/300046/113809555-a43d5880-9725-11eb-93fe-b434aaa571a6.png)
+
+1. Click the clipboard icon to capture the key to your Clipboard.
+
+1. Paste the key text in the Insomnia app.
 
 
    ### OAuth App
