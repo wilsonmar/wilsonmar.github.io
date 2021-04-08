@@ -432,9 +432,21 @@ Includes:
 
 ## AZ-303 Azure Architect Technologies
 
+AZ-104 is not a requirement but covers same topics.
+
+Passing this and the less hands-on AZ-304 Microsoft Azure Architect Design (blueprints) makes you a Microsoft Certified Azure Solutions Architect Expert.
+
+Previously AZ-300, $165 for 2-3 hours
 <a target="_blank" href="
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-303">
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-303</a>
+
+<a target="_blank" href="https://learning.oreilly.com/videos/new-microsoft-az-303/10009AZ303/10009AZ303-AZ303_1">
+14h videos on OReilly: Skylines Academy Oct 2020</a> by Nick Colyer (<a target="_blank" href="https://www.facebook.com/groups/azurestudygroup/">StudyGroup</a>)
+
+<a target="_blank" href="https://learning.oreilly.com/attend/exam-az-303-microsoft-azure-architect-technologies-crash-course/0636920452881/0636920053523/">
+6 hr LIVE on OReilly: Tim Warner</a> who provides 
+<a target="_blank" href="https://github.com/timothywarner/az303">code on GitHub</a>
 
 <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/826">
 AZ-303 Part 5 - Preparing for the Microsoft Azure Architect Technologies Exam</a>

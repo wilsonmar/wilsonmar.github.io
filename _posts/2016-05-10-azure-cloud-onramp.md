@@ -380,6 +380,25 @@ PROTIP: It makes more sense to look at a live example populated with several res
 8. Get a unique profile image and <a target="_blank" href="https://account.microsoft.com/profile/edit-picture?fref=home.banner.profile">add picture</a>.
 
 
+<a name="MobileApps"></a>
+
+### Mobile Apps
+
+1. Setup password on your device.
+
+1. https://azure.microsoft.com/en-us/features/azure-portal/mobile-app/
+
+1. Open the store on your phone and search for "Microsoft Azure":
+
+   On the Apple App Store: https://apps.apple.com/us/app/microsoft-azure/id1219013620?ls=1
+
+   On the Google Play Store: https://play.google.com/store/apps/details?id=com.microsoft.azure
+
+1. Login
+
+1. Setup MFA
+
+
 <a name="ASM"></a>
 
 ### ARM obsoletes ASM
@@ -817,16 +836,18 @@ Each can be exempted.
    * Standard (Basic) free for Prod. use
    * Developer $29/mo. for non-prod. use
    * Professional Direct $1000/mo for "Business Critical" when you file a business-critical issue with technical support, the earliest you can expect a response from technical support? Within 1 hour
-   * Premier for "substantial dependence" with a TAM.
+   * Premier for "substantial dependence" with a TAM (Technical Account Manager).
 
    <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=672143e9-2e2c-49d6-b5f4-6558d88f66e1">VIDEO "Microsoft Azure Pricing and Support Options"</a>
 
 0. Right-click on the "Help + Support" box on the Dashboard and select "unpin"
    becuase you now know you can reach it (in two places).
 
+
+
    ### Box
 
-   For Microsoft people to access a customer's unencrypted data, they are supposed to look into the "Box" where a customer put files they want Microsoft to see.
+   For Microsoft people to access a customer's unencrypted data, they are supposed to look into the "Lock Box" where a customer put files they want Microsoft to see.
 
 
    <a name="Social"></a>
@@ -1611,6 +1632,8 @@ The minimum prior notification will Microsoft give before ending support for pro
 
 https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/how-to-connect-fed-azure-adfs
 ADFS (Azure Directory Federated Services)
+
+Window 
 
 
 ## More on DevOps #
