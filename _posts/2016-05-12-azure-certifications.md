@@ -436,8 +436,23 @@ Includes:
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-303">
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-303</a>
 
-https://linuxacademy.com/cp/modules/view/id/826
-AZ-303 Part 5 - Preparing for the Microsoft Azure Architect Technologies Exam
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/826">
+AZ-303 Part 5 - Preparing for the Microsoft Azure Architect Technologies Exam</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=fG1wHpEQ6mw">
+AZ-303 Sample Exam Questions (Microsoft Azure Architect Technologies) [Answers Explained in Detail]</a> by R A V I K I R A N S
+
+<a target="_blank" href="https://www.youtube.com/watch?v=1BhzOxaxhqE" title="Oct 31, 2020">
+#1 How to pass Exam AZ-303 Microsoft Azure Architect Technologies Certificate in 20 hours Part 1/2</a>
+Part 2
+
+<a target="_blank" href="https://www.youtube.com/watch?v=NEbG6bEaUDo">
+Microsoft Azure Solution Architect Certification [AZ-303|304]: Everything You Need To Know
+Azure Cloud with K21Academy</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=wP9KWa0rOQk">
+How I cleared Microsoft AZ 303 in just three weeks!</a>
+by Here Is Cloud
 
 
 <a name="AZ-304"></a>
