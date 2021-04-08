@@ -28,13 +28,13 @@ Many software companies make the bulk of their profit on additional-charge enter
 To successful work at enterprises, it is important for you to speak intelligently about the enterprise-level concerns.
 
 
-1. High Availability and disaster recovery
+## 1. High Availability and disaster recovery
 
    Enterprise licensing typically involve providing High Availability (HA) features,  which means running simultaneously in multiple regions. Such operations require real-time coordination of data created across multiple continents. Not a simple feat. And when one region fails, the amount of time that it takes before end-users can continue work on an replacement system is so important that enterprises have a metric for it: MTD (Maximum Tolerable Downtime). Additionally, the RTO (Recovery Time Objective) measures the amount of time before a restore is initiated and data is restored. 
 
    The maximum amount of data that is allowed to be lost is measured by the RPO (Recovery Point Objective). An organization which takes incremental backups once a day would have an RPO of at least 24 hours since any data processed after the last backup would be lost. The RPO needs to include time to run and verify restores from backups.
 
-1. Global scale 
+## 2. Global scale 
 
    To reduce RPO for live databases, an enterprise would log-ship every single add or update across the sea to a duplicate hot site ready to take over.
 
@@ -54,7 +54,7 @@ To successful work at enterprises, it is important for you to speak intelligentl
 
    Such can be difficult within enterprises which have historically operated under "separation of duties" as separate "fiefdoms" of independent departments for compute, storage, networking, etc. which may not regularly collaborate with each other.
    
-1. Central planning and approvals
+## 3. Central planning and approvals
 
    The social skills to handle command-and-control politics is worth top dollar.
 
@@ -69,7 +69,7 @@ To successful work at enterprises, it is important for you to speak intelligentl
    BTW, this is why it is often counter-productive for vendors to artifically limit evaluation periods to a mere two weeks. Many such vendors are elimited because evaluation periods are usually much longer due to organizational complexities.
 
 
-1. Security features
+## 4. Security features
 
    When working with cloud vendors, many enterprises prefer to provide customer-owned keys for encryption of data at rest instead of having cloud vendors provide their keys.
 
@@ -83,7 +83,7 @@ To successful work at enterprises, it is important for you to speak intelligentl
 
    The most sophisticated edition of Windows 10 -- Enterprise E5 -- adds Windows Defender ATP (Advanced Threat Protection) which runs virus scans and details the machine's security posture in sophisticated visualizations.
 
-1. Round-the-clock SOC using SIEM
+## 5. Round-the-clock SOC using SIEM
 
    Enterprises have a SOC (Security Operations Center) which operates 24/7.
 
@@ -93,7 +93,7 @@ To successful work at enterprises, it is important for you to speak intelligentl
 
    Logs, especially are also used by external auditors to determine actual compliance with policies. 
 
-1. Large number of people and objects
+## 6. Large number of people and objects
 
    By definition, enterprises consists of thousands of people and a much more complex set of IT components and databases.
 
@@ -103,25 +103,29 @@ To successful work at enterprises, it is important for you to speak intelligentl
 
    Enterprise need complex queries. For example, Microsoft Azure has KQL (Kusto Query Language) with <a target="_blank" href="https://jmespath.org/tutorial.html">JMESPath</a> to select specific values from within a sea of data.
 
-1. Hierarchy of groups
+## 7. Hierarchy of groups
 
    Tags are useful and flexibile, but may not be sophisticated enough for enterprises.
 
    Enterprises deal with large amount of data and people by grouping them in various ways, as in an organization chart or vice presidents above directors above managers, etc.
 
-1. Breakdowns and summaries over time
+## 8. Breakdowns and summaries over time
 
    Each level in each hierarchy needs to have its own set of reports and visualizations. Such reporting is needed on daily, weekly, monthly, quarterly, yearly basis as well as custom-defined periods.
 
    For example, GitHub provides users a rich API to retrieve data set of data from GrapQL APIs. However, enterprise GitHub users need to create their own reports and visualizations.
 
-1. Testing automation
+## 9. Testing automation
+
+   Enterprise developers tend to offer more sophisticated tools for developer productivity.
 
    For example, Microsoft's Visual Studio (not the free Visual Studio Code), but the client IDE, has an <a target="_blank" href="https://visualstudio.microsoft.com/vs/compare/">Enterprise level subscription which provides</a>:
+
    * Live Dependency Validation
    * Architectural Layer Diagrams
    * Architectural Validation
-   
+   <br /><br />
+
    Advanced Debugging and Diagnostics:
    * IntelliTrace
    * Code Clone
@@ -129,15 +133,18 @@ To successful work at enterprises, it is important for you to speak intelligentl
    * .NET Memory Dump Analysis
    * Snapshot Debugger
    * Time Travel Debugging (Preview)
+   <br /><br />
    
    Testing:
    * IntelliTest
    * Live Unit Testing
    * Microsoft Fakes (Unit Test Isolation)
    * Code Coverage
+   <br /><br />
 
    Cross-platform:
    * Embedded Assemblies
    * Xamarin Inspector, Profiler   
+   <br /><br />
 
    
