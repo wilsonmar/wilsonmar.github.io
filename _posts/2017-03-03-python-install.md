@@ -292,6 +292,7 @@ Most new features introduced with Python 3 are not backwards compatible with ver
    * Python v2 is installed in <tt>/usr/bin/python</tt>
    * Python v3 is installed in <tt>/usr/local/bin/python3</tt>
    <br /><br />
+
    If you get <tt>/Users/<em>user</em>/.pyenv/shims/python3</tt>
 
 1. Let's see what's there:
@@ -317,7 +318,7 @@ Most new features introduced with Python 3 are not backwards compatible with ver
    alias pip=pip3</strong></pre>
 
 
-### Print is different
+### Print is different in Python3
 
 For the most part, Python 2 code works with Python 3. 
 

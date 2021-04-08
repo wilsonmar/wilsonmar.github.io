@@ -243,7 +243,7 @@ To see the impact of a cable vs. Wi-Fi:
 
 1. Note the <strong>RSSI</strong> value for signal strength.
  
-   Under <strong>-60 dBm</strong> (3 or less bars) is a poor connection.
+   Under <strong>-60 dBm</strong> (decibles 3 or less bars) is a poor connection.
 
 1. Get a USB-C to 45 adapter and plug in a cable that connects directly to your router.
 

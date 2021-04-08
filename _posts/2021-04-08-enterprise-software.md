@@ -6,10 +6,10 @@ tags: [security, certs]
 date: "2021-04-08"
 file: "enterprise-software"
 image:
-# cyber-security-hero-1900x500-22924.jpb/.png 
-  feature: https://user-images.githubusercontent.com/300046/103753295-19cf4680-4fc8-11eb-9c7a-d23d3c5c2d79.jpg
-  credit: Paul Jerimy
-  creditlink: https://pauljerimy.com/security-certification-roadmap
+# enterprise-software-1900x500
+  feature: https://user-images.githubusercontent.com/300046/113968826-1dee4880-97f1-11eb-84ab-1c2a195b8cf5.png
+  credit: Dataversity
+  creditlink: https://www.dataversity.net/preventing-enterprise-software-failures/
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -117,10 +117,27 @@ To successful work at enterprises, it is important for you to speak intelligentl
 
 1. Testing automation
 
-   For example, Microsoft's Visual Studio (not the free Visual Studio Code), but the client IDE, has an Enterprise level subscription.
-
+   For example, Microsoft's Visual Studio (not the free Visual Studio Code), but the client IDE, has an <a target="_blank" href="https://visualstudio.microsoft.com/vs/compare/">Enterprise level subscription which provides</a>:
+   * Live Dependency Validation
+   * Architectural Layer Diagrams
+   * Architectural Validation
    
-https://learning.oreilly.com/videos/cissp-certification-training/9781771373753/9781771373753-video212908
+   Advanced Debugging and Diagnostics:
+   * IntelliTrace
+   * Code Clone
+   * Code Map Debugger Integration
+   * .NET Memory Dump Analysis
+   * Snapshot Debugger
+   * Time Travel Debugging (Preview)
+   
+   Testing:
+   * IntelliTest
+   * Live Unit Testing
+   * Microsoft Fakes (Unit Test Isolation)
+   * Code Coverage
 
+   Cross-platform:
+   * Embedded Assemblies
+   * Xamarin Inspector, Profiler   
 
    

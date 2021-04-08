@@ -223,6 +223,8 @@ Written Reference:
 
    * <a target="_blank" href="https://www.studynotesandtheory.com/single-post/practice-question-security-testing">VIDEO</a> at <a target="_blank" href="https://www.studynotesandtheory.com/​">studynotesandtheory.com</a> by <a target="_blank" href="https://www.linkedin.com/in/luke-ahmed-446601133/">Luke Ahmed</a>, who is dedicated to CISSP education.
 
+   * https://learning.oreilly.com/videos/cissp-certification-training/9781771373753/9781771373753-video212908
+
 
 Video prep courses view:
 
