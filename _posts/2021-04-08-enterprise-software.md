@@ -117,7 +117,7 @@ To successful work at enterprises, it is important for you to speak intelligentl
 
 ## 9. Testing automation
 
-   Enterprise developers tend to offer more sophisticated tools for developer productivity.
+   Enterprise developers tend to offer more sophisticated tools for developer productivity even when faced with a massive amount of data and code.
 
    For example, Microsoft's Visual Studio (not the free Visual Studio Code), but the client IDE, has an <a target="_blank" href="https://visualstudio.microsoft.com/vs/compare/">Enterprise level subscription which provides</a>:
 
@@ -147,4 +147,8 @@ To successful work at enterprises, it is important for you to speak intelligentl
    * Xamarin Inspector, Profiler   
    <br /><br />
 
-   
+   Enterprise DevSecOps tools provide a way to deep-dive.
+
+   * Identify secrets hard-coded (using GitLeaks, etc.)
+   * Identify OWASP vulnerabilities in custom code (using Veracode, Fortify, etc.)
+   * Identify vulnerabilities iteratively within packages referenced (using XRay, Sonatype, etc.)
