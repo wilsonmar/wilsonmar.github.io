@@ -26,9 +26,17 @@ PROTIP: Bookmark these links
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Usage </th><th> URL </th><th> Notes </th></tr>
-<tr valign="top"><td> Personal </a> </td><td>
+<tr valign="top"><td> Marketing </td><td>
+   <a target="_blank" href="https://azure.com/">https://azure.com</a> resolves to<br />
+   = <a target="_blank" href="https://azure.microsoft.com/en-us/">https://azure.microsoft.com/en-us</a>
+   </td></tr>
+<tr valign="top"><td> Personal </td><td>
    <a target="_blank" href="https://techprofile.microsoft.com/en-us/"><strong>https://techprofile.microsoft.com/en-us</strong></a>
-   integrates various information about your certifications and learnings taken within Microsoft.
+   </td><td>integrates info about your certifications and learnings taken within Microsoft.
+   </td></tr>
+<tr valign="top"><td> Sign-up: </td><td>
+   <a target="_blank" href="https://account.windowsazure.com/signup/"> 
+   https://account.windowsazure.com/signup</a>
    </td></tr>
 <tr valign="top"><td> Azure Enterprise Portal </td><td>
    <a target="_blank" href="https://ea.azure.com"><strong><u>https://ea.azure.com</u></strong></a>
@@ -36,14 +44,7 @@ PROTIP: Bookmark these links
    </td></tr>
 <tr valign="top"><td> Azure Enterprise Account Portal </td><td>
    <a target="_blank" href="https://account.azure.com"><strong><u>https://account.azure.com</u></strong></a>
-   </td></tr>
-<tr valign="top"><td> Marketing </td><td>
-   <a target="_blank" href="https://azure.com/">https://azure.com</a>
-   = <a target="_blank" href="https://azure.microsoft.com/en-us/">azure.microsoft.com/en-us</a>
-   </td></tr>
-<tr valign="top"><td> Sign-up: </td><td>
-   <a target="_blank" href="https://account.windowsazure.com/signup/"> 
-   https://account.windowsazure.com/signup</a>
+   </td><td> Accounts under departments
    </td></tr>
 <tr valign="top"><td> Subscription dashboard: </td><td>
    <a target="_blank" href="https://portal.azure.com/"><strong><u>https://portal.azure.com</u></strong></a> <br />
