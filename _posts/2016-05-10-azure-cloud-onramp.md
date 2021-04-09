@@ -25,18 +25,29 @@ This is a hands-on deep-dive tutorial with commentary along the way, covering ho
 PROTIP: Bookmark these links
 
 <table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Usage </th><th> URL </th><th> Notes </th></tr>
+<tr valign="top"><td> Personal </a> </td><td>
+   <a target="_blank" href="https://techprofile.microsoft.com/en-us/"><strong>https://techprofile.microsoft.com/en-us</strong></a>
+   integrates various information about your certifications and learnings taken within Microsoft.
+   </td></tr>
+<tr valign="top"><td> Azure Enterprise Portal </td><td>
+   <a target="_blank" href="https://ea.azure.com"><strong><u>https://ea.azure.com</u></strong></a>
+   </td><td> Define departments
+   </td></tr>
+<tr valign="top"><td> Azure Enterprise Account Portal </td><td>
+   <a target="_blank" href="https://account.azure.com"><strong><u>https://account.azure.com</u></strong></a>
+   </td></tr>
 <tr valign="top"><td> Marketing </td><td>
-   <a target="_blank" href="https://azure.com/">azure.com</a>
+   <a target="_blank" href="https://azure.com/">https://azure.com</a>
    = <a target="_blank" href="https://azure.microsoft.com/en-us/">azure.microsoft.com/en-us</a>
    </td></tr>
 <tr valign="top"><td> Sign-up: </td><td>
    <a target="_blank" href="https://account.windowsazure.com/signup/"> 
-   account.windowsazure.com/signup</a>
+   https://account.windowsazure.com/signup</a>
    </td></tr>
-<tr valign="top"><td> Dashboard page: </td><td>
-   <a target="_blank" href="https://portal.azure.com/"><strong><u>https://portal.azure.com</u></strong></a> 
-   </td><td>
-   <a target="_blank" href="https://portal.azure.us/">portal.azure.us</a> for the <a href="#USGov">US Government portal</a>
+<tr valign="top"><td> Subscription dashboard: </td><td>
+   <a target="_blank" href="https://portal.azure.com/"><strong><u>https://portal.azure.com</u></strong></a> <br />
+   <a target="_blank" href="https://portal.azure.us/">https://portal.azure.us</a> for the <a href="#USGov">US Government portal</a>
    </td></tr>
 <tr valign="top"><td> <a href="#AAD">Azure AD</a> </td><td>
    <a target="_blank" href="https://aad.portal.azure.com/"><strong><u>https://aad.portal.azure.com</u></strong></a>
@@ -44,9 +55,8 @@ PROTIP: Bookmark these links
 <tr valign="top"><td> All Admin Centers </td><td>
    <a target="_blank" href="https://admin.microsoft.com/AdminPortal/Home#/alladmincenters"><strong><u>https://admin.microsoft.com/AdminPortal/Home#/alladmincenters</u></strong></a>
    </td></tr>
-<tr valign="top"><td> Personal </a> </td><td>
-   <a target="_blank" href="https://techprofile.microsoft.com/en-us/"><strong>techprofile.microsoft.com/en-us</strong></a>
-   integrates various information about your certifications and learnings taken within Microsoft.
+<tr valign="top"><td> Support </td><td>
+   <a target="_blank" href="https://support.microsoft.com/"><strong><u>https://support.microsoft.com</u></strong></a>
    </td></tr>
 </table>
 
@@ -1526,6 +1536,8 @@ It makes use of SYN cookies and rate & connection limits defined by a Trust Fram
 
 Azure Bicep files contain a custom Domain Specific Language (DSL) designed to be easier to read than ARM JSON templates.
 
+RESOURCE: <a target="_blank" href="https://github.com/Azure/azure-quickstart-templates/">This</a> contains Azure Resource Manager templates contributed by the community.
+
 https://github.com/Azure/bicep/tree/main/docs/examples
 
 Tooling in Visual Studio Code <strong>transpiles</strong> Bicep files to ARM templates.
@@ -1602,16 +1614,10 @@ Policy Definition options:
    <br /><br />
 
 
-### Public Preview
-
-When an Azure service feature is in public preview, it means the feature is available for all Azure customers for beta testing.
-
 
 ## Topics
 
-
-<a target="_blank" href="https://github.com/Azure/azure-quickstart-templates/">This</a> contains Azure Resource Manager templates contributed by the community.
-
+The fictional company for use in examples, <a target="_blank" href="https://github.com/microsoft/TailwindTraders/tree/master/Documents/DemoScripts/Integrating%20Azure%20DevOps%2C%20Microsoft%20Teams%20and%20GitHub">Tailwind Traders</a>
 
 ## Azure Futures Roadmap
 
@@ -1622,6 +1628,10 @@ When an Azure service feature is in public preview, it means the feature is avai
 * <a target="_blank" href="https://azure.microsoft.com/updates">azure.microsoft.com/updates</a> in now timing out. It has filters for GA vs. futures.
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=9RtzSIrRijg&list=RDCMUCp8lLM2JP_1pv6E0NQ38pqw&index=1">Azure This Week</a> by Lars Klint and <a target="_blank" href="https://www.youtube.com/channel/UCbjgKwnWnGG7sKCPTRgrFcw" title="Gwyn Pena-Siguenza">GPS</a> at <a target="_blank" href="https://www.acloudguru.com/">ACloudGuru.com</a>.
+
+### Public Preview
+
+When an Azure service feature is in public preview, it means the feature is available for all Azure customers for beta testing.
 
 
 ## References
