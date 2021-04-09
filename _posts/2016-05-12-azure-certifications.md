@@ -445,8 +445,7 @@ https://docs.microsoft.com/en-us/learn/certifications/exams/az-303</a>
 14h videos on OReilly: Skylines Academy Oct 2020</a> by Nick Colyer (<a target="_blank" href="https://www.facebook.com/groups/azurestudygroup/">StudyGroup</a>)
 
 <a target="_blank" href="https://learning.oreilly.com/attend/exam-az-303-microsoft-azure-architect-technologies-crash-course/0636920452881/0636920053523/">
-6 hr LIVE on OReilly: Tim Warner</a> who provides 
-<a target="_blank" href="https://github.com/timothywarner/az303">code on GitHub</a>
+6 hr LIVE on OReilly: Tim Warner</a> teaches to his <a target="_blank" href="https://github.com/timothywarner/az303">GitHub repo</a> which includes a <a target="_blank" title="warner-azure-frankenstein-V2-793x629" href="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png">full diagram</a>.
 
 <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/826">
 AZ-303 Part 5 - Preparing for the Microsoft Azure Architect Technologies Exam</a>

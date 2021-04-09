@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "What is the big deal about Enterprise software?"
-excerpt: "There are several (overlapping) ones. Collect them all!"
-tags: [security, certs]
+excerpt: "Multi-dimensional vendors capture the prize"
+tags: [security, analytics]
 date: "2021-04-08"
 file: "enterprise-software"
 image:
@@ -17,15 +17,13 @@ comments: true
 {% include _toc.html %}
 
 
-What is the big deal about "enterprise" software? 
+Consultants and employees who work for enterprises and those who cater to them typically earn more than at other companies which can't afford premium prices.
 
-Consultants who work for enterprise software companies can earn more than other  companies which can't afford a higher rate.
-
-The good news today is that enterprise companies use the same core cloud infrastructure (at AWS, Azure, GCP, etc.) as any individual with a laptop. Many   features provided by cloud vendors are available free, albeit for a temporary amount of time. 
+The good news today is that enterprise organizations use the same core cloud infrastructure (at AWS, Azure, GCP, etc.) as any individual with a laptop. Many   features provided by cloud vendors are available free, albeit for a temporary amount of time. 
 
 Many software companies make the bulk of their profit on additional-charge enterprise level subscriptions. This article focuses on specific examples of those enterprise features.
 
-To successful work at enterprises, it is important for you to speak intelligently about the enterprise-level concerns.
+To successful contribute within enterprises, it is important to speak intelligently about enterprise-scale concerns. Here they are:
 
 
 ## 1. High Availability for disaster recovery
@@ -89,34 +87,39 @@ To successful work at enterprises, it is important for you to speak intelligentl
 
    The SOC team ensures that every custom software is configured to send logs and metrics from all machines into a SIEM (Security Information and Event Management) system such as Splunk, Azure Sentinel, etc. Such systems commonly maintains several times more data than the systems themselves. Machine Learning techniques and advanced statistical analysis are becoming common with such systems. All that enables the SOC team to correlate events across the enterprise to detect intrusion and exploits.
 
-   Logs, especially are also used by external auditors to determine actual compliance with policies. 
+   Logs, especially are also used by external auditors to determine actual compliance with policies. Those with access to SIEM data can elicit actual, detailed, real-time insights on inflows and outflows between different parts of the organization and systems -- a magical tool to identify bottlenecks and predict trends. We look forward to 3D dynamic projections in Mixed reality glasses from Microsoft, Apple, Facebook, etc. 
 
 ## 6. Large number of people and objects
 
-   By definition, enterprises consists of thousands of people and a much more complex set of IT components and databases.
+   By definition, enterprises consist of thousands of people and a much more complex set of IT components and databases.
 
-   So enterprises need batch export and import, not just a UI.
+   So enterprises need a search box for every field. It's not enough for vendors to simply provide a "Next" button for users to hunt for a value within a long list. 
 
-   Enterprises need more sophisticated features, such as a search box on every form. It's not enough for vendors to simply provide a "Next" button for users to find a value in a long list. 
+   Enterprise workers get far more value from <strong>batch</strong> export, import, and processing than from piloting overwhelming dashboards requiring expert manual navigation. Many vendors don't get that. 
 
-   Enterprise need complex queries. For example, Microsoft Azure has KQL (Kusto Query Language) with <a target="_blank" href="https://jmespath.org/tutorial.html">JMESPath</a> to select specific values from within a sea of data.
+   Enterprises need to make complex queries in order to filter out irrelevant parts of the large organization. For example, Microsoft Azure provides KQL (Kusto Query Language) with <a target="_blank" href="https://jmespath.org/tutorial.html">JMESPath</a> to select specific values from within a sea of data.
 
 ## 7. Hierarchy of groups
 
-   Tags are useful and flexibile, but may not be sophisticated enough for enterprises.
+   Enterprises deal with large amounts of data and people by grouping them in various ways, as in an organization chart.
 
-   Enterprises deal with large amount of data and people by grouping them in various ways, as in an organization chart or vice presidents above directors above managers, etc.
+   Tags are useful and flexibile, but enterprises are more used to hierarchial groups which reflect the traditional organization chart of vice presidents above directors above managers, etc. Effective or not, all data needs to fit into such an arrangement.
 
-## 8. Breakdowns and summaries over time
+## 8. Analytic breakdowns and summaries across several dimensions
 
-   Each level in each hierarchy needs to have its own set of reports and visualizations. Such reporting is needed on daily, weekly, monthly, quarterly, yearly basis as well as custom-defined periods.
+   Since there are different people in each box in the hierarchy, each level in each hierarchy needs to have its own set of reports and visualizations with its own varations. Such reporting is needed on daily, weekly, monthly, quarterly, yearly basis as well as custom-defined periods within dimensions of time, location, and other values.
 
-   For example, GitHub provides users a rich API to retrieve data set of data from GrapQL APIs. However, enterprise GitHub users need to create their own reports and visualizations.
+   For example, GitHub provides users a rich API to retrieve data set of data from GrapQL APIs. However, enterprise GitHub users need to create their own reports and visualizations over time:
+
+   * Total number of users over time and number added each period over time
+   * Ratio of users enrolled vs. those who made commits
+   * Retention ratios
+   * etc.
+   <br /><br />
 
 ## 9. Testing automation
 
-   Enterprise developer tooling software usually offer more sophisticated tools for the productivity of developers who are faced with a massive amount of data and complex code.
-
+   Enterprise developer tooling software needs to offer sophisticated tools to boost the productivity of developers wading though their massive amount of data and complex code.
    For example, Microsoft's Visual Studio (not the free Visual Studio Code, the client IDE) has an <a target="_blank" href="https://visualstudio.microsoft.com/vs/compare/">Enterprise level subscription which provides</a>:
 
    * Live Dependency Validation
@@ -161,6 +164,6 @@ So there you have it. Here's what makes for software to be enterprise-worthy:
 5. Round-the-clock SOC using SIEM
 6. Large number of people and objects
 7. Hierarchy of groups
-8. Breakdowns and summaries over time
+8. Analytic breakdowns and summaries across several dimensions
 9. Testing automation
 
