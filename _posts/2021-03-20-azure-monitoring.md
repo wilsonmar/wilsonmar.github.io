@@ -17,7 +17,7 @@ comments: true
 {% include _toc.html %}
 
 
-Several Azure services are related to all the monitoring done within Azure:
+Several Azure services are related to all the monitoring happening within Azure:
    * <a href="#Monitor">Azure Monitor</a>
    * <a href="#Log_Analytics">Log Analytics</a> <a href="#LA_Workspaces">Workspaces</a>
    * <a href="#Security_Center">Azure Security Center</a>
@@ -26,14 +26,15 @@ Several Azure services are related to all the monitoring done within Azure:
    * <a href="#Defender">Microsoft Defender</a>
    * <a href="#Metrics_Explorer">Metrics Explorer</a>
    * <a href="#Azure_Sentinel">Azure Sentinel (SIEM like Splunk)</a>
+   * <a href="#NPM">Azure Network Performance Monitor</a>
    <br /><br />
 
-Issues:
+Issues to monitor for:
    * poor response times,
    * changing usage rates, 
-   * exceptions, and 
-   * security risks
-   * capacity limits
+   * exceptions,
+   * security risks,
+   * capacity limits,
    * suspicious activity.
    <br /><br />
 
@@ -50,19 +51,19 @@ Issues:
 
    PROTIP: These can be viewed at <a target="_blank" href="https://aka.ms/AzMonUpdates">https://aka.ms/AzMonUpdates - Azure Monitoring Updates</a>
 
-   Between new product announcements occur in March each year at Microsoft's Ignite conference, Kayode Prince <a target="_blank" href="https://techcommunity.microsoft.com/t5/tag/CustomerConnections/tg-p/board-id/AzureMonitor">videos</a>
+   Between new product announcements occur in March each year at Microsoft's Ignite conference, Kayode Prince <a target="_blank" href="https://techcommunity.microsoft.com/t5/tag/CustomerConnections/tg-p/board-id/AzureMonitor">videos about Azure Monitor</a>.
 
    ### Theoretical arrangement
 
    <a target="_blank" href="https://www.youtube.com/watch?v=eSutaPE80PM">VIDEO</a> What is Azure Monitor? <em>from Microsoft:</em>
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/111892248-4f78ae80-89bf-11eb-8ba0-f934dc3314cc.png"><img alt="az-mon-hybrid-1534x787" width="640" src="https://user-images.githubusercontent.com/300046/111892248-4f78ae80-89bf-11eb-8ba0-f934dc3314cc.png"></a>
 
-* PROTIP: Azure Monitor collects fundamental types of data: 
+   DEFINITION: Azure Monitor collects two fundamental types of data: 
    * <a href="##Logs">logs</a> and
    * metrics (which include <a href="#Service_Health">Service Health</a>)
    <br /><br />
 
-* <strong>Insights</strong> are elicited from:
+   <strong>Insights</strong> are elicited from:
    * Applications
    * Virtual Machines (IaaS) which uses the Azure Diagnostics Extension 
    * Storage accounts
@@ -75,7 +76,9 @@ Issues:
    * Insights Hub
    <br /><br />
 
-   ??? from custom sources
+   Developers can code .NET Framework, Node.js, or Python to call the <strong>Data Collector API</strong> to send data to Azure Monitor from custom sources such as a web app, an Azure function, or a mobile app.
+
+   
 
 2. To <strong>Analyze</strong>:
 
@@ -117,14 +120,24 @@ Azure Automation hosts the Hybrid Runbook worker role and other services such as
 
 ### Logs
 
-Logs are organized into <strong>records</strong>. Each type of record have different sets of <strong>properties</strong>. Logs typically contain text data with detailed descriptions that contain numeric values. 
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-infrastructure-with-azure-monitor-logs/4-exercise-create-log-queries">
+HANDS-ON Exercise in Sandbox - Create basic Azure Monitor log queries to extract information from log data</a>
 
-Logs differ from metrics in that their record structure can vary and are often not collected at regular intervals. Applications can create custom logs by using the structure each needs.
+1. https://portal.azure.com/#blade/Microsoft_Azure_Monitoring_Logs/DemoLogsBlade?azure-portal=true
+1. Type a KQL to take the last 10 records from SecurityEvent logs. Click Run:
 
-A common type of log entry are <strong>events</strong> collected sporadically. 
-Events created by an application or service typically include enough information to provide complete context on their own. For example, an event can indicate that a particular resource was created or modified, a new host started in response to increased traffic, or an error was detected in an application.
+   <pre>SecurityEvent
+    | take 10
+   </pre>
 
-Telemetry such as events and traces are stored as logs in addition to performance data so that thet can all be combined for analysis.
+   Logs are organized into <strong>records</strong>. Each type of record have different sets of <strong>properties</strong>. Logs typically contain text data with detailed descriptions that contain numeric values. 
+
+   Logs differ from metrics in that their record structure can vary and are often not collected at regular intervals. Applications can create custom logs by using the structure each needs.
+
+   A common type of log entry are <strong>events</strong> collected sporadically. 
+   Events created by an application or service typically include enough information to provide complete context on their own. For example, an event can indicate that a particular resource was created or modified, a new host started in response to increased traffic, or an error was detected in an application.
+   
+   Telemetry such as events and traces are stored as logs in addition to performance data so that thet can all be combined for analysis.
 
 1. From the Azure Portal menu, select "Monitor".
 1. PROTIP: Click the "<<" icon above the Portal menu to make room.
@@ -272,30 +285,6 @@ How you start Log Analytics within Azure Portal limits the <strong>scope of data
 1. Scroll down to "Workspace Data Sources" -> Virtual machines.
 1. Click a VM running.
 
-### Network Performance Monitor (NPM)
-
-<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=dfa3a215-bad0-4842-9822-a9c922112f53">VIDEO</a>:
-
-1. "+ Create a resource".
-1. In Search in the Marketplace, type enough of "Network Performance Monitor" to select it.  Notice it's "Solarwinds".
-1. Click the blue Create.
-1. Create new Resource Group and define a VM server.
-
-   ...
-
-1. Get connected to a valid workspace.
-1. In a Log Analytics workspace, click General: Solutions.
-
-1. Download Windows Agent into each subnet.
-
-   ... synthetic transactions
-
-1. The full list of columns in table "NetworkMonitoring" is
-
-   <a target="_blank" href="
-   https://docs.microsoft.com/en-us/azure/azure-monitor/reference/tables/NetworkMonitoring">
-   https://docs.microsoft.com/en-us/azure/azure-monitor/reference/tables/NetworkMonitoring</a>
-
 ### Log Analytics 
 
 TASK: Connect Activity Logs from various Subscriptions to a Azure Montitor Logs (prev. aka Log Analytics) for up to 90 days.
@@ -327,246 +316,40 @@ TASK: Connect Activity Logs from various Subscriptions to a Azure Montitor Logs 
    Data sources and solutions each create different record types, each with its own set of properties. But you can still analyze sources and solutions together in queries to the workspace. This capability allows you to use the same tools and methods to work with a variety of data collected by a variety of sources.
 
 
+### Azure Traffic Analytics
+
+https://medium.com/microsoftazure/automation-to-block-malicious-flows-detected-by-azure-traffic-analytics-b010298ba347
+
+<a name="NPM"></a>
+
+### Network Performance Monitor (NPM)
+
+<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=dfa3a215-bad0-4842-9822-a9c922112f53">VIDEO</a>:
+
+1. "+ Create a resource".
+1. In Search in the Marketplace, type enough of "Network Performance Monitor" to select it.  Notice it's "Solarwinds".
+1. Click the blue Create.
+1. Create new Resource Group and define a VM server.
+
+   ...
+
+1. Get connected to a valid workspace.
+1. In a Log Analytics workspace, click General: Solutions.
+
+1. Download Windows Agent into each subnet.
+
+   ... synthetic transactions
+
+1. The full list of columns in table "NetworkMonitoring" is
+
+   <a target="_blank" href="
+   https://docs.microsoft.com/en-us/azure/azure-monitor/reference/tables/NetworkMonitoring">
+   https://docs.microsoft.com/en-us/azure/azure-monitor/reference/tables/NetworkMonitoring</a>
+
+
 <a name="KQL"></a>
 
 ## Kusto query language (KQL)
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/data-explorer/">DOCS</a>:
-
-Kusto is named after pioneering Oceanographer Jacque Custou (pronounced "Kusto").
-Like the language, he dove deep into a vast ocean for new insights.
-
-The language is read-only, of up to 5 GB.
-
-KQL is used in several Azure products, include the ADX managed SaaS service (GA 2019) for big data exploration in NRT (Near Real Time):
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/sqlcheatsheet">Compared to SQL</a>, KQL is less verbose 
-but is <strong>proprietary to Microsoft</strong>.
-
-References:
-
-   * 2.45 hr VIDEO COURSE: <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-data-exploring/table-of-contents" title="12 Sep 2019">
-   Exploring Data in Microsoft Azure Using Kusto Query Language and Azure Data Explorer</a>
-   by Neeraj Kumar (@mstechtrainings)
-   <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=d8b7a63f-4f04-4df6-895d-7441148d65c1">makes use of NOAA's Storm Events Database</a>.
-
-   * <a target="_blank" href="https://www.pluralsight.com/courses/microsoft-azure-data-explorer-starting">4h VIDEO COURSE:
-   How to Start with Microsoft Azure Data Explorer</a> (ADX) 29 Jun 2020
-   by Xavier Morera
-   * https://www.pluralsight.com/partners/microsoft/azure-data-explorer
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/data-explorer/security-baseline">https://docs.microsoft.com/en-us/azure/data-explorer/security-baseline</a>
-   <br /><br />
-
-   * <a target="_blank" href=""https://azure-training.com/azure-data-science/the-kusto-query-language/">This article on KQL</a> is one of Neeraj Kumar's excellent <a target="_blank" href="https://azure-training.com/azure-data-science/">series on data science using Azure</a>.
-
-   * https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/best-practices
-
-Hands-on:
-
-<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=5d02bb1a-8e72-4e31-9955-e6f34dc7a37d">VIDEO</a> 
-
-1. Open demo data from Microsoft:
-
-   <a target="_blank" href="https://aka.ms/LADemo">https://aka.ms/LADemo</a> which resolves to:<br />
-   <a target="_blank" href="
-   https://portal.loganalytics.io/demo">
-   https://portal.loganalytics.io/demo</a>
-
-1. Click the book icon at the right and select "Online course" for:
-
-   4 hr VIDEO COURSE: <a target="_blank" href="https://www.pluralsight.com/courses/kusto-query-language-kql-from-scratch" title="20 Jun 2018">
-   Kusto Query Language (KQL) from scratch</a>
-   by Robert Cain, who also has an <a href="#KQL_ADE">Advanced course</a>.
-
-1. Click the book icon at the right and select "Language Reference" for:
-
-   https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/
-   
-   Observe that KQL is part of Azure Data Explorer.
-
-1. Click "Query explorer" tab at the right.
-1. Expand "Saved Queries"
-1. Double-click on "Pluralsight" to expand the category.
-1. Click to open "m2-table-80-percent".
-
-   OBSERVE: Clicking completely replaces the existing KQL entry, without needing to clear it first.
-
-   <tt>//</tt> precede all comments in code.
-
-1. Highlight a query, click blue "Run" or hold down Shift and press Enter.
-
-   CAUTION: "No result" will be returned if there is no data.
-
-   "Perf" is the table name to search in. This table has these fields visible:
-
-   TenantId | Computer | ObjectName | ObjectName | CounterName | InstanceName
-
-1. To see more columns, drag the horizonal bar or on the Touchpad move two fingers to the left:
-
-   CounterValue | CounterPath | StandardDeviation | Type | 
-
-   _ResourceID | TenantID | SourceSystem | MG
-
-1. PROTIP: The full list of columns for this and all other tables is:
-
-   <a target="_blank" href="
-   https://docs.microsoft.com/en-us/azure/azure-monitor/reference/tables/perf">
-   https://docs.microsoft.com/en-us/azure/azure-monitor/reference/tables/perf</a>
-
-1. Set the Time Frame or set in the script text:
-
-   <pre>| where TimeGenerated >= ago(1h)</pre>
-
-   PROTIP: Several where statements can be stacked.
-
-
-   ### Operators
-
-1. For operators, click on the KQL query text area and press <strong>command+Enter</strong>:
-
-   * where - filter
-   * count
-   * extend - creates a calculated column in the result set (before project)
-   * join
-   * limit
-   * lookup
-   * order
-   * project - select a subset of columns (instead of all columns from table)
-   * project-away - remove column
-   <br /><br />
-
-1. To scroll for more, mouse over the list and slide two-fingers on the Mac Touchpad:
-
-   * sort
-   * summarize
-   * search
-
-   * distinct - to not repeat values shown
-   * make-series
-   * mv-apply
-   * mv-expand
-   * take 5  // return 5 records
-   * top 20  // rows
-   * top-nested
-   ...
-   <br /><br />
-
-   The Pluralsight video covers search, where, take, count, summarize, extend, project, distinct.
-
-   Examples to limit too much being returned (and wasting time):
-
-   <pre>| search kind=case_sensitive "memory"</pre>
-
-   <pre>| search in (Perf, Event, Alert) "Contoso"</pre>
-
-1. Use colon to search text wildcard:
-
-   <pre>| search CounterName:"MBytes"</pre>
-
-1. Limit column:
-
-   <pre>| search * starswith "Bytes"</pre>
-
-   <pre>| search * endswith "Bytes"</pre>
-
-   <pre>| search "Free*Bytes" // Any that Begins with free or ends with bytes
-   </pre>
-
-   <pre>| search InstanceName matches regex "[A-Z]:*"
-
-
-1. Click "m3-demo-scalar" explained by <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=039ed497-00e7-4257-9805-5728aa4e6f4d">this VIDEO</a> covering Scalar Operators:
-
-   print, now() UTC, ago(-7d), sort by asc, extract, parse, datetime, Timespan Artithmetic, startof..., endof..., between, todynamic, format_datetime, format_timespan, datetime_aart, case, iif, isempty/isnull, split, String Operators, strcat
-
-1. Click "m4-demo-advanced-aggregations" explained by <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=a0870edf-78da-4ffe-b470-9f31517a3db5">this VIDEO</a> 
-
-   * summarize arg_max/arg_min( column ), 
-   * makelist - flaten a hierarchy to a JSON array, allowing dup. values
-   * makeset  - flaten a hierarchy to a JSON array, removing dup. values
-
-   For a list of PCs with low disk space:
-
-   <pre>Perf
-| where CounterName == "% Free Space"
-|   and CounterValue <= 30
-| summarize Computers = makeset(Computer)
-   </pre>
-
-   * mvexpand, percentiles, dcount (distinct count, accuracy), dcountif, countif, pivot, top-nested, max/min, sum/sumif, any
-
-   ### Datasets
-
-1. Click "m5-demo-working-with-datasets" explained by <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=5d6c27dc-834d-4794-a203-9681758fa4dc">this VIDEO</a> 
-
-   * let, join (tables), union (combine) with source, kind=outer 
-   * datatable, prev/next, toscalar, row_cumsum, materialize
-
-   ### Time Series
-
-1. Click "m6-demo-time-series" explained by <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=6ba4e6b9-8e5e-4911-a2be-04df187df02e">this VIDEO</a> 
-
-   ### Machine Learning
-
-1. Click "m7-data-machine-learning" explained by <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=2bcae43f-203d-4d5d-8a79-64ac54f0ded2">this VIDEO</a> Machine Learning
-
-   * evaulate basket(threshold) - for the most frequently appearing combination of attributes, given the threshold for minimum frequency (default 0.05 or 5%)
-   * autocluster
-   * evaulate diffpatterns(EventLevelName, 'Error', 'Warning') // splits dataset to identify differences as "Error" or "Warning". Use iif to flag metrics before and after the incident.
-   * reduce by Computer with threshold = 0.6  // to determine pattern, with default threshold of 0.1.
-
-   ### Exporting data to CSV
-
-1. Click "m8-exporting-data" explained by <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=70eccae8-8e02-4131-9e00-ccc21bb0e753">this VIDEO</a> 
-
-1. To export to CSV file, run query and click the export icon.
-1. Select Export to CSV - all columns or display columns.
-1. In the pop-up at the bottom, click Save As.
-1. Specify the folder and file name.
-
-   ### Run KSL in PowerBI Desktop
-
-1. Copy the Query to your Clipboard.  
-1. Download and install PowerBI Desktop from https://powerbi.microsoft.com/desktop 
-1. Open PowerBI
-1. In Home group, Get Data - Blank Query
-1. Advanced Editor
-1. Paste the query (command+V). Done runs the query.
-1. Close and apply changes.
-1. Create visualizations, etc. 
-
-
-   <a name="KQL_ADE"></a>
-
-   ### KQL in Data Explorer
-
-1. <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-data-explorer-advanced-query-capabilities/table-of-contents">VIDEO course Microsoft Azure Data Explorer - Advanced KQL</a> by Robert Cain.
-
-1. Download and expand microsoft-azure-data-explorer-advanced-query-capabilities.zip to view folder module-05-performing-diagnostic-and-root-cause-analysis.
-
-1. ??? Load into Azure
-
-
-   covers <strong>functions</strong>, 
-
-   <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=9790e3dd-61fe-4544-8a7a-002a2bea36b9">inline Python & R code</a> (converted to KQL string by highlighting then Ctrl+K & Ctrl+S). 
-
-   Analyze data using geospatial analysis, 
-  
-   <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=4d63d73f-1f41-4633-8c37-23d707d8ef5f">Root Cause Analysis Diagnostics</a>
-  
-   clustering algorithms, 
-   time series analysis.
-
-
-   ### Exploring data using Kusto
-
-1. <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-data-exploring">Exploring Data in Microsoft Azure Using Kusto Query Language and Azure Data Explorer</a>, download exercise file microsoft-azure-data-exploring.zip (to your Downloads folder) and unzip. In folder coursfiles, ??
-
-
-KQL References:
-
-   * https://docs.microsoft.com/en-us/sharepoint/dev/general-development/keyword-query-language-kql-syntax-reference
 
 
 <a name="MetricData"></a>
@@ -981,6 +764,12 @@ Analyze collected data using Metrics Explorer for charting and visual correlatio
 Azure Monitor allows you to manage and create alerts, notifications, and actions such as runbooks and autoscale based on metrics and logs. 
 
 Integrate Azure Monitor with other tools using Event Hubs to export data or APIs for ingestion and export.
+
+
+## Load Testing Azure
+
+https://k6.io/blog/k6-as-alternative-for-azure-and-visual-studio-load-tests/
+
 
 
 ## References

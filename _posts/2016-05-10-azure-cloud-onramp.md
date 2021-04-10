@@ -27,12 +27,14 @@ PROTIP: Bookmark these links
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Usage </th><th> URL </th><th> Notes </th></tr>
 <tr valign="top"><td> Marketing </td><td>
-   <a target="_blank" href="https://azure.com/">https://azure.com</a> resolves to<br />
+   <a target="_blank" href="https://azure.com/"><strong>https://azure.com</strong></a> <em>redirects to</em><br />
    = <a target="_blank" href="https://azure.microsoft.com/en-us/">https://azure.microsoft.com/en-us</a>
    </td></tr>
-<tr valign="top"><td> Personal </td><td>
-   <a target="_blank" href="https://techprofile.microsoft.com/en-us/"><strong>https://techprofile.microsoft.com/en-us</strong></a>
-   </td><td>integrates info about your certifications and learnings taken within Microsoft.
+<tr valign="top"><td> Personal & corporate learning</td><td>
+   <a target="_blank" href="https://techprofile.microsoft.com/en-us/"><strong>https://techprofile.microsoft.com/en-us</strong></a><br />
+   <br />
+   <a target="_blank" href="https://esi.microsoft.com/"><strong>https://esi.microsoft.com</strong></a>
+   </td><td>integrates your learnings & cert. taken.
    </td></tr>
 <tr valign="top"><td> Sign-up: </td><td>
    <a target="_blank" href="https://account.windowsazure.com/signup/"> 
@@ -43,7 +45,7 @@ PROTIP: Bookmark these links
    </td><td> Define departments
    </td></tr>
 <tr valign="top"><td> Azure Enterprise Account Portal </td><td>
-   <a target="_blank" href="https://account.azure.com"><strong><u>https://account.azure.com</u></strong></a>
+   <a target="_blank" href="https://account.azure.com"><strong><u>https://account.azure.com</u></strong></a><br /><em>(can be slow, no federation?)</em>
    </td><td> Accounts under departments
    </td></tr>
 <tr valign="top"><td> Subscription dashboard: </td><td>
@@ -76,9 +78,22 @@ PROTIP: Bookmark these links
 
    https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/
 
+## Deals
+
+1. Labs in Microsoft Learn provide FREE access two hours at a time.
+
+1. Labs in CloudAcademy.com are included in their monthly subscriptions.
+
+1. Many obtain a monthly license of Visual Studio (even though they don't intend on using it) just for a deal on Azure credits:
+
+   * $50/month credits for $39/mo Visual Studio Professional license
+   * $150/month credits for $89/mo Visual Studio Enterprise licenset
+   <br /><br />
+
+
 ## Browser Profiles
 
-PROTIP: When you return to the Portal, Azure knows your account becuase it stores a "cookie" in your browser.
+PROTIP: When you return to the Portal, Azure knows your account because it stores a "cookie" in your browser.
 
 That is a hassle when you're switching among different Azure accounts.
 
@@ -99,7 +114,7 @@ PROTIP: So if you're using Google Chrome, click the Chrome avatar at the upper-r
    * Buy a Visual Studio Enterprise license for $150/month credit on Azure.
 
 
-   ### Job Roles
+### Job Roles
 
 2. Microsoft aligned these job roles with <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Azure certification exams</a>:
 
@@ -112,7 +127,7 @@ PROTIP: So if you're using Google Chrome, click the Chrome avatar at the upper-r
    * Business User
    <br /><br />
 
-   PROTIP: These learning roles are different than the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a>.
+   PROTIP: These learning roles are different than the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a> (AAD).
 
    MY OPINION: I think job roles should be multi-select checkboxes.
    This segregation also adds to duplicating material.
@@ -120,7 +135,7 @@ PROTIP: So if you're using Google Chrome, click the Chrome avatar at the upper-r
 
    ## Global Admin Account
 
-   <strong>Global Administrators</strong>, aka Company Administrators, in Azure AD have access to <strong>all services</strong> that use Azure Active Directory identities like Microsoft 365 security center, Microsoft 365 compliance center, Exchange Online, SharePoint Online, and Skype for Business Online.
+   <strong>Global Administrators</strong>, aka Company Administrators, in Azure AD have access to <strong>all services</strong> that use AAD identities like Microsoft 365 security center, Microsoft 365 compliance center, Exchange Online, SharePoint Online, and Skype for Business Online.
 
    PROTIP: Don't use that account regularly and set an Activity Alert when it is used. Have no MFA on it. Have 2-5 global admins. <a target="_blank" href="https://www.youtube.com/watch?v=vZ9uQtO7mSU&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=2">VIDEO</a> 
 
@@ -275,7 +290,7 @@ PROTIP: It makes more sense to look at a live example populated with several res
 
    When someone signs up for a Microsoft cloud service subscription (such as Microsoft Azure, Office 365, Microsoft Intune, etc.), a dedicated instance of <strong>Azure AD (Active Directory)</strong> is created. 
 
-   READ: <a target="_blank" href="https://microsoftlearning.github.io/AZ-900T0x-MicrosoftAzureFundamentals/Instructions/Walkthroughs/19-Use%20the%20Azure%20Pricing%20Calculator.html"><img width="20" alt="pricing" src="https://code.benco.io/icon-collection/azure-patterns/calculator-pricing-details.svg"></a> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/active-directory/">Azure Active Directory pricing</a>. Notice only the free version of Azure AD has that 500,000 <strong>object limit</strong>.
+   READ: <a target="_blank" href="https://microsoftlearning.github.io/AZ-900T0x-MicrosoftAzureFundamentals/Instructions/Walkthroughs/19-Use%20the%20Azure%20Pricing%20Calculator.html"><img width="20" alt="pricing" src="https://code.benco.io/icon-collection/azure-patterns/calculator-pricing-details.svg"></a> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/active-directory/">Azure Active Directory pricing</a>. 
 
    Premium P1 features include Password Protection (custom banned password). Dynamic groups requires a Premium P1 license.
 
@@ -304,17 +319,11 @@ PROTIP: It makes more sense to look at a live example populated with several res
 
    Advanced detections (such as unfamiliar sign-in properties) are not covered by your license, and will appear under the name Sign-in with additional risk detected. 
 
-   P2 "Identity Governance" include Privileged Identity Management (PIM), Access Reviews, and time-saving <a target="_blank"" href="https://docs.microsoft.com/en-us/azure/active-directory/governance/entitlement-management-overview">Entitlement Management</a>.
-
 
    Devices are managed on Azure AD
 
    Users on another Azure AD (B2B) or public IDP (B2C)
 
-
-   ### Azure AD PIM RBAC
-
-   With the PIM (Priviledge Identity Mangement) service, each Admin is licensed at Preminu P2 level for time-base (Just-In-Time) Role-based access control (RBAC).
 
    ### Enterprise discount
 
@@ -405,7 +414,7 @@ PROTIP: It makes more sense to look at a live example populated with several res
 
    On the Google Play Store: https://play.google.com/store/apps/details?id=com.microsoft.azure
 
-1. Login
+1. Login. <a target="_blank" href="https://www.youtube.com/watch?v=W7lXaQOQhFs">VIDEO</a>
 
 1. Setup MFA
 
@@ -869,6 +878,9 @@ Each can be exempted.
 
    * <a target="_blank" href="https://social.msdn.microsoft.com/Forums/azure/en-US/home">MSDN</a>
 
+   <a target="_blank" href="https://medium.com/microsoftazure">
+   https://medium.com/microsoftazure</a>
+
    <em>Filtered for Most Votes on Accepted answers:</em>
 
    * <a target="_blank" href="https://stackoverflow.com/questions/tagged/azure?sort=MostVotes&filters=NoAcceptedAnswer&edited=true">StackOverflow</a>
@@ -932,6 +944,8 @@ Each can be exempted.
    https://www.google.com/maps?q=33.448376,-122.074036</a>
 
 1. Click to see it's in downtown Phoenix. (For security, that is not the exact location so Amazon can't drop a bomb on it).
+
+
 
 
 <a name="AddUsers"></a>
@@ -1537,6 +1551,8 @@ It makes use of SYN cookies and rate & connection limits defined by a Trust Fram
 
 Azure Bicep files contain a custom Domain Specific Language (DSL) designed to be easier to read than ARM JSON templates.
 
+<a target="_blank" href="https://github.com/Azure/bicep">https://github.com/Azure/bicep</a>
+
 RESOURCE: <a target="_blank" href="https://github.com/Azure/azure-quickstart-templates/">This</a> contains Azure Resource Manager templates contributed by the community.
 
 https://github.com/Azure/bicep/tree/main/docs/examples
@@ -1548,9 +1564,7 @@ But instead of state files like Terraform, Azure itself manages state.
 
 QUESTION: What about templating? Pulumi?
 
-In March 2021, Bicep is not yet integrated into the Portal.
-
-https://github.com/Azure/bicep
+As of March 2021, Bicep is not yet integrated into the Portal.
 
 1. Install the Bicep CLI.
 

@@ -18,7 +18,8 @@ comments: true
 
 > "Design systems allow designers to make better decisions"
 
-Behind every major organization creating websites is a "Design System" publication which specifies the UX (User Experience).
+Behind every major organization creating websites is a "Design System" publication which specifies the UX (User Experience) and provides tools for website designers that UX.
+
 UX includes more than colors, fonts (typography), icons (iconography), <a href="#Design_Tokens">Design Tokens</a>, line height, and other aspects of styling websites and Andriod/iOS mobile apps. Design Systems provide Guidelines on Voice and Tone, Animation, Accessibility, Layout, Navigation, Search, Messaging, Data Visualization, Localization, etc. 
 Component blueprints provide examples to code components such as Accordion, Checkbox, etc. in the form of 
 
@@ -30,6 +31,9 @@ Component blueprints provide examples to code components such as Accordion, Chec
    * Sketch Grid library
    * Sketch illustration library
 	<br /><br />
+
+To create design systems, many use the <a target="_blank" href="https://tailwindcss.com/docs">Tailwind CSS compiler</a>. It's called an "atomic/utility-first" CSS framework (UI-kit). It's <a target="_blank" href="https://blog.logrocket.com/tailwind-css-is-it-tomorrows-bootstrap-ebe560f9d00b/">best installed via npm</a>.
+For better performance, Tailwind removes unused CSS using PurgeCSS, which can be <a target="_blank" href="https://stevenwestmoreland.com/2021/01/using-tailwind-css-with-jekyll.html">incorporated into Jekyll</a> and <a target="_blank" href="https://www.youtube.com/watch?v=dc-zMDiANvg">themes</a>.
 
 ## Examples
 

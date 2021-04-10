@@ -19,24 +19,61 @@ comments: true
 
 Consultants and employees who work for enterprises and those who cater to them typically earn more than at other companies which can't afford premium prices.
 
-The good news today is that enterprise organizations use the same core cloud infrastructure (at AWS, Azure, GCP, etc.) as any individual with a laptop. Many   features provided by cloud vendors are available free, albeit for a temporary amount of time. 
+The good news today is that enterprises now use the same core cloud infrastructure (at AWS, Azure, GCP, etc.) as any individual. However, many software companies make the bulk of their profit on additional-charge enterprise level subscriptions. This article focuses on specific examples of those enterprise features. But they make those features available free, for a temporary amount of time.
 
-Many software companies make the bulk of their profit on additional-charge enterprise level subscriptions. This article focuses on specific examples of those enterprise features.
+To successfully cater to enterprises, it is important to not just speak intelligently about enterprise-scale concerns, but to actually incorporate features that are proven to address their concerns. 
 
-To successful contribute within enterprises, it is important to speak intelligently about enterprise-scale concerns. Here they are:
+A support engineer at a well-known developer tools software company once actually said in a meeting (unconvincingly):
+
+> "We're enterprise software because we have thousands of enterprise users"
+
+The rebuff was: "this software will actually be an enterprise offering when those 40 specific feature requests are implemented."
+
+Here are the <strong>concerns</strong> addressed by those requests:
+
+## 1. Automation for large number of people and objects
+
+   The top 500 publicly-traded stocks in the US (by price times shares traded) are listed by Standard and Poors in their "S&P 500 index". There is also a Russell index of the top 3000 stocks. There are also many large privately-held corporations.
+
+   Enterprises typically employ thousands of people making use of a complex set of IT components and databases.
+
+   So to keep support costs down, <strong>self-service</strong> apps are a big deal.
+
+   Due to the large number of options, every field on enterprise forms are likely need a <strong>search box</strong>. It's not enough for vendors to simply provide a "Next" button for users to hunt for a value within a long list. 
+
+   Enterprise workers get far more value from <strong>batch</strong> export, import, and processing than from piloting overwhelming dashboards requiring expert manual navigation. Many vendors don't get that. 
+
+## 2. Hierarchy of groups
+
+   Enterprises manage large amounts of data and people by grouping them in various ways, as in an organization chart.
+
+   So enterprise workers need to make <strong>complex queries</strong> of data in order to filter out irrelevant parts of the large organization. For example, Microsoft Azure provides KQL (Kusto Query Language) with <a target="_blank" href="https://jmespath.org/tutorial.html">JMESPath</a> to select specific values from within a sea of data.
+
+   Tags are useful and flexibile, but enterprises are more used to hierarchial groups which reflect the traditional organization chart of vice presidents above directors above managers, etc. Effective or not, all data needs to fit into such an arrangement. "Conway's Law" was coined for the observation that systems tend to look like the organization structure of the people building them.
+
+   So enterprise software needs to create <strong>reports showing an indented hierarchy</strong> rather than a mere two-dimensional list.
 
 
-## 1. High Availability for disaster recovery
+## 3. Analytic breakdowns and summaries across several dimensions
 
-   Enterprise licensing typically involve providing High Availability (HA) features, which means running simultaneously in <strong>multiple locations</strong>. Such operations require real-time coordination of data created across multiple sites. Not a simple feat. When one region fails, the amount of time that it takes before end-users can continue work on a replacement system is so important that enterprises have a metric for it: MTD (Maximum Tolerable Downtime). Additionally, the RTO (Recovery Time Objective) measures the amount of time before a restore is initiated and data is restored. 
+   Since there are different people in each box in the hierarchy, each box in each hierarchy are likely to want its own set of reports with unique filters and visualizations with its own variations. Such reporting is needed on daily, weekly, monthly, quarterly, yearly basis as well as custom-defined periods within dimensions of time, location, and other values.
 
-   The maximum amount of data that is allowed to be lost is measured by the RPO (Recovery Point Objective). An organization which takes incremental backups once a day would have an RPO of at least 24 hours since any data processed after the last backup would be lost. The RPO needs to include time to run and verify restores from backups.
+   Results often need to have a financial component which meet cost accounting principles.
 
-   <a target="_blank" href="https://www.slideshare.net/renatadavidson/d-rvs-bcp-34018845"><img alt="dr-plan-davidson-consulting-638x385.png" width="638" height="385" src="https://user-images.githubusercontent.com/300046/113962529-1aed5b00-97e5-11eb-85c2-3e0b905ec855.png"></a>
+   For example, GitHub provides users a rich API to retrieve data set of data from GraphQL APIs. 
 
-## 2. Global scale
+   However, enterprise GitHub users need to create their own reports and visualizations over time:
 
-   To reduce RPO for live databases, an enterprise would log-ship every single add or update across the sea to a duplicate hot site ready to take over.
+   * Total number of users over time and number added each period over time
+   * Ratio of users enrolled vs. those who made commits
+   * Retention ratios
+   * etc.
+   <br /><br />
+
+
+## 4. Global scale
+
+   To reduce recovery time for live databases faltering, an enterprise would <strong>log-ship</strong> every single add or update across the sea to a duplicate hot site ready to take over.
 
    However, several countries (such as Germany, Singapore, etc.) mandate that it's citizen's data not leave its soverign territory.
 
@@ -52,7 +89,7 @@ To successful contribute within enterprises, it is important to speak intelligen
 
    Such can be difficult within enterprises which have historically operated under "separation of duties" as perhaps separate "fiefdoms" of independent departments for compute, storage, networking, etc. which may not regularly collaborate with each other.
    
-## 3. Central planning and approvals
+## 5. Central planning and approvals
 
    The social skills to handle command-and-control politics well is worth top dollar.
 
@@ -67,7 +104,7 @@ To successful contribute within enterprises, it is important to speak intelligen
    BTW, this is why it is often counter-productive for vendors to artifically limit evaluation periods to a mere two weeks. Many such vendors are eliminated prematurely because evaluation periods are usually much longer due to organizational complexities.
 
 
-## 4. Security features
+## 6. Security features
 
    When working with cloud vendors, many enterprises prefer to generate their own <strong>customer-owned keys</strong> for encryption of data at rest instead of having cloud vendors provide the keys.
 
@@ -79,7 +116,7 @@ To successful contribute within enterprises, it is important to speak intelligen
 
    The most sophisticated edition of Windows 10 -- Enterprise E5 -- adds Windows Defender ATP (Advanced Threat Protection) which runs virus scans and details the machine's security posture in sophisticated visualizations.
 
-## 5. Round-the-clock SOC using SIEM
+## 7. Round-the-clock SOC using SIEM
 
    Enterprises have a SOC (Security Operations Center) which operates 24/7.
 
@@ -89,37 +126,19 @@ To successful contribute within enterprises, it is important to speak intelligen
 
    Logs, especially are also used by external auditors to determine actual compliance with policies. Those with access to SIEM data can elicit actual, detailed, real-time insights on inflows and outflows between different parts of the organization and systems -- a magical tool to identify bottlenecks and predict trends. We look forward to 3D dynamic projections in Mixed reality glasses from Microsoft, Apple, Facebook, etc. 
 
-## 6. Large number of people and objects
+## 8. High Availability for disaster recovery
 
-   By definition, enterprises consist of thousands of people and a much more complex set of IT components and databases.
+   Enterprise licensing typically involve providing High Availability (HA) features, which means running simultaneously in <strong>multiple locations</strong>. Such operations require real-time coordination of data created across multiple sites. Not a simple feat. When one region fails, the amount of time that it takes before end-users can continue work on a replacement system is so important that enterprises have a metric for it: MTD (Maximum Tolerable Downtime). Additionally, the RTO (Recovery Time Objective) measures the amount of time before a restore is initiated and data is restored. 
 
-   So enterprises need a search box for every field. It's not enough for vendors to simply provide a "Next" button for users to hunt for a value within a long list. 
+   The maximum amount of data that is allowed to be lost is measured by the RPO (Recovery Point Objective). An organization which takes incremental backups once a day would have an RPO of at least 24 hours since any data processed after the last backup would be lost. The RPO needs to include time to run and verify restores from backups.
 
-   Enterprise workers get far more value from <strong>batch</strong> export, import, and processing than from piloting overwhelming dashboards requiring expert manual navigation. Many vendors don't get that. 
+   <a target="_blank" href="https://www.slideshare.net/renatadavidson/d-rvs-bcp-34018845"><img alt="dr-plan-davidson-consulting-638x385.png" width="638" height="385" src="https://user-images.githubusercontent.com/300046/113962529-1aed5b00-97e5-11eb-85c2-3e0b905ec855.png"></a>
 
-   Enterprises need to make complex queries in order to filter out irrelevant parts of the large organization. For example, Microsoft Azure provides KQL (Kusto Query Language) with <a target="_blank" href="https://jmespath.org/tutorial.html">JMESPath</a> to select specific values from within a sea of data.
-
-## 7. Hierarchy of groups
-
-   Enterprises deal with large amounts of data and people by grouping them in various ways, as in an organization chart.
-
-   Tags are useful and flexibile, but enterprises are more used to hierarchial groups which reflect the traditional organization chart of vice presidents above directors above managers, etc. Effective or not, all data needs to fit into such an arrangement.
-
-## 8. Analytic breakdowns and summaries across several dimensions
-
-   Since there are different people in each box in the hierarchy, each level in each hierarchy needs to have its own set of reports and visualizations with its own varations. Such reporting is needed on daily, weekly, monthly, quarterly, yearly basis as well as custom-defined periods within dimensions of time, location, and other values.
-
-   For example, GitHub provides users a rich API to retrieve data set of data from GrapQL APIs. However, enterprise GitHub users need to create their own reports and visualizations over time:
-
-   * Total number of users over time and number added each period over time
-   * Ratio of users enrolled vs. those who made commits
-   * Retention ratios
-   * etc.
-   <br /><br />
 
 ## 9. Testing automation
 
    Enterprise developer tooling software needs to offer sophisticated tools to boost the productivity of developers wading though their massive amount of data and complex code.
+
    For example, Microsoft's Visual Studio (not the free Visual Studio Code, the client IDE) has an <a target="_blank" href="https://visualstudio.microsoft.com/vs/compare/">Enterprise level subscription which provides</a>:
 
    * Live Dependency Validation
@@ -155,15 +174,21 @@ To successful contribute within enterprises, it is important to speak intelligen
    * Identify vulnerabilities iteratively within packages referenced (using XRay, Sonatype, etc.)
    <br /><br />
 
+
+## Summary
+
 So there you have it. Here's what makes for software to be enterprise-worthy:
 
-1. High Availability for disaster recovery
-2. Global scale
-3. Central planning and approvals
-4. Security features
-5. Round-the-clock SOC using SIEM
-6. Large number of people and objects
-7. Hierarchy of groups
-8. Analytic breakdowns and summaries across several dimensions
+1. Automation for large number of people and objects
+2. Hierarchy of groups
+3. Analytic breakdowns and summaries across several dimensions
+4. Global scale
+5. Central planning and approvals
+6. Security features
+7. Round-the-clock SOC using SIEM
+8. High Availability for disaster recovery
 9. Testing automation
+<br /><br />
+
+Building systems which inherently address the above enterprise concerns would save you the embarassment of having to add them at the request of enterprise prospects. And it's a lot easier to incorporate enterprise features during developement rather than as an afterthought.
 
