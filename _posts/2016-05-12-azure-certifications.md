@@ -146,15 +146,17 @@ Microsoft Quizzes by CloudAcademy</a>
 
    <a target="_blank" href="https://www.microsoftazuresponsorships.com/balance">https://www.microsoftazuresponsorships.com/balance</a> using your personal email account.
 
-1. To search within lab instructions, see GitHub (such as https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies)
+1. In the lab, click the working form field you want to fill before clicking the "T" icon to paste into the working screen.
 
-   You can't paste from your regular Clipboard into the VM.
-
-1. Click the working form field you want to fill before clicking the "T" icon to paste into the working screen.
+   CAUTION: You can't paste from your regular Clipboard into the class VM.
 
 1. If your lab is frozen, Reconnect:
 
    ![az-certs-labclient-reconnect-170x137](https://user-images.githubusercontent.com/300046/112444873-1c625200-8d14-11eb-9b67-f1bfe5a76a9b.png)
+
+1. To search within lab instructions, see GitHub (such as <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies">https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies</a> or <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies">https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies</a>). Look at labs there if you can't access the course's lab environment.
+
+1. Challenge labs you get 3 chances.
 
 
 ### Cloud Academy
@@ -183,6 +185,9 @@ LinuxAcademy.com</a>
 https://vladtalkstech.com/microsoft-certification-study-guides
 
 <hr />
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits">
+Azure Subscription Service Limits</a>
 
 <a name="#AZ-900"></a>
 
@@ -432,9 +437,13 @@ Includes:
 
 ## AZ-303 Azure Architect Technologies
 
-AZ-104 is not a requirement but covers same topics.
+AZ-104 is not a requirement but covers same topics more conceptually.
 
 Passing this and the less hands-on AZ-304 Microsoft Azure Architect Design (blueprints) makes you a Microsoft Certified Azure Solutions Architect Expert.
+
+<a target="_blank" href="
+https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies">
+https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies</a>
 
 Previously AZ-300, $165 for 2-3 hours
 <a target="_blank" href="

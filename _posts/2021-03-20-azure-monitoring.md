@@ -720,6 +720,18 @@ DEFINITION: "Security posture" refers to cybersecurity policies and controls, as
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/security-center/"><strong>Azure Security Center</strong></a> lists prioritized security alerts and recommendations for attack investigation and remediation.
 
+Host recommendations:
+   * OS security settings configuration rules
+   * System security & critical updates missing
+   * Endpoint protection recommendations
+   * Disk encryption validation
+   * Remediate vulnerabilities assessment
+   * Threat detection
+   <br /><br />
+
+   Each can be exempted.
+
+
 Security Center automatically collects, analyzes, and integrates log data from Azure resources; the network; and connected partner solutions, like firewall and endpoint protection solutions, to detect real threats and reduce false positives. 
 
 1. Click "Getting Started" menu. Click "Install agent" for data collection on VMs.

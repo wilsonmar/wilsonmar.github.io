@@ -141,7 +141,8 @@ PROTIP: So if you're using Google Chrome, click the Chrome avatar at the upper-r
 
    PROTIP: Global Admin privileges are neede to enable <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">AD PIM (Privileged Identity Management)</a> for a directory.
 
-   So it's important to assign other more specific roles:
+   So it's important to assign other more specific roles. PowerShell command 
+   <tt>Get-AzureRMRoleDefinition</tt> lists:
 
    * Application Administrators can create and manage all aspects of enterprise applications, application registrations, and application proxy settings.
 
@@ -181,11 +182,11 @@ PROTIP: So if you're using Google Chrome, click the Chrome avatar at the upper-r
 
    * Security Administrators have permissions to manage security-related features in the Microsoft 365 security center, Azure Active Directory Identity Protection, Azure Information Protection, and Microsoft 365 Security & Compliance Center.
 
+   The basic categories are owner, contributor, and reader.
+
    BTW, after you follow instructions below on setting up CLI, this Bash command lists all the pre-defined roles:
 
    <pre><strong>az role definition list -o table --query [].roleName</strong></pre>
-
-   The basic categories are owner, contributor, and reader.
 
    ### Permissions
 
@@ -197,6 +198,10 @@ PROTIP: So if you're using Google Chrome, click the Chrome avatar at the upper-r
    <br /><br />
 
    The actions are implemented by resource providers.
+
+   Up to 2000 roles can be defined for a tenant.
+
+   Each tenant is independent of all other tenants.
 
 
 <a name="FreeSvcs"></a>
@@ -222,6 +227,7 @@ The clock is ticking:
 
 PROTIP: It makes more sense to look at a live example populated with several resources, in context:
 
+
 ### Azure GUI thru CloudAcademy 
 
 1. <a target="_blank" href="https://cloudacademy.com/library/azure/">cloudacademy.com/library/azure</a> has defined several labs.
@@ -245,7 +251,7 @@ PROTIP: It makes more sense to look at a live example populated with several res
 1. Click the Username account for the lab.
 1. Click "Maybe later" for tour for the Azure landing page (Dashboard).
 
-   ### Windows RDP Command Line
+   ### Create Resource in Command Line
 
 1. <img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/general-1-All-Resources.svg">Click the "All Resources" icon for a list.
 
@@ -253,6 +259,8 @@ PROTIP: It makes more sense to look at a live example populated with several res
 1. Click "Resource Group" under the Navigate label.
 
    <img alt="Resource Group" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-patterns/azure-resource-group-blue.svg">
+
+   PROTIP: Up to 980 resource groups can be created under a Subscription.
 
 1. Click the "cal-xxx-yy" presented.
 
@@ -381,7 +389,7 @@ PROTIP: It makes more sense to look at a live example populated with several res
    https://signup.live.com/signup"><strong>
    https://signup.live.com/signup</strong></a>
 
-6. PROTIP: You don't need to sign-up for and pay for a subscription with your credit card until you have <strong>5 users</strong>.
+6. PROTIP: After defining <strong>5 users</strong>, you are forced to sign-up for and pay for a subscription with your credit card.
 
    PROTIP: Use address with a zip code that's not associated with your home address, and used only for banking.
 
@@ -394,6 +402,9 @@ PROTIP: It makes more sense to look at a live example populated with several res
    Transfer ownership of a subscription, such as to a central accounting department.
 
    Add additional subscriptions when you may exceed limits within a subscription: # VNets.
+
+
+   ### MS Authenticator app
 
 7. Install the <strong>Microsoft Authenticator app</strong> on you smartphone and setup Two-factor authentication to approve access using your phone.
 
@@ -439,19 +450,6 @@ Also, instead of 2 racks, ARM resources can span 3 racks of computers.
 ARM handles Authentication for access to back-end Web App, Data Store, Virtual Machines, etc. 
 
 
-## Resource Groups
-
-
-Resource groups can be created by using the following methods:
-
-   * <a href="#Portal">Azure portal GUI</a>
-   * JSON Templates IaC templates (by custom REST API clients)
-   * Azure Cloud Shell which enable: Azure PowerShell (Az modules)
-   * Azure Bash CLI (az commands)
-   * <a href="#Bicep">Azure Bicep (like Terraform)</a>
-   * Azure programmatic SDKs using programming languages C# .NET, Java, Python, NodJs (JavaScript), etc.
-   <br /><br />
-
 <hr />
 
 <a name="Portal"></a>
@@ -477,21 +475,6 @@ Resource groups can be created by using the following methods:
    * Operational excellence
    * Performance
    <br /><br />
-
-### Security Center
-
-Host recommendations:
-   * OS security settings configuration rules
-   * System security & critical updates missing
-   * Endpoint protection recommendations
-   * Disk encryption validation
-   * Remediate vulnerabilities assessment
-   * Threat detection
-   <br /><br />
-
-Each can be exempted.
-
-
 
 
 <a name="ARM-Menu"></a>
@@ -601,77 +584,18 @@ Each can be exempted.
 0. To find text on the page, press command+F.
 
 
-   <a name="ResourceGroups"></a>
+   
+   ## Policies and Management Group Initiatives
 
-   ### Resource Groups
+1. <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=ff82e602-05c5-4b71-b907-a011015d2859">VIDEO</a>: All Services -> Management Groups to apply governance conditions (access & policies) above Subscriptions.
 
-   Before any resource can be provisioned, you need a resource group for it to be placed in.
-   Each resource must be in a resource group. 
-   A resource can only be a member of a single resource group. 
+1. Add Management Group (up to 6 levels in hierarchy)
 
-0. Drag and drop "Resource Groups" Home menu item to the bottom of the list. That's because you can ...
+   An <strong>initiative</strong> describes a group of policies across different management groups, subscriptions, resource groups, ?
 
-0. Hold down G and press <strong>R</strong> for <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups">Resource Groups</a>. 
+   PROTIP: Currently, you can't use Resource Manager templates to create management groups.
 
-   DEFINITION: A resource group is a logical container for resources deployed on Azure: virtual machines, Application Gateways, CosmosDB instances, etc. Many resources can be moved between resource groups.  
-
-   Resource groups also define a <strong>scope</strong> for applying role-based access control (RBAC) permissions which limit access to allow only what is needed.
-
-   Deleting a resource group results in deletion of all resources contained within it. So resource groups make it easy to remove a set of resources at once. That's great for non-production environments.
-
-   Resource groups have a flat structure: they cannot be nested. 
-
-   ### Command bar + Create Resource Group
-
-0. Hold down G and press <strong>,</strong> (comma) to focus on the command bar.
-0. If "+ Create" is highlighted, press Enter to invoke it.
-0. If you have more than one Subscription, ensure you have the intended one.
-0. Type your Resource group name.
-
-   ### Region = Location
-
-0. Select the Region (aka Location) closest to intended users. 
-
-   PROTIP: There are differences in prices among regions. "WestUS" is generally the least expensive among US regions.
-
-   Individual resources created within a Resource Group will be placed in the same region.
-
-   ### Tags
-
-0. Click "Review + create" if you are not using Tags or if the resource doesn't support tags.<br />
-   Click "Tags" if you can specify one according to your Tag Naming Convention:
-
-   Tag names are limited to 512 characters.<br />
-   Tag names for storage accounts have a limit of 128 characters.
-
-   Tags are your own metadata for:
-   * Searching
-   * Viewing
-   * Billing
-   <br /><br />
-
-   When are able to invoke CLI commands, consider:
-
-   <pre><strong>az resource tag --tags Department=Finance \
-    --resource-group "$AZ_RESOURCE_GROUP" \
-    --resource-type "Microsoft.Network/virtualNetworks" \
-    --name msftlearn-vnet1 
-   </strong></pre>
-
-   Each tag is a name=value pair such as <tt>Department=Finance</tt> or <tt>Project=Acme</tt>, etc. 
-
-   Each tag value is limited to 256 characters for all types of resources. 
-   * Environment=Production or Staging or "NPT" (Non-Production/Test)
-   * Department or Accounting / cost center Charge Code
-   * Geography
-   * shutdown=6PM and startup=7AM for automation
-   <br /><br />
-
-   Tags are not inherited from parent resources. 
-
-   A resource be associated with up to 50 tags.
-
-0. Click "Create".
+   Create management group by using the portal, PowerShell, or Azure CLI. 
 
 
    ## Policy creation
@@ -755,14 +679,138 @@ Each can be exempted.
 1. Click "Review + create" then "Create" to create the assignment.
 
 
+   ### Management groups
 
-   ## Policies and Management Group Initiative
+   ![az-onramp-mgmt-grp-657x415](https://user-images.githubusercontent.com/300046/114475982-a20c4b80-9bb6-11eb-9891-2d4e4ceffb46.png)
 
-1. <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=ff82e602-05c5-4b71-b907-a011015d2859">VIDEO</a>: All Services -> Management Groups to apply governance conditions (access & policies) above Subscriptions.
 
-1. Add Subscription
 
-   An <strong>initiative</strong> describes a group of policies across different management groups, subscriptions, resource groups, ?
+   <a name="ResourceGroups"></a>
+
+   ### Resource Groups
+
+   Before any resource can be provisioned, you need a resource group for it to be placed in.
+   Each resource must be in a resource group. 
+
+   Resource groups can be created by using the following methods:
+
+   * <a href="#Portal">Azure portal GUI</a>
+   * JSON Templates IaC templates (by custom REST API clients)
+   * Azure Cloud Shell which enable: Azure PowerShell (Az modules)
+   * Azure Bash CLI (az commands)
+   * <a href="#Bicep">Azure Bicep (like Terraform)</a>
+   * Azure programmatic SDKs using programming languages C# .NET, Java, Python, NodJs (JavaScript), etc.
+   <br /><br />
+
+1. List resource groups using CLI:
+
+   <pre><strong>az group list -o table</strong></pre>
+
+   For more details (SSH, Managed By), remove "-o table".
+   See https://docs.microsoft.com/en-us/cli/azure/manage-azure-groups-azure-cli
+   and https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-cli
+
+   A resource cannot be split among several resource groups, each be a member of a single resource group. 
+
+
+   <a name="Create_Resource_Group"></a>
+
+   ### Create Resource Groups
+
+   DEFINITION: A resource group is a logical container for resources deployed on Azure: virtual machines, Application Gateways, CosmosDB instances, etc. Many resources can be moved between resource groups.  
+
+   Resource groups also define a <strong>scope</strong> for applying role-based access control (RBAC) permissions which limit access to allow only what is needed.
+
+1. Create resource group (under a subscription) for location, after viewing briefings on CLI Bash or Storage (if you haven't already):
+
+   <pre><start>az group create --name $MY_RG --location $MY_LOC
+   </start></pre>
+
+   Alternately, for more commentary, use the portal GUI:
+
+1. Drag and drop "Resource Groups" Home menu item to the bottom of the list. That's because you can ...
+1. Hold down G and press <strong>R</strong> for <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups">Resource Groups</a>. 
+1. Hold down G and press <strong>,</strong> (comma) to focus on the command bar.
+1. If "+ Create" is highlighted, press Enter to invoke it.
+1. Select the appropriate <a href="#Subscription">Subscription</a>.
+1. Type your Resource group name using your organization's naming conventions:
+
+   Subscription code, etc.
+
+   PROTIP: Resource groups have a flat structure: they cannot be nested. 
+
+   Deleting a resource group results in deletion of all resources contained within it. So resource groups make it easy to remove a set of resources at once. That's great for non-production environments.
+
+   ### Region = Location
+
+1. View briefings on CLI Bash or Storage (if you haven't already), then list regions:
+
+   <pre><strong>az account list-locations -o table
+   </strong></pre>
+
+   <pre>DisplayName               Name                 RegionalDisplayName
+------------------------  -------------------  -------------------------------------
+East US                   eastus               (US) East US
+East US 2                 eastus2              (US) East US 2
+   </pre>
+
+   Alternately, for just the name alone:
+
+   <pre><strong>az account list-locations --query "[].{name:name, metadata:latitude}" -o table
+   </strong></pre>
+
+   <pre>Name
+-------------------
+eastus
+eastus2
+   </pre>
+
+1. Select the Region (aka Location) closest to intended users and/or pricing. 
+
+   PROTIP: There are differences in prices among regions. "WestUS" is generally the least expensive among US regions.
+
+   Individual resources created within a Resource Group will be placed in the same region.
+
+   ### Tags
+
+1. Click "Review + create" if you are not using Tags or if the resource doesn't support tags.<br />
+1. Click "Next: Tags" if you can specify one according to your Tag Naming Convention:
+
+   LIMIT PROTIP: Up to 50 Tags can be associated with each resource.
+
+   Tag names are limited to 512 characters.<br />
+   Tag names for storage accounts have a limit of 128 characters.
+   Tag values can be up to 256.<br />
+
+   Tags are your own metadata for:
+   * Searching
+   * Viewing
+   * Billing
+   <br /><br />
+
+   When are able to invoke CLI commands, consider:
+
+   <pre><strong>az resource tag --tags Department=Finance \
+    --resource-group "$AZ_RESOURCE_GROUP" \
+    --resource-type "Microsoft.Network/virtualNetworks" \
+    --name msftlearn-vnet1 
+   </strong></pre>
+
+   Each tag is a name=value pair such as <tt>Department=Finance</tt> or <tt>Project=Acme</tt>, etc. 
+
+   Each tag value is limited to 256 characters for all types of resources. 
+   * Environment=Production or Staging or "NPT" (Non-Production/Test)
+   * Department or Accounting / cost center Charge Code
+   * Geography
+   * shutdown=6PM and startup=7AM for automation
+   <br /><br />
+
+   Tags are not inherited from parent resources. 
+
+   A resource be associated with up to 50 tags.
+
+
+0. Click "Create" after "Validation passed".
 
 
    <a name="NewResource"></a>
@@ -1530,6 +1578,13 @@ Policy Definition options:
    <br /><br />
 
 
+## Delete Subscription, Directory, Tenant
+
+<pre><strong>az group delete --name $MY_RG</strong></pre>
+
+https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/cancel-azure-subscription
+
+https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/directory-delete-howto
 
 ## Topics
 
