@@ -150,13 +150,17 @@ Microsoft Quizzes by CloudAcademy</a>
 
    CAUTION: You can't paste from your regular Clipboard into the class VM.
 
+   CAUTION: The Skillpipe "book" usually does NOT match the PowerPoint presented during the class. And the PowerPoint files shown are not provided to students.
+
 1. If your lab is frozen, Reconnect:
 
    ![az-certs-labclient-reconnect-170x137](https://user-images.githubusercontent.com/300046/112444873-1c625200-8d14-11eb-9b67-f1bfe5a76a9b.png)
 
 1. To search within lab instructions, see GitHub (such as <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies">https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies</a> or <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies">https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies</a>). Look at labs there if you can't access the course's lab environment.
 
-1. Challenge labs you get 3 chances.
+1. Challenge labs you get 3 chances. You can't pause.
+
+CAUTION: Do not use Internet Explorer. Don't install "Edge" from webpage. Install <a target="_blank" href="https://www.microsoft.com/en-us/edge/business?form=MM13YK&OCID=MM13YK&OCID=AID2100871_SEM_EAIaIQobChMI5YDt_IL87wIVoj6tBh0LbgxvEAAYASAAEgLDFfD_BwE:G:s&ef_id=EAIaIQobChMI5YDt_IL87wIVoj6tBh0LbgxvEAAYASAAEgLDFfD_BwE:G:s">Download Edge browser for Business 64 bit"</a>
 
 
 ### Cloud Academy

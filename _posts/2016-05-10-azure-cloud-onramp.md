@@ -22,13 +22,11 @@ This is a hands-on deep-dive tutorial with commentary along the way, covering ho
 
 ## Quick Reference Links
 
-PROTIP: Bookmark these links
-
 <table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Usage </th><th> URL </th><th> Notes </th></tr>
+<tr><th> Usage </th><th> URL (bookmark these) </th><th> Notes </th></tr>
 <tr valign="top"><td> Marketing </td><td>
    <a target="_blank" href="https://azure.com/"><strong>https://azure.com</strong></a> <em>redirects to</em><br />
-   = <a target="_blank" href="https://azure.microsoft.com/en-us/">https://azure.microsoft.com/en-us</a>
+   <a target="_blank" href="https://azure.microsoft.com/en-us/">https://azure.microsoft.com/en-us</a>
    </td></tr>
 <tr valign="top"><td> Personal & corporate learning</td><td>
    <a target="_blank" href="https://techprofile.microsoft.com/en-us/"><strong>https://techprofile.microsoft.com/en-us</strong></a><br />
@@ -76,20 +74,21 @@ PROTIP: Bookmark these links
    * Arizona: https://usgovarizona.s2s.speech.azure.us
    <br /><br />
 
-   https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/
+   <a target="_blank" href="https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/">Pulumi</a> enables programmatic access (by a Python program) to Azure.
 
 ## Deals
 
 1. Labs in Microsoft Learn provide FREE access two hours at a time.
 
-1. Labs in CloudAcademy.com are included in their monthly subscriptions.
+1. Labs in CloudAcademy.com are included in some of their monthly subscriptions.
 
-1. Many obtain a monthly license of Visual Studio (even though they don't intend on using it) just for a deal on Azure credits:
+1. Obtain Azure credits as a benefit of a monthly license of Visual Studio (even though they don't intend on using the IDE):
 
    * $50/month credits for $39/mo Visual Studio Professional license
-   * $150/month credits for $89/mo Visual Studio Enterprise licenset
+   * $150/month credits for $89/mo Visual Studio Enterprise license
    <br /><br />
 
+   Visual Studio Subscriptions are not offered in the Brazil South and Central India regions, as noted in <a target="_blank" href="https://azure.microsoft.com/en-us/regions/offers/">https://azure.microsoft.com/en-us/regions/offers/</a> 
 
 ## Browser Profiles
 
@@ -735,15 +734,17 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 1. Select the appropriate <a href="#Subscription">Subscription</a>.
 1. Type your Resource group name using your organization's naming conventions:
 
+   PROTIP: Include the region code in the Resource Group Name.
+
    Subscription code, etc.
 
-   PROTIP: Resource groups have a flat structure: they cannot be nested. 
+   PROTIP: Resource groups have a flat structure: they cannot be nested like Management Groups.
 
    Deleting a resource group results in deletion of all resources contained within it. So resource groups make it easy to remove a set of resources at once. That's great for non-production environments.
 
    ### Region = Location
 
-1. View briefings on CLI Bash or Storage (if you haven't already), then list regions:
+1. OPTIONAL: View briefings on CLI Bash or Storage (if you haven't already), then list regions:
 
    <pre><strong>az account list-locations -o table
    </strong></pre>
@@ -765,7 +766,7 @@ eastus
 eastus2
    </pre>
 
-1. Select the Region (aka Location) closest to intended users and/or pricing. 
+1. PROTIP: Select the Region (aka Location) closest to intended users, for pricing, and have features available. 
 
    PROTIP: There are differences in prices among regions. "WestUS" is generally the least expensive among US regions.
 
@@ -809,8 +810,17 @@ eastus2
 
    A resource be associated with up to 50 tags.
 
-
 0. Click "Create" after "Validation passed".
+
+
+   ### Lock RG to prevent deletion
+
+   <a target="_blank" href="https://learning.oreilly.com/videos/new-microsoft-az-303/10009AZ303/10009AZ303-AZ303_153">VIDEO</a>
+
+1. Select each production resource group.
+1. Click "Locks" menu.
+1. Type a name according to naming conventions.
+1. Select a Lock Type: "Delete"
 
 
    <a name="NewResource"></a>
