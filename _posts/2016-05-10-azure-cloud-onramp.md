@@ -584,19 +584,6 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
 
    
-   ## Policies and Management Group Initiatives
-
-1. <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=ff82e602-05c5-4b71-b907-a011015d2859">VIDEO</a>: All Services -> Management Groups to apply governance conditions (access & policies) above Subscriptions.
-
-1. Add Management Group (up to 6 levels in hierarchy)
-
-   An <strong>initiative</strong> describes a group of policies across different management groups, subscriptions, resource groups, ?
-
-   PROTIP: Currently, you can't use Resource Manager templates to create management groups.
-
-   Create management group by using the portal, PowerShell, or Azure CLI. 
-
-
    ## Policy creation
 
 0. Select the <strong>Policy</strong> service.   
@@ -678,9 +665,6 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 1. Click "Review + create" then "Create" to create the assignment.
 
 
-   ### Management groups
-
-   ![az-onramp-mgmt-grp-657x415](https://user-images.githubusercontent.com/300046/114475982-a20c4b80-9bb6-11eb-9891-2d4e4ceffb46.png)
 
 
 
@@ -688,7 +672,7 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
    ### Resource Groups
 
-   Before any resource can be provisioned, you need a resource group for it to be placed in.
+   Before any resource can be provisioned, you need a resource group for it to be placed in, for provisioning, monitoring, maintenance.
    Each resource must be in a resource group. 
 
    Resource groups can be created by using the following methods:
@@ -701,7 +685,9 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
    * Azure programmatic SDKs using programming languages C# .NET, Java, Python, NodJs (JavaScript), etc.
    <br /><br />
 
-1. List resource groups using CLI:
+   PROTIP: A resource group can contain resources from multiple regions.
+
+1. List resource groups created using CLI:
 
    <pre><strong>az group list -o table</strong></pre>
 
@@ -727,9 +713,9 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
    Alternately, for more commentary, use the portal GUI:
 
-1. Drag and drop "Resource Groups" Home menu item to the bottom of the list. That's because you can ...
-1. Hold down G and press <strong>R</strong> for <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups">Resource Groups</a>. 
-1. Hold down G and press <strong>,</strong> (comma) to focus on the command bar.
+1. Optionally: Drag and drop "Resource Groups" Home menu item to the bottom of the list. That's because you can ...
+1. PROTIP: Hold down G and press <strong>R</strong> for <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups">Resource Groups</a>. 
+1. PROTIP: Hold down G and press <strong>,</strong> (comma) to focus on the command bar.
 1. If "+ Create" is highlighted, press Enter to invoke it.
 1. Select the appropriate <a href="#Subscription">Subscription</a>.
 1. Type your Resource group name using your organization's naming conventions:
@@ -821,6 +807,46 @@ eastus2
 1. Click "Locks" menu.
 1. Type a name according to naming conventions.
 1. Select a Lock Type: "Delete"
+
+
+   ## Policies 
+
+   <a target="_blank" href="https://learning.oreilly.com/videos/new-microsoft-az-303/10009AZ303/10009AZ303-AZ303_155">VIDEO</a>:
+1. Click <strong>Policies</strong> in the menu within a Resource Group blade.
+1. Click Definitions in the menu for a list of pre-defined policies under each scope (Subscription + Resource Group).
+1. Click "Policy definition" in the command bar.
+   * Field "Definition location" is the Subscription.
+   * Each rule is JSON syntax with "if", "not", "then", etc. logic
+   <br /><br />
+1. Click the blue button to the right of "Policy definition" field for Available Definitions dialog where you can select a Type and Search filter text.
+   
+   A common policy is Allowed locations.
+
+1. Each policy can be set to Enforced or Disabled.
+1. Optionally, define a Managed Identity for remediation.
+1. Create.
+
+   Policies can also be defined under each Subscription. <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=ff82e602-05c5-4b71-b907-a011015d2859">VIDEO</a>: All Services -> Management Groups to apply governance conditions (access & policies) above.
+
+   To group policies under an initiative:
+
+1. Click "Assign initiative" in the command bar.
+
+
+   ### Management Group hierarchy
+
+1. Search All Services for "Management groups".
+1. Add Management Group.
+
+   An <strong>initiative</strong> describes a group of policies across different management groups, subscriptions, resource groups.
+
+1. Click the group created and add more groups (up to 6 levels in hierarchy).
+1. Under each leaf management group, add a Subscription.
+
+   ![az-onramp-mgmt-grp-657x415](https://user-images.githubusercontent.com/300046/114475982-a20c4b80-9bb6-11eb-9891-2d4e4ceffb46.png)
+
+   Also create management group by using PowerShell, or Azure CLI. 
+   PROTIP: Currently, <a href="#ARM_Templates">Resource Manager templates</a> can't be used to create management groups.
 
 
    <a name="NewResource"></a>
@@ -1302,7 +1328,7 @@ https://azure.microsoft.com/en-us/pricing/calculator/
    <pre>az cloud set --name AzureUSGovernment  # or AzureChinaCloud, or AzureGermanCloud.
    </pre>
 
-   NOTE: China cloud is operated by 21 Vianet.
+   NOTE: Azure China cloud (<a target="_blank" href="https://www.azure.cn/en-us/">azure.cn</a>) is operated by 21 Vianet.
 
    ### Permissions
 
@@ -1500,6 +1526,12 @@ It makes use of SYN cookies and rate & connection limits defined by a Trust Fram
 1. Link to subscription.
 
 
+
+<a name="ARM_Templates"></a>
+
+## ARM Templates
+
+A parent template can launch nested templates.
 
 
 <a name="Bicep"></a>

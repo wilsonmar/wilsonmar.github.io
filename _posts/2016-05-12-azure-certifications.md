@@ -152,7 +152,7 @@ Microsoft Quizzes by CloudAcademy</a>
 
    CAUTION: The Skillpipe "book" usually does NOT match the PowerPoint presented during the class. And the PowerPoint files shown are not provided to students.
 
-1. If your lab is frozen, Reconnect:
+1. If your lab becomes frozen, Reconnect:
 
    ![az-certs-labclient-reconnect-170x137](https://user-images.githubusercontent.com/300046/112444873-1c625200-8d14-11eb-9b67-f1bfe5a76a9b.png)
 
@@ -160,7 +160,14 @@ Microsoft Quizzes by CloudAcademy</a>
 
 1. Challenge labs you get 3 chances. You can't pause.
 
-CAUTION: Do not use Internet Explorer. Don't install "Edge" from webpage. Install <a target="_blank" href="https://www.microsoft.com/en-us/edge/business?form=MM13YK&OCID=MM13YK&OCID=AID2100871_SEM_EAIaIQobChMI5YDt_IL87wIVoj6tBh0LbgxvEAAYASAAEgLDFfD_BwE:G:s&ef_id=EAIaIQobChMI5YDt_IL87wIVoj6tBh0LbgxvEAAYASAAEgLDFfD_BwE:G:s">Download Edge browser for Business 64 bit"</a>
+1. Replace Internet Explorer, but don't install "Edge" from webpage. Install <a target="_blank" href="https://www.microsoft.com/en-us/edge/business?form=MM13YK&OCID=MM13YK&OCID=AID2100871_SEM_EAIaIQobChMI5YDt_IL87wIVoj6tBh0LbgxvEAAYASAAEgLDFfD_BwE:G:s&ef_id=EAIaIQobChMI5YDt_IL87wIVoj6tBh0LbgxvEAAYASAAEgLDFfD_BwE:G:s">Download Edge browser</a>
+1. Click channel/version to select top choice.
+1. Click BUILD to select the top choice.
+1. Click PLATFORM to select Windows 64 bit.
+1. Click DOWNLOAD.
+1. Click Save.
+1. Click Run and wait for the pop-up while downloading.
+1. 
 
 
 ### Cloud Academy
