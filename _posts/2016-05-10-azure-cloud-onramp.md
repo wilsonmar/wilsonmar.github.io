@@ -56,8 +56,13 @@ This is a hands-on deep-dive tutorial with commentary along the way, covering ho
 <tr valign="top"><td> All Admin Centers </td><td>
    <a target="_blank" href="https://admin.microsoft.com/AdminPortal/Home#/alladmincenters"><strong><u>https://admin.microsoft.com/AdminPortal/Home#/alladmincenters</u></strong></a>
    </td></tr>
+<tr valign="top"><td> Cloud Shell </td><td>
+   <a target="_blank" href="https://shell.microsoft.com/"><strong><u>
+   https://shell.azure.com</u></strong></a>
+   </td></tr>
 <tr valign="top"><td> Support </td><td>
-   <a target="_blank" href="https://support.microsoft.com/"><strong><u>https://support.microsoft.com</u></strong></a>
+   <a target="_blank" href="https://support.azure.com/"><strong><u>
+   https://support.microsoft.com</u></strong></a>
    </td></tr>
 </table>
 
@@ -69,10 +74,12 @@ This is a hands-on deep-dive tutorial with commentary along the way, covering ho
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/compare-azure-government-global-azure">DOC: Compare Global vs. Gov</a>
 
-   For example, <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/compare-azure-government-global-azure">endpoints</a> for    Speech Studio Speech translation :
+   For example, <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/compare-azure-government-global-azure">endpoints</a> for Speech Studio Speech translation :
    * Virginia: https://usgovvirginia.s2s.speech.azure.us
    * Arizona: https://usgovarizona.s2s.speech.azure.us
    <br /><br />
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=6UDePj5newo&list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7&index=10">VIDEO: Terraform Provider Azure.gov</a> for standardized templates across clouds.
 
    <a target="_blank" href="https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/">Pulumi</a> enables programmatic access (by a Python program) to Azure.
 
@@ -455,12 +462,9 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
 ## Portal.azure.com GUI
 
+   ### Initial Entry Azure Advisor pop-up
 
-
-
-### Initial Entry Azure Advisor pop-up
-
-0. Initial entry pop-up: Azure Advisor
+1. Initial entry pop-up: Azure Advisor
 
    ### Azure Advisor
 
@@ -476,9 +480,97 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
    <br /><br />
 
 
-<a name="ARM-Menu"></a>
+   <a name="Dashboard"></a>
 
-## ARM Portal GUI Dashboard Tour #
+   ### Dashboard
+
+0. For <a href="#Dashboard">Dashboard</a>, hold down G and press <strong>D</strong>.
+
+   In the left menu, where is the menu item for Users (the one most often used by Administrators)?
+
+1. PROTIP: Click Dashboard to configure it with Users at the upper-left.
+1. Get rid of an item by clicking the "..." to "Remove from dashboard" or New Dashboard.
+1. To rearrange location, click the "..." on any item and select "Customize".
+1. Click "Edit" from the command bar to search for Users, Add.
+1. Click "Save" at the top.
+
+
+   <a name="LicenseTypes"></a>
+
+   ### License types of Subscriptions
+
+   BTW, billing is associated with <strong>Management Subscriptions</strong> with names such as "Pay-as-you-go..."
+
+
+
+   ### Support Plans
+
+   * Standard (Basic) free for Prod. use
+   * Developer $29/mo. for non-prod. use
+   * Professional Direct $1000/mo for "Business Critical" when you file a business-critical issue with technical support, the earliest you can expect a response from technical support? Within 1 hour
+   * Premier for "substantial dependence" with a TAM (Technical Account Manager).
+
+   <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=672143e9-2e2c-49d6-b5f4-6558d88f66e1">VIDEO "Microsoft Azure Pricing and Support Options"</a>
+
+0. Right-click on the "Help + Support" box on the Dashboard and select "unpin"
+   becuase you now know you can reach it (in two places).
+
+
+
+   ### Box
+
+   For Microsoft people to access a customer's unencrypted data, they are supposed to look into the "Lock Box" where a customer put files they want Microsoft to see.
+
+
+   <a name="Social"></a>
+
+   ### Social Support Forums about Azure
+
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/support/community/">Azure.microsoft Community Forum</a>
+
+   * <a target="_blank" href="https://social.msdn.microsoft.com/Forums/azure/en-US/home">MSDN</a>
+
+   <a target="_blank" href="https://medium.com/microsoftazure">
+   https://medium.com/microsoftazure</a>
+
+   <em>Filtered for Most Votes on Accepted answers:</em>
+
+   * <a target="_blank" href="https://stackoverflow.com/questions/tagged/azure?sort=MostVotes&filters=NoAcceptedAnswer&edited=true">StackOverflow</a>
+
+   * <a target="_blank" href="https://serverfault.com/questions/tagged/azure">Serverfault</a>
+
+   * <a target="_blank" href="https://channel9.msdn.com/Shows/Tuesdays-With-Corey/">Tuesdays with Corey</a> (Sanders, VP of Azure Compute, now Corporate VP of Microsoft Solutions, about Azure on Microsoft's Channel9 video site). <a target="_blank" href="https://twitter.com/search?f=realtime&q=%23AzureTwC&src=typd">#AzureTwC</a>
+   
+
+
+   ### Help + Support
+
+0. Scroll down to click Help + Support (the person icon in blue). Notice the URL change:
+
+   https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview
+
+   Alternately, support requests can ALSO be reached by<br />
+   clicking the question mark icon at the upper-right corner.
+
+   ![azure help upper right 220x267](https://cloud.githubusercontent.com/assets/300046/25567655/c2642352-2dc0-11e7-9e6d-ef60c659a152.png)
+
+   Notice Support options are also listed behind the smily face icon.
+
+   Moreover, there is also a "Help + Support" box on the Dashboard.
+
+   That's now 3 places you can find it.
+
+0. Microsoft calls their business-level oriented collection of implementation guidance <a target="_blank" href="https://www.youtube.com/watch?v=9VJYVITjckw">VIDEO</a>: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/microsoft-cloud-adoption-framework-for-azure/">MS_LEARN</a>: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/">Microsoft Cloud Adoption Framework for Azure"</a>.
+
+   Additional sites:
+
+   https://microsoft.github.io/AzureTipsAndTricks/blog/tip1.html
+
+
+
+   <a name="ARM-Menu"></a>
+
+   ### ARM Portal GUI Dashboard Tour #
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-overview">DOC</a>:
 
@@ -581,89 +673,6 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
 0. Switch among windows command+` (at the upper-left corner of the keyboard).
 0. To find text on the page, press command+F.
-
-
-   
-   ## Policy creation
-
-0. Select the <strong>Policy</strong> service.   
-
-   Policies are rules stating which resources can be deployed to which locations
-   * Microsoft provides a number of built-in policies
-   * Create custom policies using JSON
-
-   Assign at resource level or resource group level
-   * Child resources don’t inherit tags from group level
-   
-   PROTIP: All resources in a resource group should share the same lifecycle.
-
-0. In the left menu select the <strong>Definitions</strong> pane under the Authoring section.
-
-   You should see a list of built-in policies that you can use. 
-
-0. Click G+ for focusing on "+ Policy" to press Enter to create a custom policy in the New policy definition dialog.
-
-0. Set the Definition location, click the blue .... and select the Subscription for the policy to be stored in, which should be the same subscription as our resource group. Click Select.
-
-0. Back on the New Policy definition dialog, type Name value of Enforce tag on resource.
-
-0. For the Description, enter This policy enforces the existence of a tag on a resource.
-
-0. For <strong>Category</strong> select Use existing and then select the General category.
-
-0. For the POLICY RULE, select all text in the box (command+A), then delete it.
-0. Copy and paste the following into the box:
-
-   <pre>{
-  "mode": "Indexed",
-  "policyRule": {
-    "if": {
-      "field": "[concat('tags[', parameters('tagName'), ']')]",
-      "exists": "false"
-    },
-    "then": {
-      "effect": "deny"
-    }
-  },
-  "parameters": {
-    "tagName": {
-      "type": "String",
-      "metadata": {
-        "displayName": "Tag Name",
-        "description": "Name of the tag, such as 'environment'"
-      }
-    }
-  }
-}
-   </pre>
-
-0. Click "Save".
-
-   Uses for policy:
-
-   * restrict which Azure regions you can deploy resources to.
-   * restrict which types of virtual machine sizes can be deployed.
-   * enforce naming conventions to keep a consistent standard across all Azure resources.
-   <br /><br />
-
-
-   ### Assign policy
-
-   To enable the policy, create an assignment. Assign it to the scope of your resource group, so that it applies to anything inside the resource group.
-
-1. In the policy pane, under the Authoring section on the left, select Assignments.
-1. Select <strong>Assign policy</strong> at the top command bar.
-
-1. In the Assign policy pane, click the blue .... for Scope. Select Resource Group. Click Select.
-
-1. For Policy definition, click the blue .... In the Type drop-down, select Custom, select the Enforce tag on resource policy you created, then click Select.
-
-1. Select Next to go to the Parameters pane.
-
-1. On the Parameters pane, for Tag name enter Department.
-
-1. Click "Review + create" then "Create" to create the assignment.
-
 
 
 
@@ -809,7 +818,7 @@ eastus2
 1. Select a Lock Type: "Delete"
 
 
-   ## Policies 
+   ## More Policies 
 
    <a target="_blank" href="https://learning.oreilly.com/videos/new-microsoft-az-303/10009AZ303/10009AZ303-AZ303_155">VIDEO</a>:
 1. Click <strong>Policies</strong> in the menu within a Resource Group blade.
@@ -847,6 +856,91 @@ eastus2
 
    Also create management group by using PowerShell, or Azure CLI. 
    PROTIP: Currently, <a href="#ARM_Templates">Resource Manager templates</a> can't be used to create management groups.
+
+   
+   ## Policy creation
+
+0. Select the <strong>Policy</strong> service.   
+
+   Policies are rules stating which resources can be deployed to which locations
+   * Microsoft provides a number of built-in policies
+   * Create custom policies using JSON
+
+   Assign at resource level or resource group level
+   * Child resources don’t inherit tags from group level
+   
+   PROTIP: All resources in a resource group should share the same lifecycle.
+
+0. In the left menu select the <strong>Definitions</strong> pane under the Authoring section.
+
+   You should see a list of built-in policies that you can use. 
+
+0. Click G+ for focusing on "+ Policy" to press Enter to create a custom policy in the New policy definition dialog.
+
+0. Set the Definition location, click the blue .... and select the Subscription for the policy to be stored in, which should be the same subscription as our resource group. Click Select.
+
+0. Back on the New Policy definition dialog, type Name value of Enforce tag on resource.
+
+0. For the Description, enter This policy enforces the existence of a tag on a resource.
+
+0. For <strong>Category</strong> select Use existing and then select the General category.
+
+0. For the POLICY RULE, select all text in the box (command+A), then delete it.
+0. Copy and paste the following into the box:
+
+   <pre>{
+  "mode": "Indexed",
+  "policyRule": {
+    "if": {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "exists": "false"
+    },
+    "then": {
+      "effect": "deny"
+    }
+  },
+  "parameters": {
+    "tagName": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Name",
+        "description": "Name of the tag, such as 'environment'"
+      }
+    }
+  }
+}
+   </pre>
+
+0. Click "Save".
+
+   Uses for policy:
+
+   * restrict which Azure regions you can deploy resources to.
+   * restrict which types of virtual machine sizes can be deployed.
+   * enforce naming conventions to keep a consistent standard across all Azure resources.
+   <br /><br />
+
+
+   ### Assign policy
+
+   To enable the policy, create an assignment. Assign it to the scope of your resource group, so that it applies to anything inside the resource group.
+
+1. In the policy pane, under the Authoring section on the left, select Assignments.
+1. Select <strong>Assign policy</strong> at the top command bar.
+
+1. In the Assign policy pane, click the blue .... for Scope. Select Resource Group. Click Select.
+
+1. For Policy definition, click the blue .... In the Type drop-down, select Custom, select the Enforce tag on resource policy you created, then click Select.
+
+1. Select Next to go to the Parameters pane.
+
+1. On the Parameters pane, for Tag name enter Department.
+
+1. Click "Review + create" then "Create" to create the assignment.
+
+
+
+
 
 
    <a name="NewResource"></a>
@@ -910,94 +1004,6 @@ eastus2
 0. Drag and drop <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseAll">All resources</a> in the menu to the bottom of the list because you can reach it without a mouse by holding down G and pressing <strong>A</strong>. 
 
    That brings up a list of all resources you have already brought to life.
-
-
-   <a name="Dashboard"></a>
-
-   ### Dashboard
-
-0. For <a href="#Dashboard">Dashboard</a>, hold down G and press <strong>D</strong>.
-
-   In the left menu, where is the menu item for Users (the one most often used by Administrators)?
-
-1. PROTIP: Click Dashboard to configure it with Users at the upper-left.
-1. Get rid of an item by clicking the "..." to "Remove from dashboard" or New Dashboard.
-1. To rearrange location, click the "..." on any item and select "Customize".
-1. Click "Edit" from the command bar to search for Users, Add.
-1. Click "Save" at the top.
-
-
-   <a name="LicenseTypes"></a>
-
-   ### License types of Subscriptions
-
-   BTW, billing is associated with <strong>Management Subscriptions</strong> with names such as "Pay-as-you-go..."
-
-
-
-   ### Support Plans
-
-   * Standard (Basic) free for Prod. use
-   * Developer $29/mo. for non-prod. use
-   * Professional Direct $1000/mo for "Business Critical" when you file a business-critical issue with technical support, the earliest you can expect a response from technical support? Within 1 hour
-   * Premier for "substantial dependence" with a TAM (Technical Account Manager).
-
-   <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=672143e9-2e2c-49d6-b5f4-6558d88f66e1">VIDEO "Microsoft Azure Pricing and Support Options"</a>
-
-0. Right-click on the "Help + Support" box on the Dashboard and select "unpin"
-   becuase you now know you can reach it (in two places).
-
-
-
-   ### Box
-
-   For Microsoft people to access a customer's unencrypted data, they are supposed to look into the "Lock Box" where a customer put files they want Microsoft to see.
-
-
-   <a name="Social"></a>
-
-   ### Social Support Forums about Azure
-
-   * <a target="_blank" href="https://azure.microsoft.com/en-us/support/community/">Azure.microsoft Community Forum</a>
-
-   * <a target="_blank" href="https://social.msdn.microsoft.com/Forums/azure/en-US/home">MSDN</a>
-
-   <a target="_blank" href="https://medium.com/microsoftazure">
-   https://medium.com/microsoftazure</a>
-
-   <em>Filtered for Most Votes on Accepted answers:</em>
-
-   * <a target="_blank" href="https://stackoverflow.com/questions/tagged/azure?sort=MostVotes&filters=NoAcceptedAnswer&edited=true">StackOverflow</a>
-
-   * <a target="_blank" href="https://serverfault.com/questions/tagged/azure">Serverfault</a>
-
-   * <a target="_blank" href="https://channel9.msdn.com/Shows/Tuesdays-With-Corey/">Tuesdays with Corey</a> (Sanders, VP of Azure Compute, now Corporate VP of Microsoft Solutions, about Azure on Microsoft's Channel9 video site). <a target="_blank" href="https://twitter.com/search?f=realtime&q=%23AzureTwC&src=typd">#AzureTwC</a>
-   
-
-
-
-   ### Help + Support
-
-0. Scroll down to click Help + Support (the person icon in blue). Notice the URL change:
-
-   https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview
-
-   Alternately, support requests can ALSO be reached by<br />
-   clicking the question mark icon at the upper-right corner.
-
-   ![azure help upper right 220x267](https://cloud.githubusercontent.com/assets/300046/25567655/c2642352-2dc0-11e7-9e6d-ef60c659a152.png)
-
-   Notice Support options are also listed behind the smily face icon.
-
-   Moreover, there is also a "Help + Support" box on the Dashboard.
-
-   That's now 3 places you can find it.
-
-0. Microsoft calls their business-level oriented collection of implementation guidance <a target="_blank" href="https://www.youtube.com/watch?v=9VJYVITjckw">VIDEO</a>: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/microsoft-cloud-adoption-framework-for-azure/">MS_LEARN</a>: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/">Microsoft Cloud Adoption Framework for Azure"</a>.
-
-   Additional sites:
-
-   https://microsoft.github.io/AzureTipsAndTricks/blog/tip1.html
 
 
 <hr />
@@ -1550,15 +1556,24 @@ https://github.com/Azure/bicep/tree/main/docs/examples
 
 Tooling in Visual Studio Code <strong>transpiles</strong> Bicep files to ARM templates.
 
+QUESTION: What about templating? Pulumi?
 Bicep files are like Terraform declarative files.
 But instead of state files like Terraform, Azure itself manages state.
-
-QUESTION: What about templating? Pulumi?
 
 As of March 2021, Bicep is not yet integrated into the Portal.
 
 1. Install the Bicep CLI.
 
+
+
+## Terraform for Azure
+
+1. On a Mac, install using Homebrew instead of <a target="_blank" href="https://www.terraform.io/downloads.html">Download from Hashicorp website</a> or using 
+<tt>brew install terraform</tt>:
+
+   <pre><strong>brew install tfenv
+tfenv install latest
+   </strong></pre>
 
 
 ## Azure AD Connect

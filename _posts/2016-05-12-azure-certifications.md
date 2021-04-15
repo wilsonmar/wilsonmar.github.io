@@ -34,7 +34,7 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
 
    </td></tr>
 <tr valign="top"><td> Solution Architect
-      </td><td>* AZ-303 Azure Solutions Architect Expert: Technologies<br />
+      </td><td>* <a href="#AZ=303">AZ-303</a> Azure Solutions Architect Expert: Technologies<br />
         * <a href="#AZ=304">AZ-304</a> Azure Solutions Architect Expert: Design<br />
         * AZ-600 Stack Hub Operator Associate<br />
         * AZ-120 Azure for SAP Workloads Specialty
@@ -167,7 +167,10 @@ Microsoft Quizzes by CloudAcademy</a>
 1. Click DOWNLOAD.
 1. Click Save.
 1. Click Run and wait for the pop-up while downloading.
-1. 
+1. Click "Enable" to "The 'IEToEdge BHO' add-on from 'Microsoft Corporate' is ready for use."
+1. Click CLOSE
+
+1. https://azure.microsoft.com/en-us/features/storage-explorer/
 
 
 ### Cloud Academy
@@ -287,15 +290,25 @@ CloudAcademy</a> provides lab time on the real Azure environment.
    * <a target="_blank" href="https://www.youtube.com/watch?v=AzPvDNUldoI&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&index=8&t=10m43s" title="Sep 15, 2020">1hr 47m Azure Monitoring</a>
    <br /><br />
 
-<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/573">LinuxAcademy</a>
+On Linux Academy.com:
 
-<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/763">Intro to Azure Files</a>
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/573">LinuxAcademy</a>
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/763">Intro to Azure Files</a>
 
-Flash cards:
+Chris Wahl (twitch.tv/wahlnetwork)
 
-* <a target="_blank" href="https://quizlet.com/subject/az-104/">Quizlet flash cards</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=gyZdCzdkSY4" title="Oct 13, 2020">Beginners Tutorial to Terraform with Azure</a>
 
-Sample tests:
+CloudSkills:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=d6EOEXxMZ8w">
+    Building Azure Infrastructure with Terraform</a>
+
+### Flash cards:
+
+   * <a target="_blank" href="https://quizlet.com/subject/az-104/">Quizlet flash cards</a>
+
+### Sample tests:
 
 1. Take a Practice Test (from MeasureUp) that feels just like the actual test, if you are enrolled in <a target="_blank" href="https://esi.microsoft.com/getcertification">Microsoft's Enterprise Skills Initiative</a>.
 
@@ -374,6 +387,8 @@ will be updated March 23, 2021
 <a target="_blank" href="https://github.com/timothywarner/az400">OReilly.com class by Timothy Warner</a>
 
 <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/463">Linux Academy: Preparing for AZ-400</a>
+
+<a target="_blank" href="https://www.udemy.com/course/azure100/learn/lecture/22182186#overview">Udemy video class</a> presents a more logical flow, not in the confusing exam objectives.
 
 
 <a name="AZ-500"></a>

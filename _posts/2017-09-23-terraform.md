@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Terraform (vs. AWS Cloud Formation)"
-excerpt: "Immutable declarative multi-service Infrastructure as Code (IaC) provisioning"
+excerpt: "Immutable declarative multi-service Infrastructure as Code (IaC) provisioning on AWS, Azure, and other clouds"
 tags: [DevOps, ecosystem]
-date: "2021-03-04"
+date: "2021-04-14"
 file: "terraform"
 image:
 # feature: pic data center slice 1900x500.jpg
@@ -66,9 +66,9 @@ The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and
 <tr valign="top"><td>SaltStack</td><td>2011 Medium</td><td>Large</td><td>Config Mgmt
    </td><td>Mutable</td><td >Declarative
    </td><td>Yes</td><td>Yes</td></tr>
-<tr valign="top"><td>Ansible</td><td>2012 Medium</td><td>Huge</td><td>Config Mgmt
+<tr valign="top"><td>Ansible</td><td>2012 Medium</td><td>Huge, fastest growing</td><td>Config Mgmt
    </td><td>Mutable</td><td>Procedural
-   </td><td>No</td><td>No</td></tr>
+   </td><td bgcolor="yellow">No</td><td bgcolor="yellow">No</td></tr>
 <tr valign="top"><td>CF</td><td>2011 Medium</td><td>Small<a href="#x1">*1</a></td><td>Provisioning
    </td><td>Immutable</td><td bgcolor="yellow">Declarative
    </td><td>No</td><td>No</td></tr>
@@ -100,7 +100,7 @@ Terraform also provides <strong>parallel execution</strong> control, iterations,
 A key differentiator of Terraform is its <strong>plan</strong> command, which provides more than just a "dry-run" before configurations are applied for real. Under the covers, Terraform plan generates an executable, and uses it to apply, which guarantees that what appeared in plan is the same as with <a href="#TerraformApply">apply</a>.
 
 
-### Terraform vs. AWS Cloud Formation
+### IaC: Terraform vs. AWS Cloud Formation
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th> Feature </th><th> CloudFormation </th><th> Terraform </th></tr>
@@ -207,6 +207,8 @@ https://www.twitch.tv/hashicorplive</a> 1st & 3rd PT Fridays every month
    WARNING: The response at time of writing, Terraform is "not even 1.0.0" release, as in it's in beta maturity.
 
 
+<a name="MacOS_Install"></a>
+
 ### Install on MacOS using tfenv
 
 1. A search through brew:
@@ -214,31 +216,31 @@ https://www.twitch.tv/hashicorplive</a> 1st & 3rd PT Fridays every month
    <pre><strong> brew search terraform</strong></pre>
 
    <pre>==> Formulae
-iam-policy-json-to-terraform             terraform-provisioner-ansible
-terraform ✔                              terraform@0.11
-terraform-docs                           terraform_landscape
-terraform-inventory                      terraformer
-terraform-provider-libvirt               terraforming
+iam-policy-json-to-terraform   terraform-provider-libvirt     terraform_landscape
+terraform                      terraform-provisioner-ansible  terraformer
+terraform-docs                 terraform@0.11                 terraforming
+terraform-inventory            terraform@0.12
+terraform-ls                   terraform@0.13
    </pre>
 
    brew info terraform returns:
 
-   <pre>terraform: stable 0.12.24 (bottled), HEAD
+   <pre>terraform: stable 0.15.0 (bottled), HEAD
 Tool to build, change, and version infrastructure
 https://www.terraform.io/
 Conflicts with:
   tfenv (because tfenv symlinks terraform binaries)
-/usr/local/Cellar/terraform/0.12.24 (6 files, 51.2MB)
-  Poured from bottle on 2020-04-26 at 03:47:48
-From: https://github.com/Homebrew/homebrew-core/blob/master/Formula/terraform.rb
+Not installed
+From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/terraform.rb
+License: MPL-2.0
 ==> Dependencies
-Build: go@1.13 ✘, gox ✔
+Build: go ✘
 ==> Options
 --HEAD
-	Install HEAD version
+        Install HEAD version
 ==> Analytics
-install: 26,503 (30 days), 101,334 (90 days), 445,359 (365 days)
-install-on-request: 25,575 (30 days), 97,104 (90 days), 424,297 (365 days)
+install: 40,501 (30 days), 117,387 (90 days), 446,956 (365 days)
+install-on-request: 38,230 (30 days), 111,122 (90 days), 428,157 (365 days)
 build-error: 0 (30 days)
    </pre>
 
@@ -250,9 +252,8 @@ build-error: 0 (30 days)
    The response at time of writing:
 
    <pre>==> Downloading https://github.com/tfutils/tfenv/archive/v2.2.0.tar.gz
-==> Downloading from https://codeload.github.com/tfutils/tfenv/tar.gz/v2.2.0
-##O=#  #                                                                      
-🍺  /usr/local/Cellar/tfenv/2.2.0: 23 files, 79.6KB, built in 8 seconds
+Already downloaded: /Users/wilson_mar/Library/Caches/Homebrew/downloads/d5f3775943c8e090ebe2af640ea8a89f99f7f0c2c47314d76073410338ae02de--tfenv-2.2.0.tar.gz
+🍺  /usr/local/Cellar/tfenv/2.2.0: 23 files, 79.8KB, built in 8 seconds
    </pre>
 
    Source for this is has changed over time: from <a target="_blank" href="https://github.com/Zordrak/tfenv">https://github.com/Zordrak/tfenv</a> (previously from <a target="_blank" href="https://github.com/kamatama41/tfenv">https://github.com/kamatama41/tfenv</a>)
@@ -267,21 +268,14 @@ build-error: 0 (30 days)
 
    The response:
 
-   <pre>==> Downloading https://github.com/tfutils/tfenv/archive/v1.0.2.tar.gz
-==> Downloading from https://codeload.github.com/tfutils/tfenv/tar.gz/v1.0.2
+   <pre>Installing Terraform v0.15.0
+Downloading release tarball from https://releases.hashicorp.com/terraform/0.15.0/terraform_0.15.0_darwin_amd64.zip
 ######################################################################## 100.0%
-🍺  /usr/local/Cellar/tfenv/1.0.2: 20 files, 29.2KB, built in 4 seconds
-(pygithub) bash-5.0$ tfenv install latest
-[INFO] Installing Terraform v0.12.24
-[INFO] Downloading release tarball from https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_darwin_amd64.zip
-######################################################################## 100.0%
-[INFO] Downloading SHA hash file from https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_SHA256SUMS
-tfenv: tfenv-install: [WARN] No keybase install found, skipping OpenPGP signature verification
-Archive:  tfenv_download.PObWo2/terraform_0.12.24_darwin_amd64.zip
-  inflating: /usr/local/Cellar/tfenv/1.0.2/versions/0.12.24/terraform  
-[INFO] Installation of terraform v0.12.24 successful
-[INFO] Switching to v0.12.24
-[INFO] Switching completed
+Downloading SHA hash file from https://releases.hashicorp.com/terraform/0.15.0/terraform_0.15.0_SHA256SUMS
+Unable to verify OpenPGP signature unless logged into keybase and following hashicorp
+Archive:  tfenv_download.bqNr6u/terraform_0.15.0_darwin_amd64.zip
+  inflating: /usr/local/Cellar/tfenv/2.2.0/versions/0.15.0/terraform  
+Installation of terraform v0.15.0 successful. To make this your default version, run 'tfenv use 0.15.0'
    </pre>
 
    PROTIP: The above commands create folder <strong>.terraform.d</strong> on your $HOME folder, containing files `checkpoint_cache` and `checkpoint_signature`.
@@ -289,9 +283,17 @@ Archive:  tfenv_download.PObWo2/terraform_0.12.24_darwin_amd64.zip
    See <a target="_blank" href="https://www.hashicorp.com/blog/announcing-terraform-0-12">
    Hashicorp's version 12 announcement</a>.
 
+3. Make the latest the default:
+
+   <pre><strong>tfenv use 0.15.0</strong></pre>
+
+   <pre>Switching default version to v0.15.0
+Switching completed</pre>
 
 1. Proceed to <a href="#Config">Configuration</a>.
 
+
+<a name="Windows_Install"></a>
 
 ### Install on Windows
 
@@ -338,6 +340,8 @@ Chocolatey installed 1/1 packages.
 1. Proceed to <a href="#Config">Configuration</a>.
 
 
+<a name="Linux_Install"></a>
+
 ### Install on Linux
 
 PROTIP: Use Ansible, Chef, Puppet to install Terraform.
@@ -378,8 +382,7 @@ sudo unzip terraform_0.11.5_linux_amd64.zip -d /usr/local/bin/
 
 1. To install Docker CE on Linux:
 
-   <pre>
-sudo apt-get update
+   <pre>sudo apt-get update
 sudo apt-get install \
     apt-transport-https \
     ca-certificates \
@@ -424,46 +427,47 @@ If you prefer using Python, there is a Python module to provide a wrapper of ter
 
    Either way, the response is a menu (at time of writing):
 
-   <pre>Usage: terraform [-version] [-help] &LT;command> [args]
+   <pre>Usage: terraform [global options] &LT;subcommand> [args]
 &nbsp;
 The available commands for execution are listed below.
-The most common, useful commands are shown first, followed by
-less common or more advanced commands. If you're just getting
-started with Terraform, stick with the common commands. For the
-other commands, please read the help and docs before usage.
+The primary workflow commands are given first, followed by
+less common or more advanced commands.
 &nbsp;
-Common commands:
-    apply              Builds or changes infrastructure
-    console            Interactive console for Terraform interpolations
-    destroy            Destroy Terraform-managed infrastructure
-    env                Workspace management
-    fmt                Rewrites config files to canonical format
-    get                Download and install modules for the configuration
-    graph              Create a visual graph of Terraform resources
-    import             Import existing infrastructure into Terraform
-    init               Initialize a Terraform working directory
-    login              Obtain and save credentials for a remote host
-    logout             Remove locally-stored credentials for a remote host
-    output             Read an output from a state file
-    plan               Generate and show an execution plan
-    providers          Prints a tree of the providers used in the configuration
-    refresh            Update local state file against real resources
-    show               Inspect Terraform state or plan
-    taint              Manually mark a resource for recreation
-    untaint            Manually unmark a resource as tainted
-    validate           Validates the Terraform files
-    version            Prints the Terraform version
-    workspace          Workspace management
-&nbsp;
+Main commands:
+  init          Prepare your working directory for other commands
+  validate      Check whether the configuration is valid
+  plan          Show changes required by the current configuration
+  apply         Create or update infrastructure
+  destroy       Destroy previously-created infrastructure
+
 All other commands:
-    0.12upgrade        Rewrites pre-0.12 module source code for v0.12
-    debug              Debug output management (experimental)
-    force-unlock       Manually unlock the terraform state
-    push               Obsolete command for Terraform Enterprise legacy (v1)
-    state              Advanced state management
+  console       Try Terraform expressions at an interactive command prompt
+  fmt           Reformat your configuration in the standard style
+  force-unlock  Release a stuck lock on the current workspace
+  get           Install or upgrade remote Terraform modules
+  graph         Generate a Graphviz graph of the steps in an operation
+  import        Associate existing infrastructure with a Terraform resource
+  login         Obtain and save credentials for a remote host
+  logout        Remove locally-stored credentials for a remote host
+  output        Show output values from your root module
+  providers     Show the providers required for this configuration
+  refresh       Update the state to match remote systems
+  show          Show the current state or a saved plan
+  state         Advanced state management
+  taint         Mark a resource instance as not fully functional
+  test          Experimental support for module integration testing
+  untaint       Remove the 'tainted' state from a resource instance
+  version       Show the current Terraform version
+  workspace     Workspace management
+&nbsp;
+Global options (use these before the subcommand, if any):
+  -chdir=DIR    Switch to a different working directory before executing the
+                given subcommand.
+  -help         Show this help output, or the help for a specified subcommand.
+  -version      An alias for the "version" subcommand.
    </pre>
 
-   BLAH: Terraform doesn't have an alias command like Git to add subcommands, so one has to remember which command is Terragrunt and which are standard Terraform?
+   BLAH: Terraform doesn't have an alias command like Git to add custom subcommands, so one has to remember which command is Terragrunt and which are standard Terraform?
 
    NOTE: The `terraform remote` command configures remote state storage.
 
@@ -610,27 +614,24 @@ Since the point of Terraform is to get you into clouds, Terraform looks for spec
 1. Grant rules to the AWS user to use services.
 1. Mac users: add credentials in their `~/.bash_profile` these lines:
 
-   <pre>
-export AWS_ACCESS_KEY_ID=<em>(your access key id)</em>
+   <pre>export AWS_ACCESS_KEY_ID=<em>(your access key id)</em>
 export AWS_SECRET_ACCESS_KEY=<em>(your secret access key)</em>
 export AWS_REGION=<em>(your region in AWS)</em>
    </pre>
 
    For Azure:
 
-   <pre>
-   AZ_PRINCIPAL=""
+   <pre>AZ_PRINCIPAL=""
    AZ_USER=""
    AZ_PASSWORD=""
    AZ_USERNAME=""
    AZ_TENANT=""
-   AZ_REGION=""
+   AZ_REGION=""  # aka location
    </pre>
 
    For Google Cloud:
 
-   <pre>
-   GCP_PROJECT=""
+   <pre>GCP_PROJECT=""
    GCP_USER=""
    GCP_KEY=""
    GCP_REGION=""
@@ -639,11 +640,226 @@ export AWS_REGION=<em>(your region in AWS)</em>
 PROTIP: Specifying passwords in enviornment variables is more secure than typing passwords in tf files<a target="_blank" href="https://www.youtube.com/watch?v=RA1mNClGYJ4&time=5m52s">*</a>.
 
 
+<a name="Terraform_Azure"></a>
+
+## Terraform on Azure
+
+1. In a browser, go to straight to the Azure Cloud Shell:
+
+   <pre><strong>https://shell.azure.com</strong></pre>
+
+1. PROTIP: Azure uses the subscription you last used (based on cookies saved from your previous session). So switch to another browser profile or switch to another Subscription.
+
+   <pre><strong>az account list</strong></pre>
+
+   <tt>"isDefault": true,</tt> means you're using the default Azure account.
+
+   Alternately, environment variables can also be specified for a Service Principal with a cert/secret hard coded in a file run:
+
+   <pre>export ARM_CLIENT_ID="..."
+export ARM_CLIENT_SECRET="..."
+export ARM_SUBSCRIPTION_ID="..."
+export ARM_TENANT_ID="..."
+   </pre>
+
+   Alternately, to use a container's Managed Service Identity (MSI) instead of ARM_CLIENT_SECRET:
+
+   <pre>export ARM_USE_MSI=true
+export ARM_SUBSCRIPTION_ID="..."
+export ARM_TENANT_ID="..."
+   </pre>
+
+
+1. Terraform is pre-installed:
+
+   <pre><strong>terraform --version</strong></pre>
+
+   <pre>Terraform v0.14.10
+Your version of Terraform is out of date! The latest version
+is 0.15.0. You can update by downloading from https://www.terraform.io/downloads.html
+   </pre>
+
+   See what is the <a target="_blank" href="https://releases.hashicorp.com/terraform/">latest version</a> and <a target="_blank" href="https://github.com/terraform-providers/terraform-provider-azure/releases">details for each release</a>.
+
+1. Got storage?
+1. Navigate to your default folder:
+
+   <pre><strong>cd clouddrive</strong></pre>
+
+1. Use Git (installed by default):
+
+   <pre><strong>git clone https://github.com/lukeorellana/terraform-on-azure
+cd terraform-on-azure
+   </strong></pre>
+
+   The repo contains these folders:
+   * 01-intro
+   * 02-init-plan-apply-destroy
+   * 03-terraform-state
+   * 04-variables
+   * 05-modules
+   * 06-advanced-hcl
+   <br /><br />
+
+1. Make sure there is a .gitignore containing the tfstate file specification:
+
+   <pre><strong>echo "terraform.tfstate" >>.gitignore
+   </strong></pre>
+
+1. Use VSCode (installed by default) to view blocks in Terraform HCL file:
+
+   <pre><strong>cd ~/clouddrive/terraform-on-azure/02-init-plan-apply-destroy/01-intro
+code main.tf
+   </strong></pre>
+
+   NOTE: Each key-value pair is an argument containing an expression of a text value.
+
+   Each HCL file needs to specify the (cloud) provider being used is "azure".
+
+   NOTE: Multiple providers can be specified in the same HCL file.
+
+1. Search for "Resource Group" in Terraform's Azure Provider docs:
+
+   <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs">
+   https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs</a>
+
+   for "azurerm_resource_group".
+
+1. <strong>Download and install binaries providers needs</strong>:
+
+   <pre><strong>terraform init</strong></pre>
+
+   Response:
+
+   <pre>Initializing the backend...
+&nbsp;
+Initializing provider plugins...
+- Finding hashicorp/azurerm versions matching "2.40.0"...
+- Installing hashicorp/azurerm v2.40.0...
+- Installed hashicorp/azurerm v2.40.0 (signed by HashiCorp)
+&nbsp;
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.
+&nbsp;
+Terraform has been successfully initialized!
+&nbsp;
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+&nbsp;
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+   </pre>
+
+1. What if Terrform
+
+   <pre><strong>terraform plan</strong></pre>
+
+1. What if Terraform
+
+   <pre><strong>terraform apply</strong></pre>
+
+1. Respond to "Enter a Value:"
+
+   <pre><strong>yes</strong></pre>
+
+1. Verify it worked:
+
+   <pre><strong>az group list -o table</strong></pre>
+
+   "Environment" = "terraexample"
+
+1. Done with Terraform
+
+   <pre><strong>terraform destroy -auto-approve</strong></pre>
+
+1. Respond to "Enter a Value:"
+
+   <pre><strong>yes</strong></pre>
+
+1. Navigate to the next example:
+
+   <pre><strong>cd ~/clouddrive/terraform-on-azure/02-init-plan-apply-destroy/02-interpolation
+terraform init
+code main.tf
+   </strong></pre>
+
+1. Execute:
+
+   <pre><strong>terraform apply -auto-approve</strong></pre>
+
+   Remember that Terraform runs which order to run blocks.
+
+1. This example has output blocks to separate tfstate for the virtual network and each resource group (using interpolation):
+
+   <pre><strong>code ~/clouddrive/terraform-on-azure/03-terraform-state/02-remote-state/main.tf
+   </strong></pre>
+
+   The output blocks can be moved to a separate output.tf fil.
+
+1. data.
+1. variables.tf for reusability. Define default values refered as "var." in:
+
+   <pre><strong>code ~/clouddrive/terraform-on-azure/04-variables/02-deployvariables/terraform.tfvars
+   </strong></pre>
+
+   Environment variables are referenced as "TF_VAR_XXX"
+
+   A map is a collection of variables, for use in conditional logic.
+
+   An object can contain lists, etc.
+
+1. 05-Modules passes NSG output 
+
+   <a target="_blank" href="
+   https://registry.terraform.io/browse/modules?provider=azurerm">
+   https://registry.terraform.io/browse/modules?provider=azurerm</a>
+
+* Advanced location variable:
+
+   <pre>variable "location" {
+      type = string
+      description = "Azure location (region)"
+      default = ""
+   }</pre>
+
+   <pre>resource "azurerm_resource_group" "rg" {
+   name = "rg-testcondition"
+   location = var.location != "" ? var.location : "westus2"
+   }
+   </pre>
+
+* <a target="_blank" href="https://www.udemy.com/course/terraform-on-azure-2021/learn/lecture/25583436#overview">chapter 37</a> shows use of for_each to specify hub-and-spoke netowrking.
+
+<br /><br />
+
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/developer/terraform/">
+Terraform on Azure documentation</a> index by Microsoft:
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/developer/terraform/overview">Terraform with Azure</a> on Microsoft Docs summary
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/developer/terraform/get-started-cloud-shell">Quickstart: Configure Terraform using Azure Cloud Shell</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/developer/terraform/get-started-powershell">Quickstart: Configure Terraform using Azure PowerShell</a>
+   * https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-windows to pass in a ps to run, referenced in https://www.udemy.com/course/terraform-on-azure-2021/learn/lecture/25583448#overview
+
+Videos:
+   * <a target="_blank" href="https://www.udemy.com/course/terraform-on-azure-2021/">
+   1.5 hr Udemy video course: Terraform on Azure 2021</a> by <a target="_blank" href="https://www.linkedin.com/in/luke-orellana/">Luke Orellana</a> under Mike Pfiffer's CloudSkills.io at https://github.com/CloudSkills/Terraform-Projects/tree/master/4-Build-Azure-Infrastructure
+   * <a target="_blank" href="https://www.udemy.com/course/learning-terraform-on-microsoft-azure/">Learning Terraform on Microsoft Azure - Terraform v12 / v13</a>
+
 
 <a name="ScriptInit"></a>
 
 ## Sample Terraform scripts
 
+### Cloudposse
+
+   <a target="_blank" href="
+   https://github.com/cloudposse">
+   https://github.com/cloudposse</a> has mostly AWS Terraform, such as
+   https://github.com/cloudposse/load-testing
 
 ### Gruntwork's sample
 
@@ -1136,6 +1352,7 @@ Unpacking objects: 100% (12/12), done.
    https://www.terraform.io/docs/providers/aws/r/instance.html</a>
    AWS provider
 
+
    ### VPC Security Group
 
 2. VPC Security group
@@ -1427,28 +1644,26 @@ output "azure_rm_dns_cname" {
    Terraform creates a dependency graph (specfically, a Directed Acyclic Graph).
    This is so that nodes are built in the order they are needed. 
 
+
    <a name="TerraformApply"></a>
 
    ### Terraform apply
 
 1. Type:
 
-   <tt><strong>
-   terraform apply "happy.plan"
+   <tt><strong>terraform apply "happy.plan"
    </strong></tt>
 
    Alternately,
 
-   <tt><strong>
-   terraform apply -state=".\develop\dev.state" \
+   <tt><strong>terraform apply -state=".\develop\dev.state" \
       -var="environment_name=development"
    </strong></tt>
 
    Alternative specification of enviornment variable:
 
-   <pre>
-   TF_VAR_first_name="John" terraform apply
-   </pre>
+   <pre><strong>TF_VAR_first_name="John" terraform apply
+   </strong></pre>
 
    Values to Terraform variables define inputs such as run-time DNS/IP addresses into 
    <a href="#Modules">Terraform modules</a>.
@@ -1469,8 +1684,7 @@ output "azure_rm_dns_cname" {
 
    Sample response from terraform apply:
 
-   <pre>
-   dns_names = [
+   <pre>dns_names = [
       [
          359f20b2-673d-6300-e918-fcea6a314a26.inst.d9a01feb-be7d-6a32-b58d-ec4a2bf4ba7d.us-east-3.triton.zone,
          happy-randomizer.inst.d9a01feb-be7d-6a32-b58d-ec4a2bf4ba7d.us-east-3.triton.zone
@@ -1630,8 +1844,7 @@ Terraform modules provide "blueprints" to deploy.
 
 The module's source can be on a local disk:
 
-   <pre>
-module "service_foo" {
+   <pre>module "service_foo" {
   source = "/modules/microservice"
   image_id = "ami-12345"
   num_instances = 3
@@ -1641,8 +1854,7 @@ module "service_foo" {
   The source can be from a GitHub repo such as <a target="_blank" href="https://github.com/objectpartners/tf-modules">
    https://github.com/objectpartners/tf-modules</a>
 
-   <pre>
-module "rancher" {
+   <pre>module "rancher" {
   source = "<a target="_blank" href="https://github.com/objectpartners/tf-modules//rancher/server-standalone-elb-db&ref=9b2e590">github.com/objectpartners/tf-modules//rancher/server-standalone-elb-db&ref=9b2e590</a>"
 }
    </pre>
@@ -1683,7 +1895,7 @@ It's got 33 resources. The sub-modules are:
 
 ## Rock Stars
 
-Here are people who have taken time to create tutorials for us:
+Here are people who have taken time to create tutorials for us about Terraform:
 
 Derek Morgan in May 2018 released video courses on LinuxAcademy.com:
 
@@ -1756,7 +1968,7 @@ co-founder of DevOps as a Service <a target="_blank" href="https://Gruntwork.io/
 
    * Resource graphs of dependencies.
 
-Nick Colyer
+Nick Colyer (Skylines Academy)
 
    * <a target="_blank" href="https://www.pluralsight.com/courses/terraform-automating-aws-vsphere">
    Automating AWS and vSphere with Terraform (Intermediate level)</a> Jun 12 2017 [1:22]
@@ -1890,6 +2102,9 @@ Manage SSH with HashiCorp Vault</a>
 <a target="_blank" href="https://github.com/dod-iac">github.com/dod-iac (DOD Infrastructure as Code)</a> is 36 examples of how the Pentagon uses Terraform within AWS IAM, S3, EBS, KMS, Kinesis api gateway, Lambda, MFA, GuardDuty, Route53, etc.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=6UDePj5newo&list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7&index=10">VIDEO: Terraform Provider Azure.gov</a> for standardized templates across clouds.
+
+https://medium.com/capital-one-tech/terraform-poka-yokes-writing-effective-scalable-dynamic-and-error-resistant-terraform-dcbd6a0ada6a
+
 
 ## More on DevOps #
 
