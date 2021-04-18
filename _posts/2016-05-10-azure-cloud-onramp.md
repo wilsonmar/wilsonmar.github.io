@@ -57,7 +57,7 @@ This is a hands-on deep-dive tutorial with commentary along the way, covering ho
    <a target="_blank" href="https://admin.microsoft.com/AdminPortal/Home#/alladmincenters"><strong><u>https://admin.microsoft.com/AdminPortal/Home#/alladmincenters</u></strong></a>
    </td></tr>
 <tr valign="top"><td> Cloud Shell </td><td>
-   <a target="_blank" href="https://shell.microsoft.com/"><strong><u>
+   <a target="_blank" href="https://shell.azure.com/"><strong><u>
    https://shell.azure.com</u></strong></a>
    </td></tr>
 <tr valign="top"><td> Support </td><td>
@@ -147,8 +147,12 @@ PROTIP: So if you're using Google Chrome, click the Chrome avatar at the upper-r
 
    PROTIP: Global Admin privileges are neede to enable <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">AD PIM (Privileged Identity Management)</a> for a directory.
 
-   So it's important to assign other more specific roles. PowerShell command 
-   <tt>Get-AzureRMRoleDefinition</tt> lists:
+   So it's important to assign other more specific roles. 
+
+   ### Built-in User Roles for RBAC 
+
+   PowerShell command:<br />
+   <tt>Get-AzureRMRoleDefinition</tt> lists 75:
 
    * Application Administrators can create and manage all aspects of enterprise applications, application registrations, and application proxy settings.
 
@@ -190,6 +194,14 @@ PROTIP: So if you're using Google Chrome, click the Chrome avatar at the upper-r
 
    The basic categories are owner, contributor, and reader.
 
+   User roles can be scoped to:
+   * Tenant - LIMIT: Up to 2,000 roles can be defined for a tenant.
+   * Management group
+   * Subscription
+   * Resource group
+   * Resource
+   <br /><br />
+
    BTW, after you follow instructions below on setting up CLI, this Bash command lists all the pre-defined roles:
 
    <pre><strong>az role definition list -o table --query [].roleName</strong></pre>
@@ -204,8 +216,6 @@ PROTIP: So if you're using Google Chrome, click the Chrome avatar at the upper-r
    <br /><br />
 
    The actions are implemented by resource providers.
-
-   Up to 2000 roles can be defined for a tenant.
 
    Each tenant is independent of all other tenants.
 
@@ -349,6 +359,8 @@ PROTIP: It makes more sense to look at a live example populated with several res
    ### AD Tenants
 
    The Azure SaaS service separates different customers into different <strong>tenants</strong> (like tenants in an apartment building). Each tenant is a dedicated, isolated instance of the Azure Active Directory service, owned and managed by an organization. 
+
+   "Isolated" = ISE zzz
 
    Azure AD supports auth protocols: OAuth, OpenID, SAML, WS-Federation to 
 
@@ -567,6 +579,30 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
    https://microsoft.github.io/AzureTipsAndTricks/blog/tip1.html
 
 
+   <a name="CLI_setup"></a>
+
+   ### Shell Setup #
+
+0. At <a target="_blank" href="https://shell.azure.com/">
+   https://shell.azure.com</a>
+
+1. Click "Create storage" if this is the first time and you see<br />
+   <strong>You have no storage mounted</strong>
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/115131861-7e7f4180-9fb8-11eb-94f2-bbc1cb3d498b.png">
+   <img width="709" alt="az-onboard-shell-storage-1418x328" src="https://user-images.githubusercontent.com/300046/115131861-7e7f4180-9fb8-11eb-94f2-bbc1cb3d498b.png"></a>
+
+1. For "Cloud Shell region", select your favorite location, such as "West US 2".
+1. For "Resource group", type "_shell_westus2".
+1. For "Storage account", type "_shell_westus2"
+   
+   PROTIP: Files in your CLI <strong>clouddrive</strong> folder is stored in that <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts">Storage account</a>, beginning from CLI history, etc.
+
+1. In <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups">Portal: Resource Groups</a> notice default names created:
+   * cloud-shell-storage-westus
+   * NetworkWatcherRG
+   <br /><br />
+
 
    <a name="ARM-Menu"></a>
 
@@ -676,6 +712,18 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
 
 
+   ### Naming conventions
+   
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">Naming conventions</a>:
+
+   1. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations">rg, vm</a> = Resource asset type. 
+   2. fin, mktg, product, it, corp = Business unit - organizational element that owns the subscription or workload the resource belongs to. 
+   3. navigator, emissions, sharepoint, hadoop = Application or service name of the application, workload, or service that the resource is a part of.
+   4. shared, central, client = Subscription type - the purpose of the subscription that contains the resource. 
+   5. prod, dev, qa, stage, test = Deployment environment - The stage of the development lifecycle for the workload that the resource supports.
+   6. westus, eastus2, westeu = Location/Region - The Azure region where the resource is deployed.
+
+
 
    <a name="ResourceGroups"></a>
 
@@ -691,7 +739,7 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
    * Azure Cloud Shell which enable: Azure PowerShell (Az modules)
    * Azure Bash CLI (az commands)
    * <a href="#Bicep">Azure Bicep (like Terraform)</a>
-   * Azure programmatic SDKs using programming languages C# .NET, Java, Python, NodJs (JavaScript), etc.
+   * Azure programmatic SDKs using programming languages C# .NET, Java, Python, NodeJs (JavaScript), etc.
    <br /><br />
 
    PROTIP: A resource group can contain resources from multiple regions.
@@ -767,15 +815,38 @@ eastus2
 
    Individual resources created within a Resource Group will be placed in the same region.
 
+
+   ### CLI Naming convensions
+
+   PROTIP: Since so many az commands refer to an Azure Resource Group, my scripts specify Resource Group or Location as the last item, using these naming conventions for enviornment variables:
+
+   <pre><strong>MY_LOC="eastus"
+MY_RG="azuremolchapter2"
+az group create --name "${MY_RG}" \
+   --location "${MY_LOC}"
+   </strong></pre>
+
+   PROTIP: Me standardizing means that you can use a different name safely by doing a "Change All" across all files.
+
+
    ### Tags
 
-1. Click "Review + create" if you are not using Tags or if the resource doesn't support tags.<br />
+   Each tag is a name=value pair such as <tt>Department=Finance</tt>, <tt>Project=Advance1</tt>, <tt>Customer=Acme</tt>, etc. 
+
+1. To create a tag:
+
+   <pre><strong>az resource tag --tags Department=Finance \
+    --name msftlearn-vnet1 \
+    --resource-type "Microsoft.Network/virtualNetworks" \
+    --resource-group "$MY_RG" 
+   </strong></pre>
+
+1. Click "Review + create" if you are not using Tags or if the resource doesn't support tags.
 1. Click "Next: Tags" if you can specify one according to your Tag Naming Convention:
 
-   LIMIT PROTIP: Up to 50 Tags can be associated with each resource.
-
+   LIMIT PROTIPS: Up to 50 Tags can be associated with each resource.<br />
    Tag names are limited to 512 characters.<br />
-   Tag names for storage accounts have a limit of 128 characters.
+   Tag names for storage accounts have a limit of 128 characters.<br />
    Tag values can be up to 256.<br />
 
    Tags are your own metadata for:
@@ -784,15 +855,7 @@ eastus2
    * Billing
    <br /><br />
 
-   When are able to invoke CLI commands, consider:
-
-   <pre><strong>az resource tag --tags Department=Finance \
-    --resource-group "$AZ_RESOURCE_GROUP" \
-    --resource-type "Microsoft.Network/virtualNetworks" \
-    --name msftlearn-vnet1 
-   </strong></pre>
-
-   Each tag is a name=value pair such as <tt>Department=Finance</tt> or <tt>Project=Acme</tt>, etc. 
+   PROTIP: Child resources don’t inherit tags from group level.
 
    Each tag value is limited to 256 characters for all types of resources. 
    * Environment=Production or Staging or "NPT" (Non-Production/Test)

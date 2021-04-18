@@ -44,13 +44,12 @@ Automating infrastructure deployment consists of these features:
    * Reusing templates
    <br /><br />
 
-The objective is to <strong>save money</strong> by automating the configuration of servers and other resources, which is quicker and more consistent than manually clicking through the GUI.
+The objective is to accellerate work AND <strong>save money</strong> by automating the configuration of servers and other resources, which is quicker and more consistent than manually clicking through the GUI. That's called the <a target="_blank" href="https://apparently.me.uk/terraform-environment-application-pattern/overview.html"> "Infrastructure-Application Pattern (I-A)"</a>.
 
 
 ## Infrastructure as Code (IaC) Competition
 
-The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and Terraform, based on 
-<a target="_blank" href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c">analysis</a>:
+The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and Terraform, based on <a target="_blank" href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c">analysis</a>:
 
 <table border="1" cellpadding="4" cellspacing="0">
 <thead><tr><th>&nbsp;</th><th>Maturity</th><th>Community</th><th>Type
@@ -467,9 +466,13 @@ Global options (use these before the subcommand, if any):
   -version      An alias for the "version" subcommand.
    </pre>
 
-   BLAH: Terraform doesn't have an alias command like Git to add custom subcommands, so one has to remember which command is Terragrunt and which are standard Terraform?
-
    NOTE: The `terraform remote` command configures remote state storage.
+
+   BLAH: Terraform doesn't have an alias command (like Git) to add custom subcommands, so one has to remember which command is Terragrunt and which are standard Terraform?
+
+3. Install Terragrunt wrapper:
+
+   https://github.com/gruntwork-io/terragrunt
 
 3. Help on a specific command, for example:
 
@@ -849,6 +852,11 @@ Videos:
    1.5 hr Udemy video course: Terraform on Azure 2021</a> by <a target="_blank" href="https://www.linkedin.com/in/luke-orellana/">Luke Orellana</a> under Mike Pfiffer's CloudSkills.io at https://github.com/CloudSkills/Terraform-Projects/tree/master/4-Build-Azure-Infrastructure
    * <a target="_blank" href="https://www.udemy.com/course/learning-terraform-on-microsoft-azure/">Learning Terraform on Microsoft Azure - Terraform v12 / v13</a>
 
+Docs:
+   * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs
+   * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/guides/getting-started
+   * https://kubernetes.io/blog/2020/06/working-with-terraform-and-kubernetes/
+   * https://opensource.com/article/20/7/terraform-kubernetes
 
 <a name="ScriptInit"></a>
 

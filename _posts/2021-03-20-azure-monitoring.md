@@ -213,7 +213,41 @@ HANDS-ON Exercise in Sandbox - Create basic Azure Monitor log queries to extract
    https://github.com/microsoft/AzureMonitorCommunity">
    https://github.com/microsoft/AzureMonitorCommunity</a>
 
-   <strong>Workbooks</strong> combine multiple sets of data in an interactive report (visualization).
+
+   <a name="AzureWorkbooks"></a>
+
+   ### Azure Workbooks
+
+   <strong>Workbooks</strong> provide a flexible canvas for data analysis.
+   It combines multiple sources/sets of data in an interactive report (visualization).
+   * Logs
+   * Metrics
+   * Azure Resource Graph
+   * Alerts
+   * Workload health
+   * Azure Resource Health
+   * Azure Data Explorer
+   <br /><br />
+
+   See the Gallery: 
+
+   Workbooks support visualization types: Text, Charts, Grids, Tiles, Trees, Graphs
+
+   Start with a template.
+
+
+   ### Azure App Insights
+
+   When an app is connected
+
+   installs an instrumentation package in your app 
+
+   instrumentation key
+
+   Application Insights Dashboard
+
+   SDK analyzes your app for a typology, to identify connection to resources.
+
 
 
    <a name="KQL_folders"></a>

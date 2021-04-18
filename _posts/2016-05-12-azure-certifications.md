@@ -34,14 +34,14 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
 
    </td></tr>
 <tr valign="top"><td> Solution Architect
-      </td><td>* <a href="#AZ=303">AZ-303</a> Azure Solutions Architect Expert: Technologies<br />
-        * <a href="#AZ=304">AZ-304</a> Azure Solutions Architect Expert: Design<br />
+      </td><td>* <a href="#AZ-303">AZ-303</a> Azure Solutions Architect Expert: Technologies<br />
+        * <a href="#AZ-304">AZ-304</a> Azure Solutions Architect Expert: Design<br />
         * AZ-600 Stack Hub Operator Associate<br />
         * AZ-120 Azure for SAP Workloads Specialty
 
    </td></tr>
 <tr valign="top"><td> Developer
-   </td><td>* AZ-204 Azure Developer Associate<br />
+   </td><td>* <a href="#AZ-204">Azure Developer Associate</a><br />
        * <a href="#AZ-220">Azure IoT Developer Specialty</a> 
 
    </td></tr>
@@ -74,6 +74,11 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
 
 Andrew Brown offers this diagram:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/110194383-8ebad300-7df5-11eb-9c0c-2d5f165f0ffe.jpeg"><img alt="az-certs-1868x1092.png" width="1868" src="https://user-images.githubusercontent.com/300046/110194383-8ebad300-7df5-11eb-9c0c-2d5f165f0ffe.jpeg"></a>
+
+
+<a target="_blank" href="https://www.youtube.com/watch?v=ZIlLvKg7owM&list=RDCMUC0m-80FnNY2Qb7obvTL_2fA&start_radio=1">VIDEO</a> of <a target="_blank" href="https://azure.microsoft.com/en-us/resources/videos/build-an-intelligent-bot/">Build an Intelligent Bot with Microsoft Azure</a> by Elliott Perry - Chapter 17 of <a target="_blank" href="https://clouddamcdnprodep.azureedge.net/gdc/2014519/original">EBOOK</a>: 
+<a target="_blank" href="https://aka.ms/monthoflunches​">Learn Azure in a Month of 21 Lunches</a> (2020 Manning) by <a target="_blank" href="https://www.linkedin.com/in/iainfoulds">Iain Foulds</a> (<a target="_blank" href="https://twitter.com/fouldsy">@fouldsy</a>), with code at <a target="_blank" href="https://github.com/fouldsy/azure-mol-samples-2nd-ed">https://github.com/fouldsy/azure-mol-samples-2nd-ed</a>
+
 
 ## Rebranding to roles
 
@@ -351,6 +356,9 @@ VIDEO: Protecting Devices and Applications in Microsoft 365</a>
 By Robert McMillen
 
 
+https://github.com/zaalion/oreilly-azure-app-security
+
+
 <a name="SC-900"></a>
 
 ### SC-900 Security
@@ -465,16 +473,16 @@ Includes:
 
 AZ-104 is not a requirement but covers same topics more conceptually.
 
+Previously AZ-300, $165 for 2-3 hours
+<a target="_blank" href="
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-303">
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-303</a>
+
 Passing this and the less hands-on AZ-304 Microsoft Azure Architect Design (blueprints) makes you a Microsoft Certified Azure Solutions Architect Expert.
 
 <a target="_blank" href="
 https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies">
 https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies</a>
-
-Previously AZ-300, $165 for 2-3 hours
-<a target="_blank" href="
-https://docs.microsoft.com/en-us/learn/certifications/exams/az-303">
-https://docs.microsoft.com/en-us/learn/certifications/exams/az-303</a>
 
 <a target="_blank" href="https://learning.oreilly.com/videos/new-microsoft-az-303/10009AZ303/10009AZ303-AZ303_1">
 14h videos on OReilly: Skylines Academy Oct 2020</a> by Nick Colyer (<a target="_blank" href="https://www.facebook.com/groups/azurestudygroup/">StudyGroup</a>)
@@ -499,6 +507,9 @@ Azure Cloud with K21Academy</a>
 <a target="_blank" href="https://www.youtube.com/watch?v=wP9KWa0rOQk">
 How I cleared Microsoft AZ 303 in just three weeks!</a>
 by Here Is Cloud
+
+Practice tests:
+   * <a target="_blank" href="https://www.mindhub.com/az-303-microsoft-azure-architect-technologies-microsoft-official-practice-test/p/MU-AZ-303">Mindhub.com</a> THANKS280658
 
 
 <a name="AZ-304"></a>
@@ -647,6 +658,37 @@ https://linuxacademy.com/cp/modules/view/id/776?redirect_uri=https://app.linuxac
 
 <hr />
 
+<a name="AZ-204"></a>
+
+## AZ-204 Azure Developer Associate
+
+$165
+
+<a target="_blank" href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oZ7B">
+https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oZ7B</a>
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-204">
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-204</a>
+learning paths
+
+https://learning.oreilly.com/library/view/exam-ref-az-204/9780136798255/
+
+<a target="_blank" href="https://learning.oreilly.com/attend/microsoft-azure-developer-associate-az-204-crash-course/0636920053454/0636920053452/">OReilly VIDEO Crash Course</a> April 16, 2021 by <a target="_blank" href="https://www.linkedin.com/in/rezasalehi2008/">Reza Salehi</a> (@zaalion) <a target="_blank" href="https://github.com/zaalion/oreilly-az-204">https://github.com/zaalion/oreilly-az-204</a>:
+
+
+
+
+<a name="AZ-220"></a>
+
+## AZ-220 IoT
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/537">Course 1</a>
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/538">Course 2</a>
+
+https://github.com/zaalion/oreilly-az-220/
+
+
 <a name="AI-900"></a>
 <a name="AI-100"></a>
 
@@ -661,14 +703,9 @@ AI-900 Sample Practice Exam Questions</a>
 AI-900 Study Guide</a>
 
 
-<a name="AZ-220"></a>
+https://github.com/zaalion/oreilly-ai-100
 
-## AZ-220 IoT
-
-<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/537">Course 1</a>
-
-<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/538">Course 2</a>
-
+https://github.com/zaalion/uy-cognitve-services-crash-course
 
 ## References
 

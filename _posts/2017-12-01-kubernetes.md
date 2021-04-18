@@ -568,6 +568,8 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 
 ## Social media communities
 
+   * <a target="_blank" href="https://discuss.kubernetes.io/">https://discuss.kubernetes.io</a> is where issues with each version of K8s are discussed.
+
    * <a target="_blank" href="https://www.kubeweekly.io">https://kubeweekly.io</a>, a weekly podcast [subscribe!]
    * <a target="_blank" href="https://www.kubernetespodcast.com/">https://kubernetespodcast.com</a> podcast is hosted by the Clound Native advocacy team at Google Cloud: Craig Box and Adam Glick. On <a target="_blank" href="https://podcasts.apple.com/us/podcast/kubernetes-podcast-from-google/id1370049232?mt=2">Apple Podcasts</a>, etc.
 
@@ -593,7 +595,6 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 
    * <a target="_blank" href="https://www.youtube.com/playlist?list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ&disable_polymer=true">
    Kubernetes Google Community video chats</a> weekly going back to 2017 but stopped July 2020
-   * <a target="_blank" href="https://discuss.kubernetes.io/">https://discuss.kubernetes.io</a>
 
    * <a target="_blank" href="https://cloud.google.com/support/docs/issue-trackers">https://cloud.google.com/support/docs/issue-trackers</a> to report bugs.
 

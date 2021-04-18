@@ -2,7 +2,7 @@
 layout: post
 title: "Microsoft AI"
 excerpt: "How to get certified to run Microsoft's AI in Azure cloud"
-tags: [microsoft, machine learning, AI]
+tags: [microsoft, azure, machine learning, AI]
 date: "2021-03-20"
 file: "microsoft-ai"
 image:
@@ -165,14 +165,12 @@ https://docs.microsoft.com/en-us/learn/certifications/courses/ai-102t00
 4 days on-site
 The course will use C# or Python as the programming language.
 
-
-
-Tim Warner's at OReilly.com
-<a target="_blank" href="https://github.com/timothywarner/ai100">https://github.com/timothywarner/ai100</a> = 
-https://github.com/timothywarner/ai100
+Tim Warner at OReilly.com
+<a target="_blank" href="https://github.com/timothywarner/ai100">https://github.com/timothywarner/ai100</a> = https://github.com/timothywarner/ai100
 
 * Tim1[29:0] Private dashboard
 
+zzz
 
 ## Subject matter
 
@@ -315,13 +313,51 @@ https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-mac
 
 <ul>
 <li><a target="_blank" href="http://azure.com/ai">Azure AI product page</a></li>
-<li><a href="https://azure.microsoft.com/case-studies/">Azure case studies</a></li>
-<li><a href="https://azure.microsoft.com/blog/">Microsoft Azure Blog</a></li>
-<li><a href="https://channel9.msdn.com/Shows/AI-Show">Channel 9 AI Show</a></li>
-<li><a href="https://www.microsoft.com/ai/ai-for-good">AI for Good</a></li>
-<li><a href="https://www.microsoft.com/seeing-ai/">Seeing AI application</a></li>
-<li><a href="https://news.microsoft.com/futurecomputed/">The Future Computed book</a></li>
+<li><a target="_blank" href="https://azure.microsoft.com/case-studies/">Azure case studies</a></li>
+<li><a target="_blank" href="https://azure.microsoft.com/blog/">Microsoft Azure Blog</a></li>
+<li><a target="_blank" href="https://channel9.msdn.com/Shows/AI-Show">Channel 9 AI Show</a></li>
+<li><a target="_blank" href="https://www.microsoft.com/ai/ai-for-good">AI for Good</a></li>
+<li><a target="_blank" href="https://www.microsoft.com/seeing-ai/">Seeing AI application</a></li>
+<li><a target="_blank" href="https://news.microsoft.com/futurecomputed/">The Future Computed book</a></li>
 </ul>
+
+If you have an OReilly.com account:
+
+   * <a target="_blank" href="https://learning.oreilly.com/videos/azure-cognitive-services/9781838552565">Azure Cognitive Services for Developers</a>
+
+   * <a target="_blank" href="https://learning.oreilly.com/videos/implementing-azure-cognitive/9781838556778">
+    Implementing Azure Cognitive Services with QnA Maker</a>
+
+   * <a target="_blank" href="https://learning.oreilly.com/videos/implementing-azure-cognitive/9781838558864">
+   Implementing Azure Cognitive Services for Language</a>
+
+   * <a target="_blank" href="https://learning.oreilly.com/videos/implementing-azure-cognitive/9781838557263">
+   Implementing Azure Cognitive Services for Vision</a>
+
+   * <a target="_blank" href="https://learning.oreilly.com/videos/programming-the-microsoft/9780134835907">
+   Programming the Microsoft Bot Framework</a>
+
+   * <a target="_blank" href="https://learning.oreilly.com/videos/machine-learning-in/9781789347524">
+   Machine Learning In The Cloud With Azure Machine Learning</a>
+
+   * <a target="_blank" href="https://learning.oreilly.com/videos/azure-search-for/9781771375184">
+   Azure Search for Developers</a>
+
+On Udemy:
+
+   * <a target="_blank" href="https://www.udemy.com/course/azure-cognitive-services-crash-course/?referralCode=EE78F34C49858D913E15">
+   Microsoft Azure Cognitive Services Crash Course</a>
+
+On Pluralsight's <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-azure-ai-engineer-ai-100">
+   Microsoft Azure AI Engineer (AI-100) series</a> by Raza Salehi:
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-personalizer">Personalizer</a>
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-ink-recognizer">Recognizer</a>
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-immersive-reader">Immersive Reader</a>
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-anomaly-detector">Anomaly Detector</a>
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/building-customized-translation-systems-azure-cognitive-services-translator">Translator</a>
+
+
 
 ## More
 
