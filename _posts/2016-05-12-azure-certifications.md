@@ -471,7 +471,7 @@ Includes:
 
 ## AZ-303 Azure Architect Technologies
 
-AZ-104 is not a requirement but covers same topics more conceptually.
+AZ-104 is not a pre-requisite but covers same topics more conceptually.
 
 Previously AZ-300, $165 for 2-3 hours
 <a target="_blank" href="
@@ -500,9 +500,10 @@ AZ-303 Sample Exam Questions (Microsoft Azure Architect Technologies) [Answers E
 #1 How to pass Exam AZ-303 Microsoft Azure Architect Technologies Certificate in 20 hours Part 1/2</a>
 Part 2
 
-<a target="_blank" href="https://www.youtube.com/watch?v=NEbG6bEaUDo">
-Microsoft Azure Solution Architect Certification [AZ-303|304]: Everything You Need To Know
-Azure Cloud with K21Academy</a>
+K21Academy:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=NEbG6bEaUDo">Microsoft Azure Solution Architect Certification [AZ-303|304]: Everything You Need To Know</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=O_u2oPuZ8Mw">Azure Full Course | Learn Microsoft Azure in 3 hours</a>
+   <br /><br />
 
 <a target="_blank" href="https://www.youtube.com/watch?v=wP9KWa0rOQk">
 How I cleared Microsoft AZ 303 in just three weeks!</a>

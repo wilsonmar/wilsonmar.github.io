@@ -312,7 +312,7 @@ PROTIP: It makes more sense to look at a live example populated with several res
 
    ### Azure Active Directory (AAD)
 
-   When someone signs up for a Microsoft cloud service subscription (such as Microsoft Azure, Office 365, Microsoft Intune, etc.), a dedicated instance of <strong>Azure AD (Active Directory)</strong> is created. 
+   When someone signs up for a Microsoft cloud service subscription (such as Microsoft Azure, Office 365, Microsoft Intune, etc.), a dedicated instance of <strong>Azure AD (Active Directory)</strong> is created automatically. 
 
    READ: <a target="_blank" href="https://microsoftlearning.github.io/AZ-900T0x-MicrosoftAzureFundamentals/Instructions/Walkthroughs/19-Use%20the%20Azure%20Pricing%20Calculator.html"><img width="20" alt="pricing" src="https://code.benco.io/icon-collection/azure-patterns/calculator-pricing-details.svg"></a> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/active-directory/">Azure Active Directory pricing</a>. 
 
@@ -592,7 +592,7 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/115131861-7e7f4180-9fb8-11eb-94f2-bbc1cb3d498b.png">
    <img width="709" alt="az-onboard-shell-storage-1418x328" src="https://user-images.githubusercontent.com/300046/115131861-7e7f4180-9fb8-11eb-94f2-bbc1cb3d498b.png"></a>
 
-1. For "Cloud Shell region", select your favorite location, such as "West US 2".
+1. For "Cloud Shell region", select your favorite location, such as "West US".
 1. For "Resource group", type "_shell_westus2".
 1. For "Storage account", type "_shell_westus2"
    
@@ -613,7 +613,7 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 0. At <a target="_blank" href="https://portal.azure.com/">
    https://portal.azure.com</a>
 
-0. Click the "wheel" icon for Portal Settings:
+0. Click the "wheel" icon at the top for Portal Settings:
    
 0. PROTIP: If you wear glasses on video calls, reduce glare by clicking "Black" for the dark theme. You may not like the putrid yellow font associated with High Contrast:
 
@@ -1706,11 +1706,15 @@ https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/cancel-azu
 
 https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/directory-delete-howto
 
+
 ## Topics
 
 The fictional company for use in examples, <a target="_blank" href="https://github.com/microsoft/TailwindTraders/tree/master/Documents/DemoScripts/Integrating%20Azure%20DevOps%2C%20Microsoft%20Teams%20and%20GitHub">Tailwind Traders</a>
 
+
 ## Azure Futures Roadmap
+
+PROTIP: The minimum prior notification will Microsoft give before ending support for products governed by the Modern Lifecycle Policy is 12 months.
 
 * <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/WhatsNewBlade">"What's New" page on Azure Portal</a>
 
@@ -1720,21 +1724,22 @@ The fictional company for use in examples, <a target="_blank" href="https://gith
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=9RtzSIrRijg&list=RDCMUCp8lLM2JP_1pv6E0NQ38pqw&index=1">Azure This Week</a> by Lars Klint and <a target="_blank" href="https://www.youtube.com/channel/UCbjgKwnWnGG7sKCPTRgrFcw" title="Gwyn Pena-Siguenza">GPS</a> at <a target="_blank" href="https://www.acloudguru.com/">ACloudGuru.com</a>.
 
-### Public Preview
 
-When an Azure service feature is in public preview, it means the feature is available for all Azure customers for beta testing.
+### Product Feature
+
+"Public preview" means the feature is available for all Azure customers for beta testing.
+
+GA (General Availability) means
 
 
 ## References
 
 https://olohmann.github.io/azure-hands-on-labs/labs/07_iac/iac.html
 
-The minimum prior notification will Microsoft give before ending support for products governed by the Modern Lifecycle Policy is 12 months.
-
 https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/how-to-connect-fed-azure-adfs
 ADFS (Azure Directory Federated Services)
 
-Window 
+https://azurelessons.com/
 
 
 ## More on DevOps #

@@ -3337,6 +3337,8 @@ References:
 
    * <a target="_blank" href="https://www.whizlabs.com/learn/course/deploying-microservices-to-kubernetes-using-azure-devops/">Whizlabs: Deploying Microservices to Kubernetes using Azure DevOps</a> [06:43:32]
 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=7E-qafxx6ic&list=RDCMUC0m-80FnNY2Qb7obvTL_2fA&start_radio=1" title="Apr 14, 2021 by Bill Maxwell of Suse Rancher">How to enable consistent Azure Kubernetes operations everywhere</a> using Azure Arc.
+
 
 <a name="MS-Draft"></a>
 
@@ -5927,6 +5929,13 @@ GKE provides several <strong>Predefined roles</strong> to provide granular acces
 4. <a target="_blank" href="https://www.coursera.org/learn/deploying-secure-kubernetes-containers-in-production">Architecting with Google Kubernetes Engine: Production</a>
 
 
+## Autoscaler
+
+https://github.com/kubernetes/community/blob/master/contributors/design-proposals/autoscaling/horizontal-pod-autoscaler.md
+
+https://www.tutorialspoint.com/kubernetes/kubernetes_replica_sets.htm
+
+
 ## References
 
 K8s failure stories at <a target="_blank" href="https://k8s.af/">k8s.af</a>
@@ -5940,6 +5949,15 @@ Fairwinds also has open-source tools at <a target="_blank" href="https://github.
    * gemini to automate backups of PersistentVolumeClaims in Kubernetes using VolumeSnapshots
    * ClusterOps 
    * https://github.com/FairwindsOps/k8s-workshop
+   <br /><br />
+
+k8s-school.fr:
+   * https://k8s-school.fr/resources/en/blog/kubectl-run-deprecated/
+
+LevelUpEducation:
+   * https://github.com/LevelUpEducation/kubernetes-demo/issues/31
+
+https://www.tutorialspoint.com/kubernetes/kubernetes_replica_sets.htm
 
 ## More on DevOps #
 

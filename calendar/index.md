@@ -136,6 +136,8 @@ this article</a>.
 <a target="_blank" href="http://www.businessinsider.com/different-chronotypes-have-separate-dna-sleep-cycle-circadian-rhythm-genes-2015-9">
 NOTE</a>: Each individual has a propensity to sleep and wake at particular times during a 24 hour period. Whether you are a "morning" or "evening person" is called your "chronotype", which is biologically set in each person's unique DNA.
 
+<img width="1150" alt="calendar-chronotype-2300x660" src="https://user-images.githubusercontent.com/300046/115262953-3c5a1b00-a0f2-11eb-9fd0-d37555c31601.png">
+
 There is wide variation among various famous creatives when each go about various aspects of their lives, <a target="_blank" href="https://podio.com/site/creative-routines">
 visualized by this</a>, based on the 
 <a target="_blank" href="http://masoncurrey.com/Daily-Rituals/">
