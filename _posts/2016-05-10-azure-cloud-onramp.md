@@ -310,6 +310,7 @@ PROTIP: It makes more sense to look at a live example populated with several res
 
    Azure provide access to more than 25 products that are always free. 
 
+
    ### Azure Active Directory (AAD)
 
    When someone signs up for a Microsoft cloud service subscription (such as Microsoft Azure, Office 365, Microsoft Intune, etc.), a dedicated instance of <strong>Azure AD (Active Directory)</strong> is created automatically. 
@@ -412,6 +413,8 @@ PROTIP: It makes more sense to look at a live example populated with several res
    PROTIP: Use address with a zip code that's not associated with your home address, and used only for banking.
 
    Multiple subscriptions can be created under a single Azure account (Dev, Test, Staging, Production, Logging,  Demo, Training, DR, etc.). This is particularly useful for businesses because:
+
+   DEFINITION: A Subscription is your "bank account" / credit card.
 
    PROTIP: access control and billing occur at the subscription level, not the account level.
 
@@ -516,6 +519,9 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
 
    ### Support Plans
+
+   <a target="_blank" href="https://portal.azure.com/#create/Microsoft.Support">
+   https://portal.azure.com/#create/Microsoft.Support</a>
 
    * Standard (Basic) free for Prod. use
    * Developer $29/mo. for non-prod. use
