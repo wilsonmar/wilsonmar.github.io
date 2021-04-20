@@ -99,13 +99,16 @@ Discovery,
 
 ## Why Kubernetes?
 
-With Kubernetes, <strong>dev teams</strong> can take complete control of production operations in cloud environments 
--- deploy both application code and all the environment settings, at their own cadence, without ceremonies and wait time to coordinate releases.
+<a target="_blank" href="https://www.youtube.com/watch?v=q1PcAawa4Bg&list=PLLasX02E8BPCrIhFrc_ZiINhbRkYMKdPT">VIDEO:
+How Kubernetes Works</a> explained by <a target="_blank" href="https://www.linkedin.com/in/brendan-burns-487aa590/">
+Brendan Burns</a> (K8s co-founder)
+
+Technologies aside, with Kubernetes, <strong>dev teams</strong> can take complete control of production operations in cloud environments -- deploy both application code and all the environment settings, at their own cadence, without ceremonies and wait time to coordinate releases. Freedom is why it contributes to corporate agility and faster time to market.
 
 Kubernetes applies principles of the <a target="_blank" href="https://www.reactivemanifesto.org/">Reactive Manifesto</a> of 2014:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"><img width="546" alt="reactive-manifesto" src="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"></a>
 
-Kubernetes is called "container orchestration" software because it automates the deployment, scaling and management of containerized applications<a target="_blank" href="https://en.wikipedia.org/wiki/Kubernetes">[Wikipedia]</a>. 
+Kubernetes is called "container orchestration" software because it automates the deployment, scaling, and management of containerized applications<a target="_blank" href="https://en.wikipedia.org/wiki/Kubernetes">[Wikipedia]</a>. 
 
 * Authentication -> Authorization -> <a href="#Admission">Admission Control</a>
 * Load balancing
@@ -5931,9 +5934,10 @@ GKE provides several <strong>Predefined roles</strong> to provide granular acces
 
 ## Autoscaler
 
-https://github.com/kubernetes/community/blob/master/contributors/design-proposals/autoscaling/horizontal-pod-autoscaler.md
-
-https://www.tutorialspoint.com/kubernetes/kubernetes_replica_sets.htm
+* https://github.com/kubernetes/kubernetes/blob/release-1.0/docs/proposals/autoscaling.md now obsolete
+* https://github.com/kubernetes/community/blob/master/contributors/design-proposals/autoscaling/horizontal-pod-autoscaler.md
+* https://www.tutorialspoint.com/kubernetes/kubernetes_replica_sets.htm
+* resize the amount of CPU/RAM for a specific Pod or Container. https://github.com/kubernetes/kubernetes/issues/2072
 
 
 ## References

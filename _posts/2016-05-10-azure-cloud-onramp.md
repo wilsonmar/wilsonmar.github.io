@@ -306,7 +306,7 @@ PROTIP: It makes more sense to look at a live example populated with several res
 
    In you're in an enterprise company, get an email adddress from a corporate assets administrator. A different (service) account is often created for each department of responsibility.
 
-   PROTIP: In the name include the month and year in the account name (such as johndoe1901@hotmail.com) for 2019-01 (January). Many <strong>create several email accounts</strong> because each Azure subscription includes a $200 credit to spend on any service for the <strong>first 30 days</strong>, free access to the most popular Azure products for 12 months. 
+   PROTIP: In the name include the month and year in the account name (such as johndoe1901@hotmail.com) for 2019-01 (January). Many <strong>create several email accounts</strong> because each Azure subscription includes a $200 credit to spend on any service for the <strong>first 30 days</strong>, free access to <a target="_blank" href="https://azure.microsoft.com/en-us/free/free-account-faq/">Azure products for 12 months</a>. 
 
    Azure provide access to more than 25 products that are always free. 
 
@@ -518,21 +518,23 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
 
 
-   ### Support Plans
-
-   <a target="_blank" href="https://portal.azure.com/#create/Microsoft.Support">
-   https://portal.azure.com/#create/Microsoft.Support</a>
-
-   * Standard (Basic) free for Prod. use
-   * Developer $29/mo. for non-prod. use
-   * Professional Direct $1000/mo for "Business Critical" when you file a business-critical issue with technical support, the earliest you can expect a response from technical support? Within 1 hour
-   * Premier for "substantial dependence" with a TAM (Technical Account Manager).
+   ### Support Plans (with Pricing)
 
    <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=672143e9-2e2c-49d6-b5f4-6558d88f66e1">VIDEO "Microsoft Azure Pricing and Support Options"</a>
 
+   Submit a support ticket at: <a target="_blank" href="https://portal.azure.com/#create/Microsoft.Support">https://portal.azure.com/#create/Microsoft.Support</a> (email support@microsoftsupport.com)
+
+   * Basic: Billing and Subscription support only
+   * Developer <strong>$29/mo.</strong> for support of non-prod. usage
+   * Standard (Basic) for non-Prod. env.
+   * Professional Direct <strong>$1000/mo.</strong> for "Business Critical" when you file a business-critical issue with technical support, the earliest you can expect a response from technical support? Within 1 hour
+   * Premier for "substantial dependence" with a TAM (Technical Account Manager).
+
+
+   Getting 403 ActiveDirectoryMenuBlade accessing AAD on Portal
+
 0. Right-click on the "Help + Support" box on the Dashboard and select "unpin"
    becuase you now know you can reach it (in two places).
-
 
 
    ### Box
@@ -1704,6 +1706,13 @@ Policy Definition options:
    <br /><br />
 
 
+## ASG (Application Security Group)
+
+ASGs are wrapped by a NSG (Network Security Group) which route traffic.
+   * Admins can RDP.
+   * Users cannot RDP.
+
+
 ## Delete Subscription, Directory, Tenant
 
 <pre><strong>az group delete --name $MY_RG</strong></pre>
@@ -1733,9 +1742,9 @@ PROTIP: The minimum prior notification will Microsoft give before ending support
 
 ### Product Feature
 
-"Public preview" means the feature is available for all Azure customers for beta testing.
+   "Public preview" means the feature is available for all Azure customers for beta testing.
 
-GA (General Availability) means
+   GA (General Availability) means
 
 
 ## References
