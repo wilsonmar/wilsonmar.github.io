@@ -41,9 +41,6 @@ For better performance, Tailwind removes unused CSS using PurgeCSS, which can be
 
 US Government has the U.S. Web Design System (USWDS) at <a target="_blank" href="https://designsystem.digital.gov/">designsystem.digital.gov</a> (Slack channel <a target="_blank" href="https://chat.18f.gov/">chat.18f.gov</a>)
 
-McKinsey (<a target="_blank" href="https://twitter.com/mckinseydesign?lang=en">@MckinseyDesign</a>)
-https://master.dy3kg4d0la9fi.amplifyapp.com/
-
 Salesforce has their Salesforce Lightning Design System (SLDS) at <a target="_blank" href="https://www.lightningdesignsystem.com/">lightningdesignsystem.com</a>
 
 SAP Fiori at <a target="_blank" href="https://experience.sap.com/fiori-design/">experience.sap.com/fiori-design</a> announced in 2015.

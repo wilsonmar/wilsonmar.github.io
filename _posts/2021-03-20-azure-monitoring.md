@@ -540,11 +540,11 @@ Log alerts can come from any Azure resource:
 
    There is currently no way to disable application logging by using Azure CLI commands; however, the following command resets file system logging to error-level only.
 
-   az webapp log config --application-logging false --name <app-name> --resource-group <resource-group-name>
+   az webapp log config --application-logging false --name &LT;app-name> --resource-group
 
    To view the current logging status for an app, use this command.
 
-   az webapp log show --name <app-name> --resource-group <resource-group-name>
+   az webapp log show --name &LT;app-name> --resource-group &LT;resource-group-name>
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/capture-application-logs-app-service/3-enable-and-configure-app-service-application-logging-using-the-azure-portal">
 HANDS-ON LAB: Enable and Configure App Service Application Logging using the Azure Portal</a>
@@ -766,7 +766,7 @@ Host recommendations: Every VM includes vulnerability assessment from Qualys.
    * Threat detection
    <br /><br />
 
-   Each can be exempted.
+   Each can be exempted. 
 
 
    ### Install agent
@@ -837,11 +837,6 @@ To protect containers in AKS:
 <a target="_blank" href="https://feedback.azure.com/forums/347535-azure-security-center">Feature suggestion</a>, 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/security-center/security-center-intro">documentation</a>, 
 <a target="_blank" href="https://docs.microsoft.com/en-us/rest/api/securitycenter/">API documentation</a>
-
-resource-group-name>
-
-Microsoft CxE (Compliance and E): Protect, Detect, Defend
-"Security Center" book by Yuri Ds???
 
 References:
 
@@ -1055,6 +1050,12 @@ https://k6.io/blog/k6-as-alternative-for-azure-and-visual-studio-load-tests/
 
 
 ## References
+
+HIGHLY RECOMMENDED: <a target="_blank" href="https://techcommunity.microsoft.com/t5/azure-security-center/become-an-azure-security-center-ninja/ba-p/1608761">LAB: Become an Azure Security Center Ninja</a>
+by <a target="_blank" href="https://www.linkedin.com/in/yuridiogenes/">Yuri Diogenes</a>,
+Principal Program Manager at C+AI Security CxE Team at Microsoft
+   * Microsoft CxE (Compliance and E): Protect, Detect, Defend
+   <br /><br />
 
 https://docs.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/service-health-and-continuity
 

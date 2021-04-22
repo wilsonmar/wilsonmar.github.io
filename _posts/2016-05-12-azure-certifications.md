@@ -64,10 +64,10 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
    </td></tr>
 <tr valign="top"><td> Security Engineer
    </td><td>* <a href="#SC-900">SC-900 Security, Compliance, and Identity Fundamentals</a><br />
-    * SC-200 Security Operations Analyst Associate<br />
-    * SC-300 Identity and Access Administrator Associate<br />
-    * SC-400 Information Protection Administrator<br />
-    * <a href="#AZ-500">AZ-500 Azure Security Engineer Associate</a>
+    * <a href="#SC-200">SC-200 Security Operations Analyst Associate</a><br />
+    * <a href="#SC-300">SC-300 Identity and Access Administrator Associate</a><br />
+    * <a href="#SC-400">SC-400 Information Protection Administrator</a><br />
+    * <a href="#SC-500">AZ-500 Azure Security Engineer Associate</a></a>
 
    </td></tr>
 </table>
@@ -433,6 +433,30 @@ will be updated March 23, 2021
 
 
 <a name="AZ-500"></a>
+
+## Azure Security certifications
+
+https://techcommunity.microsoft.com/t5/security-compliance-identity/security-community-webinars/ba-p/927888
+
+https://techcommunity.microsoft.com/t5/security-compliance-identity/security-community-webinars/ba-p/927888
+
+
+<a name="SC-200"></a>
+
+https://docs.microsoft.com/en-us/learn/certifications/exams/sc-200
+
+<a name="SC-300"></a>
+
+https://docs.microsoft.com/en-us/learn/certifications/exams/sc-300
+
+<a name="SC-400"></a>
+
+https://docs.microsoft.com/en-us/learn/certifications/exams/sc-300
+
+<a name="SC-500"></a>
+
+https://docs.microsoft.com/en-us/learn/certifications/exams/sc-500
+
 
 ## AZ-500 Security certifications
 
