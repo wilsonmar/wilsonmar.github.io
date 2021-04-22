@@ -20,7 +20,7 @@ comments: true
 Several Azure services are related to all the monitoring happening within Azure:
    * <a href="#Monitor">Azure Monitor</a>
    * <a href="#Log_Analytics">Log Analytics</a> <a href="#LA_Workspaces">Workspaces</a>
-   * <a href="#Security_Center">Azure Security Center</a>
+   * <a href="#Security_Center">Azure Defender = Azure Security Center</a>
    * <a href="#AppInsights">Azure Application Insights</a>
    * <a href="#Event_Hubs">Azure Event Hubs</a>
    * <a href="#Defender">Microsoft Defender</a>
@@ -58,6 +58,8 @@ Issues to monitor for:
 <a name="Monitor"></a>
 
 ## Azure Monitor
+
+https://docs.microsoft.com/en-us/azure/azure-monitor/overview
 
 1. Click on "Monitor" menu item among FAVORITES by default.
 
@@ -247,6 +249,8 @@ HANDS-ON Exercise in Sandbox - Create basic Azure Monitor log queries to extract
    Application Insights Dashboard
 
    SDK analyzes your app for a typology, to identify connection to resources.
+
+   Tracks availability of app
 
 
 
@@ -736,7 +740,6 @@ Use tags to organize your Azure resources
 https://www.youtube.com/watch?v=Zr7LcSr6Ooo
 What to use for monitoring your applications in Azure | Azure Friday
 
-
 https://myownpicloud.wordpress.com/2021/02/23/monitor-aks-infrastructure-using-prometheus-and-grafana/
 
 
@@ -745,16 +748,16 @@ https://myownpicloud.wordpress.com/2021/02/23/monitor-aks-infrastructure-using-p
 
 <a name="Security_Center"></a>
 
-### Security Center
+## Azure Defender (previously Azure Security Center)
 
-<a target="_blank" href="https://learning.oreilly.com/videos/new-microsoft-az-303/10009AZ303/10009AZ303-AZ303_130">VIDEO</a> 
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/security-center/"><strong>Azure Security Center</strong></a> is a <strong>CSPM</strong> (Cloud Security Posture Management) solution. It lists prioritized security alerts and recommendations for attack investigation and remediation. It summarizes a tenant's security posture with a "Secure Score" s based on the percentage of recommendations implemented.
+
+DEFINITION: "Security posture" refers to cybersecurity policies and controls, as well as how well you can predict, prevent, and respond to security threats.
+
+<a target="_blank" href="https://learning.oreilly.com/videos/new-microsoft-az-303/10009AZ303/10009AZ303-AZ303_130">VIDEO DEMO</a> 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/protect-against-security-threats-azure/2-protect-threats-security-center">LEARN</a>
 
-DEFINITION: "Security posture" refers to cybersecurity policies and controls, as well as how well you can predict, prevent, and respond to security threats. "Secure Score" summarizes that posture based on percent of recommendations implementated.
-
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/security-center/"><strong>Azure Security Center</strong></a> lists prioritized security alerts and recommendations for attack investigation and remediation.
-
-Host recommendations:
+Host recommendations: Every VM includes vulnerability assessment from Qualys.
    * OS security settings configuration rules
    * System security & critical updates missing
    * Endpoint protection recommendations
@@ -766,7 +769,9 @@ Host recommendations:
    Each can be exempted.
 
 
-Security Center automatically collects, analyzes, and integrates log data from Azure resources; the network; and connected partner solutions, like firewall and endpoint protection solutions, to detect real threats and reduce false positives. 
+   ### Install agent
+
+   From the network; and connected partner solutions, like firewall and endpoint protection solutions, Security Center automatically collects, analyzes, and integrates log data from Azure resources to detect real threats and reduce false positives. 
 
 1. Click "Getting Started" menu. Click "Install agent" for data collection on VMs.
 1. Click "Install agents" button to install on all VMs.
@@ -794,13 +799,49 @@ Security Center automatically collects, analyzes, and integrates log data from A
 
    Security Center "Adaptive network hardening" are recommendations about how NSGs should be locked down with remediation steps.
 
-See https://github.com/ned1313/Monitor-Security-with-Azure-Security-Center
+   Adaptive application controls which applications uses machine learning to alert about unauthorized applications that are running on its VMs, by creating exception rules for each resource group that holds the VMs.
 
+   See code at https://github.com/ned1313/Monitor-Security-with-Azure-Security-Center
 
-"Just-in-time access control" for network ports reduces the attack surface by opening network traffic to VMs only during time of need.
+### CWPP
 
-Adaptive application controls which applications are allowed to run on VMs. It uses machine learning to alert about unauthorized applications that are running on its VMs, by creating  exception rules for each resource group that holds the VMs.
+<a target="_blank" href="https://azure.microsoft.com/en-us/resources/videos/protect-your-cloud-workload-from-threats-using-azure-security-center">INTRO VIDEO</a> at Ignite 2019 by Yinon Costica (@c0stica), Director PM, Cloud Security Group.
 
+Several 3rd-party vendors provide <strong>CSPM</strong> (Cloud Security Posture Management) with recommendations 
+   * https://securityboulevard.com/2021/01/a-quick-look-into-cloud-workload-protection-platforms-cwpp/
+   * https://start.paloaltonetworks.com/gartner-market-guide-cwpp.html
+   * https://www.zscaler.com/resources/security-terms-glossary/what-is-gartner-cwpp
+   * https://blog.aquasec.com/gartner-cloud-workload-protection-platforms
+   * https://www.cloudvisory.com/cspm-cwpp-solution.html
+   * https://www.optiv.com/cybersecurity-dictionary/cwpp-cloud-workload-protection-platform
+   * https://www.mcafee.com/enterprise/en-us/security-awareness/cloud/what-is-a-cwpp.html
+   <br /><br />
+
+### CWPP
+
+<strong>CWPP</strong> (Cloud Workload Protection Platform) 
+aims to block the "Kill Chain" - see <a target="_blank" href="https://wilsonmar.github.com/cyber-security#Threats">my notes on Kill Chain</a>.
+
+![az-mon-threats-1015x426](https://user-images.githubusercontent.com/300046/115615283-019be280-a2ac-11eb-8a76-0e20a28abbc6.png)
+
+PROTIP: Don't set permissons for Local Admin on a laptop.
+
+To protect containers in AKS:
+
+![az-protect-container-mining-1786x847](https://user-images.githubusercontent.com/300046/115632168-66633700-a2c4-11eb-8803-32217c285cf9.png)
+
+### Security Center social
+
+<a target="_blank" href="https://techcommunity.microsoft.com/t5/azure-security-center/bd-p/AzureSecurityCenter">user Forum</a>, 
+<a target="_blank" href="https://techcommunity.microsoft.com/t5/Azure-Security-Center/bg-p/AzureSecurityCenterBlog">Blog</a>, 
+<a target="_blank" href="https://feedback.azure.com/forums/347535-azure-security-center">Feature suggestion</a>, 
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/security-center/security-center-intro">documentation</a>, 
+<a target="_blank" href="https://docs.microsoft.com/en-us/rest/api/securitycenter/">API documentation</a>
+
+resource-group-name>
+
+Microsoft CxE (Compliance and E): Protect, Detect, Defend
+"Security Center" book by Yuri Ds???
 
 References:
 
@@ -816,6 +857,23 @@ References:
    * https://docs.microsoft.com/en-us/azure/logic-apps/quickstart-create-first-logic-app-workflow
    Quickstart - Create your first Logic Apps workflow - Azure portal - Azure Logic AppsBuild your first automated Logic Apps workflow in the Azure portal using this quickstart guide. Learn the basics of system integration and enterprise application integration (EAI) solutions in Logi...docs.microsoft.com​[12:>"X?51 PM] Ken Lawson
     
+
+<a name="JIT"></a>
+
+## Just-In-Time VM access 
+
+   <a target="_blank" href="https://azure.microsoft.com/en-us/resources/videos/ignite-2019/manage-your-cloud-security-posture-and-monitor-compliance-with-azure-security-center/">VIDEO</a>:
+
+To reduce the attack surface, protect network ports by opening network traffic to VMs only during time of need:
+
+1. In Security Center, Configured tab, click the checkbox for a Virtual machine; 
+1. Click "Request access" button.
+1. Toggle On/Off and select amount in Time range to allow.
+
+   <img width="858" alt="az-req-net-jit-1716x414" src="https://user-images.githubusercontent.com/300046/115629503-b2f84380-a2bf-11eb-870f-1843f4834ade.png">
+
+
+<hr />
 
 <a name="Azure_Sentinel"></a>
 
@@ -1005,6 +1063,9 @@ LEARN: Design a holistic monitoring strategy on Azure</a>
 
 
 ## Social
+
+https://github.com/Azure/Azure-Security-Center
+by Azure's largest customers contains best practices and tools 
 
 
 ## More on Azure #

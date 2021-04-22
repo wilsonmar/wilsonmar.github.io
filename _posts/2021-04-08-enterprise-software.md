@@ -17,9 +17,9 @@ comments: true
 {% include _toc.html %}
 
 
-Consultants and employees who work for enterprises and those who cater to them typically earn more than at other companies which can't afford premium prices.
+Consultants and employees who work for enterprises and those who cater to them typically earn more than at smaller companies.
 
-To successfully cater to enterprises, software needs to incorporate features needed to address their needs. A salesperson at a well-known developer tools software company once actually said in a meeting (unconvincingly):
+But to successfully cater to enterprises, software vendors must incorporate features needed to address enterprise needs. A salesperson at a well-known developer tools software company once actually said in a meeting (unconvincingly):
 
 > "We're enterprise software because we have enterprise users"
 
@@ -27,11 +27,13 @@ The rebuff was: "I think this software will actually be an enterprise offering w
 
 Here are the <strong>concerns</strong> addressed by those requests:
 
-## 1. Automation for large numbers of people and objects
+## 1. Automation for large numbers of people and data
 
-   The top 500 publicly-traded stocks in the US are listed (by price times shares traded) by Standard and Poors in their "S&P 500 index". There is also a Russell index of the top 3000 stocks. There are also many large privately-held corporations. The largest employer in the world is <a target="_blank" href="https://www.wikiwand.com/en/List_of_largest_employers">U.S. Department of Defense at 3.2 people, and Walmart at 2.2 million (1.3 million in the United States), about the same as Amazon</a>.
+   The top 500 publicly-traded stocks in the US are listed (by price times shares traded) by Standard and Poors in their "S&P 500 index". There is also a Russell index of the top 3000 stocks. There are also many large privately-held corporations. But financial indexes are not the only definition of enterprise.
 
-   That scale means enterprise workers get value from <strong>batch</strong> (bulk) export, import, and processing. 
+   At the top of the <a target="_blank" href="https://www.wikiwand.com/en/List_of_largest_employers">list of the largest employers in the world</a> is U.S. Department of Defense at 3.2 million people, followed by China's military, then Walmart at 2.2 million (1.3 million in the United States), about the same as Amazon.
+
+   Sheer <strong>scale</strong> means enterprise workers get value from <strong>batch</strong> (bulk) export, import, and processing. 
 
    To keep support costs down, <strong>self-service</strong> apps are a big deal.
    
@@ -66,14 +68,13 @@ Here are the <strong>concerns</strong> addressed by those requests:
 
    For example, GitHub provides users a rich API to retrieve data set of data from GraphQL APIs. 
 
-   However, enterprise GitHub users need to create their own reports and visualizations over time:
+   However, enterprise users and managers need to create their own reports and visualizations over time:
 
    * Total number of users over time and number added each period over time
    * Ratio of users enrolled vs. those who made commits
    * Retention ratios
    * etc.
    <br /><br />
-
 
 ## 4. Global scale
 
@@ -91,50 +92,19 @@ Here are the <strong>concerns</strong> addressed by those requests:
 
    The formation of a CPPT (Continuity Planning Project Team) and setup of a EOC (Emergency Operations Center) are defined by ISO 27001 Section 14, ISO 27002, <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-34r1.pdf">NIST 800-34</a>, NFPA 1600 & 1620, HIPPA. These specify that enterprises have written DRP (Disaster Recovery Procedures) for emergency triage and management of information technology based on normal Business Management Procedures. DRP is the technical extension of longer-term strategic Risk Assessments and Business Continuity Plan (BCP) for the business as a whole -- to ensure immediate survivability.
 
-## 5. Automation
-
-   Systems which are not setup for instant recovery nevertheless need to "fail safe" to a secure state rather than to a hackable state.
-
-   Complying with some standards require that redundant capabilities to be proven dependable,  regularly -- such as every year, when the RTA (Recovery Time Actual) statistic is captured. That's to identify whether the organization takes too long to activate restore or is too clumsy with restore procedures. 
-
-   Sharing cloud-scale computing, storage, and network facilities in Azure has enabled enterprises to economically use the "blue/green" deployment strategy, which duplicates a complete set of production components for "canary" and capacity testing.
-
-   Quick response requires automation for building and testing. Each server needs to be individually added or removed automatically within a "cluster" (within Kubernetes). That requires IaC (Infrastructure as Code such as Terraform) which defines all the components (compute, storage, and networking) in version-controled text files. 
-
-## 6. Testing
+## 5. Failure is not an option
 
    Enterprise developers, especially, need tools to efficiently wade though massive amounts of data and complex code, while they are working on them (rather than days or weeks after they have moved on to other issues).
 
-   For example, Microsoft's Visual Studio (not the free Visual Studio Code, the client IDE) has an <a target="_blank" href="https://visualstudio.microsoft.com/vs/compare/">Enterprise level subscription which provides</a>:
+   Systems which are not setup for instant recovery nevertheless need to "fail safe" to a secure state rather than to a hackable state.
 
-   * Live Dependency Validation
-   * Architectural Layer Diagrams
-   * Architectural Validation
-   <br /><br />
+   Complying with some standards require that redundant capabilities to be proven dependable, regularly -- such as every year, when the RTA (Recovery Time Actual) statistic is captured. That's to identify whether the organization takes too long to activate restore or is too clumsy with restore procedures. 
 
-   Advanced Debugging and Diagnostics:
-   * IntelliTrace
-   * Code Clone
-   * Code Map Debugger Integration
-   * .NET Memory Dump Analysis
-   * Snapshot Debugger
-   * Time Travel Debugging (Preview)
-   <br /><br />
-   
-   Testing:
-   * IntelliTest
-   * Live Unit Testing
-   * Microsoft Fakes (Unit Test Isolation)
-   * Code Coverage
-   <br /><br />
+   Sharing "cloud-scale" computing, storage, and network facilities in clouds enable use of the <a target="_blank" href="https://harness.io/blog/continuous-verification/blue-green-canary-deployment-strategies/">blue/green" strategy for deployment</a>, which duplicates a complete replacement set of components for "canary" and capacity testing before a full switch to production.
 
-   Cross-platform:
-   * Embedded Assemblies
-   * Xamarin Inspector, Profiler   
-   <br /><br />
+   Quick response requires automation for building and testing. Each server needs to be individually added or removed automatically within a "cluster" (within Kubernetes). That requires IaC (Infrastructure as Code such as Terraform) which defines all the components (compute, storage, and networking) in version-controled text files. 
 
-
-## 7. Central yet distributed planning and approvals
+## 6. Central yet distributed planning and approvals
 
    Managers in enterprises desire to be able to centrally define policies (what is allowed or denied) distributed automatically to control everything. Software vendors are enabling a fundamental shift in governance where policy enforcement decisions occur instantly in automated pipelines rather than by manual inspections and meetings holding up progress.
 
@@ -144,22 +114,22 @@ Here are the <strong>concerns</strong> addressed by those requests:
 
    The other reason for a shortage of enterprise specialists is entrenchment of "separation of duties" and "least privilege" principles. Very few are able to cross fiefdoms to build the multi-tool and multi-disciplinary skills needed today. 
 
-   To achieve competitive speed, many HR, marketing, and other "user" departments have gone outside on-premise data centers by running "Shadow IT" operations using enterprise software such as Salesforce, AWS, Microsoft, GCP, and others. Enlightened enterprise software vendors provide a way to get licenses using a personal credit card because it is sometimes necessary to bridge the gap to ultimately enables bottom-up achievement of enterprise agility objectives.
+   To achieve competitive speed, many HR, marketing, and other "user" departments need to go outside on-premise data centers by running "Shadow IT" operations using enterprise software such as Salesforce, AWS, Microsoft, GCP, and others. Enlightened enterprise software vendors provide a way to get licenses using a personal credit card because it is sometimes necessary to bridge the gap to ultimately enables bottom-up achievement of enterprise agility objectives.
 
-   The good news today is that individuals and small businesses can now use the same core cloud infrastructure (at AWS, Azure, GCP, etc.). However, many software companies make the bulk of their profit on additional-charge enterprise level subscriptions. Such features are available free for a temporary amount of time.
+   The good news today is that individuals and small businesses can now use the same core cloud infrastructure (at AWS, Azure, GCP, etc.). However, many software companies make the bulk of their profit on additional-charge enterprise level subscriptions. Such features are usually not free, even for a temporary amount of time.
 
    Vendor flexibility is especially important if competitors have similar features. Being able to run competing products in parallel in near production mode is often the only effective way to truely evaluate actual value between similar products. BTW, this is why it is often counter-productive for vendors to artifically limit evaluation periods to a mere two weeks. Many such vendors are eliminated prematurely because evaluation periods are usually much longer due to organizational complexities.
 
 
-## 8. High Security
+## 7. High Security
 
    Because enterprises are tempting targets, defensive security is important. So every piece of software and every service needs vetting -- a thankless, tedious endeavor. So many use specialist consultants and whistic.com, which pool security questionaires and answers to reduce duplicate work.
 
    When working with cloud vendors, many enterprises prefer to generate their own <strong>customer-owned keys</strong> for encryption of data at rest instead of having cloud vendors provide the keys.
 
-   Many enterprises specify encryption of all data on hard drives. On Windows, BitLocker is used. On Linux, PGP and TruCrypt are options.
+   Many enterprises specify encryption of all data on hard drives. On Windows, BitLocker is used. On Linux, MCrypt, PGP, TruCrypt, and others are options.
 
-   Enterprises usually provide their users VPN (Virtual Private Network) to create an encrypted tunnel through the public internet. Enterprise editions of the Windows 10 operating system enables "DirectConnect" which ensures use of a VPN all the time when away from the office. It also blocks the Microsoft Store app and its installation of apps from that store.
+   Enterprises usually provide their users VPN (Virtual Private Network) to create an encryption-protected tunnel through the public internet. Enterprise editions of the Windows 10 operating system enables "DirectConnect" which ensures use of a VPN all the time. It also blocks apps from being installed.
 
    Some enterprises want Long-Term Servicing Channel (LTSC) where new features are not updated, just security updates. This is partly to maintain <strong>consistency</strong> of training and support materials used.
 
@@ -172,8 +142,10 @@ Here are the <strong>concerns</strong> addressed by those requests:
    * Identify vulnerabilities iteratively within packages referenced (using XRay, Sonatype, etc.)
    <br /><br />
 
+   Data to track the Security Posture of the whole Enterprises means obtaining "metadata" (data about data), stored in systems such as Service Now. This is so security managers can associate user activities to specific charge codes and approval events. This means that software vendors need to accomodate an additional overlay of manual procedures (from other vendors) into every workflow. For example, in GitHub, when someone creates a new repository, since GitHub doesn't track charge codes, Enterprise Security may want the user to exit out temporarily to another system to specify that charge code or request permission associated with the request.
 
-## 9. Round-the-clock SOC using SIEM
+
+## 8. Round-the-clock SOC using SIEM
 
    Enterprises have a SOC (Security Operations Center) which operates 24/7.
 
@@ -183,7 +155,7 @@ Here are the <strong>concerns</strong> addressed by those requests:
 
    Logs, especially are also used by external auditors to determine actual compliance with policies. Those with access to SIEM data can elicit actual, detailed, real-time insights on inflows and outflows between different parts of the organization and systems -- a magical tool to identify bottlenecks and predict trends. We look forward to 3D dynamic projections in Mixed reality glasses from Microsoft, Apple, Facebook, etc. 
 
-## 10. High Availability to recover from disasters
+## 9. High Availability to recover from disasters
 
    Enterprise licensing typically involves providing High Availability (HA) features, which means running simultaneously in <strong>multiple locations</strong>. Such operations require real-time coordination of data created across multiple sites. Many applications were not written to accomodate that. 
 
@@ -203,12 +175,11 @@ So here you have what makes for software to be enterprise-worthy:
 2. Hierarchy of groups
 3. Analytic breakdowns and summaries across several dimensions
 4. Global scale
-5. Automation
-6. Testing
-7. Central yet distributed planning and approvals
-8. High Security
-9. Round-the-clock SOC using SIEM
-10. High Availability to recover from disasters
+5. Failure is not an option
+6. Central yet distributed planning and approvals
+7. High Security
+8. Round-the-clock SOC using SIEM
+9. High Availability to recover from disasters
 <br /><br />
 
 Building systems which inherently address the above enterprise concerns would save vendors and implementers the embarassment of having to add them at the request of end-users. And it's a lot easier to incorporate enterprise features during developement rather than as an afterthought.

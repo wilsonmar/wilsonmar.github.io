@@ -1178,6 +1178,8 @@ RAID (Redundant Array of Independent Disks): parity information is used to regen
    * RAID-7 enables the drive array to continue to operate if any disk or any path to any disk fails. The multiple disks in the array operate as a single virtual disk.
    <br /><br />
 
+<a name="Threats"></a>
+
 ### Threats
 
 <a target="_blank" href="https://www.hytrust.com/uploads/2015/08/HyTrust-Infographic-Cloud-Kill-Chain.pdf">PDF</a>: <a target="_blank" href="https://www.youtube.com/watch?v=emdGpNwfWHY&t=17m24s">VIDEO</a>: Cyber Kill Chain<br /><img width="1570" alt="cyber-kill-chain-lockheed-3144x1246" src="https://user-images.githubusercontent.com/300046/104851985-729abb00-58b5-11eb-9713-84470116acf9.png">

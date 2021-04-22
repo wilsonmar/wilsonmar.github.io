@@ -117,6 +117,8 @@ Microsoft Quizzes by CloudAcademy</a>
 
    ### Join live class
 
+   There are two codes that you need to enter.
+
 1. In the registration email, "click here to join the training" makes use of Microsoft Teams. So install or upgrade it before the class.
 
    PROTIP: It helps to have a secone screen: one to view instructions, another for notes.
@@ -128,28 +130,59 @@ Microsoft Quizzes by CloudAcademy</a>
 1. Browser "Join conversation" can be dismissed once you're in Teams app.
 1. To participate in quizzes <a target="_blank" href="https://www.menti.com/">menti.com/</a> is used with a code from trainer.
 
-1. Redeem training key provided by trainer.
+1. To redeem training key provided by trainer (such as "E059CE1A"), get to lab: on Chrome open a Guest profile to access 
 
-1. To get to lab: on Chrome open a Guest profile to access <a target="_blank" href="https://esi.learnondemand.net">https://esi.learnondemand.net</a> using a code given by the instructor (such as "E059CE1A"). It pop up a window at https://labclient.labondemand.com. Sign in using your personal email.
-1. Click the class link.
+   <a target="_blank" href="https://esi.learnondemand.net">https://esi.learnondemand.net</a> 
+
+1. Sign in using your personal email.
+
+1. When a window pops up at https://labclient.labondemand.com, click the class link.
 
    PROTIP: Instructor may not provide a file of their PowerPoint file.
 
    ### Labs during live class
 
    PROTIP: Allocate time on your personal calendar to finish or review labs.
-   Notice the 4-day class goes Monday-Friday 9am-5pm at the local time zone.
+   Notice the 4-day class usually goes Monday-Friday 9am-5pm at the local time zone.
 
 1. Click blue Launch button at https://esi.learnondemand.net/Lab/... 
    or aka.ms/az500labs
 
-1. Claim your Azure Pass Promo Code from instructor at microsoftazurepass.com.
+1. Type your Azure Pass Promo Code from instructor at microsoftazurepass.com.
    
-   Notice that the Subscription is "Azure pass - Sponsorship".
+   It takes several minutes to build your environment so you see a Windows 10 Desktop.
 
-1. Check for your $100 spent and remaining balance at 
+1. Expand full screen. Click "Next".
+
+   ### Redeem Promo Code
+
+   Follow instructions on the right pane:
+
+1. Click the Edge browser to open it. CAUTION: You can't paste in the pop-up, so click the "T" icon to paste into the working screen to go to 
+
+   <a target="_blank" href="
+   https://microsoftazurepass.com">
+   https://microsoftazurepass.com</a>
+
+1. Click the blue Start button. Type your Gmail password. Check "Keep me signed in".
+1. Click "Confirm Microsoft Account >".
+1. Click the T with the code on the right pane. Click "Claim Promo Code".
+1. Click the top checkboxes and optionally the second, then "Sign Up".
+1. Wait for "Setting up your account" to disappear before the Windows 10 Desktop pops up in a new browser window <strong>without tabs or URL field</strong>.
+
+1. PROTIP: Click the Window menu item at the top of the display to see a list of windows.
+
+   The Azure Portal is in the "Module ..." window.
+
+1. Switch to your email client to see subject "Your Azure subscription is ready".
+
+   PROTIP: Don't click on the "Go to " button because it will be opened on whatever browser is currently active, which is not necessarily the browser window you want.
+
+1. CLick "+" on the browser to open a new tab to check your $100 spend and remaining balance at 
 
    <a target="_blank" href="https://www.microsoftazuresponsorships.com/balance">https://www.microsoftazuresponsorships.com/balance</a> using your personal email account.
+
+   Notice that the Subscription is "Azure pass - Sponsorship".
 
 1. In the lab, click the working form field you want to fill before clicking the "T" icon to paste into the working screen.
 

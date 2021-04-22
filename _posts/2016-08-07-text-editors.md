@@ -1227,6 +1227,38 @@ complete
    * <a target="_blank" href="https://visualstudio.microsoft.com/vs/enterprise/">Visual Studio for Mac -- Enterprise Edition"</a> costs $250/month but $150/month Azure credit. <a target="_blank" href="https://visualstudio.microsoft.com/vs/compare/">Enterprise Edition adds</a> Power BI Pro, Live Dependency Validation, Snapshot Debugger, Time Travel Debugging, Fakes, Code Coverage, IntelliTest, IntelliTrace, Code Map Debugger Integration,  .NET Memory Dump Analysis, Xamarin Inspector, Xamarin Profiler</a>.
    <br /><br />
 
+   ### Enterprise features
+
+   Microsoft's Visual Studio (not the free Visual Studio Code, the client IDE) has an <a target="_blank" href="https://visualstudio.microsoft.com/vs/compare/">Enterprise level subscription which provides</a>:
+
+   * Live Dependency Validation
+   * Architectural Layer Diagrams
+   * Architectural Validation
+   <br /><br />
+
+   Advanced Debugging and Diagnostics:
+   * IntelliTrace
+   * Code Clone
+   * Code Map Debugger Integration
+   * .NET Memory Dump Analysis
+   * Snapshot Debugger
+   * Time Travel Debugging (Preview)
+   <br /><br />
+   
+   Testing:
+   * IntelliTest
+   * Live Unit Testing
+   * Microsoft Fakes (Unit Test Isolation)
+   * Code Coverage
+   <br /><br />
+
+   Cross-platform:
+   * Embedded Assemblies
+   * Xamarin Inspector, Profiler   
+   <br /><br />
+
+
+
 PROTIP: Ignore videos which are NOT applicable to the current "2019" version:
    * <a target="_blank" href="https://www.youtube.com/watch?v=DS4zGjyo4Zs">VIDEO: Install when it was in Preview</a>  Jan 10, 2019.
    * <a target="_blank" href="https://www.youtube.com/watch?v=jUiuIAZt6Dw">Using Git with Visual Studio</a> Apr 7, 2017

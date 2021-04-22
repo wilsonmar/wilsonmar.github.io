@@ -206,6 +206,10 @@ PROTIP: So if you're using Google Chrome, click the Chrome avatar at the upper-r
 
    <pre><strong>az role definition list -o table --query [].roleName</strong></pre>
 
+   For a count of 260:
+
+   <pre><strong>az role definition list --query [].roleName | wc -l</strong></pre>
+
    ### Permissions
 
    Permissions to Actions are:
@@ -589,13 +593,17 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
    <a name="CLI_setup"></a>
 
-   ### Shell Setup #
+   ### Your own cloud shell Setup #
 
 0. At <a target="_blank" href="https://shell.azure.com/">
    https://shell.azure.com</a>
 
 1. Click "Create storage" if this is the first time and you see<br />
    <strong>You have no storage mounted</strong>
+
+1. Click "Create storage" for Azure to use default names when it creates a storage account for you.
+
+   Alternately:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/115131861-7e7f4180-9fb8-11eb-94f2-bbc1cb3d498b.png">
    <img width="709" alt="az-onboard-shell-storage-1418x328" src="https://user-images.githubusercontent.com/300046/115131861-7e7f4180-9fb8-11eb-94f2-bbc1cb3d498b.png"></a>
