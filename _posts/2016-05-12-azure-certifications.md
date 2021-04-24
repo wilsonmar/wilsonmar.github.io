@@ -392,6 +392,35 @@ By Robert McMillen
 https://github.com/zaalion/oreilly-azure-app-security
 
 
+<a name="AZ-400"></a>
+
+## AZ-400 DevOps Engineer Expert
+
+Note a pre-requisite is AZ-104 or AZ-204 to get certification as Expert.
+
+Covers configuration of security services.
+
+https://docs.microsoft.com/en-us/learn/certifications/devops-engineer/
+
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-400
+will be updated March 23, 2021
+
+<a target="_blank" href="https://github.com/timothywarner/az400">OReilly.com class by Timothy Warner</a>
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/463">Linux Academy: Preparing for AZ-400</a>
+
+<a target="_blank" href="https://www.udemy.com/course/azure100/learn/lecture/22182186#overview">Udemy video class</a> presents a more logical flow, not in the confusing exam objectives.
+
+
+<hr />
+
+## Azure Security certifications
+
+https://techcommunity.microsoft.com/t5/security-compliance-identity/security-community-webinars/ba-p/927888
+
+https://techcommunity.microsoft.com/t5/security-compliance-identity/security-community-webinars/ba-p/927888
+
+
 <a name="SC-900"></a>
 
 ### SC-900 Security
@@ -414,31 +443,15 @@ Videos:
 
 
 
-<a name="AZ-400"></a>
-
-## AZ-400 DevOps Engineer Expert
-
-Covers configuration of security services.
-
-https://docs.microsoft.com/en-us/learn/certifications/devops-engineer/
-
-https://docs.microsoft.com/en-us/learn/certifications/exams/az-400
-will be updated March 23, 2021
-
-<a target="_blank" href="https://github.com/timothywarner/az400">OReilly.com class by Timothy Warner</a>
-
-<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/463">Linux Academy: Preparing for AZ-400</a>
-
-<a target="_blank" href="https://www.udemy.com/course/azure100/learn/lecture/22182186#overview">Udemy video class</a> presents a more logical flow, not in the confusing exam objectives.
-
-
 <a name="AZ-500"></a>
 
-## Azure Security certifications
+## AZ-500 Security certification
 
-https://techcommunity.microsoft.com/t5/security-compliance-identity/security-community-webinars/ba-p/927888
+See <a target="_blank" href="https://wilsonmar.github.io/security-certifications">https://wilsonmar.github.io/security-certifications</a> - my blog on security certifications.
 
-https://techcommunity.microsoft.com/t5/security-compliance-identity/security-community-webinars/ba-p/927888
+https://www.thomasmaurer.ch/2020/05/az-500-study-guide-microsoft-azure-security-technologies-2021/
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/367">Linux Academy Microsoft Azure Security Technologies</a> by Tia Williams
 
 
 <a name="SC-200"></a>
@@ -452,19 +465,6 @@ https://docs.microsoft.com/en-us/learn/certifications/exams/sc-300
 <a name="SC-400"></a>
 
 https://docs.microsoft.com/en-us/learn/certifications/exams/sc-300
-
-<a name="SC-500"></a>
-
-https://docs.microsoft.com/en-us/learn/certifications/exams/sc-500
-
-
-## AZ-500 Security certifications
-
-See <a target="_blank" href="https://wilsonmar.github.io/security-certifications">https://wilsonmar.github.io/security-certifications</a> - my blog on security certifications.
-
-https://www.thomasmaurer.ch/2020/05/az-500-study-guide-microsoft-azure-security-technologies-2021/
-
-<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/367">Linux Academy Microsoft Azure Security Technologies</a> by Tia Williams
 
 
 <hr />

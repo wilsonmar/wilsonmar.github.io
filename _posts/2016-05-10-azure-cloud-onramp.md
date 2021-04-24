@@ -92,7 +92,7 @@ This is a hands-on deep-dive tutorial with commentary along the way, covering ho
 1. Obtain Azure credits as a benefit of a monthly license of Visual Studio (even though they don't intend on using the IDE):
 
    * $50/month credits for $39/mo Visual Studio Professional license
-   * $150/month credits for $89/mo Visual Studio Enterprise license
+   * $150/month credits for $79/mo Visual Studio Enterprise license
    <br /><br />
 
    Visual Studio Subscriptions are not offered in the Brazil South and Central India regions, as noted in <a target="_blank" href="https://azure.microsoft.com/en-us/regions/offers/">https://azure.microsoft.com/en-us/regions/offers/</a> 
@@ -528,12 +528,17 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
    Submit a support ticket at: <a target="_blank" href="https://portal.azure.com/#create/Microsoft.Support">https://portal.azure.com/#create/Microsoft.Support</a> (email support@microsoftsupport.com)
 
-   * Basic: Billing and Subscription support only
-   * Developer <strong>$29/mo.</strong> for support of non-prod. usage
-   * Standard (Basic) for non-Prod. env.
-   * Professional Direct <strong>$1000/mo.</strong> for "Business Critical" when you file a business-critical issue with technical support, the earliest you can expect a response from technical support? Within 1 hour
-   * Premier for "substantial dependence" with a TAM (Technical Account Manager).
+   <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview">Support options</a>:
 
+   * Basic: Billing and Subscription support only. "Self-help" technical support.
+   
+   * Developer <strong>$29/mo.</strong> for 8-hour response to non-Prod. env. issues.
+   
+   * Standard <strong>$100/mo.</strong> for 4-hour response to Sev B issues for "Business Critical" when you file a business-critical issue with technical support, the earliest you can expect a response from technical support? Within 1 hour
+   
+   * Professional Direct <strong>$1000/mo.</strong> which adds a ProDirect Delivery Manager who provides architectural guidance, onboarding services, seminars.
+
+   * Premier for "substantial dependence" with a TAM (Technical Account Manager).
 
    Getting 403 ActiveDirectoryMenuBlade accessing AAD on Portal
 
@@ -591,38 +596,9 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
    https://microsoft.github.io/AzureTipsAndTricks/blog/tip1.html
 
 
-   <a name="CLI_setup"></a>
+<a name="ARM-Menu"></a>
 
-   ### Your own cloud shell Setup #
-
-0. At <a target="_blank" href="https://shell.azure.com/">
-   https://shell.azure.com</a>
-
-1. Click "Create storage" if this is the first time and you see<br />
-   <strong>You have no storage mounted</strong>
-
-1. Click "Create storage" for Azure to use default names when it creates a storage account for you.
-
-   Alternately:
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/115131861-7e7f4180-9fb8-11eb-94f2-bbc1cb3d498b.png">
-   <img width="709" alt="az-onboard-shell-storage-1418x328" src="https://user-images.githubusercontent.com/300046/115131861-7e7f4180-9fb8-11eb-94f2-bbc1cb3d498b.png"></a>
-
-1. For "Cloud Shell region", select your favorite location, such as "West US".
-1. For "Resource group", type "_shell_westus2".
-1. For "Storage account", type "_shell_westus2"
-   
-   PROTIP: Files in your CLI <strong>clouddrive</strong> folder is stored in that <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts">Storage account</a>, beginning from CLI history, etc.
-
-1. In <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups">Portal: Resource Groups</a> notice default names created:
-   * cloud-shell-storage-westus
-   * NetworkWatcherRG
-   <br /><br />
-
-
-   <a name="ARM-Menu"></a>
-
-   ### ARM Portal GUI Dashboard Tour #
+## ARM Portal GUI Dashboard Tour #
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-overview">DOC</a>:
 
@@ -728,7 +704,10 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
 
 
-   ### Naming conventions
+<hr />
+
+
+## Naming conventions
    
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">Naming conventions</a>:
 
@@ -771,9 +750,159 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
    A resource cannot be split among several resource groups, each be a member of a single resource group. 
 
 
-   <a name="Create_Resource_Group"></a>
+<hr />
 
-   ### Create Resource Groups
+<a name="CLI_setup"></a>
+
+## Your own cloud shell #
+
+1. Be at the browser profile you need (if you have multiple accounts).
+1. Go to <a target="_blank" href="https://shell.azure.com/">
+   https://shell.azure.com</a>
+
+   ![az-shell-choice-536x232](https://user-images.githubusercontent.com/300046/115872851-82b7be80-a3ff-11eb-8d7b-012dab3ac544.png)
+
+1. Click "Bash" (since we're using CLI scripts).
+
+   If this is the first time, you'll see "You have no storage mounted":
+
+   ![az-shell-no-starge-550x247](https://user-images.githubusercontent.com/300046/115875601-9e709400-a402-11eb-9d22-d9d906f3f766.png)
+
+1. Click "Create storage" to have Azure assign its own names. 
+
+   Optionally, click "Show advanced settings" if you want to specify the Resource Group name for the storage account:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/115131861-7e7f4180-9fb8-11eb-94f2-bbc1cb3d498b.png"><img width="709" alt="az-onboard-shell-storage-1418x328" src="https://user-images.githubusercontent.com/300046/115131861-7e7f4180-9fb8-11eb-94f2-bbc1cb3d498b.png"></a>
+
+   1. For "Cloud Shell region", select your favorite location, such as "West US".
+   1. For "Resource group", follow your naming convention.
+   1. For "Storage account", follow your naming convention.
+   1. For "File share", follow your File naming convention.
+   1. Click "Create storage".
+   <br /><br />
+
+   PROTIP: Files in your CLI <strong>clouddrive</strong> folder is stored in that <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts">Storage account</a>, beginning from CLI history, etc.
+
+1. In <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups">Portal: Resource Groups</a> notice default names created:
+   * cloud-shell-storage-westus
+   * NetworkWatcherRG
+   <br /><br />
+
+   ### Home folder commands
+
+1. To see your current folder:
+
+   <pre><strong>pwd</strong></pre>
+
+   If your first name is "wilson" then you'll see:
+
+   <pre>/home/wilson</pre>
+
+1. REMEMBER: The above path is represented by both "~" (tilde) and the variable <tt>$HOME</tt>:
+
+   <pre><strong>cd $HOME; pwd</strong></pre>
+
+   ### CLI Proper Prompt
+
+1. List all files and folders, using to see hidden files as well:
+
+   <pre><strong>ls -al</strong></pre>
+   
+   <tt>-al</tt> enables display of hidden files such as <tt>.bashrc</tt>
+
+   It's a Linux convention to put a period in front of file names so the operating system knows to treat them as hidden.
+
+1. Copy and paste this string to have the prompt always appear in a consistent place where you have room to type:
+
+   <pre>export PS1="\n  \w\[\033[33m\]\n$ "</pre>
+
+   Let's change it to your taste.
+
+
+
+   ### CLI files and folders
+
+1. Open the file in a text editor:
+
+   <pre>code .bashrc</pre>
+
+1. Edit the string (near the bottom of the file):
+
+   <pre>PS1=${PS1//\\h/Azure}</pre>
+
+1. To save and quit, press Ctrl+Q or click the "..." at the top right of the edit box.
+
+   Notice there is now a tilde to display the pwd (present working directory):
+
+1. Navigate into the clouddrive:
+
+   <pre><strong>cd clouddrive</strong></pre>
+
+1. List all files and folders, using to see hidden files as well:
+
+   <pre><strong>ls -al</strong></pre>
+
+   <tt>-al</tt> enables display of hidden file <tt>.bashrc</tt>
+
+   <tt>clouddrive -> /usr/csuser/clouddrive</tt> shows a redirect to another path
+
+1. PROTIP: Notice that clouddrive is a redirect to the physical folder at:
+
+   <pre><strong>ls -al /usr/csuser/clouddrive</strong></pre>
+
+
+   ### Time out
+
+   If there is no response in CLI, you probably were timed out (disconnected) automatically.
+
+1. Press Ctrl+R (command+R on a Mac).
+
+
+   ### Git clone my Bash CLI scripts
+
+   Several utility programs come pre-installed in Azure Cloud Shell.
+   Git is one of them.
+
+1. Obtain a copy of my repository containing Bash CLI scripts for use in Azure:
+
+   <pre><strong>git clone https://github.com/wilson-mar/azure-your-way
+   cd azure-your-way
+   </strong></pre>
+
+   NOTE: If you work with a private repo, you'll need to create a SSH key, paste the contents of the public key in GitHub GUI, and use a different command, such as:
+
+   <pre><strong>git clone git-123456@wilson-mar/azure-your-way
+   cd azure-your-way
+   </strong></pre>
+
+1. To obtain recent changes:
+
+   <pre><strong>git pull
+   </strong></pre>
+
+
+   ### Bash shell script coding
+
+   <pre>az vm list -g QueryDemo \
+--query "sort_by([].{Name:name, Size:storageProfile.osDisk.diskSizeGb}, &Size)" --output table
+   </pre>
+
+   <tt>--query</tt> is described https://docs.microsoft.com/en-us/cli/azure/query-azure-cli
+
+   To customize a column name, specify it on the left side before a colon within curly braces:
+
+   <pre>az container list --query "[].{Name:name,Location:location}" --output table</pre>
+
+   The empty brackets indicate the entire set. Put in a number for a specific row.
+   A range from 0:3.
+
+   More query techniques are decribed <a target="_blank" href="https://techcommunity.microsoft.com/t5/itops-talk-blog/how-to-query-azure-resources-using-the-azure-cli/ba-p/360147">here</a>.
+
+<hr />
+
+<a name="Create_Resource_Group"></a>
+
+## Create Resource Groups
 
    DEFINITION: A resource group is a logical container for resources deployed on Azure: virtual machines, Application Gateways, CosmosDB instances, etc. Many resources can be moved between resource groups.  
 
@@ -1764,6 +1893,7 @@ ADFS (Azure Directory Federated Services)
 
 https://azurelessons.com/
 
+http://www.frankysnotes.com/2019/05/how-to-make-your-deployment-successful.html
 
 ## More on DevOps #
 

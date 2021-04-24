@@ -20,7 +20,8 @@ comments: true
 Several Azure services are related to all the monitoring happening within Azure:
    * <a href="#Monitor">Azure Monitor</a>
    * <a href="#Log_Analytics">Log Analytics</a> <a href="#LA_Workspaces">Workspaces</a>
-   * <a href="#Security_Center">Azure Defender = Azure Security Center</a>
+   * <a href="#Security_Center">Azure Security Center</a>
+   * <a href="#Azure_Defender">Azure Defender</a>
    * <a href="#AppInsights">Azure Application Insights</a>
    * <a href="#Event_Hubs">Azure Event Hubs</a>
    * <a href="#Defender">Microsoft Defender</a>
@@ -748,7 +749,7 @@ https://myownpicloud.wordpress.com/2021/02/23/monitor-aks-infrastructure-using-p
 
 <a name="Security_Center"></a>
 
-## Azure Defender (previously Azure Security Center)
+## Azure Security Center
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/security-center/"><strong>Azure Security Center</strong></a> is a <strong>CSPM</strong> (Cloud Security Posture Management) solution. It lists prioritized security alerts and recommendations for attack investigation and remediation. It summarizes a tenant's security posture with a "Secure Score" s based on the percentage of recommendations implemented.
 
@@ -803,11 +804,18 @@ Host recommendations: Every VM includes vulnerability assessment from Qualys.
 
    See code at https://github.com/ned1313/Monitor-Security-with-Azure-Security-Center
 
-### CWPP
+
+<a name="Azure_Defender"></a>
+
+## Azure Defender CWPP
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/security-center/azure-defender">
+Azure Defender</a> is Security Center's integrated Cloud Workload Protection Platform (CWPP).
+In addition to the built-in policies, custom policies and initiatives can be added -- regulatory standards such as NIST and Azure CIS as well as the Azure Security Benchmark.
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/resources/videos/protect-your-cloud-workload-from-threats-using-azure-security-center">INTRO VIDEO</a> at Ignite 2019 by Yinon Costica (@c0stica), Director PM, Cloud Security Group.
 
-Several 3rd-party vendors provide <strong>CSPM</strong> (Cloud Security Posture Management) with recommendations 
+Several 3rd-party vendors also provide CWPP with recommendations:
    * https://securityboulevard.com/2021/01/a-quick-look-into-cloud-workload-protection-platforms-cwpp/
    * https://start.paloaltonetworks.com/gartner-market-guide-cwpp.html
    * https://www.zscaler.com/resources/security-terms-glossary/what-is-gartner-cwpp

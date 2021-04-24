@@ -6,10 +6,10 @@ tags: [security, cloud, analytics]
 date: "2021-04-08"
 file: "enterprise-software"
 image:
-# enterprise-software-1900x500
-  feature: https://user-images.githubusercontent.com/300046/113968826-1dee4880-97f1-11eb-84ab-1c2a195b8cf5.png
-  credit: Dataversity
-  creditlink: https://www.dataversity.net/preventing-enterprise-software-failures
+# enterprise-office-1900x500.png
+  feature: https://user-images.githubusercontent.com/300046/115942774-0c4fa680-a469-11eb-8337-d57da1650a51.png
+  credit: Office-hub
+  creditlink: https://www.office-hub.com/different-office-types/enterprise-office-space
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -19,11 +19,11 @@ comments: true
 
 Consultants and employees who work for enterprises and those who cater to them typically earn more than at smaller companies.
 
-But to successfully cater to enterprises, software vendors must incorporate features needed to address enterprise needs. A salesperson at a well-known developer tools software company once actually said in a meeting (unconvincingly):
+But to successfully cater to enterprises, software vendors must incorporate features enterprises needed. A salesperson at a well-known developer tools software company once actually said in a meeting (unconvincingly):
 
 > "We're enterprise software because we have enterprise users"
 
-The rebuff was: "I think this software will actually be an enterprise offering when those 40 specific feature requests are implemented."
+The rebuff was: "I think your software will actually be an enterprise offering when the 40 specific feature we identified are implemented."
 
 Here are the <strong>concerns</strong> addressed by those requests:
 
