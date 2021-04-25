@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Azure Storage"
-excerpt: "Files, Disks, Blobs, Tables, Queues, SQL, CosmoDB, Synapse GRS in Microsoft's Azure cloud"
+title: "Azure Storage (in Microsoft's Azure cloud)"
+excerpt: "Files, Disks, Blobs, Tables, Queues, SQL, CosmoDB, Synapse, LRS, ZRS, GRS, RA-GRS"
 tags: [Azure, cloud, DevOps, Storage]
 date: "2021-04-15"
 file: "azure-storage"
@@ -67,6 +67,14 @@ Does your data require transactions (ACID properties)? If yes, use SQL.
    </td><td align="right"> <tt>https://<em>my_account</em>.table.core.windows.net</tt>
    </td></tr>
 </table>
+
+
+https://<em>Storage_Acct</em><strong>/blob.core.windows.net/</strong><em>Container_name</em>/<em>filex.png</em>
+
+PROTIP: Add a unique suffix to version each file so HTML pages know to retrieve the new file name.
+
+https://<em>Storage_Acct</em><strong>/file.core.windows.net/</strong><em>Fileshare_name</em>/<em>dir</em>/<em>filex.txt</em>
+
 
 Two ways to map custom domain name:
 
@@ -324,13 +332,29 @@ NOTE: Compare against Backup tiers:
 
 
 
-### Storage URL
+## Blob Lifecycle Management
 
-https://<em>Storage_Acct</em><strong>/blob.core.windows.net/</strong><em>Container_name</em>/<em>filex.png</em>
+This is for transient temporary files, NOT for images on websites.
 
-PROTIP: Add a unique suffix to version each file so HTML pages know to retrieve the new file name.
+Rules to containers or subset of blobs (using prefixes as filters).
 
-https://<em>Storage_Acct</em><strong>/file.core.windows.net/</strong><em>Fileshare_name</em>/<em>dir</em>/<em>filex.txt</em>
+Examples: 30 days after blog is created, take a snapshot.
+
+__ Days after last modification:
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> 30 days
+   </th><th> 180 days
+   </th><th> 365 days
+   </th></tr>
+<tr valign="top"><td> To cool storage 
+   </td><td> To archive storage
+   </td><td> Delete blob
+   </td></tr>
+</table>
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-rehydration?tabs=azure-portal">DOCS</a>:
+mechanism for rehydraring from cold/archive
+
 
 
 <a name="CDN"></a>
@@ -747,30 +771,6 @@ Set-AzStorageAccount
 
 
 
-## Azure Storage Export/Import
-
-1. To prepare drives Azure Jobs write/read on Windows only:
-
-   <pre>.\WAImportExport.exe PrepImport 
-	/j:&LT;JournalFile>
-	/id:&LT;SessionId>
-	[/logdir:&LT;LogDirectory>]
-	[/sk:&LT;StorageAccountKey>]
-	[/InitialDriveSet:&LT;driveset.csv>]
-	/DataSet:&LT;dataset.csv>
-   </pre>
-
-   Includes BitLocker encryption/decryption
-
-1. Create import/export Azure Job
-   -Resource group -Location
-
-   Upload journal (.jrn*) files
-
-   REMEMBER: Type:
-   * Import to Azure Blobstorage and Azure Files
-   * Export to Azure Blobstorage only
-
 <hr />
 
 <a name="ABS"></a>
@@ -871,28 +871,6 @@ Site-recovery replicates the data in almost <strong>real time</strong> for failo
 VM Restore <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/protect-virtual-machines-with-azure-backup/6-exercise-restore-virtual-machine-data">STEPS</a>
 
 
-## Blob Lifecycle Management
-
-This is for transient temporary files, NOT for images on websites.
-
-Rules to containers or subset of blobs (using prefixes as filters).
-
-Examples: 30 days after blog is created, take a snapshot.
-
-__ Days after last modification:
-<table border="1" cellpadding="4" cellspacing="0">
-<tr><th> 30 days
-   </th><th> 180 days
-   </th><th> 365 days
-   </th></tr>
-<tr valign="top"><td> To cool storage 
-   </td><td> To archive storage
-   </td><td> Delete blob
-</table>
-
-https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-rehydration?tabs=azure-portal
-mechanism for rehydraring from cold/archive
-
 <hr />
 
 ## AZCopy and Microsoft Storage Explorer
@@ -922,6 +900,31 @@ Microsoft Storage Explorer</a> makes use of
 
 
 Use ADF? (removed from AZ-104 exam)
+
+
+## Azure Storage Export/Import
+
+1. To prepare drives Azure Jobs write/read on Windows only:
+
+   <pre>.\WAImportExport.exe PrepImport 
+   /j:&LT;JournalFile>
+   /id:&LT;SessionId>
+   [/logdir:&LT;LogDirectory>]
+   [/sk:&LT;StorageAccountKey>]
+   [/InitialDriveSet:&LT;driveset.csv>]
+   /DataSet:&LT;dataset.csv>
+   </pre>
+
+   Includes BitLocker encryption/decryption
+
+1. Create import/export Azure Job
+   -Resource group -Location
+
+   Upload journal (.jrn*) files
+
+   REMEMBER: Type:
+   * Import to Azure Blobstorage and Azure Files
+   * Export to Azure Blobstorage only
 
 
 <hr />
