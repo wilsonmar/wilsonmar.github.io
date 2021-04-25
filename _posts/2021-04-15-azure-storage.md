@@ -115,6 +115,8 @@ Types of Storage Accounts: REMEMBER:
 
 Every storage request must be authorized.
 
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/storage-introduction">DOCS</a>:
+
 Auth. Methods by Storage Type:
 
 <table border="1" cellpadding="4" cellspacing="0">
@@ -149,6 +151,12 @@ Auth. Methods by Storage Type:
 
 </tbody>
 </table>
+
+Types of Azure Blob Storage:
+   * Block blobs are optimized for streaming and storing cloud objects.
+   * Append blobs can be appended to and are good for storing logs and audit files.
+   * Page blobs are optimized for representing IaaS disks and supporting random writes.
+   <br /><br />
 
 PROTIP: All support Storage Account Shared (SAS) Keys.
 
@@ -371,16 +379,16 @@ https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy
 <p><strong>Replication Strategy</strong></p>
 </td>
 <td style="text-align: center;" width="60">
-<p><strong>LRS</strong></p>
+<p><strong><a href="#LRS" title="Locally Redundant Storage">LRS</a></strong></p>
 </td>
 <td style="text-align: center;" width="60">
-<p><strong>ZRS</strong></p>
+<p><strong><a href="#ZRS" title="Zone Redundant Storage">ZRS</a></strong></p>
 </td>
 <td style="text-align: center;" width="60">
-<p><strong>GRS</strong></p>
+<p><strong><a href="#GRS" title="Geo-Redundant Storage">GRS</a></strong></p>
 </td>
 <td style="text-align: center;" width="66">
-<p><strong>RA-GRS</strong></p>
+<p><strong><a href="#RA-GRS" title="Geo-Zone Redundant Storage">RA-GRS</a></strong></p>
 </td>
 </tr>
 
@@ -402,7 +410,7 @@ https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy
 </tr>
 
 <tr valign="top"><td>
-<p>Data is replicated across multiple data centers</p>
+<p>Data is replicated across multiple availability centers</p>
 </td>
 <td style="text-align: center;" width="60">
 <p>&nbsp;</p>
@@ -419,7 +427,24 @@ https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy
 </tr>
 
 <tr valign="top"><td>
-<p>Data can be read from a secondary location</p>
+<p>Data is replicated across multiple regionss</p>
+</td>
+<td style="text-align: center;" width="60">
+<p>&nbsp;</p>
+</td>
+<td style="text-align: center;" width="60">
+<p>&nbsp;</p>
+</td>
+<td style="text-align: center;" width="60">
+<p>Y</p>
+</td>
+<td style="text-align: center;" width="66">
+<p>Y</p>
+</td>
+</tr>
+
+<tr valign="top"><td>
+<p>Data can be read from a secondary location after disaster</p>
 </td>
 <td style="text-align: center;" width="60">
 <p>&nbsp;</p>
@@ -458,54 +483,6 @@ https://azure.microsoft.com/en-us/pricing/details/storage/blobs/
 
 Set-AzStorageAccount
 
-
-<a name="CDN"></a>
-
-## CDN
-
-PROTIP: Example of CDN endpoint URL:<br />
-https://<em>Container_name</em><strong>/azureedge.net/imgs/<em>filex.png</em>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h52m45s">VIDEO</a>
-
-1. New Resource: CDN
-
-   Content Delivery Networks are used by websites and mobile apps, IoT to reduce load times, save bandwidth, speed responsiveness.
-
-1. Create <strong>CDN Profiles</strong> to provide a logical container for endpoints.
-
-1. Pricing tier options: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cdn/cdn-features">"Compare Azure CDN product features"</a>
-   * Standard Microsoft
-   * Standard Verizon
-   * Standard Akamai
-   * Premium Verizon for rules engine, Token authentication, alerts, compression (deflate, bzip2, brotli)
-
-   <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cdn/">Prices</a>
-
-Acceleration Data Transfers, also called Dynamic Site Acceleration (DSA), accelerates web content that is not cacheable.
-
-
-
-<a name="Azure_Table_Service"></a>
-
-## Azure Table Service
-
-Azure Table service have tables (uniquely) under an account:
-
-   <tt>https://<em>my_account</em>.table.core.windows.net</tt>
-
-   Table names are case-ensitive up to 63 characters and cannot beging with a number.
-
-Within each table are entitites (like rows) and properties.
-
-   * An entity can have up to 255 properties (3 system properties)
-   * A PartitionKey serves as the basis for table partioning
-   * A Timestamp is last modified (used for merging)
-   * A RowKey is a unique identiifes for an entity within a given partition
-
-   * An entity are C# structures
-   * A property is a name, typed-value pair (similar to a column)
-   <br /><br />
 
 
 
@@ -546,8 +523,6 @@ LAB: Reviewing File Storage in Azure:</a>
    Once you connect to the file share you can use it the same way you would use your local hard drive and multiple users can share it at the same time. You don't need to connect to the share for this Lab.
 
 
-
-<hr />
 
 1. On the dashboard of the Azure Portal, click the upper-left accordion icon alt to open the portal menu and click  All resources:
 
@@ -633,6 +608,32 @@ Take note of where the image is saved so you can browse to it later.
 
     Amongst the options, you can Download the blob, and Change tier to change the blob's access tier, 
 
+<a name="CDN"></a>
+
+## CDN for Files
+
+PROTIP: Example of CDN endpoint URL:<br />
+https://<em>Container_name</em><strong>/azureedge.net/imgs/<em>filex.png</em>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h52m45s">VIDEO</a>
+
+1. New Resource: CDN
+
+   Content Delivery Networks are used by websites and mobile apps, IoT to reduce load times, save bandwidth, speed responsiveness.
+
+1. Create <strong>CDN Profiles</strong> to provide a logical container for endpoints.
+
+1. Pricing tier options: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cdn/cdn-features">"Compare Azure CDN product features"</a>
+   * Standard Microsoft
+   * Standard Verizon
+   * Standard Akamai
+   * Premium Verizon for rules engine, Token authentication, alerts, compression (deflate, bzip2, brotli)
+
+   <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cdn/">Prices</a>
+
+Acceleration Data Transfers, also called Dynamic Site Acceleration (DSA), accelerates web content that is not cacheable.
+
+
 
 <hr />
 
@@ -716,44 +717,17 @@ $vm = Add-AzVMDataDisk -VM $vm -Name $dataDiskName -CreateOption Attach -ManageD
 
 -----------------------------------
 
-Introduction
 The Azure Portal provides a lot of useful information about storage if you know where to look. This Lab Step illustrates how you can use the Portal to better understand topics, with a focus on storage accounts in this Lab Step.
 
- 
-
-Instructions
 1. Enter storage account in the portal's search bar and click on the Storage accounts service:
-
-alt
-
- 
 
 2. Click + Add to start creating a storage account:
 
-alt
-
- 
-
 3. In the Create storage account blade you can see all the available options for configuring storage accounts:
 
-alt
+   There are also useful descriptions in the text as well as when you hover your mouse over an infotip icon alt :
 
-There are also useful descriptions in the text as well as when you hover your mouse over an infotip icon alt :
-
-alt
-
- 
-
-Summary
-In this Lab Step, you saw how to leverage the Portal to review concepts related to Azure storage. The same technique of opening the creation blade can help you learn and remember salient aspects of any type of resource. 
-
-
-
-https://docs.microsoft.com/en-us/azure/storage/storage-introduction
-+++ Azure Blob Storage offers three types of blobs:
-   * Block blobs are optimized for streaming and storing cloud objects.
-   * Append blobs can be appended to and are good for storing logs and audit files.
-   * Page blobs are optimized for representing IaaS disks and supporting random writes.
+--------------
 
 
 To answer this question, review the statement below and decide if the statement is correct as it is, or if the underlined portion of the statement needs to be replaced with one of the choices below.  The Azure SQL Database service is an example of infrastructure-as-a-service (IaaS).
@@ -925,6 +899,105 @@ Use ADF? (removed from AZ-104 exam)
    REMEMBER: Type:
    * Import to Azure Blobstorage and Azure Files
    * Export to Azure Blobstorage only
+   <br /><br />
+
+
+<hr />
+
+<a name="Azure_Table_Service"></a>
+
+## Azure Table Service
+
+Azure Table service have tables (uniquely) under an account:
+
+   <tt>https://<em>my_account</em>.table.core.windows.net</tt>
+
+   Table names are case-ensitive up to 63 characters and cannot beging with a number.
+
+Within each table are entitites (like rows) and properties.
+
+   * An entity can have up to 255 properties (3 system properties)
+   * A PartitionKey serves as the basis for table partioning
+   * A Timestamp is last modified (used for merging)
+   * A RowKey is a unique identiifes for an entity within a given partition
+
+   * An entity are C# structures
+   * A property is a name, typed-value pair (similar to a column)
+   <br /><br />
+
+zzz
+<hr />
+
+<a name="SQLDB"></a>
+
+## SQL (Structured Query Language)
+
+Three deployment models:
+
+1. Single database in a VM
+
+2. Standalone Azure SQL Database (Logical Server)
+   * Single
+   * Elastic pool
+   <br /><br />
+
+3. DaaS: Azure SQL Managed instance (for "frictionless" lift-and-shift migration to PaaS of SQL apps with 99.99% SLA, with Microsoft doing patching and upgrade to latest stable version, backups, monitoring) But no SSIS in Azure Data Factory, no SSAS, SSRS.
+
+4. Azure SQL Data Warehouse, Parallel Data Warehouse
+<br /><br />
+
+https://connectionstrings.com lists database connection strings
+
+PRICING: Pre-provisioned billed by DTU (Data Transaction Units)
+https://docs.microsoft.com/en-us/azure/azure-sql/database/service-tiers-dtu
+
+BLAH: You can't make manual backups on SQL. 
+
+Automatic point-in-time backups every 5 minutes.
+
+Export.
+
+PRICING: 
+
+<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=5036c56a-5268-45f3-96f4-5f0e76208c80">VIDEO DEMO</a>: PROTIP: Check "Allow Azure services to access server".
+
+   * In the SQL Server hosting the database, click in the Overview page "Show firewall settings" to specify the Local Machine IP address. Alternately, use Active Directory admin to Set Admin a user. Use tenancy User Name "...onmicrosoft.com".
+
+   * To use SQL Server, On your laptop, use a program such as SQL Server Management Studio or Visual Studio.
+   In Visual Studio Server Explorer, add a database connection, Authentication: Active Directory Password Authentication.
+
+In Visual Studio:
+
+<pre>Create Table Test(
+   TestID int identity(1,1) PRIMARY KEY,
+   TestValue varchar(50)
+)</pre>
+
+In VS Object Explorer, expand the database, right-click on the Table just created "dbo.Test" for "Encrypt Columns".
+In Column Selection, check the field to be encrypted. The types of encryption: Deterministic or Randomized.
+
+
+### MySQL
+
+<a target="_blank" href="https://cloud.netapp.com/blog/azure-cvo-blg-how-to-automate-azure-mysql-deployment-using-azure-cli">READ: How to Automate Azure MySQL Deployment Using Azure CLI</a>
+
+CLI at https://github.com/fouldsy/azure-mol-samples-2nd-ed/blob/master/15/install_mysql_server.sh
+
+
+
+<a name="DataLake"></a>
+
+### Data Lake Store Big data services
+
+Data Lake Store
+   * gen 1 to support big data
+   * gen 2 adds hierarchial storage based on keys
+   <br /><br />
+
+Azure HDInsight is Hadoop (Big Data) storage.
+
+Data Bricks is Spark storage + analytics
+* https://datathirst.net/blog/2019/1/18/powershell-for-azure-databricks
 
 
 <hr />
@@ -1000,60 +1073,6 @@ Manage change feed notifications:
 CosmoDB can't use "USE" command which changes the current database.
 
 
-<a name="SQLDB"></a>
-
-## SQL (Structured Query Language)
-
-Three deployment models:
-
-1. Single database in a VM
-
-2. Standalone Azure SQL Database (Logical Server)
-   * Single
-   * Elastic pool
-   <br /><br />
-
-3. DaaS: Azure SQL Managed instance (for "frictionless" lift-and-shift migration to PaaS of SQL apps with 99.99% SLA, with Microsoft doing patching and upgrade to latest stable version, backups, monitoring) But no SSIS in Azure Data Factory, no SSAS, SSRS.
-
-4. Azure SQL Data Warehouse, Parallel Data Warehouse
-<br /><br />
-
-https://connectionstrings.com lists database connection strings
-
-PRICING: Pre-provisioned billed by DTU (Data Transaction Units)
-https://docs.microsoft.com/en-us/azure/azure-sql/database/service-tiers-dtu
-
-BLAH: You can't make manual backups on SQL. 
-
-Automatic point-in-time backups every 5 minutes.
-
-Export.
-
-PRICING: 
-
-<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=5036c56a-5268-45f3-96f4-5f0e76208c80">VIDEO DEMO</a>: PROTIP: Check "Allow Azure services to access server".
-
-   * In the SQL Server hosting the database, click in the Overview page "Show firewall settings" to specify the Local Machine IP address. Alternately, use Active Directory admin to Set Admin a user. Use tenancy User Name "...onmicrosoft.com".
-
-   * To use SQL Server, On your laptop, use a program such as SQL Server Management Studio or Visual Studio.
-   In Visual Studio Server Explorer, add a database connection, Authentication: Active Directory Password Authentication.
-
-In Visual Studio:
-
-<pre>Create Table Test(
-   TestID int identity(1,1) PRIMARY KEY,
-   TestValue varchar(50)
-)</pre>
-
-In VS Object Explorer, expand the database, right-click on the Table just created "dbo.Test" for "Encrypt Columns".
-In Column Selection, check the field to be encrypted. The types of encryption: Deterministic or Randomized.
-
-
-### MySQL
-
-<a target="_blank" href="https://cloud.netapp.com/blog/azure-cvo-blg-how-to-automate-azure-mysql-deployment-using-azure-cli">READ: How to Automate Azure MySQL Deployment Using Azure CLI</a>
-
-CLI at https://github.com/fouldsy/azure-mol-samples-2nd-ed/blob/master/15/install_mysql_server.sh
 
 
 ## TDE (Transparent Data Encryption)
@@ -1066,27 +1085,11 @@ TDE encrypts databases, backups, logs at rest.
 To bring your own key, be at the server's TDE section, "Use your own key". Select Key Vault. 
 
 
-<a name="DataLake"></a>
-
-## Data Lake Store Big data services
-
-Data Lake Store
-   * gen 1 to support big data
-   * gen 2 adds hierarchial storage based on keys
-   <br /><br />
-
-Azure HDInsight is Hadoop (Big Data) storage.
-
-
-Data Bricks is storage (Spark) + analytics
-* https://datathirst.net/blog/2019/1/18/powershell-for-azure-databricks
-
-
 <hr />
 
 ## Azure Synapse
 
-Synapse is the next generation of database that combines retrieval and analytics functionality in one comprehensive product.
+Synapse is Azure's next generation of database technology which combines retrieval and analytics functionality in one comprehensive product.
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/40576">
 Microsoft Cloud Workshop: Azure Synapse Analytics and AI (whiteboard design session)</a>
