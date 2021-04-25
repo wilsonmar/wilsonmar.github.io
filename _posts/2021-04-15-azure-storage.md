@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure Storage"
-excerpt: "Files, Blobs, Tables, Queues, CosmoDB, Synapse in Microsoft's Azure cloud"
+excerpt: "Files, Disks, Blobs, Tables, Queues, SQL, CosmoDB, Synapse GRS in Microsoft's Azure cloud"
 tags: [Azure, cloud, DevOps, Storage]
 date: "2021-04-15"
 file: "azure-storage"
@@ -21,9 +21,9 @@ Here are the notes I took while studying for <a target="_blank" href="https://wi
 
 ## Introductions 
 
-* <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/">"Store data in Azure"</a>
+* <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/">DOCS: "Store data in Azure"</a>
 
-* <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/choose-storage-approach-in-azure/">Microsoft's FREE "Choose a data storage approach in Azure"</a>
+* <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/choose-storage-approach-in-azure/">LEARN: "Choose a data storage approach in Azure"</a>
 
 ## Types of Storage and Data
 
@@ -32,7 +32,7 @@ Here are the notes I took while studying for <a target="_blank" href="https://wi
 <tr valign="top"><td> Unstructured: </td><td> Media files (photos, videos, audio files), Office files (Word documents, PowerPoint slides, Excel Spreadsheets), Text files, Log files, Product catalog data
    </td><td><a href="#Blobs">Blobs</a>,<br />
    <a href="#Queues">Queues</a>,<br />
-   Data Lake Store</a>
+   <a href="#DataLake">Data Lake Store</a>
    </td></tr>
 <tr valign="top"><td> Semi-structured: </td><td> XML, JSON, YAML, NoSQL files
    </td><td> <a href="#Files">FileStorage</a> in 
@@ -40,8 +40,8 @@ Here are the notes I took while studying for <a target="_blank" href="https://wi
       <a href="#Tables">Tables</a> 
    </td></tr>
 <tr valign="top"><td> Structured: </td><td> SQL databases (containing tables)
-   </td><td> <a href="#Tables">Azure Tables</a><br />
-      <a href=#SQLDB">Azure SQL Database</a>,<br /> 
+   </td><td> <a href="#Tables">Azure Tables</a>,<br />
+      <a href="#SQLDB">Azure SQL Database</a>,<br /> 
       <a href="#CosmoDB">CosmoDB</a>
    </td></tr>
 </table>
@@ -53,18 +53,18 @@ Does your data require transactions (ACID properties)? If yes, use SQL.
 ## Storage Domain names
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr align="left"><th> Service </th><th> URL </th></tr>
-<tr valign="top"><td> <a name="Azure_Table_Service">Azure Tables</a> 
-   </td><td align="right"> <tt>https://<em>my_account</em>.table.core.windows.net</tt>
-   </td></tr>
-<tr valign="top"><td> <a name="Files">Files</a> 
+<tr align="left"><th> Service </th><th> URL (singular)</th></tr>
+<tr valign="top"><td> <a href="#Files">Files</a> 
    </td><td align="right"> <tt>https://<em>my_account</em>.file.core.windows.net</tt>
    </td></tr>
-<tr valign="top"><td> <a name="Blobs">Blobs</a> 
+<tr valign="top"><td> <a href="#Blobs">Blobs</a> 
    </td><td align="right"> <tt>https://<em>my_account</em>.blob.core.windows.net</tt>
    </td></tr>
-<tr valign="top"><td> <a name="Queues">Queues</a> 
+<tr valign="top"><td> <a href="#Queues">Queues</a> 
    </td><td align="right"> <tt>https://<em>my_account</em>.queue.core.windows.net</tt>
+   </td></tr>
+<tr valign="top"><td> <a name="Azure_Table_Service">Azure Tables</a> 
+   </td><td align="right"> <tt>https://<em>my_account</em>.table.core.windows.net</tt>
    </td></tr>
 </table>
 
@@ -124,14 +124,14 @@ Auth. Methods by Storage Type:
    </td><td> Supported
    </td></tr>
 
-<tr valign="top" align="center"><td align="left"><a href="#Files">Files</a> (SMB)
+<tr valign="top" align="center"><td align="left">SMB <a href="#Files">Files</a>
    </td><td> -
    </td><td> Supported with AAD Domain Svcs
    </td><td> Supported, creds sync'd to AAD
    </td><td>-
    </td></tr>
 
-<tr valign="top" align="center"><td align="left"><a href="#Files">Files</a> (REST)
+<tr valign="top" align="center"><td align="left">REST <a href="#Files">Files</a>
    </td><td> Supported
    </td><td>- 
    </td><td>-
@@ -142,6 +142,32 @@ Auth. Methods by Storage Type:
 </table>
 
 PROTIP: All support Storage Account Shared (SAS) Keys.
+
+<a name="SAS"></a>
+
+## SAS (Shared Account Signature)
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h12m38s">VIDEO</a>
+   Generate a SAS to grant other clients access to storage objects without exposing your own account key. CAUTION: Whoever has the key can use it to retrieve the file without user authentication.
+
+   For service level or account level.
+
+   Define granular control over type of access granted:
+
+   * Validity interval Start and Expiry Time (in UTC/Local Time)
+   * Permissions: Read, Write, Delete, List, Add, Create, Update, Process
+   * Service Type: Blob, File, Share, Queque, Table
+   * Resource Type: Service, Container, Object
+   * IP addresses
+   * Protocol: HTTPS/HTTP
+   <br /><br />
+
+   PowerShell commands are by specific Service Type:
+   * New-AzStorageAccountSASToken
+   * New-AzStorageContainerSASToken
+   PowerShell commands are by specific Service Type:
+   * New-AzStorageBlobSASToken
+   * ...
 
 
 ## Secure Storage 
@@ -205,46 +231,15 @@ It is a free GUI tool to manage Azure cloud storage resources on Windows, macOS,
    <tt>--recursive</tt> reaches inside sub-folders for more files.
 
 
-   <a name="SAS"></a>
+<hr />
 
-   ### SAS (Shared Account Signature)
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h12m38s">VIDEO</a>
-
-   Generate a SAS to grant other clients access to storage objects without exposing your own account key. CAUTION: Whoever has the key can use it to retrieve the file without user authentication.
-
-   For service level or account level.
-
-   Define granular control over type of access granted:
-
-   * Validity interval Start and Expiry Time (in UTC/Local Time)
-   * Permissions: Read, Write, Delete, List, Add, Create, Update, Process
-   * Service Type: Blob, File, Share, Queque, Table
-   * Resource Type: Service, Container, Object
-   * IP addresses
-   * Protocol: HTTPS/HTTP
-   <br /><br />
-
-   PowerShell commands are by specific Service Type:
-   * New-AzStorageAccountSASToken
-   * New-AzStorageContainerSASToken
-   PowerShell commands are by specific Service Type:
-   * New-AzStorageBlobSASToken
-   * ...
-
-
-### Create Storage Account Templates
+### Storage Account Templates
 
 <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h9m34s">VIDEO</a>
 
 https://docs.microsoft.com/en-us/azure/storage/common/storage-quickstart-create-account?tabs=template
 
 For PowerShell, CLI, GUI
-
-
-### Store Keys in Key Vault
-
-<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h22m29s">VIDEO</a>
 
 
 
@@ -271,7 +266,7 @@ Specify in a Resource Group:
 
 Blob data stands for <strong>Binary Large OBject</strong> data. 
 
-Blobs are used to store <strong>unstructured</strong> data (images, videos, documents, zip files, etc.).
+Blobs store <strong>unstructured</strong> data (images, videos, documents, zip files, etc.).
 
 Types of blobs in Azure blob storage:
 
@@ -280,7 +275,7 @@ Types of blobs in Azure blob storage:
    </th><th> Each Block
    </th><th> Max. size
    </th><th> Max. # Blocks
-   </th><th> 
+   </th></tr> 
 <tr valign="top"><td> <a href="#BlockBlobs">Block Blobs</a>
    </td><td align="right"> <= 1000 MB
    </td><td align="right"> 4.7 TB 
@@ -1068,13 +1063,17 @@ TDE encrypts databases, backups, logs at rest.
 To bring your own key, be at the server's TDE section, "Use your own key". Select Key Vault. 
 
 
+<a name="DataLake"></a>
 
-## Big data services
+## Data Lake Store Big data services
+
+Data Lake Store
+   * gen 1 to support big data
+   * gen 2 adds hierarchial storage based on keys
+   <br /><br />
 
 Azure HDInsight is Hadoop (Big Data) storage.
 
-Data Lake (gen 1 to support big data
-   gen 2 adds hierarchial storage based on keys)
 
 Data Bricks is storage (Spark) + analytics
 * https://datathirst.net/blog/2019/1/18/powershell-for-azure-databricks
@@ -1095,6 +1094,12 @@ https://azure.microsoft.com/en-us/services/synapse-analytics/
 https://azure.microsoft.com/en-us/services/synapse-analytics/resources/
 
 https://github.com/Azure-Samples/Synapse
+
+
+## Store Keys in Key Vault
+
+<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h22m29s">VIDEO</a>
+
 
 
 ## References
