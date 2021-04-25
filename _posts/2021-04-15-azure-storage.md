@@ -99,6 +99,7 @@ Types of Storage Accounts: REMEMBER:
    
    * General-purpose v1 can contain blobs (more expensive than v2)
    * General-purpose v2 supports Access tiers: hot, cool, archive with Lifecycle Policies; upgrade from blob storage???
+   <br /><br />
 
 * <a href="#Blobs">Blob</a> storage 
 
@@ -331,8 +332,7 @@ Types of blobs in Azure blob storage:
 NOTE: Compare against Backup tiers:
 
 
-
-## Blob Lifecycle Management
+### Blob Lifecycle Management
 
 This is for transient temporary files, NOT for images on websites.
 
@@ -355,6 +355,108 @@ __ Days after last modification:
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-rehydration?tabs=azure-portal">DOCS</a>:
 mechanism for rehydraring from cold/archive
 
+
+
+<a name="Replication"></a>
+
+## Replication Redundancy
+
+<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h28m19s">VIDEO</a>
+
+https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tbody>
+<tr valign="top"><td>
+<p><strong>Replication Strategy</strong></p>
+</td>
+<td style="text-align: center;" width="60">
+<p><strong>LRS</strong></p>
+</td>
+<td style="text-align: center;" width="60">
+<p><strong>ZRS</strong></p>
+</td>
+<td style="text-align: center;" width="60">
+<p><strong>GRS</strong></p>
+</td>
+<td style="text-align: center;" width="66">
+<p><strong>RA-GRS</strong></p>
+</td>
+</tr>
+
+<tr valign="top"><td>
+<p>Number of copies of data maintained</p>
+</td>
+<td style="text-align: center;" width="60">
+<p>3</p>
+</td>
+<td style="text-align: center;" width="60">
+<p>3</p>
+</td>
+<td style="text-align: center;" width="60">
+<p>6</p>
+</td>
+<td style="text-align: center;" width="66">
+<p>6</p>
+</td>
+</tr>
+
+<tr valign="top"><td>
+<p>Data is replicated across multiple data centers</p>
+</td>
+<td style="text-align: center;" width="60">
+<p>&nbsp;</p>
+</td>
+<td style="text-align: center;" width="60">
+<p>Y</p>
+</td>
+<td style="text-align: center;" width="60">
+<p>Y</p>
+</td>
+<td style="text-align: center;" width="66">
+<p>Y</p>
+</td>
+</tr>
+
+<tr valign="top"><td>
+<p>Data can be read from a secondary location</p>
+</td>
+<td style="text-align: center;" width="60">
+<p>&nbsp;</p>
+</td>
+<td style="text-align: center;" width="60">
+<p>&nbsp;</p>
+</td>
+<td style="text-align: center;" width="60">
+<p>&nbsp;</p>
+</td>
+<td style="text-align: center;" width="66">
+<p style="text-align: center;">Y</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+* LRS (Locally redundant storage) copies data synchronously three times within a <strong>single physical location</strong> in the primary region. LRS is the least expensive replication option. LRS provides at least 99.999999999% (11 nines) durability of objects over a given year. But is not recommended for applications requiring high availability because disasters at a zone.
+
+* ZRS (Zone-redundant storage) copies your data synchronously across <strong>three Azure availability zones</strong> in the primary region (12 nines). REMEMBER: (General Purpose v2 Storage Account Type only) 
+
+For applications requiring high availability, Microsoft recommends using ZRS in the primary region, and also replicating to a secondary region. 
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-disaster-recovery-guidance?toc=/azure/storage/blobs/toc.json">Microsoft recommends RA-GZRS for maximum availability and durability for your applications of 99.9% or 99.0% when using cool.</a>
+
+* RA-GRS (Read-Access Geo-Redundant Storage) aka RA-GZRS (Read-Access Geo-Zone-Redundant Storage) provides geo-redundant storage with the additional benefit of read access to the secondary endpoint (16 nines). It's the <strong>default</strong>. If an outage occurs in the primary endpoint, applications configured for read access to the secondary and designed for high availability can continue to read from the secondary endpoint. 
+
+* GRS (Geo-redundant storage) copies data asynchronously in <strong>two geographic regions</strong> that are at least hundreds of miles apart (16 nines). Data to second region is asychronous. If the primary region suffers an outage, the secondary region serves as a redundant source for data, Microsoft controlled, with RPO of less than 15 minutes.
+
+* GZRS (geo-zone-redundant storage) copies data asynchronously in <strong>three geographic regions</strong>
+
+PRICING varys by Region Redundancy, and Storage Type
+
+
+https://azure.microsoft.com/en-us/pricing/details/storage/blobs/
+
+Set-AzStorageAccount
 
 
 <a name="CDN"></a>
@@ -666,108 +768,6 @@ D Azure Storage
 
 
 With Azure Files services, can use Azure File Sync agent which uses a Windows server cluster Stored Sync server.
-
-
-<a name="Replication"></a>
-
-## Replication Redundancy
-
-<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h28m19s">VIDEO</a>
-
-https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy
-
-<table border="1" cellpadding="4" cellspacing="0">
-<tbody>
-<tr valign="top"><td>
-<p><strong>Replication Strategy</strong></p>
-</td>
-<td style="text-align: center;" width="60">
-<p><strong>LRS</strong></p>
-</td>
-<td style="text-align: center;" width="60">
-<p><strong>ZRS</strong></p>
-</td>
-<td style="text-align: center;" width="60">
-<p><strong>GRS</strong></p>
-</td>
-<td style="text-align: center;" width="66">
-<p><strong>RA-GRS</strong></p>
-</td>
-</tr>
-
-<tr valign="top"><td>
-<p>Number of copies of data maintained</p>
-</td>
-<td style="text-align: center;" width="60">
-<p>3</p>
-</td>
-<td style="text-align: center;" width="60">
-<p>3</p>
-</td>
-<td style="text-align: center;" width="60">
-<p>6</p>
-</td>
-<td style="text-align: center;" width="66">
-<p>6</p>
-</td>
-</tr>
-
-<tr valign="top"><td>
-<p>Data is replicated across multiple data centers</p>
-</td>
-<td style="text-align: center;" width="60">
-<p>&nbsp;</p>
-</td>
-<td style="text-align: center;" width="60">
-<p>Y</p>
-</td>
-<td style="text-align: center;" width="60">
-<p>Y</p>
-</td>
-<td style="text-align: center;" width="66">
-<p>Y</p>
-</td>
-</tr>
-
-<tr valign="top"><td>
-<p>Data can be read from a secondary location</p>
-</td>
-<td style="text-align: center;" width="60">
-<p>&nbsp;</p>
-</td>
-<td style="text-align: center;" width="60">
-<p>&nbsp;</p>
-</td>
-<td style="text-align: center;" width="60">
-<p>&nbsp;</p>
-</td>
-<td style="text-align: center;" width="66">
-<p style="text-align: center;">Y</p>
-</td>
-</tr>
-</tbody>
-</table>
-
-* LRS (Locally redundant storage) copies data synchronously three times within a <strong>single physical location</strong> in the primary region. LRS is the least expensive replication option. LRS provides at least 99.999999999% (11 nines) durability of objects over a given year. But is not recommended for applications requiring high availability because disasters at a zone.
-
-* ZRS (Zone-redundant storage) copies your data synchronously across <strong>three Azure availability zones</strong> in the primary region (12 nines). REMEMBER: (General Purpose v2 Storage Account Type only) 
-
-For applications requiring high availability, Microsoft recommends using ZRS in the primary region, and also replicating to a secondary region. 
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-disaster-recovery-guidance?toc=/azure/storage/blobs/toc.json">Microsoft recommends RA-GZRS for maximum availability and durability for your applications of 99.9% or 99.0% when using cool.</a>
-
-* RA-GRS (Read-Access Geo-Redundant Storage) aka RA-GZRS (Read-Access Geo-Zone-Redundant Storage) provides geo-redundant storage with the additional benefit of read access to the secondary endpoint (16 nines). It's the <strong>default</strong>. If an outage occurs in the primary endpoint, applications configured for read access to the secondary and designed for high availability can continue to read from the secondary endpoint. 
-
-* GRS (Geo-redundant storage) copies data asynchronously in <strong>two geographic regions</strong> that are at least hundreds of miles apart (16 nines). Data to second region is asychronous. If the primary region suffers an outage, the secondary region serves as a redundant source for data, Microsoft controlled, with RPO of less than 15 minutes.
-
-* GZRS (geo-zone-redundant storage) copies data asynchronously in <strong>three geographic regions</strong>
-
-PRICING varys by Region Redundancy, and Storage Type
-
-
-https://azure.microsoft.com/en-us/pricing/details/storage/blobs/
-
-Set-AzStorageAccount
 
 
 
