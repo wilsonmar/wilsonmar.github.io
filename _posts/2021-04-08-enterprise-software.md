@@ -149,9 +149,9 @@ Here are the <strong>concerns</strong> addressed by those requests:
 
    Enterprises have a SOC (Security Operations Center) which operates 24/7.
 
-   Enterprise support typically have SLA (Service Level Agreements) which are quicker (more expensive) than others. Both Azure and AWS refunds 100% of its billing on periods which do not achieve a 95% availability.
+   Enterprise support typically have SLA (Service Level Agreements) which are quicker (more expensive) than others. Both Azure and AWS refunds 100% of its billing on periods which do not achieve at least 95% availability (<a target="_blank" href="https://uptime.is/">18 days a year</a>). To achieve 99.99% (down a hour per year) requires self-diagnosing and self-healing.
 
-   The SOC team ensures that every custom software is configured to send logs and metrics from all machines into a SIEM (Security Information and Event Management) system such as Splunk, Azure Sentinel, etc. Such systems commonly maintains several times more data than the systems themselves. Machine Learning techniques and advanced statistical analysis are becoming common with such systems. All that enables the SOC team to correlate events across the enterprise to detect intrusion and exploits.
+   The SOC (Security Operations Center) ensures that software is configured to send logs and metrics from all machines into a SIEM (Security Information and Event Management) system such as Splunk, Azure Sentinel, etc. Such systems commonly maintains several times more data than the systems themselves. Machine Learning techniques and advanced statistical analysis are becoming common with such systems. All that enables the SOC team to correlate events across the enterprise to detect intrusion and exploits.
 
    Logs, especially are also used by external auditors to determine actual compliance with policies. Those with access to SIEM data can elicit actual, detailed, real-time insights on inflows and outflows between different parts of the organization and systems -- a magical tool to identify bottlenecks and predict trends. We look forward to 3D dynamic projections in Mixed reality glasses from Microsoft, Apple, Facebook, etc. 
 
