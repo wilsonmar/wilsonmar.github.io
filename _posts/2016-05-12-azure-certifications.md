@@ -298,8 +298,11 @@ A search of Microsoft Learn for "Administrator" and "Azure" <a target="_blank" h
 
    * <a target="_blank" href="https://docs.microsoft.com/learn/modules/bash-introduction/">Intro to Bash</a>
    * <a target="_blank" href="https://docs.microsoft.com/learn/modules/introduction-azure-firewall/">Intro to Azure Firewall</a>
+   <br /><br />
 
 Video Lectures:
+
+1. <a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course">Tim Warner and Mike Pfeiffer's CloudSkills.io</a> 
 
 1. Michael J. Shannon takes a deep dive on a lightboard in <a target="_blank" href="https://learning.oreilly.com/videos/exam-az-104-microsoft/9780136823483/9780136823483-A104_01_01_01">9+ hours of videos with transcript from OReilly</a> 
 
@@ -403,13 +406,17 @@ Covers configuration of security services.
 https://docs.microsoft.com/en-us/learn/certifications/devops-engineer/
 
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-400
-will be updated March 23, 2021
+was updated March 23, 2021
 
-<a target="_blank" href="https://github.com/timothywarner/az400">OReilly.com class by Timothy Warner</a>
+Video classes:
 
-<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/463">Linux Academy: Preparing for AZ-400</a>
+   * <a target="_blank" href="https://portal.cloudskills.io/products/microsoft-azure-devops-engineer-certification-az-400">By Mike Pfiffer at Cloudskills.io</a> has a "Path of least resistance" to earn your certificate: Whizlabs
 
-<a target="_blank" href="https://www.udemy.com/course/azure100/learn/lecture/22182186#overview">Udemy video class</a> presents a more logical flow, not in the confusing exam objectives.
+   * <a target="_blank" href="https://www.udemy.com/course/azure100/learn/lecture/22182186#overview">Udemy video class</a> presents a more logical flow, not in the confusing exam objectives.
+
+   * <a target="_blank" href="https://github.com/timothywarner/az400">OReilly.com class by Timothy Warner</a>
+
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/463">Linux Academy</a>
 
 
 <hr />
@@ -464,7 +471,7 @@ https://docs.microsoft.com/en-us/learn/certifications/exams/sc-300
 
 <a name="SC-400"></a>
 
-https://docs.microsoft.com/en-us/learn/certifications/exams/sc-300
+https://docs.microsoft.com/en-us/learn/certifications/exams/sc-400
 
 
 <hr />

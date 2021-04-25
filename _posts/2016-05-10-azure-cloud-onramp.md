@@ -64,6 +64,10 @@ This is a hands-on deep-dive tutorial with commentary along the way, covering ho
    <a target="_blank" href="https://support.azure.com/"><strong><u>
    https://support.microsoft.com</u></strong></a>
    </td></tr>
+<tr valign="top"><td> User </td><td>
+   <a target="_blank" href="https://myapps.microsoft.com"><strong><u>https://myapps.microsoft.com</u></strong></a>
+   </td><td> Self-Service password reset
+   </td></tr>
 </table>
 
 <a name="USGov"></a>
@@ -120,9 +124,33 @@ PROTIP: So if you're using Google Chrome, click the Chrome avatar at the upper-r
    * Buy a Visual Studio Enterprise license for $150/month credit on Azure.
 
 
-### Job Roles
+<a name="FreeSvcs"></a>
 
-2. Microsoft aligned these job roles with <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Azure certification exams</a>:
+### First year free services
+
+<a target="_blank" href="https://azure.microsoft.com/en-us/free/free-account-faq/">
+https://azure.microsoft.com/en-us/free/free-account-faq</a> lists the services which Microsoft makes free for the first year:
+
+   * Compute: 750 hours of B1S Linux VMs
+   * Compute: 750 hours of B1S Windows VMs
+   * Storage: Manage Disks 64 GB x 2
+   * Storage SQL: up to 250 GB
+   * Storage File: 5GB
+   * Storage Blobs: 5 GB
+   * Cosmo DB up to 5 GB 400 request units
+   * Network bandwidth: 15 GB outbound data transfer
+   * AI & Machine Learning services
+   <br /><br />
+
+   TODO: HANDS-ON: Make use of them without spending any money of your own!
+
+The clock is ticking!
+
+<hr />
+
+## Job Positions (roles)
+
+Microsoft aligned these generic "job roles" with <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Azure certification exams</a>:
 
    * (Azure) Administrator
    * (Azure) Developer
@@ -133,23 +161,26 @@ PROTIP: So if you're using Google Chrome, click the Chrome avatar at the upper-r
    * Business User
    <br /><br />
 
-   PROTIP: These learning roles are different than the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a> (AAD).
+   PROTIP: Generic job positions ("roles") are different than the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a> (AAD).
 
    MY OPINION: I think job roles should be multi-select checkboxes.
    This segregation also adds to duplicating material.
 
 
-   ## Global Admin Account
+## Global Admin Account
 
-   <strong>Global Administrators</strong>, aka Company Administrators, in Azure AD have access to <strong>all services</strong> that use AAD identities like Microsoft 365 security center, Microsoft 365 compliance center, Exchange Online, SharePoint Online, and Skype for Business Online.
+   <strong>Global Administrators</strong>, aka Company Administrators, in Azure AD have access to <strong>all services</strong> that use AAD identities (Microsoft 365 security center, Intune, Microsoft 365 compliance center, Exchange Online, SharePoint Online, Skype for Business Online, etc.).
 
-   PROTIP: Don't use that account regularly and set an Activity Alert when it is used. Have no MFA on it. Have 2-5 global admins. <a target="_blank" href="https://www.youtube.com/watch?v=vZ9uQtO7mSU&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=2">VIDEO</a> 
+   PROTIP: Don't use the Global Admin account regularly. Set an Activity Alert when it is used. Have no MFA on it. Have 2-5 global admins. <a target="_blank" href="https://www.youtube.com/watch?v=vZ9uQtO7mSU&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=2">VIDEO</a> 
 
-   PROTIP: Global Admin privileges are neede to enable <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">AD PIM (Privileged Identity Management)</a> for a directory.
+   PROTIP: Global Admin privileges are needed to enable <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">AD PIM (Privileged Identity Management)</a> for a directory.
 
    So it's important to assign other more specific roles. 
 
-   ### Built-in User Roles for RBAC 
+
+<a name="Built-inRoles"></a>
+
+## Built-in User Roles for RBAC 
 
    PowerShell command:<br />
    <tt>Get-AzureRMRoleDefinition</tt> lists 75:
@@ -192,16 +223,6 @@ PROTIP: So if you're using Google Chrome, click the Chrome avatar at the upper-r
 
    * Security Administrators have permissions to manage security-related features in the Microsoft 365 security center, Azure Active Directory Identity Protection, Azure Information Protection, and Microsoft 365 Security & Compliance Center.
 
-   The basic categories are owner, contributor, and reader.
-
-   User roles can be scoped to:
-   * Tenant - LIMIT: Up to 2,000 roles can be defined for a tenant.
-   * Management group
-   * Subscription
-   * Resource group
-   * Resource
-   <br /><br />
-
    BTW, after you follow instructions below on setting up CLI, this Bash command lists all the pre-defined roles:
 
    <pre><strong>az role definition list -o table --query [].roleName</strong></pre>
@@ -210,45 +231,156 @@ PROTIP: So if you're using Google Chrome, click the Chrome avatar at the upper-r
 
    <pre><strong>az role definition list --query [].roleName | wc -l</strong></pre>
 
-   ### Permissions
-
-   Permissions to Actions are:
-   * actions
-   * notActions
-   * dataActions
-   * notDataActions
+   The basic categories of roles are <strong>owner, contributor, and reader</strong>:
+   * Owners have full access to all resources, including the right to delegate access to others.
+   * Contributors can create and manage all types of Azure resources but can't grant access to others.
+   * Readers can view existing Azure resources.
    <br /><br />
 
-   The actions are implemented by resource providers.
+<a name="CustomRoles"></a>
 
-   Each tenant is independent of all other tenants.
+## Custom Roles
 
-
-<a name="FreeSvcs"></a>
-
-### First year free services
-
-https://azure.microsoft.com/en-us/free/free-account-faq/
-
-The clock is ticking:
-
-   * Compute: 750 hours of B1S Linux VMs
-   * Compute: 750 hours of B1S Windows VMs
-   * Storage: Manage Disks 64 GB x 2
-   * Storage SQL: up to 250 GB
-   * Storage File: 5GB
-   * Storage Blobs: 5 GB
-   * Cosmo DB up to 5 GB 400 request units
-   * Network bandwidth: 15 GB outbound data transfer
-   * AI & Machine Learning services
+   Examples of Custom-defined roles are:
+   * Reader Support Tickets
+   * Virtual Machine operator - can create and manage virtual machines
    <br /><br />
 
-   TODO: HANDS-ON: Make use of them without spending any money of your own!
+   Let's look at a custom role definition to clarify the terms:
+ 
+   <pre>{
+   "Name": "Virtual Machine Operator (Custom)",
+   "Id": null,
+   "IsCustom": true,
+   "Description": "Allows to start and stop (deallocate) Azure VMs",
+   "Actions": [
+      "Microsoft.Compute/*/read",
+      "Microsoft.Compute/virtualMachines/deallocate/action",
+      "Microsoft.Compute/virtualMachines/start/action"
+   ],
+   "NotActions": [
+   ]
+   "DataActions": [
+   ]
+   "NotNotActions": [
+   ]
+   "AssignableScopes": [
+      "/subscriptions/SUBSCRIPTION_ID"
+   ]
+}</pre>
 
-PROTIP: It makes more sense to look at a live example populated with several resources, in context:
 
+   Role definitions are at the center of this diagram about RBAC (Role-Based Access Control):
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/115958824-50bd5f80-a4c6-11eb-83f8-0cc8e86ca1f2.png"><img alt="az-rbac-524x574" width="524" height="574" src="https://user-images.githubusercontent.com/300046/115958824-50bd5f80-a4c6-11eb-83f8-0cc8e86ca1f2.png"></a>
+
+   To grant access, a <strong>role assignment</strong> attaches a role definition to a user, group, service principal, or managed identity at a particular scope.
+
+## Resource Providers, Actions, Operations, Permissions, Roles, Scopes, Groups, Policies
+
+   <a name="Providers"></a>
+
+   "Microsoft.KeyVault", "Microsoft.Compute", etc. are <strong>providers</strong> 
+   which provide the programming to respond or block APIs requesting some functionality.
+
+   <a name="Actions"></a>
+   <a name="Permissions"></a>
+
+   Each line under Actions defines a set of <strong>Permissions</strong> permitted.
+   Each line under NotActions defines what is denied. 
+
+   <a name="Operations"></a>
+
+   <strong>Operations</strong> (such as read, write, delete, etc.) are carried out by providers.
+
+
+   <a name="RoleAssignment"></a>
+
+   ### Role Assignment 
+
+   Access is granted by creating a role assignment.<br />
+   Access is revoked by removing a role assignment.
+
+   PowerShell to process the <a href="#CustomRoles">custom role definition JSON (above)</a>:
+
+   <pre>wget https://...json
+   // Get the Subscription ID associated with the current user context:
+   $subscription_id = (Get-AzContext).Subscription.id
+   // Replace SUBSCRIPTION_ID within JSON file:
+   (Get-Content -Path $HOME/customRoleDefinition.json) -Replace 'SUBSCRIPTION_ID', $subscription_id |
+     Set-Content -Path $HOME/customRoleDefinition.json
+   // Grant assess by creting a role assignment:
+   New-AzRoleDefinition -InputFile ./customRoleDefinition.json
+   // Confirm:
+   Get-AzRoleDefinition -Name 'Virtual Machine Operator (Custom)'
+   </pre>
+
+
+   <a name="Scopes"></a>
+
+   ### Scopes
+
+   The "AssignableScope" in the JSON is illustrated at the lower-right of the diagram.
+
+   <a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course/categories/4743678/posts/8980102">VIDEO</a>:
+   After assignment, the SUBSCRIPTION_ID is replaced with the Subscription ID GUID assigned.
+
+   Roles can be <strong>scoped</strong> at several levels (from the Tenant Root Group):
+
+   * Management group (containers) 
+   
+   * Subscription
+   
+   * Resource group
+   
+   * Resource
+
+   Permissions at one level are inherited to child scopes, so<br />
+   Permissions are addative: the sum of roles at various levels is what a user can do.
+
+   A user inherits permissions from the <strong>management group</strong> to which the user has been assigned.
+
+   The whole stack is under a single Tenant - LIMIT: Up to 2,000 roles can be defined for a tenant. Each tenant is independent of all other tenants.
+
+   TODO: Blueprints handle deny.
+
+
+   ### Management Group Policies
+
+   <a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course/categories/4743678/posts/8980104">VIDEO</a>:
+   Policies can be assigned to scopes to limit what can be assigned to mangement levels and change what has been assigned:
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/governance/policy/concepts/effects">Policy effects</a> include Append, Audit, Deny, Modify, etc. In preview are Enforce OPA (Open Policy Agent) Constraint and Enforce Rego Policy.
+
+1. Navigate to the Policy blade.
+1. Definitions
+1. Select a category from Categories dropdown.
+
+   For example: Require a tag and its value on resources
+
+   NOTE: Tags do not cascade via inheritance like permissions unless a policy allows that.
+
+   To do remediation, define a Managed Identity.
+
+### Summary
+
+<a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course/categories/4743678/posts/8980102#">VIDEO</a>:
+
+1. A user (or service principal) acquires a token for Azure Resource Manager.
+2. The token includes the user's group memberships (including transitive group memberships).
+3. The user makes a REST API call to Azure Resource Manager with the token attached.
+4. Azure Resource Manager retrieves all the role assignments and deny assignments that apply to the resource upon which the action is being taken.
+5. Azure Resource Manager narrows the role assignments that apply to this user or their group and determines what roles the user ahs for this resource.
+6. Azure Resource Manager determines if the action in the API call is included in the roles the user has for this resource.
+7. If the user doesn't have a role with the action at the requested scope, access is not granted. Otherwise, Azure Resource Manager checks if ta deny assignment applies.
+8. If a deny assignmet applies, access is blocked. Otherwise access is granted.
+
+
+<hr />
 
 ### Azure GUI thru CloudAcademy 
+
+PROTIP: It makes more sense to look at a live example populated with several resources, in context, which is what a CloudAcademy lab provides.
 
 1. <a target="_blank" href="https://cloudacademy.com/library/azure/">cloudacademy.com/library/azure</a> has defined several labs.
 1. Search for "Azure".
@@ -454,6 +586,8 @@ PROTIP: It makes more sense to look at a live example populated with several res
 
 1. Setup MFA
 
+Microsoft has Intune to manage endpoints (mobile and laptops).
+
 
 <a name="ASM"></a>
 
@@ -546,10 +680,6 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
    becuase you now know you can reach it (in two places).
 
 
-   ### Box
-
-   For Microsoft people to access a customer's unencrypted data, they are supposed to look into the "Lock Box" where a customer put files they want Microsoft to see.
-
 
    <a name="Social"></a>
 
@@ -595,6 +725,13 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
    https://microsoft.github.io/AzureTipsAndTricks/blog/tip1.html
 
+   ### Lock Box for Support
+
+   For Microsoft people to access a customer's unencrypted data, they are supposed to look into the "Lock Box" where a customer put files they want Microsoft to see.
+
+
+
+<hr />
 
 <a name="ARM-Menu"></a>
 
@@ -739,7 +876,7 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
    PROTIP: A resource group can contain resources from multiple regions.
 
-1. List resource groups created using CLI:
+1. After you get CLI setup, list resource groups created:
 
    <pre><strong>az group list -o table</strong></pre>
 
@@ -756,7 +893,13 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
 ## Your own cloud shell #
 
-1. Be at the browser profile you need (if you have multiple accounts).
+1. PROTIP: Click the <strong>browser profile</strong> icon and select the identity you need (if you have multiple accounts). You'll likely have an account based on your Gmail, another for school email, a work email, etc.
+
+   Azure brings up the account based on what it stored the last time you logged in.
+   If you don't use browser profiles, you'll have to log off and back again, which is a hassle.
+
+   BTW within each browser profile, you can login to GitHub, Pocket, or other service so your bookmarks is available on all profiles.
+
 1. Go to <a target="_blank" href="https://shell.azure.com/">
    https://shell.azure.com</a>
 
@@ -802,6 +945,7 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
    <pre><strong>cd $HOME; pwd</strong></pre>
 
+
    ### CLI Proper Prompt
 
 1. List all files and folders, using to see hidden files as well:
@@ -816,27 +960,55 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
    <pre>export PS1="\n  \w\[\033[33m\]\n$ "</pre>
 
-   Let's change it to your taste.
+   Let's change it to your taste so it shows up every time you get a Cloud Shell prompt.
+
+   And you will be opening a lot of new sessions.
 
 
+   ### Time out recovery
 
-   ### CLI files and folders
+   If there is no response in CLI, you probably were timed out (disconnected) automatically.
 
-1. Open the file in a text editor:
+1. Press Ctrl+R (command+R on a Mac) to refresh, confirm Reload, then click the Cloud Shell again.
+
+   PROTIP: See if the time it takes to do that is about the same as to az login again from your local Terminal/Console.
+
+
+   ### Edit .bashrc
+
+1. Open the file in a text editor (an instance of Visual Studio Code):
 
    <pre>code .bashrc</pre>
+
+   Alternately, click the squigly brackets on the line where you select Bash or PowerShell.
 
 1. Edit the string (near the bottom of the file):
 
    <pre>PS1=${PS1//\\h/Azure}</pre>
 
+1. Optionally: althrough Terraform is pre-installed in Azure Cloud Shell, define an alias so you can type just tf instead of terraform:
+
+   <pre>alias tf="terraform $1"  # provide a parameter</pre>
+
+1. TODO: There are other aliases for your productivity. They save a few microseconds a time,
+   but their advantage is to keep your mind focused, avoid task-switching.
+
+1. Near the last line, navigate into the clouddrive:
+
+   <pre><strong>cd clouddrive</strong></pre>
+
+   That's where it's better to git clone repos into.
+
+1. PROTIP: At the bottom of the file, add a # sign. This is because Azure automatically adds to the bottom a line:
+
+   <pre>PS1=${PS1//\\h/Azure}</pre>
+
+   Since that line does not add a new line, the line is interpreted as a comment line.
+
+
 1. To save and quit, press Ctrl+Q or click the "..." at the top right of the edit box.
 
    Notice there is now a tilde to display the pwd (present working directory):
-
-1. Navigate into the clouddrive:
-
-   <pre><strong>cd clouddrive</strong></pre>
 
 1. List all files and folders, using to see hidden files as well:
 
@@ -850,12 +1022,6 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
    <pre><strong>ls -al /usr/csuser/clouddrive</strong></pre>
 
-
-   ### Time out
-
-   If there is no response in CLI, you probably were timed out (disconnected) automatically.
-
-1. Press Ctrl+R (command+R on a Mac).
 
 
    ### Git clone my Bash CLI scripts
@@ -879,6 +1045,27 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
    <pre><strong>git pull
    </strong></pre>
+
+   ### Terraform on Azure
+
+   A Terraform client is pre-installed in Azure Cloud Shell.
+
+   <pre><strong>terraform version</strong></pre>
+   
+   Ignore the version upgrade message. Azure keeps it up to date as appropriate.
+
+   https://cloudskills.io/courses/terraform-azure
+   https://github.com/lukeorellana/terraform-on-azure
+   https://github.com/CloudSkills/Terraform-In-Azure-Workshop
+
+   https://www.facebook.com/CloudSkills.io/
+   https://blog.cloudskills.io/getting-started-with-terraform-on-azure-tips-and-tricks/
+
+   https://www.udemy.com/course/terraform-on-azure/
+   Terraform on Azure
+
+   https://www.udemy.com/course/azure-kubernetes-service-with-azure-devops-and-terraform/
+   Azure Kubernetes Service with Azure DevOps and Terraform 
 
 
    ### Bash shell script coding
@@ -1699,8 +1886,7 @@ QUESTION: limits to total concurrent executions across all functions within a gi
    2. East Asia, Southeast Asia, Japan, Australia, India, Korea
    3. Brazil, South Africa, UAE
    4. (DE Zone 1) Germany
-
-
+   <br /><br />
 
 
 ## Azure AD & PIM
@@ -1725,7 +1911,7 @@ allows an organization to securely share company applications and company servic
 1. Users. +New guest user. Type email. Invite.
 1. Guest user clicks "Get Started" in emai;.
 <br /><br />
-TODO: REST API?
+
 
 ## Azure AD B2C (Business to Consumer)
 enables customers can use a registered app with the Identity Experience Framework
@@ -1738,7 +1924,7 @@ It makes use of SYN cookies and rate & connection limits defined by a Trust Fram
 1. An additional B2C Tenant is created
 1. Create.
 1. Link to subscription.
-
+<br /><br />
 
 
 <a name="ARM_Templates"></a>
@@ -1772,6 +1958,7 @@ As of March 2021, Bicep is not yet integrated into the Portal.
 
 1. Install the Bicep CLI.
 
+<a target="_blank" href="https://www.youtube.com/watch?v=F1zzrnXQwKU">VIDEO</a>
 
 
 ## Terraform for Azure
