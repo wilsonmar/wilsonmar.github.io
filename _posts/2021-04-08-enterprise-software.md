@@ -66,15 +66,11 @@ Here are the <strong>concerns</strong> addressed by those requests:
 
    Results often need to have a financial component which meet cost accounting principles.
 
-   For example, GitHub provides users a rich API to retrieve data set of data from GraphQL APIs. 
+   Because the size and complexity of enterprise organizations make decisions time-consuming to propagate, enterprises must strive to move from reactive to proactive and predictive. 
+   So enterprise visualizations over time need to look ahead to identify <strong>trends</strong> rather than just looking backward.
 
-   However, enterprise users and managers need to create their own reports and visualizations over time:
+   Additionally, enterprise users and managers need to create their own reports and visualizations.
 
-   * Total number of users over time and number added each period over time
-   * Ratio of users enrolled vs. those who made commits
-   * Retention ratios
-   * etc.
-   <br /><br />
 
 ## 4. Global scale
 

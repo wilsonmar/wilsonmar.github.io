@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure Cloud Onramp"
-excerpt: "Get to know Subscriptions, Support plans, ARM portal Keyboard Shortcuts, Tags, Policies"
+excerpt: "Get to know Subscriptions, Support plans, ARM portal Keyboard Shortcuts, Tags, Policies, CLI scripts"
 tags: [cloud, azure]
 date: "2021-03-05"
 file: "azure-cloud-onramp"
@@ -87,11 +87,21 @@ This is a hands-on deep-dive tutorial with commentary along the way, covering ho
 
    <a target="_blank" href="https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/">Pulumi</a> enables programmatic access (by a Python program) to Azure.
 
-## Deals
+## Hands-on time
 
-1. Labs in Microsoft Learn provide FREE access two hours at a time.
+1. "Exercises" in Microsoft Learn provide FREE "MICROSOFT LEARN SANDBOX" temporary subscription access one or two hours at a time. Search within:
 
-1. Labs in CloudAcademy.com are included in some of their monthly subscriptions.
+   <a target="_blank" href="
+   https://docs.microsoft.com/en-us/learn/">
+   https://docs.microsoft.com/en-us/learn</a>
+
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/3-exercise-create-a-vm">Create Windows Virtual Machine</a>
+   <br /><br />
+
+1. CloudAcademy.com licenses include Lab time in some of their monthly subscriptions.
+
+   * <a href="#CloudAcademyLab">VM lab</a>
+   <br /><br />
 
 1. Obtain Azure credits as a benefit of a monthly license of Visual Studio (even though they don't intend on using the IDE):
 
@@ -392,7 +402,9 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
 <hr />
 
-### Azure GUI thru CloudAcademy 
+<a name="CloudAcademyLab"></a>
+
+### Hands-on Lab thru CloudAcademy 
 
 PROTIP: It makes more sense to look at a live example populated with several resources, in context, which is what a CloudAcademy lab provides.
 
@@ -1976,6 +1988,7 @@ As of March 2021, Bicep is not yet integrated into the Portal.
 
 <a target="_blank" href="https://jackwesleyroper.medium.com/azure-bicep-pros-cons-c8121fbfe5db">
 BLOG:  Pros & Cons</a>
+
 
 <a name="Terraform"></a>
 

@@ -356,10 +356,10 @@ Portal GUI
 
 1. Availability options "Availability zone".
 
-   "Availability set" for a region which does not have Availability Zones (such as Australia). Define a new one by specifying number of:
+   "Availability set" for a region which does not have Availability Zones (such as Australia). Define a new one by specifying number of: REMEMBER:
 
    * <strong>fault domains</strong> = server racks, and 
-   * <strong>Update domains</strong> = individual servers.
+   * <strong>Update domains</strong> = individual servers on each rack.
    <br /><br />
 
    [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/windows/">Pricing</a>]
@@ -369,7 +369,12 @@ Portal GUI
 1. If Yes, Eviction type: "Capacity only" for whatever the pay-as-you-go rate is.
    "Price or capacity" to set a Max. price manually.
 
-etc.
+
+
+1. VM generation: <strong>Gen2</strong> VMs features UEFI-based boot architecture, increased memory and OS disk size limits, Intel Software Guard Extensions (SGX), and virtual persistent memory (vPMEM).
+
+   CAUTION: Gen2 does not yet support Azure Disk Encryption!
+
 
 ### VM HA SLA (Service Level Agreement)
 
