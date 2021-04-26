@@ -342,9 +342,6 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
    The whole stack is under a single Tenant - LIMIT: Up to 2,000 roles can be defined for a tenant. Each tenant is independent of all other tenants.
 
-   TODO: Blueprints handle deny.
-
-
    ### Management Group Policies
 
    <a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course/categories/4743678/posts/8980104">VIDEO</a>:
@@ -361,6 +358,23 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
    NOTE: Tags do not cascade via inheritance like permissions unless a policy allows that.
 
    To do remediation, define a Managed Identity.
+
+
+   ### Blueprints
+
+   TODO: Blueprints handle deny.
+
+   Blueprints orchestrates deployment of artifacts as policy.
+
+   Blueprints makes use of:
+   * Role assignments
+   * Policy assignments
+   * ARM templates
+   * Resource groups
+   <br /><br />
+
+   It's like Hashicorp's Terraform, which completely controls and maintains changes.
+
 
 ### Summary
 
@@ -1960,6 +1974,10 @@ As of March 2021, Bicep is not yet integrated into the Portal.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=F1zzrnXQwKU">VIDEO</a>
 
+<a target="_blank" href="https://jackwesleyroper.medium.com/azure-bicep-pros-cons-c8121fbfe5db">
+BLOG:  Pros & Cons</a>
+
+<a name="Terraform"></a>
 
 ## Terraform for Azure
 

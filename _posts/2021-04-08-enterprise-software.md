@@ -182,6 +182,6 @@ So here you have what makes for software to be enterprise-worthy:
 9. High Availability to recover from disasters
 <br /><br />
 
-Building systems which inherently address the above enterprise concerns would save vendors and implementers the embarassment of having to add them at the request of end-users. And it's a lot easier to incorporate enterprise features during developement rather than as an afterthought.
+Incorporating the above is not just for enterprises, but any organization who want to be prepared to become massive with less issues. Building systems which inherently address the above enterprise concerns would save vendors and implementers the embarassment of having to add them at the request of end-users. And it's a lot easier to incorporate enterprise features during developement rather than as an afterthought.
 
 // Wilson Mar

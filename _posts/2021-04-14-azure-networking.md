@@ -1,0 +1,747 @@
+---
+layout: post
+title: "Azure networking"
+excerpt: "Networking"
+tags: [azure, cloud, networking]
+date: "2021-04-14"
+file: "azure-networking"
+image:
+# azure ms logo wait 1900x500-39kb.jpg
+  feature: https://cloud.githubusercontent.com/assets/300046/18188069/153fbcca-706c-11e6-983d-0783da57f75c.jpg
+  credit: Microsoft Azure
+  creditlink:  
+comments: true
+---
+<i>{{ page.excerpt }}</i>
+{% include l18n.html %}
+{% include _toc.html %}
+
+Here are the notes on Networking I took while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure exams</a>.
+ 
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/architect-network-infrastructure/">LEARN</a>: 
+You get 10 sandbox sessions per day (FREE) on labs, such as:
+* HANDS-ON 2-HOUR SANDBOX <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/connect-on-premises-network-with-vpn-gateway/3-exercise-prepare-azure-and-on-premises-vnets-using-azure-cli-commands">Exercise - Prepare Azure and on-premises virtual networks using Azure CLI commands</a> (Site-To-Site VPN)
+
+<img align="right" src="../images/az-net-site2site.svg">
+
+
+
+##  Starting an Azure Cloud Shell
+
+<a target="_blank" href="https://cloudacademy.com/lab/understanding-core-azure-networking-products/starting-azure-cloud-shell/?context_id=524&context_resource=lp">HANDS-ON LAB</a>:
+
+To deploy a container and file blob to a storage account, to be served through a CDN, use Cloud Shell that runs on a temporary host that is free to use. 
+Cloud Shell is backed by an Azure file share that persists a clouddrive home directory. You only pay for the required file share storage.
+
+You are a regular user without the ability to obtain root/administrator privileges. 
+
+PROTIP: The cloud shell times out after 20 minutes of inactivity.
+ 
+
+Instructions
+1. Click on the >_ Cloud Shell icon in the menu bar of the Azure Portal Dashboard:
+
+This will open a Cloud Shell console at the bottom of your browser window.
+
++++ Select Bash or PowerShell. You can change shells any time via the environment selector in the Cloud Shell toolbar. The most recently used environment will be the default for your next session. 
+
+2. Select Bash for your shell experience:
+3. Click on Show advanced settings to configure the shell to use existing storage resources:
+4. Set the following values in the Cloud Shell storage configuration form, and then click Create storage:
+
+Subscription: Leave the default value
+Cloud Shell region: Choose the South Central US region (The Cloud Academy Lab environment created a storage account for you in this region.)
+Resource group: Use existing. Select the resource group beginning with cal-
+Storage account: Use existing. Select the only storage account available or the one beginning with cacloudshell if there are multiple
+File share: Create new. Enter cloudshell for the name of the file share
+
+   Warning: Make sure to select the region described in the instructions. The image above is only demonstrative.
+
+   Warning: If you still can't reach the storage account, make sure the deployment reached 100%. You can check it under Resource groups -> ca-lab-### -> Deployments.
+
+   The file share creation should complete within a few seconds, and your Cloud Shell will display progress as it initializes.
+ 
+
+5. Wait until you see the prompt ending with $ indicating your Cloud Shell is ready to use:
+
+
+
+## Validate Understanding Core Azure Networking Products
+
+<a target="_blank" href="https://cloudacademy.com/lab/azure-playground-2747/">
+Azure Playground at https://cloudacademy.com/lab/azure-playground-2747/</a>
+
+
+## Variable Naming Conventions
+
+1. PROTIP: Define conventions for naming variables in PowerShell:
+
+   <pre>$rgName = "TestGroup"
+$myLocation = "eastus"
+$vmName = "FileSystemTestVM"
+$vnetName = "TestGroupVnet"
+$subnetName = "default"
+$nicName = "newnic"
+&nbsp;
+# Deallocate vm:
+Stop-AzVM -Name $vmName -ResourceGroupName $rgName
+&nbsp;
+# Get VM config:
+$vm = Get-AzVM -Name $vmName -ResourceGroupName $rgName
+&nbsp;
+# Create New VNet:
+$myVnet = New-AzVirtualNetwork -AddressPrefix "10.20.0.0/16" `
+   -Name $vmName -ResourceGroupName $rgName -Location $myLocation
+&nbsp;
+# Get info for backend subnet:
+$myVnet = Get-AzVirtualNetwork -Name $vmName -ResourceGroupName $rgName
+$backEnd = $myVnet.Subnets|?{A$_.Name -eq $subnetName}
+   </pre>
+
+
+## DDoS (Distributed Denial of Service)
+
+1. Among services, search "DDOS" for the "DDoS Protection Plan". 
+1. View Pricing.
+1. Click "Create".
+1. Naming convention: "DDOS"
+1. Create a new resource group?
+1. Select Location
+1. Create.
+
+1. In Metrics, select the firewall network group.
+1. Among metrics (all Inbound): 
+   * bytes, dropped, forwarded
+   * packets, dropped, forwarded
+   * TCP/UDP bytes, dropped, forwarded
+   * SYN packets to trigger DDoS mitigation
+   * Under DDoS attack or not has a binary values: 0 is no, 1 if yes.
+   <br /><br />
+
+1. When a network is created, the DDOS plan can be selected after <strong>"Standard"</strong> plan is paid.
+
+
+## VNets (Virtual Networks)
+
+VNets (Azure Virtual Networks) are the basic building blocks for logically isolating resources using networks in Azure.
+
+VNets enable many different Azure services, such as load balancers, virtual machines and more, to communicate securely with one another.
+
+In combination with other Azure services like network security groups they also provide layers of protection from different segments of the Internet to your Azure resources.
+
+
+## Zone-redundant gateways
+
+If you select a region that supports availability zones, VPN and ExpressRoute gateways can be deployed in a zone-redundant configuration which brings resiliency, scalability, and higher availability to virtual network gateways. 
+
+Deploying gateways in Azure Availability Zones physically and logically separates gateways within a region, while protecting on-premises network connectivity to Azure from zone-level failures. 
+
+However, that requires different gateway SKUs and leverage Standard public IP addresses instead of Basic public IP addresses.
+
+
+## Add Network Interface in VM
+
+<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=4h55m40s">VIDEO</a>
+
+Multiple NICs for load balancers, isolation.
+
+VM needs to be in stopped/deactivated to remove or add NIC.
+(Create, then Attach)
+
+<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=4h58m32s">VIDEO</a>
+Powershell to add (create) network interface
+
+<pre>$location = "CentralUS"
+   $vnetName = "TestGroupvnet"
+   $subnetName = "default"
+   $rgName = "TestGroup"
+   $vmName = "FileSystemTestVM"
+   $nicName = "newnic"
+&nbsp;
+   # Deallocate vm:
+   Stop-AzVM -Name $vmName -ResourceGroupName $rgName
+&nbsp;
+   # Get VM config:
+   $vm = Get-AzVM -Name FileSystemTestVM -ResourceGroupName $rgName
+&nbsp;
+   # Get info for backend subnet:
+   $myVnet = Get-AzVirtualNetwork -Name $vnetName -ResourceGroupName $rgName 
+   $backEnd = $myVnet.Subnets|?{$_.Name -eq} $subnetName}
+&nbsp;
+   # Create virtual NIC:
+   $newNic = New-AzNetworkInterface -ResourceGroupName $rgName 
+      -Name $nicName
+      -Location $location
+      -SubnetId $newNic.Id
+&nbsp;
+   # Get ID of new virtual nic and add to VM:
+   $nicId = (Get-AzNetworkInterface -ResourceGroupName $rgName -Name $nicName).Id
+   Add AzVMNetworkInterface -VM $vm -Id -Primary | Update-AzVm -ResourceGroupName $rgName 
+</pre>
+
+
+### Hub-and-spoke
+
+Use less code to define Hub-and-spoke by using <a target="_blank" href="https://github.com/lukeorellana/terraform-on-azure/blob/main/06-advanced-hcl/06-for-each-with-for/main.tf">for_each Terraform code</a> explained in <a target="_blank" href="https://www.udemy.com/course/terraform-on-azure-2021/learn/lecture/25583436#overview">chapter 37</a> of the <a target="_blank" href="https://www.udemy.com/course/terraform-on-azure-2021/">1.5 hr Udemy video course: Terraform on Azure 2021</a> by <a target="_blank" href="https://www.linkedin.com/in/luke-orellana/">Luke Orellana</a> under Mike Pfiffer's CloudSkills.io.
+
+
+### Hands-on
+
+1. On the dashboard of the Azure Portal, click the portal menu to select "All resources".
+
+2. <img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-icons/Virtual-Networks.svg">Among "All Resources", select <strong>Virtual Networks</strong>.
+
+   Alternately, click a Virtual Network resource (such as "calabs-vnet").
+
+3. On the Overview blade, notice the information near the top of the page:
+
+   Like other resources in Azure, each Virtual Network has a Resource group ID and a Subscription ID. This means that the virtual network belongs to a specific resource group and Azure subscription. 
+
+   Resource groups and subscriptions are two ways Microsoft uses to organize, track and bill for its resources.
+
+   ### Location = Region
+
+   The network also has a Location, which is the geographical region that holds the servers your network is hosted on.
+
+   ### Address Space 
+
+   An <strong>Address space</strong> defines IP address which will have an address inside this range.
+
+   Because 10.0.0.0/16 is a private address range, this network currently only hosts private resources, not visible to the public.
+
+   ### CIDR block
+
+   ??? CIDR block (<a target="_blank" href="https://tools.ietf.org/html/rfc1918/">RFC 1918</a>) class A, B, C
+ 
+4. In the Menu to the left, click Connected Devices:
+
+   There are currently two are Network Interfaces connected to this VNet. 
+
+   About each connected resource:
+
+   * Each resource has an IP Address that falls within the address range.
+
+   * Each resource also belongs to a subnet.
+ 
+5. In the Menu to the left, click Subnets:
+
+   DEFINITION: A subnet is a way to further separate a VNet into smaller segmented networks. Subnets are used to increase the amount of organization and trackability of resources. Because you can apply different network security groups to different subnets, using subnets also potentially increases the security of your infrastructure.
+
+   In the example, there are two subnets on the Subnets blade and that each one has an Address range that falls within the address range of the VNet. Click here for a refresher on how CIDR ranges work and an explanation of how the Address ranges of the subnets on this blade fall within the address range of the VNet.
+
+
+   ### NIC (Network Interface Card)
+
+6. Return to the Connected devices blade
+6. Click "nic0" in the example.
+7. On the following blade, click "caLabsVM0"
+
+   The Overview blade of the caLabsVM0 Virtual Machine (VM). This is because the network interface deployed to the VNet was attached to this VM. 
+
+   Network interfaces allow resources including VMs to communicate with other resources in Azure and on the Internet. Because this VM has a network interface attached and that network interface belongs to the VNet, this VM will be able to communicate with other resources in the VNet.
+
+
+## Scaling
+
+There are two ways to spread load:
+
+   * Load balancers
+   * App Gateways
+   * ILB (Internal Load Balancers)
+
+
+### Azure Load Balancers 
+
+A <strong>Azure Load Balancer</strong> directs incoming traffic to multiple resources such as virtual machines. 
+This allows the deployment of highly scalable, high-availability solutions, since they can scale the number of targets behind a load balancer up and down as much as needed and still direct internet traffic to a single load balancer. 
+
+
+1. Create LB
+
+   The Basic Load Balancer is scoped to an Availability Set.<br />
+   The Standard Load Balancer is scoped to the entire virtual network.
+
+1. In All services, All resources, select your LB resource to include virtual machines for load-balancing internet traffic. 
+
+   Under Settings, select Backend pools, then select Add.
+
+   To distribute traffic to the VMs, a backend address pool contains the IP addresses of the virtual (NICs) connected to the Load Balancer.
+
+   Type a name for your Backend pool, then select Add.
+
+
+1. Use LB
+
+<a target="_blank" href="https://cloudacademy.com/lab/understanding-core-azure-networking-products/reviewing-azure-load-balancers/?context_id=524&context_resource=lp">LAB</a>:
+
+1. On the dashboard of the Azure Portal, click the portal menu > All resources:
+2. On the All resources modal, click caLabsLB:
+
+   This will bring you to the Overview blade for the caLabsLB load balancer.
+
+3. On the Overview blade, notice:
+
+   As with any VNet, the load balancer is deployed under a Resource group and Subscription.
+
+   The load balancer has a Public IP address which accepts incoming traffic on before redirecting to the backend pool. 
+
+4. In the menu to the left, click +++ Load Balancing Rules.
+5. On the Rules blade, click LBRule for the information blade for the LBRule load balancing rule:
+
+   Notice: The rule has a Port and a Backend port value. The Port value is the port the load balancer will listen for traffic on. In this case, the port is 80, meaning that the load balancer will listen for HTTP traffic (traffic on port 80). A backend port is a port that can optionally be different from the port, in case you want to accept traffic from one port on the load balancer and direct it to a different port on your targets (such as virtual machines).
+
+   The rule has a Health probe set to tcpProbe (TCP:80). This means that the load balancer will occasionally send test traffic to the targets in its backend pool to ensure the health of the targets. In this case, TCP:80 means that the load balancer will send test TCP data over port 80 to its targets.
+
+   The rule has a Backend pool set to BackendPool1. This is the backend pool that will accept traffic from the load balancer. A backend pool is a target for load balancers to direct their incoming traffic to, and contain at least one target, such as a web server on a virtual machine.
+ 
+6. At the top of the page, click caLabsLB - Load balancing rules to return to the menu:
+7. In the menu, click Backend pools:
+8. Click the arrow to the left of Backendpool1 to expand it:
+
+   The load balancer will alternate traffic between virtual machines in the backend pool. 
+
+   Each VM is attached to one of two network interfaces which accept and send traffic. 
+
+
+### Azure Application Gateways
+
+Compared with Load Balancers, Azure Application Gateways provide more customized support for public and private web apps. While load balancers route traffic purely based on IP address and port information, application gateways can take this a step further and route based on things like URIs. 
+
+This means that an application gateway can route traffic sent to "some-ip-address/admin" differently than, say, traffic sent to "the-same-ip-address/general" This allows for much more detailed control of your routing.
+
+Application Gateways can also accept traffic for more than one site using multiple site hosting -- sending traffic from examplesite1.com to backend pool 1, traffic from examplesite2.com to backend pool2, and so on. 
+
+A single Azure Application gateway can manage up to <strong>100 sites</strong>.
+
+Application Gateways offer may other very useful features such as SSL termination, connection draining and request redirection. While this Lab Step will cover the fundamentals of Azure Application Gateways, it's highly worth it to learn more about application gateways in depth.
+
+<a target="_blank" href="https://cloudacademy.com/lab/understanding-core-azure-networking-products/reviewing-azure-application-gateways/?context_id=524&context_resource=lp">LAB</a>: 
+
+1. On the dashboard of the Azure Portal, click the portal menu > All resources:
+
+2. In the All resources blade, click  calabs-appGateway:
+
+3. On the Overview blade, notice a couple of things:
+
+   * The application gateway is deployed into the Virtual network/subnet, calabs-vnet/calabsappgatewaysubnet. Recall that this is the same VNet you have seen other resources deployed into, and a new subnet that you haven't seen. Recall from a previous lab step that because the application gateway is deployed into its own subnet, it has a level of isolation from other resources deployed into the same VNet. 
+
+   * The application gateway can have a Frontend private IP address but not a Frontend public IP address. Recall from a previous lab step that this means the application gateway will be able to host private web applications, but not public ones. Based on what you've learned about networking so far, what does this mean for how you'd most likely use the application gateway? Here are two common scenarios:
+
+   * The application gateway can host applications that are reachable by other services within the same VNet (things like APIs and microservices), which won't be available to the public internet
+
+   The application gateway can host private web applications, which you could reach from your on-premises network by connecting your local network and the VNet the application gateway is in, using a VPN gateway. This is commonly done for applications that companies don't want anyone but employees to be able to find.
+ 
++++ Metrics:
+   * Sum Total Requests
+   * Sum Failed Requests
+   * Sum Response Status by HttpStatus
+   * Sum Throughput
+   * Sum CurrentConnections
+   * Avg Healthy Host Count By BackendPool HttpSettings
+   * Avg Unhealthy Host Count By BackendPool HttpSettings
+   <br /><br />
+
+
+4. In the menu to the left, click  Backend pools and then click  appGatewayBackendPool:
+
+   Notice that similar to the load balancer covered in a previous Lab Step, this application gateway has a single backend pool with two targets.
+
+5. Click Cancel:
+6. In the menu to the left, click Listeners:
+
+   Notice that there is a single listener. Currently, it listens to connections on port 80 and sends that request to a rule, rule1: 
+
+7. In the menu to the left, click  Rules:
+8. Notice that there's a single rule, rule1, which you saw a moment ago. Click it:
+
+   The rule is sending traffic to the backend pool you saw earlier,  appGatewayBackendPool.
+
+9. Click calabs-appGateway - Rules at the top of the page:
+10. At the top of the Rules blade, click + Request routing rule:
+
+  Notice that at the bottom of this blade you've got the ability to set path-based rules.
+
+
+## Azure VPN Gateways
+
+https://cloudacademy.com/lab/understanding-core-azure-networking-products/reviewing-azure-vpn-gateways/?context_id=524&context_resource=lp
+
+Introduction
+Azure VPN Gateways are a type of Azure Virtual network Gateway which allows you to create secure connections between your on-premises network and an Azure Virtual Network (VNet). Azure uses leading security practices to protect data traveling between your on-premises network and your Azure network as if it were a single virtual private network (VPN). Among the benefits of this is the ability to use a hybrid infrastructure consisting of cloud and on-premises resources, with more security than you would get by simply handling your traffic over the public internet. In this Lab Step, you will navigate to an existing VPN gateway and learn about its fundamentals.
+
+ 
+
+Instructions
+1. On the dashboard of the Azure Portal, click the portal menu > All resources:
+2. On the All resources blade, click caLabsGateway:
+3. Notice a few things on the resulting Overview blade:
+
+The gateway has a Gateway type of  VPN. While the scope of this Lab Step will only cover specifically VPN gateways, know that virtual network gateways can have more than one type.
+
+The VPN gateway has been provisioned within a Virtual network, specifically the one you reviewed earlier. This means that by default, any traffic sent through the gateway will end up in this specific VNet until directed elsewhere.
+
+The gateway also has a Public IP address. VPN gateways need a public IP address because although they create an environment that emulates a private network between your on-premises resources and your cloud resources, the traffic still technically needs to travel over the public internet to reach your VPN gateway. Once configured, your on-premises network will know to send its traffic to this public IP address.
+ 
+
+4. In the menu to the left, click  Connections:
+5. Notice there aren't currently any connections. Any connections here would mean that your gateway is currently connected to another gateway, such as the gateway of an on-premises network. At the top of the Connections blade, click  Add:
+
+alt
+
+ 
+
+6. In the Add connection blade, change Connection type to  Site-to-site (IPsec):
+
++++ https://cloudacademy.com/course/overview-of-azure-services/azure-overview/
+
+
+## Azure VPN Gateway
+
+Create VNet to an on-prem network securely by creating an <strong>Azure VPN Gateway</strong> which creates a Gateway subnet running 2 or more VMs running services. So it has some latency. It has bandwidth limitations.
+
+   * VNet-to-VNet in diff. regions
+   * Site-to-site (using IPsec) to another network's VPN appliance on-prem.
+   * Point-to-Site
+   <br /><br />
+
+<strong>ExpressRoute</strong> Circuit uses an MSEE router to access Azure:
+   * ExpressRoute (allows users to extend on-premises networks into the Azure cloud using a dedicated, private connection that does not go over the public Internet) 
+   * ExpressRoute Direct physical port for up to 100Gps via 
+   <br /><br />
+   
+   PRICING: It's one of the most expensive services in Azure: $80,000/month.
+
+   The blade has a Virtual network gateway section set to the gateway you're currently navigated to, and you can't change it. This means that you're attempting to create a connection from somewhere to your current VPN gateway.
+
+   The blade also has a Local network gateway section, which is the section that would contain information about the local network (such as your on-premises network) that you wish to connect to your VPN gateway.
+ 
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/build-cloud-governance-strategy-azure/3-create-subscription-governance-strategy">CAUTION</a> LIMIT: The maximum number of 10 network Azure ExpressRoute circuits per subscription. 
+
+7. Click Choose a local network gateway and then Create new:
+
+   Notice two fields here:
+
+   The IP address field would contain the public IP address of the gateway of your on-premises network. Just like your VPN Gateway needed a public IP address so that your on-premises resources know how to find it, the opposite is true. The public IP address here will tell your VPN gateway where to send traffic when transmitting data to your local network.
+
+   The Name field is where you would place a unique label on your connection, for easy organization.
+ 
+
+## Service Trust Portal
+(Not Trust Center)
+provides useful links to assist organizations going through compliance audits based on standards like FedRAMP or ISO27001.
+
+## Trusted IPs
+
+Each CIDR can be configured with up to 50 IP address ranges.
+
+Also MFA Trusted IPs.
+
+
+## Network Peering
+
+<strong>Global peering</strong> of two VNets connects different regions through <strong>Microsoft's own internal backbone</strong>, not via the public internet. This needs to use Standard tier of load balancer (not Basic LB used by below):
+
+   * Active Directory Domain Service
+   * App Gateway v1
+   * App Service Environment
+   * Logic Apps
+   * Service Fabric
+   * Azure Batch
+   * Redis Cadhe
+   * HD Insight
+   * Azure SQL Database Management Instance
+   <br /><br />
+
+PROTIP: Cross-tenant VNet Peering is configured not in GUI, but using CLI.
+
+1. Create two virtual networks.
+
+   Reciprical connections: Two connections need to be setup to & from.
+
+   NOTE: Cross-subscription peerings are supported.
+
+1. Peer the virutual networks.
+1. Create virtual machines on each network.
+1. Test communication between machines.
+
+   Use Network Watcher
+
+1. Add peering blade 
+   * Allow forwarded traffic
+   * Allow gateway transit
+   * Use remote gateways
+
+
+Peerings are not transitive: A - B, B - C, A cannot talk to C.
+So use Gateway Transit for that, which allows sharing a VPN or Express Route gateway across a peering. This minimizes complexisty and centralizes management.
+
+There is a limit of 100 peering connections.
+
+## Gatways = load balancers
+
+Peering of regions connects without creating a gateway, which are charged by hour and bytes egress, and introduces extra latency with limited bandwidth.
+
+App Gateway are used for HTTP Load Balancing.
+
+Network Load balancing = Azure Load Balancer
+
+Global load balancer = Azure Traffic Manager across regions
+
+Global Traffic Routing = Azure Front Door 
+
+
+<a name="NSGs"></a>
+
+## NSG (Network Security Groups)
+
+<a target="_blank" href="https://learning.oreilly.com/videos/new-microsoft-az-303/10009AZ303/10009AZ303-AZ303_162">VIDEO</a>
+
+1. Create a Resource Group if you haven't already.
+
+1. Search for "NSG" to use the wizard.
+
+   NSGs can be applied to subnets or on network interface cards on each VM.
+
+   NSG properties:
+   * Protocol: TCP/IP, UDP
+   * Source & Destination Port range
+   * Source & Destination Address prefix
+   * Direction (inbound or outbound)
+   * Priority 100-4096 (order evaluated) where lower number have higher priority
+   * Access (Allow/Deny)
+   <br /><br />
+
+   Default tags:
+   * System provided
+   * Virtual network
+   * Azure laod balancer
+   * Public Internet
+   <br /><br />
+
+   Subnet rules apply to ALL resources in subnet.
+
+1. Define Outbound security rules.
+1. Define Inbound security rules.
+
+   When comparing network security options, a NSG (network security group) cannot Allow or deny inbound traffic to  or from specific domain names, but Azure Firewall can.
+
+
+
+
+<a name="Azure_Firewall"></a>
+
+## Azure Firewall
+
+Azure Firewall is a cloud-based, stateful service which limit outbound traffc based on an allowlist of FQDN (Fully Qulified Domain Names) and SQL traffic. Allow and deny lists can be centrally defined. 
+
+Azure Firewall adds "Threat Intelligence" about malicious IPs and FQDNs.
+
+Azure Firewall has HA to span availability zones which boosts the standard SLA to 99.99% from 99.95%.
+
+Azure Firewall provides outbound SNAT (Source Network Address Translation) and inbound DNAT (Destination Network Address Translation).
+
+The competitor is Palo Alto.
+
+
+## Portal Monitor
+
+1. In the Portal, click "" ???
+
+
+<a name="Network_Watcher"></a>
+
+## Network Watcher
+
+<pre>az network watcher configure --resource-group $MY_RG --locations $LOCATION --enabled -o table
+</pre>
+
+1. In the Portal, search for "Network Watcher".
+
+
+Network Watcher is a <strong>suite</strong> of tools:
+* Diagram
+
+To generate a visual to view VNet layout Topology. Downloads an SVG graphic image.
+
+To track connection reachability, use <strong>Connection monitor</strong>
+which measures latency and topology changes.
+
+To check connectivity check from Azure VMs to some other endpoints, use <strong>IP flow verify</strong>. It shows 5 tuples: source & destination IP address, ports, protocol.
+
+To check direct TCP connetion with any endpoint more comprehensively than IP flow verify, use <strong>Connection troubleshoot</strong>.
+
+To verify routing paths, use <strong>Next hop</strong>.
+
+To analyze NSG rules, use <strong>Effective security rules</strong>.
+
+For deep logging of VPN Gateway, use <strong>VPN troubleshooting</strong>
+
+To gather ethernet frames for analysis by WireShark or MMA, use <strong>Packet capture</strong>.
+
+Diagnose and solve issues such as:
+   * VNet traffice filtering 
+   * Network routing
+   * VPN/gateway connectivity
+
+## Network Performance Monitor
+
+1. In the Portal, click "+" at the upper-left corner for the Marketplace.
+1. In Search, Type enough of "Network Performance Monitor" to select it.
+
+   Notice it's from Solarwinds.
+
+1. Click "Create".
+1. Create Resource group.
+1. Select choices to create a VM instance.
+
+
+## Network Watcher
+
+1. In the Portal, search for "Network Watcher".
+
+   Notice it runs on a regional level.
+
+
+## Azure Log Analytics
+
+## Azure CDN (Content Delivery Network)
+
+Azure's Content Delivery Networks (CDN) offers a way to deliver data efficiently on a global scale. CDNs typically cache content on more than one server in order to guarantee that when a user requests data, the data is on a server close enough to them to minimalize the amount of time the user has to wait for that data. Azure installs CDN data on servers in point-of-presence (POP) locations all around the world to efficiently deliver data, regardless of the user's location. Azure often uses something called a cache, which is a set of previously-stored data, to serve to users, so that new information doesn't have to be requested and received every time. This greatly reduces the latency, or wait time, the end-user experiences.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview">DOCS</a> 
+<a target="_blank" href="https://cloudacademy.com/lab/understanding-core-azure-networking-products/reviewing/?context_id=524&context_resource=lp
+">LAB</a>:
+
+1. Portal Menu > All resources: 
+1. Click the Storage account beginning with storage:
+
+   An Azure Storage Account contains your stored data objects in Azure. Azure CDNs use storage accounts to store data, and when data is requested by an end-user, the CDN searches for that data in a storage account.
+
+   +++ Metrics:
+   * Total egress (KiB)
+   * Total ingress
+   * Average Latency (ms)
+   * Request breakdown (ClientOtherError & Success)
+   <br /><br />
+
+3. In the Storage account menu, under Blob service, click Azure CDN:
+
+   Notice that a CDN endpoint has already been provisioned:
+
+   Note: If you don't see an endpoint here, reload the page every few minutes until you do. It can take up to 10 minutes for the CDN to propagate.
+
+4. Copy the endpoint of the CDN and paste it into a new browser tab:
+
+   Notice that currently, the endpoint results in a "Page not found" message. Currently the CDN points to a storage network that has no files stored on it. Next, you'll upload a file to the storage account and see it take effect on the CDN.
+
+5. Use the Cloud Shell button you discovered in the previous Lab Step to open the Cloud Shell, if it's not already open:
+
+6. Type touch example.html into the terminal and press enter to create a file called example.html.
+
+7. Click alt at the top of the Cloud Shell to open the Editor:
+
+8. Click example.html in the Files menu to open example.html.
+
+9. Type Hello from the Azure CDN! into the Editor on the right and press ctrl+s on Windows or Linux, or cmd+s on mac to save the file. 
+
+10. Click the ... at the top-right of the editor and click Close editor:
+
+11. In the terminal, enter the following command and press enter:
+
+    storage_account=$(az storage account list --query [0].name -o tsv)
+
+    This command will save the name of the storage account you're working with to a variable called storage_account.
+ 
+
+12. Enter echo $storage_account to confirm the command worked:
+
+13. In the terminal, enter the following commands and press enter:
+
+   Copy code
+   az storage container create --name calabscontainer --account-name $storage_account --public-access blob
+   
+   az storage blob upload --container-name calabscontainer --account-name $storage_account --name example --file example.html
+
+   The first command creates a container, a service to segment data within storage accounts. The second command uploads the file you created as a blob to the container.
+
+    The end result is that example.html has been uploaded as a blob named example to a container, calabscontainer, which resides in the storage account you discovered earlier. If you'll recall, the CDN searches the storage account it's deployed to for resources, so you should be able to access your file through the CDN now (after adequate time to allow the file to propagate to the CDN POP locations).
+
+    Warning: The two commands will output a warning regarding authentication, don't worry about that and go to the next step.
+
+14. Click the X at the top-right of the Cloud Shell to close it.
+
+15. In the Storage account menu, under Blob service, click Containers:
+
+16. Click calabscontainer the container. Click example:
+
+17. In the resulting Blob blade, notice the URL field near the top. The URL corresponds to the URL of the blob in the storage account. Click the icon to the right of the URL to copy it:
+
+18. Paste the URL into a new browser tab:
+
+    Despite the message, you have accessed the blob directly and not through the CDN. To access the file through the CDN you must use the CDN endpoint.
+
+19. Replace the URL domain with your CDN endpoint (preserving the /calabscontainer/example path):
+
+Most likely you will get a Page not found message, since as you'll recall the CDN stores data in servers around the globe, so propagation can take a bit of time (up to 90 minutes depending on the CDN configuration). That being said, if you were to wait long enough and refresh the page you would see the message you saved in example.html. This is how Azure CDN serves content stored in Azure efficiently to end-users around the world. It is also worth noting that you can use a custom domain with your Azure CDN so you can use your company's web domain rather than the default CDN endpoint ending with .azuredege.net.
+
+
+## Video Courses
+
+At Microsoft LEARN:
+
+   * https://docs.microsoft.com/en-us/learn/paths/architect-network-infrastructure/
+
+by Anand Rao Nednur at Udemy:
+
+   * <a target="_blank" href="https://www.udemy.com/course/exam-az-104-microsoft-azure-administrator/learn/lecture/18898624">AZ-104 Networking</a>: 
+
+By Tim Warner at Pluralsight:
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-administrator-monitor-troubleshoot-vn" title="49m·Oct 7, 2020"> Microsoft Azure Administrator: Monitor and Troubleshoot Virtual Networking</a>
+   
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-administrator-secure-access-vn">Microsoft Azure Administrator: Secure Access to Virtual Networks</a>
+   
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-administrator-implement-manage-vm">"Microsoft Azure Administrator: Implement and Manage Virtual Networking"</a>
+   
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/exam-alert-configure-manage-az-vn">Exam Alert: Configure and Manage Azure Virtual Networking</a>
+   
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-administrator-configure-name-resolution">Microsoft Azure Administrator: Configure Name Resolution</a>
+   
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-administrator-configure-load-balancing">Microsoft Azure Administrator: Configure Load Balancing</a>
+   
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-network-load-balancing-managing">Managing Network Load Balancing in Microsoft Azure</a>
+
+   * <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=a0b1381f-0df4-4a51-b202-e003a4e39e00">Inspecting Azure Virtual Network Traffic</a>
+
+   * <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=5ae8cd9b-a157-42b9-a9ed-21612b31a525">Inspecting Azure Hybrid Cloud Network Traffic</a>
+
+<a target="_blank" href="https://cloudacademy.com/lab/understanding-core-azure-networking-products/reviewing-azure-virtual-networks/?context_id=524&context_resource=lp">CloudAcademy</a>
+
+## Quiz items
+
+What resource can be used to control inbound and outbound access to network interfaces (NICs), VMs, and subnets?
+A Virtual Resource Managers (VRMs) 
+B Virtual appliance
+C Router interface
+D Network Security Groups (NSGs)
+
+
+You want to distribute the incoming requests for your application hosted on multiple virtual machines within a single virtual network. Which Azure networking resource should you deploy?
+A A traffic manager
+B A content delivery network
+C A load balancer
+D A virtual network gateway
+
+
+NOT a feature of Azure Security Center:
+A VM recommendations such as OS patches
+B Alerts for suspected VM malware and potential SQL DB injection attacks
+C >>> Invalid Azure Portal logins
+D Azure Storage recommendations
+
+
+## More on DevSecOps #
+
+This is one of a series on DevSecOps:
+
+{% include devops_links.html %}
