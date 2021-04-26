@@ -47,7 +47,8 @@ There are several ways to automate stand up services within Azure:
    * <a href="#VM_PS_JSON">Powershell</a> running ARM template JSON files
    * <a href="#VM_Docker">Docker</a> containers
    * <a href="#VM_Docker">Terraform</a> HCL files
-   * Plummi Python/C#/Nodejs scripts
+   * Microsoft Bicep (new)
+   * <a target="_blank" href="https://wilsonmar.github.io/plummi/">Plummi Python/C#/Nodejs scripts</a>
    <br /><br />
 
 ### Cloud Shell

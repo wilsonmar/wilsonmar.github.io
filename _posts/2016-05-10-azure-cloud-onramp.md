@@ -89,7 +89,7 @@ This is a hands-on deep-dive tutorial with commentary along the way, covering ho
 
 ## Hands-on time
 
-1. "Exercises" in Microsoft Learn provide FREE "MICROSOFT LEARN SANDBOX" temporary subscription access one or two hours at a time. Search within:
+1. "Exercises" in Microsoft Learn provide FREE "MICROSOFT LEARN SANDBOX" temporary "Concierge" subscription access one or two hours at a time. Search within:
 
    <a target="_blank" href="
    https://docs.microsoft.com/en-us/learn/">
@@ -373,6 +373,8 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
    ### Blueprints
 
    TODO: Blueprints handle deny.
+
+   https://github.com/timothywarner/az500/tree/master/blueprints
 
    Blueprints orchestrates deployment of artifacts as policy.
 

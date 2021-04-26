@@ -24,6 +24,9 @@ You get 10 sandbox sessions per day (FREE) on labs, such as:
 
 <img align="right" src="../images/az-net-site2site.svg">
 
+<a target="_blank" href="https://learning.oreilly.com/attend/exam-az-303-microsoft-azure-architect-technologies-crash-course/0636920452881/0636920053523/">
+6 hr LIVE on OReilly: Tim Warner</a> teaches to his <a target="_blank" href="https://github.com/timothywarner/az303">GitHub repo</a> which includes a <a target="_blank" title="warner-azure-frankenstein-V2-793x629" href="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png">full diagram</a><br />
+<img alt="warner-azure-frankenstein-V2-793x629" width="793" height="629" src="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png"></a>
 
 
 ##  Starting an Azure Cloud Shell
@@ -138,6 +141,35 @@ Deploying gateways in Azure Availability Zones physically and logically separate
 
 However, that requires different gateway SKUs and leverage Standard public IP addresses instead of Basic public IP addresses.
 
+
+PROTIP: The list of all <a target="_blank" href="
+https://www.microsoft.com/en-us/download/details.aspx?id=56519">
+"Azure IP Ranges and Service Tags – Public Cloud" from
+https://www.microsoft.com/en-us/download/details.aspx?id=56519</a>
+downloads file ServiceTags_Public_20210419.json containing (at time of writing) 77,960 lines with these grouping names:
+   * ActionGroup
+   * ApplicationInsightsAvailability
+   * AzureActiveDirectory
+   * AzureAdvancedThreatProtection
+   * ApiManagement
+   etc.
+
+<pre>{
+  "changeNumber": 144,
+  "cloud": "Public",
+  "values": [
+    {
+      "name": "ActionGroup",
+      "id": "ActionGroup",
+      "properties": {
+        "changeNumber": 9,
+        "region": "",
+        "regionId": 0,
+        "platform": "Azure",
+        "systemService": "ActionGroup",
+        "addressPrefixes": [
+          "13.66.60.119/32",
+</pre>
 
 ## Add Network Interface in VM
 
