@@ -48,7 +48,8 @@ There are several ways to automate stand up services within Azure:
    * <a href="#VM_Docker">Docker</a> containers
    * <a href="#VM_Docker">Terraform</a> HCL files
    * Microsoft Bicep (new)
-   * <a target="_blank" href="https://wilsonmar.github.io/plummi/">Plummi Python/C#/Nodejs scripts</a>
+   * REST API (used <a target="_blank" href="https://azidentity.azurewebsites.net/post/2020/12/15/key-vault-with-the-use-of-vbscript-classic-asp">within a VBScript program</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/pulumi/">Pulumi Python/C#/Nodejs/Typescript code</a>
    <br /><br />
 
 ### Cloud Shell

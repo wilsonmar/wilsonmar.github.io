@@ -120,6 +120,16 @@ https://github.com/Azure-Samples/azure-files-samples
    Premium = SSD (Solid State Disks) faster, for 99.99% SLA outside Availability Set.
    PROTIP: Premium SSD disks are paid a fixed maximum cost for each month, regardless of usage. That's in addition to any Egress charges.
 
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr><th> Type </th></tr> Size </th><th> IOPS Limit expected </th><th> Thruput limit MB/s </th></tr>
+   <tr valign="top"><td align="right"> Standard HHD
+      </td><td> 250 </td><td>  500 </td><td> 60 </td></tr> 
+   <tr valign="top"><td align="right"> Standard SSD
+      </td><td> 250 </td><td>  ? </td><td> ? </td></tr> 
+   <tr valign="top" align="right"><td align="left"> Premium SSD 
+      </td><td> 250 </td><td> 1100 </td><td> 125 </td></tr> 
+   </table>
+
    * General-purpose v1 can contain blobs (more expensive than v2)
    * General-purpose v2 supports Access tiers: hot, cool, archive with Lifecycle Policies; upgrade from blob storage???
    <br /><br />
@@ -1134,6 +1144,8 @@ https://azure.microsoft.com/en-us/services/synapse-analytics/
 https://azure.microsoft.com/en-us/services/synapse-analytics/resources/
 
 https://github.com/Azure-Samples/Synapse
+
+https://www.pulumi.com/blog/get-up-and-running-with-azure-synapse-and-pulumi/
 
 
 <a name="KeyVault"></a>
