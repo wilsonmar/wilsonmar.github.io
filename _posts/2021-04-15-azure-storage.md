@@ -718,17 +718,23 @@ With Azure Files services, can use Azure File Sync agent which uses a Windows se
 
 <hr />
 
+## Backup and Recovery
+
+Saving data in another location is fundamental to recovery from failure.
+Backups are taken for recovery from accidental data loss, data corruption, or ransomware attacks. It addresses your company's Business continuity and disaster recovery (BCDR) plan.
+
+
+
 <a name="ABS"></a>
 
-## Azure Backup Service (ABS)
+### Azure Backup Service (ABS)
 
 <img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-patterns/azure-backup.svg">
 <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=3h26m10s">VIDEO</a>
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/protect-virtual-machines-with-azure-backup/">LEARN</a>:
+<a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course/categories/4743683/posts/8995676" title="AZ-104">TUTORIAL</a>:
 
 The Azure SQL Database service is an example of IaaS (infrastructure-as-a-service).
-
-Backups are taken for recovery from accidental data loss, data corruption, or ransomware attacks. It addresses your company's Business continuity and disaster recovery (BCDR) plan.
 
 Microsoft Azure Backup Service combines to provide a seamless backup and recovery experience to a local disk, or to the cloud:
    * the familiar Windows Server Backup utility in Windows Server, 
@@ -739,7 +745,7 @@ Microsoft Azure Backup Service combines to provide a seamless backup and recover
 <a target="_blank" href="https://www.skillpipe.com/?lang=en-GB#/reader/urn:uuid:e36b495e-ef2a-5560-893e-f22ebe2ac3e6@2021-03-19T02:45:22Z/content">*</a>
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/114915742-30fcac00-9de1-11eb-9c0e-ce89b6a36e32.png"><img width="815" alt="az-backup-1630x644" src="https://user-images.githubusercontent.com/300046/114915742-30fcac00-9de1-11eb-9c0e-ce89b6a36e32.png">
 
-Every Azure VM is created with an extension to do backups.
+PROTIP: Azure creates every VM with an extension to do backups.
 
 1. When you configure Backup, it communicates with the <strong>Azure Backup Service</strong> and associates itself to a policy. <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/protect-virtual-machines-with-azure-backup/4-exercise-back-up-azure-virtual-machine">STEPS</a>
 
@@ -759,11 +765,16 @@ The backup policy supports two access tiers - snapshot tier and the vault tier.
 
    For recovery point type <strong>"snapshot and vault"</strong>, <strong>Vault tier</strong> snapshots are additionally transferred to a vault for additional security and longer retention. 
 
-4. In the background, the snapshot is compared to a snapshot of a previous recovery point and <strong>only incremental blocks are moved</strong> via HTTPs into the Recovery Services vault. Efficient use of bandwidth!
 
-The recovery services vault has encryption enabled via server-side encryption (SSE), so the backup is encrypted at rest and is protected while in transit.
+   <a name="Recovery_Services_Vault"></a>
 
-When data is secured via Azure Disk Encryption, you are given the key encryption key (KEK) and BitLocker encryption key (BEK) stored in an Azure Key Vault, and also backed up via Azure Backup. During data recovery, there is no worry about what keys were used when the backup was taken, since the keys are restored for data recovery.
+   #### Recovery Services Vault (RSV)
+
+4. In the background, the snapshot is compared to a snapshot of a previous recovery point and <strong>only incremental blocks are moved</strong> via HTTPs into the Recovery Services vault. (Efficient use of bandwidth!)
+
+   The recovery services vault has encryption enabled via Server-Side Encryption (SSE), so the backup is encrypted at rest and in transit.
+
+   When data is secured via <strong>Azure Disk Encryption</strong>, you are given the key encryption key (KEK) and BitLocker encryption key (BEK) stored in an Azure Key Vault, and also backed up via Azure Backup. During data recovery, there is no worry about what keys were used when the backup was taken, since the keys are restored for data recovery.
 
 PowerShell:
 

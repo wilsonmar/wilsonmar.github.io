@@ -394,8 +394,8 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
    It's like Hashicorp's Terraform, which completely controls and maintains changes.
 
-   https://github.com/timothywarner/az500/tree/master/blueprints
-
+   * https://github.com/timothywarner/az500/tree/master/blueprints
+   * https://github.com/terraform-providers/terraform-provider-azurerm
 
 
 ### Summary

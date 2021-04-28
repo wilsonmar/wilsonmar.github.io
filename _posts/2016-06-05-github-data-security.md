@@ -59,9 +59,7 @@ A <strong>key-logger</strong> program ("spyware") installed on your laptop can c
 
 Most enterprise GitHub instances route login to their GitHub organization automatically through their Duo or other multi-factor authentication process on each user's own smart mobile phone.
 
-If you use an employer-provided smartphone, your employer GitHub account would be protected.
-
-But your personal GitHub account is still exposed.
+If you use an employer-provided smartphone, your employer GitHub account would be protected via SSO through Duo, Okta, etc. But your personal GitHub account is still exposed.
 
 <a name="GitHub2FA"></a>
 
@@ -72,10 +70,13 @@ we recommended that you enable GitHub's 2FA (Two-factor Authentication).
 
 There are many tutorials on how to do this on YouTube.
 
-1. In an internal browser (Chrome) at <a target="_blank" href="https://github.com/">https://github.com</a> 
-1. Login using your account name and password.
-1. Click the avatar picture on the top right on the black band for the drop-down menu to select "Settings".
-1. In the left sidebar, click <strong>Account security</strong>.
+1. Use an internet browser (Chrome) to go to:
+
+   <a target="_blank" href="https://github.com/settings/security">
+   https://github.com/settings/security</a> 
+
+   You can reach this by clicking the avatar picture on the top right on the black band for the drop-down menu to select "Settings", then in the left sidebar, click <strong>Account security</strong>.
+   
 1. Click the green "Enable two-factor authentication".
 
    ![2fa-enable-300x123](https://user-images.githubusercontent.com/300046/103462493-c5d01380-4ce2-11eb-9f67-da26c03dbb6c.jpg)
