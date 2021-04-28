@@ -2212,6 +2212,9 @@ An AUP (acceptable use policy) details appropriate use of information systems, h
 
 “Security is always excessive until it's not enough.” – Robbie Sinclair
 
+Pass the <a target="_blank" href="https://open.hpi.de/courses/cybersec-exam-4">
+Cybersecurity Exam</a> in 3 courses from the Hasso Plattner Institut (HPI) free Open university in Germany.
+
 ## More on Security #
 
 This is one of a series on Security in DevSecOps:

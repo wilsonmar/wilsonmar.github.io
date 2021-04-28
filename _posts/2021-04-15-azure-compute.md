@@ -245,7 +245,8 @@ If the score is >.5 (neutral), Actions can:
 
 ### Static Web Apps
 
-Static Web Apps are fast because HTML is already rendered and sitting in a CDN.
+<a target="_blank" href="https://www.youtube.com/watch?v=O7cbfiabJno&list=PLj2SwmCaQ41xK-Xcuqt6BQN8C7utyVC5w&index=2">VIDEO</a>:
+Static Web Apps are fast because HTML is already rendered and sitting close to users in a CDN.
 
 <img align="right" width="100" src="https://appservice.azureedge.net/images/static-apps/v3/staticapps.svg"> Static web app sample URL:
 

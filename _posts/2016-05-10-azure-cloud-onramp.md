@@ -68,6 +68,10 @@ This is a hands-on deep-dive tutorial with commentary along the way, covering ho
    <a target="_blank" href="https://myapps.microsoft.com"><strong><u>https://myapps.microsoft.com</u></strong></a>
    </td><td> Self-Service password reset
    </td></tr>
+<tr valign="top"><td> Support tickets </td><td>
+   <a target="_blank" href="https://serviceshub.microsoft.com"><strong><u>https://serviceshub.microsoft.com</u></strong></a>
+   </td><td>-
+   </td></tr>
 </table>
 
 <a name="USGov"></a>
@@ -88,6 +92,9 @@ This is a hands-on deep-dive tutorial with commentary along the way, covering ho
    <a target="_blank" href="https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/">Pulumi</a> enables programmatic access (by a Python program) to Azure.
 
 ## Hands-on time
+
+The fictional company for use in examples, <a target="_blank" href="https://github.com/microsoft/TailwindTraders/tree/master/Documents/DemoScripts/Integrating%20Azure%20DevOps%2C%20Microsoft%20Teams%20and%20GitHub">Tailwind Traders</a>
+
 
 1. "Exercises" in Microsoft Learn provide FREE "MICROSOFT LEARN SANDBOX" temporary "Concierge" subscription access one or two hours at a time. Search within:
 
@@ -370,11 +377,11 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
    To do remediation, define a Managed Identity.
 
 
+   <a name="Blueprints"></a>
+
    ### Blueprints
 
    TODO: Blueprints handle deny.
-
-   https://github.com/timothywarner/az500/tree/master/blueprints
 
    Blueprints orchestrates deployment of artifacts as policy.
 
@@ -386,6 +393,9 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
    <br /><br />
 
    It's like Hashicorp's Terraform, which completely controls and maintains changes.
+
+   https://github.com/timothywarner/az500/tree/master/blueprints
+
 
 
 ### Summary
@@ -404,9 +414,45 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
 <hr />
 
+## Automation programmatically
+
+There are several ways to automate stand up services within Azure:
+   * <a href="#VM_GUI">Portal GUI Cloud Shell</a>
+   * <a href="#VM_template">Template</a>
+   * <a href="#VM_CLI">CLI</a> Bash scripts
+   * <a href="#VM_PS">Powershell</a> ps1 scripts
+   * <a href="#VM_PS_JSON">Powershell</a> running ARM template JSON files
+   * <a href="#VM_Docker">Docker</a> containers
+   * <a href="#VM_Docker">Terraform</a> HCL files
+   * Microsoft Bicep (new)
+   * REST API (used <a target="_blank" href="https://azidentity.azurewebsites.net/post/2020/12/15/key-vault-with-the-use-of-vbscript-classic-asp">within a VBScript program</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/pulumi/">Pulumi Python/C#/Nodejs/Typescript code</a>
+   <br /><br />
+
+### Cloud Shell
+
+<a target="_blank" href="https://www.youtube.com/watch?v=x2aIVYxim-A&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=6" title="by Dana Epps Oct 3, 2019">VIDEO</a>: Cloud Shell
+
+Bash CLI or PowerShell.
+
+
+### Azure on-prem Automation
+
+Although deprecated by the <a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/automation-hybrid-runbook-worker/">Hybrid Runbook Worker feature</a>,
+<a target="_blank" href="https://azure.microsoft.com/en-us/blog/managing-on-premises-systems-with-azure-automation/">
+Azure Automation</strong> securely reaches inside VMs in private networks and on-premises to execute PowerShell scripts/commands. It makes use of Windows PowerShell Remoting feature.
+
+However, PowerShell Remoting is not always a viable option.
+Where you have Azure-hosted VMs but cannot open a public WinRM port, a recent Microsoft blog post provides a runbook for running PowerShell commands  by utilizing the Azure VM Agent’s Custom Script Extension. <a target="_blank" href="https://azure.microsoft.com/en-us/blog/managing-on-premises-systems-with-azure-automation/">
+This post</a> presents an extension for on-premises VMs.
+
+
+
+<hr />
+
 <a name="CloudAcademyLab"></a>
 
-### Hands-on Lab thru CloudAcademy 
+## Portal Hands-on Lab thru CloudAcademy 
 
 PROTIP: It makes more sense to look at a live example populated with several resources, in context, which is what a CloudAcademy lab provides.
 
@@ -1073,6 +1119,9 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
    <pre><strong>git pull
    </strong></pre>
+
+
+   <a name="Terraform"></a>
 
    ### Terraform on Azure
 
@@ -2079,11 +2128,6 @@ https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/cancel-azu
 https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/directory-delete-howto
 
 
-## Topics
-
-The fictional company for use in examples, <a target="_blank" href="https://github.com/microsoft/TailwindTraders/tree/master/Documents/DemoScripts/Integrating%20Azure%20DevOps%2C%20Microsoft%20Teams%20and%20GitHub">Tailwind Traders</a>
-
-
 ## Azure Futures Roadmap
 
 PROTIP: The minimum prior notification will Microsoft give before ending support for products governed by the Modern Lifecycle Policy is 12 months.
@@ -2114,6 +2158,10 @@ ADFS (Azure Directory Federated Services)
 https://azurelessons.com/
 
 http://www.frankysnotes.com/2019/05/how-to-make-your-deployment-successful.html
+
+https://azurefabric.com/azure-monitor-for-paas-services-where-is-the-ai-and-how-do-i-arm-it/
+blog https://azidentity.azurewebsites.net/archive
+
 
 ## More on DevOps #
 
