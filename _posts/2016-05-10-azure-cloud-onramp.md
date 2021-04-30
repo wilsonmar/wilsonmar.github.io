@@ -956,6 +956,7 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
    PROTIP: A resource group can contain resources from multiple regions.
 
+
 1. After you get CLI setup, list resource groups created:
 
    <pre><strong>az group list -o table</strong></pre>
@@ -1200,6 +1201,9 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
    Deleting a resource group results in deletion of all resources contained within it. So resource groups make it easy to remove a set of resources at once. That's great for non-production environments.
 
+   
+   <a name="Location"></a>
+
    ### Region = Location
 
 1. OPTIONAL: View briefings on CLI Bash or Storage (if you haven't already), then list regions:
@@ -1213,12 +1217,12 @@ East US                   eastus               (US) East US
 East US 2                 eastus2              (US) East US 2
    </pre>
 
-   Alternately, for just the name alone:
+1. Alternately, for just the name alone:
 
-   <pre><strong>az account list-locations --query "[].{name:name, metadata:latitude}" -o table
+   <pre><strong>az account list-locations --query "[].{Location:name, metadata:latitude}" -o table
    </strong></pre>
 
-   <pre>Name
+   <pre>Location
 -------------------
 eastus
 eastus2

@@ -19,30 +19,6 @@ comments: true
 This article provides a guided tour of use Microsoft's AI (Artificial Intelligence) offerings, which include Machine / Deep Learning capabilities running on the Azure cloud.
 
 
-## Cognitive Services suite
-
-<a href="#CognitiveServices">Azure "Cognitive Services"</a> refers to a <strong>suite of services</strong> developers use to build AI solutions which mimic human intelligence:
-
-   * Anomaly detection - automatically detect errors or unusual activity in a system.
-   * Computer vision - interpret the world visually through cameras, videos, images.
-   * Natural language processing - interpret written or spoken language, and respond in kind.
-   * Conversational AI - an "agent" to participate in a (natural) conversation.
-
-   * "Decision" - classification (unsupervised machine learning) fits features into model and predict classification of the label
-   * "Decision" - regression (supervised machine learning) uses historical data to train the model to predict <strong>numerical</strong> values.
-
-   * "Search" (Bing) has disappeared from Microsoft's list of services.
-   <br /><br />
-
-Case studies of how people are already making use of AI/ML to save time and money:
-
-   * Predictive Maintenance data science <a target="_blank" href="https://info.microsoft.com/CO-AAIoT-WBNR-FY16-07Jul-05-Predictive-Maintenance-Registration.html">webinar</a>
-   * Defect Detection with Image Analysis
-   * Custom Entity Extraction with Text Analytics
-   * modsy.com 3D view
-   <br /><br />
-
-
 ## Microsoft History with AI
 
 ### Cortana now Cognitive Services 
@@ -214,17 +190,8 @@ https://github.com/MicrosoftLearning/AI-100-Design-Implement-Azure-AISol
 * Implement conversational AI solutions (15-20%) - chatbots
    * MS: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/create-conversational-ai-solutions/">Create conversational AI solutions</a>
 
-Tim Warner's <a target="_blank" href="https://github.com/timothywarner/ai100">https://github.com/timothywarner/ai100</a> includes <a target="_blank" href="https://github.com/timothywarner/ai100/tree/master/powershell-cli">Powershell scripts</a>:
-
-* iot-edge-windows.ps1
-* keyvault-soft-delete-purge.ps1
-* keyvault-storage-account.ps1
-* python-keyvault.py
-* ssh-to-aks.md
-<br /><br />
-
-https://github.com/zaalion/oreilly-ai-100
-https://github.com/zaalion/uy-cognitve-services-crash-course
+<a target="_blank" href="https://linkedin.com/in/rezasalehi2008/">Raza Salehi</a> (@zaalion) created on <a target="_blank" href="https://github.com/zaalion/oreilly-ai-100">OReilly.com an AI-100 exam prep "crash course"</a> which references his <a target="_blank" href="<a target="_blank" href="https://github.com/zaalion/oreilly-ai-100">https://github.com/zaalion/oreilly-ai-100</a> and <a target="_blank" href="
+https://github.com/zaalion/uy-cognitve-services-crash-course">https://github.com/zaalion/uy-cognitve-services-crash-course</a>
 
 Raza Salehi created on Pluralsight.com <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-azure-ai-engineer-ai-100">a series for Microsoft Azure AI Engineer (AI-100)</a> :
 
@@ -251,15 +218,124 @@ uses C# or Python as the programming language.
 
 <hr />
 
-<a name="CognitiveServices"></a>
 
-## Cognitive Services = AI & ML
+## Azure Cognitive Services suite
 
-1. G+\ <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.CognitiveServices%2Faccounts">Cognitive Services</a>.
+<a href="#CognitiveServices">Azure "Cognitive Services"</a> refers to a <strong>suite of services</strong> developers use to build AI-enhanced solutions which mimic human intelligence:
+
+   * "Decision" - classification (unsupervised machine learning) fits features into model and predict classification of the label
+   * "Decision" - regression (supervised machine learning) uses historical data to train the model to predict <strong>numerical</strong> values.
+
+   * Computer vision - interpret the world visually through cameras, videos, images.
+   * Natural language processing - interpret written or spoken language, and respond in kind.
+   * Conversational AI - an "agent" to participate in a (natural) conversation.
+
+   * "Search" (Bing) has disappeared from Microsoft's list of services.
+   <br /><br />
+
+
+1. List kinds of Cognitive Services using CLI command:
+
+   <pre>az cognitiveservices account list-kinds</pre>
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr valign="bottom"><th> Category </th><th> Kind </th><th> Description </th></tr>
+   <tr align="top"><td> Decision </td><td> "AnomalyDetector"
+      </td><td> automatically detect errors or unusual activity in a system </td></tr>
+   <tr align="top"><td> Decision </td><td> "ContentModerator"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Decision </td><td> "Personalizer"
+      </td><td> - </td></tr>
+
+   <tr align="top"><td> Language </td><td> "FormRecognizer"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Language </td><td> "LUIS"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Language </td><td> "LUIS.Authoring"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Language </td><td> "QnAMaker"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Language </td><td> "QnAMaker.v2"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Language </td><td> "TextAnalytics"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Language </td><td> "TextTranslation"
+      </td><td> - </td></tr>
+
+   <tr align="top"><td> Speech </td><td> "SpeechServices"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Speech </td><td> "SpeakerRecognition?
+      </td><td> - </td></tr>
+
+   <tr align="top"><td> Vision </td><td> "CognitiveServices"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Vision </td><td> "ComputerVision"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Vision </td><td> "CustomVision.Prediction"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Vision </td><td> "CustomVision.Training"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Vision </td><td> "Face"
+      </td><td> - </td></tr>
+
+   <tr align="top"><td> Vision </td><td> ?FormRecognizer?
+      </td><td> - </td></tr>
+   <tr align="top"><td> Vision </td><td> ?InkRecognizer?
+      </td><td> - </td></tr>
+
+   <tr align="top"><td> Search </td><td> "Bing.CustomSearch"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Search </td><td> "Bing.Search.v7"
+      </td><td> - </td></tr>
+
+   <tr align="top"><td> ? </td><td> "ImmersiveReader"
+      </td><td> - </td></tr>
+   <tr align="top"><td> ? </td><td> "Internal.AllInOne"
+      </td><td> - </td></tr>
+   <tr align="top"><td> ? </td><td> "MetricsAdvisor"
+      </td><td> - </td></tr>
+   </table>
+
+Case studies of how people are already making use of AI/ML to save time and money:
+
+   * Predictive Maintenance data science <a target="_blank" href="https://info.microsoft.com/CO-AAIoT-WBNR-FY16-07Jul-05-Predictive-Maintenance-Registration.html">webinar</a>
+   * Defect Detection with Image Analysis
+   * Custom Entity Extraction with Text Analytics
+   * modsy.com 3D view
+   <br /><br />
 
 DEMOS: https://aidemos.microsoft.com/
 
+
+<a name="CLI"></a>
+
+## CLI
+
+Instead of the manual steps defined in <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/01%20-%20Image%20Analysis%20with%20Computer%20Vision.ipynb">this LAB</a>, run my Bash script in CLI, as defined by <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-apis-create-account-cli?tabs=windows">this DOC</a>:
+
+1. G+\ <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.CognitiveServices%2Faccounts">Cognitive Services</a>.
+
+1. Click the ＋Create a resource button, search for Cognitive Services, and create a Cognitive Services resource with the following settings:
+1. Subscription: Your Azure subscription.
+1. Resource group: Select or create a resource group with a unique name.
+1. Region: Choose any available region:
+1. Name: Enter a unique name.
+1. Pricing tier: S0
+1. I confirm I have read and understood the notices: Selected.
+
+
+
+
 https://docs.audd.io/?ref=public-apis
+
+Tim Warner's <a target="_blank" href="https://github.com/timothywarner/ai100">https://github.com/timothywarner/ai100</a> includes <a target="_blank" href="https://github.com/timothywarner/ai100/tree/master/powershell-cli">Powershell scripts</a>:
+
+* iot-edge-windows.ps1
+* keyvault-soft-delete-purge.ps1
+* keyvault-storage-account.ps1
+* python-keyvault.py
+* ssh-to-aks.md
+<br /><br />
 
 
 
@@ -423,6 +499,9 @@ https://docs.microsoft.com/en-us/learn/paths/create-no-code-predictive-models-az
 
 Supervised: Regression & Classification
 
+
+<a name="AnomalyDetection"></a>
+
 ### Anomaly Detection
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/anomaly-detector/">
@@ -434,6 +513,7 @@ https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/3-und
    2. An anomaly detection model is trained to understand expected fluctuations in the telemetry measurements over time.
    3. If a measurement occurs outside of the normal expected range, the model reports an anomaly that can be used to alert the race engineer to call the driver in for a pit stop to fix the issue before it forces retirement from the race.
    <br /><br />
+
 
 ### Content modertor
 
