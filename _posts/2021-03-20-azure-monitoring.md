@@ -32,6 +32,9 @@ Several Azure services are related to all the monitoring happening within Azure:
 
 References:
 
+   <a target="_blank" href="https://azure.microsoft.com/en-au/pricing/details/monitor/">
+   PRICING for monitoring</a>
+
    <a target="_blank" href=https://www.youtube.com/watch?v=Zr7LcSr6Ooo">VIDEO</a>: "What to use for monitoring your applications in Azure"</a> by <a target="_blank" href="https://www.azurebarry.com/">Azure Barry</a> (Luijbregts)
 
 Issues to monitor for:
@@ -471,7 +474,14 @@ Some metric data can be stored in Logs to combine them with other monitoring dat
 
    * <a target="_blank" href="https://aka.ms/AIAnalyticsDemo">https://aka.ms/AIAnalyticsDemo</a>
 
-VIDEO: https://youtu.be/o24f4HZRchE
+<a target="_blank" href="https://youtu.be/o24f4HZRchE">VIDEO</a>:
+
+Application Insights is an "APM" (Application Performance Management) service:
+it collects log, performance, and error data.
+
+An Application Insights resource is created by default when a Function app is created.
+
+
 
 App Insights have additional costs: https://portal.loganalytics.io/demo
 

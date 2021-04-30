@@ -52,14 +52,18 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
 <tr valign="top"><td> Data Engineer<br /> Data Scientist
    </td><td>* DP-900 Azure Data Fundamentals<br />
    * DP-100 Azure Data Scientist Associate<br />
-   * <a href="#DP-203">DP-203 Azure Data Engineer Associate</a><br />
+   * <a href="#DP-203">DP-203 Azure Data Engineer Associate</a> (replaces DP-200 & DP-201)<br />
    * DP-300 Azure Database Administrator Associate<br />
+   * PL-200 Power Platform Functional Consultant<br />
+   * PL-400 Power Platform Developer<br />
+   * PL-100 Power Platform App-maker<br />
    * PL-600 Power Platform Solution Architect Expert
 
    </td></tr>
 <tr valign="top"><td> AI Engineer
-   </td><td>* <a href="#AI-900">AI-900 AI Fundamentals</a><br />
-     * <a href="#AI-100">AI-100 Azure AI Engineer Associate</a>
+   </td><td><a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">AI-900 AI Fundamentals<br />
+     * AI-100 Azure AI Engineer Associate<br />
+     * AI-102 Azure AI Engineer</a>
 
    </td></tr>
 <tr valign="top"><td> Security Engineer
@@ -78,6 +82,10 @@ Andrew Brown offers this diagram:
 
 <a target="_blank" href="https://www.youtube.com/watch?v=ZIlLvKg7owM&list=RDCMUC0m-80FnNY2Qb7obvTL_2fA&start_radio=1">VIDEO</a> of <a target="_blank" href="https://azure.microsoft.com/en-us/resources/videos/build-an-intelligent-bot/">Build an Intelligent Bot with Microsoft Azure</a> by Elliott Perry - Chapter 17 of <a target="_blank" href="https://clouddamcdnprodep.azureedge.net/gdc/2014519/original">EBOOK</a>: 
 <a target="_blank" href="https://aka.ms/monthoflunches​">Learn Azure in a Month of 21 Lunches</a> (2020 Manning) by <a target="_blank" href="https://www.linkedin.com/in/iainfoulds">Iain Foulds</a> (<a target="_blank" href="https://twitter.com/fouldsy">@fouldsy</a>), with code at <a target="_blank" href="https://github.com/fouldsy/azure-mol-samples-2nd-ed">https://github.com/fouldsy/azure-mol-samples-2nd-ed</a>
+
+<a target="_blank" href="https://mcptnc.microsoft.com/certificate/">
+https://mcptnc.microsoft.com/certificate =
+Microsoft Learning Certificates earned dashboard</a>
 
 
 ## Rebranding to roles
@@ -218,6 +226,10 @@ If you want time on servers (one hour at a time), subscribe to
 
 See my step-by-step advice for using CloudAcademy's Azure environment at ...
 
+### Coursera
+
+https://www.coursera.org/specializations/microsoft-azure-fundamentals-az-900
+$49/month after 7 days free.
 
 ### OReilly
 
@@ -273,12 +285,21 @@ includes time on servers (one hour at a time).
 <a target="_blank" href="https://quizlet.com/416573542/az-900-flash-cards/">Quizlet flash cards</a>
 
 
-<a name="AZ-104"></a>
 
-## AZ-104 Azure Administrator Associate
+<a name="AZ-103"></a>
+
+## AZ-103 Azure Administrator Associate
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-104">
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-104</a> on August 31, 2020 replaced <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-103">exam AZ-103: Microsoft Azure Administrator</a> which had superceded retired exams AZ-100 and AZ-101.
+
+https://github.com/MicrosoftLearning/AZ-103-MicrosoftAzureAdministrator
+
+
+
+<a name="AZ-104"></a>
+
+## AZ-104 Azure Administrator Associate
 
 Implement, monitor, and maintain Azure solutions including
 compute, storage, network, and security resources
@@ -291,6 +312,8 @@ compute, storage, network, and security resources
 <br /><br />
 
    * https://docs.microsoft.com/en-us/learn/azure/
+
+   * https://github.com/MicrosoftLearning/AZ-104-MicrosoftAzureAdministrator
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-administrator/?wt.mc_id=esi_lxp_webpage_wwl&tab=tab-learning-paths">Microsoft's tutorial</a> provides more managerial aspects</a> (such as governance) than others.
 
@@ -377,6 +400,8 @@ Ask the Experts: New Microsoft Security Compliance, Identity Training and Certif
 https://docs.microsoft.com/en-us/learn/certifications/exams/ms-500">
 https://docs.microsoft.com/en-us/learn/certifications/exams/ms-500</a>
 
+https://github.com/MicrosoftLearning/MS-500-Microsoft-365-Security
+MS-500 Microsoft 365 Security Administrator courses
 
 https://vladtalkstech.com/ms-500-study-guide-microsoft-365-security-administration
 
@@ -394,6 +419,7 @@ By Robert McMillen
 
 https://github.com/zaalion/oreilly-azure-app-security
 
+https://github.com/MicrosoftLearning/MS-030-Office365Administrator
 
 <a name="AZ-400"></a>
 
@@ -417,6 +443,8 @@ Video classes:
    * <a target="_blank" href="https://github.com/timothywarner/az400">OReilly.com class by Timothy Warner</a>
 
    * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/463">Linux Academy</a>
+
+https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions
 
 
 <hr />
@@ -460,19 +488,32 @@ https://www.thomasmaurer.ch/2020/05/az-500-study-guide-microsoft-azure-security-
 
 <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/367">Linux Academy Microsoft Azure Security Technologies</a> by Tia Williams
 
+https://www.whizlabs.com/learn/course/microsoft-azure-az-500/
+
+https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies
+
 
 <a name="SC-200"></a>
 
 https://docs.microsoft.com/en-us/learn/certifications/exams/sc-200
 
+https://www.whizlabs.com/learn/course/microsoft-azure-sc-200/
+
+
 <a name="SC-300"></a>
 
 https://docs.microsoft.com/en-us/learn/certifications/exams/sc-300
+
+https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator
+
+https://www.whizlabs.com/learn/course/microsoft-azure-sc-300/
+
 
 <a name="SC-400"></a>
 
 https://docs.microsoft.com/en-us/learn/certifications/exams/sc-400
 
+https://www.whizlabs.com/learn/course/microsoft-azure-sc-400/
 
 <hr />
 
@@ -502,6 +543,8 @@ Skills the exam measures:
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-desktop/create-validation-host-pool">Host pool</a>
 <br /><br />
 
+https://www.whizlabs.com/learn/course/microsoft-azure-az-104/
+
 
 <a name="#MS-900"></a>
 
@@ -514,6 +557,7 @@ https://docs.microsoft.com/en-us/learn/certifications/exams/ms-900
 
 https://vladtalkstech.com/ms-900-study-guide-microsoft-365-fundamentals
 
+https://www.whizlabs.com/learn/course/microsoft-azure-ms-900/
 
 
 <hr />
@@ -530,6 +574,8 @@ https://app.pluralsight.com/paths/certificate/developing-solutions-for-microsoft
 Includes:
    * https://app.pluralsight.com/paths/certificate/developing-solutions-for-microsoft-azure-az-204
 
+https://www.whizlabs.com/learn/course/microsoft-azure-az-204/
+
 
 <a name="AZ-303"></a>
 
@@ -543,6 +589,11 @@ https://docs.microsoft.com/en-us/learn/certifications/exams/az-303">
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-303</a>
 
 Passing this and the less hands-on AZ-304 Microsoft Azure Architect Design (blueprints) makes you a Microsoft Certified Azure Solutions Architect Expert.
+
+https://github.com/MicrosoftLearning/AZ-300-MicrosoftAzureArchitectTechnologies
+
+https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies
+
 
 <a target="_blank" href="
 https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies">
@@ -576,6 +627,8 @@ by Here Is Cloud
 Practice tests:
    * <a target="_blank" href="https://www.mindhub.com/az-303-microsoft-azure-architect-technologies-microsoft-official-practice-test/p/MU-AZ-303">Mindhub.com</a> THANKS280658
 
+https://www.whizlabs.com/learn/course/microsoft-azure-az-303/
+
 
 <a name="AZ-304"></a>
 
@@ -599,6 +652,8 @@ Links to Microsoft docs for each item in the syllubus are detailed by<br />
 https://www.azurebarry.com/prepare-for-the-az304-exam/">
 https://www.azurebarry.com/prepare-for-the-az304-exam</a>
 
+https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design
+
 <a target="_blank" href="
 https://www.pluralsight.com/paths/microsoft-azure-architect-design-az-304">
 Pluralsight</a>
@@ -612,6 +667,7 @@ is foundational to:
 10h 42m LinuxAcademy video course</a>
 by Russell Croft at ACloudGuru
 
+https://www.whizlabs.com/learn/course/microsoft-azure-az-304/
 
 <hr />
 
@@ -624,12 +680,6 @@ by Emilio Melo
 
 * https://learning.oreilly.com/videos/azure-overview-introduction/10009OVERVIEW/10009OVERVIEW-AZINTRO_16
 “Cloud and Azure Overview” section in Azure Overview: Introduction for Beginners (video)
-
-* https://learning.oreilly.com/search/?query=Exam%20DP-200%3A%20Implementing%20an%20Azure%20Data%20Solution%20Crash%20Course&formats=live%20online%20training&publishers=O%27Reilly%20Media%2C%20Inc.&sort=relevance
-Exam DP-200: Implementing an Azure Data Solution Crash Course (live online training course with Reza Salehi)
-
-* https://learning.oreilly.com/search/?query=Exam%20DP-201%3A%20Designing%20an%20Azure%20Data%20Solution%20Crash%20Course&formats=live%20online%20training&publishers=O%27Reilly%20Media%2C%20Inc.&sort=relevance
-Exam DP-201: Designing an Azure Data Solution Crash Course (live online training course with Reza Salehi)
 
 * https://learning.oreilly.com/videos/professional-azure-sql/9781789535495/
  Professional Azure SQL Database Administration (video, 4h 58m)
@@ -645,6 +695,23 @@ Create an Azure SQL Data Warehouse in Minutes (video, 1h 22m)
 
 * https://learning.oreilly.com/videos/information-management-using/9781491989647/
 Information Management Using Azure Data Factory (video, 1h 16m)
+
+* https://www.whizlabs.com/learn/course/microsoft-azure-dp-900/
+
+
+<a name="DP-200"></a>
+
+## DP-200 Implementing-an-Azure-Data-Solution
+
+https://github.com/MicrosoftLearning/DP-200-Implementing-an-Azure-Data-Solution
+
+https://github.com/MicrosoftLearning/mslearn-dp100
+
+* https://learning.oreilly.com/search/?query=Exam%20DP-200%3A%20Implementing%20an%20Azure%20Data%20Solution%20Crash%20Course&formats=live%20online%20training&publishers=O%27Reilly%20Media%2C%20Inc.&sort=relevance
+Exam DP-200: Implementing an Azure Data Solution Crash Course (live online training course with Reza Salehi)
+
+* https://learning.oreilly.com/search/?query=Exam%20DP-201%3A%20Designing%20an%20Azure%20Data%20Solution%20Crash%20Course&formats=live%20online%20training&publishers=O%27Reilly%20Media%2C%20Inc.&sort=relevance
+Exam DP-201: Designing an Azure Data Solution Crash Course (live online training course with Reza Salehi)
 
 
 
@@ -699,6 +766,9 @@ John McIntyre
    * https://www.youtube.com/watch?v=tMYOi5E14eU 2020
    * https://www.youtube.com/watch?v=dvP0JwchjfI 2019 "SQL Data Warehouse"
 
+
+* https://www.whizlabs.com/learn/course/microsoft-azure-dp-203/
+
 <hr />
 
 
@@ -716,10 +786,15 @@ Anthony James at LinuxAcademy:
    * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/826">Part 5</a>
    <br /><br />
 
+* https://www.whizlabs.com/learn/course/microsoft-azure-az-303/
+
 
 ## AZ-304 Architecture Design
 
 https://linuxacademy.com/cp/modules/view/id/776?redirect_uri=https://app.linuxacademy.com/search?type=Course&categories=Azure
+
+* https://www.whizlabs.com/learn/course/microsoft-azure-az-304/
+
 
 <hr />
 
@@ -727,19 +802,24 @@ https://linuxacademy.com/cp/modules/view/id/776?redirect_uri=https://app.linuxac
 
 ## AZ-204 Azure Developer Associate
 
-$165
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-204">
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-204</a> learning paths says 
+$165 for 180 max. minutes to answer 40 - 60 multiple-choice questions.
+
+
+https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure
 
 <a target="_blank" href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oZ7B">
 https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oZ7B</a>
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-204">
-https://docs.microsoft.com/en-us/learn/certifications/exams/az-204</a>
-learning paths
 
 https://learning.oreilly.com/library/view/exam-ref-az-204/9780136798255/
 
 <a target="_blank" href="https://learning.oreilly.com/attend/microsoft-azure-developer-associate-az-204-crash-course/0636920053454/0636920053452/">OReilly VIDEO Crash Course</a> April 16, 2021 by <a target="_blank" href="https://www.linkedin.com/in/rezasalehi2008/">Reza Salehi</a> (@zaalion) <a target="_blank" href="https://github.com/zaalion/oreilly-az-204">https://github.com/zaalion/oreilly-az-204</a>:
 
+<a target="_blank" href="https://www.youtube.com/watch?v=-lf83pxEubs" title="Feb 1, 2021">
+YOUTUBE: AZ-204 Azure Developer - Exam Cram │ Expert Talk</a> by <a target="_blank" href="https//linkedin.com/in/brianlgorman">Brian L Gorman</a>
+
+* https://www.whizlabs.com/learn/course/microsoft-azure-az-204/
 
 
 
@@ -751,33 +831,23 @@ https://learning.oreilly.com/library/view/exam-ref-az-204/9780136798255/
 
 <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/538">Course 2</a>
 
+* https://github.com/MicrosoftLearning/AZ-220-Microsoft-Azure-IoT-Developer
+
+
 https://github.com/zaalion/oreilly-az-220/
 
-
-<a name="AI-900"></a>
-<a name="AI-100"></a>
-
-## AI certifications
-
-<a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">my tutorial on Microsoft AI</a>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=fQhgRR_Vtus&list=PLHh_n2lgzcrvecPJ-zMukLlDrq0GMSMmB&index=3">
-AI-900 Sample Practice Exam Questions</a>
-
-<a target="_blank" href="https://ravikirans.com/ai-900-azure-exam-study-guide/">
-AI-900 Study Guide</a>
+* https://www.whizlabs.com/learn/course/microsoft-azure-az-220/
 
 
-https://github.com/zaalion/oreilly-ai-100
-
-https://github.com/zaalion/uy-cognitve-services-crash-course
+<hr />
 
 ## References
 
 <a target="_blank" href="https://ravikirans.com/category/azure-certification/">
 Ravikiran Azure Certs</a>
 
-<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/345">Linux Academy: Azure CLI Esssentials</a>   
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/345">
+Linux Academy: Azure CLI Esssentials</a>   
 
 https://linuxacademy.com/cp/modules/view/id/369">Learn Azure by Doing</a>   
 
@@ -792,8 +862,8 @@ Cost control in Azure
 
 <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/733">Deployment Pipelines using GitHub Actions</a>
 
-
 https://aka.ms/ESIStudyGuides
+
 
 ## More on Cloud #
 

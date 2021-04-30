@@ -59,6 +59,12 @@ This is a hands-on deep-dive tutorial with commentary along the way, covering ho
 <tr valign="top"><td> Cloud Shell </td><td>
    <a target="_blank" href="https://shell.azure.com/"><strong><u>
    https://shell.azure.com</u></strong></a>
+   </td><td> CLI
+   </td></tr>
+<tr valign="top"><td> Machine Learning studio </td><td>
+   <a target="_blank" href="https://ml.azure.com/"><strong><u>
+   https://ml.azure.com</u></strong></a>
+   </td><td> See <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">my AI tutorial</a>
    </td></tr>
 <tr valign="top"><td> Support </td><td>
    <a target="_blank" href="https://support.azure.com/"><strong><u>

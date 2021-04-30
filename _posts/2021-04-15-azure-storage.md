@@ -723,6 +723,31 @@ With Azure Files services, can use Azure File Sync agent which uses a Windows se
 Saving data in another location is fundamental to recovery from failure.
 Backups are taken for recovery from accidental data loss, data corruption, or ransomware attacks. It addresses your company's Business continuity and disaster recovery (BCDR) plan.
 
+   <a name="Recovery_Services_Vault"></a>
+
+   ### Recovery Services Vault (RSV)
+
+1. G+/ service <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.RecoveryServices%2Fvaults">Recovery Services Vault</a> (RSV) to create a place to hold snapshot files.
+
+   PROTIP: Name the location/region because one RSV is needed for each region/location.
+
+1. Click "+ Create" or the blue "Create recovery services vault" button.
+
+1. For Resource group, don't select "cloud-shell-storage".
+
+   PROTIP: <a target="_blank" href="https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/use-a-custom-automation-account-for-azure-to-azure-site-recovery/ba-p/1634164#:~:text=Good%20governance%20rules%20in%20Azure%20dictate%20that%20wherever,alphanumeric%20characters%20and%20then%20appends%20the%20string%20%E2%80%9C-asr-automationaccount%E2%80%9D.">BLOG: Consider ASR auto-naming rules</a> and <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">other naming conventions</a>.
+
+   <tt>myvault-westus</tt>
+
+1. Add Tags according to your organization's needs.
+
+   NOTE: Default Backup configuration for Storage Replication Type is set to Geo-redundant (GRS). Default Security settings for Soft Delete is enabled. After creating vault, it is highly recommended that you review default vault properties before protecting items.
+   See <a target="_blank" href="https://docs.microsoft.com/en-us/azure/backup/backup-create-rs-vault#modifying-default-settings">DOCS</a>.
+
+
+   PROTIP: The Recovery Services Vault has encryption enabled via Server-Side Encryption (SSE), so the backup is encrypted at rest and in transit. When data is secured via <strong>Azure Disk Encryption</strong>, you are given the Key Encryption Key (KEK) and BitLocker Encryption Key (BEK) stored in an Azure Key Vault, and also backed up via Azure Backup. 
+
+   During data recovery, keys are restored from Key Vault.
 
 
 <a name="ABS"></a>
@@ -734,7 +759,9 @@ Backups are taken for recovery from accidental data loss, data corruption, or ra
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/protect-virtual-machines-with-azure-backup/">LEARN</a>:
 <a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course/categories/4743683/posts/8995676" title="AZ-104">TUTORIAL</a>:
 
-The Azure SQL Database service is an example of IaaS (infrastructure-as-a-service).
+
+1. Backups can be initiated on the Portal GUI RSV blade or the VM blade.
+
 
 Microsoft Azure Backup Service combines to provide a seamless backup and recovery experience to a local disk, or to the cloud:
    * the familiar Windows Server Backup utility in Windows Server, 
@@ -755,7 +782,7 @@ PROTIP: Azure creates every VM with an extension to do backups.
 
    NOTE: Cannot back up Oracle workloads.
 
-The backup policy supports two access tiers - snapshot tier and the vault tier.
+The backup policy supports two access tiers - snapshot tier and the vault tier:
 
    For "Instant Restore": a <strong>snapshot tier</strong> is a point-in-time backup of all disks on the virtual machine. Snapshots are stored on your local VM storage as an "instant recovery snapshot" so you can quickly recover, for a maximum period of <strong>five days</strong>.
 
@@ -765,16 +792,7 @@ The backup policy supports two access tiers - snapshot tier and the vault tier.
 
    For recovery point type <strong>"snapshot and vault"</strong>, <strong>Vault tier</strong> snapshots are additionally transferred to a vault for additional security and longer retention. 
 
-
-   <a name="Recovery_Services_Vault"></a>
-
-   #### Recovery Services Vault (RSV)
-
 4. In the background, the snapshot is compared to a snapshot of a previous recovery point and <strong>only incremental blocks are moved</strong> via HTTPs into the Recovery Services vault. (Efficient use of bandwidth!)
-
-   The recovery services vault has encryption enabled via Server-Side Encryption (SSE), so the backup is encrypted at rest and in transit.
-
-   When data is secured via <strong>Azure Disk Encryption</strong>, you are given the key encryption key (KEK) and BitLocker encryption key (BEK) stored in an Azure Key Vault, and also backed up via Azure Backup. During data recovery, there is no worry about what keys were used when the backup was taken, since the keys are restored for data recovery.
 
 PowerShell:
 

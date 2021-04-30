@@ -37,38 +37,6 @@ comments: true
    * Azure Hybrid Benefit (through Enterprise Software Assurance from on-prem. licenses)
    <br /><br />
 
-## Automation programmatically
-
-There are several ways to automate stand up services within Azure:
-   * <a href="#VM_GUI">Portal GUI Cloud Shell</a>
-   * <a href="#VM_template">Template</a>
-   * <a href="#VM_CLI">CLI</a> Bash scripts
-   * <a href="#VM_PS">Powershell</a> ps1 scripts
-   * <a href="#VM_PS_JSON">Powershell</a> running ARM template JSON files
-   * <a href="#VM_Docker">Docker</a> containers
-   * <a href="#VM_Docker">Terraform</a> HCL files
-   * Microsoft Bicep (new)
-   * REST API (used <a target="_blank" href="https://azidentity.azurewebsites.net/post/2020/12/15/key-vault-with-the-use-of-vbscript-classic-asp">within a VBScript program</a>
-   * <a target="_blank" href="https://wilsonmar.github.io/pulumi/">Pulumi Python/C#/Nodejs/Typescript code</a>
-   <br /><br />
-
-### Cloud Shell
-
-<a target="_blank" href="https://www.youtube.com/watch?v=x2aIVYxim-A&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=6" title="by Dana Epps Oct 3, 2019">VIDEO</a>: Cloud Shell
-
-Bash CLI or PowerShell.
-
-
-### Azure on-prem Automation
-
-Although deprecated by the <a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/automation-hybrid-runbook-worker/">Hybrid Runbook Worker feature</a>,
-<a target="_blank" href="https://azure.microsoft.com/en-us/blog/managing-on-premises-systems-with-azure-automation/">
-Azure Automation</strong> securely reaches inside VMs in private networks and on-premises to execute PowerShell scripts/commands. It makes use of Windows PowerShell Remoting feature.
-
-However, PowerShell Remoting is not always a viable option.
-Where you have Azure-hosted VMs but cannot open a public WinRM port, a recent Microsoft blog post provides a runbook for running PowerShell commands  by utilizing the Azure VM Agent’s Custom Script Extension. <a target="_blank" href="https://azure.microsoft.com/en-us/blog/managing-on-premises-systems-with-azure-automation/">
-This post</a> presents an extension for on-premises VMs.
-
 
 
 <hr />
@@ -87,10 +55,6 @@ Azure App Service (much like AWS Amplify) provides IaaS server infrastructure to
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/deploy-a-website-with-azure-app-service/">Deploy a website to Azure with Azure App Service</a>:
 
-
-Classic web apps sample URL:
-
-   <pre><strong>https://<em>app_name</em>.azurewebsites.net</strong></pre>
 
 Create an Azure App Service Web App
 * https://docs.microsoft.com/en-us/azure/app-service/
@@ -119,9 +83,17 @@ Unlike static web apps, Web Apps (formerly "Websites") run ASP.NET, NodeJs, PHP,
 to <strong>dynamically generate HTML</strong> before delivery to a user. 
 So users also wait if the web app needs to start up. Due to caching, subsequent requests for that page is faster because the code is already compiled.
 
+Classic .NET web apps sample URL:
+
+   <pre><strong>https://<em>app_name</em>.azurewebsites.net</strong></pre>
+
 Azure Web Apps service provides high availability auto-scaling.
 
 Cold starts are avoided by using <strong>slot swaps</strong> to deploy to production.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=KdyXSgFxAtI">YOUTUBE:
+How to auto-scale and optimize performance of .NET Web Apps with Microsoft Azure App Service</a>
+
 
 1. On the Azure portal menu or from the Home page, select All resources.
 
@@ -240,6 +212,7 @@ If the score is >.5 (neutral), Actions can:
    Custom connectors can be written in ___.
 
 
+aka.ms/global-azure/30D2L
 
 <hr />
 
@@ -257,6 +230,8 @@ Static Web Apps are fast because HTML is already rendered and sitting close to u
 1. On the Azure portal menu or from the Home page, select All resources.
 1. Search for "Static Web App".
 
+   https://github.com/jahlen/hugo-azure-static-webapp
+
 1. Edit workflow in file created:
 
    https://github.com/.../blob/master/.github/workflows/...yml
@@ -272,27 +247,116 @@ Static Web Apps are fast because HTML is already rendered and sitting close to u
 ## Azure Function Apps
 
 Function apps do just one thing well, so scaling can be precise and dynamic.
+A simplified programming model.
 
-NOTE: Function apps are run as "Azure App Services", but Pricing Tier "Dynamic" (pay only for transactions, not servers sittingh around) and App Type "Function App".
+Function apps are <strong>event driven</strong>, triggered by data operations, timers, and webhooks. Sample use cases implemented in PowerShell to cover end-to-end (build, debug, deploy, monitoring) are covered by <a target="_blank" href="https://twitter.com/mattallford?lang=en">@</a>Matt Allford in <a target="_blank" href="https://portal.cloudskills.io/products/azure-functions-for-devops-engineers">Azure Functions for DevOps Engineers</a> Cloudskills videos:
+
+   * When VM is deleted, remove from monitoring system
+   * When resource group is created, look up cost center for region and add tag with number.
+   * Add AD groups to new SQL servers
+
+   * When CPU spikes > 90%, send teams event
+   * When storage acccount latency > 50%, open GitHub issue
+   * When certificates are about to expire, send email
+
+   * Send Slack message
+   * Send SMS message (via Twilio)
+
+Advantages of Serverless:
+   * No infrastructure management (OS, VNnet, storage)
+   * Integrated Security (AAD, Facebook)
+   * Dynamic scalability without hassle (based on workload)
+   * Faster time to market
+   * More efficient use of resources
+   <br /><br />
 
 I hava a script that sets up a Function (below).
 However, several components are not available in the <a target="_blank" href="https://github.com/fouldsy/azure-mol-samples-2nd-ed/blob/master/21/azure_cli_sample.sh">CLI</a> and need manual actions in Azure portal to fill in the gaps. It's explained in chapter 21 of <a target="_blank" href="https://clouddamcdnprodep.azureedge.net/gdc/2014519/original">EBOOK</a>: <a target="_blank" href="https://aka.ms/monthoflunches​">Learn Azure in a Month of 21 Lunches</a> (2020 Manning) by <a target="_blank" href="https://www.linkedin.com/in/iainfoulds">Iain Foulds</a> (<a target="_blank" href="https://twitter.com/fouldsy">@fouldsy</a>).
 
-1. <a target="_blank" href="https://github.com/wilson-mar/azure-your-way/blob/main/az-functions-temp.sh">
-https://github.com/wilson-mar/azure-your-way/blob/main/az-functions-temp.sh</a>
+LIMIT: 5-minute function runtime, 10 minute max.
 
-   1. Create a Resource Group.
-   1. Create a Service Bus namespace.
-   1. Create a Service Bus.
-   1. Create a Storage account with a unique/random name.
-   1. Create a Function with unique/random name:
+Durable functions
+
+PRICING: After 1 million executions (400,000 GB/s)
+
+1. G+/ Function apps are run as "Azure App Services", but Pricing Tier "Dynamic" (pay only for transactions, not servers sittingh around) and App Type "Function App".
+1. Subscription
+1. Resource Group
+
+1. A Function App Name with unique/random name within global 
+      $FUNCTION_NAME.<strong>azurewebsites.net</strong>
+1. Publish as Code / Docker Container
+1. Runtime stack: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-functions/supported-languages">.NET Core C#, Node.js (JavaScript), Python, Java, PowerShell Core, Typescript, F#</a> 
+1. Version of language: 6 for PowerShell Core.
+1. Region:
+
+1. Hosting: A Storage account with a unique/random name.
+1. Hosting: Operating System: Linux/Windows (PowerShell only on Windows)
+1. Hosting: Plan
+
+   Runtime Scaling by a <strong>Scale Controller</strong> seeing monitoring to create instances of 1GB memory in 1 CPU.
+
+   Consumption function app scales to max of 200 instances.
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-premium-plan?tabs=portal">Functions Elastic Premium Plan</a> 
+   * Pre-warmed instances reserved pay
+   * Premium instance sizes up to 100 instances
+   * 30-minute function default runtime, 60-minute guarantee
+   * Faster scaling than once/sec for HTTP and every 30 secs for non-HTTP.
+   <br /><br />
+   
+   App Service Plan
+   * Use dedicated VMs used in other App Service apps
+   * Can provide custom image to run function
+   * AutoScale VM instances
+   * Run for unlimited amount of time
+   <br /><br />
+   
+   Dedicated plan?
+
+1. Monitoring: Enable App Insights, Region
+
+   Resources:
+   * App service plan
+   * App service
+   * Application insights
+   * Storage account
    <br /><br />
 
-   $FUNCTION_NAME.<strong>azurewebsites.net</strong>
+1. Tags
 
-1. Deploy an app in the Portal: Deployment Center or Visual Studio client. LAB 100
+1. Azure Functions templates at https://github.com/Azure/azure-functions-templates
 
-1. Get Publish Profile (XML file), Import Profile 108
+   <a target="_blank" href="https://github.com/Azure/azure-functions-core-tools">https://github.com/Azure/azure-functions-core-tools</a>
+
+   * HTTP
+   * Timer trigger (alarm clock)
+   * Azure Blob Storage trigger
+   * etc.
+
+
+   Files:
+
+   <a target="_blank" href="https://github.com/wilson-mar/azure-your-way/blob/main/az-functions-temp.sh">https://github.com/wilson-mar/azure-your-way/blob/main/az-functions-temp.sh</a>
+   
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-host-json">host.json reference for Azure Functions 2.x and later</a>
+
+   <strong>profile.ps1</strong> is a PowerShell profile executed on every cold start
+
+   <strong>requirements.psd1</strong> is a manifest listing dependencies
+
+   Deploy an app in the Portal: Deployment Center or Visual Studio client. LAB 100
+
+   Get Publish Profile (XML file), Import Profile 108
+
+1. Integration
+
+1. Create a Service Bus namespace.
+1. Create a Service Bus.
+
+1. Run & Debug
+1. Monitoring trends and alerts
+   <br /><br />
 
 References:
 
@@ -323,8 +387,10 @@ Azure Durable Functions:
 Implement custom handlers:
 * https://docs.microsoft.com/en-us/azure/azure-functions/functions-custom-handlers
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-premium-plan?tabs=portal">Functions Elastic Premium Plan</a>
 
+
+
+<hr />
 
 <a name="WebJobs"></a>
 
@@ -651,6 +717,8 @@ New-AzSubscriptionDeployment -Name az30310subaDeployment -Location $location -rg
 <a name="VM_Docker"></a>
 
 ### Create VM using Docker
+
+Book: Microservices with Docker on Microsoft Azure (includes Content Update Program), by Boris Scholl, Trent Swanson, and Daniel Fernandez https://www.oreilly.com/library/view/microservices-with-docker/9780134218229/
 
 1. Define Dockerfile:
 
