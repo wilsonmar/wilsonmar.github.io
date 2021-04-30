@@ -3,7 +3,7 @@ layout: post
 title: "Apple Mac OSX Keyboard Shortcuts"
 excerpt: "Shortcuts and utilities"
 tags: [apple, mac, keyboard]
-date: "2020-11-22"
+date: "2021-04-29"
 file: "apple-mac-osx-keyboard"
 image:
 # feature: pic white keyboard british 1900x500.jpg
@@ -30,6 +30,8 @@ The "Special" keys on a Mac's keyboard are represented by both symbols and names
 
 ## Full Screen Finger Gymnastics #
 
+![keyboard-god-giphy](https://user-images.githubusercontent.com/300046/116689174-fcf2c080-a974-11eb-81ca-c985ab3fe6a4.gif)
+
 PROTIP: To evaluate Mac developers, some interviewers ask "show me how you enter and exit Full Screen". This is because they assume that the most productive developers work with their hands always on the keyboard. 
 
 Windows has its F12 key. Apple has Mac users do the equivalent of a <strong>double Summersault</strong> with your fingers.
@@ -46,9 +48,6 @@ PROTIP: To toggle <strong>Full Screen view</strong> using the default configurat
 PROTIP: Some use keyboards (RGB) that light up keys in the dark. But I personally think the best strategy is to find a way to not have to look at the keyboard at all.
 
 PROTIP: Some put tiny drops from a glue gun on strategic points on the keyboard so they can orient their finger in the dark without looking.
-
-   Now, while keeping your right forefinger on the J "home" key, reach with your right thumb to hold down the command key on the right side of the Space Bar. Then you're in position to press F with your left forefinger.
-   </ul>
 
    This may be a generalization. But many top coders actually like the <strong>vi text editor</strong> because it doesn't use difficult-to-reach keys or mouse that require the user to take their eyes off the screen. DevSecOps coders have no choice because some operating systems only offer only vi (such as during Kubernetes exams). 
 

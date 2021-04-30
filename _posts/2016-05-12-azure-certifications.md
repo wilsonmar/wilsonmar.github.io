@@ -87,6 +87,7 @@ Andrew Brown offers this diagram:
 https://mcptnc.microsoft.com/certificate =
 Microsoft Learning Certificates earned dashboard</a>
 
+https://github.com/MicrosoftLearning/AZ-301-MicrosoftAzureArchitectDesign
 
 ## Rebranding to roles
 
@@ -259,6 +260,8 @@ Azure Subscription Service Limits</a>
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-900">https://docs.microsoft.com/en-us/learn/certifications/exams/az-900</a>
 
+<a target="_blank" href="https://github.com/MicrosoftLearning/Lab-Demo-Recordings/blob/master/AZ-900.md">MS Videos</a>
+
 AZ-900 Microsoft Azure Fundamentals
 is not a required prerequisite for any associate or expert certification.
 
@@ -292,6 +295,8 @@ includes time on servers (one hour at a time).
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-104">
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-104</a> on August 31, 2020 replaced <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-103">exam AZ-103: Microsoft Azure Administrator</a> which had superceded retired exams AZ-100 and AZ-101.
+
+<a target="_blank" href="https://github.com/MicrosoftLearning/Lab-Demo-Recordings/blob/master/AZ-103.md">MS Videos</a>
 
 https://github.com/MicrosoftLearning/AZ-103-MicrosoftAzureAdministrator
 

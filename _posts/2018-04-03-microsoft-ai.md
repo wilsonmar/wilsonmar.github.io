@@ -19,7 +19,44 @@ comments: true
 This article provides a guided tour of use Microsoft's AI (Artificial Intelligence) offerings, which include Machine / Deep Learning capabilities running on the Azure cloud.
 
 
-## History
+## Cognitive Services suite
+
+<a href="#CognitiveServices">Azure "Cognitive Services"</a> refers to a <strong>suite of services</strong> developers use to build AI solutions which mimic human intelligence:
+
+   * Anomaly detection - automatically detect errors or unusual activity in a system.
+   * Computer vision - interpret the world visually through cameras, videos, images.
+   * Natural language processing - interpret written or spoken language, and respond in kind.
+   * Conversational AI - an "agent" to participate in a (natural) conversation.
+
+   * "Decision" - classification (unsupervised machine learning) fits features into model and predict classification of the label
+   * "Decision" - regression (supervised machine learning) uses historical data to train the model to predict <strong>numerical</strong> values.
+
+   * "Search" (Bing) has disappeared from Microsoft's list of services.
+   <br /><br />
+
+Case studies of how people are already making use of AI/ML to save time and money:
+
+   * Predictive Maintenance data science <a target="_blank" href="https://info.microsoft.com/CO-AAIoT-WBNR-FY16-07Jul-05-Predictive-Maintenance-Registration.html">webinar</a>
+   * Defect Detection with Image Analysis
+   * Custom Entity Extraction with Text Analytics
+   * modsy.com 3D view
+   <br /><br />
+
+
+## Microsoft History with AI
+
+### Cortana now Cognitive Services 
+
+"Cortana" was the brand-name of Microsoft's AI. Cortana is the name of the fictional artificially intelligent character in the Halo video game series. Cortana was going to be Microsoft's answer to Siri and Alexa, an AI-powered personal assistant capable of responding to voice commands, armed with a collection of third-party skills. 
+
+But <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microsoft-cortana-features-strategy-report">in 2019</a> Cortana decoupled from Windows 10 search.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=eJOv-TfhhzQ">VIDEO</a>: <a target="_blank" href="https://services.azureml.net/">Azure Machine Learning Studio (classic) Web Services</a>
+
+The Classic version reflected "All Microsoft all the time" with proprietary "pickle" files.
+
+
+### AI History Within Microsoft
 
 In April 2018 Microsoft reorganized into two divisions that offers AI:
 
@@ -44,27 +81,7 @@ Microsoft's use of field programmable gate arrays (FPGA) calculates AI reportedl
 
    <ul>"Each FPGA operates in-line between the server’s network interface card (NIC) and the top-of-rack (TOR) switch, enabling in-situ processing of network packets and point-to-point connectivity between hundreds of thousands of FPGAs at low latency (two microseconds per switch hop, one-way)."</ul>
 
-
-## AI Use Cases
-
-AI to mimic human intelligence:
-   * Anomaly detection - automatically detect errors or unusual activity in a system.
-   * Computer vision - interpret the world visually through cameras, videos, images.
-   * Natural language processing - interpret written or spoken language, and respond in kind.
-   * Conversational AI - an "agent" to participate in a (natural) conversation.
-
-   * Search
-   * Decision?
-   <br /><br />
-
-Case studies of how people are already making use of AI/ML to save time and money:
-
-   * Predictive Maintenance data science <a target="_blank" href="https://info.microsoft.com/CO-AAIoT-WBNR-FY16-07Jul-05-Predictive-Maintenance-Registration.html">webinar</a>
-   * Defect Detection with Image Analysis
-   * Custom Entity Extraction with Text Analytics
-   <br /><br />
-
-modsy.com 3D view
+<hr />
 
 ## Principled AI
 
@@ -78,14 +95,13 @@ Microsoft has a <a target="_blank" href="https://www.microsoft.com/research/grou
    * Ethics
    <br /><br />
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/azure-artificial-intelligence/5-ai-impact-and-ethics">Microsoft's ethical principles</a>guiding the development and use of artificial intelligence with people:
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/azure-artificial-intelligence/5-ai-impact-and-ethics">
+Microsoft's ethical principles</a> guiding the development and use of artificial intelligence with people:
 
    * Reliability & Safety: AI systems should perform reliably and safely.
    * Inclusiveness: AI systems should empower everyone and engage people.
    * Privacy & Security: AI systems should be secure and respect privacy.
    <br /><br />
-
-https://www.microsoft.com/ai/responsible-ai-resources
 
 1. DEMO: Hands on with AI/Guidelines for Human-AI Interaction: Click each card to see examples of each guideline
 
@@ -93,19 +109,8 @@ https://www.microsoft.com/ai/responsible-ai-resources
    https://aidemos.microsoft.com/guidelines-for-human-ai-interaction/demo">
    https://aidemos.microsoft.com/guidelines-for-human-ai-interaction/demo</a>
 
-   
-
-## Cortana = AI Cognitive Services 
-
-https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.CognitiveServices%2Faccounts
-
-"Cortana" was the brand-name of Microsoft's AI. Cortana is the name of the fictional artificially intelligent character in the Halo video game series. Cortana was going to be Microsoft's answer to Siri and Alexa, an AI-powered personal assistant capable of responding to voice commands, armed with a collection of third-party skills. 
-
-But <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microsoft-cortana-features-strategy-report">in 2019</a> Cortana decoupled from Windows 10 search.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=eJOv-TfhhzQ">VIDEO</a>: <a target="_blank" href="https://services.azureml.net/">Azure Machine Learning Studio (classic) Web Services</a>
-
-The Classic version reflected "All Microsoft all the time" with proprietary "pickle" files.
+1. Make use of <a target="_blank" href="https://www.microsoft.com/ai/responsible-ai-resources">
+https://www.microsoft.com/ai/responsible-ai-resources</a>
 
 
 <hr />
@@ -129,8 +134,11 @@ Previous exam 774 is now been retired.
 
 ### AI-900 
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/AI-900">
-Exam definitions are at Microsoft's LEARN</a> includes a free text-based tutorial.
+PROTIP: Here's a must-see website: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/AI-900">
+Exam definitions are at Microsoft's LEARN</a> includes a free text-based tutorial called
+<a target="_blank" href="
+https://docs.microsoft.com/en-us/learn/paths/get-started-with-artificial-intelligence-on-azure/">
+"Learning Paths"</a> to learn skills:
 
    * Describe AI workloads and considerations (15-20%)
    * Describe fundamental <a href="#MachineLearning">principles of machine learning</a> on Azure (30-35%)
@@ -146,11 +154,17 @@ https://github.com/MicrosoftLearning/mslearn-ai900</a>
 * <a target="_blank" href="https://ravikirans.com/ai-900-azure-exam-study-guide/">
 Ravi Kirans' Study Guide</a> contains links to MS Docs.
 
-* Tim Warner has <a target="_blank" href="https://github.com/timothywarner/az900/blob/master/AZ-900-objectives.xlsx">Excel spreadsheet</a>.
+Tim Warner has created several video courses on AI-900 and AI-100:
+   * <a target="_blank" href="https://portal.cloudskills.io/products/microsoft-azure-ai-fundamentals">CloudSkills.io Microsoft Azure AI Fundamentals</a> course references<br /><a target="_blank" href="https://github.com/timothywarner/ai100cs">https://github.com/timothywarner/ai100cs</a>
+
+   * On OReilly.com, his "Crash Course" <a target="_blank" href="https://github.com/timothywarner/az900/blob/master/AZ-900-objectives.xlsx">Excel spreadsheet</a> of exam objectives.
+
+   * OReilly.com references<br /><a target="_blank" href="https://github.com/timothywarner/ai100">https://github.com/timothywarner/ai100</a>
+
 
 * <a target="_blank" href="https://cloudacademy.com/learning-paths/ai-900-exam-preparation-microsoft-azure-ai-fundamentals-1968/">CloudAcademy's AI-900 video course</a> includes lab time (1-2 hours at a time).
 
-* <a target="_blank"" href="https://www.youtube.com/watch?v=E9aarWMLJw0">AI-900 Study Guide - YouTube</a>
+* <a target="_blank" href="https://www.youtube.com/watch?v=E9aarWMLJw0">AI-900 Study Guide - YouTube</a>
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=fQhgRR_Vtus&list=PLHh_n2lgzcrvecPJ-zMukLlDrq0GMSMmB&index=3">
 AI-900 Sample Practice Exam Questions</a>
@@ -209,20 +223,10 @@ Tim Warner's <a target="_blank" href="https://github.com/timothywarner/ai100">ht
 * ssh-to-aks.md
 <br /><br />
 
-
-https://ravikirans.com/ai-102-azure-exam-study-guide/
-has links
-
-https://docs.microsoft.com/en-us/learn/certifications/courses/ai-102t00
-4 days on-site
-The course will use C# or Python as the programming language.
-
-
 https://github.com/zaalion/oreilly-ai-100
 https://github.com/zaalion/uy-cognitve-services-crash-course
 
-On Pluralsight's <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-azure-ai-engineer-ai-100">
-   Microsoft Azure AI Engineer (AI-100) series</a> by Raza Salehi:
+Raza Salehi created on Pluralsight.com <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-azure-ai-engineer-ai-100">a series for Microsoft Azure AI Engineer (AI-100)</a> :
 
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-personalizer">Personalizer</a>
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-ink-recognizer">Recognizer</a>
@@ -234,6 +238,16 @@ Practice tests:
 * https://www.whizlabs.com/learn/course/microsoft-azure-ai-100/
 
 https://github.com/MicrosoftLearning/Principles-of-Machine-Learning-Python
+
+### AI-102
+
+https://ravikirans.com/ai-102-azure-exam-study-guide/
+has links
+
+https://docs.microsoft.com/en-us/learn/certifications/courses/ai-102t00
+4-day course (with cloud time) 
+uses C# or Python as the programming language.
+
 
 <hr />
 
@@ -247,15 +261,6 @@ DEMOS: https://aidemos.microsoft.com/
 
 https://docs.audd.io/?ref=public-apis
 
-There are two resource types if you don't intend to use any other cognitive services, or if you want to track utilization and costs for your Computer Vision resource separately, to simplify administration and development:
-
-   * "Computer Vision" for the Computer Vision service
-
-   * "Cognitive Services" for general cognitive services resource that includes multiple Computer Vision along with many other cognitive services; such as Text Analytics, Translator Text, and others
-
-<a target="_blank" href="
-https://docs.microsoft.com/en-us/learn/paths/get-started-with-artificial-intelligence-on-azure/">
-https://docs.microsoft.com/en-us/learn/paths/get-started-with-artificial-intelligence-on-azure</a>
 
 
 <a name="MachineLearning"></a>
@@ -470,8 +475,14 @@ NLP enables you to create software that can:
    https://aidemos.microsoft.com/luis/demo">
    https://aidemos.microsoft.com/luis/demo</a>
 
-1. Select suggested phrases to see how the system responds.
+   Select suggested phrases to see how the system responds.
    Type instructions, use the microphone button to speak commands.
+
+1. Process Natural Lanaguage using Azure Cognitive Language Services 
+
+   https://github.com/MicrosoftLearning/AI-102-LUIS contains image files for reference by
+   https://github.com/MicrosoftLearning/AI-102-Code-Repos
+   https://github.com/MicrosoftLearning/AI-102-Process-Speech
 
    ### Text Analytics 
 
@@ -480,23 +491,24 @@ NLP enables you to create software that can:
    <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/1-introduction">Techniques</a>
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/">DOCS</a>:
 
-   Sentiment Analysis
-
-   Key phrase extraction
-
    <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/3-exercise">MS LEARN HANDS-ON LAB</a> references
    https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/07%20-%20Text%20Analytics.ipynb
 
    <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages/console">Text Analytics API</a>
 
-   https://github.com/timothywarner/ai100/tree/master/Speech-to-Text
+   ### Sentiment Analysis
 
+   ### Key phrase extraction
 
    ### Speech Translation
    
    <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-translation/">Speech Translation</a> recognizes and synthesizes speech, and translates spoken languages.
 
    https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/08%20-%20Speech.ipynb
+
+   https://github.com/timothywarner/ai100/tree/master/Speech-to-Text
+   
+   https://github.com/MicrosoftLearning/AI-SpeechToText
 
 
    ### Translator Text 
@@ -522,15 +534,17 @@ to guess how old someone is. At conferences they built a booth that takes a pict
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/4-understand-computer-vision">LEARN</a>: 
 https://docs.microsoft.com/en-us/learn/modules/read-text-computer-vision/
 
-<a target="_blank" href="https://www.microsoft.com/en-us/ai/seeing-ai?rtc=1">Seeing AI app</a> talking camera narrates the world around you
+DEMO: <a target="_blank" href="https://www.microsoft.com/en-us/ai/seeing-ai?rtc=1">Seeing AI app</a> talking camera narrates the world around blind people.
 
-   * Image classification - https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/01%20-%20Image%20Analysis%20with%20Computer%20Vision.ipynb
-   * Object detection -  https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/02%20-%20Image%20Classification.ipynb
+   * <strong>Image classification</strong> is a machine learning based form of computer vision in which a model is trained to categorize images based on their (class or) primary subject matter they contain. 
+
+   * <strong>Object detection</strong> goes further than classification to classify individual objects within the image, and to return the coordinates of a bounding box that indicates the object's location.
+
    * Semantic segmentation
    * Image analysis
    * Face detection, analysis, and recognition
    * Optical character recognition (OCR) of text
-   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/media-services/video-indexer/">Video Indexer</a> analyzes the visual and audio channels of a video, and indexes its content.
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/media-services/video-indexer/">Video Indexer service</a> analyzes the visual and audio channels of a video, and indexes its content.
    <br /><br />
 
 
@@ -538,11 +552,13 @@ https://docs.microsoft.com/en-us/learn/modules/read-text-computer-vision/
 
 "Computer Vision" analyzes images and video to extract descriptions, tags, objects, and text.
 
-<a target="_blank" href="https://docs.microsoft.com/azure/cognitive-services/computer-vision/">DOCS</a>:
+<a target="_blank" href="https://docs.microsoft.com/azure/cognitive-services/computer-vision/">DOCS</a>, <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/detect-objects-images-custom-vision/1-introduction">INTRO</a>:
 
-1. DEMO: Select images and review the information returned by the Azure Computer Vision service:
+![az-ai-produce-objects-372x278](https://user-images.githubusercontent.com/300046/116675643-46d2ab00-a963-11eb-804a-9b1dd5fb6161.png)
 
-   <a target="_blank" href="https://aidemos.microsoft.com/computer-vision">
+1. Select images and review the information returned by the Azure Computer Vision web service:
+
+   DEMO: <a target="_blank" href="https://aidemos.microsoft.com/computer-vision">
    https://aidemos.microsoft.com/computer-vision</a> 
 
    1. Click an image to see results of "Analyze and describe images". Objects are returned with a <strong>bounding box</strong> to indicate their location within the image.
@@ -552,6 +568,7 @@ https://docs.microsoft.com/en-us/learn/modules/read-text-computer-vision/
    1. Read text in imagery.
    1. Read <strong>handwriting</strong>
    1. Recognize celebrities & landmarks - the service has a specialized domain model trained to identify thousands of well-known celebrities from the worlds of sports, entertainment, and business. The "Landmarks" model can identify famous landmarks, such as the Taj Mahal and the Statue of Liberty.
+   <br /><br />
 
    Additionally, the Computer Vision service can:
    * Detect image types - for example, identifying clip art images or line drawings.
@@ -589,11 +606,11 @@ https://docs.microsoft.com/en-us/learn/modules/read-text-computer-vision/
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/">Custom Vision</a> trains custom image classification and object detection models using custom (your own) images.
 
+MS LEARN HANDS-ON LAB: 
 
    https://docs.microsoft.com/en-us/learn/modules/classify-images-custom-vision/3-create-image-classifier
 
    https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/03%20-%20Object%20Detection.ipynb
-
 
    <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/56f91f2e778daf14a499f21f">CV API</a>
 
@@ -626,6 +643,9 @@ https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/06%20-%20Receipts%2
 
 https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/05%20-%20Optical%20Character%20Recognition.ipynb
 
+   * Image classification - https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/01%20-%20Image%20Analysis%20with%20Computer%20Vision.ipynb
+
+   * Object detection -  https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/02%20-%20Image%20Classification.ipynb
 
 <hr />
 
