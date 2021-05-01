@@ -218,10 +218,13 @@ uses C# or Python as the programming language.
 
 <hr />
 
+<a name="CognitiveServices"></a>
 
 ## Azure Cognitive Services suite
 
-<a href="#CognitiveServices">Azure "Cognitive Services"</a> refers to a <strong>suite of services</strong> developers use to build AI-enhanced solutions which mimic human intelligence:
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/">DOCS</a>:
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/">
+Azure "Cognitive Services"</a> refers to a <strong>suite of services</strong> (with APIs) developers use to build AI-enhanced solutions which mimic human intelligence:
 
    * "Decision" - classification (unsupervised machine learning) fits features into model and predict classification of the label
    * "Decision" - regression (supervised machine learning) uses historical data to train the model to predict <strong>numerical</strong> values.
@@ -229,14 +232,26 @@ uses C# or Python as the programming language.
    * Computer vision - interpret the world visually through cameras, videos, images.
    * Natural language processing - interpret written or spoken language, and respond in kind.
    * Conversational AI - an "agent" to participate in a (natural) conversation.
+   <br /><br />
 
-   * "Search" (Bing) has disappeared from Microsoft's list of services.
+"Search" (Bing) has disappeared from Microsoft's list of service categories.
+But it now is at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/search/">
+https://docs.microsoft.com/en-us/azure/search</a>
+
+Case studies of how people are already making use of AI/ML to save time and money:
+
+   * Predictive Maintenance data science <a target="_blank" href="https://info.microsoft.com/CO-AAIoT-WBNR-FY16-07Jul-05-Predictive-Maintenance-Registration.html">webinar</a>
+   * Defect Detection with Image Analysis
+   * Custom Entity Extraction with Text Analytics
+   * modsy.com 3D view
    <br /><br />
 
 
 1. List kinds of Cognitive Services using CLI command:
 
    <pre>az cognitiveservices account list-kinds</pre>
+
+   Kinds with ? are known in websites but not listed by the command above.
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr valign="bottom"><th> Category </th><th> Kind </th><th> Description </th></tr>
@@ -253,9 +268,9 @@ uses C# or Python as the programming language.
       </td><td> - </td></tr>
    <tr align="top"><td> Language </td><td> "LUIS.Authoring"
       </td><td> - </td></tr>
-   <tr align="top"><td> Language </td><td> "QnAMaker"
+   <tr align="top"><td> Language </td><td> <a href="#QnA_Maker">"QnAMaker"</a>
       </td><td> - </td></tr>
-   <tr align="top"><td> Language </td><td> "QnAMaker.v2"
+   <tr align="top"><td> Language </td><td> <a href="#QnA_Maker">"QnAMaker.v2"</a>
       </td><td> - </td></tr>
    <tr align="top"><td> Language </td><td> "TextAnalytics"
       </td><td> - </td></tr>
@@ -296,20 +311,14 @@ uses C# or Python as the programming language.
       </td><td> - </td></tr>
    </table>
 
-Case studies of how people are already making use of AI/ML to save time and money:
-
-   * Predictive Maintenance data science <a target="_blank" href="https://info.microsoft.com/CO-AAIoT-WBNR-FY16-07Jul-05-Predictive-Maintenance-Registration.html">webinar</a>
-   * Defect Detection with Image Analysis
-   * Custom Entity Extraction with Text Analytics
-   * modsy.com 3D view
-   <br /><br />
-
 DEMOS: https://aidemos.microsoft.com/
 
 
 <a name="CLI"></a>
 
 ## CLI
+
+You would save money if you got to work right away AND don't leave servers running with nothing to do.
 
 Instead of the manual steps defined in <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/01%20-%20Image%20Analysis%20with%20Computer%20Vision.ipynb">this LAB</a>, run my Bash script in CLI, as defined by <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-apis-create-account-cli?tabs=windows">this DOC</a>:
 
@@ -324,8 +333,6 @@ Instead of the manual steps defined in <a target="_blank" href="https://github.c
 1. I confirm I have read and understood the notices: Selected.
 
 
-
-
 https://docs.audd.io/?ref=public-apis
 
 Tim Warner's <a target="_blank" href="https://github.com/timothywarner/ai100">https://github.com/timothywarner/ai100</a> includes <a target="_blank" href="https://github.com/timothywarner/ai100/tree/master/powershell-cli">Powershell scripts</a>:
@@ -337,6 +344,8 @@ Tim Warner's <a target="_blank" href="https://github.com/timothywarner/ai100">ht
 * ssh-to-aks.md
 <br /><br />
 
+Others:
+* autoprice.py
 
 
 <a name="MachineLearning"></a>
@@ -733,32 +742,104 @@ https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/05%20-%20Optical%20
 
 ## Conversational AI
 
-<a target="_blank" href="
-https://docs.microsoft.com/en-us/learn/paths/explore-conversational-ai/">
-https://docs.microsoft.com/en-us/learn/paths/explore-conversational-ai</a>
-
-Automate interaction with a FAQ.
-
 HISTORY: In 2015, Microsoft unleashed the <strong>Tay</strong> chat bot, then had to bring it down after hackers submitted enough racial slurs that they fooled the system into thinking that was normal and acceptable. 
 
 HISTORY: XiaoIce, a chatbot Microsoft launched in China, "has more than 200 million users, has engaged in 30 billion conversations, and has an average conversation length of 23 turns, which averages out to about half an hour, achieving human parity at translation from Chinese to English. Japan-based Rinna and the US-based Zo)
 
+Today, <a target="_blank" href="
+https://docs.microsoft.com/en-us/learn/paths/explore-conversational-ai/">
+Explore-conversational-ai</a>
+
+   <a href="#QnA_Maker"></a>
+
+### QnA Maker
+
+   The cognitive service name "QnA Maker" (Question and Answer Maker)</a> 
+   is a cloud-based API service that lets you create a conversational question-and-answer layer over your existing data. The service enables the building of <strong>knowledge bases</strong> of questions and answers that form the basis of a dialog between a human and an AI agent.
+
+   Microsoft created the <strong>QnA Maker portal</strong> to make it easier than writing code to create and manage knowledge bases using the QnA Maker REST API or SDK.
+
+   The knowledge base gets smarter as it continually learns from user behavior.
+
+   The knowledge base can be built by extracting questions and answers from your semi-structured content, including FAQs, manuals, and documents. 
+
+
+   <a name="QnA_Maker"></a>
+
+   ### Create QnA Maker in Portal
+
+1. On an appropriate browser profile (personal or work email) associated with the subscription you wnat to use.
 1. Go to the QnA Maker portal at:
 
    <a target="_blank" href="https://qnamaker.ai/">https://qnamaker.ai</a>
 
-   ### QnA Maker 
-
-   This cognitive service enables you to quickly build a knowledge base of questions and answers that can form the basis of a dialog between a human and an AI agent.
+1. Sign in.
 
    https://docs.microsoft.com/en-us/learn/paths/explore-conversational-ai/
 
-   Microsoft created the <strong>QnA Maker portal</strong> to make it easier than writing code to create and manage knowledge bases using the QnA Maker REST API or SDK.
+1. "Create a knowledge base" from the top menu.
+1. STEP 1: "Create a QnA service", which opens another tab
+1. Basics: During testing, do NOT click the checkbox for "Managed". In prod, telemetry and compute are included automatically with your QnA Maker resource. If you do not select managed, you will be prompted to create an App Insights and App Service resources for the required telemetry and compute that you will have to manage for your QnA Maker resource. Read more <a target="_blank" href=""https://aka.ms/qnamaker-createoptions-description">here</a>.
+
+1. Subscription: Your Azure subscription
+1. Resource group: Select an existing resource group or create a new one
+1. Resource group location: "(US) West US"
+
+1. Name: A unique name for your QnA resource (App name)
+1. Pricing tier: both are "3 transactions per second, 100 transactions per minute":
+   * <strong>Free F0 (3 managed documents per month</strong>, 5...)
+   * Standard S0 ($10 per month for unlimited documents ...)
+   <br /><br />
+
+   <u>App Service details - for runtime</u> :
+
+1. Azure Search location: <em>Any available location</em>
+1. <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/search/">Azure Search pricing tier</a>: F 
+   * Free F (50 MB in 3 indexes)
+   * Basic B (2 GB in 15 indexes, 3 scale-out units per service on 1 partition with 3 replicas)
+   * Standard S1 (25 GB in 50 indexes) - default
+   * Standard S2 (100 GB in 200 indexes)
+   * Standard S3 (200 GB in 200 indexes)
+   * Standard S3 (1000 Index/Partition)
+   * L1 (1 TB in 10 indexes, High Storage, 36 units)
+   * L2 (2 TB in 10 indexes, High Storage, 36 units)
+   <br /><br />
+
+   Note: If you have already provisioned a free-tier QnA Maker or Azure Search resources, your quota may not allow you to create another one. In which case, select a tier other than F0 / F.
+
+   <u>App Service details - for runtime</u> :
+
+1. App name: Same as Name (".azurewebsites.net" will be appended automatically)
+1. Website location: <em>Same as Azure Search location</em>
+
+   <u>App insights details - for telemetry and chat logs</u> :
+
+1. App insights: Disable, which will hide the "App insights location", but appear in Review.
+   
+1. Click "Review + create". Create. Wait for the dots to stop flashing "Deployment in progress", when these resources to complete deployment:
+   * microsoft.insights/components
+   * microsoft.insights/components
+   * Microsoft.Web/sites
+   * Microsoft.Search/searchServices
+   * Microsoft.Web/serverfarms
+   <br /><br />
+
+1. Return to the QnA Maker portal tab. You may have timed out.
+1. STEP 2: click Refresh to refresh the list of available QnA service resources.
+
+1. Connect your QnA service to your KB by selecting the following options:
+1. Microsoft Azure Directory ID: The Azure directory ID for your subscription
+1. Azure subscription name: Your Azure subscription
+1. Azure QnA service: The QnA service resource you created in the previous step
+1. Language: English
 
 
-   <a name="BotService"></a>
 
-   ### Azure Bot Service 
+<hr />
+
+<a name="BotService"></a>
+
+### Azure Bot Service 
 
    provides a platform for creating, publishing, and managing bots. Developers can use the Bot Framework to create a bot and manage it with Azure Bot Service - integrating back-end services like QnA Maker and LUIS, and connecting to channels for web chat, email, Microsoft Teams, and others.
 

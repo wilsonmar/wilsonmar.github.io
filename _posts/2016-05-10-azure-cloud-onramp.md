@@ -1222,7 +1222,7 @@ East US 2                 eastus2              (US) East US 2
    <pre><strong>az account list-locations --query "[].{Location:name, metadata:latitude}" -o table
    </strong></pre>
 
-   <pre>Location
+   <pre>Location h
 -------------------
 eastus
 eastus2
