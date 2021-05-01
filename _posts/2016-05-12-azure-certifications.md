@@ -300,6 +300,7 @@ https://docs.microsoft.com/en-us/learn/certifications/exams/az-104</a> on August
 
 https://github.com/MicrosoftLearning/AZ-103-MicrosoftAzureAdministrator
 
+<a target="_blank" href="https://www.youtube.com/watch?v=48Ghqo57HrY&list=PLlI3peB1V-rrzvs2SEgZkg-9DIvS7Dmcw&index=2">VIDEO: AZ-103 vs AZ-104</a>
 
 
 <a name="AZ-104"></a>
@@ -347,7 +348,9 @@ CloudAcademy</a> provides lab time on the real Azure environment.
 
 * Alan Rodriguez's <a target="_blank" href="https://mckinsey.udemy.com/course/microsoft-certified-azure-administrator/">McK</a> <a target="_blank" href="https://www.udemy.com/course/microsoft-certified-azure-administrator/">Udemy.com</a> 
 
-* Niraj Kumar, founder of <a target="_blank" href="https://azureezy.com/az-104-azure-administrator/">Azureezy.com</a>, https://t.me/AzureTalk, has <a target="_blank" href="https://t.me/azuretalk">Telegram chat</a> with his series on <a target="_blank" href="https://www.youtube.com/watch?v=413zBdy_ocQ">YouTube Jul 21, 2020</a> with <a target="_blank" href="https://azureezy.com/az-104-azure-administrator/">slidedecks here</a>:
+K21Academy <a target="_blank" href="https://www.youtube.com/watch?v=7z6VduCVYH4&list=PLlI3peB1V-rrzvs2SEgZkg-9DIvS7Dmcw">AZ-104: what You Need To Know</a>
+
+Niraj Kumar, founder of <a target="_blank" href="https://azureezy.com/az-104-azure-administrator/">Azureezy.com</a>, https://t.me/AzureTalk, has <a target="_blank" href="https://t.me/azuretalk">Telegram chat</a> with his series on <a target="_blank" href="https://www.youtube.com/watch?v=413zBdy_ocQ">YouTube Jul 21, 2020</a> with <a target="_blank" href="https://azureezy.com/az-104-azure-administrator/">slidedecks here</a>:
    * <a target="_blank" href="https://www.youtube.com/watch?v=413zBdy_ocQ&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI">AZ exams</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=413zBdy_ocQ&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&t=9m39s">Manage Azure Identities and governance</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=lL6Osu3GERQ&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&index=2">Implement and manage Azure Webapps and Container</a>
@@ -548,7 +551,8 @@ Skills the exam measures:
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-desktop/create-validation-host-pool">Host pool</a>
 <br /><br />
 
-https://www.whizlabs.com/learn/course/microsoft-azure-az-104/
+Sample examples:
+   * https://www.whizlabs.com/learn/course/microsoft-azure-az-140/
 
 
 <a name="#MS-900"></a>

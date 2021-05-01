@@ -420,20 +420,31 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
 <hr />
 
+<a name="Automation"></a>
+
 ## Automation programmatically
 
-There are several ways to automate stand up services within Azure:
-   * <a href="#VM_GUI">Portal GUI Cloud Shell</a>
-   * <a href="#VM_template">Template</a>
-   * <a href="#VM_CLI">CLI</a> Bash scripts
-   * <a href="#VM_PS">Powershell</a> ps1 scripts
-   * <a href="#VM_PS_JSON">Powershell</a> running ARM template JSON files
-   * <a href="#VM_Docker">Docker</a> containers
-   * <a href="#VM_Docker">Terraform</a> HCL files
-   * Microsoft Bicep (new)
-   * REST API (used <a target="_blank" href="https://azidentity.azurewebsites.net/post/2020/12/15/key-vault-with-the-use-of-vbscript-classic-asp">within a VBScript program</a>
-   * <a target="_blank" href="https://wilsonmar.github.io/pulumi/">Pulumi Python/C#/Nodejs/Typescript code</a>
+My repo <a target="_blank" href=" 
+https://github.com/wilsonmar/azure-your-way">
+https://github.com/wilsonmar/azure-your-way</a>
+contains automation scripts to invoke instead of manually operating the Azure Portal, so that you can save money by deleting Resource Groups because you can get resources back with just a few commands. Scripts also enable you to stand up resources in different regions/locations. Most scripts in the repo are Bash shell scripts that run natively on MacOS and thus familiar to most developers. PowerShell scripts are used in cases where they are the only solution. Utility scripts enable the scripts to run on Linux and Windows Git Shell. The scripts are also useful for learning Azure. 
+
+There are many ways to automate the creation of resources within Azure:
+   1. <a href="#VM_GUI">Portal GUI Cloud Shell</a>
+   1. <a href="#VM_template">JSON ARM Template</a> with parameter files
+   1. <a href="#VM_CLI">CLI</a> Bash scripts (az commands)
+   1. <a href="#VM_PS">Powershell</a> ps1 scripts calling Az modules
+   1. PowerShell DSC (Desired State Configuration) automation
+   1. <a href="#VM_PS_JSON">Powershell</a> running ARM template JSON files
+   1. <a href="#VM_Docker">Docker</a> containers
+   1. <a href="#VM_Docker">Terraform</a> HCL *.tf files with templating features and advanced logic features)
+   1. Helm charts referencing DockerHub or Azure Container Registry (ACR) images
+   1. REST API (used <a target="_blank" href="https://azidentity.azurewebsites.net/post/2020/12/15/key-vault-with-the-use-of-vbscript-classic-asp">within a VBScript</a>, curl, C# .NET, Java, Python, NodeJs, etc.
+   1. REST API calls in program generated from Swagger/OpenAPI JSON
+   1. <a target="_blank" href="https://wilsonmar.github.io/pulumi/">Pulumi Python/C#/Nodejs/Typescript code</a>
+   1. Microsoft Bicep (new)
    <br /><br />
+
 
 ### Cloud Shell
 
@@ -1222,7 +1233,7 @@ East US 2                 eastus2              (US) East US 2
    <pre><strong>az account list-locations --query "[].{Location:name, metadata:latitude}" -o table
    </strong></pre>
 
-   <pre>Location h
+   <pre>Location
 -------------------
 eastus
 eastus2

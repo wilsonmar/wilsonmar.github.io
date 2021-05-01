@@ -3288,8 +3288,9 @@ aws ecr delete-repository --repository-name demo --force
 <a target="_blank" href="https://www.youtube.com/watch?v=DRsEQqjcv4g&list=PLD7svyKaquTn7bkKclDkYktSAAcmyuoaj">
 VIDEO "K8s on MS Azure"</a>
 
-Pluralsight: <a target="_blank" href="https://app.pluralsight.com/library/courses/azure-container-service-big-picture/table-of-contents">Azure Kubernetes Service (AKS) – The Big Picture</a> 13 Aug 2018
-by Manoj Nair (ManojNair.in)
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/116794209-86df7e00-aa88-11eb-955f-6c0ee129bdec.png">
+<img width="2236" height="1258" alt="az-k8s-flow-2236x1258" src="https://user-images.githubusercontent.com/300046/116794209-86df7e00-aa88-11eb-955f-6c0ee129bdec.png"></a>
+<a target="_blank" href="https://www.youtube.com/watch?v=7z6VduCVYH4&list=PLlI3peB1V-rrzvs2SEgZkg-9DIvS7Dmcw&time=8m38s" title="K21Academy">*</a>
 
 AKS manages the Control Plane master node.
 
@@ -3337,6 +3338,8 @@ Deploy a model as web service on Azure Container Instances by combining ACI with
    <br /><br />
 
 References:
+
+   * Manoj Nair (ManojNair.in) on Pluralsight: <a target="_blank" href="https://app.pluralsight.com/library/courses/azure-container-service-big-picture/table-of-contents" title="13 Aug 2018">Azure Kubernetes Service (AKS) – The Big Picture</a> 
 
    * <a target="_blank" href="https://www.whizlabs.com/learn/course/deploying-microservices-to-kubernetes-using-azure-devops/">Whizlabs: Deploying Microservices to Kubernetes using Azure DevOps</a> [06:43:32]
 

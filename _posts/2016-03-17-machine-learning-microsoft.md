@@ -3,7 +3,7 @@ layout: post
 title: "Microsoft Azure Machine Learning"
 excerpt: "All the options for Enterprise integration"
 tags: [HTML, personalization, machine learning, ML]
-date: "2016-03-17"
+date: "2021-03-17"
 file: "machine-learning-microsoft"
 image:
 # feature: pic green matrix hallway 1900x500.jpg
@@ -468,7 +468,7 @@ https://www.continuum.io/downloads
 
 0. Get back in again.
 
-0. Create an enviornment file by piping the output from an export:
+0. Create an environment file by piping the output from an export:
 
    conda env export > some_env.yaml
 

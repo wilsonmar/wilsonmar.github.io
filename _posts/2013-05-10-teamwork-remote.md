@@ -3,7 +3,7 @@ layout: post
 title: "Building a team remotely?"
 excerpt: "8 questions to ask"
 tags: [remote, telework, test, teamwork]
-date: "2013-05-10"
+date: "2021-05-01"
 file: "teamwork-remote"
 image:
 # feature: pic ENERGIZED-SERVICES-e1448057282767-1900x500.jpg
@@ -64,7 +64,7 @@ phrased in questions that help me determine the conditions for effectiveness in 
    procedures in the company. It's open-sourced at
    <a target="_blank" href="https://gitlab.com/gitlab-com/www-gitlab-com/tree/master/source/handbook">https://gitlab.com/gitlab-com/www-gitlab-com/tree/master/source/handbook</a>.
 
-   This provides a worry-free enviornment for people to take initiative.
+   This provides a worry-free environment for people to take initiative.
 
 
 ## Task list

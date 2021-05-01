@@ -27,6 +27,9 @@ Here are the notes I took while studying for <a target="_blank" href="https://wi
 
 ## Types of Storage and Data
 
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/116793948-079d7a80-aa87-11eb-9e28-04ac6e61057d.png"><img width="1612" height="728" alt="az-storage-types-1612x728" src="https://user-images.githubusercontent.com/300046/116793948-079d7a80-aa87-11eb-9e28-04ac6e61057d.png"></a>
+<a target="_blank" href="https://www.youtube.com/watch?v=7z6VduCVYH4&list=PLlI3peB1V-rrzvs2SEgZkg-9DIvS7Dmcw&time=8m34s" title="K21Academy May 8, 2020">*</a>
+
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Type </th><th> Data </th><th> Service </th></tr>
 <tr valign="top"><td> Unstructured: </td><td> Media files (photos, videos, audio files), Office files (Word documents, PowerPoint slides, Excel Spreadsheets), Text files, Log files, Product catalog data
@@ -834,12 +837,19 @@ Azure Disk Encryption. See https://docs.microsoft.com/azure/backup/backup-azure-
 DPM (Data Protection Manager)
 
 
+<hr />
+
+<a name="Site_Recovery"></a>
 
 ## VM Site Recovery
 
 <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=5h29m46s">VIDEO</a>
 The VM Site Recovery product, aka DRaaS (Disaster Recovery as a Service)
 for BCDR (Business Continuity and Recovery) includes replication, failover, and recovery.
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/116794094-d2ddf300-aa87-11eb-9aae-68bfc1408514.png">
+<img width="1830" height="1294" alt="az-site-recovery-1830x1294" src="https://user-images.githubusercontent.com/300046/116794094-d2ddf300-aa87-11eb-9aae-68bfc1408514.png"></a>
+<a target="_blank" href="https://www.youtube.com/watch?v=7z6VduCVYH4&list=PLlI3peB1V-rrzvs2SEgZkg-9DIvS7Dmcw&time=8m45s">*</a>
 
 Site-recovery replicates the data in almost <strong>real time</strong> for failover.
 

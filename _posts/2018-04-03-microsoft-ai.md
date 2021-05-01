@@ -332,6 +332,7 @@ Instead of the manual steps defined in <a target="_blank" href="https://github.c
 1. Pricing tier: S0
 1. I confirm I have read and understood the notices: Selected.
 
+TODO: Instead of putting plain text of cog_key in code, reference Azure Vault. Have the code in GitHub.
 
 https://docs.audd.io/?ref=public-apis
 
@@ -341,7 +342,7 @@ Tim Warner's <a target="_blank" href="https://github.com/timothywarner/ai100">ht
 * keyvault-soft-delete-purge.ps1
 * keyvault-storage-account.ps1
 * python-keyvault.py
-* ssh-to-aks.md
+* ssh-to-aks.md - SSH into AKS cluster nodes
 <br /><br />
 
 Others:
@@ -351,6 +352,23 @@ Others:
 <a name="MachineLearning"></a>
 
 ## Machine Learning (decision service)
+
+Example of ML classification:
+   * https://www.literature-map.com suggests other authors based on an author input. The input author is displayed in the middle of a map.
+   * Product identification - performing visual searches for specific products in online searches or even, in-store using a mobile device.
+   * Disaster investigation - evaluating key infrastructure for major disaster preparation efforts. For example, aerial surveillance images may show bridges and classify them as such. Anything classified as a bridge could then be marked for emergency preparation and investigation.
+   * Medical diagnosis - evaluating images from X-ray or MRI devices could quickly classify specific issues found as cancerous tumors, or many other medical conditions related to medical imaging diagnosis.
+   <br /><br />
+
+Configure run to create different models:
+   * Classification (predicting <strong>categories or classes</strong>)
+   * Regression (predicting <strong>numeric</strong> values)
+   * Time series forecasting (regression with a time-series element, enabling you to predict numeric values at a future point in time)
+
+   * Clustering
+   * Anomaly detection ("weird?")
+   <br /><br />
+
 
 ![az-ai-ml-1173x538](https://user-images.githubusercontent.com/300046/116586918-2fe67700-a8d7-11eb-87e7-1a4087faaa4f.png)
 
@@ -362,9 +380,11 @@ Test data is used to determine how well predictions created from a model, presen
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr><th> - </th><th> Predicted: no </th><th> Predicted: yes </th></tr>
-   <tr><th> True: no  </th><td> true positive </td><td> Type I error: false positive </td></tr>
-   <tr><th> True: yes </th><td> true negative </td><td> Type II error: false negative </td></tr>
+   <tr><th> True: no  </th><td> true negatives </td><td> Type I error: false positives </td></tr>
+   <tr><th> True: yes </th><td> Type II error: false negatives </td><td> true positives</td></tr>
    </table>
+
+   QUESTION: Is the above correct?
 
 Average Precision (AP) is an overall metric that takes into account both precision and recall):
    
@@ -379,27 +399,22 @@ The Receiver Operating Characteristic (ROC) curve plots the relationship between
 
 Different <a href="#ValidationTypes">validation types</a> can be used.
 
-Configure run to create different models:
-   * Classification (predicting <strong>categories or classes</strong>)
-   * Regression (predicting <strong>numeric</strong> values)
-   * Time series forecasting (regression with a time-series element, enabling you to predict numeric values at a future point in time)
-
-   * Clustering
-   * Anomaly detection ("weird?")
-   <br /><br />
-
-Example of ML classification:
-   * https://www.literature-map.com suggests other authors based on an author input. The input author is displayed in the middle of a map.
-   * Product identification - performing visual searches for specific products in online searches or even, in-store using a mobile device.
-   * Disaster investigation - evaluating key infrastructure for major disaster preparation efforts. For example, aerial surveillance images may show bridges and classify them as such. Anything classified as a bridge could then be marked for emergency preparation and investigation.
-   * Medical diagnosis - evaluating images from X-ray or MRI devices could quickly classify specific issues found as cancerous tumors, or many other medical conditions related to medical imaging diagnosis.
-   <br /><br />
-
 https://adatis.co.uk/evaluating-models-in-azure-machine-learning-part-1-classification/
 
 <a target="_blank" href="https://www.bluegranite.com/blog/train-and-deploy-machine-learning-models-using-the-azureml-service">Process</a> (using a Python scipt):
 ![azureml-1118x398](https://user-images.githubusercontent.com/300046/116598715-6676be80-a8e4-11eb-878a-70f8dface9d9.png)
 
+### Install Visual Studio Code extension form AML
+
+1. Open Visual Studio Code on your laptop.
+1. Press Shift+Command+X for Extensions search.
+1. Search for "Azure Machine Learning"
+1. Click "Install".
+
+   Several extensions are installed (Azure account, AML - Remote).
+
+
+### Automated ML
 
 Following https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning/use-auto-ml
 

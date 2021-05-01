@@ -3,7 +3,7 @@ layout: post
 title: "Build load-balanced servers in AWS EC2 using CloudFormation"
 excerpt: "Automate High Availability in the cloud"
 tags: [AWS, EC2, cloud]
-date: "2016-03-30"
+date: "2021-03-30"
 file: "build-load-balanced-servers-in-AWS-EC2"
 image:
 # feature: pic data center slice 1900x500.jpg
@@ -43,7 +43,7 @@ NOTE: This page is in draft form at the moment.
 ## Human interaction #
 
 The two main types of people interacting with AWS are
-1) Administrators who define the enviornment
+1) Administrators who define the environment
 and
 2) end-users of the whole setup. 
 
@@ -563,7 +563,7 @@ Public and private keys:
 
 ### S3 Template URL #
 
-    For enviornments routinely processing more than 100 images per second,
+    For environments routinely processing more than 100 images per second,
     because S3 stores files lexicographically (alphabetically),
     S3 GETs can be faster if file names are prefixed with a random string (as in a GUID)
     or reverse the keyname string.
@@ -1006,7 +1006,7 @@ by Marcus Young
 
 0. Use a text editor to begin defining a shell script.
 
-   We define enviornment variables with values,
+   We define environment variables with values,
    such as REGION needed for most aws CLI commands. 
 
    <pre>
