@@ -766,7 +766,15 @@ Explore-conversational-ai</a>
 
    <a name="QnA_Maker"></a>
 
-   ### Create QnA Maker in Portal
+   ### Create QnA Service
+
+1. View the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/quickstarts/create-publish-knowledge-base?tabs=v1&WT.mc_id=Portal-Microsoft_Azure_ProjectOxford">DOCS</a>:
+
+   View the v2 (previous release)
+
+1. The Jupyter notebook: 
+
+   https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/11%20-%20QnA%20Bot.ipynb
 
 1. On an appropriate browser profile (personal or work email) associated with the subscription you wnat to use.
 1. Go to the QnA Maker portal at:
@@ -816,7 +824,10 @@ Explore-conversational-ai</a>
 
 1. App insights: Disable, which will hide the "App insights location", but appear in Review.
    
-1. Click "Review + create". Create. Wait for the dots to stop flashing "Deployment in progress", when these resources to complete deployment:
+1. Click "Review + create". Create. NOTE: when these resources complete deployment:
+   * Microsoft.Web/sites/config
+   * Microsoft.CognitiveServices/accounts
+   * Microsoft.Search/searchServices
    * microsoft.insights/components
    * microsoft.insights/components
    * Microsoft.Web/sites
@@ -824,16 +835,66 @@ Explore-conversational-ai</a>
    * Microsoft.Web/serverfarms
    <br /><br />
 
-1. Return to the QnA Maker portal tab. You may have timed out.
-1. STEP 2: click Refresh to refresh the list of available QnA service resources.
+1. While you wait for the dots to stop flashing "Deployment in progress",
+   return to the QnA Maker portal tab. You may have timed out.
 
-1. Connect your QnA service to your KB by selecting the following options:
+1. When "Your deployment is complete", click "Go to resources" for "Congratulations! Your keys are ready."
+
+
+   ### Connect QnA service to KB
+
+   STEP 2: Connect your QnA service to your KB.
+
+1. "Refresh" the list of available QnA service resources.
 1. Microsoft Azure Directory ID: The Azure directory ID for your subscription
 1. Azure subscription name: Your Azure subscription
 1. Azure QnA service: The QnA service resource you created in the previous step
+
+   NOTE: In the Preview there is a checkbox "Enable language setting per knowledge base".
+
 1. Language: English
 
+   STEP 3: Name your KB.
 
+1. Type a name: For example: "Margie's Travel KB". Spaces are allowed?
+
+   STEP 4: Populate your KB.
+
+1. "+ Add URL"
+1. Copy and paste this example URL:
+
+   https://github.com/MicrosoftDocs/ai-fundamentals/raw/master/data/qna_bot/margies_faq.docx
+
+1. Add file
+
+1. chit-chat: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/how-to/chit-chat-knowledge-base?tabs=v1">Adding "chit-chat"</a> to your knowledge base (by selecting a personality) automatically adds questions and responses to your knowledge base, which enables your bot to answer small-talk questions in a voice that fits your brand. 
+   * None
+   * Professional << select this.
+   * Friendly
+   * Witty
+   * Caring
+   * Enthusiastic
+   <br /><br />
+
+   QUESTION: What is the range of popularity?
+
+   QUESTION: Extraction? I'm stuck here.
+
+
+1. Do NOT check "Enable multi-turn extraction from URLs, .pdf or .docx files."
+
+1. Click "Create your KB". Wait for a minute or so while your Knowledge base is created. 
+
+1. Review the questions and answers that have been imported from the FAQ document and the professional chit-chat pre-defined responses.
+
+   ### Test the knowledge base
+
+   ### Make an API call
+   
+   https://go.microsoft.com/fwlink/?linkid=2100125
+
+   https://go.microsoft.com/fwlink/?linkid=2100213
+   Coding</a>
 
 <hr />
 
