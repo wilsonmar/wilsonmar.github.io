@@ -158,23 +158,17 @@ Practice tests:
 
 ### AI-100 Azure AI Engineer Associate
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/ai-100">
-AI-100 exam definitions are at Microsoft's LEARN</a> includes a free text-based tutorial.
+On June 30, 2021, Microsft is retiring the AI-100 exam in favor of <a href="#AI-102">AI-102 exam</a> (avilable in beta since Feb 2021). <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/ai-100">AI-100 exam, as definied at Microsoft's LEARN</a> (that page includes a free text-based tutorial).
 
    * Analyze solution requirements (25-30%)
    * Design AI solutions (40-45%)
    * Implement and monitor AI solutions (25-30%)
    <br /><br />
 
-https://docs.microsoft.com/en-us/learn/certifications/exams/ai-102
-
-https://github.com/MicrosoftLearning/AI-102-AIEngineer
-
-
 https://github.com/MicrosoftLearning/AI-100-Design-Implement-Azure-AISol
 
 * Plan and manage an Azure <strong>Cognitive Services</strong> solution (15-20%)
-   * MS: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/evaluate-text-with-language-services/">Evaluate text with Azure Cognitive Language Services</a> 
+   * MS: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/evaluate-text-with-language-services/">Evaluate text with Azure Cognitive Language Services</a>
 
 * Implement Computer <strong>Vision</strong> solutions (20-25%)
    * MS: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/process-classify-images-with-azure-cognitive-vision-services/">Process and classify images with the Azure cognitive vision services</a>
@@ -206,14 +200,29 @@ Practice tests:
 
 https://github.com/MicrosoftLearning/Principles-of-Machine-Learning-Python
 
+<a name="AI-102"></a>
+
 ### AI-102
 
-https://ravikirans.com/ai-102-azure-exam-study-guide/
-has links
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/ai-102">AI-102 exam, as definied at Microsoft's LEARN</a> 
 
-https://docs.microsoft.com/en-us/learn/certifications/courses/ai-102t00
-4-day course (with cloud time) 
-uses C# or Python as the programming language.
+   * Plan and manage an Azure Cognitive Services solution (15-20%)
+   * Implement Computer Vision solutions (20-25%)
+   * Implement natural language processing solutions (20-25%)
+   * Implement knowledge mining solutions (15-20%)
+   * Implement conversational AI solutions (15-20%)
+   <br /><br />
+
+PROTIP: That page includes a free text-based tutorial.
+
+PROTIP: Unlike the AI-100, AI-102 requires skill in programming C# or Python.
+
+<a target="_blank" href="https://ravikirans.com/ai-102-azure-exam-study-guide/">
+Ravi's links</a>
+
+Microsoft offers a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/ai-102t00">4-day course (with cloud time)</a>
+covering C# or Python as the programming language.
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/AI-102-AIEngineer">Labs for the class</a> can be followed outside of class enrollment.
 
 
 <hr />
@@ -413,6 +422,10 @@ https://adatis.co.uk/evaluating-models-in-azure-machine-learning-part-1-classifi
 
    Several extensions are installed (Azure account, AML - Remote).
 
+1. Search for "Thunder client" for a REST API GUI like Postman.
+
+
+1. To invoke extensions, VS Code will apply the extension based on the file type opened (such as .py for Python, etc.)
 
 ### Automated ML
 
@@ -539,11 +552,15 @@ https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/3-und
    <br /><br />
 
 
-### Content modertor
+### Content moderator
 
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/content-moderator/">Content Moderator</a>  service detect potentially offensive or unwanted content.
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/content-moderator/">Content Moderator</a> services detect potentially offensive or unwanted content.
+
+### Metrics Advisor
 
 <a target="_blank" href="https://aka.ms/GualalaACOM">Metrics Advisor</a> monitors metrics and diagnoses issues.
+
+### Personalizer
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/">Personalizer</a> creates rich, personalized experiences for every user.
 
@@ -555,13 +572,12 @@ https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/3-und
 ## NLP (Natural Language Processing) services
 
 <a target="_blank" href="
-https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/5-understand-natural-language-process">Intro</a>
-
+https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/5-understand-natural-language-process">Intro</a>:
 <a target="_blank" href="
 https://docs.microsoft.com/en-us/learn/paths/explore-natural-language-processing/">
 Tutorial: https://docs.microsoft.com/en-us/learn/paths/explore-natural-language-processing</a>
 
-NLP enables you to create software that can:
+NLP enables the creation of software that can:
    * Analyze and interpret text in documents, email messages, and other sources.
    * Interpret spoken language, and synthesize speech responses.
    * Automatically translate spoken or written phrases between languages.
@@ -600,11 +616,16 @@ NLP enables you to create software that can:
 
    <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages/console">Text Analytics API</a>
 
+
    ### Sentiment Analysis
+
+   The output is a number from 0 to 1, with 1 being the most positive language and zero being the most negative opinion expressed.
+
 
    ### Key phrase extraction
 
-   ### Speech Translation
+
+   ### Speech Translation (Speech to text)
    
    <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-translation/">Speech Translation</a> recognizes and synthesizes speech, and translates spoken languages.
 
@@ -614,12 +635,29 @@ NLP enables you to create software that can:
    
    https://github.com/MicrosoftLearning/AI-SpeechToText
 
+   The speech-to-text service includes multiple pre-defined voices with support for <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support#speech-to-text">multiple languages and regional pronunciations</a>, with language detection. In addition to standard voices, <strong>neural voices</strong> leverage neural networks to overcome common limitations in speech synthesis with regard to intonation, resulting in a more natural sounding voice. 
+   PROTIP: Neural voices are created from samples that use a 24 khz sample rate.
 
-   ### Translator Text 
+   Custom voices can be created with the text-to-speech API.
+
+   PROTIP: Since you have to use your own subscription to follow <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/recognize-synthesize-speech/3-exercise-transcribe-speech-use-azure">this tutorial from Microsoft</a>, skip clicking "Launch VM mode" and follow <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/08%20-%20Speech.ipynb">the Python notebook on Speech</a> on the regular Portal.
+
+1. PROTIP: In a CLI window, run my Bash shell script to Create a Cognitive Services resource and get its two keys:
+
+   <pre>cd ~/clouddrive/azure-your-way
+   git pull
+   ./az-iot-cli.sh
+   </pre>
+
+
+
+   ### Translator Text (text to speech)
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-translate">translate text</a> between more than 60 languages.
 
-   https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/09%20-%20Translation.ipynb
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support#text-to-speech">Text-to-speech</a>
+
+   <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/09%20-%20Translation.ipynb">Python notebooks</a>
 
 <hr />
 
@@ -656,9 +694,27 @@ DEMO: <a target="_blank" href="https://www.microsoft.com/en-us/ai/seeing-ai?rtc=
 
 "Computer Vision" analyzes images and video to extract descriptions, tags, objects, and text.
 
+1. DEMO: Use the Video Indexer demo:
+
+   <a target="_blank" href="https://www.videoindexer.ai/account/login/">
+   https://www.videoindexer.ai</a>
+
+1. Click the provider to login.
+1. In "Media files", click "Samples", and click on a video file to Play.
+1. See the media's people, topics (keywords).
+
+1. Click a tag to see where it was mentioned in the timeline.
+
+1. In "Model customizations"
+1. In "Account settings"
+1. <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/video-indexer/">PRICING</a>: up to 10 hours of free indexing to website users and up to 40 hours of free indexing to API users. Media reserved units are pre-paid.
+   <br /><br />
+
+
 <a target="_blank" href="https://docs.microsoft.com/azure/cognitive-services/computer-vision/">DOCS</a>, <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/detect-objects-images-custom-vision/1-introduction">INTRO</a>:
 
-![az-ai-produce-objects-372x278](https://user-images.githubusercontent.com/300046/116675643-46d2ab00-a963-11eb-804a-9b1dd5fb6161.png)
+   ![az-ai-produce-objects-372x278](https://user-images.githubusercontent.com/300046/116675643-46d2ab00-a963-11eb-804a-9b1dd5fb6161.png)
+
 
 1. Select images and review the information returned by the Azure Computer Vision web service:
 
@@ -705,10 +761,16 @@ DEMO: <a target="_blank" href="https://www.microsoft.com/en-us/ai/seeing-ai?rtc=
 
 1. To take a quiz and get credit, click in the VM "here to complete the Learn module with a Knowledge Check.
 
+<a name="Custome_Vision"></a>
 
 ### Custom Vision
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/">Custom Vision</a> trains custom image classification and object detection models using custom (your own) images.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/example-scenario/ai/intelligent-apps-image-processing">DOCS</a>:
+![az-ai-image-class-623x410](https://user-images.githubusercontent.com/300046/116795191-5a2f6480-aa90-11eb-82fe-52c26e8e3de4.png)
+
+
 
 MS LEARN HANDS-ON LAB: 
 
@@ -977,9 +1039,9 @@ Tim1[45:55]
 
 ## Speech-to-text
 
-https://github.com/timothywarner/ai100/tree/master/Speech-to-Text
+Transcriptions can be done in real-time or in batch mode.
 
-### Intro
+Batch mode is when audio recordings are stored on a file share, and a shared access signature (SAS) URI is used by a program to asynchronously receive transcription results.
 
 0. Take the introductory tutorial:
 
@@ -1024,6 +1086,10 @@ https://github.com/timothywarner/ai100/tree/master/Speech-to-Text
    - Request-Response Service (RRS) Predictive Experiment - Batch Execution Service (BES)
    - Retraining API
    <br /><br />
+
+https://github.com/timothywarner/ai100/tree/master/Speech-to-Text
+
+
 
 <a name="HDInsight"></a>
 

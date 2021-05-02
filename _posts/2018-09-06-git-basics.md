@@ -4,7 +4,7 @@ title: "Git basics (client-based workflow)"
 excerpt: "Here is a quick way to learn Git version control for contributing to open source"
 modified:
 tags: [git]
-date: "2018-09-06"
+date: "2021-05-01"
 file: "git-basics"
 image:
 # git-basics-1900x500-247310.jpg from png
@@ -992,7 +992,7 @@ A  newfile.md
 
    <a name="Reflog"></a>
 
-   ### Local Reflog
+   ### What did I do? Local Reflog
 
 8. List history of actions that have occurred locally (on your laptop):
 
@@ -1002,8 +1002,7 @@ A  newfile.md
 
    Example output:
 
-   <pre>
-   9349be6 HEAD@{1}: commit: double quote removed for confusion
+   <pre>9349be6 HEAD@{1}: commit: Update
    9eb57bc HEAD@{2}: commit: mention gs shortcut 
    </pre>
 
@@ -1012,6 +1011,18 @@ A  newfile.md
    Content within Git is very difficult to alter because any change would result in a different hash. And insertions would break the chain of commits.
 
    * Locally, entries are pruned (removed) automatically after 90 days (by default).
+   <br /><br />
+
+
+   <a name="GitShowMsg"></a>
+
+   ### Find commit by message
+
+8. Retrieve a commit by searching by message text rather than by SHA hash:
+
+   <pre><strong>git show :/Update</strong></pre>
+
+   <a target="_blank" href="https://git-scm.com/docs/revisions/2.29.0#Documentation/revisions.txt-emlttextgtemegemfixnastybugem">DOCS</a>: The most recent commit containing "Update" will appear.
 
 
    <a name="log"></a>

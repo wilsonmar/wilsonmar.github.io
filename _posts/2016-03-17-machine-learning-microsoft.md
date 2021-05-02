@@ -311,8 +311,7 @@ All their plans offer:
    * Predictive web services
 
 
-Follow 
-<a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/machine-learning-create-experiment/">
+Follow steps in <a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/machine-learning-create-experiment/">
 this machine learning tutorial</a>
 to use Azure Machine Learning Studio to
 create a linear regression model that predicts the price of 
