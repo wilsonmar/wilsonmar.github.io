@@ -33,10 +33,9 @@ comments: true
 
    * Pay as you go (Billed per second on per-hour prices)
    * Reserved (provisioned) Virtual Machine instances
-   * Spot Pricing
+   * Spot Pricing - discounts for underused time slots, subject to instant removal
    * Azure Hybrid Benefit (through Enterprise Software Assurance from on-prem. licenses)
    <br /><br />
-
 
 
 <hr />
@@ -47,9 +46,10 @@ comments: true
 
 Azure App Service (much like AWS Amplify) provides IaaS server infrastructure to run:
 
-   * ASP.NET web applications, 
+   * ASP.NET <a href="#WebApps">web apps</a>
    * Mobile Apps (back ends)
    * REST API (web services) apps
+   * <a href="#StaticApps">Static app services</a>
    * <a href="#LogicApps">Logic Apps</a>
    <br /><br />
 
@@ -74,11 +74,12 @@ Configure web app settings including SSL, API settings, and connection strings:
 * https://docs.microsoft.com/en-us/azure/app-service/configure-common
 * https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-bindings
 
+<a name="WebApps"></a>
 
-### Azure Web Apps (hosting)
+### Web Apps hosting
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/app-service/">DOCS
-<img align="right" width="100" src="https://appservice.azureedge.net/images/app-service/v3/generic.svg"></a>
+<img align="right" width="200" src="https://appservice.azureedge.net/images/app-service/v3/generic.svg"></a>
 Unlike static web apps, Web Apps (formerly "Websites") run ASP.NET, NodeJs, PHP, Ruby, Java, etc. 
 to <strong>dynamically generate HTML</strong> before delivery to a user. 
 So users also wait if the web app needs to start up. Due to caching, subsequent requests for that page is faster because the code is already compiled.
@@ -86,6 +87,8 @@ So users also wait if the web app needs to start up. Due to caching, subsequent 
 Classic .NET web apps sample URL:
 
    <pre><strong>https://<em>app_name</em>.azurewebsites.net</strong></pre>
+
+   The free plan cannot map to a custom domain.
 
 Azure Web Apps service provides high availability auto-scaling.
 
@@ -105,7 +108,7 @@ How to auto-scale and optimize performance of .NET Web Apps with Microsoft Azure
 1. The method to publish your app. Also configure the Runtime stack.
 1. Select a Runtime stack (.NET Core 3.1 (LTS)) - the platform on which the app runs.
 1. The operating system: Linux or Windows. Some runtime stacks supports only one.
-1. Region.
+1. Region (aka Location).
 1. Billing is by a <strong>App Service Plan</strong>:
 
    SKU and size defines the pricing tier of the plan. 
@@ -114,11 +117,20 @@ How to auto-scale and optimize performance of .NET Web Apps with Microsoft Azure
 
    Isolated its own allocation of resources
 
-   Each slot's Tier type has a maximum number of staging slots imposed by Microsoft:
+   #### Slots (of differen versions)
+
+   PROTIP: Each slot's Tier type has a maximum number of staging slots imposed by Microsoft:
    * Dev/Test: F1 Free, D1 Shared, B1 Basic: 0 (none)
    * Standard: - 5 slots
    * Premium: - 20 slots
    * Isolated: I1, I2, I3 - 20 slots
+   <br /><br />
+
+   PROTIP: higher-priced tiers offer:
+   * Immediate rollback option after swap (Staging to production)
+   * Additional validation of app changes
+   * Slot warming before swap
+   * Support for auto-swap
    <br /><br />
 
 1. Select Review and Create to navigate to the review page.
@@ -170,21 +182,6 @@ In the Azure portal, create a Web App resource. This allocates a set of hosting 
    The number of web apps deployed to your App Service plans has no effect on your bill.
 
 
-### Container Registry
-
-1. Create a registry using the Azure CLI:
-
-   <pre>MY_REGISTRY="myregistry"
-az acr create --name $MY_REGISTRY --sku standard --admin-enabled true \
---resource-group mygroup 
-   </pre>
-
-1. Instead of building an image yourself and pushing it to Container Registry, use the CLI to upload the Docker file and other files that make up your image.
-
-   <pre>az acr build --file Dockerfile --image myimage . 
-   </pre>
-
-
 <a name="LogicApps"></a>
 
 ### Azure Logic Apps
@@ -216,7 +213,9 @@ aka.ms/global-azure/30D2L
 
 <hr />
 
-### Static Web Apps
+<a name="StaticApps"></a>
+
+### Static App services
 
 <a target="_blank" href="https://www.youtube.com/watch?v=O7cbfiabJno&list=PLj2SwmCaQ41xK-Xcuqt6BQN8C7utyVC5w&index=2">VIDEO</a>:
 Static Web Apps are fast because HTML is already rendered and sitting close to users in a CDN.
@@ -244,7 +243,7 @@ Static Web Apps are fast because HTML is already rendered and sitting close to u
 
 <a name="Functions"></a>
 
-## Azure Function Apps
+## Azure Functions
 
 Function apps do just one thing well, so scaling can be precise and dynamic.
 A simplified programming model.
@@ -460,13 +459,14 @@ Portal GUI
 ### Scale Sets
 
 <a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course/categories/4743683/posts/8995644">VIDEO</a>:
-![az-scale-sets-782x504](https://user-images.githubusercontent.com/300046/116013813-4f3b8680-a5ef-11eb-96a7-d72eb24c5567.png)
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/116013813-4f3b8680-a5ef-11eb-96a7-d72eb24c5567.png">
+<img alt="az-scale-sets-782x504" width="782" height="504" src="https://user-images.githubusercontent.com/300046/116013813-4f3b8680-a5ef-11eb-96a7-d72eb24c5567.png"></a>
 
 Azure VM Scale Sets let your create and manage a <strong>group of load balanced VMs</strong>. 
 The number of VM instances can automatically increase of decreate in response to demand or a defined schedule. 
 Scale sets provide high availability (HA) to your applications and allow you to centrally manage, configure, and update a large number of VMs.
 
-1. G/ "Create a virtual machine scale set https://portal.azure.com/#create/microsoft.vmss
+1. G+/ "Create a virtual machine scale set https://portal.azure.com/#create/microsoft.vmss
 
    There is a lot to configure: Basics, Disks, Networking, Scaling, Management, Health, Advanced, Tags, Review+Create
 
@@ -786,9 +786,26 @@ az container create --name mycontainer --resource_group learn-deploy-aci-rg \
    The "ci" is for container instance.
 
 
+## Container Registry
+
+1. Create a registry using the Azure CLI:
+
+   <pre>MY_REGISTRY="myregistry"
+az acr create --name $MY_REGISTRY --sku standard --admin-enabled true \
+--resource-group mygroup 
+   </pre>
+
+1. Instead of building an image yourself and pushing it to Container Registry, use the CLI to upload the Docker file and other files that make up your image.
+
+   <pre>az acr build --file Dockerfile --image myimage . 
+   </pre>
+
+
 ## AKS (Azure Kubernetes Service)
 
 https://azure.microsoft.com/en-us/services/kubernetes-service/
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/116806912-4d8d2980-aaed-11eb-810c-844f6354feb8.png"><img alt="az-k8s-flow-2236x1258" width="2236" height="1258" src="https://user-images.githubusercontent.com/300046/116806912-4d8d2980-aaed-11eb-810c-844f6354feb8.png"></a>
 
 See https://wilsonmar.github.io/kubernetes
 
