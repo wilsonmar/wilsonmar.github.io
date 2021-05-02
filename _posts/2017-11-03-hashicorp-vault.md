@@ -1374,6 +1374,11 @@ Use libraries for:
 
 Several Vault clients have been written.
 
+### Vault
+
+https://holdmybeersecurity.com/2020/11/24/integrating-vault-secrets-into-jupyter-notebooks-for-incident-response-and-threat-hunting/
+
+
 ### Vault CLI Katakoda hands-on lab
 
 The hands-on Katakoda lab <a target="_blank" href="https://katacoda.com/courses/docker-security/vault-secrets">Store Secrets using Hashicorp Vault</a>  makes use of a <tt>vault.hcl</tt> file:
@@ -1572,6 +1577,58 @@ https://www.vaultproject.io/docs/secrets/databases/#usage https://www.vaultproje
 ## Generate dynamic credentials for a MySQL database from Vault.
 
 https://play.instruqt.com/hashicorp/tracks/vault-dynamic-database-credentials
+
+
+<hr />
+
+### Alternative: Environment variables
+
+https://www.youtube.com/watch?v=IolxqkL7cD8
+Hiding passwords in enviornment variables on Windows
+
+<pre>import os
+&nbsp;
+db_user = os.environ.get('DB_USER')
+db_password = os.environ.get('DB_PASS')
+&nbsp;
+print(db_user)
+print(db_password)
+</pre>
+
+
+### Alternative: Google Secret Manager
+
+https://cloud.google.com/community/tutorials/secrets-manager-python
+
+https://cloud.google.com/secret-manager/docs
+
+### Alternative: JupyterLab Credential Store
+
+https://towardsdatascience.com/the-jupyterlab-credential-store-9cc3a0b9356
+
+### Alternative: python-dotenv
+
+Vicki Boykis <a target="_blank" href="http://veekaybee.github.io/2020/02/25/secrets/">
+blogged about the alternatives</a>, which includes this for Jupyter notebook coders:
+
+<pre>%load_ext dotenv
+%dotenv
+import os
+os.environ.get("API_TOKEN")
+</pre>
+
+"dotenv" is from python-dotenv at<br />
+<a target="_blank" href="
+https://github.com/theskumar/python-dotenv">
+https://github.com/theskumar/python-dotenv</a>
+
+It retrieves an .env file created to define your project's secret environment variables,
+using the package's command line tool) at<br />
+<a target="_blank" href="
+https://github.com/theskumar/python-dotenv#command-line-interface">
+https://github.com/theskumar/python-dotenv#command-line-interface</a>
+
+That .env file name is specified in the .gitignore so it is ignored when pushing to github.
 
 
 <hr />

@@ -18,6 +18,16 @@ comments: true
 
 This article provides a guided tour of use Microsoft's AI (Artificial Intelligence) offerings, which include Machine / Deep Learning capabilities running on the Azure cloud.
 
+Bernard Marr identified <a target="_blank" href="https://www.bernardmarr.com/default.asp?contentID=2191">four types of AI</a> evolving: 
+
+   * "reactive" machines (such as Spam filters and the Netflix recommendation engine) are not able to learn or conceive of the past or future, so it responds to identical situations in the exact same way every time.
+
+   * "limited memory" AI absorbs learning data and improve over time based on its experience, using historical data to make predictions. It's similar to the way the human brain’s neurons connect. Deep-learning algorithms used today is the AI that is widely used and being perfected today.
+
+   * "theory of mind" is when AI acquires decision-making capabilities equal to humans, and have the capability to recognize and remember emotions, and adjust behavior based on those emotions.
+
+   * "self-aware", also called artificial superintelligence (ASI), is "sentient" understanding of of its own needs and desires.
+
 
 ## Microsoft History with AI
 
@@ -694,7 +704,14 @@ DEMO: <a target="_blank" href="https://www.microsoft.com/en-us/ai/seeing-ai?rtc=
 
 "Computer Vision" analyzes images and video to extract descriptions, tags, objects, and text.
 
-1. DEMO: Use the Video Indexer demo:
+<a target="_blank" href="https://docs.microsoft.com/azure/cognitive-services/computer-vision/">DOCS</a>, <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/detect-objects-images-custom-vision/1-introduction">INTRO</a>:
+
+   ![az-ai-produce-objects-372x278](https://user-images.githubusercontent.com/300046/116675643-46d2ab00-a963-11eb-804a-9b1dd5fb6161.png)
+
+
+#### Video Indexer demo app
+
+1. In a browser, go to the Video Indexer URL:
 
    <a target="_blank" href="https://www.videoindexer.ai/account/login/">
    https://www.videoindexer.ai</a>
@@ -707,14 +724,11 @@ DEMO: <a target="_blank" href="https://www.microsoft.com/en-us/ai/seeing-ai?rtc=
 
 1. In "Model customizations"
 1. In "Account settings"
-1. <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/video-indexer/">PRICING</a>: up to 10 hours of free indexing to website users and up to 40 hours of free indexing to API users. Media reserved units are pre-paid.
+1. <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/video-indexer/">PRICING</a>: up to 10 hours (600 minutes) of free indexing to website users and up to 40 hours (2,400 minutes) of free indexing to API users. Media reserved units are pre-paid. See <a target="_blank" href="https://docs.microsoft.com/en-us/azure/media-services/video-indexer/faq">FAQ</a>
    <br /><br />
 
 
-<a target="_blank" href="https://docs.microsoft.com/azure/cognitive-services/computer-vision/">DOCS</a>, <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/detect-objects-images-custom-vision/1-introduction">INTRO</a>:
-
-   ![az-ai-produce-objects-372x278](https://user-images.githubusercontent.com/300046/116675643-46d2ab00-a963-11eb-804a-9b1dd5fb6161.png)
-
+#### Computer Vision demo
 
 1. Select images and review the information returned by the Azure Computer Vision web service:
 
