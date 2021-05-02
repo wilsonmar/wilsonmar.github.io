@@ -1829,8 +1829,6 @@ Implementation of Confusion is the process of changing a key value during each r
    * 3DES-EEE2 encrypts each block of data with the first key, encrypts each block with the second key, and then encrypts each block with the third key.
    <br /><br />
 
-
-
 PKI (Public Key Infrastructure):
    * A subject is an entity that seeks to have a certificate validated. 
    * A target is a path to a public key. 
@@ -1838,7 +1836,10 @@ PKI (Public Key Infrastructure):
    * A trust anchor is a public key that verifies the certificate used in a digital signature. 
    <br /><br />
 
-## Protocols
+
+<a name="NetworkProtocols"></a>
+
+## Network Protocols
 
 CHAP (Challenge Auth Protocol) from Microsoft negotiates a 3-way handshake asymmetric algorithm to supports mutual auth. can randomly require re-auth. Based on username and password, so is vulnerable.
 

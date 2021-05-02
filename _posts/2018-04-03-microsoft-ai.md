@@ -18,29 +18,8 @@ comments: true
 
 This article provides a guided tour of use Microsoft's AI (Artificial Intelligence) offerings, which include Machine / Deep Learning capabilities running on the Azure cloud.
 
-Bernard Marr identified <a target="_blank" href="https://www.bernardmarr.com/default.asp?contentID=2191">four types of AI</a> evolving: 
-
-   * "reactive" machines (such as Spam filters and the Netflix recommendation engine) are not able to learn or conceive of the past or future, so it responds to identical situations in the exact same way every time.
-
-   * "limited memory" AI absorbs learning data and improve over time based on its experience, using historical data to make predictions. It's similar to the way the human brain’s neurons connect. Deep-learning algorithms used today is the AI that is widely used and being perfected today.
-
-   * "theory of mind" is when AI acquires decision-making capabilities equal to humans, and have the capability to recognize and remember emotions, and adjust behavior based on those emotions.
-
-   * "self-aware", also called artificial superintelligence (ASI), is "sentient" understanding of of its own needs and desires.
-
 
 ## Microsoft History with AI
-
-### Cortana now Cognitive Services 
-
-"Cortana" was the brand-name of Microsoft's AI. Cortana is the name of the fictional artificially intelligent character in the Halo video game series. Cortana was going to be Microsoft's answer to Siri and Alexa, an AI-powered personal assistant capable of responding to voice commands, armed with a collection of third-party skills. 
-
-But <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microsoft-cortana-features-strategy-report">in 2019</a> Cortana decoupled from Windows 10 search.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=eJOv-TfhhzQ">VIDEO</a>: <a target="_blank" href="https://services.azureml.net/">Azure Machine Learning Studio (classic) Web Services</a>
-
-The Classic version reflected "All Microsoft all the time" with proprietary "pickle" files.
-
 
 ### AI History Within Microsoft
 
@@ -237,16 +216,31 @@ covering C# or Python as the programming language.
 
 <hr />
 
+<hr />
+
+<a name="Cortana"></a>
+
+### Cortana now Cognitive Services 
+
+"Cortana" was the brand-name of Microsoft's AI. Cortana is the name of the fictional artificially intelligent character in the Halo video game series. Cortana was going to be Microsoft's answer to Siri and Alexa, an AI-powered personal assistant capable of responding to voice commands, armed with a collection of third-party skills. 
+
+But <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microsoft-cortana-features-strategy-report">in 2019</a> Cortana decoupled from Windows 10 search.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=eJOv-TfhhzQ">VIDEO</a>: <a target="_blank" href="https://services.azureml.net/">Azure Machine Learning Studio (classic) Web Services</a>
+
+The Classic version reflected "All Microsoft all the time" with proprietary "pickle" files.
+
+
+
 <a name="CognitiveServices"></a>
 
 ## Azure Cognitive Services suite
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/">DOCS</a>:
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/">
-Azure "Cognitive Services"</a> refers to a <strong>suite of services</strong> (with APIs) developers use to build AI-enhanced solutions which mimic human intelligence:
+Microsoft now uses the term <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/"><strong>Azure "Cognitive Services"</a></strong> to refer to a <strong>suite of services</strong> (with APIs) developers use to build AI-enhanced solutions which mimic human intelligence:
 
-   * "Decision" - classification (unsupervised machine learning) fits features into model and predict classification of the label
-   * "Decision" - regression (supervised machine learning) uses historical data to train the model to predict <strong>numerical</strong> values.
+   * "Decision" - <strong>classification</strong> (unsupervised machine learning) fits features into model and predict classification of the label
+   * "Decision" - <strong>regression (supervised</strong> machine learning) uses historical data to train the model to predict <strong>numerical</strong> values.
 
    * Computer vision - interpret the world visually through cameras, videos, images.
    * Natural language processing - interpret written or spoken language, and respond in kind.
@@ -257,6 +251,8 @@ Azure "Cognitive Services"</a> refers to a <strong>suite of services</strong> (w
 But it now is at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/search/">
 https://docs.microsoft.com/en-us/azure/search</a>
 
+DEMOS: <a target="_blank" href="https://aidemos.microsoft.com/">https://aidemos.microsoft.com</a>
+
 Case studies of how people are already making use of AI/ML to save time and money:
 
    * Predictive Maintenance data science <a target="_blank" href="https://info.microsoft.com/CO-AAIoT-WBNR-FY16-07Jul-05-Predictive-Maintenance-Registration.html">webinar</a>
@@ -264,6 +260,137 @@ Case studies of how people are already making use of AI/ML to save time and mone
    * Custom Entity Extraction with Text Analytics
    * modsy.com 3D view
    <br /><br />
+
+BTW, by contrast, Bernard Marr identified <a target="_blank" href="https://www.bernardmarr.com/default.asp?contentID=2191">four types of AI</a> evolving: 
+
+   * "reactive" machines (such as Spam filters and the Netflix recommendation engine) are not able to learn or conceive of the past or future, so it responds to identical situations in the exact same way every time.
+
+   * "limited memory" AI absorbs learning data and improve over time based on its experience, using historical data to make predictions. It's similar to the way the human brain’s neurons connect. Deep-learning algorithms used today is the AI that is widely used and being perfected today.
+
+   * "theory of mind" is when AI acquires decision-making capabilities equal to humans, and have the capability to recognize and remember emotions, and adjust behavior based on those emotions.
+
+   * "self-aware", also called artificial superintelligence (ASI), is "sentient" understanding of of its own needs and desires.
+
+Steps for data transformation:
+   * Feature selection
+   * Finding and removing data outliers
+   * Impute missing values
+   * Normalize numeric features
+   <br /><br />
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/algorithm-module-reference/train-model">Model training</a>:
+   * Label data
+   * Algorithm selection
+   * Data split 
+   * Run model
+   <br /><br />
+
+
+<a name="RunJupyter"></a>
+
+## Jupyter Notebooks on Azure
+
+GitHub.com now display <tt>.ipynb</tt> (Jupyter notebook) files in internet browsers when you click on "Raw". It may take several seconds to render.
+
+NOTE: <a target="_blank" href="https://notebooks.azure.com/">https://notebooks.azure.com</a> is now redirecting users to other services:
+
+If you're running a Chromebook laptop, there are several ways you can now run your Juypter Notebooks within the Azure cloud:
+
+   * Within <a href="#AzureStudio">Azure Machine Learning's Azure Studio</a>
+
+   * <a target="_blank" href="https://aka.ms/aznb-codespaces">GitHub Codespaces</a>, if you are part of the beta.
+
+References:
+   * https://towardsdatascience.com/running-jupyter-notebook-on-the-cloud-in-15-mins-azure-79b7797e4ef6
+
+<a name="AzureStudio"></a>
+
+### ML Studio JupyterLab from local files
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/notebooks/quickstart-export-jupyter-notebook-project#use-notebooks-with-azure-machine-learning">DOCS</a>:
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-run-jupyter-notebooks">Run Jupyter Notebooks in a ML workspace</a>
+
+1. In a Terminal, load a GitHub repo containing notebooks and associated files:
+
+   <pre><strong>cd ~/gmail_acct
+   git clone https://github.com/MicrosoftLearning/mslearn-ai900 --depth=1
+   cd mslearn-ai900
+   </strong></pre>
+
+1. <img align="right" width="368" alt="az-mlworkspace-736x946" src="https://user-images.githubusercontent.com/300046/116822701-8a810c80-ab3d-11eb-96a9-a80d7df88f5c.png"> In portal.azure.com:
+   
+   1. G+\ <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.MachineLearningServices%2Fworkspaces">Machine Learning</a>.
+
+   1. Click "Create Machine Learning Workspace".
+
+   Alternately, open CLI and <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/README.md">follow my instructions</a> to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-manage-workspace-cli">create a ML Workspace</a> and run my <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-mlworkspace-cli.sh">./az-mlworkspace-cli.sh</a>. 
+   This creates resources:
+   * Machine learning
+   * Application Insights
+   * Key vault
+   * Storage account
+   <br /><br />
+
+1. In Portal Machine Learning: <strong>"Launch studio"</strong> (formerly "Azure Studio").
+
+1. In the left-side navigation bar, select Author: Notebooks.
+1. Click "+ Create" to Upload files.
+1. Navigate thru folder "mslearn-ai900", "01 - Image Analysis with Computer Vision.ipynb".
+   Select overwrite and "trust contents of this file". Click "Upload".
+1. Copy to clipboard Key1 from running <tt>./az-cog-cli.sh</tt>.
+1. Highlight "YOUR_COG_KEY" and paste Key1.
+1. Do the same with "YOUR_COG_ENDPOINT".
+
+   "Your document is currently not connected to a compute. Switch to a running compute or create a new compute to run a cell."
+
+1. Run
+
+   <a target="_blank" href="https://jupyterlab.readthedocs.io/"JypiterLab</a> is <a target="_blank" href="https://towardsdatascience.com/jupyter-lab-evolution-of-the-jupyter-notebook-5297cacde6b">more robust than classic Jupyper</a>:
+   * Native Git and GitHub support - https://github.com/jupyterlab/jupyterlab
+   * Extensible with <tt>jupyter labextensions install jupyterlab-drawio</tt>
+   * Google Drive
+   * Dark themes
+   <br /><br />
+
+
+<a name="CognitiveServicesCLI"></a>
+
+### Kinds of Cognitive Services CLI
+
+You would save money if you don't leave servers running, racking up charges.
+
+You can confidently delete Resource Groups and all resources attached if you have 
+automation in CLI scripts that enable you to easily create them later.
+
+Instead of the manual steps defined in <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/01%20-%20Image%20Analysis%20with%20Computer%20Vision.ipynb">this LAB</a>, run my Bash script in CLI, as defined by <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-apis-create-account-cli?tabs=windows">this DOC</a>:
+
+1. G+\ <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.CognitiveServices%2Faccounts">Cognitive Services</a>.
+
+1. Click the ＋Create a resource button, search for Cognitive Services, and create a Cognitive Services resource with the following settings:
+1. Subscription: Your Azure subscription.
+1. Resource group: Select or create a resource group with a unique name.
+1. Region: Choose any available region:
+1. Name: Enter a unique name.
+1. Pricing tier: S0
+1. I confirm I have read and understood the notices: Selected.
+
+TODO: Instead of putting plain text of cog_key in code, reference Azure Vault. Have the code in GitHub.
+
+Azure has a <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/cognitiveservices/account?view=azure-cli-latest">cognitiveservices CLI subcommand</a>.
+
+https://docs.audd.io/?ref=public-apis
+
+Tim Warner's <a target="_blank" href="https://github.com/timothywarner/ai100">https://github.com/timothywarner/ai100</a> includes <a target="_blank" href="https://github.com/timothywarner/ai100/tree/master/powershell-cli">Powershell scripts</a>:
+
+* iot-edge-windows.ps1
+* keyvault-soft-delete-purge.ps1
+* keyvault-storage-account.ps1
+* python-keyvault.py
+* ssh-to-aks.md - SSH into AKS cluster nodes
+<br /><br />
+
+Others:
+* autoprice.py
 
 
 1. List kinds of Cognitive Services using CLI command:
@@ -330,42 +457,10 @@ Case studies of how people are already making use of AI/ML to save time and mone
       </td><td> - </td></tr>
    </table>
 
-DEMOS: https://aidemos.microsoft.com/
-
 
 <a name="CLI"></a>
 
 ## CLI
-
-You would save money if you got to work right away AND don't leave servers running with nothing to do.
-
-Instead of the manual steps defined in <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/01%20-%20Image%20Analysis%20with%20Computer%20Vision.ipynb">this LAB</a>, run my Bash script in CLI, as defined by <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-apis-create-account-cli?tabs=windows">this DOC</a>:
-
-1. G+\ <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.CognitiveServices%2Faccounts">Cognitive Services</a>.
-
-1. Click the ＋Create a resource button, search for Cognitive Services, and create a Cognitive Services resource with the following settings:
-1. Subscription: Your Azure subscription.
-1. Resource group: Select or create a resource group with a unique name.
-1. Region: Choose any available region:
-1. Name: Enter a unique name.
-1. Pricing tier: S0
-1. I confirm I have read and understood the notices: Selected.
-
-TODO: Instead of putting plain text of cog_key in code, reference Azure Vault. Have the code in GitHub.
-
-https://docs.audd.io/?ref=public-apis
-
-Tim Warner's <a target="_blank" href="https://github.com/timothywarner/ai100">https://github.com/timothywarner/ai100</a> includes <a target="_blank" href="https://github.com/timothywarner/ai100/tree/master/powershell-cli">Powershell scripts</a>:
-
-* iot-edge-windows.ps1
-* keyvault-soft-delete-purge.ps1
-* keyvault-storage-account.ps1
-* python-keyvault.py
-* ssh-to-aks.md - SSH into AKS cluster nodes
-<br /><br />
-
-Others:
-* autoprice.py
 
 
 <a name="MachineLearning"></a>
@@ -395,6 +490,8 @@ A <strong>model</strong> is the "brains" (logic) to make predictions about label
 
 Models are created from training data containing feature values.
 
+The process is called <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/concept-automated-ml#feature-engineering">featurization"</a> or feature engineering.
+
 Test data is used to determine how well predictions created from a model, presented in a 2x2 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-understand-automated-ml#confusion-matrix">confusion matrix</a> which compares the Predicted label to True Label (yes or no) to identify true/false positives/negatives. 
 
    <table border="1" cellpadding="4" cellspacing="0">
@@ -423,7 +520,7 @@ https://adatis.co.uk/evaluating-models-in-azure-machine-learning-part-1-classifi
 <a target="_blank" href="https://www.bluegranite.com/blog/train-and-deploy-machine-learning-models-using-the-azureml-service">Process</a> (using a Python scipt):
 ![azureml-1118x398](https://user-images.githubusercontent.com/300046/116598715-6676be80-a8e4-11eb-878a-70f8dface9d9.png)
 
-### Install Visual Studio Code extension form AML
+### Install Visual Studio Code extensions
 
 1. Open Visual Studio Code on your laptop.
 1. Press Shift+Command+X for Extensions search.
@@ -434,8 +531,8 @@ https://adatis.co.uk/evaluating-models-in-azure-machine-learning-part-1-classifi
 
 1. Search for "Thunder client" for a REST API GUI like Postman.
 
-
 1. To invoke extensions, VS Code will apply the extension based on the file type opened (such as .py for Python, etc.)
+
 
 ### Automated ML
 
@@ -460,6 +557,13 @@ Following https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-l
    * Norm macro recall
    * Average precision score weighted
    * Precision score weighted
+   <br /><br />
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-create-attach-compute-studio#portal-create">ML Manage: Compute targets</a>:
+   * Compute instances
+   * Compute clusters
+   * Inference clusters
+   * Attached compute
    <br /><br />
 
 <a name="ValidationTypes"></a>
@@ -595,9 +699,16 @@ NLP enables the creation of software that can:
    * <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/">Speaker Recognition</a> identifies and verifies the people speaking based on audio.
    <br /><br />
 
+
+   <a name="LUIS"></a>
+
    ### Language Understanding Intelligent Service (LUIS) 
 
-   LUIS trains a language model that can understand spoken or text-based commands.
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-language-model-with-language-understanding/2-get-started">LUIS</a> trains a language model that can understand spoken or text-based commands.
+
+   DEMO: <a target="_blank" href="https://www.luis.ai/">https://www.luis.ai</a>
+
+   Separate resources are created for authoring processing from prediction runs so that utilization for the two can be tracked separately.
 
 1. View a demo interface to voice control lighting in a virtual home. 
 
@@ -692,10 +803,12 @@ DEMO: <a target="_blank" href="https://www.microsoft.com/en-us/ai/seeing-ai?rtc=
 
    * <strong>Object detection</strong> goes further than classification to classify individual objects within the image, and to return the coordinates of a bounding box that indicates the object's location.
 
-   * Semantic segmentation
+   * Semantic segmentation is the ML technique which individual pixels in the image are classified according to the object to which they belong.
    * Image analysis
+
    * Face detection, analysis, and recognition
-   * Optical character recognition (OCR) of text
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/overview-ocr">Optical character recognition (OCR)</a> for small amounts of text
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/read-text-computer-vision/2-ocr-azure">The Read API</a> works asynchronously on images with a lot of text, to parse pages, lines, and words.
    * <a target="_blank" href="https://azure.microsoft.com/en-us/services/media-services/video-indexer/">Video Indexer service</a> analyzes the visual and audio channels of a video, and indexes its content.
    <br /><br />
 
@@ -837,9 +950,21 @@ HISTORY: In 2015, Microsoft unleashed the <strong>Tay</strong> chat bot, then ha
 
 HISTORY: XiaoIce, a chatbot Microsoft launched in China, "has more than 200 million users, has engaged in 30 billion conversations, and has an average conversation length of 23 turns, which averages out to about half an hour, achieving human parity at translation from Chinese to English. Japan-based Rinna and the US-based Zo)
 
-Today, <a target="_blank" href="
+<a target="_blank" href="
 https://docs.microsoft.com/en-us/learn/paths/explore-conversational-ai/">
 Explore-conversational-ai</a>
+
+A Bot Framework enables the creation of <a target="_blank" href="https://microsoft.github.io/botframework-solutions/overview/virtual-assistant-solution/">Virtual Assistant</a>
+
+A LUIS app creates these types of entities:
+   * Machine-learned
+   * List
+   * RegEx
+   * Pattern.any
+   <br /><br />
+
+Bots are extended by <a target="_blank" href="https://microsoft.github.io/botframework-solutions/overview/skills/">Skills</a>
+
 
    <a href="#QnA_Maker"></a>
 
@@ -1162,13 +1287,6 @@ On Udemy:
    * <a target="_blank" href="https://www.udemy.com/course/azure-cognitive-services-crash-course/?referralCode=EE78F34C49858D913E15">
    Microsoft Azure Cognitive Services Crash Course</a>
 
-https://towardsdatascience.com/jupyter-lab-evolution-of-the-jupyter-notebook-5297cacde6b
-JypiterLab is more robust than Jupyper
-   * Native Git and GitHub support - https://github.com/jupyterlab/jupyterlab
-   * Extensible with <tt>jupyter labextensions install jupyterlab-drawio</tt>
-   * Google Drive
-   * Dark themes
-   <br /><br />
 
 
 ## More

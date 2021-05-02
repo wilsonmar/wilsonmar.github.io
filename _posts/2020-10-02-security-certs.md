@@ -181,25 +181,34 @@ Rather than the previous 250 questions over 6 hourse, the CISSP exam is now adap
 
 PROTIP: With Adaptive Testing, your objective is to get hard questions. So study as if you're going to get all hard questions.
 
-https://www.youtube.com/watch?v=5nqqL1rjIY4
-
+<a target="_blank" href="https://www.youtube.com/watch?v=5nqqL1rjIY4">VIDEO</a>:
 This also means you won't be able to go back and change answers in previous questions answered.
 
-With CAT (Computer Adaptive Testing), those who ace the test would get done before 3 hours and 150 questions.
+With CAT (Computer Adaptive Testing), those who ace the test would get done before the 3 hours and 150 questions.
 
-You need to pass at least 70% on <em>each</em> of the eight CISSP domains. Numbers below are counts of questions in the <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">OReilly/Pearson bank</a>:
+You need to pass at least 70% on <em>each</em> of the eight CISSP domains. 
+Links lead to 2021 video tutorial by Micke Chappel on LinkedIn Learning. 
+Numbers to the right are counts of questions in the <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">OReilly/Pearson bank</a>:
 
-   1. Security and Risk Management - 334
-   2. Asset Security - 44
-   3. Security Architecture and Engineering - 268
-   4. Communication and Network Security - 114 on OSI model
-   5. Identity and Access Management (IAM) - 82 on biometrics
-   6. Security Assessment and Testing - 41 on NIST SP 800-92
-   7. Security Operations - 245 
-   8. Software Development Security - 164 on SDLC 
+   1. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-1-security-and-risk-management" title=" 2h 52m">[]</a> 
+   Security and Risk Management - 334
+   2. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-2-asset-security">[]</a> 
+   Asset Security - 44
+   3. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-3-security-architecture-and-engineering">[]</a> 
+   Security Architecture and Engineering - 268
+   4. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-4-communication-and-network-security">[]</a> 
+   Communication and Network Security - 114 on OSI model
+   5. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-5-identity-and-access-management">[]</a> 
+   Identity and Access Management (IAM) - 82 on biometrics
+   6. <a target="_blank" href="#">[]</a> 
+   Security Assessment and Testing - 41 on NIST SP 800-92
+   7. <a target="_blank" href="#">[]</a> 
+   Security Operations - 245 
+   8. <a target="_blank" href="#">[]</a> 
+   Software Development Security - 164 on SDLC 
    <br /><br />
 
-There is also a 5 year experience requirement.
+There is a 5 year experience requirement.
 
 Written Reference:
 
@@ -217,7 +226,7 @@ Written Reference:
    
    * <a target="_blank" href="https://www.youtube.com/channel/UCAr0yk0um7lwLjmrKfzwyig/videos">On Youtube</a>
 
-   * For 20 years, Dean Bushmiller has a live <a target="_blank" href="https://learning.oreilly.com/live-training/courses/cissp-bootcamp/0636920483199/">CISSP Bootcamp"</a> on OReilly.com includes a set of proprietary visual "mind maps" to collect, practice, and verify your knowledge.
+   * For 20 years, <a target="_blank" href="https://www.linkedin.com/in/deanbushmiller/">Dean Bushmiller</a> has a live <a target="_blank" href="https://learning.oreilly.com/live-training/courses/cissp-bootcamp/0636920483199/">CISSP Bootcamp on OReilly.com</a> includes a set of <a target="_blank" href="https://drive.google.com/drive/folders/1-0qj1lmbI0x89ZPTC_sPEmMdLDBTvE3F" title="1@vmlt.com">proprietary visual "mind maps"</a> to collect, practice, and verify your knowledge, <a target="_blank" href="https://github.com/deanbushmiller/CISSP-Bootcamp">on GitHub</a>.
 
    * <a target="_blank" href="https://www.sunflower-cissp.com/glossary/cissp/5497/download-sunflower-cissp-2019-pdf-document">PDF: Sunflower CISSP</a>
 
@@ -261,7 +270,7 @@ Video prep courses view:
 
    * <a target="_blank" href="https://quizlet.com/54298697/csslp-flash-cards/">Official 20-item</a> CSSLP Flashcards on Quizlet vs. <a target="_blank" href="https://quizlet.com/54298697/csslp-flash-cards/">89-item</a>
 
-   https://quizlet.com/343215416/csslp-exam-guide-flash-cards/
+   * https://github.com/deanbushmiller/CISSP-Bootcamp
 
    * <a target="_blank" href="https://app.pluralsight.com/paths/certificate/certified-secure-software-lifecycle-professional-csslpr">Pluralsight video courses</a> by Kevin Henry (kevinmhenry at msn) is from 2017 and is too high general for me.
 
@@ -340,6 +349,10 @@ posted by SANS Blue Team Ops:
    * <a target="_blank" href="https://www.youtube.com/watch?v=bopYRxAyTU8">CISSP Cram Session</a> Jun 28, 2020. Slides at <a target="_blank" href="https://www.EricConrad.com/">EricConrad.com</a>, author of <a target="_blank" href="https://mtg414.com/">MGT414.com</a>: SANS Training Program for CISSP® Certification, as well as the <a target="_blank" href="https://www.amazon.com/CISSP-Study-Guide-Third-Conrad/dp/0128024372">CISSP® Study Guide (Syngress)</a>.
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=5nqqL1rjIY4">Test-Taking Tactics</a>
+
+Flash cards:
+
+   * https://quizlet.com/343215416/csslp-exam-guide-flash-cards/
 
 Suggestions:
 

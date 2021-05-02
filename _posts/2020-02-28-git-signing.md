@@ -58,7 +58,7 @@ The steps:
 
 Here's the workflow I would like to see. It's not so much self-service as a tool for administrators. Anyway...
 
-Before someone starts a job/project, a trusted administrator (the boss) specifies on a "self-service" app what should be installed on each worker's laptop, such as the <a href="#Installers">client utilities</a> which should be installed for his/her specific job based on RBAC (Role-Based Access Control) or <a target="_blank" href="https://en.wikipedia.org/wiki/Attribute-based_access_control">Attribute-based Access Control (ABAC)</a> policies.
+Before someone starts a job/project, a trusted administrator (the boss) specifies on a "self-service" portal what should be installed on each worker's laptop, such as the <a href="#Installers">client utilities</a> which should be installed for his/her specific job based on RBAC (Role-Based Access Control) or <a target="_blank" href="https://en.wikipedia.org/wiki/Attribute-based_access_control">Attribute-based Access Control (ABAC)</a> policies.
 
 The app generates the certificate pairs, stores them in Vault, installs them on GitHub, and saves the keys on the worker's laptop. This provides a more trusted chain than each employee generating their own key pair.
 
@@ -72,45 +72,55 @@ Then all a new working developer needs to do is, on a pre-configured laptop, mak
 
 The alternatives:
 
-   * <a href="#install_gpg-suite">Install on macOS GPG-Suite GUI</a> app which stores keys in the protected macOS KeyChain.
-   * <a href="#gnupg2_mac_install">Install on macOS GPGN2 command line utility</a>
+   * <a href="#install_gpg-suite">Install on macOS GUI GPG-Suite </a> app which stores keys in the protected macOS KeyChain.
+   * <a href="#gnupg2_mac_install">Install on macOS CLI GPGN2</a>
 
    * <a href="#InstallWindowsCLI">Install on Windows CLI program</a>
    * <a href="#install-win">Install on Windows a GUI app</a>
 
    * <a href="#GitKraken">Install GitKraken app and sign</a>
 
+
 <a name="install_gpg-suite"></a>
 
-### Install on macOS GPG-Suite GUI app 
+### Install on macOS GUI app GPG-Suite 
 
 Instead of <a target="_blank" href="https://www.youtube.com/watch?v=FrrT9fYoL3Y">VIDEO: downloading from website and clicking</a> manually:
 
-1. Install with one command after <a target="_blank" href="https://wilsonmar.github.io/homebrew/">installing Homebrew</a>:
+1. Install silently with one command after <a target="_blank" href="https://wilsonmar.github.io/homebrew/">installing Homebrew</a>:
 
-   <pre><strong>brew cask install gpg-suite</strong></pre>
+   <pre><strong>brew install --cask gpg-suite</strong></pre>
 
    (its previous name was gpgtools, as in the website gpgtools.com)
 
-1. Pinch 4 fingers together on the Touchpad and scroll around to click on "GPG Keychain" icon:
+1. Type your password when prompted.
+
+   NOTE: Installation is to folder/file "/Applications/GPG Keychain.app".
+   To remove the app later, simply delete that file.
+
+1. Pinch 4 fingers together on the Touchpad and scroll around for apps.
+
+1. Type enough of "GPG Keychain" for the icon to appear for you to click:
 
    <img width="126" alt="git-signing-gpg-suite" src="https://user-images.githubusercontent.com/300046/95812445-a83a7180-0cd2-11eb-8c70-bfa7b1a5032b.png">
 
-   NOTE: It's in "/Applications/GPG Keychain.app".
 
    #### Gen GPG using macOS GPG-Suite
 
-1. To generated a GPG key pair click "+ New", then select the Key Type "RSA Sign Only)".
+1. Ignore the two keys already there.
+
+1. To generate a GPG key pair click "+ New", then Advanced, select Key Type "RSA {Sign Only)".
 
    <img width="779" alt="git-signing-mac-keychain" src="https://user-images.githubusercontent.com/300046/95813251-b1c4d900-0cd4-11eb-86d0-6896fd78cdf1.png">
 
+1. Define a new password in your password vault, then copy and paste that new password in the two fields.
+1. "Create Key".
+1. "No, Thanks!" when asked to upload your public key. You can do that later.
 
 
+   <a name="gnupg2_mac_install"></a>
 
-
-<a name="gnupg2_mac_install"></a>
-
-### Install on macOS gnupg2 CLI utility
+   ### Install on macOS CLI utility gnupg2 
 
 1. Open a Terminal. Be at your home user folder.
 
@@ -121,6 +131,8 @@ Instead of <a target="_blank" href="https://www.youtube.com/watch?v=FrrT9fYoL3Y"
 1. Install a Git client:
 
    <pre><strong>brew install git</strong></pre>
+
+   This installs a bunch, including the latest Python (3.9.4).
 
 1. For information about the brew gpg2 install:
 
@@ -144,6 +156,25 @@ install-on-request: 47,841 (30 days), 104,969 (90 days), 428,775 (365 days)
 build-error: 0 (30 days)
    </pre>
 
+1. Verify CLI:
+
+   <pre><strong>gpg --version</strong></pre>
+
+   <pre>gpg (GnuPG/MacGPG2) 2.2.24
+libgcrypt 1.8.7
+Copyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+&nbsp;
+Home: /Users/wilson_mar/.gnupg
+Supported algorithms:
+Pubkey: RSA, ELG, DSA, ECDH, ECDSA, EDDSA
+Cipher: IDEA, 3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH,
+        CAMELLIA128, CAMELLIA192, CAMELLIA256
+Hash: SHA1, RIPEMD160, SHA256, SHA384, SHA512, SHA224
+Compression: Uncompressed, ZIP, ZLIB, BZIP2
+   </pre>
 
 1. Ensure that commands for "gpg" are routed to gpg2:
 
@@ -154,11 +185,41 @@ build-error: 0 (30 days)
    PROTIP: The response shows that the installation is specific to each version of macOS:<br />
    <pre>==> Downloading https://homebrew.bintray.com/bottles/gmp-6.2.0.mojave.bottle.tar.gz</pre>
 
+   
+
+   ### MacOS GPG Config
+
+   PROTIP: The command above creates folder `$HOME/.gnupg`.
+
+1. Update or Create ~/.gnupg/gpg.conf
+
+   <pre><strong>code "$HOME/.gnupg/gpg.conf"
+
+   Visual Studio Code should open with lines such as:
+   <pre>auto-key-retrieve
+no-emit-version
+   </pre>
+
+1. If the <tt>use-agent</tt> is not there, add it. If it's there, remove the comment character # from "use-agent" to enable it:
+   
+   <pre># Uncomment within config (or add this line)
+   # This tells gpg to use the gpg-agent
+   use-agent
+   </pre>
+
+1. Update permissions on your `~/.gnupg` Directory:
+
+   <pre><strong>chmod 700 ~/.gnupg</strong></pre>
 
 
-   <a name="LinuxInstallers"></a>
+1. Proceed to <a href="#Config">Configuration</a>
 
-   ### Linux installers
+
+<hr />
+
+<a name="LinuxInstallers"></a>
+
+### Linux installers
 
    Package installers on Linux have other package names:
 
@@ -191,9 +252,19 @@ build-error: 0 (30 days)
    </pre>
 
 
-   <a name="InstallWindowsCLI"></a>
+1. Proceed to <a href="#Config">Configuration</a>
 
-   ### Install CLI on Windows
+
+
+<a name="install-win"></a>
+
+### Install Windows GUI 
+
+TBD.
+
+<a name="InstallWindowsCLI"></a>
+
+### Install CLI on Windows
 
 1. Install <a target="_blank" href="https://chocolatey.org/">Chocolatey</a> if you havent's already.
 
@@ -205,30 +276,17 @@ build-error: 0 (30 days)
 
    <tt>choco install gpg4win</tt>
 
+1. Proceed to <a href="#Config">Configuration</a>
 
-   ### Config
+<hr />
 
-   PROTIP: The command above creates folder `$HOME/.gnupg`.
+<a name="Config"></a>
 
-1. Update or Create ~/.gnupg/gpg.conf
+## Configuration
 
-   <pre><strong>code "$HOME/.gnupg/gpg.conf"
+   <a name="GitHubEmail"></a>
 
-1. Remove the comment character # from "use-agent" to enable it:
-   
-   <pre># Uncomment within config (or add this line)
-   # This tells gpg to use the gpg-agent
-   use-agent
-   </pre>
-
-1. Update permissions on your `~/.gnupg` Directory:
-
-   <pre><strong>chmod 700 ~/.gnupg</strong></pre>
-
-
-
-
-   ## Email address in GitHub
+   ### Email address in GitHub
 
 1. Switch to your GitHub Profile Email page
 
@@ -236,7 +294,7 @@ build-error: 0 (30 days)
 
 1. Identify your "no-reply" public email address, such as "john_doe+github@gmail.com".
 
-   IMPORTANT: The email specified to GPG should match the email in GitHub.
+   <strong>IMPORTANT PROTIP: The email specified to GPG should match the email in GitHub.</strong>
 
 1. While in a Terminal with the present working directory at your local repository, configure you valid GitHub user name and email (if you haven't already). For example:
 
@@ -247,13 +305,25 @@ build-error: 0 (30 days)
    PROTIP: Any name and email can be specified in Git. That's a big reason organizations ask for cryptographically signing commits in GitHub, which requires that the email specified be validated.
 
 
+<hr />
 
-## Where to store keys
+## Generate and store keys
 
+There are several places you can store GPG keys securely:
 
-   <a name="Keybase"></a>
+   * On your local drive (which will be lost if your laptop dies or get lost)
+   * <a href="#Keybase">Keybase cloud</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/hashicorp-vault">Hashicorp Vault</a>?
+   * Azure KeyVault?
+   * AWS ?
+   * Google Cloud?
+   <br /><br />
 
-### Keybase
+<hr />
+
+<a name="Keybase"></a>
+
+### Keybase cloud
 
    The advantage of using the Keybase app to generate GPG keys is that the keys are stored online at <a target="_blank" href="https://keybase.io/">keybase.io</a>, where you'll be able to retrieve your keys when you don't have your laptop anymore.
 
@@ -338,7 +408,7 @@ Push an encrypted copy of your new secret key to the Keybase.io server? [Y/n] Y
 ▶ INFO Exported new key to the local GPG keychain
    </pre>
 
-1. Skip to <a href="#ListKeys">list keys</a>.
+1. Skip to <a href="#ListKeys">List GPG keys</a>.
 
 
 
@@ -347,6 +417,8 @@ Push an encrypted copy of your new secret key to the Keybase.io server? [Y/n] Y
 <a name="ListKeys"></a>
 
 ## List GPG keys
+
+List keys to verify that you have indeed generated them.
 
 1. List what keys have been signed, meaning secret keys (more selective than the `gpg -k` command):
 
@@ -472,12 +544,12 @@ Signature PIN ....: not forced
 
    Git UI clients such as <a target="_blank" href="https://support.gitkraken.com/git-workflows-and-extensions/commit-signing-with-gpg/">GitKraken can generate GPG keys with its UI</a>.
 
+   GitKraken provides a GUI for signing.
 
 
 <a name="GenerateKey"></a>
 
 ## Generate GPG key pairs
-
 
    ### Gen GPG on macOS Terminal
 
@@ -491,6 +563,18 @@ Signature PIN ....: not forced
 
    <tt>\-\-generate-key</tt> is the long form of the parameter.
 
+   The response:
+   <pre>gpg (GnuPG/MacGPG2) 2.2.24; Copyright (C) 2020 Free Software Foundation, Inc.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+&nbsp;
+Note: Use "gpg --full-generate-key" for a full featured key generation dialog.
+&nbsp;
+GnuPG needs to construct a user ID to identify your key.
+&nbsp;
+Real name:
+   </pre>
+
 1. Enter in the series of prompts:
 
    <pre>Real Name: John Doe
@@ -498,7 +582,7 @@ Email address: john-doe+github@gmail.com
 Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? _
    </pre>
 
-   You’ll have to generate one GPG key for each email address to use if you want to use different email addresses on different projects.
+   PRITIP: If you want to use different email addresses on different projects, generate one GPG key for each email address.
 
 1. Type "O" (capital or lowercase O) to save the entry.
 
@@ -572,6 +656,7 @@ echo $GPGKeyID
    No response is expected from the command.
 
 
+   <a name="EditGPG"></a>
 
    ## OPTIONAL: Edit GPG key
 
@@ -639,6 +724,9 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
    PROTIP: IMPORTANT: If you lost your laptop, immediately remove the SSH and GPG keys associated with that laptop.
    
 
+
+   <a name="SigningKey"></a>
+
    ## Signing Key 
 
 1. Configure Git to use the program for signing:
@@ -680,7 +768,7 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 	program = gpg2
    </pre>
 
-1. If you are not using Zsh, edit you ~/.bash_profile to avoid these error messages:
+1. If you are using Bash, edit you ~/.bash_profile to avoid these error messages:
 
    <pre>error: gpg failed to sign the data
 fatal: failed to write commit object
@@ -703,12 +791,22 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
 
    <pre>/dev/ttys001
    </pre>
+   or 
+   <pre>/dev/ttys002
+   </pre>
 
-1. Activate the setting by restarting your Terminal session. If not using Zsh:
+1. Activate the setting by restarting your Terminal session. If using Bash:
 
    <pre><strong>source ~/.bash_profile
    </strong></pre>
 
+   If using Zsh:
+
+   <pre><strong>source ~/.bashrc
+   </strong></pre>
+
+
+<hr />
 
 <a name="SignCommits"></a>
 
@@ -717,7 +815,7 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
    This is not recommended by some, but ...
 
 1. To sign a commit, if you didn't <a href="#SignAllCommits">specify signing every time</a>,
-   add command flag capital <tt>-S</tt>, such as:
+   add command flag capital <tt>-S</tt>, construct a command replacing "Some message" with your own, such as:
 
    <pre><strong>GIT_TRACE=1 git commit -a -S -m "Some message"</strong></pre>
 
@@ -738,11 +836,13 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
 1. After push, switch to an internet browser to see a verified badge next to your commits on GitHub online.
 
 
-   <a name="SignGitTags"></a>
+<hr />
 
-   ## Sign Git Tags
+<a name="SignGitTags"></a>
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=govmXpDGLpo" title="Dec 31, 2016">VIDEO</a>: 
+## Sign Git Tags
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=govmXpDGLpo" title="Dec 31, 2016">VIDEO</a>: Git tags are committed and pushed by an additional command.
 
 1. Construct a command to create a Git tag (such as "v1.5.2") to the current HEAD:
 
@@ -785,6 +885,7 @@ gpg:                using RSA key 0BB29E3C5216420CC50ACF8D62C414BA89BFBE51
 gpg: Good signature from "John Doe <john_doe+github@gmail.com>" [ultimate]
    </pre>
 
+
    ### Silencing
 
    I don't recommend this, but theoretically you can silence the "you need a Passphrase" prompt by adding in file <tt>~/.gnupg/gpg.conf</tt> "batch". But 
@@ -826,7 +927,11 @@ To github.com:wilsonmar/git-utilities
    <tt>https://github.com/wilsonmar/git-utilities/releases</tt>
 
 
-   ## Delete Tags
+<hr />
+
+<a name="DeleteTags"></a>
+
+## Delete Tags
 
    Git tags such as "v1.5.2" are meant to be permanently associated with a particular commit through history.
 
@@ -866,7 +971,7 @@ To github.com:wilsonmar/git-utilities
 1. <a target="_blank" href="https://www.youtube.com/watch?v=3SQhq12nEZI" title="Apr 21, 2019">
    VIDEO:</a> In CI/CD such as Jenkins, get the first among latest tags using the <a target="_blank" href="https://git-scm.com/docs/git-ref-list">git ref-list command</a>:
 
-   <pre><strong>COMMIT_ID=$(git rev-list --tags --date-order | head -1)
+   <pre><strong>COMMIT_ID=$( git rev-list --tags --date-order | head -1 )
    </strong></pre>
 
    The response is simply a full hash, such as:
@@ -875,7 +980,7 @@ To github.com:wilsonmar/git-utilities
 
 1. Extract the Tag based on the hash using the <a target="_blank" href="https://git-scm.com/docs/git-show-ref">git show-ref command</a>:
 
-   <pre><strong>TAG=$( git show-ref --tags | grep "${COMMIT_ID}" | awk -F / '{print $NF}')
+   <pre><strong>TAG=$( git show-ref --tags | grep "${COMMIT_ID}" | awk -F / '{print $NF}' )
    </strong></pre>
 
    The variable is used to specify the version in a Docker Build, Push, then Kubernetes apply, such as:
@@ -892,7 +997,7 @@ To github.com:wilsonmar/git-utilities
 
 <a name="EncryptFiles"></a>
 
-## Encrypting whole files using GPG
+## BONUS: Encrypting whole files using GPG
 
 GPG can also be used for encryption and decryption of whole files, such as an executable (.exe) file for transmission over email, etc (not related to Git).
 
