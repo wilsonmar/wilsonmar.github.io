@@ -614,6 +614,24 @@ Credit:
 TomsITPro</a> and
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/aws-professional/services"> Microsoft's comparison</a>
 
+
+## Exam Questions
+
+Your business is transitioning from an entirely on-premise IT environment to one hosted entirely in the public cloud. All physical servers and resources within your on-premise space will be replaced with virtual cloud resources hosted at offsite locations, on hardware that is managed by the cloud provider.
+
+You are forecasting your IT resource costs for required compute, networking, and storage, and how expenses will change as a result of your cloud migration.
+
+Which statement describes how your capital expenditures and operational expenditures for IT resources will change by migrating entirely to the public cloud?
+
+A Your capital expenditure costs for IT resources will increase, while your operational expenditures will not change.
+
+B Your IT resource costs will generally change from operational expenditures to capital expenditures.
+
+C Your operational expenditure costs for IT resources will increase, while your capital expenditures will not change.
+
+D Your IT resource costs will generally change from capital expenditures to operational expenditures.
+
+
 <hr />
 
 ## Resources #
@@ -626,53 +644,8 @@ IBM Bluemix</a>
 
 https://cloudonaut.io/my-mental-model-of-aws/
 
-
-Your business is transitioning from an entirely on-premise IT environment to one hosted entirely in the public cloud. All physical servers and resources within your on-premise space will be replaced with virtual cloud resources hosted at offsite locations, on hardware that is managed by the cloud provider.
-
-You are forecasting your IT resource costs for required compute, networking, and storage, and how expenses will change as a result of your cloud migration.
-
-Which statement describes how your capital expenditures and operational expenditures for IT resources will change by migrating entirely to the public cloud?
-
-
-A
-Your capital expenditure costs for IT resources will increase, while your operational expenditures will not change.
-
-
-B
-Your IT resource costs will generally change from operational expenditures to capital expenditures.
-
-
-C
-Your operational expenditure costs for IT resources will increase, while your capital expenditures will not change.
-
-
-D
-Your IT resource costs will generally change from capital expenditures to operational expenditures.
-
-
-To answer this question, review the statement below and decide if the statement is correct as it is, or if the underlined portion of the statement needs to be replaced with one of the choices below.
-
-The scalability of Azure services refers to the ability to quickly recover from system failure.
-
-
-A
-inexpensively deploy compute, storage, and networking resources without a large capital investment
-
-
-
-B
-pay only for the resources you use
-
-
-
-C
-The statement is correct.
-
-
-
-D
-rapidly increase or decrease the number of Azure resources based on demand
-
+https://statistica.com has statistics on AWS:
+![aws-2020-revenue](https://user-images.githubusercontent.com/300046/116902224-1eafaa00-abf8-11eb-8151-ae12a309f5ac.png)
 
 
 ## More on DevOps #

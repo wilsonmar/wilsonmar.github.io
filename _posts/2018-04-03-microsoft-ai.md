@@ -19,9 +19,7 @@ comments: true
 This article provides a guided tour of use Microsoft's AI (Artificial Intelligence) offerings, which include Machine / Deep Learning capabilities running on the Azure cloud.
 
 
-## Microsoft History with AI
-
-### AI History Within Microsoft
+## Microsoft's History with AI
 
 In April 2018 Microsoft reorganized into two divisions that offers AI:
 
@@ -346,6 +344,8 @@ References:
    * Google Drive
    * Dark themes
    <br /><br />
+
+   https://jupyter-notebook.readthedocs.io/en/stable/security.html
 
 
 ### Create Compute
