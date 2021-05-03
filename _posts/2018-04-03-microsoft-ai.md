@@ -352,6 +352,8 @@ References:
    * Dark themes
    <br /><br />
 
+1. Delete the resource group so charges don't accumulate.
+
 
 <a name="CognitiveServicesCLI"></a>
 

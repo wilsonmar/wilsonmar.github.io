@@ -1307,7 +1307,7 @@ Focus of security awareness training:
 
    * The Zachman Framework is a two-dimensional model that intersects communication interrogatives (What, Why, Where, and so on) with various viewpoints (Planner, Owner, Designer, and so on). 
 
-   * The ISO/IEC 27000 Series establishes information security standards published jointly by the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC). Auditors' Control Objectives for Information and Related Technology (COBIT) is a set of control objectives used as a framework for IT governance.
+   * The ISO/IEC 27000 Series establishes information security standards published jointly by the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC). Auditors' <a target="_blank" href="https://lnkd.in/geuZZpi/">Control Objectives for Information and Related Technology (COBIT)</a> is a set of control objectives used as a framework for IT governance.
    <br /><br />
 
    * The Trike methodology is an implementation model created and then analyzed to produce a threat model. Risk values are assigned to the identified threats. Mitigating controls are assigned to the vulnerabilities that lead to the identified threats.
