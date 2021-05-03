@@ -268,20 +268,7 @@ BTW, by contrast, Bernard Marr identified <a target="_blank" href="https://www.b
 
    * "self-aware", also called artificial superintelligence (ASI), is "sentient" understanding of of its own needs and desires.
 
-Steps for data transformation:
-   * Feature selection
-   * Finding and removing data outliers
-   * Impute missing values
-   * Normalize numeric features
-   <br /><br />
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/algorithm-module-reference/train-model">Model training</a>:
-   * Label data
-   * Algorithm selection
-   * Data split 
-   * Run model
-   <br /><br />
-
+<hr />
 
 <a name="RunJupyter"></a>
 
@@ -289,7 +276,7 @@ Steps for data transformation:
 
 If you're running a Chromebook laptop, there are several ways you can now run your Juypter Notebooks within the Azure cloud:
 
-   * Within <a href="#AzureStudio">Azure Machine Learning's Azure Studio</a>
+   * Within <a href="#AzureStudio">Azure Machine Learning's Azure Studio (below)</a>
 
    * <a target="_blank" href="https://aka.ms/aznb-codespaces">GitHub Codespaces</a>, if you are part of the beta.
 
@@ -361,7 +348,6 @@ References:
    <br /><br />
 
 
-
 ### Create Compute
 
    TODO: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-create-manage-compute-instance?tabs=azure-cli">DOCS</a>: Automate above steps to create compute and server startpup script.
@@ -382,6 +368,8 @@ References:
    * Wait (5 minutes) for box to go from "Creating" to "Running".
    <br /><br />
 
+
+<hr />
 
 <a name="CognitiveServicesCLI"></a>
 
@@ -741,11 +729,11 @@ NLP enables the creation of software that can:
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-language-model-with-language-understanding/2-get-started">LUIS</a> trains a language model that can understand spoken or text-based commands.
 
-   DEMO: <a target="_blank" href="https://www.luis.ai/">https://www.luis.ai</a>
+1. DEMO: <a target="_blank" href="https://www.luis.ai/">https://www.luis.ai</a>
 
    Separate resources are created for authoring processing from prediction runs so that utilization for the two can be tracked separately.
 
-1. View a demo interface to voice control lighting in a virtual home. 
+1. DEMO: voice control lighting in a virtual home. 
 
    <a target="_blank" href="
    https://aidemos.microsoft.com/luis/demo">
@@ -760,17 +748,24 @@ NLP enables the creation of software that can:
    https://github.com/MicrosoftLearning/AI-102-Code-Repos
    https://github.com/MicrosoftLearning/AI-102-Process-Speech
 
-   ### Text Analytics 
+   <a name="Text_Analytics"></a>
 
-   <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/">Text to Speech</a> analyzes text documents and extract key phrases, detect entities (such as places, dates, and people), and evaluate sentiment (how positive or negative a document is).
+   ### Text Analytics
+
+   <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/">Text to Speech</a> services:
+   * Language Detection 
+   * Key phrase extraction
+   * Sentiment analysis (how positive or negative a document is)
+   * Translator Text 
+   <br /><br />
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/1-introduction">Techniques</a>
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/">DOCS</a>:
+   <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages/console">Text Analytics API</a>
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/3-exercise">MS LEARN HANDS-ON LAB</a> references
    https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/07%20-%20Text%20Analytics.ipynb
 
-   <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages/console">Text Analytics API</a>
 
 
    ### Sentiment Analysis
@@ -783,7 +778,7 @@ NLP enables the creation of software that can:
 
    ### Speech Translation (Speech to text)
    
-   <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-translation/">Speech Translation</a> recognizes and synthesizes speech, and translates spoken languages.
+   DEMO: <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-translation/">Speech Translation</a> recognizes and synthesizes speech, and translates spoken languages.
 
    https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/08%20-%20Speech.ipynb
 
@@ -1003,6 +998,8 @@ A LUIS app creates these types of entities:
    * Pattern.any
    <br /><br />
 
+https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/concepts/plan?tabs=v1
+
 Bots are extended by <a target="_blank" href="https://microsoft.github.io/botframework-solutions/overview/skills/">Skills</a>
 
 
@@ -1019,6 +1016,7 @@ Bots are extended by <a target="_blank" href="https://microsoft.github.io/botfra
 
    The knowledge base can be built by extracting questions and answers from your semi-structured content, including FAQs, manuals, and documents. 
 
+   QnA Maker limits control the size of Knowledge base.
 
    <a name="QnA_Maker"></a>
 
@@ -1326,6 +1324,23 @@ On Udemy:
 
    * <a target="_blank" href="https://www.udemy.com/course/azure-cognitive-services-crash-course/?referralCode=EE78F34C49858D913E15">
    Microsoft Azure Cognitive Services Crash Course</a>
+
+## Random Notes to be inserted
+
+Steps for data transformation:
+   * Feature selection
+   * Finding and removing data outliers
+   * Impute missing values
+   * Normalize numeric features
+   <br /><br />
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/algorithm-module-reference/train-model">Model training</a>:
+   * Label data
+   * Algorithm selection
+   * Data split 
+   * Run model
+   <br /><br />
+
 
 
 
