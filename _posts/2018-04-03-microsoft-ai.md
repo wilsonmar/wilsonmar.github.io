@@ -84,15 +84,15 @@ https://www.microsoft.com/ai/responsible-ai-resources</a>
 
 Among <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Microsoft's Azure professional certifications</a>:
 
-   * <a href="#AI-900">AI-900</a> is the entry exam ($99)
-   * <a href="#AI-102">AI-102</a> replaces
-   * <a href="#AI-100">AI-100</a> after June 30, 2021, but with a 1-year rather than 2-year re-up period.
-   <br /><br />
+   * <a href="#AI-900">AI-900</a> is the entry-level exam ($99).
+
+   * <a href="#AI-102">AI-102</a> (with free re-cert after 1-year) replaces
+   * <a href="#AI-100">AI-100</a> (with free re-cert after 2-years) on June 30, 2021.
+
+   Both AI-100 and AI-102 are $165.
+   The shift is from infrastructure (KeyVault, AKS, Stream Analytics) to programming C#, Python, or JavaScript.
 
 Previous exam 774 is now been retired.
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/AI-102">AI-102</a> $165 replaces
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/AI-100">AI-100</a> on June 30, 2021. The shift is from infrastructure (KeyVault, AKS, Stream Analytics) to programming C#, Python, or JavaScript.
 
 
 <a name="AI-900"></a>
@@ -143,11 +143,36 @@ Practice tests:
 * https://www.examtopics.com/exams/microsoft/ai-900/
 
 
+<a name="AI-102"></a>
+
+### AI-102
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/ai-102">AI-102 exam, as defined at Microsoft's LEARN</a> has free written tutorials on each of the exam's domains:
+
+   * Plan and manage an Azure Cognitive Services solution (15-20%)
+   * Implement Computer Vision solutions (20-25%)
+   * Implement natural language processing solutions (20-25%)
+   * Implement knowledge mining solutions (15-20%)
+   * Implement conversational AI solutions (15-20%)
+   <br /><br />
+
+PROTIP: That page includes a free text-based tutorial.
+
+PROTIP: Unlike the AI-100, AI-102 requires skill in programming C# or Python.
+
+<a target="_blank" href="https://ravikirans.com/ai-102-azure-exam-study-guide/">
+Ravi's links</a>
+
+Microsoft offers a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/ai-102t00">4-day course (with cloud time)</a>
+covering C# or Python as the programming language.
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/AI-102-AIEngineer">Labs for the class</a> can be followed outside of class enrollment.
+
+
 <a name="AI-100"></a>
 
 ### AI-100 Azure AI Engineer Associate
 
-On June 30, 2021, Microsft is retiring the AI-100 exam in favor of <a href="#AI-102">AI-102 exam</a> (avilable in beta since Feb 2021). <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/ai-100">AI-100 exam, as definied at Microsoft's LEARN</a> (that page includes a free text-based tutorial).
+You have until June 30, 2021 to take this because Microsft is retiring the AI-100 exam in favor of <a href="#AI-102">AI-102 exam</a> (avilable in $99 beta since Feb 2021). <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/ai-100">AI-100 exam, as defined at Microsoft's LEARN</a> has free written tutorials on each of the exam's domains:
 
    * Analyze solution requirements (25-30%)
    * Design AI solutions (40-45%)
@@ -188,33 +213,6 @@ Practice tests:
 * https://www.whizlabs.com/learn/course/microsoft-azure-ai-100/
 
 https://github.com/MicrosoftLearning/Principles-of-Machine-Learning-Python
-
-<a name="AI-102"></a>
-
-### AI-102
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/ai-102">AI-102 exam, as definied at Microsoft's LEARN</a> 
-
-   * Plan and manage an Azure Cognitive Services solution (15-20%)
-   * Implement Computer Vision solutions (20-25%)
-   * Implement natural language processing solutions (20-25%)
-   * Implement knowledge mining solutions (15-20%)
-   * Implement conversational AI solutions (15-20%)
-   <br /><br />
-
-PROTIP: That page includes a free text-based tutorial.
-
-PROTIP: Unlike the AI-100, AI-102 requires skill in programming C# or Python.
-
-<a target="_blank" href="https://ravikirans.com/ai-102-azure-exam-study-guide/">
-Ravi's links</a>
-
-Microsoft offers a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/ai-102t00">4-day course (with cloud time)</a>
-covering C# or Python as the programming language.
-   * <a target="_blank" href="https://github.com/MicrosoftLearning/AI-102-AIEngineer">Labs for the class</a> can be followed outside of class enrollment.
-
-
-<hr />
 
 <hr />
 
@@ -290,18 +288,17 @@ Steps for data transformation:
 
 ## Jupyter Notebooks on Azure
 
-GitHub.com now display <tt>.ipynb</tt> (Jupyter notebook) files in internet browsers when you click on "Raw". It may take several seconds to render.
-
-NOTE: <a target="_blank" href="https://notebooks.azure.com/">https://notebooks.azure.com</a> is now redirecting users to other services:
-
 If you're running a Chromebook laptop, there are several ways you can now run your Juypter Notebooks within the Azure cloud:
 
    * Within <a href="#AzureStudio">Azure Machine Learning's Azure Studio</a>
 
    * <a target="_blank" href="https://aka.ms/aznb-codespaces">GitHub Codespaces</a>, if you are part of the beta.
 
+HISTORY: <a target="_blank" href="https://notebooks.azure.com/">https://notebooks.azure.com</a> is now redirecting users to other services.
+
 References:
    * https://towardsdatascience.com/running-jupyter-notebook-on-the-cloud-in-15-mins-azure-79b7797e4ef6
+
 
 <a name="AzureStudio"></a>
 
@@ -309,6 +306,14 @@ References:
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/notebooks/quickstart-export-jupyter-notebook-project#use-notebooks-with-azure-machine-learning">DOCS</a>:
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-run-jupyter-notebooks">Run Jupyter Notebooks in a ML workspace</a>
+
+1. GitHub.com now display <tt>.ipynb</tt> (Jupyter notebook) files in internet browsers when you click on "Raw". It may take several seconds to render. For example: 
+
+   <a target="_blank" href="
+   https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/01%20-%20Image%20Analysis%20with%20Computer%20Vision.ipynb">
+   https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/01%20-%20Image%20Analysis%20with%20Computer%20Vision.ipynb</a>
+
+   Currently, GitHub does not provide a "run" button when displaying Notebooks.
 
 1. In a Terminal, load a GitHub repo containing notebooks and associated files:
 
@@ -321,10 +326,9 @@ References:
    
    1. G+\ <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.MachineLearningServices%2Fworkspaces">Machine Learning</a>.
 
-   1. <img align="right" width="368" alt="az-mlworkspace-736x946" src="https://user-images.githubusercontent.com/300046/116822701-8a810c80-ab3d-11eb-96a9-a80d7df88f5c.png"> Click "Create Machine Learning Workspace".
-
-   Alternately, open CLI and <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/README.md">follow my instructions</a> to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-manage-workspace-cli">create a ML Workspace</a> and run my <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-mlworkspace-cli.sh">./az-mlworkspace-cli.sh</a>. 
-   This creates resources:
+   1. <img align="right" width="368" alt="az-mlworkspace-736x946" src="https://user-images.githubusercontent.com/300046/116822701-8a810c80-ab3d-11eb-96a9-a80d7df88f5c.png"> Create Machine Learning Workspace: <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/README.md">Follow my instructions</a> to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-manage-workspace-cli">create a ML Workspace</a> and run my <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-mlworkspace-cli.sh"><strong>./az-mlworkspace-cli.sh</strong></a>. 
+   
+   The Resource Group created by the script creates these resources :
    * Machine learning
    * Application Insights
    * Key vault
@@ -338,13 +342,37 @@ References:
 1. Navigate thru folder "mslearn-ai900", "01 - Image Analysis with Computer Vision.ipynb".
    Select overwrite and "trust contents of this file". Click "Upload".
 1. Copy to clipboard Key1 from running <tt>./az-cog-cli.sh</tt>.
-1. Highlight "YOUR_COG_KEY" and paste Key1.
-1. Do the same with "YOUR_COG_ENDPOINT".
+
+1. Highlight "YOUR_COG_KEY" and paste Key1 from the script run.
+
+1. Do the same with "YOUR_COG_ENDPOINT". ???
+
+   ### Create Compute
+
+   PROTIP: These instructions are not in Microsoft LEARN's tutorial.
 
    "Your document is currently not connected to a compute. Switch to a running compute or create a new compute to run a cell."
 
-1. Run
+1. Click the Run triangle for "Your document is currently not connected to a compute."
+1. "Create compute"
+   * Virtual machine type: CPU or GPU
+   * Virtual machine size: Select from all options (64 of them) QUESTION: What is the basis for "recommended"?
+   * The cheapest is <strong>"Standard_F2s_v2"</strong> with "2 cores, 4GB RAM, 16GB storage" for Compute optimized at "$0.11/hr"
+   * Next
+   * Compute name: PROTIP: Use 3-characters only, such as "wow" or "eat".
+   * Enable SSH access: leave unchecked
+   * Create
+   * Wait (5 minutes) for box to go from "Creating" to "Running".
+   <br /><br />
 
+   TODO: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-create-manage-compute-instance?tabs=azure-cli">DOCS</a>: Automate above steps to create compute and server startpup script.
+
+1. Click "Authenticate" if that appears.
+
+1. Delete the Resource Group and Compute so charges don't accumulate.
+
+
+   NOTE:
    <a target="_blank" href="https://jupyterlab.readthedocs.io/"JypiterLab</a> is <a target="_blank" href="https://towardsdatascience.com/jupyter-lab-evolution-of-the-jupyter-notebook-5297cacde6b">more robust than classic Jupyper</a>:
    * Native Git and GitHub support - https://github.com/jupyterlab/jupyterlab
    * Extensible with <tt>jupyter labextensions install jupyterlab-drawio</tt>
@@ -352,7 +380,6 @@ References:
    * Dark themes
    <br /><br />
 
-1. Delete the resource group so charges don't accumulate.
 
 
 <a name="CognitiveServicesCLI"></a>
@@ -485,6 +512,11 @@ Configure run to create different models:
    * Anomaly detection ("weird?")
    <br /><br />
 
+Classification of Profanity returns JSON with several categories:
+   * Category 1: sexually explicit or adult in certain situations.
+   * Category 2: sexually suggestive or mature in certain situations.
+   * Category 3: considered offensive in certain situations.
+   <br /><br />
 
 ![az-ai-ml-1173x538](https://user-images.githubusercontent.com/300046/116586918-2fe67700-a8d7-11eb-87e7-1a4087faaa4f.png)
 
@@ -759,7 +791,10 @@ NLP enables the creation of software that can:
    https://github.com/MicrosoftLearning/AI-SpeechToText
 
    The speech-to-text service includes multiple pre-defined voices with support for <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support#speech-to-text">multiple languages and regional pronunciations</a>, with language detection. In addition to standard voices, <strong>neural voices</strong> leverage neural networks to overcome common limitations in speech synthesis with regard to intonation, resulting in a more natural sounding voice. 
+   
    PROTIP: Neural voices are created from samples that use a 24 khz sample rate.
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/recognize-synthesize-speech/1-introduction">Speech recognition</a> can use a acoustic model of phonemes (sounds) or a language model that matches phonemes with words.
 
    Custom voices can be created with the text-to-speech API.
 
@@ -769,18 +804,20 @@ NLP enables the creation of software that can:
 
    <pre>cd ~/clouddrive/azure-your-way
    git pull
-   ./az-iot-cli.sh
+   ./az-cog-cli.sh
    </pre>
 
 
 
    ### Translator Text (text to speech)
 
+   To synthesize speech, the system typically tokenizes the text to break it down into individual words, and assigns phonetic sounds to each word. It then breaks the phonetic transcription into <strong>prosodic units</strong> (such as phrases, clauses, or sentences) to create phonemes that will be converted to audio format. These phonemes are then synthesized as audio by applying a voice, which will determine parameters such as pitch and timbre; and generating an audio wave form that can be output to a speaker or written to a file.
+
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-translate">translate text</a> between more than 60 languages.
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support#text-to-speech">Text-to-speech</a>
 
-   <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/09%20-%20Translation.ipynb">Python notebooks</a>
+   <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/09%20-%20Translation.ipynb">Python notebook to Translate</a>
 
 <hr />
 
