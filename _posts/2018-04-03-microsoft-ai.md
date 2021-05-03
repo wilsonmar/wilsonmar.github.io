@@ -223,7 +223,7 @@ But <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microso
 
 <a target="_blank" href="https://www.youtube.com/watch?v=eJOv-TfhhzQ">VIDEO</a>: <a target="_blank" href="https://services.azureml.net/">Azure Machine Learning Studio (classic) Web Services</a>
 
-The Classic version reflected "All Microsoft all the time" with proprietary "pickle" files.
+The Classic version reflected "All Microsoft all the time" with proprietary "pickle" (pkl) files.
 
 
 
@@ -778,7 +778,11 @@ NLP enables the creation of software that can:
 
    ### Speech Translation (Speech to text)
    
-   DEMO: <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-translation/">Speech Translation</a> recognizes and synthesizes speech, and translates spoken languages.
+   DEMO: <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-translation/">Speech Translation</a> recognizes and synthesizes speech, and translates spoken languages. REMEMBER: The sequence of services:
+
+   Speech-to-Text -> Speech Correction -> Machine Translation -> Text-to-Speech
+
+   "Speech Recognition" and Text Analysis are not involved in this use case.
 
    https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/08%20-%20Speech.ipynb
 

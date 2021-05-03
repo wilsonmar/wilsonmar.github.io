@@ -284,9 +284,25 @@ TBD.
 
 ## Configuration
 
+1. Did you configure a user name and email in Git? View using this command:
+
+   <pre><strong>git config --list | grep user
+   </strong></pre>
+
+1. If you haven't already, While in a Terminal with the present working directory at your local repository, configure you valid GitHub user name and email. For example:
+
+   <pre><strong>git config --global user.name "John Doe"
+   git config --global user.email "john_doe@gmail.com"
+   </strong></pre>
+
+   PROTIP: Any name and email can be specified in Git. That's a big reason organizations ask for cryptographically signing commits in GitHub, which requires that the email specified be validated.
+
+
    <a name="GitHubEmail"></a>
 
    ### Email address in GitHub
+
+1. Be at a browser profile you want to use. (I click on my avatar on Chrome to setup a profile for each email address I use - one for personal Gmail, another for work)
 
 1. Switch to your GitHub Profile Email page
 
@@ -294,15 +310,7 @@ TBD.
 
 1. Identify your "no-reply" public email address, such as "john_doe+github@gmail.com".
 
-   <strong>IMPORTANT PROTIP: The email specified to GPG should match the email in GitHub.</strong>
-
-1. While in a Terminal with the present working directory at your local repository, configure you valid GitHub user name and email (if you haven't already). For example:
-
-   <pre><strong>git config --global user.name "John Doe"
-   git config --global user.email "john_doe@gmail.com"
-   </strong></pre>
-
-   PROTIP: Any name and email can be specified in Git. That's a big reason organizations ask for cryptographically signing commits in GitHub, which requires that the email specified be validated.
+   <strong>IMPORTANT PROTIP: The email specified to GPG should match an email in GitHub.</strong>
 
 
 <hr />
@@ -312,14 +320,105 @@ TBD.
 There are several places you can store GPG keys securely:
 
    * On your local drive (which will be lost if your laptop dies or get lost)
-   * <a href="#Keybase">Keybase cloud</a>
-   * <a target="_blank" href="https://wilsonmar.github.io/hashicorp-vault">Hashicorp Vault</a>?
+   * <a href="#Keybase">Keybase cloud (below)</a>
+
+   * <a href="#hashicorp-vault">Hashicorp Vault</a>
    * Azure KeyVault?
    * AWS ?
    * Google Cloud?
    <br /><br />
 
 <hr />
+
+<a name="hashicorp-vault"></a>
+
+### Hashicorp Vault
+
+
+https://github.com/martinbaillie/vaultsign
+
+1. In a Terminal, run my script to install and configure:
+
+   <pre>sh ...
+   </pre>
+
+Specifically, my script does the following:
+
+1. Install Hashicorp Vault program on your machine and display the program's version. 
+
+1. Enable Vault's ssh engine:
+ 
+   <pre>vault secrets enable -path=ssh-github ssh</pre>
+
+1. Generate a CA that will be used to sign SSH keys:
+
+   <pre>vault write ssh-github/config/ca generate_signing_key=true</pre>
+
+1. In your $HOME folder, create a file named <strong>vaultvalues.env</strong> containing statements to define enviornment variables.
+   
+1. Grant run access:
+
+   <pre>chmod +x vaultvalues.env</pre>
+
+Now manually make some changes:
+
+1. Identify the URL of your Hashicorp Vault server on the internet. If you don't have one, follow my instructions at:
+
+   <a target="_blank" href="https://wilsonmar.github.io/hashicorp-vault">
+   https://wilsonmar.github.io/hashicorp-vault</a>
+
+1. cd to your $HOME folder and create a file named <tt>valuevalues.env</tt>
+1. Use an editor to customize environment variables:
+
+   <pre># URL of the Hashicorp Vault server:
+export VAULT_ADDR=https://vault.your.corp:8200
+&nbsp;
+# The path to vaultsign:
+&nbsp;
+# The signing backend endpoint (transit or gpg) and optionally hashing function
+# to use. Mandatory for signing.
+export VAULT_SIGN_PATH=transit/sign/test/sha2-256
+export VAULT_SIGN_PATH=gpg/sign/test/sha2-256
+&nbsp;
+# The verify backend endpoint (transit or gpg). Mandatory for verifying.
+export VAULT_VERIFY_PATH=transit/verify/test
+export VAULT_VERIFY_PATH=gpg/verify/test
+&nbsp;
+# The SNI to present during the TLS handshake (if different from the Vault HTTP
+# host name). Useful when your Vault is exposed through an AWS private link for
+# example. Optional.
+export VAULT_TLS_SERVER_NAME=hostname.to.use.for.sni.com
+   </pre>
+
+1. Run the file to load environment variables:
+
+   <pre><strong>cd $HOME
+
+
+1. Navigate into each repo and
+
+   <pre>git config --local gpg.program "${VAULT_SIGN_PATH}"
+   </pre>
+
+1. Now run:
+
+   <pre># Login to vault:
+vault login  # referencing $VAULT_ADDR
+&nbsp;
+# Edit some file, then:
+git add .
+# Specif -S to sign a commit and tag:
+git commit -m "test signed commit" -S
+git tag -m "test signed tag" -s test
+&nbsp;
+# Verify the same commit and tag.
+git verify-commit HEAD
+git log -1 --show-signature
+git verify-tag test
+   </pre>
+
+1. Verify that green checkmark next to your name on GitHub.
+
 
 <a name="Keybase"></a>
 
@@ -408,7 +507,7 @@ Push an encrypted copy of your new secret key to the Keybase.io server? [Y/n] Y
 ▶ INFO Exported new key to the local GPG keychain
    </pre>
 
-1. Skip to <a href="#ListKeys">List GPG keys</a>.
+1. Skip to <a href="#ListKeys">List GPG keys (below)</a>.
 
 
 
@@ -467,9 +566,11 @@ List keys to verify that you have indeed generated them.
 1. If you are not using a Yubikey, proceed to <a href="#GenerateKey">Generate GPG key pairs</a>.
 
 
+   <a name="Yubikey"></a>
+
    ## Optional Yubikey smart chip
 
-   This is for those who work on multiple machines but must use a single signing key.
+   This is for those who work on multiple machines but want to use a single physical signing key they plug into each machine.
 
    If your laptop's USB has been locked down, skip this and move on to <a href="#GenerateKey">generate a key</a>.
 

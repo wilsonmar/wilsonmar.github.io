@@ -69,11 +69,30 @@ PROTIP: Research and find out what each is about:
 *	yield
 <br /><br />
 
-A list can be retrieved by this code:
+The list above can be retrieved by this code:
 
 <pre>import keyword
 print(keyword.kwlist)
 </pre>
+
+
+## Environment Variables
+
+To read a file named ".env" at the $HOME folder, and obtain the value from "MY_EMAIL":
+
+<pre>import os
+env_vars = !cat ~/.env
+for var in env_vars:
+    key, value = var.split('=')
+    os.environ[key] = value
+&nbsp;
+print(os.environ.get('MY_EMAIL')) # Returns 'johndoe@gmail.com'
+</pre>
+
+This code is important because it keeps secrets in your $HOME folder, away from folders that get pushed up to GitHub.
+
+There is the "load_dotenv" package that can do the above, but using native commands mean less exposure to potential attacks.
+
 
 ## String
 
@@ -81,6 +100,7 @@ To return just the first 3 characters of a string:
 
 <pre>letters = "abcdef"
 first_part = letters[:3]</pre>
+
 
 ## File open() modes
 

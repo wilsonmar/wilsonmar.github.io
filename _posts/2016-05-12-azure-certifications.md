@@ -41,8 +41,8 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
 
    </td></tr>
 <tr valign="top"><td> Developer
-   </td><td>* <a href="#AZ-204">Azure Developer Associate</a><br />
-       * <a href="#AZ-220">Azure IoT Developer Specialty</a> 
+   </td><td>* <a href="#AZ-204">AZ-204 Azure Developer Associate</a><br />
+       * <a target="_blank" href="https://wilsonmar.github.io/azure-iot#AZ-220" title="My hands-on tutorial on Azure IoT">AZ-220 Azure IoT Developer Specialty</a> 
 
    </td></tr>
 <tr valign="top"><td> DevOps Engineer
@@ -115,7 +115,11 @@ Microsoft Quizzes by CloudAcademy</a>
 
 1. <a target="_blank" href="https://esi.microsoft.com/">Microsoft's Enterprise Skills Initiative</a>. Sign in with your corporate email.
 1. https://esi.microsoft.com/deliverymultiday 
-1. Search for a class by checking different time zones.
+1. Search for a class by checking different roles and time zones. 
+
+   * If you're in Mountain time, a class that starts at 9am Auckland time would be 3pm your time.
+   <br /><br />
+
 
    ### Skillpipe online class
 
@@ -251,8 +255,15 @@ https://vladtalkstech.com/microsoft-certification-study-guides
 
 <hr />
 
+
+<a target="_blank" href="https://www.microsoft.com/en-us/learning/dashboard.aspx">
+https://www.microsoft.com/en-us/learning/dashboard.aspx</a>
+is where you start exams and get certificate pdfs (suitable for framing) and badge images.
+
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits">
 Azure Subscription Service Limits</a>
+
+<hr />
 
 <a name="#AZ-900"></a>
 
@@ -829,23 +840,6 @@ https://learning.oreilly.com/library/view/exam-ref-az-204/9780136798255/
 YOUTUBE: AZ-204 Azure Developer - Exam Cram │ Expert Talk</a> by <a target="_blank" href="https//linkedin.com/in/brianlgorman">Brian L Gorman</a>
 
 * https://www.whizlabs.com/learn/course/microsoft-azure-az-204/
-
-
-
-<a name="AZ-220"></a>
-
-## AZ-220 IoT
-
-<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/537">Course 1</a>
-
-<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/538">Course 2</a>
-
-* https://github.com/MicrosoftLearning/AZ-220-Microsoft-Azure-IoT-Developer
-
-
-https://github.com/zaalion/oreilly-az-220/
-
-* https://www.whizlabs.com/learn/course/microsoft-azure-az-220/
 
 
 <hr />
