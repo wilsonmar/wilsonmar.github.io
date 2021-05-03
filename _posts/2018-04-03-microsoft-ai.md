@@ -156,8 +156,6 @@ Practice tests:
    * Implement conversational AI solutions (15-20%)
    <br /><br />
 
-PROTIP: That page includes a free text-based tutorial.
-
 PROTIP: Unlike the AI-100, AI-102 requires skill in programming C# or Python.
 
 <a target="_blank" href="https://ravikirans.com/ai-102-azure-exam-study-guide/">
@@ -180,6 +178,8 @@ You have until June 30, 2021 to take this because Microsft is retiring the AI-10
    <br /><br />
 
 https://github.com/MicrosoftLearning/AI-100-Design-Implement-Azure-AISol
+
+https://github.com/MicrosoftLearning/Principles-of-Machine-Learning-Python
 
 * Plan and manage an Azure <strong>Cognitive Services</strong> solution (15-20%)
    * MS: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/evaluate-text-with-language-services/">Evaluate text with Azure Cognitive Language Services</a>
@@ -212,7 +212,6 @@ Raza Salehi created on Pluralsight.com <a target="_blank" href="https://app.plur
 Practice tests:
 * https://www.whizlabs.com/learn/course/microsoft-azure-ai-100/
 
-https://github.com/MicrosoftLearning/Principles-of-Machine-Learning-Python
 
 <hr />
 
