@@ -322,19 +322,20 @@ References:
    </strong></pre>
 
 1. In portal.azure.com:
-   
-   1. G+\ <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.MachineLearningServices%2Fworkspaces">Machine Learning</a>.
+1. G+\ <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.MachineLearningServices%2Fworkspaces">Machine Learning</a>.
 
-   1. <img align="right" width="368" alt="az-mlworkspace-736x946" src="https://user-images.githubusercontent.com/300046/116822701-8a810c80-ab3d-11eb-96a9-a80d7df88f5c.png"> Create Machine Learning Workspace: <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/README.md">Follow my instructions</a> to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-manage-workspace-cli">create a ML Workspace</a> and run my <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-mlworkspace-cli.sh"><strong>./az-mlworkspace-cli.sh</strong></a>. 
+1. <img align="right" width="368" alt="az-mlworkspace-736x946" src="https://user-images.githubusercontent.com/300046/116822701-8a810c80-ab3d-11eb-96a9-a80d7df88f5c.png"> Create Machine Learning Workspace: <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/README.md">Follow my instructions</a> to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-manage-workspace-cli">create a ML Workspace</a> and run my <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-mlworkspace-cli.sh"><strong>./az-mlworkspace-cli.sh</strong></a>. 
    
-   The Resource Group created by the script creates these resources :
+1. The script creates these resources under the Resource Group:
    * Machine learning
    * Application Insights
    * Key vault
    * Storage account
    <br /><br />
 
-1. In Portal Machine Learning: <strong>"Launch studio"</strong> (formerly "Azure Studio").
+1. G+\ <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.MachineLearningServices%2Fworkspaces">Machine Learning</a>
+1. Click the Machine Learning name just created.
+1. In Portal Machine Learning: <strong>"Launch studio"</strong> (formerly "Azure Studio") to open a new browser tab "Microsoft Azure Machine Learning".
 
 1. In the left-side navigation bar, select Author: Notebooks.
 1. Click "+ Create" to Upload files.
@@ -346,7 +347,24 @@ References:
 
 1. Do the same with "YOUR_COG_ENDPOINT". ???
 
-   ### Create Compute
+1. Click "Authenticate" if that appears.
+
+1. Delete the Resource Group and Compute so charges don't accumulate.
+
+
+   NOTE:
+   <a target="_blank" href="https://jupyterlab.readthedocs.io/"JypiterLab</a> is <a target="_blank" href="https://towardsdatascience.com/jupyter-lab-evolution-of-the-jupyter-notebook-5297cacde6b">more robust than classic Jupyper</a>:
+   * Native Git and GitHub support - https://github.com/jupyterlab/jupyterlab
+   * Extensible with <tt>jupyter labextensions install jupyterlab-drawio</tt>
+   * Google Drive
+   * Dark themes
+   <br /><br />
+
+
+
+### Create Compute
+
+   TODO: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-create-manage-compute-instance?tabs=azure-cli">DOCS</a>: Automate above steps to create compute and server startpup script.
 
    PROTIP: These instructions are not in Microsoft LEARN's tutorial.
 
@@ -363,22 +381,6 @@ References:
    * Create
    * Wait (5 minutes) for box to go from "Creating" to "Running".
    <br /><br />
-
-   TODO: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-create-manage-compute-instance?tabs=azure-cli">DOCS</a>: Automate above steps to create compute and server startpup script.
-
-1. Click "Authenticate" if that appears.
-
-1. Delete the Resource Group and Compute so charges don't accumulate.
-
-
-   NOTE:
-   <a target="_blank" href="https://jupyterlab.readthedocs.io/"JypiterLab</a> is <a target="_blank" href="https://towardsdatascience.com/jupyter-lab-evolution-of-the-jupyter-notebook-5297cacde6b">more robust than classic Jupyper</a>:
-   * Native Git and GitHub support - https://github.com/jupyterlab/jupyterlab
-   * Extensible with <tt>jupyter labextensions install jupyterlab-drawio</tt>
-   * Google Drive
-   * Dark themes
-   <br /><br />
-
 
 
 <a name="CognitiveServicesCLI"></a>
