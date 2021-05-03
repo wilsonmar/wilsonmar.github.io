@@ -312,16 +312,16 @@ References:
 
 1. In a Terminal, load a GitHub repo containing notebooks and associated files:
 
-   <pre><strong>cd ~/gmail_acct
+   <pre><strong>cd ~/gmail_acct  # or whatever folder you use to hold repos to be clonned:
    git clone https://github.com/MicrosoftLearning/mslearn-ai900 --depth=1
    cd mslearn-ai900
    </strong></pre>
 
-1. <img align="right" width="368" alt="az-mlworkspace-736x946" src="https://user-images.githubusercontent.com/300046/116822701-8a810c80-ab3d-11eb-96a9-a80d7df88f5c.png"> In portal.azure.com:
+1. In portal.azure.com:
    
    1. G+\ <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.MachineLearningServices%2Fworkspaces">Machine Learning</a>.
 
-   1. Click "Create Machine Learning Workspace".
+   1. <img align="right" width="368" alt="az-mlworkspace-736x946" src="https://user-images.githubusercontent.com/300046/116822701-8a810c80-ab3d-11eb-96a9-a80d7df88f5c.png"> Click "Create Machine Learning Workspace".
 
    Alternately, open CLI and <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/README.md">follow my instructions</a> to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-manage-workspace-cli">create a ML Workspace</a> and run my <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-mlworkspace-cli.sh">./az-mlworkspace-cli.sh</a>. 
    This creates resources:

@@ -1312,6 +1312,15 @@ Focus of security awareness training:
 
    * The Trike methodology is an implementation model created and then analyzed to produce a threat model. Risk values are assigned to the identified threats. Mitigating controls are assigned to the vulnerabilities that lead to the identified threats.
 
+COBIT:
+   1. Provide stakeholder value
+   2. Holistic approach
+   3. Dynamic governance system
+   4. Governance distinct from management
+   5. Tailored to enterprise needs
+   6. End-to-end governance system
+   <br /><br />
+
 Security program life cycle:
    1. Plan and Organize
    2. Implement
