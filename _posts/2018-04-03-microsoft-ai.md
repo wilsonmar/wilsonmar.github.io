@@ -47,10 +47,45 @@ Microsoft has advanced hardware:
    "Each FPGA operates in-line between the server’s network interface card (NIC) and the top-of-rack (TOR) switch, enabling in-situ processing of network packets and point-to-point connectivity between hundreds of thousands of FPGAs at low latency (two microseconds per switch hop, one-way)."
    </ul>
 
+<hr />
+
+<a name="Competitors"></a>
+
+## What can AI do?
 
 <a target="_blank" href="
 https://gallery.azure.ai/">
 https://gallery.azure.ai</a>
+
+DEMOS: <a target="_blank" href="https://aidemos.microsoft.com/">https://aidemos.microsoft.com</a>
+
+Case studies of how people are already making use of AI/ML to save time and money:
+
+   * Predictive Maintenance data science <a target="_blank" href="https://info.microsoft.com/CO-AAIoT-WBNR-FY16-07Jul-05-Predictive-Maintenance-Registration.html">webinar</a>
+   * Defect Detection with Image Analysis
+   * Custom Entity Extraction with Text Analytics
+   * modsy.com 3D view
+   <br /><br />
+
+
+<hr />
+
+<a name="Competitors"></a>
+
+## Competitive futures
+
+Microsoft competes for talent with Google, Amazon, IBM, China's Tencent.
+
+BTW, by contrast, Bernard Marr identified <a target="_blank" href="https://www.bernardmarr.com/default.asp?contentID=2191">four types of AI</a> evolving: 
+
+   * "reactive" machines (such as Spam filters and the Netflix recommendation engine) are not able to learn or conceive of the past or future, so it responds to identical situations in the exact same way every time.
+
+   * "limited memory" AI absorbs learning data and improve over time based on its experience, using historical data to make predictions. It's similar to the way the human brain’s neurons connect. Deep-learning algorithms used today is the AI that is widely used and being perfected today.
+
+   * "theory of mind" is when AI acquires decision-making capabilities equal to humans, and have the capability to recognize and remember emotions, and adjust behavior based on those emotions.
+
+   * "self-aware", also called artificial superintelligence (ASI), is "sentient" understanding of of its own needs and desires.
+
 
 <hr />
 
@@ -156,10 +191,10 @@ Practice tests:
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/ai-102">AI-102 exam, as defined at Microsoft's LEARN</a> has free written tutorials on each of the exam's domains:
 
    * Plan and manage an Azure Cognitive Services solution (15-20%)
-   * Implement Computer Vision solutions (20-25%)
-   * Implement natural language processing solutions (20-25%)
+   * Implement <a href="#ComputerVision">Computer Vision solutions</a> (20-25%)
+   * Implement <a href="#NLP">natural language processing solutions</a> (20-25%)
    * Implement knowledge mining solutions (15-20%)
-   * Implement conversational AI solutions (15-20%)
+   * Implement <a href="#Conversational">Conversational AI solutions</a> (15-20%)
    <br /><br />
 
 PROTIP: Unlike the AI-100, AI-102 requires skill in programming C# or Python.
@@ -171,6 +206,7 @@ Microsoft offers a <a target="_blank" href="https://docs.microsoft.com/en-us/lea
 covering C# or Python as the programming language.
    * <a target="_blank" href="https://github.com/MicrosoftLearning/AI-102-AIEngineer">Labs for the class</a> can be followed outside of class enrollment.
 
+<a target="_blank" href="https://cloudacademy.com/quiz/38235/">Preview 45 min. Exam: Designing and Implementing an Azure AI Solution (AI-102)</a>
 
 <a name="AI-100"></a>
 
@@ -207,11 +243,18 @@ https://github.com/MicrosoftLearning/Principles-of-Machine-Learning-Python
 <a target="_blank" href="https://linkedin.com/in/rezasalehi2008/">Raza Salehi</a> (@zaalion) created on <a target="_blank" href="https://github.com/zaalion/oreilly-ai-100">OReilly.com an AI-100 exam prep "crash course"</a> which references his <a target="_blank" href="<a target="_blank" href="https://github.com/zaalion/oreilly-ai-100">https://github.com/zaalion/oreilly-ai-100</a> and <a target="_blank" href="
 https://github.com/zaalion/uy-cognitve-services-crash-course">https://github.com/zaalion/uy-cognitve-services-crash-course</a>
 
+Guy Hummel's <a target="_blank" href="https://cloudacademy.com/learning-paths/ai-100-exam-preparation-designing-and-implementing-an-azure-ai-solution-1-1334/">CloudAcademy.com</a> 7hr video course.
+
 Raza Salehi created on Pluralsight.com <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-azure-ai-engineer-ai-100">a series for Microsoft Azure AI Engineer (AI-100)</a> :
 
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-personalizer">Personalizer</a>
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-ink-recognizer">Recognizer</a>
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-immersive-reader">Immersive Reader</a>
+
+<a name="AnomalyDetector"></a>
+
+#### Anomaly Detector
+
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-anomaly-detector">Anomaly Detector</a>
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/building-customized-translation-systems-azure-cognitive-services-translator">Translator</a>
 
@@ -241,6 +284,12 @@ PROTIP: Although most Microsoft's samples and tutorials usually focus on one ser
 
 ![az-ml-newsfeed-546x623](https://user-images.githubusercontent.com/300046/116988980-6254f300-ac8e-11eb-9901-c2c6f3d8a018.png)
 
+Steps to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/tutorial-designer-automobile-price-deploy">deploy a machine learning model with the Designer</a>:
+   1. Create inference clusters
+   2. Create and test inference pipeline
+   3. Deploy inference pipeline
+   4. Test the service (used by the user)
+   <br /><br />
 
 <a name="CognitiveServices"></a>
 
@@ -254,32 +303,76 @@ Microsoft now uses the term <a target="_blank" href="https://azure.microsoft.com
 
    * Computer vision - interpret the world visually through cameras, videos, images.
    * Natural language processing - interpret written or spoken language, and respond in kind.
-   * Conversational AI - an "agent" to participate in a (natural) conversation.
+   * Conversational AI - an "agent" (Azure Bot Service) to participate in a (natural) conversation.
    <br /><br />
 
 "Search" (Bing) has disappeared from Microsoft's list of service categories.
 But it now is at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/search/">
 https://docs.microsoft.com/en-us/azure/search</a>
 
-DEMOS: <a target="_blank" href="https://aidemos.microsoft.com/">https://aidemos.microsoft.com</a>
+1. List kinds of Cognitive Services using CLI command:
 
-Case studies of how people are already making use of AI/ML to save time and money:
+   <pre>az cognitiveservices account list-kinds</pre>
 
-   * Predictive Maintenance data science <a target="_blank" href="https://info.microsoft.com/CO-AAIoT-WBNR-FY16-07Jul-05-Predictive-Maintenance-Registration.html">webinar</a>
-   * Defect Detection with Image Analysis
-   * Custom Entity Extraction with Text Analytics
-   * modsy.com 3D view
-   <br /><br />
+   Kinds with ? are known in websites but not listed by the command above.
 
-BTW, by contrast, Bernard Marr identified <a target="_blank" href="https://www.bernardmarr.com/default.asp?contentID=2191">four types of AI</a> evolving: 
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr valign="bottom"><th> Category </th><th> Kind </th><th> Free </th></tr>
+   <tr align="top"><td> Decision </td><td> <a href="#AnomalyDetector">AnomalyDetector"</a>
+      </td><td> 2,000 trans/mo.  </td></tr>
+   <tr align="top"><td> Decision </td><td> "ContentModerator"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Decision </td><td> "Personalizer"
+      </td><td> - </td></tr>
 
-   * "reactive" machines (such as Spam filters and the Netflix recommendation engine) are not able to learn or conceive of the past or future, so it responds to identical situations in the exact same way every time.
+   <tr align="top"><td> Language </td><td> <a href="#LUIS">"LUIS"</a>
+      </td><td> - </td></tr>
+   <tr align="top"><td> Language </td><td> "LUIS.Authoring"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Language </td><td> <a href="#QnA_Maker">"QnAMaker"</a>
+      </td><td> - </td></tr>
+   <tr align="top"><td> Language </td><td> <a href="#QnA_Maker">"QnAMaker.v2"</a>
+      </td><td> - </td></tr>
+   <tr align="top"><td> Language </td><td> "TextAnalytics"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Language </td><td> "TextTranslation"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Language </td><td> "ImmersiveReader"
+      </td><td> - </td></tr>
 
-   * "limited memory" AI absorbs learning data and improve over time based on its experience, using historical data to make predictions. It's similar to the way the human brain’s neurons connect. Deep-learning algorithms used today is the AI that is widely used and being perfected today.
+   <tr align="top"><td> Speech </td><td> "SpeechServices"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Speech </td><td> "SpeakerRecognition?
+      </td><td> - </td></tr>
 
-   * "theory of mind" is when AI acquires decision-making capabilities equal to humans, and have the capability to recognize and remember emotions, and adjust behavior based on those emotions.
+   <tr align="top"><td> Vision </td><td> "CognitiveServices"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Vision </td><td> "ComputerVision"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Vision </td><td> "CustomVision.Prediction"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Vision </td><td> "CustomVision.Training"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Vision </td><td> <a href="#Face">Face"</a>
+      </td><td> - </td></tr>
+   <tr align="top"><td> Vision </td><td> FormRecognizer
+      </td><td> - </td></tr>
+   <tr align="top"><td> Vision </td><td> ?InkRecognizer?
+      </td><td> - </td></tr>
 
-   * "self-aware", also called artificial superintelligence (ASI), is "sentient" understanding of of its own needs and desires.
+   <tr align="top"><td> Search </td><td> "Bing.CustomSearch"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Search </td><td> "Bing.Search.v7"
+      </td><td> - </td></tr>
+
+   <tr align="top"><td> ? </td><td> "Internal.AllInOne"
+      </td><td> - </td></tr>
+   <tr align="top"><td> ? </td><td> "MetricsAdvisor"
+      </td><td> - </td></tr>
+   </table>
+
+DO THIS: Select <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">each "offer" (service) in the Cognitive Services pricing page</a> 
+to see the amount of <strong>free</strong> versus standard.
 
 <hr />
 
@@ -445,71 +538,6 @@ Tim Warner's <a target="_blank" href="https://github.com/timothywarner/ai100">ht
 
 Others:
 * autoprice.py
-
-
-1. List kinds of Cognitive Services using CLI command:
-
-   <pre>az cognitiveservices account list-kinds</pre>
-
-   Kinds with ? are known in websites but not listed by the command above.
-
-   <table border="1" cellpadding="4" cellspacing="0">
-   <tr valign="bottom"><th> Category </th><th> Kind </th><th> Description </th></tr>
-   <tr align="top"><td> Decision </td><td> "AnomalyDetector"
-      </td><td> automatically detect errors or unusual activity in a system </td></tr>
-   <tr align="top"><td> Decision </td><td> "ContentModerator"
-      </td><td> - </td></tr>
-   <tr align="top"><td> Decision </td><td> "Personalizer"
-      </td><td> - </td></tr>
-
-   <tr align="top"><td> Language </td><td> "FormRecognizer"
-      </td><td> - </td></tr>
-   <tr align="top"><td> Language </td><td> "LUIS"
-      </td><td> - </td></tr>
-   <tr align="top"><td> Language </td><td> "LUIS.Authoring"
-      </td><td> - </td></tr>
-   <tr align="top"><td> Language </td><td> <a href="#QnA_Maker">"QnAMaker"</a>
-      </td><td> - </td></tr>
-   <tr align="top"><td> Language </td><td> <a href="#QnA_Maker">"QnAMaker.v2"</a>
-      </td><td> - </td></tr>
-   <tr align="top"><td> Language </td><td> "TextAnalytics"
-      </td><td> - </td></tr>
-   <tr align="top"><td> Language </td><td> "TextTranslation"
-      </td><td> - </td></tr>
-
-   <tr align="top"><td> Speech </td><td> "SpeechServices"
-      </td><td> - </td></tr>
-   <tr align="top"><td> Speech </td><td> "SpeakerRecognition?
-      </td><td> - </td></tr>
-
-   <tr align="top"><td> Vision </td><td> "CognitiveServices"
-      </td><td> - </td></tr>
-   <tr align="top"><td> Vision </td><td> "ComputerVision"
-      </td><td> - </td></tr>
-   <tr align="top"><td> Vision </td><td> "CustomVision.Prediction"
-      </td><td> - </td></tr>
-   <tr align="top"><td> Vision </td><td> "CustomVision.Training"
-      </td><td> - </td></tr>
-   <tr align="top"><td> Vision </td><td> <a href="#Face">Face"</a>
-      </td><td> - </td></tr>
-
-   <tr align="top"><td> Vision </td><td> ?FormRecognizer?
-      </td><td> - </td></tr>
-   <tr align="top"><td> Vision </td><td> ?InkRecognizer?
-      </td><td> - </td></tr>
-
-   <tr align="top"><td> Search </td><td> "Bing.CustomSearch"
-      </td><td> - </td></tr>
-   <tr align="top"><td> Search </td><td> "Bing.Search.v7"
-      </td><td> - </td></tr>
-
-   <tr align="top"><td> ? </td><td> "ImmersiveReader"
-      </td><td> - </td></tr>
-   <tr align="top"><td> ? </td><td> "Internal.AllInOne"
-      </td><td> - </td></tr>
-   <tr align="top"><td> ? </td><td> "MetricsAdvisor"
-      </td><td> - </td></tr>
-   </table>
 
 
 <a name="CLI"></a>
@@ -918,11 +946,13 @@ DEMO: <a target="_blank" href="https://www.microsoft.com/en-us/ai/seeing-ai?rtc=
    * <a target="_blank" href="https://azure.microsoft.com/en-us/services/media-services/video-indexer/">Video Indexer service</a> analyzes the visual and audio channels of a video, and indexes its content.
    <br /><br />
 
-Custom vision has two project types:
+Custom vision has two <strong>project types</strong>:
    * <strong>Image classification</strong> is a machine-learning based form of computer vision in which a model is trained to categorize images based on their (class or) primary subject matter they contain. 
    * <strong>Object detection</strong> goes further than classification to classify individual objects within the image, and to return the coordinates of a bounding box that indicates the object's location.
    <br /><br />
 
+
+<a name="ComputerVision"></a>
 
 ### Computer Vision
 
@@ -932,24 +962,11 @@ Custom vision has two project types:
 
    ![az-ai-produce-objects-372x278](https://user-images.githubusercontent.com/300046/116675643-46d2ab00-a963-11eb-804a-9b1dd5fb6161.png)
 
-
-#### Video Indexer demo app
-
-1. In a browser, go to the Video Indexer URL:
-
-   <a target="_blank" href="https://www.videoindexer.ai/account/login/">
-   https://www.videoindexer.ai</a>
-
-1. Click the provider to login.
-1. In "Media files", click "Samples", and click on a video file to Play.
-1. See the media's people, topics (keywords).
-
-1. Click a tag to see where it was mentioned in the timeline.
-
-1. In "Model customizations"
-1. In "Account settings"
-1. <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/video-indexer/">PRICING</a>: up to 10 hours (600 minutes) of free indexing to website users and up to 40 hours (2,400 minutes) of free indexing to API users. Media reserved units are pre-paid. See <a target="_blank" href="https://docs.microsoft.com/en-us/azure/media-services/video-indexer/faq">FAQ</a>
-   <br /><br />
+* Read the text in the image
+* Detects Objects
+* Identifies Landmarks
+* Categorize image
+<br /><br />
 
 
 #### Computer Vision demo
@@ -999,7 +1016,8 @@ Custom vision has two project types:
 
 1. To take a quiz and get credit, click in the VM "here to complete the Learn module with a Knowledge Check.
 
-<a name="Custome_Vision"></a>
+
+<a name="Custom_Vision"></a>
 
 ### Custom Vision
 
@@ -1012,8 +1030,6 @@ https://www.customvision.ai</a>
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/example-scenario/ai/intelligent-apps-image-processing">DOCS</a>:
 ![az-ai-image-class-623x410](https://user-images.githubusercontent.com/300046/116795191-5a2f6480-aa90-11eb-82fe-52c26e8e3de4.png)
 
-
-
 MS LEARN HANDS-ON LAB: 
 
    https://docs.microsoft.com/en-us/learn/modules/classify-images-custom-vision/3-create-image-classifier
@@ -1021,6 +1037,25 @@ MS LEARN HANDS-ON LAB:
    https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/03%20-%20Object%20Detection.ipynb
 
    <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/56f91f2e778daf14a499f21f">CV API</a>
+
+
+#### Video Indexer demo app
+
+1. In a browser, go to the Video Indexer URL:
+
+   <a target="_blank" href="https://www.videoindexer.ai/account/login/">
+   https://www.videoindexer.ai</a>
+
+1. Click the provider to login.
+1. In "Media files", click "Samples", and click on a video file to Play.
+1. See the media's people, topics (keywords).
+
+1. Click a tag to see where it was mentioned in the timeline.
+
+1. In "Model customizations"
+1. In "Account settings"
+1. <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/video-indexer/">PRICING</a>: up to 10 hours (600 minutes) of free indexing to website users and up to 40 hours (2,400 minutes) of free indexing to API users. Media reserved units are pre-paid. See <a target="_blank" href="https://docs.microsoft.com/en-us/azure/media-services/video-indexer/faq">FAQ</a>
+   <br /><br />
 
 
 <a name="Face"></a>
@@ -1033,6 +1068,13 @@ MS LEARN HANDS-ON LAB:
 Azure "Face" is used to build face detection and facial recognition solutions.
 
 There is a 6 MB limit on the size of files (jpeg, png, gif, bmp).
+
+It's service functions:
+   * Face Detection
+   * Find similar faces
+   * Person identification
+   * Face Verification
+   <br /><br />
 
    NOTE: On June 11, 2020, Microsoft announced that it will not sell facial recognition technology to police departments in the United States until strong regulation, grounded in human rights, has been enacted. As such, customers may not use facial recognition features or functionality included in Azure Services, such as Face or Video Indexer, if a customer is, or is allowing use of such services by or for, a police department in the United States.
 
@@ -1065,6 +1107,7 @@ https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/05%20-%20Optical%20
    * Image classification - https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/01%20-%20Image%20Analysis%20with%20Computer%20Vision.ipynb
 
    * Object detection -  https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/02%20-%20Image%20Classification.ipynb
+
 
 <hr />
 
@@ -1212,7 +1255,7 @@ Bots are extended by <a target="_blank" href="https://microsoft.github.io/botfra
 
 1. Add file
 
-1. chit-chat: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/how-to/chit-chat-knowledge-base?tabs=v1">Adding "chit-chat"</a> to your knowledge base (by selecting a personality) automatically adds questions and responses to your knowledge base, which enables your bot to answer small-talk questions in a voice that fits your brand. 
+1. chit-chat: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/how-to/chit-chat-knowledge-base?tabs=v1">Adding "chit-chat"</a> to your knowledge base (by selecting a personality) automatically adds questions and responses to your knowledge base, which enables your bot to answer small-talk questions in a voice (personality) of your choice:
    * None
    * Professional << select this.
    * Friendly
@@ -1249,6 +1292,10 @@ Bots are extended by <a target="_blank" href="https://microsoft.github.io/botfra
 
    provides a platform for creating, publishing, and managing bots. Developers can use the Bot Framework to create a bot and manage it with Azure Bot Service - integrating back-end services like QnA Maker and LUIS, and connecting to channels for web chat, email, Microsoft Teams, and others.
 
+   Microsoft Bot Framework supports two <a target="_blank" href="https://docs.microsoft.com/en-us/azure/bot-service/bot-service-design-pattern-handoff-human?view=azure-bot-service-4.0">approaches to integrate bots</a> with agent engagement platforms such as Customer support service: 
+   * Bot as agent distributes calls to bots on the same level as live (human) agents. Handoff protocols regulate a bot's disengagement and transfer to live person.
+   * Bot as proxy presents a bot to filter interaction with live people.
+
 1. DEMO: See a healthcare bot built using the Azure Bot Service:
 
    <a target="_blank"" href="
@@ -1258,7 +1305,7 @@ Bots are extended by <a target="_blank" href="https://microsoft.github.io/botfra
    Select the option to Try a demo of an example end-user experience.
    Use the web chat interface to interact with the bot.
 
-1. View the Python Jupyter notebook
+Run the Python Jupyter notebook
 
    https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/11%20-%20QnA%20Bot.ipynb
 

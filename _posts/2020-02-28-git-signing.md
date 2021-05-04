@@ -82,6 +82,11 @@ The alternatives:
 
    * <a href="#GitKraken">Install GitKraken app and sign</a>
 
+Enterprises would use a system to install for all users, such as:
+   * JAMF for macOS machines
+   * Microsoft InTune for Windows laptops.
+   <br /><br />
+
 
 <a name="install_gpg-suite"></a>
 
