@@ -16,20 +16,30 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This article is a step-by-step tutorial on how to setup and use GPG signatures for Git to sign commits and tags, for non-repudiation. Git tags are associated with releases. 
+This article is a step-by-step tutorial on how to setup and use GPG signatures for Git to sign commits and tags, for non-repudiation.
 
-The contribution of this article is the logical ordering of <strong>deep-dive</strong> concepts presented in a succint way, as a hands-on narrated scenic tour. "PROTIP" flags advice from hard-won experience such as relevant keyboard shortcuts and things to remember, available only here for you.
+<img align="right" width="413" height="262" alt="git-signing-ale-413x262" src="https://user-images.githubusercontent.com/300046/116947094-1d52a180-ac39-11eb-99c0-a76e793f0b8e.png">
+> "If you ... want to verify that commits are actually from a trusted source, Git has a few ways to sign and verify work using GPG." -<a target="_blank" href="https://git-scm.com/docs/git-show-ref">git-scm.com/show-ref command</a>
 
-## Why?
+The workflow aside from the <a href="#Variations">tooling variations (described below)</a>:
 
- > "If you ... want to verify that commits are actually from a trusted source, Git has a few ways to sign and verify work using GPG." -<a target="_blank" href="https://git-scm.com/docs/git-show-ref">git-scm.com/show-ref command</a>
-
-Protect Your Git Repositories From Commit Forgery Using Signing<a target="_blank" href="https://medium.com/@rwbutler/signing-commits-using-gpg-on-macos-7210362d15">*</a>
+   1. <a href="#Installers">Install apps and programs locally</a>
+   2. <a href="#Config">Optionally: Set up Git to sign all commits</a>
+   3. Add public GPG key to GitHub
+   4. <a href="#GenKeys">Generate</a> and <a href="#ListKeys">list keys</a>
+   6. <a href="#SignCommits">Sign Git commits and merges</a>
+   7. <a href="#SignGitTags">Sign Git tags</a>
+   8. Import key to GPG on another host
+   <br /><br />
 
 BONUS: Since we're using GPG, here are also <a href="#EncryptFiles">notes about signing of whole files using GPG</a>.
 
+The contribution of this article is the logical ordering of <strong>deep-dive</strong> concepts presented in a succint way, as a hands-on narrated scenic tour. "PROTIP" flags advice from hard-won experience such as relevant keyboard shortcuts and things to remember, available only here for you.
 
-## Decisions
+
+<a name="Variations"></a>
+
+## Decisions: Variations
 
 There are several variations (decisions) regarding the workflow to use:
 
@@ -40,16 +50,6 @@ There are several variations (decisions) regarding the workflow to use:
    * The secret-keeping service (macOS Keychain, GPG, Yubikey, <a href="#Keybase">Keybase.io</a>, <a href="#SelfService">employer-specified</a>, etc.)
    * Whether to sign every commit or just git tags per release
    <br /><br />
-
-The steps:
-
-   1. Install apps and programs locally
-   2. Set up Git to sign all commits
-   3. Add public GPG key to GitHub
-   4. <a href="#ListKeys">List keys</a>
-   5. Sign Git commits
-   6. Sign Git tags
-   7. Import key to GPG on another host
 
 
 <a name="SelfService"></a>
@@ -260,7 +260,8 @@ no-emit-version
 
 ### Install Windows GUI 
 
-TBD.
+TODO: 
+
 
 <a name="InstallWindowsCLI"></a>
 
@@ -276,7 +277,8 @@ TBD.
 
    <tt>choco install gpg4win</tt>
 
-1. Proceed to <a href="#Config">Configuration</a>
+1. Proceed to <a href="#Config">Configuration (below)</a>.
+
 
 <hr />
 
@@ -315,14 +317,17 @@ TBD.
 
 <hr />
 
+<a name="GenKeys"></a>
+
 ## Generate and store keys
 
 There are several places you can store GPG keys securely:
 
    * On your local drive (which will be lost if your laptop dies or get lost)
+   * <a href="#hashicorp-vault">Hashicorp Vault</a>
    * <a href="#Keybase">Keybase cloud (below)</a>
 
-   * <a href="#hashicorp-vault">Hashicorp Vault</a>
+TODO:
    * Azure KeyVault?
    * AWS ?
    * Google Cloud?
@@ -335,8 +340,6 @@ There are several places you can store GPG keys securely:
 ### Hashicorp Vault
 
 
-https://github.com/martinbaillie/vaultsign
-
 1. In a Terminal, run my script to install and configure:
 
    <pre>sh ...
@@ -344,7 +347,9 @@ https://github.com/martinbaillie/vaultsign
 
 Specifically, my script does the following:
 
-1. Install Hashicorp Vault program on your machine and display the program's version. 
+1. Install Hashicorp Vault program on your machine and display the program's version, such as:
+
+   <pre>Vault v1.6.0 ('7ce0bd9691998e0443bc77e98b1e2a4ab1e965d4+CHANGES')</pre>
 
 1. Enable Vault's ssh engine:
  
@@ -419,6 +424,15 @@ git verify-tag test
 
 1. Verify that green checkmark next to your name on GitHub.
 
+References:
+   * https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work
+   * https://docs.github.com/en/github/authenticating-to-github/signing-commits
+   * https://withblue.ink/2020/05/17/how-and-why-to-sign-git-commits.html
+   * https://medium.com/hashicorp-engineering/securing-github-access-with-hashicorp-vault-c25ab8f5d5ea
+   * https://github.com/martinbaillie/vaultsign
+   * https://oteemo.com/hashicorp-vault-is-overhyped-and-mozilla-sops-with-kms-and-git-is-massively-underrated/
+
+<hr />
 
 <a name="Keybase"></a>
 
@@ -1130,9 +1144,10 @@ Users may want this level of verification for security reasons. Especially if th
 
 ### Standard signing
 
-Standard signing and clear signing both affects the cleartext file itself. 
-Standard signing is used with encryption. 
-Clear signing wraps the input with plaintext signature. 
+Standard signing and clear signing both create ciphertext from the cleartext input file:
+   * Standard signing is used with encryption. 
+   * Clear signing wraps the input with a plaintext signature. 
+   <br /><br />
 
 1. To sign a plaintext file with your secret key:
 
@@ -1155,13 +1170,11 @@ Clear signing wraps the input with plaintext signature.
    <pre><strong>gpg -o outputfile ciphertextfile</strong></pre>
 
 
+<hr />
 
 ## Resources
 
 This article was the result of consulting several sources of information:
-
-Explanation of gpg program parameters are at:
-<a target="_blank" href="https://www.gnupg.org/documentation/manuals/gnupg/GPG-Input-and-Output.html">https://www.gnupg.org/documentation/manuals/gnupg/GPG-Input-and-Output.html</a>
 
 As with all things Git, the canonical documentation is at git-scm.
 Regarding Git signing:
@@ -1175,6 +1188,11 @@ https://help.github.com/en/github/authenticating-to-github/telling-git-about-you
 <a target="_blank" href="
 https://help.github.com/en/enterprise/2.17/user/github/authenticating-to-github/signing-commits">
 https://help.github.com/en/enterprise/2.17/user/github/authenticating-to-github/signing-commits</a>
+
+Explanation of gpg program parameters are at:
+<a target="_blank" href="https://www.gnupg.org/documentation/manuals/gnupg/GPG-Input-and-Output.html">https://www.gnupg.org/documentation/manuals/gnupg/GPG-Input-and-Output.html</a>
+
+<a target="_blank" href="https://medium.com/@rwbutler/signing-commits-using-gpg-on-macos-7210362d15">Protect Your Git Repositories From Commit Forgery Using Signing</a>
 
 <a target="_blank" href="
 https://confluence.atlassian.com/bitbucketserver/using-gpg-keys-913477014.html">
@@ -1195,7 +1213,6 @@ quotes
 https://wiki.gentoo.org/wiki/GnuPG#Changing_pinentry_for_SSH_logins/">
 https://wiki.gentoo.org/wiki/GnuPG#Changing_pinentry_for_SSH_logins</a>
 
-
 <a target="_blank" href="
 https://ice-blog.readthedocs.io/en/latest/tutorial/encrypt/gpg/">
 https://ice-blog.readthedocs.io/en/latest/tutorial/encrypt/gpg</a>
@@ -1208,9 +1225,7 @@ https://jigarius.com/blog/signing-git-commits</a>
 https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e">
 https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e</a>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=KhROpuxHyH8">VIDEO</a>:
-[Git/GitHub] Signing your commits in GitHub -- Getting the verified badge on your commits</a>
-Jul 7, 2018
+<a target="_blank" href="https://www.youtube.com/watch?v=KhROpuxHyH8" title="Jul 7, 2018">VIDEO</a>: [Git/GitHub] Signing your commits in GitHub -- Getting the verified badge on your commits</a>
 
 <a target="_blank" href="https://mikegerwitz.com/2012/05/a-git-horror-story-repository-integrity-with-signed-commits">
 A Git Horror Story: repository integrity with signed commits</a>
