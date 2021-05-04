@@ -56,7 +56,7 @@ To practice, use a virtual machine (VMWare Fusion, Vagrant, or Virtualbox).
 1. ~/.bash_profile
 1. ~/.zsh 
 
-1. brew cask install visual-studio-code
+1. brew install --cask visual-studio-code
 1. code [editor to bring up folder and edit files]
 
 1. brew install curl jq

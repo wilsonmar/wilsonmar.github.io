@@ -264,7 +264,7 @@ PROTIP: If you are using a Mac, get a separate monitor of 1900x1080 (Full HD) re
 
 19. Create one image for each step in the process. On my Mac I press command+shift+3.
 
-    <pre>brew cask install ImageOptim</pre>
+    <pre>brew install --cask ImageOptim</pre>
 
     By default, the Mac stores png files on the Desktop.
 

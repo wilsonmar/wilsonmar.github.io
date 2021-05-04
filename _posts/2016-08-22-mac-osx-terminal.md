@@ -167,7 +167,7 @@ To customize Hyper, add the name of <a target="_blank" href="https://github.com/
 Many prefer to install and use <strong>iTerm2</strong> instead of the built-in Terminal program.
 Install iTerm2 using Homebrew:
 
-   <pre><strong>brew cask install iterm2
+   <pre><strong>brew install --cask iterm2
    </strong></pre>
 
 Terminal does not support but iTerm2 does support dividing the CLI into several rectangular "panes", each of which is a different terminal session:

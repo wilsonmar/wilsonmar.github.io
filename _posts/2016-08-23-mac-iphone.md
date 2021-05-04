@@ -69,7 +69,7 @@ PROTIP: Store maps of public transportation routes and timetables on your mobile
 1. PROTIP: To share files containing music, contacts, notes, videos, ringtones, etc. install the $39.95 <strong>AnyTrans</strong> on Mac:
 
    <pre>
-   brew cask install anytrans
+   brew install --cask anytrans
    </pre>
 
    Alternately:

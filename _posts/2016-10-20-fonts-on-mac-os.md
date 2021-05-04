@@ -48,7 +48,7 @@ Tapped 0 formulae (1,156 files, 945.1KB)
 
 3. For each font you want installed. The most popular are:
 
-   <tt><strong>brew cask install font-open-sans
+   <tt><strong>brew install --cask font-open-sans
    </strong></tt>
 
    PROTIP: This draws from font-open-sans.rb at
@@ -249,7 +249,7 @@ https://github.com/tonsky/FiraCode</a>
 
 
 <pre>brew tap homebrew/cask-fonts
-brew cask install font-fira-code
+brew install --cask font-fira-code
 </pre>
 
 The response at time of writing:

@@ -43,7 +43,7 @@ is to use [Homebrew](/macos-homebrew/) to
 
 0. Use brew cask to install GUI programs:
 
-   <pre><strong>brew cask install eclipse-java
+   <pre><strong>brew install --cask eclipse-java
    </strong></pre>
 
    The response (as of 24 July 2017):
@@ -111,7 +111,7 @@ PROTIP: Use the Homebrew module for the Spring Tools Suite (STS) for Mac.
 
 1. In a Terminal:
 
-   <pre><strong>brew cask install sts
+   <pre><strong>brew install --cask sts
    </strong></pre>
 
    The response (as of 29 Feb 2018):

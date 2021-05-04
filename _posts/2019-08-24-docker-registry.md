@@ -163,7 +163,7 @@ For install instructions, see <a target="_blank" href="https://docs.docker.com/r
 
 1. Get the Docker GUI client on your Mac:
 
-   <pre><strong>brew cask install docker
+   <pre><strong>brew install --cask docker
    </strong></pre>
 
 ### Private Registry

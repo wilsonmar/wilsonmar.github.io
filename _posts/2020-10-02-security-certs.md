@@ -172,6 +172,7 @@ ISC2.org (a non-profit), publishes a Code of Ethics at <a target="_blank" href="
 
 ### CISSP
 
+<img align="right" alt="CISSP-logo- Square-131x131" width="131" height="131" src=https://user-images.githubusercontent.com/300046/116986846-8531d800-ac8b-11eb-83af-651083c07bb3.png">
 <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CISSP">CISSP (Certified Information Systems Security Professional) is a sought-after certification on leadership in cybersecurity. It is the "gold standard" of vendor-neutral cybersecurity certifications. Earning it proves you understand cybersecurity from a management viewpoint -— a requirement if your organization is subject to PCI, GDPR, HIPAA, SOX, ISO 27001, or other regulations. 
 
 The first version of the Common Body of Knowledge (CBK) was finalized in 1992 and the CISSP credential was launched in 1994.

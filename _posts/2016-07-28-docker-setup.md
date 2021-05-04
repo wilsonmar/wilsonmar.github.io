@@ -292,7 +292,7 @@ https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
 0. Install the Stable version of Homebrew:
 
-   <tt><strong>brew cask install docker && docker ps
+   <tt><strong>brew install --cask docker && docker ps
    </strong></tt>
  
    If one was already installed, it is replaced:

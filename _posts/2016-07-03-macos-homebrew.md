@@ -629,7 +629,7 @@ says tap adds to the list of formulae that brew tracks, updates, and installs fr
 
 <a name="CaskInstall"></a>
 
-## Brew Cask Install #
+## brew install --cask #
 
 Homebrew cask extends homebrew and brings its elegance, simplicity, and speed to 
 MacOS (OS X) <strong>GUI</strong> applications and large binaries.
@@ -727,7 +727,7 @@ end{% endhighlight %}
 
 0. Install the cask:
 
-   <tt><strong>brew cask install google-chrome
+   <tt><strong>brew install --cask google-chrome
    </strong></tt>
 
    Cask downloads then moves the app to the ~/Applications folder,
@@ -778,7 +778,7 @@ end{% endhighlight %}
 
 <a target="_blank" href="https://www.cakebrew.com/">https://www.cakebrew.com/</a> is a GUI to help manage Homebrew packages:
 
-   <pre><strong>brew cask install cakebrew</strong></pre>
+   <pre><strong>brew install --cask cakebrew</strong></pre>
 
 
 ## Analytics off

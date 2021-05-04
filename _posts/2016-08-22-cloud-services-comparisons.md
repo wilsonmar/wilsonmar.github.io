@@ -55,10 +55,13 @@ Evaluations can be based on the advantages of cloud:
 PROTIP: Memorize the above list for exams.
 
 Amazon's "Well Architected" notes the constraints removed by being in the cloud:
+   * Test production at scale 
+   * Make experimentation easier (overcome fear of change)
+   * Allow architecture to evolve (rather than being frozen in time)
+   <br /><br />
 
-* Test production at scale 
-* Make experimentation easier (overcome fear of change)
-* Allow architecture to evolve (rather than being frozen in time)
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone">Microsoft calls "Landing Zones"</a> the output of a multisubscription Azure environment that accounts for scale, security, governance, networking, and identity. Azure Landing Zones enable application migrationa and greenfield development at enterprise-scale in Azure. These zones consider all platform resources required to support the customer's application portfolio and don't differentiate between infrastructure as a service or platform as a service.
+
 
 Despite all the good reasons, organization may still "drag their heels" until ...
 

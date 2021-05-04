@@ -1446,7 +1446,7 @@ Among his brilliantly clear YouTube <a target="_blank" href="https://www.youtube
 * <a target="_blank" href="https://www.youtube.com/watch?v=KLEDKgMmbBI">
    Using the Stash Command</a> Apr 17, 2015 [10:32]
 * <a target="_blank" href="https://www.youtube.com/watch?v=iCGrKFH2oeo">
-   Diff and Merge Tools</a> Apr 28, 2015 [9:37] show install of brew cask install diffmerge
+   Diff and Merge Tools</a> Apr 28, 2015 [9:37] show install of brew install --cask diffmerge
 * <a target="_blank" href="https://www.youtube.com/watch?v=iCGrKFH2oeo">
    Change DiffMerge Font-Size on Mac OSX</a> Apr 28, 2015 [2:13]
 * <a target="_blank" href="https://www.youtube.com/watch?v=iCGrKFH2oeo">

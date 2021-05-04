@@ -30,7 +30,7 @@ Here is a tutorial on how to develop an Android apk file on a Mac.
 5. Use Homebrew to install Java:
 
    <pre><strong>
-   brew cask install caskroom/versions/java8
+   brew install --cask caskroom/versions/java8
    </strong></pre>
 
 6. Use Homebrew to install tools used for Android dev :
@@ -54,7 +54,7 @@ Here is a tutorial on how to develop an Android apk file on a Mac.
 8. Use Homebrew to install the Android Software Development Kit (sdk):
 
    <pre><strong>
-   brew cask install android-sdk
+   brew install --cask android-sdk
    </strong></pre>
 
    This takes several minutes. Just wait while "Installing Cask android-sdk".
@@ -62,7 +62,7 @@ Here is a tutorial on how to develop an Android apk file on a Mac.
 6. Use Homebrew to install the Android Native Development Kit (ndk):
 
    <pre><strong>
-   brew cask install android-ndk
+   brew install --cask android-ndk
    </strong></pre>
 
 0. Install all the Android SDK components:
@@ -115,7 +115,7 @@ export PATH=$ANDROID_HOME/build-tools/19.1.0:$PATH
 0. Install Android Studio:
 
    <pre><strong>
-   brew cask install android-studio
+   brew install --cask android-studio
    </strong></pre>
 
    Alternately, see http://macappstore.org/android-studio/

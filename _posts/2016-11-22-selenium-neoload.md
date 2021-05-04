@@ -129,7 +129,7 @@ Dockerized server image</a> in the Google Container Engine public cloud.
    Alternately, on a Mac, a Homebrew package of it is available:
 
    <tt><strong>brew tap caskroom/cask;
-   brew cask install google-cloud-sdk
+   brew install --cask google-cloud-sdk
    </strong></tt>
 
 0. Use `gcloud` to install `kubectl`, the Kubernetes command-line tool:

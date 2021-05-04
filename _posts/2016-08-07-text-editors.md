@@ -1180,7 +1180,7 @@ using [Homebrew](/macos-homebrew/):
 
    <tt><strong>
    brew update<br />
-   brew cask install eclipse-java
+   brew install --cask eclipse-java
    </strong></tt>
 
    The response:

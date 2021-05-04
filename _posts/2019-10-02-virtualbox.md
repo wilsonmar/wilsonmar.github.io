@@ -101,7 +101,7 @@ Below is a description of each steps, in GUI and CLI.
 
 1. Use Homebrew to install both GUI app and CLI programs from one installer:
 
-   <pre><strong>brew cask install virtualbox</strong></pre>
+   <pre><strong>brew install --cask virtualbox</strong></pre>
 
    Sample response:
 

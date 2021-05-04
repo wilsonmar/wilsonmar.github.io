@@ -256,7 +256,7 @@ If you're on a Mac, all the manual steps described below are automatically perfo
 
    <pre><strong>
    brew tap caskroom/versions
-   brew cask install java8
+   brew install --cask java8
    </strong></pre>
 
    The response:

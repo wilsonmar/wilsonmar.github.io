@@ -38,11 +38,19 @@ https://docs.microsoft.com/en-us/cognitive-toolkit/index">"Cognitive Toolkit" (C
    * Hyper-parameters are a separate module (alongside Network and reader) to perform SGD (stochastic-gradient descent).
    <br /><br />
 
-[<a target="_blank" href="https://www.microsoft.com/en-us/research/publication/serving-dnns-real-time-datacenter-scale-project-brainwave/">
-This pdf</a> white paper says the "high-performance, precision-adaptable FPGA soft processor is at the heart of the system, achieving up to 39.5 TFLOPs of effective performance at Batch 1 on a state-of-the-art Intel Stratix 10 FPGA."
-Microsoft's use of field programmable gate arrays (FPGA) calculates AI reportedly "five times faster than Google's TPU hardware".
+Microsoft has advanced hardware:
 
-   <ul>"Each FPGA operates in-line between the server’s network interface card (NIC) and the top-of-rack (TOR) switch, enabling in-situ processing of network packets and point-to-point connectivity between hundreds of thousands of FPGAs at low latency (two microseconds per switch hop, one-way)."</ul>
+   <ul>[<a target="_blank" href="https://www.microsoft.com/en-us/research/publication/serving-dnns-real-time-datacenter-scale-project-brainwave/">
+   This pdf</a> white paper says the "high-performance, precision-adaptable FPGA soft processor is at the heart of the system, achieving up to 39.5 TFLOPs of effective performance at Batch 1 on a state-of-the-art Intel Stratix 10 FPGA."
+   Microsoft's use of field programmable gate arrays (FPGA) calculates AI reportedly "five times faster than Google's TPU hardware".
+
+   "Each FPGA operates in-line between the server’s network interface card (NIC) and the top-of-rack (TOR) switch, enabling in-situ processing of network packets and point-to-point connectivity between hundreds of thousands of FPGAs at low latency (two microseconds per switch hop, one-way)."
+   </ul>
+
+
+<a target="_blank" href="
+https://gallery.azure.ai/">
+https://gallery.azure.ai</a>
 
 <hr />
 
@@ -125,7 +133,7 @@ Tim Warner has created several video courses on AI-900 and AI-100:
    * OReilly.com references<br /><a target="_blank" href="https://github.com/timothywarner/ai100">https://github.com/timothywarner/ai100</a>
 
 
-* <a target="_blank" href="https://cloudacademy.com/learning-paths/ai-900-exam-preparation-microsoft-azure-ai-fundamentals-1968/">CloudAcademy's AI-900 video course</a> includes lab time (1-2 hours at a time).
+* <a target="_blank" href="https://cloudacademy.com/learning-paths/ai-900-exam-preparation-microsoft-azure-ai-fundamentals-1968/">CloudAcademy's 4h AI-900 video course</a> includes lab time (1-2 hours at a time).
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=E9aarWMLJw0">AI-900 Study Guide - YouTube</a>
 
@@ -223,8 +231,15 @@ But <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microso
 
 <a target="_blank" href="https://www.youtube.com/watch?v=eJOv-TfhhzQ">VIDEO</a>: <a target="_blank" href="https://services.azureml.net/">Azure Machine Learning Studio (classic) Web Services</a>
 
-The Classic version reflected "All Microsoft all the time" with proprietary "pickle" (pkl) files.
+The Classic version reflected "All Microsoft all the time" with proprietary "pickle" (pkl) model files.
 
+<a name="workflows"></a>
+
+## Hybrid workflows
+
+PROTIP: Although most Microsoft's samples and tutorials usually focus on one service at a time, actual production work between input and output enjoyed by users usually involves a <strong>pipeline</strong> of several Azure services. For example: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/example-scenario/ai/news-feed-ingestion-and-near-real-time-analysis">ingesting (stream processing) a newsfeed</a>:
+
+![az-ml-newsfeed-546x623](https://user-images.githubusercontent.com/300046/116988980-6254f300-ac8e-11eb-9901-c2c6f3d8a018.png)
 
 
 <a name="CognitiveServices"></a>
@@ -291,13 +306,16 @@ References:
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/notebooks/quickstart-export-jupyter-notebook-project#use-notebooks-with-azure-machine-learning">DOCS</a>:
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-run-jupyter-notebooks">Run Jupyter Notebooks in a ML workspace</a>
 
-1. GitHub.com now display <tt>.ipynb</tt> (Jupyter notebook) files in internet browsers when you click on "Raw". It may take several seconds to render. For example: 
+1. On an internet browser, view a <tt>.ipynb</tt> (Jupyter notebook) file GitHub.com. It may take several seconds to render. For example: 
 
-   <a target="_blank" href="
+   NOTE: That is adapted from <a target="_blank" href="
    https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/01%20-%20Image%20Analysis%20with%20Computer%20Vision.ipynb">
    https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/01%20-%20Image%20Analysis%20with%20Computer%20Vision.ipynb</a>
+   then removing setup in Azure, so that the Notebook can be cross-platform (also work outside of Azure).
 
    Currently, GitHub does not provide a "run" button when displaying Notebooks.
+
+   For that, you need to create a Cognitive Services instance on Azure, described below.
 
 1. In a Terminal, load a GitHub repo containing notebooks and associated files:
 
@@ -336,8 +354,14 @@ References:
 
 1. Delete the Resource Group and Compute so charges don't accumulate.
 
+References:
+   * The sample Python Notebook is adapted from <a target="_blank" href="
+   https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/01%20-%20Image%20Analysis%20with%20Computer%20Vision.ipynb">
+   https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/01%20-%20Image%20Analysis%20with%20Computer%20Vision.ipynb</a>
+   * https://jupyter-notebook.readthedocs.io/en/stable/security.html
+   <br /><br />
 
-   NOTE:
+NOTE:
    <a target="_blank" href="https://jupyterlab.readthedocs.io/"JypiterLab</a> is <a target="_blank" href="https://towardsdatascience.com/jupyter-lab-evolution-of-the-jupyter-notebook-5297cacde6b">more robust than classic Jupyper</a>:
    * Native Git and GitHub support - https://github.com/jupyterlab/jupyterlab
    * Extensible with <tt>jupyter labextensions install jupyterlab-drawio</tt>
@@ -345,10 +369,22 @@ References:
    * Dark themes
    <br /><br />
 
-   https://jupyter-notebook.readthedocs.io/en/stable/security.html
+
+### Create Cognitive Services
+
+My script does the same as these manual steps:
+
+1. In Portal.azure.com
+1. G+\ Cognitive Services
+1. Click the Name you created.
+1. Click "Keys and Endpoint" in the left menu.
+1. Click the blue icon to the right of KEY 1 heading to copy it to your invisible Clipboard.
+
+1. Endpoint: https://tot.cognitiveservices.azure.com/
 
 
-### Create Compute
+
+
 
    TODO: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-create-manage-compute-instance?tabs=azure-cli">DOCS</a>: Automate above steps to create compute and server startpup script.
 
@@ -454,7 +490,7 @@ Others:
       </td><td> - </td></tr>
    <tr align="top"><td> Vision </td><td> "CustomVision.Training"
       </td><td> - </td></tr>
-   <tr align="top"><td> Vision </td><td> "Face"
+   <tr align="top"><td> Vision </td><td> <a href="#Face">Face"</a>
       </td><td> - </td></tr>
 
    <tr align="top"><td> Vision </td><td> ?FormRecognizer?
@@ -722,16 +758,23 @@ NLP enables the creation of software that can:
    * <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/">Speaker Recognition</a> identifies and verifies the people speaking based on audio.
    <br /><br />
 
+Within Microoft, NLP consists of these Azure services (described below):
+   * <a href="#LUIS">LUIS</a> (Language Understanding Intelligent Service)
+   * <a href="#Text_Analytics">Text Analytics</a>
+   * <a href="#Speech">Speech</a>
+   * <a href="#Translator_Text">Translator Text</a>
+   <br /><br />
 
-   <a name="LUIS"></a>
 
-   ### Language Understanding Intelligent Service (LUIS) 
+<a name="LUIS"></a>
 
-   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-language-model-with-language-understanding/2-get-started">LUIS</a> trains a language model that can understand spoken or text-based commands.
+### Language Understanding Intelligent Service (LUIS) 
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-language-model-with-language-understanding/2-get-started">LUIS</a> trains a language model that can understand spoken or text-based commands. He's Alexa's boyfriend ;)
 
 1. DEMO: <a target="_blank" href="https://www.luis.ai/">https://www.luis.ai</a>
 
-   Separate resources are created for authoring processing from prediction runs so that utilization for the two can be tracked separately.
+   PROTIP: Separate resources are created for authoring processing from prediction runs so that utilization for the two can be tracked separately.
 
 1. DEMO: voice control lighting in a virtual home. 
 
@@ -747,6 +790,15 @@ NLP enables the creation of software that can:
    https://github.com/MicrosoftLearning/AI-102-LUIS contains image files for reference by
    https://github.com/MicrosoftLearning/AI-102-Code-Repos
    https://github.com/MicrosoftLearning/AI-102-Process-Speech
+
+   PROTIP: LUIS does not perform text summarization. That's done by another service in the pipeline.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-language-model-with-language-understanding/1-introduction">Terminology</a>:
+   * <strong>Utterance</strong> is the user's input that a model needs to interpret, such as "turn the lights on".
+   * <strong>Entity</strong> is the word (or phrase) that is the focus of the utterance, such as "light" in our example.
+   * <strong>Intent</strong> is the action or task that the user wants to execute. It reflects in utterance as a goal or purpose. For example, "TurnOn".
+
+
 
    <a name="Text_Analytics"></a>
 
@@ -768,21 +820,25 @@ NLP enables the creation of software that can:
 
 
 
-   ### Sentiment Analysis
+   #### Sentiment Analysis
 
    The output is a number from 0 to 1, with 1 being the most positive language and zero being the most negative opinion expressed.
 
 
-   ### Key phrase extraction
+   #### Key phrase extraction
 
+
+   <a name="Speech"></a>
 
    ### Speech Translation (Speech to text)
    
-   DEMO: <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-translation/">Speech Translation</a> recognizes and synthesizes speech, and translates spoken languages. REMEMBER: The sequence of services:
+   DEMO: <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-translation/">Speech Translation</a> recognizes and synthesizes speech, and translates spoken languages. REMEMBER: The sequence of services involves <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/recognize-synthesize-speech/2-get-started-azure">two APIs</a>:
 
-   Speech-to-Text -> Speech Correction -> Machine Translation -> Text-to-Speech
+   Speech-to-Text API -> Speech Correction -> Machine Translation -> Text-to-Speech API
 
    "Speech Recognition" and Text Analysis are not involved in this use case.
+
+   Telephone voice menus use "Speech Synthesis".
 
    https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/08%20-%20Speech.ipynb
 
@@ -807,17 +863,32 @@ NLP enables the creation of software that can:
    ./az-cog-cli.sh
    </pre>
 
-
-
-   ### Translator Text (text to speech)
-
    To synthesize speech, the system typically tokenizes the text to break it down into individual words, and assigns phonetic sounds to each word. It then breaks the phonetic transcription into <strong>prosodic units</strong> (such as phrases, clauses, or sentences) to create phonemes that will be converted to audio format. These phonemes are then synthesized as audio by applying a voice, which will determine parameters such as pitch and timbre; and generating an audio wave form that can be output to a speaker or written to a file.
-
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-translate">translate text</a> between more than 60 languages.
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support#text-to-speech">Text-to-speech</a>
 
+
+
+   <a name="Translator_Text"></a>
+
+   ### Translator Text (text to speech)
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=6VXuxIBqV94" title="Nov 12, 2020 Text translation in a few lines of Python with Azure Cognitive Services">VIDEO</a>
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=MTkNluHxqq4" title="Analyze text for free with Azure Text Analytics by jen foxbot">VIDEO</a> with sample code at https://github.com/microsoft/text-analytics-walkthrough
+
+
+
+   The Translator endpoint is<br />
+   <tt>https://api.cognitive.microsofttranslator.com/</tt>
+
+   PROTIP: Translator Text does not need a compute instance!
+   A Python program can run from your laptop or mobile phone making API calls to 
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-translate">translate text</a> between more than 60 languages.
+
    <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/09%20-%20Translation.ipynb">Python notebook to Translate</a>
+
 
 <hr />
 
@@ -838,10 +909,6 @@ https://docs.microsoft.com/en-us/learn/modules/read-text-computer-vision/
 
 DEMO: <a target="_blank" href="https://www.microsoft.com/en-us/ai/seeing-ai?rtc=1">Seeing AI app</a> talking camera narrates the world around blind people.
 
-   * <strong>Image classification</strong> is a machine learning based form of computer vision in which a model is trained to categorize images based on their (class or) primary subject matter they contain. 
-
-   * <strong>Object detection</strong> goes further than classification to classify individual objects within the image, and to return the coordinates of a bounding box that indicates the object's location.
-
    * Semantic segmentation is the ML technique which individual pixels in the image are classified according to the object to which they belong.
    * Image analysis
 
@@ -849,6 +916,11 @@ DEMO: <a target="_blank" href="https://www.microsoft.com/en-us/ai/seeing-ai?rtc=
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/overview-ocr">Optical character recognition (OCR)</a> for small amounts of text
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/read-text-computer-vision/2-ocr-azure">The Read API</a> works asynchronously on images with a lot of text, to parse pages, lines, and words.
    * <a target="_blank" href="https://azure.microsoft.com/en-us/services/media-services/video-indexer/">Video Indexer service</a> analyzes the visual and audio channels of a video, and indexes its content.
+   <br /><br />
+
+Custom vision has two project types:
+   * <strong>Image classification</strong> is a machine-learning based form of computer vision in which a model is trained to categorize images based on their (class or) primary subject matter they contain. 
+   * <strong>Object detection</strong> goes further than classification to classify individual objects within the image, and to return the coordinates of a bounding box that indicates the object's location.
    <br /><br />
 
 
@@ -933,6 +1005,10 @@ DEMO: <a target="_blank" href="https://www.microsoft.com/en-us/ai/seeing-ai?rtc=
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/">Custom Vision</a> trains custom image classification and object detection models using custom (your own) images.
 
+<a target="_blank" href="
+https://www.customvision.ai/">
+https://www.customvision.ai</a>
+
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/example-scenario/ai/intelligent-apps-image-processing">DOCS</a>:
 ![az-ai-image-class-623x410](https://user-images.githubusercontent.com/300046/116795191-5a2f6480-aa90-11eb-82fe-52c26e8e3de4.png)
 
@@ -947,9 +1023,16 @@ MS LEARN HANDS-ON LAB:
    <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/56f91f2e778daf14a499f21f">CV API</a>
 
 
+<a name="Face"></a>
+
 ### Azure Face
 
-"Face" is used to build face detection and facial recognition solutions.
+<a target="_blank" href="https://www.youtube.com/watch?v=abhqxG1nSGg">VIDEO</a>:
+<a target="_blank" href="https://www.youtube.com/watch?v=KCSyRO0KotA">API DEMO</a>:
+
+Azure "Face" is used to build face detection and facial recognition solutions.
+
+There is a 6 MB limit on the size of files (jpeg, png, gif, bmp).
 
    NOTE: On June 11, 2020, Microsoft announced that it will not sell facial recognition technology to police departments in the United States until strong regulation, grounded in human rights, has been enacted. As such, customers may not use facial recognition features or functionality included in Azure Services, such as Face or Video Indexer, if a customer is, or is allowing use of such services by or for, a police department in the United States.
 
@@ -964,12 +1047,16 @@ MS LEARN HANDS-ON LAB:
 
    https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/04%20-%20Face%20Analysis.ipynb
 
+<a name="FormRecognizer"></a>
+
 ### Azure Form Recognizer
 
 "Form Recognizer" extracts information from images obtained from scanned forms and invoices.
 
 https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/06%20-%20Receipts%20with%20Form%20Recognizer.ipynb
 
+
+<a name="OCR"></a>
 
 ### OCR
 
@@ -1007,7 +1094,7 @@ https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/concepts/plan
 Bots are extended by <a target="_blank" href="https://microsoft.github.io/botframework-solutions/overview/skills/">Skills</a>
 
 
-   <a href="#QnA_Maker"></a>
+<a href="#QnA_Maker"></a>
 
 ### QnA Maker
 
@@ -1020,7 +1107,7 @@ Bots are extended by <a target="_blank" href="https://microsoft.github.io/botfra
 
    The knowledge base can be built by extracting questions and answers from your semi-structured content, including FAQs, manuals, and documents. 
 
-   QnA Maker limits control the size of Knowledge base.
+   <strong>QnA Maker limits</strong> control the size of Knowledge base.
 
    <a name="QnA_Maker"></a>
 
@@ -1289,7 +1376,6 @@ Loan ChargeOff Prediction with Azure HDInsight Spark Clusters</a>
 
 https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/overview#whats-included-in-the-data-science-vm
 
-
 ## Resources
 
 <ul>
@@ -1301,6 +1387,12 @@ https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-mac
 <li><a target="_blank" href="https://www.microsoft.com/seeing-ai/">Seeing AI application</a></li>
 <li><a target="_blank" href="https://news.microsoft.com/futurecomputed/">The Future Computed book</a></li>
 </ul>
+
+<a target="_blank" href="https://www.meetup.com/Microsoft-AI-ML-Community/?action=join">
+Microsoft AI ML Community in Signapore</a> 
+
+   * Intro to Azure ML by Priyanka S. Shah: <a target="_blank" href="https://www.youtube.com/watch?v=UBY9Hef6p7c&list=PLh6mjs1aVKZ3iZRnwpMjjj8jXBBqRCJJW">Part 1 of 4</a>
+   <br /><br />   
 
 If you have an OReilly.com account:
 

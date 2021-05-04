@@ -3,7 +3,7 @@ layout: post
 title: "Windows on Apple MacOS laptops"
 excerpt: "RDP to EC2, Amazon WorkSpaces, Vagrant, BootCamp, VMWare Fusion, Docker"
 tags: [apple, mac, setup, VMWare, Fusion]
-date: "2016-08-01"
+date: "2021-05-01"
 file: "windows-on-apple-mac-osx"
 image:
 # feature: pic gray apple logo 1900x500.jpg
@@ -432,7 +432,7 @@ Updated 1 tap (homebrew/core).
 ==> Updated Formulae
 notmuch                                                        pwntools                                                       todoman
 &nbsp;
-==> brew cask install Caskroom/cask/virtualbox 
+==> brew install --cask Caskroom/cask/virtualbox 
 ==> Satisfying dependencies
 ==> Downloading http://download.virtualbox.org/virtualbox/5.1.26/VirtualBox-5.1.26-117224-OSX.dmg
 ######################################################################## 100.0%
@@ -460,7 +460,7 @@ Updating Homebrew...
 Updated 1 tap (caskroom/cask).
 No changes to formulae.
 &nbsp;
-==> brew cask install Caskroom/cask/virtualbox-extension-pack 
+==> brew install --cask Caskroom/cask/virtualbox-extension-pack 
 ==> Caveats
 Installing this Cask means you have AGREED to the
 VirtualBox Personal Use and Evaluation License at
@@ -487,7 +487,7 @@ All Cask dependencies satisfied.
    The response at time of writing:
 
    <pre>
-==> brew cask install Caskroom/cask/vagrant 
+==> brew install --cask Caskroom/cask/vagrant 
 ==> Satisfying dependencies
 ==> Downloading https://releases.hashicorp.com/vagrant/2.0.0/vagrant_2.0.0_x86_64.dmg
 ######################################################################## 100.0%
@@ -509,7 +509,7 @@ All Cask dependencies satisfied.
    The response at time of writing:
 
    <pre>
-==> brew cask install Caskroom/cask/vagrant-manager 
+==> brew install --cask Caskroom/cask/vagrant-manager 
 ==> Satisfying dependencies
 ==> Downloading https://github.com/lanayotech/vagrant-manager/releases/download/2.5.4/vagrant-manager-2.5.4.dmg
 ######################################################################## 100.0%
@@ -905,7 +905,7 @@ macfusion-ng                                  vmware-fusion-tech-preview        
 
 1. Install the latest version of VMWare Fusion:
 
-   <pre><strong>brew cask install vmware-fusion</strong></pre>
+   <pre><strong>brew install --cask vmware-fusion</strong></pre>
 
    <a target="_blank" href="https://developer.apple.com/library/content/technotes/tn2459/_index.html">  https://developer.apple.com/library/content/technotes/tn2459/_index.html</a>
 

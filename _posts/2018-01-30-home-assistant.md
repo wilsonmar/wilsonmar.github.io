@@ -74,7 +74,7 @@ Home Assistant is not "plug-and-play" software.
 
 1. Instead of going to <a target="_blank" href="https://www.balena.io/etcher/">https://www.balena.io/etcher</a>
 
-   <pre><strong>brew cask install balenaetcher</strong></pre>
+   <pre><strong>brew install --cask balenaetcher</strong></pre>
 
 1. Burn 64GB chip using Etcher.
 1. Power up the Pi.

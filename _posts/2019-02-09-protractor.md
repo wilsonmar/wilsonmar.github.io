@@ -58,8 +58,8 @@ Other components are described as we install each:
 
 1. Install browser UI apps for cross-browser testing. On Macs:
 
-   <pre>brew cask install google-chrome
-   brew cask install firefox
+   <pre>brew install --cask google-chrome
+   brew install --cask firefox
    </pre>
 
    Alternately, on Windows:
@@ -131,7 +131,7 @@ Other components are described as we install each:
 1. Install Java8 using a package manager. On Mac, use Homebrew:
 
    <pre><strong>brew tap caskroom/versions
-   brew cask install java8
+   brew install --cask java8
    </strong></pre>
 
    You'll need to input your password.

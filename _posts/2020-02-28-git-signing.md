@@ -21,20 +21,22 @@ This article is a step-by-step tutorial on how to setup and use GPG signatures f
 <img align="right" width="413" height="262" alt="git-signing-ale-413x262" src="https://user-images.githubusercontent.com/300046/116947094-1d52a180-ac39-11eb-99c0-a76e793f0b8e.png">
 > "If you ... want to verify that commits are actually from a trusted source, Git has a few ways to sign and verify work using GPG." -<a target="_blank" href="https://git-scm.com/docs/git-show-ref">git-scm.com/show-ref command</a>
 
+The contribution of this article is the logical ordering of <strong>deep-dive</strong> concepts presented in a succint way, as a hands-on narrated scenic tour. "PROTIP" flags advice from hard-won experience such as relevant keyboard shortcuts and things to remember, available only here for you.
+
+## TL;DR Generic workflow
+
 The workflow aside from the <a href="#Variations">tooling variations (described below)</a>:
 
    1. <a href="#Installers">Install apps and programs locally</a>
-   2. <a href="#Config">Optionally: Set up Git to sign all commits</a>
-   3. Add public GPG key to GitHub
-   4. <a href="#GenKeys">Generate</a> and <a href="#ListKeys">list keys</a>
-   6. <a href="#SignCommits">Sign Git commits and merges</a>
-   7. <a href="#SignGitTags">Sign Git tags</a>
-   8. Import key to GPG on another host
+   2. <a href="#Configurations">Configure emails</a> and <a href="#RequireSigned">set up GitHub to require signing</a>
+   3. <a href="#GenKeys">Generate</a> and <a href="#ListKeys">list keys</a>
+   4. <a href="#CopyPasteGitHub">Add public GPG key to GitHub</a>
+   5. <a href="#SignCommits">Sign Git commits and merges</a>
+   6. <a href="#SignGitTags">Sign Git Tags</a>
+   7. Import key to GPG on another host
    <br /><br />
 
 BONUS: Since we're using GPG, here are also <a href="#EncryptFiles">notes about signing of whole files using GPG</a>.
-
-The contribution of this article is the logical ordering of <strong>deep-dive</strong> concepts presented in a succint way, as a hands-on narrated scenic tour. "PROTIP" flags advice from hard-won experience such as relevant keyboard shortcuts and things to remember, available only here for you.
 
 
 <a name="Variations"></a>
@@ -262,6 +264,8 @@ no-emit-version
 
 TODO: 
 
+1. Proceed to <a href="#Config">Configuration</a>
+
 
 <a name="InstallWindowsCLI"></a>
 
@@ -277,14 +281,16 @@ TODO:
 
    <tt>choco install gpg4win</tt>
 
-1. Proceed to <a href="#Config">Configuration (below)</a>.
+1. Proceed to <a href="#Config">Configurations (below)</a>.
 
 
 <hr />
 
 <a name="Config"></a>
 
-## Configuration
+## Configurations
+
+At your local command line terminal:
 
 1. Did you configure a user name and email in Git? View using this command:
 
@@ -297,7 +303,7 @@ TODO:
    git config --global user.email "john_doe@gmail.com"
    </strong></pre>
 
-   PROTIP: Any name and email can be specified in Git. That's a big reason organizations ask for cryptographically signing commits in GitHub, which requires that the email specified be validated.
+   IMPORTANT PROTIP: Any name and email can be specified in Git, which means anyone can impersonate someone else to get a malicious commit PR accepted. This is a big reason organizations ask for cryptographically signing commits in GitHub, which requires that the email specified be validated.
 
 
    <a name="GitHubEmail"></a>
@@ -313,6 +319,19 @@ TODO:
 1. Identify your "no-reply" public email address, such as "john_doe+github@gmail.com".
 
    <strong>IMPORTANT PROTIP: The email specified to GPG should match an email in GitHub.</strong>
+
+
+<a name="RequireSigned"></a>
+
+### Require Signed Commit on GitHub
+
+GitHub Admins repos can require that commits be signed by <a target="_blank" href="https://docs.github.com/en/github/administering-a-repository/managing-a-branch-protection-rule#creating-a-branch-protection-rule">specifying branch protection rules</a> for all branches, for a specific branch, or for any branch that matches a name pattern matching a <a target="_blank" href="https://ruby-doc.org/core-2.5.1/File.html#method-c-fnmatch">fnmatch syntax</a> such as <tt>*release*</tt> for branches containing the word "release".
+
+See https://help.github.com/en/github/administering-a-repository/about-required-commit-signing
+
+
+<hr />
+
 
 
 <hr />
@@ -339,48 +358,34 @@ TODO:
 
 ### Hashicorp Vault
 
+In a Terminal:
 
-1. In a Terminal, run my script to install and configure:
+1. Install Hashicorp Vault program on your Mac:
 
-   <pre>sh ...
-   </pre>
+   <pre><strong>brew install vault</strong></pre>
 
-Specifically, my script does the following:
+1. Confirm viability by displaying the program's version, such as:
 
-1. Install Hashicorp Vault program on your machine and display the program's version, such as:
+   <pre><strong>vault --version</strong></pre>
 
    <pre>Vault v1.6.0 ('7ce0bd9691998e0443bc77e98b1e2a4ab1e965d4+CHANGES')</pre>
 
-1. Enable Vault's ssh engine:
- 
-   <pre>vault secrets enable -path=ssh-github ssh</pre>
-
-1. Generate a CA that will be used to sign SSH keys:
-
-   <pre>vault write ssh-github/config/ca generate_signing_key=true</pre>
-
-1. In your $HOME folder, create a file named <strong>vaultvalues.env</strong> containing statements to define enviornment variables.
-   
-1. Grant run access:
-
-   <pre>chmod +x vaultvalues.env</pre>
-
-Now manually make some changes:
-
-1. Identify the URL of your Hashicorp Vault server on the internet. If you don't have one, follow my instructions at:
+1. If you don't have a Hashicorp Vault server, follow my instructions to run it locally at:
 
    <a target="_blank" href="https://wilsonmar.github.io/hashicorp-vault">
    https://wilsonmar.github.io/hashicorp-vault</a>
 
-1. cd to your $HOME folder and create a file named <tt>valuevalues.env</tt>
-1. Use an editor to customize environment variables:
+1. In your $HOME folder, create a file named <strong>vaultvalues.env</strong>.
+1. Grant run access to it:
+
+   <pre>chmod +x vaultvalues.env</pre>
+
+1. Use an editor to customize environment variables, starting with the host name and port of your Hashicorp Vault server in VAULT_ADDR:
 
    <pre># URL of the Hashicorp Vault server:
-export VAULT_ADDR=https://vault.your.corp:8200
+export VAULT_ADDR=https://localhost:8200
 &nbsp;
-# The path to vaultsign:
-&nbsp;
-# The signing backend endpoint (transit or gpg) and optionally hashing function
+# The signing backend endpoint (transit or gpg) and optionally hashing function:
 # to use. Mandatory for signing.
 export VAULT_SIGN_PATH=transit/sign/test/sha2-256
 export VAULT_SIGN_PATH=gpg/sign/test/sha2-256
@@ -398,31 +403,21 @@ export VAULT_TLS_SERVER_NAME=hostname.to.use.for.sni.com
 1. Run the file to load environment variables:
 
    <pre><strong>cd $HOME
-
+   </strong></pre>
 
 1. Navigate into each repo and
 
    <pre>git config --local gpg.program "${VAULT_SIGN_PATH}"
    </pre>
 
-1. Now run:
+1. Login to Vault:
 
    <pre># Login to vault:
 vault login  # referencing $VAULT_ADDR
-&nbsp;
-# Edit some file, then:
-git add .
-# Specif -S to sign a commit and tag:
-git commit -m "test signed commit" -S
-git tag -m "test signed tag" -s test
-&nbsp;
-# Verify the same commit and tag.
-git verify-commit HEAD
-git log -1 --show-signature
-git verify-tag test
    </pre>
 
-1. Verify that green checkmark next to your name on GitHub.
+Proceed to <a href="#SignCommits">Sign Git commits and merges (below)</a>
+
 
 References:
    * https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work
@@ -455,7 +450,7 @@ References:
 
 1. Install the Keybase app to <tt>/Applications/Keybase.app</tt>:
 
-   <pre><strong>brew cask install keybase</strong></pre>
+   <pre><strong>brew install --cask keybase</strong></pre>
 
 1. Sign locally out to the Keybase service:
 
@@ -564,7 +559,7 @@ List keys to verify that you have indeed generated them.
    or <a href="#Keybase">Keybase.io</a>.
 
 
-   The Suite can be installed as a <a target="_blank" href="https://formulae.brew.sh/cask/gpg-suite">Homebrew formula</a> "brew cask install gpg-suite" (brew cask install gpgtools no longer exists).
+   The Suite can be installed as a <a target="_blank" href="https://formulae.brew.sh/cask/gpg-suite">Homebrew formula</a> "brew install --cask gpg-suite" (brew install --cask gpgtools no longer exists).
    The GUI app is installed at "/Applications/GPG Keychain.app".
    The first time it runs, this pop-up appears:
 
@@ -646,12 +641,15 @@ Signature PIN ....: not forced
    </pre>
 
    References on Yubikey on macOS Git:
-
+   * https://github.com/drduh/YubiKey-Guide
    * https://www.isi.edu/~calvin/yubikeyssh.htm
    * https://hugotunius.se/2018/07/13/yubikey-ssh-authentication.html - 13 Jul 2018
    * https://raymondcheng.net/projects/2018/11/25/git-yubikey.html
    * https://evilmartians.com/chronicles/stick-with-security-yubikey-ssh-gnupg-macos
 
+
+
+<hr />
 
 <a name="GitKraken"></a>
 
@@ -662,13 +660,15 @@ Signature PIN ....: not forced
    GitKraken provides a GUI for signing.
 
 
+<hr />
+
 <a name="GenerateKey"></a>
 
 ## Generate GPG key pairs
 
-   ### Gen GPG on macOS Terminal
+On a macOS Terminal:
 
-   Here are instructions for doing it on a macOS Terminal:
+   ### Gen GPG on macOS
 
    PROTIP: In highly secure organizations, keys are generated by a security department and provided to workers.
 
@@ -773,7 +773,7 @@ echo $GPGKeyID
 
    <a name="EditGPG"></a>
 
-   ## OPTIONAL: Edit GPG key
+   ### OPTIONAL: Edit GPG key
 
    In case you want to fix a typo:
 
@@ -805,6 +805,8 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
 1. Type "O" (capital or lowercase O) to save the entry.
 
+
+   <a name="CopyPasteGitHub"</a>
 
    ## Copy and Paste in GitHub
 
@@ -927,10 +929,15 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
 
 ## Sign Git Commits & merges
 
+1. Edit some file
+1. Add
+
+   <pre><strong>git add .</strong></pre>
+
    This is not recommended by some, but ...
 
 1. To sign a commit, if you didn't <a href="#SignAllCommits">specify signing every time</a>,
-   add command flag capital <tt>-S</tt>, construct a command replacing "Some message" with your own, such as:
+   add command flag capital <tt>-S</tt>, construct a command replacing "Some message" in the command with your own message:
 
    <pre><strong>GIT_TRACE=1 git commit -a -S -m "Some message"</strong></pre>
 
@@ -949,6 +956,22 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
    </pre>
 
 1. After push, switch to an internet browser to see a verified badge next to your commits on GitHub online.
+
+   <img width="413" height="262" alt="git-signing-ale-413x262" src="https://user-images.githubusercontent.com/300046/116947094-1d52a180-ac39-11eb-99c0-a76e793f0b8e.png">
+
+
+# Specif -S to sign a commit and tag:
+git commit -m "test signed commit" -S
+git tag -m "test signed tag" -s test
+&nbsp;
+# Verify the same commit and tag.
+git verify-commit HEAD
+git log -1 --show-signature
+git verify-tag test
+   </pre>
+
+1. Verify that green checkmark next to your name on GitHub.
+
 
 
 <hr />

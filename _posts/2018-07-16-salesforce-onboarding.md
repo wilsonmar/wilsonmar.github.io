@@ -549,7 +549,7 @@ provide syntax highlighting and code completion.
 1. Read https://developer.salesforce.com/tools/extension_vscode
 2. Install VS Code (see https://code.visualstudio.com/)
 
-   <tt>brew cask install visual-studio-code</tt>
+   <tt>brew install --cask visual-studio-code</tt>
 
 3. Launch "/Applications/Visual Studio Code.app" or from Terminal by typing "code".
 4. Within Code, on the bottom of the left toolbar, click the Extensions cog icon for "Manage Extensions".
