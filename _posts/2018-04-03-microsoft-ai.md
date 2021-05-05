@@ -579,25 +579,66 @@ Models are created from training data containing feature values.
 
 The process is called <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/concept-automated-ml#feature-engineering">featurization"</a> or feature engineering.
 
-Test data is used to determine how well predictions created from a model, presented in a 2x2 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-understand-automated-ml#confusion-matrix">confusion matrix</a> which compares the Predicted label to True Label (yes or no) to identify true/false positives/negatives. 
+## Metrics
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-regression-model-azure-machine-learning-designer/evaluate-model">
+To compare the performance among multiple models</a>, in your pipeline, add an <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/algorithm-module-reference/evaluate-model">Evaluate Model</a> module and connect the Scored dataset output of the Score Model or Result dataset output of the Assign Data to Clusters to the left input port of Evaluate Model.
+
+
+### Metrics of classification model performance
+
+Test data is used to determine how well predictions created from a model, presented in a 2x2 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-understand-automated-ml#confusion-matrix">Confusion Matrix</a> which compares the Predicted label to True Label (yes or no) to identify true/false positives/negatives. 
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr><th> - </th><th> Predicted: no </th><th> Predicted: yes </th></tr>
-   <tr><th> True: no  </th><td> true negatives </td><td> Type I error: false positives </td></tr>
-   <tr><th> True: yes </th><td> Type II error: false negatives </td><td> true positives</td></tr>
+   <tr><th> Actual: no  </th><td> true negatives </td><td> Type II error: false negatives </td></tr>
+   <tr><th> Actual: yes </th><td> Type I error: false positives </td><td> true positives</td></tr>
    </table>
 
-   QUESTION: Is the above correct?
+REMEMBER: Average Precision (AP) is the ratio of correct predictions (true positives + true negatives) to the total number of predictions. 
 
-Average Precision (AP) is an overall metric that takes into account both precision and recall):
+F1 Score is an overall metric that takes into account both precision and recall): 
    
-   * <strong>Precision</strong> is the percentage of class predictions made by the model which were correct. For example, if the model <strong>predicted</strong> that 10 images are oranges, of which eight were actually oranges, then the precision is 0.8 (80%).
+   * <strong>Precision</strong> is the percentage of class predictions made by the model which were <strong>correct</strong>. For example, if the model <strong>predicted</strong> that 10 images are oranges, of which eight were actually oranges, then the precision is 0.8 (80%).
 
    * <strong>Recall</strong> is the percentage of class predictions the model <strong>correctly identify</strong>. For example, if there are 10 images of apples, and the model found 7 of them, then the recall is 0.7 (70%).
 
 The Receiver Operating Characteristic (ROC) curve plots the relationship between True Positive Rate (TPR) and False Positive Rate (FPR) as the decision threshold changes. The ROC curve can be less informative when training models on datasets with high class imbalance, as the majority class can drown out contributions from minority classes.
 
-   <strong>AUC</strong> (Area Under the Curve) measures the area underneath the ROC curve. If the AUC is 0.87 means 87% of the area of the plot is below the curve. A model with AUC of 0.5 performs no better than random chance. The larger the AUC to 1 the better the model is at separating classes.
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-classification-model-azure-machine-learning-designer/evaluate-model">AUC</a> (Area Under the Curve) measures the area underneath the ROC curve. If the AUC is 0.87 means 87% of the area of the plot is below the curve. A model with AUC of 0.5 performs no better than random chance. The larger the AUC to 1 the better the model is at separating classes. Thus, the ideal AUC is 1.0.
+
+### Metrics of regression model performance
+
+* <strong>Mean Absolute Error (MAE)</strong>: The average difference between predicted vs. true values. This value is based on the same units as the label, such as dollars. The lower this value is, the better the model is predicting.
+
+* <strong>Root Mean Squared Error (RMSE)</strong>: The square root of the mean squared difference between predicted and true values. The result is a metric based on the same unit as the label (dollars). When compared to the MAE (above), a larger difference indicates greater variance in the individual errors (for example, with some errors being very small, while others are large).
+
+* <strong>Relative Squared Error (RSE)</strong>: A relative metric between 0 and 1 based on the square of the differences between predicted and true values. The closer to 0 this metric is, the better the model is performing. Because this metric is relative, it can be used to compare models where the labels are in different units.
+
+* <strong>Relative Absolute Error (RAE)</strong>: A relative metric between 0 and 1 based on the absolute differences between predicted and true values. The closer to 0 this metric is, the better the model is performing. Like RSE, this metric can be used to compare models where the labels are in different units.
+
+* <strong>Coefficient of Determination (R2)</strong>: (aka "R-Squared) summarizes the variance between predicted and true being explained by the model. The closer to 1 this value is, the better the model is performing.
+
+### Metrics for clustering models
+
+* <strong>Average Distance to Other Center</strong> is how close, on average, each point in the cluster is to the centroids of all other clusters.
+
+* <strong>Average Distance to Cluster Center</strong> is the closeness of all points in a cluster to the centroid of that cluster.
+
+* <strong>Number of Points</strong> is how many data points were assigned to each cluster, and the total overall number of data points in any cluster.
+
+   If the number of data points assigned to clusters is less than the total number of data points available, it means that the data points could not be assigned to a cluster.
+
+* <strong>Maximal Distance to Cluster Center</strong> is the max of the distances between each point and the centroid of that point's cluster.
+
+* If this number is high, it can mean that the cluster is widely dispersed. This statistic together with the Average Distance to Cluster Center to determine the cluster's spread.
+
+* <strong>Combined Evaluation</strong> score (at the bottom of the each section of results) lists the averaged scores for the clusters created in that particular model.
+
+
+<br /><br />
+
+<hr />
 
 
 Different <a href="#ValidationTypes">validation types</a> can be used.

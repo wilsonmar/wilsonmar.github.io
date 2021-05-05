@@ -81,6 +81,7 @@ The alternatives:
    * <a href="#install-win">Install on Windows a GUI app</a>
 
    * <a href="#GitKraken">Install GitKraken app and sign</a>
+   <br /><br />
 
 Enterprises would use a system to install for all users, such as:
    * JAMF for macOS machines
