@@ -86,12 +86,13 @@ The newer acronym CIEM (Cloud Infrastructure Entitlements Management) was coined
 <a target="_blank" href="https://collaboration.opengroup.org/jericho/commandments_v1.2.pdf">
 https://collaboration.opengroup.org/jericho/commandments_v1.2.pdf</a> define the 11 areas and principles that must be observed when planning for a de-perimeterized future in cloud environments. 
 
-## Amazon's Compliance
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/56856297-c8c31000-6914-11e9-874e-c0417d380dfd.png"><img width="926" alt="aws-compliance" src="https://user-images.githubusercontent.com/300046/56856297-c8c31000-6914-11e9-874e-c0417d380dfd.png"></a>
+## Vendor Compliance
 
 <a target="_blank" href="https://aws.amazon.com/compliance/">aws.Amazon.com/Compliance</a>
 <a target="_blank" href="https://aws.amazon.com/compliance/programs/">/Programs</a> covers security requirements in Canada, Asia Pacific, and Europe.
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/56856297-c8c31000-6914-11e9-874e-c0417d380dfd.png"><img width="926" alt="aws-compliance" src="https://user-images.githubusercontent.com/300046/56856297-c8c31000-6914-11e9-874e-c0417d380dfd.png"></a>
+
+<a target="_blank" href="https://www.hashicorp.com/blog/hashicorp-achieves-soc-2-type-i-compliance">Type I compliance</a>.
 
 
 <a name="MCRA"></a>
@@ -101,10 +102,6 @@ https://collaboration.opengroup.org/jericho/commandments_v1.2.pdf</a> define the
 <a target="_blank" href="https://www.youtube.com/watch?v=emdGpNwfWHY">VIDEO Distilling</a>
 <a target="_blank" href="https://aka.ms/MCRA/">Infographic in PowerPoint: Microsoft Azure Cybersecurity Reference Architecture</a>
 
-
-## Google Cloud?
-
-TBD
 
 ## Adobe Common Control Framework
 
@@ -132,6 +129,8 @@ Adobe <a target="_blank" href="https://adobe.allegiancetech.com/cgi-bin/qwebcorp
    20. Vulnerability Management
    <br /><br />
 
+<a name="HITRUST"></a>
+
 ## HITRUST CSF
 
 <a target="_blank" href="https://hitrustalliance.net/understanding-leveraging-csf/">
@@ -149,12 +148,13 @@ ISO Code of practice for information security controls defines 114 controls grou
    * ISO/IEC 27002 Controls (Counter-measures) of ISMS (Information Security Management System)
    * ISO/IEC 27005 addresses risk management
    * ISO/IEC 27007 addresses auditing
-   * ISO/IEC 27011 addresses telecommunications organization guidelines
    * ISO/IEC 27012 addresses controls (counter-measures)
-   * ISO/IEC 27015 addresses financial organization guidelines
    * ISO/IEC 27033 addresses network security
    * ISO/IEC 27034 addresses application security
    * ISO/IEC 27037 addresses digital evidence guidelines
+
+   * ISO/IEC 27011 addresses telecommunications organization guidelines
+   * ISO/IEC 27015 addresses financial organization guidelines
    * ISO/IEC 27799 addresses health organization guidelines
    <br /><br />
 
@@ -1007,7 +1007,11 @@ NIST CSRC (Computer Security Resource Center)
 <a target="_blank" href="https://www.nist.gov/itl">
 NIST Information Technology Laboratory</a> emails out <a target="_blank" href="https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3">bulletins about vulnerabilities</a>
 
-The National Institute of Standards and Technology (NIST) Cybersecurity Framework (CSF) is a voluntary Framework that consists of standards, guidelines, and best practices to manage cybersecurity-related risks. Through a validated assessment performed by the Health Information Trust Alliance (HITRUST), a leading security and privacy standards development and accreditation organization, Office 365 is certified to the objectives specified in the NIST CSF.
+The National Institute of Standards and Technology (NIST) Cybersecurity Framework (CSF) is a voluntary Framework that consists of standards, guidelines, and best practices to manage cybersecurity-related risks. 
+
+Through a validated assessment performed by the <a href="#HITRUST">Health Information Trust Alliance (HITRUST)</a>, a leading security and privacy standards development and accreditation organization, Office 365 is certified to the objectives specified in the <a href="#NIST">NIST</a> <a href="#CSF">CSF</a>.
+
+<a name="CSF"></a>
 
 CSF Functions and Categories maps NIST 800-53 to CIS Controls:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/55505643-c8cf3900-5610-11e9-8f79-3e7bec5cfe7c.jpg"><img alt="cybersecurity-nist-342x275" width="342" height="275" src="https://user-images.githubusercontent.com/300046/55505643-c8cf3900-5610-11e9-8f79-3e7bec5cfe7c.jpg"></a>
@@ -1216,7 +1220,6 @@ SOC (Service Organization Control) Reports are internal control reports on the s
 SOC 3 is the only SOC report that should be shared with the general public.
 
 SOC 2 Type II, along with ISO 27001
-<a target="_blank" href="https://www.hashicorp.com/blog/hashicorp-achieves-soc-2-type-i-compliance">Type I compliance</a>.
 
 
 <a name="HSM"></a>
