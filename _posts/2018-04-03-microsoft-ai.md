@@ -3,7 +3,7 @@ layout: post
 title: "Microsoft AI (and Machine Learning Cognitive Services)"
 excerpt: "How to get AI-900, AI-100, AI-102 certified as we automate manual processes in the Azure PaaS cloud"
 tags: [microsoft, azure, machine learning, AI]
-date: "2021-03-20"
+date: "2021-05-06"
 file: "microsoft-ai"
 image:
 # feature: pic green matrix hallway 1900x500.jpg
@@ -18,13 +18,35 @@ comments: true
 
 This article is a work-in-process toward being a guided tour to introduce use Microsoft's Artificial Intelligence offerings running on the Azure cloud, which Microsoft calls "Cognitive services", previously called "Cortana".
 
+<a name="LearningSequence"></a>
+
+## Learning Sequence: simplest first
+
+   If I were training you, which I'm doing here, the learning sequence would be to start with the <strong>least complex</strong> of technologies used, then the more complex ones:
+
+1. Call Bing Search  API to run an established endpoint (SaaS) you don't need to setup.
+1. <a href="#CognitiveServices">Create a Cognitive Service</a> to call the Translator API.
+
+1. <a href="#CreateWorkspace">Create a Workspace resource</a> to run ...
+
+1. ml.azure.com<br />
+   <a href="#CreateWorkspace">Create a Workspace resource</a> and<br />
+   <a href="#CreateComputeInstance">Create Compute instance</a> to run<br />
+   <a href="#AutoML">Automated ML</a> of regression of bike-rentals.
+1. ml.azure.com Designer.
+1. Create ML Workspace in Portal, then ml.azure.com
+1. <a href="#CreateComputeInstance">Create Compute instance</a> for ...
+1. <a href="#CreateCustomVision">Create Custom Vision</a> for ...
+1. QnA Maker Conversational AI
+1. Train a Machine Learning model using <a name="RunJupyter">iPython notebook</a>
+1. IoT - "Hey Google, ask Azure to shut down all my compute instances".
+
+
 ## Automation necessary for PaaS
 
-Microsoft does provide some <a href="#FreeTime">free machine time</a>.
+IMPORTANT PROTIP: As of this writing, Microsoft Azure does NOT have a full SaaS offering for every AI/ML service. You are required to <strong>create your own computer instances</strong>, and thus manage machine sizes (which is a hassle). Resources you create <strong>continue to cost money</strong> until you shut them down.
 
-IMPORTANT PROTIP: As of this writing, Microsoft Azure doesn't have a full SaaS offering for every AI/ML service. You are required to <strong>create your own computer instances</strong>, and thus manage machine sizes (which is a hassle). Resources you create <strong>continue to cost money</strong> until you shut them down.
-
-So after learning to set up the first compute service, we need to cover <strong>automation</strong> to <strong>shut them all down</strong> automatically while you sleep.
+So after learning to set up the first compute service, we need to cover <strong>automation</strong> to <strong>shut them all down</strong> while you sleep.
 
 So that you're not tediously recreating everything everyday, this tutorial focuses on automation scripts (CLI Bash and PowerShell scripts) to create compute instances, publish results, then shut itself down. Each report run overwrites files from the previous run so you're not constantly piling up storage costs. 
 
@@ -36,14 +58,16 @@ You still need skill at clicking through the Portal.azure.com and ML.azure.com
 so that you can verify resources that have created and to discuss with others.
 
 References:
-   * <a target="_blank" href="https://www.youtube.com/watch?v=Rrx7NzPugaE">VIDEO</a>: <a target="_blank" href="https://dev.to/azure/keep-your-azure-subscription-clean-automatically-mmi">shut down automatically all your existing VMs</a> (using a PowerShell script) by <a target="_blank" href="https://www.youtube.com/channel/UCAr20GBQayL-nFPWFnUHNAA"">Frank Boucher</a> at <a target="_blank" href="https://github.com/FBoucher/">github.com/FBoucher</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Rrx7NzPugaE">VIDEO</a>: <a target="_blank" href="https://dev.to/azure/keep-your-azure-subscription-clean-automatically-mmi">shut down automatically all your existing VMs</a> (using a PowerShell script called by a Logic App), by <a target="_blank" href="https://www.youtube.com/channel/UCAr20GBQayL-nFPWFnUHNAA"">Frank Boucher</a> at <a target="_blank" href="https://github.com/FBoucher/">github.com/FBoucher</a>
    * https://www.youtube.com/watch?v=lu7a5RDeJU0 by Build5Nines
    * https://www.codeisahighway.com/effective-ways-to-delete-resources-in-a-resource-group-on-azure/
-
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/blog/announcing-auto-shutdown-for-vms-using-azure-resource-manager/">Auto-shutdown by Resource Manager</a> <a target="_blank" href="https://azure.microsoft.com/en-us/updates/set-auto-shutdown-within-a-couple-of-clicks-for-vms-using-azure-resource-manager/" title="November 22, 2016">on a schedule</a> is only for VMs in DevOps
 
 <a name="FreeTime"></a>
 
 ## What Kind Free Pricing
+
+The consolation to wasted charges is that Microsoft provides some <a href="#FreeTime">free machine time</a>.
 
 1. An <strong>alphabetical</strong> list of Microsoft's AI/ML services at <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">Cognitive Services pricing page at https://azure.microsoft.com/en-us/pricing/details/cognitive-services</a>:
 
@@ -153,33 +177,6 @@ https://docs.microsoft.com/en-us/azure/search</a>
    * <strong>regression (supervised</strong> machine learning) uses historical data to train the model to predict <strong>numerical</strong> values.
    * Time Series Anomaly Detection
    <br /><br />
-
-
-<hr />
-
-<a name="LearningSequence"></a>
-
-## Start with the simplest
-
-   If I were training you, which I'm doing here, the learning sequence would be to start with the <strong>least complex</strong> of technologies used, then the more complex ones:
-
-1. Locally from Visual Studio Code, call Translator API to run an established endpoint (SaaS) you don't need to setup.
-
-
-1. <a href="#CreateWorkspace">Create a Workspace resource</a> to run ...
-
-1. ml.azure.com<br />
-   <a href="#CreateWorkspace">Create a Workspace resource</a> and<br />
-   <a href="#CreateComputeInstance">Create Compute instance</a> to run<br />
-   <a href="#AutoML">Automated ML</a> of regression of bike-rentals.
-1. ml.azure.com Designer.
-1. Create ML Workspace in Portal, then ml.azure.com
-1. <a href="#CognitiveServices">CognitiveServices</a> for ...
-1. <a href="#CreateComputeInstance">Create Compute instance</a> for ...
-1. <a href="#CreateCustomVision">Create Custom Vision</a> for ...
-1. QnA Maker Conversational AI
-1. Train a Machine Learning model using <a name="RunJupyter">iPython notebook</a>
-1. IoT 
 
 
 <hr />

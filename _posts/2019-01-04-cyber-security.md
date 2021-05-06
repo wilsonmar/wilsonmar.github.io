@@ -3,7 +3,7 @@ layout: post
 title: "Cyber Security"
 excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
 tags: [security]
-date: "2021-01-05"
+date: "2021-05-06"
 file: "cyber-security"
 image:
 # cyber-security-hero-1900x500-22924.jpb/.png 
@@ -149,7 +149,7 @@ ISO Code of practice for information security controls defines 114 controls grou
    * ISO/IEC 27005 addresses risk management
    * ISO/IEC 27007 addresses auditing
    * ISO/IEC 27012 addresses controls (counter-measures)
-   * ISO/IEC 27033 addresses network security
+   * ISO/IEC 27033 addresses zzz network security</a>
    * ISO/IEC 27034 addresses application security
    * ISO/IEC 27037 addresses digital evidence guidelines
 
@@ -1353,19 +1353,6 @@ Events: System-level, application-level, or user-level? REMEMBER
    <br /><br />
 
 
-## Network Penetration test
-
-[<a target="_blank" href="https://www.youtube.com/watch?v=6X4A6B94vmw&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=12">MINDMAP</a>]
-
-Penetration test methodology - To simulate an attack on a system or network to evaluate the risk profile of an environment
-   1. Reconnaissance
-   2. Enumeration
-   3. Vulnerability Analysis
-   4. Execution/Exploitation
-   5. Document Findings
-   <br /><br />
-
-
 ## Models & Lifecycles
 
 Focus of security awareness training:
@@ -1940,6 +1927,8 @@ RAM
    * SRAM keeps data stored as long as it has power
    * SDRAM (Synchronous Dynamic Access Memory)  access commands simultaneously,
    * DDR (DD2, DD3, DDR4)
+   <br /><br />
+
 
 ### Physical Security
 
@@ -2105,6 +2094,8 @@ RBAC uses roles to provide access to the data.
 
 <hr />
 
+<a name="Networking"></a>
+
 ## Networking: OSI (Open System Interconnect) 
 
 [<a target="_blank" href="https://www.youtube.com/watch?v=6X4A6B94vmw&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=12&t=9s">MINDMAP</a>]
@@ -2193,7 +2184,22 @@ DSL:
 
 DSA (Digital Signature Algorithm) - US standard
 
-## Firewalls
+
+### Network Penetration test
+
+[<a target="_blank" href="https://www.youtube.com/watch?v=6X4A6B94vmw&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=12">MINDMAP</a>]
+
+Penetration test methodology - To simulate an attack on a system or network to evaluate the risk profile of an environment
+   1. Reconnaissance
+   2. Enumeration
+   3. Vulnerability Analysis
+   4. Execution/Exploitation
+   5. Document Findings
+   <br /><br />
+
+<a name="Firewalls"></a>
+
+### Firewalls
 
 A three-legged firewall uses three interfaces, one connected to the untrusted network, one to the internal network, and another to a DMZ.
 
