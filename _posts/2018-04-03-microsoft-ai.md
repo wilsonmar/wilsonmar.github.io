@@ -25,22 +25,27 @@ This article is a work-in-process toward being a guided tour to introduce use Mi
    If I were training you, which I'm doing here, the learning sequence would be to start with the <strong>least complex</strong> of technologies used, then the more complex ones:
 
 1. Call Bing Search  API to run an established endpoint (SaaS) you don't need to setup.
-1. <a href="#CognitiveServices">Create a Cognitive Service</a> to call the Translator API.
+
+1. Create a <a href="#LogicApp">Logic App</a> to <a href="#ShutDownRGs">shut down Resource Groups of a Subscription</a> using PowerShell scripts.
+
+1. <a href="#CognitiveServices">Create a Cognitive Service</a> to <a href="#TextTranslation">call the Translator Text API</a>.
 
 1. <a href="#CreateWorkspace">Create a Workspace resource</a> to run ...
 
-1. ml.azure.com<br />
-   <a href="#CreateWorkspace">Create a Workspace resource</a> and<br />
+1. <a href="#CreateWorkspace">Create a Workspace resource</a> and<br />
    <a href="#CreateComputeInstance">Create Compute instance</a> to run<br />
    <a href="#AutoML">Automated ML</a> of regression of bike-rentals.
-1. ml.azure.com Designer.
+1. <a href="#CreateComputeInstance">Create Compute instance</a> to
+   run a <a name="RunJupyter">iPython notebook</a>
 1. Create ML Workspace in Portal, then ml.azure.com
-1. <a href="#CreateComputeInstance">Create Compute instance</a> for ...
-1. <a href="#CreateCustomVision">Create Custom Vision</a> for ...
+1. Us cognitivevision.com to <a href="#CreateCustomVision">Create Custom Vision</a> for ...
+
 1. QnA Maker Conversational AI
 1. Train a Machine Learning model using <a name="RunJupyter">iPython notebook</a>
 1. IoT - "Hey Google, ask Azure to shut down all my compute instances".
 
+
+<a name="ShutDownRGs"></a>
 
 ## Automation necessary for PaaS
 
@@ -62,6 +67,10 @@ References:
    * https://www.youtube.com/watch?v=lu7a5RDeJU0 by Build5Nines
    * https://www.codeisahighway.com/effective-ways-to-delete-resources-in-a-resource-group-on-azure/
    * <a target="_blank" href="https://azure.microsoft.com/en-us/blog/announcing-auto-shutdown-for-vms-using-azure-resource-manager/">Auto-shutdown by Resource Manager</a> <a target="_blank" href="https://azure.microsoft.com/en-us/updates/set-auto-shutdown-within-a-couple-of-clicks-for-vms-using-azure-resource-manager/" title="November 22, 2016">on a schedule</a> is only for VMs in DevOps
+   * https://www.c-sharpcorner.com/article/deploy-a-google-action-on-azure/
+
+<a name="LogicApp"></a>
+
 
 <a name="FreeTime"></a>
 
@@ -108,8 +117,8 @@ PRITIP: In commands, each offering has a "Kind" code to designate its processing
       </td><td> - </td></tr>
    <tr align="top"><td> Language </td><td> "TextAnalytics"
       </td><td> - </td></tr>
-   <tr align="top"><td> Language </td><td> "TextTranslation"
-      </td><td> - </td></tr>
+   <tr align="top"><td> Language </td><td> <a href="#TextTranslation">TextTranslation"</a>
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator/">2M chars/mo.</a> </td></tr>
    <tr align="top"><td> Language </td><td> "ImmersiveReader"
       </td><td> - </td></tr>
 
@@ -153,7 +162,7 @@ In <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-ser
 
 * Speech - Text-to-Speech and Speech-to-Text to interpret written or spoken language, and respond in kind.
 
-* Language - aka Natural language Processing (NLP) to translate text, etc.
+* Language - aka Natural language Processing (NLP) to <a href="#TranslateText">translate text</a>, etc.
 
 * <a href="#Decision">Decision</a> - supervised and unsupervised machine learning
 
@@ -545,9 +554,6 @@ My script does the same as these manual steps:
 1. Click the blue icon to the right of KEY 1 heading to copy it to your invisible Clipboard.
 
 1. Endpoint: https://tot.cognitiveservices.azure.com/
-
-
-
 
 
    TODO: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-create-manage-compute-instance?tabs=azure-cli">DOCS</a>: Automate above steps to create compute and server startpup script.
@@ -1000,7 +1006,7 @@ Within Microoft, NLP consists of these Azure services (described below):
    * <a href="#LUIS">LUIS</a> (Language Understanding Intelligent Service)
    * <a href="#Text_Analytics">Text Analytics</a>
    * <a href="#Speech">Speech</a>
-   * <a href="#Translator_Text">Translator Text</a>
+   * <a href="#TextTranslation">Translator Text</a>
    <br /><br />
 
 
@@ -1079,8 +1085,6 @@ DEMO: https://aidemos.microsoft.com/text-analytics
 
    ### Speech Translation (Speech to text)
    
-   https://translator.microsoft.com/ is free
-
    Get the monthly subscription mobile app on 
    <a target="_blank" href="https://apps.apple.com/app/microsoft-translator/id1018949559">
    iPhone</a>, Android, or Amazon. It has a Phrasebook of common phrases.
@@ -1122,26 +1126,48 @@ DEMO: https://aidemos.microsoft.com/text-analytics
 
 
 
-   <a name="Translator_Text"></a>
+   <a name="TextTranslation"></a>
 
    ### Translator Text (text to speech)
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=6VXuxIBqV94" title="Nov 12, 2020 Text translation in a few lines of Python with Azure Cognitive Services">VIDEO</a>
+   <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/">Microsoft's Translator service </a> can translate text between more than 90 languages and dialects.
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=MTkNluHxqq4" title="Analyze text for free with Azure Text Analytics by jen foxbot">VIDEO</a> with sample code at https://github.com/microsoft/text-analytics-walkthrough
-
-
-
-   The Translator endpoint is<br />
-   <tt>https://api.cognitive.microsofttranslator.com/</tt>
+   <a target="_blank" href="https://translator.microsoft.com/">translator.microsoft.com</a> is free.
 
    PROTIP: Translator Text does not need a compute instance!
-   A Python program can run from your laptop or mobile phone making API calls to 
 
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-translate">translate text</a> between more than 60 languages.
+   A Python program can run from your laptop or mobile phone making API calls to 
+   the Translator endpoint at:
+
+   <tt>https://api.cognitive.microsofttranslator.com/translate?api-version=3.0</tt>
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/translator/">DOCS</a>, <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-translate">API DOCS</a>
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=6VXuxIBqV94" title="Nov 12, 2020 Text translation in a few lines of Python with Azure Cognitive Services">VIDEO</a>; 
+   Raza Salehi's <a target="_blank" href="https://app.pluralsight.com/library/courses/building-customized-translation-systems-azure-cognitive-services-translator" title="24 Jan 2020">1 hr video course "Build a Translator system"</a>.
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=MTkNluHxqq4" title="Analyze text for free with Azure Text Analytics by jen foxbot">VIDEO</a> intro with sample code at https://github.com/microsoft/text-analytics-walkthrough
+
 
    <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/09%20-%20Translation.ipynb">Python notebook to Translate</a>
 
+   For response "script" : "Latn", text was transliterated in English.
+
+A custom translator is needed to train a model to recognize and translate domain-specific words and phrases in specific industries such as aerospace, automotive, chemistry, mechanical, etc. Training is done by have pairs of documents (English and French, etc.). That run can take several hours, so <a target="_blank" href="https://aka.ms/DocumentTranslation">batch processing</a> is supported.
+
+   <a target="_blank" href="
+   https://portal.customtranslator.azure.ai/">
+           portal.customtranslator.azure.ai</a>
+
+   If you don't have admin
+
+   <pre>Need admin approval
+Mt Studio Web Prod
+Mt Studio Web Prod needs permission to access resources in your organization that only an admin can grant. Please ask an admin to grant permission to this app before you can use it.
+   </pre>
+
+References:
+   * Microsoft Azure Cognitive Services: Translator Text API" video course</a> by William Myers
 
 <hr />
 
