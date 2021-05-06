@@ -132,7 +132,7 @@ Microsoft Quizzes by CloudAcademy</a>
 
    There are two codes that you need to enter.
 
-1. In the registration email, "click here to join the training" makes use of Microsoft Teams. So install or upgrade it before the class.
+1. In the registration <strong>email, "click here to join the training"</strong> makes use of Microsoft Teams. So install or upgrade it before the class.
 
    PROTIP: It helps to have a secone screen: one to view instructions, another for notes.
 
@@ -145,7 +145,7 @@ Microsoft Quizzes by CloudAcademy</a>
 
 1. To redeem training key provided by trainer (such as "E059CE1A"), get to lab: on Chrome open a Guest profile to access 
 
-   <a target="_blank" href="https://esi.learnondemand.net">https://esi.learnondemand.net</a> 
+   <a target="_blank" href="https://aka.ms/StudentLabs">https://aka.ms/StudentLabs</a> which redicts to<br /><a target="_blank" href="https://esi.learnondemand.net">https://esi.learnondemand.net/User/CurrentTraining/1234567</a> 
 
 1. Sign in using your personal email.
 
@@ -223,6 +223,8 @@ Microsoft Quizzes by CloudAcademy</a>
 
 1. https://azure.microsoft.com/en-us/features/storage-explorer/
 
+1. Provide instruction feedback to <a target="_blank" href="https://aka.ms/MakeUsBetter">https://aka.ms/MakeUsBetter</a>
+
 
 ### Cloud Academy
 
@@ -255,6 +257,7 @@ https://vladtalkstech.com/microsoft-certification-study-guides
 
 <hr />
 
+## Microsoft Exam
 
 <a target="_blank" href="https://www.microsoft.com/en-us/learning/dashboard.aspx">
 https://www.microsoft.com/en-us/learning/dashboard.aspx</a>

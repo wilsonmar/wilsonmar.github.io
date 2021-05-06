@@ -70,7 +70,7 @@ Then all a new working developer needs to do is, on a pre-configured laptop, mak
 
 <a name="Installers"></a>
 
-## Install client utilities and sign
+## Install client utilities
 
 The alternatives:
 
@@ -83,7 +83,7 @@ The alternatives:
    * <a href="#GitKraken">Install GitKraken app and sign</a>
    <br /><br />
 
-Enterprises would use a system to install for all users, such as:
+Enterprises would use a centrally administered system to install for all users, such as:
    * JAMF for macOS machines
    * Microsoft InTune for Windows laptops.
    <br /><br />

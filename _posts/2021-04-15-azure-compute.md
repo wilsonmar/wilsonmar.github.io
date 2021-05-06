@@ -153,7 +153,9 @@ How to auto-scale and optimize performance of .NET Web Apps with Microsoft Azure
    Each deployment slot holds a separate instance of the web app with a different host name.
    Each is a different resource.
 
-   Each slot shares an App Service plan's memory, CPU, and disk space.
+   There is an implicit production slot.
+
+   REMEMBER: Each slot shares an App Service plan's memory, CPU, and disk space.
 
 
 1. In the Azure portal, add <strong>deployment slots</strong> to an App Service web app. 
@@ -162,12 +164,18 @@ How to auto-scale and optimize performance of .NET Web Apps with Microsoft Azure
 
    Then swap the staging deployment slot with the production slot.
 
-The Azure portal provides out-of-the-box continuous integration and deployment with Azure DevOps, GitHub, Bitbucket, FTP, or a local Git repository on your development machine. 
+   * Settings swapped: General settings, handler mappings, monitoring, diagnostics, WebJobs.
+   * Setting that are configurable (either swappped or not swapped): App setting and connection strings.
+   * Setting that are NOT swapped: publishing endpoints, custom domain names, SSL certs and bindings, scale settings, WebJob schedulers.
+   <br /><br />
 
-Connect your web app with any of the above sources and App Service will do the rest for you by automatically syncing your code and any future changes on the code into the web app.
+   The Azure portal provides out-of-the-box continuous integration and deployment with Azure DevOps, GitHub, Bitbucket, FTP, or a local Git repository on your development machine. 
 
-In the Azure portal, create a Web App resource. This allocates a set of hosting resources in App Service, which hosts a web-based application written in ASP.NET Core, Node.js, Java, Python.
+   Connect your web app with any of the above sources and App Service will do the rest for you by automatically syncing your code and any future changes on the code into the web app.
 
+   In the Azure portal, create a Web App resource. This allocates a set of hosting resources in App Service, which hosts a web-based application written in ASP.NET Core, Node.js, Java, Python.
+
+   PROTIP: Canary deployments need a different technology.
 
 1. An App Service plan is a set of virtual server resources that run App Service apps. 
 

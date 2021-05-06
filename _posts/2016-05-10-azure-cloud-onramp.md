@@ -427,7 +427,7 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 My repo <a target="_blank" href=" 
 https://github.com/wilsonmar/azure-your-way">
 https://github.com/wilsonmar/azure-your-way</a>
-contains automation scripts to invoke instead of manually operating the Azure Portal, so that you can save money by deleting Resource Groups because you can get resources back with just a few commands. Scripts also enable you to stand up resources in different regions/locations. Most scripts in the repo are Bash shell scripts that run natively on MacOS and thus familiar to most developers. PowerShell scripts are used in cases where they are the only solution. Utility scripts enable the scripts to run on Linux and Windows Git Shell. The scripts are also useful for learning Azure. 
+contains automation scripts to invoke instead of manually operating the Azure Portal, so that you can save money by deleting Resource Groups because you can get resources back with just a few commands. Scripts also enable you to stand up resources in different regions/locations. Most scripts in the repo are Bash shell scripts that run natively on MacOS and thus familiar to most developers. PowerShell scripts are used in cases where they are the only solution. 
 
 There are many ways to automate the creation of resources within Azure:
    1. <a href="#VM_GUI">Portal GUI Cloud Shell</a>
@@ -444,6 +444,11 @@ There are many ways to automate the creation of resources within Azure:
    1. <a target="_blank" href="https://wilsonmar.github.io/pulumi/">Pulumi Python/C#/Nodejs/Typescript code</a>
    1. Microsoft Bicep (new)
    <br /><br />
+
+Utility script code enable the scripts to run from Linux and Git Shell on Windows laptops. 
+
+The scripts are also useful for learning Azure. 
+PROTIP: The objective of this document is to 
 
 
 ### Cloud Shell
@@ -469,7 +474,7 @@ This post</a> presents an extension for on-premises VMs.
 
 <a name="CloudAcademyLab"></a>
 
-## Portal Hands-on Lab thru CloudAcademy 
+## Portal Hands-on GUI Lab thru CloudAcademy 
 
 PROTIP: It makes more sense to look at a live example populated with several resources, in context, which is what a CloudAcademy lab provides.
 
@@ -493,6 +498,7 @@ PROTIP: It makes more sense to look at a live example populated with several res
 
 1. Click the Username account for the lab.
 1. Click "Maybe later" for tour for the Azure landing page (Dashboard).
+
 
    ### Create Resource in Command Line
 

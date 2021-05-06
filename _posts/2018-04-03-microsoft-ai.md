@@ -18,6 +18,40 @@ comments: true
 
 This article provides a guided tour of use Microsoft's AI (Artificial Intelligence) offerings, which include Machine / Deep Learning capabilities running on the Azure cloud.
 
+## Learning path recommended 
+
+   PROTIP: As of this writing, Microsoft Azure doesn't have a full SaaS offering for every AI/ML service. Some services require that you create your own compute and manage machine sizes (which is a hassle). However, Microsoft does provide some free services.
+
+### What is Free Pricing
+
+1. Look at the <strong>alphabetical</strong> list of Microsoft's AI/ML services at <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">https://azure.microsoft.com/en-us/pricing/details/cognitive-services (on Pricing)</a>.
+
+   ![az-ai-svcs-pricing-309x410](https://user-images.githubusercontent.com/300046/117203280-126c4e00-adac-11eb-84ae-54994f47f3ea.png)
+
+1. Iterative select each "offer" (service) in the Cognitive Services pricing page
+to see the amount of <strong>free</strong> versus standard.
+
+
+   ### Start with simplest
+
+   If I were training you, which I'm doing here, the learning sequence would be to start with the <strong>least complex</strong> of technologies used, then add more complexity:
+
+1. Locally from a Visual Studio Code, call Translator API to run an established endpoint you don't need to setup.
+1. <a href="#CreateWorkspace">Create a Workspace resource</a> to run ...
+
+1. ml.azure.com<br />
+   <a href="#CreateWorkspace">Create a Workspace resource</a> and<br />
+   <a href="#CreateComputeInstance">Create Compute instance</a> to run<br />
+   <a href="#AutoML">Automated ML</a> of regression of bike-rentals.
+1. ml.azure.com Designer.
+1. Create ML Workspace in Portal, then ml.azure.com
+1. <a href="#CognitiveServices">CognitiveServices</a> for ...
+1. <a href="#CreateComputeInstance">Create Compute instance</a> for ...
+1. <a href="#CreateCustomVision">Create Custom Vision</a> for ...
+1. QnA Maker Conversational AI
+1. Train a Machine Learning model using <a name="RunJupyter">iPython notebook</a>
+1. IoT 
+
 
 ## Microsoft's History with AI
 
@@ -94,6 +128,7 @@ BTW, by contrast, Bernard Marr identified <a target="_blank" href="https://www.b
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/7-understand-responsible-ai">LEARN</a>:
 
 Microsoft has a <a target="_blank" href="https://www.microsoft.com/research/group/fate/">FATE (Fairness, Accountability, Transparency, and Ethics)</a> research group:
+<img width="1126" height="610" alt="az-ai-principled-1126x610" src="https://user-images.githubusercontent.com/300046/117167864-e1c4ee00-ad84-11eb-88b1-4f685155a64f.png">
 
    * Fairness: AI systems should treat all people fairly.
    * Accountability: AI systems should have algorithmic accountability.
@@ -112,11 +147,22 @@ Microsoft's ethical principles</a> guiding the development and use of artificial
 1. DEMO: Hands on with AI/Guidelines for Human-AI Interaction: Click each card to see examples of each guideline
 
    <a target="_blank" href="
+   https://aka.ms/hci-demo">
+   https://aka.ms/hci-demo</a> which redirects you to<br />
+   <a target="_blank" href="
    https://aidemos.microsoft.com/guidelines-for-human-ai-interaction/demo">
    https://aidemos.microsoft.com/guidelines-for-human-ai-interaction/demo</a>
 
-1. Make use of <a target="_blank" href="https://www.microsoft.com/ai/responsible-ai-resources">
-https://www.microsoft.com/ai/responsible-ai-resources</a>
+   * Initially - make clear what the system can do & how well the system can do what it can do.
+   * During interaction - Time services based on context; show contexually revelvant info; Match revelvant social norms; Migrate social biases.
+   * When Wrong - support efficient invocation, dismissal, correction; Scope services when in doubt.
+   * Over Time - remember recent interactions; learn from user behavior; update and adapt cautiously; encourage granular feedback
+   <br /><br />
+
+   PROTIP: Some fonts are real small. Zoom in to read it.
+
+Resources:
+   * <a target="_blank" href="https://www.microsoft.com/ai/responsible-ai-resources">https://www.microsoft.com/ai/responsible-ai-resources</a>
 
 
 <hr />
@@ -140,7 +186,7 @@ Previous exam 774 is now been retired.
 
 ### AI-900 
 
-PROTIP: Here's a must-see website: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/AI-900">
+PROTIP: Here's a must-see website: <a target="_blank" href="http://aka.ms/AIFunPath">http://aka.ms/AIFunPath</a> which expands to <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/AI-900">
 Exam definitions are at Microsoft's LEARN</a> includes a free text-based tutorial called
 <a target="_blank" href="
 https://docs.microsoft.com/en-us/learn/paths/get-started-with-artificial-intelligence-on-azure/">
@@ -179,6 +225,8 @@ AI-900 Sample Practice Exam Questions</a>
 
 * https://www.itexams.com/info/AI-900
 
+* Emilio Melo on <a target="_blank" href="https://www.linkedin.com/learning/exam-tips-microsoft-azure-ai-fundamentals-ai-900/the-world-is-changing-because-of-ai">Linkedin Learning</a>
+
 Practice tests:
 * https://www.whizlabs.com/learn/course/microsoft-azure-ai-900/
 * https://www.examtopics.com/exams/microsoft/ai-900/
@@ -204,7 +252,8 @@ Ravi's links</a>
 
 Microsoft offers a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/ai-102t00">4-day course (with cloud time)</a>
 covering C# or Python as the programming language.
-   * <a target="_blank" href="https://github.com/MicrosoftLearning/AI-102-AIEngineer">Labs for the class</a> can be followed outside of class enrollment.
+
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/AI-102-AIEngineer">Labs for the class</a> (by <a target="_blank" href="https://www.linkedin.com/in/graemesplace/">Graeme Malcolm</a>) can be followed outside of class enrollment.
 
 <a target="_blank" href="https://cloudacademy.com/quiz/38235/">Preview 45 min. Exam: Designing and Implementing an Azure AI Solution (AI-102)</a>
 
@@ -247,16 +296,16 @@ Guy Hummel's <a target="_blank" href="https://cloudacademy.com/learning-paths/ai
 
 Raza Salehi created on Pluralsight.com <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-azure-ai-engineer-ai-100">a series for Microsoft Azure AI Engineer (AI-100)</a> :
 
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-personalizer">Personalizer</a>
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-ink-recognizer">Recognizer</a>
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-immersive-reader">Immersive Reader</a>
+   * Raza Salehi's <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-personalizer">Personalizer</a>
+   * Raza Salehi's <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-ink-recognizer">Recognizer</a>
+   * Raza Salehi's <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-immersive-reader">Immersive Reader</a>
 
 <a name="AnomalyDetector"></a>
 
 #### Anomaly Detector
 
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-anomaly-detector">Anomaly Detector</a>
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/building-customized-translation-systems-azure-cognitive-services-translator">Translator</a>
+   * Raza Salehi's <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-anomaly-detector">Anomaly Detector</a>
+   * Raza Salehi's <a target="_blank" href="https://app.pluralsight.com/library/courses/building-customized-translation-systems-azure-cognitive-services-translator">Translator</a>
 
 Practice tests:
 * https://www.whizlabs.com/learn/course/microsoft-azure-ai-100/
@@ -276,6 +325,7 @@ But <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microso
 
 The Classic version reflected "All Microsoft all the time" with proprietary "pickle" (pkl) model files.
 
+
 <a name="workflows"></a>
 
 ## Hybrid workflows
@@ -291,6 +341,10 @@ Steps to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine
    4. Test the service (used by the user)
    <br /><br />
 
+<a target="_blank" href="https://www.youtube.com/watch?v=R2mC-NUAmMk">
+VIDEO: Seeing AI 2016 Prototype</a> apps for the blind.
+
+
 <a name="CognitiveServices"></a>
 
 ## Azure Cognitive Services suite
@@ -305,6 +359,7 @@ Microsoft now uses the term <a target="_blank" href="https://azure.microsoft.com
    * Natural language processing - interpret written or spoken language, and respond in kind.
    * Conversational AI - an "agent" (Azure Bot Service) to participate in a (natural) conversation.
    <br /><br />
+
 
 "Search" (Bing) has disappeared from Microsoft's list of service categories.
 But it now is at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/search/">
@@ -370,9 +425,6 @@ https://docs.microsoft.com/en-us/azure/search</a>
    <tr align="top"><td> ? </td><td> "MetricsAdvisor"
       </td><td> - </td></tr>
    </table>
-
-DO THIS: Select <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">each "offer" (service) in the Cognitive Services pricing page</a> 
-to see the amount of <strong>free</strong> versus standard.
 
 <hr />
 
@@ -662,9 +714,15 @@ https://adatis.co.uk/evaluating-models-in-azure-machine-learning-part-1-classifi
 1. To invoke extensions, VS Code will apply the extension based on the file type opened (such as .py for Python, etc.)
 
 
-### Automated ML
+<a name="CreateWorkspace"></a>
+
+### Create Workspace resource
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning/deploy-model">LAB</a> in Azure Machine Learning studio (https://ml.azure.com) Deploy predictive service workspace "predict-rentals" Compute type: ACI
 
 Following https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning/use-auto-ml
+
+   NOTE: You don't need to go to G+\ <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.MachineLearningServices%2Fworkspaces">Machine Learning</a>
 
 1. On the Overview page, launch Azure Machine Learning studio (or open a new browser tab and navigate to
    
@@ -672,7 +730,93 @@ Following https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-l
    https://ml.azure.com/">
    https://ml.azure.com</a>
 
-   You don't need to go to G+\ <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.MachineLearningServices%2Fworkspaces">Machine Learning</a>
+1. Select your Directory and Subscription.
+1. Click "Create a new workspace". A new tab appears in portal.azure.com.
+1. Resource Group: PROTIP: just 3 letters are necessary, so use letters (such as "wow") which does not have ascenders so that numbers to be appended to it more visible.
+1. Workspace Name: PROTIP: just 3 letters are necessary.
+1. "Review + create".
+
+   CAUTION: The network is public by default. Choosing private would entail more configuration.
+
+1. "Create".
+
+   CAUTION: Charges now begin to accumulate. Delete your Resource Group ASAP. It's cheaper if you recreate it if you need another workspace.
+
+1. When created, click "Launch Studio" blue button.
+
+   This is the same as clicking browser tab "Microsoft Azure Machine Learning" (https://ml.azure.com) and refresh the page until your workspace appears.
+
+   ![az-menu-630x197](https://user-images.githubusercontent.com/300046/117180681-abda3680-ad91-11eb-9850-29748446973e.png)
+
+1. "Compute" menu (under heading Manage).
+1. "+ New" blue button.
+1. Virtual Machine type: CPU.
+1. Virtual machine size: Select from all options.
+   * The cheapest is <strong>"Standard_F2s_v2"</strong> with "2 cores, 4GB RAM, 16GB storage" for Compute optimized at "$0.11/hr"
+1. Compute name: wow
+   * Minimum number of nodes: 0 (the default)
+   * Maximum number of nodes: 2 (from 1 the default)
+   * Idle seconds before scale down: 120 (from default 1800)
+   <br /><br />
+
+1. Compute name: PROTIP: Use 3-characters only, such as "wow" or "eat".
+1. Enable SSH access: leave unchecked
+
+1. Next and wait (5 minutes) for State to go from "Creating" to "Running".
+
+   CAUTION: Charges now begin to accumulate. Delete your Resource Group ASAP. It's cheaper if you recreate it if you need another compute instance.
+
+
+   ### Download prepared data file
+
+1. Select the Datasets page (under Assets)
+1. " + Create", "From web files". Web URL: https://aka.ms/bike-rentals
+
+   Alternately, you can upload a file from your local machine.
+
+1. Dataset type: Tabular
+1. Next
+
+   ### Run an Automated Machine Learning Experiment
+
+1. Select "Automated ML" (under Author).
+1. "+ New Automated ML run".
+1. Click circle to select dataset ("bike-rentals").
+1. Next for "Configure run" dialog.
+1. "Data Statistics" to see stats for each column. Close.
+
+1. New experiment name: <strong>mslearn-bike-rental</strong>
+1. Target column: rentals (interger). This is the label the model will be trained to predict.
+1. Training compute target: the compute cluster you created previously
+1. Select Virtual Machine.
+
+1. Task type and settings
+1. Task type: Regression (the model will predict a numeric value)
+1. Finish
+
+   ### Run
+
+1. "Refresh"
+
+
+
+<a name="AutoML"></a>
+
+1. "Endpoints" (under heading Assets).
+
+   NOTE: There are Real-time endpoints and Pipeline endpoints.
+
+1. "Consume" tab
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-deploy-and-where?tabs=azcli">DOCS</a>:
+
+zzz
+
+1. Download data file:
+
+   https://aka.ms/bike-rentals
+
+#### Etc.
 
    Pytorch
    <a target="_blank" href="
@@ -739,6 +883,10 @@ Validation type:
 
 1. PROTIP: So you don't pay for idle compute, programmatically start and stop clusters.
 
+   <a name="CreateComputeInstance"></a>
+
+   ### Create Compute Instance
+
 1. On the Compute Instances tab, add a new compute instance with the following settings. You'll use this as a workstation from which to test your model:
    * Virtual Machine type: CPU
    * Virtual Machine size: Standard_DS11_v2 (Choose Select from all options to search for and select this machine size)
@@ -756,7 +904,9 @@ Validation type:
    * Enable SSH access: Unselected
    <br /><br />
 
+   PROTIP: At least <strong>5 images</strong> are needed to train a Custom Vision model.
 
+   PROTIP: Tags can contain upper case, spaces, special characters.
 
    Create dataset from Open Datasets
 
@@ -839,7 +989,8 @@ Within Microoft, NLP consists of these Azure services (described below):
 
 ### Language Understanding Intelligent Service (LUIS) 
 
-   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-language-model-with-language-understanding/2-get-started">LUIS</a> trains a language model that can understand spoken or text-based commands. He's Alexa's boyfriend ;)
+   <a target="_blank" href="https://aka.ms/AI900/Lab4">https://aka.ms/AI900/Lab4</a> which redirects to<br />
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-language-model-with-language-understanding/2-get-started">Create a language model with Language Understanding</a> which trains a (LUIS) language model that can understand spoken or text-based commands. He's Alexa's boyfriend, ha ha.
 
 1. DEMO: <a target="_blank" href="https://www.luis.ai/">https://www.luis.ai</a>
 
@@ -867,16 +1018,21 @@ Within Microoft, NLP consists of these Azure services (described below):
    * <strong>Entity</strong> is the word (or phrase) that is the focus of the utterance, such as "light" in our example.
    * <strong>Intent</strong> is the action or task that the user wants to execute. It reflects in utterance as a goal or purpose. For example, "TurnOn".
 
+References:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=U_9HqRdPuUA">VIDEO</a>: <a target="_blank" href="https://store.steampowered.com/app/598400/Starship_Commander_Arcade/">Starship commander</a> enabled in-game voice commands using Azure.
 
+<a name="Text_Analytics"></a>
 
-   <a name="Text_Analytics"></a>
+## Text Analytics
 
-   ### Text Analytics
+DEMO: https://aidemos.microsoft.com/text-analytics
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/3-exercise">LAB</a> referencing "07 - Text Analytics.ipynb" ???
 
    <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/">Text to Speech</a> services:
-   * Language Detection 
-   * Key phrase extraction
+   * Language Detection (is it English, German, etc.)
    * Sentiment analysis (how positive or negative a document is)
+   * Key phrase extraction
    * Translator Text 
    <br /><br />
 
@@ -887,6 +1043,7 @@ Within Microoft, NLP consists of these Azure services (described below):
    <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/3-exercise">MS LEARN HANDS-ON LAB</a> references
    https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/07%20-%20Text%20Analytics.ipynb
 
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-call-api?tabs=synchronous">Some Text Analytics API services are synchronous and asynchronous</a>
 
 
    #### Sentiment Analysis
@@ -896,11 +1053,19 @@ Within Microoft, NLP consists of these Azure services (described below):
 
    #### Key phrase extraction
 
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/2-get-started-azure">Named Entity Recognition (NER)</a> identifies entities in the text and group them into different entity categories, such as organization name, location, event, etc.
+
 
    <a name="Speech"></a>
 
    ### Speech Translation (Speech to text)
    
+   https://translator.microsoft.com/ is free
+
+   Get the monthly subscription mobile app on 
+   <a target="_blank" href="https://apps.apple.com/app/microsoft-translator/id1018949559">
+   iPhone</a>, Android, or Amazon. It has a Phrasebook of common phrases.
+
    DEMO: <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-translation/">Speech Translation</a> recognizes and synthesizes speech, and translates spoken languages. REMEMBER: The sequence of services involves <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/recognize-synthesize-speech/2-get-started-azure">two APIs</a>:
 
    Speech-to-Text API -> Speech Correction -> Machine Translation -> Text-to-Speech API
@@ -1325,6 +1490,8 @@ Bots are extended by <a target="_blank" href="https://microsoft.github.io/botfra
    https://go.microsoft.com/fwlink/?linkid=2100213
    Coding</a>
 
+
+
 <hr />
 
 <a name="BotService"></a>
@@ -1346,11 +1513,17 @@ Bots are extended by <a target="_blank" href="https://microsoft.github.io/botfra
    Select the option to Try a demo of an example end-user experience.
    Use the web chat interface to interact with the bot.
 
-Run the Python Jupyter notebook
+<a target="_blank" href=""https://docs.microsoft.com/en-us/learn/modules/create-bot-with-bot-framework-composer/">MS LEARN</a>: Create a Bot with the Bot Framework Composer
 
+1. Run the Python Jupyter notebook
+
+   <a target="_blank" href="
+   https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/11%20-%20QnA%20Bot.ipynb">
    https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/11%20-%20QnA%20Bot.ipynb
+   Conversational AI LAB</a>
 
 1. Sign in using the Microsoft account associated with your Azure subscription.
+
 
 
 <hr />
@@ -1509,7 +1682,7 @@ On Udemy:
    * <a target="_blank" href="https://www.udemy.com/course/azure-cognitive-services-crash-course/?referralCode=EE78F34C49858D913E15">
    Microsoft Azure Cognitive Services Crash Course</a>
 
-## Random Notes to be inserted
+## Notes to be inserted
 
 Steps for data transformation:
    * Feature selection
@@ -1525,7 +1698,7 @@ Steps for data transformation:
    * Run model
    <br /><br />
 
-
+https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/limits-and-quotas
 
 
 ## More
