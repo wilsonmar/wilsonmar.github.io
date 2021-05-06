@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Microsoft AI"
-excerpt: "How to get certified to run Microsoft's AI in Azure cloud"
+title: "Microsoft AI (and Machine Learning Cognitive Services)"
+excerpt: "How to get AI-900, AI-100, AI-102 certified as we automate manual processes in the Azure PaaS cloud"
 tags: [microsoft, azure, machine learning, AI]
 date: "2021-03-20"
 file: "microsoft-ai"
@@ -16,27 +16,156 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This article provides a guided tour of use Microsoft's AI (Artificial Intelligence) offerings, which include Machine / Deep Learning capabilities running on the Azure cloud.
+This article is a work-in-process toward being a guided tour to introduce use Microsoft's Artificial Intelligence offerings running on the Azure cloud, which Microsoft calls "Cognitive services", previously called "Cortana".
 
-## Learning path recommended 
+## Automation necessary for PaaS
 
-   PROTIP: As of this writing, Microsoft Azure doesn't have a full SaaS offering for every AI/ML service. Some services require that you create your own compute and manage machine sizes (which is a hassle). However, Microsoft does provide some free services.
+Microsoft does provide some <a href="#FreeTime">free machine time</a>.
 
-### What is Free Pricing
+IMPORTANT PROTIP: As of this writing, Microsoft Azure doesn't have a full SaaS offering for every AI/ML service. You are required to <strong>create your own computer instances</strong>, and thus manage machine sizes (which is a hassle). Resources you create <strong>continue to cost money</strong> until you shut them down.
 
-1. Look at the <strong>alphabetical</strong> list of Microsoft's AI/ML services at <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">https://azure.microsoft.com/en-us/pricing/details/cognitive-services (on Pricing)</a>.
+So after learning to set up the first compute service, we need to cover <strong>automation</strong> to <strong>shut them all down</strong> automatically while you sleep.
+
+So that you're not tediously recreating everything everyday, this tutorial focuses on automation scripts (CLI Bash and PowerShell scripts) to create compute instances, publish results, then shut itself down. Each report run overwrites files from the previous run so you're not constantly piling up storage costs. 
+
+When you use my <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/">Automation scripts at https://github.com/wilsonmar/azure-your-way/ to create resources the way you like</a>, using "Infrastructure as Code", so you can throw away any Subscription and begin anew quickly.
+
+My scripts also makes use of a more secure way to store secrets than inserting them in code that can be checked back into GitHub.
+
+You still need skill at clicking through the Portal.azure.com and ML.azure.com
+so that you can verify resources that have created and to discuss with others.
+
+References:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Rrx7NzPugaE">VIDEO</a>: <a target="_blank" href="https://dev.to/azure/keep-your-azure-subscription-clean-automatically-mmi">shut down automatically all your existing VMs</a> (using a PowerShell script) by <a target="_blank" href="https://www.youtube.com/channel/UCAr20GBQayL-nFPWFnUHNAA"">Frank Boucher</a> at <a target="_blank" href="https://github.com/FBoucher/">github.com/FBoucher</a>
+   * https://www.youtube.com/watch?v=lu7a5RDeJU0 by Build5Nines
+   * https://www.codeisahighway.com/effective-ways-to-delete-resources-in-a-resource-group-on-azure/
+
+
+<a name="FreeTime"></a>
+
+## What Kind Free Pricing
+
+1. An <strong>alphabetical</strong> list of Microsoft's AI/ML services at <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">Cognitive Services pricing page at https://azure.microsoft.com/en-us/pricing/details/cognitive-services</a>:
 
    ![az-ai-svcs-pricing-309x410](https://user-images.githubusercontent.com/300046/117203280-126c4e00-adac-11eb-84ae-54994f47f3ea.png)
 
-1. Iterative select each "offer" (service) in the Cognitive Services pricing page
-to see the amount of <strong>free</strong> versus standard.
+PRITIP: In commands, each offering has a "Kind" code to designate its processing. So that matters more than Microsoft's marketing designations when getting things done. So I've prepared for you a table to list the Kind codes by the marketing grouping.
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr valign="bottom"><th> Category </th><th> Kind </th><th> Free </th><th> Limits </th></tr>
+
+   <tr align="top"><td> Vision </td><td> "CognitiveServices"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Vision </td><td> "ComputerVision"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Vision </td><td> "CustomVision.Prediction"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Vision </td><td> "CustomVision.Training"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Vision </td><td> <a href="#Face">Face"</a>
+      </td><td> - </td></tr>
+   <tr align="top"><td> Vision </td><td> FormRecognizer
+      </td><td> - </td></tr>
+   <tr align="top"><td> Vision </td><td> ?InkRecognizer?
+      </td><td> - </td></tr>
+
+   <tr align="top"><td> Speech </td><td> "SpeechServices"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Speech </td><td> "SpeakerRecognition?
+      </td><td> - </td></tr>
+
+   <tr align="top"><td> Language </td><td> <a href="#LUIS">"LUIS"</a>
+      </td><td> - </td></tr>
+   <tr align="top"><td> Language </td><td> "LUIS.Authoring"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Language </td><td> <a href="#QnA_Maker">"QnAMaker"</a>
+      </td><td> - </td></tr>
+   <tr align="top"><td> Language </td><td> <a href="#QnA_Maker">"QnAMaker.v2"</a>
+      </td><td> - </td></tr>
+   <tr align="top"><td> Language </td><td> "TextAnalytics"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Language </td><td> "TextTranslation"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Language </td><td> "ImmersiveReader"
+      </td><td> - </td></tr>
+
+   <tr align="top"><td> Decision </td><td> <a href="#AnomalyDetector">AnomalyDetector"</a>
+      </td><td> 2,000 trans/mo. </td><td> - </td></tr>
+   <tr align="top"><td> Decision </td><td> "ContentModerator"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Decision </td><td> "Personalizer"
+      </td><td> - </td></tr>
+
+   <tr align="top"><td> <a href="#Search">Search</a> </td><td> "Bing.CustomSearch"
+      </td><td> - </td></tr>
+   <tr align="top"><td> Search </td><td> "Bing.Search.v7"
+      </td><td> - </td></tr>
+
+   <tr align="top"><td> ? </td><td> "Internal.AllInOne"
+      </td><td> - </td></tr>
+   <tr align="top"><td> ? </td><td> "MetricsAdvisor"
+      </td><td> - </td></tr>
+   </table>
+
+   Kinds with ? are known in websites but not listed by the command above.
+
+Once you're setup to run CLI commands, you can List kinds of Cognitive Services:
+
+   <ul><pre><strong>az cognitiveservices account list-kinds</strong></pre></ul>
 
 
-   ### Start with simplest
 
-   If I were training you, which I'm doing here, the learning sequence would be to start with the <strong>least complex</strong> of technologies used, then add more complexity:
+<a name="CognitiveServices"></a>
 
-1. Locally from a Visual Studio Code, call Translator API to run an established endpoint you don't need to setup.
+## Azure Cognitive Services suite
+
+Microsoft has published different lists for what services constitute its "Cognitive Services" brand name to achieve AI-enhanced solutions which mimic human intelligence.
+
+Previously, "Cortana" was the brand-name for Microsoft's AI. Cortana is the name of the fictional artificially intelligent character in the Halo video game series. Cortana was going to be Microsoft's answer to Alexa, Siri, Hey Google, and other AI-powered personal assistants which respond to voice commands controlling skills that turn lights on and off, etc. 
+
+In <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services">DOCS</a>:
+
+* Vision - interpret the world visually through cameras, videos, images
+
+* Speech - Text-to-Speech and Speech-to-Text to interpret written or spoken language, and respond in kind.
+
+* Language - aka Natural language Processing (NLP) to translate text, etc.
+
+* <a href="#Decision">Decision</a> - supervised and unsupervised machine learning
+
+* Search - includes "Conversational AI" using an "agent" (Azure Bot Service) to participate in a (natural) conversation.
+
+
+<a name="Search"></a>
+
+### Search
+
+"Search" (the "Bing" brand) has disappeared from Microsoft's list of service categories.
+But it now is at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/search/">
+https://docs.microsoft.com/en-us/azure/search</a>
+
+
+<a name="Decision"></a>
+
+### Decision
+
+   * <strong>classification</strong> (unsupervised machine learning) fits features into model and predict classification of the label
+   * <strong>regression (supervised</strong> machine learning) uses historical data to train the model to predict <strong>numerical</strong> values.
+   * Time Series Anomaly Detection
+   <br /><br />
+
+
+<hr />
+
+<a name="LearningSequence"></a>
+
+## Start with the simplest
+
+   If I were training you, which I'm doing here, the learning sequence would be to start with the <strong>least complex</strong> of technologies used, then the more complex ones:
+
+1. Locally from Visual Studio Code, call Translator API to run an established endpoint (SaaS) you don't need to setup.
+
+
 1. <a href="#CreateWorkspace">Create a Workspace resource</a> to run ...
 
 1. ml.azure.com<br />
@@ -53,45 +182,21 @@ to see the amount of <strong>free</strong> versus standard.
 1. IoT 
 
 
-## Microsoft's History with AI
-
-In April 2018 Microsoft reorganized into two divisions that offers AI:
-
-   * <a target="_blank" href="https://www.microsoft.com/en-us/research/project/machine-learning-edge/">The research division</a>, headed by <a target="_blank" href="https://www.linkedin.com/in/harryshum/">Harry Shum</a>, put AI into Bing search, Cortana voice recognition and text-to-speech, ambient computing, and robotics. See <a target="_blank" href="https://www.youtube.com/watch?v=_Hg9QKBhERw">Harry's presentation in 2016</a>.
-
-   * Microsft's "computing fabric" offerings, led by <a target="_blank" href="https://www.linkedin.com/in/guthriescott/">Scott Guthrie</a>, makes AI services available for those building customizable machine learning with speech, language, vision, and knowledge services. Tools offered include Cognitive Services and Bot Framework, deep-learning tools like Azure Machine Learning, Visual Studio Code Tools for AI, and Cognitive Toolkit.
-
-Microsoft's Azure IoT Edge (at <a target="_blank" href="https://github.com/Azure/ai-toolkit-iot-edge"> https://github.com/Azure/ai-toolkit-iot-edge</a>) brings AI and machine learning to the edge of networks, such as in the field and on factory floors. See the <a target="_blank" href="https://gallery.azure.ai/Solution/IoT-Edge-2">Sample app</a> and <a target="_blank" href="https://social.msdn.microsoft.com/forums/azure/en-US/home?forum=MachineLearning">read all the unanswered forum posts</a>
-   * https://channel9.msdn.com/events/Build/2018/BRK2154
-   <br /><br />
-
-At Build 2018, Microsoft announced <a target="_blank" href="https://www.microsoft.com/en-us/research/publication/serving-dnns-real-time-datacenter-scale-project-brainwave/">Project Brainwave</a> to run Google's Tensorflow AI code and Facebook's Caffe2, and Microsoft's <a target="_blank" href="
-https://docs.microsoft.com/en-us/cognitive-toolkit/index">"Cognitive Toolkit" (CNTK)</a>.
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/cognitive-toolkit/brainscript-basic-concepts">BrainScript</a> uses a dynamically typed C-like syntax to express neural networks in a way that looks like math formulas. Brainscript has a <a target="_blank" href="https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-and-Python-Performance-Profiler">Performance Profiler</a>.
-
-   * Hyper-parameters are a separate module (alongside Network and reader) to perform SGD (stochastic-gradient descent).
-   <br /><br />
-
-Microsoft has advanced hardware:
-
-   <ul>[<a target="_blank" href="https://www.microsoft.com/en-us/research/publication/serving-dnns-real-time-datacenter-scale-project-brainwave/">
-   This pdf</a> white paper says the "high-performance, precision-adaptable FPGA soft processor is at the heart of the system, achieving up to 39.5 TFLOPs of effective performance at Batch 1 on a state-of-the-art Intel Stratix 10 FPGA."
-   Microsoft's use of field programmable gate arrays (FPGA) calculates AI reportedly "five times faster than Google's TPU hardware".
-
-   "Each FPGA operates in-line between the server’s network interface card (NIC) and the top-of-rack (TOR) switch, enabling in-situ processing of network packets and point-to-point connectivity between hundreds of thousands of FPGAs at low latency (two microseconds per switch hop, one-way)."
-   </ul>
-
 <hr />
 
 <a name="Competitors"></a>
 
 ## What can AI do?
 
-<a target="_blank" href="
-https://gallery.azure.ai/">
-https://gallery.azure.ai</a>
+1. Visit
 
-DEMOS: <a target="_blank" href="https://aidemos.microsoft.com/">https://aidemos.microsoft.com</a>
+   <a target="_blank" href="
+   https://gallery.azure.ai/">
+   https://gallery.azure.ai</a>
+
+1. Microsoft has DEMOS at: 
+
+   <a target="_blank" href="https://aidemos.microsoft.com/">https://aidemos.microsoft.com</a>
 
 Case studies of how people are already making use of AI/ML to save time and money:
 
@@ -317,8 +422,6 @@ Practice tests:
 
 ### Cortana now Cognitive Services 
 
-"Cortana" was the brand-name of Microsoft's AI. Cortana is the name of the fictional artificially intelligent character in the Halo video game series. Cortana was going to be Microsoft's answer to Siri and Alexa, an AI-powered personal assistant capable of responding to voice commands, armed with a collection of third-party skills. 
-
 But <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microsoft-cortana-features-strategy-report">in 2019</a> Cortana decoupled from Windows 10 search.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=eJOv-TfhhzQ">VIDEO</a>: <a target="_blank" href="https://services.azureml.net/">Azure Machine Learning Studio (classic) Web Services</a>
@@ -344,87 +447,6 @@ Steps to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine
 <a target="_blank" href="https://www.youtube.com/watch?v=R2mC-NUAmMk">
 VIDEO: Seeing AI 2016 Prototype</a> apps for the blind.
 
-
-<a name="CognitiveServices"></a>
-
-## Azure Cognitive Services suite
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/">DOCS</a>:
-Microsoft now uses the term <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/"><strong>Azure "Cognitive Services"</a></strong> to refer to a <strong>suite of services</strong> (with APIs) developers use to build AI-enhanced solutions which mimic human intelligence:
-
-   * "Decision" - <strong>classification</strong> (unsupervised machine learning) fits features into model and predict classification of the label
-   * "Decision" - <strong>regression (supervised</strong> machine learning) uses historical data to train the model to predict <strong>numerical</strong> values.
-
-   * Computer vision - interpret the world visually through cameras, videos, images.
-   * Natural language processing - interpret written or spoken language, and respond in kind.
-   * Conversational AI - an "agent" (Azure Bot Service) to participate in a (natural) conversation.
-   <br /><br />
-
-
-"Search" (Bing) has disappeared from Microsoft's list of service categories.
-But it now is at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/search/">
-https://docs.microsoft.com/en-us/azure/search</a>
-
-1. List kinds of Cognitive Services using CLI command:
-
-   <pre>az cognitiveservices account list-kinds</pre>
-
-   Kinds with ? are known in websites but not listed by the command above.
-
-   <table border="1" cellpadding="4" cellspacing="0">
-   <tr valign="bottom"><th> Category </th><th> Kind </th><th> Free </th></tr>
-   <tr align="top"><td> Decision </td><td> <a href="#AnomalyDetector">AnomalyDetector"</a>
-      </td><td> 2,000 trans/mo.  </td></tr>
-   <tr align="top"><td> Decision </td><td> "ContentModerator"
-      </td><td> - </td></tr>
-   <tr align="top"><td> Decision </td><td> "Personalizer"
-      </td><td> - </td></tr>
-
-   <tr align="top"><td> Language </td><td> <a href="#LUIS">"LUIS"</a>
-      </td><td> - </td></tr>
-   <tr align="top"><td> Language </td><td> "LUIS.Authoring"
-      </td><td> - </td></tr>
-   <tr align="top"><td> Language </td><td> <a href="#QnA_Maker">"QnAMaker"</a>
-      </td><td> - </td></tr>
-   <tr align="top"><td> Language </td><td> <a href="#QnA_Maker">"QnAMaker.v2"</a>
-      </td><td> - </td></tr>
-   <tr align="top"><td> Language </td><td> "TextAnalytics"
-      </td><td> - </td></tr>
-   <tr align="top"><td> Language </td><td> "TextTranslation"
-      </td><td> - </td></tr>
-   <tr align="top"><td> Language </td><td> "ImmersiveReader"
-      </td><td> - </td></tr>
-
-   <tr align="top"><td> Speech </td><td> "SpeechServices"
-      </td><td> - </td></tr>
-   <tr align="top"><td> Speech </td><td> "SpeakerRecognition?
-      </td><td> - </td></tr>
-
-   <tr align="top"><td> Vision </td><td> "CognitiveServices"
-      </td><td> - </td></tr>
-   <tr align="top"><td> Vision </td><td> "ComputerVision"
-      </td><td> - </td></tr>
-   <tr align="top"><td> Vision </td><td> "CustomVision.Prediction"
-      </td><td> - </td></tr>
-   <tr align="top"><td> Vision </td><td> "CustomVision.Training"
-      </td><td> - </td></tr>
-   <tr align="top"><td> Vision </td><td> <a href="#Face">Face"</a>
-      </td><td> - </td></tr>
-   <tr align="top"><td> Vision </td><td> FormRecognizer
-      </td><td> - </td></tr>
-   <tr align="top"><td> Vision </td><td> ?InkRecognizer?
-      </td><td> - </td></tr>
-
-   <tr align="top"><td> Search </td><td> "Bing.CustomSearch"
-      </td><td> - </td></tr>
-   <tr align="top"><td> Search </td><td> "Bing.Search.v7"
-      </td><td> - </td></tr>
-
-   <tr align="top"><td> ? </td><td> "Internal.AllInOne"
-      </td><td> - </td></tr>
-   <tr align="top"><td> ? </td><td> "MetricsAdvisor"
-      </td><td> - </td></tr>
-   </table>
 
 <hr />
 
@@ -541,7 +563,7 @@ My script does the same as these manual steps:
 1. "Create compute"
    * Virtual machine type: CPU or GPU
    * Virtual machine size: Select from all options (64 of them) QUESTION: What is the basis for "recommended"?
-   * The cheapest is <strong>"Standard_F2s_v2"</strong> with "2 cores, 4GB RAM, 16GB storage" for Compute optimized at "$0.11/hr"
+   * The cheapest is <strong>"Standard_F2s_v2"</strong> with "2 cores, 4GB RAM, 16GB storage" for Compute optimized at "$0.11/hr". See <a target="_blank" href="https://azure.microsoft.com/en-us/services/virtual-machines/?WT.mc_id=cloud5mins-youtube-frbouche">Microsoft's description of virtual machine types here</a>.
    * Next
    * Compute name: PROTIP: Use 3-characters only, such as "wow" or "eat".
    * Enable SSH access: leave unchecked
@@ -794,9 +816,9 @@ Following https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-l
 1. Task type: Regression (the model will predict a numeric value)
 1. Finish
 
-   ### Run
+1. "Refresh" to see when run gets to "Complete".
+1. Look at the "Best model summary"
 
-1. "Refresh"
 
 
 
@@ -1072,7 +1094,7 @@ DEMO: https://aidemos.microsoft.com/text-analytics
 
    "Speech Recognition" and Text Analysis are not involved in this use case.
 
-   Telephone voice menus use "Speech Synthesis".
+   Telephone voice menus use "Speech Synthesis", defined by the Speech Synthesis Markup Language (SSML).
 
    https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/08%20-%20Speech.ipynb
 
@@ -1227,21 +1249,29 @@ Custom vision has two <strong>project types</strong>:
 
 ### Custom Vision
 
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/">Custom Vision</a> trains custom image classification and object detection models using custom (your own) images.
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/">Azure Custom Vision</a> trains custom image using classification and object detection models referencing custom (your own) images.
 
-<a target="_blank" href="
-https://www.customvision.ai/">
-https://www.customvision.ai</a>
+1. Open
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/example-scenario/ai/intelligent-apps-image-processing">DOCS</a>:
-![az-ai-image-class-623x410](https://user-images.githubusercontent.com/300046/116795191-5a2f6480-aa90-11eb-82fe-52c26e8e3de4.png)
+   <a target="_blank" href="
+   https://www.customvision.ai/">
+   https://www.customvision.ai</a>
 
-MS LEARN HANDS-ON LAB: 
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/example-scenario/ai/intelligent-apps-image-processing">DOCS</a>:
+   ![az-ai-image-class-623x410](https://user-images.githubusercontent.com/300046/116795191-5a2f6480-aa90-11eb-82fe-52c26e8e3de4.png)
 
-   https://docs.microsoft.com/en-us/learn/modules/classify-images-custom-vision/3-create-image-classifier
+1. MS LEARN HANDS-ON LAB: 
 
-   https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/03%20-%20Object%20Detection.ipynb
+   <a target="_blank" href="https://aka.ms/learn-image-classification">aka.ms/learn-image-classification</a> which redirects to<br />
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/classify-images-custom-vision/">docs.microsoft.com/en-us/learn/modules/classify-images-custom-vision</a>
 
+1. Instructions are at <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/classify-images-custom-vision/3-create-image-classifier">
+
+1. Load the code from:
+
+   <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/03%20-%20Object%20Detection.ipynb">https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/03%20-%20Object%20Detection.ipynb</a>
+
+References:
    <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/56f91f2e778daf14a499f21f">CV API</a>
 
 
@@ -1699,6 +1729,31 @@ Steps for data transformation:
    <br /><br />
 
 https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/limits-and-quotas
+
+## Microsoft's History with AI
+
+In April 2018 Microsoft reorganized into two divisions that offers AI:
+
+   * <a target="_blank" href="https://www.microsoft.com/en-us/research/project/machine-learning-edge/">The research division</a>, headed by <a target="_blank" href="https://www.linkedin.com/in/harryshum/">Harry Shum</a>, put AI into Bing search, Cortana voice recognition and text-to-speech, ambient computing, and robotics. See <a target="_blank" href="https://www.youtube.com/watch?v=_Hg9QKBhERw">Harry's presentation in 2016</a>.
+
+   * Microsft's "computing fabric" offerings, led by <a target="_blank" href="https://www.linkedin.com/in/guthriescott/">Scott Guthrie</a>, makes AI services available for those building customizable machine learning with speech, language, vision, and knowledge services. Tools offered include Cognitive Services and Bot Framework, deep-learning tools like Azure Machine Learning, Visual Studio Code Tools for AI, and Cognitive Toolkit.
+
+
+At Build 2018, Microsoft announced <a target="_blank" href="https://www.microsoft.com/en-us/research/publication/serving-dnns-real-time-datacenter-scale-project-brainwave/">Project Brainwave</a> to run Google's Tensorflow AI code and Facebook's Caffe2, and Microsoft's <a target="_blank" href="
+https://docs.microsoft.com/en-us/cognitive-toolkit/index">"Cognitive Toolkit" (CNTK)</a>.
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/cognitive-toolkit/brainscript-basic-concepts">BrainScript</a> uses a dynamically typed C-like syntax to express neural networks in a way that looks like math formulas. Brainscript has a <a target="_blank" href="https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-and-Python-Performance-Profiler">Performance Profiler</a>.
+
+   * Hyper-parameters are a separate module (alongside Network and reader) to perform SGD (stochastic-gradient descent).
+   <br /><br />
+
+Microsoft has advanced hardware:
+
+   <ul>[<a target="_blank" href="https://www.microsoft.com/en-us/research/publication/serving-dnns-real-time-datacenter-scale-project-brainwave/">
+   This pdf</a> white paper says the "high-performance, precision-adaptable FPGA soft processor is at the heart of the system, achieving up to 39.5 TFLOPs of effective performance at Batch 1 on a state-of-the-art Intel Stratix 10 FPGA."
+   Microsoft's use of field programmable gate arrays (FPGA) calculates AI reportedly "five times faster than Google's TPU hardware".
+
+   "Each FPGA operates in-line between the server’s network interface card (NIC) and the top-of-rack (TOR) switch, enabling in-situ processing of network packets and point-to-point connectivity between hundreds of thousands of FPGAs at low latency (two microseconds per switch hop, one-way)."
+   </ul>
 
 
 ## More

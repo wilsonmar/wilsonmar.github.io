@@ -36,6 +36,9 @@ from <a target="_blank" href="http://www.seleniumframework.com/python-course/">h
 <a target="_blank" href="https://data-flair.training/blogs/python-tutorials-home/">
 Data-Flair</a> offers <a target="_blank" href="https://data-flair.training/blogs/python-projects-with-source-code/">projects</a>
 
+Microsoft LEARN: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/intro-to-python/">1 hr text Introduction to Python</a>
+
+
 ### Python for Everyone
 
 May 2019 <a target="_blank" href="https://www.py4e.com/">Python for Everybody (py4e.com)</a> free Python 3 <a target="_blank" href="https://www.py4e.com/book.php">book</a>, <a target="_blank" href="https://www.py4e.com/lectures3/">PowerPoint slides</a> and code in <a target="_blank" href="https://github.com/wilsonmar/py4e.git">GitHub</a> or in <a target="_blank" href="https://www.py4e.com/code3.zip">one zip file</a> from <a target="_blank" href="https://www.freecodecamp.org/">FreeCodeCamp.org</a> in <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI">a single YouTube video</a>, from <a target="_blank" href="https://www.dr-chuck.com">Dr. Chuck (Severance)</a> at the <a target="_blank" href="https://open.umich.edu/">University of Michigan School of Information</a>.

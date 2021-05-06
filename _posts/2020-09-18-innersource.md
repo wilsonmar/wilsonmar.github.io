@@ -18,7 +18,7 @@ comments: true
 
 The term "InnerSource" was coined by Tim O'Reilly in 2000.
 
-Innersource is the approach of using open source practices <strong>within proprietary organisations</strong> which desire to take advantage of the open collaborative way of building software. 
+Innersource is the approach of using open source practices <strong>within proprietary organisations</strong> which desire to take advantage of the <strong>open collaborative way</strong> of building software. 
 
 InnerSource is the practice of adopting <strong>open source patterns internally</strong> within an organization -- an organization that practices InnerSource may or may not also maintain open source software. "The Apache Way".
 
@@ -33,6 +33,9 @@ InnerSource has been gaining momentum in the last number of years thanks to the 
 * Higher developer satisfaction
 * Improved talent acquisition and retention
 <br /><br />
+
+References:
+   * GitHub wrote a PDF at <a target="_blank" href="https://resources.github.com/downloads/InnerSource.pdf">resources.github.com/downloads/InnerSource.pdf</a>
 
 
 ## Who are using InnerSource?
@@ -294,3 +297,4 @@ Ryan Parks shows use of a template repo (java-calculator) containing a <strong>.
 
 
 https://www.youtube.com/watch?v=D3C12ojRcp0
+
