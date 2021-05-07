@@ -676,15 +676,18 @@ REMEMBER: Draw this on the white board from memory:
    <tr><th> - </th><td> Accuracy rate </td><td> Error rate </td></tr>
    </table>
 
-Based on n (total):
+Based on n (total) diagonal:
+
+   * <strong>Misclassification Rate</strong> (Negatives) : Overall, how often is it wrong?  (10+5)/165 = 0.09
+
+   * <strong>Average Precision (AP)</strong> (Positives) is the ratio of correct predictions (True Positives + True Negatives) to the total number of predictions. It answers "how often is the classifier correct (True)?". (100 + 50) / 165 
+
+Within the box:
 
    * <strong>Accuracy</strong> is (TP + FN) / n = ( 100 + 5 ) / 165.
 
-   * <strong>Misclassification Rate</strong> (aka "Error Rate"): Overall, how often is it wrong?  (10+5)/165 = 0.09
-
-   * <strong>Average Precision (AP)</strong> is the ratio of correct predictions (True Positives + True Negatives) to the total number of predictions. It answers "how often is the classifier correct (True)?". (100 + 50) / 165 
-
    * <strong>Prevalence</strong>: How often does the yes condition actually occur in our sample? 
+(aka "Error Rate")
 
 Within:
 
