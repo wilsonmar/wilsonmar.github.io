@@ -158,6 +158,9 @@ Microsoft has published different lists for what services constitute its "Cognit
 
 Previously, <a target="_blank" href="https://www.youtube.com/watch?v=KxwjnuhNVIY&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&index=33">Cortana"</a> was the brand-name for Microsoft's AI. Cortana is the name of the fictional artificially intelligent character in the Halo video game series. Cortana was going to be Microsoft's answer to Alexa, Siri, Hey Google, and other AI-powered personal assistants which respond to voice commands controlling skills that turn lights on and off, etc. 
 
+Since 2019, Cortana is considered an app or service (skill) that work across multiple platforms,
+a skill that Alexa can call.
+
 In <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services">DOCS</a>:
 
 * Vision - interpret the world visually through cameras, videos, images
@@ -668,21 +671,21 @@ REMEMBER: Draw this on the white board from memory:
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr><th> n=165 </th><th> Actual: yes 105 </th><th> Actual: no 60 </th></tr>
-   <tr><th> Predicted: yes 110 </th><td> 100 True Positives aka "Sensitivity rate" or "Recall rate"</td><td> 10 False Positives (Type I error) </td></tr>
+   <tr><th> Predicted: yes 110 </th><td> 100 True Positives aka "Sensitivity rate" </td><td> 10 False Positives (Type I error) </td></tr>
    <tr><th> Predicted: no 55 </th><td> 5 False Negatives (Type II error)</td><td> 50 True Negatives aka "Specificity rate"</td></tr>
    </table>
 
 <strong>Accuracy</strong> is (TP + FN) / n = ( 100 + 5 ) / 165.
 
-<strong>Average Precision (AP)</strong> is the ratio of correct predictions (True Positives + True Negatives) to the total number of predictions. It answers "how often is the classifier correct?". (100 + 50) / 165 
-
 Misclassification Rate (aka "Error Rate"): Overall, how often is it wrong?  (10+5)/165 = 0.09
 
-   * <strong>Precision rate</strong> is the percentage of results which were <strong>correctly classified</strong>. When it predicts yes, how often is it correct? 100 / 110 = 0.91. This is used in studying rare diseases when many more people would not have the disease than with the disease.
+   * <strong>Precision rate</strong> is the percentage of results which were <strong>correctly predicted</strong> yes: 100 / 110 = 0.91. This is used in studying rare diseases when many more people would not have the disease than with the disease.
 
-   * <strong>Recall rate</strong> is the percentage of predictions the model <strong>correctly identified</strong>: (100 + 50)/(165)
+   * <strong>Recall rate</strong> is the total predictions <strong>True</strong>: (100 + 50)/(165)
 
    * <strong>Prevalence</strong>: How often does the yes condition actually occur in our sample? 
+
+<strong>Average Precision (AP)</strong> is the ratio of correct predictions (True Positives + True Negatives) to the total number of predictions. It answers "how often is the classifier correct?". (100 + 50) / 165 
 
 <a target="_blank" href="https://www.youtube.com/watch?v=FnJ3L-63Cf8&t=20s">VIDEO</a>: 
 Columns represent the known truth: The higher the number, the better:
