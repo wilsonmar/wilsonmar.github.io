@@ -684,7 +684,7 @@ Based on n (total) diagonal:<a target="_blank" href="https://www.dataschool.io/s
 
 Outside the box of n (total):
 
-   * <strong>Accuracy</strong> is (TP + FN) / n = ( 100 + 5 ) / 165.
+   * <strong>Accuracy</strong> Overall, how often is the classifier correct? (TP + FN) / n = ( 100 + 5 ) / 165.
 
    * <strong>Prevalence</strong>: (aka "Error Rate") How often does the yes condition actually occur in our sample?  actual yes/total = 105/165 = 0.64
 
@@ -710,17 +710,23 @@ Different values in the Confusion Matrix would be created for each level of thre
 
 ### Metrics of regression model performance
 
-* <strong>Mean Absolute Error (MAE)</strong>: The average difference between predicted vs. true values. This value is based on the same units as the label, such as dollars. The lower this value is, the better the model is predicting.
+<a target="_blank" href="https://towardsdatascience.com/what-are-the-best-metrics-to-evaluate-your-regression-model-418ca481755b">Which one is best?</a>
 
-* <strong>Root Mean Squared Error (RMSE)</strong>: The square root of the mean squared difference between predicted and true values. The result is a metric based on the same unit as the label (dollars). When compared to the MAE (above), a larger difference indicates greater variance in the individual errors (for example, with some errors being very small, while others are large).
+* <strong>Coefficient of Determination (R2)</strong>: (aka "R-Squared) is a relative measure of how well the model fits dependent variables. It summarizes the variance between predicted and true being explained by the model. The closer to 1 this value is, the better the model is performing. It does not take into consideration of overfitting problem if it performs poorly with training data. Thus:
+
+* Adjusted R Square penalises for additional independent variables added to the model and adjusts the metric to prevent overfitting.
+
+MSE, RMSE or MAE are used to compare performance between different regression models:
+
+* <strong>Mean Absolute Error (MAE)</strong> is an absolute measure of the goodness for the fit. It gives you an absolute number on how much your predicted results deviate from the actual number.  The average difference between predicted vs. true values. This value is based on the same units as the label, such as dollars. The lower this value is, the better the model is predicting.
+
+* <strong>Root Mean Squared Error (RMSE)</strong> is used by Kaggle to assess submissions for its competition. The square root of the mean squared difference between predicted and true values. The result is a metric based on the same unit as the label (dollars). A larger difference When compared to the MAE (above) indicates greater variance in the individual errors (for example, with some errors being very small, while others are large).
 
 * <strong>Relative Squared Error (RSE)</strong>: A relative metric between 0 and 1 based on the square of the differences between predicted and true values. The closer to 0 this metric is, the better the model is performing. Because this metric is relative, it can be used to compare models where the labels are in different units.
 
 * <strong>Relative Absolute Error (RAE)</strong>: A relative metric between 0 and 1 based on the absolute differences between predicted and true values. The closer to 0 this metric is, the better the model is performing. Like RSE, this metric can be used to compare models where the labels are in different units.
 
-* <strong>Coefficient of Determination (R2)</strong>: (aka "R-Squared) summarizes the variance between predicted and true being explained by the model. The closer to 1 this value is, the better the model is performing.
-
-### Metrics for clustering models
+### Metrics for clustering model performance
 
 * <strong>Average Distance to Other Center</strong> is how close, on average, each point in the cluster is to the centroids of all other clusters.
 
