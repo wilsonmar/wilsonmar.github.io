@@ -671,27 +671,29 @@ REMEMBER: Draw this on the white board from memory:
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr><th> n=165 </th><th> Actual: yes 105 </th><th> Actual: no 60 </th></tr>
-   <tr><th> Predicted: yes 110 </th><td> 100 True Positives aka "Sensitivity rate" </td><td> 10 False Positives (Type I error) </td></tr>
+   <tr><th> Predicted: yes 110 Precision</th><td> 100 True Positives aka "Sensitivity rate" </td><td> 10 False Positives (Type I error) </td></tr>
    <tr><th> Predicted: no 55 </th><td> 5 False Negatives (Type II error)</td><td> 50 True Negatives aka "Specificity rate"</td></tr>
    <tr><th> - </th><td> Accuracy rate </td><td> Error rate </td></tr>
    </table>
 
-<strong>Accuracy</strong> is (TP + FN) / n = ( 100 + 5 ) / 165.
+Based on n (total):
+
+   * <strong>Accuracy</strong> is (TP + FN) / n = ( 100 + 5 ) / 165.
 
    * <strong>Misclassification Rate</strong> (aka "Error Rate"): Overall, how often is it wrong?  (10+5)/165 = 0.09
 
-   * <strong>Precision rate</strong> is the percentage of results which were <strong>correctly predicted</strong> yes: 100 / 110 = 0.91. This is used in studying rare diseases when many more people would not have the disease than with the disease.
-
-   * <strong>Recall rate</strong> is the total predictions <strong>True</strong>: (100 + 50)/(165)
+   * <strong>Average Precision (AP)</strong> is the ratio of correct predictions (True Positives + True Negatives) to the total number of predictions. It answers "how often is the classifier correct (True)?". (100 + 50) / 165 
 
    * <strong>Prevalence</strong>: How often does the yes condition actually occur in our sample? 
 
-<strong>Average Precision (AP)</strong> is the ratio of correct predictions (True Positives + True Negatives) to the total number of predictions. It answers "how often is the classifier correct (True)?". (100 + 50) / 165 
+Within:
+
+   * <strong>Precision rate</strong> is the percentage of results which were <strong>correctly predicted</strong> yes: 100 / 110 = 0.91. This is used in studying rare diseases when many more people would not have the disease than with the disease.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=FnJ3L-63Cf8&t=20s">VIDEO</a>: 
 Columns represent the known truth: The higher the number, the better:
 
-   * <strong>Sensitivity rate</strong> is the percent of yes's correctly identified as <strong>Positive</strong> = TP / (TP + FN) = 100 / (100 + 5) = 0.83. 
+   * <strong>Sensitivity (recall) rate</strong> is the percent of yes's correctly identified as <strong>Positive</strong> = TP / (TP + FN) = 100 / (100 + 5) = 0.83. 
 
    * <strong>Specificity rate</strong> is the percent of no's correctly identified as <strong>Negative</strong> = TN / (TN + FP) = 50 / (50 + 10) = 0.83. 
 
