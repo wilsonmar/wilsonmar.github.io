@@ -678,9 +678,9 @@ REMEMBER: Draw this on the white board from memory:
 
 Based on n (total) diagonal:
 
-   * <strong>Misclassification Rate</strong> (Negatives) : Overall, how often is it wrong?  (10+5)/165 = 0.09
+   * <strong>Misclassification Rate</strong> : Overall, how often is it <strong>False</strong> (wrong)? (10+5) / 165 = 0.09
 
-   * <strong>Average Precision (AP)</strong> (Positives) is the ratio of correct predictions (True Positives + True Negatives) to the total number of predictions. It answers "how often is the classifier correct (True)?". (100 + 50) / 165 
+   * <strong>Average Precision (AP)</strong> is the ratio of correct predictions (True Positives + True Negatives) to the total number of predictions. It answers "how often is the classifier <strong>True</strong> (correct)?". (100 + 50) / 165 
 
 Within the box:
 
