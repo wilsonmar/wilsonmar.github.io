@@ -59,13 +59,15 @@ When you use my <a target="_blank" href="https://github.com/wilsonmar/azure-your
 
 My scripts also makes use of a more secure way to store secrets than inserting them in code that can be checked back into GitHub.
 
-You still need skill at clicking through the Portal.azure.com and ML.azure.com
-so that you can verify resources that have created and to discuss with others.
+Effective deletion hygiene is also good to see how your instances behave when it takes advantage of <strong>cheaper spot instances</strong> which can disappear at any time. 
+This can also be used for "chaos engineering" efforts.
+
+To verify resource status and to discuss with others, you still need skill at clicking through the Portal.azure.com, ML.azure.com, etc.
 
 References:
-   * <a target="_blank" href="https://www.youtube.com/watch?v=Rrx7NzPugaE">VIDEO</a>: <a target="_blank" href="https://dev.to/azure/keep-your-azure-subscription-clean-automatically-mmi">shut down automatically all your existing VMs</a> (using a PowerShell script called by a Logic App), by <a target="_blank" href="https://www.youtube.com/channel/UCAr20GBQayL-nFPWFnUHNAA"">Frank Boucher</a> at <a target="_blank" href="https://github.com/FBoucher/">github.com/FBoucher</a>
-   * https://www.youtube.com/watch?v=lu7a5RDeJU0 by Build5Nines
-   * https://www.codeisahighway.com/effective-ways-to-delete-resources-in-a-resource-group-on-azure/
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Rrx7NzPugaE">VIDEO</a>: <a target="_blank" href="https://dev.to/azure/keep-your-azure-subscription-clean-automatically-mmi">shut down automatically all your existing VMs</a> (using a PowerShell script called by a scheduled Logic App), by <a target="_blank" href="https://www.youtube.com/channel/UCAr20GBQayL-nFPWFnUHNAA"">Frank Boucher</a> at <a target="_blank" href="https://github.com/FBoucher/AzurePowerTools">github.com/FBoucher</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=lu7a5RDeJU0" title="by Build5Nines">VIDEO</a>: To release IP address, don't stop machines, but delete the resource.
+   * <a target="_blank" href="https://www.codeisahighway.com/effective-ways-to-delete-resources-in-a-resource-group-on-azure/">VIDEO</a>
    * <a target="_blank" href="https://azure.microsoft.com/en-us/blog/announcing-auto-shutdown-for-vms-using-azure-resource-manager/">Auto-shutdown by Resource Manager</a> <a target="_blank" href="https://azure.microsoft.com/en-us/updates/set-auto-shutdown-within-a-couple-of-clicks-for-vms-using-azure-resource-manager/" title="November 22, 2016">on a schedule</a> is only for VMs in DevOps
    * https://www.c-sharpcorner.com/article/deploy-a-google-action-on-azure/
    * <a target="_blank" href="https://automys.com/library/asset/scheduled-virtual-machine-shutdown-startup-microsoft-azure" title="2015"> start/stop by an Automation Acount Runbook</a> for specific tags attached to different Resource Groups: Assert: "AutoshutdownSchedule: Tuesday" run every hour.
@@ -106,7 +108,7 @@ PRITIP: In commands, each offering has a "Kind" code to designate its processing
 
    <tr align="top"><td> Speech </td><td> "SpeechServices"
       </td><td> - </td></tr>
-   <tr align="top"><td> Speech </td><td> "SpeakerRecognition?
+   <tr align="top"><td> Speech </td><td> <a href="#SpeakerRecognition">SpeakerRecognition?</a>
       </td><td> - </td></tr>
 
    <tr align="top"><td> Language </td><td> <a href="#LUIS">"LUIS"</a>
@@ -187,8 +189,10 @@ https://docs.microsoft.com/en-us/azure/search</a>
 
 ### Decision
 
-   * <strong>classification</strong> (unsupervised machine learning) fits features into model and predict classification of the label
+   * <strong>classification</strong> (unsupervised machine learning) fits features into model and predict classification of the label. Labels are what we want to predict, such as a future value predicted or an action. The label is usually "Y" among mathimaticians.
+
    * <strong>regression (supervised</strong> machine learning) uses historical data to train the model to predict <strong>numerical</strong> values.
+
    * Time Series Anomaly Detection
    <br /><br />
 
@@ -1033,7 +1037,7 @@ NLP enables the creation of software that can:
    * Interpret spoken language, and synthesize speech responses.
    * Automatically translate spoken or written phrases between languages.
    * Interpret commands and determine appropriate actions.
-   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/">Speaker Recognition</a> identifies and verifies the people speaking based on audio.
+   * <a href="#SpeakerRecognition">Recognize Speaker</a> based on audio.
    <br /><br />
 
 Within Microoft, NLP consists of these Azure services (described below):
@@ -1043,6 +1047,15 @@ Within Microoft, NLP consists of these Azure services (described below):
    * <a href="#TextTranslation">Translator Text</a>
    <br /><br />
 
+
+<a name="SpeakerRecognition"></a>
+
+### SpeakerRecognition
+
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/">Speaker Recognition</a>
+for authentication.
+
+In contrast, Speaker Diarization groups segments of audio by speaker in a batch operation.
 
 <a name="LUIS"></a>
 

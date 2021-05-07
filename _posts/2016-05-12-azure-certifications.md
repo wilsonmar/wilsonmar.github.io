@@ -61,9 +61,9 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
 
    </td></tr>
 <tr valign="top"><td> AI Engineer
-   </td><td><a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">AI-900 AI Fundamentals<br />
-     * AI-100 Azure AI Engineer Associate<br />
-     * AI-102 Azure AI Engineer</a>
+   </td><td><a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-900">AI-900 AI Fundamentals<br />
+     * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-100">AI-100 Azure AI Engineer Associate</a>
+     * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-102">AI-102 Azure AI Engineer</a>
 
    </td></tr>
 <tr valign="top"><td> Security Engineer
@@ -111,7 +111,18 @@ Microsoft Quizzes by CloudAcademy</a>
 
 ### Microsoft Learning
 
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">
+docs.microsoft.com/en-us/learn/azure</a> lists events 
+   * <a target="_blank" href="https://mvtd.events.microsoft.com/Azure?wt.mc_id=onedestination">Virtual Training Days</a> for live sessions with experts and get exam vouchers
+   * Ignite conference sessions about new stuff
+   * Microsoft Tech Community
+   <br /><br />
+
 <a target="_blank" href="https://events.microsoft.com/?timeperiod=next30Days&isSharedInLocalViewMode=true&country=United%20States&language=English">Microsoft Events</a>
+
+#### ESI
+
+If your company has a deal with Microsoft:
 
 1. <a target="_blank" href="https://esi.microsoft.com/">Microsoft's Enterprise Skills Initiative</a>. Sign in with your corporate email.
 1. https://esi.microsoft.com/deliverymultiday 
