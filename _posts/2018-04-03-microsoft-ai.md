@@ -676,9 +676,9 @@ REMEMBER: Draw this on the white board from memory:
    <tr><th> - </th><td> Accuracy rate </td><td> Error rate </td></tr>
    </table>
 
-Based on n (total) diagonal:
+Based on n (total) diagonal:<a target="_blank" href="https://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/">*</a>
 
-   * <strong>Average Precision (AP)</strong> is the ratio of correct predictions (True Positives + True Negatives) to the total number of predictions. It answers "how often is the classifier <strong>True</strong> (correct)?". (100 + 50) / 165 
+   * <strong>Average Precision (AP)</strong> is the ratio of correct predictions (True Positives + True Negatives) to the total number of predictions. When it predicts yes, how often is it <strong>True</strong> (correct)?". (100 + 50) / 165 
 
    * <strong>Misclassification Rate</strong> : Overall, how often is it <strong>False</strong> (wrong)? (10+5) / 165 = 0.09
 
@@ -686,8 +686,7 @@ Outside the box of n (total):
 
    * <strong>Accuracy</strong> is (TP + FN) / n = ( 100 + 5 ) / 165.
 
-   * <strong>Prevalence</strong>: How often does the yes condition actually occur in our sample? 
-(aka "Error Rate")
+   * <strong>Prevalence</strong>: (aka "Error Rate") How often does the yes condition actually occur in our sample?  actual yes/total = 105/165 = 0.64
 
 Within the box:
 
