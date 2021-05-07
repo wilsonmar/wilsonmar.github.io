@@ -245,11 +245,27 @@ Offers cloud time
 
 ### A Cloud Guru & Linux Academy
 
-ACloudGuru.com (formerly ACloud.guru) offers cloud time
+ACloudGuru.com (formerly ACloud.guru) offers cloud time with premium subscriptions.
+In 2019 they purchased <a target="_blank" href="https://app.linuxacademy.com/search?type=Course&categories=Azure">LinuxAcademy.com</a>
 
-They purchased
-<a target="_blank" href="https://app.linuxacademy.com/search?type=Course&categories=Azure">
-LinuxAcademy.com</a>
+
+### EDX
+
+https://www.edx.org/learn/azure
+by the High School of Digital Culture (ITMO University, Russia) is $149 for those who want quizzes and a completion certificate.
+
+Their Introduction to Machine Learning covers:
+   * Regression
+   * Classifiers: k-NN and Naive Bayes
+   * Classifiers: Logistic Regression
+   * Clustering: K-Means, Agglomerative 
+
+Their Advanced covers 
+   * Principal Component Analysis (PCA)
+   * Support Vector Machine (SVM)
+   * Entropy. Decision Trees (DTs)
+   * Ensemble Learning
+   * Reinforcement Learning
 
 ### Vlad
 

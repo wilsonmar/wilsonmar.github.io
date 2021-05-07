@@ -68,6 +68,8 @@ References:
    * https://www.codeisahighway.com/effective-ways-to-delete-resources-in-a-resource-group-on-azure/
    * <a target="_blank" href="https://azure.microsoft.com/en-us/blog/announcing-auto-shutdown-for-vms-using-azure-resource-manager/">Auto-shutdown by Resource Manager</a> <a target="_blank" href="https://azure.microsoft.com/en-us/updates/set-auto-shutdown-within-a-couple-of-clicks-for-vms-using-azure-resource-manager/" title="November 22, 2016">on a schedule</a> is only for VMs in DevOps
    * https://www.c-sharpcorner.com/article/deploy-a-google-action-on-azure/
+   * <a target="_blank" href="https://automys.com/library/asset/scheduled-virtual-machine-shutdown-startup-microsoft-azure" title="2015"> start/stop by an Automation Acount Runbook</a> for specific tags attached to different Resource Groups: Assert: "AutoshutdownSchedule: Tuesday" run every hour.
+   <br /><br />
 
 <a name="LogicApp"></a>
 
@@ -664,25 +666,33 @@ To compare the performance among multiple models</a>, in your pipeline, add an <
 
 ### Metrics of classification model performance
 
-Test data is used to determine how well predictions created from a model, presented in a 2x2 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-understand-automated-ml#confusion-matrix">Confusion Matrix</a> which compares the Predicted label to True Label (yes or no) to identify true/false positives/negatives. 
+Test data is used to determine how well predictions created from a model, presented in a 2x2 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-understand-automated-ml#confusion-matrix">Confusion Matrix</a> which compares the Predicted label to Actual (True) Label (yes or no) to identify true/false positives/negatives. 
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr><th> - </th><th> Predicted: no </th><th> Predicted: yes </th></tr>
-   <tr><th> Actual: no  </th><td> true negatives </td><td> Type II error: false negatives </td></tr>
-   <tr><th> Actual: yes </th><td> Type I error: false positives </td><td> true positives</td></tr>
+   <tr><th> n=165 </th><th> Actual: yes 105 </th><th> Actual: no 60 </th></tr>
+   <tr><th> Predicted: yes 110 </th><td> 100 True Positives aka "Sensitivity" or "Recall rate"</td><td> 10 Type I error: False Positives </td></tr>
+   <tr><th> Predicted: no 55 </th><td> 5 Type II error: False Negatives </td><td> 50 True Negatives aka "Specificity"</td></tr>
    </table>
 
-REMEMBER: Average Precision (AP) is the ratio of correct predictions (true positives + true negatives) to the total number of predictions. 
+REMEMBER: <strong>Average Precision (AP)</strong> is the ratio of correct predictions (True Positives + True Negatives) to the total number of predictions. It answers "how often is the classifier correct?". 
 
-F1 Score is an overall metric that takes into account both precision and recall): 
-   
-   * <strong>Precision</strong> is the percentage of class predictions made by the model which were <strong>correct</strong>. For example, if the model <strong>predicted</strong> that 10 images are oranges, of which eight were actually oranges, then the precision is 0.8 (80%).
+Accuracy = 100/110 = 0.91
+
+Misclassification Rate (aka "Error Rate"): Overall, how often is it wrong?  (10+5)/165 = 0.09
+
+   * <strong>Precision</strong> is the percentage of class predictions made by the model which were <strong>correct</strong>. When it predicts yes, how often is it correct? 110 / 110 = 0.91
 
    * <strong>Recall</strong> is the percentage of class predictions the model <strong>correctly identify</strong>. For example, if there are 10 images of apples, and the model found 7 of them, then the recall is 0.7 (70%).
 
-The Receiver Operating Characteristic (ROC) curve plots the relationship between True Positive Rate (TPR) and False Positive Rate (FPR) as the decision threshold changes. The ROC curve can be less informative when training models on datasets with high class imbalance, as the majority class can drown out contributions from minority classes.
+   * Prevalence: How often does the yes condition actually occur in our sample? 
 
-   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-classification-model-azure-machine-learning-designer/evaluate-model">AUC</a> (Area Under the Curve) measures the area underneath the ROC curve. If the AUC is 0.87 means 87% of the area of the plot is below the curve. A model with AUC of 0.5 performs no better than random chance. The larger the AUC to 1 the better the model is at separating classes. Thus, the ideal AUC is 1.0.
+<a target="_blank" href="https://www.wikiwand.com/en/F-score">F1 Score</a> is an overall metric that takes into account both precision and recall): 
+weighted average of the true positive rate (recall) and precision.
+   
+<a target="_blank" href="https://www.youtube.com/watch?v=4jRBRDbJemM&list=RDCMUCtYLUTtgS3k1Fg4y5tAhLbw&start_radio=1">VIDEO</a>: The <a target="_blank" href="https://www.dataschool.io/roc-curves-and-auc-explained/">Receiver Operating Characteristic (ROC) curve</a> plots the relationship between True Positive Rate (TPR) and False Positive Rate (FPR) as the decision threshold changes. The ROC curve can be less informative when training models on datasets with high class imbalance, as the majority class can drown out contributions from minority classes.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=OAl6eAyP-yo">VIDEO</a>: 
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-classification-model-azure-machine-learning-designer/evaluate-model">AUC</a> (Area Under the Curve) measures the area underneath the ROC curve. If the AUC is 0.87 means 87% of the area of the plot is below the curve. A model with AUC of 0.5 performs no better than random chance. The larger the AUC to 1 the better the model is at separating classes. Thus, the ideal AUC is 1.0.
 
 ### Metrics of regression model performance
 
@@ -1153,11 +1163,21 @@ DEMO: https://aidemos.microsoft.com/text-analytics
 
    For response "script" : "Latn", text was transliterated in English.
 
-A custom translator is needed to train a model to recognize and translate domain-specific words and phrases in specific industries such as aerospace, automotive, chemistry, mechanical, etc. Training is done by have pairs of documents (English and French, etc.). That run can take several hours, so <a target="_blank" href="https://aka.ms/DocumentTranslation">batch processing</a> is supported.
+A custom translator is needed to train a model to recognize and translate domain-specific words and phrases in specific industries such as aerospace, automotive, chemistry, mechanical, etc. 
 
    <a target="_blank" href="
    https://portal.customtranslator.azure.ai/">
            portal.customtranslator.azure.ai</a>
+
+   Training is done by have pairs of documents (English and French, etc.). 
+
+   10,000 aligned parallel sentences are neede to train a translator. 
+
+   In addition to Microsoft Office formats, files with extension .ALIGN for parellel languages are perfectly aligned.
+   Translation Memory systems can export parallel documents in XLF, XLIFF, TMX, suffix.
+   Microsoft's LocStudio files have .LCL suffix.
+
+   Translation runs can each take several hours. So <a target="_blank" href="https://aka.ms/DocumentTranslation">batch processing</a> is supported.
 
    If you don't have admin
 
