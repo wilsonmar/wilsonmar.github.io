@@ -668,8 +668,8 @@ REMEMBER: Draw this on the white board from memory:
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr><th> n=165 </th><th> Actual: yes 105 </th><th> Actual: no 60 </th></tr>
-   <tr><th> Predicted: yes 110 </th><td> 100 True Positives aka "Sensitivity rate" or "Recall rate"</td><td> 10 Type I error: False Positives </td></tr>
-   <tr><th> Predicted: no 55 </th><td> 5 Type II error: False Negatives </td><td> 50 True Negatives aka "Specificity rate"</td></tr>
+   <tr><th> Predicted: yes 110 </th><td> 100 True Positives aka "Sensitivity rate" or "Recall rate"</td><td> 10 False Positives (Type I error) </td></tr>
+   <tr><th> Predicted: no 55 </th><td> 5 False Negatives (Type II error)</td><td> 50 True Negatives aka "Specificity rate"</td></tr>
    </table>
 
 <strong>Accuracy</strong> is (TP + FN) / n = ( 100 + 5 ) / 165.
