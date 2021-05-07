@@ -682,14 +682,14 @@ Based on n (total) diagonal:
 
    * <strong>Average Precision (AP)</strong> is the ratio of correct predictions (True Positives + True Negatives) to the total number of predictions. It answers "how often is the classifier <strong>True</strong> (correct)?". (100 + 50) / 165 
 
-Within the box:
+Outside the box:
 
    * <strong>Accuracy</strong> is (TP + FN) / n = ( 100 + 5 ) / 165.
 
    * <strong>Prevalence</strong>: How often does the yes condition actually occur in our sample? 
 (aka "Error Rate")
 
-Within:
+Within the box:
 
    * <strong>Precision rate</strong> is the percentage of results which were <strong>correctly predicted</strong> yes: 100 / 110 = 0.91. This is used in studying rare diseases when many more people would not have the disease than with the disease.
 
