@@ -674,11 +674,12 @@ Test data is used to determine how well predictions created from a model, presen
    <tr><th> Predicted: no 55 </th><td> 5 Type II error: False Negatives </td><td> 50 True Negatives aka "Specificity rate"</td></tr>
    </table>
 
-Columns represent the known truth.
+<a target="_blank" href="https://www.youtube.com/watch?v=Z5TtopYX1Gc">VIDEO</a>: 
+Columns represent the known truth:
 
-<strong>Sensitivity rate</strong> is the percent of yes's correctly identified = TP / (TP + FN) = 100 / (100 + 5) = 0.83
+   * <strong>Sensitivity rate</strong> is the percent of yes's correctly identified = TP / (TP + FN) = 100 / (100 + 5) = 0.83. The higher the Sensitivity, the better at positives.
 
-<strong>Specificity rate</strong> is the percent of no's correctly identified = TN / (TN + FP) = 50 / (50 + 10) = 0.83
+   * <strong>Specificity rate</strong> is the percent of no's correctly identified = TN / (TN + FP) = 50 / (50 + 10) = 0.83. The higher the Specificity, the better at negatives.
 
 REMEMBER: <strong>Average Precision (AP)</strong> is the ratio of correct predictions (True Positives + True Negatives) to the total number of predictions. It answers "how often is the classifier correct?". (100 + 50) / 165 
 
