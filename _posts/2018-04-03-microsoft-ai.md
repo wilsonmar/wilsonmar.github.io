@@ -671,8 +671,8 @@ REMEMBER: Draw this on the white board from memory:
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr><th> n=165 </th><th> Actual: yes 105 </th><th> Actual: no 60 </th></tr>
-   <tr><th> Predicted: yes 110 Precision</th><td> 100 True Positives aka "Sensitivity rate" </td><td> 10 False Positives (Type I error) </td></tr>
-   <tr><th> Predicted: no 55 </th><td> 5 False Negatives (Type II error)</td><td> 50 True Negatives aka "Specificity rate"</td></tr>
+   <tr><th> Predicted: yes 110 "Precision"</th><td> 100 True Positives "Sensitivity rate" </td><td> 10 False Positives (Type I error) </td></tr>
+   <tr><th> Predicted: no 55 </th><td> 5 False Negatives (Type II error)</td><td> 50 True Negatives  "Specificity rate"</td></tr>
    <tr><th> - </th><td> Accuracy rate </td><td> Error rate </td></tr>
    </table>
 
