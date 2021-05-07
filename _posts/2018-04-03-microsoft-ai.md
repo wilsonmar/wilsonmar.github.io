@@ -670,29 +670,32 @@ Test data is used to determine how well predictions created from a model, presen
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr><th> n=165 </th><th> Actual: yes 105 </th><th> Actual: no 60 </th></tr>
-   <tr><th> Predicted: yes 110 </th><td> 100 True Positives aka "Sensitivity" or "Recall rate"</td><td> 10 Type I error: False Positives </td></tr>
-   <tr><th> Predicted: no 55 </th><td> 5 Type II error: False Negatives </td><td> 50 True Negatives aka "Specificity"</td></tr>
+   <tr><th> Predicted: yes 110 </th><td> 100 True Positives aka "Sensitivity rate" or "Recall rate"</td><td> 10 Type I error: False Positives </td></tr>
+   <tr><th> Predicted: no 55 </th><td> 5 Type II error: False Negatives </td><td> 50 True Negatives aka "Specificity rate"</td></tr>
    </table>
 
-REMEMBER: <strong>Average Precision (AP)</strong> is the ratio of correct predictions (True Positives + True Negatives) to the total number of predictions. It answers "how often is the classifier correct?". 
+Columns represent the known truth.
 
-Accuracy = 100/110 = 0.91
+<strong>Specificity rate</strong> percent of no's correctly identified = TN / (TN + FP) = 50 / (50 + 10) = 0.83
 
-Misclassification Rate (aka "Error Rate"): Overall, how often is it wrong?  (10+5)/165 = 0.09
-
-   * <strong>Precision</strong> is the percentage of class predictions made by the model which were <strong>correct</strong>. When it predicts yes, how often is it correct? 110 / 110 = 0.91
-
-   * <strong>Recall</strong> is the percentage of class predictions the model <strong>correctly identify</strong>. For example, if there are 10 images of apples, and the model found 7 of them, then the recall is 0.7 (70%).
-
-   * Prevalence: How often does the yes condition actually occur in our sample? 
+REMEMBER: <strong>Average Precision (AP)</strong> is the ratio of correct predictions (True Positives + True Negatives) to the total number of predictions. It answers "how often is the classifier correct?". (100 + 50) / 165 
 
 <a target="_blank" href="https://www.wikiwand.com/en/F-score">F1 Score</a> is an overall metric that takes into account both precision and recall): 
 weighted average of the true positive rate (recall) and precision.
-   
-<a target="_blank" href="https://www.youtube.com/watch?v=4jRBRDbJemM&list=RDCMUCtYLUTtgS3k1Fg4y5tAhLbw&start_radio=1">VIDEO</a>: The <a target="_blank" href="https://www.dataschool.io/roc-curves-and-auc-explained/">Receiver Operating Characteristic (ROC) curve</a> plots the relationship between True Positive Rate (TPR) and False Positive Rate (FPR) as the decision threshold changes. The ROC curve can be less informative when training models on datasets with high class imbalance, as the majority class can drown out contributions from minority classes.
+
+Different values in the Confusion Matrix would be created for each level of threshold.
+<a target="_blank" href="https://www.youtube.com/watch?v=4jRBRDbJemM&list=RDCMUCtYLUTtgS3k1Fg4y5tAhLbw&start_radio=1">VIDEO</a>: The <a target="_blank" href="https://www.dataschool.io/roc-curves-and-auc-explained/">Receiver Operating Characteristic (ROC) curve</a> plots the relationship between True Positive Rate (TPR) aka "Sensitivity" on the Y axis and False Positive Rate (FPR) or (1 - Specificity) on the X axis as the decision threshold changes. 
 
 <a target="_blank" href="https://www.youtube.com/watch?v=OAl6eAyP-yo">VIDEO</a>: 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-classification-model-azure-machine-learning-designer/evaluate-model">AUC</a> (Area Under the Curve) measures the area underneath the ROC curve. If the AUC is 0.87 means 87% of the area of the plot is below the curve. A model with AUC of 0.5 performs no better than random chance. The larger the AUC to 1 the better the model is at separating classes. Thus, the ideal AUC is 1.0.
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-classification-model-azure-machine-learning-designer/evaluate-model">AUC</a> (Area Under the Curve) measures the area underneath the ROC curve. It is used to compare methods of categorization (such as between Logistic Regression vs Random Forest). A model with AUC of 0.5 performs no better than random chance. The larger the AUC to 1.0 the better the model is at separating classes. Thus, the ideal AUC is 1.0. 
+
+Misclassification Rate (aka "Error Rate"): Overall, how often is it wrong?  (10+5)/165 = 0.09
+
+   * <strong>Precision</strong> is the percentage of resules which were <strong>correctly classified</strong>. When it predicts yes, how often is it correct? 100 / 110 = 0.91. This is used in studying rare diseases when many more people would not have the disease than with the disease.
+
+   * <strong>Recall Accuracy</strong> is the percentage of class predictions the model <strong>correctly identified</strong>: (100 + 50)/(165)
+
+   * Prevalence: How often does the yes condition actually occur in our sample? 
 
 ### Metrics of regression model performance
 
