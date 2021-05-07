@@ -156,7 +156,7 @@ Once you're setup to run CLI commands, you can List kinds of Cognitive Services:
 
 Microsoft has published different lists for what services constitute its "Cognitive Services" brand name to achieve AI-enhanced solutions which mimic human intelligence.
 
-Previously, "Cortana" was the brand-name for Microsoft's AI. Cortana is the name of the fictional artificially intelligent character in the Halo video game series. Cortana was going to be Microsoft's answer to Alexa, Siri, Hey Google, and other AI-powered personal assistants which respond to voice commands controlling skills that turn lights on and off, etc. 
+Previously, <a target="_blank" href="https://www.youtube.com/watch?v=KxwjnuhNVIY&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&index=33">Cortana"</a> was the brand-name for Microsoft's AI. Cortana is the name of the fictional artificially intelligent character in the Halo video game series. Cortana was going to be Microsoft's answer to Alexa, Siri, Hey Google, and other AI-powered personal assistants which respond to voice commands controlling skills that turn lights on and off, etc. 
 
 In <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services">DOCS</a>:
 
@@ -452,9 +452,6 @@ Steps to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine
    4. Test the service (used by the user)
    <br /><br />
 
-<a target="_blank" href="https://www.youtube.com/watch?v=R2mC-NUAmMk">
-VIDEO: Seeing AI 2016 Prototype</a> apps for the blind.
-
 
 <hr />
 
@@ -667,6 +664,7 @@ To compare the performance among multiple models</a>, in your pipeline, add an <
 ### Metrics of classification model performance
 
 Test data is used to determine how well predictions created from a model, presented in a 2x2 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-understand-automated-ml#confusion-matrix">Confusion Matrix</a> which compares the Predicted label to Actual (True) Label (yes or no) to identify true/false positives/negatives. 
+REMEMBER: Draw this on the white board from memory:
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr><th> n=165 </th><th> Actual: yes 105 </th><th> Actual: no 60 </th></tr>
@@ -674,14 +672,24 @@ Test data is used to determine how well predictions created from a model, presen
    <tr><th> Predicted: no 55 </th><td> 5 Type II error: False Negatives </td><td> 50 True Negatives aka "Specificity rate"</td></tr>
    </table>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=Z5TtopYX1Gc">VIDEO</a>: 
-Columns represent the known truth:
+<strong>Accuracy</strong> is (TP + FN) / n = ( 100 + 5 ) / 165.
 
-   * <strong>Sensitivity rate</strong> is the percent of yes's correctly identified = TP / (TP + FN) = 100 / (100 + 5) = 0.83. The higher the Sensitivity, the better at positives.
+<strong>Average Precision (AP)</strong> is the ratio of correct predictions (True Positives + True Negatives) to the total number of predictions. It answers "how often is the classifier correct?". (100 + 50) / 165 
 
-   * <strong>Specificity rate</strong> is the percent of no's correctly identified = TN / (TN + FP) = 50 / (50 + 10) = 0.83. The higher the Specificity, the better at negatives.
+Misclassification Rate (aka "Error Rate"): Overall, how often is it wrong?  (10+5)/165 = 0.09
 
-REMEMBER: <strong>Average Precision (AP)</strong> is the ratio of correct predictions (True Positives + True Negatives) to the total number of predictions. It answers "how often is the classifier correct?". (100 + 50) / 165 
+   * <strong>Precision rate</strong> is the percentage of results which were <strong>correctly classified</strong>. When it predicts yes, how often is it correct? 100 / 110 = 0.91. This is used in studying rare diseases when many more people would not have the disease than with the disease.
+
+   * <strong>Recall rate</strong> is the percentage of predictions the model <strong>correctly identified</strong>: (100 + 50)/(165)
+
+   * <strong>Prevalence</strong>: How often does the yes condition actually occur in our sample? 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=FnJ3L-63Cf8&t=20s">VIDEO</a>: 
+Columns represent the known truth: The higher the number, the better:
+
+   * <strong>Sensitivity rate</strong> is the percent of yes's correctly identified as <strong>Positive</strong> = TP / (TP + FN) = 100 / (100 + 5) = 0.83. 
+
+   * <strong>Specificity rate</strong> is the percent of no's correctly identified as <strong>Negative</strong> = TN / (TN + FP) = 50 / (50 + 10) = 0.83. 
 
 <a target="_blank" href="https://www.wikiwand.com/en/F-score">F1 Score</a> is an overall metric that takes into account both precision and recall): 
 weighted average of the true positive rate (recall) and precision.
@@ -691,14 +699,6 @@ Different values in the Confusion Matrix would be created for each level of thre
 
 <a target="_blank" href="https://www.youtube.com/watch?v=OAl6eAyP-yo">VIDEO</a>: 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-classification-model-azure-machine-learning-designer/evaluate-model">AUC</a> (Area Under the Curve) measures the area underneath the ROC curve. It is used to compare methods of categorization (such as between Logistic Regression vs Random Forest). A model with AUC of 0.5 performs no better than random chance. The larger the AUC to 1.0 the better the model is at separating classes. Thus, the ideal AUC is 1.0. 
-
-Misclassification Rate (aka "Error Rate"): Overall, how often is it wrong?  (10+5)/165 = 0.09
-
-   * <strong>Precision</strong> is the percentage of resules which were <strong>correctly classified</strong>. When it predicts yes, how often is it correct? 100 / 110 = 0.91. This is used in studying rare diseases when many more people would not have the disease than with the disease.
-
-   * <strong>Recall Accuracy</strong> is the percentage of class predictions the model <strong>correctly identified</strong>: (100 + 50)/(165)
-
-   * Prevalence: How often does the yes condition actually occur in our sample? 
 
 ### Metrics of regression model performance
 
@@ -1144,13 +1144,24 @@ DEMO: https://aidemos.microsoft.com/text-analytics
 
    <a name="TextTranslation"></a>
 
-   ### Translator Text (text to speech)
+   ### Translator Text (text-to-tex)
 
-   <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/">Microsoft's Translator service </a> can translate text between more than 90 languages and dialects.
+   <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/">Microsoft's Translator service </a> can translate text between <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/Translator/language-support">more than 90 languages and dialects</a>, specified using  ISO 639-1 two-letter language codes and 3166-1 cultural codes such as "en-US" for US English, "en-GB" for British English, "fr-CA" for Canadian French, etc.
 
-   <a target="_blank" href="https://translator.microsoft.com/">translator.microsoft.com</a> is free.
+Hands-on tool wihtou a compute instance:
 
-   PROTIP: Translator Text does not need a compute instance!
+1. <a target="_blank" href="https://translator.microsoft.com/">translator.microsoft.com</a>
+
+2. Click on "Start conversation", log in and enter your name and language.
+
+3. Share the conversation code with other participants, who can join using the Micreosoft Translator app or website.
+
+4. Speak or type in your language to communicate with other participants in the conversation. Other participants will see your messages in their own language.
+
+
+### 09 - Translation.ipynb 
+
+BLAH: You are asked to use your own Subscription anyway, so instead of <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/translate-text-with-translation-service/3-exercise-translate-text-use-azure">the Exercise - Translate text and speech</a>, use portal.azure.com directly.
 
    A Python program can run from your laptop or mobile phone making API calls to 
    the Translator endpoint at:
@@ -1200,6 +1211,10 @@ References:
 <a name="ComputerVision"></a>
 
 ## Vision services
+
+App for the blind: <a target="_blank" href="https://www.youtube.com/watch?v=R2mC-NUAmMk&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&start_radio=1">
+VIDEO</a>: <a target="_blank" href="https://www.youtube.com/watch?v=bqeQByqf_f8&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&index=2">INTRO</a>: <a target="_blank" href="https://www.seeingai.com/">SeeingAI.com</a>.
+Permissions for the "See It All" app are for its internal name "Mt Studio Web Prod".
 
 <a target="_blank" href="
 https://docs.microsoft.com/en-us/learn/paths/explore-computer-vision-microsoft-azure/">
