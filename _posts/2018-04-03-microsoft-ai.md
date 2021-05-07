@@ -678,11 +678,11 @@ REMEMBER: Draw this on the white board from memory:
 
 Based on n (total) diagonal:
 
-   * <strong>Misclassification Rate</strong> : Overall, how often is it <strong>False</strong> (wrong)? (10+5) / 165 = 0.09
-
    * <strong>Average Precision (AP)</strong> is the ratio of correct predictions (True Positives + True Negatives) to the total number of predictions. It answers "how often is the classifier <strong>True</strong> (correct)?". (100 + 50) / 165 
 
-Outside the box:
+   * <strong>Misclassification Rate</strong> : Overall, how often is it <strong>False</strong> (wrong)? (10+5) / 165 = 0.09
+
+Outside the box of n (total):
 
    * <strong>Accuracy</strong> is (TP + FN) / n = ( 100 + 5 ) / 165.
 
