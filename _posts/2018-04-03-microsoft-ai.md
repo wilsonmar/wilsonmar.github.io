@@ -666,6 +666,7 @@ To compare the performance among multiple models</a>, in your pipeline, add an <
 
 ### Metrics of classification model performance
 
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-classification-model-azure-machine-learning-designer/evaluate-model">DOC</a>:
 Test data is used to determine how well predictions created from a model, presented in a 2x2 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-understand-automated-ml#confusion-matrix">Confusion Matrix</a> which compares the Predicted label to Actual (True) Label (yes or no) to identify true/false positives/negatives. 
 REMEMBER: Draw this on the white board from memory:
 
@@ -706,7 +707,7 @@ Different values in the Confusion Matrix would be created for each level of thre
 <a target="_blank" href="https://www.youtube.com/watch?v=4jRBRDbJemM&list=RDCMUCtYLUTtgS3k1Fg4y5tAhLbw&start_radio=1">VIDEO</a>: The <a target="_blank" href="https://www.dataschool.io/roc-curves-and-auc-explained/">Receiver Operating Characteristic (ROC) curve</a> plots the relationship between True Positive Rate (TPR) aka "Sensitivity" on the Y axis and False Positive Rate (FPR) or (1 - Specificity) on the X axis as the decision threshold changes. 
 
 <a target="_blank" href="https://www.youtube.com/watch?v=OAl6eAyP-yo">VIDEO</a>: 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-classification-model-azure-machine-learning-designer/evaluate-model">AUC</a> (Area Under the Curve) measures the area underneath the ROC curve. It is used to compare methods of categorization (such as between Logistic Regression vs Random Forest). A model with AUC of 0.5 performs no better than random chance. The larger the AUC to 1.0 the better the model is at separating classes. Thus, the ideal AUC is 1.0. 
+<strong>AUC (Area Under the Curve)</strong> measures the area underneath the ROC curve. It is used to compare methods of categorization (such as between Logistic Regression vs Random Forest). A model with AUC of 0.5 performs no better than random chance. The larger the AUC to 1.0 the better the model is at separating classes. Thus, the ideal AUC is 1.0. 
 
 ### Metrics of regression model performance
 
@@ -722,9 +723,12 @@ MSE, RMSE or MAE are used to compare performance between different regression mo
 
 * <strong>Root Mean Squared Error (RMSE)</strong> is used by Kaggle to assess submissions for its competition. The square root of the mean squared difference between predicted and true values. The result is a metric based on the same unit as the label (dollars). A larger difference When compared to the MAE (above) indicates greater variance in the individual errors (for example, with some errors being very small, while others are large).
 
-* <strong>Relative Squared Error (RSE)</strong>: A relative metric between 0 and 1 based on the square of the differences between predicted and true values. The closer to 0 this metric is, the better the model is performing. Because this metric is relative, it can be used to compare models where the labels are in different units.
+To compare models where labels are in different units:
 
-* <strong>Relative Absolute Error (RAE)</strong>: A relative metric between 0 and 1 based on the absolute differences between predicted and true values. The closer to 0 this metric is, the better the model is performing. Like RSE, this metric can be used to compare models where the labels are in different units.
+* <strong>Relative Absolute Error (RAE)</strong>: A relative metric between 0 and 1 based on the absolute differences between predicted and true values. The closer to 0 this metric is, the better the model is performing. 
+
+* <strong>Relative Squared Error (RSE)</strong>: A relative metric between 0 and 1 based on the square of the differences between predicted and true values. The closer to 0 this metric is, the better the model is performing. 
+
 
 ### Metrics for clustering model performance
 
@@ -1380,6 +1384,16 @@ References:
 <a target="_blank" href="https://www.youtube.com/watch?v=KCSyRO0KotA">API DEMO</a>:
 
 Azure "Face" is used to build face detection and facial recognition solutions.
+Emotions:
+   * neutral
+   * anger
+   * contempt
+   * disgust
+   * fear
+   * happiness
+   * sadness
+   * surprise
+   <br /><br />
 
 There is a 6 MB limit on the size of files (jpeg, png, gif, bmp).
 
