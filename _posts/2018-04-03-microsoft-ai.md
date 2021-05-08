@@ -16,19 +16,27 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This article is a work-in-process toward being a guided tour to introduce use Microsoft's Artificial Intelligence offerings running on the Azure cloud, which Microsoft calls "Cognitive services", previously called "Cortana".
+This article is a work-in-process toward being a guided tour to introduce use Microsoft's Artificial Intelligence offerings running on the Azure cloud, which Microsoft calls "Cognitive services".
+
+My contribution to the world (you) is to propose a less overwhelming <strong>learning sequence</strong>, one that starts with the <strong>least complex</strong> of technologies used, then more complex ones.
 
 <a name="LearningSequence"></a>
 
-## Learning Sequence: simplest first
+## Learning Sequence: basics, simplest first
 
-   If I were training you, which I'm doing here, the learning sequence would be to start with the <strong>least complex</strong> of technologies used, then the more complex ones:
+1. <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">Get onboarded to a Microsoft Azure subscriptions</a> and Portal GUI.
+1. <strong>Setup a CLI scripting environment</strong>.
 
-1. Call Bing Search  API to run an established endpoint (SaaS) you don't need to setup.
+1. Use Portal GUI and CLI to <a href="#CognitiveServices">Create a Cognitive Service</a> to get keys to call a REST API from among <a target="_blank" href="https://github.com/Azure-Samples/cognitive-services-REST-api-samples">sample calls</a> to <a target="_blank" href="https://docs.microsoft.com/en-us/rest/api/azure/">many REST APIs</a>: the <a href="#TextTranslation">Translator Text API</a>.
 
-1. Create a <a href="#LogicApp">Logic App</a> to <a href="#ShutDownRGs">shut down Resource Groups of a Subscription</a> using PowerShell scripts.
 
-1. <a href="#CognitiveServices">Create a Cognitive Service</a> to <a href="#TextTranslation">call the Translator Text API</a>.
+1. Run an API connecting to an established endpoint (SaaS) you don't need to setup:
+Bing Search.
+
+1. Setup <strong>PowerShell scripts</strong>
+1. Create a <a href="#LogicApp">Logic App</a> to <a href="#ShutDownRGs">shut down Resource Groups of a Subscription</a> using 
+
+1. Google Functions
 
 1. <a href="#CreateWorkspace">Create a Workspace resource</a> to run ...
 
@@ -43,6 +51,8 @@ This article is a work-in-process toward being a guided tour to introduce use Mi
 1. QnA Maker Conversational AI
 1. Train a Machine Learning model using <a name="RunJupyter">iPython notebook</a>
 1. IoT - "Hey Google, ask Azure to shut down all my compute instances".
+
+1. A complete sample app is Microsoft' Tradewinds Partners consumer ecommerce store.
 
 
 <a name="ShutDownRGs"></a>
@@ -92,56 +102,78 @@ PRITIP: In commands, each offering has a "Kind" code to designate its processing
    <tr valign="bottom"><th> Category </th><th> Kind </th><th> Free </th><th> Limits </th></tr>
 
    <tr align="top"><td> Vision </td><td> "CognitiveServices"
-      </td><td> - </td></tr>
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">see below</a> 
+      </td></tr>
    <tr align="top"><td> Vision </td><td> "ComputerVision"
-      </td><td> - </td></tr>
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">2 TPC, 10K/mo.</a> 
+      </td></tr>
    <tr align="top"><td> Vision </td><td> "CustomVision.Prediction"
-      </td><td> - </td></tr>
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">10K preictions/mo.</a> 
+      </td></tr>
    <tr align="top"><td> Vision </td><td> "CustomVision.Training"
-      </td><td> - </td></tr>
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">2 TPS, 1 hour/mo.</a> 
+      </td></tr>
    <tr align="top"><td> Vision </td><td> <a href="#Face">Face"</a>
-      </td><td> - </td></tr>
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/face-api/">20 TPM, 30K/mo.</a> 
+      </td></tr>
    <tr align="top"><td> Vision </td><td> FormRecognizer
-      </td><td> - </td></tr>
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/form-recognizer/">500 pages/mo.</a> 
+      </td></tr>
    <tr align="top"><td> Vision </td><td> ?InkRecognizer?
-      </td><td> - </td></tr>
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/computer-vision/">20/min, 5K/mo.</a> 
+      </td></tr>
 
    <tr align="top"><td> Speech </td><td> "SpeechServices"
-      </td><td> - </td></tr>
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">5 hours/mo.*</a> 
+      </td></tr>
    <tr align="top"><td> Speech </td><td> <a href="#SpeakerRecognition">SpeakerRecognition?</a>
-      </td><td> - </td></tr>
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">20/min, 5K/mo.</a> 
+      </td></tr>
 
    <tr align="top"><td> Language </td><td> <a href="#LUIS">"LUIS"</a>
-      </td><td> - </td></tr>
-   <tr align="top"><td> Language </td><td> "LUIS.Authoring"
-      </td><td> - </td></tr>
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/language-understanding-intelligent-services/">5 TPS, 10K trans/mo.</a> 
+      </td></tr>
+   <tr align="top"><td> Language </td><td> <a href="#LUIS.Authoring">"LUIS.Authoring"</a>
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/language-understanding-intelligent-services/">5 TPS</a> 
+      </td></tr>
    <tr align="top"><td> Language </td><td> <a href="#QnA_Maker">"QnAMaker"</a>
-      </td><td> - </td></tr>
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/qna-maker/">3 TPS, 50K trans/mo, 3 docs/mo.</a> 
+      </td></tr>
    <tr align="top"><td> Language </td><td> <a href="#QnA_Maker">"QnAMaker.v2"</a>
-      </td><td> - </td></tr>
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/qna-maker/">3 TPS, 5K/mo.</a> 
+      </td></tr>
    <tr align="top"><td> Language </td><td> "TextAnalytics"
-      </td><td> - </td></tr>
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/text-analytics/">5K trans/mo.</a> 
+      </td></tr>
    <tr align="top"><td> Language </td><td> <a href="#TextTranslation">TextTranslation"</a>
-      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator/">2M chars/mo.</a> </td></tr>
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator/">2M chars/mo.</a> 
+      </td></tr>
    <tr align="top"><td> Language </td><td> "ImmersiveReader"
-      </td><td> - </td></tr>
-
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/immersive-reader/">3M chars/mo.</a> 
+      </td></tr>
    <tr align="top"><td> Decision </td><td> <a href="#AnomalyDetector">AnomalyDetector"</a>
-      </td><td> 2,000 trans/mo. </td><td> - </td></tr>
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/anomaly-detector/">2,000 trans/mo.</a> 
+      </td></tr>
    <tr align="top"><td> Decision </td><td> "ContentModerator"
-      </td><td> - </td></tr>
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/content-moderator/">1 TPS</a> 
+      </td></tr>
    <tr align="top"><td> Decision </td><td> "Personalizer"
-      </td><td> - </td></tr>
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/personalizer/">50K trans/mo.</a> 
+      </td></tr>
 
    <tr align="top"><td> <a href="#Search">Search</a> </td><td> "Bing.CustomSearch"
-      </td><td> - </td></tr>
+      </td><td> ?
+      </td></tr>
    <tr align="top"><td> Search </td><td> "Bing.Search.v7"
-      </td><td> - </td></tr>
+      </td><td> ?
+      </td></tr>
 
    <tr align="top"><td> ? </td><td> "Internal.AllInOne"
-      </td><td> - </td></tr>
+      </td><td> ?
+      </td></tr>
    <tr align="top"><td> ? </td><td> "MetricsAdvisor"
-      </td><td> - </td></tr>
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/metrics-advisor/">preview</a> 
+      </td></tr>
    </table>
 
    Kinds with ? are known in websites but not listed by the command above.
@@ -412,7 +444,7 @@ https://github.com/MicrosoftLearning/Principles-of-Machine-Learning-Python
 <a target="_blank" href="https://linkedin.com/in/rezasalehi2008/">Raza Salehi</a> (@zaalion) created on <a target="_blank" href="https://github.com/zaalion/oreilly-ai-100">OReilly.com an AI-100 exam prep "crash course"</a> which references his <a target="_blank" href="<a target="_blank" href="https://github.com/zaalion/oreilly-ai-100">https://github.com/zaalion/oreilly-ai-100</a> and <a target="_blank" href="
 https://github.com/zaalion/uy-cognitve-services-crash-course">https://github.com/zaalion/uy-cognitve-services-crash-course</a>
 
-Guy Hummel's <a target="_blank" href="https://cloudacademy.com/learning-paths/ai-100-exam-preparation-designing-and-implementing-an-azure-ai-solution-1-1334/">CloudAcademy.com</a> 7hr video course.
+Guy Hummel's <a target="_blank" href="https://cloudacademy.com/learning-paths/ai-100-exam-preparation-designing-and-implementing-an-azure-ai-solution-1-1334/">CloudAcademy.com</a> 7hr AI-100 video course.
 
 Raza Salehi created on Pluralsight.com <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-azure-ai-engineer-ai-100">a series for Microsoft Azure AI Engineer (AI-100)</a> :
 
@@ -709,6 +741,8 @@ weighted average of the true positive rate (recall) and precision.
 
 Different values in the Confusion Matrix would be created for each level of threshold.
 <a target="_blank" href="https://www.youtube.com/watch?v=4jRBRDbJemM&list=RDCMUCtYLUTtgS3k1Fg4y5tAhLbw&start_radio=1">VIDEO</a>: The <a target="_blank" href="https://www.dataschool.io/roc-curves-and-auc-explained/">Receiver Operating Characteristic (ROC) curve</a> plots the relationship between True Positive Rate (TPR) aka "Sensitivity" on the Y axis and False Positive Rate (FPR) or (1 - Specificity) on the X axis as the decision threshold changes. 
+
+![stats-roc-1057x650](https://user-images.githubusercontent.com/300046/117527397-012c6880-af89-11eb-86e0-c97409bb246a.png)
 
 <a target="_blank" href="https://www.youtube.com/watch?v=OAl6eAyP-yo">VIDEO</a>: 
 <strong>AUC (Area Under the Curve)</strong> measures the area underneath the ROC curve. It is used to compare methods of categorization (such as between Logistic Regression vs Random Forest). A model with AUC of 0.5 performs no better than random chance. The larger the AUC to 1.0 the better the model is at separating classes. Thus, the ideal AUC is 1.0. 
@@ -1057,16 +1091,17 @@ for authentication.
 
 In contrast, Speaker Diarization groups segments of audio by speaker in a batch operation.
 
+
+<hr />
+
 <a name="LUIS"></a>
+<a name="LUIS.Authoring"></a>
 
-### Language Understanding Intelligent Service (LUIS) 
+## LUIS (Language Understanding Intelligent Service)
 
-   <a target="_blank" href="https://aka.ms/AI900/Lab4">https://aka.ms/AI900/Lab4</a> which redirects to<br />
-   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-language-model-with-language-understanding/2-get-started">Create a language model with Language Understanding</a> which trains a (LUIS) language model that can understand spoken or text-based commands. He's Alexa's boyfriend, ha ha.
 
-1. DEMO: <a target="_blank" href="https://www.luis.ai/">https://www.luis.ai</a>
 
-   PROTIP: Separate resources are created for authoring processing from prediction runs so that utilization for the two can be tracked separately.
+### DEMO JSON responses
 
 1. DEMO: voice control lighting in a virtual home. 
 
@@ -1074,8 +1109,51 @@ In contrast, Speaker Diarization groups segments of audio by speaker in a batch 
    https://aidemos.microsoft.com/luis/demo">
    https://aidemos.microsoft.com/luis/demo</a>
 
-   Select suggested phrases to see how the system responds.
+1. Select suggested utterances to see the JSON response:
+
+   * Book me a flight to Cairo
+   * Order me 2 pizza
+   * Remind me to call my dad tomorrow
+   * Where is the nearest club?
+   <br /><br />
+
    Type instructions, use the microphone button to speak commands.
+
+   LUIS identifies from your utterance your intents and entities.
+
+   Entity types
+   * List - fixed, closed set of related words (small, tiny, smallest). Case-sensitve
+   * RegEx - (credit card numbers)
+   * Prebuilt
+   * Pattern.Any
+   * Machine Learned
+   <br /><br />
+
+### LUIS CLI
+
+Run my az-luis-cli.sh.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-howto-bf-cli-deploy-luis?view=azure-bot-service-4.0">DOCS</a>:
+
+   https://github.com/cloudacademy/using-the-azure-machine-learning-sdk
+
+1. Create a Resource referenced when LUIS Authoring is defined.
+   The resource name should be lower case as it is used for the endpoint URL, such as:
+
+   https://<em>luis-resource-name</em>.cognitiveservices.azure.com/
+
+1. The Bot Framework CLI requires Node.js.
+
+   <pre>npm i -g npm</pre>
+
+1. DEMO: <a target="_blank" href="https://www.luis.ai/">https://www.luis.ai</a>
+
+1. Sign in and <a target="_blank" href="https://www.luis.ai/%E2%80%9Chttps://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account?tabs=multiservice%2Cwindows">create an authoring resource</a> refercening the Resource Group.
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-how-to-azure-subscription">PROTIP</a>: In the list of Cognitive services kinds, resources and subscription keys created for <strong>LUIS authoring</strong> are separate than ones for prediction runs so that utilization for the two can be tracked separately.
+
+   <a target="_blank" href="https://aka.ms/AI900/Lab4">https://aka.ms/AI900/Lab4</a> which redirects to<br />
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-language-model-with-language-understanding/2-get-started">Create a language model with Language Understanding</a> which trains a (LUIS) language model that can understand spoken or text-based commands. He's Alexa's boyfriend, ha ha.
 
 1. Process Natural Lanaguage using Azure Cognitive Language Services 
 
@@ -1092,6 +1170,9 @@ In contrast, Speaker Diarization groups segments of audio by speaker in a batch 
 
 References:
    * <a target="_blank" href="https://www.youtube.com/watch?v=U_9HqRdPuUA">VIDEO</a>: <a target="_blank" href="https://store.steampowered.com/app/598400/Starship_Commander_Arcade/">Starship commander</a> enabled in-game voice commands using Azure.
+   * <a target="_blank" href="https://cloudacademy.com/course/adding-language-understanding-chatbots-with-luis-1443/introduction/">Adding Language Understanding to Chatbots With LUIS</a> by <a target="_blank" href="https://www.linkedin.com/in/emilio-meira/">Emilio Meira</a>
+   * <a target="_blank" href="https://github.com/chomado/GoogleHomeHack">github.com/chomado/GoogleHomeHack</a> in <a target="_blank" href="https://www.slideshare.net/chomado/developing-google-assistant-app-actions-on-google-with-microsoft-azure-functions-serverless-service-by-microsoft">slides</a> by Madoka Chiyoda 
+   
 
 <a name="Text_Analytics"></a>
 
@@ -1110,7 +1191,8 @@ DEMO: https://aidemos.microsoft.com/text-analytics
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/1-introduction">Techniques</a>
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/">DOCS</a>:
-   <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages/console">Text Analytics API</a>
+
+   <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages/console">Text Analytics API Reference</a>
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/3-exercise">MS LEARN HANDS-ON LAB</a> references
    https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/07%20-%20Text%20Analytics.ipynb
@@ -1120,12 +1202,31 @@ DEMO: https://aidemos.microsoft.com/text-analytics
 
    #### Sentiment Analysis
 
+   <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Sentiment">API Reference</a>
+
    The output is a number from 0 to 1, with 1 being the most positive language and zero being the most negative opinion expressed.
 
 
    #### Key phrase extraction
 
+   <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/KeyPhrases">API Reference</a>
+
    <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/2-get-started-azure">Named Entity Recognition (NER)</a> identifies entities in the text and group them into different entity categories, such as organization name, location, event, etc.
+
+   #### Detect Language
+
+   <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages">API Reference</a>
+
+   #### Named Entity Recognition
+
+   <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/EntitiesRecognitionGeneral">API Reference</a>
+
+   #### Linked Entities from a well known knowledge base
+
+   <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/EntitiesLinking">API Reference</a>
+
+
+<hr />
 
 
    <a name="Speech"></a>
@@ -1279,7 +1380,7 @@ Custom vision has two <strong>project types</strong>:
 
 ### Computer Vision
 
-"Computer Vision" analyzes images and video to extract descriptions, tags, objects, and text.
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/">Computer Vision"</a> analyzes images and video to extract descriptions, tags, objects, and text.
 
 <a target="_blank" href="https://docs.microsoft.com/azure/cognitive-services/computer-vision/">DOCS</a>, <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/detect-objects-images-custom-vision/1-introduction">INTRO</a>:
 
@@ -1291,8 +1392,13 @@ Custom vision has two <strong>project types</strong>:
 * Categorize image
 <br /><br />
 
+<a target="_blank" href="https://flow.microsoft.com/en-us/connectors/shared_cognitiveservicescomputervision/computer-vision-api/">Flow API samples</a>
+
+https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/quickstarts-sdk/client-library?tabs=visual-studio&pivots=programming-language-csharp
+READ
 
 #### Computer Vision demo
+
 
 1. Select images and review the information returned by the Azure Computer Vision web service:
 
@@ -1859,6 +1965,11 @@ Microsoft has advanced hardware:
 
    "Each FPGA operates in-line between the server’s network interface card (NIC) and the top-of-rack (TOR) switch, enabling in-situ processing of network packets and point-to-point connectivity between hundreds of thousands of FPGAs at low latency (two microseconds per switch hop, one-way)."
    </ul>
+
+https://www.amazon.com/Microsoft-Conversational-Platform-Developers-End-ebook/dp/B08WRNS6Q7/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=1614171789&sr=8-1
+Apress by https://bisser.io/about/
+   Stephan Bisser
+https://github.com/orgs/BotBuilderCommunity/dashboard
 
 
 ## More
