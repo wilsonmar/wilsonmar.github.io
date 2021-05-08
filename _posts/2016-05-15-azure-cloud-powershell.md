@@ -35,7 +35,7 @@ This is one of a series about Azure on my blog:
 
 1. Install PowerShell as described on my blog:
 
-   <a target="_blank" href="https://wilsonmar.github.io/powershell-on-mac/">wilsonmar.github.io/powershell-on-mac</a>
+   <a target="_blank" href="https://wilsonmar.github.io/powershell-install-coding/">wilsonmar.github.io/powershell-install-coding</a>
 
 1. These if errors below:
 
@@ -89,8 +89,32 @@ Set-PSRepository cmdlet. Are you sure you want to install the scripts from
 0. Click Review legal terms then click Purchase.
 0. Click Create.
 
+## PowerShell Prompt
 
-## AZ Versions & Upgrade
+To specify a carriage return and new line, instead of the <tt>\n</tt> on Linux, on PowerShell we use the back-tick key in <tt>`r`n</tt>.
+
+I use that to customize my PowerShell prompt to be at the same location every time.
+
+1. There are <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.1"">several profile .ps1 files</a>. For a list of them, within PowerShell:
+
+   <pre><strong>$PROFILE | Get-Member -Type NoteProperty</strong></pre>
+
+1. To test whether a file has been created:
+
+   Test-Path -Path $PROFILE.AllUsersAllHosts
+
+1. On a Mac, edit the <tt>~/.profile</tt> file (which is automatically run when PowerShell is started) to add my <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_prompts?view=powershell-7.1">custom prompt</a>:
+
+   <pre>function Prompt
+{
+$env:COMPUTERNAME + "`r`n  $(Get-Date) " + (Get-Location) + "`r`n> "
+}
+   </pre>
+
+
+<hr />
+
+## CLI AZ Versions & Upgrade
 
 1. List Azure Verbs
 

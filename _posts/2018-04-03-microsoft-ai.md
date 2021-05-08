@@ -24,17 +24,16 @@ My contribution to the world (you) is to propose a less overwhelming <strong>lea
 
 ## Learning Sequence: basics, simplest first
 
-1. <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">Get onboarded to a Microsoft Azure subscriptions</a> and Portal GUI.
-1. <strong>Setup a CLI scripting environment</strong>.
+1. <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">Get onboarded to a Microsoft Azure subscriptions</a> and learn Portal GUI menu keyboard shortcuts.
+1. Setup a CLI scripting environment in shell.azure.com.
+1. Use CLI to <a href="#CognitiveServices">Create a Cognitive Service</a> to get keys to call the first REST API from among <a target="_blank" href="https://github.com/Azure-Samples/cognitive-services-REST-api-samples">sample calls</a> to <a target="_blank" href="https://docs.microsoft.com/en-us/rest/api/azure/">many REST APIs</a>: the <a href="#TextTranslation">Translator Text API</a>.
 
-1. Use Portal GUI and CLI to <a href="#CognitiveServices">Create a Cognitive Service</a> to get keys to call a REST API from among <a target="_blank" href="https://github.com/Azure-Samples/cognitive-services-REST-api-samples">sample calls</a> to <a target="_blank" href="https://docs.microsoft.com/en-us/rest/api/azure/">many REST APIs</a>: the <a href="#TextTranslation">Translator Text API</a>.
+1. Setup <strong>PowerShell scripts</strong>
+1. Create a <a href="#LogicApp">Logic App</a> to <a href="#ShutDownRGs">shut down Resource Groups of a Subscription</a> using 
 
 
 1. Run an API connecting to an established endpoint (SaaS) you don't need to setup:
 Bing Search.
-
-1. Setup <strong>PowerShell scripts</strong>
-1. Create a <a href="#LogicApp">Logic App</a> to <a href="#ShutDownRGs">shut down Resource Groups of a Subscription</a> using 
 
 1. Google Functions
 
@@ -52,7 +51,9 @@ Bing Search.
 1. Train a Machine Learning model using <a name="RunJupyter">iPython notebook</a>
 1. IoT - "Hey Google, ask Azure to shut down all my compute instances".
 
-1. A complete sample app is Microsoft' Tradewinds Partners consumer ecommerce store.
+1. A complete sample app is Microsoft' Northwinds Traders consumer ecommerce store.
+<a target="_blank" href="https://docs.microsoft.com/en-us/powerapps/maker/canvas-apps/northwind-install">install</a>
+
 
 
 <a name="ShutDownRGs"></a>
@@ -75,12 +76,18 @@ This can also be used for "chaos engineering" efforts.
 To verify resource status and to discuss with others, you still need skill at clicking through the Portal.azure.com, ML.azure.com, etc.
 
 References:
-   * <a target="_blank" href="https://www.youtube.com/watch?v=Rrx7NzPugaE">VIDEO</a>: <a target="_blank" href="https://dev.to/azure/keep-your-azure-subscription-clean-automatically-mmi">shut down automatically all your existing VMs</a> (using a PowerShell script called by a scheduled Logic App), by <a target="_blank" href="https://www.youtube.com/channel/UCAr20GBQayL-nFPWFnUHNAA"">Frank Boucher</a> at <a target="_blank" href="https://github.com/FBoucher/AzurePowerTools">github.com/FBoucher</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=lu7a5RDeJU0" title="by Build5Nines">VIDEO</a>: To release IP address, don't stop machines, but delete the resource.
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Rrx7NzPugaE">VIDEO</a>: <a target="_blank" href="https://dev.to/azure/keep-your-azure-subscription-clean-automatically-mmi">shut down automatically all your existing VMs</a> (using a PowerShell script called by a scheduled Logic App), by <a target="_blank" href="https://www.youtube.com/channel/UCAr20GBQayL-nFPWFnUHNAA"">Frank Boucher</a> at <a target="_blank" href="https://github.com/FBoucher/AzurePowerTools">github.com/FBoucher</a>
+
    * <a target="_blank" href="https://www.codeisahighway.com/effective-ways-to-delete-resources-in-a-resource-group-on-azure/">VIDEO</a>
+
    * <a target="_blank" href="https://azure.microsoft.com/en-us/blog/announcing-auto-shutdown-for-vms-using-azure-resource-manager/">Auto-shutdown by Resource Manager</a> <a target="_blank" href="https://azure.microsoft.com/en-us/updates/set-auto-shutdown-within-a-couple-of-clicks-for-vms-using-azure-resource-manager/" title="November 22, 2016">on a schedule</a> is only for VMs in DevOps
+
    * https://www.c-sharpcorner.com/article/deploy-a-google-action-on-azure/
+
    * <a target="_blank" href="https://automys.com/library/asset/scheduled-virtual-machine-shutdown-startup-microsoft-azure" title="2015"> start/stop by an Automation Acount Runbook</a> for specific tags attached to different Resource Groups: Assert: "AutoshutdownSchedule: Tuesday" run every hour.
+   https://translate.google.com/translate?sl=auto&tl=en&u=https://github.com/chomado/GoogleHomeHack">
    <br /><br />
 
 <a name="LogicApp"></a>
@@ -390,7 +397,7 @@ Practice tests:
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/ai-102">AI-102 exam, as defined at Microsoft's LEARN</a> has free written tutorials on each of the exam's domains:
 
-   * Plan and manage an Azure Cognitive Services solution (15-20%)
+   * Plan and manage an Azure <a href="#CognitiveServices">Cognitive Services</a> solution (15-20%)
    * Implement <a href="#ComputerVision">Computer Vision solutions</a> (20-25%)
    * Implement <a href="#NLP">natural language processing solutions</a> (20-25%)
    * Implement knowledge mining solutions (15-20%)
@@ -398,6 +405,8 @@ Practice tests:
    <br /><br />
 
 PROTIP: Unlike the AI-100, AI-102 requires skill in programming C# or Python.
+
+Microsoft's <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/ai-102t00">Course AI-102T00: Designing and Implementing a Microsoft Azure AI Solution</a>
 
 <a target="_blank" href="https://ravikirans.com/ai-102-azure-exam-study-guide/">
 Ravi's links</a>
@@ -408,6 +417,8 @@ covering C# or Python as the programming language.
    * <a target="_blank" href="https://github.com/MicrosoftLearning/AI-102-AIEngineer">Labs for the class</a> (by <a target="_blank" href="https://www.linkedin.com/in/graemesplace/">Graeme Malcolm</a>) can be followed outside of class enrollment.
 
 <a target="_blank" href="https://cloudacademy.com/quiz/38235/">Preview 45 min. Exam: Designing and Implementing an Azure AI Solution (AI-102)</a>
+
+
 
 <a name="AI-100"></a>
 
@@ -445,6 +456,8 @@ https://github.com/MicrosoftLearning/Principles-of-Machine-Learning-Python
 https://github.com/zaalion/uy-cognitve-services-crash-course">https://github.com/zaalion/uy-cognitve-services-crash-course</a>
 
 Guy Hummel's <a target="_blank" href="https://cloudacademy.com/learning-paths/ai-100-exam-preparation-designing-and-implementing-an-azure-ai-solution-1-1334/">CloudAcademy.com</a> 7hr AI-100 video course.
+
+<a target="_blank" href="https://mckinsey.udemy.com/course/ai-100-designing-and-implementing-an-azure-ai-solution/">McK</a> <a target="_blank" href="https://www.udemy.com/course/ai-100-designing-and-implementing-an-azure-ai-solution/">Udemy</a> by Anand Rao Nednur
 
 Raza Salehi created on Pluralsight.com <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-azure-ai-engineer-ai-100">a series for Microsoft Azure AI Engineer (AI-100)</a> :
 
@@ -732,7 +745,7 @@ Within the box:
 <a target="_blank" href="https://www.youtube.com/watch?v=FnJ3L-63Cf8&t=20s">VIDEO</a>: 
 Columns represent the known truth: The higher the number, the better:
 
-   * <strong>Sensitivity (recall) rate</strong> is the percent of yes's correctly identified as <strong>Positive</strong> = TP / (TP + FN) = 100 / (100 + 5) = 0.83. 
+   * <strong>Sensitivity (aka "Recall") rate</strong> is the percent of yes's correctly identified as <strong>Positive</strong> = TP / (TP + FN) = 100 / (100 + 5) = 0.83. 
 
    * <strong>Specificity rate</strong> is the percent of no's correctly identified as <strong>Negative</strong> = TN / (TN + FP) = 50 / (50 + 10) = 0.83. 
 
@@ -742,6 +755,7 @@ weighted average of the true positive rate (recall) and precision.
 Different values in the Confusion Matrix would be created for each level of threshold.
 <a target="_blank" href="https://www.youtube.com/watch?v=4jRBRDbJemM&list=RDCMUCtYLUTtgS3k1Fg4y5tAhLbw&start_radio=1">VIDEO</a>: The <a target="_blank" href="https://www.dataschool.io/roc-curves-and-auc-explained/">Receiver Operating Characteristic (ROC) curve</a> plots the relationship between True Positive Rate (TPR) aka "Sensitivity" on the Y axis and False Positive Rate (FPR) or (1 - Specificity) on the X axis as the decision threshold changes. 
 
+<a target="_blank" href="https://www.youtube.com/watch?v=4jRBRDbJemM">VIDEO</a>:
 ![stats-roc-1057x650](https://user-images.githubusercontent.com/300046/117527397-012c6880-af89-11eb-86e0-c97409bb246a.png)
 
 <a target="_blank" href="https://www.youtube.com/watch?v=OAl6eAyP-yo">VIDEO</a>: 
@@ -1099,7 +1113,7 @@ In contrast, Speaker Diarization groups segments of audio by speaker in a batch 
 
 ## LUIS (Language Understanding Intelligent Service)
 
-
+https://www.slideshare.net/goelles/sharepoint-saturday-belgium-2019-unite-your-modern-workplace-with-microsofsts-ai-ecosystem
 
 ### DEMO JSON responses
 
@@ -1171,6 +1185,7 @@ Run my az-luis-cli.sh.
 References:
    * <a target="_blank" href="https://www.youtube.com/watch?v=U_9HqRdPuUA">VIDEO</a>: <a target="_blank" href="https://store.steampowered.com/app/598400/Starship_Commander_Arcade/">Starship commander</a> enabled in-game voice commands using Azure.
    * <a target="_blank" href="https://cloudacademy.com/course/adding-language-understanding-chatbots-with-luis-1443/introduction/">Adding Language Understanding to Chatbots With LUIS</a> by <a target="_blank" href="https://www.linkedin.com/in/emilio-meira/">Emilio Meira</a>
+
    * <a target="_blank" href="https://github.com/chomado/GoogleHomeHack">github.com/chomado/GoogleHomeHack</a> in <a target="_blank" href="https://www.slideshare.net/chomado/developing-google-assistant-app-actions-on-google-with-microsoft-azure-functions-serverless-service-by-microsoft">slides</a> by Madoka Chiyoda 
    
 
@@ -1381,7 +1396,7 @@ Custom vision has two <strong>project types</strong>:
 ### Computer Vision
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/">Computer Vision"</a> analyzes images and video to extract descriptions, tags, objects, and text.
-
+<a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa">API Reference</a>, 
 <a target="_blank" href="https://docs.microsoft.com/azure/cognitive-services/computer-vision/">DOCS</a>, <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/detect-objects-images-custom-vision/1-introduction">INTRO</a>:
 
    ![az-ai-produce-objects-372x278](https://user-images.githubusercontent.com/300046/116675643-46d2ab00-a963-11eb-804a-9b1dd5fb6161.png)

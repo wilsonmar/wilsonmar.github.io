@@ -99,10 +99,7 @@ This is a hands-on deep-dive tutorial with commentary along the way, covering ho
 
 ## Hands-on time
 
-The fictional company for use in examples, <a target="_blank" href="https://github.com/microsoft/TailwindTraders/tree/master/Documents/DemoScripts/Integrating%20Azure%20DevOps%2C%20Microsoft%20Teams%20and%20GitHub">Tailwind Traders</a>
-
-
-1. "Exercises" in Microsoft Learn provide FREE "MICROSOFT LEARN SANDBOX" temporary "Concierge" subscription access one or two hours at a time. Search within:
+1. Some "Exercises" in Microsoft Learn provide FREE "MICROSOFT LEARN SANDBOX" temporary "Concierge" subscription access one or two hours at a time. Search within:
 
    <a target="_blank" href="
    https://docs.microsoft.com/en-us/learn/">
@@ -110,6 +107,8 @@ The fictional company for use in examples, <a target="_blank" href="https://gith
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/3-exercise-create-a-vm">Create Windows Virtual Machine</a>
    <br /><br />
+
+1. Microsoft has https://azure.microsoft.com/en-us/free/students/
 
 1. CloudAcademy.com licenses include Lab time in some of their monthly subscriptions.
 
