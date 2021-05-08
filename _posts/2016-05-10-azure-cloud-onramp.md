@@ -80,6 +80,20 @@ This is a hands-on deep-dive tutorial with commentary along the way, covering ho
    </td></tr>
 </table>
 
+## Browser Profiles
+
+PROTIP: When you return to the Portal, Azure knows your account because it stores a "cookie" in your browser.
+
+That is a hassle when you're switching among different Azure accounts.
+
+PROTIP: So if you're using Google Chrome, click the Chrome avatar at the upper-right corner to create a different profile for each Azure account.
+
+   * <a href="#MSAccount">Learn account</a> using your personal email (such as at gmail.com).
+   * Account using your Visual Studio benefit (using your work email)
+   * Work account to do your job as an Administrator.
+   <br /><br />
+
+
 <a name="USGov"></a>
 
 ### Microsoft Azure Government
@@ -122,19 +136,6 @@ This is a hands-on deep-dive tutorial with commentary along the way, covering ho
    <br /><br />
 
    Visual Studio Subscriptions are not offered in the Brazil South and Central India regions, as noted in <a target="_blank" href="https://azure.microsoft.com/en-us/regions/offers/">https://azure.microsoft.com/en-us/regions/offers/</a> 
-
-## Browser Profiles
-
-PROTIP: When you return to the Portal, Azure knows your account because it stores a "cookie" in your browser.
-
-That is a hassle when you're switching among different Azure accounts.
-
-PROTIP: So if you're using Google Chrome, click the Chrome avatar at the upper-right corner to create a different profile for each Azure account.
-
-   * <a href="#MSAccount">Learn account</a> using your personal email (such as at gmail.com).
-   * Account using your Visual Studio benefit (using your work email)
-   * Work account to do your job as an Administrator.
-   <br /><br />
 
 ## Azure first-timer deals
 

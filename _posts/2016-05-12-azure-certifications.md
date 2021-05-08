@@ -27,53 +27,28 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
 <tr valign="top"><td> Administrator
       </td><td>* <a href="#AZ-900">AZ-900 Fundamentals</a><br />
       * <a href="#AZ-104">AZ-104 Azure Administrator Associate</a>
-
    </td></tr>
+
 <tr valign="top"><td> Functional Consultant
       </td><td>* <a href="#AZ-140">AZ-140 Virtual Desktop Specialty</a>
-
    </td></tr>
+
 <tr valign="top"><td> Solution Architect
       </td><td>* <a href="#AZ-303">AZ-303</a> Azure Solutions Architect Expert: Technologies<br />
         * <a href="#AZ-304">AZ-304</a> Azure Solutions Architect Expert: Design<br />
         * AZ-600 Stack Hub Operator Associate<br />
         * AZ-120 Azure for SAP Workloads Specialty
-
    </td></tr>
+
 <tr valign="top"><td> Developer
    </td><td>* <a href="#AZ-204">AZ-204 Azure Developer Associate</a><br />
        * <a target="_blank" href="https://wilsonmar.github.io/azure-iot#AZ-220" title="My hands-on tutorial on Azure IoT">AZ-220 Azure IoT Developer Specialty</a> 
-
    </td></tr>
+
 <tr valign="top"><td> DevOps Engineer
    </td><td>* <a href="#AZ-400">AZ-400 DevOps Engineer Expert</a>
-
    </td></tr>
-<tr valign="top"><td> Data Engineer<br /> Data Scientist
-   </td><td>* DP-900 Azure Data Fundamentals<br />
-   * DP-100 Azure Data Scientist Associate<br />
-   * <a href="#DP-203">DP-203 Azure Data Engineer Associate</a> (replaces DP-200 & DP-201)<br />
-   * DP-300 Azure Database Administrator Associate<br />
-   * PL-200 Power Platform Functional Consultant<br />
-   * PL-400 Power Platform Developer<br />
-   * PL-100 Power Platform App-maker<br />
-   * PL-600 Power Platform Solution Architect Expert
 
-   </td></tr>
-<tr valign="top"><td> AI Engineer
-   </td><td><a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-900">AI-900 AI Fundamentals<br />
-     * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-100">AI-100 Azure AI Engineer Associate</a>
-     * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-102">AI-102 Azure AI Engineer</a>
-
-   </td></tr>
-<tr valign="top"><td> Security Engineer
-   </td><td>* <a href="#SC-900">SC-900 Security, Compliance, and Identity Fundamentals</a><br />
-    * <a href="#SC-200">SC-200 Security Operations Analyst Associate</a><br />
-    * <a href="#SC-300">SC-300 Identity and Access Administrator Associate</a><br />
-    * <a href="#SC-400">SC-400 Information Protection Administrator</a><br />
-    * <a href="#SC-500">AZ-500 Azure Security Engineer Associate</a></a>
-
-   </td></tr>
 </table>
 
 Andrew Brown offers this diagram:
@@ -747,6 +722,15 @@ Create an Azure SQL Data Warehouse in Minutes (video, 1h 22m)
 Information Management Using Azure Data Factory (video, 1h 16m)
 
 * https://www.whizlabs.com/learn/course/microsoft-azure-dp-900/
+
+<a name="DP-100"></a>
+
+## DP-100 Azure Data Scientist Associate
+
+https://docs.microsoft.com/en-us/learn/certifications/exams/dp-100
+
+PROTIP: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/build-ai-solutions-with-azure-ml-service/">FREE LEARNING PATH: Build AI solutions with Azure Machine Learning
+is 9 hr 51 min</a> has <a target="_blank" href="https://microsoftlearning.github.io/mslearn-dp100/">hands-on exercises</a> which references <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100">https://github.com/MicrosoftLearning/mslearn-dp100</a>
 
 
 <a name="DP-200"></a>
