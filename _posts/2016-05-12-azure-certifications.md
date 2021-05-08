@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure (cloud) certifications"
-excerpt: "No more ASM and MCSD"
+excerpt: "Collect them all! Microsoft provides free hands-on tutorials (gamified)"
 tags: [cloud]
 date: "2021-02-22"
 file: "azure-certifications"
@@ -361,7 +361,7 @@ compute, storage, network, and security resources
 
    * https://github.com/MicrosoftLearning/AZ-104-MicrosoftAzureAdministrator
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-administrator/?wt.mc_id=esi_lxp_webpage_wwl&tab=tab-learning-paths">Microsoft's tutorial</a> provides more managerial aspects</a> (such as governance) than others.
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-administrator/?wt.mc_id=esi_lxp_webpage_wwl&tab=tab-learning-paths">Microsoft's tutorial</a> provides more managerial aspects (such as governance) than others.
 
 A search of Microsoft Learn for "Administrator" and "Azure" <a target="_blank" href="https://docs.microsoft.com/en-us/learn/browse/?roles=administrator&wt.mc_id=esi_lxp_webpage_wwl&products=azure&resource_type=learning%20path">82 </a> <a target="_blank" href="https://docs.microsoft.com/en-us/learn/browse/?roles=administrator&wt.mc_id=esi_lxp_webpage_wwl&products=azure&resource_type=module">yielded 317 modules</a> over 14 pages (at time of writing). Most of them focus on a specific service/product:
 
@@ -890,12 +890,12 @@ Ravikiran Azure Certs</a>
 <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/345">
 Linux Academy: Azure CLI Esssentials</a>   
 
-https://linuxacademy.com/cp/modules/view/id/369">Learn Azure by Doing</a>   
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/369">Learn Azure by Doing</a>   
 
-https://linuxacademy.com/cp/modules/view/id/461">Implementing App Infrastructure</a>
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/461">Implementing App Infrastructure</a>
 
-https://linuxacademy.com/cp/modules/view/id/757?redirect_uri=https://app.linuxacademy.com/search?type=Course&categories=Azure
-Cost control in Azure
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/757?redirect_uri=https://app.linuxacademy.com/search?type=Course&categories=Azure">
+Cost control in Azure</a>
 
 <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/666">Intro to Azure Security</a>
 
@@ -903,7 +903,7 @@ Cost control in Azure
 
 <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/733">Deployment Pipelines using GitHub Actions</a>
 
-https://aka.ms/ESIStudyGuides
+<a target="_blank" href="https://aka.ms/ESIStudyGuides">aka.ms/ESIStudyGuides</a>
 
 
 ## More on Cloud #
