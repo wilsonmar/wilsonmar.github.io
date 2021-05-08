@@ -49,6 +49,30 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
    </td><td>* <a href="#AZ-400">AZ-400 DevOps Engineer Expert</a>
    </td></tr>
 
+<tr valign="top"><td> Data Engineer<br /> Data Scientist
+   </td><td>* <a href="#DP-900">DP-900 Azure Data Fundamentals</a><br />
+   * <a href="#DP-100">DP-100 Azure Data Scientist Associate</a><br />
+   * <a href="#DP-203">DP-203 Azure Data Engineer Associate</a> (replaces DP-200 & DP-201)<br />
+   * DP-300 Azure Database Administrator Associate<br />
+   * PL-200 Power Platform Functional Consultant<br />
+   * PL-400 Power Platform Developer<br />
+   * PL-100 Power Platform App-maker<br />
+   * PL-600 Power Platform Solution Architect Expert
+   </td></tr>
+
+<tr valign="top"><td> AI Engineer
+   </td><td><a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-900">AI-900 AI Fundamentals</a><br />
+     * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-100">AI-100 Azure AI Engineer Associate</a>
+     * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-102">AI-102 Azure AI Engineer</a>
+   </td></tr>
+
+<tr valign="top"><td> Security Engineer
+   </td><td>* <a href="#SC-900">SC-900 Security, Compliance, and Identity Fundamentals</a><br />
+    * <a href="#SC-200">SC-200 Security Operations Analyst Associate</a><br />
+    * <a href="#SC-300">SC-300 Identity and Access Administrator Associate</a><br />
+    * <a href="#SC-400">SC-400 Information Protection Administrator</a><br />
+    * <a href="#SC-500">AZ-500 Azure Security Engineer Associate</a></a>
+   </td></tr>
 </table>
 
 Andrew Brown offers this diagram:
