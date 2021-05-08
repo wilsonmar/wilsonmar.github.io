@@ -18,11 +18,35 @@ comments: true
 
 This article is a work-in-process toward being a guided tour to introduce use Microsoft's Artificial Intelligence offerings running on the Azure cloud, which Microsoft calls "Cognitive services".
 
-My contribution to the world (you) is to propose a less overwhelming <strong>learning sequence</strong>, one that starts with the <strong>least complex</strong> of technologies used, then more complex ones.
+<a name="CognitiveServices"></a>
+
+## Microsoft AI = Cognitive Services suite
+
+Microsoft has published different lists for what services constitute its "Cognitive Services" brand name to achieve AI-enhanced solutions which mimic human intelligence.
+
+Previously, <a target="_blank" href="https://www.youtube.com/watch?v=KxwjnuhNVIY&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&index=33">Cortana"</a> was the brand-name for Microsoft's AI. Cortana is the name of the fictional artificially intelligent character in the Halo video game series. Cortana was going to be Microsoft's answer to Alexa, Siri, Hey Google, and other AI-powered personal assistants which respond to voice commands controlling skills that turn lights on and off, etc. Since 2019, Cortana is considered an app or service (skill) that work across multiple platforms, a skill that Amazon's Alexa can call.
+
+In <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services">DOCS</a>:
+
+* <a href="#Vision">Vision</a> - interpret the world visually through cameras, videos, images
+
+* <a href="#Speech">Speech</a> - Text-to-Speech and Speech-to-Text to interpret written or spoken language, and respond in kind.
+
+* <a href="#Language">Language</a> - aka Natural language Processing (NLP) to <a href="#TranslateText">translate text</a>, etc.
+
+* <a href="#Decision">Decision</a> - supervised and unsupervised machine learning
+
+* <a href="#Search">Search</a> - includes "Conversational AI" using an "agent" (Azure Bot Service) to participate in a (natural) conversation.
+
+The above categories are used to structure training and certifications.
+
+<hr />
 
 <a name="LearningSequence"></a>
 
 ## Learning Sequence: basics, simplest first
+
+My contribution to the world (you) is a less overwhelming <a href="#LearningSequence">learning sequence</a>, one that starts with the <strong>least complex</strong> of technologies used, then more complex ones.
 
 1. <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">Get onboarded to a Microsoft Azure subscriptions</a> and learn Portal GUI menu keyboard shortcuts.
 1. Setup a CLI scripting environment in shell.azure.com.
@@ -30,7 +54,6 @@ My contribution to the world (you) is to propose a less overwhelming <strong>lea
 
 1. Setup <strong>PowerShell scripts</strong>
 1. Create a <a href="#LogicApp">Logic App</a> to <a href="#ShutDownRGs">shut down Resource Groups of a Subscription</a> using 
-
 
 1. Run an API connecting to an established endpoint (SaaS) you don't need to setup:
 Bing Search.
@@ -65,6 +88,8 @@ IMPORTANT PROTIP: As of this writing, Microsoft Azure does NOT have a full SaaS 
 So after learning to set up the first compute service, we need to cover <strong>automation</strong> to <strong>shut them all down</strong> while you sleep.
 
 So that you're not tediously recreating everything everyday, this tutorial focuses on automation scripts (CLI Bash and PowerShell scripts) to create compute instances, publish results, then shut itself down. Each report run overwrites files from the previous run so you're not constantly piling up storage costs. 
+
+Another reason for being able to rebuild is that you if you find that the pricing tier chosen is no longer suitable for your solution, you must create a new Azure Cognitive Search resource and recreate all indexes and objects.
 
 When you use my <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/">Automation scripts at https://github.com/wilsonmar/azure-your-way/ to create resources the way you like</a>, using "Infrastructure as Code", so you can throw away any Subscription and begin anew quickly.
 
@@ -106,72 +131,72 @@ The consolation to wasted charges is that Microsoft provides some <a href="#Free
 PRITIP: In commands, each offering has a "Kind" code to designate its processing. So that matters more than Microsoft's marketing designations when getting things done. So I've prepared for you a table to list the Kind codes by the marketing grouping.
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr valign="bottom"><th> Category </th><th> Kind </th><th> Free </th><th> Limits </th></tr>
+   <tr valign="bottom"><th> Category </th><th> Kind </th><th> Free </th></tr>
 
-   <tr align="top"><td> Vision </td><td> "CognitiveServices"
+   <tr align="top"><td> <a href="#Vision">Vision</a> </td><td> "CognitiveServices"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">see below</a> 
       </td></tr>
-   <tr align="top"><td> Vision </td><td> "ComputerVision"
+   <tr align="top"><td> <a href="#Vision">Vision</a> </td><td> "ComputerVision"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">2 TPC, 10K/mo.</a> 
       </td></tr>
-   <tr align="top"><td> Vision </td><td> "CustomVision.Prediction"
+   <tr align="top"><td> <a href="#Vision">Vision</a> </td><td> "CustomVision.Prediction"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">10K preictions/mo.</a> 
       </td></tr>
-   <tr align="top"><td> Vision </td><td> "CustomVision.Training"
+   <tr align="top"><td> <a href="#Vision">Vision</a> </td><td> "CustomVision.Training"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">2 TPS, 1 hour/mo.</a> 
       </td></tr>
-   <tr align="top"><td> Vision </td><td> <a href="#Face">Face"</a>
+   <tr align="top"><td> <a href="#Vision">Vision</a> </td><td> <a href="#Face">Face"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/face-api/">20 TPM, 30K/mo.</a> 
       </td></tr>
-   <tr align="top"><td> Vision </td><td> FormRecognizer
+   <tr align="top"><td> <a href="#Vision">Vision</a> </td><td> FormRecognizer
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/form-recognizer/">500 pages/mo.</a> 
       </td></tr>
-   <tr align="top"><td> Vision </td><td> ?InkRecognizer?
+   <tr align="top"><td> <a href="#Vision">Vision</a> </td><td> ?InkRecognizer?
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/computer-vision/">20/min, 5K/mo.</a> 
       </td></tr>
 
-   <tr align="top"><td> Speech </td><td> "SpeechServices"
+   <tr align="top"><td> <a href="#Speech">Speech</a> </td><td> "SpeechServices"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">5 hours/mo.*</a> 
       </td></tr>
-   <tr align="top"><td> Speech </td><td> <a href="#SpeakerRecognition">SpeakerRecognition?</a>
+   <tr align="top"><td> <a href="#Speech">Speech</a> </td><td> <a href="#SpeakerRecognition">SpeakerRecognition?</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">20/min, 5K/mo.</a> 
       </td></tr>
 
-   <tr align="top"><td> Language </td><td> <a href="#LUIS">"LUIS"</a>
+   <tr align="top"><td> <a href="#Language">Language</a> </td><td> <a href="#LUIS">"LUIS"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/language-understanding-intelligent-services/">5 TPS, 10K trans/mo.</a> 
       </td></tr>
-   <tr align="top"><td> Language </td><td> <a href="#LUIS.Authoring">"LUIS.Authoring"</a>
+   <tr align="top"><td> <a href="#Language">Language</a> </td><td> <a href="#LUIS.Authoring">"LUIS.Authoring"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/language-understanding-intelligent-services/">5 TPS</a> 
       </td></tr>
-   <tr align="top"><td> Language </td><td> <a href="#QnA_Maker">"QnAMaker"</a>
+   <tr align="top"><td> <a href="#Language">Language</a> </td><td> <a href="#QnA_Maker">"QnAMaker"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/qna-maker/">3 TPS, 50K trans/mo, 3 docs/mo.</a> 
       </td></tr>
-   <tr align="top"><td> Language </td><td> <a href="#QnA_Maker">"QnAMaker.v2"</a>
+   <tr align="top"><td> <a href="#Language">Language</a> </td><td> <a href="#QnA_Maker">"QnAMaker.v2"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/qna-maker/">3 TPS, 5K/mo.</a> 
       </td></tr>
-   <tr align="top"><td> Language </td><td> "TextAnalytics"
+   <tr align="top"><td> <a href="#Language">Language</a> </td><td> "TextAnalytics"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/text-analytics/">5K trans/mo.</a> 
       </td></tr>
-   <tr align="top"><td> Language </td><td> <a href="#TextTranslation">TextTranslation"</a>
+   <tr align="top"><td> <a href="#Language">Language</a> </td><td> <a href="#TextTranslation">TextTranslation"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator/">2M chars/mo.</a> 
       </td></tr>
-   <tr align="top"><td> Language </td><td> "ImmersiveReader"
+   <tr align="top"><td> <a href="#Language">Language</a> </td><td> "ImmersiveReader"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/immersive-reader/">3M chars/mo.</a> 
       </td></tr>
-   <tr align="top"><td> Decision </td><td> <a href="#AnomalyDetector">AnomalyDetector"</a>
+   <tr align="top"><td> <a href="#Decision">Decision</a> </td><td> <a href="#AnomalyDetector">AnomalyDetector"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/anomaly-detector/">2,000 trans/mo.</a> 
       </td></tr>
-   <tr align="top"><td> Decision </td><td> "ContentModerator"
+   <tr align="top"><td> <a href="#Decision">Decision</a> </td><td> "ContentModerator"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/content-moderator/">1 TPS</a> 
       </td></tr>
-   <tr align="top"><td> Decision </td><td> "Personalizer"
+   <tr align="top"><td> <a href="#Decision">Decision</a> </td><td> "Personalizer"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/personalizer/">50K trans/mo.</a> 
       </td></tr>
 
    <tr align="top"><td> <a href="#Search">Search</a> </td><td> "Bing.CustomSearch"
       </td><td> ?
       </td></tr>
-   <tr align="top"><td> Search </td><td> "Bing.Search.v7"
+   <tr align="top"><td> <a href="#Search">Search</a> </td><td> "Bing.Search.v7"
       </td><td> ?
       </td></tr>
 
@@ -185,34 +210,9 @@ PRITIP: In commands, each offering has a "Kind" code to designate its processing
 
    Kinds with ? are known in websites but not listed by the command above.
 
-Once you're setup to run CLI commands, you can List kinds of Cognitive Services:
+Once you're setup to run CLI commands, you can list the above kinds of Cognitive Services:
 
    <ul><pre><strong>az cognitiveservices account list-kinds</strong></pre></ul>
-
-
-
-<a name="CognitiveServices"></a>
-
-## Azure Cognitive Services suite
-
-Microsoft has published different lists for what services constitute its "Cognitive Services" brand name to achieve AI-enhanced solutions which mimic human intelligence.
-
-Previously, <a target="_blank" href="https://www.youtube.com/watch?v=KxwjnuhNVIY&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&index=33">Cortana"</a> was the brand-name for Microsoft's AI. Cortana is the name of the fictional artificially intelligent character in the Halo video game series. Cortana was going to be Microsoft's answer to Alexa, Siri, Hey Google, and other AI-powered personal assistants which respond to voice commands controlling skills that turn lights on and off, etc. 
-
-Since 2019, Cortana is considered an app or service (skill) that work across multiple platforms,
-a skill that Alexa can call.
-
-In <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services">DOCS</a>:
-
-* Vision - interpret the world visually through cameras, videos, images
-
-* Speech - Text-to-Speech and Speech-to-Text to interpret written or spoken language, and respond in kind.
-
-* Language - aka Natural language Processing (NLP) to <a href="#TranslateText">translate text</a>, etc.
-
-* <a href="#Decision">Decision</a> - supervised and unsupervised machine learning
-
-* Search - includes "Conversational AI" using an "agent" (Azure Bot Service) to participate in a (natural) conversation.
 
 
 <a name="Search"></a>
@@ -395,6 +395,8 @@ Practice tests:
 
 ### AI-102
 
+The AI-102 is intended for <strong>software developers</strong> wanting to build AI infused applications. By contrast, AI-100 was more for system operators.
+
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/ai-102">AI-102 exam, as defined at Microsoft's LEARN</a> has free written tutorials on each of the exam's domains:
 
    * Plan and manage an Azure <a href="#CognitiveServices">Cognitive Services</a> solution (15-20%)
@@ -404,9 +406,7 @@ Practice tests:
    * Implement <a href="#Conversational">Conversational AI solutions</a> (15-20%)
    <br /><br />
 
-PROTIP: Unlike the AI-100, AI-102 requires skill in programming C# or Python.
-
-Microsoft's <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/ai-102t00">Course AI-102T00: Designing and Implementing a Microsoft Azure AI Solution</a>
+PROTIP: Unlike the AI-100 (which uses Python Notebooks), AI-102 requires skill in programming C# or Python. Accordingly, <a target="_blank" href="https://microsoftlearning.github.io/AI-102-AIEngineer/">hands-on exercises</a> in Microsoft's <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/ai-102t00">live course AI-102T00: Designing and Implementing a Microsoft Azure AI Solution</a> references <a target="_blank" href="https://github.com/MicrosoftLearning/AI-102-AIEngineer">https://github.com/MicrosoftLearning/AI-102-AIEngineer</a>
 
 <a target="_blank" href="https://ravikirans.com/ai-102-azure-exam-study-guide/">
 Ravi's links</a>

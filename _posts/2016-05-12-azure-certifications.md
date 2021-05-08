@@ -61,7 +61,7 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
    </td></tr>
 
 <tr valign="top"><td> AI Engineer
-   </td><td><a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-900">AI-900 AI Fundamentals</a><br />
+   </td><td>* <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-900">AI-900 AI Fundamentals</a><br />
      * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-100">AI-100 Azure AI Engineer Associate</a>
      * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-102">AI-102 Azure AI Engineer</a>
    </td></tr>

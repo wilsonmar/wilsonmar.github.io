@@ -80,18 +80,21 @@ This is a hands-on deep-dive tutorial with commentary along the way, covering ho
    </td></tr>
 </table>
 
+
 ## Browser Profiles
 
-PROTIP: When you return to the Portal, Azure knows your account because it stores a "cookie" in your browser.
+When you're switching among different Azure accounts, you are returned to the last account used. So you'll need to sign off and back again to use another account. That's a hassle.
 
-That is a hassle when you're switching among different Azure accounts.
+Azure knows your account because it stored a "cookie" in your browser.
 
-PROTIP: So if you're using Google Chrome, click the Chrome avatar at the upper-right corner to create a different profile for each Azure account.
+PROTIP: Use browser profiles, one for each email. Click the avatar at the upper-right corner to create a different profile for each Azure account:
 
    * <a href="#MSAccount">Learn account</a> using your personal email (such as at gmail.com).
    * Account using your Visual Studio benefit (using your work email)
    * Work account to do your job as an Administrator.
    <br /><br />
+
+You'll need to do this for each browser (Google Chrome, Microsoft Edge, Firefox, etc.).
 
 
 <a name="USGov"></a>
