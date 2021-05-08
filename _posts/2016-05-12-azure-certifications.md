@@ -243,6 +243,11 @@ If you want time on servers (one hour at a time), subscribe to
 
 See my step-by-step advice for using CloudAcademy's Azure environment at ...
 
+### FreeCodeCamp.org
+
+<a target="_blank" href="https://www.freecodecamp.org/news/azure-fundamentals-course-az900/">
+Free 3-Hour video course on FreeCodeCamp.org</a> by Andrew Brown of ExamPro
+
 ### Coursera
 
 https://www.coursera.org/specializations/microsoft-azure-fundamentals-az-900
@@ -370,6 +375,8 @@ A search of Microsoft Learn for "Administrator" and "Azure" <a target="_blank" h
    <br /><br />
 
 Video Lectures:
+
+1. <a target="_blank" href="https://www.freecodecamp.org/news/azure-administrator-certification-az-104-pass-the-exam-with-this-free-11-hour-course/">11 hour video course on FreeCodeCamp.org</a> <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg" title="May 3, 2021">on YouTube</a> by Andrew Brows of <a target="_blank" href="https://www.exampro.co/az-104">ExamPro</a>.
 
 1. <a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course">Tim Warner and Mike Pfeiffer's CloudSkills.io</a> 
 
