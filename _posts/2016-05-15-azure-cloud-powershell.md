@@ -93,7 +93,7 @@ Set-PSRepository cmdlet. Are you sure you want to install the scripts from
 
 To specify a carriage return and new line, instead of the <tt>\n</tt> on Linux, on PowerShell we use the back-tick key in <tt>`r`n</tt>.
 
-I use that to customize my PowerShell prompt to be at the same location every time.
+I use that to <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.1">customize my PowerShell prompt</a> to be at the same location every time.
 
 1. There are <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.1"">several profile .ps1 files</a>. For a list of them, within PowerShell:
 
@@ -111,6 +111,11 @@ $env:COMPUTERNAME + "`r`n  $(Get-Date) " + (Get-Location) + "`r`n> "
 }
    </pre>
 
+The PowerShell $PSHOME folder is different depending on operating system:
+
+   * <tt>/usr/local/bin/pwsh</tt> symlinks to <tt>/usr/local/microsoft/powershell/7.1.3/</tt> on MacOS due to BSD <a target="_blank" href="https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html">XDG Base Directory Specification</a>.
+
+   * <tt>/opt</tt> on Linux
 
 <hr />
 
