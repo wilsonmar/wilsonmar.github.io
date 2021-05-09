@@ -1203,6 +1203,10 @@ Container retrieved by Kubernetes.
 
 ## References
 
+https://www.c-sharpcorner.com/article/azure-storage-account-using-azure-cli/
+
+https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-java/storage-file-share-samples/
+
 <a target="_blank" href="https://cloud.netapp.com/blog/azure-cvo-blg-azure-quickstart-templates-how-to">
 READ: Azure Quickstart Templates: Cloud Storage Easier</a>
 

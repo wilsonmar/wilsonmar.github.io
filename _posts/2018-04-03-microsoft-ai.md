@@ -18,16 +18,18 @@ comments: true
 
 This article is a work-in-process toward being a guided tour to introduce use of Microsoft's Artificial Intelligence offerings running on the Azure cloud, which Microsoft calls "Cognitive services".
 
+My contribution to the world (you) is a less overwhelming <a href="#LearningSequence">learning sequence</a>, one that starts with the <strong>least complex</strong> of technologies used, then more complex ones.
+
 
 <a name="Competitors"></a>
 
 ## What can AI do?
 
-1. Visit
+1. Microsoft's gallery of user's contributions:
 
    <a target="_blank" href="
-   https://gallery.azure.ai/">
-   https://gallery.azure.ai</a>
+   https://gallery.azure.ai/browse">
+   https://gallery.azure.ai/browse</a>
 
 1. Microsoft has DEMOS at: 
 
@@ -41,19 +43,20 @@ Case studies of how people are already making use of AI/ML to save time and mone
    * modsy.com 3D view
    <br /><br />
 
-Sample Python Code at
-https://docs.microsoft.com/en-us/samples/azure/azureml-examples/azure-machine-learning-examples/
-
 
 <a name="CognitiveServices"></a>
 
-## AI = Cortana = Cognitive Services suite
+## AI = Bing = Cortana = Cognitive Services?
 
 Microsoft has published different lists for what services constitute its "Cognitive Services" brand name to achieve AI-enhanced solutions which mimic human intelligence.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=KxwjnuhNVIY&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&index=33">"Cortana"</a> was the brand-name for Microsoft's AI. Cortana is the name of the fictional artificially intelligent character in the Halo video game series. Cortana was going to be Microsoft's answer to Alexa, Siri, Hey Google, and other AI-powered personal assistants which respond to voice commands controlling skills that turn lights on and off, etc. However, since 2019, Cortana is considered a "skill" (app) that Amazon's Alexa and Google Assistant can call, working across multiple platforms.
 
-In various marketing and certification training <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services">DOCS</a>, Azure Cognitive Services is categorized into:
+<a target="_blank" href="https://www.youtube.com/watch?v=eJOv-TfhhzQ">VIDEO</a>: <a target="_blank" href="https://services.azureml.net/">Azure Machine Learning Studio (classic) Web Services</a>
+The Classic version reflected "All Microsoft all the time" with proprietary "pickle" (pkl) model files.
+
+
+As of this writing, in various marketing and certification training <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services">DOCS</a>, Azure Cognitive Services is categorized into:
 
 * <a href="#Vision">Vision</a> - interpret the world visually through cameras, videos, images
 
@@ -63,7 +66,7 @@ In various marketing and certification training <a target="_blank" href="https:/
 
 * <a href="#Decision">Decision</a> - supervised and unsupervised machine learning
 
-<a href="#Search">Search</a> (the "Bing" brand) has recently been separated out from the "Cognitive Services" to its own at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/search/">https://docs.microsoft.com/en-us/azure/search</a>, although it's used in "Conversational AI" using an "agent" (Azure Bot Service) to participate in (natural) conversations.
+<a href="#Search">Search</a> (the "Bing" brand) has recently been separated out from the "Cognitive Services" to its own at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/search/">https://docs.microsoft.com/en-us/azure/search</a>, although it's used in "Conversational AI" using an "agent" (Azure Bot Service) to participate in (natural) conversations. BTW: <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microsoft-cortana-features-strategy-report">in 2019</a> Cortana decoupled from Windows 10 search.
 
 
 <a name="FreeTime"></a>
@@ -76,7 +79,7 @@ Microsoft provides some <a href="#FreeTime">free machine time</a>.
 
    ![az-ai-svcs-pricing-309x410](https://user-images.githubusercontent.com/300046/117203280-126c4e00-adac-11eb-84ae-54994f47f3ea.png)
 
-PRITIP: In commands, each offering has a "Kind" code to designate its processing. So that matters more than Microsoft's marketing designations when getting things done. So I've prepared for you a table to list the Kind codes by the marketing grouping.
+PROTIP: In CLI az commands, each offering has a "Kind" code to designate its processing. So that matters more than Microsoft's marketing designations when getting things done. So I've prepared for you a table to list the Kind codes by the marketing grouping.
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr valign="bottom"><th> Category </th><th> Kind </th><th> Free </th></tr>
@@ -156,30 +159,44 @@ PRITIP: In commands, each offering has a "Kind" code to designate its processing
       </td></tr>
    </table>
 
-   Kinds with ? are known in websites but not listed by the command above.
-
-Bot Services are in addition to the above.
-
-Once you're setup to run CLI commands, you can list the above kinds of Cognitive Services:
+   Kinds with ? are known in websites but not listed by this az command (which you can run after you're setup to run CLI commands:
 
    <ul><pre><strong>az cognitiveservices account list-kinds</strong></pre></ul>
 
-zzz
+   Bot Services are in addition to the above.
+
+
+<a name="workflows"></a>
+
+## Hybrid workflows
+
+PROTIP: Although most Microsoft's samples and tutorials usually focus on one service at a time, actual production work between input and output enjoyed by users usually involves a <strong>pipeline</strong> of several Azure services. For example: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/example-scenario/ai/news-feed-ingestion-and-near-real-time-analysis">ingesting (stream processing) a newsfeed</a>:
+
+![az-ml-newsfeed-546x623](https://user-images.githubusercontent.com/300046/116988980-6254f300-ac8e-11eb-9901-c2c6f3d8a018.png)
+
+Steps to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/tutorial-designer-automobile-price-deploy">deploy a machine learning model with the Designer</a>:
+   1. Create inference clusters
+   2. Create and test inference pipeline
+   3. Deploy inference pipeline
+   4. Test the service (used by the user)
+   <br /><br />
+
 
 <hr />
 
 <a name="LearningSequence"></a>
 
-## Learning Sequence: basics, simplest first
+## Prequisites to this document
 
-My contribution to the world (you) is a less overwhelming <a href="#LearningSequence">learning sequence</a>, one that starts with the <strong>least complex</strong> of technologies used, then more complex ones.
-
-The prerequities before coming here:
+This document assumes that you have done the following:
 
 1. <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">Get onboarded to a Microsoft Azure subscriptions</a> and learn Portal GUI menu keyboard shortcuts.
 1. Setup a CLI scripting environment in shell.azure.com.
 1. Use CLI to <a href="#CognitiveServices">Create a Cognitive Service</a> to get keys to call the first REST API from among <a target="_blank" href="https://github.com/Azure-Samples/cognitive-services-REST-api-samples">sample calls</a> to <a target="_blank" href="https://docs.microsoft.com/en-us/rest/api/azure/">many REST APIs</a>: the <a href="#TextTranslation">Translator Text API</a>.
 1. Setup <strong>PowerShell scripts</strong>
+
+
+## Learning Sequence: basics, simplest first
 
 This document covers:
 
@@ -208,6 +225,7 @@ Bing Search.
 <a target="_blank" href="https://docs.microsoft.com/en-us/powerapps/maker/canvas-apps/northwind-install">install</a>
 
 
+<hr />
 
 <a name="ShutDownRGs"></a>
 
@@ -244,28 +262,6 @@ References:
    * <a target="_blank" href="https://automys.com/library/asset/scheduled-virtual-machine-shutdown-startup-microsoft-azure" title="2015"> start/stop by an Automation Acount Runbook</a> for specific tags attached to different Resource Groups: Assert: "AutoshutdownSchedule: Tuesday" run every hour.
    https://translate.google.com/translate?sl=auto&tl=en&u=https://github.com/chomado/GoogleHomeHack">
    <br /><br />
-
-<a name="LogicApp"></a>
-
-## Logic Apps
-
-
-<a name="Search"></a>
-
-## Search
-
-
-<a name="Decision"></a>
-
-## Decision
-
-   * <strong>classification</strong> (unsupervised machine learning) fits features into model and predict classification of the label. Labels are what we want to predict, such as a future value predicted or an action. The label is usually "Y" among mathimaticians.
-
-   * <strong>regression (supervised</strong> machine learning) uses historical data to train the model to predict <strong>numerical</strong> values.
-
-   * Time Series Anomaly Detection
-   <br /><br />
-
 
 <hr />
 
@@ -328,6 +324,31 @@ Microsoft's ethical principles</a> guiding the development and use of artificial
 
 Resources:
    * <a target="_blank" href="https://www.microsoft.com/ai/responsible-ai-resources">https://www.microsoft.com/ai/responsible-ai-resources</a>
+
+<hr />
+
+<a name="SampleCode"></a>
+
+## Sample Code
+
+Samples (unlike examples) are a more complete, best-practices solution for each of the snippets. They're better for integrating into production code. 
+
+<a target="_blank" href="https://github.com/Azure-Samples/">github.com/Azure-Samples</a>
+from Microsoft offers samples code to use Cognitive Services REST API by each language:
+
+   * <a target="_blank" href="https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples">.NET C#</a>
+   * <a target="_blank" href="https://github.com/Azure-Samples/cognitive-services-java-sdk-samples">Java</a>
+   * <a target="_blank" href="https://github.com/Azure-Samples/cognitive-services-node-sdk-samples">NodeJs</a>
+   * <a target="_blank" href="https://github.com/Azure-Samples/cognitive-services-python-sdk-samples">Python</a>
+   * <a target="_blank" href="https://github.com/Azure-Samples/azure-sdk-for-go-samples/tree/master/cognitiveservices">Go</a>
+   <br /><br />
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure/">
+docs.microsoft.com/en-us/samples/azure</a> 
+provides sample Python Code at
+https://docs.microsoft.com/en-us/samples/azure/azureml-examples/azure-machine-learning-examples/
+
+https://docs.microsoft.com/en-us/samples/azure-samples/azure-sdk-for-go-samples/azure-sdk-for-go-samples/
 
 
 <hr />
@@ -415,7 +436,7 @@ The AI-102 is intended for <strong>software developers</strong> wanting to build
    * Implement <a href="#Conversational">Conversational AI</a> solutions (15-20%)
    <br /><br />
 
-PROTIP: Unlike the AI-100 (which uses Python Notebooks), <a target="_blank" href="https://microsoftlearning.github.io/AI-102-AIEngineer/">hands-on exercises</a> Microsoft's <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/ai-102t00">5-day live course AI-102T00: Designing and Implementing a Microsoft Azure AI Solution</a> (with cloud time) consists of C# and Python programs at <a target="_blank" href="https://github.com/MicrosoftLearning/AI-102-AIEngineer">https://github.com/MicrosoftLearning/AI-102-AIEngineer</a> (by <a target="_blank" href="https://www.linkedin.com/in/graemesplace/">Graeme Malcolm</a>). Modules in the course:
+PROTIP: Unlike the AI-100 (which uses Python Notebooks), <a target="_blank" href="https://microsoftlearning.github.io/AI-102-AIEngineer/">hands-on exercises</a> in Microsoft's <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/ai-102t00">5-day live course AI-102T00: Designing and Implementing a Microsoft Azure AI Solution</a> (with cloud time) consists of C# and Python programs at <a target="_blank" href="https://github.com/MicrosoftLearning/AI-102-AIEngineer">https://github.com/MicrosoftLearning/AI-102-AIEngineer</a> (by <a target="_blank" href="https://www.linkedin.com/in/graemesplace/">Graeme Malcolm</a>). Modules in the course:
 
 Module 1: Introduction to AI on Azure
 
@@ -439,17 +460,16 @@ Module 10: Detecting, Analyzing, and Recognizing Faces
 
 Module 11: Reading Text in Images and Documents
 
-Module 12: Creating a Knowledge Mining Solution
+Module 12: Creating a <a href="#KnowledgeMining">Knowledge Mining</a> Solution
 
 The above course focuses on the use of <strong>prepackaged</strong> services for AI development, not on the development of custom models using Azure Machine Learning, which is covered by 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/dp-100t01">
 3-day Course DP-100T01-A: Designing and Implementing a Data Science Solution on Azure</a>.
 
-<a target="_blank" href="https://cloudacademy.com/quiz/38235/">Preview 45 min. Exam: Designing and Implementing an Azure AI Solution (AI-102)</a>
-
-<a target="_blank" href="https://ravikirans.com/ai-102-azure-exam-study-guide/">
+Resources:
+   * <a target="_blank" href="https://cloudacademy.com/quiz/38235/">Preview 45 min. Exam: Designing and Implementing an Azure AI Solution (AI-102)</a>
+   * <a target="_blank" href="https://ravikirans.com/ai-102-azure-exam-study-guide/">
 Ravi's links</a> still refer to AI-100
-
 
 
 <a name="AI-100"></a>
@@ -494,45 +514,23 @@ Guy Hummel's <a target="_blank" href="https://cloudacademy.com/learning-paths/ai
 Raza Salehi created on Pluralsight.com <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-azure-ai-engineer-ai-100">a series for Microsoft Azure AI Engineer (AI-100)</a> :
 
 <a name="ImmersiveReader"></a>
+
+### Immersive Reader
+
    * Raza Salehi's <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-immersive-reader">Immersive Reader</a>
 
 <a name="AnomalyDetector"></a>
+### Anomaly Detector
 
    * Raza Salehi's <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-anomaly-detector">Anomaly Detector</a>
 
-   * Raza Salehi's <a target="_blank" href="https://app.pluralsight.com/library/courses/building-customized-translation-systems-azure-cognitive-services-translator">Translator</a>
+https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-net/azure-anomaly-detector-client-sdk-samples/
+
+https://docs.microsoft.com/en-us/samples/azure-samples/anomalydetector/anomalydetector/
+
 
 Practice tests:
    * https://www.whizlabs.com/learn/course/microsoft-azure-ai-100/
-
-
-<hr />
-
-<a name="Cortana"></a>
-
-### Cortana now Cognitive Services 
-
-But <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microsoft-cortana-features-strategy-report">in 2019</a> Cortana decoupled from Windows 10 search.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=eJOv-TfhhzQ">VIDEO</a>: <a target="_blank" href="https://services.azureml.net/">Azure Machine Learning Studio (classic) Web Services</a>
-
-The Classic version reflected "All Microsoft all the time" with proprietary "pickle" (pkl) model files.
-
-
-<a name="workflows"></a>
-
-## Hybrid workflows
-
-PROTIP: Although most Microsoft's samples and tutorials usually focus on one service at a time, actual production work between input and output enjoyed by users usually involves a <strong>pipeline</strong> of several Azure services. For example: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/example-scenario/ai/news-feed-ingestion-and-near-real-time-analysis">ingesting (stream processing) a newsfeed</a>:
-
-![az-ml-newsfeed-546x623](https://user-images.githubusercontent.com/300046/116988980-6254f300-ac8e-11eb-9901-c2c6f3d8a018.png)
-
-Steps to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/tutorial-designer-automobile-price-deploy">deploy a machine learning model with the Designer</a>:
-   1. Create inference clusters
-   2. Create and test inference pipeline
-   3. Deploy inference pipeline
-   4. Test the service (used by the user)
-   <br /><br />
 
 
 <hr />
@@ -626,6 +624,13 @@ NOTE:
 
 ### Create Cognitive Services
 
+https://github.com/Azure-Samples/Cognitive-Services-Vision-Solution-Templates
+
+
+BTW https://docs.microsoft.com/en-us/samples/azure-samples/cognitive-services-quickstart-code/cognitive-services-quickstart-code/
+https://github.com/Azure-Samples/cognitive-services-sample-data-files
+
+
 My script does the same as these manual steps:
 
 1. In Portal.azure.com
@@ -703,9 +708,31 @@ Others:
 ## CLI
 
 
+<hr />
+
+
+<a name="LogicApp"></a>
+
+## Logic Apps
+
+
+<hr />
+
+<a name="Decision"></a>
+
+## Decision
+
+   * <strong>classification</strong> (unsupervised machine learning) fits features into model and predict classification of the label. Labels are what we want to predict, such as a future value predicted or an action. The label is usually "Y" among mathimaticians.
+
+   * <strong>regression (supervised</strong> machine learning) uses historical data to train the model to predict <strong>numerical</strong> values.
+
+   * Time Series Anomaly Detection
+   <br /><br />
+
+
 <a name="MachineLearning"></a>
 
-## Machine Learning (decision service)
+### Machine Learning (decision service)
 
 Example of ML classification:
    * https://www.literature-map.com suggests other authors based on an author input. The input author is displayed in the middle of a map.
@@ -1096,6 +1123,8 @@ https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/3-und
 
 <a target="_blank" href="https://aka.ms/GualalaACOM">Metrics Advisor</a> monitors metrics and diagnoses issues.
 
+https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/metricsadvisor-samples/
+
 
 <a name="Personalizer"></a>
 
@@ -1153,6 +1182,9 @@ In contrast, Speaker Diarization groups segments of audio by speaker in a batch 
 ## LUIS (Language Understanding Intelligent Service)
 
 https://www.slideshare.net/goelles/sharepoint-saturday-belgium-2019-unite-your-modern-workplace-with-microsofsts-ai-ecosystem
+
+https://github.com/Azure-Samples/cognitive-services-language-understanding
+
 
 ### DEMO JSON responses
 
@@ -1260,6 +1292,8 @@ References:
 
 DEMO: https://aidemos.microsoft.com/text-analytics
 
+https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/textanalytics-samples/
+
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/3-exercise">LAB</a> referencing "07 - Text Analytics.ipynb" ???
 
    <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/">Text to Speech</a> services:
@@ -1341,6 +1375,8 @@ DEMO: https://aidemos.microsoft.com/text-analytics
 
    PROTIP: Since you have to use your own subscription to follow <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/recognize-synthesize-speech/3-exercise-transcribe-speech-use-azure">this tutorial from Microsoft</a>, skip clicking "Launch VM mode" and follow <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/08%20-%20Speech.ipynb">the Python notebook on Speech</a> on the regular Portal.
 
+   SAMPLE: https://docs.microsoft.com/en-us/samples/azure-samples/cognitive-speech-tts/azure-cognitive-tts-samples/
+
 1. PROTIP: In a CLI window, run my Bash shell script to Create a Cognitive Services resource and get its two keys:
 
    <pre>cd ~/clouddrive/azure-your-way
@@ -1358,7 +1394,11 @@ DEMO: https://aidemos.microsoft.com/text-analytics
 
    ### Translator Text (text-to-tex)
 
-   <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/">Microsoft's Translator service </a> can translate text between <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/Translator/language-support">more than 90 languages and dialects</a>, specified using  ISO 639-1 two-letter language codes and 3166-1 cultural codes such as "en-US" for US English, "en-GB" for British English, "fr-CA" for Canadian French, etc.
+   <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/">Microsoft's Translator service </a> can translate text between <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/Translator/language-support">more than 90 languages and dialects</a> (including Klingon in Star Trek), specified using ISO 639-1 two-letter language codes and 3166-1 cultural codes such as "en-US" for US English, "en-GB" for British English, "fr-CA" for Canadian French, etc.
+
+
+   * Raza Salehi's <a target="_blank" href="https://app.pluralsight.com/library/courses/building-customized-translation-systems-azure-cognitive-services-translator">Translator</a>
+
 
 Hands-on tool without a compute instance:
 
@@ -1418,6 +1458,11 @@ Mt Studio Web Prod needs permission to access resources in your organization tha
 References:
    * Microsoft Azure Cognitive Services: Translator Text API" video course</a> by William Myers
 
+
+#### Other sample code
+
+https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/documenttranslation-samples/
+
 <hr />
 
 <a name="ComputerVision"></a>
@@ -1448,11 +1493,6 @@ DEMO: <a target="_blank" href="https://www.microsoft.com/en-us/ai/seeing-ai?rtc=
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/overview-ocr">Optical character recognition (OCR)</a> for small amounts of text
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/read-text-computer-vision/2-ocr-azure">The Read API</a> works asynchronously on images with a lot of text, to parse pages, lines, and words.
    * <a target="_blank" href="https://azure.microsoft.com/en-us/services/media-services/video-indexer/">Video Indexer service</a> analyzes the visual and audio channels of a video, and indexes its content.
-   <br /><br />
-
-Custom vision has two <strong>project types</strong>:
-   * <strong>Image classification</strong> is a machine-learning based form of computer vision in which a model is trained to categorize images based on their (class or) primary subject matter they contain. 
-   * <strong>Object detection</strong> goes further than classification to classify individual objects within the image, and to return the coordinates of a bounding box that indicates the object's location.
    <br /><br />
 
 
@@ -1531,6 +1571,13 @@ READ
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/">Azure Custom Vision</a> trains custom image using classification and object detection models referencing custom (your own) images.
 
+Custom vision has two <strong>project types</strong>:
+   * <strong>Image classification</strong> is a machine-learning based form of computer vision in which a model is trained to categorize images based on their (class or) primary subject matter they contain. 
+   * <strong>Object detection</strong> goes further than classification to classify individual objects within the image, and to return the coordinates of a bounding box that indicates the object's location.
+   <br /><br />
+
+LAB: https://github.com/microsoft/hackwithazure/tree/master/workshops/ml-endangered-animal-detector
+
 1. Open
 
    <a target="_blank" href="
@@ -1593,7 +1640,11 @@ Emotions:
    * surprise
    <br /><br />
 
-There is a 6 MB limit on the size of files (jpeg, png, gif, bmp).
+https://github.com/Azure-Samples/cognitive-services-FaceAPIEnrollmentSample   
+
+DEMO: LAB: https://github.com/microsoft/hackwithazure/tree/master/workshops/web-ai-happy-sad-angry
+
+There is a 6 MB limit on the size of each file (jpeg, png, gif, bmp).
 
 It's service functions:
    * Face Detection
@@ -1625,6 +1676,13 @@ It's service functions:
 
 https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/06%20-%20Receipts%20with%20Form%20Recognizer.ipynb
 
+https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/tables-samples/
+
+https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-java/formrecognizer-java-samples/
+
+https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-net/azure-form-recognizer-client-sdk-samples/
+
+https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/formrecognizer-samples/
 
 <a name="OCR"></a>
 
@@ -1853,6 +1911,28 @@ Bots are extended by <a target="_blank" href="https://microsoft.github.io/botfra
 
 ## Knowledge mining = Search?
 
+<a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/azure-search-knowledge-mining/azure-search-knowledge-mining/">
+Knowledge Mining Solution Accelerator</a>
+
+
+<a name="Search"></a>
+
+## Search for AI enrichment of docs
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/search/cognitive-search-concept-intro">
+The Azure Cognitive Search service</a> uses a Cognitive Search resource
+to support AI-powered search and knowledge mining solutions such as:
+
+   * Index documents and data from a range of sources.
+   * Use cognitive skills to enrich index data.
+   * Store extracted insights in a knowledge store for analysis and integration.
+   <br /><br />
+
+"Document cracking" is the process of extracting or creating text content from non-text sources during indexing.
+At the start of the pipeline, you have unstructured text or non-text content (such as images, scanned documents, or JPEG files). Data must exist in an Azure data storage service that can be accessed by an indexer. Indexers can "crack" source documents to extract text from source data. 
+
+
+https://blog.scottlowe.org/2019/03/01/advanced-ami-filtering-with-jmespath/
 
 
 <hr />
@@ -1942,6 +2022,8 @@ Batch mode is when audio recordings are stored on a file share, and a shared acc
 
 https://github.com/timothywarner/ai100/tree/master/Speech-to-Text
 
+
+<hr />
 
 
 <a name="HDInsight"></a>
@@ -2053,6 +2135,9 @@ https://www.amazon.com/Microsoft-Conversational-Platform-Developers-End-ebook/dp
 Apress by https://bisser.io/about/
    Stephan Bisser
 https://github.com/orgs/BotBuilderCommunity/dashboard
+
+
+https://azure.microsoft.com/en-us/services/virtual-machines/data-science-virtual-machines/?WT.mc_id=hackwithazure-hackathon-cxa
 
 
 ## More

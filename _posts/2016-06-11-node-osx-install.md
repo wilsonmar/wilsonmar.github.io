@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Node.js Installation on MacOS"
-excerpt: "JavaScript packaged by npm for the win!"
+excerpt: "How to switch among versions of JavaScript using nvm and npm"
 tags: [node, javascript, apple, mac, setup]
 date: "2016-06-11"
 file: "node-osx-install"
@@ -168,7 +168,7 @@ Click on one of the <strong>mutually exclusive</strong>
 variations of installing Node for
 additional information and instructions:
 
-* A: <a href="#Homebrew">Brew install node WITHOUT npm, then install .npm-packages with no nvm</a>. 
+* A: <a href="#Homebrew">Brew install</a> node WITHOUT npm, then install .npm-packages with no nvm. 
 
    This is what I recommend after <a href="#YarnInstall">hassling with yarn installation</a>.
 
@@ -1418,13 +1418,12 @@ Famous Node modules are listed below.
 
 0. Install using Homebrew:
 
-   <tt><strong>brew install yarn \-\-ignore-dependencies -g
-   </strong></tt>
+   <pre><strong>brew install yarn --ignore-dependencies -g
+   </strong></pre>
 
    The response:
 
-   <pre>
-==> Using the sandbox
+   <pre>==> Using the sandbox
 ==> Downloading https://yarnpkg.com/downloads/0.27.5/yarn-v0.27.5.tar.gz
 ==> Downloading from https://github-production-release-asset-2e65be.s3.amazonaws
 ######################################################################## 100.0%
@@ -1449,37 +1448,33 @@ Famous Node modules are listed below.
 
 0. Verify that Yarn is installed by running:
 
-   <tt><strong>yarn \-\-version
-   </strong></tt>
+   <pre><strong>yarn --version
+   </strong></pre>
 
-   At time of writing in 2017, the version was:
+   At time of writing in 2021, the version was:
 
-   <pre>0.27.5</pre>
+   <pre>1.22.10</pre>
 
 0. There is a more precise version:
 
    <tt><strong>ls /usr/local/Cellar/yarn
    </strong></tt>
 
-   At time of writing in 2017, the output was:
-
-   <pre>0.27.5_1</pre>
-
 0. Verify the yarn command works:
 
    <tt><strong>yarn
    </strong></tt>
 
-   At time of writing in 2017, the response was:
+   At time of writing in 2021, the response was:
 
-   <pre>yarn install v0.27.5
+   <pre>yarn install v1.22.10
 info No lockfile found.
-[1/4] Resolving packages...
-[2/4] Fetching packages...
-[3/4] Linking dependencies...
-[4/4] Building fresh packages...
+[1/4] 🔍  Resolving packages...
+[2/4] 🚚  Fetching packages...
+[3/4] 🔗  Linking dependencies...
+[4/4] 🔨  Building fresh packages...
 success Saved lockfile.
-Done in 0.13s.
+✨  Done in 0.08s.
    </pre>
 
 

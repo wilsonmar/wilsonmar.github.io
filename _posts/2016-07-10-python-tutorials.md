@@ -372,6 +372,10 @@ pyInstaller
 
 https://dev.to/sewinter/25-best-github-repos-for-python-developers-5419?utm_source=digest_mailer&utm_medium=email&utm_campaign=digest_email
 
+https://github.com/GeekTrainer/Introduction-Programming-Python
+by Christopher Harrison, Program Manager at Microsoft Cloud & AI.
+
+
 ## More on Python
 
 This is one of a series about Python:
