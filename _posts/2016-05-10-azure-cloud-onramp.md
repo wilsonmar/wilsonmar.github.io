@@ -193,7 +193,101 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
    This segregation also adds to duplicating material.
 
 
-## Global Admin Account
+<hr />
+
+<a name="AAD"></a>
+
+## AAD (Azure Active Directory)
+
+1. https://portal.azure.com
+
+1. Press G+\ and type <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview">"AAD" for the Azure Active Directory blade</a>
+
+   Licenses default to "Azure AD Free" to begin.
+
+   License would show "Azure AD Premium P2" for production enterprises, which is needed for MFA.
+   P2 provides "Identity Protection" and "Identity Governance" features.
+
+   P1 provides Conditional Access.
+
+   The Azure Active Directory (AAD) is a SaaS service, unlike "Active Directory" running on Windows servers in on-prem data centers. So AAD is also called an "Identity as a Service" (IDaaS). 
+
+   The old AD provides "domain services" that include domain joins, group policies, LDAP, Kerberos / NTLM authentication. These are provided by Azure Active Directory Domain Services (AD DS).
+
+   Since Azure Microsoft Office 365 is SaaS, users are enrolled into AAD.
+
+   It’s also possible to use Azure AD to manage third-party software applications (outside Microsoft), such as CRMs like Salesforce, SAP, etc.
+
+   "App Registrations" connects to web applications.
+
+   "Azure AD Connect" connects (syncs) on-prem AD user metadata with the SaaS AAD. Key features:
+   * Password hash sych with AAD
+   * Pass-through authentication which allows users to use the same password on-prem. and in the cloud.
+   * Federation integration with AD FS for certificate renewal
+   * Sychronization to ensure on-prem and cloud data matches
+   * Health monitoring in a central location
+   <br /><br />
+
+   <a name="Tenants"></a>
+
+   ### Tenants
+
+1. Click "Manage tenants" in the horizontal command bar.
+
+   NOTE: A Directory (as in AAD) is where your Tenant metadata is stored.
+
+1. Click the icon that looks like a notebook with a funnel.
+
+   "All Directories" also lists the "Organizations". A tenant represents an organization in AAD.
+   
+   Everything you do in Azure must be under some Tenant.
+
+   Each tenant is independent of all other tenants.
+
+1. OPTIONAL: Open another browser tab temporarily to find the Tenant ID based on DNS domain name:
+
+   <a target="_blank" href="https://www.whatismytenantid.com/">whatismytenantid.com</a>
+
+1. Return to the Default Directory.
+
+   <a name="Domains"></a>
+   
+   ### Domains
+
+   A domain is an area of a network organized by a single authentication database.
+
+   An Active Directory Domain is a logical grouping of AD objects on a network.
+
+   A Domain Controller (DC) is a server that authenticates user identities and authorizes their access to resources.
+
+   <a name="Devices"></a>
+
+   ### Devices on AAD
+
+   A "Registered" device is personally owned and signed in with a personal Microsoft or local account. It can access mobile and Windows 10 but not Windows Servers.
+
+   A "Joined" device exists only in the cloud to access Windows 10 and Windows Server 2019 VMs.
+
+   A "Hybrid" AAD joined device can access on-prem Windows 7, 8.1, 10 and Server 2008 or newer.
+
+
+   ### Roles
+
+1. See "Your role"? "Global Admin"
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=32m23s">VIDEO</a>:
+   Click "+ Add" to create a new Tenant.
+
+   PROTIP: Tenant Type "Azure Active Directory" by itself is actually "B2B" = Business to (2) Business. "B2C" means Business to (2) Consumers, or connection to External Identities on LinkedIn, Google, Facebook, etc.
+
+1. Cancel out by searching for AAD again.
+
+   Various roles can be can be defined for a tenant - LIMIT: Up to 2,000 roles per individual tenant.
+
+
+   <a name="GlobalAdmin"></a>
+
+   ### Global Admin Account
 
    <strong>Global Administrators</strong>, aka Company Administrators, in Azure AD have access to <strong>all services</strong> that use AAD identities (Microsoft 365 security center, Intune, Microsoft 365 compliance center, Exchange Online, SharePoint Online, Skype for Business Online, etc.).
 
@@ -300,9 +394,21 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/115958824-50bd5f80-a4c6-11eb-83f8-0cc8e86ca1f2.png"><img alt="az-rbac-524x574" width="524" height="574" src="https://user-images.githubusercontent.com/300046/115958824-50bd5f80-a4c6-11eb-83f8-0cc8e86ca1f2.png"></a>
 
-   To grant access, a <strong>role assignment</strong> attaches a role definition to a user, group, service principal, or managed identity at a particular scope.
+   REMEMBER: There are four ways to assign resource rights to a user:
+   * Direct assignment of user to resources.
+   * Group assignment - all AAD group members access rights through user association with a group
+   * Rule-based assignment - when a resource owner creates a group and uses a rule to define which users are assigned to a specific resource, attaching a role definition to a user, group, service principal, or managed identity at a particular scope.
+   * External authority assignment - such as on-prem. directory of SaaS app.
+   <br /><br />
 
-## Resource Providers, Actions, Operations, Permissions, Roles, Scopes, Groups, Policies
+   <a name="RoleAssignment"></a>
+
+### Role Assignment 
+
+   Access is granted by creating a role assignment.<br />
+   Access is revoked by removing a role assignment.
+
+## Resource Providers, Actions, Operations, Permissions, Scopes, Groups, Policies
 
    <a name="Providers"></a>
 
@@ -319,13 +425,6 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
    <strong>Operations</strong> (such as read, write, delete, etc.) are carried out by providers.
 
-
-   <a name="RoleAssignment"></a>
-
-   ### Role Assignment 
-
-   Access is granted by creating a role assignment.<br />
-   Access is revoked by removing a role assignment.
 
    PowerShell to process the <a href="#CustomRoles">custom role definition JSON (above)</a>:
 
@@ -366,7 +465,6 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
    A user inherits permissions from the <strong>management group</strong> to which the user has been assigned.
 
-   The whole stack is under a single Tenant - LIMIT: Up to 2,000 roles can be defined for a tenant. Each tenant is independent of all other tenants.
 
    ### Management Group Policies
 
@@ -384,6 +482,7 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
    NOTE: Tags do not cascade via inheritance like permissions unless a policy allows that.
 
    To do remediation, define a Managed Identity.
+
 
 
    <a name="Blueprints"></a>

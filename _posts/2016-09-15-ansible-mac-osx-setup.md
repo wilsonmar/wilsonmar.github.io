@@ -24,6 +24,7 @@ There are several categories:
 
    * GUI desktop and apps
    * Command-line profile and apps
+   <br /><br />
 
 ## GUI Manual config
 
@@ -67,6 +68,11 @@ To practice, use a virtual machine (VMWare Fusion, Vagrant, or Virtualbox).
 1. Social media ()
 
 ## Automate much?
+
+There are several alternatives:
+  * https://github.com/minamarkham/formation
+  * Ansible
+  <br /><br />
 
 If you've already run this, <a href="#SelectApps">click here to skip to view and edit the install specifications further down this tutorial</a>.
 

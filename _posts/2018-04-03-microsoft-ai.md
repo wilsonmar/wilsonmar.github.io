@@ -20,6 +20,8 @@ This article is a work-in-process toward being a guided tour to introduce use of
 
 My contribution to the world (you) is a less overwhelming <a href="#LearningSequence">learning sequence</a>, one that starts with the <strong>least complex</strong> of technologies used, then more complex ones.
 
+TL;DR look for "PROTIP:" in this article highlight the author's hard-won experience.You likely won't find such information anywhere else.
+
 
 <a name="Competitors"></a>
 
@@ -51,10 +53,6 @@ Case studies of how people are already making use of AI/ML to save time and mone
 Microsoft has published different lists for what services constitute its "Cognitive Services" brand name to achieve AI-enhanced solutions which mimic human intelligence.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=KxwjnuhNVIY&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&index=33">"Cortana"</a> was the brand-name for Microsoft's AI. Cortana is the name of the fictional artificially intelligent character in the Halo video game series. Cortana was going to be Microsoft's answer to Alexa, Siri, Hey Google, and other AI-powered personal assistants which respond to voice commands controlling skills that turn lights on and off, etc. However, since 2019, Cortana is considered a "skill" (app) that Amazon's Alexa and Google Assistant can call, working across multiple platforms.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=eJOv-TfhhzQ">VIDEO</a>: <a target="_blank" href="https://services.azureml.net/">Azure Machine Learning Studio (classic) Web Services</a>
-The Classic version reflected "All Microsoft all the time" with proprietary "pickle" (pkl) model files.
-
 
 As of this writing, in various marketing and certification training <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services">DOCS</a>, Azure Cognitive Services is categorized into:
 
@@ -163,24 +161,16 @@ PROTIP: In CLI az commands, each offering has a "Kind" code to designate its pro
 
    <ul><pre><strong>az cognitiveservices account list-kinds</strong></pre></ul>
 
-   Bot Services are in addition to the above.
+   Bot and IoT (Edge) Services are in addition to the above.
 
 
 <a name="workflows"></a>
 
 ## Hybrid workflows
 
-PROTIP: Although most Microsoft's samples and tutorials usually focus on one service at a time, actual production work between input and output enjoyed by users usually involves a <strong>pipeline</strong> of several Azure services. For example: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/example-scenario/ai/news-feed-ingestion-and-near-real-time-analysis">ingesting (stream processing) a newsfeed</a>:
+PROTIP: Although most Microsoft's samples and tutorials usually focus on one service at a time, actual production work enjoyed by real end-users usually involves a <strong>pipeline</strong> of several services. For example: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/example-scenario/ai/news-feed-ingestion-and-near-real-time-analysis">ingesting (stream processing) a newsfeed</a>:
 
 ![az-ml-newsfeed-546x623](https://user-images.githubusercontent.com/300046/116988980-6254f300-ac8e-11eb-9901-c2c6f3d8a018.png)
-
-Steps to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/tutorial-designer-automobile-price-deploy">deploy a machine learning model with the Designer</a>:
-   1. Create inference clusters
-   2. Create and test inference pipeline
-   3. Deploy inference pipeline
-   4. Test the service (used by the user)
-   <br /><br />
-
 
 <hr />
 
@@ -291,18 +281,15 @@ BTW, by contrast, Bernard Marr identified <a target="_blank" href="https://www.b
 Microsoft has a <a target="_blank" href="https://www.microsoft.com/research/group/fate/">FATE (Fairness, Accountability, Transparency, and Ethics)</a> research group:
 <img width="1126" height="610" alt="az-ai-principled-1126x610" src="https://user-images.githubusercontent.com/300046/117167864-e1c4ee00-ad84-11eb-88b1-4f685155a64f.png">
 
-   * Fairness: AI systems should treat all people fairly.
-   * Accountability: AI systems should have algorithmic accountability.
-   * Transparency: AI systems should be understandable.
-   * Ethics
-   <br /><br />
-
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/azure-artificial-intelligence/5-ai-impact-and-ethics">
 Microsoft's ethical principles</a> guiding the development and use of artificial intelligence with people:
 
+   * Fairness: AI systems should treat all people fairly.
    * Reliability & Safety: AI systems should perform reliably and safely.
-   * Inclusiveness: AI systems should empower everyone and engage people.
    * Privacy & Security: AI systems should be secure and respect privacy.
+   * Inclusiveness: AI systems should empower everyone and engage people.
+   * Transparency: AI systems should be understandable.
+   * Accountability: AI systems should have algorithmic accountability.
    <br /><br />
 
 1. DEMO: Hands on with AI/Guidelines for Human-AI Interaction: Click each card to see examples of each guideline
@@ -365,7 +352,8 @@ Among <a target="_blank" href="https://wilsonmar.github.io/azure-certifications"
    Both AI-100 and AI-102 are $165.
    The shift is from infrastructure (KeyVault, AKS, Stream Analytics) to programming C#, Python, or JavaScript.
 
-Previous exam 774 is now been retired.
+Previous exam 774 is now been retired. It was based on <a target="_blank" href="https://www.youtube.com/watch?v=eJOv-TfhhzQ">VIDEO</a>: <a target="_blank" href="https://services.azureml.net/">Azure Machine Learning Studio (classic) Web Services</a>,
+which reflected "All Microsoft all the time" using proprietary "pickle" (pkl) model files.
 
 
 <a name="AI-900"></a>
@@ -927,7 +915,7 @@ Following https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-l
    * Idle seconds before scale down: 120 (from default 1800)
    <br /><br />
 
-1. Compute name: PROTIP: Use 3-characters only, such as "wow" or "eat".
+1. Compute name: PROTIP: 3-characters are the smallerst allowed, such as "ace", "jim", "opq", "rsu", "vwx", "yza", etc.
 1. Enable SSH access: leave unchecked
 
 1. Next and wait (5 minutes) for State to go from "Creating" to "Running".
@@ -1742,6 +1730,9 @@ Bots are extended by <a target="_blank" href="https://microsoft.github.io/botfra
 
    ### Create QnA Service
 
+https://github.com/Microsoft/BotBuilder-CognitiveServices/tree/master/CSharp/Samples/QnAMaker
+is only for C#.
+
 1. View the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/quickstarts/create-publish-knowledge-base?tabs=v1&WT.mc_id=Portal-Microsoft_Azure_ProjectOxford">DOCS</a>:
 
    View the v2 (previous release)
@@ -2138,6 +2129,17 @@ https://github.com/orgs/BotBuilderCommunity/dashboard
 
 
 https://azure.microsoft.com/en-us/services/virtual-machines/data-science-virtual-machines/?WT.mc_id=hackwithazure-hackathon-cxa
+
+
+## ML Designer
+
+Steps to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/tutorial-designer-automobile-price-deploy">deploy a machine learning model with the Designer</a>:
+   1. Create inference clusters
+   2. Create and test inference pipeline
+   3. Deploy inference pipeline
+   4. Test the service (used by the user)
+   <br /><br />
+
 
 
 ## More
