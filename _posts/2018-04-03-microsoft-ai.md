@@ -85,7 +85,11 @@ PROTIP: In CLI az commands, each offering has a "Kind" code to designate its pro
    <tr align="top"><td> <em>global</em> </td><td> "CognitiveServices"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">See below</a> 
       </td></tr>
-   <tr align="top"><td colspan="3"> <a href="#Vision">Vision</a> 
+   <tr align="top"><td> ? </td><td> "Internal.AllInOne"
+      </td><td> ?
+      </td></tr>
+
+   <tr align="top"><td colspan="3" align="center"> <a href="#Vision">Vision</a> 
       </td></tr>
    <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/anomaly-detector/#features">Features</a> </td><td> "ComputerVision"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">2 TPC, 10K/mo.</a> 
@@ -106,6 +110,8 @@ PROTIP: In CLI az commands, each offering has a "Kind" code to designate its pro
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/computer-vision/">20/min, 5K/mo.</a> 
       </td></tr>
 
+   <tr align="top"><td colspan="3" align="center"> <a href="#Speech">Speech</a> 
+      </td></tr>
    <tr align="top"><td> <a href="#Speech">Speech</a> </td><td> "SpeechServices"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">5 hours/mo.*</a> 
       </td></tr>
@@ -113,6 +119,8 @@ PROTIP: In CLI az commands, each offering has a "Kind" code to designate its pro
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">20/min, 5K/mo.</a> 
       </td></tr>
 
+   <tr align="top"><td colspan="3" align="center"> <a href="#Language">Language</a>
+      </td></tr>
    <tr align="top"><td> <a href="#Language">Language</a> </td><td> <a href="#LUIS">"LUIS"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/language-understanding-intelligent-services/">5 TPS, 10K trans/mo.</a> 
       </td></tr>
@@ -134,6 +142,9 @@ PROTIP: In CLI az commands, each offering has a "Kind" code to designate its pro
    <tr align="top"><td> <a href="#Language">Language</a> </td><td> <a href="ImmersiveReader">ImmersiveReader"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/immersive-reader/">3M chars/mo.</a> 
       </td></tr>
+   
+   <tr align="top"><td colspan="3" align="center"> <a href="#Decision">Decision (Making)</a>  
+      </td></tr>
    <tr align="top"><td> <a href="#Decision">Decision</a> </td><td> <a href="#AnomalyDetector">AnomalyDetector"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/anomaly-detector/">2,000 trans/mo.</a> 
       </td></tr>
@@ -147,6 +158,8 @@ PROTIP: In CLI az commands, each offering has a "Kind" code to designate its pro
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/personalizer/">50K trans/mo.</a> 
       </td></tr>
 
+   <tr align="top"><td colspan="3" align="center"> <a href="#Search">Search</a>
+      </td></tr>
    <tr align="top"><td> <a href="#Search">Search</a> </td><td> "Bing.CustomSearch"
       </td><td> ?
       </td></tr>
@@ -154,9 +167,6 @@ PROTIP: In CLI az commands, each offering has a "Kind" code to designate its pro
       </td><td> ?
       </td></tr>
 
-   <tr align="top"><td> ? </td><td> "Internal.AllInOne"
-      </td><td> ?
-      </td></tr>
    </table>
 
    Kinds with ? are known in websites but not listed by this az command (which you can run after you're setup to run CLI commands:
