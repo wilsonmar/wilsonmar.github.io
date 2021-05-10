@@ -145,25 +145,25 @@ PROTIP: In CLI az commands, each offering has a "Kind" code to designate its pro
    
    <tr align="top"><td colspan="3" align="center"> <a href="#Decision">Decision (Making)</a>  
       </td></tr>
-   <tr align="top"><td> <a href="#Decision">Decision</a> </td><td> <a href="#AnomalyDetector">AnomalyDetector"</a>
+   <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/anomaly-detector/#features">Features</a> </td><td> <a href="#AnomalyDetector">AnomalyDetector"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/anomaly-detector/">2,000 trans/mo.</a> 
       </td></tr>
-   <tr align="top"><td> <a href="#Decision">Decision</a> </td><td> "ContentModerator"
+   <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/content-moderator/#features">Features</a>  </td><td> "ContentModerator"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/content-moderator/">1 TPS</a> 
       </td></tr>
-   <tr align="top"><td> <a href="#Decision">Decision</a> </td><td> "MetricsAdvisor"
+   <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/metrics-advisor/#features">Features</a>  </td><td> "MetricsAdvisor"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/metrics-advisor/">preview</a> 
       </td></tr>
-   <tr align="top"><td> <a href="#Decision">Decision</a> </td><td> <a href="#Personalizer">Personalizer"</a>
+   <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/#features">Features</a>  </td><td> <a href="#Personalizer">Personalizer"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/personalizer/">50K trans/mo.</a> 
       </td></tr>
 
    <tr align="top"><td colspan="3" align="center"> <a href="#Search">Search</a>
       </td></tr>
-   <tr align="top"><td> <a href="#Search">Search</a> </td><td> "Bing.CustomSearch"
+   <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/anomaly-detector/#features">Features</a> </td><td> "Bing.CustomSearch"
       </td><td> ?
       </td></tr>
-   <tr align="top"><td> <a href="#Search">Search</a> </td><td> "Bing.Search.v7"
+   <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/anomaly-detector/#features">Features</a> </td><td> "Bing.Search.v7"
       </td><td> ?
       </td></tr>
 
