@@ -7,7 +7,7 @@ date: "2021-05-10"
 file: "azure-cloud-onramp"
 image:
 # az-logo-2021-1900x500.png
-  feature: ![az-logo-2021-1900x500](https://user-images.githubusercontent.com/300046/117658030-7fd70080-b157-11eb-9869-405a4d93ecf5.png)
+  feature: https://user-images.githubusercontent.com/300046/117658030-7fd70080-b157-11eb-9869-405a4d93ecf5.png
   credit: Microsoft Fluent
   creditlink: https://azure.microsoft.com/en-in/blog/a-fluent-new-look-for-the-azure-icon/
 comments: true
