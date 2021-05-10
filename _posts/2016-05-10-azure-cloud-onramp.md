@@ -3,13 +3,13 @@ layout: post
 title: "Azure Cloud Onramp"
 excerpt: "Get to know Subscriptions, Support plans, ARM portal Keyboard Shortcuts, Tags, Policies, CLI scripts"
 tags: [cloud, azure]
-date: "2021-03-05"
+date: "2021-05-10"
 file: "azure-cloud-onramp"
 image:
-# azure ms logo wait 1900x500-39kb.jpg
-  feature: https://cloud.githubusercontent.com/assets/300046/18188069/153fbcca-706c-11e6-983d-0783da57f75c.jpg
-  credit: Microsoft Azure
-  creditlink: 
+# az-logo-2021-1900x500.png
+  feature: ![az-logo-2021-1900x500](https://user-images.githubusercontent.com/300046/117658030-7fd70080-b157-11eb-9869-405a4d93ecf5.png)
+  credit: Microsoft Fluent
+  creditlink: https://azure.microsoft.com/en-in/blog/a-fluent-new-look-for-the-azure-icon/
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -251,7 +251,7 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 1. Return to the Default Directory.
 
    <a name="Domains"></a>
-   
+
    ### Domains
 
    A domain is an area of a network organized by a single authentication database.
