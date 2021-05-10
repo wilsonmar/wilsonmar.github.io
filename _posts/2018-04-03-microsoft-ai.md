@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This article is a work-in-process toward being a guided tour to introduce use of Microsoft's Artificial Intelligence offerings running on the Azure cloud, which Microsoft calls "Cognitive services".
+This article presents my notes toward a guided tour to introduce use of Microsoft's Artificial Intelligence offerings running on the Azure cloud, which Microsoft calls "Cognitive services".
 
 My contribution to the world (you) is a less overwhelming <a href="#LearningSequence">learning sequence</a>, one that starts with the <strong>least complex</strong> of technologies used, then more complex ones.
 
@@ -56,13 +56,13 @@ Microsoft has published different lists for what services constitute its "Cognit
 
 As of this writing, in various marketing and certification training <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services">DOCS</a>, Azure Cognitive Services is categorized into:
 
-* <a href="#Vision">Vision</a> - interpret the world visually through cameras, videos, images
+* <a href="#Vision">Vision</a> (Visual Perception) - interpret the world visually through cameras, videos, images
 
 * <a href="#Speech">Speech</a> - Text-to-Speech and Speech-to-Text to interpret written or spoken language, and respond in kind.
 
-* <a href="#Language">Language</a> - aka Natural language Processing (NLP) to <a href="#TranslateText">translate text</a>, etc.
+* <a href="#Language">Language</a> - aka Natural language Processing (NLP) to <a href="#TranslateText">translate text (Text Analysis)</a>, etc.
 
-* <a href="#Decision">Decision</a> - supervised and unsupervised machine learning
+* <a href="#Decision">Decision</a> (Making) - supervised and unsupervised machine learning
 
 <a href="#Search">Search</a> (the "Bing" brand) has recently been separated out from the "Cognitive Services" to its own at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/search/">https://docs.microsoft.com/en-us/azure/search</a>, although it's used in "Conversational AI" using an "agent" (Azure Bot Service) to participate in (natural) conversations. BTW: <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microsoft-cortana-features-strategy-report">in 2019</a> Cortana decoupled from Windows 10 search.
 
@@ -82,14 +82,16 @@ PROTIP: In CLI az commands, each offering has a "Kind" code to designate its pro
    <table border="1" cellpadding="4" cellspacing="0">
    <tr valign="bottom"><th> Category </th><th> Kind </th><th> Free </th></tr>
 
-   <tr align="top"><td> - </td><td> "CognitiveServices"
-      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">see below</a> 
+   <tr align="top"><td> <em>global</em> </td><td> "CognitiveServices"
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">See below</a> 
       </td></tr>
-   <tr align="top"><td> <a href="#Vision">Vision</a> </td><td> "ComputerVision"
+   <tr align="top"><td colspan="3"> <a href="#Vision">Vision</a> 
+      </td></tr>
+   <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/anomaly-detector/#features">Features</a> </td><td> "ComputerVision"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">2 TPC, 10K/mo.</a> 
       </td></tr>
    <tr align="top"><td> <a href="#Vision">Vision</a> </td><td> "CustomVision.Prediction"
-      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">10K preictions/mo.</a> 
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">10K predictions/mo.</a> 
       </td></tr>
    <tr align="top"><td> <a href="#Vision">Vision</a> </td><td> "CustomVision.Training"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">2 TPS, 1 hour/mo.</a> 
@@ -162,6 +164,10 @@ PROTIP: In CLI az commands, each offering has a "Kind" code to designate its pro
    <ul><pre><strong>az cognitiveservices account list-kinds</strong></pre></ul>
 
    Bot and IoT (Edge) Services are in addition to the above.
+
+   PROTIP: CAUTION: Each service has a different maturity level <a target="_blank" href="https://azure.microsoft.com/en-us/downloads/">in its documentation at azure.microsoft.com/en-us/downloads</a>, such as <a target="_blank" href="https://azure.github.io/azure-sdk/releases/latest/python.html">SDK for Python</a> open-sourced at <a target="_blank" href="   https://github.com/azure/azure-sdk-for-python/">github.com/azure/azure-sdk-for-python</a>, described at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/developer/python/">docs.microsoft.com/en-us/azure/developer/python</a>.
+
+   Also, individual products <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services&regions=canada-central,canada-east,us-central,us-east,us-east-2,us-north-central,us-south-central,us-west-central,us-west,us-west-2,norway-east">may be in preview or not available depnding on region</a>.
 
 
 <a name="workflows"></a>
@@ -350,10 +356,16 @@ Among <a target="_blank" href="https://wilsonmar.github.io/azure-certifications"
    * <a href="#AI-100">AI-100</a> (with free re-cert after 2-years) on June 30, 2021.
 
    Both AI-100 and AI-102 are $165.
-   The shift is from infrastructure (KeyVault, AKS, Stream Analytics) to programming C#, Python, or JavaScript.
+   The shift is from infrastructure (KeyVault, AKS, Stream Analytics) to programming C#, Python, and curl commands.
 
 Previous exam 774 is now been retired. It was based on <a target="_blank" href="https://www.youtube.com/watch?v=eJOv-TfhhzQ">VIDEO</a>: <a target="_blank" href="https://services.azureml.net/">Azure Machine Learning Studio (classic) Web Services</a>,
 which reflected "All Microsoft all the time" using proprietary "pickle" (pkl) model files.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-090">DP-090</a> goes into implementing a Machine Learning Solution with Databricks
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-100">DP-100</a> goes into machine learning, using Azure Machine Learning.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-203">DP-203 Data Engineering on Microsoft Azure</a> goes into how to use machine learning in Synapse Analytics.
 
 
 <a name="AI-900"></a>
@@ -450,15 +462,13 @@ Module 11: Reading Text in Images and Documents
 
 Module 12: Creating a <a href="#KnowledgeMining">Knowledge Mining</a> Solution
 
-The above course focuses on the use of <strong>prepackaged</strong> services for AI development, not on the development of custom models using Azure Machine Learning, which is covered by 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/dp-100t01">
-3-day Course DP-100T01-A: Designing and Implementing a Data Science Solution on Azure</a>.
+The above course and AI-102 focuses on the use of <strong>prepackaged</strong> services for AI development, not on the development of custom models using Azure Machine Learning, which is covered by <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/dp-100t01">3-day Course DP-100T01-A: Designing and Implementing a Data Science Solution on Azure</a>.
+
 
 Resources:
    * <a target="_blank" href="https://cloudacademy.com/quiz/38235/">Preview 45 min. Exam: Designing and Implementing an Azure AI Solution (AI-102)</a>
    * <a target="_blank" href="https://ravikirans.com/ai-102-azure-exam-study-guide/">
 Ravi's links</a> still refer to AI-100
-
 
 <a name="AI-100"></a>
 
@@ -1333,7 +1343,7 @@ https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/textanalytic
 
    <a name="Speech"></a>
 
-   ### Speech Translation (Speech to text)
+   ### Speech Translation (Speech-to-text aka STT)
    
    Get the monthly subscription mobile app on 
    <a target="_blank" href="https://apps.apple.com/app/microsoft-translator/id1018949559">
@@ -1380,7 +1390,7 @@ https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/textanalytic
 
    <a name="TextTranslation"></a>
 
-   ### Translator Text (text-to-tex)
+   ### Translator Text (text-to-text aka TTT)
 
    <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/">Microsoft's Translator service </a> can translate text between <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/Translator/language-support">more than 90 languages and dialects</a> (including Klingon in Star Trek), specified using ISO 639-1 two-letter language codes and 3166-1 cultural codes such as "en-US" for US English, "en-GB" for British English, "fr-CA" for Canadian French, etc.
 

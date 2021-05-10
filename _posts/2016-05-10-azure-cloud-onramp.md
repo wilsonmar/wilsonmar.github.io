@@ -16,9 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This is a hands-on deep-dive tutorial with commentary along the way, covering how to get an account into Azure, set MFA, use Active Directory.
-
-<a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">This</a> is the hands-on step-by-step tutorial I would give to an administrator getting up and running on Azure cloud.
+This is a deep-dive tutorial with commentary along the way, covering basic terminology and how to get an account into Azure, set MFA, use Active Directory. This is the hands-on step-by-step tutorial I would give to an administrator getting up and running on Azure cloud.
 
 ## Quick Reference Links
 

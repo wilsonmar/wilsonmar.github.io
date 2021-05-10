@@ -108,6 +108,8 @@ Microsoft continues to <a target="_blank" href="https://docs.microsoft.com/en-us
 <a target="_blank" href="https://cloudacademy.com/library/azure/quizzes/">
 Microsoft Quizzes by CloudAcademy</a>
 
+See https://docs.microsoft.com/en-us/learn/certifications/partners
+
 ### Microsoft Learning
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">
@@ -171,13 +173,17 @@ If your company has a deal with Microsoft:
 1. Click blue Launch button at https://esi.learnondemand.net/Lab/... 
    or aka.ms/az500labs
 
-1. Type your Azure Pass Promo Code from instructor at microsoftazurepass.com.
+   ### Redeem Promo Code
+
+1. Type your Azure Pass <strong>Promo Code</strong> 
    
+   <strong>PROTIP: If you already have a code from a previous class within the last month, use that and wait until it runs out to use it.</strong>
+
+   <strong>PROTIP: CAUTION: This wipes out your existing data with a new storage account.</strong>
+
    It takes several minutes to build your environment so you see a Windows 10 Desktop.
 
 1. Expand full screen. Click "Next".
-
-   ### Redeem Promo Code
 
    Follow instructions on the right pane:
 

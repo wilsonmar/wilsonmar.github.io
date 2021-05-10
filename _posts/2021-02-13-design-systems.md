@@ -54,7 +54,7 @@ Apple hands out awards for those who designed apps using their system.
 <a target="_blank" href="https://developer.apple.com/videos/design/">Videos</a>
 The sans-serif "San Francisco" is <a target="_blank" href="https://developer.apple.com/design/human-interface-guidelines/macos/visual-design/typography/">Apple's system font</a> across macOS, iOS, watchOS, and tvOS.
 
-Microsoft's Fluent Design System at <a target="_blank" href="https://fluent.microsoft.com/">fluent.microsoft.com</a>
+Microsoft's Fluent Design System at <a target="_blank" href="https://fluent.microsoft.com/">fluent.microsoft.com</a> and <a target="_blank" href="https://www.microsoft.com/design/fluent/">microsoft.com/design/fluent</a>
 
 Google Material Design
 
