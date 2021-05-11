@@ -32,21 +32,21 @@ Here are the <strong>concerns</strong> addressed by those requests:
    At the top of the <a target="_blank" href="https://www.wikiwand.com/en/List_of_largest_employers">list of the largest employers in the world</a> is U.S. Department of Defense at 3.2 million people, followed by China's military, then Walmart at 2.2 million (1.3 million in the United States), about the same as Amazon.
 
    Sheer <strong>scale</strong> means enterprise workers get value from <strong>batch</strong> (bulk) export, import, and processing. 
-
-   To keep support costs down, <strong>self-service</strong> apps are a big deal.
+   Large amounts of data makes manual fixes not practical.
    
-   Manual fixes are not practical with large amounts of data.
-   Testing is crucial to keep rework low.
-   And specific, <strong>actionable alerts</strong> are important for troubleshooters.
-
    Enterprise-level software needs to appropriately <strong>isolate data</strong> and customize workflows used by each individual worker AND be sophisticated enough to <strong>logically summarize</strong> trends for executives. Many managers are overwhelmed by dashboards requiring expert manual navigation.
 
    Due to the large number of options, every field on enterprise forms are likely need a search box. It's not enough for vendors to simply provide a "Next" button for users to hunt for a value within a long list. 
 
+   To keep support costs down, <strong>self-service</strong> apps are a big deal.
+   
+   Extensive testing is crucial to keep rework from being unsustainable.
+
+   Specific, <strong>actionable alerts</strong> are important for troubleshooting.
+   
    The more managers in an organization, the more complexity and variations will be requested.
    That means an explosion of divergent components, databases, and technologies which drive them.
 
-   
 ## 2. Hierarchy of groups
 
    Enterprises manage large amounts of data and people by grouping them in various ways, as in an organization chart.
