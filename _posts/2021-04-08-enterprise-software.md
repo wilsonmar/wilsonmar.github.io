@@ -36,13 +36,13 @@ Here are the <strong>concerns</strong> addressed by those requests:
    
    Enterprise-level software needs to appropriately <strong>isolate data</strong> and customize workflows used by each individual worker AND be sophisticated enough to <strong>logically summarize</strong> trends for executives. Many managers are overwhelmed by dashboards requiring expert manual navigation.
 
-   Due to the large number of options, every field on enterprise forms are likely need a search box. It's not enough for vendors to simply provide a "Next" button for users to hunt for a value within a long list. 
+>   Due to the large number of options, every field on enterprise forms are likely need a search box. It's not enough for vendors to simply provide a "Next" button for users to hunt for a value within a long list. 
 
    To keep support costs down, <strong>self-service</strong> apps are a big deal.
    
    Extensive testing is crucial to keep rework from being unsustainable.
 
-   Specific, <strong>actionable alerts</strong> are important for troubleshooting.
+> Specific, <strong>actionable alerts</strong> are important for troubleshooting.
    
    The more managers in an organization, the more complexity and variations will be requested.
    That means an explosion of divergent components, databases, and technologies which drive them.
@@ -55,7 +55,7 @@ Here are the <strong>concerns</strong> addressed by those requests:
 
    Tags are useful and flexibile, but enterprises are more used to hierarchial groups which reflect the traditional organization chart of vice presidents above directors above managers, etc. Effective or not, all data needs to fit into such an arrangement. "Conway's Law" was coined for the observation that systems tend to look like the organization structure of the people building them.
 
-   So enterprise software needs to create <strong>reports showing an indented hierarchy</strong> rather than a mere two-dimensional list.
+>   So enterprise software needs to create <strong>reports showing an indented hierarchy</strong> rather than a mere two-dimensional list.
 
 
 ## 3. Analytic breakdowns and summaries across several dimensions
@@ -64,15 +64,16 @@ Here are the <strong>concerns</strong> addressed by those requests:
 
    Results often need to have a financial component which meet cost accounting principles.
 
-   Because the size and complexity of enterprise organizations make decisions time-consuming to propagate, enterprises must strive to move from reactive to proactive and predictive. 
-   So enterprise visualizations over time need to look ahead to identify <strong>trends</strong> rather than just looking backward.
+   Because the size and complexity of enterprise organizations make decisions time-consuming to propagate, enterprises must strive to move from reactive to proactive to predictive. 
+
+>   So enterprise visualizations over time need to look ahead to identify <strong>trends</strong> rather than just looking backward.
 
    Additionally, enterprise users and managers need to create their own reports and visualizations.
 
 
 ## 4. Global scale
 
-   Global operations means that translations in various languages become available together.
+   Global operations means that <strong>translations</strong> in various languages become available together when the product ships.
 
    Also, when a large business goes down globally, a lot of money is lost.
    So to reduce recovery time for live databases faltering, an enterprise would <strong>log-ship</strong> every single add or update across the sea to a duplicate hot site ready to take over.
