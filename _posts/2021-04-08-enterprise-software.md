@@ -17,13 +17,11 @@ comments: true
 {% include _toc.html %}
 
 
-Consultants and employees who work for enterprises and those who cater to them typically earn more than at smaller companies.
-
-But to successfully cater to enterprises, software vendors must incorporate features enterprises needed. A salesperson at a well-known developer tools software company once actually said in a meeting (unconvincingly):
+To successfully cater to enterprises, software vendors must incorporate features enterprises needed. A salesperson at a well-known developer tools software company once actually said in a meeting (unconvincingly):
 
 > "We're enterprise software because we have enterprise users"
 
-The rebuff was: "I think your software will actually be an enterprise offering when the 40 specific feature we identified are implemented."
+The rebuff was: "I think your software will actually be an enterprise offering when those 30 specific feature we identified are implemented."
 
 Here are the <strong>concerns</strong> addressed by those requests:
 
