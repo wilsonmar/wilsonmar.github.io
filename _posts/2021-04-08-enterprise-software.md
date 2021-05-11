@@ -73,25 +73,24 @@ Here are the <strong>concerns</strong> addressed by those requests:
 
 ## 4. Global scale
 
-   Global operations means that <strong>translations</strong> in various languages become available together when the product ships.
+   Global operations means that <strong>translations</strong> in various languages become available together when the product ships. That requires massive coordination.
 
-   Also, when a large business goes down globally, a lot of money is lost.
-   So to reduce recovery time for live databases faltering, an enterprise would <strong>log-ship</strong> every single add or update across the sea to a duplicate hot site ready to take over.
-
-   However, several countries (such as Germany, Singapore, etc.) mandate that it's citizen's <strong>data not leave</strong> its sovereign territory.
+   When a large business goes down, a lot of money is lost.
+   So to reduce recovery time for live databases faltering, an enterprise would <strong>log-ship</strong> every single add or update across the sea to a duplicate hot site ready to take over. However, several countries (such as Germany, Singapore, etc.) mandate that it's citizen's <strong>data not leave</strong> its sovereign territory.
 
    Background knowledge about international commerce is important for work in enterprises.
-   So is skill at distributing data and workload to several regions around the world within a CDN (Cloud Distribution Network) so that workers and users in South Africa and New Zealand can access systems as quickly as users in Virginia.
-
+   
    An enterprise that operates only in one country may be satisfied with redundancy from running two or three separate cloud Availability Zones within a single region. This has lower cost because cloud vendors charge for network traffic between regions. To save even more money, some enterprises contract with "warm" data centers which wait until a disaster to install servers, or "cold" centers which don't have communications wired. This strategy  would extend time to recovery.
 
    The formation of a CPPT (Continuity Planning Project Team) and setup of a EOC (Emergency Operations Center) are defined by ISO 27001 Section 14, ISO 27002, <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-34r1.pdf">NIST 800-34</a>, NFPA 1600 & 1620, HIPPA. These specify that enterprises have written DRP (Disaster Recovery Procedures) for emergency triage and management of information technology based on normal Business Management Procedures. DRP is the technical extension of longer-term strategic Risk Assessments and Business Continuity Plan (BCP) for the business as a whole -- to ensure immediate survivability.
 
-## 5. Failure is not an option
+## 5. Time sensitive 
 
-   Enterprise developers, especially, need tools to efficiently wade though massive amounts of data and complex code, while they are working on them (rather than days or weeks after they have moved on to other issues).
+   Enterprises duplicate data and workload to several regions around the world within a CDN (Cloud Distribution Network) so that workers and users in South Africa and New Zealand can access systems as quickly as users in Virginia.
 
    Systems which are not setup for instant recovery nevertheless need to "fail safe" to a secure state rather than to a hackable state.
+
+   Enterprise developers, especially, need tools to efficiently wade though massive amounts of data and complex code, while they are working on them <strong>real-time</strong> (rather than days or weeks after they have moved on to other issues).
 
    Complying with some standards require that redundant capabilities to be proven dependable, regularly -- such as every year, when the RTA (Recovery Time Actual) statistic is captured. That's to identify whether the organization takes too long to activate restore or is too clumsy with restore procedures. 
 
@@ -170,7 +169,7 @@ So here you have what makes for software to be enterprise-worthy:
 2. Hierarchy of groups
 3. Analytic breakdowns and summaries across several dimensions
 4. Global scale
-5. Failure is not an option
+5. Time sensitive
 6. Central yet distributed planning and approvals
 7. High Security
 8. Round-the-clock SOC using SIEM
