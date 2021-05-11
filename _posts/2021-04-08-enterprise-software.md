@@ -86,17 +86,19 @@ Here are the <strong>concerns</strong> addressed by those requests:
 
 ## 5. Time sensitive 
 
-   Enterprises duplicate data and workload to several regions around the world within a CDN (Cloud Distribution Network) so that workers and users in South Africa and New Zealand can access systems as quickly as users in Virginia.
-
-   Systems which are not setup for instant recovery nevertheless need to "fail safe" to a secure state rather than to a hackable state.
-
    Enterprise developers, especially, need tools to efficiently wade though massive amounts of data and complex code, while they are working on them <strong>real-time</strong> (rather than days or weeks after they have moved on to other issues).
+
+   Enterprises <strong>duplicate data and workload</strong> to several regions around the world within a CDN (Cloud Distribution Network) so that workers and users in South Africa and New Zealand can access systems as quickly as users in Virginia.
 
    Complying with some standards require that redundant capabilities to be proven dependable, regularly -- such as every year, when the RTA (Recovery Time Actual) statistic is captured. That's to identify whether the organization takes too long to activate restore or is too clumsy with restore procedures. 
 
-   Sharing "cloud-scale" computing, storage, and network facilities in clouds enable use of the <a target="_blank" href="https://harness.io/blog/continuous-verification/blue-green-canary-deployment-strategies/">blue/green" strategy for deployment</a>, which duplicates a complete replacement set of components for "canary" and capacity testing before a full switch to production.
+   Systems which are not setup for instant recovery nevertheless need to "fail safe" to a secure state rather than to a hackable state.
 
-   Quick response requires automation for building and testing. Each server needs to be individually added or removed automatically within a "cluster" (within Kubernetes). That requires IaC (Infrastructure as Code such as Terraform) which defines all the components (compute, storage, and networking) in version-controled text files. 
+   Sharing "cloud-scale" computing, storage, and network facilities in clouds enable use of the <a target="_blank" href="https://harness.io/blog/continuous-verification/blue-green-canary-deployment-strategies/">blue/green" strategy for deployment</a>, which creates (in a cloud) a complete replacement set of components for "canary" and capacity testing before a full switch to production.
+
+   Quick response requires automation for building and testing. 
+
+   Each server needs to be individually added or removed automatically within a "cluster" (within Kubernetes). That requires IaC (Infrastructure as Code such as Terraform) which defines all the components (compute, storage, and networking) in version-controled text files. 
 
 ## 6. Central yet distributed planning and approvals
 
