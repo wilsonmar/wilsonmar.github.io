@@ -77,10 +77,10 @@ Microsoft provides some <a href="#FreeTime">free machine time</a>.
 
    ![az-ai-svcs-pricing-309x410](https://user-images.githubusercontent.com/300046/117203280-126c4e00-adac-11eb-84ae-54994f47f3ea.png)
 
-PROTIP: In CLI az commands, each offering has a "Kind" code to designate its processing. So that matters more than Microsoft's marketing designations when getting things done. So I've prepared for you a table to list the Kind codes by the marketing grouping.
+PROTIP: The reconciliation below between marketing Feature categories and the <strong>Kind</strong> of Cognitive service speecified in CLI az commands provides quick access to web pages and reveals some contradictions that need to be clarified:
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr valign="bottom"><th> Category </th><th> Kind </th><th> Free </th></tr>
+   <tr valign="bottom" align="left"><th> Category </th><th> Kind </th><th> Free </th></tr>
 
    <tr align="top"><td> <em>global</em> </td><td> "CognitiveServices"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">See below</a> 
@@ -106,8 +106,8 @@ PROTIP: In CLI az commands, each offering has a "Kind" code to designate its pro
    <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/form-recognizer/#features">Features</a> </td><td> FormRecognizer
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/form-recognizer/">500 pages/mo.</a> 
       </td></tr>
-   <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/media-services/video-indexer/#features">Features</a> </td><td> Video Indexer ?
-      </td><td> ?
+   <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/media-services/video-indexer/#features">Features</a> </td><td> Video Indexer
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/video-indexer/"><em>depends</em></a> 
       </td></tr>
    <tr align="top"><td> ? </td><td> ?InkRecognizer?
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/computer-vision/">20/min, 5K/mo.</a> 
@@ -291,6 +291,8 @@ BTW, by contrast, Bernard Marr identified <a target="_blank" href="https://www.b
 
    * "self-aware", also called artificial superintelligence (ASI), is "sentient" understanding of of its own needs and desires.
 
+https://www.forbes.com/sites/bernardmarr/2018/02/14/the-key-definitions-of-artificial-intelligence-ai-that-explain-its-importance/#22db12bb4f5d
+
 
 <hr />
 
@@ -381,6 +383,11 @@ which reflected "All Microsoft all the time" using proprietary "pickle" (pkl) mo
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-203">DP-203 Data Engineering on Microsoft Azure</a> goes into how to use machine learning in Synapse Analytics.
 
+<a target="_blank"" href="https://www.coursera.org/learn/developing-ai-applications-azure">
+Coursera video course: Developing AI Applications on Azure</a> 
+by Ronald J. Daskevich at LearnQuest is structured for 5 weeks.
+Coursera's videos shows the text at each point of its videos.
+NOTE: It still sends people to https://notebooks.azure.com and covers Microsoft's TDSP (Team Data Science Process).
 
 <a name="AI-900"></a>
 
@@ -1422,6 +1429,16 @@ Hands-on tool without a compute instance:
 
 4. Speak or type in your language to communicate with other participants in the conversation. Other participants will see your messages in their own language.
 
+
+https://docs.microsoft.com/en-us/azure/cognitive-services/translator/custom-translator/overview
+What is Custom Translator?
+
+Foe Parallel Data, equivalent documents in different languages:
+* https://docs.microsoft.com/en-us/azure/cognitive-services/
+* https://docs.microsoft.com/ja-jp/azure/cognitive-services/
+* https://docs.microsoft.com/ko-ko/azure/cognitive-services/
+
+https://docs.microsoft.com/en-us/azure/cognitive-services/translator/custom-translator/how-to-upload-document
 
 ### 09 - Translation.ipynb 
 
