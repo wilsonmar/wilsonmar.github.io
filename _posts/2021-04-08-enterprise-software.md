@@ -151,9 +151,11 @@ Here are the <strong>concerns</strong> addressed by those requests:
 
    Logs, especially are also used by external auditors to determine actual compliance with policies. Those with access to SIEM data can elicit actual, detailed, real-time insights on inflows and outflows between different parts of the organization and systems -- a magical tool to identify bottlenecks and predict trends. We look forward to 3D dynamic projections in Mixed reality glasses from Microsoft, Apple, Facebook, etc. 
 
-## 9. High Availability to recover from disasters
+## 9. Quick and complete recovery from disasters
 
-   Enterprise licensing typically involves providing High Availability (HA) features, which means running simultaneously in <strong>multiple locations</strong>. Such operations require real-time coordination of data created across multiple sites. Many applications were not written to accomodate that. 
+   Many legacy applications were created when it took months to obtain additional capacity. So systems were designed to simply fail when overwhelmed.
+
+   With cloud, enterprise licensing typically involves providing High Availability (HA) features, which means running simultaneously in <strong>multiple locations</strong>. Such operations require real-time coordination of data created across multiple sites. 
 
    When one region fails, the amount of time that it takes before end-users can continue work on a replacement system is so important that enterprises have a SLA metric for it: MTD (Maximum Tolerable Downtime). Additionally, the RTO (Recovery Time Objective) measures the amount of time before a restore is initiated and data is restored. 
 
@@ -175,7 +177,7 @@ So here you have what makes for software to be enterprise-worthy:
 6. Central yet distributed planning and approvals
 7. High Security
 8. Round-the-clock SOC using SIEM
-9. High Availability to recover from disasters
+9. Quick and complete recovery from disasters
 <br /><br />
 
 Incorporating the above is not just for enterprises, but any organization who want to be prepared to become massive with less issues. Building systems which inherently address the above enterprise concerns would save vendors and implementers the embarassment of having to add them at the request of end-users. And it's a lot easier to incorporate enterprise features during developement rather than as an afterthought.
