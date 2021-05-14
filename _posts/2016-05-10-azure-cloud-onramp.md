@@ -136,7 +136,9 @@ You'll need to do this for each browser (Google Chrome, Microsoft Edge, Firefox,
    * $150/month credits for $79/mo Visual Studio Enterprise license
    <br /><br />
 
-   Visual Studio Subscriptions are not offered in the Brazil South and Central India regions, as noted in <a target="_blank" href="https://azure.microsoft.com/en-us/regions/offers/">https://azure.microsoft.com/en-us/regions/offers/</a> 
+   Visual Studio Subscriptions are, as of this writing, NOT offered in the Brazil South and Central India regions, as noted in <a target="_blank" href="https://azure.microsoft.com/en-us/regions/offers/">https://azure.microsoft.com/en-us/regions/offers/</a>.
+
+   Azure Subscriptions, like Netflix and Disney+, billed month.
 
 ## Azure first-timer deals
 

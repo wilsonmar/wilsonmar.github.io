@@ -40,15 +40,6 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
         * AZ-120 Azure for SAP Workloads Specialty
    </td></tr>
 
-<tr valign="top"><td> Developer
-   </td><td>* <a href="#AZ-204">AZ-204 Azure Developer Associate</a><br />
-       * <a target="_blank" href="https://wilsonmar.github.io/azure-iot#AZ-220" title="My hands-on tutorial on Azure IoT">AZ-220 Azure IoT Developer Specialty</a> 
-   </td></tr>
-
-<tr valign="top"><td> DevOps Engineer
-   </td><td>* <a href="#AZ-400">AZ-400 DevOps Engineer Expert</a>
-   </td></tr>
-
 <tr valign="top"><td> Data Engineer<br /> Data Scientist
    </td><td>* <a href="#DP-900">DP-900 Azure Data Fundamentals</a><br />
    * <a href="#DP-100">DP-100 Azure Data Scientist Associate</a><br />
@@ -58,6 +49,15 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
    * PL-400 Power Platform Developer<br />
    * PL-100 Power Platform App-maker<br />
    * PL-600 Power Platform Solution Architect Expert
+   </td></tr>
+
+<tr valign="top"><td> DevOps Engineer
+   </td><td>* <a href="#AZ-400">AZ-400 DevOps Engineer Expert</a>
+   </td></tr>
+
+<tr valign="top"><td> Developer
+   </td><td>* <a href="#AZ-204">AZ-204 Azure Developer Associate</a><br />
+       * <a target="_blank" href="https://wilsonmar.github.io/azure-iot#AZ-220" title="My hands-on tutorial on Azure IoT">AZ-220 Azure IoT Developer Specialty</a> 
    </td></tr>
 
 <tr valign="top"><td> AI Engineer
@@ -653,6 +653,8 @@ Monitor, troubleshoot, and optimize Azure solutions (15-20%)
 
 Connect to and consume Azure services and third-party services (15-20%)
 <br /><br />
+
+Microsoft's hands-on 4-day live class makes use of files from <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure">https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure</a> described in steps at <a target="_blank" href="https://aka.ms/az204labs">aka.ms/az204labs</a>
 
 <a target="_blank" href="https://cloudacademy.com/learning-paths/az-204-exam-preparation-developing-solutions-for-microsoft-azure-1208/">
 CloudAcademy's 23h video course</a> provides labs:

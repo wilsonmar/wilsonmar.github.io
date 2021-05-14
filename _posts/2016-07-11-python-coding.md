@@ -80,14 +80,14 @@ Assuming you've first installed it, <tt>python</tt> puts you in a REPL prompt.
 
 ## Not None if good!
 
-Caller using "monad strategy" using Python reserved word "None":
+Return the Python reserved word "None":
 
 <pre>result = safe_square_root(4)
-if result is not None:
-   # happy path:
-   value = result.pop()  # from stack.
+<strong>if result is not None:</strong>   # happy path:
+   value = result.pop()  # pop up from stack.
    print(value)
-else:  # calling function does not need to handle error:
+else:  # notice we're not checking for None.
+    # calling function does not need to handle error:
     # an error occurred, but encapsulated to be forwarded and processed upstream:
     print("unable to compute square root")
 </pre>
