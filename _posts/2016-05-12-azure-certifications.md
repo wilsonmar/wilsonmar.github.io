@@ -642,6 +642,7 @@ is about development in .Net and C#:
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/manage-resources-in-azure/">Connect services together</a>
    <br /><br />
 
+
 Develop for Azure storage (15-20%)
    * <a target="_blank"" href="https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/">Store Data in Azure</a>
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/secure-your-cloud-data/">Secure Your Cloud Data</a>
@@ -656,10 +657,25 @@ Connect to and consume Azure services and third-party services (15-20%)
 
 Microsoft's hands-on 4-day live class makes use of files from <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure">https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure</a> described in steps at <a target="_blank" href="https://aka.ms/az204labs">aka.ms/az204labs</a>
 
+   1. <a target="_blank" href="https://wilsonmar.github.io/azure-compute">Create Azure App Service Web Apps</a>
+   1. <a target="_blank" href="https://wilsonmar.github.io/azure-functions">Implement Azure functions</a>
+   1. <a target="_blank" href="https://wilsonmar.github.io/azure-storage">Develop solutions that use blob storage</a>
+   1. <a target="_blank" href="https://wilsonmar.github.io/cosmodb">Develop solutions that use Cosmos DB storage</a>
+   1. Implement IaaS solutions
+   1. Implement secure cloud solutions
+   1. Implement user authentication and authorization
+   1. <a target="_blank" href="https://wilsonmar.github.io/api-management-microsoft/">Implement API Management</a>
+   1. Develop event-based solutions
+   1. <a target="_blank" href="https://wilsonmar.github.io/azure-messaging">Develop message-based solutions</a>
+   1. <a target="_blank" href="https://wilsonmar.github.io/azure-monitoring">Instrument solutions to support monitoring and logging</a>
+   1. Integrate caching and content delivery within solutions
+   <br /><br />
+
 <a target="_blank" href="https://cloudacademy.com/learning-paths/az-204-exam-preparation-developing-solutions-for-microsoft-azure-1208/">
 CloudAcademy's 23h video course</a> provides labs:
    * <a target="_blank" href="https://cloudacademy.com/lab/azure-api-management-policies-security/?context_resource=lp&context_id=1208">API Management Policies and Security</a>
-
+   * <a target="_blank" href="https://cloudacademy.com/lab/integrate-services-azure-function-apps/?context_resource=lp&context_id=1208">Azure Functions 1hr lab</a>
+   <br /><br />
 
 <a target="_blank" href="https://app.pluralsight.com/paths/certificate/developing-solutions-for-microsoft-azure-az-204">Pluralsight's video course</a>
 Includes:

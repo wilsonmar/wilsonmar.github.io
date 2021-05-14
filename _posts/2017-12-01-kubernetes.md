@@ -4,7 +4,7 @@ title: "Kubernetes (K8s)"
 excerpt: "for orchestration of containers, especially in clouds, including OpenShift"
 modified:
 tags: [google, cloud]
-date: "2020-10-04"
+date: "2021-05-14"
 file: "kubernetes"
 image:
 # kubernetes-head-1900x500-472493.jpg
@@ -570,6 +570,8 @@ CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e
 <a name="Social"></a>
 
 ## Social media communities
+
+   * <a target="_blank" href="https://community.cncf.io/manly">community.cncf.io/manly</a> to sign up for access to the "cncf-community-manly" community for discussions about KubeCon takeaways.
 
    * <a target="_blank" href="https://discuss.kubernetes.io/">https://discuss.kubernetes.io</a> is where issues with each version of K8s are discussed.
 
@@ -5955,7 +5957,7 @@ Fairwinds also has open-source tools at <a target="_blank" href="https://github.
    * terraform-bastion instance to proxy SSH and API access to a private Kubernetes cluster.
    * gemini to automate backups of PersistentVolumeClaims in Kubernetes using VolumeSnapshots
    * ClusterOps 
-   * https://github.com/FairwindsOps/k8s-workshop
+   * <a target="_blank" href="https://github.com/FairwindsOps/k8s-workshop">https://github.com/FairwindsOps/k8s-workshop</a>
    <br /><br />
 
 k8s-school.fr:
@@ -5965,6 +5967,10 @@ LevelUpEducation:
    * https://github.com/LevelUpEducation/kubernetes-demo/issues/31
 
 https://www.tutorialspoint.com/kubernetes/kubernetes_replica_sets.htm
+
+<a target="_blan" href="https://itnext.io/kubernetes-journey-cka-ckad-exam-tips-ff73e4672833">
+Exam</a> by Brad McCoy
+
 
 ## More on DevOps #
 

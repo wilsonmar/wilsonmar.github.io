@@ -37,11 +37,13 @@ Here are the notes I took while studying for <a target="_blank" href="https://wi
    <a href="#Queues">Queues</a>,<br />
    <a href="#DataLake">Data Lake Store</a>
    </td></tr>
+
 <tr valign="top"><td> Semi-structured: </td><td> XML, JSON, YAML, NoSQL files
    </td><td> <a href="#Files">FileStorage</a> in 
       <a href="#Disks">Disks</a>,<br />
       <a href="#Tables">Tables</a> 
    </td></tr>
+
 <tr valign="top"><td> Structured: </td><td> SQL databases (containing tables)
    </td><td> <a href="#Tables">Azure Tables</a>,<br />
       <a href="#SQLDB">Azure SQL Database</a>,<br /> 
@@ -63,7 +65,7 @@ Storage accounts are recepticles capable of storing different categories of data
 Each storage account provides a unique namespace accessible over HTTPS.
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr align="left"><th> Service </th><th> URL (singular)</th></tr>
+<tr align="left"><th> Service </th><th align="right"> URL (singular)</th></tr>
 <tr valign="top"><td> <a href="#Files">Files</a> 
    </td><td align="right"> <tt>https://<em>my_account</em>.file.core.windows.net</tt>
    </td></tr>
@@ -124,11 +126,14 @@ https://github.com/Azure-Samples/azure-files-samples
    PROTIP: Premium SSD disks are paid a fixed maximum cost for each month, regardless of usage. That's in addition to any Egress charges.
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr><th> Type </th></tr> Size </th><th> IOPS Limit expected </th><th> Thruput limit MB/s </th></tr>
+   <tr><th> Type </th><th> Size </th><th> IOPS Limit expected </th><th> Thruput limit MB/s </th></tr>
+
    <tr valign="top"><td align="right"> Standard HHD
       </td><td> 250 </td><td>  500 </td><td> 60 </td></tr> 
+
    <tr valign="top"><td align="right"> Standard SSD
-      </td><td> 250 </td><td>  ? </td><td> ? </td></tr> 
+      </td><td> 250 </td><td>  ? </td><td> ? </td></tr>
+
    <tr valign="top" align="right"><td align="left"> Premium SSD 
       </td><td> 250 </td><td> 1100 </td><td> 125 </td></tr> 
    </table>

@@ -1055,9 +1055,15 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 <hr />
 
 
+<a name="Naming"></a>
+
 ## Naming conventions
-   
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">Naming conventions</a>:
+
+Advice from Microsoft: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">Naming conventions</a>:
+
+PROTIP: Define abbreviations, then enforce their use. Abbreviations are needed to keep names short.
+Define abbreviations in different human languages if you haven an international crew.
+Abbreviations can serve as a way to inform policies, such as locking of production servers.
 
    1. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations">rg, vm</a> = Resource asset type. 
    2. fin, mktg, product, it, corp = Business unit - organizational element that owns the subscription or workload the resource belongs to. 
@@ -1065,7 +1071,7 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
    4. shared, central, client = Subscription type - the purpose of the subscription that contains the resource. 
    5. prod, dev, qa, stage, test = Deployment environment - The stage of the development lifecycle for the workload that the resource supports.
    6. westus, eastus2, westeu = Location/Region - The Azure region where the resource is deployed.
-
+   <br /><br />
 
 
    <a name="ResourceGroups"></a>
@@ -1075,18 +1081,23 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
    Before any resource can be provisioned, you need a resource group for it to be placed in, for provisioning, monitoring, maintenance.
    Each resource must be in a resource group. 
 
-   Resource groups can be created by using the following methods:
+   Resource groups can be created by using any of the following methods:
+
+   ### Automation options
 
    * <a href="#Portal">Azure portal GUI</a>
-   * JSON Templates IaC templates (by custom REST API clients)
-   * Azure Cloud Shell which enable: Azure PowerShell (Az modules)
    * Azure Bash CLI (az commands)
+   * Azure Cloud Shell which enable: Azure PowerShell (Az modules)
+   * JSON Templates IaC templates (by custom REST API clients)
    * <a href="#Bicep">Azure Bicep (like Terraform)</a>
    * Azure programmatic SDKs using programming languages C# .NET, Java, Python, NodeJs (JavaScript), etc.
    <br /><br />
 
    PROTIP: A resource group can contain resources from multiple regions.
+   
+   PROTIP: When naming Rresource Groups, keep in mind that theiy are used to delete resources. So limit the number of resources under each one so that you're not blocked from deleting the group becuase you still need that one resource. So using Resource Groups for each point in the lifecycle makes sense (dev, qa, stage, green, blue, etc.).
 
+   PROTIP: Design Resource Groups for work groups to have the permissions they need. For example, core infrastructure such as Networking. The destination of logs and metrics should be viewed and managed using a whole differen account than accounts used to create the data.
 
 1. After you get CLI setup, list resource groups created:
 
@@ -1097,6 +1108,9 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
    and https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-cli
 
    A resource cannot be split among several resource groups, each be a member of a single resource group. 
+
+References on naming conventions:
+   * https://daniel-lumb.medium.com/azure-resource-group-structure-measure-twice-cut-once-565c50e13c9
 
 
 <hr />
@@ -1377,6 +1391,8 @@ az group create --name "${MY_RG}" \
    </strong></pre>
 
    PROTIP: Me standardizing means that you can use a different name safely by doing a "Change All" across all files.
+
+   TOOL: <a target="_blank" href="https://rapidapi.com/blog/how-to-use-geodb-cities-api/">Lookup nearest city given Longitude & Latitude</a> using the <a target="_blank" href="https://geodb-cities-api.wirefreethought.com/docs/api/get-city-details#/">GeoDB API</a>.
 
 
    ### Tags

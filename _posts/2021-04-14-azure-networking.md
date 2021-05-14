@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Azure networking"
-excerpt: "Networking"
+excerpt: "vNets, hair nets"
 tags: [azure, cloud, networking]
-date: "2021-04-14"
+date: "2021-05-14"
 file: "azure-networking"
 image:
 # azure ms logo wait 1900x500-39kb.jpg
@@ -25,8 +25,25 @@ You get 10 sandbox sessions per day (FREE) on labs, such as:
 <img align="right" src="../images/az-net-site2site.svg">
 
 <a target="_blank" href="https://learning.oreilly.com/attend/exam-az-303-microsoft-azure-architect-technologies-crash-course/0636920452881/0636920053523/">
-6 hr LIVE on OReilly: Tim Warner</a> teaches to his <a target="_blank" href="https://github.com/timothywarner/az303">GitHub repo</a> which includes a <a target="_blank" title="warner-azure-frankenstein-V2-793x629" href="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png">full diagram</a><br />
+Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target="_blank" href="https://github.com/timothywarner/az303">GitHub repo</a> which includes a <a target="_blank" title="warner-azure-frankenstein-V2-793x629" href="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png">full diagram<br />
 <img alt="warner-azure-frankenstein-V2-793x629" width="793" height="629" src="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png"></a>
+
+1. Search for Net and there are:
+
+   * <a href="#add-network-interface-in-vm">Network interfaces</a>
+   * Network Watcher
+   * Network security groups
+   * Network security groups (classic)
+   * Virtual networks <strong>(vNets)</strong>
+   * Local network gateways
+   * Virtual network gateways
+   * Virtual networks (classic)
+   <br /><br />
+
+## Coursera Guided Project
+
+<a target="_blank" href="https://www.coursera.org/projects/introduction-to-virtual-networks-in-microsoft-azure">
+Guided Project: Introduction to Virtual Networks</a> by Brendan McKeown
 
 
 ##  Starting an Azure Cloud Shell
